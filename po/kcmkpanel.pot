@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-30 21:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "&Panel"
+msgstr ""
+
+#: main.cpp:60
+msgid "&Desktops"
+msgstr ""
+
+#: main.cpp:82
+msgid "KPanel Configuration"
+msgstr ""
+
+#: panel.cpp:57
+msgid "Location"
+msgstr ""
+
+#: panel.cpp:64
+msgid "Taskbar"
+msgstr ""
+
+#: panel.cpp:65
+msgid "Hidden"
+msgstr ""
+
+#: panel.cpp:68
+msgid "Top/Left"
+msgstr ""
+
+#: panel.cpp:88
+msgid "Tiny Style"
+msgstr ""
+
+#: panel.cpp:89
+msgid "Normal Style"
+msgstr ""
+
+#: panel.cpp:90
+msgid "Large Style"
+msgstr ""
+
+#: panel.cpp:98
+msgid "Menu Tooltips"
+msgstr ""
+
+#: panel.cpp:100
+msgid "Personal First"
+msgstr ""
+
+#: panel.cpp:102
+msgid "Auto Hide Panel"
+msgstr ""
+
+#: panel.cpp:104
+msgid "Auto Hide Taskbar"
+msgstr ""
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr ""
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr ""

@@ -116,6 +116,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/kdm/applnk/Makefile \
 	kcontrol/kdm/doc/Makefile \
 	kcontrol/kdm/pics/Makefile \
+	kcontrol/kpanel/Makefile \
 	kcontrol/info/Makefile \
 	kcontrol/kcontrol/Makefile \
 	kcontrol/kcontrol/pics/Makefile \
