@@ -2,6 +2,7 @@
 
 set -e
 
+
 case "$1" in
         remove) 
 	if test -n "`pidof kdm`"
