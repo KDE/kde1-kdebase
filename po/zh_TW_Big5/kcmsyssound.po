@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsyssound\n"
+"POT-Creation-Date: 1998-04-18 00:01+0200\n"
+"PO-Revision-Date: 1998-04-20 21:51+0800\n"
+"Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "音效[&S]"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "系統音效"
+
+#: syssound.cpp:144
+msgid "Change to Desktop 1"
+msgstr "切換至桌面一"
+
+#: syssound.cpp:145
+msgid "Change to Desktop 2"
+msgstr "切換至桌面二"
+
+#: syssound.cpp:146
+msgid "Change to Desktop 3"
+msgstr "切換至桌面三"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 4"
+msgstr "切換至桌面四"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 5"
+msgstr "切換至桌面五"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 6"
+msgstr "切換至桌面六"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 7"
+msgstr "切換至桌面七"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 8"
+msgstr "切換至桌面八"
+
+#: syssound.cpp:153
+msgid "Activate Window"
+msgstr "活化視窗"
+
+#: syssound.cpp:154
+msgid "Open new window"
+msgstr "開啟新視窗"
+
+#: syssound.cpp:155
+msgid "Close Window"
+msgstr "關閉視窗"
+
+#: syssound.cpp:156
+msgid "Startup"
+msgstr "系統啟動"
+
+#: syssound.cpp:158
+msgid "Window Shade Up"
+msgstr "視窗 Shade Up"
+
+#: syssound.cpp:159
+msgid "Window Shade Down"
+msgstr "視窗 Shade Down"
+
+#: syssound.cpp:160
+msgid "Window Iconify"
+msgstr "視窗圖示化"
+
+#: syssound.cpp:161
+msgid "Window DeIconify"
+msgstr "視窗解除圖示化"
+
+#: syssound.cpp:162
+msgid "Window Maximize"
+msgstr "視窗最大化"
+
+#: syssound.cpp:163
+msgid "Window UnMaximize"
+msgstr "視窗還原最大化"
+
+#: syssound.cpp:164
+msgid "Window Sticky"
+msgstr "視窗黏附"
+
+#: syssound.cpp:165
+msgid "Window UnSticky"
+msgstr "視窗解除黏附"
+
+#: syssound.cpp:166
+msgid "Window Trans New"
+msgstr ""
+
+#: syssound.cpp:167
+msgid "Window Trans Delete"
+msgstr ""
+
+#: syssound.cpp:168
+msgid "Logout"
+msgstr "離線"
+
+#: syssound.cpp:169
+msgid "Logout Message"
+msgstr "離線訊息"
+
+#: syssound.cpp:170
+msgid "Window Move Start"
+msgstr "視窗移動開始"
+
+#: syssound.cpp:171
+msgid "Window Move End"
+msgstr "視窗移動結束"
+
+#: syssound.cpp:172
+msgid "Window Resize Start"
+msgstr "調整視窗大小開始"
+
+#: syssound.cpp:173
+msgid "Window Resize End"
+msgstr "調整視窗大小結束"
+
+#: syssound.cpp:195
+msgid "e&nable system sounds"
+msgstr "致能系統音效[&N]"
+
+#: syssound.cpp:200
+msgid "&Test"
+msgstr "測試[&T]"
+
+#: syssound.cpp:204
+msgid "&Events:"
+msgstr "事件[&E]:"
+
+#: syssound.cpp:208
+msgid "&Sounds:"
+msgstr "音效[&S]:"
+
+#: syssound.cpp:213
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "額外的 WAV 音效檔可以放入音效列表中."
+
+#: syssound.cpp:453
+msgid "Unsupported URL"
+msgstr "不支援的 URL"
+
+#: syssound.cpp:455
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"抱歉, 目前 KDE 音效系統模組不支援這種類型的 URL "
+
+#: syssound.cpp:465
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"抱歉, 但 \n"
+"%s\n"
+"不像是一個音效檔."
+
+#: syssound.cpp:468
+msgid "Improper File Extension"
+msgstr "不正確的檔案副檔名"
+
+#: syssound.cpp:479
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"這個檔案\n"
+"%s\n"
+"已經在此列表中"
+
+#: syssound.cpp:483
+msgid "File Already in List"
+msgstr "檔案已經在列表中"
