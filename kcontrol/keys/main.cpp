@@ -5,21 +5,21 @@
 // Copyright (c)  Matthias Ettrich 1998
 //
 /*
-  
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-  
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-  
+
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-   
+
   */
 
 
@@ -57,26 +57,26 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
 
   if (runGUI())
     {
-    
+
       if (!pages || pages->contains("standard")){
 	printf("create standard\n");
-	addPage(standard = new KStdConfig(dialog), 
+	addPage(standard = new KStdConfig(dialog),
 		klocale->translate("&Standard shortcuts"), "kcmkeys-1.html");
       }
       if (!pages || pages->contains("global")){
 	printf("create global\n");
-	addPage(global = new KGlobalConfig(dialog), 
+	addPage(global = new KGlobalConfig(dialog),
 		klocale->translate("&Global shortcuts"), "kcmkey-2.html");
       }
-      
+
       if (standard || global)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmdisplay [-init | {standard,global}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkeys [-init | {standard,global}]\n"));
           justInit = TRUE;
         }
-      
+
     }
 }
 
@@ -101,7 +101,7 @@ void KKeyApplication::apply()
     global->applySettings();
   // tell kwm to re-parse the config file
   KWM::configureWm();
-  
+
 }
 
 void KKeyApplication::defaultValues(){
@@ -113,14 +113,14 @@ void KKeyApplication::defaultValues(){
 
 int main(int argc, char **argv)
 {
-  
+
   KKeyApplication app(argc, argv, "kcmkeys");
   app.setTitle(klocale->translate("Key binding settings"));
-  
+
   if (app.runGUI())
     return app.exec();
   else
-    { 
+    {
       app.init();
       return 0;
     }
