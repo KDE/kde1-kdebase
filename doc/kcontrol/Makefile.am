@@ -1,3 +1,4 @@
+SUBDIRS = bell info input kwm locale syssound
 
 data_DATA = index.html index-1.html index-2.html logotp3.gif
 
