@@ -20,6 +20,5 @@ Exec=klipper
 Icon=klipper.xpm
 Type=Application
 DocPath=klipper/klipper.html
-Comment=
 Terminal=0
 MiniIcon=klipper.xpm
