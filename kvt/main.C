@@ -947,6 +947,7 @@ int main(int argc, char **argv)
   //  a.setStyle(WindowsStyle);
   kvt = new kVt;
   a.setMainWidget( kvt );
+  a.setTopWidget( kvt );
 
   // a bisserl gehackt. [bmg]
   char buffer[60];
