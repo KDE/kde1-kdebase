@@ -16,6 +16,7 @@
 #include <qwindefs.h>
 #include <qframe.h>
 #include <qpixmap.h>
+#include <kmenubar.h>
 
 enum KvtScrollbar{kvt_right, kvt_left};
 enum KvtSize{kvt_normal, kvt_tiny, kvt_small, kvt_medium, kvt_large, kvt_huge};
@@ -49,13 +50,15 @@ public slots:
     void scrolling(int);
     void onDrop( KDNDDropZone* _zone );
 
+    void menubarMoved();
+
 
 protected:
     void    resizeEvent( QResizeEvent * );
     bool eventFilter( QObject *, QEvent * );
 
 private:
-    QMenuBar *menubar;
+    KMenuBar *menubar;
     QFrame *frame;
     QPopupMenu *m_file;
     QPopupMenu *m_options;

@@ -1,39 +1,26 @@
-
- - keyboard accelerators for the menus (Cedric Maion)
-
+since kvt-0.14:
+	
+  - keyboard accelerators for the menus (Cedric Maion)
   - added a minimumSize();
-	
   - fixed the tiny "huge"-bug 
-	
   - Class of characters that form a word can be extenden by the user
     (M G Berberich)
-
   - Option -vt_geometry now work's again. (M G Berberich)
-
   - Doubleclick selects wordwise, trippleclick selects linewise
     (M G Berberich)
-
   - various sizes (M G Berberich) 
-
   - selection works with all keymasks now
- 
   - drag'n'drop (Christian Esken)
-
   - small fixes for FreeBSD (Marc van Kempen)
-	
   - new option "-tn" for terminal type
-
   - background white leads to lightgrey for applications.
     This allows dialog-programms to look nice (e.g. LISA)
   - bugfixes in the event loop. First version that seems to work properly :) 
- 
   - black-on-black fixed: now black-on-white if a 
     color allocation fails
   - multiline selection fixed again
- 
   - scrollbar problems fixed 
   - should compile on Linux/Alpha now (Christian Czezatke)
-  
   - fixed the multiline selection again
   - kdisplays changes gets recognized during runtime now
   - small bugfix for backspace

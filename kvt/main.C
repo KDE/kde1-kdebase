@@ -354,8 +354,10 @@ kVt::kVt( QWidget *parent, const char *name )
     m_help->insertItem("&Help");
     connect(m_help, SIGNAL(activated(int)), SLOT(help_menu_activated(int)));
 
-    menubar = new QMenuBar( this );
+    menubar = new KMenuBar( this );
     CHECK_PTR( menubar );
+    connect(menubar, SIGNAL (moved(menuPosition)),
+	    SLOT (menubarMoved()));
     menubar->insertItem( "&File", m_file );
     menubar->insertItem( "&Options", m_options);
     menubar->insertSeparator();
@@ -446,22 +448,27 @@ void kVt::ResizeToVtWindow(){
 
 void kVt::resizeEvent( QResizeEvent * ev)
 {
-  if (menubar_visible){
+  if (menubar_visible && menubar->menuBarPos() == KMenuBar::Top){
+    menubar->setGeometry(0,0,width(), menubar->height());
     frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
   }
-  else{
+  else if (menubar_visible && menubar->menuBarPos() == KMenuBar::Bottom){
+    menubar->setGeometry(0,height()-menubar->height(),width(), menubar->height());
+    frame->setGeometry(0, 0, width(), height()-menubar->height());
+  }
+  else{ // menubar not visible or floating
+    menubar->resize(width(), menubar->height());
     frame->setGeometry(0, 0, width(), height());
-    menubar->setGeometry(0,0,0,0);
   }
 
    // a hack 
-   if (setting_to_vt_window){
-     if (frame->height()-4 != sizehints.height){
-       resize(width(), height() + sizehints.height - frame->height() + 4);
-       resize(width(), height() + sizehints.height - frame->height() + 4);
-       return;
-     }
-   }
+//    if (setting_to_vt_window){
+//      if (frame->height()-4 != sizehints.height){
+//        resize(width(), height() + sizehints.height - frame->height() + 4);
+//        resize(width(), height() + sizehints.height - frame->height() + 4);
+//        return;
+//      }
+//    }
 
    if (scrollbar_visible) {
      switch (kvt_scrollbar){
@@ -508,14 +515,16 @@ void kVt::options_menu_activated( int item){
       // hide 
       menubar_visible = FALSE;
       menubar->hide();
-      resize(width(), height()-menubar->height());
+      if (menubar->menuBarPos() != KMenuBar::Floating)
+	resize(width(), height()-menubar->height());
       m_options->changeItem("Show &Menubar", item);
     }
     else {
       // show 
       menubar_visible = TRUE;
       menubar->show();
-      resize(width(), height()+menubar->height());
+      if (menubar->menuBarPos() != KMenuBar::Floating)
+	resize(width(), height()+menubar->height());
       m_options->changeItem("Hide &Menubar", item);
     }
     break;
@@ -841,4 +850,24 @@ void kVt::onDrop( KDNDDropZone* _zone )
   send_string((unsigned char *)str, strlen(str));
   delete url;
   return;
+}
+
+void kVt::menubarMoved(){
+  int new_pos = menubar->menuBarPos();
+  if (new_pos == KMenuBar::Top){
+    if (frame->height() == height())
+      resize(width(), height()+menubar->height());
+    else
+      resize(width(), height());
+  }
+  else if (new_pos == KMenuBar::Bottom){
+    if (frame->height() == height())
+      resize(width(), height()+menubar->height());
+    else
+      resize(width(), height());
+  }
+  else if (new_pos == KMenuBar::Floating){
+    if (frame->height() != height())
+      resize(width(), height()-menubar->height());
+  }
 }
