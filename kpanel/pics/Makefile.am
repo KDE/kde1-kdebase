@@ -9,3 +9,5 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_minidir)/mini-default.xpm
+
+SUBDIRS 	= mini
