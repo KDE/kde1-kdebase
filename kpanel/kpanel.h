@@ -275,6 +275,8 @@ private:
   int tbhs;
   
   float  pm_scale_factor;
+
+  bool foldersFirst;
   
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
@@ -306,6 +308,7 @@ private:
   QCheckBox *cbtt;
   int old_style;
   QSlider *sl_dbhs, *sl_nr_db;
+  QCheckBox *cbas;
 
   int menu_tool_tips;
 

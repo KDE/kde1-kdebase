@@ -148,6 +148,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("MenuToolTips", menu_tool_tips);
 
+    foldersFirst = true;
+    if (config->hasKey("FoldersFirst"))
+      foldersFirst = (config->readEntry("FoldersFirst") == "on");
+    else
+      config->writeEntry("FoldersFirst", "on");
 
     QString panelHiddenString = "00000000";
     panelHiddenString = config->readEntry("PanelHidden", 
@@ -616,6 +621,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     pmenu = new PMenu;
+    pmenu->setAltSort(foldersFirst);
     
     config->setGroup("KDE Desktop Entries");
     QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
@@ -627,10 +633,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     
     if (personal){
       PMenu* tmp = new PMenu;
+      tmp->setAltSort(foldersFirst);
       tmp->parse(QDir(personal));
       tmp->createMenu(new myPopupMenu, this);
       if (tmp->getQPopupMenu() && tmp->getQPopupMenu()->count()>0){
 	p_pmenu = new PMenu;
+	p_pmenu->setAltSort(foldersFirst);
 	p_pmenu->parse(QDir(personal));
 	PMenuItem* pmi = new PMenuItem ;
 	pmi->parse(&QFileInfo(personal), p_pmenu);
@@ -953,6 +961,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        // of other menus :-(
        
        PMenu* pm = new PMenu;
+       pm->setAltSort(foldersFirst);
        pm->parse(QDir(pmi->fullPathName()));
        PMenuItem* pmi2 = new PMenuItem;
        pmi2->parse(&QFileInfo(pmi->fullPathName()), pm);

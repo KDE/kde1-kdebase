@@ -516,6 +516,9 @@ void kPanel::call_klock(){
 
 
 void kPanel::showToolTip(QString s){
+  if (menu_tool_tips == -1)
+    return;
+
   if (s.isEmpty())
     s = klocale->translate("No comment available");
 

@@ -1,5 +1,11 @@
 In kpanel-0.17:
  
+    Patchlevel 7:
+       - alternate sorting order: folders first (Michael Bialas)
+         This is default now. You can disable it with
+             FoldersFirst=off
+         in the kpanelrc
+
     Patchlevel 6:
        - menu sorting fixed (thanks to Michael Bialas)
          Please note that the sort order can individually changed

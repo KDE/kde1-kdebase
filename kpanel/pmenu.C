@@ -298,6 +298,7 @@ PMenu::PMenu()
   initMetaObject();
   list.setAutoDelete(TRUE);
   cmenu = NULL;
+  altSort = FALSE;
 }
 
 PMenu::PMenu( PMenu &menu )
@@ -311,6 +312,7 @@ PMenu::PMenu( PMenu &menu )
       new_item = new PMenuItem( *item );
       list.append(new_item);
     }
+  altSort = FALSE;
 }
 
 PMenu::~PMenu()
@@ -438,6 +440,9 @@ short PMenu::parse( QDir d )
   bool read_only = FALSE;
   sort_order.setAutoDelete(TRUE);
 
+  if (altSort == TRUE)
+    d.setSorting(QDir::DirsFirst | QDir::Name);
+
   QString file = d.path();
   QFileInfo dir_info(file);
   if( !dir_info.isWritable() )
@@ -479,6 +484,7 @@ short PMenu::parse( QDir d )
       if( fi->isDir() )
 	{
 	  new_menu = new PMenu;
+	  new_menu->setAltSort(altSort);
 	  new_item = new PMenuItem;
           new_dir.setPath( fi->filePath() );
 	  new_item->read_only = read_only;
@@ -502,18 +508,25 @@ short PMenu::parse( QDir d )
 	    new_item = NULL;
 	  }
 	}
-      if (new_item){
- 	PMenuItem *tmp;
-// 	for (tmp=item_list.first();
-// 	     tmp && tmp->text_name <= new_item->text_name.data();
-// 	     tmp=item_list.next());
-	for (tmp=item_list.first();
-	     tmp && stricmp(tmp->text_name, new_item->text_name.data()) <= 0;
-	     tmp = item_list.next());
-	if (!tmp)
-	  item_list.append(new_item);
-	else 
-	  item_list.insert(item_list.at(), new_item);
+
+      if ( new_item )
+      {
+
+        PMenuItem *tmp = item_list.first();
+ 
+        if ( altSort == TRUE && int(new_item->getType() ) > submenu)
+          for (;
+            tmp && int(tmp->getType()) <= submenu;
+            tmp = item_list.next());
+ 
+        for (;
+          tmp && stricmp( tmp->text_name, new_item->text_name.data() ) <= 0;
+          tmp = item_list.next());
+ 
+        if ( !tmp )
+          item_list.append( new_item );
+        else
+          item_list.insert( item_list.at(), new_item );
       }
       ++it;
     }

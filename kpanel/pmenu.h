@@ -140,6 +140,9 @@ public:
   PMenuItem *searchItem( QString name );
   QPopupMenu *getQPopupMenu() { return cmenu; }
 
+  void       setAltSort( bool alternateSort ) { altSort = alternateSort; }
+  bool       getAltSort() { return altSort; }
+
 signals:
 
 public slots:
@@ -150,6 +153,8 @@ protected slots:
 protected:
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;
+
+  bool             altSort;
 };
 
 
