@@ -551,7 +551,7 @@ void KHelpMain::slotOptionsSave()
 
 	config->setGroup( "Appearance" ); 
 	config->writeEntry( "ShowToolBar", showToolBar ? "Yes" : "No" );
-	switch (toolbar->Pos())
+	switch (toolbar->pos())
 	{
 		case KToolBar::Top:
 		  config->writeEntry( "ToolBarPos", "Top");

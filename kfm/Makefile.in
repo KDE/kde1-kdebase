@@ -43,7 +43,7 @@ TARGET	=	kfm
 
 ####### Build rules
 
-all: kfmlib kfmclient slave $(TARGET)
+all: Makefile kfmlib kfmclient slave $(TARGET)
 
 Makefile: Makefile.in
 	cd .. && CONFIG_FILES=kfm/$@ CONFIG_HEADERS= $(SHELL) ./config.status
@@ -67,14 +67,13 @@ showfiles:
 	@echo $(SOURCES) $(HEADERS) Makefile
 
 cleanroot:
-	-rm -f *.o *.bak *~ *% #*
+	-rm -f *.o *.bak *~ *% #* 
 	-rm -f $(SRCMETA) $(TARGET)
 
-clean: cleanroot
-
-	(cd libkfm; $(MAKE) clean)
-	(cd client; $(MAKE) clean)
-	(cd kioslave; $(MAKE) clean)
+clean: cleanroot 
+	(cd libkfm && $(MAKE) clean) \
+	(cd client && $(MAKE) clean) \
+	(cd kioslave && $(MAKE) clean) 
 
 install: all
 	$(INSTALL_DIR) $(BINDIR)
