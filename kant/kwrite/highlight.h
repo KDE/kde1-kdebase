@@ -313,6 +313,14 @@ class CppHighlight : public CHighlight {
     virtual void setKeywords(HlKeyword *);
 };
 
+class JavaHighlight : public CHighlight {
+  public:
+    JavaHighlight(const char *name);
+    virtual ~JavaHighlight();
+  protected:
+    virtual void setKeywords(HlKeyword *);
+};
+
 class HtmlHighlight : public GenHighlight {
   public:
     HtmlHighlight(const char *name);

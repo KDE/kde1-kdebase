@@ -30,6 +30,18 @@ char *cppKeywords[] = {
   "class","const","delete","friend","inline","new","operator","private",
   "protected","public","this","virtual",0L};
 
+char *javaKeywords[] = {
+  "abstract", "boolean", "break", "byte", "case", "cast",
+  "catch", "char", "class", "const", "continue", "default",
+  "do", "double", "else", "extends", "false", "final", 
+  "finally", "float", "for", "future", "generic", "goto",
+  "if", "implements", "import", "inner", "instanceof", "int",
+  "interface", "long", "native", "new", "null", "operator",
+  "outer", "package", "private", "protected", "public", "rest",
+  "return", "short", "static", "super", "switch", "synchronized",
+  "this", "throw", "throws", "transient", "true", "try", 
+  "var", "void", "volatile", "while", 0L};
+
 char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
@@ -823,6 +835,20 @@ void CppHighlight::setKeywords(HlKeyword *keyword) {
 }
 
 
+JavaHighlight::JavaHighlight(const char *name) : CHighlight(name) {
+  dw = "*.java";
+  dm = "text/x-java-src";
+}
+
+JavaHighlight::~JavaHighlight() {
+}
+
+void JavaHighlight::setKeywords(HlKeyword *keyword) {
+
+  keyword->addList(javaKeywords);
+}
+
+
 HtmlHighlight::HtmlHighlight(const char *name) : GenHighlight(name) {
   dw = "*.html;*.htm";
   dm = "text/html";
@@ -985,6 +1011,7 @@ HlManager::HlManager() : QObject(0L) {
   hlList.append(new BashHighlight("Bash"));
   hlList.append(new ModulaHighlight("Modula 2"));
   hlList.append(new AdaHighlight("Ada"));
+  hlList.append(new JavaHighlight("Java"));
 }
 
 HlManager::~HlManager() {
@@ -1060,7 +1087,7 @@ int HlManager::mimeFind(KWriteDoc *doc)
   magic.setFollowLinks(true);      
 
   // fill the detection buffer with the contents of the text  
-  const uint HOWMANY = 1024;
+  const int HOWMANY = 1024;
   char buffer[HOWMANY];
   int number=0, len;
   
