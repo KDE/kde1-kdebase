@@ -192,6 +192,7 @@ AC_ARG_PROGRAM
 AC_OUTPUT(Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
+	kpanel/pics/mini/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
