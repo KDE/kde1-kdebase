@@ -378,11 +378,21 @@ void FilePropsPage::applyChanges()
 	  // It's a directory, so strip the trailing slash (in case it's a
           // symlink)
 	  path.truncate( path.length() - 1);
-	if ( rename( path, s ) != 0 ) {
+	
+	int ret = 0;
+	if ( QFile::exists( s ) ) {
+            QString tmp = i18n("You try to overwrite");
+            tmp += ":\n";
+            tmp += s;
+            ret = QMessageBox::warning( this, i18n("KFM Warning"), tmp,
+                                      i18n("Continue"), i18n("Cancel") );
+        }
+        if( ret == 0 )
+	  if ( rename( path, s ) != 0 ) {
             QString tmp;
             tmp.sprintf(i18n("Could not rename the file or directory\n%s\n"), strerror(errno));
             QMessageBox::warning( this, klocale->translate( "KFM Error" ), tmp );
-        }
+          }
 	properties->emitPropertiesChanged( n );
     }
 }
