@@ -532,8 +532,13 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 		command << _url->host() << ":" << port;
 	}
 
-	if ( _url->path()[0] != '/' ) command += "/";
-	command += _url->path();
+	if ( _url->httpPath()[0] != '/' ) command += "/";
+	command += _url->httpPath();
+	if (_url->searchPart() != NULL)
+	{
+	    command += "?";
+	    command += _url->searchPart();
+	}
 	command += " HTTP/1.0\r\n"; /* start header */
 	command += "User-Agent: Konqueror/1.0\r\n"; /* User agent */
 	
