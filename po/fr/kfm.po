@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -254,8 +254,8 @@ msgstr "Impossible de charger l'icône\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556 kiojob.cpp:796
 #: kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682 krenamewin.cpp:120
-#: root.cpp:883 root.cpp:1144 root.cpp:1162 root.cpp:1168 root.cpp:1174
-#: root.cpp:1255 root.cpp:1766 root.cpp:1791
+#: root.cpp:900 root.cpp:1161 root.cpp:1179 root.cpp:1185 root.cpp:1191
+#: root.cpp:1272 root.cpp:1783 root.cpp:1808
 msgid "KFM Error"
 msgstr "Erreur de KFM"
 
@@ -289,7 +289,7 @@ msgstr "Nouveau "
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1306 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:604
-#: kiojob.cpp:87 root.cpp:1163
+#: kiojob.cpp:87 root.cpp:1180
 msgid "ERROR: Malformed URL"
 msgstr "ERREUR : URL mal écrite"
 
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Document : terminé"
 
-#: kfmview.cpp:358 root.cpp:884
+#: kfmview.cpp:358 root.cpp:901
 msgid "ERROR: You may only drop URLs"
 msgstr "ERREUR : vous ne pouvez déposer que des URLs"
 
@@ -326,11 +326,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:356 kfmview.cpp:432
-#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1206
+#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1223
 msgid "KFM Warning"
 msgstr "KFM - Avertissement"
 
-#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1207
+#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1224
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -340,11 +340,11 @@ msgstr ""
 "\n"
 "Il n'y a aucun moyen de le(s) récupérer."
 
-#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1169
+#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1186
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
 
-#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1175
+#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1192
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "Erreur : vous avez déposé un répertoire sur l'un de ses fils"
 
@@ -352,15 +352,15 @@ msgstr "Erreur : vous avez déposé un répertoire sur l'un de ses fils"
 msgid "Open With:"
 msgstr "Ouvrir avec :"
 
-#: kfmview.cpp:515 root.cpp:1106
+#: kfmview.cpp:515 root.cpp:1123
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ERREUR : impossible d'ouvrir les propriétés pour plusieurs fichiers"
 
-#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1256
+#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1273
 msgid "Could not access Trash Bin"
 msgstr "Impossible d'accéder à la corbeille"
 
-#: kfmview.cpp:583 root.cpp:1145
+#: kfmview.cpp:583 root.cpp:1162
 msgid "Can not paste into multiple directories"
 msgstr "Impossible de coller dans plusieurs répertoires"
 
@@ -543,61 +543,71 @@ msgstr "Vider la corbeille"
 msgid "Add to Bookmarks"
 msgstr "Ajouter un signet"
 
-#: htmlopts.cpp:39
+#: htmlopts.cpp:40
 msgid "Small"
 msgstr "Petite"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:44
 msgid "Medium"
 msgstr "Moyenne"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:48
 msgid "Large"
 msgstr "Grosse"
 
-#: htmlopts.cpp:51
+#: htmlopts.cpp:52
 msgid "Standard Font"
 msgstr "Police par défaut"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:69
 msgid "Fixed Font"
 msgstr "Police de taille fixe"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:215
 msgid "Background Color:"
 msgstr "Couleur de fond :"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:223
 msgid "Normal Text Color:"
 msgstr "Couleur du texte normal :"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:231
 msgid "URL Link Color:"
 msgstr "Couleur des URL :"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:239
 msgid "Followed Link Color:"
 msgstr "Couleur des URL suivies :"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:247
 msgid "Change cursor over link."
 msgstr "Changer le curseur au-dessus d'un lien."
 
-#: htmlopts.cpp:252
+#: htmlopts.cpp:253
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:353
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Espacement de la grille horizontale du bureau :"
 
-#: htmlopts.cpp:344
+#: htmlopts.cpp:377
 msgid "Vertical Root Grid Spacing:"
 msgstr "Espacement de la grille verticale du bureau :"
 
-#: htmlopts.cpp:358
+#: htmlopts.cpp:400
 msgid "Transparent Text for Root Icons."
 msgstr "Texte transparent pour les icônes du bureau"
+
+#: htmlopts.cpp:413
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Couleur de fond :"
+
+#: htmlopts.cpp:425
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Couleur de fond :"
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -912,7 +922,7 @@ msgstr ""
 "Quelqu'un a essayé de s'authentifier\n"
 "en utilisant un mauvais mot de passe"
 
-#: root.cpp:687
+#: root.cpp:704
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -922,24 +932,24 @@ msgstr ""
 "Modifier ainsi les dimensions de la grille du bureau ferait sortir certaines "
 "icônes de l'écran."
 
-#: root.cpp:722
+#: root.cpp:739
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Erreur interne : desktopDir est inexploitable"
 
-#: root.cpp:733
+#: root.cpp:750
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "ERREUR : ne peut lire le répertoire desktop '%s'"
 
-#: root.cpp:932
+#: root.cpp:949
 msgid "ERROR: Can not accept drop"
 msgstr "ERREUR : ce lâché à la souris n'est pas accepté"
 
-#: kfmman.cpp:1234 root.cpp:1767
+#: kfmman.cpp:1234 root.cpp:1784
 msgid "Dont know what to do."
 msgstr "Le système ne sait pas quoi faire."
 
-#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1792
+#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1809
 msgid "Dont know what to do"
 msgstr "Le système ne sait pas quoi faire."
 

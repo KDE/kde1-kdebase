@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-11-09 08:39+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -129,38 +129,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
-#: pfilemenu.C:337
+#: pfilemenu.C:390
 msgid "(empty folder)"
 msgstr "(prázdný adresáø)"
 
-#: pfilemenu.C:394
+#: pfilemenu.C:447
 msgid "(Too Many Files)"
 msgstr "(pøíli¹ mnoho souborù)"
 
-#: pfilemenu.C:403
+#: pfilemenu.C:456
 msgid "(Access Denied)"
 msgstr "(pøístup zamezen)"
 
-#: pfilemenu.C:406
+#: pfilemenu.C:459
 msgid "(Unreadable)"
 msgstr "(neèitelné)"
 
-#: pfilemenu.C:413
+#: pfilemenu.C:466
 msgid "Open Folder"
 msgstr "Otevøít adresáø"
 
-#: pfilemenu.C:657
+#: pfilemenu.C:712
 msgid "Global:"
 msgstr "Globální:"
 
-#: pfilemenu.C:676
+#: pfilemenu.C:731
 msgid "Local:"
 msgstr "Lokální:"
 
-#: pfilemenu.C:694
+#: pfilemenu.C:749
 msgid "Recent:"
 msgstr "Nedávné:"
 
-#: pfilemenu.C:740
+#: pfilemenu.C:795
 msgid "Options..."
 msgstr "Mo¾nosti..."

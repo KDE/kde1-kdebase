@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-11-11 09:02+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -260,8 +260,8 @@ msgstr "Není mo¾né nahrát ikonu\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556 kiojob.cpp:796
 #: kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682 krenamewin.cpp:120
-#: root.cpp:883 root.cpp:1144 root.cpp:1162 root.cpp:1168 root.cpp:1174
-#: root.cpp:1255 root.cpp:1766 root.cpp:1791
+#: root.cpp:900 root.cpp:1161 root.cpp:1179 root.cpp:1185 root.cpp:1191
+#: root.cpp:1272 root.cpp:1783 root.cpp:1808
 msgid "KFM Error"
 msgstr "Chyba KFM"
 
@@ -295,7 +295,7 @@ msgstr "Nový "
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1306 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:604
-#: kiojob.cpp:87 root.cpp:1163
+#: kiojob.cpp:87 root.cpp:1180
 msgid "ERROR: Malformed URL"
 msgstr "Chyba: Chybný formát URL"
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Dokument: Hotov"
 
-#: kfmview.cpp:358 root.cpp:884
+#: kfmview.cpp:358 root.cpp:901
 msgid "ERROR: You may only drop URLs"
 msgstr "CHYBA: Je mo¾né upustit pouze URL"
 
@@ -333,11 +333,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:356 kfmview.cpp:432
-#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1206
+#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1223
 msgid "KFM Warning"
 msgstr "Varování KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1207
+#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1224
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -347,11 +347,11 @@ msgstr ""
 "\n"
 "Neexistuje zpùsob jak je obnovit!"
 
-#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1169
+#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1186
 msgid "ERROR: You dropped a URL over itself"
 msgstr "CHYBA: Upustil jste URL nad sebou samým"
 
-#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1175
+#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1192
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 
@@ -359,15 +359,15 @@ msgstr "CHYBA: Upustil jste adresáø nad nìkterým z jeho podadresáøù"
 msgid "Open With:"
 msgstr "Otevøi pomocí:"
 
-#: kfmview.cpp:515 root.cpp:1106
+#: kfmview.cpp:515 root.cpp:1123
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Chyba: Nemohu otevøít vlastnosti pro nìkolik souborù"
 
-#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1256
+#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1273
 msgid "Could not access Trash Bin"
 msgstr "Nemohu pøistoupit ke ko¹i"
 
-#: kfmview.cpp:583 root.cpp:1145
+#: kfmview.cpp:583 root.cpp:1162
 msgid "Can not paste into multiple directories"
 msgstr "Nemohu vkládat do nìkolika adresáøù"
 
@@ -550,61 +550,71 @@ msgstr "Vyprázdnit Ko¹"
 msgid "Add to Bookmarks"
 msgstr "Pøidej k zálo¾kám"
 
-#: htmlopts.cpp:39
+#: htmlopts.cpp:40
 msgid "Small"
 msgstr "Malý"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:44
 msgid "Medium"
 msgstr "Støední"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:48
 msgid "Large"
 msgstr "Velký"
 
-#: htmlopts.cpp:51
+#: htmlopts.cpp:52
 msgid "Standard Font"
 msgstr "Standardní font"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:69
 msgid "Fixed Font"
 msgstr "Fixovaný font"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:215
 msgid "Background Color:"
 msgstr "Barva pozadí:"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:223
 msgid "Normal Text Color:"
 msgstr "Barva normálního textu:"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:231
 msgid "URL Link Color:"
 msgstr "Barva URL odkazu:"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:239
 msgid "Followed Link Color:"
 msgstr "Barva pou¾itého odkazu:"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:247
 msgid "Change cursor over link."
 msgstr "Zmìnit kurzor nad odkazem."
 
-#: htmlopts.cpp:252
+#: htmlopts.cpp:253
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:353
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Horizontální rozteè sítì na plo¹e:"
 
-#: htmlopts.cpp:344
+#: htmlopts.cpp:377
 msgid "Vertical Root Grid Spacing:"
 msgstr "Vertikální rozteè sítì na plo¹e:"
 
-#: htmlopts.cpp:358
+#: htmlopts.cpp:400
 msgid "Transparent Text for Root Icons."
 msgstr "Transparentní text pro ikony na plo¹e."
+
+#: htmlopts.cpp:413
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Barva pozadí:"
+
+#: htmlopts.cpp:425
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Barva pozadí:"
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -921,7 +931,7 @@ msgstr ""
 "Nìkdo se pokusil se autorizovat\n"
 "pomocí ¹patného hesla"
 
-#: root.cpp:687
+#: root.cpp:704
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -931,24 +941,24 @@ msgstr ""
 "Nová rozteè sítì na pracovní plo¹e by posunula\n"
 "nekteré ikony mimo pracovní plochu."
 
-#: root.cpp:722
+#: root.cpp:739
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Interní chyba: desctopDir má ¹patný formát"
 
-#: root.cpp:733
+#: root.cpp:750
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "Chyba: Nemohu èíst adresáø pracovní plochy '%s'"
 
-#: root.cpp:932
+#: root.cpp:949
 msgid "ERROR: Can not accept drop"
 msgstr "Chyba: Nemohu akceptovat upu¹»ení"
 
-#: kfmman.cpp:1234 root.cpp:1767
+#: kfmman.cpp:1234 root.cpp:1784
 msgid "Dont know what to do."
 msgstr "Nevím co dìlat."
 
-#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1792
+#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1809
 msgid "Dont know what to do"
 msgstr "Nevím co dìlat"
 

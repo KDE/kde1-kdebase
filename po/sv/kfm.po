@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-10-30 13:11+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -255,8 +255,8 @@ msgstr "Kunde inte ladda ikonen\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556 kiojob.cpp:796
 #: kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682 krenamewin.cpp:120
-#: root.cpp:883 root.cpp:1144 root.cpp:1162 root.cpp:1168 root.cpp:1174
-#: root.cpp:1255 root.cpp:1766 root.cpp:1791
+#: root.cpp:900 root.cpp:1161 root.cpp:1179 root.cpp:1185 root.cpp:1191
+#: root.cpp:1272 root.cpp:1783 root.cpp:1808
 msgid "KFM Error"
 msgstr "KFM-fel"
 
@@ -290,7 +290,7 @@ msgstr "Ny "
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1306 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:604
-#: kiojob.cpp:87 root.cpp:1163
+#: kiojob.cpp:87 root.cpp:1180
 msgid "ERROR: Malformed URL"
 msgstr "FEL: Felaktig URL"
 
@@ -314,7 +314,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Dokument: klart"
 
-#: kfmview.cpp:358 root.cpp:884
+#: kfmview.cpp:358 root.cpp:901
 msgid "ERROR: You may only drop URLs"
 msgstr "FEL: Du får bara släppa URL:er"
 
@@ -327,11 +327,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "FEL: En URL släpptes på sig själv"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:356 kfmview.cpp:432
-#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1206
+#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1223
 msgid "KFM Warning"
 msgstr "KFM Varning"
 
-#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1207
+#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1224
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -341,11 +341,11 @@ msgstr ""
 "\n"
 "Det går inte att återskapa dem."
 
-#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1169
+#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1186
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEL: En URL släpptes på sig själv"
 
-#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1175
+#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1192
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEL: Du släppte en katalog på en av dess underkataloger"
 
@@ -353,15 +353,15 @@ msgstr "FEL: Du släppte en katalog på en av dess underkataloger"
 msgid "Open With:"
 msgstr "Öppna med:"
 
-#: kfmview.cpp:515 root.cpp:1106
+#: kfmview.cpp:515 root.cpp:1123
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEL: Kan inte öppna egenskaper för flera filer på en gång"
 
-#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1256
+#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1273
 msgid "Could not access Trash Bin"
 msgstr "Kunde inte komma åt papperskorgen"
 
-#: kfmview.cpp:583 root.cpp:1145
+#: kfmview.cpp:583 root.cpp:1162
 msgid "Can not paste into multiple directories"
 msgstr "Kan inte klistra in i flera kataloger på en gång"
 
@@ -544,61 +544,71 @@ msgstr "Töm papperskorgen"
 msgid "Add to Bookmarks"
 msgstr "Lägg till bokmärken"
 
-#: htmlopts.cpp:39
+#: htmlopts.cpp:40
 msgid "Small"
 msgstr "Liten"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:44
 msgid "Medium"
 msgstr "Mellan"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:48
 msgid "Large"
 msgstr "Stor"
 
-#: htmlopts.cpp:51
+#: htmlopts.cpp:52
 msgid "Standard Font"
 msgstr "Standardtypsnitt"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:69
 msgid "Fixed Font"
 msgstr "Ej proportionellt"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:215
 msgid "Background Color:"
 msgstr "Bakgrundsfärg:"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:223
 msgid "Normal Text Color:"
 msgstr "Normal textfärg:"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:231
 msgid "URL Link Color:"
 msgstr "Färg på länkar:"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:239
 msgid "Followed Link Color:"
 msgstr "Färg på följda länkar:"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:247
 msgid "Change cursor over link."
 msgstr "Ändra muspekare över länkar"
 
-#: htmlopts.cpp:252
+#: htmlopts.cpp:253
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:353
 msgid "Horizontal Root Grid Spacing:"
 msgstr "x-avstånd för skrivbordsikoner"
 
-#: htmlopts.cpp:344
+#: htmlopts.cpp:377
 msgid "Vertical Root Grid Spacing:"
 msgstr "y-avstånd för skrivbordsikoner"
 
-#: htmlopts.cpp:358
+#: htmlopts.cpp:400
 msgid "Transparent Text for Root Icons."
 msgstr "Rita ej textbakgrund till skrivbordsikoner"
+
+#: htmlopts.cpp:413
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Bakgrundsfärg:"
+
+#: htmlopts.cpp:425
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Bakgrundsfärg:"
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -917,7 +927,7 @@ msgstr ""
 "VARNING: Någon försökte\n"
 "identifiera sig med fel lösenord"
 
-#: root.cpp:687
+#: root.cpp:704
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -928,24 +938,24 @@ msgstr ""
 "skulle medföra att några ikoner\n"
 "hamnade utanför skrivbordet."
 
-#: root.cpp:722
+#: root.cpp:739
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Internt fel: desktopDir är felaktig"
 
-#: root.cpp:733
+#: root.cpp:750
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "FEL: Kunde inte läsa skrivbordskatalogen '%s'"
 
-#: root.cpp:932
+#: root.cpp:949
 msgid "ERROR: Can not accept drop"
 msgstr "FEL: Kan inte ta emot släppt ikon"
 
-#: kfmman.cpp:1234 root.cpp:1767
+#: kfmman.cpp:1234 root.cpp:1784
 msgid "Dont know what to do."
 msgstr "Vet inte vad som skall göras."
 
-#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1792
+#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1809
 msgid "Dont know what to do"
 msgstr "Vet inte vad som skall göras"
 

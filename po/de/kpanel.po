@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -129,39 +129,39 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:337
+#: pfilemenu.C:390
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:394
+#: pfilemenu.C:447
 msgid "(Too Many Files)"
 msgstr "(Zuviele Dateien)"
 
-#: pfilemenu.C:403
+#: pfilemenu.C:456
 msgid "(Access Denied)"
 msgstr "(Zugriff verweigert)"
 
-#: pfilemenu.C:406
+#: pfilemenu.C:459
 msgid "(Unreadable)"
 msgstr "(Nicht lesbar)"
 
-#: pfilemenu.C:413
+#: pfilemenu.C:466
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#: pfilemenu.C:657
+#: pfilemenu.C:712
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:676
+#: pfilemenu.C:731
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:694
+#: pfilemenu.C:749
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:740
+#: pfilemenu.C:795
 msgid "Options..."
 msgstr ""
 

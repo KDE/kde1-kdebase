@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -243,8 +243,8 @@ msgstr "Não foi possível carregar o ícone\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556 kiojob.cpp:796
 #: kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682 krenamewin.cpp:120
-#: root.cpp:883 root.cpp:1144 root.cpp:1162 root.cpp:1168 root.cpp:1174
-#: root.cpp:1255 root.cpp:1766 root.cpp:1791
+#: root.cpp:900 root.cpp:1161 root.cpp:1179 root.cpp:1185 root.cpp:1191
+#: root.cpp:1272 root.cpp:1783 root.cpp:1808
 msgid "KFM Error"
 msgstr "Erro no KFM"
 
@@ -278,7 +278,7 @@ msgstr "Novo"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1306 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:604
-#: kiojob.cpp:87 root.cpp:1163
+#: kiojob.cpp:87 root.cpp:1180
 msgid "ERROR: Malformed URL"
 msgstr "ERRO: URL Incorreta"
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Document: Done"
 msgstr "Documento: Feito"
 
-#: kfmview.cpp:358 root.cpp:884
+#: kfmview.cpp:358 root.cpp:901
 msgid "ERROR: You may only drop URLs"
 msgstr "ERRO: Você só pode soltar URLs"
 
@@ -315,11 +315,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "ERRO: URL de destino igual a origem!"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:356 kfmview.cpp:432
-#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1206
+#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1223
 msgid "KFM Warning"
 msgstr "Aviso do KFM"
 
-#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1207
+#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1224
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -329,11 +329,11 @@ msgstr ""
 "\n"
 "Não existe nenhuma maneira de recuperá-los."
 
-#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1169
+#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1186
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ERRO: URL de destino é a igual a origem!"
 
-#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1175
+#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1192
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERRO: diretório de destino é um  subdiretórios da origem"
 
@@ -341,15 +341,15 @@ msgstr "ERRO: diretório de destino é um  subdiretórios da origem"
 msgid "Open With:"
 msgstr "Abrir Com:"
 
-#: kfmview.cpp:515 root.cpp:1106
+#: kfmview.cpp:515 root.cpp:1123
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Erro: Não pode abrir as propriedades para múltiplos arquivos"
 
-#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1256
+#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1273
 msgid "Could not access Trash Bin"
 msgstr "Não foi possível acessar a Lixeira"
 
-#: kfmview.cpp:583 root.cpp:1145
+#: kfmview.cpp:583 root.cpp:1162
 msgid "Can not paste into multiple directories"
 msgstr "Não é possível colar em múltiplos diretórios"
 
@@ -532,61 +532,71 @@ msgstr "Esvaziar lixeira"
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos Favoritos"
 
-#: htmlopts.cpp:39
+#: htmlopts.cpp:40
 msgid "Small"
 msgstr "Pequeno"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:44
 msgid "Medium"
 msgstr "Médio"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:48
 msgid "Large"
 msgstr "Grande"
 
-#: htmlopts.cpp:51
+#: htmlopts.cpp:52
 msgid "Standard Font"
 msgstr "Fonte Padrão"
 
-#: htmlopts.cpp:68
+#: htmlopts.cpp:69
 msgid "Fixed Font"
 msgstr "Fonte Fixa"
 
-#: htmlopts.cpp:214
+#: htmlopts.cpp:215
 msgid "Background Color:"
 msgstr "Cor de Fundo:"
 
-#: htmlopts.cpp:222
+#: htmlopts.cpp:223
 msgid "Normal Text Color:"
 msgstr "Cor do Texto Normal:"
 
-#: htmlopts.cpp:230
+#: htmlopts.cpp:231
 msgid "URL Link Color:"
 msgstr "Cor de Links URL:"
 
-#: htmlopts.cpp:238
+#: htmlopts.cpp:239
 msgid "Followed Link Color:"
 msgstr "Cor do Link Visitado:"
 
-#: htmlopts.cpp:246
+#: htmlopts.cpp:247
 msgid "Change cursor over link."
 msgstr "Mudar cursor sobre link."
 
-#: htmlopts.cpp:252
+#: htmlopts.cpp:253
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:353
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Espaçamento Horizontal da Grade de Raiz:"
 
-#: htmlopts.cpp:344
+#: htmlopts.cpp:377
 msgid "Vertical Root Grid Spacing:"
 msgstr "Espaçamento Vertical da Grade de Raiz:"
 
-#: htmlopts.cpp:358
+#: htmlopts.cpp:400
 msgid "Transparent Text for Root Icons."
 msgstr "Texto Transparente para Ícones Raiz."
+
+#: htmlopts.cpp:413
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Cor de Fundo:"
+
+#: htmlopts.cpp:425
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Cor de Fundo:"
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -905,7 +915,7 @@ msgstr ""
 "Alguém tentou autorizar-se\n"
 "usando uma senha errada"
 
-#: root.cpp:687
+#: root.cpp:704
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -915,24 +925,24 @@ msgstr ""
 "As novas dimensões da grade de raiz iriam mover\n"
 "alguns ícones para fora do ambiente de trabalho."
 
-#: root.cpp:722
+#: root.cpp:739
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Erro Interno: desktopDir é incorreto"
 
-#: root.cpp:733
+#: root.cpp:750
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "ERRO: Não foi possível ler o diretório do ambiente de trabalho '%s'"
 
-#: root.cpp:932
+#: root.cpp:949
 msgid "ERROR: Can not accept drop"
 msgstr "ERRO: Não é possível aceitar o drop"
 
-#: kfmman.cpp:1234 root.cpp:1767
+#: kfmman.cpp:1234 root.cpp:1784
 msgid "Dont know what to do."
 msgstr "Não sei o que fazer."
 
-#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1792
+#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1809
 msgid "Dont know what to do"
 msgstr "Não sei o que fazer"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-06-20 13:36+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -120,38 +120,38 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nie mo¿na umie¶ciæ tego jako przycisku na panelu!"
 
-#: pfilemenu.C:337
+#: pfilemenu.C:390
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:394
+#: pfilemenu.C:447
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:403
+#: pfilemenu.C:456
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:406
+#: pfilemenu.C:459
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:413
+#: pfilemenu.C:466
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:657
+#: pfilemenu.C:712
 msgid "Global:"
 msgstr ""
 
-#: pfilemenu.C:676
+#: pfilemenu.C:731
 msgid "Local:"
 msgstr ""
 
-#: pfilemenu.C:694
+#: pfilemenu.C:749
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:740
+#: pfilemenu.C:795
 msgid "Options..."
 msgstr ""

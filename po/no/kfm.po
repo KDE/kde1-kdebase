@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-11-12 01:17+0100\n"
+"POT-Creation-Date: 1998-11-13 01:15+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -220,8 +220,7 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Proxy-behandler ved Lars Hoss\n"
-"Lars.Hoss@munich.netsurf.de"
-"\n"
+"Lars.Hoss@munich.netsurf.de\n"
 "Feilrapporter og programfikser sendes til David Faure\n"
 "faure@kde.org"
 
@@ -268,8 +267,8 @@ msgstr "Kunne ikke laste ikon\n"
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556 kiojob.cpp:796
 #: kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682 krenamewin.cpp:120
-#: root.cpp:883 root.cpp:1144 root.cpp:1162 root.cpp:1168 root.cpp:1174
-#: root.cpp:1255 root.cpp:1766 root.cpp:1791
+#: root.cpp:900 root.cpp:1161 root.cpp:1179 root.cpp:1185 root.cpp:1191
+#: root.cpp:1272 root.cpp:1783 root.cpp:1808
 msgid "KFM Error"
 msgstr "KFM Feil"
 
@@ -311,7 +310,7 @@ msgstr "Ny"
 # kiojob.cpp:71 root.cpp:1106
 #: kfmgui.cpp:1144 kfmgui.cpp:1306 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:604
-#: kiojob.cpp:87 root.cpp:1163
+#: kiojob.cpp:87 root.cpp:1180
 msgid "ERROR: Malformed URL"
 msgstr "FEIL: Misdannet URL"
 
@@ -340,7 +339,7 @@ msgid "Document: Done"
 msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmview.cpp:358 root.cpp:884
+#: kfmview.cpp:358 root.cpp:901
 msgid "ERROR: You may only drop URLs"
 msgstr "FEIL: Du kan bare droppe URLer"
 
@@ -357,12 +356,12 @@ msgstr "FEIL: Du droppet en URL over seg selv"
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:356 kfmview.cpp:432
-#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1206
+#: kfmview.cpp:647 krenamewin.cpp:20 root.cpp:1223
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
 # kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
-#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1207
+#: kfmtree.cpp:357 kfmview.cpp:433 kfmview.cpp:648 root.cpp:1224
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -372,12 +371,12 @@ msgstr ""
 "Det er ikke mulig å få dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1169
+#: kfmtree.cpp:324 kfmview.cpp:467 kfmview.cpp:612 root.cpp:1186
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
-#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1175
+#: kfmtree.cpp:330 kfmview.cpp:473 kfmview.cpp:620 root.cpp:1192
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEIL: Du droppet en katalog over et av sine barn"
 
@@ -387,17 +386,17 @@ msgid "Open With:"
 msgstr "Åpne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
-#: kfmview.cpp:515 root.cpp:1106
+#: kfmview.cpp:515 root.cpp:1123
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
-#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1256
+#: kfmtree.cpp:287 kfmview.cpp:557 root.cpp:1273
 msgid "Could not access Trash Bin"
 msgstr "Kunne ikke få adgang til Papirkurv"
 
 # kfmview.cpp:553 root.cpp:1088
-#: kfmview.cpp:583 root.cpp:1145
+#: kfmview.cpp:583 root.cpp:1162
 msgid "Can not paste into multiple directories"
 msgstr "Kan ikke lime inn i flere kataloger"
 
@@ -618,70 +617,82 @@ msgstr "Tøm Papirkurv"
 msgid "Add to Bookmarks"
 msgstr "Legg til bokmerker"
 
-#: htmlopts.cpp:39
+#: htmlopts.cpp:40
 msgid "Small"
 msgstr "Liten"
 
-#: htmlopts.cpp:43
+#: htmlopts.cpp:44
 msgid "Medium"
 msgstr "Middels"
 
-#: htmlopts.cpp:47
+#: htmlopts.cpp:48
 msgid "Large"
 msgstr "Stor"
 
 # htmlopts.cpp:51
-#: htmlopts.cpp:51
+#: htmlopts.cpp:52
 msgid "Standard Font"
 msgstr "Standard skrifttype"
 
 # htmlopts.cpp:68
-#: htmlopts.cpp:68
+#: htmlopts.cpp:69
 msgid "Fixed Font"
 msgstr "Fast skrifttype"
 
 # htmlopts.cpp:214
-#: htmlopts.cpp:214
+#: htmlopts.cpp:215
 msgid "Background Color:"
 msgstr "Bakgrunnsfarge:"
 
 # htmlopts.cpp:222
-#: htmlopts.cpp:222
+#: htmlopts.cpp:223
 msgid "Normal Text Color:"
 msgstr "Normal tekstfarge:"
 
 # htmlopts.cpp:230
-#: htmlopts.cpp:230
+#: htmlopts.cpp:231
 msgid "URL Link Color:"
 msgstr "URL-lenkefarge:"
 
 # htmlopts.cpp:238
-#: htmlopts.cpp:238
+#: htmlopts.cpp:239
 msgid "Followed Link Color:"
 msgstr "Farge på brukte lenker:"
 
 # htmlopts.cpp:246
-#: htmlopts.cpp:246
+#: htmlopts.cpp:247
 msgid "Change cursor over link."
 msgstr "Endre markør over lenke."
 
-#: htmlopts.cpp:252
+#: htmlopts.cpp:253
 msgid "Underline links"
 msgstr ""
 
 # htmlopts.cpp:321
-#: htmlopts.cpp:330
+#: htmlopts.cpp:353
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Avstand mellom horisontale bunngitter:"
 
 # htmlopts.cpp:335
-#: htmlopts.cpp:344
+#: htmlopts.cpp:377
 msgid "Vertical Root Grid Spacing:"
 msgstr "Avstand mellom vertikale bunngitter:"
 
-#: htmlopts.cpp:358
+#: htmlopts.cpp:400
 msgid "Transparent Text for Root Icons."
 msgstr "Gjennomsiktig tekst for bunnikoner"
+
+# htmlopts.cpp:214
+#: htmlopts.cpp:413
+#, fuzzy
+msgid "Icon foreground color:"
+msgstr "Bakgrunnsfarge:"
+
+# htmlopts.cpp:214
+#: htmlopts.cpp:425
+#, fuzzy
+msgid "Icon background color:"
+msgstr "Bakgrunnsfarge:"
 
 # kfmprops.cpp:676
 #: kfmdlg.cpp:114
@@ -1065,7 +1076,7 @@ msgstr ""
 "ved å bruke feil passord"
 
 # root.cpp:661
-#: root.cpp:687
+#: root.cpp:704
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -1076,28 +1087,28 @@ msgstr ""
 "fra skrivebordet."
 
 # root.cpp:696
-#: root.cpp:722
+#: root.cpp:739
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Intern feil: desktopDir er misdannet"
 
 # root.cpp:707
-#: root.cpp:733
+#: root.cpp:750
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "FEIL: Kunne ikke lese skrivebordskatalog '%s'"
 
 # root.cpp:898
-#: root.cpp:932
+#: root.cpp:949
 msgid "ERROR: Can not accept drop"
 msgstr "FEIL: Kunne ikke akseptere slipp"
 
 # kfmman.cpp:1212 root.cpp:1695
-#: kfmman.cpp:1234 root.cpp:1767
+#: kfmman.cpp:1234 root.cpp:1784
 msgid "Dont know what to do."
 msgstr "Jeg vet ikke hva jeg skal gjøre."
 
 # kfmman.cpp:1238 kfmtree.cpp:164 root.cpp:1720
-#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1792
+#: kfmman.cpp:1260 kfmtree.cpp:164 root.cpp:1809
 msgid "Dont know what to do"
 msgstr "Jeg vet ikke hva jeg skal gjøre"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-10 01:24+0100\n"
+"POT-Creation-Date: 1998-11-13 01:16+0100\n"
 "Last-Translator: Lars Doelle\n"
 
 #: main.C:201
@@ -124,7 +124,25 @@ msgstr "Neu"
 msgid "Sessions"
 msgstr "Sitzungen"
 
-#: main.C:795
+#: main.C:497
+#, fuzzy, c-format
+msgid "About %s"
+msgstr "&Über ..."
+
+#: main.C:499
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+
+#: main.C:797
 msgid "Welcome to the console"
 msgstr "Willkommen an der Konsole"
 
