@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-19 08:53 MET DST\n"
+"PO-Revision-Date: 1998-06-20 13:45 CEST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -79,11 +79,11 @@ msgstr "Vzhled titulku"
 
 #: titlebar.cpp:928
 msgid "Shaded Vertically"
-msgstr "Stínované vertikálnì"
+msgstr "Stínovaný vertikálnì"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr "Stínované horizontálnì"
+msgstr "Stínovaný horizontálnì"
 
 #: titlebar.cpp:934
 msgid "Plain"

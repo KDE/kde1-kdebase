@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
-"PO-Revision-Date: 1998-06-18 09:20 MET DST\n"
+"PO-Revision-Date: 1998-06-20 13:23 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,11 @@ msgstr "&Vykonat pøíkaz ..."
 
 #: kfmgui.cpp:311
 msgid "Open &Terminal"
-msgstr "Otevøít &terminál"
+msgstr "Otevøít t&erminál"
 
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "Otevøít &URL ..."
+msgstr "Otevøít UR&L ..."
 
 #: kfmgui.cpp:316
 msgid "&Find"
@@ -80,7 +80,7 @@ msgstr "Ukázat &strom"
 
 #: kfmgui.cpp:363
 msgid "&Visual Schnauzer"
-msgstr "&Visual Schnauzer"
+msgstr "V&isual Schnauzer"
 
 #: kfmgui.cpp:365
 msgid "&HTML View"

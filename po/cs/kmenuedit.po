@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-18 09:26 MET DST\n"
+"PO-Revision-Date: 1998-06-20 17:31 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "Zmìnit jméno &menu"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
-msgstr "Znovu naèít Mine&typy"
+msgstr "Znovu naèít &vazby"
 
 #: kmenuedit.cpp:76
 msgid "by"

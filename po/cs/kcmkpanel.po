@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-03-12 12:00 MET\n"
+"PO-Revision-Date: 1998-06-20 13:35 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "&Panel"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr "P&racovní plochy"
+msgstr "Pra&covní plochy"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
@@ -107,7 +107,7 @@ msgstr "Ostatní"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr "Osobní polo¾ky &první"
+msgstr "&Osobní polo¾ky první"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
@@ -115,7 +115,7 @@ msgstr "&Skrývat panel"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Skrývat &pruh úloh"
+msgstr "S&krývat pruh úloh"
 
 #: options.cpp:81
 msgid "Clock"
