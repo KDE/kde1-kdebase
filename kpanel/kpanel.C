@@ -1426,13 +1426,13 @@ void kPanel::showPanelFromLeft( bool smooth){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-      for (int i = geom.height(); i>0;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
+      for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-      for (int i = geom.width(); i>0;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
+      for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
@@ -1485,13 +1485,13 @@ void kPanel::showPanelFromRight(bool smooth){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-      for (int i = geom.height(); i>0;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
+      for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
 	    move(geom.x(), geom.y()+i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-      for (int i = geom.width(); i>0;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
+      for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
 	    move(geom.x()+i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
