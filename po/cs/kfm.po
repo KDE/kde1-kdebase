@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-12-23 13:59 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -589,11 +589,11 @@ msgstr "Pøesunout do ko¹e"
 msgid "Open with"
 msgstr "Otevøi pomocí"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Pøesunout"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Link"
 
@@ -959,6 +959,20 @@ msgstr "Kontaktuji hostitele "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Pracuji ..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Pøesunout"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Link"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"

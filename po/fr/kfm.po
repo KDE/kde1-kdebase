@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -586,11 +586,11 @@ msgstr "Envoyer à la corbeille"
 msgid "Open with"
 msgstr "Ouvrir avec"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Déplacer"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Lier"
 
@@ -952,6 +952,20 @@ msgstr "Hôte contacté "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "En cours..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Déplacer vers le haut"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Lier"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -1631,9 +1645,6 @@ msgstr ""
 
 #~ msgid "Edit Bookmarks"
 #~ msgstr "Editer un signet"
-
-#~ msgid "Move up"
-#~ msgstr "Déplacer vers le haut"
 
 #~ msgid "Move down"
 #~ msgstr "Déplacer vers le bas"

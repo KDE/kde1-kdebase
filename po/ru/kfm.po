@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-12-25 03:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -594,11 +594,11 @@ msgstr "Отправить в Корзину"
 msgid "Open with"
 msgstr "Открыть с"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Переместить"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Ссылка"
 
@@ -965,6 +965,20 @@ msgstr "Связываюсь с сервером "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Работаю..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Переместить"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Ссылка"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs \n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-12-29 14:06+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -587,11 +587,11 @@ msgstr "Usuñ do ¶mietnika"
 msgid "Open with"
 msgstr "Otwórz z"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Przenie¶"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Odno¶nik"
 
@@ -957,6 +957,20 @@ msgstr "Po³±czenie z hostem "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Wykonuje ..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Przenie¶"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Odno¶nik"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -589,11 +589,11 @@ msgstr "Tirar a la papelera"
 msgid "Open with"
 msgstr "Abrir con"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Mover"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Enlazar"
 
@@ -957,6 +957,20 @@ msgstr "Contactando servidor "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Trabajando ..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Mover"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Enlazar"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"

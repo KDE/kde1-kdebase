@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -659,12 +659,12 @@ msgstr "Flytt til papirkurven"
 msgid "Open with"
 msgstr "Åpne med"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Flytt"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Lenk"
 
@@ -1098,6 +1098,21 @@ msgstr "Kontakter vert "
 #: kfmman.cpp:514
 msgid "Working ..."
 msgstr "Jobber ..."
+
+#: kfmman.cpp:1631
+msgid "Copy here"
+msgstr ""
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Flytt"
+
+# kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Lenk"
 
 # kiojob.cpp:120
 #: kiojob.cpp:134

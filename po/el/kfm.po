@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-07 01:18+0100\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -599,11 +599,11 @@ msgstr "Μετακίνηση στα Σκουπίδια"
 msgid "Open with"
 msgstr "¶νοιγμα με:"
 
-#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Μετακίνησε"
 
-#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Σύνδεσε"
 
@@ -975,6 +975,21 @@ msgstr "Επικοινωνώ με τον host %s"
 #, fuzzy
 msgid "Working ..."
 msgstr "Ανεβάζω το %s ..."
+
+#: kfmman.cpp:1631
+#, fuzzy
+msgid "Copy here"
+msgstr "Αντιγραφή"
+
+#: kfmman.cpp:1636
+#, fuzzy
+msgid "Move here"
+msgstr "Μετακίνησε"
+
+#: kfmman.cpp:1640
+#, fuzzy
+msgid "Link here"
+msgstr "Σύνδεσε"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -1543,10 +1558,6 @@ msgstr ""
 #~ msgstr "Προσθήκη στους σελιδοδείκτες"
 
 #, fuzzy
-#~ msgid "Move up"
-#~ msgstr "Μετακίνησε"
-
-#, fuzzy
 #~ msgid "Move down"
 #~ msgstr "Μετακίνησε"
 
@@ -1613,9 +1624,6 @@ msgstr ""
 
 #~ msgid "Reload"
 #~ msgstr "Ξαναφόρτωσε"
-
-#~ msgid "Copy"
-#~ msgstr "Αντιγραφή"
 
 #~ msgid "Paste"
 #~ msgstr "Επικόλληση"
