@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"POT-Creation-Date: 1997-12-15 20:12+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
- 
-#: error.C:28
+
+#: main.C:65
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
@@ -17,129 +17,171 @@ msgstr ""
 "kwm: erõsen úgy néz ki, hogy már fut egy másik window manager.\n"
 "Igy nem tud elindulni a kwm\n"
 
-#: error.C:42
+#: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: hiba inicializálás közben; megszakítom a futást\n"
 
-#: kwm.C:73
-msgid ""
-"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-"     No warranty. Please see the README's\n"
+#: main.C:367
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
-
-#: kwm.C:79
-#, c-format
-msgid "patch level %d"
-msgstr ""
-
-#: kwm.C:154
-msgid "usage: kwm [-version] [-exec prog] \n"
-msgstr "használat: kwm [-version] [-exec prog] \n"
-
-#: kwm.C:566
-msgid "Desktop"
-msgstr "Asztal"
-
-#: kwm.C:731
-msgid "kwm: exiting on signal\n"
-msgstr "kwm: kilépek egy signal miatt\n"
-
-#: main.C:371
-msgid "&Help on desktop"
-msgstr "&Segítség az asztalról"
-
-#: main.C:372
-msgid "&Execute command"
-msgstr "&Parancs futtatása"
-
-#: main.C:373
-msgid "&Display properties"
-msgstr "&Kijelzõ beállításai"
 
 #: main.C:374
-msgid "&Refresh desktop"
-msgstr "&Asztal frissítése"
+msgid "Usage: "
+msgstr ""
 
-#: main.C:375
-msgid "&Arrange icons"
-msgstr "&Ikonok rendezése"
-
-#: main.C:377
-msgid "&Lock screen"
-msgstr "Képernyõ &zárolása"
-
-#: main.C:378
-msgid "Lo&gout"
-msgstr "Ki&lépés"
-
-#: main.C:1093
-msgid "One"
-msgstr "Egyes"
-
-#: main.C:1095
-msgid "Two"
-msgstr "Kettes"
-
-#: main.C:1097
-msgid "Three"
-msgstr "Hármas"
-
-#: main.C:1099
-msgid "Four"
-msgstr "Négyes"
-
-#: main.C:1101
-msgid "Five"
-msgstr "Ötös"
-
-#: main.C:1103
-msgid "Six"
-msgstr "Hatos"
-
-#: main.C:1105
-msgid "Seven"
-msgstr "Hetes"
-
-#: main.C:1107
-msgid "Eight"
-msgstr "Nyolcas"
-
-#: main.C:1141
-msgid "(Un) Ma&ximize"
+#: main.C:385
+#, fuzzy
+msgid "&Maximize"
 msgstr "(Ne) ma&ximalizál"
 
-#: main.C:1142
+#: main.C:386
+#, fuzzy
+msgid "&Restore"
+msgstr "Mé&retez"
+
+#: main.C:387
 msgid "&Iconify"
 msgstr "&Ikonizál"
 
-#: main.C:1143
-msgid "&Move"
-msgstr "&Mozgat"
+#: main.C:388
+#, fuzzy
+msgid "&DeIconify"
+msgstr "&Ikonizál"
 
-#: main.C:1144
-msgid "&Resize"
-msgstr "Mé&retez"
-
-#: main.C:1145
-msgid "(Un) &Sticky"
+#: main.C:389
+#, fuzzy
+msgid "&Sticky"
 msgstr "(Ne) &Ragaszt"
 
-#: main.C:1146
-msgid "&To Desktop"
-msgstr "&Asztalra átrak"
+#: main.C:390
+#, fuzzy
+msgid "&UnSticky"
+msgstr "(Ne) &Ragaszt"
 
-#: main.C:1148
+#: main.C:391
+#, fuzzy
+msgid "Mo&ve"
+msgstr "&Mozgat"
+
+#: main.C:392
+#, fuzzy
+msgid "Resi&ze"
+msgstr "Mé&retez"
+
+#: main.C:393
 msgid "&Close"
 msgstr "&Bezár"
 
-#: main.C:1149
-msgid "&Destroy"
-msgstr "&Megsemmisít"
+#: main.C:394
+#, fuzzy
+msgid "&To desktop"
+msgstr "&Asztalra átrak"
 
-#: minicli.C:65
+#: main.C:396
+msgid "&Onto current desktop"
+msgstr ""
+
+#: main.C:446
+msgid "One"
+msgstr "Egyes"
+
+#: main.C:449
+msgid "Two"
+msgstr "Kettes"
+
+#: main.C:452
+msgid "Three"
+msgstr "Hármas"
+
+#: main.C:455
+msgid "Four"
+msgstr "Négyes"
+
+#: main.C:458
+msgid "Five"
+msgstr "Ötös"
+
+#: main.C:461
+msgid "Six"
+msgstr "Hatos"
+
+#: main.C:464
+msgid "Seven"
+msgstr "Hetes"
+
+#: main.C:467
+msgid "Eight"
+msgstr "Nyolcas"
+
+#: main.C:885
+msgid "*** No Tasks ***"
+msgstr ""
+
+#: minicli.C:115
 msgid "Command:"
 msgstr "Parancs:"
 
+#: logout.C:35 taskmgr.C:36
+#, fuzzy
+msgid "Logout"
+msgstr "Ki&lépés"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: taskmgr.C:35
+msgid "Switch to"
+msgstr ""
+
+#: taskmgr.C:49
+msgid "Current session"
+msgstr ""
+
+#~ msgid "usage: kwm [-version] [-exec prog] \n"
+#~ msgstr "használat: kwm [-version] [-exec prog] \n"
+
+#~ msgid "Desktop"
+#~ msgstr "Asztal"
+
+#~ msgid "kwm: exiting on signal\n"
+#~ msgstr "kwm: kilépek egy signal miatt\n"
+
+#~ msgid "&Help on desktop"
+#~ msgstr "&Segítség az asztalról"
+
+#~ msgid "&Execute command"
+#~ msgstr "&Parancs futtatása"
+
+#~ msgid "&Display properties"
+#~ msgstr "&Kijelzõ beállításai"
+
+#~ msgid "&Refresh desktop"
+#~ msgstr "&Asztal frissítése"
+
+#~ msgid "&Arrange icons"
+#~ msgstr "&Ikonok rendezése"
+
+#~ msgid "&Lock screen"
+#~ msgstr "Képernyõ &zárolása"
+
+#~ msgid "&Destroy"
+#~ msgstr "&Megsemmisít"

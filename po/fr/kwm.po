@@ -1,55 +1,21 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"Content-Type: text/plain; charset=\n"
 "Date: 1997-11-16 13:40:09+0100\n"
 "From: didier Belot <dib@avo.fr>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
-"Files: changer.C client.C drag.C logout.C main.C manager.C minicli.C taskmgr.C kURLcompletion.cpp client.h kURLcompletion.h logout.h main.h manager.h minicli.h options.h taskmgr.h version.h\n"
-
-#: logout.C:35 taskmgr.C:36
-msgid "Logout"
-msgstr "Quitter KDE"
-
-#: logout.C:36 taskmgr.C:37
-msgid "Cancel"
-msgstr "Annuler"
-
-#: logout.C:45
-msgid "Session prepared for logout"
-msgstr "Session préparée pour quitter"
-
-#: logout.C:51
-msgid ""
-"The following applications contain unsaved data which\n"
-"will be lost in your next session."
-msgstr ""
-"Les applications suivantes contiennent des données non enregistrées\n"
-"qui seront perdues lors de votre prochaine session."
-
-#: logout.C:62
-msgid ""
-"The following applications cannot be restored in your next session,\n"
-"only restarted. Make sure they do not contain important unsaved data."
-msgstr ""
-"Les applications suivantes ne seront pas restaurées lors de votre prochaine\n"
-"session, seulement relancées. Assurez-vous qu'elles ne contiennent pas de\n"
-"données importantes non enregistrées."
-
-#: logout.C:73
-msgid ""
-"The following applications are not X11-aware and though cannot be restored\n"
-"in your next session. Make sure they do not contain important unsaved data."
-msgstr ""
-"Les applications suivantes ne sont pas conforme à X11 et ne pourront donc\n"
-"être restaurées lors de votre prochaine session. Assurez-vous qu'elles ne\n"
-"contiennent pas de données importantes non enregistrées."
-
+"Files: changer.C client.C drag.C logout.C main.C manager.C minicli.C "
+"taskmgr.C kURLcompletion.cpp client.h kURLcompletion.h logout.h main.h "
+"manager.h minicli.h options.h taskmgr.h version.h\n"
 
 #: main.C:65
-msgid "kwm: it looks like there's already a window manager running.  kwm not started\n"
-msgstr "kwm: un autre gestionnaire de fenêtres semble être en fonction.\n"
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: un autre gestionnaire de fenêtres semble être en fonction.\n"
 "kwm n'as pas été lancé\n"
-
 
 #: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
@@ -139,13 +105,47 @@ msgstr "Sept"
 msgid "Eight"
 msgstr "Huit"
 
-#: main.C:872
+#: main.C:885
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Commande: "
+
+#: logout.C:35 taskmgr.C:36
+msgid "Logout"
+msgstr "Quitter KDE"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr "Session préparée pour quitter"
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Les applications suivantes contiennent des données non enregistrées\n"
+"qui seront perdues lors de votre prochaine session."
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Les applications suivantes ne seront pas restaurées lors de votre prochaine\n"
+"session, seulement relancées. Assurez-vous qu'elles ne contiennent pas de\n"
+"données importantes non enregistrées."
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Les applications suivantes ne sont pas conforme à X11 et ne pourront donc\n"
+"être restaurées lors de votre prochaine session. Assurez-vous qu'elles ne\n"
+"contiennent pas de données importantes non enregistrées."
 
 #: taskmgr.C:35
 msgid "Switch to"
@@ -154,3 +154,6 @@ msgstr "Changer pour"
 #: taskmgr.C:49
 msgid "Current session"
 msgstr "Session actuelle"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"

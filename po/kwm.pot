@@ -1,62 +1,78 @@
-#: main.C:64
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-15 20:12+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:65
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 
-#: main.C:78
+#: main.C:79
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr ""
 
-#: main.C:369
+#: main.C:367
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:376
+#: main.C:374
 msgid "Usage: "
 msgstr ""
 
-#: main.C:387
+#: main.C:385
 msgid "&Maximize"
 msgstr ""
 
-#: main.C:388
+#: main.C:386
 msgid "&Restore"
 msgstr ""
 
-#: main.C:389
+#: main.C:387
 msgid "&Iconify"
 msgstr ""
 
-#: main.C:390
+#: main.C:388
 msgid "&DeIconify"
 msgstr ""
 
-#: main.C:391
+#: main.C:389
 msgid "&Sticky"
 msgstr ""
 
-#: main.C:392
+#: main.C:390
 msgid "&UnSticky"
 msgstr ""
 
-#: main.C:393
+#: main.C:391
 msgid "Mo&ve"
 msgstr ""
 
-#: main.C:394
+#: main.C:392
 msgid "Resi&ze"
 msgstr ""
 
-#: main.C:395
+#: main.C:393
 msgid "&Close"
 msgstr ""
 
-#: main.C:396
+#: main.C:394
 msgid "&To desktop"
 msgstr ""
 
-#: main.C:398
+#: main.C:396
 msgid "&Onto current desktop"
 msgstr ""
 
@@ -92,15 +108,15 @@ msgstr ""
 msgid "Eight"
 msgstr ""
 
-#: main.C:852
+#: main.C:885
 msgid "*** No Tasks ***"
 msgstr ""
 
-#: minicli.C:56
+#: minicli.C:115
 msgid "Command:"
 msgstr ""
 
-#: logout.C:35 task.C:36
+#: logout.C:35 taskmgr.C:36
 msgid "Logout"
 msgstr ""
 
@@ -126,10 +142,10 @@ msgid ""
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 
-#: task.C:35
+#: taskmgr.C:35
 msgid "Switch to"
 msgstr ""
 
-#: task.C:49
+#: taskmgr.C:49
 msgid "Current session"
 msgstr ""
