@@ -6,5 +6,7 @@ MiniIcon=fonts.xpm
 Type=Application
 DocPath=kcontrol/kcmdisplay/kdisplay-6.html
 Comment=Font settings
+Comment[pt_BR]=Configuração das fontes
 Name=Fonts
+Name[pt_BR]=Fontes
 Init=kcmdisplay -init

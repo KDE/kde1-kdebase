@@ -15,6 +15,7 @@ Type=Application
 Terminal=0
 Comment=WordPerfect Word Processor
 Comment[cs]=TextovЩ procesor WordPerfect
+Comment[fr]=Traitement de texte WordPerfect
 Comment[no]=Tekstbehandleren Word Perfect
 Comment[pt_BR]=Processador de textos WordPerfect
 Comment[ru]=Текстовый процессор WordPerfect
