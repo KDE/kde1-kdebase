@@ -113,7 +113,7 @@ msgstr "Kansio"
 #: krootwm.C:399
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
+msgstr "VIRHE: Pohjaa '%s' ei ole olemassa"
 
 #: krootwm.C:854
 msgid "Could not create folder"

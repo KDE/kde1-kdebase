@@ -883,5 +883,3 @@ msgstr ""
 "\n"
 "Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
-#~ msgid "Ok"
-#~ msgstr "Ok"

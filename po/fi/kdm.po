@@ -74,8 +74,3 @@ msgstr "Varoitus: tunnuksesi vanhentuu %s"
 msgid "Home directory not available"
 msgstr "Kotihakemistoa ei löydy"
 
-#~ msgid "Exit kdm"
-#~ msgstr "Poistu kdm:stä"
-
-#~ msgid "bah"
-#~ msgstr "hah"

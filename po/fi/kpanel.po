@@ -197,8 +197,3 @@ msgstr "Asetukset..."
 msgid "Customize Disk Navigator"
 msgstr "Aseta Levyselainta"
 
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Mihin haluat t‰n‰‰n menn‰?"
-
-#~ msgid "No comment available"
-#~ msgstr "Tietoa ei ole saatavilla"

@@ -56,7 +56,7 @@ msgstr ""
 
 #: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
-msgstr "KMenueditori"
+msgstr "Valikkomuokkain"
 
 #: main.cpp:80
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 " Select Ok to exit KMenuedit."
 msgstr ""
 "En pysty luomaan hakemistoa henkilökohtaiselle valikolle.\n"
-" Valitse Ok poistuaksesi KMenueditistä."
+" Valitse Ok poistuaksesi Valikkomuokkaimesta."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -257,7 +257,7 @@ msgstr "Vaihda valikkonimiä"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Vaihda kpanelissa näytettyjen valikkojen nimiä"
+msgstr "Vaihda panelissa näytettyjen valikkojen nimiä"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

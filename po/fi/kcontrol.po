@@ -24,7 +24,7 @@ msgstr "KDE:n ohjauskeskus"
 
 #: toplevel.cpp:86
 msgid "&Swallow modules"
-msgstr "&Imaise moduli"
+msgstr "&Nielaise modulit"
 
 #: toplevel.cpp:89
 msgid ""
@@ -45,9 +45,8 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Versio: "
+msgstr "KDE:n versio: "
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -73,5 +72,3 @@ msgstr "Versio: "
 msgid "Machine: "
 msgstr "Tietokone: "
 
-#~ msgid "System:"
-#~ msgstr "Järjestelmä:"

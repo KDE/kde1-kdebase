@@ -229,6 +229,8 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"L‰het‰ virheet ja toiveet osoitteeseen http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
@@ -308,7 +310,7 @@ msgstr "&Lis‰‰ osoitekirjaan"
 
 #: kfmgui.cpp:1119 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 msgid "&New"
-msgstr "&Uusi "
+msgstr "&Uusi"
 
 #: kfmgui.cpp:1192
 msgid "&Up"
@@ -338,7 +340,7 @@ msgstr "Avaa sijainti:"
 
 #: kfmgui.cpp:1444
 msgid "KFM Confirm"
-msgstr "KFM Varmista"
+msgstr "KFM Varmistus"
 
 #: kfmgui.cpp:1445
 msgid ""
@@ -518,7 +520,7 @@ msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
-"K‰sittely on mahdollista vain *.kdelnk tiedostoille\n"
+"*.kdelnk tiedostojen k‰sittely on mahdollista vain\n"
 "paikallisella levyll‰"
 
 #: kbind.cpp:1675
@@ -1003,12 +1005,12 @@ msgid " ERROR: Could not write to %s"
 msgstr "VIRHE: Kirjoittaminen kohteeseen %s ep‰onnistui."
 
 #: kiojob.cpp:572 kiojob.cpp:895
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"En voi luoda symbolista linkki‰ kohteeseen\n"
+"En voi luoda symbolista linkki‰\n"
 "%s"
 
 #: kiojob.cpp:590 kiojob.cpp:925 kiojob.cpp:1365
@@ -1032,29 +1034,33 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Erikoistiedostoa ei kopioida\n"
+"%s"
 
 #: kiojob.cpp:668
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d:t‰ erikoistiedostoa ei kopioida."
 
 #: kiojob.cpp:673
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Rekursiivinen kopiointi tiedostosta aliprotokollalla\n"
+"(esimerkiksi, tar-tiedostot)"
 
 #: kiojob.cpp:678
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Rekursiivinen kopiointi et‰osoitteesta"
 
 #: kiojob.cpp:908
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"En voi luoda symbolista linkki‰ kohteeseen\n"
+"En voi poistaa symbolista linkki‰\n"
 "%s"
 
 #: kiojob.cpp:956
@@ -1085,11 +1091,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Erikoistiedostoa ei siirret‰\n"
+"%s"
 
 #: kiojob.cpp:1078
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d:t‰ erikoistiedostoa ei siirret‰."
 
 #: kiojob.cpp:1342 kiojob.cpp:1422
 #, c-format
@@ -1185,16 +1193,16 @@ msgstr ""
 "Mahdollisesti v‰‰r‰ salasana."
 
 #: kiojob.cpp:1389
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
-"Tar-ohjelma ilmoitti virheen tiedostolle\n"
+"Tar-ohjelma ilmoitti virheen\n"
 "%s"
 
 #: kiojob.cpp:1392
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1204,7 +1212,7 @@ msgstr ""
 
 #: kiojob.cpp:1398
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Toimenpide teknisesti mahdoton"
 
 #: kiojob.cpp:1401 kiojob.cpp:1414
 #, c-format
@@ -1216,7 +1224,7 @@ msgstr ""
 "ei ole olemassa"
 
 #: kiojob.cpp:1404
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1224,7 +1232,7 @@ msgid ""
 msgstr ""
 "En voinut kirjoittaa\n"
 "%s\n"
-"Ehk‰ sinulla ei ole oikeuksia t‰h‰n"
+"Ehk‰ levy on t‰ynn‰"
 
 #: kiojob.cpp:1455
 #, c-format
@@ -1527,12 +1535,3 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URL ....]\n"
-
-#~ msgid "Unknown binding"
-#~ msgstr "Tuntematon sidos"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "En tied‰ mit‰ tehd‰"
-
-#~ msgid "Copy"
-#~ msgstr "Kopioi"

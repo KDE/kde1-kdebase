@@ -133,7 +133,7 @@ msgstr "Lopeta"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Istunto valmisteltu poistumiseen"
+msgstr "Istunto valmisteltu lopetettavaksi"
 
 #: logout.C:52
 msgid ""

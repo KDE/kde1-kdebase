@@ -215,5 +215,3 @@ msgstr "Alku"
 msgid "End"
 msgstr "Loppu"
 
-#~ msgid "KDE lite"
-#~ msgstr "KDE pieni"

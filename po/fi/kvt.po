@@ -138,7 +138,6 @@ msgid "Save &Options"
 msgstr "&Tallenna asetukset"
 
 #: main.C:688
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -155,6 +154,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Pääte-emulaatio KDE Desktop -ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan."
@@ -181,7 +181,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "Uudet väriasetukset astuvat voimaan\n"
-"heti, kun näppäimistö vapautetaan."
+"heti kun näppäimistö vapautetaan."
 
 #: main.C:1474
 msgid ""
@@ -204,8 +204,7 @@ msgstr "Sallitut komentorivioptiot ovat:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <komento> <arg> ...    suorita komento argumenteilla - pitää olla "
-"viimeinen\n"
+"-e <komento> <arg> ...    suorita komento argumenteilla - oltava viimeinen\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
@@ -213,7 +212,7 @@ msgstr "-display <nimi>           määrittele näytön nimi (palvelin)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <muoto>      aloitusmuoto ikkunalle\n"
+msgstr "-vt_geometry <muoto>      aloitusgeometria ikkunalle\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
@@ -233,7 +232,7 @@ msgstr "-vt_font <kirjasinnimi>   normaalikirjasin\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             poista Qt:n fonttivirheen kierto\n"
+msgstr "-no_font_hack             poista Qt:n fonttivirheen korjaus\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -257,7 +256,7 @@ msgid ""
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
 "-T <teksti>               ikkunan otsikkoteksti \n"
-"                          (Vanha. Käytä -caption:ia)\n"
+"                          (Poistuva. Käytä -caption:ia)\n"
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"

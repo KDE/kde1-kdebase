@@ -127,7 +127,7 @@ msgstr "Terminaaliemulaattori"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr ""
+msgstr "Editori"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -171,7 +171,7 @@ msgstr "Palvelimella:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "kirjaudu sis‰‰n:"
+msgstr "kirjaudu nimell‰:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"

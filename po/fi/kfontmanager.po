@@ -87,7 +87,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts -tiedosto on olemassa\n"
 "mutta siihen ei voida kirjoittaa.\n"
-"En saanut talletettua KDE kirjasinlistaa."
+"En saanut talletettua KDE:n kirjasinlistaa."
 
 #: kfontlist.cpp:62
 msgid ""
@@ -173,5 +173,3 @@ msgstr "Paksunnettu"
 msgid "Normal"
 msgstr "Normaali"
 
-#~ msgid "The KDE Font Manager Example String"
-#~ msgstr "KDE:n Kirjasinselaimen esimerkkiteksti"

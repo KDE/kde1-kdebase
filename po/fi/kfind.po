@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
-"Last-TraTnslator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -316,7 +316,7 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Sinulla ei ole oikeutta\n"
+"Sinulla ei ole oikeuksia\n"
 " poistaa tätä tiedostoa."
 
 #: kfwin.cpp:322
@@ -332,7 +332,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Sinulla ei ole oikeutta\n"
+"Sinulla ei ole oikeuksia\n"
 "poistaa tätä hakemistoa."
 
 #: kfwin.cpp:345

@@ -24,11 +24,11 @@ msgstr "Avaa URL"
 
 #: helpwin.cpp:459 info.cpp:321
 msgid "Cannot open: "
-msgstr "Ei voi avata:"
+msgstr "Ei voitu avata:"
 
 #: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
-msgstr "Oops!"
+msgstr "Hups!"
 
 #: helpwin.cpp:468
 msgid "Unknown format: "
@@ -363,5 +363,3 @@ msgstr "Eroittele isot ja pienet"
 msgid "&Find"
 msgstr "&Etsi"
 
-#~ msgid "Open UR&L..."
-#~ msgstr "Avaa UR&L..."

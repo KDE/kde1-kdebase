@@ -123,7 +123,7 @@ msgstr "Työpöytien nimet"
 
 #: backgnd.cpp:1384
 msgid "File error"
-msgstr "tiedostovirhe"
+msgstr "Tiedostovirhe"
 
 #: backgnd.cpp:1385
 msgid "Can't load image file"
