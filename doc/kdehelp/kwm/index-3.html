@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>The K Window Manager Handbook: Configuration</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="KDE, window manager">
-<META NAME="description" CONTENT="KDE Window manager">
+<META NAME="keywords" CONTENT="KDE, Linux, QT, kwm, Window Manager">
+<META NAME="description" CONTENT="The K Window Manager Handbook, Documentation for kwm 0.11.13">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -39,6 +39,10 @@ the options in the <CODE>kwmrc</CODE> file, located in ~/.kde/share/config.
 <A HREF="#confSession">Session</A></LI>
 <LI>
 <A HREF="#confDesktop">Desktop</A></LI>
+<LI>
+<A HREF="#confDecoration">Decoration</A></LI>
+<LI>
+<A HREF="#confFocus">Focus</A></LI>
 </UL>
 <P>
 <H4><A NAME="confButtons"></A> [Buttons]</H4>
@@ -56,6 +60,11 @@ right-hand side.
 
 <P>This section defines a number of miscellaneous configuration items:
 <UL>
+<LI><B>AltTabStyle=<CODE>KDE|CDE</CODE> (default is <EM>KDE</EM>)</B> <BR>
+CDE style AltTab-Feature to be usable with the classic
+focus policies. The CDE style is default with the classic
+focus policies, since KDE style does not make much sense under
+these circumstances. For all other focus policies you may choose the style.</LI>
 <LI><B>AutoRaise=<EM>value</EM> (in milliseconds)</B><BR> 
 If <CODE>FocusPolicy</CODE> is <CODE>FocusFollowMouse</CODE>, this item determines the
 delay between the time a window gains focus when the mouse enters it
@@ -92,16 +101,18 @@ If the <CODE>ElectricBorder</CODE> option is <CODE>on</CODE>, turn this
 desktop changes.
 <P>
 </LI>
-<LI><B>ElectricBorderNumberOfPushes=<EM>value</EM></B> (default is
-"<B><EM>5 pushes</EM></B>") <BR>
+<LI><B>ElectricBorderNumberOfPushes=<EM>value</EM> (default is
+<EM>5 pushes</EM></B>) <BR>
 The number of pushes within the time frame given by the <CODE>ElectricBorder</CODE> property
 to switch to another virtual desktop without dragging a window.
 <P>
 </LI>
-<LI><B>FocusPolicy=<CODE>ClickToFocus|FocusFollowMouse</CODE></B> <BR>
+<LI><B>FocusPolicy=<CODE>ClickToFocus|FocusFollowMouse|ClassicFocusFollowsMouse|ClassicSloppyFocus</CODE></B> <BR>
 <CODE>ClickToFocus</CODE> requires the user to click the mouse in a window to
 give the window focus. <CODE>FocusFollowMouse</CODE> always gives focus to the
-window under the mouse.
+window under the mouse. <CODE>ClassicFocusFollowsMouse</CODE> no window without the mouse
+gets the focus.  Kwm's focusFollowMouse used to put the focus to new windows
+or Alt-tab to allow better keyboard control.
 <P>
 </LI>
 <LI><B>MaximizeOnlyVertically=<CODE>off|on</CODE></B> <BR>
@@ -109,8 +120,9 @@ When <CODE>on</CODE>, this setting restricts the window maximize to the
 vertical direction only.
 <P>
 </LI>
-<LI><B>ResizeAnimation=<CODE>on|off</CODE></B> <BR> 
-When <CODE>on</CODE>, minimizing and maximizing windows involves graphical animation.
+<LI><B>ResizeAnimation=<CODE>1..10 (<EM>maximum speed</EM>)</CODE></B> <BR> 
+When <CODE>on</CODE>, minimizing and maximizing windows involves graphical animation. 
+(default is <EM>1</EM>)
 <P>
 </LI>
 <LI><B>RstartProtocol=<CODE>... (default is
@@ -233,6 +245,32 @@ Specifies the geometry for Desktop <EM>#</EM>; for example,<BR>
 <CODE>Desktop1Region=101+0+923+722</CODE>
 </LI>
 </UL>
+<P>
+<H4><A NAME="confDecoration"></A> [Decoration]</H4>
+
+<P>
+<UL>
+<LI><B>noDecorationTitles=,</B></LI>
+<LI><B>tinyDecorationTitles=,</B></LI>
+<LI><B>noDecorationClasses=,</B></LI>
+<LI><B>tinyDecorationClasses=,</B></LI>
+</UL>
+<P>
+<H4><A NAME="confFocus"></A> [Focus]</H4>
+
+<P>
+<UL>
+<LI><B>noFocusTitles=,</B></LI>
+<LI><B>noFocusClasses=,</B></LI>
+</UL>
+<BR>
+Each property allows you to specify a comma separated list
+of regular expressions.  A window whose title or class matches a
+specified expression will be decorated appropriately. <BR> 
+<EM>Note:</EM> These hints only affect NEW windows.  Do not forget
+to call <CODE>kwmcom <EM>configure</EM></CODE> or re-start <CODE>kwm</CODE>
+after you changed the kwmrc file.
+<P>
 <P>
 <P ALIGN="RIGHT">
 
