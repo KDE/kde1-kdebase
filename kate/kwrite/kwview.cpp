@@ -1054,7 +1054,7 @@ void KWrite::colDlg() {
 
 void KWrite::toggleVertical() {
   setConfig(configFlags ^ cfVerticalSelect);
-  emit statusMsg(i18n(configFlags & cfVerticalSelect ? "Vertical Selections On" : "Vertical Selections Off"));
+  emit statusMsg(configFlags & cfVerticalSelect ? i18n("Vertical Selections On") : ("Vertical Selections Off"));
 }
 
 void KWrite::toggleOverwrite() {
