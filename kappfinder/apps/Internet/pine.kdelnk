@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=pine
+TerminalOptions=-vt_size huge
+Icon=kmail.xpm
+Type=Application
+Name=Pine
+Comment=PINE is not ELM
+Comment[de]=PINE Mailprogramm
+Terminal=1

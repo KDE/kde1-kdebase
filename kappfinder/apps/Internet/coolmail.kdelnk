@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+SwallowExec=coolmail
+SwallowTitle=coolmail
+Name=Coolmail
+Comment=Coolmail
+Exec=coolmail
+Icon=mail.xpm
+TerminalOptions=
+Type=Application
+Terminal=0

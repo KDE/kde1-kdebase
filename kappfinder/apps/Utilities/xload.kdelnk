@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=xload
+SwallowExec=xload -nolabel -fg green -bg Black -hl red -update 3 -geometry 25x25
+SwallowTitle=xload
+Type=Application
+Name=X Load
+Comment=X load monitor
+Comment[de]=X Auslastungsanzeige
+Icon=xload.xpm
