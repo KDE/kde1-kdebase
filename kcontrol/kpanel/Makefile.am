@@ -3,9 +3,9 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 
 bin_PROGRAMS = kcmkpanel
 
-kcmkpanel_SOURCES = main.cpp panel.cpp desktops.cpp
-BUILT_SOURCED = panel.moc desktops.moc
-noinst_HEADERS = panel.h desktops.h
+kcmkpanel_SOURCES = main.cpp panel.cpp desktops.cpp options.cpp
+BUILT_SOURCED = panel.moc desktops.moc options.moc
+noinst_HEADERS = panel.h desktops.h options.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
@@ -19,4 +19,8 @@ panel.moc: panel.h
 desktops.cpp:desktops.moc
 desktops.moc: desktops.h
 	$(MOC) desktops.h -o desktops.moc
+
+options.cpp:options.moc
+options.moc: options.h
+	$(MOC) options.h -o options.moc
 

@@ -1,3 +1,7 @@
+Sun Feb  8 22:56:17 1998  Stephan Kulow  <coolo@kde.org>
+
+	* options.cpp: added an extra page to contain the misc options
+
 Fri Jan 16 22:48:33 1998  Stephan Kulow  <coolo@kde.org>
 
 	* desktops.cpp: somehow my kpanel restart magic didn't work

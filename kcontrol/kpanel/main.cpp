@@ -24,6 +24,7 @@
 #include <kcontrol.h>
 #include "panel.h"
 #include "desktops.h"
+#include "options.h"
 #include <ksimpleconfig.h>
 
 KConfigBase *config;
@@ -41,6 +42,7 @@ private:
 
     KPanelConfig *panel;
     KDesktopsConfig *desktops;
+    KOptionsConfig *options;
 };
 
 
@@ -48,21 +50,24 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 				       const char *name)
     : KControlApplication(argc, argv, name)
 {
-  panel = 0; desktops = 0;
+  panel = 0; desktops = 0; options = 0;
 
   if (runGUI())
     {
 	if (!pages || pages->contains("panel"))
 	    addPage(panel = new KPanelConfig(dialog, "panel"), 
 		    i18n("&Panel"), "panel.html");
+	if (!pages || pages->contains("options"))
+	    addPage(options = new KOptionsConfig(dialog, "options"),
+		    i18n("&Options"), "options.html");
 	if (!pages || pages->contains("desktops"))
 	    addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
 		    i18n("&Desktops"), "desktops.html");
-	
-	if (panel || desktops)
+
+	if (panel || desktops || options)
 	    dialog->show();
 	else {
-	    fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,desktops}]\n"));
+	    fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,options,desktops}]\n"));
 	    justInit = true;
 	}
 	
@@ -77,7 +82,8 @@ void KKPanelApplication::apply()
 {
     if (panel)
 	panel->saveSettings();
-
+    if (options)
+	options->saveSettings();
     bool restarted = false;
     if (desktops) // desktop restarts kpanel by it's own
 	restarted = desktops->justSave();
