@@ -31,6 +31,7 @@ KDMAppearanceWidget::~KDMAppearanceWidget()
     delete logo_lined;
     delete greetstr_lined;
     delete guicombo;
+    delete langcombo;
   }
 }
 
@@ -123,11 +124,35 @@ void KDMAppearanceWidget::setupPage(QWidget *pw)
       group->adjustSize();
       group->setMinimumSize(group->size());
 
+      QGroupBox *group2 = new QGroupBox( 
+            klocale->translate("Language"), this );
+      CHECK_PTR(group2);
+      group2->setGeometry(5, group->height()+5, group->width(), 50);
+      label = new QLabel(klocale->translate("Language:"), group2);
+      label->move( 10, 20 );
+      langcombo = new KLanguageCombo(group2);
+      langcombo->adjustSize();
+      langcombo->move(logo_lined->x(), 20);
+
+      KSimpleConfig simple(CONFIGFILE);
+      simple.setGroup("Locale");
+      QString lang = simple.readEntry("Language", "C");
+      int index = lang.find(':');
+      if (index>0)
+        lang = lang.left(index);
+      langcombo->setLanguage(lang);
+
+      group2->adjustSize();
+      group2->setMinimumSize(group2->size());
+     
       QBoxLayout *main = new QVBoxLayout(this, 10);
       main->addWidget(group);
+      main->addWidget(group2);
       main->addStretch(1);
       main->activate();
 }
+
+
 
 void KDMAppearanceWidget::slotLogoPixTextChanged()
 {
@@ -264,6 +289,9 @@ void KDMAppearanceWidget::applySettings()
   // write GUI style
   c->writeEntry("GUIStyle", guistr, true);
 
+  // write language
+  c->setGroup("Locale");
+  c->writeEntry("Language", langcombo->getLanguage());
 
   delete c;
 }

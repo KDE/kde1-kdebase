@@ -27,6 +27,9 @@
 #include <kurl.h>
 #include <drag.h>
 
+#include "klangcombo.h"
+
+
 class KDMAppearanceWidget : public KConfigWidget
 {
 	Q_OBJECT
@@ -53,6 +56,7 @@ private:
 	QComboBox    *guicombo;
 	QString      greetstr, logopath, logofile, guistr;
         bool         gui;
+        KLanguageCombo *langcombo;
 };
 
 #endif

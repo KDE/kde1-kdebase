@@ -4,13 +4,17 @@ SUBDIRS = doc pics
 
 bin_PROGRAMS = kdmconfig
 
-kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp kdm-users.cpp kdm-sess.cpp
+kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp kdm-users.cpp kdm-sess.cpp klangcombo.cpp
 kdmconfig_LDADD = $(LDADD)
-BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc
+BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc klangcombo.moc
 
 kdm-appear.cpp: kdm-appear.moc
 kdm-appear.moc: kdm-appear.h
 	$(MOC) kdm-appear.h -o kdm-appear.moc
+
+klangcombo.cpp: klangcombo.moc
+klangcombo.moc: klangcombo.h
+	$(MOC) klangcombo.h -o klangcombo.moc
 
 kdm-font.cpp: kdm-font.moc
 kdm-font.moc: kdm-font.h
