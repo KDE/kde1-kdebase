@@ -1,6 +1,6 @@
 
-data_DATA = AtlasGreen.kcsrc Autumn.kcsrc BeOS.kcsrc BlueSlate.kcsrc \
+data_DATA = AtlasGreen.kcsrc BeOS.kcsrc BlueSlate.kcsrc \
 	CDE.kcsrc DesertRed.kcsrc DigitalCDE.kcsrc PaleGray.kcsrc \
-	SolarisCDE.kcsrc Storm.kcsrc Windows95.kcsrc
+	Pumpkin.kscrc SolarisCDE.kcsrc Storm.kcsrc Windows95.kcsrc
 
 datadir = $(kde_datadir)/kdisplay/color-schemes
