@@ -160,11 +160,11 @@ void KAdvancedConfig::setCtrlTab(bool a) {
 }
 
 bool KAdvancedConfig::getTrAll() {
- return (trall->isChecked());
+ return (!trall->isChecked());
 }
 
 void KAdvancedConfig::setTrAll(bool a) {
-  trall->setChecked(a);
+  trall->setChecked(!a);
 }
 
 bool KAdvancedConfig::getB3Grab() {
