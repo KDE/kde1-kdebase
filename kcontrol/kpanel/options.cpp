@@ -171,7 +171,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     t_lay->addWidget(p_large_label,3,5);
     //CT
 
-    panel_delay_slider = new KSlider(10, 10000, 1000, 6000,
+    panel_delay_slider = new KSlider(0, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     panel_delay_slider->setSteps(1000,1000);
     //CT 19Dec1998 using layouts
@@ -273,7 +273,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     t_lay->addWidget(t_large_label,3,5);
     //CT
 
-    tbar_delay_slider = new KSlider(10, 10000, 1000, 6000,
+    tbar_delay_slider = new KSlider(0, 10000, 1000, 6000,
 			 KSlider::Horizontal, vis_group);
     tbar_delay_slider->setSteps(1000,1000);
     //CT 19Dec1998 using layouts
@@ -553,14 +553,18 @@ void KOptionsConfig::saveSettings() {
     config->writeEntry("FoldersFirst", folders_first->isChecked()?"on":"off");
     if (hide_panel->isChecked()) {
       config->writeEntry("AutoHide", "on");
-      config->writeEntry("AutoHideDelay",panel_delay_slider->value());
+      config->writeEntry("AutoHideDelay",
+			 panel_delay_slider->value()<10?10:
+			 panel_delay_slider->value());
       config->writeEntry("AutoHideSpeed",panel_speed_slider->value());
     }
     else config->writeEntry("AutoHide", "off");
 
     if (hide_taskbar->isChecked()) {
       config->writeEntry("AutoHideTaskbar", "on");
-      config->writeEntry("AutoHideTaskbarDelay",tbar_delay_slider->value());
+      config->writeEntry("AutoHideTaskbarDelay",
+			 tbar_delay_slider->value()<10?10:
+			 tbar_delay_slider->value());
       config->writeEntry("AutoHideTaskbarSpeed",tbar_speed_slider->value());
     }
     else config->writeEntry("AutoHideTaskbar", "off");
