@@ -460,9 +460,20 @@ test -n "$QTDIR" && qt_incdirs="$QTDIR/include $QTDIR $qt_incdirs"
 AC_FIND_FILE(qmovie.h, $qt_incdirs, qt_incdir)
 ac_qt_includes=$qt_incdir
 
-qt_libdirs="$ac_qt_libraries /usr/lib/qt/lib /usr/local/qt/lib /usr/lib/qt /usr/X11R6/lib /usr/lib $x_libraries $QTLIB"
+if test ! "$ac_qt_libraries" = "NO"; then
+  qt_libdirs="$ac_qt_libraries"
+fi
+
+qt_libdirs="$qt_libdirs /usr/lib/qt/lib /usr/X11R6/lib /usr/lib /usr/local/qt/lib /usr/lib/qt $x_libraries $QTLIB"
 test -n "$QTDIR" && qt_libdirs="$QTDIR/lib $QTDIR $qt_libdirs"
-AC_FIND_FILE(libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1 libqt.a libqt.sl, $qt_libdirs, qt_libdir)
+
+test=NONE
+qt_libdir=NONE
+for dir in $qt_libdirs; do
+  if test=`ls -1 $dir/libqt*`; then qt_libdir=$dir; break; else echo "tried $dir" >&AC_FD_CC ; fi
+done
+
+dnl AC_FIND_FILE(libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1 libqt.a libqt.sl, $qt_libdirs, qt_libdir)
 ac_qt_libraries=$qt_libdir
 
 ac_cxxflags_safe=$CXXFLAGS

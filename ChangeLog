@@ -1,5 +1,10 @@
 1998-04-20  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in: rewrote the qt checking test, since it
+	didn't work under FreeBSD, since it relied on the .so link.
+	The new version is a little bit buggy, but I need some testing
+	to make it perfect
+
 	* acinclude.m4.in: fixed the side effects of the PAM test 
 
 1998-04-18  Stephan Kulow  <coolo@kde.org>
