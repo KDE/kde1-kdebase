@@ -110,7 +110,7 @@ msgstr "Color del enlace ya accedido:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Subrayar enlaces"
 
 #: options.cpp:317
 msgid "KDE Help Options"

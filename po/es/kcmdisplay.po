@@ -316,8 +316,8 @@ msgid ""
 "system where the color scheme is stored."
 msgstr ""
 "Este esquema de colores no puede ser removido.\n"
-"Tal vez no tiene los derechos para alterar el archivo\n"
-"del sistema donde los esquemas de colores estan guardados."
+"Tal vez no tiene permiso para modificar el archivo\n"
+"del sistema donde los esquemas de colores están guardados."
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -429,7 +429,7 @@ msgstr "&Aplicar estilo a aplicaciones no-KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "Barra de &Menú arriba de la pantalla al estilo de MacOS"
 
 #: general.cpp:273
 msgid "Desktop fonts"

@@ -309,7 +309,7 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Usted no tiene los derechos\n"
+"Usted no tiene los permisos\n"
 " para borrar este archivo"
 
 #: kfwin.cpp:317
@@ -325,7 +325,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Usted no tiene los derechos\n"
+"Usted no tiene los permisos\n"
 " para borrar este directorio"
 
 #: kfwin.cpp:340

@@ -149,23 +149,20 @@ msgid "Others"
 msgstr "Otros"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Pe&rsonales primero"
+msgstr "Entradas del Menú Personal &Primero"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "F&olders primero"
+msgstr "Carpetas de Menú Primer&o"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Reloj muestra el tiempo en formato AM/PM"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "&Reloj muestra el tiempo en formato AM/PM"
+msgstr "Reloj muestra el tiempo en latidos de &Internet"
 
 #: disknav.cpp:38
 msgid "History"

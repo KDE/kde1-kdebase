@@ -117,7 +117,7 @@ msgstr "Referencia &técnica ..."
 
 #: main.C:346
 msgid "cd"
-msgstr ""
+msgstr "cd"
 
 #: main.C:359
 msgid "Sessions"
@@ -129,6 +129,8 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Fuente `%s' no encontrada.\n"
+"Lea README.linux.console para la ayuda."
 
 #: main.C:607
 #, c-format
@@ -159,13 +161,15 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s' terminó anormalmente."
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
+"\n"
+"Codigo de retorno = "
 
 #: main.C:928
 msgid "Welcome to the console"

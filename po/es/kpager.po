@@ -19,11 +19,11 @@ msgstr "(Des)Activar Barra de menú"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Mover a la derecha"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Mover a la izquierda"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -43,7 +43,7 @@ msgstr "&2 Filas"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Un Click cambia de Escritorio"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
@@ -104,7 +104,7 @@ msgstr "&Mostrar Barra de menú"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Un Click cambia de Escritorio"
 
 #: kpager.cpp:446
 msgid "&Maximize"

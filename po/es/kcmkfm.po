@@ -17,33 +17,34 @@ msgstr "&Color"
 
 #: main.cpp:65
 msgid "&Other"
-msgstr ""
+msgstr "&Otro"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:70
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr ""
+msgstr "&Agente de Usuario"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Iconos de Escritorio"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "modo de uso: kcmkfm [-init | {font,color}]\n"
+msgstr ""
+"modo de uso: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -51,172 +52,172 @@ msgstr "Configuración del KFM"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Pequeña"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Mediana"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Fuente Estandar"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Fuente Fija"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Mapa de Caracteres por defecto"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Usar mapa de caracteres del idioma"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Color de Fondo:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Color de Texto Normal:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Color de Enlace:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Color de Enlace Visitado:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Cambiar cursor sobre enlace."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Subrayar enlaces"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Permitir configuración por URL"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "&Vista de Arbol sigue navegación"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "No olvide guardar su configuración!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Usar proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Puerto:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "Proxy FTP:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Sin Proxy para:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Aceptar idiomas:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Aceptar conjunto de caracteres:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Asumir HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr ""
+msgstr "En servidor:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr ""
+msgstr "entrar como:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
-msgstr ""
+msgstr "&Añadir"
 
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr ""
+msgstr "Uniones conocidas:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "&Activar Cookies"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr ""
+msgstr "Política de aceptar por defecto"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Preguntar"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Configuración específica de dominio:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Cambiar política de aceptación de dominio"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Debe introducir un dominio primero !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Espacio Horizontal de la Red de Fondo:"
 
 #: rootopts.cpp:84
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Espacio Vertical de la Red de Fondo:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr ""
+msgstr "&Texto Transparente para los Iconos del Escritorio"
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Color del frente del icono:"
 
 #: rootopts.cpp:118
 msgid "Icon background color:"
-msgstr ""
+msgstr "Color del fondo del icono:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "&Mostrar Ficheros Ocultos en el Escritorio"

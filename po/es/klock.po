@@ -455,7 +455,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "La opción %s no está disponible en esta arquitectura."
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -463,15 +462,15 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the kcheckpass!"
 msgstr ""
-"Advertencia: ¡No podrá desbloquear la pantalla!\n"
+"Advertencia: ¡No podrá bloquear la pantalla!\n"
 "\n"
 "Este sistema utiliza contraseñas ocultas.\n"
 "Por favor consulte al administrador de su sistema.\n"
-"¡Dígale que necesita cambiar los derechos de los salvapantallas!"
+"¡Dígale que necesita cambiar los permisos de kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
-msgstr "Contraseñas ocultas"
+msgstr "Contraseñas Ocultas"
 
 #: main.cpp:472
 msgid ""

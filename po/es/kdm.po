@@ -12,7 +12,7 @@ msgstr "¿Finalizar o reiniciar?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Introduzca Password de Root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -24,7 +24,7 @@ msgstr "Finalizar y reiniciar"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Reiniciar Servidor X"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -44,7 +44,7 @@ msgstr "Tipo de sesión:"
 
 #: kgreeter.cpp:312
 msgid "Go!"
-msgstr "Iniciar"
+msgstr "Iniciar!"
 
 #: kgreeter.cpp:328
 msgid "Shutdown..."
@@ -60,7 +60,7 @@ msgstr "login_getcapstr() falló."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr "Su cuenta ha expirado."
+msgstr "Perdón -- Su cuenta ha expirado."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
@@ -69,7 +69,7 @@ msgstr "Atención: su cuenta expira el %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr "Su directorio no esta disponible"
+msgstr "Su directorio home no está disponible"
 
 #~ msgid "Exit kdm"
 #~ msgstr "Finalizar kdm"

@@ -38,7 +38,7 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"No tiene derechos de\n"
+"No tiene permisos de\n"
 "lectura/escritura sobre el archivo\n"
 "de configuración del KDM."
 

@@ -179,17 +179,14 @@ msgid "Save Settings for this &URL"
 msgstr "Guardar propiedades de esta &URL"
 
 #: kfmgui.cpp:391
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "&Configurar..."
+msgstr "&Configurar Gestor de Ficheros..."
 
 #: kfmgui.cpp:393
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "&Configurar..."
+msgstr "Configurar &Navegador..."
 
 #: kfmgui.cpp:429
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -212,7 +209,7 @@ msgstr ""
 "Soporte de proxy por Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Reportes de fallos y parches a David Faure\n"
+"Actualmente a cargo de : David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:442
@@ -268,9 +265,8 @@ msgid "KFM Error"
 msgstr "Error de KFM"
 
 #: kfmgui.cpp:560
-#, fuzzy
 msgid "Location:"
-msgstr "Abrir URL:"
+msgstr "Lugar:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1387
 msgid "Malformed URL\n"
@@ -389,7 +385,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 "Imposible guardar propiedades porque\n"
-"este directorio no tiene derechos de escritura ni marcador.\n"
+"este directorio no tiene permisos de escritura ni marcador.\n"
 "\n"
 " Ponga un marcador aqui primero o haga un kdelnk hacia aqui en el escritorio."
 
@@ -513,7 +509,7 @@ msgid ""
 "Could not access\n"
 "%s"
 msgstr ""
-"Imposible accesar\n"
+"Imposible acceder\n"
 "%s"
 
 #: kbind.cpp:1735
@@ -526,7 +522,7 @@ msgstr "El archivo de configuración no tiene una linea \"Type=...\" "
 
 #: kbind.cpp:1780 kbind.cpp:1943
 msgid "Could not access"
-msgstr "Imposible accesar"
+msgstr "Imposible acceder"
 
 #: kbind.cpp:1798
 msgid ""
@@ -567,6 +563,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Una nueva versión de KDE ha sido instalada.\n"
+"Los ficheros de Modelos pueden haber cambiado.\n"
+"\n"
+"¿ Desea instalar los nuevos ?"
 
 #: main.cpp:267
 msgid "Cd"
@@ -650,17 +650,17 @@ msgid "Last Modified"
 msgstr "Ultima modificación"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Imposible borrar directorio\n"
-"%s"
+"Imposible renombrar el fichero o directorio\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
-msgstr "Derechos de acceso"
+msgstr "Permisos de acceso"
 
 #: kfmprops.cpp:435
 msgid ""
@@ -755,7 +755,7 @@ msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Imposible cambiar derechos\n"
+"Imposible cambiar permisos\n"
 "Quizás acceso denegado."
 
 #: kfmprops.cpp:673 kfmprops.cpp:732
@@ -896,7 +896,7 @@ msgid ""
 msgstr ""
 "La URL\n"
 "%s\n"
-"es incorrecta"
+"está mal formada"
 
 #: kfmserver.cpp:306
 msgid ""
@@ -975,7 +975,7 @@ msgid ""
 "Malformed URL\n"
 "%s"
 msgstr ""
-"URL incorrecta\n"
+"URL mal formada\n"
 "%s"
 
 #: kiojob.cpp:254
@@ -997,7 +997,7 @@ msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr ""
-"Imposible crear enlace a\n"
+"Imposible crear enlace simbólico a\n"
 "%s"
 
 #: kiojob.cpp:384
@@ -1017,7 +1017,7 @@ msgstr ""
 #: kiojob.cpp:571 kiojob.cpp:1017
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "ERROR: Imposible accesar el directorio '%s'"
+msgstr "ERROR: Imposible acceder el directorio '%s'"
 
 #: kiojob.cpp:829
 #, c-format
@@ -1025,7 +1025,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Imposible accesar el directorio\n"
+"Imposible acceder al directorio\n"
 "%s"
 
 #: kiojob.cpp:870
@@ -1069,7 +1069,7 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
-"Imposible crear socket para\n"
+"Imposible crear Socket para\n"
 "%s"
 
 #: kiojob.cpp:1197 kiojob.cpp:1262
@@ -1078,7 +1078,7 @@ msgid ""
 "Unknown host in\n"
 "%s"
 msgstr ""
-"Servidor desconocido en\n"
+"Host desconocido en\n"
 "%s"
 
 #: kiojob.cpp:1200 kiojob.cpp:1266
@@ -1160,21 +1160,21 @@ msgstr ""
 "no existe"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar informó de un error\n"
+"Tar informó de un error fatal\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip informó de un error\n"
+"Gzip informó de un error fatal\n"
 "%s"
 
 #: kiojob.cpp:1295
@@ -1250,7 +1250,7 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
-" no es un directorio  * Alerta de seguridad *\n"
+" no es un directorio ! Alerta de seguridad !\n"
 "Por favor compruébelo.\n"
 
 #: htmlcache.cpp:368
@@ -1258,7 +1258,7 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
-" no es un directorio  * Alerta de seguridad *\n"
+" no es un directorio ! Alerta de seguridad !\n"
 "Compruébelo antes de limpiar el cache.\n"
 
 #: autostart.cpp:28
@@ -1275,7 +1275,7 @@ msgstr " no existe\n"
 
 #: kfmtree.cpp:411
 msgid "Add To Bookmarks"
-msgstr "Añadir a marcadores"
+msgstr "Añadir a Marcadores"
 
 #: kfmtree.cpp:590
 msgid "My Home"
@@ -1315,7 +1315,7 @@ msgstr "ya existe. Sobreescribir con"
 
 #: krenamewin.cpp:71
 msgid "Or rename to"
-msgstr "O cambiar nombre a"
+msgstr "O renombrar a"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"
@@ -1343,41 +1343,39 @@ msgstr "Di&stinguir mayúsculas"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Alerta Cookie!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Usted recivió un cookie del host:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "¿ Desea aceptar o rechazar este cookie ?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Aplicar globalmente"
+msgstr "Aplicar a "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "Es&te cookie sólo"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Todos los cookies de este &dominio"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Todos los &cookies"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Aceptar"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "S&eleccionar"
+msgstr "&Rechazar"
 
 #: popup.cpp:69
 #, c-format
@@ -1389,6 +1387,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"El fichero original ya no existe ! \n"
+"Use \"Releer uniones\" en el menú Ver para actualizar el menú"
 
 #: popup.cpp:114 popup.cpp:121
 msgid "New "
@@ -1433,7 +1433,7 @@ msgid ""
 "is malformed"
 msgstr ""
 "La URL %s\n"
-"es incorrecta"
+"está mal formada"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1457,7 +1457,7 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
-"Error sintáctico:\n"
+"Error de sintáxis:\n"
 "kfmexec comando [URLs ....]\n"
 
 #~ msgid ""

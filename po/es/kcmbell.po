@@ -19,7 +19,7 @@ msgstr "Preferencias del sonido de aviso"
 
 #: bell.cpp:65
 msgid "Volume"
-msgstr "Volúmen"
+msgstr "Volumen"
 
 #: bell.cpp:67
 msgid "Pitch"
@@ -35,11 +35,11 @@ msgstr "Duración"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milisegundos"
 
 #: bell.cpp:87
 msgid "Test"
-msgstr "&Probar"
+msgstr "Probar"
 
 #~ msgid "ms"
 #~ msgstr "ms"

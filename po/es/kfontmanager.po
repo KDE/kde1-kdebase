@@ -66,7 +66,7 @@ msgid ""
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
 "No se pudo crear:\n"
-" ~/.kde/config/kdefonts\n"
+" ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:297
 msgid ""
@@ -74,7 +74,7 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/config/kdefonts existe pero\n"
+"~/.kde/share/config/kdefonts existe pero\n"
 "no se puede escribir en él\n"
 "No se puede salvar la lista de fuentes del KDE."
 

@@ -115,19 +115,19 @@ msgstr "Pixmap"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Título activo tiene borde con sombra"
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
-msgstr "Pixmap activo"
+msgstr "Pixmap activo:"
 
 #: titlebar.cpp:1049
 msgid "Inactive pixmap:"
-msgstr "Pixmap inactivo"
+msgstr "Pixmap inactivo:"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Sin pixmap bajo texto"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
@@ -170,8 +170,8 @@ msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Hubo un error al guardar los pixmaps del título.\n"
-"Compruebe los derechos por favor."
+"Hubo un error al guardar los pixmaps de la barra de título.\n"
+"Compruebe los permisos por favor."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -259,9 +259,8 @@ msgid "Auto Raise"
 msgstr "Pasar al frente automático"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Hacia el frente"
+msgstr "Click Pasa al Frente"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -280,9 +279,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Mover puntero al centro después del cambio"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Espera para cambiar:"
+msgstr "Espera para cambiar de Escritorio:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -427,7 +425,7 @@ msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
-msgstr "Cachar el botón derecho del ratón"
+msgstr "Capturar el botón derecho del ratón"
 
 #: advanced.cpp:78
 msgid "Filters"

@@ -21,7 +21,7 @@ msgstr "modo de uso: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr ""
+msgstr "Configuración de Atajo de Teclado"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -33,7 +33,7 @@ msgstr "KDE por defecto"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "Esquema de teclado"
+msgstr "&Esquema de teclado"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
@@ -45,7 +45,7 @@ msgstr "&Guardar cambios"
 
 #: keyconfig.cpp:211
 msgid "Error removing scheme"
-msgstr "Error al remover esquema"
+msgstr "Error al eliminar esquema"
 
 #: keyconfig.cpp:212
 msgid ""
@@ -53,10 +53,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
+"Este esquema de teclado no pudo eliminarse.\n"
+"Quizás no tenga permisos para modificar el fichero\n"
+"donde el esquema se guarda."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr "Conflicto de nombramiento"
+msgstr "Conflicto de nombres"
 
 #: keyconfig.cpp:344
 msgid ""
@@ -64,6 +67,9 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
+"Por favor seleccione un nombre único para el nuevo\n"
+"esquema de teclado. El que ha escrito ya aparece\n"
+"en la lista de esquemas."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
@@ -77,14 +83,19 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Introduzca un nombre para el nuevo esquema de teclado\n"
+"que se añadirá a su lista personal.\n"
+"\n"
+"Las teclas en uso actualmente en la ventana\n"
+"serán copiadas a este esquema para empezar."  
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Gestor de Tareas"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Modo de Matar ventanas"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"

@@ -44,7 +44,7 @@ msgstr "Mostrar el panel"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Iconizar otras &ventanas"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -59,28 +59,24 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Navegar rápidamente a través del sistema de archivos"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
-msgstr "Añadir aplicación"
+msgstr "Añadir Aplicación"
 
 #: props.C:168
 msgid "Add an application or a submenu onto the panel"
 msgstr "Añadir aplicación o submenú al panel"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Navegador de disco"
+msgstr "Añadir Navegador de Disco"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Añadir una lista de ventanas al panel"
+msgstr "Añadir un menú de Navegador de Disco al panel"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
-msgstr "Añadir lista de ventanas"
+msgstr "Añadir Lista de Ventanas"
 
 #: props.C:181
 msgid "Add a windowlist menu onto the panel"
@@ -139,7 +135,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:908
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Navegador de disco"
 
