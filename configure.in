@@ -212,7 +212,7 @@ AC_OUTPUT(Makefile \
 	applnk/Settings/Makefile \
 	applnk/Settings/Input_Devices/Makefile \
  	applnk/Settings/Desktop/Makefile \
-	applnk/Settings/KWM/Makefile \
+	applnk/Settings/Windows/Makefile \
  	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Network/Makefile \
 	applnk/Settings/Information/Makefile \

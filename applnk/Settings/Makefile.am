@@ -1,4 +1,4 @@
-SUBDIRS = Input_Devices Desktop Sound KWM Network Information
+SUBDIRS = Input_Devices Desktop Sound Windows Network Information
 
 data_DATA = .directory
 
