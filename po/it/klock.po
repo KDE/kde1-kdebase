@@ -459,7 +459,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:422
-#,
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -472,7 +471,6 @@ msgstr ""
 "Questo sistema usa le shadow passwords.\n"
 "Contattate l'amministratore di sistema,\n"
 "e ditegli che necessitate del suid per kcheckpass!"
-
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -490,7 +488,6 @@ msgstr ""
 "si prega di usare invece klock .\n"
 "\n"
 
-
 #: main.cpp:580
 #, c-format
 msgid ""
@@ -501,7 +498,6 @@ msgstr ""
 "       [-corners xxxx] [-delay num] [-lock] [-alloe-root] [-nice num]\n"
 
 #: main.cpp:583
-#, 
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -782,7 +778,6 @@ msgid "About SlideScreen"
 msgstr "Info su SlideScreen"
 
 #: slidescreen.cpp:559
-#, 
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"

@@ -31,7 +31,6 @@ msgstr ""
 "Mappa tastiera \"%s\" non esiste.\n"
 "Salto questa mappa."
 
-
 #: kikbd.cpp:330
 msgid "Setup"
 msgstr "Impostazioni"
@@ -53,7 +52,6 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 
-
 #: kikbd.cpp:392
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
@@ -61,7 +59,6 @@ msgid ""
 msgstr ""
 "Impossibile rimuovere Caps Lock dai modificatori.\n"
 "Emulazione Caps Lock disabilitata"
-
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -202,7 +199,6 @@ msgid ""
 "Some settings may be incorrect."
 msgstr ""
 
-
 #: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "sconosciuto"
@@ -336,7 +332,6 @@ msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
 
-
 #: widgets.cpp:215
 msgid "Adding Keyboard"
 msgstr "Aggiunta Tastiera"
@@ -399,7 +394,8 @@ msgstr "&Emula Caps Lock"
 
 #: widgets.cpp:467
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr "Emula Caps Lock di XServer. Richiesto da alcune lingue per essere corrette"
+msgstr ""
+"Emula Caps Lock di XServer. Richiesto da alcune lingue per essere corrette"
 
 #: widgets.cpp:473
 msgid "&World Menu"
@@ -435,7 +431,8 @@ msgstr "Aspetto esteso. Ogni finestra ricorda la propria mappa di tastiera"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Aspetto seciale. Ogni classe di finestre ricorda la propria mappa di tastiera"
+msgstr ""
+"Aspetto seciale. Ogni classe di finestre ricorda la propria mappa di tastiera"
 
 #: widgets.cpp:551
 msgid "Button Colors"

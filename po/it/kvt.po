@@ -131,8 +131,8 @@ msgstr "Abilita &hotkeys"
 msgid "Save &Options"
 msgstr "Salva &Opzioni"
 
-#: main.C:686
 #
+#: main.C:686
 msgid ""
 "\n"
 "\n"

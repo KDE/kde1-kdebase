@@ -163,8 +163,8 @@ msgstr "Collegamento"
 msgid "Device"
 msgstr "Dispositivo"
 
-#: entrydialog.cpp:63
 #
+#: entrydialog.cpp:63
 msgid "Type:"
 msgstr "Tipo:"
 
@@ -173,7 +173,6 @@ msgid "File Name:"
 msgstr "Nome file:"
 
 #: entrydialog.cpp:82
-#,
 msgid "Name:"
 msgstr "Nome:"
 

@@ -47,6 +47,7 @@ msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
 "utilizzo: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+
 #: main.cpp:178
 msgid "KFM Configuration"
 msgstr "Configurazione KFM"
