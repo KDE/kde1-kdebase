@@ -640,7 +640,6 @@ void KPagerClient::paintEvent(QPaintEvent *)
 void KPagerClient::commandReceived(QString s)
 {
     if ((strcmp(s.data(),"kbgwm_change")==0)
-     || (strcmp(s.data(),"kbgwm_change_all")==0)
      || (strcmp(s.data(),"kbgwm_reconfigure")==0))
     {
 #ifdef KPAGERCLIENTDEBUG
