@@ -18,6 +18,8 @@ info.cpp: info.moc
 info.moc: info.h
 	$(MOC) info.h -o info.moc
 
+main.cpp: info.moc
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kcmmemory.xpm     $(kde_minidir)/kcmmemory.xpm
