@@ -2,13 +2,15 @@ all:
 	@echo "This Makefile is only for the CVS repository"
 	@echo "I will delete it before making the distribution"
 	@echo ""
+	cat acinclude.m4.in kdminclude.m4 > acinclude.m4
 	aclocal 
 	autoheader
 	automake
 	autoconf
 
 dist:
-	@aclocal; \
+	@cat acinclude.m4.in kdminclude.m4 > acinclude.m4 ;\
+	aclocal; \
 	autoheader; \
 	automake --foreign --include-deps; \
 	autoconf; \
@@ -16,5 +18,6 @@ dist:
 	for i in $$LIST; do \
 	 file2=`echo $$i | sed -e "s#\.po#\.gmo#"`; \
 	 msgfmt -o $$file2 $$i; \
-	done
+	done ;\
+	rm -f acinclude.m4.in kdminclude.m4
 
