@@ -114,7 +114,7 @@ public:
 
   // get a pointer to the Client object from the sizegrip
   Client* Manager::getClientFromSizegrip(Window w);
-    
+
   // returns the current client (the client which has the focus) or 0
   // if no client has the focus.
   Client* current();
@@ -259,7 +259,10 @@ public:
   // kwm's nifty kill feature (accessible with Ctrl-Alt-Escape)
   void killWindowAtPosition(int x, int y);
 
-  // returns the client with the specified label or 0 if there is no
+  // usefull helper function
+  Client* clientAtPosition(int x, int y);
+
+    // returns the client with the specified label or 0 if there is no
   // such client.
   Client* findClientByLabel(QString label);
 
@@ -413,7 +416,7 @@ private:
   Atom kde_sound_event;
   Atom kde_register_sound_event;
   Atom kde_unregister_sound_event;
-    
+
    Atom qt_sizegrip;
 
   // used to store the current desktop internally

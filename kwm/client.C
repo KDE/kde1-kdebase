@@ -419,7 +419,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
 		    ButtonPressMask, GrabModeSync, GrabModeAsync,
 		    None, bottom_right_cursor );
 
-    
+
     doButtonGrab();
     unmap_events = 0;
 }
@@ -1833,8 +1833,19 @@ void Client::maximize(int mode){
   maximized = true;
   geometry_restore = geometry;
   KWM::setGeometryRestore(window, geometry_restore);
+
   QRect maxRect = KWM::getWindowRegion(desktop);
 
+  {
+      // check for some floating windows (maybe a menubar?)
+      Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());
+      printf("check for maximize, have %p\n", c);
+      if (c && c->trans == window && c->getDecoration() == KWM::tinyDecoration) {
+	  printf("find stupid window!\n");
+	  maxRect.setTop(c->geometry.bottom());
+      }
+  }
+  
   switch (mode) {
   case 1:
     geometry.moveTopLeft(QPoint(geometry.x(), maxRect.y()));

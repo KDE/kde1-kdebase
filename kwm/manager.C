@@ -3262,6 +3262,18 @@ void Manager::killWindowAtPosition(int x, int y){
   }
 }
 
+// usefull helper function
+Client* Manager::clientAtPosition(int x, int y){
+  Client* c;
+  for (c = clients_sorted.last(); c; c = clients_sorted.prev()){
+    if (c->geometry.contains(QPoint(x, y))){
+      return c;
+    }
+  }
+  return 0;
+}
+
+
 // returns the client with the specified label or 0 if there is no
 // such client.
  Client* Manager::findClientByLabel(QString label){

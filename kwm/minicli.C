@@ -1,4 +1,4 @@
-// minicli 
+// minicli
 // Copyright (C) 1997 Matthias Ettrich
 
 #include <qmsgbox.h>
@@ -27,10 +27,9 @@ extern bool do_not_draw;
 QList <char> *history = 0;
 QListIterator <char> *it;
 
-void execute(const char* cmd){
-  char* shell = 0;
+void execute( const char* cmd){
   QString tmp;
-  
+
   // Torben
   // WWW Adress ?
   if ( strncmp( cmd, "www.", 4 ) == 0 ) {
@@ -82,16 +81,9 @@ void execute(const char* cmd){
       }
   }
   
-  if (!shell){
-    if ( ( shell = getenv("SHELL") ) && *shell ) // make sure SHELL is not empty
-      shell = qstrdup(getenv("SHELL"));
-    else
-      shell = "/bin/sh";
-  }
-  KProcess proc;
-  proc.setExecutable(shell);
-  proc << "-c" << cmd;
-  proc.start(KProcess::DontCare);
+  KShellProcess proc;
+  proc << cmd;
+  proc.start(KShellProcess::DontCare);
 }
 
 
@@ -132,15 +124,15 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
 }
 void Minicli::resizeEvent(QResizeEvent *){
   label->move(5, (height()-label->height())/2);
-  lineedit->setGeometry(10 + label->width(), 5, 
-			width()-15-label->width(), 
+  lineedit->setGeometry(10 + label->width(), 5,
+			width()-15-label->width(),
 			height()-10);
 }
 bool Minicli::eventFilter( QObject *ob, QEvent * e){
   if (e->type() == Event_MouseMove)
     return True;
   if (e->type() == Event_MouseButtonPress){
-    if (ob->isWidgetType() && 
+    if (ob->isWidgetType() &&
 	!rect().contains(
 			 mapFromGlobal(
 				       ((QWidget*)ob)->mapToGlobal(
@@ -217,7 +209,7 @@ void Minicli::cleanup(){
   do_not_draw = false;
   if (reactive){
     reactive->setactive(True);
-    XSetInputFocus (qt_xdisplay(), reactive->window, 
+    XSetInputFocus (qt_xdisplay(), reactive->window,
 		    RevertToPointerRoot, CurrentTime);
   }
   XSync(qt_xdisplay(), false);

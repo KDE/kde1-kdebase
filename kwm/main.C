@@ -1076,7 +1076,7 @@ void MyApp::readConfiguration(){
 
   for (i=0; i<6; i++){
     QString s = "Button?";
-    s[6] =  (char) ('A'+i); 
+    s[6] =  (char) ('A'+i);
     options.buttons[i] = getFunctionFromKey(config->readEntry(s));
     if (options.buttons[i] == UNDEFINED){
       config->writeEntry(s,default_buttons[i]);
