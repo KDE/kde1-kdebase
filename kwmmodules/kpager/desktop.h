@@ -79,13 +79,20 @@ private:
 
     /** Background related stuff **/
     QPixmap *bigBackgroundPixmap;
-    int backPixmapWidth; // These variabels contains the original size
+    int backPixmapWidth; // These variables contains the original size
     int backPixmapHeight; // of the background pixmap.
     
     QPixmap *backgroundPixmap;
     bool useBackgroundInfoFromKbgndwm;
     bool useWallpaper;
     bool useDir;
+
+    static QPixmap *commonbigBackgroundPixmap;
+    static int commonbackPixmapWidth;
+    static int commonbackPixmapHeight;
+//    static QPixmap *commonbackgroundPixmap;
+    bool useCommonDesktop;
+
     QColor color1;
     QColor color2;
     uint pattern[8];
@@ -110,11 +117,16 @@ private:
     
     void readBackgroundSettings(void);     // read kbgndwm settings
     void prepareBackground(void);          // fills the backgroundPixmap
-//    QPixmap *loadWallpaper(QString wallpaper);
+    void loadWallpaper(QString wallpaper); // Loads the specified wallpaper and prepare 
+						// all the variables
     void loadWallpaperBackground(QString wallpaper);
+						// Really loads the wallpaper
 
     void grabDesktop(void);
     void grabWindowContents(WindowProperties *wp);
+
+//    QPixmap *getBgPixmap(void);
+    QPixmap *getBigBgPixmap(void);
 
 protected:
     

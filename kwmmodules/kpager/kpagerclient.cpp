@@ -111,7 +111,7 @@ int KPagerClient::desktopContaining(Window w)
     int i=0;
     while ((d==-1)&&(i<MAXDESKTOPS))
     {
-        if (desktop[i]->contains(w)) d=i;
+        if ((desktop[i]!=0L)&&(desktop[i]->contains(w))) d=i;
         i++;
     }
     return d;
@@ -150,7 +150,7 @@ void KPagerClient::windowRemoved(Window w)
         }
     } else
     {
-        int dsk=KWM::desktop(w);
+        int dsk=desktopContaining(w);
         if (dsk>numberofDesktops) return; 
         desktop[dsk]->removeWindow(w);
     }
@@ -162,6 +162,7 @@ void KPagerClient::windowChanged(Window w)
     printf("window changed\n");
 #endif
 
+//    int dsk=desktopContaining(w);
     int dsk=KWM::desktop(w);
    
     if (dsk>numberofDesktops) return; 
@@ -243,7 +244,7 @@ void KPagerClient::windowRaised(Window w)
         }
     } else
     {
-        int dsk=KWM::desktop(w);
+        int dsk=desktopContaining(w);
         if (dsk>numberofDesktops) return; 
         desktop[dsk]->raiseWindow(w);
     }
@@ -262,7 +263,7 @@ void KPagerClient::windowLowered(Window w)
         }
     } else
     {
-        int dsk=KWM::desktop(w);
+        int dsk=desktopContaining(w);
         if (dsk>numberofDesktops) return; 
         desktop[dsk]->lowerWindow(w);
     }
@@ -274,7 +275,7 @@ void KPagerClient::windowActivated(Window w)
     printf("window activated\n");
 #endif
     int dsk=KWM::desktop(w);
-    if (dsk>numberofDesktops) return; 
+    if ((dsk>numberofDesktops)||(dsk==-1)) return; 
     desktop[dsk]->activateWindow(w);
 }
 
@@ -547,7 +548,7 @@ void KPagerClient::moveWindow(Window w,int dsk,int x,int y, int origdesk)
  // Next line moves the window to the active desktop. This is done because
 //  if not, kwm raises the window when it's in a semi changed state
 //  and doesn't work well with kpager.
-        if (activedesktop!=KWM::desktop(w)) KWM::moveToDesktop(w,activedesktop);
+//        if (activedesktop!=KWM::desktop(w)) KWM::moveToDesktop(w,activedesktop);
         KWM::setSticky(w,true);
     }
     else
@@ -650,9 +651,9 @@ void KPagerClient::commandReceived(QString s)
 {
     if (strcmp(s.data(),"kbgwm_change")==0)
     {
-#ifdef KPAGERCLIENTDEBUG
+//#ifdef KPAGERCLIENTDEBUG
 	printf("KBGWM_CHANGE\n");
-#endif
+//#endif
         for (int i=1;i<=numberofDesktops;i++)
         {
             if (desktop[i]!=0L) desktop[i]->reconfigure();
@@ -663,19 +664,19 @@ void KPagerClient::commandReceived(QString s)
     {
 	int dsk;
 	sscanf(s.data(),"kbgwm_change_%d",&dsk);
-#ifdef KPAGERCLIENTDEBUG
+//#ifdef KPAGERCLIENTDEBUG
 	printf("KBGWM_CHANGE_%d\n",dsk);
-#endif
+//#endif
 	dsk++;
 	if ((dsk>0)&&(dsk<=numberofDesktops)&&(desktop[dsk]!=0L)) 
 		desktop[dsk]->reconfigure();
-    };
 
+    }
 #ifdef KPAGERCLIENTDEBUG
     else
         printf("KPager: Command (%s) is not for me\n",s.data());
 #endif
-};
+}
 
 void KPagerClient::setDrawMode(int mode)
 {

@@ -77,8 +77,17 @@ Desktop::~Desktop()
     delete tmpScreen;
     delete desktopfont;
     
-    if (backgroundPixmap!=0L) delete backgroundPixmap;
-    if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
+    if (backgroundPixmap!=0L) 
+    {
+        delete backgroundPixmap;
+        backgroundPixmap=0L;
+    }
+
+    if (bigBackgroundPixmap!=0L) 
+    {
+        delete bigBackgroundPixmap;
+	bigBackgroundPixmap=0L;
+    }
 }
 
 void Desktop::setDesktopActived(bool status)
@@ -181,7 +190,7 @@ void Desktop::changeWindow(Window w)
     printf("[%d]Change window %ld\n",id,w);
 #endif
     WindowProperties *wpback=getWindowProperties(w);
-    if (wpback==NULL) return;
+    if (wpback==0L) return;
 /*    QRect tempgeom;
     QRect tempframegeom;
     bool isresizing=false;
@@ -413,6 +422,12 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
     
 }
 
+QPixmap *Desktop::getBigBgPixmap(void)
+{
+   if (useCommonDesktop) return Desktop::commonbigBackgroundPixmap;
+   return bigBackgroundPixmap;
+}
+
 void Desktop::paintEvent(QPaintEvent *)
 {
 #ifdef DESKTOPDEBUG
@@ -545,11 +560,8 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
     if (resizing)
     {
-//        printf("m\n");
 	WindowProperties *resizingWP=getWindowProperties(resizingWin);
         if (resizingWP==0L) {printf("Oops\n");resizing=false;return;};
-        //        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
-        //        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
         double ratiox=(double)width()/(double)screen_width;
         double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
         resizingWP->framegeometry.setWidth(
@@ -593,24 +605,28 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     QPoint dragpos;
     bool ok;
     WindowProperties *wp;
-    int i=0;
-    
-    if (hilitwin!=0) 
-    {
-//        if ((i=KWM::desktop(hilitwin))!=id)
-//	{
-	    if (KWM::isSticky(KWM::desktop(hilitwin))) 
-		{
-		    i=0;
-		    hilitwin=0;
-		    emit updateDesk(i);
-		};
-//	};
-    };
     
     wp=windowAtPosition(&e->pos(),&ok,&dragpos);
+    if (((wp!=0L)&&(wp->id==hilitwin))||((wp==0L)&&(hilitwin==0))) return;  
+		// if it's still over the same window then nothing changes
+    if (hilitwin!=0) 
+    {
+	int i;
+	if (KWM::isSticky(hilitwin)) 
+	{
+		hilitwin=0;
+		emit updateDesk(0);
+	};
+        if ((i=KWM::desktop(hilitwin))!=id)
+	{
+		hilitwin=0;
+		emit updateDesk(i);
+	};
+    };
+    
     if (wp==0L) 
     {
+	hilitwin=0;
         update();
         return;
     };
@@ -620,8 +636,6 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     update();
 //    if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
 //        KWM::activateInternal(wp->id);
-
-//    printf("%s\n",wp->name.data());
 
 }
 
@@ -789,10 +803,12 @@ void Desktop::readBackgroundSettings(void)
     if (configglobal.readBoolEntry("OneDesktopMode"))
     {
         sprintf(s,"/desktop%drc",configglobal.readNumEntry("DeskNum",0));
+	useCommonDesktop=true;
     }
     else
     {
         sprintf(s,"/desktop%drc",id-1);
+	useCommonDesktop=false;
     };
 
     KConfig config(KApplication::kde_configdir() + s,
@@ -814,7 +830,7 @@ void Desktop::readBackgroundSettings(void)
         wpMode = Tiled;
         useWallpaper = true;
         wallpaper = d.absPath() + "/" + list->at( randomid ); 	
-	loadWallpaperBackground(wallpaper);
+	loadWallpaper(wallpaper);
 	return;
     };
 
@@ -874,16 +890,47 @@ void Desktop::readBackgroundSettings(void)
     if ( useWallpaper )
     {
         wallpaper = config.readEntry( "Wallpaper", "" );
-        loadWallpaperBackground(wallpaper);
+        loadWallpaper(wallpaper);
 #ifdef DESKTOPDEBUG
         printf("[%d]Use wallpaper\n",id);
 #endif
     }
 };
 
+void Desktop::loadWallpaper(QString wallpaper)
+{
+    if (!useCommonDesktop)
+        loadWallpaperBackground(wallpaper);
+    else
+    {
+        if (commonbigBackgroundPixmap==0L)
+        {
+            loadWallpaperBackground(wallpaper);
+ 
+        // Let's move the pictures from standard places to common ones
+            Desktop::commonbigBackgroundPixmap=bigBackgroundPixmap;
+            bigBackgroundPixmap=0L;
+            Desktop::commonbackPixmapWidth=backPixmapWidth;
+            Desktop::commonbackPixmapHeight=backPixmapHeight;
+        }
+        else
+        {
+            backPixmapWidth=Desktop::commonbackPixmapWidth;
+            backPixmapHeight=Desktop::commonbackPixmapHeight;
+        }
+    }
+    QWMatrix matrix;
+    matrix.scale(width()/getBigBgPixmap()->width(),(height()-getHeaderHeight())/getBigBgPixmap()->height());
+    backgroundPixmap = new QPixmap(getBigBgPixmap()->xForm(matrix)); 
+    useBackgroundInfoFromKbgndwm=true;
+};
+
 
 void Desktop::loadWallpaperBackground(QString wallpaper)
 {
+#ifdef DESKTOPDEBUG
+    printf("Loading\n");
+#endif
     QString filename;
 
     if ( wallpaper[0] != '/' )
@@ -901,21 +948,22 @@ void Desktop::loadWallpaperBackground(QString wallpaper)
         delete wpPixmap;
         wpPixmap = 0;
     }
-//  return wpPixmap;
+
     QPixmap *wpPixmap2=(QPixmap *)wpPixmap;
-        if (wpPixmap2==NULL) printf("isNULL !!!\n");
-        backPixmapWidth=wpPixmap2->width();
-        backPixmapHeight=wpPixmap2->height();
-        if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
-        if (backgroundPixmap!=0L) delete backgroundPixmap;
-        QWMatrix matrix;
-        matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
-        bigBackgroundPixmap = new QPixmap(wpPixmap2->xForm(matrix));
-//        delete qxpm;
-        matrix.scale(width()/bigBackgroundPixmap->width(),(height()-getHeaderHeight())/bigBackgroundPixmap->height());
-        backgroundPixmap = new QPixmap(bigBackgroundPixmap->xForm(matrix));
-        useBackgroundInfoFromKbgndwm=true;
-	delete wpPixmap;
+
+    if (wpPixmap2==NULL) return;
+
+    backPixmapWidth=wpPixmap2->width();
+    backPixmapHeight=wpPixmap2->height();
+    if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
+    if (backgroundPixmap!=0L) delete backgroundPixmap;
+    QWMatrix matrix;
+    matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
+    bigBackgroundPixmap = new QPixmap(wpPixmap2->xForm(matrix));
+#ifdef DESKTOPDEBUG
+    printf("Loaded\n");
+#endif
+    delete wpPixmap;
 }
 
 void Desktop::prepareBackground(void)
@@ -1020,8 +1068,8 @@ void Desktop::prepareBackground(void)
             {
                 if (backgroundPixmap!=0L) delete backgroundPixmap;
                 QWMatrix matrix;
-                matrix.scale((double)width()/bigBackgroundPixmap->width(),((double)height()-getHeaderHeight())/bigBackgroundPixmap->height());
-                backgroundPixmap = new QPixmap(bigBackgroundPixmap->xForm(matrix));
+                matrix.scale((double)width()/getBigBgPixmap()->width(),((double)height()-getHeaderHeight())/getBigBgPixmap()->height());
+                backgroundPixmap = new QPixmap(getBigBgPixmap()->xForm(matrix));
             } break;
         case (Tiled) :
             {
@@ -1030,10 +1078,10 @@ void Desktop::prepareBackground(void)
                 backgroundPixmap->resize(width(),height()-getHeaderHeight());
                 QWMatrix matrix;
                 matrix.scale(
-                             ((double)backPixmapWidth*width()/screen_width)/bigBackgroundPixmap->width(),
-                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
+                             ((double)backPixmapWidth*width()/screen_width)/getBigBgPixmap()->width(),
+                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/getBigBgPixmap()->height())
                              );
-                QPixmap *tmp = new QPixmap(bigBackgroundPixmap->xForm(matrix));
+                QPixmap *tmp = new QPixmap(getBigBgPixmap()->xForm(matrix));
                 int x,y=0;
 #ifdef DESKTOPDEBUG
                 printf("[%d]backPixmap %d x %d\n",id,backPixmapWidth,backPixmapHeight);
@@ -1062,10 +1110,10 @@ void Desktop::prepareBackground(void)
             {
                 QWMatrix matrix;
                 matrix.scale(
-                             ((double)backPixmapWidth*width()/screen_width)/bigBackgroundPixmap->width(),
-                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
+                             ((double)backPixmapWidth*width()/screen_width)/getBigBgPixmap()->width(),
+                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/getBigBgPixmap()->height())
                              );
-                QPixmap *tmp = new QPixmap(bigBackgroundPixmap->xForm(matrix));
+                QPixmap *tmp = new QPixmap(getBigBgPixmap()->xForm(matrix));
                 bitBlt(backgroundPixmap,(width()-tmp->width())/2,((height()-getHeaderHeight())-tmp->height())/2,tmp,0,0,tmp->width(),tmp->height(),CopyROP);
 
                 delete tmp;
@@ -1156,3 +1204,6 @@ void Desktop::setDrawMode(int mode)
 KWMModuleApplication *Desktop::kwmmapp=NULL;
 Window Desktop::hilitwin=0;
 bool Desktop::use1ClickMode=true;
+QPixmap *Desktop::commonbigBackgroundPixmap=0L;
+int Desktop::commonbackPixmapWidth=0;
+int Desktop::commonbackPixmapHeight=0;

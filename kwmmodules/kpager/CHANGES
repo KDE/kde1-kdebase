@@ -1,3 +1,10 @@
+* Wed Dic  2 7:23:00 CEST 1998
+
+Many speed improvements, including reducing initialization
+time (in some cases from 17 secs to 4 secs :) )
+Some bug fixes which made kpager core dump in different
+ways (really nobody noticed this ?)
+
 * Tue Dic  1 7:23:00 CEST 1998
 
 Improved speed when updating background pictures (thanks Matt for the new signal !)
