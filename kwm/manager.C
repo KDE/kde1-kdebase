@@ -2006,7 +2006,7 @@ void Manager::manage(Window w, bool mapped){
     if (pc){
       c->desktop = pc->desktop;
       if (pc->isSticky())
-	KWM::setSticky(c->window, True);
+	KWM::setSticky(c->window, true);
       KWM::moveToDesktop(c->window, c->desktop);
     }
   }
@@ -3959,6 +3959,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	r = s;
 	if (r.match(c->label) != -1) {
 	  c->sticky = true;
+	  KWM::setSticky(c->window, true);
 	  break;
 	}
       }
@@ -3999,6 +4000,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	r = s;
 	if (r.match(c->instance) != -1) {
 	  c->sticky = true;
+	  KWM::setSticky(c->window, true);
 	  break;
 	}
       }
@@ -4039,6 +4041,7 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
 	r = s;
 	if (r.match(c->klass) != -1) {
 	  c->sticky = true;
+	  KWM::setSticky(c->window, true);
 	  break;
 	}
       }
