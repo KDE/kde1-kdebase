@@ -51,7 +51,7 @@ msgstr "Disková odkladacia pamä»"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Voµná disková odkladacia pamä»"
+msgstr "Voµná disková odkl. pamä»"
 
 #: memory.cpp:74
 #, c-format

@@ -164,19 +164,19 @@ msgstr "Zariadenie"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Súbor"
+msgstr "Súbor:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini"
+msgstr "Mini:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Ikona"
+msgstr "Ikona:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
-msgstr "Komentár"
+msgstr "Komentár:"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"

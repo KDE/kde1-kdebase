@@ -44,27 +44,27 @@ msgstr "Nap&ravo"
 
 #: main.C:413
 msgid "&Normal"
-msgstr "&Normálny"
+msgstr "&Normálne"
 
 #: main.C:414
 msgid "&Tiny"
-msgstr "&Drobný"
+msgstr "&Drobné"
 
 #: main.C:415
 msgid "&Small"
-msgstr "&Malý"
+msgstr "&Malé"
 
 #: main.C:416
 msgid "&Medium"
-msgstr "&Stredný"
+msgstr "&Stredné"
 
 #: main.C:417
 msgid "&Large"
-msgstr "V&eµký"
+msgstr "V&eµké"
 
 #: main.C:418
 msgid "&Huge"
-msgstr "&Obrovský"
+msgstr "&Obrovské"
 
 #: main.C:430
 msgid "&black/white"
@@ -92,11 +92,11 @@ msgstr "&Vlastné farby"
 
 #: main.C:450 main.C:700
 msgid "Hide &Menubar"
-msgstr "Skry &menu"
+msgstr "Skry» &menu"
 
 #: main.C:452 main.C:622 main.C:692
 msgid "Show &Menubar"
-msgstr "Zobraz &menu"
+msgstr "Zobrazi» &menu"
 
 #: main.C:453 main.C:710
 msgid "Secure &keyboard"
@@ -104,7 +104,7 @@ msgstr "Zabezpeèi» &klávesnicu"
 
 #: main.C:455
 msgid "Scroll&bar"
-msgstr "Scroll&bar"
+msgstr "R&olovacia li¹ta"
 
 #: main.C:456
 msgid "&Font size"
@@ -124,7 +124,7 @@ msgstr "&Terminál..."
 
 #: main.C:461
 msgid "Save &Options"
-msgstr "Ulo¾i» nastavenie"
+msgstr "Ulo¾i» &nastavenie"
 
 #: main.C:470
 msgid ""
@@ -179,7 +179,7 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "Emulácia terminálu pre KDE Desktop Environment\n"
-"zalo¾ené na  rxvt-2.08 Roberta Nationa\n"
+"Zalo¾ené na  rxvt-2.08 Roberta Nationa\n"
 "\n"
 
 #: main.C:1143

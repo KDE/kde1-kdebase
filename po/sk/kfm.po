@@ -191,7 +191,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Hore"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -518,7 +518,7 @@ msgstr "Odkaz"
 
 #: main.cpp:246
 msgid "Empty Trash Bin"
-msgstr "Vyprázdni kô¹"
+msgstr "Vyprázdni» kô¹"
 
 #: main.cpp:247
 msgid "Add to Bookmarks"
@@ -1369,5 +1369,5 @@ msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
 
-#~ msgid "Use proxy"
-#~ msgstr "Povoli»"
+msgid "Use proxy"
+msgstr "Pou¾íva» proxy"

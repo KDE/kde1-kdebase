@@ -139,7 +139,7 @@ msgstr "Koniec zmeny veµkosti okna"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "p&ovoli» systémové zvuky"
+msgstr "P&ovoli» systémové zvuky"
 
 #: syssound.cpp:203
 msgid "&Test"
@@ -170,7 +170,6 @@ msgstr ""
 "Modulom"
 
 #: syssound.cpp:468
-#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
@@ -178,7 +177,7 @@ msgid ""
 msgstr ""
 "Prepáète, ale \n"
 "%s\n"
-"pravedpodobne nie je WAV--súbor!"
+"pravedpodobne nie je WAV--súbor."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
