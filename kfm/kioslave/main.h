@@ -17,6 +17,7 @@ class KIOSlave : public QObject
     Q_OBJECT
 public:
     KIOSlave( int _port );
+    ~KIOSlave();
 
     void terminate();
     

@@ -82,6 +82,12 @@ KIOSlave::KIOSlave( int _port )
     ipc->hello();
 }
 
+KIOSlave::~KIOSlave()
+{
+debug("delete ~KIOSlave");
+    delete ipc;
+}
+
 void KIOSlave::getPID()
 {
     ipc->setPID( (int)getpid() );
@@ -161,6 +167,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	    prot->GetLastError( kerror, msg, syserror );
 	    fprintf( stderr, "ERROR: Could not enter '%s'\n",_url );
 	    ipc->fatalError( kerror, _url, syserror );
+            delete prot;
 	    return;
 	}
 	    
@@ -189,8 +196,8 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 			      de->owner.data(), de->group.data());
 	    }
 	    prot->CloseDir();
-	    delete prot;
 	}
+        delete prot;
     }
     else
     {
