@@ -3,6 +3,8 @@
 MiniIcon=kfm_home.xpm
 Comment=Personal Files
 Comment[no]=Personlig filer
+Comment[pt_BR]=Arquivos Pessoais
+Comment[sk]=Osobné súbory
 URL=file:$HOME
 Icon=kfm_home.xpm
 Type=Link

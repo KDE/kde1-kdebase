@@ -3,6 +3,8 @@
 MiniIcon=desktop_settings.xpm
 Comment=Your desktop
 Comment[no]=Ditt skrivebord
+Comment[pt_BR]=Seu ambiente de trabalho
+Comment[sk]=Va¹a plocha
 URL=file:$HOME/Desktop
 Icon=desktop_settings.xpm
 Type=Link
