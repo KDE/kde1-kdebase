@@ -3,8 +3,15 @@
 [International Keyboard]
 Comment=Typewriter Keyboard (QWERTZ)
 Comment[cs]=Klávesnice psacího stroje (QWERTZ)
+Comment[de]=Internationale Tastatur
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
 Comment[no]=Skrivemaskintastatur (QWERTZ)
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilógrafo (QWERTZ)
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
 
 Language=Czech
 Language[cs]=Èeskı

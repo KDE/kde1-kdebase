@@ -4,6 +4,7 @@ Exec=xfig
 Icon=xfig.xpm
 Type=Application
 Name=Xfig
+Name[no]=X-figur
 Comment=Xfig drawing application
 Comment[cs]=Aplikace pro kreslení vektorových obrázkù
 Comment[de]=Xfig Zeichenprogramm

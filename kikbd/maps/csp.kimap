@@ -2,8 +2,27 @@
 
 [International Keyboard]
 Comment=Programmers Keyboard
+Comment[ca]=Arranjament del teclat
+Comment[cs]=Nastavení klávesnice
+Comment[da]=Indstil tastaturet
+Comment[de]=Internationale Tastatur
+Comment[eo]=Klavarokonfigura¼o
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
+Comment[fr]=Moniteur de performances système
+Comment[hr]=Postava tipkovnice
+Comment[hu]=Billentyûzet beállításai
+Comment[is]=Stillingar lyklaborğsins
+Comment[it]=Configurazione tastiera
 Comment[no]=Programmeringstastatur
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de programador
+Comment[ro]=Configurarea tastaturii
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
+Comment[sv]=Inställningar för tangentbord
+Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Czech
 Language[cs]=Èeskı

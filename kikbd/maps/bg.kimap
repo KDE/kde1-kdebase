@@ -7,14 +7,22 @@
 Authors=Jordan Ostreff <http://www.biscom.net/~jostreff/>,
 
 Comment=Phonetic layout. Has English characters as alternate symbols.
-Comment[cs]=Fonetické rozvr¾ení. Má anglické znaky jako altenativní symboly.
+Comment[cs]=Fonetické rozvr¾ení. Má anglické znaky jako altenativní symboly.Comment=Fonetické rozvr¾ení. Má anglické znaky jako altenativní symboly.
+Comment[de]=Phonetisches Layout. Englische Zeichen als Alternativ-Belegung.
+Comment[fi]=Foneettinen järjestys. Englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[no]=Fonetisk utseende. Har engelske tegn som alternative symboler.
-Comment[pt_BR]=Disposição fonética. Tem caracteres ingleses bem como símbolos alternativos.
+Comment[pt_BR]=Disposição fonética. Tem caracteres ingleses bem como símbolos alternativos.Comment=Disposição fonética. Tem caracteres ingleses bem como símbolos alternativos.
+Comment[sv]=Fonetisk layout. Har engelska tecken som tilläggs symboler.
 
 Language=Bulgarian
 Language[cs]=Bulharský
-Language[no]=Bulgarsk
+Language[de]=Bulgarische
+Language[fi]=Bulgaria
+Language[pl]=Bu³garski
 Language[pt_BR]=lgariano
+Language[ru]=âÏÌÇÁÒÓËÉÊ
+Language[sk]=Bulharský
+Language[sv]=Bulgariskt
 
 Charset=cp1251
 Label=Bg 

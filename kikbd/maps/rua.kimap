@@ -8,13 +8,23 @@ Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude
 
 Comment=Has latin characters as alternate symbols.
 Comment[cs]=Obsahuje znaky latinky jako alternativní symboly.
+Comment[de]=Lateinische Zeichen als Alternativ-Belegung.
+Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[no]=Har latinske tegn som alternative symboler.
 Comment[pt_BR]=Tem caracteres latinos bem como símbolos alternativos.
+Comment[ru]=óÏÄÅÒÖÉÔ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ × ËÁÞÅÓÔ×Å ÁÌÔÅÒÎÁÔÉ×ÎÙÈ.
+Comment[sk]=Má latin znaky ako alternatívne symboly.
+Comment[sv]=Har latinska bokstäver som alternativa symboler.
 
 Language=Russian
 Language[cs]=Ruský
-Language[no]=Russisk
+Language[de]=Russische
+Language[fi]=Venäjä
+Language[pl]=Rosyjski
 Language[pt_BR]=sso
+Language[ru]=òÕÓÓËÉÊ
+Language[sk]=Ruský
+Language[sv]=Ryskt
 
 Charset=cp866
 Label=Ra

@@ -5,8 +5,15 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
+Comment[de]=Internationale Tastatur
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
 Comment[no]=Skrivemaskintastatur (QWERTY)
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilógrafo (QWERTY)
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
 #Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTY)
 
 Language=Slovak

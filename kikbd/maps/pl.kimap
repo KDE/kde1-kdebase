@@ -5,13 +5,24 @@ Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
 Comment[cs]= Polská 'programátorská' klávesnice
+Comment[fi]=Puolalainen ohjelmoijan näppäimistö
 Comment[no]=Polsk programmeringstastatur
+Comment[pl]=Klawiatura programisty
 Comment[pt_BR]=Teclado Polonês
+Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
+Comment[sk]=Poµská programátorská klávesnica
+Comment[sv]=Polskt 'programmerings' tangentbord
 
 Language=Polish
 Language[cs]=polskı
+Language[de]=Polnische
+Language[fi]=Puola
 Language[no]=Polsk
+Language[pl]=Polski
 Language[pt_BR]=lonês
+Language[ru]=ğÏÌØÓËÉÊ
+Language[sk]=Poµskı
+Language[sv]=Polskt
 
 Label=Pl
 Locale=pl

@@ -5,13 +5,23 @@ Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@nul
 
 Comment=Has English characters as alternate symbols.
 Comment[cs]=Obsahuje anglické znaky ja alternativní symboly.
+Comment[de]=Englische Zeichen als Alternativ-Belegung.
+Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[no]=Har engelske tegn som alternative symboler.
+Comment[pl]=Znaki alfabetu ³aciñskiego jako symbole alternatywne.
 Comment[pt_BR]=Tem caracteres ingleses bem como símbolos alternativos.
+Comment[ru]=óÏÄÅÒÖÉÔ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ × ËÁÞÅÓÔ×Å ÁÌÔÅÒÎÁÔÉ×ÎÙÈ.
+Comment[sv]=Har engelska bokstäver som alternativa symboler.
 
 Language=Russian
 Language[cs]=Ruský
-Language[no]=Russisk
+Language[de]=Russische
+Language[fi]=Venäjä
+Language[pl]=Rosyjski
 Language[pt_BR]=sso
+Language[ru]=òÕÓÓËÉÊ
+Language[sk]=Ruský
+Language[sv]=Ryskt
 
 Charset=cp1251
 Label=RW

@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Personal
+Name[de]=Persönlich
 Icon=pers_applnk.xpm
 MiniIcon=pers_applnk.xpm
