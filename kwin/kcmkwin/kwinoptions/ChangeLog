@@ -1,0 +1,4 @@
+1998-10-18  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* titlebar.[cpp,h]: fixed the (in)activetitleebar pixmap selection 
+
