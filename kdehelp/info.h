@@ -14,7 +14,7 @@
 #include "dbnew.h"
 
 #define INFO_ENV				"INFOPATH"
-#define INFO_MAXPATHS			10
+#define INFO_MAXPATHS			25
 #define INFO_HISTORYLEN			50
 
 #define INFO_MARKER				'\037'
