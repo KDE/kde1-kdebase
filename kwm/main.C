@@ -488,6 +488,8 @@ void logout(){
 
 MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc, argv, rAppName ){
 
+  DEBUG_EVENTS("RootWindow", qt_xrootwin());
+
   manager = 0; // this is important -- Bernd
 
   int i;
@@ -1674,6 +1676,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case ReparentNotify:
     DEBUG_EVENTS("ReparentNotify", ev->xreparent.window)
+    DEBUG_EVENTS("ReparentNotifyParent:", ev->xreparent.parent)
+    DEBUG_EVENTS("ReparentNotifyEvent:", ev->xreparent.event)
     manager->reparentNotify(&ev->xreparent);
     return true; //do not confuse Qt with these events...
     break;
