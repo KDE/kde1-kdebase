@@ -58,61 +58,48 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     loc_group = new QButtonGroup(klocale->translate("Location"), this);
     loc_buttons[0] = new QRadioButton( klocale->translate("Top"), loc_group );
     loc_buttons[1] = new QRadioButton( klocale->translate("Left"), loc_group );
-    loc_buttons[2] = new QRadioButton( klocale->translate("Bottom"), loc_group);
+    loc_buttons[2] = new QRadioButton( klocale->translate("Bottom"), loc_group);    
+    loc_buttons[0]->adjustSize();
+    loc_group->setMinimumSize(50, loc_buttons[0]->sizeHint().height() * 3);
+    loc_group->setMaximumSize(1000, loc_buttons[0]->sizeHint().height() * 5);
+
     loc_buttons[location]->setChecked(true);
     connect(loc_group, SIGNAL(clicked(int)), SLOT(location_clicked(int)));
-    layout->addWidget(loc_group);
+    layout->addWidget(loc_group, 1);
 
     task_group = new QButtonGroup(klocale->translate("Taskbar"), this);
-    task_buttons[0] = new QRadioButton( klocale->translate("Hidden"), task_group );
-    task_buttons[1] = new QRadioButton( klocale->translate("Top"), task_group );
-    task_buttons[2] = new QRadioButton( klocale->translate("Bottom"), task_group);
-    task_buttons[3] = new QRadioButton( klocale->translate("Top/Left"), task_group);
+    task_buttons[0] = new QRadioButton( klocale->translate("Hidden"), 
+					task_group );
+    task_buttons[1] = new QRadioButton( klocale->translate("Top"), 
+					task_group );
+    task_buttons[2] = new QRadioButton( klocale->translate("Bottom"), 
+					task_group);
+    task_buttons[3] = new QRadioButton( klocale->translate("Top/Left"), 
+					task_group);
     task_buttons[taskbar]->setChecked(true);
+    task_buttons[0]->adjustSize();
+    task_group->setMinimumSize(50, task_buttons[0]->sizeHint().height() * 3);
+    task_group->setMaximumSize(1000, task_buttons[0]->sizeHint().height() * 5);
     connect(task_group, SIGNAL(clicked(int)), SLOT(taskbar_clicked(int)));
-    layout->addWidget(task_group);
+    layout->addWidget(task_group, 1);
 
-    down_frame = new QFrame(this);
-    down_layout = new QHBoxLayout(down_frame, 10, 30);
+
+    style_group = new QButtonGroup(klocale->translate("Style"), this);
     
-    style_frame = new QFrame(down_frame);
-    style_layout = new QHBoxLayout(style_frame, 5);
+    style_buttons[0] = new QRadioButton( klocale->translate("Tiny"), 
+					 style_group );
+    style_buttons[1] = new QRadioButton( klocale->translate("Normal"), 
+					 style_group );
+    style_buttons[2] = new QRadioButton( klocale->translate("Large"), 
+					 style_group);
 
-    style_label = new QLabel(style_frame);
-    style_label->setText( klocale->translate("Style:"));
-    style_label->setAlignment(AlignRight | AlignVCenter);
-    
-    style_layout->addWidget(style_label, 1, AlignTop);
-    
-    style_combo_frame = new MyHelpFrame(style_frame);
-    style_combo = new QComboBox(style_combo_frame);
-    style_combo_frame->setWidget(style_combo);
+    style_buttons[0]->adjustSize();
+    style_group->setMinimumSize(50, style_buttons[0]->sizeHint().height() * 3);
+    style_group->setMaximumSize(1000, style_buttons[0]->sizeHint().height() * 5);
 
-    style_combo->insertItem(klocale->translate("Tiny Style"), Tiny);
-    style_combo->insertItem(klocale->translate("Normal Style"), Normal);
-    style_combo->insertItem(klocale->translate("Large Style"), Large);
-    style_layout->addWidget(style_combo_frame, 3, AlignTop );
-    style_layout->activate();
-  
-    down_layout->addWidget(style_frame);
+    layout->addWidget(style_group, 1);
 
-    option_frame = new QFrame(down_frame);
-    option_layout = new QVBoxLayout(option_frame,0);
-    options[0] = new QCheckBox( klocale->translate("Menu Tooltips"), option_frame);
-    option_layout->addWidget(options[0]);
-    options[1] = new QCheckBox( klocale->translate("Personal First"), option_frame);
-    option_layout->addWidget(options[1]);
-    options[2] = new QCheckBox( klocale->translate("Auto Hide Panel"), option_frame);
-    option_layout->addWidget(options[2]);
-    options[3] = new QCheckBox( klocale->translate("Auto Hide Taskbar"), option_frame);
-    option_layout->addWidget(options[3]);
-
-    option_layout->activate();
-    
-    down_layout->addWidget(option_frame);
-    down_layout->activate();
-    layout->addWidget(down_frame);
-
+    layout->addStretch(2);
     layout->activate();
   
     loadSettings();
@@ -127,6 +114,10 @@ void KPanelConfig::location_clicked(int i) {
 
 void KPanelConfig::taskbar_clicked(int i) {
     taskbar = static_cast<Taskbar>(i);
+}
+
+void KPanelConfig::style_clicked(int i) {
+    style = static_cast<Style>(i);
 }
 
 KPanelConfig::~KPanelConfig( ) {
@@ -151,8 +142,11 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
     for (i = 0; i < 3; i++)
 	loc_buttons[i]->move(w * i + 10, h);
 
-    // style_combo->resize(style_combo_frame->width(), style_combo->height());
-    // style_combo->move(0, (style_combo_frame->height() - style_combo->height())/ 2);
+    rect = style_group->contentsRect();
+    h = rect.top() +
+	(rect.height() - style_buttons[0]->sizeHint().height()) / 2;
+    for (i = 0; i < 3; i++)
+	style_buttons[i]->move(w * i + 10, h);
 }
 
 void KPanelConfig::loadSettings() {
@@ -174,13 +168,8 @@ void KPanelConfig::loadSettings() {
 	i++;
     if (!taskbar_locations[i])
 	i = 0;
-    taskbar = (Taskbar)i;
+    taskbar = static_cast<Taskbar>(i);
     task_buttons[taskbar]->setChecked(true);
-
-    options[0]->setChecked(config->readNumEntry("MenuToolTips")>=0);
-    options[1]->setChecked(config->readEntry("PersonalFirst") == "on");
-    options[2]->setChecked(config->readEntry("AutoHide") == "on");
-    options[3]->setChecked(config->readEntry("AutoHideTaskbar") == "on");
 
     i = 0; t = config->readEntry("Style", styles[0]);
     while (styles[i] && t != styles[i]) 
@@ -188,9 +177,9 @@ void KPanelConfig::loadSettings() {
     if (!styles[i])
 	style = Normal;
     else
-	style = (Style)i;
+	style = static_cast<Style>(i);
     
-    style_combo->setCurrentItem(style);
+    style_buttons[style]->setChecked(true);
 }
 
 void KPanelConfig::applySettings() {
@@ -203,46 +192,38 @@ void KPanelConfig::saveSettings() {
     config->setGroup("kpanel");
     config->writeEntry("Position", locations[location]);
     config->writeEntry("TaskbarPosition", taskbar_locations[taskbar]);
-
-    // out of kpanel's prop.C
-    config->writeEntry("MenuToolTips", options[0]->isChecked()?1000:-1);
-    config->writeEntry("PersonalFirst", options[1]->isChecked()?"on":"off");
-    config->writeEntry("AutoHide", options[2]->isChecked()?"on":"off");
-    config->writeEntry("AutoHideTaskbar", options[3]->isChecked()?"on":"off");
-   
-    if (style_combo->currentItem() != style) {
-	switch (style_combo->currentItem()){
-	case 0: // tiny style
-	    config->writeEntry("Style", "tiny");
-	    config->writeEntry("BoxWidth",26);
-	    config->writeEntry("BoxHeight",26);
-	    config->writeEntry("Margin",0);
-	    config->writeEntry("TaskbarButtonHorizontalSize",4);
-	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
-	    config->writeEntry("DesktopButtonRows",1);
-	    config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
-	    break;
-	case 1: // normal style
-	    config->writeEntry("Style", "normal");
-	    config->writeEntry("BoxWidth",45);
-	    config->writeEntry("BoxHeight",45);
-	    config->writeEntry("Margin",0);
-	    config->writeEntry("TaskbarButtonHorizontalSize",4);
-	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
-	    config->writeEntry("DesktopButtonRows",2);
-	    config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
-	    break;
-	case 2: // large style
-	    config->writeEntry("Style", "large");
-	    config->writeEntry("BoxWidth",47);
-	    config->writeEntry("BoxHeight",47);
-	    config->writeEntry("Margin",4);
-	    config->writeEntry("TaskbarButtonHorizontalSize",4);
-	    config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
-	    config->writeEntry("DesktopButtonRows",2);
-	    config->writeEntry("DateFont","*-times-bold-i-normal--12-*");
-	    break;
-	}
+    
+    switch (style){
+    case 0: // tiny style
+	config->writeEntry("Style", "tiny");
+	config->writeEntry("BoxWidth",26);
+	config->writeEntry("BoxHeight",26);
+	config->writeEntry("Margin",0);
+	config->writeEntry("TaskbarButtonHorizontalSize",4);
+	config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
+	config->writeEntry("DesktopButtonRows",1);
+	config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
+	break;
+    case 1: // normal style
+	config->writeEntry("Style", "normal");
+	config->writeEntry("BoxWidth",45);
+	config->writeEntry("BoxHeight",45);
+	config->writeEntry("Margin",0);
+	config->writeEntry("TaskbarButtonHorizontalSize",4);
+	config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
+	config->writeEntry("DesktopButtonRows",2);
+	config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
+	break;
+    case 2: // large style
+	config->writeEntry("Style", "large");
+	config->writeEntry("BoxWidth",47);
+	config->writeEntry("BoxHeight",47);
+	config->writeEntry("Margin",4);
+	config->writeEntry("TaskbarButtonHorizontalSize",4);
+	config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
+	config->writeEntry("DesktopButtonRows",2);
+	config->writeEntry("DateFont","*-times-bold-i-normal--12-*");
+	break;
     }
     config->sync();
 }

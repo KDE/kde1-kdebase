@@ -55,6 +55,7 @@ protected:
 protected slots:
     void location_clicked(int);
     void taskbar_clicked(int);
+    void style_clicked(int);
 
 private:
     QVBoxLayout *layout;
@@ -67,19 +68,9 @@ private:
     QRadioButton *task_buttons[4];
     QButtonGroup *task_group;
     
-    QHBoxLayout *down_layout;
-    QFrame *down_frame;
-
     enum Style { Tiny, Normal, Large } style;
-    QLabel *style_label;
-    QComboBox *style_combo;
-    MyHelpFrame *style_combo_frame;
-    QHBoxLayout *style_layout;
-    QFrame *style_frame;
-
-    QCheckBox *options[4];
-    QVBoxLayout *option_layout;
-    QFrame *option_frame;
+    QRadioButton *style_buttons[3];
+    QButtonGroup *style_group;
 };
 
 #endif

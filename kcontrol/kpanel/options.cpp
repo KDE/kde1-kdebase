@@ -39,11 +39,8 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     tips = new QCheckBox(i18n("Show Menu Tooltips"), tooltips_group);
     connect(tips, SIGNAL(toggled(bool)), SLOT(tooltips_clicked(bool)));
 
-    int del = config->readNumEntry("MenuToolTips", 1000);
-    slider = new KSlider(0, 2000, 10, del >= 0 ? del : 0,
+    slider = new KSlider(0, 2000, 10, 0,
 			 KSlider::Horizontal, tooltips_group);
-    tips->setChecked(del >= 0);
-    tooltips_clicked(del >= 0);
     tips_label = new QLabel(slider, i18n("&Delay:"), tooltips_group);
     slider->setSteps ( 125, 125 );
     slider->setTickmarks ( static_cast<QSlider::TickSetting>(QSlider::Below) );
@@ -57,7 +54,14 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     slider_value->display(slider->value());
     
     slider_label = new QLabel(i18n("ms"), tooltips_group);
-    
+    slider->adjustSize();
+    tips->adjustSize();
+    tooltips_group->adjustSize();
+    tooltips_group->setMinimumSize(100, slider->sizeHint().height() + 
+				   tips->sizeHint().height() + 
+				   slider_value->sizeHint().height() +
+				   30);
+
     layout->addWidget(tooltips_group, 3);
     
     others_group = new QGroupBox(i18n("Others"), this);
@@ -68,7 +72,9 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     hide_taskbar = new QCheckBox( i18n("Auto Hide &Taskbar"), 
 				  others_group);
     layout->addWidget(others_group, 3);
-
+    personal_first->adjustSize();
+    others_group->setMinimumSize(100, 
+				 personal_first->sizeHint().height() * 3);
    
     clock_group = new QButtonGroup(i18n("Clock"), this);
     clock_group->setExclusive(true);
@@ -76,9 +82,8 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
 				clock_group);
     clock[1] = new QRadioButton(i18n("&12h AM/PM"), 
 				clock_group);
-    bool ampm = config->readEntry("ClockAmPm", "off") == "off";
-    clock[0]->setChecked(ampm);
-    clock[1]->setChecked(!ampm);
+    clock[0]->adjustSize();
+    clock_group->setMinimumSize(100, clock[0]->sizeHint().height() * 2 + 10);
     
     layout->addWidget(clock_group, 2);
 
@@ -104,7 +109,6 @@ void KOptionsConfig::resizeEvent(QResizeEvent *e) {
 
     rect.setTop(rect.top() + 5);
 
-    personal_first->adjustSize();
     personal_first->move(10,rect.top() + o);
     hide_panel->adjustSize();
     hide_panel->move(10,rect.top() + 3*o+h);
@@ -112,21 +116,22 @@ void KOptionsConfig::resizeEvent(QResizeEvent *e) {
     hide_taskbar->move(10,rect.top() + 5*o+2*h);
 
     rect = tooltips_group->contentsRect();
-    h = (rect.height() - 20) / 3;
-    rect.setTop(rect.top() + 5);
+    h = (rect.height() - 20 - tips->height()) / 3;
     tips_label->adjustSize();
     o = tips_label->width();
-    tips_label->setGeometry(10, h + 10, o , 2 * h);
+    tips_label->setGeometry(10, h + 10 + tips->height(), o , 2 * h);
     o += 20;
-    tips->setGeometry(10, rect.top() + 10, rect.width() - 20, tips->height());
-    slider->setGeometry(o + 10, 2 * h + 10, 
+    
+    slider->setGeometry(o + 10, 2 * h + 10 + tips->height(), 
 			rect.width() - 20 - o, h);
     int r = (rect.width() - o - slider_value->width() - 
 	     slider_label->width() -20) / 2;
-    slider_value->setGeometry(r + o + 10, h + 10,
+    slider_value->setGeometry(r + o + 10, h + 10 + tips->height() ,
 			      slider_value->width(), h);
-    slider_label->setGeometry(r + o + 20 + slider_value->width() , h + 10,
+    slider_label->setGeometry(r + o + 20 + slider_value->width() , 
+			      h + 10 + tips->height(), 
 			      slider_label->width(), h);
+    tips->setGeometry(10, 18, tips->width(), tips->height());
     
     rect = clock_group->contentsRect();
     h = clock[0]->height();
@@ -146,6 +151,13 @@ void KOptionsConfig::loadSettings() {
     personal_first->setChecked(config->readEntry("PersonalFirst") == "on");
     hide_panel->setChecked(config->readEntry("AutoHide") == "on");
     hide_taskbar->setChecked(config->readEntry("AutoHideTaskbar") == "on");
+    bool ampm = config->readEntry("ClockAmPm", "off") == "off";
+    clock[0]->setChecked(ampm);
+    clock[1]->setChecked(!ampm);
+    int del = config->readNumEntry("MenuToolTips", 1000);
+    slider->setValue(del);
+    tips->setChecked(del >= 0);
+    tooltips_clicked(del >= 0);
 }
 
 void KOptionsConfig::applySettings() {
@@ -161,6 +173,7 @@ void KOptionsConfig::saveSettings() {
     config->writeEntry("PersonalFirst", personal_first->isChecked()?"on":"off");
     config->writeEntry("AutoHide", hide_panel->isChecked()?"on":"off");
     config->writeEntry("AutoHideTaskbar", hide_taskbar->isChecked()?"on":"off");
-   
+    config->writeEntry("ClockAmPm", clock[1]->isChecked()?"on":"off");
+    config->writeEntry("MenuToolTips", tips->isChecked()?slider->value():-1);
     config->sync();
 }

@@ -31,11 +31,16 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
     : KConfigWidget(parent, name)
 {
     layout = new QVBoxLayout(this, 8);
+    layout->addStretch(2);
     fields_layout = new QGridLayout(4, 4);
     layout->addLayout(fields_layout, 6);
     
+    layout->addStretch(2);
+
     slider_layout = new QGridLayout(2, 5, 30);
     layout->addLayout(slider_layout, 3);
+
+    layout->addStretch(2);
 
     int number_of_desktops = KWM::numberOfDesktops();
 
@@ -44,6 +49,7 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
 	fields[i] = new QLineEdit(this);
 	fields[i]->setText(KWM::getDesktopName(i+1));
 	fields[i]->setEnabled(i<number_of_desktops);
+	fields[i]->setMaximumSize(300, fields[i]->sizeHint().height());
 	tmp.setNum(i+1);
 	labels[i] = new QLabel(this);
 	labels[i]->setText(tmp.data());
@@ -62,9 +68,12 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
     fields_layout->setRowStretch(3, 1);
 
     visible = new QSlider(1, 4, 1, number_of_desktops/2, QSlider::Horizontal, this);
+    visible->setMaximumSize(1000, visible->sizeHint().height());
     visible_label = new QLabel(this);
     visible_label->setAlignment(AlignRight | AlignVCenter);
     visible_label->setText(klocale->translate("Visible"));
+    visible_label->adjustSize();
+    visible_label->setMinimumSize(visible_label->sizeHint());
     slider_layout->addMultiCellWidget(visible, 0, 0, 2, 3);
     slider_layout->addWidget(visible_label, 0, 1);
     connect(visible, SIGNAL(valueChanged(int)), this, SLOT(visible_changed(int)));
@@ -73,8 +82,13 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
     width_label = new QLabel(this);
     width_label->setAlignment(AlignRight | AlignVCenter);
     width_label->setText(klocale->translate("Width"));
+    width_label->adjustSize();
+    width_label->setMinimumSize(width_label->sizeHint());
+    width->adjustSize();
+    width->setMaximumSize(1000, width->sizeHint().height());
     slider_layout->addMultiCellWidget(width, 1, 1, 2, 3);
     slider_layout->addWidget(width_label, 1, 1);
+
     loadSettings();
     layout->activate();
 }
