@@ -71,9 +71,8 @@ msgid "80x40 (&xterm)"
 msgstr "80x24 (&vt100)"
 
 #: main.C:231
-#, fuzzy
 msgid "80x52 (ibmv&ga)"
-msgstr "80x25 (&ibmpc)"
+msgstr "80x25 (ibmv&ga)"
 
 #: main.C:240
 msgid "&Menubar"
@@ -100,9 +99,8 @@ msgid "&Size"
 msgstr "&Größe"
 
 #: main.C:251
-#, fuzzy
 msgid "&Schema"
-msgstr "&Klein"
+msgstr "&Schema"
 
 #: main.C:253
 msgid "&Save options"
