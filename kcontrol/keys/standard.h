@@ -31,6 +31,7 @@ public:
 	enum { Gradient = 1, Pattern };
 
 	KStdConfig( QWidget *parent, const char *name = 0 );
+	~KStdConfig (){};
 
 	virtual void readSettings( );
 	virtual void apply( bool force = FALSE );

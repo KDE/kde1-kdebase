@@ -53,7 +53,9 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 	globalDict->setAutoDelete( true );
 	
 	dict.setAutoDelete( false );
+	printf("neuer accel\n");
 	keys = new KAccel( this );
+	printf("weitergehts mit den bindings\n");
 
 	#include "../../kwm/kwmbindings.cpp"
 	

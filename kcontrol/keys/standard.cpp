@@ -109,6 +109,7 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 	topLayout->activate();
 	
 	//keys->setKeyDict( dave );
+	printf("ende des contructors\n");
 }
 
 void KStdConfig::resizeEvent( QResizeEvent * )
