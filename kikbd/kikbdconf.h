@@ -51,7 +51,7 @@ class KiKbdMapConfig: public QObject {
   const QString getLanguage () const {return language;}
   const QString getCharset  () const {return charset;}
   const QString getGoodLabel() const;
-  const QString getInfo     ();
+  const QString getInfo     () const;
   const bool getHasAltKeys  () const {return hasAltKeys;}
   const bool getUserData    () const {return userData;}
   const bool getNoFile      () const {return noFile;}
@@ -77,7 +77,7 @@ class KiKbdConfig: public KObjectConfig {
   bool            autoMenu, emuCapsLock;
   bool            custFont, saveClasses;
   bool            autoStart, docking;
-  QString         input;
+  int             input;
   QString         switchComb, altSwitchComb;
   QString         autoStartPlace;
   QColor          capsColor, altColor, forColor;
@@ -86,75 +86,29 @@ class KiKbdConfig: public KObjectConfig {
   KiKbdConfig();
   ~KiKbdConfig(){}
   /*--- bool values ---*/
-  bool& getKeyboardBeep() {return keyboardBeep; }
-  bool& getAutoMenu    () {return autoMenu;     }
-  bool& getEmuCapsLock () {return emuCapsLock;  }
-  bool& getCustFont    () {return custFont;     }
-  bool& getSaveClasses () {return saveClasses;  }
-  bool& getAutoStart   () {return autoStart;    }
-  bool& getDocking     () {return docking;      }
-  bool& getHotList     () {return hotList;      }
-  const QColor  getCapsColor  () const {return capsColor;}
-  const QColor  getAltColor   () const {return altColor;}
-  const QColor  getForColor   () const {return forColor;}
-  const QFont   getFont       () const {return font;}
-  int   getInput       ();
-  const QString getAutoStartPlace () const {return autoStartPlace;}
+  const bool& getKeyboardBeep() const {return keyboardBeep; }
+  const bool& getAutoMenu    () const {return autoMenu;     }
+  const bool& getEmuCapsLock () const {return emuCapsLock;  }
+  const bool& getCustFont    () const {return custFont;     }
+  const bool& getSaveClasses () const {return saveClasses;  }
+  const bool& getAutoStart   () const {return autoStart;    }
+  const bool& getDocking     () const {return docking;      }
+  const bool& getHotList     () const {return hotList;      }
+  const int&  getInput       () const {return input;        }
+  const QColor&  getCapsColor  () const {return capsColor;}
+  const QColor&  getAltColor   () const {return altColor; }
+  const QColor&  getForColor   () const {return forColor; }
+  const QFont&   getFont       () const {return font;     }
+  const QString& getAutoStartPlace () const {return autoStartPlace;}
   /*--- switches ---*/
-  QStrList getSwitch();
-  QStrList getAltSwitch();
-  /*--- bool widgets ---*/
-  QWidget* keyboardBeepWidget(const char* label, QWidget* parent){
-    return createBoolWidget(keyboardBeep, label, parent);
-  }
-  QWidget* hotListWidget(const char* label, QWidget* parent){
-    return createBoolWidget(hotList, label, parent);
-  }
-  QWidget* autoMenuWidget(const char* label, QWidget* parent){
-    return createBoolWidget(autoMenu, label, parent);
-  }
-  QWidget* emuCapsLockWidget(const char* label, QWidget* parent){
-    return createBoolWidget(emuCapsLock, label, parent);
-  }
-  QWidget* custFontWidget(const char* label, QWidget* parent){
-    return createBoolWidget(custFont, label, parent);
-  }
-  QWidget* saveClassesWidget(const char* label, QWidget* parent){
-    return createBoolWidget(saveClasses, label, parent);
-  }
-  QWidget* autoStartWidget(const char* label, QWidget* parent){
-    return createBoolWidget(autoStart, label, parent);
-  }
-  QWidget* dockingWidget(const char* label, QWidget* parent){
-    return createBoolWidget(docking, label, parent);
-  }
+  QStrList getSwitch()    {return KObjectConfig::separate(switchComb, '+');}
+  QStrList getAltSwitch() {return KObjectConfig::separate(altSwitchComb, '+');}
   /*--- combo values ---*/
-  QWidget* switchWidget(const char** list, QWidget* parent) {
-    return createComboWidget(switchComb, list, parent);
+  QWidget* switchWidget(QWidget* parent, const char* tip) {
+    return createWidget(&switchComb, parent, 0L, tip);
   }
-  QWidget* altSwitchWidget(const char** list, QWidget* parent) {
-    return createComboWidget(altSwitchComb, list, parent);
-  }
-  QWidget* autoStartPlaceWidget(const char** list, QWidget* parent) {
-    return createComboWidget(autoStartPlace, list, parent);
-  }
-  QWidget* inputWidget(const char** list, const char* name, QWidget* parent) {
-    return createComboWidget2(input, list, name, parent);
-  }
-  /**
-     color values
-  */
-  QWidget* capsColorWidget(QWidget* parent){
-    return createColorWidget(capsColor, parent);
-  }
-  QWidget* altColorWidget(QWidget* parent){
-    return createColorWidget(altColor, parent);
-  }
-  QWidget* forColorWidget(QWidget* parent){
-    return createColorWidget(forColor, parent);
-  }
-  QWidget* fontWidget(QWidget* parent){
-    return createFontWidget(font, parent);
+  QWidget* altSwitchWidget(QWidget* parent, const char* tip) {
+    return createWidget(&altSwitchComb, parent, 0L, tip);
   }
  public:
   static void error(const char*, const char* str=0, const char* str2=0);
@@ -165,10 +119,18 @@ class KiKbdConfig: public KObjectConfig {
   KiKbdMapConfig* getMap(const char* name);
   bool hasAltKeys();
   bool oneKeySwitch();
+  virtual void loadConfig();
  public slots:
   void newUserRc();
   void olderVersion();
   void newerVersion();
 };
+
+//====================================================
+// helper functions
+//====================================================
+inline const char* translate(const char* text) {
+  return klocale->translate(text);
+}
 
 #endif

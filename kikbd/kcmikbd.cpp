@@ -31,70 +31,59 @@
 
 class KiKbdApplication : public KControlApplication
 {
+protected:
+  bool startKikbd;
 public:
-  KiKbdApplication(int &argc, char **arg, char *name);
+  KiKbdApplication(int &argc, char **arg);
   void init();
   void apply();
   void help();
   KiKbdGeneralWidget *general;
   KiKbdStartupWidget *startup;
-  KiKbdStyleWidget  *style;
+  KiKbdStyleWidget   *style;
 };
 KiKbdConfig *kikbdConfig;
 
-bool startKikbd;
-KiKbdApplication::KiKbdApplication(int &argc, char **argv,
-				   char *name)
-  : KControlApplication(argc, argv, name)
+KiKbdApplication::KiKbdApplication(int &argc, char **argv)
+  : KControlApplication(argc, argv, "kikbd")
 {
-  startKikbd = (QString("-startkikbd")==argv[1])?TRUE:FALSE;
+  //--- read configuration
+  kikbdConfig = new KiKbdConfig();
+  kikbdConfig->loadConfig();
 
   if (runGUI())
     {
+      startKikbd = (QString("-startkikbd")==argv[1])?TRUE:FALSE;
       mainWidget()->setIcon(getIconLoader()->loadMiniIcon("kikbd.xpm"));
-      //--- read configuration
-      kikbdConfig = new KiKbdConfig();
-      kikbdConfig->loadConfig();
       
       /**
 	 General
       */
-      //if (!pages || pages->contains("general")) {
-	general = new KiKbdGeneralWidget(dialog, "general");
+	general = new KiKbdGeneralWidget(dialog);
 	general->loadSettings();
-	addPage(general, klocale->translate("&General"), "");
-	//}
+	addPage(general, translate("&General"), "");
 
       /**
 	 Style
       */
-	//if (!pages || pages->contains("style")) {
-	style = new KiKbdStyleWidget(dialog, "style");
-	addPage(style, klocale->translate("&Style"), "");
+	style = new KiKbdStyleWidget(dialog);
+	addPage(style, translate("&Style"), "");
 	connect(dialog, SIGNAL(selected(const char*)), style, 
 		SLOT(aboutToShow(const char*)));
-	//}
 
       /**
 	 StartUp
       */
-	//if (!pages || pages->contains("startup")) {
-	startup = new KiKbdStartupWidget(dialog, "startup");
-	addPage(startup, klocale->translate("Start&Up"), "");
-	//}
+	startup = new KiKbdStartupWidget(dialog);
+	addPage(startup, translate("Start&Up"), "");
 
-	//if(general || style || startup)
 	dialog->show();
     }
   else init();
 }
 void KiKbdApplication::init()
 {
-  kikbdConfig = new KiKbdConfig();
-  kikbdConfig->loadConfig();
-  if(kikbdConfig->getAutoStart()) {
-    system("kikbd &");
-  }
+  if(kikbdConfig->getAutoStart()) system("kikbd &");
 }
 void KiKbdApplication::apply()
 {
@@ -127,8 +116,8 @@ void msgHandler(QtMsgType type, const char* msg)
 int main(int argc, char **argv)
 {
   qInstallMsgHandler(msgHandler);
-  KiKbdApplication app(argc, argv, "kikbd");
-  app.setTitle(klocale->translate("International Keyboard"));
+  KiKbdApplication app(argc, argv);
+  app.setTitle(translate("International Keyboard"));
   
   if (app.runGUI())
     return app.exec();

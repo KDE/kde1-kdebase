@@ -29,56 +29,77 @@
 #include <qdialog.h>
 #include <qgrpbox.h>
 #include <qlined.h>
+#include <qlayout.h>
+#include <qlabel.h>
 
 #include <drag.h>
 #include <kcontrol.h>
 #include <ktablistbox.h>
 #include "kikbdconf.h"
 
+class KiKbdMapInfoWidget: public QLabel {
+  Q_OBJECT
+ public:
+  KiKbdMapInfoWidget(QWidget*);
+ public slots:
+  void changeMap(const char*);
+};
+
+class KiKbdAddDialog: public QDialog {
+  Q_OBJECT
+ protected:
+  QStrList    mapsToAdd;
+  QComboBox  *maps;
+  QBoxLayout *topLayout, *groupLayout;
+  KiKbdMapInfoWidget *label;
+ public:
+  KiKbdAddDialog(QWidget* parent);
+  int exec(const QStrList&);
+  int selectedMap() const {return maps->currentItem();}
+ public slots:
+  void setInfo(int);
+};
+
 class KiKbdGeneralWidget: public KConfigWidget {
   Q_OBJECT
  protected:
-  KTabListBox  *mapsList;
-  QComboBox *altSwitchBox, *switchBox;
-  QStrList &mapsStr, mapsToAdd;
+  QListBox *mapsList;
+  QStrList &mapsStr;
   void   addMap(const char*);
   void   chkActivate();
+  void   changeMap(int);
   friend class KiKbdAdvancedDialog;
   friend class KiKbdAddMapDialog;
-  virtual void resizeEvent(QResizeEvent*);
  public:
-  KiKbdGeneralWidget(QWidget*, const char*);
+  KiKbdGeneralWidget(QWidget*);
   void loadSettings();
   void applySettings(){}
  public slots:
   void addMap();
-  void upMap();
-  void downMap();
+  void upMap  (){changeMap(-1);}
+  void downMap(){changeMap(+1);}
   void infoMap();
   void deleteMap();
-  void highlighted(int, int){chkActivate();}
-  void selected(int, int){emit infoClick();}
+  void highlighted(int){chkActivate();}
+  void selected(int){emit infoClick();}
   void advanced();
-  void setLongComment(int);
   void newSwitch(const char*);
-  QString mapInfo(const char*) const;
+  void selectionUp();
+  void selectionDown();
  signals:
   void activateDelete(bool);
   void activateUp(bool);
   void activateDown(bool);
   void activateInfo(bool);
   void activateHot(bool);
-  void setLongComment(const char*);
+  void activateAltSwitch(bool);
   void infoClick();
 };
 
-class KiKbdStyleWidget: public KConfigWidget {
+class KiKbdStyleWidget: public QWidget {
   Q_OBJECT
- protected:
  public:
-  KiKbdStyleWidget(QWidget*, const char*);
-  void loadSettings(){}
-  void applySettings(){}
+  KiKbdStyleWidget(QWidget*);
  public slots:
   void aboutToShow(const char*);
  signals:
@@ -86,16 +107,14 @@ class KiKbdStyleWidget: public KConfigWidget {
   void enableCaps(bool);
 };
 
-class KiKbdStartupWidget: public KConfigWidget {
+class KiKbdStartupWidget: public QWidget {
   Q_OBJECT
  public:
-  KiKbdStartupWidget(QWidget*, const char*);
-  void loadSettings(){}
-  void applySettings(){}
+  KiKbdStartupWidget(QWidget*);
  public slots:
-  void slotInvert(bool);
+  void slotInvert(bool f){emit signalInvert(!f);}
  signals:
-  void signalInvert(bool);
+  void signalInvert(bool f);
 };
 
 extern KiKbdConfig *kikbdConfig;

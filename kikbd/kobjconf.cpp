@@ -33,6 +33,7 @@
 #include <kcolordlg.h>
 #include <kfontdialog.h>
 #include <kcolorbtn.h>
+#include <ksimpleconfig.h>
 
 
 const char *configGroup   = "KObjectConfig";
@@ -53,11 +54,6 @@ KConfigObject::~KConfigObject()
 {
   if(deleteData) delete data;
 }
-
-
-
-
-
 
 /*********************************************************************
  * regexp matched keys Config Object
@@ -89,20 +85,6 @@ void KConfigMatchKeysObject::writeObject(KObjectConfig* config)
   unsigned i;for(i=0; i<keys.count(); i++)
     config->getConfig()->writeEntry(keys.at(i), list.at(i));
 }
-QStrList KConfigMatchKeysObject::separate(const char* s, char sep=',')
-{
-  QString  string(s);
-  QStrList list;
-  int i, j;for(i=0;j=string.find(sep, i), j != -1; i=j+1)
-    list.append(string.mid(i, j-i));
-  QString last = string.mid(i, 1000);
-  if(!last.isNull() && last != "") list.append(last);
-  return list;
-}
-
-
-
-
 
 /**********************************************************************
  * numbered keys Config Object
@@ -139,69 +121,54 @@ void KConfigNumberedKeysObject::writeObject(KObjectConfig* config)
   }
 }
 
-
-
-
-
 /**********************************************************************
  * Bool Object
  */
 void KConfigBoolObject::readObject(KObjectConfig* config)
 {
-  *((bool*)data) = config->getConfig()->readBoolEntry(keys.current(), *((bool*)data));
+  *((bool*)data) = config->getConfig()->
+    readBoolEntry(keys.current(), *((bool*)data));
 }
 void KConfigBoolObject::writeObject(KObjectConfig* config)
 {
   config->getConfig()->writeEntry(keys.current(), *((bool*)data));
 }
-void KConfigBoolObject::toggled(bool val)
+void KConfigBoolObject::toggled(bool val){*((bool*)data) = val;}
+QWidget* KConfigBoolObject::createWidget(QWidget* parent,
+					 const char* label) const
 {
-  *((bool*)data) = val;
-}
-QWidget* KConfigBoolObject::createWidget(QWidget* parent, const char* label)
-{
-  QCheckBox* box = new QCheckBox(label, parent);
+  QCheckBox* box = new QCheckBox(klocale->translate(label), parent);
   box->setChecked(*((bool*)data));
   box->setMinimumSize(box->sizeHint());
   connect(box, SIGNAL(toggled(bool)), SLOT(toggled(bool)));
   return box;
 }
 
-
-
-
-
 /***************************************************************************
  * Int Object
  */
 void KConfigIntObject::readObject(KObjectConfig* config)
 {
-  *((int*)data) = config->getConfig()->readNumEntry(keys.current(), *((int*)data));
+  *((int*)data) = config->getConfig()->
+    readNumEntry(keys.current(), *((int*)data));
 }
 void KConfigIntObject::writeObject(KObjectConfig* config)
 {
   config->getConfig()->writeEntry(keys.current(), *((int*)data));
 }
 
-
-
-
-
 /*****************************************************************************
  * String Object
  */
 void KConfigStringObject::readObject(KObjectConfig* config)
 {
-  *((QString*)data) = config->getConfig()->readEntry(keys.current(), *((QString*)data));
+  *((QString*)data) = config->getConfig()->
+    readEntry(keys.current(), *((QString*)data));
 }
 void KConfigStringObject::writeObject(KObjectConfig* config)
 {
   config->getConfig()->writeEntry(keys.current(), *((QString*)data));
 }
-
-
-
-
 
 /******************************************************************************
  * String List Object
@@ -215,69 +182,101 @@ void KConfigStrListObject::writeObject(KObjectConfig* config)
   config->getConfig()->writeEntry(keys.current(), *((QStrList*)data), sep);
 }
 
-
-
-
-
 /******************************************************************************
  * Combo Object
  */
+KConfigComboObject::KConfigComboObject(const char* key, int& val,
+				       const char** list,
+				       unsigned num, const char** labels,
+				       int type)
+  :KConfigObject(&val, FALSE, key)
+{
+  this->list   = list;
+  this->labels = labels;
+  this->type   = type;
+  this->num    = num;
+  pindex  = &val;
+  pstring = 0L;
+}
 KConfigComboObject::KConfigComboObject(const char* key, QString& val,
 				       const char** list,
-				       unsigned num)
-  :KConfigStringObject(key, val)
+				       unsigned num, const char** labels,
+				       int type)
+  :KConfigObject(&val, FALSE, key)
 {
-  unsigned i;for(i=0; i<num; combo.append(list[i++]));
+  this->list   = list;
+  this->labels = labels;
+  this->type   = type;
+  this->num    = num;
+  pstring = &val;
+  pindex  = 0L;
 }
-QWidget* KConfigComboObject::createWidget(QWidget* parent,
-					  const char** list)
+int KConfigComboObject::getIndex(const QString& string) const
 {
-  QComboBox* box = new QComboBox(parent);
-  unsigned i, j;for(i=j=0; i<combo.count(); i++) {
-    if(*((QString*)data) == combo.at(i)) j = i;
-    if(list && list[i]) box->insertItem(klocale->translate(list[i]));
-    else box->insertItem(combo.at(i));
+  unsigned i;for(i=num; --i>0 && string!=list[i];);
+  return i;
+}
+QWidget* KConfigComboObject::createWidget(QWidget* parent, 
+					  const char* name) const
+{
+  QWidget *w = 0L;
+
+  switch(type) {
+  case Combo : 
+    {
+      QComboBox* box = new QComboBox(parent);
+      unsigned i;for(i=0; i<num; i++)
+	box->insertItem(klocale->
+			translate(labels&&labels[i]?labels[i]:list[i]));
+      box->setCurrentItem(getIndex());
+      box->setMinimumSize(box->sizeHint());
+      connect(box, SIGNAL(activated(int)), SLOT(activated(int)));
+      w = box;
+    }
+    break;
+  case ButtonGroup :
+    {
+      QButtonGroup* box = new QButtonGroup(klocale->translate(name), parent);
+      int height = 0;
+      unsigned i;for(i=0; i<num; i++) {
+	QRadioButton *but = 
+	  new QRadioButton(klocale->translate(labels && labels[i]?labels[i]
+					      :list[i]), box);
+	but->setMinimumSize(but->sizeHint());
+	height = but->height();
+      }
+      ((QRadioButton*)box->find(getIndex()))->setChecked(TRUE);
+      box->setMinimumHeight(2*height);
+      connect(box, SIGNAL(clicked(int)), SLOT(activated(int)));
+      w = box;
+    }
+    break;
   }
-  box->setCurrentItem(j);
-  box->setMinimumSize(box->sizeHint());
-  connect(box, SIGNAL(activated(int)), SLOT(activated(int)));
-  return box;
+  return w;
 }
-QWidget* KConfigComboObject::createWidget2(QWidget* parent,
-					   const char** list,
-					   const char* name)
+void KConfigComboObject::readObject(KObjectConfig* config)
 {
-  QButtonGroup* box = new QButtonGroup(name, parent);
-  int height = 0;
-  unsigned i, j;for(i=j=0; i<combo.count(); i++) {
-    if(*((QString*)data) == combo.at(i)) j = i;
-    QRadioButton *but = new QRadioButton((list && list[i])?klocale->translate(list[i])
-					 :combo.at(i), box);
-    but->setMinimumSize(but->sizeHint());
-    height = but->height();
-  }
-  ((QRadioButton*)box->find(j))->setChecked(TRUE);
-  box->setMinimumHeight(2*height);
-  connect(box, SIGNAL(clicked(int)), SLOT(activated(int)));
-  return box;
+  QString tmp = config->getConfig()->readEntry(keys.current(), getString());
+  if(pindex) *pindex = getIndex(tmp); else *pstring = tmp;
 }
-
-
-
-
+void KConfigComboObject::writeObject(KObjectConfig* config)
+{
+  config->getConfig()->writeEntry(keys.current(), getString());
+}
 
 /***********************************************************************
  * Color List Object
  */
 void KConfigColorObject::readObject(KObjectConfig* config)
 {
-  *((QColor*)data) = config->getConfig()->readColorEntry(keys.current(), ((QColor*)data));
+  *((QColor*)data) = config->getConfig()->
+    readColorEntry(keys.current(), ((QColor*)data));
 }
 void KConfigColorObject::writeObject(KObjectConfig* config)
 {
   config->getConfig()->writeEntry(keys.current(), *((QColor*)data));
 }
-QWidget* KConfigColorObject::createWidget(QWidget* parent)
+QWidget* KConfigColorObject::createWidget(QWidget* parent, const char*) const
 {
   KColorButton *button = new KColorButton(*((const QColor*)data), parent);
   connect(button, SIGNAL(changed(const QColor&)),
@@ -289,68 +288,67 @@ void KConfigColorObject::changed(const QColor& newColor)
   *((QColor*)data) = newColor;
 }
 
-
-
-
-
 /*************************************************************************
  * Font Object
  */
 void KConfigFontObject::readObject(KObjectConfig* config)
 {
-  *((QFont*)data) = config->getConfig()->readFontEntry(keys.current(), ((QFont*)data));
+  *((QFont*)data) = config->getConfig()->
+    readFontEntry(keys.current(), ((QFont*)data));
 }
 void KConfigFontObject::writeObject(KObjectConfig* config)
 {
   config->getConfig()->writeEntry(keys.current(), *((QFont*)data));
 }
-QWidget* KConfigFontObject::createWidget(QWidget* parent)
+QWidget* KConfigFontObject::createWidget(QWidget* parent, 
+					 const char* label) const
 {
-  QPushButton *button = new QPushButton(parent);
+  QPushButton *button = new QPushButton(klocale->translate(label), parent);
   connect(button, SIGNAL(clicked()), SLOT(activated()));
   return button;
 }
 void KConfigFontObject::activated()
 {
   QFont font = *((QFont*)data);
-  if(KFontDialog::getFont(font)) {
-    *((QFont*)data) = font;
-  }
+  if(KFontDialog::getFont(font)) *((QFont*)data) = font;
 }
-
-
 
 /*************************************************************************
    Object Configuration 
    
-
 **************************************************************************/
+QStrList KObjectConfig::separate(const char* s, char sep)
+{
+  QString  string(s);
+  QStrList list;
+  int i, j;for(i=0;j=string.find(sep, i), j != -1; i=j+1)
+    list.append(string.mid(i, j-i));
+  QString last = string.mid(i, 1000);
+  if(!last.isNull() && last != "") list.append(last);
+  return list;
+}
 KObjectConfig::KObjectConfig(KConfigBase* config, bool autoDelete)
 {
   init();
   deleteConfig = autoDelete;
-  config = config;
-  configFile = 0L;
-  configType = External;
-  version = -1.0;
+  config       = config;
+  configFile   = 0L;
+  configType   = External;
+  version      = -1.0;
 }
 KObjectConfig::KObjectConfig(int type, const char* name)
 {
   init();
-  configType   = type;
-  configFile   = name;
+  configType = type;
+  configFile = name;
 }
-KObjectConfig::~KObjectConfig()
-{
-  if(deleteConfig && config) delete config;
-}
+KObjectConfig::~KObjectConfig(){if(deleteConfig && config) delete config;}
 void KObjectConfig::init()
 {
   groups.setAutoDelete(TRUE);
   entries.setAutoDelete(TRUE);
   config = 0L;
 }
-
 
 bool nonzeroFile(QString& file) {
     QFileInfo info(file);
@@ -414,9 +412,10 @@ void KObjectConfig::initConfig()
 /*
  * set current configuration group
  */
-void KObjectConfig::setGroup(const char* pGroup)
+int KObjectConfig::setGroup(const char* pGroup)
 {
   if(groups.find(pGroup) == -1) groups.append(pGroup);
+  return 0;
 }
 const char* KObjectConfig::group()
 {
@@ -467,80 +466,27 @@ void KObjectConfig::saveConfig()
   }
   config->sync();
 }
-KConfigObject* KObjectConfig::find(void* data)
+KConfigObject* KObjectConfig::find(const void* data) const
 {
+  // we need this complicated expression because we know that
+  // find does not make sensible changes
+  QList<KConfigObject> &entries = *(QList<KConfigObject>*)&this->entries;
   unsigned i;for(i=0; i<entries.count(); i++)
     if(entries.at(i)->data == data)
       return entries.at(i);
   return 0L;
 }
 /**
-   supported in core objects
-*/
-void KObjectConfig::registerBool(const char* key, bool& val)
-{
-  registerObject(new KConfigBoolObject(key, val));
-}
-void KObjectConfig::registerInt(const char* key, int& val)
-{
-  registerObject(new KConfigIntObject(key, val));
-}
-void KObjectConfig::registerString(const char* key, QString& val)
-{
-  registerObject(new KConfigStringObject(key, val));
-}
-void KObjectConfig::registerStrList(const char* key, QStrList& val,
-				    char pSep)
-{
-  registerObject(new KConfigStrListObject(key, val, pSep));
-}
-void KObjectConfig::registerColor(const char* key, QColor& val)
-{
-  registerObject(new KConfigColorObject(key, val));
-}
-void KObjectConfig::registerFont(const char* key, QFont& val)
-{
-  registerObject(new KConfigFontObject(key, val));
-}
-/**
    supported widgets
 */
-QWidget* KObjectConfig::createBoolWidget(bool& val, const char* label,
-					 QWidget* parent)
+QWidget* KObjectConfig::createWidget(const void* data, QWidget* parent,
+				     const char* label, const char* tip) const
 {
-  KConfigObject *obj = find(&val);
-  if(obj)
-    return ((KConfigBoolObject*)obj)->createWidget(parent, label);
+  KConfigObject *obj = find(data);
+  if(obj) {
+    QWidget* widget = obj->createWidget(parent, label);
+    if(tip) QToolTip::add(widget, klocale->translate(tip));
+    return widget;
+  }
   return 0L;
 }
-QWidget* KObjectConfig::createComboWidget(QString& val, const char** list,
-					  QWidget* parent)
-{
-  KConfigObject *obj = find(&val);
-  if(obj)
-    return ((KConfigComboObject*)obj)->createWidget(parent, list);
-  return 0L;
-}
-QWidget* KObjectConfig::createComboWidget2(QString& val, const char** list,
-					   const char* name, QWidget* parent)
-{
-  KConfigObject *obj = find(&val);
-  if(obj)
-    return ((KConfigComboObject*)obj)->createWidget2(parent, list, name);
-  return 0L;
-}
-QWidget* KObjectConfig::createColorWidget(QColor& val, QWidget* parent)
-{
-  KConfigObject *obj = find(&val);
-  if(obj)
-    return ((KConfigColorObject*)obj)->createWidget(parent);
-  return 0L;
-}
-QWidget* KObjectConfig::createFontWidget(QFont& val, QWidget* parent)
-{
-  KConfigObject *obj = find(&val);
-  if(obj)
-    return ((KConfigFontObject*)obj)->createWidget(parent);
-  return 0L;
-}
-

@@ -18,6 +18,7 @@
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    
   */
+
 #ifndef K_CONF_OBJS
 #define K_CONF_OBJS
 
@@ -51,7 +52,6 @@ class KConfigMatchKeysObject: public KConfigObject {
   */
   virtual void writeObject(KObjectConfig*);
  public:
-  static QStrList separate(const char* string, char sep=',');
   /**
      Create new object to read all keys matched regular expression.
      @param match The Regular Expression
@@ -60,13 +60,9 @@ class KConfigMatchKeysObject: public KConfigObject {
   */
   KConfigMatchKeysObject(const QRegExp& match, QStrList& list);
   QStrList separate(int index, char sep=','){
-    return separate(((QStrList*)data)->at(index), sep);
+    return KObjectConfig::separate(((QStrList*)data)->at(index), sep);
   }
 };
-
-
-
-
 
 /**
    This objects can handle a group of objects with keys numbered
@@ -93,10 +89,6 @@ class KConfigNumberedKeysObject: public KConfigObject {
 			    QStrList& list);
 };
 
-
-
-
-
 /**
   * Boolean Config Object
   */
@@ -114,14 +106,12 @@ protected:
 public:
   KConfigBoolObject(const char* key, bool& val)
     :KConfigObject(&val, FALSE, key){}
-  QWidget* createWidget(QWidget* parent=0L, const char* label=0L);
+  /** Create QCheckBox with locale translated label
+   */
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L) const;
 public slots:
   void toggled(bool);
 };
-
-
-
-
 
 /**
   * Int Config Object
@@ -142,10 +132,6 @@ public:
     :KConfigObject(&val, FALSE, key){}
 };
 
-
-
-
-
 /**
   OString Config object. 
  */
@@ -164,10 +150,6 @@ public:
   KConfigStringObject(const char* key, QString& val)
     :KConfigObject(&val, FALSE, key){}
 };
-
-
-
-
 
 /**
   * String List Config Object
@@ -189,56 +171,70 @@ public:
     :KConfigObject(&val, FALSE, key){sep = pSep;}
 };
 
-
-
-
-
-/**
-   Object of data type QString witch can have as value one of the
-   given string from the list.
+/** Object which get as a value one string from the given list
 */
-class KConfigComboObject: public KConfigStringObject {
+class KConfigComboObject: public KConfigObject {
   Q_OBJECT
 protected:
-  QStrList combo;
-public:
+  QString     *pstring;
+  int         *pindex;
+  const char **list, **labels;
+  unsigned     num;
+  short        type;
   /**
-     Construct new object with list of available values given by QStrList.
+     KConfigObject reimplemented write data method
   */
-  KConfigComboObject(const char* key, QString& val, const QStrList& pCombo)
-    :KConfigStringObject(key, val), combo(pCombo) {
-  }
+  void readObject(KObjectConfig*);
+  /**
+     KConfigObject reimplemented write data method
+  */
+  void writeObject(KObjectConfig*);
+  int getIndex(const QString&) const;
+public:
+  enum {Combo, ButtonGroup};
   /**
      Construct new object with list of available values given by array
      of NULL terminated character strings.
-     @param list array of NULL terminated strings
+     @param val index of selected string
+     @param list array of NULL terminated strings. Strings not copied.
      @param num size of the list array
+     @param labels labels used for widget, can be NULL. Strings not copied.
+     @param type type of widget
+  */
+  KConfigComboObject(const char* key, int& val, const char** list,
+		     unsigned num, const char** labels=0L, int type=Combo);
+  /**
+     Construct new object with list of available values given by array
+     of NULL terminated character strings.
+     @param val selected string
+     @param list array of NULL terminated strings. Strings not copied.
+     @param num size of the list array
+     @param labels labels used for widget, can be NULL. Strings not copied.
+     @param type type of widget
   */
   KConfigComboObject(const char* key, QString& val, const char** list,
-		     unsigned num);
+		     unsigned num, const char** labels=0L, int type=Combo);
   /**
-     Create QComboBox widget to change value of the KConfigComboObject
-     data.
-     @param list if not null, used as strings to show in QComboBox instead
-     of ones used as values. Must be of size given in constructor.
+     Create widget to change value of the KConfigComboObject data.
+     If type==Combo, QComboWidget will be created with locale
+     translated labels.
+     If type==ButtonGroup, QButtonGroup will be created with locale
+     translated labels.
+     @param name optional name of button group.
   */
-  QWidget* createWidget(QWidget* parent=0L, const char** list=0L);
-  /**
-     Create QButtonGroup widget to change value of the KConfigComboObject
-     data.
-     @param list if not null, used as strings to show in QComboBox instead
-     of ones used as values. Must be of size given in constructor.
-     @param name The name of QButtonGroup.
-  */
-  QWidget* createWidget2(QWidget* parent=0L, const char** list=0L,
-			 const char *name=0L);
-public slots:
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L) const;
+  int getIndex() const {return pindex?*pindex:getIndex(*pstring);}
+  QString getString() const {
+    return QString(pindex?list[*pindex]:(const char*)*pstring);
+  }
+ public slots:
     /**
        Slot used to connect widgets.
     */
-  void activated(int index){
-    *((QString*)data) = combo.at(index);
-  }
+  void activated(int i) {
+   if(pstring) *pstring = list[i];
+   if(pindex)  *pindex = i;
+ }
 };
 
 
@@ -266,8 +262,9 @@ public:
     :KConfigObject(&val, FALSE, key){}
   /**
      Create colored button connected to KColorDialog.
+     Parameter label ignored.
   */
-  virtual QWidget* createWidget(QWidget* parent=0L);
+  virtual QWidget* createWidget(QWidget* parent=0L, const char*label=0L) const;
 public slots:
   void changed(const QColor&);
 };
@@ -296,9 +293,9 @@ public:
   KConfigFontObject(const char* key, QFont& val)
     :KConfigObject(&val, FALSE, key){}
   /**
-     Create unlabeled QPushButton connected to KFontDialog.
+     Create labeled QPushButton connected to KFontDialog.
   */
-  virtual QWidget* createWidget(QWidget* parent=0L);
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L) const;
 public slots:
   void activated();
 };

@@ -86,12 +86,33 @@ static const char* swConfigAltString[] = {
 static const char* inpConfigString[] = {
   "Global", "Window", "Class"
 };
-static const char* autoStartPlaceLabels[] = {
-  "topleft",
-  "topright",
-  "botleft",
-  "botright"
+
+const char* switchLabels[] = {
+  "(None)",
+  "Right Alt",
+  "Right Control",
+  "Rights (Alt+Shift)" ,
+  "Rights (Ctrl+Alt)"  ,
+  "Rights (Ctrl+Shift)",
+  "Lefts  (Alt+Shift)",
+  "Lefts  (Ctrl+Alt)",
+  "Lefts  (Ctrl+Shift)",
+  "Both Shift's (Shift+Shift)"
 };
+const char* altSwitchLabels[] = {
+  "(None)",
+  "Right Alt",
+  "Right Control",
+  "Left  Alt",
+  "Left  Control",
+};
+const char* autoStartPlaceLabels[] = {
+  "Top Left",
+  "Top Right",
+  "Bottom Left",
+  "Bottom Right"
+};
+
 const QColor mapNormalColor = black;
 const QColor mapUserColor   = darkBlue;
 const QColor mapNoFileColor = darkRed;
@@ -102,50 +123,60 @@ const QColor mapNoFileColor = darkRed;
 KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 {
   setVersion(1.0);
-  setGroup(confMainGroup);
-  registerBool(confStringHotList    , hotList);
-  registerBool(confStringBeep       , keyboardBeep);
-  registerBool(confStringAutoMenu   , autoMenu);
-  registerBool(confStringEmuCapsLock, emuCapsLock);
-  registerBool(confStringCustFont   , custFont);
-  registerBool(confStringSaveClasses, saveClasses);
-  registerObject(new KConfigNumberedKeysObject(confStringMap, 0, 9, maps));
-  registerObject(new KConfigComboObject(confStringSwitch, switchComb,
-					swConfigString,
-					sizeof(swConfigString)
-					/sizeof(*swConfigString)));	
-  registerObject(new KConfigComboObject(confStringAltSwitch, altSwitchComb,
-					swConfigAltString,
-					sizeof(swConfigAltString)
-					/sizeof(*swConfigAltString)));	
-  registerObject(new KConfigComboObject(confStringInput, input,
-					inpConfigString,
-					sizeof(inpConfigString)
-					/sizeof(*inpConfigString)));
-  registerColor(confStringCapsColor, capsColor);
-  registerColor(confStringAltColor,  altColor);
-  registerColor(confStringForColor,  forColor);
-  registerFont(confStringFont,  font);
+  *this << setGroup(confMainGroup)
+	<< new KConfigBoolObject(confStringHotList, hotList)
+	<< new KConfigBoolObject(confStringBeep, keyboardBeep)
+	<< new KConfigBoolObject(confStringAutoMenu, autoMenu)
+	<< new KConfigBoolObject(confStringEmuCapsLock, emuCapsLock)
+	<< new KConfigBoolObject(confStringCustFont, custFont)
+	<< new KConfigBoolObject(confStringSaveClasses, saveClasses)
+	<< new KConfigNumberedKeysObject(confStringMap, 0, 9, maps)
+	<< new KConfigComboObject(confStringSwitch, switchComb, swConfigString,
+				  sizeof(swConfigString)
+				  /sizeof(*swConfigString), switchLabels)
+	<< new KConfigComboObject(confStringAltSwitch, altSwitchComb,
+				  swConfigAltString, sizeof(swConfigAltString)
+				  /sizeof(*swConfigAltString), altSwitchLabels)
+	<< new KConfigComboObject(confStringInput, input, inpConfigString,
+				  sizeof(inpConfigString)
+				  /sizeof(*inpConfigString), inpConfigString,
+				  KConfigComboObject::ButtonGroup)
+	<< new KConfigColorObject(confStringCapsColor, capsColor)
+	<< new KConfigColorObject(confStringAltColor, altColor)
+	<< new KConfigColorObject(confStringForColor, forColor)
+	<< new KConfigFontObject(confStringFont,  font)
+	<< setGroup(confStartupGroup)
+	<< new KConfigBoolObject(confStringAutoStart, autoStart)
+	<< new KConfigBoolObject(confStringDocking, docking)
+	<< new KConfigComboObject(confStringAutoStartPlace, autoStartPlace,
+				  autoStartPlaceLabels,
+				  sizeof(autoStartPlaceLabels)
+				  /sizeof(*autoStartPlaceLabels));
+  connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc())); 
+  connect(this, SIGNAL(olderVersion()) , SLOT(olderVersion())); 
+  connect(this, SIGNAL(newerVersion()) , SLOT(newerVersion())); 
   maps.setAutoDelete(TRUE);
   allMaps.setAutoDelete(TRUE);
-  setGroup(confStartupGroup);
-  registerBool(confStringAutoStart, autoStart);
-  registerBool(confStringDocking, docking);
-  registerObject(new KConfigComboObject(confStringAutoStartPlace, 
-					autoStartPlace,
-					autoStartPlaceLabels,
-					sizeof(autoStartPlaceLabels)
-					/sizeof(*autoStartPlaceLabels)));
-  connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc())); 
-  connect(this, SIGNAL(olderVersion()), SLOT(olderVersion())); 
-  connect(this, SIGNAL(newerVersion()), SLOT(newerVersion())); 
+}
+void KiKbdConfig::loadConfig()
+{
+  // default values
+  keyboardBeep = hotList = autoStart = docking = TRUE;
+  autoMenu = emuCapsLock = custFont = saveClasses = FALSE;
+  switchComb = altSwitchComb = autoStartPlace = "";
+  input = 0;
+  capsColor = QColor(0, 128, 128);
+  altColor  = QColor(255, 255, 0);
+  forColor  = black;
+
+  KObjectConfig::loadConfig();
 }
 void ask(const char* msg)
 {
-  KiKbdConfig::message(klocale->translate(msg));
+  KiKbdConfig::message(translate(msg));
   if(QString(kapp->argv()[0]).find("kikbd") != -1) {
     if(KMsgBox::yesNo(0L, "kikbd",
-		      klocale->translate("Do you want to start Configuration?"))
+		      translate("Do you want to start Configuration?"))
        == 1) {
       system("kcmikbd -startkikbd&");
       ::exit(0);
@@ -172,20 +203,6 @@ void KiKbdConfig::newerVersion()
 	"Some settings may be incorrect.");
     doneCheck = TRUE;
   }
-}
-int KiKbdConfig::getInput()
-{
-  unsigned i;for(i=sizeof(inpConfigString)/sizeof(*inpConfigString); --i;)
-    if(input == inpConfigString[i]) return i;
-  return 0;
-}
-QStrList KiKbdConfig::getSwitch()
-{
-  return KConfigMatchKeysObject::separate(switchComb, '+');
-}
-QStrList KiKbdConfig::getAltSwitch()
-{
-  return KConfigMatchKeysObject::separate(altSwitchComb, '+');
 }
 QStrList KiKbdConfig::availableMaps()
 {
@@ -230,14 +247,14 @@ void KiKbdConfig::error(const char* form, const char* str,
 {
   QString msg(128);
   msg.sprintf(form, str, str2);
-  if(KMsgBox::yesNo(0, klocale->translate("kikbd configuration error"), msg) == 2) 
+  if(KMsgBox::yesNo(0, translate("kikbd configuration error"), msg) == 2) 
     ::exit(1);
 }
 void KiKbdConfig::message(const char* form, const char* str)
 {
   QString msg(128);
   msg.sprintf(form, str);
-  KMsgBox::message(0L, klocale->translate("kikbd configuration message"), msg);
+  KMsgBox::message(0L, translate("kikbd configuration message"), msg);
 }
 
 //=========================================================
@@ -245,22 +262,19 @@ void KiKbdConfig::message(const char* form, const char* str)
 //=========================================================
 KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
 {
-  QString file = name + ".kimap";
-  KObjectConfig config(KObjectConfig::AppData, file);
-  config.setGroup(confMainGroup);
-  config.registerString(confStringLabel   , label   );
-  config.registerString(confStringComment , comment );
-  config.registerString(confStringLanguage, language);
-  config.registerString(confStringCharset , charset );
-  config.registerString(confStringLocale  , locale  );
-  config.registerStrList(confStringAuthors , authors);
-  config.setGroup(confMapsGroup);
+  KObjectConfig config(KObjectConfig::AppData, name + ".kimap");
   QStrList symList, codeList;
-  config.registerObject(new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"),
-						   symList));
-  config.registerObject(new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"),
-						   codeList));
-  config.registerStrList(confStringCaps, capssyms);
+  config << config.setGroup(confMainGroup)
+	 << new KConfigStringObject(confStringLabel, label)
+	 << new KConfigStringObject(confStringComment, comment)
+	 << new KConfigStringObject(confStringLanguage, language)
+	 << new KConfigStringObject(confStringCharset, charset)
+	 << new KConfigStringObject(confStringLocale, locale)
+	 << new KConfigStrListObject(confStringAuthors , authors)
+	 << config.setGroup(confMapsGroup)
+	 << new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"), symList)
+	 << new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"), codeList)
+	 << new KConfigStrListObject(confStringCaps, capssyms);
   userData = TRUE;
   noFile   = FALSE;
   connect(&config, SIGNAL(noUserDataFile(const char*)),
@@ -277,8 +291,7 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   if(charset.isEmpty()) charset  = "unknown";
   if(label.isNull() || label == "")
     if(!locale.isNull()) label = locale; else label = name;
-  if(locale.isNull() || locale == "")
-    locale = klocale->translate("default");
+  if(locale.isNull() || locale == "") locale = translate("default");
   /*--- parsing ---*/
   keysyms.setAutoDelete(TRUE);
   keycodes.setAutoDelete(TRUE);
@@ -287,53 +300,54 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   /*--- pars key symbols ---*/
   unsigned i;for(i=0; i<symList.count(); i++) {
     QStrList *map = new QStrList;
-    *map = KConfigMatchKeysObject::separate(symList.at(i));
+    *map = KObjectConfig::separate(symList.at(i));
     keysyms.append(map);
     if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
   }
   /*--- pars key codes ---*/
   for(i=0; i<codeList.count(); i++) {
     QStrList *map = new QStrList;
-    *map = KConfigMatchKeysObject::separate(codeList.at(i));
+    *map = KObjectConfig::separate(codeList.at(i));
     keycodes.append(map);
     if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
   }
 }
-const QString KiKbdMapConfig::getInfo()
+const QString KiKbdMapConfig::getInfo() const
 {
+  QStrList authors(this->authors);
   QString com;
   // authors
-  com = klocale->translate(authors.count()<2?"Author":"Authors");
+  com = translate(authors.count()<2?"Author":"Authors");
   com += ":  ";
-  com += authors.count()>0?authors.at(0):"Not specified";
-  for(unsigned i = 1; i < authors.count(); i++) {
+  com += authors.count()>0?authors.at(0):translate("Not specified");
+  for(unsigned i = 1; i < authors.count() && i < 4; i++) {
     com += ",  ";
     com += authors.at(i);
   }
   com += "\n\n";
   // description
-  com += klocale->translate("Description:  ") + getGoodLabel()
+  com += translate("Description:  ") + getGoodLabel()
     + " " + comment;
   com += "\n\n";
   // source
-  com += klocale->translate("Source:  ");
-  com += noFile?klocale->translate("no file")
-    :(userData?klocale->translate("user file")
-    :klocale->translate("system file"));
+  com += translate("Source:  ");
+  com += noFile?translate("no file")
+    :(userData?translate("user file")
+    :translate("system file"));
   com += " \"" + name + ".kimap\"";
   com += "\n";
   // statistic
   QString num;
-  com += klocale->translate("Statistic:  ");
+  com += translate("Statistic:  ");
   num.setNum(keysyms.count());
   com += num + " ";
-  com += klocale->translate("symbols");
+  com += translate("symbols");
   num.setNum(keycodes.count());
   com += ", " + num + " ";
-  com += klocale->translate("codes");
+  com += translate("codes");
   if(hasAltKeys) {
     com += ", ";
-    com += klocale->translate("alternative keys");
+    com += translate("alternative symbols");
   }
   return com;
 }
@@ -341,9 +355,9 @@ const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString label;
   label += language + " ";
-  label += klocale->translate("language");
+  label += translate("language");
   label += ", " + charset + " ";
-  label += klocale->translate("charset");
+  label += translate("charset");
   label += ".";
   return label;
 }

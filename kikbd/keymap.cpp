@@ -40,7 +40,7 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
   */
   name    = config.getName();
   label   = config.getLabel();
-  comment = config.getComment();
+  comment = config.getGoodLabel();
   altKeys = config.getHasAltKeys();
 
   /**

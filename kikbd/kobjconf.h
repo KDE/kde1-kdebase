@@ -18,14 +18,18 @@
   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    
   */
+
 #ifndef K_OBJ_CONF
 #define K_OBJ_CONF
 
-#include <qwidget.h>
-#include "ksimpleconfig.h"
+#include <qobject.h>
+#include <qstrlist.h>
 
-//@Include: kconfobjs.h
+class QWidget;
+class QString;
+class KConfigBase;
 class KObjectConfig;
+//@Include: kconfobjs.h
 /**
    This is abstract base class for using with KObjectConfig.
 */
@@ -81,6 +85,13 @@ class KConfigObject: public QObject {
     persistent = bPersistent;
     global = bGlobal;
     NLS = bNLS;
+  }
+  /**
+     Create widget to interactivaly change value. Sutable for writing
+     configuration programs. Each call to function return new widget.
+  */
+  virtual QWidget* createWidget(QWidget* parent, const char* label=0L) const {
+    return 0L;
   }
 };
 
@@ -161,7 +172,7 @@ class KObjectConfig: public QObject {
      set current Group for register object
      @param pGroup The name of the group
   */
-  void setGroup(const char *pGroup);
+  int setGroup(const char *pGroup);
   /** Return current group
   */
   const char* group();
@@ -185,58 +196,16 @@ class KObjectConfig: public QObject {
      Find previously registered object by looking for a data reference.
      @param data pointer to data registered with one of object
   */
-  KConfigObject* find(void* data);
-  /**
-     Same as above but especially for bool variable.
-     Automatically create new object. Same as :
-     registerObject(new KConfigBoolObject(key, val));
-     @param key The key to look in the registered group
-     @param existent value to load data in and to write from
-  */
-  // register(char*, bool);
-  void registerBool(const char* key, bool& val);
-  /**
-     Same as above but for int variable.
-  */
-  void registerInt(const char* key, int& val);
-  /**
-     Same as above but for String variable.
-  */
-  void registerString(const char* key, QString& val);
-  /**
-     Same as above but for String List variable.
-  */
-  void registerStrList(const char* key, QStrList& val, char pSep=',');
-  /**
-     Same as above but for Color variable.
-  */
-  void registerColor(const char* key, QColor&val);
-  /**
-     Same as above but for Font variable.
-  */
-  void registerFont(const char* key, QFont&val);
+  KConfigObject* find(const void* data) const;
   /**
      Create widget to interactively change object value.
-     Use QCheckBox for changing bool variable.
-     @param val The variable registered with bool object
-     @param label Text label for QCheckBox
-     @param parent parent widget
+     @param data address of variable registered with object
+     @param parent optional parent widget
+     @param label optional text label
+     @param tip if not NULL locale translated QToolTip will be set
   */
-  QWidget* createBoolWidget(bool& val, const char* label, QWidget* parent=0L);
-  /**
-     Same as above but for Color Widget. Create colored QPushButton connected
-     to KColorDialog.
-  */
-  QWidget* createColorWidget(QColor& val, QWidget* parent=0L);
-  /**
-     Same as above but for Font Widget. Create labeled button connected
-     to KFontDialog.
-  */
-  QWidget* createFontWidget(QFont& val, QWidget* parent=0L);
-  QWidget* createComboWidget(QString& val, const char** list=0L,
-			     QWidget* parent=0L);
-  QWidget* createComboWidget2(QString& val, const char** list=0L,
-			      const char* name=0L, QWidget* parent=0L);
+  QWidget* createWidget(const void* data, QWidget* parent=0L, 
+			const char* label=0L, const char* tip=0L) const;
   /**
      This set config file version and enables version control 
      (disabled by default). Version number follow the standart convension:
@@ -244,7 +213,13 @@ class KObjectConfig: public QObject {
   */
   void  setVersion(float v) {version = v;}
   float getVersion() const {return version;}
-
+  friend KObjectConfig& operator<<(KObjectConfig& config, KConfigObject* obj) {
+    return config.registerObject(obj), config;
+  }
+  friend KObjectConfig& operator<<(KObjectConfig& config, int) {
+    return config;
+  }
+  static QStrList separate(const char* string, char sep=',');
  signals:
   /** This signal emited when new user rc file created by using UserFromSystemRc
   */
