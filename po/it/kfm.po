@@ -855,7 +855,7 @@ msgstr "Il file non contiene un indirizzo (URL)"
 
 #: kfmman.cpp:316
 msgid "Contacting host "
-msgstr "Connessione all'host"
+msgstr "Connessione all'host "
 
 #: kfmman.cpp:320
 msgid "Working ..."

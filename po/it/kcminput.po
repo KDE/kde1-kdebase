@@ -36,7 +36,7 @@ msgstr "Accelerazione"
 
 #: mouse.cpp:81
 msgid "Threshold"
-msgstr "Movimento minima"
+msgstr "Movimento minimo"
 
 #: mouse.cpp:84
 msgid "Button mapping"
