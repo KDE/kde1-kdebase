@@ -1,5 +1,5 @@
 
-data_DATA = go.xpm window_list.xpm personal.xpm
+data_DATA = go.xpm window_list.xpm personal.xpm pers_applnk.xpm kdisknav.xpm
 
 datadir = $(kde_datadir)/kpanel/pics/mini
 

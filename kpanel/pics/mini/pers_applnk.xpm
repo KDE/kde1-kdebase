@@ -1,0 +1,31 @@
+/* XPM */
+/* Drawn for the K Desktop Environment by Torsten Rahn */
+/* see http://www.kde.org */
+static char*applnk[]={
+"16 16 10 1",
+"c c #c0c000",
+"b c #808000",
+"h c #ffc0c0",
+"# c #000000",
+"d c #ff8000",
+"f c #800000",
+"a c #ffffc0",
+". c None",
+"e c #c00000",
+"g c #ff0000",
+".....##...#.....",
+"...##aa###a##...",
+".##aa##bc##aa##.",
+"#aa##bbbccc##aa#",
+"###bbbbbccccc###",
+".#a##bbbccc###..",
+".#aaa##bc##cc#..",
+".#aaaaa##cccc#..",
+".#aaaaaac##cc##.",
+".#aaaaaa#def#ge#",
+".#aaaaa#dhd#egg#",
+".#aaaaa#dhdegge#",
+".#caaaaa#dgdgg#.",
+"..##caaac#dge#..",
+"....##ca###g#...",
+"......##...#...."};
