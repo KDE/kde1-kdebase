@@ -295,7 +295,7 @@ void KPagerClient::desktopNumberChanged(int numdsks)
     }
     else
     {
-//	bool showname=Desktop::showName;
+        // bool showname=Desktop::showName;
         for (int i=1;i<=numberofDesktops;i++)
             delete desktop[i];
         initDesktops();
@@ -325,7 +325,7 @@ void KPagerClient::initDesktops(void)
         desktop[i]->setGeometry(x,y,w,h);
         desktop[i]->show();
         x+=w+5;
-    };
+    }
     
     activedesktop=KWM::currentDesktop();
     desktop[activedesktop]->setDesktopActived(true);
@@ -640,7 +640,7 @@ void KPagerClient::paintEvent(QPaintEvent *)
 void KPagerClient::commandReceived(QString s)
 {
     if ((strcmp(s.data(),"kbgwm_change")==0)
-     || (strcmp(s.data(),"kbgwm_reconfigure")==0))
+        || (strcmp(s.data(),"kbgwm_reconfigure")==0))
     {
 #ifdef KPAGERCLIENTDEBUG
         printf("KBGWM_CHANGE\n");

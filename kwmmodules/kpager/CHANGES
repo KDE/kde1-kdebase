@@ -1,3 +1,8 @@
+* Sun Dic 20 14:20:00 CEST 1998
+
+Fixed a problem : When the common background changed, 
+kpager didn't noticed if changing from wallpaper to a non-wallpaper mode.  
+
 * Sat Dic 19 14:40:00 CEST 1998
 
 Added some pedantic (though needed) comparisons . This made kpager

@@ -1,7 +1,7 @@
 #ifndef _VERSION_H
 
-#define VERSION_NUM 0.9
-#define VERSION_SHORTTXT "0.9"
-#define VERSION_TXT "KPager 0.9"
+#define VERSION_NUM 1.0
+#define VERSION_SHORTTXT "1.0"
+#define VERSION_TXT "KPager 1.0"
 
 #endif

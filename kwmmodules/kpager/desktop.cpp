@@ -48,7 +48,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
         headerHeight=qp->fontMetrics().height()+5;
         delete qp;
     } else
-	headerHeight=0;
+        headerHeight=0;
     tmpScreen=new QPixmap;
     
     backgroundPixmap=0L;
@@ -192,7 +192,7 @@ void Desktop::changeWindow(Window w)
 #endif
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==0L) return;
-
+    
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     uint wid=getIndexOfWindow(w);
@@ -427,18 +427,18 @@ void Desktop::paintEvent(QPaintEvent *)
     if (Desktop::showName)
     {
         painter->fillRect(0,0,width(),y,QColor(192,192,192));
-    
+        
         drawSunkRect(painter,2,2,10,16,desktopActived ? true : false);
         painter->setPen(QColor(0,0,0));
         painter->setFont(*desktopfont);
         painter->drawText(20,getHeaderHeight()*3/4,name(),strlen(name()));
     }
-
+    
     
     WindowProperties *wp=window_list->first();
     painter->setClipRect(x,y,width()-x,height()-y);
     painter->setClipping(TRUE);
-    if ((useBackgroundInfoFromKbgndwm)&&(backgroundPixmap!=0L))
+    if ((useBackgroundInfoFromKbgndwm)&&(backgroundPixmap!=0L)&&(id!=0))
     {
         painter->drawPixmap(x,y,*backgroundPixmap);
     }
@@ -621,8 +621,10 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     hilitwin=wp->id;
     if (KWM::isSticky(wp->id)) emit updateDesk(0);
     update();
-    //    if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
-    //        KWM::activateInternal(wp->id);
+    /*
+     if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
+     KWM::activateInternal(wp->id);
+    */
     
 }
 
@@ -656,8 +658,8 @@ void Desktop::mouseReleaseEvent ( QMouseEvent *e )
         if (use1ClickMode) emit switchToDesktop(id);
         mousepressed=false;
         
-        // Next code may be a little reiterative, but sometimes KPager don't
-        // receive all the signals 
+        // Next code may be a little reiterative, but it is needed in
+        // case something goes wrong.
         bool ok;
         WindowProperties *wp=windowAtPosition(&e->pos(),&ok);
         if ((wp!=0L)&&(!kwmmapp->hasWindow(wp->id)))
@@ -796,21 +798,6 @@ void Desktop::readBackgroundSettings(void)
     bool useDir = config.readBoolEntry( "UseDir", false);
     int randomid=config.readNumEntry("Item");    
     QString wallpaper;
-    if (useDir)
-    {
-        QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
-        QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
-        
-        QStrList *list = (QStrList *)d.entryList();
-        color1 = QColor(black);
-        gfMode=Flat;
-        orMode=Portrait;
-        wpMode = Tiled;
-        useWallpaper = true;
-        wallpaper = d.absPath() + "/" + list->at( randomid ); 	
-        loadWallpaper(wallpaper);
-        return;
-    };
     
     char group[50];
     sprintf(group,"Desktop%d",randomid);
@@ -881,6 +868,23 @@ void Desktop::readBackgroundSettings(void)
     useWallpaper = config.readBoolEntry( "UseWallpaper", false );
     if ( useWallpaper )
     {
+        
+        if (useDir)
+        {
+            QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
+            QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
+            
+            QStrList *list = (QStrList *)d.entryList();
+            color1 = QColor(black);
+            gfMode=Flat;
+            orMode=Portrait;
+            wpMode = Tiled;
+            useWallpaper = true;
+            wallpaper = d.absPath() + "/" + list->at( randomid ); 	
+            loadWallpaper(wallpaper);
+            return;
+        };
+        
         wallpaper = config.readEntry( "Wallpaper", "" );
         loadWallpaper(wallpaper);
 #ifdef DESKTOPDEBUG
@@ -920,9 +924,9 @@ void Desktop::loadWallpaper(QString wallpaper)
 
 void Desktop::loadWallpaperBackground(QString wallpaper)
 {
-//#ifdef DESKTOPDEBUG
+#ifdef DESKTOPDEBUG
     printf("[%d]Loading\n",id);
-//#endif
+#endif
     QString filename;
     
     if ( wallpaper[0] != '/' )
@@ -952,9 +956,9 @@ void Desktop::loadWallpaperBackground(QString wallpaper)
     QWMatrix matrix;
     matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
     bigBackgroundPixmap = new QPixmap(wpPixmap2->xForm(matrix));
-//#ifdef DESKTOPDEBUG
+#ifdef DESKTOPDEBUG
     printf("Loaded\n");
-//#endif
+#endif
     delete wpPixmap;
 }
 
@@ -1086,7 +1090,7 @@ void Desktop::prepareBackground(void)
                     QPainter paint( backgroundPixmap );
                     int w=width();
                     //int h=height()-getHeaderHeight();  // If it's unused don't code it.
-
+                    
                     paint.setPen( white );
                     for ( i=k=0; i < (int)w; i+=7,k++ ) 
                     {
@@ -1317,14 +1321,14 @@ void Desktop::toggleShowName(void)
     if (showName)
     {
         headerHeight=0;
-	showName=false;
+        showName=false;
     }
     else
     {
         QPainter *qp=new QPainter(this);
         headerHeight=(fontMetrics()).height()+5;
         delete qp;
-	showName=true;
+        showName=true;
     }
 }
 

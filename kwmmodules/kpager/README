@@ -15,17 +15,11 @@ It also uses xdnd to move windows across desktops.
 Now it also has a totally new mode to work which has never been seen 
 in any u**x machine ! . The Pixmap draw mode . Try it !
 
+For more information look in the on-line docs.
 
-TODO
-----
+Hope you find kpager useful,
 
-(DONE)A 2 rows mode to people used to kpanel's desktop arrangement
-(DONE)Get back your menu after hiding it :-)
-(DONE)Save configuration/position/etc.
-(DONE)Help (really needed ?)
-Fix the tons of events that kpager receives when the about dialog appears 
-(DONE)Add support for all those modes that kbgndwm can paint wallpapers in. 
-(DONE)A more useful menu that allows to configure some options like
-   reading kbgndwm configuration, etc.
-(DONE)Display the names of the windows somewhere
+Antonio Larrosa Jimenez
+larrosa@kde.org
+antlarr@arrakis.es
 

@@ -20,7 +20,7 @@
  *   Send comments and bug fixes to antlarr@arrakis.es
  *   or to Antonio Larrosa, Rio Arnoya, 10 5B, 29006 Malaga, Spain
  *
- *   Note: This widget was copied from KButton as found in the kdelibs/kdeui
+ *   Note: This widget was copied from KButton as found in kdelibs/kdeui
  *   and then it was modified to increase funcionality.
  *   KButton was originally copyrighted by Torben Weis (weis@kde.org)
  *   and Matthias Ettrich (ettrich@kde.org) on 1997
@@ -44,110 +44,104 @@ KTriangleButton::~KTriangleButton()
 
 void KTriangleButton::enterEvent( QEvent* )
 {
-  if ( isEnabled() )
+    if ( isEnabled() )
     {
-      raised = TRUE;
-      repaint(FALSE);
+        raised = TRUE;
+        repaint(FALSE);
     }
 }
 
 void KTriangleButton::leaveEvent( QEvent * )
 {
-  if( raised != FALSE )
+    if( raised != FALSE )
     {
-      raised = FALSE;
-      repaint();
+        raised = FALSE;
+        repaint();
     }
 }
-    
+
 
 void KTriangleButton::drawButton( QPainter *_painter )
 {
-  paint( _painter );
+    paint( _painter );
 }
 
 void KTriangleButton::drawButtonLabel( QPainter *_painter )
 {
-  paint( _painter );
+    paint( _painter );
 }
 
 void KTriangleButton::paint( QPainter *painter )
 {
-  if ( isDown() || isOn() )
+    if ( isDown() || isOn() )
     {
-      if ( style() == WindowsStyle )
-	qDrawWinButton( painter, 0, 0, width(), 
-			height(), colorGroup(), TRUE );
-      else
-	qDrawShadePanel( painter, 0, 0, width(), 
-			 height(), colorGroup(), TRUE, 2, 0L );
+        if ( style() == WindowsStyle )
+            qDrawWinButton( painter, 0, 0, width(), 
+                            height(), colorGroup(), TRUE );
+        else
+            qDrawShadePanel( painter, 0, 0, width(), 
+                             height(), colorGroup(), TRUE, 2, 0L );
     }
-  else if ( raised )
+    else if ( raised )
     {
-      if ( style() == WindowsStyle )
-	qDrawWinButton( painter, 0, 0, width(), height(), 
-			colorGroup(), FALSE );
-      else
-	qDrawShadePanel( painter, 0, 0, width(), height(), 
-			 colorGroup(), FALSE, 2, 0L );
+        if ( style() == WindowsStyle )
+            qDrawWinButton( painter, 0, 0, width(), height(), 
+                            colorGroup(), FALSE );
+        else
+            qDrawShadePanel( painter, 0, 0, width(), height(), 
+                             colorGroup(), FALSE, 2, 0L );
     }
-  
-  if (dir==Right)
-  {
-      int x=width()/4;
-      int y=height()*2/6;
-      int l=height()-y*2;
-      int i=0;
-      int maxi=width()-2*x;
-      double m=((double)(l/2))/maxi;
-      while (i<=maxi)
-      {
-          painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
-          x++;
-          i++;
-      };
-  }
-  else if (dir==Left)
-  {
-      int x=width()/4;
-      int y=height()*2/6;
-      int l=height()-y*2;
-      int i=0;
-      int maxi=width()-2*x;
-      x=width()-x;
-      double m=((double)(l/2))/maxi;
-      while (i<=maxi)
-      {
-          painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
-          x--;
-          i++;
-      };
- 
-  };
-  
+    
+    if (dir==Right)
+    {
+        int x=width()/4;
+        int y=height()*2/6;
+        int l=height()-y*2;
+        int i=0;
+        int maxi=width()-2*x;
+        double m=((double)(l/2))/maxi;
+        while (i<=maxi)
+        {
+            painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
+            x++;
+            i++;
+        };
+    }
+    else if (dir==Left)
+    {
+        int x=width()/4;
+        int y=height()*2/6;
+        int l=height()-y*2;
+        int i=0;
+        int maxi=width()-2*x;
+        x=width()-x;
+        double m=((double)(l/2))/maxi;
+        while (i<=maxi)
+        {
+            painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
+            x--;
+            i++;
+        };
+        
+    };
+    
 }
 
 void KTriangleButton::mousePressEvent(QMouseEvent *e)
 {
     QButton::mousePressEvent(e);
-//    tresholdTimer=true;
+    //    tresholdTimer=true;
     usingTimer=true;
     startTimer(350);
     timeCount=0;
-
+    
 }
-
-/*
-void KTriangleButton::mouseMoveEvent(QMouseEvent *e)
-{
-}
-*/
 
 void KTriangleButton::mouseReleaseEvent(QMouseEvent *e)
 {
     if ((usingTimer)&&(timeCount==0))       // It has been a single click
     {
-	emit singleClick();
+        emit singleClick();
     };
     usingTimer=false;
     QButton::mouseReleaseEvent(e);

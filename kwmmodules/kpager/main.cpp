@@ -23,6 +23,7 @@
  */
 
 #include "kpager.h"
+#include "version.h"
 #include <stdlib.h>
 #include <string.h>
 #include <qwidget.h>
@@ -31,48 +32,43 @@
 
 int main(int argc, char **argv)
 {
-    printf("KPager 0.6 Copyright (C) 1998 Antonio Larrosa Jimenez. Malaga (Spain)\n");
+    printf("%s Copyright (C) 1998 Antonio Larrosa Jimenez. Malaga (Spain)\n",VERSION_TXT);
     printf("KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n");
     printf("This is free software, and you are welcome to redistribute it\n");
     printf("under certain conditions\n");
-
+    
     KWMModuleApplication *app=new KWMModuleApplication(argc,argv);
-
+    
     kimgioRegister();
-
+    
     while (!KWM::isKWMInitialized()) sleep(1);
-
+    
     if (app==NULL) 
-	{
-	   return 1;
-	}
-
+    {
+        return 1;
+    }
+    
     app->enableSessionManagement(TRUE);
-
+    
     KPager *kpager=new KPager(app,"KPager");
-
+    
     if (kpager==NULL) 
     {
-	   delete app;
-	   return 1;
+        delete app;
+        return 1;
     }
-
+    
     app->setMainWidget ( kpager );
-/*
-    {
-        QRect r=KWM::getWindowRegion(KWM::currentDesktop());
-        kpager->setGeometry(r.left(),r.bottom()-140,400,140);
-    }
-*/
+
     if (app->isRestored())
     {
         if (kpager->canBeRestored(1)) kpager->restore(1);
     }
     
     kpager->show();
-
+    
     int r=app->exec();
-
+    
     delete app;
     return r;
 };

@@ -84,7 +84,7 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     m_file->setCheckable( TRUE );
     m_file->insertItem( i18n("&Quit"), this, SLOT(file_quit()) );
     kKeysAccel->changeMenuAccel(m_file, 1, KAccel::Quit ); 
-
+    
     m_options = new QPopupMenu;
     if (kpagerclient->isVisibleGlobalDesktop())
         m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
@@ -156,7 +156,7 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     setGeometry(kapp->getConfig()->readRectEntry("Geometry",&r));
     
     readProperties(kcfg);
-
+    
 }
 
 KPager::~KPager()
@@ -239,7 +239,7 @@ void KPager::options_oneClickMode()
 void KPager::options_showDesktopName()
 {
     kpagerclient->toggleShowName();
-  
+    
     if (kpagerclient->isShowingDesktopName()) 
     {
         m_options->changeItem(i18n("Hide Desktop &Names"), 4); 
@@ -351,7 +351,7 @@ void KPager::readProperties(KConfig *kcfg)
         if (kpagerclient->is1ClickMode())
             options_oneClickMode();
     }
-
+    
     if (kcfg->readBoolEntry("showDesktopName"))
     {
         if (!kpagerclient->isShowingDesktopName())
@@ -389,13 +389,13 @@ QPopupMenu *KPager::getOptionlikeMenu(void)
     m_options->insertItem(i18n("One Click change Desktop"), this, SLOT(options_oneClickMode()));
     m_options->setId(3,3);
     m_options->setItemChecked(3,(kpagerclient->is1ClickMode())? TRUE : FALSE);
-//    m_options->insertItem(i18n("Show Desktop Names"), this, SLOT(options_showDesktopName()));
+    //    m_options->insertItem(i18n("Show Desktop Names"), this, SLOT(options_showDesktopName()));
     if (kpagerclient->isShowingDesktopName())
         m_options->insertItem(i18n("Hide Desktop &Names"), this, SLOT(options_showDesktopName()) );
     else
         m_options->insertItem(i18n("Show Desktop &Names"), this, SLOT(options_showDesktopName()) );
     m_options->setId(4,4);
-//    m_options->setItemChecked(4,(kpagerclient->isShowingDesktopName())? TRUE : FALSE);
+    //    m_options->setItemChecked(4,(kpagerclient->isShowingDesktopName())? TRUE : FALSE);
     m_options->insertSeparator();
     QPopupMenu *m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );

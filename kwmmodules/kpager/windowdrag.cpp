@@ -34,7 +34,7 @@ windowDrag::windowDrag(Window w,int deltax,int deltay, int origdesk,QWidget *par
     sprintf(tmp,"%ld %d %d %d",w,deltax,deltay,origdesk);
     QByteArray data(strlen(tmp)+1);
     data.assign(tmp,strlen(tmp)+1);
-
+    
     setEncodedData(data);
 }
 
