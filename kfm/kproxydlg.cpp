@@ -7,7 +7,7 @@
 #include <string.h>
 #include "kproxydlg.h"
 
-KProxyDlg::KProxyDlg(QWidget *parent=0, const char *name=0, WFlags f)
+KProxyDlg::KProxyDlg(QWidget *parent, const char *name, WFlags f)
   : QWidget(parent, name, f)
 {
 //  lb_info = new QLabel( klocale->translate("You may configure a proxy and port number for each of\nthe internet protocols that KFM supports."), this);

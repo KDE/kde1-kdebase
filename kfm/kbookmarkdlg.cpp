@@ -7,7 +7,7 @@
 #include "kbookmarkdlg.h"
 
 KBookmarkDlg::KBookmarkDlg(KBookmarkManager *manager,
-			   QWidget *parent= 0, const char *name= 0)
+			   QWidget *parent, const char *name)
   : QDialog(parent, name, true)
 {
   QPushButton *okButton;
