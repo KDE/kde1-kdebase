@@ -411,6 +411,7 @@ private:
   Atom kwm_command;
   Atom kwm_do_not_manage;
   Atom kwm_activate_window;
+  Atom kwm_maximize_window;
 
   Atom kwm_running;
 
@@ -456,6 +457,7 @@ private:
   void removeDockWindow(Window w);
   Atom kwm_module;
   Atom module_init;
+  Atom module_initialized;
   Atom module_desktop_change;
   Atom module_desktop_name_change;
   Atom module_desktop_number_change;

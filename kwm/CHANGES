@@ -15,6 +15,8 @@ In 0.13:
 patchlevel 2:
         - some additions to the middle mouse handling to emulate
            the former behaviour with MMB-movement.
+        - new signal "initialized" emited to modules when the
+          initialization is finished.
 
 patchlevel 1:
         - simplified outline drawing since the previous nifty stippled

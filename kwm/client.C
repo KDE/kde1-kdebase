@@ -1863,7 +1863,7 @@ void Client::ontoDesktop(int new_desktop){
 
 // maximize this client. Mode can be 0 (normal), 1 (verically) or 2
 // (horizontal). Store the current geometry in geometry_restore
-void Client::maximize(int mode){
+void Client::maximize(int mode, bool animate){
   if (isMaximized())
     return;
   maximized = true;
@@ -1872,15 +1872,13 @@ void Client::maximize(int mode){
 
   QRect maxRect = KWM::getWindowRegion(desktop);
 
-  {
-      // check for some floating windows (maybe a menubar?)
-      Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());
-      printf("check for maximize, have %p\n", c);
-      if (c && c->trans == window && c->getDecoration() == KWM::tinyDecoration) {
-	  printf("find stupid window!\n");
-	  maxRect.setTop(c->geometry.bottom());
-      }
-  }
+//   {
+//       // check for some floating windows (maybe a menubar?)
+//       Client* c = manager->clientAtPosition(maxRect.x(),maxRect.y());
+//       if (c && c->trans == window && c->getDecoration() == KWM::tinyDecoration) {
+// 	  maxRect.setTop(c->geometry.bottom());
+//       }
+//   }
 
   switch (mode) {
   case 1:
@@ -1897,16 +1895,19 @@ void Client::maximize(int mode){
   }
 
   adjustSize();
-  if (state == NormalState)
-    manager->raiseSoundEvent("Window Maximize");
-  if (animate_size_change(this, geometry_restore, geometry,
-			  getDecoration()==KWM::normalDecoration,
-			  title_rect.x(),
-			  width()-title_rect.right()))
-    return; //client has been destroyed
+  
+  if (animate) {
+      if (state == NormalState)
+	  manager->raiseSoundEvent("Window Maximize");
+      if (animate_size_change(this, geometry_restore, geometry,
+			      getDecoration()==KWM::normalDecoration,
+			      title_rect.x(),
+			      width()-title_rect.right()))
+	  return; //client has been destroyed
+  }
   KWM::setMaximize(window, maximized);
   if (!buttonMaximize->isOn())
-    buttonMaximize->toggle();
+      buttonMaximize->toggle();
 
   manager->sendConfig(this);
   layoutButtons();

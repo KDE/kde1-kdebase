@@ -38,10 +38,10 @@ KGreyerWidget *greyer_widget = 0;
 Window root;
 GC rootgc;
 GC rootfillgc;
-static char stipple_bits[] = {
-  0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
-  0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
-  0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa};
+// static char stipple_bits[] = {
+//   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
+//   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
+//   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa};
 
 extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
@@ -102,12 +102,14 @@ Manager::Manager(): QObject(){
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
   kwm_do_not_manage = XInternAtom(qt_xdisplay(), "KWM_DO_NOT_MANAGE", False);
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
+  kwm_maximize_window = XInternAtom(qt_xdisplay(), "KWM_MAXIMIZE_WINDOW", False);
 
   kwm_running = XInternAtom(qt_xdisplay(), "KWM_RUNNING", False);
 
   // for the modules
   kwm_module = XInternAtom(qt_xdisplay(), "KWM_MODULE", False);
   module_init = XInternAtom(qt_xdisplay(), "KWM_MODULE_INIT", False);
+  module_initialized = XInternAtom(qt_xdisplay(), "KWM_MODULE_INITIALIZED", False);
   module_desktop_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_CHANGE", False);
   module_desktop_name_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NAME_CHANGE", False);
   module_desktop_number_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NUMBER_CHANGE", False);
@@ -141,7 +143,7 @@ Manager::Manager(): QObject(){
 
   rootfillgc = XCreateGC(qt_xdisplay(), qt_xrootwin(), mask, &gv);
   // the following looks nicer (IMO), but needs some hardware graphics support:
-  
+
   // Pixmap stipple = XCreateBitmapFromData(qt_xdisplay(), qt_xrootwin(), stipple_bits, 16, 16);
   //  XSetStipple(qt_xdisplay(), rootfillgc, stipple);
   //   XSetFillStyle(qt_xdisplay(), rootfillgc, FillStippled);
@@ -784,7 +786,13 @@ void Manager::propertyNotify(XPropertyEvent *e){
   else if (a == kwm_win_desktop){
     c->ontoDesktop(KWM::desktop(c->window));
   }
-  else if (a == kwm_win_maximized){
+  else if (a == kwm_maximize_window ){
+      if (KWM::isDoMaximize(c->window)) {
+	  c->maximize(0, false);
+	  KWM::doMaximize(c->window, false);
+      }
+  }
+  else if (a == kwm_win_maximized ){
     if (c->isMaximized() != KWM::isMaximized(c->window)){
       if (c->isMaximized())
 	c->unMaximize();
@@ -1643,6 +1651,16 @@ void Manager::manage(Window w, bool mapped){
   QRegExp r;
   if (!mapped) {
     QString t = getprop(w, XA_WM_NAME);
+    if (t.isEmpty()){
+	// XA_WM_NAME is not sufficient. If not defined try the instance or class
+	if (XGetClassHint(qt_xdisplay(), w, &klass) != 0) { 
+	    t = klass.res_name;
+	    if (t.isEmpty())
+		t = klass.res_class;
+	    XFree(klass.res_name);
+	    XFree(klass.res_class);
+	}
+    }
     if (!t.isEmpty()){
       for (s = do_not_manage_titles.first(); s ;
 	   s = do_not_manage_titles.next()){
@@ -1874,9 +1892,38 @@ void Manager::manage(Window w, bool mapped){
 
   dohide = (c->isIconified() || !c->isOnDesktop(currentDesktop()));
 
+  
+  if (KWM::isDoMaximize(c->window)) {
+        KWM::doMaximize(c->window, false);
+        c->maximize(0, false);
+  }
+  else if (KWM::isMaximized(c->window)){
+    QRect tmprec = KWM::geometryRestore(c->window);
+
+    /* Rethink this. I cannot do maximize since this would
+     * break the tree different maximize levels
+     * (full, horizontal, vertical). I do not want to introduce
+     * a integer flag for maximize. Let us try is this way.
+     * The only drawback: a application that wants to start up
+     * maximized (not session management) must call setMaximize
+     * after it has been mapped. Should not be a problem.
+     *
+     *  additionally there is now a function doMaximize() in the 
+     * libkdecore/KWM that should solve all problems. See above
+     */
+
+    // avoid flickering
+    c->maximized = true;
+    c->buttonMaximize->toggle();
+
+    c->geometry_restore = tmprec;
+  }
+
+
+
   addClient(c);
   sendToModules(module_win_add, c);
-
+  
   if (dohide){
     c->hide();
     XUnmapWindow(qt_xdisplay(), c->window);
@@ -1891,25 +1938,6 @@ void Manager::manage(Window w, bool mapped){
 
     if (current() != c)
       colormapFocus(current());
-  }
-
-  if (KWM::isMaximized(c->window)){
-    QRect tmprec = KWM::geometryRestore(c->window);
-
-    /* Rethink this TODO. I cannot do maximize since this would
-     * break the tree different maximize levels
-     * (full, horizontal, vertical). I do not want to introduce
-     * a integer flag for maximize. Let us try is this way.
-     * The only drawback: a application that wants to start up
-     * maximized (not session management) must call setMaximize
-     * after it has been mapped. Should not be a problem.
-     */
-
-    // avoid flickering
-    c->maximized = true;
-    c->buttonMaximize->toggle();
-
-    c->geometry_restore = tmprec;
   }
 
   if (c->trans)
@@ -3467,6 +3495,10 @@ void Manager::addModule(Window w){
 			  False, mask, &ev);
     }
   }
+
+  // finally tell the module that it is initilaized now
+  sendClientMessage(w, module_initialized, 0);
+
   raiseElectricBorders();
 }
 

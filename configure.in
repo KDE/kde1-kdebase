@@ -287,7 +287,7 @@ AC_OUTPUT(Makefile \
 	kscreensaver/Makefile \
 	kscreensaver/bitmaps/Makefile	\
 	kscreensaver/pixmaps/Makefile	\
-	kstartondesk/Makefile \
+	kstart/Makefile \
 	kvt/Makefile \
 	kwm/Makefile \
 	kwm/pics/Makefile \
