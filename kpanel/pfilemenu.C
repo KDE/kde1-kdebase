@@ -120,7 +120,7 @@ static bool testDir2( const char *_name )
 
 //////////////////////////////////////////////////////////////////////////////
 
-static char*
+static const char*
 getFileInfo(const char* _path, const char* file_name, char* new_file,
             const QFileInfo* fi = 0)
 {
@@ -260,7 +260,7 @@ PFileMenu::newFileItem(const QFileInfo* fi, bool useCurrentPath)
   QString _path = (useCurrentPath ? this->path: fi->dirPath());
 
   char name[MAX_FILENAME_LEN];
-  char* pixmap = getFileInfo(_path, fi->fileName(), name, fi);
+  const char *pixmap = getFileInfo(_path, fi->fileName(), name, fi);
 
   PMenuItem* fileEntry = new PMenuItem(url, name, 0,
                                        pixmap,
@@ -512,11 +512,15 @@ void PFileMenu::copyTailFileInfo(QFileInfoListIterator& it)
 void PFileMenu::insertRecentItem(EntryType type, const char* _path,
                                   const char* file_name)
 {
+  PMenuItem* item;
+  char name[MAX_FILENAME_LEN];
+  const char *pixmap;
+  int index;
+
   if (!root)
      return;
 
-  PMenuItem* item;
-  int index = PFileMenu::root->cmenu->indexOf(the_panel->head_recent_id) + 1 +
+  index = PFileMenu::root->cmenu->indexOf(the_panel->head_recent_id) + 1 +
               the_panel->recent_folders.count();
 
   if (type == dirbrowser) {
@@ -533,8 +537,7 @@ void PFileMenu::insertRecentItem(EntryType type, const char* _path,
 
   } else {   // type == url
 
-    char name[MAX_FILENAME_LEN];
-    char* pixmap = getFileInfo(_path, file_name, name);
+    pixmap = getFileInfo(_path, file_name, name);
 
 
     item = new PMenuItem(url, name, 0, pixmap, 0, 0, 0, 0, false, _path);
