@@ -1,5 +1,5 @@
-#ifndef kfm_h
-#define kfm_h
+#ifndef kfmw_h
+#define kfmw_h
 
 #include <qwidget.h>
 #include <qtimer.h>

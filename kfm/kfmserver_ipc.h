@@ -2,8 +2,8 @@
 // (c) Torben Weis
 //     weis@stud.uni-frankfurt.de
 
-#ifndef KfmIpc_h
-#define KfmIpc_h
+#ifndef KfmServerIpc_h
+#define KfmServerIpc_h
 #include <qobject.h>
 #include <ksock.h>
 #include <ctype.h>
@@ -12,12 +12,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
-class KfmIpc : public QObject
+class KfmServIpc : public QObject
 {
     Q_OBJECT
 public:
-    KfmIpc( KSocket * );
-    ~KfmIpc();
+    KfmServIpc( KSocket * );
+    ~KfmServIpc();
 
     void parse( char *_data, int _len );
 
@@ -105,7 +105,7 @@ public:
     ~KfmIpcServer();
 
 signals:
-   void newClient( KfmIpc * );
+   void newClient( KfmServIpc * );
 
 public slots:
    virtual void slotAccept( KSocket* );

@@ -38,7 +38,7 @@
 #include "kfmpaths.h"
 #include "root.h"
 #include "config-kfm.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "utils.h"
 
 #define SEPARATION 10

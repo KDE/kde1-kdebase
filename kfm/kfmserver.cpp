@@ -107,7 +107,7 @@ KFMServer::KFMServer() : KfmIpcServer()
 
 void KFMServer::slotAccept( KSocket * _sock )
 {
-    KfmIpc * i = new KFMClient( _sock, this );
+    KfmServIpc * i = new KFMClient( _sock, this );
     emit newClient( i );
 }
 
@@ -333,7 +333,7 @@ void KFMServer::slotExec( const char* _url, const char * _documents )
     typ->runAsApplication( _url, &urlList );
 }
 
-KFMClient::KFMClient( KSocket *_sock, KFMServer *_server ) : KfmIpc( _sock )
+KFMClient::KFMClient( KSocket *_sock, KFMServer *_server ) : KfmServIpc( _sock )
 {
     bAuth = FALSE;
     server = _server;
@@ -469,18 +469,18 @@ void KFMClient::slotList( const char *_url )
 
 void KFMClient::slotError( int _kioerror, const char *_text )
 {
-  KfmIpc::error( _kioerror, _text );
+  KfmServIpc::error( _kioerror, _text );
 }
 
 void KFMClient::newDirEntry( int, KIODirectoryEntry * _entry )
 {
-  KfmIpc::dirEntry( _entry->getName(), _entry->getAccess(), _entry->getOwner(),
+  KfmServIpc::dirEntry( _entry->getName(), _entry->getAccess(), _entry->getOwner(),
 		    _entry->getGroup(), _entry->getCreationDate(), _entry->getSize() );
 }
 
 void KFMClient::finished( int )
 {
-  KfmIpc::finished();
+  KfmServIpc::finished();
 }
 
 #include "kfmserver.moc"

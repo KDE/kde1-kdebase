@@ -4,7 +4,7 @@
 
 #include "kfmserver_ipc.h"
 
-void KfmIpc::parse_refreshDesktop( char *, int )
+void KfmServIpc::parse_refreshDesktop( char *, int )
 {
 	// int pos = 0;
 
@@ -12,7 +12,7 @@ void KfmIpc::parse_refreshDesktop( char *, int )
 	emit refreshDesktop(  );
 }
 
-void KfmIpc::parse_refreshDirectory( char *_data, int _len )
+void KfmServIpc::parse_refreshDirectory( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -24,7 +24,7 @@ void KfmIpc::parse_refreshDirectory( char *_data, int _len )
 	free( (void*)_url );
 }
 
-void KfmIpc::parse_openURL( char *_data, int _len )
+void KfmServIpc::parse_openURL( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -36,7 +36,7 @@ void KfmIpc::parse_openURL( char *_data, int _len )
 	free( (void*)_url );
 }
 
-void KfmIpc::parse_openProperties( char *_data, int _len )
+void KfmServIpc::parse_openProperties( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -48,7 +48,7 @@ void KfmIpc::parse_openProperties( char *_data, int _len )
 	free( (void*)_url );
 }
 
-void KfmIpc::parse_list( char *_data, int _len )
+void KfmServIpc::parse_list( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -60,7 +60,7 @@ void KfmIpc::parse_list( char *_data, int _len )
 	free( (void*)_url );
 }
 
-void KfmIpc::parse_exec( char *_data, int _len )
+void KfmServIpc::parse_exec( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -76,7 +76,7 @@ void KfmIpc::parse_exec( char *_data, int _len )
 	free( (void*)_binding );
 }
 
-void KfmIpc::parse_copy( char *_data, int _len )
+void KfmServIpc::parse_copy( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -92,7 +92,7 @@ void KfmIpc::parse_copy( char *_data, int _len )
 	free( (void*)_dest );
 }
 
-void KfmIpc::parse_move( char *_data, int _len )
+void KfmServIpc::parse_move( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -108,7 +108,7 @@ void KfmIpc::parse_move( char *_data, int _len )
 	free( (void*)_dest );
 }
 
-void KfmIpc::parse_moveClient( char *_data, int _len )
+void KfmServIpc::parse_moveClient( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -124,7 +124,7 @@ void KfmIpc::parse_moveClient( char *_data, int _len )
 	free( (void*)_dest );
 }
 
-void KfmIpc::parse_copyClient( char *_data, int _len )
+void KfmServIpc::parse_copyClient( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -140,7 +140,7 @@ void KfmIpc::parse_copyClient( char *_data, int _len )
 	free( (void*)_dest );
 }
 
-void KfmIpc::parse_sortDesktop( char *, int )
+void KfmServIpc::parse_sortDesktop( char *, int )
 {
 	// int pos = 0;
 
@@ -148,7 +148,7 @@ void KfmIpc::parse_sortDesktop( char *, int )
 	emit sortDesktop(  );
 }
 
-void KfmIpc::parse_configure( char *, int )
+void KfmServIpc::parse_configure( char *, int )
 {
 	// int pos = 0;
 
@@ -156,7 +156,7 @@ void KfmIpc::parse_configure( char *, int )
 	emit configure(  );
 }
 
-void KfmIpc::parse_auth( char *_data, int _len )
+void KfmServIpc::parse_auth( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -168,7 +168,7 @@ void KfmIpc::parse_auth( char *_data, int _len )
 	free( (void*)_password );
 }
 
-void KfmIpc::parse_selectRootIcons( char *_data, int _len )
+void KfmServIpc::parse_selectRootIcons( char *_data, int _len )
 {
 	int pos = 0;
 
@@ -191,7 +191,7 @@ void KfmIpc::parse_selectRootIcons( char *_data, int _len )
 	emit selectRootIcons( _x, _y, _w, _h, _add );
 }
 
-void KfmIpc::finished()
+void KfmServIpc::finished()
 {
 	int len = 0;
 	len += len_string("finished");
@@ -199,7 +199,7 @@ void KfmIpc::finished()
 	write_string( data_sock->socket(), "finished" );
 }
 
-void KfmIpc::error(int _kerror, const char* _text)
+void KfmServIpc::error(int _kerror, const char* _text)
 {
 	int len = 0;
 	len += len_int( _kerror );
@@ -211,7 +211,7 @@ void KfmIpc::error(int _kerror, const char* _text)
 	write_string( data_sock->socket(), _text );
 }
 
-void KfmIpc::dirEntry(const char* _name, const char* _access, const char* _owner, const char* _group, const char* _date, int _size)
+void KfmServIpc::dirEntry(const char* _name, const char* _access, const char* _owner, const char* _group, const char* _date, int _size)
 {
 	int len = 0;
 	len += len_string( _name );

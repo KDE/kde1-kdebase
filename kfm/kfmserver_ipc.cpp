@@ -34,7 +34,7 @@ KfmIpcServer::KfmIpcServer()
 
 void KfmIpcServer::slotAccept( KSocket *_sock )
 {
-    KfmIpc * p = new KfmIpc( _sock );
+    KfmServIpc * p = new KfmServIpc( _sock );
     emit newClient( p );
 }
 
@@ -43,7 +43,7 @@ KfmIpcServer::~KfmIpcServer()
     delete serv_sock;
 }
 
-KfmIpc::KfmIpc( KSocket *_sock )
+KfmServIpc::KfmServIpc( KSocket *_sock )
 {
     bHeader = TRUE;
     cHeader = 0;
@@ -55,7 +55,7 @@ KfmIpc::KfmIpc( KSocket *_sock )
     data_sock = _sock;
 }
 
-KfmIpc::~KfmIpc()
+KfmServIpc::~KfmServIpc()
 {
     data_sock->enableRead( FALSE );
     delete data_sock;
@@ -63,13 +63,13 @@ KfmIpc::~KfmIpc()
 	free( pBody );
 }
 
-void KfmIpc::closeEvent( KSocket * )
+void KfmServIpc::closeEvent( KSocket * )
 {
     delete this;
     return;
 }
 
-void KfmIpc::readEvent( KSocket * )
+void KfmServIpc::readEvent( KSocket * )
 {
     if ( bHeader )
     {
@@ -141,7 +141,7 @@ next2:
     cBody += n;
 }
 
-void KfmIpc::parse( char *_data, int _len )
+void KfmServIpc::parse( char *_data, int _len )
 {
     int pos = 0;
     char *name = read_string( _data, pos, _len );

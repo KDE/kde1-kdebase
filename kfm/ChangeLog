@@ -1,3 +1,10 @@
+1999-03-03  David Faure  <faure@kde.org>
+
+	* * : On startup, use kfmlib to know if kfm is already running.
+	Prevents lots of awful bugs due to wrong pid files (#853).
+	I had to do some renaming to achieve that.
+	kfm.h -> kfmw.h and KfmIpc -> KfmServIpc
+
 1999-02-22  Dirk A. Mueller <dmuell@gmx.net>
 
 	* kioslave/http.cpp : User-Agent settings now support pattern matching. 

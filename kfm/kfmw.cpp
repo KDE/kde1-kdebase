@@ -2,7 +2,7 @@
 
 #include "kurl.h"
 #include "kfmgui.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "utils.h"
 #include "kcookiejar.h"
 
@@ -384,5 +384,5 @@ void sig_segv_handler( int )
   exit (0);                                  // exit clean.
 }
 
-#include "kfm.moc"
+#include "kfmw.moc"
 

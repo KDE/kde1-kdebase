@@ -31,7 +31,7 @@ public slots:
     void slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add );
 };
 
-class KFMClient : public KfmIpc
+class KFMClient : public KfmServIpc
 {
     Q_OBJECT
 public:

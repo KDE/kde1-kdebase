@@ -28,7 +28,7 @@
 #include "kfmdlg.h"
 #include "kfmexec.h"
 #include "utils.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "root.h"
 #include "kfmpaths.h"
 

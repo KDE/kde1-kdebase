@@ -25,7 +25,7 @@
 #include "kfmexec.h"
 #include "utils.h"
 #include "config-kfm.h"
-#include "kfm.h"
+#include "kfmw.h"
 
 #include <string.h>
 

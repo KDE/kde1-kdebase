@@ -6,7 +6,7 @@
 #include "kfmserver.h"
 #include "kfmpaths.h"
 #include "kmimemagic.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "utils.h"
 #include "config-kfm.h"
 
@@ -21,6 +21,7 @@
 #include <qmsgbox.h>
 #include <qtimer.h>
 #include <kwm.h> // for sendKWMCommand. David.
+#include <kfm.h> // for isKFMRunning()
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -156,7 +157,15 @@ int main( int argc, char ** argv )
     else
 	fclose( f2 );
     
-    // Stephan: I must find a better place for this somewhen
+    // Check if kfm is already running
+    KFM::setSilent(true);
+    KFM * other_kfm = new KFM();
+    if (other_kfm->isKFMRunning()) {
+      warning("KFM is already running");
+      exit(1);
+    }
+    delete other_kfm;
+    
     KFMPaths::initPaths();
 
     testDir3( KFMPaths::CachePath() );

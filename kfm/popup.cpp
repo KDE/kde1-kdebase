@@ -9,7 +9,7 @@
 
 #include "kfmpaths.h"
 // --- Sven's check if this is global apps/mime start ---
-#include "kfm.h"
+#include "kfmw.h"
 // --- Sven's check if this is global apps/mime end ---
 #include "kfmdlg.h"
 #include "kiojob.h"

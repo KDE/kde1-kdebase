@@ -35,7 +35,7 @@
 #include "kfmpaths.h"
 #include "config-kfm.h"
 #include "utils.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "kfmexec.h"
 #include "root.h"
 #include "kcookiejar.h"

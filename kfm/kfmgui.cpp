@@ -34,7 +34,7 @@
 #include "kbind.h"
 #include "config-kfm.h"
 #include "utils.h"
-#include "kfm.h"
+#include "kfmw.h"
 #include "kcookiejar.h"
 
 #include <klocale.h>
