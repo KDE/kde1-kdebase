@@ -56,7 +56,7 @@ void rxvt_main(int argc,char **argv)
   char **com_argv = NULL;
   char* s;
   int len;
-  char* t = "xterm-color";
+  char* t = "xterm";
   char* put;
   
   for (i = 0; i < argc; i++){

@@ -1,3 +1,5 @@
+  - exit segfault with a floating menubar fixed
+	
 since kvt-0.14:
 	
   - keyboard accelerators for the menus (Cedric Maion)

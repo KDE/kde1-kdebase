@@ -331,7 +331,7 @@ void init_display(int argc,char **argv)
  	  fprintf(stderr,
 "-T <text>		text in window titlebar\n");
  	  fprintf(stderr,
-"-tn <TERM>		Terminal type. Default is xterm-color.\n");
+"-tn <TERM>		Terminal type. Default is xterm.\n");
 	  fprintf(stderr,
 "-C                     Capture system console message\n");
 	  fprintf(stderr,

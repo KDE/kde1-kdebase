@@ -291,7 +291,7 @@ kVt::kVt( QWidget *parent, const char *name )
     CHECK_PTR( m_file );
     m_file->insertItem( "&New Terminal");
     m_file->insertSeparator();
-    m_file->insertItem( "E&xit" ,  qApp, SLOT(quit()) );
+    m_file->insertItem( "E&xit" ,  this, SLOT(quit()) );
     connect(m_file, SIGNAL(activated(int)), SLOT(file_menu_activated(int)));
 
     m_scrollbar = new QPopupMenu;
@@ -870,4 +870,9 @@ void kVt::menubarMoved(){
     if (frame->height() != height())
       resize(width(), height()-menubar->height());
   }
+}
+
+void kVt::quit(){
+  delete menubar;
+  myapp->quit();
 }

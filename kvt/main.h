@@ -51,6 +51,7 @@ public slots:
     void onDrop( KDNDDropZone* _zone );
 
     void menubarMoved();
+    void quit();
 
 
 protected:
