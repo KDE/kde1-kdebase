@@ -1,31 +1,14 @@
-# KTranslator Generated File
-# SOME DESCRIPTIVE TITLE.
+# Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1999
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel-1.1\n"
-"POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1999-02-05 14:45+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"PO-Revision-Date: 1999-04-15 07:05+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
@@ -47,7 +30,7 @@ msgstr "&Merdeer ar bladenn"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "arveriadur : kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:113
+#: main.cpp:112
 msgid "KPanel Configuration"
 msgstr "Kefluniadur KPanel"
 
@@ -181,11 +164,11 @@ msgstr "&Renkelloù lañser da gentañ"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr "&Horolaj o tiskouez an eur doare DB/GM"
+msgstr "&Eurier o tiskouez an eur doare DB/GM"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "H&orolaj o tiskouez an eur e talmoù ar &Genrouedad"
+msgstr "E&urier o tiskouez an eur e talmoù ar &Genrouedad"
 
 #: disknav.cpp:38
 msgid "History"

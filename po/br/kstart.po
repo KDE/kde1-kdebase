@@ -1,33 +1,20 @@
-# KTranslator Generated File
-# SOME DESCRIPTIVE TITLE.
+# Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1998
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart-1.1\n"
-"POT-Creation-Date: 1999-04-15 01:23+0200\n"
-"PO-Revision-Date: 1999-02-05 16:51+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"POT-Creation-Date: 1999-01-23 01:15+0100\n"
+"PO-Revision-Date: 1999-04-15 07:03+0300\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kstart.C:118
+#: kstart.C:116
 #, c-format
 msgid ""
 "\n"
@@ -84,13 +71,13 @@ msgstr ""
 " Arveriadur skourius :\n"
 " %s \"xclock -geometry 80x80-0+0\" -window xclock \\\n"
 "        -decoration tiny -sticky -nofocus -staysontop\n"
-" a laka un horolaj kinklaet tanav, pegus er c'horn laez dehou ar skramm,\n"
+" a laka un eurier kinklaet tanav, pegus er c'horn laez dehou ar skramm,\n"
 " a ne dapo ket ar fokus (ha diwar se hep enmont e barrenn an dleadoù).\n"
 " Eveshait e c'hellit neoazh serriñ anezhañ gant afell dehou al logodenn\n"
 " \n"
 " "
 
-#: kstart.C:160
+#: kstart.C:158
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"

@@ -1,73 +1,60 @@
-# KTranslator Generated File
-# SOME DESCRIPTIVE TITLE.
+# Breton translation of KDE
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Jañ-Mai Drapier <jdrapier@club-internet.fr>, 1998
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: klock-1.1\n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
-"PO-Revision-Date: 1999-02-05 12:19+0100\n"
-"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"PO-Revision-Date: 1999-04-15 07:15+0200\n"
+"Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: attraction.cpp:718
+#: attraction.cpp:716
 msgid "Attraction"
 msgstr "Dedennerezh"
 
-#: attraction.cpp:813
+#: attraction.cpp:803
 msgid "Setup KAttraction"
 msgstr "Kefluniañ KDedennerezh"
 
-#: attraction.cpp:825 pyro.cpp:537 rock.cpp:583 slidescreen.cpp:510
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
 msgstr "Niver :"
 
-#: attraction.cpp:839 science.cpp:1006 slidescreen.cpp:524
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
 msgstr "Giz :"
 
-#: attraction.cpp:844 slidescreen.cpp:529
+#: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
 msgstr "Melloù"
 
-#: attraction.cpp:845 lines.cpp:116 slidescreen.cpp:530
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
 msgstr "Linennoù"
 
-#: attraction.cpp:846 polygon.cpp:64 slidescreen.cpp:531
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
 msgid "Polygons"
 msgstr "Lieskognegoù"
 
-#: attraction.cpp:847 slidescreen.cpp:532
+#: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
 msgstr "Roudennoù"
 
-#: attraction.cpp:860 slidescreen.cpp:545
+#: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Lufrus"
 
-#: attraction.cpp:961
+#: attraction.cpp:951
 msgid "About Attraction"
 msgstr "Diwar-benn Dedennerezh"
 
-#: attraction.cpp:962
+#: attraction.cpp:952
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -89,42 +76,42 @@ msgstr ""
 msgid "Banner"
 msgstr "Lugan"
 
-#: banner.cpp:92
+#: banner.cpp:84
 msgid "Setup kbanner"
 msgstr "Kefluniañ klugan"
 
-#: banner.cpp:103
+#: banner.cpp:95
 msgid "Family:"
 msgstr "Familh :"
 
-#: banner.cpp:122 science.cpp:1049
+#: banner.cpp:114 science.cpp:1036
 msgid "Size:"
 msgstr "Ment :"
 
-#: banner.cpp:142 blankscrn.cpp:84
+#: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Liv :"
 
-#: banner.cpp:155
+#: banner.cpp:147
 msgid "Bold"
 msgstr "Druz"
 
-#: banner.cpp:179 bat.cpp:557 bouboule.cpp:1026 flame.cpp:417 forest.cpp:298
-#: hop.cpp:331 laser.cpp:413 lines.cpp:163 lissie.cpp:347 morph3d.cpp:1029
-#: polygon.cpp:130 rock.cpp:569 science.cpp:1082 slip.cpp:386 space.cpp:595
-#: swarm.cpp:349
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
 msgid "Speed:"
 msgstr "Tizh :"
 
-#: banner.cpp:196
+#: banner.cpp:188
 msgid "Message:"
 msgstr "Kemennad :"
 
-#: banner.cpp:365
+#: banner.cpp:357
 msgid "About Banner"
 msgstr "Diwar-benn Lugan"
 
-#: banner.cpp:366
+#: banner.cpp:358
 msgid ""
 "Banner Version 0.1\n"
 "\n"
@@ -136,7 +123,7 @@ msgstr ""
 "skrivet gant Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: banner.cpp:469
+#: banner.cpp:461
 msgid "KDE is great"
 msgstr "KDE a zo dreist"
 
@@ -144,19 +131,19 @@ msgstr "KDE a zo dreist"
 msgid "Bat"
 msgstr "Bat"
 
-#: bat.cpp:545
+#: bat.cpp:537
 msgid "Setup KBat"
 msgstr "Kefluniañ KBat"
 
-#: bat.cpp:572
+#: bat.cpp:564
 msgid "Number of bats:"
 msgstr "Niver a eskell-kroc'hen :"
 
-#: bat.cpp:669
+#: bat.cpp:661
 msgid "About Bat"
 msgstr "Diwar-benn Bat"
 
-#: bat.cpp:670
+#: bat.cpp:662
 msgid ""
 "Bat\n"
 "\n"
@@ -174,7 +161,7 @@ msgstr ""
 msgid "Blank Screen"
 msgstr "Skramm goullo"
 
-#: blankscrn.cpp:75
+#: blankscrn.cpp:67
 msgid "Setup kblankscrn"
 msgstr "Kefluniañ kblankscrn"
 
@@ -202,23 +189,23 @@ msgstr "Ankivil"
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Ho tigarez : an damanter-se a c'houlenn groñs ur skramm liv"
 
-#: blob.cpp:461
+#: blob.cpp:458
 msgid "Setup Blob Saver"
 msgstr "Kefluniañ Blob"
 
-#: blob.cpp:471
+#: blob.cpp:468
 msgid "Frame Show sec."
 msgstr "Diskouez steuñvennoù"
 
-#: blob.cpp:483
+#: blob.cpp:480
 msgid "Algorithm"
 msgstr "Algoritm"
 
-#: blob.cpp:573
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "Diwar-benn Blob"
 
-#: blob.cpp:574
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -230,7 +217,7 @@ msgstr ""
 "skrivet gant Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:609
+#: blob.cpp:606
 msgid "Blobs"
 msgstr "Bloboù"
 
@@ -238,31 +225,31 @@ msgstr "Bloboù"
 msgid "Bouboule"
 msgstr "Bouboule"
 
-#: bouboule.cpp:1013
+#: bouboule.cpp:1005
 msgid "Setup KBouboule"
 msgstr "Kefluniañ KBouboule"
 
-#: bouboule.cpp:1040
+#: bouboule.cpp:1032
 msgid "Number of points:"
 msgstr "Niver a poentoù"
 
-#: bouboule.cpp:1054
+#: bouboule.cpp:1046
 msgid "Point size:"
 msgstr "Ment ur poent :"
 
-#: bouboule.cpp:1068
+#: bouboule.cpp:1060
 msgid "Color-change frequency:"
 msgstr "Taml kemmañ al liv :"
 
-#: bouboule.cpp:1085
+#: bouboule.cpp:1077
 msgid "3D mode"
 msgstr "Mod 3Ment"
 
-#: bouboule.cpp:1231
+#: bouboule.cpp:1223
 msgid "About Bouboule"
 msgstr "Diwar-benn Bouboule"
 
-#: bouboule.cpp:1232
+#: bouboule.cpp:1224
 msgid ""
 "Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
 "\n"
@@ -284,23 +271,23 @@ msgstr "Skramm goullo ar Marv"
 msgid "Flame"
 msgstr "Flame"
 
-#: flame.cpp:405
+#: flame.cpp:397
 msgid "Setup KFlame"
 msgstr "Kefluniañ KFlame"
 
-#: flame.cpp:431
+#: flame.cpp:423
 msgid "Max Levels:"
 msgstr "Live uhelañ :"
 
-#: flame.cpp:446
+#: flame.cpp:438
 msgid "Num Points:"
 msgstr "Niver a boentoù :"
 
-#: flame.cpp:559
+#: flame.cpp:551
 msgid "About Flame"
 msgstr "Diwar-benn Flame"
 
-#: flame.cpp:560
+#: flame.cpp:552
 msgid ""
 "Flame Version 3.3\n"
 "\n"
@@ -318,19 +305,19 @@ msgstr ""
 msgid "Forest"
 msgstr "Koadeg"
 
-#: forest.cpp:286
+#: forest.cpp:278
 msgid "Setup KForest"
 msgstr "Kefluniañ KKoadeg"
 
-#: forest.cpp:312
+#: forest.cpp:304
 msgid "Num of Trees:"
 msgstr "Niver a wez :"
 
-#: forest.cpp:407
+#: forest.cpp:399
 msgid "About Forest"
 msgstr "Diwar-benn Koadeg"
 
-#: forest.cpp:408
+#: forest.cpp:400
 msgid ""
 "Forest\n"
 "\n"
@@ -348,23 +335,23 @@ msgstr ""
 msgid "Hop"
 msgstr "Hop"
 
-#: hop.cpp:319
+#: hop.cpp:311
 msgid "Setup KHop"
 msgstr "Kefluniañ KHop"
 
-#: hop.cpp:345
+#: hop.cpp:337
 msgid "Samecolor Pixels:"
 msgstr "Pikseloù heñvelliv :"
 
-#: hop.cpp:359 lissie.cpp:375
+#: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
 msgstr "Korioù :"
 
-#: hop.cpp:472
+#: hop.cpp:464
 msgid "About Hop"
 msgstr "Diwar-benn Hop"
 
-#: hop.cpp:473
+#: hop.cpp:465
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -382,15 +369,15 @@ msgstr ""
 msgid "Laser"
 msgstr "Laser"
 
-#: laser.cpp:401
+#: laser.cpp:393
 msgid "Setup KLaser"
 msgstr "Kefluniañ KLaser"
 
-#: laser.cpp:490
+#: laser.cpp:482
 msgid "About Laser"
 msgstr "Diwar-benn Laser"
 
-#: laser.cpp:491
+#: laser.cpp:483
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -404,31 +391,31 @@ msgstr ""
 "\n"
 "Douget da kscreensave gant Martin Jones."
 
-#: lines.cpp:142
+#: lines.cpp:134
 msgid "Setup klines"
 msgstr "Kefluniañ klinennoù"
 
-#: lines.cpp:150 polygon.cpp:101
+#: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
 msgstr "Hirder :"
 
-#: lines.cpp:176
+#: lines.cpp:168
 msgid "Beginning:"
 msgstr "Deroù :"
 
-#: lines.cpp:190
+#: lines.cpp:182
 msgid "Middle:"
 msgstr "Kreiz :"
 
-#: lines.cpp:203
+#: lines.cpp:195
 msgid "End:"
 msgstr "Diwezh :"
 
-#: lines.cpp:302
+#: lines.cpp:294
 msgid "About Lines"
 msgstr "Diwar-benn Linennoù"
 
-#: lines.cpp:303
+#: lines.cpp:295
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
@@ -444,19 +431,19 @@ msgstr ""
 msgid "Lissie"
 msgstr "Lissie"
 
-#: lissie.cpp:335
+#: lissie.cpp:327
 msgid "Setup KLissie"
 msgstr "Kefluniañ KLissie"
 
-#: lissie.cpp:361
+#: lissie.cpp:353
 msgid "Num of Lissies:"
 msgstr "Niver a Lissie-où :"
 
-#: lissie.cpp:488
+#: lissie.cpp:480
 msgid "About Lissie"
 msgstr "Diwar-benn Lissie"
 
-#: lissie.cpp:489
+#: lissie.cpp:481
 msgid ""
 "Lissie\n"
 "\n"
@@ -470,12 +457,12 @@ msgstr ""
 "\n"
 "Douget da kscreensave gant Emanuel Pirker."
 
-#: main.cpp:417
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Dibab %s n'eo ket skoraet war ar savienn-mañ !"
+msgstr "Dibab %s n'eo ket skoraet war ar savenn-mañ !"
 
-#: main.cpp:459
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -489,11 +476,11 @@ msgstr ""
 "Kit e darempred gant merour ho reizhiad.\n"
 "Lârit dezhañ e faot deoc'h suid evit ar goulev kcheckpass !"
 
-#: main.cpp:464
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr "Tremengerioù kuzhet"
 
-#: main.cpp:514
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -503,8 +490,9 @@ msgstr ""
 "\n"
 "na arverit ket mar plij -test a-stroll gant -lock.\n"
 "arverit kentoc'h klock.\n"
+""
 
-#: main.cpp:632
+#: main.cpp:580
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -513,7 +501,7 @@ msgstr ""
 "Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
 "       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
 
-#: main.cpp:635
+#: main.cpp:583
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -537,8 +525,7 @@ msgstr ""
 "                     x = i  hini ebet (na ober van)\n"
 "                     x = s  damantiñ ar skramm\n"
 "                     x = l  prennañ ar skramm\n"
-"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, "
-"traoñ-dehou\n"
+"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, traoñ-dehou\n"
 "  -delay niv       gedvezh araok loc''hañ an damanter\n"
 "                      skramm  (dre ziouer 10mun)\n"
 "  -desc             moulañ deskrivadur an damanter skramm war stdout\n"
@@ -560,19 +547,19 @@ msgstr "GL n'hell ket render gant root visual\n"
 msgid "Morph3D (GL)"
 msgstr "Morph3D (GL)"
 
-#: morph3d.cpp:1023
+#: morph3d.cpp:1015
 msgid "Setup KMorph3d"
 msgstr "Kefluniañ KMorph3d"
 
-#: morph3d.cpp:1039
+#: morph3d.cpp:1031
 msgid "Object Type:"
 msgstr "Rizh ergorenn :"
 
-#: morph3d.cpp:1128
+#: morph3d.cpp:1120
 msgid "About Morph3D"
 msgstr "Diwar-benn Morph3D"
 
-#: morph3d.cpp:1129
+#: morph3d.cpp:1121
 msgid ""
 "Morph3D\n"
 "\n"
@@ -590,19 +577,19 @@ msgstr ""
 msgid "Pipes (GL)"
 msgstr "Korzennoù (GL)"
 
-#: pipes.cpp:680
+#: pipes.cpp:672
 msgid "Setup KPipes"
 msgstr "Kefluniañ KKorzennoù"
 
-#: pipes.cpp:686
+#: pipes.cpp:678
 msgid "Number of Pipes"
 msgstr "Niver a gorzennoù"
 
-#: pipes.cpp:751
+#: pipes.cpp:743
 msgid "About KPipes"
 msgstr "Diwar-benn KKorzennoù"
 
-#: pipes.cpp:753
+#: pipes.cpp:745
 msgid ""
 "KPipes\n"
 "Copyright (c) 1998\n"
@@ -612,19 +599,19 @@ msgstr ""
 "Gwirioù eilañ (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
-#: polygon.cpp:93
+#: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Kefulniañ klieskognegoù"
 
-#: polygon.cpp:115
+#: polygon.cpp:107
 msgid "Vertices:"
 msgstr "Vertisoù :"
 
-#: polygon.cpp:246
+#: polygon.cpp:238
 msgid "About Polygon"
 msgstr "Diwar-benn Lieskognegoù"
 
-#: polygon.cpp:247
+#: polygon.cpp:239
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
@@ -640,19 +627,19 @@ msgstr ""
 msgid "Pyro"
 msgstr "Tan-arvest"
 
-#: pyro.cpp:525
+#: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Kefluniañ KTan-arvest"
 
-#: pyro.cpp:551
+#: pyro.cpp:543
 msgid "Cloud"
 msgstr "Koumoul"
 
-#: pyro.cpp:637
+#: pyro.cpp:629
 msgid "About Pyro"
 msgstr "Diwar-benn Tan-arvest"
 
-#: pyro.cpp:638
+#: pyro.cpp:630
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -670,23 +657,23 @@ msgstr ""
 msgid "Rock"
 msgstr "Steredigoù"
 
-#: rock.cpp:557
+#: rock.cpp:549
 msgid "Setup krock"
 msgstr "Kefluniañ ksteredigoù"
 
-#: rock.cpp:597
+#: rock.cpp:589
 msgid "Move"
 msgstr "Fiñval"
 
-#: rock.cpp:603
+#: rock.cpp:595
 msgid "Rotate"
 msgstr "Treiñ"
 
-#: rock.cpp:727
+#: rock.cpp:719
 msgid "About Rock"
 msgstr "Diwar-benn Steredigoù"
 
-#: rock.cpp:728
+#: rock.cpp:720
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -700,11 +687,11 @@ msgstr ""
 "\n"
 "Douget da kscreensave gant Martin Jones."
 
-#: saver.cpp:66 saver.cpp:197
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Roit tremenger"
 
-#: saver.cpp:127
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Tremenger siek"
 
@@ -736,63 +723,63 @@ msgstr "Krommadur"
 msgid "Science"
 msgstr "Skiant"
 
-#: science.cpp:504
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "o render ferenn..."
 
-#: science.cpp:826
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr "oc'h tapout ar skramm..."
 
-#: science.cpp:988
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "Kefluniañ Skiant"
 
-#: science.cpp:1021
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "Eilpenn"
 
-#: science.cpp:1031
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "Dedennerezh"
 
-#: science.cpp:1040
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "Kuzhat an drekleur"
 
-#: science.cpp:1066
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "Nerzh :"
 
-#: science.cpp:1096
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "Fiñvadenn :"
 
-#: science.cpp:1317
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Skiant Doare"
 
-#: science.cpp:1318
+#: science.cpp:1305
 msgid "written by"
 msgstr "skrivet gant"
 
-#: science.cpp:1319
+#: science.cpp:1306
 msgid "About Science"
 msgstr "Diwar-benn Skiant"
 
-#: slidescreen.cpp:427
+#: slidescreen.cpp:419
 msgid "SlideScreen"
 msgstr "RuzSkramm"
 
-#: slidescreen.cpp:496
+#: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
 msgstr "Kefluniañ KRuzSkramm"
 
-#: slidescreen.cpp:589
+#: slidescreen.cpp:558
 msgid "About SlideScreen"
 msgstr "Diwar-benn RuzSkramm"
 
-#: slidescreen.cpp:590
+#: slidescreen.cpp:559
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -814,19 +801,19 @@ msgstr ""
 msgid "Slip"
 msgstr "Riklañ"
 
-#: slip.cpp:374
+#: slip.cpp:366
 msgid "Setup KSlip"
 msgstr "Kefluniañ KRiklañ"
 
-#: slip.cpp:400
+#: slip.cpp:392
 msgid "Batchcount:"
 msgstr "Niver :"
 
-#: slip.cpp:496
+#: slip.cpp:488
 msgid "About Slip"
 msgstr "Diwar-benn Riklañ"
 
-#: slip.cpp:497
+#: slip.cpp:489
 msgid ""
 "Slip\n"
 "\n"
@@ -844,19 +831,19 @@ msgstr ""
 msgid "Space (GL)"
 msgstr "Egor (GL)"
 
-#: space.cpp:589
+#: space.cpp:581
 msgid "Setup KSpace"
 msgstr "Kefluniañ KHed-gwenan"
 
-#: space.cpp:605
+#: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Kammed Warp :"
 
-#: space.cpp:693
+#: space.cpp:685
 msgid "About KSpace"
 msgstr "Diwar-benn KEgor"
 
-#: space.cpp:695
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"
@@ -870,19 +857,19 @@ msgstr ""
 msgid "Swarm"
 msgstr "Hed-gwenan"
 
-#: swarm.cpp:337
+#: swarm.cpp:329
 msgid "Setup KSwarm"
 msgstr "Kefluniañ KHed-gwenan"
 
-#: swarm.cpp:363
+#: swarm.cpp:355
 msgid "Number of Bees:"
 msgstr "Niver a wenan :"
 
-#: swarm.cpp:458
+#: swarm.cpp:450
 msgid "About Swarm"
 msgstr "Diwar-benn Hed-gwenan"
 
-#: swarm.cpp:459
+#: swarm.cpp:451
 msgid ""
 "Swarm\n"
 "\n"
