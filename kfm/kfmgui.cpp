@@ -427,6 +427,9 @@ void KfmGui::initMenu()
     QString about_text;
     about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(),
 klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de\n\nCurrent maintainer: David Faure\nfaure@kde.org") );
+    // added, but apart in order no to break existing translations for the
+    // first part, and because sprintf cores dump if >256 !
+    about_text += i18n("\nPlease submit bugs and wishes as explained on http://bugs.kde.org");
 
     QPopupMenu *help = kapp->getHelpMenu(false, about_text);
     CHECK_PTR( help );
