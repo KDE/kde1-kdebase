@@ -41,7 +41,6 @@
 #include <X11/Xos.h>
 
 #include "kcolordlg.h"
-#include "kwmcom.h"
 
 #include "widgetcanvas.h"
 #include "kresourceman.h"
@@ -101,28 +100,24 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	// LAYOUT
 	
-	QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+	QGridLayout *topLayout = new QGridLayout( this, 2, 2, 10 );
 	
 	topLayout->setRowStretch(0,0);
-	topLayout->setRowStretch(1,10);
-	topLayout->setRowStretch(2,10);
-	topLayout->setRowStretch(3,0);
+	topLayout->setRowStretch(1,1);
 	
-	topLayout->setColStretch(0,0);
-	topLayout->setColStretch(1,10);
-	topLayout->setColStretch(2,10);
-	topLayout->setColStretch(3,0);
+	topLayout->setColStretch(0,1);
+	topLayout->setColStretch(1,1);
 	
 	//cs->drawSampleWidgets();
 	cs->setFixedHeight( 150 );
 	connect( cs, SIGNAL( widgetSelected( int ) ), 
-			SLOT( slotWidgetColor( int ) ) );
-			
-	topLayout->addMultiCellWidget( cs, 1, 1, 1, 2 );
+		 SLOT( slotWidgetColor( int ) ) );
+	
+	topLayout->addMultiCellWidget( cs, 0, 0, 0, 1 );
 
 	QGroupBox *group = new QGroupBox( i18n("Color Scheme"), this );
 	
-	topLayout->addWidget( group, 2, 1 );
+	topLayout->addWidget( group, 1, 0 );
 	
 	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 	
@@ -147,33 +142,40 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	groupLayout->addLayout( pushLayout );
 	
 	addBt = new QPushButton(  i18n("&Add ..."), group );
-	addBt->setFixedHeight( addBt->sizeHint().height() );
+	addBt->adjustSize();
+	addBt->setFixedHeight( addBt->height() );
+	addBt->setMinimumWidth( addBt->width() );
 	connect( addBt, SIGNAL( clicked() ), SLOT( slotAdd() ) );
 	
 	pushLayout->addWidget( addBt, 10 );
 	
 	removeBt = new QPushButton(  i18n("&Remove"), group );
-	removeBt->setFixedHeight( removeBt->sizeHint().height() );
+	removeBt->adjustSize();
+	removeBt->setFixedHeight( removeBt->height() );
+	removeBt->setMinimumWidth( removeBt->width() );
 	removeBt->setEnabled(FALSE);
 	connect( removeBt, SIGNAL( clicked() ), SLOT( slotRemove() ) );
 	
 	pushLayout->addWidget( removeBt, 10 );
 	
 	saveBt = new QPushButton(  i18n("&Save changes"), group );
-	saveBt->setFixedHeight( saveBt->sizeHint().height() );
+	saveBt->adjustSize();
+	saveBt->setFixedHeight( saveBt->height() );
+	saveBt->setMinimumWidth( saveBt->width());
 	saveBt->setEnabled(FALSE);
 	connect( saveBt, SIGNAL( clicked() ), SLOT( slotSave() ) );
 	
 	groupLayout->addWidget( saveBt, 10 );
+	groupLayout->activate();
 	
 	QBoxLayout *stackLayout = new QVBoxLayout( 5  );
 	
-	topLayout->addLayout( stackLayout, 2, 2 );
+	topLayout->addLayout( stackLayout, 1, 1 );
 
 	group = new QGroupBox(  i18n("Widget color"), this );
 	
-	stackLayout->addWidget( group, 10 );
-	
+	stackLayout->addWidget( group, 1 );
+
 	groupLayout = new QVBoxLayout( group, 10, 5 );
 
 	wcCombo = new QComboBox( false, group );
@@ -189,37 +191,46 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	wcCombo->insertItem(  i18n("Select text") );
 	wcCombo->insertItem(  i18n("Window background") );
 	wcCombo->insertItem(  i18n("Window text") );
-	wcCombo->setMinimumSize( wcCombo->sizeHint() );
-	wcCombo->setFixedHeight( wcCombo->sizeHint().height() );
+	wcCombo->adjustSize();
+	wcCombo->setMinimumWidth( wcCombo->width() );
+	wcCombo->setFixedHeight( wcCombo->height() );
 	connect( wcCombo, SIGNAL( activated(int) ),
 			SLOT( slotWidgetColor(int)  )  );
 	
+
 	groupLayout->addSpacing( 20 );		
 	groupLayout->addWidget( wcCombo );
 	
 	colorButton = new KColorButton( group );
-	colorButton->setFixedHeight( wcCombo->sizeHint().height() );
+	colorButton->adjustSize();
+	colorButton->setFixedHeight( wcCombo->height() );
+	colorButton->setMinimumWidth( colorButton->width());
+
 	colorButton->setColor( cs->iaTitle );
 	colorPushColor = cs->iaTitle;
 	connect( colorButton, SIGNAL( changed(const QColor &) ),
 		SLOT( slotSelectColor(const QColor &) ) );
 		
-	group->setMinimumHeight( 3*wcCombo->sizeHint().height()+20 );
+	group->setMinimumHeight( 3*wcCombo->height()+20 );
 		
 	groupLayout->addWidget( colorButton );
-	
+	groupLayout->activate();
+
 	group = new QGroupBox(  i18n("Contrast"), this );
 	
-	stackLayout->addWidget( group, 50 );
-	
+	stackLayout->addWidget( group, 1 );
+
 	groupLayout = new QHBoxLayout( group, 10 );
 	
 	sb = new QSlider( QSlider::Horizontal,group,"Slider" );
-    sb->setRange( 0, 10 );
-    sb->setValue(cs->contrast);
-    sb->setFocusPolicy( QWidget::StrongFocus ); 
-	sb->setFixedHeight( sb->sizeHint().height() );
-    connect( sb, SIGNAL(valueChanged(int)), SLOT(sliderValueChanged(int)) );
+	sb->setRange( 0, 10 );
+	sb->setValue(cs->contrast);
+	sb->setFocusPolicy( QWidget::StrongFocus ); 
+	sb->adjustSize();
+	sb->setFixedHeight( sb->height() );
+	sb->setMinimumWidth(sb->width());
+	connect( sb, SIGNAL(valueChanged(int)), 
+		 SLOT(sliderValueChanged(int)) );
 	
 	QLabel *label = new QLabel( sb, i18n("&Low"), group );
 	label->setFixedHeight( sb->sizeHint().height() );
@@ -227,19 +238,17 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	groupLayout->addWidget( label );
 	groupLayout->addWidget( sb, 10 );
-
+	
 	label = new QLabel( group );
-    label->setText(  i18n("High"));
+	label->setText(  i18n("High"));
 	label->setFixedHeight( sb->sizeHint().height() );
 	label->setFixedWidth( label->sizeHint().width() );
 	
 	groupLayout->addWidget( label );
-	
+	groupLayout->activate();
 	slotPreviewScheme( 0 );
 	
 	topLayout->activate();
-	
-	kwmcom_init( qt_xdisplay(), 0 );
 }
 
 void KColorScheme::resizeEvent( QResizeEvent * )
@@ -280,11 +289,13 @@ void KColorScheme::slotSave( )
 
 void KColorScheme::slotRemove()
 {
-	QString kcsPath( getenv( "HOME" ) );
+	QString kcsPath = getenv( "HOME" );
 	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
 	
-	QDir d;
-	d.setPath( kcsPath );
+	QDir d( kcsPath );
+	if (!d.exists()) // what can we do?
+	  return;
+
 	d.setFilter( QDir::Files );
 	d.setSorting( QDir::Name );
 	d.setNameFilter("*.kcsrc");
@@ -293,9 +304,9 @@ void KColorScheme::slotRemove()
 	
 	if ( !d.remove( sFileList->at( ind ) ) ) {
 		QMessageBox::critical( 0, i18n("Error removing"),
-			i18n("This color scheme could not be removed.\n"\
-				"Perhaps you do not have permission to alter the file\n"\
-				"system where the color scheme is stored." ) );
+		      i18n("This color scheme could not be removed.\n"
+			   "Perhaps you do not have permission to alter the file\n"
+			   "system where the color scheme is stored." ) );
 		return;
 	}
 	

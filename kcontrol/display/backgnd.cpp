@@ -53,44 +53,44 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
     
     QVBoxLayout *vlayout = new QVBoxLayout( this, 5, 10 );
 
-	vlayout->addSpacing(10);
-
-	QLabel *label = new QLabel( this );
-	label->setText( i18n( "Enter new desktop name" ) );
-	label->setMinimumSize( label->sizeHint() );
-	vlayout->addWidget( label );
-
+    vlayout->addSpacing(10);
+    
+    QLabel *label = new QLabel( this );
+    label->setText( i18n( "Enter new desktop name" ) );
+    label->setMinimumSize( label->sizeHint() );
+    vlayout->addWidget( label );
+    
     edit = new QLineEdit( this );
     edit->setText( t );
     edit->setFixedHeight( edit->sizeHint().height() );
     edit->setFocus();
     vlayout->addWidget( edit );
 	
-	vlayout->addStretch(10);
-	vlayout->addSpacing(10);
-	
-	QFrame* tmpQFrame;
-	tmpQFrame = new QFrame( this );
-	tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
-	tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
-	
-	vlayout->addWidget( tmpQFrame );
-	
-	KButtonBox *bbox = new KButtonBox( this );
-	bbox->addStretch( 10 );
-	
-	QPushButton *ok = bbox->addButton( i18n( "OK" ) );
-	connect( ok, SIGNAL( clicked() ), SLOT( accept() ) );
-	
-	QPushButton *cancel = bbox->addButton( i18n( "Cancel" ) );
-	connect( cancel, SIGNAL( clicked() ), SLOT( reject() ) );
-	
-	bbox->layout();
-	vlayout->addWidget( bbox );
-
+    vlayout->addStretch(10);
+    vlayout->addSpacing(10);
+    
+    QFrame* tmpQFrame;
+    tmpQFrame = new QFrame( this );
+    tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
+    tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
+    
+    vlayout->addWidget( tmpQFrame );
+    
+    KButtonBox *bbox = new KButtonBox( this );
+    bbox->addStretch( 10 );
+    
+    QPushButton *ok = bbox->addButton( i18n( "OK" ) );
+    connect( ok, SIGNAL( clicked() ), SLOT( accept() ) );
+    
+    QPushButton *cancel = bbox->addButton( i18n( "Cancel" ) );
+    connect( cancel, SIGNAL( clicked() ), SLOT( reject() ) );
+    
+    bbox->layout();
+    vlayout->addWidget( bbox );
+    
     vlayout->activate();
-	
-	resize(150,0);
+    
+    resize(150,0);
 }
 
 //----------------------------------------------------------------------------
@@ -103,22 +103,22 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 			  0, read_jpeg_jfif, NULL);
 #endif
 
-	debug("KBackground::KBackground");
+      debug("KBackground::KBackground");
 
-    KIconLoader iconLoader;
-
-    changed = false;
-    maxDesks = 8;
-    deskNum = 0;
-
-    setName( i18n("Desktop") );
-
-    // if we are just initialising we don't need to create setup widget
-    if ( mode == Init )
-    {
-//	readSettings( 0 );
+      KIconLoader iconLoader;
+      
+      changed = false;
+      maxDesks = 8;
+      deskNum = 0;
+      
+      setName( i18n("Desktop") );
+      
+      // if we are just initialising we don't need to create setup widget
+      if ( mode == Init )
+      {
+	// readSettings( 0 );
 	return;
-    }
+      }
 
     if ( KWM::isKWMInitialized() )
     {
@@ -134,160 +134,187 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     QGroupBox *group;
     QRadioButton *rb;
 	
-	QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+    QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
 	
-	topLayout->setRowStretch(0,0);
-	topLayout->setRowStretch(1,10);
-	topLayout->setRowStretch(2,100);
-	topLayout->setRowStretch(3,0);
-	
-	topLayout->setColStretch(0,0);
-	topLayout->setColStretch(1,100);
-	topLayout->setColStretch(2,10);
-	topLayout->setColStretch(3,0);
-	
-	group = new QGroupBox( i18n("Desktop"), this );
+    topLayout->setRowStretch(0,0);
+    topLayout->setRowStretch(1,10);
+    topLayout->setRowStretch(2,100);
+    topLayout->setRowStretch(3,0);
+    
+    topLayout->setColStretch(0,0);
+    topLayout->setColStretch(1,100);
+    topLayout->setColStretch(2,10);
+    topLayout->setColStretch(3,0);
+    
+    group = new QGroupBox( i18n("Desktop"), this );
 
-	topLayout->addWidget( group, 1,1 );
+    topLayout->addWidget( group, 1,1 );
 	
-	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
+    QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 
     deskListBox = new QListBox( group );
     getDeskNameList();
     deskListBox->setCurrentItem( deskNum );
     connect( deskListBox, SIGNAL( highlighted(int) ),
-							SLOT( slotSwitchDesk(int) ) );
-	
-	groupLayout->addSpacing( 15 );
-	groupLayout->addWidget( deskListBox, 10 );
+	     SLOT( slotSwitchDesk(int) ) );
+    
+    deskListBox->adjustSize();
+    deskListBox->setMinimumSize(deskListBox->size());
+    groupLayout->addSpacing( 15 );
+    groupLayout->addWidget( deskListBox, 10 );
 	
     button = new QPushButton( i18n( "&Rename ..." ), group );
-	button->setFixedHeight( button->sizeHint().height() );
+    button->adjustSize();
+    button->setFixedHeight( button->height() );
+    button->setMinimumWidth( button->width() );
     if ( !KWM::isKWMInitialized() )
-		button->setEnabled( false );
+        button->setEnabled( false );
     connect( button, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
 	
-	groupLayout->addWidget( button, 10 );
+    groupLayout->addWidget( button, 10 );
+    groupLayout->activate();
 
     QPixmap p = iconLoader.loadIcon("monitor.xpm");
 
     monitorLabel = new QLabel( this );
-	monitorLabel->setAlignment( AlignCenter );
+    monitorLabel->setAlignment( AlignCenter );
     monitorLabel->setPixmap( p );
-    monitorLabel->setMinimumSize( 220, 160 );
+    monitorLabel->adjustSize();
+    monitorLabel->setMinimumSize(monitorLabel->size());
+    // monitorLabel->setMinimumSize( 220, 160 );
 	
-	topLayout->addWidget( monitorLabel, 1, 2 );
+    topLayout->addWidget( monitorLabel, 1, 2 );
 
     monitor = new KBGMonitor( monitorLabel );
-	monitor->resize( 157, 111 );
+    monitor->resize( 157, 111 );
     monitor->setBackgroundColor( color1 );
 	
     group = new QGroupBox( i18n( "Colors" ), this );
-	
-	QGridLayout *grid = new QGridLayout( group, 6, 4, 10, 5 );
-	
-	grid->setRowStretch(0,50);
-	grid->setRowStretch(1,10);
-	grid->setRowStretch(2,10);
-	grid->setRowStretch(3,10);
-	grid->setRowStretch(4,10);
-	grid->setRowStretch(5,10);
+    topLayout->addWidget( group, 2, 1 );
 
-	grid->setColStretch(0,0);
-	grid->setColStretch(1,10);
-	grid->setColStretch(2,90);
-	grid->setColStretch(3,90);
-	
-	grid->addRowSpacing(0,1);
-	
-	//grid->setRowSpacing(0,15);
-	
-	ncGroup = new QButtonGroup( this );
-	ncGroup->hide();
+    QGridLayout *grid = new QGridLayout( group, 9, 4, 10, 5 );
+    
+    grid->setRowStretch(0,5);
+    grid->setRowStretch(1,0);
+    grid->setRowStretch(2,0);
+    grid->setRowStretch(3,5);
+    grid->setRowStretch(4,0);
+    grid->setRowStretch(5,0);
+    grid->setRowStretch(6,5);
+    grid->setRowStretch(7,0);
+    grid->setRowStretch(8,5);
+    
+    grid->setColStretch(0,0);
+    grid->setColStretch(1,1);
+    grid->setColStretch(2,9);
+    grid->setColStretch(3,0);
+    
+    grid->addRowSpacing(0,15);
+    grid->addRowSpacing(5,1);
+    
+    ncGroup = new QButtonGroup( this );
+    ncGroup->hide();
     ncGroup->setExclusive( true );
 
     rb = new QRadioButton( i18n("&One Color"), group );
-	rb->setFixedHeight( rb->sizeHint().height() );
+    rb->adjustSize();
+    rb->setFixedHeight( rb->height() );
+    rb->setMinimumWidth( rb->width() );
     ncGroup->insert( rb, OneColor );
 	
-	grid->addMultiCellWidget( rb, 1, 1, 1, 3 );
+    grid->addMultiCellWidget( rb, 1, 1, 1, 2 );
 
     colButton1 = new KColorButton( group );
+    colButton1->adjustSize();
+    colButton1->setFixedHeight(colButton1->height());
+    colButton1->setMinimumWidth(colButton1->width());
     connect( colButton1, SIGNAL( changed( const QColor & ) ),
-	    SLOT( slotSelectColor1( const QColor & ) ) );
+	     SLOT( slotSelectColor1( const QColor & ) ) );
 		
-	grid->addMultiCellWidget( colButton1, 2, 2, 2, 3 );
+    grid->addMultiCellWidget( colButton1, 2, 2, 2, 2 );
 
- 	rb = new QRadioButton( i18n("&Two Color"), group );
-	rb->setFixedHeight( rb->sizeHint().height() );
+    rb = new QRadioButton( i18n("&Two Color"), group );
+    rb->adjustSize();
+    rb->setFixedHeight( rb->height() );
+    rb->setMinimumWidth( rb->width() );
     ncGroup->insert( rb, TwoColor );
     
-	grid->addMultiCellWidget( rb, 3, 3, 1, 3 );
+    grid->addMultiCellWidget( rb, 4, 4, 1, 2 );
     
     connect( ncGroup, SIGNAL( clicked( int ) ), SLOT( slotColorMode( int ) ) );
-
+    
     colButton2 = new KColorButton( group );
+    colButton2->adjustSize();
+    colButton2->setFixedHeight(colButton2->height());
+    colButton2->setMinimumWidth(colButton2->width());
     connect( colButton2, SIGNAL( changed( const QColor & ) ),
-	    SLOT( slotSelectColor2( const QColor & ) ) );
+	     SLOT( slotSelectColor2( const QColor & ) ) );
 			
-	grid->addMultiCellWidget( colButton2, 4, 4, 2, 3 );
+    grid->addWidget( colButton2, 5, 2);
 
     changeButton = new QPushButton( i18n("Set&up ..."), group );
-	changeButton->setFixedHeight( changeButton->sizeHint().height() );
-	colButton1->setFixedHeight( changeButton->sizeHint().height() );
-	colButton2->setFixedHeight( changeButton->sizeHint().height() );
+    changeButton->adjustSize();
+    changeButton->setFixedHeight( changeButton->height() );
+    changeButton->setMinimumWidth(changeButton->width());
     connect(changeButton, SIGNAL(clicked()) , SLOT(slotSetup2Color()) );
-	
-	grid->addMultiCellWidget( changeButton, 5, 5, 2, 3 );
-
-	topLayout->addWidget( group, 2, 1 );
-
+    
+    grid->addWidget( changeButton, 7, 2 );
+    grid->activate();
+    
     group = new QGroupBox( i18n("Wallpaper"), this );
-
-	groupLayout = new QVBoxLayout( group, 10, 5 ); 
+    
+    groupLayout = new QVBoxLayout( group, 10, 5 ); 
     groupLayout->addSpacing( 10 );
-	groupLayout->addStretch( 50 );
-
+    groupLayout->addStretch( 5 );
+    
     wpGroup = new QButtonGroup( this );
     wpGroup->hide();
     wpGroup->setExclusive( true );
 
     rb = new QRadioButton( i18n("Ti&led"), group );
-	rb->setFixedHeight( rb->sizeHint().height() );
+    rb->adjustSize();
+    rb->setFixedHeight( rb->height() );
+    rb->setMinimumWidth( rb->width() );
     wpGroup->insert( rb, Tiled );
-	
-	groupLayout->addWidget( rb, 10 );
-	
+    
+    groupLayout->addWidget( rb, 10 );
+    
     rb = new QRadioButton( i18n("&Centred"), group );
-	rb->setFixedHeight( rb->sizeHint().height() );
+    rb->adjustSize();
+    rb->setFixedHeight( rb->height() );
+    rb->setMinimumWidth( rb->width() );
     wpGroup->insert( rb, Centred );
-	
-	groupLayout->addWidget( rb, 10 );
+    groupLayout->addStretch( 5 );
+    groupLayout->addWidget( rb, 10 );
 	
     rb = new QRadioButton( i18n("&Scaled"), group );
-	rb->setFixedHeight( rb->sizeHint().height() );
+    rb->adjustSize();
+    rb->setFixedHeight( rb->height() );
+    rb->setMinimumWidth( rb->width() );
     wpGroup->insert( rb, Scaled );
-	
-	groupLayout->addWidget( rb, 10 );
-	
-    connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
+    groupLayout->addStretch( 5 );
+    groupLayout->addWidget( rb, 10 );
+    
+    connect( wpGroup, SIGNAL( clicked( int ) ), 
+	     SLOT( slotWallpaperMode( int ) ) );
 
-	QString path = kapp->kde_wallpaperdir().copy();
+    QString path = kapp->kde_wallpaperdir().copy();
     QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
     const QStrList *list = d.entryList();
 
     wpCombo = new QComboBox( false, group );
     wpCombo->insertItem( NO_WALLPAPER, 0 );
     wpCombo->setCurrentItem( 0 );
-	wpCombo->setFixedHeight( wpCombo->sizeHint().height() );
-	
-	//groupLayout->addStretch( 5 );
-	groupLayout->addWidget( wpCombo, 10 );
-	
+    
+    groupLayout->addStretch( 5 );
+    groupLayout->addSpacing( 5 );
+    groupLayout->addWidget( wpCombo, 10 );
+    groupLayout->addSpacing( 5 );
+    
     QStrListIterator it( *list );
     for ( int i = 1; it.current(); ++it, i++ )
     {
-	wpCombo->insertItem( it.current() );
+        wpCombo->insertItem( it.current() );
 	if ( wallpaper == it.current() )
 	    wpCombo->setCurrentItem( i );
     }
@@ -297,27 +324,35 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	wpCombo->insertItem( wallpaper );
 	wpCombo->setCurrentItem( wpCombo->count()-1 );
     }
+    wpCombo->adjustSize();
+    wpCombo->setFixedHeight(wpCombo->height());
+    wpCombo->setMinimumWidth(wpCombo->width());
+
     connect( wpCombo, SIGNAL( activated( const char * ) ),
-		SLOT( slotWallpaper( const char * )  )  );
+	     SLOT( slotWallpaper( const char * )  )  );
 		
     button = new QPushButton( i18n("&Browse..."), group );
-	button->setFixedHeight( button->sizeHint().height() );
+    button->adjustSize();
+    button->setFixedHeight( button->height() );
+    button->setMinimumWidth( button->width() );
     connect( button, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
+    groupLayout->addStretch( 5 );
+    groupLayout->addWidget( button, 10 );
+    groupLayout->addStretch( 5 );
+    groupLayout->activate();
 
-	groupLayout->addWidget( button, 10 );
-
-	topLayout->addWidget( group, 2, 2 );
-	topLayout->activate();
-	
-	resize(600,600);
-   
+    topLayout->addWidget( group, 2, 2 );
+    topLayout->activate();
+    
+    resize(10,10);
+    
     showSettings();
 }
 
 void KBackground::resizeEvent( QResizeEvent * )
 {
-	monitor->setGeometry( (monitorLabel->width()-200)/2+20,
-		(monitorLabel->height()-160)/2+10, 157, 111 );
+    monitor->setGeometry( (monitorLabel->width()-200)/2+20,
+			  (monitorLabel->height()-160)/2+10, 157, 111 );
 }
 
 void KBackground::readSettings( int num )

@@ -8,12 +8,12 @@ SUBDIRS = kcs ad
 bin_PROGRAMS = kcmdisplay
 
 kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
-            colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
-			general.cpp main.cpp kpixmap.cpp widgetcanvas.cpp \
-			fontchooser.cpp kresourceman.cpp
-BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc kwmcom.moc \
-                scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc \
-				kresourceman.moc
+		colorscm.cpp savescm.cpp scrnsave.cpp \
+		general.cpp main.cpp kpixmap.cpp widgetcanvas.cpp \
+		fontchooser.cpp kresourceman.cpp
+BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc \
+		scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc \
+		kresourceman.moc
 
 backgnd.cpp:backgnd.moc
 backgnd.moc: backgnd.h
@@ -30,10 +30,6 @@ colorscm.moc: colorscm.h
 savescm.cpp:savescm.moc
 savescm.moc: savescm.h
 	$(MOC) savescm.h -o savescm.moc
-
-kwmcom.cpp:kwmcom.moc
-kwmcom.moc: kwmcom.h
-	$(MOC) kwmcom.h -o kwmcom.moc
 
 scrnsave.cpp:scrnsave.moc
 scrnsave.moc: scrnsave.h

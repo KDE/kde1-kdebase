@@ -125,7 +125,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {	
         int i;
-	changed = FALSE;
+	changed = false;
 	
 	debug("KGeneral::KGeneral");
 	
@@ -144,13 +144,15 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 	
-	cbStyle = new QCheckBox( 
-	i18n( "&Draw widgets in the style of Windows 95" ), this );
-	
+	cbStyle = new QCheckBox( i18n( "&Draw widgets in the style of Windows 95" ), 
+				 this );
+	cbStyle->adjustSize();
+	cbStyle->setMinimumSize(cbStyle->size());
+
 	if( applicationStyle == WindowsStyle )
-		cbStyle->setChecked( True );
+	        cbStyle->setChecked( true );
 	else
-		cbStyle->setChecked( False);
+		cbStyle->setChecked( false);
 	
 	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle()  )  );
 	
@@ -167,16 +169,6 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
 	
 	groupLayout->addLayout( pushLayout );
-	
-	/*groupLayout->setRowStretch(0,0);
-	groupLayout->setRowStretch(1,10);
-	groupLayout->setRowStretch(2,10);
-	groupLayout->setRowStretch(3,0);
-	
-	groupLayout->setColStretch(0,0);
-	groupLayout->setColStretch(1,10);
-	groupLayout->setColStretch(2,10);
-	groupLayout->setColStretch(3,0);*/
 	
 	FontUseItem *item = new FontUseItem( i18n("General font"),
 				QFont( "helvetica", 12 ) );
@@ -208,11 +200,12 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	lbFonts = new QListBox( group );
 	for ( i=0; i < (int) fontUseList.count(); i++ )
-		lbFonts->insertItem( fontUseList.at( i )->text() );
-	
+  	     lbFonts->insertItem( fontUseList.at( i )->text() );
+	lbFonts->adjustSize();
+	lbFonts->setMinimumSize(lbFonts->size());
 	
 	connect( lbFonts, SIGNAL( highlighted( int ) ),
-			SLOT( slotPreviewFont( int ) ) );
+		 SLOT( slotPreviewFont( int ) ) );
 			
 	pushLayout->addWidget( lbFonts );
 	
@@ -226,22 +219,27 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
 	
 	groupLayout->addLayout( stackLayout );
-	
+
 	QLabel *label = new QLabel( "Sample text", group );
-	label->setFixedHeight( label->sizeHint().height() );
-	
+	label->adjustSize();
+	label->setFixedHeight( label->height() );
+	label->setMinimumWidth(label->width());
+
 	stackLayout->addWidget( label );
 	
 	lSample = new FontPreview( group );
-	lSample->setText( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"\
-						"the quick brown fox jumps over the lazy dog\n"\
-						"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" );
+	lSample->setText( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+			  "the quick brown fox jumps over the lazy dog\n"
+			  "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" );
 	lSample->setAlignment( AlignLeft | AlignVCenter );
 	lSample->setFixedHeight( 2*lSample->sizeHint().height() );
 	lSample->setFrameStyle( QFrame::Panel | QFrame::Sunken );
-	
+	lSample->adjustSize();
+	lSample->setMinimumSize(lSample->size());
+
 	stackLayout->addWidget( lSample );
-	
+	groupLayout->activate();
+		
 	lbFonts->setCurrentItem( 0 );
 
 	topLayout->activate();
@@ -255,7 +253,7 @@ void KGeneral::slotChangeStyle()
 	else
 		applicationStyle = MotifStyle;
 				
-	changed=TRUE;
+	changed=true;
 }
 
 KGeneral::~KGeneral()
@@ -345,12 +343,12 @@ static bool getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
   
   if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
-    return FALSE;
+    return false;
   }
   
   result = p[0];
   XFree((char *) p);
-  return TRUE;
+  return true;
 }
 
 void KGeneral::apply( bool  )
@@ -389,7 +387,7 @@ void KGeneral::apply( bool  )
 	
 	XFree((void *) rootwins);
 	
-	changed=FALSE;
+	changed=false;
 }
 
 void KGeneral::slotSetFont( QFont fnt )
@@ -414,7 +412,7 @@ void KGeneral::slotHelp()
 void KGeneral::applySettings()
 {
   writeSettings();
-  apply( TRUE );
+  apply( true );
 }
 
 

@@ -46,8 +46,8 @@ CornerButton::CornerButton( QWidget *parent, int num, char _action )
 	: QLabel( parent )
 {
 	popupMenu.insertItem(  i18n("Ignore"), 'i' );
-	popupMenu.insertItem(  i18n("Save"), 's' );
-	popupMenu.insertItem(  i18n("Lock"), 'l' );
+	popupMenu.insertItem(  i18n("Save Screen"), 's' );
+	popupMenu.insertItem(  i18n("Lock Screen"), 'l' );
 
 	connect( &popupMenu, SIGNAL( activated( int ) ),
 		SLOT( slotActionSelected( int ) ) );
@@ -186,6 +186,8 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	ssList->insertItem( NO_SCREENSAVER, 0 );
 	ssList->setCurrentItem( 0 );
 	getSaverNames();
+	ssList->adjustSize();
+	ssList->setMinimumSize(ssList->size());
 //	ssList->insertStrList( &saverNames );
 	QStrListIterator it( *saverList );
 	for ( int i = 1; it.current(); ++it )
@@ -203,17 +205,22 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	groupLayout->addWidget( ssList, 20 );
 
 	setupBt = new QPushButton(  i18n("&Setup ..."), group );
-	setupBt->setFixedHeight( setupBt->sizeHint().height() );
+	setupBt->adjustSize();
+	setupBt->setFixedHeight( setupBt->height() );
+	setupBt->setMinimumWidth(setupBt->width());
 	connect( setupBt, SIGNAL( clicked() ), SLOT( slotSetup() ) );
 	
 	groupLayout->addWidget( setupBt );
 
 	testBt = new QPushButton(  i18n("&Test"), group );
-	testBt->setFixedHeight( testBt->sizeHint().height() );
+	testBt->adjustSize();
+	testBt->setFixedHeight( testBt->height() );
+	testBt->setMinimumWidth(testBt->width());
 	connect( testBt, SIGNAL( clicked() ), SLOT( slotTest() ) );
 	
 	groupLayout->addWidget( testBt );
-	
+	groupLayout->activate();
+
 	QBoxLayout *stackLayout = new QVBoxLayout( 5 );
 	
 	topLayout->addLayout( stackLayout, 2, 2 );
@@ -226,22 +233,25 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
 	
-	groupLayout->addSpacing( 20 );
+	groupLayout->addSpacing( 10 );
 	groupLayout->addLayout( pushLayout );
 	
 	waitEdit = new QLineEdit( group );
 	QString str;
 	str.setNum( xtimeout/60 );
 	waitEdit->setText( str );
-	connect( waitEdit, SIGNAL( textChanged( const char * ) ),
-			SLOT( slotTimeoutChanged( const char * ) ) );
+	waitEdit->setMaxLength(4);
+	waitEdit->adjustSize();
+       	connect( waitEdit, SIGNAL( textChanged( const char * ) ),
+		 SLOT( slotTimeoutChanged( const char * ) ) );
 			
 	QLabel *label = new QLabel( waitEdit, i18n("&Wait for"), group );
-	
-	label->setFixedHeight( waitEdit->sizeHint().height() );
-	label->setMinimumWidth( label->sizeHint().width() );
-	waitEdit->setFixedHeight( waitEdit->sizeHint().height() );
-	
+	label->adjustSize();
+	label->setFixedHeight( waitEdit->height() );
+	label->setMinimumWidth( label->width() );
+	waitEdit->setFixedHeight( waitEdit->height() );
+	waitEdit->setMinimumWidth( 50 );
+
 	pushLayout->addWidget( label );		
 	pushLayout->addWidget( waitEdit, 10 );
 	
@@ -252,11 +262,12 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	pushLayout->addWidget( label );
 
 	cb = new QCheckBox(  i18n("&Require password"), group );
-	cb->setFixedHeight( cb->sizeHint().height() );
+	cb->setMinimumSize( cb->sizeHint() );
 	cb->setChecked( lock );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotLock( bool ) ) );
 	
 	groupLayout->addWidget( cb );
+	groupLayout->activate();
 
 	group = new QGroupBox(  i18n("Priority"), this );
 	
@@ -285,14 +296,14 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	label->setMinimumWidth( label->sizeHint().width() );
 	
 	groupLayout->addWidget( label );
-	
+	groupLayout->activate();
+
 //	connect( &timer, SIGNAL( timeout() ), SLOT( slotSetupTimeout() ) );
 
 	// I have to call show() here, otherwise the screensaver
 	// does not get the correct size information.
 	topLayout->activate();
 	
-	resize(600,600);
 	show();
 
 	setMonitor();

@@ -66,7 +66,8 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 		SLOT( slotSelectFont( const char * ) ) );
 		
 	QLabel *label = new QLabel( cmbFont, "&Typeface", this );
-	label->setFixedHeight( label->sizeHint().height() );
+	label->adjustSize();
+	label->setMinimumSize( label->size() );
 	
 	stackLayout->addWidget( label );
 	stackLayout->addWidget( cmbFont );
@@ -99,7 +100,8 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	sbSize->setStep( 1 );
 	sbSize->setRange( 8, 16 );
 	sbSize->setValue( 12 );
-	
+	sbSize->adjustSize();
+
 	connect( sbSize, SIGNAL( valueDecreased() ),
 		 SLOT( slotFontSize() ) );
 		 
@@ -107,18 +109,21 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 		 SLOT( slotFontSize() ) );
 	
 	label = new QLabel( sbSize, "&Size", this );
-	label->setFixedHeight( label->sizeHint().height() );
+	label->setMinimumSize( label->sizeHint() );
 
 	cmbCharset = new QComboBox( false, this );
 	
 	fillCharsetCombo();
+	cmbCharset->adjustSize();
 	cmbCharset->setInsertionPolicy( QComboBox::NoInsertion );
 	connect( cmbCharset, SIGNAL( activated( const char * ) ),
 		 SLOT( slotCharset( const char * ) ) );
-		 
-	sbSize->setFixedHeight( cmbCharset->sizeHint().height() );
-	cmbCharset->setFixedHeight( cmbCharset->sizeHint().height() );
 	
+	sbSize->setFixedHeight( cmbCharset->height() );
+	sbSize->setMinimumWidth(sbSize->width());
+	cmbCharset->setFixedHeight( cmbCharset->height() );
+	cmbCharset->setMinimumWidth( cmbCharset->width());
+
 	stackLayout->addWidget( label );
 	stackLayout->addWidget( sbSize );
 	
@@ -127,7 +132,8 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	pushLayout->addLayout( stackLayout, 30 );
 	
 	label = new QLabel( cmbCharset, "&Character set", this );
-	label->setFixedHeight( label->sizeHint().height() );
+	label->adjustSize();
+	label->setMinimumSize( label->size() );
 	
 	stackLayout->addWidget( label );
 	stackLayout->addWidget( cmbCharset );
