@@ -2,6 +2,7 @@
 Name=Autostart
 Name[it]=Avvio 
 Name[de]=Autostart
+Name[da]=Autostart
 Name[no]=Autostart
 Name[pl]=Autostart
 Name[es]=Inicio
@@ -14,6 +15,7 @@ Name[pt_BR]=Auto-início
 Name[sv]=Autostart
 Name[ro]=Iniþializare
 Comment[no]=Programmer som vil bli startet ved oppstart
+Comment[da]=Programmer som vil blive startet ved opstart
 Comment[pl]=Programy uruchamiane przy starcie KDE
 Comment[fi]=Aloitettaessa käynnistettävät ohjelmat
 Comment[cs]=Programy spou¹tìné pøi startu KDE
