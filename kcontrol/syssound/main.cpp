@@ -50,7 +50,7 @@ KSyssoundApplication::KSyssoundApplication(int &argc, char **argv, char *name)
   if (runGUI())
     {
       if (!pages || pages->contains("syssound"))
-        addPage(sound = new KSoundWidget(dialog, "sound"), klocale->translate("&Sound"), "");
+        addPage(sound = new KSoundWidget(dialog, "sound"), klocale->translate("&Sound"), "syssound.html");
 
       dialog->show();
     }
