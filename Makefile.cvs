@@ -2,7 +2,15 @@ all:
 	@echo "This Makefile is only for the CVS repository"
 	@echo "I will delete it before making the distribution"
 	@echo ""
-	cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4
+	@if test ! -d admin; then \
+		echo "Please recheckout this module!" ;\
+		echo "for cvs: use checkout once and after that update again" ;\
+		echo "for cvsup: checkout kde-common from cvsup and" ;\
+		echo "   link kde-common/admin to ./admin" ;\
+		exit ;\
+	fi
+
+	cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4
 	aclocal
 	autoheader
 	automake
@@ -11,7 +19,7 @@ all:
 	touch stamp-h.in
 
 dist:
-	@cat acinclude.m4.in kdminclude.m4 libtool.m4.in > acinclude.m4; \
+	@cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4; \
 	aclocal; \
 	autoheader; \
 	automake --foreign --include-deps; \
