@@ -8,11 +8,9 @@
 #ifndef __KFM_MISC_OPTIONS_H
 #define __KFM_MISC_OPTIONS_H
 
-#include <qtabdlg.h>
 #include <qstrlist.h>
 #include <qchkbox.h>
-#include <kspinbox.h>
-#include <kcolorbtn.h>
+#include <qlined.h>
 
 #include <kconfig.h>
 #include <kcontrol.h>
@@ -24,6 +22,7 @@ extern KConfigBase *g_pConfig;
 
 // Allow per-url settings         (Sven)
 // Tree view follows navigation   (David)
+// Preferred terminal             (David)
 // ... there is room for others :))
 
 class KMiscOptions : public KConfigWidget
@@ -39,6 +38,7 @@ public:
 private:
         QCheckBox *urlpropsbox;
         QCheckBox *treefollowbox;
+        QLineEdit *leTerminal;
 };
 
 #endif // __KFM_MISC_OPTIONS_H
