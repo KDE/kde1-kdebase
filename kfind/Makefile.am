@@ -27,7 +27,9 @@ install-data-local:
 	$(mkinstalldirs) $(ICONSDIR)
 	$(INSTALL_DATA) $(srcdir)/kfind.xpm $(ICONSDIR)
 	$(mkinstalldirs) $(kde_minidir)
+	$(mkinstalldirs) $(kde_minidir)/../large
 	$(INSTALL_DATA) $(srcdir)/mini-kfind.xpm $(kde_minidir)/kfind.xpm
+	$(INSTALL_DATA) $(srcdir)/large-kfind.xpm $(kde_minidir)/../large/kfind.xpm
 
 uninstall-local:
 	rm -f $(ICONSDIR)/$(TARGET).xpm
