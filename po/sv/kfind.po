@@ -246,9 +246,8 @@ msgid "Create Archive:"
 msgstr "Skapa arkiv"
 
 #: kfoptions.cpp:134
-#, fuzzy
 msgid "Add to Archive:"
-msgstr "Lägg till till arkiv"
+msgstr "Lägg till i arkiv:"
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
@@ -259,9 +258,8 @@ msgid "Add New"
 msgstr "Lägg till ny"
 
 #: kfoptions.cpp:182
-#, fuzzy
 msgid "Archivers"
-msgstr "Lägg till till arkiv"
+msgstr "Arkivprogram"
 
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
@@ -290,9 +288,8 @@ msgstr ""
 "%s"
 
 #: kfwin.cpp:197
-#, fuzzy
 msgid "Delete File"
-msgstr "Radera"
+msgstr "Radera fil"
 
 #: kfwin.cpp:210
 msgid ""
@@ -341,102 +338,3 @@ msgstr "Kunde inte känna igen någon arkivtyp!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Ett fel uppstod vid skapandet av barn-process!"
-
-#~ msgid "&Delete"
-#~ msgstr "&Radera"
-
-#~ msgid "&Undo"
-#~ msgstr "&Ångra"
-
-#~ msgid "&About"
-#~ msgstr "&Om"
-
-#~ msgid "Delete"
-#~ msgstr "Radera"
-
-#~ msgid "Remove"
-#~ msgstr "Ta bort"
-
-#~ msgid "Sorry"
-#~ msgstr "Tyvärr"
-
-#~ msgid "&Quit"
-#~ msgstr "&Avsluta"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopiera"
-
-#~ msgid "&Edit"
-#~ msgstr "&Redigera"
-
-#~ msgid "&File"
-#~ msgstr "&Arkiv"
-
-#~ msgid "&Help"
-#~ msgstr "&Hjälp"
-
-#~ msgid "&Options"
-#~ msgstr "&Inställningar"
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
-
-#~ msgid "Error"
-#~ msgstr "Fel"
-
-#~ msgid "Help"
-#~ msgstr "Hjälp"
-
-#, fuzzy
-#~ msgid "Open"
-#~ msgstr "&Öppna"
-
-#, fuzzy
-#~ msgid "Quit"
-#~ msgstr "&Avsluta"
-
-#~ msgid "Save Search"
-#~ msgstr "Spara sökning"
-
-#~ msgid "Undo"
-#~ msgstr "Ångra"
-
-#~ msgid "Cut"
-#~ msgstr "Klipp ur"
-
-#~ msgid "Select All"
-#~ msgstr "Spara alla"
-
-#~ msgid "Invert Selection"
-#~ msgstr "Spara markering"
-
-#~ msgid "Preferences ..."
-#~ msgstr "Egenskaper ..."
-
-#~ msgid "Kfind help"
-#~ msgstr "Kfind hjälp"
-
-#~ msgid "Type Description:"
-#~ msgstr "Typ-beskrivning:"
-
-#~ msgid "Icon:"
-#~ msgstr "Ikon:"
-
-#~ msgid "Default Application:"
-#~ msgstr "Standard-applikation:"
-
-#, fuzzy
-#~ msgid "Filetypes"
-#~ msgstr "Alla filer och kataloger"
-
-#~ msgid " Name&Location "
-#~ msgstr " Namn & Plats "
-
-#~ msgid "_abouttext"
-#~ msgstr ""
-#~ "Kfind %s\n"
-#~ " Grafiskt skal för programmet find\n"
-#~ "Miroslav Flídr <flidr@kky.zcu.cz>"
-
-#~ msgid "_findall"
-#~ msgstr "Sök alla filer skapade eller ändrade:"

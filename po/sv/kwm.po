@@ -28,21 +28,19 @@ msgstr "kwm: initieringsfel; avbryter\n"
 
 #: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:377
 msgid "Usage: "
 msgstr "Användning: "
 
 #: main.C:388
-#, fuzzy
 msgid "&Maximize"
 msgstr "&Maximera"
 
 #: main.C:389
-#, fuzzy
 msgid "&Restore"
-msgstr "&Återställ storlek"
+msgstr "&Återställ"
 
 #: main.C:390
 msgid "&Iconify"
@@ -110,20 +108,19 @@ msgstr "Åtta"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Några pixmapar är ogiltliga: ShapeMode avstängt\n"
 
 #: main.C:975
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Inga uppdrag ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Kommando:"
 
 #: logout.C:35 taskmgr.C:106
-#, fuzzy
 msgid "Logout"
-msgstr "Lo&gga ur"
+msgstr "Logga ur"
 
 #: logout.C:45
 msgid "Session prepared for logout"

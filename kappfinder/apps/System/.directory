@@ -4,6 +4,7 @@ Name=System
 Name[de]=System
 Name[pl]=System
 Name[fi]=Systeemi
+Name[sv]=System
 MiniIcon=
 SortOrder=xosview.kdelnk
 Icon=kcontrol.xpm

@@ -4,6 +4,7 @@ Name=Information
 Name[pl]=Informacje
 Name[cs]=Informace
 Name[fi]=Tietoja
+Name[sv]=Information
 MiniIcon=readme.xpm
 SortOrder=memory.kdelnk,processor.kdelnk
 Icon=information.xpm

@@ -10,6 +10,7 @@ Comment=X Clipboard viewer
 Comment[de]=X Zwischenablage
 Comment[pl]=X Przegl±darka schowka
 Comment[fi]=X leikepöydän näyttäjä
+Comment[sv]=X Urklippsvisare
 Exec=xclipboard
 Icon=kfind.xpm
 TerminalOptions=

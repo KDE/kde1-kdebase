@@ -154,12 +154,11 @@ msgid "Hint"
 msgstr "Tips"
 
 #: main.C:895
-#, fuzzy
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"De nya färginställningarna kommer att \n"
+"Nya färginställningar kommer att \n"
 "användas när tangentbordet låses upp."
 
 #: main.C:1084

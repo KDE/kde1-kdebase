@@ -4,6 +4,7 @@ Name=Graphic
 Name[de]=Graphik
 Name[pl]=Grafika
 Name[fi]=Grafiikka
+Name[sv]=Grafik
 MiniIcon=
 SortOrder=xpaint.kdelnk,xv.kdelnk
 Icon=palette.xpm

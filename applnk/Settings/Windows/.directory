@@ -4,6 +4,7 @@ Name=Windows
 Name[pl]=Okna
 Name[cs]=Okna
 Name[fi]=Ikkunat
+Name[sv]=Fönster
 MiniIcon=windows.xpm
 SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
 Icon=kcmkwm.xpm

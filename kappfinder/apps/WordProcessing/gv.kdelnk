@@ -10,6 +10,7 @@ Comment=Postscript Viewer
 Comment[de]=Postscript Betrachter
 Comment[pl]=Przegl±darka Postscript gv
 Comment[fi]=Postscript näyttäjä
+Comment[sv]=Postskriptsvisare
 Exec=gv
 Icon=gv.xpm
 TerminalOptions=

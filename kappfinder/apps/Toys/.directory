@@ -4,6 +4,7 @@ Name=Toys
 Name[de]=Spielzeuge
 Name[pl]=Zabawa
 Name[fi]=Lelut
+Name[sv]=Leksaker
 MiniIcon=sample.xpm
 SortOrder=xeyes.kdelnk,xpinguin.kdelnk
 Icon=pinguin.xpm

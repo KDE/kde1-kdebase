@@ -1,0 +1,23 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-20 15:40 +0100\n"
+"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
+"Language-Team: Swedish <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "användning: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
+msgid "Samba"
+msgstr "Samba"

@@ -10,6 +10,7 @@ Comment=X FTP Client
 Comment[de]=X FTP Klient
 Comment[pl]=X Klient FTP
 Comment[fi]=X FTP asiakasohjelma
+Comment[sv]=X FTP klient
 Name[de]=X FTP
 Exec=xftp
 Icon=www.xpm

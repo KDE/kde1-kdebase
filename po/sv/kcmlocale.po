@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 21:10+0100\n"
+"PO-Revision-Date: 1998-01-20 15:40 +0100\n"
+"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
+"Language-Team: Swedish <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Plats"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "användning: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Platsinställningar"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Språk"
+
+#: locale.cpp:43
+msgid "First"
+msgstr "Första"
+
+#: locale.cpp:49
+msgid "Second"
+msgstr "Andra"
+
+#: locale.cpp:55
+msgid "Third"
+msgstr "Tredje"
+
+#: locale.cpp:89
+msgid "without name!"
+msgstr "utan namn!"
+
+#: locale.cpp:154
+msgid "Applying language settings"
+msgstr "Aktivera språkinställningar"
+
+#: locale.cpp:155
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Språkinställningarna kommer att bara att aktiveras för nystartade"
+"applikationer.\n"
+"Du måste logga ut först om du vill att alla program skall byta språk."

@@ -9,6 +9,7 @@ MimeType=
 Comment[de]=Das lyx Textprogramm
 Comment[pl]=Edytor tekstu lyx
 Comment[fi]=Lyx tekstinkäsittelyohjelma
+Comment[sv]=Lyx latexeditor
 Name=Lyx
 Exec=lyx
 Icon=lyx.xpm

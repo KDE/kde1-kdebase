@@ -1,0 +1,604 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"PO-Revision-Date: 1998-01-20 16:00+0100\n"
+"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
+"Language-Team: Swedish <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Baner"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "Ställ in kbaner"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Färg:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Hastighet:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Text:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "Om Baner"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Baner version 0.1\n"
+"\n"
+"skriven av Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE är fantastiskt"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Fladdermus"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Ställ in KFladdermus"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Antal fladdermöss:"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "Om Fladdermus"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Fladdermus\n"
+"\n"
+"Copyright (c) 1986 av Sun Microsystems\n"
+"\n"
+"Portat till kscreensave av Emanuel Pirker."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Tom skärm"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Ställ in kblankskärm"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Slumpvis linjär"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Horisontell sinus"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Cirkulär studs"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Polära koordinater"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Slumpvis"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Tyvärr. Den här skärmsläckaren kräven en färgdisplay"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Ställ in Blobsläckare"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "Sekunder per bild"
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Algoritm"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Om Blob"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsläckare version 0.1\n"
+"\n"
+"skriven av Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Blob"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Låga"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Ställ in KLåga"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Maxdjup:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Antal prickar:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Om Låga"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Låga version 3.3\n"
+"\n"
+"Copyright (c) 1991 av Patrick J. Naughton\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Skog"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Ställ in KSkog"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Antal träd:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Om Skog"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Skog\n"
+"\n"
+"Copyright (c) 1995 av Pascal Pensa\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hopp"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "Ställ in KHopp"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Likfärgade pixlar:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Cykler:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Om Hopp"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hopp version 3.3\n"
+"\n"
+"Copyright (c) 1991 av Patrick J. Naughton\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laser"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Ställ in KLaser"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Om Laser"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser version 3.3\n"
+"\n"
+"Copyright (c) 1995 av Pascal Pensa\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Linjer"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Ställ in KLinjer"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Längd:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Start:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Mitt:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Slut:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Om KLinjer"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Linjer version 0.1.1\n"
+"\n"
+"skriven av Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Ställ in KLissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Antal Lissien"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Om Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 av Alexander Jolk\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."
+
+#: main.cpp:296
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Ditt system använder skuggade lösenord!\n"
+"Vänligen, kontakta din systemadministratör.\n"
+"\n"
+"Säg åt honom att du behöver suid för skärmsläckarna!"
+
+#: main.cpp:301
+msgid "Shadow Passwords"
+msgstr "Skuggade lösenord"
+
+#: main.cpp:457
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Användning: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:460
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Om markoören placeras i hörnet görs:\n"
+"                     x = i inget (ignorera)\n"
+"                     x = s släck skärmen\n"
+"                     x = l lås skärmen\n"
+"                    ordning: övre vänstra, övre högra, nedre vänstra, nedre högra\n"
+"  -delay num        Fördröjning innan skärmsläckaren startat\n"
+"                     (standardvärdet är 10 min)\n"
+"  -desc             Skriv skärmsläckarens beskrivning till stdout\n"
+"  -install          Installera skärmsläckaren\n"
+"  -lock             Kräv lösenord för att stoppa skärmsläckaren\n"
+"  -nice num         Kör med speciellt nice-värde\n"
+"\n"
+"  -preview wid      Kör i specifierat X-fönster\n"
+"  -inroot           Kör i rotfönstret\n"
+"  -test             Starta skärmsläckaren med en gång\n"
+
+
+#: morph3d.cpp:839
+msgid "GL can not render with root visual\n"
+msgstr "GL kan inte rendrera med root visual\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morf3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "Ställ in Morf3d"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Typ av objekt:"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Om Morf3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morf3D\n"
+"\n"
+"Copyright (c) 1997 av Marcelo F. Vianna\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Plygoner"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Ställ in KPolygon"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Vertexer:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Om Polygon"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon version 0.1\n"
+"\n"
+"skriven av Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Pyro"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Ställ in KPyro"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "Antal:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Måln"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Om Pyro"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro version 3.4\n"
+"\n"
+"Copyright (c) 1991 av Patrick J. Naughton\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "Bumling"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "Ställ in KBumling"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Flytta"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Rotera"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "Om Bumling"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Bumling version 3.3\n"
+"\n"
+"Copyright (c) 1992 av Jamie Zawinski\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Ange lösenord"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Lappar"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Ställ in lappar"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Gräns:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Om Lappar"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lappar\n"
+"\n"
+"Copyright (c) 1991 av Scott Draves\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Svärm"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Ställ in Svärm"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Antal bin:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Om Svärm"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Svärm\n"
+"\n"
+"Copyright (c) 1991 av Patrick J. Naughton\n"
+"\n"
+"Portad till kscreensave av Emanuel Pirker."

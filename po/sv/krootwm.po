@@ -16,7 +16,7 @@ msgstr ""
 
 #: krootwm.C:109 krootwm.C:471
 msgid "Folder"
-msgstr ""
+msgstr "Folder"
 
 #: krootwm.C:136
 #, c-format

@@ -119,9 +119,8 @@ msgid "Tiny Style"
 msgstr "Minimal profil"
 
 #: props.C:281
-#, fuzzy
 msgid "Normal Style"
-msgstr "Liten profil"
+msgstr "Normal profil"
 
 #: props.C:282
 msgid "Large Style"
@@ -136,9 +135,8 @@ msgid "Personal First"
 msgstr "Personliga menyn först"
 
 #: props.C:302
-#, fuzzy
 msgid "Auto Hide Panel"
-msgstr "Göm panelen"
+msgstr "Göm panelen automatiskt"
 
 #: props.C:306
 msgid "Auto Hide Taskbar"

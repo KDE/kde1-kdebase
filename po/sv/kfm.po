@@ -91,7 +91,6 @@ msgid "&Long View"
 msgstr "Visa som text &och ikoner"
 
 #: kfmgui.cpp:375
-#, fuzzy
 msgid "Rel&oad Tree"
 msgstr "&Uppdatera träd"
 
@@ -160,9 +159,8 @@ msgid "&Add Bookmark"
 msgstr "Lägg till bokmärke"
 
 #: kfmgui.cpp:459 kfmgui.cpp:891
-#, fuzzy
 msgid "&Edit Bookmarks..."
-msgstr "&Bokmärken"
+msgstr "&Regigera Bokmärken"
 
 #: kfmgui.cpp:470
 msgid "&About..."
@@ -279,9 +277,8 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "FEL: Kan inte släppa en sak över ogiltlig URL"
 
 #: kfmview.cpp:279
-#, fuzzy
 msgid "ERROR: You dropped some URL over itself"
-msgstr "Du släppe en fil över sig själv"
+msgstr "FEL: Du släppe en URL över sig själv"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
 #: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1026
@@ -295,6 +292,7 @@ msgid ""
 "There is no way to restore them."
 msgstr ""
 "Vill du verkligen radera de markerade filerna?\n"
+"\n"
 "Det går inte att återskapa dem"
 
 #: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
@@ -356,7 +354,7 @@ msgstr "konfigfilen för mime-typer "
 
 #: kbind.cpp:305
 msgid "does not conatain a MimeType=... entry"
-msgstr "innehåller ingen MimeType=...-rad"
+msgstr "innehåller ingen MimeType=...-post"
 
 #: kbind.cpp:380
 msgid "No mime types installed!"
@@ -412,15 +410,16 @@ msgstr ""
 "på lokala hårddiskar"
 
 #: kbind.cpp:1624
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not access\n"
 "%s"
 msgstr "Kunde inte accessa"
+"%s"
 
 #: kbind.cpp:1653
 msgid "The \"Link=....\" entry is empty"
-msgstr "\"Link=...\"-raden är tom"
+msgstr "\"Link=...\"-posten är tom"
 
 #: kbind.cpp:1668
 msgid "The config file has no \"Type=...\" line"
@@ -431,7 +430,6 @@ msgid "Could not access"
 msgstr "Kunde inte accessa"
 
 #: kbind.cpp:1716
-#, fuzzy
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -440,8 +438,8 @@ msgid ""
 msgstr ""
 "Den här filen har ingen\n"
 "Exec=...\n"
-"rad. Redigera egenskaperna\n"
-"för att fixa det här problemet"
+"post. Redigera egenskaperna\n"
+"för att fixa problemet"
 
 #: kbind.cpp:1805
 msgid "ERROR: No Terminal Setting"
@@ -461,7 +459,7 @@ msgstr "KFM Information"
 
 #: main.cpp:66
 msgid "Creating directory:\n"
-msgstr "Skapart katalog:\n"
+msgstr "Skapar katalog:\n"
 
 #: main.cpp:179
 msgid "Installing Templates"
@@ -558,7 +556,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Visa\n"
-"innehåll"
+"poster"
 
 #: kfmprops.cpp:426
 msgid "Read"
@@ -570,7 +568,7 @@ msgid ""
 "Entries"
 msgstr ""
 "Skriv\n"
-"innehåll"
+"poster"
 
 #: kfmprops.cpp:433
 msgid "Write"
@@ -788,14 +786,15 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Vill du verkligen ändra om dina ikoner ?"
 
 #: kfmserver.cpp:234
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
 msgstr ""
-"Felaktig URL\n"
-"%s"
+"URLen\n"
+"%s\n"
+"är felaktig"
 
 #: kfmserver.cpp:285
 msgid ""
@@ -863,29 +862,32 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNT FEL: Du måste åtminstone ange vilken enhet som skall monteras"
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Malformed URL\n"
 "%s"
 msgstr "Ogiltlig URL\n"
+"%s"
 
 #: kiojob.cpp:233
 msgid "Can only make links on local file system"
 msgstr "Kan bara skapa länkar på lokala filsystem"
 
 #: kiojob.cpp:256 kiojob.cpp:275
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Kunde inte skriva över"
+msgstr "Kunde inte skriva över\n"
+"%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr "Kunde inte skapa en symbolisk länk till"
+"%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -893,11 +895,12 @@ msgid " ERROR: Could not write to %s"
 msgstr " FEL: Kunde inte skriva till %s"
 
 #: kiojob.cpp:454 kiojob.cpp:642 kiojob.cpp:1056
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make directory\n"
 "%s"
 msgstr "Kunde inte skapa katalog\n"
+"%s"
 
 #: kiojob.cpp:464 kiojob.cpp:828
 #, c-format
@@ -905,22 +908,24 @@ msgid "ERROR: Could not access directory '%s'"
 msgstr "FEL: Kunde inte komma åt katalogen '%s'"
 
 #: kiojob.cpp:658
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
 msgstr "Kunde inte komma åt katalogen\n"
+"%s"
 
 #: kiojob.cpp:688
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not move directory\n"
 "%s\n"
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Kunde inte skriva\n"
+"Kunde inte flytta katalogen\n"
 "%s\n"
+"till %s\n"
 "Kanske nekades åtkomst"
 
 #: kiojob.cpp:1003 kiojob.cpp:1011 kiojob.cpp:1020 kiojob.cpp:1028
@@ -944,13 +949,14 @@ msgstr ""
 "Antingen finnns inte filen, eller så nekades åtkomsten"
 
 #: kiojob.cpp:1015
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Kunde inte ändra rättighetet\n"
+"Kunde inte skriva\n"
+"%s\n"
 "Kanske nekades åtkomst."
 
 #: kiojob.cpp:1024 kiojob.cpp:1155
@@ -981,14 +987,14 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1048 kiojob.cpp:1179
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The requested action\n"
 "%s\n"
 "is not implemented yet."
 msgstr ""
 "Den begärda funktionen\n"
-"'%s'\n"
+"%s\n"
 "är inte implementerad ännu."
 
 #: kiojob.cpp:1064
@@ -1032,20 +1038,22 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1106
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
-"Gzip rapporterade ett fel\n"
+"Gzip rapporterade ett fel för\n"
 "%s"
 
 #: kiojob.cpp:1116 kiojob.cpp:1131
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr " existerar inte\n"
+msgstr ""
+"Filen %s\n"
+"existerar inte"
 
 #: kiojob.cpp:1213
 #, c-format
@@ -1092,19 +1100,17 @@ msgid "File %i/%i"
 msgstr "Fil %i/%i"
 
 #: kiojob.cpp:1450 kiojob.cpp:1505
-#, fuzzy, c-format
+#, c-format
 msgid "to %s"
-msgstr ""
-"\n"
-"till "
+msgstr "till %s"
 
 #: kiojob.cpp:1481
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Kunde inte skapa katalogen\n"
+"Kunde inte radera katalogen\n"
 "%s"
 
 #: kiojob.cpp:1571
@@ -1118,9 +1124,9 @@ msgid "Unmounting %s ..."
 msgstr "Avmonterar %s ..."
 
 #: kiojob.cpp:1601
-#, fuzzy, c-format
+#, c-format
 msgid "Retrieving listing of %s"
-msgstr "Hämter listning för %s ..."
+msgstr "Hämter lista för %s"
 
 #: kiojob.cpp:1826
 msgid "Segmentation fault in io subprocess"
@@ -1199,42 +1205,42 @@ msgid "Known bindings:"
 msgstr "Kända bindningar:"
 
 #: kproxydlg.cpp:10
-#, fuzzy
+#
 msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Den här funktionen är inte implementerad ännu!"
+msgstr "Bara HTTP-Proxy är implementerad för närvarande!!"
 
 #: kproxydlg.cpp:35
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Ny proxy för:"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
 msgstr "KFM bläddrar-inställningar"
 
 #: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
-#, fuzzy
+#
 msgid "Edit Bookmarks"
-msgstr "Lägg till som bokmärke"
+msgstr "Redigera bokmärken"
 
 #: kbookmarkdlg.cpp:36
-#, fuzzy
+#
 msgid "Move up"
-msgstr "Flytta"
+msgstr "Flytta upp"
 
 #: kbookmarkdlg.cpp:37
-#, fuzzy
+#
 msgid "Move down"
-msgstr "Flytta"
+msgstr "Flytta ner"
 
 #: kbookmarkdlg.cpp:176
-#, fuzzy
+#
 msgid "Rename Bookmark"
-msgstr "Lägg till bokmärke"
+msgstr "Byt namn på bokmärke"
 
 #: kbookmarkdlg.cpp:178
-#, fuzzy
+#
 msgid "Rename Bookmark:"
-msgstr "Lägg till bokmärke"
+msgstr "Byt namn på bokmärke:"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1301,95 +1307,3 @@ msgid ""
 msgstr ""
 "Syntaxfel:\n"
 "kfmexec kommando [URLer ...]\n"
-
-#~ msgid "The URL"
-#~ msgstr "URL:en"
-
-#~ msgid "is malformed\n"
-#~ msgstr "är ogiltlig\n"
-
-#~ msgid "Could not move directory\n"
-#~ msgstr "Kunde inte flytta katalog\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Perhaps access denied"
-#~ msgstr ""
-#~ "\n"
-#~ "Kanske nekades åtkomst"
-
-#~ msgid "&New"
-#~ msgstr "&Ny"
-
-#~ msgid "&View"
-#~ msgstr "&Utseende"
-
-#~ msgid "Clear"
-#~ msgstr "Töm"
-
-#~ msgid "Delete"
-#~ msgstr "Radera"
-
-#~ msgid "Add"
-#~ msgstr "Lägg till"
-
-#~ msgid "&Print..."
-#~ msgstr "S&kriv ut..."
-
-#~ msgid "&Close"
-#~ msgstr "&Stäng"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopiera"
-
-#~ msgid "&Paste"
-#~ msgstr "Klistra &in"
-
-#~ msgid "&Delete"
-#~ msgstr "&Radera"
-
-#~ msgid "Back"
-#~ msgstr "Tillbaka"
-
-#~ msgid "Forward"
-#~ msgstr "Framåt"
-
-#~ msgid "Reload"
-#~ msgstr "Uppdatera"
-
-#~ msgid "&Help"
-#~ msgstr "&Hjälp"
-
-#~ msgid "&File"
-#~ msgstr "&Arkiv"
-
-#~ msgid "&Edit"
-#~ msgstr "&Redigera"
-
-#~ msgid "&Options"
-#~ msgstr "&Inställningar"
-
-#~ msgid "Set UserAgent"
-#~ msgstr "Sätt UserAgent"
-
-#~ msgid "&How can I ..."
-#~ msgstr "&Hur kan jag..."
-
-#~ msgid "Do you really want to quit"
-#~ msgstr "Vill du verkligen avsluta"
-
-#~ msgid "Mount default"
-#~ msgstr "Montera standard"
-
-#~ msgid "UID"
-#~ msgstr "UID"
-
-#, fuzzy
-#~ msgid "GID "
-#~ msgstr "Sätt GID"
-
-#~ msgid "ERROR: Could not read desktop directory"
-#~ msgstr "FEL: Kunde inte läsa skrivbordskatalogen"
-
-#~ msgid "&Help..."
-#~ msgstr "&Hjälp..."

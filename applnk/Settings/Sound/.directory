@@ -4,6 +4,7 @@ Name=Sound
 Name[pl]=D¼wiêk
 Name[cs]=Zvuk
 Nane[fi]=Ääni
+Name[sv]=Ljud
 MiniIcon=sound.xpm
 SortOrder=bell.kdelnk
 Icon=Sound.xpm

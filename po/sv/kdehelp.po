@@ -24,7 +24,7 @@ msgstr "Öppna URL"
 
 #: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
-msgstr "Kan int öppna: "
+msgstr "Kan inte öppna: "
 
 #: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"

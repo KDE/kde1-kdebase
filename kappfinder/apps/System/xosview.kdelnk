@@ -10,6 +10,7 @@ Comment=System Monitor
 Comment[de]=Systemmonitor
 Comment[pl]=Monitor systemu
 Comment[fi]=Systeemimonitori
+Comment[sv]=Systemmonitor
 Exec=xosview
 Icon=Information.xpm
 TerminalOptions=

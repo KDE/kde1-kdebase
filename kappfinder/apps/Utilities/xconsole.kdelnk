@@ -10,6 +10,7 @@ Comment=X Console viewer
 Comment[de]=X Konsole
 Comment[pl]=X Konsola
 Comment[fi]=X Konsoli
+Comment[sv]=X Konsoll
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

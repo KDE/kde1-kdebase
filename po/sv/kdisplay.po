@@ -32,7 +32,7 @@ msgstr "Enfärgad"
 
 #: backgnd.cpp:277
 msgid "Gradient"
-msgstr "Gradvis"
+msgstr "Gradient"
 
 #: backgnd.cpp:287
 msgid "Portrait"
