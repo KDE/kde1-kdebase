@@ -5,27 +5,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfonmanager 0.3.1\n"
-"POT-Creation-Date: 1998-03-05 12:11+0100\n"
+"POT-Creation-Date: 1998-03-05 15:53+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"   
+"Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:61
+#: main.cpp:58
 msgid "KDE Font Manager"
 msgstr "Správca znakových siad KDE"
 
-#: main.cpp:74
+#: main.cpp:71
 msgid "KDE Fonts"
 msgstr "Znakové sady KDE"
 
-#: main.cpp:75
+#: main.cpp:72
 msgid "Font Explorer"
 msgstr "Prieskumník znakových siad"
 
-#: main.cpp:76
+#: main.cpp:73
 msgid "Raw X11 Font List"
 msgstr "Zoznam znakových siad"
 
@@ -37,15 +37,15 @@ msgstr "Dostupné znakové sady"
 msgid "Fonts made available to KDE"
 msgstr "Sady dostupné pre KDE"
 
-#: kfontmanager.cpp:86
+#: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "Vzorový text Správcu znakových siad"
 
-#: kfontlist.cpp:63 kfontmanager.cpp:108
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "Informácie o kfontmanageri"
 
-#: kfontmanager.cpp:108
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -57,13 +57,13 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:208
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr "Nie je nastavená premenná prostredia HOME\n"
 
-#: kfontmanager.cpp:285
+#: kfontmanager.cpp:289
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -71,7 +71,7 @@ msgstr ""
 "Nemô¾em vytvori»:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:290
+#: kfontmanager.cpp:294
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -81,7 +81,7 @@ msgstr ""
 "ale nemô¾em do neho zapisova»\n"
 "Nemô¾em ulo¾i» zoznam znakových siad pre KDE."
 
-#: kfontlist.cpp:63
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,56 +13,68 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr "Рабочий стол"
 
-#: backgnd.cpp:241
+#: backgnd.cpp:284
 msgid "Rename..."
 msgstr "Переименовать..."
 
-#: backgnd.cpp:247
+#: backgnd.cpp:290
 msgid "Color"
 msgstr "Цвет"
 
-#: backgnd.cpp:265
-msgid "Flat"
+#: backgnd.cpp:309
+#, fuzzy
+msgid "&Flat"
 msgstr "Флат"
 
-#: backgnd.cpp:269
-msgid "Gradient"
+#: backgnd.cpp:313
+#, fuzzy
+msgid "&Gradient"
 msgstr "Градиент"
 
-#: backgnd.cpp:279
-msgid "Portrait"
+#: backgnd.cpp:327
+#, fuzzy
+msgid "&Portrait"
 msgstr "В длину"
 
-#: backgnd.cpp:283
-msgid "Landscape"
+#: backgnd.cpp:331
+#, fuzzy
+msgid "&Landscape"
 msgstr "В ширину"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Обои"
 
-#: backgnd.cpp:322
-msgid "Tiled"
+#: backgnd.cpp:374
+#, fuzzy
+msgid "Ti&led"
 msgstr "Черепицей"
 
-#: backgnd.cpp:326
-msgid "Centred"
+#: backgnd.cpp:378
+#, fuzzy
+msgid "&Centred"
 msgstr "В центре"
 
-#: backgnd.cpp:330
-msgid "Scaled"
+#: backgnd.cpp:382
+#, fuzzy
+msgid "&Scaled"
 msgstr "Изменять размер"
 
+#: backgnd.cpp:388
+#, fuzzy
+msgid "&Browse..."
+msgstr "Просмотреть..."
+
 #
-#: backgnd.cpp:480
+#: backgnd.cpp:549
 msgid "Default"
 msgstr "По умолчанию"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr "Заголовок стола"
 
@@ -291,9 +303,6 @@ msgstr ""
 #: main.cpp:112
 msgid "Display settings"
 msgstr "Настройка дисплея"
-
-#~ msgid "Browse..."
-#~ msgstr "Просмотреть..."
 
 #~ msgid "Italic"
 #~ msgstr "Наклонный"

@@ -5,39 +5,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol 0.3\n"
-"POT-Creation-Date: 1998-03-05 12:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit\n"   
+"Content-Transfer-Encoding: 8bit\n"
 
 #: configlist.cpp:119
 msgid "Unknown module: "
 msgstr "Neznámy modul: "
 
-#: main.cpp:46 mainwidget.cpp:18
+#: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
 msgstr "Ovládacie centrum KDE"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Pohlti» moduly"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&Informácie o KControlu ..."
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Pou¾itie KControlu"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "Informácie o KControle"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -54,3 +42,12 @@ msgstr ""
 "\n"
 "Poïakovanie pre:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#~ msgid "&About KControl..."
+#~ msgstr "&Informácie o KControlu ..."
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Pou¾itie KControlu"
+
+#~ msgid "About KControl"
+#~ msgstr "Informácie o KControle"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: 1998-01-25 18:27 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -13,55 +13,66 @@ msgstr ""
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr "Bureau"
 
-#: backgnd.cpp:241
+#: backgnd.cpp:284
 msgid "Rename..."
 msgstr "Renommer..."
 
-#: backgnd.cpp:247
+#: backgnd.cpp:290
 msgid "Color"
 msgstr "Couleur"
 
-#: backgnd.cpp:265
-msgid "Flat"
+#: backgnd.cpp:309
+#, fuzzy
+msgid "&Flat"
 msgstr "Plat"
 
-#: backgnd.cpp:269
-msgid "Gradient"
+#: backgnd.cpp:313
+#, fuzzy
+msgid "&Gradient"
 msgstr "Dégradé"
 
-#: backgnd.cpp:279
-msgid "Portrait"
+#: backgnd.cpp:327
+#, fuzzy
+msgid "&Portrait"
 msgstr "Portrait"
 
-#: backgnd.cpp:283
-msgid "Landscape"
+#: backgnd.cpp:331
+#, fuzzy
+msgid "&Landscape"
 msgstr "Paysage"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Papier peint"
 
-#: backgnd.cpp:322
-msgid "Tiled"
+#: backgnd.cpp:374
+#, fuzzy
+msgid "Ti&led"
 msgstr "Mosaïque"
 
-#: backgnd.cpp:326
-msgid "Centred"
+#: backgnd.cpp:378
+#, fuzzy
+msgid "&Centred"
 msgstr "Centré"
 
-#: backgnd.cpp:330
-msgid "Scaled"
+#: backgnd.cpp:382
+#, fuzzy
+msgid "&Scaled"
 msgstr "Adapté"
 
-#: backgnd.cpp:480
+#: backgnd.cpp:388
+msgid "&Browse..."
+msgstr ""
+
+#: backgnd.cpp:549
 msgid "Default"
 msgstr "Défaut"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr "Nom du bureau"
 

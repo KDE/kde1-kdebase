@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,56 +14,68 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr ""
 
-#: backgnd.cpp:241
+#: backgnd.cpp:284
 msgid "Rename..."
 msgstr ""
 
-#: backgnd.cpp:247
+#: backgnd.cpp:290
 msgid "Color"
 msgstr "Χρώμα"
 
-#: backgnd.cpp:265
-msgid "Flat"
+#: backgnd.cpp:309
+#, fuzzy
+msgid "&Flat"
 msgstr "Επίπεδο"
 
-#: backgnd.cpp:269
-msgid "Gradient"
+#: backgnd.cpp:313
+#, fuzzy
+msgid "&Gradient"
 msgstr "Βαθμοτό"
 
-#: backgnd.cpp:279
-msgid "Portrait"
+#: backgnd.cpp:327
+#, fuzzy
+msgid "&Portrait"
 msgstr "Όρθιο"
 
-#: backgnd.cpp:283
-msgid "Landscape"
+#: backgnd.cpp:331
+#, fuzzy
+msgid "&Landscape"
 msgstr "Πλαγιαστό"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Ταπετσαρία"
 
-#: backgnd.cpp:322
-msgid "Tiled"
+#: backgnd.cpp:374
+#, fuzzy
+msgid "Ti&led"
 msgstr "Πλακάκια"
 
-#: backgnd.cpp:326
-msgid "Centred"
+#: backgnd.cpp:378
+#, fuzzy
+msgid "&Centred"
 msgstr "Κεντραρισμένο"
 
-#: backgnd.cpp:330
-msgid "Scaled"
+#: backgnd.cpp:382
+#, fuzzy
+msgid "&Scaled"
 msgstr "Υπό κλίμακα"
 
-#: backgnd.cpp:480
+#: backgnd.cpp:388
+#, fuzzy
+msgid "&Browse..."
+msgstr "Κοίταξε"
+
+#: backgnd.cpp:549
 #, fuzzy
 msgid "Default"
 msgstr "Συνιθισμένο KDE"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr ""
 
@@ -291,9 +303,6 @@ msgstr ""
 #, fuzzy
 msgid "Display settings"
 msgstr "Ρύθμιση οθόνης"
-
-#~ msgid "Browse..."
-#~ msgstr "Κοίταξε"
 
 #~ msgid "Italic"
 #~ msgstr "Πλαγιαστά"

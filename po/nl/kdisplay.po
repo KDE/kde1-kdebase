@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,56 +14,68 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr ""
 
-#: backgnd.cpp:241
+#: backgnd.cpp:284
 msgid "Rename..."
 msgstr ""
 
-#: backgnd.cpp:247
+#: backgnd.cpp:290
 msgid "Color"
 msgstr "Kleur"
 
-#: backgnd.cpp:265
-msgid "Flat"
+#: backgnd.cpp:309
+#, fuzzy
+msgid "&Flat"
 msgstr "Plat"
 
-#: backgnd.cpp:269
-msgid "Gradient"
+#: backgnd.cpp:313
+#, fuzzy
+msgid "&Gradient"
 msgstr "Verlopend"
 
-#: backgnd.cpp:279
-msgid "Portrait"
+#: backgnd.cpp:327
+#, fuzzy
+msgid "&Portrait"
 msgstr "Verticaal"
 
-#: backgnd.cpp:283
-msgid "Landscape"
+#: backgnd.cpp:331
+#, fuzzy
+msgid "&Landscape"
 msgstr "Horizontaal"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Behang"
 
-#: backgnd.cpp:322
-msgid "Tiled"
+#: backgnd.cpp:374
+#, fuzzy
+msgid "Ti&led"
 msgstr "Naast elkaar"
 
-#: backgnd.cpp:326
-msgid "Centred"
+#: backgnd.cpp:378
+#, fuzzy
+msgid "&Centred"
 msgstr "Gecentreerd"
 
-#: backgnd.cpp:330
-msgid "Scaled"
+#: backgnd.cpp:382
+#, fuzzy
+msgid "&Scaled"
 msgstr "Vergroot"
 
-#: backgnd.cpp:480
+#: backgnd.cpp:388
+#, fuzzy
+msgid "&Browse..."
+msgstr "Bladeren..."
+
+#: backgnd.cpp:549
 #, fuzzy
 msgid "Default"
 msgstr "Standaard KDE"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr ""
 
@@ -291,9 +303,6 @@ msgstr ""
 #, fuzzy
 msgid "Display settings"
 msgstr "Scherm instellingen"
-
-#~ msgid "Browse..."
-#~ msgstr "Bladeren..."
 
 #~ msgid "Italic"
 #~ msgstr "Cursief"

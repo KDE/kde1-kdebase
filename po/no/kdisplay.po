@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -14,55 +14,66 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr "Skrivebord"
 
-#: backgnd.cpp:241
+#: backgnd.cpp:284
 msgid "Rename..."
 msgstr "Gi nytt navn..."
 
-#: backgnd.cpp:247
+#: backgnd.cpp:290
 msgid "Color"
 msgstr "Farge"
 
-#: backgnd.cpp:265
-msgid "Flat"
+#: backgnd.cpp:309
+#, fuzzy
+msgid "&Flat"
 msgstr "Flat"
 
-#: backgnd.cpp:269
-msgid "Gradient"
+#: backgnd.cpp:313
+#, fuzzy
+msgid "&Gradient"
 msgstr "Gradient"
 
-#: backgnd.cpp:279
-msgid "Portrait"
+#: backgnd.cpp:327
+#, fuzzy
+msgid "&Portrait"
 msgstr "Portrett"
 
-#: backgnd.cpp:283
-msgid "Landscape"
+#: backgnd.cpp:331
+#, fuzzy
+msgid "&Landscape"
 msgstr "Landskap"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:322
-msgid "Tiled"
+#: backgnd.cpp:374
+#, fuzzy
+msgid "Ti&led"
 msgstr "Fliselagt"
 
-#: backgnd.cpp:326
-msgid "Centred"
+#: backgnd.cpp:378
+#, fuzzy
+msgid "&Centred"
 msgstr "Sentrert"
 
-#: backgnd.cpp:330
-msgid "Scaled"
+#: backgnd.cpp:382
+#, fuzzy
+msgid "&Scaled"
 msgstr "Skalert"
 
-#: backgnd.cpp:480
+#: backgnd.cpp:388
+msgid "&Browse..."
+msgstr ""
+
+#: backgnd.cpp:549
 msgid "Default"
 msgstr "Standard"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:888
 msgid "Desktop Title"
 msgstr "Skrivebord tittel"
 
