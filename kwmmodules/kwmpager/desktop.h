@@ -28,43 +28,43 @@
 class Pager;
 
 struct PagerWindow {
-  Window id;
-  QRect rect;
-  QRect prect;
+    Window id;
+    QRect rect;
+    QRect prect;
 };
 
 class Desktop : public QFrame {
-  Q_OBJECT
-
+    Q_OBJECT
+    
 public:
-  Desktop(KWMModuleApplication *a, int id, Pager *parent);
-  ~Desktop() {};
-  void activate(bool flag);
-  void addWindow(Window);
-  void removeWindow(Window);
-  void windowChange(Window);
-  void windowRaise(Window);
-  void windowLower(Window);
-  void windowActivate(Window);
-  void init();
-
+    Desktop(KWMModuleApplication *a, int id, Pager *parent);
+    ~Desktop() {};
+    void activate(bool flag);
+    void addWindow(Window);
+    void removeWindow(Window);
+    void windowChange(Window);
+    void windowRaise(Window);
+    void windowLower(Window);
+    void windowActivate(Window);
+    void init();
+    
 protected:
-  void fillPixmap();
-  virtual void mousePressEvent ( QMouseEvent * );
-  virtual void drawContents ( QPainter * );
-  virtual void resizeEvent ( QResizeEvent * );  
-  PagerWindow *activeWindow;
-
+    void fillPixmap();
+    virtual void mousePressEvent ( QMouseEvent * );
+    virtual void drawContents ( QPainter * );
+    virtual void resizeEvent ( QResizeEvent * );  
+    PagerWindow *activeWindow;
+    
 private:
-  KWMModuleApplication* kwmmapp;
-  int Id;
-  QList<PagerWindow> windows;
-  QPixmap pixmap;
-  QSize root_size;
-  QSize pixmap_size;
-
+    KWMModuleApplication* kwmmapp;
+    int Id;
+    QList<PagerWindow> windows;
+    QPixmap pixmap;
+    QSize root_size;
+    QSize pixmap_size;
+    
 signals:
-  void activated(int);
+    void activated(int);
 };
 
 #endif

@@ -27,100 +27,102 @@
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
 {
-  kwmmapp = a;
-  Id = id;
-  setFrameStyle(Panel | Raised);
-  root_size = KWM::geometry( qt_xrootwin() ).size();
-  pixmap_size = contentsRect().size() - QSize(2,2);
-  windows.setAutoDelete( true );
-  activeWindow = 0L;
-  fillPixmap();
-  repaint();
+    kwmmapp = a;
+    Id = id;
+    setFrameStyle(Panel | Raised);
+    root_size = KWM::geometry( qt_xrootwin() ).size();
+    pixmap_size = contentsRect().size() - QSize(2,2);
+    windows.setAutoDelete( true );
+    activeWindow = 0L;
+    fillPixmap();
+    repaint();
 }
 
 void Desktop::fillPixmap()
 {
-  PagerWindow *win;
-  pixmap.resize(pixmap_size);
-  pixmap.fill(backgroundColor());
-  QPainter p(&pixmap);
-  p.setPen(QColor(0,0,0));
-
-  for (win = windows.first(); win != 0L; win = windows.next()) {
-    int x = win->rect.x() * pixmap_size.width() / root_size.width() + 1;
-    int y = win->rect.y() * pixmap_size.height() / root_size.height() + 1;
-    int w = win->rect.width() * pixmap_size.width() / root_size.width();
-    int h = win->rect.height() * pixmap_size.height() / root_size.height();
-    win->prect = QRect(x,y,w,h);
-    QColor col = 
-      (win == activeWindow) ? kapp->activeTitleColor : kapp->inactiveTitleColor;
-    p.fillRect(x, y, w, h,QBrush(col));
-    p.drawRect(x, y, w, h);
-  }
-   
+    PagerWindow *win;
+    pixmap.resize(pixmap_size);
+    pixmap.fill(backgroundColor());
+    QPainter p(&pixmap);
+    p.setPen(QColor(0,0,0));
+    
+    for (win = windows.first(); win != 0L; win = windows.next()) {
+	int x = win->rect.x() * pixmap_size.width() / root_size.width() + 1;
+	int y = win->rect.y() * pixmap_size.height() / root_size.height() + 1;
+	int w = win->rect.width() * pixmap_size.width() / root_size.width();
+	int h = win->rect.height() * pixmap_size.height() / root_size.height();
+	win->prect = QRect(x,y,w,h);
+	QColor col = 
+	    (win == activeWindow) ? 
+	    kapp->activeTitleColor : 
+	    kapp->inactiveTitleColor;
+	p.fillRect(x, y, w, h,QBrush(col));
+	p.drawRect(x, y, w, h);
+    }
+    
 }
 
 void Desktop::init()
 {
-  windows.clear();
-  pixmap.fill(backgroundColor());
+    windows.clear();
+    pixmap.fill(backgroundColor());
 }
 
 void Desktop::addWindow(Window w)
 {
-  PagerWindow *win = new PagerWindow;
-  if (w == KWM::activeWindow())
-    activeWindow = win;
-
-  win->id = w;
-  win->rect = KWM::geometry(w);
-  
-  windows.append(win);
-  fillPixmap();
+    PagerWindow *win = new PagerWindow;
+    if (w == KWM::activeWindow())
+	activeWindow = win;
+    
+    win->id = w;
+    win->rect = KWM::geometry(w);
+    
+    windows.append(win);
+    fillPixmap();
 }
 
 void Desktop::windowActivate(Window w)
 {
-  for (PagerWindow *win = windows.first(); win != 0L; win = windows.next()) {
-    if (win->id == w) {
-      activeWindow = win;
-      break;
+    for (PagerWindow *win = windows.first(); win != 0L; win = windows.next()) {
+	if (win->id == w) {
+	    activeWindow = win;
+	    break;
+	}
     }
-  }
-  fillPixmap();
+    fillPixmap();
 }
 
 void Desktop::activate(bool flag)
 {
-  if (!flag) {
-    activeWindow = NULL;
-    setFrameStyle(Panel | Raised);
-  } else 
-    setFrameStyle(Panel | Sunken);
+    if (!flag) {
+	activeWindow = NULL;
+	setFrameStyle(Panel | Raised);
+    } else 
+	setFrameStyle(Panel | Sunken);
     
-  repaint(false);
+    repaint(false);
 }
 
 void Desktop::mousePressEvent( QMouseEvent *e )
 {
-  KWM::switchToDesktop(Id);
-  for (PagerWindow *win = windows.last(); win; win = windows.prev()) {
-    if (win->prect.contains(e->pos())) {
-      KWM::activate(win->id);
-      break;
+    KWM::switchToDesktop(Id);
+    for (PagerWindow *win = windows.last(); win; win = windows.prev()) {
+	if (win->prect.contains(e->pos())) {
+	    KWM::activate(win->id);
+	    break;
+	}
     }
-  }
 }
 
 void Desktop::resizeEvent ( QResizeEvent * )
 {
-  pixmap_size = contentsRect().size();
-  fillPixmap();
-  repaint();
+    pixmap_size = contentsRect().size();
+    fillPixmap();
+    repaint();
 }
 
 void Desktop::drawContents ( QPainter *p )
 {
-  if (!pixmap.isNull())
-    p->drawPixmap(0, 0, pixmap);
+    if (!pixmap.isNull())
+	p->drawPixmap(0, 0, pixmap);
 }

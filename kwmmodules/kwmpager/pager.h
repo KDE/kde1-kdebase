@@ -24,32 +24,34 @@
 #include <kapp.h>
 #include <kwmmapp.h>
 #include "desktop.h"
+#include <qframe.h>
 
-class Pager: public QWidget {
-  Q_OBJECT
-
+class Pager: public QFrame {
+    Q_OBJECT
+    
 public:
-  Pager(KWMModuleApplication*);
-  ~Pager() {};
-
+    Pager(KWMModuleApplication*);
+    ~Pager() {};
+    
 private:
-  KWMModuleApplication* kwmmapp;
-  QList<Desktop> desktops;
-  Desktop *activeDesktop;
-
+    KWMModuleApplication* kwmmapp;
+    QList<Desktop> desktops;
+    Desktop *activeDesktop;
+    
 public slots:
-  void initDesktops();
-
+    void initDesktops();
+    
 private slots:
-  void changeDesktop(int);
-  void changeNumber(int);
-  void addWindow(Window);
-  void removeWindow(Window);
-  void windowChange(Window);
-  void windowActivate(Window);
-  
+    void changeDesktop(int);
+    void changeNumber(int);
+    void addWindow(Window);
+    void removeWindow(Window);
+    void windowChange(Window);
+    void windowActivate(Window);
+    
 protected:
-  virtual void resizeEvent ( QResizeEvent * );  
+    virtual void resizeEvent ( QResizeEvent * );  
+    void readSettings();
 };
 
 #endif
