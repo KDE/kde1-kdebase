@@ -32,14 +32,15 @@ class kVt : public QWidget
     Q_OBJECT
 
 public:
-    kVt( QWidget *parent=0, const char *name=0 );
+    kVt( KConfig* sessionconfig, QWidget *parent=0, const char *name=0 );
   // public because this need to be set from old rxvt-C-code
     QScrollBar* scrollbar;
   void ResizeToVtWindow();
   void setMenubar(bool);
   void setScrollbar(bool);
   void ResizeToDimen(int width, int height);
-  void do_some_stuff();//temporary (Matthias)
+  void do_some_stuff(KConfig* kvtconfig);//temporary (Matthias)
+  void saveOptions(KConfig*);
 
 public slots:
   void application_signal();
@@ -55,6 +56,8 @@ public slots:
   
   void menubarMoved();
   void quit();
+
+  void saveYourself();
 
 
 protected:

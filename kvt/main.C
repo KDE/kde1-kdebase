@@ -31,6 +31,7 @@
 // KDE includes
 #include <kconfig.h>
 #include <kapp.h>
+#include <kwm.h>
 #include <kurl.h>
 
 #include "kvt_version.h"
@@ -300,7 +301,7 @@ void change_icon_name(char *str){
 // kVt
 //---------------------------------------------------------------------------
 
-kVt::kVt( QWidget *parent, const char *name )
+kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
   : QWidget( parent, name){
 
     // set the default options
@@ -313,6 +314,7 @@ kVt::kVt( QWidget *parent, const char *name )
     // get the configutation
     kvtconfig = KApplication::getKApplication()->getConfig();
     kvtconfig->setGroup("kvt");
+    sessionconfig->setGroup("kvt");
 
     // Init DnD: Set up drop zone and drop handler
     dropZone = new KDNDDropZone( this, DndURL );
@@ -321,45 +323,45 @@ kVt::kVt( QWidget *parent, const char *name )
     
 
     QString entry;
-    entry = kvtconfig->readEntry("menubar");
-    if (entry && entry == "visible" )
+    entry = sessionconfig->readEntry("menubar");
+    if (!entry.isEmpty() && entry == "visible" )
       menubar_visible = TRUE;
-    if (entry && entry == "invisible" )
+    if (!entry.isEmpty() && entry == "invisible" )
       menubar_visible = FALSE;
-    entry = kvtconfig->readEntry("scrollbar");
-    if (entry && entry == "hidden" ){
+    entry = sessionconfig->readEntry("scrollbar");
+    if (!entry.isEmpty() && entry == "hidden" ){
       kvt_scrollbar = kvt_right;
       scrollbar_visible = FALSE;
     }
-    if (entry && entry ==  "left" ){
+    if (!entry.isEmpty() && entry ==  "left" ){
       scrollbar_visible = TRUE;
       kvt_scrollbar = kvt_left;
     }
-    if (entry && entry == "right" ){
+    if (!entry.isEmpty() && entry == "right" ){
       scrollbar_visible = TRUE;
       kvt_scrollbar = kvt_right;
     }
-    entry = kvtconfig->readEntry("size");
-    if (entry){
+    entry = sessionconfig->readEntry("size");
+    if (!entry.isEmpty()){
       kvt_set_fontnum(entry.data());
       kvt_size = (KvtSize) font_num;
     }
 
-    entry = kvtconfig->readEntry("dimension");
-    if (entry) {
+    entry = sessionconfig->readEntry("dimension");
+    if (!entry.isEmpty()) {
       kvt_set_dimension(entry.data());
     }
 
-    entry = kvtconfig->readEntry("foreground");
-    if (entry)
+    entry = sessionconfig->readEntry("foreground");
+    if (!entry.isEmpty())
       fg_string = qstrdup(entry);
 
-    entry = kvtconfig->readEntry("background");
-    if (entry)
+    entry = sessionconfig->readEntry("background");
+    if (!entry.isEmpty())
       bg_string = qstrdup(entry);
 
-    entry = kvtconfig->readEntry("charclass");
-    if (entry) {
+    entry = sessionconfig->readEntry("charclass");
+    if (!entry.isEmpty()) {
       kvt_charclass = entry;
       set_charclass(entry);
     } else {
@@ -367,20 +369,8 @@ kVt::kVt( QWidget *parent, const char *name )
     }
 
     /* if bacspace=BS then backspace sends a ^H otherwise it will send a ^? */
-    entry = kvtconfig->readEntry("backspace");
+    entry = sessionconfig->readEntry("backspace");
     BackspaceSendsControlH = (entry && entry=="BS");
-
-    // Commented out, since it causes segfaults at this
-    // part of the code. (colormap not initialized)
-    //     entry = kvtconfig->readEntry("colormode");
-    //     if (entry) {
-    //       if (entry == color_mode_name[COLOR_TYPE_ANSI])
-    // 	init_color_mode(COLOR_TYPE_ANSI);
-    //       if (entry == color_mode_name[COLOR_TYPE_Linux])
-    // 	init_color_mode(COLOR_TYPE_Linux);      
-    //     } else {
-    //       init_color_mode(COLOR_TYPE_ANSI);
-    //     }
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
@@ -454,6 +444,24 @@ kVt::kVt( QWidget *parent, const char *name )
 
     menubar = new KMenuBar( this );
     CHECK_PTR( menubar );
+
+    entry = sessionconfig->readEntry("kmenubar");
+    if (!entry.isEmpty() && entry == "floating") {
+      menubar->setMenuBarPos(KMenuBar::Floating);
+      entry = sessionconfig->readEntry("kmenubargeometry");
+      if (!entry.isEmpty()) {
+	menubar->setGeometry(KWM::setProperties(menubar->winId(), entry));
+      }
+      menubar->show();
+    }
+    else if (!entry.isEmpty() && entry == "top") {
+      menubar->setMenuBarPos(KMenuBar::Top);
+    }
+    else if (!entry.isEmpty() && entry == "bottom") {
+      menubar->setMenuBarPos(KMenuBar::Bottom);
+    }
+
+
     connect(menubar, SIGNAL (moved(menuPosition)),
 	    SLOT (menubarMoved()));
     menubar->insertItem( klocale->translate("&File"), m_file );
@@ -482,13 +490,75 @@ kVt::kVt( QWidget *parent, const char *name )
     keyboard_secured = FALSE;
     
     setAcceptFocus( TRUE );
+    
+    KApplication::getKApplication()->setTopWidget(this);
+    KApplication::getKApplication()->enableSessionManagement();
+    KWM::setUnsavedDataHint(winId(), True);
+    connect(KApplication::getKApplication(), SIGNAL(saveYourself()),
+	    SLOT(saveYourself()));
+
+    entry = sessionconfig->readEntry("geometry");
+    if (!entry.isEmpty()) {
+      setGeometry(KWM::setProperties(winId(), entry));
+    }
 
 }
 
-void kVt::do_some_stuff() { //temporary (Matthias)
+
+void kVt::saveYourself(){
+  KConfig* config = KApplication::getKApplication()->getSessionConfig();
+  saveOptions(config);
+  config->writeEntry("geometry", KWM::getProperties(winId()));
+  if (menubar->menuBarPos() == KMenuBar::Floating){
+    config->writeEntry("kmenubar", "floating");
+    config->writeEntry("kmenubargeometry", 
+			  KWM::getProperties(menubar->winId()));
+  }
+  config->sync();
+}
+
+
+void kVt::saveOptions(KConfig* kvtconfig){
+  kvtconfig->setGroup("kvt");
+  if (menubar_visible)
+    kvtconfig->writeEntry("menubar", "visible");
+  else
+    kvtconfig->writeEntry("menubar", "invisible");
+  
+  if (scrollbar_visible){
+    if (kvt_scrollbar == kvt_left)
+      kvtconfig->writeEntry("scrollbar", "left");
+    else
+      kvtconfig->writeEntry("scrollbar", "right");
+  }
+  else
+    kvtconfig->writeEntry("scrollbar", "hidden");
+  
+  kvtconfig->writeEntry("size", kvt_sizes[kvt_size]);
+  
+  kvtconfig->writeEntry("dimension", kvt_dimens[kvt_dimen].text);
+  
+  kvtconfig->writeEntry("foreground", fg_string);
+  kvtconfig->writeEntry("background", bg_string);
+  
+  kvtconfig->writeEntry("charclass", kvt_charclass);
+  
+  kvtconfig->writeEntry("colormode", color_mode_name[get_color_mode()]);
+  
+  kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
+
+  if (menubar->menuBarPos() == KMenuBar::Bottom)
+    kvtconfig->writeEntry("kmenubar", "bottom");
+  else
+    kvtconfig->writeEntry("kmenubar", "top");
+
+  kvtconfig->sync();
+}
+
+void kVt::do_some_stuff(KConfig* kvtconfig) { //temporary (Matthias)
     QString entry;
     entry = kvtconfig->readEntry("colormode");
-     if (entry) {
+     if (!entry.isEmpty()) {
        if (entry == color_mode_name[COLOR_TYPE_ANSI])
  	init_color_mode(COLOR_TYPE_ANSI);
        if (entry == color_mode_name[COLOR_TYPE_Linux])
@@ -668,35 +738,7 @@ void kVt::options_menu_activated( int item){
   case 9:
     // save options
     {
-      kvtconfig->setGroup("kvt");
-      if (menubar_visible)
-	kvtconfig->writeEntry("menubar", "visible");
-      else
-	kvtconfig->writeEntry("menubar", "invisible");
-
-      if (scrollbar_visible){
-	if (kvt_scrollbar == kvt_left)
-	  kvtconfig->writeEntry("scrollbar", "left");
-	else
-	  kvtconfig->writeEntry("scrollbar", "right");
-      }
-      else
-	kvtconfig->writeEntry("scrollbar", "hidden");
-
-      kvtconfig->writeEntry("size", kvt_sizes[kvt_size]);
-      
-      kvtconfig->writeEntry("dimension", kvt_dimens[kvt_dimen].text);
-
-      kvtconfig->writeEntry("foreground", fg_string);
-      kvtconfig->writeEntry("background", bg_string);
-      
-      kvtconfig->writeEntry("charclass", kvt_charclass);
-
-      kvtconfig->writeEntry("colormode", color_mode_name[get_color_mode()]);
-
-      kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
-
-      kvtconfig->sync();
+      saveOptions(kvtconfig);
     }
   }
 }
@@ -919,8 +961,12 @@ int main(int argc, char **argv)
   o_argc = argc;
   o_argv = new char*[o_argc + 2];
   int i;
-  for (i=0; i<o_argc; i++) 
-    o_argv[i] = argv[i];
+  for (i=0; i<o_argc; i++) {
+    if (QString("-restore")==argv[i])
+      i++;
+    else
+      o_argv[i] = argv[i];
+  }
   o_argv[i]=NULL;
 
   // cut off the command arguments for the terminal command and set com_arg
@@ -945,15 +991,25 @@ int main(int argc, char **argv)
   display = qt_xdisplay();
 
   //  a.setStyle(WindowsStyle);
-  kvt = new kVt;
+
+
+  KConfig* sessionconfig = a.getConfig();
+  if (a.isRestored()){
+    printf("is restored\n");
+    sessionconfig = a.getSessionConfig();
+  }
+
+  kvt = new kVt(sessionconfig);
   a.setMainWidget( kvt );
   a.setTopWidget( kvt );
 
-  // a bisserl gehackt. [bmg]
-  char buffer[60];
-  sprintf(buffer, "%dx%d", kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
-  set_geom_string(buffer);
-  kvt_set_dimension(buffer);
+  if (!a.isRestored()){
+    // a bisserl gehackt. [bmg]
+    char buffer[60];
+    sprintf(buffer, "%dx%d", kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
+    set_geom_string(buffer);
+    kvt_set_dimension(buffer);
+  }
   
   // set the names
   char* s;
@@ -1011,7 +1067,7 @@ int main(int argc, char **argv)
     clean_exit(1);
   }
 
-  kvt->do_some_stuff();
+  kvt->do_some_stuff(sessionconfig);
 
   init_command(NULL ,(unsigned char **)com_argv);
 
@@ -1019,7 +1075,8 @@ int main(int argc, char **argv)
   QObject::connect( &sn, SIGNAL(activated(int)),
 		    kvt, SLOT(application_signal()) );
 
-  kvt->ResizeToVtWindow();
+  if (!a.isRestored())
+    kvt->ResizeToVtWindow();
 
   kvt->show();
 
