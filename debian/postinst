@@ -28,11 +28,6 @@ echo -n "Updating fonts: ";
 /usr/bin/X11/mkfontdir /usr/X11R6/lib/X11/fonts/misc > /dev/null 2>&1
 echo "done!";
 
-## Run kappfinder 
-
-echo -n "Running kappfinder: ";
-/usr/bin/kappfinder > /dev/null 2>&1
-echo "done!";
 
 #DEBHELPER#
 #KDEHELPER#
