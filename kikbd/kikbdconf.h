@@ -41,6 +41,7 @@ class KiKbdMapConfig: public QObject {
   int       numberOfSyms;
  public:
   KiKbdMapConfig(const char*);
+  ~KiKbdMapConfig(){}
   friend class KiKbdConfig;
   /*--- public information ---*/
   const QString getName     () const {return name;}
