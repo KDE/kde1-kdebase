@@ -46,6 +46,7 @@ Name[ru]=Процессор
 SwallowTitle[no]=Information om prosessoren
 Name[hr]=Procesor
 SwallowTitle=Processor Information
+SwallowTitle[no]=Procsessorinfomasjon
 SwallowTitle[es]=Informaciones sobre el procesador
 SwallowTitle[pl]=Informacje o procesorze
 SwallowTitle[eo]=Informoj pri la procezilo

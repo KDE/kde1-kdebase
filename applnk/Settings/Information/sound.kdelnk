@@ -7,4 +7,6 @@ Type=Application
 DocPath=kcontrol/kcminfo/info-6.html
 Comment=Sound information
 Name=Sound
+Name[no]=Lyd
 SwallowTitle=Information about Sound-Cards
+SwallowTitle[no]=Infomasjon om lydkort

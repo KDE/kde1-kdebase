@@ -6,4 +6,6 @@ Type=Application
 DocPath=kcontrol/kcminfo/info-5.html
 Comment=IO-port information
 Name=IO-Ports
+Name[no]=IO-porter
 SwallowTitle=Information about used IO-Ports
+SwallowTitle[no]=Informasjon om brukte IO-porter
