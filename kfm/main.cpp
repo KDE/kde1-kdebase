@@ -235,8 +235,7 @@ int main( int argc, char ** argv )
     //Stephan: This variable is not deleted here, but in the 
     // slotQuit methode of KFileWindow. I'm not that sure, if
     // this is the best way! 
-    // KIOServer *server = new KIOServer();
-    new KIOServer();
+    (void)new KIOServer();
 
     debugT("2. Init FileTypes\n");
     
@@ -248,7 +247,7 @@ int main( int argc, char ** argv )
     a.setMainWidget( &kfm );
 
     if ( KfmGui::rooticons )
-	new KRootWidget();
+	(void)new KRootWidget();
     
     debugT("4. Init window\n");
         

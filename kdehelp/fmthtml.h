@@ -15,6 +15,7 @@ private:
 	QString location;
 
 public:
+	virtual ~cHTMLFormat() {}
 	virtual void Reset()	{}
 	virtual int  ReadLocation( const char *_location )
 			{	location = _location; return access( _location, R_OK ); }
