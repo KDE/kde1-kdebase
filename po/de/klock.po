@@ -30,7 +30,7 @@ msgstr "Modus:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Kugeln"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -42,16 +42,16 @@ msgstr "Polygone"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Spuren"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Leuchten"
 
 #: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
 #: slidescreen.cpp:563
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: attraction.cpp:951
 #, fuzzy

@@ -52,11 +52,11 @@ msgstr "Hilfe zum Desktop"
 
 #: krootwm.C:249
 msgid "About KDE..."
-msgstr ""
+msgstr "Über KDE..."
 
 #: krootwm.C:264 krootwm.C:291 krootwm.C:696 krootwm.C:704
 msgid "New"
-msgstr ""
+msgstr "Neu"
 
 #: krootwm.C:265 krootwm.C:292
 msgid "Bookmarks"
@@ -64,11 +64,11 @@ msgstr "Lesezeichen"
 
 #: krootwm.C:293
 msgid "Desk"
-msgstr ""
+msgstr "Arbeitsbereich"
 
 #: krootwm.C:294
 msgid "Windows"
-msgstr ""
+msgstr "Fenster"
 
 #: krootwm.C:323
 msgid "Edit Bookmarks"

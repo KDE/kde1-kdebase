@@ -133,12 +133,12 @@ msgstr "Html-Code des D&okuments zeigen"
 
 #: kfmgui.cpp:350
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:358
 #, fuzzy
 msgid "&Document Encoding"
-msgstr "Dokument: Fertig"
+msgstr "Dokumenten-Enkodierung"
 
 #: kfmgui.cpp:369
 msgid "Show History"
@@ -370,6 +370,12 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Eigenschaften können nicht gespeichert werden, weil\n"
+"dieses Verzeichnis nicht schreibbar ist und auch kein\n"
+"Lesezeichen dafür angelegt wurde.\n"
+"\n"
+"Legen Sie zunächst ein Lesezeichen auf dieses Verzeichnis an\n
+"oder legen Sie einen Verweis auf den Desktop."
 
 #: kfmview.cpp:616
 msgid ""
@@ -568,7 +574,7 @@ msgstr "Lesezeichen hinzufügen"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Einstellungen für diesen URL speichern"
 
 #: main.cpp:238
 #, fuzzy
@@ -597,11 +603,11 @@ msgstr "Schrift fester Breite"
 
 #: htmlopts.cpp:161
 msgid "Default Charset"
-msgstr ""
+msgstr "Default-Zeichensatz"
 
 #: htmlopts.cpp:169
 msgid "Use language charset"
-msgstr ""
+msgstr "Sprach-spezifischen Zeichensatz verwenden"
 
 #: htmlopts.cpp:361
 msgid "Background Color:"
@@ -637,7 +643,7 @@ msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
 
 #: htmlopts.cpp:613
 msgid "Allow per-URL settings"
-msgstr ""
+msgstr "URL-spezifische Einstellungen zulassen"
 
 #: htmlopts.cpp:621
 msgid "Transparent Text for Root Icons."
@@ -1288,12 +1294,16 @@ msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+" ist kein Verzeichnis! Mögliches Sicherheitsproblem! \n"
+"Bitte gehen Sie dieser Sache nach.\n"
 
 #: htmlcache.cpp:368
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+" ist kein Verzeichnis! Mögliches Sicherheitsproblem!\n"
+"Überprüfen Sie dies, bevor Sie den Cache löschen.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"

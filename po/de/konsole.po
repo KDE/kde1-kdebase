@@ -127,7 +127,7 @@ msgstr "Sitzungen"
 #: main.C:506
 #, c-format
 msgid "(%d columns x %d lines)"
-msgstr ""
+msgstr "(%d Spalten x %d Zeilen)"
 
 #: main.C:536
 #, c-format
@@ -146,6 +146,15 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
+"%s Version %s - eine X Terminalemulation\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Dieses Programm ist freie Software und wird\n"
+"unter den Bedingungen der Artistic License\n"
+"verteilt. Es gibt KEINERLEI GARANTIE.\n"
+"Details finden Sie in der Datei\n"
+"'LICENSE.readme'"
 
 #: main.C:854
 msgid "Welcome to the console"

@@ -103,7 +103,7 @@ msgstr "Platten-Navigator"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Schnell durch das Dateisystem navigieren"
 
 #: props.C:170
 msgid "Panel"
@@ -155,19 +155,19 @@ msgstr "(Nicht lesbar)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Gemeinsam genutzt:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Einträge, die von allen Anwendern gemeinsam genutzt werden:"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Persönlich:"
 
 #: pfilemenu.C:765
 msgid "Personal entries"
-msgstr ""
+msgstr "Persönliche Einträge"
 
 #: pfilemenu.C:783
 msgid "Recent:"
@@ -175,7 +175,7 @@ msgstr "Letzte:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Einträge neueren Datums"
 
 #: pfilemenu.C:831
 msgid "Options..."

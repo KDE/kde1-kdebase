@@ -106,11 +106,11 @@ msgstr "In kpanel einbinden"
 
 #: backgnd.cpp:379
 msgid "Cache size"
-msgstr ""
+msgstr "Cache-Größe"
 
 #: backgnd.cpp:397
 msgid "kb"
-msgstr ""
+msgstr "KB"
 
 #: backgnd.cpp:1273
 msgid "Desktop names"
@@ -132,7 +132,7 @@ msgstr "Nicht unterstützte URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Entschuldigung, diese Art URL wird zur Zeit nicht vom KDE Anzeigen-Modul "
+"Entschuldigung, diese Art URL wird zur Zeit nicht vom KDE-Anzeigen-Modul "
 "untertützt"
 
 #: backgnd.cpp:1374
@@ -427,7 +427,7 @@ msgstr "&Windows 95-Stil"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "Stil auch für Nicht-KDE-Anwendungen verwenden"
 
 #: general.cpp:255
 msgid "Desktop fonts"

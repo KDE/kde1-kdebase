@@ -111,7 +111,7 @@ msgstr "Groﬂ"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Automatisches Verstecken"
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"

@@ -111,7 +111,7 @@ msgstr "Farbe besuchter Links:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Links unterstrichen darstellen"
 
 #: options.cpp:317
 msgid "KDE Help Options"
