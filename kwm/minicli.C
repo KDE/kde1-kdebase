@@ -139,9 +139,11 @@ bool Minicli::eventFilter( QObject *ob, QEvent * e){
       return True;
     }
     else if (((QKeyEvent*)e)->key() == Key_Tab){
-	// commandCompletion();  ;; Torben
-	kurlcompletion.make_completion();
-	return True;
+      QString s = lineedit->text();
+      kurlcompletion.make_completion();
+      if (s == lineedit->text())
+	commandCompletion();
+      return True;
     }
     // Torben
     else if ( ( ((QKeyEvent*)e)->state() == ControlButton ) && ((QKeyEvent*)e)->key() == Key_D ) {

@@ -15,6 +15,7 @@ In 0.10:
   patchlevel 18:
        - transient windows become iconified if the main window loses
          the focus (and none of its transient gets it instead!)
+       - combind history completion with kURLcompletion in minicli
 
   patchlevel 17:
        - fixed a serious bug (crashing clients when dragging in 
