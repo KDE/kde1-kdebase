@@ -3,8 +3,8 @@
 
 SUBDIRS = kcheckpass kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
-	kmenuedit kaudio kcontrol kappfinder pics applnk doc po  \
-	config kstart kikbd konsole
+	kmenuedit kaudio kcontrol kappfinder pics applnk doc config\
+	kstart kikbd konsole po
 
 AUTOMAKE_OPTIONS = foreign
 
