@@ -41,5 +41,5 @@ uninstall-local:
 	rm -f $(kde_minidir)/kfontmanager.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x ../../kdelibs/po/kde.pot $(kfontmanager_SOURCES) && mv messages.po ../po/kfontmanager.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kfontmanager_SOURCES) && mv messages.po ../po/kfontmanager.pot
 

@@ -32,7 +32,7 @@ uninstall-local:
 	rm -f $(kde_minidir)/locale.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmlocale_SOURCES) && mv messages.po ../../po/kcmlocale.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmlocale_SOURCES) && mv messages.po ../../po/kcmlocale.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

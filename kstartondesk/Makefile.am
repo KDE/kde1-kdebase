@@ -18,5 +18,5 @@ kstartondesk.moc: kstartondesk.h
 
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x../../kdelibs/po/kde.pot $(kstartondesk_SOURCES) && mv messages.po ../po/kstartondesk.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kstartondesk_SOURCES) && mv messages.po ../po/kstartondesk.pot
 

@@ -52,4 +52,4 @@ uninstall-local:
 	rm -f $(kde_minidir)/kdehelp.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -kaliasLocale -x ../../kdelibs/po/kde.pot $(kdehelp_SOURCES) && mv messages.po ../po/kdehelp.pot
+	$(XGETTEXT) -C -ktranslate -kaliasLocale -ki18n -x $(includedir)/kde.pot $(kdehelp_SOURCES) && mv messages.po ../po/kdehelp.pot

@@ -24,7 +24,7 @@ uninstall-local:
 	rm -f $(kde_minidir)/bell.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmbell_SOURCES) && mv messages.po ../../po/kcmbell.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmbell_SOURCES) && mv messages.po ../../po/kcmbell.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

@@ -15,7 +15,7 @@ uninstall-local:
 	rm -f $(kde_minidir)/sample.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmsample_SOURCES) && mv messages.po ../../po/kcmsample.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmsample_SOURCES) && mv messages.po ../../po/kcmsample.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

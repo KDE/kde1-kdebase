@@ -45,7 +45,7 @@ CLEANFILES = $(BUILT_SOURCES)
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
-	$(XGETTEXT) -C -ktranslate $(kikbd_SOURCES) $(kcmikbd_SOURCES)
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kikbd_SOURCES) $(kcmikbd_SOURCES) && mv messages.po ../po/kikbd.pot
 
 # just install datas here. Use install-exec-local for scripts and etc.
 # the binary itself is already installed from automake
@@ -79,8 +79,3 @@ kikbd.moc.cpp: kikbd.h
 	$(MOC) -o $@ $<
 kikbdconf.moc.cpp: kikbdconf.h
 	$(MOC) -o $@ $<
-
-
-
-
-

@@ -30,4 +30,4 @@ uninstall-local:
 	-rm -f $(appdir)/kwmpager.kdelnk
 
 messages:
-	$(XGETTEXT) -C -ktranslate $(kwmpager_SOURCES)
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kwmpager_SOURCES)

@@ -82,4 +82,4 @@ uninstall-local:
 	rm -f $(kde_minidir)/kmenuedit.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kmenuedit_SOURCES) && mv messages.po ../po/kmenuedit.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kmenuedit_SOURCES) && mv messages.po ../po/kmenuedit.pot

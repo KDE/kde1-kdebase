@@ -192,5 +192,5 @@ kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
 messages:
-	$(XGETTEXT) -C -ktranslate -kaliasLocale -ki18n -x ../../kdelibs/po/kde.pot $(kfm_SOURCES) $(noinst_HEADERS) kfmexec/main.cpp && mv messages.po ../po/kfm.pot
+	$(XGETTEXT) -C -ktranslate -kaliasLocale -ki18n -x $(includedir)/kde.pot $(kfm_SOURCES) $(noinst_HEADERS) kfmexec/main.cpp && mv messages.po ../po/kfm.pot
 

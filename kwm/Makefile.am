@@ -50,7 +50,7 @@ kURLcompletion.moc: kURLcompletion.h
 
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)

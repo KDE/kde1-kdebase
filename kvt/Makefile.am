@@ -33,4 +33,4 @@ uninstall-local:
 	rm -f $(kde_minidir)/kvt.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x ../../kdelibs/po/kde.pot $(kvt_SOURCES) && mv messages.po ../po/kvt.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kvt_SOURCES) && mv messages.po ../po/kvt.pot

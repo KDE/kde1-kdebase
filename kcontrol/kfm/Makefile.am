@@ -8,7 +8,7 @@ BUILT_SOURCES = htmlopts.moc
 noinst_HEADERS = htmlopts.h
 
 messages:
-	$(XGETTEXT) -C -ki18n -x ../../../kdelibs/po/kde.pot $(kcmkfm_SOURCES) && mv messages.po ../../po/kcmkfm.pot
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkfm_SOURCES) && mv messages.po ../../po/kcmkfm.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
