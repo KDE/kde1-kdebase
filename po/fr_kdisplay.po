@@ -33,7 +33,7 @@ msgstr "  -init               applique les modifications\n"
 
 #: main.cpp:132
 msgid "  -setup              setup the display\n"
-msgstr "  -setup              définir l'affichage\n"
+msgstr "  -setup              défini l'affichage\n"
 
 #: backgnd.cpp:140 colorscm.cpp:293
 msgid "Background"
@@ -73,7 +73,7 @@ msgstr "Centré"
 
 #: backgnd.cpp:265
 msgid "Scaled"
-msgstr ""
+msgstr "Adapter"
 
 #: backgnd.cpp:272
 msgid "Browse..."
@@ -93,7 +93,7 @@ msgstr "Mise en veille"
 
 #: scrnsave.cpp:182
 msgid "Setup..."
-msgstr "Setup..."
+msgstr "Installer..."
 
 #: scrnsave.cpp:186
 msgid "Test"
@@ -109,11 +109,11 @@ msgstr "Attendre:"
 
 #: scrnsave.cpp:208
 msgid "min"
-msgstr ""
+msgstr "minutes"
 
 #: scrnsave.cpp:211
 msgid "Requires Password"
-msgstr "Requiert un mot de passe"
+msgstr "Mot de passe obligatoire"
 
 #: scrnsave.cpp:216
 msgid "Priority:"
@@ -129,7 +129,7 @@ msgstr "Bas"
 
 #: colorscm.cpp:139 colorscm.cpp:140
 msgid "Inactive window"
-msgstr "Feneêtre inactive"
+msgstr "Fenêtre inactive"
 
 #: colorscm.cpp:155 colorscm.cpp:156
 msgid "Active window"
@@ -141,15 +141,15 @@ msgstr "Fenêtre texte"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr "Hors service"
+msgstr "Déactivé"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
-msgstr "sélectionné"
+msgstr "Sélectionné"
 
 #: colorscm.cpp:252 colorscm.cpp:262
 msgid "Color Scheme"
-msgstr ""
+msgstr "Modèle Couleur"
 
 #: colorscm.cpp:276
 msgid "Remove"
@@ -157,23 +157,23 @@ msgstr "Supprimer"
 
 #: colorscm.cpp:284
 msgid "Widget color"
-msgstr ""
+msgstr "Couleur Widget"
 
 #: colorscm.cpp:289
 msgid "Inactive title bar"
-msgstr "Barre de titre inactive"
+msgstr "Barre du titre inactif"
 
 #: colorscm.cpp:290
 msgid "Inactive title text"
-msgstr ""
+msgstr "Texte du titre inactif"
 
 #: colorscm.cpp:291
 msgid "Active title bar"
-msgstr "Barre de titre active"
+msgstr "Barre du titre actif"
 
 #: colorscm.cpp:292
 msgid "Active title text"
-msgstr ""
+msgstr "Texte du titre actif"
 
 #: colorscm.cpp:294
 msgid "Text"
@@ -189,33 +189,35 @@ msgstr "Selectionner le texte"
 
 #: colorscm.cpp:297
 msgid "Window background"
-msgstr "Fenêtre en arrière-plan"
+msgstr "Arrière-plan de la Fenêtre"
 
 #: colorscm.cpp:309
 msgid "Contrast"
-msgstr "Contrast"
+msgstr "Contraste"
 
 #: colorscm.cpp:341
 msgid "Save scheme"
-msgstr ""
+msgstr "Sauvegarder modèle"
 
 #: colorscm.cpp:372 colorscm.cpp:380
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr ""
+msgstr "Vous avez choisis un modèle de couleur mis a disposition par le système"
 
 #: colorscm.cpp:463
 msgid "KDE Default"
-msgstr "KDE par défaut"
+msgstr "KDE Standard"
 
 #: colorscm.cpp:687
 msgid "Display Setup"
-msgstr "Affiche le setup"
+msgstr "Affiche la configuration"
 
 #: colorscm.cpp:688
 msgid ""
 "No desktop color schemes were found.\n"
 "Do you want to install the default color schemes now ?"
 msgstr ""
+"Aucun modèle de couleur pour le bureau n'a pu etre trouve.\n"
+"Voulez vous installer le modèle standard maintenant ?"
 
 #: savescm.cpp:26
 msgid "Name"
@@ -227,7 +229,7 @@ msgstr "Général"
 
 #: general.cpp:59
 msgid "Widget style"
-msgstr ""
+msgstr "Style Widget"
 
 #: general.cpp:64
 msgid "Motif"

@@ -16,15 +16,15 @@ msgstr ""
 
 #: kfdird.cpp:46
 msgid "Directories:"
-msgstr ""
+msgstr "Répertoires:"
 
 #: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
 msgid "Sorry"
-msgstr ""
+msgstr "Desolé"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr ""
+msgstr "Impossible d'ouvrir ou de lire le répertoire"
 
 #: kfindtop.cpp:110
 #, c-format
@@ -33,6 +33,9 @@ msgid ""
 "Frontend to find utility\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>"
 msgstr ""
+"KFind %s\n"
+""
+""
 
 #: kfindtop.cpp:123
 msgid "&File"
@@ -144,36 +147,36 @@ msgstr "Sauvegarde"
 
 #: kfoptions.cpp:125
 msgid "Type Description:"
-msgstr ""
+msgstr "Description:"
 
 #: kfoptions.cpp:126
 msgid "Icon:"
-msgstr ""
+msgstr "Icône:"
 
 #: kfoptions.cpp:127 kfoptions.cpp:193
 msgid "Patterns:"
-msgstr ""
+msgstr "Filtre:"
 
 #: kfoptions.cpp:128
 msgid "Default Application:"
-msgstr ""
+msgstr "Application standard"
 
 #: kfoptions.cpp:134 kfoptions.cpp:196
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter"
 
 #: kfoptions.cpp:135 kfoptions.cpp:197
 msgid "Remove"
-msgstr ""
+msgstr "Enlever"
 
 #: kfoptions.cpp:181
 #, fuzzy
 msgid "Filetypes"
-msgstr "_tous les types"
+msgstr "Formats"
 
 #: kfoptions.cpp:187
 msgid "Create Archive:"
-msgstr ""
+msgstr "Créer archive"
 
 #: kfoptions.cpp:189
 #, fuzzy
@@ -199,7 +202,7 @@ msgstr "&Parcourir ..."
 
 #: kftabdlg.cpp:64
 msgid "Include &subfolders"
-msgstr "Inclu &sous-classeurs"
+msgstr "Inclure &sous-classeurs"
 
 #: kftabdlg.cpp:94
 msgid " Name&Location "
@@ -223,7 +226,7 @@ msgstr "&Tous les fichiers"
 
 #: kftabdlg.cpp:115
 msgid "Find all files created or &modified:"
-msgstr ""
+msgstr "Trouver tous les Fichier crées ou &modifiés:"
 
 #: kftabdlg.cpp:116
 msgid "&between"
@@ -247,7 +250,7 @@ msgstr "du &type"
 
 #: kftabdlg.cpp:173
 msgid "&Containing Text:"
-msgstr "&Contient le texte:"
+msgstr "&Contenant le texte:"
 
 #: kftabdlg.cpp:175
 msgid "&Size is:"
@@ -255,7 +258,7 @@ msgstr "&La taille est"
 
 #: kftabdlg.cpp:198
 msgid "All Files and Folders"
-msgstr ""
+msgstr "Tous les fichier et répertoires"
 
 #: kftabdlg.cpp:205
 msgid "(none)"
@@ -275,36 +278,36 @@ msgstr "Avancé"
 
 #: kftabdlg.cpp:377
 msgid "The date is not valid!!"
-msgstr ""
+msgstr "La date n'est pas valable!"
 
 #: kftabdlg.cpp:389
 msgid "The month(s) value isn't valid!!"
-msgstr ""
+msgstr "Ce mois n'existe pas!!"
 
 #: kftabdlg.cpp:400
 msgid "The day(s) value isn't valid!!"
-msgstr ""
+msgstr "Ce jour n'existe pas!!"
 
 #: kftabdlg.cpp:417
 msgid "The value in size isn't valid number!!"
-msgstr ""
+msgstr "La valeure du chiffre n'est pas valable"
 
 #: kfwin.cpp:99
 #, c-format
 msgid "%d file(s) found"
-msgstr ""
+msgstr "%d fichier(s) trouvés"
 
 #: kfwin.cpp:136
 msgid "It wasn't possible to save results!"
-msgstr ""
+msgstr "Impossible de sauvegarder les résultats!"
 
 #: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
 msgid "KFind Results File"
-msgstr ""
+msgstr "KFind fichier des résultats"
 
 #: kfwin.cpp:174
 msgid "Results were saved to file\n"
-msgstr ""
+msgstr "Resultats sauvegardés sous\n" 
 
 #: kfwin.cpp:189
 #, c-format
@@ -312,49 +315,62 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
+"Voulez vous réellement effacer le fichier:\n"
+"%s"
 
 #: kfwin.cpp:191
 #, fuzzy
 msgid "Delete File"
-msgstr "Effacer"
+msgstr "Effacer fichier"
 
 #: kfwin.cpp:205
 msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
+"Vous n'avez les droits nécessaires\n"
+"pour effacer ce fichier"
 
 #: kfwin.cpp:212
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
+"Il est impossible d'effacer\n"
+"les fichier selectionnés"
 
 #: kfwin.cpp:234
 msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
+"Vous n'avez les droits nécessaires\n"
+"pour effacer le répertoire selectionné"
 
 #: kfwin.cpp:241
 msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr ""
+"Le répertoire specifié\n"
+"n'est pas vide!"
+
 
 #: kfwin.cpp:247
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
+"Il est impossible d'effacer\n"
+"le répertoire selectionné"
 
 #: kfwin.cpp:340
 msgid "Couldn't recognize archive type!"
-msgstr ""
+msgstr "le type de l'archive ne pouvais pas ètre reconnus!"
 
 #: kfwin.cpp:401
 msgid "Error while creating child process!"
-msgstr ""
+msgstr "Erreur pendant la creation du sous-procès!"
 
 #~ msgid "_abouttext"
 #~ msgstr "_au sujet du texte"

@@ -21,11 +21,11 @@ msgstr "<!-- Ne pas editer ce fichier -->"
 #: cgi.cpp:84
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: Destination URL incorrecte: %s\n"
+msgstr "CGI: Format de la URL incorrecte: %s\n"
 
 #: error.cpp:26
 msgid "Fatal Error: "
-msgstr "Erreur fatale"
+msgstr "Erreur fatale: "
 
 #: error.cpp:31
 msgid "Warning: "
@@ -41,11 +41,11 @@ msgstr "Ouvrir URL"
 
 #: helpwin.cpp:75
 msgid "Cancel"
-msgstr "Abandon"
+msgstr "Annuler"
 
 #: helpwin.cpp:93
 msgid " Location:"
-msgstr " Endroit:"
+msgstr " Adresse:"
 
 #: helpwin.cpp:377
 msgid "KDE Help"
@@ -53,15 +53,15 @@ msgstr "KDE Aide"
 
 #: helpwin.cpp:378
 msgid "Waiting for kmail to be finished..."
-msgstr "Attendez que kmail termine ..."
+msgstr "Attend que kmail se termine ..."
 
 #: helpwin.cpp:451 info.cpp:272
 msgid "Cannot open: "
-msgstr "Ne peut ouvrir"
+msgstr "Impossible d'ouvrire: "
 
 #: helpwin.cpp:452 helpwin.cpp:461
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: helpwin.cpp:460
 msgid "Unknown format: "
@@ -69,11 +69,11 @@ msgstr "Format inconnu: "
 
 #: helpwin.cpp:813 helpwin.cpp:830 main.cpp:80
 msgid "Ok"
-msgstr "OK"
+msgstr "Ok"
 
 #: helpwin.cpp:829
 msgid "Could not start or find KFM"
-msgstr "Ne trouve ou ne peut demarrer KFM"
+msgstr "KFM ne se laisse pas trouver ou lancer"
 
 #: helpwin.cpp:1295
 msgid "Back"
@@ -89,7 +89,7 @@ msgstr "Ouvrir ce lien"
 
 #: helpwin.cpp:1319
 msgid "Add Bookmark"
-msgstr "Ajouter au répertoire"
+msgstr "Ajouter au \"liens favoris\""
 
 #: helpwin.cpp:1320
 msgid "Open in new Window"
@@ -97,37 +97,37 @@ msgstr "Ovrir dans une nouvelle fenêtre"
 
 #: info.cpp:88 info.cpp:599
 msgid "Error in info file"
-msgstr "Erreur dans le fichier info"
+msgstr "Erreur dans le fichier \"info\""
 
 #: info.cpp:1228
 #, c-format
 msgid "Node not found: %s"
-msgstr "Noeud non trouvé: %s"
+msgstr "Noeud %s introuvable"
 
 #: info.cpp:1373
 #, c-format
 msgid "Cannot open info file: %s"
-msgstr "Ne peut ouvrir le fichier info: %s"
+msgstr "Ne peut ouvrir le fichier \"info\" %s"
 
 #: mainwidget.cpp:126
 msgid "&New Help Window"
-msgstr "&Nouvelle fenêtre d'aide"
+msgstr "&Nouvelle fenêtre \"Aide\""
 
 #: mainwidget.cpp:129
 msgid "&Open File..."
-msgstr "&Ouvre le fichier..."
+msgstr "&Ouvrire fichier..."
 
 #: mainwidget.cpp:130
 msgid "Open UR&L..."
-msgstr "Ouvre l'UR&L..."
+msgstr "Ouvrire UR&L..."
 
 #: mainwidget.cpp:132
 msgid "&Search"
-msgstr "&Cherche"
+msgstr "&Chercher"
 
 #: mainwidget.cpp:134
 msgid "&Print..."
-msgstr "&Imprimer"
+msgstr "&Imprimer..."
 
 #: mainwidget.cpp:136
 msgid "&Close"
@@ -171,19 +171,19 @@ msgstr "&Suivant"
 
 #: mainwidget.cpp:164
 msgid "&General Preferences..."
-msgstr "Préférences..."
+msgstr "Pré&Férences..."
 
 #: mainwidget.cpp:167
 msgid "Show &Toolbar"
-msgstr "Montrer &barre d'outils"
+msgstr "Montrer la &barre des tâches"
 
 #: mainwidget.cpp:169
 msgid "Show &Location"
-msgstr "Montrer &Endroit"
+msgstr "Montrer la &Localité"
 
 #: mainwidget.cpp:170
 msgid "Show Status&bar"
-msgstr "Montrer état&barre"
+msgstr "Montrer la &barre d'état"
 
 #: mainwidget.cpp:173
 msgid "&Save Options"
@@ -203,7 +203,7 @@ msgstr "&Fichier"
 
 #: mainwidget.cpp:184
 msgid "&Edit"
-msgstr "&Edition"
+msgstr "&Editer"
 
 #: mainwidget.cpp:185
 msgid "&Goto"
@@ -211,7 +211,7 @@ msgstr "&Aller à"
 
 #: mainwidget.cpp:186
 msgid "&Bookmarks"
-msgstr "&Répertoires"
+msgstr "&Liens favoris"
 
 #: mainwidget.cpp:187
 msgid "&Options"
@@ -262,7 +262,7 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"Aide système de KDE\n"
+"Système d'aide de KDE\n"
 "Version"
 
 #: mainwidget.cpp:530
@@ -271,7 +271,7 @@ msgstr "Au sujet de l'aide de KDE"
 
 #: mainwidget.cpp:562
 msgid "&Add Bookmark"
-msgstr "&Ajouter au répertoire"
+msgstr "&Ajouter aux liens favoris"
 
 #: man.cpp:86 man.cpp:790
 msgid "Online Manuals"
@@ -297,11 +297,11 @@ msgstr "Appels système"
 
 #: man.cpp:461
 msgid "Subroutines"
-msgstr ""
+msgstr "Sousroutines"
 
 #: man.cpp:463
 msgid "Devices"
-msgstr ""
+msgstr "Périphériques"
 
 #: man.cpp:465
 msgid "File Formats"
@@ -317,7 +317,7 @@ msgstr "Divers"
 
 #: man.cpp:471
 msgid "System Administration"
-msgstr "Administration systéme"
+msgstr "Administration système"
 
 #: man.cpp:473
 msgid "New"
@@ -325,7 +325,7 @@ msgstr "Nouveau"
 
 #: man.cpp:582
 msgid "Reading Dir: "
-msgstr "Lecture du répertoire: "
+msgstr "Lire répertoire: "
 
 #: man.cpp:779
 msgid "Online Manual - Section"
@@ -333,11 +333,11 @@ msgstr "Manuel en ligne - Section"
 
 #: man.cpp:837
 msgid "\"man\" system call failed"
-msgstr "\"manuel\" Erreu d'appel système"
+msgstr "Appel systéme \"manuel\" impossible"
 
 #: man.cpp:855
 msgid "Opening temporary file failed"
-msgstr "Problème d'ouverture du fichier temporaire"
+msgstr "Impossible d'ouvrire le fichier temporaire"
 
 #: options.cpp:40
 msgid "Font Size"
