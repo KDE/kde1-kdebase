@@ -135,14 +135,12 @@ msgid "Never look in cache"
 msgstr "Nunca ver o cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Ver sempre o cache"
+msgstr "Gravar sempre o cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Nunca ver o cache"
+msgstr "Nunca gravar o cache"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -1224,7 +1222,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1244,15 +1242,15 @@ msgstr "Configuração do Browser KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Línguas aceites:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Caracteres aceites:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Assumir HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1319,36 +1317,3 @@ msgid ""
 msgstr ""
 "Erro de Sintax:\n"
 "kfmexec comando [URLs ....]\n"
-
-#~ msgid "&New Window"
-#~ msgstr "&Nova Janela"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"
-
-#~ msgid "KFM Error"
-#~ msgstr "Erro do KFM"
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid "Properties"
-#~ msgstr "Propriedades"
-
-#~ msgid "Font Size"
-#~ msgstr "Tamanho da Fonte"
-
-#~ msgid "Small"
-#~ msgstr "Pequeno"
-
-#~ msgid "Medium"
-#~ msgstr "Médio"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "Continue"
-#~ msgstr "Continuar"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fontes"

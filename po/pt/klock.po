@@ -588,19 +588,19 @@ msgstr "Esfera"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponencial"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Contracção"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Onda"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Curvatura"
 
 #: science.cpp:112
 msgid "Science"
@@ -608,11 +608,11 @@ msgstr "Ciência"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "lentes..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "écran de captura..."
 
 #: science.cpp:931
 msgid "Setup Science"
@@ -632,7 +632,7 @@ msgstr "Gravidade"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Esconder Fundo"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -643,13 +643,12 @@ msgid "Motion:"
 msgstr "Movimento:"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Ciência"
+msgstr "Ciência Versão"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "escrito por"
 
 #: science.cpp:1262
 msgid "About Science"
@@ -740,17 +739,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Transposto para kscreensave por Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Ciência Versão 0.24.2 beta\n"
-#~ "\n"
-#~ "Escrito por Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
