@@ -19,7 +19,7 @@ $(BUILDDIR)/build-stamp:
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	../configure --with-shadow --without-pam \
-	--with-install-root=`pwd`/debian/tmp \
+	--with-install-root=`pwd`/../debian/tmp \
 	--disable-rpath --with-xdmdir=/usr/X11R6/lib/X11/kdm ; \
 	fi
 	make -C $(BUILDDIR)
@@ -83,7 +83,7 @@ binary-arch: checkroot build
 	install -d debian/tmp/usr/X11R6/lib/X11/fonts/misc
 	cp debian/kappfinder debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
-	ln -s startkde debian/tmp/usr/bin/kde
+	ln -s kde debian/tmp/usr/bin/startkde
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.kdelnk \
