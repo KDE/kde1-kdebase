@@ -33,9 +33,8 @@
 #include <qpushbt.h>
 #include <qradiobt.h> 
 
-#include <kslider.h>
 #include <kcontrol.h>
-
+#include "kslidercontrol.h"
 
 class KBellConfig : public KConfigWidget
 {
@@ -66,10 +65,7 @@ private:
   void setBellPitch(int);
   void setBellDuration(int);
 
-  KSlider *volume, *pitch, *duration;
-  QLabel *vlabel, *plabel, *dlabel;
-  QLCDNumber *v, *p, *d;
-  QLabel *percent, *hertz, *ms;
+  KSliderControl *volume, *pitch, *duration;
 
   QPushButton *test;
 
