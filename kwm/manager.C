@@ -3886,7 +3886,7 @@ void Manager::removeDockWindow(Window w){
 // adds a top window
 void Manager::addTopWindow(Window w)
 {
-    debug("add top window");
+    //debug("add top window");
   bool already_there = False;
   Window* w2;
   for (w2=top_windows.first(); w2; w2=top_windows.next()){
@@ -3910,7 +3910,7 @@ void Manager::removeTopWindow(Window w)
   Window *tw;
   for (tw=top_windows.first(); tw; tw=top_windows.next()){
     if (*tw == w){
-	debug("remove top window");
+	//debug("remove top window");
       top_windows.remove();
       delete tw;
       break;
