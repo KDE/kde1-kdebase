@@ -41,6 +41,8 @@
 
 #include <X11/extensions/shape.h>
 
+#include "gradientFill.h"
+
 
 extern Manager* manager;
 
@@ -1537,14 +1539,16 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     if (is_active){
       if (aShadepm.size() != r.size()){
 	aShadepm.resize(r.width(), r.height());
-	aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, look == V_SHADED );
+	kwm_gradientFill( aShadepm, myapp->activeTitleColor, myapp->activeTitleBlend, look == V_SHADED );
+	//aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, look == V_SHADED );
       }
       pm = &aShadepm;
     }
     else {
       if (iaShadepm.size() != r.size()){
 	iaShadepm.resize(r.width(), r.height());
-	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, look == V_SHADED );
+	kwm_gradientFill( iaShadepm, myapp->inactiveTitleColor, myapp->inactiveTitleBlend, look == V_SHADED );
+	//	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, look == V_SHADED );
       }
       pm = &iaShadepm;
     }

@@ -11,6 +11,10 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 13: Mario Weilguni <mweilguni@kde.org>
+        - added a replacement for gradientFill (for color depths
+        higher than 8). It´s only used for horizontal gradients 
+
 patchlevel 12:
         - new property "ResizeAnimationSpeed". Default value is 1 
            (former behaviour), possible values range from 1 to 10
