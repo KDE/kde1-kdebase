@@ -9,7 +9,6 @@ class KProtocolProxyFTP :public KProtocolHTTP
 {
     Q_OBJECT
  protected:
-    int secondtry;
     virtual int OpenProxy(KURL *url, int mode, bool reload);
 
  public:

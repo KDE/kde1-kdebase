@@ -148,8 +148,9 @@ void KFMJob::openFile(bool _reload)
     // Delete the trailing / since we assume that the URL is a file.
     // But dont delete the root '/', since for example "file:" is considered
     // malformed.
-    if ( url.left(4) == "file" && url.right(1) == "/" && url.right(2) != ":/" )
-	url = url.left( url.length() - 1 );
+    if (  ( (url.left(4) == "file") || (url.left(3) == "ftp") )
+          && url.right(1) == "/" && url.right(2) != ":/" ) { debug("truncating");
+	url = url.left( url.length() - 1 ); }
     
     if (cookiejar)
     {
@@ -206,6 +207,8 @@ void KFMJob::slotError( int _kioerror, const char *_text, int _errno )
 	// Was the unsupported action perhaps some 'list' command ?
 	// Perhaps we tried to list a gzip file or something
 	// stupid like that ?
+	// This also happens with ftp:// since we do not know whether a
+	// URL is a dir or a file. If it fails as a dir, try as a file. David.
 	if ( !bFileLoad && !isDir )
 	{
 	    // Stop the running job, since it is nonsense

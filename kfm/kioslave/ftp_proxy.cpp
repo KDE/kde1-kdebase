@@ -73,15 +73,8 @@ void KProtocolProxyFTP::EmitData( KIOSlaveIPC *_ipc )
     }
 }
 
-/* We don't now if the clicked URL is a Directory or not
-   so every URL is first assumed to be a directory.
-   If the request fails, the Merthod Process Headers sets tghe
-   VAR "secondtry" to 1 und calls open again without the trailing "/"
-   in the URL.
-*/
 int KProtocolProxyFTP::OpenDir(KURL *_url)
 {
-  secondtry = 0;
   return Open(_url, KProtocol::READ);
 }
 
@@ -91,7 +84,7 @@ int KProtocolProxyFTP::Open(KURL *_url, int mode){
 }
 
 int KProtocolProxyFTP::ReOpen(KURL *_url, int mode){
-  return OpenProxy(_url,mode,false);
+  return OpenProxy(_url,mode,true);
 }
 
 int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
@@ -175,7 +168,11 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 	    return(FAIL);
 	}
 
-	QString command;
+	QString command(15              // for the constant characters
+                        + strlen(_url->user())
+                        + strlen(_url->host())
+                        + 20            // for the port number
+                        );
 
 	if(do_proxy)
 	{
@@ -184,7 +181,11 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 		if (! port &&  strcmp(_url->protocol(),"ftp") == 0)  // use default one
 			port = 21;
 
-                command.sprintf("GET ftp://%s:%d", _url->host(), port);
+		if( strlen(_url->user()) != 0 )
+		    command.sprintf("GET ftp://%s@%s:%d",
+		                     _url->user(), _url->host(), port);
+		else
+		    command.sprintf("GET ftp://%s:%d", _url->host(), port);
 
 	} else {
 		command = "GET ";
@@ -256,24 +257,19 @@ int KProtocolProxyFTP::ProcessHeader()
 	    {
 	      KURL u( url );
 	      QString path = u.path();
-	      /* When the requested URL is not a Directory and it 
-		 was the first attempt (secondtry==0) delete the 
-		 trailing "/" from URL and try again
+	      /* When the requested URL is not a Directory, fail
+                 with 'KIO_ERROR_NotADirectory'. Kfm will try again
+                 as a file.
 	      */
-	      if ( (strcmp(path.right(1),"/") == 0)
-		   && (path.length() != 1 ) 
-		   && !secondtry ) {
-		secondtry = 1;
+	      if ( (path.right(1) == "/") && (path.length() != 1 ) )
+              {
 		Close();
-		path = path.left(path.length()-1);
-		KURL u2( u, path.data());
-		return Open( &u2, currentMode );
+		Error(KIO_ERROR_NotADirectory,"Not a directory",errno);
+		return FAIL;
 	      } else { // A real error occured
-		if ( (buffer[9] == '4')) {
-		  Close();
-		  Error(KIO_ERROR_CouldNotRead,buffer+9,errno);
-		  return FAIL;
-		}
+		Close();
+		Error(KIO_ERROR_CouldNotRead,buffer+9,errno);
+		return FAIL;
 	      }
 	    }
 	}      
