@@ -36,6 +36,7 @@
 #include "kfontlist.h"
 #include "kfontexplorer.h"
 #include <kfontdialog.h>
+#include "version.h"
 #include <klocale.h>
 #define i18n(X) klocale->translate(X)
 
@@ -57,7 +58,12 @@ int main( int argc, char *argv[] ){
 
 	QTabDialog* mainWindow = new QTabDialog( 0, 0, TRUE );
 
-	mainWindow->setCaption( i18n("KDE Font Manager") );
+	QString str;
+	str = i18n("KDE Font Manager");
+	str += ' ';
+	str += KFONTMANAGERVERSION;
+
+	mainWindow->setCaption(str.data());
 	mainWindow->setCancelButton(i18n("Cancel"));
 	mainWindow->setApplyButton(i18n("Apply"));
 
@@ -74,9 +80,9 @@ int main( int argc, char *argv[] ){
         a.setWmCommand(argv[0]);      
    
         a.setTopWidget(mainWindow);
-       	mainWindow->resize( 430, 500 );
+       	mainWindow->resize( 430, 450 );
 	mainWindow->exec();
-   	return 1;
+   	return 0;
 }
 
 
