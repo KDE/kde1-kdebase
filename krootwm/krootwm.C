@@ -94,7 +94,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     myMenuBarContainer = 0;
 
     kconfig->setGroup("KDE");//CT as Sven asked
-    if (kconfig->readEntry("macStyle") == "on") //CT as Sven asked 
+    if (kconfig->readEntry("macStyle") == "on") //CT as Sven asked
       macMode = true;
     else
       macMode = false;
@@ -164,7 +164,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     updateBookmarkMenu();
 
     updateNewMenu (); // needs to be here because of templates path. David.
- 
+
     buildMenubars();
 }
 
@@ -174,10 +174,11 @@ void KRootWm::buildMenubars() {
   // --------- Sven's changes for macmode begin
     if (macMode)
     {
+	debug("buildMenubars");
       myMenuBarContainer = new QWidget;
       myMenuBar = new KMenuBar(myMenuBarContainer);
 
-      myMenuBarContainer->setGeometry(-10,-10,100,40);
+      myMenuBarContainer->setGeometry(0, qApp->desktop()->width()+10,100,40);
       myMenuBarContainer->show();
       myMenuBarContainer->hide();
       if (myMenuBar->menuBarPos() != KMenuBar::Floating) {
@@ -296,15 +297,25 @@ void KRootWm::kwmCommandReceived(QString com)
 
   //sent by KBookmarkManager::emitChanged()
   if (com == "krootwm:refreshBM")
-    updateBookmarkMenu ();
-  if (com == "toggleMacStyle") {
-    delete myMenuBarContainer;
-    myMenuBarContainer = 0;
-    myMenuBar = 0;
-    macMode = !macMode;
-    buildMenubars();
+      updateBookmarkMenu ();
+  else if (com == "macStyleOn") {
+      if (!macMode) {
+	  kapp->getConfig()->reparseConfiguration();
+	  macMode = true;
+	  buildMenubars();
+      }
   }
-  if (com== "krootwm:refreshNew")
+  else if (com == "macStyleOff") {
+      if (macMode) {
+	  delete myMenuBar;
+	  myMenuBar = 0;
+	  delete myMenuBarContainer;
+	  myMenuBarContainer = 0;
+	  macMode = false;
+      }
+  }
+
+  else if (com== "krootwm:refreshNew")
     updateNewMenu ();
 }
 
@@ -724,7 +735,7 @@ void KRootWm::slotNewFile( int _id )
 	tmp.truncate( tmp.length() - 7 );
       tmp = config.readEntry("Name", tmp);
     }
-    
+
     QString text = klocale->translate("New");
     text += " ";
     text += tmp.data();
