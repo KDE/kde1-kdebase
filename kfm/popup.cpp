@@ -102,7 +102,7 @@ void KNewMenu::slotNewFile( int _id )
     if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
       QString x = KFMPaths::TemplatesPath() + p.data();
       if (!QFile::exists(x.data())) {
-          QMessageBox::message( i18n( "KFM Error" ), i18n(
+          QMessageBox::critical( 0L, i18n( "KFM Error" ), i18n(
               "Source file doesn't exist anymore ! \n"  
               "Use \"Rescan Bindings\" in View menu to update the menu"));
           return;

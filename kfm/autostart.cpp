@@ -25,7 +25,7 @@ void autostart()
     dp = opendir( KFMPaths::AutostartPath() );
     if ( dp == NULL )
     {
-	QMessageBox::message( klocale->translate("KFM Installation Error"), 
+	QMessageBox::critical( 0L, klocale->translate("KFM Installation Error"), 
 			      klocale->translate("The directory ") + url +
 			      klocale->translate(" does not exist\n") );
 	exit(1);

@@ -66,7 +66,7 @@ int KProtocolTAR::AttachTAR( const char *_command )
 
 int KProtocolTAR::Open( KURL *url, int mode )
 {
-    // debug("KProtocolTAR::Open(url=%s)",url->url().data());
+    debug("KProtocolTAR::Open(url=%s)",url->url().data());
     if( mode & READ )
     {
 	const char *path = url->path();

@@ -296,14 +296,14 @@ void KMimeType::initMimeTypes( const char* _path )
 		// Skip this one ?
 		if ( mime.isEmpty() )
 		{
-            // If we don't have read access, we'll skip quietly.
-            if ( access( file.data(), R_OK ) )
-                continue;
+		    // If we don't have read access, we'll skip quietly.
+		    if ( access( file.data(), R_OK ) )
+		       continue;
 
 		    QString tmp;
 		    tmp.sprintf( "%s\n%s\n%s", i18n( "The mime type config file " ),
 				 file.data(), i18n("does not contain a MimeType=... entry" ) );
-		    QMessageBox::message( i18n( "KFM Error" ), tmp );
+		    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
 		    continue;
 		}
 
@@ -1211,7 +1211,7 @@ void KMimeBind::initApplications( const char * _path )
 			{
 			    KMimeType *t = KMimeType::findByName( bind.data() );
 			    if ( t == 0 )
-				QMessageBox::message( i18n("ERROR"), 
+				QMessageBox::warning( 0L, i18n("ERROR"), 
 						      i18n("Could not find mime type\n") + bind + "\n" + i18n("in ") + file );
 			    else
 			    {
@@ -1617,7 +1617,7 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
 
     QString tmp;
     tmp.sprintf( "%s\n%s", i18n( "Could not find binding" ), _binding );
-    QMessageBox::message( i18n( "KFM Error" ), tmp );
+    QMessageBox::warning( 0L, i18n( "KFM Error" ), tmp );
     // Tell, that we have done the job since there is not more to do except showing
     // the above error message.
     return TRUE;
@@ -1625,7 +1625,7 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
 
 bool KMimeType::runAsApplication( const char *, QStrList * )
 {
-    QMessageBox::message( i18n( "KFM Error" ),
+    QMessageBox::warning( 0L, i18n( "KFM Error" ),
 			  i18n( "This is a document!\nNot an application" ) );
     // Tell, that we have done the job since there is not more to do except showing
     // the above error message.
@@ -1721,7 +1721,7 @@ bool KDELnkMimeType::run( const char *_url )
 	  config = KMimeBind::openKConfig( _url );
     else
     {
-	QMessageBox::message( i18n( "KFM Error" ),
+	QMessageBox::critical( 0L, i18n( "KFM Error" ),
 		     i18n( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1733,7 +1733,7 @@ bool KDELnkMimeType::run( const char *_url )
     {
 	QString tmp;
 	ksprintf(&tmp, i18n("Could not access\n%s"), _url);
-	QMessageBox::message( i18n( "KFM Error" ), tmp );
+	QMessageBox::critical( 0L, i18n( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1801,7 +1801,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	  config = KMimeBind::openKConfig( _url );
     else
     {
-	QMessageBox::message( i18n( "KFM Error" ),
+	QMessageBox::critical( 0L, i18n( "KFM Error" ),
 		     i18n( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1813,7 +1813,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     {
 	QString tmp;
 	tmp.sprintf( "%s\n%s", i18n( "Could not access" ), _url );
-	QMessageBox::message( i18n( "KFM Error" ), tmp );
+	QMessageBox::critical( 0L, i18n( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
@@ -1829,7 +1829,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     // At least the executable is needed!
     if ( exec.isEmpty() )
     {
-	QMessageBox::message( i18n( "KFM Error" ),
+	QMessageBox::critical( 0L, i18n( "KFM Error" ),
 		     i18n( "This file does not contain an\nExec=....\nentry. Edit the Properties\nto solve the problem" ) );
 
 	// Say: Yes we have done the job. That is not quite right, but
@@ -1964,7 +1964,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 	  config = KMimeBind::openKConfig( _url );
     else
     {
-	QMessageBox::message( i18n( "KFM Error" ),
+	QMessageBox::critical( 0L, i18n( "KFM Error" ),
 		     i18n( "Can work with *.kdelnk files only\non local hard disk" ) );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
@@ -1976,7 +1976,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
     {
 	QString tmp;
 	tmp.sprintf( "%s\n%s", i18n( "Could not access" ), _url );
-	QMessageBox::message( i18n( "KFM Error" ), tmp );
+	QMessageBox::critical( 0L, i18n( "KFM Error" ), tmp );
 	// Say: Yes we have done the job. That is not quite right, but
 	// we want to stop this here, before KFM tries some stupid things :-)
 	return TRUE;
