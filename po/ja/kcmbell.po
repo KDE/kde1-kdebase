@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"PO-Revision-Date: 1999-01-23 20:00+0900\n"
+"Last-Translator: 塙 雅典(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: 日本 <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:52
+msgid "&Bell"
+msgstr "ベル(&B)"
+
+#: main.cpp:58
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "利用法: kcmbell [-init | bell]\n"
+
+#: main.cpp:89
+msgid "Bell settings"
+msgstr "ベル設定"
+
+#: bell.cpp:65
+msgid "Volume"
+msgstr "音量"
+
+#: bell.cpp:67
+msgid "Pitch"
+msgstr "ピッチ"
+
+#: bell.cpp:69
+msgid "Hz"
+msgstr ""
+
+#: bell.cpp:70
+msgid "Duration"
+msgstr "持続時間"
+
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr "ミリ秒"
+
+#: bell.cpp:87
+msgid "Test"
+msgstr "テスト"

@@ -1,0 +1,59 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-04-15 01:23+0200\n"
+"PO-Revision-Date: Tue May 4 1999 08:22:40+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: kstart.C:118
+#, c-format
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Utility to launch legay applications with special KDE window properties\n"
+" such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+" or sticky. Furthermore you can exclude the window from getting the focus "
+"or\n"
+" force the window manager to keep the window always on top.\n"
+" \n"
+" In addition, the -activate switch will jump to the window even if it is\n"
+" started on a different virtual desktop\n"
+" \n"
+" Usage:\n"
+" %s <command> [-window <regular expression>] [-desktop <number>]\n"
+"              [-sticky] [-iconify] [-maximize] \n"
+"              [-decoration tiny|none] [-activate] [-nofocus] [-staysontop]\n"
+" \n"
+" If you do not specify a regular expression for the windows title,\n"
+" then the very first window to appear will be taken. Not recommended!\n"
+" \n"
+" Example usage:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock \\\n"
+"        -decoration tiny -sticky -nofocus -staysontop\n"
+" puts a tiny decorated, sticky xclock on the top right corner of the "
+"screen,\n"
+" that does not even get focus (and therefore has no entry in the taskbar).\n"
+" Note that you can still close it with the right mouse button.\n"
+" \n"
+" "
+msgstr ""
+
+#: kstart.C:160
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""

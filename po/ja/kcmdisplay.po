@@ -1,0 +1,546 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-03-21 01:19+0100\n"
+"PO-Revision-Date: Sun May 2 1999 01:21:10+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: backgnd.cpp:54
+msgid "Enter new desktop name"
+msgstr "新しいデスクトップの名前を入力してください"
+
+#: backgnd.cpp:110 backgnd.cpp:163
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: backgnd.cpp:185
+msgid "&Rename ..."
+msgstr "名前の変更(&R)..."
+
+#: backgnd.cpp:196
+msgid "&Common Background"
+msgstr "共通の背景(&C)"
+
+#: backgnd.cpp:224 colorscm.cpp:82
+msgid "Colors"
+msgstr "色"
+
+#: backgnd.cpp:251
+msgid "&One Color"
+msgstr "最初の色(&O)"
+
+#: backgnd.cpp:268
+msgid "&Two Color"
+msgstr "二番目の色(&T)"
+
+#: backgnd.cpp:287
+msgid "Set&up ..."
+msgstr "設定(&u) ... "
+
+#: backgnd.cpp:296
+msgid "Wallpaper"
+msgstr "壁紙"
+
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
+msgid "No wallpaper"
+msgstr "壁紙なし"
+
+#: backgnd.cpp:360
+msgid "&Browse..."
+msgstr "ブラウズ(&B)..."
+
+#: backgnd.cpp:368
+msgid "Arrangement:"
+msgstr "配置:"
+
+#: backgnd.cpp:375
+msgid "Tiled"
+msgstr "タイル状に配置"
+
+#: backgnd.cpp:376
+msgid "Mirrored"
+msgstr "鏡像配置"
+
+#: backgnd.cpp:377
+msgid "Center Tiled"
+msgstr "中央からタイル状に配置"
+
+#: backgnd.cpp:378
+msgid "Centred"
+msgstr "中央に配置"
+
+#: backgnd.cpp:379
+msgid "Centred Brick"
+msgstr "中央に配置し周囲にブロック"
+
+#: backgnd.cpp:380
+msgid "Centred Warp"
+msgstr "中央に配置し周囲にワープ"
+
+#: backgnd.cpp:381
+msgid "Centred Maxpect"
+msgstr "中央に最大サイズで配置"
+
+#: backgnd.cpp:382
+msgid "Symmetrical Tiled"
+msgstr "対称かつタイル状に配置"
+
+#: backgnd.cpp:383
+msgid "Symmetrical Mirrored"
+msgstr "対称かつ鏡像に配置"
+
+#: backgnd.cpp:384
+msgid "Scaled"
+msgstr "スケールして配置"
+
+#: backgnd.cpp:399
+msgid "Ra&ndom"
+msgstr "ランダム(&n)"
+
+#: backgnd.cpp:408
+msgid "Setu&p..."
+msgstr "設定(&p)..."
+
+#: backgnd.cpp:418
+msgid "&Dock into the panel"
+msgstr "パネル上で実行(&D)"
+
+#: backgnd.cpp:443
+msgid "Cache size (kB):"
+msgstr "キャッシュサイズ (kB):"
+
+#: backgnd.cpp:1339
+msgid "Desktop names"
+msgstr "デスクトップ名"
+
+#: backgnd.cpp:1384
+msgid "File error"
+msgstr "ファイルエラー"
+
+#: backgnd.cpp:1385
+msgid "Can't load image file"
+msgstr "画像ファイルを読み込めません"
+
+#: backgnd.cpp:1408 backgnd.cpp:1881
+msgid "Unsupported URL"
+msgstr "サポートされないURL"
+
+#: backgnd.cpp:1409 backgnd.cpp:1882
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+"すみません、この種のURLは現時点ではKDEディスプレイモジュールでサポートされていません"
+
+#: backgnd.cpp:1441
+msgid "Two color backgrounds"
+msgstr "二色の背景"
+
+#: backgnd.cpp:1478
+msgid "Blend colors from &top to bottom"
+msgstr "上から下へ色を混ぜる(&t)"
+
+#: backgnd.cpp:1484
+msgid "Blend colors from &right to left"
+msgstr "右から左へ色を混ぜる(&r)"
+
+#: backgnd.cpp:1490
+msgid "Use &pattern"
+msgstr "パターンを使う(&p)"
+
+#: backgnd.cpp:1517
+msgid "Preview"
+msgstr "プレビュー"
+
+#: backgnd.cpp:1528
+msgid "Pattern &name"
+msgstr "パターン名(&n)"
+
+#: backgnd.cpp:1567
+msgid "Current"
+msgstr "カレント"
+
+#: backgnd.cpp:1627
+msgid "Filled"
+msgstr "満たす"
+
+#: backgnd.cpp:1630
+msgid "Fish net"
+msgstr "魚網"
+
+#: backgnd.cpp:1633
+msgid "Triangles"
+msgstr "三角形"
+
+#: backgnd.cpp:1636
+msgid "Flowers"
+msgstr "花"
+
+#: backgnd.cpp:1639
+msgid "Rattan"
+msgstr "籐"
+
+#: backgnd.cpp:1642
+msgid "Cobbled Pavement"
+msgstr "つぎはぎの舗装"
+
+#: backgnd.cpp:1708
+msgid "Random mode setup"
+msgstr "ランダムモード設定"
+
+#: backgnd.cpp:1714
+msgid "Pick files from &directory"
+msgstr "ファイルをディレクトリから取出し(&d)"
+
+#: backgnd.cpp:1728
+msgid "&Browse ..."
+msgstr "ブラウズ(&B) ..."
+
+#: backgnd.cpp:1749
+msgid "Timer Delay in seconds :"
+msgstr "タイマー遅延(秒):"
+
+#: backgnd.cpp:1761
+msgid "In &order"
+msgstr "順番に(&o)"
+
+#: backgnd.cpp:1778
+msgid "Desktops :"
+msgstr "デスクトップ:"
+
+#: backgnd.cpp:1817
+msgid "&Add"
+msgstr "追加(&A)"
+
+#: backgnd.cpp:1989
+msgid "Directory error"
+msgstr "ディレクトリエラー"
+
+#: backgnd.cpp:1990
+msgid "Selected directory doesn't exists"
+msgstr "選択されたディレクトリはありません"
+
+#: colorscm.cpp:104
+msgid "Color Scheme"
+msgstr "色スキーム"
+
+#: colorscm.cpp:115
+msgid "Current scheme"
+msgstr "現在のスキーム"
+
+#: colorscm.cpp:117
+msgid "KDE default"
+msgstr "KDE標準"
+
+#: colorscm.cpp:130
+msgid "&Add ..."
+msgstr "追加(&A) ..."
+
+#: colorscm.cpp:147
+msgid "&Save changes"
+msgstr "変更を保存(&S)"
+
+#: colorscm.cpp:161
+msgid "Widget color"
+msgstr "ウィジット色"
+
+#: colorscm.cpp:168
+msgid "Inactive title bar"
+msgstr "非アクティブなタイトルバー"
+
+#: colorscm.cpp:169
+msgid "Inactive title text"
+msgstr "非アクティブなタイトルテキスト"
+
+#: colorscm.cpp:170
+msgid "Inactive title blend"
+msgstr "非アクティブなタイトルブレンド"
+
+#: colorscm.cpp:171
+msgid "Active title bar"
+msgstr "アクティブなタイトルバー"
+
+#: colorscm.cpp:172
+msgid "Active title text"
+msgstr "アクティブなタイトルテキスト"
+
+#: colorscm.cpp:173
+msgid "Active title blend"
+msgstr "アクティブなタイトルブレンド"
+
+#: colorscm.cpp:174
+msgid "Background"
+msgstr "背景"
+
+#: colorscm.cpp:175
+msgid "Text"
+msgstr "テキスト"
+
+#: colorscm.cpp:176
+msgid "Select background"
+msgstr "背景を選択"
+
+#: colorscm.cpp:177
+msgid "Select text"
+msgstr "テキストを選択"
+
+#: colorscm.cpp:178
+msgid "Window background"
+msgstr "ウィンドウ背景"
+
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "ウィンドウテキスト"
+
+#: colorscm.cpp:207
+msgid "Contrast"
+msgstr "コントラスト"
+
+#: colorscm.cpp:223
+msgid "&Low"
+msgstr "低い(&L)"
+
+#: colorscm.cpp:231
+msgid "High"
+msgstr "高い"
+
+#: colorscm.cpp:304
+msgid "Error removing"
+msgstr "削除エラー"
+
+#: colorscm.cpp:305
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"この色スキームは削除できませんでした。\n"
+"たぶんあなたは色スキームが保管されている\n"
+"ファイルシステムを置き換える許可を与えられていません。"
+
+#: colorscm.cpp:362
+msgid "Naming error"
+msgstr "名前付けエラー"
+
+#: colorscm.cpp:363
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"新しい色スキームには一意な名前を選択してください\n"
+"あなたが入力した名前は既に色スキームリストに\n"
+"存在しています。"
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "色スキームを追加"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"あなたの個人リストに追加する新しい\n"
+"色スキームの名前を入力してください。(&E)\n"
+"\n"
+"プレビューで現在使われている色は\n"
+"始めにこのスキームにコピーされます。"
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "無視"
+
+#: scrnsave.cpp:48
+msgid "Save Screen"
+msgstr "スクリーンを保存"
+
+#: scrnsave.cpp:49
+msgid "Lock Screen"
+msgstr "スクリーンをロック"
+
+#: scrnsave.cpp:112 scrnsave.cpp:181
+msgid "Screen Saver"
+msgstr "スクリーンセーバ"
+
+#: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
+msgid "No screensaver"
+msgstr "スクリーンセーバなし"
+
+#: scrnsave.cpp:209
+msgid "&Setup ..."
+msgstr "設定(&S) ..."
+
+#: scrnsave.cpp:217
+msgid "&Test"
+msgstr "テスト(&T)"
+
+#: scrnsave.cpp:230
+msgid "Settings"
+msgstr "設定"
+
+#: scrnsave.cpp:250
+msgid "&Wait for"
+msgstr "待ち時間(&W)"
+
+#: scrnsave.cpp:260
+msgid "min."
+msgstr "分"
+
+#: scrnsave.cpp:266
+msgid "&Require password"
+msgstr "パスワードが必要です(&R)"
+
+#: scrnsave.cpp:272
+msgid "&Accept root password to unlock"
+msgstr "ロック解除のためにrootパスワードを許容"
+
+#: scrnsave.cpp:280
+msgid "Show &password as stars"
+msgstr "パスワードを星で表示"
+
+#: scrnsave.cpp:288
+msgid "Priority"
+msgstr "優先度"
+
+#: scrnsave.cpp:301
+msgid "&High"
+msgstr "高い(&H)"
+
+#: scrnsave.cpp:310
+msgid "Low"
+msgstr "低い"
+
+#: general.cpp:221
+msgid "Style"
+msgstr "スタイル"
+
+#: general.cpp:229
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "ウィジットをWindows 95のスタイルで描く"
+
+#: general.cpp:245
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr "MacOSスタイルのようにスクリーン上部にメニューバー"
+
+#: general.cpp:259
+msgid "&Apply fonts and colors to non-KDE apps"
+msgstr "フォントと色を非KDEアプリにも適用(&A)"
+
+#: general.cpp:529
+msgid "General font"
+msgstr "一般用フォント"
+
+#: general.cpp:534
+msgid "Fixed font"
+msgstr "固定幅フォント"
+
+#: general.cpp:540
+msgid "Window title font"
+msgstr "ウィンドウタイトルフォント"
+
+#: general.cpp:545
+msgid "Panel button font"
+msgstr "パネルボタンフォント"
+
+#: general.cpp:550
+msgid "Panel clock font"
+msgstr "パネルクロックフォント"
+
+#: general.cpp:580
+msgid "Sample text"
+msgstr "サンプルテキスト"
+
+#: general.cpp:588
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" $ % ^ & * ( )"
+msgstr ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" $ % ^ & * ( )"
+
+#: main.cpp:64
+msgid "&Background"
+msgstr "背景(&B)"
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr "スクリーンセーバ(&S)"
+
+#: main.cpp:71
+msgid "&Colors"
+msgstr "色(&C)"
+
+#: main.cpp:77
+msgid "&Style"
+msgstr "スタイル(&S)"
+
+#: main.cpp:83
+msgid ""
+"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+msgstr ""
+"利用法: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+
+#: main.cpp:150
+msgid "Display settings"
+msgstr "ディスプレイ設定"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "非アクティブウィンドウ"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "アクティブウィンドウ"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "選択されたテキスト"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr "新規作成"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "組版(&T)"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "ボールド(&B)"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "イタリック(&I)"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "サイズ(&S)"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "文字セット(&C)"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "標準"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "任意の"

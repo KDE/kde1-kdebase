@@ -1,0 +1,119 @@
+# Japanized kpager.po
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Masanori Hanawa <hanawa@es.yamanashi.ac.jp>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
+"PO-Revision-Date: 1999-01-25 20:00+0900\n"
+"Last-Translator: 塙 雅典(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: 日本 <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "広域デスクトップをトグル"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "メニューバーをトグル"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "右に移動"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "左に移動"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "広域デスクトップを隠す(&G)"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "広域デスクトップを表示(&G)"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "メニューバーを隠す(&M)"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "２列(&2)"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "１クリックでデスクトップを変更(&O)"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "デスクトップ名を隠す(&N)"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "デスクトップ名を表示(&N)"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "無地"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "アイコン"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "ピックスマップ"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "描画モード"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "メニューバーを表示(&M)"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "１クリックでデスクトップを変更"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "最大化(&M)"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "アイコン化(&I)"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "常に表示を解除(&U)"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "常に表示(&S)"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "デスクトップを移動(&T)"

@@ -1,0 +1,250 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"PO-Revision-Date: Sun May 2 1999 01:25:09+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: main.cpp:61
+msgid "&Font"
+msgstr "フォント(&F)"
+
+#: main.cpp:63
+msgid "&Color"
+msgstr "色(&C)"
+
+#: main.cpp:65
+msgid "&Other"
+msgstr "その他(&O)"
+
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "プロキシ(&P)"
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr ""
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "ユーザ代理人(&A)"
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "クッキー(&k)"
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "デスクトップアイコン(&D)"
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "KFM設定"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "小"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "中"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "大"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "標準フォント"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "固定幅フォント"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "標準文字セット"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "言語用の文字セットを使ってください"
+
+#: htmlopts.cpp:330
+msgid "Background Color:"
+msgstr "背景色:"
+
+#: htmlopts.cpp:342
+msgid "Normal Text Color:"
+msgstr "通常のテキスト色:"
+
+#: htmlopts.cpp:354
+msgid "URL Link Color:"
+msgstr "URLリンク色:"
+
+#: htmlopts.cpp:366
+msgid "Followed Link Color:"
+msgstr "訪れたリンク色:"
+
+#: htmlopts.cpp:378
+msgid "Change cursor over link."
+msgstr "リンク上でカーソルを変更"
+
+#: htmlopts.cpp:384
+msgid "Underline links"
+msgstr "リンクに下線"
+
+#: htmlopts.cpp:391
+msgid "Always use my colors"
+msgstr "常に自分の色を使う"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "URL毎の設定を許可"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "ツリービューがナビゲーションに従う"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "ターミナル"
+
+#: miscopts.cpp:57
+msgid "Editor"
+msgstr "Editor"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "設定を保存することを忘れないでください！"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "プロキシを使う"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "HTTPプロキシ:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "ポート:"
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "FTPプロキシ:"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "プロキシを使わない:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "以下の言語を受付:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "以下の文字セットを受付:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "HTMLを仮定"
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "サーバ:"
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "ログイン:"
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "追加(&A)"
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "既知の割り当て"
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "クッキーを有効にする(&E)"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "標準受付ポリシー"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "受け付ける"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "問い合わせる"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "拒否する"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "ドメイン固有の設定:"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "ドメイン受付ポリシーの変更"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "まずドメインを入力してください!"
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "水平ルートグリッド間隔:"
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "垂直ルートグリッド間隔:"
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "デスクトップのアイコンのテキストを透明に"
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "アイコン前面色:"
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "アイコン背景色:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "デスクトップに隠れファイルを表示(&H)"

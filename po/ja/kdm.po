@@ -1,0 +1,83 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
+"PO-Revision-Date: Mon May 3 1999 22:53:20+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: kdmshutdown.cpp:176
+msgid "Shutdown or restart?"
+msgstr "シャットダウンそれとも再起動？"
+
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr "(rootのパスワードを入力)"
+
+#: kdmshutdown.cpp:197
+msgid "Shutdown"
+msgstr "シャットダウン"
+
+#: kdmshutdown.cpp:211
+msgid "Shutdown and restart"
+msgstr "シャットダウンと再起動"
+
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr "Xサーバを再起動"
+
+#: kgreeter.cpp:234
+msgid "Login:"
+msgstr "ログイン:"
+
+#: kgreeter.cpp:246
+msgid "Password:"
+msgstr "パスワード:"
+
+#: kgreeter.cpp:271
+msgid "Login failed!"
+msgstr "ログイン失敗！"
+
+#: kgreeter.cpp:277
+msgid "Session Type:"
+msgstr "セッションタイプ:"
+
+#: kgreeter.cpp:324
+msgid "Go!"
+msgstr "実行！"
+
+#: kgreeter.cpp:340
+msgid "Shutdown..."
+msgstr "シャットダウン..."
+
+#: kgreeter.cpp:585
+msgid "Logins not available right now."
+msgstr "今はログインできません。"
+
+#: kgreeter.cpp:626
+msgid "login_getcapstr() failed."
+msgstr "login_getcapstr()に失敗しました。"
+
+#: kgreeter.cpp:680 kgreeter.cpp:707
+msgid "Sorry -- your account has expired."
+msgstr "すみません -- あなたのアカウントは失効しています。"
+
+#: kgreeter.cpp:685 kgreeter.cpp:712
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr "警告: あなたのアカウントは%sに失効します"
+
+#: kgreeter.cpp:739
+msgid "Home directory not available"
+msgstr "ホームディレクトリが利用できません"

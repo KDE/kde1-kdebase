@@ -1,0 +1,229 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"PO-Revision-Date: Sun May 2 1999 01:23:56+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: info.cpp:50
+#, c-format
+msgid "screen #%d"
+msgstr "スクリーン #%d"
+
+#: info.cpp:52
+#, c-format
+msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgstr "  ディメンジョン      : %dx%d pixels (%dx%d mm)\n"
+
+#: info.cpp:56
+#, c-format
+msgid "  resolution          : %dx%d dots per inch\n"
+msgstr "  解像度              : %dx%d dots per inch\n"
+
+#: info.cpp:61
+#, c-format
+msgid "  depths (%d)          : "
+msgstr "  色数 (%d)            : "
+
+#: info.cpp:85
+#, c-format
+msgid "name of display       : %s"
+msgstr "ディスプレイの名前    : %s"
+
+#: info.cpp:87
+#, c-format
+msgid "version number        : %i.%i"
+msgstr "バージョン番号        : %i.%i"
+
+#: info.cpp:89
+#, c-format
+msgid "vendor string         : %s"
+msgstr "ベンダー情報          : %s"
+
+#: info.cpp:91
+#, c-format
+msgid "vendor release number : %i"
+msgstr "ベンダーリリース番号  : %i"
+
+#: info.cpp:93
+#, c-format
+msgid "default screen number : %i"
+msgstr "標準スクリーン番号    : %i"
+
+#: info.cpp:95
+#, c-format
+msgid "number of screens     : %i"
+msgstr "スクリーンの数        : %i"
+
+#: info.cpp:181
+msgid ""
+"No Information available\n"
+" or\n"
+"this system is not yet supported :-("
+msgstr ""
+"何の情報も与えられていないか\n"
+"このシステムはまだサポートされていません :-("
+
+#: info_fbsd.cpp:73
+#, c-format
+msgid "%s, unknown speed"
+msgstr "%s, 未知のスピードです"
+
+#: info_fbsd.cpp:75
+#, c-format
+msgid "%s running at %s MHz"
+msgstr "%s (%s MHzで動作中)"
+
+#: info_fbsd.cpp:213
+msgid "Ahh couldn't open fstab!"
+msgstr "あ゛〜、fstabが開けませんでした！"
+
+#: info_fbsd.cpp:220 info_fbsd.cpp:221
+msgid "Device"
+msgstr "デバイス"
+
+#: info_fbsd.cpp:223 info_fbsd.cpp:224
+msgid "Mount Point"
+msgstr "マウント位置"
+
+#: info_fbsd.cpp:226 info_fbsd.cpp:227
+msgid "FS Type"
+msgstr "FS タイプ"
+
+#: info_fbsd.cpp:229 info_fbsd.cpp:230
+msgid "Mount Options"
+msgstr "マウントオプション"
+
+#: info_hpux.cpp:54
+msgid "unknown CPU type"
+msgstr "未知のCPUタイプ"
+
+#: info_hpux.cpp:62
+msgid "unavailable"
+msgstr "利用できません"
+
+#: info_hpux.cpp:67
+msgid "Number of active processor(s)= "
+msgstr "アクティブなプロセッサの数= "
+
+#: info_linux.cpp:99
+msgid "Value"
+msgstr "値"
+
+#: info_linux.cpp:114
+msgid "DMA-Channel"
+msgstr "DMAチャネル"
+
+#: info_linux.cpp:115 info_linux.cpp:128
+msgid "used by"
+msgstr "以下によって使われています"
+
+#: info_linux.cpp:127
+msgid "I/O-Range"
+msgstr "I/O範囲"
+
+#: main.cpp:79
+msgid "&Memory"
+msgstr "メモリ(&M)"
+
+#: main.cpp:82
+msgid "&Processor"
+msgstr "プロセッサ(&P)"
+
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr "割り込み(&I)"
+
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr "DMA-チャネル(&C)"
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr "IO-ポート(&I)"
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr "PCI-バス(&B)"
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr "サウンド(&S)"
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr "デバイス(&D)"
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr "S&CSI"
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr "パーティション(&P)"
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr "Xサーバ(&X)"
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+
+#: main.cpp:148
+msgid "System Information"
+msgstr "システム情報"
+
+#: memory.cpp:15
+msgid "Total memory"
+msgstr "トータルメモリ"
+
+#: memory.cpp:25
+msgid "Free memory"
+msgstr "空きメモリ"
+
+#: memory.cpp:33
+msgid "Shared memory"
+msgstr "共有メモリ"
+
+#: memory.cpp:41
+msgid "Buffer memory"
+msgstr "バッファメモリ"
+
+#: memory.cpp:49
+msgid "Swap memory"
+msgstr "スワップメモリ"
+
+#: memory.cpp:57
+msgid "Free swap memory"
+msgstr "空きスワップメモリ"
+
+#: memory.cpp:78
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
+
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
+msgid "Not available"
+msgstr "利用できません"
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+msgid "Not Available"
+msgstr "利用できません"

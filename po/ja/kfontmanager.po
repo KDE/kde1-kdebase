@@ -1,0 +1,168 @@
+# Japanized kfontmanager.po
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Masanori Hanawa <hanawa@es.yamanashi.ac.jp>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfontmanager\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"PO-Revision-Date: 1999-01-25 20:00+0900\n"
+"Last-Translator: 塙 雅典(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: 日本 <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:58
+msgid "KDE Font Manager"
+msgstr "KDEフォントマネージャ"
+
+#: main.cpp:71
+msgid "KDE Fonts"
+msgstr "KDEフォント"
+
+#: main.cpp:72
+msgid "Font Explorer"
+msgstr "フォントエクスプローラ"
+
+#: main.cpp:73
+msgid "Raw X11 Font List"
+msgstr "元のX11のフォントリスト"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "利用可能なX11フォント"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "KDEで利用可能なフォント"
+
+#: kfontmanager.cpp:89
+msgid ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+msgstr ""
+"敏捷な茶色い狐がのろまな犬を飛び越える\n"
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+
+#: kfontlist.cpp:62 kfontmanager.cpp:112
+msgid "About kfontmanager"
+msgstr "kfontmanagerについて"
+
+#: kfontmanager.cpp:112
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontmanager.cpp:215
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"環境変数HOME\n"
+"が設定されていません\n"
+
+#: kfontmanager.cpp:292
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"~/.kde/share/config/kdefonts\n"
+" が作成できません\n"
+
+#: kfontmanager.cpp:297
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"~/.kde/share/config/kdefontsは存在しますが\n"
+"書き込みできません\n"
+"KDEフォントリストを保存できません。"
+
+#: kfontlist.cpp:62
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontexplorer.cpp:126
+msgid "Select Font"
+msgstr "フォントを選択"
+
+#: kfontexplorer.cpp:130
+msgid "Requested Font"
+msgstr "要求されたフォント"
+
+#: kfontexplorer.cpp:135
+msgid "Actual Font"
+msgstr "実際のフォント"
+
+#: kfontexplorer.cpp:139 kfontexplorer.cpp:143
+msgid "Family:"
+msgstr "ファミリ:"
+
+#: kfontexplorer.cpp:163 kfontexplorer.cpp:168
+msgid "Size:"
+msgstr "サイズ:"
+
+#: kfontexplorer.cpp:177 kfontexplorer.cpp:182
+msgid "Weight:"
+msgstr "重み:"
+
+#: kfontexplorer.cpp:191 kfontexplorer.cpp:199
+msgid "Style:"
+msgstr "スタイル:"
+
+#: kfontexplorer.cpp:234
+msgid "Charset"
+msgstr "文字セット"
+
+#: kfontexplorer.cpp:246
+msgid "Size"
+msgstr "サイズ"
+
+#: kfontexplorer.cpp:285
+msgid "Weight"
+msgstr "重み"
+
+#: kfontexplorer.cpp:286 kfontexplorer.cpp:394
+msgid "normal"
+msgstr "通常"
+
+#: kfontexplorer.cpp:287 kfontexplorer.cpp:396
+msgid "bold"
+msgstr "ボールド"
+
+#: kfontexplorer.cpp:296
+msgid "Style"
+msgstr "スタイル"
+
+#: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
+msgid "roman"
+msgstr "ローマン"
+
+#: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
+msgid "italic"
+msgstr "イタリック"
+
+#: kfontexplorer.cpp:326
+msgid "Dolor Ipse"
+msgstr ""
+
+#: kfontexplorer.cpp:430
+msgid "Bold"
+msgstr "ボールド"
+
+#: kfontexplorer.cpp:432
+msgid "Normal"
+msgstr "通常"
+
+

@@ -1,5 +1,5 @@
 
-SUBDIRS = cs da de es fi fr it nl ru is sv hu pt pl el hr ro no \
+SUBDIRS = cs da de es fi fr it nl ru is sv hu pt pl el hr ro no ja \
 	zh_TW.Big5 zh_CN.GB2312 sk ca sl en_UK mk pt_BR eo ko br tr he et hs
 
 # this is a general list for merging!

@@ -1,0 +1,1522 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-04-17 01:15+0200\n"
+"PO-Revision-Date: Tue May 4 1999 05:50:17+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: kfmgui.cpp:204
+msgid "KFM"
+msgstr "KFM"
+
+#: kfmgui.cpp:222
+msgid "New &Window"
+msgstr "新しいウィンドウ(&W)"
+
+#: kfmgui.cpp:225
+msgid "&Run..."
+msgstr "実行(&R)"
+
+#: kfmgui.cpp:227
+msgid "Open &Terminal"
+msgstr "ターミナルを開く(&T)"
+
+#: kfmgui.cpp:230
+msgid "&Open Location..."
+msgstr "場所を開く(&O)..."
+
+#: finddlg.cpp:66 kfmgui.cpp:232
+msgid "&Find"
+msgstr "検索(&F)"
+
+#: kfmgui.cpp:253
+msgid "&Move to Trash"
+msgstr "ゴミ箱へ移動(&M)"
+
+#: kfmgui.cpp:260
+msgid "&Select"
+msgstr "選択(&S)"
+
+#: kfmgui.cpp:262
+msgid "Select &all"
+msgstr "全てを選択(&a)"
+
+#: kfmgui.cpp:265
+msgid "&Find in page..."
+msgstr "ページ内を検索(&F)..."
+
+#: kfmgui.cpp:267
+msgid "Find &next"
+msgstr "次を検索(&n)"
+
+#: kfmgui.cpp:270
+msgid "Show History"
+msgstr "ヒストリを表示"
+
+#: kfmgui.cpp:272
+msgid "Show Cache"
+msgstr "キャッシュを表示"
+
+#: kfmgui.cpp:274
+msgid "Mime &Types"
+msgstr "Mimeタイプ(&T)"
+
+#: kfmgui.cpp:276
+msgid "App&lications"
+msgstr "アプリケーション(&l)"
+
+#: kfmgui.cpp:282
+msgid "Global Mime Types"
+msgstr "広域Mimeタイプ"
+
+#: kfmgui.cpp:284
+msgid "Global Applications"
+msgstr "広域アプリケーション"
+
+#: kfmgui.cpp:292
+msgid "Show Hi&dden Files"
+msgstr "隠しファイルを表示(&d)"
+
+#: kfmgui.cpp:294
+msgid "Show Tr&ee"
+msgstr "ツリー表示(&e)"
+
+#: kfmgui.cpp:296
+msgid "Sho&w Thumbnails"
+msgstr "サムネイル表示(&w)"
+
+#: kfmgui.cpp:298
+msgid "&HTML View"
+msgstr "HTMLビュー(&H)"
+
+#: kfmgui.cpp:301
+msgid "&Icon View"
+msgstr "アイコンビュー(&I)"
+
+#: kfmgui.cpp:303
+msgid "&Text View"
+msgstr "テキストビュー(&T)"
+
+#: kfmgui.cpp:305
+msgid "&Long View"
+msgstr "長いビュー(&L)"
+
+#: kfmgui.cpp:307
+msgid "&Short View"
+msgstr "短いビュー(&S)"
+
+#: kfmgui.cpp:313
+msgid "Rel&oad Tree"
+msgstr "ツリーを再表示(&o)"
+
+#: kfmgui.cpp:315
+msgid "&Reload Document"
+msgstr "文書を再表示(&R)"
+
+#: kfmgui.cpp:317
+msgid "Rescan &Bindings"
+msgstr "割り当ての再スキャン(&B)"
+
+#: kfmgui.cpp:320
+msgid "&View Frame Source"
+msgstr "フレームソースを表示(&V)"
+
+#: kfmgui.cpp:322
+msgid "View Docu&ment Source"
+msgstr "文書のソースを表示(&m)"
+
+#: kfmgui.cpp:330
+msgid "Auto"
+msgstr "自動"
+
+#: kfmgui.cpp:338
+msgid "Document Encodin&g"
+msgstr "文書のエンコーディング(&g)"
+
+#: kfmgui.cpp:353
+msgid "Clear Cache"
+msgstr "キャッシュをクリア"
+
+#: kfmgui.cpp:356
+msgid "Always look in cache"
+msgstr "常にキャッシュを見る"
+
+#: kfmgui.cpp:358
+msgid "Never look in cache"
+msgstr "決してキャッシュを見ない"
+
+#: kfmgui.cpp:360
+msgid "Always save cache"
+msgstr "常にキャッシュに保存"
+
+#: kfmgui.cpp:362
+msgid "Never save cache"
+msgstr "決してキャッシュに保存しない"
+
+#: kfmgui.cpp:373
+msgid "Show &Menubar"
+msgstr "メニューバーを表示(&M)"
+
+#: kfmgui.cpp:375
+msgid "Show &Statusbar"
+msgstr "ステータスバーを表示(&S)"
+
+#: kfmgui.cpp:377
+msgid "Show &Toolbar"
+msgstr "ツールバーを表示(&T)"
+
+#: kfmgui.cpp:379
+msgid "Show &Location bar"
+msgstr "ロケーションバーを表示(&L)"
+
+#: kfmgui.cpp:382
+msgid "Sa&ve Settings"
+msgstr "設定を保存(&v)"
+
+#: kfmgui.cpp:384
+msgid "Save Settings for this &URL"
+msgstr "このURLの設定を保存"
+
+#: kfmgui.cpp:392
+msgid "&Cache"
+msgstr "キャッシュ(&C)"
+
+#: kfmgui.cpp:393
+msgid "&Configure File Manager..."
+msgstr "ファイルマネージャを設定(&C)..."
+
+#: kfmgui.cpp:395
+msgid "Configure &Browser..."
+msgstr "ブラウザを設定(&B)..."
+
+#: kfmgui.cpp:431
+msgid ""
+"Author: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget by Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Current maintainer: David Faure\n"
+"faure@kde.org"
+msgstr ""
+
+#: kfmgui.cpp:434
+msgid ""
+"\n"
+"Please submit bugs and wishes as explained on http://bugs.kde.org"
+msgstr ""
+"\n"
+"バグレポートや希望はhttp://bugs.kde.orgの説明通りに投稿してください"
+
+#: kfmgui.cpp:450
+msgid "&Go"
+msgstr "進む(&G)"
+
+#: kfmgui.cpp:451
+msgid "&Bookmarks"
+msgstr "ブックマーク(&B)"
+
+#: kfmgui.cpp:486 main.cpp:296
+msgid "Up"
+msgstr "上"
+
+#: kfmgui.cpp:496 main.cpp:298
+msgid "Forward"
+msgstr "進む"
+
+#: kfmgui.cpp:501
+msgid "Home"
+msgstr "ホーム"
+
+#: kfmgui.cpp:558
+msgid "Could not load icon\n"
+msgstr "アイコンがロードできませんでした\n"
+
+#: bookmark.cpp:304 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
+#: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1560 kbind.cpp:1568 kbind.cpp:1586
+#: kbind.cpp:1605 kbind.cpp:1664 kbind.cpp:1676 kbind.cpp:1703 kbind.cpp:1724
+#: kbind.cpp:1744 kbind.cpp:1756 kbind.cpp:1772 kbind.cpp:1907 kbind.cpp:1919
+#: kbind.cpp:1964 kfmexec.cpp:64 kfmexec.cpp:116 kfmexec/main.cpp:47
+#: kfmgui.cpp:559 kfmgui.cpp:800 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:384 kfmprops.cpp:653
+#: kfmprops.cpp:660 kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1222
+#: kfmprops.cpp:1726 kfmprops.cpp:2087 kfmprops.cpp:2269 kfmserver.cpp:46
+#: kfmserver.cpp:214 kfmserver.cpp:294 kfmserver.cpp:313 kfmserver.cpp:360
+#: kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:339 kfmtree.cpp:466
+#: kfmtree.cpp:497 kfmtree.cpp:503 kfmtree.cpp:509 kfmview.cpp:442
+#: kfmview.cpp:476 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:583
+#: kfmview.cpp:589 kfmview.cpp:714 kfmview.cpp:718 kfmview.cpp:757
+#: kfmview.cpp:784 kfmview.cpp:805 kfmview.cpp:813 kfmview.cpp:821
+#: kiojob.cpp:244 kiojob.cpp:252 kiojob.cpp:259 kiojob.cpp:284 kiojob.cpp:303
+#: kiojob.cpp:314 kiojob.cpp:338 kiojob.cpp:357 kiojob.cpp:574 kiojob.cpp:592
+#: kiojob.cpp:897 kiojob.cpp:910 kiojob.cpp:927 kiojob.cpp:958 kiojob.cpp:1006
+#: kiojob.cpp:1490 kiojob.cpp:1502 kiojob.cpp:1741 krenamewin.cpp:124
+#: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
+#: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
+msgid "KFM Error"
+msgstr "KFMエラー"
+
+#: kfmgui.cpp:572
+msgid "Location:"
+msgstr "場所:"
+
+#: kfmexec.cpp:63 kfmgui.cpp:799 kfmman.cpp:1428
+msgid "Malformed URL\n"
+msgstr "おかしなURL\n"
+
+#: kfmgui.cpp:985
+msgid "Select files:"
+msgstr "選択されたファイル:"
+
+#: kfmgui.cpp:1052
+msgid "Find Complete"
+msgstr "検索完了"
+
+#: kfmgui.cpp:1053
+msgid "Continue search from the top of the page?"
+msgstr "検索をページの先頭から続けますか？"
+
+#: kfmgui.cpp:1071
+msgid "&Edit Bookmarks..."
+msgstr "ブックマークを編集(&E)"
+
+#: kfmgui.cpp:1083
+msgid "&Add Bookmark"
+msgstr "ブックマークを追加(&A)"
+
+#: kfmgui.cpp:1119 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+msgid "&New"
+msgstr "新規作成(&N)"
+
+#: kfmgui.cpp:1192
+msgid "&Up"
+msgstr "上(&U)"
+
+#: kfmgui.cpp:1194
+msgid "&Back"
+msgstr "戻る(&B)"
+
+#: kfmgui.cpp:1196
+msgid "&Forward"
+msgstr "進む(&F)"
+
+#: kfmgui.cpp:1198
+msgid "&Home"
+msgstr "ホーム(&H)"
+
+#: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
+#: kiojob.cpp:93 root.cpp:1247
+msgid "ERROR: Malformed URL"
+msgstr "エラー: おかしなURL"
+
+#: kfmgui.cpp:1387 kfmserver.cpp:241
+msgid "Open Location:"
+msgstr "場所を開く:"
+
+#: kfmgui.cpp:1444
+msgid "KFM Confirm"
+msgstr "KFM設定"
+
+#: kfmgui.cpp:1445
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"本当に終了しますか？\n"
+"デスクトップの重要な機能が失われます"
+
+#: kfmgui.cpp:1578
+msgid "Document: Done"
+msgstr "文書: 終了"
+
+#: kfmview.cpp:443 root.cpp:944
+msgid "ERROR: You may only drop URLs"
+msgstr "エラー: URLだけドロップできます"
+
+#: kfmview.cpp:477
+msgid "ERROR: Drop over malformed URL"
+msgstr "エラー: おかしなURLを訪ねました"
+
+#: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
+#: kiojob.cpp:670 kiojob.cpp:1080 krenamewin.cpp:24 root.cpp:1290
+msgid "KFM Warning"
+msgstr "KFM 警告"
+
+#: kfmtree.cpp:537 kfmview.cpp:550 kfmview.cpp:850 root.cpp:1291
+msgid ""
+"Do you really want to delete the selected file(s)?\n"
+"\n"
+"There is no way to restore them."
+msgstr ""
+"選択されたファイルを本当に削除しますか？\n"
+"\n"
+"それらを元に戻す方法はありません。"
+
+#: kfmtree.cpp:504 kfmview.cpp:584 kfmview.cpp:814 root.cpp:1253
+msgid "ERROR: You dropped a URL over itself"
+msgstr "エラー: URLをそれ自身の上にドロップしました。"
+
+#: kfmtree.cpp:510 kfmview.cpp:590 kfmview.cpp:822 root.cpp:1259
+msgid "ERROR: You dropped a directory over one of its children"
+msgstr "エラー: ディレクトリをその子の一つにドロップしました。"
+
+#: kfmexec.cpp:303 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
+msgid "Open With:"
+msgstr "アプリケーションで開く:"
+
+#: kfmview.cpp:642 root.cpp:1190
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "エラー: 複数のファイルに対してはプロパティを開けません"
+
+#: kfmview.cpp:715
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"このディレクトリは書き込み可能でも\n"
+"ブックマークに登録されてもいないので\n"
+"プロパティを保存できません。\n"
+" まずこの場所をブックマークに登録するか、\n"
+"そのkdelnkをデスクトップに作成してください。"
+
+#: kfmview.cpp:719
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"このURLはブックマークに登録されておらずデスクトップにもないので\n"
+"プロパティを保存できません。\n"
+" まずこの場所をブックマークに登録するか、\n"
+"そのkdelnkをデスクトップに作成してください。"
+
+#: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
+msgid "Could not access Trash Bin"
+msgstr "ゴミ箱にアクセスできませんでした"
+
+#: kfmview.cpp:785 root.cpp:1229
+msgid "Can not paste into multiple directories"
+msgstr "複数のディレクトリに磔はできません"
+
+#: kfmview.cpp:882
+msgid "ERROR: Can not change to multiple directories"
+msgstr "エラー: 複数のディレクトリに移動できません"
+
+#: kfmview.cpp:1153
+msgid "KFM Security Alert"
+msgstr "KFMセキュリティ警告"
+
+#: kfmview.cpp:1154
+msgid ""
+"This page is untrusted\n"
+"but it contains a link to your local file system."
+msgstr ""
+"このページは信用できませんが\n"
+"あなたのローカルファイルシステムへのリンクを含んでいます。"
+
+#: kfmview.cpp:1246
+msgid "Symbolic Link"
+msgstr "シンボリックリンク"
+
+#: kfmview.cpp:1248
+#, c-format
+msgid "%s (Link)"
+msgstr "%s (リンク)"
+
+#: kfmview.cpp:1268
+msgid "bytes"
+msgstr "バイト"
+
+#: kbind.cpp:227
+msgid "The mime type config file "
+msgstr "MIMEタイプ設定ファイル"
+
+#: kbind.cpp:228
+msgid "does not contain a MimeType=... entry"
+msgstr "はMimeType=...エントリを含んでいません"
+
+#: kbind.cpp:309
+msgid "No mime types installed!"
+msgstr "mimeタイプがインストールされていません！"
+
+#: kbind.cpp:357 kbind.cpp:1177
+msgid "Could not find mime type\n"
+msgstr "mime typeが見つかりませんでした\n"
+
+#: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1942 kbind.cpp:1943 kbind.cpp:1955
+#: kbind.cpp:1957
+msgid "Mount"
+msgstr "マウント"
+
+#: kbind.cpp:643 kbind.cpp:1933
+msgid "Unmount"
+msgstr "マウント解除"
+
+#: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
+msgid "Folder"
+msgstr "フォルダ"
+
+#: kbind.cpp:1176
+msgid "ERROR"
+msgstr "エラー"
+
+#: kbind.cpp:1177
+msgid "in "
+msgstr "in "
+
+#: kbind.cpp:1312 kbind.cpp:1870
+msgid "ERROR: No Terminal Setting"
+msgstr "エラー: ターミナルの設定がありません"
+
+#: kbind.cpp:1387
+msgid "Could not execute program\n"
+msgstr "プログラムを実行できませんでした\n"
+
+#: kbind.cpp:1559
+msgid "Could not find binding"
+msgstr "割り当てを見つけられませんでした"
+
+#: kbind.cpp:1569
+msgid ""
+"This is a document!\n"
+"Not an application"
+msgstr ""
+"これは文書です！\n"
+"アプリケーションではありません"
+
+#: kbind.cpp:1587 kbind.cpp:1606
+msgid "Can only start executables on local disks\n"
+msgstr "ローカルディスク上の実行ファイルだけが実行できます\n"
+
+#: kbind.cpp:1665 kbind.cpp:1745 kbind.cpp:1908
+msgid ""
+"Can work with *.kdelnk files only\n"
+"on local hard disk"
+msgstr ""
+"ローカルディスク上の*.kdelnkファイル\n"
+"だけが動作可能です"
+
+#: kbind.cpp:1675
+#, c-format
+msgid ""
+"Could not access\n"
+"%s"
+msgstr ""
+"%s\n"
+"にアクセスできませんでした"
+
+#: kbind.cpp:1704
+msgid "The \"Link=....\" entry is empty"
+msgstr "\"Link=....\"エントリが空です"
+
+#: kbind.cpp:1725
+msgid "The config file has no \"Type=...\" line"
+msgstr "設定ファイルに\"Type=...\"行がありません"
+
+#: kbind.cpp:1755 kbind.cpp:1918
+msgid "Could not access"
+msgstr "アクセスできませんでした"
+
+#: kbind.cpp:1773
+msgid ""
+"This file does not contain an\n"
+"Exec=....\n"
+"entry. Edit the Properties\n"
+"to solve the problem"
+msgstr ""
+"このファイルは\n"
+"Exec=....エントリを含んでいません。\n"
+"この問題を解決するために\n"
+"プロパティを編集してください"
+
+#: kbind.cpp:1965
+msgid "No mount point in *.kdelnk file"
+msgstr "*.kdelnkファイルにマウント場所がありません"
+
+#: main.cpp:90 main.cpp:243
+msgid "KFM Information"
+msgstr "KFM 情報"
+
+#: main.cpp:91
+msgid "Creating directory:\n"
+msgstr "ディレクトリを作成中:\n"
+
+#: main.cpp:244
+msgid ""
+"A new KDE version has been installed.\n"
+"The Template files may have changed.\n"
+"\n"
+"Would you like to install the new ones?"
+msgstr ""
+"新しいバージョンのKDEがインストールされました。\n"
+"テンプレートファイルが変っているかも知れません。\n"
+"\n"
+"新しいものをインストールしますか？"
+
+#: main.cpp:281
+msgid "Cd"
+msgstr "Cd"
+
+#: main.cpp:282
+msgid "New View"
+msgstr "新しいビュー"
+
+#: kfmtree.cpp:402 main.cpp:285
+msgid "Move to Trash"
+msgstr "ゴミ箱に移動"
+
+#: main.cpp:287
+msgid "Open with"
+msgstr "アプリケーションで開く"
+
+#: kfmman.cpp:1694 kfmtree.cpp:331 main.cpp:289
+msgid "Move"
+msgstr "移動"
+
+#: kfmman.cpp:1698 kfmtree.cpp:335 main.cpp:291
+msgid "Link"
+msgstr "リンク"
+
+#: main.cpp:292
+msgid "Empty Trash Bin"
+msgstr "ゴミ箱を空に"
+
+#: main.cpp:293
+msgid "Add to Bookmarks"
+msgstr "ブックマークに追加"
+
+#: main.cpp:294
+msgid "Save settings for this URL"
+msgstr "このURLの設定を保存"
+
+#: main.cpp:295
+msgid "Show Menubar"
+msgstr "メニューバーを表示"
+
+#: kfmdlg.cpp:118
+msgid "&Browser"
+msgstr "ブラウザ(&B)"
+
+#: kfmdlg.cpp:130 kfmprops.cpp:771
+msgid "Run in terminal"
+msgstr "ターミナル内で実行"
+
+#: bookmark.cpp:304
+msgid "Could not write bookmark"
+msgstr "ブックマークを書けませんでした"
+
+#: kfmprops.cpp:239
+msgid "File Name"
+msgstr "ファイル名"
+
+#: kfmprops.cpp:254
+msgid "Full Name"
+msgstr "名前"
+
+#: kfmprops.cpp:271
+msgid "Is the Trash Bin"
+msgstr "ゴミ箱です"
+
+#: kfmprops.cpp:278
+msgid "Is a Directory"
+msgstr "ディレクトリです"
+
+#: kfmprops.cpp:285
+msgid "Points to"
+msgstr "を指す"
+
+#: kfmprops.cpp:310
+#, c-format
+msgid "Size: %i"
+msgstr "サイズ: %i"
+
+#: kfmprops.cpp:320
+msgid "Last Access"
+msgstr "最終アクセス"
+
+#: kfmprops.cpp:330
+msgid "Last Modified"
+msgstr "最終変更"
+
+#: kfmprops.cpp:383
+#, c-format
+msgid ""
+"Could not rename the file or directory\n"
+"%s\n"
+msgstr ""
+"ファイル/ディレクトリの名前を変更できませんでした\n"
+"%s\n"
+
+#: kfmprops.cpp:434
+msgid "Access permissions"
+msgstr "アクセス許可情報"
+
+#: kfmprops.cpp:440
+msgid ""
+"Show\n"
+"Entries"
+msgstr ""
+"エントリを\n"
+"表示"
+
+#: kfmprops.cpp:442
+msgid "Read"
+msgstr "読む"
+
+#: kfmprops.cpp:447
+msgid ""
+"Write\n"
+"Entries"
+msgstr ""
+"エントリを\n"
+"書く"
+
+#: kfmprops.cpp:449
+msgid "Write"
+msgstr "書く"
+
+#: kfmprops.cpp:454
+msgid ""
+"Change\n"
+"Into"
+msgstr ""
+"次のように\n"
+"変更"
+
+#: kfmprops.cpp:456
+msgid "Exec"
+msgstr "実行"
+
+#: kfmprops.cpp:460
+msgid "Special"
+msgstr "特別"
+
+#: kfmprops.cpp:464
+msgid "User"
+msgstr "ユーザ"
+
+#: kfmprops.cpp:469 kfmprops.cpp:568
+msgid "Group"
+msgstr "グループ"
+
+#: kfmprops.cpp:474
+msgid "Others"
+msgstr "その他"
+
+#: kfmprops.cpp:487
+msgid "Set UID"
+msgstr "UIDを設定"
+
+#: kfmprops.cpp:488
+msgid "Set GID"
+msgstr "GIDを設定"
+
+#: kfmprops.cpp:489
+msgid "Sticky"
+msgstr "常に表示"
+
+#: kfmprops.cpp:507
+msgid "Ownership"
+msgstr "所有権"
+
+#: kfmprops.cpp:513
+msgid "Owner"
+msgstr "所有者"
+
+#: kfmprops.cpp:643
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " エラー: ユーザ%sは存在しません"
+
+#: kfmprops.cpp:648
+#, c-format
+msgid " ERROR: No group %s"
+msgstr " エラー: グループ%sは存在しません"
+
+#: kfmprops.cpp:654
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"所有者/グループが変更できませんでした\n"
+"たぶんアクセスが拒否されました。"
+
+#: kfmprops.cpp:661
+msgid ""
+"Could not change permissions\n"
+"Perhaps access denied."
+msgstr ""
+"許可情報を変更できませんでした\n"
+"たぶんアクセスが拒否されました。"
+
+#: kfmprops.cpp:674 kfmprops.cpp:737
+msgid "Execute"
+msgstr "実行"
+
+#: kfmprops.cpp:690 kfmprops.cpp:1177
+msgid "&Browse..."
+msgstr "ブラウズ(&B)..."
+
+#: kfmprops.cpp:724
+msgid "Swallowing on panel"
+msgstr "パネル上で実行"
+
+#: kfmprops.cpp:751
+msgid "Window Title"
+msgstr "ウィンドウタイトル"
+
+#: kfmprops.cpp:779
+msgid "Terminal Options"
+msgstr "ターミナルオプション"
+
+#: kfmprops.cpp:955 kfmprops.cpp:1094 kfmprops.cpp:1727 kfmprops.cpp:2088
+#: kfmprops.cpp:2270
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"プロパティを保存できませんでした\n"
+"多分許可が与えられていません"
+
+#: kfmprops.cpp:1007
+msgid "URL"
+msgstr "URL"
+
+#: kfmprops.cpp:1116
+msgid "Background"
+msgstr "背景"
+
+#: kfmprops.cpp:1126
+msgid "Apply global"
+msgstr "全部に適用"
+
+#: kfmprops.cpp:1164 kfmprops.cpp:1234 kfmprops.cpp:1318
+msgid "(Default)"
+msgstr "(標準)"
+
+#: kfmprops.cpp:1223
+msgid "Could not write to\n"
+msgstr "次のファイルに書込めませんでした\n"
+
+#: kfmprops.cpp:1383
+msgid "(None)"
+msgstr "(なし)"
+
+#: kfmprops.cpp:1429
+msgid "Binary Pattern (netscape;Netscape;)"
+msgstr "バイナリパターン (netscape;Netscape;)"
+
+#: kfmprops.cpp:1436 kfmprops.cpp:1831
+msgid "Comment"
+msgstr "コメント"
+
+#: kfmprops.cpp:1447
+msgid "Name ( in your language )"
+msgstr "名前 (日本語で)"
+
+#: kfmprops.cpp:1808
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "パターン (例: *.html;*.HTML; )"
+
+#: kfmprops.cpp:1820
+msgid "Mime Type"
+msgstr "Mimeタイプ"
+
+#: kfmprops.cpp:1849
+msgid "Default Application"
+msgstr "標準アプリケーション"
+
+#: kfmprops.cpp:1889
+msgid "<none>"
+msgstr "<なし>"
+
+#: kfmprops.cpp:2134
+msgid "Device ( /dev/fd0 )"
+msgstr "デバイス ( /dev/fd0 )"
+
+#: kfmprops.cpp:2143
+msgid "Mount Point ( /floppy )"
+msgstr "マウント場所 ( /floppy )"
+
+#: kfmprops.cpp:2154
+msgid "Readonly"
+msgstr "読み込み専用"
+
+#: kfmprops.cpp:2160
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "ファイルシステム ( iso9660,msdos,minix,default )"
+
+#: kfmprops.cpp:2171
+msgid "Mounted Icon"
+msgstr "マウントされたアイコン"
+
+#: kfmprops.cpp:2176
+msgid "Unmounted Icon"
+msgstr "マウント解除されたアイコン"
+
+#: kfmserver.cpp:47
+msgid "Could not create ~/.kde/share/apps/kfm/magic"
+msgstr "~/.kde/share/apps/kfm/magicを作成できませんでした"
+
+#: kfmserver.cpp:130
+msgid "Do you really want to rearrange your icons ?"
+msgstr "本当にアイコンを再配置しますか？"
+
+#: kfmserver.cpp:310
+#, c-format
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed"
+msgstr ""
+"URL\n"
+"%s\n"
+"はおかしいです。"
+
+#: kfmserver.cpp:361
+msgid ""
+"You dont have the file ~/.kde/share/apps/kfm/magic\n"
+"Authorization failed"
+msgstr ""
+"~/.kde/share/apps/kfm/magicがありません。\n"
+"認証に失敗しました"
+
+#: kfmserver.cpp:370
+msgid ""
+"The file ~/.kde/share/apps/kfm/magic is corrupted\n"
+"Authorization failed"
+msgstr ""
+"~/.kde/share/apps/kfm/magicが壊れています\n"
+"認証に失敗しました"
+
+#: kfmserver.cpp:378
+msgid ""
+"Someone tried to authorize himself\n"
+"using a wrong password"
+msgstr ""
+"誰かが誤ったパスワードを使って\n"
+"認証しようとしました。"
+
+#: root.cpp:734
+msgid ""
+"Cannot execute request.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
+msgstr ""
+"要求を実行できませんでした。\n"
+"新しいルートグリッドの大きさはいくつかのアイコンを\n"
+"デスクトップの外に動かしてしまいます。"
+
+#: root.cpp:769
+msgid "Internal Error: desktopDir is malformed"
+msgstr "内部エラー: desktopDirがおかしくなっています"
+
+#: root.cpp:780
+#, c-format
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "エラー: デスクトップディレクトリ'%s'を読めませんでした。"
+
+#: kfmman.cpp:1680 root.cpp:992 root.cpp:1012
+msgid "ERROR: Can not accept drop"
+msgstr "エラー: ドロップを受付できません"
+
+#: kfmman.cpp:1657 kfmman.cpp:1703 kfmtree.cpp:340 root.cpp:1865 root.cpp:1890
+msgid "Dont know what to do."
+msgstr "するべきことがわかりません。"
+
+#: kfmexec.cpp:117 kfmman.cpp:371
+msgid "The file does not contain a URL"
+msgstr "そのファイルはURLを含んでいません"
+
+#: kfmman.cpp:519
+msgid "Contacting host "
+msgstr "ホストに接続中 "
+
+#: kfmman.cpp:523
+msgid "Working ..."
+msgstr "実行中 ..."
+
+#: kiojob.cpp:140
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr "内部エラー: 少なくともマウントするデバイスを指定しなくてはいけません"
+
+#: kiojob.cpp:243 kiojob.cpp:251 kiojob.cpp:1340 kiojob.cpp:1419
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"おかしなURL\n"
+"%s"
+
+#: kiojob.cpp:260
+msgid "Can only make links on local file system"
+msgstr "ローカルファイルシステム上のリンクしか作成できません"
+
+#: kiojob.cpp:283 kiojob.cpp:302
+#, c-format
+msgid ""
+"Could not overwrite\n"
+"%s"
+msgstr ""
+"上書きできませんでした\n"
+"%s"
+
+#: kiojob.cpp:312 kiojob.cpp:337 kiojob.cpp:356
+#, c-format
+msgid ""
+"Could not make symlink to\n"
+"%s"
+msgstr ""
+"シンボリックリンクを作成できませんでした\n"
+"%s"
+
+#: kiojob.cpp:392
+#, c-format
+msgid " ERROR: Could not write to %s"
+msgstr " エラー: %sに書けませんでした"
+
+#: kiojob.cpp:573 kiojob.cpp:896
+#, c-format
+msgid ""
+"Could not make symbolic link\n"
+"%s"
+msgstr ""
+"シンボリックリンクを作成できませんでした\n"
+"%s"
+
+#: kiojob.cpp:591 kiojob.cpp:926 kiojob.cpp:1366
+#, c-format
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"ディレクトリを作成できませんでした\n"
+"%s"
+
+#: kiojob.cpp:603 kiojob.cpp:1173
+#, c-format
+msgid "ERROR: Could not access directory '%s'"
+msgstr "エラー: ディレクトリ'%s'にアクセスできませんでした"
+
+#: kiojob.cpp:667
+#, c-format
+msgid ""
+"Special file will not be copied\n"
+"%s"
+msgstr ""
+"スペシャルファイルはコピーされません\n"
+"%s"
+
+#: kiojob.cpp:669
+#, c-format
+msgid "%d special files will not be copied."
+msgstr "%d個のスペシャルファイルがコピーされません。"
+
+#: kiojob.cpp:674
+msgid ""
+"Recurse copying from file with sub-protocol\n"
+"(for instance, tar files)"
+msgstr ""
+
+#: kiojob.cpp:679
+msgid "Recurse copying from/to distant locations"
+msgstr ""
+
+#: kiojob.cpp:909
+#, c-format
+msgid ""
+"Could not remove symbolic link\n"
+"%s"
+msgstr ""
+"シンボリックリンクを削除できませんでした\n"
+"%s"
+
+#: kiojob.cpp:957
+#, c-format
+msgid ""
+"Could not access directory\n"
+"%s"
+msgstr ""
+"ディレクトリにアクセスできませんでした\n"
+"%s"
+
+#: kiojob.cpp:1005
+#, c-format
+msgid ""
+"Could not move directory\n"
+"%s\n"
+"to %s\n"
+"Perhaps access denied"
+msgstr ""
+"ディレクトリ\n"
+"%sを\n"
+"%sに\n"
+"移動できませんでした\n"
+"たぶんアクセスが拒否されました"
+
+#: kiojob.cpp:1077
+#, c-format
+msgid ""
+"Special file will not be moved\n"
+"%s"
+msgstr ""
+"巣ペシャリファイルは移動されません\n"
+"%s"
+
+#: kiojob.cpp:1079
+#, c-format
+msgid "%d special files will not be moved."
+msgstr "%d個のスペシャルファイルが移動されません。"
+
+#: kiojob.cpp:1343 kiojob.cpp:1423
+#, c-format
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"%s\n"
+"を読めませんでした\n"
+"ファイルが無いかアクセスが拒否されました"
+
+#: kiojob.cpp:1346
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"%s\n"
+"に書けませんでした\n"
+"たぶんアクセスが拒否されました"
+
+#: kiojob.cpp:1351 kiojob.cpp:1427
+#, c-format
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr ""
+"%s\n"
+"のためのソケットが作成できませんでした"
+
+#: kiojob.cpp:1354 kiojob.cpp:1431
+#, c-format
+msgid ""
+"Unknown host in\n"
+"%s"
+msgstr ""
+"%s\n"
+"は未知のホストです。"
+
+#: kiojob.cpp:1358 kiojob.cpp:1435
+#, c-format
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr ""
+"%s\n"
+"に接続できませんでした。"
+
+#: kiojob.cpp:1362 kiojob.cpp:1439
+#, c-format
+msgid ""
+"The requested action\n"
+"%s\n"
+"is not implemented yet."
+msgstr ""
+"要求された動作\n"
+"%s\n"
+"はまだ実装されていません。"
+
+#: kiojob.cpp:1370
+#, c-format
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"ディレクトリの内容をリスト表示できませんでした\n"
+"%s"
+
+#: kiojob.cpp:1374
+#, c-format
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"%s\n"
+"を削除できませんでした\n"
+"URLが存在しないか許可が与えられていません"
+
+#: kiojob.cpp:1378 kiojob.cpp:1444
+#, c-format
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"%s\n"
+"にログインできませんでした\n"
+"たぶんパスワードが間違っています"
+
+#: kiojob.cpp:1390
+#, c-format
+msgid ""
+"Tar reported an error\n"
+"%s"
+msgstr ""
+"Tarでエラーが発生しました\n"
+"%s"
+
+#: kiojob.cpp:1393
+#, c-format
+msgid ""
+"Gzip reported an error for\n"
+"%s"
+msgstr ""
+"Gziが次のエラーを報告しました\n"
+"%s"
+
+#: kiojob.cpp:1399
+msgid "Operation technically impossible"
+msgstr "操作が技術的に不可能です"
+
+#: kiojob.cpp:1402 kiojob.cpp:1415
+#, c-format
+msgid ""
+"File %s\n"
+"does not exist"
+msgstr ""
+"ファイル %s\n"
+"がありません"
+
+#: kiojob.cpp:1405
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps disk full"
+msgstr ""
+"次のファイルに書けませんでした\n"
+"%s\n"
+"たぶんディスクが一杯です"
+
+#: kiojob.cpp:1456
+#, c-format
+msgid ""
+"Tar reported a fatal error\n"
+"%s"
+msgstr ""
+"Tarで致命的なエラーが発生しました\n"
+"%s"
+
+#: kiojob.cpp:1460
+#, c-format
+msgid ""
+"Gzip reported a fatal error\n"
+"%s"
+msgstr ""
+"Gzipで致命的なエラーが発生しました\n"
+"%s"
+
+#: kiojob.cpp:1464
+#, c-format
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"マウントできませんでした\n"
+"エラーログ:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1468
+#, c-format
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"マウント解除できませんでした\n"
+"エラーログ:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1579
+msgid "Making directory"
+msgstr "ディレクトリ作成中"
+
+#: kiojob.cpp:1699 kiojob.cpp:1760 kiojob.cpp:1809
+#, c-format
+msgid "File %i/%i"
+msgstr "ファイル %i/%i"
+
+#: kiojob.cpp:1709 kiojob.cpp:1771
+#, c-format
+msgid "to %s"
+msgstr "%sに"
+
+#: kiojob.cpp:1740
+#, c-format
+msgid ""
+"Could not delete directory\n"
+"%s"
+msgstr ""
+"ディレクトリを削除できませんでした\n"
+"%s"
+
+#: kiojob.cpp:1842
+#, c-format
+msgid "Mounting %s ..."
+msgstr "%sをマウント中..."
+
+#: kiojob.cpp:1844
+#, c-format
+msgid "Unmounting %s ..."
+msgstr "%sをマウント解除中..."
+
+#: kiojob.cpp:1872
+#, c-format
+msgid "Retrieving listing of %s"
+msgstr "%sのリストを取得中"
+
+#: kiojob.cpp:2113
+msgid "Segmentation fault in io subprocess"
+msgstr "ioサブプロセスでセグメンテーションフォルト"
+
+#: htmlcache.cpp:364
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+" はディレクトリではありません！ セキュリティ警告！\n"
+"確認してください。\n"
+
+#: htmlcache.cpp:397
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
+" はディレクトリではありません！ セキュリティ警告！\n"
+"キャッシュをクリアする前に確認してください。\n"
+
+#: autostart.cpp:28
+msgid "KFM Installation Error"
+msgstr "KFMインストールエラー"
+
+#: autostart.cpp:29
+msgid "The directory "
+msgstr "ディレクトリ"
+
+#: autostart.cpp:30
+msgid " does not exist\n"
+msgstr " は存在しません\n"
+
+#: kfmtree.cpp:409
+msgid "Add To Bookmarks"
+msgstr "ブックマークに追加"
+
+#: kfmtree.cpp:587
+msgid "My Home"
+msgstr "ホーム"
+
+#: kfmtree.cpp:589
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: kfmtree.cpp:591
+msgid "Root"
+msgstr "ルート"
+
+#: krenamewin.cpp:30
+msgid "Rename"
+msgstr "名前を変更"
+
+#: krenamewin.cpp:35
+msgid "Skip"
+msgstr "スキップ"
+
+#: krenamewin.cpp:40
+msgid "Overwrite"
+msgstr "上書き"
+
+#: krenamewin.cpp:45
+msgid "Overwrite All"
+msgstr "全てを上書き"
+
+#: krenamewin.cpp:56
+msgid "You try to overwrite"
+msgstr "上書きしようとしています"
+
+#: krenamewin.cpp:67
+msgid "already exists. Overwrite with"
+msgstr "は既に存在します。以下でオーバーライト"
+
+#: krenamewin.cpp:75
+msgid "Or rename to"
+msgstr "または以下に名前を変更"
+
+#: krenamewin.cpp:125
+msgid "You did not change the name!\n"
+msgstr "名前を変更しませんでした！\n"
+
+#: passworddialog.cpp:50 passworddialog.cpp:113
+msgid "Password"
+msgstr "パスワード"
+
+#: kfmexec.cpp:165
+msgid "Trying to open"
+msgstr "開こうとしています"
+
+#: open-with.cpp:132
+msgid "This group is empty!"
+msgstr "グループは空です！"
+
+#: finddlg.cpp:41
+msgid "Find:"
+msgstr "検索:"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
+msgstr "大文字小文字を区別(&s)"
+
+#: kcookiewin.cpp:58
+msgid "Cookie Alert!"
+msgstr "Cookie警告！"
+
+#: kcookiewin.cpp:76
+msgid "You received a cookie from host:"
+msgstr "以下のホストからcookieを受け取りました"
+
+#: kcookiewin.cpp:89
+msgid "Do you want to accept or reject this cookie?"
+msgstr "このcookieを受付しますか、それとも拒否しますか？"
+
+#: kcookiewin.cpp:120
+msgid "Apply to "
+msgstr "以下に適用"
+
+#: kcookiewin.cpp:125
+msgid "&This cookie only"
+msgstr "このcookieだけ(&T)"
+
+#: kcookiewin.cpp:133
+msgid "All cookies from this &domain"
+msgstr "このドメインからの全てのcookie(&d)"
+
+#: kcookiewin.cpp:140
+msgid "All &cookies"
+msgstr "全てのcookie(&c)"
+
+#: kcookiewin.cpp:161
+msgid "&Accept"
+msgstr "&受付"
+
+#: kcookiewin.cpp:166
+msgid "&Reject"
+msgstr "&拒否"
+
+#: popup.cpp:73
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "エラー: テンプレートが存在しません '%s'"
+
+#: popup.cpp:110
+msgid ""
+"Source file doesn't exist anymore ! \n"
+"Use \"Rescan Bindings\" in View menu to update the menu"
+msgstr ""
+"これ以上ソースファイルがありません！\n"
+"メニューの更新にはビューメニューの\"割り当ての再スキャン\"を使って下さい"
+
+#: popup.cpp:121 popup.cpp:128
+msgid "New "
+msgstr "新規作成 "
+
+#: kfmprops.h:73
+msgid "&General"
+msgstr "一般(&G)"
+
+#: kfmprops.h:106
+msgid "&Permissions"
+msgstr "許可情報(&P)"
+
+#: kfmprops.h:200
+msgid "E&xecute"
+msgstr "実行(&x)"
+
+#: kfmprops.h:246
+msgid "U&RL"
+msgstr "URL(&R)"
+
+#: kfmprops.h:270
+msgid "&Dir"
+msgstr "ディレクトリ(&D)"
+
+#: kfmprops.h:317
+msgid "&Application"
+msgstr "アプリケーション(&A)"
+
+#: kfmprops.h:361
+msgid "&Binding"
+msgstr "割り当て(&B)"
+
+#: kfmprops.h:386
+msgid "De&vice"
+msgstr "デバイス(&v)"
+
+#: kfmexec/main.cpp:46
+#, c-format
+msgid ""
+"The URL %s\n"
+"is malformed"
+msgstr ""
+"URL %s\n"
+"はおかしいです"
+
+#: kfmexec/main.cpp:135
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"ファイル\n"
+"%s\n"
+"は変更されています。\n"
+"保存しますか？"
+
+#: kfmexec/main.cpp:136
+msgid "KFM Question"
+msgstr "KFM 質問"
+
+#: kfmexec/main.cpp:202
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
+msgstr ""

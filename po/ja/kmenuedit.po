@@ -1,0 +1,270 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"PO-Revision-Date: 1999-01-29 0O:00+0900\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japanese <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kmenuedit.cpp:69
+msgid "Change &Menuname"
+msgstr "メニュー名を変更(&M)"
+
+#: kmenuedit.cpp:70
+msgid "Reload &Filetypes"
+msgstr "ファイルタイプを再読み込み(&F)"
+
+#: kmenuedit.cpp:77
+msgid "by"
+msgstr "で"
+
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
+msgid "Changes not saved !"
+msgstr "変更が保存されませんでした！"
+
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"変更を保存しますか？"
+
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+msgid "EMPTY"
+msgstr "空"
+
+#: kmenuedit.cpp:343
+msgid "Reload Menus"
+msgstr "メニューを再読み込み"
+
+#: kmenuedit.cpp:344
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"メニューの再読み込みは全ての変更を無効にします。\n"
+"本当に再読み込みをしますか？"
+
+#: button.cpp:209 main.cpp:79 main.cpp:92
+msgid "KMenuedit"
+msgstr "KMenuedit"
+
+#: main.cpp:80
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"あなたの個人メニュー用のディレクトリがありません。\n"
+" 今作りますか？"
+
+#: main.cpp:93
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"個人メニュー用のディレクトリが作成できません。\n"
+" KMenueditを終了するためにOKを選択してください。"
+
+#: confmenu.cpp:91 entrydialog.cpp:60
+msgid "Separator"
+msgstr "セパレータ"
+
+#: confmenu.cpp:103 confmenu.cpp:335
+msgid "Open/ Close"
+msgstr "開く/ 閉じる"
+
+#: confmenu.cpp:117
+msgid "Select item for moving"
+msgstr "移動するアイテムを選択"
+
+#: confmenu.cpp:118
+msgid "Select menu for moving"
+msgstr "移動するメニューを選択"
+
+#: confmenu.cpp:120
+msgid "New"
+msgstr "新規作成"
+
+#: confmenu.cpp:177 confmenu.cpp:318
+msgid "Warning !"
+msgstr "警告！"
+
+#: confmenu.cpp:178
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "このボタンを削除するとその全てのサブメニューも失われます"
+
+#: confmenu.cpp:297
+msgid "Wrong filename"
+msgstr "悪いファイル名"
+
+#: confmenu.cpp:298
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"この名前のkdelnkファイルはすでにあります。\n"
+"他のファイル名を選んでください。"
+
+#: confmenu.cpp:319
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "このボタンのタイプの変更でその全てのサブメニューも削除されます"
+
+#: confmenu.cpp:340 confmenu.cpp:940
+msgid "no command"
+msgstr "コマンドなし"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"すみません！このアイテムを他のウィンドウに\n"
+"ドロップする前に変更を保存しなければいけません。"
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "KDEデスクトップエントリへのパスが設定されていません。"
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "以下のエントリをお薦めします:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "パス:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "個人パス:"
+
+#: entrydialog.cpp:61
+msgid "Submenu"
+msgstr "サブメニュー"
+
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
+msgid "Application"
+msgstr "アプリケーション"
+
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+msgid "Swallow"
+msgstr "スワロー"
+
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+msgid "Link"
+msgstr "リンク"
+
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+msgid "Device"
+msgstr "デバイス"
+
+#: entrydialog.cpp:72
+msgid "Type:"
+msgstr "タイプ:"
+
+#: entrydialog.cpp:79
+msgid "File Name:"
+msgstr "ファイル名:"
+
+#: entrydialog.cpp:94
+msgid "Name:"
+msgstr "名前:"
+
+#: entrydialog.cpp:109
+msgid "Icon:"
+msgstr "アイコン:"
+
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "小アイコン:"
+
+#: entrydialog.cpp:149
+msgid "Comment:"
+msgstr "コメント:"
+
+#: entrydialog.cpp:196 entrydialog.cpp:538
+msgid "Execute"
+msgstr "実行"
+
+#: entrydialog.cpp:222
+msgid "Execute:"
+msgstr "実行:"
+
+#: entrydialog.cpp:228
+msgid "Working Directory:"
+msgstr "作業用ディレクトリ:"
+
+#: entrydialog.cpp:241
+msgid "Run in terminal"
+msgstr "ターミナルで実行"
+
+#: entrydialog.cpp:245
+msgid "Terminal Options:"
+msgstr "ターミナルオプション:"
+
+#: entrydialog.cpp:310
+msgid "Binary Pattern:"
+msgstr "バイナリパターン:"
+
+#: entrydialog.cpp:325
+msgid "Application to swallow:"
+msgstr "スワローするアプリケーション:"
+
+#: entrydialog.cpp:331
+msgid "Title of application:"
+msgstr "アプリケーションのタイトル:"
+
+#: entrydialog.cpp:337
+msgid "Application to execute on button press:"
+msgstr "ボタンプレスで実行するアプリケーション:"
+
+#: entrydialog.cpp:367
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:415
+msgid "Read Only"
+msgstr "読み込み専用"
+
+#: entrydialog.cpp:420
+msgid "Device:"
+msgstr "デバイス:"
+
+#: entrydialog.cpp:425
+msgid "Mount Point:"
+msgstr "マウント位置:"
+
+#: entrydialog.cpp:430
+msgid "FS Type:"
+msgstr "FSタイプ:"
+
+#: entrydialog.cpp:435
+msgid "Unmount Icon:"
+msgstr "マウント解除アイコン:"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "メニュー名変更"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "メニューの名前をkpanelに表示されているように変更"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "個人:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "標準:"

@@ -1,0 +1,202 @@
+# Japanized kcmsyssound.po
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Masanori Hanawa <hanawa@es.yamanashi.ac.jp>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsyssound\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1999-01-24 20:00+0900\n"
+"Last-Translator: 塙 雅典(Masanori Hanawa) <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: 日本 <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "サウンド(&S)"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "システムサウンド"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr "(なし)"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "デスクトップ１に変更"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "デスクトップ２に変更"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "デスクトップ３に変更"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "デスクトップ４に変更"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "デスクトップ５に変更"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "デスクトップ６に変更"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "デスクトップ７に変更"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "デスクトップ８に変更"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "ウィンドウを活性化"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "新しいウィンドウを開く"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "ウィンドウを閉じる"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "起動"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "ウィンドウを隠す"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "ウィンドウを戻す"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "アイコン化"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "アイコン化解除"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "最大化"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "最大化解除"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "常に表示"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "常に表示を解除"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr ""
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr ""
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "ログアウト"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "ログアウトメッセージ"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "移動開始"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "移動終了"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "サイズ変更開始"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "サイズ変更終了"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "システムサウンドを有効に(&n)"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "テスト(&T)"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "イベント(&E)"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "サウンド(&S):"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "追加のWAVファイルをサウンドリスト上にドロップできます。"
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "サポートされないURL"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"すみません、この種のURLは現在KDEシステムサウンドモジュールでは "
+"サポートされていません。"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"すみません、しかし \n"
+"%s\n"
+"はWAVファイルではないようです。"
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "不適切なファイル拡張子"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"ファイル\n"
+"%s\n"
+"は既にリストにあります"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "ファイルは既にリストにあります"
+

@@ -1,0 +1,219 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"PO-Revision-Date: 1999-01-29 23:00+0900\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japanese <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "標準ショートカット(&S)"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "広域ショートカット(&G)"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "利用法: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "キー割り当て設定"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "現在のスキーム"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "KDE標準"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "キースキーム(&K)"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "追加 ...(&A)"
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "変更を保存(&S)"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "スキーム削除エラー"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"このスキームは削除できませんでした。\n"
+"たぶんあなたはそのキースキームが保管されている\n"
+"ファイルシステムを置き換える許可を与えられていません。"
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "名前の衝突"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"新しいキースキームには一意な名前を選択してください\n"
+"あなたが入力した名前は既にキースキームリストに\n"
+"存在しています。"
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "新しいキースキームを追加"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"あなたの個人リストに追加する新しい\n"
+"キースキームの名前を入力してください。(&E)\n"
+"\n"
+"プレビューで現在使われているキーは\n"
+"始めにこのスキームにコピーされます。"
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "タスクマネージャ"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "ウィンドウモードを削除"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "コマンドを実行"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "ウィンドウ操作メニュー"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "ポップアップシステムメニュー"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "ウィンドウを前面へ"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "ウィンドウを背面へ"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "ウィンドウを閉じる"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "ウィンドウをアイコン化"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "ウィンドウサイズを変更"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "ウィンドウを移動"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "常に表示か否かの切替"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "デスクトップ１に変更"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "デスクトップ２に変更"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "デスクトップ３に変更"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "デスクトップ４に変更"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "デスクトップ５に変更"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "デスクトップ６に変更"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "デスクトップ７に変更"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "デスクトップ８に変更"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "右のデスクトップに変更"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "左のデスクトップに変更"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "上のデスクトップに変更"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "下のデスクトップに変更"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "新規作成"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "次"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "前"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "検索"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "ホーム"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "終了"

@@ -1,0 +1,76 @@
+# Japanized kbgndwm.po
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Masanori Hanawa <hanawa@es.yamanashi.ac.jp>, 1999
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kbgndwm\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-23 20:00+0900\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japanese <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "ディスプレイの設定"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "背景の設定"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "共通の背景"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "ドック化解除"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "タイル状に配置"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "鏡像配置"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "中央からタイル状に配置"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "中央に配置"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "中央に配置し周囲にブロック"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "中央に配置し周囲にワープ"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "中央に最大サイズで配置"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "対称かつタイル状に配置"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "対称かつ鏡像状に配置"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "スケールして配置"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "壁紙なし"
+

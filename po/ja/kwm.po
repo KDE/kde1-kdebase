@@ -1,0 +1,176 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"PO-Revision-Date: Tue May 4 1999 08:23:39+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr ""
+
+#: main.C:527
+msgid "Preparing session ... "
+msgstr "セッションを準備中 ... "
+
+#: main.C:551
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:558
+msgid "Usage: "
+msgstr "利用法: "
+
+#: main.C:569
+msgid "&Maximize"
+msgstr "最大化(&M)"
+
+#: main.C:570
+msgid "&Restore"
+msgstr "元に戻す(&R)"
+
+#: main.C:571
+msgid "&Iconify"
+msgstr "アイコン化(&I)"
+
+#: main.C:572
+msgid "&DeIconify"
+msgstr "アイコン化解除(&D)"
+
+#: main.C:573
+msgid "&Sticky"
+msgstr "常に表示(&S)"
+
+#: main.C:574
+msgid "&UnSticky"
+msgstr "常に表示を解除(&U)"
+
+#: main.C:575
+msgid "Mo&ve"
+msgstr "移動(&v)"
+
+#: main.C:576
+msgid "Resi&ze"
+msgstr "サイズ変更(&z)"
+
+#: main.C:578
+msgid "&To desktop"
+msgstr "デスクトップを移動(&T)"
+
+#: main.C:580
+msgid "&Onto current desktop"
+msgstr "現在のデスクトップに(&O)"
+
+#: main.C:620
+msgid "One"
+msgstr "１"
+
+#: main.C:623
+msgid "Two"
+msgstr "２"
+
+#: main.C:626
+msgid "Three"
+msgstr "３"
+
+#: main.C:629
+msgid "Four"
+msgstr "４"
+
+#: main.C:632
+msgid "Five"
+msgstr "５"
+
+#: main.C:635
+msgid "Six"
+msgstr "６"
+
+#: main.C:638
+msgid "Seven"
+msgstr "７"
+
+#: main.C:641
+msgid "Eight"
+msgstr "８"
+
+#: main.C:655
+msgid "Unnamed Desktop"
+msgstr "名前のないデスクトップ"
+
+#: main.C:1082
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "いくつかのピックスマップが使えません: ShapeModeは無効です\n"
+
+#: main.C:1199
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "いくつかのピックスマップが使えません: GimmickModeは無効です\n"
+
+#: main.C:1531
+msgid "*** No Tasks ***"
+msgstr "*** タスクなし ***"
+
+#: minicli.C:201
+msgid "Command:"
+msgstr "コマンド:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "おっとぉ！"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "ログアウト"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "ログアウトの準備ができました"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"以下のアプリケーションは次のセッションでは失われる\n"
+"保存していないデータを含んでいます。"
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"以下のアプリケーションは次のセッションでは再起動されるだけで元に戻りません。\n"
+"これらに未保存の重要なデータが含まれていないか確認してください。"
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"以下のアプリケーションはX11-awareではなく、次のセッションでは元に戻せません。\n"
+"これらに未保存の重要なデータが含まれていないか確認してください。"
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "次に変更"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "現在のセッション"

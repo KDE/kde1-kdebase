@@ -1,0 +1,131 @@
+# KTranslator Generated File
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-03-26 01:17+0100\n"
+"PO-Revision-Date: Tue May 4 1999 08:22:11+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@es.yamanashi.ac.jp>\n"
+"Language-Team: Japan <kde-jp@albert.nikkeibp.co.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
+
+#: krootwm.C:234 krootwm.C:281
+msgid "Execute command"
+msgstr "コマンドを実行"
+
+#: krootwm.C:236 krootwm.C:305
+msgid "Lock screen"
+msgstr "スクリーンをロック"
+
+#: krootwm.C:237 krootwm.C:306
+msgid "Logout"
+msgstr "ログアウト"
+
+#: krootwm.C:245 krootwm.C:283
+msgid "Refresh desktop"
+msgstr "デスクトップを更新"
+
+#: krootwm.C:246 krootwm.C:285
+msgid "Unclutter windows"
+msgstr "ウィンドウを整頓"
+
+#: krootwm.C:247 krootwm.C:286
+msgid "Cascade windows"
+msgstr "ウィンドウをカスケード"
+
+#: krootwm.C:248 krootwm.C:287
+msgid "Arrange icons"
+msgstr "アイコンを配置"
+
+#: krootwm.C:249 krootwm.C:282
+msgid "Display properties"
+msgstr "ディスプレイ設定"
+
+#: krootwm.C:257 krootwm.C:280
+msgid "Help on desktop"
+msgstr "デスクトップについてのヘルプ"
+
+#: krootwm.C:258
+msgid "About KDE..."
+msgstr "KDEについて..."
+
+#: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
+msgid "New"
+msgstr "新規作成"
+
+#: krootwm.C:277 krootwm.C:316
+msgid "Bookmarks"
+msgstr "ブックマーク"
+
+#: krootwm.C:291
+msgid "Arrange Window Maker icons"
+msgstr "ウィンドウメーカアイコンをアレンジ"
+
+#: krootwm.C:292
+msgid "Show all"
+msgstr "全てを表示"
+
+#: krootwm.C:293
+msgid "Hide other"
+msgstr "他を隠す"
+
+#: krootwm.C:295
+msgid "Show info panel"
+msgstr "情報パネルを表示"
+
+#: krootwm.C:296
+msgid "Show legal panel"
+msgstr "リーガルパネルを表示"
+
+#: krootwm.C:297
+msgid "Restart"
+msgstr "再起動"
+
+#: krootwm.C:299
+msgid "Exit"
+msgstr "終了"
+
+#: krootwm.C:300
+msgid "Window Maker"
+msgstr "ウィンドウメーカ"
+
+#: krootwm.C:317
+msgid "Desk"
+msgstr "デスク"
+
+#: krootwm.C:318
+msgid "Windows"
+msgstr "ウィンドウ"
+
+#: krootwm.C:381
+msgid "Edit Bookmarks"
+msgstr "ブックマークを編集"
+
+#: krootwm.C:395 krootwm.C:833
+msgid "Folder"
+msgstr "フォルダ"
+
+#: krootwm.C:399
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "エラー: テンプレートがありません'%s'"
+
+#: krootwm.C:854
+msgid "Could not create folder"
+msgstr "フォルダが作成できませんでした"
+
+#: krootwm.C:938
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: krootwm.C:942
+msgid "Usage:"
+msgstr ""
