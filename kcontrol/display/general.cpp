@@ -564,8 +564,6 @@ void KGeneral::apply( bool  )
 	
 	XFree((char *) rootwins);
 	
-	KWM::sendKWMCommand("kpanel:restart");
-	
 	changed=false;
 }
 
