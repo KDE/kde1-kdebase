@@ -62,6 +62,7 @@ TopLevel::TopLevel (ConfigList *cl)
   KConfig *config = kapp->getConfig();
   config->setGroup("Options");
   KModuleListEntry::swallowingEnabled = config->readNumEntry("SwallowEnabled", TRUE);
+  options->setItemChecked(swallowID, KModuleListEntry::swallowingEnabled);
 }
 
 
@@ -90,8 +91,6 @@ void TopLevel::setupMenuBar()
     menubar->insertSeparator(-1);
     menubar->insertItem(klocale->translate("&Help"), helpMenu);
 
-    options->setItemChecked(swallowID, KModuleListEntry::swallowingEnabled);
-    
     setMenu(menubar);
 }
  
@@ -200,10 +199,6 @@ void TopLevel::swallowChanged()
   config->writeEntry("SwallowEnabled", KModuleListEntry::swallowingEnabled);
 
   options->setItemChecked(swallowID, KModuleListEntry::swallowingEnabled);
-
-  if (KModuleListEntry::swallowingEnabled)
-    printf("enabled\n");
-  else
-     printf("disbled\n");
+  config->sync();
 }
 
