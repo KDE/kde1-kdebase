@@ -527,7 +527,7 @@ KProtocolFTP::KProtocolFTP()
     dirfile = NULL;
     sControl = sData = sDatal = -1;
     ftplib_lastresp = rspbuf;
-    ftplib_debug = 9; // set to 9 for maximum debugging output
+    ftplib_debug = 0; // set to 9 for maximum debugging output
 }
 
 KProtocolFTP::~KProtocolFTP()
