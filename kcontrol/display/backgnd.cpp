@@ -28,6 +28,7 @@
 #include <qpainter.h>
 #include <qlayout.h>
 
+#include <kfiledialog.h>
 #include <kapp.h>
 #include <kwm.h>
 #include <kiconloader.h>
@@ -771,7 +772,7 @@ void KBackground::slotBrowse()
 	    firsttime = false;
 	}
 
-	QString filename = QFileDialog::getOpenFileName( path );
+	QString filename = KFileDialog::getOpenFileName( path );
 	slotWallpaper( filename );
 	if ( !filename.isNull() && !strcmp( filename, wallpaper) )
 	{

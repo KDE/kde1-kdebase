@@ -21,6 +21,7 @@ extern "C" {
 #include <qkeycode.h>
 #include <qfiledlg.h>
 #include <kmenubar.h>
+#include <kfiledialog.h>
 
 #include "kaudio.h"
 #include "democlient.h"
@@ -58,7 +59,7 @@ void DemoClient::signalsOnOff()
 
 void DemoClient::loadClicked()
 {
-  QString fname = QFileDialog::getOpenFileName( 0, "*.wav", this );
+  QString fname = KFileDialog::getOpenFileName( 0, "*.wav", this );
   if ( !fname.isEmpty() ) {
     // the user selected a valid existing file
     WAVname = fname.copy();

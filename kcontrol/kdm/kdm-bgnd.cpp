@@ -19,8 +19,7 @@
 
 #include "utils.h"
 #include "kdm-bgnd.moc"
-
-
+#include <kfiledialog.h>
 
 // Destructor
 KDMBackgroundWidget::~KDMBackgroundWidget()
@@ -145,7 +144,7 @@ void KDMBackgroundWidget::slotBrowse()
 	if ( !dir.exists() )
 		path = NULL;
 
-	QString filename = QFileDialog::getOpenFileName( path );
+	QString filename = KFileDialog::getOpenFileName( path );
 	slotWallpaper( filename );
 	if ( !filename.isEmpty() && !strcmp( filename, wallpaper) )
 	{
