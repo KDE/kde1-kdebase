@@ -1,0 +1,406 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-09-04 21:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: theme.cpp:164
+msgid "Mappings file theme.mappings not found."
+msgstr ""
+
+#: theme.cpp:182
+#, c-format
+msgid ""
+"Error during cleanup of work directory: rc=%d\n"
+"%s"
+msgstr ""
+
+#: theme.cpp:217
+#, c-format
+msgid ""
+"Failed to copy theme contents\n"
+"from %s\n"
+"into %s"
+msgstr ""
+
+#: theme.cpp:232
+#, c-format
+msgid ""
+"Failed to unpack %s with\n"
+"%s"
+msgstr ""
+
+#: theme.cpp:258
+msgid "Theme contains no .themerc file"
+msgstr ""
+
+#: theme.cpp:371 themecreator.cpp:347
+#, c-format
+msgid "Cannot open file %s for reading"
+msgstr ""
+
+#: theme.cpp:378 themecreator.cpp:354
+#, c-format
+msgid "Cannot open file %s for writing"
+msgstr ""
+
+#: theme.cpp:388 themecreator.cpp:365
+#, c-format
+msgid ""
+"Write error to %s:\n"
+"%s"
+msgstr ""
+
+#: theme.cpp:467 themecreator.cpp:170
+#, c-format
+msgid ""
+"Internal error in theme mappings\n"
+"(file theme.mappings) in group %s:\n"
+"\n"
+"Entry `%s' is missing or has no value."
+msgstr ""
+
+#: theme.cpp:601
+#, c-format
+msgid ""
+"Unknown pre-install command `%s' in\n"
+"theme.mappings file in group %s."
+msgstr ""
+
+#: theme.cpp:672
+#, c-format
+msgid ""
+"Unknown command `%s' in theme.mappings\n"
+"file in group %s."
+msgstr ""
+
+#: theme.cpp:711
+#, c-format
+msgid "Restart %s to activate the new settings?"
+msgstr ""
+
+#: theme.cpp:713
+msgid "Restart Application"
+msgstr ""
+
+#: theme.cpp:743
+#, c-format
+msgid "Cannot make backup copy of %s: mv returned %d"
+msgstr ""
+
+#: theme.cpp:797
+#, c-format
+msgid "Icon key name %s can not be used"
+msgstr ""
+
+#: theme.cpp:859
+#, c-format
+msgid ""
+"No proper kdelnk file found for %s.\n"
+"Installing icon(s) as %s"
+msgstr ""
+
+#: theme.cpp:1116
+#, c-format
+msgid "Failed to load preview image %s"
+msgstr ""
+
+#: theme.cpp:1209
+#, c-format
+msgid "Cannot create directory %s"
+msgstr ""
+
+#: theme.cpp:1217
+#, c-format
+msgid "Cannot enter directory %s"
+msgstr ""
+
+#: installer.cpp:83
+msgid "Add..."
+msgstr ""
+
+#: installer.cpp:84
+msgid "Add a new theme to the list."
+msgstr ""
+
+#: installer.cpp:88
+msgid "Save the Work directory"
+msgstr ""
+
+#: installer.cpp:92
+msgid "Save the Work directory as..."
+msgstr ""
+
+#: installer.cpp:95
+msgid "Create..."
+msgstr ""
+
+#: installer.cpp:96
+msgid "Create a new theme from the current settings."
+msgstr ""
+
+#: installer.cpp:100
+msgid "Remove the selected theme."
+msgstr ""
+
+#: installer.cpp:306
+msgid "Theme created."
+msgstr ""
+
+#: installer.cpp:335
+msgid "The "
+msgstr ""
+
+#: installer.cpp:349
+#, c-format
+msgid ""
+"Failed to remove theme:\n"
+"%s\n"
+"(%s)"
+msgstr ""
+
+#: installer.cpp:352
+#, c-format
+msgid "Failed to remove theme %s"
+msgstr ""
+
+#: installer.cpp:359
+msgid "The file(s) of this theme could not be found!"
+msgstr ""
+
+#: installer.cpp:391
+msgid ""
+"Theme removed locally.\n"
+"Now using global version."
+msgstr ""
+
+#: installer.cpp:395
+msgid "Theme removed."
+msgstr ""
+
+#: installer.cpp:438
+msgid "(no theme chosen)"
+msgstr ""
+
+#: installer.cpp:463
+msgid "Add Theme"
+msgstr ""
+
+#: installer.cpp:473
+msgid ""
+"Wrong file.\n"
+"The name of a theme file should end\n"
+"either with '.tar.gz' or '.tgz'\n"
+msgstr ""
+
+#: installer.cpp:485
+#, c-format
+msgid ""
+"Failed to copy theme %s\n"
+"into themes directory %s"
+msgstr ""
+
+#: installer.cpp:492
+msgid "Theme added."
+msgstr ""
+
+#: installer.cpp:524
+msgid "Save Theme"
+msgstr ""
+
+#: installer.cpp:532 installer.cpp:559
+msgid "Theme saved."
+msgstr ""
+
+#: installer.cpp:579
+msgid "(no preview pixmap)"
+msgstr ""
+
+#: main.cpp:73
+msgid "Installer"
+msgstr ""
+
+#: main.cpp:132
+msgid "warning"
+msgstr ""
+
+#: main.cpp:139 main.cpp:140
+msgid "fatal error"
+msgstr ""
+
+#: main.cpp:168
+msgid "Kde Theme Manager"
+msgstr ""
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr ""
+
+#: options.cpp:42
+msgid "Uninstall parts of previous theme"
+msgstr ""
+
+#: options.cpp:50
+msgid "Work on the following parts:"
+msgstr ""
+
+#: options.cpp:60
+msgid "Colors"
+msgstr ""
+
+#: options.cpp:61
+msgid "Wallpapers"
+msgstr ""
+
+#: options.cpp:62
+msgid "Panel"
+msgstr ""
+
+#: options.cpp:63
+msgid "Sounds"
+msgstr ""
+
+#: options.cpp:64
+msgid "Icons"
+msgstr ""
+
+#: options.cpp:65
+msgid "Window Border"
+msgstr ""
+
+#: options.cpp:67
+msgid "Window Titlebar"
+msgstr ""
+
+#: options.cpp:69
+msgid "Window Gimmick"
+msgstr ""
+
+#: options.cpp:72
+msgid "Window Button Layout"
+msgstr ""
+
+#: options.cpp:73
+msgid "File Manager"
+msgstr ""
+
+#: options.cpp:74
+msgid "Konsole"
+msgstr ""
+
+#: options.cpp:81
+msgid "Invert"
+msgstr ""
+
+#: options.cpp:120
+msgid "unknown"
+msgstr ""
+
+#: options.cpp:250
+msgid "available"
+msgstr ""
+
+#: options.cpp:251
+msgid "empty"
+msgstr ""
+
+#: widgetcanvas.cpp:142 widgetcanvas.cpp:143
+msgid "Inactive window"
+msgstr ""
+
+#: widgetcanvas.cpp:158 widgetcanvas.cpp:159
+msgid "Active window"
+msgstr ""
+
+#: widgetcanvas.cpp:192 widgetcanvas.cpp:193
+msgid "Window text"
+msgstr ""
+
+#: widgetcanvas.cpp:209
+msgid "Disabled"
+msgstr ""
+
+#: widgetcanvas.cpp:216 widgetcanvas.cpp:217
+msgid "Selected"
+msgstr ""
+
+#: about.cpp:64
+msgid "KDE Theme Manager"
+msgstr ""
+
+#: about.cpp:69
+#, c-format
+msgid ""
+"Version %s\n"
+"\n"
+"Copyright (C) 1998 by\n"
+"%s\n"
+"\n"
+"Gnu Public License (GPL)"
+msgstr ""
+
+#: about.cpp:109 about.cpp:122
+msgid "Unknown"
+msgstr ""
+
+#: about.cpp:111
+#, c-format
+msgid "%s Theme"
+msgstr ""
+
+#: about.cpp:117
+#, c-format
+msgid "Version %s"
+msgstr ""
+
+#: about.cpp:123
+#, c-format
+msgid "by %s"
+msgstr ""
+
+#: themecreator.cpp:66
+#, c-format
+msgid "Failed to create directory %s: %s"
+msgstr ""
+
+#: newthemedlg.cpp:37
+msgid "Create New Theme"
+msgstr ""
+
+#: newthemedlg.cpp:44
+msgid "&Name"
+msgstr ""
+
+#: newthemedlg.cpp:45
+msgid "&Author"
+msgstr ""
+
+#: newthemedlg.cpp:46
+msgid "&Email"
+msgstr ""
+
+#: newthemedlg.cpp:47
+msgid "&Webpage"
+msgstr ""
+
+#: newthemedlg.cpp:48
+msgid "&Description"
+msgstr ""
+
+#: newthemedlg.cpp:92
+msgid "MyNewTheme"
+msgstr ""
+
+#: newthemedlg.cpp:96
+msgid "Give a short description of the theme here..."
+msgstr ""
