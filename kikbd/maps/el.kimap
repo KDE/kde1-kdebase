@@ -4,10 +4,13 @@
 Authors=Spiros Trivizas <vtonic@hol.gr>,
 
 Language=Greek
+Language[es]=Griego
 Language[fi]=Kreikka
 Language[it]=Greco
 Language[no]=Gresk
 Language[pt_BR]=Grego
+Language[ru]=Á“≈ﬁ≈”À… 
+Language[sk]=GrÈcky
 
 Label=El
 Locale=el

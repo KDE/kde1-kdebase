@@ -3,218 +3,313 @@ Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,he,hr,hu,is,it,ko,mk,nl,no,pl
 
 [br]
 Name=Breton
+Name[es]=Bretón
 Name[it]=Bretone
 Name[no]=Bretangsk
 Name[pt_BR]=Bretão
+Name[ru]=âÒÅÔÏÎÓËÉÊ
+Name[sk]=Bretónsky
 
 [ca]
 Name=Catalan
+Name[es]=Catalán
 Name[fi]=Katalonia
 Name[it]=Catalano
+Name[no]=Katalansk
 Name[pt_BR]=Catalão
+Name[ru]=ëÁÔÁÌÁÎÓËÉÊ
+Name[sk]=Katalánsky
 
 [ro]
 Name=Romanian
+Name[es]=Rumano
 Name[fi]=Romania
 Name[it]=Rumeno
 Name[no]=Rumensk
 Name[pt_BR]=Romano
+Name[ru]=òÕÍÙÎÓËÉÊ
+Name[sk]=Rumunskı
 
 [C]
 Name=Default language
+Name[es]=Idioma por defecto
 Name[fi]=Oletuskieli
 Name[it]=Lingua predefinita
 Name[no]=Standardspråk
 Name[pt_BR]=Idioma padrão
+Name[ru]=ñÚÙË ĞÏ ÕÍÏÌŞÁÎÉÀ
+Name[sk]=©tandardnı jazyk
 
 [de]
 Name=German
+Name[es]=Alemán
 Name[fi]=Saksa
 Name[it]=Tedesco
 Name[no]=Tysk
 Name[pt_BR]=Alemão
+Name[ru]=îÅÍÅÃËÉÊ
+Name[sk]=Nemeckı
 
 [en_UK]
 Name=English - UK
+Name[es]=Inglés - UK
 Name[fi]=Englanti - UK
 Name[it]=Inglese - UK
 Name[no]=Engelsk - UK
 Name[pt_BR]=Inglês - Reino Unido
+Name[ru]=âÒÉÔÁÎÓËÉÊ áÎÇÌÉÊÓËÉÊ
+Name[sk]=Anglickı - UK
 
 
 [en]
 Name=English - US
+Name[es]=Inglés - US
 Name[fi]=Englanti - US
 Name[it]=Inglese - US
 Name[no]=Engelsk - US
 Name[pt_BR]=Inglês - EUA
+Name[ru]=áÍÅÒÉËÁÎÓËÉÊ ÁÎÇÌÉÊÓËÉÊ
+Name[sk]=Anglickı - US
 
 [fr]
 Name=French
+Name[es]=Francés
 Name[fi]=Ranska
 Name[it]=Francese
 Name[no]=Fransk
 Name[pt_BR]=Francês
+Name[ru]=æÒÁÎÃÕÚÓËÉÊ
+Name[sk]=Francúzsky
 
 [cs]
 Name=Czech
+Name[es]=Checo
 Name[fi]=Tshekki
 Name[it]=Ceco
 Name[no]=Tjekkisk
 Name[pt_BR]=Tcheco
+Name[ru]=şÅÛÓËÉÊ
+Name[sk]=Èeskı
 
 [is]
 Name=Icelandic
+Name[es]=Islandés
 Name[fi]=Islanti
 Name[it]=Islandese
 Name[no]=Islandsk
 Name[pt_BR]=Islândico
+Name[ru]=éÓÌÁÎÄÓËÉÊ
+Name[sk]=Islandskı
 
 [sv]
 Name=Swedish
+Name[es]=Sueco
 Name[fi]=Ruotsi
 Name[it]=Svedese
 Name[no]=Svensk
 Name[pt_BR]=Sueco
+Name[ru]=û×ÅÄÓËÉÊ
+Name[sk]=©védsky
 
 [es]
 Name=Spanish
+Name[es]=Español
 Name[fi]=Espanja
 Name[it]=Spagnolo
 Name[no]=Spansk
 Name[pt_BR]=Espanhol
+Name[ru]=éÓĞÁÎÓËÉÊ
+Name[sk]=©panielsky
 
 [ru]
 Name=Russian
+Name[es]=Ruso
 Name[fi]=Venäjä
 Name[it]=Russo
 Name[no]=Russisk
 Name[pt_BR]=Russo
+Name[ru]=òÕÓÓËÉÊ
+Name[sk]=age=Ruskı
 
 [nl]
 Name=Dutch
+Name[es]=Holandés
 Name[fi]=Hollanti
 Name[it]=Olandese
 Name[no]=Nederlandsk
 Name[pt_BR]=Holandês
+Name[ru]=çÏÌÌÁÎÄÓËÉÊ
+Name[sk]=Holandskı
 
 [hu]
 Name=Hungarian
+Name[es]=Húngaro
 Name[fi]=Unkari
 Name[it]=Ungherese
 Name[no]=Ungarsk
 Name[pt_BR]=Húngaro
+Name[ru]=÷ÅÎÇÅÒÓËÉÊ
+Name[sk]=Maïarskı
 
 [da]
 Name=Danish
+Name[es]=Danés
 Name[fi]=Tanska
 Name[it]=Danese
 Name[no]=Dansk
+Name[ru]=äÁÔÓËÉÊ
+Name[sk]=Dánsky
 
 [fi]
 Name=Finnish
+Name[es]=Finlandés
 Name[fi]=Suomi
 Name[it]=Finlandese
 Name[no]=Finsk
 Name[pt_BR]=Finlandês
+Name[ru]=æÉÎÓËÉÊ
+Name[sk]=Fínsky
 
 [it]
 Name=Italian
+Name[es]=Italiano
 Name[fi]=Italia
 Name[it]=Italiano
 Name[no]=Italiensk
 Name[pt_BR]=Italiano
+Name[ru]=éÔÁÌØÑÎÓËÉÊ
+Name[sk]=Taliansky
 
 [pt]
 Name=Portuguese
+Name[es]=Portugués
 Name[fi]=Portugal
 Name[it]=Portoghese
 Name[no]=Portugisisk
 Name[pt_BR]=Português
+Name[ru]=ğÏÒÔÕÇÁÌØÓËÉÊ
+Name[sk]=Portugalskı
 
 [pl]
 Name=Polish
+Name[es]=Polaco
 Name[fi]=Puola
 Name[it]=Polacco
 Name[no]=Polsk
 Name[pt_BR]=Polonês
+Name[ru]=ğÏÌØÓËÉÊ
+Name[sk]=Poµskı
 
 [no]
 Name=Norwegian
+Name[es]=Noruego
 Name[fi]=Norja
 Name[it]=Norvegese
 Name[no]=Norsk
 Name[pt_BR]=Norueguês
+Name[ru]=îÏÒ×ÅÖÓËÉÊ
+Name[sk]=Nórsky
 
 [el]
 Name=Greek
+Name[es]=Griego
 Name[fi]=Kreikka
 Name[it]=Greco
 Name[no]=Gresk
 Name[pt_BR]=Grego
+Name[ru]=çÒÅŞÅÓËÉÊ
+Name[sk]=Grécky
 
 [hr]
 Name=Croatian
+Name[es]=Croata
 Name[fi]=Kroatia
 Name[it]=Croato
 Name[no]=Kroatisk
 Name[pt_BR]=Croata
+Name[ru]=èÏÒ×ÁÔÓËÉÊ
+Name[sk]=Chorvátsky
 
 [sk]
 Name=Slovak
+Name[es]=Eslovaco
 Name[fi]=Slovakki
 Name[it]=Slovacco
 Name[no]=Slovakisk
 Name[pt_BR]=Eslovaco
+Name[ru]=óÌÏ×ÁÃËÉÊ
+Name[sk]=Slovenskı
 
 [zh_TW.Big5]
 Name=Chinese
+Name[es]=Chino
 Name[fi]=Kiina
 Name[it]=Cinese
 Name[no]=Kinesisk
 Name[pt_BR]=Chinês
+Name[ru]=ëÉÔÁÊÓËÉÊ
+Name[sk]=Èínsky
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
+Name[es]=Chino Simplificado
 Name[fi]=Yksinkertaistettu Kiina
 Name[it]=Cinese Semplificato
 Name[no]=Forenklet kinesisk
 Name[pt_BR]=Chinês Simplificado
+Name[ru]=õĞÒÏİÅÎÎÙÊ ËÉÔÁÊÓËÉÊ
+Name[sk]=Zjednodu¹ená èín¹tina
 
 [pt_BR]
 Name=Brazil portuguese
+Name[es]=Portugés de Brasil
 Name[fi]=Brasilian portugal
 Name[it]=Portoghese brasiliano
 Name[no]=Brasiliansk portugisisk
 Name[pt_BR]=Português do Brasil
+Name[ru]=âÒÁÚÉÌØÓËÉÊ ĞÏÒÔÕÇÁÌØÓËÉÊ
+Name[sk]=Brazílska portugalèina
 
 [eo]
 Name=Esperanto
+Name[ru]=üÓĞÅÒÁÎÔÏ
 
 [mk]
 Name=Macedonian
+Name[es]=Macedonio
 Name[fi]=Makedonia
 Name[it]=Macedone
 Name[no]=Makedonsk
 Name[pt_BR]=Macedoniano
+Name[ru]=íÁËÅÄÏÎÓËÉÊ
+Name[sk]=Macedónsky
 
 [ko]
 Name=Korean
+Name[es]=Koreano
 Name[fi]=Korea
 Name[it]=Coreano
 Name[no]=Koreansk
 Name[pt_BR]=Coreano
+Name[ru]=ëÏÒÅÊÓËÉÊ
+Name[sk]=Kórejskı
 
 [tr]
 Name=Turkish
+Name[es]=Turco
 Name[fi]=Turkki
 Name[it]=Turco
 Name[no]=Tyrkisk
 Name[pt_BR]=Turco
+Name[ru]=ôÕÒËÓËÉÊ
+Name[sk]=Tureckı
 
 [he]
 Name=Hebrew
+Name[es]=Hebreo
 Name[fi]=Heprea
 Name[it]=Ebraico
 Name[no]=Hebraisk
 Name[pt_BR]=Hebreu
+Name[ru]=é×ÒÉÔ
+Name[sk]=Hebrejskı

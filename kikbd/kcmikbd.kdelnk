@@ -3,7 +3,7 @@
 Name=International Keyboard
 Name[cs]=Mezinárodní klávesnice
 Name[de]=Internationale Tastatur
-Name[es]=Teclado internacional
+Name[es]=Teclado Internacional
 Name[fi]=Kansainvälinen näppäimistö
 Name[fr]=Clavier international
 Name[is]=Alþjóðlegt lyklaborð
@@ -17,7 +17,7 @@ Name[sk]=Medzinárodná klávesnica
 Comment=International Keyboard
 Comment[cs]=Mezinárodní klávesnice
 Comment[de]=Internationale Tastatur
-Comment[es]=Teclado internacional
+Comment[es]=Teclado Internacional
 Comment[fi]=Kansainvälinen näppäimistö
 Comment[is]=kikbd:  Alþjóðlegt lyklaborð
 Comment[it]=Tastiera Internazionale

@@ -4,10 +4,13 @@
 Authors=David Faure <faure@kde.org>,Alexander Budnik <budnik@linserv.jinr.ru>,
 
 Language=French
+Language[es]=Francés
 Language[fi]=Ranska
 Language[it]=Francese
 Language[no]=Fransk
 Language[pt_BR]=Francês
+Language[ru]=æÒÁÎÃÕÚÓËÉÊ
+Language[sk]=Francúzsky
 
 Label=Fr
 Locale=fr

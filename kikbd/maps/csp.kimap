@@ -7,7 +7,7 @@ Comment[cs]=Nastavení klávesnice
 Comment[da]=Indstil tastaturet
 Comment[de]=Internationale Tastatur
 Comment[eo]=Klavarokonfigura¼o
-Comment[es]=Teclado internacional
+Comment[es]=Teclado de Programadores
 Comment[fi]=Ohjelmoijan näppäimistö
 Comment[fr]=Moniteur de performances système
 Comment[hr]=Postava tipkovnice
@@ -26,10 +26,12 @@ Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Czech
 Language[cs]=Èeskı
+Language[es]=Checo
 Language[fi]=Tsekki
 Language[no]=Tjekkisk
 Language[pt_BR]=heco
 Language[ru]=şÅÛÓËÉÊ
+Language[sk]=Èeskı
 
 Label=Csp
 Locale=cs

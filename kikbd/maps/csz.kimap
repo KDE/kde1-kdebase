@@ -4,7 +4,7 @@
 Comment=Typewriter Keyboard (QWERTZ)
 Comment[cs]=Klávesnice psacího stroje (QWERTZ)
 Comment[de]=Internationale Tastatur
-Comment[es]=Teclado internacional
+Comment[es]=Teclado QWERTZ
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
 Comment[is]=Ritvélaruppsetning (QUERTZ)
 Comment[no]=Skrivemaskintastatur (QWERTZ)
@@ -16,10 +16,12 @@ Comment[sk]=Medzinárodná klávesnica
 
 Language=Czech
 Language[cs]=Èeský
+Language[es]=Checo
 Language[fi]=Tsekki
 Language[no]=Tjekkisk
 Language[pt_BR]=heco
 Language[ru]=þÅÛÓËÉÊ
+Language[sk]=Èeský
 
 Label=Csz
 Locale=cs

@@ -9,7 +9,7 @@ Comment[cs]=Nastavení klávesnice
 Comment[da]=Indstil tastaturet
 Comment[de]=Internationale Tastatur
 Comment[eo]=Klavarokonfigura¼o
-Comment[es]=Teclado internacional
+Comment[es]=Teclado de Programadores
 Comment[fi]=Ohjelmoijan näppäimistö
 Comment[fr]=Moniteur de performances système
 Comment[hr]=Postava tipkovnice
@@ -28,11 +28,13 @@ Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Slovak
 Language[cs]=Slovenskı
+Language[es]=Eslovaco
 Language[fi]=Slovakki
 Language[it]=Slovacco
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
 Language[ru]=ÁÃËÉÊ
+Language[sk]=Slovenskı
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Skp

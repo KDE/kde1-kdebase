@@ -4,10 +4,13 @@
 Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>,
 
 Language=Hungarian
+Language[es]=Húngaro
 Language[fi]=Unkari
 Language[it]=Ungherese
 Language[no]=Ungarsk
 Language[pt_BR]=Húngaro
+Language[ru]=÷ÅÎÇÅÒÓËÉÊ
+Language[sk]=Maïarskı
 
 Label=Hu
 Locale=hu

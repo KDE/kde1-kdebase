@@ -6,7 +6,7 @@ Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
 Comment[de]=Internationale Tastatur
-Comment[es]=Teclado internacional
+Comment[es]=Teclado QWERTY
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
 Comment[is]=Ritvélaruppsetning (QUERTY)
 Comment[no]=Skrivemaskintastatur (QWERTY)
@@ -19,11 +19,13 @@ Comment[sk]=Medzinárodná klávesnica
 
 Language=Slovak
 Language[cs]=Slovenskı
+Language[es]=Eslovaco
 Language[fi]=Slovakki
 Language[it]=Slovacco
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
 Language[ru]=ÁÃËÉÊ
+Language[sk]=Slovenskı
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Sky

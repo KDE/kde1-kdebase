@@ -2,18 +2,22 @@
 
 [International Keyboard]
 Comment=German Keyboard (Germany)
+Comment[es]=Teclado Alemán (Alemania)
 Comment[fi]=Saksalainen näppäimistö
 Comment[no]=Tysk tastatus (Tyskland)
 Comment[pt_BR]=Teclado Alemão (Alemanha)
 Comment[ru]=îÅÍÅÃËÁÑ ËÌÁ×ÉÁÔÕÒÁ (çÅÒÍÁÎÉÑ)
+Comment[sk]=Nemecká klávesnica (Nemecko)
 
 Language=German
 Language[cs]=Nìmeckı
+Language[es]=Alemán
 Language[fi]=Saksa
 Language[it]=Tedesco
 Language[no]=Tysk
 Language[pt_BR]=emão
 Language[ru]=îÅÍÅÃËÉÊ
+Language[sk]=Nemeckı
 
 Label=De
 Locale=de

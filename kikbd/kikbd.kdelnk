@@ -3,7 +3,7 @@
 Name=International Keyboard Layout
 Name[cs]=Rozvr¾ení mezinárodní klávesnice
 Name[de]=Kikbd
-Name[es]=Kikbd
+Name[es]=Disposición de Teclado Internacional
 Name[fi]=Kansainvälinen näppäimistö
 Name[hu]=Kikbd
 Name[is]=Aljþjóðlegar lyklaborðsstillingar
@@ -16,7 +16,7 @@ Name[sk]=Kikbd
 Comment=International Keyboard
 Comment[cs]=Mezinárodní klávesnice
 Comment[de]=Internationale Tastatur
-Comment[es]=Teclado internacional
+Comment[es]=Teclado Internacional
 Comment[fi]=Kansainvälinen näppäimistö
 Comment[is]=kikbd:  Alþjóðlegt lyklaborð
 Comment[it]=Tastiera Internazionale
