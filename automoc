@@ -5,11 +5,15 @@
 # and below the current subdirectory. When called with parameters,
 # only these Makefile.in are changed.
 #
-# 1998-07-23  Harri Porten  <porten@tu-harburg.de>
+# 1998-07-23  Harri Porten <porten@tu-harburg.de>
 #       * small bugfixes for MOCSOURCES
-	
+#
+# 1998-09-16  Harri Porten <porten@tu-harburg.de> & David Faure <faure@kde.org>
+#       * bug fix for invocation with arguments
+
 use Cwd;
 use File::Find;
+use File::Basename;
 
 if ( 0 ne 0 )
   {
@@ -31,9 +35,13 @@ if( @ARGV == 0 )
   }
 else
   {
+	$curdir = cwd();
 	while( @ARGV )
 	  {
-		process_makefile( shift @ARGV );
+		chdir( dirname( $ARGV[0] ) );
+		process_makefile( basename( $ARGV[0] ) );
+		chdir( $curdir );
+		shift @ARGV;
 	  }
   }
 
