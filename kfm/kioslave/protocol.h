@@ -14,7 +14,6 @@ still missing:
 
 -------------------------------------------------------*/
 
-#ifndef _KPROTCOL_INCLUDED_
 #include <kurl.h>
 
 #include "kioslave_ipc.h"
@@ -121,8 +120,5 @@ public:
          */
         virtual void SetPermissions( KURL &_u, int _perm );   
 };
-
-#define _KPROTCOL_INCLUDED_
-#endif
 
 #endif
