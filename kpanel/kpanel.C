@@ -59,9 +59,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     position = bottom_right;
 
     currentDesktop = KWM::currentDesktop();
- 
+
     defaultPixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
- 
+
 
     box_width = 47;
     box_height = 47;
@@ -1455,7 +1455,7 @@ void kPanel::hidePanelRight(){
       in_animation = true;
 
       if (orientation == vertical) {
-	for (int i = 0; i < geom.height() - panel_button_frame_standalone2->height(); 
+	for (int i = 0; i < geom.height() - panel_button_frame_standalone2->height();
 	     i += PANEL_SPEED(i,geom.height())){
 	  move(geom.x(), geom.y()+i);
 	  qApp->syncX();
@@ -1680,6 +1680,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        tfy = tfyR;
        tfx = tfxR;
    }
+   
 
    if (panelCurrentlyHidden) // i.e. standalone shown
     {
@@ -1775,11 +1776,12 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        }
 
 
-       if (autoHidden)
+       if (autoHidden) {
 	   pw = pwR;
 	   ph = phR;
 	   px = pxR;
 	   py = pyR;
+       }
    }
 
 
