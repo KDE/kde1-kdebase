@@ -1413,15 +1413,15 @@ msgstr "Чуствительный к регистру"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Внимание: неверная cookie !"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Вы получили cookie от сервера:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr "Вы хотите принять или отвергнуть эту куку"
+msgstr "Вы хотите принять или отвергнуть эту cookie"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
@@ -1429,15 +1429,15 @@ msgstr "Применить к"
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "Только эту cookie"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Все cookie с этого домена"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Все cookie"
 
 #: popup.cpp:69
 #, c-format
@@ -1449,6 +1449,9 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"Исходный файл больше не существует! ! \n"
+"Используйте \"Пересканировать привязки\" в меню для того,\n"
+"чтобы обновить меню"
 
 #: popup.cpp:113 popup.cpp:120
 msgid "New "
