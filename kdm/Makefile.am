@@ -17,7 +17,7 @@ LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
            -lXau -lXdmcp -lX11 -lm $(PASSLIB) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB)
 
 # For kdmdesktop
-kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm -lgif $(LIBJPEG) -lXext\
+kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(LIBJPEG) -lXext\
 		   -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 # Sources for xdm (both C and C++):
@@ -55,7 +55,6 @@ kdm_SOURCES = kdmconfig.cpp \
 
 kdmdesktop_SOURCES = \
 	kdmdesktop.cpp \
-	gif.cpp \
 	jpeg.cpp
 
 MOCSRC = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc

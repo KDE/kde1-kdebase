@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:55:38 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Mon Nov  3 04:33:21 1997
-// Update Count     : 3
+// Last Modified On : Sat Feb 21 12:21:04 1998
+// Update Count     : 5
 // Status           : Unknown, Use with caution!
 // 
 
@@ -21,7 +21,7 @@
 
 // NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
 #include <math.h>
-#include "gif.h"
+//#include "gif.h"
 #include "jpeg.h"
 
 #include <X11/Xlib.h>
@@ -78,8 +78,8 @@ DesktopConfig::~DesktopConfig()
 static void 
 do_picture_background( DesktopConfig* dc)
 {
-     QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 0, 
-			       read_gif_file, NULL);
+  /*     QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 0, 
+			       read_gif_file, NULL);*/
      QImageIO::defineIOHandler("JFIF","^\377\330\377\340..JFIF", 0,
 			       read_jpeg_jfif, NULL);
      
@@ -91,7 +91,7 @@ do_picture_background( DesktopConfig* dc)
      QPixmap image( dc->bgpic);
      if( image.isNull())
 	  return;
-     QPixmap tmp( appHeight, appWidth);
+     QPixmap tmp( appWidth, appHeight);
      
      int imWidth = image.width();
      int imHeight = image.height();
