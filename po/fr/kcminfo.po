@@ -227,4 +227,3 @@ msgstr "Non disponible"
 #: memory_sgi.cpp:30
 msgid "Not Available"
 msgstr "Non disponible"
-

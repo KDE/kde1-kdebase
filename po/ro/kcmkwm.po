@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -289,7 +289,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Mutã cursorul în centru dupã schimbare"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Intârzierea schimbãrii ecranului:"
 
 #: desktop.cpp:117

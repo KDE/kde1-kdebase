@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-04-20 21:10+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -25,26 +25,29 @@ msgstr "用法: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "鈴聲設定"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "音量"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "調音"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "持續時間"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz(赫茲)"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms(毫秒)"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "持續時間"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "測試"
+
+#~ msgid "ms"
+#~ msgstr "ms(毫秒)"

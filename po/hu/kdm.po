@@ -1,7 +1,7 @@
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -12,21 +12,25 @@ msgstr ""
 "Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
 "kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Leállítás vagy újraindítás?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Leállítás"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Leállítás és újraindítás"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Kilép"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -72,3 +76,6 @@ msgstr ""
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr ""
+
+#~ msgid "Exit kdm"
+#~ msgstr "Kilép"

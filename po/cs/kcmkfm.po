@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-14 09:42+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -109,6 +109,10 @@ msgstr "Povolit nastavování &jednotlivých URL"
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
 msgstr "&Stromový náhled sleduje procházení"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"

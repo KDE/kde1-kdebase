@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -110,19 +110,19 @@ msgstr "Osam"
 msgid "Unnamed Desktop"
 msgstr "Neimenovana radna povr¹ina"
 
-#: main.C:1029
+#: main.C:1030
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
 
-#: main.C:1141
+#: main.C:1142
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: GimmickMode uga¹en\n"
 
-#: main.C:1466
+#: main.C:1467
 msgid "*** No Tasks ***"
 msgstr "*** Nema Zadaæa ***"
 
-#: minicli.C:119
+#: minicli.C:122
 msgid "Command:"
 msgstr "Naredba:"
 

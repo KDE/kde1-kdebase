@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -13,21 +13,25 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Kapat yada yeniden baþlat?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Kapat"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Kapat ve yeniden baþlat"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "KDM çýkýþ"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -73,3 +77,6 @@ msgstr ""
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr ""
+
+#~ msgid "Exit kdm"
+#~ msgstr "KDM çýkýþ"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDM\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-09-25 11:37+0100\n"
 "Last-Translator: blazzupancic@hotmail.com\n"
 "Language-Team:  Slovene\n"
@@ -14,21 +14,25 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO8859-2\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Odklop ali ponovni zagon?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Odklop"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Odklop in ponovni zagon"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Izhod iz kdm"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -74,6 +78,9 @@ msgstr "Opozorilo: va¹ raèun poteèe %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Domaèi imenik ni na voljo"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Izhod iz kdm"
 
 #~ msgid "No login"
 #~ msgstr "Ni prijave"

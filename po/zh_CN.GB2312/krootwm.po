@@ -1,88 +1,88 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: krootwm.C:208 krootwm.C:252
+#: krootwm.C:211 krootwm.C:255
 msgid "Execute command"
 msgstr "执行命令"
 
-#: krootwm.C:210 krootwm.C:260
+#: krootwm.C:213 krootwm.C:263
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: krootwm.C:211 krootwm.C:261
+#: krootwm.C:214 krootwm.C:264
 msgid "Logout"
 msgstr "离线"
 
-#: krootwm.C:219 krootwm.C:254
+#: krootwm.C:222 krootwm.C:257
 msgid "Refresh desktop"
 msgstr "刷新桌面"
 
-#: krootwm.C:220 krootwm.C:256
+#: krootwm.C:223 krootwm.C:259
 msgid "Unclutter windows"
 msgstr "整理窗口"
 
-#: krootwm.C:221 krootwm.C:257
+#: krootwm.C:224 krootwm.C:260
 msgid "Cascade windows"
 msgstr "层叠放置窗口"
 
-#: krootwm.C:222 krootwm.C:258
+#: krootwm.C:225 krootwm.C:261
 msgid "Arrange icons"
 msgstr "布置图标"
 
-#: krootwm.C:223 krootwm.C:253
+#: krootwm.C:226 krootwm.C:256
 msgid "Display properties"
 msgstr "显示特性"
 
-#: krootwm.C:231 krootwm.C:251
+#: krootwm.C:234 krootwm.C:254
 msgid "Help on desktop"
 msgstr "关于桌面的帮助"
 
-#: krootwm.C:232
+#: krootwm.C:235
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:247 krootwm.C:274 krootwm.C:739 krootwm.C:747
+#: krootwm.C:250 krootwm.C:277 krootwm.C:747 krootwm.C:755
 msgid "New"
 msgstr ""
 
-#: krootwm.C:248 krootwm.C:275
+#: krootwm.C:251 krootwm.C:278
 msgid "Bookmarks"
 msgstr ""
 
-#: krootwm.C:276
+#: krootwm.C:279
 msgid "Desk"
 msgstr ""
 
-#: krootwm.C:277
+#: krootwm.C:280
 msgid "Windows"
 msgstr ""
 
-#: krootwm.C:325
+#: krootwm.C:331
 msgid "Edit Bookmarks"
 msgstr ""
 
-#: krootwm.C:339 krootwm.C:749
+#: krootwm.C:345 krootwm.C:757
 msgid "Folder"
 msgstr "文件夹"
 
-#: krootwm.C:343
+#: krootwm.C:349
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "错误: 模板不存在 '%s'"
 
-#: krootwm.C:770
+#: krootwm.C:778
 msgid "Could not create folder"
 msgstr "无法建立文件夹"
 
-#: krootwm.C:835
+#: krootwm.C:846
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:839
+#: krootwm.C:850
 msgid "Usage:"
 msgstr "用法:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,27 +34,27 @@ msgstr "Oeps!"
 msgid "Unknown format: "
 msgstr "Onbekend formaat: "
 
-#: helpwin.cpp:1106
+#: helpwin.cpp:1107
 msgid "Find Complete"
 msgstr ""
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1108
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Vooruit"
 
-#: helpwin.cpp:1345
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Open deze link"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Bladwijzer toevoegen"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "In een nieuw venster openen"
 
@@ -182,11 +182,11 @@ msgstr "Directory lezen: "
 msgid "Online Manual - Section"
 msgstr "Online Handoek - Onderdeel"
 
-#: man.cpp:498
+#: man.cpp:501 man.cpp:510
 msgid "\"man\" system call failed"
 msgstr "\"man\" systeemaanroep niet succesvol"
 
-#: man.cpp:516
+#: man.cpp:528
 msgid "Opening temporary file failed"
 msgstr "Openen van tijdelijk bestand gefaald"
 

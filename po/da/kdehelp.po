@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,28 +33,28 @@ msgstr "Ups!"
 msgid "Unknown format: "
 msgstr "Ukendt format: "
 
-#: helpwin.cpp:1106
+#: helpwin.cpp:1107
 msgid "Find Complete"
 msgstr "Søgning færdig"
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1108
 msgid "Continue search from the top of the page?"
 msgstr "Fortsæt fra begyndelsen af siden?"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1325
 #, fuzzy
 msgid "Forward"
 msgstr "&Frem"
 
-#: helpwin.cpp:1345
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Åben dette link"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Tilføj bogmærke"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Åben i nyt vindue"
 
@@ -182,11 +182,11 @@ msgstr "Læser folder: "
 msgid "Online Manual - Section"
 msgstr "Online manual - Sektion"
 
-#: man.cpp:498
+#: man.cpp:501 man.cpp:510
 msgid "\"man\" system call failed"
 msgstr "\"man\" systemkald fejlede"
 
-#: man.cpp:516
+#: man.cpp:528
 msgid "Opening temporary file failed"
 msgstr "Åbning af temporær fil fejlede"
 

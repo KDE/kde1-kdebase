@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -162,6 +162,11 @@ msgstr "&Möppur fyrst"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "Klukkan &sýnd á FH/EH formi"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "Klukkan &sýnd á FH/EH formi"
 
 #: disknav.cpp:38

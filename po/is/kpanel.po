@@ -3,52 +3,56 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
-#: kpanel.C:273
+#: kpanel.C:281
 msgid "&Move"
 msgstr "&Færa"
 
-#: kpanel.C:276
+#: kpanel.C:284
 msgid "&Properties"
 msgstr "&Eiginleikar"
 
-#: kpanel.C:313
+#: kpanel.C:321
 msgid "Go!"
 msgstr "Núna!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:324 tools.C:858
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvert vilt þú komast á morgun?"
 
-#: kpanel.C:391
+#: kpanel.C:399
 msgid "No info available"
 msgstr "Engar upplýsingar fáanlegar"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:438 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Stimpla út"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:446 props.C:192
 msgid "Lock screen"
 msgstr "Læsa skjá"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:455 kpanel.C:464
 msgid "Hide the panel"
 msgstr "Fela spjaldið"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:474 kpanel.C:486
 msgid "Show the panel"
 msgstr "Sýna spjaldið"
 
-#: kpanel.C:1203
+#: kpanel.C:1091
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1228
 msgid "No comment available"
 msgstr "Engin athugasemd"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1237 tools.C:867
 msgid "Windowlist"
 msgstr "Gluggalisti"
 
@@ -68,7 +72,7 @@ msgstr "Bæta við gluggalista"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Bæta gluggalistavalmynd á spjaldið"
 
-#: events.C:782 props.C:168
+#: events.C:778 props.C:168
 msgid "Configure"
 msgstr "Stilla"
 
@@ -84,7 +88,7 @@ msgstr "Sýsla með valmyndir"
 msgid "Add or remove applications in the menu structure "
 msgstr "Bæta forritum við valmyndakerfið, eða fjarlægja þau"
 
-#: events.C:784 props.C:174
+#: events.C:780 props.C:174
 msgid "Restart"
 msgstr "Endurræsa"
 
@@ -112,11 +116,11 @@ msgstr "Læsa skjá"
 msgid "The menu editor is not installed."
 msgstr "Valmyndaritillinn er ekki settur upp."
 
-#: events.C:838 props.C:420
+#: events.C:834 props.C:420
 msgid "Oops!"
 msgstr "Úps!"
 
-#: tools.C:618
+#: tools.C:644
 msgid ""
 "\n"
 "%b %d"
@@ -124,7 +128,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:837
+#: events.C:833
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ekki er hægt að setja þennan hnapp á spjaldið!"
 

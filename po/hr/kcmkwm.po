@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -271,7 +271,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Premjesti pokazivaè prema centru nakon promjene"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Ka¹njenje prilikom promjene radne povr¹ine:"
 
 #: desktop.cpp:117

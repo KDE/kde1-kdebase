@@ -1,54 +1,58 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: kpanel.C:273
+#: kpanel.C:281
 #, fuzzy
 msgid "&Move"
 msgstr "移动"
 
-#: kpanel.C:276
+#: kpanel.C:284
 #, fuzzy
 msgid "&Properties"
 msgstr "特性"
 
-#: kpanel.C:313
+#: kpanel.C:321
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:324 tools.C:858
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
-#: kpanel.C:391
+#: kpanel.C:399
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:438 props.C:193 props.C:194
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:446 props.C:192
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:455 kpanel.C:464
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:474 kpanel.C:486
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1203
+#: kpanel.C:1091
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1228
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1237 tools.C:867
 msgid "Windowlist"
 msgstr "窗口列表"
 
@@ -68,7 +72,7 @@ msgstr "加在窗口列表中"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:782 props.C:168
+#: events.C:778 props.C:168
 msgid "Configure"
 msgstr "配置"
 
@@ -84,7 +88,7 @@ msgstr "编辑菜单项"
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:784 props.C:174
+#: events.C:780 props.C:174
 msgid "Restart"
 msgstr "重新开始"
 
@@ -112,17 +116,17 @@ msgstr "锁住屏幕"
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:838 props.C:420
+#: events.C:834 props.C:420
 msgid "Oops!"
 msgstr "错误!"
 
-#: tools.C:618
+#: tools.C:644
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: events.C:837
+#: events.C:833
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 

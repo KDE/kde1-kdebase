@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -26,26 +26,29 @@ msgstr "ףוצפצ\n"
 msgid "Bell settings"
 msgstr "ףוצפצ ייניפאמ"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "המצע"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "תורידת"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "ךרוא"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "ץרה"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "היינש תויפלא"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "ךרוא"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "ףוצפצ קודב"
+
+#~ msgid "ms"
+#~ msgstr "היינש תויפלא"

@@ -1,25 +1,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Desligar ou reinicializar?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Desligar"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Desligar e reinicializar"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Abandonar kdm"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -65,6 +69,9 @@ msgstr "Aviso: sua conta expira em %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Diretório-base não disponível"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Abandonar kdm"
 
 #~ msgid "bah"
 #~ msgstr "bah"

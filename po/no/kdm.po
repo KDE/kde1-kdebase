@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdm\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-01 11:27+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,21 +13,25 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Avslutte eller starte på nytt?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Avslutt"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Avslutte og starte på nytt"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Gå ut av kdm"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -73,6 +77,9 @@ msgstr "Varsel: din konto går ut %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Hjemmekatalog er ikke tilgjengelig"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Gå ut av kdm"
 
 #~ msgid "No login"
 #~ msgstr "Ingen logginn"

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-26 23:49+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -103,6 +103,10 @@ msgstr ""
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
+msgstr ""
+
+#: miscopts.cpp:43
+msgid "Terminal"
 msgstr ""
 
 #: kproxydlg.cpp:50

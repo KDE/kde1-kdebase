@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -167,6 +167,11 @@ msgstr "M&apper først"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "&Klokke viser tid i am/pm-format"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "&Klokke viser tid i am/pm-format"
 
 #: disknav.cpp:38

@@ -1,52 +1,56 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-06-20 13:36+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: kpanel.C:273
+#: kpanel.C:281
 msgid "&Move"
 msgstr ""
 
-#: kpanel.C:276
+#: kpanel.C:284
 msgid "&Properties"
 msgstr ""
 
-#: kpanel.C:313
+#: kpanel.C:321
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:324 tools.C:858
 msgid "Where do you want to go tomorrow?"
 msgstr "A gdzie siê to dzisiaj wybierasz?"
 
-#: kpanel.C:391
+#: kpanel.C:399
 msgid "No info available"
 msgstr "Informacje niedostêpne"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:438 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Wyloguj siê"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:446 props.C:192
 msgid "Lock screen"
 msgstr "Zablokuj ekran"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:455 kpanel.C:464
 msgid "Hide the panel"
 msgstr "Ukryj panel"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:474 kpanel.C:486
 msgid "Show the panel"
 msgstr "Poka¿ panel"
 
-#: kpanel.C:1203
+#: kpanel.C:1091
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1228
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1237 tools.C:867
 msgid "Windowlist"
 msgstr "Lista okien"
 
@@ -66,7 +70,7 @@ msgstr "Dodaj listê okien"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj listê okien do panelu"
 
-#: events.C:782 props.C:168
+#: events.C:778 props.C:168
 msgid "Configure"
 msgstr "Konfiguruj"
 
@@ -82,7 +86,7 @@ msgstr "Konfiguruj menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Dodaj lub usuñ aplikacje ze struktury menu "
 
-#: events.C:784 props.C:174
+#: events.C:780 props.C:174
 msgid "Restart"
 msgstr "Od¶wie¿"
 
@@ -110,17 +114,17 @@ msgstr "Zablokuj ekran"
 msgid "The menu editor is not installed."
 msgstr "Edytor menu jest niezainstalowany."
 
-#: events.C:838 props.C:420
+#: events.C:834 props.C:420
 msgid "Oops!"
 msgstr "Ojej!"
 
-#: tools.C:618
+#: tools.C:644
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: events.C:837
+#: events.C:833
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nie mo¿na umie¶ciæ tego jako przycisku na panelu!"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -274,7 +274,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Move ponteiro para o centro depois de mudança"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Demora de mudança:"
 
 #: desktop.cpp:117

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-08 23:37 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français <fr@kde.org>\n"
@@ -33,27 +33,27 @@ msgstr "Houlà !"
 msgid "Unknown format: "
 msgstr "Format inconnu :"
 
-#: helpwin.cpp:1106
+#: helpwin.cpp:1107
 msgid "Find Complete"
 msgstr "Recherche terminée"
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1108
 msgid "Continue search from the top of the page?"
 msgstr "Continuer la recherche à partir du haut de la page?"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "En a&vant"
 
-#: helpwin.cpp:1345
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Ouvrir ce lien"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Ajouter un signet"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
@@ -181,11 +181,11 @@ msgstr "Lecture du répertoire : "
 msgid "Online Manual - Section"
 msgstr "Manuel en ligne - Section"
 
-#: man.cpp:498
+#: man.cpp:501 man.cpp:510
 msgid "\"man\" system call failed"
 msgstr "L'appel système \"man\" a échoué"
 
-#: man.cpp:516
+#: man.cpp:528
 msgid "Opening temporary file failed"
 msgstr "L'ouverture du fichier temporaire a échoué"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-13 19:45 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -33,27 +33,27 @@ msgstr "Oops!"
 msgid "Unknown format: "
 msgstr "Neznámý formát: "
 
-#: helpwin.cpp:1106
+#: helpwin.cpp:1107
 msgid "Find Complete"
 msgstr "Hledání dokonèeno"
 
-#: helpwin.cpp:1107
+#: helpwin.cpp:1108
 msgid "Continue search from the top of the page?"
 msgstr "Pokraèovat s hledáním od zaèátku strany?"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1325
 msgid "Forward"
 msgstr "Vpøed"
 
-#: helpwin.cpp:1345
+#: helpwin.cpp:1346
 msgid "Open this Link"
 msgstr "Otevøi tento odkaz"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1347
 msgid "Add Bookmark"
 msgstr "Pøidej zálo¾ku"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1348
 msgid "Open in new Window"
 msgstr "Otevøi v novém oknì"
 
@@ -181,11 +181,11 @@ msgstr "Ètu adresáø: "
 msgid "Online Manual - Section"
 msgstr "Online manuál - Sekce"
 
-#: man.cpp:498
+#: man.cpp:501 man.cpp:510
 msgid "\"man\" system call failed"
 msgstr "\"man\" Systémové volání neúspì¹né"
 
-#: man.cpp:516
+#: man.cpp:528
 msgid "Opening temporary file failed"
 msgstr "Otevírání pomocného souboru neuspì¹né"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkwm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -277,7 +277,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Flytt peker mot senter etter bytte"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Forsinkelese for skrivebordsbytte:"
 
 #: desktop.cpp:117

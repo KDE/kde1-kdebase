@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMBELL\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,26 +26,29 @@ msgstr "käyttö: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Varoitusäänen asetukset"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Äänenvoimakkuus"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Korkeus"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Kesto"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Kesto"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "Kokeile"
+
+#~ msgid "ms"
+#~ msgstr "ms"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-06-08 23:35+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -113,19 +113,19 @@ msgstr "Vuit"
 msgid "Unnamed Desktop"
 msgstr "Escriptori sense nom"
 
-#: main.C:1029
+#: main.C:1030
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode ombrejat\n"
 
-#: main.C:1141
+#: main.C:1142
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alguns pixmaps no són vàlids: desactivat el mode Gimmick\n"
 
-#: main.C:1466
+#: main.C:1467
 msgid "*** No Tasks ***"
 msgstr "*** Sense Tasques ***"
 
-#: minicli.C:119
+#: minicli.C:122
 msgid "Command:"
 msgstr "Ordre:"
 

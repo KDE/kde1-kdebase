@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-12 12:21+CET\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -30,30 +30,34 @@ msgstr ""
 msgid "Input Devices Properties"
 msgstr "Bemeneti eszközök tulajdonságai"
 
-#: mouse.cpp:75
+#: mouse.cpp:68
 msgid "Acceleration"
 msgstr "Gyorsítás"
 
-#: mouse.cpp:81
+#: mouse.cpp:71
 msgid "Threshold"
 msgstr "Határérték"
 
-#: mouse.cpp:84
+#: mouse.cpp:72
+msgid "pixels"
+msgstr ""
+
+#: mouse.cpp:81
 msgid "Button mapping"
 msgstr "Gomb kiosztás"
 
-#: mouse.cpp:86
+#: mouse.cpp:83
 msgid "Right handed"
 msgstr "Jobb kezes"
 
-#: mouse.cpp:88
+#: mouse.cpp:85
 msgid "Left handed"
 msgstr "Bal kezes"
 
-#: keyboard.cpp:67
+#: keyboard.cpp:61
 msgid "Keyboard repeat"
 msgstr "Billentyû ismétlés"
 
-#: keyboard.cpp:75
+#: keyboard.cpp:66
 msgid "Key click volume"
 msgstr "Leütés hangja"

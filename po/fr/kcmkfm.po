@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -110,6 +110,10 @@ msgstr "Permettre la sauvegarde des paramètres pour chaque URL"
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
 msgstr "La vue arborescente suit la navigation"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"

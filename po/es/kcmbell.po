@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-04-21 18:35+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -17,26 +17,29 @@ msgstr "modo de uso: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Preferencias del sonido de aviso"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Volúmen"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Tono"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Duración"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Duración"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "&Probar"
+
+#~ msgid "ms"
+#~ msgstr "ms"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,21 +9,25 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Sammutetaanko vai käynnistetäänkö uudelleen?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Sammuta"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Sammuta ja käynnistä uudelleen"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Poistu kdm:stä"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -69,6 +73,9 @@ msgstr "Varoitus: tunnuksesi vanhentuu %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Kotihakemistoa ei löydy"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Poistu kdm:stä"
 
 #~ msgid "bah"
 #~ msgstr "hah"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell 1.0pre2\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-07-14 19:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -26,26 +26,29 @@ msgstr "uzo: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Pepokonfigura¼o"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Laýteco"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Alteco"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Daýro"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Daýro"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "Testo"
+
+#~ msgid "ms"
+#~ msgstr "ms"

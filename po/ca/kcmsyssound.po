@@ -110,7 +110,8 @@ msgid "Window Trans New"
 msgstr "Apareix finestra temporal"
 
 #: syssound.cpp:170
-msgid "Window Trans delete"
+#, fuzzy
+msgid "Window Trans Delete"
 msgstr "Desapareix finestra temporal"
 
 #: syssound.cpp:171

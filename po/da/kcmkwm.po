@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-25 13:23\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -290,7 +290,7 @@ msgid "Move pointer towards center after switch"
 msgstr ""
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+msgid "Desktop switch delay:"
 msgstr ""
 
 #: desktop.cpp:117

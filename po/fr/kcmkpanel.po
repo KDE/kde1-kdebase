@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-08 22:30 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
-"Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
+"Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -170,6 +170,11 @@ msgstr "Répert&oires en premier"
 msgid "&Clock shows time in AM/PM format"
 msgstr "Affi&cher l'heure de l'horloge au format AM/PM"
 
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
+msgstr "Affi&cher l'heure de l'horloge au format AM/PM"
+
 #: disknav.cpp:38
 msgid "History"
 msgstr "Historique"
@@ -225,4 +230,3 @@ msgstr "Afficher l'entrée Options"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Programme de Terminal :"
-

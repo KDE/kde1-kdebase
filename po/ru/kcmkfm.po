@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-14 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -110,6 +110,10 @@ msgstr "Разрешать настройки на каждый URL"
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
 msgstr "Дерево следует за движениями"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"

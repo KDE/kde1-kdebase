@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,179 +13,199 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kfmgui.cpp:200
+#: kfmgui.cpp:203
 msgid "KFM"
 msgstr "KFM"
 
+#: kfmgui.cpp:220
+msgid "New &Window"
+msgstr "Nytt &vindu"
+
 #: kfmgui.cpp:223
+msgid "&Run..."
+msgstr "&Kjør..."
+
+#: kfmgui.cpp:225
+msgid "Open &Terminal"
+msgstr "Åpne &terminal"
+
+#: kfmgui.cpp:228
+msgid "&Open Location..."
+msgstr "Å&pne ..."
+
+#: finddlg.cpp:66 kfmgui.cpp:230
+msgid "&Find"
+msgstr "&Finn"
+
+#: kfmgui.cpp:251
 msgid "&Move to Trash"
 msgstr "Flytt til Papirkurv"
 
-#: kfmgui.cpp:230
+#: kfmgui.cpp:258
 msgid "&Select"
 msgstr "Mer&k"
 
-#: kfmgui.cpp:232
+#: kfmgui.cpp:260
 msgid "Select &all"
 msgstr "Mer&k alle"
 
-#: kfmgui.cpp:235
+#: kfmgui.cpp:263
 msgid "&Find in page..."
 msgstr "&Finn i side..."
 
-#: kfmgui.cpp:237
+#: kfmgui.cpp:265
 msgid "Find &next"
 msgstr "Finn &neste"
 
-#: kfmgui.cpp:240
+#: kfmgui.cpp:268
 msgid "Mime &Types"
 msgstr "Mime&typer"
 
-#: kfmgui.cpp:242
+#: kfmgui.cpp:270
 msgid "App&lications"
 msgstr "App&likasjoner"
 
-#: kfmgui.cpp:248
+#: kfmgui.cpp:276
 msgid "Global Mime Types"
 msgstr "Globale mimetyper"
 
-#: kfmgui.cpp:250
+#: kfmgui.cpp:278
 msgid "Global Applications"
 msgstr "Globale applikasjoner"
 
-#: kfmgui.cpp:257
+#: kfmgui.cpp:285
 msgid "Show Hi&dden Files"
 msgstr "Vis &skjulte filer"
 
-#: kfmgui.cpp:259
+#: kfmgui.cpp:287
 msgid "Show Tr&ee"
 msgstr "Vis tre"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:289
 msgid "Sho&w Thumbnails"
 msgstr "Vis &bilder som ikoner"
 
-#: kfmgui.cpp:263
+#: kfmgui.cpp:291
 msgid "&HTML View"
 msgstr "&HTML-visning"
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:294
 msgid "&Icon View"
 msgstr "&Ikonvisning"
 
-#: kfmgui.cpp:268
+#: kfmgui.cpp:296
 msgid "&Text View"
 msgstr "&Tekstvisning"
 
-#: kfmgui.cpp:270
+#: kfmgui.cpp:298
 msgid "&Long View"
 msgstr "&Lang visning"
 
 # kfmgui.cpp:367
-#: kfmgui.cpp:272
+#: kfmgui.cpp:300
 msgid "&Short View"
 msgstr "&Kort visning"
 
 # kfmgui.cpp:373
-#: kfmgui.cpp:278
+#: kfmgui.cpp:306
 msgid "Rel&oad Tree"
 msgstr "L&ast tre på nytt"
 
 # kfmgui.cpp:375
-#: kfmgui.cpp:280
+#: kfmgui.cpp:308
 msgid "&Reload Document"
 msgstr "&Last dokument på nytt"
 
-#: kfmgui.cpp:282
+#: kfmgui.cpp:310
 msgid "Rescan &Bindings"
 msgstr "Les til&ordninger på nytt"
 
 # kfmgui.cpp:380
-#: kfmgui.cpp:285
+#: kfmgui.cpp:313
 msgid "&View Frame Source"
 msgstr "&Vis rammekoden"
 
 # kfmgui.cpp:382
-#: kfmgui.cpp:287
+#: kfmgui.cpp:315
 msgid "View Docu&ment Source"
 msgstr "Vis dokumentkoden"
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:323
 msgid "Auto"
 msgstr "Auto"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:331
 msgid "Document Encodin&g"
 msgstr "&Dokumentkoding"
 
 # kfmgui.cpp:393
-#: kfmgui.cpp:318
+#: kfmgui.cpp:346
 msgid "Show History"
 msgstr "Vis historie"
 
 # kfmgui.cpp:395
-#: kfmgui.cpp:320
+#: kfmgui.cpp:348
 msgid "Show Cache"
 msgstr "Vis mellomlager"
 
 # kfmgui.cpp:397
-#: kfmgui.cpp:322
+#: kfmgui.cpp:350
 msgid "Clear Cache"
 msgstr "Tøm mellomlager"
 
 # kfmgui.cpp:400
-#: kfmgui.cpp:325
+#: kfmgui.cpp:353
 msgid "Always look in cache"
 msgstr "Se alltid i mellomlager"
 
 # kfmgui.cpp:402
-#: kfmgui.cpp:327
+#: kfmgui.cpp:355
 msgid "Never look in cache"
 msgstr "Se aldri i mellomlager"
 
 # kfmgui.cpp:400
-#: kfmgui.cpp:329
+#: kfmgui.cpp:357
 msgid "Always save cache"
 msgstr "Alltid lagre mellomlager"
 
 # kfmgui.cpp:402
-#: kfmgui.cpp:331
+#: kfmgui.cpp:359
 msgid "Never save cache"
 msgstr "Aldri lagre mellomlager"
 
-#: kfmgui.cpp:342
+#: kfmgui.cpp:370
 msgid "Show &Menubar"
 msgstr "Vis &menylinje"
 
-#: kfmgui.cpp:344
+#: kfmgui.cpp:372
 msgid "Show &Statusbar"
 msgstr "Vis &statuslinje"
 
-#: kfmgui.cpp:346
+#: kfmgui.cpp:374
 msgid "Show &Toolbar"
 msgstr "Vis &verktøylinje"
 
-#: kfmgui.cpp:348
+#: kfmgui.cpp:376
 msgid "Show &Location bar"
 msgstr "Vis s&tedslinje"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:379
 msgid "Sa&ve Settings"
 msgstr "Lagre &innstillinger"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:381
 msgid "Save Settings for this &URL"
 msgstr "Lagre innstillinger for denne &URL"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:388
 msgid "&Configure File Manager..."
 msgstr "&Konfigurer filbehandler..."
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:390
 msgid "Configure &Browser..."
 msgstr "Konfigurer &nettlos..."
 
-#: kfmgui.cpp:398
+#: kfmgui.cpp:426
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -211,150 +231,131 @@ msgstr ""
 "Gjeldende vedlikeholder: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:439
 msgid "&Go"
 msgstr "&Gå"
 
-#: kfmgui.cpp:412
+#: kfmgui.cpp:440
 msgid "&Bookmarks"
 msgstr "&Bokmerker"
 
-#: kfmgui.cpp:413
+#: kfmgui.cpp:441
 msgid "&Cache"
 msgstr "&Mellomlager"
 
-#: kfmgui.cpp:440 main.cpp:278
+#: kfmgui.cpp:470 main.cpp:278
 msgid "Up"
 msgstr "Opp"
 
-#: kfmgui.cpp:450 main.cpp:280
+#: kfmgui.cpp:480 main.cpp:280
 msgid "Forward"
 msgstr "Forover"
 
 # kfmtree.cpp:396
-#: kfmgui.cpp:455
+#: kfmgui.cpp:485
 msgid "Home"
 msgstr "Hjem"
 
 # kfmgui.cpp:569
-#: kfmgui.cpp:512
+#: kfmgui.cpp:542
 msgid "Could not load icon\n"
 msgstr "Kunne ikke laste ikon\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1599 kbind.cpp:1607 kbind.cpp:1625
-#: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
-#: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
-#: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:513 kfmgui.cpp:683 kfmman.cpp:357
-#: kfmman.cpp:1375 kfmman.cpp:1597 kfmman.cpp:1623 kfmprops.cpp:377
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1591 kbind.cpp:1599 kbind.cpp:1617
+#: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
+#: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
+#: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
+#: kfmexec/main.cpp:47 kfmgui.cpp:543 kfmgui.cpp:740 kfmman.cpp:356
+#: kfmman.cpp:1376 kfmman.cpp:1598 kfmman.cpp:1624 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:942 kfmprops.cpp:1074
-#: kfmprops.cpp:1205 kfmprops.cpp:1678 kfmprops.cpp:2037 kfmprops.cpp:2225
+#: kfmprops.cpp:1205 kfmprops.cpp:1678 kfmprops.cpp:2039 kfmprops.cpp:2221
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
 #: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:274 kfmtree.cpp:401
-#: kfmtree.cpp:432 kfmtree.cpp:438 kfmtree.cpp:444 kfmview.cpp:402
-#: kfmview.cpp:418 kfmview.cpp:437 kfmview.cpp:506 kfmview.cpp:512
-#: kfmview.cpp:518 kfmview.cpp:624 kfmview.cpp:628 kfmview.cpp:667
-#: kfmview.cpp:693 kfmview.cpp:714 kfmview.cpp:722 kfmview.cpp:730
+#: kfmtree.cpp:432 kfmtree.cpp:438 kfmtree.cpp:444 kfmview.cpp:400
+#: kfmview.cpp:416 kfmview.cpp:435 kfmview.cpp:504 kfmview.cpp:510
+#: kfmview.cpp:516 kfmview.cpp:622 kfmview.cpp:626 kfmview.cpp:665
+#: kfmview.cpp:691 kfmview.cpp:712 kfmview.cpp:720 kfmview.cpp:728
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
-#: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
-#: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
-#: popup.cpp:101 root.cpp:908 root.cpp:1169 root.cpp:1187 root.cpp:1193
-#: root.cpp:1199 root.cpp:1280 root.cpp:1793 root.cpp:1818
+#: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:559 kiojob.cpp:799
+#: kiojob.cpp:830 kiojob.cpp:871 kiojob.cpp:1318 kiojob.cpp:1326
+#: kiojob.cpp:1554 krenamewin.cpp:120 popup.cpp:101 root.cpp:908 root.cpp:1169
+#: root.cpp:1187 root.cpp:1193 root.cpp:1199 root.cpp:1280 root.cpp:1793
+#: root.cpp:1818
 msgid "KFM Error"
 msgstr "KFM Feil"
 
 # kfmgui.cpp:1139 kfmserver.cpp:178
-#: kfmgui.cpp:526
+#: kfmgui.cpp:556
 #, fuzzy
 msgid "Location:"
 msgstr "Åpne ...:"
 
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
-#: kfmexec.cpp:59 kfmgui.cpp:682 kfmman.cpp:1374
+#: kfmexec.cpp:59 kfmgui.cpp:739 kfmman.cpp:1375
 msgid "Malformed URL\n"
 msgstr "URL på feil form\n"
 
 # kfmgui.cpp:869
-#: kfmgui.cpp:872
+#: kfmgui.cpp:929
 msgid "Select files:"
 msgstr "Velg filer:"
 
-#: kfmgui.cpp:933
+#: kfmgui.cpp:990
 msgid "Find Complete"
 msgstr "Finn fullført"
 
-#: kfmgui.cpp:934
+#: kfmgui.cpp:991
 msgid "Continue search from the top of the page?"
 msgstr "Fortsett søk fra toppen av siden?"
 
 # kfmgui.cpp:886
-#: kfmgui.cpp:952
+#: kfmgui.cpp:1009
 msgid "&Edit Bookmarks..."
 msgstr "&Endre bokmerker..."
 
-#: kfmgui.cpp:962
+#: kfmgui.cpp:1019
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
 
-#: kfmgui.cpp:997 kfmman.cpp:1413 kfmtree.cpp:322 root.cpp:263
+#: kfmgui.cpp:1053 kfmman.cpp:1414 kfmtree.cpp:322 root.cpp:263
 msgid "&New"
 msgstr "&Ny"
 
-#: kfmgui.cpp:1003
-msgid "New &Window"
-msgstr "Nytt &vindu"
-
-#: kfmgui.cpp:1006
-msgid "&Run..."
-msgstr "&Kjør..."
-
-#: kfmgui.cpp:1008
-msgid "Open &Terminal"
-msgstr "Åpne &terminal"
-
-#: kfmgui.cpp:1011
-msgid "&Open Location..."
-msgstr "Å&pne ..."
-
-#: finddlg.cpp:66 kfmgui.cpp:1013
-msgid "&Find"
-msgstr "&Finn"
-
-#: kfmgui.cpp:1038
+#: kfmgui.cpp:1071
 msgid "&Up"
 msgstr "&Opp"
 
-#: kfmgui.cpp:1040
+#: kfmgui.cpp:1073
 msgid "&Back"
 msgstr "&Tilbake"
 
-#: kfmgui.cpp:1042
+#: kfmgui.cpp:1075
 msgid "&Forward"
 msgstr "&Forover"
 
-#: kfmgui.cpp:1044
+#: kfmgui.cpp:1077
 msgid "&Home"
 msgstr "&Hjem"
 
-#: kfmgui.cpp:1101 kfmgui.cpp:1273 kfmjob.cpp:37 kfmman.cpp:240
-#: kfmtree.cpp:433 kfmview.cpp:438 kfmview.cpp:507 kfmview.cpp:715
+#: kfmgui.cpp:1136 kfmgui.cpp:1308 kfmjob.cpp:36 kfmman.cpp:239
+#: kfmtree.cpp:433 kfmview.cpp:436 kfmview.cpp:505 kfmview.cpp:713
 #: kiojob.cpp:87 root.cpp:1188
 msgid "ERROR: Malformed URL"
 msgstr "FEIL: Misdannet URL"
 
 # kfmgui.cpp:1139 kfmserver.cpp:178
-#: kfmgui.cpp:1227 kfmserver.cpp:184
+#: kfmgui.cpp:1262 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Åpne ...:"
 
 # kfmgui.cpp:1195
-#: kfmgui.cpp:1284
+#: kfmgui.cpp:1319
 msgid "KFM Confirm"
 msgstr "KFM Bekreftelse"
 
 # kfmgui.cpp:1196
-#: kfmgui.cpp:1285
+#: kfmgui.cpp:1320
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -363,29 +364,29 @@ msgstr ""
 "Du vil miste viktige funksjoner"
 
 # kfmgui.cpp:1320
-#: kfmgui.cpp:1395
+#: kfmgui.cpp:1430
 msgid "Document: Done"
 msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmview.cpp:403 root.cpp:909
+#: kfmview.cpp:401 root.cpp:909
 msgid "ERROR: You may only drop URLs"
 msgstr "FEIL: Du kan bare droppe URLer"
 
 # kfmview.cpp:352
-#: kfmview.cpp:419
+#: kfmview.cpp:417
 msgid "ERROR: Drop over malformed URL"
 msgstr "FEIL: Dropp over en misdannet URL"
 
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:471 kfmview.cpp:478
-#: kfmview.cpp:758 krenamewin.cpp:20 root.cpp:1231
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:471 kfmview.cpp:476
+#: kfmview.cpp:756 krenamewin.cpp:20 root.cpp:1231
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
 # kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
-#: kfmtree.cpp:472 kfmview.cpp:479 kfmview.cpp:759 root.cpp:1232
+#: kfmtree.cpp:472 kfmview.cpp:477 kfmview.cpp:757 root.cpp:1232
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -395,26 +396,26 @@ msgstr ""
 "Det er ikke mulig å få dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmtree.cpp:439 kfmview.cpp:513 kfmview.cpp:723 root.cpp:1194
+#: kfmtree.cpp:439 kfmview.cpp:511 kfmview.cpp:721 root.cpp:1194
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
-#: kfmtree.cpp:445 kfmview.cpp:519 kfmview.cpp:731 root.cpp:1200
+#: kfmtree.cpp:445 kfmview.cpp:517 kfmview.cpp:729 root.cpp:1200
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEIL: Du droppet en katalog over et av sine barn"
 
 # kfmexec.cpp:254 kfmman.cpp:880 kfmview.cpp:468
-#: kfmexec.cpp:265 kfmman.cpp:1170 kfmview.cpp:535
+#: kfmexec.cpp:286 kfmman.cpp:1171 kfmview.cpp:533
 msgid "Open With:"
 msgstr "Åpne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
-#: kfmview.cpp:566 root.cpp:1131
+#: kfmview.cpp:564 root.cpp:1131
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
 
-#: kfmview.cpp:625
+#: kfmview.cpp:623
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -427,7 +428,7 @@ msgstr ""
 " Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
 "skrivebordet."
 
-#: kfmview.cpp:629
+#: kfmview.cpp:627
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -441,17 +442,17 @@ msgstr ""
 "skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
-#: kfmtree.cpp:402 kfmview.cpp:668 root.cpp:1281
+#: kfmtree.cpp:402 kfmview.cpp:666 root.cpp:1281
 msgid "Could not access Trash Bin"
 msgstr "Kunne ikke få adgang til Papirkurv"
 
 # kfmview.cpp:553 root.cpp:1088
-#: kfmview.cpp:694 root.cpp:1170
+#: kfmview.cpp:692 root.cpp:1170
 msgid "Can not paste into multiple directories"
 msgstr "Kan ikke lime inn i flere kataloger"
 
 # kfmview.cpp:639
-#: kfmview.cpp:791
+#: kfmview.cpp:789
 msgid "ERROR: Can not change to multiple directories"
 msgstr "FEIL: Kan ikke endre til flere kataloger"
 
@@ -501,48 +502,48 @@ msgid "No mime types installed!"
 msgstr "ingen mimetyper installert!"
 
 # kbind.cpp:425 kbind.cpp:1188
-#: kbind.cpp:440 kbind.cpp:1216
+#: kbind.cpp:440 kbind.cpp:1208
 msgid "Could not find mime type\n"
 msgstr "Kunne ikke finne mimetype\n"
 
 # kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 # kbind.cpp:1905
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1976 kbind.cpp:1977 kbind.cpp:1989
-#: kbind.cpp:1991
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1967 kbind.cpp:1968 kbind.cpp:1980
+#: kbind.cpp:1982
 msgid "Mount"
 msgstr "Monter"
 
 # kbind.cpp:713 kbind.cpp:1881
-#: kbind.cpp:726 kbind.cpp:1967
+#: kbind.cpp:726 kbind.cpp:1958
 msgid "Unmount"
 msgstr "Demonter"
 
-#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 popup.cpp:45 popup.cpp:121
+#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:45 popup.cpp:121
 msgid "Folder"
 msgstr "Mappe"
 
 # kbind.cpp:1187
-#: kbind.cpp:1215
+#: kbind.cpp:1207
 msgid "ERROR"
 msgstr "FEIL"
 
 # kbind.cpp:1188
-#: kbind.cpp:1216
+#: kbind.cpp:1208
 msgid "in "
 msgstr "i "
 
 # kbind.cpp:1332 kbind.cpp:1418
-#: kbind.cpp:1389 kbind.cpp:1482
+#: kbind.cpp:1381 kbind.cpp:1474
 msgid "Could not execute program\n"
 msgstr "Kunne ikke utføre program\n"
 
 # kbind.cpp:1528
-#: kbind.cpp:1598
+#: kbind.cpp:1590
 msgid "Could not find binding"
 msgstr "Kunne ikke finne tilordning"
 
 # kbind.cpp:1538
-#: kbind.cpp:1608
+#: kbind.cpp:1600
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -551,12 +552,12 @@ msgstr ""
 "Ikke et program"
 
 # kbind.cpp:1556 kbind.cpp:1573
-#: kbind.cpp:1626 kbind.cpp:1645
+#: kbind.cpp:1618 kbind.cpp:1637
 msgid "Can only start executables on local disks\n"
 msgstr "Kan bare starte programmer på lokale disker\n"
 
 # kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
-#: kbind.cpp:1704 kbind.cpp:1778 kbind.cpp:1942
+#: kbind.cpp:1696 kbind.cpp:1770 kbind.cpp:1933
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -565,7 +566,7 @@ msgstr ""
 "den lokale harddisken"
 
 # kbind.cpp:1641
-#: kbind.cpp:1714
+#: kbind.cpp:1706
 #, c-format
 msgid ""
 "Could not access\n"
@@ -575,22 +576,22 @@ msgstr ""
 "%s"
 
 # kbind.cpp:1670
-#: kbind.cpp:1743
+#: kbind.cpp:1735
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=....\"-innslaget er tomt"
 
 # kbind.cpp:1685
-#: kbind.cpp:1758
+#: kbind.cpp:1750
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 
 # kbind.cpp:1715 kbind.cpp:1866
-#: kbind.cpp:1788 kbind.cpp:1952
+#: kbind.cpp:1780 kbind.cpp:1943
 msgid "Could not access"
 msgstr "Kunne ikke få adgang til"
 
 # kbind.cpp:1734
-#: kbind.cpp:1806
+#: kbind.cpp:1798
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -603,17 +604,17 @@ msgstr ""
 "for å løse problemet"
 
 # kbind.cpp:1822
-#: kbind.cpp:1904
+#: kbind.cpp:1895
 msgid "ERROR: No Terminal Setting"
 msgstr "FEIL: Ingen terminalinstillinger"
 
 # kbind.cpp:1913
-#: kbind.cpp:1999
+#: kbind.cpp:1990
 msgid "No mount point in *.kdelnk file"
 msgstr "Ingen monteringssted i *.kdelnk-fil"
 
 # kbind.cpp:1953
-#: kbind.cpp:2039
+#: kbind.cpp:2030
 msgid "Unknown binding"
 msgstr "Ukjent tilordning"
 
@@ -660,12 +661,12 @@ msgstr "Flytt til Papirkurv"
 msgid "Open with"
 msgstr "Åpne med"
 
-#: kfmman.cpp:1615 kfmtree.cpp:266 main.cpp:271
+#: kfmman.cpp:1616 kfmtree.cpp:266 main.cpp:271
 msgid "Move"
 msgstr "Flytt"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
-#: kfmman.cpp:1619 kfmtree.cpp:270 main.cpp:273
+#: kfmman.cpp:1620 kfmtree.cpp:270 main.cpp:273
 msgid "Link"
 msgstr "Lenk"
 
@@ -687,97 +688,8 @@ msgstr "Lagre innstillinger for denne URL"
 msgid "Show Menubar"
 msgstr "Vis menylinje"
 
-#: htmlopts.cpp:69
-msgid "Small"
-msgstr "Liten"
-
-#: htmlopts.cpp:77
-msgid "Medium"
-msgstr "Middels"
-
-#: htmlopts.cpp:85
-msgid "Large"
-msgstr "Stor"
-
-# htmlopts.cpp:51
-#: htmlopts.cpp:99
-msgid "Standard Font"
-msgstr "Standard skrifttype"
-
-# htmlopts.cpp:68
-#: htmlopts.cpp:126
-msgid "Fixed Font"
-msgstr "Fast skrifttype"
-
-#: htmlopts.cpp:153
-msgid "Default Charset"
-msgstr "Standard tegnsett"
-
-#: htmlopts.cpp:161
-msgid "Use language charset"
-msgstr "Bruk språktegnsett"
-
-# htmlopts.cpp:214
-#: htmlopts.cpp:353
-msgid "Background Color:"
-msgstr "Bakgrunnsfarge:"
-
-# htmlopts.cpp:222
-#: htmlopts.cpp:370
-msgid "Normal Text Color:"
-msgstr "Normal tekstfarge:"
-
-# htmlopts.cpp:230
-#: htmlopts.cpp:387
-msgid "URL Link Color:"
-msgstr "URL-lenkefarge:"
-
-# htmlopts.cpp:238
-#: htmlopts.cpp:404
-msgid "Followed Link Color:"
-msgstr "Farge på brukte lenker:"
-
-# htmlopts.cpp:246
-#: htmlopts.cpp:421
-msgid "Change cursor over link."
-msgstr "Endre markør over lenke."
-
-#: htmlopts.cpp:431
-msgid "Underline links"
-msgstr "Understrek lenker"
-
-# htmlopts.cpp:321
-#: htmlopts.cpp:549
-msgid "Horizontal Root Grid Spacing:"
-msgstr "Avstand mellom horisontale bunngitter:"
-
-# htmlopts.cpp:335
-#: htmlopts.cpp:571
-msgid "Vertical Root Grid Spacing:"
-msgstr "Avstand mellom vertikale bunngitter:"
-
-#: htmlopts.cpp:593
-msgid "&Allow per-URL settings"
-msgstr "&Godta pr-URL-innstillinger"
-
-#: htmlopts.cpp:602
-msgid "Tree &view follows navigation"
-msgstr "Tre&visning følger navigasjon"
-
-#: htmlopts.cpp:610
-msgid "&Transparent Text for Root Icons."
-msgstr "&Gjennomsiktig tekst for bunnikoner"
-
-#: htmlopts.cpp:623
-msgid "Icon foreground color:"
-msgstr "Forgrunnsfarge for ikon:"
-
-#: htmlopts.cpp:635
-msgid "Icon background color:"
-msgstr "Bakgrunnsfarge for ikon:"
-
 # kfmprops.cpp:676
-#: kfmdlg.cpp:113
+#: kfmdlg.cpp:117
 msgid "&Browser"
 msgstr "&Bla gjennom"
 
@@ -992,8 +904,8 @@ msgstr "Terminalopsjoner"
 
 # kfmprops.cpp:816 kfmprops.cpp:938 kfmprops.cpp:1381 kfmprops.cpp:1593
 # kfmprops.cpp:1769
-#: kfmprops.cpp:943 kfmprops.cpp:1075 kfmprops.cpp:1679 kfmprops.cpp:2038
-#: kfmprops.cpp:2226
+#: kfmprops.cpp:943 kfmprops.cpp:1075 kfmprops.cpp:1679 kfmprops.cpp:2040
+#: kfmprops.cpp:2222
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -1063,32 +975,32 @@ msgid "<none>"
 msgstr "<ingen>"
 
 # kfmprops.cpp:1638
-#: kfmprops.cpp:2090
+#: kfmprops.cpp:2086
 msgid "Device ( /dev/fd0 )"
 msgstr "Enhet ( /dev/fd0 )"
 
 # kfmprops.cpp:1646
-#: kfmprops.cpp:2099
+#: kfmprops.cpp:2095
 msgid "Mount Point ( /floppy )"
 msgstr "Monteringssted ( /floppy )"
 
 # kfmprops.cpp:1656
-#: kfmprops.cpp:2110
+#: kfmprops.cpp:2106
 msgid "Readonly"
 msgstr "Bare lese"
 
 # kfmprops.cpp:1662
-#: kfmprops.cpp:2116
+#: kfmprops.cpp:2112
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filsystem ( iso9660,msdos,minix,default )"
 
 # kfmprops.cpp:1672
-#: kfmprops.cpp:2127
+#: kfmprops.cpp:2123
 msgid "Mounted Icon"
 msgstr "Montertikon"
 
 # kfmprops.cpp:1676
-#: kfmprops.cpp:2132
+#: kfmprops.cpp:2128
 msgid "Unmounted Icon"
 msgstr "Umontertikon"
 
@@ -1178,27 +1090,27 @@ msgid "ERROR: Can not accept drop"
 msgstr "FEIL: Kunne ikke akseptere slipp"
 
 # kfmman.cpp:1212 root.cpp:1695
-#: kfmman.cpp:1598 root.cpp:1794
+#: kfmman.cpp:1599 root.cpp:1794
 msgid "Dont know what to do."
 msgstr "Jeg vet ikke hva jeg skal gjøre."
 
 # kfmman.cpp:1238 kfmtree.cpp:164 root.cpp:1720
-#: kfmman.cpp:1624 kfmtree.cpp:275 root.cpp:1819
+#: kfmman.cpp:1625 kfmtree.cpp:275 root.cpp:1819
 msgid "Dont know what to do"
 msgstr "Jeg vet ikke hva jeg skal gjøre"
 
 # kfmexec.cpp:93 kfmman.cpp:297
-#: kfmexec.cpp:93 kfmman.cpp:358
+#: kfmexec.cpp:113 kfmman.cpp:357
 msgid "The file does not contain a URL"
 msgstr "Filen inneholder ingen URL"
 
 # kfmman.cpp:348
-#: kfmman.cpp:502
+#: kfmman.cpp:501
 msgid "Contacting host "
 msgstr "Kontakter vert "
 
 # kfmman.cpp:352
-#: kfmman.cpp:506
+#: kfmman.cpp:505
 msgid "Working ..."
 msgstr "Jobber ..."
 
@@ -1208,7 +1120,7 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERN FEIL: Du må i det minste spesifisere en enhet for montering"
 
 # kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:1190 kiojob.cpp:1330
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1210 kiojob.cpp:1350
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1184 kiojob.cpp:1250
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1243,13 +1155,13 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:368
-#: kiojob.cpp:382
+#: kiojob.cpp:384
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " FEIL: Kunne ikke skrive til %s"
 
 # kiojob.cpp:538 kiojob.cpp:778 kiojob.cpp:1247
-#: kiojob.cpp:556 kiojob.cpp:796 kiojob.cpp:1267
+#: kiojob.cpp:558 kiojob.cpp:798 kiojob.cpp:1206
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1259,13 +1171,13 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:551 kiojob.cpp:997
-#: kiojob.cpp:569 kiojob.cpp:1015
+#: kiojob.cpp:571 kiojob.cpp:1017
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "FEIL: Kunne ikke åpne katalog '%s'"
 
 # kiojob.cpp:809
-#: kiojob.cpp:827
+#: kiojob.cpp:829
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1275,7 +1187,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:850
-#: kiojob.cpp:868
+#: kiojob.cpp:870
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1289,7 +1201,7 @@ msgstr ""
 "Muligens ble tilgang nektet"
 
 # kiojob.cpp:1198 kiojob.cpp:1338
-#: kiojob.cpp:1218 kiojob.cpp:1358
+#: kiojob.cpp:1187 kiojob.cpp:1254
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1301,7 +1213,7 @@ msgstr ""
 "Filen eksisterer ikke eller tilgang nektes"
 
 # kiojob.cpp:1206
-#: kiojob.cpp:1226
+#: kiojob.cpp:1190
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1313,7 +1225,7 @@ msgstr ""
 "Muligens ble tilgang nektet"
 
 # kiojob.cpp:1215 kiojob.cpp:1346
-#: kiojob.cpp:1235 kiojob.cpp:1366
+#: kiojob.cpp:1194 kiojob.cpp:1258
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1323,7 +1235,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1223 kiojob.cpp:1354
-#: kiojob.cpp:1243 kiojob.cpp:1374
+#: kiojob.cpp:1197 kiojob.cpp:1262
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1333,7 +1245,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1231 kiojob.cpp:1362
-#: kiojob.cpp:1251 kiojob.cpp:1382
+#: kiojob.cpp:1200 kiojob.cpp:1266
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1343,7 +1255,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1239 kiojob.cpp:1370
-#: kiojob.cpp:1259 kiojob.cpp:1390
+#: kiojob.cpp:1203 kiojob.cpp:1270
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1355,7 +1267,7 @@ msgstr ""
 "er ikke implementert ennå."
 
 # kiojob.cpp:1255
-#: kiojob.cpp:1275
+#: kiojob.cpp:1209
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1365,7 +1277,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1263
-#: kiojob.cpp:1283
+#: kiojob.cpp:1213
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1377,7 +1289,7 @@ msgstr ""
 "URLen eksisterer ikke eller tilgang nektet"
 
 # kiojob.cpp:1273 kiojob.cpp:1380
-#: kiojob.cpp:1293 kiojob.cpp:1400
+#: kiojob.cpp:1217 kiojob.cpp:1275
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1389,7 +1301,7 @@ msgstr ""
 "Kanskje feil passord"
 
 # kiojob.cpp:1289 kiojob.cpp:1396
-#: kiojob.cpp:1309 kiojob.cpp:1416
+#: kiojob.cpp:1228
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1399,7 +1311,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1297
-#: kiojob.cpp:1317
+#: kiojob.cpp:1231
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1409,7 +1321,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1307 kiojob.cpp:1322
-#: kiojob.cpp:1327 kiojob.cpp:1342
+#: kiojob.cpp:1237 kiojob.cpp:1246
 #, c-format
 msgid ""
 "File %s\n"
@@ -1418,18 +1330,28 @@ msgstr ""
 "Filen %s\n"
 "eksisterer ikke"
 
-# kiojob.cpp:1404
-#: kiojob.cpp:1424
-#, c-format
+# kiojob.cpp:1289 kiojob.cpp:1396
+#: kiojob.cpp:1287
+#, fuzzy, c-format
 msgid ""
-"Gzip reproted an error\n"
+"Tar reported a fatal error\n"
+"%s"
+msgstr ""
+"Tar rapporterte en feil\n"
+"%s"
+
+# kiojob.cpp:1404
+#: kiojob.cpp:1291
+#, fuzzy, c-format
+msgid ""
+"Gzip reported a fatal error\n"
 "%s"
 msgstr ""
 "Gzip rapporterte en feil\n"
 "%s"
 
 # kiojob.cpp:1412
-#: kiojob.cpp:1432
+#: kiojob.cpp:1295
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1443,7 +1365,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1418
-#: kiojob.cpp:1438
+#: kiojob.cpp:1299
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1457,24 +1379,24 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1509
-#: kiojob.cpp:1529
+#: kiojob.cpp:1403
 msgid "Making directory"
 msgstr "Oppretter katalog"
 
 # kiojob.cpp:1623 kiojob.cpp:1677 kiojob.cpp:1719
-#: kiojob.cpp:1644 kiojob.cpp:1698 kiojob.cpp:1740
+#: kiojob.cpp:1519 kiojob.cpp:1573 kiojob.cpp:1615
 #, c-format
 msgid "File %i/%i"
 msgstr "Fil %i/%i"
 
 # kiojob.cpp:1626 kiojob.cpp:1681
-#: kiojob.cpp:1647 kiojob.cpp:1702
+#: kiojob.cpp:1522 kiojob.cpp:1577
 #, c-format
 msgid "to %s"
 msgstr "til %s"
 
 # kiojob.cpp:1657
-#: kiojob.cpp:1678
+#: kiojob.cpp:1553
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1484,25 +1406,25 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1747
-#: kiojob.cpp:1768
+#: kiojob.cpp:1643
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Monterer %s ..."
 
 # kiojob.cpp:1749
-#: kiojob.cpp:1770
+#: kiojob.cpp:1645
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Avmonterer %s ..."
 
 # kiojob.cpp:1777
-#: kiojob.cpp:1798
+#: kiojob.cpp:1673
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Gjennvinner listing av %s"
 
 # kiojob.cpp:2004
-#: kiojob.cpp:2036
+#: kiojob.cpp:1911
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmenteringsfeil i iu-underprosess"
 
@@ -1543,17 +1465,17 @@ msgid "Add To Bookmarks"
 msgstr "Legg til bokmerker"
 
 # kfmtree.cpp:396
-#: kfmtree.cpp:511
+#: kfmtree.cpp:510
 msgid "My Home"
 msgstr "Mitt hjem"
 
 # kfmtree.cpp:398
-#: kfmtree.cpp:513
+#: kfmtree.cpp:512
 msgid "Desktop"
 msgstr "Skrivebord"
 
 # kfmtree.cpp:400
-#: kfmtree.cpp:515
+#: kfmtree.cpp:514
 msgid "Root"
 msgstr "Rot"
 
@@ -1603,7 +1525,7 @@ msgid "Password"
 msgstr "Passord"
 
 # kfmexec.cpp:136
-#: kfmexec.cpp:141
+#: kfmexec.cpp:162
 msgid "Trying to open"
 msgstr "Prøver å åpne"
 
@@ -1701,7 +1623,7 @@ msgid "&Binding"
 msgstr "&Tilordninger"
 
 # kfmprops.h:385
-#: kfmprops.h:389
+#: kfmprops.h:384
 msgid "De&vice"
 msgstr "&Enhet"
 
@@ -1742,3 +1664,72 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
+
+#~ msgid "Small"
+#~ msgstr "Liten"
+
+#~ msgid "Medium"
+#~ msgstr "Middels"
+
+#~ msgid "Large"
+#~ msgstr "Stor"
+
+# htmlopts.cpp:51
+#~ msgid "Standard Font"
+#~ msgstr "Standard skrifttype"
+
+# htmlopts.cpp:68
+#~ msgid "Fixed Font"
+#~ msgstr "Fast skrifttype"
+
+#~ msgid "Default Charset"
+#~ msgstr "Standard tegnsett"
+
+#~ msgid "Use language charset"
+#~ msgstr "Bruk språktegnsett"
+
+# htmlopts.cpp:214
+#~ msgid "Background Color:"
+#~ msgstr "Bakgrunnsfarge:"
+
+# htmlopts.cpp:222
+#~ msgid "Normal Text Color:"
+#~ msgstr "Normal tekstfarge:"
+
+# htmlopts.cpp:230
+#~ msgid "URL Link Color:"
+#~ msgstr "URL-lenkefarge:"
+
+# htmlopts.cpp:238
+#~ msgid "Followed Link Color:"
+#~ msgstr "Farge på brukte lenker:"
+
+# htmlopts.cpp:246
+#~ msgid "Change cursor over link."
+#~ msgstr "Endre markør over lenke."
+
+#~ msgid "Underline links"
+#~ msgstr "Understrek lenker"
+
+# htmlopts.cpp:321
+#~ msgid "Horizontal Root Grid Spacing:"
+#~ msgstr "Avstand mellom horisontale bunngitter:"
+
+# htmlopts.cpp:335
+#~ msgid "Vertical Root Grid Spacing:"
+#~ msgstr "Avstand mellom vertikale bunngitter:"
+
+#~ msgid "&Allow per-URL settings"
+#~ msgstr "&Godta pr-URL-innstillinger"
+
+#~ msgid "Tree &view follows navigation"
+#~ msgstr "Tre&visning følger navigasjon"
+
+#~ msgid "&Transparent Text for Root Icons."
+#~ msgstr "&Gjennomsiktig tekst for bunnikoner"
+
+#~ msgid "Icon foreground color:"
+#~ msgstr "Forgrunnsfarge for ikon:"
+
+#~ msgid "Icon background color:"
+#~ msgstr "Bakgrunnsfarge for ikon:"

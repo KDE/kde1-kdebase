@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -159,6 +159,11 @@ msgstr "Diretórios Primeir&o"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "&Relógio mostra hora em formato AM/PM"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "&Relógio mostra hora em formato AM/PM"
 
 #: disknav.cpp:38

@@ -340,7 +340,8 @@ msgstr "Forró lista &használata"
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
-"Csak az alapértelmezett és a legutóbb használt kiosztás között lehet váltogatni"
+"Csak az alapértelmezett és a legutóbb használt kiosztás között lehet "
+"váltogatni"
 
 #: widgets.cpp:215
 msgid "Adding Keyboard"
@@ -376,7 +377,8 @@ msgstr "Billentyû(k) kiosztás váltáshoz"
 
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr "Billentyû az alternatív szimbólumok aktiválásához a jelenlegi kiosztásban"
+msgstr ""
+"Billentyû az alternatív szimbólumok aktiválásához a jelenlegi kiosztásban"
 
 #: widgets.cpp:429
 msgid "&Beep"
@@ -420,7 +422,8 @@ msgstr "O&sztályok mentése"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Kilépéskor menti a kapcsolatokat az ablak osztályok és a kiosztások között"
+msgstr ""
+"Kilépéskor menti a kapcsolatokat az ablak osztályok és a kiosztások között"
 
 #: widgets.cpp:488
 msgid "Define X codes"
@@ -440,7 +443,8 @@ msgstr "Kiterjesztett viselkedés. Minden ablak emlékszik a saját kiosztására"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Különleges viselkedés. Minden ablak osztály emlékszik a saját kiosztására"
+msgstr ""
+"Különleges viselkedés. Minden ablak osztály emlékszik a saját kiosztására"
 
 #: widgets.cpp:551
 msgid "Button Colors"
@@ -480,7 +484,8 @@ msgstr "Betûtípus testreszabása"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr "A szöveg cimke betûtípusa más legyen, vagy a redszer beállítása szerinti"
+msgstr ""
+"A szöveg cimke betûtípusa más legyen, vagy a redszer beállítása szerinti"
 
 #: widgets.cpp:596
 msgid "C&hange Font"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,6 +172,10 @@ msgstr "개인 사용자 우선(&F)"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: options.cpp:124
+msgid "&Clock shows time in Internet beats"
 msgstr ""
 
 #: disknav.cpp:38

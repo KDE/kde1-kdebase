@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-08-17 11:03+0000\n"
 "Last-Translator: David Faure <david.faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -13,21 +13,25 @@ msgstr ""
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Arrêter ou redémarrer ?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Arrêter le système"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Réinitialisation du système"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Quitter kdm"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -73,3 +77,6 @@ msgstr "Attention : votre compte expire le %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Répertoire home non disponible"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Quitter kdm"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-06-22 21:36+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -105,19 +105,19 @@ msgstr "Ocho"
 msgid "Unnamed Desktop"
 msgstr "Escritorio sin nombre"
 
-#: main.C:1029
+#: main.C:1030
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algunos pixmaps no son válidos: desactivando modo de formas\n"
 
-#: main.C:1141
+#: main.C:1142
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Algunos pixmaps no son válidos: desactivando modo de gimmicks\n"
 
-#: main.C:1466
+#: main.C:1467
 msgid "*** No Tasks ***"
 msgstr "*** Sin tareas ***"
 
-#: minicli.C:119
+#: minicli.C:122
 msgid "Command:"
 msgstr "Comando:"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-11-27 19:39+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -162,6 +162,11 @@ msgstr "F&olders primero"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "&Reloj muestra el tiempo en formato AM/PM"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "&Reloj muestra el tiempo en formato AM/PM"
 
 #: disknav.cpp:38

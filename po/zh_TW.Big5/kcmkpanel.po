@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -181,6 +181,10 @@ msgstr "個人選單優先[&F]"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr ""
+
+#: options.cpp:124
+msgid "&Clock shows time in Internet beats"
 msgstr ""
 
 #: disknav.cpp:38

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-02-03 15:15+0100\n"
 "Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
 "Language-Team: Italiano <It@li.org>\n"
@@ -21,26 +21,29 @@ msgstr "utilizzo: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Impostazioni campanella"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Volume"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Tono"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Durata"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Durata"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "Test"
+
+#~ msgid "ms"
+#~ msgstr "ms"

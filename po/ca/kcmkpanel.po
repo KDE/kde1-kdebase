@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-15 22:29+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -25,6 +25,7 @@ msgstr "&Escriptoris"
 msgid "Disk &Navigator"
 msgstr "&Navegador de disc"
 
+# main.cpp:79
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "us: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
@@ -165,8 +166,15 @@ msgstr "Primer &Personal"
 msgid "F&olders First"
 msgstr "Primer C&arpetes"
 
+# options.cpp:122
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "&Rellotge mostra l'hora en format AM/PM"
+
+# options.cpp:122
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "&Rellotge mostra l'hora en format AM/PM"
 
 #: disknav.cpp:38

@@ -1,26 +1,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-11-24 20:36+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "¿Finalizar o reiniciar?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Finalizar"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Finalizar y reiniciar"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Finalizar kdm"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -66,3 +70,6 @@ msgstr "Atención: su cuenta expira el %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Su directorio no esta disponible"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Finalizar kdm"

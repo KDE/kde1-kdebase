@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-11-07 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -180,6 +180,11 @@ msgstr "Папки вначале"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "Часы показывают время в AM/PM формате"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "Часы показывают время в AM/PM формате"
 
 #: disknav.cpp:38

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-21 20:41+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -109,21 +109,21 @@ msgid "Unnamed Desktop"
 msgstr "Ónefnt skjáborð"
 
 # FIXME?
-#: main.C:1029
+#: main.C:1030
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
 # FIXME?
-#: main.C:1141
+#: main.C:1142
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
 # FIXME
-#: main.C:1466
+#: main.C:1467
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 
-#: minicli.C:119
+#: minicli.C:122
 msgid "Command:"
 msgstr "Skipun:"
 

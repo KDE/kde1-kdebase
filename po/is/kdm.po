@@ -4,26 +4,30 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-28 19:00-0500\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Slökkva eða endurræsa?"
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:197
 msgid "Shutdown"
 msgstr "Slökkva"
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
 msgstr "Slökkva og endurræsa"
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
-msgstr "Hætta Í KDM"
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr ""
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -69,3 +73,6 @@ msgstr "Aðvörun: Aðgangsleyfið þitt rennur út %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Heimasvæðið þitt finnst ekki"
+
+#~ msgid "Exit kdm"
+#~ msgstr "Hætta Í KDM"

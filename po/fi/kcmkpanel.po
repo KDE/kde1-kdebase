@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKPANEL\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,6 +168,11 @@ msgstr "K&ansiot ensin"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "&Kello n‰ytt‰‰ ajan AM/PM muodossa"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "&Kello n‰ytt‰‰ ajan AM/PM muodossa"
 
 #: disknav.cpp:38

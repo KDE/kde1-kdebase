@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,6 +107,10 @@ msgstr ""
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
+msgstr ""
+
+#: miscopts.cpp:43
+msgid "Terminal"
 msgstr ""
 
 #: kproxydlg.cpp:50

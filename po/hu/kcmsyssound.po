@@ -166,8 +166,7 @@ msgstr "Nem támogatott URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr ""
-"Sajnálom, a KDE Redszer Hangok modul ezt a fajta URL-t nem támogatja."
+msgstr "Sajnálom, a KDE Redszer Hangok modul ezt a fajta URL-t nem támogatja."
 
 #: syssound.cpp:468
 #, c-format

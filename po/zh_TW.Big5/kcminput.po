@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-04-20 21:12+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -29,30 +29,34 @@ msgstr "用法: kcminput [-init | {mouse,keyboard}]\n"
 msgid "Input Devices Properties"
 msgstr "輸入裝置內容"
 
-#: mouse.cpp:75
+#: mouse.cpp:68
 msgid "Acceleration"
 msgstr "加速"
 
-#: mouse.cpp:81
+#: mouse.cpp:71
 msgid "Threshold"
 msgstr ""
 
-#: mouse.cpp:84
+#: mouse.cpp:72
+msgid "pixels"
+msgstr ""
+
+#: mouse.cpp:81
 msgid "Button mapping"
 msgstr "按鈕對應"
 
-#: mouse.cpp:86
+#: mouse.cpp:83
 msgid "Right handed"
 msgstr "右手"
 
-#: mouse.cpp:88
+#: mouse.cpp:85
 msgid "Left handed"
 msgstr "左手"
 
-#: keyboard.cpp:67
+#: keyboard.cpp:61
 msgid "Keyboard repeat"
 msgstr "鍵盤重覆速度"
 
-#: keyboard.cpp:75
+#: keyboard.cpp:66
 msgid "Key click volume"
 msgstr "鍵盤按鍵容量"

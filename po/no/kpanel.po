@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,47 +13,51 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:273
+#: kpanel.C:281
 msgid "&Move"
 msgstr "&Flytt"
 
-#: kpanel.C:276
+#: kpanel.C:284
 msgid "&Properties"
 msgstr "&Egenskaper"
 
-#: kpanel.C:313
+#: kpanel.C:321
 msgid "Go!"
 msgstr "Sett igang!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:324 tools.C:858
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvor vil du dra i morgen?"
 
-#: kpanel.C:391
+#: kpanel.C:399
 msgid "No info available"
 msgstr "Ingen informasjon tilgjengelig"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:438 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Logg ut"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:446 props.C:192
 msgid "Lock screen"
 msgstr "Lås skjerm"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:455 kpanel.C:464
 msgid "Hide the panel"
 msgstr "Skjul panelet"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:474 kpanel.C:486
 msgid "Show the panel"
 msgstr "Vis panelet"
 
-#: kpanel.C:1203
+#: kpanel.C:1091
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1228
 msgid "No comment available"
 msgstr "Ingen kommentar tilgjengelig"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1237 tools.C:867
 msgid "Windowlist"
 msgstr "Vindusliste"
 
@@ -73,7 +77,7 @@ msgstr "Tilføy vindusliste"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføy en vindusliste meny til panelet"
 
-#: events.C:782 props.C:168
+#: events.C:778 props.C:168
 msgid "Configure"
 msgstr "Konfigurer"
 
@@ -89,7 +93,7 @@ msgstr "Redigere menyer"
 msgid "Add or remove applications in the menu structure "
 msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
-#: events.C:784 props.C:174
+#: events.C:780 props.C:174
 msgid "Restart"
 msgstr "Omstart"
 
@@ -117,11 +121,11 @@ msgstr "Lås skjerm"
 msgid "The menu editor is not installed."
 msgstr "Meny-editoren er ikke installert."
 
-#: events.C:838 props.C:420
+#: events.C:834 props.C:420
 msgid "Oops!"
 msgstr "Ops!"
 
-#: tools.C:618
+#: tools.C:644
 msgid ""
 "\n"
 "%b %d"
@@ -129,7 +133,7 @@ msgstr ""
 "\n"
 "%d. %b"
 
-#: events.C:837
+#: events.C:833
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1997-01-02 20:51+MET\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -159,6 +159,11 @@ msgstr "Verzeichnisse zuerst"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "Uhr zeigt &Zeit im AM/PM Format"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "Uhr zeigt &Zeit im AM/PM Format"
 
 #: disknav.cpp:38

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-04-20 23:08+0800\n"
 "Last-Translator:  Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -111,20 +111,20 @@ msgstr "八"
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:1029
+#: main.C:1030
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "一些圖形是無效的: ShapeMode 取消\n"
 
-#: main.C:1141
+#: main.C:1142
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "一些圖形是無效的: ShapeMode 取消\n"
 
-#: main.C:1466
+#: main.C:1467
 msgid "*** No Tasks ***"
 msgstr "*** 沒有任何工作 ***"
 
-#: minicli.C:119
+#: minicli.C:122
 msgid "Command:"
 msgstr "命令:"
 

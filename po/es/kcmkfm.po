@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-11-27 22:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -102,6 +102,10 @@ msgstr ""
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
+msgstr ""
+
+#: miscopts.cpp:43
+msgid "Terminal"
 msgstr ""
 
 #: kproxydlg.cpp:50

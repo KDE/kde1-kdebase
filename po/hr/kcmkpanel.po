@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-11-23 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -166,6 +166,11 @@ msgstr "&Prvo direktoriji"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
+msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
 #: disknav.cpp:38

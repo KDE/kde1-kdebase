@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-16 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-05-20 23:55\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
@@ -13,49 +13,53 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:273
+#: kpanel.C:281
 #, fuzzy
 msgid "&Move"
 msgstr "Moure"
 
-#: kpanel.C:276
+#: kpanel.C:284
 #, fuzzy
 msgid "&Properties"
 msgstr "Propietats"
 
-#: kpanel.C:313
+#: kpanel.C:321
 msgid "Go!"
 msgstr "Vinga!"
 
-#: kpanel.C:316 tools.C:832
+#: kpanel.C:324 tools.C:858
 msgid "Where do you want to go tomorrow?"
 msgstr "On vols anar demà?"
 
-#: kpanel.C:391
+#: kpanel.C:399
 msgid "No info available"
 msgstr "No hi ha informació"
 
-#: kpanel.C:430 props.C:193 props.C:194
+#: kpanel.C:438 props.C:193 props.C:194
 msgid "Logout"
 msgstr "Sortida"
 
-#: kpanel.C:438 props.C:192
+#: kpanel.C:446 props.C:192
 msgid "Lock screen"
 msgstr "Bloquejar la pantalla"
 
-#: kpanel.C:447 kpanel.C:456
+#: kpanel.C:455 kpanel.C:464
 msgid "Hide the panel"
 msgstr "Ocultar el panell"
 
-#: kpanel.C:466 kpanel.C:478
+#: kpanel.C:474 kpanel.C:486
 msgid "Show the panel"
 msgstr "Mostrar el panell"
 
-#: kpanel.C:1203
+#: kpanel.C:1091
+msgid "Iconify other &windows"
+msgstr ""
+
+#: kpanel.C:1228
 msgid "No comment available"
 msgstr "Cap comentari"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1237 tools.C:867
 msgid "Windowlist"
 msgstr "Llista de finestres"
 
@@ -75,7 +79,7 @@ msgstr "Afegir llista de finestres"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Afegir un menú de llista de finestres al panell"
 
-#: events.C:782 props.C:168
+#: events.C:778 props.C:168
 msgid "Configure"
 msgstr "Configurar"
 
@@ -91,7 +95,7 @@ msgstr "Editar Menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Afegir o eliminar aplicacions de l'estructura de menú "
 
-#: events.C:784 props.C:174
+#: events.C:780 props.C:174
 msgid "Restart"
 msgstr "Reengegar"
 
@@ -119,17 +123,17 @@ msgstr "Bloquejar la pantalla"
 msgid "The menu editor is not installed."
 msgstr "L'editor de menú no s'ha instal·lat."
 
-#: events.C:838 props.C:420
+#: events.C:834 props.C:420
 msgid "Oops!"
 msgstr "Ep!"
 
-#: tools.C:618
+#: tools.C:644
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: events.C:837
+#: events.C:833
 msgid "Cannot put this as button onto the panel!"
 msgstr "No es pot posar un botó amb això damunt el panell!"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,6 +109,10 @@ msgstr "&Permitir configurações por URL"
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
 msgstr "Visão em á&rvore segue navegação"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr ""
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"

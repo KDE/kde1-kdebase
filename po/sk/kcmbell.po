@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,26 +25,29 @@ msgstr "Pou¾itie: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Nastavenie zvonèeka"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Hlasitos»"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Vý¹ka"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Trvanie"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "ms"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Trvanie"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "Test"
+
+#~ msgid "ms"
+#~ msgstr "ms"

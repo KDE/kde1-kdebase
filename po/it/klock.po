@@ -5,13 +5,13 @@ msgstr ""
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Andrea Rizzi \n"
 
-#: attraction.cpp:716
 #         
+#: attraction.cpp:716
 msgid "Attraction"
-msgstr "Attrzione"  
+msgstr "Attrzione"
 
-#: attraction.cpp:803
 #           
+#: attraction.cpp:803
 msgid "Setup KAttraction"
 msgstr "Configurazione salvaschermo \"Attrazione\""
 
@@ -44,12 +44,11 @@ msgid "Glow"
 msgstr ""
 
 #: attraction.cpp:951
-                 
 msgid "About Attraction"
-msgstr "Attrazione"  
+msgstr "Attrazione"
 
-#: attraction.cpp:952
 #        
+#: attraction.cpp:952
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -75,8 +74,8 @@ msgstr "Testo scorrevole"
 msgid "Setup kbanner"
 msgstr "Configurazione salvaschermo \"Testo scorrevole\""
 
-#: banner.cpp:95
 #        
+#: banner.cpp:95
 msgid "Family:"
 msgstr "Famiglia:"
 
@@ -259,8 +258,8 @@ msgstr ""
 "\n"
 "Importato nei salvaschermo KDE da Cedric Tefft"
 
-#: bsod.cpp:1192
 #       
+#: bsod.cpp:1192
 msgid "Black Screen of Death"
 msgstr "Schermo nero della morte"
 
@@ -460,7 +459,7 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:422
-#,       fuzzy
+#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -486,7 +485,7 @@ msgid ""
 msgstr ""
 
 #: main.cpp:580
-#,        c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
@@ -570,22 +569,18 @@ msgstr ""
 "Porting su KDE di Emanuel Pirker."
 
 #: pipes.cpp:299
-#,         
 msgid "Pipes (GL)"
 msgstr "Tubi (GL)"
 
 #: pipes.cpp:672
-#,        
 msgid "Setup KPipes"
 msgstr "Configurazione salvaschermo \"Tubi\""
 
 #: pipes.cpp:678
-#,          
 msgid "Number of Pipes"
 msgstr "Numero di Tubi:"
 
 #: pipes.cpp:743
-#,               
 msgid "About KPipes"
 msgstr "Info su KPipes"
 
@@ -659,7 +654,6 @@ msgid "Setup krock"
 msgstr "Configurazione salvaschermo \"Asteroidi\""
 
 #: rock.cpp:589
-#,                 
 msgid "Move"
 msgstr "Sposta"
 
@@ -766,17 +760,14 @@ msgid "About Science"
 msgstr "Info su Scienza"
 
 #: slidescreen.cpp:419
-#,            
 msgid "SlideScreen"
-msgstr ""                   
+msgstr ""
 
 #: slidescreen.cpp:465
-#,         
 msgid "Setup KSlideScreen"
 msgstr "Configurazione salvaschermo \"KSlideScreen\""
 
 #: slidescreen.cpp:558
-#,          
 msgid "About SlideScreen"
 msgstr "Info su SlideScreen"
 

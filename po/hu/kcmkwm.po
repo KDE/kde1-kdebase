@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-17 12:35+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -37,7 +37,9 @@ msgstr "H&aladóknak"
 #: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "használat: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+msgstr ""
+"használat: kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -70,22 +72,26 @@ msgstr "Jobb"
 #: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "A címsor bal oldala már megtelt... kikapcsolom a 'maximalizálás' gombot\n"
+msgstr ""
+"A címsor bal oldala már megtelt... kikapcsolom a 'maximalizálás' gombot\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "A címsor jobb oldala már megtelt... kikapcsolom a 'maximalizálás' gombot\n"
+msgstr ""
+"A címsor jobb oldala már megtelt... kikapcsolom a 'maximalizálás' gombot\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "A címsor bal oldala már megtelt... kikapcsolom a 'minimalizálás' gombot\n"
+msgstr ""
+"A címsor bal oldala már megtelt... kikapcsolom a 'minimalizálás' gombot\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "A címsor jobb oldala már megtelt... kikapcsolom a 'minimalizálás' gombot\n"
+msgstr ""
+"A címsor jobb oldala már megtelt... kikapcsolom a 'minimalizálás' gombot\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
@@ -273,7 +279,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Az egérmutatót állítsa középre váltás után"
 
 #: desktop.cpp:87
-msgid "Dekstop switch delay:"
+#, fuzzy
+msgid "Desktop switch delay:"
 msgstr "Asztal váltás késleltetés:"
 
 #: desktop.cpp:117

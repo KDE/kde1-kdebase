@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-17 19:47 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -29,30 +29,34 @@ msgstr "utilisation : kcminput [-init | {mouse,keyboard}]\n"
 msgid "Input Devices Properties"
 msgstr "Propriétés des périphériques d'entrée"
 
-#: mouse.cpp:75
+#: mouse.cpp:68
 msgid "Acceleration"
 msgstr "Accélération"
 
-#: mouse.cpp:81
+#: mouse.cpp:71
 msgid "Threshold"
 msgstr "Seuil"
 
-#: mouse.cpp:84
+#: mouse.cpp:72
+msgid "pixels"
+msgstr ""
+
+#: mouse.cpp:81
 msgid "Button mapping"
 msgstr "Assignation des boutons"
 
-#: mouse.cpp:86
+#: mouse.cpp:83
 msgid "Right handed"
 msgstr "Droitier"
 
-#: mouse.cpp:88
+#: mouse.cpp:85
 msgid "Left handed"
 msgstr "Gaucher"
 
-#: keyboard.cpp:67
+#: keyboard.cpp:61
 msgid "Keyboard repeat"
 msgstr "Répétition des touches"
 
-#: keyboard.cpp:75
+#: keyboard.cpp:66
 msgid "Key click volume"
 msgstr "Volume des clics des touches"
