@@ -1,6 +1,14 @@
+// $Id$
+
+#ifdef HAVE_CONFIG_H
 #include <config.h>
-#include "cgi.h"
+#endif
+
+#include <errno.h>
+
 #include <kapp.h>
+
+#include "cgi.h"
 
 KProtocolCGI::KProtocolCGI()
 {

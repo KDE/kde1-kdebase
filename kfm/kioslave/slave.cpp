@@ -1,13 +1,27 @@
-#include "slave.h"
-#include <stdio.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+// $Id$
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <sys/types.h>
+#ifdef HAVE_SYS_PARAM_H
+  #include <sys/param.h>
+#endif
+#ifdef HAVE_SYS_SELECT_H
+  #include <sys/select.h> 
+#endif
 #include <sys/signal.h>
 #include <sys/time.h>
-#include <sys/types.h>
+
+#include <fcntl.h>
 #include <signal.h>
+#include <string.h>
+#include <stdio.h> 
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "slave.h"
 
 KSlave::KSlave()
 {

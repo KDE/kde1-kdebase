@@ -1,19 +1,22 @@
+#include <sys/stat.h>
+
+#include <dirent.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <stdio.h> 
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <qimage.h>
+
+#include <kapp.h>
+#include <kimgio.h>
+
+#include "slave.h"
 #include "icon.h"
 #include "kio_errors.h"
 #include "xview.h"
-#include "time.h"
-//#include "jpeg.h"
-#include <kimgio.h>
-#include <qimage.h>
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <errno.h>
-
-#include <kapp.h>
 
 int registered = FALSE;
 
