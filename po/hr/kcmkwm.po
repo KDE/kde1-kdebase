@@ -21,7 +21,6 @@ msgid "&Titlebar"
 msgstr "&Naslovna traka"
 
 #: main.cpp:73
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Rubovi"
 
@@ -31,13 +30,13 @@ msgstr "&Mi¹"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Napredne"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,rubovi,mi¹}]\n"
+msgstr ""
+"uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,rubovi,mi¹,napredno}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -92,9 +91,8 @@ msgid "Title Alignment"
 msgstr ""
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Srednji Gumb"
+msgstr "Srednji"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
@@ -113,14 +111,12 @@ msgid "Pixmap"
 msgstr "Pixmapa"
 
 #: titlebar.cpp:1017
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "&Aktivna pixmapa"
+msgstr "Aktivna pixmapa"
 
 #: titlebar.cpp:1022
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "N&eaktivna pixmapa"
+msgstr "Neaktivna pixmapa"
 
 #: titlebar.cpp:1032
 msgid "Mouse action"
@@ -129,9 +125,7 @@ msgstr "Akcija mi¹a"
 #: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Dvostruki pritisak na lijevi gumb mi¹a\n"
-"   na naslovnoj traci èini :"
+msgstr "Dvostruki pritisak na lijevi gumb mi¹a èini:"
 
 #: titlebar.cpp:1050
 msgid "(Un)Maximize"
@@ -150,9 +144,8 @@ msgid "(Un)Sticky"
 msgstr "Odlijepi"
 
 #: titlebar.cpp:1073
-#, fuzzy
 msgid "Title animation"
-msgstr "Naslovna animacija"
+msgstr "Animacija naslova"
 
 #: titlebar.cpp:1089
 msgid "ms"
@@ -170,9 +163,8 @@ msgid ""
 msgstr ""
 
 #: windows.cpp:67
-#, fuzzy
 msgid "Windows"
-msgstr "&Prozori"
+msgstr "Prozori"
 
 #: windows.cpp:81
 msgid "Vertical maximization only by default"
@@ -187,9 +179,8 @@ msgid "Display content in resizing windows"
 msgstr ""
 
 #: windows.cpp:97
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Naslovna animacija"
+msgstr ""
 
 #: windows.cpp:110
 msgid "None"
@@ -231,7 +222,6 @@ msgid ""
 msgstr ""
 
 #: windows.cpp:171
-#, fuzzy
 msgid "Focus policy"
 msgstr "Fokusiranje"
 
@@ -252,13 +242,12 @@ msgid "Classic sloppy focus"
 msgstr "Klasièni neuredni fokus"
 
 #: windows.cpp:198
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Uzdigni"
+msgstr "Auto. uzdigni"
 
 #: windows.cpp:205
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Ka¹njenje (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -395,7 +384,7 @@ msgstr "Promijeni velièinu"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Tipkovnica i mi¹"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
@@ -411,11 +400,11 @@ msgstr ""
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
 #, fuzzy
@@ -424,7 +413,7 @@ msgstr "ALT + Desni Gumb"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filteri"
 
 #: advanced.cpp:98
 #, fuzzy
@@ -462,47 +451,4 @@ msgstr "&Naslovna traka"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Izgled naslovne trake"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Izbornik operacija"
-
-#~ msgid "Window movement"
-#~ msgstr "Pomak prozora"
-
-#~ msgid "Transparent"
-#~ msgstr "Proziran"
-
-#~ msgid "Opaque"
-#~ msgstr "Neproziran"
-
-#~ msgid "Window resize"
-#~ msgstr "Promijeni velièinu prozora"
-
-#~ msgid "Animation:"
-#~ msgstr "Animacija:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Dozvoljeno preklapanje:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Poveæaj stil"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Poveæaj potpuno"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Poveæaj uspravno"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Ka¹njenje automatskog pojavljivanja\n"
-#~ "(<100 onemoguæava)"
-
-#~ msgid "miliseconds"
-#~ msgstr "milisekundi"
+msgstr "Razredi"

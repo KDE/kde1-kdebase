@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-22 01:13+0100\n"
-"PO-Revision-Date: 1998-05-14 20:00-0500\n"
+"PO-Revision-Date: 1998-11-22 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,28 +59,24 @@ msgid "&Browse..."
 msgstr "Po&tra¾i..."
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Tiled"
 msgstr "Pop&loèano"
 
 #: backgnd.cpp:334
 msgid "Mirrored"
-msgstr ""
+msgstr "Zrcaljeno"
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Centrirano"
+msgstr ""
 
 #: backgnd.cpp:336
-#, fuzzy
 msgid "Centred"
-msgstr "&Centrirano"
+msgstr "Centrirano"
 
 #: backgnd.cpp:337
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Centrirano"
+msgstr ""
 
 #: backgnd.cpp:338
 #, fuzzy
@@ -101,52 +97,50 @@ msgid "Symmetrical Mirrored"
 msgstr ""
 
 #: backgnd.cpp:342
-#, fuzzy
 msgid "Scaled"
-msgstr "&Razvuèeno"
+msgstr "Razvuèeno"
 
 #: backgnd.cpp:354
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Nasu&mièno"
 
 #: backgnd.cpp:363
-#, fuzzy
 msgid "Setu&p..."
-msgstr "&Podesi..."
+msgstr "&Postavke..."
 
 #: backgnd.cpp:371
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "P&ristani na ploèu"
 
 #: backgnd.cpp:380
 msgid "Cache size"
-msgstr ""
+msgstr "Velièina predmemorija"
 
 #: backgnd.cpp:398
 msgid "kb"
-msgstr ""
+msgstr "kb"
 
 #: backgnd.cpp:1274
 msgid "Desktop names"
 msgstr "Imena radnih povr¹ina"
 
 #: backgnd.cpp:1319
-#, fuzzy
 msgid "File error"
-msgstr "Gre¹ka prilikom imenovanja"
+msgstr "Gre¹ka na datoteci"
 
 #: backgnd.cpp:1320
 msgid "Can't load image file"
-msgstr ""
+msgstr "Ne mogu uèitati sliku"
 
 #: backgnd.cpp:1343 backgnd.cpp:1813
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL nije podr¾an"
 
 #: backgnd.cpp:1344 backgnd.cpp:1814
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"®alim, ova vrsta URLa trenutno nije podr¾ana od strane KDE Display modula"
 
 #: backgnd.cpp:1375
 msgid "Two color backgrounds"
@@ -209,7 +203,6 @@ msgid "Pick files from &directory"
 msgstr ""
 
 #: backgnd.cpp:1662
-#, fuzzy
 msgid "&Browse ..."
 msgstr "Po&tra¾i..."
 
@@ -218,28 +211,24 @@ msgid "Timer Delay in seconds :"
 msgstr ""
 
 #: backgnd.cpp:1695
-#, fuzzy
 msgid "In &order"
-msgstr "Ignoriraj"
+msgstr "P&oredano"
 
 #: backgnd.cpp:1712
-#, fuzzy
 msgid "Desktops :"
-msgstr "Radna povr¹ina"
+msgstr "Radne povr¹ine:"
 
 #: backgnd.cpp:1750
-#, fuzzy
 msgid "&Add"
-msgstr "&Dodaj ..."
+msgstr "&Dodaj"
 
 #: backgnd.cpp:1920
-#, fuzzy
 msgid "Directory error"
-msgstr "Gre¹ka prilikom imenovanja"
+msgstr "Gre¹ka na direktoriju"
 
 #: backgnd.cpp:1921
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Izabrani direktorij ne postoji"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -401,11 +390,11 @@ msgstr "&Isku¹aj"
 
 #: scrnsave.cpp:230
 msgid "Settings"
-msgstr "Postava"
+msgstr "Postavke"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "Èe&kaj za"
+msgstr "Èe&kaj na"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -417,11 +406,11 @@ msgstr "&Zahtjevaj lozinku"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "Dozvoli admin. lozinku za otkljuèavanje"
 
 #: scrnsave.cpp:278
 msgid "Show &password as stars"
-msgstr "Prika¾i &lozinku kao zvijezdice"
+msgstr "Prika¾i &lozinku kao zvjezdice"
 
 #: scrnsave.cpp:286
 msgid "Priority"
@@ -441,11 +430,11 @@ msgstr "Pisma itd."
 
 #: general.cpp:228
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Crtaj widgete u Windows 95 stilu"
+msgstr "&Crtaj widgete u stilu Windows 95"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Primjeni stil na sve aplikacije"
 
 #: general.cpp:255
 msgid "Desktop fonts"
@@ -460,9 +449,8 @@ msgid "Fixed font"
 msgstr "Jednoliko pismo"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Tekst u prozoru"
+msgstr "Pismo na naslovu prozora"
 
 #: general.cpp:283
 msgid "Panel button font"
@@ -496,7 +484,7 @@ msgstr "&Za¹tita zaslona"
 
 #: main.cpp:70
 msgid "&Colors"
-msgstr "&Boja"
+msgstr "&Boje"
 
 #: main.cpp:73
 msgid "&Fonts etc."
@@ -524,7 +512,7 @@ msgstr "Boja oznaèenog teksta"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Novo"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -548,12 +536,8 @@ msgstr "&Znakovni skup"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "podrazumjevano"
+msgstr "uobièajeno"
 
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Radna povr¹ina"

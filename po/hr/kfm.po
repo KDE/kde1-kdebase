@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
 "POT-Creation-Date: 1998-11-22 01:13+0100\n"
-"PO-Revision-Date: 1998-05-14 20:00-0500\n"
+"PO-Revision-Date: 1998-11-23 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -136,12 +136,11 @@ msgstr "Pogledaj doku&ment u izv. obliku"
 
 #: kfmgui.cpp:347
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:355
-#, fuzzy
 msgid "&Document Encoding"
-msgstr "Dokument: Gotov"
+msgstr "Kodiranje &dokument"
 
 #: kfmgui.cpp:366
 msgid "Show History"
@@ -149,7 +148,7 @@ msgstr "Poka¾i Povijest"
 
 #: kfmgui.cpp:368
 msgid "Show Cache"
-msgstr "Poka¾i sadr¾aj predmemorije (Cache)"
+msgstr "Poka¾i sadr¾aj predmemorije (cache)"
 
 #: kfmgui.cpp:370
 msgid "Clear Cache"
@@ -567,10 +566,9 @@ msgstr "Dodaj Oznakama"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Spremi postavke za ovaj URL"
 
 #: main.cpp:238
-#, fuzzy
 msgid "Show Menubar"
 msgstr "Poka¾i izborni&k"
 
@@ -643,14 +641,12 @@ msgid "Transparent Text for Root Icons."
 msgstr "Prozirni tekst za korijenske ikone."
 
 #: htmlopts.cpp:635
-#, fuzzy
 msgid "Icon foreground color:"
-msgstr "Boja Pozadine:"
+msgstr ""
 
 #: htmlopts.cpp:647
-#, fuzzy
 msgid "Icon background color:"
-msgstr "Boja Pozadine:"
+msgstr ""
 
 #: kfmdlg.cpp:114
 msgid "&Browser"
@@ -661,9 +657,8 @@ msgid "Could not write bookmark"
 msgstr "Ne mogu zapisati oznaku"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Puno ime"
+msgstr "Ime datoteke"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -847,9 +842,8 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1033
-#, fuzzy
 msgid "Background"
-msgstr "Boja Pozadine:"
+msgstr "Pozadina"
 
 #: kfmprops.cpp:1043
 msgid "Apply global"
@@ -1429,13 +1423,12 @@ msgid "This group is empty!"
 msgstr "Ova grupa je prazna!"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Naði"
+msgstr "Naði:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Raz&likuj velika/mala slova"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1502,9 +1495,3 @@ msgid ""
 msgstr ""
 "Sintaktièka pogre¹ka:\n"
 "kfmexec naredba [URLovi ....]\n"
-
-#~ msgid "Name"
-#~ msgstr "Ime"
-
-#~ msgid "Browse"
-#~ msgstr "Potra¾i"

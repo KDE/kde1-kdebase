@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-10-15 15:00-0500\n"
+"PO-Revision-Date: 1998-11-23 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
@@ -34,11 +34,11 @@ msgstr "Postavke KPanel"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Mjesto"
+msgstr "Polo¾aj"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "&Vrh"
+msgstr "Na &vrhu"
 
 #: panel.cpp:61
 msgid "&Left"
@@ -46,7 +46,7 @@ msgstr "&Lijevo"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "&Dno"
+msgstr "Na &dnu"
 
 #: panel.cpp:63
 msgid "&Right"
@@ -58,23 +58,23 @@ msgstr "Traka sa zadacima"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "&Skriveno"
+msgstr "&Skrivena"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "V&rh"
+msgstr "Na v&rh"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "D&no"
+msgstr "Na d&no"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Vrh/L&ijevo"
+msgstr "Vrh/l&ijevo"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr "Stil"
+msgstr "Stil prikaza"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -90,7 +90,7 @@ msgstr "Veli&ko"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "&Vidljivo"
+msgstr "&Vidljive povr¹ine"
 
 #: desktops.cpp:82
 msgid "&Width"
@@ -110,12 +110,11 @@ msgstr "&Ka¹njenje:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Malo"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
-msgstr "Veli&ko"
+msgstr "Veliko"
 
 #: options.cpp:62
 msgid "Visuals"
@@ -123,24 +122,23 @@ msgstr ""
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"
-msgstr "&Automatski Sakrij Ploèu"
+msgstr "&Automatski sakrij ploèu"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "&Ka¹njenje:"
+msgstr "Ka¹njenje:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Brzina:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Sporo"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Brzo"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
@@ -152,42 +150,39 @@ msgstr ""
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Brzina"
 
 #: options.cpp:117
 msgid "Others"
-msgstr "Drugi"
+msgstr "Druge opcije"
 
 #: options.cpp:118
 msgid "Personal &First"
 msgstr "Osobne &Prvo"
 
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Osobne &Prvo"
+msgstr "&Prvo direktoriji"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Povijest"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
 msgstr ""
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Promijeni &Lokalno"
+msgstr "Promijeni &osobne..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Promijeni &Lokalno"
+msgstr "Promijeni &dijeljene"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -203,21 +198,19 @@ msgstr ""
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Prika¾i datoteke s toèkom"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
 msgstr ""
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Mjesto"
+msgstr ""
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Mjesto"
+msgstr ""
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -229,19 +222,4 @@ msgstr ""
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Promijeni &Globalno..."
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Sat"
-
-#~ msgid "&24h"
-#~ msgstr "&24satni"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12satni AM/PM"
+msgstr "Terminalska aplikacija:"

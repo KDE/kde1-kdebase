@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,19 +13,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:273
-#, fuzzy
 msgid "&Move"
-msgstr "Premjesti"
+msgstr "Pre&mjesti"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "&Postavke"
 
 #: kpanel.C:313
 msgid "Go!"
 msgstr "Idi!"
 
-#: kpanel.C:316 tools.C:831
+#: kpanel.C:316 tools.C:830
 msgid "Where do you want to go tomorrow?"
 msgstr "Gdje ¾elite iæi sutra?"
 
@@ -53,7 +52,7 @@ msgstr "Prika¾i ploèu"
 msgid "No comment available"
 msgstr "Nema raspolo¾ivih komentara"
 
-#: kpanel.C:1210 tools.C:840
+#: kpanel.C:1210 tools.C:839
 msgid "Windowlist"
 msgstr "Lista prozora"
 
@@ -95,7 +94,7 @@ msgstr "Pokreni ponovo"
 
 #: props.C:158
 msgid "Restart panel"
-msgstr "Pokreni ploèu ponovo"
+msgstr "Obnovi ploèu"
 
 #: props.C:161
 msgid "Disk Navigator"
@@ -121,48 +120,50 @@ msgstr "Ureðivaè menija nije instaliran."
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:618
+#: tools.C:617
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne mogu staviti ovaj gumb na ploèu!"
 
-#: pfilemenu.C:415
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(prazni direktorij)"
 
-#: pfilemenu.C:470
-msgid "Open Folder"
-msgstr "Otvori direktorij"
-
-#: pfilemenu.C:481
+#: pfilemenu.C:480
 msgid "(Too Many Files)"
 msgstr "(Previ¹e Datoteka)"
 
-#: pfilemenu.C:490
+#: pfilemenu.C:489
 msgid "(Access Denied)"
 msgstr "(Pristup odbijen)"
 
-#: pfilemenu.C:493
+#: pfilemenu.C:492
 msgid "(Unreadable)"
 msgstr "(Ne mogu èitati)"
 
-#: pfilemenu.C:742
+#: pfilemenu.C:499
+msgid "Open Folder"
+msgstr "Otvori direktorij"
+
+#: pfilemenu.C:749
 msgid "Shared:"
-msgstr ""
+msgstr "Dijeljen:"
 
-#: pfilemenu.C:763
+#: pfilemenu.C:770
 msgid "Personal:"
-msgstr ""
+msgstr "Osobni:"
 
-#: pfilemenu.C:783
+#: pfilemenu.C:790
 msgid "Recent:"
-msgstr ""
+msgstr "Nedavni:"
 
-#: pfilemenu.C:831
+#: pfilemenu.C:838
 msgid "Options..."
-msgstr ""
+msgstr "Postavke..."

@@ -46,23 +46,10 @@ msgid ""
 msgstr ""
 
 #: kstart.C:156
-#, fuzzy
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
 
-#~ msgid "Usage:"
-#~ msgstr "Uporaba: "
-
-#~ msgid "command "
-#~ msgstr "naredba "
-
-#~ msgid "title "
-#~ msgstr "naziv "
-
-#~ msgid "desktop"
-#~ msgstr "radna povr¹ina"
-
-#~ msgid "Example"
-#~ msgstr "Primjer"

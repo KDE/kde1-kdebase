@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -18,15 +18,15 @@ msgstr ""
 
 #: kdmshutdown.cpp:171
 msgid "Shutdown or restart?"
-msgstr "Iskljuèi ili restartaj?"
+msgstr "Ugasi ili restartaj?"
 
 #: kdmshutdown.cpp:187
 msgid "Shutdown"
-msgstr "Iskljuèi"
+msgstr "Ugasi"
 
 #: kdmshutdown.cpp:201
 msgid "Shutdown and restart"
-msgstr "Iskljuèi i restartaj"
+msgstr "Ugasi i restartaj"
 
 #: kdmshutdown.cpp:210
 msgid "Exit kdm"
@@ -46,36 +46,33 @@ msgstr "Prijava netoèna!"
 
 #: kgreeter.cpp:219
 msgid "Session Type:"
-msgstr "Vrst rasporeda"
+msgstr "Vrsta sesije:"
 
-#: kgreeter.cpp:266
+#: kgreeter.cpp:262
 msgid "Go!"
 msgstr "Idi!"
 
-#: kgreeter.cpp:282
+#: kgreeter.cpp:278
 msgid "Shutdown..."
 msgstr "Ga¹enje..."
 
-#: kgreeter.cpp:524
+#: kgreeter.cpp:520
 msgid "Logins not available right now."
 msgstr "®alim, prijava trenutno nije moguæa."
 
-#: kgreeter.cpp:565
+#: kgreeter.cpp:561
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() nije uspio."
 
-#: kgreeter.cpp:619 kgreeter.cpp:646
+#: kgreeter.cpp:615 kgreeter.cpp:642
 msgid "Sorry -- your account has expired."
 msgstr "®alim - va¹ raèun je istekao"
 
-#: kgreeter.cpp:624 kgreeter.cpp:651
+#: kgreeter.cpp:620 kgreeter.cpp:647
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Upozorenje: Va¹ raèun istièe %s"
 
-#: kgreeter.cpp:678
+#: kgreeter.cpp:674
 msgid "Home directory not available"
 msgstr "Poèetni direktorij nije dostupan"
-
-#~ msgid "bah"
-#~ msgstr "bah"
