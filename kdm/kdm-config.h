@@ -35,6 +35,10 @@
 # endif
 #endif
 
+#ifdef sun
+#define SVR4 1
+#endif
+
 /* KDE stuff */
 #define KDMLOGO "/share/apps/kdm/pics/kdelogo.xpm"
 #define KDMRC "/share/config/kdmrc"
