@@ -32,7 +32,7 @@ install-data-local:
 	if [ ! -d $(kdisknavdir) ] ; then \
 		$(mkinstalldirs) $(kdisknavdir) ; \
 		for f in Root KDE ; do \
-			cp sample_kdelnk_files/$$f.kdelnk $(kdisknavdir)/. ; \
+			$(INSTALL_DATA) sample_kdelnk_files/$$f.kdelnk $(kdisknavdir)/$$f.kdelnk ; \
 		done ; \
 		for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
 		  if  test -d $$dir ; then \
