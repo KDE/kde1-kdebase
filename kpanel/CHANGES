@@ -4,6 +4,7 @@ In kpanel-0.18:
        - removed the internal configure dialog. Launces kcmkpanel instead.
        - fixed small bug in the clock (to the unknown developer who did the
          changes: it was broken in tiny style.)
+       - fixed the docking area geometry (finally :-)
 
     Patchlevel 11:
        - fixed the missing-submenus bug (coolo)

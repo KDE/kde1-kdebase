@@ -234,12 +234,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     label_date = new QLabel(this);
+    bool label_date_visible = true;
     if (config->hasKey("DateVisible")){
       QString aString = config->readEntry("DateVisible");
       if (aString == "false"){
+	label_date_visible = false;
 	label_date->hide();
       }
     }
+    label_date->setText("KDE 88");
+    label_date->adjustSize();
 
     dock_area = new QFrame(this);
     dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
@@ -518,10 +522,17 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       bound_top_left = control_group->x();
       bound_bottom_right = control_group->x() + control_group->width();
 
-      label_date->setGeometry(w - margin - 2*box_width - 3,
-			      3,
-			      2*box_width-6, 
-			      box_height+2*margin-6);
+      if (label_date_visible)
+	label_date->setGeometry(w - margin - label_date->width() - 5,
+				3,
+				label_date->width(), 
+				box_height+2*margin-6);
+      else
+	label_date->setGeometry(w,
+				3,
+				1, 
+				box_height+2*margin-6);
+
       label_date->setAlignment( AlignRight|AlignVCenter );
 
       dock_area->setGeometry(label_date->x() - 2*box_width + 6 - 4,
@@ -587,15 +598,22 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       bound_bottom_right = control_group->y() + control_group->height();
 
 
-      label_date->setGeometry(3,
-			      h - margin - 3-box_height*3/4,
-			      box_width+2*margin-6, 
-			      box_height*3/4);
+      if (label_date_visible)
+	label_date->setGeometry(3,
+				h - margin - 2*label_date->height() -5,
+				box_width+2*margin-6, 
+				2*label_date->height());
+      else
+	label_date->setGeometry(3,
+				h,
+				box_width+2*margin-6, 
+				1);
+  
 
       label_date->setAlignment( AlignHCenter|AlignBottom);
 
       dock_area->setGeometry(3,
-			     label_date->y() - box_height - 2*margin + 6 -4,
+			     label_date->y() - box_height - 2*margin - 4,
 			     box_width+2*margin-6, 
 			     box_height);
 
