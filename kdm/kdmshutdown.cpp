@@ -312,7 +312,7 @@ KDMShutdown::bye_bye()
 	  if( fork() == 0) {
 	       sleep(1);
 	       system( cur_action);
-	       exit(0);
+	       exit( UNMANAGE_DISPLAY);
 	  } else {
 	       exit( UNMANAGE_DISPLAY);
 	  }
