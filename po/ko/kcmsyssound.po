@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "사운드(&S)"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "시스템 사운드"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "1번 데스크탑으로"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "2번 데스크탑으로"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "3번 데스크탑으로"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "4번 데스크탑으로"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "5번 데스크탑으로"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "6번 데스크탑으로"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "7번 데스크탑으로"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "8번 데스크탑으로"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "윈도우 활성화"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "새 윈도우 열기"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "윈도우 닫기"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "시작"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "윈도우 위로 감추기"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "윈도우 아래로 감추기"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "윈도우 아이콘화"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "윈도우 아이콘화 해제"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "윈도우 최대화"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "윈도우 최대화 해제"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "윈도우 고정"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "윈도우 고정 해제"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr "윈도우 새위치로 이동"
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr "윈도우 이동 최소"
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "로그아웃"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "로그아웃 메시지"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "윈도우 이동 시작"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "윈도우 이동 마침"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "윈도우 크기조절 시작"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "윈도우 크기조절 마침"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "시스템 사운드 사용(&n)"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "테스트(&T)"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "이벤트(&E):"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "소리(&S):"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "추가하려는 WAV 파일들을 사운드 목록에 넣을 수 있읍니다."
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "지원되지 않는 URL"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"이 유형의 URL은 현재 KDE 시스템 사운드 모듈이 지원하지 "
+"않습니다"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"\n"
+"%s은 \n"
+"WAV 파일 같지 않습니다."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "부적절한 파일 확장자"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"파일\n"
+"%s\n"
+"이미 목록에 있읍니다"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "파일이 목록에 있음"

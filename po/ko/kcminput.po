@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: main.cpp:54
+msgid "&Mouse"
+msgstr "마우스(&M)"
+
+#: main.cpp:57
+msgid "&Keyboard"
+msgstr "키보드(&K)"
+
+#: main.cpp:63
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "사용법: kcminput [-init | {마우스,키보드}]\n"
+
+#: main.cpp:104
+msgid "Input Devices Properties"
+msgstr "입력 장치 특성값"
+
+#: mouse.cpp:75
+msgid "Acceleration"
+msgstr "마우스 움직임 속도"
+
+#: mouse.cpp:81
+msgid "Threshold"
+msgstr "두번 누르기 속도"
+
+#: mouse.cpp:84
+msgid "Button mapping"
+msgstr "단추 지정"
+
+#: mouse.cpp:86
+msgid "Right handed"
+msgstr "오른손"
+
+#: mouse.cpp:88
+msgid "Left handed"
+msgstr "왼손"
+
+#: keyboard.cpp:67
+msgid "Keyboard repeat"
+msgstr "키보드 반복"
+
+#: keyboard.cpp:75
+msgid "Key click volume"
+msgstr "글쇠 누름 음량"

@@ -1,0 +1,419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: backgnd.cpp:59
+msgid "Enter new desktop name"
+msgstr "새 데스크탑 이름을 넣으십시오"
+
+#: backgnd.cpp:115 backgnd.cpp:150
+msgid "Desktop"
+msgstr "데스크탑"
+
+#: backgnd.cpp:167
+msgid "&Rename ..."
+msgstr "이름바꾸기(&R)..."
+
+#: backgnd.cpp:193 colorscm.cpp:93
+msgid "Colors"
+msgstr "배경색"
+
+#: backgnd.cpp:220
+msgid "&One Color"
+msgstr "한가지색(&O)"
+
+#: backgnd.cpp:237
+msgid "&Two Color"
+msgstr "두가지색(&T)"
+
+#: backgnd.cpp:256
+msgid "Set&up ..."
+msgstr "설정(&u)..."
+
+#: backgnd.cpp:265
+msgid "Wallpaper"
+msgstr "바탕그림"
+
+#: backgnd.cpp:275
+msgid "Ti&led"
+msgstr "타일식으로(&l)"
+
+#: backgnd.cpp:283
+msgid "&Centred"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:291
+msgid "&Scaled"
+msgstr "크기조절(&S)"
+
+#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+msgid "No wallpaper"
+msgstr "바탕그림 없음"
+
+#: backgnd.cpp:335
+msgid "&Browse..."
+msgstr "찾아보기(&B)..."
+
+#: backgnd.cpp:864
+msgid "Desktop names"
+msgstr "데스크탑 이름"
+
+#: backgnd.cpp:910
+msgid "Two color backgrounds"
+msgstr "배경을 두가지 색으로"
+
+#: backgnd.cpp:947
+msgid "Blend colors from &top to bottom"
+msgstr "배경 위에서 아래로 점점 변화(&t)"
+
+#: backgnd.cpp:953
+msgid "Blend colors from &right to left"
+msgstr "배경 오른쪽에서 왼쪽으로 점점 변화(&r)"
+
+#: backgnd.cpp:959
+msgid "Use &pattern"
+msgstr "패턴 사용(&p)"
+
+#: backgnd.cpp:986
+msgid "Preview"
+msgstr "미리보기"
+
+#: backgnd.cpp:997
+msgid "Pattern &name"
+msgstr "패턴 이름(&n)"
+
+#: backgnd.cpp:1036
+msgid "Current"
+msgstr "현재 설정"
+
+#: backgnd.cpp:1096
+msgid "Filled"
+msgstr "채움"
+
+#: backgnd.cpp:1099
+msgid "Fish net"
+msgstr "그물망"
+
+#: backgnd.cpp:1102
+msgid "Triangles"
+msgstr "삼각형"
+
+#: backgnd.cpp:1105
+msgid "Flowers"
+msgstr "꽃무늬"
+
+#: backgnd.cpp:1108
+msgid "Rattan"
+msgstr "등나무"
+
+#: backgnd.cpp:1111
+msgid "Cobbled Pavement"
+msgstr "자갈길"
+
+#: colorscm.cpp:119
+msgid "Color Scheme"
+msgstr "색 설정"
+
+#: colorscm.cpp:130
+msgid "Current scheme"
+msgstr "현재 설정"
+
+#: colorscm.cpp:132
+msgid "KDE default"
+msgstr "KDE 기본값"
+
+#: colorscm.cpp:145
+msgid "&Add ..."
+msgstr "추가(&A)..."
+
+#: colorscm.cpp:162
+msgid "&Save changes"
+msgstr "변경 사항 저장(&S)"
+
+#: colorscm.cpp:176
+msgid "Widget color"
+msgstr "위젯 색"
+
+#: colorscm.cpp:183
+msgid "Inactive title bar"
+msgstr "비활성 타이틀 바"
+
+#: colorscm.cpp:184
+msgid "Inactive title text"
+msgstr "비활성 타이틀 문자"
+
+#: colorscm.cpp:185
+msgid "Inactive title blend"
+msgstr "비활성 타이틀 바탕색"
+
+#: colorscm.cpp:186
+msgid "Active title bar"
+msgstr "활성 타이틀 바"
+
+#: colorscm.cpp:187
+msgid "Active title text"
+msgstr "활성 타이틀 문자"
+
+#: colorscm.cpp:188
+msgid "Active title blend"
+msgstr "활성 타이틀 바탕색"
+
+#: colorscm.cpp:189
+msgid "Background"
+msgstr "배경"
+
+#: colorscm.cpp:190
+msgid "Text"
+msgstr "텍스트"
+
+#: colorscm.cpp:191
+msgid "Select background"
+msgstr "배경 선택"
+
+#: colorscm.cpp:192
+msgid "Select text"
+msgstr "문자 선택"
+
+#: colorscm.cpp:193
+msgid "Window background"
+msgstr "윈도우 배경"
+
+#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "윈도우 문자"
+
+#: colorscm.cpp:222
+msgid "Contrast"
+msgstr "색대비"
+
+#: colorscm.cpp:238
+msgid "&Low"
+msgstr "낮음(&L)"
+
+#: colorscm.cpp:246
+msgid "High"
+msgstr "높음"
+
+#: colorscm.cpp:317
+msgid "Error removing"
+msgstr "제거 오류"
+
+#: colorscm.cpp:318
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"이 색 설정은 제거될 수 없습니다.\n"
+"귀하는 색 설정 파일이 저장된 파일 시스템에 대한\n"
+"변경 권한이 없는 것 같습니다."
+
+#: colorscm.cpp:375
+msgid "Naming error"
+msgstr "잘못된 이름"
+
+#: colorscm.cpp:376
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"새로운 색 설정을 위해서는 유일한 이름이\n"
+"필요합니다. 지정한 색 설정 이름이 이미 설정표에\n"
+"있습니다."
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "색설정 추가"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"귀하의 개인설정 목록에 추가될 새로운\n"
+"색 설정 이름을 입력하십시오(&E)\n"
+"\n"
+"미리보기로 사용중인 색들이 새로운 색 설정\n"
+"이름으로 복사될 것입니다."
+
+#: scrnsave.cpp:48
+msgid "Ignore"
+msgstr "무시"
+
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr "화면 저장"
+
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr "화면 잠금"
+
+#: scrnsave.cpp:113 scrnsave.cpp:182
+msgid "Screen Saver"
+msgstr "화면 보호기"
+
+#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+msgid "No screensaver"
+msgstr "화면 보호기 없음"
+
+#: scrnsave.cpp:210
+msgid "&Setup ..."
+msgstr "설정(&S)..."
+
+#: scrnsave.cpp:218
+msgid "&Test"
+msgstr "테스트(&T)"
+
+#: scrnsave.cpp:231
+msgid "Settings"
+msgstr "설정사항"
+
+#: scrnsave.cpp:251
+msgid "&Wait for"
+msgstr "대기시간(&W)"
+
+#: scrnsave.cpp:261
+msgid "min."
+msgstr "분"
+
+#: scrnsave.cpp:267
+msgid "&Require password"
+msgstr "암호 필요(&R) "
+
+#: scrnsave.cpp:273
+msgid "Show &password as stars"
+msgstr "암호 *로 나타내기"
+
+#: scrnsave.cpp:281
+msgid "Priority"
+msgstr "우선순위"
+
+#: scrnsave.cpp:294
+msgid "&High"
+msgstr "높음(&H)"
+
+#: scrnsave.cpp:303
+msgid "Low"
+msgstr "낮음"
+
+#: general.cpp:216
+msgid "Fonts etc."
+msgstr "글꼴 등등.."
+
+#: general.cpp:222
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "윈도우 95 스타일로 위젯 그림(&D)"
+
+#: general.cpp:236
+msgid "Desktop fonts"
+msgstr "데스크탑 글꼴"
+
+#: general.cpp:248
+msgid "General font"
+msgstr "일반 글꼴"
+
+#: general.cpp:253
+msgid "Fixed font"
+msgstr "고정폭 글꼴"
+
+#: general.cpp:263
+msgid "Panel button font"
+msgstr "패널 단추 글꼴"
+
+#: general.cpp:268
+msgid "Panel clock font"
+msgstr "패널 시계 글꼴"
+
+#: general.cpp:298
+msgid "Sample text"
+msgstr "예제 글"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" � $ % ^ & * ( )"
+msgstr ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"가 나 다 라 마 바 사 아 자 차 카 타 파 하\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" � $ % ^ & * ( )"
+
+#: main.cpp:62
+msgid "&Fonts etc."
+msgstr "글꼴 등등(&F)"
+
+#: main.cpp:65
+msgid "&Background"
+msgstr "배경(&B)"
+
+#: main.cpp:68
+msgid "&Screensaver"
+msgstr "화면보호기(&S)"
+
+#: main.cpp:72
+msgid "&Colors"
+msgstr "색(&C)"
+
+#: main.cpp:78
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "사용법: kcmdisplay [-init | {배경,화면보호기,색,스타일}]\n"
+
+#: main.cpp:130
+msgid "Display settings"
+msgstr "디스플레이 설정"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "비활성 윈도우"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "활성 윈도우"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "선택된 문자"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "활자체(&T)"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "굵게(&B)"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "이탤릭체(&I)"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "크기(&S)"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "글자 세트(&C)"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "기본"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "무관하게"

@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
+
+#: kpanel.C:253
+msgid "Go!"
+msgstr "출발!"
+
+#: kpanel.C:256 tools.C:787
+msgid "Where do you want to go tomorrow?"
+msgstr "내일 어디로 가시겠습니까?"
+
+#: kpanel.C:330
+msgid "No info available"
+msgstr "정보가 없습니다"
+
+#: kpanel.C:369 props.C:156 props.C:157
+msgid "Logout"
+msgstr "로그아웃"
+
+#: kpanel.C:377 props.C:155
+msgid "Lock screen"
+msgstr "화면 잠금"
+
+#: kpanel.C:386
+msgid "Hide the panel"
+msgstr "패널 숨기기"
+
+#: kpanel.C:396
+msgid "Show the panel"
+msgstr "패널 보이기"
+
+#: kpanel.C:1105 tools.C:616
+msgid "No comment available"
+msgstr "설명이 없습니다"
+
+#: kpanel.C:1114 tools.C:796
+msgid "Windowlist"
+msgstr "윈도우목록"
+
+#: props.C:136
+msgid "Add application"
+msgstr "응용프로그램 추가"
+
+#: props.C:138
+msgid "Add an application or a submenu onto the panel"
+msgstr "응용프로그램 또는 하위메뉴 패널에 추가"
+
+#: props.C:139
+msgid "Add windowlist"
+msgstr "윈도우목록 추가"
+
+#: props.C:141
+msgid "Add a windowlist menu onto the panel"
+msgstr "윈도우목록 메뉴 패널에 추가"
+
+#: events.C:722 props.C:142
+msgid "Configure"
+msgstr "설정"
+
+#: props.C:144
+msgid "Configure panel"
+msgstr "패널 설정"
+
+#: props.C:145
+msgid "Edit Menus"
+msgstr "메뉴 편집"
+
+#: props.C:147
+msgid "Add or remove applications in the menu structure "
+msgstr "메뉴 구조의 응용프로그램 추가 또는 삭제 "
+
+#: events.C:724 props.C:148
+msgid "Restart"
+msgstr "다시 시작"
+
+#: props.C:150
+msgid "Restart panel"
+msgstr "패널 다시 시작"
+
+#: props.C:151
+msgid "Panel"
+msgstr "패널"
+
+#: props.C:153
+msgid "Lock Screen"
+msgstr "화면 잠금"
+
+#: props.C:310
+msgid "The menu editor is not installed."
+msgstr "메뉴 편집기가 설치되지 않았습니다."
+
+#: events.C:760 props.C:311
+msgid "Oops!"
+msgstr "아!"
+
+#: events.C:759
+msgid "Cannot put this as button onto the panel!"
+msgstr "패널에 단추로 넣을 수 없습니다!"
