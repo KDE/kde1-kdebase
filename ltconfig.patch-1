@@ -1,0 +1,43 @@
+Index: ltconfig.in
+===================================================================
+RCS file: /gd/gnu/anoncvsroot/libtool/ltconfig.in,v
+retrieving revision 1.19
+diff -u -r1.19 ltconfig.in
+--- ltconfig.in	1998/11/11 21:12:30	1.19
++++ ltconfig.in	1998/11/15 15:52:31
+@@ -166,6 +166,7 @@
+ with_gcc=no
+ with_gnu_ld=no
+ need_locks=yes
++enable_silent=no
+ objext=o
+ libext=a
+ 
+@@ -216,6 +217,7 @@
+     --with-gcc             assume that the GNU C compiler will be used
+     --with-gnu-ld          assume that the C compiler uses the GNU linker
+     --disable-lock         disable file locking
++    --enable-silent        pass --silent to libtool
+ 
+ LTMAIN is the \`ltmain.sh' shell script fragment or \`ltmain.c' program
+ that provides basic libtool functionality.
+@@ -251,6 +253,8 @@
+ 
+   --disable-lock) need_locks=no ;;
+ 
++  --enable-silent) enable_silent=yes ;;
++
+   -*)
+     echo "$progname: unrecognized option \`$option'" 1>&2
+     echo "$help" 1>&2
+@@ -1917,6 +1921,10 @@
+ 
+ # Fix the shell variable \$srcfile for the compiler.
+ fix_srcfile_path="$fix_srcfile_path"
++
++# Suppress informational output
++enable_silent="$enable_silent"
++
+ EOF
+ 
+ case "$ltmain" in
