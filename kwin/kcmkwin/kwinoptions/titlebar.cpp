@@ -929,7 +929,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   //CT 06Nov1998 - title alignment GUI config  
   alignBox = new QButtonGroup (klocale->translate("Title Alignment"), this);
 
-  QGridLayout *pixLay = new QGridLayout(alignBox,2,3,10,5);
+  QGridLayout *pixLay = new QGridLayout(alignBox,2,3,15,5);
   
   leftAlign = new QRadioButton(klocale->translate("Left"),alignBox);
   leftAlign->adjustSize();
