@@ -25,4 +25,4 @@ Comment[sv]=C-källkod
 Icon=c_src.xpm
 Type=MimeType
 MimeType=text/x-c
-Patterns=
+Patterns=;
