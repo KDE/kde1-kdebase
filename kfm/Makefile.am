@@ -40,11 +40,13 @@ noinst_HEADERS =  \
 	kstrlist.h cgi.h kbookmarkdlg.h kintlist.h
 
 METASOURCES =	\
-	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
-	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
-	kioserver_ipc.moc kfmman.moc kiojob.moc htmlcache.moc \
-	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
-	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
+	kfmgui.moc kfmview.moc kbind.moc \
+	kfmdlg.moc bookmark.moc kfmprops.moc kfmserver_ipc.moc \
+	kfmserver.moc kioserver.moc kioserver_ipc.moc \
+	root.moc kfmman.moc kiojob.moc  \
+	htmlcache.moc kfmtree.moc \
+	krenamewin.moc passworddialog.moc kURLcompletion.moc kfm.moc \
+	kfmjob.moc kfmexec.moc cgi.moc kfinder.moc  \
 	open-with.moc finddlg.moc kcookiewin.moc popup.moc
 
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
