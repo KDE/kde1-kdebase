@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) -I..
-LDFLAGS =  $(all_libraries) $(KDE_RPATH)
-LDADD =        $(LIB_KFM) $(LIB_KDEUI) 
+LDFLAGS  = $(all_libraries) $(KDE_RPATH)
+LDADD    = $(LIB_KFM) $(LIB_KDEUI) 
 
 SUBDIRS = pics
 
@@ -22,7 +22,7 @@ klangcombo.moc: klangcombo.h
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_confdir)
-	$(INSTALL_DATA) kcmlocalerc $(kde_confdir)/kcmlocalerc
+	$(INSTALL_DATA) kcmlocale.kdelnk $(kde_confdir)/kcmlocalerc
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) locale.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
