@@ -15,7 +15,7 @@ msgstr "KDE Kontroll-Zentrum"
 
 #: toplevel.cpp:79
 msgid "&Swallow modules"
-msgstr "Modulle &einbetten"
+msgstr "Module &einbetten"
 
 #: toplevel.cpp:82
 msgid "&About KControl..."
