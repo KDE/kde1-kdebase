@@ -712,19 +712,10 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     terminalCheck->raise();
     terminalCheck->setGeometry( 20, 250, 150, 30 );
     terminalCheck->setText( klocale->translate("Run in terminal") );
-    terminalCheck->setFixedSize(terminalCheck->sizeHint());
-    layoutV1->addWidget(terminalCheck, 0, AlignLeft);
-
-    tmpQLabel = new QLabel(tmpQGroupBox, "Label_5" );
-    tmpQLabel->setText( klocale->translate("Terminal Options") );
-    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
-    layoutV1->addWidget(tmpQLabel, 0, AlignLeft);
 
     terminalEdit->raise();
     terminalEdit->setGeometry( 140, 280, 180, 30 );
     terminalEdit->setText( "" );
-    layoutV1->addWidget(terminalEdit, 0, AlignLeft);
-    layoutV1->activate();
 
     tmpQLabel = new QLabel( this, "Label_5" );
     tmpQLabel->setGeometry( 20, 280, 110, 30 );
