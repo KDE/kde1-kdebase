@@ -111,6 +111,7 @@ KHelpMain::KHelpMain(const char *name)
 KHelpMain::~KHelpMain()
 {
 	helpWindowList.removeRef( this );
+	delete toolbar;
 }
 
 

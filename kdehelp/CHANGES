@@ -1,6 +1,18 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.4.15
+--------------
+
+Add delete toolbar; to destructor so that kdehelp works properly with the
+new toolbar.
+
+Version 0.4.14
+--------------
+
+man bugfix from Ralph C. Weichert:
+  when calling system( man ) add < /dev/null in case stdin has been closed.
+
 Version 0.4.13
 --------------
 

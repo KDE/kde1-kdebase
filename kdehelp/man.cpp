@@ -816,12 +816,12 @@ int cMan::ReadLocation(const char *name)
 					break;
 				}
 			}
-			sprintf(sysCmd, "man %s %s > %s 2> %s", sections[pos]->GetName(),
+			sprintf(sysCmd, "man %s %s < /dev/null > %s 2> %s", sections[pos]->GetName(),
 				tmpName, stdFile, errFile);
 		}
 		else
 		{
-			sprintf(sysCmd, "man %s > %s 2> %s", tmpName, stdFile, errFile);
+			sprintf(sysCmd, "man %s < /dev/null > %s 2> %s", tmpName, stdFile, errFile);
 		}
 
 		// call 'man' to read man page
