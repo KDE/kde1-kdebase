@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=GhostView
+Comment=Postscript Viewer
+MiniIcon=mini-gv.xpm
+Protocols=
+MimeType=
+Comment[de]=Postscript Betrachter
+Exec=ghostview
+Icon=gv.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

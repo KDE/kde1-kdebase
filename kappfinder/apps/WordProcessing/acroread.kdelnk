@@ -1,0 +1,15 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Acrobat Reader
+MiniIcon=
+Protocols=
+MimeType=
+Comment=
+Exec=acroread
+Icon=gv.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

@@ -35,13 +35,12 @@ for file in `find apps -name "*.kdelnk"`
 do
   # extract name of the executable
   filename=`grep "^Exec=" $file | sed "s/Exec= *//" | sed "s/ .*//"`
-  echo -e "Looking for $filename: \t\c"
 
   # test if this executable is installed (in path!)
   executable=`which $filename`
   if [ -x "$executable" ]; then
 
-    echo "found in $executable"
+    echo "Looking for $filename: found in $executable"
 
     # create the directory
     pathname=`echo $file | sed "s/\/[^\/]*kdelnk$//"`    
@@ -66,7 +65,7 @@ do
     fi
 
   else  
-    echo "not found"
+    echo "Looking for $filename: not found"
   fi
 done
 
