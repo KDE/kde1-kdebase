@@ -333,19 +333,19 @@ void
 KGreeter::save_wm()
 {
      // read passwd
-     struct passwd *pwd = getpwnam(/*qstrdup*/(greet->name));
+     struct passwd *pwd = getpwnam(greet->name);
      endpwent();
-     
+     if (!pwd) return;
+
      QString file;
      file.sprintf("%s/"WMRC, pwd->pw_dir);
      QFile f(file);
-     
+
      // open file as user which is loging in
-     uid_t euid = geteuid();
      seteuid(pwd->pw_uid);
      int i = f.open(IO_WriteOnly);
-     seteuid(euid);
-     
+     seteuid(0);
+
      if ( i ) {
 	  QTextStream t;
 	  t.setDevice( &f );
@@ -358,22 +358,22 @@ void
 KGreeter::load_wm()
 {
      // read passwd
-     passwd *pwd = getpwnam(qstrdup(loginEdit->text()));
+     passwd *pwd = getpwnam(loginEdit->text());
      endpwent();
-     
+     if (!pwd) return;
+
      // Take care of bogus user name:
      if( !pwd) return;
-     
+
      QString file;
      file.sprintf("%s/"WMRC, pwd->pw_dir);
      QFile f(file);
-     
+
      // open file as user which is loging in
-     uid_t euid = geteuid();
      seteuid(pwd->pw_uid);
      int err = f.open(IO_ReadOnly);
-     seteuid(euid);
-     
+     seteuid(0);
+
      // set default wm
      int wm = 0;
      if ( err ) {
@@ -381,7 +381,7 @@ KGreeter::load_wm()
 	  QString s;
 	  if ( !t.eof() ) s = t.readLine();
 	  f.close();
-	  
+
 	  for (int i = 0; i < sessionargBox->count(); i++)
 	       if (strcmp(sessionargBox->text(i), s) == 0) {
 		    wm = i;
