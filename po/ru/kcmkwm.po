@@ -119,7 +119,7 @@ msgstr "Картинка"
 msgid "Active title has shaded frame"
 msgstr ""
 "Активный заголовок имеет\n"
-"переливающююся рамку"
+"переливающуюся рамку"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
@@ -261,7 +261,7 @@ msgstr "Фокус за мышкой"
 #
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Классичекий фокус за мышкой"
+msgstr "Классический фокус за мышкой"
 
 #
 #: windows.cpp:191

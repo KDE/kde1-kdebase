@@ -33,7 +33,7 @@ msgstr "использование: kcmkpanel [-init | {panel,options,desktops, disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "Конфигурирование KPanel"
+msgstr "Настройка KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -76,7 +76,7 @@ msgstr "Низ"
 #
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Верх/лево"
+msgstr "Верх/влево"
 
 #: panel.cpp:95
 msgid "Style"
@@ -107,12 +107,12 @@ msgstr "Ширина"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Тултипсы у меню"
+msgstr "Подсказки у меню"
 
 #
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Тултипсы у меню"
+msgstr "Подсказки у меню"
 
 #: options.cpp:84
 msgid "De&lay:"
@@ -128,12 +128,12 @@ msgstr "Большой"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr "Видымых"
+msgstr "Видимых"
 
 #
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Автоскрывать панель"
+msgstr "Авто скрывать панель"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
@@ -154,7 +154,7 @@ msgstr "Быстро"
 #
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Автоскрывать задачи"
+msgstr "Авто скрывать задачи"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -200,7 +200,7 @@ msgstr "Редактировать общие..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Максимальное количество папок в надавних:"
+msgstr "Максимальное количество папок в недавних:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"

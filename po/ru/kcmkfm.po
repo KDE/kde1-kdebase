@@ -131,7 +131,7 @@ msgstr "Редактор"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Не зыбудьте сохранить свои установки!"
+msgstr "Не забудьте сохранить свои установки!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"

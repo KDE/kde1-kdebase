@@ -148,7 +148,7 @@ msgstr "Ошибка загрузки файла с изображением"
 
 #: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
-msgstr "Неподдерживаемый URL"
+msgstr "Не поддерживаемый URL"
 
 #: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
@@ -325,7 +325,7 @@ msgstr "Текст в окне"
 
 #: colorscm.cpp:207
 msgid "Contrast"
-msgstr "Котраст"
+msgstr "Контраст"
 
 #
 #: colorscm.cpp:223
@@ -352,7 +352,7 @@ msgstr ""
 
 #: colorscm.cpp:362
 msgid "Naming error"
-msgstr "Ошибка перименования"
+msgstr "Ошибка переименования"
 
 #: colorscm.cpp:363
 msgid ""
@@ -360,7 +360,7 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Пожайлуста выберите уникальное имя для новой цветовой\n"
+"Пожалуйста выберите уникальное имя для новой цветовой\n"
 "схемы. Которое вы ввели уже существует\n"
 "в списке цветовых схем."
 

@@ -28,35 +28,35 @@ msgstr "(нет)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Переход на Десктоп 1"
+msgstr "Переход на Рабочий стол 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Переход на Десктоп 2"
+msgstr "Переход на Рабочий стол 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Переход на Десктоп 3"
+msgstr "Переход на Рабочий стол 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Переход на Десктоп 4"
+msgstr "Переход на Рабочий стол 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Переход на Десктоп 5"
+msgstr "Переход на Рабочий стол 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Переход на Десктоп 6"
+msgstr "Переход на Рабочий стол 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Переход на Десктоп 7"
+msgstr "Переход на Рабочий стол 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Переход на Десктоп 8"
+msgstr "Переход на Рабочий стол 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
@@ -160,14 +160,14 @@ msgstr "Дополнительные WAV файлы могут быть перенесены в список звуков."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
-msgstr "Неподдерживаемый URL"
+msgstr "Не поддерживаемый URL"
 
 #
 #: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "Извините, этот тип URL не поддерживается Модулем СистемныхЗвуков KDE"
+msgstr "Извините, этот тип URL не поддерживается Модулем Системных Звуков KDE"
 
 #: syssound.cpp:468
 #, c-format
