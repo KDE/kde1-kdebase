@@ -17,7 +17,7 @@
 #include <qwidget.h>
 #include <qpopmenu.h>
 
-#include "kwmmapp.h"
+#include <kwmmapp.h>
 
 enum {
   RMB_HELP=100,
