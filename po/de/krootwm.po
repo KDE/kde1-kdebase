@@ -28,7 +28,7 @@ msgstr "Desktop auffrischen"
 
 #: krootwm.C:235 krootwm.C:274
 msgid "Unclutter windows"
-msgstr "Entzerre Fenster"
+msgstr "Fenster anordnen"
 
 #: krootwm.C:236 krootwm.C:275
 msgid "Cascade windows"

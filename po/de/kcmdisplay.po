@@ -80,7 +80,7 @@ msgstr "Zentrierte Backsteine"
 
 #: backgnd.cpp:380
 msgid "Centred Warp"
-msgstr "Zentrierte Kette"
+msgstr "Zentrierte Verzerrung"
 
 #: backgnd.cpp:381
 msgid "Centred Maxpect"
@@ -108,7 +108,7 @@ msgstr "&Einstellungen..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr "In Kontrollfeld einbinden"
+msgstr "In Kontroll-Leiste einbinden"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
@@ -195,7 +195,7 @@ msgstr "Einstellung für Zufalls-Modus"
 
 #: backgnd.cpp:1713
 msgid "Pick files from &directory"
-msgstr "Nimm Dateien aus &Verzeichnis"
+msgstr "Wähle Dateien aus &Verzeichnis"
 
 #: backgnd.cpp:1727
 msgid "&Browse ..."
@@ -259,7 +259,7 @@ msgstr "Inaktiver Titeltext"
 
 #: colorscm.cpp:170
 msgid "Inactive title blend"
-msgstr "Inaktive Titelleiste-Verlauf"
+msgstr "Verlauf für inaktive Titelleiste"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
@@ -361,7 +361,7 @@ msgstr "Ignorieren"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr "Schone Bildschirm"
+msgstr "Bildschirmschoner: an"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
@@ -389,7 +389,7 @@ msgstr "Einstellungen"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "&Warte"
+msgstr "&Warten auf"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -401,11 +401,11 @@ msgstr "Nach &Paßwort fragen"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr "&Akzeptiere Root-Passwort zum Entsperren"
+msgstr "&Akzeptiere Root-Paßwort zum Entsperren"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
-msgstr "Zeige &Passwort als Sternchen an"
+msgstr "Zeige &Paßwort als Sternchen an"
 
 #: scrnsave.cpp:288
 msgid "Priority"
@@ -429,7 +429,7 @@ msgstr "&Windows 95-Stil"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Menüleiste am oberen Bildschirmrand nach MacOS Manier"
+msgstr "&Menüleiste am oberen Bildschirmrand wie MacOS"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
@@ -449,11 +449,11 @@ msgstr "Schriftart für Fenstertext"
 
 #: general.cpp:546
 msgid "Panel button font"
-msgstr "Panelbutton-Schrift"
+msgstr "Schrift auf Kontroll-Leiste"
 
 #: general.cpp:551
 msgid "Panel clock font"
-msgstr "Paneluhr-Schrift"
+msgstr "Schrift für Uhr auf Kontroll-Leiste"
 
 #: general.cpp:581
 msgid "Sample text"

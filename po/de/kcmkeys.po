@@ -110,11 +110,11 @@ msgstr "Befehl ausführen"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Menu für Fenstermanipulationen"
+msgstr "Menü für Fenstermanipulationen"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "Systemmenu einblenden"
+msgstr "Systemmenü einblenden"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"

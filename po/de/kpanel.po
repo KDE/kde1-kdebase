@@ -44,11 +44,11 @@ msgstr "Bildschirm sperren"
 
 #: kpanel.C:472 kpanel.C:481
 msgid "Hide the panel"
-msgstr "Panel verstecken"
+msgstr "Kontroll-Leiste nicht anzeigen"
 
 #: kpanel.C:491 kpanel.C:503
 msgid "Show the panel"
-msgstr "Panel anzeigen"
+msgstr "Kontroll-Leiste anzeigen"
 
 #: kpanel.C:1108
 msgid "Iconify other &windows"
@@ -72,7 +72,7 @@ msgstr "Anwendung hinzufügen"
 
 #: props.C:169
 msgid "Add an application or a submenu onto the panel"
-msgstr "Programm oder Untermenü zum Panel hinzufügen"
+msgstr "Programm oder Untermenü zu Kontroll-Leiste hinzufügen"
 
 #: props.C:175
 msgid "Add Disk Navigator"
@@ -80,7 +80,7 @@ msgstr "Disk-Navigator hinzufügen"
 
 #: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Menü Disk-Navigator zum Panel hinzufügen"
+msgstr "Menü Disk-Navigator zu Kontroll-Leiste hinzufügen"
 
 #: props.C:180
 msgid "Add Windowlist"
@@ -88,7 +88,7 @@ msgstr "Fensterliste hinzufügen"
 
 #: props.C:182
 msgid "Add a windowlist menu onto the panel"
-msgstr "Menü für Fensterliste zum Panel hinzufügen"
+msgstr "Menü für Fensterliste zu Kontroll-Leiste hinzufügen"
 
 #: events.C:832 props.C:183
 msgid "Configure"
@@ -96,15 +96,15 @@ msgstr "Konfigurieren"
 
 #: props.C:185
 msgid "Configure panel"
-msgstr "Panel konfigurieren"
+msgstr "Kontroll-Leiste konfigurieren"
 
 #: props.C:186
 msgid "Edit Menus"
-msgstr "Menu bearbeiten"
+msgstr "Menü bearbeiten"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr "Anwendungen in der Menu-Struktur hinzufügen oder löschen "
+msgstr "Anwendungen in der Menü-Struktur hinzufügen oder löschen "
 
 #: events.C:834 props.C:189
 msgid "Restart"
@@ -112,7 +112,7 @@ msgstr "Neu starten"
 
 #: props.C:191
 msgid "Restart panel"
-msgstr "Panel neu starten"
+msgstr "Kontroll-Leiste erneuern"
 
 #: props.C:194
 msgid "Disk Navigator"
@@ -120,7 +120,7 @@ msgstr "Disk-Navigator"
 
 #: props.C:202
 msgid "Panel"
-msgstr "Panel"
+msgstr "Kontroll-Leiste"
 
 #: props.C:204
 msgid "Lock Screen"
@@ -128,7 +128,7 @@ msgstr "Bildschirm sperren"
 
 #: props.C:451
 msgid "The menu editor is not installed."
-msgstr "Der Menu-Editor ist nicht installiert."
+msgstr "Der Menü-Editor ist nicht installiert."
 
 #: events.C:888 props.C:452
 msgid "Oops!"
@@ -148,7 +148,7 @@ msgstr "KDisk-Navigator"
 
 #: events.C:887
 msgid "Cannot put this as button onto the panel!"
-msgstr "Kann dies nicht als Button auf das Panel legen!"
+msgstr "Kann dies nicht als Button auf die Kontroll-Leiste legen!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"

@@ -512,11 +512,11 @@ msgstr "Starte automatisch"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr "Einge&bunden in Panel"
+msgstr "Einge&bunden in Kontroll-Leiste"
 
 #: widgets.cpp:649
 msgid "Dock into special area in the panel"
-msgstr "Andocken in Sonderbereich des Panels"
+msgstr "Andocken in Sonderbereich der Kontroll-Leiste"
 
 #: widgets.cpp:658
 msgid "Place"

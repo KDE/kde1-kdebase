@@ -253,7 +253,7 @@ msgstr "Menünamen ändern"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Ändern des Menü-Names wie es im Panel angezeigt wird"
+msgstr "Ändern des Menü-Names wie in kpanel angezeigt"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

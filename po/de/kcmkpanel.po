@@ -12,11 +12,11 @@ msgstr ""
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "&Panel"
+msgstr "&Kontroll-Leiste"
 
 #: main.cpp:70
 msgid "&Desktops"
-msgstr "&Desktops"
+msgstr "&Arbeitsflächen"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
@@ -52,11 +52,11 @@ msgstr "&Rechts"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "Taskbar"
+msgstr "Taskleiste"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "&Versteckt"
+msgstr "&Nicht angezeigt"
 
 #: panel.cpp:78
 msgid "T&op"
@@ -120,7 +120,7 @@ msgstr "Automatisches Verstecken"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Kontrollfeld &autom. verstecken"
+msgstr "Kontroll-Leist &autom. verstecken"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
@@ -140,7 +140,7 @@ msgstr "Schnell"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Tas&kbar autom. verstecken"
+msgstr "Tas&kleiste autom. verstecken"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"

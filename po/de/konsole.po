@@ -76,7 +76,7 @@ msgstr "80x25 (ibmv&ga)"
 
 #: main.C:323
 msgid "&Menubar"
-msgstr "&Menuleiste"
+msgstr "&Menüleiste"
 
 #: main.C:325
 msgid "&Frame"
