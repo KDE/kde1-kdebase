@@ -48,16 +48,6 @@ KBellConfig::~KBellConfig ()
       delete volume;
       delete pitch;
       delete duration;
-      delete v;
-      delete p;
-      delete d;
-      delete vlabel;
-      delete plabel;
-      delete dlabel;
-      delete percent;
-      delete hertz;
-      delete ms;
-      delete test;
     }
 }
 
@@ -71,41 +61,45 @@ KBellConfig::KBellConfig (QWidget * parent, const char *name, bool init)
 
   if (GUI)
     {
-      volume = new KSlider(0,100,10,100, KSlider::Horizontal,    this, "vol");
-      pitch = new KSlider(0,2000,200,2000, KSlider::Horizontal, this, "pitch");
-      duration = new KSlider(0,500,50,500, KSlider::Horizontal, this, "dur");
+      // args: label, min, max, step, initial, units
+      volume = new KSliderControl(klocale->translate("Volume"), 
+				  0, 100, 5, 50, "%", this);
+      pitch = new KSliderControl(klocale->translate("Pitch"), 
+				 0, 2000, 20, 800, 
+				 klocale->translate("Hz"), this);
+      duration = new KSliderControl(klocale->translate("Duration"), 
+				    0, 1000, 50, 100, 
+				    klocale->translate("milliseconds"), this);
       
-      v = new QLCDNumber (3, this, "v");
-      p = new QLCDNumber (4, this, "p");
-      d = new QLCDNumber (3, this, "d");
-      v->setFrameStyle( QFrame::NoFrame );
-      p->setFrameStyle( QFrame::NoFrame );
-      d->setFrameStyle( QFrame::NoFrame );
+      volume->setLabelSize(0.30);
+      pitch->setLabelSize(0.30);
+      duration->setLabelSize(0.30);
+      
+      volume->setLabelAlignment(AlignLeft);
+      pitch->setLabelAlignment(AlignLeft);
+      duration->setLabelAlignment(AlignLeft);
 
-      vlabel = new QLabel(klocale->translate("Volume"), this);
-      plabel = new QLabel(klocale->translate("Pitch"), this);
-      dlabel = new QLabel(klocale->translate("Duration"), this);
-      percent = new QLabel("%", this);
-      hertz = new QLabel(klocale->translate("Hz"), this);
-      ms = new QLabel(klocale->translate("ms"), this);
-
+      // tickmarks: minor, major
+      volume->setSteps(5,25);
+      pitch->setSteps(40,200);
+      duration->setSteps(20,100);
+      
       test = new QPushButton(klocale->translate("Test"),this,"test");
-
-      connect( volume,   SIGNAL(valueChanged(int)), v, SLOT(display(int)) );
-      connect( pitch,    SIGNAL(valueChanged(int)), p, SLOT(display(int)) );
-      connect( duration, SIGNAL(valueChanged(int)), d, SLOT(display(int)) );
       connect( test, SIGNAL(clicked()), SLOT(ringBell()));
 
-      v->adjustSize();
-      p->adjustSize();
-      d->adjustSize();
-      vlabel->adjustSize();
-      plabel->adjustSize();
-      dlabel->adjustSize();
-      percent->adjustSize();
-      hertz->adjustSize();
-      ms->adjustSize();
       test->adjustSize();
+
+      // min width == largest min width
+      int aw = volume->minimumSize().width();
+      int bw = pitch->minimumSize().width();
+      int cw = duration->minimumSize().width();
+      int w = aw > bw ? aw : bw;
+      w = w > cw ? w : cw;
+      // min height == sum min height + 5*SPACE_YO
+      int h = 5*SPACE_YO + test->height() + volume->minimumSize().height() +
+	pitch->minimumSize().height() + duration->minimumSize().height();
+      setMinimumSize(w,h);
+
     }
 
   config = kapp->getConfig();
@@ -118,77 +112,47 @@ KBellConfig::KBellConfig (QWidget * parent, const char *name, bool init)
 
 void KBellConfig::resizeEvent(QResizeEvent *)
 {
-  int h = SPACE_YO;
-  int w = 0;
-
-  w = max(w, vlabel->width());
-  w = max(w, plabel->width());
-  w = max(w, dlabel->width());
-
-  vlabel->move(SPACE_XO, h);
-  volume->setGeometry(w + 2*SPACE_XO, h, 200, vlabel->height());
-  h += vlabel->height() + SPACE_YI;
-
-  int center = volume->x() + ( volume->width() - v->width() )/2;
-
-  int dh = ( v->height() - volume->height() )/2;
-
-  v->move(center, h);
-  percent->move(v->x() + v->width() + 3, h+dh);
-  h += v->height() + SPACE_YO;
-
-  plabel->move(SPACE_XO, h);
-  pitch->setGeometry(w + 2*SPACE_XO, h, 200, vlabel->height());
-  h += plabel->height() + SPACE_YI;
-
-  p->move(center, h);
-  hertz->move(p->x() + p->width() + 3, h+dh);
-  h += p->height() + SPACE_YO;
-
-  dlabel->move(SPACE_XO, h);
-  duration->setGeometry(w + 2*SPACE_XO, h, 200, vlabel->height());
-  h += dlabel->height() + SPACE_YI;
-
-  d->move(center, h);
-  ms->move(d->x() + d->width() + 3, h+dh);
-  h += d->height() + SPACE_YO;
-
-  test->move(SPACE_XO, h);
+  int w = width() - 2*SPACE_XO;
+  
+  volume->move(SPACE_XO, SPACE_YO);
+  volume->resize(w, volume->minimumSize().height() );
+  pitch->move(SPACE_XO, volume->y() + volume->height() + SPACE_YO);
+  pitch->resize(w, pitch->minimumSize().height() );
+  duration->move(SPACE_XO, pitch->y() + pitch->height() + SPACE_YO);
+  duration->resize(w, duration->minimumSize().height() );
+  test->move(SPACE_XO, duration->y() + duration->height() + SPACE_YO); 
 }
 
 // set the slider and the LCD to 'val'
 void KBellConfig::setBellVolume(int val)
 {
   volume->setValue(val);
-  v->display(val);
 }
 
 void KBellConfig::setBellPitch(int val)
 {
   pitch->setValue(val);
-  p->display(val);
 }
 
 void KBellConfig::setBellDuration(int val)
 {
   duration->setValue(val);
-  d->display(val);
 }
 
 // return the current LCD setting
 int  KBellConfig::getBellVolume()
 {
-  return v->intValue();
+  return volume->intValue();
 }
 
 int  KBellConfig::getBellPitch()
 {
-  return p->intValue();
+  return pitch->intValue();
 }
 
 int  KBellConfig::getBellDuration()
 {
-  return d->intValue();
+  return duration->intValue();
 }
 
 void KBellConfig::GetSettings( void )
