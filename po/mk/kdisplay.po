@@ -287,3 +287,4 @@ msgstr "upotreba:  kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 #: main.cpp:112
 msgid "Display settings"
 msgstr "Pokazi gi postavkite"
+

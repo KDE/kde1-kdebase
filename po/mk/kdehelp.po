@@ -42,11 +42,11 @@ msgstr "Otvori ja ovaa Vrska "
 
 #: helpwin.cpp:1321
 msgid "Add Bookmark"
-msgstr "Dodaj Zabelashka"
+msgstr "Dodajte Zabelashka"
 
 #: helpwin.cpp:1322
 msgid "Open in new Window"
-msgstr "Otvori vo nov Prozorec"
+msgstr "Otvorete vo nov Prozorec"
 
 #: info.cpp:86 info.cpp:601
 msgid "Error in info file"
@@ -60,7 +60,7 @@ msgstr "Jazolot ne mozhe da se najde: %"
 #: info.cpp:1375
 #, c-format
 msgid "Cannot open info file: %s"
-msgstr "Ne mozhe da se otvori nformativnoto dosie:"
+msgstr "Ne mozhe da se otvori informativnoto dosie:"
 
 #: error.cpp:23
 msgid "Fatal Error: "
@@ -68,7 +68,7 @@ msgstr "Fatalna Greshka: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "Pozor: "
+msgstr "Vnimavaj: "
 
 #: options.cpp:36
 msgid "Font Size"
@@ -96,11 +96,11 @@ msgstr "Fiksiran Font"
 
 #: options.cpp:207
 msgid "Background Color:"
-msgstr "Boja na zaden plan:"
+msgstr "Boja na pozadina:"
 
 #: options.cpp:215
 msgid "Normal Text Color:"
-msgstr "Normalna Boja na Tekstot:"
+msgstr "Normalna boja na tekstot:"
 
 #: options.cpp:223
 msgid "URL Link Color:"
@@ -166,7 +166,7 @@ msgstr "Raznovrstno"
 
 #: man.cpp:469
 msgid "System Administration"
-msgstr "Sistem Administracija"
+msgstr "Sistemska Administracija"
 
 #: man.cpp:580
 msgid "Reading Dir: "
@@ -207,7 +207,7 @@ msgstr "Otvori UR&L..."
 
 #: mainwidget.cpp:137
 msgid "&Reload"
-msgstr "&Povtorno Polni"
+msgstr "&Povtorno Vchitaj"
 
 #: mainwidget.cpp:139
 msgid "&Search"
@@ -321,7 +321,7 @@ msgstr "Sodrzhina na Pomosh"
 
 #: mainwidget.cpp:259
 msgid "Reload current document"
-msgstr "Povtorno polni go segasniot dokument"
+msgstr "Povtorno vchitaj go segasniot dokument"
 
 #: mainwidget.cpp:264
 msgid "Stop"
@@ -345,3 +345,5 @@ msgstr "Za KDE Pomosh"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Dodaj Zabeleshka"
+
+
