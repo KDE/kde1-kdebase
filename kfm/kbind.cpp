@@ -797,7 +797,7 @@ KMimeBind* KMimeType::findBinding( const char *_kdelnkName )
     }
     
     if (defaultType)
-        // Also look in all default bindings
+        // Also look in default bindings (allfiles, all)
         for ( b = defaultType->firstBinding(); b != 0L; b = defaultType->nextBinding() )
         {
             if ( strcmp( _kdelnkName, b->getKdelnkName() ) == 0L )
@@ -1602,7 +1602,7 @@ KSimpleConfig* KMimeBind::openKConfig( const char *_url )
 
 bool KMimeType::run( const char *_url )
 {
-    // Do we have some default binding ?
+    // Do we have some default binding (set in the applnk file) ?
     if ( !defaultBinding.isEmpty() )
     {
 	KMimeBind* bind = findBinding( defaultBinding );
@@ -1610,21 +1610,21 @@ bool KMimeType::run( const char *_url )
 	    return bind->runBinding( _url );
     }
     
-    // Only one binding ?
-    if ( bindings.count() == 1 )
-    {
-	KMimeBind* bind = bindings.first();
-	if ( bind->isAllowedAsDefault() )
-	    return bind->runBinding( _url  );    
-    }
-
     // Take first binding which is allowed as default
     KMimeBind *bind;
     for ( bind = bindings.first(); bind != 0L; bind = bindings.next() )
     {
 	if ( bind->isAllowedAsDefault() )
-	    return bindings.first()->runBinding( _url );
+	    return bind->runBinding( _url );
     }
+
+    if (defaultType)
+        // Also look in all default bindings (allfiles, all)
+        for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
+        {
+            if ( bind->isAllowedAsDefault() )
+                return bind->runBinding( _url );
+        }
 
     return FALSE;
 }
