@@ -50,19 +50,15 @@ mode_t FilePermissionsPropsPage::fperm[3][4] = {
 
 Properties::Properties( const char *_url ) : QObject()
 {
-    debug("Properties::Properties : %s \n",_url);
     pageList.setAutoDelete( true );
   
     url = _url;
     url.detach();
-    debug("Properties::Properties : url=%s \n",url.data());
   
     kurl = new KURL( url );
     if ( kurl->isMalformed() )
 	delete this;
 
-    debug("Properties::Properties : kurl=%s \n",kurl->url().data());
-    
     tab = new QTabDialog( 0L, 0L );
 
     // Matthias: let the dialog look like a modal dialog
@@ -961,6 +957,7 @@ void ExecPropsPage::applyChanges()
     config.writeEntry( "Exec", execEdit->text() );
     config.writeEntry( "Path", pathEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
+    config.writeEntry( "MiniIcon", iconBox->icon() );
     config.writeEntry( "SwallowExec", swallowExecEdit->text() );
     config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );
 
