@@ -470,13 +470,18 @@ void KfmGui::initMenu()
     // fillBookmarkMenu( bookmarkManager->root(), bookmarkMenu );
     slotBookmarksChanged();
     
-    QPopupMenu *help = new QPopupMenu;
+
+    QString about_text;
+    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de") );
+    QPopupMenu *help = kapp->getHelpMenu(false, about_text);
+
+
     CHECK_PTR( help );
     // help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
-    help->insertItem( klocale->translate("&Help"), 
-		      this, SLOT(slotHelp()) );
-    help->insertSeparator();
-    help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
+//     help->insertItem( klocale->translate("&Help"), 
+// 		      this, SLOT(slotHelp()) );
+//     help->insertSeparator();
+//     help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
 
     menu = new KMenuBar( this );
     if ( sumode )
@@ -1254,24 +1259,6 @@ void KfmGui::slotQuit()
 void KfmGui::slotClose()
 {
     close();
-}
-
-void KfmGui::slotAbout()
-{
-    QString about_title, about_text;
-    about_title.sprintf( klocale->translate("About KFM") );
-    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de") );
-    QMessageBox::about( this, about_title, about_text );
-}
-
-void KfmGui::slotAboutQt()
-{
-    QMessageBox::aboutQt( this, "About Qt" );
-}
-
-void KfmGui::slotHelp()
-{
-  kapp->invokeHTMLHelp( "", "" );
 }
 
 void KfmGui::slotTreeUrlSelected( const char *_url , int _button )

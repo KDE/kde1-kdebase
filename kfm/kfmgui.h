@@ -212,21 +212,6 @@ public slots:
     void slotEditApplications();
 
     /**
-     * Menu "Help->About..."
-     */
-    void slotAbout();
-
-    /**
-     * Menu "Help->About Qt..."
-     */
-   void slotAboutQt();
-
-    /**
-     * Menu "Help->Help..."
-     */
-    void slotHelp();
-
-    /**
      * Menu "Tool->Find"
      */
     void slotToolFind();
