@@ -32,6 +32,7 @@ install-data-local:
 	$(INSTALL_DATA) mini-windows.xpm $(kde_minidir)/windows.xpm
 	$(INSTALL_DATA) mini-titlebar.xpm $(kde_minidir)/titlebar.xpm
 	$(INSTALL_DATA) mini-buttons.xpm $(kde_minidir)/buttons.xpm
+	$(INSTALL_DATA) mini-winprops.xpm $(kde_minidir)/winprops.xpm
 	$(INSTALL_DATA) kcmkwm.xpm $(kde_icondir)/kcmkwm.xpm
 
 uninstall-local:
