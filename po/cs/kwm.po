@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-06-01 08:57 MET DST\n"
+"PO-Revision-Date: 1998-06-12 08:23 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Pøiprava sezení ..."
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-05-19 15:05 MET DST\n"
+"PO-Revision-Date: 1998-06-12 08:22 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -149,14 +149,12 @@ msgid "Never look in cache"
 msgstr "Nikdy nepou¾ívat cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "V¾dy pou¾ívat cache"
+msgstr "V¾dy ukládat cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Nikdy nepou¾ívat cache"
+msgstr "Nikdy neukládat cache"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:424

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
 "POT-Creation-Date: 1998-06-11 18:35+0200\n"
-"PO-Revision-Date: 1998-03-28 22:41 MET\n"
+"PO-Revision-Date: 1998-06-12 08:24 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr "Terminal..."
 
 #: main.C:520
 msgid "Font..."
-msgstr ""
+msgstr "Font ..."
 
 #: main.C:522
 msgid "Save &Options"
