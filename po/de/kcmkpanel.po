@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1999-01-28 01:15+0100\n"
-"PO-Revision-Date: 1999-04-05 11:05+MET\n"
+"PO-Revision-Date: 1999-04-30 11:05+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -20,7 +20,7 @@ msgstr "&Arbeitsfl‰chen"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "Disk-&Navigator"
+msgstr "Disk&navigator"
 
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
@@ -28,11 +28,11 @@ msgstr "Benutzung: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "KPanel Einstellungen"
+msgstr "Einstellungen der Kontrolleiste"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Stelle"
+msgstr "Position"
 
 #: panel.cpp:60
 msgid "&Top"
@@ -52,11 +52,11 @@ msgstr "&Rechts"
 
 #: panel.cpp:75
 msgid "Taskbar"
-msgstr "Taskleiste"
+msgstr "Programmleiste"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "&Nicht angezeigt"
+msgstr "&Ausgeblendet"
 
 #: panel.cpp:78
 msgid "T&op"
@@ -116,7 +116,7 @@ msgstr "Groﬂ"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr "Automatisches Verstecken"
+msgstr "Sichtbare Elemente"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"

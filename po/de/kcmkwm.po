@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
-"PO-Revision-Date: 1999-03-13 16:15+MET\n"
+"PO-Revision-Date: 1999-04-30 16:15+MET\n"
+"Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
 #: main.cpp:67
 msgid "&Buttons"
-msgstr "&Buttons"
+msgstr "&Knöpfe"
 
 #: main.cpp:70
 msgid "&Titlebar"
@@ -70,28 +70,28 @@ msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Die linke Seite der Titelleiste ist voll... Entferne den 'maximieren' "
-"Button\n"
+"Knopf\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Die rechte Seite der Titelleiste ist voll... Entferne den 'maximieren' "
-"Button\n"
+"Knopf\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Die linke Seite der Titelleiste ist voll... Entferne den 'minimieren' "
-"Button\n"
+"Knopf\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Die rechte Seite der Titelleiste ist voll... Entferne den 'minimieren' "
-"Button\n"
+"Knopf\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
@@ -147,11 +147,11 @@ msgstr "Maximieren an/aus"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "Verlauf an/aus"
+msgstr "\"Rolladen\" nach oben/unten"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Minimieren"
+msgstr "Als Symbol"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
@@ -183,7 +183,7 @@ msgstr "Fenster"
 
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
-msgstr "Vertikales Maximieren nur als Standard"
+msgstr "Nur vertikales Maximieren als Standard"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"

@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1999-02-03 14:45+MET\n"
+"PO-Revision-Date: 1999-04-30 14:45+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
+
 
 #: main.cpp:54
 msgid "&Mouse"
@@ -24,7 +25,7 @@ msgstr "Benutzung: kcminput [-init | {mouse,keyboard}]\n"
 
 #: main.cpp:104
 msgid "Input Devices Properties"
-msgstr "Eigenschaften der Eingabe-Geräte"
+msgstr "Eigenschaften der Eingabegeräte"
 
 #: mouse.cpp:68
 msgid "Acceleration"
@@ -40,7 +41,7 @@ msgstr "Pixel"
 
 #: mouse.cpp:81
 msgid "Button mapping"
-msgstr "Tasten-Zuordnung"
+msgstr "Tastenzuordnung"
 
 #: mouse.cpp:83
 msgid "Right handed"
@@ -52,8 +53,8 @@ msgstr "für Linkshänder"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"
-msgstr "Tasten-Wiederholung"
+msgstr "Tastenwiederholung"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Klick-Stärke"
+msgstr "Klickstärke"
