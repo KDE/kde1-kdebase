@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock VERSION\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
+"PO-Revision-Date: 1998-12-17 12:20+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
@@ -12,25 +12,25 @@ msgstr ""
 
 #: attraction.cpp:716
 msgid "Attraction"
-msgstr ""
+msgstr "Vonzás"
 
 #: attraction.cpp:803
 #, fuzzy
 msgid "Setup KAttraction"
-msgstr "A KBat beállítása"
+msgstr "A KAttraction beállítása"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
-msgstr ""
+msgstr "Darab:"
 
 #: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
 #, fuzzy
 msgid "Mode:"
-msgstr "Közepe:"
+msgstr "Mód:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Labdák"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -46,12 +46,12 @@ msgstr ""
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Ragyogás"
 
 #: attraction.cpp:951
 #, fuzzy
 msgid "About Attraction"
-msgstr "A Logo-ról"
+msgstr "A Vonzás-ról"
 
 #: attraction.cpp:952
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 
 #: banner.cpp:62
 msgid "Banner"
-msgstr "Logo"
+msgstr "Felirat"
 
 #: banner.cpp:84
 #, fuzzy
@@ -80,7 +80,7 @@ msgstr "Család:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Méret:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -88,7 +88,7 @@ msgstr "Szín:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Félkövér"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -103,7 +103,7 @@ msgstr "Szöveg:"
 
 #: banner.cpp:357
 msgid "About Banner"
-msgstr "A Logo-ról"
+msgstr "A Felirat-ról"
 
 #: banner.cpp:358
 msgid ""
@@ -132,7 +132,7 @@ msgstr "Denevérek száma:"
 #: bat.cpp:661
 #, fuzzy
 msgid "About Bat"
-msgstr "A Logo-ról"
+msgstr "A Denevérek-rõl"
 
 #: bat.cpp:662
 msgid ""
@@ -161,7 +161,7 @@ msgstr "Vízszintes szinusz"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
-msgstr ""
+msgstr "Körkörös pattogás"
 
 #: blob.cpp:60
 msgid "Polar Coordinates"
@@ -177,11 +177,11 @@ msgstr "Elnézést.  Ez a képernyõvédõ színes megjelenítést igényel."
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Poligon képernyõvédõ"
+msgstr "Blobok beállítása"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
-msgstr ""
+msgstr "Képfrissítés"
 
 #: blob.cpp:480
 msgid "Algorithm"
@@ -189,7 +189,7 @@ msgstr "Algoritmus"
 
 #: blob.cpp:570
 msgid "About Blob"
-msgstr "A Poligon-ról"
+msgstr "A Blobok-ról"
 
 #: blob.cpp:571
 msgid ""
@@ -210,30 +210,30 @@ msgstr ""
 #: bouboule.cpp:1005
 #, fuzzy
 msgid "Setup KBouboule"
-msgstr "A KFlame beállításai"
+msgstr "A KBouboule beállításai"
 
 #: bouboule.cpp:1032
 #, fuzzy
 msgid "Number of points:"
-msgstr "Denevérek száma:"
+msgstr "Pontok száma:"
 
 #: bouboule.cpp:1046
 #, fuzzy
 msgid "Point size:"
-msgstr "Pontok száma:"
+msgstr "Pontok mérete:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Színváltás gyakorisága:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D mód"
 
 #: bouboule.cpp:1223
 #, fuzzy
 msgid "About Bouboule"
-msgstr "A Poligon-ról"
+msgstr "A Bouboule-rõl"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -267,7 +267,7 @@ msgstr "Pontok száma:"
 
 #: flame.cpp:551
 msgid "About Flame"
-msgstr "A Logo-ról"
+msgstr "A Lángok-ról"
 
 #: flame.cpp:552
 msgid ""
@@ -288,7 +288,7 @@ msgstr "A KForest beállítása"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
-msgstr "Fák száma"
+msgstr "Fák száma:"
 
 #: forest.cpp:399
 msgid "About Forest"
@@ -309,7 +309,7 @@ msgstr "Ugrás"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "A KHop névjegye"
+msgstr "A KHop beállítása"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
@@ -317,7 +317,7 @@ msgstr "Egyszínû pixelek"
 
 #: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
-msgstr ""
+msgstr "Ciklusok:"
 
 #: hop.cpp:464
 #, fuzzy
@@ -345,7 +345,7 @@ msgstr "A KLaser beállításai"
 #: laser.cpp:482
 #, fuzzy
 msgid "About Laser"
-msgstr "A KLaser névjegye"
+msgstr "A Lézer névjegye"
 
 #: laser.cpp:483
 msgid ""
@@ -358,7 +358,7 @@ msgstr ""
 
 #: lines.cpp:134
 msgid "Setup klines"
-msgstr "A KLines beállításai"
+msgstr "A Vonalak beállításai"
 
 #: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
@@ -378,7 +378,7 @@ msgstr "Vége:"
 
 #: lines.cpp:294
 msgid "About Lines"
-msgstr "A KLines névjegye"
+msgstr "A Vonalak névjegye"
 
 #: lines.cpp:295
 msgid ""
@@ -390,7 +390,7 @@ msgstr ""
 
 #: lissie.cpp:241
 msgid "Lissie"
-msgstr "Lissie"
+msgstr ""
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
@@ -402,7 +402,7 @@ msgstr "A Lissie-k száma"
 
 #: lissie.cpp:480
 msgid "About Lissie"
-msgstr "A KLissie névjegye"
+msgstr "A Lissie névjegye"
 
 #: lissie.cpp:481
 msgid ""
@@ -442,6 +442,10 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"lehetõleg ne használja -test opciót a -lock opcióval együtt.\n"
+"használja inkább a klock-ot.\n"
+"\n"
 
 #: main.cpp:580
 #, fuzzy, c-format
@@ -492,7 +496,7 @@ msgstr ""
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr ""
+msgstr "A GL nem tud a root ablakban renderelni\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -500,15 +504,15 @@ msgstr ""
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr ""
+msgstr "KMorph3D beállítása"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr ""
+msgstr "Objektum típus:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
-msgstr ""
+msgstr "Morph3D névjegye"
 
 #: morph3d.cpp:1121
 msgid ""
@@ -526,17 +530,17 @@ msgstr ""
 #: pipes.cpp:672
 #, fuzzy
 msgid "Setup KPipes"
-msgstr "A KLines beállításai"
+msgstr "A KPipes beállításai"
 
 #: pipes.cpp:678
 #, fuzzy
 msgid "Number of Pipes"
-msgstr "Denevérek száma:"
+msgstr "Pipe-ok száma:"
 
 #: pipes.cpp:743
 #, fuzzy
 msgid "About KPipes"
-msgstr "A KLines névjegye"
+msgstr "A KPipes névjegye"
 
 #: pipes.cpp:745
 msgid ""
@@ -576,12 +580,12 @@ msgstr "Beállítás"
 
 #: pyro.cpp:543
 msgid "Cloud"
-msgstr ""
+msgstr "Felhõ"
 
 #: pyro.cpp:629
 #, fuzzy
 msgid "About Pyro"
-msgstr "A Poligon-ról"
+msgstr "A Piromániáról"
 
 #: pyro.cpp:630
 msgid ""
@@ -604,11 +608,11 @@ msgstr "Beállítás"
 #: rock.cpp:589
 #, fuzzy
 msgid "Move"
-msgstr "Közepe:"
+msgstr "Mozgás"
 
 #: rock.cpp:595
 msgid "Rotate"
-msgstr ""
+msgstr "Forgás"
 
 #: rock.cpp:719
 #, fuzzy
@@ -627,103 +631,103 @@ msgstr ""
 #: saver.cpp:60 saver.cpp:191
 #, fuzzy
 msgid "Enter Password"
-msgstr "Shadow password-ök"
+msgstr "Jelszó:"
 
 #: saver.cpp:121
 #, fuzzy
 msgid "Failed"
-msgstr "Család:"
+msgstr "Hibás!"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Gyûrõdés"
 
 #: science.cpp:68
 #, fuzzy
 msgid "Sphere"
-msgstr "Sebesség:"
+msgstr "Gömb"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponenciális"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Összehúzódás"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Hullám"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Görbület"
 
 #: science.cpp:112
 #, fuzzy
 msgid "Science"
-msgstr "A KLines beállításai"
+msgstr "Tudományos"
 
 #: science.cpp:491
 msgid "rendering lens..."
-msgstr ""
+msgstr "lencse renderelése..."
 
 #: science.cpp:813
 msgid "grabbing screen..."
-msgstr ""
+msgstr "képernyõ leszedése..."
 
 #: science.cpp:975
 #, fuzzy
 msgid "Setup Science"
-msgstr "A KLines beállításai"
+msgstr "Beállítások"
 
 #: science.cpp:1008
 msgid "Inverse"
-msgstr ""
+msgstr "Inverz"
 
 #: science.cpp:1018
 msgid "Gravity"
-msgstr ""
+msgstr "Gravitáció"
 
 #: science.cpp:1027
 msgid "Hide Background"
-msgstr ""
+msgstr "Háttér elrejtése"
 
 #: science.cpp:1053
 msgid "Intensity:"
-msgstr ""
+msgstr "Intenzitás:"
 
 #: science.cpp:1083
 msgid "Motion:"
-msgstr ""
+msgstr "Mozgás:"
 
 #: science.cpp:1304
 msgid "Science Version"
-msgstr ""
+msgstr "Verzió"
 
 #: science.cpp:1305
 msgid "written by"
-msgstr ""
+msgstr "írta"
 
 #: science.cpp:1306
 #, fuzzy
 msgid "About Science"
-msgstr "A KLines névjegye"
+msgstr "A programról"
 
 #: slidescreen.cpp:419
 #, fuzzy
 msgid "SlideScreen"
-msgstr "Feketedoboz, belülrõl"
+msgstr "Mozaik"
 
 #: slidescreen.cpp:465
 #, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "A KLines beállításai"
+msgstr "A Mozaik beállításai"
 
 #: slidescreen.cpp:558
 #, fuzzy
 msgid "About SlideScreen"
-msgstr "A KLines névjegye"
+msgstr "A Mozaik névjegye"
 
 #: slidescreen.cpp:559
 msgid ""
@@ -738,15 +742,15 @@ msgstr ""
 
 #: slip.cpp:293
 msgid "Slip"
-msgstr "Slippy"
+msgstr "Csúszás"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr ""
+msgstr "Beállítások"
 
 #: slip.cpp:392
 msgid "Batchcount:"
-msgstr ""
+msgstr "Csoportok:"
 
 #: slip.cpp:488
 #, fuzzy
@@ -764,16 +768,16 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Ûr (GL)"
 
 #: space.cpp:581
 #, fuzzy
 msgid "Setup KSpace"
-msgstr "A KFlame beállításai"
+msgstr "A KSpace beállításai"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Warp gyakoriság:"
 
 #: space.cpp:685
 #, fuzzy
@@ -789,20 +793,20 @@ msgstr ""
 
 #: swarm.cpp:257
 msgid "Swarm"
-msgstr ""
+msgstr "Raj"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr ""
+msgstr "A KSwarm beállítása"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"
-msgstr ""
+msgstr "Méhek száma:"
 
 #: swarm.cpp:450
 #, fuzzy
 msgid "About Swarm"
-msgstr "A Logo-ról"
+msgstr "A Raj-ról"
 
 #: swarm.cpp:451
 msgid ""
