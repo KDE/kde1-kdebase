@@ -124,10 +124,13 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     templatesList.append( QString( "Folder") );
 
     // Find the templates path
-    QString configpath = getenv( "HOME" );
-    configpath += "/.kde/share/config/kfmrc";
+    QString configpath = KApplication::localkdedir() + "/share/config/kfmrc";
     KSimpleConfig config( configpath );
     config.setGroup( "Paths" );
+
+    connect(kwmmapp, SIGNAL(commandReceived(QString)), 
+		       this, SLOT(kwmCommandReceived(QString)));
+
 
     // Desktop Path
     desktopPath = QDir::homeDirPath() + "/Desktop/";
@@ -169,11 +172,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     bookmarks = new QPopupMenu();
     connect( bookmarks, SIGNAL( activated( int ) ),
 	     SLOT( slotBookmarkSelected( int ) ) );
-    bookmarks->insertItem( i18n( "Edit Bookmarks" ), 1 );
-    bookmarks->insertSeparator();
-    QString bdir( kapp->localkdedir().data() );
-    bdir += "/share/apps/kfm/bookmarks";
-    scanBookmarks( bookmarks, bdir );
+    updateBookmarkMenu();
     
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
@@ -203,6 +202,26 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     QApplication::desktop()->installEventFilter(this);  
 
     kwmmapp->connectToKWM();
+}
+
+void KRootWm::kwmCommandReceived(QString com)
+{
+
+  //sent by KBookmarkManager::emitChanged()
+  if (com == "krootwm:refreshBM")
+    updateBookmarkMenu ();
+
+}
+
+void KRootWm::updateBookmarkMenu (void)
+{
+  bookmarks->clear();
+  bookmarks->insertItem( i18n( "Edit Bookmarks" ), 1 );
+  bookmarks->insertSeparator();
+
+  QString bdir( kapp->localkdedir().data() );
+  bdir += "/share/apps/kfm/bookmarks";
+  scanBookmarks( bookmarks, bdir );
 }
 
 //----------------------------------------------

@@ -47,6 +47,9 @@ public:
   KRootWm(KWMModuleApplication*);
   bool eventFilter( QObject *, QEvent * );
 
+public slots:
+  void kwmCommandReceived(QString com);
+
 private:
   KWMModuleApplication* kwmmapp;
 
@@ -68,6 +71,7 @@ private:
 
   bool kpanel_menu_on_left_button;
 
+  void updateBookmarkMenu (void);
   void scanBookmarks( QPopupMenu*, const char *_dir );
   int bookmarkId;
   QIntDict<QString> bookmarkDict;
