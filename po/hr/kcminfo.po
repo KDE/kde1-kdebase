@@ -15,7 +15,7 @@ msgstr ""
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "zaslon #%"
 
 #: info.cpp:52
 #, c-format
@@ -45,22 +45,22 @@ msgstr "inaèica               : %i.%i"
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "proizvoðaèev niz      : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "proizvoðaèevo izdanje : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "uobièajeni broj zaslona: %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "broj zaslona          : %i"
 
 #: info.cpp:179
 msgid ""
@@ -68,6 +68,9 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
+"Nema dostupnih informacija\n"
+" ili\n"
+"ovaj sistem za sada nije podr¾an :-("
 
 #: info_fbsd.cpp:73
 #, c-format
@@ -121,7 +124,7 @@ msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "kori¹ten od "
 
 #: info_linux.cpp:127
 msgid "I/O-Range"

@@ -60,7 +60,7 @@ msgstr "Sistem: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr ""
+msgstr "Izdanje: "
 
 #: mainwidget.cpp:77
 msgid "Version: "

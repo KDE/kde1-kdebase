@@ -13,14 +13,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Skupljanje"
+msgstr ""
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Postava za KBat"
+msgstr ""
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -32,7 +30,7 @@ msgstr "Naèin:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Lopte"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -51,12 +49,10 @@ msgid "Glow"
 msgstr ""
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Skupljanje"
+msgstr ""
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -66,11 +62,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Stijena inaèica 3.3\n"
+"Attraction inaèica 1.0\n"
 "\n"
 "Copyright (c) 1992 Jamie Zawinski\n"
 "\n"
-"Prilagodio za kscreensave Martin Jones."
+"Prilagodio za kscreensave:"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -264,13 +262,12 @@ msgstr ""
 "Prilagodio za kscreensave Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Prazan zaslon"
+msgstr "Crni zaslon smrti"
 
 #: flame.cpp:310
 msgid "Flame"
-msgstr ""
+msgstr "Plamen"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
@@ -464,7 +461,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opcija %s nije podr¾ana na ovoj platformi!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -769,22 +765,18 @@ msgid "About Science"
 msgstr "O Znanosti"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Prazan zaslon"
+msgstr ""
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Podesi Znanost"
+msgstr ""
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "O Znanosti"
+msgstr ""
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -794,11 +786,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Stijena inaèica 3.3\n"
+"SlideScreen inaèica 1.1\n"
 "\n"
 "Copyright (c) 1992 Jamie Zawinski\n"
 "\n"
-"Prilagodio za kscreensave Martin Jones."
+"Prilagodio za kscreensave:"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"

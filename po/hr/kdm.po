@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-10-15 15:00-0500\n"
+"PO-Revision-Date: 1998-02-01 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Ugasi ili restartaj?"
+msgstr "Ugasi ili pokreni ponovo?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Unesi lozinku korijenskog korisnika)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -30,11 +30,11 @@ msgstr "Ugasi"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Ugasi i restartaj"
+msgstr "Ugasi i pokreni ponovo"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Pokreni ponovo X poslu¾itelj"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -80,6 +80,3 @@ msgstr "Upozorenje: Va¹ raèun istièe %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Poèetni direktorij nije dostupan"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Zavr¹i i odlogiraj se"
