@@ -188,7 +188,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( f_app_1, "Label_7" );
-  tmpQLabel->setGeometry( 16, 56, 112, 24 );
+  tmpQLabel->setGeometry( 16, 56, 135, 24 );
   tmpQLabel->setText( klocale->translate("Working Directory:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
