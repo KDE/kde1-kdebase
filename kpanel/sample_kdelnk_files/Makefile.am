@@ -3,7 +3,7 @@ kdisknavdir = $(kde_datadir)/kdisknav
 kdisknav_DATA = Root.kdelnk KDE.kdelnk
 
 install-data-local:
-	$(mkinstalldir) $(kdisknavdir)
+	$(mkinstalldirs) $(kdisknavdir)
 	@for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
 		if test -d $$dir ; then \
 			echo $(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(kdisknavdir) ;\
