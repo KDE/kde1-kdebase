@@ -8,7 +8,7 @@
 #endif
 
 /* Again avoid the cruft in stdlib.h since malloc() isn't gonna change 
-   too often */
+   too often, unless someone decides to de-KNR FreeBSD */
 void    *malloc __P((size_t));
 
 KProcessorWidget::KProcessorWidget(QWidget *parent, const char *name)
@@ -32,8 +32,9 @@ KProcessorWidget::KProcessorWidget(QWidget *parent, const char *name)
   sysctl(mib,2,NULL,&len,NULL,0);
   buf=(char*)malloc(len);
   sysctl(mib,2,buf,&len,NULL,0);
-  /*	Get the CPU speed, heh, heh, undocumented sysctls rule
-		but I dunno if this works on 2.2 machines.	*/
+  /*	Get the CPU speed, only on Genuine P5s
+		heh, heh, undocumented sysctls rule but I dunno
+		if this works on 2.2.x machines. */
   mib[0] = CTL_MACHDEP; mib[1] = 107;
   len=sizeof(machspeed);
   sysctl(mib,2,&machspeed,&len,NULL,0);
@@ -46,9 +47,10 @@ KProcessorWidget::KProcessorWidget(QWidget *parent, const char *name)
  	snprintf(cpustring,128,"%s, unknown speed",buf);
   else
 	snprintf(cpustring,128,"%s running at %s MHz",buf,mhz);
+
   /* Put everything in the listbox */
-  lBox->insertItem(buf);
-  /* Clean up after ourselves */
-  free(mhz); free(cpustring);
+  lBox->insertItem(cpustring);
+  /* Clean up after ourselves, this time I mean it ;-) */
+  free(mhz); free(cpustring); free(buf);
 }
 

@@ -38,6 +38,6 @@ void KMemoryWidget::update()
   used = atoi(used_str);
   total = atoi(total_str); 
   free=total-used;
-  swapMem->setText(format(1024*used));
+  swapMem->setText(format(1024*total));
   freeSwapMem->setText(format(1024*free));
 }
