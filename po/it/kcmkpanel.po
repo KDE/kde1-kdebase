@@ -32,7 +32,7 @@ msgstr "Configurazione KPanel"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Indirizzo"
+msgstr "Locazione"
 
 #: panel.cpp:60
 msgid "&Top"
@@ -112,7 +112,7 @@ msgstr "P&rima Personale"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Scomparsa automatica Pannell "
+msgstr "Scomparsa automatica &Pannello "
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
