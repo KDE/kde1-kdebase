@@ -1,0 +1,17 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=Appfinder
+Name[de]=Anwendungssuche
+MiniIcon=kfind.xpm
+Protocols=
+MimeType=
+Comment=Application finder
+Comment[de]=Suche nach nicht-KDE Anwendungen
+Exec=kappfinder_restart
+Icon=kfind.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=1
