@@ -21,6 +21,7 @@
 #include <kstring.h>
 
 #include "kcookiejar.h"
+#include "kcookiewin.h"
 #include "kfmman.h"
 #include "kbind.h"
 #include "config-kfm.h"
@@ -62,8 +63,12 @@ KFMManager::KFMManager( KfmView *_v )
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
-    connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
 
+    if (cookiejar)
+    {
+        connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
+    }
+            
     if ( !link_overlay )
     {
 	link_overlay = new QString;
@@ -841,12 +846,13 @@ void KFMManager::slotInfo( const char *_text )
 
 void KFMManager::slotCookie( const char *_url, const char *_cookie_str )
 {
+    KCookieAdvice userAdvice = KCookieDunno;
     printf("KFMManager: got Cookie from %s!\n\"%s\"\n", _url, _cookie_str);
 
     if (!cookiejar)
     {
-        printf("Making cookiejar....\n");
-        cookiejar = new KCookieJar;
+	printf("KFMManager: No cookiejar, ignoring cookie.\n");
+	return;
     }
 
     KCookiePtr cookie = cookiejar->makeCookies(_url, _cookie_str);
@@ -854,9 +860,22 @@ void KFMManager::slotCookie( const char *_url, const char *_cookie_str )
     while (cookie)
     {
         KCookiePtr next_cookie = cookie->next();
-        switch( cookiejar->cookieAdvice(cookie))
+        KCookieAdvice advice = cookiejar->cookieAdvice(cookie);
+        if ((advice == KCookieAsk) || (advice == KCookieDunno))
         {
-        case KCookieDunno: // Never ask, accept everything
+            // We only ask the user once, even if we get multiple
+            // cookies from the same site.
+            if (userAdvice == KCookieDunno)
+            {
+                printf("Asking user for advice for cookie from %s\n", _url);
+                KCookieWin *kw = new KCookieWin( 0L, cookie);
+	        userAdvice = (KCookieAdvice) kw->exec();
+	        delete kw;
+	    }
+	    advice = userAdvice;
+        }
+        switch(advice)
+        {
         case KCookieAccept:
             printf("Accepting cookie from %s\n", _url);
             cookiejar->addCookie(cookie);

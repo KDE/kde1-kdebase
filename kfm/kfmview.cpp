@@ -37,6 +37,7 @@
 #include "kfm.h"
 #include "kfmexec.h"
 #include "root.h"
+#include "kcookiejar.h"
 
 #include <klocale.h>
 #include <kstring.h>
@@ -147,6 +148,17 @@ KfmView::~KfmView()
 	delete forwardStack;
     }
     // debugT("Deleted\n");
+
+    // Save HTTP Cookies
+    if (cookiejar)
+    {
+      KConfig *config = kapp->getConfig();
+      QString cookieFile = kapp->localkdedir().data();
+      cookieFile += "/share/apps/kfm/cookies";
+      cookiejar->saveCookies( cookieFile.data() );
+      cookiejar->saveConfig( config );
+      config->sync();
+    }
 }
 
 void KfmView::setHTMLWidgetOptions(){

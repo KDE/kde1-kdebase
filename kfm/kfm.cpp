@@ -4,6 +4,7 @@
 #include "kfmgui.h"
 #include "kfm.h"
 #include "utils.h"
+#include "kcookiejar.h"
 
 #include <qstrlist.h>
 #include <kapp.h>
@@ -70,7 +71,7 @@ Kfm::Kfm()
 	
 	QStrList urlList;
 	int n = config->readListEntry( "URLs", urlList );
-	
+
 	if ( !flag && KfmGui::rooticons == true )
 	{
 	    QString home = "file:";
@@ -90,6 +91,24 @@ Kfm::Kfm()
 		m->show();
 	    }
 	}
+    }
+
+    // Install HTTP Cookies
+    {
+        KConfig *config = kapp->getConfig();
+        config->setGroup( "Browser Settings/HTTP" );
+        
+        bool cookiesEnabled = config->readBoolEntry( "Cookies", true );
+        if ( cookiesEnabled)
+        {
+            cookiejar = new KCookieJar();
+                            
+            cookiejar->loadConfig( config );
+                                    
+            QString cookieFile = kapp->localkdedir().data();
+            cookieFile += "/share/apps/kfm/cookies";
+            cookiejar->loadCookies( cookieFile.data() );
+        }
     }
 
     connect( &timer, SIGNAL( timeout() ), this, SLOT( slotTouch() ) );
@@ -114,6 +133,8 @@ Kfm::~Kfm()
 void Kfm::slotSave()
 {
   timer.stop();
+
+  printf("slotSlave()!\n");
   
   KConfig *config = kapp->getConfig();
 
@@ -127,7 +148,16 @@ void Kfm::slotSave()
     gui->saveProperties(i);
     urlList.append( gui->getURL() );
   }
-  
+
+  // Save HTTP Cookies
+  if (cookiejar)
+  {
+      QString cookieFile = kapp->localkdedir().data();
+      cookieFile += "/share/apps/kfm/cookies";
+      cookiejar->saveCookies( cookieFile.data() );
+      cookiejar->saveConfig( config );
+  }
+
   config->setGroup( "SM" );
   config->writeEntry( "URLs", urlList );
   config->sync();

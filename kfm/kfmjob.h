@@ -84,7 +84,6 @@ protected:
     QString tmpFile;
     QString url;
     QString post_data;
-    QString cookie_data;
     int bytesRead;
     QString dataBuffer;
     /**

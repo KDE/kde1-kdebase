@@ -32,6 +32,7 @@
 #include <time.h>
 
 class KCookieJar;
+class KConfig;
 
 extern KCookieJar *cookiejar;
 
@@ -125,6 +126,16 @@ public:
     bool loadCookies(const char *_filename);
 
     /**
+     * Save the cookie configuration
+     */
+    void saveConfig(KConfig *_config);
+
+    /**
+     * Load the cookie configuration
+     */
+    void loadConfig(KConfig *_config);
+
+    /**
      * Looks for cookies in the cookie jar which are appropriate for _url.
      * Returned is a string containing all appropriate cookies in a format 
      * which can be added to a HTTP-header without any additional processing.
@@ -160,6 +171,17 @@ public:
     KCookieAdvice cookieAdvice(KCookiePtr cookiePtr);
 
     /**
+     * This function gets the advice for all cookies originating from 
+     * _domain.    
+     *
+     *     - KCookieDunno, no specific advice for _domain
+     *     - KCookieAccept, accept all cookies for _domain
+     *     - KCookieReject, reject all cookies for _domain 
+     *     - KCookieAsk, the user decides what to do with cookies for _domain
+     */
+    KCookieAdvice getDomainAdvice(const char *_domain);
+
+    /**
      * This function sets the advice for all cookies originating from 
      * _domain.    
      *
@@ -170,6 +192,18 @@ public:
      *     - KCookieAsk, the user decides what to do with cookies for _domain
      */
     void setDomainAdvice(const char *_domain, KCookieAdvice _advice);
+
+    /**
+     * This function sets the advice for all cookies originating from 
+     * the same domain as _cookie    
+     *
+     * _advice can have the following values:
+     *     - KCookieDunno, no specific advice for _domain
+     *     - KCookieAccept, accept all cookies for _domain
+     *     - KCookieReject, reject all cookies for _domain 
+     *     - KCookieAsk, the user decides what to do with cookies for _domain
+     */
+    void setDomainAdvice(KCookiePtr _cookie, KCookieAdvice _advice);
 
     /**
      * This function sets the global advice for cookies 

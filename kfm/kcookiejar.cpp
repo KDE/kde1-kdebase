@@ -30,8 +30,14 @@
 // RFC2109 as much as we can.
 //
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 #include <sys/types.h>
 #include <sys/stat.h>
+#ifdef HAVE_SYS_PARAM_H
+#include <sys/param.h>
+#endif
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -46,6 +52,7 @@
 #include <qdict.h>
 
 #include <kurl.h>
+#include <kconfig.h>
 
 #include "kcookiejar.h"
 
@@ -177,7 +184,7 @@ QString KCookieJar::findCookies(const char *_url)
         if (!cookie->domain.isEmpty())
         {
             // Cookie has a domain set
-            if (fqdn.find(cookie->domain.data()) == -1)
+            if (domain != cookie->domain)
                 continue; // Domain of cookie does not match with host of URL
 	}        
 	else
@@ -484,13 +491,24 @@ static time_t parseExpire(const char *expireDate)
      tm_s.tm_mday = day;
      tm_s.tm_mon = month; 
      tm_s.tm_year = year-1900;
+     tm_s.tm_isdst = -1;
 
-     result = mktime( &tm_s)-timezone;
+#ifndef BSD
+     result = mktime( &tm_s)-timezone; // timezone = seconds _west_ of UTC
+#else
+     result = mktime (&tm_s);
+     struct tm *tzone = localtime(&result);
+     result += (tzone->tm_gmtoff); // tm_gmtoff = seconds _east_ of UTC
+#endif
 
-     printf("time = %ld sec since epoch, ctime=%s\n", result, ctime(&result));
-
-     time_t now = time(0);
-     printf("now = %ld (expire is in %s)\n", now, result > now ? "future" : "past"); 
+////////////////
+// Debug stuff
+//
+//   printf("time = %ld sec since epoch, ctime=%s\n", result, ctime(&result));
+//
+//   time_t now = time(0);
+//   printf("now = %ld (expire is in %s)\n", now, result > now ? "future" : "past"); 
+////////////////
 
      return result;  // Invalid expire date
 } 
@@ -734,6 +752,27 @@ KCookieAdvice KCookieJar::cookieAdvice(KCookiePtr cookiePtr)
 }
 
 //
+// This function gets the advice for all cookies originating from
+// _domain.
+//
+KCookieAdvice KCookieJar::getDomainAdvice(const char *_domain)
+{
+    KCookieList *cookieList = cookieDomains[_domain];
+    KCookieAdvice advice;
+    
+    if (cookieList)
+    {
+        advice = cookieList->getAdvice();
+    }
+    else
+    {
+        advice = KCookieDunno;
+    }
+
+    return advice;    
+}
+                                                
+//
 // This function sets the advice for all cookies originating from 
 // _domain.    
 //
@@ -774,6 +813,17 @@ void KCookieJar::setDomainAdvice(const char *_domain, KCookieAdvice _advice)
         }
     }
         
+}
+
+//
+// This function sets the advice for all cookies originating from 
+// the same domain as _cookie    
+//
+void KCookieJar::setDomainAdvice(KCookiePtr _cookie, KCookieAdvice _advice)
+{
+    QString domain;
+    stripDomain( _cookie->host, domain);
+    setDomainAdvice(domain.data(), _advice);
 }
 
 //
@@ -865,10 +915,12 @@ bool KCookieJar::saveCookies(const char *_filename)
     	domain != 0;
     	domain = domainList.next())
     {
-        fprintf(fStream, "[%s]\n", domain);
-
 	KCookieList *cookieList = cookieDomains[domain];
-	for ( KCookiePtr cookie=cookieList->first(); cookie != 0;)
+        KCookiePtr cookie=cookieList->first();
+        if (cookie)
+            fprintf(fStream, "[%s]\n", domain);
+
+	for (; cookie != 0;)
         {
             if (cookie->isExpired(curTime))
 	    {
@@ -883,9 +935,11 @@ bool KCookieJar::saveCookies(const char *_filename)
                 QString path("\"");
                 path += cookie->path.data();
                 path += "\"";  
+                QString domain("\"");
+                domain += cookie->domain.data();
+                domain += "\"";  
                 fprintf(fStream, "%-20s %-20s %-12s %9lu   %2d %-10s \"%s\"\n", 
-		    cookie->host.data(), cookie->domain.data(), 
-		    path.data(), 
+		    cookie->host.data(), domain.data(), path.data(), 
 		    (unsigned long) cookie->expireDate, 
 		    cookie->protocolVersion, 
 		    cookie->name.data(), cookie->value.data());
@@ -1009,3 +1063,93 @@ bool KCookieJar::loadCookies(const char *_filename)
     return err;
 }
 
+static const char *adviceToStr(KCookieAdvice _advice)
+{
+    switch( _advice )
+    {
+    case KCookieAccept: return "Accept";
+    case KCookieReject: return "Reject";
+    case KCookieAsk: return "Ask";
+    default: return "Dunno";
+    }
+}
+
+static KCookieAdvice strToAdvice(const char *_str)
+{
+    if (!_str)
+        return KCookieDunno;
+        
+    if (strcasecmp(_str, "Accept") == 0)
+	return KCookieAccept;
+    else if (strcasecmp(_str, "Reject") == 0)
+	return KCookieReject;
+    else if (strcasecmp(_str, "Ask") == 0)
+	return KCookieAsk;
+
+    return KCookieDunno;	
+}
+
+
+//
+// Save the cookie configuration
+//
+
+void KCookieJar::saveConfig(KConfig *_config)
+{
+    QStrList domainSettings;
+    _config->setGroup("Browser Settings/HTTP");
+    _config->writeEntry("CookieGlobalAdvice", adviceToStr( globalAdvice));
+    
+    for ( char *domain=domainList.first(); 
+    	  domain != 0; 
+    	  domain = domainList.next())
+    {
+         KCookieAdvice advice = getDomainAdvice( domain);
+         if (advice != KCookieDunno)
+         {
+             QString value(domain);
+             value += ':';
+             value += adviceToStr(advice);
+             domainSettings.append(value.data());
+         }
+    }
+    _config->writeEntry("CookieDomainAdvice", domainSettings);
+}
+ 
+ 
+//
+// Load the cookie configuration
+//
+
+void KCookieJar::loadConfig(KConfig *_config)
+{
+    QString value;
+    QStrList domainSettings;
+    // Reset current domain settings first
+    
+    for ( char *domain=domainList.first(); 
+    	  domain != 0; 
+    	  domain = domainList.next())
+    {
+         setDomainAdvice( domain, KCookieDunno);
+    }
+
+    _config->setGroup("Browser Settings/HTTP");
+    value = _config->readEntry("CookieGlobalAdvice", "Ask");
+    globalAdvice = strToAdvice(value.data());
+
+    (void) _config->readListEntry("CookieDomainAdvice", domainSettings);
+    for (char *value = domainSettings.first();
+         value != 0;
+         value = domainSettings.next())
+    {
+    	QString strVal(value);
+        int sepPos = strVal.find(':');
+        if (sepPos <= 0)
+             continue;
+        QString domain(strVal.left(sepPos));
+        KCookieAdvice advice = strToAdvice(strVal.data()+sepPos + 1);
+        setDomainAdvice( domain, advice);
+    }
+}
+                                    

@@ -113,7 +113,10 @@ void KFMJob::openDir(bool _reload)
 	connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
 	connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotDirHTMLData( const char*, int ) ) );
 	connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
-	connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
+        if (cookiejar) 
+        {
+	    connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
+        }	    
 	connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
 
 	// If we get HTML, then slotDirHTMLData will receive the HTML code.
@@ -137,7 +140,10 @@ void KFMJob::openFile(bool _reload)
     connect( job, SIGNAL( data( const char*, int ) ), this, SLOT( slotData( const char*, int ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
-    connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
+    if (cookiejar)
+    {
+        connect( job, SIGNAL( cookie( const char*, const char* ) ), this, SLOT( slotCookie( const char*, const char* ) ) );
+    }
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
     
     // Delete the trailing / since we assume that the URL is a file.
@@ -146,17 +152,17 @@ void KFMJob::openFile(bool _reload)
     if ( url.left(4) == "file" && url.right(1) == "/" && url.right(2) != ":/" )
 	url = url.left( url.length() - 1 );
     
-    if (!cookiejar)
+    if (cookiejar)
     {
-        printf("Making cookiejar....\n");
-        cookiejar = new KCookieJar;
+        QString cookie_data( cookiejar->findCookies(url) );
+
+        printf("KFMJob::openFile: URL=%s : \n---%s---\n", url.data(), cookie_data.data());
+   	job->get( url, _reload, post_data.data(), cookie_data.data() );
     }
-
-    cookie_data = cookiejar->findCookies(url);
-
-//@@WABA Look out for cookies!
-    printf("KFMJob::openFile: URL=%s : \n---%s---\n", url.data(), cookie_data.data());
-    job->get( url, _reload, post_data.data(), cookie_data.data() );
+    else
+    {
+   	job->get( url, _reload, post_data.data(), 0L );
+    }    
 }
 
 void KFMJob::slotRedirection( const char *_url )
@@ -168,6 +174,8 @@ void KFMJob::slotRedirection( const char *_url )
 
 void KFMJob::slotCookie( const char *_url, const char *_cookie_str )
 {
+    if (!cookiejar)
+        return;
     emit cookie( _url, _cookie_str );
 }
 
