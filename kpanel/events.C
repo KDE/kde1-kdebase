@@ -119,7 +119,7 @@ void kPanel::kwmInit(){
 	layoutTaskbar();
 	doGeometry();
     }
-    
+
     // tell kwm to keep the panel raised. This will move into libkdecore after KDE-1.1
     {
 	XEvent ev;
@@ -130,15 +130,15 @@ void kPanel::kwmInit(){
 	ev.xclient.window = qt_xrootwin();
 	ev.xclient.message_type = XInternAtom(qt_xdisplay(), "KWM_KEEP_ON_TOP", False);
 	ev.xclient.format = 32;
-	ev.xclient.data.l[0] = (long)winId();
+	ev.xclient.data.l[0] = (long)taskbar_frame->winId();
 	ev.xclient.data.l[1] = CurrentTime;
 	mask = SubstructureRedirectMask;
 	XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
-	ev.xclient.data.l[0] = (long)taskbar_frame->winId();
+	ev.xclient.data.l[0] = (long)winId();
 	XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
     }
 
-    
+
 }
 
 
@@ -302,8 +302,8 @@ void kPanel::windowRaise(Window /* w */){
     panel_button_frame_standalone->raise();
   if (panel_button_frame_standalone2->isVisible())
     panel_button_frame_standalone2->raise();
-  
-  
+
+
 //   Window* new_stack = new Window[2];
 //   new_stack[0] = winId();
 //   new_stack[1] = taskbar_frame->winId();
