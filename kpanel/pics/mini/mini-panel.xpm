@@ -1,7 +1,7 @@
 /* XPM */
 static char*mini[]={
 "16 16 6 1",
-"c c #c3c3c3",
+"c c #c0c0c0",
 "# c #000000",
 "d c #303030",
 ". c None",
