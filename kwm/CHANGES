@@ -18,6 +18,7 @@ In 0.10:
          shortcut.
        - fixed the "last window is iconified and deficonified"-focus-
          follows-mouse-bug
+       - fixed the autoraise-over-operations-menu bug 
 
   patchlevel 13:
        - new decoration style (tiny decoration). Useful for floating

@@ -1641,6 +1641,12 @@ void Manager::logout(){
 
 
   for (c = clients.first(); c; c = clients.next()){
+    long result = 0;
+    getSimpleProperty(c->window, kwm_save_yourself, result);
+    if (result){
+      c->Psaveyourself = True;
+    }
+
     if (c->Psaveyourself){
       command = getprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);

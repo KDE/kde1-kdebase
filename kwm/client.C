@@ -1402,6 +1402,8 @@ bool Client::dragging_is_running(){
 }
 
 void Client::autoRaise(){
+  if (myapp->operations->isVisible())
+    return;
   if (isActive())
     manager->raiseClient( this );
 }
