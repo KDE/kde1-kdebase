@@ -80,9 +80,8 @@ msgid "Linu&x Console"
 msgstr "Console Linu&x"
 
 #: main.C:443
-#, fuzzy
 msgid "&Custom Colors"
-msgstr "&Colore"
+msgstr "&Colori Personalizzati"
 
 #: main.C:450 main.C:758
 msgid "Hide &Menubar"
@@ -163,7 +162,6 @@ msgstr ""
 "quando la tastiera sara resa insicura."
 
 #: main.C:1151
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -199,9 +197,8 @@ msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>      le dimensioni iniziali della finestra\n"
 
 #: main.C:1159
-#, fuzzy
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-display <nome>          specifica il nome del display (server)\n"
+msgstr "-print-pipe <nome>       specifica il pipe per le stampanti vt100\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"

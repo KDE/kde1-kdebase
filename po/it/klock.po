@@ -64,7 +64,6 @@ msgid "About Bat"
 msgstr "Info su Bat(Boing)"
 
 #: bat.cpp:637
-#, fuzzy
 msgid ""
 "Bat\n"
 "\n"
@@ -72,11 +71,12 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Slip\n"
+"Bat\n"
 "\n"
-"Copyright (c) 1991 Scott Draves\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
-"Porting su KDE di Emanuel Pirker."
+"Portato su kscreensave by Emanuel Pirker."
+
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
@@ -578,18 +578,17 @@ msgid "Space (GL)"
 msgstr "Spazio (GL)"
 
 #: space.cpp:581
-#, fuzzy
+
 msgid "Setup KSpace"
-msgstr "Configurazione salvaschermo \"KSlip\""
+msgstr "Impostazioni \"KSpace\""
 
 #: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Intervallo:"
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "Info su Slip"
+msgstr "Info su KSpace"
 
 #: space.cpp:687
 msgid ""

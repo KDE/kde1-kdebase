@@ -58,7 +58,6 @@ msgid "&Scaled"
 msgstr "&In scala"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
 msgstr "Nessuno Sfondo"
 

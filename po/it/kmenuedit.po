@@ -15,19 +15,16 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Ricarica Menu"
+msgstr "&Ricarica"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Cambia nomi menu"
+msgstr "Cambia nome &menu"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Ricarica Menu"
+msgstr "Ricarica Tipi di &File"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -206,14 +203,12 @@ msgid "Binary Pattern:"
 msgstr "Schema Binario:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Applicazione"
+msgstr "Applicazione da inglobare:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Applicazione"
+msgstr "Titolo dell'applicazione:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"

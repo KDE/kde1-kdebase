@@ -104,9 +104,8 @@ msgid "&Long View"
 msgstr "Elenco &Dettagliato"
 
 #: kfmgui.cpp:367
-#, fuzzy
 msgid "&Short View"
-msgstr "&Icone"
+msgstr "&Rapida"
 
 #: kfmgui.cpp:373
 msgid "Rel&oad Tree"
@@ -565,9 +564,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Spaziatura Verticale griglia:"
 
 #: bookmark.cpp:259
-#, fuzzy
 msgid "Could not write bookmark"
-msgstr "Impossibile scrivere su\n"
+msgstr "Impossibile scrivere nei segnalibri"
 
 #: kfmprops.cpp:237
 msgid "Full Name"
@@ -1020,12 +1018,13 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1223 kiojob.cpp:1354
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
-msgstr "Collegamento sconosciuto"
-
+msgstr ""
+"Host sconosciuto in\n"
+"%s"
 #: kiojob.cpp:1231 kiojob.cpp:1362
 #, c-format
 msgid ""
@@ -1282,9 +1281,8 @@ msgid "&Colors"
 msgstr ""
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
 msgid "&Other"
-msgstr "Altri"
+msgstr "&Altri"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"

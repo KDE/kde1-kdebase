@@ -134,7 +134,6 @@ msgid "Move"
 msgstr "Muovi"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
 msgstr "Ridotta/Intera"
 
@@ -143,7 +142,6 @@ msgid "Iconify"
 msgstr "Iconifica"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
 msgstr "Appiccicata/Staccata"
 
@@ -196,7 +194,6 @@ msgid "Random"
 msgstr "Casuale"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
 msgstr "Manuale"
 
