@@ -1,3 +1,8 @@
+1999-01-07  David Faure  <faure@kde.org>
+
+	* kioslave/file.cpp (OpenDir): Added redirection if HTML View set and
+ 	opening index.html or .kde.html
+
 1999-01-06  David Faure  <faure@kde.org>
 
 	* kfmprops.*: Commented out the "Working Directory" line edit. It

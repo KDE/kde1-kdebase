@@ -183,6 +183,7 @@ int KProtocolFILE::OpenDir( KURL *url )
 		kdeHtmlSize = buff.st_size;
 		bKdeHtml = TRUE;
 		file = f;
+		emit redirection( QString("file:" + t) );
 		return SUCCESS;
 	    }
 
@@ -193,6 +194,7 @@ int KProtocolFILE::OpenDir( KURL *url )
 	    if (( f = fopen( t.data(), "rb" )))
 	    {
 		file = f;
+		emit redirection( QString("file:" + t) );
 		return SUCCESS;
 	    }
     }
