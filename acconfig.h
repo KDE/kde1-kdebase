@@ -87,3 +87,52 @@
 /* Define, if you have setupterm in -l(n)curses */
 #undef HAVE_SETUPTERM
 
+
+#ifndef HAVE_BOOL
+#define HAVE_BOOL
+typedef int bool;
+#ifdef __cplusplus
+const bool false = 0;
+const bool true = 1;
+#else
+#define false (bool)0;
+#define true (bool)1;
+#endif
+#endif
+
+/* this is needed for Solaris and others */
+#ifndef HAVE_GETDOMAINNAME
+#define HAVE_GETDOMAINNAME
+#ifdef __cplusplus  
+extern "C" 
+#endif
+int getdomainname (char *Name, int Namelen);
+#endif  
+
+#ifndef HAVE_GETHOSTNAME
+#define HAVE_GETHOSTNAME
+#ifdef __cplusplus  
+extern "C" 
+#endif
+int gethostname (char *Name, int Namelen);
+#endif  
+
+#ifndef HAVE_FUNC_SETENV
+#define HAVE_FUNC_SETENV
+int setenv(const char *name, const char *value, int overwrite);
+int unsetenv(const char *name);
+#endif
+
+/*
+ * jpeg.h needs HAVE_BOOLEAN, when the system uses boolean in system
+ * headers and I'm too lazy to write a configure test as long as only
+ * unixware is related
+ */
+#ifdef _UNIXWARE
+#define HAVE_BOOLEAN
+#endif
+
+#if !defined(HAVE_SETEUID)
+#define seteuid(_eu) setresuid(-1, _eu, -1)
+#endif
+
