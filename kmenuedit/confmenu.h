@@ -36,6 +36,8 @@
 class ConfMenuDialog;
 class EntryDialog;
 
+enum MoveMode {MoveNone, MoveItem, MoveMenu};
+
 class MenuButton : public EditButton
 {
   Q_OBJECT

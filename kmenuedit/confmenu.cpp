@@ -75,6 +75,7 @@ static bool isKdelnkFile(const char* name){
 //---------------  MENUBUTTON  -----------------------------------------
 //----------------------------------------------------------------------
 
+static MoveMode move_mode = MoveNone;
 
 MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent,
                           const char *name )
@@ -107,7 +108,7 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
     {
       popmenu.insertItem(klocale->translate("Copy"), this, SLOT(copyItem()));
       popmenu.insertItem(klocale->translate("View"), this, SLOT(change_item()));
-      popmenu.insertItem(klocale->translate("! PROTECTED Button !"));
+      //popmenu.insertItem(klocale->translate("! PROTECTED Button !"));
     }
   else
     {
@@ -184,8 +185,6 @@ void MenuButton::delete_item()
   ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 }
 
-enum MoveMode {MoveNone, MoveItem, MoveMenu};
-static MoveMode move_mode = MoveNone;
 void MenuButton::move_item()
 {
     QApplication::setOverrideCursor(CrossCursor, TRUE); 
@@ -197,6 +196,7 @@ void MenuButton::move_menu()
     QApplication::setOverrideCursor(CrossCursor, TRUE); 
     move_mode = MoveMenu;
 }
+
 void MenuButton::change_item()
 {
   if( dialog_open )
@@ -508,11 +508,11 @@ debug("is down");
 
 void MenuButton::dndMouseReleaseEvent( QMouseEvent *e)
 {
-  if ( !isDown() )
+  if ( !isDown() && !move_group && !move_button )
     return;
   bool hit = hitButton( e->pos() );
   setDown( FALSE );
-  if( move_button )
+  if( move_button || move_group )
       //  if( e->button() == MidButton )
     {
       setCursor(arrowCursor);
@@ -714,7 +714,7 @@ void MenuButton::paint( QPainter *painter )
     {
       qDrawArrow( painter, RightArrow, style(), submenu_open,
 		  width() - 10,  height()/2-2,
-		  4, 4, g );
+		  8, 8, g );
     }
 }
 

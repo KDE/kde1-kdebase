@@ -312,7 +312,8 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
       QString temp_swallow_title, temp_term_opt, temp_exec_path, temp_text_name;
       QString temp_use_term, temp_pattern, temp_protocols, temp_extensions, temp_url_name;
       QString temp_dev_name, temp_mount_point, temp_fs_type, temp_umount_pixmap_name;
-      QString temp_dev_read_only;
+      QString temp_dev_read_only = "0";
+      temp_use_term = "0";
       bool inside_group = FALSE;
       int equal_pos;
       comment = "";
@@ -449,52 +450,50 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu )
 	    dev_read_only = 1;
 	}
 
-      /*
-      if( !fi->isReadable() ) 
-	return -1;
-      KConfig kconfig(fi->absFilePath());
-      kconfig.setGroup("KDE Desktop Entry");
-      command_name    = kconfig.readEntry("Exec");
-      swallow_exec    = kconfig.readEntry("SwallowExec");
-      comment         = kconfig.readEntry("Comment");
-      text_name       = kconfig.readEntry("Name", text_name);
-      pixmap_name     = kconfig.readEntry("MiniIcon");
-      big_pixmap_name = kconfig.readEntry("Icon");
-      type_string     = kconfig.readEntry("Type");
-      if( type_string == "Application" ) 
-	{
-	  if( !swallow_exec.isEmpty() )
-	    {
-	      entry_type = swallow_com;
-	      swallow_title = kconfig.readEntry("SwallowTitle");
-	    }
-	  else
-	    {
-	      entry_type = unix_com;
-	      term_opt   = kconfig.readEntry("TerminalOptions");
-	    }
-	  exec_path       = kconfig.readEntry("Path");
-	  dir_path        = fi->dirPath(TRUE);
-	  use_term        = kconfig.readNumEntry("Terminal");
-	  pattern         = kconfig.readEntry("BinaryPattern");
-	  protocols       = kconfig.readEntry("Protocols");
-	  extensions      = kconfig.readEntry("MimeType");
-	}
-      else if( type_string == "Link" )
-	{
-	  entry_type = url;
-	  url_name   = kconfig.readEntry("URL");
-	}
-      else if( type_string == "FSDevice" )
-	{
-	  entry_type  = device;
-	  dev_name    = kconfig.readEntry("Dev");
-	  mount_point = kconfig.readEntry("MountPoint");
-	  fs_type     = kconfig.readEntry("FSType");
-	  umount_pixmap_name = kconfig.readEntry("UnmountIcon");
-	  dev_read_only = kconfig.readNumEntry("ReadOnly");
-	}
-      */
+//    if( !fi->isReadable() ) 
+// 	return -1;
+//       KConfig kconfig(fi->absFilePath());
+//       kconfig.setGroup("KDE Desktop Entry");
+//       command_name    = kconfig.readEntry("Exec");
+//       swallow_exec    = kconfig.readEntry("SwallowExec");
+//       comment         = kconfig.readEntry("Comment");
+//       text_name       = kconfig.readEntry("Name", text_name);
+//       pixmap_name     = kconfig.readEntry("MiniIcon");
+//       big_pixmap_name = kconfig.readEntry("Icon");
+//       type_string     = kconfig.readEntry("Type");
+//       if( type_string == "Application" ) 
+// 	{
+// 	  if( !swallow_exec.isEmpty() )
+// 	    {
+// 	      entry_type = swallow_com;
+// 	      swallow_title = kconfig.readEntry("SwallowTitle");
+// 	    }
+// 	  else
+// 	    {
+// 	      entry_type = unix_com;
+// 	      term_opt   = kconfig.readEntry("TerminalOptions");
+// 	    }
+// 	  exec_path       = kconfig.readEntry("Path");
+// 	  dir_path        = fi->dirPath(TRUE);
+// 	  use_term        = kconfig.readNumEntry("Terminal");
+// 	  pattern         = kconfig.readEntry("BinaryPattern");
+// 	  protocols       = kconfig.readEntry("Protocols");
+// 	  extensions      = kconfig.readEntry("MimeType");
+// 	}
+//       else if( type_string == "Link" )
+// 	{
+// 	  entry_type = url;
+// 	  url_name   = kconfig.readEntry("URL");
+// 	}
+//       else if( type_string == "FSDevice" )
+// 	{
+// 	  entry_type  = device;
+// 	  dev_name    = kconfig.readEntry("Dev");
+// 	  mount_point = kconfig.readEntry("MountPoint");
+// 	  fs_type     = kconfig.readEntry("FSType");
+// 	  umount_pixmap_name = kconfig.readEntry("UnmountIcon");
+// 	  dev_read_only = kconfig.readNumEntry("ReadOnly");
+// 	}
     }
   
   // some code from kpanel
@@ -1171,11 +1170,6 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
   p.begin( &buf );
   p.drawPixmap( 2, 2, item->pixmap );              // use 2x2 border
   p.setFont( menu->font() );
-  /*
-  p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
-	      (h + fm.height()) / 2 - fm.descent(),
-	      item->text_name );
-	      */
   p.drawText( 2 + item->pixmap.width() + 4,        // center text in item
 	      0, w, h,
 	      AlignVCenter | ShowPrefix | DontClip | SingleLine,
