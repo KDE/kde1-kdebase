@@ -17,6 +17,7 @@
 #include <qmenudta.h>
 #include <qkeycode.h>
 #include <qbitmap.h>
+#include <qstring.h>
 
 int myPopupMenu::keyStatus = 0;
 
@@ -282,7 +283,7 @@ void myTaskButton::setNoActive()
 {
   myTaskButton* buttontolower = active;
   active = 0;
-  if (buttontolower!=0) 
+  if (buttontolower!=0)
     buttontolower->setActive(FALSE);
 }
 
@@ -788,7 +789,7 @@ void kPanel::delete_button(QWidget* button){
        entries[i] = entries[i+1];
        if (orientation == vertical)
           entries[i].button->move(entries[i].button->x(), entries[i].button->y() - tmp_height );
-       else 
+       else
           entries[i].button->move(entries[i].button->x() - tmp_width, entries[i].button->y());
     }
     delete button;
@@ -918,7 +919,7 @@ void kPanel::showMiniPanel ()
   QToolTip::add(miniDiskNav, klocale->translate("KDiskNavigator"));
   miniDiskNav->setFocusPolicy(NoFocus);
   miniDiskNav->setPixmap(kapp->getIconLoader()
-			->loadMiniIcon("kdisknav.xpm", mh,mh)); 
+			->loadMiniIcon("kdisknav.xpm", mh,mh));
   miniDiskNav->setMouseTracking( true );
   miniDiskNav->installEventFilter (this);
   // -- pietro: kdisknav button end --
@@ -1030,4 +1031,36 @@ void kPanel::miniButtons(int i){
 		   QCursor::pos(), LeftButton, LeftButton);
   QApplication::sendEvent(button, &ev);
   QApplication::sendEvent(button, &mev);
+}
+
+
+
+QString kPanel::findMenuEditor( const QString& folder)
+{
+    QString result;
+    QDir d ( folder );
+    if (!d.exists() )
+	return result;
+    
+    const QFileInfoList *list = d.entryInfoList();
+    QFileInfoListIterator it( *list );
+    QFileInfo *fi;
+    if( it.count() < 3 )
+	return -1;
+    while ( (fi=it.current()) && result.isEmpty() )
+	{
+	    if( fi->fileName() == "." || fi->fileName() == ".." )
+		{ ++it; continue; }
+	    if( fi->isDir() && fi->isReadable() )
+		{
+		    result = findMenuEditor( fi->filePath() );
+		}
+	    else
+		{
+		    if (fi->fileName() == "KMenuEdit.kdelnk")
+			result = fi->filePath();
+		}
+	    ++it;
+	}
+    return result;
 }

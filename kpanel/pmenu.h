@@ -161,7 +161,7 @@ public:
   bool       addFromDrop( QString a);
   bool       copyFiles( QString source, QString dest);
   int        count() { return list.count(); }
-  
+
 #ifdef DISKNAV_DEBUG
   PMenuItem *searchItem( PMenu* item );  // DEBUG
 #endif
@@ -171,9 +171,6 @@ public:
   void       setAltSort( bool alternateSort ) { altSort = alternateSort; }
   bool       getAltSort() { return altSort; }
   void       clearSubmenus();
-
-  // this is a bit tricky: it returns the menu item of the menu editor (if any)
-  PMenuItem* getMenuEditorItem(){return menu_editor_item;}
 
 signals:
 

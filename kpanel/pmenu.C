@@ -400,7 +400,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 
         item->cmenu->id = item->getId();
 
-        item->sub_menu->parentItem = item; 
+        item->sub_menu->parentItem = item;
 
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
@@ -571,10 +571,6 @@ short PMenu::parse( QDir d )
 	  if( new_item->parse(fi) < 0 ){
 	    delete new_item;
 	    new_item = 0;
-	  }
-	  else {
-	    if (fi->fileName() == "KMenuEdit.kdelnk")
-	      menu_editor_item = new_item;
 	  }
 	}
 
@@ -829,8 +825,8 @@ bool PMenu::addFromDrop( QString name )
       clearSubmenus();
       createMenu(cmenu, the_panel, FALSE);
       return TRUE;
-    } 
-  else 
+    }
+  else
     {
       /*
       if( i.isDir() ) {
@@ -848,7 +844,7 @@ bool PMenu::addFromDrop( QString name )
       }
       */
       // create a new kdelnk-file on the fly
-      if( i.isExecutable() ) 
+      if( i.isExecutable() )
 	{
 	  pmi = new PMenuItem(unix_com,        // type
 			      i.fileName(),    // name
@@ -873,9 +869,9 @@ bool PMenu::addFromDrop( QString name )
 	  else
 	    pmi->big_pixmap_name = i.baseName() + ".xpm";
 	  pmi->real_name = real_name;
-	  if( pmi->real_name != 0 ) 
+	  if( pmi->real_name != 0 )
 	    {
-	      if( !pmi->writeConfig(QDir(dir_name))) 
+	      if( !pmi->writeConfig(QDir(dir_name)))
 		{
 		  delete pmi;
 		  pmi = 0;
@@ -887,7 +883,7 @@ bool PMenu::addFromDrop( QString name )
 		add(pmi);
 	      clearSubmenus();
 	      createMenu(cmenu, the_panel, FALSE);
-	    } 
+	    }
 	  else
 	    {
 	      delete pmi;
@@ -935,7 +931,7 @@ void PMenu::clearSubmenus()
     cmenu->clear();
   for( item = list.first(); item != 0; item = list.next() )
     {
-      if( item->cmenu != 0L ) 
+      if( item->cmenu != 0L )
 	item->sub_menu->clearSubmenus();
     }
 }
@@ -991,5 +987,3 @@ void PMenu::parseBeforeShowing(bool is_add_menu)
   this->parse(dir);
   this->createMenu(this->parentItem->cmenu, the_panel, is_add_menu);
 }
-
-PMenuItem*PMenu:: menu_editor_item = 0;

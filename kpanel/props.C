@@ -9,6 +9,7 @@
 #include "kpanel.h"
 #include <klocale.h>
 #include <qmsgbox.h>
+#include <kfm.h>
 
 extern void execute(const char*);
 
@@ -17,7 +18,7 @@ void kPanel::writeOutConfiguration(){
    int i;
    QPushButton* tmp_push_button = 0;
    KConfig *config = KApplication::getKApplication()->getConfig();
-   config->setGroup("kpanelButtons"); 
+   config->setGroup("kpanelButtons");
    QString s;
    QString b;
    float delta;
@@ -189,7 +190,7 @@ void kPanel::parseMenus(){
 				   this, SLOT(restart()), 0, false, 0,
 				   klocale->translate("Restart panel")) );
 
-    PMenuItem* fileBrowser = 
+    PMenuItem* fileBrowser =
       new PMenuItem(submenu, klocale->translate("Disk Navigator"),
                     0, "kdisknav.xpm", new PFileMenu(true), 0, 0,
                     kdisknav /* instead of new myPopupMenu */ , false, 0, //sven changed
@@ -310,7 +311,7 @@ void kPanel::readInConfiguration(){
 	     buttonAdded = true;
 	     has_kdisknav_button = true;
 	 }
-         // --sven: kdisknav button end -- 
+         // --sven: kdisknav button end --
 	 else {
 	   pmi = pmenu->searchItem( button_entry_value);
 	   if (pmi){
@@ -364,13 +365,13 @@ void kPanel::readInConfiguration(){
        delta = tmp.isNull()?0:tmp.toFloat();
      }
    }
-  
+
    // kdisknav
 
    config->setGroup("kdisknav");
 
    if (config->hasKey("MaxRecentFoldersEntries"))
-     max_recent_folders_entries = 
+     max_recent_folders_entries =
        config->readEntry("MaxRecentFoldersEntries").toUInt();
    else {
      // config->writeEntry("MaxRecentFoldersEntries", 4);
@@ -378,7 +379,7 @@ void kPanel::readInConfiguration(){
    }
 
    if (config->hasKey("MaxRecentFilesEntries"))
-     max_recent_files_entries = 
+     max_recent_files_entries =
        config->readEntry("MaxRecentFilesEntries").toUInt();
    else {
      // config->writeEntry("MaxRecentFilesEntries", 4);
@@ -386,7 +387,7 @@ void kPanel::readInConfiguration(){
    }
 
    if (config->hasKey("MaxNavigableFolderEntries"))
-     max_navigable_folder_entries = 
+     max_navigable_folder_entries =
        config->readEntry("MaxNavigableFolderEntries").toUInt();
    else {
      // config->writeEntry("MaxNavigableFolderEntries", 200);
@@ -444,13 +445,18 @@ void kPanel::configurePanel(){
 }
 
 void kPanel::editMenus(){
-  PMenuItem* pmi = pmenu->getMenuEditorItem();
-  if (!pmi){
-    QMessageBox::warning( 0, "Panel",
-			  klocale->translate("The menu editor is not installed."),
-			  klocale->translate("Oops!"));
-  } else {
-    pmi->exec();
-  }
+    QString editor = findMenuEditor(kapp->kde_appsdir());
+    if ( editor.isEmpty() ){
+	QMessageBox::warning( 0, "Panel",
+			      klocale->translate("The menu editor is not installed."),
+			      klocale->translate("Oops!"));
+    }
+    else {
+	KFM* kfm = new KFM;
+	QString com = "file:";
+	com.append(editor);
+	kfm->exec(com, 0L);
+	delete kfm;
+    }
 }
 
