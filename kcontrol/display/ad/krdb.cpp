@@ -26,7 +26,13 @@
 
 QString fontString( QFont rFont )
 {
+    
 	QString aValue;
+#if QT_VERSION >= 140
+	aValue = rFont.rawName();
+	return aValue;
+#endif
+
 	QFontInfo fi( rFont );
 	
 	aValue.sprintf( "-*-" );

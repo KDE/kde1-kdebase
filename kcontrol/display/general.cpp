@@ -58,6 +58,10 @@ FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
 QString FontUseItem::fontString( QFont rFont )
 {
 	QString aValue;
+#if QT_VERSION >= 140
+	aValue = rFont.rawName();
+	return aValue;
+#endif
 	QFontInfo fi( rFont );
 	
 	aValue.sprintf( "-*-" );
@@ -200,7 +204,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 {
 	int i;
 	changed = false;
-	useRM = false;
+	useRM = true;
 	
 	debug("KGeneral::KGeneral");
 	
@@ -219,7 +223,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 	
-	cbStyle = new QCheckBox( i18n( "&Draw widgets in the style of Windows 95" ), 
+	cbStyle = new QCheckBox( i18n( "&Draw widgets in the style of Windows 95" ),
 				 this );
 	cbStyle->adjustSize();
 	cbStyle->setMinimumSize(cbStyle->size());
@@ -351,8 +355,8 @@ void KGeneral::readSettings( int )
 		applicationStyle = MotifStyle;
 
 		
-	KSimpleConfig appConfig( KApplication::localconfigdir() + "/kdisplayrc" );
-	useRM = appConfig.readBoolEntry( "useResourceManager", false );
+	KConfigGroupSaver saver(kapp->getConfig(), "X11");
+	useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
 }
 
 void KGeneral::setDefaults()
@@ -424,7 +428,7 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   int format;
   unsigned long n, extra;
   int status;
-  
+
   status = XGetWindowProperty(qt_xdisplay(), w, a, 0L, len, False, type, &real_type, &format, &n, &extra, p);
   if (status != Success || *p == 0)
     return -1;
@@ -436,11 +440,11 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
 //Matthias
 static bool getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
-  
+
   if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
     return false;
   }
-  
+
   result = p[0];
   XFree((char *) p);
   return true;
@@ -472,7 +476,7 @@ void KGeneral::apply( bool  )
 	    ev.xclient.window = rootwins[i];
 	    ev.xclient.message_type = KDEChangeGeneral;
 	    ev.xclient.format = 32;
-	    
+	
 	    XSendEvent(kde_display, rootwins[i] , False, 0L, &ev);
 	  }
 	}
@@ -496,7 +500,7 @@ void KGeneral::slotSetFont( QFont fnt )
 
 void KGeneral::slotPreviewFont( int index )
 {
-	fntChooser->setFont( fontUseList.at( index )->font(),  
+	fntChooser->setFont( fontUseList.at( index )->font(),
 			fontUseList.at( index )->spacing() );
 	lSample->setPreviewFont( fontUseList.at( index )->font() );
 }

@@ -92,12 +92,18 @@ void KResourceMan::sync()
 
     	while ( it.current() ) {
 
-			QString *value = propDict->find( it.currentKey() );
+	    QString *value = propDict->find( it.currentKey() );
 			
-        	keyvalue.sprintf( "%s: %s\n", it.currentKey(), value->data() );
-			propString += keyvalue;
-        	++it;
-		}
+	    keyvalue.sprintf( "%s: %s\n", it.currentKey(), value->data() );
+	    propString += keyvalue;
+// 	    if (it.currentKey() == "font"){
+// 		// dirty hack, makes font to fontList for x-resources
+// 		keyvalue.sprintf( "%s: %s\n", it.currentKey(), value->data() );
+// 		propString += keyvalue;
+		
+// 	    }
+	    ++it;
+	}
 		
 		QString fileName;
 		fileName.sprintf("/tmp/krdb.%d", timestamp);
@@ -313,6 +319,10 @@ QString KResourceMan::writeEntry( const QString& rKey, int nValue )
 QString KResourceMan::writeEntry( const QString& rKey, const QFont& rFont )
 {
 	QString aValue;
+#if QT_VERSION >= 140
+	aValue = rFont.rawName();
+	return writeEntry( rKey, aValue );
+#endif
 	QFontInfo fi( rFont );
 
 	aValue.sprintf( "-*-" );
