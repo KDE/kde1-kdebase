@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-11-15 19:05+0100\n"
+"PO-Revision-Date: 1998-12-09 21:57+0100\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
-"KAn inte sätta modeswitchen som %s för tangentbordet %s.\n"
+"Kan inte sätta modeswitchen som %s för tangentbordet %s.\n"
 "Alternativa symboler ej tillgängliga."
 
 #: kikbd.cpp:392
@@ -176,9 +176,8 @@ msgid "Bottom Right"
 msgstr "Nedre högra"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "standard"
+msgstr "X standard koder"
 
 #: kikbdconf.cpp:204
 #, c-format
@@ -283,7 +282,7 @@ msgstr "Internationellt tangentbords fråga"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Inställningar"
 
 #: kikbdconf.cpp:497
 msgid ""
@@ -373,15 +372,13 @@ msgid "Switch and Alt Switch"
 msgstr "Byte och alt byte"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Tangent(er) för att byta mellan teckenuppsättningar"
 
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
 msgstr ""
-"Tangent  för att aktivera alternativa symboler i nuvarande "
-"teckenuppsättningen "
+"Tangent för att aktivera alternativa symboler i nuvarande teckenuppsättningen"
 
 #: widgets.cpp:429
 msgid "&Beep"
@@ -404,12 +401,10 @@ msgid "Advanced"
 msgstr "Avancerat"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Emulera capslock"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emulera xserver-capslock. Behövs för att vissa språk ska bli rätt"
 
@@ -427,12 +422,11 @@ msgstr "&Spara klasser"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr ""
-"Spara relationen mellan fönsterklassen och teckenuppsättningen vid avslut"
+msgstr "Spara relationen mellan fönsterklassen och teckenuppsättningen vid avslut"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definera X koder"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -444,14 +438,11 @@ msgstr "Standard uppförande. Teckenuppsättningen är aktiv för alla fönster"
 
 #: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr ""
-"Utökat uppförande. Varje fönster kommer ihåg sin egen teckenuppsättning"
+msgstr "Utökat uppförande. Varje fönster kommer ihåg sin egen teckenuppsättning"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr ""
-"Speciellt uppförande. Varje fönsterklass kommer ihåg sin egen "
-"teckenuppsättning"
+msgstr "Speciellt uppförande. Varje fönsterklass kommer ihåg sin egen teckenuppsättning"
 
 #: widgets.cpp:551
 msgid "Button Colors"
@@ -462,17 +453,14 @@ msgid "Foreground"
 msgstr "Förgrund"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Färg på texten"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
 msgstr "Med capslock"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Bakgrund när emulerad capslock är aktiverad"
 
@@ -505,7 +493,6 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
 msgstr "Starta upp automatiskt"
 
