@@ -1251,8 +1251,8 @@ void MyApp::handleOperationsPopup(int itemId){
 }
 
 void MyApp::handleDesktopPopup(int itemId){
-  if (manager->current())
-    manager->current()->ontoDesktop(itemId);
+  if (Client::operation_client)
+    Client::operation_client->ontoDesktop(itemId);
 }
 
 
