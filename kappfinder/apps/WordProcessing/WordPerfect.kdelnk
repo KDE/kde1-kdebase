@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+Name=WordPerfect
+MiniIcon=
+Protocols=
+MimeType=
+Exec=xwp
+Icon=wordperfect.xpm
+TerminalOptions=
+Path=
+DocPath=
+Type=Application
+Terminal=0
+Comment=WordPerfect Word Processor
