@@ -1,3 +1,7 @@
+1999-1-6  Karl Backström  <backstrom@kde.org>
+
+        * Extended the Groupdetails dialog.
+
 1999-1-4  Antonio Larrosa  <larrosa@kde.org>
 
 	* Made it modify kcmdisplayrc instead of kdisplayrc
