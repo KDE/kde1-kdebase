@@ -1154,8 +1154,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 
     kioError = _kioerror;
     
-    // TODO: Remove before final release
-    // printf("################################# fatalError called '%s'\n",_error);
+    // printf("################################# processError called '%s', %d\n",_error,_kioerror);
     
     // We have to delete the password!!! ( if there is one )
     QString url( _error );
@@ -1236,6 +1235,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
 	break;
       }
+      break;
     case KIOJob::JOB_MOUNT:
     case KIOJob::JOB_UNMOUNT:
     case KIOJob::JOB_GET:
@@ -1298,6 +1298,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	okToContinue = FALSE;
 	break;
       }
+      break;
     default:
       debug("warning, case not handled in processError()\n");
       break;
