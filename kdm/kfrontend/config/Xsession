@@ -23,12 +23,12 @@ case $# in
 esac
 
 # start windowmanager
-which -s $1 && exec $1
+which -s "$1" && exec "$1"
 
 # windowmanager not found, tell user
 message="Sorry, $1 not found."
-if [ `which kdialog` ]; then
+if which -s "$1"; then
   exec kdialog --msgbox "$message"
 else
-  exec xmessage -center $message
+  exec xmessage -center "$message"
 fi
