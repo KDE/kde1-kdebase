@@ -38,7 +38,7 @@ KLanguageCombo::~KLanguageCombo ()
 }
 
 
-KLanguageCombo::KLanguageCombo (QWidget * parent, const char *name, bool init)
+KLanguageCombo::KLanguageCombo (QWidget * parent, const char *name)
   : QComboBox(parent, name)
 {
 }

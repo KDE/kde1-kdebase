@@ -35,7 +35,7 @@ class KLanguageCombo : public QComboBox
 
 public:
 
-  KLanguageCombo(QWidget *parent=0, const char *name=0, bool init=FALSE );
+  KLanguageCombo(QWidget *parent=0, const char *name=0);
   ~KLanguageCombo();
 
   void insertLanguage(const char *lang);  
