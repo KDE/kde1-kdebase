@@ -27,7 +27,7 @@ Language[sv]=Kanadensiskt franskt
 
 Charset=latin
 Label=Cf
-Locale=cf
+Locale=fr_CA
 
 [KeyboardMap]
 keysym0=2,2,quotedbl,at

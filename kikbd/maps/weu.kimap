@@ -1,0 +1,39 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Peter Silva <Peter.Silva@kde.org>
+
+Language=European (west) on a US keyboard.
+Label=WEu
+Locale=us_eu
+Charset=latin
+
+[KeyboardMap]
+#us,locale,shift,switch,Shift_switch
+ 
+#first row
+keysym0=grave,grave,asciitilde,dead_grave,dead_tilde
+keysym1=1,1,exclam,exclamdown,exclamdown
+keysym2=6,6,asciicircum,dead_circumflex,dead_circumflex
+#keysym3=0,0,parenright,degree,
+keysym4=4,4,dollar,sterling,yen
+keysym5=5,5,percent,cent,division
+keysym6=minus,minus,underscore,notsign,emdash
+ 
+#second row
+keysym10=e,e,E,eacute,Eacute
+keysym11=o,o,O,oslash,Ooblique
+keysym13=r,r,R,aring,Aring
+keysym12=p,p,P,thorn,THORN
+ 
+#third row
+keysym16=a,a,A,ae,AE
+keysym20=apostrophe,apostrophe,quotedbl,dead_acute,dead_diaeresis
+keysym21=s,s,S,ssharp,section
+ 
+#fourth row
+keysym29=c,c,C,ccedilla,Ccedilla
+keysym30=n,n,N,ntilde,Ntilde
+keysym31=comma,comma,less,dead_cedilla,guillemotleft
+keysym32=period,period,greater,dead_belowring,guillemotright
+keysym33=slash,slash,question,division,questiondown
