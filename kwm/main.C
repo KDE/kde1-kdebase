@@ -755,6 +755,16 @@ void MyApp::readConfiguration(){
     }
   }
   
+  // Windows Placement config --- CT 18jan98 ---
+  key = config->readEntry("WindowsPlacement");
+  if( key == "smart")
+    options.Placement = SMART_PLACEMENT;
+  else if( key == "random")
+    options.Placement = RANDOM_PLACEMENT;
+  else{
+    config->writeEntry("WindowsPlacement", "random");
+    options.Placement = RANDOM_PLACEMENT;
+  }
 
   options.rstart = config->readEntry("RstartProtocol", "rstart -v");
   config->writeEntry("RstartProtocol", options.rstart);

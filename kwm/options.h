@@ -44,6 +44,13 @@ enum BUTTON_FUNCTIONS {
 };
 
 
+//CT 18jan98
+enum PLACEMENT_POLICY {
+  SMART_PLACEMENT,
+  RANDOM_PLACEMENT
+};
+   
+
 struct kwmOptions {
 
   WINDOW_MOVE_TYPE WindowMoveType;
@@ -55,6 +62,8 @@ struct kwmOptions {
   int AutoRaise;
   bool ControlTab;
   bool Button3Grab;
+  //CT 18jan98
+  PLACEMENT_POLICY Placement;
 
   const char* rstart;
 

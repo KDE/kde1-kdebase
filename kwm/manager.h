@@ -57,6 +57,8 @@ public:
   void enterNotify(XCrossingEvent *e);
     
   void randomPlacement(Client* c);
+  //CT 18jan98
+  void smartPlacement(Client* c);
   
   void manage(Window w, bool mapped = False);
 
@@ -180,6 +182,10 @@ private:
   void setQRectProperty(Window w, Atom a, const QRect &rect);
   void sendClientMessage(Window w, Atom a, long x);
 
+  //internal tool for smartPlacement --- CT 18jan98 ---
+  void spGetOverlap(Client* c, int x, int y, int* overlap);
+
+
   // Atoms
   Atom         wm_state;
   Atom         wm_change_state;
@@ -242,7 +248,7 @@ private:
 
   bool enable_focus_follow_mouse_activation;
   Client* delayed_focus_follow_mouse_client;
- 
+
 };
 
 // CC: new KDE Greyer widget

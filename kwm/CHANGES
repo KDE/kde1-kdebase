@@ -11,6 +11,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 25:
+     - smart placement (Christian Tibirna)
+     - "Window Activate" sound event (I simply forgot this one...)
+
   patchlevel 24:
        - supports the following commands in addition:
 
@@ -36,6 +40,10 @@ In 0.10:
                   "Window Delete Trans"
                   "Logout"
                   "Logout Message"
+                  "Window Move Start"
+                  "Window Move End"
+                  "Window Resize Start"
+                  "Window Resize End"
 
       Also passes KDE_SOUND_EVENT, KDE_REGISTER_SOUND_EVENT and
       KDE_UNREGISTER_SOUND_EVENT to the modules. REGISTER-events are

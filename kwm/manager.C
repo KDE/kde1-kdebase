@@ -791,6 +791,164 @@ void Manager::randomPlacement(Client* c){
   c->geometry.moveTopLeft(QPoint(tx, ty));
 }
 
+/* SmartPlacement by Cristian Tibirna (ctibirna@gch.ulaval.ca)
+ * adapted for kwm (16-19jan98) after an implementation for fvwm by
+ * Anthony Martin (amartin@engr.csulb.edu).
+ *
+ * This function will place the window of a new client such that there is 
+ * a minimum overlap with already existant windows on the current desktop.
+ */
+
+void Manager::smartPlacement(Client* c) {
+
+  int x, y, overlap;
+  int xopt, yopt, over_min;
+  int other, temp;
+  Client* l;
+  
+  // initialize often used vars: width and height of c; we gain speed
+  int ch = c->geometry.height();
+  int cw = c->geometry.width();
+
+  // get the maximum allowed windows space
+  QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
+  
+  // initialize with null the current overlap
+  x = maxRect.x(); y = maxRect.y();
+
+  //initialize and do a loop over possible positions
+  overlap = -1;
+  spGetOverlap(c, x, y, &overlap); 
+  over_min = overlap;
+  xopt = x;
+  yopt = y;
+  
+  while((overlap != 0) && (overlap != -1)) {
+    // test if windows overlap ...
+    if (overlap > 0) {
+
+      other = maxRect.width();
+      temp = other - cw;
+      
+      if(temp > x) other = temp;
+      
+      // compare to the position of each client on the current desk
+      for(l = clients.first(); l ; l = clients.next()) {
+	if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+	  continue;
+	// if not enough room above or under the current tested client
+	// determine the first non-overlapped x position
+	if((y < l->geometry.height() + l->geometry.y() ) && 
+	   (l->geometry.y() < ch + y)) {
+	  temp = l->geometry.width() + l->geometry.x();
+	  if(temp > x) other = (other < temp)? other : temp;
+	  temp = l->geometry.x() - cw;
+	  if(temp > x) other = (other < temp)? other : temp;
+	}
+      }
+      x = other;
+    }
+    
+    // ... else => not enough x dimension (overlap was -2)
+    else {
+      x = maxRect.x();
+      
+      other = maxRect.height();
+      temp = other - ch;
+      
+      if(temp > y) other = temp;
+      
+      //test the position of each window on current desk
+      for(l = clients.first(); l ; l = clients.next()) {
+	if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+	  continue;
+	
+	temp = l->geometry.height() + l->geometry.y();
+	if(temp > y) other = (other < temp)? other : temp;
+	temp = l->geometry.y() - ch;
+	if(temp > y) other = (other < temp)? other : temp;
+      }
+      y = other;
+    }
+
+    overlap = over_min;
+    spGetOverlap(c, x, y, &overlap);
+
+    // store better x and y corresponding to the so far smallest overlap
+    if ((overlap >= 0) && (overlap < over_min)) {
+      over_min = overlap;
+      xopt = x;
+      yopt = y;
+    }
+  }
+  
+  // place the window
+  c->geometry.moveTopLeft(QPoint(xopt, yopt));	
+  
+}
+
+// help function for SmartPlacement --- CT 18jan98 --- 
+void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
+
+  int cxl, cxr, cyt, cyb;     //temp coords
+  int  xl,  xr,  yt,  yb;     //temp coords
+  int over_temp, dummy;       //temp overlap
+  Client* l;
+
+  // initialize often used vars: width and height of c; we gain speed
+  int ch = c->geometry.height();
+  int cw = c->geometry.width();
+
+  // get the maximum allowed windows space
+  QRect maxRect = KWM::getWindowRegion(currentDesktop());
+
+  //test if enough room in y direction
+  if (y + ch > maxRect.height()) {
+    *overlap = -1;
+    return ;
+  }
+  
+  //test if enough room in x direction
+  if(x + cw > maxRect.width()) {
+    *overlap = -2;
+    return;
+  }
+  
+  over_temp = 0;
+
+  cxl = x;
+  cxr = x + cw;
+  cyt = y;
+  cyb = y + ch;
+  for(l = clients.first(); l ; l = clients.next()) {
+    if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+      continue;
+    xl = l->geometry.x();
+    yt = l->geometry.y();
+    xr = xl + l->geometry.width();
+    yb = yt + l->geometry.height();
+
+    //if windows overlap, calc the overlapping
+    if((cxl < xr) && (cxr > xl) &&
+       (cyt < yb) && (cyb > yt)) {
+      xl = (cxl > xl)? cxl : xl;
+      xr = (cxr < xr)? cxr : xr;
+      yt = (cyt > yt)? cyt : yt;
+      yb = (cyb < yb)? cyb : yb;
+      dummy = (xr - xl) * (yb - yt);
+      //to put here avoidance code if ever needed (see original fct)
+      over_temp += dummy;
+      if((over_temp > *overlap) && (*overlap != -1)) {
+	*overlap = over_temp;
+	return;
+      }
+    }
+  }
+  //return the overlap from this search
+  *overlap = over_temp;
+  return;
+}
+
 
 void Manager::manage(Window w, bool mapped){
 
@@ -961,7 +1119,10 @@ void Manager::manage(Window w, bool mapped){
       // nothing
   }
   else {
-    randomPlacement(c);
+    if(options.Placement == SMART_PLACEMENT)
+      smartPlacement(c);
+    else
+      randomPlacement(c);
   }
 
   if (mapped)
@@ -1143,6 +1304,7 @@ void Manager::activateClient(Client* c, bool set_revert){
       iconifyFloatingOf(cc->mainClient());
   }
 
+  KWM::raiseSoundEvent("Window Activate");
   c->setactive( TRUE );
   unIconifyTransientOf(c->mainClient());
   
