@@ -1,27 +1,11 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-18 15:43+0100\n"
-"PO-Revision-Date: 1997-10-25 18:26 MET DST\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
 
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Laufschrift"
 
 #: banner.cpp:78
-#, fuzzy
 msgid "Setup kbanner"
-msgstr "Einstellungen"
+msgstr "Einstellungen Banner"
 
 #: banner.cpp:80
 msgid "Font"
@@ -375,7 +359,6 @@ msgstr ""
 "       [-corners xxxx] [-delay zahl] [-lock] [-nice zahl]\n"
 
 #: main.cpp:430
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
