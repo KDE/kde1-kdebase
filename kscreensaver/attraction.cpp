@@ -89,6 +89,8 @@ extern "C" {
 
 //================================================================
 
+const int N_MODES = 4;  /* balls/lines/polygons/tails */
+
 struct ball {
   double x, y;
   double vx, vy;
@@ -99,33 +101,38 @@ struct ball {
   int hue;
 };
 
+/* some of these variables might better be class members */
 static struct ball *balls;
 static int npoints;
 static int threshold;
-static int attrdelay;
+static double scale;
 static int global_size;
-static int segments;
+static int segments;       // always 500 at the moment
 static Bool glow_p;
-static Bool orbit_p;
+static Bool orbit_p;       // always false at the moment
 
-static Bool mono_p;
+static Bool mono_p = FALSE;
 
 static XPoint *point_stack;
 static int point_stack_size, point_stack_fp;
 static XColor *colors;
 static int ncolors;
 static int fg_index;
-static int color_shift;
+static int color_shift;       // always 3 at the moment
 
 /*flip mods for mouse interaction*/
-static Bool mouse_p;
+static Bool mouse_p;          // always FALSE at the moment
 int mouse_x, mouse_y, mouse_mass, root_x, root_y;
-static double viscosity;
+static double viscosity;      // always 1.0 at the moment
 
 static enum object_mode {
   ball_mode, line_mode, polygon_mode, spline_mode, spline_filled_mode,
   tail_mode
 } mode;
+static const enum object_mode enum_modes[ N_MODES ] =
+                { ball_mode, line_mode, polygon_mode, tail_mode };
+static const char * const english_modes[ N_MODES ] =
+		{ "Balls", "Lines", "Polygons", "Tails" };
 
 static GC draw_gc, erase_gc;
 
@@ -156,10 +163,13 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
   cmap = xgwa.colormap;
   midx = xlim/2;
   midy = ylim/2;
+
+  scale = (xlim + ylim) / 1200.0;
+
   //r = get_integer_resource ("radius", "Integer");
   r= 0;
   if (r <= 0 || r > min (xlim/2, ylim/2))
-    r = min (xlim/2, ylim/2) - 50;
+    r = min (xlim/2, ylim/2) * 9 / 10;
   //vx = get_integer_resource ("vx", "Integer");
   //vy = get_integer_resource ("vy", "Integer");
   vx= vy= 0;
@@ -174,9 +184,7 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
   //threshold = get_integer_resource ("threshold", "Integer");
   threshold= 100;
   if (threshold < 0) threshold = 0;
-  //attrdelay = get_integer_resource ("delay", "Integer");
-  attrdelay= 10000;
-  if (attrdelay < 0) attrdelay = 0;
+  threshold= int(threshold * scale + 0.5);
   //global_size = get_integer_resource ("size", "Integer");
   global_size = 0;
   if (global_size < 0) global_size = 0;
@@ -200,16 +208,18 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
 
   const char *mode_str = kas->getMode();
   if (! mode_str) mode = ball_mode;
-  else if (!strcmp (mode_str, "Balls")) mode = ball_mode;
-  else if (!strcmp (mode_str, "Lines")) mode = line_mode;
-  else if (!strcmp (mode_str, "Polygons")) mode = polygon_mode;
-  else if (!strcmp (mode_str, "Tails")) mode = tail_mode;
-#if 0
-  else if (!strcmp (mode_str, "splines")) mode = spline_mode;
-  else if (!strcmp (mode_str, "filled-splines")) mode = spline_filled_mode;
-#endif
   else
-    mode= ball_mode;
+    {
+      /* look up the name of the current mode */
+      mode= ball_mode;   /* default */
+      for( int m = 0; m < N_MODES; m++ )
+      {
+          if ( !strcmp (mode_str, english_modes[ m ]))
+          {
+              mode = enum_modes[ m ];
+          }
+      }
+  }
 
   if (mode != ball_mode && mode != tail_mode) glow_p = False;
   
@@ -302,7 +312,8 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
   th = frand (M_PI+M_PI);
   for (i = 0; i < npoints; i++)
     {
-      int new_size = (global_size ? global_size : rand_size ());
+      int new_size = (global_size ? global_size :
+                     int( rand_size () * sqrt(scale) + 0.5));
       balls [i].dx = 0;
       balls [i].dy = 0;
       balls [i].size = new_size;
@@ -360,8 +371,6 @@ init_balls (Display *dpy, Window window, kAttractionSaver *kas)
 
   if (mono_p) glow_p = False;
 
-  //XClearWindow (dpy, window);
-  //XSetForeground(dpy, gc, BlackPixel(dsp, screen));
   XFillRectangle(dpy, window, erase_gc, 0, 0, xlim, ylim);
 }
 
@@ -369,16 +378,15 @@ static void
 compute_force (int i, double *dx_ret, double *dy_ret)
 {
   int j;
-  double x_dist, y_dist, dist, dist2;
   *dx_ret = 0;
   *dy_ret = 0;
   for (j = 0; j < npoints; j++)
     {
       if (i == j) continue;
-      x_dist = balls [j].x - balls [i].x;
-      y_dist = balls [j].y - balls [i].y;
-      dist2 = (x_dist * x_dist) + (y_dist * y_dist);
-      dist = sqrt (dist2);
+      const double x_dist = balls [j].x - balls [i].x;
+      const double y_dist = balls [j].y - balls [i].y;
+      const double dist2 = (x_dist * x_dist) + (y_dist * y_dist);
+      const double dist = sqrt (dist2);
 	      
       if (dist > 0.1) /* the balls are not overlapping */
 	{
@@ -397,10 +405,10 @@ compute_force (int i, double *dx_ret, double *dy_ret)
 
   if (mouse_p)
     {
-      x_dist = mouse_x - balls [i].x;
-      y_dist = mouse_y - balls [i].y;
-      dist2 = (x_dist * x_dist) + (y_dist * y_dist);
-      dist = sqrt (dist2);
+      const double x_dist = mouse_x - balls [i].x;
+      const double y_dist = mouse_y - balls [i].y;
+      const double dist2 = (x_dist * x_dist) + (y_dist * y_dist);
+      const double dist = sqrt (dist2);
 	
       if (dist > 0.1) /* the balls are not overlapping */
 	{
@@ -426,11 +434,11 @@ run_balls (Display *dpy, Window window)
   static Colormap cmap;
   int i;
 
-  /*flip mods for mouse interaction*/
-  Window  root1, child1;
-  unsigned int mask;
   if (mouse_p)
     {
+      /*flip mods for mouse interaction*/
+      Window  root1, child1;
+      unsigned int mask;
       XQueryPointer(dpy, window, &root1, &child1,
 		    &root_x, &root_y, &mouse_x, &mouse_y, &mask);
     }
@@ -452,16 +460,17 @@ run_balls (Display *dpy, Window window)
   /* move the balls according to the forces now in effect */
   for (i = 0; i < npoints; i++)
     {
-      double old_x = balls[i].x;
-      double old_y = balls[i].y;
-      double new_x, new_y;
-      int size = balls[i].size;
-      balls[i].vx += balls[i].dx;
-      balls[i].vy += balls[i].dy;
+      const double old_x = balls[i].x;
+      const double old_y = balls[i].y;
+      const int size = balls[i].size;
+      balls[i].vx += balls[i].dx * scale * scale;
+      balls[i].vy += balls[i].dy * scale * scale;
 
       /* don't let them get too fast: impose a terminal velocity
          (actually, make the medium have friction) */
-      if (balls[i].vx > 10)
+      /* we should check the absolute speed but since trajectories
+         are reflected on the screen borders it does not matter */
+      if (balls[i].vx > 10 * scale)
 	{
 	  balls[i].vx *= 0.9;
 	  balls[i].dx = 0;
@@ -471,7 +480,7 @@ run_balls (Display *dpy, Window window)
 	  balls[i].vx *= viscosity;
 	}
 
-      if (balls[i].vy > 10)
+      if (balls[i].vy > 10 * scale)
 	{
 	  balls[i].vy *= 0.9;
 	  balls[i].dy = 0;
@@ -510,8 +519,8 @@ run_balls (Display *dpy, Window window)
 	    balls[i].vy = -balls[i].vy;
 	}
 
-      new_x = balls[i].x;
-      new_y = balls[i].y;
+      const double new_x = balls[i].x;
+      const double new_y = balls[i].y;
 
       if (!mono_p)
 	{
@@ -689,6 +698,8 @@ void attr_cleanup()
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
 extern KLocale *glocale;
+/* internationalized mode names, for the combo box: */
+static const char * i18n_modes[ N_MODES ];
 
 static kAttractionSaver *saver = NULL;
 
@@ -708,6 +719,11 @@ void stopScreenSaver()
 
 int setupScreenSaver()
 {
+	/* translate the names of the modes, for the setup GUI */
+	for( int m = 0; m < N_MODES; m++ ) {
+		i18n_modes[ m ] = glocale->translate( english_modes[ m ] );
+	}
+
 	kAttractionSetup dlg;
 
 	return dlg.exec();
@@ -727,6 +743,13 @@ void exposeScreenSaver( int x, int y, int width, int height )
 } 
 
 //----------------------------------------------------------------------------
+
+const char CONFIG_GLOW[]     = "Glow";
+const char CONFIG_MODE[]     = "Mode";
+const char CONFIG_NO[]       = "no";
+const char CONFIG_NUMBER[]   = "Number";
+const char CONFIG_SETTINGS[] = "Settings";
+const char CONFIG_YES[]      = "yes";
 
 kAttractionSaver::kAttractionSaver( Drawable drawable ) : kScreenSaver( drawable )
 {
@@ -773,23 +796,23 @@ void kAttractionSaver::setMode( const char *m)
 void kAttractionSaver::readSettings()
 {
 	KConfig *config = KApplication::getKApplication()->getConfig();
-	config->setGroup( "Settings" );
+	config->setGroup( CONFIG_SETTINGS );
 
 	QString str;
 
-	str = config->readEntry( "Number" );
+	str = config->readEntry( CONFIG_NUMBER );
 	if ( !str.isNull() )
 		number = atoi( str );
 	else
 		number = 15;
 
-	str = config->readEntry( "Glow" );
-	if ( !str.isNull() && str.find( "yes" ) == 0 )
+	str = config->readEntry( CONFIG_GLOW );
+	if ( !str.isNull() && str.find( CONFIG_YES ) == 0 )
 		glow = TRUE;
 	else
 		glow = FALSE;
 
-	str = config->readEntry( "Mode" );
+	str = config->readEntry( CONFIG_MODE );
 	if ( !str.isNull() )
 		mode = str;
         else
@@ -841,16 +864,14 @@ kAttractionSetup::kAttractionSetup( QWidget *parent, const char *name )
 	tl11->addWidget(label, 0, 0);
 
 	QComboBox *combo = new QComboBox( this );
-	combo->insertItem(  glocale->translate("Balls"), 0 );
-	combo->insertItem(  glocale->translate("Lines"), 1 );
-	combo->insertItem(  glocale->translate("Polygons"), 2 );
-	combo->insertItem(  glocale->translate("Tails"), 3 );
-	if (strcmp(mode, "Lines") == 0)
-	  combo->setCurrentItem( 1 );
-	else if (strcmp(mode, "Polygons") == 0)
-	  combo->setCurrentItem( 2 );
-	else if (strcmp(mode, "Tails") == 0)
-	  combo->setCurrentItem( 3 );
+	for( int m= 0; m < N_MODES; m++ )
+	{
+		combo->insertItem(i18n_modes[ m ], m);
+		if (strcmp(mode, english_modes[ m ]) == 0)
+		{
+			combo->setCurrentItem( m );
+		}
+	}
 	min_width(combo);
 	fixed_height(combo);
 	tl11->addWidget(combo, 0, 1);
@@ -890,11 +911,11 @@ kAttractionSetup::kAttractionSetup( QWidget *parent, const char *name )
 void kAttractionSetup::readSettings()
 {
 	KConfig *config = KApplication::getKApplication()->getConfig();
-	config->setGroup( "Settings" );
+	config->setGroup( CONFIG_SETTINGS );
 
 	QString str;
 
-	str = config->readEntry( "Number" );
+	str = config->readEntry( CONFIG_NUMBER );
 	if ( !str.isNull() )
 		number = atoi( str );
 
@@ -903,13 +924,13 @@ void kAttractionSetup::readSettings()
 	else if ( number < 5 )
 		number = 15;
 
-	str = config->readEntry( "Glow" );
-	if ( !str.isNull() && str.find( "yes" ) == 0 )
+	str = config->readEntry( CONFIG_GLOW );
+	if ( !str.isNull() && str.find( CONFIG_YES ) == 0 )
 		glow = TRUE;
 	else
 		glow = FALSE;
 
-	str = config->readEntry( "Mode" );
+	str = config->readEntry( CONFIG_MODE );
 	if ( !str.isNull() )
 		mode = str;
         else
@@ -931,25 +952,37 @@ void kAttractionSetup::slotGlow( bool c )
 		saver->setGlow( glow );
 }
 
+/*
+ * Set the mode.
+ * Modes come in localized form, so look up "i18n_modes" table.
+ */
 void kAttractionSetup::slotMode( const char * m)
 {
 	mode= m;
+	// check all localized mode names:
+	for( int i= 0; i < N_MODES; i++ )
+	{
+		if( strcmp( i18n_modes[i], m ) == 0 ) // recognized mode
+		{
+			mode = english_modes[i];
+		}
+	}
 	if ( saver )
-		saver->setMode( m );
+		saver->setMode( mode );
 }
 
 void kAttractionSetup::slotOkPressed()
 {
 	KConfig *config = KApplication::getKApplication()->getConfig();
-	config->setGroup( "Settings" );
+	config->setGroup( CONFIG_SETTINGS );
 
 	QString snumber;
 	snumber.setNum( number );
-	config->writeEntry( "Number", snumber );
+	config->writeEntry( CONFIG_NUMBER, snumber );
 
-	config->writeEntry( "Glow", glow ? "yes" : "no");
+	config->writeEntry( CONFIG_GLOW, glow ? CONFIG_YES : CONFIG_NO);
 
-	config->writeEntry( "Mode", mode);
+	config->writeEntry( CONFIG_MODE, mode);
 
 	config->sync();
 

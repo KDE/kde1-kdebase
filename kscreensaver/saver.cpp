@@ -24,6 +24,32 @@ extern ssApp *globalKapp;
 int checkPasswd(char *);
 
 
+/*
+ * Fetch current user id, and return "Firstname Lastname (username)"
+ */
+static QString currentUser(void)
+{
+  struct passwd *current = getpwuid(getuid());
+  QString fullname(current->pw_gecos);
+  if (fullname.find(',') != -1)
+    /* Remove everything from and including first comma */
+    fullname.resize(fullname.find(','));
+
+  QString username(current->pw_name);
+
+  return fullname + " (" + username + ")";
+}
+
+static QString passwordQuery(bool name)
+{
+    QString retval("");
+    if (name)
+    {
+        retval = currentUser() + "\n";
+    }
+    return retval + glocale->translate("Enter Password");
+}
+
 kScreenSaver::kScreenSaver( Drawable drawable ) : QObject()
 {
 	Window root;
@@ -56,25 +82,31 @@ KPasswordDlg::KPasswordDlg( QWidget *parent, bool s ) : QWidget( parent )
 	stars = s;
 	password = "";
 
+	QFont font( "helvetica", 18 );
+	QFontMetrics fm(font);
+	QString query = passwordQuery(TRUE); /* Two lines of text */
+
+	int qwidth = fm.width((const char *)query);
+	int qheight = fm.height();
+
 	QFrame *frame = new QFrame( this );
 	frame->setFrameStyle( QFrame::Panel | QFrame::Raised );
 	frame->setLineWidth( 2 );
-	frame->setGeometry( 0, 0, 200, 100 );
+	frame->setGeometry( 0, 0, qwidth + 2*20, qheight * 3 + 2 * 20 );
 
-	QFont font( "helvetica", 18 );
 	KApplication::getKApplication()->getCharsets()->setQFont(font);
-	label = new QLabel( glocale->translate("Enter Password"), frame );
-	label->setGeometry( 20, 20, 160, 30 );
-	label->setAlignment( AlignCenter );
+	label = new QLabel( query, frame );
 	label->setFont( font );
+	label->setGeometry( 20, 20, qwidth, qheight * 2 );
+	label->setAlignment( AlignCenter );
 	
 	font.setPointSize( 16 );
 	KApplication::getKApplication()->getCharsets()->setQFont(font);
 	entry = new QLabel( "", frame );
-	entry->setGeometry( 20, 60, 160, 30 );
 	entry->setFont( font );	
+	entry->setGeometry( 20, 20 + qheight * 2, qwidth, qheight );
 
-	resize( 200, 100 );
+	resize( qwidth + 2*20, qheight * 3 + 2*20 );
 
 	connect( &timer, SIGNAL( timeout() ), SLOT( timeout() ) );
 
@@ -194,7 +226,7 @@ void KPasswordDlg::timeout()
 {
 	if ( timerMode )
 	{
-		label->setText( glocale->translate("Enter Password") );
+		label->setText( passwordQuery(TRUE) );
 		if( stars )
 			showStars();
 		timerMode = 0;

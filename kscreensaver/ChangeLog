@@ -2,6 +2,11 @@
 
 	* main.cpp: added another missing semicolon in the seteuid replacement
 
+1999-05-13  Petter Reinholdtsen  <pere@td.org.uit.no>
+
+	* saver.cpp (KPasswordDlg::KPasswordDlg): Add username and full
+ 	name to password dialog.
+
 1998-12-13  Christian Esken  <esken@kde.org>
 
 	* Calling kcheckpass (only on Shadow systems). This checks if the password

@@ -45,10 +45,11 @@ extern "C" {
 }
 
 extern void initPasswd();
-int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
-bool canGetPasswd;
-static int lockOnce = FALSE;
-static int only1Time = 0;
+int mode = MODE_NONE;
+static bool lock = false, passOk = false;
+static bool canGetPasswd;
+static bool lockOnce = false;
+static bool only1Time = false;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
 static QString pidFile;
 static KPasswordDlg *passDlg = NULL;
@@ -57,13 +58,13 @@ static int desktopWidth = 0, desktopHeight = 0;
 extern char *ProgramName;
 extern Bool allowroot;
 
-bool grabInput( QWidget *w );
-void releaseInput();
-void destroySaverWindow( QWidget *w );
+static bool grabInput( QWidget *w );
+static void releaseInput();
+static void destroySaverWindow( QWidget *w );
 static void lockNow( int );
 static void cleanup( int );
-void catchSignals();
-void usage( char *name );
+static void catchSignals();
+static void usage( char *name );
 
 ssApp *globalKapp;
 
@@ -71,11 +72,10 @@ ssApp *globalKapp;
 
 ssApp::ssApp( int &argc, char **argv ) : KApplication( argc, argv )
 {
-	KConfig *kssConfig = new KConfig( kapp->kde_configdir() + "/kssrc", 
-	                                  kapp->localconfigdir() + "/kssrc" );
-	kssConfig->setGroup( "kss" );
-	stars = kssConfig->readBoolEntry( "PasswordAsStars", true );
-	delete kssConfig;
+	KConfig kssConfig( kapp->kde_configdir() + "/kssrc", 
+	                   kapp->localconfigdir() + "/kssrc" );
+	kssConfig.setGroup( "kss" );
+	stars = kssConfig.readBoolEntry( "PasswordAsStars", true );
 }
 
 bool ssApp::x11EventFilter( XEvent *event )
@@ -130,10 +130,8 @@ bool ssApp::x11EventFilter( XEvent *event )
 				passDlg = new KPasswordDlg( saverWidget, stars );
 				connect(passDlg, SIGNAL(passOk()), SLOT(slotPassOk()));
 				connect(passDlg, SIGNAL(passCancel()), SLOT(slotPassCancel()));
-				passDlg->move( (QApplication::desktop()->width()
-						- passDlg->width())/2,
-					(QApplication::desktop()->height()
-						- passDlg->height())/2 );
+				passDlg->move( (desktopWidth - passDlg->width())/2,
+                                (desktopHeight - passDlg->height())/2 );
 				passDlg->show();
 			}
 			return TRUE;
@@ -196,7 +194,7 @@ void ssApp::slotPassCancel()
 
 //----------------------------------------------------------------------------
 
-bool grabInput( QWidget *w)
+static bool grabInput( QWidget *w)
 {
 	int rv = XGrabKeyboard( qt_xdisplay(), QApplication::desktop()->winId(),
                 True, GrabModeAsync, GrabModeAsync, CurrentTime );
@@ -223,13 +221,13 @@ bool grabInput( QWidget *w)
     return true;
 }
 
-void releaseInput()
+static void releaseInput()
 {
 	XUngrabKeyboard( qt_xdisplay(), CurrentTime );
 	XUngrabPointer( qt_xdisplay(), CurrentTime );
 }
 
-QWidget *createSaverWindow()
+static QWidget *createSaverWindow()
 {
 	QWidget *w;
 
@@ -237,7 +235,7 @@ QWidget *createSaverWindow()
 	w = new QWidget( NULL, "", WStyle_Customize | WStyle_NoBorder );
 
 	/* set NoBackground so that the saver can capture the current
-	 * screen state if neccessary
+	 * screen state if necessary
 	 */
 	w->setBackgroundMode( QWidget::NoBackground );
 
@@ -260,7 +258,7 @@ QWidget *createSaverWindow()
 	return w;
 }
 
-void destroySaverWindow( QWidget *w )
+static void destroySaverWindow( QWidget *w )
 {
 	releaseInput();
 	delete w;
@@ -268,7 +266,7 @@ void destroySaverWindow( QWidget *w )
 
 //----------------------------------------------------------------------------
 
-QString lockName(QString s)
+static QString lockName(QString s)
 {
 	// note that changes in the pidFile name have also to be done
 	// in kdebase/kcontrol/display/scrnsave.cpp
@@ -280,7 +278,7 @@ QString lockName(QString s)
 	return name;
 }
 
-int getLock(QString type)
+static int getLock(QString type)
 {
 	QString lockFile = lockName(type);
 	int pid = -1;
@@ -295,7 +293,7 @@ int getLock(QString type)
 	return pid;
 }
 
-void killProcess(int pid)
+static void killProcess(int pid)
 {
 	if ( pid != getpid() && pid > 1 )
 	{
@@ -304,7 +302,7 @@ void killProcess(int pid)
 	}
 }
 
-void setLock(QString type)
+static void setLock(QString type)
 {
 	FILE *fp;
 	pidFile = lockName(type);
@@ -314,7 +312,7 @@ void setLock(QString type)
 
 	if ( (fp = fopen( pidFile, "w" ) ) != NULL )
 	{
-		// on some systems, it's long one some in, so a cast may help
+		// on some systems it's long, on some int, so a cast may help
 		fprintf( fp, "%ld\n", static_cast<long>(getpid()) );
 		fclose( fp );
 	}
@@ -322,7 +320,7 @@ void setLock(QString type)
 
 /* Verify, if kcheckpass is able to verify passwords.
  * I cannot use KProcess here, as it needs ProcessEvents */
-bool canReadPasswdDatabase()
+static bool canReadPasswdDatabase()
 {
 	KProcess chkpass;
 	QString kcp_binName = "";
@@ -354,6 +352,7 @@ bool canReadPasswdDatabase()
 
 int main( int argc, char *argv[] )
 {
+	srand( getpid() );  /* seed the random generator */
 	// drop root privileges temporarily
 #ifdef HAVE_SETEUID
 	seteuid(getuid());
@@ -393,6 +392,21 @@ int main( int argc, char *argv[] )
 		    break;
 		}
 
+	    /* if it's the last one, check if we expect a value: */
+	    if( i >= (argc-1) ) {
+	        switch (parameter) 
+		    {
+		    case preview:
+		    case delay:
+		    case corners:
+		    case arg_nice:
+		        usage( argv[0] ); // won't return
+		        break;
+		    default:
+		        break;
+		    }
+		}
+
 	    switch (parameter) 
 		{
 		case install:
@@ -415,7 +429,7 @@ int main( int argc, char *argv[] )
 		case delay:
 		    timeout = atoi( argv[++i] ) * 60;
 		    if( timeout == 0 )
-			only1Time = 1;
+			only1Time = true;
 		    else if( timeout < 60 )
 			timeout = 60;
 		    break;
