@@ -162,7 +162,7 @@ private:
   QRadioButton *rbPattern;
   QButtonGroup *suGroup;
 	
-  enum { Portrait =1, Landscape, Pattern };
+  enum { Portrait = 1, Landscape, Pattern };
 	
 
   bool changed;
@@ -295,6 +295,7 @@ protected:
 	 SymmetricalTiled,
 	 SymmetricalMirrored,
 	 Scaled };
+
   enum { OneColor = 1, TwoColor };
 
   QListBox     *deskListBox;

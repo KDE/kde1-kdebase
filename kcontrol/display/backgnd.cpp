@@ -526,8 +526,8 @@ void KBackground::readSettings( int num )
   str = config.readEntry( "Color2", DEFAULT_COLOR_2);
   currentItem.color2.setNamedColor( str );
 	     
-  currentItem.ncMode=OneColor;
-  currentItem.stMode=Gradient;
+  currentItem.ncMode = DEFAULT_NUMBER_OF_COLORS;  // 1
+  currentItem.stMode = DEFAULT_COLOR_MODE; // Flat
   str = config.readEntry( "ColorMode", "unset" );
   if ( str == "Gradient" ) {
      currentItem.ncMode = TwoColor;
@@ -535,11 +535,8 @@ void KBackground::readSettings( int num )
   } else if (str == "Pattern") {
      currentItem.ncMode = TwoColor;
      currentItem.stMode = Pattern;
-  } else {
-     currentItem.ncMode = DEFAULT_NUMBER_OF_COLORS;
-     currentItem.stMode = DEFAULT_COLOR_MODE;
   }
-		     
+	     
   QStrList strl;
   config.readListEntry("Pattern", strl);
   uint size = strl.count();
@@ -555,6 +552,7 @@ void KBackground::readSettings( int num )
   else
      currentItem.orMode = DEFAULT_ORIENTATION_MODE;
 
+  currentItem.wpMode = DEFAULT_WALLPAPER_MODE;
   str = config.readEntry( "WallpaperMode", "unset" );
   if ( str == "Mirrored" )
      currentItem.wpMode = Mirrored;
@@ -574,8 +572,6 @@ void KBackground::readSettings( int num )
      currentItem.wpMode = SymmetricalMirrored;
   else if ( str == "Scaled" )
      currentItem.wpMode = Scaled; 
-  else
-     currentItem.wpMode = DEFAULT_WALLPAPER_MODE;
  
   currentItem.bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_USE_WALLPAPER ); 
   if ( currentItem.bUseWallpaper ) {
@@ -1246,15 +1242,19 @@ void KBackground::slotColorMode( int m )
   switch ( currentItem.ncMode ) {
 
   case OneColor:
-	   
-    colButton2->setEnabled( False );
-    changeButton->setEnabled( False );
+    {
+      colButton2->setEnabled( False );
+      changeButton->setEnabled( False );
+    }
     break;
-	
+    
   default:
-	    
-    colButton2->setEnabled( True );
-    changeButton->setEnabled( True );
+    {
+      colButton2->setEnabled( True );
+      changeButton->setEnabled( True );
+      if ( currentItem.stMode == Flat )
+	currentItem.stMode = Gradient;
+    }
     break;
   }
 
@@ -1435,7 +1435,8 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *orient,
   } else if ( *tpMode == KBackground::Gradient &&
 	      *orMode == KBackground::Landscape ) {
     mode = Landscape;
-  } else mode = Pattern;
+  } else
+    mode = Pattern;
 	
   setCaption( i18n( "Two color backgrounds" ) );
 
