@@ -14,17 +14,6 @@ your system, have a look at ./etc/README
 Also new is the command line option "-no_scrollbar".
 See ChangeLog for details concerning the changes.
 
-This version needs a libkde >= 0.6
-The environment variables $QTDIR and
-$KDEDIR should be set before invoking
-    xmkmf -a; make
-
-For installation type:
-    make -f Makefile.install
-
-Probably you will have to be root to do this.
-
-
 Please note the popmenu on the right mouse button!
 (when you miss the menubar ;-) 
 
