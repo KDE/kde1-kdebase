@@ -259,6 +259,7 @@ AC_OUTPUT(Makefile \
 	kdehelp/rman/Makefile \
 	kdm/Makefile \
 	kdm/config/Makefile \
+	kdm/config/kdmrc \
 	kdm/pics/Makefile \
 	kdm/xdmconfig/Makefile \
 	kfind/Makefile \
