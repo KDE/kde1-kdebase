@@ -1,31 +1,30 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 9 1",
-"  c #000000",
-". c #000080",
-"X c #0000ff",
-"o c #ff0000",
-"O c #ffaa59",
-"+ c #808080",
-"@ c #bebeff",
-"# c #ffffff",
-"$ c None",
-/* pixels */
-"$$$$$O$o$$O$$$$$",
-"$$$$O$$O$Oo$$$$$",
-"$$$OO$o$$o$$$$$$",
-"$$$OO$o$$o$$$$$$",
-"$$$$Oo#o$o$$$$$$",
-"$$..O..o.@....$$",
-"$.#@+####.###.$$",
-"$.##.....@##@.$$",
-"$.@########@.$$$",
-"$$.@X@X@@X@.$$$$",
-"$$$.######.$$$$$",
-"$$..@@@@@@..$$$$",
-"$.##......##.$$$",
-"$.@########@.$$$",
-"$$...@@@@...$$$$",
-"$$$$$....$$$$$$$"
-};
+/* Drawn  by Jonathan Buzzard and Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*java_src[]={
+"16 16 8 1",
+"b c #ffffff",
+"e c #808080",
+"c c #000080",
+"f c #0000ff",
+"a c #ff0000",
+"d c #c0c0ff",
+"# c #ffa858",
+". c None",
+".....#.a..#.....",
+"....#..#.#a.....",
+"...##.a..a......",
+"...##.a..a......",
+"....#aba.a......",
+"..cc#ccacdcccc..",
+".cbdebbbbcbbbc..",
+".cbbcccccdbbdc..",
+".cdbbbbbbbbdc...",
+"..cdfdfddfdc....",
+"...cbbbbbbc.....",
+"..ccddddddcc....",
+".cbbccccccbbc...",
+".cdbbbbbbbbdc...",
+"..cccddddccc....",
+".....cccc......."};
+

@@ -1,0 +1,33 @@
+/* XPM */
+/* Drawn  by Nico Shirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*network_package[]={
+"16 16 11 1",
+"# c #000000",
+"e c #c0c0c0",
+"d c #ffffff",
+"h c #808080",
+"i c #000080",
+"b c #808000",
+"g c #0000c0",
+"c c #c0c000",
+"f c #0000ff",
+"a c #ffffc0",
+". c None",
+".....##...#.....",
+"...##aa###a##...",
+".##aa##bc##aa##.",
+"#aa##bbbccc##aa#",
+"###bbbbbccccc###",
+".#a##bb####cc#..",
+".#a#a##dddd#c#..",
+".#aaa##effe####.",
+".#aaaa#egg#dddd#",
+".#aaaa#ddd#eggh#",
+".#aaaaahhh#eiih#",
+".#aaaa#eee#ddd#.",
+".#caaa####h###h#",
+"..##caaacc#hhhh#",
+"....##ca###eee#.",
+"......##...###.."};
+

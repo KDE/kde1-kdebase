@@ -1,12 +1,12 @@
 /* XPM */
-/* Drawn  by Nico Schwiring and Mark Donohoe for the K Desktop Environment */
+/* Drawn  by Nico Shirwing for the K Desktop Environment */
 /* See http://www.kde.org */
 static char*kvt[]={
 "16 16 6 1",
 "# c #000000",
 "b c #808080",
 "a c #c0c0c0",
-"d c #beffff",
+"d c #c0ffff",
 "c c #ffffff",
 ". c None",
 "..###########...",

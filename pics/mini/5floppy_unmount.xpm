@@ -1,29 +1,30 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 7 1",
-"  c #000000",
-". c #595959",
-"X c #800000",
-"o c #be0000",
-"O c #c0c0c0",
-"+ c #ffffff",
-"@ c None",
-/* pixels */
-"@@@@@@@  @@@@@@@",
-"@@@@@@ ..  @@@@@",
-"@@@@@ ....   @@@",
-"@@@@ ....  ..  @",
-"@@@ ....  ..... ",
-"@@ ....  ...... ",
-"@ ............ @",
-" ............ @@",
-" ...OO...... @@@",
-"@  .O++O... @@@@",
-"@@@  .O++. @@@@@",
-"@@@@@  .. @@@@@@",
-"@@@@@@@  @@     ",
-"@@@@@@@@@@@ XXo ",
-"@@@@@@@@@@@ ooo ",
-"@@@@@@@@@@@     "
-};
+/* Drawn  by Jonathan Buzzard and Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*floppy_unmount[]={
+"16 16 8 1",
+"# c #000000",
+"b c #dcdcdc",
+"e c #800000",
+"c c #ffffff",
+"a c #585858",
+"f c #c00000",
+"d c #ffffff",
+". c None",
+".......##.......",
+"......#aa##.....",
+".....#aaaa###...",
+"....#aaaa##aa##.",
+"...#aaaa##aaaaa#",
+"..#aaaa##aaaaaa#",
+".#aaaaaaaaaaaa#.",
+"#aaaaaaaaaaaa#..",
+"#aaabbaaaaaa#...",
+".##abcdbaaa#....",
+"...##abdca#.....",
+".....##aa#......",
+".......##..#####",
+"...........#eef#",
+"...........#fff#",
+"...........#####"};
+

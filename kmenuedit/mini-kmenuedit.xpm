@@ -1,7 +1,7 @@
 /* XPM */
-/* Drawn  by Nico Schwiring and Mark Donohoe for the K Desktop Environment */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
 /* See http://www.kde.org */
-static char*kmenuedit[]={
+static char*windows[]={
 "16 14 4 1",
 "b c #ffffff",
 ". c #000000",

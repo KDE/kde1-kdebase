@@ -1,28 +1,29 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 6 1",
-"  c #000000",
-". c #00bebe",
-"X c #808080",
-"o c #c0c0c0",
-"O c #ffffff",
-"+ c None",
-/* pixels */
-"+++++++XX++++X++",
-"++++++Xo X+++X++",
-"+++++Xo oOX++X++",
-"++++Xo ooOX++X+X",
-"+++Xo. oOOX++X+X",
-"+XXo.. oOOX++X+X",
-"Xoo...  OOX+XX+X",
-"X.o... o OX+X+XX",
-"X.o... X OX+X+X+",
-"XXX...  OOX+X+X+",
-"+  X.. oOOX+X+X+",
-"+++ X. oOOX+X+X+",
-"++++ X ooOX+X+++",
-"+++++ X oOX+X+++",
-"++++++ X X++++++",
-"+++++++  +++++++"
-};
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*sound[]={
+"16 16 7 1",
+"e c #ffffff",
+"c c #ffffff",
+"a c #c0c0c0",
+"# c #808080",
+"b c #303030",
+"d c #00c0c0",
+". c None",
+".......##....#..",
+"......#ab#...#..",
+".....#abac#..#..",
+"....#abaac#..#.#",
+"...#adbacc#..#.#",
+".##addbace#..#.#",
+"#aadddbbce#.##.#",
+"#dadddbabc#.#.##",
+"#dadddb#bc#.#.#.",
+"###dddbbce#.#.#.",
+".bb#ddbace#.#.#.",
+"...b#dbace#.#.#.",
+"....b#baac#.#...",
+".....b#bac#.#...",
+"......b#b#......",
+".......bb......."};
+

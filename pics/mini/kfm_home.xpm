@@ -1,32 +1,25 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 10 1",
-"  c #000000",
-". c #008000",
-"X c #00ff00",
-"o c #be5900",
-"O c #ff8200",
-"+ c #ffaa59",
-"@ c #beffbe",
-"# c #ffdfaa",
-"$ c #ffffbe",
-"% c None",
-/* pixels */
-"          %%%%%%",
-" O$$+#+#+#  %%%%",
-" +O+$+    ++ %%%",
-" O+O# @@@@    %%",
-" +O+# @XX.@@@@ %",
-" O+O# ++X.@@@@ %",
-" +O+# OO+o++++ %",
-" O+O#   Oo++++ %",
-" +O+#o+O       %",
-" O+O#o++++++ %%%",
-" +O+#+ooooo+ %%%",
-" O+O#o+++++o %%%",
-" +O+#o+ooo+o %%%",
-" O+O#o+++++o %%%",
-"%  +#+ooooo+ %%%",
-"%%%          %%%"
-};
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*kfm_home[]={
+"16 16 3 1",
+"a c #ffffff",
+"# c #000000",
+". c None",
+"................",
+".......##.......",
+"..#...####......",
+"..#..#aaaa#.....",
+"..#.#aaaaaa#....",
+"..##aaaaaaaa#...",
+"..#aaaaaaaaaa#..",
+".#aaaaaaaaaaaa#.",
+"###aaaaaaaaaa###",
+"..#aaaaaaaaaa#..",
+"..#aaa###aaaa#..",
+"..#aaa#.#aaaa#..",
+"..#aaa#.#aaaa#..",
+"..#aaa#.#aaaa#..",
+"..#aaa#.#aaaa#..",
+"..#####.######.."};
+

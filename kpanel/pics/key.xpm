@@ -2,9 +2,9 @@
 static char * mini_lock_xpm[] = {
 "22 22 4 1",
 " 	c None",
-".	c #82077DF77DF7",
-"X	c #000000000000",
-"o	c #FFFFFFFFFFFF",
+".	c #808080",
+"X	c #000000",
+"o	c #FFFFFF",
 "                      ",
 "                      ",
 "                      ",

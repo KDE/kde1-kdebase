@@ -1,0 +1,33 @@
+/* XPM */
+/* Drawn  by Nico Shirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*games_package[]={
+"16 16 11 1",
+"# c #000000",
+"e c #c0c0c0",
+"g c #ffffff",
+"i c #808080",
+"h c #a0a0a4",
+"b c #808000",
+"f c #c00000",
+"c c #c0c000",
+"d c #ff0000",
+"a c #ffffc0",
+". c None",
+".....##...#.....",
+"...##aa###a##...",
+".##aa##bc#aaa##.",
+"#aa##bbbcc##aa#.",
+"###bbbbbcccc####",
+".#a##bbbcc#d##..",
+".#aaa##bc##e#c..",
+".#aaaaa####e#c..",
+".#aaaaaacc#e#c..",
+".#aaaaaac##e#c..",
+".#aaaaa#ff#e##..",
+".#aaaaa#egh#hh##",
+".#caaaa#eeeghei#",
+"..##caaa#heeiii#",
+"....##ca###hi##.",
+"......##...##..."};
+

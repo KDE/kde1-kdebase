@@ -1,29 +1,34 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 7 1",
-"  c #000000",
-". c #be5900",
-"X c #ff8200",
-"o c #ffaa59",
-"O c #c0c0c0",
-"+ c #ffffff",
-"@ c None",
-/* pixels */
-"@@@@@@  @@@@@@@@",
-"  @@  ..  @@@@@@",
-" o  ++OO..  @@@@",
-" ooo  ++OO..  @@",
-" ooooo  ++OO..  ",
-"@ oooooo  ++OO. ",
-"@ oooooooo  +O. ",
-"@ ooooooooX.  . ",
-"@@ oXoXXXXXX.  @",
-"@@ XXXXXXXXX.  @",
-"@@ .X.XX.XXX.  @",
-"@@@  ......X. @@",
-"@@@@@  ...... @@",
-"@@@@@@@  .... @@",
-"@@@@@@@@@  .. @@",
-"@@@@@@@@@@@  @@@"
-};
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*folder[]={
+"18 18 10 1",
+"# c #000000",
+"h c #808080",
+"c c #ffdca8",
+"b c #ffa858",
+"e c #585858",
+"f c #c0c0c0",
+"g c #a0a0a4",
+"d c #ffffff",
+"a c #585858",
+". c None",
+"..................",
+"..#a#.............",
+".#abc##...........",
+".#daebc#####......",
+".#dddaebcccb#.....",
+".#dddffabccca.....",
+".#ddffffaaaab#....",
+".#dfffffffgg#b....",
+".#fffffffggg#b....",
+".#ffffffgggg#b....",
+".#fffffggggg#b....",
+".##hffgggggg#b....",
+"...##hgggggg#b....",
+".....##ggggg#b....",
+".......##ggg#b##..",
+".........##g#b##..",
+"...........####...",
+".................."};
+

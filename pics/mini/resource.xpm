@@ -7,7 +7,7 @@ static char*resource[]={
 "# c #808080",
 "b c #000000",
 "c c #0000ff",
-"d c #c0c0c0",
+"d c #dcdcdc",
 ". c None",
 "..############..",
 ".#aaaaaaaaaaaab.",

@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Nico Shirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*system_package[]={
+"16 16 8 1",
+"# c #000000",
+"e c #ffffff",
+"f c #808080",
+"b c #808000",
+"c c #c0c000",
+"a c #ffffc0",
+"d c #ff8000",
+". c None",
+".....##...#.....",
+"...##aa###a##...",
+".##aa##bc##aa##.",
+"#aa##bbbccc##aa#",
+"###bbbbbccccc###",
+".#a##bbbc#####..",
+".#a#a##bc###b#..",
+".#aaa#a###ddd#..",
+".#aaaaa#b######.",
+".#aaaae###e###e#",
+".#aaaa####e####.",
+".#aaaaaa##ef##..",
+".#caaaaa#eeee#..",
+"..##caaa#eeee#..",
+"....##ca#d##d#..",
+"......####..##.."};
+

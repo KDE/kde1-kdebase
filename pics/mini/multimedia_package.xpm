@@ -1,0 +1,32 @@
+/* XPM */
+/* Drawn  by Nico Shirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*multimedia_package[]={
+"16 16 10 1",
+"# c #000000",
+"d c #c0c0c0",
+"f c #ffffff",
+"g c #a0a0a4",
+"b c #808000",
+"c c #c0c000",
+"h c #c0c0ff",
+"e c #c0ffff",
+"a c #ffffc0",
+". c None",
+".....##...#.....",
+"...##aa###a##...",
+".##aa##bc##aa##.",
+"#aa##bbbccc##aa#",
+"###bbbbbcccc####",
+".#a##bbbcc##c#..",
+".#a#a##b##ccc#..",
+".#aaa#a#cc####..",
+".#aaaaaac#ddd#..",
+".#aaaaaa#edddf#.",
+".#aaaaa#ddg#gdd#",
+".#aaaaa#dd#a#dd#",
+".#caaaa#ddg#hdd#",
+"..##caaa#fdddh#.",
+"....##ca##ddd#..",
+"......##..###..."};
+

@@ -1,26 +1,25 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 16 4 1",
-"  c #000000",
-". c #595959",
-"X c #000080",
-"o c None",
-/* pixels */
-"oooooXXXoooooooo",
-"ooooXXXXXooooooo",
-"oooooooooXoooooo",
-"oooooooooXXooooo",
-"oooooooooXXooooo",
-"oooooooooXXooooo",
-"ooooooo.XXXooooo",
-"ooooooXXX.oooooo",
-"ooooooX.oooooooo",
-"ooooooXooooooooo",
-"ooooooXooooooooo",
-"oooooooooooooooo",
-"oooooooooooooooo",
-"ooooo..ooooooooo",
-"oooooXXooooooooo",
-"oooooXXooooooooo"
-};
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*unknown[]={
+"16 16 3 1",
+"# c #000080",
+"a c #585858",
+". c None",
+".....###........",
+"....#####.......",
+".........#......",
+".........##.....",
+".........##.....",
+".........##.....",
+".......a###.....",
+"......###a......",
+"......#a........",
+"......#.........",
+"......#.........",
+"................",
+"................",
+".....aa.........",
+".....##.........",
+".....##........."};
+
