@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The K Window Manager Handbook: Using kwm</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE, window manager">
+<META NAME="description" CONTENT="KDE Window manager">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
+<A HREF="index.html#toc2">Table of Contents</A>
+</P>
+<H3><A NAME="s2">2. Using <EM>kwm</EM></A></H3>
+
+<P>
+<H3><A NAME="ss2.1">2.1 Command line options</A>
+</H3>
+
+<P><EM>kwm</EM> provides the following command line options:
+<P>
+<DL>
+<DT><B> -version</B><DD><P>Shows the version number including the patchlevel; does not
+start kwm
+<P>
+<DT><B> -nosession</B><DD><P>Starts <EM>kwm</EM> without restoring the
+previous session 
+</DL>
+<P>
+<P>
+<H3><A NAME="shortcuts"></A> <A NAME="ss2.2">2.2 Shortcuts</A>
+</H3>
+
+<P>
+<DL>
+<DT><B>Alt-Esc or Control-Esc </B><DD><P>"Current Session"-manager with logout-button
+<P>
+<DT><B>Alt-Tab and Alt-Shift-Tab </B><DD><P>Traverse the windows of the current desktop
+<P>
+<DT><B>Ctrl-Tab and Ctrl-Shift-Tab </B><DD><P>Traverse the virtual desktops (can be switched off in 
+<A HREF="index-3.html#kwmrc">kwmrc</A>)
+<P>
+<DT><B>Alt-F2 </B><DD><P>Open 
+<A HREF="#mini-cli">mini command-line window</A><P>
+<DT><B>Alt-F3 </B><DD><P>Window operation menu 
+<P>
+<DT><B>Alt-F4 </B><DD><P>Close window
+<P>
+<DT><B>Ctrl-F[1..8] </B><DD><P>Switch to virtual desktop
+<P>
+<DT><B>Ctrl-Alt-Esc </B><DD><P>Destroy window mode (cursor becomes a pirate)
+</DL>
+<P>
+<P>
+<H3><A NAME="ss2.3">2.3 Mouse Control</A>
+</H3>
+
+<P><B>Click onto the border or the titlebar</B>
+<UL>
+<LI>  <EM>left mouse button</EM> activate and raise the window <BR></LI>
+<LI>  <EM>middle mouse button</EM> activate and lower the window <BR></LI>
+<LI>  <EM>right mouse button</EM> show windows operation menu if the
+window is active, otherwise activate it without raising   </LI>
+</UL>
+
+<B>Double-click on title bar toggles maximize</B>
+<P><B>Drag of the titlebar</B>
+<UL>
+<LI> <EM>left mouse button</EM> moves the window and raises it</LI>
+<LI> <EM>middle mouse button</EM> moves the window without raising it</LI>
+</UL>
+<P><B>Drag of corners or edges</B>
+<UL>
+<LI> <EM>left mouse button</EM> resizes the window and raises it</LI>
+<LI> <EM>middle mouse button</EM> resizes the window without raising it</LI>
+</UL>
+<P><B>The entire window</B>
+<UL>
+<LI> <EM>Alt-left mouse button</EM> moves the window</LI>
+<LI> <EM>Alt-middle mouse button</EM> raises the window</LI>
+<LI> <EM>Alt-right mouse button</EM> resizes the window</LI>
+</UL>
+<P><B>Title bar buttons (configurable)</B>
+<UL>
+<LI> <EM>Menu</EM> displays a list of window operations</LI>
+<LI> <EM>Sticky</EM> toggles sticky mode on/off (window stays on screen as
+you move from desktop to desktop)</LI>
+<LI> <EM>Iconify</EM> iconifies the window</LI>
+<LI> <EM>Maximize</EM>
+<UL>
+<LI> <EM>left mouse button</EM> maximize</LI>
+<LI> <EM>middle mouse button</EM> maximize vertically</LI>
+<LI> <EM>right mouse button</EM> maximize horizontally</LI>
+</UL>
+</LI>
+<LI> <EM>Close</EM> closes the window (applications may ask if they have something to save)</LI>
+</UL>
+<P>
+<P>
+<H3><A NAME="mini-cli"></A> <A NAME="ss2.4">2.4 Mini Command-line Window</A>
+</H3>
+
+<P>Press <CODE>Alt-F2</CODE> to display a small command-line window. Enter a Unix
+shell command (the SHELL environment variable is used to determine which shell
+executes the command), or one of the following:
+<UL>
+<LI> Enter a URL to open a <EM>kfm</EM> window with the specified URL.
+You can omit the http:// or ftp:// if the server's name starts with www.
+or ftp., respectively. 
+<P>
+</LI>
+<LI> Enter <CODE>man:<EM>command</EM></CODE> to open a <EM>kfm</EM> window
+displaying the Unix man page for <EM>command</EM>.</LI>
+</UL>
+<P>You can use the up-arrow key to recall previously entered commands. Also, you
+can use the tab key to complete partially entered filenames, as in many shells.
+<P>
+<P>
+<H3><A NAME="ss2.5">2.5 Commands</A>
+</H3>
+
+<P>You can send commands to kwm with either:
+<P><CODE> KWM::sendKWMCommand(QString)</CODE> (in KDE applications)<BR>
+or<BR>
+<CODE> kwmcom <EM>command</EM> </CODE>   (from the command line)
+<P>This is especially of interest for kglobalshortcut developers.
+<P>At present <EM>kwm</EM> understands the following commands:
+<UL>
+<LI><B>refreshScreen</B> refreshes the screen</LI>
+<LI><B>darkenScreen</B> turns the screen dark. Careful: this one makes the
+desktop unresponsive to keyboard/mouse input.</LI>
+<LI><B>logout</B> displays the logout dialog.</LI>
+<LI><B>commandLine</B> opens the 
+<A HREF="#mini-cli">mini command-line window</A></LI>
+<LI><B>taskManager</B> displays the "Current Session" manager.</LI>
+<LI><B>configure</B> reloads configuration from 
+<A HREF="index-3.html#kwmrc">kwmrc</A>.</LI>
+<LI><B>winMove<BR>
+winResize<BR>
+winRestore<BR>
+winIconify<BR>
+winClose<BR>
+winShade<BR>
+winSticky<BR>
+winOperations</B><BR>
+These commands affect the currently active window and do pretty much
+what you would expect.  (<CODE>winOperations</CODE> displays the window operations
+menu.)</LI>
+<LI><B>deskUnclutter<BR>
+deskCascade</B><BR>
+These commands reorganize windows on the desktop</LI>
+<LI><B>desktop<EM>[1-8]</EM></B> switches to the specified
+desktop </LI>
+<LI><B>desktop+1<BR>
+desktop+2<BR>
+desktop-1<BR>
+desktop-2<BR>
+desktop%2</B><BR>
+These commands switch between desktops. <CODE>desktop%2</CODE>
+toggles between an odd desktop and the next higher even number. That
+means between 1 and 2 or between 3 and 4.  This is useful to emulate
+"Up" and "Down" in a virtual n*2 matrix, which is used by the KDE pager.
+Similarly, <CODE>desktop+2</CODE> means "Right"; <CODE>desktop-1</CODE> means "Left".</LI>
+</UL>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
+<A HREF="index.html#toc2">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The K Window Manager Handbook: Configuration</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE, window manager">
+<META NAME="description" CONTENT="KDE Window manager">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<H3><A NAME="s3">3. Configuration</A></H3>
+
+<P><EM>kwm</EM> can be configured using the KDE Control Center (<B>application starter > KDE Control Center</B>).  Open the Windows tree
+to work with the various configuration options.  To configure virtual desktops,
+open the Applications tree and choose Panel.
+<P>For those who prefer to edit a configuration file, this section explains
+the options in the <CODE>kwmrc</CODE> file, located in ~/.kde/share/config.
+<P>
+<H3><A NAME="kwmrc"></A> <A NAME="ss3.1">3.1 kwmrc</A>
+</H3>
+
+<P>The kwmrc configuration file is divided into the following sections:
+<UL>
+<LI>
+<A HREF="#confButtons">Buttons</A></LI>
+<LI>
+<A HREF="#confGeneral">General</A></LI>
+<LI>
+<A HREF="#confSession">Session</A></LI>
+<LI>
+<A HREF="#confDesktop">Desktop</A></LI>
+</UL>
+<P>
+<H4><A NAME="confButtons"></A> [Buttons]</H4>
+
+<P>This section controls placement of window control buttons in the titlebar.
+It contains lines of the form<BR><BR>
+Button<EM>X</EM>=<EM>button-name</EM><BR><BR>
+where <EM>X</EM> is a letter A-F, and <EM>button-name</EM> is one of <CODE>Menu,
+Sticky, Iconify, Maximize, Close, Off</CODE>.  Buttons A, B, and C appear
+on the left-hand side of the window title, and D, E, and F appear on the
+right-hand side. 
+<P>
+<P>
+<H4><A NAME="confGeneral"></A> [General]</H4>
+
+<P>This section defines a number of miscellaneous configuration items:
+<UL>
+<LI><B>AutoRaise=<EM>value</EM> (in milliseconds)</B><BR> 
+If <CODE>FocusPolicy</CODE> is <CODE>FocusFollowMouse</CODE>, this item determines the
+delay between the time a window gains focus when the mouse enters it
+and the time the window is raised to the top.
+<P>
+</LI>
+<LI><B>BorderSnapZone=<EM>value</EM> (in pixels) </B> <BR>
+When the user is positioning a window, and one of the window borders approaches
+the desktop border, the window will snap to the border. <EM>value</EM> determines
+how close the window must be to the desktop border to snap to it.
+<P>
+</LI>
+<LI><B>Button3Grab=<CODE>on|off</CODE></B><BR>
+When <CODE>off</CODE>, window operations involving the right mouse button are
+disabled so that application windows can receive right mouse button events.
+<P>
+</LI>
+<LI><B>ControlTab=<CODE>on|off</CODE></B> <BR> 
+When <CODE>on</CODE>, allows the user to press <CODE>Ctrl+Tab</CODE> to switch between
+virtual desktops.
+<P>
+</LI>
+<LI><B>ElectricBorder=<EM>value</EM> (in milliseconds)</B><BR>
+When you have more than one desktop, the ElectricBorder feature allows
+you to move between them by moving the mouse to the edge of the screen.
+<EM>value</EM> specifies the length of time you must keep the mouse
+pointer positioned at the border before the desktop changes.
+A <EM>value</EM> of -1 disables this feature.
+<P>
+</LI>
+<LI><B>ElectricBorderMovePointer=<CODE>off|on</CODE></B> <BR>
+If the <CODE>ElectricBorder</CODE> option is <CODE>on</CODE>, turn this
+<CODE>on</CODE> to have the mouse is moved to the middle of the screen when the
+desktop changes.
+<P>
+</LI>
+<LI><B>FocusPolicy=<CODE>ClickToFocus|FocusFollowMouse</CODE></B> <BR>
+<CODE>ClickToFocus</CODE> requires the user to click the mouse in a window to
+give the window focus. <CODE>FocusFollowMouse</CODE> always gives focus to the
+window under the mouse.
+<P>
+</LI>
+<LI><B>MaximizeOnlyVertically=<CODE>off|on</CODE></B> <BR>
+When <CODE>on</CODE>, this setting restricts the window maximize to the
+vertical direction only.
+<P>
+</LI>
+<LI><B>ResizeAnimation=<CODE>on|off</CODE></B> <BR> 
+When <CODE>on</CODE>, minimizing and maximizing windows involves graphical animation.
+<P>
+</LI>
+<LI><B>RstartProtocol=<CODE>... (default is
+"<EM>rstart -v</EM>")</CODE></B> <BR>  
+<P>
+</LI>
+<LI><B>ShapeMode=<CODE>off|on</CODE></B> <BR>
+When ShapeMode is <CODE>on</CODE>, <EM>kwm</EM> uses user-defined pixmaps for window
+borders instead of the default (see below).
+<P>
+</LI>
+<LI><B>ShapePixmapTop=<EM>pixmap</EM> <BR> 
+ShapePixmapBottom=<EM>pixmap</EM><BR> 
+ShapePixmapLeft=<EM>pixmap</EM> <BR>
+ShapePixmapRight=<EM>pixmap</EM> <BR>
+ShapePixmapTopLeft=<EM>pixmap</EM> <BR>
+ShapePixmapTopRight=<EM>pixmap</EM> <BR>
+ShapePixmapBottomLeft=<EM>pixmap</EM> <BR>
+ShapePixmapBottomRight=<EM>pixmap</EM> </B><BR>
+These options specify what images are displayed at the respective
+sides/corners of windows when <CODE>ShapeMode</CODE> is <CODE>on</CODE>. <EM>pixmap</EM> should be
+the name of a pixmap file (.xpm) which must be located in 
+share/apps/kwm/pics.
+<P>The kwm sources include a subfolder "images", which contains
+an example for the the shape extensions.    
+<P>
+</LI>
+<LI><B>TitlebarLook=<CODE>shaded|plain|pixmap</CODE></B> <BR>
+This setting determines the appearance of window title bars. Choose
+<CODE>pixmap</CODE> to have <EM>kwm</EM> display a user-defined image in the
+title bar, as specified by the following items.
+<P>
+</LI>
+<LI><B>TitlebarPixmapActive=<EM>pixmap</EM></B><BR>
+<B>TitlebarPixmapInactive=<EM>pixmap</EM></B><BR>
+These options specify what images are displayed in titlebars of
+active and inactive windows, respectively, when TitleBarLook is
+<CODE>pixmap</CODE>.
+<P>
+</LI>
+<LI><B>TitleAnimation=<EM>value</EM> (in milliseconds) </B><BR>
+Enabling TitleAnimation tells <EM>kwm</EM> to cause long window titles (too long to
+fit in the colored area of the titlebar) to slide back and forth in order to be
+visible. <EM>value</EM> specifies the speed of the animation. Set to 0 to disable
+the animation.
+
+<P>
+</LI>
+<LI><B>TitlebarDoubleClickCommand=<CODE>winMaximize|winShade|winMove|
+winResize|winRestore|winIconify|winClose|winSticky|
+winOperations</CODE> </B><BR> 
+This option allows you to specify what window behavior should occur when
+the user double-clicks the titlebar.
+<P>
+</LI>
+<LI><B>TraverseAll=<CODE>on|off</CODE></B> <BR> 
+When <CODE>on</CODE>, the <CODE>Alt-tab</CODE> operation cycles through all 
+windows on all desktops.  When <CODE>off</CODE>, <CODE>Alt-tab</CODE> cycles through windows on
+the current desktop only.
+<P>
+</LI>
+<LI><B>WindowMoveType=<CODE>Opaque|Transparent</CODE></B> <BR>
+This option controls the visual feedback that occurs while the user drags a
+window from one place to another on the desktop.  <CODE>Transparent</CODE> shows only a
+window outline during a drag, while <CODE>Opaque</CODE> shows the entire window. 
+<P>
+</LI>
+<LI><B>WindowsPlacement=<CODE>cascade|interactive|manual|random|smart</CODE></B> <BR> 
+This option determines how <EM>kwm</EM> places windows on the desktop
+when they are first opened. <CODE>manual</CODE> allows the user to place the window.
+<CODE>interactive</CODE> takes an additional percentage value, like this:<BR><BR>
+<CODE>WindowsPlacement=interactive,25</CODE><BR><BR>
+With <CODE>interactive</CODE> placement, <EM>kwm</EM> uses the <CODE>smart</CODE> placement
+algorithm to place the window unless the placement would overlap existing
+windows more than the specified percentage, in which case <CODE>manual</CODE> placement
+is used to allow the user to place the window. The percentage can be greater
+than 100.
+
+The other options let <EM>kwm</EM> place the window.
+<P>
+</LI>
+<LI><B>WindowSnapZone=<EM>value</EM> (in pixels) </B> <BR>
+When the user is positioning a window, and one of the window borders approaches
+the border of another window, the border of the window being positioned will
+snap to the other window's border. <EM>value</EM> determines how close the window
+must be to snap to another window's border.
+</LI>
+</UL>
+<P>
+<H4><A NAME="confSession"></A> [Session]</H4>
+
+<P>
+<UL>
+<LI><B>proxyignore=<CODE>xemacs,xterm,...,</CODE></B> <BR>
+Comma delimited list of (non-KDE) applications whose application state
+(window properties) should not be saved when the user logs out. List the
+application name with any command line arguments.
+</LI>
+</UL>
+<P>
+<H4><A NAME="confDesktop"></A> [Desktop]</H4>
+
+<P>This section defines the number of virtual desktops, their names, and
+positions.  It contains lines like the following:
+<P>
+<UL>
+<LI><B>NumberOfDesktops=<EM>value</EM> </B><BR>
+Specifies the number of virtual desktops. At the time of writing,
+<EM>kwm</EM> supports up to 8 desktops.
+<P>
+</LI>
+<LI><B>Desktop<EM>#</EM>[C]=<EM>name</EM> </B><BR>
+Specifies the <EM>name</EM> of Desktop <EM>#</EM>, for example,<BR>
+<CODE>Desktop1[C]=One</CODE><BR>
+Desktops are numbered 1-8.
+<P>
+</LI>
+<LI><B>Desktop<EM>#</EM>Region=<EM>geometry</EM> </B><BR>
+Specifies the geometry for Desktop <EM>#</EM>; for example,<BR>
+<CODE>Desktop1Region=101+0+923+722</CODE>
+</LI>
+</UL>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
