@@ -13,3 +13,4 @@ Name[de]=Stil
 Name[pl]=Styl
 Name[cs]=Styl
 SwallowTitle=Desktop Style
+Init=kcmdisplay -init

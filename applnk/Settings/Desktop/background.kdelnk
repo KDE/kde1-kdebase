@@ -13,3 +13,4 @@ Name[de]=Hintergrund
 Name[pl]=T³o
 Name[cs]=Pozadí
 SwallowTitle=Desktop background
+Init=kcmdisplay -init
