@@ -16,7 +16,7 @@
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
         : QDialog( parent, 0L, true )
 {
-    setGeometry( x(), y(), 350, 110 );
+    setGeometry( x(), y(), 350, 100 );
 
     QLabel *label = new QLabel( _text , this );
     label->setGeometry( 10, 10, 330, 15 );
@@ -44,15 +44,15 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     QPushButton *clear;
     QPushButton *cancel;
     ok = new QPushButton( klocale->translate("Ok"), this );
-    ok->setGeometry( 10,70, 80,30 );
+    ok->setGeometry( 10,70, 80,25 );
     connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
     clear = new QPushButton( klocale->translate("Clear"), this );
-    clear->setGeometry( 135, 70, 80, 30 );
+    clear->setGeometry( 135, 70, 80, 25 );
     connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
 
     cancel = new QPushButton( klocale->translate("Cancel"), this );
-    cancel->setGeometry( 260, 70, 80, 30 );
+    cancel->setGeometry( 260, 70, 80, 25 );
     connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
     edit->setText( _value );
@@ -81,7 +81,7 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   m_pTree = 0L;
   m_pBind = 0L;
   
-  setGeometry( x(), y(), 370, 110 );
+  setGeometry( x(), y(), 370, 100 );
   
   QLabel *label = new QLabel( _text , this );
   label->setGeometry( 10, 10, 350, 15 );
@@ -103,23 +103,23 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   else
     completion = 0L;
 
-  edit->setGeometry( 10, 40, 350, 25 );
+  edit->setGeometry( 10, 35, 350, 25 );
   connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
   
   ok = new QPushButton( klocale->translate("Ok"), this );
-  ok->setGeometry( 10,70, 80,30 );
+  ok->setGeometry( 10,70, 80,25 );
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
   
   browse = new QPushButton( klocale->translate("&Browser"), this );
-  browse->setGeometry( 100, 70, 80, 30 );
+  browse->setGeometry( 100, 70, 80, 25 );
   connect( browse, SIGNAL(clicked()), SLOT(slotBrowse()) );
   
   clear = new QPushButton( klocale->translate("Clear"), this );
-  clear->setGeometry( 190, 70, 80, 30 );
+  clear->setGeometry( 190, 70, 80, 25 );
   connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
   
   cancel = new QPushButton( klocale->translate("Cancel"), this );
-  cancel->setGeometry( 280, 70, 80, 30 );
+  cancel->setGeometry( 280, 70, 80, 25 );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
   
   edit->setText( _value );
@@ -143,10 +143,10 @@ void OpenWithDlg::slotBrowse()
   
   browse->setEnabled( false );
 
-  ok->setGeometry( 10,280, 80,30 );
-  browse->setGeometry( 100, 280, 80, 30 );
-  clear->setGeometry( 190, 280, 80, 30 );
-  cancel->setGeometry( 280, 280, 80, 30 );
+  ok->setGeometry( 10,280, 80,25 );
+  browse->setGeometry( 100, 280, 80, 25 );
+  clear->setGeometry( 190, 280, 80, 25 );
+  cancel->setGeometry( 280, 280, 80, 25 );
 
   m_pTree = new KApplicationTree( this );
   connect( m_pTree, SIGNAL( selected( const char* ) ), this, SLOT( slotSelected( const char* ) ) );
