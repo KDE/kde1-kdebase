@@ -1,4 +1,3 @@
-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-02-26 21:17:+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -19,8 +18,9 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: det ser ut til at det allerede kjører en window manager. kwm er"
-"ikke startet\n"
+msgstr ""
+"kwm: det ser ut til at det allerede kjører en window manager. kwm erikke "
+"startet\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -106,11 +106,11 @@ msgstr "Sju"
 msgid "Eight"
 msgstr "Åtte"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 
@@ -118,40 +118,45 @@ msgstr "*** Ingen oppgaver ***"
 msgid "Command:"
 msgstr "Kommando"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "Logg ut"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Klart til å logge ut"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
-msgstr "De følgende applikasjoner inneholder data som ikke er lagret\n"
+msgstr ""
+"De følgende applikasjoner inneholder data som ikke er lagret\n"
 "og som vil være forsvinne i din neste arbeidsperiode"
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
-msgstr "De følgende applikasjoner kan ikke gjenopprettes i din neste arbeidsperiode,\n"
+msgstr ""
+"De følgende applikasjoner kan ikke gjenopprettes i din neste "
+"arbeidsperiode,\n"
 "bare startes på nytt. Vær sikker på at de ikke inneholder ulagrede data."
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
-msgstr "De følgende applikasjoner er ikke X11-klar og kan derfor ikke bli gjenopprettet\n"
-"i din neste arbeidsperiode. Vær sikker på at de ikke inneholder viktige ulagrede data"
+msgstr ""
+"De følgende applikasjoner er ikke X11-klar og kan derfor ikke bli "
+"gjenopprettet\n"
+"i din neste arbeidsperiode. Vær sikker på at de ikke inneholder viktige "
+"ulagrede data"
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Skift til"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Nåværende arbeidsperiode"
-

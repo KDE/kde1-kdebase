@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-02-27 10:21+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:236
+msgid "Add characters to word class"
+msgstr "Legg til tegn til ordklassen"
+
+#: main.C:239
+msgid "choose type of color-mode"
+msgstr "Velg type fargemodus"
+
+#: main.C:242
+msgid "The backspace key will send a"
+msgstr "Slettetasten vil sende en"
+
+#: main.C:383
+msgid "&New Terminal"
+msgstr "&Ny terminal"
+
+#: main.C:390 main.C:789
+msgid "&Hide"
+msgstr "&Skjul"
+
+#: main.C:391
+msgid "&Left"
+msgstr "&Venstre"
+
+#: main.C:392
+msgid "&Right"
+msgstr "&Høyre"
+
+#: main.C:397
+msgid "&Normal"
+msgstr "Normal"
+
+#: main.C:398
+msgid "&Tiny"
+msgstr "&Bitteliten"
+
+#: main.C:399
+msgid "&Small"
+msgstr "&Liten"
+
+#: main.C:400
+msgid "&Medium"
+msgstr "&Medium"
+
+#: main.C:401
+msgid "&Large"
+msgstr "Stor"
+
+#: main.C:402
+msgid "&Huge"
+msgstr "&Veldig stor"
+
+#: main.C:414
+msgid "&black/white"
+msgstr "svart/hvit"
+
+#: main.C:415
+msgid "&white/black"
+msgstr "hvit/svart"
+
+#: main.C:416
+msgid "&green/black"
+msgstr "&grønn/svart"
+
+#: main.C:417
+msgid "black/light&yellow"
+msgstr "svart/lys gul"
+
+#: main.C:418
+msgid "Linu&x Console"
+msgstr "Linu&x konsol"
+
+#: main.C:427
+msgid "&Custom Colors"
+msgstr "&Egendefinerte farger"
+
+#: main.C:434 main.C:735
+msgid "Hide &Menubar"
+msgstr "Skjul &Menubjelke"
+
+#: main.C:436 main.C:599 main.C:727
+msgid "Show &Menubar"
+msgstr "Vis Menubjelke"
+
+#: main.C:437 main.C:745
+msgid "Secure &keyboard"
+msgstr "Sikre &tastatur"
+
+#: main.C:439
+msgid "Scroll&bar"
+msgstr "Scrollbar"
+
+#: main.C:440
+msgid "&Font size"
+msgstr "Skrifttype størrelse"
+
+#: main.C:441
+msgid "&Color"
+msgstr "&Farge"
+
+#: main.C:442
+msgid "&Size"
+msgstr "Størrelse"
+
+#: main.C:443
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:445
+msgid "Save &Options"
+msgstr "Lagre &valgmuligheter"
+
+#: main.C:454
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulering for KDE Desktop Environment\n"
+"basert på Robert Nation's rxvt-2.08"
+
+#: main.C:608 main.C:782
+msgid "&Show"
+msgstr "&Vis"
+
+#: main.C:741
+msgid "Unsecure &keyboard"
+msgstr "Usikret &tastatur"
+
+#: main.C:752
+msgid "Terminal Options"
+msgstr "Terminal valg"
+
+#: main.C:894
+msgid "Hint"
+msgstr "Hint"
+
+#: main.C:895
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Nye farge innstillinger vil bli vist\n"
+"når tastaturet er usikret."
+
+#: main.C:1087
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulering for KDE Desktop Environment\n"
+"basert påRobert Nation's rxvt-2.08\n"
+"\n"
+"Tillatte argumenter er:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+
+#: main.C:1118
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"

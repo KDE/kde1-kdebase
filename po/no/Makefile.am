@@ -1,6 +1,7 @@
 
 # This has to be set. The rest should be reusable
-GMFILES = krootwm.gmo kwm.gmo
+GMFILES = krootwm.gmo kwm.gmo kvt.gmo kcontrol.gmo kcminput.gmo \
+	kdisplay.gmo kfontmanager.gmo
 
 POFILES = $(GMFILES:.gmo=.po)
 
