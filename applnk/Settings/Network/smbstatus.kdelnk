@@ -19,6 +19,7 @@ Name[sv]=Samba-status
 Name[fi]=Samban tila
 name[fr]=Etat de Samba
 name[pt]=Estado do Samba
+name[it]=Stato Samba
 SwallowTitle=Samba status
 SwallowTitle[pl]=Monitor stanu Samby
 SwallowTitle[sv]=Monitor för Samba-status

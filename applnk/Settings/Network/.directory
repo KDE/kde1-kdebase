@@ -7,6 +7,7 @@ Name[pl]=Sieæ
 Name[cs]=Sí»
 Name[fi]=Verkko
 Name[sv]=Nätverk
+Name[it]=Rete
 MiniIcon=html.xpm
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network.xpm
