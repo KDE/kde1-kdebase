@@ -81,7 +81,7 @@ install:
 	$(INSTALL_SHELL) ./setupKFM $(BINDIR)
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
-	$(INSTALL_DATA) ./unpack $(BINDIR)
+	$(INSTALL_SHELL) ./unpack $(BINDIR)
 	(cd libkfm && $(MAKE) install)
 	(cd doc && $(MAKE) install)
 	(cd pics && $(MAKE) install)

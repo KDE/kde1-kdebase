@@ -18,7 +18,8 @@ echo
 
 install -m 0644 $KDEDIR/lib/kfm/Desktop/Templates/* $HOME/Desktop/Templates
 install -m 0644 $KDEDIR/lib/kfm/Desktop/*.kdelnk $HOME/Desktop
-install -m 0644 $KDEDIR/lib/kfm/config/kfmrc $HOME/.kfmrc
+install -m 0700 -d $HOME/.kde/config/
+install -m 0644 $KDEDIR/lib/kfm/config/kfmrc $HOME/.kde/config/.kfmrc
 
 echo
 echo "Installation completed"
