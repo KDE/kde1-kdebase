@@ -354,8 +354,9 @@ static void stripDomain(const char *_fqdn, QString &_domain)
         if (_domain.find('.', 1) == -1)
         {
            // Domain part should contain at least another '.'
-           // Use the host part instead
-           _domain = _fqdn;
+           // Use the host part instead, but add a '.' in front
+           _domain = ".";
+           _domain += _fqdn;
         }
     }
 
@@ -383,8 +384,6 @@ static time_t parseExpire(const char *expireDate)
      int second;
      struct tm tm_s;
      
-     printf("expireDate = %s\n", expireDate);  
-
      while(*expireDate && (*expireDate != ' '))
      	expireDate++;
      
@@ -483,9 +482,6 @@ static time_t parseExpire(const char *expireDate)
      if ((second < 0) || (second > 59))
      	return result; // Invalid expire date
       
-     printf("expireDate = %02d-%02d-%04d %02d:%02d:%02d\n", 
-     	day, month+1, year, hour, minute, second);  
-
      tm_s.tm_sec = second;
      tm_s.tm_min = minute;
      tm_s.tm_hour = hour;
