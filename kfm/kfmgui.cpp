@@ -93,6 +93,11 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     windowList.append( this );
 
     debugT("Hi 6\n");
+	if (bTreeView) {
+      bTreeViewInitialized = true;
+	  treeView->initializeTree();
+	}
+    debugT("Hi 6.5 :-)\n");
     if ( _url )
 	view->openURL( _url );
     debugT("Hi 7\n");
@@ -454,14 +459,16 @@ void KfmGui::slotPrint()
 
 void KfmGui::slotPannerChanged()
 {
-    if ( !bTreeViewInitialized )
-	treeView->initializeTree();  
+    if ( !bTreeViewInitialized ) {
+	bTreeViewInitialized = true;
+	treeView->initializeTree();
+	}
 
     if ( panner->getSeparator() == 0 )
-      mview->setItemChecked( mview->idAt( 1 ), false );
-    else
-      mview->setItemChecked( mview->idAt( 1 ), true );
-    
+      bTreeView = false;
+	else
+      bTreeView = true;
+    mview->setItemChecked( mview->idAt( 1 ), bTreeView );
     resizeEvent( 0L );
 }
 
@@ -472,20 +479,14 @@ void KfmGui::slotSplitWindow()
 
 void KfmGui::slotViewHTML( )
 {
-    bViewHTML = true;
-    viewMode = ICON_VIEW;
-    mview->setItemChecked( mview->idAt( 4 ), true );
-    mview->setItemChecked( mview->idAt( 5 ), false );
-    mview->setItemChecked( mview->idAt( 6 ), false );
-    mview->setItemChecked( mview->idAt( 7 ), false );
+    bViewHTML = !bViewHTML;
+    mview->setItemChecked( mview->idAt( 4 ), bViewHTML );
     view->slotUpdateView();
 }
 
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
-    bViewHTML = false;
-    mview->setItemChecked( mview->idAt( 4 ), false );
     mview->setItemChecked( mview->idAt( 5 ), true );
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
@@ -495,8 +496,6 @@ void KfmGui::slotIconView()
 void KfmGui::slotLongView()
 {
     viewMode = LONG_VIEW;
-    bViewHTML = false;
-    mview->setItemChecked( mview->idAt( 4 ), false );
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
@@ -506,8 +505,6 @@ void KfmGui::slotLongView()
 void KfmGui::slotTextView()
 {
     viewMode = TEXT_VIEW;
-    bViewHTML = false;
-    mview->setItemChecked( mview->idAt( 4 ), false );
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
