@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -159,15 +158,15 @@ msgid "Unsupported URL"
 msgstr "Uunderstøttet URL"
 
 #: syssound.cpp:458
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde"
+"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde "
+"Modul"
 
 #: syssound.cpp:468
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"

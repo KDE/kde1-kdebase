@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -119,9 +118,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 
 #: main.C:1054
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
+msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"

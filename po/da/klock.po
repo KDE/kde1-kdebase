@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -156,9 +155,8 @@ msgid "Bouboule"
 msgstr ""
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "KFlame indstilling"
+msgstr "Indstill KFlame"
 
 #: bouboule.cpp:1032
 #, fuzzy
@@ -178,9 +176,8 @@ msgid "3D mode"
 msgstr ""
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Om Blob"
+msgstr "Om Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""

@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -39,7 +38,6 @@ msgid "&Top"
 msgstr ""
 
 #: panel.cpp:61
-#, fuzzy
 msgid "&Left"
 msgstr "&Venstre"
 
@@ -52,7 +50,6 @@ msgid "Taskbar"
 msgstr "Procesbjælke"
 
 #: panel.cpp:75
-#, fuzzy
 msgid "&Hidden"
 msgstr "&Gemt"
 
@@ -65,36 +62,32 @@ msgid "Botto&m"
 msgstr "Bund"
 
 #: panel.cpp:81
-#, fuzzy
 msgid "Top/Le&ft"
-msgstr "Top/Venstre"
+msgstr "To&p/Venstre"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr "Lille"
+msgstr "L&ille"
 
 #: panel.cpp:98
-#, fuzzy
 msgid "&Normal"
-msgstr "Normal"
+msgstr "&Normal"
 
 #: panel.cpp:100
 msgid "L&arge"
 msgstr "Stor"
 
 #: desktops.cpp:73
-#, fuzzy
 msgid "&Visible"
-msgstr "Synlig"
+msgstr "&Synlig"
 
 #: desktops.cpp:82
-#, fuzzy
 msgid "&Width"
-msgstr "Bredde"
+msgstr "&Bredde"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr ""
+msgstr "Menu tooltips"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
@@ -113,19 +106,16 @@ msgid "Others"
 msgstr "Andet"
 
 #: options.cpp:69
-#, fuzzy
 msgid "Personal &First"
-msgstr "Personlige først"
+msgstr "Personlige &først"
 
 #: options.cpp:71
-#, fuzzy
 msgid "Auto &Hide Panel"
-msgstr "Auto gem Panel"
+msgstr "Auto &gem Panel"
 
 #: options.cpp:73
-#, fuzzy
 msgid "Auto Hide &Taskbar"
-msgstr "Auto gem Procesbjælke"
+msgstr "Auto gem &Procesbjælke"
 
 #: options.cpp:81
 msgid "Clock"

@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -23,14 +22,12 @@ msgid "Cannot open or read directory."
 msgstr "Kan ikke åbne eller læse folder."
 
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "Start søgning"
+msgstr "&Start søgning"
 
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "Stop søgning"
+msgstr "S&top søgning"
 
 #: kfindtop.cpp:125
 msgid "&Open"

@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -31,9 +30,8 @@ msgid "&Desktop"
 msgstr ""
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "brug: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "brug: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -133,12 +131,10 @@ msgstr ""
 "på titelbjælken giver:"
 
 #: titlebar.cpp:993
-#, fuzzy
 msgid "(Un)Maximize"
 msgstr "(U)Maksimer"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "(Un)Shade"
 msgstr "Rul op/ned"
 
@@ -147,7 +143,6 @@ msgid "Iconify"
 msgstr "Minimer"
 
 #: titlebar.cpp:997
-#, fuzzy
 msgid "(Un)Sticky"
 msgstr "Fastsæt/Frigiv"
 
@@ -177,9 +172,8 @@ msgid "Window resize"
 msgstr "&Vinduer"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Titel animation"
+msgstr "Animation"
 
 #: windows.cpp:92
 msgid "Fast"
@@ -290,25 +284,3 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-
-#, fuzzy
-#~ msgid "With animation"
-#~ msgstr "Titel animation"
-
-#~ msgid "Move"
-#~ msgstr "Flyt"
-
-#~ msgid "Restore"
-#~ msgstr "Gendan"
-
-#~ msgid "Shaded"
-#~ msgstr "Gradueret"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animation"
-
-#~ msgid "Random placement"
-#~ msgstr "Tilfældig placering"
-
-#~ msgid "Smart placement"
-#~ msgstr "Smart placering"

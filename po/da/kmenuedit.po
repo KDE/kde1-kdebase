@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -17,12 +16,11 @@ msgstr ""
 #: kmenuedit.cpp:68
 #, fuzzy
 msgid "Change &Menuname"
-msgstr "Skift menunavn"
+msgstr "Skift &menunavn"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Genindlæs filtyper"
+msgstr "Genindlæs &filtyper"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -33,11 +31,12 @@ msgid "Changes not saved !"
 msgstr "Ændringer ikke gemt!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Vil du gemme dine ændringer?"
+msgstr ""
+"\n"
+"Vil du gemme dine ændringer?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -201,9 +200,8 @@ msgid "Binary Pattern:"
 msgstr "Filnavne:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Applikation"
+msgstr "Applikation til swallow:"
 
 #: entrydialog.cpp:306
 #, fuzzy
@@ -216,7 +214,7 @@ msgstr ""
 
 #: entrydialog.cpp:342
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: entrydialog.cpp:391
 msgid "Read Only"
@@ -253,19 +251,3 @@ msgstr "Personlig:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standard:"
-
-#, fuzzy
-#~ msgid "&Reload"
-#~ msgstr "Genindlæs menuer"
-
-#~ msgid "Name:"
-#~ msgstr "Navn:"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "FWvm kommando"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fwvm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Fwvm kommando:"

@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -23,14 +22,12 @@ msgid "Desktop"
 msgstr "Arbejdsplads"
 
 #: backgnd.cpp:167
-#, fuzzy
 msgid "&Rename ..."
-msgstr "Omdøb..."
+msgstr "&Omdøb..."
 
 #: backgnd.cpp:193 colorscm.cpp:93
-#, fuzzy
 msgid "Colors"
-msgstr "&Farver"
+msgstr "Farver"
 
 #: backgnd.cpp:220
 #, fuzzy
@@ -43,42 +40,36 @@ msgid "&Two Color"
 msgstr "&Farver"
 
 #: backgnd.cpp:256
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Indstil..."
+msgstr "&Indstil..."
 
 #: backgnd.cpp:265
 msgid "Wallpaper"
 msgstr "Tapet"
 
 #: backgnd.cpp:275
-#, fuzzy
 msgid "Ti&led"
-msgstr "Fliselagt"
+msgstr "F&liselagt"
 
 #: backgnd.cpp:283
-#, fuzzy
 msgid "&Centred"
-msgstr "Centreret"
+msgstr "&Centreret"
 
 #: backgnd.cpp:291
-#, fuzzy
 msgid "&Scaled"
-msgstr "Skaleret"
+msgstr "&Skaleret"
 
 #: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Tapet"
+msgstr "Intet tapet"
 
 #: backgnd.cpp:335
 msgid "&Browse..."
 msgstr "&Gennemsøg..."
 
 #: backgnd.cpp:864
-#, fuzzy
 msgid "Desktop names"
-msgstr "Arbejdsplads"
+msgstr "Arbejdsplads navn"
 
 #: backgnd.cpp:910
 #, fuzzy
@@ -214,9 +205,8 @@ msgid "Contrast"
 msgstr "Kontrast"
 
 #: colorscm.cpp:238
-#, fuzzy
 msgid "&Low"
-msgstr "Lav"
+msgstr "&Lav"
 
 #: colorscm.cpp:246
 msgid "High"
@@ -280,14 +270,12 @@ msgid "No screensaver"
 msgstr "&Skærmskåner"
 
 #: scrnsave.cpp:210
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Indstil..."
+msgstr "&Indstil..."
 
 #: scrnsave.cpp:218
-#, fuzzy
 msgid "&Test"
-msgstr "Tekst"
+msgstr "&Test"
 
 #: scrnsave.cpp:231
 msgid "Settings"
@@ -302,32 +290,28 @@ msgid "min."
 msgstr ""
 
 #: scrnsave.cpp:267
-#, fuzzy
 msgid "&Require password"
-msgstr "Kræver kodeord"
+msgstr "K&ræver kodeord"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
 msgstr ""
 
 #: scrnsave.cpp:281
-#, fuzzy
 msgid "Priority"
-msgstr "Prioritet:"
+msgstr "Prioritet"
 
 #: scrnsave.cpp:294
-#, fuzzy
 msgid "&High"
-msgstr "Høj"
+msgstr "&Høj"
 
 #: scrnsave.cpp:303
 msgid "Low"
 msgstr "Lav"
 
 #: general.cpp:216
-#, fuzzy
 msgid "Fonts etc."
-msgstr "Skriftsnit"
+msgstr "Skriftsnit etc."
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
@@ -368,9 +352,8 @@ msgid ""
 msgstr ""
 
 #: main.cpp:62
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Skriftsnit"
+msgstr "Skri&ftsnit etc."
 
 #: main.cpp:65
 msgid "&Background"
@@ -432,83 +415,3 @@ msgstr ""
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "enhver"
-
-#, fuzzy
-#~ msgid "&Remove"
-#~ msgstr "Gem skema"
-
-#, fuzzy
-#~ msgid "Window title font"
-#~ msgstr "Vindues tekst"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: kommunikation med kwm fejlede\n"
-
-#~ msgid "Lock"
-#~ msgstr "Lås"
-
-#~ msgid "General"
-#~ msgstr "Generelt"
-
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Gem skema"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Du har valgt et navn på et medfølgende farveskema"
-
-#~ msgid "Display Setup"
-#~ msgstr "Skærm indstilling"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Ingen Arbejdsplads farveskemaer indstalleret.\n"
-#~ "Vil du installere standard skemaerne nu?"
-
-#~ msgid "Selected"
-#~ msgstr "Valgt"
-
-#~ msgid "Name"
-#~ msgstr "Navn"
-
-#~ msgid "Wait:"
-#~ msgstr "Vent:"
-
-#~ msgid "Widget style"
-#~ msgstr "Widget stil"
-
-#~ msgid "Sample"
-#~ msgstr "Eksempel"
-
-#~ msgid "Small"
-#~ msgstr "Lille"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-#~ msgid "&Style"
-#~ msgstr "&Stil"
-
-#~ msgid "Color"
-#~ msgstr "Farve"
-
-#, fuzzy
-#~ msgid "&Flat"
-#~ msgstr "Fast"
-
-#, fuzzy
-#~ msgid "&Gradient"
-#~ msgstr "Graduerende"
-
-#, fuzzy
-#~ msgid "&Portrait"
-#~ msgstr "Portræt"
-
-#, fuzzy
-#~ msgid "&Landscape"
-#~ msgstr "Landskab"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Arbejdsplads titel"

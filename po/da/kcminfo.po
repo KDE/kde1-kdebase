@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
@@ -61,9 +60,8 @@ msgstr ""
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "ikke tilgængeligt"
+msgstr "Ikke tilgængeligt"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

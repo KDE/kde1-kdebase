@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -145,14 +144,12 @@ msgid "Never look in cache"
 msgstr "Kig aldrig i cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Kig altid i cache"
+msgstr "Gem altid cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Kig aldrig i cache"
+msgstr "Gem aldrig cache"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -207,7 +204,6 @@ msgid "Select files:"
 msgstr "Vælg filer:"
 
 #: kfmgui.cpp:921
-#, fuzzy
 msgid "&Edit Bookmarks..."
 msgstr "&Rediger Bogmærke..."
 
@@ -527,7 +523,6 @@ msgid "Transparent Text for Root Icons."
 msgstr "Transparent tekst for Arbejdsplads ikoner."
 
 #: bookmark.cpp:264
-#, fuzzy
 msgid "Could not write bookmark"
 msgstr "Kunne ikke skrive bogmærke"
 
@@ -972,7 +967,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1237 kiojob.cpp:1368
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1216,9 +1211,8 @@ msgid "Don't forget to save your settings!"
 msgstr "Glem ikke at gemme dine indstillinger!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Bruger"
+msgstr "Bruger proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1241,9 +1235,8 @@ msgid "&Colors"
 msgstr "&Farver"
 
 #: kkfmoptdlg.cpp:34
-#, fuzzy
 msgid "&Other"
-msgstr "Andre"
+msgstr "&Andre"
 
 #: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
