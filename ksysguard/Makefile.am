@@ -27,7 +27,7 @@ bin_PROGRAMS = 	ktop
 ktop_SOURCES	= ktop.cpp memory.cpp settings.cpp cpu.cpp widgets.cpp ptree.cpp
 
 # the library search path
-ktop_LDFLAGS = @all_libraries@
+ktop_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # the libraries to link against. Be aware of the order. First the libraries,
 # that depend on the following ones.
