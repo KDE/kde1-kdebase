@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=passwd
+Icon=passwd.xpm
+TerminalOptions=
+Comment=Changes your passord
+Comment[no]=Bytter passordet ditt
+Type=Application
+Terminal=1
+Name=Password
+Name[no]=Passord
