@@ -463,7 +463,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Toimintoa %s ei tueta t‰ll‰ alustalla!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -475,7 +474,7 @@ msgstr ""
 "\n"
 "J‰rjestelm‰si k‰ytt‰‰ shadow-salasanoja!\n"
 "Ota yhteytt‰ j‰rjestelm‰n yll‰pit‰j‰‰n.\n"
-"Ja kerro tarvitsevasi suid:n kcheckpass:n!"
+"Ja kerro tarvitsevasi suid:n kcheckpass -ohjelmaan!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

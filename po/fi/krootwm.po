@@ -63,38 +63,36 @@ msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Järjestä kuvakkeet"
+msgstr "Järjestä Window Makerin kuvakkeet"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Näytä kaikki"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Piilota muut"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Näytä tietopaneeli"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Näytä lakipaneeli"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Uudelleenkäynnistä"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Lopeta"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Ikkuna"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

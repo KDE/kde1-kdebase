@@ -68,15 +68,16 @@ msgstr ""
 "Caps Lock emulaatio poistettu"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Kansainvälinen näppäimistö"
+msgstr "Lopetetaan Kansainvälinen näppäimistö"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Olet lopettamassa \"Kansainvälinen näppäimistö\" TYÖKALUN.\n"
+" Haluatko että se käynnistetään automaattisesti seuraavalla kerralla?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -163,9 +164,8 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Molemmat shiftit (Shift+Shift)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
-msgstr "Oikea Alt"
+msgstr "Oikea Meta"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -176,9 +176,8 @@ msgid "Left  Control"
 msgstr "Vasen Control"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
-msgstr "Vasen Alt"
+msgstr "Vasen Meta"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -201,19 +200,20 @@ msgid "X default codes"
 msgstr "X oletuskoodit"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Haluatko jatkaa?"
+"%s\n"
+"Haluatko asettaa nyt?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Käytät \"Kansainvälistä näppäimistöä\" ensimmäisen kerran.\n"
+"Monia oletusasetuksia on otettu käyttöön."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -268,14 +268,12 @@ msgid "alternative symbols"
 msgstr "vaihtoehtoista symbolia"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
-msgstr " "
+msgstr "Kieli"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
-msgstr "kirjasinperhe"
+msgstr "Kirjasinperhe"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -510,7 +508,6 @@ msgid "&Docked"
 msgstr "&Nielaise"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Nielaise paneeliin"
 
@@ -537,27 +534,3 @@ msgstr "&Käynnistys"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Kansainvälinen näppäimistö"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Haluatko käynnistää asetusohjelman?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Asetuksesi ovat tyhjät. Asenna järjestelmän oletus."
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Asetustiedostossasi on oletettua vanhempi muoto.\n"
-#~ "Jotkin asetuksistasi voivat olla vääriä."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Asetustiedostossasi on oletettua uudempi muoto.\n"
-#~ "Jotkin asetuksistasi voivat olla vääriä."
