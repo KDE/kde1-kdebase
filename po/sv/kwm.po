@@ -1,17 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Anders Bengtsson <d96-abe@nada.kth.se>, 1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-12-03 01:16+0100\n"
-"PO-Revision-Date: 1998-07-09 15:38+02:00\n"
-"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
+"PO-Revision-Date: 1998-12-12 18:31+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.C:68
 msgid ""
@@ -67,7 +68,7 @@ msgstr "&Flytta"
 
 #: main.C:532
 msgid "Resi&ze"
-msgstr "&Ändra storlek"
+msgstr "Ändra &storlek"
 
 #: main.C:534
 msgid "&To desktop"
@@ -111,7 +112,7 @@ msgstr "Åtta"
 
 #: main.C:611
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Odöpt skrivbord"
 
 #: main.C:1016
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
@@ -131,15 +132,15 @@ msgstr "Kommando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "Ooops!"
+msgstr "Hoppsan!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
-msgstr "Logga ur"
+msgstr "Logga ut"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sessionen klar för urloggning"
+msgstr "Sessionen är klar för utloggning"
 
 #: logout.C:52
 msgid ""

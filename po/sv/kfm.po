@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-10 01:15+0100\n"
-"PO-Revision-Date: 1998-12-02 12:50+01:00\n"
+"PO-Revision-Date: 1998-12-12 19:25+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -50,14 +50,12 @@ msgid "Find &next"
 msgstr "Hitta &nästa"
 
 #: kfmgui.cpp:274
-#, fuzzy
 msgid "Mime &Types"
-msgstr "MIME-typer"
+msgstr "MIME-&typer"
 
 #: kfmgui.cpp:276
-#, fuzzy
 msgid "App&lications"
-msgstr "Program"
+msgstr "&Program"
 
 #: kfmgui.cpp:282
 msgid "Global Mime Types"
@@ -68,17 +66,16 @@ msgid "Global Applications"
 msgstr "Globala program"
 
 #: kfmgui.cpp:291
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "Visa &alla filer"
+msgstr "Visa &gömda filer"
 
 #: kfmgui.cpp:293
 msgid "Show Tr&ee"
-msgstr "Visa trä&d"
+msgstr "Visa t&räd"
 
 #: kfmgui.cpp:295
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Visa &miniatyrbilder"
 
 #: kfmgui.cpp:297
 msgid "&HTML View"
@@ -109,26 +106,24 @@ msgid "&Reload Document"
 msgstr "Uppdatera &dokumentet"
 
 #: kfmgui.cpp:316
-#, fuzzy
 msgid "Rescan &Bindings"
-msgstr "Uppdatera bi&ndningar"
+msgstr "Uppdatera &bindningar"
 
 #: kfmgui.cpp:319
 msgid "&View Frame Source"
-msgstr "Visa &ramens källkod"
+msgstr "Visa r&amens källkod"
 
 #: kfmgui.cpp:321
 msgid "View Docu&ment Source"
-msgstr "Visa doku&mentets källkod"
+msgstr "Visa d&okumentets källkod"
 
 #: kfmgui.cpp:329
 msgid "Auto"
 msgstr "Automatisk"
 
 #: kfmgui.cpp:337
-#, fuzzy
 msgid "Document Encodin&g"
-msgstr "Dokumentkodning"
+msgstr "Dokum&entkodning"
 
 #: kfmgui.cpp:352
 msgid "Show History"
@@ -179,22 +174,18 @@ msgid "Sa&ve Settings"
 msgstr "Spara &inställningarna"
 
 #: kfmgui.cpp:387
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Spara inställningar för denna URL"
+msgstr "Spara inställningar för denna &URL"
 
 #: kfmgui.cpp:394
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Ställ in &bläddrare..."
+msgstr "Ställ in &filhanteraren..."
 
 #: kfmgui.cpp:396
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "Ställ in &bläddrare..."
+msgstr "Ställ in &bläddraren..."
 
 #: kfmgui.cpp:432
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -217,12 +208,12 @@ msgstr ""
 "Proxy-hanterare av Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Felrapporter och patchar till David Faure\n"
+"Nuvarande underhållare: David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:445
 msgid "&Go"
-msgstr ""
+msgstr "&Gå"
 
 #: kfmgui.cpp:446
 msgid "&Bookmarks"
@@ -293,16 +284,15 @@ msgstr "&Redigera bokmärken..."
 
 #: kfmgui.cpp:976
 msgid "&Add Bookmark"
-msgstr "&Lägg till bokmärke"
+msgstr "&Lägg till som bokmärke"
 
 #: kfmgui.cpp:1010 kfmman.cpp:1171 kfmtree.cpp:309 root.cpp:298
 msgid "&New"
 msgstr "&Ny"
 
 #: kfmgui.cpp:1013
-#, fuzzy
 msgid "New &Window"
-msgstr "Ny vy"
+msgstr "Nytt &fönster"
 
 #: kfmgui.cpp:1016
 msgid "&Run..."
@@ -326,23 +316,20 @@ msgid "New "
 msgstr "Ny "
 
 #: kfmgui.cpp:1114
-#, fuzzy
 msgid "&Up"
-msgstr "Upp"
+msgstr "&Upp"
 
 #: kfmgui.cpp:1116
 msgid "&Back"
-msgstr ""
+msgstr "&Bakåt"
 
 #: kfmgui.cpp:1118
-#, fuzzy
 msgid "&Forward"
-msgstr "Framåt"
+msgstr "&Framåt"
 
 #: kfmgui.cpp:1120
-#, fuzzy
 msgid "&Home"
-msgstr "Hem"
+msgstr "&Hem"
 
 #: kfmgui.cpp:1177 kfmgui.cpp:1349 kfmjob.cpp:37 kfmman.cpp:264
 #: kfmtree.cpp:433 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
@@ -620,7 +607,7 @@ msgstr "Töm papperskorgen"
 
 #: main.cpp:236
 msgid "Add to Bookmarks"
-msgstr "Lägg till bokmärken"
+msgstr "Lägg till bokmärkena"
 
 #: main.cpp:237
 msgid "Save settings for this URL"
@@ -691,18 +678,16 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "y-avstånd för skrivbordsikoner"
 
 #: htmlopts.cpp:593
-#, fuzzy
 msgid "&Allow per-URL settings"
-msgstr "Tillåt inställningar för enskilda URL:er"
+msgstr "&Tillåt inställningar för enskilda URL:er"
 
 #: htmlopts.cpp:602
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Trädvyn &följer navigeringen"
 
 #: htmlopts.cpp:610
-#, fuzzy
 msgid "&Transparent Text for Root Icons."
-msgstr "Rita ej textbakgrund till skrivbordsikoner"
+msgstr "&Rita ej textbakgrund till skrivbordsikoner"
 
 #: htmlopts.cpp:623
 msgid "Icon foreground color:"
@@ -1503,55 +1488,3 @@ msgid ""
 msgstr ""
 "Syntaxfel:\n"
 "kfmexec kommando [URL:er ...]\n"
-
-#~ msgid "On server:"
-#~ msgstr "På server:"
-
-#~ msgid "login as:"
-#~ msgstr "Ange:"
-
-#~ msgid "Known bindings:"
-#~ msgstr "Kända bindningar:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Glöm inte att spara dina inställningar!"
-
-#~ msgid "Use proxy"
-#~ msgstr "Använd proxy"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Ej proxy för:"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "&Bläddrar-ID"
-
-#~ msgid "&Colors"
-#~ msgstr "&Färger"
-
-#~ msgid "&Other"
-#~ msgstr "&Övrigt"
-
-#, fuzzy
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM bläddrarinställningar"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Acceptera språk:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Acceptera teckenkodningar:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Antag HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "FEL: En URL släpptes på sig själv"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Visa &bilder"

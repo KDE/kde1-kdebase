@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "POT-Creation-Date: 1998-12-05 01:14+0100\n"
-"PO-Revision-Date: 1998-11-07 18:53+01:00\n"
+"PO-Revision-Date: 1998-12-12 18:17+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -136,12 +136,12 @@ msgstr "Sessioner"
 #: main.C:532
 #, c-format
 msgid "(%d columns x %d lines)"
-msgstr ""
+msgstr "(%d kolumner x %d rader)"
 
 #: main.C:562
-#, fuzzy, c-format
+#, c-format
 msgid "About %s"
-msgstr "&Om ..."
+msgstr "Om %s"
 
 #: main.C:564
 #, c-format
@@ -155,6 +155,14 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
+"%s version %s - en X-terminal\n"
+"\n"
+"Copyright (c) 1998 av Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Detta program är fri mjukvara under\n"
+"Artistic-licensens villkor och kommer\n"
+"UTAN NÅGRA SOM HELST GARANTIER.\n"
+"Se `LICENSE.readme´ för detaljer."
 
 #: main.C:880
 msgid "Welcome to the console"
