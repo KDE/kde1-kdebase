@@ -955,8 +955,23 @@ void kPanel::showMiniPanel ()
     miniPanelFrame->setGeometry(sx, 0, 3*mh, mh);
 
   miniPanelFrame->show();
-  miniPanelFrame->raise();
-  KWM::sendKWMCommand("moduleRaised");
+  // tell kwm to keep the panel raised. This will move into libkdecore after KDE-1.1
+  {
+      XEvent ev;
+      long mask;
+      
+      memset(&ev, 0, sizeof(ev));
+      ev.xclient.type = ClientMessage;
+      ev.xclient.window = qt_xrootwin();
+      ev.xclient.message_type = XInternAtom(qt_xdisplay(), "KWM_KEEP_ON_TOP", False);
+      ev.xclient.format = 32;
+      ev.xclient.data.l[0] = (long)miniPanelFrame->winId();
+      ev.xclient.data.l[1] = CurrentTime;
+      mask = SubstructureRedirectMask;
+      XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
+      ev.xclient.data.l[0] = (long)winId();
+      XSendEvent(qt_xdisplay(), qt_xrootwin(), False, mask, &ev);
+  }
 }
 
  void kPanel::hideMiniPanel() {
@@ -1041,7 +1056,7 @@ QString kPanel::findMenuEditor( const QString& folder)
     QDir d ( folder );
     if (!d.exists() )
 	return result;
-    
+
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );
     QFileInfo *fi;
