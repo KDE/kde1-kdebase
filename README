@@ -138,9 +138,7 @@ with PAM.
 Have a look at the individual subdirectories, if you would like to find
 out more about a specific application included in kdebase.
 
-Please direct any bug reports to our bug list maintainer 
-David McCanney <9504506m@student.gla.ac.uk>.  Or visit
-http://buglist.kde.org.
+Please direct any bug reports to http://bugs.kde.org.
 
 If you have problems compiling and installing this package, please contact
 Stephan Kulow <coolo@kde.org>.
