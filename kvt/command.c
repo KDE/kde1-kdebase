@@ -24,6 +24,9 @@
  * aggreed to distribute their code under the terms of the GPL
  */
 
+/* define _GNU_SOURCE to get prototypes for getpt() and ptsname() */
+#define _GNU_SOURCE
+
 #include <stdarg.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -41,7 +44,7 @@
 #include "debug.h"
 
 #if defined (_HPUX_SOURCE)
-/* #define _TERMIOS_INCLUDED */
+#define _TERMIOS_INCLUDED
 #include <bsdtty.h>
 #endif
 /* sgis have /dev/ptmx [bmg] */
@@ -95,10 +98,6 @@
 #include "command.h"
 #include "screen.h"
 #include "xsetup.h"
-
-#if !defined(HAVE_SETEUID)
-#define seteuid(_eu) setresuid(-1, _eu, -1)
-#endif
 
 #if defined(VDISCRD) && !defined(VDISCARD)
 #define	VDISCARD	VDISCRD
@@ -171,11 +170,15 @@ static int x_fd;	/* file descriptor of the X server connection */
 static int fd_width;	/* width of file descriptors being used */
 static int app_cur_keys = 0;/* flag to set cursor keys in application mode */
 static int app_kp_keys = 0; /* flag to set application keypad keys */
+#if __GLIBC__ - 0 == 2 && __GLIBC_MINOR__ >= 1
+char *ttynam;
+#else
 #ifndef SVR4
 static char ptynam[25] = "/dev/ptyxx";
 char ttynam[25] = "/dev/ttyxx";
 #else
 char *ttynam, *ptsname();
+#endif
 #endif
 static Atom wm_del_win;
 extern WindowInfo MyWinInfo;
@@ -352,6 +355,29 @@ static void catch_sig(int sig)
   /*  First find a master pty that we can open.  
    */
 
+#if __GLIBC__ - 0 == 2 && __GLIBC_MINOR__ >= 1
+  ptyfd = getpt();
+  if (ptyfd < 0)
+    {
+      error("Can't open a pseudo teletype");
+      return(-1);
+    }
+  if (grantpt(ptyfd) < 0 || unlockpt(ptyfd) < 0)
+    {
+      close(ptyfd);
+      error("Can't grantpt/unlockpt a pseudo teletype");
+      return(-1);
+    }
+  ttynam = ptsname(ptyfd);
+  if (ttynam == 0)
+    {
+      close(ptyfd);
+      error("Pseudo teletype has no name");
+      return(-1);
+    }
+  fcntl(ptyfd,F_SETFL,O_NDELAY);
+  grantpty = 0;
+#else
 #ifdef TIOCGPTN
   strcpy(ptynam,"/dev/ptmx");
   strcpy(ttynam,"/dev/pts/");
@@ -422,6 +448,7 @@ if (ptyfd < 0)
     fcntl(ptyfd,F_SETFL,O_NDELAY);
 #endif  
   }
+#endif /* GLIBC */
 
   for (i = 1; i <= 15; i++)
     signal(i,catch_sig);

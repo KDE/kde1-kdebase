@@ -93,10 +93,6 @@
 #include <stdio.h>
 #include <memory.h>
 
-#if !defined(HAVE_SETEUID)
-#define seteuid(_eu) setresuid(-1, _eu, -1)
-#endif
-
 #ifndef TTYTAB
 #define TTYTAB "/etc/ttys"
 #endif
@@ -313,6 +309,7 @@ int write_utmp(struct utmp * u)
   setutent();
   pututline(u);
   endutent();
+  updwtmp(WTMP_FILE, u);
   pos = (int)NULL;
   madeutent = 1;
 
@@ -408,6 +405,7 @@ void cleanutent()
 #endif
 	  pututline(u); /* Was reversed with in the original */
 	  endutent();
+	  updwtmp(WTMP_FILE, u);
 	}
     }
 

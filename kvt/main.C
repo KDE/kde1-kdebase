@@ -46,10 +46,6 @@
 
 #include "main.h"
 
-#if !defined(HAVE_SETEUID)
-#define seteuid(_eu) setresuid(-1, _eu, -1)
-#endif
-
 extern "C" {
 extern void *safemalloc(int, const char *identifier);
 extern void get_token();

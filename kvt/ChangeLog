@@ -1,3 +1,8 @@
+Duncan Haldane 03/08/99 <duncan@kde.org>
+  - Applied Franz Sirl's patch for getting the pty to chown on
+    glibc-2.1.1 systems. also adds some utmp support.
+    tested on RH6.0 and col2.2.
+
 Harri Porten - 12/07/99
 
   - fixed segfault resulting from `kvt -e' without a trailing command
