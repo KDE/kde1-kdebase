@@ -255,7 +255,7 @@ static void splitDomainAdvice(const char *configStr,
 
 void KHTTPOptions::removeDomain(const char *domain)
 {
-    const char *configStr;
+    const char *configStr = 0L;
     QString searchFor(domain);
     searchFor += ":";
     
