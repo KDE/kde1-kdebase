@@ -524,7 +524,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			      box_height+2*margin-6);
       label_date->setAlignment( AlignRight|AlignVCenter );
 
-      dock_area->setGeometry(label_date->x() - DEFAULT_BOX_WIDTH,
+      dock_area->setGeometry(label_date->x() - 2*box_width + 6 - 4,
 			     3,
 			     2 * box_width - 6,
 			     box_height+2*margin-6);
@@ -595,7 +595,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       label_date->setAlignment( AlignHCenter|AlignBottom);
 
       dock_area->setGeometry(3,
-			     label_date->y() - box_height,
+			     label_date->y() - box_height - 2*margin + 6 -4,
 			     box_width+2*margin-6, 
 			     box_height);
 
