@@ -91,7 +91,7 @@ msgstr "Spusti» panel znova"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Navigátor disku"
 
 #: props.C:168
 msgid "Panel"
@@ -115,28 +115,28 @@ msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "Informácia KFM"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Vytváram prieèinok:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(prázdny prieèinok)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(priveµa súborov)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(prístup zamietnutý)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(neèitateµné)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Otvori» prieèinok"

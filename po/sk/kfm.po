@@ -51,9 +51,8 @@ msgid "&Select"
 msgstr "Vy&bra»"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "Vy&bra»"
+msgstr "Vy&bra» v¹etko"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -215,9 +214,8 @@ msgid "Up"
 msgstr "Hore"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Domovský prieèinok"
+msgstr "Domov"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -243,7 +241,7 @@ msgstr "Nie je mo¾né naèíta» ikonu\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "Chyba KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -293,9 +291,8 @@ msgid "Document: Done"
 msgstr "Dokument: Hotovo"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "CHYBA: Pustili ste URL nad sebou samým"
+msgstr "CHYBA: URL mô¾ete iba pú¹»a»"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -560,18 +557,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Priehµadný text ikoniek roota"
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Listova»"
+msgstr "&Prehliadaè"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Nemô¾em zapísa» zálo¾ku"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Plné meno"
+msgstr "Meno"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -660,7 +655,7 @@ msgstr "U¾ívateµ"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Skupina"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -683,9 +678,8 @@ msgid "Ownership"
 msgstr "Vlastníctvo"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Vlastníctvo"
+msgstr "Vlastník"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1314,7 +1308,7 @@ msgstr "Predpokl. HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Táto skupina je prázdna!"
 
 #: kfmprops.h:73
 msgid "&General"

@@ -159,18 +159,16 @@ msgid "Device"
 msgstr "Zariadenie"
 
 #: entrydialog.cpp:63
-#, fuzzy
 msgid "Type:"
-msgstr "Typ FS"
+msgstr "Typ:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Súbor:"
 
 #: entrydialog.cpp:82
-#, fuzzy
 msgid "Name:"
-msgstr "Súbor:"
+msgstr "Meno:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"

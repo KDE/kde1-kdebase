@@ -135,7 +135,6 @@ msgid "Save &Options"
 msgstr "Ulo¾i» &nastavenie"
 
 #: main.C:678
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -150,6 +149,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Emulácia terminálu pre KDE Desktop Environment\n"
 "zalo¾ené na  rxvt-2.08 Roberta Nationa"

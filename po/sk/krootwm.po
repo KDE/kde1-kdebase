@@ -24,7 +24,7 @@ msgstr "Chyba: ©ablóna neexistuje '%s'"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Zálo¾ky"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -64,7 +64,7 @@ msgstr "Odhlási»"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Editova» zálo¾ky"
 
 #: krootwm.C:607
 msgid "Could not create folder"

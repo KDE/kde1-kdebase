@@ -22,13 +22,12 @@ msgid "Setup kbanner"
 msgstr "Nastavenie kbanneru"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Neúspe¹né"
+msgstr "Rodina:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Veµkos»:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -36,7 +35,7 @@ msgstr "Farba:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Tuèné"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -405,7 +404,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Voµba %s nie je podporovaná na tejto platforme!"
 
 #: main.cpp:378
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -413,9 +411,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Varovanie: Nebudete môc» zamknú» obrazovku!\n"
+"\n"
 "Vá¹ systém pou¾íva tieòové heslá!\n"
 "Prosím, kontaktujte svojho systémového administrátora.\n"
-"\n"
 "Povedzte mu, ¾e potrebujete SUID pre ¹etrièe obrazovky!"
 
 #: main.cpp:383
@@ -429,18 +428,20 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"prosím nepou¾ívajte -test spolu s -lock.\n"
+"pou¾ite klock namiesto toho.\n"
+"\n"
 
 #: main.cpp:536
-#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Pou¾itie: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:539
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -471,6 +472,7 @@ msgstr ""
 "  -desc             Vypí¹e popis ¹etrièa obrazovky na stdout\n"
 "  -install          Nain¹taluje ¹etriè obrazovky\n"
 "  -lock             Vy¾aduje heslo na ukonèenie ¹etrièa obrazovky\n"
+"  -allow-root       Akceptova» rootovské heslo na odomknutie\n"
 "  -nice num         Prevedie so ¹pecifikovanou hodnotou nice\n"
 "\n"
 "  -preview wid      Prevedie vo ¹pecifikovanom X okne\n"
@@ -513,9 +515,8 @@ msgstr ""
 "Prevedené pre kscreensaver Emanuelom Pirkerom"
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Vesmír (GL)"
+msgstr "Rúry (GL)"
 
 #: pipes.cpp:672
 #, fuzzy
@@ -523,14 +524,12 @@ msgid "Setup KPipes"
 msgstr "Nastavenie KSlipu"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Poèet vèelièiek:"
+msgstr "Poèet rúr:"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Informácie o èiarach"
+msgstr "Informácie o Rúrach"
 
 #: pipes.cpp:745
 msgid ""
@@ -538,6 +537,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:64
 msgid "Polygons"
