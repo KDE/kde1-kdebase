@@ -1,4 +1,7 @@
 In kpanel-0.19:
+    Patchlevel 4: Mario Weilguni <mweilguni@kde.org>
+	- fixed kb659. Kpanel ignores unreadable applnk-directories instead of
+	  crashing
 
     Patchlevel 3:
        - bugfixes for kmenu and minipanel

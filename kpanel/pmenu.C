@@ -473,7 +473,7 @@ short PMenu::parse( QDir d )
     {
       if( fi->fileName() == "." || fi->fileName() == ".." )
 	{ ++it; continue; }
-      if( fi->isDir() )
+      if( fi->isDir() && fi->isReadable() )
 	{
 	  new_menu = new PMenu;
 	  new_menu->setAltSort(altSort);
