@@ -991,7 +991,8 @@ void kMorph3dSaver::readSettings()
 	else
 		speed = DEFSPEED;
 
-	str = config->readEntry( "ObjectType" );
+	str = config->readEntry( "MaxLevels" );
+	// CC: fixed MaxLevels <-> ObjectType inconsistency
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
@@ -1072,7 +1073,8 @@ void kMorph3dSetup::readSettings()
 	else if ( speed < MINSPEED )
 		speed = MINSPEED;
 
-	str = config->readEntry( "ObjectType" );
+	str = config->readEntry( "MaxLevels" );
+	// CC: fixed MaxLevels <-> ObjectType inconsistency
 	if ( !str.isNull() )
 		maxLevels = atoi( str );
 	else
