@@ -1,16 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
 <TITLE>KDE Display Manager (KDM): Installing kdm</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="kdm xdm display manager">
+<META NAME="description" CONTENT="documentation for the K Display Manager">
 </HEAD>
-<BODY>
-<A HREF="index-1.html">Previous</A>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
 <A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
 <A HREF="index.html#toc2">Table of Contents</A>
-<HR>
-<H2><A NAME="s2">2. Installing kdm</A></H2>
+</P>
+<H3><A NAME="s2">2. Installing kdm</A></H3>
 
 <P>See the file README! It will tell you how to compile kdm.
-<B>NOTE:</B> <CODE>make install</CODE> will overwrite your previous <CODE>kdmrc</CODE>.</P>
+<B>NOTE:</B> <CODE>make install</CODE> will overwrite your previous <CODE>kdmrc</CODE>.
 <P>Then you should insert the line
 <BLOCKQUOTE><CODE>
 <PRE>
@@ -20,7 +31,7 @@ kdmdesktop
 
 in the file called <CODE>XSetup_0</CODE> or similar in the xdm config directory
 (often <CODE>/etc/X11/xdm/XSetup_0</CODE>). Make sure the path is set,
-so that <CODE>kdmdesktop</CODE> can be executed.</P>
+so that <CODE>kdmdesktop</CODE> can be executed.
 <P>If you chose the PAM option, then you should check
 /etc/pam.conf for the lines
 <BLOCKQUOTE><CODE>
@@ -31,12 +42,12 @@ xdm    auth       required     pam_unix_acct.so
 </PRE>
 </CODE></BLOCKQUOTE>
 
-and insert them, if they aren't there.</P>
+and insert them, if they aren't there.
 <P>Now it's time to test kdm. You should bring your system to a runlevel
 that doesn't run xdm and try (as root) to say:
 <BLOCKQUOTE><CODE>
 <PRE>
-&gt; kdm -nodaemon
+> kdm -nodaemon
 </PRE>
 </CODE></BLOCKQUOTE>
 
@@ -52,11 +63,19 @@ If you dont like changing inittab,
 you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
 Kdm will read the general display manager settings from the xdm configuartion
 files and the kdm specific ones from the file
-$KDEDIR/share/config/kdmrc. Kdmdesktop will also read kdmrc.</P>
+$KDEDIR/share/config/kdmrc. Kdmdesktop will also read kdmrc.
+<P>
+<P ALIGN="RIGHT">
 
-<HR>
-<A HREF="index-1.html">Previous</A>
 <A HREF="index-3.html">Next</A>
+<A HREF="index-1.html">Previous</A>
 <A HREF="index.html#toc2">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
 </BODY>
 </HTML>
