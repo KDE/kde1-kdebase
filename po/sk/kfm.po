@@ -149,14 +149,12 @@ msgid "Never look in cache"
 msgstr "Nikdy nepou¾íva» cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "V¾dy pou¾íva» cache"
+msgstr "V¾dy uklada» cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Nikdy nepou¾íva» cache"
+msgstr "Nikdy neuklada» cache"
 
 # kfmgui.cpp:???
 #: kfmgui.cpp:424
@@ -251,7 +249,7 @@ msgstr "&Prida» zálo¾ku"
 
 #: kfmgui.cpp:961 kfmgui.cpp:968
 msgid "New "
-msgstr "Nový "
+msgstr "Vytvori» "
 
 #: kfmgui.cpp:1058 kfmgui.cpp:1220 kfmjob.cpp:33 kfmman.cpp:218
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
