@@ -3,7 +3,7 @@
 GMOFILES = kwm.gmo kfontmanager.gmo kcmbell.gmo kcminfo.gmo kcminput.gmo \
 	kcmkpanel.gmo kcmlocale.gmo kcmsamba.gmo kcmsyssound.gmo \
 	kcontrol.gmo kcmsyssound.gmo kdehelp.gmo kdm.gmo kpanel.gmo \
-	krootwm.gmo kstartondesk.gmo
+	krootwm.gmo kstartondesk.gmo kfm.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 

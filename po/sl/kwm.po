@@ -1,14 +1,14 @@
 # KWM translation to Slovene language.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>, 1998.
+# Bla¾ Zupanèiè <blazzupancic@hotmail.com>, 1998.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-06-18 22:21+0200\n"
-"PO-Revision-Date: 1998-05-10 20:17+0100\n"
-"Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
+"PO-Revision-Date: 1998-09-25 11:42+0100\n"
+"Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
 "Language-Team: Slovenian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -19,7 +19,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zgleda, da je neki okenski vmesnik ¾e nalo¾en. kwm se ne morezagnati\n"
+"kwm: zgleda da je neki okenski vmesnik ¾e nalo¾en. kwm se ne more zagnati\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -174,20 +174,3 @@ msgstr "Preklopi v"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Sedanja seansa"
-
-#~ msgid ""
-#~ "You want to switch to another window. Unfortunately you have selected \n"
-#~ "one of the classic focus policies which do not allow this.  These policies "
-#~ "are \n"
-#~ "included not because they make sense, but for compatibility reasons. Well, \n"
-#~ "even old hand unix users should feel comfortable with the K Desktop "
-#~ "Environment ;-)\n"
-#~ "\n"
-#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-#~ msgstr ""
-#~ "®eleli ste preklopiti v drugo okno. Na ¾alost vam nastavitve tega\n"
-#~ "ne dovoljujejo. Te niso vkljuèene, ker bi bile smiselne,\n"
-#~ "ampak zaradi zdru¾ljivosti.\n"
-#~ "Èe pa ¾elite sodobno upravljanje z okni, izberite raje\n"
-#~ "KlikniZaFokus ali pa FokusZasledujeMi¹ko."

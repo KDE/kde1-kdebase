@@ -1,14 +1,14 @@
 # KCMBELL translation to Slovene language
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>, 1998.
+# Bla¾ Zupanèiè <blazzupancic@hotmail.com>, 1998.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-04-29 21:08+0100\n"
-"Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
+"PO-Revision-Date: 1998-09-24 17:57+0100\n"
+"Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
 "Language-Team: Slovenian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"

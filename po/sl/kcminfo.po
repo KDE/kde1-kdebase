@@ -1,5 +1,5 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# KCMINFO translation to Slovene language.
+# Copyright (C) 1998 Free Software Foundation, Inc.
 # luka steger <luka_steger@hotmail.com>, 1998.
 #
 #, fuzzy
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-21\n"
+"PO-Revision-Date: 1998-09-24 18:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
 "MIME-Version: 1.0\n"
@@ -61,9 +61,8 @@ msgstr "%10ld bajtov = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "ni na voljo"
+msgstr "Ni na voljo"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

@@ -1,5 +1,5 @@
-# translation to slovene language
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# KCONTROL translation to Slovene language.
+# Copyright (C) 1998 Free Software Foundation, Inc.
 # luka steger, <luka_steger@hotmail.com>, 1998
 #
 #, fuzzy
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-06-29 14:46+0200\n"
-"PO-Revision-Date: 1998-07-17  20:15+0100\n"
+"PO-Revision-Date: 1998-09-24  18:22+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,6 @@ msgid "&Swallow modules"
 msgstr "&Zajemi module"
 
 #: toplevel.cpp:81
-#, fuzzy
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"
@@ -37,9 +36,9 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE nadzorni center - Verzija 0.3\n"
+"KDE nadzorni center - Verzija 1.0\n"
 "\n"
-"Avtor: Matthias Hölzer\n"
+"Napisal Matthias Hölzer\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"
 "\n"
 "Zahvaljujem se:\n"

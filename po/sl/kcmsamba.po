@@ -1,5 +1,5 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# KCMSAMBA translation to Slovene language.
+# Copyright (C) 1998 Free Software Foundation, Inc.
 # luka steger <luka_steger@hotmail.com>, 1998.
 #
 #, fuzzy
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsamba\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-06-21 00:52+0100\n"
+"PO-Revision-Date: 1998-09-24 18:06+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
 "MIME-Version: 1.0\n"
