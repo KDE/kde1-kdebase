@@ -248,7 +248,7 @@ void KFMDirTree::slotPopupCd()
 
 void KFMDirTree::slotPopupProperties()
 {
-    new Properties( popupDir );
+    (void)new Properties( popupDir );
 }
 
 void KFMDirTree::slotPopupBookmarks()

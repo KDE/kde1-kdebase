@@ -486,7 +486,7 @@ void KfmView::slotPopupProperties()
 	return;
     }
 
-    new Properties( popupFiles.first() );
+    (void)new Properties( popupFiles.first() );
 }
 
 void KfmView::slotPopupBookmarks()

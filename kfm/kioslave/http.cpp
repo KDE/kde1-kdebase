@@ -431,7 +431,7 @@ int KProtocolHTTP::ProcessHeader()
 	      const char * _type = buffer + 14;
 	      const char * tmpsep;
 	      QString tmptype;
-	      if ( tmpsep = strchr( _type, ';' ) )
+	      if ( (tmpsep = strchr( _type, ';' )) != 0 )
               {
 		tmptype = _type;
 		tmptype = tmptype.left( tmpsep - _type );

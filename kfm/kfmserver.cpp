@@ -222,7 +222,7 @@ void KFMServer::slotRefreshDirectory( const char* _url )
 
 void KFMServer::slotOpenProperties( const char* _url )
 {
-    new Properties( _url );
+    (void)new Properties( _url );
 }
 
 void KFMServer::slotExec( const char* _url, const char * _documents )
