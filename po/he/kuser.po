@@ -1,0 +1,680 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <erez-n@actcom.co.il>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-12-22 20:47+0600\n"
+"PO-Revision-Date: 1999-2-4 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-9959-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: mainWidget.cpp:22
+msgid "&Preferences..."
+msgstr "...תורדגה"
+
+#: mainWidget.cpp:28 mainWidget.cpp:35
+msgid "&Edit..."
+msgstr "...יוניש"
+
+#: mainWidget.cpp:29 mainWidget.cpp:36
+msgid "&Delete..."
+msgstr "...הקיחמ"
+
+#: mainWidget.cpp:30 mainWidget.cpp:37
+msgid "&Add..."
+msgstr "...הפסוה"
+
+#: mainWidget.cpp:31
+msgid "&Set password..."
+msgstr "...המסיס הנש"
+
+#: mainWidget.cpp:40
+#, c-format
+msgid ""
+"KUser version %s\n"
+"KDE project\n"
+"This program was created by\n"
+"Denis Y. Pershin\n"
+"dyp@inetlab.com\n"
+"Copyright 1997(c)"
+msgstr ""
+"%s הסריג םישמתשמה להנמ\n"
+"KDE טקיורפמ קלח\n"
+"ידי לע הבתכנ וז הנכות\n"
+"ןישרפ .י סינד\n"
+"dyp@inetlab.com\n"
+"1997 - תורומש תויוכזה לכ"
+#: mainWidget.cpp:51
+msgid "&User"
+msgstr "שמתשמ"
+
+#: mainWidget.cpp:52
+msgid "&Group"
+msgstr "הצובק"
+
+#: mainWidget.cpp:62
+msgid "Add user"
+msgstr "שמתשמ תפסוה"
+
+#: mainWidget.cpp:64
+msgid "Delete user"
+msgstr "שמתשמ תקיחמ"
+
+#: mainWidget.cpp:66
+msgid "Edit user"
+msgstr "שמתשמ תונוכת יוניש"
+
+#: grpnamedlg.cpp:17 mainWidget.cpp:71
+msgid "Add group"
+msgstr "הצובק תפסוה"
+
+#: mainWidget.cpp:73
+msgid "Delete group"
+msgstr "הצובק תקיחמ"
+
+#: mainWidget.cpp:75
+msgid "Edit group"
+msgstr "הצובק תונוכת יוניש"
+
+#: mainWidget.cpp:98
+msgid "Ready"
+msgstr "ןכומ"
+
+#: editGroupData.cpp:41 propdlg.cpp:318
+msgid "Users"
+msgstr "םישמתשמ"
+
+#: editGroupData.cpp:54 propdlg.cpp:343 propdlg.cpp:357
+msgid "Groups"
+msgstr "תוצובק"
+
+#: kuservw.cpp:49 propdlg.cpp:55
+msgid "User login"
+msgstr "שמתשמ תסינכ םש"
+
+#: kuservw.cpp:50
+msgid "Full Name"
+msgstr "אלמ םש"
+
+#: kgroupvw.cpp:49
+msgid "GID"
+msgstr "הצובק רפסמ"
+
+#: kgroupvw.cpp:50
+msgid "Group name"
+msgstr "הצובק םש"
+
+#: kdatectl.cpp:28
+msgid "January"
+msgstr "ראוני"
+
+#: kdatectl.cpp:29
+msgid "February"
+msgstr "ראורבפ"
+
+#: kdatectl.cpp:30
+msgid "March"
+msgstr "סראמ"
+
+#: kdatectl.cpp:31
+msgid "April"
+msgstr "לירפא"
+
+#: kdatectl.cpp:32
+msgid "May"
+msgstr "יאמ"
+
+#: kdatectl.cpp:33
+msgid "June"
+msgstr "ינוי"
+
+#: kdatectl.cpp:34
+msgid "July"
+msgstr "ילוי"
+
+#: kdatectl.cpp:35
+msgid "August"
+msgstr "טסוגוא"
+
+#: kdatectl.cpp:36
+msgid "September"
+msgstr "רבמטפס"
+
+#: kdatectl.cpp:37
+msgid "October"
+msgstr "רבוטקוא"
+
+#: kdatectl.cpp:38
+msgid "November"
+msgstr "רבמבונ"
+
+#: kdatectl.cpp:39
+msgid "December"
+msgstr "רבמצד"
+
+#: kgroup.cpp:126 kuser.cpp:388
+#, c-format
+msgid "Error opening %s for reading"
+msgstr "האירקל %s ךותפל ןתינ אל - האיגש"
+
+#: kuser.cpp:456
+#, c-format
+msgid ""
+"No /etc/passwd entry for %s.\n"
+"Entry will be removed at the next `Save'-operation."
+msgstr ""
+"%s שמתשמל /etc/passwd ב םושיר ןיא\n"
+"האבה הרימשה תלועפב קחמי םושירה"
+#: kgroup.cpp:173 kuser.cpp:503 kuser.cpp:589
+#, c-format
+msgid "Error opening %s for writing"
+msgstr "הביתכל %s חותפל ןתינ אל - האיגש"
+
+#: kuser.cpp:562
+msgid "Unable to build password database"
+msgstr "תואמסיסה תכרעמ תא תונבל ןתינ אל"
+
+#: kuser.cpp:600
+#, c-format
+msgid "No shadow entry for %s."
+msgstr "%s שמתשמל רתסנ םושיר ןיא"
+
+#: kuser.cpp:654
+msgid "You have more than 65534 users!?!? You have ran out of uid space!"
+msgstr "!תוצקהל שמתשמ ירפסמ רתוי ןיא ? םישמתשמ 65534 מ רתוי ךל שי"
+
+#: kuser.cpp:691
+#, c-format
+msgid "Directory %s already exists"
+msgstr "תמייק רבכ %s הירפיסה"
+
+#: kuser.cpp:698
+#, c-format
+msgid ""
+"Cannot create home directory\n"
+"Error: %s"
+msgstr ""
+"תיבה תיירפס תא רוציל ןתינ אל\n"
+"%s :האיגש"
+#: kuser.cpp:705
+#, c-format
+msgid ""
+"Cannot change owner of home directory\n"
+"Error: %s"
+msgstr ""
+"תיבה תירפס לע תולעבה תא תונשל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:712
+#, c-format
+msgid ""
+"Cannot change permissions on home directory\n"
+"Error: %s"
+msgstr ""
+"תיבה תיירפס לע תואשרהה תא תונשל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:753 kuser.cpp:760
+#, c-format
+msgid "Directory %s does not exist"
+msgstr "תמייק הניא %s היירפסה"
+
+#: kuser.cpp:777
+#, c-format
+msgid ""
+"Cannot change owner of file %s\n"
+"Error: %s"
+msgstr ""
+"%s ץבוקה לע תולעבה תא תונשל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:784
+#, c-format
+msgid ""
+"Cannot change permissions on file %s\n"
+"Error: %s"
+msgstr ""
+"%s ץבוקה לע תואשרהה תא תונשל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:810
+#, c-format
+msgid ""
+"Cannot remove home directory %s\n"
+"Error: %s"
+msgstr ""
+"%s תיבה תיירפס תא ריסהל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:833
+#, c-format
+msgid ""
+"Cannot remove crontab %s\n"
+"Error: %s"
+msgstr ""
+"%s שמתשמה לש תויטמוטואה תולועפה ץבוק תא ריסהל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:850
+#, c-format
+msgid ""
+"Cannot remove mailbox %s\n"
+"Error: %s"
+msgstr ""
+"%s שמתשמה לש ראודה יצבק תא ריסהל ןתינ אל\n"
+"%s : האיגש"
+#: kuser.cpp:868
+msgid "Cannot fork()"
+msgstr "ךילהת רוציל חילצמ אל"
+
+#: kgroup.cpp:228
+msgid "You have more than 65534 groups!?!? You have ran out of gid space!"
+msgstr "תוצובק רופסמל םירפסמה ורמגנ ?תוצובק 65534 מ רתוי ךל שי"
+
+#: main.cpp:49
+msgid "Only root is allowed to manage users."
+msgstr "םישמתשמ להנל יאשר root שמתשמה קר"
+
+#: main.cpp:58
+msgid "KDE User Manager"
+msgstr "KDE לש םישמתשמה להנמ"
+
+#: maindlg.cpp:154 maindlg.cpp:189 maindlg.cpp:494
+msgid "WARNING"
+msgstr "!! הרהזא"
+
+#: maindlg.cpp:155
+msgid "Do you really want to delete user ?"
+msgstr "? שמתשמה תא קוחמל ךנוצרש חוטב"
+
+#: maindlg.cpp:190
+msgid ""
+"You are using private groups.\n"
+"Do you want delete user's private group ?"
+msgstr ""
+"תויטרפ תוצובקב תשמתשמ תכרעמה\n"
+"? שמתשמה לש תיטרפה הצובקה תא קוחמל ךנוצרב םאה"
+#: maindlg.cpp:318
+msgid "Data was modified"
+msgstr "הנוש םישמתשמה עדימ"
+
+#: maindlg.cpp:319
+msgid "Would you like to save changes ?"
+msgstr "? םייונישה תא רומשל ךנוצרב םאה"
+
+#: maindlg.cpp:321
+msgid "Discard changes"
+msgstr "יונישהמ םלעתה"
+
+#: maindlg.cpp:359
+msgid "Edit defaults"
+msgstr "לדחמה תרירב יוניש"
+
+#: maindlg.cpp:387
+#, c-format
+msgid "Null pointer tmpKG in mainDlg::groupSelected(%d)\n"
+msgstr "Null pointer tmpKG in mainDlg::groupSelected(%d)\n"
+
+#: maindlg.cpp:393
+msgid "Group properties"
+msgstr "הצובקה ינייפאמ"
+
+#: maindlg.cpp:407
+#, c-format
+msgid "Null pointer tmpKU in mainDlg::userSelected(%d)\n"
+msgstr "Null pointer tmpKU in mainDlg::userSelected(%d)\n"
+
+#: maindlg.cpp:417
+#, c-format
+msgid "Null pointer tmpQ in mainDlg::selected(%d)\n"
+msgstr "Null pointer tmpQ in mainDlg::selected(%d)\n"
+
+#: maindlg.cpp:495
+msgid "Do you really want to delete group ?"
+msgstr "? הצובקה תא קוחמל ךנוצרבש חוטב התא"
+
+#: propdlg.cpp:54
+msgid "User name"
+msgstr "שמתשמה םש"
+
+#: propdlg.cpp:58
+msgid "User identificator"
+msgstr "שמתשמה רואית"
+
+#: propdlg.cpp:59
+msgid "User id"
+msgstr "שמתשמה רפסמ"
+
+#: propdlg.cpp:68
+msgid "Set password"
+msgstr "המסיס הנש"
+
+#: propdlg.cpp:73 propdlg.cpp:74
+msgid "Full name"
+msgstr "אלמ םש"
+
+#: propdlg.cpp:77 propdlg.cpp:100
+msgid "Login shell"
+msgstr "רוביחה תפטעמ"
+
+#: propdlg.cpp:79 userDefaultsPage.cpp:30
+msgid "<Empty>"
+msgstr "<קיר>"
+
+#: propdlg.cpp:105 propdlg.cpp:106
+msgid "Home directory"
+msgstr "תיבה תיירפס"
+
+#: propdlg.cpp:113 propdlg.cpp:114
+msgid "Office"
+msgstr "הדובע"
+
+#: propdlg.cpp:116
+msgid "Office description"
+msgstr "הדובעה רואית"
+
+#: propdlg.cpp:120 propdlg.cpp:121
+msgid "Office phone"
+msgstr "הדובעב ןופלט"
+
+#: propdlg.cpp:123
+msgid "Office phone number"
+msgstr "הדובעב ןופלטה רפסמ"
+
+#: propdlg.cpp:127 propdlg.cpp:128
+msgid "Home phone"
+msgstr "תיבב ןופלט"
+
+#: propdlg.cpp:130
+msgid "Home phone number"
+msgstr "תיבב ןופלטה רפסמ"
+
+#: propdlg.cpp:131 propdlg.cpp:190
+msgid "User info"
+msgstr "שמתשמה יטרפ"
+
+#: propdlg.cpp:139 propdlg.cpp:140
+msgid "Login class"
+msgstr "ןובשחה גוס"
+
+#: propdlg.cpp:142
+msgid "Login resource class"
+msgstr "ןובשחה יבאשמ גוס"
+
+#: propdlg.cpp:149
+msgid "Password never expires"
+msgstr "ןמז תלבגה אלל המסיס"
+
+#: propdlg.cpp:150
+msgid "Date when password expires"
+msgstr "המסיסה תגופת ךיראת"
+
+#: propdlg.cpp:158 propdlg.cpp:228
+msgid "Account never expires"
+msgstr "ךיראת תלבגה אלל ןובשח"
+
+#: propdlg.cpp:159 propdlg.cpp:229
+msgid "Date when account expires"
+msgstr "ןובשחה תגופת ךיראת"
+
+#: propdlg.cpp:167 propdlg.cpp:235
+msgid "Extended"
+msgstr "הכראה"
+
+#: propdlg.cpp:173
+msgid "The first office"
+msgstr "ןושארה דרשמה"
+
+#: propdlg.cpp:174
+msgid "Office1"
+msgstr "1 דרשמ"
+
+#: propdlg.cpp:176
+msgid "First office description"
+msgstr "ןושארה דרשמה רואית"
+
+#: propdlg.cpp:180
+msgid "The second office"
+msgstr "ינשה דרשמה"
+
+#: propdlg.cpp:181
+msgid "Office2"
+msgstr "2 דרשמ"
+
+#: propdlg.cpp:183
+msgid "Second office description"
+msgstr "ינשה דרשמה רואית"
+
+#: propdlg.cpp:186
+msgid "Postal address"
+msgstr "ראוד תבותכ"
+
+#: propdlg.cpp:187
+msgid "Address"
+msgstr "תבותכ"
+
+#: propdlg.cpp:188
+msgid "Full postal address"
+msgstr "האלמ תבותכ"
+
+#: propdlg.cpp:199
+msgid "Last password change"
+msgstr "המסיסה לש ןורחא יוניש"
+
+#: propdlg.cpp:200
+msgid "Change never allowed"
+msgstr "המסיסה תא תונשל ןתינ אל"
+
+#: propdlg.cpp:201
+msgid "Date until change allowed"
+msgstr "המסיס יוניש ינפל הלבגה ךיראת"
+
+#: propdlg.cpp:207
+msgid "Change does not required"
+msgstr "המסיס תונשל בייחל אל"
+
+#: propdlg.cpp:208
+msgid "Date before change required"
+msgstr "המסיס יונישל ןורחא ךיראת"
+
+#: propdlg.cpp:214
+msgid "User will never be warned"
+msgstr "המסיס תעיקפ לע שמתשמה תא ריהזהל אל"
+
+#: propdlg.cpp:215
+msgid ""
+"Date user will be warned about\n"
+"expiration"
+msgstr ""
+"ינפל שמתשמה תא ריהזהל שי וב ךיראת\n"
+"המסיסה תעיקפ "
+#: propdlg.cpp:221
+msgid "Account is active from the day of creation"
+msgstr "ותריצי םוימ ליעפ ןובשחה"
+
+#: propdlg.cpp:222
+msgid "Date before account inactive"
+msgstr "ןובשחה תוליעפ תליחת ךיראת"
+
+#: propdlg.cpp:244 propdlg.cpp:253
+msgid "Quota filesystem"
+msgstr "ןוסחיאה בחרמ תלבגה"
+
+#: propdlg.cpp:259 propdlg.cpp:260
+msgid "File soft quota"
+msgstr "רובעל ןתינ תינמז התוא הלבגמ"
+
+#: propdlg.cpp:265 propdlg.cpp:266
+msgid "File hard quota"
+msgstr "ןוסחיאה חטש לש תטלחומ הלבגמ"
+
+#: propdlg.cpp:269 propdlg.cpp:270
+msgid "File usage"
+msgstr "םיצבקב שומיש"
+
+#: propdlg.cpp:276 propdlg.cpp:277
+msgid "File time limit"
+msgstr "םיצבק לע ןמז תלבגמ"
+
+#: propdlg.cpp:283 propdlg.cpp:284
+msgid "iNode soft quota"
+msgstr "iNode ב שומיש תלבגמ"
+
+#: propdlg.cpp:289 propdlg.cpp:290
+msgid "iNode hard quota"
+msgstr "iNode לע תטלחומ הלבגמ"
+
+#: propdlg.cpp:293 propdlg.cpp:294
+msgid "iNode usage"
+msgstr "iNode ב שומיש"
+
+#: propdlg.cpp:300 propdlg.cpp:301
+msgid "iNode time limit"
+msgstr "iNode לע ןמז תלבגמ"
+
+#: propdlg.cpp:304
+msgid "Quota"
+msgstr "ןוסחיא תואצקה"
+
+#: propdlg.cpp:353
+msgid "Primary group"
+msgstr "תישאר הצובק"
+
+#: propdlg.cpp:368
+msgid "Edit User"
+msgstr "םיטרפ יוניש"
+
+#: addUser.cpp:72 propdlg.cpp:686
+#, c-format
+msgid "User with UID %u already exists"
+msgstr "תכרעמב %u רפסמ םע שמתשמ םייק"
+
+#: addUser.cpp:73 kerror.cpp:35 propdlg.cpp:687
+msgid "Message"
+msgstr "העדוה"
+
+#: misc.cpp:50
+#, c-format
+msgid "Can't create backup file for %s"
+msgstr "%s רובע יוביג ץבוק רוציל ןתינ אל"
+
+#: misc.cpp:163
+#, c-format
+msgid "File %s does not exist."
+msgstr "םייק וניא %s ץבוקה"
+
+#: misc.cpp:171
+#, c-format
+msgid "Can not open file %s for reading."
+msgstr "האירקל %s ץבוקה תא חותפל ןתינ אל"
+
+#: misc.cpp:179
+#, c-format
+msgid "Can not open file %s for writing."
+msgstr "הביתכל %s ץבוקה תא חותפל ןתינ אל"
+
+#: usernamedlg.cpp:15
+msgid "Enter username"
+msgstr "שמתשמ םש תנזה"
+
+#: usernamedlg.cpp:22
+msgid "Username:"
+msgstr "שמתשמה םש"
+
+#: usernamedlg.cpp:73
+#, c-format
+msgid "User with name %s already exists."
+msgstr "תכרעמב רבכ םייק %s םש םע שמתשמ"
+
+#: usernamedlg.cpp:79
+msgid "You have to enter a user name."
+msgstr "שמתשמ םש קפסל הבוח"
+
+#: pwddlg.cpp:24
+msgid "Enter password"
+msgstr "המסיס תנזה"
+
+#: pwddlg.cpp:31
+msgid "Password"
+msgstr "המסיס"
+
+#: pwddlg.cpp:49
+msgid "Retype password"
+msgstr "המסיס לע הרזח"
+
+#: pwddlg.cpp:105
+msgid ""
+"Passwords are not identical.\n"
+"Try again"
+msgstr ""
+"תונוש תנזהש תואמסיסה\n"
+"תינש הסנ אנא"
+#: grpnamedlg.cpp:24
+msgid "Group name:"
+msgstr "הצובק םש "
+
+#: grpnamedlg.cpp:30
+msgid "Group number:"
+msgstr "הצובק רפסמ "
+
+#: grpnamedlg.cpp:98
+#, c-format
+msgid "Group with name %s already exists."
+msgstr "תכרעמב רבכ תמייק %s םשב הצובק"
+
+#: grpnamedlg.cpp:104
+#, c-format
+msgid "Group with gid %d already exists."
+msgstr "תכרעמב רבכ תמייק %d רפסמב הצובק"
+
+#: addUser.cpp:31 addUser.cpp:48
+msgid "Create home directory"
+msgstr "תיב תיירפס תריצי"
+
+#: addUser.cpp:35 addUser.cpp:52
+msgid "Copy skeleton"
+msgstr "דלש יצבק קתעה"
+
+#: addUser.cpp:39 addUser.cpp:56 userDefaultsPageData.cpp:115
+msgid "Use Private Group"
+msgstr "תיטרפ הצובקב שמתשה"
+
+#: addUser.cpp:107
+#, c-format
+msgid "Directory %s already exists (uid = %d, gid = %d)"
+msgstr "%s היירפסה לע תולעב רבכ שי %d רפסמ שמתשמ %d רפסמ הצובקל"
+
+#: addUser.cpp:110
+#, c-format
+msgid "%s is not a directory"
+msgstr "תיקוח הירפס הנניא %s"
+
+#: addUser.cpp:136
+#, c-format
+msgid "Mailbox %s already exist (uid=%d)"
+msgstr "%s ראודה תבית לע תולעב שי %d רפסמ שמתשמל"
+
+#: addUser.cpp:139
+#, c-format
+msgid "%s exists but is not a regular file"
+msgstr "ליגר ץבוק ונניא לבא םייק %s ץבוקה"
+
+#: editDefaults.cpp:32 
+msgid "User"
+msgstr "שמתשמ"
+
+#: userDefaultsPageData.cpp:39
+msgid "Shell"
+msgstr "תפטעמ"
+
+#: userDefaultsPageData.cpp:64
+msgid "Base of home directories"
+msgstr "תיבה תוירפס לש סיסבה תיירפס"
+
+#: userDefaultsPageData.cpp:89
+msgid "Create home dir"
+msgstr "תיב תיירפס רוצ"
+
+#: userDefaultsPageData.cpp:102
+msgid "Copy skeleton to home dir"
+msgstr "תיבה תיירפסל לוחתא יצבק קתעה"

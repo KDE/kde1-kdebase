@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# FIRST AUTHOR <erez-n@actcom.co.il>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-02-04 02:46+0100\n"
+"PO-Revision-Date: 1999-02-04 HO:MI+ZONE\n"
+"Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:225
+msgid ": Error"
+msgstr " האיגש "
+
+#: main.cpp:226
+msgid "Only root is allowed to manage runlevels."
+msgstr "תרשה תא להנל יאשר root שמתשמה קר"
+
+#: OldView.cpp:105
+msgid "Available"
+msgstr "תונימז"
+
+#: OldView.cpp:106
+msgid "&Services"
+msgstr "םיתורש"
+
+#: OldView.cpp:110 OldView.cpp:115
+msgid ""
+"These are the <bold>available services</bold>\n"
+"To start a service, drag it to the <bold>\"Start\"</bold>section of a "
+"runlevel.\n"
+"\n"
+"To stop one, do the same for the <bold>\"Stop\"</bold> section."
+msgstr ""
+"תרשב םינימזה םיתורישה ךינפל\n"
+"וורג ,תמיוסמ הצרה תמרב ,םיוסמ תורש ליחתהל תנמ לע\n"
+".המרה לש הלחתהה קלח לא תורשה תא\n"
+"\n"
+"המרה לש הריגסה קלח לא ותוא רורג תורש רוצעל ידכ"
+#: OldView.cpp:143
+#, c-format
+msgid "Runlevel &%i"
+msgstr "%i הצרה תמר"
+
+#: OldView.cpp:146
+#, c-format
+msgid "Runlevel %i"
+msgstr "%i הצרה תמר"
+
+#: OldView.cpp:149
+msgid "Start"
+msgstr "הלחתה"
+
+#: OldView.cpp:249
+#, c-format
+msgid ""
+"Drag here to start services\n"
+"when entering Runlevel %i"
+msgstr ""
+"תורשה תא ליחתהל תנמ לע ןאכל רורג\n"
+"%i הצרה תמר תלעפומ רשאכ"
+#: OldView.cpp:250
+#, c-format
+msgid ""
+"Drag here to stop services\n"
+"when entering Runlevel %i"
+msgstr ""
+"תורשה תא םייסל תנמ לע ןאכל רורג\n"
+"%i הצרה תמרל רבעמב"
+#: OldView.cpp:340
+msgid "** WRITING CONFIGURATION **\n"
+msgstr "השדחה היצרוגיפנוקה תא בתוכ\n"
+
+#: OldView.cpp:343
+#, c-format
+msgid "** RUNLEVEL %i **\n"
+msgstr "%i הצרה תמר\n"
+
+#: OldView.cpp:517
+msgid "Reading configuration: "
+msgstr "תיחכונה היצרוגיפנוקה תא ארוק"
+
+#: OldView.cpp:619
+msgid "** Stopping "
+msgstr "תורשה תא רצוע"
+
+#: OldView.cpp:624
+msgid " stop"
+msgstr " רוצע "
+
+#: OldView.cpp:639
+msgid "** Starting "
+msgstr " תורשה תא ליחתמ "
+
+#: OldView.cpp:644
+msgid " start"
+msgstr " הלחתה "
+
+#: OldView.cpp:661
+msgid "** Re-starting "
+msgstr " תורשה תא שדחמ ליחתמ "
+
+#: OldView.cpp:666
+msgid " restart"
+msgstr " שדחמ לחתה "
+
+#: OldView.cpp:811
+msgid "P&roperties..."
+msgstr "...םינייפאמ"
+
+#: OldView.cpp:831
+msgid "S&top"
+msgstr "רוצע"
+
+#: OldView.cpp:833
+msgid "&Restart"
+msgstr "שדחמ לחתה"
+
+#: TopWidget.cpp:136
+msgid "&New Configuration"
+msgstr "השדח היצרוגיפנוק"
+
+#: TopWidget.cpp:137
+msgid "&Save Configuration"
+msgstr "תורדגה רומש"
+
+#: TopWidget.cpp:143
+msgid "Print &Log..."
+msgstr "...בקעמ ספדה"
+
+#: TopWidget.cpp:170
+msgid "Show &Tool Bar"
+msgstr "םילכ לגרס גצה"
+
+#: TopWidget.cpp:171
+msgid "Show &Status Bar"
+msgstr "בצמ תרוש גצה"
+
+#: TopWidget.cpp:172
+msgid "Show &Log"
+msgstr "בקעמ גצה"
+
+#: TopWidget.cpp:174
+msgid "&Configure..."
+msgstr "...תורדגה"
+
+#: TopWidget.cpp:177
+msgid "&Save Options"
+msgstr "...תורדגה רומש"
+
+#: TopWidget.cpp:215
+msgid "New"
+msgstr "שדח"
+
+#: TopWidget.cpp:244
+msgid "Toggle script output"
+msgstr "טלפ רתסה-גצה"
+
+#: TopWidget.cpp:261
+msgid ""
+"There are unsaved changes.\n"
+"Are you sure you want to quit?"
+msgstr ""
+"ורמשנ אלש םיוניש ועצוב\n"
+"? םהמ םלעתהלו שוטנל"
+#: TopWidget.cpp:263
+msgid "Yes, quit!"
+msgstr "!שוטנל ,ןכ"
+
+#: TopWidget.cpp:264
+msgid "No, don't quit."
+msgstr "שוטנל אל ,אל"
+
+#: TopWidget.cpp:292
+msgid "Clear Changes"
+msgstr "םייוניש לטב"
+
+#: TopWidget.cpp:293
+msgid "Do you really want to clear all unsaved changes?"
+msgstr "? ורמשנ אלש םיונישה לכ תא לטבנל תמאב"
+
+#: TopWidget.cpp:307
+msgid "Save configuration"
+msgstr "היצרוגיפנוק רומש"
+
+#: TopWidget.cpp:308
+msgid ""
+"You're about to save the changes made to your init configuration.\n"
+"Please realize that wrong settings could result in your system being "
+"unbootable.\n"
+"\n"
+"Do you wish to continue?"
+msgstr ""
+"לוחתיאה יצבקל םייוניש עצבל ךלוה ךנה\n"
+"םורגל םילולע םינוכנ אל םייונישש הדבועל עדומ היה\n"
+"הרושכ תולעל אלו דקפתל אל תכרעמל\n"
+"\n"
+"? ךישמהל הצרת םאה"
+#: TopWidget.cpp:313
+msgid "Yes, &save!"
+msgstr "רומש ,ןכ"
+
+#: TopWidget.cpp:314
+msgid "No, &don't save."
+msgstr "רומשת לא ,אל"
+
+#: TopWidget.cpp:397
+msgid "About Qt"
+msgstr "Qt תודוא"
+
+#: TopWidget.cpp:472
+msgid "Changed"
+msgstr "הנוש"
+
+#: TopWidget.cpp:589
+msgid "Could not generate sorting number. Please change manually."
+msgstr "ינדי ןפואב הנש אנא ,ןוימ רפסמ קיפהל ןתינ אל"
+
+#: prefs.cpp:48
+#, c-format
+msgid "%s - Preferences"
+msgstr "%s - לש תופדעה"
+
+#: prefs.cpp:58
+msgid "Directory containing your init-scripts (&services)"
+msgstr " לוחתאה יצבק תא תללוכה היירפסה "
+
+#: prefs.cpp:79
+msgid "Directory containing your &runlevel-directories"
+msgstr " הצרהה תומר תוירפס תא תללוכה הירפסה "
+
+#: prefs.cpp:117
+msgid "Color for &new entries"
+msgstr " םישדח םיכרע לש עבצ "
+
+#: prefs.cpp:118
+msgid "Color for c&hanged entries"
+msgstr " ונושש םיכרע לש עבצ "
+
+#: prefs.cpp:148
+msgid "&Paths"
+msgstr "תוירפס"
+
+#: prefs.cpp:149
+msgid "&Colors"
+msgstr "םיעבצ"
+
+#: trash.cpp:55 trash.cpp:56
+msgid "Drag here to remove services"
+msgstr "תורש ריסהל תנמ לע ןאכל רורג"
+
+#: PropDlg.cpp:52
+msgid "&Name"
+msgstr "םש"
+
+#: PropDlg.cpp:54
+msgid "&Points to"
+msgstr "תודוקנ"
+
+#: PropDlg.cpp:56
+msgid "&Sorting number"
+msgstr "ןוימ רפסמ"
+
+#: PropDlg.cpp:113
+#, c-format
+msgid "%s - Properties"
+msgstr "%s - לש םינייפאמ"
+
+#: IOCore.cpp:48
+#, c-format
+msgid "FAILED to remove %s from %s: \"%s\"\n"
+msgstr "%s תא %s מ ריסהל ןויסנב:%s האיגש\n"
+
+#: IOCore.cpp:53
+#, c-format
+msgid "removed %s from %s\n"
+msgstr "%s תורשה רסוה %s המרמ\n"
+
+#: IOCore.cpp:80
+#, c-format
+msgid "created %s in %s\n"
+msgstr "%s תורישה ףסוה %s המרב\n"
+
+#: IOCore.cpp:84
+#, c-format
+msgid "FAILED to create %s in %s: \"%s\"\n"
+msgstr "%s תורשה תא %s ל ףיסוהל ןויסינב %s האיגש\n"
+
+#: About.cpp:46
+#, c-format
+msgid "About %s"
+msgstr "%s תודוא"
+
+#: About.cpp:64
+msgid "KDE SysV Init Editor"
+msgstr " KDE לש םיתורשה להנמ"
+
+#: About.cpp:81
+#, c-format
+msgid "Version %s (KDE %s)"
+msgstr " %s - הנכות תסריג %s- KDE תסריג"
+
+#: About.cpp:89
+msgid "© 1997-1999 "
+msgstr "1997-9 תורומש תויוכזה לכ"
+
+#: About.cpp:99
+msgid "Peter Putzer"
+msgstr "רצופ רטפ"
+
+#: About.cpp:103
+msgid "Mail bug report/success story/lots of money/..."
+msgstr "ףסכ הברה הברהו ,החלצה ירופיס ,םיגאב יחוויד חולשל אנא"
+
+#: About.cpp:115
+msgid ". All rights reserved."
+msgstr "תורומש תויוכזה לכ "
+
+#: About.cpp:122
+msgid ""
+"IPC parts taken from kdehelp © 1997 Martin Jones.\n"
+"Uses the KDE libraries © 1997-1999 The KDE Team.\n"
+"Uses the Qt library © 1992-1998 Troll Tech AS."
+msgstr ""
+"סנוג ןיטרמ © kdehelp מ חקלנ םיכילהת ןיב רושיק\n"
+"KDE תווצ 1997-1999 © KDE תוירפסב שומיש שי\n"
+"קט לורט 1992-1998 © Qt תיירפסב שמתשמ"
+
+#: About.cpp:129
+msgid ""
+"An editor for SysV-style init configuration, similar to Red Hat's "
+"\"tksysv\",\n"
+"only ksysv allows drag-and-drop, as well as keyboard use."
+msgstr ""
+"tksysv ל המודה הצרה תומרו לוחתיא תויצרוגיפנוק ךרוע\n"
+"טאה-דר תרבח לש\n"
+"תדלקמב שומישל ףסונב םילמס לש הרירג רשפאמ לבא"
+#: About.cpp:142
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the\n"
+"terms of version 2 of the GNU General Public License as published by the "
+"Free\n"
+"Software Foundation.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY\n"
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or\n"
+"FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License\n"
+"for more details."
+msgstr ""
+"תישפוח הנכות איה תאזה הנכותה\n"
+"לש םיאנתה תחת התוא תונשלו התוא קיתעהל ןתינ\n"
+"תישפוחה הנכותה דסומ ידי לע םסרופש יפכ 2 הסריג GNU ןוישר\n"
+"תוירחא אלל לבא תישומיש היהתש הווקתב תצפומ הנכותה\n"
+"תרדגומ הרטמל המאתה לע תוירחא אלל וליפא\n"
+"2 רפסמ GNU לש יבמופה ןוישרב ןייעל שי\n"
+"םיפסונ םיטרפל"
