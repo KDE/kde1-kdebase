@@ -46,12 +46,6 @@ void KFMPaths::initPaths()
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
 
-  // To enable the user to edit the paths
-  config->writeEntry("Desktop", *desktopPath);
-  config->writeEntry("Templates", *templatePath);
-  config->writeEntry("Autostart", *autostartPath);
-  config->writeEntry("Trash", *trashPath);
-  config->sync();
 }
 
 QString KFMPaths::DesktopPath()

@@ -1,3 +1,10 @@
+Fri Mar 13 21:42:15 1998  Stephan Kulow  <coolo@kde.org>
+
+	* kfmpaths.cpp: don't write the config paths back. I wrote this
+	once, but I think, adding them them to the default configuration
+	taken $HOME is much better I think. (I struggeled about this some
+	times myself working in a network)
+
 1998-03-13  Stephan Kulow  <coolo@kde.org>
 
 	* kfmview.cpp: fixed a encoding bug for the trash folder.

@@ -1,5 +1,9 @@
-[Templates]
-Path=$HOME/Desktop/Templates
+# KDE Config File
+[Paths]
+Trash=$HOME/Desktop/Trash/
+Desktop=$HOME/Desktop/
+Templates=$HOME/Desktop/Templates/
+Autostart=$HOME/Desktop/Autostart/  
 [Icons]
 Batch=terminal.xpm
 Default=unknown.xpm
