@@ -1,28 +1,36 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
 <HTML>
 <HEAD>
    <TITLE>maudio User Manual</TITLE>
-   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; Linux 2.0.0 i586) [Netscape]">
 </HEAD>
 <BODY>
 
 <H3>maudio - audio player for the KDE environment</H3>
 
-<P>
-<HR WIDTH="100%"></P>
+This help page was last updated on 25.1.1998
+<P><HR WIDTH="100%"></P>
 
-<P>This player plays WAV medias.</P>
+<P>This player plays WAV medias. It is a mediatool compliant media player
+and is used by kmedia ande the KDE games.
+It can only play PCM coded WAV files.
+</P>
 
 <UL>
 <LI>It uses <I>/dev/dsp</I>. You cannot configure him to use other devices
 currently.</LI>
 
-<LI>It also grabs <I>/dev/dsp</I> and releases it after a short period
+<LI>It grabs <I>/dev/dsp</I> and releases it after a short period
 of idle time.</LI>
 
-<LI>This version is much improved against the last versions. Still it has
-problems with leading and trailing garbage, which will often get played.</LI>
 </UL>
+
+<P><HR WIDTH="100%"></P>
+This version should play most WAV medias flawlessy. Please note that
+ADPCM WAVs are not supported at all. Please let me know if Wav playing
+with kmedia and the KDE games works for you or not. Mail your comments
+to <A HREF="mailto:esken@kde.org">Christian Esken</A>.
+
 
 </BODY>
 </HTML>
