@@ -12,7 +12,7 @@
 
 <title>Display Setup Handbook
 <author>Mark Donohoe and Martin Jones, updated by Duncan.
-<date>v1.2, 23 Aug 1999
+<date>v1.3, 06 September 1999
 
 <!-- Table of contents -->
 <toc>
@@ -192,30 +192,23 @@ sequence of  backgrounds that will be sampled if the ``<bf>pick files
 from directory</bf>'' option is <it>not</it> active.
 <itemize>
 <item>
-To add an entry to this sequence, 
-click on <bf>Add</bf>; this will add
-a highlighted  <tt>No Wallpaper</tt> entry for the 
-currently-selected Color background 
-from the main Background <bf>Display settings</bf> screen to the sequence.
+Click on an entry to highlight it; it will be
+previewed in the main Background dialog Preview Monitor.  
 <item>
-To replace  an
-entry, first click on it to select it
-(the selected item is highlighted).
-Now go back to the main Background
-<bf>Display settings</bf> screen 
-(without closing the <bf>Random mode setup</bf> screen)
-and deselect <bf>Random</bf>.
-Whatever <bf>Wallpaper</bf> (including
-<tt>No Wallpaper</tt>) you now select will replace the highlighted
-entry in the Random Mode background sequence.
+Click on <bf>Add</bf> To add an entry to this sequence.
+This will open a  dialog which
+allows you to choose a Wallpaper file.
+(Initially, the contents of the KDE default wallpaper directory are
+displayed, but you may change
+to other directories).  
+Select a file, and click on ``OK''. If your choice
+is valid, it will be added to the sequence.
+<item>
 Click on <bf>Delete</bf> to remove the highlighted
 item from the Random Mode backgrounds sequence.
+</itemize>
 In this way, you can construct any sequence of backgrounds
 you wish.  Click on <bf>OK</bf> when you are satisfied with it.
-<item>
-Don't forget to reselect <bf>Random</bf> in the main Background
-Display Setting screen to activate your Random Mode backgrounds.
-</itemize>
 </itemize>
 
 
