@@ -115,6 +115,13 @@ const bool true = 1;
 #endif
 
 /* this is needed for Solaris and others */
+#ifndef HAVE_USLEEP
+#ifdef __cplusplus
+extern "C"
+#endif
+void usleep(unsigned int usec);
+#endif  
+
 #ifndef HAVE_GETDOMAINNAME
 #define HAVE_GETDOMAINNAME
 #ifdef __cplusplus  
