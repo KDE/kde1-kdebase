@@ -166,8 +166,20 @@ bool KModuleListEntry::execute(QWidget *parent)
 	  executable.truncate(pos);
 	}
 
-      // set parameters
+      // set executable
       process->setExecutable(executable);
+
+      // swallowing? then move out of screen, set unique title
+      if (isSwallow())
+	{
+	  *process << "-swallow" << swallowTitle;
+	  *process << "-geometry" << "480x480+10000+10000";
+
+	  // connect to KWM events to get notification if window appears
+	  connect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
+	}
+
+      // set additional parameters
       if (!params.isEmpty())
 	{
 	  // Note: This will only handle 1 parameter correctly! 
@@ -175,15 +187,6 @@ bool KModuleListEntry::execute(QWidget *parent)
 	}
       QObject::connect(process, SIGNAL(processExited(KProcess *)), this, SLOT(processExit(KProcess *)));
 
-      // swallowing? then move out of screen, set unique title
-      if (isSwallow())
-	{
-	  *process << "-geometry" << "480x480+10000+10000";
-	  *process << "-title" << swallowTitle;
-
-	  // connect to KWM events to get notification if window appears
-	  connect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
-	}
 
       // start process
       process->start();
