@@ -63,10 +63,8 @@ If you get a kdm login box and you are able to log in, things are great.
 The main thing that can go wrong here, is that the runtime linker might
 not find the shared Qt or KDE libraries. When everything works, then edit
 /etc/inittab to execute kdm instead of xdm. If you have a binary
-distribution of the KDE libraries, it might be nescesary to tell kdm
-where kde is installed (if the location of kde isn't found, icons will
-miss). This is done with the "kdm -kdedir /path/to/kde"
-option (note that KDEDIR cant be set if kdm is started from inittab).
+distribution of the KDE libraries, make sure kdm is installed where
+the libraries believe kde is installed.
 If you dont like changing inittab,
 you might instead rename xdm to xdm.bak and make xdm a symlink to kdm.
 Kdm will read the general display manager settings from the xdm configuartion
@@ -76,10 +74,11 @@ files and the kdm specific ones from the file
 <sect>Configuring kdm
 
 <p>
-There are no graphical tools for changing the look and behaviour of
-kdm, so is you dont like to edit config files by hand - just use the defaults.
-When Python-Qt is done i might write a python script for configuring
-kdm.
+There is a graphical tool for configuring kdm. You will find it under
+the menu K/Settings/Applications/. With this tool you can configure the
+kdm specific options (stored in kdmrc), but kdm still has to be set up properly just like
+xdm,
+so please read on.
 <p>
 If you have xdm installed, you probably dont need to modify your
 Xsession script, but take a look at the files in the "samples" directory
