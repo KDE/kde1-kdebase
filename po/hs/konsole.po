@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: konsole \n"
+"POT-Creation-Date: 1999-05-16 12:27+0100\n"
+"PO-Revision-Date: 1999-05-16 12:50+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-insitut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+"\n"
+"Code zakónèenja = "
+
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme' for details."
+msgstr ""
+"%s wersija %s - X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Tutón program je swobodnje wu¾iwajomny\n"
+"na zak³ad¼e Artistiskeje licency a pøiñd¼e\n"
+"BJEZ ®ADNEJe GARANTIJE.\n"
+"Detajle su w  'LICENSE.readme'."
+
+msgid "&About ..."
+msgstr "&Informacija..."
+
+msgid "&Font"
+msgstr "&Pismo"
+
+msgid "&Frame"
+msgstr "&Ramik"
+
+msgid "&Hide"
+msgstr "&Schowaj"
+
+msgid "&Huge"
+msgstr "&Hoberske"
+
+msgid "&Large"
+msgstr "&Wulke"
+
+msgid "&Left"
+msgstr "Na&lìwo"
+
+msgid "&Linux"
+msgstr "&Linux"
+
+msgid "&Medium"
+msgstr "S&rìdne"
+
+msgid "&Menubar"
+msgstr "&Menijowy pask"
+
+msgid "&More ..."
+msgstr "Wja&ce ..."
+
+msgid "&Normal"
+msgstr "No&rmalne"
+
+msgid "&Right"
+msgstr "Na&prawo"
+
+msgid "&Save options"
+msgstr "&Zawìsæ opcije"
+
+msgid "&Schema"
+msgstr "&©ema"
+
+msgid "&Size"
+msgstr "&Wulkosæ"
+
+msgid "&Small"
+msgstr "&Ma³e"
+
+msgid "&Technical Reference ..."
+msgstr "Tec&hniske detajle"
+
+msgid "&User's Manual ..."
+msgstr "Pøiruèka za wu¾iwarja"
+
+msgid "40x15 (&small)"
+msgstr "40x15 (&ma³e)"
+
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmv&ga)"
+
+msgid "About %s"
+msgstr "Informacje wo %s"
+
+msgid "BS sends &DEL"
+msgstr "BS sæele &DEL"
+
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+"Njejsym pismo '%s' namaka³\n"
+"Pomoc namaka¹ w README.linux.console"
+
+msgid "Linux (small)"
+msgstr "Linux (ma³a)"
+
+msgid "Scroll&bar"
+msgstr "Pøesuwanski pask"
+
+msgid "Sessions"
+msgstr "Sesije"
+
+msgid "Welcome to the console"
+msgstr "Witaj na konsoli"
+
+msgid "`%s' terminated abnormally."
+msgstr "`%s' je so na njepøedwid¼ane wa¹nje zakoñèi³o."
+
+msgid "cd"
+msgstr "cd"

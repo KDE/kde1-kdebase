@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm \n"
+"POT-Creation-Date: 1999-05-16 16:25+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Pro¹u wu¾iwaj dataje z tutymi ekstensijemi\n"
+
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"njewupada ka¾ wobrazowa dataja"
+
+msgid "&Appearance"
+msgstr "&Napohlad"
+
+msgid "&Background"
+msgstr "&Pozadk"
+
+msgid "&Sessions"
+msgstr "&Sesije"
+
+msgid "&Users"
+msgstr "&Wu¾iwarjo"
+
+msgid "<"
+msgstr "<"
+
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Njezawìsæu ..."
+
+msgid "All"
+msgstr "W¹itcy"
+
+msgid "All users"
+msgstr "W¹itcy wu¾iwarjo"
+
+msgid "Allow to shutdown"
+msgstr "Dowol system hasnyæ"
+
+msgid "Available types"
+msgstr "Mó¾ne typy"
+
+msgid "BottomLeft"
+msgstr "Deleka nalìwo"
+
+msgid "BottomRight"
+msgstr "Deleka naprawo"
+
+msgid "Center"
+msgstr "Dosrjed¼a"
+
+msgid "Change font..."
+msgstr "Zmìñ &pismo ..."
+
+msgid "Click or drop an image here"
+msgstr "Klikni abo pu¹æ tu wobraz"
+
+msgid "Color"
+msgstr "Barba"
+
+msgid "Commands"
+msgstr "Pøikazy"
+
+msgid "Console Only"
+msgstr "Jeno¾ konsola"
+
+msgid "ERROR"
+msgstr "ZMYLK"
+
+msgid "Example"
+msgstr "Pøik³ad"
+
+msgid "Fail"
+msgstr "Zmylk"
+
+msgid "Fail font"
+msgstr "Zmylk pisma"
+
+msgid "Fancy"
+msgstr "©ikwane"
+
+msgid "GUI Style:"
+msgstr "GUI-stil:"
+
+msgid "Greeting"
+msgstr "Powitanje"
+
+msgid "Greeting font"
+msgstr "Pismo powitanja"
+
+msgid "Greeting string:"
+msgstr "Tekst powitanja:"
+
+msgid "Horizontal Blend"
+msgstr "Wodorunje sp³uwaæ"
+
+msgid "Improper File Extension"
+msgstr "Njedowolena ekstensija"
+
+msgid "KDM Configuration"
+msgstr "KDM-konfiguracija"
+
+msgid "KDM logo:"
+msgstr "KDM-logo:"
+
+msgid "Language"
+msgstr "Rìè"
+
+msgid "Language:"
+msgstr "Rìè:"
+
+msgid "Missing privileges"
+msgstr "Falowace prawa"
+
+msgid "Motif"
+msgstr "Motif"
+
+msgid "New type"
+msgstr "Nowy typ"
+
+msgid "No user selected"
+msgstr "®adyn wu¾iwar wubrany"
+
+msgid "No-show users"
+msgstr "Njepokazani wu¾iwarjo"
+
+msgid "None"
+msgstr "®ana"
+
+msgid "Preview"
+msgstr "Napohlad"
+
+msgid "Restart"
+msgstr "Znowa startowaæ"
+
+msgid "Root Only"
+msgstr "Jeno¾ root"
+
+msgid "Save image as default image?"
+msgstr "Wobraz jako standard zapisaæ?"
+
+msgid "Scale"
+msgstr "Skalìrowane"
+
+msgid "Select fonts"
+msgstr "Wubjer pisma"
+
+msgid "Selected users"
+msgstr "Wubrani wu¾iwarjo"
+
+msgid "Session types"
+msgstr "Typ sesije"
+
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Pokazuj w¹tkich\n"
+"nimo njepokazanych"
+
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Pokazuj jedo¾\n"
+"wubranych"
+
+msgid "Show users"
+msgstr "Poka¾ wu¾iwarjow"
+
+msgid "Shutdown"
+msgstr "System hasnyæ"
+
+msgid "Solid Color"
+msgstr "Jednora barba"
+
+msgid "Sorry, but \n"
+msgstr "Je mi ¾el, ale \n"
+
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Je mi ¾el, ale nima¹ prawa èitanja/pisanja\n"
+"do konfiguraciskeje dataje KDMa."
+
+msgid "Sort users"
+msgstr "Sortìruj wu¾iwarjow"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Standard font"
+msgstr "Standardowe pismo"
+
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Zmylk pøi èitanju wobraza:\n"
+">"
+
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Zmylk pøi zawìsæenju wobraza:\n"
+">"
+
+msgid "Tile"
+msgstr "Kachlicy"
+
+msgid "TopLeft"
+msgstr "Horjeka nalìwo"
+
+msgid "TopRight"
+msgstr "Horjeka naprawo"
+
+msgid "Vertical Blend"
+msgstr "Padorunje sp³uwaæ"
+
+msgid "Wallpaper"
+msgstr "Tapeta"
+
+msgid "Windows"
+msgstr "Windows"
+
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"Wu¾iwanje: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+
+msgid "without name!"
+msgstr "bjez pomjenowanja!"

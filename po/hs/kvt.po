@@ -1,0 +1,257 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kvt \n"
+"POT-Creation-Date: 1999-05-16 19:13+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"\n"
+"Emulacija terminala za grafisku wokolinu KDE\n"
+"zepìrana na rxvt-2.08 Roberta Nationa\n"
+"\n"
+"zeserb¹æi³\n"
+"Edward Wornar (edi@serbski-institut.lusatia.de)"
+
+msgid "&Color"
+msgstr "&Barby"
+
+msgid "&Custom Colors"
+msgstr "&Nastajene barby"
+
+msgid "&Font size"
+msgstr "&Wulkosæ pisma"
+
+msgid "&Hide"
+msgstr "&Schowaj"
+
+msgid "&Huge"
+msgstr "&Hoberske"
+
+msgid "&Large"
+msgstr "&Wulke"
+
+msgid "&Left"
+msgstr "Na&lìwo"
+
+msgid "&Medium"
+msgstr "Srjed¼ne"
+
+msgid "&New Terminal"
+msgstr "&Nowy terminal"
+
+msgid "&Normal"
+msgstr "&Standard"
+
+msgid "&Right"
+msgstr "Na&prawo"
+
+msgid "&Show"
+msgstr "Po&ka¾"
+
+msgid "&Size"
+msgstr "&Wulkosæ"
+
+msgid "&Small"
+msgstr "&Ma³e"
+
+msgid "&Tiny"
+msgstr "Mólè&ke"
+
+msgid "&black/white"
+msgstr "&èornobì³e"
+
+msgid "&green/black"
+msgstr "&zelenoèorne"
+
+msgid "&white/black"
+msgstr "&bì³oèorne"
+
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+"-7                        7-bitowy modus\n"
+"-8                        8-bitowy modus\n"
+
+msgid "-C                        Capture system console message\n"
+msgstr "-C                       Pokazuj powìsæe ze systomoweje konsole\n"
+
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+"-T <tekst>                tekst we woknowym titlu\n"
+"                          (wucofane, wu¾iwaj opciju -caption)\n"
+
+msgid "-display <name>           specify the display (server)\n"
+msgstr "-display <mjeno>         specificìruj display (serwer)\n"
+
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+"-e <polecenie> <arg> ...  zwo³anie pøikaza z arg. - dyrbi byæ posledni argument\n"
+
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\tgreek kbd = ELOT 928 (standard)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr "-linux                   linuxowy modus\n"
+
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+"-ls                       inicializacija kvt jako pøizjewjenska sesija\n"
+"-ls-                      inicializacija kvt jako normala sesija\n"
+
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+"-meta                     Meta dóstanje prefiks ESCAPE,\n"
+"                          wosmy bit bud¼e sad¼eny abo ignorowany\n"
+
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr "-n <tekst>                titl ikony\n"
+
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr "-no_font_hack            wu¹altuj wobeñd¼enje pismoweho zmylka w Qt\n"
+
+msgid "-no_menubar               hide the menubar\n"
+msgstr "-no_menubar              schowaj menijowy pask\n"
+
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr "-no_scrollbar            schowaj pøesuwanski pask\n"
+
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+"-pageup <klawisz>         kombinacija Alt-tasta pøesuwa bufer horje\n"
+"-pagedown <klawisz>       kombinacija Alt-tasta pøesuwa bufer dele\n"
+
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr "-print-pipe <nazwa>      podaj had¼icu za vt100-æi¹æak\n"
+
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr "-sl <numer>              èis³o spomjatkowanych linkow w bufrje\n"
+
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr "-tn <TERM>                typ terminala. standard je xterm.\n"
+
+msgid "-vt_bg <colour>           background color\n"
+msgstr "-vt_bg <kolor>           barba pozadka\n"
+
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr "-vt_fg <kolor>           barba pisma\n"
+
+msgid "-vt_font <fontname>       normal font\n"
+msgstr "-vt_font <nazwa>         standardowe pismo\n"
+
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr "-vt_geometry <wymiar>    spoèatna woknowa geometrija\n"
+
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr "-vt_size <rozmiar>        tiny, small, normal, large, huge\n"
+
+msgid "Add characters to word class"
+msgstr "Dodaj pismiki do klasy s³owow"
+
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+msgstr ""
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulacija terminala za grafisku wokolinu KDE\n"
+"zepìrana na rxvt-2.08 Roberta Nationa\n"
+"\n"
+"zeserb¹æi³\n"
+"Edward Wornar (edi@serbski-institut.lusatia.de)\n"
+"\n"
+
+msgid "Cursor key set"
+msgstr "kursorowe tasty"
+
+msgid "Enable &hotkeys"
+msgstr "Za¹altuj hotkeys"
+
+msgid "Font..."
+msgstr "Pismo ..."
+
+msgid "Hide &Menubar"
+msgstr "Schowaj &menijowy pask"
+
+msgid "Hint"
+msgstr "Pokiw"
+
+msgid "Linu&x Console"
+msgstr "Linu&xowa konsola"
+
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Nowe nastajenja barbow so pokazuja,\n"
+"hdy¾ so tastatura wotamknje."
+
+msgid "Permitted arguments are:\n"
+msgstr "Dowolene argumenty su:\n"
+
+msgid "Save &Options"
+msgstr "Zawìsæ &opcije"
+
+msgid "Scroll&bar"
+msgstr "Pøesuwanski &pask"
+
+msgid "Secure &keyboard"
+msgstr "Zamkni &tastaturu"
+
+msgid "Show &Menubar"
+msgstr "Poka¾ &menijowy pask"
+
+msgid "Terminal Options"
+msgstr "Opcije terminala"
+
+msgid "Terminal..."
+msgstr "Terminal..."
+
+msgid "The backspace key will send a"
+msgstr "Tasta backspace <- sæele"
+
+msgid "Unsecure &keyboard"
+msgstr "Wotamkni &tastaturu"
+
+msgid "black/light&yellow"
+msgstr "èorno¾o³te"
+
+msgid "choose type of color-mode"
+msgstr "wubjer barbowy modus"
+
+

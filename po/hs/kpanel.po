@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm \n"
+"POT-Creation-Date: 1999-05-16 16:25+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid ""
+"\n"
+"%b %d"
+msgstr ""
+"\n"
+"%b %d"
+
+msgid "&Move"
+msgstr "&Pøesuñ"
+
+msgid "&Properties"
+msgstr "&Nastajenja"
+
+msgid "(Access Denied)"
+msgstr "(®adyn pøistup)"
+
+msgid "(Too Many Files)"
+msgstr "(Pøewjele datajow)"
+
+msgid "(Unreadable)"
+msgstr "(Njeèitajomne)"
+
+msgid "(empty folder)"
+msgstr "(prózdny zapisk)"
+
+msgid "Add Application"
+msgstr "Dodaj aplikaciju"
+
+msgid "Add Disk Navigator"
+msgstr "Dodaj Disk Nawigator"
+
+msgid "Add Windowlist"
+msgstr "Dodaj lisæinu woknow"
+
+msgid "Add a Disk Navigator menu onto the panel"
+msgstr "Dodaj Disk Nawigator na desku"
+
+msgid "Add a windowlist menu onto the panel"
+msgstr "Dodaj lisæinu woknow na desku"
+
+msgid "Add an application or a submenu onto the panel"
+msgstr "Dodaj aplikacij abo podmeni na desku"
+
+msgid "Add or remove applications in the menu structure "
+msgstr "Dodaj abo wotstroñ aplikaciju z menijoweje struktury "
+
+msgid "Cannot put this as button onto the panel!"
+msgstr "To njemó¾u jako t³óèatko na desku po³o¾iæ!"
+
+msgid "Configure"
+msgstr "Konfiguruj"
+
+msgid "Configure panel"
+msgstr "Konfiguruj desku"
+
+msgid "Customize Disk Navigator"
+msgstr "Konfiguruj Disk Nawigator"
+
+msgid "Disk Navigator"
+msgstr "Disk Nawigator"
+
+msgid "Edit Menus"
+msgstr "Konfiguruj meni"
+
+msgid "Entries shared among all users"
+msgstr "Elementy za w¹ìch wu¾iwarjow"
+
+msgid "Go!"
+msgstr "Pój!"
+
+msgid "Hide the panel"
+msgstr "Schowaj desku"
+
+msgid "Iconify other &windows"
+msgstr "Ikonizuj tamne w&okna"
+
+msgid "KDiskNavigator"
+msgstr "KDiskNavigator"
+
+msgid "Lock Screen"
+msgstr "Zamkni wobrazowku"
+
+msgid "Lock screen"
+msgstr "Zamkni wobrazowku"
+
+msgid "Logout"
+msgstr "So wotzjewiæ"
+
+msgid "No comment available"
+msgstr "®adyn komentar"
+
+msgid "No info available"
+msgstr "®ana informacija k dispoziciji"
+
+msgid "Oops!"
+msgstr "Ojej!"
+
+msgid "Open Folder"
+msgstr "Woèiñ zapisk"
+
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr "Woèiñ zapisk (+Shift: Startuj terminal)"
+
+msgid "Options..."
+msgstr "Opcije ..."
+
+msgid "Panel"
+msgstr "Deska"
+
+msgid "Personal entries"
+msgstr "Wosobinske zapiski"
+
+msgid "Personal:"
+msgstr "Wosobinsce:"
+
+msgid "Quickly navigate through the filesystem"
+msgstr "Spì¹na nawigacija po datajowym systemje"
+
+msgid "Recent entries"
+msgstr "Njedawno wubrane"
+
+msgid "Recent:"
+msgstr "Njedawno wubrane:"
+
+msgid "Restart"
+msgstr "Znowa startowaæ"
+
+msgid "Restart panel"
+msgstr "Desku znowa startowaæ"
+
+msgid "Shared:"
+msgstr "Pow¹itkowne:"
+
+msgid "Show the panel"
+msgstr "Poka¾ desku"
+
+msgid "The menu editor is not installed."
+msgstr "Menijowy editor njeje instalowany."
+
+msgid "Where do you want to go tomorrow?"
+msgstr "Linux - the Choice of a GNU Generation ;-)"
+
+msgid "Windowlist"
+msgstr "Lista okien"
+

@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlocale \n"
+"POT-Creation-Date: 1999-05-16 18:45+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid "&Locale"
+msgstr "&Lokalne"
+
+msgid "Applying language settings"
+msgstr "Wu¾iwaj nastajenja rìèe"
+
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Zmìnjene nastajenja rìèe potrjechja jeno¾ znowa startowane aplikacije.\n"
+" Jeli chce¹ zmìniæ rìè za w¹ì aplikacije, dyrbi¹ so najprjedy wotzjewiæ."
+
+msgid "First"
+msgstr "Prìnja"
+
+msgid "Language"
+msgstr "Rìè"
+
+msgid "Locale settings"
+msgstr "Lokalne nastajenja"
+
+msgid "Second"
+msgstr "Druha"
+
+msgid "Third"
+msgstr "Tøeæa"
+
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "wu¾iwanje: kcmlocale [-init | language]\n"
+
+msgid "without name!"
+msgstr "bjez pomjenowanja!"

@@ -1,0 +1,1143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs \n"
+"POT-Creation-Date: 1999-05-16 09:40+0100\n"
+"PO-Revision-Date: 1999-05-16 09:40+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid " ERROR: Could not write to %s"
+msgstr " ZMYLK: Njemó¾u pisaæ do %s"
+
+msgid " ERROR: No group %s"
+msgstr " ZMYLK: Njeznata skupina %s"
+
+msgid " ERROR: No user %s"
+msgstr " ZMYLK: Njeznaty wu¾iwar %s"
+
+msgid " does not exist\n"
+msgstr " njeeksistuje\n"
+
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
+" njeje zapisk! Ked¼bu!\n"
+"Pro¹u pøepruwowaæ, prjedy haè so bufer wuprózdni.\n"
+
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+" njeje zapisk! Ked¼bu!\n"
+"Pro¹u pøepruwowaæ.\n"
+
+msgid "%d special files will not be copied."
+msgstr "%d specialnych datajow so njekopìruje."
+
+msgid "%d special files will not be moved."
+msgstr "%d specialnych datajow so njepøesuwa."
+
+msgid "%s (Link)"
+msgstr "%s (Wotkaz)"
+
+msgid "&Accept"
+msgstr "&Akceptuj"
+
+msgid "&Add Bookmark"
+msgstr "&Dodaj znamje¹ko do knihi"
+
+msgid "&Application"
+msgstr "&Aplikacija"
+
+msgid "&Back"
+msgstr "Wróæo"
+
+msgid "&Binding"
+msgstr "Z&wisk"
+
+msgid "&Bookmarks"
+msgstr "&Znamjenja do knihi"
+
+msgid "&Browse..."
+msgstr "&Pøehladaj..."
+
+msgid "&Browser"
+msgstr "&Pøehladowar"
+
+msgid "&Cache"
+msgstr "&Bufer"
+
+msgid "&Configure File Manager..."
+msgstr "&Konfiguruj Managera datajow ..."
+
+msgid "&Dir"
+msgstr "Za&pisk"
+
+msgid "&Edit Bookmarks..."
+msgstr "Z&mìñ znamjenja do knihi..."
+
+msgid "&Find"
+msgstr "&Pytaj..."
+
+msgid "&Find in page..."
+msgstr "&Pytaj na stronje..."
+
+msgid "&Forward"
+msgstr "Do&prìdka"
+
+msgid "&General"
+msgstr "P&ow¹itkownje"
+
+msgid "&Go"
+msgstr "&D¼i"
+
+msgid "&HTML View"
+msgstr "Pokazaj &HTML"
+
+msgid "&Home"
+msgstr "&Domoj"
+
+msgid "&Icon View"
+msgstr "Pokazaj &ikony"
+
+msgid "&Long View"
+msgstr "Pokazaj &dlì¹i tekst"
+
+msgid "&Move to Trash"
+msgstr "Pøesuñ &do papjernika"
+
+msgid "&New"
+msgstr "&Nowy"
+
+msgid "&Open Location..."
+msgstr "&Woèiñ adresu..."
+
+msgid "&Permissions"
+msgstr "&Prawa"
+
+msgid "&Reject"
+msgstr "&Wotpokazaj"
+
+msgid "&Reload Document"
+msgstr "&Aktualizuj dokument"
+
+msgid "&Run..."
+msgstr "&Startuj ..."
+
+msgid "&Select"
+msgstr "&Wubjer ..."
+
+msgid "&Short View"
+msgstr "Pokazaj &krót¹i tekst"
+
+msgid "&Text View"
+msgstr "Pokazaj &tekst"
+
+msgid "&This cookie only"
+msgstr "Jeno¾ &tutón plack"
+
+msgid "&Up"
+msgstr "&Horje"
+
+msgid "&View Frame Source"
+msgstr "Poka¾ ¾ór³o &ramika"
+
+msgid "(Default)"
+msgstr "(Standard)"
+
+msgid "(None)"
+msgstr "(®adyn)"
+
+msgid "<none>"
+msgstr "<®adyn>"
+
+msgid ""
+"A new KDE version has been installed.\n"
+"The Template files may have changed.\n"
+"\n"
+"Would you like to install the new ones?"
+msgstr ""
+"Nowa KDE-wersija je so instalowa³a.\n"
+"Snad¼ su so datajowe ºablony zmìnili.\n"
+"\n"
+"Chce¹ te nowe pøewzaæ?"
+
+msgid "Access permissions"
+msgstr "Pøistupowe dowolnosæe"
+
+msgid "Add To Bookmarks"
+msgstr "Dodaj do znamjenjow knihi"
+
+msgid "All &cookies"
+msgstr "&W¹ì placki"
+
+msgid "All cookies from this &domain"
+msgstr "W¹ì placki z tuteje &domeny"
+
+msgid "Always look in cache"
+msgstr "Pøeco pohladaj do bufera"
+
+msgid "Always save cache"
+msgstr "Pøeco zawìsæ bufer"
+
+msgid "App&lications"
+msgstr "Ap&likacije"
+
+msgid "Apply global"
+msgstr "Na³o¾uj globalnje"
+
+msgid "Apply to "
+msgstr "Na³o¾uj na "
+
+msgid ""
+"Author: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget by Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Current maintainer: David Faure\n"
+"faure@kde.org"
+msgstr ""
+"Autor: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget: Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy-manager: Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Aktualny zastaraæel: David Faure\n"
+"faure@kde.org\n"
+"Serbski pøe³o¾k: Edward Wornar\n"
+"edi@serbski-institut.lusatia.de"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Background"
+msgstr "Pozadk"
+
+msgid "Binary Pattern (netscape;Netscape;)"
+msgstr "Binarny muster (netscape;Netscape;)"
+
+msgid "Can not paste into multiple directories"
+msgstr "Njemó¾u do wjacorych zapiskow naraz kopìrowaæ"
+
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"Njemó¾u postajenja zawìsæiæ, dokel¾ tutón URL\n"
+"njeje ani na desktop, ani do znamje¹kow do knihi zapisany.\n"
+"\n"
+"Pro¹u pøiwzaj adresu do znamjenjow do knihi, abo stwor kdelnk na desktopje."
+
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"Njemó¾u postajenja zawìsæiæ, dokel¾\n"
+"do tutoho zapiska njemó¾u pisaæ, a njenamakam jón mjez znamjenjemi do knihi.\n"
+"\n"
+"Pro¹u pøiwzaj adresu do znamjenjow do knihi, abo stwor kdelnk na desktopje."
+
+msgid "Can only make links on local file system"
+msgstr "Linki mó¾u jeno¾ na lokalnym datajowym systemje stworiæ"
+
+msgid "Can only start executables on local disks\n"
+msgstr "Mó¾u jeno¾ programy na lokalnych diskach startowaæ\n"
+
+msgid ""
+"Can work with *.kdelnk files only\n"
+"on local hard disk"
+msgstr ""
+"Z datajemi *.kdelnk mo¿na operowaæ\n"
+"jeno¾ na lokalnym disku"
+
+msgid ""
+"Cannot execute request.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
+msgstr ""
+"Njemó¾u pøikaz wuwjesæ.\n"
+"Nowe mìstna bychu nìkotre ikony zwonka\n"
+"desktopa sad¼ili."
+
+msgid "Case &sensitive"
+msgstr "Wulko/&Ma³opisanje"
+
+msgid "Cd"
+msgstr "D¼i do zapiska ..."
+
+msgid ""
+"Change\n"
+"Into"
+msgstr ""
+"Zmìniæ\n"
+"do"
+
+msgid "Clear Cache"
+msgstr "Bufer wuprózdniæ"
+
+msgid "Comment"
+msgstr "Komentar"
+
+msgid "Configure &Browser..."
+msgstr "Konfiguruj &Pøehladowarja ..."
+
+msgid "Contacting host "
+msgstr "Zwjazam z hostom "
+
+msgid "Continue search from the top of the page?"
+msgstr "Dale pytaæ wot zapoèatka strony"
+
+msgid "Cookie Alert!"
+msgstr "Alarm dla placka!"
+
+msgid "Could not access"
+msgstr "Nimam pøistup"
+
+msgid ""
+"Could not access\n"
+"%s"
+msgstr ""
+"Nimam pøistup na\n"
+"%s"
+
+msgid "Could not access Trash Bin"
+msgstr "Nimam pøistup na papjernik"
+
+msgid ""
+"Could not access directory\n"
+"%s"
+msgstr ""
+"Nimam pøistup na zapisk\n"
+"%s"
+
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"Njemó¾ach zmìniæ wobsydnika/skupinu\n"
+"Najskerje nimam pøistup."
+
+msgid ""
+"Could not change permissions\n"
+"Perhaps access denied."
+msgstr ""
+"Njemó¾ach dowolnosæe zmìniæ\n"
+"Najskerje nimam pøistup."
+
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr ""
+"Njemó¾ach zwjazaæ z\n"
+"%s"
+
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr ""
+"Njemó¾ach socket stworiæ za\n"
+"%s"
+
+msgid "Could not create ~/.kde/share/apps/kfm/magic"
+msgstr "Njemó¾ach stworiæ ~/.kde/share/apps/kfm/magic"
+
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"Njemó¾ach znièiæ\n"
+"%s\n"
+"URL njeeksistuje abo nimam pøistup"
+
+msgid ""
+"Could not delete directory\n"
+"%s"
+msgstr ""
+"Njemó¾ach zapisk znièiæ\n"
+"%s"
+
+msgid "Could not execute program\n"
+msgstr "Njemó¾ach program startowaæ\n"
+
+msgid "Could not find binding"
+msgstr "Njemó¾ach zwisk namakaæ"
+
+msgid "Could not find mime type\n"
+msgstr "Njemó¾ach mime-typ namakaæ\n"
+
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"Njemó¾ach wobsah zapiska èitaæ\n"
+"%s"
+
+msgid "Could not load icon\n"
+msgstr "Njemó¾ach ikonu zaèitaæ\n"
+
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"Njemó¾ach so pøizjewiæ do\n"
+"%s\n"
+"Najskerje wopaène ¹kitne s³owo"
+
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"Njemó¾ach zapisk wutworiæ\n"
+"%s"
+
+msgid ""
+"Could not make symbolic link\n"
+"%s"
+msgstr ""
+"Njemó¾ach wotkaz stworiæ do\n"
+"%s"
+
+msgid ""
+"Could not make symlink to\n"
+"%s"
+msgstr ""
+"Njemó¾ach wotkaz stworiæ do\n"
+"%s"
+
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Njemó¾ach particiju zawjazaæ\n"
+"Zmylk:\n"
+"\n"
+"%s"
+
+msgid ""
+"Could not move directory\n"
+"%s\n"
+"to %s\n"
+"Perhaps access denied"
+msgstr ""
+"Njemó¾ach zapisk pøesuwaæ\n"
+"%s\n"
+"do %s\n"
+"Najskerje nimam pøistup"
+
+msgid ""
+"Could not overwrite\n"
+"%s"
+msgstr ""
+"Njemó¾ach pøepisaæ\n"
+"%s"
+
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"Njemó¾ach èitaæ\n"
+"%s\n"
+"Dataja njeeksistuje abo ¾adyn pøistup"
+
+msgid ""
+"Could not rename the file or directory\n"
+"%s\n"
+msgstr ""
+"Njemó¾ach pøemjenowaæ dataju abo zapisk\n"
+"%s\n"
+
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"Njemó¾ach zawìsæiæ postajenja\n"
+"Najskerje nimam pøistup"
+
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Njemó¾ach particiju wotwjazaæ\n"
+"Zmylk:\n"
+"\n"
+"%s"
+
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"Njemó¾ach pisaæ\n"
+"%s\n"
+"Najskerje nimam pøistup."
+
+msgid "Could not write bookmark"
+msgstr "Njemó¾ach pisaæ znamjenja do knihi"
+
+msgid "Could not write to\n"
+msgstr "Njemó¾ach pisaæ do\n"
+
+msgid "Creating directory:\n"
+msgstr "Stworju zapisk:\n"
+
+msgid "De&vice"
+msgstr "&Nastroj"
+
+msgid "Default Application"
+msgstr "Standardowa aplikacija"
+
+msgid "Desktop"
+msgstr "Desktop"
+
+msgid "Device ( /dev/fd0 )"
+msgstr "Nastroj ( /dev/fd0 )"
+
+msgid ""
+"Do you really want to delete the selected file(s)?\n"
+"\n"
+"There is no way to restore them."
+msgstr ""
+"Chce¹ woprawd¼e wubrane dataje znièiæ?\n"
+"\n"
+"Njebud¼e mó¾no je zaso namakaæ."
+
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"Chce¹ woprawd¼e won?\n"
+"Desktopowa funkcionalnosæ so zhubi"
+
+msgid "Do you really want to rearrange your icons ?"
+msgstr "Chce¹ woprawd¼e swoje ikony hinak zrjadowaæ?"
+
+msgid "Do you want to accept or reject this cookie?"
+msgstr "Akceptowaæ abo wotpokazaæ tutón plack?"
+
+msgid "Document Encodin&g"
+msgstr "Ko&dìrowanje dokumenta"
+
+msgid "Document: Done"
+msgstr "Dokument: Hotowy"
+
+msgid "Dont know what to do."
+msgstr "Njewìm ¹to èiniæ."
+
+msgid "E&xecute"
+msgstr "&Wuwjesæ"
+
+msgid "ERROR"
+msgstr "ZMYLK"
+
+msgid "ERROR: Can not accept drop"
+msgstr "ZMYLK: Njemó¾u tam nièo pu¹æiæ"
+
+msgid "ERROR: Can not change to multiple directories"
+msgstr "ZMYLK: Njemó¾u do wjacorych zapiskow naraz hiæ"
+
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "ZMYLK: Njemó¾u postajenja za wjacore dataje naraz èitaæ"
+
+msgid "ERROR: Could not access directory '%s'"
+msgstr "ZMYLK: Nimam pøistup do zapiska '%s'"
+
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "ZMYLK: Njemó¾ach èitaæ desktopowy zapisk '%s'"
+
+msgid "ERROR: Drop over malformed URL"
+msgstr "ZMYLK: Sy pu¹æi³(a) na hubjeny URL"
+
+msgid "ERROR: Malformed URL"
+msgstr "ZMYLK: Hubjeny URL "
+
+msgid "ERROR: No Terminal Setting"
+msgstr "ZMYLK: ¾adyn terminal postajeny"
+
+msgid "ERROR: Template does not exist '%s'"
+msgstr "ZMYLK: ©ablona njeeksistuje: '%s'"
+
+msgid "ERROR: You dropped a URL over itself"
+msgstr "ZMYLK: Sy URL na so pu¹æi³(a)"
+
+msgid "ERROR: You dropped a directory over one of its children"
+msgstr "ZMYLK: Sy zapisk na jedyn z jeho podzapiskow pu¹æi³(a)"
+
+msgid "ERROR: You may only drop URLs"
+msgstr "ZMYLK: Smì¹ jeno¾ URL pu¹æiæ"
+
+msgid "Empty Trash Bin"
+msgstr "Wuprózdni papjernik"
+
+msgid "Exec"
+msgstr "Wuwjed¼"
+
+msgid "Execute"
+msgstr "Wuwjed¼"
+
+msgid "File %i/%i"
+msgstr "Dataja %i/%i"
+
+msgid ""
+"File %s\n"
+"does not exist"
+msgstr ""
+"Dataja %s\n"
+"njeeksistuje"
+
+msgid "File Name"
+msgstr "Datajowe mjeno"
+
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "Systemy datajow ( iso9660, msdos, minix, standard )"
+
+msgid "Find &next"
+msgstr "Pytaj &dal¹i"
+
+msgid "Find Complete"
+msgstr "Pytanje zakónèene"
+
+msgid "Find:"
+msgstr "Pytaj:"
+
+msgid "Folder"
+msgstr "Zapisk"
+
+msgid "Forward"
+msgstr "Doprìdka"
+
+msgid "Full Name"
+msgstr "Po³ne mjeno"
+
+msgid "Global Applications"
+msgstr "Pow¹itkowne aplikacije"
+
+msgid "Global Mime Types"
+msgstr "Pow¹itkowne mime-typy"
+
+msgid "Group"
+msgstr "Skupina"
+
+msgid ""
+"Gzip reported a fatal error\n"
+"%s"
+msgstr ""
+"Gzip zd¼ìli fatalny zmylk\n"
+"%s"
+
+msgid ""
+"Gzip reported an error for\n"
+"%s"
+msgstr ""
+"Gzip zd¼ìli zmylk za\n"
+"%s"
+
+msgid "Home"
+msgstr "Domoj"
+
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr ""
+"NUTØKOWNY ZMYLK: Dyrbi¹ znajmjeñ¹a prajiæ, kotry nastroj ma so zawjazaæ"
+
+msgid "Internal Error: desktopDir is malformed"
+msgstr "Nutøkowny zmylk: hubjeny desktopDir"
+
+msgid "Is a Directory"
+msgstr "Je zapisk"
+
+msgid "Is the Trash Bin"
+msgstr "Je papjernik"
+
+msgid "KFM"
+msgstr "KFM"
+
+msgid "KFM Confirm"
+msgstr "KFM potwjerd¼enje"
+
+msgid "KFM Error"
+msgstr "KFM Zmylk"
+
+msgid "KFM Information"
+msgstr "KFM - informacije"
+
+msgid "KFM Installation Error"
+msgstr "KFM instalaciski zmylk"
+
+msgid "KFM Question"
+msgstr "Pra¹enje KFM"
+
+msgid "KFM Security Alert"
+msgstr "KFM wìstotny alarm"
+
+msgid "KFM Warning"
+msgstr "Warnwanje KFM"
+
+msgid "Last Access"
+msgstr "Posledni pøistup"
+
+msgid "Last Modified"
+msgstr "Poslednja zmìna"
+
+msgid "Link"
+msgstr "Wotkaz"
+
+msgid "Location:"
+msgstr "Adresa:"
+
+msgid "Making directory"
+msgstr "Stworjenje zapiska"
+
+msgid "Malformed URL\n"
+msgstr "Hubjeny URL\n"
+
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"Hubjeny URL\n"
+"%s"
+
+msgid "Mime &Types"
+msgstr "Mime-typy"
+
+msgid "Mime Type"
+msgstr "Mime-typ"
+
+msgid "Mount"
+msgstr "zawjazanje"
+
+msgid "Mount Point ( /floppy )"
+msgstr "Cil zawjazanja ( /floppy )"
+
+msgid "Mounted Icon"
+msgstr "Ikona zawjazanja"
+
+msgid "Mounting %s ..."
+msgstr "zawjazam %s ..."
+
+msgid "Move"
+msgstr "Pøesuñ"
+
+msgid "Move to Trash"
+msgstr "Pøesuñ do papjernika"
+
+msgid "My Home"
+msgstr "Doma"
+
+msgid "Name ( in your language )"
+msgstr "Mjeno (w twojej rìèi)"
+
+msgid "Never look in cache"
+msgstr "®enje njepohladaj do bufera"
+
+msgid "Never save cache"
+msgstr "®enje njezawìsæ bufer"
+
+msgid "New "
+msgstr "Nowy "
+
+msgid "New &Window"
+msgstr "Nowe &wokno"
+
+msgid "New View"
+msgstr "Nowy Napohlad"
+
+msgid "No mime types installed!"
+msgstr "®ane mime-typy njeinstalowane!"
+
+msgid "No mount point in *.kdelnk file"
+msgstr "®adyn cil zawjazanja w *.kdelnk"
+
+msgid "Open &Terminal"
+msgstr "Woèiñ &terminal"
+
+msgid "Open Location:"
+msgstr "Woèiñ adresu:"
+
+msgid "Open With:"
+msgstr "Woèiñ z:"
+
+msgid "Open with"
+msgstr "Woèiñ z"
+
+msgid "Operation technically impossible"
+msgstr "Operacija je technisce njemó¾na"
+
+msgid "Or rename to"
+msgstr "abo pøemjenuj na"
+
+msgid "Others"
+msgstr "Druhe"
+
+msgid "Overwrite"
+msgstr "Pøepisanje"
+
+msgid "Overwrite All"
+msgstr "Awtomatiske pøepisanje"
+
+msgid "Owner"
+msgstr "Wobsydnik"
+
+msgid "Ownership"
+msgstr "Wobsydstwo"
+
+msgid "Password"
+msgstr "©kitne s³owo"
+
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "Muster ( pøik³ad: *.html;*.HTML; )"
+
+msgid "Points to"
+msgstr "Pokazuje na"
+
+msgid "Read"
+msgstr "Èitanje"
+
+msgid "Readonly"
+msgstr "Jeno¾ za èitanje"
+
+msgid ""
+"Recurse copying from file with sub-protocol\n"
+"(for instance, tar files)"
+msgstr ""
+"Rekursiwne kopìrowanje z datajow ze subprotokolom\n"
+"(na pø. tar-archiwow)"
+
+msgid "Recurse copying from/to distant locations"
+msgstr "Rekursiwne kopìrowanje wot/do njelokalnych adresow"
+
+msgid "Rel&oad Tree"
+msgstr "Aktualizuj ¹tomik"
+
+msgid "Rename"
+msgstr "Pøemjenuj"
+
+msgid "Rescan &Bindings"
+msgstr "Aktualizuj &zwiski"
+
+msgid "Retrieving listing of %s"
+msgstr "Èitam wobsah %s"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "Run in terminal"
+msgstr "Startuj w terminalu"
+
+msgid "Sa&ve Settings"
+msgstr "&Zawìsæ opcije"
+
+msgid "Save Settings for this &URL"
+msgstr "Zawìsæ opcije za tutón &URL"
+
+msgid "Save settings for this URL"
+msgstr "Zawìsæ opcije za tutón URL"
+
+msgid "Segmentation fault in io subprocess"
+msgstr "Segmentaciski zmylk w podprocesu io"
+
+msgid "Select &all"
+msgstr "&Wubjer w¹itko"
+
+msgid "Select files:"
+msgstr "Wubjer dataje:"
+
+msgid "Set GID"
+msgstr "Postaj GID"
+
+msgid "Set UID"
+msgstr "Postaj UID"
+
+msgid "Sho&w Thumbnails"
+msgstr "Pokazaj &miniaturki"
+
+msgid ""
+"Show\n"
+"Entries"
+msgstr ""
+"Poka¾\n"
+"zapisy"
+
+msgid "Show &Location bar"
+msgstr "Pokazuj pask &adresow"
+
+msgid "Show &Menubar"
+msgstr "Pokazuj &menijowy pask"
+
+msgid "Show &Statusbar"
+msgstr "Pokazuj &statusowy pask"
+
+msgid "Show &Toolbar"
+msgstr "Pokazuj nastrojowy pask"
+
+msgid "Show Cache"
+msgstr "Poka¾ bufer"
+
+msgid "Show Hi&dden Files"
+msgstr "Poka¾ schowane dataje"
+
+msgid "Show History"
+msgstr "Poka¿ stawizny"
+
+msgid "Show Menubar"
+msgstr "Pokazuj menijowy pask"
+
+msgid "Show Tr&ee"
+msgstr "Pokazuj &¹tomik"
+
+msgid "Size: %i"
+msgstr "Wulkosæ: %i"
+
+msgid "Skip"
+msgstr "Pøeskoè"
+
+msgid ""
+"Someone tried to authorize himself\n"
+"using a wrong password"
+msgstr ""
+"Nìchtó je spyta³ pøistup dóstaæ\n"
+"z wopaènym ¹kitnym s³owom"
+
+msgid ""
+"Source file doesn't exist anymore ! \n"
+"Use \"Rescan Bindings\" in View menu to update the menu"
+msgstr ""
+"®ór³owa dataja wjace njeeksistuje!\n"
+"Pro¹u wu¾iwaj \"Aktualizuj zwiski\" z menija Napohlad"
+
+msgid "Special"
+msgstr "Specialne"
+
+msgid ""
+"Special file will not be copied\n"
+"%s"
+msgstr ""
+"Specialna dataja so njekopìruje\n"
+"%s"
+
+msgid ""
+"Special file will not be moved\n"
+"%s"
+msgstr ""
+"Specialna dataja so njepøesuwa\n"
+"%s"
+
+msgid "Sticky"
+msgstr "Pøilìpjeny"
+
+msgid "Swallowing on panel"
+msgstr "Spó¾ìraæ na desce"
+
+msgid "Symbolic Link"
+msgstr "Symboliski wotkaz"
+
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
+msgstr ""
+"Zmylk syntaksy:\n"
+"kfmexec command [URLs ....]\n"
+
+msgid ""
+"Tar reported a fatal error\n"
+"%s"
+msgstr ""
+"Tar zd¼ìli fatalny zmylk\n"
+"%s"
+
+msgid ""
+"Tar reported an error\n"
+"%s"
+msgstr ""
+"Tar zd¼ìli³ zmylk\n"
+"%s"
+
+msgid "Terminal Options"
+msgstr "Opcije za terminal"
+
+msgid "The \"Link=....\" entry is empty"
+msgstr "Linka \"Links=....\" w konfiguraciji je prózdna"
+
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed"
+msgstr ""
+"URL\n"
+"%s\n"
+"je hubjeny"
+
+msgid ""
+"The URL %s\n"
+"is malformed"
+msgstr ""
+"URL %s\n"
+"je hubjeny"
+
+msgid "The config file has no \"Type=...\" line"
+msgstr "Konfiguraciska dataja nima linku \"Type=...\""
+
+msgid "The directory "
+msgstr "Zapisk "
+
+msgid ""
+"The file\n"
+"%s\n"
+"has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Dataja\n"
+"%s\n"
+"je so zmìni³a.\n"
+"Chce¹ ju zawìsæiæ?"
+
+msgid "The file does not contain a URL"
+msgstr "Dataja nima URL"
+
+msgid ""
+"The file ~/.kde/share/apps/kfm/magic is corrupted\n"
+"Authorization failed"
+msgstr ""
+"Dataja ~/.kde/share/apps/kfm/magic je wob¹kod¼ena\n"
+"Awtorizacija ja zwrì¹æi³a"
+
+msgid "The mime type config file "
+msgstr "Konfiguraciska dataja za mime-typy "
+
+msgid ""
+"The requested action\n"
+"%s\n"
+"is not implemented yet."
+msgstr ""
+"Wubrana akcija\n"
+"'%s'\n"
+"hi¹æe njeje implementowana."
+
+msgid ""
+"This file does not contain an\n"
+"Exec=....\n"
+"entry. Edit the Properties\n"
+"to solve the problem"
+msgstr ""
+"Tuta dataja nima linku\n"
+"Exec=....\n"
+"Zmìñ postajenja\n"
+"zo by so problem rozrisa³"
+
+msgid "This group is empty!"
+msgstr "Skupina je prózdna!"
+
+msgid ""
+"This is a document!\n"
+"Not an application"
+msgstr ""
+"To je dokument!\n"
+"®ana aplikacija"
+
+msgid ""
+"This page is untrusted\n"
+"but it contains a link to your local file system."
+msgstr ""
+"Tuta strona njeje wìryhódna,\n"
+"ale na njej je zwisk k twojemu lokalnemu datajowemu systemej."
+
+msgid "Trying to open"
+msgstr "Spytam woèiniæ"
+
+msgid "U&RL"
+msgstr "U&RL"
+
+msgid "URL"
+msgstr "URL"
+
+msgid ""
+"Unknown host in\n"
+"%s"
+msgstr ""
+"Njeznaty host\n"
+"%s"
+
+msgid "Unmount"
+msgstr "Wotwjazanje"
+
+msgid "Unmounted Icon"
+msgstr "Ikona wotwjazanja"
+
+msgid "Unmounting %s ..."
+msgstr "Wotwjazam %s ..."
+
+msgid "Up"
+msgstr "Horje"
+
+msgid "User"
+msgstr "Wu¾iwar"
+
+msgid "View Docu&ment Source"
+msgstr "Poka¾ ¾ór³o &dokumenta"
+
+msgid "Window Title"
+msgstr "Titl owkna"
+
+msgid "Working ..."
+msgstr "D¼ì³am ..."
+
+msgid "Write"
+msgstr "Pisaæ"
+
+msgid ""
+"Write\n"
+"Entries"
+msgstr ""
+"Pisaj\n"
+"zapiski"
+
+msgid "You did not change the name!\n"
+msgstr "Mjeno so njeje zmìni³o!\n"
+
+msgid ""
+"You dont have the file ~/.kde/share/apps/kfm/magic\n"
+"Authorization failed"
+msgstr ""
+"Nima¹ dataju ~/.kde/share/apps/kfm/magic\n"
+"Autorizacija wotpokazana"
+
+msgid "You received a cookie from host:"
+msgstr "Sy plack dósta³(a) ze serwera:"
+
+msgid "You try to overwrite"
+msgstr "Sy spyta³(a) pøepisaæ"
+
+msgid "already exists. Overwrite with"
+msgstr "hi¾o eksistuje. Pøepisaj z"
+
+msgid "bytes"
+msgstr "bytow"
+
+msgid "does not contain a MimeType=... entry"
+msgstr "nima zapisk MimeType=..."
+
+msgid "in "
+msgstr "w "
+
+msgid "to %s"
+msgstr "do %s"

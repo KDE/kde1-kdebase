@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm \n"
+"POT-Creation-Date: 1999-05-16 16:25+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid "&Bottom"
+msgstr "&Deleka"
+
+msgid "&Clock shows time in AM/PM format"
+msgstr "Èas we formaæe AM/PM"
+
+msgid "&Desktops"
+msgstr "&Desktopy"
+
+msgid "&Hidden"
+msgstr "&Schowane"
+
+msgid "&Left"
+msgstr "Na&lìwo"
+
+msgid "&Normal"
+msgstr "&Standard"
+
+msgid "&Panel"
+msgstr "&Deska"
+
+msgid "&Right"
+msgstr "Na&prawo"
+
+msgid "&Top"
+msgstr "&Cyle horje"
+
+msgid "&Visible"
+msgstr "&Wid¼omny"
+
+msgid "&Width"
+msgstr "©ì&rokosæ"
+
+msgid "Animate Show/Hide"
+msgstr "Animacija schowanja/pokazowanja"
+
+msgid "Auto &Hide Panel"
+msgstr "Schowaj desku &awtomatisce"
+
+msgid "Auto Hide &Taskbar"
+msgstr "Schowaj nadawki awtomatisce"
+
+msgid "Botto&m"
+msgstr "&Deleka"
+
+msgid "Clock shows time in &Internet beats"
+msgstr "Èas w internetowym formaæe"
+
+msgid "De&lay:"
+msgstr "Za&pózd¼enje:"
+
+msgid "Delay:"
+msgstr "Zapózd¼enje:"
+
+msgid "Disk &Navigator"
+msgstr "Disk &Nawigator"
+
+msgid "Edit &Personal..."
+msgstr "Wobd¼ì³aj &priwatne"
+
+msgid "Edit &Shared..."
+msgstr "Wobd¼ì³aj po&w¹itkowne"
+
+msgid "Edit entries: (drag a folder and create a link)"
+msgstr "Wobd¼ì³aj daty: (sæehñ zapisk a stwor wotkaz)"
+
+msgid "Fast"
+msgstr "Spì¹nje"
+
+msgid "History"
+msgstr "Prjedaw¹e pøikazy"
+
+msgid "Ignore case when sorting"
+msgstr "Zanjechaj wulko/ma³opisanje"
+
+msgid "KPanel Configuration"
+msgstr "Konfiguracija KPanela"
+
+msgid "L&arge"
+msgstr "W&ulke"
+
+msgid "Large"
+msgstr "Wulke"
+
+msgid "Location"
+msgstr "Mìstno"
+
+msgid "Max files in a single folder:"
+msgstr "Maksimalna lièba datajow w zapisku:"
+
+msgid "Max recent file entries:"
+msgstr "Lièba spomjatkowanych datajow:"
+
+msgid "Max recent folder entries:"
+msgstr "Lièba spomjatkowanych zapiskow:"
+
+msgid "Menu F&olders First"
+msgstr "Najprjedy &zapiski"
+
+msgid "Menu Tooltips"
+msgstr "Pokiwy"
+
+msgid "Others"
+msgstr "Druhe"
+
+msgid "Personal Menu Entries &First"
+msgstr "Naprjedy &priwatne"
+
+msgid "Show &Menu Tooltips"
+msgstr "Pokazuj po&kiwy"
+
+msgid "Show Option entry"
+msgstr "Pokazuj opcije w meniju"
+
+msgid "Show Personal section"
+msgstr "Pokazuj priwatny d¼ìl"
+
+msgid "Show Recent section"
+msgstr "Pokazuj spomjatkowany d¼ìl"
+
+msgid "Show Shared section"
+msgstr "Pokazuj pow¹itkowny d¼ìl"
+
+msgid "Show dot files"
+msgstr "Pokazuj schowane dataje"
+
+msgid "Slow"
+msgstr "Poma³u"
+
+msgid "Small"
+msgstr "Ma³e"
+
+msgid "Speed:"
+msgstr "Spì¹nosæ:"
+
+msgid "Style"
+msgstr "Stil"
+
+msgid "T&iny"
+msgstr "Mó&lèke"
+
+msgid "T&op"
+msgstr "&Cyle horjeka"
+
+msgid "Taskbar"
+msgstr "Pask nadawkow"
+
+msgid "Terminal application:"
+msgstr "Terminalowa aplikacija:"
+
+msgid "Top/Le&ft"
+msgstr "Horjeka/&Nalìwo"
+
+msgid "Visuals"
+msgstr "Napohlad"
+
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "wu¾iwanje: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"

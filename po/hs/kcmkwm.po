@@ -1,0 +1,355 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm \n"
+"POT-Creation-Date: 1999-05-16 22:25+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid ""
+"  Allowed overlap:\n"
+"(% of desktop space)"
+msgstr ""
+"Dowolene mjezsobne pokrywanje:\n"
+" (% desktopoweho powjercha)"
+
+msgid "&Advanced"
+msgstr "Za &pokroèenych"
+
+msgid "&Buttons"
+msgstr "&T³óèatka"
+
+msgid "&Mouse"
+msgstr "&My¹"
+
+msgid "&Titlebar"
+msgstr "Titulny pask"
+
+msgid "(Un)Maximize"
+msgstr "(Wot)Maksimalizuj"
+
+msgid "(Un)Shade"
+msgstr "(Nje)stwor sæiny"
+
+msgid "(Un)Sticky"
+msgstr "(Wot)lìpiæ"
+
+msgid "ALT + Left Button"
+msgstr "ALT + Lìwe t³óèatko"
+
+msgid "ALT + Middle Button"
+msgstr "Alt + Srjed¼anske t³óèatko"
+
+msgid "ALT + Right Button"
+msgstr "ALT + Prawe t³óèatko"
+
+msgid "Activate"
+msgstr "Aktiwizuj"
+
+msgid "Activate and lower"
+msgstr "Aktiwizuj a zni¾"
+
+msgid "Activate and pass click"
+msgstr "Aktiwizuj a klikni"
+
+msgid "Activate and raise"
+msgstr "Aktiwizuj a zbìhñ"
+
+msgid "Activate, raise and pass click"
+msgstr "Aktiwizuj, zbìhñ a klikni"
+
+msgid "Active"
+msgstr "Aktiwne wokno"
+
+msgid "Active desktop borders"
+msgstr "Aktiwne hranicy desktopa"
+
+msgid "Active pixmap:"
+msgstr "Aktiwny pasek tytu³u:"
+
+msgid "Active title has shaded frame"
+msgstr "Aktiwny titulny pask ma sæìmnjeny ramik"
+
+msgid "Alt-Tab is limited to current desktop"
+msgstr "Alt-Tab je wobmjezowany na aktualny desktop"
+
+msgid "Alt-Tab mode:"
+msgstr "modus Alt-Tab:"
+
+msgid "Auto Raise"
+msgstr "Awtomatiske zbìhanje"
+
+msgid "Bo&rders"
+msgstr "&Hranicy"
+
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Cona skakanja:\n"
+"       (w pikslach)"
+
+msgid "CDE"
+msgstr "CDE"
+
+msgid "Cascade"
+msgstr "Kaskadowe"
+
+msgid "Classes"
+msgstr "Klasa"
+
+msgid "Classic focus follows mouse"
+msgstr "My¹ka wokno aktiwizuje (klasisce)"
+
+msgid "Classic sloppy focus"
+msgstr "Doèakaj za aktiwizowanje (klasisce)"
+
+msgid "Click Raise"
+msgstr "Zbìhanje z kliknjenjom"
+
+msgid "Click to focus"
+msgstr "Klikni za aktiwizowanje"
+
+msgid "Ctrl-Tab walks through desktops"
+msgstr "Ctrl-Tab pøe¹altuje desktopy"
+
+msgid "Delay (ms)"
+msgstr "Zapozd¼enje (ms)"
+
+msgid "Desktop switch delay:"
+msgstr "Zapozd¼enje pøe¹altowanja desktopa:"
+
+msgid "Display content in moving windows"
+msgstr "Pokazuj wobsah pøi suwanju wokna"
+
+msgid "Display content in resizing windows"
+msgstr "Pokazuj wobsah pøi zmìnjenju wokna"
+
+msgid "Enable active desktop borders"
+msgstr "Aktiwne hranicy desktopy"
+
+msgid "Fast"
+msgstr "Spì¹nje"
+
+msgid "Filters"
+msgstr "Filtry"
+
+msgid "Focus follows mouse"
+msgstr "My¹ka wokno aktiwizuje"
+
+msgid "Focus policy"
+msgstr "Wa¹nje aktiwizowanja"
+
+msgid "Grab the Right Mouse Button"
+msgstr "D¼iwaj na prawe t³óèatko my¹e"
+
+msgid "Iconify"
+msgstr "Ikonizuj"
+
+msgid "Inactive"
+msgstr "Njeaktywne wokno"
+
+msgid "Inactive inner window:"
+msgstr "Njeaktiwne nutøkowne wokno:"
+
+msgid "Inactive pixmap:"
+msgstr "Njeaktiwny wobrazk:"
+
+msgid "Inner window, titlebar and frame:"
+msgstr "Nutøkowne wokno, titulny pask a ramik:"
+
+msgid "Interactive"
+msgstr "Interaktiwnje"
+
+msgid "KDE"
+msgstr "KDE"
+
+msgid "Keyboard and Mouse"
+msgstr "Tastatura a my¹"
+
+msgid "Left"
+msgstr "Nalìwo"
+
+msgid "Left Button"
+msgstr "Lìwe t³óèatko"
+
+msgid "Left Button double click does:"
+msgstr "Dwójny klik z lìwym t³óèatkom:"
+
+msgid "Lower"
+msgstr "Zni¾iæ"
+
+msgid "Magic Borders"
+msgstr "Aktiwne hranicy"
+
+msgid "Manual"
+msgstr "z ruku"
+
+msgid "Maximize"
+msgstr "Maksimalizuj"
+
+msgid "Menu"
+msgstr "Meni"
+
+msgid "Middle"
+msgstr "Srjed¼a"
+
+msgid "Middle Button"
+msgstr "Srjed¼anske t³óèatko"
+
+msgid "Minimize"
+msgstr "Minimalizuj"
+
+msgid "Mouse action"
+msgstr "Akcija my¹e"
+
+msgid "Move"
+msgstr "Pøesuñ"
+
+msgid "Move pointer towards center after switch"
+msgstr "Pøesuñ cursor dosrjed¼a po pøe¹altowanju"
+
+msgid "No pixmap under text"
+msgstr "®adyn pixmap pod tekstom"
+
+msgid "None"
+msgstr "®adyn"
+
+msgid "Nothing"
+msgstr "Nièo"
+
+msgid "Operations menu"
+msgstr "Meni woknowych operacijow"
+
+msgid "Pixmap"
+msgstr "Pixmap"
+
+msgid "Placement policy"
+msgstr "Wa¹nje sad¼enja"
+
+msgid "Plain"
+msgstr "Jednory"
+
+msgid "Raise"
+msgstr "Zbìhñ"
+
+msgid "Random"
+msgstr "Przypadkowy"
+
+msgid "Resize"
+msgstr "Zmìñ wulkosæ"
+
+msgid "Resize animation:"
+msgstr "Animacija zmìny wulkosæe:"
+
+msgid "Right"
+msgstr "Naprawo"
+
+msgid "Right Button"
+msgstr "Prawe t³óèatko"
+
+msgid "Shaded Horizontally"
+msgstr "Wodoruny sæin"
+
+msgid "Shaded Vertically"
+msgstr "Padoruny sæin"
+
+msgid "Smart"
+msgstr "Inteligentnje"
+
+msgid "Sticky"
+msgstr "Pøilìpjeny"
+
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Lìwy bok titulneho paska je po³ny ... wu¹altuj t³óèatko "
+"'maksimalizuj'\n"
+
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Lìwy bok titulneho paska je po³ny ... wu¹altuj t³óèatko "
+"'minimalizuj'\n"
+
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Prawy bok titulneho paska je po³ny ... wu¹altuj t³óèatko "
+"'maksimalizuj'\n"
+
+
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Prawy bok titulneho paska je po³ny ... wu¹altuj t³óèatko "
+"'minimalizuj'\n"
+
+
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
+"Zmylk je so sta³ pøi zawìsæenju\n"
+"pixmapa titulneho paska. Pro¹u prawa pøepruwowaæ."
+
+msgid "Title Alignment"
+msgstr "Zamìstnjenje titla"
+
+msgid "Title animation"
+msgstr "Animacija titla"
+
+msgid "Titlebar and frame:"
+msgstr "Titulny pask a ramik:"
+
+msgid "Titles"
+msgstr "Titl"
+
+msgid "Toggle raise and lower"
+msgstr "Zbìhnyæ/zni¾iæ"
+
+msgid "Vertical maximization only by default"
+msgstr "Standardowje jeno¾ padoruna maksimacija"
+
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Cona pøeskoèenja wokna:\n"
+"       (w pikslach)"
+
+msgid "Window manager setup - ERROR"
+msgstr "Zmylk pøi rekonfiguraciji woknoweho managera"
+
+msgid "Window manager style"
+msgstr "Stil woknoweho managera"
+
+msgid "Windows"
+msgstr "Wokna"
+msgid "Windows will:"
+msgstr "Wokno bud¼e:"
+
+msgid "be excluded from session management"
+msgstr "wuzamknjene z operacijow sesije"
+
+msgid "have no decorations"
+msgstr "bjez dekoracije"
+
+msgid "have tiny decorations"
+msgstr "z ma³ymi dekoracijemi"
+
+msgid "if they match the following:"
+msgstr "jeli s³u¹a do kategorije:"
+
+msgid "ms"
+msgstr "ms"
+
+msgid "never gain focus"
+msgstr "so ¾enje njeaktiwizuje"
+
+msgid "start as Sticky"
+msgstr "woèini so lìpjate"
+
+msgid ""
+"usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+msgstr ""
+"wu¾iwanje: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"

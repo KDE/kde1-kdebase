@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcontrol \n"
+"POT-Creation-Date: 1999-05-15 22:30+0100\n"
+"PO-Revision-Date: 1999-05-16 09:33+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid "&Swallow modules"
+msgstr "&Spó¾ìraj module"
+
+msgid "Hostname: "
+msgstr "Mjeno serwera:"
+
+msgid "KDE Control Center"
+msgstr "KDE konfiguraciski centrum"
+
+msgid ""
+"KDE Control Center - Version 1.0\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"KDE konfiguraciski centrum - Wersija 1.0\n"
+"\n"
+"Napisa³ Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"D¼akujemy so:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+msgid "Machine: "
+msgstr "Computer: "
+
+msgid "Release: "
+msgstr "Wersija:"
+
+msgid "System: "
+msgstr "System: "
+
+msgid "Unknown module: "
+msgstr "Njeznaty modul: "
+
+msgid "User: "
+msgstr "Wu¾iwar"
+
+msgid "Version: "
+msgstr "Datum wersije: "
+

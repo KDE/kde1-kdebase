@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm \n"
+"POT-Creation-Date: 1999-05-16 16:25+0100\n"
+"Last-Translator: Edward Wornar <edi@serbski-institut.lusatia.de>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+
+msgid "&DeIconify"
+msgstr "(&De)ikonizuj"
+
+msgid "&Iconify"
+msgstr "Mi&nimalizuj"
+
+msgid "&Maximize"
+msgstr "&Maksimalizuj"
+
+msgid "&Onto current desktop"
+msgstr "Na &tutón desktop"
+
+msgid "&Restore"
+msgstr "Wróæiæ"
+
+msgid "&Sticky"
+msgstr "Pøilìpiæ"
+
+msgid "&To desktop"
+msgstr "Na &desktop"
+
+msgid "&UnSticky"
+msgstr "Wotlìpiæ"
+
+msgid "*** No Tasks ***"
+msgstr "*** ®ane nadawki ***"
+
+msgid "Command:"
+msgstr "Pøikaz:"
+
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+msgid "Current session"
+msgstr "Tuchwilna sesja"
+
+msgid "Eight"
+msgstr "Wósom"
+
+msgid "Five"
+msgstr "Pjeæ"
+
+msgid "Four"
+msgstr "©tyri"
+
+msgid "Logout"
+msgstr "Kónc"
+
+msgid "Mo&ve"
+msgstr "Pøesuñ"
+
+msgid "One"
+msgstr "Jedyn"
+
+msgid "Ooops!"
+msgstr "Ojej!"
+
+msgid "Preparing session ... "
+msgstr "Sesija so pøihotuje ..."
+
+msgid "Resi&ze"
+msgstr "&Wulkosæ"
+
+msgid "Session prepared for logout"
+msgstr "Sesija je pøihotowana za wotzjewjenje wu¾iwarja"
+
+msgid "Seven"
+msgstr "Sydom"
+
+msgid "Six"
+msgstr "©ìsæ"
+
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Nìkotre pixmapy su hubjene: GimmickMode njesteji k dispoziciji\n"
+
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Nìkotre pixmapy su hubjene: ShapeMode njesteji k dispoziciji\n"
+
+msgid "Switch to"
+msgstr "D¼i k"
+
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Sæìhowace aplikacije njejsu X11-aplikacije a njehod¼a so zawìsæiæ\n"
+"za pøichodnu sesiju, ale mó¾a so jeno¾ znowa startowaæ. Zaruè, zo su\n"
+"w¹ì wa¾ne daty zawìsæene."
+
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Sæìhowace aplikacije njejsu X11-aplikacije a njehod¼a so zawìsæiæ\n"
+"za pøichodnu sesiju, ale mó¾a so jeno¾ znowa startowaæ. Zaruè, zo su\n"
+"w¹ì wa¾ne daty zawìsæene."
+
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Sæìhowace aplikacije maja njezawìsæene daty,\n"
+"ki¾ so njehod¼a wróæiæ pøi pøichodnej sesiji."
+
+msgid "Three"
+msgstr "Tøi"
+
+msgid "Two"
+msgstr "Dwaj"
+
+msgid "Unnamed Desktop"
+msgstr "Desktop bjez mjena"
+
+msgid "Usage: "
+msgstr "Wu¾iwanje: "
+
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: zmylk pøi inicializaciji; program so pøetorhnje\n"
+
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: Ka¾ wupada, bì¾i hi¾o dal¹i woknowy manager.  kwm so "
+"njestartuje\n"
