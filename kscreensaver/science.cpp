@@ -445,7 +445,7 @@ void KScienceSaver::initWaveLens()
 void KScienceSaver::initLens()
 {
 	if( showDialog && dlg ) {
-		dlg->setText( i18n( "preparing lens..." ) );
+		dlg->setText( i18n( "rendering lens..." ) );
 		dlg->show();
 		kapp->processEvents();		
 	}
@@ -667,8 +667,10 @@ void KScienceSaver::slotTimeout()
 		if( !QWidget::find(d)->isActiveWindow() )
 			return;
 		grabPreviewWidget();
-		initialize();
 		grabPixmap = false;
+		initialize();
+		if( hideBG[mode] )
+			do_refresh( QRect ( 0, 0, width, height ) );
 	}
 
 	signed int oldx = xcoord, oldy = ycoord;
@@ -1255,9 +1257,10 @@ void KScienceSetup::slotAbout()
 {
 	QString about;
 
-	about.sprintf( "%s 0.26.3 beta\n\n%s Rene Beutler 1998\nrbeutler@g26.ethz.ch",
+	about.sprintf( "%s 0.26.4 beta\n\n%s Rene Beutler (1998)\nrbeutler@g26.ethz.ch",
 	               i18n( "Science Version"),
-	               i18n( "written by" ) );	QMessageBox::message( i18n("About Science"), 
+	               i18n( "written by" ) );
+	QMessageBox::message( i18n("About Science"), 
 	                      (const char *) about,
 	                      i18n("Ok") );
 }

@@ -13,6 +13,9 @@
 #include "saver.h"
 
 #include "saver.moc"
+
+#define MAX_PASSWORD_LENGTH	20
+
 extern KLocale *glocale;
 
 int checkPasswd(char *);
@@ -36,10 +39,11 @@ kScreenSaver::~kScreenSaver()
 
 //-----------------------------------------------------------------------------
 
-KPasswordDlg::KPasswordDlg( QWidget *parent ) : QWidget( parent )
+KPasswordDlg::KPasswordDlg( QWidget *parent, bool s=true ) : QWidget( parent )
 {
 	setCursor( arrowCursor );
 
+	stars = s;
 	password = "";
 
 	QFrame *frame = new QFrame( this );
@@ -53,6 +57,12 @@ KPasswordDlg::KPasswordDlg( QWidget *parent ) : QWidget( parent )
 	label->setGeometry( 20, 20, 160, 30 );
 	label->setAlignment( AlignCenter );
 	label->setFont( font );
+	
+	font.setPointSize( 16 );
+	KApplication::getKApplication()->getCharsets()->setQFont(font);
+	entry = new QLabel( "", frame );
+	entry->setGeometry( 20, 60, 160, 30 );
+	entry->setFont( font );	
 
 	resize( 200, 100 );
 
@@ -60,6 +70,25 @@ KPasswordDlg::KPasswordDlg( QWidget *parent ) : QWidget( parent )
 
 	timerMode = 0;
 	timer.start( 10000, TRUE );
+	
+	if( stars )
+	{
+		blinkTimer = new QTimer( this, "blink" );
+		connect( blinkTimer, SIGNAL( timeout() ), SLOT( blinkTimeout() ) );
+		blinkTimer->start( 300 );
+		blink = false;
+	}
+}
+
+void KPasswordDlg::showStars()
+{
+	QString s;
+	
+	s.fill( '*', password.length() );
+	if( blink )
+		s += "_";
+		
+	entry->setText( s );	
 }
 
 void KPasswordDlg::keyPressed( QKeyEvent *e )
@@ -69,8 +98,11 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 		case Key_Backspace:
 			{
 				int len = password.length();
-				if ( len )
+				if ( len ) {
 					password.truncate( len - 1 );
+					if( stars )
+						showStars();
+				}
 			}
 			break;
 
@@ -91,9 +123,11 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 			break;
 
 		default:
-			if ( password.length() < 50 )
+			if ( password.length() < MAX_PASSWORD_LENGTH )
 			{
 				password += (char)e->ascii();
+				if( stars )
+					showStars();
 				timer.changeInterval( 10000 );
 			}
 	}
@@ -101,19 +135,27 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 
 int KPasswordDlg::tryPassword()
 {
-    int e = checkPasswd(password.data());
-    return e;
+	int e = checkPasswd(password.data());
+	return e;
 }
 
 void KPasswordDlg::timeout()
 {
-    if ( timerMode )
+	if ( timerMode )
 	{
-	    label->setText( glocale->translate("Enter Password") );
-	    timerMode = 0;
-	    timer.start( 5000, TRUE );
+		label->setText( glocale->translate("Enter Password") );
+		if( stars )
+			showStars();
+		timerMode = 0;
+		timer.start( 5000, TRUE );
 	}
-    else
-	emit passCancel();
+	else
+		emit passCancel();
+}
+
+void KPasswordDlg::blinkTimeout()
+{
+	blink = !blink;
+	showStars();
 }
 

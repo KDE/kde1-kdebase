@@ -60,6 +60,11 @@ void usage( char *name );
 
 ssApp::ssApp( int &argc, char **argv ) : KApplication( argc, argv )
 {
+	KConfig *kssConfig = new KConfig( kapp->kde_configdir() + "/kssrc", 
+	                                  kapp->localconfigdir() + "/kssrc" );
+	kssConfig->setGroup( "kss" );
+	stars = kssConfig->readBoolEntry( "PasswordAsStars", true );
+	delete kssConfig;
 }
 
 bool ssApp::x11EventFilter( XEvent *event )
@@ -111,7 +116,7 @@ bool ssApp::x11EventFilter( XEvent *event )
 				qApp->exit_loop();
 			else
 			{
-				passDlg = new KPasswordDlg( saverWidget );
+				passDlg = new KPasswordDlg( saverWidget, stars );
 				connect(passDlg, SIGNAL(passOk()), SLOT(slotPassOk()));
 				connect(passDlg, SIGNAL(passCancel()), SLOT(slotPassCancel()));
 				passDlg->move( (QApplication::desktop()->width()
@@ -148,6 +153,7 @@ void ssApp::slotPassCancel()
 	passOk = FALSE;
 	delete passDlg;
 	passDlg = NULL;
+	grabInput( saverWidget );
 }
 
 //----------------------------------------------------------------------------

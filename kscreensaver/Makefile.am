@@ -176,8 +176,14 @@ install-data-local:
 	$(INSTALL_DATA) kscreensaver.xpm $(kde_icondir)/kscreensaver.xpm
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
+	$(mkinstalldirs) $(kde_datadir)/kscreensaver
+	$(INSTALL_DATA) kscience.gif $(kde_datadir)/kscreensaver/kscience.gif
+	$(mkinstalldirs) $(kde_datadir)/kscreensaver
+	$(INSTALL_DATA) kscience-small.gif $(kde_datadir)/kscreensaver/kscience-small.gif
 
 uninstall-local:
 	rm -f $(kde_icondir)/kscreensaver.xpm
 	rm -f $(kde_minidir)/kscreensaver.xpm
+	rm -f $(kde_datadir)/kscreensaver/kscience.gif
+	rm -f $(kde_datadir)/kscreensaver/kscience-small.gif
 

@@ -18,6 +18,8 @@ public:
 protected:
 	virtual bool x11EventFilter( XEvent * );
 
+private:
+	bool stars;
 
 public slots:
 	void slotPassOk();

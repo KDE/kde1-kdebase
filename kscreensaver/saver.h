@@ -28,8 +28,9 @@ class KPasswordDlg : public QWidget
 {
 	Q_OBJECT
 public:
-	KPasswordDlg( QWidget *parent );
+	KPasswordDlg( QWidget *parent, bool s = true );
 
+	void showStars();
 	int tryPassword();
 	void keyPressed( QKeyEvent * );
 
@@ -39,12 +40,15 @@ signals:
 
 protected slots:
 	void timeout();
-
+	void blinkTimeout();
+	
 private:
-	QTimer timer;
-	QLabel *label;
+	QTimer timer, *blinkTimer;
+	QLabel *label, *entry;
 	QString password;
 	int timerMode;
+	bool stars;
+	bool blink;
 };
 
 #endif
