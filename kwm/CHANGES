@@ -12,7 +12,7 @@ influences from my experiences with the former kwm.
 In 0.11:
 --------
 patchlevel 2:
-	- fixed bunh of bugs with smart placement, cascade placement,
+	- fixed a bunch of bugs with smart placement, cascade placement,
 	  unclutter, snap to border and snap to window (bugs given mostly
 	  by the wrong assumption that te client's geometry is defined
 	  relative to free desk space). Thanks Stephan (CT)
