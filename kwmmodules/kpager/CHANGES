@@ -1,3 +1,7 @@
+* Sun Jan 24 10:30:00 CEST 1999
+
+Fixed the Symmetrical Mirrored background mode
+
 * Thu Jan 21 7:45:00 CEST 1999
 
 Fixed a memory leakage bug

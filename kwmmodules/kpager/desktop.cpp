@@ -1147,6 +1147,62 @@ void Desktop::prepareBackground(void)
             } break;
             
         case (SymmetricalMirrored) :
+            {
+                if (backgroundPixmap!=0L) delete backgroundPixmap;
+                backgroundPixmap=new QPixmap;
+                backgroundPixmap->resize(width(),height()-getHeaderHeight());
+                int fliph = 0;
+                int flipv = 0;
+                int w = width();
+                int h = height();
+                QWMatrix matrix;
+                matrix.scale(
+                               ((double)backPixmapWidth*width()/screen_width)/getBigBgPixmap()->width(),
+                               (((double)backPixmapHeight*(height()-getHeaderHeight())/
+                                 screen_height)/getBigBgPixmap()->height())
+                              );
+                QPixmap tmp(getBigBgPixmap()->xForm( matrix ));
+                if ((tmp.height()!=0)&&(tmp.width()!=0)) {
+                    int x,y, ax,ay;
+
+                    y = tmp.height() - ((h/2)%tmp.height());
+                    // Starting point in picture to copy
+                    ay = 0;    // Vertical anchor point 
+
+                    while (ay < (int)h) {
+                        x = tmp.width() - ((w/2)%tmp.width());
+			if (x==1) x=tmp.width(); // Workaround for original 
+						// algorithm depending on
+						// window dimensions
+                        // Starting point in picture to cpy
+                        ax = 0;    // Horizontal anchor point
+                        while (ax < (int)w) {
+                            bitBlt( backgroundPixmap, ax, ay, &tmp, x, y );
+                            {
+                                QWMatrix S(-1.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
+                                QPixmap newp = tmp.xForm( S );
+                                bitBlt( &tmp, 0, 0, &newp );
+                                fliph = !fliph;
+                            };
+                            ax += tmp.width() - x;
+                            x = 0;
+                        }
+                        QWMatrix S(1.0F, 0.0F, 0.0F, -1.0F, 0.0F, 0.0F);
+                        QPixmap newp = tmp.xForm( S );
+                        bitBlt( &tmp, 0, 0, &newp );
+                       flipv = !flipv;
+                        if (fliph) {   // leftmost image is always non-hflipped
+                            S.setMatrix(-1.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
+                            newp = tmp.xForm( S );
+                            bitBlt( &tmp, 0, 0, &newp );
+                            fliph = !fliph;
+                        } 
+                        ay += tmp.height() - y;
+                        y = 0;
+                    }
+
+                }
+            } break;  
         case (Mirrored) :
             {
                 int w = getBigBgPixmap()->width();
@@ -1188,7 +1244,7 @@ void Desktop::prepareBackground(void)
             backgroundPixmap=new QPixmap();
             backgroundPixmap->resize(width(),height()-getHeaderHeight());
             QWMatrix matrix;
-            if ((wpMode==Mirrored)||(wpMode==SymmetricalMirrored))
+            if ((wpMode==Mirrored))
                 matrix.scale(
                              ((double)2*backPixmapWidth*width()/screen_width)/imageToTile->width(),
                              (((double)2*backPixmapHeight*(height()-getHeaderHeight())/screen_height)/imageToTile->height())
@@ -1201,7 +1257,7 @@ void Desktop::prepareBackground(void)
             
             
             QPixmap *tmp = new QPixmap(imageToTile->xForm(matrix));
-            if ((wpMode==Mirrored)||(wpMode==SymmetricalMirrored)) delete imageToTile;
+            if (wpMode==Mirrored) delete imageToTile;
             int offx=0,offy=0;
             if ((tmp->width()!=0)&&(tmp->height()!=0))
                 if (wpMode==CenterTiled)
@@ -1221,13 +1277,6 @@ void Desktop::prepareBackground(void)
                     offy=((backgroundPixmap->height()/2)%(tmp->height()));
                     if (offy>0) offy-=tmp->height();
                 }
-                else if (wpMode==SymmetricalMirrored)
-                {
-                    offx=(((backgroundPixmap->width()-tmp->width())/2)%(tmp->width()));
-                    if (offx>0) offx-=tmp->width();
-                    offy=((backgroundPixmap->height()/2)%(tmp->height()));
-                    if (offy>0) offy-=tmp->height();
-                };
                 int x,y=offy;
 #ifdef DESKTOPDEBUG
                 printf("[%d]backPixmap %d x %d\n",id,backPixmapWidth,backPixmapHeight);
