@@ -3,6 +3,22 @@ INCLUDES = $(all_includes)
 LDFLAGS = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 \
 	$(all_libraries) $(KDE_RPATH)
 
+lnkdir = $(kde_appsdir)/Applications
+lnk_DATA = kwrite.kdelnk
+
+icondir = $(kde_icondir)
+icon_DATA = kwrite.xpm
+
+EXTRA_DIST = $(lnk_DATA) $(icon_DATA) mini-kwrite.xpm
+
+install-data-local: mini-kwrite.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kwrite.xpm $(kde_minidir)/kwrite.xpm
+
+uninstall-local:
+	-rm -f $(kde_minidir)/kwrite.xpm
+
+
 bin_PROGRAMS = kwrite
 
 BUILT_SOURCES =  moc_highlight.cpp moc_kwdoc.cpp moc_kwview.cpp moc_kwdialog.cpp moc_toplevel.cpp
