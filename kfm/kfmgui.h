@@ -479,7 +479,12 @@ public slots:
     void slotShowMenubar();
 
     /**
-     * Menu "Options->Set Preferences" (was ConfigureBrowser)
+     * Menu "Options->Configure File Manager..."
+     */
+    void slotConfigureFileManager();
+    
+    /**
+     * Menu "Options->Configure Browser..."
      */
     void slotConfigureBrowser();
 

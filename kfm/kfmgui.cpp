@@ -394,7 +394,9 @@ void KfmGui::initMenu()
     else
       moptions->setItemEnabled(moptions->idAt( 6 ), false);
     moptions->insertSeparator();
-    moptions->insertItem( klocale->translate("&Configure Browser..."),
+    moptions->insertItem( klocale->translate("&Configure File Manager..."),
+                          this, SLOT(slotConfigureFileManager()));
+    moptions->insertItem( klocale->translate("Configure &Browser..."),
                           this, SLOT(slotConfigureBrowser()));
     
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
@@ -1500,7 +1502,29 @@ void KfmGui::slotSaveSettings()
 }
 
 
+void KfmGui::slotConfigureFileManager()
+{
+   if (fork() == 0)
+   {
+       // execute 'kcmkfm' with file manager options pages
+      execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","font","color","misc",0);
+      warning("Error launching kcmkfm !");
+      exit(1); 
+   }
+}
+
 void KfmGui::slotConfigureBrowser()
+{
+   if (fork() == 0)
+   {
+       // execute 'kcmkfm' with browser options pages
+      execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","proxy","http","useragent",0);
+      warning("Error launching kcmkfm !");
+      exit(1); 
+   }
+}
+
+#if 0 // TEMPORARILY KEPT, FOR REFERENCE ONLY.     David
 {
   //-> was:  UserAgentDialog dlg;
   KKFMOptDlg dlg;
@@ -1684,6 +1708,7 @@ void KfmGui::slotConfigureBrowser()
   // restore the group
   config->setGroup( oldgroup );
 }
+#endif
 
 /** Static method, to read configuration and apply it to all kfmguis */
 void KfmGui::slotConfigure()
