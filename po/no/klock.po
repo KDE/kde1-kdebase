@@ -128,11 +128,11 @@ msgstr "KDE er bra"
 
 #: bat.cpp:462
 msgid "Bat"
-msgstr "Klump"
+msgstr "Flaggermus"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "Klump-oppsett"
+msgstr "Flaggermus-oppsett"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -140,7 +140,7 @@ msgstr "Antall flaggermus:"
 
 #: bat.cpp:661
 msgid "About Bat"
-msgstr "Om Klump"
+msgstr "Om Flaggermus"
 
 #: bat.cpp:662
 msgid ""
@@ -150,7 +150,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Klump\n"
+"Flaggermus\n"
 "\n"
 "Enerett (c) 1986 av Sun Microsystems\n"
 "\n"
@@ -230,7 +230,7 @@ msgstr "Bouboule-oppsett"
 
 #: bouboule.cpp:1032
 msgid "Number of points:"
-msgstr "Antall poeng:"
+msgstr "Antall punkter:"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
@@ -264,7 +264,7 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Dødens blanke skjerm"
+msgstr "Dødens sorte skjerm"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -459,7 +459,7 @@ msgstr ""
 #: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Valg %s har ikke støtte på denne plattform!"
+msgstr "Valg %s er ikke støttet på denne plattform!"
 
 #: main.cpp:422
 msgid ""
@@ -473,7 +473,7 @@ msgstr ""
 "\n"
 "Ditt system bruker skyggepassord!\n"
 "Vennligst kontakt din systemadministrator.\n"
-"Fortell ham at kcheckpass-programmet må være suid!"
+"Fortell ham at programmet kcheckpass må være suid!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -583,7 +583,7 @@ msgstr "Rør-oppsett"
 
 #: pipes.cpp:678
 msgid "Number of Pipes"
-msgstr "Antall piper"
+msgstr "Antall rør"
 
 #: pipes.cpp:743
 msgid "About KPipes"
@@ -605,7 +605,7 @@ msgstr "KPolygon-oppsett"
 
 #: polygon.cpp:107
 msgid "Vertices:"
-msgstr "Vertices:"
+msgstr "Kanter:"
 
 #: polygon.cpp:238
 msgid "About Polygon"
@@ -663,7 +663,7 @@ msgstr "Sten-oppsett"
 
 #: rock.cpp:589
 msgid "Move"
-msgstr "Modus"
+msgstr "Flytt"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -705,7 +705,7 @@ msgstr "Kule"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr "Eksponential"
+msgstr "Eksponensiell"
 
 #: science.cpp:74
 msgid "Contraction"

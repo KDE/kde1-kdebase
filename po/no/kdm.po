@@ -15,7 +15,7 @@ msgstr ""
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Avslutte eller starte på nytt?"
+msgstr "Slå av maskinen eller starte på nytt?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
@@ -23,11 +23,11 @@ msgstr "(Skriv inn root-passordet)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
-msgstr "Avslutt"
+msgstr "Slå av maskinen"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Avslutte og starte på nytt"
+msgstr "Slå av maskinen og starte på nytt"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
@@ -55,7 +55,7 @@ msgstr "Sett igang!"
 
 #: kgreeter.cpp:328
 msgid "Shutdown..."
-msgstr "Avslutte..."
+msgstr "Slå av maskinen..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
@@ -67,7 +67,7 @@ msgstr "login_getcapstr() mislyktes."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr "Beklager -- din konto har utgått."
+msgstr "Beklager -- din konto er utgått."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format

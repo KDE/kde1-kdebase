@@ -14,7 +14,7 @@ msgstr ""
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE internasjonalt tastatur er allerede started på denne skjerm."
+msgstr "KDE internasjonalt tastatur er allerede started på denne skjermen."
 
 #: kikbd.cpp:288
 #, c-format
@@ -31,8 +31,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
-"Tastaturmappe \"%s\" finnes ikke.\n"
-"Hopper over denne mappen."
+"Tastaturkart \"%s\" finnes ikke.\n"
+"Hopper over dette kartet."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -62,7 +62,7 @@ msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Kan ikke fjerne Caps Lock fra modifiserere.\n"
+"Kan ikke fjerne Caps Lock fra \"Modifier\".\n"
 "Caps Lock-emulering er koplet ut"
 
 #: kikbd.cpp:1003
@@ -280,7 +280,7 @@ msgstr "Internasjonalt tastatur-FEIL"
 
 #: kikbdconf.cpp:495
 msgid "International keyboard warning"
-msgstr "Internasjonalt tastatur-varsel"
+msgstr "Internasjonalt tastatur-advarsel"
 
 #: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
@@ -320,7 +320,7 @@ msgstr "&Opp"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
-msgstr "Opp valgt tastaturkart"
+msgstr "Valgte tastaturkart flyttes opp"
 
 #: widgets.cpp:131
 msgid "D&own"
@@ -328,7 +328,7 @@ msgstr "&Ned"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
-msgstr "Ned valgt tastaturkart"
+msgstr "Valgte tastaturkart flyttes ned"
 
 #: widgets.cpp:135
 msgid "&Info"
@@ -438,7 +438,7 @@ msgstr "Data inn"
 
 #: widgets.cpp:495
 msgid "Standard behavior. Keyboard map active for all windows"
-msgstr "Standard oppførsel. Tastaturkart er ikke aktiv for alle vinduer"
+msgstr "Standard oppførsel. Tastaturkart er aktivt for alle vinduer"
 
 #: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
