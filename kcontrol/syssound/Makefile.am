@@ -24,7 +24,7 @@ BUILTSOURCES =	syssound.moc
 # them while "make clean", use CLEANFILES
 DISTCLEANFILES = $(BUILTSOURCES)
 
-EXTRA_DIST = syssound.xpm mini-syssound.xpm
+EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
@@ -37,14 +37,14 @@ messages:
 # if you have more of them, create a subdirectory with an extra Makefile 
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) syssound.xpm $(kde_icondir)
+	$(INSTALL_DATA) kcmsyssound.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-syssound.xpm $(kde_minidir)/syssound.xpm
+	$(INSTALL_DATA) mini-kcmsyssound.xpm $(kde_minidir)/kcmsyssound.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
-	-rm -f $(kde_icondir)/syssound.xpm
-	-rm -f $(kde_minidir)/syssound.xpm
+	-rm -f $(kde_icondir)/kcmsyssound.xpm
+	-rm -f $(kde_minidir)/kcmsyssound.xpm
 
 # add a dependency for every moc file to be full portable
 # I've added a key binding to emacs for this. 
