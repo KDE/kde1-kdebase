@@ -1802,9 +1802,11 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	exec.replace( i, 2, _url );
     while ( ( i = exec.find( "%c" ) ) != -1 )
     {
-	if ( !name.isEmpty() )
+	exec.detach();
+
+	if ( !name.isEmpty() ) 
 	    exec.replace( i, 2, name.data() );
-	else
+	else 
 	{
 	    QString s = _url;
 	    if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
@@ -1817,12 +1819,20 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	    exec.replace(i,2,s.data());
 	}
     }     
-    if (!icon.isEmpty())
+    if (!icon.isEmpty()) {
+      icon.detach();
       icon.prepend("-icon ");
-    while ( ( i = exec.find( "%i" ) ) != -1 )
+    }
+
+    while ( ( i = exec.find( "%i" ) ) != -1 ) {
+      exec.detach();
       exec.replace( i, 2, icon.data());
-    if (!miniicon.isEmpty())
+    }
+
+    if (!miniicon.isEmpty()) {
+      miniicon.detach();
       miniicon.prepend("-miniicon ");
+    } 
     while ( ( i = exec.find( "%m" ) ) != -1 )
       exec.replace( i, 2, miniicon.data());
     

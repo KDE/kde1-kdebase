@@ -386,7 +386,7 @@ void KGlobalConfig::readSchemeNames( )
    // Always a current and a default scheme 
    nSysSchemes = 2;
 	
-	QString kksPath( kapp->kde_datadir() );
+	QString kksPath = kapp->kde_datadir().copy();
 	kksPath += "/kcmkeys/global";
 	
 	QDir d;

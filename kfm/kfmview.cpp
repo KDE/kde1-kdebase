@@ -868,7 +868,7 @@ void KfmView::slotOnURL( const char *_url )
         lstat( decodedPath, &lbuff );
         QString text;
 	QString text2;
-	text = decodedName;
+	text = decodedName.copy(); // copy to change it
 	text2 = text;
 	text2.detach();
 	

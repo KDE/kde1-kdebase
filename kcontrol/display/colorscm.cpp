@@ -603,8 +603,7 @@ void KColorScheme::readScheme( int index )
 
 void KColorScheme::readSchemeNames( )
 {
-	QString kcsPath( kapp->kde_datadir() );
-	kcsPath += "/kdisplay/color-schemes";
+	QString kcsPath = kapp->kde_datadir() + "/kdisplay/color-schemes";
 	
 	QDir d;
 	d.setPath( kcsPath );

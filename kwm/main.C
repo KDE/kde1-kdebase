@@ -390,6 +390,8 @@ QRect &stringToRect(QString s, QRect *q){
   int w = 0;
   int h = 0;
 
+  s.detach(); // a copy for changing
+
   int a;
   a = s.find('+', 0);
   if (a>0){
