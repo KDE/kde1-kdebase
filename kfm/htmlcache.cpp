@@ -220,7 +220,7 @@ HTMLCache::~HTMLCache()
     instanceList->removeRef( this );
 }
 
-void HTMLCache::quit() // never used
+void HTMLCache::quit()
 {
     HTMLCacheJob *job;
     for ( job = staticJobList->first(); job != 0L; job = staticJobList->next() )

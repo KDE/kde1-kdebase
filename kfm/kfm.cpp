@@ -166,6 +166,7 @@ void Kfm::slotSave()
 
 void Kfm::slotShutDown()
 {
+  HTMLCache::quit(); // cancel running jobs, if any. David.
   // Delete the sockets
   QString sock;
   sock.sprintf(_PATH_TMP"kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
