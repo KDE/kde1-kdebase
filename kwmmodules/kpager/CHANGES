@@ -1,3 +1,8 @@
+* Thu Dic 17 7:48:00 CEST 1998
+
+Another fix for common desktop
+(this kbgwm_change event was really kbgwm_reconfigure)
+
 * Tue Dic 15 7:20:00 CEST 1998
 
 Oops, I thought this common desktop was already fixed. 

@@ -925,9 +925,9 @@ void Desktop::loadWallpaper(QString wallpaper)
 
 void Desktop::loadWallpaperBackground(QString wallpaper)
 {
-#ifdef DESKTOPDEBUG
-    printf("Loading\n");
-#endif
+//#ifdef DESKTOPDEBUG
+    printf("[%d]Loading\n",id);
+//#endif
     QString filename;
     
     if ( wallpaper[0] != '/' )
@@ -957,9 +957,9 @@ void Desktop::loadWallpaperBackground(QString wallpaper)
     QWMatrix matrix;
     matrix.scale((double)120/backPixmapWidth,(double)120/backPixmapWidth);
     bigBackgroundPixmap = new QPixmap(wpPixmap2->xForm(matrix));
-#ifdef DESKTOPDEBUG
+//#ifdef DESKTOPDEBUG
     printf("Loaded\n");
-#endif
+//#endif
     delete wpPixmap;
 }
 
