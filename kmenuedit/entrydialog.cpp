@@ -59,13 +59,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 
   QLabel* tmpQLabel;
   tmpQLabel = new QLabel( this, "Label_1" );
-  tmpQLabel->setGeometry( 32, 8, 40, 24 );
+  tmpQLabel->setGeometry( 8, 8, 64, 24 );
   tmpQLabel->setText( klocale->translate("Type:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( this );
-  tmpQLabel->setGeometry( 8, 40, 72, 24 );
+  tmpQLabel->setGeometry( 8, 40, 64, 24 );
   tmpQLabel->setText( klocale->translate("File Name:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
@@ -78,7 +78,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   i_fname->setFrame( TRUE );
 
   tmpQLabel = new QLabel( this, "Label_2" );
-  tmpQLabel->setGeometry( 32, 72, 40, 24 );
+  tmpQLabel->setGeometry( 8, 72, 64, 24 );
   tmpQLabel->setText( klocale->translate("Name:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
@@ -91,7 +91,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   i_name->setFrame( TRUE );
   
   tmpQLabel = new QLabel( this, "Label_3" );
-  tmpQLabel->setGeometry( 16, 136, 56, 24 );
+  tmpQLabel->setGeometry( 8, 136, 64, 24 );
   tmpQLabel->setText( klocale->translate("Mini Icon:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
@@ -123,13 +123,13 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
   b_pixmap->setAutoResize( FALSE );
   
   tmpQLabel = new QLabel( this, "Label_4" );
-  tmpQLabel->setGeometry( 40, 104, 32, 24 );
+  tmpQLabel->setGeometry( 8, 104, 64, 24 );
   tmpQLabel->setText( klocale->translate("Icon:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
   
   tmpQLabel = new QLabel( this, "Label_5" );
-  tmpQLabel->setGeometry( 16, 168, 56, 24 );
+  tmpQLabel->setGeometry( 8, 168, 64, 24 );
   tmpQLabel->setText( klocale->translate("Comment:") );
   tmpQLabel->setAlignment( 289 );
   tmpQLabel->setMargin( -1 );
