@@ -51,7 +51,7 @@ case $host in
      )
      ;;
 *-*-freebsd* )
-   SETUIDFLAGS="4755"
+   SETUIDFLAGS="4755 -o root"
      ;;
 esac
 
