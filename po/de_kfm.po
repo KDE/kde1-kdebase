@@ -29,168 +29,136 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "FEHLER: Vorlage existiert nicht '%s'"
 
 #: kfmgui.cpp:251
-#, fuzzy
 msgid "&New"
-msgstr "Neu"
+msgstr "&Neu"
 
 #: kfmgui.cpp:253
-#, fuzzy
 msgid "&New Window"
-msgstr "Neues Fenster"
+msgstr "&Neues Fenster"
 
 #: kfmgui.cpp:256
-#, fuzzy
 msgid "&Run"
-msgstr "Ausführen"
+msgstr "&Ausführen"
 
 #: kfmgui.cpp:258
-#, fuzzy
 msgid "Open &Terminal"
-msgstr "Öffne Terminal"
+msgstr "Öffne &Terminal"
 
 #: kfmgui.cpp:261
-#, fuzzy
 msgid "&Open Location"
-msgstr "Seite öffnen"
+msgstr "Seite ö&ffnen"
 
 #: kfmgui.cpp:264
-#, fuzzy
 msgid "&Print..."
-msgstr "Drucke..."
+msgstr "&Drucke..."
 
 #: kfmgui.cpp:267
-#, fuzzy
 msgid "&Close"
-msgstr "Schließen"
+msgstr "&Schließen"
 
 #: kfmgui.cpp:269
-#, fuzzy
 msgid "&Quit"
-msgstr "Beenden"
+msgstr "&Beenden"
 
 #: kfmgui.cpp:274
-#, fuzzy
 msgid "&Copy"
-msgstr "Kopieren"
+msgstr "&Kopieren"
 
 #: kfmgui.cpp:276
-#, fuzzy
 msgid "&Paste"
-msgstr "Einfügen"
+msgstr "&Einfügen"
 
 #: kfmgui.cpp:278
-#, fuzzy
 msgid "&Move to Trash"
-msgstr "In den Papierkorb verschieben"
+msgstr "In den &Papierkorb verschieben"
 
 #: kfmgui.cpp:280
-#, fuzzy
 msgid "&Delete"
-msgstr "Löschen"
+msgstr "&Löschen"
 
 #: kfmgui.cpp:283
-#, fuzzy
 msgid "&Select"
-msgstr "Auswählen"
+msgstr "&Auswählen"
 
 #: kfmgui.cpp:289
-#, fuzzy
 msgid "Show &Dot Files"
-msgstr "Versteckte Dateien anzeigen"
+msgstr "&Versteckte Dateien anzeigen"
 
 #: kfmgui.cpp:291
-#, fuzzy
 msgid "Show Tr&ee"
-msgstr "Verzeichnisbaum anzeigen"
+msgstr "Verzeichnis&baum anzeigen"
 
 #: kfmgui.cpp:293
-#, fuzzy
 msgid "&Visual Schnauzer"
-msgstr "Bilder-Vorschau"
+msgstr "Bil&der-Vorschau"
 
 #: kfmgui.cpp:295
-#, fuzzy
 msgid "&HTML View"
-msgstr "HTML-Ansicht"
+msgstr "&HTML-Ansicht"
 
 #: kfmgui.cpp:298
-#, fuzzy
 msgid "&Icon View"
-msgstr "Symbol-Ansicht"
+msgstr "&Symbol-Ansicht"
 
 #: kfmgui.cpp:300
-#, fuzzy
 msgid "&Text View"
-msgstr "Text-Ansicht"
+msgstr "&Text-Ansicht"
 
 #: kfmgui.cpp:302
-#, fuzzy
 msgid "&Long View"
-msgstr "Ausführliche Ansicht"
+msgstr "&Ausführliche Ansicht"
 
 #: kfmgui.cpp:305
 msgid "&Save Settings"
-msgstr ""
+msgstr "&Einstellungen speichern"
 
 #: kfmgui.cpp:311
-#, fuzzy
 msgid "&Reload Document"
-msgstr "Dokument neu laden"
+msgstr "Dokument &neu laden"
 
 #: kfmgui.cpp:313
-#, fuzzy
 msgid "Rescan &bindings"
-msgstr "Bindungen neu einlesen"
+msgstr "Bi&ndungen neu einlesen"
 
 #: kfmgui.cpp:339
-#, fuzzy
 msgid "&Find"
-msgstr "Suchen"
+msgstr "&Suchen"
 
 #: kfmgui.cpp:348
-#, fuzzy
 msgid "&Add Bookmark"
-msgstr "Lesezeichen hinzufügen"
+msgstr "&Lesezeichen hinzufügen"
 
 #: kfmgui.cpp:354
-#, fuzzy
 msgid "&About"
-msgstr "Über"
+msgstr "&Über"
 
 #: kfmgui.cpp:355
-#, fuzzy
 msgid "&How can I ..."
-msgstr "Wie kann ich ...?"
+msgstr "&Wie kann ich ...?"
 
 #: kfmgui.cpp:360
-#, fuzzy
 msgid "&File"
-msgstr "Datei"
+msgstr "&Datei"
 
 #: kfmgui.cpp:361
-#, fuzzy
 msgid "&Edit"
-msgstr "Bearbeiten"
+msgstr "&Bearbeiten"
 
 #: kfmgui.cpp:362
-#, fuzzy
 msgid "&View"
-msgstr "Ansicht"
+msgstr "&Ansicht"
 
 #: kfmgui.cpp:363
-#, fuzzy
 msgid "&Bookmarks"
-msgstr "Lesezeichen"
+msgstr "&Lesezeichen"
 
 #: kfmgui.cpp:364
-#, fuzzy
 msgid "&Tool"
-msgstr "Werkzeug"
+msgstr "&Werkzeug"
 
 #: kfmgui.cpp:366
-#, fuzzy
 msgid "&Help"
-msgstr "Hilfe"
+msgstr "&Hilfe"
 
 #: kfmgui.cpp:390
 msgid "Back"
@@ -252,8 +220,6 @@ msgid ""
 "\n"
 "and the KFM team"
 msgstr ""
-"KFM 0.9.0\n"
-"\n"
 "(c) Torben Weis\n"
 "weis@kde.org\n"
 "\n"
@@ -276,7 +242,7 @@ msgstr "KFM Fehler"
 
 #: kfmview.cpp:258
 msgid "You dropped some file over itself"
-msgstr ""
+msgstr "Sie haben ein File auf es selbst gezogen"
 
 #: kfmview.cpp:302 kfmview.cpp:471 krenamewin.cpp:18 root.cpp:901
 msgid "KFM Warning"
@@ -347,8 +313,7 @@ msgstr "FEHLER: Keine Terminal Einstellungen"
 
 #: kbind.cpp:1373
 msgid "ERROR: You must first mount the device. Use the right mouse button"
-msgstr ""
-"FEHLER: Zuerst muß das Gerät gemountet werden. Rechte Maus-Taste drücken."
+msgstr "FEHLER: Zuerst muß das Gerät gemountet werden. Rechte Maus-Taste drücken."
 
 #: kbind.cpp:1379
 #, c-format
@@ -668,8 +633,7 @@ msgstr "Verküpfung"
 
 #: kiojob.cpp:110
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr ""
-"INTERNER FEHLER: Wenigstens das zu mountende Gerät muß angegeben werden."
+msgstr "INTERNER FEHLER: Wenigstens das zu mountende Gerät muß angegeben werden."
 
 #: kiojob.cpp:237 kiojob.cpp:241
 #, c-format
@@ -678,8 +642,7 @@ msgstr "FEHLER: Fehlerhaft URL '%s'"
 
 #: kiojob.cpp:246
 msgid "ERROR: Can only make links on local file system"
-msgstr ""
-"FEHLER: Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
+msgstr "FEHLER: Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
 
 #: kiojob.cpp:254
 #, c-format
