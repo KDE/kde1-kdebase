@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 SwallowExec=kwmpager -geometry 50x50+10000+10000
 SwallowTitle=kwmpager
+SwallowTitle[pl]=kwmpager
 BinaryPattern=
 Name=Desktop Pager
 Name[no]=Skrivebordveksler

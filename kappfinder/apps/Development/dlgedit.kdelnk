@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=DlgEdit
+Name[pl]=DlgEdit
 MiniIcon=
 Protocols=
 MimeType=

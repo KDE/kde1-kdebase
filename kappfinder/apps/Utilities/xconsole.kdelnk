@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Console
+Name[pl]=X Console
 MiniIcon=mini-sh.xpm
 Protocols=
 MimeType=

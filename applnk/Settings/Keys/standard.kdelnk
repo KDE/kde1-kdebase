@@ -3,5 +3,8 @@
 Exec=kcmkeys standard
 Type=Application
 Comment=Configuration of standard keys
+Comment[pl]=Ustawienia standardowych klawiszy
 Name=Standard Keys
+Name[pl]=Standardowe klawisze
 SwallowTitle=Key binding settings
+SwallowTitle[pl]=Ustawienia klawiszy

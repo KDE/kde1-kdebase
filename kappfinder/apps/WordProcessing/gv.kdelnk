@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=GV
+Name[pl]=GV
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=

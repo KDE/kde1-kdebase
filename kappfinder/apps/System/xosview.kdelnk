@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X osview
+Name[pl]=X osview
 MiniIcon=log.xpm
 Protocols=
 MimeType=

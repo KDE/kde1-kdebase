@@ -28,6 +28,7 @@ Name[it]=Terminale
 Name[cs]=X Terminál
 Name[sk]=X Terminál
 Name[ro]=Terminal de X
+Name[pl]=X Terminal
 Exec=xterm
 Icon=kvt.xpm
 TerminalOptions=

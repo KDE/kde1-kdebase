@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=XV
+Name[pl]=XV
 MiniIcon=mini-xv.xpm
 Protocols=
 MimeType=
@@ -10,7 +11,7 @@ Comment=XV Picture Viewer
 Comment[de]=XV Bildbetrachter
 Comment[no]=XV-billedfremviser
 Comment[fr]=Visualiseur d'images XV
-Comment[pl]=Przegl±darka plików graficznych XV
+Comment[pl]=Przegl±darka plików graficznych
 Comment[fi]=XV kuvien näyttäjä
 Comment[sv]=XV Bildvisare
 Comment[pt]=Visualizador de imagens

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Applix
+Name[pl]=Applix
 MiniIcon=
 Protocols=
 MimeType=

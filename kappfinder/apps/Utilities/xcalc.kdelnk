@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X Calc
+Name[pl]=X Calc
 MiniIcon=
 Protocols=
 MimeType=

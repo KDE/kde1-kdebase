@@ -520,7 +520,7 @@ msgstr "Odstêpy pionowe ikon:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr "Prze¼roczysty tekst pod ikonami"
+msgstr "Przezroczysty tekst pod ikonami"
 
 #: bookmark.cpp:264
 msgid "Could not write bookmark"

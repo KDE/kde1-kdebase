@@ -26,6 +26,7 @@ Name[pt]=Nedit
 Name[pt_BR]=Nedit
 Name[cs]=Nedit
 Name[sk]=Nedit
+Name[pl]=Nedit
 Exec=nedit %f
 Icon=kedit.xpm
 TerminalOptions=

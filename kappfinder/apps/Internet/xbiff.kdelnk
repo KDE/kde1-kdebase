@@ -2,7 +2,9 @@
 [KDE Desktop Entry]
 SwallowExec=xbiff
 SwallowTitle=xbiff
+SwallowTitle[pl]=xbiff
 Name=xbiff
+Name[pl]=xbiff
 Comment=Mail notification
 Comment[de]=Benachrichtung bei neuer Email
 Comment[no]=Gir beskjed når nye eposter ankommer

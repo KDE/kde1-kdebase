@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=GhostView
+Name[pl]=GhostView
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=

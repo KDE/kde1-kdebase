@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Acrobat Reader
+Name[pl]=Acrobat Reader
 MiniIcon=
 Protocols=
 MimeType=

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
+Name[pl]=Plan
 MiniIcon=mini-plan.xpm
 Protocols=
 MimeType=

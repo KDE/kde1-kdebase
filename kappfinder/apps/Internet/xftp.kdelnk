@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X FTP
+Name[pl]=X FTP
 MiniIcon=www.xpm
 Protocols=
 MimeType=

@@ -4,5 +4,6 @@ Exec=kcmkwm borders
 Icon=desktop_settings.xpm
 Type=Application
 Comment=Desktop Border Options
+Comment[pl]=Opcje brzegu biurka
 Name=Borders
-
+Name[pl]=Brzeg

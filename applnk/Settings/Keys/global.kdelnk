@@ -3,6 +3,9 @@
 Exec=kcmkeys global
 Type=Application
 Comment=Configuration of global keybindings
+Comment[pl]=Ustawienia ogólnych skrótów klawiszy
 Name=Global Keys
+Name[pl]=Skróty klawiszy
 SwallowTitle=Key binding settings
+SwallowTitle[pl]=Ustawienia klawiszy
 Init=kcmkeys -init

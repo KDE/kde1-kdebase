@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=X PDF
+Name[pl]=X PDF
 MiniIcon=
 Protocols=
 MimeType=
@@ -10,7 +11,7 @@ Comment=PDF Viewer
 Comment[de]=PDF Betrachter
 Comment[no]=PDF-fremviser
 Comment[fr]=Visualiseur de fichiers PDF
-Comment[pl]=Przegl±darka PDF
+Comment[pl]=Przegl±darka plików PDF
 Comment[fi]=PDF Näyttäjä
 Comment[sv]=PDF-visare
 Comment[pt]=Visualizador de documentos PDF

@@ -2,7 +2,9 @@
 [KDE Desktop Entry]
 SwallowExec=coolmail
 SwallowTitle=coolmail
+SwallowTitle[pl]=coolmail
 Name=Coolmail
+Name[pl]=Coolmail
 Comment=Coolmail
 Comment[pl]=Coolmail
 Comment[de]=Coolmail
