@@ -1,211 +1,362 @@
-#: kfindtop.cpp:109
-msgid "_abouttext"
+#: kfdird.cpp:46
+msgid "Directories:"
 msgstr ""
-"Kfind %s\n"
-" Grafická nadstavba programu find\n"
-"Miroslav Flídr <flidr@kky.zcu.cz>"
 
-#: kfindtop.cpp:124
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr ""
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr ""
+
+#: kfindtop.cpp:110
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+msgstr ""
+
+#: kfindtop.cpp:123
 msgid "&File"
 msgstr "&Soubor"
 
-#: kfindtop.cpp:125
+#: kfindtop.cpp:124
 msgid "&Edit"
 msgstr "&Editovat"
 
-#: kfindtop.cpp:126
+#: kfindtop.cpp:125
 msgid "&Options"
 msgstr ""
 
-#: kfindtop.cpp:128
+#: kfindtop.cpp:127
 msgid "&Help"
 msgstr "&Nápovìda"
 
-#: kfindtop.cpp:133 kfindtop.cpp:217
+#: kfindtop.cpp:132 kfindtop.cpp:216
 msgid "Add to archive"
 msgstr "Pøidat do archivu"
 
-#: kfindtop.cpp:136 kfindtop.cpp:222
+#: kfindtop.cpp:135 kfindtop.cpp:221
 msgid "Delete"
 msgstr "Smazat"
 
-#: kfindtop.cpp:138 kfindtop.cpp:227
+#: kfindtop.cpp:137 kfindtop.cpp:226
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: kfindtop.cpp:141 kfindtop.cpp:232
+#: kfindtop.cpp:140 kfindtop.cpp:231
 msgid "Open Containing Folder"
 msgstr "Otevøít odpovídající aresáø"
 
-#: kfindtop.cpp:144
+#: kfindtop.cpp:143
 msgid "Save Search"
 msgstr "Ulo¾it výsledky"
 
-#: kfindtop.cpp:153
+#: kfindtop.cpp:152
 msgid "Undo"
 msgstr "Anulovat"
 
-#: kfindtop.cpp:156
+#: kfindtop.cpp:155
 msgid "Cut"
 msgstr "Vyøíznout"
 
-#: kfindtop.cpp:158
+#: kfindtop.cpp:157
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: kfindtop.cpp:161
+#: kfindtop.cpp:160
 msgid "Select All"
 msgstr "Vybrat v¹e"
 
-#: kfindtop.cpp:163
+#: kfindtop.cpp:162
 msgid "Invert Selection"
 msgstr "Invertovat výbìr"
 
-#: kfindtop.cpp:174
+#: kfindtop.cpp:173
 msgid "Preferences ..."
 msgstr "Preference ..."
 
-#: kfindtop.cpp:178
+#: kfindtop.cpp:177
 msgid "Kfind help"
 msgstr "Nápovìda Kfindu"
 
 # *********** Tooltips ************
-#: kfindtop.cpp:194
+#: kfindtop.cpp:193
 msgid "Start Search"
 msgstr "Spustit hledání"
 
-#: kfindtop.cpp:199
+#: kfindtop.cpp:198
 msgid "New Search"
 msgstr "Nové hledání"
 
-#: kfindtop.cpp:204
+#: kfindtop.cpp:203
 msgid "Stop Search"
 msgstr "Zastavit hledání"
 
-#: kfindtop.cpp:237
+#: kfindtop.cpp:236
 msgid "Save Search Results"
 msgstr "Ulo¾it výsledky"
 
-#: kfindtop.cpp:243
-msgid "Help"
-msgstr "Napovìda"
-
 # ********* Options *************
-#: kfoptions.cpp:51
+#: kfoptions.cpp:53
 msgid "Preferences"
 msgstr "Preference"
 
-#: kfoptions.cpp:67
+#: kfoptions.cpp:69
 msgid "File format:"
 msgstr "Datový formát"
 
-#: kfoptions.cpp:69
+#: kfoptions.cpp:71
 msgid "Save results to file:"
 msgstr "Ulo¾it výsledky do:"
 
-#: kfoptions.cpp:72
+#: kfoptions.cpp:74
 msgid "Save results to file ~/.kfind-results.html"
 msgstr "Ulo¾it výsledky do  ~/.kfind-results.html"
 
-#: kfoptions.cpp:74
+#: kfoptions.cpp:76
 msgid "Browse"
 msgstr "Listovat"
 
-#: kfoptions.cpp:87
+#: kfoptions.cpp:89
 msgid "Plain Text"
 msgstr "Text"
 
-#: kfoptions.cpp:116
+#: kfoptions.cpp:118
 msgid "Saving"
 msgstr "Ukládání"
 
-#: kftabdlg.cpp:44
+#: kfoptions.cpp:124
+msgid "Type Description:"
+msgstr ""
+
+#: kfoptions.cpp:125
+msgid "Icon:"
+msgstr ""
+
+#: kfoptions.cpp:126
+msgid "Patterns:"
+msgstr ""
+
+#: kfoptions.cpp:127
+msgid "Default Application:"
+msgstr ""
+
+#: kfoptions.cpp:133 kfoptions.cpp:195
+msgid "Add New"
+msgstr ""
+
+#: kfoptions.cpp:134 kfoptions.cpp:196
+msgid "Remove"
+msgstr ""
+
+#: kfoptions.cpp:180
+#, fuzzy
+msgid "Filetypes"
+msgstr "V¹echny soubory a adresáøe"
+
+#: kfoptions.cpp:186
+msgid "Create Archive:"
+msgstr ""
+
+#: kfoptions.cpp:188
+#, fuzzy
+msgid "Add to Archive:"
+msgstr "Pøidat do archivu"
+
+#: kfoptions.cpp:192
+msgid "Paterns:"
+msgstr ""
+
+#: kfoptions.cpp:234
+#, fuzzy
+msgid "Archivers"
+msgstr "Pøidat do archivu"
+
+#: kftabdlg.cpp:47
 msgid "&Named:"
 msgstr "Pojmenované:"
 
-#: kftabdlg.cpp:46
+#: kftabdlg.cpp:49
 msgid "&Look in:"
 msgstr "Hledej v:"
 
-#: kftabdlg.cpp:49
+#: kftabdlg.cpp:52
 msgid "&Browse ..."
 msgstr "Listuj ..."
 
-#: kftabdlg.cpp:61
+#: kftabdlg.cpp:64
 msgid "Include &subfolders"
 msgstr "Zahrò podaresáøe"
 
-#: kftabdlg.cpp:91
+#: kftabdlg.cpp:94
 msgid " Name&Location "
 msgstr " Jméno&Místo "
 
-#: kftabdlg.cpp:103
+#: kftabdlg.cpp:106
 msgid "and"
 msgstr "a"
 
-#: kftabdlg.cpp:104
+#: kftabdlg.cpp:107
 msgid "month(s)"
 msgstr "mìsícù"
 
-#: kftabdlg.cpp:105
+#: kftabdlg.cpp:108
 msgid "day(s)"
 msgstr "dnù"
 
-#: kftabdlg.cpp:111
+#: kftabdlg.cpp:114
 msgid "&All files"
 msgstr "V¹echny soubory"
 
-#: kftabdlg.cpp:112
-msgid "_findall"
-msgstr "Hledej v¹echny soubory vytvoøené nebo modifikované:"
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr ""
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:116
 msgid "&between"
 msgstr "mezi  "
 
-#: kftabdlg.cpp:115
+#: kftabdlg.cpp:117
 msgid "during the previou&s "
 msgstr "bìhem posledních"
 
-#: kftabdlg.cpp:116
+#: kftabdlg.cpp:118
 msgid "&during the previous "
 msgstr "bìhem posledních"
 
-#: kftabdlg.cpp:164
+#: kftabdlg.cpp:166
 msgid " Date Modified "
 msgstr " Zmìnìné datum "
 
-#: kftabdlg.cpp:169
+#: kftabdlg.cpp:171
 msgid "Of &type:"
 msgstr "Datový typ:"
 
-#: kftabdlg.cpp:171
+#: kftabdlg.cpp:173
 msgid "&Containing Text:"
 msgstr "Obsahující text:"
 
-#: kftabdlg.cpp:173
+#: kftabdlg.cpp:175
 msgid "&Size is:"
 msgstr "Velikost je:"
 
-#: kftabdlg.cpp:196
-msgid "_alltypes"
-msgstr "V¹echny soubory a adresáøe"
-
-#: kftabdlg.cpp:204
-msgid "(none)"
+#: kftabdlg.cpp:198
+msgid "All Files and Folders"
 msgstr ""
 
 #: kftabdlg.cpp:205
+msgid "(none)"
+msgstr ""
+
+#: kftabdlg.cpp:206
 msgid "At Least"
 msgstr "pøinejmen¹ím"
 
-#: kftabdlg.cpp:206
+#: kftabdlg.cpp:207
 msgid "At Most"
 msgstr "nanejvý¹"
 
-#: kftabdlg.cpp:213
+#: kftabdlg.cpp:214
 msgid " Advanced "
 msgstr " Pokroèilé "
+
+#: kftabdlg.cpp:377
+msgid "The date is not valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:389
+msgid "The month(s) value isn't valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:400
+msgid "The day(s) value isn't valid!!"
+msgstr ""
+
+#: kftabdlg.cpp:417
+msgid "The value in size isn't valid number!!"
+msgstr ""
+
+#: kfwin.cpp:99
+#, c-format
+msgid "%d file(s) found"
+msgstr ""
+
+#: kfwin.cpp:136
+msgid "It wasn't possible to save results!"
+msgstr ""
+
+#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
+msgid "KFind Results File"
+msgstr ""
+
+#: kfwin.cpp:174
+msgid "Results were saved to file\n"
+msgstr ""
+
+#: kfwin.cpp:189
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+
+#: kfwin.cpp:191
+#, fuzzy
+msgid "Delete File"
+msgstr "Smazat"
+
+#: kfwin.cpp:205
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+
+#: kfwin.cpp:212
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+
+#: kfwin.cpp:241
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+
+#: kfwin.cpp:247
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+
+#: kfwin.cpp:340
+msgid "Couldn't recognize archive type!"
+msgstr ""
+
+#: kfwin.cpp:401
+msgid "Error while creating child process!"
+msgstr ""
+
+#~ msgid "_abouttext"
+#~ msgstr ""
+#~ "Kfind %s\n"
+#~ " Grafická nadstavba programu find\n"
+#~ "Miroslav Flídr <flidr@kky.zcu.cz>"
+
+#~ msgid "Help"
+#~ msgstr "Napovìda"
+
+#~ msgid "_findall"
+#~ msgstr "Hledej v¹echny soubory vytvoøené nebo modifikované:"
 
 #~ msgid "&Nastavení"
 #~ msgstr "&Einstelungen"
