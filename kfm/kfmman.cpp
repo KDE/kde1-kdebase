@@ -331,6 +331,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
 	    url = _url;
             setUpURL();
+            view->setHTMLMode(true);
 	    view->begin( _url, nextXOffset, nextYOffset );
 	    view->write( page );
 	    view->parse();
@@ -705,6 +706,7 @@ void KFMManager::writeBeginning()
     else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
 	;
     setUpURL();
+    view->setHTMLMode(false);
 }
 
 void KFMManager::writeEnd()
@@ -1255,6 +1257,7 @@ void KFMManager::slotMimeType( const char *_type )
 	    bBufferPage = FALSE;
 	    // view->begin( u2 );
             setUpURL(); // will set "".
+            view->setHTMLMode(true);
 	    view->begin( url, nextXOffset, nextYOffset );
 	    if ( aCharset != 0 )
 	      view->setCharset(aCharset);
@@ -1360,6 +1363,7 @@ void KFMManager::slotFinished()
 	{
 	    // Display it now
             setUpURL();
+            view->setHTMLMode(true);
 	    view->begin( url, nextXOffset, nextYOffset );
 	    view->write( pageBuffer );
 	    view->parse();

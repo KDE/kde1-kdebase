@@ -165,6 +165,11 @@ public:
      */
     void setUpURL( const char *_url );
 
+    /**
+     * Set the html mode to true (viewing a html file) or false (browsing a directory).
+     */
+    void setHTMLMode( bool bHtmlMode );
+
     bool hasBackHistory() { return !backStack->isEmpty(); }
     bool hasForwardHistory() { return !forwardStack->isEmpty(); }
     bool hasUpHistory() { return !m_strUpURL.isEmpty(); }

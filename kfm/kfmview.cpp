@@ -998,9 +998,10 @@ void KfmView::setUpURL( const char *_url )
   //CT 16Dec1998 handle View menu
   bool has_upURL = !( m_strUpURL == "/"  || m_strUpURL.isEmpty() );
   gui->enableToolbarButton( 0, has_upURL );
+}
 
-  // We're in HTML mode if there is no up URL (except for "/").
-  bool bHtmlMode = !has_upURL && (m_strUpURL != "/" );
+void KfmView::setHTMLMode(bool bHtmlMode)
+{
   gui->handleViewMenu(bHtmlMode);
 }
 
