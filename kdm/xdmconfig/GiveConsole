@@ -7,4 +7,4 @@
 # the console output.  This way a random user can invoke xterm -C without
 # causing serious grief.
 #
-chown $USER /dev/console
+#chown $USER /dev/console
