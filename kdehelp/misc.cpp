@@ -56,11 +56,14 @@ const char *StrUpperStr(const char *haystack, const char *needle)
 	return retPtr;
 }
 
-int safeSystem( const char *cmd )
+// Is this a safe command to issue via system, i.e. has a naughty user inserted
+// special shell characters in a URL?
+//
+bool safeCommand( const char *cmd )
 {
-    if ( strpbrk( cmd, "&;`'\\\"*?~^()[]{}$\n\r" ) ) //sven removed |, > and <
-        return -1;
+    if ( strpbrk( cmd, "&;`'\\\"|*?~<>^()[]{}$\n\r" ) )
+        return false;
 
-    return system( cmd );
+    return true;
 }
 

@@ -456,6 +456,8 @@ int cMan::ReadLocation(const char *name)
 		char rmanCmd[256];
 		char *ptr;
 
+        sysCmd[0] = '\0';
+
 		sprintf(stdFile, "%s/khelpXXXXXX", _PATH_TMP);	// temp file
 		mktemp(stdFile);
 
@@ -480,18 +482,28 @@ int cMan::ReadLocation(const char *name)
 					break;
 				}
 			}
-			sprintf(sysCmd, "man %s %s < /dev/null 2> %s | %s > %s",
-				sections[pos]->GetName(),
-				tmpName, errFile, rmanCmd, stdFile );
+            if ( safeCommand( sections[pos]->GetName() ) &&
+                safeCommand( tmpName ) )
+            {
+                sprintf(sysCmd, "man %s %s < /dev/null 2> %s | %s > %s",
+                    sections[pos]->GetName(),
+                    tmpName, errFile, rmanCmd, stdFile );
+            }
 		}
-		else
+		else if ( safeCommand( tmpName ) )
 		{
 			sprintf(sysCmd, "man %s < /dev/null 2> %s | %s > %s",
 				tmpName, errFile, rmanCmd, stdFile);
 		}
 
+        if ( sysCmd[0] == '\0' )
+        {
+			Error.Set(ERR_WARNING, klocale->translate("\"man\" system call failed"));
+            return -1;
+        }
+
 		// call 'man' to read man page
-		int status = safeSystem(sysCmd);
+		int status = system(sysCmd);
 
 		if (status < 0)			// system returns -ve on failure
 		{

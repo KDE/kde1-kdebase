@@ -869,7 +869,8 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 			sprintf( fname, "%s/khelpXXXXXX", _PATH_TMP );
 			mktemp( fname );
 			sprintf(sysCmd, "gzip -cd %s > %s", (const char *)fileName, fname);
-			safeSystem( sysCmd );
+            if ( safeCommand( fileName ) )
+                system( sysCmd );
 		}
 		QFile file( fname );
 		char buf[256];
