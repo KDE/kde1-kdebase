@@ -2,6 +2,7 @@ dnl this is for kdm:
 
 AC_DEFUN(AC_CHECK_KDM,
 [
+AC_CHECK_FUNCS(getsecretkey)
 dnl checks for X server
 
 AC_PATH_PROG(X_SERVER, X)
