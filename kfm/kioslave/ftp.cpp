@@ -684,7 +684,7 @@ int KProtocolFTP::Open(KURL *url, int mode)
     {
         size = ftpSize(url->path(),'I'); // try to find the size of the file
         if (ftplib_debug > 1)
-            fprintf(stderr,"size set to %ld",size);
+            fprintf(stderr,"size set to %ld\n",size);
 	int rc = OpenConnection("retr",url->path(),'I');
 	if(rc == FAIL)
 	    return Error(KIO_ERROR_FileDoesNotExist,"Could not retrieve file");
