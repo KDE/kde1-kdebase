@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <kprocess.h>
 #include <qtimer.h>
+#include <qregexp.h>
 
 void execute(const char* cmd){
   KShellProcess proc;
