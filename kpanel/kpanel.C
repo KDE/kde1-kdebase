@@ -325,6 +325,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     label_date = new QLabel(this);
+    date_tip = new myToolTip(label_date);
     bool label_date_visible = true;
     if (config->hasKey("DateVisible")){
       QString aString = config->readEntry("DateVisible");

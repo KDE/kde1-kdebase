@@ -161,6 +161,17 @@ public:
 };
 
 
+class myToolTip : QToolTip {
+public:
+  myToolTip(QWidget *w) : QToolTip(w) {}
+  virtual ~myToolTip() {}
+  void setText(const QString &);
+protected:
+  void maybeTip(const QPoint &);
+private:
+  QString text;
+};
+
 
 class kPanel : public QFrame
 {
@@ -319,6 +330,7 @@ private:
   QPopupMenu *taskbarPopup;
 
   QLabel *label_date;
+  myToolTip *date_tip;
   QFrame *dock_area;
 
   QWidget *moving_button;
