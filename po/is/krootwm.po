@@ -50,7 +50,7 @@ msgstr "Um KDE..."
 
 #: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
 msgid "New"
-msgstr "Búa til"
+msgstr "Hér verði"
 
 #: krootwm.C:266 krootwm.C:305
 msgid "Bookmarks"
