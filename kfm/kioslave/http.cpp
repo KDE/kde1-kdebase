@@ -23,8 +23,7 @@
    encoded line.  This is useful for HTTP only.
 
    Note that the string may not contain NUL characters.  */
-char *
-base64_encode_line(const char *s)
+char *base64_encode_line(const char *s)
 {
    /* Conversion table. */
    static char tbl[64] = {
@@ -117,7 +116,7 @@ KProtocolHTTP::KProtocolHTTP()
     if ( tmp == "Yes" ) { // Do we need proxy?
         proxyStr = kfmcnf.readEntry( "HTTP-Proxy" );
         proxyURL = proxyStr.data();
-        // printf( "Using proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
+
         port = proxyURL.port();
 	if ( port == 0 )
 	    port = 80;
@@ -129,17 +128,8 @@ KProtocolHTTP::KProtocolHTTP()
 
 	use_proxy = 1;
 	
-//	if(proxy)
-//	{
-//		init_sockaddr(&proxy_name, httpURL.host(), port);
-//		printf("Using proxy\n");
-//		use_proxy = 1;
-//	}
-//    } else {
-//        QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
-//	return;
     }
-    
+
     // Jacek:
     // All right. Now read the HTTP settings
     kfmcnf.setGroup("Browser Settings/HTTP");
@@ -168,7 +158,7 @@ KProtocolHTTP::~KProtocolHTTP()
     Close();
 }
 
-//Jacek:
+// Jacek:
 void KProtocolHTTP::PrepareLanguageList(QString str){
  
   if (str.isEmpty()){
@@ -346,8 +336,6 @@ long KProtocolHTTP::Read(void *buffer, long len)
 
 int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, const char *hostname, int port)
 {
-  // printf("host: %s\n", hostname);
-	
 	struct hostent *hostinfo;
 	server_name->sin_family = AF_INET;
 	server_name->sin_port = htons( port );
@@ -355,44 +343,12 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, const char *ho
 	hostinfo = gethostbyname( hostname );
 
 	if ( hostinfo == 0L ) {
-	  // printf( "init_sockaddr: failed!\n");
+	    // init_sockaddr failed, we should probably check errno
 	    return(FAIL);
 	}
 	server_name->sin_addr = *(struct in_addr*) hostinfo->h_addr;
 	return(SUCCESS);
 }
-
-/* Domain suffix match. E.g. return 1 if host is "cuzco.inka.de" and
-   nplist is "inka.de,hadiko.de" */
-//int revmatch(const char *host, const char *nplist)
-//{
-//        const char *p;
-//        const char *q = nplist + qstrlen(nplist);  
-//        const char *r = host + qstrlen(host) - 1;
-
-//        printf( "q: %s\n", q );
-//        printf( "r: %s\n", r );
-
-//	p = r;
-//	while (--q>=nplist) {
-//	  printf("q is: %s\n", q);
-//	  printf("p is: %s\n", p);
-//	  if (*q!=*p || p<host) { // <- BUG! was --p
-//	    printf("Mismatch!\n");
-//	    p=r;
-//	    while (--q>=nplist && *q!=',' && *q!=' ')
-//	      ;
-//	  } else {
-//	    printf("Got match for q is: %s\n", q);
-//	    printf( "q: %d nplist: %d\n", q, nplist );
-//	    if ((q==nplist || q[-1]==',' || q[-1]==' ') &&
-//		(p<host || *p=='.'))
-//	      return 1;
-//	  }
-//	  p--; // added by me
-//	}
-//	return 0;
-//}
 
 /* Domain suffix match. E.g. return 1 if host is "cuzco.inka.de" and
    nplist is "inka.de,hadiko.de" or if host is "localhost" and
@@ -475,29 +431,19 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	int do_proxy = use_proxy;
 	if (do_proxy)
 	{
-//            char *p;
-//	    if ( ( p = getenv("no_proxy") ) )
-//	    {
-//	         do_proxy = !revmatch(_url->host(), p);
-//	    }
-
 	    if ( ! noProxyForStr.isEmpty() ) 
 	    {
-	      // printf( "host: %s\n", _url->host() );
-	      // printf( "nplist: %s\n", noProxyForStr.data() );
 	        do_proxy = !revmatch( _url->host(), noProxyForStr.data() );    
 	    }
 	}
 
 	if(do_proxy)
 	{
-	  // printf("HTTP::Open: connecting to proxy %s:%d\n",
-	  // inet_ntoa(proxy_name.sin_addr),
-	  // ntohs(proxy_name.sin_port));
+	  //HTTP::Open: connecting to proxy
 		if(::connect(sock,(struct sockaddr*)(&proxy_name),sizeof(proxy_name)))
 		{
-	    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy",errno);
-	    	return(FAIL);
+		    	Error(KIO_ERROR_CouldNotConnect,"Could not connect to proxy", errno);
+		    	return(FAIL);
 		}
 	}
 	else
@@ -513,9 +459,6 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 			return(FAIL);
 		}
 
-                // printf("HTTP::Open: connecting to %s:%d\n",
-		// inet_ntoa(server_name.sin_addr),
-		// ntohs(server_name.sin_port));
 		if(::connect(sock,(struct sockaddr*)(&server_name),sizeof(server_name)))
 		{
 	    	Error(KIO_ERROR_CouldNotConnect, "Could not connect host", errno);
@@ -676,12 +619,10 @@ int KProtocolHTTP::ProcessHeader()
 	    while( len && (buffer[len-1] == '\n' || buffer[len-1] == '\r'))
 		buffer[--len] = 0;
 
-//printf("Header: %s\n", buffer);
 	    if ( strncasecmp( buffer, "Set-Cookie", 10 ) == 0 )
 	    {
 	        Cookie += buffer;
 	        Cookie += "\n";
-//	        printf("!!!START COOKIE!!!\n%s\n!!!END COOKIE!!!\n", buffer);
 	    } 
 	    else if ( strncasecmp( buffer, "Content-Length: ", 16 ) == 0 )
 	    {
