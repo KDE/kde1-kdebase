@@ -1,0 +1,36 @@
+# KDE Config File
+[International Keyboard]
+Comment=Deutsche Tastatur
+Long Comment=Deutsches (BRD) Tastatur-Layout
+Comment[ru]=Германская клавиатура
+Label=De
+Locale=de
+
+
+[KeyboardMap]
+# keysum0..n [meaningless!]
+#       <unshifted symbol in server.map (us)>, <unshifted symbol>, <shifted symbol>, <alt symbol>, <alt+shift symbol>
+keysym0=grave,asciicircum,degree,
+keysym1=2,2,quotedbl,twosuperior
+keysym2=3,3,section,threesuperior
+keysym3=6,6,ampersand,
+keysym4=7,7,slash,braceleft
+keysym5=8,8,parenleft,bracketleft
+keysym6=9,9,parenright,bracketright
+keysym7=0,0,equal,braceright
+keysym8=minus,ssharp,question,backslash
+keysym9=equal,apostrophe,grave
+keysym10=q,q,Q,at
+keysym11=y,z,Z
+keysym12=bracketleft,udiaeresis,Udiaeresis
+keysym13=bracketright,plus,asterisk,asciitilde
+keysym14=semicolon,odiaeresis,Odiaeresis
+keysym15=apostrophe,adiaeresis,Adiaeresis
+keysym16=backslash,numbersign,apostrophe,bar
+keysym17=z,y,Y
+keysym18=m,m,M,mu
+keysym19=less,less,greater,bar
+keysym20=comma,comma,semicolon
+keysym21=period,period,colon
+keysym22=slash,minus,underscore
+

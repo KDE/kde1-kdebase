@@ -1,0 +1,60 @@
+# KDE Config File
+# Created by Alexander Budnik <budnik@linserv.jinr.ru> from xmodmap
+# file by David Faure <faure@kde.org>
+       
+[International Keyboard]
+Comment=French Keyboard
+Long Comment=Keyboard for using in French
+Comment[ru]=Французкая клавиатура
+Long Comment[ru]=Французкая клавиатура
+Label=Fr
+Locale=fr
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
+keysym0=1,onesuperior,exclamdown,ampersand,1,
+keysym1=2,asciitilde,oneeighth,eacute,2,
+keysym2=3,numbersign,sterling,quotedbl,3,
+keysym3=4,braceleft,dollar,apostrophe,4,
+keysym4=5,bracketleft,threeeighths,parenleft,5,
+keysym5=6,bar,fiveeighths,minus,6,
+keysym6=7,grave,seveneighths,egrave,7,
+keysym7=8,backslash,trademark,underscore,8,
+keysym8=9,asciicircum,plusminus,ccedilla,9,
+keysym9=0,at,degree,agrave,0,
+keysym10=minus,bracketright,questiondown,parenright,degree,
+keysym11=equal,braceright,dead_ogonek,equal,plus,
+keysym12=a,ae,AE,a,A,
+keysym13=z,guillemotleft,less,z,Z,
+keysym14=r,paragraph,registered,r,R,
+keysym15=t,tslash,Tslash,t,T,
+keysym16=y,leftarrow,yen,y,Y,
+keysym17=u,downarrow,uparrow,u,U,
+keysym18=i,rightarrow,idotless,i,I,
+keysym19=o,oslash,Ooblique,o,O,
+keysym20=p,thorn,THORN,p,P,
+keysym21=bracketleft,dead_diaeresis,dead_abovering,dead_circumflex,dead_diaeresis,
+keysym22=bracketright,currency,dead_macron,dollar,sterling,
+keysym23=q,at,Greek_OMEGA,q,Q,
+keysym24=s,ssharp,section,s,S,
+keysym25=d,eth,ETH,d,D,
+keysym26=f,dstroke,ordfeminine,f,F,
+keysym27=g,eng,ENG,g,G,
+keysym28=h,hstroke,Hstroke,h,H,
+keysym29=j,,,j,J,
+keysym30=k,kra,ampersand,k,K,
+keysym31=l,lstroke,Lstroke,l,L,
+keysym32=m,mu,masculine,m,M,
+keysym33=ugrave,dead_circumflex,dead_caron,ugrave,percent,
+keysym34=twosuperior,notsign,,twosuperior,asciitilde,
+keysym35=asterisk,dead_grave,dead_breve,asterisk,mu,
+keysym36=w,lstroke,Lstroke,w,W,
+keysym37=x,guillemotright,greater,x,X,
+keysym38=c,cent,copyright,c,C,
+keysym39=v,leftdoublequotemark,grave,v,V,
+keysym40=b,rightdoublequotemark,apostrophe,b,B,
+keysym41=comma,dead_acute,dead_doubleacute,comma,question,
+keysym42=semicolon,horizconnector,multiply,semicolon,period,
+keysym43=colon,periodcentered,division,colon,slash,
+keysym44=exclam,dead_belowdot,dead_abovedot,exclam,section,
+keysym45=less,bar,brokenbar,less,greater,

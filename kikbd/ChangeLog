@@ -1,6 +1,9 @@
 16 September 1998
         * You have to reconfigure kikbd because it now use readBool from
 	KBaseConfig
+	* Added Bulgarian keyboard
+	* Added French keyboard
+	* Added German keyboard
 
 kikbd go to CVS 8 September 1998
 

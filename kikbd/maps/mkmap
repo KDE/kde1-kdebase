@@ -9,7 +9,7 @@ proc ask {msg def} {
 }
 proc readExcept {file expr} {
     if {[catch {set fd [open $file r]}]} {
-	puts "Error: open file \"file\" for reading"
+	puts "Error: open file \"$file\" for reading"
 	exit
     }
     set res ""
@@ -40,7 +40,7 @@ switch -- [lindex $argv 0] {
 	puts $fd "Locale=$locale"
 	puts $fd "\[KeyboardMap\]"
 	puts $fd \
-	    "CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m"
+	    "CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m\n"
 	close $fd
     }
     map {
