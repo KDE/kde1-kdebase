@@ -1,4 +1,4 @@
 Makefile
 Makefile.in
 kwrite
-*.m.cpp
+moc_*.cpp
