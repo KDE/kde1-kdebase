@@ -10,14 +10,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-
 #include <kwm.h>
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 #ifdef HAVE_SYSENT_H
 #include <sysent.h>
 #endif
 
-/* this is needed for AIX */
+/* this is needed for Solaris and others */
 #ifndef HAVE_GETDOMAINNAME
 extern "C" {
 int getdomainname (char *Name, int Namelen);
