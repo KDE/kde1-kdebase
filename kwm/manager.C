@@ -2085,7 +2085,7 @@ Client* Manager::current(){
 void Manager::addClient(Client* c){
   clients.append(c);
   clients_sorted.append(c);
-  if (!c->hidden_for_modules)
+  if (!c->hidden_for_modules )
     clients_traversing.insert(0,c);
 }
 
@@ -3354,9 +3354,11 @@ Client* Manager::clientAtPosition(int x, int y){
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
       it.current()->iconify(False);
-      sendToModules(module_win_remove, it.current());
-      it.current()->hidden_for_modules = true;
-      clients_traversing.removeRef(it.current());
+      if (!it.current()->hidden_for_modules) {
+	  sendToModules(module_win_remove, it.current());
+	  it.current()->hidden_for_modules = true;
+	  clients_traversing.removeRef(it.current());
+      }
     }
   }
 }
@@ -3370,7 +3372,7 @@ void Manager::unIconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
-      if (it.current()->hidden_for_modules){
+      if (it.current()->hidden_for_modules && !it.current()->isMenuBar()){
 	it.current()->hidden_for_modules = false;
 	sendToModules(module_win_add, it.current());
 	clients_traversing.insert(0,it.current());
