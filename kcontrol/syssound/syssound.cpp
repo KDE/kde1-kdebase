@@ -1,5 +1,9 @@
 /*
+
+    $Id$
+
     Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
+                  1998 Bernd Wuebben <wuebben@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public
@@ -15,7 +19,12 @@
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
     Boston, MA 02111-1307, USA.
+
+    $Log$
+
 */  
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <qobject.h>
@@ -42,19 +51,81 @@
 #endif
 
 
-#define EVENT_COUNT 12
+#define EVENT_COUNT 28
 
-char *eventNames[EVENT_COUNT] =
-                               { "Desktop1", "Desktop2", "Desktop3", "Desktop4", "Desktop5",
-                                 "Desktop6", "Desktop7", "Desktop8", "WindowActivate",
-                                 "WindowOpen", "WindowClose", "Startup" };
+#define SOUND_DEBUG 1
+
+char *eventNames[2][29] = {
+
+  {
+    "Desktop1", 
+    "Desktop2", 
+    "Desktop3", 
+    "Desktop4", 
+    "Desktop5",
+    "Desktop6", 
+    "Desktop7", 
+    "Desktop8", 
+    "WindowActivate", 
+    "WindowOpen", 
+    "WindowClose", 
+    "Startup", 
+    "WindowShadeUp",                  
+    "WindowShadeDown",
+    "WindowIconify",
+    "WindowDeIconify",
+    "WindowMaximize",
+    "WindowUnMaximize",
+    "WindowSticky",
+    "WindowUnSticky",
+    "WindowTransNew",
+    "WindowTransDelete",
+    "Logout",
+    "LogoutMessage",
+    "WindowMoveStart",
+    "WindowMoveEnd",
+    "WindowResizeStart",
+    "WindowResizeEnd",
+  },
+  {
+    "Desktop1", 
+    "Desktop2", 
+    "Desktop3", 
+    "Desktop4", 
+    "Desktop5",
+    "Desktop6", 
+    "Desktop7", 
+    "Desktop8", 
+    "Window Activate", 
+    "Window New", 
+    "Window Delete", 
+    "Startup", 
+    "Window Shade Up",
+    "Window Shade Down",
+    "Window Iconify",
+    "Window DeIconify",
+    "Window Maximize",
+    "Window UnMaximize",
+    "Window Sticky",
+    "Window UnSticky",
+    "Window Trans New",
+    "Window Trans Delete",
+    "Logout",
+    "Logout Message",
+    "Window Move Start",
+    "Window Move End",
+    "Window Resize Start",
+    "Window Resize End",
+  }
+};
 
 
 KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
-  KConfigWidget(parent, name),
-  selected_event(0)
-{
+  KConfigWidget(parent, name), selected_event(0){
+
+
   QBoxLayout *col1, *col2, *col3, *columns, *top_layout;
+
   int delta;
   QString path;
   QDir dir;
@@ -64,6 +135,7 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
   //
   // CC: Set up the List of known System Events
   //
+
   eventlist = new QListBox(this);
   eventlist->insertItem(klocale->translate("(none)"));
   eventlist->insertItem(klocale->translate("Change to Desktop 1"));
@@ -80,9 +152,27 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
   eventlist->insertItem(klocale->translate("Close Window"));
   eventlist->insertItem(klocale->translate("Startup"));
 
+  eventlist->insertItem(klocale->translate(    "Window Shade Up"));
+  eventlist->insertItem(klocale->translate(    "Window Shade Down"));
+  eventlist->insertItem(klocale->translate(    "Window Iconify"));
+  eventlist->insertItem(klocale->translate(    "Window DeIconify"));
+  eventlist->insertItem(klocale->translate(    "Window Maximize"));
+  eventlist->insertItem(klocale->translate(    "Window UnMaximize"));
+  eventlist->insertItem(klocale->translate(    "Window Sticky"));
+  eventlist->insertItem(klocale->translate(    "Window UnSticky"));
+  eventlist->insertItem(klocale->translate(    "Window Trans New"));
+  eventlist->insertItem(klocale->translate(    "Window Trans Delete"));
+  eventlist->insertItem(klocale->translate(    "Logout"));
+  eventlist->insertItem(klocale->translate(    "Logout Message"));
+  eventlist->insertItem(klocale->translate(    "Window Move Start"));
+  eventlist->insertItem(klocale->translate(    "Window Move End"));
+  eventlist->insertItem(klocale->translate(    "Window Resize Start"));
+  eventlist->insertItem(klocale->translate(    "Window Resize End"));
+
   //
   // CC: Now set up the list of known WAV Files
   //
+
   soundlist = new QListBox(this);
 
   soundlist->insertItem(klocale->translate("(none)"));
@@ -116,7 +206,10 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
   soundlabel->setMinimumSize(soundlabel->sizeHint());
   soundlabel->setMaximumSize(soundlabel->sizeHint());
 
-  statustext = new QLabel(klocale->translate("Additional WAV files can be dropped onto the sound list."),this);
+  statustext = new QLabel(klocale->translate(
+	       "Additional WAV files can be dropped onto the sound list."
+	       ),this);
+
   statustext->setMinimumSize(statustext->sizeHint());
   statustext->setMaximumSize(statustext->sizeHint());
 
@@ -164,13 +257,14 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
 
 };
 
-KSoundWidget::~KSoundWidget()
-{
+KSoundWidget::~KSoundWidget(){
+
  // delete audiodrop;
+
 }
 
-void KSoundWidget::readConfig()
-{
+void KSoundWidget::readConfig(){
+
   QString *str;
   QString hlp;
   KConfig *config;
@@ -179,33 +273,47 @@ void KSoundWidget::readConfig()
 
   // CC: we need to read/write the config file of "kwmsound" and not 
   // our own (that would be called syssoundrc)
+
   config = new KConfig(kapp->localconfigdir()+"/kwmsoundrc");
 
   config->setGroup("SoundConfiguration");  
-  for(lf=0; lf < EVENT_COUNT; lf++) {
+
+  for( lf = 0; lf < EVENT_COUNT; lf++) {
+
     str = new QString;
-    *str = config->readEntry(eventNames[lf],"(none)");
+    *str = config->readEntry(eventNames[0][lf],"(none)");
 
     if (str->data()[0] == '/') {
-      // CC: a file that is not in the default sound directory-> add it to the soundlist too
+      // CC: a file that is not in the default 
+      // sound directory-> add it to the soundlist too
+
       addToSoundList(*str);
+
     }
+
     soundnames.append(str);
+
   }
+
   soundnames.setAutoDelete(TRUE);
 
   config->setGroup("GlobalConfiguration");
+
   hlp = config->readEntry("EnableSounds","No");
+
   if (!stricmp(hlp,"Yes")) 
     sounds_enabled->setChecked(True);
   else
     sounds_enabled->setChecked(False);
 
   delete config;
+
 }
 
-void KSoundWidget::eventSelected(int index)
-{
+
+void KSoundWidget::eventSelected(int index){
+
+
   int i;
   uint listlen;
   char found;
@@ -237,8 +345,11 @@ void KSoundWidget::eventSelected(int index)
     else
       soundlist->setCurrentItem(0);
       // CC: By default, select "no sound"
+
   }
+
   soundlist->centerCurrentItem();
+
 }
 
 void KSoundWidget::soundSelected(const char *filename) 
@@ -252,8 +363,8 @@ void KSoundWidget::soundSelected(const char *filename)
 }
 
 
-void KSoundWidget::saveConfiguration()
-{
+void KSoundWidget::saveConfiguration(){
+
   KConfig *config;
   QString *sname, helper;
   int lf;
@@ -263,20 +374,26 @@ void KSoundWidget::saveConfiguration()
   config = new KConfig(kapp->localconfigdir()+"/kwmsoundrc");
 
   config->setGroup("SoundConfiguration");  
-  for(lf=0; lf < EVENT_COUNT; lf++) {
+
+  for( lf = 0; lf < EVENT_COUNT; lf++) {
     sname = soundnames.at(lf);
+
     if (!strcmp("", *sname)) 
-      config->writeEntry(eventNames[lf],"(none)");
+      config->writeEntry(eventNames[0][lf],"(none)");
     else {
       // keep configuration files language--independent
+
       if (!strcmp(klocale->translate("(none)"), *sname))
-	config->writeEntry(eventNames[lf], "(none)");
+	config->writeEntry(eventNames[0][lf], "(none)");
       else
-	config->writeEntry(eventNames[lf], *sname);
+	config->writeEntry(eventNames[0][lf], *sname);
+
     }
+
   }
 
   config->setGroup("GlobalConfiguration");
+
   if (sounds_enabled->isChecked())
     config->writeEntry("EnableSounds", "Yes");
   else
@@ -285,6 +402,7 @@ void KSoundWidget::saveConfiguration()
   config->sync();
   delete config;
   kwm.sendKWMCommand("syssnd_restart");
+
 }
 
 
@@ -309,8 +427,8 @@ void KSoundWidget::playCurrentSound()
 }
 
 
-void KSoundWidget::soundDropped(KDNDDropZone *zone)
-{
+void KSoundWidget::soundDropped(KDNDDropZone *zone){
+
   QStrList &list = zone->getURLList();;
   QString msg;
   int i, len;
@@ -318,24 +436,45 @@ void KSoundWidget::soundDropped(KDNDDropZone *zone)
   //
   // CC: For now, we do only accept FILES ending with .wav...
   //
+
   len = list.count();
-  for (i=0; i < len; i++) {
+
+  for ( i = 0; i < len; i++) {
+
     QString url = list.at(i);
+
     if (strcmp("file:", url.left(5))) {
+
       // CC: for now, only file URLs are supported
+
       QMessageBox::warning(this, klocale->translate("Unsupported URL"),
-        klocale->translate("Sorry, this type of URL is currently unsupported by the KDE System Sound Module"));
+        klocale->translate(
+                 "Sorry, this type of URL is currently unsupported"\
+		 "by the KDE System Sound Module"
+		           )
+			   );
+
     } else {
+
       // CC: Now check for the ending ".wav"
+
       if (stricmp(".WAV",url.right(4))) {
-        ksprintf(&msg, i18n("Sorry, but \n%s\ndoes not seem to be a WAV--file!"), url.data());
+        ksprintf(&msg, i18n("Sorry, but \n%s\ndoes not seem"\
+			    "to be a WAV--file."), url.data());
+
 	QMessageBox::warning(this, klocale->translate("Improper File Extension"), msg);
+
       } else {
+
 	// CC: Hurra! Finally we've got a WAV file to add to the list
+
 	url = url.right(url.length()-5); // strip the leading "file:"
+
 	if (!addToSoundList(url)) {
+
 	  // CC: did not add file because it is already in the list
 	  ksprintf(&msg, i18n("The file\n%s\nis already in the list"), url.data());
+
 	  QMessageBox::warning(this, klocale->translate("File Already in List"), msg);
 
 	}
@@ -345,14 +484,16 @@ void KSoundWidget::soundDropped(KDNDDropZone *zone)
 }
 
 
-bool KSoundWidget::addToSoundList(QString sound)
+bool KSoundWidget::addToSoundList(QString sound){
+
   // Add "sound" to the sound list, but only if it is not already there
-{
+
   char found = 0;
   int i, len;
 
   i = 0;
   len = soundnames.count();
+
   while ((!found) && (i < len)) {
 
     found = (sound == *soundnames.at(i));
@@ -360,23 +501,30 @@ bool KSoundWidget::addToSoundList(QString sound)
   }
  
  if (!found) {
+
    // CC: Fine, the sound is not already in the sound list!
+
    QString *tmp = new QString(sound); // CC: take a copy...
    //   soundnames.append(tmp); 
    soundlist->insertItem(*tmp);
    soundlist->setTopItem(soundlist->count()-1);
+
  }
+
  return !found;
+
 }
 
 
-void KSoundWidget::loadSettings()
-{
+void KSoundWidget::loadSettings(){
+
   readConfig();
+
 }
 
 
-void KSoundWidget::applySettings()
-{
+void KSoundWidget::applySettings(){
+
   saveConfiguration();
+
 }

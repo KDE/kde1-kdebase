@@ -1,5 +1,9 @@
-/* This file is part of the KDE system sound package
+/* 
+
+    $Id$
+
     Copyright (C) 1997 Christian Czezatke (e9025461@student.tuwien.ac.at)
+                  1998 Bernd Wuebben <wuebben@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public
@@ -15,9 +19,15 @@
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
     Boston, MA 02111-1307, USA.
+
+    $Log$
+
 */  
+
+
 #ifndef __SYSSOUND_H__
 #define __SYSSOUND_H__
+
 #include "kcontrol.h"
 
 #include <qlist.h>
@@ -30,11 +40,12 @@
 #include <kaudio.h>
 
 
-class KSoundWidget : public KConfigWidget
-{
+class KSoundWidget : public KConfigWidget{
+
 	Q_OBJECT;
 
 public:
+
 	KSoundWidget(QWidget *parent, const char *name);
 	virtual ~KSoundWidget();
 	void readConfig();
@@ -43,6 +54,7 @@ public:
         void applySettings();
         
 private slots:
+
 	void eventSelected(int index);
         void soundSelected(const char *filename);
 	void saveConfiguration();
@@ -51,6 +63,7 @@ private slots:
 	void soundDropped(KDNDDropZone *zone);
 
 private:
+
 	bool addToSoundList(QString sound);
 	
 	int selected_event;
@@ -60,6 +73,7 @@ private:
 	QListBox *eventlist, *soundlist;
 	KDNDDropZone *audiodrop;
 	QPushButton *btn_test;
+
 };
 
 #endif

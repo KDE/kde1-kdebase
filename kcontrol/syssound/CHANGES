@@ -1,3 +1,8 @@
+Version 0.0.6 ( I think we should bump up the versin number to 
+something sensible such as 0.6 or 1.0 -- Bernd)
+
+- Implemented support for all sound events
+
 Version 0.0.5 (Jan. 9th, 1998)
 
 - Adapted kcmsyssound to work with the new kcontrol interface
