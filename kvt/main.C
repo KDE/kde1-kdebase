@@ -94,7 +94,7 @@ extern Window		main_win;
 extern Window		vt_win;
 extern char *fg_string_tmp, *bg_string_tmp;
 
-kVt* kvt = NULL;
+kVt* kvt = 0;
 OptionDialog *m_optiondialog = 0;
 QString kvt_charclass;
 
@@ -138,7 +138,6 @@ static const char* backspace_name[] = {
 
 int o_argc;
 char ** o_argv;
-char command_line[2048];
 
 void kvt_set_fontnum(char *s_arg){
   int i;
@@ -193,7 +192,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
   KApplication(argc, argv, rAppName){
 }
 
-static MyApp* myapp = NULL;
+static MyApp* myapp = 0;
 
 bool MyApp::x11EventFilter( XEvent * ev){
 //   printf("Qt: got one event %d for window %d\n", ev->type, ev->xany.window);
@@ -323,8 +322,11 @@ void change_icon_name(char *str){
 // kVt
 //---------------------------------------------------------------------------
 
-kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
+kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
+	  QWidget *parent, const char *name )
   : QWidget( parent, name){
+
+    kvtarguments = args;
 
     // set the default options
     menubar_visible = TRUE;
@@ -550,12 +552,12 @@ void kVt::saveYourself(){
     config->writeEntry("kmenubargeometry", 
 			  KWM::getProperties(menubar->winId()));
   }
+  if (kvtarguments.count() > 0)
+    config->writeEntry("kvtarguments", kvtarguments);
   config->sync();
 }
 
-kVt::~kVt()
-{
-   delete dropZone;
+kVt::~kVt(){
 }
 
 void kVt::saveOptions(KConfig* kvtconfig){
@@ -591,7 +593,6 @@ void kVt::saveOptions(KConfig* kvtconfig){
     kvtconfig->writeEntry("kmenubar", "bottom");
   else
     kvtconfig->writeEntry("kmenubar", "top");
-  kvtconfig->writeEntry("command_line", command_line);
 
   kvtconfig->sync();
 }
@@ -1030,22 +1031,7 @@ void kVt::quit(){
 int main(int argc, char **argv)
 {
   setlocale(LC_CTYPE, "");
-  
-  // first make an argument copy for a new kvt
-  o_argc = argc;
-  o_argv = new char*[o_argc + 2];
-  int i,i2;
-  i2 = 0;
-  for (i=0; i<o_argc; i++) {
-    if (QString("-restore")==argv[i])
-      i++;
-    else {
-      o_argv[i2] = argv[i];
-      i2++;
-    }
-  }
-  o_argv[i2]=NULL;
-
+  int i;
   // replace "-caption" with "-T" 
   for (i=0; i<argc; i++) {
     if (QString("-caption")==argv[i]){
@@ -1054,32 +1040,25 @@ int main(int argc, char **argv)
     }
   }
   
+  // first make an argument copy for a new kvt
+  QStrList orgarg;
+  for (i=0; i<argc; i++) {
+    if (QString("-caption")==argv[i])
+      orgarg.append("-T");
+    else
+      orgarg.append(argv[i]);
+  }
 
-
-  // cut off the command arguments for the terminal command and set com_arg
-  int commands = -1;
-  int com_argc = -1;
+  // cut off the command arguments for the terminal command 
   char **com_argv = 0;
   for (i=0; i<argc; i++){
     if (strcmp(argv[i],"-e") == 0){
       com_argv = argv+i+1;
-      com_argc = argc-i-1;
       argc = i;
-      commands = i;
-      argv[i] = NULL;
+      argv[i] = 0;
     }
   }
-  for(i=1; i<argc; i++) {
-    strcat(command_line," ");
-    strcat(command_line,argv[i]);
-  }
-  if(com_argc > 0) {
-    strcat(command_line," -e");
-    for(i=0; i<com_argc; i++) {
-      strcat(command_line," ");
-      strcat(command_line,com_argv[i]);
-    }
-  }
+
   // create the QT Application
   MyApp a( argc, argv, "kvt" );
   myapp = &a;
@@ -1087,119 +1066,58 @@ int main(int argc, char **argv)
   // this is for the original rxvt-code
   display = qt_xdisplay();
 
-  //  a.setStyle(WindowsStyle);
+  // arguments after Qt
+  QStrList arguments;
+  for (i=0; i<argc; i++) 
+    arguments.append(argv[i]);
+  if (com_argv){
+    arguments.append("-e");
+    for (i=0; com_argv[i]; i++) {
+      arguments.append(com_argv[i]);
+    }
+  }
 
 
   KConfig* sessionconfig = a.getConfig();
   if (a.isRestored()){
+    arguments.clear();
     sessionconfig = a.getSessionConfig();
-  // restore all command line arguments like "-sl 1000 -caption "Hallo World" -e ...." 
-    {
-      QString entry;
-      sessionconfig->setGroup("kvt");
-      entry = sessionconfig->readEntry("command_line");
-     
-      char *sp;
-      char *spe;
-      char exec_s[2048];
-      
-      int exec_found = 0;
-      int string_argument = 0;
-      
-      argc = 0;
-      argv = new char*[100];
-      argv[argc] = NULL;
+    sessionconfig->setGroup("kvt");
+    orgarg.clear();
+    sessionconfig->readListEntry("kvtarguments", orgarg);
+    // everything has changed. Generate new args for this kvt
+    argc = orgarg.count();
+    argv = new char* [argc+1];
+    for (i=0;i<(signed int)orgarg.count();i++)
+      argv[i]=orgarg.at(i);
+    argv[i]=0;
 
-      if(!entry.isEmpty())
-        strcpy(command_line, (const char*)entry);
-	
-      strcpy(exec_s, command_line);
-      sp = exec_s;
-                 
-      while(*sp && !exec_found) 
-      {
-        while(*sp && *sp == ' ') 
-          sp++;
-        if(*sp && *sp == '"') {
-          string_argument = 1;
-          sp++;
-        }
-        spe = sp;
+    // cut off the command arguments for the terminal command 
+    com_argv = 0;
+    for (i=0; i<argc; i++){
+      if (strcmp(argv[i],"-e") == 0){
+	com_argv = argv+i+1;
+	argc = i;
+	argv[i] = 0;
+      }
+    }
 
-        if(string_argument) {
-          while(*spe && *spe != '"') spe++;
-          if(*spe == '"')
-            *spe = ' ';
-          else {
-            fprintf(stderr, "Unmatched \" in command line\n%s\n  ...abort\n", command_line);
-            exit(-1);
-          }
-          string_argument = 0;
-        }
-        else
-          while(*spe && *spe != ' ') spe++;
-
-        if(spe > sp )
-        {
-          if(*spe == ' ')
-            *spe++ = 0;
-          if(!strcmp(sp, "-e"))
-            exec_found = 1; 
-          else
-          {               
-            argv[argc++]=strdup(sp);
-            argv[argc] = NULL;
-          }
-          sp = spe; 
-        }
-      }    
-        
-      // execute ? -------------------------------------
-
-      if(exec_found)
-      {       
-        com_argv = new char*[100];
-        com_argc = 0;
-        com_argv[com_argc] = NULL;
-        while(*sp) 
-        {          
-          while(*sp && *sp == ' ') 
-            sp++;
-          if(*sp && *sp == '"') {
-            string_argument = 1;
-            sp++;
-          }
-          spe = sp;
-
-          if(string_argument) {
-            while(*spe && *spe != '"') spe++;
-            if(*spe == '"')
-              *spe = ' ';
-            else {
-              fprintf(stderr, "Unmatched \" in command line\n%s\n  ...abort\n", command_line);
-              exit(-1);
-            }
-            string_argument = 0;
-          }
-          else
-            while(*spe && *spe != ' ') spe++;
-
-          if(spe > sp )
-          {
-            if(*spe == ' ')
-              *spe++ = 0;
-            com_argv[com_argc++]=strdup(sp); 
-            sp = spe;
-          }
-          com_argv[com_argc]=NULL;
-        }
-        if(!com_argc)
-          delete com_argv;
+    if (com_argv){
+      orgarg.append("-e");
+      for (i=0; com_argv[i]; i++) {
+	orgarg.append(com_argv[i]);
       }
     }
   }
 
-  kvt = new kVt(sessionconfig);
+  // create args for a new kvt
+  o_argc = orgarg.count();
+  o_argv = new char* [o_argc+1];
+  for (i=0;i<(signed int)orgarg.count();i++){
+    o_argv[i] = orgarg.at(i);
+  }
+
+  kvt = new kVt(sessionconfig, arguments);
 
   if (!a.isRestored()){
     // a bisserl gehackt. [bmg]
@@ -1214,7 +1132,7 @@ int main(int argc, char **argv)
   
   char* s;
   if (com_argv){
-    if ((s=strrchr(com_argv[0],'/'))!=NULL) 
+    if ((s=strrchr(com_argv[0],'/'))!=0) 
       s++; 
     else 
       s=com_argv[0]; 
@@ -1264,7 +1182,7 @@ int main(int argc, char **argv)
 
   kvt->do_some_stuff(sessionconfig);
 
-  init_command(NULL ,(unsigned char **)com_argv);
+  init_command(0 ,(unsigned char **)com_argv);
 
   QSocketNotifier sn( comm_fd, QSocketNotifier::Read );
   QObject::connect( &sn, SIGNAL(activated(int)),

@@ -1,3 +1,7 @@
+since kvt-0.18.2
+  - fixed SM again (Jens stuff was broken, probably I applied the patch
+     wrong. Anyways I redid it with C++ and Qt)   (Matthias)
+
 since kvt-0.18.1
   - save command line parameters into kvtrc (Jens Jahny)
   - restore process with all command line parameters (Jens Jahny)
@@ -5,6 +9,7 @@ since kvt-0.18.1
   - small fix for the -geometry option (Matthias)
   - ported cut and paste to QClipboard since it made sometimes trouble
     in combination with certain applications (Matthias)
+	  
 
 since kvt-0.18:
   - Custom Colors (Bernd Wuebben)	

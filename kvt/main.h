@@ -17,6 +17,7 @@
 #include <qframe.h>
 #include <qpixmap.h>
 #include <qcombo.h>
+#include <qstrlist.h>
 #include <kmenubar.h>
 #include <klocale.h>
 
@@ -32,7 +33,8 @@ class kVt : public QWidget
     Q_OBJECT
 
 public:
-    kVt( KConfig* sessionconfig, QWidget *parent=0, const char *name=0 );
+    kVt( KConfig* sessionconfig, const QStrList& args,
+	 QWidget *parent=0, const char *name=0 );
    ~kVt();
 
   // public because this need to be set from old rxvt-C-code
@@ -87,7 +89,7 @@ private:
   // options
   
   KConfig* kvtconfig;
-  
+  QStrList kvtarguments;
 
   QString fg_string;
   QString bg_string;
