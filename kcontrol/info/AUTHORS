@@ -23,3 +23,6 @@ added more informations:
     [Linux only, empty functions for the other systems]):
     Helge Deller (helge.deller@ruhr-uni-bochum.de)
   
+    Hey!  We've got Sound, XServer, devices, partitions and SCSI info for 
+    FreeBSD now too, compliments of your truly.
+    Alex Zepeda (garbanzo@hooked.net)
