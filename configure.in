@@ -226,6 +226,7 @@ AC_OUTPUT(Makefile \
 	po/pt/Makefile \
 	po/el/Makefile \
 	po/hr/Makefile \
+	po/zh/Makefile \
 	kwmmodules/Makefile \
 	kwmmodules/kwmpager/Makefile \
 	kwmmodules/kwmsound/Makefile \
