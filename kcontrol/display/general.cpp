@@ -186,7 +186,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	item->setRC( "General", "fixedFont" );
 	fontUseList.append( item );
 	
-	item = new FontUseItem( i18n("Window title font"),
+	/*item = new FontUseItem( i18n("Window title font"),
 				QFont( "helvetica", 12, QFont::Bold ) );
 	item->setRC( "WM", "titleFont" );
 	fontUseList.append( item );
@@ -199,7 +199,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	item = new FontUseItem( i18n("Panel clock font"),
 				QFont( "times", 14, QFont::Normal, true ) );
 	item->setRC( "Fonts", "DateFont", "kpanelrc" );
-	fontUseList.append( item );
+	fontUseList.append( item );*/
 	
 	for ( i = 0; i < (int) fontUseList.count(); i++ )
 		fontUseList.at( i )->readFont();

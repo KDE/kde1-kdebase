@@ -776,8 +776,6 @@ void KBackground::slotBrowse()
 
 void KBackground::slotWallpaper( const char *filename )
 {
-	debug("KBackground::slotWallpaper");
-	debug(filename);
     if ( filename )
 	{
 	    if ( !strcmp(filename, i18n("No wallpaper") ) )
@@ -786,14 +784,12 @@ void KBackground::slotWallpaper( const char *filename )
 		    wallpaper = filename;
 			bUseWallpaper = false;
 		    setMonitor();
-			debug("Turn wallpaper off");
 		}
 	    else if ( loadWallpaper( filename ) == true )
 		{
 		    wallpaper = filename;
 			bUseWallpaper = true;
 		    setMonitor();
-			debug("Turn wallpaper on");
 		}
 	    
 	    changed = true;
