@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmbell\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-26 20:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+
+#: main.cpp:51
+msgid "&Bell"
+msgstr "&Campainha"
+
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "utilização: kcmbell [-init | bell]\n"
+
+#: main.cpp:81
+msgid "Bell settings"
+msgstr "Configuração da campainha"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "Volume"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "Tom"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Duração"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "Hz"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "ms"
+
+#: bell.cpp:92
+msgid "Test"
+msgstr "Testar"
