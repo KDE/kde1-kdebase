@@ -58,11 +58,9 @@ entrydialog.cpp: entrydialog.moc
 entrydialog.moc: entrydialog.h
 	$(MOC) entrydialog.h -o entrydialog.moc
 
-MenuNameDialog.cpp: MenuNameDialog.moc
+MenuNameDialog.cpp: MenuNameDialog.moc MenuNameDialogData.moc
 MenuNameDialog.moc: MenuNameDialog.h
 	$(MOC) MenuNameDialog.h -o MenuNameDialog.moc
-
-MenuNameDialogData.cpp: MenuNameDialogData.moc
 MenuNameDialogData.moc: MenuNameDialogData.h
 	$(MOC) MenuNameDialogData.h -o MenuNameDialogData.moc
 	
