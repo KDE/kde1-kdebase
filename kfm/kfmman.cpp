@@ -212,6 +212,8 @@ bool KFMManager::eventFilter( QObject *ob, QEvent *ev )
     
 bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yoffset, const char *_data )
 {
+    jobURL = "";
+
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
     if (_reload && (_xoffset==0) && (_yoffset==0)) {
@@ -1049,13 +1051,13 @@ void KFMManager::stop()
 
 void KFMManager::slotRedirection( const char *_url )
 {
+    debug("Setting job URL to %s",_url);
+    jobURL = _url; // store it to a special QString.
     if (KURL(_url).isLocalFile())
     {
         // disable any change if redirection on a local file.
         // This allows to store the "/index.html" in 'url'
         // without changing the url stored here. David.
-        //debug("Setting job URL to %s",_url);
-        jobURL = _url; // store it to a special QString.
     } else
     {
         url = _url;

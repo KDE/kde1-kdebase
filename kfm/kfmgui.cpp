@@ -1588,15 +1588,21 @@ void KfmGui::slotViewFrameSource()
     if ( !view->getActiveView() )
 	return;
     
+    QString url = view->getActiveView()->getJobURL();
+    if (url.isEmpty())
+        url = view->getActiveView()->getURL();
     QString cmd;
-    cmd << "kedit \"" << view->getActiveView()->getJobURL() << "\"";
+    cmd << "kedit \"" << url  << "\"";
     KMimeBind::runCmd( cmd );
 }
 
 void KfmGui::slotViewDocumentSource()
 {
+    QString url = view->getJobURL();
+    if (url.isEmpty())
+        url = view->getURL();
     QString cmd;
-    cmd << "kedit \"" << view->getJobURL() << "\"";
+    cmd << "kedit \"" << url << "\"";
     KMimeBind::runCmd( cmd );
 }
 
