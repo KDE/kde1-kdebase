@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-03-09 22:13 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -22,7 +22,6 @@ msgid "Desktop"
 msgstr "Bureau"
 
 #: backgnd.cpp:167
-#, fuzzy
 msgid "&Rename ..."
 msgstr "&Renommer..."
 
@@ -39,7 +38,6 @@ msgid "&Two Color"
 msgstr "&Deux couleurs"
 
 #: backgnd.cpp:256
-#, fuzzy
 msgid "Set&up ..."
 msgstr "Config&urer..."
 
@@ -136,7 +134,6 @@ msgid "KDE default"
 msgstr "Standard KDE"
 
 #: colorscm.cpp:145
-#, fuzzy
 msgid "&Add ..."
 msgstr "&Ajouter..."
 
@@ -275,9 +272,8 @@ msgid "No screensaver"
 msgstr "Pas de mise en veille"
 
 #: scrnsave.cpp:210
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Config&urer..."
+msgstr "&Configurer..."
 
 #: scrnsave.cpp:218
 msgid "&Test"
@@ -301,7 +297,7 @@ msgstr "&Requiert un mot de passe"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Afficher le mot de &passe avec des *"
 
 #: scrnsave.cpp:281
 msgid "Priority"
@@ -343,18 +339,6 @@ msgstr "Police des boutons du panneau"
 msgid "Panel clock font"
 msgstr "Police de l'horloge du panneau"
 
-#: general.cpp:298
-#, fuzzy
-msgid "Sample text"
-msgstr "Sélectionner le texte"
-
-#: general.cpp:306
-msgid ""
-"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
-"the quick brown fox jumps over the lazy dog\n"
-"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
-msgstr ""
-
 #: main.cpp:62
 msgid "&Fonts etc."
 msgstr "&Polices etc."
@@ -392,10 +376,6 @@ msgstr "Fenêtre active"
 msgid "Selected text"
 msgstr "Texte sélectionné"
 
-#: fontchooser.cpp:82
-msgid "&Typeface"
-msgstr ""
-
 #: fontchooser.cpp:89
 msgid "&Bold"
 msgstr "&Gras"
@@ -403,14 +383,6 @@ msgstr "&Gras"
 #: fontchooser.cpp:96
 msgid "&Italic"
 msgstr "&Italique"
-
-#: fontchooser.cpp:125
-msgid "&Size"
-msgstr ""
-
-#: fontchooser.cpp:147
-msgid "&Character set"
-msgstr ""
 
 #: fontchooser.cpp:262
 msgid "default"

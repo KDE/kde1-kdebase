@@ -62,7 +62,6 @@ msgid "&Invert Selection"
 msgstr "&Inverser la sélection"
 
 #: kfindtop.cpp:171
-#, fuzzy
 msgid "&Preferences ..."
 msgstr "&Préférences..."
 
@@ -116,7 +115,6 @@ msgid "&Look in:"
 msgstr "Regarder &dans :"
 
 #: kftabdlg.cpp:77
-#, fuzzy
 msgid "&Browse ..."
 msgstr "&Parcourir..."
 

@@ -854,7 +854,6 @@ msgid "Contacting host "
 msgstr "Hôte contacté "
 
 #: kfmman.cpp:351
-#, fuzzy
 msgid "Working ..."
 msgstr "En cours..."
 
@@ -1118,12 +1117,12 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1766
-#, fuzzy, c-format
+#, c-format
 msgid "Mounting %s ..."
 msgstr "Attachement de %s..."
 
 #: kiojob.cpp:1768
-#, fuzzy, c-format
+#, c-format
 msgid "Unmounting %s ..."
 msgstr "Détachement de %s..."
 
@@ -1230,7 +1229,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1250,15 +1249,15 @@ msgstr "KFM - Options du navigateur"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Accepter les langues :"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Accepter les tables de caractères :"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Considérer comme du HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1319,13 +1318,12 @@ msgid "KFM Question"
 msgstr "KFM - Question"
 
 #: kfmexec/main.cpp:199
-#, fuzzy
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Erreur de syntaxe :\n"
-"kfmexec command [URLs....]\n"
+"kfmexec commande [URLs....]\n"
 
 #~ msgid "&New Window"
 #~ msgstr "Nouvelle &fenêtre"

@@ -186,11 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Bouboule v0.1 -- un globe de spheres tournant et changeant de taille\n"
+"Bouboule v0.1 -- un globe de sphères tournant et changeant de taille\n"
 "\n"
 "Copyright (c) 1996 by Jeremie PETIT\n"
 "\n"
-"Porté à kscreensave par Cedric Tefft"
+"Porté vers kscreensave par Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -590,27 +590,27 @@ msgstr "Mot de passe incorrect"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Tourbillon"
 
 #: science.cpp:68
 msgid "Sphere"
-msgstr "Vitesse :"
+msgstr "Sphère"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponentiel"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Contraction"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Onde"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Courbure"
 
 #: science.cpp:112
 msgid "Science"
@@ -618,11 +618,11 @@ msgstr "Science"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "calcul de la lentille..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "copie d'écran en cours..."
 
 #: science.cpp:931
 msgid "Setup Science"
@@ -634,15 +634,15 @@ msgstr "Milieu :"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Inverse"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Gravité"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Cacher le fond d'écran"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -650,16 +650,15 @@ msgstr "Intensité:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Mouvement :"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Science"
+msgstr "Version de Science"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "écrit par"
 
 #: science.cpp:1262
 msgid "About Science"
