@@ -46,7 +46,7 @@ METASOURCES =	\
 	root.moc kfmman.moc kiojob.moc  \
 	htmlcache.moc kfmtree.moc \
 	krenamewin.moc passworddialog.moc kURLcompletion.moc kfm.moc \
-	kfmjob.moc kfmexec.moc cgi.moc kfinder.moc  \
+	kfmjob.moc kfmexec.moc kfinder.moc  \
 	open-with.moc finddlg.moc kcookiewin.moc popup.moc
 
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
