@@ -155,7 +155,7 @@ public slots:
 	void	slotSetTitle( const char * );
 	void	slotURLSelected( const char *, int );
 	void	slotOnURL( const char * );
-	void	slotFormSubmitted( const char *, const char * );
+	void	slotFormSubmitted( const char *, const char *, const char * );
 	void	slotPopupMenu( const char *, const QPoint & );
 	void	slotDropEvent( KDNDDropZone * );
 //	void	slotImageRequest( const char * );

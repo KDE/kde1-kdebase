@@ -68,11 +68,11 @@ bool KCGI::get( const char *_url, const char *_dest, const char *_method )
 		pathInfo = script.right( script.length() - pathPos - 1 );
 		script.truncate( pathPos );
 	}
-/*
-	printf( "Script: %s\n", script.data() );
+
+	/* printf( "Script: %s\n", script.data() );
 	printf( "Query: %s\n", query.data() );
-	printf( "Path Info: %s\n", pathInfo.data() );
-*/
+	printf( "Path Info: %s\n", pathInfo.data() ); */
+
 	KURL url( _dest );
 
 	if ( url.isMalformed() )
