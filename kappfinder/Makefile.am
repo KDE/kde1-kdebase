@@ -1,6 +1,6 @@
 install-data-local:
 	echo "Installing non-KDE applications"
-	./appfinder $(prefix)
+	./kappfinder $(prefix)
 
 uninstall-local:
 	rm -r $(kde_appsdir)/apps
