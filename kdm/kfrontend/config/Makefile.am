@@ -12,15 +12,15 @@ Xservers: Xservers.ws
 	$(RM) -f Xservers
 	$(LN_S) Xservers.ws Xservers
 
-Xservers.ws: Xserv.ws.cpp
+Xservers.ws: $(srcdir)/Xserv.ws.cpp
 	BINDIR=$(XBINDIR) ;\
-	sed -e "s#BINDIR#$$BINDIR#" Xserv.ws.cpp | sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/' > Xservers.ws
+	sed -e "s#BINDIR#$$BINDIR#" $(srcdir)/Xserv.ws.cpp | sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/' > Xservers.ws
 
-Xsetup: Xsetup_0
+Xsetup: $(srcdir)/Xsetup_0
 	$(RM) -f Xsetup
-	$(LN_S) Xsetup_0 Xsetup
+	$(LN_S) $(srcdir)/Xsetup_0 Xsetup
 
-xdm-config: xdm-conf.cpp
+xdm-config: $(srcdir)/xdm-conf.cpp
 	XDMDIR=$(ac_xdmdir) ;\
-	sed -e "s#XDMDIR#$$XDMDIR#" xdm-conf.cpp |sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'> xdm-config
+	sed -e "s#XDMDIR#$$XDMDIR#" $(srcdir)/xdm-conf.cpp |sed -e '/^#  *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'> xdm-config
 
