@@ -66,16 +66,13 @@ int KProtocolTAR::AttachTAR( const char *_command )
 
 int KProtocolTAR::Open( KURL *url, int mode )
 {
-    debug("KProtocolTAR::Open(url=%s)",url->url().data());
+    // debug("KProtocolTAR::Open(url=%s)",url->url().data());
     if( mode & READ )
     {
 	const char *path = url->path();
 
 	// extracting /xxx from a tarfile containing the file xxx won't work
 	while( *path == '/' ) path++;	
-        
-        /* openedUrl = makeRelative(path); // store it for Size()
-        debug("openedUrl='%s'", openedUrl.data()); */
 
 	QString Command( "tar -%sOxf - \"" );
 	Command += path;
@@ -131,7 +128,7 @@ long KProtocolTAR::Read( void *_buffer, long _len )
       if( iomask & KSlave::OUT || !moredata )
       {
 	count = read (Slave.out, (char*)_buffer + pos, _len-pos);
-	//debug ("read %ld bytes", count);
+	//debug ("read %d bytes", count);
 	if (count == -1)
 	{
 	  if (errno == EAGAIN)
@@ -189,15 +186,24 @@ bool KProtocolTAR::isDirStored( const char *_name )
 }
 
 // Returns tmp made relative to dirpath
-QString KProtocolTAR::makeRelative(QString tmp)
+int KProtocolTAR::makeRelative(QString & tmp)
 {
     if (!dirpath.isEmpty())               // dirpath not empty?
+    {  
         if (tmp.find(dirpath) == 0)         // no, find dir we want
             tmp.remove(0, dirpath.length());   // and remove it.
+        else {
+            // this happens when trying manually to add a trailing '/' to a 
+            // file name in the tar file. A bug in the tar program,
+            // actually. David.
+            debug("ERROR ! dirpath=%s not contained in tmp=%s",dirpath.data(),tmp.data());
+            return FAIL; // Error to be set by caller.
+        }
+    }
     
     if (tmp[0] == '/')                // starts with slash ?
         tmp.remove (0, 1);              // Yeah remove it
-    return tmp;
+    return TRUE;
 }
 
 int KProtocolTAR::OpenDir(KURL *url)
@@ -244,15 +250,16 @@ int KProtocolTAR::OpenDir(KURL *url)
 			       p_size, p_date, p_name) == 6))
 	{
 	  // Link?
-	  QString tmp1( p_name );
+	  QString tmp( p_name );
 	  if ( p_access[0] == 'l' )
 	  {
-	    int i = tmp1.findRev( " -> " );
+	    int i = tmp.findRev( " -> " );
 	    if ( i != -1 )
-	      tmp1.truncate( i ); //forget link
+	      tmp.truncate( i ); //forget link
 	  }
           
-          QString tmp = makeRelative(tmp1);
+          if (makeRelative(tmp)==FAIL)
+              return Error(KIO_ERROR_CouldNotList, "No such dir", 0);
 
 	  int i = tmp.find ("/");
 	  // this is first slash; If there is something behind this slash,
@@ -262,10 +269,12 @@ int KProtocolTAR::OpenDir(KURL *url)
 	  {
 	    if (tmp[i+1] != '\0') // yes there is something
             {
+              // debug("there is something : %s, tmp1=%s",tmp.data(),tmp1.data());
               // hack to add missing parent directories if necessary.
 	      tmp.truncate(i);
 	      if (isDirStored(tmp.data()))
                   continue;           // Ignore it
+	      debug("emulating dir %s",tmp.data());
               // otherwise, create wrong information about a directory and 
               // add it to dirlist, which is done below.
               strcpy(p_access, "d?????????");
@@ -310,6 +319,8 @@ int KProtocolTAR::OpenDir(KURL *url)
       }
     }
     while( readstr );
+    if (dirlist.count()==0) // tar returned nothing : probably a wrong dir
+        return Error(KIO_ERROR_CouldNotList, "No such dir", 0);
     dirlist.first();
     return SUCCESS;
 }
