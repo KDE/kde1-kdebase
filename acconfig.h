@@ -19,3 +19,13 @@
 
 /* define if shadow under linux */
 #undef HAVE_SHADOW
+
+/* define if you have XPM support */
+#undef HAVE_XPM
+
+/* define if you have GL (Mesa, OpenGL, ...)*/
+#undef HAVE_GL
+
+/* define if you have PAM (Pluggable Authentication Modules); Redhat-Users! */
+#undef HAVE_PAM
+
