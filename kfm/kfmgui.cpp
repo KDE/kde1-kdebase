@@ -30,6 +30,8 @@
 #include "config-kfm.h"
 #include "utils.h"
 #include "kkfmoptdlg.h"
+#include "kbookmarkdlg.h"
+
 //-> was: #include "useragentdlg.h" => moved to kkfmoptdlg.h
 
 #include <klocale.h>
