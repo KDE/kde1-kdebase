@@ -12,6 +12,12 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
  * Revision History:
  *
  * Changes of David Bagley <bagleyd@bigfoot.com>
+ *
+ * ------changes incorporated for PAM from xlockmore 4.09--
+ * 24-Jan-98: Update PAM support and made it configure-able.
+ *            Marc Ewing <marc*redhat.com> Original PAM support from
+ *            25-Jul-96 Michael K. Johnson <johnsonm@redhat.com>
+ * --end of changelog for PAM support-----------------------
  * 25-May-96: When xlock is compiled with shadow passwords it will still
  *            work on non shadowed systems.  Marek Michalkiewicz
  *            <marekm@i17linuxb.ists.pwr.wroc.pl>
@@ -204,7 +210,76 @@ struct passwd {
 
 char        user[PASSLENGTH];
 
-#ifndef ultrix
+#ifdef PAM
+#include <security/pam_appl.h>
+/* used to pass the password to the conversation function */
+static char *PAM_password;
+
+/*-
+ * PAM conversation function
+ * Here we assume (for now, at least) that echo on means login name, and
+ * echo off means password.
+ */
+static int
+PAM_conv(int num_msg,
+	 /* const */ struct pam_message **msg,
+	 struct pam_response **resp,
+	 void *appdata_ptr)
+{
+	int         replies = 0;
+	struct pam_response *reply = NULL;
+
+
+#define COPY_STRING(s) (s) ? strdup(s) : NULL
+
+
+	reply = (struct pam_response *) malloc(sizeof (struct pam_response) *
+					       num_msg);
+
+	if (!reply)
+		return PAM_CONV_ERR;
+
+
+	for (replies = 0; replies < num_msg; replies++) {
+		switch (msg[replies]->msg_style) {
+			case PAM_PROMPT_ECHO_ON:
+				reply[replies].resp_retcode = PAM_SUCCESS;
+				reply[replies].resp = COPY_STRING(user);
+				/* PAM frees resp */
+				break;
+			case PAM_PROMPT_ECHO_OFF:
+				reply[replies].resp_retcode = PAM_SUCCESS;
+				reply[replies].resp = COPY_STRING(PAM_password);
+				/* PAM frees resp */
+				break;
+			case PAM_TEXT_INFO:
+				/* ignore it... */
+				reply[replies].resp_retcode = PAM_SUCCESS;
+				reply[replies].resp = NULL;
+				break;
+			case PAM_ERROR_MSG:
+				/* ignore it... */
+				reply[replies].resp_retcode = PAM_SUCCESS;
+				reply[replies].resp = NULL;
+				break;
+			default:
+				/* Must be an error of some sort... */
+				(void) free((void *) reply);
+				return PAM_CONV_ERR;
+		}
+	}
+	*resp = reply;
+	return PAM_SUCCESS;
+}
+static struct pam_conv PAM_conversation =
+{
+	&PAM_conv,
+	NULL
+};
+
+#endif /* PAM */
+
+#if !defined( ultrix ) && !defined( PAM )
 static char userpass[PASSLENGTH];
 static char rootpass[PASSLENGTH];
 
@@ -372,7 +447,7 @@ passwd_invalid(char *passwd)
 }
 #endif
 
-#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( BSD_AUTH )
+#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( BSD_AUTH ) && !defined (PAM )
 /* This routine is not needed if HAVE_FCNTL_H and USE_MULTIPLE_ROOT */
 static void
 getCryptedUserPasswd(void)
@@ -523,7 +598,7 @@ getCryptedRootPasswd(void)
 #endif /* !HP_PASSWDETC */
 }
 
-#endif /* !ultrix && !DCE_PASSWD && !BSD_AUTH */
+#endif /* !ultrix && !DCE_PASSWD && !BSD_AUTH  && !PAM */
 
 
 /* 
@@ -552,6 +627,42 @@ checkPasswd(char *buffer)
 	else
 		done = !strcmp(rootpass, crypt(buffer, rootpass));
 #else /* !DCE_PASSWD */
+
+#ifdef PAM
+/*-
+ * Use PAM to do authentication.  No session logging, only authentication.
+ * Bail out if there are any errors.
+ * For now, don't try to display strings explaining errors.
+ * Later, we could integrate PAM more by posting errors to the
+ * user.
+ * Query: should we be using PAM_SILENT to shut PAM up?
+ */
+	pam_handle_t *pamh;
+	int         pam_error;
+
+#define PAM_BAIL if (pam_error != PAM_SUCCESS) { \
+    pam_end(pamh, 0); return 0; \
+}
+	PAM_password = buffer;
+	pam_error = pam_start("xlock", user, &PAM_conversation, &pamh);
+	PAM_BAIL;
+	pam_error = pam_authenticate(pamh, 0);
+	if (pam_error != PAM_SUCCESS) {
+		/* Try as root; bail if no success there either */
+		pam_error = pam_set_item(pamh, PAM_USER, ROOT);
+		PAM_BAIL;
+		pam_error = pam_authenticate(pamh, 0);
+		PAM_BAIL;
+	}
+	/* Don't do account management or credentials; credentials
+	 * aren't needed and account management would just lock up
+	 * a computer and require root to come and unlock it.  Blech.
+	 */
+	pam_end(pamh, PAM_SUCCESS);
+	/* If this point is reached, the user has been authenticated. */
+	done = True;
+
+#else /* !PAM */
 
 #ifdef ultrix
 	done = ((authenticate_user((struct passwd *) getpwnam(user),
@@ -655,6 +766,7 @@ checkPasswd(char *buffer)
 
 #endif /* !BSD_AUTH */
 #endif /* !ultrix */
+#endif /* !PAM */
 #endif /* !DCE_PASSWD */
 
 	return !canGetPasswd || done;
@@ -1309,7 +1421,7 @@ void
 initPasswd(void)
 {
         getUserName();
-#if !defined( ultrix ) && !defined( DCE_PASSWD )
+#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( PAM )
 	if ( mode != MODE_PREVIEW ) {
 #ifdef        BSD_AUTH
                 struct passwd *pwd = getpwnam(user);
@@ -1323,7 +1435,7 @@ initPasswd(void)
 		    getCryptedRootPasswd();
 #endif /* !BSD_AUTH */
         }
-#endif /* !ultrix && !DCE_PASSWD */
+#endif /* !ultrix && !DCE_PASSWD  && !PAM */
 #ifdef DCE_PASSWD
         initDCE();
 #endif
