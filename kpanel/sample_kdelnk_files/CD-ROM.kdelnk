@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 MiniIcon=cdrom_mount.xpm
 Comment=CD-ROM
+Comment[es]=CD-ROM
 Comment[no]=CD-ROM
 Icon=cdrom_mount.xpm
 Type=Link
