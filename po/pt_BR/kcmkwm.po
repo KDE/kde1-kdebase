@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -14,7 +14,6 @@ msgid "&Titlebar"
 msgstr "&Barra de Título"
 
 #: main.cpp:73
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Bordas"
 
@@ -24,14 +23,13 @@ msgstr "&Mouse"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Avançado"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"utilização: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+"utilização: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -91,12 +89,11 @@ msgstr ""
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Alinhamento do Título"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Botão central"
+msgstr "Meio"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
@@ -115,25 +112,20 @@ msgid "Pixmap"
 msgstr "Imagem"
 
 #: titlebar.cpp:1017
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "Imagem &ativa"
+msgstr "Imagem ativa:"
 
 #: titlebar.cpp:1022
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Imagem &inativa"
+msgstr "Imagem inativa:"
 
 #: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Ação do mouse"
 
 #: titlebar.cpp:1040
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Duplo click com botão esquerdo\n"
-"   na barra de título faz:"
+msgstr "Duplo click com botão esquerdo faz:"
 
 #: titlebar.cpp:1050
 msgid "(Un)Maximize"
@@ -152,7 +144,6 @@ msgid "(Un)Sticky"
 msgstr "(Des)Pregar"
 
 #: titlebar.cpp:1073
-#, fuzzy
 msgid "Title animation"
 msgstr "Animação do título"
 
@@ -161,37 +152,35 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1304
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Estilo do gerenciador de janelas"
+msgstr "Configuração do gerenciador de janelas - ERRO"
 
 #: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
-msgstr ""
+msgstr "Houve um erro na gravação\n"
+"das figuras da barra de título. Cheque as permissões."
 
 #: windows.cpp:66
-#, fuzzy
 msgid "Windows"
-msgstr "&Janelas"
+msgstr "Janelas"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Por padrão, maximização vertical somente"
 
 #: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Mostrar conteúdo enquanto move janelas"
 
 #: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Mostrar conteúdo enquanto redimensiona janelas"
 
 #: windows.cpp:96
-#, fuzzy
 msgid "Resize animation:"
-msgstr "Animação do título"
+msgstr "Redimensionar animação:"
 
 #: windows.cpp:109
 msgid "None"
@@ -230,10 +219,10 @@ msgstr "Manual"
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
-msgstr ""
+msgstr "Sobreposição permitida:\n"
+       "(% do espaço do ambiente)"
 
 #: windows.cpp:170
-#, fuzzy
 msgid "Focus policy"
 msgstr "Política de Foco"
 
@@ -254,13 +243,12 @@ msgid "Classic sloppy focus"
 msgstr "Foco "
 
 #: windows.cpp:197
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Elevar"
+msgstr "Auto-Elevar"
 
 #: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Atraso (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -397,117 +385,68 @@ msgstr "Mudar Tamanho"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Teclado e Mouse"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab comuta entre ambientes de trabalho"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab limitado ao ambiente corrente"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Modo do Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Botão direito"
+msgstr "Prender o botão direito do mouse"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filtros"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "&Janelas"
+msgstr "Janelas:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "tem pequenas decorações"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "não têm decorações"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "nunca ganham foco"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "iniciam como Pregadas"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "são excluídas do gerenciamento de sessão"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "se preenchem os requisitos:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Barra de Título"
+msgstr "Títulos"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Aparência da barra de título"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Menu de Operações"
-
-#~ msgid "Window movement"
-#~ msgstr "Movimentação das Janelas"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparente"
-
-#~ msgid "Opaque"
-#~ msgstr "Opaca"
-
-#~ msgid "Window resize"
-#~ msgstr "Redimensionar Janela"
-
-#~ msgid "Animation:"
-#~ msgstr "Animação:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Sobreposição:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Estilo de Maximização"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Maximizar totalmente"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maximizar verticalmente"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Demora do início automático\n"
-#~ "(<100 desativa)"
-
-#~ msgid "miliseconds"
-#~ msgstr "milissegundos"
-
-#~ msgid "&Desktop"
-#~ msgstr "&Ambiente de Trabalho"
+msgstr "Classes"

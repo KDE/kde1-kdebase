@@ -123,7 +123,7 @@ msgstr "Fonte..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Habilitar &Hot-Keys"
 
 #: main.C:677
 msgid "Save &Options"
