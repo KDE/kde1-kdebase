@@ -167,7 +167,7 @@ xdmconfigsubdir = @xdmconfigsubdir@
 
 data_DATA = keys.html keys-1.html keys-2.html logotp3.gif
 
-datadir = $(kde_htmldir)/en/kcontrol/keys
+datadir = $(kde_htmldir)/en/kcontrol/kcmkeys
 
 EXTRA_DIST = $(data_DATA)
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
@@ -180,13 +180,13 @@ DIST_COMMON =  Makefile.am Makefile.in
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
-TAR = tar
+TAR = gtar
 GZIP = --best
 all: Makefile $(DATA)
 
 .SUFFIXES:
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/keys/Makefile
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/kcmkeys/Makefile
 
 Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
 	cd $(top_builddir) \
@@ -217,14 +217,14 @@ TAGS:
 
 distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
 
-subdir = doc/kcontrol/keys
+subdir = doc/kcontrol/kcmkeys
 
 distdir: $(DISTFILES)
 	here=`cd $(top_builddir) && pwd`; \
 	top_distdir=`cd $(top_distdir) && pwd`; \
 	distdir=`cd $(distdir) && pwd`; \
 	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/keys/Makefile
+	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/kcmkeys/Makefile
 	@for file in $(DISTFILES); do \
 	  d=$(srcdir); \
 	  test -f $(distdir)/$$file \

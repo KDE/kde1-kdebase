@@ -69,15 +69,15 @@ CXX = g++
 CXXCPP = @CXXCPP@
 DLLTOOL = 
 GLINC = 
-GLLIB = -lMesaGL -lMesaGLU
-GL_SAVERS = kmorph3d.kss kspace.kss kpipes.kss
+GLLIB = 
+GL_SAVERS = 
 GMSGFMT = /usr/bin/msgfmt
 IDL = @IDL@
 KDE_EXTRA_RPATH = 
-KDE_INCLUDES = 
-KDE_LDFLAGS = 
+KDE_INCLUDES = -I/opt/kde/include
+KDE_LDFLAGS = -L/opt/kde/lib
 KDE_RPATH = -rpath $(kde_libraries) -rpath $(qt_libraries) -rpath $(x_libraries)
-LD = /usr/lib/gcc-lib/i586-linux/egcs-2.90.29/ld
+LD = /usr/bin/ld
 LIBCOMPAT = 
 LIBCRYPT = -lcrypt
 LIBCURSES = -lcurses
@@ -110,26 +110,26 @@ LN_S = ln -s
 MAKEINFO = makeinfo
 MICO_INCLUDES = @MICO_INCLUDES@
 MICO_LDFLAGS = @MICO_LDFLAGS@
-MOC = /opt/kde/bin/moc
+MOC = /mnt/devel/kde/qt/qt/bin/moc
 MSGFMT = /usr/bin/msgfmt
 NM = /usr/bin/nm -B
 NOOPT_CXXFLAGS =   -Wall
 PACKAGE = kdebase
-PAMINC = -I/usr/include
-PAMLIBPATHS = -L/lib
-PAMLIBS = -lpam -lpam_misc -ldl
-PASSWDLIB = -lpam -ldl
+PAMINC = 
+PAMLIBPATHS = 
+PAMLIBS = 
+PASSWDLIB = 
 PYTHONINC = @PYTHONINC@
 PYTHONLIB = @PYTHONLIB@
-QT_INCLUDES = -I/opt/kde/include
-QT_LDFLAGS = -L/opt/kde/lib
+QT_INCLUDES = -I/mnt/devel/kde/qt/qt/include
+QT_LDFLAGS = -L/mnt/devel/kde/qt/qt/lib
 RANLIB = ranlib
 RUN_KAPPFINDER = yes
-SETUIDFLAGS = 
+SETUIDFLAGS = -m 4755
 TOPSUBDIRS = @TOPSUBDIRS@
 USE_NLS = yes
 VERSION = 1.1pre
-XBINDIR = /usr/bin/X11
+XBINDIR = /usr/X11R6/bin
 XGETTEXT = /usr/bin/xgettext
 XPMINC = 
 XPMLIB = -lXpm
@@ -137,10 +137,10 @@ XPM_SAVERS = kbat.kss
 X_EXTRA_LIBS = 
 X_INCLUDES = -I/usr/X11R6/include
 X_LDFLAGS = -L/usr/X11R6/lib
-X_SERVER = /usr/bin/X11
+X_SERVER = /usr/X11R6/bin
 ac_xdmdir = /usr/X11R6/lib/X11/xdm
-all_includes = -I/opt/kde/include  -I/usr/X11R6/include
-all_libraries = -L/opt/kde/lib  -L/usr/X11R6/lib
+all_includes = -I/opt/kde/include -I/mnt/devel/kde/qt/qt/include  -I/usr/X11R6/include
+all_libraries = -L/opt/kde/lib -L/mnt/devel/kde/qt/qt/lib  -L/usr/X11R6/lib
 install_root = 
 kde_appsdir = /opt/kde/share/applnk
 kde_bindir = /opt/kde/bin
@@ -158,16 +158,16 @@ kde_partsdir = /opt/kde/parts
 kde_sounddir = /opt/kde/share/sounds
 kde_toolbardir = /opt/kde/share/toolbar
 kde_wallpaperdir = /opt/kde/share/wallpapers
-qt_includes = /opt/kde/include
-qt_libraries = /opt/kde/lib
-topdir = /home/peter/kde/world/kdebase
+qt_includes = /mnt/devel/kde/qt/qt/include
+qt_libraries = /mnt/devel/kde/qt/qt/lib
+topdir = /mnt/devel/kde/kdecvs/kdebase
 x_includes = /usr/X11R6/include
 x_libraries = /usr/X11R6/lib
 xdmconfigsubdir = 
 
 data_DATA = keys.html keys-1.html keys-2.html logotp3.gif
 
-datadir = $(kde_htmldir)/en/kcontrol/keys
+datadir = $(kde_htmldir)/en/kcontrol/kcmkeys
 
 EXTRA_DIST = $(data_DATA)
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
@@ -180,13 +180,13 @@ DIST_COMMON =  Makefile.am Makefile.in
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 
-TAR = tar
+TAR = gtar
 GZIP = --best
 all: Makefile $(DATA)
 
 .SUFFIXES:
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
-	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/keys/Makefile
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu doc/kcontrol/kcmkeys/Makefile
 
 Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
 	cd $(top_builddir) \
@@ -217,14 +217,14 @@ TAGS:
 
 distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
 
-subdir = doc/kcontrol/keys
+subdir = doc/kcontrol/kcmkeys
 
 distdir: $(DISTFILES)
 	here=`cd $(top_builddir) && pwd`; \
 	top_distdir=`cd $(top_distdir) && pwd`; \
 	distdir=`cd $(distdir) && pwd`; \
 	cd $(top_srcdir) \
-	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/keys/Makefile
+	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu doc/kcontrol/kcmkeys/Makefile
 	@for file in $(DISTFILES); do \
 	  d=$(srcdir); \
 	  test -f $(distdir)/$$file \
