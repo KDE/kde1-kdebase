@@ -436,6 +436,7 @@ void kPanel::slotPropsApply(){
       config->writeEntry("BoxHeight",26);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
+      config->writeEntry("TaskbarButtonMinimumHorizontalSize",3);
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",1);
 //       config->writeEntry("DateFont","*-helvetica-medium-r-normal--8-*");
@@ -447,6 +448,7 @@ void kPanel::slotPropsApply(){
       config->writeEntry("BoxHeight",45);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
+      config->writeEntry("TaskbarButtonMinimumHorizontalSize",3);
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-medium-i-normal--12-*");
@@ -457,6 +459,7 @@ void kPanel::slotPropsApply(){
       config->writeEntry("BoxHeight",47);
       config->writeEntry("Margin",4);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
+      config->writeEntry("TaskbarButtonMinimumHorizontalSize",3);
       config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
       config->writeEntry("DesktopButtonRows",2);
       config->writeEntry("DateFont","*-times-bold-i-normal--12-*");

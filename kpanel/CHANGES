@@ -1,5 +1,14 @@
 In kpanel-0.18:
 
+    Patchlevel 5:
+       - fixed autohide with docking. Authide cares about
+         popups now. The hiding will be delayed until the popup
+         dissappears.
+       - new property TaskbarButtonMinimumHorizontalSize.
+         If this size cannot be ensured (too many tasks) the
+         taskbar gets one more row.
+       - taskbutton indicate with "..." if a label is too long
+
     Patchlevel 4:
        - First proof-of-concept implementation of docking
        - smooth swallowing (no more flickering a la fvwm :-)

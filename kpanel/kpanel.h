@@ -318,6 +318,7 @@ private:
   int number_of_desktops;
   
   int tbhs;
+  int tbmhs;
   
   bool foldersFirst;
   bool personalFirst;
@@ -342,6 +343,7 @@ private:
 
   //layout
   void layoutTaskbar();
+  int numberOfTaskbarRows();
   void layoutDockArea();
   void reposition(int l = 0);
   void find_a_free_place();

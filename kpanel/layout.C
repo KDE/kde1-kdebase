@@ -13,6 +13,7 @@ void kPanel::layoutTaskbar(){
    myTaskButton* button;
    int n,w,d,d2,x,y;
    n = taskbar_buttons.count();
+   int nr = numberOfTaskbarRows();
   
    if (taskbar_position == taskbar_top_left){
      y = 0;
@@ -34,8 +35,11 @@ void kPanel::layoutTaskbar(){
      taskbar->resize(taskbar_frame->width(), taskbar_frame->height());
    }
    else {
+     int r = 0;
      if (n>0) {
-       w = (taskbar_frame->width()-(number_of_desktops*2-2)) / n;
+       w = (taskbar_frame->width()-((number_of_desktops-1)*4)) / 
+	 ((n+((nr>1)?1:0))/nr);
+       w--;
        if (w > tbhs*taskbar_height*3/2) w = tbhs*taskbar_height*3/2;
        x = 0;
        for (d=1; d <= number_of_desktops; d++){
@@ -45,8 +49,17 @@ void kPanel::layoutTaskbar(){
 	     if (d2 == 0 && d>1)
 	       x += 4;
 	     d2++;
-	     button->setGeometry(x,0,w, taskbar_frame->height());
+	     button->setGeometry(x,taskbar_height * r,
+				 w, taskbar_height);
+	     n--;
 	     x += w+1;
+	     if (r<nr-1 && x > taskbar_frame->width() - (w+1)){
+	       r++;
+	       x = 0;
+	     }
+	     // aehem....
+	     if (r < nr-1 && n == 1)
+	       r++;
 	     if (!button->isVisible())
 	       button->show();
 	   }
@@ -55,6 +68,26 @@ void kPanel::layoutTaskbar(){
      }
    }
 }
+
+
+int kPanel::numberOfTaskbarRows(){
+  if (taskbar_position == taskbar_top_left)
+    return 1;
+  int n = taskbar_buttons.count();
+  if (n == 0)
+    return 1;
+  if (taskbar_frame->width()-(number_of_desktops*4) < tbmhs*taskbar_height)
+    return 1;
+
+  int w = 0;
+  int res = 0;
+  do {
+    res ++;
+    w = (taskbar_frame->width()-(number_of_desktops*4)) / ((n+1)/res);
+  } while (w < tbmhs*taskbar_height);
+  return res;
+}
+
 
 
 void kPanel::reposition(int l){

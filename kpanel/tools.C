@@ -254,10 +254,20 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     painter->drawPixmap( dx, dy, *pixmap() );
   }
   if (!s.isNull()){
+    QString s2 = s;
+    if (fontMetrics().width(s2) > width()-32){
+      s2.detach();
+      printf("teste %s\n", s2.data());
+      while (s2.length()>0 && 
+	     fontMetrics().width(s2) > width()-32-fontMetrics().width("...")){
+	s2.resize(s2.length()-1);
+      }
+      s2.append("...");
+    }
     if ( draw_down && style() == WindowsStyle ) 
-      painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s);
+      painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s2);
     else
-      painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s);
+      painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s2);
   }
 }
 
@@ -504,7 +514,6 @@ void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
 				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
 				     color1, color1 );
-
   QPainter paint;
   QPainter paint2;
   paint.begin(pm);
@@ -679,28 +688,6 @@ void kPanel::delete_button(QWidget* button){
     if (kde_button == button)
       kde_button = NULL;
   }
-}
-
-static void waitForX(){
-  static Window w = 0;
-  static Atom a = 0;
-  if (!a)
-    a = XInternAtom(qt_xdisplay(), "WAIT_FOR_X", False);
-  int mask;
-  XSetWindowAttributes attr;
-  if (w == 0) {
-    mask = CWOverrideRedirect;
-    attr.override_redirect = 1;
-    w = XCreateWindow(qt_xdisplay(), qt_xrootwin(), 0, 0, 1, 1, 0, CopyFromParent,
-		      InputOnly, CopyFromParent, mask, &attr);
-    XSelectInput(qt_xdisplay(), w, 
-	       PropertyChangeMask);
-    XMapWindow(qt_xdisplay(), w);
-  }
-  XEvent ev;
-  XChangeProperty(qt_xdisplay(), w, a, a, 8,
-		  PropModeAppend, (unsigned char *)"", 0);
-  XWindowEvent(qt_xdisplay(), w, PropertyChangeMask, &ev);
 }
 
 void kPanel::cleanup(){

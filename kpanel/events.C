@@ -35,7 +35,20 @@ void myFrame::enterEvent(QEvent *){
 void myFrame::hideTimerDone(){
   if (!autoHide)
     return;
-  if (geometry().contains(QCursor::pos()))
+  bool do_hide = true;
+  // check for popups
+  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+		   ButtonPressMask | ButtonReleaseMask |
+		   PointerMotionMask |
+		   EnterWindowMask | LeaveWindowMask,
+		   GrabModeAsync, GrabModeAsync, None, 
+		   None , CurrentTime) == GrabSuccess){ 
+    XUngrabPointer(qt_xdisplay(), CurrentTime);
+    XSync(qt_xdisplay(), FALSE);
+  }
+  else
+    do_hide = false;
+  if (!do_hide || geometry().contains(QCursor::pos()))
     hideTimer->start(4000, TRUE);
   else {
     autoHidden = true;
@@ -71,6 +84,8 @@ void kPanel::windowAdd(Window w){
 	return;
     }
   }
+
+  int nr = numberOfTaskbarRows();
 
   myTaskButton* b = new myTaskButton(taskbar);
   b->win = w;
@@ -126,16 +141,21 @@ void kPanel::windowAdd(Window w){
   }
   
   b->virtual_desktop = KWM::desktop(w);
+  if (nr != numberOfTaskbarRows())
+    doGeometry();
   layoutTaskbar();
 }
 
 void kPanel::windowRemove(Window w){
+  int nr = numberOfTaskbarRows();
   myTaskButton* b = taskButtonFromWindow(w);
   if (!b)
     return;
   taskbar_buttons.removeRef(b);
   taskbar->remove(b);
   delete b;
+  if (nr != numberOfTaskbarRows())
+    doGeometry();
   layoutTaskbar();
 }
 void kPanel::windowChange(Window w){
@@ -582,6 +602,23 @@ void kPanel::hideTimerDone(){
   bool do_hide = true;
   if (!autoHide)
     return;
+
+
+  // check for popups
+  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+		   ButtonPressMask | ButtonReleaseMask |
+		   PointerMotionMask |
+		   EnterWindowMask | LeaveWindowMask,
+		   GrabModeAsync, GrabModeAsync, None, 
+		   None , CurrentTime) == GrabSuccess){ 
+    XUngrabPointer(qt_xdisplay(), CurrentTime);
+    XSync(qt_xdisplay(), FALSE);
+  }
+  else
+    do_hide = false;
+
+
+
   for (bi=0; bi<nbuttons; bi++){
     do_hide = do_hide && (entries[bi].button->flat &&
 			  !entries[bi].button->isDown());
