@@ -211,7 +211,6 @@ msgid ""
 "\n"
 "Current maintainer: David Faure\n"
 "faure@kde.org"
-
 msgstr ""
 "Autor: Torben Weis\n"
 "weis@kde.org\n"
@@ -232,8 +231,8 @@ msgid ""
 msgstr ""
 "\n"
 "Vã rugãm sã trimiteþi problemele si dorinþele la http://bugs.kde.org"
-#: kfmgui.cpp:450
 
+#: kfmgui.cpp:450
 msgid "&Go"
 msgstr "&Deplasare"
 
@@ -405,7 +404,6 @@ msgstr ""
 "în acest director nu ai voie sã scrii.\n"
 "\n"
 " "
-
 
 #: kfmview.cpp:719
 msgid ""
@@ -660,6 +658,7 @@ msgid "Last Modified"
 msgstr "Ultima Modificare"
 
 #: kfmprops.cpp:383
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
@@ -702,6 +701,7 @@ msgid ""
 msgstr ""
 "Schimbã\n"
 "În"
+
 #: kfmprops.cpp:456
 msgid "Exec"
 msgstr "Execuþie"
@@ -996,6 +996,7 @@ msgid " ERROR: Could not write to %s"
 msgstr "EROARE: Nu pot scrie în %s"
 
 #: kiojob.cpp:573 kiojob.cpp:896
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1022,7 +1023,8 @@ msgstr "EROARE: Nu pot accesa directorul '%s'"
 msgid ""
 "Special file will not be copied\n"
 "%s"
-msgstr "Fiºierul special nu va fi copiat\n"
+msgstr ""
+"Fiºierul special nu va fi copiat\n"
 "%s"
 
 #: kiojob.cpp:669
@@ -1043,6 +1045,7 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Copiere recursivã la/din o locaþie la distanþã"
 
 #: kiojob.cpp:909
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
@@ -1178,6 +1181,7 @@ msgstr ""
 "Accesul interzis (parola greºitã)"
 
 #: kiojob.cpp:1390
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1186,6 +1190,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1393
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1207,6 +1212,7 @@ msgstr ""
 "nu existã"
 
 #: kiojob.cpp:1405
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1217,6 +1223,7 @@ msgstr ""
 "Poate discul este plin"
 
 #: kiojob.cpp:1456
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
@@ -1225,6 +1232,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1460
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
@@ -1506,4 +1514,3 @@ msgid ""
 msgstr ""
 "Eroare de sintaxã:\n"
 "kfmexec command [URLs ...]\n"
-
