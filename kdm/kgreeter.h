@@ -23,6 +23,7 @@ typedef unsigned char   UINT8;                  // 8 bit unsigned
 typedef unsigned short  UINT16;                 // 16 bit unsigned
 typedef unsigned int    UINT32;                 // 32 bit unsigned
 
+#define WMRC ".wmrc"
 
 #include <qwidcoll.h>
 #include <qregexp.h>
@@ -57,6 +58,8 @@ public slots:
      void shutdown_button_clicked();
      void timerDone();
      void slot_user_name( int i);
+     void load_wm();
+     void save_wm();
 protected:
      void timerEvent( QTimerEvent * ) {};
 private:

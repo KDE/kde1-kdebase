@@ -17,6 +17,8 @@ extern "C" {
 #include "dm.h"
 #include "greet.h"
 #include <signal.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 // Make the C++ compiler shut the f... up:
 int Verify( struct display*, struct greet_info*, struct verify_info*);
@@ -271,6 +273,7 @@ KGreeter::slot_user_name( int i)
 {
      loginEdit->setText( kdmcfg->users()->at( i)->text());
      passwdEdit->setFocus();
+     load_wm();
 }
 
 void 
@@ -317,6 +320,61 @@ KGreeter::shutdown_button_clicked(){
      SetTimer();
 }
 
+void
+KGreeter::save_wm(){
+  // read passwd
+  struct passwd *pwd = getpwnam(qstrdup(greet->name));
+  endpwent();
+
+  QString file;
+  file.sprintf("%s/"WMRC, pwd->pw_dir);
+  QFile f(file);
+
+  // open file as user which is loging in
+  uid_t euid = geteuid();
+  seteuid(pwd->pw_uid);
+  int i = f.open(IO_WriteOnly);
+  seteuid(euid);
+
+  if ( i ) {
+    QTextStream t;
+    t.setDevice( &f );
+    t << sessionargBox->text( sessionargBox->currentItem()) << endl;
+    f.close();
+  }
+}
+
+void
+KGreeter::load_wm(){
+  // read passwd
+  passwd *pwd = getpwnam(qstrdup(loginEdit->text()));
+  endpwent();
+
+  QString file;
+  file.sprintf("%s/"WMRC, pwd->pw_dir);
+  QFile f(file);
+
+  // open file as user which is loging in
+  uid_t euid = geteuid();
+  seteuid(pwd->pw_uid);
+  int err = f.open(IO_ReadOnly);
+  seteuid(euid);
+
+  // set default wm
+  int wm = 0;
+  if ( err ) {
+    QTextStream t( &f );
+    QString s;
+    if ( !t.eof() ) s = t.readLine();
+    f.close();
+
+    for (int i = 0; i < sessionargBox->count(); i++)
+      if (strcmp(sessionargBox->text(i), s) == 0)
+        wm = i;
+  }
+  sessionargBox->setCurrentItem(wm);
+}
+
 void 
 KGreeter::go_button_clicked(){
      greet->name = qstrdup(loginEdit->text());
@@ -331,6 +389,7 @@ KGreeter::go_button_clicked(){
      }
      // Set session argument:
      verify->argv = parseArgs( verify->argv, sessionargBox->text( sessionargBox->currentItem()));
+     save_wm();
      qApp->desktop()->setCursor( waitCursor);
      qApp->desktop()->grabMouse();
      hide();
@@ -346,6 +405,7 @@ KGreeter::ReturnPressed()
 	  return;
      if( loginEdit->hasFocus()) {
 	  passwdEdit->setFocus();
+          load_wm();
      }
      else if (passwdEdit->hasFocus()
 	      || goButton->hasFocus() 
