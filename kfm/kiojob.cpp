@@ -1000,6 +1000,10 @@ void KIOJob::del()
 	    QString supath( su.path() );  // file to delete
 	    supath.detach();
 
+	    // Delete a trailing '/', for lstat
+	    if ( supath.right(1) == "/" )
+	    supath.truncate( supath.length() - 1 );
+
 	    struct stat buff;
 	    stat( supath, &buff );
 	    struct stat lbuff;
