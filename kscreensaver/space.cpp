@@ -113,6 +113,7 @@ GLint nitro = 0;
 starRec stars[MAXSTARS];
 float sinTable[MAXANGLES];
 
+static GLXContext  glx_context;
 
 float Sin(float angle)
 {
@@ -327,6 +328,11 @@ drawSpace(Window /*window*/)
 }
 
 
+void release_Space(){
+
+  glXDestroyContext(dsp, glx_context);
+
+}
 
 static XVisualInfo *glVis[MAXSCREENS];
 
@@ -374,7 +380,7 @@ initSpace(Window window)
 {
 	Display    *display = dsp;
 	XWindowAttributes xwa;
-	GLXContext  glx_context;
+
 
 	(void) XGetWindowAttributes(dsp, window, &xwa);
 	int         n;
@@ -504,7 +510,7 @@ kSpaceSaver::kSpaceSaver( Drawable drawable ) : kScreenSaver( drawable )
 kSpaceSaver::~kSpaceSaver()
 {
 	timer.stop();
-	//	release_morph3d();
+	release_Space();
 	QColor::leaveAllocContext();
 	QColor::destroyAllocContext( colorContext );
 }
