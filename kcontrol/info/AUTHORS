@@ -1,12 +1,17 @@
-Info Modules:
+Info Module:
+
+  original (means: unsufficient) implementation:
 
   Matthias Hoelzer (hoelzer@physik.uni-wuerzburg.de)
   
+
   various authors contributed the code for non-linux systems, among them:
 
   Paul Kendall (paul@orion.co.nz) [IRIX]
   Sebestyen Zoltan (szoli@digo.inf.elte.hu) [FreeBSD]
   Aubert Pierre (paubert@laninsa.insa-lyon.fr) [HP-UX]
+  Vladimir Kushnir (kushn@olinet.isf.kiev.ua) [FreeBSD]
+
 
 Conversion to kcontrol applet:
 
