@@ -73,10 +73,10 @@ else
 fi
 AC_MSG_RESULT($dynamic_loading)
 
-if test "$dynamic_loading" = "no"; then
+if test "$dynamic_loading" = no; then
 KCC_MODULES=\
 "-dlpreopen ../sample/libsample.la "\
-"-dlpreopen ../display/libcolors.la "\
+"-dlpreopen ../display/libdisplay.la "\
 "-dlpreopen ../keyboard/libkeyboard.la "\
 "-dlpreopen ../memory/libmemory.la "\
 "-dlpreopen ../mouse/libmouse.la "\
@@ -85,6 +85,7 @@ KCC_MODULES=\
 "-dlpreopen ../titlebar/libtitlebar.la "\
 "-lgif -ljpeg"dnl this are extern libraries. I think, this can be avoided, if 
 dnl libtool would behave differently
+
 else
 KCC_MODULES=""
 fi
