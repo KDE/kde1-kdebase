@@ -500,7 +500,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 		view->write( "</title></head><body>" );
 	}
 
-	view->write( "<pre>" );
+	view->write( "<pre>\n" );
 
 	while (curr)
 	{
@@ -585,21 +585,21 @@ int KHelpWindow::formatInfo( int bodyOnly )
 					}
 
 					QString str;
-					str.sprintf("</pre><br><h%c>", level);
+					str.sprintf("\n</pre><br><h%c>", level);
 					view->write( str );
 					convertSpecial( ((cNodeText *)curr)->text(), converted );
 					view->write( converted );
 					view->write( "<br>" );
 					str.sprintf("</h%c>", level);
 					view->write( str );
-					view->write( "<pre>" );
+					view->write( "<pre>\n" );
 				}
 				break;
 		}
 		curr = curr->next;
 	}
 
-	view->write( "</pre>" );
+	view->write( "\n</pre>" );
 
 	if ( inMenu )
 	{
@@ -659,13 +659,13 @@ int KHelpWindow::formatMan( int bodyOnly )
 		view->write( "</title></head><body>" );
 	}
 
-	view->write( "<pre>" );
+	view->write( "<pre>\n" );
 
 	while (curr)
 	{
 		if ( inDir && curr->type != MAN_DIR )
 		{
-			view->write( "</grid><pre>" );
+			view->write( "</grid><pre>\n" );
 			inDir = FALSE;
 		}
 
@@ -691,17 +691,17 @@ int KHelpWindow::formatMan( int bodyOnly )
 				break;
 
 			case MAN_HEADING1:
-				view->write( "</pre><h1>" );
+				view->write( "\n</pre><h1>" );
 				convertSpecial( curr->text, converted );
 				view->write( converted );
-				view->write( "</h1><pre>" );
+				view->write( "</h1><pre>\n" );
 				break;
 
 			case MAN_HEADING2:
-				view->write( "</pre><h2>" );
+				view->write( "\n</pre><h2>" );
 				convertSpecial( curr->text, converted );
 				view->write( converted );
-				view->write( "</h2><pre>" );
+				view->write( "</h2><pre>\n" );
 				break;
 
 			case MAN_HEADING3:
@@ -714,7 +714,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 			case MAN_DIR:
 				if ( !inDir )
 				{
-					view->write( "</pre>" );
+					view->write( "\n</pre>" );
 					view->write( "<grid width=" );
 					view->write( gridWidth );
 					view->write( " align=left>" );
@@ -723,7 +723,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 
 				view->write( "<cell width=" );
 				view->write( gridWidth );
-				view->write( " align=left><pre>" );
+				view->write( " align=left><pre>\n" );
 				view->write( "<a href=\"man:" );
 				view->write( ((cManDir *)curr)->page );
 				view->write( "\">" );
@@ -737,7 +737,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 					convertSpecial( ((cManDir *)curr)->desc, converted );
 					view->write( converted );
 				}
-				view->write( "</pre></cell>" );
+				view->write( "\n</pre></cell>" );
 				break;
 
 			case MAN_XREF:
@@ -756,7 +756,7 @@ int KHelpWindow::formatMan( int bodyOnly )
 		curr = curr->next;
 	}
 
-	view->write( "</pre>" );
+	view->write( "\n</pre>" );
 
 	if ( !bodyOnly )
 	{
