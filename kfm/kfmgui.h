@@ -1,16 +1,7 @@
 #ifndef KFMGUI_H
 #define KFMGUI_H
 
-// accelerator ids
-#define UP                  1
-#define DOWN                2
-#define PGUP                3
-#define PGDOWN              4     
-#define ACC_RIGHT           5
-#define ACC_LEFT            6
-
 #define TOOLBAR_URL_ID 1000
-
 
 class KfmGui;
 

@@ -149,10 +149,14 @@ public:
     void pushURLToHistory();
 
     /**
-     * Set the URL the is goind to be displayed if the user presses
+     * Set the URL the is going to be displayed if the user presses
      * the 'up' button.
      */
     void setUpURL( const char *_url );
+
+    bool hasBackHistory() { return !backStack.isEmpty(); }
+    bool hasForwardHistory() { return !forwardStack.isEmpty(); }
+    bool hasUpHistory() { return !m_strUpURL.isEmpty(); }
   
     /**
      * hack to get static classes up and running even with C++-Compilers/

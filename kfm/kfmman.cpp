@@ -1045,7 +1045,23 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	int id;
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
 				    view, SLOT( slotPopupOpenWith() ) );
-	popupMenu->insertSeparator();    
+	popupMenu->insertSeparator();  
+
+	id = popupMenu->insertItem( i18n( "Up" ), view, SLOT( slotUp() ), 100 );
+	popupMenu->setAccel( ALT + Key_Left, 100 );
+	if ( !view->hasUpHistory() )
+	  popupMenu->setItemEnabled( id, false );
+	id = popupMenu->insertItem( i18n( "Back" ), view, SLOT( slotBack() ), 101 );
+	popupMenu->setAccel( ALT + Key_Left, 101 );
+	if ( !view->hasBackHistory() )
+	  popupMenu->setItemEnabled( id, false );
+	id = popupMenu->insertItem( i18n( "Forward" ), view, SLOT( slotForward() ), 102 );
+	popupMenu->setAccel( ALT + Key_Right, 102 );
+	if ( !view->hasForwardHistory() )
+	  popupMenu->setItemEnabled( id, false );
+	
+	popupMenu->insertSeparator();  
+
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), view, 
 				    SLOT( slotPopupCd() ) );
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 

@@ -62,7 +62,11 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
 	     this, SLOT( slotPopupMenu2( KHTMLView *, const char *, const QPoint & ) ) );
     connect( getKHTMLWidget(), SIGNAL( scrollVert( int ) ),
 	SLOT( slotUpdateSelect(int) ) );
-    
+
+    connect( this, SIGNAL( goUp() ), this, SLOT( slotUp() ) );
+    connect( this, SIGNAL( goRight() ), this, SLOT( slotForward() ) );
+    connect( this, SIGNAL( goLeft() ), this, SLOT( slotBack() ) );
+
     gui = _gui;
  
     dropZone = 0L;

@@ -1,3 +1,9 @@
+Thu Jun 11 15:14:57 1998  Torben Weis  <weis@localhost>
+
+	* kfmgui.cpp: New keyboard shortcuts ( very useful! )
+	  They are documented in the new docu pages.
+	  In addition there is a little docu about bookmarks now.
+
 Tue Jun  9 16:30:00 1998  Jacek Konieczny  <jajcus@zeus.polsl.gliwice.pl>
 
 	* htmlcache.cpp, htmlcache.h, kfmgui.cpp, kfmgui.h
