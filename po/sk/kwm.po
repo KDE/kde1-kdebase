@@ -37,6 +37,13 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Chcete sa prepnú» do iného okna. Bohu¾iaµ ste zvolili jednu z klasických\n"
+"metód zobrazovania, ktorá toto nepovoµuje. Tieto metódy tu nie sú preto,\n"
+"aby dávali zmysel, ale preto, aby sa aj pou¾ívatelia star¹ích UNIXov cítili\n"
+"dobre.\n"
+"\n"
+"Ak si teda prajete modernej¹iu správu okien, zvoµte si jednu z odporúèaných\n"
+"metód ako napr. kliknú» pre aktiváciu alebo okno pod my¹kou je aktívne."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -127,9 +134,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
+msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
 #: main.C:1281
 msgid "*** No Tasks ***"
@@ -141,7 +147,7 @@ msgstr "Príkaz:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ooops!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"
