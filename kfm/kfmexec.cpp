@@ -135,6 +135,7 @@ void KFMExec::openURL( const char *_url  )
     dlg->resize( 300, 120 );
     QPushButton *pb = new QPushButton( klocale->translate("Cancel"), dlg );
     pb->setGeometry( 110, 70, 80, 30 );
+    pb->setDefault(TRUE);
     connect( pb, SIGNAL( clicked() ), this, SLOT( slotCancel() ) );
     QLabel* line1 = new QLabel( dlg );
     line1->setGeometry( 10, 10, 280, 20 );
