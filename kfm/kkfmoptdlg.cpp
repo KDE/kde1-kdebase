@@ -16,18 +16,18 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   tabDlg->setGeometry(10, 10, 380, 340);
   
   prxDlg = new KProxyDlg(tabDlg);
-  tabDlg->addTab(prxDlg, "Proxy");
+  tabDlg->addTab(prxDlg, klocale->translate("&Proxy"));
   usrDlg = new UserAgentDialog(tabDlg);
-  tabDlg->addTab(usrDlg, "User Agent");
+  tabDlg->addTab(usrDlg, klocale->translate("User &Agent"));
 
   fontDlg = new KFontOptions(tabDlg);
-  tabDlg->addTab(fontDlg, "Fonts");
+  tabDlg->addTab(fontDlg, klocale->translate("&Fonts"));
 
   colorDlg = new KColorOptions(tabDlg);
-  tabDlg->addTab(colorDlg, "Colors");
+  tabDlg->addTab(colorDlg, klocale->translate("&Colors"));
 
   miscDlg = new KMiscOptions(tabDlg);
-  tabDlg->addTab(miscDlg, "Other");
+  tabDlg->addTab(miscDlg, klocale->translate("&Other"));
 
 
   // help button
