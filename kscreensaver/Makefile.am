@@ -65,6 +65,7 @@ kforest_kss_SOURCES = $(BASE_SRCS) forest.cpp
 forest.cpp: forest.moc
 
 kmorph3d_kss_SOURCES = $(BASE_SRCS) morph3d.cpp
+kmorph3d_kss_LDADD = $(LDADD) @GLLIB@
 morph3d.cpp: morph3d.moc
 
 klock_SOURCES = klock.cpp kscreensave.cpp
