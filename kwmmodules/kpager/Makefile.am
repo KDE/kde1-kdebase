@@ -9,7 +9,7 @@ kpager_SOURCES = windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp
 noinst_HEADERS = desktop.h kpager.h kpagerclient.h ktrianglebutton.h \
 	version.h windowdrag.h
 
-kpager_METASOURCES = USE_AUTOMOC 
+kpager_METASOURCES = USE_AUTOMOC
 
 DISTCLEANFILES = ./.deps/* ./.deps/.P
 
