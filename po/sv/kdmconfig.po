@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-12-13 16:01+01:00\n"
+"PO-Revision-Date: 1999-01-30 00:50+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Saknade rättigheter"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Välkomstmeddelande:"
+msgstr "Välkomsttext:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -155,30 +155,27 @@ msgstr "Ändra typsnitt..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
-msgstr "Hälsning"
+msgstr "Välkomsttext"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Fel"
+msgstr "Misslyckande"
 
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "Normal"
+msgstr "Standard"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Hälsning"
+msgstr "Typsnitt för välkomsttext"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Fel"
+msgstr "Typsnitt för misslyckat inloggningsförsök"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Normal"
+msgstr "Standardtypsnitt"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

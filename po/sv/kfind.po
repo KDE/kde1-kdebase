@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-11-07 19:30+01:00\n"
+"PO-Revision-Date: 1999-01-30 00:51+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -180,7 +180,7 @@ msgstr "&Vars storlek är:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

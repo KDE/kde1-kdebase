@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-22 15:41+01:00\n"
+"PO-Revision-Date: 1999-01-30 00:44+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgstr "Stryk under länkar"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Använd alltid mina färger"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
