@@ -169,7 +169,7 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
 	  QString type = cfg.readEntry( "Type" );	
 	  // Is it really a bookmark file ?
 	  if ( type == "Link" )
-	    new KBookmark( this, _bm, ep->d_name, cfg );
+	    (void) new KBookmark( this, _bm, ep->d_name, cfg );
 	}
       }
     }
