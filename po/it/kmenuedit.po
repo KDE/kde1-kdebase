@@ -30,6 +30,8 @@ msgid ""
 "\n"
 "Do you want to save your changes ?"
 msgstr ""
+"\n"
+"Desideri salvare le modifiche ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"

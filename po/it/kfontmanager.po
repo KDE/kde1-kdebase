@@ -71,6 +71,8 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
+"Impossibile creare:\n"
+" ~/.kde/share/config/kdefonts\n"
 
 #: kfontmanager.cpp:294
 msgid ""
@@ -78,6 +80,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
+"~/.kde/share/config/kdefonts esiste ma\n"
+"non posso scriverci\n"
+"Impossibibile salvare la lista dei Caratteri."
 
 #: kfontlist.cpp:62
 msgid ""

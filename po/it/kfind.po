@@ -176,23 +176,23 @@ msgstr "Tutti i file e le cartelle"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Cartelle"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Collegamenti simbolici"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "File Speciali (sockets, file dispositivo...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "File eseguibili"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "File eseguibili con SUID"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

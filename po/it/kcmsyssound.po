@@ -162,15 +162,15 @@ msgstr ""
 "Sonoro del KDE "
 
 #: syssound.cpp:468
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Mi dispiace ma \n"
+"Mi dispiace, ma \n"
 "%s\n"
-"non sembra essere un file Wave."
+"non sembra essere un WAV--file."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
