@@ -3,7 +3,7 @@
 
 INCLUDES = $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkfile -lkfm -lmediatool -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LIBUCB) $(LIBCOMPAT)
+LDADD = -lkfile -lkfm -lmediatool -lkdeui -lkdecore  -lXext  $(LIB_QT) $(LIBUCB) $(LIBCOMPAT)
 
 maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp

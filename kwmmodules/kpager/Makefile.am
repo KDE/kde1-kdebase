@@ -2,8 +2,7 @@
 INCLUDES = $(all_includes)
 
 LDFLAGS	= $(all_libraries) $(KDE_RPATH)
-LDADD = -lkfile -lkfm -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11 \
-	$(LIBSOCKET)
+LDADD = $(LIB_KFILE) $(LIB_KIMGIO) 
 
 kpager_SOURCES = windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp
 

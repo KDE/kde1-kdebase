@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) 
+LDADD = -lkdeui -lkdecore  -lXext  $(LIBJPEG) $(LIB_QT) 
 
 data_DATA = AAAAAAGeneral.ad AAAMotif.ad AAATk.ad AAAXaw.ad Editres.ad Emacs.ad \
 ML.ad Nedit.ad Netscape.ad XCalc.ad XTerm.ad XV.ad

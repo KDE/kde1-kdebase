@@ -1,5 +1,6 @@
 INCLUDES = $(all_includes)
-LDFLAGS = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(all_libraries) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = -lkfile -lkfm -lkdeui -lkdecore -lXext $(LIB_QT)
 
 bin_PROGRAMS = kwrite
 

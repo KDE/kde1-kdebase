@@ -27,12 +27,12 @@ BUILT_SOURCES = kconfobjs.moc.h  kobjconf.moc.h \
 kikbd_SOURCES = kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
 kikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
+kikbd_LDADD   = -lkdeui -lkdecore  -lXext  $(LIB_QT)
 
 kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kcmikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
+kcmikbd_LDADD   = -lkdeui -lkdecore  -lXext  $(LIB_QT)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = 

@@ -10,9 +10,8 @@ kthememgr_SOURCES = theme.cpp installer.cpp main.cpp kwmcom.cpp \
 	options.cpp widgetcanvas.cpp colors.cpp about.cpp groupdetails.cpp
 noinst_HEADERS = theme.h installer.h kwmcom.h widgetcanvas.h \
 	options.h colors.h about.h version.h groupdetails.h
-kthememgr_LDADD = $(all_libraries) -lkimgio -lkfm -lkdeui -lkdecore -lqt \
-	-lXext -lkfile -lX11 -ljpeg -ltiff $(LIBSOCKET)
-kthememgr_LDFLAGS = $(LDFLAGS) $(KDE_RPATH)
+kthememgr_LDADD = $(LIB_KIMGIO) -lkfm -lkdeui -lkdecore -lXext -lkfile $(LIB_QT)
+kthememgr_LDFLAGS = $(all_libraries) $(LDFLAGS) $(KDE_RPATH)
 
 BUILTSOURCES = theme.moc installer.moc colors.moc widgetcanvas.moc \
 	options.moc about.moc groupdetails.moc

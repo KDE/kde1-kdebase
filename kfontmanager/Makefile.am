@@ -2,7 +2,7 @@
 
 ###################################################################
 
-LDADD   =	-lkdecore -lqt -lm -lXext -lX11 $(LIBSOCKET)
+LDADD   =	-lkdecore  -lm -lXext  $(LIB_QT)
 LDFLAGS = 	$(all_libraries) $(KDE_RPATH)
 INCLUDES=	$(all_includes)
 

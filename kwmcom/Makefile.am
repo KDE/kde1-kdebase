@@ -2,7 +2,7 @@
 
 INCLUDES = $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD   = -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
+LDADD   = -lkdecore  -lXext  $(LIB_QT)
 
 ####### Files
 

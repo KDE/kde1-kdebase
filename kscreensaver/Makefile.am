@@ -4,8 +4,7 @@
 
 INCLUDES = $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 -lm $(PAMLIBS) \
-	$(LIBCRYPT) $(LIBSOCKET) 
+LDADD = $(PAMLIBS) $(LIBCRYPT) $(LIB_KDEUI) -lm
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 
