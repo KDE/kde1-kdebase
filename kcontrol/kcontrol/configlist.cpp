@@ -187,11 +187,12 @@ bool KModuleListEntry::execute(QWidget *parent)
       //
 
       QString par;
-      while (!params.isEmpty())
+      while (params.length()>0)
 	{
           if (params[0]==' ')
           {
-            *process << par;
+            if (!par.isEmpty())  
+              *process << par;
             par = "";
           } 
           else
@@ -212,15 +213,9 @@ bool KModuleListEntry::execute(QWidget *parent)
           }
           params.remove(0,1);
 	}
-      *process << par;
+      if (!par.isEmpty())
+        *process << par;
        
-/*      // set additional parameters
-      if (!params.isEmpty())
-	{
-	  // Note: This will only handle 1 parameter correctly! 
-	  *process << params;
-	}
-*/
       QObject::connect(process, SIGNAL(processExited(KProcess *)), this, SLOT(processExit(KProcess *)));
 
       // start process

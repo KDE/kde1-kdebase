@@ -44,6 +44,8 @@ void KSwallowWidget::resizeEvent(QResizeEvent*)
 
 void KSwallowWidget::swallowWindow(Window w)
 {
+  window = w;
+
   KWM::prepareForSwallowing(w);
 
   XReparentWindow(qt_xdisplay(), w, winId(), 0, 0);
@@ -51,6 +53,4 @@ void KSwallowWidget::swallowWindow(Window w)
   XResizeWindow(qt_xdisplay(), window, parentWidget()->width(), parentWidget()->height());
 
   show();
-
-  window = w;
 }
