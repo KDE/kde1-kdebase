@@ -14,11 +14,11 @@ msgstr ""
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr ""
+msgstr "&Standardni preèaci"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr ""
+msgstr "&Globalni preèaci"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
@@ -26,7 +26,7 @@ msgstr "uporaba: kcmkeys [-init | {standardno,globalno}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr ""
+msgstr "Postavke za vezivanje tipaka"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
-msgstr ""
+msgstr "Ime veæ postoji"
 
 #: keyconfig.cpp:344
 msgid ""

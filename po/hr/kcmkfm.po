@@ -90,7 +90,7 @@ msgstr "Boja pozadine:"
 
 #: htmlopts.cpp:342
 msgid "Normal Text Color:"
-msgstr "Normalna Boja Teksta:"
+msgstr "Normalna boja teksta:"
 
 #: htmlopts.cpp:354
 msgid "URL Link Color:"
@@ -102,11 +102,11 @@ msgstr "Boja posjeæenog linka:"
 
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Promijeni pokazivaè kada je iznad veze."
+msgstr "Promijeni pokazivaè kada je iznad linka"
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Podvuci veze"
+msgstr "Podvuci linkove"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
@@ -126,7 +126,7 @@ msgstr "Terminal"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr ""
+msgstr "Ureðivaè"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -202,7 +202,7 @@ msgstr "Odbij"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Posebne postavke za domenu:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"

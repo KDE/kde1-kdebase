@@ -192,10 +192,10 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"Autorska prava (C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"Autorska prava (C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "Emulacija terminala za KDE\n"
-"raðena po rxvt-2.08 Roberta Nationa.\n"
+"raðena na osnovu rxvt-2.08 Roberta Nationa.\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"

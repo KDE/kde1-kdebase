@@ -42,7 +42,7 @@ msgstr "PRAZNO"
 
 #: kmenuedit.cpp:343
 msgid "Reload Menus"
-msgstr "Obnovi Izbornike"
+msgstr "Obnovi izbornike"
 
 #: kmenuedit.cpp:344
 msgid ""
@@ -263,7 +263,4 @@ msgstr "Osobni:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Podrazumijevani:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! ZA©TIæEN Gumb !"
+msgstr "Uobièajeno:"

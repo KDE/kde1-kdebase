@@ -27,7 +27,7 @@ msgstr "Pok&reni..."
 
 #: kfmgui.cpp:227
 msgid "Open &Terminal"
-msgstr "Otvori &Terminal"
+msgstr "Otvori &terminal"
 
 #: kfmgui.cpp:230
 msgid "&Open Location..."
@@ -83,15 +83,15 @@ msgstr "Uobièajene aplikacije"
 
 #: kfmgui.cpp:292
 msgid "Show Hi&dden Files"
-msgstr "Poka¾i s&krivene datoteke"
+msgstr "Prika¾i s&krivene datoteke"
 
 #: kfmgui.cpp:294
 msgid "Show Tr&ee"
-msgstr "Poka¾i &stablo"
+msgstr "Prika¾i &stablo"
 
 #: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Prika¾i &umanjene slièice"
 
 #: kfmgui.cpp:298
 msgid "&HTML View"
@@ -123,7 +123,7 @@ msgstr "Obnovi &dokument"
 
 #: kfmgui.cpp:317
 msgid "Rescan &Bindings"
-msgstr ""
+msgstr "Obnovi &vezivanja"
 
 #: kfmgui.cpp:320
 msgid "&View Frame Source"
@@ -163,23 +163,23 @@ msgstr "Nikada ne spremaj u predmemoriju (cache)"
 
 #: kfmgui.cpp:373
 msgid "Show &Menubar"
-msgstr "Poka¾i izborni&k"
+msgstr "Prika¾i izborni&k"
 
 #: kfmgui.cpp:375
 msgid "Show &Statusbar"
-msgstr "Poka¾i &status"
+msgstr "Prika¾i &status"
 
 #: kfmgui.cpp:377
 msgid "Show &Toolbar"
-msgstr "Poka¾i &Alate"
+msgstr "Prika¾i &alate"
 
 #: kfmgui.cpp:379
 msgid "Show &Location bar"
-msgstr "Poka¾i &Lokaciju"
+msgstr "Prika¾i &lokaciju"
 
 #: kfmgui.cpp:382
 msgid "Sa&ve Settings"
-msgstr "Sn&imi odrednice"
+msgstr "Spre&mi postavke"
 
 #: kfmgui.cpp:384
 msgid "Save Settings for this &URL"
@@ -1038,12 +1038,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Rekurzivno kopiraj iz/u udaljenu lokaciju"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Ne mogu naèiniti dvojnika\n"
+"Ne mogu ukloniti dvojnika\n"
 "%s"
 
 #: kiojob.cpp:957
@@ -1203,7 +1203,7 @@ msgstr ""
 "ne postoji"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1211,7 +1211,7 @@ msgid ""
 msgstr ""
 "Ne mogu pisati u\n"
 "%s\n"
-"Vjerojatno je pristup onemoguæen"
+"Vjerojatno je disk pun"
 
 #: kiojob.cpp:1456
 #, c-format
@@ -1507,6 +1507,3 @@ msgid ""
 msgstr ""
 "Sintaktièka pogre¹ka:\n"
 "kfmexec naredba [URLovi ....]\n"
-
-#~ msgid "Unknown binding"
-#~ msgstr "Nepoznata veza"

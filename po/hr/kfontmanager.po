@@ -167,6 +167,3 @@ msgstr "Masno"
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr "Normalno"
-
-#~ msgid "The KDE Font Manager Example String"
-#~ msgstr "Ogledni string upravitelja KDE pisama"

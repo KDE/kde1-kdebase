@@ -198,7 +198,7 @@ msgstr "Slobodna memorija"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Zajednièka memorija"
+msgstr "Dijeljena memorija"
 
 #: memory.cpp:41
 msgid "Buffer memory"

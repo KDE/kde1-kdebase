@@ -54,7 +54,7 @@ msgstr "Lista prozora"
 
 #: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Brza navigacija kroz datoteèni sustav"
 
 #: props.C:167
 msgid "Add Application"
@@ -82,19 +82,19 @@ msgstr "Dodaj izbornik liste prozora na ploèu"
 
 #: events.C:860 props.C:183
 msgid "Configure"
-msgstr "Promijeni postavu"
+msgstr "Promijeni postavke"
 
 #: props.C:185
 msgid "Configure panel"
-msgstr "Promijeni postavu ploèe"
+msgstr "Promijeni postavke ploèe"
 
 #: props.C:186
 msgid "Edit Menus"
-msgstr "Uredi menije"
+msgstr "Promijeni izbornike"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr "Dodaj ili ukloni aplikacije u strukturi menija "
+msgstr "Dodaj ili ukloni aplikacije u strukturi izbornika "
 
 #: events.C:862 props.C:189
 msgid "Restart"
@@ -158,7 +158,7 @@ msgstr "(Previ¹e Datoteka)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr "(Pristup odbijen)"
+msgstr "(Pristup nije dozvoljen)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
@@ -166,11 +166,11 @@ msgstr "(Ne mogu èitati)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr "Dijeljen:"
+msgstr "Dijeljeni:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Zapisi koje dijele svi korisnici"
 
 #: pfilemenu.C:773
 msgid "Personal:"
@@ -182,7 +182,7 @@ msgstr "Osobni zapisi:"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr "Nedavni:"
+msgstr "Skora¹nje:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
@@ -195,9 +195,3 @@ msgstr "Postavke..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Podesi navigator diska"
-
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Gdje ¾elite iæi sutra?"
-
-#~ msgid "No comment available"
-#~ msgstr "Nema raspolo¾ivih komentara"

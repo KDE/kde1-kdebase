@@ -30,7 +30,7 @@ msgstr "&Mi¹"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr "&Napredne"
+msgstr "&Napredno"
 
 #: main.cpp:86
 msgid ""
@@ -45,19 +45,19 @@ msgstr "Stil prozora upravljaèa"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Smanji"
+msgstr "Smanji prozor"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Poveæava prozor"
+msgstr "Poveæaj prozor"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Lijepi prozor"
+msgstr "Nalijepi prozor"
 
 #: titlebar.cpp:141
 msgid "Menu"
-msgstr "Prikazuje izbornik"
+msgstr "Prika¾i izbornik"
 
 #: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
@@ -89,11 +89,11 @@ msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr ""
+msgstr "Polo¾aj naslova"
 
 #: titlebar.cpp:941
 msgid "Middle"
-msgstr "Srednji"
+msgstr "Na sredini"
 
 #: titlebar.cpp:969
 msgid "Shaded Vertically"

@@ -115,7 +115,7 @@ msgstr "Pot&ra¾i u:"
 
 #: kftabdlg.cpp:78
 msgid "&Browse ..."
-msgstr "Po&tra¾i..."
+msgstr "&Tra¾i..."
 
 #: kftabdlg.cpp:84
 msgid "Include &subfolders"
@@ -131,7 +131,7 @@ msgstr "i"
 
 #: kftabdlg.cpp:131
 msgid "month(s)"
-msgstr "mjeseca"
+msgstr "mjeseca(i)"
 
 #: kftabdlg.cpp:132
 msgid "day(s)"
@@ -151,11 +151,11 @@ msgstr "izmeð&u"
 
 #: kftabdlg.cpp:150
 msgid "during the previou&s "
-msgstr "tijekom prethodno&g"
+msgstr "tijekom prethodno&g (ih)"
 
 #: kftabdlg.cpp:151
 msgid "&during the previous "
-msgstr "prili&kom prethodnog "
+msgstr "tije&kom prethodnog (ih) "
 
 #: kftabdlg.cpp:199
 msgid " Date Modified "
@@ -251,7 +251,7 @@ msgstr "Spremi rezultate u datoteku ~/.kfind-results.html"
 
 #: kfoptions.cpp:81
 msgid "Browse"
-msgstr "Potra¾i"
+msgstr "Tra¾i"
 
 #: kfoptions.cpp:94
 msgid "Plain Text"
@@ -259,7 +259,7 @@ msgstr "Èisti tekst"
 
 #: kfoptions.cpp:123
 msgid "Saving"
-msgstr "Spremam"
+msgstr "Spremanje"
 
 #: kfoptions.cpp:130
 msgid "Create Archive:"

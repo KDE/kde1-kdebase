@@ -62,11 +62,11 @@ msgstr "&Skrivena"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "Na v&rh"
+msgstr "Na v&rhu"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "Na d&no"
+msgstr "Na d&nu"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
@@ -142,7 +142,7 @@ msgstr "Brzo"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Auto. Sakrij Traku Sa &Zadacima"
+msgstr "Auto. sakrij traku sa &zadacima"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -150,16 +150,15 @@ msgstr ""
 
 #: options.cpp:395
 msgid "Others"
-msgstr "Druge opcije"
+msgstr "Dodatne opcije"
 
 #: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "Osobne &Prvo"
+msgstr "Pod K gumbom &prvo prika¾i osobne zapise"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "&Prvo direktoriji"
+msgstr "Pod K gumbom prvo prika¾i &direktorije s aplikacijama"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -175,7 +174,7 @@ msgstr "Povijest"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Promijeni "
+msgstr "Promijeni zapise: (vuci direktorij i napravi vezu)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
@@ -183,19 +182,19 @@ msgstr "Promijeni &osobne..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Promijeni &djeljene"
+msgstr "Promijeni &dijeljene"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Max broj skora¹njih direktorija:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Max broj skora¹njih datoteka:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Max broj datoteka u jednom direktoriju:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -203,23 +202,23 @@ msgstr "Prika¾i datoteke s toèkom"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ne razlikuj velika/mala slova kod sortiranja"
 
 #: disknav.cpp:173
 msgid "Show Shared section"
-msgstr ""
+msgstr "Prika¾i dijeljene zapise"
 
 #: disknav.cpp:180
 msgid "Show Personal section"
-msgstr ""
+msgstr "Prika¾i osobne zapise"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Prika¾i skora¹nje"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Prika¾i opcije"
 
 #: disknav.cpp:210
 msgid "Terminal application:"

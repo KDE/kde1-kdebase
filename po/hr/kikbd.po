@@ -35,7 +35,7 @@ msgstr ""
 
 #: kikbd.cpp:337
 msgid "Setup"
-msgstr "Postava"
+msgstr "Postavke"
 
 #: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
@@ -57,7 +57,6 @@ msgstr ""
 "Alt znakovi iskljuèeni"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -76,7 +75,6 @@ msgid ""
 msgstr ""
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: ne mogu alocirati memoriju"
 
@@ -90,17 +88,14 @@ msgid ""
 msgstr ""
 
 #: keymap.cpp:238
-#, fuzzy, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: ne mogu naæi znak \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: ne razumijem tipkovni kod \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: tipkovni kod \"%s\" je izvan raspona."
 
@@ -215,7 +210,7 @@ msgstr "nepoznat"
 
 #: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
-msgstr "podrazumijevano"
+msgstr "uobièajen"
 
 #: kikbdconf.cpp:419
 msgid "Author:  Not specified"
@@ -251,15 +246,15 @@ msgstr "Statistika: "
 
 #: kikbdconf.cpp:446
 msgid "symbols"
-msgstr "znakovi"
+msgstr "znakova"
 
 #: kikbdconf.cpp:454
 msgid "codes"
-msgstr "kodovi"
+msgstr "kodova"
 
 #: kikbdconf.cpp:457
 msgid "alternative symbols"
-msgstr ""
+msgstr "alternativnih znakova"
 
 #: kikbdconf.cpp:469
 msgid "Language"
@@ -302,7 +297,6 @@ msgid "&Add"
 msgstr "&Dodaj"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
 msgstr "Dodajem novu mapu tipkovnice"
 
@@ -315,18 +309,16 @@ msgid "U&p"
 msgstr "&Gore"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Ukloni izabranu mapu tipkovnice"
+msgstr "Premjesti izabranu mapu tipkovnice prema gore"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "&Dolje"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Premjesti mapu prema dolje"
+msgstr "Premjesti izabranu mapu tipkovnice prema dolje"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -351,9 +343,8 @@ msgid "Adding Keyboard"
 msgstr "Dodajem tipkovnicu"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
-msgstr "Nema vi¹e mapa za tipkovnice"
+msgstr "Nema vi¹e mapa za tipkovnice koje je moguæe dodati"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -376,20 +367,18 @@ msgid "Switch and Alt Switch"
 msgstr ""
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Tipka(e) za promjenu izmeðu mapa tipkovnica"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr ""
+msgstr "Tipka za aktiviranje Alternativnih znakova u trenutnoj mapi"
 
 #: widgets.cpp:438
 msgid "&Beep"
 msgstr "&Pip"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Pipni kod svake promjene mapiranja tipkovnice"
 
@@ -410,15 +399,16 @@ msgid "&Emulate Caps Lock"
 msgstr "&Opona¹aj CapsLock"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Opona¹aj XServer CapsLock. Neki jezici zahtjevaju ovu opciju"
+msgstr ""
+"Opona¹aj XServer CapsLock. Neki jezici zahtjevaju ovu opciju."
+""
 
 #: widgets.cpp:482
 msgid "&World Menu"
-msgstr "Izbornik S&vijeta"
+msgstr "Izbornik s&vijeta"
 
 #: widgets.cpp:483
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
@@ -434,28 +424,27 @@ msgstr ""
 
 #: widgets.cpp:498
 msgid "Define X codes"
-msgstr "Odredi X kodove"
+msgstr "Podesi X kodove"
 
 #: widgets.cpp:501
 msgid "Input"
 msgstr "Ulaz"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
+msgstr ""
+"Pro¹ireno pona¹anje. Mapa tipkovnice pode¹ava se za svaki prozor posebno"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
+msgstr ""
+"Posebno pona¹anje. Mapa tipkovnice pode¹ava se za svaki razred prozora posebno"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -471,7 +460,7 @@ msgstr ""
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Pozadina"
 
 #: widgets.cpp:577
 msgid "Text label background color"
@@ -548,15 +537,3 @@ msgstr "P&oèni"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internacionalna tipkovnica"
-
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Premjesti mapu prema gore"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr "Pro¹ireno pona¹anje. Svaki prozor pamti svoju mapu tipkovnice"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr "Posebno pona¹anje. Svaki razred prozora pamti svoju mapu tipkovnice"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Boja tekstualne oznake"
