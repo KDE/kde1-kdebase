@@ -926,6 +926,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   // titlebar animation
   titleAnim = new KSlider(0,100,10,100, KSlider::Horizontal, this);
+  titleAnim->setSteps(10,10);
   tlabel = new QLabel(klocale->translate("Title Animation"), this);
   t = new QLCDNumber (2, this);
   t->setFrameStyle( QFrame::NoFrame );
@@ -990,7 +991,7 @@ void KTitlebarAppearance::resizeEvent(QResizeEvent *)
 
   int w = tlabel->width();
   tlabel->move(dw, h);
-  titleAnim->setGeometry(dw + w + 2*SPACE_XO, h, 200, tlabel->height());
+  titleAnim->setGeometry(dw + w + 2*SPACE_XO, h, 200, tlabel->height()+SPACE_YO/2);
   h += titleAnim->height() ;
   int center = titleAnim->x() + ( titleAnim->width() - t->width() )/2;
   int dh = ( t->height() - sec->height() )/2;

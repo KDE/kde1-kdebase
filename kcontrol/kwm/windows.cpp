@@ -80,12 +80,13 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   vertOnly = new QRadioButton(klocale->translate("Maximize vertically"), maximizeBox);
 
   // autoraise delay
-  autoRaise = new KSlider(0,10,1,10, KSlider::Horizontal, this);
-  alabel = new QLabel(klocale->translate("Auto raise delay\n(0 disables)"), this);
-  s = new QLCDNumber (4, this);
+  autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, this);
+  autoRaise->setSteps(100,100);
+  alabel = new QLabel(klocale->translate("Auto raise delay\n(<100 disables)"), this);
+  s = new QLCDNumber (5, this);
   s->setFrameStyle( QFrame::NoFrame );
-  sec = new QLabel(klocale->translate("seconds"), this);
-  connect( autoRaise,   SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
+  sec = new QLabel(klocale->translate("miliseconds"), this);
+  connect( autoRaise, SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
   s->adjustSize();
   alabel->adjustSize();
   sec->adjustSize();
@@ -333,8 +334,7 @@ void KWindowConfig::GetSettings( void )
   else if( key == "off")
     setMaximize(MAXIMIZE_FULL);
 
-  // convert from milliseconds to seconds
-  int k = config->readNumEntry(KWM_AUTORAISE,0) / 1000;
+  int k = config->readNumEntry(KWM_AUTORAISE,0);
   setAutoRaise(k);
 
   // this will disable/hide the auto raise delay widget if focus==click
@@ -370,9 +370,9 @@ void KWindowConfig::SaveSettings( void )
   else
     config->writeEntry(KWM_MAXIMIZE, "off");
 
-  // convert back to milliseconds
   v = getAutoRaise();
-  config->writeEntry(KWM_AUTORAISE,1000*v);
+  if (v <100) v = 0; //interval set less than 100 disables AutoRaise
+  config->writeEntry(KWM_AUTORAISE,v);
 
   config->sync();
 
