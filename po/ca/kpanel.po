@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-23 23:37\n"
+"POT-Creation-Date: 1999-01-09 01:15+0100\n"
+"PO-Revision-Date: 1998-01-10 23:24\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "&Propietats"
 msgid "Go!"
 msgstr "Vinga!"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "On vols anar demà?"
 
@@ -57,7 +57,7 @@ msgstr "Iconitza altres &finestres"
 msgid "No comment available"
 msgstr "Cap comentari"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Llista de finestres"
 
@@ -89,7 +89,7 @@ msgstr "Afegeix llista de finestres"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Afegeix un menú de llista de finestres al panell"
 
-#: events.C:810 props.C:182
+#: events.C:800 props.C:182
 msgid "Configure"
 msgstr "Configura"
 
@@ -105,7 +105,7 @@ msgstr "Edita menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Afegeix o elimina aplicacions de l'estructura de menú "
 
-#: events.C:812 props.C:188
+#: events.C:802 props.C:188
 msgid "Restart"
 msgstr "Reengega"
 
@@ -129,7 +129,7 @@ msgstr "Bloqueja la pantalla"
 msgid "The menu editor is not installed."
 msgstr "L'editor de menú no s'ha instal·lat."
 
-#: events.C:866 props.C:451
+#: events.C:856 props.C:451
 msgid "Oops!"
 msgstr "Ep!"
 
@@ -141,11 +141,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:865
+#: events.C:855
 msgid "Cannot put this as button onto the panel!"
 msgstr "No es pot posar un botó amb això damunt el panell!"
 
@@ -159,7 +159,7 @@ msgstr "Obre carpeta"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Obre aquesta carpeta (+Majús: engega un terminal aquí)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

@@ -58,7 +58,7 @@ msgstr "Samhverft flísalagt"
 
 #: kbgndwm.cpp:66
 msgid "SymmetricalMirrored"
-msgstr "Samhverft speiglað"
+msgstr "Samhverft speglað"
 
 #: kbgndwm.cpp:67
 msgid "Scaled"

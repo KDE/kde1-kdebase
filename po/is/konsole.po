@@ -46,7 +46,7 @@ msgstr "&Fela"
 
 #: main.C:303
 msgid "&Left"
-msgstr "&vinstri"
+msgstr "&Vinstri"
 
 #: main.C:304
 msgid "&Right"
@@ -118,7 +118,7 @@ msgstr "&Tæknilegar uplýsingar ..."
 
 #: main.C:346
 msgid "cd"
-msgstr "cd"
+msgstr ""
 
 #: main.C:359
 msgid "Sessions"

@@ -207,7 +207,7 @@ msgstr "Í mesta lagi"
 
 #: kftabdlg.cpp:263
 msgid " Advanced "
-msgstr " Flókin leit "
+msgstr " Nánari leit "
 
 #: kftabdlg.cpp:501
 msgid "The date is not valid!!"
@@ -296,7 +296,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Viltu virkilega yeða skránni\n"
+"Viltu virkilega eyða skránni\n"
 "%s"
 
 #: kfwin.cpp:300

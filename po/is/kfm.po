@@ -390,7 +390,7 @@ msgstr ""
 "Ekki tókst að vista eiginleika þar sem þú hefur hvorki\n"
 "skrifréttindi í möppuna, né bókamerki í henni.\n"
 "\n"
-"Þú ættir fyrst að setja bókamerki á möppunaeða tenginu af skjáborðinu."
+"Þú ættir fyrst að setja bókamerki á möppuna eða tenginu af skjáborðinu."
 
 #: kfmview.cpp:806
 msgid ""
@@ -402,7 +402,7 @@ msgstr ""
 "Ekki tókst að vista eiginleika þar sem þú hefur hvorki\n"
 "tengingu í slóðina af skjáborðinu, né bókamerki í henni.\n"
 "\n"
-"Þú ættir fyrst að setja bókamerki á möppunaeða tenginu af skjáborðinu."
+"Þú ættir fyrst að setja bókamerki á möppuna eða tenginu af skjáborðinu."
 
 #: kfmtree.cpp:469 kfmview.cpp:845 root.cpp:1316
 msgid "Could not access Trash Bin"
@@ -446,7 +446,6 @@ msgid "The mime type config file "
 msgstr "MIME-taga stilliskráin "
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "inniheldur ekki \"MimeType=...\" færslu"
 
@@ -956,14 +955,12 @@ msgid "Copy here"
 msgstr ""
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Færa"
+msgstr "Færa hingað"
 
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Tengi"
+msgstr "Tengja hingað"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -1462,145 +1459,3 @@ msgstr ""
 "Notkun:\n"
 "kfmexec skipun [slóðir ....]\n"
 
-#~ msgid "Working Directory"
-#~ msgstr "Vinnumappa"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Þú ættir að breyta lykilorðinu í\n"
-#~ "~/.kde/share/apps/kfm/magic"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Set inn snið"
-
-#~ msgid "Small"
-#~ msgstr "Lítið"
-
-#~ msgid "Medium"
-#~ msgstr "Miðlungs"
-
-#~ msgid "Large"
-#~ msgstr "Stórt"
-
-#~ msgid "Standard Font"
-#~ msgstr "Staðalletur"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Jafnbreitt letur"
-
-#~ msgid "Default Charset"
-#~ msgstr "Sjálfgefin stafatafla"
-
-#~ msgid "Use language charset"
-#~ msgstr "Nota stafatöflu tungumálsins"
-
-#~ msgid "Background Color:"
-#~ msgstr "Bakgrunnslitur:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Venjulegur textalitur:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Tengilitur:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Skoðaður tengilitur:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Breyta bendli yfir tengi:"
-
-#~ msgid "Underline links"
-#~ msgstr "Undirstrika tengla"
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Lárétt möskvastærð rótarnets:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Lóðrétt möskvastærð rótarnets:"
-
-#~ msgid "&Allow per-URL settings"
-#~ msgstr "&Leyfa stillingar á hvertja slóð"
-
-#~ msgid "Tree &view follows navigation"
-#~ msgstr "Trésýn &eltir flakk"
-
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "&Gegnsær texti á rótartáknmyndum"
-
-#~ msgid "Icon foreground color:"
-#~ msgstr "Forgrunnslitur táknmynda:"
-
-#~ msgid "Icon background color:"
-#~ msgstr "Bakgrunnslitur táknmynda:"
-
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Ekki tókst að breyta nafni skráar eða möppu.\n"
-#~ "Nýja nafnið virðist vera í notkun\n"
-
-#~ msgid "Set Preferen&ces..."
-#~ msgstr "&Breyta stillingum"
-
-#~ msgid "On server:"
-#~ msgstr "Á þjóni:"
-
-#~ msgid "login as:"
-#~ msgstr "Notendanafn:"
-
-# FIXME
-#~ msgid "Known bindings:"
-#~ msgstr "Þekktar bindingar:"
-
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Ekki gleyma að vista stillingarnar!"
-
-# FIXME
-#~ msgid "Use proxy"
-#~ msgstr "Nota sel"
-
-#~ msgid "No Proxy for:"
-#~ msgstr "Ekkert sel á:"
-
-#~ msgid "&Proxy"
-#~ msgstr "&Sel"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-#~ msgid "User &Agent"
-#~ msgstr "&Kennistrengur"
-
-#~ msgid "&Colors"
-#~ msgstr "&Litir"
-
-#~ msgid "&Other"
-#~ msgstr "&Annað"
-
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM Stillingar"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Samþykkt tungumál:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "Samþykkt stafasett:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Gera ráð fyrir HTML"
-
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "VILLA: Þú slepptir slóð á sjálfa sig"
-
-# FIXME
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "Sýna þumal&myndir"
-
-#~ msgid "Name"
-#~ msgstr "Nafn"
-
-#~ msgid "Browse"
-#~ msgstr "Flakka"

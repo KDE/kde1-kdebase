@@ -18,7 +18,7 @@ msgstr "Valslá af/á"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr "Færast til hægr"
+msgstr "Færast til hægri"
 
 #: kpager.cpp:79
 msgid "Move Left"
@@ -38,7 +38,7 @@ msgstr "Fela &valslá"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr "&2 raðir"
+msgstr "&Tvær raðir"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
@@ -117,7 +117,7 @@ msgstr "&Losa af gleri"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr "&Líma við gler"
+msgstr "&Festa við gler"
 
 #: kpager.cpp:453
 msgid "&To Desktop"

@@ -263,7 +263,7 @@ msgstr "Vista mynd sem sjálfgefna?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Leyfa að keyra niður"
+msgstr "Leyfa að slökkva"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -275,7 +275,7 @@ msgstr "Bara rót"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Bara frá meiginskjá"
+msgstr "Bara frá meginskjá"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
@@ -283,7 +283,7 @@ msgstr "Skipanir"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Keyrt niður"
+msgstr "Slökkt"
 
 #: kdm-sess.cpp:70
 msgid "Restart"

@@ -51,7 +51,7 @@ msgstr "útfærslunúmer         : %i"
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr "sjálfgfinn skjáflötur : %i"
+msgstr "sjálfgefinn skjáflötur : %i"
 
 #: info.cpp:95
 #, c-format
@@ -91,7 +91,7 @@ msgstr "Tengipunktur"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr "Skráakerfi"
+msgstr "Tegund skráakerfis"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
@@ -220,13 +220,4 @@ msgstr "Ekki til"
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
 msgid "Not Available"
-msgstr "Akki til"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "notkun: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "File Error!"
-#~ msgstr "Skráarvilla!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "Ekki tókst að lesa /proc/cpuinfo"
+msgstr "Ekki til"

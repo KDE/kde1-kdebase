@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-03-09 22:13 CET\n"
+"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"PO-Revision-Date: 1999-01-09 21:30 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -62,7 +62,7 @@ msgstr "&Parcourir..."
 
 #: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Arrangement :"
 
 #: backgnd.cpp:374
 msgid "Tiled"
@@ -70,7 +70,7 @@ msgstr "Mosaïque"
 
 #: backgnd.cpp:375
 msgid "Mirrored"
-msgstr ""
+msgstr "Miroir"
 
 #: backgnd.cpp:376
 msgid "Center Tiled"
@@ -82,7 +82,7 @@ msgstr "Centré"
 
 #: backgnd.cpp:378
 msgid "Centred Brick"
-msgstr ""
+msgstr "Centré sur un mur de briques"
 
 #: backgnd.cpp:379
 msgid "Centred Warp"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: backgnd.cpp:380
 msgid "Centred Maxpect"
-msgstr ""
+msgstr "Centrée avec aspect max"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Tiled"
@@ -98,7 +98,7 @@ msgstr "Mosaïque symétrique"
 
 #: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Miroir symétrique"
 
 #: backgnd.cpp:383
 msgid "Scaled"
@@ -201,7 +201,7 @@ msgstr "Configuration du mode aléatoire"
 
 #: backgnd.cpp:1720
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Utiliser les fichiers du &répertoire"
 
 #: backgnd.cpp:1734
 msgid "&Browse ..."
@@ -221,7 +221,7 @@ msgstr "Bureaux :"
 
 #: backgnd.cpp:1823
 msgid "&Add"
-msgstr "&Ajouter"
+msgstr "A&jouter"
 
 #: backgnd.cpp:1994
 msgid "Directory error"
@@ -426,48 +426,50 @@ msgid "Low"
 msgstr "Faible"
 
 #: general.cpp:222
-#, fuzzy
-msgid "Style"
-msgstr "&Style"
+msgid "Fonts etc."
+msgstr "Polices etc."
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Dessiner les contrôles avec le style Windows 95"
 
-#: general.cpp:246
-msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
-
-#: general.cpp:260
-#, fuzzy
-msgid "&Apply fonts and colors to non-KDE apps"
+#: general.cpp:244
+msgid "&Apply style to non-KDE apps"
 msgstr "&Appliquer le style aux applications non-KDE"
 
-#: general.cpp:531
+#: general.cpp:258
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr "Barre de &menu en haut de l'écran dans le style de MacOS"
+
+#: general.cpp:273
+msgid "Desktop fonts"
+msgstr "Polices du bureau"
+
+#: general.cpp:285
 msgid "General font"
 msgstr "Police générale"
 
-#: general.cpp:536
+#: general.cpp:290
 msgid "Fixed font"
 msgstr "Police de pas fixe"
 
-#: general.cpp:542
+#: general.cpp:296
 msgid "Window title font"
 msgstr "Police du titre des fenêtres"
 
-#: general.cpp:547
+#: general.cpp:301
 msgid "Panel button font"
 msgstr "Police des boutons du panneau"
 
-#: general.cpp:552
+#: general.cpp:306
 msgid "Panel clock font"
 msgstr "Police de l'horloge du panneau"
 
-#: general.cpp:582
+#: general.cpp:336
 msgid "Sample text"
 msgstr "Texte modèle"
 
-#: general.cpp:590
+#: general.cpp:344
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -477,30 +479,28 @@ msgstr ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
-#: main.cpp:64
+#: main.cpp:63
 msgid "&Background"
 msgstr "&Arrière-plan"
 
-#: main.cpp:67
+#: main.cpp:66
 msgid "&Screensaver"
 msgstr "Mise en &veille"
 
-#: main.cpp:71
+#: main.cpp:70
 msgid "&Colors"
 msgstr "&Couleurs"
 
-#: main.cpp:77
-msgid "&Style"
-msgstr "&Style"
+#: main.cpp:73
+msgid "&Fonts etc."
+msgstr "&Polices etc."
 
-#: main.cpp:83
-#, fuzzy
-msgid ""
-"usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+#: main.cpp:79
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "utilisation : kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:150
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Configuration de l'affichage"
 
@@ -547,15 +547,6 @@ msgstr "par défaut"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "n'importe lequel"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Polices etc."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Polices du bureau"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Polices etc."
 
 #~ msgid "One Des&ktop"
 #~ msgstr "Un bu&reau"
@@ -623,6 +614,9 @@ msgstr "n'importe lequel"
 
 #~ msgid "Large"
 #~ msgstr "Grand"
+
+#~ msgid "&Style"
+#~ msgstr "&Style"
 
 #~ msgid "Color"
 #~ msgstr "Couleur"

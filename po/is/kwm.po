@@ -110,11 +110,11 @@ msgstr "Ónefnt skjáborð"
 
 #: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á [ShapeMode]\n"
+msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á formham\n"
 
 #: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á [GimmickMode]\n"
+msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á glingurham\n"
 
 #: main.C:1477
 msgid "*** No Tasks ***"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1998-12-15 22:38+0100\n"
+"PO-Revision-Date: 1999-01-10 23:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgstr "Enllaços subratllats"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Usa sempre els meus colors"
 
 #: options.cpp:334
 msgid "KDE Help Options"
@@ -363,6 +363,3 @@ msgstr "&Sensible a caixa"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Busca"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Obre &URL..."

@@ -38,7 +38,7 @@ msgstr "punktar"
 
 #: mouse.cpp:81
 msgid "Button mapping"
-msgstr "Takkanotkun"
+msgstr "Hnappanotkun"
 
 #: mouse.cpp:83
 msgid "Right handed"
@@ -54,4 +54,4 @@ msgstr "Endurtaka lykla"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Styrkur takkahljóðs"
+msgstr "Styrkur hnappahljóðs"

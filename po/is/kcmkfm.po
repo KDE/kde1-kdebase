@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-01 21:00+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -38,7 +38,7 @@ msgstr "&Smákökur"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "&Táknmyndir á skjábörði"
+msgstr "&Táknmyndir á skjáborði"
 
 #: main.cpp:89
 #, c-format
@@ -79,31 +79,31 @@ msgstr "Sjálfgefin stafatafla"
 msgid "Use language charset"
 msgstr "Nota stafatöflu tungumálsins"
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:329
 msgid "Background Color:"
 msgstr "Bakgrunnslitur:"
 
-#: htmlopts.cpp:342
+#: htmlopts.cpp:341
 msgid "Normal Text Color:"
 msgstr "Litur venjulegs texta:"
 
-#: htmlopts.cpp:354
+#: htmlopts.cpp:353
 msgid "URL Link Color:"
 msgstr "Litur tengla:"
 
-#: htmlopts.cpp:366
+#: htmlopts.cpp:365
 msgid "Followed Link Color:"
 msgstr "Litur skoðaðra tengla:"
 
-#: htmlopts.cpp:378
+#: htmlopts.cpp:377
 msgid "Change cursor over link."
 msgstr "Breyta bendi yfir tenlum."
 
-#: htmlopts.cpp:384
+#: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Undirstrika tengla"
 
-#: htmlopts.cpp:391
+#: htmlopts.cpp:390
 msgid "Always use my colors"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1998-12-11 16:14+0100\n"
+"PO-Revision-Date: 1998-01-10 23:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,6 @@ msgstr ""
 "Es desactiven els símbols Alt"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -193,7 +192,6 @@ msgid "Your configuration is empty. Install system default."
 msgstr "La vostra configuració es buida. S'instal·la la del sistema."
 
 #: kikbdconf.cpp:218
-#, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
@@ -202,7 +200,6 @@ msgstr ""
 "Diversos valors poden ser incorrectes."
 
 #: kikbdconf.cpp:226
-#, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."

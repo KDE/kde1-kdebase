@@ -75,7 +75,7 @@ msgstr "Möppu"
 #: krootwm.C:362
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "VILLA: Sniðip '%s' er ekki til"
+msgstr "VILLA: Sniðið '%s' er ekki til"
 
 #: krootwm.C:792
 msgid "Could not create folder"

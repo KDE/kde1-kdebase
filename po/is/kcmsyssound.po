@@ -102,11 +102,11 @@ msgstr "Losa glugga af gleri"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr "Window Trans New ???"
+msgstr ""
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr "Window Trans Delete ???"
+msgstr ""
 
 #: syssound.cpp:171
 msgid "Logout"

@@ -124,7 +124,7 @@ msgstr "Référence &technique..."
 
 #: main.C:346
 msgid "cd"
-msgstr ""
+msgstr "Commande cd"
 
 #: main.C:359
 msgid "Sessions"
@@ -136,11 +136,13 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Police `%s' non trouvée.\n"
+"Consultez le fichier README.linux.console pour de l'aide."
 
 #: main.C:607
 #, c-format
 msgid "About %s"
-msgstr "A propos %s"
+msgstr "A propos de %s"
 
 #: main.C:609
 #, c-format
@@ -166,13 +168,15 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s' terminé anormalement."
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
+"\n"
+"Code de retour = "
 
 #: main.C:928
 msgid "Welcome to the console"

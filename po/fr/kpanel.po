@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-08 21:25 CET\n"
+"POT-Creation-Date: 1999-01-05 01:13+0100\n"
+"PO-Revision-Date: 1998-01-11 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -27,7 +27,7 @@ msgstr "&Propriétés"
 msgid "Go!"
 msgstr "En avant !"
 
-#: kpanel.C:333 tools.C:900
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Où voulez-vous aller demain ?"
 
@@ -53,13 +53,13 @@ msgstr "Montrer le panneau"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Icônifier les autres fe&nêtres"
 
 #: kpanel.C:1237
 msgid "No comment available"
 msgstr "Commentaire non disponible"
 
-#: kpanel.C:1246 tools.C:909
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 
@@ -68,7 +68,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Navigation rapide dans l'arborescence"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Ajouter une application"
 
@@ -77,18 +76,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Ajouter une application ou un sous-menu au panneau"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Disk Navigator"
+msgstr "Ajouter Disk Navigator"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr ""
-"Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
+msgstr "Ajouter un menu de Disk Navigator dans le panneau"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Ajouter la liste des fenêtres"
 
@@ -97,7 +92,7 @@ msgid "Add a windowlist menu onto the panel"
 msgstr ""
 "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
-#: events.C:810 props.C:182
+#: events.C:800 props.C:182
 msgid "Configure"
 msgstr "Configurer"
 
@@ -113,7 +108,7 @@ msgstr "Modifier les menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Ajouter ou supprimer des applications dans le menu"
 
-#: events.C:812 props.C:188
+#: events.C:802 props.C:188
 msgid "Restart"
 msgstr "Redémarrer"
 
@@ -137,7 +132,7 @@ msgstr "Verrouiller l'écran"
 msgid "The menu editor is not installed."
 msgstr "L'éditeur de menus n'est pas installé."
 
-#: events.C:866 props.C:451
+#: events.C:856 props.C:451
 msgid "Oops!"
 msgstr "Houlà !"
 
@@ -149,68 +144,67 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:918
-#, fuzzy
+#: tools.C:908
 msgid "KDiskNavigator"
-msgstr "Disk Navigator"
+msgstr "KDiskNavigator"
 
-#: events.C:865
+#: events.C:855
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 
-#: pfilemenu.C:425
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(répertoire vide)"
 
-#: pfilemenu.C:480
+#: pfilemenu.C:478
 msgid "Open Folder"
 msgstr "Ouvrir le répertoire"
 
-#: pfilemenu.C:483
+#: pfilemenu.C:481
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Ouvrir ce répertoire (+Shift : Lancer un terminal ici)"
 
-#: pfilemenu.C:491
+#: pfilemenu.C:489
 msgid "(Too Many Files)"
 msgstr "(trop de fichiers)"
 
-#: pfilemenu.C:500
+#: pfilemenu.C:498
 msgid "(Access Denied)"
 msgstr "Accès refusé"
 
-#: pfilemenu.C:503
+#: pfilemenu.C:501
 msgid "(Unreadable)"
 msgstr "(illisible)"
 
-#: pfilemenu.C:752
+#: pfilemenu.C:750
 msgid "Shared:"
 msgstr "Partagés :"
 
-#: pfilemenu.C:754
+#: pfilemenu.C:752
 msgid "Entries shared among all users"
 msgstr "Entrées partagées par tous les utilisateurs"
 
-#: pfilemenu.C:773
+#: pfilemenu.C:771
 msgid "Personal:"
 msgstr "Personnels :"
 
-#: pfilemenu.C:775
+#: pfilemenu.C:773
 msgid "Personal entries"
 msgstr "Entrées personnelles"
 
-#: pfilemenu.C:793
+#: pfilemenu.C:791
 msgid "Recent:"
 msgstr "Récents :"
 
-#: pfilemenu.C:795
+#: pfilemenu.C:793
 msgid "Recent entries"
 msgstr "Entrées récentes"
 
-#: pfilemenu.C:841
+#: pfilemenu.C:839
 msgid "Options..."
 msgstr "Options..."
 
-#: pfilemenu.C:843
+#: pfilemenu.C:841
 msgid "Customize Disk Navigator"
 msgstr "Personnaliser Disk Navigator"
 

@@ -195,7 +195,7 @@ msgstr "<!-- Ekki breyta þesari skrá handvirkt -->"
 #: cgi.cpp:79
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: Vefslóðin (URL) \"%s\" er ölluð\n"
+msgstr "CGI: Vefslóðin (URL) \"%s\" er gölluð\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
@@ -296,7 +296,7 @@ msgstr "&Bókamerki"
 
 #: mainwidget.cpp:243
 msgid "Previous Document"
-msgstr "Fyrra skal"
+msgstr "Fyrra skjal"
 
 #: mainwidget.cpp:248
 msgid "Next Document"

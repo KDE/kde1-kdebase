@@ -9,7 +9,7 @@ msgstr ""
 
 #: configlist.cpp:120
 msgid "Unknown module: "
-msgstr "Óþekkt eining:"
+msgstr "Óþekkt eining: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
@@ -43,24 +43,24 @@ msgstr "Kerfi:"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr "Notandi:"
+msgstr "Notandi: "
 
 #: mainwidget.cpp:54
 msgid "Hostname: "
-msgstr "Vél:"
+msgstr "Vél: "
 
 #: mainwidget.cpp:62
 msgid "System: "
-msgstr "Kerfi:"
+msgstr "Kerfi: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr "Útgáfa:"
+msgstr "Útgáfa: "
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr "Dagsett:"
+msgstr "Dagsett: "
 
 #: mainwidget.cpp:84
 msgid "Machine: "
-msgstr "Örgjörvi"
+msgstr "Örgjörvi "

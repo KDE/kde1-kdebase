@@ -10,7 +10,7 @@ msgstr ""
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
-msgstr "Breyta &nöfnum valmynda"
+msgstr "Breyta &heitum valmynda"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
@@ -18,7 +18,7 @@ msgstr "Endurlesa skráar&tög"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr "by ???"
+msgstr ""
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
@@ -164,39 +164,39 @@ msgstr "Tæki"
 
 #: entrydialog.cpp:63
 msgid "Type:"
-msgstr "Tag"
+msgstr "Tag:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Skráarnafn"
+msgstr "Skráarnafn:"
 
 #: entrydialog.cpp:82
 msgid "Name:"
-msgstr "Nafn"
+msgstr "Nafn:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Smámynd"
+msgstr "Smámynd:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
-msgstr "Táknmynd"
+msgstr "Táknmynd:"
 
 #: entrydialog.cpp:133
 msgid "Comment:"
-msgstr "Ath"
+msgstr "Ath:"
 
 #: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
-msgstr "Keyrsla"
+msgstr "Keyra"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
-msgstr "Keyra"
+msgstr "Keyra:"
 
 #: entrydialog.cpp:192
 msgid "Working Directory:"
-msgstr "Vinnumappa"
+msgstr "Vinnumappa:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
@@ -204,27 +204,27 @@ msgstr "Í textaglugga"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
-msgstr "Stilla textaglugga"
+msgstr "Stilla textaglugga:"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr "Skráasía"
+msgstr "Skráasía:"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
-msgstr "Forrit sem á að gleypa"
+msgstr "Forrit sem á að gleypa:"
 
 #: entrydialog.cpp:306
 msgid "Title of application:"
-msgstr "Titill forrits"
+msgstr "Titill forrits:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr "Forrit sem á að keyra þegar ýtt er á takkann"
+msgstr "Forrit sem á að keyra þegar ýtt er á takkann:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
-msgstr "Slóð"
+msgstr "Slóð:"
 
 #: entrydialog.cpp:391
 msgid "Read Only"
@@ -232,7 +232,7 @@ msgstr "Lestæki"
 
 #: entrydialog.cpp:397
 msgid "Device:"
-msgstr "Tæki"
+msgstr "Tæki:"
 
 #: entrydialog.cpp:403
 msgid "Mount Point:"
@@ -240,11 +240,11 @@ msgstr "Tengipunktur"
 
 #: entrydialog.cpp:409
 msgid "FS Type:"
-msgstr "Skráakerfi"
+msgstr "Tegund skráakerfis:"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Aftengimynd"
+msgstr "Aftengimynd:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -258,11 +258,8 @@ msgstr ""
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
-msgstr "Þín valmynd"
+msgstr "Þín valmynd:"
 
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
-msgstr "Kerfisvalmynd"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "VARINN takki "
+msgstr "Kerfisvalmynd:"

@@ -18,15 +18,15 @@ msgstr "KDE Letur"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Letur "
+msgstr "Leturflakkari "
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Hrár X11 Leturlisti"
+msgstr "Hrár X11 leturlisti"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Möguleg X11 Letur"
+msgstr "Tiltæk X11 letur"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -109,7 +109,7 @@ msgstr "Raunverulegt letur"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr "Fjölskylda:"
+msgstr "Leturgerð:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
@@ -145,7 +145,7 @@ msgstr "feitletrað"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr "Leturbrigði:"
+msgstr "Leturbrigði"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"

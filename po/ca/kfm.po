@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-09 01:15+0100\n"
-"PO-Revision-Date: 1998-12-22 23:12+0100\n"
+"PO-Revision-Date: 1999-01-10 23:12+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -450,7 +450,6 @@ msgid "The mime type config file "
 msgstr "El fitxer de configuració del tipus mime "
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "no conté una entrada MimeType=..."
 
@@ -965,17 +964,15 @@ msgstr "S'està treballant ..."
 
 #: kfmman.cpp:1631
 msgid "Copy here"
-msgstr ""
+msgstr "Còpia aquí"
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Mou"
+msgstr "Mou aquí"
 
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Enllaç"
+msgstr "Enllaça aquí"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -1335,7 +1332,7 @@ msgstr "No heu canviat el nom!\n"
 
 #: passworddialog.cpp:50 passworddialog.cpp:113
 msgid "Password"
-msgstr "Paraula de pas"
+msgstr "Contrasenya"
 
 #: kfmexec.cpp:162
 msgid "Trying to open"
@@ -1471,13 +1468,3 @@ msgid ""
 msgstr ""
 "Error de sintàxi:\n"
 "comanda kfmexec [URLs....]\n"
-
-#~ msgid "Working Directory"
-#~ msgstr "Directori de treball"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Canvieu la paraula de pas a\n"
-#~ "~/.kde/share/apps/kfm/magic"

@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-01-25 18:31 CET\n"
-"Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"PO-Revision-Date: 1999-01-09 22:30 CET\n"
+"Last-Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
@@ -40,7 +40,7 @@ msgstr "A&gent utilisateur"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
@@ -51,6 +51,7 @@ msgstr "&Icônes du bureau"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
+"utilisation : %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -78,39 +79,35 @@ msgstr "Police de taille fixe"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Table de caractères par défaut"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Utiliser la table de caractères de la langue"
 
-#: htmlopts.cpp:330
+#: htmlopts.cpp:329
 msgid "Background Color:"
 msgstr "Couleur de fond :"
 
-#: htmlopts.cpp:342
+#: htmlopts.cpp:341
 msgid "Normal Text Color:"
 msgstr "Couleur du texte normal :"
 
-#: htmlopts.cpp:354
+#: htmlopts.cpp:353
 msgid "URL Link Color:"
 msgstr "Couleur des URL :"
 
-#: htmlopts.cpp:366
+#: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr "Couleur des URL suivies :"
+msgstr "Couleur des URL visitées :"
 
-#: htmlopts.cpp:378
+#: htmlopts.cpp:377
 msgid "Change cursor over link."
 msgstr "Changer le curseur au-dessus d'un lien."
 
-#: htmlopts.cpp:384
+#: htmlopts.cpp:383
 msgid "Underline links"
 msgstr "Souligner les liens"
-
-#: htmlopts.cpp:391
-msgid "Always use my colors"
-msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
@@ -122,7 +119,7 @@ msgstr "La vue arborescente suit la navigation"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -134,16 +131,15 @@ msgstr "Utiliser le proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "Proxy HTTP :"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port :"
 
 #: kproxydlg.cpp:98
-#, fuzzy
 msgid "FTP Proxy:"
-msgstr "&Proxy"
+msgstr "Proxy FTP :"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
@@ -179,27 +175,27 @@ msgstr "Liaisons connues :"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "Activ&er les Cookies"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr ""
+msgstr "Politique d'acceptation par défaut"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Accepter"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Demander"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Rejetter"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Paramètres du domaine :"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
@@ -207,7 +203,7 @@ msgstr ""
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Vous devez d'abord entrer un domaine !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -218,7 +214,6 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Espacement de la grille verticale du bureau :"
 
 #: rootopts.cpp:95
-#, fuzzy
 msgid "&Transparent Text for Desktop Icons."
 msgstr "Texte &transparent pour les icônes du bureau."
 
@@ -232,4 +227,4 @@ msgstr "Couleur de fond du texte des icônes :"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Afficher les fic&hiers cachés sur le bureau"
