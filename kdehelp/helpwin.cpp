@@ -836,8 +836,10 @@ int KHelpWindow::openRemote( const char *_url )
 		return 1;
 	}
 
-	localFile.sprintf( "file:/tmp/kdehelpXXXXXX" );
-	mktemp( localFile.data() + 5 );
+	char filename[20] = "/tmp/kdehelpXXXXXX";
+	mktemp( filename );
+	localFile.sprintf( "file:%s", filename );
+
 	connect( remotePage, SIGNAL( finished() ), this, SLOT( slotRemoteDone() ) );
 	remotePage->copy( remoteFile.data(), localFile.data() );
 
@@ -858,8 +860,9 @@ int KHelpWindow::runCGI( const char *_url )
 
 	connect( CGIServer, SIGNAL( finished() ), this, SLOT( slotCGIDone() ) );
 
-	localFile.sprintf( "file:/tmp/kdehelpXXXXXX" );
-	mktemp( localFile.data() + 5 );
+	char filename[20] = "/tmp/kdehelpXXXXXX";
+	mktemp( filename );
+	localFile.sprintf( "file:%s", filename );
 
 	CGIServer->get( _url, localFile, "Get" );
 
@@ -898,12 +901,13 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 			system( sysCmd );
 		}
 		QFile file( fname );
-		QString buffer(256);
+		char buf[256];
 		if ( file.open(IO_ReadOnly) )
 		{
 			for ( int i = 0; !file.atEnd(), i < 80; i++ )
 			{
-				file.readLine( buffer.data(), 256 );
+				file.readLine( buf, 256 );
+				QString buffer = buf;
 				if ( buffer.find( "<HTML>", 0, FALSE ) >= 0 ||
 					buffer.find( "<BODY", 0, FALSE ) >= 0 )
 				{
