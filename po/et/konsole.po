@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-04-06 01:17+0200\n"
 "PO-Revision-Date: 199-01-18 00:07+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -164,12 +164,12 @@ msgstr ""
 "ILMA IGASUGUSE GARANTIITA.\n"
 "Täpsemalt vt. LICENCE.readme."
 
-#: main.C:776
+#: main.C:779
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "'%s' katkestatud ebanormaalselt."
 
-#: main.C:779
+#: main.C:782
 msgid ""
 "\n"
 "Return code = "
@@ -177,6 +177,6 @@ msgstr ""
 "\n"
 "Tagastatud kood = "
 
-#: main.C:976
+#: main.C:979
 msgid "Welcome to the console"
 msgstr "Tere tulemast konsoolile"

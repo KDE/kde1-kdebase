@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-04-06 01:17+0200\n"
 "PO-Revision-Date: 1998-12-23 13:57 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -163,12 +163,12 @@ msgstr ""
 "Artistic licence a je dodáván bez JÁKÉKOLI ZÁRUKY. \n"
 "Pro detaily nahlédnìte do souboru LICENSE.readme."
 
-#: main.C:776
+#: main.C:779
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "'%s' byl nesprávnì ukonèen."
 
-#: main.C:779
+#: main.C:782
 msgid ""
 "\n"
 "Return code = "
@@ -176,6 +176,6 @@ msgstr ""
 "\n"
 "Návratový kód = "
 
-#: main.C:976
+#: main.C:979
 msgid "Welcome to the console"
 msgstr "Vítejte v konzoli"
