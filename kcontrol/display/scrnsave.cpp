@@ -269,7 +269,13 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	cb->setChecked( lock );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotLock( bool ) ) );
 	groupLayout->addWidget( cb );
-	
+
+	cbRoot = new QCheckBox( i18n("&Accept root password to unlock"), group );
+	cbRoot->setMinimumSize( cbRoot->sizeHint() );
+	cbRoot->setChecked( allowRoot );
+	connect( cbRoot, SIGNAL( toggled( bool ) ), SLOT( slotAllowRoot( bool ) ) );
+	groupLayout->addWidget( cbRoot );	
+
 	cbStars = new QCheckBox(  i18n("Show &password as stars"), group );
 	cbStars->setMinimumSize( cbStars->sizeHint() );
 	cbStars->setChecked( showStars );
@@ -326,7 +332,12 @@ void KScreenSaver::resizeEvent( QResizeEvent * )
 
 KScreenSaver::~KScreenSaver()
 {
-    delete ssPreview; // CC: This also terminates the preview process..
+    int pid = ssPreview->getPid();
+    if(ssPreview->isRunning()) {
+       ssPreview->kill( );
+       waitpid(pid, (int *) 0,0);
+    }
+    delete ssPreview;
     delete ssSetup;
     delete kssConfig;
 }
@@ -343,11 +354,7 @@ void KScreenSaver::readSettings( int )
 	KConfig *config = kapp->getConfig();
 	config->setGroup( "ScreenSaver" );
 
-	str = config->readEntry( "Location" );
-	if ( !str.isNull() )
-		saverLocation = str;
-	else
-		saverLocation = kapp->kde_bindir().copy();
+	saverLocation = config->readEntry( "Location", kapp->kde_bindir().copy() );
 
 	bUseSaver = config->readBoolEntry( "UseSaver", false );
 	if( bUseSaver ) {
@@ -359,9 +366,7 @@ void KScreenSaver::readSettings( int )
 	} else
 		saverFile.sprintf( i18n("No screensaver") );
 
-	str = config->readEntry( "Timeout" );
-	if ( !str.isNull() )
-		xtimeout = atoi( str );
+	xtimeout = config->readNumEntry( "Timeout" );
 	
 	if ( xtimeout == 0 )
 		xtimeout = 60;
@@ -372,11 +377,9 @@ void KScreenSaver::readSettings( int )
 	else
 		lock = FALSE;
 
-	str = config->readEntry( "Priority" );
-	if ( !str.isNull() )
-		priority = atoi( str );
-	else
-		priority = 0;
+	allowRoot = config->readBoolEntry( "allowRoot", false );
+
+	priority = config->readNumEntry( "Priority", 0 );
 
 	if ( priority < 0 )
 		priority = 0;
@@ -394,6 +397,19 @@ void KScreenSaver::readSettings( int )
 	showStars = kssConfig->readBoolEntry( "PasswordAsStars", true );
 }
 
+void KScreenSaver::updateValues()
+{
+	QString str;
+	str.setNum( xtimeout/60 );
+	waitEdit->setText( str );
+
+	cb->setChecked( lock );
+	cbRoot->setChecked( allowRoot );
+	cbStars->setChecked( showStars );
+
+	prioritySlider->setValue( priority );
+}
+
 void KScreenSaver::setDefaults()
 {
 	slotScreenSaver( 0 );
@@ -402,11 +418,13 @@ void KScreenSaver::setDefaults()
 	slotTimeoutChanged( "1" );
 	slotPriorityChanged( 0 );
 	slotLock( false );
+	slotAllowRoot( false );
 	slotStars( true );
 	slotCornerAction( 0, 'i' );
 	slotCornerAction( 1, 'i' );
 	slotCornerAction( 2, 'i' );
 	slotCornerAction( 3, 'i' );
+	updateValues();
 }
 
 void KScreenSaver::defaultSettings()
@@ -430,12 +448,15 @@ void KScreenSaver::writeSettings()
 	config->writeEntry( "Timeout", str );
 
 	config->writeEntry( "Lock", lock ? "yes" : "no" );
+	config->writeEntry( "allowRoot", allowRoot );
 
 	str.detach();
 	str.setNum( priority );
 	config->writeEntry( "Priority", str );
 
 	config->writeEntry( "CornerAction", cornerAction );
+	
+	config->sync();
 
 	kssConfig->writeEntry( "PasswordAsStars", showStars );
 	kssConfig->sync();
@@ -499,16 +520,22 @@ void KScreenSaver::apply( bool force )
 
 	if ( !bUseSaver )
 	{
+		// note that changes in the pidFile name have also be done
+		// in kdebase/kscreensaver/main.cpp
 		QString pidFile;
 		pidFile = getenv( "HOME" );
-		pidFile += "/.kss.pid";
+		pidFile += "/.kss-install.pid.";
+		char ksshostname[200];
+		gethostname(ksshostname, 200);
+		pidFile += ksshostname;
 		FILE *fp;
 		if ( ( fp = fopen( pidFile, "r" ) ) != NULL )
 		{
 			int pid;
 			fscanf( fp, "%d", &pid );
 			fclose( fp );
-			kill( pid, SIGTERM );
+			if( kill( pid, SIGTERM ) == 0)
+				waitpid(pid, (int *) 0, 0);
 		}
 		XSetScreenSaver( qt_xdisplay(), 0, xinterval,
 			xprefer_blanking, xallow_exposures );
@@ -519,9 +546,16 @@ void KScreenSaver::apply( bool force )
 
 	if ( pid == 0 )
 	{
-		char *slock = "-lock";
-		if ( !lock )
-			slock = NULL;
+		char *lock1, *lock2;
+
+		if( lock ) {
+			lock1 = "-lock";
+			lock2 = (allowRoot) ? "-allow-root" : 0;
+		} else {
+			lock1 = (allowRoot) ? "-allow-root" : 0;
+			lock2 = 0;
+		}
+
 		QString sDelay;
 		sDelay.setNum( xtimeout/60 );
 		QString sPriority;
@@ -530,7 +564,7 @@ void KScreenSaver::apply( bool force )
 
 		execl( path.data(), path.data(), "-delay", sDelay.data(), "-install",
 				"-corners", cornerAction, "-nice", sPriority.data(),
-				slock, NULL );
+				lock1, lock2, 0 );
 		exit(1);
 	}
 }
@@ -646,6 +680,12 @@ void KScreenSaver::slotLock( bool l )
 	changed = TRUE;
 }
 
+void KScreenSaver::slotAllowRoot( bool a )
+{
+	allowRoot = a;
+	changed = TRUE;
+}
+
 void KScreenSaver::slotStars( bool s )
 {
 	showStars = s;
@@ -700,14 +740,7 @@ void KScreenSaver::loadSettings()
     }
   ssList->setTopItem( ssList->currentItem() );
 
-  QString str;
-  str.setNum( xtimeout/60 );
-  waitEdit->setText( str );
-
-  cb->setChecked( lock );
-  cbStars->setChecked( showStars );
-
-  prioritySlider->setValue( priority );
+  updateValues();
 }
 
 void KScreenSaver::applySettings()

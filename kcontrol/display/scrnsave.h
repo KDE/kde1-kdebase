@@ -65,6 +65,7 @@ public:
 	virtual void loadSettings();
 	virtual void applySettings();
 	virtual void defaultSettings();
+	virtual void updateValues();
 
 protected slots:
 	void slotApply();
@@ -73,6 +74,7 @@ protected slots:
 	void slotTest();
 	void slotTimeoutChanged( const char *);
 	void slotLock( bool );
+	void slotAllowRoot( bool );
 	void slotStars( bool );
 	void slotPriorityChanged( int val );
 	void slotSetupDone(KProcess*);
@@ -96,7 +98,7 @@ protected:
 	QListBox *ssList;
 	QLineEdit *waitEdit;
 	QSlider *prioritySlider;
-	QCheckBox *cb, *cbStars;
+	QCheckBox *cb, *cbStars, *cbRoot;
 	QLabel *monitorLabel;
 	const QStrList *saverList;
 	QStrList saverNames;
@@ -105,6 +107,7 @@ protected:
 	int lock;
 	int priority;
 	bool showStars;
+	bool allowRoot;
 	char cornerAction[5];
 
 	int xtimeout, xinterval;
