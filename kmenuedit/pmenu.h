@@ -170,7 +170,7 @@ public:
   int        count() { return list.count(); }
   QPoint     configPos();
   bool checkFilenames(QString name); // returns TRUE if kdelnk-file with this name allready exists
-  QString    uniqueFileName(QString name);
+  QString    uniqueFileName(QString name, bool is_dir = FALSE);
 
 signals:
   void reposition();

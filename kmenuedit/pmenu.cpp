@@ -1270,20 +1270,26 @@ bool PMenu::checkFilenames(QString name)
   return FALSE;
 }
 
-QString PMenu::uniqueFileName(QString name)
+QString PMenu::uniqueFileName(QString name, bool is_dir)
 {
   QString file_name = name.simplifyWhiteSpace();
   while( file_name.contains('/') )
     {
       file_name.replace(file_name.find('/'), 1, "_");
     }
-  QString suffix;
+  QString suffix, new_name;
   int i = 2;
-  file_name = name + ".kdelnk";
-  while( checkFilenames(file_name) )
+  if( is_dir )
+    new_name = file_name;
+  else
+    new_name = file_name + ".kdelnk";
+  while( checkFilenames(new_name) )
     {
-      file_name = name + suffix.setNum(i) + ".kdelnk";
+      if( is_dir )
+	new_name = file_name + suffix.setNum(i);
+      else
+	new_name = file_name + suffix.setNum(i) + ".kdelnk";
       i++;
     }
-  return file_name;
+  return new_name;
 }

@@ -299,15 +299,17 @@ void MenuButton::change_accept()
 				     klocale->translate("OK") );
 	    return;
 	  }
+      EntryType old_type = pmenu_item->getType();
+      EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
       if( ((QString) dialog->i_fname->text()).isEmpty() )
 	{
 	  if( ((QString) dialog->i_name->text()).isEmpty() )
-	    dialog->i_fname->setText(pmenu_parent->uniqueFileName("menuentry"));
+	    dialog->i_fname->setText(pmenu_parent->uniqueFileName("submenu", new_type == submenu));
 	  else
-	    dialog->i_fname->setText(pmenu_parent->uniqueFileName(dialog->i_name->text()));
+	    dialog->i_fname->setText(pmenu_parent->uniqueFileName(dialog->i_name->text(), new_type == submenu));
 	}
-      EntryType old_type = pmenu_item->getType();
-      EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
+      //EntryType old_type = pmenu_item->getType();
+      //EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
       if( old_type != new_type )
 	{
 	  if( old_type == submenu )
