@@ -578,7 +578,7 @@ void KfmView::slotBack()
 
 void KfmView::slotURLSelected( const char *_url, int _button, const char *_target )
 {
-    debugT("######### Click '%s' target='%s'\n",_url,_target);
+    // debugT("######### Click '%s' target='%s'\n",_url,_target);
  
     if ( !_url )
 	return;
