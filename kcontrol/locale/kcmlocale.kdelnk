@@ -1,5 +1,12 @@
 [KCM Locale]
-Languages=C,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
+Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
+
+[ca]
+Name=Catalan
+Name[ca]=Català
+Name[es]=Catalán
+Name[en]=Catalan
+Name[fr]=Catalan
 
 [ro]
 Name=Romanian
