@@ -1,0 +1,177 @@
+<!doctype linuxdoc system>
+
+<!-- The KMenuedit Handbook. -->
+
+<article>
+
+<!-- Title information -->
+
+<title>The KMenuedit Handbook
+<author>Christoph Neerfeld, <tt/chris@kde.org/
+<date>Version 0.3.0, Jun 18 1998
+<abstract>This Handbook describes KMenuedit Version 0.3
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+
+<sect>Introduction
+
+<p>
+KMenuedit enables the user to change the menu that is presented by KPanel
+whenever the user presses the button with the great 'K'. This menu consists
+indeed of two menus: the system default menu, created by KDE itself,
+and a personal menu that any user can change to his/ her needs.
+
+KMenuedit tries to make the modification of these menus as easy as possible.
+
+<sect>Concept
+
+<p>
+Most systems use binary or ascii encoded configuration files to define
+a menu structure. KDE takes a different approach. KDE uses a directory
+hierarchy of kdelnk-files. Each submenu corresponds to a directory and
+each menuentry corresponds to a kdelnk-file. (kdelnk-files are special
+ascii files which names' end in '.kdelnk'.)
+
+One way to edit the menu is to move or copy the kdelnk-files to change
+the menu hierarchy and to change each menuentry with the properties dialog
+of KFM.
+
+The other way is to use KMenuedit.
+
+<sect>Usage
+
+<p>
+KMenuedit tries to hide the details of kdelnk-files from the user, so
+you don't need to worry if you don't understand the concept behind the
+kdelnk-files.
+
+When you start KMenuedit for the first time it will probably ask you
+for the basedirectories of your menus. If you don't know what this means
+it should be save to say ok to the dialog.
+
+After KMenuedit has started it will show you two menus.
+
+<IMG SRC="kmenuedit1.gif">
+
+The left menu is your personal menu and the right menu is the system
+default menu. Normaly you won't have a personal menu yet, so you will see
+a menu with just one entry called 'EMPTY'.
+
+The entries in the right menu are displayed with a gray color because
+you don't have write permission to the system default menu. If you start
+KMenuedit with sufficient privileges then this menu will be displayed normal
+and you may change it.
+
+If you don't like the position of these menus in the window, hold down
+the shift key and the middle mouse button and move the menu arround. The
+position of the base menus will be saved for the next time you start KMenuedit.
+
+There are several ways to <tt>add</tt> an entry to a menu:
+
+<itemize>
+<item>Drag a kdelnk-file or any executable with kfm and drop it on a menu.
+<item>Press the right mouse button on a menuentry and select 'New' from the
+popupmenu.
+<item>Drag a menuentry from another menu and drop it on the menu.
+</itemize>
+
+To <em>open a submenu</em>, select 'Open/ Close' from the popupmenu or
+click with the left mouse button on the menuentry. Do just the same to
+<em>close the submenu</em>. Note that closing a submenu closes all of it's
+submenus, too.
+
+You may even use <em>cut, copy</em> and <em>paste</em> with menuentries by selecting
+the correspondig option in the popupmenu. Just select 'copy' on one menuentry
+and select 'paste' on another entry to insert the copied menuentry below
+this entry.
+
+To <em>move</em> an entry to another position within it's menu, hold down
+the middle mouse button on this entry and move it around.
+
+To insert an new <em>seperator</em> or <em>submenu</em> select 'New' from
+the popupmenu and <ref id="change" name ="change"> the new entry.
+
+If you exit KMenuedit before saving no changes will be written to disk
+and if you want to discard all changes without restarting KMenuedit, just
+press the reload button.
+
+<sect1>Changing menu entries<label id="change">
+
+<p>
+To change a menuentry select 'Change' from its popupmenu. You will be
+presented the following dialog.
+
+<IMG SRC="kmenuedit2.gif">
+
+The combobox in the first line selects the type of the menu entry. To
+see a description of the various types see <ref id="file-types" name="Types">.
+
+The next lines specify various attributes that are common to most menuentries.
+
+<itemize>
+<item><bf>FileName:</bf> The filename of the kdelnk-file.
+<item><bf>Name:</bf> The name of the menuentry.
+<item><bf>MiniIcon:</bf> The small icon shown by kpanel.
+<item><bf>Comment:</bf> The descriptive text displayed by kpanel and kfm.
+</itemize>
+
+Due to the fact that any menuentry is saved into a seperate kdelnk-file
+each file needs a unique name inside its submenu. If you don't specify
+a filename, KMenuedit will create its own filename.
+
+If you want to change the icons, just click on the icon and select the
+new icon from a dialog.
+
+The attributes within the tab-dialog are type specific and are described
+in <ref id="file-types" name="Entry Types">.
+
+<sect>Entry Types<label id="file-types">
+
+<p>
+KDE knows about several types of kdelnk-files and so we have different
+types of menu-entries.
+
+<bf>Submenu:</bf>
+The submenu is not a kdelnk-file but a directory. So the only attributes
+that make sense for a submenu are Name, Icon, MiniIcon and Comment.
+
+<bf>Separator:</bf>
+Like the submenu the separator is not a real kdelnk-file, but this fact
+makes no difference for the user. Since a separator is just a bar there
+are no attributes you may set.
+
+<bf>Application:</bf>
+The application type is a real kdelnk-file. Please see the kfm
+manual for a detailed description of its attributes.
+
+<bf>Link:</bf>
+The link is basically a link to an object in the WWW. Just insert it's
+url in the corresponding field.
+
+<bf>Device:</bf>
+The device is a kdelnk-file, too. Please see the kfm
+manual for details.
+
+<bf>Swallow:</bf>
+The swallow type is like an application entry but it is executed in
+a different way. You execute it by dropping it onto KPanel to make it a
+panel button. KPanel will start the application and swallow its window
+into the panel. To find the right window to swallow KPanel needs the title
+of the application window. So you have to specify the application you want
+to swallow and its title.
+As an option you may specify an application to start when you press with
+the left mousebutton onto the panel button.
+
+<sect>To do
+
+<p>
+<itemize>
+<item>prevent KMenuedit from expanding shell variables
+</itemize>
+
+
+</article>

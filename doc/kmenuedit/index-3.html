@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The KMenuedit Handbook: Usage</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="">
+<META NAME="description" CONTENT="">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<H3><A NAME="s3">3. Usage</A></H3>
+
+<P>KMenuedit tries to hide the details of kdelnk-files from the user, so
+you don't need to worry if you don't understand the concept behind the
+kdelnk-files.
+<P>When you start KMenuedit for the first time it will probably ask you
+for the basedirectories of your menus. If you don't know what this means
+it should be save to say ok to the dialog.
+<P>After KMenuedit has started it will show you two menus.
+<P>
+<IMG SRC="kmenuedit1.gif">
+<P>The left menu is your personal menu and the right menu is the system
+default menu. Normaly you won't have a personal menu yet, so you will see
+a menu with just one entry called 'EMPTY'.
+<P>The entries in the right menu are displayed with a gray color because
+you don't have write permission to the system default menu. If you start
+KMenuedit with sufficient privileges then this menu will be displayed normal
+and you may change it.
+<P>If you don't like the position of these menus in the window, hold down
+the shift key and the middle mouse button and move the menu arround. The
+position of the base menus will be saved for the next time you start KMenuedit.
+<P>There are several ways to <CODE>add</CODE> an entry to a menu:
+<P>
+<UL>
+<LI>Drag a kdelnk-file or any executable with kfm and drop it on a menu.</LI>
+<LI>Press the right mouse button on a menuentry and select 'New' from the
+popupmenu.</LI>
+<LI>Drag a menuentry from another menu and drop it on the menu.</LI>
+</UL>
+<P>To <EM>open a submenu</EM>, select 'Open/ Close' from the popupmenu or
+click with the left mouse button on the menuentry. Do just the same to
+<EM>close the submenu</EM>. Note that closing a submenu closes all of it's
+submenus, too.
+<P>You may even use <EM>cut, copy</EM> and <EM>paste</EM> with menuentries by selecting
+the correspondig option in the popupmenu. Just select 'copy' on one menuentry
+and select 'paste' on another entry to insert the copied menuentry below
+this entry.
+<P>To <EM>move</EM> an entry to another position within it's menu, hold down
+the middle mouse button on this entry and move it around.
+<P>To insert an new <EM>seperator</EM> or <EM>submenu</EM> select 'New' from
+the popupmenu and 
+<A HREF="#change">change</A> the new entry.
+<P>If you exit KMenuedit before saving no changes will be written to disk
+and if you want to discard all changes without restarting KMenuedit, just
+press the reload button.
+<P>
+<H3><A NAME="change"></A> <A NAME="ss3.1">3.1 Changing menu entries</A>
+</H3>
+
+<P>To change a menuentry select 'Change' from its popupmenu. You will be
+presented the following dialog.
+<P>
+<IMG SRC="kmenuedit2.gif">
+<P>The combobox in the first line selects the type of the menu entry. To
+see a description of the various types see 
+<A HREF="index-4.html#file-types">Types</A>.
+<P>The next lines specify various attributes that are common to most menuentries.
+<P>
+<UL>
+<LI><B>FileName:</B> The filename of the kdelnk-file.</LI>
+<LI><B>Name:</B> The name of the menuentry.</LI>
+<LI><B>MiniIcon:</B> The small icon shown by kpanel.</LI>
+<LI><B>Comment:</B> The descriptive text displayed by kpanel and kfm.</LI>
+</UL>
+<P>Due to the fact that any menuentry is saved into a seperate kdelnk-file
+each file needs a unique name inside its submenu. If you don't specify
+a filename, KMenuedit will create its own filename.
+<P>If you want to change the icons, just click on the icon and select the
+new icon from a dialog.
+<P>The attributes within the tab-dialog are type specific and are described
+in 
+<A HREF="index-4.html#file-types">Entry Types</A>.
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
