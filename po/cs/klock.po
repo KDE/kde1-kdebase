@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-10-28 18:26 CET\n"
+"PO-Revision-Date: 1998-11-03 13:41+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,12 @@ msgid "Setup kbanner"
 msgstr "Nastavení kbanneru"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Neúspìsné"
+msgstr "Rodina:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -36,7 +35,7 @@ msgstr "Barva:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Tuèné"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -613,9 +612,8 @@ msgid "Setup krock"
 msgstr "Nastavení Skály"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Mód::"
+msgstr "Pohybovat"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -689,7 +687,7 @@ msgstr "Nastavení Science"
 
 #: science.cpp:993
 msgid "Mode:"
-msgstr "Mód::"
+msgstr "Mód:"
 
 #: science.cpp:1008
 msgid "Inverse"

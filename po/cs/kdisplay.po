@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-10-30 11:57+0100\n"
-"PO-Revision-Date: 1998-10-28 18:41 CET\n"
+"PO-Revision-Date: 1998-11-03 13:46+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -399,7 +399,7 @@ msgstr "Vybraný text"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-10-28 18:24 CET\n"
+"PO-Revision-Date: 1998-11-03 13:38+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpanel.C:273
 msgid "Move"
-msgstr ""
+msgstr "Pøesunout"
 
 #: kpanel.C:313
 msgid "Go!"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm 0.5\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-10-24 17:07 CEST\n"
+"PO-Revision-Date: 1998-11-03 13:44+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr "Pøihlá¹ení není mometálnì mo¾né"
 
 #: kgreeter.cpp:518
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "selhání funkce login_getcapstr()"
 
 #: kgreeter.cpp:572 kgreeter.cpp:599
 msgid "Sorry -- your account has expired."
@@ -73,6 +73,3 @@ msgstr "Varování: va¹e konto expiruje %s"
 #: kgreeter.cpp:631
 msgid "Home directory not available"
 msgstr "Domovský adresáø není pøístupný"
-
-#~ msgid "bah"
-#~ msgstr "bah"

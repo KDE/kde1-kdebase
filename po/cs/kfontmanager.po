@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfonmanager 0.3.1\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
-"PO-Revision-Date: 1998-10-28 18:37 CET\n"
+"PO-Revision-Date: 1998-11-03 13:43+01:00\n"
 "Last-Translator: Miroslav Flídr <@>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -95,72 +95,72 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "Vybraná znaková sada"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "Po¾adovaná znaková sada"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "Aktuální znaková sada"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "Rodina:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "Váha:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "Styl:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "Kódování"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "Váha"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "normální"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "tuèné"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "roman"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "italic"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "Dolor Ipse"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "Tuèné"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
+msgstr "Normální"
