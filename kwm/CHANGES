@@ -15,6 +15,7 @@ patchlevel 13: Mario Weilguni <mweilguni@kde.org>
         - added a replacement for gradientFill (for color depths
         higher than 8). It´s only used for horizontal gradients 
         - hopefully fixed Christoph Neerfeld's Ghostwindow problem
+        - fixed a couple of memory leaks (thanks to Wolfgang Hoffmann)
 
 patchlevel 12:
         - new property "ResizeAnimationSpeed". Default value is 1 

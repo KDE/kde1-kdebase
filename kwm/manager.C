@@ -1681,7 +1681,10 @@ void Manager::manage(Window w, bool mapped){
   {
     int n, order;
     // don't show any visible decoration, if the window is shaped
-    XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
+    XRectangle *rects;
+    rects = XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
+    if (rects != 0)
+      XFree(rects);
     if ( n > 1 ) {
       c->decoration = KWM::noDecoration;
     }
@@ -1700,6 +1703,8 @@ void Manager::manage(Window w, bool mapped){
   if (XGetClassHint(qt_xdisplay(), c->window, &klass) != 0) {   // Success
     c->instance = klass.res_name;
     c->klass = klass.res_class;
+    XFree(klass.res_name);
+    XFree(klass.res_class);
   }
   else {
     c->instance = "";

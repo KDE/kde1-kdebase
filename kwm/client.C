@@ -315,6 +315,7 @@ static void grabButton(int button, Window window, unsigned int mod){
 	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
 	NumLockMask = (1<<i); 
     }
+    XFreeModifiermap(xmk);
   }
 
   XGrabButton(qt_xdisplay(), button, 
