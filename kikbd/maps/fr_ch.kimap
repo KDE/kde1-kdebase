@@ -1,56 +1,41 @@
 # KDE Config File
 
 [International Keyboard]
-Comment=Swiss french (Swiss)
+Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>
+Comment=French Keyboard (Switzerland)
+Comment[de]=Französische Tastatur (Schweiz)
+Comment[es]=Teclado Francés (Suiza)
+Comment[fr]=Clavier français (Suisse)
+Language=French (Switzerland)
+Language[de]=Französisch (Schweiz)
+Language[es]=Francés (Suiza)
+Language[fr]=Français (Suisse)
 
-Language=French
-Language[ca]=Francès
-Language[cs]=Francouzský
-Language[da]=Fransk
-Language[de]=Französisch
-Language[es]=Francés
-Language[fi]=Ranska
-Language[fr]=Français
-Language[hr]=Francuski
-Language[is]=Franskt
-Language[it]=Francese
-Language[no]=Fransk
-Language[pl]=Francuski
-Language[pt]=Francês
-Language[pt_BR]=Francês
-Language[ro]=Franþuzeascã
-Language[ru]=æÒÁÎÃÕÚÓËÉÊ
-Language[sk]=Francúzsky
-Language[sl]=francosko
-Language[sv]=Franskt
+Label=CH
+Locale=fr_CH
 
-Label=SF
-locale=ch
 
 [KeyboardMap]
-keysym0=grave,dead_circumflex,degree
+keysym0=grave,section,degree,
 keysym1=1,1,plus,bar
 keysym2=2,2,quotedbl,at
 keysym3=3,3,asterisk,numbersign
 keysym4=4,4,ccedilla
-keysym5=6,6,ampersand,
-keysym6=7,7,slash,bar
-keysym7=8,8,parenleft
+keysym5=6,6,ampersand,notsign
+keysym6=7,7,slash,brokenbar
+keysym7=8,8,parenleft,cent
 keysym8=9,9,parenright
 keysym9=0,0,equal
-keysym10=minus,apostrophe,question,acute
-keysym12=equal,asciicircum,grave,asciitilde
-keysym10=q,q,Q
-keysym11=y,z,Z
-keysym12=bracketleft,udiaeresis,egrave,bracketleft
-keysym13=bracketright,deux-p,exclam,bracketright
-keysym14=semicolon,odiaeresis,eacute
-keysym15=apostrophe,adiaeresis,agrave,braceleft
-keysym16=backslash,dollar,L,braceright
-keysym17=z,y,Y
-keysym18=m,m,M,mu
-keysym19=less,less,greater,backslash
-keysym20=comma,comma,semicolon
-keysym21=period,period,colon
-keysym22=slash,minus,underscore
-
+keysym10=minus,apostrophe,question,dead_acute
+keysym11=equal,dead_circumflex,dead_grave,dead_tilde
+keysym13=y,z,Z
+keysym14=bracketleft,egrave,udiaeresis,bracketleft
+keysym15=bracketright,dead_diaeresis,exclam,bracketright
+keysym16=semicolon,eacute,odiaeresis
+keysym17=apostrophe,agrave,adiaeresis,braceleft
+keysym18=backslash,dollar,sterling,braceright
+keysym19=z,y,Y
+keysym21=less,less,greater,backslash
+keysym22=comma,comma,semicolon
+keysym23=period,period,colon
+keysym24=slash,minus,underscore

@@ -1,0 +1,57 @@
+# KDE Config File
+ 
+[International Keyboard]
+Authors=Alvaro Arancibia <aarancibia@csi.com>,
+ 
+Language=Spanish-Latin American
+Language[ca]=Espanyol - LA
+Language[cs]=©panìlský - LA
+Language[da]=Spansk - LA
+Language[de]=Spanisch - LA
+Language[es]=Español - América Latina
+Language[fi]=Espanja - LA
+Language[fr]=Espagnol - Amérique Latine
+Language[hr]=¹panjolski - LA
+Language[is]=Spænskt - LA
+Language[it]=Spagnolo - LA
+Language[no]=Spansk - LA
+Language[pl]=Hiszpañski - LA
+Language[pt]=Espanhol - LA
+Language[pt_BR]=Espanhol - LA
+Language[ro]=Spaniolã - LA
+Language[ru]=éÓÐÁÎÓËÉÊ - LA
+Language[sk]=©panielsky - LA
+Language[sl]=¹pansko - LA
+Language[sv]=Spanskt - LA
+
+Label=La
+Locale=la
+
+[KeyboardMap]
+keysym1=grave,bar,degree,notsign
+keysym2=1,1,exclam,
+keysym3=2,2,quotedbl,
+keysym4=3,3,numbersign,sterling,
+keysym5=4,4,dollar,
+keysym6=5,5,percent,
+keysym7=6,6,ampersand,
+keysym8=7,7,slash,
+keysym9=8,8,parenleft,
+keysym10=9,9,parenright,
+keysym11=0,0,equal
+keysym12=minus,apostrophe,question,backslash,
+keysym13=equal,questiondown,exclamup
+keysym16=q,q,Q,at
+keysym19=r,r,R,paragraph,registered,
+keysym21=y,y,Y,yen,
+keysym24=o,o,O,oslash,Ooblique,
+keysym25=p,p,P,thorn,THORN,
+keysym26=bracketleft,dead_acute,dead_diaeresis,
+keysym27=bracketright,plus,asterisk,asciitilde
+keysym39=semicolon,ntilde,Ntilde,
+keysym40=apostrophe,braceleft,bracketleft,Control_asciicircum
+keysym43=backslash,braceright,bracketright,apostrophe
+keysym46=c,c,C,cent,copyright,
+keysym51=comma,comma,semicolon,
+keysym52=period,period,colon,
+keysym53=slash,minus,underscore,

@@ -1,0 +1,43 @@
+# KDE Config File
+       
+[International Keyboard]
+Authors=Nicola Pero <n.pero@mi.flashnet.it>
+
+Comment=Italian Keyboard (Italy)
+Comment[de]=Italienische Tastatur (Italien)
+Comment[fr]=Clavier italien (Italie)
+Comment[it]=Tastiera Italiana (Italia)
+
+Language=Italian
+Language[de]=Italienisch
+Language[es]=Italiano
+Language[fr]=Italien
+Language[it]=Italiano
+
+Charset=iso-8859-1
+Label=It
+Locale=it
+
+[KeyboardMap]
+#keysym<any number>=<old sym>,<newsym1>,<newsym2>,<newsym3>,<newsym4>
+keysym1=grave,backslash,bar
+keysym2=1,1,exclam
+keysym3=2,2,quotedbl,at
+keysym4=3,3,sterling
+keysym5=4,4,dollar
+keysym6=5,5,percent
+keysym7=6,6,ampersand
+keysym8=7,7,slash
+keysym9=8,8,parenleft,braceleft
+keysym10=9,9,parenright,braceright
+keysym11=0,0,equal,asciitilde
+keysym12=minus,apostrophe,question,grave
+keysym13=equal,igrave,asciicircum
+keysym14=bracketleft,egrave,eacute,bracketleft
+keysym15=bracketright,plus,asterisk,bracketright
+keysym16=semicolon,ograve,ccedilla,at
+keysym17=apostrophe,agrave,degree,numbersign
+keysym18=backslash,ugrave,section
+keysym19=comma,comma,semicolon
+keysym20=period,period,colon
+keysym21=slash,minus,underscore

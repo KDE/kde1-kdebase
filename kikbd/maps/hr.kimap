@@ -13,7 +13,7 @@ Label=Hr
 Locale=hr
 
 [KeyboardMap]
-CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less,backslash
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,backslash
 keysym10=q,q,Q,backslash
 keysym11=w,w,W,bar
 keysym12=e,e,E,,,
@@ -61,4 +61,3 @@ keysym53=0,0,equal,doubleacute
 keysym54=apostrophe,question,diaeresis
 keysym55=minus,apostrophe,question
 keysym56=equal,plus,asterisk,cedilla
-keycode57=101,less,greater,,,

@@ -1,0 +1,60 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
+Comment=German Keyboard (Switzerland)
+Comment[de]=Deutsche Tastatur (Schweiz)
+Comment[es]=Teclado Alemán (Suiza)
+Comment[fr]=Clavier allemand (Suisse)
+
+Language=German (Switzerland)
+Language[de]=Deutsch (Schweiz)
+Language[es]=Alemán (Suiza)
+Language[fr]=Allemand (Suisse)
+Language[ca]=Alemany
+Language[cs]=Nìmecký
+Language[da]=Tysk
+Language[fi]=Saksa
+Language[fi]=Saksa
+Language[fr]=Allemand
+Language[hr]=Njemaèki
+Language[is]=Þýskt
+Language[it]=Tedesco
+Language[no]=Tysk
+Language[pl]=Niemiecki
+Language[pt]=Alemão
+Language[pt_BR]=Alemão
+Language[ro]=Germanã
+Language[ru]=îÅÍÅÃËÉÊ
+Language[sk]=Nemecký
+Language[sl]=nem¹ko
+Language[sv]=Tyskt
+
+Label=CH
+Locale=de_CH
+
+
+[KeyboardMap]
+keysym0=grave,section,degree,
+keysym1=1,1,plus,bar
+keysym2=2,2,quotedbl,at
+keysym3=3,3,asterisk,numbersign
+keysym4=4,4,ccedilla
+keysym5=6,6,ampersand,notsign
+keysym6=7,7,slash,brokenbar
+keysym7=8,8,parenleft,cent
+keysym8=9,9,parenright
+keysym9=0,0,equal
+keysym10=minus,apostrophe,question,dead_acute
+keysym11=equal,dead_circumflex,dead_grave,dead_tilde
+keysym13=y,z,Z
+keysym14=bracketleft,udiaeresis,egrave,bracketleft
+keysym15=bracketright,dead_diaeresis,exclam,bracketright
+keysym16=semicolon,odiaeresis,eacute
+keysym17=apostrophe,adiaeresis,agrave,braceleft
+keysym18=backslash,dollar,sterling,braceright
+keysym19=z,y,Y
+keysym21=less,less,greater,backslash
+keysym22=comma,comma,semicolon
+keysym23=period,period,colon
+keysym24=slash,minus,underscore
