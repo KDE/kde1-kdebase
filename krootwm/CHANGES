@@ -7,6 +7,10 @@
 In 0.1:
 -------
 
+patchlevel 4:
+       - RMB somewhat adapted to the KDE progress (KFM still not
+         works)
+
 patchlevel 3:
        - qt-1.3
 

@@ -35,6 +35,8 @@ void execute(const char* cmd){
   signal(SIGCHLD, catch_child);
   if (!(fork())){ // child
     freopen("/dev/null", "r", stdin);
+    freopen("/dev/null", "w", stdout);
+    freopen("/dev/null", "w", stderr);
     setsid();
     execl(shell, shell, "-c", cmd, NULL);
     exit(1);
@@ -72,6 +74,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     rmb->insertItem("Display properties", RMB_DISPLAY_PROPERTIES);
     rmb->insertItem("Refresh desktop", RMB_REFRESH_DESKTOP);
     rmb->insertItem("Arrange icons", RMB_ARRANGE_ICONS);
+    rmb->insertItem("Execute command", RMB_EXECUTE);
     rmb->insertSeparator();
     rmb->insertItem("Lock screen", RMB_LOCK_SCREEN);
     rmb->insertItem("Logout", RMB_LOGOUT);
@@ -124,17 +127,19 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 void KRootWm::rmb_menu_activated(int item){
   switch (item) {
   case RMB_DISPLAY_PROPERTIES:
-    execute("kdisplay -setup");
+    execute("kcc background");
     break;
   case RMB_ARRANGE_ICONS:
     {
       KFM kfm; kfm.exec("sortDesktop", 0L);
     }
   break;
+  case RMB_EXECUTE:
+    KWM::sendKWMCommand("execute");
+    break;
   case RMB_REFRESH_DESKTOP:
     {
       KFM kfm; kfm.refreshDesktop();
-      execute ("kdisplay -init ");
       KWM::refreshScreen();
     }
   break;

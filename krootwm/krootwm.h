@@ -25,7 +25,8 @@ enum {
   RMB_REFRESH_DESKTOP,
   RMB_ARRANGE_ICONS,
   RMB_LOCK_SCREEN,
-  RMB_LOGOUT
+  RMB_LOGOUT,
+  RMB_EXECUTE
 };
 
 class KRootWm: public QObject {
