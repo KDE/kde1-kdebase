@@ -1,5 +1,9 @@
 In kpanel-0.19:
 
+    Patchlevel 10:
+	-  fixed crashes when KDiskNavigator is not initialized but accessed.
+                -  fixed geometry of the control group in tiny style
+
     Patchlevel 9:
 	- AutoHideDelay, AutoHideTaskbarDelay, AutoHideTaskbarSpeed,
 	 	made HideShowAnimation optional (also fixed

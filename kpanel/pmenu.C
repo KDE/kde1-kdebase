@@ -264,7 +264,10 @@ void PMenuItem::exec()
   QDir d(getDirPath());
   QString cpath = d.canonicalPath() + "/" + real_name;
 
-  PFileMenu::updateRecentFiles(cpath);
+  if (! ready_for_event_loop){ // hack: avoid doing this when the menu is not fully parsed.
+      // otherwise PFileMenu::updateRecentFiles will segfault (Matthias)
+      PFileMenu::updateRecentFiles(cpath);
+  }
 
   KFM* kfm = new KFM;
   QString com = "file:";

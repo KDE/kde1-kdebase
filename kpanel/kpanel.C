@@ -177,7 +177,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     //panel: autoHide, speed, delay
     autoHide = false;
-    if (config->hasKey("AutoHide")) 
+    if (config->hasKey("AutoHide"))
       autoHide = (config->readEntry("AutoHide") == "on");
     else
       config->writeEntry("AutoHide", "off");
@@ -366,7 +366,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       tmp_push_button->toggle();
     connect(desktopbar, SIGNAL(clicked(int)), SLOT(desktop_change(int)));
 
-    taskbar_frame = new myFrame(autoHideTaskbar, autoHideTaskbarDelay, 0, 0, 
+    taskbar_frame = new myFrame(autoHideTaskbar, autoHideTaskbarDelay, 0, 0,
 			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
 
     connect(taskbar_frame, SIGNAL(showMe()), SLOT(showTaskbar()));
@@ -587,7 +587,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				   5 * box_width,
 // 				   w/2 - (2 * box_width + 1 + desktopbar->width())/2,
 				   margin,
-				   2*box_width + 1 + desktopbar->width() - 12,
+				   2*box_width + 1 + desktopbar->width() ,
 				   box_height);
 
 	
@@ -1310,7 +1310,7 @@ void kPanel::hidePanelLeft(){
     panelCurrentlyLeft = True;
 
     QRect geom = geometry();
-    
+
     if(hide_show_animation) {
       in_animation = true;
       if (orientation == vertical) {
@@ -1330,8 +1330,8 @@ void kPanel::hidePanelLeft(){
     QFrame::hide();
     move(geom.x(), geom.y());
     in_animation = false;
-    
-    
+
+
     showMiniPanel();
     panel_button_frame_standalone->show();
     panel_button_frame_standalone->raise();
@@ -1401,10 +1401,10 @@ void kPanel::hidePanelRight(){
     panelCurrentlyLeft = False;
 
     QRect geom = geometry();
-    
+
     if(hide_show_animation) {
       in_animation = true;
-      
+
       if (orientation == vertical) {
 	for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
 	  move(geom.x(), geom.y()+i);
