@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
-"PO-Revision-Date: 1998-06-10 13:31+0200\n"
+"PO-Revision-Date: 1998-06-25 18:48+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -137,11 +137,11 @@ msgstr "Nigdy nie sprawdzaj buforu"
 
 #: kfmgui.cpp:411
 msgid "Always save cache"
-msgstr "Zawsze zachowuj w buforze"
+msgstr "Zawsze zapisz w buforze"
 
 #: kfmgui.cpp:413
 msgid "Never save cache"
-msgstr "Nigdy nie zachowuj w buforze"
+msgstr "Nigdy nie zapisuj w buforze"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -227,7 +227,7 @@ msgid ""
 "Important desktop functionality will be lost"
 msgstr ""
 "Czy na pewno chcesz wyj¶æ?\n"
-"Funkcjonalno¶æ desktopu zostanie ograniczona"
+"Funkcjonalno¶æ ¶rodowiska zostanie ograniczona"
 
 #: kfmgui.cpp:1261
 msgid "About KFM"
@@ -821,7 +821,7 @@ msgid ""
 msgstr ""
 "Nie mo¿na wykonaæ polecenia.\n"
 "Ustawienie nowych odstêpów spowoduje przeniesienie\n"
-"niektórych ikona poza desktop."
+"niektórych ikona poza biurko."
 
 #: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
@@ -830,7 +830,7 @@ msgstr "B³±d wewnêtrzny: desktopDir jest b³êdny"
 #: root.cpp:718
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "B£¡D: Nie mo¿na odczytaæ katalogu desktopu '%s'"
+msgstr "B£¡D: Nie mo¿na odczytaæ katalogu biurka '%s'"
 
 #: root.cpp:909
 msgid "ERROR: Can not accept drop"
@@ -1150,7 +1150,7 @@ msgstr "Katalog domowy"
 
 #: kfmtree.cpp:398
 msgid "Desktop"
-msgstr "Desktop"
+msgstr "Biurko"
 
 #: kfmtree.cpp:400
 msgid "Root"
@@ -1210,7 +1210,7 @@ msgstr "Znane skojarzenia:"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
-msgstr "Nie zapomnij zachowaæ ustawieñ!"
+msgstr "Nie zapomnij zapisaæ ustawieñ!"
 
 #: kproxydlg.cpp:16
 msgid "Use proxy"
@@ -1308,7 +1308,7 @@ msgstr ""
 "Plik\n"
 "%s\n"
 "zosta³ zmieniony.\n"
-"Czy chcesz go zachowaæ?"
+"Czy chcesz go zapisaæ?"
 
 #: kfmexec/main.cpp:133
 msgid "KFM Question"

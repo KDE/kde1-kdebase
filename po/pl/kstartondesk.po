@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk \n"
 "POT-Creation-Date: 1998-05-06 20:59+0200\n"
-"PO-Revision-Date: 1998-04-16 19:25+0200\n"
+"PO-Revision-Date: 1998-06-25 18:54+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -24,7 +24,7 @@ msgstr "tytu³ "
 
 #: kstartondesk.C:80
 msgid "desktop"
-msgstr "desktop"
+msgstr "biurko"
 
 #: kstartondesk.C:82
 msgid "Example"

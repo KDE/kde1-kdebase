@@ -2,37 +2,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfontmanager \n"
 "POT-Creation-Date: 1998-04-16 00:51+0200\n"
-"PO-Revision-Date: 1998-05-06 21:15+0200\n"
+"PO-Revision-Date: 1998-06-25 18:56+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE Mened¿er Fontów"
+msgstr "KDE Mened¿er Czcionek"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "Fonty KDE"
+msgstr "Czcionki KDE"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Eksplorator fontów"
+msgstr "Eksplorator czcionek"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Lista fontów X11"
+msgstr "Lista czcionek X11"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Dostêpne fonty X11"
+msgstr "Dostêpne czcionki X11"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "Dostêpne fonty KDE"
+msgstr "Dostêpne czcionki KDE"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "Przyk³adowy Ci±g Znaków Mened¿era Fontów"
+msgstr "Przyk³adowy Ci±g Znaków Mened¿era Czcionek"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts istnieje, ale\n"
 "jest tylko do odczytu\n"
-"Nie mo¿na zachowaæ fontów KDE."
+"Nie mo¿na zapisaæ czcionek KDE."
 
 #: kfontlist.cpp:62
 msgid ""

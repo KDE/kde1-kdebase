@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-04-16 18:28+0100\n"
+"PO-Revision-Date: 1998-06-25 18:53+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -12,7 +12,7 @@ msgstr "&Panel"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr "&Desktopy"
+msgstr "&Biurka"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"

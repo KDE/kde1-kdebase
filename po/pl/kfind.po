@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"PO-Revision-Date: 1998-04-16 18:53+0200\n"
+"PO-Revision-Date: 1998-05-25 18:57+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -100,7 +100,7 @@ msgstr "Otwórz zawarto¶æ katalogu"
 
 #: kfindtop.cpp:239
 msgid "Save Search Results"
-msgstr "Zachowaj rezultaty szukania"
+msgstr "Zapisz rezultaty szukania"
 
 #: kftabdlg.cpp:71
 msgid "&Named:"
@@ -277,7 +277,7 @@ msgstr "%d plik(ów) znaleziono"
 
 #: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
-msgstr "Nie mo¿na zachowaæ wyników!"
+msgstr "Nie mo¿na zapisaæ wyników!"
 
 #: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
@@ -285,7 +285,7 @@ msgstr "Plik z rezultatami KFind"
 
 #: kfwin.cpp:282
 msgid "Results were saved to file\n"
-msgstr "Rezultaty zosta³y zachowane w pliku\n"
+msgstr "Rezultaty zosta³y zapisane do pliku\n"
 
 #: kfwin.cpp:297
 #, c-format

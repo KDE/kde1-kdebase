@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-20 13:21+0200\n"
+"PO-Revision-Date: 1998-06-25 18:51+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -244,11 +244,11 @@ msgstr "milisekundy"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr "Aktywne brzegi desktopu"
+msgstr "Aktywne brzegi biurka"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr "W³±cz aktywne brzegi desktopu"
+msgstr "W³±cz aktywne brzegi biurka"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
@@ -260,7 +260,7 @@ msgstr "Opó¿nienie prze³±czania:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr "Magiczne brzegi"
+msgstr "Aktywne brzegi"
 
 #: desktop.cpp:102
 msgid ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm \n"
 "POT-Creation-Date: 1998-06-18 22:21+0200\n"
-"PO-Revision-Date: 1998-06-20 13:37+0200\n"
+"PO-Revision-Date: 1998-06-25 18:50+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -64,11 +64,11 @@ msgstr "&Rozmiar"
 
 #: main.C:516
 msgid "&To desktop"
-msgstr "Wy¶lij na &desktop"
+msgstr "Wy¶lij na &biurko"
 
 #: main.C:518
 msgid "&Onto current desktop"
-msgstr "Wy¶lij na ten &desktop"
+msgstr "Wy¶lij na &te biurko"
 
 #: main.C:571
 msgid "One"
@@ -104,7 +104,7 @@ msgstr "Osiem"
 
 #: main.C:606
 msgid "Unnamed Desktop"
-msgstr "Nienazwany desktop"
+msgstr "Nienazwane biurko"
 
 #: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
@@ -139,7 +139,7 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Nastêpuj±ce aplikacje zawieraj± niezachowane dane,\n"
+"Nastêpuj±ce aplikacje zawieraj± niezapisane dane,\n"
 "które nie bêd± odzyskane przy nastêpnej sesji."
 
 #: logout.C:63
@@ -148,7 +148,7 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Nastêpuj±ce aplikacje nie bêd± przywrócone przy nastêpnej sesji,\n"
-"a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ wszystkie dane."
+"a jedynie ponownie uruchomione. Upewnij siê, ¿e zapisa³e¶ wszystkie dane."
 
 #: logout.C:74
 msgid ""
@@ -156,7 +156,7 @@ msgid ""
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 "Nastêpuj±ce aplikacje nie s± aplikacjami X11 i nie bêd± przywrócone przy\n"
-"nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ "
+"nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zapisa³e¶ "
 "wszystkie dane."
 
 #: taskmgr.C:107

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-20 13:35+0200\n"
+"PO-Revision-Date: 1998-06-25 19:01+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -20,7 +20,7 @@ msgstr "od"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Zmiany nie zachowane !"
+msgstr "Zmiany nie zapisane !"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
@@ -28,7 +28,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr ""
 "\n"
-"Czy chcesz zachowaæ zmiany ?"
+"Czy chcesz zapisaæ zmiany ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -111,7 +111,7 @@ msgid ""
 "Sorry ! You have to save your changes\n"
 "before you can drop this item on another window."
 msgstr ""
-"Niestety ! Musisz zachowaæ swoje zmiany\n"
+"Niestety ! Musisz zapisaæ swoje zmiany\n"
 "przed przeniesieniem tego elementu do innego okna."
 
 #: DesktopPathDialogData.cpp:37
