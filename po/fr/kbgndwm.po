@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbgndwm\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-02-14 14:00+0100\n"
+"Last-Translator: Francois-Xavier Duranceau <Francois-Xavier.Duranceau@loria.fr>\n"
+"Language-Team: Français <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Configuration de l'affichage"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Configuration du fond d'écran"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Arrière-plan commun"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Retirer du panneau"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Mosaïque"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Mirroir"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "Mosaïque centrée"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Centré"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "Centré sur un mur de briques"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "Centré dans une perspective"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "Centré avec aspect max"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "Mosaïque symétrique"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "Miroir symétrique"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Adapté"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Pas de papier peint"
