@@ -4,9 +4,11 @@
 Authors=Nicola Pero <n.pero@mi.flashnet.it>
 
 Comment=Italian Keyboard (Italy)
+Comment[da]=Italiensk tastatur (Italien)
 Comment[pt_BR]=Teclado Italiano (Itália)
 
 Language=Italian
+Language[da]=Italiensk
 Language[pt_BR]=Italiano
 
 Charset=iso-8859-1

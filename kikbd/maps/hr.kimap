@@ -4,9 +4,11 @@
 Authors=Vedran Vyroubal <vedran.vyroubal@fer.hr>,
 
 Comment=Croatian keyboard layout
+Comment[da]=Kroatisk tastaturudlægning
 Comment[pt_BR]=Disposição de teclado croata
 
 Language=Croatian
+Language[da]=Kroatisk
 Language[pt_BR]=Croata
 
 Label=Hr 

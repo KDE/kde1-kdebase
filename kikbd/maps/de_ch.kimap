@@ -3,9 +3,11 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
 Comment=German Keyboard (Switzerland)
+Comment[da]=Tysk tastatur (Svejts)
 Comment[pt_BR]=Teclado Alemão (Suíça)
 
 Language=German (Switzerland)
+Language[da]=Tysk (Svejts)
 Language[pt_BR]=Alemão (Suíça)
 
 Label=CH

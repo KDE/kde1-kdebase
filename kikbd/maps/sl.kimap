@@ -3,9 +3,11 @@
 Authors=Leon Kukovec <sniper@kibla.org>,
 
 Comment=Slovene Keyboard (Slovenia)
+Comment[da]=Slovensk tastatur (Slovenien)
 Comment[pt_BR]=Teclado Esloveno (Eslovênia)
 
 Language=Slovene
+Language[da]=Slovvensk
 Language[pt_BR]=Esloveno
 
 Charset=ISO-8859-2
