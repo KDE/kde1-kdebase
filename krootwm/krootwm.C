@@ -5,9 +5,6 @@
  *
  * DlgLineEntry (c) 1997 Torben Weis, weis@kde.org
  *
- * Sun Mar  1 16:47:37 MET 1998, Marcin Dalecki
- *     Inserted XSyncs before new KFM calls to prevent interferrence with
- *     qt's socket notifier aparatus.
  */
 
 #include <qdir.h>
@@ -208,7 +205,6 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  XUngrabPointer(qt_xdisplay(), CurrentTime);
 	  XSync(qt_xdisplay(), False);
 	  KWM::sendKWMCommand(QString("kpanel:go")+x+y);
-	  return TRUE;
 	}
 	else {
 	  int x, y, dx, dy;
@@ -216,13 +212,13 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  y = e->pos().y();
 	  dx = dy = 0;
 	  if (select_rectangle(x,y,dx,dy)){
-           XSync(qt_xdisplay(), false);
 	    KFM* kfm = new KFM; 
 	    kfm->selectRootIcons(x, y, dx, dy,
 				 (e->state() & ControlButton) == ControlButton);
 	    delete kfm;
 	  }
 	}
+	return TRUE;
       break;
       case MidButton:
 	generateWindowlist(mmb);
@@ -245,7 +241,6 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_ARRANGE_ICONS:
     {
-      XSync(qt_xdisplay(), false);
       KFM* kfm = new KFM; 
       kfm->sortDesktop();
       delete kfm;
@@ -256,7 +251,6 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_REFRESH_DESKTOP:
     {
-      XSync(qt_xdisplay(), false);
       KFM* kfm = new KFM; 
       kfm->refreshDesktop();
       KWM::refreshScreen();
@@ -303,26 +297,13 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   int cx, cy, rx, ry;
   int ox, oy;
   XEvent ev;
-  int ok;
-  // Only grab pointer, not the display
-  ok= XGrabPointer(qt_xdisplay(), QApplication::desktop()->winId(),
-		False, ButtonPressMask | ButtonReleaseMask |
-                PointerMotionMask |
-                EnterWindowMask | LeaveWindowMask,
-		GrabModeAsync, GrabModeAsync, None,
-		arrowCursor.handle(), CurrentTime);
-  if (ok != GrabSuccess)
-    return False;
-
   
-// Braindead: The Pointer was not grabbed, so its senseless to call this one
-/*  XChangeActivePointerGrab( qt_xdisplay(), 
+  XChangeActivePointerGrab( qt_xdisplay(), 
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
-			    arrowCursor.handle(), 0); */
-// Never do this, except for VERY good reasons (security, ...)
-//  XGrabServer(qt_xdisplay());
+			    arrowCursor.handle(), 0);
+  XGrabServer(qt_xdisplay());
   
   draw_selection_rectangle(x, y, dx, dy);
   
@@ -373,9 +354,9 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
   
-  // Ungrab the pointer: !!! Please look into eventFilter, as it is done
-  // there, too.
-  XUngrabPointer(qt_xdisplay(),CurrentTime);
+  XUngrabServer(qt_xdisplay());
+  XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
+  XUngrabPointer(qt_xdisplay(), CurrentTime);
   
   return True;
 }
@@ -476,7 +457,6 @@ void KRootWm::slotNewFile( int _id )
 	    }	    
 	    else
 	    {
-               XSync(qt_xdisplay(), false);
 		KFM* kfm = new KFM; 
 		kfm->refreshDesktop(); 
 		delete kfm;
