@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"POT-Creation-Date: 1998-12-02 13:03+0100\n"
 "PO-Revision-Date: 1998-11-27 19:47+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -41,6 +41,11 @@ msgstr "Colas"
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
 msgstr "Brillo"
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr "Ok"
 
 #: attraction.cpp:951
 msgid "About Attraction"
@@ -256,9 +261,8 @@ msgstr ""
 "Adaptado a kscreensave por Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Pantalla negra"
+msgstr "Pantalla Negra de la Muerte"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -450,12 +454,12 @@ msgstr ""
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
 
-#: main.cpp:384
+#: main.cpp:353
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "La opción %s no está disponible en esta arquitectura."
 
-#: main.cpp:422
+#: main.cpp:382
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -469,11 +473,11 @@ msgstr ""
 "Por favor consulte al administrador de su sistema.\n"
 "¡Dígale que necesita cambiar los derechos de los salvapantallas!"
 
-#: main.cpp:427
+#: main.cpp:387
 msgid "Shadow Passwords"
 msgstr "Contraseñas ocultas"
 
-#: main.cpp:472
+#: main.cpp:432
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -485,7 +489,7 @@ msgstr ""
 "mejor use klock.\n"
 "\n"
 
-#: main.cpp:580
+#: main.cpp:540
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -494,7 +498,7 @@ msgstr ""
 "Modo de uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "   [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:583
+#: main.cpp:543
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -679,11 +683,11 @@ msgstr ""
 "\n"
 "Adaptado a kscreensave por Martin Jones."
 
-#: saver.cpp:60 saver.cpp:191
+#: saver.cpp:60 saver.cpp:180
 msgid "Enter Password"
 msgstr "Contraseña"
 
-#: saver.cpp:121
+#: saver.cpp:118
 msgid "Failed"
 msgstr "Error"
 
@@ -874,6 +878,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
