@@ -407,6 +407,8 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // global. We must also test does local thing exist; if not we go
     // to pass2,
 
+    
+
 #define GLOBALMIME kapp->kde_mimedir().data()
 #define LOCALMIME (kapp->localkdedir() + "/share/mimelnk").data()
 
@@ -448,6 +450,14 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
       pass2 = false;
     }
 
+    // We must check here are we root; In that case whole storry is off
+    if (view->getGUI()->sumode)
+    {
+      debug ("I'm a rooooooot!!!!!!!!!!");
+      bindingDir = false;
+      pass2 = false;
+    }
+    
     if (bindingDir)
     {
       // Now check does tryPath exist at all
