@@ -93,6 +93,8 @@
 /* Define, if you have setupterm in -l(n)curses */
 #undef HAVE_SETUPTERM
 
+#undef KDEMAXPATHLEN
+
 
 #ifndef HAVE_BOOL
 #define HAVE_BOOL
