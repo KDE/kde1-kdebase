@@ -62,16 +62,6 @@ void SessionExit(void*,void*,void*);
 #include <login_cap.h>		/* BSDI-like login classes */
 #endif
 
-static struct passwd *pwd = NULL;
-
-#ifdef HAVE_LOGIN_CAP_H
-static login_cap_t *lc = NULL;
-#endif
-
-#if USESHADOW
-static struct spwd *swd = NULL;
-#endif
-
 #ifdef TEST_KDM
 
 int Verify( struct display*, struct greet_info*, struct verify_info*) {}
@@ -366,9 +356,6 @@ KGreeter::load_wm()
      endpwent();
      if (!pwd) return;
 
-     // Take care of bogus user name:
-     if( !pwd) return;
-
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
      QFile f(file);
@@ -379,16 +366,21 @@ KGreeter::load_wm()
      // set default wm
      int wm = 0;
      if ( f.open(IO_ReadOnly) ) {
-	  QTextStream t( &f );
-	  QString s;
-	  if ( !t.eof() ) s = t.readLine();
+	  char s[256];
+
+	  bool r = f.readLine(s, sizeof(s)) != -1;
 	  f.close();
 
-	  for (int i = 0; i < sessionargBox->count(); i++)
-	       if (strcmp(sessionargBox->text(i), s) == 0) {
-		    wm = i;
-		    break;
-	       }
+	  if (r) {
+	       // the readLine in qfile does not strip the terminating newline
+	       if (s[strlen(s) - 1] == '\n') s[strlen(s) - 1] = '\0';
+
+	       for (int i = 0; i < sessionargBox->count(); i++)
+		    if (strcmp(sessionargBox->text(i), s) == 0) {
+			 wm = i;
+			 break;
+		    }
+	  }
      }
      seteuid(0);
      sessionargBox->setCurrentItem(wm);
@@ -602,12 +594,17 @@ KGreeter::go_button_clicked()
 	  timer->start( 2000, true );
 	  return;
      }
+
+     if (restrict()) {
+	  setActiveWindow();
+	  cancel_button_clicked();
+	  return;
+     }
+
      // Set session argument:
      verify->argv = parseArgs( verify->argv, 
 			       sessionargBox->text( 
 				    sessionargBox->currentItem()));
-     if (restrict())
-       SessionExit (d, OBEYSESS_DISPLAY, FALSE);
 
      save_wm();
      //qApp->desktop()->setCursor( waitCursor);

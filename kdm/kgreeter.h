@@ -95,6 +95,13 @@ private:
      QPushButton*   cancelButton;
      QPushButton*   shutdownButton;
      QComboBox*     sessionargBox;
+
+     struct passwd *pwd;
+
+#ifdef HAVE_LOGIN_CAP_H
+     struct login_cap *lc;
+#endif
+
 #if USESHADOW
      struct spwd *swd;
 #endif
