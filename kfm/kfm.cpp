@@ -60,7 +60,7 @@ KFM::KFM()
 
     QStrList* list = pIconLoader->getDirList();
     list->clear();
-    QString tmp( kapp->kdedir() );
+    QString tmp( kapp->kdedir().data() );
     tmp += "/share/icons";
     list->append( tmp.data() );
     tmp = getenv( "HOME" );

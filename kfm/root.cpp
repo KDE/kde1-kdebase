@@ -1327,7 +1327,7 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	    // Multiple URLs ?
 	    if ( data.find( '\n' ) != -1 )
 	    {
-		QString tmp = kapp->kdedir();
+		QString tmp = kapp->kdedir().copy();
 		tmp += "/share/apps/kfm/pics/kmultiple.xpm";
 		pixmap2.load( tmp );
 		if ( pixmap2.isNull() )
