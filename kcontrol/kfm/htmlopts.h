@@ -91,6 +91,7 @@ private:
   KColorButton* m_pVLink;
   QCheckBox *cursorbox;
   QCheckBox *underlinebox;
+  QCheckBox *forceDefaultsbox;
   QColor bgColor;
   QColor textColor;
   QColor linkColor;

@@ -387,6 +387,13 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
     underlinebox->setMinimumSize(underlinebox->size());
     lay->addMultiCellWidget(underlinebox,9,9,1,3);
 
+    forceDefaultsbox = new QCheckBox(i18n("Always use my colors"),
+                                 this);
+
+    forceDefaultsbox->adjustSize();
+    forceDefaultsbox->setMinimumSize(forceDefaultsbox->size());
+    lay->addMultiCellWidget(forceDefaultsbox,10,10,1,3);
+
     loadSettings();
 
     setMinimumSize( 400, 180 );
@@ -425,6 +432,7 @@ void KColorOptions::loadSettings()
     vLinkColor = g_pConfig->readColorEntry( "VLinkColor", &HTML_DEFAULT_VLNK_COLOR);
     bool changeCursor = g_pConfig->readBoolEntry("ChangeCursor", false);
     bool underlineLinks = g_pConfig->readBoolEntry("UnderlineLinks", true);
+    bool forceDefaults = g_pConfig->readBoolEntry("ForceDefaultColors", false);
 
     m_pBg->setColor( bgColor );
     m_pText->setColor( textColor );
@@ -432,6 +440,7 @@ void KColorOptions::loadSettings()
     m_pVLink->setColor( vLinkColor );
     cursorbox->setChecked( changeCursor );
     underlinebox->setChecked( underlineLinks );
+    forceDefaultsbox->setChecked( forceDefaults );
 }
 
 void KColorOptions::defaultSettings()
@@ -447,6 +456,7 @@ void KColorOptions::defaultSettings()
     m_pVLink->setColor( vLinkColor );
     cursorbox->setChecked( false );
     underlinebox->setChecked( false );
+    forceDefaultsbox->setChecked( false );
 }
 
 void KColorOptions::saveSettings()
@@ -458,6 +468,7 @@ void KColorOptions::saveSettings()
     g_pConfig->writeEntry( "VLinkColor", vLinkColor );
     g_pConfig->writeEntry( "ChangeCursor", cursorbox->isChecked() );
     g_pConfig->writeEntry( "UnderlineLinks", underlinebox->isChecked() );
+    g_pConfig->writeEntry("ForceDefaultColors", forceDefaultsbox->isChecked() );
     g_pConfig->sync();
 }
 
