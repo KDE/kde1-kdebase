@@ -49,14 +49,11 @@ KBackground::~KBackground()
  */
 void KBackground::readSettings( const char *group )
 {
-    QString cFile;
-
     hasPm = false;
     name = group;
 
-    cFile = KApplication::localkdedir() + "/share/config/kdisplayrc";
-
-    KSimpleConfig config( cFile, true );
+    KConfig config(KApplication::kde_configdir() + "/kdisplayrc", 
+		   KApplication::localconfigdir() + "/kdisplayrc");
 
     config.setGroup( group );
 
