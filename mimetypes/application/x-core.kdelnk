@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Type=MimeType
 Icon=core.xpm
-Patterns=core;core.*;
+Patterns=core;core.*;*.core;
 MimeType=application/x-core
 Comment=Core dump
 Comment[ca]=Bolcat de nucli
