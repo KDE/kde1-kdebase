@@ -509,7 +509,7 @@ void KfmView::slotPopupEmptyTrashBin()
 	// Create list of all trash files
 	while ( ( ep = readdir( dp ) ) != 0L )
 	{
-	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L && strcmp( ep->d_name, ".directory" ) != 0L )
 	    {
 	      QString trashFile( ep->d_name );
 	      trashFile.detach();
