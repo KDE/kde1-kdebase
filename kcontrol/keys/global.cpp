@@ -208,7 +208,7 @@ void KGlobalConfig::slotSave( )
 	kc->aIt->toFirst();
 	while ( kc->aIt->current() ) {
 		config->writeEntry( kc->aIt->currentKey(), 
-			keyToString( kc->aIt->current()->aCurrentKeyCode ) );
+			keyToString( kc->aIt->current()->aConfigKeyCode ) );
 		++ ( *kc->aIt );
 	}
 	
@@ -376,8 +376,10 @@ void KGlobalConfig::slotPreviewScheme( int indx )
 	if ( indx < nSysSchemes ) {
 		removeBt->setEnabled( FALSE );
 		saveBt->setEnabled( FALSE );
-	} else
+	} else {
 		removeBt->setEnabled( TRUE );
+		saveBt->setEnabled( FALSE );
+	}
 	changed = TRUE;
 }
 

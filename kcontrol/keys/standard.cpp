@@ -78,21 +78,21 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
 	
 	topLayout->addLayout( stackLayout );
+//   non functional stuff - commented out by Duncan Haldane 1998-12-12
+//	QListBox *lbSchemes = new QListBox( this );
+//	lbSchemes->insertItem( i18n("Current scheme") );
+//	lbSchemes->insertItem( i18n("KDE default") );
+//	lbSchemes->insertItem( i18n("KDE lite") );
 	
-	QListBox *lbSchemes = new QListBox( this );
-	lbSchemes->insertItem( i18n("Current scheme") );
-	lbSchemes->insertItem( i18n("KDE default") );
-	lbSchemes->insertItem( i18n("KDE lite") );
+//	lbSchemes->adjustSize();
+//	lbSchemes->setMinimumHeight( 2*lbSchemes->height() );
 	
-	lbSchemes->adjustSize();
-	lbSchemes->setMinimumHeight( 2*lbSchemes->height() );
+//	QLabel *label = new QLabel( lbSchemes, i18n("&Key scheme"), this );
+//	label->adjustSize();
+//	label->setFixedHeight( label->height() );
 	
-	QLabel *label = new QLabel( lbSchemes, i18n("&Key scheme"), this );
-	label->adjustSize();
-	label->setFixedHeight( label->height() );
-	
-	stackLayout->addWidget( label );
-	stackLayout->addWidget( lbSchemes );
+//	stackLayout->addWidget( label );
+//	stackLayout->addWidget( lbSchemes );
 	
 	dict = keys->keyDict();
 	
@@ -105,7 +105,7 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
  	topLayout->addWidget( kc, 10 );
 	
 	topLayout->activate();
-	lbSchemes->setCurrentItem( 0 );
+//	lbSchemes->setCurrentItem( 0 );
 }
 
 KStdConfig::~KStdConfig (){
