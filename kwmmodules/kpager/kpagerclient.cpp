@@ -689,6 +689,12 @@ void KPagerClient::toggle1ClickMode()
     Desktop::use1ClickMode=(Desktop::use1ClickMode)?false:true;
 }
 
+void KPagerClient::toggleShowName()
+{
+    desktop[1]->toggleShowName();
+    updateRects();
+}
+
 
 void KPagerClient::updateDesk(int i)
 {

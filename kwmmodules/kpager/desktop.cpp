@@ -43,9 +43,9 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     resizingWin=0;
     
     QPainter *qp=new QPainter(this);
-    tmpScreen=new QPixmap;
     headerHeight=qp->fontMetrics().height()+5;
     delete qp;
+    tmpScreen=new QPixmap;
     
     backgroundPixmap=0L;
     bigBackgroundPixmap=0L;
@@ -359,7 +359,6 @@ int Desktop::getHeaderHeight(void)
 {
     return headerHeight;
 }
-int Desktop::headerHeight=25;
 
 
 void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
@@ -430,12 +429,16 @@ void Desktop::paintEvent(QPaintEvent *)
     QRect tmp;
     int x=0;
     int y=getHeaderHeight();
-    painter->fillRect(0,0,width(),y,QColor(192,192,192));
+    if (Desktop::showName)
+    {
+        painter->fillRect(0,0,width(),y,QColor(192,192,192));
     
-    drawSunkRect(painter,2,2,10,16,desktopActived ? true : false);
-    painter->setPen(QColor(0,0,0));
-    painter->setFont(*desktopfont);
-    painter->drawText(20,getHeaderHeight()*3/4,name(),strlen(name()));
+        drawSunkRect(painter,2,2,10,16,desktopActived ? true : false);
+        painter->setPen(QColor(0,0,0));
+        painter->setFont(*desktopfont);
+        painter->drawText(20,getHeaderHeight()*3/4,name(),strlen(name()));
+    }
+
     
     WindowProperties *wp=window_list->first();
     painter->setClipRect(x,y,width()-x,height()-y);
@@ -1314,9 +1317,27 @@ void Desktop::setDrawMode(int mode)
     update();
 }
 
+void Desktop::toggleShowName(void)
+{
+    if (showName)
+    {
+        headerHeight=0;
+	showName=false;
+    }
+    else
+    {
+        QPainter *qp=new QPainter(this);
+        headerHeight=(fontMetrics()).height()+5;
+        delete qp;
+	showName=true;
+    }
+}
+
 KWMModuleApplication *Desktop::kwmmapp=NULL;
+int Desktop::headerHeight=25;
 Window Desktop::hilitwin=0;
 bool Desktop::use1ClickMode=true;
+bool Desktop::showName=true;
 QPixmap *Desktop::commonbigBackgroundPixmap=0L;
 int Desktop::commonbackPixmapWidth=0;
 int Desktop::commonbackPixmapHeight=0;

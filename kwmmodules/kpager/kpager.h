@@ -73,6 +73,7 @@ public slots:
     void options_toggleGlobalDesktop();
     void options_2Rows();
     void options_oneClickMode();
+    void options_showDesktopName();
     void options_drawPlain();
     void options_drawIcon();
     void options_drawPixmap();

@@ -1,3 +1,9 @@
+* Fri Dic 11 7:20:00 CEST 1998
+
+Fixed CTRL-Q when menubar was hidden
+Added left/right arrow movement
+Now it's possible to hide desktop names
+
 * Thu Dic 10 7:20:00 CEST 1998
 
 Added sgml documentation

@@ -91,6 +91,7 @@ public:
     bool areArrowsVisible(void) { return right->isVisible(); }
     bool is2Rows(void) { return use2Rows; }
     bool is1ClickMode(void) { return Desktop::use1ClickMode; }  
+    bool isShowingDesktopName(void) { return Desktop::showName; }  
  
     int getNumberOfDesktops(void) { return numberofDesktops; }; 
     const char *getDesktopName(int i); 
@@ -119,6 +120,7 @@ public slots:
     void updateDesk(int i);
     void toggle2Rows();
     void toggle1ClickMode();
+    void toggleShowName();
 
 };
 

@@ -73,12 +73,18 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     kKeysAccel->connectItem("Toggle Global Desktop", this, SLOT(options_toggleGlobalDesktop()));
     kKeysAccel->insertItem(i18n("Toggle Menubar"), "Toggle Menubar", Key_Space );
     kKeysAccel->connectItem("Toggle Menubar", this, SLOT(options_toggleMenuBar()));
-    
+    kKeysAccel->connectItem(KAccel::Quit, this, SLOT( file_quit() ) );  
+    kKeysAccel->insertItem(i18n("Move Right"), "Move Right", Key_Right );  
+    kKeysAccel->connectItem("Move Right", kpagerclient, SLOT(singleClickR()));
+    kKeysAccel->insertItem(i18n("Move Left"), "Move Left", Key_Left );  
+    kKeysAccel->connectItem("Move Left", kpagerclient, SLOT(singleClickL()));
     kKeysAccel->readSettings();
     
     m_file = new QPopupMenu;
     m_file->setCheckable( TRUE );
-    m_file->insertItem( i18n("&Quit"), this, SLOT(file_quit()), CTRL+Key_Q );
+    m_file->insertItem( i18n("&Quit"), this, SLOT(file_quit()) );
+    kKeysAccel->changeMenuAccel(m_file, 1, KAccel::Quit ); 
+
     m_options = new QPopupMenu;
     if (kpagerclient->isVisibleGlobalDesktop())
         m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
@@ -95,9 +101,14 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     m_options->insertItem(i18n("&2 Rows"), this, SLOT(options_2Rows()));
     m_options->setId(2,2);
     m_options->setItemChecked(2,FALSE);
-    m_options->insertItem(i18n("One Click change Desktop"), this, SLOT(options_oneClickMode()));
+    m_options->insertItem(i18n("&One Click change Desktop"), this, SLOT(options_oneClickMode()));
     m_options->setId(3,3);
     m_options->setItemChecked(3,TRUE);
+    if (kpagerclient->isShowingDesktopName())
+        m_options->insertItem(i18n("Hide Desktop &Names"), this, SLOT(options_showDesktopName()) );
+    else
+        m_options->insertItem(i18n("Show Desktop &Names"), this, SLOT(options_showDesktopName()) );
+    m_options->setId(4,4);
     m_options->insertSeparator();
     m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );
@@ -145,7 +156,7 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     setGeometry(kapp->getConfig()->readRectEntry("Geometry",&r));
     
     readProperties(kcfg);
-    
+
 }
 
 KPager::~KPager()
@@ -224,6 +235,22 @@ void KPager::options_oneClickMode()
     kapp->getConfig()->writeEntry("use1ClickToChangeDesktop",kpagerclient->is1ClickMode());
     kapp->getConfig()->sync();
 };
+
+void KPager::options_showDesktopName()
+{
+    kpagerclient->toggleShowName();
+  
+    if (kpagerclient->isShowingDesktopName()) 
+    {
+        m_options->changeItem(i18n("Hide Desktop &Names"), 4); 
+    }
+    else 
+    {
+        m_options->changeItem(i18n("Show Desktop &Names"), 4); 
+    }
+    kapp->getConfig()->writeEntry("showDesktopName",kpagerclient->isShowingDesktopName());
+    kapp->getConfig()->sync();
+}; 
 
 void KPager::options_drawPlain()
 {
@@ -324,6 +351,17 @@ void KPager::readProperties(KConfig *kcfg)
         if (kpagerclient->is1ClickMode())
             options_oneClickMode();
     }
+
+    if (kcfg->readBoolEntry("showDesktopName"))
+    {
+        if (!kpagerclient->isShowingDesktopName())
+            options_showDesktopName();
+    }
+    else
+    {
+        if (kpagerclient->isShowingDesktopName())
+            options_showDesktopName();
+    }
     
 }
 
@@ -347,8 +385,17 @@ QPopupMenu *KPager::getOptionlikeMenu(void)
     kKeysAccel->changeMenuAccel(m_options,2, "Toggle Menubar");
     m_options->insertItem(i18n("&2 Rows"), this, SLOT(options_2Rows()));
     m_options->setId(2,2);
-    if (kpagerclient->is2Rows()) m_options->setItemChecked(2,TRUE);
-    else m_options->setItemChecked(2,FALSE);
+    m_options->setItemChecked(2,(kpagerclient->is2Rows())? TRUE : FALSE);
+    m_options->insertItem(i18n("One Click change Desktop"), this, SLOT(options_oneClickMode()));
+    m_options->setId(3,3);
+    m_options->setItemChecked(3,(kpagerclient->is1ClickMode())? TRUE : FALSE);
+//    m_options->insertItem(i18n("Show Desktop Names"), this, SLOT(options_showDesktopName()));
+    if (kpagerclient->isShowingDesktopName())
+        m_options->insertItem(i18n("Hide Desktop &Names"), this, SLOT(options_showDesktopName()) );
+    else
+        m_options->insertItem(i18n("Show Desktop &Names"), this, SLOT(options_showDesktopName()) );
+    m_options->setId(4,4);
+//    m_options->setItemChecked(4,(kpagerclient->isShowingDesktopName())? TRUE : FALSE);
     m_options->insertSeparator();
     QPopupMenu *m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );

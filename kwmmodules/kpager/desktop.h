@@ -60,7 +60,6 @@ private:
     static Window hilitwin;
     bool mousepressed;
     bool resizing;
-//    WindowProperties *resizingWP;
     Window resizingWin;
 
     int screen_width, screen_height;
@@ -154,7 +153,7 @@ public:
     void setDrawMode(int mode); // sets the mode to draw windows
 
     static int getHeaderHeight(void);
-    
+    void toggleShowName(void);
     virtual void paintEvent(QPaintEvent *);
 
     virtual void mousePressEvent (QMouseEvent *e);
@@ -173,6 +172,8 @@ public:
     static bool use1ClickMode;   // true if one click should change desktop
 				// or false if it's needed a double click 
                                 // (a doubleclick will work always)
+    static bool showName;
+
 signals:
     void moveWindow(Window w, int desktop, int x, int y, int origdesk);
     void switchToDesktop(int id);
