@@ -215,7 +215,7 @@ main( int argc, char ** argv )
 	s.prepend( "#define TITLE_FONT " );
 	preproc += s;
 
-	s = "FONT, BOLD_FONT=BOLD, ITALIC_FONT=ITALIC";
+	s = "FONT,BOLD_FONT=BOLD,ITALIC_FONT=ITALIC";
 	s += "\n";
         s.prepend( "#define FONTLIST ");
 	preproc += s;
