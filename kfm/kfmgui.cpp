@@ -1649,13 +1649,10 @@ void KfmGui::slotViewFrameSource()
 {
     if ( !view->getActiveView() )
 	return;
-    
     QString url = view->getActiveView()->getJobURL();
     if (url.isEmpty())
         url = view->getActiveView()->getURL();
-    QString cmd;
-    cmd << "kedit \"" << url  << "\"";
-    KMimeBind::runCmd( cmd );
+    showSource ( url.data() );
 }
 
 void KfmGui::slotViewDocumentSource()
@@ -1663,6 +1660,16 @@ void KfmGui::slotViewDocumentSource()
     QString url = view->getJobURL();
     if (url.isEmpty())
         url = view->getURL();
+    showSource ( url.data() );
+}
+
+void KfmGui::showSource ( const char * url )
+{
+    QString tmp = view->getHTMLCache()->isCached( url );
+    // if cache is enabled and it contains the requested URL
+    // use it.  ( Dawit A. )
+    if ( view->getHTMLCache()->isEnabled() && tmp != 0L )
+        url = tmp;
     QString cmd;
     cmd << "kedit \"" << url << "\"";
     KMimeBind::runCmd( cmd );

@@ -515,6 +515,13 @@ protected slots:
     void slotTextSelected( KHTMLView *, bool );
     
 protected:
+    /**
+     * Allow slotViewDocumentSource() and slotViewFrameSource()
+     * to determine if the document whose source is requested
+     * is in the cache.  If found that address is sent to the
+     * document source viewer application.  (Dawit A.)
+     */
+    void showSource ( const char * url );
 
     /**
      * Closes the window and deletes it.
