@@ -188,7 +188,7 @@ void KFontChooser::setFont( QFont start_fnt, bool fixed )
 void KFontChooser::getFontList( QStrList &list, const char *pattern )
 {
 	int num;
-	char **xFonts = XListFonts( qt_xdisplay(), pattern, 1000, &num );
+	char **xFonts = XListFonts( qt_xdisplay(), pattern, 2000, &num );
 
 	for ( int i = 0; i < num; i++ )
 	{
