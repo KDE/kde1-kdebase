@@ -22,8 +22,11 @@
 # All config keys, that do not start with "Config", are interpreted as a 
 # mapping from the theme package to the config file. The key is the same
 # as in the theme packages and must not be changed. The value has the
-# following format:  [configKey][:fileName][!]
+# following format:  themercKey=[configKey][:fileName][!]
 # All parts of this format are optional.
+#
+# themercKey is the name of the entry in the .themerc files. This is also
+# the key of the config entries in this file.
 #
 # If configKey is given then it is the name of the key in the config file.
 # If configKey is '-' then no key is written.  Otherwise the same key as 
@@ -111,20 +114,13 @@ Contrast=!
 #
 [Colors-3]
 ConfigGroup=General
-ConfigNextGroup=Colors-kvt
+ConfigNextGroup=
 foreground=!
 selectForeground=!
 selectBackground=!
 background=!
 windowForeground=!
 windowBackground=!
-#
-[Colors-kvt]
-ConfigFile=kvtrc
-ConfigNextGroup=Colors-konsole
-ConfigGroup=kvt
-terminalForeground=foreground!
-terminalBackground=background!
 #
 #-----------------------------------------------------------------------------
 [Sounds]
@@ -353,22 +349,34 @@ ConfigActivateCmd=kfmclient configure
 RootIconTextStyle=Style!
 RootIconTextForeground=Foreground!
 RootIconTextBackground=Background!
-
 #
 #-----------------------------------------------------------------------------
-# This group is handled special. Here are all the icons that do not match
+[File Manager]
+ConfigFile=kfmrc
+ConfigAppDir=wallpapers
+ConfigGroup=KFM HTML Defaults
+ConfigActivateCmd=kfmclient configure
+ConfigAbsolutePaths=true
+backgroundImage=BgImage
+htmlBackground=BgColor!
+htmlForeground=TextColor!
+htmlLinks=LinkColor!
+htmlFollowedLinks=VLinkColor!
+#
+#-----------------------------------------------------------------------------
+# This group is special. Here are all the icons that do not match
 # exactly one kdelnk icon entry. The icon name is the name of the icon
 # it will have when it is copied to ~/.kde/share/icons and 
 # ~/.kde/share/icons/mini
 # If a path is given then the path will be treated relative to ~/.kde/share,
 # and the icons will be copied there.
 # A colon separates the name of the icon from the name of the mini
-# icon.
+# icon. If the mini icon is '-' then no mini icon will be installed.
 [Icons]
 ConfigActivateCmd=restart kfm
 Trash=kfm_trash.xpm
 TrashFull=kfm_fulltrash.xpm
 PanelGo=apps/kpanel/pics/go.xpm:apps/kpanel/pics/mini/go.xpm
-PanelExit=apps/kpanel/pics/exit.xpm
-PanelKey=apps/kpanel/pics/key.xpm
+PanelExit=apps/kpanel/pics/exit.xpm:-
+PanelKey=apps/kpanel/pics/key.xpm:-
 PanelWindowList=apps/kpanel/pics/window_list.xpm:apps/kpanel/pics/mini/window_list.xpm

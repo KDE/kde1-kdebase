@@ -34,8 +34,13 @@ selectBackground=49,49,156
 selectForeground=255,255,255
 windowBackground=255,255,255
 windowForeground=0,0,0
-terminalForeground=white
-terminalBackground=black
+#-----------------------------------------------------------------------------
+[File Manager]
+#backgroundImage=desktop2.jpg
+#htmlBackground=0,0,0
+#htmlForeground=0,0,255
+#htmlLinks=255,0,0
+#htmlFollowedLinks=0,255,0
 #-----------------------------------------------------------------------------
 [Window Border]
 shapePixmapTop=wm_top.xpm

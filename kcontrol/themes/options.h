@@ -48,11 +48,11 @@ protected:
 protected:
   QCheckBox *mCbxPanel, *mCbxIcons, *mCbxColors, *mCbxWindowBorder;
   QCheckBox *mCbxWindowTitlebar, *mCbxWallpapers, *mCbxSounds;
-  QCheckBox *mCbxWindowButtonLayout, *mCbxGimmick;
+  QCheckBox *mCbxWindowButtonLayout, *mCbxGimmick, *mCbxKfm;
   QCheckBox *mCbxOverwrite;
   QLabel *mStatPanel, *mStatIcons, *mStatColors, *mStatWindowBorder;
   QLabel *mStatWindowTitlebar, *mStatWallpapers, *mStatSounds;
-  QLabel *mStatWindowButtonLayout, *mStatGimmick;
+  QLabel *mStatWindowButtonLayout, *mStatGimmick, *mStatKfm;
   QGridLayout *mGrid;
   bool mGui;
   int mGridRow;

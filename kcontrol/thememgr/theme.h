@@ -86,7 +86,7 @@ public:
   /** Theme packet installation options */
   bool instPanel, instIcons, instColors, instWindowBorder;
   bool instWindowTitlebar, instWallpapers, instSounds;
-  bool instWindowButtonLayout, instWindowGimmick;
+  bool instWindowButtonLayout, instWindowGimmick, instKfm;
   bool instOverwrite;
 
   /** Clear config contents */

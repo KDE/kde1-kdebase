@@ -34,7 +34,7 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
   connect(theme, SIGNAL(apply()), SLOT(slotThemeApply()));
 
-  mGrid = new QGridLayout(this, 15, 6, 10, 6);
+  mGrid = new QGridLayout(this, 16, 6, 10, 6);
   mGridRow = 0;
 
   mCbxOverwrite = new QCheckBox(i18n("Uninstall parts of previous theme"),
@@ -67,6 +67,7 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
 			&mStatGimmick);
   mCbxWindowButtonLayout = newLine("Window Button Layout", 
 		i18n("Window Button Layout"), &mStatWindowButtonLayout);
+  mCbxKfm = newLine("File Manager", i18n("File Manager"), &mStatKfm);
 
   btn = new QPushButton(i18n("Clear"), this);
   btn->setFixedSize(btn->sizeHint());
@@ -148,6 +149,7 @@ void Options::applySettings()
   theme->instSounds = mCbxSounds->isChecked();
   theme->instIcons = mCbxIcons->isChecked();
   theme->instWindowGimmick = mCbxGimmick->isChecked();
+  theme->instKfm = mCbxKfm->isChecked();
   theme->instOverwrite = !mCbxOverwrite->isChecked();
 }
 
@@ -164,6 +166,7 @@ void Options::slotInvert()
   mCbxSounds->setChecked(!mCbxSounds->isChecked());
   mCbxIcons->setChecked(!mCbxIcons->isChecked());
   mCbxGimmick->setChecked(!mCbxGimmick->isChecked());
+  mCbxKfm->setChecked(!mCbxKfm->isChecked());
   applySettings();
 }
 
@@ -180,6 +183,7 @@ void Options::slotClear()
   mCbxSounds->setChecked(false);
   mCbxIcons->setChecked(false);
   mCbxGimmick->setChecked(false);
+  mCbxKfm->setChecked(false);
   applySettings();
 }
 
@@ -252,6 +256,7 @@ void Options::updateStatus(void)
   updateStatus("Sounds", mStatSounds);
   updateStatus("Icons", mStatIcons);
   updateStatus("Gimmick", mStatGimmick);
+  updateStatus("File Manager", mStatKfm);
 }
 
 
@@ -271,6 +276,7 @@ void Options::writeConfig()
   cfg->writeEntry("window-gimmick", mCbxGimmick->isChecked());
   cfg->writeEntry("wallpapers", mCbxWallpapers->isChecked());
   cfg->writeEntry("sounds", mCbxSounds->isChecked());
+  cfg->writeEntry("file-manager", mCbxKfm->isChecked());
 }
 
 
@@ -290,6 +296,7 @@ void Options::readConfig()
   mCbxGimmick->setChecked(cfg->readBoolEntry("window-gimmick", true));
   mCbxWallpapers->setChecked(cfg->readBoolEntry("wallpapers", true));
   mCbxSounds->setChecked(cfg->readBoolEntry("sounds", true));
+  mCbxKfm->setChecked(cfg->readBoolEntry("file-manager", true));
   applySettings();
 }
 

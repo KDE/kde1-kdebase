@@ -868,13 +868,16 @@ int Theme::installIcons(void)
     else value = iconDir + destName;
     if (installFile(icon, value)) installed++;
 
-    if (destNameMini.find('/')>=0) 
+    if (destNameMini != "-")
     {
-      mkdirhier(pathOf(destNameMini),localShareDir);
-      value = localShareDir + destNameMini;
+      if (destNameMini.find('/')>=0) 
+      {
+	mkdirhier(pathOf(destNameMini),localShareDir);
+	value = localShareDir + destNameMini;
+      }
+      else value = miniIconDir + destNameMini;
+      if (installFile(miniIcon, value)) installed++;
     }
-    else value = miniIconDir + destNameMini;
-    if (installFile(miniIcon, value)) installed++;
   }
 
   // Look if there is anything to do after installation
@@ -1006,6 +1009,7 @@ void Theme::install(void)
   if (instWindowButtonLayout) installGroup("Window Button Layout");
   if (instWindowGimmick) installGroup("Window Gimmick");
   if (instWallpapers) installGroup("Display");
+  if (instKfm) installGroup("File Manager");
   if (instColors) installGroup("Colors");
   if (instIcons) installIcons();
 

@@ -1,3 +1,10 @@
+1999-01-23  Stefan Taferner  <taferner@kde.org> (V0.8)
+
+	* Removed kvt color entries.
+	* Added section 'File Manager' that contains
+	colors and common background of kfm -- this needs a
+	patched kfm which is not yet commited. 
+
 1999-01-17  Stefan Taferner  <taferner@kde.org> (V0.7.3)
 
 	* Removed automatic stretching of window borders.

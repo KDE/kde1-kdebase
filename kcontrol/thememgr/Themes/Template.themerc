@@ -110,6 +110,16 @@ terminalForeground=
 terminalBackground=
 #
 #-----------------------------------------------------------------------------
+[File Manager]
+# Kfm's common background image:
+backgroundImage=
+# Kfm's colors:
+htmlBackground=
+htmlForeground=
+htmlLinks=
+htmlFollowedLinks=
+#
+#-----------------------------------------------------------------------------
 [Window Border]
 shapePixmapTop=
 shapePixmapBottom=
