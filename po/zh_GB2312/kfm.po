@@ -1026,7 +1026,7 @@ msgstr ""
 "建立套接字"
 
 #: kiojob.cpp:1234 kiojob.cpp:1365
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1273,7 +1273,7 @@ msgstr "别忘了保存设置!"
 #: kproxydlg.cpp:16
 #, fuzzy
 msgid "Use proxy"
-msgstr "使用者"
+msgstr "使用代理"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1296,7 +1296,7 @@ msgid "&Colors"
 msgstr "颜色[&C]"
 
 #: kkfmoptdlg.cpp:30
-#, fuzzy
+#
 msgid "&Other"
 msgstr "其他[&O]"
 

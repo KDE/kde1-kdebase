@@ -567,7 +567,7 @@ msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Text für Desktop-Icons transparent unterlegen"
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
