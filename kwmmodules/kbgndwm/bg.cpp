@@ -97,90 +97,76 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   QString tmpf;
   ksprintf( &tmpf, "/desktop%drc", num);
 
-  bool first_time = false;
-
-  QFileInfo fi( KApplication::localconfigdir() + tmpf );
-  if ( ! fi.exists() ){
-    tmpf = "/kcmdisplayrc";
-    first_time = true;
-  }
-
   KConfig config(KApplication::kde_configdir() + tmpf,
 		  KApplication::localconfigdir() + tmpf);
 
-  if ( !first_time ) {
-    config.setGroup( "Common" );
-    randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE );
+  config.setGroup( "Common" );
+  randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE );
 
-    if ( randomMode ) {
-      if ( !timerRandom ) {
-	timerRandom = new QTimer( this );
-	connect(timerRandom, SIGNAL(timeout()), SLOT(randomize()));
-      }
-      timerRandom->stop();
-      timerRandom->start( config.readNumEntry( "Timer",
-                                              DEFAULT_RANDOM_TIMER ) * 1000 );
-      int count = config.readNumEntry( "Count", DEFAULT_RANDOM_COUNT );
-      bool inorder = config.readBoolEntry( "InOrder", DEFAULT_RANDOM_IN_ORDER);
-      useDir = config.readBoolEntry( "UseDir", DEFAULT_RANDOM_USE_DIR );
+  if ( randomMode ) {
+    if ( !timerRandom ) {
+      timerRandom = new QTimer( this );
+      connect(timerRandom, SIGNAL(timeout()), SLOT(randomize()));
+    }
+    timerRandom->stop();
+    timerRandom->start( config.readNumEntry( "Timer",
+                                            DEFAULT_RANDOM_TIMER ) * 1000 );
+    int count = config.readNumEntry( "Count", DEFAULT_RANDOM_COUNT );
+    bool inorder = config.readBoolEntry( "InOrder", DEFAULT_RANDOM_IN_ORDER);
+    useDir = config.readBoolEntry( "UseDir", DEFAULT_RANDOM_USE_DIR );
 
-      if ( useDir ) {
-	QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
-	QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
+    if ( useDir ) {
+      QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
+      QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
 
-	QStrList *list = (QStrList *)d.entryList();
+      QStrList *list = (QStrList *)d.entryList();
 
-	count = list->count();
-	if ( inorder ) {
-	  randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
-	  randomDesk++;
-	  if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
-	} else if ( count > 0 )
-	  randomDesk = random() % count;
-
-	config.writeEntry( "Item", randomDesk );
-	config.sync();
-
-	color1 = QColor(DEFAULT_COLOR_1);
-	gfMode = DEFAULT_COLOR_MODE;
-	orMode = DEFAULT_ORIENTATION_MODE;
-	wpMode = DEFAULT_WALLPAPER_MODE;
-	bUseWallpaper = true;
-
-	wallpaper = d.absPath() + "/" + list->at( randomDesk );
-	name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
-		      wpMode, gfMode, orMode, color1.red(), color1.green(),
-		      color1.blue(), color2.red(), color2.green(), color2.blue());
-
-	hasPm = true;
-
-	// this is mainly for kpager, so that we can at anytime find out how desktop
-	//          really looks
-	config.writeEntry( "Item", randomDesk );
-	config.sync();
-
-	return;
-      }
-      else if ( inorder ) {
-	randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
+      count = list->count();
+      if ( inorder ) {
+        randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
 	randomDesk++;
 	if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
+      } else if ( count > 0 ) {
+        randomDesk = random() % count;
       }
-      else if ( count > 0 )
-	randomDesk = random() % count;
 
+      color1 = QColor(DEFAULT_COLOR_1);
+      gfMode = DEFAULT_COLOR_MODE;
+      orMode = DEFAULT_ORIENTATION_MODE;
+      wpMode = DEFAULT_WALLPAPER_MODE;
+      bUseWallpaper = true;
+
+      wallpaper = d.absPath() + "/" + list->at( randomDesk );
+      name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
+                    wpMode, gfMode, orMode, color1.red(), color1.green(),
+		    color1.blue(), color2.red(), color2.green(), color2.blue());
+
+      hasPm = true;
+
+      // this is mainly for kpager, so that we can at anytime find out how desktop
+      //          really looks
+      config.writeEntry( "Item", randomDesk );
+      config.sync();
+
+      return;
     }
-    else
+    else if ( inorder ) {
+      randomDesk = config.readNumEntry( "Item", DEFAULT_DESKTOP );
+      randomDesk++;
+      if ( randomDesk >= count ) randomDesk = DEFAULT_DESKTOP;
+    }
+    else if ( count > 0 ) {
+      randomDesk = random() % count;
+    }
+    else {
       randomDesk = DEFAULT_DESKTOP;
-
-    // this is mainly for kpager, so that we can at anytime find out how desktop
-    //          really looks
-    config.writeEntry( "Item", randomDesk );
-    config.sync();
+    }
   }
-  else
-    randomDesk = num + 1;
 
+  // this is mainly for kpager, so that we can at anytime find out how desktop
+  //          really looks
+  config.writeEntry( "Item", randomDesk );
+  config.sync();
 
   ksprintf( &tmpf, "Desktop%d", randomDesk);
   config.setGroup( tmpf );
