@@ -50,6 +50,9 @@
 /* define if you have the PAM lib. Now, we have two different users, this will change */
 #undef HAVE_PAM_LIB
 
+/* define if you have a PAM implementation with the pam_misc library */
+#undef HAVE_PAM_MISC
+
 /* define if you have shadow library */
 #undef HAVE_SHADOW_LIB
 

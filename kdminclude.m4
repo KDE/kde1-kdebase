@@ -94,6 +94,8 @@ if test "$pam_support" = "yes"; then
   AC_CHECK_LIB(pam, main, [PASSWDLIB="-lpam -ldl"
   AC_DEFINE_UNQUOTED(HAVE_PAM_LIB)],
   [],-ldl)
+  AC_CHECK_LIB(pam_misc, main, PASSWDLIB="-lpam_misc $PASSWDLIB"
+			       AC_DEFINE_UNQUOTED(HAVE_PAM_MISC))
 fi
 
 if test -z "$PASSWDLIB" && test "$shadow_support" = "yes"; then

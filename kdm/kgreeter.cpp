@@ -90,35 +90,19 @@ Display                 ** dpy;
 struct verify_info      *verify;
 struct greet_info       *greet;
 
-// Here we store a number for the seed:
-//static int event_sum;
+void 
+KLoginLineEdit::focusOutEvent( QFocusEvent *e) 
+{
+     emit lost_focus();
+     QLineEdit::focusOutEvent( e);
+}
 
-class MyApp:public KApplication {
+class MyApp : public KApplication {
 public:
      MyApp( int &argc, char **argv );
      virtual ~MyApp();
      virtual bool x11EventFilter( XEvent * );
-
-     /* Calculate a "sum" of the recorded events
-      * The "sum" is caclulated in a somewhat ad hoc
-      * way by starting with the value of a pointer
-      * and shifting and xor'ing events to it. See
-      * the implementation.
-      * 
-      * If someone has a more "proven" way to do this,
-      * please contact me /stefh
-      *
-      * NOTE: This is disabled now. We read /dev/mem instead!
-      * /stefh
-      */
-     //static int getSum() { return event_sum;}
-private:
-     // Add one timestamp
-     //void addEvent( int);
-     //static int event_sum;
 };
-
-//int MyApp::event_sum = 42;
 
 MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv)
 {}
@@ -128,12 +112,6 @@ MyApp::~MyApp()
 
 bool 
 MyApp::x11EventFilter( XEvent * ev){
-#if 0 
-    if( ev->type == KeyPress ||
-	 ev->type == KeyRelease ) addEvent( ((XKeyEvent*)ev)->time);
-     if( ev->type == ButtonPress ||
-	 ev->type == ButtonRelease ) addEvent( ((XButtonEvent*)ev)->time);
-#endif
      if( ev->type == KeyPress && kgreeter){
 	  // This should go away
 	  KeySym ks = XLookupKeysym(&(ev->xkey),0);
@@ -151,20 +129,6 @@ MyApp::x11EventFilter( XEvent * ev){
      }
      return FALSE;
 }
-
-#if 0
-void
-MyApp::addEvent( int t)
-{
-     event_sum = (event_sum << 3) ^ t;
-     printf("addEvent( %d): event_sum = %d\n", t, event_sum);
-}
-
-// GenerateAuthData calls this to get the seed:
-extern "C" {
-     int greeter_event_sum() { printf("%d\n",MyApp::getSum());return MyApp::getSum();}
-}
-#endif
 
 // Misc. functions
 static inline int my_seteuid( uid_t euid)
@@ -233,7 +197,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 
      loginLabel = new QLabel( klocale->translate("Login:"), this);
      set_min( loginLabel);
-     loginEdit = new QLineEdit( this);
+     loginEdit = new KLoginLineEdit( this);
 
      // The line-edit look _very_ bad if you don't give them 
      // a resonal height that observes a proportional aspect.
@@ -366,6 +330,8 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      // Signals/Slots
      connect( timer, SIGNAL(timeout()),
            this , SLOT(timerDone()) );
+     connect( loginEdit, SIGNAL(lost_focus()),
+	      this, SLOT( load_wm()));
      if( user_view)
 	  connect( user_view, SIGNAL(selected(int)), 
 		   this, SLOT(slot_user_name( int)));
