@@ -36,7 +36,7 @@ msgstr "Nové &okno"
 
 #: kfmgui.cpp:306
 msgid "&Run"
-msgstr "P&rovést"
+msgstr "&Vykonat pøíkaz"
 
 #: kfmgui.cpp:308
 msgid "Open &Terminal"
