@@ -51,7 +51,7 @@ NewThemeDlg::NewThemeDlg():
   mGrid->setRowStretch(mGridRow++, 10);
 
   mGrid->addLayout(bbox, mGridRow++, 2);
-  btn = new QPushButton(i18n("Ok"), this);
+  btn = new QPushButton(i18n("OK"), this);
   btn->setFixedSize(100, btn->sizeHint().height());
   bbox->addWidget(btn);
   connect(btn, SIGNAL(clicked()), SLOT(accept()));
