@@ -1055,7 +1055,7 @@ void KfmGui::slotClose()
 void KfmGui::slotAbout()
 {
     QString tmp;
-    tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("(c) by Torben Weis\nweis@kde.org\n\nand the KFM team") );
+    tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org") );
     QMessageBox::message( klocale->translate("About"), 
 			  tmp, klocale->translate("Ok") );
 }
