@@ -224,21 +224,30 @@ void Pager::changeNumber(int)
 
 void Pager::decorate()
 {
+
     hide();
     if ( style == Undecorated ) {
-	KWM::setDecoration(winId(), true);
 	recreate(NULL, 0, pos());
+	KWM::setDecoration(winId(), 2);
+	KWM::setSticky(winId(), true);
 	style = Decorated;
     } else {
-	KWM::setDecoration(winId(), false);
 	QPoint p = KWM::geometry(winId(), false).topLeft();
 	recreate(NULL, WStyle_Customize | 
 		 WStyle_NoBorder | 
 		 WStyle_Tool, pos());
 	move(p);
+	KWM::setDecoration(winId(), false);
+	KWM::setSticky(winId(), true);
 	style = Undecorated;
     }
     show();	
+}
+
+void Pager::closeEvent( QCloseEvent *e)
+{
+    close();
+    e->accept();
 }
 
 void Pager::addWindow(Window w)
@@ -264,7 +273,8 @@ void Pager::removeWindow(Window w)
     if (win)
 	stickys.remove();
 
-    win = desktops.at(KWM::desktop(w) - 1) -> removeWindow(w);
+    for (Desktop *desk = desktops.first(); desk; desk = desktops.next())
+	desk -> removeWindow( w );
     if (win)
 	delete win;
 }

@@ -68,10 +68,11 @@ void Desktop::fillPixmap()
 	    kapp->inactiveTextColor;  
 	p.setPen(col);
 	
-	p.drawText( x + 1, y + 1 , w - 2, h - 2,
-		    AlignVCenter,
-		    win->name, win->name.length()
-		    );
+	if ( !win->name.isNull() ) 
+	    p.drawText( x + 1, y + 1 , w - 2, h - 2,
+			AlignVCenter,
+			win->name, win->name.length()
+			);
     }    
 }
 
@@ -185,8 +186,8 @@ void Desktop::changeWindow(Window w)
     
     win->rect = KWM::geometry(w, true);
     win->icony = KWM::isIconified(w);
-    win->name = KWM::title(w);
-    
+    win->name = KWM::title(w).data();
+
     if (!win->icony)
 	calculate(win);
     fillPixmap();

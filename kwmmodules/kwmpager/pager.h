@@ -66,6 +66,7 @@ private slots:
 
 protected:
     virtual void resizeEvent ( QResizeEvent * );  
+    virtual void closeEvent ( QCloseEvent * );
     void readSettings();
 };
 
