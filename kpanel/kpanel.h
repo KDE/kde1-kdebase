@@ -402,6 +402,7 @@ private:
   bool initing;
 
   QStrList swallowed_applications;
+  
 };
 
 

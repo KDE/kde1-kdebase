@@ -716,6 +716,7 @@ void kPanel::showSystem(){
     miniButtons(1); 
   }
   else {
+    entries[0].popup->setActiveItem(entries[0].popup->count()-1);
     show_popup(entries[0].popup, entries[0].button);
   }
 
