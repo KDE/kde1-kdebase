@@ -4,6 +4,8 @@
 #include <kcontrol.h>
 #include <ksimpleconfig.h>
 
+#include <unistd.h>
+
 #include "htmlopts.h"
 
 KConfigBase *g_pConfig = 0L;
@@ -86,12 +88,16 @@ void KfmApplication::defaultValues()
 void KfmApplication::apply()
 {
   if ( m_pFontOptions )
-    m_pFontOptions->saveSettings();
+    m_pFontOptions->applySettings();
   if ( m_pColorOptions )
-    m_pColorOptions->saveSettings();
-
-  // HACK
-  // KWM::sendKWMCommand("kpanel:restart");
+    m_pColorOptions->applySettings();
+  if ( fork() == 0 )
+  { 
+      // execute 'kfmclient configure'
+      execl(kapp->kde_bindir()+"/kfmclient","kfmclient","configure",0);
+      warning("Error launching 'kfmclient configure' !");
+      exit(1);
+  }
 }
 
 

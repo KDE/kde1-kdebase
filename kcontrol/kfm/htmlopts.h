@@ -18,7 +18,7 @@
 #include <kconfig.h>
 #include <kcolorbtn.h>
 #include <qradiobt.h>
-#include <qcombo.h>
+#include <kcharsets.h>
 
 #include <kcontrol.h>
 #include <kwm.h>
@@ -42,23 +42,27 @@ public slots:
   void slotFontSize( int );
   void slotStandardFont( const char *n );
   void slotFixedFont( const char *n );
+  void slotCharset( const char *n );
 
 private:
   void getFontList( QStrList &list, const char *pattern );
   void addFont( QStrList &list, const char *xfont );
 
 private:
-  QComboBox* m_pFixed;
-  QComboBox* m_pStandard;
   QRadioButton* m_pSmall;
   QRadioButton* m_pMedium;
   QRadioButton* m_pLarge;
+  QComboBox* m_pFixed;
+  QComboBox* m_pStandard;
+  QComboBox* m_pCharset;
   
   int fSize;
   QString stdName;
   QString fixedName;
+  QString charsetName;
   QStrList standardFonts;
   QStrList fixedFonts;
+  QStrList charsets;
 };
 
 //-----------------------------------------------------------------------------
@@ -86,12 +90,11 @@ private:
   KColorButton* m_pLink;
   KColorButton* m_pVLink;
   QCheckBox *cursorbox;
+  QCheckBox *underlinebox;
   QColor bgColor;
   QColor textColor;
   QColor linkColor;
   QColor vLinkColor;
-  bool changeCursor;
-  bool changed;
 };
 
 #endif		// __HTML_OPTIONS_H__
