@@ -1,27 +1,28 @@
 /* XPM */
-static char *magick[] = {
-/* columns rows colors chars-per-pixel */
-"16 14 7 1",
-"  c #000000",
-". c #808000",
-"X c #bebe00",
-"o c #ffff00",
-"O c #808080",
-"+ c #ffdfaa",
-"@ c None",
-/* pixels */
-"@@@@@@@@@@@@@@@@",
-"@@@@@@@ @@@@@@@@",
-"@@@@@OOOOO@@@@@@",
-"@@@@O..@@@O@@@@@",
-"@@@@O.Xo+@O@@@@@",
-"@@@O.Xooo+@O@@@@",
-"@@@O.Xooo+@O@@@@",
-"@@@O.Xooo+@O@@@@",
-"@@@O.Xooo+@O@@@@",
-"@@@O.Xooo+@O@@@@",
-"@@OOXo@@@@@OO@@@",
-"@O..ooooo@@@@O@@",
-"@OOOOOOOOOOOOO@@",
-"@@@@@@@@@@@@@@@@"
-};
+/* Drawn for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*bell[]={
+"16 16 6 1",
+"c c #ffdca8",
+"d c #ffa858",
+"b c #ff8000",
+"a c #808000",
+"# c #000000",
+". c None",
+"......###.......",
+".....#abb#......",
+".....#aab#......",
+".....#aab#......",
+".....#aab#......",
+"......#b#.......",
+"......#b#.......",
+"....##bbb##.....",
+"...#cccddda#....",
+"...#dccdddd#....",
+"...#dccdddd#....",
+"...#dccdddd#....",
+"...#dccdddd#....",
+"..#ddccdddda#...",
+"..#dccdddddd#...",
+"...#########...."};
+

@@ -11,10 +11,13 @@ bell.moc: bell.h
 	$(MOC) bell.h -o bell.moc
 
 install-data-local: 
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) bell.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-bell.xpm $(kde_minidir)/bell.xpm
 
 uninstall-local:
+	rm -f $(kde_icondir)/bell.xpm
 	rm -f $(kde_minidir)/bell.xpm
 
 messages:
