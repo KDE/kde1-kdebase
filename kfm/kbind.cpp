@@ -595,7 +595,7 @@ KMimeType* KMimeType::findType( const char *_url )
 		if ( strncmp( filename.data(), s, pattern_len - 1 ) == 0 )
 		    return typ;
 	    }
-	    if ( s[ 0 ] == '*' )
+	    if ( s[ 0 ] == '*' && len + 1 >= pattern_len )
 		if ( strncmp( filename.data() + len - pattern_len + 1, s + 1, pattern_len - 1 ) == 0 )
 		    return typ;
 	    if ( strcmp( filename.data(), s ) == 0 )
