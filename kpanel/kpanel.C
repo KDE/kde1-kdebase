@@ -42,21 +42,21 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     kwmmapp = kwmapp_arg;
     int i;
-    
+
     tab = 0;
 
     last_tip_widget = 0;
 
     setFrameStyle(QFrame::Panel| QFrame::Raised);
-    
+
     setMouseTracking(true);
 
     orientation = horizontal;
     position = bottom_right;
 
     currentDesktop = KWM::currentDesktop();
-     
-    
+
+
     box_width = 47;
     box_height = 47;
     margin = 4;
@@ -65,7 +65,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     menu_tool_tips = 1000;
     menu_tool_tips_disabled = false;
-    
+
     tbhs = 4;
     tbmhs = 3;
     number_of_desktops = KWM::numberOfDesktops();
@@ -78,11 +78,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     tipSleepTimer = new QTimer( this );
     connect( tipSleepTimer, SIGNAL(timeout()),
 	     this, SLOT(tipSleepTimerDone()) );
-    
+
     hideTimer = new QTimer( this );
     connect( hideTimer, SIGNAL(timeout()),
 	     this, SLOT(hideTimerDone()) );
-    
+
     // parse the configuration
     KConfig *config = KApplication::getKApplication()->getConfig();
     // Don't write dirty entries at destruction time.
@@ -102,7 +102,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     }
 
     QString a = config->readEntry("Position");
-    
+
     if ( a == "left"){
       orientation = vertical;
       position = top_left;
@@ -131,14 +131,14 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	if (!mBackTexture.isNull())
 	  setBackgroundPixmap( mBackTexture );
       }
-    
+
     if (config->hasKey("BoxWidth"))
       box_width = config->readNumEntry("BoxWidth");
     if (config->hasKey("BoxHeight"))
       box_height = config->readNumEntry("BoxHeight");
     if (config->hasKey("Margin"))
       margin = config->readNumEntry("Margin");
-      
+
     if (config->hasKey("DesktopButtonHorizontalSize"))
       dbhs = config->readNumEntry("DesktopButtonHorizontalSize");
 
@@ -157,7 +157,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       menu_tool_tips = config->readNumEntry("MenuToolTips");
     else
       config->writeEntry("MenuToolTips", menu_tool_tips);
-    
+
 
     foldersFirst = true;
     if (config->hasKey("FoldersFirst"))
@@ -193,20 +193,20 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       config->writeEntry("ClockAmPm", "off");
 
     QString panelHiddenString = "00000000";
-    panelHiddenString = config->readEntry("PanelHidden", 
+    panelHiddenString = config->readEntry("PanelHidden",
 					  panelHiddenString);
-    
+
     for (i=1;i<=8;i++)
       panelHidden[i] = (panelHiddenString.mid(i-1,1)=="1");
-    
+
     panelCurrentlyHidden = panelHidden[currentDesktop];
     miniPanelHidden = True;
-     
+
 
     nbuttons = 0;
     moving_button = 0;
     wait_cursor_button = 0;
-    
+
 
     popup_item = new myPopupMenu;
     CHECK_PTR( popup_item);
@@ -223,7 +223,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     windowlist = new myPopupMenu;
     CHECK_PTR( windowlist );
     windowlist->setCheckable(true);
-    connect( windowlist, SIGNAL(activated( int )), 
+    connect( windowlist, SIGNAL(activated( int )),
 	     SLOT(windowlistActivated(int)) );
     init_popup(windowlist);
 
@@ -248,16 +248,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     dock_area = new QFrame(this);
     dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
     dock_area->hide();
-    
+
     // Note: nbuttons _must_ be 0 here!
     entries[nbuttons++].button = (myPushButton*) new myPushButton( this, klocale->translate("Go!"));
     entries[nbuttons-1].button->setCursor(waitCursor);
     entries[nbuttons-1].button->installEventFilter( this );
     QToolTip::add(entries[nbuttons-1].button, klocale->translate("Where do you want to go tomorrow?"));
 
-    connect( entries[nbuttons-1].button, SIGNAL(clicked()), 
+    connect( entries[nbuttons-1].button, SIGNAL(clicked()),
 	     SLOT(button_clicked()) );
-    connect( entries[nbuttons-1].button, SIGNAL(pressed()), 
+    connect( entries[nbuttons-1].button, SIGNAL(pressed()),
 	     SLOT(button_pressed()) );
     kde_button = entries[nbuttons-1].button;
     kmenu = 0;
@@ -293,7 +293,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 // 				      black, white );
 //     QPalette pal = QPalette(colgrp,colgrp,colgrp);
 
-    
+
 
     for (i=0; i < number_of_desktops; i++){
       tmp_push_button = new QPushButton("Desktop", desktopbar);
@@ -333,9 +333,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     taskbar = new QButtonGroup(taskbar_frame);
     taskbar->setFrameStyle(QFrame::Panel| QFrame::Raised);
-    connect( taskbar, SIGNAL(clicked( int )), 
+    connect( taskbar, SIGNAL(clicked( int )),
 	     SLOT(taskbarClicked(int)) );
-    connect( taskbar, SIGNAL(pressed( int )), 
+    connect( taskbar, SIGNAL(pressed( int )),
 	     SLOT(taskbarPressed(int)) );
 
     taskbar_position = taskbar_top_left;
@@ -352,7 +352,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else if (a == "top_left"){
       taskbar_position = taskbar_top_left;
     }
-    
+
     if (config->hasKey("TaskbarButtonHorizontalSize"))
       tbhs = config->readNumEntry("TaskbarButtonHorizontalSize");
 
@@ -361,7 +361,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     load_and_set_some_fonts();
 
-    
+
 
     exit_button = new QPushButton("Exit", control_group);
     exit_button->setFocusPolicy(NoFocus);
@@ -370,7 +370,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect(exit_button, SIGNAL(clicked()), SLOT(ask_logout()));
     exit_button->installEventFilter( this );
     //     exit_button->setPalette(pal);
-    
+
     lock_button = new QPushButton("lock", control_group);
     lock_button->setFocusPolicy(NoFocus);
     lock_button->setMouseTracking(true);
@@ -378,7 +378,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect(lock_button, SIGNAL(clicked()), SLOT(call_klock()));
     lock_button->installEventFilter( this );
     //     lock_button->setPalette(pal);
-    
+
 
     panel_button = new QPushButton("panel", this);
     panel_button->setFocusPolicy(NoFocus);
@@ -386,9 +386,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     QToolTip::add(panel_button, klocale->translate("Hide the panel"));
     panel_button->installEventFilter( this );
 
-    connect( panel_button, SIGNAL(clicked()), 
+    connect( panel_button, SIGNAL(clicked()),
 	     SLOT(hidePanel()) );
-    
+
     panel_button_frame_standalone  = new QFrame(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool );
     panel_button_frame_standalone->setMouseTracking(true);
     panel_button_frame_standalone->installEventFilter( this );
@@ -397,12 +397,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panel_button_standalone->setFocusPolicy(NoFocus);
     panel_button_standalone->setMouseTracking(true);
     panel_button_standalone->installEventFilter( this );
-    
-    connect( panel_button_standalone, SIGNAL(clicked()), 
+
+    connect( panel_button_standalone, SIGNAL(clicked()),
 	     SLOT(standalonePanelButtonClicked()) );
 
     if (orientation == horizontal){
-      
+
 
       if (dbrows == 2){
 	exit_button->setGeometry(0,0,
@@ -419,46 +419,46 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	  switch (i){
 	  case 0:
 	    tmp_button->setGeometry(1, 0,
-				    exit_button->width() * dbhs, 
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
 	  case 2:
-	    tmp_button->setGeometry(exit_button->width() * dbhs + 2, 0, 
-				    exit_button->width() * dbhs, 
+	    tmp_button->setGeometry(exit_button->width() * dbhs + 2, 0,
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
 	  case 4:
-	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3, 0, 
-				    exit_button->width() * dbhs, 
+	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3, 0,
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
 	  case 6:
-	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4, 0, 
-				    exit_button->width() * dbhs, 
+	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4, 0,
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
 	  case 1:
-	    tmp_button->setGeometry(1, 
+	    tmp_button->setGeometry(1,
 				    lock_button->y(),
-				    exit_button->width() * dbhs, 
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
-	  case 3:    
+	  case 3:
 	    tmp_button->setGeometry(exit_button->width() * dbhs + 2,
 				    lock_button->y(),
-				    exit_button->width() * dbhs, 
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
-	  case 5:    
+	  case 5:
 	    tmp_button->setGeometry(2 * exit_button->width() * dbhs + 3,
 				    lock_button->y(),
-				    exit_button->width() * dbhs, 
+				    exit_button->width() * dbhs,
 				    exit_button->height());
 	    break;
-	  case 7:    
+	  case 7:
 	    tmp_button->setGeometry(3 * exit_button->width() * dbhs + 4,
 				    lock_button->y(),
-				    exit_button->width() * dbhs, 
+				    exit_button->width() * dbhs,
 				  exit_button->height());
 	    break;
 	  }
@@ -466,8 +466,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	
 	
 	desktopbar->setGeometry(exit_button->width(),
-				0, 
-				(exit_button->width() * dbhs + 1) * (number_of_desktops/2), 
+				0,
+				(exit_button->width() * dbhs + 1) * (number_of_desktops/2),
 				box_height);
 	
 	control_group->setGeometry(
@@ -478,27 +478,27 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				   box_height);
       }
       else {
-	// dbrows == 1 
+	// dbrows == 1
  	exit_button->setGeometry(0, 0,
  				 box_width,
  				 box_height
  				 );
 	
- 	lock_button->setGeometry(exit_button->width()+1, 
+ 	lock_button->setGeometry(exit_button->width()+1,
  				0,
- 				 box_width, 
+ 				 box_width,
  				 box_height);
 	
 	for (i=0; (tmp_button = desktopbar->find(i)); i++){
-	  tmp_button->setGeometry(i*(box_width/2) * dbhs + (i+1), 
+	  tmp_button->setGeometry(i*(box_width/2) * dbhs + (i+1),
 				  0,
-				  box_width/2 * dbhs, 
+				  box_width/2 * dbhs,
 				  box_height);
 	}
 	
 	desktopbar->setGeometry(lock_button->x() + lock_button->width(),
-				0, 
-				(box_width/2 * dbhs +1) * number_of_desktops , 
+				0,
+				(box_width/2 * dbhs +1) * number_of_desktops ,
 				box_height);
 	
 	control_group->setGeometry(
@@ -521,19 +521,19 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			      + box_width,
 			      margin?margin:1,
  			      box_width-(margin?0:2), box_height-(margin?0:2));
-      
+
       bound_top_left = control_group->x();
       bound_bottom_right = control_group->x() + control_group->width();
 
       if (label_date_visible)
 	label_date->setGeometry(w - margin - label_date->width() - 5,
 				3,
-				label_date->width(), 
+				label_date->width(),
 				box_height+2*margin-6);
       else
 	label_date->setGeometry(w,
 				3,
-				1, 
+				1,
 				box_height+2*margin-6);
 
       label_date->setAlignment( AlignRight|AlignVCenter );
@@ -542,24 +542,24 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			     3,
 			     2 * box_width - 6,
 			     box_height+2*margin-6);
-      
-      
+
+
 
       if (position == top_left) {
 	setGeometry(0,
-		    0, 
-		    w, 
+		    0,
+		    w,
 		    box_height+2*margin);
       }
       else {
 	setGeometry(0,
-		    h - box_height-2*margin, 
-		    w, 
+		    h - box_height-2*margin,
+		    w,
 		    box_height+2*margin);
       }
     }
     else { // orientation == vertical
-      
+
 
       exit_button->setGeometry(0,0,
 			       box_width/2,
@@ -572,7 +572,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			       exit_button->height());
 
       for (i=0; (tmp_button = desktopbar->find(i)); i++){
-	tmp_button->setGeometry(0,i*(box_height/2) + (i+1), 
+	tmp_button->setGeometry(0,i*(box_height/2) + (i+1),
 				box_width, box_height/2);
       }
 
@@ -595,7 +595,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
  			      panel_button->y()+panel_button->height()
 			      + box_height,
  			      box_width-(margin?0:2), box_height-(margin?0:2));
-     
+
 
       bound_top_left = control_group->y();
       bound_bottom_right = control_group->y() + control_group->height();
@@ -604,34 +604,34 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       if (label_date_visible)
 	label_date->setGeometry(3,
 				h - margin - 2*label_date->height() -5,
-				box_width+2*margin-6, 
+				box_width+2*margin-6,
 				2*label_date->height());
 
       else
 	label_date->setGeometry(3,
 				h,
-				box_width+2*margin-6, 
+				box_width+2*margin-6,
 				1);
-  
+
 
       label_date->setAlignment( AlignHCenter|AlignBottom);
 
       dock_area->setGeometry(3,
 			     label_date->y() - box_height - 2*margin - 4,
-			     box_width+2*margin-6, 
+			     box_width+2*margin-6,
 			     box_height);
 
 
       if (position == top_left){
 	setGeometry(0,
-		    0, 
-		    box_width+2*margin, 
+		    0,
+		    box_width+2*margin,
 		    h);
       }
       else{
 	setGeometry(w - box_width - 2*margin,
 		    0,
-		    box_width+2*margin, 
+		    box_width+2*margin,
 		    h);
       }
     }
@@ -645,21 +645,21 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 // 				      exit_button->width()-4,
 // 				      exit_button->height()-4));
 
-    
+
 //     if (orientation == vertical){
 //       QWMatrix m;
 //       m.rotate(90);
 //       QPixmap pm = kapp->getIconLoader()
-// 			      ->loadIcon("kpanel.xpm", 
+// 			      ->loadIcon("kpanel.xpm",
 // 					 panel_button->height(),
 // 					 panel_button->width());
 //       panel_button->setPixmap(pm.xForm(m));
 //     }else{
 //       panel_button->setPixmap(kapp->getIconLoader()
-// 			      ->loadIcon("kpanel.xpm", 
+// 			      ->loadIcon("kpanel.xpm",
 // 					 panel_button->width(),
 // 					 panel_button->height()));
-      
+
 //     }
 
 
@@ -704,7 +704,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       QWMatrix m;
       m.rotate((orientation == horizontal)?0:90);
       panel_button->setPixmap(pm.xForm(m));
-      panel_button_standalone->setPixmap(pm2.xForm(m));    
+      panel_button_standalone->setPixmap(pm2.xForm(m));
     }
 
     if (margin == 0){
@@ -724,11 +724,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     taskbar_frame->hide();
 
-    drop_zone = new KDNDDropZone(this,  
+    drop_zone = new KDNDDropZone(this,
 				 DndURL);
-    connect(drop_zone, 
-	    SIGNAL( dropAction( KDNDDropZone *) ), 
-	    this, 
+    connect(drop_zone,
+	    SIGNAL( dropAction( KDNDDropZone *) ),
+	    this,
 	    SLOT( slotDropEvent( KDNDDropZone *) ) );
 
 
@@ -739,7 +739,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     // fix label_date size (PGB)
     QFont tmpfont = label_date->font();
     QString teststr = (clockAmPm ? "00:00AM" : "00:00");
-    while(label_date->fontMetrics().width(teststr) > 
+    while(label_date->fontMetrics().width(teststr) >
 	  label_date->width()) {
       tmpfont.setPointSize(tmpfont.pointSize()-1);
       label_date->setFont(tmpfont);
@@ -753,7 +753,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     pmenu = new PMenu;
     pmenu->setAltSort(foldersFirst);
-    
+
     readInConfiguration();
     KApplication::getKApplication()->getConfig()->sync();
     doGeometry();
@@ -766,7 +766,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       set_button_text(desktopbar->find(i),
 		      KWM::getDesktopName(i+1));
     }
-    
+
     initing = false;
 }
 
@@ -789,8 +789,8 @@ void kPanel::desktop_change(int new_desk) {
     edit_button->grabMouse();
     edit_button->setFocus();
     edit_button->installEventFilter(this);
-    QColorGroup g = tmp_button->palette().active(); 
-    g = QColorGroup( g.foreground(), 
+    QColorGroup g = tmp_button->palette().active();
+    g = QColorGroup( g.foreground(),
 		     g.background(),
 		     g.light(),
 		     g.dark(),
@@ -802,7 +802,7 @@ void kPanel::desktop_change(int new_desk) {
     if ( edit_button != 0)
       restore_editbutton( False );
     currentDesktop = new_desk;
-    KWM::switchToDesktop(currentDesktop);  
+    KWM::switchToDesktop(currentDesktop);
   }
 };
 
@@ -815,7 +815,7 @@ void kPanel::restore_editbutton( bool takeit ) {
     edit_button->releaseMouse();
     edit_button->hide();
     delete edit_button;
-    edit_button = 0; 
+    edit_button = 0;
   };
 };
 
@@ -826,7 +826,7 @@ void kPanel::button_clicked(){
   for (i=0; i<nbuttons && entries[i].button != myPushButton::most_recent_pressed;i++);
 
   if (i<nbuttons){
-    if (entries[i].button->last_button == LeftButton && 
+    if (entries[i].button->last_button == LeftButton &&
 	entries[i].pmi && entries[i].pmi->getType() == unix_com){
       entries[i].pmi->exec();
       //  	// visual feedback to avoid doubleclicks
@@ -839,7 +839,7 @@ void kPanel::button_clicked(){
 }
 
 void kPanel::button_pressed(){
-  
+
   int i;
   for (i=0; i<nbuttons && entries[i].button != myPushButton::most_recent_pressed;i++);
   if (i<nbuttons){
@@ -851,11 +851,11 @@ void kPanel::button_pressed(){
     }
     else if (entries[i].button->last_button == RightButton){
       button_to_be_modified = entries[i].button;
-      
+
       popup_item->setItemEnabled(0, true);
       popup_item->setItemEnabled(1, true);
       popup_item->setItemEnabled(3, true);
-      
+
       if (button_to_be_modified == kde_button){
 	popup_item->setItemEnabled(0, true);
 	popup_item->setItemEnabled(1, false);
@@ -866,9 +866,9 @@ void kPanel::button_pressed(){
 	popup_item->setItemEnabled(1, true);
 	popup_item->setItemEnabled(3, false);
       }
-      
+
       switch (show_popup(popup_item, entries[i].button)){
-      case 3:  
+      case 3:
 	if (entries[i].pmi){
 	  KFM* kfm = new KFM;
 	  QString a = entries[i].pmi->fullPathName().copy();
@@ -890,7 +890,7 @@ void kPanel::button_pressed(){
 	  }
 	  moving_button->raise();
 	  moving_button->setCursor(sizeAllCursor);
-	  // the next line _IS_ necessary! 
+	  // the next line _IS_ necessary!
 	  XGrabPointer( qt_xdisplay(), moving_button->winId(), false,
 			ButtonPressMask | ButtonReleaseMask |
 			PointerMotionMask | EnterWindowMask | LeaveWindowMask,
@@ -898,7 +898,7 @@ void kPanel::button_pressed(){
 			None, None, CurrentTime );
 	  //moving_button->grabMouse();
 	  return;
-	  
+	
 	}
 	
 	break;
@@ -923,13 +923,13 @@ void kPanel::taskbarClicked(int item){
   myTaskButton* b = (myTaskButton*) taskbar->find(item);
   if (!b)
     return;
-  
+
   switch (b->last_button){
   case MidButton:
     KWM::setIconify(b->win, !KWM::isIconified(b->win));
     break;
   case RightButton:
-    
+
     break;
   default:
     KWM::activate(b->win);
@@ -943,44 +943,44 @@ void kPanel::taskbarPressed(int item){
     return;
   if (b->last_button != RightButton)
     return;
-  
+
   QPopupMenu pop;
   pop.setMouseTracking(true);
 
   if (KWM::isMaximized(b->win) && !KWM::fixedSize(b->win))
-    pop.insertItem(KWM::getUnMaximizeString(), 
+    pop.insertItem(KWM::getUnMaximizeString(),
 		   OP_RESTORE);
   else
-    pop.insertItem(KWM::getMaximizeString(), 
+    pop.insertItem(KWM::getMaximizeString(),
 		   OP_MAXIMIZE);
-  
+
   if (KWM::fixedSize(b->win))
     pop.setItemEnabled(OP_MAXIMIZE, false);
-  
+
   if (KWM::isIconified(b->win))
-    pop.insertItem(KWM::getUnIconifyString(), 
+    pop.insertItem(KWM::getUnIconifyString(),
 		   OP_UNICONIFY);
   else
-    pop.insertItem(KWM::getIconifyString(), 
+    pop.insertItem(KWM::getIconifyString(),
 		   OP_ICONIFY);
-  
+
   if (KWM::isSticky(b->win))
-    pop.insertItem(KWM::getUnStickyString(), 
+    pop.insertItem(KWM::getUnStickyString(),
 		   OP_STICKY);
   else
-    pop.insertItem(KWM::getStickyString(), 
+    pop.insertItem(KWM::getStickyString(),
 		   OP_STICKY);
-  
-  
-  pop.insertItem(KWM::getOntoCurrentDesktopString(), 
+
+
+  pop.insertItem(KWM::getOntoCurrentDesktopString(),
 		 OP_ONTO_CURRENT_DESKTOP);
   if (b->virtual_desktop == KWM::currentDesktop())
     pop.setItemEnabled(OP_ONTO_CURRENT_DESKTOP, false);
-    
+
   pop.insertSeparator();
-  pop.insertItem(KWM::getCloseString(), 
+  pop.insertItem(KWM::getCloseString(),
 		 OP_CLOSE);
-  
+
 
   switch (show_popup(&pop, b, true)){
   case OP_MAXIMIZE:
@@ -1012,7 +1012,7 @@ void kPanel::taskbarPressed(int item){
 
 void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    QPixmap pm;
-   entries[nbuttons++].button = new myPushButton( this); 
+   entries[nbuttons++].button = new myPushButton( this);
    if (!mBackTexture.isNull())
      entries[nbuttons-1].button->setBackgroundPixmap( mBackTexture );
 
@@ -1029,9 +1029,9 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    entries[nbuttons-1].icon[3] = 0;
    entries[nbuttons-1].drop_zone = 0;
 
-   connect( entries[nbuttons-1].button, SIGNAL(clicked()), 
+   connect( entries[nbuttons-1].button, SIGNAL(clicked()),
 	    SLOT(button_clicked()) );
-   connect( entries[nbuttons-1].button, SIGNAL(pressed()), 
+   connect( entries[nbuttons-1].button, SIGNAL(pressed()),
 	    SLOT(button_pressed()) );
 
    if (pmi){
@@ -1045,7 +1045,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        pmi = pmi2;
        pm->createMenu(pmi->getQPopupMenu(), this);
        entries[nbuttons-1].pmi = pmi;
-       
+
        entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->bigIconName(), True)));
      }
      else{
@@ -1066,7 +1066,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 		 pConfig.hasKey("SwallowExec")){
 	       KWM::doNotManage(entries[nbuttons-1].swallow);
 	       aString = QString(pConfig.readEntry("SwallowExec")).copy();
-	       if (!initing) 
+	       if (!initing)
 		 execute(aString.data());
 	       else
 		 swallowed_applications.append(aString);
@@ -1091,14 +1091,14 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   }
 	 }
        }
-       
-       entries[nbuttons-1].drop_zone = new KDNDDropZone(entries[nbuttons-1].button, 
+
+       entries[nbuttons-1].drop_zone = new KDNDDropZone(entries[nbuttons-1].button,
 							DndURL);
-       connect(entries[nbuttons-1].drop_zone, 
-	       SIGNAL( dropAction( KDNDDropZone *) ), 
-	       this, 
+       connect(entries[nbuttons-1].drop_zone,
+	       SIGNAL( dropAction( KDNDDropZone *) ),
+	       this,
 	       SLOT( slotDropEvent( KDNDDropZone *) ) );
-       
+
      }
      if (pmi->getComment().isEmpty())
        QToolTip::add(entries[nbuttons-1].button,
@@ -1115,9 +1115,9 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
      }
    }
 
-   
+
    if (x != -1 || y != -1)
-     entries[nbuttons-1].button->setGeometry(x, y, 
+     entries[nbuttons-1].button->setGeometry(x, y,
 					     box_width, box_height);
    else
      find_a_free_place();
@@ -1159,9 +1159,9 @@ void kPanel::show(){
 
 void kPanel::hidePanel(){
   Bool old = panelHidden[currentDesktop];
-  
+
   panelHidden[currentDesktop] = True;
-  
+
   if (!panelCurrentlyHidden){
     QPoint p = pos();
     if (autoHidden){
@@ -1177,7 +1177,7 @@ void kPanel::hidePanel(){
 	else
 	  p.setX(x()-width()+4);
       }
-    }  
+    }
     panel_button_frame_standalone->setGeometry(p.x() + panel_button->x(),
 					       p.y() + panel_button->y(),
 					       panel_button->width(),
@@ -1187,13 +1187,13 @@ void kPanel::hidePanel(){
     showMiniPanel();
     panel_button_frame_standalone->show();
     panel_button_frame_standalone->raise();
-    
+
     doGeometry();
-    layoutTaskbar (); //geometry changed 
+    layoutTaskbar (); //geometry changed
    }
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
-    config->setGroup("kpanel");   
+    config->setGroup("kpanel");
     QString a;
     int i;
     for (i=1;i<=8;i++)
@@ -1205,9 +1205,9 @@ void kPanel::hidePanel(){
 
 void kPanel::showPanel(){
   Bool old = panelHidden[currentDesktop];
-  
+
   panel_button_frame_standalone->hide();
-  
+
   panelHidden[currentDesktop] = False;
   if (panelCurrentlyHidden){
     panelCurrentlyHidden = False;
@@ -1216,11 +1216,11 @@ void kPanel::showPanel(){
     raise();
   }
   doGeometry();
-  layoutTaskbar(); 
+  layoutTaskbar();
 
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
-    config->setGroup("kpanel");   
+    config->setGroup("kpanel");
     QString a;
     int i;
     for (i=1;i<=8;i++)
@@ -1243,7 +1243,7 @@ void kPanel::doGeometry () {
    int mw = 0;       // mini panel...
    int mh = 0;
    int sw = 0;      // standalone...
-   int sh = 0; 
+   int sh = 0;
 
    int tfx = 0; //correction values for the taskbar autoHide feature
    int tfy = 0;
@@ -1291,27 +1291,27 @@ void kPanel::doGeometry () {
      {
        mw = 2*taskbar_height+1; // miniPanelFrame
        mh = taskbar_height+1; // miniPanelFrame
-     }    
+     }
     }
-   
+
    // panel_button_frame_standalone->setGeometry(px, py, sw, sh);
-   
+
    if (orientation == horizontal)
     {
      if (position == top_left)
       {
-       if (taskbar_position == top) 
+       if (taskbar_position == top)
 	{
 	 taskbar_frame->setGeometry(tfx+px+sw+mw, tfy+py+ph, w-mw-sw, taskbar_height);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, tfy+py+ph+taskbar_height+1,
 				    w, -tfy+h-ph-taskbar_height-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(tfx+px+mw, tfy+h-th, 
+	 taskbar_frame->setGeometry(tfx+px+mw, tfy+h-th,
 				    w-mw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, ph, w, tfy+h-ph-th-1));
 	}
        else
@@ -1320,40 +1320,40 @@ void kPanel::doGeometry () {
 // 				    tbhs*th, th);
 	 taskbar_frame->move(tfx+px+sw, tfy+py+ph+mh);
 	 if (taskbar_position == taskbar_top_left)
-	   KWM::setWindowRegion(currentDesktop, 
+	   KWM::setWindowRegion(currentDesktop,
 				QRect(tfx+tbhs*th+1+sw, ph,
 				      -tfx+w-tbhs*th-sw-1, h-ph));
 	 else // if (taskbar_position=hidden)
-	   KWM::setWindowRegion(currentDesktop, 
+	   KWM::setWindowRegion(currentDesktop,
 				QRect(0, ph, w, h-ph));
 	}
       }
-     else // (if position == bottom_right) 
+     else // (if position == bottom_right)
       {
        if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(tfx+px+mw+sw, tfy+h-ph-th, 
+	 taskbar_frame->setGeometry(tfx+px+mw+sw, tfy+h-ph-th,
 				    w-mw-sw, th);
-	   KWM::setWindowRegion(currentDesktop, 
+	   KWM::setWindowRegion(currentDesktop,
 				QRect(0, 0, w, tfy+h-ph-th-1));
 	}
        else if (taskbar_position == top)
 	{
 	 taskbar_frame->setGeometry(tfx+px+mw, tfy+0, w-mw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, tfy+th+1, w, -tfy+h-ph-th-1));
 	}
        else
 	{
-// 	 taskbar_frame->setGeometry(tfx+0, tfy+mh,tbhs*taskbar_height, 
+// 	 taskbar_frame->setGeometry(tfx+0, tfy+mh,tbhs*taskbar_height,
 // 				    taskbar_height);
 	 taskbar_frame->move(tfx+0, tfy+mh);
 	 if (taskbar_position == taskbar_top_left)
-	   KWM::setWindowRegion(currentDesktop, 
+	   KWM::setWindowRegion(currentDesktop,
 				QRect(tfx+tbhs*taskbar_height+1, 0,
 				      -tfx+w-tbhs*taskbar_height-1, h-ph));
 	 else
-	   KWM::setWindowRegion(currentDesktop, 
+	   KWM::setWindowRegion(currentDesktop,
 				QRect(0, 0, w, h-ph));
 	}
       }
@@ -1365,15 +1365,15 @@ void kPanel::doGeometry () {
        if (taskbar_position == top)
 	{
 	 taskbar_frame->setGeometry(tfx+px+pw+mw+sw, tfy+py, w-pw-mw-sw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(pw, tfy+taskbar_frame->height()+1,
 				    w-pw, -tfy+h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(tfx+px+pw+mw, tfy+h-th, 
+	 taskbar_frame->setGeometry(tfx+px+pw+mw, tfy+h-th,
 				    w-pw-mw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(pw, 0, w-pw, tfy+h - taskbar_frame->height()-1));
 	}
        else
@@ -1382,11 +1382,11 @@ void kPanel::doGeometry () {
 // 				    tbhs*taskbar_height, taskbar_height);
 	 taskbar_frame->move(tfx+px+pw, tfy+py+mh);
 	 if (taskbar_position == taskbar_top_left)
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(tfx+pw+tbhs*taskbar_height+1, 0,
  			      -tfx+w-pw-tbhs*taskbar_height-1, h));
 	 else
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
  			      QRect(pw, 0,
  			      w-pw, h));
 	}
@@ -1396,15 +1396,15 @@ void kPanel::doGeometry () {
        if (taskbar_position == top)
 	{
 	 taskbar_frame->setGeometry(tfx+mw, tfy+0, w-pw-mw-sw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, tfy+taskbar_frame->height()+1,
 				    w-pw, -tfy+h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame->setGeometry(tfx+mw, tfy+h-th, 
+	 taskbar_frame->setGeometry(tfx+mw, tfy+h-th,
 				    w-pw-mw, th);
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, 0,
 				    w-pw, tfy+h-taskbar_frame->height()-1));
 	}
@@ -1414,11 +1414,11 @@ void kPanel::doGeometry () {
 // 				    tbhs*th, taskbar_height);
 	 taskbar_frame->move(tfx+0, tfy+mh);
 	 if (taskbar_position == taskbar_top_left)
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
  			      QRect(tfx+tbhs*taskbar_height+1, 0,
 				    -tfx+w-tbhs*taskbar_height-1-pw, h));
 	 else
-	 KWM::setWindowRegion(currentDesktop, 
+	 KWM::setWindowRegion(currentDesktop,
  			      QRect(0, 0,
 				    w-pw, h));
 	}
@@ -1429,7 +1429,7 @@ void kPanel::doGeometry () {
      doGeometry();
    }
 }
- 
+
 
 
 void kPanel::load_and_set_some_fonts(){
@@ -1446,7 +1446,7 @@ void kPanel::load_and_set_some_fonts(){
 //     tmpfont.setFamily(config->readEntry("MenuFont"));
 //     KApplication::setFont(tmpfont, True);
 //   }
-  
+
   if (config->hasKey("DateFont")){
     //QFont tmpfont;
     //tmpfont.setRawMode(true);
@@ -1454,7 +1454,7 @@ void kPanel::load_and_set_some_fonts(){
     QFont tmpfont = config->readFontEntry( "DateFont" );
     label_date->setFont(tmpfont);
   }
-  
+
   if (config->hasKey("DesktopButtonFont")){
     //QFont tmpfont;
     //tmpfont.setRawMode(true);
@@ -1471,7 +1471,7 @@ void kPanel::load_and_set_some_fonts(){
 
 void kPanel::slotUpdateClock() {
   set_label_date();
-  
+
   // if this is the first time this function is called, install a timer
   if(clock_timer_id == 0) {
     QTimer *t = new QTimer(this);
