@@ -30,8 +30,7 @@
 #include <sys/time.h>
 #include <ctype.h>
 
-#if defined __alpha__ && defined __linux__
-// CC: linux/alpha needs sys/ioctl.h, but you must not set FREEBSD
+#if defined __GNU_LIBRARY__
 #include <sys/ioctl.h>
 #include "debug.h" // CC: for missing "safemalloc" prototype
 #endif
