@@ -414,6 +414,7 @@ void KDMUsersWidget::loadSettings()
   
   // Get config object
   KSimpleConfig *c = new KSimpleConfig(fn);
+  c->setDollarExpansion( false );
   c->setGroup("KDM");
 
   // Read users from kdmrc and /etc/passwd

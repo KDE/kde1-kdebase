@@ -111,6 +111,7 @@ KDMConfig::getConfig()
 {
   QString aFileName = KApplication::kde_configdir() + "/kdmrc"; 
   kc = new KConfig( aFileName ); // kalle
+  kc->setDollarExpansion( false ); // Harri
      kc->setGroup( "KDM");
 
      // Read Entries
