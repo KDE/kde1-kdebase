@@ -13,5 +13,6 @@ Name[sv]=Ljud
 Name[it]=Suono
 Name[pt]=Som
 Name[pt_BR]=Som
+Name[ro]=Sunet
 SortOrder=bell.kdelnk
 Icon=sound_settings.xpm

@@ -14,5 +14,6 @@ Name[it]=Finestre
 Name[hu]=Ablakok
 Name[pt]=Janelas
 Name[pt_BR]=Janelas
+Name[ro]=Ferestre
 SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
 Icon=kwm.xpm

@@ -1,3 +1,9 @@
+kdebase (2:980710-1.0-1) unstable; urgency=low
+
+  * new upstream version 1.0
+
+ -- Stephan Kulow <coolo@kde.org>  Sun, 12 Jul 1998 14:44:00 +0200
+
 kdebase (2:980419-b4-1) unstable; urgency=low
 
   * new upstream version Beta4

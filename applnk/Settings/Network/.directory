@@ -14,5 +14,6 @@ Name[sv]=Nätverk
 Name[it]=Rete
 Name[pt]=Rede
 Name[pt_BR]=Rede
+Name[ro]=Reþea
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network_settings.xpm
