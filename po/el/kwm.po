@@ -1,4 +1,3 @@
-
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
@@ -11,11 +10,10 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: Φαίνεται ότι ήδη τρέχει ένας window manager.  O kwn δεν "
-"ξεκίνησε\n"
+"kwm: Φαίνεται ότι ήδη τρέχει ένας window manager.  O kwn δεν ξεκίνησε\n"
 
 #: main.C:79
-#,fuzzy
+#, fuzzy
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: αποτυχία κατά την αρχικοποιήση; ματαίωση\n"
 
@@ -44,12 +42,12 @@ msgid "&DeIconify"
 msgstr "Αποελαχιστοποιήση"
 
 #: main.C:389
-#,fuzzy
+#, fuzzy
 msgid "&Sticky"
 msgstr "Κολλώδης"
 
 #: main.C:390
-#,fuzzy
+#, fuzzy
 msgid "&UnSticky"
 msgstr "Μη κολλώδης"
 
@@ -102,7 +100,7 @@ msgid "Eight"
 msgstr "Οχτώ"
 
 #: main.C:885
-#,fuzzy
+#, fuzzy
 msgid "*** No Tasks ***"
 msgstr "*** Δεν υπάρχουν εργασίες  ***"
 
@@ -115,7 +113,7 @@ msgid "Logout"
 msgstr "Έξοδος"
 
 #: logout.C:45
-#,fuzzy
+#, fuzzy
 msgid "Session prepared for logout"
 msgstr "Ο κύκλος εργασιών προετοιμάστηκε για την έξοδο"
 
@@ -125,26 +123,30 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Οι παρακάτω εφαρμογές περιέχουν μη αποθηκευμένα δεδομένα τα οποία"
-"θα χαθούν στον επόμενο κύκλο εργασιών σας."
+"Οι παρακάτω εφαρμογές περιέχουν μη αποθηκευμένα δεδομένα τα οποίαθα χαθούν "
+"στον επόμενο κύκλο εργασιών σας."
 
 #: logout.C:62
-#,fuzzy
+#, fuzzy
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Οι παρακάτω εφαρμογές δεν θα μπορούν να επαναφερθούν στον επόμενο κύκλο εργασιών σας,\n"
-"μόνο με επαννεκίνηση. Σιγουρευτείτε πως δεν περιέχουν σημαντικά μη αποθηκευμένα δεδομένα."
+"Οι παρακάτω εφαρμογές δεν θα μπορούν να επαναφερθούν στον επόμενο κύκλο "
+"εργασιών σας,\n"
+"μόνο με επαννεκίνηση. Σιγουρευτείτε πως δεν περιέχουν σημαντικά μη "
+"αποθηκευμένα δεδομένα."
 
 #: logout.C:73
-#,fuzzy
+#, fuzzy
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Οι παρακάτω εφαρμογές δεν είναι X11-aware και δεν θα μπορούν να επαναφερθούν\n"
-"στον επόμενο κύκλο εργασιών σας.Σιγουρευτείτε πως δεν περιέχουν σημαντικά μη αποθηκευμένα δεδομένα."
+"Οι παρακάτω εφαρμογές δεν είναι X11-aware και δεν θα μπορούν να "
+"επαναφερθούν\n"
+"στον επόμενο κύκλο εργασιών σας.Σιγουρευτείτε πως δεν περιέχουν σημαντικά μη "
+"αποθηκευμένα δεδομένα."
 
 #: taskmgr.C:35
 msgid "Switch to"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-04 14:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,10 +49,6 @@ msgstr ""
 
 #: kfmgui.cpp:329
 msgid "&Move to Trash"
-msgstr ""
-
-#: kfmgui.cpp:331
-msgid "&Delete"
 msgstr ""
 
 #: kfmgui.cpp:334
@@ -210,8 +206,8 @@ msgstr ""
 #: kfmman.cpp:870 kfmman.cpp:1037 kfmman.cpp:1063 kfmprops.cpp:358
 #: kfmprops.cpp:609 kfmprops.cpp:635 kfmprops.cpp:750 kfmprops.cpp:848
 #: kfmprops.cpp:971 kfmprops.cpp:1099 kfmprops.cpp:1409 kfmprops.cpp:1627
-#: kfmprops.cpp:1798 kfmserver.cpp:38 kfmserver.cpp:155 kfmserver.cpp:234
-#: kfmserver.cpp:281 kfmserver.cpp:290 kfmserver.cpp:298 kfmtree.cpp:163
+#: kfmprops.cpp:1798 kfmserver.cpp:38 kfmserver.cpp:155 kfmserver.cpp:233
+#: kfmserver.cpp:280 kfmserver.cpp:289 kfmserver.cpp:297 kfmtree.cpp:163
 #: kfmtree.cpp:282 kfmtree.cpp:313 kfmtree.cpp:319 kfmtree.cpp:325
 #: kfmview.cpp:252 kfmview.cpp:271 kfmview.cpp:277 kfmview.cpp:335
 #: kfmview.cpp:341 kfmview.cpp:347 kfmview.cpp:418 kfmview.cpp:440
@@ -747,26 +743,26 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr ""
 
 #: kfmserver.cpp:232
-msgid "The URL"
+#, c-format
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed\n"
 msgstr ""
 
-#: kfmserver.cpp:233
-msgid "is malformed\n"
-msgstr ""
-
-#: kfmserver.cpp:282
+#: kfmserver.cpp:281
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:291
+#: kfmserver.cpp:290
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
 
-#: kfmserver.cpp:299
+#: kfmserver.cpp:298
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -1135,7 +1131,10 @@ msgid "De&vice"
 msgstr ""
 
 #: kfmexec/main.cpp:46
-msgid "is malformed"
+#, c-format
+msgid ""
+"The URL %s\n"
+"is malformed"
 msgstr ""
 
 #: kfmexec/main.cpp:132
@@ -1149,4 +1148,10 @@ msgstr ""
 
 #: kfmexec/main.cpp:133
 msgid "KFM Question"
+msgstr ""
+
+#: kfmexec/main.cpp:199
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
 msgstr ""
