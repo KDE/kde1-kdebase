@@ -191,15 +191,15 @@ void Desktop::changeWindow(Window w)
 #ifdef DESKTOPDEBUG
     printf("[%d]Change window %ld\n",id,w);
 #endif
+
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==0L) return;
     
     QPixmap *tmpbigPixmap=0L;
-    if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
-    uint wid=getIndexOfWindow(w);
-    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
+    if (wpback->bigPixmap!=0L) {tmpbigPixmap=wpback->bigPixmap;wpback->bigPixmap=0L;};
     if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
     if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
+    uint wid=getIndexOfWindow(w);
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
@@ -218,7 +218,7 @@ void Desktop::changeWindow(Window w)
     // These two conditions are required to fix a wrong display of the window geometry
     // if kpager receives the last geometry change event after user has started to resize
     // the window again.
-    if ((!resizing)||(w!=resizingWin)) update();
+    if ((!resizing)||(w!=resizingWin)) repaint(FALSE);
 }
 
 void Desktop::raiseWindow(Window w)
@@ -246,7 +246,7 @@ void Desktop::raiseWindow(Window w)
     wp->bigPixmap=0L;
     if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->append(wp);
-    update();
+    repaint();
 #ifdef DESKTOPDEBUG
     printf("[%d]Raise2 window %ld\n",id,w);
 #endif
@@ -262,8 +262,7 @@ void Desktop::lowerWindow(Window w)
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==0L) return;
     QPixmap *tmpbigPixmap=0L;
-    if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
-    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
+    if (wpback->bigPixmap!=0L) {tmpbigPixmap=wpback->bigPixmap;wpback->bigPixmap=0L;};
     if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
     if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
     window_list->remove(wid);
@@ -463,14 +462,14 @@ void Desktop::paintEvent(QPaintEvent *)
               );           
 #endif
         
-        //        tmp.setRect((int)(wp->geometry.x()*ratiox),(int)(y+wp->geometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
-        
         paintWindow(painter,wp,tmp);
         
         wp=window_list->next();
     }
     painter->setClipping(FALSE);
-    //    painter->setPen(QColor(0,0,0));
+    
+    painter->setPen(desktopActived ? QColor(255,255,0) : QColor(0,0,0));
+
     painter->drawRect(0,0,width(),height());
 #ifdef DESKTOPDEBUG
     printf("PaintEvent2\n");
@@ -528,6 +527,7 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
         {
             printf("Doing workaround for not receiving signal\n");
             removeWindow(wp->id);
+	    update();
             wp=0L;
         };
     };
@@ -777,8 +777,8 @@ void Desktop::mouseDoubleClickEvent( QMouseEvent *)
 
 void Desktop::readBackgroundSettings(void)
 {
-    KConfig configglobal(KApplication::kde_configdir() + "/kdisplayrc",
-                         KApplication::localconfigdir() + "/kdisplayrc");
+    KConfig configglobal(KApplication::kde_configdir() + "/kcmdisplayrc",
+                         KApplication::localconfigdir() + "/kcmdisplayrc");
     configglobal.setGroup("Desktop Common");
     char s[50];
     if (configglobal.readBoolEntry("OneDesktopMode"))
@@ -871,32 +871,29 @@ void Desktop::readBackgroundSettings(void)
     }
     
     useWallpaper = config.readBoolEntry( "UseWallpaper", false );
+    if ((randomMode)&&(useDir))
+    {
+#ifdef DESKTOPDEBUG2
+       printf("[%d] reading Dir in random Mode\n",id);
+#endif
+       config.setGroup( "Common" );
+       QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
+       QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
+
+       QStrList *list = (QStrList *)d.entryList();
+       color1 = QColor(black);
+       gfMode=Flat;
+       orMode=Portrait;
+       wpMode = Tiled;
+       useWallpaper = true;
+       wallpaper = d.absPath() + "/" + list->at( randomid ); 	
+       loadWallpaper(wallpaper);
+
+       return;
+    }
+        
     if ( useWallpaper )
     {
-        
-        if ((randomMode)&&(useDir))
-        {
-#ifdef DESKTOPDEBUG2
-    printf("[%d] a\n",id);
-#endif
-    	    config.setGroup( "Common" );
-            QString tmpd = config.readEntry( "Directory", KApplication::kde_wallpaperdir());
-            QDir d( tmpd, "*", QDir::Name, QDir::Readable | QDir::Files );
-            
-            QStrList *list = (QStrList *)d.entryList();
-            color1 = QColor(black);
-            gfMode=Flat;
-            orMode=Portrait;
-            wpMode = Tiled;
-            useWallpaper = true;
-            wallpaper = d.absPath() + "/" + list->at( randomid ); 	
-#ifdef DESKTOPDEBUG2
-    printf("[%d] a\n",id);
-#endif
-            loadWallpaper(wallpaper);
-            return;
-        };
-        
         wallpaper = config.readEntry( "Wallpaper", "" );
 #ifdef DESKTOPDEBUG
     printf("[%d] w (%s)\n",id,wallpaper.data());
@@ -1304,7 +1301,7 @@ void Desktop::grabWindowContents(WindowProperties *wp)
         return;
     }
 #endif
-    
+   
     if ((!desktopActived)&&(!KWM::isSticky(wp->id)))
     {
         return;
@@ -1312,13 +1309,14 @@ void Desktop::grabWindowContents(WindowProperties *wp)
 #ifdef DESKTOPDEBUG
     printf("[%d]grabWin %ld\n",id,wp->id);
 #endif
-    QPixmap *tmp=new QPixmap(QPixmap::grabWindow(wp->id));
-    double rx=(double)100/tmp->width();
+
+    QPixmap tmp(QPixmap::grabWindow(wp->id));
+    double rx=(double)100/tmp.width();
     QWMatrix matrix;
     matrix.scale(rx,rx);
     if (wp->bigPixmap!=0L) delete wp->bigPixmap;
-    wp->bigPixmap=new QPixmap(tmp->xForm(matrix));
-    delete tmp;
+    wp->bigPixmap=new QPixmap(tmp.xForm(matrix));
+
 #ifdef DESKTOPDEBUG
     printf("[%d]grabWin(end)\n",id);
 #endif

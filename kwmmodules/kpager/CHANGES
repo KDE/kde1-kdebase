@@ -1,3 +1,8 @@
+* Mon Jan  4 12:26:00 CEST 1998
+
+Use kcmdisplayrc instead of kdisplayrc
+Fix for common desktop change
+
 * Wed Dic 30 7:50:00 CEST 1998
 
 Fixed a problem with common background changing while it is set.
