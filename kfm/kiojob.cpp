@@ -1340,6 +1340,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
       case KIO_ERROR_CouldNotWrite:
 	ksprintf(&msg, i18n("Could not write\n%s\nPerhaps access denied"),
 		 url.data());
+	if (action==JOB_MOVE) okToContinue = FALSE; // dangerous to continue
 	break;
       case KIO_ERROR_CouldNotCreateSocket:
 	ksprintf(&msg, i18n("Could not create Socket for\n%s"), url.data());
@@ -1358,6 +1359,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	break;
       case KIO_ERROR_CouldNotMkdir:
 	ksprintf(&msg, i18n("Could not make directory\n%s"), url.data());
+	if (action==JOB_MOVE) okToContinue = FALSE; // dangerous to continue
 	break;
       case KIO_ERROR_CouldNotList:
 	ksprintf(&msg,i18n("Could not list directory contents\n%s"), url.data());
