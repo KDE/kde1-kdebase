@@ -836,18 +836,18 @@ void Manager::propertyNotify(XPropertyEvent *e){
       if (KWM::isDoMaximize(c->window)) {
 	  if (!c->isOnDesktop( current_desktop) )
 	      switchDesktop(c->desktop);
-	  c->maximize(0, false);
+	  c->maximize( KWM::doMaximizeMode(c->window), false);
 	  KWM::doMaximize(c->window, false);
       }
   }
   else if (a == kwm_win_maximized ){
     if (c->isMaximized() != KWM::isMaximized(c->window)){
-	if (!c->isOnDesktop( current_desktop) )
-	    switchDesktop(c->desktop);
-	if (c->isMaximized())
-	    c->unMaximize();
-	else
-	    c->maximize();
+ 	if (!c->isOnDesktop( current_desktop) )
+ 	    switchDesktop(c->desktop);
+ 	if (c->isMaximized())
+ 	    c->unMaximize();
+ 	else
+ 	    c->maximize( KWM::maximizeMode(c->window) );
     }
   }
   else if (a == kwm_win_sticky){
@@ -2005,7 +2005,7 @@ void Manager::manage(Window w, bool mapped){
 
   if (KWM::isDoMaximize(c->window)) {
         KWM::doMaximize(c->window, false);
-        c->maximize(0, false);
+        c->maximize( KWM::doMaximizeMode(c->window), false);
   }
   else if (KWM::isMaximized(c->window)){
     QRect tmprec = KWM::geometryRestore(c->window);
@@ -2024,6 +2024,7 @@ void Manager::manage(Window w, bool mapped){
 
     // avoid flickering
     c->maximized = true;
+    c->maximize_mode = KWM::maximizeMode(c->window);
     c->buttonMaximize->toggle();
 
     c->geometry_restore = tmprec;

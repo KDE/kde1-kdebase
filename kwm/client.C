@@ -1924,8 +1924,8 @@ void Client::ontoDesktop(int new_desktop){
 }
 
 
-// maximize this client. Mode can be 0 (normal), 1 (verically) or 2
-// (horizontal). Store the current geometry in geometry_restore
+// maximize this client. Mode can be horizontal, vertical or fullscreen.
+// Store the current geometry in geometry_restore
 void Client::maximize(int mode, bool animate){
   if (isMaximized())
     return;
@@ -1951,11 +1951,11 @@ void Client::maximize(int mode, bool animate){
   }
 
   switch (mode) {
-  case 1:
+  case vertical:
     geometry.moveTopLeft(QPoint(geometry.x(), maxRect.y()));
     geometry.setHeight(maxRect.height());
     break;
-  case 2:
+  case horizontal:
     geometry.moveTopLeft(QPoint(maxRect.x(),geometry.y()));
     geometry.setWidth(maxRect.width());
     break;
@@ -1975,7 +1975,7 @@ void Client::maximize(int mode, bool animate){
 			      width()-title_rect.right()))
 	  return; //client has been destroyed
   }
-  KWM::setMaximize(window, maximized);
+  KWM::setMaximize(window, maximized, mode);
   if (!buttonMaximize->isOn())
       buttonMaximize->toggle();
 
@@ -2015,13 +2015,13 @@ void Client::maximizeToggled(bool depressed){
     if ( depressed){
       switch (buttonMaximize->last_button){
       case MidButton:
-	maximize(options.MaximizeOnlyVertically?0:1);
+	maximize(options.MaximizeOnlyVertically?fullscreen:vertical);
 	break;
       case RightButton:
-	maximize(2);
+	maximize(horizontal);
 	break;
       default: //Leftbutton
-	maximize(options.MaximizeOnlyVertically?1:0);
+	maximize(options.MaximizeOnlyVertically?vertical:fullscreen);
 	break;
       }
     }

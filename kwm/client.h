@@ -293,9 +293,12 @@ public:
   // move the client onto a new desktop. Will take floating and
   // transient windows with it.
   void ontoDesktop(int new_desktop);
-  // maximize this client. Mode can be 0 (normal), 1 (verically) or 2
-  // (horizontal). Store the current geometry in geometry_restore
-  void maximize(int mode = 0, bool animate = True);
+    
+    
+  enum {horizontal = 1, vertical = 2, fullscreen = 3};
+  // maximize this client. Mode can be horizontal, vertical or fullscreen.
+  // Store the current geometry in geometry_restore
+  void maximize(int mode = fullscreen, bool animate = True);
   // unmaximize this client. Geometry will be as it was before
   // (geometry_restore)
   void unMaximize();
