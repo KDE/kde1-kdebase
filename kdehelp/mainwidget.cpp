@@ -25,7 +25,7 @@ KHelpMain::KHelpMain(const char *name)
 	helpwin = new KHelpWindow(this, name);     
 	CHECK_PTR(helpwin);
 
-	DOCS_PATH = kapp->kdedir() + "/doc/HTML/";
+	DOCS_PATH = kapp->kdedir() + "/share/doc/HTML/";
 
 
 	createMenu();
@@ -195,13 +195,13 @@ void KHelpMain::createToolbar()
 	KToolBar *tb = new KToolBar( this );
 
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/back.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/back.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 0, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotBack() ),
 		    FALSE, klocale->translate("Previous Document"));
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/forward.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/forward.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 1, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotForward() ),
@@ -209,25 +209,25 @@ void KHelpMain::createToolbar()
 
 	tb->insertSeparator();
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/prev.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/prev.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 2, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotPrev() ),
 		    FALSE, klocale->translate("Previous Node"));
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/next.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/next.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 3, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotNext() ),
 		    FALSE, klocale->translate("Next Node"));
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/up.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/up.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 4, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotUp() ),
 		    FALSE,klocale->translate( "Up one Node"));
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/top.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/top.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 5, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotTop() ),
@@ -235,19 +235,19 @@ void KHelpMain::createToolbar()
 
 	tb->insertSeparator();
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/contents.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/contents.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 6, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotDir() ),
 		    FALSE, klocale->translate("Help Contents"));
 
-	pmpath = kapp->findFile( "lib/pics/stop.xpm" );
+	pmpath = kapp->findFile( "share/stop.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 7, SIGNAL( clicked() ),
 		    helpwin, SLOT( slotStopProcessing() ),
 		    FALSE, klocale->translate("Stop"));
 
-	pmpath = kapp->findFile( "lib/pics/toolbar/reload.xpm" );
+	pmpath = kapp->findFile( "share/toolbar/reload.xpm" );
 	pixmap.load( pmpath );
 	tb->insertButton(pixmap, 8, SIGNAL( clicked() ),
 		helpwin, SLOT( slotReload() ),
@@ -503,7 +503,7 @@ void KHelpMain::slotCloneWindow()
 		// in that case, select the title page...
 		url = "file:";
 		url += kapp->kdedir();
-		url += "/doc/HTML/index.html";
+		url += "/share/doc/HTML/index.html";
 	}
 
 	win->openURL( url );

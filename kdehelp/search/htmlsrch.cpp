@@ -191,7 +191,7 @@ bool searchHTML( const char *search, ostream &stream )
 		list.setAutoDelete( TRUE );
 
 		QString dir = kdedir;
-		dir += "/doc/HTML";
+		dir += "/share/doc/HTML";
 		processDir( list, dir, query );
 
 		stream << "<H2>KDE Applications</h2>" << endl;

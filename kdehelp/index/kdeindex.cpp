@@ -166,7 +166,7 @@ int main()
 
 	// System applications
 	QString appPath = d;
-	appPath += "/apps";
+	appPath += "/share/applnk";
 
 	QList<Entry> list;
 	list.setAutoDelete( TRUE );

@@ -12,6 +12,7 @@
 #include <kapp.h>
 #include <drag.h>
 #include <klocale.h>
+#include <time.h>
 #include "error.h"
 #include "khelp.h"
 #include "mainwidget.h"
@@ -122,7 +123,7 @@ int main(int argc, char *argv[])
 	{
 		initDoc = "file:";
 		initDoc += kapp->kdedir();
-		initDoc += "/doc/HTML/index.html";
+		initDoc += "/share/doc/HTML/index.html";
 	}
 
 	url = initDoc;
@@ -184,7 +185,7 @@ int main(int argc, char *argv[])
 	msgqid = msgget( key, IPC_CREAT | 0600 );
 
 	fp = fopen( pidFile, "w" );
-	fprintf( fp, "%ld %d\n", getpid(), msgqid );
+	fprintf( fp, "%ld %d\n", (long)getpid(), msgqid );
 	fclose( fp );
 
 	// so that everything is cleaned up
