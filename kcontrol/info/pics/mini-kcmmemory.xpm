@@ -1,8 +1,8 @@
 /* XPM */
-static char*kcmmemory[]={
+static char*mini[]={
 "16 16 4 1",
 "# c #808080",
-"b c #bebabe",
+"b c #c0c0c0",
 "a c #000000",
 ". c None",
 ".......#........",
