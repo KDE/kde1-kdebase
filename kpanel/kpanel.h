@@ -257,6 +257,7 @@ protected:
     void    resizeEvent( QResizeEvent * );
     void enterEvent( QEvent *);
     void leaveEvent( QEvent * );
+    void syncWindowRegions();
 
     bool eventFilter(QObject *, QEvent *);
     void mousePressEvent( QMouseEvent * );

@@ -1589,7 +1589,18 @@ void kPanel::showPanelFromRight(bool smooth){
   }
 }
 
+//////////////////////////////////////////////////////////////////////////////
+// Set the same WindowRegion for all desktops.
+// Called when a window is added/removed and the number of taskbar rows 
+// changes.
+void kPanel::syncWindowRegions() {
+  QRect region = KWM::getWindowRegion(currentDesktop);
+  int nd = KWM::numberOfDesktops();
 
+  for (int i = 1; i <= nd; i++)
+    if (i != currentDesktop)
+      KWM::setWindowRegion(i, region);
+}
 
 void kPanel::doGeometry (bool do_not_change_taskbar) {
 

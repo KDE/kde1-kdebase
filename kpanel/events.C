@@ -252,8 +252,10 @@ void kPanel::windowAdd(Window w){
 
   b->virtual_desktop = KWM::desktop(w);
   layoutTaskbar();
-  if (nr != numberOfTaskbarRows())
+  if (nr != numberOfTaskbarRows()) {
     doGeometry();
+    syncWindowRegions();
+  }
 }
 
 void kPanel::windowRemove(Window w){
@@ -265,8 +267,10 @@ void kPanel::windowRemove(Window w){
   taskbar->remove(b);
   delete b;
   layoutTaskbar();
-  if (nr != numberOfTaskbarRows())
+  if (nr != numberOfTaskbarRows()) {
     doGeometry();
+    syncWindowRegions();
+  }
 }
 void kPanel::windowChange(Window w){
   myTaskButton* b = taskButtonFromWindow(w);
