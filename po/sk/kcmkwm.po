@@ -162,13 +162,12 @@ msgid "Window resize"
 msgstr "Zmena veµkosti"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animácia titulku"
+msgstr "Animácia:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rýchla"
 
 #: windows.cpp:98
 msgid "Placement policy"
