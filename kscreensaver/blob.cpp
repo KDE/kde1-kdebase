@@ -85,13 +85,14 @@ KBlobSaver::KBlobSaver
 	if (QPixmap::defaultDepth() == 8)
 	{
 		memset(lookup, 0, 256*sizeof(uint));
-		for (int i = 0; i < RAMP; i++)
+                int i; 
+		for (i = 0; i < RAMP; i++)
 		{
 			color.setRgb(64+(int)(ramp*(float)i), 0, 0);
 			colors[i] = color.alloc();
 		}
 		memset(lookup, black.pixel(), sizeof(uint)*256);
-		for (int i = 0; i < RAMP-1; i++)
+		for (i = 0; i < RAMP-1; i++)
 			lookup[colors[i]] = colors[i+1];
 		lookup[black.pixel()] = lookup[colors[RAMP-1]] = colors[0];
 	}

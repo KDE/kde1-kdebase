@@ -44,7 +44,7 @@ public:
 public slots:
     void setAlgorithm(int);
 
-private:
+public:
     typedef void (KBlobSaver::*AlgFunc)();
     struct KBSAlg
     {
@@ -52,6 +52,7 @@ private:
 	AlgFunc Init;
 	AlgFunc NextFrame;
     };
+private:
 
     QTimer	timer;
     uint	colors[RAMP];
