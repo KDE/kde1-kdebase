@@ -59,7 +59,7 @@ enum EntryType { empty, separator, submenu, unix_com, prog_com, label, add_but }
 
 class PMenuItem : public QObject
 {
-  Q_OBJECT;
+  Q_OBJECT
   friend QString &operator<<(QString &, PMenuItem &);
   friend PMenu;
 public:

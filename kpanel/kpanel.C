@@ -661,7 +661,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       p_pmenu->setAltSort(foldersFirst);
       p_pmenu->parse(QDir(kde_apps));
       PMenuItem* pmi = new PMenuItem ;
-      pmi->parse(&QFileInfo(personal), p_pmenu);
+      QFileInfo fi(personal);
+      pmi->parse(&fi, p_pmenu);
       pmenu->add( new PMenuItem((EntryType) separator) );
       pmenu->add( pmi );
     }
@@ -676,7 +677,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	p_pmenu->setAltSort(foldersFirst);
 	p_pmenu->parse(QDir(personal));
 	PMenuItem* pmi = new PMenuItem ;
-	pmi->parse(&QFileInfo(personal), p_pmenu);
+	QFileInfo fi(personal);
+	pmi->parse(&fi, p_pmenu);
 	pmenu->add( new PMenuItem((EntryType) separator) );
 	pmenu->add( pmi );
       }
@@ -1001,7 +1003,8 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        pm->setAltSort(foldersFirst);
        pm->parse(QDir(pmi->fullPathName()));
        PMenuItem* pmi2 = new PMenuItem;
-       pmi2->parse(&QFileInfo(pmi->fullPathName()), pm);
+       QFileInfo fi(pmi->fullPathName());
+       pmi2->parse(&fi, pm);
        pmi = pmi2;
        pm->createMenu(pmi->getQPopupMenu(), this);
        entries[nbuttons-1].pmi = pmi;

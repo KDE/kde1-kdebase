@@ -81,7 +81,7 @@ PMenuItem::PMenuItem()
 
 PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, 
 		      PMenu *menu, QObject *receiver, char *member,
-		      QPopupMenu *cm, bool ro = FALSE, QString d, QString co )
+		      QPopupMenu *cm, bool ro, QString d, QString co )
 {
   initMetaObject();
   entry_type = e;
@@ -153,7 +153,7 @@ PMenuItem::~PMenuItem()
     }
 }
 
-short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
+short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
 {
   real_name = fi->fileName().copy();
   int pos = fi->fileName().find(".kdelnk");
@@ -314,7 +314,7 @@ PMenu::~PMenu()
   list.clear();
 }
 
-void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button = FALSE )
+void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 {
   QPixmap buffer;
   PMenuItem *item;

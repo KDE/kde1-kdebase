@@ -8,6 +8,7 @@
 #include <kwmmapp.h>
 #include <qmsgbox.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include "kpanel_version.h"
 #include <X11/keysym.h>
