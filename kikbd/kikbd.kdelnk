@@ -2,12 +2,14 @@
 [KDE Desktop Entry]
 Name=Kikbd
 Name[de]=Kikbd
+Name[no]=Kikbd
 Name[ru]=Kikbd
 Name[ua]=Kikbd
 Name[pl]=Kikbd
 Name[cf]=Kikbd
 Name[hu]=Kikbd
 Comment=International Keyboard
+Comment[no]=Internationalt tastatur
 Comment[ru]=Интернациональная клавиатура
 Comment[pt]=Teclado Internacional
 Exec=kikbd -caption "%c" %i %m
