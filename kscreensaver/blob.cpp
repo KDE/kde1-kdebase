@@ -33,6 +33,10 @@
 
 #include "blob.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 #define SMALLRAND(a)	(int)((float)(rand()/(float)RAND_MAX)*(float)(a)+1)
 
 static KBlobSaver *saver = NULL;
@@ -552,6 +556,6 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Blobs";
+	return glocale.translate("Blobs");
 }
 

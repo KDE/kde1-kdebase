@@ -189,6 +189,10 @@ drawhop(Window win)
 
 #include "hop.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kHopSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -214,7 +218,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Hop";
+	return glocale.translate("Hop");
 }
 
 //-----------------------------------------------------------------------------

@@ -74,6 +74,7 @@ static login_cap_t *rlc = NULL;
 #endif
 
 extern int mode;
+extern bool canGetPasswd;
 
 #if ( HAVE_FCNTL_H && defined( USE_MULTIPLE_ROOT ))
 #include <fcntl.h>
@@ -500,11 +501,8 @@ getCryptedUserPasswd(void)
 	/* Program probably needs to be setuid to root.  */
 	/* If this is not possible, compile with -DUSE_XLOCKRC */
 #ifdef HAVE_SHADOW
-	if (passwd_invalid(pw->pw_passwd)) {
-	    KMsgBox::message(NULL, "Shadow Passwords", "Your system uses shadow passwords!\nPlease contact your system administrator.");
-	    mode = MODE_TEST;
-	    // exit(1);
-	};
+	if (passwd_invalid(pw->pw_passwd)) 
+	  canGetPasswd = false;
 #endif
 	(void) strcpy(userpass, pw->pw_passwd);
 

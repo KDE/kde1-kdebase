@@ -83,6 +83,9 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
 		lissie.h blob.h
 
+messages:
+	@XGETTEXT@ -C -ktranslate *.cpp # && mv messages.po ../po/klock.po 
+
 ########## Meta objects ##########
 
 main.moc: main.h

@@ -295,6 +295,10 @@ void laser_cleanup()
 
 #include "laser.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kLaserSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -320,7 +324,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Laser";
+	return glocale.translate("Laser");
 }
 
 //-----------------------------------------------------------------------------

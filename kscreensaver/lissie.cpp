@@ -202,6 +202,10 @@ drawlissie(Window win, lissiestruct * lissie)
 
 #include "lissie.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kLissieSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -227,7 +231,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Lissie";
+	return glocale.translate("Lissie");
 }
 
 //-----------------------------------------------------------------------------

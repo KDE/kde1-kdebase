@@ -904,6 +904,10 @@ release_morph3d()
 
 #include "morph3d.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kMorph3dSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -929,7 +933,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Morph3D (GL)";
+	return glocale.translate("Morph3D (GL)");
 }
 
 //-----------------------------------------------------------------------------

@@ -5,6 +5,10 @@
 // Copyright (c)  Martin R. Jones 1996
 //
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,6 +28,9 @@
 #include "saver.h"
 #include "main.h"
 #include "main.moc"
+#include <kmsgbox.h>
+
+KLocale glocale("klock");
 
 extern void startScreenSaver( Drawable d );
 extern void stopScreenSaver();
@@ -32,6 +39,7 @@ extern const char *getScreenSaverName();
 extern void initPasswd();
 
 int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
+bool canGetPasswd = true;
 static int lockOnce = FALSE;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
 static QString pidFile;
@@ -250,7 +258,13 @@ int main( int argc, char *argv[] )
 
 	if ( mode == MODE_INSTALL )
 	{
-		pidFile = getenv( "HOME" );
+	 if (!canGetPasswd) {
+	   KMsgBox::message(NULL, 
+			    glocale.translate("Shadow Passwords"), 
+			    glocale.translate("Your system uses shadow passwords!\n"\
+					      "Please contact your system administrator."));
+	 };
+	 pidFile = getenv( "HOME" );
 		pidFile += "/.kss.pid";
 		FILE *fp;
 		if ( (fp = fopen( pidFile, "r" ) ) != NULL )
@@ -402,22 +416,24 @@ static void cleanup( int )
 
 void usage( char *name )
 {
-	printf( "Usage: %s -install|-setup|-test|-desc|-preview wid\n", name );
-	printf( "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n" );
-	printf( "  -corners xxxx     Placing cursor in corner performs action:\n" );
-	printf( "                     x = i  no action (ignore)\n" );
-	printf( "                     x = s  save screen\n" );
-	printf( "                     x = l  lock screen\n" );
-	printf( "                    order: top-left, top-right, bottom-left, bottom-right\n" );
-	printf( "  -delay num        Amount of idle time before screen saver\n" );
-	printf( "                     starts  (default 10min)\n" );
-	printf( "  -desc             Print the screen saver's description to stdout\n" );
-	printf( "  -install          Install screen saver\n" );
-	printf( "  -lock             Require password to stop screen saver\n" );
-	printf( "  -nice num         Run with specified nice value\n\n" );
-	printf( "  -preview wid      Run in the specified XWindow\n" );
-	printf( "  -setup            Setup screen saver\n" );
-	printf( "  -test             Invoke the screen saver immediately\n" );
+	printf( glocale.translate(
+	   "Usage: %s -install|-setup|-test|-desc|-preview wid\n"\
+	   "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"), name );
+	printf( glocale.translate(
+	"  -corners xxxx     Placing cursor in corner performs action:\n"\
+	"                     x = i  no action (ignore)\n"\
+	"                     x = s  save screen\n"\
+	"                     x = l  lock screen\n"\
+	"                    order: top-left, top-right, bottom-left, bottom-right\n"\
+	"  -delay num        Amount of idle time before screen saver\n"\
+	"                     starts  (default 10min)\n"\
+	"  -desc             Print the screen saver's description to stdout\n"\
+	"  -install          Install screen saver\n"\
+	"  -lock             Require password to stop screen saver\n"\
+	"  -nice num         Run with specified nice value\n\n"\
+	"  -preview wid      Run in the specified XWindow\n"\
+	"  -setup            Setup screen saver\n"\
+	"  -test             Invoke the screen saver immediately\n"));
 	exit(1);
 }
 

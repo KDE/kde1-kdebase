@@ -397,6 +397,10 @@ void rock_setRotate( bool rotate )
 
 #include "rock.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kRockSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -422,7 +426,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Rock";
+	return glocale.translate("Rock");
 }
 
 kRockSaver::kRockSaver( Drawable drawable ) : kScreenSaver( drawable )

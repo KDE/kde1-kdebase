@@ -21,6 +21,10 @@
 
 #include "banner.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static KBannerSaver *saver = NULL;
 
 //-----------------------------------------------------------------------------
@@ -49,7 +53,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Banner";
+	return glocale.translate("Banner");
 }
 
 //-----------------------------------------------------------------------------
@@ -73,10 +77,10 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 
 	setCaption( "Setup kbanner" );
 
-	QGroupBox *group = new QGroupBox( "Font", this );
+	QGroupBox *group = new QGroupBox( glocale.translate("Font"), this );
 	group->setGeometry( 15, 15, 180, 140 );
 
-	label = new QLabel( "Family:", group );
+	label = new QLabel( glocale.translate("Family:"), group );
 	label->setGeometry( 15, 15, 50, 20 );
 
 	combo = new QComboBox( FALSE, group );
@@ -92,7 +96,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	connect( combo, SIGNAL( activated( const char * ) ),
 			SLOT( slotFamily( const char * ) ) );
 
-	label = new QLabel( "Size:", group );
+	label = new QLabel( glocale.translate("Size:"), group );
 	label->setGeometry( 15, 45, 60, 20 );
 
 	combo = new QComboBox( FALSE, group );
@@ -109,7 +113,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	}
 	connect( combo, SIGNAL( activated( int ) ), SLOT( slotSize( int ) ) );
 
-	label = new QLabel( "Color:", group );
+	label = new QLabel( glocale.translate("Color:"), group );
 	label->setGeometry( 15, 80, 50, 20 );
 
 	colorPush = new QPushButton( group );
@@ -119,17 +123,17 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	colorPush->setPalette( QPalette( colgrp, colgrp, colgrp ) );
 	connect( colorPush, SIGNAL( clicked() ), SLOT( slotColor() ) );
 
-	QCheckBox *cb = new QCheckBox( "Bold", group );
+	QCheckBox *cb = new QCheckBox( glocale.translate("Bold"), group );
 	cb->setGeometry( 15, 110, 60, 20 );
 	cb->setChecked( bold );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotBold( bool ) ) );
 
-	cb = new QCheckBox( "Italic", group );
+	cb = new QCheckBox( glocale.translate("Italic"), group );
 	cb->setGeometry( 95, 110, 60, 20 );
 	cb->setChecked( italic );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotItalic( bool ) ) );
 
-	label = new QLabel( "Speed:", this );
+	label = new QLabel( glocale.translate("Speed:"), this );
 	label->setGeometry( 15, 155, 60, 20 );
 
 	sb = new KSlider( KSlider::Horizontal, this );
@@ -139,7 +143,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	sb->setValue( speed );
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
-	label = new QLabel( "Message:", this );
+	label = new QLabel( glocale.translate("Message:"), this );
 	label->setGeometry( 15, 205, 60, 20 );
 
 	QLineEdit *ed = new QLineEdit( this );
@@ -154,15 +158,15 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	preview->show();    // otherwise saver does not get correct size
 	saver = new KBannerSaver( preview->winId() );
 
-	button = new QPushButton( "About", this );
+	button = new QPushButton( glocale.translate("About"), this );
 	button->setGeometry( 210, 245, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 
-	button = new QPushButton( "Ok", this );
+	button = new QPushButton( glocale.translate("Ok"), this );
 	button->setGeometry( 315, 245, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( "Cancel", this );
+	button = new QPushButton( glocale.translate("Cancel"), this );
 	button->setGeometry( 380, 245, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
 }
@@ -308,7 +312,9 @@ void KBannerSetup::slotOkPressed()
 
 void KBannerSetup::slotAbout()
 {
-	QMessageBox::message("About Banner", "Banner Version 0.1\n\r\n\rwritten by Martin R. Jones 1996\n\rmjones@kde.org", "Ok");
+	QMessageBox::message(glocale.translate("About Banner"), 
+			     glocale.translate("Banner Version 0.1\n\nwritten by Martin R. Jones 1996\nmjones@kde.org"), 
+			     glocale.translate("Ok"));
 }
 
 //-----------------------------------------------------------------------------
@@ -410,7 +416,7 @@ void KBannerSaver::readSettings()
 	if ( !str.isNull() )
 		message = str;
 	else
-		message = "KDE";
+		message = glocale.translate("KDE is great");
 }
 
 // initialise font

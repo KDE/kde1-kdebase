@@ -271,6 +271,10 @@ drawflame(Window win)
 
 #include "flame.moc"
 
+// this refers to klock.po. If you want an extra dictionary, 
+// create an extra KLocale instance here.
+extern KLocale glocale;
+
 static kFlameSaver *saver = NULL;
 
 void startScreenSaver( Drawable d )
@@ -296,7 +300,7 @@ int setupScreenSaver()
 
 const char *getScreenSaverName()
 {
-	return "Flame";
+	return glocale.translate("Flame");
 }
 
 //-----------------------------------------------------------------------------
