@@ -29,18 +29,10 @@ AC_PROG_CXX
 AC_PROG_LN_S
 AC_PROG_RANLIB dnl for libkfm
 
-dnl Checks for supported features
-KSCREEN="kscreensaver"
-AC_ARG_ENABLE(kscreensaver,[  --enable-kscreensaver	The KDE screen saver [default=yes]], 
-test $enableval = "no" && KSCREEN="")
-AC_SUBST(KSCREEN)
-
-if test $KSCREEN = "kscreensaver"; then
- case $host in 
- *-*-linux* )
-    AC_CHECK_HEADER(elf.h, AC_DEFINE(HAVE_SHADOW))
- esac
-fi 
+case $host in 
+*-*-linux* )
+   AC_CHECK_HEADER(elf.h, AC_DEFINE(HAVE_SHADOW))
+esac
 
 AC_LANG_CPLUSPLUS
 dnl Checks for libraries.
@@ -84,10 +76,36 @@ AC_SUBST(LIBSOCKET)
 AC_SUBST(LIBCOMPAT)
 AC_SUBST(LIBCRYPT)
 
-ac_output=`find . -name Makefile.in -print | sed -e 's#\.in$##' | sed -e 's#^\./##' | sort`
-dnl filter the Makefile, that I handle separatly
-ac_output=`echo $ac_output | sed -e 's#\./Makefile##'`
-ac_output=`echo $ac_output | sed -e 's#\./kpanel/Makefile##'`
+AC_OUTPUT(Makefile \
+	kpanel/Makefile \
+	kdehelp/Makefile \
+	kdehelp/doc/Makefile \
+	kdehelp/index/Makefile \
+	kdehelp/search/Makefile \
+	kfm/Makefile \
+	kfm/Desktop/Makefile \
+	kfm/doc/Makefile \
+	kfm/apps/Makefile \
+	kfm/client/Makefile \
+	kfm/kioslave/Makefile \
+	kfm/pics/Makefile \
+	kfm/kfmwarn/Makefile \
+	kfm/mimetypes/Makefile \
+	kdisplay/Makefile \
+	kdisplay/doc/Makefile \
+	kfind/Makefile \
+	kfind/doc/Makefile \
+	kfontmanager/Makefile \
+	kfontmanager/docs/Makefile \
+	klogout/Makefile \
+	kpanel/apps/Makefile \
+	kpanel/lib/pics/Makefile \
+	kscreensaver/Makefile \
+	kvt/Makefile \
+	kwm/Makefile \
+	kwm/doc/Makefile \
+	kwm/pics/Makefile \
+	kwmclient/Makefile \
+	pics/Makefile)
 
-AC_OUTPUT(Makefile kpanel/Makefile $ac_output)
 
