@@ -27,7 +27,7 @@ msgstr "Slettetasten vil sende en"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Regeler markørtastsending"
 
 #: main.C:532
 msgid "&New Terminal"
