@@ -1,3 +1,12 @@
+Sat Jan 10 17:40:44 1998  Stephan Kulow  <coolo@kde.org>
+
+	* started to maintain a ChangeLog file again
+	* rewrote the AC_CREATE_KFSSTND to get better debug output to find 
+	  the problem
+
+
+Old logs, Stephan Kulow made:
+	
 0.1 : first steps with libkde
 0.2 : first release with libkde, khtmlw, kdehelp, acli, kwm, kpanel
 0.3 : added kfm and bugfixes
@@ -78,3 +87,4 @@
 	added morph3d to kscreensavers
 	updated kfind to 0.3.2
 	added some patches for SGI
+... lost the time to maintain a Changelog ;)
