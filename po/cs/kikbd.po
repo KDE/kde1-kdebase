@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
-"PO-Revision-Date: 1999-01-22 23:22+01:00\n"
+"PO-Revision-Date: 1999-04-13 11:21+02:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,6 @@ msgstr ""
 "Alt symboly zablokovány"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -76,12 +75,11 @@ msgstr ""
 " Pøejete si, aby se pøístì spou¹tìla automaticky?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: není mo¾né alokovat pamì»"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -94,17 +92,17 @@ msgstr ""
 "konfiguraèního programu."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: není mo¾né nalézt symbol \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: nerozumím kódu klávesy \"%s\"."
+msgstr "KeyMap: není mo¾né pøeèíst kód klávesy \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
 
@@ -306,9 +304,8 @@ msgid "&Add"
 msgstr "Pøid&at"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
-msgstr "Pøidávám novou klávesovou mapu"
+msgstr "Pøidat novou klávesovou mapu"
 
 #: widgets.cpp:131
 msgid "Remove selected keyboard map"
@@ -319,18 +316,16 @@ msgid "U&p"
 msgstr "Na&horu"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Odstranit zvolenou mapu"
+msgstr "Pøesunout zvolenou mapu vý¹e"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "D&olù"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Vybranou Kláv. mapu dolù"
+msgstr "Pøesunout zvolenou mapu ní¾e"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -345,7 +340,6 @@ msgid "Use &hot list"
 msgstr "Pou¾ít &hotlist"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
@@ -358,9 +352,8 @@ msgid "Adding Keyboard"
 msgstr "Pøidání klávesnice"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
-msgstr "Ji¾ zde není víc klávesových map"
+msgstr "Ji¾ zde není víc klávesových map k pøidání"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -383,12 +376,10 @@ msgid "Switch and Alt Switch"
 msgstr "Pøepnutí a pøepnutí s Altem"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Klávesa(y) na pøepínání mezi mapami"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Klávesa pro aktivaci altern. symbolù v aktuální kláv. mapì"
 
@@ -397,7 +388,6 @@ msgid "&Beep"
 msgstr "&Pípnutí"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Pípnout pøi ka¾dé zmìnì klávesové mapy"
 
@@ -418,18 +408,16 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emulovat CapsLock"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emulovat Capslock XServeru. Potøebné pro nìkteré jazyky"
+msgstr "Emulovat Capslock XServeru. Potøebné pro správnou funkci v nìkterých jazycích"
 
 #: widgets.cpp:482
 msgid "&World Menu"
 msgstr "&Svìtové menu"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Ukazovat menu v ka¾dém oknì pøi stiskuté pøepínací klávese"
 
@@ -450,21 +438,18 @@ msgid "Input"
 msgstr "Vstup"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standardní chování. Klávesová mapa aktivní pro v¹echna okna"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standardní chování. Klávesová mapa aktivní pro v¹echna okna"
+msgstr "Roz¹íøené chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dé okno"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standardní chování. Klávesová mapa aktivní pro v¹echna okna"
+msgstr "Speciální chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dou tøídu oken"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -476,15 +461,15 @@ msgstr "Popøedí"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Barva popøedí popisky"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Pozadí"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Barva pozadí popisky"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -499,7 +484,6 @@ msgid "With Alternate"
 msgstr "S Alt"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
 msgstr "Pozadí, pøi stisknutí pøepínaèe Alternate"
 
@@ -558,16 +542,3 @@ msgstr "Sp&u¹tení"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Mezinárodní klávesnice"
-
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Vybranou Kláv. mapu nahoru"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr "Roz¹íøené chování. Ka¾dé okno si pamatuje svou klávesovou mapu"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr ""
-#~ "Speciální chování. Ka¾dá tøída oken si pamatuje svoji klávesovou mapu"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Barva textového popisku"
