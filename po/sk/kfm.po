@@ -578,7 +578,7 @@ msgstr "Vertikálne vzdialenosti:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Text ikoniek pracovnej plochy priehµadný"
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
