@@ -121,7 +121,7 @@ msgstr "Understrek lenker"
 
 #: htmlopts.cpp:390
 msgid "Always use my colors"
-msgstr ""
+msgstr "Bruk alltid mine farger"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

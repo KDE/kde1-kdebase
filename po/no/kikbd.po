@@ -58,13 +58,12 @@ msgstr ""
 "\"Alt\" symboler utkoplet"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Kan ikke fjerne Caps Lock fra Modifiers.\n"
-"Caps Lock emulering utkoplet"
+"Kan ikke fjerne Caps Lock fra modifiserere.\n"
+"Caps Lock-emulering er koplet ut"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -192,7 +191,6 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Konfigurasjon din er tom. Installer systemstandard."
 
 #: kikbdconf.cpp:218
-#, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
@@ -201,7 +199,6 @@ msgstr ""
 "Noen innstillinger kan være feil."
 
 #: kikbdconf.cpp:226
-#, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
