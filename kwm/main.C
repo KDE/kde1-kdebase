@@ -19,7 +19,7 @@
 #include "client.h"
 #include "minicli.h"
 #include "logout.h"
-#include "task.h"
+#include "taskmgr.h"
 #include <kwm.h>
 #include "version.h"
 

@@ -11,8 +11,8 @@ SUBDIRS 	= pics
 
 #######	Files
 
-kwm_SOURCES	= client.C manager.C main.C minicli.C drag.C logout.C task.C
-BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc logout.moc task.moc
+kwm_SOURCES	= client.C manager.C main.C minicli.C drag.C logout.C taskmgr.C
+BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc logout.moc taskmgr.moc
 
 client.C:client.moc
 client.moc: client.h
@@ -34,9 +34,9 @@ logout.C:logout.moc
 logout.moc: logout.h
 	$(MOC) logout.h -o logout.moc
 
-task.C:task.moc
-task.moc: task.h
-	$(MOC) task.h -o task.moc
+taskmgr.C:taskmgr.moc
+taskmgr.moc: taskmgr.h
+	$(MOC) taskmgr.h -o taskmgr.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) 

@@ -1,7 +1,7 @@
 // ktask
 // Copyright (C) 1997 Matthias Ettrich
 
-#include "task.moc"
+#include "taskmgr.moc"
 #include <kapp.h>
 #include <qwidget.h>
 #include <qpainter.h>
@@ -186,13 +186,13 @@ void Ktask::cleanup(){
   XUngrabServer(qt_xdisplay());
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
+  hide();
+  do_not_draw = FALSE;
   if (reactive){
     reactive->setactive(True);
     XSetInputFocus (qt_xdisplay(), reactive->window, 
 		    RevertToPointerRoot, CurrentTime);
   }
-  hide();
-  do_not_draw = FALSE;
   XSync(qt_xdisplay(), FALSE);
 }
 

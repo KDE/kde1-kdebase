@@ -285,13 +285,13 @@ void Klogout::cleanup(){
   XUngrabServer(qt_xdisplay());
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
+  hide();
+  do_not_draw = FALSE;
   if (reactive){
     reactive->setactive(True);
     XSetInputFocus (qt_xdisplay(), reactive->window, 
 		    RevertToPointerRoot, CurrentTime);
   }
-  hide();
-  do_not_draw = FALSE;
   manager->refreshScreen();
 }
 
