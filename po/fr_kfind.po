@@ -33,9 +33,6 @@ msgid ""
 "Frontend to find utility\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>"
 msgstr ""
-"KFind %s\n"
-""
-""
 
 #: kfindtop.cpp:123
 msgid "&File"
