@@ -80,8 +80,12 @@ AC_HEADER_DIRENT
 AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h crypt.h sys/select.h \
 	sys/ioctl.h sys/stropts.h termio.h termios.h lastlog.h malloc.h \
-	sys/sockio.h crypt.h krb5/krb5.h rpc/rpc.h rpc/key_prot.h \
-	sys/m_wait.h sys/param.h)
+	sys/sockio.h krb5/krb5.h rpc/rpc.h rpc/key_prot.h ys/m_wait.h \
+	ys/param.h)
+
+AC_CHECK_LIB(curses, setupterm, [LIBCURSES=-lcurses],
+  AC_CHECK_LIB(ncurses, setupterm, [LIBCURSES=-lncurses]))
+AC_SUBST(LIBCURSES)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_LANG_CPLUSPLUS

@@ -3,7 +3,7 @@
 ##
 
 INCLUDES= $(all_includes)
-LDADD	= $(all_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 -lcurses $(KDE_RPATH) $(LIBSOCKET)
+LDADD	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCURSES) $(KDE_RPATH) $(LIBSOCKET)
 DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt
@@ -17,7 +17,7 @@ main.C: main.moc
 
 main.moc: main.h
 	$(MOC) main.h -o main.moc
-	
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) kvt.xpm $(kde_icondir)/kvt.xpm
