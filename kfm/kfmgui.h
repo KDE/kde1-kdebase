@@ -304,6 +304,10 @@ public slots:
      */
     void slotAddBookmark();
     /**
+     * Menu "Bookmarks->Edit Bookmarks"
+     */
+    void slotEditBookmarks();
+    /**
      * Bound to all menu items in "Bookmarks"
      */
     void slotBookmarkSelected( int id );

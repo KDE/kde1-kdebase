@@ -455,6 +455,10 @@ void KfmGui::initMenu()
     QString bmFile = p + "/.kde/share/apps/kfm/bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
+    // rich
+    bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
+			      this, SLOT(slotEditBookmarks()) );
+
     bookmarkManager->read( bmFile );
     
     QPopupMenu *help = new QPopupMenu;
@@ -883,6 +887,10 @@ void KfmGui::slotBookmarksChanged()
     bookmarkMenu->disconnect( this );
     bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
+    // rich
+    bookmarkMenu->insertItem( klocale->translate("&Edit Bookmarks..."), 
+			      this, SLOT(slotEditBookmarks()) );
+
     bookmarkMenu->insertSeparator();
     int idStart = BOOKMARK_ID_BASE;
     fillBookmarkMenu( bookmarkManager->getRoot(), bookmarkMenu, idStart );
@@ -994,6 +1002,16 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 void KfmGui::slotAddBookmark()
 {
     addBookmark( title.data(), view->getURL() );
+}
+
+// rich
+void KfmGui::slotEditBookmarks()
+{
+  KBookmarkDlg *dlg;
+
+  dlg= new KBookmarkDlg(bookmarkManager);
+  dlg->exec();
+  delete dlg;
 }
 
 void KfmGui::slotBookmarkSelected( int id )

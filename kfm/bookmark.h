@@ -51,6 +51,16 @@ public:
 	void write( const char *filename );
 
 	void add( const char *_text, const char *_url );
+	// rich
+	bool remove(int);
+	bool moveUp(int);
+	bool moveDown(int);
+	void reread();
+	void rename(int, const char *);
+	/**
+	 * Overloaded to reread the last file loaded
+	 */
+	void write();
 
 	KBookmark *getBookmark( int id );
 	KBookmark *getRoot()	{	return &root; }
@@ -66,6 +76,8 @@ signals:
 private:
 	KBookmark root;
 	QString title;
+	// rich
+        QString myFilename;
 };
 
 #endif	// __BOOKMARK_H__

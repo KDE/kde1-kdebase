@@ -54,6 +54,9 @@ void KBookmarkManager::read( const char *filename )
 	if ( !file.open( IO_ReadOnly ) )
 		return;
 
+	// rich
+	myFilename= filename;
+
 	root.clear();
 
 	QString text;
@@ -217,6 +220,9 @@ void KBookmarkManager::write( const char *filename )
 	if ( !file.open( IO_WriteOnly ) )
 		return;
 
+	// rich
+	myFilename= filename;
+
 	QTextStream stream( &file );
 
 	stream << "<!DOCTYPE KDEHELP-Bookmark-file>" << endl;
@@ -293,5 +299,72 @@ void KBookmarkManager::add( const char *_text, const char *_url )
 	root.getChildren().append( new KBookmark( _text, _url ) );
 
 	emit changed();
+}
+
+// rich
+bool KBookmarkManager::remove(int i)
+{
+  bool result= false;
+  if (i >= 0) {
+    root.getChildren().remove(i);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+void KBookmarkManager::rename(int i, const char *s)
+{
+  KBookmark *b;
+
+  if (i > 0) {
+    b= root.getChildren().at(i);
+    b->setText(s);
+    emit changed();
+  }
+}
+
+// rich
+bool KBookmarkManager::moveUp(int i)
+{
+  KBookmark *b;
+  bool result= false;
+
+  if (i > 0) {
+    b= root.getChildren().take(i);
+    root.getChildren().insert(i-1, b);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+bool KBookmarkManager::moveDown(int i)
+{
+  KBookmark *b;
+  uint j= i;
+  bool result= false;
+
+  if (j < (root.getChildren().count() -1)) {
+    b= root.getChildren().take(i);
+    root.getChildren().insert(i+1, b);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+void KBookmarkManager::reread()
+{
+  read(myFilename);
+}
+
+// rich
+void KBookmarkManager::write()
+{
+  write(myFilename);
 }
 
