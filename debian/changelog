@@ -1,3 +1,10 @@
+kdebase (4:1.1-19990214-2) unstable; urgency=low
+
+  * move the link from /var/ to /usr, since /usr may be read only
+  * patch Xserver_0 to run kdmgreeter if kdm runs
+
+ -- Stephan Kulow <coolo@kde.org>  Tue, 16 Feb 1999 18:52:03 +0100
+
 kdebase (4:1.1-19990214-1) unstable; urgency=low
 
   * fix some bugs (krdb & menu)

@@ -61,7 +61,7 @@ binary-arch2:
 	install -d debian/tmp/etc/X11
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
-	cp debian/debian.directory \
+	cp debian/debian.kdelnk \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
 	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm 
 	dh_undocumented `cat debian/man-pages`

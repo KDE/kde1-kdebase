@@ -8,7 +8,6 @@ kfontmanager kde Modules
 kmenuedit kde Modules 
 kwmpager kde Modules
 kbgndwm kde Modules
-kcc x11 kde Apps/System
 kfmsu x11 System
 kcmdisplay x11 NONE
 kcmbell x11 NONE

@@ -6,7 +6,7 @@ Standards-Version: 2.3.0.0
 
 Package: kdebase
 Architecture: any
-Depends: menu (>=1.5-5), ${shlibs:Depends}
+Depends: menu (>=1.5-5), ${shlibs:Depends}, xdm
 Suggests: kdewallpapers
 Recommends: kdebase-i18n
 Description: KDE core applications
