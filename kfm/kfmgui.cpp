@@ -718,57 +718,85 @@ void KfmGui::slotURLEntered()
 {
     if ( view->getActiveView() )
     {
-	QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
+        QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
 
-	// Exit if the user did not enter an URL
-	if ( url.data()[0] == 0 )
-	    return;
+    	/*
+         while (url.find(' ') == 0)
+    	  url.remove(0, 1);
+    	 while (url.findRev(' ') == (signed) url.length()-1)
+	      url.remove(url.length()-1, 1);
 
-	// strip off any leading and trailing white space
-	while (url.find(' ') == 0)
-	  url.remove(0, 1);
-	while (url.findRev(' ') == (signed) url.length()-1)
-	  url.remove(url.length()-1, 1);
+         Replacement for the above statements. Instead use
+         the built-in QString function to strip any leading
+         and trailing spaces from the URL. ( Dawit A. )
+        */
+        url.stripWhiteSpace();
 
-	// Root directory?
-	if ( url.data()[0] == '/' )
-	{
-	  KURL u( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
-	  url = u.url().data();
-	}
-	// Home directory?
+        // Exit if the user did not enter a URL
+        if ( url.data()[0] == 0 )
+	        return;
+
+    	// Root directory?
+	    if ( url.data()[0] == '/' )
+    	{
+            KURL u( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+            url = u.url().data();
+        }
+        // Home directory?
         else if ( url.data()[0] == '~' )
         {
-	  QString tmp( QDir::homeDirPath().data() );
-	  tmp += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
-	  KURL u( tmp );
-	  url = u.url().data();
-	}
-	// Does url begin with www? (sven)
-	else if (url.find("www") == 0)
-	  url.prepend("http://");
+            QString tmp( QDir::homeDirPath().data() );
+            tmp += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
+            url = tmp.prepend("file:").data();
+        }
+        //Valid URL?
+        // Do nothing if URL, for our purposes here, is VALID. This check is
+        // case insensitive i.e both www & WWW are seen as valid. (Dawit A.)
+        else if ( url.find( "://" ) >= 0 ||
+                  url.find ( "mailto:", 0, false ) == 0 ||
+                  url.find( "file:/", 0, false ) == 0 ||
+                  url.find ( "news:", 0, false  ) == 0 ) ;
 
-	// Does url begin with "ftp."?  (sven)
-	else if (url.find("ftp.") == 0)
-	  url.prepend("ftp://");
+        // No protocol. Does url begin with www? (sven)
+    	else if ( url.find( "www.", 0, false ) == 0 )
+	      url.prepend("http://");  // Unecessary since we bind "http://" as default protocol.
 
-	KURL u( url.data() );
-	if ( u.isMalformed() )
-	{
-	    QString tmp;
-	    tmp << klocale->translate("Malformed URL\n") << toolbarURL->getLinedText( TOOLBAR_URL_ID );
-	    QMessageBox::critical( (QWidget*)0L, klocale->translate( "KFM Error" ),
-				   tmp );
-	    return;
-	}
-	
-	view->openURL( url.data() );             
+    	// No protocol. Does url begin with "ftp."?  (sven)
+	    else if ( url.find( "ftp.", 0, false ) == 0 )
+    	  url.prepend("ftp://");
+
+        /*
+           When all else fails, check if the user entered a URL that
+           exists under the current directory on the local host. If
+           it is not, attach "http://" as the default protocol. This
+           provides a short URL support to users, Ex. "linux.org" (Dawit A)
+        */
+        else
+        {
+            KURL path ( getURL() );
+            QDir::setCurrent ( path.directory () );
+            QFileInfo f ( QDir::currentDirPath().append( "/" ).append( url ).data() );
+            debug ( f.filePath() );
+        	if ( f.exists() )
+                url = f.filePath();
+            else
+                url = url.prepend ("http://");
+        }
+
+	    KURL u( url.data() );
+    	if ( u.isMalformed() )
+	    {
+	        QString tmp;
+    	    tmp << klocale->translate("Malformed URL\n") << toolbarURL->getLinedText( TOOLBAR_URL_ID );
+	        QMessageBox::critical( (QWidget*)0L, klocale->translate( "KFM Error" ), tmp );
+            return;
+        }
+        view->openURL( url.data() );
         //  update tree view Sep 5 rjakob
         if (url.left(5)=="file:")
     	    if (bTreeView && pkfm->isTreeViewFollowMode())
 		treeView->slotshowDirectory(url.data()+5);
     }
-    // view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
 }
 
 void KfmGui::setToolbarURL( const char *_url )
