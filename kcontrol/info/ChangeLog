@@ -7,3 +7,21 @@
 	* info_fbsd.cpp: Add a few (hopefully) useful comments, and tidy up
 	some of the code.
 
+1998-12-08  Helge Deller <helge.deller@ruhr-uni-bochum.de>
+
+	* info.cpp:
+	fixed the column-width of KTabListboxes, where only one column was/is visible.
+	If more than one column is used, then the called function should set the width !
+
+	* added sections to the online-help in the /doc-directory
+
+1998-12-08  Duncan Haldane <f.d.m.haldane@cwix.com>
+
+	* info_linux.cpp: 
+	made the sound info look first for /dev/sndstat, before /proc/sound.  
+	Introduced #defines for all the hard-coded /proc/* files to make subsequent 
+	changes easier.
+
+	* expanded the descriptions in the online help.
+
+	* deleted processor.xpm and memory.xpm (no longer needed)

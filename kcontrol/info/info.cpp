@@ -154,7 +154,21 @@ void KInfoListWidget::defaultSettings()
         if (getlistbox)
 	    ok = (*getlistbox)(lBox);
 
-	if (localname && (lBox->numCols()<=1))	lBox->setColumn(0,localname);
+	if (lBox->numCols()<=1)  // if ONLY ONE COLUMN (!), then set title and calculate necessary column-width
+	{   QFontMetrics fm(lBox->tableFont());
+	    int row, cw, colwidth = 0;
+	    row = lBox->numRows();
+	    while (row>=0)			// loop through all rows in this single column
+	    {  cw = fm.width(lBox->text(row));	// calculate the necessary width
+	       if (cw>colwidth) colwidth=cw;
+	       --row;
+	    }
+	    colwidth += 5;
+	    if (localname) 
+   	        lBox->setColumn(0,localname,colwidth); // set title and width
+	    else
+   	        lBox->setDefaultColumnWidth(colwidth); // only set width
+	}
 
 	if (ok) lBox->show();
     }

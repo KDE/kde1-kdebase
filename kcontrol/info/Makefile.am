@@ -22,7 +22,7 @@ info.moc: info.h
 
 main.cpp: info.moc
 
-icon_DATA = memory.xpm processor.xpm
+icon_DATA = 
 icondir = $(kde_icondir)
 
 install-data-local: 
@@ -48,4 +48,3 @@ messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot $(kcminfo_SOURCES) $(noinst_HEADERS) && mv messages.po ../../po/kcminfo.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
-
