@@ -1,3 +1,8 @@
+1998-11-29  Alex Zepeda  <garbanzo@hooked.net>
+
+	* kbind.cpp: Sort include headers, and correctly include a file to
+	get MAX_PATH or whatever we were looking for.
+
 1998-11-28  Kurt Granroth <granroth@kde.org>
 
    * KFM will now use 'KCursor::handCursor()' if the user chooses the

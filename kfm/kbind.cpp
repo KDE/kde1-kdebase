@@ -1,16 +1,17 @@
+/*
+ * "$Id"
+ */
+
 #include <qdir.h>
 
-#include <unistd.h>
 #include <sys/types.h>
-
-#ifdef __FreeBSD__ 
-#include <sys/syslimits.h>
-#endif
-
-#include <stddef.h>
-#include <dirent.h>
+#include <sys/param.h>
 #include <sys/stat.h>
+
+#include <dirent.h>
 #include <errno.h>
+#include <stddef.h>
+#include <unistd.h>
 
 #include <qmsgbox.h>
 #include <qtstream.h>
