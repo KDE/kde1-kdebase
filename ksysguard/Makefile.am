@@ -65,8 +65,11 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/ktop.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-ktop.xpm $(kde_minidir)/ktop.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-ktop.xpm $(kde_minidir)/../large/ktop.xpm
 
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
 	-rm -f $(APPSDIR)/ktop.kdelnk
-	-rm -f $(kde_minidir)/mini-ktop.xpm
+	-rm -f $(kde_minidir)/ktop.xpm
+	-rm -f $(kde_minidir)/../large/ktop.xpm

@@ -35,9 +35,12 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/klipper.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/klipper_mini.xpm $(kde_minidir)/klipper.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-klipper.xpm $(kde_minidir)/../large/klipper.xpm
 
 uninstall-local:
 	-rm -f $(APPSDIR)/klipper.kdelnk
 	-rm -f $(kde_minidir)/klipper.xpm
+	-rm -f $(kde_minidir)/../large/klipper.xpm
         
 
