@@ -1067,7 +1067,7 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
       pm_icon = loadIcon("iconify.xpm");
     }
     button->setPixmap(*pm_icon);
-    connect( button, SIGNAL(clicked()), SLOT(iconify()));
+    connect( button, SIGNAL(clicked()), SLOT(iconifySlot()));
     break;
   case CLOSE:
     if (!pm_close){
@@ -1402,7 +1402,7 @@ void Client::set_x_cursor(Cursor cur){
 
 
 
-void Client::iconify(){
+void Client::iconifySlot(){
   iconify(True);
 }
 
@@ -1418,7 +1418,7 @@ void Client::iconify(bool animation){
 
   if (state == NormalState){
     hideClient();
-    if (animation)
+    if (animation){
       KWM::raiseSoundEvent("Window Iconify");
       animate_size_change(geometry, 
 			  QRect(geometry.x()+geometry.width()/2,
@@ -1427,6 +1427,7 @@ void Client::iconify(bool animation){
 			  getDecoration()==1,
 			  title_rect.x(), 
 			  width()-title_rect.right());
+    }
     if (isActive())
       manager->noFocus();
   }
@@ -1445,7 +1446,7 @@ void Client::unIconify(bool animation){
   KWM::setIconify(window, False);
   manager->changedClient(this);
   if (isOnDesktop(manager->currentDesktop())){
-    if (animation)
+    if (animation){
       KWM::raiseSoundEvent("Window DeIconify");
       animate_size_change(QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
@@ -1453,7 +1454,7 @@ void Client::unIconify(bool animation){
 			  getDecoration()==1,
 			  title_rect.x(), 
 			  width()-title_rect.right());
-    
+    } 
     showClient();
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );

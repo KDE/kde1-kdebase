@@ -186,7 +186,7 @@ public:
   bool iconified;
   
   void unIconify(bool animation = True);
-  void iconify(bool animation);
+  void iconify(bool animation = True);
   void ontoDesktop(int new_desktop);
   void maximize(int mode = 0);
   void unMaximize();
@@ -199,7 +199,7 @@ public:
   
 
  public slots:
-   void iconify();
+   void iconifySlot();
    void maximizeToggled(bool);
    void closeClicked();
    void stickyToggled(bool);
