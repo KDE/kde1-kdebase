@@ -185,18 +185,24 @@ class Highlight {
     Highlight(const char *hName);
     virtual ~Highlight();
     virtual void init();
-    Attribute **attrList();
     virtual void getItemList(QStrList &);
     virtual bool isInWord(char);
     virtual void doHighlight(int ctxNum, TextLine *);
     virtual void readConfig();
     virtual void writeConfig();
+
+  Attribute **attrList();
+  
+  static QList<Attribute> attList;
+  static QList<HlContext> ctxList;
+  
   protected:
-    virtual void makeDefAttribs() = 0;
-    virtual void makeContextList() = 0;
-    Attribute *attribs[nAttribs];
+    virtual void makeContextList() {};
     HlContext *contextList[nAttribs];
     QString name;
+  
+    Attribute *attribs[nAttribs];
+  
 };
 
 
@@ -206,7 +212,6 @@ class NoHighlight : public Highlight {
     virtual ~NoHighlight();
     virtual void doHighlight(int ctxNum, TextLine *);
   protected:
-    virtual void makeDefAttribs();
     virtual void makeContextList();
 };
 
@@ -215,7 +220,6 @@ class CHighlight : public Highlight {
     CHighlight(const char *hName);
     virtual ~CHighlight();
   protected:
-    virtual void makeDefAttribs();
     virtual void makeContextList();
     virtual void setKeywords(HlKeyword *);
 };
@@ -233,7 +237,6 @@ class HtmlHighlight : public Highlight {
     HtmlHighlight(const char *hName);
     virtual ~HtmlHighlight();
   protected:
-    virtual void makeDefAttribs();
     virtual void makeContextList();
 };
 
@@ -242,7 +245,6 @@ class BashHighlight : public Highlight {
     BashHighlight(const char *hName);
     virtual ~BashHighlight();
   protected:
-    virtual void makeDefAttribs();
     virtual void makeContextList();
 };
 
@@ -251,11 +253,10 @@ class ModulaHighlight : public Highlight {
     ModulaHighlight(const char *hName);
     virtual ~ModulaHighlight();
   protected:
-    virtual void makeDefAttribs();
     virtual void makeContextList();
 };
 
-
+/*
 class HighlightDialog : public QDialog {
     Q_OBJECT
   public:
@@ -281,5 +282,5 @@ class HighlightDialog : public QDialog {
     KColorButton *col;
     KColorButton *selCol;
 };
-
+*/
 #endif //HIGHLIGHT_H

@@ -27,6 +27,7 @@
 
 #include "toplevel.h"
 #include "highlight.h"
+#include "hldialog.h"
 
 // StatusBar field IDs
 #define ID_LINE_COLUMN 1
@@ -34,8 +35,8 @@
 #define ID_MODIFIED 3
 #define ID_GENERAL 4
 
-const toolUndo = 1;
-const toolRedo = 2;
+const int toolUndo = 1;
+const int toolRedo = 2;
 
 DocSaver docSaver;
 QList<KWriteDoc> docList;
@@ -106,7 +107,7 @@ void TopLevel::closeEvent(QCloseEvent *e) {
   if (queryExit()) {
     e->accept();
     delete this;
-    if (memberList->isEmpty())
+//    if (memberList->isEmpty())
       kapp->quit();
   }
 }
@@ -406,7 +407,21 @@ void TopLevel::hlDlg() {
   types.append("Bash");
   types.append("Modula 2");
 
-  kWrite->setHighlight(HighlightDialog::getHighlight(types,this,SLOT(newHl(int))));
+  Highlight hl("");
+
+  QList<Attribute> attributes;
+
+  for (Attribute *att=Highlight::attList.first(); att != 0; att = Highlight::attList.next())
+    attributes.append(new Attribute(att->getName(),att->getColor(),att->getSelColor(),att->getFont(),att->getOverrideFlags()));
+
+  HlDialog dialog(attributes,types,2,this,0L,true);
+
+  if (dialog.exec() == QDialog::Accepted)
+  {
+    Highlight::attList = attributes;
+    hl.writeConfig();
+    newHl(dialog.getLanguage());
+  }
 }
 
 void TopLevel::newHl(int index) {
@@ -432,8 +447,8 @@ void TopLevel::newHl(int index) {
       highlight = new NoHighlight("No Highlight");
   }
   highlight->init();
-printf("TopLevel::newHl()\n");
-  ((HighlightDialog *) sender())->newHl(highlight);
+
+  kWrite->setHighlight(highlight);
 }
 
 void TopLevel::toggleToolBar() {
@@ -642,6 +657,7 @@ void DocSaver::saveYourself() {
      doc->writeSessionConfig(config);
   }
 }
+
 
 int main(int argc, char** argv) {
   KApplication a(argc,argv);

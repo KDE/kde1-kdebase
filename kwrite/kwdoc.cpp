@@ -9,11 +9,11 @@
 #include "highlight.h"
 
 
-const taSelected = 0x40;
-const taFound = 0x80;
-const taSelectMask = taSelected | taFound;
-const taAttrMask = ~taSelectMask;
-const taShift = 6;
+const int taSelected = 0x40;
+const int taFound = 0x80;
+const int taSelectMask = taSelected | taFound;
+const int taAttrMask = ~taSelectMask;
+const int taShift = 6;
 
 TextLine::TextLine(int attribute) : attr(attribute) {
   len = 0;
@@ -416,18 +416,63 @@ if (!newtext || !newattribs) {
 }
 
 
-Attribute::Attribute() : font(), fm(font) {
+// initialize static members
+
+QFont  Attribute::DefaultFont("courier",12);
+QColor Attribute::DefaultColor(black);
+QColor Attribute::DefaultSelColor(white);
+
+
+Attribute::Attribute() : font(), retFont(font), fm(font) {
 }
 
+
 Attribute::Attribute(const char *aName, const QColor &aCol,
-  const QColor &aSelCol, const QFont &aFont)
-  : name(aName), col(aCol), selCol(aSelCol), font(aFont), fm(font) {
+  const QColor &aSelCol, const QFont &aFont, OverrideFlags f)
+  : name(aName), col(aCol), selCol(aSelCol), font(aFont), retFont(font), fm(font), flags(f) {
+}
+
+
+QColor &Attribute::getColor()
+{
+  if (flags & Color)
+    return col;
+  else
+    return DefaultColor;
+}
+
+
+QColor &Attribute::getSelColor()
+{
+  if (flags & SelColor)
+    return selCol;
+  else
+    return DefaultSelColor;
+}
+
+
+QFont &Attribute::getFont()
+{
+  // FIXME: perhaps the font should be cached to improve speed
+
+  retFont = DefaultFont;
+
+  if (flags & FontFamily)
+    retFont.setFamily(font.family());
+  if (flags & FontSize)
+    retFont.setPointSize(font.pointSize());
+  if (flags & FontWeight)
+    retFont.setWeight(font.weight());
+  if (flags & FontStyle)
+    retFont.setItalic(font.italic());
+
+  return retFont;
 }
 
 
 void Attribute::setFont(const QFont &f) {
   font = f;
-  fm = QFontMetrics(f);
+  fm = QFontMetrics(getFont());
 }
 
 
@@ -901,9 +946,9 @@ void KWriteDoc::updateFontData() {
   for (z = 0; z < nAttribs; z++) {
     a = attribs[z];
     if (a) {
-      if (a->fm.ascent() > maxAscent) maxAscent = a->fm.ascent();
-      if (a->fm.descent() > maxDescent) maxDescent = a->fm.descent();
-      midTabWidth += a->fm.width('x');
+      if (a->getFontMetrics().ascent() > maxAscent) maxAscent = a->getFontMetrics().ascent();
+      if (a->getFontMetrics().descent() > maxDescent) maxDescent = a->getFontMetrics().descent();
+      midTabWidth += a->getFontMetrics().width('x');
       i++;
     }
   }
@@ -1056,7 +1101,7 @@ int KWriteDoc::textWidth(TextLine *textLine, int cursorX) {
   for (z = 0; z < cursorX; z++) {
     ch = textLine->getChar(z);
     a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
   }
   return x;
 }
@@ -1086,7 +1131,7 @@ int KWriteDoc::textWidth(bool wrapCursor, PointStruc &cursor, int xPos) {
     oldX = x;
     ch = textLine->getChar(z);
     a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
     z++;
   }
   if (xPos - oldX < x - xPos && z > 0) {
@@ -1111,7 +1156,7 @@ int KWriteDoc::textPos(TextLine *textLine, int xPos) {
     oldX = x;
     ch = textLine->getChar(z);
     a = attribs[textLine->getAttr(z)];
-    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->fm.width(&ch,1);
+    x += (ch == '\t') ? tabWidth - (x % tabWidth) : a->getFontMetrics().width(&ch,1);
     z++;
   }
   if (xPos - oldX < x - xPos && z > 0) z--;
@@ -1488,7 +1533,7 @@ QColor &KWriteDoc::cursorCol(int x, int y) {
   textLine = contents.at(y);
   attr = textLine->getRawAttr(x);
   a = attribs[attr & taAttrMask];
-  if (attr & taSelectMask) return a->selCol; else return a->col;
+  if (attr & taSelectMask) return a->getSelColor(); else return a->getColor();
 }
 
 /*
@@ -1601,7 +1646,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
       x += tabWidth - (x % tabWidth);
     } else {
       a = attribs[textLine->getAttr(z)];
-      x += a->fm.width(&ch,1);
+      x += a->getFontMetrics().width(&ch,1);
     }
     z++;
   } while (x <= xStart);
@@ -1620,7 +1665,7 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
       x += tabWidth - (x % tabWidth);
     } else {
       a = attribs[attr & taAttrMask];
-      x += a->fm.width(&ch,1);
+      x += a->getFontMetrics().width(&ch,1);
     }
     z++;
   }
@@ -1637,11 +1682,11 @@ void KWriteDoc::paintTextLine(QPainter &paint, int line,
       if (nextAttr != attr) {
         attr = nextAttr;
         a = attribs[attr & taAttrMask];
-        if (attr & taSelectMask) paint.setPen(a->selCol); else paint.setPen(a->col);
-        paint.setFont(a->font);
+        if (attr & taSelectMask) paint.setPen(a->getSelColor()); else paint.setPen(a->getColor());
+        paint.setFont(a->getFont());
       }
       paint.drawText(xc - xStart,y,&ch,1);
-      xc += a->fm.width(&ch,1);
+      xc += a->getFontMetrics().width(&ch,1);
 //if (zc < len) printf("%c",ch);
     }
     zc++;

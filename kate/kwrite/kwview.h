@@ -1,5 +1,5 @@
-#ifndef KWVIEV_H
-#define KWVIEV_H
+#ifndef KWVIEW_H
+#define KWVIEW_H
 
 #include <qscrbar.h>
 #include <qiodev.h>
@@ -14,48 +14,48 @@ class KWriteDoc;
 class Highlight;
 
 //search flags
-const sfCaseSensitive   = 1;
-const sfWholeWords      = 2;
-const sfFromCursor      = 4;
-const sfBackward        = 8;
-const sfSelected        = 16;
-const sfPrompt          = 32;
-const sfReplace         = 64;
-const sfAgain           = 128;
-const sfWrapped         = 256;
-const sfFinished        = 512;
+const int sfCaseSensitive   = 1;
+const int sfWholeWords      = 2;
+const int sfFromCursor      = 4;
+const int sfBackward        = 8;
+const int sfSelected        = 16;
+const int sfPrompt          = 32;
+const int sfReplace         = 64;
+const int sfAgain           = 128;
+const int sfWrapped         = 256;
+const int sfFinished        = 512;
 //dialog results
-const srYes             = QDialog::Accepted;
-const srNo              = 10;
-const srAll             = 11;
-const srCancel          = QDialog::Rejected;
+const int srYes             = QDialog::Accepted;
+const int srNo              = 10;
+const int srAll             = 11;
+const int srCancel          = QDialog::Rejected;
 
 //config flags
-const cfAutoIndent      = 1;
-const cfBackspaceIndent = 2;
-const cfWordWrap        = 4;
-const cfReplaceTabs     = 8;
-const cfRemoveSpaces    = 16;
-const cfWrapCursor      = 32;
-const cfAutoBrackets    = 64;
+const int cfAutoIndent      = 1;
+const int cfBackspaceIndent = 2;
+const int cfWordWrap        = 4;
+const int cfReplaceTabs     = 8;
+const int cfRemoveSpaces    = 16;
+const int cfWrapCursor      = 32;
+const int cfAutoBrackets    = 64;
 
-const cfPersistent      = 128;
-const cfKeepSelection   = 256;
-const cfVerticalSelect  = 512;
-const cfDelOnInput      = 1024;
-const cfXorSelect       = 2048;
+const int cfPersistent      = 128;
+const int cfKeepSelection   = 256;
+const int cfVerticalSelect  = 512;
+const int cfDelOnInput      = 1024;
+const int cfXorSelect       = 2048;
 
-const cfOvr             = 4096;
-const cfMark            = 8192;
+const int cfOvr             = 4096;
+const int cfMark            = 8192;
 
 //update flags
-const ufDocGeometry     = 1;
-const ufUpdateOnScroll  = 2;
-const ufPos             = 4;
+const int ufDocGeometry     = 1;
+const int ufUpdateOnScroll  = 2;
+const int ufPos             = 4;
 
 //load flags
-const lfInsert          = 1;
-const lfNewFile         = 2;
+const int lfInsert          = 1;
+const int lfNewFile         = 2;
 
 void resizeBuffer(void *user, int w, int h);
 

@@ -75,19 +75,46 @@ class TextLine {
 
 
 
-const nAttribs = 32;
+const int nAttribs = 32;
+
+enum OverrideFlags {NoOverride=0, FontFamily=1, FontSize=2, FontStyle=4, FontWeight=8, Color=16, SelColor=32, BackColor=64, All=255};
 
 class Attribute {
   public:
+    
     Attribute();
-    Attribute(const char *aName, const QColor &, const QColor &, const QFont &);
-    QString name;
-    QColor col;
-    QColor selCol;
+    Attribute(const char *aName, const QColor &, const QColor &, const QFont &, OverrideFlags f=All);
+
+    QString &getName() { return name; };
+    void setName(const QString &n) { name = n; };
+  
+    QColor &getColor();  
+    void setColor(const QColor &c) { col = c; };
+    
+    QColor &getSelColor();  
+    void setSelColor(const QColor &c) { selCol = c; };
+ 
+    QFont &getFont();    
     void setFont(const QFont &);
-    QFont font;
+    
+    QFontMetrics &getFontMetrics() { return fm; };
+
+    OverrideFlags getOverrideFlags() { return flags; };
+    void setOverrideFlags(const OverrideFlags &f) { flags = f; };
+
+    static QFont  DefaultFont;
+    static QColor DefaultColor;
+    static QColor DefaultSelColor;
+            
+  private:
+ 
+    QString name;
+    QColor col, selCol;  
+    QFont font, retFont;
     QFontMetrics fm;
-};
+    OverrideFlags flags;
+    
+};  
 
 class KWAction {
   public:

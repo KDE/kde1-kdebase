@@ -408,12 +408,15 @@ HlContext::HlContext(int attribute, int lineEndContext)
 }
 
 
+QList<Attribute> Highlight::attList;
+QList<HlContext> Highlight::ctxList;
+
+
 Highlight::Highlight(const char *hName) : name(hName) {
   int z;
 
   for (z = 0; z < nAttribs; z++) {
     contextList[z] = 0;
-    attribs[z] = 0;
   }
 }
 
@@ -422,30 +425,32 @@ Highlight::~Highlight() {
 
   for (z = 0; z < nAttribs; z++) {
     delete contextList[z];
-    delete attribs[z];
   }
 }
 
+Attribute **Highlight::attrList()
+{
+printf("attrList()\n");
+  uint i;
+
+  for (i=0; i<nAttribs; i++)
+    attribs[i] = 0;
+  for (i=0; i<attList.count(); i++)
+    attribs[i] = attList.at(i);
+
+  return attribs;
+}
+
+
 void Highlight::init() {
-  makeDefAttribs();
   makeContextList();
   readConfig();
 }
 
-Attribute **Highlight::attrList() {
-  return attribs;
-}
-
-void Highlight::getItemList(QStrList &list) {
-  int z;
-  Attribute *a;
-
-  for (z = 0; z < nAttribs; z++) {
-    a = attribs[z];
-    if (a) {
-      list.append(i18n(a->name));
-    }
-  }
+void Highlight::getItemList(QStrList &list) 
+{
+  for (Attribute *att = attList.first(); att != 0; att = attList.next())
+    list.append(i18n(att->getName()));
 }
 
 bool Highlight::isInWord(char ch) {
@@ -493,41 +498,95 @@ void Highlight::doHighlight(int ctxNum, TextLine *textLine) {
   textLine->setContext(context->ctx);
 }
 
-void Highlight::readConfig() {
-  KConfig *config;
-  int z;
-  Attribute *a;
-  const char *s;
 
-  config = kapp->getConfig();
-  config->setGroup(name);
-  for (z = 0; z < nAttribs; z++) {
-    a = attribs[z];
-    if (a) {
-      s = a->name;
-      a->col = config->readColorEntry(QString(s) + "_Col",&a->col);
-      a->selCol = config->readColorEntry(QString(s) + "_SelCol",&a->selCol);
-      a->setFont(config->readFontEntry(QString(s) + "_Font",&a->font));
-    }
+void Highlight::readConfig() 
+{
+  QColor defaultSel, defaultFore, fore, back;
+  QFont defaultFont, courierFont("courier",12), font;
+  QString name, nrs;
+  OverrideFlags flags;
+  uint nr;
+
+  KConfig *config = kapp->getConfig();
+
+  // Clear the list, in case we are called more than once.
+  attList.clear();
+
+  // Read in the attributes. Note that the attributes are global to all
+  // highlightings.
+
+  // First the default font is read in.  
+  config->setGroup("Attributes");
+  defaultFont = config->readFontEntry("DefaultFont",&courierFont);
+  defaultSel = config->readColorEntry("DefaultBackground",&white);
+  defaultFore = config->readColorEntry("DefaultColor",&black);
+  attList.append(new Attribute("Normal Text",defaultFore,defaultSel,defaultFont));
+ 
+  // update the default attribute
+  Attribute::DefaultFont = defaultFont;
+  Attribute::DefaultColor = defaultFore;
+  Attribute::DefaultSelColor = defaultSel;
+
+  // create the default attribute set
+  attList.append(new Attribute("Keyword",blue,white,courierFont,Color));
+  attList.append(new Attribute("Number",darkGreen,white,courierFont,Color));
+  attList.append(new Attribute("Char",red,white,courierFont,Color));
+  attList.append(new Attribute("String",red,white,courierFont,Color));
+  attList.append(new Attribute("String character",red,white,courierFont,Color));
+  attList.append(new Attribute("Comment",gray,white,QFont("courier",12,QFont::Normal,true),(OverrideFlags)(FontStyle|Color)));
+  attList.append(new Attribute("Preprocessor",darkYellow,white,courierFont,Color));
+  attList.append(new Attribute("Preprocessor Library",darkYellow,white,courierFont,Color));
+  attList.append(new Attribute("Tag text",blue,white,courierFont,Color));
+  attList.append(new Attribute("Tag",blue,white,courierFont,Color));
+  attList.append(new Attribute("Tag value",blue,white,courierFont,Color));
+  attList.append(new Attribute("Substitution",blue,white,courierFont,Color));
+
+  // Read in the attributes, if available.
+  nr = config->readNumEntry("Number",1);
+  for (uint index=1; index<nr; index++)
+  {
+    nrs.sprintf("Font_%d", index);
+    font = config->readFontEntry(nrs.data(), &defaultFont);
+    nrs.sprintf("Selection_%d", index);    
+    back = config->readColorEntry(nrs.data(), &defaultSel);
+    nrs.sprintf("Color_%d", index);    
+    fore = config->readColorEntry(nrs.data(), &defaultFore);
+    nrs.sprintf("Name_%d", index);    
+    name = config->readEntry(nrs.data(), "unnamed");    
+    nrs.sprintf("Override_%d", index);
+    flags = (OverrideFlags) config->readNumEntry(nrs.data(), All);
+    if (index < attList.count())
+      attList.remove(index);
+    attList.insert(index, new Attribute(name,fore,back,font,flags));
   }
 }
 
-void Highlight::writeConfig() {
-  KConfig *config;
-  int z;
-  Attribute *a;
-  const char *s;
+void Highlight::writeConfig() 
+{
+  QString nrs;
+  KConfig *config = kapp->getConfig();
 
-  config = kapp->getConfig();
-  config->setGroup(name);
-  for (z = 0; z < nAttribs; z++) {
-    a = attribs[z];
-    if (a) {
-      s = a->name;
-      config->writeEntry(QString(s) + "_Col",a->col);
-      config->writeEntry(QString(s) + "_SelCol",a->selCol);
-      config->writeEntry(QString(s) + "_Font",a->font);
-    }
+  // First the default font is written.
+  config->setGroup("Attributes");
+  config->writeEntry("DefaultFont", Attribute::DefaultFont);
+  config->writeEntry("DefaultColor", Attribute::DefaultColor);
+  config->writeEntry("DefaultSelection", Attribute::DefaultSelColor);
+
+  // Write out the rest of the attributes.
+  int nr = attList.count();
+  config->writeEntry("Number", nr);
+  for (int index=1; index<nr; index++)
+  {
+    nrs.sprintf("Font_%d", index);
+    config->writeEntry(nrs.data(), attList.at(index)->getFont());
+    nrs.sprintf("Selection_%d", index);    
+    config->writeEntry(nrs.data(), attList.at(index)->getSelColor());
+    nrs.sprintf("Color_%d", index);    
+    config->writeEntry(nrs.data(), attList.at(index)->getColor());
+    nrs.sprintf("Name_%d", index);    
+    config->writeEntry(nrs.data(), attList.at(index)->getName());
+    nrs.sprintf("Override_%d", index);
+    config->writeEntry(nrs.data(), (int)attList.at(index)->getOverrideFlags());
   }
 }
 
@@ -544,12 +603,6 @@ void NoHighlight::doHighlight(int, TextLine *textLine) {
     textLine->setAttr(0);
 }
 
-void NoHighlight::makeDefAttribs() {
-
-  attribs[0] = new Attribute("Normal Text",black,white,
-    QFont("courier",12,QFont::Normal,false));
-}
-
 void NoHighlight::makeContextList() {
 }
 
@@ -560,25 +613,6 @@ CHighlight::CHighlight(const char *hName) : Highlight(hName) {
 CHighlight::~CHighlight() {
 }
 
-void CHighlight::makeDefAttribs() {
-  QFont font1("courier",12,QFont::Normal,false);
-  QFont font2("courier",12,QFont::Bold,false);
-  QFont font3("courier",12,QFont::Normal,true);
-
-  attribs[0] = new Attribute("Normal Text",black,white,font1);
-  attribs[1] = new Attribute("Keyword",black,white,font2);
-  attribs[2] = new Attribute("Decimal",blue,cyan,font1);
-  attribs[3] = new Attribute("Octal",darkCyan,cyan,font1);
-  attribs[4] = new Attribute("Hex",darkCyan,cyan,font1);
-  attribs[5] = new Attribute("Float",darkMagenta,cyan,font1);
-  attribs[6] = new Attribute("Char",magenta,magenta,font1);
-  attribs[7] = new Attribute("String",red,red,font1);
-  attribs[8] = new Attribute("String Char",magenta,magenta,font1);
-  attribs[9] = new Attribute("Comment",darkGray,gray,font3);
-  attribs[10] = new Attribute("Preprocessor",darkGreen,green,font1);
-  attribs[11] = new Attribute("Prep. Lib",darkYellow,yellow,font1);
-}
-
 void CHighlight::makeContextList() {
   HlContext *c;
   HlKeyword *keyword;
@@ -586,35 +620,35 @@ void CHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlCInt(2,0));
-    c->items.append(new HlCOct(3,0));
-    c->items.append(new HlCHex(4,0));
-    c->items.append(new HlCFloat(5,0));
-    c->items.append(new HlCChar(6,0));
-    c->items.append(new HlCharDetect(7,1,'"'));
-    c->items.append(new Hl2CharDetect(9,2,"//"));
-    c->items.append(new Hl2CharDetect(9,3,"/*"));
-    c->items.append(new HlCPrep(10,4));
-  contextList[1] = c = new HlContext(7,0);
-    c->items.append(new HlLineContinue(7,6));
-    c->items.append(new HlCStringChar(8,1));
-    c->items.append(new HlCharDetect(7,0,'"'));
-  contextList[2] = new HlContext(9,0);
-  contextList[3] = c = new HlContext(9,3);
-    c->items.append(new Hl2CharDetect(9,0,"*/"));
-  contextList[4] = c = new HlContext(10,0);
-    c->items.append(new HlLineContinue(10,7));
-    c->items.append(new HlRangeDetect(11,4,"\"\""));
-    c->items.append(new HlRangeDetect(11,4,"<>"));
-//    c->items.append(new HlCharDetect(11,5,'"'));
-//    c->items.append(new HlCharDetect(11,6,'<'));
-    c->items.append(new Hl2CharDetect(9,2,"//"));
-    c->items.append(new Hl2CharDetect(9,5,"/*"));
-//  contextList[5] = c = new HlContext(11,0);
-//    c->items.append(new HlCharDetect(11,4,'"'));
-//  contextList[6] = c = new HlContext(11,0);
-//    c->items.append(new HlCharDetect(11,4,'>'));
-  contextList[5] = c = new HlContext(9,5);
-    c->items.append(new Hl2CharDetect(9,4,"*/"));
+    c->items.append(new HlCOct(2,0));
+    c->items.append(new HlCHex(2,0));
+    c->items.append(new HlCFloat(2,0));
+    c->items.append(new HlCChar(3,0));
+    c->items.append(new HlCharDetect(4,1,'"'));
+    c->items.append(new Hl2CharDetect(6,2,"//"));
+    c->items.append(new Hl2CharDetect(6,3,"/*"));
+    c->items.append(new HlCPrep(7,4));
+  contextList[1] = c = new HlContext(4,0);
+    c->items.append(new HlLineContinue(4,6));
+    c->items.append(new HlCStringChar(5,1));
+    c->items.append(new HlCharDetect(4,0,'"'));
+  contextList[2] = new HlContext(6,0);
+  contextList[3] = c = new HlContext(6,3);
+    c->items.append(new Hl2CharDetect(6,0,"*/"));
+  contextList[4] = c = new HlContext(7,0);
+    c->items.append(new HlLineContinue(7,7));
+    c->items.append(new HlRangeDetect(8,4,"\"\""));
+    c->items.append(new HlRangeDetect(8,4,"<>"));
+//    c->items.append(new HlCharDetect(8,5,'"'));
+//    c->items.append(new HlCharDetect(8,6,'<'));
+    c->items.append(new Hl2CharDetect(6,2,"//"));
+    c->items.append(new Hl2CharDetect(6,5,"/*"));
+//  contextList[5] = c = new HlContext(8,0);
+//    c->items.append(new HlCharDetect(8,4,'"'));
+//  contextList[6] = c = new HlContext(8,0);
+//    c->items.append(new HlCharDetect(8,4,'>'));
+  contextList[5] = c = new HlContext(6,5);
+    c->items.append(new Hl2CharDetect(6,4,"*/"));
   contextList[6] = new HlContext(0,1);
   contextList[7] = new HlContext(0,4);
 
@@ -647,54 +681,28 @@ HtmlHighlight::HtmlHighlight(const char *hName) : Highlight(hName) {
 HtmlHighlight::~HtmlHighlight() {
 }
 
-void HtmlHighlight::makeDefAttribs() {
-  QFont font1("courier",12,QFont::Normal,false);
-  QFont font2("courier",12,QFont::Bold,false);
-  QFont font3("courier",12,QFont::Normal,true);
-
-  attribs[0] = new Attribute("Normal Text",black,white,font1);
-  attribs[1] = new Attribute("Char",darkGreen,green,font1);
-  attribs[2] = new Attribute("Comment",darkGray,gray,font3);
-  attribs[3] = new Attribute("Tag Text",black,white,font2);
-  attribs[4] = new Attribute("Tag",darkMagenta,magenta,font2);
-  attribs[5] = new Attribute("Tag Value",darkCyan,cyan,font1);
-}
-
 void HtmlHighlight::makeContextList() {
   HlContext *c;
 
   contextList[0] = c = new HlContext(0,0);
-    c->items.append(new HlRangeDetect(1,0,"&;"));
-    c->items.append(new HlStringDetect(2,1,"<!--"));
-    c->items.append(new HlStringDetect(2,2,"<COMMENT>"));
-    c->items.append(new HlCharDetect(3,3,'<'));
-  contextList[1] = c = new HlContext(2,1);
-    c->items.append(new HlStringDetect(2,0,"-->"));
-  contextList[2] = c = new HlContext(2,2);
-    c->items.append(new HlStringDetect(2,0,"</COMMENT>"));
-  contextList[3] = c = new HlContext(3,3);
-    c->items.append(new HlHtmlTag(4,3));
-    c->items.append(new HlHtmlValue(5,3));
-    c->items.append(new HlCharDetect(3,0,'>'));
+    c->items.append(new HlRangeDetect(3,0,"&;"));
+    c->items.append(new HlStringDetect(6,1,"<!--"));
+    c->items.append(new HlStringDetect(6,2,"<COMMENT>"));
+    c->items.append(new HlCharDetect(9,3,'<'));
+  contextList[1] = c = new HlContext(6,1);
+    c->items.append(new HlStringDetect(6,0,"-->"));
+  contextList[2] = c = new HlContext(6,2);
+    c->items.append(new HlStringDetect(6,0,"</COMMENT>"));
+  contextList[3] = c = new HlContext(9,3);
+    c->items.append(new HlHtmlTag(10,3));
+    c->items.append(new HlHtmlValue(11,3));
+    c->items.append(new HlCharDetect(9,0,'>'));
 }
 
 BashHighlight::BashHighlight(const char *hName) : Highlight(hName) {
 }
 
 BashHighlight::~BashHighlight() {
-}
-
-void BashHighlight::makeDefAttribs() {
-  QFont font1("courier",12,QFont::Normal,false);
-  QFont font2("courier",12,QFont::Bold,false);
-  QFont font3("courier",12,QFont::Normal,true);
-
-  attribs[0] = new Attribute("Normal Text",black,white,font1);
-  attribs[1] = new Attribute("Keyword",black,white,font2);
-  attribs[2] = new Attribute("Integer",blue,cyan,font1);
-  attribs[3] = new Attribute("String",red,magenta,font1);
-  attribs[4] = new Attribute("Substitution",darkCyan,cyan,font1);
-  attribs[5] = new Attribute("Comment",darkGray,gray,font3);
 }
 
 void BashHighlight::makeContextList() {
@@ -704,14 +712,14 @@ void BashHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlInt(2,0));
-    c->items.append(new HlCharDetect(3,1,'"'));
-    c->items.append(new HlCharDetect(4,2,'`'));
-    c->items.append(new HlShellComment(5,3));
-  contextList[1] = c = new HlContext(3,0);
-    c->items.append(new HlCharDetect(3,0,'"'));
-  contextList[2] = c = new HlContext(4,0);
-    c->items.append(new HlCharDetect(4,0,'`'));
-  contextList[3] = new HlContext(5,0);
+    c->items.append(new HlCharDetect(4,1,'"'));
+    c->items.append(new HlCharDetect(12,2,'`'));
+    c->items.append(new HlShellComment(6,3));
+  contextList[1] = c = new HlContext(4,0);
+    c->items.append(new HlCharDetect(4,0,'"'));
+  contextList[2] = c = new HlContext(12,0);
+    c->items.append(new HlCharDetect(12,0,'`'));
+  contextList[3] = new HlContext(6,0);
 
   keyword->addList(bashKeywords);
 }
@@ -722,21 +730,6 @@ ModulaHighlight::ModulaHighlight(const char *hName) : Highlight(hName) {
 ModulaHighlight::~ModulaHighlight() {
 }
 
-void ModulaHighlight::makeDefAttribs() {
-  QFont font1("courier",12,QFont::Normal,false);
-  QFont font2("courier",12,QFont::Bold,false);
-  QFont font3("courier",12,QFont::Normal,true);
-
-  attribs[0] = new Attribute("Normal Text",black,white,font1);
-  attribs[1] = new Attribute("Keyword",black,white,font2);
-  attribs[2] = new Attribute("Decimal",blue,cyan,font1);
-  attribs[3] = new Attribute("Hex",darkCyan,cyan,font1);
-  attribs[4] = new Attribute("Float",darkMagenta,cyan,font1);
-  attribs[5] = new Attribute("String",red,red,font1);
-  attribs[6] = new Attribute("Comment",darkGray,gray,font3);
-
-}
-
 void ModulaHighlight::makeContextList() {
   HlContext *c;
   HlKeyword *keyword;
@@ -744,112 +737,14 @@ void ModulaHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(new HlInt(2,0));
-    c->items.append(new HlMHex(3,0));
-    c->items.append(new HlFloat(4,0));
-    c->items.append(new HlCharDetect(5,1,'"'));
+    c->items.append(new HlMHex(2,0));
+    c->items.append(new HlFloat(2,0));
+    c->items.append(new HlCharDetect(4,1,'"'));
     c->items.append(new Hl2CharDetect(6,2,"(*"));
-  contextList[1] = c = new HlContext(5,0);
-    c->items.append(new HlCharDetect(5,0,'"'));
+  contextList[1] = c = new HlContext(4,0);
+    c->items.append(new HlCharDetect(4,0,'"'));
   contextList[2] = c = new HlContext(6,2);
     c->items.append(new Hl2CharDetect(6,0,"*)"));
 
   keyword->addList(modulaKeywords);
-}
-
-
-HighlightDialog::HighlightDialog(QStrList &types, QWidget *parent,
-  const char *newHlSlot)
-  : QDialog(parent,0L,true) {
-  QPushButton *button;
-  QRect r;
-
-  highlight = 0L;
-  connect(this,SIGNAL(newHl(int)),parent,newHlSlot);
-
-  typeLB = new QListBox(this);
-  typeLB->insertStrList(&types);
-  connect(typeLB,SIGNAL(highlighted(int)),this,SIGNAL(newHl(int)));
-  r.setRect(10,10,120,220);
-  typeLB->setGeometry(r);
-
-  itemLB = new QListBox(this);
-  connect(itemLB,SIGNAL(highlighted(int)),this,SLOT(newItem(int)));
-  r.setRect(r.right() + 10,r.y(),160,r.height());
-  itemLB->setGeometry(r);
-
-
-  col = new KColorButton(this);
-  connect(col,SIGNAL(changed(const QColor &)),this,SLOT(newCol(const QColor &)));
-  r.setRect(r.right() + 10,r.y(),70,25);
-  col->setGeometry(r);
-
-  selCol = new KColorButton(this);
-  connect(selCol,SIGNAL(changed(const QColor &)),this,SLOT(newSelCol(const QColor &)));
-  r.moveBy(0,30);
-  selCol->setGeometry(r);
-
-  button = new QPushButton(i18n("&New Font"),this);
-  button->setDefault(true);
-  r.moveBy(0,30);
-  button->setGeometry(r);
-  connect(button,SIGNAL(clicked()),this,SLOT(newFont()));
-
-  button = new QPushButton(i18n("&OK"),this);
-  button->setDefault(true);
-  r.moveBy(0,30);
-  button->setGeometry(r);
-  connect(button,SIGNAL(clicked()),this,SLOT(accept()));
-
-  typeLB->setCurrentItem(2);
-}
-
-void HighlightDialog::newHl(Highlight *hl) {
-  QStrList items;
-printf("HighlightDialog::newHl()\n");
-
-  if (highlight) {
-    highlight->writeConfig();
-printf("HighlightDialog::newHl() del\n");
-    delete highlight;
-  }
-  highlight = hl;
-  hl->getItemList(items);
-  itemLB->clear();
-  itemLB->insertStrList(&items);
-}
-
-Highlight *HighlightDialog::getHighlight(QStrList &types,
-  QWidget *parent, const char *newHlSlot) {
-
-  HighlightDialog *dlg;
-  Highlight *highlight;
-
-  dlg = new HighlightDialog(types,parent,newHlSlot);
-  dlg->exec();
-  highlight = dlg->highlight;
-
-  delete dlg;
-  if (highlight) highlight->writeConfig();
-  return highlight;
-}
-
-void HighlightDialog::newItem(int index) {
-  a = highlight->attrList()[index];
-  col->setColor(a->col);
-  selCol->setColor(a->selCol);
-}
-
-void HighlightDialog::newCol(const QColor &c) {
-  a->col = c;
-}
-
-void HighlightDialog::newSelCol(const QColor &c) {
-  a->selCol = c;
-}
-
-void HighlightDialog::newFont() {
-  if (a) {
-    QFont font = a->font;
-    if (KFontDialog::getFont(font)) a->setFont(font);
-  }
 }
