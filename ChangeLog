@@ -1,3 +1,11 @@
+Mon Jan 19 21:55:21 1998  Stephan Kulow  <coolo@kde.org>
+
+	* configure.in: some little fixes for the Makefiles
+
+	* acinclude.m4.in: --prefix will no longer override the search for 
+	libraries. If they are present somewhere, they are used (through
+	the methodes in KApplication)
+
 Mon Jan 12 00:30:36 1998  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in fixed an ugly bug, that accoured, when

@@ -226,7 +226,7 @@ AC_OUTPUT(Makefile \
 	kappfinder/Makefile \
 	kappfinder/apps/Development/Makefile \
 	kappfinder/apps/Editors/Makefile \
-	kappfinder/apps/Graphic/Makefile \
+	kappfinder/apps/Graphics/Makefile \
 	kappfinder/apps/Internet/Makefile \
 	kappfinder/apps/System/Makefile \
 	kappfinder/apps/Toys/Makefile \
