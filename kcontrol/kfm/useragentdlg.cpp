@@ -134,28 +134,28 @@ UserAgentOptions::~UserAgentOptions()
 {
 }
 
-static QStrList strlist( true ); // convenience var.
+static QStrList settingsList( true ); // convenience var.
 
 void UserAgentOptions::loadSettings()
 {
   // read entries for UserAgentDlg
   g_pConfig->setGroup( "Browser Settings/UserAgent" );
   int entries = g_pConfig->readNumEntry( "EntriesCount", 0 );
-  strlist.clear();
+  settingsList.clear();
   for( int i = 0; i < entries; i++ )
         {
           QString key;
           key.sprintf( "Entry%d", i );
           QString entry = g_pConfig->readEntry( key, "" );
           if (entry.left( 12 ) == "*:Konqueror/") // update version number
-            strlist.append( QString("*:"+DEFAULT_USERAGENT_STRING) );
+            settingsList.append( QString("*:"+DEFAULT_USERAGENT_STRING) );
           else
-            strlist.append( entry );
+            settingsList.append( entry );
         }
   if( entries == 0 )
     defaultSettings();
   bindingsLB->clear();
-  bindingsLB->insertStrList( &strlist );
+  bindingsLB->insertStrList( &settingsList );
 }
 
 void UserAgentOptions::defaultSettings()
