@@ -285,7 +285,9 @@ AC_OUTPUT(Makefile \
 	po/it/Makefile \
 	po/nl/Makefile \
 	po/ru/Makefile \
-	po/sv/Makefile 
-)
+	po/sv/Makefile \
+	kwm2/Makefile \
+	kwm2/pics/Makefile \
+	krootwm/Makefile)
 
 
