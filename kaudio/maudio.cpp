@@ -1,4 +1,4 @@
-// Version info: 0.60
+// Version info: 0.70
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -40,7 +40,7 @@ char PlayerStatus=STOPPED;
 
 void ma_init(char argc, char **argv);
 void ma_atexit(void);
-
+void preWrite(void);
 
 
 void MYexit(int retcode)
@@ -53,6 +53,7 @@ int main(char argc, char **argv)
 {
   char	filename[LEN_FNAME+1];
   int	bytes_read, ret;
+  int   preWriting=0,preReading=0;
 
 
   char  *PtrFname;
@@ -198,15 +199,12 @@ int main(char argc, char **argv)
 	retgrab = ADev->grab();
 	if (retgrab != true) {
 	  PlayerStatus = STOP_MEDIA;
-	  cerr << "Failed to grab\n";
+	  cerr << "maudio: Failed to grab sound device\n";
 	}
 	else {
 	  PlayerStatus = PLAYING;
-	  // prefetch some data
-	  ASample->readData();
-	  ASample->readData();
-	  ASample->readData();
-	  ASample->readData();	  
+	  // remember pre-reading and pre-writing some data
+	  preWriting = preReading = 3;
 	}
       }
       break;
@@ -220,7 +218,11 @@ int main(char argc, char **argv)
        * chunk of audio data from the file.
        */
       bytes_read = ASample->readData();
-      PlayerStatus = PLAY_IT;
+      if (bytes_read!=0 && preReading!=0) {
+	preReading--;
+      }
+      else
+	PlayerStatus = PLAY_IT;
       break;
 
 
@@ -246,6 +248,14 @@ int main(char argc, char **argv)
       else {
 	PlayerStatus = PLAYING;
 	ASample->nextWBuf();
+	if ( preWriting!=0) {
+	  // pre-write data into device, so that it is always a little ahead and
+	  // slow computers dont experience sound hickups
+	  // Pre-writing is done every time after the sound device got opened.
+	  preWriting--;
+	}
+	else
+	  PlayerStatus = PLAYING;
       }
       if ( (ASample->buffersValid == 0) && (bytes_read == 0)) {
 	// Nothing to read and to write. OK,then finish
@@ -268,6 +278,26 @@ int main(char argc, char **argv)
   ADev->reset();
   ADev->release();
   return(0);
+}
+
+
+
+// Write data, retrying until it gets accepted
+void preWrite(void)
+{
+  int ret;
+
+  while (1)
+  {
+    ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
+    if (ret == -1 && errno == EAGAIN)
+      usleep(USLEEP_DELAY); /* Retry after delay */
+    else
+      break;
+  }
+
+  if (ret!=-1)
+    ASample->nextWBuf(); // If buffer was written
 }
 
 

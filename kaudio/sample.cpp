@@ -62,7 +62,7 @@ void AudioSample::setRBuf(int id)
     id=0;
   RBufId = id;
   RBuffer= Buffers[id];
-  cerr << "RBuf = " << id << "\n";
+  //  cerr << "RBuf = " << id << "\n";
 }
 
 void AudioSample::setWBuf(int id)
@@ -71,7 +71,7 @@ void AudioSample::setWBuf(int id)
     id=0;
   WBufId = id;
   WBuffer= Buffers[id];
-  cerr << "WBuf = " << id << "\n";
+  //  cerr << "WBuf = " << id << "\n";
 }
 
 void AudioSample::nextWBuf()
