@@ -12,6 +12,7 @@
 #include <qscrbar.h>
 #include <qmsgbox.h>
 #include <kapp.h>
+#include <time.h>
 
 #include "kslider.h"
 

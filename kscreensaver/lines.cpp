@@ -13,6 +13,7 @@
 #include <qscrbar.h>
 #include <kapp.h>
 #include <qmsgbox.h>
+#include <time.h>
 
 #include "kcolordlg.h"
 #include "kslider.h"
