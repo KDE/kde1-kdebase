@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-19 17:29+01:00\n"
+"PO-Revision-Date: 1998-12-22 15:25+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -660,13 +660,13 @@ msgid "Last Modified"
 msgstr "Senast ändrad"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Kunde inte radera katalogen\n"
-"%s"
+"Kunde inte byta namn på filen eller katalogen\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -1384,12 +1384,11 @@ msgstr "Alla &kakor"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Ta emot"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "&Markera"
+msgstr "&Vägra ta emot"
 
 #: popup.cpp:69
 #, c-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-21 14:16+01:00\n"
+"PO-Revision-Date: 1998-12-22 15:41+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -36,23 +36,21 @@ msgstr "&HTTP"
 
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "&Bläddrar-ID"
+msgstr "&Webläsar-ID"
 
 #: main.cpp:76
-#, fuzzy
 msgid "Coo&kies"
-msgstr "Använd ej kakor"
+msgstr "&Kakor"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "&Skrivbordsikoner"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr ""
-"användning: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "Användning: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -160,7 +158,7 @@ msgstr "Antag HTML"
 
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "På server:"
+msgstr "På servern:"
 
 #: useragentdlg.cpp:67
 msgid "login as:"
@@ -175,9 +173,8 @@ msgid "Known bindings:"
 msgstr "Kända bindningar:"
 
 #: kcookiesdlg.cpp:49
-#, fuzzy
 msgid "&Enable Cookies"
-msgstr "Använd ej kakor"
+msgstr "&Aktivera kakor"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -205,7 +202,7 @@ msgstr "Ändra domänpolicy"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Du måste skriva in en domän först !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -229,4 +226,4 @@ msgstr "Bakgrundsfärg för ikoner:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Visa &gömda filer på skrivbordet"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-12 18:17+01:00\n"
+"PO-Revision-Date: 1998-12-22 15:26+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -135,6 +135,8 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Typsnittet `%s' kunde ej hittas.\n"
+"Kolla i README.linux.console för hjälp."
 
 #: main.C:607
 #, c-format
@@ -165,13 +167,13 @@ msgstr ""
 #: main.C:732
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s' avslutades på ett onormalt sätt."
 
 #: main.C:735
 msgid ""
 "\n"
 "Return code = "
-msgstr ""
+msgstr "\nReturkod = "
 
 #: main.C:928
 msgid "Welcome to the console"

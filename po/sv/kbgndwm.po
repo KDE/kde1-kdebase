@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-28 01:10+0100\n"
-"PO-Revision-Date: 1998-12-13 16:47+0100\n"
+"PO-Revision-Date: 1998-12-22 15:18+01:00\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Gemensam bakgrund"
 
 #: kbgndwm.cpp:50
 msgid "Undock"
-msgstr "Odocka"
+msgstr "Docka inte"
 
 #: kbgndwm.cpp:58
 msgid "Tiled"
@@ -48,11 +48,11 @@ msgstr "Centrerat"
 
 #: kbgndwm.cpp:62
 msgid "CentredBrick"
-msgstr "Centrerat tegel"
+msgstr "Centrerat, tegelram"
 
 #: kbgndwm.cpp:63
 msgid "CentredWarp"
-msgstr ""
+msgstr "centrerat, warpram"
 
 #: kbgndwm.cpp:64
 msgid "CentredMaxpect"
