@@ -53,7 +53,6 @@ void MYexit(int retcode)
   exit (retcode);
 }
 
-int bugflags=255;
 
 int main(char argc, char **argv)
 {
@@ -79,7 +78,6 @@ int main(char argc, char **argv)
   }
 
   ADev = new AudioDev(textDevDSP, O_WRONLY, 0 /* O_NONBLOCK */);
-  ADev->setBugs(bugflags);	// OSS bug workaround flags :-(
   ASample = new AudioSample();
 
   while(1)
@@ -335,11 +333,6 @@ void ma_init(char argc, char **argv)
 	   */
 	  IsSlave=1;
 	  identification = argv[i+1];
-	}
-      else if ( (strcmp (argv[i],"-oss_bugs") == 0) && (i+1<argc) )
-	{
-	  bugflags = atoi(argv[i+1]);
-	  cerr << "Playing with OSS Bug workaround! Flags= " << bugflags << '\n';
 	}
       else if ( (strcmp (argv[i],"-devnum") == 0) && (i+1<argc) )
         MaudioDevnum = atoi(argv[i+1]);
