@@ -46,7 +46,7 @@ protected:
     QTime currentTime;
     QTime startTime;
     
-    int init_sockaddr(struct sockaddr_in *server_name, char *hostname,int port);
+    int init_sockaddr(struct sockaddr_in *server_name, const char *hostname,int port);
     int ProcessHeader();
     
 public:

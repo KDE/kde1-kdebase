@@ -191,7 +191,7 @@ long KProtocolHTTP::Read(void *buffer, long len)
     return FAIL;
 }
 
-int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname, int port)
+int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, const char *hostname, int port)
 {
  	printf("host: %s\n", hostname);
 	
