@@ -7,6 +7,7 @@ Comment=Has English characters as alternate symbols.
 Comment[ru]=Позволяет набирать латинские символы используя Алтернативные переключатель.
 
 Language=Ukrainian
+Language[no]=Ukrainsk
 Language[ru]=Украинский
 
 Charset=cp1251

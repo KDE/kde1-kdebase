@@ -8,6 +8,7 @@ Comment=Has English characters as alternate symbols.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 
 Language=Russian
+Language[no]=Russisk
 Language[ru]=Русский
 
 Charset=cp1251

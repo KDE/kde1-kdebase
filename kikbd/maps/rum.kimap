@@ -7,6 +7,7 @@ Comment=Microsoft layout. Has English characters as alternate symbols.
 Comment[ru]=Раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативный переключатель.
 
 Language=Russian
+Language[no]=Russisk
 Language[ru]=Русский
 
 Charset=koi8-r
