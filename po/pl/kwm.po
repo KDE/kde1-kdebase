@@ -1,89 +1,69 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-10-09 22:06-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-
 # Polish translation of KDE kwm
-# Version 0.1.2
+# Version 0.2.0
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+msgid "Close"
+msgstr "Zam&knij"
+
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: wyglada na to, ze menedzer okien jest juz uruchomiony.  kwm nie "
-"uruchomil sie\n"
+"kwm: wygl±da na to, ¿e mened¿er okien jest ju¿ uruchomiony.  kwm nie "
+"uruchomi³ siê\n"
 
 #: main.C:78
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: blad podczas inicjacji; przerwanie\n"
+msgstr "kwm: b³±d podczas inicjacji; przerwanie\n"
 
 #: main.C:363
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:367
 msgid "Usage: "
-msgstr ""
+msgstr "U¿ycie: "
 
 #: main.C:378
-#, fuzzy
 msgid "Maximize"
-msgstr "(Od) &Maksymalizuj"
+msgstr "&Maksymalizuj"
 
 #: main.C:379
 msgid "Restore"
-msgstr ""
+msgstr "Przy&wróæ"
 
 #: main.C:380
-#, fuzzy
 msgid "Iconify"
 msgstr "Mi&nimalizuj"
 
 #: main.C:381
-#, fuzzy
 msgid "DeIconify"
-msgstr "Mi&nimalizuj"
+msgstr "Przy&wróæ"
 
 #: main.C:382
-#, fuzzy
 msgid "Sticky"
-msgstr "(Od) Przyk&lej"
+msgstr "Przyk&lej"
 
 #: main.C:383
-#, fuzzy
 msgid "UnSticky"
-msgstr "(Od) Przyk&lej"
+msgstr "Odk&lej"
 
 #: main.C:384
-#, fuzzy
 msgid "Move"
 msgstr "Prz&enie¶"
 
 #: main.C:385
-#, fuzzy
 msgid "Resize"
 msgstr "&Rozmiar"
 
 #: main.C:387
-#, fuzzy
 msgid "To desktop"
-msgstr "&Wy¶lij na desktop"
+msgstr "Wy¶lij na &desktop"
 
 #: main.C:389
 msgid "Onto current desktop"
-msgstr ""
+msgstr "Wy¶lij na ten &desktop"
 
 #: main.C:437
 msgid "One"
@@ -119,93 +99,49 @@ msgstr "Osiem"
 
 #: main.C:841
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Brak zadañ ***"
 
 #: minicli.C:66
 msgid "Command:"
 msgstr "Polecenie:"
 
 #: logout.C:35 task.C:36
-#, fuzzy
 msgid "Logout"
 msgstr "Wylo&guj siê"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sesja przygotowana do wylogowania"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Nastêpuj±ce aplikacje zawieraj± niezachowane dane,\n"
+"które nie bêd± odzyskane przy nastêpnej sesji."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Nastêpuj±ce aplikacje nie bêd± przywrócone przy nastêpnej sesji,\n"
+"a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ wszystkie dane."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Nastêpuj±ce aplikacje nie s± aplikacjami X11 i nie bêd± przywrócone przy\n"
+"nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ wszystkie dane."
 
 #: task.C:35
 msgid "Switch to"
-msgstr ""
+msgstr "&Prze³±cz na"
 
 #: task.C:49
 msgid "Current session"
-msgstr ""
+msgstr "Bierz±ca sesja"
 
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: wersja 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     oparty o wersje 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     oparty o wersje 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Czesciowo pochodzi z 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Polskie tlumaczenie Copyright (c) 1997 Piotr Roszatycki\n"
-#~ "     Brak gwarancji. Prosze przeczytac pliki README\n"
-
-#~ msgid "patch level %d"
-#~ msgstr "patch level %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "uzycie: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Desktop"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: wyjscie na sygnal\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "Wywo³aj &pomoc"
-
-#~ msgid "&Execute command"
-#~ msgstr "&Uruchom polecenie"
-
-#~ msgid "&Display properties"
-#~ msgstr "&W³a¶ciwo¶ci wy¶wietlania"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Od¶wie¿ desktop"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "Uporz±dkuj &ikony"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&Zablokuj ekran"
-
-#~ msgid "&Close"
-#~ msgstr "Zam&knij"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Zniszcz"

@@ -1,5 +1,5 @@
 # Polish translation of KDE kfind
-# Version 0.1.0
+# Version 0.1.1
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: kftabdlg.cpp:214
@@ -11,7 +11,7 @@ msgid " Date Modified "
 msgstr " &Data modyfikacji "
 
 #: kftabdlg.cpp:94
-msgid " Name&Location "
+msgid " Name& Location "
 msgstr " &Nazwa/Lokacja "
 
 #: kfwin.cpp:104
@@ -92,7 +92,7 @@ msgstr "&W³a¶ciwo¶ci..."
 
 #: kfindtop.cpp:151
 msgid "&Quit"
-msgstr "&Wyj¶cie"
+msgstr "Wy&j¶cie"
 
 #: kfindtop.cpp:148
 msgid "&Save Search"
@@ -124,7 +124,7 @@ msgstr "(brak)"
 
 #: kfoptions.cpp:202
 msgid "Add New"
-msgstr "Dodaj nowe"
+msgstr "&Dodaj nowe"
 
 #: kfoptions.cpp:195
 msgid "Add to Archive:"
@@ -308,7 +308,7 @@ msgstr "Wyj¶cie"
 
 #: kfoptions.cpp:204
 msgid "Remove"
-msgstr "Usuñ"
+msgstr "&Usuñ"
 
 #: kfwin.cpp:179
 msgid "Results were saved to file\n"
