@@ -647,6 +647,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
     return;
   }
   else  {
+    debug("press on window frame");
     // titlebar and frame event
     if (isActive() || !wantsFocus() ){
       if (ev->button() == LeftButton)

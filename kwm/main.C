@@ -497,7 +497,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   process_events_mode = false;
   systemMenuBarParent = 0;
   systemMenuBar = 0;
-  
+
   int i;
   bool restore_session = true;
   for (i=1; i<argc; i++){
@@ -649,7 +649,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   initting = false;
 
   setupSystemMenuBar();
-  
+
   if (restore_session)
     restoreSession();
 }
@@ -659,11 +659,11 @@ void MyApp::setupSystemMenuBar()
 {
   systemMenuBarParent = new QWidget;
   systemMenuBar = new KMenuBar(systemMenuBarParent);
-  
+
   QPopupMenu* file = new QPopupMenu;
   file->insertItem(KWM::getCloseString(), this, SLOT( slotWindowClose() ) );
   fileSystemMenuId = systemMenuBar->insertItem( klocale->translate("File"), file);
-  
+
   systemMenuBarParent->setGeometry(-10,-10,100,40);
   systemMenuBarParent->show();
   systemMenuBarParent->hide();
@@ -672,7 +672,7 @@ void MyApp::setupSystemMenuBar()
       systemMenuBarParent = 0;
       systemMenuBar = 0;
   }
-}  
+}
 
 void MyApp::resetSystemMenuBar()
 {
@@ -1700,7 +1700,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
     Client *c = manager->getClient(ev->xbutton.window);
     if (c) {
 	c->stopAutoraise();
-    
+
 	if (c->isMenuBar()) {
 	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
 	    XUngrabPointer(qt_xdisplay(), CurrentTime);

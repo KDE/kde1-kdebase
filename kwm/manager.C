@@ -615,7 +615,7 @@ void Manager::clientMessage(XEvent*  ev){
       // update the menubars
       updateMenuBars();
   }
-  
+
   if (e->message_type == kde_sound_event){
       long mask = 0L;
       Window* mw;
@@ -1361,7 +1361,7 @@ void Manager::smartPlacement(Client* c) {
   if (myapp->systemMenuBar) {
       maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
   }
-  
+
   x = maxRect.left(); y = maxRect.top();
 
   //initialize and do a loop over possible positions
@@ -1871,7 +1871,7 @@ void Manager::manage(Window w, bool mapped){
   // do a little jump after beeing fully mapped.
   switch (c->getDecoration()){
   case 0:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+      XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
     break;
   case 2:
     XReparentWindow(qt_xdisplay(), c->window, c->winId() ,
@@ -2124,7 +2124,7 @@ void Manager::activateClient(Client* c, bool set_revert){
 	  if (clients_traversing.removeRef(cc))
 	      clients_traversing.insert(0,cc);
       }
-      
+
       raiseMenubarsOf(c->mainClient());
 
       XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
@@ -2409,7 +2409,7 @@ void Manager::switchDesktop(int new_desktop){
 
   if (!current())
     noFocus();
- 
+
   updateMenuBars();
 }
 
