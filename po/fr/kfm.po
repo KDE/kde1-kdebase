@@ -1418,7 +1418,7 @@ msgstr "Vous avez reçu un cookie de l'hôte : "
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr "Voulez-vous accepter ou rejetter ce cookie ?"
+msgstr "Voulez-vous accepter ou rejeter ce cookie ?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
@@ -1442,7 +1442,7 @@ msgstr "&Accepter"
 
 #: kcookiewin.cpp:166
 msgid "&Reject"
-msgstr "&Rejetter"
+msgstr "&Rejeter"
 
 #: popup.cpp:72
 #, c-format

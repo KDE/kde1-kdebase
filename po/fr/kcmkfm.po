@@ -200,7 +200,7 @@ msgstr "Demander"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Rejetter"
+msgstr "Rejeter"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
