@@ -12,6 +12,8 @@
 #include <time.h>
 #include <sys/wait.h>
 
+#include <kconfig.h>
+
 #ifdef HAVE_VOLMGT
 #include <volmgt.h>
 #include <sys/mnttab.h>
@@ -22,8 +24,6 @@
 #include <sys/ucred.h>
 #include <sys/mount.h>
 #endif      
-
-#include <kconfig.h>
 
 #include "kioserver_ipc.h"
 #include "kioserver.h"
