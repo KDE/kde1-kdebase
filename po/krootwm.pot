@@ -1,0 +1,36 @@
+
+#: krootwm.C:63
+msgid "Help on desktop"
+msgstr ""
+
+#: krootwm.C:64
+msgid "Execute command"
+msgstr ""
+
+#: krootwm.C:65
+msgid "Display properties"
+msgstr ""
+
+#: krootwm.C:66
+msgid "Refresh desktop"
+msgstr ""
+
+#: krootwm.C:67
+msgid "Arrange icons"
+msgstr ""
+
+#: krootwm.C:69
+msgid "Lock screen"
+msgstr ""
+
+#: krootwm.C:70
+msgid "Logout"
+msgstr ""
+
+#: krootwm.C:274
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: krootwm.C:278
+msgid "Usage:"
+msgstr ""

@@ -60,14 +60,14 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
-    rmb->insertItem("Help on desktop", RMB_HELP);
-    rmb->insertItem("Execute command", RMB_EXECUTE);
-    rmb->insertItem("Display properties", RMB_DISPLAY_PROPERTIES);
-    rmb->insertItem("Refresh desktop", RMB_REFRESH_DESKTOP);
-    rmb->insertItem("Arrange icons", RMB_ARRANGE_ICONS);
+    rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
+    rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
+    rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
+    rmb->insertItem(klocale->translate("Refresh desktop"), RMB_REFRESH_DESKTOP);
+    rmb->insertItem(klocale->translate("Arrange icons"), RMB_ARRANGE_ICONS);
     rmb->insertSeparator();
-    rmb->insertItem("Lock screen", RMB_LOCK_SCREEN);
-    rmb->insertItem("Logout", RMB_LOGOUT);
+    rmb->insertItem(klocale->translate("Lock screen"), RMB_LOCK_SCREEN);
+    rmb->insertItem(klocale->translate("Logout"), RMB_LOGOUT);
     connect(rmb, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
 
     mmb = new QPopupMenu;
@@ -271,11 +271,11 @@ int main( int argc, char *argv[] )
     if (QString("-version") == argv[1]){
       printf(KROOTWM_VERSION);
       printf("\n");
-      printf("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n");
+      printf(klocale->translate("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"));
       ::exit(0);
     }
     else {
-      printf("Usage:");
+      printf(klocale->translate("Usage:"));
       printf("%s [-version]\n", argv[0]);
     }
     ::exit(1); 
