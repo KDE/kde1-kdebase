@@ -998,8 +998,7 @@ void Theme::install(void)
   mCmdList.clear();
 
   if (instPanel) installGroup("Panel");
-  if (instSounds) installGroup("So
-unds");
+  if (instSounds) installGroup("Sounds");
   if (instWindowBorder) installGroup("Window Border");
   if (instWindowTitlebar) installGroup("Window Titlebar");
   if (instWindowButtonLayout) installGroup("Window Button Layout");

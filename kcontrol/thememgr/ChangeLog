@@ -1,3 +1,7 @@
+1999-01-16  Stefan Taferner  <taferner@kde.org>
+
+	* Fixed syntax error in name of Sounds group.
+
 1999-01-13  Stefan Taferner  <taferner@kde.org> (V0.7.2)
 
 	* Added automatic stretching of window borders. This
