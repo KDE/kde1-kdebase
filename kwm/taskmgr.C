@@ -82,10 +82,10 @@ const char *KListBoxItem_Program::text() const {
 
 int KListBoxItem_Program::height(const QListBox *lb) const {
   QFontMetrics fm(lb->font());
-  if(fm.lineSpacing() > _pm.height() + 4)
+  if(fm.lineSpacing() > 18)
     return fm.lineSpacing();
   else
-    return _pm.height() + 4;
+    return 18;
 }
 
 int KListBoxItem_Program::width(const QListBox *lb) const {
