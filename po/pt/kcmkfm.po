@@ -46,7 +46,8 @@ msgstr "&Ícones de Fundo"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"utilização: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"utilização: %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"

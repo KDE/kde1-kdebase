@@ -181,8 +181,7 @@ msgstr ""
 
 #: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
-msgstr ""
-"Brak plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
+msgstr "Brak plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
 
 #: kikbdconf.cpp:218
 msgid ""
@@ -399,8 +398,9 @@ msgstr "&Emulacja Caps Lock"
 
 #: widgets.cpp:467
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr "Emulacja klawisza Caps Lock. Niektóre jêzyki wymagaj± tej opcji "
-"do poprawnego dzia³ania"
+msgstr ""
+"Emulacja klawisza Caps Lock. Niektóre jêzyki wymagaj± tej opcji do "
+"poprawnego dzia³ania"
 
 #: widgets.cpp:473
 msgid "&World Menu"

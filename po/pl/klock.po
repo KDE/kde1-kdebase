@@ -590,7 +590,6 @@ msgstr ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
-
 #: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Ustawienia wygaszacza Polygon"
