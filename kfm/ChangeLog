@@ -1,3 +1,12 @@
+Fri Jun 26 17:20:03 1998    <weis@snoopy.rz.uni-frankfurt.de>
+
+	* open-with.cpp (KAppTreeListItem): Fixed seg fault with
+	  empty directory.
+
+	* kfmgui.cpp (slotPannerChanged): Fixed bug with the panner.
+	  If you resize the panner then the menu item will be set
+	  accordingly. 
+
 Sun Jun 21 00:08:32 1998  Torben Weis  <weis@localhost>
 
 	* kioslave/icon.cpp (Open): Fixed little QString bug

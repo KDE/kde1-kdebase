@@ -846,9 +846,15 @@ void KfmGui::slotPannerChanged()
     }
 
     if ( panner->getSeparator() == 0 )
+    {
       mview->setItemChecked( mview->idAt( 1 ), false );
+      bTreeView = false;
+    }
     else
+    {
       mview->setItemChecked( mview->idAt( 1 ), true );
+      bTreeView = true;
+    }
     
     resizeEvent( 0L );
 }
