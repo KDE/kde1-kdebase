@@ -127,13 +127,13 @@ msgid ""
 msgstr ""
 
 #: titlebar.cpp:993
-#, fuzzy
+#
 msgid "(Un)Maximize"
-msgstr "Максимизировать"
+msgstr "(Мин)Максимизировать"
 
 #: titlebar.cpp:994
 msgid "Move"
-msgstr ""
+msgstr "Перемещать"
 
 #
 #: titlebar.cpp:995
@@ -174,14 +174,14 @@ msgid "Opaque"
 msgstr "Непрозрачно"
 
 #: windows.cpp:79
-#, fuzzy
+#
 msgid "Window resize"
-msgstr "&Окна"
+msgstr "Изменить размер окна"
 
 #: windows.cpp:80
-#, fuzzy
+#
 msgid "With animation"
-msgstr "Анимация заголовка"
+msgstr "С анимацией"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -234,17 +234,17 @@ msgstr "Щелчоком"
 
 #: windows.cpp:118
 msgid "Focus follows mouse"
-msgstr "За мышкой"
+msgstr "Фокус за мышкой"
 
 #: windows.cpp:120
-#, fuzzy
+#
 msgid "Classic focus follows mouse"
-msgstr "За мышкой"
+msgstr "Классичекий фокус за мышкой"
 
 #: windows.cpp:122
-#, fuzzy
+#
 msgid "Classic sloppy focus"
-msgstr "Щелчоком"
+msgstr "Классический фокус щелчком"
 
 #: windows.cpp:131
 msgid ""
@@ -260,11 +260,11 @@ msgstr "миллисекунд"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Активные границы рабочего стола"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Включить активные границы рабочего стола"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
@@ -272,11 +272,11 @@ msgstr ""
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "Задержка в переключении:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Волшебные границы"
 
 #: desktop.cpp:102
 msgid ""

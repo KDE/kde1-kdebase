@@ -20,7 +20,7 @@ msgstr "Сигнал"
 
 #: main.cpp:58
 msgid "usage: kcmbell [-init | bell]\n"
-msgstr ""
+msgstr "использование: kcmbell [-init | bell]\n"
 
 #: main.cpp:89
 msgid "Bell settings"
@@ -48,4 +48,4 @@ msgstr "мс"
 
 #: bell.cpp:92
 msgid "Test"
-msgstr ""
+msgstr "Тест"
