@@ -28,7 +28,7 @@ class KSambaApplication : public KControlApplication
 {
 public:
 
-  KSambaApplication(int &argc, char **arg, char *name, char *title);
+  KSambaApplication(int &argc, char **arg, const char *name);
 
 private:
 
@@ -36,8 +36,9 @@ private:
 };
 
 
-KSambaApplication::KSambaApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KSambaApplication::KSambaApplication(int &argc, char **argv, 
+				     const char *name)
+  : KControlApplication(argc, argv, name)
 {
   status = 0;
 
@@ -56,7 +57,8 @@ KSambaApplication::KSambaApplication(int &argc, char **argv, char *name, char *t
 
 int main(int argc, char **argv)
 {
-  KSambaApplication app(argc, argv, "samba", "Samba");
+  KSambaApplication app(argc, argv, "samba");
+  app.setTitle(klocale->translate("Samba"));
   
   if (app.runGUI())
     return app.exec();

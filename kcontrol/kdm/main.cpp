@@ -32,7 +32,7 @@ class KDMConfigApplication : public KControlApplication
 {
 public:
 
-  KDMConfigApplication(int &argc, char **arg, char *name, char *title);
+  KDMConfigApplication(int &argc, char **arg, const char *name);
 
   void apply();
 
@@ -47,8 +47,8 @@ private:
 };
 
 
-KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   appearance = 0;
   font = 0;
@@ -95,27 +95,29 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, char *name, c
       }
 
       if (!pages || pages->contains("appearance"))
-        addPage(appearance = new KDMAppearanceWidget(dialog, "appearance", FALSE),
-                                "&Appearance", "kdm-appear.html");
+	  addPage(appearance = new KDMAppearanceWidget(dialog, "appearance", FALSE),
+		  klocale->translate("&Appearance"), 
+		  "kdm-appear.html");
       if (!pages || pages->contains("font"))
         addPage(font = new KDMFontWidget(dialog, "font", FALSE),
-                                  "&Fonts", "kdm-fonts.html");
+		klocale->translate("&Fonts"),
+		"kdm-fonts.html");
       if (!pages || pages->contains("background"))
-        addPage(background = new KDMBackgroundWidget(dialog, "background", FALSE),
-                                  "&Background", "kdm-backgnd.html");
+	  addPage(background = new KDMBackgroundWidget(dialog, "background", FALSE),
+		  klocale->translate("&Background"), "kdm-backgnd.html");
       if (!pages || pages->contains("users"))
         addPage(users = new KDMUsersWidget(dialog, "users", FALSE),
-                                  "&Users", "kdm-users.html");
+                                  klocale->translate("&Users"), "kdm-users.html");
       if (!pages || pages->contains("sessions"))
         addPage(sessions = new KDMSessionsWidget(dialog, "sessions", FALSE),
-                                  "&Sessions", "kdm-sess.html");
+                                  klocale->translate("&Sessions"), "kdm-sess.html");
 
       dialog->show();
     }
     else
     {
-      QString msg = klocale->translate("Sorry, but you don't have read/write\n");
-      msg += klocale->translate("permission to the KDM setup file.");
+      QString msg = klocale->translate("Sorry, but you don't have read/write\n"
+				       "permission to the KDM setup file.");
       KMsgBox::message( dialog, klocale->translate("Missing privileges"), msg);
       this->exit(-1);
     }
@@ -152,7 +154,8 @@ void KDMConfigApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KDMConfigApplication app(argc, argv, "kdmconfig", "KDM Configuration");
+  KDMConfigApplication app(argc, argv, "kdmconfig");
+  app.setTitle(klocale->translate("KDM Configuration"));
   
   if (app.runGUI())
     return app.exec();

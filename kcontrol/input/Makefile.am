@@ -23,5 +23,8 @@ uninstall-local:
 	rm -f $(kde_minidir)/mouse.xpm
 	rm -f $(kde_minidir)/keyboard.xpm
 
+messages:
+	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcminput_SOURCES) && mv messages.po ../../po/kcminput.pot
+
 DISTCLEANFILES = $(BUILT_SOURCES)
 

@@ -23,5 +23,8 @@ uninstall-local:
 	rm -f $(kde_minidir)/memory.xpm
 	rm -f $(kde_minidir)/processor.xpm
 
+messages:
+	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcminfo_SOURCES) && mv messages.po ../../po/kcminfo.pot
+
 DISTCLEANFILES = $(BUILT_SOURCES)
 

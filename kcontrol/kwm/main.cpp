@@ -30,7 +30,7 @@ class KKWMApplication : public KControlApplication
 {
 public:
 
-  KKWMApplication(int &argc, char **arg, char *name, char *title);
+  KKWMApplication(int &argc, char **arg, const char *name);
 
   void init();
   void apply();
@@ -43,19 +43,22 @@ private:
 };
 
 
-KKWMApplication::KKWMApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   windows = 0; buttons = 0; appearance = 0;
 
   if (runGUI())
     {
       if (!pages || pages->contains("windows"))
-	addPage(windows = new KWindowConfig(dialog, "windows"), "&Windows", "windows.html");
+	addPage(windows = new KWindowConfig(dialog, "windows"), 
+		klocale->translate("&Windows"), "windows.html");
       if (!pages || pages->contains("buttons"))
-	addPage(buttons = new KTitlebarButtons(dialog, "buttons"), "&Buttons", "titlebar.html");
+	addPage(buttons = new KTitlebarButtons(dialog, "buttons"),
+		klocale->translate("&Buttons"), "titlebar.html");
       if (!pages || pages->contains("titlebar"))
-	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), "&Titlebar", "titlebar.html");
+	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
+		klocale->translate("&Titlebar"), "titlebar.html");
 
       dialog->show();
     }
@@ -81,7 +84,8 @@ void KKWMApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KKWMApplication app(argc, argv, "kwm", "Window manager style");
+  KKWMApplication app(argc, argv, "kwm");
+  app.setTitle(klocale->translate("Window manager style"));
   
   if (app.runGUI())
     return app.exec();

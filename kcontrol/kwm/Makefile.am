@@ -27,5 +27,8 @@ uninstall-local:
 	rm -f $(kde_minidir)/buttons.xpm
 	rm -f $(kde_icondir)/kcmkwm.xpm
 
+messages:
+	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmkwm_SOURCES) && mv messages.po ../../po/kcmkwm.pot
+
 DISTCLEANFILES = $(BUILT_SOURCES)
 

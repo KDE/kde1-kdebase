@@ -35,7 +35,7 @@ class KDisplayApplication : public KControlApplication
 {
 public:
 
-  KDisplayApplication(int &argc, char **arg, char *name, char *title);
+  KDisplayApplication(int &argc, char **arg, const char *name);
 
   void init();
   void apply();
@@ -49,21 +49,25 @@ private:
 };
 
 
-KDisplayApplication::KDisplayApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   colors = 0; screensaver = 0; general = 0; background = 0;
 
   if (runGUI())
     {
       if (!pages || pages->contains("background"))
-        addPage(background = new KBackground(dialog, KDisplayModule::Setup), "&Background", "backgnd.html");
+        addPage(background = new KBackground(dialog, KDisplayModule::Setup), 
+		klocale->translate("&Background"), "backgnd.html");
       if (!pages || pages->contains("colors"))
-	addPage(colors = new KColorScheme(dialog, KDisplayModule::Setup), "&Colors", "colorscm.html");
+	  addPage(colors = new KColorScheme(dialog, KDisplayModule::Setup), 
+		  klocale->translate("&Colors"), "colorscm.html");
       if (!pages || pages->contains("screensaver"))
-	addPage(screensaver = new KScreenSaver(dialog, KDisplayModule::Setup), "&Screensaver", "scrnsave.html");
+	  addPage(screensaver = new KScreenSaver(dialog, KDisplayModule::Setup),
+		  klocale->translate("&Screensaver"), "scrnsave.html");
       if (!pages || pages->contains("style"))
-	addPage(general = new KGeneral(dialog, KDisplayModule::Setup), "&Style", "general.html");
+	addPage(general = new KGeneral(dialog, KDisplayModule::Setup), 
+		klocale->translate("&Style"), "general.html");
 
       dialog->show();
     }
@@ -95,10 +99,10 @@ void KDisplayApplication::apply()
     general->applySettings();
 }
 
-
 int main(int argc, char **argv)
 {
-  KDisplayApplication app(argc, argv, "kdisplay", "Display settings");
+  KDisplayApplication app(argc, argv, "kdisplay");
+  app.setTitle(klocale->translate("Display settings"));
   
   if (app.runGUI())
     return app.exec();

@@ -30,13 +30,12 @@
 #include <unistd.h>
 #endif
 
-#include "kcolordlg.h"
-#include "scrnsave.h"
-#include "scrnsave.moc"
-
 #include <kiconloader.h>
 #include <kcontrol.h>
 
+#include "kcolordlg.h"
+#include "scrnsave.h"
+#include "scrnsave.moc"
 
 #define NO_SCREENSAVER klocale->translate("(none)")
 #define SCREENSAVER_DIR	"/usr/local/kde/bin"

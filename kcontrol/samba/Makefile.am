@@ -17,5 +17,8 @@ install-data-local:
 uninstall-local:
 	rm -f $(kde_minidir)/smbstatus.xpm
 
+messages:
+	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmsamba_SOURCES) && mv messages.po ../../po/kcmsamba.pot
+
 DISTCLEANFILES = $(BUILT_SOURCES)
 

@@ -29,7 +29,7 @@ class KInputApplication : public KControlApplication
 {
 public:
 
-  KInputApplication(int &argc, char **arg, char *name, char *title);
+  KInputApplication(int &argc, char **arg, const char *name);
 
   void init();
   void apply();
@@ -41,17 +41,19 @@ private:
 };
 
 
-KInputApplication::KInputApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KInputApplication::KInputApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   mouse = 0; keyboard = 0;
 
   if (runGUI())
     {
       if (!pages || pages->contains("mouse"))
-	addPage(mouse = new MouseConfig(dialog, "mouse", FALSE), "&Mouse", "mouse.html");
+	addPage(mouse = new MouseConfig(dialog, "mouse", FALSE), 
+		klocale->translate("&Mouse"), "mouse.html");
       if (!pages || pages->contains("keyboard"))
-	addPage(keyboard = new KeyboardConfig(dialog, "keyboard", FALSE), "&Keyboard", "keyboard.html");
+	addPage(keyboard = new KeyboardConfig(dialog, "keyboard", FALSE), 
+		klocale->translate("&Keyboard"), "keyboard.html");
 
       dialog->show();
     }
@@ -79,7 +81,8 @@ void KInputApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KInputApplication app(argc, argv, "input", "Input Devices Properties");
+  KInputApplication app(argc, argv, "input");
+  app.setTitle(klocale->translate("Input Devices Properties"));
   
   if (app.runGUI())
     return app.exec();

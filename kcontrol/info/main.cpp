@@ -29,7 +29,7 @@ class KInfoApplication : public KControlApplication
 {
 public:
 
-  KInfoApplication(int &argc, char **arg, char *name, char *title);
+  KInfoApplication(int &argc, char **arg, const char *name);
 
 private:
 
@@ -38,17 +38,19 @@ private:
 };
 
 
-KInfoApplication::KInfoApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KInfoApplication::KInfoApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   memory = 0; processor = 0;
 
   if (runGUI())
     {
       if (!pages || pages->contains("memory"))
-	addPage(memory = new KMemoryWidget(dialog, "memory"), "&Memory", "memory.html");
+	addPage(memory = new KMemoryWidget(dialog, "memory"), 
+		klocale->translate("&Memory"), "memory.html");
       if (!pages || pages->contains("processor"))
-	addPage(processor = new KProcessorWidget(dialog, "processor"), "&Processor", "processor.html");
+	addPage(processor = new KProcessorWidget(dialog, "processor"), 
+		klocale->translate("&Processor"), "processor.html");
       
       dialog->setApplyButton(0);
       dialog->setCancelButton(0);
@@ -60,7 +62,8 @@ KInfoApplication::KInfoApplication(int &argc, char **argv, char *name, char *tit
 
 int main(int argc, char **argv)
 {
-  KInfoApplication app(argc, argv, "info", "System Information");
+  KInfoApplication app(argc, argv, "info");
+  app.setTitle(klocale->translate("System Information"));
   
   if (app.runGUI())
     return app.exec();

@@ -28,7 +28,7 @@ class KBellApplication : public KControlApplication
 {
 public:
 
-  KBellApplication(int &argc, char **arg, char *name, char *title);
+  KBellApplication(int &argc, char **arg, const char *name);
 
   void init();
   void apply();
@@ -39,15 +39,16 @@ private:
 };
 
 
-KBellApplication::KBellApplication(int &argc, char **argv, char *name, char *title)
-  : KControlApplication(argc, argv, name, title)
+KBellApplication::KBellApplication(int &argc, char **argv, const char *name)
+  : KControlApplication(argc, argv, name)
 {
   bell = 0;
 
   if (runGUI())
     {
       if (!pages || pages->contains("bell"))
-        addPage(bell = new KBellConfig(dialog, "bell", FALSE), "&Bell", "bell.html");
+        addPage(bell = new KBellConfig(dialog, "bell", FALSE), 
+		klocale->translate("&Bell"), "bell.html");
 
       dialog->show();
     }
@@ -70,7 +71,8 @@ void KBellApplication::apply()
 
 int main(int argc, char **argv)
 {
-  KBellApplication app(argc, argv, "bell", "Bell settings");
+  KBellApplication app(argc, argv, "bell");
+  app.setTitle(klocale->translate("Bell settings"));
   
   if (app.runGUI())
     return app.exec();
