@@ -2,9 +2,11 @@
 [KDE Desktop Entry]
 Name=Fontmanager
 Name[de]=Schriftenmanager
+Name[pl]=Mened¿er czcionek
 Exec=kfontmanager
 DocPath=kfontmanager/kfontmanager.html
-Info=KDE's Fontmanager.
-Info[de]=Sucht die Schriften für KDE zusammen
-Info[nl]=KDE-lettertypebeheer.
+Comment=KDE's Fontmanager.
+Comment[de]=Sucht die Schriften für KDE zusammen
+Comment[nl]=KDE-lettertypebeheer.
+Comment[pl]=Program zarz±dzaj±cy czcionkami KDE.
 Type=Application

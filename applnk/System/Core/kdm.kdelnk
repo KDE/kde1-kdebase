@@ -2,11 +2,13 @@
 [KDE Desktop Entry]
 Name=Display Manager
 Name[de]=Anmeldeschirm
+Name[pl]=Mened¿er wy¶wietlania
 Exec=kdehelp $KDEDIR/doc/HTML/kdm/kdm.html
 Section=Applications
 DocPath=kdm.html
 Title=Kdm
-Info=Info on the KDE Display Manager (Xdm replacement).
-Info[de]=Der KDE Anmeldeschirm (xdm - Ersatz)
-Info[nl]=Informatie over het KDE schermbeheer (Xdm vervanger).
+Comment=Info on the KDE Display Manager (Xdm replacement).
+Comment[de]=Der KDE Anmeldeschirm (xdm - Ersatz)
+Comment[nl]=Informatie over het KDE schermbeheer (Xdm vervanger).
+Comment[pl]=KDE Mened¿er wy¶wietlania (odpowiednik Xdm).
 Type=Application

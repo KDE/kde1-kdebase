@@ -2,10 +2,11 @@
 [KDE Desktop Entry]
 Name=Panel
 Name[de]=Startleiste
+Name[pl]=Panel
 Type=Application
 Exec=kpanel
 DocPath=kpanel.html
-Info=The KDE Desktop Panel.
-Info[de]=Die KDE Start-Klick-Leiste
-Info[nl]=Het KDE burobladpaneel.
-
+Comment=The KDE Desktop Panel.
+Comment[de]=Die KDE Start-Klick-Leiste
+Comment[nl]=Het KDE burobladpaneel.
+Comment[pl]=KDE Desktop Panel.
