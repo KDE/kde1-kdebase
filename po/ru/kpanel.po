@@ -76,11 +76,11 @@ msgstr "Настроить панель"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Редактировать меню"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Добавить или удалить приложения из структуры меню "
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -100,75 +100,13 @@ msgstr "Закрыть экран"
 
 #: props.C:310
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Редактор меню не установлен."
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Оопс!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Невозможно поместить это как кнопку на панель!"
 
-#~ msgid "Move"
-#~ msgstr "Переместить"
-
-#~ msgid "Properties"
-#~ msgstr "Свойства"
-
-#~ msgid "Location"
-#~ msgstr "Расположение"
-
-#~ msgid "Taskbar"
-#~ msgstr "Список задач"
-
-#~ msgid "Hidden"
-#~ msgstr "Скрытый"
-
-#~ msgid "Top/Left"
-#~ msgstr "Верх/Влево"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Маленький стиль"
-
-#~ msgid "Normal Style"
-#~ msgstr "Нормальный стиль"
-
-#~ msgid "Large Style"
-#~ msgstr "Большой стиль"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Подсказки для меню"
-
-#~ msgid "Others"
-#~ msgstr "Другие"
-
-#~ msgid "Personal First"
-#~ msgstr "Вначале Персональные"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Автоматически скрывать панель"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Автоматически скрывать список задач"
-
-#~ msgid "Clock"
-#~ msgstr "Часы"
-
-#~ msgid "24h"
-#~ msgstr "24ч"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12ч"
-
-#~ msgid "Visible"
-#~ msgstr "Видимый"
-
-#~ msgid "Width"
-#~ msgstr "Ширина"
-
-#~ msgid "Desktops"
-#~ msgstr "Рабочие столы"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "Конфигурация KPanel"
