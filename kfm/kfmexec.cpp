@@ -40,6 +40,8 @@ KFMExec::KFMExec()
     bDone = FALSE;
     dlg = 0L;
     
+    dirURL = 0L;
+
     // We use the job to determine
     // a) the mimetype of the URL or
     // b) wether it is a directory 
@@ -48,6 +50,7 @@ KFMExec::KFMExec()
     connect( job, SIGNAL( newDirEntry( KIODirectoryEntry* ) ),
 	     this, SLOT( slotNewDirEntry( KIODirectoryEntry* ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
+    connect( job, SIGNAL( finished( ) ), this, SLOT( slotFinished( ) ) );
 }
 
 void KFMExec::openURL( const char *_url  )
@@ -146,9 +149,6 @@ void KFMExec::openURL( const char *_url  )
 	// We try to load this URL now
 	tryURL = _url;
     
-    // Find out what to do with this URL.
-    job->browse( tryURL, false );
-
     // Show the user that we are doing something, since it may take
     // us some time.
     dlg = new QDialog( 0L );
@@ -165,6 +165,9 @@ void KFMExec::openURL( const char *_url  )
     line2->setText( tryURL );
     
     dlg->show();
+
+    // Find out what to do with this URL.
+    job->browse( tryURL, false );
 }
 
 void KFMExec::slotCancel()
@@ -178,6 +181,23 @@ void KFMExec::slotError( int, const char * )
 {
 }
 
+void KFMExec::slotFinished( )
+{
+    // The 'list' command worked. We can now open the new window for this URL.
+    if (dirURL) {
+        KfmGui *m = new KfmGui( 0L, 0L, dirURL );
+        if ( dlg ) // hide progress dialog box
+        {
+            delete dlg;
+            dlg = 0L;
+        }
+        m->show();
+        
+        // We are a zombie now
+        prepareToDie();
+    }
+}
+
 void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 {
     // Hack, this is no ideal way to find out wether the 'list' command succeded.
@@ -185,25 +205,17 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
     if ( strcmp( _entry->getName(), "." ) != 0 && strcmp( _entry->getName(), ".." ) != 0 &&
 	 strcmp( _entry->getName(), "./" ) != 0 && strcmp( _entry->getName(), "../" ) != 0 )
     {
-	// Ok, we are done, so lets stop the job ...
-	job->stop();
+	// Ok, we found at least one, let's remember it.
+	// but let the job run the whole 'list' command (the result will be 
+	// cached anyway, so it will speed up the displaying of the
+	// directory).
+	// Stopping the job here has dangerous side effects. David.
+	dirURL = tryURL;
 	
 	KURL u( tryURL );
-	
 	// ... and open a new window
 	if ( tryURL.right(1) != "/" && u.hasPath() )
-	    tryURL += "/";
-	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
-	if ( dlg )
-	  {
-	    delete dlg;
-	    dlg = 0L;
-	  }
-	m->show();
-
-	// We are a zombie now
-	prepareToDie();
-	return;
+	    dirURL += "/";
     }
 }
 

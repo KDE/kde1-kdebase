@@ -60,6 +60,10 @@ public slots:
     * Called if the @ref #job raises an error.
     */
     void slotError( int, const char * );
+   /**
+    * Called when the @ref #job finishes.
+    */
+    void slotFinished( );
     /**
      * Called if the @ref #job found a directory entry.
      * In this case we can assume that we found a directory.
@@ -91,6 +95,11 @@ protected:
      * @ref #tryURL.
      */
     KFMJob *job;
+    /**
+     * Set to tryURL if a list command works on it (@see #slotNewDirEntry)
+     */
+    QString dirURL;
+
     /**
      * Shows us wether out job is finished and wether we are
      * prepared to die.

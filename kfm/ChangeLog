@@ -1,3 +1,12 @@
+1999-01-13  David Faure  <faure@kde.org>
+
+	* kfmexec.*: Let the job finish, don't stop it after the first dir
+ 	returned. This fixes lots of problems, including opening ftp locations 
+	twice from minicli (this used to sigsegv), only one directory 
+	displayed instead of all of them, ...
+	
+	* *: replaced .data() with .copy() after localkdedir, before +=.
+
 1999-01-11  David Faure  <faure@kde.org>
 
 	* kioslave/ftp.cpp: Follow links on ftp site. Fix found by 

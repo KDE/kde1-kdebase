@@ -66,7 +66,7 @@ void testDir3( const char *_name )
 void testDir2( const char *_name )
 {
     DIR *dp;
-    QString c = kapp->localkdedir().data();
+    QString c = kapp->localkdedir().copy();
     c += _name;
     dp = opendir( c.data() );
     if ( dp == NULL )
@@ -144,7 +144,7 @@ int main( int argc, char ** argv )
     system( c );
 
     FILE *f2;
-    c = kapp->localkdedir().data();
+    c = kapp->localkdedir().copy();
     c += "/share/apps/kfm/desktop";
     f2 = fopen( c.data(), "rb" );
     if ( f2 == 0L )
@@ -246,7 +246,7 @@ int main( int argc, char ** argv )
     
     KFMServer ipc;
     
-    QString file = kapp->localkdedir().data();
+    QString file = kapp->localkdedir().copy();
     file += "/share/apps/kfm/pid";
     file += displayName();
     

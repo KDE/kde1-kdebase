@@ -559,7 +559,7 @@ void KRootWidget::saveLayout()
 {
     KRootIcon *icon;
 
-    QString file = kapp->localkdedir().data();
+    QString file = kapp->localkdedir().copy();
     file += "/share/apps/kfm/desktop";
 
     FILE *f = fopen( file.data(), "w" );
@@ -861,7 +861,7 @@ void KRootWidget::update()
      */
 
     // Find correct places for the icons
-    QString file = kapp->localkdedir().data();
+    QString file = kapp->localkdedir().copy();
     file += "/share/apps/kfm/desktop";
 
     FILE *f = fopen( file.data(), "r" );
@@ -1011,7 +1011,7 @@ void KRootWidget::slotDropCopy()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.data() );
+	QString tmp( desktopDir.copy() );
 	tmp += KIOServer::getDestNameForCopy( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
@@ -1034,7 +1034,7 @@ void KRootWidget::slotDropMove()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.data() );
+	QString tmp( desktopDir.copy() );
 	tmp += KIOServer::getDestNameForCopy( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
@@ -1057,7 +1057,7 @@ void KRootWidget::slotDropLink()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.data() );
+	QString tmp( desktopDir.copy() );
 	tmp += KIOServer::getDestNameForLink( s );
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }

@@ -831,14 +831,14 @@ void KfmGui::slotEditSUApplications()
 
 void KfmGui::slotEditMimeTypes()
 {
-    QString tmp = KApplication::localkdedir();
+    QString tmp = KApplication::localkdedir().copy();
     tmp += "/share/mimelnk";
     view->openURL( tmp );
 }
 
 void KfmGui::slotEditApplications()
 {
-    QString tmp = KApplication::localkdedir();
+    QString tmp = KApplication::localkdedir().copy();
     tmp += "/share/applnk";
     view->openURL( tmp );
 }
@@ -1139,7 +1139,7 @@ void KfmGui::addBookmark( const char *_title, const char *_url )
 
 void KfmGui::slotEditBookmarks()
 {
-  QString p = kapp->localkdedir().data();
+  QString p = kapp->localkdedir().copy();
   p += "/share/apps/kfm/bookmarks";
 
   KfmGui *m = new KfmGui( 0L, 0L, p );
@@ -1341,7 +1341,7 @@ void KfmGui::slotQuit()
     pkfm->slotSave();
     pkfm->slotShutDown();
     
-    QString file = kapp->localkdedir().data();
+    QString file = kapp->localkdedir().copy();
     file += "/share/apps/kfm/pid";
     file += displayName();
     unlink( file.data() );
@@ -2032,7 +2032,7 @@ KfmGui::~KfmGui()
     if ( windowList->count() == 0 && !rooticons )
     {
 	// remove pid file
-	QString file = kapp->localkdedir().data();
+	QString file = kapp->localkdedir().copy();
 	file += "/share/apps/kfm/pid";
 	file += displayName();
 	unlink( file.data() );

@@ -366,7 +366,7 @@ void KMimeType::init()
     types->setAutoDelete( true );
 
     // Read the application bindings in the local directories
-    QString path = kapp->localkdedir().data();
+    QString path = kapp->localkdedir().copy();
     path += "/share/mimelnk";
     initMimeTypes( path.data() );
     
@@ -426,7 +426,7 @@ void KMimeType::init()
     }
     
     // Read the application bindings in the local directories
-    path = kapp->localkdedir().data();
+    path = kapp->localkdedir().copy();
     path += "/share/applnk";
     KMimeBind::initApplications( path.data() );
 
