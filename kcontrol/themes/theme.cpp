@@ -637,6 +637,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
     else value = "off";
     aCfg->writeEntry("GimmickMode", value);
   }
+  /*CT 17Jan1999 no more needed - handled by the kpanel now 
   else if (cmd == "panelBack")
   {
     value = aCfg->readEntry("Position");
@@ -646,6 +647,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
       rotateImage(kapp->localkdedir()+"/share/apps/kpanel/pics/"+value, -90);
     }
   }
+  */
   else if (cmd == "enableSounds")
   {
     aCfg->setGroup("GlobalConfiguration");
