@@ -29,8 +29,9 @@
 #include <qkeycode.h>
 #include <qmessagebox.h>
 #include <kaccel.h>
+#include <kpopmenu.h>
 #include "version.h"
-    
+   
 //#define KPAGERDEBUG
 
 KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
@@ -313,4 +314,86 @@ void KPager::readProperties(KConfig *kcfg)
             options_2Rows();
     }
         
+}
+
+QPopupMenu *KPager::getOptionlikeMenu(void)
+{
+    QPopupMenu *m_options=new QPopupMenu;
+    if (kpagerclient->isVisibleGlobalDesktop())
+        m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
+    else
+        m_options->insertItem(i18n("Show &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
+    m_options->setId(0,0);
+
+    kKeysAccel->changeMenuAccel(m_options,1, "Toggle Global Desktop");
+        
+    if (menubar_visible)
+        m_options->insertItem(i18n("Hide &Menubar"), this, SLOT(options_toggleMenuBar()), Key_Space , 2 );
+    else
+        m_options->insertItem(i18n("Show &Menubar"), this, SLOT(options_toggleMenuBar()), Key_Space , 2 );
+    m_options->setId(1,1);
+    
+    kKeysAccel->changeMenuAccel(m_options,2, "Toggle Menubar");
+    m_options->insertItem(i18n("&2 Rows"), this, SLOT(options_2Rows()));
+    m_options->setId(2,2);
+    if (kpagerclient->is2Rows()) m_options->setItemChecked(2,TRUE);
+        else m_options->setItemChecked(2,FALSE);
+    m_options->insertSeparator();
+    QPopupMenu *m_drawmode = new QPopupMenu;
+    m_drawmode->setCheckable( TRUE );
+    m_drawmode->insertItem(i18n("Plain"),this,SLOT(options_drawPlain()));
+    m_drawmode->setId(0,1);
+    m_drawmode->insertItem(i18n("Icon"),this,SLOT(options_drawIcon()));
+    m_drawmode->setId(1,2);
+    m_drawmode->insertItem(i18n("Pixmap"),this,SLOT(options_drawPixmap()));
+    m_drawmode->setId(2,3);
+    m_drawmode->setItemChecked(1,(kpagerclient->getDrawMode()==0)?TRUE:FALSE);
+    m_drawmode->setItemChecked(2,(kpagerclient->getDrawMode()==1)?TRUE:FALSE);
+    m_drawmode->setItemChecked(3,(kpagerclient->getDrawMode()==2)?TRUE:FALSE);
+
+    m_options->insertItem(i18n("Draw Mode"),m_drawmode);
+
+    return m_options;
+
+}
+
+void KPager::showPopupMenu(Window w,QPoint &p)
+{
+    printf("Here\n %d,%d\n",p.x(),p.y());
+    QPopupMenu *menu;
+    QPopupMenu *moptions=getOptionlikeMenu();
+    selectedWindow=w;
+    if (w==0) 
+    {
+        moptions->exec(p);
+    }
+    else 
+    {
+	menu=new KPopupMenu(KWM::title(w),NULL, "KPagerPopupMenu");
+        menu->insertItem(i18n("&Maximize"));    
+        menu->insertItem(i18n("&Iconify"));    
+        menu->insertItem(i18n("&Sticky"));    
+        menu->insertItem(i18n("&Sticky"),m_options);    
+        menu->insertItem(i18n("&To Desktop"));    
+        menu->insertItem(i18n("&Close"));    
+        menu->insertSeparator();
+        menu->insertItem(i18n("&Options"),moptions);
+        connect(menu,SIGNAL(activated(int)),this,SLOT(windowOperations(int)));
+        menu->exec(p,KPM_FirstItem);
+        delete menu;
+    }
+    delete moptions;
+}
+
+void KPager::windowOperations(int id)
+{
+    printf("%d\n",id);
+    switch (id)
+    {
+	case (3) : KWM::setMaximize(selectedWindow, true);break;
+	case (4) : KWM::setIconify(selectedWindow, true);break;
+	case (5) : KWM::moveToDesktop(selectedWindow,KWM::currentDesktop());
+		   KWM::setSticky(selectedWindow, true);break;
+	case (7) : KWM::close(selectedWindow);break;
+    };    
 }

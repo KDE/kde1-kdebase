@@ -52,6 +52,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     desktop[0]=new Desktop(0,screenwidth,screenheight,this,"Global Desktop");
     connect(desktop[0],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
     connect(desktop[0],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
+    connect(desktop[0],SIGNAL(showPopupMenu(Window,QPoint&)),parent,SLOT(showPopupMenu(Window,QPoint&)));
 
     right=new KTriangleButton(KTriangleButton::Right,this,"Right");
     left=new KTriangleButton(KTriangleButton::Left,this,"Left");
@@ -330,6 +331,7 @@ void KPagerClient::initDesktops(void)
         connect(desktop[i],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
         connect(desktop[i],SIGNAL(switchToDesktop(int)),this,SLOT(switchToDesktop(int)));
         connect(desktop[i],SIGNAL(updateDesk(int)),this,SLOT(updateDesk(int)));
+        connect(desktop[i],SIGNAL(showPopupMenu(Window,QPoint&)),parent(),SLOT(showPopupMenu(Window,QPoint&)));
         desktop[i]->setGeometry(x,y,w,h);
 	desktop[i]->show();
         x+=w+5;
@@ -648,6 +650,7 @@ void KPagerClient::commandReceived(QString s)
 {
     if (strcmp(s.data(),"kbgwm_change")==0)
     {
+	printf("KBGWM_CHANGE\n");
         for (int i=1;i<=numberofDesktops;i++)
         {
             if (desktop[i]!=0L) desktop[i]->reconfigure();
@@ -689,3 +692,4 @@ void KPagerClient::updateDesk(int i)
         if (desktop[i]!=0L) desktop[i]->update();    
 
 }
+

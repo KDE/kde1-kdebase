@@ -59,6 +59,8 @@ private:
 
     static Window hilitwin;
     bool mousepressed;
+    bool resizing;
+    WindowProperties *resizingWP;
 
     int screen_width, screen_height;
     int ratio;
@@ -146,8 +148,10 @@ public:
 
     static KWMModuleApplication *kwmmapp;
 signals:
-    void moveWindow(Window w,int desktop,int x,int y, int origdesk);
+    void moveWindow(Window w, int desktop, int x, int y, int origdesk);
     void switchToDesktop(int id);
     void updateDesk(int id);
+    void showPopupMenu(Window w, QPoint &p);
+
 };
     

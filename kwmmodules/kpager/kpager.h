@@ -49,9 +49,13 @@ private:
     bool menubar_visible;
 
 
+    Window selectedWindow;  // This is the window to operate on when calling
+				// windowOperations
+
     virtual void saveProperties(KConfig *kcfg);
     virtual void readProperties(KConfig *kcfg);
 
+    QPopupMenu *getOptionlikeMenu(void);
 protected:
     virtual void closeEvent ( QCloseEvent * );
 
@@ -69,6 +73,11 @@ public slots:
     void options_drawPlain();
     void options_drawIcon();
     void options_drawPixmap();
+
+    void showPopupMenu(Window w,QPoint &p);
+
+    void windowOperations(int id); 
+
     
 private:
     KMenuBar *menu;

@@ -114,7 +114,6 @@ public slots:
     void updateDesk(int i);
     void toggle2Rows();
 
-    
 };
 
 #endif

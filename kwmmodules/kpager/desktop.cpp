@@ -40,6 +40,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     //    setBackgroundColor(QColor(0,0,195));
     setBackgroundMode(NoBackground);
     mousepressed=false;
+    resizing=false;
 
     QPainter *qp=new QPainter(this);
     tmpScreen=new QPixmap;
@@ -498,8 +499,22 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
     return wp;
 }
 
+#define MAX(a,b) ((a<b)?(b):(a))
+
 void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
+    if (resizing)
+    {
+        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
+        resizingWP->minigeometry.setHeight(MAX(0,e->y()-getHeaderHeight()-resizingWP->minigeometry.y()));
+       double ratiox=(double)width()/(double)screen_width;
+       double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
+	resizingWP->framegeometry.setRect(resizingWP->minigeometry.x()/ratiox,resizingWP->minigeometry.y()/ratioy,resizingWP->minigeometry.width()/ratiox,resizingWP->minigeometry.height()/ratioy);
+	update();
+        return;
+    };
+
+
     if (mousepressed) 
     {
 #ifdef DESKTOPDEBUG
@@ -553,6 +568,15 @@ void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 #ifdef DESKTOPDEBUG
     printf("[%d]releaseMouse\n",id);
 #endif
+    if (resizing)
+    {
+	KWM::setGeometry(resizingWP->id,resizingWP->framegeometry);
+	resizing=false;
+        releaseMouse();
+	return;
+    };
+
+
     if (mousepressed) 
     {
 #ifdef DESKTOPDEBUG
@@ -560,6 +584,17 @@ void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 #endif
 	emit switchToDesktop(id);
 	mousepressed=false;
+
+// Next code may be a little reiterative, but sometimes KPager don't
+// receive all the signals 
+        bool ok;
+        WindowProperties *wp=windowAtPosition(&e->pos(),&ok);
+        if ((wp!=0L)&&(!kwmmapp->hasWindow(wp->id)))
+        {
+	    removeWindow(wp->id); 
+            update();
+            return;
+        };
     };
 
 }
@@ -569,9 +604,28 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
 #ifdef DESKTOPDEBUG
     printf("[%d]pressMouse\n",id);
 #endif
-    mousepressed=true;
 
-//startDrag(e);
+    if (e->button()==LeftButton) 
+    {
+	mousepressed=true;
+        return;
+    };
+    if (e->button()==MidButton) 
+    {
+        bool ok;
+	resizingWP=windowAtPosition(&e->pos(),&ok);
+	if (resizingWP==0L) return;
+	resizing=true;
+	grabMouse();
+        return;
+    };
+    if (e->button()==RightButton)
+    {
+        bool ok;
+        WindowProperties *wp=windowAtPosition(&e->pos(),&ok);
+	emit showPopupMenu((wp==0L)?(0):(wp->id), (QPoint &)e->globalPos() );
+    };
+
 }
 
 void Desktop::startDrag( QMouseEvent *e )

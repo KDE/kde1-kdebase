@@ -1,3 +1,9 @@
+* Wed Nov 18 7:20:00 CEST 1998 
+
+Added Popup menus when right clicking on a window or on desktop
+Added ability to resize windows by using the middle mouse button (not fully
+implemented yet)
+
 * Mon Nov 16 10:30:00 CEST 1998 
 
 KPager now has a one-click way to work
