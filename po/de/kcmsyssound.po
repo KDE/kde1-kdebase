@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1999-04-30 16:20+MET\n"
-"Translator: Tobias Burnus <burnus@gmx.de>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Tobias Burnus <burnus@gmx.de>\n"
 "Date: 1998-05-09 00:15+0100\n"
 "From: Christian Czezatke <ceci@klapauzius>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -156,8 +156,7 @@ msgstr "&Klänge:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr ""
-"Zusätzliche WAV Dateien können in die \"Klänge\" Liste gezogen werden."
+msgstr "Zusätzliche WAV Dateien können in die \"Klänge\" Liste gezogen werden."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
