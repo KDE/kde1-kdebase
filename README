@@ -1,8 +1,12 @@
-IMPORTANT: You need to set the environment variable QTDIR to your Qt
-directory, if it is not in a standard place.
+IMPORTANT: most applications need KDEDIR as the directory, where KDE is 
+installed. Please set this in your login file.
+
+If configure claims about missing Qt, have a look at http://www.troll.no
+to get a copy of qt-1.2. 
 
 On some systems, kscreensaver can't get passwords. You can use 
 --disable-kscreensaver if you doesn't want to compile this app.
+
 You can use --enable-debug, if you want to have debug code in your
 KDE apps (for alpha testing).
 
