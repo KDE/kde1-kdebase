@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:49 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Wed Nov 26 03:45:27 1997
-// Update Count     : 53
+// Last Modified On : Sun Aug 16 19:15:42 1998
+// Update Count     : 54
 // Status           : Unknown, Use with caution!
 //
  
@@ -172,8 +172,9 @@ KDMConfig::getConfig()
      }
 
      // Greet String and fonts:
-     QString longhostname(256);
-     gethostname(longhostname.data(), 255);
+     char buf[256];
+     gethostname( buf, 255);
+     QString longhostname = buf;
      QString hostname;
      // Remove domainname, because it's generally
      // too long to look nice in the title:

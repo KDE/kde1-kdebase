@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Apr  2 15:40:05 1998
-// Update Count     : 135
+// Last Modified On : Sun Aug 16 19:17:17 1998
+// Update Count     : 140
 // Status           : Unknown, Use with caution!
 // 
 
@@ -63,7 +63,7 @@ void SessionExit(void*,void*,void*) {}
 #endif
 
 // Global vars
-KGreeter* kgreeter;
+KGreeter* kgreeter = 0;
 
 KDMConfig               *kdmcfg;
 struct display          *d;
@@ -83,7 +83,7 @@ MyApp::MyApp(int &argc, char **argv ):KApplication(argc, argv){
 
 bool 
 MyApp::x11EventFilter( XEvent * ev){
-     if( ev->type == KeyPress){
+     if( ev->type == KeyPress && kgreeter){
 	  // This should go away
 	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
 	       kgreeter->ReturnPressed();
@@ -388,7 +388,7 @@ KGreeter::load_wm(){
   sessionargBox->setCurrentItem(wm);
 }
 
-int
+bool
 KGreeter::restrict_nologin(){
      struct passwd *pwd;
      char * file;
@@ -397,7 +397,7 @@ KGreeter::restrict_nologin(){
      endpwent();
 
      // don't deny root to log in
-     if (pwd && !pwd->pw_uid) return 0;
+     if (pwd && !pwd->pw_uid) return false;
 
 #ifdef HAVE_SETUSERCONTEXT
      login_cap_t * lc;
@@ -422,13 +422,13 @@ KGreeter::restrict_nologin(){
 #ifdef HAVE_SETUSERCONTEXT
        login_close(lc);
 #endif
-       return -1;
+       return true;
      };
 
 #ifdef HAVE_SETUSERCONTEXT
      login_close(lc);
 #endif
-     return 0;
+     return false;
 }
 
 #ifdef BSD
@@ -437,7 +437,7 @@ KGreeter::restrict_nologin(){
    the same api
  */
 
-int
+bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
      struct passwd *pwd;
@@ -445,11 +445,11 @@ KGreeter::restrict_expired(){
      int quietlog;
 
      pwd = getpwnam(greet->name);
-     if (!pwd) return 0;
+     if (!pwd) return false;
      endpwent();
 
      // don't deny root to log in
-     if (!pwd->pw_uid) return 0;
+     if (!pwd->pw_uid) return false;
 
 #ifdef HAVE_SETUSERCONTEXT
      login_cap_t * lc;
@@ -467,28 +467,34 @@ KGreeter::restrict_expired(){
      if (pwd->pw_expire)
        if (pwd->pw_expire <= time(NULL)) {
          QMessageBox::critical(NULL, i18n("Expired"), i18n("Sorry -- your account has expired."), i18n("&Ok"));
-         return -1;
+         return true;
        } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
          QString str;
          str.sprintf(i18n("Warning: your account expires on %s"), ctime(&pwd->pw_expire));  // use locales
          QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
        }
 
-     return 0;
+     return false;
+}
+#else /* !BSD */
+bool
+KGreeter::restrict_expired()
+{
+     return false;
 }
 #endif
 
 #ifdef HAVE_SETUSERCONTEXT
-int
+bool
 KGreeter::restrict_nohome(){
      struct passwd *pwd;
 
      pwd = getpwnam(greet->name);
-     if (!pwd) return 0;
+     if (!pwd) return false;
      endpwent();
 
      // don't deny root to log in
-     if (!pwd->pw_uid) return 0;
+     if (!pwd->pw_uid) return false;
 
      login_cap_t * lc;
 
@@ -498,13 +504,19 @@ KGreeter::restrict_nohome(){
        if (login_getcapbool(lc, "requirehome", 0)) {
          QMessageBox::critical(NULL, i18n("No home"), i18n("Home directory not available"), i18n("&Ok"));
          login_close(lc);
-         return -1;
+         return true;
        }
      }
      (void)seteuid(0);
      login_close(lc);
 
-     return 0;
+     return false;
+}
+#else
+bool
+KGreeter::restrict_nohome()
+{
+     return false;
 }
 #endif
 
@@ -662,3 +674,10 @@ GreetUser(
      delete myapp;
      return Greet_Success;
 }
+
+/*
+ * Local variables:
+ * mode: c++
+ * c-file-style: "k&r"
+ * End:
+ */

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:08 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Nov 20 12:03:07 1997
-// Update Count     : 12
+// Last Modified On : Sun Aug 16 19:17:31 1998
+// Update Count     : 14
 // Status           : Unknown, Use with caution!
 // 
 
@@ -58,9 +58,9 @@ public slots:
      void shutdown_button_clicked();
      void timerDone();
      void slot_user_name( int i);
-     int restrict_nologin();
-     int restrict_expired();
-     int restrict_nohome();
+     bool restrict_nologin();
+     bool restrict_expired();
+     bool restrict_nohome();
      void load_wm();
      void save_wm();
 protected:
@@ -82,3 +82,9 @@ private:
 };
 #endif /* KGREETER_H */
 
+/*
+ * Local variables:
+ * mode: c++
+ * c-file-style: "k&r"
+ * End:
+ */
