@@ -36,6 +36,9 @@ QString fontString( QFont rFont, FontStyle style )
         if( style == Italic )
           rFont.setItalic( true );
 
+        if( style == Fixed )
+          rFont.setFixedPitch( true );
+
 	QString aValue;
 #if QT_VERSION > 140
 	aValue = rFont.rawName();
@@ -127,7 +130,6 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define FOREGROUND " );
 	preproc += s;
-	preproc += "*foreground: FOREGROUND\n";
 	
 	backCol = config->readColorEntry( "background", &lightGray );
 	s.sprintf("#%02x%02x%02x\n", backCol.red(), backCol.green(), backCol.blue());
@@ -148,7 +150,6 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define WINDOW_BACKGROUND " );
 	preproc += s;
-	preproc += "*background: WINDOW_BACKGROUND\n";
 
 	col = config->readColorEntry( "windowForeground", &black );
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
@@ -173,7 +174,7 @@ main( int argc, char ** argv )
 	s.prepend( "#define ITALIC_FONT " );
 	preproc += s;
 
-	fnt = config->readFontEntry( "fixedFont", new QFont( fnt ) );
+	fnt = config->readFontEntry( "fixedFont", new QFont( "fixed", 12 ) );
 	s = fontString( fnt, Fixed );
 	s += "\n";
 	s.prepend( "#define FIXED_FONT " );
