@@ -42,16 +42,16 @@ dnl WITH_NLS is for the po files
 AM_KDE_WITH_NLS
 AC_PATH_KDE
 
-AC_CHECK_KDM dnl in kdminclude.m4
-
 case $host in 
 *-*-linux* )
    AC_CHECK_HEADER(elf.h, 
-	ac_have_shadow="yes",
-        shadow_support="no"
+        shadow_support=yes,
+        shadow_support=no
      )
      ;;
 esac
+
+AC_CHECK_KDM dnl in kdminclude.m4
 
 if test "$shadow_support" = "yes"; then
   AC_DEFINE(HAVE_SHADOW)

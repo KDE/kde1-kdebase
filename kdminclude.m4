@@ -70,19 +70,25 @@ AC_SUBST(ac_xdmdir)
 
 AC_PATH_PAM
 if test "x$no_pam" = "xyes"; then 
-	pam_support="no";
+	pam_support="no"
 else
-	pam_support="yes";
+	pam_support="yes"
+        shadow_support="no" # if pam is installed, use it. We can't savely 
+	                    # test, if it works *sigh*
 fi
 
 AC_ARG_WITH(shadow,
 	[  --with-shadow		  If you want shadow password support ],
-	[ shadow_support="yes"
-	  if test "$pam_support" = "yes"; then
+	[ if test "$withval" = "yes"; then
+             shadow_support="yes"
+          else
+             shadow_support="no"
+          fi
+	  if test "$pam_support" = "yes" && test "$shadow_support=yes"; then
 		AC_MSG_WARN("You can not define both pam AND shadow")
 	  fi
 	],
-	[ shadow_support="no" ] )
+	[ if test -z "$shadow_support"; then shadow_support="no"; fi ] )
 
 if test "$pam_support" = "yes"; then
   AC_CHECK_LIB(pam, main, [PASSWDLIB="-lpam -ldl"
