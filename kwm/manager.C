@@ -1745,7 +1745,8 @@ void Manager::manage(Window w, bool mapped){
   if (!c){
       // create a very new client
       long d = 0;
-      getSimpleProperty(w, qt_sizegrip, d);
+      if (!getSimpleProperty(w, qt_sizegrip, d, XA_WINDOW))
+	  getSimpleProperty( w, qt_sizegrip, d ); // old version with qt_sizegrip as type
       c = new Client(w, d);
 
     // overwrite Qt-defaults because we need SubstructureNotifyMask
