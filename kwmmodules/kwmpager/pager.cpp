@@ -28,6 +28,7 @@
 #include "desktop.h"
 #include <kwm.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
 				   "BottomLeft" };
@@ -44,10 +45,11 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
     int count = KWM::numberOfDesktops();
     desktops.setAutoDelete(true);
     desktop_font = new QFont();
+    Desktop *desk;
 
     for (int i = 0; i < count; i++) {
-        Desktop *desk = new Desktop(a, i + 1, this);
-	desktops.append(desk);
+        desk = new Desktop(a, i + 1, this);
+        desktops.append(desk);
     }
     
     activeDesktop = desktops.at(KWM::currentDesktop() - 1);
@@ -181,7 +183,8 @@ void Pager::resizeEvent ( QResizeEvent * )
 
 void Pager::initDesktops()
 {
-    for (Desktop *desk = desktops.first(); desk != 0L;
+    Desktop *desk;
+    for (desk = desktops.first(); desk != 0L;
          desk = desktops.next()) {
 	desk->init();
 	desk->setFont(*desktop_font);
@@ -190,7 +193,7 @@ void Pager::initDesktops()
 	 w = kwmmapp->windows_sorted.next()) {
 	desktops.at(KWM::desktop(*w) - 1) -> addWindow(*w);
     }
-    for (Desktop *desk = desktops.first(); desk != 0L;
+    for (desk = desktops.first(); desk != 0L;
 	 desk = desktops.next())
 	desk->repaint(false);
 }

@@ -33,6 +33,7 @@ class Pager: public QFrame {
     
 public:
     Pager(KWMModuleApplication*);
+    ~Pager();
     
 private:
     KWMModuleApplication* kwmmapp;
