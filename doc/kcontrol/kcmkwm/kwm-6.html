@@ -41,12 +41,12 @@ browsed successively.
 </LI>
 <LI> The <B>Grab the Right Mouse Button</B> setting is <B>on</B>
 by default. This option was introduced because a number of non-KDE X Window
-applications need to have complete control on the use of the right mouse
+applications need to have complete control of the use of the right mouse
 button (for example Gimp).  Deselect this option to allow non-KDE
 X Window applications to control the right mouse button.
 </LI>
 </UL>
-<P>The ``<B>Filters</B>'' settings offer the ability to allow windows 
+<P>The ``<B>Filters</B>'' section allows windows 
 with specified <B>Titles</B> or belonging to
 specified <B>Classes</B> to be configured
 differently from the default window configuration.
@@ -67,7 +67,7 @@ an ``<CODE>xterm</CODE>'' window).</LI>
 <P>
 <P>Windows that have  <B>Titles</B>
 or belong to <B>Classes</B> that match a list item can have one of these 
-special properties: they can be configured so they will
+special properties: they can be configured so these <B>Windows will</B>
 <UL>
 <LI>have only tiny decorations,</LI>
 <LI>have no decorations,</LI>
@@ -75,11 +75,27 @@ special properties: they can be configured so they will
 <LI>start as ``Sticky'',</LI>
 <LI>be excluded from session management.</LI>
 </UL>
-<P>To make an entry in the list, enter a Title or Class  in the appropriate
-box, and click on the "+" button.
-Then click on it to highlight it, and select a special property.
-<P>To remove an entry, double-click on it to select it,
-then press the "-" button.
+
+Separate lists  are maintained for each ``special property'', and
+a given Title or Class may belong to more than one such list.
+<P>To <B>add</B> an entry to one of the lists, select
+the  corresponding ``special property'' from the ``<B>Windows will</B>'' 
+pull-down menu, and then
+enter a Title or Class  in the appropriate
+``<B>if they match the following</B>''
+box, and click on the "<B>+</B>" button to add it to the list. 
+Note that a <I>partial match</I> will select the property (e.g., if
+``<CODE>Kf</CODE>'' is entered in the Class list, all applications
+with names matching <CODE>kf*</CODE> will be selected to have
+the corresponding property).
+<P>
+<P>To <B>remove</B> (or edit and replace) an entry, 
+double-click on it to select it.
+(the selected item will be copied into the box for
+adding new entries).
+Click on the "<B>-</B>" button to remove it.  
+You may also edit the copy in the new-entry box, 
+and add it again with "<B>+</B>".
 <P>
 <P ALIGN="RIGHT">
 

@@ -7,7 +7,7 @@
 <title>KDE Control Center - KWM
 <author>Matthias Hoelzer, Pat Dowler; revised and updated by Duncan.
 
-<date>v1.4, 06 September 1999
+<date>v1.41, 06 September 1999
 
 <!-- Table of contents -->
 <toc>
@@ -330,13 +330,13 @@ browsed successively.
 
 <item> The <bf>Grab the Right Mouse Button</bf> setting is <bf>on</bf>
 by default. This option was introduced because a number of non-KDE X Window
-applications need to have complete control on the use of the right mouse
+applications need to have complete control of the use of the right mouse
 button (for example Gimp).  Deselect this option to allow non-KDE
 X Window applications to control the right mouse button.
 
 </itemize>
 
-The ``<bf>Filters</bf>'' settings offer the ability to allow windows 
+The ``<bf>Filters</bf>'' section allows windows 
 with specified <bf>Titles</bf> or belonging to
 specified <bf>Classes</bf> to be configured
 differently from the default window configuration.
@@ -358,7 +358,7 @@ an ``<tt>xterm</tt>'' window).
 
 Windows that have  <bf>Titles</bf>
 or belong to <bf>Classes</bf> that match a list item can have one of these 
-special properties: they can be configured so they will
+special properties: they can be configured so these <bf>Windows will</bf>
 <itemize>
 <item>have only tiny decorations,
 <item>have no decorations,
@@ -366,13 +366,28 @@ special properties: they can be configured so they will
 <item>start as ``Sticky'',
 <item>be excluded from session management.
 </itemize>
+Separate lists  are maintained for each ``special property'', and
+a given Title or Class may belong to more than one such list.
 
-To make an entry in the list, enter a Title or Class  in the appropriate
-box, and click on the "+" button.
-Then click on it to highlight it, and select a special property.
+To <bf>add</bf> an entry to one of the lists, select
+the  corresponding ``special property'' from the ``<bf>Windows will</bf>'' 
+pull-down menu, and then
+enter a Title or Class  in the appropriate
+``<bf>if they match the following</bf>''
+box, and click on the "<bf>+</bf>" button to add it to the list. 
+Note that a <it>partial match</it> will select the property (e.g., if
+``<tt>Kf</tt>'' is entered in the Class list, all applications
+with names matching <tt>kf*</tt> will be selected to have
+the corresponding property).
 
-To remove an entry, double-click on it to select it,
-then press the "-" button.
+
+To <bf>remove</bf> (or edit and replace) an entry, 
+double-click on it to select it.
+(the selected item will be copied into the box for
+adding new entries).
+Click on the "<bf>-</bf>" button to remove it.  
+You may also edit the copy in the new-entry box, 
+and add it again with "<bf>+</bf>".
 
 </article>
 
