@@ -1,4 +1,6 @@
+  - added a linux-console compatible color-mode (M G Berberich)
 
+since kvt-0.15:
 
   - segfault with open menus fixed
   - exit segfault with a floating menubar fixed

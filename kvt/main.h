@@ -16,6 +16,7 @@
 #include <qwindefs.h>
 #include <qframe.h>
 #include <qpixmap.h>
+#include <qcombo.h>
 #include <kmenubar.h>
 
 enum KvtScrollbar{kvt_right, kvt_left};
@@ -85,15 +86,14 @@ private:
   KDNDDropZone    *dropZone;
 };
 
-class CharClass : public QDialog {
+class OptionDialog : public QDialog {
   Q_OBJECT
 public:
+  QComboBox *colormode;
   QLineEdit *chars;
 
-  CharClass(QWidget *parent, const char *name );
+  OptionDialog(QWidget *parent, const char *name );
 };
-
-
 
 
 #endif // MAIN_H

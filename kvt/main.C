@@ -77,7 +77,7 @@ extern Window		vt_win;
 
 
 kVt* kvt = NULL;
-CharClass *m_charclass = NULL;
+OptionDialog *m_optiondialog = 0;
 QString kvt_charclass;
 
 // the scrollbar hack
@@ -97,6 +97,11 @@ static Kvt_Dimen kvt_dimens[] = {
 };
 static int kvt_dimen;
 
+static const char* color_mode_name[] = {
+  "ANSI",
+  "Linux",
+  0
+};
 
 int o_argc;
 char ** o_argv;
@@ -195,31 +200,37 @@ bool MyApp::x11EventFilter( XEvent * ev){
   return FALSE;
 }
 
-CharClass::CharClass( QWidget *parent, const char *name )
+OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
-  QLabel *label;
-  label = new QLabel("Add characters to word class", this);
+  QLabel *label_color, *label_class;
+  label_class = new QLabel("Add characters to word class", this);
   chars = new QLineEdit(this);
-  // chars->setGeometry( 10, 10, 210, 30 );
+
+  label_color = new QLabel("chose type of color-mode", this);
+  colormode = new QComboBox(this);
   QPushButton *ok, *cancel;
   ok = new QPushButton( "Ok", this );
-  // ok->setGeometry( 10, 50, 100, 20 );
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
   cancel = new QPushButton( "Cancel", this );
-  // cancel->setGeometry( 120, 50, 100, 20 );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
   QBoxLayout *geom1, *geom2;
   geom1 = new QBoxLayout(this, QBoxLayout::TopToBottom, 4);
-  geom1->addWidget(label);
+  geom1->addWidget(label_color);
+  geom1->addWidget(colormode);
+  geom1->addWidget(label_class);
   geom1->addWidget(chars);
   geom2 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
   geom1->addLayout(geom2);
   geom2->addWidget(ok);
   geom2->addStretch();
   geom2->addWidget(cancel);
-  setGeometry(x(), y(), 300, 90);
+  setGeometry(x(), y(), 300, 150);
+
+  for (int i=0; color_mode_name[i]; i++) {
+    colormode->insertItem(color_mode_name[i], i);
+  }
 }
 
 kVt::kVt( QWidget *parent, const char *name )
@@ -288,6 +299,16 @@ kVt::kVt( QWidget *parent, const char *name )
       set_charclass("");
     }
 
+    entry = kvtconfig->readEntry("colormode");
+    if (entry) {
+      if (entry == color_mode_name[COLOR_TYPE_ANSI])
+	set_color_mode(COLOR_TYPE_ANSI);
+      if (entry == color_mode_name[COLOR_TYPE_Linux])
+	set_color_mode(COLOR_TYPE_Linux);      
+    } else {
+      set_color_mode(COLOR_TYPE_ANSI);
+    }
+
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
     m_file->insertItem( "&New Terminal");
@@ -340,14 +361,14 @@ kVt::kVt( QWidget *parent, const char *name )
     m_options->insertItem( "&Font size", m_size);
     m_options->insertItem( "&Color", m_color);
     m_options->insertItem( "&Size", m_dimen);
-    m_options->insertItem( "&Word class" );
+    m_options->insertItem( "Terminal" );
     m_options->insertSeparator();
     m_options->insertItem( "Save &Options");
 
     m_options->installEventFilter( this );
 
-    connect(m_options, SIGNAL(activated(int)), SLOT(options_menu_activated(int)));
-
+    connect(m_options, SIGNAL(activated(int)), 
+	    SLOT(options_menu_activated(int)));
 
     m_help = new QPopupMenu;
     CHECK_PTR( m_help );
@@ -543,13 +564,16 @@ void kVt::options_menu_activated( int item){
     break;
 
   case 7:
-    m_charclass->chars->setText(kvt_charclass);
-    if (m_charclass->exec()) {
-      kvt_charclass = m_charclass->chars->text();
+    m_optiondialog->colormode->setCurrentItem(get_color_mode());
+    m_optiondialog->chars->setText(kvt_charclass);
+    if (m_optiondialog->exec()) {
+      set_color_mode(m_optiondialog->colormode->currentItem());
+      kvt_charclass = m_optiondialog->chars->text();
       set_charclass(kvt_charclass);
+      scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
     }
     break;
-
+    
   case 9:
     // save options
     {
@@ -575,6 +599,8 @@ void kVt::options_menu_activated( int item){
       kvtconfig->writeEntry("background", bg_string);
       
       kvtconfig->writeEntry("charclass", kvt_charclass);
+
+      kvtconfig->writeEntry("colormode", color_mode_name[get_color_mode()]);
 
       kvtconfig->sync();
     }
@@ -803,7 +829,7 @@ int main(int argc, char **argv)
 
   kvt->show();
 
-  m_charclass = new CharClass(kvt, "Character Classes");
+  m_optiondialog = new OptionDialog(kvt, "Terminal Options");
 
   return a.exec();
 }

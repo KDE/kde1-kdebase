@@ -100,45 +100,51 @@ extern int comm_fd;
 void check_text(char *a);
 int refresh_type = SLOW;
 
-char *color_names[11] = 
+char *std_color_names[10] = 
 {
   "",                  /* default foreground */
   "",                  /* default background */
-  "black",
-  "red",
-  "green",
-  "yellow",
-  "blue",
-  "magenta",
-  "cyan",
-  "white",
-  "#d3d3d3"
+  "#000000",
+  "#ff0000",
+  "#00ff00",
+  "#ffff00",
+  "#0000ff",
+  "#ff00ff",
+  "#00ffff",
+  "#ffffff"
 };
 
-/* nicer colors inspired from rxvt-2.18 (Matthias) */
-
-char *nicer_color_names[11] = 
+char *linux_color_names[18] = 
 {
   "",                  /* default foreground */
   "",                  /* default background */
-  "Black",
-  "Red3",
-  "Green3",
-  "Yellow3",
-  "Blue3",
-  "Magenta3",
-  "Cyan3",
-  "white"
-  "#d3d3d3" /* lightgrey for dialog backgrounds */ 
+  "#000000",
+  "#d30000",
+  "#00d300",
+  "#3d3d00",
+  "#0000d3",
+  "#3d003d",
+  "#003d3d",
+  "#d3d3d3",
+  "#444444",
+  "#ff4444",
+  "#44ff44",
+  "#ffff44",
+  "#4444ff",
+  "#ff44ff",
+  "#44ffff",
+  "#ffffff"
 };
 
+int color_type = COLOR_TYPE_Linux;
+char **color_names = linux_color_names;
+char colors_loaded[18] = {1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+unsigned long pixel_colors[18];
+int fore_color = 0;
+int back_color = 1;
 
 static paste_internal_selection = 0; /* Matthias */ 
 
-char colors_loaded[11] = {1,1,0,0,0,0,0,0,0,0,0};
-unsigned long pixel_colors[11];
-int fore_color = 0;
-int back_color = 1;
 /* set default rstyle colors */
 #define DEFAULT_RSTYLE (0)
 
@@ -208,6 +214,54 @@ void set_charclass(const char *s)
     charclass[*i] = 1;
     ++i;
   }
+}
+
+/**************************************************************************
+ * setup color_type. bmg
+ *************************************************************************/
+void set_color_mode(int mode)
+{
+  int i;
+
+  switch (mode) {
+  case COLOR_TYPE_ANSI:
+    if (color_type != COLOR_TYPE_ANSI) {
+      color_type = COLOR_TYPE_ANSI;
+      color_names = std_color_names;
+      for (i=2; i<10; i++) {
+	if (colors_loaded[i]) {
+	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	  alloc_color(i);
+	}
+      }
+      for (i=10; i<18; i++) {
+	if (colors_loaded[i]) {
+	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	}
+      }
+    }
+    break;
+  case COLOR_TYPE_Linux:
+    if (color_type != COLOR_TYPE_Linux) {
+      color_type = COLOR_TYPE_Linux;
+      color_names = linux_color_names;
+      for (i=2; i<10; i++) {
+	if (colors_loaded[i]) {
+	  XFreeColors(display, colormap, &pixel_colors[i], 1, 0);
+	  alloc_color(i);
+	  alloc_color(i+8);
+	}
+      }
+    }   
+    break;
+  default:
+    error("invalid colormode %d.", mode);
+  }
+}
+
+int get_color_mode(void)
+{
+  return color_type;
 }
 
 /**************************************************************************
@@ -2223,43 +2277,40 @@ void refresh()
 		    }
 		}
 #ifdef COLOR
-	      if(fore != 0)
-		{
-		  if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) 
-		    {
-		      newgcv.background = pixel_colors[fore];
-		      newgcm = GCBackground;
-		    }
-		  else
-		    {
-		      newgcv.foreground = pixel_colors[fore];
-		      newgcm = GCForeground;
-		    }
+	      if(fore != 0) {
+		if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
+		  newgcv.background = pixel_colors[fore];
+		  newgcm = GCBackground;
+		} else {
+		  if (color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
+		    newgcv.foreground = pixel_colors[fore+8];
+		  else 
+		    newgcv.foreground = pixel_colors[fore];
+		  newgcm = GCForeground;
 		}
-	      if(back != 0)
-		{
-		  if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) 
-		    {
-		      newgcv.foreground = pixel_colors[back];
-		      newgcm |= GCForeground;
-		    }
-		  else
-		    {
-		      newgcv.background = pixel_colors[back];
-		      newgcm |=GCBackground;
-		    }
+	      }
+	      if(back != 0) {
+		if (rval & (RS_RVID | RS_SELECTED | RS_CURSOR)) {
+		  if (color_type == COLOR_TYPE_Linux && rval & RS_BOLD)
+		    newgcv.foreground = pixel_colors[back+8];
+		  else 
+		    newgcv.foreground = pixel_colors[back];
+		  newgcm |= GCForeground; 
+		} else {
+		  newgcv.background = pixel_colors[back];
+		  newgcm |=GCBackground;
 		}
+	      }
 
-	      if(newgcm != 0)
-		{
-		  XChangeGC(display,thisGC,newgcm,&newgcv);
-		}
+	      if(newgcm != 0){
+		XChangeGC(display,thisGC,newgcm,&newgcv);
+	      }
 #endif
 	      x1 = k*MyWinInfo.fwidth + MARGIN;
 	      
   	      XDrawImageString(display,vt_win,thisGC,x1,y1,ch,n);  
 
-	      if(rval != 0)
+	      if(rval != 0 && color_type == COLOR_TYPE_ANSI)
 		{
 		  if (rval & RS_BOLD)
 		    {
@@ -2276,7 +2327,6 @@ void refresh()
 		    {
 		      for(x=0;x<n;x++){
 			if (displayed_text[xrow2 + k + x] == '0'){
-/* 			  printf("O\n"); */
  			  XSetFillStyle(display, thisGC, FillSolid); 
 			  XFillRectangle(display, vt_win, thisGC, 
 					 x1 + x*MyWinInfo.fwidth,
@@ -2285,12 +2335,12 @@ void refresh()
 					 MyWinInfo.fheight);
 			}
 			else if (displayed_text[xrow2 + k + x] == 'h'){
-/* 			  printf("h\n"); */
-/* 			  XSetFillStyle(display, thisGC, FillOpaqueStippled); */
 			  if (!stipple_data_pixmap){
 			    stipple_data_pixmap = XCreateBitmapFromData(
-									display, vt_win, stipple_data_bits,
-									stipple_data_width, stipple_data_height);
+						    display, vt_win, 
+						    stipple_data_bits,
+						    stipple_data_width, 
+						    stipple_data_height);
 			  }
 			  XSetStipple(display, thisGC, stipple_data_pixmap);
 			  XSetFillStyle(display, thisGC, FillStippled);
@@ -2365,9 +2415,7 @@ void scr_set_tab(int value)
 }
 
 /***************************************************************************
- *
  * Does some simple checking about the integrity of the screen data structures
- *
  ***************************************************************************/
 #ifdef DEBUG
 void check_text(char *a)
@@ -2419,94 +2467,83 @@ void scr_rev_vid(int mode)
       scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
     }
   current = mode;
-
-
 }
 
 /***************************************************************************
- *
- * Set the text foreground color
- *
+ * Allocate a color.
  **************************************************************************/
-scr_fore_color(int color)
+/* bmg */
+int alloc_color(int color)
 {
   XColor new_color;
 
+  if (XParseColor(display, colormap, color_names[color], &new_color) == 0) {
+    error("invalid color %s", color_names[color]);
+    return(0);
+  } else if (XAllocColor(display, colormap, &new_color) == 0) {
+    error("can't allocate color %s", color_names[color]);
+    return(0);
+  } else {
+    pixel_colors[color] = new_color.pixel;
+    colors_loaded[color] = 1;
+    return(1);
+  }
+}
+
+/***************************************************************************
+ * Set the text foreground color
+ **************************************************************************/
+scr_fore_color(int color)
+{
 #ifdef DEBUG
   check_text("set_color");  
 #endif
   color -= 30;
-
-/*   if((color <0)||(color > 7)) */ /* Matthias */ 
+  
+  /*   if((color <0)||(color > 7)) */ /* Matthias */ 
   if((color <-2)||(color > 7))
     return;
-
-  if(colors_loaded[color+2]==1)
-    {
+  
+  if(colors_loaded[color+2]==1) {
+    fore_color = color+2;
+    rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
+    return;
+  } else {
+    if (alloc_color(color+2)) {
       fore_color = color+2;
       rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
-      return;
     }
-  else
-    {
-      /* try to load nicer colors first. (Matthias) */ 
-      if (XParseColor(display,colormap,nicer_color_names[color+2],&new_color) == 0
-	  && XParseColor(display,colormap,color_names[color+2],&new_color) == 0)
-	error("invalid foreground color %s",color_names[color+2]);
-      else if (XAllocColor(display,colormap,&new_color) == 0)
-	error("can't allocate color %s",color_names[color+2]);
-      else
-	{
-	  pixel_colors[color+2] = new_color.pixel;
-	  colors_loaded[color+2] = 1;
-	  fore_color = color+2;
-	  rstyle = (rstyle &(0xffff00ff) ) | (fore_color <<8);
-	}
-    }    
+    if (color_type == COLOR_TYPE_Linux) {
+      alloc_color(color+10);
+    }
+  }  
 }
 
 /***************************************************************************
- *
- * Set the text foreground color
- *
+ * Set the text background color
  **************************************************************************/
 scr_back_color(int color)
 {
-  XColor new_color;
-  char* s;
-
 #ifdef DEBUG
   check_text("set_back_color");  
 #endif
   color -= 40;
 
-/*   if((color <0)||(color > 7)) */ /* Matthias */ 
+  /*   if((color <0)||(color > 7)) */ /* Matthias */ 
   if((color <-2)||(color > 7))
     return;
-
-  if (color == 7)
-    color = 8;/* lightgrey instead of white */ 
   
-  if(colors_loaded[color+2]==1)
-    {
+  if(colors_loaded[color+2]==1) {
       back_color = color+2;
       rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
       return;
+  } else {
+    if (alloc_color(color+2)) {
+      back_color = color+2;
+      rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
     }
-  else
-    {
-      /* try to load nicer colors first. (Matthias) */ 
-      if (XParseColor(display,colormap,nicer_color_names[color+2],&new_color) == 0
-	  && XParseColor(display,colormap,color_names[color+2],&new_color) == 0)
-	error("invalid background color %s",color_names[color+2]);
-      else if (XAllocColor(display,colormap,&new_color) == 0)
-	error("can't allocate color %s",color_names[color+2]);
-      else
-	{
-	  pixel_colors[color+2] = new_color.pixel;
-	  colors_loaded[color+2] = 1;
-	  back_color = color+2;
-	  rstyle = (rstyle &(0xff00ffff) ) | (back_color <<16);
-	}
-    }    
+    if (color_type == COLOR_TYPE_Linux) {
+      alloc_color(color+10);
+    } 
+  }
 }

@@ -125,10 +125,17 @@ typedef struct _screen_info
 #define SELECT_WORD_START 0
 #define SELECT_WORD_EXPAND 1
 
+/* support of Linux-Color-Model */
+
+#define COLOR_TYPE_ANSI 0
+#define COLOR_TYPE_Linux 1
+
 void scr_init(void);
 void scr_reset(void);
 void scr_power_on(void);
 void set_charclass(const char *s);
+void set_color_mode(int mode);
+int get_color_mode(void);
 void scr_cursor_visible (int); /* Matthias */ 
 void scr_backspace(void);
 void scr_change_screen(int);
