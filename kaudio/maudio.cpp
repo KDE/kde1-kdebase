@@ -202,7 +202,9 @@ int main(char argc, char **argv)
 	retgrab = ADev->grab();
 	if (retgrab != true) {
 	  PlayerStatus = STOP_MEDIA;
+#ifdef DEBUG
 	  cerr << "maudio: Failed to grab sound device\n";
+#endif
 	}
 	else {
 	  PlayerStatus = PLAYING;
@@ -237,7 +239,7 @@ int main(char argc, char **argv)
        * I have to retry.
        */
       if (WBold == ASample->WBuffer)
-	cerr << "!!!!!!!! ALARM CALL !!!!!!!!!!\n";
+	cerr << "maudio: !!!!! ALARM CALL (perhaps you gave a SIGSTOP or such?) !!!!!\n";
 
       ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
       WBold = ASample->WBuffer;
@@ -246,10 +248,9 @@ int main(char argc, char **argv)
 	if (errno== EAGAIN) {
 	  /* Retry after delay */
 	  usleep(USLEEP_DELAY);
-	  cerr << "Again!!!\n";
 	}
 	else {
-	  cerr << "Error: " << errno << "\n";
+	  cerr << "maudio OSS Error: " << errno << "\n";
 	}
       }
       else {

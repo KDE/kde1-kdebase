@@ -2,6 +2,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <iostream.h>
+#include <errno.h>
 
 // Linux/OSS includes
 #ifdef linux
@@ -74,7 +75,11 @@ bool AudioDev::grab()
       audiodev=-1; // fail!
 #endif 
      if (audiodev == -1 ) {
-       cerr << "maudio: Cannot open audio device.\n";
+       if ( errno != EBUSY )
+	 // Tell the user something has gone wrong.
+	 // But don't tell him the device is busy, he already
+	 // should know this.
+         cerr << "maudio: Cannot open audio device.\n";
        return false;
      }
      else {

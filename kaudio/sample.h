@@ -12,7 +12,7 @@
 #define MAUDIO_MAX_FRAGS 32
 #define BUFFER_MAX       4096
 
-const         int NUM_BUF=160;
+const         int NUM_BUF=8;
  
 class AudioSample
 {
