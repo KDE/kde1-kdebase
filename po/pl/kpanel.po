@@ -1,92 +1,92 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-28 10:06+0100\n"
 "PO-Revision-Date: 1998-01-24 21:17+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: kpanel.C:248
+#: kpanel.C:210
 msgid "Move"
 msgstr "Przesuñ"
 
-#: kpanel.C:251
+#: kpanel.C:213
 msgid "Properties"
 msgstr "W³a¶ciwo¶ci"
 
-#: kpanel.C:273
+#: kpanel.C:245
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr "Kto by pomy¶la³? Systemy otwarte - sam zacznij my¶leæ!"
 
-#: kpanel.C:342
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Informacje niedostêpne"
 
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Wyloguj siê"
 
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
 msgstr "Zablokuj ekran"
 
-#: kpanel.C:410
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr "Ukryj panel"
 
-#: kpanel.C:421
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr "Poka¿ panel"
 
-#: kpanel.C:704
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Dodaj aplikacjê"
 
-#: kpanel.C:707
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikacjê lub podmenu do panelu"
 
-#: kpanel.C:709
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr "Dodaj listê okien"
 
-#: kpanel.C:712
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj listê okien do panelu"
 
-#: kpanel.C:714
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Konfiguruj"
 
-#: kpanel.C:717
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Konfiguruj panel"
 
-#: kpanel.C:719
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Od¶wie¿"
 
-#: kpanel.C:722
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Od¶wie¿ panel"
 
-#: kpanel.C:725 props.C:396
+#: kpanel.C:774 props.C:396
 msgid "Panel"
 msgstr "Panel"
 
-#: kpanel.C:729
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Zablokuj ekran"
 
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
 msgstr "Lista okien"
 

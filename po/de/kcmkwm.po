@@ -117,15 +117,15 @@ msgstr "Animation beim Ändern der Größe"
 
 #: windows.cpp:79
 msgid "Placement policy"
-msgstr ""
+msgstr "Plazierungs Strategie"
 
 #: windows.cpp:80
 msgid "Random placement"
-msgstr ""
+msgstr "Zufällige Plazierung"
 
 #: windows.cpp:81
 msgid "Smart placement"
-msgstr ""
+msgstr "Clevere Plazierung"
 
 #: windows.cpp:84
 msgid "Maximize Style"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-28 10:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,105 +15,105 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 # kpanel.C:172
-#: kpanel.C:248
+#: kpanel.C:210
 msgid "Move"
 msgstr "Premjesti"
 
 # kpanel.C:175
-#: kpanel.C:251
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Postavke"
 
-#: kpanel.C:273
+#: kpanel.C:245
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
 # kpanel.C:270
-#: kpanel.C:342
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Nema raspoloživih informacija"
 
 # kpanel.C:306 kpanel.C:664 kpanel.C:665
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Odjava"
 
 # kpanel.C:315 kpanel.C:663
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
 msgstr "Zakljuèaj ekran"
 
 # kpanel.C:326
-#: kpanel.C:410
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr "Sakrij ploèu"
 
 # kpanel.C:342
-#: kpanel.C:421
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr "Prikaži ploèu"
 
 # kpanel.C:647
-#: kpanel.C:704
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Dodaj aplikaciju"
 
 # kpanel.C:649
-#: kpanel.C:707
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
 
 # kpanel.C:650
-#: kpanel.C:709
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr "Dodaj listu prozora"
 
 # kpanel.C:652
-#: kpanel.C:712
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj izbornik liste prozora na ploèu"
 
 # kpanel.C:653
-#: kpanel.C:714
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Promijeni postavu"
 
 # kpanel.C:655
-#: kpanel.C:717
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Promijeni postavu ploèe"
 
 # kpanel.C:656
-#: kpanel.C:719
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Pokreni ponovo"
 
 # kpanel.C:658
-#: kpanel.C:722
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Pokreni ponovo ploèu"
 
 # kpanel.C:659 props.C:297
-#: kpanel.C:725 props.C:396
+#: kpanel.C:774 props.C:396
 msgid "Panel"
 msgstr "ploèa"
 
 # kpanel.C:661
-#: kpanel.C:729
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Zakljuèaj Ekran"
 
 # kpanel.C:1012 tools.C:503
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Nema raspoloživih komentara"
 
 # kpanel.C:1021 tools.C:690
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
 msgstr "Lista prozora"
 

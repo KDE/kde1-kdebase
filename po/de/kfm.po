@@ -255,7 +255,6 @@ msgid "About KFM"
 msgstr "Über KFM"
 
 #: kfmgui.cpp:1231
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -270,7 +269,9 @@ msgstr ""
 "weis@kde.org\n"
 "\n"
 "HTML-Widget von Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"Proxy Manager von Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1323
 msgid "Document: Done"
@@ -1227,7 +1228,7 @@ msgstr "Bekannte Zuordnungen:"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Vergessen Sie nicht, die Einstellungen zu speichern!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
@@ -1322,6 +1323,3 @@ msgid ""
 msgstr ""
 "Syntax Fehler:\n"
 "kfmexec Kommando [URLs ...]\n"
-
-#~ msgid "Only HTTP-Proxy is implemented yet!"
-#~ msgstr "Proxy-Support ist nur für HTTP implementiert."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-28 10:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,88 +14,88 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:248
+#: kpanel.C:210
 msgid "Move"
 msgstr "Muovi"
 
-#: kpanel.C:251
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Proprietá"
 
-#: kpanel.C:273
+#: kpanel.C:245
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:342
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Nessuna info sul soggetto"
 
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Fine Sessione"
 
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:367 kpanel.C:778
 #, fuzzy
 msgid "Lock screen"
 msgstr "Blocca schermo"
 
-#: kpanel.C:410
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:421
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:704
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Aggiungi applicazione"
 
-#: kpanel.C:707
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr ""
 
-#: kpanel.C:709
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr ""
 
-#: kpanel.C:712
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: kpanel.C:714
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Configura"
 
-#: kpanel.C:717
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Configura pannello"
 
-#: kpanel.C:719
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Riavvia"
 
-#: kpanel.C:722
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Riavvia pannello"
 
-#: kpanel.C:725 props.C:396
+#: kpanel.C:774 props.C:396
 msgid "Panel"
 msgstr "Pannello"
 
-#: kpanel.C:729
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Blocca schermo"
 
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Nessun commento disponibile"
 
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
 msgstr ""
 

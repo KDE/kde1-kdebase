@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-28 10:06+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -13,87 +13,87 @@ msgstr ""
 "Content-Type: text/plain; charset=iso_8859_1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:248
+#: kpanel.C:210
 msgid "Move"
 msgstr "Verschieben"
 
-#: kpanel.C:251
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Eigenschaften"
 
-#: kpanel.C:273
+#: kpanel.C:245
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
-#: kpanel.C:342
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:410
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr "Panel verstecken"
 
-#: kpanel.C:421
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr "Panel zeigen"
 
-#: kpanel.C:704
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Programm hinzufügen"
 
-#: kpanel.C:707
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr "Programm oder Untermenü zum Panel hinzufügen"
 
-#: kpanel.C:709
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr "Fensterliste hinzufügen"
 
-#: kpanel.C:712
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: kpanel.C:714
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Konfigurieren"
 
-#: kpanel.C:717
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Panel konfigurieren"
 
-#: kpanel.C:719
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Neu starten"
 
-#: kpanel.C:722
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Panel neu starten"
 
-#: kpanel.C:725 props.C:396
+#: kpanel.C:774 props.C:396
 msgid "Panel"
 msgstr "Panel"
 
-#: kpanel.C:729
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -131,7 +131,7 @@ msgstr "Menü-Hilfen"
 
 #: props.C:447
 msgid "Others"
-msgstr ""
+msgstr "Anderes"
 
 #: props.C:449
 msgid "Personal First"
@@ -147,15 +147,15 @@ msgstr "Taskbar autom. verstecken"
 
 #: props.C:473
 msgid "Clock"
-msgstr ""
+msgstr "Uhr"
 
 #: props.C:475
 msgid "24h"
-msgstr ""
+msgstr "24h"
 
 #: props.C:479
 msgid "12h AM/PM"
-msgstr ""
+msgstr "12h AM/PM"
 
 #: props.C:540
 msgid "Visible"

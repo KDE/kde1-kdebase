@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -287,7 +287,6 @@ msgstr ""
 "\n"
 "Acest program este licenþiat sub GNU General Public License (GPL)."
 
-
 #: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Salt la"
@@ -343,6 +342,7 @@ msgid ""
 msgstr ""
 "Sistemul de Informaþii KDE\n"
 "Versiunea "
+
 #: mainwidget.cpp:585
 msgid "About KDE Help"
 msgstr "Despre Informaþii KDE"

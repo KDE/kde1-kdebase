@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"POT-Creation-Date: 1998-01-28 10:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Proprietãþi"
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:247 tools.C:804
+#: kpanel.C:247 tools.C:805
 msgid "Where do you want to go tomorrow?"
 msgstr "Ia ghici, ce poate fi ãsta ???"
 
@@ -82,7 +82,7 @@ msgstr "Restartare"
 msgid "Restart panel"
 msgstr "Restartare Panou"
 
-#: kpanel.C:774 props.C:311
+#: kpanel.C:774 props.C:396
 msgid "Panel"
 msgstr "Panou"
 
@@ -94,66 +94,82 @@ msgstr "Blocheazã ecranul"
 msgid "No comment available"
 msgstr "Nici un comentariu disponibil"
 
-#: kpanel.C:1152 tools.C:813
+#: kpanel.C:1152 tools.C:814
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: props.C:241
+#: props.C:327
 msgid "Location"
 msgstr "Locaþie"
 
-#: props.C:256
+#: props.C:340
 msgid "Taskbar"
 msgstr "Taskbar"
 
-#: props.C:257
+#: props.C:341
 msgid "Hidden"
 msgstr "Ascuns"
 
-#: props.C:269
+#: props.C:350
 msgid "Top/Left"
 msgstr "Stg./Sus"
 
-#: props.C:280
+#: props.C:380
 msgid "Tiny Style"
 msgstr "Mic"
 
-#: props.C:281
+#: props.C:381
 msgid "Normal Style"
 msgstr "Normal"
 
-#: props.C:282
+#: props.C:382
 msgid "Large Style"
 msgstr "Mare"
 
-#: props.C:294
+#: props.C:401
 msgid "Menu Tooltips"
 msgstr "Bule de informatie"
 
-#: props.C:298
+#: props.C:447
+msgid "Others"
+msgstr ""
+
+#: props.C:449
 msgid "Personal First"
 msgstr "Întâi cele personale"
 
-#: props.C:302
+#: props.C:452
 msgid "Auto Hide Panel"
 msgstr "Auto-Ascunde panoul"
 
-#: props.C:306
+#: props.C:455
 msgid "Auto Hide Taskbar"
 msgstr "Auto-Ascunde Taskbarul"
 
-#: props.C:362
+#: props.C:473
+msgid "Clock"
+msgstr ""
+
+#: props.C:475
+msgid "24h"
+msgstr ""
+
+#: props.C:479
+msgid "12h AM/PM"
+msgstr ""
+
+#: props.C:540
 msgid "Visible"
 msgstr "Vizibil"
 
-#: props.C:369
+#: props.C:547
 msgid "Width"
 msgstr "Lãþime"
 
-#: props.C:374
+#: props.C:552
 msgid "Desktops"
 msgstr "Ecrane"
 
-#: props.C:380
+#: props.C:558
 msgid "KPanel Configuration"
 msgstr "Configurare KPanel"

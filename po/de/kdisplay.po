@@ -247,13 +247,12 @@ msgid "Large"
 msgstr "Groﬂ"
 
 #: general.cpp:173
-#, fuzzy
 msgid "default"
 msgstr "Standard"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "irgendein"
 
 #: main.cpp:61
 msgid "&Background"
