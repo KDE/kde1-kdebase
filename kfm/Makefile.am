@@ -25,7 +25,8 @@ kfm_SOURCES =	\
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
-	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp kbookmarkdlg.cpp
+	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp kbookmarkdlg.cpp \
+	booktoken.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
@@ -33,7 +34,8 @@ noinst_HEADERS =  \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
 	xview.h krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
-	useragentdlg.h kproxydlg.h kkfmoptdlg.h kbookmarkdlg.h
+	useragentdlg.h kproxydlg.h kkfmoptdlg.h kbookmarkdlg.h \
+	booktoken.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \

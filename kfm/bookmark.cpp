@@ -1,3 +1,21 @@
+/* This file is part of the KDE libraries
+    Copyright (C) 1996, 1997, 1998 Martin R. Jones <mjones@kde.org>
+      
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
 //-----------------------------------------------------------------------------
 //
 // KDE HTML Bookmarks
@@ -7,7 +25,6 @@
 
 #include <qfile.h>
 #include "bookmark.h"
-
 #include "bookmark.moc"
 
 #include <klocale.h>
@@ -51,11 +68,11 @@ void KBookmarkManager::read( const char *filename )
 {
 	QFile file( filename );
 
-	if ( !file.open( IO_ReadOnly ) )
-		return;
-
 	// rich
 	myFilename= filename;
+
+	if ( !file.open( IO_ReadOnly ) )
+		return;
 
 	root.clear();
 
@@ -69,7 +86,7 @@ void KBookmarkManager::read( const char *filename )
 	}
 	while ( !file.atEnd() );
 
-	HTMLTokenizer *ht = new HTMLTokenizer( 0L );
+	BookmarkTokenizer *ht = new BookmarkTokenizer();
 
 	ht->begin();
 	ht->write( text );
@@ -123,7 +140,7 @@ void KBookmarkManager::read( const char *filename )
 
 // parser based on HTML widget parser
 //
-const char *KBookmarkManager::parse( HTMLTokenizer *ht, KBookmark *parent,
+const char *KBookmarkManager::parse( BookmarkTokenizer *ht, KBookmark *parent,
 	const char *_end )
 {
 	KBookmark *bm = parent;

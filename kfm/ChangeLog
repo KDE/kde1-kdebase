@@ -1,3 +1,9 @@
+Sat Mar 28 11:11:21 1998  Martin Jones  <mjones@kde.org>
+
+	* Added kbooktoken.* so that further changes to the HTML
+	  Tokeniser in khtmlw do not break binary compatability in
+	  kfm.
+
 Fri Mar 27 02:50:54 1998  Torben Weis  <weis@localhost>
 
 	* kfmjob.cpp (slotError): Adaptions for new error

@@ -1306,7 +1306,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
-   KURL u( view -> getURL());
+   KURL u( view->getURL());
    _w->gotoAnchor(u.reference());
 }
 
