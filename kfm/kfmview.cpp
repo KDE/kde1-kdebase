@@ -661,15 +661,25 @@ void KfmView::slotSaveLocalProperties()
   //Dir not writable or not a file: url. See if it is on desktop
   if (KRootWidget::pKRootWidget) // if there is one. DF.
   {
+      QString s1, s2;
+      s1 = _url;
+      if (s1.right( 1 ) == "/")
+	s1.resize(s1.length());
+      
       for (KRootIcon *i = IconList.first(); i; i = IconList.next())
           if (strstr (i->getURL(), ".kdelnk"))
           {
-              debug ("Got a kdelnk: %s", &(i->getURL())[5]);
+              //debug ("Got a kdelnk: %s", &(i->getURL())[5]);
               KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
-              cfg.setGroup("KDE Desktop Entry");
-              if (!strcmp (cfg.readEntry("URL").data(), _url))
+	      cfg.setGroup("KDE Desktop Entry");
+	      
+	      s2 = cfg.readEntry("URL").data();
+	      if (s2.right( 1 ) == "/")
+		s2.resize(s2.length());
+
+              if (s1 == s2)
               {
-                  debug ("Writing");
+                  //debug ("Writing");
                   gui->writeProperties((KConfig *) &cfg); // will sync on end
                   return;
               }
