@@ -113,7 +113,7 @@ msgstr "Sublinhar links"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Usar sempre minhas cores"
 
 #: options.cpp:334
 msgid "KDE Help Options"
