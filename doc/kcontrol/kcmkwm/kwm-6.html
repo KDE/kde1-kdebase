@@ -46,18 +46,34 @@ button (for example Gimp).  Deselect this option to allow non-KDE
 X Window applications to control the right mouse button.
 </LI>
 </UL>
-<P>The <B>Filters</B> settings offer the ability to allow windows 
-with particular window titles or X class names to be configured
+<P>The ``<B>Filters</B>'' settings offer the ability to allow windows 
+with specified <B>Titles</B> or belonging to
+specified <B>Classes</B> to be configured
 differently from the default window configuration.
-<P>Windows with Titles
-or X class name that match a list item can have one of these special
-properties: they can be configured so they
+<P>
+<P>
 <UL>
-<LI>get only tiny decorations</LI>
-<LI>get no decorations</LI>
-<LI>never get focus</LI>
-<LI>start as Sticky</LI>
-<LI>are excluded from session management</LI>
+<LI> The <B>window Title</B> is its title, as  displayed in the titlebar.</LI>
+<LI> The <B>window Class</B> is its ``X class name'', which is
+derived from the name of the program that is running in the window.
+Usually the X class name is the program name with the first letter
+capitalized (e.g., ``<CODE>Emacs</CODE>'' is the X class name of a window
+running the ``<CODE>emacs</CODE>'' program), except that
+if the program name begins with ``x'',
+the  first <B>two</B> letters are usuallly
+capitalized (e.g.., ``<CODE>XTerm</CODE>'' is the X class name of 
+an ``<CODE>xterm</CODE>'' window).</LI>
+</UL>
+<P>
+<P>Windows that have  <B>Titles</B>
+or belong to <B>Classes</B> that match a list item can have one of these 
+special properties: they can be configured so they will
+<UL>
+<LI>have only tiny decorations,</LI>
+<LI>have no decorations,</LI>
+<LI>never gain focus,</LI>
+<LI>start as ``Sticky'',</LI>
+<LI>be excluded from session management.</LI>
 </UL>
 <P>To make an entry in the list, enter a Title or Class  in the appropriate
 box, and click on the "+" button.

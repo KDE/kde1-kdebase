@@ -7,7 +7,7 @@
 <title>KDE Control Center - KWM
 <author>Matthias Hoelzer, Pat Dowler; revised and updated by Duncan.
 
-<date>v1.3, 22 August 1999
+<date>v1.4, 06 September 1999
 
 <!-- Table of contents -->
 <toc>
@@ -336,19 +336,35 @@ X Window applications to control the right mouse button.
 
 </itemize>
 
-The <bf>Filters</bf> settings offer the ability to allow windows 
-with particular window titles or X class names to be configured
+The ``<bf>Filters</bf>'' settings offer the ability to allow windows 
+with specified <bf>Titles</bf> or belonging to
+specified <bf>Classes</bf> to be configured
 differently from the default window configuration.
 
-Windows with Titles
-or X class name that match a list item can have one of these special
-properties: they can be configured so they
+
 <itemize>
-<item>get only tiny decorations
-<item>get no decorations
-<item>never get focus
-<item>start as Sticky
-<item>are excluded from session management
+<item> The <bf>window Title</bf> is its title, as  displayed in the titlebar.
+<item> The <bf>window Class</bf> is its ``X class name'', which is
+derived from the name of the program that is running in the window.
+Usually the X class name is the program name with the first letter
+capitalized (e.g., ``<tt>Emacs</tt>'' is the X class name of a window
+running the ``<tt>emacs</tt>'' program), except that
+if the program name begins with ``x'',
+the  first <bf>two</bf> letters are usuallly
+capitalized (e.g.., ``<tt>XTerm</tt>'' is the X class name of 
+an ``<tt>xterm</tt>'' window).
+</itemize>
+
+
+Windows that have  <bf>Titles</bf>
+or belong to <bf>Classes</bf> that match a list item can have one of these 
+special properties: they can be configured so they will
+<itemize>
+<item>have only tiny decorations,
+<item>have no decorations,
+<item>never gain focus,
+<item>start as ``Sticky'',
+<item>be excluded from session management.
 </itemize>
 
 To make an entry in the list, enter a Title or Class  in the appropriate
