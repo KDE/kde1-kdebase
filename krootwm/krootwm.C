@@ -25,6 +25,7 @@
 #include <kfm.h>
 #include <kprocess.h>
 #include <ksimpleconfig.h>
+#include <kiconloader.h>
 // --------- Sven's changes for macmode begin
 #include <kmenubar.h>
 // --------- Sven's changes for macmode end;
@@ -88,6 +89,8 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
     // parse the configuration
     KConfig *kconfig = KApplication::getKApplication()->getConfig();
+
+    defaultPixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
 
     // --------- Sven's changes for macmode begin
     myMenuBar = 0;
@@ -175,18 +178,18 @@ void KRootWm::buildMenubars() {
     if (macMode)
     {
 	debug("buildMenubars");
-      myMenuBarContainer = new QWidget(0, 0, WStyle_Customize|WStyle_NoBorder);
-      myMenuBar = new KMenuBar(myMenuBarContainer);
+	myMenuBarContainer = new QWidget(0, 0, WStyle_Customize|WStyle_NoBorder);
+	myMenuBar = new KMenuBar(myMenuBarContainer);
 
-      myMenuBarContainer->setGeometry(0, qApp->desktop()->width()+10,100,40);
-      myMenuBarContainer->show();
-      myMenuBarContainer->hide();
-      if (myMenuBar->menuBarPos() != KMenuBar::FloatingSystem) {
-        delete myMenuBarContainer;
-        myMenuBarContainer = 0;
-        myMenuBar = 0;
-      }
-
+	myMenuBarContainer->setGeometry(0, qApp->desktop()->width()+10,100,40);
+	myMenuBarContainer->show();
+	myMenuBarContainer->hide();
+	if (myMenuBar->menuBarPos() != KMenuBar::FloatingSystem) {
+	    debug("destroy");
+	    delete myMenuBarContainer;
+	    myMenuBarContainer = 0;
+	    myMenuBar = 0;
+	}
 
      /*
      File    New    Bookmarks    Desktop     Windows    Help
@@ -284,10 +287,13 @@ void KRootWm::buildMenubars() {
 
     if (myMenuBar && macMode)
     {
-      KWM::setSticky(myMenuBar->winId(), true); //why doesn't this work?
+      KWM::setSticky(myMenuBar->winId(), true); 
       connect(kwmmapp, SIGNAL(windowActivate (Window)), this,
               SLOT(slotFocusChanged(Window)));
     }
+    
+    if (KWM::activeWindow() != None)
+	myMenuBar->lower();
 
     // --------- Sven's changes for macmode end
   }
@@ -690,8 +696,9 @@ void KRootWm::generateWindowlist(){ //sven changed this to slot
 	    ||
 	    (d == cd && KWM::isSticky(callbacklist[i]))
 	    ){
-	  mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
-			QString("   ")+KWM::titleWithState(callbacklist[i]),i);
+	    QPixmap pm = KWM::miniIcon(callbacklist[i], 16, 16);
+	    mmb->insertItem(pm.isNull()?defaultPixmap:pm,
+			  QString("   ")+KWM::titleWithState(callbacklist[i]),i);
 	  if (callbacklist[i] == active_window)
 	    mmb->setItemChecked(i, TRUE);
 	}
@@ -709,8 +716,9 @@ void KRootWm::generateWindowlist(){ //sven changed this to slot
 	  ||
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
-	mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
-		      KWM::titleWithState(callbacklist[i]),i);
+	  QPixmap pm = KWM::miniIcon(callbacklist[i], 16, 16);
+	  mmb->insertItem(pm.isNull()?defaultPixmap:pm,
+			  KWM::titleWithState(callbacklist[i]),i);
 	if (callbacklist[i] == active_window)
 	  mmb->setItemChecked(i, TRUE);
       }
@@ -821,8 +829,11 @@ void KRootWm::slotBookmarkSelected( int _id )
 
 void KRootWm::slotFocusChanged(Window w)
 {
-  if (myMenuBar && w == None)
+    static Window oldFocus = None;
+  if (myMenuBar && w == None && w != oldFocus)
       myMenuBar->raise();
+  
+  oldFocus = w;
 }
 
 int main( int argc, char *argv[] )

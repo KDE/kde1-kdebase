@@ -26,6 +26,7 @@
 #include <qlabel.h>
 #include <qpushbt.h>
 #include <klined.h>
+#include <qpixmap.h>
 
 // --------- Sven's changes for macmode begin
 class KMenuBar;
@@ -60,7 +61,7 @@ private:
   GC gc;
   void draw_selection_rectangle(int x, int y, int dx, int dy);
   bool select_rectangle(int &x, int &y, int &dx, int &dy);
-  
+
   //void generateWindowlist(QPopupMenu* p); sven -  moved to slots
   Window* callbacklist;
 
@@ -68,7 +69,7 @@ private:
   QPopupMenu* rmb;
   QPopupMenu* menuNew;
   QPopupMenu *bookmarks;
-  
+
   QStrList templatesList;
   QString desktopPath;
   QString templatePath;
@@ -86,16 +87,18 @@ private:
   bool macMode;
   KMenuBar *myMenuBar;
   QWidget *myMenuBarContainer;
-  
+
   QPopupMenu *file;
   QPopupMenu *desk;
   QPopupMenu *help;
   // --------- Sven's changes for macmode end
-  
+    
+  QPixmap defaultPixmap;
+
 private slots:
   void slotNewFile( int _id );
   void slotBookmarkSelected( int _id );
-  
+
   void rmb_menu_activated(int);
   void mmb_menu_activated(int);
   // --------- Sven's changes for macmode begin
@@ -127,7 +130,7 @@ public:
      * @return the value the user entered
      */
     const char * getText() { return edit->text(); }
-    
+
 public slots:
     /**
      * The slot for clearing the edit widget
