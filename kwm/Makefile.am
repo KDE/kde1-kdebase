@@ -39,5 +39,15 @@ taskmgr.moc: taskmgr.h
 	$(MOC) taskmgr.h -o taskmgr.moc
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) 
+	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES)
+	
+install-data-local: 
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) kwm.xpm $(kde_icondir)/kwm.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kwm.xpm $(kde_minidir)/kwm.xpm
+
+uninstall-local:
+	rm -f $(kde_icondir)/kwm.xpm
+	rm -f $(kde_minidir)/kwm.xpm
 

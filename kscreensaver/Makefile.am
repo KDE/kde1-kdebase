@@ -141,3 +141,13 @@ blob.moc: blob.h
 morph3d.moc: morph3d.h
 	$(MOC) morph3d.h -o morph3d.moc
 
+install-data-local: 
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) kscreensaver.xpm $(kde_icondir)/kscreensaver.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
+
+uninstall-local:
+	rm -f $(kde_icondir)/kscreensaver.xpm
+	rm -f $(kde_minidir)/kscreensaver.xpm
+

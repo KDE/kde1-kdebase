@@ -54,5 +54,15 @@ DesktopPathDialogData.moc: DesktopPathDialogData.h
 entrydialog.cpp:entrydialog.moc
 entrydialog.moc: entrydialog.h
 	$(MOC) entrydialog.h -o entrydialog.moc
+	
+install-data-local: 
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) kmenuedit.xpm $(kde_icondir)/kmenuedit.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kmenuedit.xpm $(kde_minidir)/kmenuedit.xpm
+
+uninstall-local:
+	rm -f $(kde_icondir)/kmenuedit.xpm
+	rm -f $(kde_minidir)/kmenuedit.xpm
 
 

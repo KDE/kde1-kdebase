@@ -8,9 +8,6 @@ DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt
 
-data_DATA = kvt.xpm
-datadir = $(kde_icondir)
-
 kvt_SOURCES = \
 	command.c screen.c utmp.c \
 	xsetup.c debug.c resources.c main.C\
@@ -20,4 +17,14 @@ main.C: main.moc
 
 main.moc: main.h
 	$(MOC) main.h -o main.moc
+	
+install-data-local: 
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) kvt.xpm $(kde_icondir)/kvt.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kvt.xpm $(kde_minidir)/kvt.xpm
+
+uninstall-local:
+	rm -f $(kde_icondir)/kvt.xpm
+	rm -f $(kde_minidir)/kvt.xpm
 

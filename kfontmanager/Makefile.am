@@ -26,4 +26,14 @@ kfontexplorer.moc: kfontexplorer.h
 
 kfontlist.moc: kfontlist.h
 	$(MOC) kfontlist.h -o kfontlist.moc
+	
+install-data-local:
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) kfontmanager.xpm $(kde_icondir)/kfontmanager.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kfontmanager.xpm $(kde_minidir)/kfontmanager.xpm
+
+uninstall-local:
+	rm -f $(kde_icondir)/kfontmanager.xpm
+	rm -f $(kde_minidir)/kfontmanager.xpm
 

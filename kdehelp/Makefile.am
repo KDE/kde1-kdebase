@@ -37,5 +37,13 @@ cgi.moc: cgi.h
 mainwidget.moc: mainwidget.h
 	$(MOC) mainwidget.h -o mainwidget.moc
 
+install-data-local:
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) kdehelp.xpm $(kde_icondir)/kdehelp.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-kdehelp.xpm $(kde_minidir)/kdehelp.xpm
 
+uninstall-local:
+	rm -f $(kde_icondir)/kdehelp.xpm
+	rm -f $(kde_minidir)/kdehelp.xpm
 

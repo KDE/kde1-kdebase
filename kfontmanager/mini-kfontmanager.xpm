@@ -1,0 +1,31 @@
+/* XPM */
+/* Drawn  by Nico Schwiring and Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*kfontmanager[]={
+"16 16 9 1",
+"# c #000000",
+"a c #c0c0c0",
+"f c #be5800",
+"d c #ffdca8",
+"g c #585858",
+"b c #0000ff",
+"e c #ffa85a",
+"c c #ffffff",
+". c None",
+".##############.",
+"#aaaaaaaaaaaaaa#",
+"#abbbbbbbbbbbbc#",
+"#abbbbbde#bbbbc#",
+"#abbbbdeefbbbbc#",
+"#abbbbd#be#bbbc#",
+"#abbbdeeeefbbbc#",
+"#abbbd#bbbe#bbc#",
+"#abbb#bbbb##bbc#",
+"#aaaaaaaaaaaaac#",
+"#aaaaaaaaaaaaaa#",
+"#aagaaagaacccaa#",
+"#aaaagagaacagaa#",
+"#aagagaaaacggaa#",
+"#aaaaaaaaaaaaaa#",
+".##############."};
+
