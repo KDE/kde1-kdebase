@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kikbd\n"
-"POT-Creation-Date: 1999-04-13 01:26+0200\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-02-16 01:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -215,83 +215,83 @@ msgstr ""
 "Du bruger \"Internationalt tastatur\" for første gang.\n"
 "Jeg installerede en række standardindstillinger."
 
-#: kikbdconf.cpp:379
+#: kikbdconf.cpp:374
 msgid "unknown"
 msgstr "ukendt"
 
-#: kikbdconf.cpp:383 kikbdconf.cpp:476
+#: kikbdconf.cpp:378 kikbdconf.cpp:471
 msgid "default"
 msgstr "standard"
 
-#: kikbdconf.cpp:419
+#: kikbdconf.cpp:414
 msgid "Author:  Not specified"
 msgstr "Forfatter: Ikke opgivet"
 
-#: kikbdconf.cpp:421
+#: kikbdconf.cpp:416
 msgid "Author"
 msgstr "Forfatter"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:422
 msgid "Description:  "
 msgstr "Beskrivelse: "
 
-#: kikbdconf.cpp:430
+#: kikbdconf.cpp:425
 msgid "Source:  "
 msgstr "Kilde:  "
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:426
 msgid "no file"
 msgstr "ingen fil"
 
-#: kikbdconf.cpp:432
+#: kikbdconf.cpp:427
 msgid "user file"
 msgstr "brugerfil"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:428
 msgid "system file"
 msgstr "systemfil"
 
-#: kikbdconf.cpp:438
+#: kikbdconf.cpp:433
 msgid "Statistic:  "
 msgstr "Statistik: "
 
-#: kikbdconf.cpp:446
+#: kikbdconf.cpp:441
 msgid "symbols"
 msgstr "symboler"
 
-#: kikbdconf.cpp:454
+#: kikbdconf.cpp:449
 msgid "codes"
 msgstr "koder"
 
-#: kikbdconf.cpp:457
+#: kikbdconf.cpp:452
 msgid "alternative symbols"
 msgstr "alternative symboler"
 
-#: kikbdconf.cpp:469
+#: kikbdconf.cpp:464
 msgid "Language"
 msgstr "Sprog"
 
-#: kikbdconf.cpp:473
+#: kikbdconf.cpp:468
 msgid "Charset"
 msgstr "Tegnsæt"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:514
 msgid "International keyboard ERROR"
 msgstr "Internationalt tastatur-FEJL"
 
-#: kikbdconf.cpp:535
+#: kikbdconf.cpp:530
 msgid "International keyboard warning"
 msgstr "Internationalt tastatur-advarsel"
 
-#: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
+#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
 msgid "International keyboard question"
 msgstr "Internationalt tastatur-spørgsmål"
 
-#: kikbdconf.cpp:549
+#: kikbdconf.cpp:544
 msgid "Configure"
 msgstr "Indstil"
 
-#: kikbdconf.cpp:559
+#: kikbdconf.cpp:554
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -414,8 +414,7 @@ msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
 msgstr ""
-"Emuler XServer-CapsLock. Behøves i visse sprog for at tastaturet virker "
-"rigtigt"
+"Emuler XServer-CapsLock. Behøves i visse sprog for at tastaturet virker rigtigt"
 
 #: widgets.cpp:482
 msgid "&World Menu"
@@ -448,16 +447,13 @@ msgstr "Standard opførsel. Tastaturkort er aktivt for alle vinduer"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr ""
-"Udvidet opførsel. Tastaturkortets tilstand gemmes uafhængigt for hvert "
-"vinduer"
+msgstr "Udvidet opførsel. Tastaturkortets tilstand gemmes uafhængigt for hvert vinduer"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Særlig opførsel. Tastaturkortets tilstand gemmes uafhængigt for hver "
-"vinduesklasse"
+"Særlig opførsel. Tastaturkortets tilstand gemmes uafhængigt for hver vinduesklasse"
 
 #: widgets.cpp:561
 msgid "Button Colors"
