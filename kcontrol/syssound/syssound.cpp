@@ -87,8 +87,7 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
 
   soundlist->insertItem(klocale->translate("(none)"));
 
-  path = (const char *)kapp->kdedir(); // CC: to force deep copy
-  path +="/share/sounds";
+  path = KApplication::kde_sounddir().copy();
   dir.setPath(path);
   dir.setNameFilter("*.wav");
   dir.setSorting(QDir::Name);
@@ -296,8 +295,7 @@ void KSoundWidget::playCurrentSound()
   if (soundno > 0) {
     sname = soundlist->text(soundno);
     if (sname[0] != '/') {
-      hlp = (const char *)kapp->kdedir(); // CC: to force deep copy
-      hlp += "/share/sounds/";
+      hlp = KApplication::kde_sounddir().copy(); 
       hlp += sname;
       audio.play((char*)hlp.data());
     } else 
