@@ -227,6 +227,11 @@ public:
     virtual void append( KMimeBind * );
 
     /**
+     * Remove a binding from this type.
+     */
+    virtual void remove( KMimeBind * b) { bindings.removeRef(b); }
+
+    /**
      * Add a pattern which matches this type. Patterns are for example
      * "*.tgz" or "*.jpg".
      */
