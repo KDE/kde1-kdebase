@@ -38,6 +38,9 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#ifdef __FreeBSD__
+#include <sys/sysctl.h>
+#endif
 
 #include "memory.moc"
 
@@ -50,7 +53,11 @@
 MemMon::MemMon(QWidget *parent, const char *name, QWidget *child)
        :QWidget (parent, name)
 {
+#ifdef __FreeBSD__
+    int mib[2],memory;size_t len;
+#else
     char buffer[256];
+#endif
     
     setBackgroundColor(black);
     my_child = child;
@@ -58,6 +65,14 @@ MemMon::MemMon(QWidget *parent, const char *name, QWidget *child)
     mem_values = 0;
     mem_values = (int *)malloc(sizeof(int) * intervals);
     memset(mem_values, 0, sizeof(int) * intervals);
+#ifdef __FreeBSD__
+    // incomplete
+#warning mem_size was set to some random value
+    mib[0]=CTL_HW;mib[1]=HW_PHYSMEM;
+    len=sizeof(memory);
+    sysctl(mib,2,&physsize,&len,NULL,0);
+    mem_size = physsize + 50;
+#else
     FILE *fd = fopen("/proc/meminfo", "r");
     fgets(buffer, sizeof(buffer), fd);
     fgets(buffer, sizeof(buffer), fd);
@@ -65,6 +80,7 @@ MemMon::MemMon(QWidget *parent, const char *name, QWidget *child)
     fgets(buffer, sizeof(buffer), fd);
     mem_size += atol(buffer + 5);
     fclose(fd);
+#endif
     brush_0 = QBrush(QColor("darkgreen"), SolidPattern);
     brush_1 = QBrush(green, SolidPattern);
     startTimer(2000);
@@ -123,17 +139,26 @@ void MemMon::paintEvent(QPaintEvent *)
  -----------------------------------------------------------------------------*/
 void MemMon::timerEvent(QTimerEvent *)
 {
+#ifdef __FreeBSD__
+    // doesn't for on BSD yet
+#else
     char buffer[256];
     FILE *f;
     
     f = fopen("/proc/meminfo", "r");
     fgets(buffer, sizeof(buffer), f);
     fgets(buffer, sizeof(buffer), f);
+#endif
     memcpy(mem_values, &mem_values[1], sizeof(int) * (intervals - 1));
+#ifdef __FreeBSD__
+    mem_values[intervals - 1] = 4;
+    mem_values[intervals - 1] += 3;
+#else
     mem_values[intervals - 1] = atol(strchr(buffer + 6, ' ') + 1);
     fgets(buffer, sizeof(buffer), f);
     mem_values[intervals - 1] += atol(strchr(buffer + 6, ' ') + 1);
     fclose(f);
+#endif
     if( isVisible() ) repaint();
 }
 

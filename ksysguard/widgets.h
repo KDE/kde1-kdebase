@@ -39,7 +39,12 @@ typedef struct proc_status {
     pid_t pid, ppid;
     uid_t uid;
     gid_t gid;
-    unsigned vm_size, vm_lock, vm_rss, vm_data, vm_stack, vm_exe, vm_lib;
+    unsigned vm_size, vm_lock, vm_rss, vm_data, vm_stack, vm_exe;
+#ifdef __FreeBSD__
+    u_char  priority;
+#else
+    unsigned vm_lib;
+#endif
     int otime, time, oabstime, abstime;
     struct proc_status* next;
     struct proc_status* prev;
@@ -120,7 +125,11 @@ public:
             SORTBY_STATUS  ,
             SORTBY_VMSIZE  ,
             SORTBY_VMRSS   ,
+#ifdef __FreeBSD__
+            SORTBY_PRIOR   ,
+#else
             SORTBY_VMLIB   ,
+#endif
           };
 
      TaskMan(QWidget *parent = 0, const char *name = 0, int sfolder=0);
@@ -192,7 +201,9 @@ private:
     virtual void           timerEvent      ( QTimerEvent*  );
  
     virtual void           pList_load                ( );
+#ifndef __FreeBSD__
     virtual int    	   pList_getProcStatus       ( char * );
+#endif
     virtual void   	   pList_clearProcVisit      ( );
     virtual void           pList_removeProcUnvisited ( );
     virtual void           pList_sort                ( );

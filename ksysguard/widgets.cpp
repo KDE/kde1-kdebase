@@ -36,7 +36,13 @@
 #include <time.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#ifdef __FreeBSD__
 #include <signal.h>
+#include <sys/syslimits.h>
+#include <sys/param.h>
+#include <sys/sysctl.h>
+#include <sys/user.h>
+#endif
 
 #include <qpalette.h>
 #include <qcombo.h>
@@ -75,7 +81,10 @@
   #DEFINEs
  =============================================================================*/
 #define ktr           klocale->translate
+#ifndef __FreeBSD__
+// BSD doesn't need this, so fail if something tries to use it..
 #define PROC_BASE     "/proc"
+#endif
 #define KDE_ICN_DIR   "/share/icons/mini"
 #define KTOP_ICN_DIR  "/share/apps/ktop/pics"
 #define INIT_PID      1
@@ -155,7 +164,11 @@ static const char *col_headers[] = {
      "Status" ,
      "VmSize" ,
      "VmRss"  ,
+#ifdef __FreeBSD__
+     "Prior"   ,
+#else
      "VmLib"  ,
+#endif
      0
 };
 static const char *dummies[] = {
@@ -927,6 +940,63 @@ void TaskMan::pList_update(void)
  -----------------------------------------------------------------------------*/
 void TaskMan::pList_load()
 {
+#ifdef __FreeBSD__
+	char line[256];
+	struct passwd *pwent;
+	pList_clearProcVisit();
+
+	int mib[2];
+	size_t len;
+	struct kinfo_proc *p;
+
+	mib[0] = CTL_KERN;
+	mib[1] = KERN_PROC;
+	mib[2] = KERN_PROC_ALL;
+	sysctl(mib, 3, NULL, &len, NULL, 0);
+	p = (struct kinfo_proc *)malloc(len);
+	sysctl(mib, 3, p, &len, NULL, 0);
+
+	int num;
+	for (num = len / sizeof(struct kinfo_proc) - 1; num > -1; num--) {
+		char s[10];
+		snprintf(s, 10,"%d",p[num].kp_proc.p_pid);
+		ps = pList_getProcItem(s);
+		if ( ! ps ) return;
+
+		strcpy(ps->name, p[num].kp_proc.p_comm);
+		ps->status = p[num].kp_proc.p_stat;
+		strcpy(ps->statusTxt, p[num].kp_eproc.e_wmesg);
+	 	ps->visited = 1;
+		ps->uid = p[num].kp_eproc.e_ucred.cr_uid;
+		ps->gid = p[num].kp_eproc.e_pgid;
+		ps->pid = p[num].kp_proc.p_pid;
+		ps->ppid = p[num].kp_eproc.e_ppid;
+
+		struct timeval tv;
+		gettimeofday(&tv,0);
+
+		ps->oabstime = ps->abstime;
+		ps->abstime = tv.tv_sec*100+tv.tv_usec/10000;
+
+		// if no time between two cycles - don't show any usable cpu percentage
+		if(ps->oabstime==ps->abstime)
+			ps->oabstime=ps->abstime-100000;
+		ps->otime=ps->time;
+		ps->time = p[num].kp_proc.p_rtime.tv_sec*100+p[num].kp_proc.p_rtime.tv_usec/10000;
+
+		// set other data
+		ps->vm_size = (p[num].kp_eproc.e_vm.vm_tsize +
+			p[num].kp_eproc.e_vm.vm_dsize +
+			p[num].kp_eproc.e_vm.vm_ssize) * getpagesize() / 1024;
+		ps->vm_lock = 0;
+		ps->vm_rss = p[num].kp_eproc.e_vm.vm_rssize * getpagesize() / 1024;
+		ps->vm_data = p[num].kp_eproc.e_vm.vm_dsize * getpagesize() / 1024;
+		ps->vm_stack = p[num].kp_eproc.e_vm.vm_ssize * getpagesize() / 1024;
+		ps->vm_exe = p[num].kp_eproc.e_vm.vm_tsize * getpagesize() / 1024;
+		ps->priority = p[num].kp_proc.p_priority - PZERO;
+	}
+	free(p);
+#else
     DIR *dir;
     char line[256];
     struct dirent *entry;
@@ -939,6 +1009,7 @@ void TaskMan::pList_load()
             pList_getProcStatus(entry->d_name);
       }
       closedir(dir);
+#endif
     pList_removeProcUnvisited();
     pList_sort();
 
@@ -967,7 +1038,11 @@ void TaskMan::pList_load()
                     tmp->statusTxt,
                     tmp->vm_size, 
                     tmp->vm_rss, 
+#ifdef __FreeBSD__
+		    tmp->priority
+#else
                     tmp->vm_lib
+#endif
 		    );         
         pList->appendItem(line);
     }
@@ -1011,8 +1086,13 @@ void TaskMan::pList_sort()
 	        case SORTBY_VMRSS:
 		    swap = item->vm_rss < item->next->vm_rss;
 		    break;
+#ifdef __FreeBSD__
+	        case SORTBY_PRIOR:
+		    swap = item->priority < item->next->priority;
+#else
 	        case SORTBY_VMLIB:
 		    swap = item->vm_lib < item->next->vm_lib;
+#endif
 		    break;
 	        case SORTBY_CPU:
 	        default        :
@@ -1101,6 +1181,8 @@ void TaskMan::pList_removeProcUnvisited()
 /*-----------------------------------------------------------------------------
   Routine : TaskMan::pList_getProcStatus(char * pid)
  -----------------------------------------------------------------------------*/
+#ifndef __FreeBSD__
+// BSD doesn't use this
 int TaskMan::pList_getProcStatus(char * pid)
 {
     char buffer[1024], temp[128];
@@ -1200,6 +1282,7 @@ int TaskMan::pList_getProcStatus(char * pid)
 
     return 1;
 }
+#endif
 
 /*-----------------------------------------------------------------------------
   Routine : TaskMan::headerClicked
@@ -1220,7 +1303,11 @@ void TaskMan::pList_headerClicked(int indxCol)
           case SORTBY_STATUS:
           case SORTBY_VMSIZE:
           case SORTBY_VMRSS:
+#ifdef __FreeBSD__
+          case SORTBY_PRIOR:
+#else
           case SORTBY_VMLIB:
+#endif
                pList_sortby = indxCol-1;
                break;
           default: 
@@ -1676,18 +1763,33 @@ void TaskMan::pTree_changeRoot()
  -----------------------------------------------------------------------------*/
 void TaskMan::pTree_readProcDir(  )
 {
+#ifdef __FreeBSD__
+    int mib[2];
+    size_t len;
+    struct kinfo_proc *p;
+#else
     DIR           *dir;
     struct dirent *de;
-    struct passwd *pwent;
     FILE          *file;
     struct stat    st;
     char           path[PATH_MAX+1];
     int            empty,dummy;
+#endif
     ProcInfo       pi;
+    struct passwd *pwent;
 
+#ifdef __FreeBSD__
+    mib[0] = CTL_KERN;
+    mib[1] = KERN_PROC;
+    mib[2] = KERN_PROC_ALL;
+    sysctl(mib, 3, NULL, &len, NULL, 0);
+    p = (struct kinfo_proc *)malloc(len);
+    sysctl(mib, 3, p, &len, NULL, 0);
+#endif
     ProcTree      *alist = new ProcTree();  
     CHECK_PTR(alist);
 
+#ifndef __FreeBSD__
     if (!(dir = opendir(PROC_BASE))) 
       {
 	perror(PROC_BASE);
@@ -1754,7 +1856,42 @@ void TaskMan::pTree_readProcDir(  )
         if ( alist ) delete alist;
 	fprintf(stderr,PROC_BASE " is empty (not mounted ???)\n");
 	exit(1);
+#else
+    int num;
+    for (num = len / sizeof(struct kinfo_proc) - 1; num > -1; num--) {
+	pi.pid = p[num].kp_proc.p_pid;
+	pi.ppid = p[num].kp_eproc.e_ppid;
+	pi.uid =  p[num].kp_eproc.e_ucred.cr_uid;
+	strcpy(pi.name, p[num].kp_proc.p_comm);
+
+	// get user name
+	pwent = getpwuid(pi.uid);
+	if( pwent )
+	    strcpy(pi.uname,pwent->pw_name);
+	else
+	    strcpy(pi.uname,"????");
+
+	strcpy(pi.arg,"Not implemented");
+                    
+        // create new item
+        ProcTreeItem *child = new ProcTreeItem(pi,pTree_getProcIcon(pi.name));
+        CHECK_PTR(child);
+
+        //insert new item in tree
+	if ( pi.pid == INIT_PID )
+	    pTree->insertItem(child);
+	else if ( pi.ppid == INIT_PID )
+	    pTree->addChildItem(child,0); 
+	else if (pi.ppid) {  // kernel processes can't be viewed in tree
+	    ProcTreeItem *item=pTree_getParentItem(pTree->itemAt(0),pi.ppid);   
+	    if ( item )  
+		item->appendChild(child); 
+	    else  
+		alist->insertItem(child);
+	}
+
     }
+#endif
 
     pTree_reorder(alist);
     

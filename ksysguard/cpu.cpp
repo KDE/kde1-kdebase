@@ -42,13 +42,24 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <time.h>
+#ifdef __FreeBSD__
+#include <machine/param.h>
+#else
 #include <asm/param.h>
+#endif
 #include <sys/mman.h>
 
 #include "settings.h"
 #include "cpu.moc"
 #include "kconfig.h"
 #include "klocale.h"
+
+#ifdef __FreeBSD__
+#ifndef HZ
+#warning HZ was set to some random value
+#define HZ 64
+#endif
+#endif
 
 /*=============================================================================
   GLOBALs
@@ -65,7 +76,9 @@ CpuMon::CpuMon(QWidget *parent, const char *name, QWidget *child)
        :QWidget (parent, name)
 {
     struct timezone timez;
+#ifndef __FreeBSD__
     char dummy[10];
+#endif
     int t;
     QString tmp;
     
@@ -77,6 +90,12 @@ CpuMon::CpuMon(QWidget *parent, const char *name, QWidget *child)
     load_values = (unsigned *)malloc(sizeof(unsigned) * intervals);
     memset(load_values, 0, sizeof(unsigned) * intervals);
 
+#ifdef __FreeBSD__
+   // this doesn't work yet
+   old_nice_ticks = 0;
+   old_system_ticks = 0;
+   old_idle_ticks = 0;
+#else
     // set up the initial values
     statfile = 0;
     statfile = fopen("/proc/stat", "r");
@@ -86,6 +105,7 @@ CpuMon::CpuMon(QWidget *parent, const char *name, QWidget *child)
     fscanf(statfile, "%s %d %d %d %d", dummy, &old_user_ticks
                                      , &old_nice_ticks, &old_system_ticks
                                      , &old_idle_ticks);
+#endif
     gettimeofday(&oldtime, &timez);
 
     // get the configuration value for the update speed
@@ -175,7 +195,9 @@ void CpuMon::paintEvent(QPaintEvent *)
  -----------------------------------------------------------------------------*/
 void CpuMon::timerEvent(QTimerEvent *)
 {
+#ifndef __FreeBSD__
     char     buffer[100];
+#endif
     struct   timeval time;
     struct   timezone timez;
     float    elapsed_time;
@@ -187,9 +209,13 @@ void CpuMon::timerEvent(QTimerEvent *)
     
     memcpy(load_values, &load_values[1], sizeof(unsigned) * (intervals - 1));
 
+#ifdef __FreeBSD__
+    // doesn't work for BSD yet...
+#else
     rewind(statfile);
     fscanf(statfile, "%s %d %d %d %d", buffer, &user_ticks, &nice_ticks
                                      , &system_ticks, &idle_ticks );
+#endif
 
     gettimeofday(&time, &timez);
     elapsed_time = (time.tv_sec - oldtime.tv_sec)
