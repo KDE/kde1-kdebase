@@ -1,24 +1,23 @@
-# KDE Config file
-[KDM]
-StdFont=*-helvetica-medium-r-normal--14-*
-FailFont=-*-helvetica-bold-r-normal-*-14-*
-GreetFont=-*-utopia-medium-r-*-*-34-*-*-*-*-*-*-*
-GreetString=X Window System [HOSTNAME]
-#GUIStyle=Windows
-#ShutdownButton=RootOnly
-ShutdownButton=ConsoleOnly
-UserView=1
-#Users=root;johndoe
-#SortUsers=1
-NoUsers=sync;halt;reboot;shutdown;mail
-SessionTypes=kde;fvwm;failsafe
+# KDE Config File
 [KDMDESKTOP]
-FancyBackGround=0
-BackgroundColor=darkCyan
+BackgroundColor=#00a5c6
+FancyBackGround=false
 #BackgroundPicture=KDEDIR/share/wallpapers/water01.jpg
 #BackgroundPicture=KDEDIR/share/wallpapers/ocean01.jpg
 #BackgroundPicture=KDEDIR/share/wallpapers/paper01.jpg
 # you can manually install this logo from kdebase/kdm/pics/kdm_bg.jpg:
 #BackgroundPicture=KDEDIR/share/wallpapers/kdm_bg.jpg
-BackgroundPictureTile=1
-#BackgroundPictureCenter=0
+[KDM]
+SortUsers=true
+#Users=root;johndoe
+NoUsers=sync;halt;reboot;shutdown;mail;
+GreetString=X Window System [HOSTNAME]
+UserView=true
+#ShutdownButton=RootOnly
+ShutdownButton=ConsoleOnly
+FailFont=helvetica,12,5,iso-8859-1,75,0
+GreetFont=charter,24,5,iso-8859-1,50,0
+StdFont=Helvetica,12,5,iso-8859-1,50,0
+SessionTypes=kde;fvwm;failsafe;
+#GUIStyle=Windows
+

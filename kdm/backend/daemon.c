@@ -178,6 +178,7 @@ void BecomeDaemon ()
 #endif / * !__EMX__ * /
 */
     /* HP/UX fix: */
+#if !((defined(SYSV) || defined(SVR4)) && defined(i386))
 #ifndef TIOCNOTTY
 # define TIOCNOTTY  _IO('t', 113)           /* void tty association */
 #endif
@@ -185,6 +186,7 @@ void BecomeDaemon ()
 	 (void) ioctl (i, TIOCNOTTY, (char *) 0);    /* detach, BSD style */
 	 (void) close (i);
     }
+#endif
     /*
      * Set up the standard file descriptors.
      */
