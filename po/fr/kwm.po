@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
 "POT-Creation-Date: 1998-01-16 22:08+0100\n"
-"PO-Revision-Date: 1998-01-08 23:43 CET\n"
+"PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Res&taurer"
 
 #: main.C:390
 msgid "&Iconify"
-msgstr "&Mettre en icône"
+msgstr "Mettre en &icône"
 
 #: main.C:391
 msgid "&DeIconify"
@@ -51,11 +51,11 @@ msgstr "&Rétablir"
 
 #: main.C:392
 msgid "&Sticky"
-msgstr "Fi&xer"
+msgstr "&Clouer"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "&Libérer"
+msgstr "&Déclouer"
 
 #: main.C:394
 msgid "Mo&ve"

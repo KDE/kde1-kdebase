@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-01-16 22:08+0100\n"
-"PO-Revision-Date: 1998-01-09 00:00 CET\n"
+"PO-Revision-Date: 1998-01-17 23:22 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Arréter ou réinitialiser ?"
+msgstr "Arrêter ou réinitialiser ?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
-msgstr "Arréter le Système"
+msgstr "Arrêter le Système"
 
 #: kdmshutdown.cpp:183
 msgid "Shutdown and restart"
@@ -51,4 +51,4 @@ msgstr "Entrer !"
 
 #: kgreeter.cpp:213
 msgid "Shutdown..."
-msgstr "Arréter..."
+msgstr "Arrêter..."

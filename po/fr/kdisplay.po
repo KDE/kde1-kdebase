@@ -2,25 +2,24 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-01-16 22:09+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-01-17 23:19 CET\n"
+"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Language-Team: Français\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; \n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
-msgstr ""
+msgstr "Bureau"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr ""
+msgstr "Renommer..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -48,7 +47,7 @@ msgstr "Papier peint"
 
 #: backgnd.cpp:331
 msgid "Tiled"
-msgstr "Mosaic"
+msgstr "Mosaique"
 
 #: backgnd.cpp:335
 msgid "Centred"
@@ -59,13 +58,12 @@ msgid "Scaled"
 msgstr "Adapté"
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE de base"
+msgstr "Défaut"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
-msgstr ""
+msgstr "Nom du bureau"
 
 #: colorscm.cpp:142 colorscm.cpp:143
 msgid "Inactive window"
@@ -89,11 +87,11 @@ msgstr "Sélectionné"
 
 #: colorscm.cpp:252 colorscm.cpp:264
 msgid "Color Scheme"
-msgstr "Modèle Couleur"
+msgstr "Modèle de couleur"
 
 #: colorscm.cpp:286
 msgid "Widget color"
-msgstr "Couleur des côntroles"
+msgstr "Couleur des contrôles"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
@@ -129,7 +127,7 @@ msgstr "Selectionner le texte"
 
 #: colorscm.cpp:299
 msgid "Window background"
-msgstr "Arrière-plan de la Fenêtre"
+msgstr "Arrière-plan de la fenêtre"
 
 #: colorscm.cpp:311
 msgid "Contrast"
@@ -137,19 +135,19 @@ msgstr "Contraste"
 
 #: colorscm.cpp:324 scrnsave.cpp:224
 msgid "Low"
-msgstr "Basse"
+msgstr "Bas"
 
 #: colorscm.cpp:328 scrnsave.cpp:221
 msgid "High"
-msgstr "Haute"
+msgstr "Haut"
 
 #: colorscm.cpp:343
 msgid "Save scheme"
-msgstr "Sauvegarder modèle"
+msgstr "Enregistrer le modèle"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Vous avez choisis un modèle de couleur fourni par le système"
+msgstr "Vous avez choisi un modèle de couleurs fourni par le système"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
@@ -165,7 +163,7 @@ msgid ""
 "Do you want to install the default color schemes now ?"
 msgstr ""
 "Aucun modèle de couleur pour le bureau n'a pu être trouvé.\n"
-"Voulez vous installer le modèle de base maintenant ?"
+"Voulez-vous installer le modèle par défaut maintenant ?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
@@ -181,7 +179,7 @@ msgstr "Ignorer"
 
 #: scrnsave.cpp:49
 msgid "Lock"
-msgstr "Vérouiller"
+msgstr "Verrouiller"
 
 #: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
@@ -193,15 +191,15 @@ msgstr "Configurer..."
 
 #: scrnsave.cpp:188
 msgid "Test"
-msgstr "Test"
+msgstr "Tester"
 
 #: scrnsave.cpp:196
 msgid "Settings"
-msgstr "Configurations"
+msgstr "Configuration"
 
 #: scrnsave.cpp:199
 msgid "Wait:"
-msgstr "Attendre:"
+msgstr "Attendre :"
 
 #: scrnsave.cpp:210
 msgid "min"
@@ -209,11 +207,11 @@ msgstr "min."
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
-msgstr "Nécessite mot de passe"
+msgstr "Nécessite un mot de passe"
 
 #: scrnsave.cpp:218
 msgid "Priority:"
-msgstr "Priorité:"
+msgstr "Priorité :"
 
 #: general.cpp:61
 msgid "General"
@@ -221,7 +219,7 @@ msgstr "Général"
 
 #: general.cpp:65
 msgid "Widget style"
-msgstr "Type de contrôle"
+msgstr "Type de contrôles"
 
 #: general.cpp:70
 msgid "Motif"
@@ -256,94 +254,25 @@ msgid "Large"
 msgstr "Grand"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Background"
-msgstr "Arrière-plan"
+msgstr "&Arrière-plan"
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Colors"
-msgstr "Couleur"
+msgstr "&Couleur"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
-msgstr "Mise en veille"
+msgstr "Mise en &veille"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr ""
+msgstr "&Style"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
+msgstr "utilisation : kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
-#, fuzzy
 msgid "Display settings"
 msgstr "Configuration de l'affichage"
-
-#~ msgid "Browse..."
-#~ msgstr "Parcourir..."
-
-#~ msgid "Italic"
-#~ msgstr "Italique"
-
-#~ msgid "Remove"
-#~ msgstr "Enlever"
-
-#~ msgid "KDE Display Configuration"
-#~ msgstr "Configuration de l'affichage pour KDE"
-
-#~ msgid ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Usage: %s -init|-setup\n"
-#~ "\n"
-
-#~ msgid "  -init               apply current settings to the display\n"
-#~ msgstr ""
-#~ "  -init               applique les modifications courantes a l'affichage\n"
-
-#~ msgid "  -setup              setup the display\n"
-#~ msgstr "  -setup              configure l'affichage\n"
-
-#~ msgid "Help"
-#~ msgstr "Aide"
-
-#~ msgid "File"
-#~ msgstr "Fichier"
-
-#~ msgid "Edit"
-#~ msgstr "Éditer"
-
-#~ msgid "Bold"
-#~ msgstr "Gras"
-
-#~ msgid "Input"
-#~ msgstr "Entrée"
-
-#~ msgid "Keyboard"
-#~ msgstr "Clavier"
-
-#~ msgid "Auto Repeat"
-#~ msgstr "Répetition automatique"
-
-#~ msgid "Repeat Delay"
-#~ msgstr "Délai de répetition"
-
-#~ msgid "Repeat Rate"
-#~ msgstr "Vitesse de répetition"
-
-#~ msgid "Mouse"
-#~ msgstr "Souris"
-
-#~ msgid "Acceleration"
-#~ msgstr "Acceleration"
-
-#~ msgid "Threshold"
-#~ msgstr "Seuil"
-
-#~ msgid "Cancel"
-#~ msgstr "Abandon"

@@ -1,17 +1,21 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-16 22:08+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-11-17 13:02:08+0100\n"
-"From: didier Belot <dib@avo.fr>\n"
-"Xgettext-Options: -C -ktranslate -x ../../kdelibs/po/kde.pot\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
-"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
-"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"Project-Id-Version: kfind\n"
+"PO-Revision-Date: 1998-01-17 23:30 CET\n"
+"Last-Translator: didier Belot <dib@avo.fr>\n"
+"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; \n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
-msgstr "Répertoires:"
+msgstr "Répertoires :"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
@@ -108,11 +112,11 @@ msgstr "Enregistrer les résultats"
 
 #: kftabdlg.cpp:48
 msgid "&Named:"
-msgstr "&Rechercher:"
+msgstr "&Rechercher :"
 
 #: kftabdlg.cpp:51
 msgid "&Look in:"
-msgstr "Regarder &dans:"
+msgstr "Regarder &dans :"
 
 #: kftabdlg.cpp:54
 msgid "&Browse ..."
@@ -124,7 +128,7 @@ msgstr "Inclure les &sous-dossiers"
 
 #: kftabdlg.cpp:96
 msgid " Name& Location "
-msgstr " Nom & Emplacement"
+msgstr " Nom & Emplacement "
 
 #: kftabdlg.cpp:108
 msgid "and"
@@ -144,7 +148,7 @@ msgstr "&Tous les fichiers"
 
 #: kftabdlg.cpp:117
 msgid "Find all files created or &modified:"
-msgstr "Fichiers créés ou &modifiés:"
+msgstr "Fichiers créés ou &modifiés :"
 
 #: kftabdlg.cpp:118
 msgid "&between"
@@ -164,15 +168,15 @@ msgstr " Date de modification "
 
 #: kftabdlg.cpp:174
 msgid "Of &type:"
-msgstr " Du &type: "
+msgstr " Du &type :"
 
 #: kftabdlg.cpp:176
 msgid "&Containing Text:"
-msgstr "&Contenant: "
+msgstr "&Contenant :"
 
 #: kftabdlg.cpp:179
 msgid "&Size is:"
-msgstr "&La taille est:"
+msgstr "&La taille est :"
 
 #: kftabdlg.cpp:202
 msgid "All Files and Folders"
@@ -196,19 +200,19 @@ msgstr " Avancé "
 
 #: kftabdlg.cpp:389
 msgid "The date is not valid!!"
-msgstr "La date est incorrecte!!"
+msgstr "La date est incorrecte !!"
 
 #: kftabdlg.cpp:401
 msgid "The month(s) value isn't valid!!"
-msgstr "Le mois est incorrect!!"
+msgstr "Le mois est incorrect !!"
 
 #: kftabdlg.cpp:412
 msgid "The day(s) value isn't valid!!"
-msgstr "Le jour est incorrect!!"
+msgstr "Le jour est incorrect !!"
 
 #: kftabdlg.cpp:429
 msgid "The value in size isn't valid number!!"
-msgstr "La taille est un nombre incorrect!!"
+msgstr "La taille est un nombre incorrect !!"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
@@ -216,11 +220,11 @@ msgstr "Préférences"
 
 #: kfoptions.cpp:76
 msgid "File format:"
-msgstr "Format du fichier:"
+msgstr "Format du fichier :"
 
 #: kfoptions.cpp:78
 msgid "Save results to file:"
-msgstr "Enregistrer dans:"
+msgstr "Enregistrer dans :"
 
 #: kfoptions.cpp:81
 msgid "Save results to file ~/.kfind-results.html"
@@ -240,15 +244,15 @@ msgstr "Enregistrement"
 
 #: kfoptions.cpp:132
 msgid "Create Archive:"
-msgstr "Création de l'archive:"
+msgstr "Création de l'archive :"
 
 #: kfoptions.cpp:134
 msgid "Add to Archive:"
-msgstr "Ajoute à l'archive:"
+msgstr "Ajoute à l'archive :"
 
 #: kfoptions.cpp:138
 msgid "Patterns:"
-msgstr "Filtres:"
+msgstr "Filtres :"
 
 #: kfoptions.cpp:141
 msgid "Add New"
@@ -265,7 +269,7 @@ msgstr "%d fichier(s) trouvé(s)"
 
 #: kfwin.cpp:143
 msgid "It wasn't possible to save results!"
-msgstr "Impossible d'enregistrer les résultats!"
+msgstr "Impossible d'enregistrer les résultats !"
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
@@ -310,7 +314,7 @@ msgid ""
 " to delete this directory"
 msgstr ""
 "Vous n'avez pas de permission\n"
-" pour supprimer ce répertoire"
+" de supprimer ce répertoire"
 
 #: kfwin.cpp:239
 msgid ""
@@ -318,7 +322,7 @@ msgid ""
 "is not empty!"
 msgstr ""
 "Le répertoire spécifié\n"
-"n'est pas vide!"
+"n'est pas vide !"
 
 #: kfwin.cpp:244
 msgid ""
@@ -330,60 +334,8 @@ msgstr ""
 
 #: kfwin.cpp:336
 msgid "Couldn't recognize archive type!"
-msgstr "Type d'archive inconnu!"
+msgstr "Type d'archive inconnu !"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
-msgstr "Erreur en créant le processus enfant!"
-
-#~ msgid "&Delete"
-#~ msgstr "&Supprimer"
-
-#~ msgid "&Undo"
-#~ msgstr "Dé&faire"
-
-#~ msgid "&About"
-#~ msgstr "&A propos..."
-
-#~ msgid "Information"
-#~ msgstr "Information"
-
-#~ msgid "Delete"
-#~ msgstr "Supprimer"
-
-#~ msgid "Remove"
-#~ msgstr "Supprime"
-
-#~ msgid "Sorry"
-#~ msgstr "Désolé"
-
-#~ msgid "&Quit"
-#~ msgstr "&Quitter"
-
-#~ msgid "&Copy"
-#~ msgstr "Co&pier"
-
-#, fuzzy
-#~ msgid "&Edit"
-#~ msgstr "&Quitter"
-
-#~ msgid "&File"
-#~ msgstr "&Fichier"
-
-#~ msgid "&Help"
-#~ msgstr "&Aide"
-
-#~ msgid "&Options"
-#~ msgstr "&Options"
-
-#, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Aide"
-
-#, fuzzy
-#~ msgid "Open"
-#~ msgstr "&Ouvrir"
-
-#, fuzzy
-#~ msgid "Quit"
-#~ msgstr "&Quitter"
+msgstr "Erreur en créant le processus fils !"

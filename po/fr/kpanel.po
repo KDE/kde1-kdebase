@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-01-16 22:08+0100\n"
-"PO-Revision-Date: 1998-01-08 23:50 CET\n"
+"PO-Revision-Date: 1998-01-17 23:53 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgstr "Haut/Gauche"
 
 #: props.C:280
 msgid "Tiny Style"
-msgstr "Style minuscule"
+msgstr "Style petit"
 
 #: props.C:281
 msgid "Normal Style"
