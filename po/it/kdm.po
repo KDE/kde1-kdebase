@@ -1,0 +1,61 @@
+# File : kdm.po -- kde internationalization, italian translation.
+# Authors : Andrea Rizzi <bilibao@ouverture.it>,
+#           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
+#           Marco Spolaore <gemini@sctrade.it>.
+# v 0.1 -- 15/10/97
+ 
+msgid ""
+msgstr ""
+"Date: 1997-09-09 17:23:06+0200\n"
+"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+
+#: kdmshutdown.cpp:229 kgreeter.cpp:207
+msgid "Cancel"
+msgstr "Annulla"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Esci da kdm"
+
+#: kgreeter.cpp:201
+msgid "Go!"
+msgstr "Vai!"
+
+#: kgreeter.cpp:179
+msgid "Login failed!"
+msgstr "Login Fallito!"
+
+#: kgreeter.cpp:145
+msgid "Login:"
+msgstr "Nome utente (login):"
+
+#: kdmshutdown.cpp:226
+msgid "Ok"
+msgstr "Ok"
+
+#: kgreeter.cpp:150
+msgid "Password:"
+msgstr "Password:"
+
+#: kgreeter.cpp:185
+msgid "Session Type:"
+msgstr "Tipo di sessione"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Arresta Sistema"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Riavvia il Computer"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Vuoi spengere o riavviare il computer?"
+
+#: kgreeter.cpp:217
+msgid "Shutdown..."
+msgstr "Arresta sistema..."

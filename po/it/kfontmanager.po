@@ -1,0 +1,103 @@
+# File : kfontmanager.po -- kde internationalization, italian translation.
+# Authors : Andrea Rizzi <bilibao@ouverture.it>,
+#           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
+#           Marco Spolaore <gemini@sctrade.it>.
+# v 0.1 -- 15/10/97
+ 
+#: main.cpp:53
+msgid "KDE Font Manager"
+msgstr "KDE Caratteri e Codifiche"
+
+#: main.cpp:61
+msgid "KDE Fonts"
+msgstr "KDE Caratteri"
+
+#: main.cpp:62
+msgid "Font Explorer"
+msgstr "Esploratore di Caratteri"
+
+#: main.cpp:63
+msgid "Raw X11 Font List"
+msgstr "Lista dei caratteri X11"
+
+#: kfontmanager.cpp:61
+msgid "Available X11 Fonts"
+msgstr "Caratteri X11 Disponibili"
+
+#: kfontmanager.cpp:68
+msgid "Fonts made available to KDE"
+msgstr "Caratteri disponibili per KDE"
+
+#: kfontmanager.cpp:74
+msgid "Add"
+msgstr "Aggiungi"
+
+#: kfontmanager.cpp:77
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "KDE Caratteri e Codifiche Frase Esempio"
+
+#: kfontlist.cpp:65 kfontmanager.cpp:105
+msgid "About kfontmanager"
+msgstr "Info su kfontmanager"
+
+#: kfontmanager.cpp:105
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Versione 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+
+#: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
+msgid "Sorry"
+msgstr "Mi dispiace"
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"La variabile d'ambiente HOME\n"
+"non é impostata\n"
+
+
+#: kfontmanager.cpp:283
+msgid ""
+"Can not create:\n"
+" ~/.kde/config/kdefonts\n"
+msgstr ""
+"Impossibile creare:\n"
+" ~/.kde/config/kdefonts\n"
+
+#: kfontmanager.cpp:288
+msgid ""
+"~/.kde/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"la directory ~/.kde/config/kdefonts esiste ma\n"
+"non può essere scritta\n"
+"Impossibile salvare la lista di Caratteri utilizzata da KDE."
+
+
+#: kfontlist.cpp:65
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Versione 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+

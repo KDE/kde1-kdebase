@@ -1,0 +1,153 @@
+# File : kpanel.po -- kde internationalization, italian translation.
+# Authors : Andrea Rizzi <bilibao@ouverture.it>,
+#           Lucien Nocera <lnocera@limpet.cis.upenn.edu> and
+#           Marco Spolaore <gemini@sctrade.it>.
+# v 0.1 -- 15/10/97
+ 
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Menu Privato"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Aggiungi applicazione"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Aggiungi speciale"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Configura"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Configura pannello"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Riavvia"
+
+#: kpanel.C:188
+msgid "Restart panel"
+msgstr "Riavvia pannello"
+
+#: kpanel.C:189 props.C:327
+msgid "Panel"
+msgstr "Pannello"
+
+#: kpanel.C:191
+msgid "Lock Screen"
+msgstr "Blocca schermo"
+
+#: kpanel.C:193
+msgid "Lock panel"
+msgstr "Blocca Pannello"
+
+#: kpanel.C:194 kpanel.C:195
+msgid "Logout"
+msgstr "Fine Sessione"
+
+#: kpanel.C:203
+msgid "Move"
+msgstr "Muovi"
+
+#: kpanel.C:204
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: kpanel.C:206
+msgid "Properties"
+msgstr "Proprietá"
+
+#: kpanel.C:241
+msgid "System"
+msgstr "Sistema"
+
+#: kpanel.C:350
+msgid "No info available"
+msgstr "Nessuna info sul soggetto"
+
+#: kpanel.C:437 kpanel.C:453
+msgid "Destroy"
+msgstr "Distruggi"
+
+#: kpanel.C:440 kpanel.C:450
+msgid "(Un) Sticky"
+msgstr "(Non) &Attaccato"
+
+#: kpanel.C:441 kpanel.C:449
+msgid "(Un) Iconify"
+msgstr "(De) Iconifica"
+
+#: kpanel.C:442 kpanel.C:448
+msgid "(Un) Maximize"
+msgstr "(Non) In&grandito"
+
+#: kpanel.C:443 kpanel.C:447
+msgid "On this desktop"
+msgstr "Su questo desktop"
+
+#: props.C:264
+msgid "Location"
+msgstr "Indirizzo"
+
+#: props.C:284
+msgid "Taskbar"
+msgstr "Barra Task"
+
+#: props.C:285
+msgid "Hidden"
+msgstr "Nascosta"
+
+#: props.C:297
+msgid "Top/Left"
+msgstr "In alto a Sinistra"
+
+#: props.C:308
+msgid "Tiny Style"
+msgstr "Stile Piccolissimo"
+
+#: props.C:309
+msgid "Small Style"
+msgstr "Stile Piccolo"
+
+#: props.C:310
+msgid "Large Style"
+msgstr "Stile Largo"
+
+#: props.C:322
+msgid "Menu Tooltips"
+msgstr "Menu di aiuto"
+
+#: props.C:398
+msgid "Visible"
+msgstr "Visibile"
+
+#: props.C:405
+msgid "Width"
+msgstr "Larghezza"
+
+#: props.C:410
+msgid "Desktops"
+msgstr "Schermi"
+
+#: props.C:416
+msgid "KPanel Configuration"
+msgstr "Configurazione KPanel "
+
+#: tools.C:489
+msgid "No comment available"
+msgstr "Nessun commento disponibile"
+
+#: pmenu.C:252
+msgid "Sorry"
+msgstr "Mi dispiace"
+
+#: pmenu.C:253
+msgid ""
+"Could not communicate with nor\n"
+"start a new instance of KFM"
+msgstr ""
+"Impossibile comunicare con, o lanciare, KFM"
+
