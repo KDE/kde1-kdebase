@@ -904,7 +904,7 @@ void KfmView::pushURLToHistory()
     if ( stackLock )
 	return;
     
-    printf("pushing to stack\n");
+    // printf("pushing to stack\n");
     SavedPage *p = saveYourself();
     if(!p) return;
 
