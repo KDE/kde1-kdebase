@@ -4,6 +4,7 @@
 #include <qdict.h>
 #include <kurl.h>
 #include <qmsgbox.h>
+#include <qmessagebox.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,7 +20,6 @@
 #include "kiojob.h"
 #include "kbind.h"
 #include "kioslave/kio_errors.h"
-#include "kmsgwin.h"
 #include "krenamewin.h"
 #include "passworddialog.h"
 #include "config-kfm.h"
@@ -235,7 +235,7 @@ void KIOJob::link()
 	{
 	    QString tmp;
 	    ksprintf(&tmp, i18n("Malformed URL\n%s"), p);
-	    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
+	    QMessageBox::warning( 0L, i18n( "KFM Error" ), tmp );
 	    done();
 	    return;
 	}
@@ -243,14 +243,14 @@ void KIOJob::link()
 	{
 	    QString tmp;
 	    ksprintf(&tmp, i18n("Malformed URL\n%s"), p);
-	    QMessageBox::warning( 0, i18n( "KFM Error" ), tmp );
+	    QMessageBox::warning( 0L, i18n( "KFM Error" ), tmp );
 	    done();
 	    return;
 	}	
 	// I can only make links on the local file system.
 	else if ( strcmp( du.protocol(), "file" ) != 0L )
 	{
-	    QMessageBox::warning( 0, i18n( "KFM Error" ),
+	    QMessageBox::warning( 0L, i18n( "KFM Error" ),
 				  i18n("Can only make links on local file system") );
 	    done();
 	    return;
@@ -1132,33 +1132,6 @@ void KIOJob::msgResult2( QWidget * _win, int _button, const char *_src, const ch
     }
 }
 
-void KIOJob::msgResult( QWidget * _win, int _button )
-{
-    delete _win;
-    
-    switch( action )
-    {
-    case KIOJob::JOB_LIST:
-      done();
-      return;
-    case KIOJob::JOB_COPY:
-    case KIOJob::JOB_MKDIR:
-    case KIOJob::JOB_DELETE:
-    case KIOJob::JOB_MOVE:
-    case KIOJob::JOB_LINK:
-	if ( _button == 1 )
-	    slaveIsReady();
-	else if ( _button == 2 )
-	    done();
-	return;
-    case KIOJob::JOB_MOUNT:
-    case KIOJob::JOB_UNMOUNT:
-    case KIOJob::JOB_GET:
-	done();
-	break;
-    }
-}
-
 void KIOJob::fatalError( int _kioerror, const char* _error, int _errno )
 {
   // Assume we want to process this error
@@ -1176,7 +1149,9 @@ void KIOJob::fatalError( int _kioerror, const char* _error, int _errno )
 void KIOJob::processError( int _kioerror, const char* _error, int )
 {
     bProcessError = false;
-  
+    int retVal = -1;
+    bool okToContinue = TRUE;
+
     kioError = _kioerror;
     
     // TODO: Remove before final release
@@ -1191,273 +1166,169 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
       url = u.url().data();
     }
     
-    KMsgWin *m = 0L;
     KRenameWin *r = 0L;
     
-    QString msg;
+    QString msg = "";
 
     switch( action )
     {
-    case KIOJob::JOB_COPY:
     case KIOJob::JOB_LIST:
+    case KIOJob::JOB_COPY:
     case KIOJob::JOB_MKDIR:
     case KIOJob::JOB_DELETE:
     case KIOJob::JOB_MOVE:
     case KIOJob::JOB_LINK:
-	switch( _kioerror )
-	{
-	case KIO_ERROR_MalformedURL:
-	    ksprintf(&msg, i18n("Malformed URL\n%s"), url.data()); 
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotRead:
-	    ksprintf(&msg, i18n("Could not read\n%s\nFile does not exist or access denied"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotWrite:
-	    ksprintf(&msg, i18n("Could not write\n%s\nPerhaps access denied"),
-				url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotCreateSocket:
-	    ksprintf(&msg, i18n("Could not create Socket for\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_UnknownHost:
-	    ksprintf(&msg, i18n("Unknown host in\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotConnect:
-	    ksprintf(&msg, i18n("Could not connect to\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_NotImplemented:
-	    ksprintf(&msg, i18n("The requested action\n%s\nis not implemented yet."), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotMkdir:
-	    ksprintf(&msg, i18n("Could not make directory\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION,  
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotList:
-	    ksprintf(&msg,i18n("Could not list directory contents\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 // i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotDelete:
-	    ksprintf(&msg, i18n("Could not delete\n%s\nURL does not exist or permission denied"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"),
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotLogin:
-	    {
-		KURL u( _error );
-		ksprintf(&msg, i18n("Could not login for\n%s\nPerhaps wrong password"), u.host());
-		// Remove the password from the dict, since it seems to be wrong.
-		if ( u.user() != 0L && u.user()[0] != 0 && u.host() != 0L && u.host()[0] != 0 )
-		{
-		    QString tmp;
-		    ksprintf(&tmp, "%s@%s", u.user(), u.host());
-		    passwordDict->remove( tmp.data() );
-		}
-	    }
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"),
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_TarError:
-	    ksprintf(&msg, i18n("Tar reproted an error\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_GzipError:
-	    ksprintf(&msg, i18n("Gzip reproted an error for\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), msg.data(), 
-				 KMsgWin::EXCLAMATION, i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_FileExists:
-	    r = new KRenameWin( 0L, lastSource.data(), lastDest.data() );
-	    break;
-	case KIO_ERROR_FileDoesNotExist:
-	    ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	}	
+      switch( _kioerror ) {
+      case KIO_ERROR_MalformedURL:
+	ksprintf(&msg, i18n("Malformed URL\n%s"), url.data()); 
 	break;
+      case KIO_ERROR_CouldNotRead:
+	ksprintf(&msg, i18n("Could not read\n%s\nFile does not exist or access denied"), url.data());
+	break;
+      case KIO_ERROR_CouldNotWrite:
+	ksprintf(&msg, i18n("Could not write\n%s\nPerhaps access denied"),
+		 url.data());
+	break;
+      case KIO_ERROR_CouldNotCreateSocket:
+	ksprintf(&msg, i18n("Could not create Socket for\n%s"), url.data());
+	break;
+      case KIO_ERROR_UnknownHost:
+	ksprintf(&msg, i18n("Unknown host in\n%s"), url.data());
+	break;
+      case KIO_ERROR_CouldNotConnect:
+	ksprintf(&msg, i18n("Could not connect to\n%s"), url.data());
+	break;
+      case KIO_ERROR_NotImplemented:
+	ksprintf(&msg, i18n("The requested action\n%s\nis not implemented yet."), url.data());
+	break;
+      case KIO_ERROR_CouldNotMkdir:
+	ksprintf(&msg, i18n("Could not make directory\n%s"), url.data());
+	break;
+      case KIO_ERROR_CouldNotList:
+	ksprintf(&msg,i18n("Could not list directory contents\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotDelete:
+	ksprintf(&msg, i18n("Could not delete\n%s\nURL does not exist or permission denied"), url.data());
+	break;
+      case KIO_ERROR_CouldNotLogin: {
+	KURL u( _error );
+	ksprintf(&msg, i18n("Could not login for\n%s\nPerhaps wrong password"), u.host());
+	// Remove the password from the dict, since it seems to be wrong.
+	if ( u.user() != 0L && u.user()[0] != 0 && 
+	     u.host() != 0L && u.host()[0] != 0 ) {
+	  QString tmp;
+	  ksprintf(&tmp, "%s@%s", u.user(), u.host());
+	  passwordDict->remove( tmp.data() );
+	}
+	break;
+      }
+      case KIO_ERROR_TarError:
+	ksprintf(&msg, i18n("Tar reproted an error\n%s"), url.data());
+	break;
+      case KIO_ERROR_GzipError:
+	ksprintf(&msg, i18n("Gzip reproted an error for\n%s"), url.data());
+	break;
+      case KIO_ERROR_FileExists:
+	r = new KRenameWin( 0L, lastSource.data(), lastDest.data(), true );
+	break;
+      case KIO_ERROR_FileDoesNotExist:
+	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
+	break;
+      }
     case KIOJob::JOB_MOUNT:
     case KIOJob::JOB_UNMOUNT:
     case KIOJob::JOB_GET:
-	switch( _kioerror )
-	{
-	case KIO_ERROR_FileDoesNotExist:
-	    ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_MalformedURL:
-	    ksprintf(&msg,i18n("Malformed URL\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotRead:
-	    ksprintf(&msg,i18n("Could not read\n%s\nFile does not exist or access denied"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotCreateSocket:
-	    ksprintf(&msg,i18n("Could not create Socket for\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_UnknownHost:
-	    ksprintf(&msg,i18n("Unknown host in\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"),
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotConnect:
-	    ksprintf(&msg,i18n("Could not connect to\n%s"), url.data());;
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"),
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_NotImplemented:
-	    ksprintf(&msg,i18n("The requested action\n%s\nis not implemented yet."), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel" ));
-	    break;
-	case KIO_ERROR_CouldNotLogin:
-	    {
-		KURL u( _error );
-		ksprintf(&msg,i18n("Could not login for\n%s\nPerhaps wrong password"), u.host());
-		// Remove the password from the dict, since it seems to be wrong.
-		if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
-		{
-		    QString tmp;
-		    ksprintf(&tmp, "%s@%s", u.user(), u.host());
-		    passwordDict->remove( tmp.data() );
-		}
-	    }
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_TarError:
-	    ksprintf(&msg,i18n("Tar reproted an error\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_GzipError:
-	    ksprintf(&msg, i18n("Gzip reproted an error\n%s"), url.data());
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), 
-				 msg.data(), KMsgWin::EXCLAMATION, 
-				 i18n("Continue"), 
-				 i18n("Cancel") );
-	    break;
-	case KIO_ERROR_CouldNotMount:
-	    ksprintf(&msg, i18n("Could not mount\nError log:\n\n%s"),_error);
-	    if ( bDisplay )
-	    m = new KMsgWin( 0L, i18n("Error"), msg.data(), 
-			     KMsgWin::EXCLAMATION, i18n( "Close") );
-	    break;
-	case KIO_ERROR_CouldNotUnmount:
-	    ksprintf(&msg, i18n("Could not unmount\nError log:\n\n%s"), 
-		     _error);
-	    if ( bDisplay )
-		m = new KMsgWin( 0L, i18n("Error"), msg.data(), KMsgWin::EXCLAMATION, i18n("Close") );
-	    break;
-	}
+      switch( _kioerror ) {
+      case KIO_ERROR_FileDoesNotExist:
+	ksprintf(&msg,i18n("File %s\ndoes not exist"), url.data());
+	okToContinue = FALSE;
 	break;
+      case KIO_ERROR_MalformedURL:
+	ksprintf(&msg,i18n("Malformed URL\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotRead:
+	ksprintf(&msg,i18n("Could not read\n%s\nFile does not exist or access denied"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotCreateSocket:
+	ksprintf(&msg,i18n("Could not create Socket for\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_UnknownHost:
+	ksprintf(&msg,i18n("Unknown host in\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotConnect:
+	ksprintf(&msg,i18n("Could not connect to\n%s"), url.data());;
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_NotImplemented:
+	ksprintf(&msg,i18n("The requested action\n%s\nis not implemented yet."), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotLogin: {
+	KURL u( _error );
+	ksprintf(&msg,i18n("Could not login for\n%s\nPerhaps wrong password"), u.host());
+	// Remove the password from the dict, since it seems to be wrong.
+	if ( u.user() != 0L && u.user()[0] != 0 && 
+	     u.passwd() != 0L && u.passwd()[0] != 0 ) {
+	  QString tmp;
+	  ksprintf(&tmp, "%s@%s", u.user(), u.host());
+	  passwordDict->remove( tmp.data() );
+	}
+	okToContinue = FALSE;
+	break;
+      }
+      case KIO_ERROR_TarError:
+	ksprintf(&msg,i18n("Tar reported a fatal error\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_GzipError:
+	ksprintf(&msg, i18n("Gzip reported a fatal error\n%s"), url.data());
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotMount:
+	ksprintf(&msg, i18n("Could not mount\nError log:\n\n%s"),_error);
+	okToContinue = FALSE;
+	break;
+      case KIO_ERROR_CouldNotUnmount:
+	ksprintf(&msg, i18n("Could not unmount\nError log:\n\n%s"),_error);
+	okToContinue = FALSE;
+	break;
+      }
+    default:
+      debug("warning, case not handled in processError()\n");
+      break;
     }
-    
-    if ( m != 0L )
-    {
-	connect( m, SIGNAL( result( QWidget*, int ) ), this, SLOT( msgResult( QWidget*, int ) ) );
-	m->show();
+	
+    if (r != 0) { // the rename dialog should be executed
+      connect(r, SIGNAL(result(QWidget *, int, const char *,
+			       const char *)),
+	      this, SLOT(msgResult2(QWidget *, int, const char *,
+				    const char *)));
+      r->show(); // this is a modal window
+    } else { // the error dialog should be executed (modal).
+      if ( bDisplay )
+	if (okToContinue) {
+	  retVal = QMessageBox::warning(0L, i18n("KFM Error"),
+					msg.data(), i18n("Continue"),
+					i18n("Cancel"));
+	  if (retVal == 0)
+	    slaveIsReady();
+	  else if (retVal == 1)
+	    done();
+	} else {
+	  QMessageBox::warning(0L, i18n("KFM Error"),
+			       msg.data(), i18n("Cancel"));
+	  done();
+	}
     }
-    if ( r != 0L )
-    {
-	connect( r, SIGNAL( result( QWidget*, int, const char*, const char* ) ),
-		 this, SLOT( msgResult2( QWidget*, int, const char*, const char* ) ) );
-	r->show();
-    }
+
     if ( !msg.isEmpty() && r == 0L )
 	emit error( _kioerror, msg );
-    else if ( r == 0L )
+    else if ( r == 0L ) // some sort of error w/o a message?
 	emit error( _kioerror, "" );
 }
 

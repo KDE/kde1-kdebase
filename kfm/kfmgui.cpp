@@ -1224,7 +1224,7 @@ void KfmGui::slotOpenLocation( )
     if ( view->getActiveView()->getURL() )
 	url = view->getActiveView()->getURL();
     
-    DlgLineEntry l( klocale->translate("Open Location:"), url.data(), 
+    DlgLineEntry l( i18n("Open Location:"), url.data(), 
 		    this, true );
     int x = l.exec();
     if ( x )

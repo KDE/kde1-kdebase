@@ -16,6 +16,7 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
         : QDialog( parent, 0L, true )
 {
     setGeometry( x(), y(), 350, 100 );
+    setFocusPolicy(StrongFocus);
 
     QLabel *label = new QLabel( _text , this );
     label->setGeometry( 10, 10, 330, 15 );
@@ -44,6 +45,7 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     QPushButton *cancel;
     ok = new QPushButton( klocale->translate("OK"), this );
     ok->setGeometry( 10,70, 80,25 );
+    ok->setDefault(TRUE);
     connect( ok, SIGNAL(clicked()), SLOT(accept()) );
 
     clear = new QPushButton( klocale->translate("Clear"), this );
@@ -82,7 +84,8 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   haveApp = false;
   
   setGeometry( x(), y(), 370, 100 );
-  
+  setFocusPolicy(StrongFocus);
+
   label = new QLabel( _text , this );
   label->setGeometry( 10, 10, 350, 15 );
   
@@ -108,6 +111,7 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   
   ok = new QPushButton( klocale->translate("OK"), this );
   ok->setGeometry( 10,70, 80,25 );
+  ok->setDefault(TRUE);
   connect( ok, SIGNAL(clicked()), SLOT(slotOK()) );
   
   browse = new QPushButton( klocale->translate("&Browser"), this );

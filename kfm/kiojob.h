@@ -156,7 +156,7 @@ public slots:
      * has already been called.
      */ 
     void fatalError( int _kioerror, const char* _url, int _errno );
-    void msgResult( QWidget*, int );
+
     /**
      * Called if the user closes the rename dialog.
      * This dialog is shown if a file already exists but the user job tried to
