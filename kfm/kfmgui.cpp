@@ -1455,7 +1455,7 @@ void KfmGui::slotAnimatedLogoTimeout()
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
 {
-  // debug( "Adding waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
+    //debug( "Adding waiting: %p, %d", _w, waitingWidgetList.count() );
     if ( waitingWidgetList.findRef( _w ) != -1 )
 	return;
     waitingWidgetList.append( _w );
@@ -1468,6 +1468,9 @@ void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
 
 void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 {
+    if ( toolbarButtons == 0L ) // we might be in the destructor
+	return;
+
     waitingWidgetList.removeRef( _w );
     
     if ( waitingWidgetList.count() == 0 )
@@ -1478,7 +1481,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
-    //debug( "Removed waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
+    //debug( "Removed waiting: %p, %d", _w, waitingWidgetList.count() );
 }
 
 void KfmGui::slotTextSelected( KHTMLView *v, bool s )
@@ -2054,7 +2057,11 @@ KfmGui::~KfmGui()
     }
     
     if ( toolbarButtons )
+    {
 	delete toolbarButtons;
+	toolbarButtons = 0L;
+    }
+    
     if ( toolbarURL )
 	delete toolbarURL;
     if (menu)
