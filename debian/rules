@@ -50,16 +50,12 @@ binary-arch:	checkroot build
 	install -d debian/tmp/etc/menu-methods
 	cp debian/menu-method debian/tmp/etc/menu-methods/kde
 	install -d debian/tmp/etc/X11
-	cp debian/Xsession debian/tmp/etc/X11/Xsession.kde
-	rm -f debian/tmp/etc/X11/Xsession
-	ln -s Xsession.kde debian/tmp/etc/X11/Xsession
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.directory \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
 	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm \
-		debian/tmp/usr/X11R6/bin/kde debian/tmp/etc/menu-methods/kde \
-		debian/tmp/etc/X11/Xsession.kde
+		debian/tmp/usr/X11R6/bin/kde debian/tmp/etc/menu-methods/kde 
 	rm -f debian/tmp/usr/X11R6/bin/startkde
 	ln -s kde debian/tmp/usr/X11R6/bin/startkde
 	chown root.shadow debian/tmp/usr/X11R6/bin/*kss
