@@ -35,10 +35,12 @@
 #include <ktoolbar.h>
 #include <kiconloader.h>
 #include <kiconloaderdialog.h>
+#include <kwm.h>
 
 #include "kmenuedit.h"
 #include "kmenuedit.moc"
 #include "pmenu.h"
+#include "MenuNameDialog.h"
 
 extern KIconLoader *global_pix_loader;
 KStatusBar *global_status_bar;
@@ -63,6 +65,7 @@ KMenuEdit::KMenuEdit( const char *name )
   file->insertItem(klocale->translate("Quit"), qApp, SLOT(quit()), CTRL+Key_Q);
   //QPopupMenu *edit_menu = new QPopupMenu;
   QPopupMenu *options = new QPopupMenu;
+  options->insertItem(klocale->translate("Change Menuname"), this, SLOT(changeMenuName()) );
   options->insertItem(klocale->translate("Reload Filetypes"), this, SLOT(reloadFileTypes()) );
 
   menubar->insertItem( klocale->translate("File"), file );
@@ -150,6 +153,7 @@ KMenuEdit::KMenuEdit( const char *name )
   if( height < minimumSize().height() )
     height = minimumSize().height();
   resize(width, height);
+  KWM::setProperties(winId(), config->readEntry("WindowProperties")); 
   changes_to_save = FALSE;
 }
 
@@ -172,6 +176,7 @@ KMenuEdit::~KMenuEdit()
   config->writeEntry("Width", width());
   config->writeEntry("Height", height());
   config->writeEntry("ToolBarPos", (int) toolbar->barPos() );
+  config->writeEntry("WindowProperties", KWM::getProperties(winId()) );
   config->sync();
 }
 
@@ -202,7 +207,7 @@ void KMenuEdit::startHelp()
 void KMenuEdit::about()
 {
   QMessageBox::message( "About", \
-                        "Kmenuedit 0.2.1\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
+                        "Kmenuedit 0.2.2\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
 }
 
 void KMenuEdit::loadMenus()
@@ -221,6 +226,14 @@ void KMenuEdit::loadMenus()
   pers_menu_data->parse(dir);
   if( !pers_menu_data->count() )
     pers_menu_data->add(new PMenuItem(unix_com, "EMPTY"));
+  QFileInfo fi(dir_name + "/.directory");
+  if( fi.isReadable() )
+    {
+      KConfig kconfig(fi.absFilePath() );
+      kconfig.setGroup("KDE Desktop Entry");
+      pers_menu_name = kconfig.readEntry("Name");
+    }
+  // default menu
   dir_name = config->readEntry("Path");
   dir_name = dir_name.stripWhiteSpace();
   dir = dir_name;
@@ -230,6 +243,17 @@ void KMenuEdit::loadMenus()
   glob_menu_data->parse(dir);
   //if( !glob_menu_data->count() )
   //  glob_menu_data->add(new PMenuItem(unix_com, "EMPTY"));
+  fi.setFile(dir_name + "/.directory");
+  if( fi.isReadable() )
+    {
+      KConfig kconfig(fi.absFilePath() );
+      kconfig.setGroup("KDE Desktop Entry");
+      glob_menu_name = kconfig.readEntry("Name");
+    }
+  if( fi.isWritable() )
+    glob_menu_writable = TRUE;
+  else
+    glob_menu_writable = FALSE;
   QApplication::restoreOverrideCursor();
 }
 
@@ -246,31 +270,46 @@ void KMenuEdit::saveMenus()
   pers_menu_data->copyLnkFiles(dir);
   pers_menu_data->renameLnkFiles(dir);
   pers_menu_data->writeConfig(dir);
+  QFileInfo fi(dir_name + "/.directory");
+  if( fi.isWritable() )
+    {
+      KConfig kconfig(fi.absFilePath() );
+      kconfig.setGroup("KDE Desktop Entry");
+      kconfig.writeEntry("Name", pers_menu_name);
+    }
+  // default menu
   dir_name = config->readEntry("Path");
   dir_name = dir_name.stripWhiteSpace();
   dir.setPath(dir_name);
   glob_menu_data->copyLnkFiles(dir);
   glob_menu_data->renameLnkFiles(dir);
   glob_menu_data->writeConfig(dir);
+  fi.setFile(dir_name + "/.directory");
+  if( fi.isWritable() )
+    {
+      KConfig kconfig(fi.absFilePath() );
+      kconfig.setGroup("KDE Desktop Entry");
+      kconfig.writeEntry("Name", glob_menu_name);
+    }
   QApplication::restoreOverrideCursor();
+  KWM::sendKWMCommand("kpanel:restart");
   changes_to_save = FALSE;
 }
 
 void KMenuEdit::reload()
 {
-  int code = 1;
   if( changes_to_save )
     {
-      code = KMsgBox::yesNo(this, "Reload Menus", "Reloading the menus will discard all changes.\n"
-"Are you sure you want to reload ?" );
-    }
-  if( code == 1 )
-    {
-      loadMenus();
-      QPoint p( 5, 5 );
-      pers_menu_data->popupConfig( p, f_move, FALSE );
-      p.setX( QApplication::desktop()->width() / 2 );
-      glob_menu_data->popupConfig( p, f_move, FALSE );
+      if( QMessageBox::warning(this, "Reload Menus",
+			      "Reloading the menus will discard all changes.\n
+Are you sure you want to reload ?", "Yes", "No" ) == 0 )
+        {
+	  loadMenus();
+	  QPoint p( 5, 5 );
+	  pers_menu_data->popupConfig( p, f_move, FALSE );
+	  p.setX( QApplication::desktop()->width() / 2 );
+	  glob_menu_data->popupConfig( p, f_move, FALSE );
+	}
     }
 }
 
@@ -316,7 +355,7 @@ void KMenuEdit::reloadFileTypes()
 	  // kalle	  QTextStream st( (QIODevice *) &config);
 	  KConfig kconfig(fi->absFilePath());
 	  kconfig.setGroup("KDE Desktop Entry");
-	  kconfig.readEntry("WmCommand");
+	  //kconfig.readEntry("WmCommand");
 	  //debug("type = %s", (const char *) kconfig.readEntry("MimeType") );
 	  global_file_types->inSort( kconfig.readEntry("MimeType") );
 	  config.close();
@@ -327,5 +366,19 @@ void KMenuEdit::reloadFileTypes()
     }
 }
 
+void KMenuEdit::changeMenuName()
+{
+  MenuNameDialog *dialog = new MenuNameDialog(this);
 
-
+  dialog->setPersonal( pers_menu_name );
+  dialog->setDefault( glob_menu_name );
+  dialog->setDefaultEnabled( glob_menu_writable );
+  
+  if( dialog->exec() )
+    {
+      changes_to_save = TRUE;
+      pers_menu_name = dialog->getPersonal();
+      glob_menu_name = dialog->getDefault();
+    }
+  delete dialog;
+}

@@ -53,6 +53,7 @@ protected slots:
   void reload();
   void save();
   void reloadFileTypes();
+  void changeMenuName();
   
 protected:
   void loadMenus();
@@ -66,6 +67,9 @@ protected:
   QScrollBar      *scrolly;
   PMenu           *pers_menu_data;
   PMenu           *glob_menu_data;
+  QString          pers_menu_name;
+  QString          glob_menu_name;
+  bool             glob_menu_writable;
   QGridLayout     *top2bottom;
   KToolBar        *toolbar;
   KMenuBar        *menubar;

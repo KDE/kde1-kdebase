@@ -9,12 +9,15 @@ bin_PROGRAMS = kmenuedit
 kmenuedit_SOURCES = kmenuedit.cpp main.cpp pmenu.cpp \
 	cpopmenu.cpp confmenu.cpp button.cpp IconPathDialog.cpp \
 	IconPathDialogData.cpp DesktopPathDialog.cpp \
-	DesktopPathDialogData.cpp entrydialog.cpp
+	DesktopPathDialogData.cpp entrydialog.cpp \
+	MenuNameDialog.cpp MenuNameDialogData.cpp
 
 MOCS =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
 	button.moc IconPathDialog.moc IconPathDialogData.moc\
 	DesktopPathDialog.moc DesktopPathDialogData.moc\
-	entrydialog.moc
+	entrydialog.moc\
+	MenuNameDialog.moc MenuNameDialogData.moc
+
 DISTCLEANFILES = $(MOCS)
 
 kmenuedit.cpp:kmenuedit.moc
@@ -51,9 +54,17 @@ DesktopPathDialog.moc: DesktopPathDialog.h
 DesktopPathDialogData.moc: DesktopPathDialogData.h
 	$(MOC) DesktopPathDialogData.h -o DesktopPathDialogData.moc
 
-entrydialog.cpp:entrydialog.moc
+entrydialog.cpp: entrydialog.moc
 entrydialog.moc: entrydialog.h
 	$(MOC) entrydialog.h -o entrydialog.moc
+
+MenuNameDialog.cpp: MenuNameDialog.moc
+MenuNameDialog.moc: MenuNameDialog.h
+	$(MOC) MenuNameDialog.h -o MenuNameDialog.moc
+
+MenuNameDialogData.cpp: MenuNameDialogData.moc
+MenuNameDialogData.moc: MenuNameDialogData.h
+	$(MOC) MenuNameDialogData.h -o MenuNameDialogData.moc
 	
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)
