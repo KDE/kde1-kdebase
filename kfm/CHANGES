@@ -199,3 +199,7 @@
     but to change this, would mean to replace the const char* arguments with
     KURL arguments, I guess
 
+03/04/98 Bernd
+  - Introduced a bunch of configuration options: Colors, Fonts, Link Cursor
+  - I love it! :-)
+  
