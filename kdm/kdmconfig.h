@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:09 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Tue Jun 17 02:56:02 1997
-// Update Count     : 7
+// Last Modified On : Tue Sep  9 16:23:55 1997
+// Update Count     : 8
 // Status           : Unknown, Use with caution!
 // 
 
@@ -26,8 +26,6 @@
 #include <Kconfig.h>
 
 #include "kdmview.h"
-
-#define KDMRC "/config/kdmrc"
 
 class KDMConfig {
 public:

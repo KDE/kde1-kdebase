@@ -64,18 +64,7 @@ KDMConfig::getUsers( QString s, bool sorted = false)
      if( s.isNull()) {
 	  QString  nu = kc->readEntry( "NoUsers");
 	  QStrList no_users;
-	  semsplit( nu, no_users);
-	  //no_users.setAutoDelete( true);
-	  // get from kdmrc
-	  /*int i1 = 0, i2 = 0;
-	  while( ( i2 = nu.find( ';', i1)) != -1) {
-	       no_users.append( nu.mid(i1,i2-i1));
-	       i1 = i2 + 1;
-	  }
-	  if( i1 != (int)nu.length()) {
-	       no_users.append(nu.mid(i1,nu.length()));
-	  } */
-	  
+	  semsplit( nu, no_users);	  
 	  struct passwd *ps;
 	  for( ps = getpwent(); ps ; ps = getpwent()) {
 	       if( ps->pw_dir[0] != 0   &&
@@ -93,29 +82,6 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 	       }
 	  }
      } else {
-	  // get from kdmrc
-	  /*
-	  int i1 = 0, i2 = 0;
-	  while( ( i2 = s.find( ';', i1)) != -1) {
-	       QPixmap p( user_pix_dir + QString( s.mid(i1,i2-i1)) + ".xpm");
-	       if( p.isNull())
-		    p = default_pix;
-	       if( sorted) 
-		    result->inSort( new KDMViewItem( s.mid(i1,i2-i1), p));
-	       else
-		    result->append( new KDMViewItem( s.mid(i1,i2-i1), p));
-	       i1 = i2 + 1;
-	  }
-	  if( i1 != (int)s.length()) {
-	       QPixmap p( user_pix_dir + s.mid(i1,s.length()) + ".xpm");
-	       if( p.isNull())
-		    p = default_pix;
-	       if( sorted) 
-		    result->inSort( new KDMViewItem( s.mid(i1,s.length()),p));
-	       else
-		    result->append( new KDMViewItem( s.mid(i1,s.length()),p));
-	  }
-	  */
 	  QStrList sl;
 	  semsplit( s, sl);
 	  sl.setAutoDelete( true);
@@ -140,12 +106,6 @@ KDMConfig::getConfig()
      kc->setGroup( "KDM");
 
      // Read Entries
-     /*
-     _normalFont = new QFont( kc->readFontEntry( "StdFont", qApp->font()));
-     _failFont   = new QFont( kc->readFontEntry( "FailFont", _normalFont));
-     _greetFont  = new QFont( "times", 24, QFont::Black);
-     _greetFont  = new QFont( kc->readFontEntry( "GreetFont", _greetFont));
-     */
      QString normal_font = kc->readEntry( "StdFont");
      QString fail_font   = kc->readEntry( "FailFont");
      QString greet_font  = kc->readEntry( "GreetFont");

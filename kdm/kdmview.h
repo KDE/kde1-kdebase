@@ -6,8 +6,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:46:59 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Sep  4 17:05:46 1997
-// Update Count     : 7
+// Last Modified On : Tue Sep  9 18:32:26 1997
+// Update Count     : 8
 // Status           : Unknown, Use with caution!
 // 
 
@@ -73,7 +73,7 @@ signals:
 protected:
      void resizeEvent( QResizeEvent *);
      void mousePressEvent( QMouseEvent *);
-     void mouseDoubleClickEvent( QMouseEvent *); 
+     void mouseReleaseEvent( QMouseEvent *); 
      void focusInEvent( QFocusEvent *);
      void focusOutEvent( QFocusEvent *);
      void keyPressEvent( QKeyEvent *);

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Jul 10 03:22:48 1997
-// Update Count     : 54
+// Last Modified On : Tue Sep  9 18:53:27 1997
+// Update Count     : 57
 // Status           : Unknown, Use with caution!
 // 
 
@@ -55,13 +55,13 @@ struct verify_info      *verify;
 struct greet_info       *greet;
 
 
-class MyApp:public QApplication {
+class MyApp:public KApplication {
 public:
   MyApp( int &argc, char **argv );
   virtual bool x11EventFilter( XEvent * );
 };
 
-MyApp::MyApp(int &argc, char **argv ):QApplication(argc, argv){
+MyApp::MyApp(int &argc, char **argv ):KApplication(argc, argv){
 }
 
 bool 
@@ -142,12 +142,12 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      pixLabel->setFixedSize( pixmap.width(), pixmap.height());
      //pixLabel->setFrameStyle( QFrame::Panel| QFrame::Sunken);
      
-     loginLabel = new QLabel( "Login:", this);
+     loginLabel = new QLabel( klocale->translate("Login:"), this);
      set_min( loginLabel);
      loginEdit = new QLineEdit( this);
      loginEdit->setFocus();
 
-     passwdLabel = new QLabel( "Password:", this);
+     passwdLabel = new QLabel( klocale->translate("Password:"), this);
      set_min( passwdLabel);
      passwdEdit = new QLineEdit( this);
      //passwdEdit->setEchoMode( QLineEdit::Password);
@@ -176,13 +176,14 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      grid->addMultiCellWidget( sepFrame, 2, 2, 0, 1);
      grid->setColStretch( 1, 4);
 
-     failedLabel = new QLabel( "Login failed!", this);
+     failedLabel = new QLabel( klocale->translate("Login failed!"), this);
      failedLabel->setFont( *kdmcfg->failFont());
      set_min( failedLabel);
      failedLabel->hide();
      hbox2->addWidget( failedLabel);
 
-     QLabel* sessionargLabel = new QLabel( "Session Type:", this);
+     QLabel* sessionargLabel = new QLabel(klocale->translate("Session Type:"),
+					  this);
      set_min( sessionargLabel);
      sessionargLabel->setAlignment( AlignRight|AlignVCenter);
      hbox2->addWidget( sessionargLabel);
@@ -197,13 +198,13 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      set_fixed( sessionargBox);
      hbox2->addWidget( sessionargBox);
 
-     goButton = new QPushButton( "Go!", this);
+     goButton = new QPushButton( klocale->translate("Go!"), this);
      connect( goButton, SIGNAL( clicked()), SLOT(go_button_clicked()));
      //goButton->setDefault( true);
      set_fixed( goButton);
      hbox2->addWidget( goButton, AlignBottom);
 
-     cancelButton = new QPushButton( "Cancel", this);
+     cancelButton = new QPushButton( klocale->translate("Cancel"), this);
      connect( cancelButton, SIGNAL(clicked()), SLOT(cancel_button_clicked()));
      set_fixed( cancelButton);
      hbox2->addWidget( cancelButton, AlignBottom);
@@ -213,7 +214,8 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      if( kdmcfg->shutdownButton() != KDMConfig::KNone 
 	 && ( kdmcfg->shutdownButton() != KDMConfig::ConsoleOnly 
 	 || d->displayType.location == Local)) {
-	  shutdownButton = new QPushButton( "Shutdown...", this);
+	  shutdownButton = new QPushButton( klocale->translate("Shutdown..."),
+					    this);
 	  connect( shutdownButton, SIGNAL(clicked()), 
 		   SLOT(shutdown_button_clicked()));
 	  set_fixed( shutdownButton);
@@ -407,8 +409,9 @@ GreetUser(
      int argc = 4;
      char* argv[5] = {"kdm", "-display", NULL, NULL, NULL};
      argv[2] = d->name;
-     
      MyApp myapp( argc, argv );
+     printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
+	    klocale->language().data(), kapp->appName().data());
      QApplication::setOverrideCursor( waitCursor );
      // Test new option "-kdedir"
      extern char* optionKdedir;

@@ -12,7 +12,7 @@
 #endif
 
 #define DEF_XDM_CONFIG XDMDIR##"/xdm-config"
-#define DEF_AUTH_DIR XDMDIR##"/authDir"
+#define DEF_AUTH_DIR XDMDIR##"/authdir"
 
 /* Authorization stuff */
 /* How do we check for HASXDMAUTH? Use Imake ?? */
@@ -30,7 +30,9 @@
 # endif
 #endif
 
+/* KDE stuff */
 #define KDMLOGO "/share/apps/kdm/pics/kdelogo.xpm"
+#define KDMRC "/share/config/kdmrc"
 
 #ifdef __cplusplus
 extern "C" {

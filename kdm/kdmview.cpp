@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:45:44 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Sep  4 17:06:00 1997
-// Update Count     : 65
+// Last Modified On : Tue Sep  9 18:38:50 1997
+// Update Count     : 68
 // Status           : Unknown, Use with caution!
 // 
 
@@ -313,7 +313,7 @@ KDMView::mousePressEvent( QMouseEvent *e )
 }
 
 void
-KDMView::mouseDoubleClickEvent( QMouseEvent * )
+KDMView::mouseReleaseEvent( QMouseEvent * )
 {
      if ( currentItem() >= 0 ) {
 	  emit selected( currentItem());
