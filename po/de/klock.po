@@ -894,5 +894,3 @@ msgstr ""
 #~ "\n"
 #~ "geschrieben von Rene Beutler 1998\n"
 #~ "rbeutler@g26.ethz.ch"
-
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-06-21 00:52+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
@@ -14,83 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: krootwm.C:135 krootwm.C:729
+#: krootwm.C:208 krootwm.C:252
+msgid "Execute command"
+msgstr "Izvr¹i ukaz"
+
+#: krootwm.C:210 krootwm.C:260
+msgid "Lock screen"
+msgstr "Zakleni zaslon"
+
+#: krootwm.C:211 krootwm.C:261
+msgid "Logout"
+msgstr "Izhod"
+
+#: krootwm.C:219 krootwm.C:254
+msgid "Refresh desktop"
+msgstr "Osve¾i namizje"
+
+#: krootwm.C:220 krootwm.C:256
+msgid "Unclutter windows"
+msgstr "Uredi okna"
+
+#: krootwm.C:221 krootwm.C:257
+msgid "Cascade windows"
+msgstr "Stopnièasto uredi okna"
+
+#: krootwm.C:222 krootwm.C:258
+msgid "Arrange icons"
+msgstr "Uredi ikone"
+
+#: krootwm.C:223 krootwm.C:253
+msgid "Display properties"
+msgstr "Lastnosti prikaza"
+
+#: krootwm.C:231 krootwm.C:251
+msgid "Help on desktop"
+msgstr "Pomoè za namizje"
+
+#: krootwm.C:232
+msgid "About KDE..."
+msgstr ""
+
+#: krootwm.C:247 krootwm.C:274 krootwm.C:739 krootwm.C:747
+msgid "New"
+msgstr ""
+
+#: krootwm.C:248 krootwm.C:275
+msgid "Bookmarks"
+msgstr ""
+
+#: krootwm.C:276
+msgid "Desk"
+msgstr ""
+
+#: krootwm.C:277
+msgid "Windows"
+msgstr ""
+
+#: krootwm.C:325
+msgid "Edit Bookmarks"
+msgstr ""
+
+#: krootwm.C:339 krootwm.C:749
 msgid "Folder"
 msgstr "Imenik"
 
-#: krootwm.C:165
+#: krootwm.C:343
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Napaka: Predloga ne obstaja '%s'"
 
-#: krootwm.C:234 krootwm.C:278
-msgid "Execute command"
-msgstr "Izvr¹i ukaz"
-
-#: krootwm.C:236 krootwm.C:286
-msgid "Lock screen"
-msgstr "Zakleni zaslon"
-
-#: krootwm.C:237 krootwm.C:287
-msgid "Logout"
-msgstr "Izhod"
-
-#: krootwm.C:245 krootwm.C:280
-msgid "Refresh desktop"
-msgstr "Osve¾i namizje"
-
-#: krootwm.C:246 krootwm.C:282
-msgid "Unclutter windows"
-msgstr "Uredi okna"
-
-#: krootwm.C:247 krootwm.C:283
-msgid "Cascade windows"
-msgstr "Stopnièasto uredi okna"
-
-#: krootwm.C:248 krootwm.C:284
-msgid "Arrange icons"
-msgstr "Uredi ikone"
-
-#: krootwm.C:249 krootwm.C:279
-msgid "Display properties"
-msgstr "Lastnosti prikaza"
-
-#: krootwm.C:257 krootwm.C:277
-msgid "Help on desktop"
-msgstr "Pomoè za namizje"
-
-#: krootwm.C:258
-msgid "About KDE..."
-msgstr ""
-
-#: krootwm.C:273 krootwm.C:300 krootwm.C:719 krootwm.C:727
-msgid "New"
-msgstr ""
-
-#: krootwm.C:274 krootwm.C:301
-msgid "Bookmarks"
-msgstr ""
-
-#: krootwm.C:302
-msgid "Desk"
-msgstr ""
-
-#: krootwm.C:303
-msgid "Windows"
-msgstr ""
-
-#: krootwm.C:339
-msgid "Edit Bookmarks"
-msgstr ""
-
-#: krootwm.C:750
+#: krootwm.C:770
 msgid "Could not create folder"
 msgstr "Ni mi uspelo ustvariti imenika"
 
-#: krootwm.C:815
+#: krootwm.C:835
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Avtorske pravice (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:819
+#: krootwm.C:839
 msgid "Usage:"
 msgstr "Uporaba:"

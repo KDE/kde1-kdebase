@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-10 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -53,19 +53,15 @@ msgstr "Домашняя директория"
 msgid "End"
 msgstr "Конец"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Текущая схема"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "Умолчания KDE"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "Облегченная KDE"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "Схема клавиш"
 
@@ -217,3 +213,6 @@ msgstr "Переключиться на рабочий стол вверх"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Переключиться на рабочий стол вниз"
+
+#~ msgid "KDE lite"
+#~ msgstr "Облегченная KDE"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-12 20:00+0200\n"
 "Last-Translator: Montel laurent <montell@club-internet.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,19 +54,15 @@ msgstr ""
 msgid "End"
 msgstr "Fin"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr ""
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr ""
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr ""
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "&Raccourci clavier"
 

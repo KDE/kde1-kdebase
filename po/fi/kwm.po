@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KWM\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,15 +107,15 @@ msgstr "Kahdeksan"
 msgid "Unnamed Desktop"
 msgstr "Nimeämätön työpöytä"
 
-#: main.C:1018
+#: main.C:1029
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: ShapeMode poistettu\n"
 
-#: main.C:1130
+#: main.C:1141
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: GimmickMode poistettu\n"
 
-#: main.C:1455
+#: main.C:1466
 msgid "*** No Tasks ***"
 msgstr "*** Ei töitä ***"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,54 +132,54 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
-#: pfilemenu.C:415
+#: pfilemenu.C:416
 msgid "(empty folder)"
 msgstr ""
 
-#: pfilemenu.C:470
+#: pfilemenu.C:471
 msgid "Open Folder"
 msgstr ""
 
-#: pfilemenu.C:481
+#: pfilemenu.C:482
 msgid "(Too Many Files)"
 msgstr ""
 
-#: pfilemenu.C:490
+#: pfilemenu.C:491
 msgid "(Access Denied)"
 msgstr ""
 
-#: pfilemenu.C:493
+#: pfilemenu.C:494
 msgid "(Unreadable)"
 msgstr ""
 
-#: pfilemenu.C:742
+#: pfilemenu.C:743
 msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:744
+#: pfilemenu.C:745
 msgid "Entries shared among all users"
 msgstr ""
 
-#: pfilemenu.C:763
+#: pfilemenu.C:764
 msgid "Personal:"
 msgstr ""
 
-#: pfilemenu.C:765
+#: pfilemenu.C:766
 msgid "Personal entries"
 msgstr ""
 
-#: pfilemenu.C:783
+#: pfilemenu.C:784
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:785
+#: pfilemenu.C:786
 msgid "Recent entries"
 msgstr ""
 
-#: pfilemenu.C:831
+#: pfilemenu.C:832
 msgid "Options..."
 msgstr ""
 
-#: pfilemenu.C:833
+#: pfilemenu.C:834
 msgid "Customize Disk Navigator"
 msgstr ""

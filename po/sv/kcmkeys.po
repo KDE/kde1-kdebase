@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-12 18:46+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -54,19 +54,15 @@ msgstr "Hem"
 msgid "End"
 msgstr "Slut"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Nuvarande bindningar"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "Kde standard"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "Kde lätt"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "&Tangentbindningar"
 
@@ -219,3 +215,6 @@ msgstr "Byt till skrivbordet närmast uppåt"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Byt till skrivbordet närmast nedåt"
+
+#~ msgid "KDE lite"
+#~ msgstr "Kde lätt"

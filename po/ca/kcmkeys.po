@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-05 16:06+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -53,19 +53,15 @@ msgstr "Llar"
 msgid "End"
 msgstr "Fi"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "KDE per omissió"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE lleuger"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "Esquema de &tecla"
 
@@ -218,3 +214,6 @@ msgstr "Canvia a l'escriptori de dalt"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Canvia a l'escriptori de baix"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE lleuger"

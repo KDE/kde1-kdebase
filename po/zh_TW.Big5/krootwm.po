@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-04-20 23:05+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,83 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:135 krootwm.C:729
+#: krootwm.C:208 krootwm.C:252
+msgid "Execute command"
+msgstr "執行命令"
+
+#: krootwm.C:210 krootwm.C:260
+msgid "Lock screen"
+msgstr "鎖住螢幕"
+
+#: krootwm.C:211 krootwm.C:261
+msgid "Logout"
+msgstr "離線"
+
+#: krootwm.C:219 krootwm.C:254
+msgid "Refresh desktop"
+msgstr "重繪桌面"
+
+#: krootwm.C:220 krootwm.C:256
+msgid "Unclutter windows"
+msgstr "排列視窗"
+
+#: krootwm.C:221 krootwm.C:257
+msgid "Cascade windows"
+msgstr "重疊視窗"
+
+#: krootwm.C:222 krootwm.C:258
+msgid "Arrange icons"
+msgstr "安排圖示"
+
+#: krootwm.C:223 krootwm.C:253
+msgid "Display properties"
+msgstr "顯示器內容"
+
+#: krootwm.C:231 krootwm.C:251
+msgid "Help on desktop"
+msgstr "桌面的求助"
+
+#: krootwm.C:232
+msgid "About KDE..."
+msgstr ""
+
+#: krootwm.C:247 krootwm.C:274 krootwm.C:739 krootwm.C:747
+msgid "New"
+msgstr ""
+
+#: krootwm.C:248 krootwm.C:275
+msgid "Bookmarks"
+msgstr ""
+
+#: krootwm.C:276
+msgid "Desk"
+msgstr ""
+
+#: krootwm.C:277
+msgid "Windows"
+msgstr ""
+
+#: krootwm.C:325
+msgid "Edit Bookmarks"
+msgstr ""
+
+#: krootwm.C:339 krootwm.C:749
 msgid "Folder"
 msgstr "資料夾"
 
-#: krootwm.C:165
+#: krootwm.C:343
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "錯誤: 樣板不存在 '%s'"
 
-#: krootwm.C:234 krootwm.C:278
-msgid "Execute command"
-msgstr "執行命令"
-
-#: krootwm.C:236 krootwm.C:286
-msgid "Lock screen"
-msgstr "鎖住螢幕"
-
-#: krootwm.C:237 krootwm.C:287
-msgid "Logout"
-msgstr "離線"
-
-#: krootwm.C:245 krootwm.C:280
-msgid "Refresh desktop"
-msgstr "重繪桌面"
-
-#: krootwm.C:246 krootwm.C:282
-msgid "Unclutter windows"
-msgstr "排列視窗"
-
-#: krootwm.C:247 krootwm.C:283
-msgid "Cascade windows"
-msgstr "重疊視窗"
-
-#: krootwm.C:248 krootwm.C:284
-msgid "Arrange icons"
-msgstr "安排圖示"
-
-#: krootwm.C:249 krootwm.C:279
-msgid "Display properties"
-msgstr "顯示器內容"
-
-#: krootwm.C:257 krootwm.C:277
-msgid "Help on desktop"
-msgstr "桌面的求助"
-
-#: krootwm.C:258
-msgid "About KDE..."
-msgstr ""
-
-#: krootwm.C:273 krootwm.C:300 krootwm.C:719 krootwm.C:727
-msgid "New"
-msgstr ""
-
-#: krootwm.C:274 krootwm.C:301
-msgid "Bookmarks"
-msgstr ""
-
-#: krootwm.C:302
-msgid "Desk"
-msgstr ""
-
-#: krootwm.C:303
-msgid "Windows"
-msgstr ""
-
-#: krootwm.C:339
-msgid "Edit Bookmarks"
-msgstr ""
-
-#: krootwm.C:750
+#: krootwm.C:770
 msgid "Could not create folder"
 msgstr "無法建立資料夾"
 
-#: krootwm.C:815
+#: krootwm.C:835
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:819
+#: krootwm.C:839
 msgid "Usage:"
 msgstr "用法:"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-10 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -133,54 +133,54 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Невозможно поместить это как кнопку на панель!"
 
-#: pfilemenu.C:415
+#: pfilemenu.C:416
 msgid "(empty folder)"
 msgstr "(пустая папка)"
 
-#: pfilemenu.C:470
+#: pfilemenu.C:471
 msgid "Open Folder"
 msgstr "Открыть папку"
 
-#: pfilemenu.C:481
+#: pfilemenu.C:482
 msgid "(Too Many Files)"
 msgstr "(Слишком много файлов)"
 
-#: pfilemenu.C:490
+#: pfilemenu.C:491
 msgid "(Access Denied)"
 msgstr "(Доступ запрещен)"
 
-#: pfilemenu.C:493
+#: pfilemenu.C:494
 msgid "(Unreadable)"
 msgstr "(Нечитабельный)"
 
-#: pfilemenu.C:742
+#: pfilemenu.C:743
 msgid "Shared:"
 msgstr "Общие:"
 
-#: pfilemenu.C:744
+#: pfilemenu.C:745
 msgid "Entries shared among all users"
 msgstr "Элементы используемые всеми пользователями"
 
-#: pfilemenu.C:763
+#: pfilemenu.C:764
 msgid "Personal:"
 msgstr "Личные:"
 
-#: pfilemenu.C:765
+#: pfilemenu.C:766
 msgid "Personal entries"
 msgstr "Личные элементы"
 
-#: pfilemenu.C:783
+#: pfilemenu.C:784
 msgid "Recent:"
 msgstr "Недавние:"
 
-#: pfilemenu.C:785
+#: pfilemenu.C:786
 msgid "Recent entries"
 msgstr "Недавние элементы"
 
-#: pfilemenu.C:831
+#: pfilemenu.C:832
 msgid "Options..."
 msgstr "Опции..."
 
-#: pfilemenu.C:833
+#: pfilemenu.C:834
 msgid "Customize Disk Navigator"
 msgstr "Настроить исследователь диска"

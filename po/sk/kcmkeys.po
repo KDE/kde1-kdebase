@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKEYS\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-10-20 20:00+0001\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -53,19 +53,15 @@ msgstr "Domov"
 msgid "End"
 msgstr "Koniec"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Súèasná schéma"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "KDE ¹tandardná"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE lite"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "Schéma &kláves"
 
@@ -218,3 +214,6 @@ msgstr "Prepnú» o jednu plochu hore"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Prepnú» o jednu plochu dole"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE lite"

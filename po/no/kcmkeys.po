@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-09-10 15:15+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -53,19 +53,15 @@ msgstr "Home"
 msgid "End"
 msgstr "End"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Gjeldende valg"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "KDE standard"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE enkel"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "&Tastvalg"
 
@@ -217,3 +213,6 @@ msgstr "Bytt ett skrivebord opp"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Bytt ett skrivebord ned"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE enkel"

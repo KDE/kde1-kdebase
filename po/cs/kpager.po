@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
-"POT-Creation-Date: 1998-11-27 18:11+0100\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
 "PO-Revision-Date: 1998-10-24 20:30 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -23,39 +23,61 @@ msgstr "Skrýt &globální pracovní plochu"
 msgid "Toggle Menubar"
 msgstr "Skrýt &menu"
 
-#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr ""
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr ""
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
 msgstr "Skrýt &globální pracovní plochu"
 
-#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
 msgstr "Zobrazit &globální pracovní plochu"
 
-#: kpager.cpp:91 kpager.cpp:331
+#: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
 msgstr "Skrýt &menu"
 
-#: kpager.cpp:95 kpager.cpp:337
+#: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
 msgstr ""
 
-#: kpager.cpp:101 kpager.cpp:344
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr ""
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+#, fuzzy
+msgid "Hide Desktop &Names"
+msgstr "Skrýt &globální pracovní plochu"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+#, fuzzy
+msgid "Show Desktop &Names"
+msgstr "Zobrazit &globální pracovní plochu"
+
+#: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
 msgstr "Prostý"
 
-#: kpager.cpp:104 kpager.cpp:346
+#: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
 msgstr "Ikona"
 
-#: kpager.cpp:107 kpager.cpp:348
+#: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
 msgstr "Pixmapa"
 
-#: kpager.cpp:111 kpager.cpp:354
+#: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
 msgstr "Mód vykreslování"
 
-#: kpager.cpp:115
+#: kpager.cpp:129
 #, c-format
 msgid ""
 "%s\n"
@@ -82,29 +104,33 @@ msgstr ""
 "souboru COPYING. Toto je volný software a mù¾ete jej podle urèitých\n"
 "pravidel redistribuovat.\n"
 
-#: kpager.cpp:333
+#: kpager.cpp:382
 #, fuzzy
 msgid "Show &Menubar"
 msgstr "Skrýt &menu"
 
-#: kpager.cpp:388
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr ""
+
+#: kpager.cpp:446
 msgid "&Maximize"
 msgstr ""
 
-#: kpager.cpp:389
+#: kpager.cpp:447
 #, fuzzy
 msgid "&Iconify"
 msgstr "Ikona"
 
-#: kpager.cpp:391
+#: kpager.cpp:449
 msgid "&UnSticky"
 msgstr ""
 
-#: kpager.cpp:393
+#: kpager.cpp:451
 msgid "&Sticky"
 msgstr ""
 
-#: kpager.cpp:395
+#: kpager.cpp:453
 #, fuzzy
 msgid "&To Desktop"
 msgstr "Skrýt &globální pracovní plochu"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-11-27 23:13+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -47,19 +47,15 @@ msgstr "Pos1"
 msgid "End"
 msgstr "Fin"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "KDE por defecto"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE lite"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "Esquema de teclado"
 
@@ -201,3 +197,6 @@ msgstr "Cambiar al escritorio de arriba"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Cambiar al escritorio de abajo"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE lite"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,175 +14,175 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:199
+#: kfmgui.cpp:200
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:222
+#: kfmgui.cpp:223
 msgid "&Move to Trash"
 msgstr "Siirrä &roskakoriin"
 
-#: kfmgui.cpp:229
+#: kfmgui.cpp:230
 msgid "&Select"
 msgstr "&Valitse"
 
-#: kfmgui.cpp:231
+#: kfmgui.cpp:232
 msgid "Select &all"
 msgstr "Valitse &kaikki"
 
-#: kfmgui.cpp:234
+#: kfmgui.cpp:235
 msgid "&Find in page..."
 msgstr "&Etsi sivulta..."
 
-#: kfmgui.cpp:236
+#: kfmgui.cpp:237
 msgid "Find &next"
 msgstr "Etsi &seuraava"
 
-#: kfmgui.cpp:239
+#: kfmgui.cpp:240
 #, fuzzy
 msgid "Mime &Types"
 msgstr "MIME-tyypit"
 
-#: kfmgui.cpp:241
+#: kfmgui.cpp:242
 #, fuzzy
 msgid "App&lications"
 msgstr "Sovellukset"
 
-#: kfmgui.cpp:247
+#: kfmgui.cpp:248
 msgid "Global Mime Types"
 msgstr "Globaalit MIME-tyypit"
 
-#: kfmgui.cpp:249
+#: kfmgui.cpp:250
 msgid "Global Applications"
 msgstr "Globaalit sovellukset"
 
-#: kfmgui.cpp:256
+#: kfmgui.cpp:257
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "Näytä &pistealkuiset tiedostot"
 
-#: kfmgui.cpp:258
+#: kfmgui.cpp:259
 msgid "Show Tr&ee"
 msgstr "Näytä p&uu"
 
-#: kfmgui.cpp:260
+#: kfmgui.cpp:261
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:262
+#: kfmgui.cpp:263
 msgid "&HTML View"
 msgstr "Näytä &HTML"
 
-#: kfmgui.cpp:265
+#: kfmgui.cpp:266
 msgid "&Icon View"
 msgstr "Näytä &Kuvakkeet"
 
-#: kfmgui.cpp:267
+#: kfmgui.cpp:268
 msgid "&Text View"
 msgstr "&Tekstinäkymä"
 
-#: kfmgui.cpp:269
+#: kfmgui.cpp:270
 msgid "&Long View"
 msgstr "&Pitkä näkymä"
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:272
 msgid "&Short View"
 msgstr "L&yhyt näkymä"
 
-#: kfmgui.cpp:277
+#: kfmgui.cpp:278
 msgid "Rel&oad Tree"
 msgstr "Lataa puu uu&delleen"
 
-#: kfmgui.cpp:279
+#: kfmgui.cpp:280
 msgid "&Reload Document"
 msgstr "Lataa si&vu uudelleen"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:282
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Lataa &sidokset uudelleen"
 
-#: kfmgui.cpp:284
+#: kfmgui.cpp:285
 msgid "&View Frame Source"
 msgstr "Näytä keh&yksen lähdekoodi"
 
-#: kfmgui.cpp:286
+#: kfmgui.cpp:287
 msgid "View Docu&ment Source"
 msgstr "Näytä sivun &lähdekoodi"
 
-#: kfmgui.cpp:294
+#: kfmgui.cpp:295
 msgid "Auto"
 msgstr "Auto"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:303
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "&Dokumentin koodaus"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:318
 msgid "Show History"
 msgstr "Näytä historia"
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:320
 msgid "Show Cache"
 msgstr "Näytä välimuisti"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:322
 msgid "Clear Cache"
 msgstr "Tyhjennä välimuisti"
 
-#: kfmgui.cpp:324
+#: kfmgui.cpp:325
 msgid "Always look in cache"
 msgstr "Etsi aina välimuistista"
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:327
 msgid "Never look in cache"
 msgstr "Älä etsi välimuistista"
 
-#: kfmgui.cpp:328
+#: kfmgui.cpp:329
 msgid "Always save cache"
 msgstr "Tallenna aina välimuistiin"
 
-#: kfmgui.cpp:330
+#: kfmgui.cpp:331
 msgid "Never save cache"
 msgstr "Älä tallenna välimuistiin"
 
-#: kfmgui.cpp:341
+#: kfmgui.cpp:342
 msgid "Show &Menubar"
 msgstr "Näytä &valikot"
 
-#: kfmgui.cpp:343
+#: kfmgui.cpp:344
 msgid "Show &Statusbar"
 msgstr "Näytä &tilarivi"
 
-#: kfmgui.cpp:345
+#: kfmgui.cpp:346
 msgid "Show &Toolbar"
 msgstr "Näytä &painikepalkki"
 
-#: kfmgui.cpp:347
+#: kfmgui.cpp:348
 msgid "Show &Location bar"
 msgstr "Näytä &sijainti"
 
-#: kfmgui.cpp:350
+#: kfmgui.cpp:351
 msgid "Sa&ve Settings"
 msgstr "Tallenna &asetukset"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:353
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "Tallenna asetukset URL:iin"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:360
 #, fuzzy
 msgid "&Configure File Manager..."
 msgstr "Selaimen asetukset ..."
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:362
 #, fuzzy
 msgid "Configure &Browser..."
 msgstr "Selaimen asetukset ..."
 
-#: kfmgui.cpp:397
+#: kfmgui.cpp:398
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -208,31 +208,31 @@ msgstr ""
 "Virheraportit ja virheidenkorjaukset David Faurelle\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:410
+#: kfmgui.cpp:411
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:412
 msgid "&Bookmarks"
 msgstr "Osoite&kirja"
 
-#: kfmgui.cpp:412
+#: kfmgui.cpp:413
 msgid "&Cache"
 msgstr "&Välimuisti"
 
-#: kfmgui.cpp:439 main.cpp:239
+#: kfmgui.cpp:440 main.cpp:278
 msgid "Up"
 msgstr "Ylös"
 
-#: kfmgui.cpp:449 main.cpp:241
+#: kfmgui.cpp:450 main.cpp:280
 msgid "Forward"
 msgstr "Eteen"
 
-#: kfmgui.cpp:454
+#: kfmgui.cpp:455
 msgid "Home"
 msgstr "Koti"
 
-#: kfmgui.cpp:511
+#: kfmgui.cpp:512
 msgid "Could not load icon\n"
 msgstr "Kuvakkeen lataus epäonnistui\n"
 
@@ -241,10 +241,10 @@ msgstr "Kuvakkeen lataus epäonnistui\n"
 #: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
 #: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
 #: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:512 kfmgui.cpp:671 kfmman.cpp:357
-#: kfmman.cpp:1365 kfmman.cpp:1587 kfmman.cpp:1613 kfmprops.cpp:377
+#: kfmexec/main.cpp:47 kfmgui.cpp:513 kfmgui.cpp:683 kfmman.cpp:357
+#: kfmman.cpp:1375 kfmman.cpp:1597 kfmman.cpp:1623 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:942 kfmprops.cpp:1074
-#: kfmprops.cpp:1205 kfmprops.cpp:1634 kfmprops.cpp:1952 kfmprops.cpp:2140
+#: kfmprops.cpp:1205 kfmprops.cpp:1678 kfmprops.cpp:2037 kfmprops.cpp:2225
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
 #: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:274 kfmtree.cpp:401
 #: kfmtree.cpp:432 kfmtree.cpp:438 kfmtree.cpp:444 kfmview.cpp:402
@@ -259,89 +259,94 @@ msgstr "Kuvakkeen lataus epäonnistui\n"
 msgid "KFM Error"
 msgstr "KFM Virhe"
 
-#: kfmexec.cpp:59 kfmgui.cpp:670 kfmman.cpp:1364
+#: kfmgui.cpp:526
+#, fuzzy
+msgid "Location:"
+msgstr "Avaa sijainti:"
+
+#: kfmexec.cpp:59 kfmgui.cpp:682 kfmman.cpp:1374
 msgid "Malformed URL\n"
 msgstr "Virheellinen URL\n"
 
-#: kfmgui.cpp:859
+#: kfmgui.cpp:872
 msgid "Select files:"
 msgstr "Valitut tiedostot:"
 
-#: kfmgui.cpp:914
+#: kfmgui.cpp:933
 msgid "Find Complete"
 msgstr "Haku valmis"
 
-#: kfmgui.cpp:915
+#: kfmgui.cpp:934
 msgid "Continue search from the top of the page?"
 msgstr "Jatka hakua sivun alusta?"
 
-#: kfmgui.cpp:933
+#: kfmgui.cpp:952
 msgid "&Edit Bookmarks..."
 msgstr "&Muokkaa osoitekirjaa..."
 
-#: kfmgui.cpp:943
+#: kfmgui.cpp:962
 msgid "&Add Bookmark"
 msgstr "&Lisää osoitekirjaan"
 
-#: kfmgui.cpp:978 kfmman.cpp:1403 kfmtree.cpp:322 root.cpp:263
+#: kfmgui.cpp:997 kfmman.cpp:1413 kfmtree.cpp:322 root.cpp:263
 msgid "&New"
 msgstr "&Uusi "
 
-#: kfmgui.cpp:984
+#: kfmgui.cpp:1003
 #, fuzzy
 msgid "New &Window"
 msgstr "Näytä uusi"
 
-#: kfmgui.cpp:987
+#: kfmgui.cpp:1006
 msgid "&Run..."
 msgstr "Suo&rita"
 
-#: kfmgui.cpp:989
+#: kfmgui.cpp:1008
 msgid "Open &Terminal"
 msgstr "Avaa pää&te"
 
-#: kfmgui.cpp:992
+#: kfmgui.cpp:1011
 msgid "&Open Location..."
 msgstr "&Avaa sijainti"
 
-#: finddlg.cpp:66 kfmgui.cpp:994
+#: finddlg.cpp:66 kfmgui.cpp:1013
 msgid "&Find"
 msgstr "&Etsi"
 
-#: kfmgui.cpp:1019
+#: kfmgui.cpp:1038
 #, fuzzy
 msgid "&Up"
 msgstr "Ylös"
 
-#: kfmgui.cpp:1021
+#: kfmgui.cpp:1040
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1023
+#: kfmgui.cpp:1042
 #, fuzzy
 msgid "&Forward"
 msgstr "Eteen"
 
-#: kfmgui.cpp:1025
+#: kfmgui.cpp:1044
 #, fuzzy
 msgid "&Home"
 msgstr "Koti"
 
-#: kfmgui.cpp:1082 kfmgui.cpp:1254 kfmjob.cpp:37 kfmman.cpp:240
+#: kfmgui.cpp:1101 kfmgui.cpp:1273 kfmjob.cpp:37 kfmman.cpp:240
 #: kfmtree.cpp:433 kfmview.cpp:438 kfmview.cpp:507 kfmview.cpp:715
 #: kiojob.cpp:87 root.cpp:1188
 msgid "ERROR: Malformed URL"
 msgstr "VIRHE: Virheellinen URL."
 
-#: kfmgui.cpp:1208 kfmserver.cpp:184
+#: kfmgui.cpp:1227 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Avaa sijainti:"
 
-#: kfmgui.cpp:1265
+#: kfmgui.cpp:1284
 msgid "KFM Confirm"
 msgstr "KFM Varmista"
 
-#: kfmgui.cpp:1266
+#: kfmgui.cpp:1285
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -349,7 +354,7 @@ msgstr ""
 "Haluatko todella lopettaa?\n"
 "Tärkeitä työpöydän toimintoja menetetään!"
 
-#: kfmgui.cpp:1376
+#: kfmgui.cpp:1395
 msgid "Document: Done"
 msgstr "Dokumentti: Valmis"
 
@@ -384,7 +389,7 @@ msgstr "VIRHE: Pudotit URL:n itsensä päälle"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VIRHE: Pudotit hakemiston sen alihakemiston päälle"
 
-#: kfmexec.cpp:265 kfmman.cpp:1160 kfmview.cpp:535
+#: kfmexec.cpp:265 kfmman.cpp:1170 kfmview.cpp:535
 msgid "Open With:"
 msgstr "Avaa sovelluksessa:"
 
@@ -563,55 +568,63 @@ msgstr "Ei liitospaikkaa *.kdelnk-tiedostossa"
 msgid "Unknown binding"
 msgstr "Tuntematon sidos"
 
-#: main.cpp:87 main.cpp:191
+#: main.cpp:88 main.cpp:214 main.cpp:225
 msgid "KFM Information"
 msgstr "KFM tietoja"
 
-#: main.cpp:88
+#: main.cpp:89
 msgid "Creating directory:\n"
 msgstr "Luodaan hakemistoa:\n"
 
-#: main.cpp:192
+#: main.cpp:215
 msgid "Installing Templates"
 msgstr "Asennan pohjat"
 
-#: main.cpp:224
+#: main.cpp:226
+msgid ""
+"A new KDE version has been installed.\n"
+"The Template files may have changed.\n"
+"\n"
+"Would you like to install the new ones?"
+msgstr ""
+
+#: main.cpp:263
 msgid "Cd"
 msgstr "Vaihda hakemistoa"
 
-#: main.cpp:225
+#: main.cpp:264
 msgid "New View"
 msgstr "Näytä uusi"
 
-#: kfmtree.cpp:337 main.cpp:228
+#: kfmtree.cpp:337 main.cpp:267
 msgid "Move to Trash"
 msgstr "Siirrä roskakoriin"
 
-#: main.cpp:230
+#: main.cpp:269
 msgid "Open with"
 msgstr "Avaa sovelluksessa"
 
-#: kfmman.cpp:1605 kfmtree.cpp:266 main.cpp:232
+#: kfmman.cpp:1615 kfmtree.cpp:266 main.cpp:271
 msgid "Move"
 msgstr "Siirrä"
 
-#: kfmman.cpp:1609 kfmtree.cpp:270 main.cpp:234
+#: kfmman.cpp:1619 kfmtree.cpp:270 main.cpp:273
 msgid "Link"
 msgstr "Linkitä"
 
-#: main.cpp:235
+#: main.cpp:274
 msgid "Empty Trash Bin"
 msgstr "Tyhjennä roskakori"
 
-#: main.cpp:236
+#: main.cpp:275
 msgid "Add to Bookmarks"
 msgstr "Lisää osoitekirjaan"
 
-#: main.cpp:237
+#: main.cpp:276
 msgid "Save settings for this URL"
 msgstr "Tallenna asetukset URL:iin"
 
-#: main.cpp:238
+#: main.cpp:277
 msgid "Show Menubar"
 msgstr "Näytä valikkorivi"
 
@@ -876,8 +889,8 @@ msgstr "Suorita päätteessä"
 msgid "Terminal Options"
 msgstr "Pääteasetukset"
 
-#: kfmprops.cpp:943 kfmprops.cpp:1075 kfmprops.cpp:1635 kfmprops.cpp:1953
-#: kfmprops.cpp:2141
+#: kfmprops.cpp:943 kfmprops.cpp:1075 kfmprops.cpp:1679 kfmprops.cpp:2038
+#: kfmprops.cpp:2226
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -913,7 +926,7 @@ msgstr "(Ei mikään)"
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Ohjelman kuvio (netscape;Netscape;)"
 
-#: kfmprops.cpp:1388 kfmprops.cpp:1739
+#: kfmprops.cpp:1388 kfmprops.cpp:1783
 msgid "Comment"
 msgstr "Kommentti"
 
@@ -921,43 +934,43 @@ msgstr "Kommentti"
 msgid "Name ( in your language )"
 msgstr "Nimi ( omalla kielellläsi )"
 
-#: kfmprops.cpp:1716
+#: kfmprops.cpp:1760
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Kuvio ( esimerkki: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1728
+#: kfmprops.cpp:1772
 msgid "Mime Type"
 msgstr "MIME-tyyppi"
 
-#: kfmprops.cpp:1757
+#: kfmprops.cpp:1801
 msgid "Default Application"
 msgstr "Oletussovellus"
 
-#: kfmprops.cpp:1797
+#: kfmprops.cpp:1841
 msgid "<none>"
 msgstr "<ei mikään>"
 
-#: kfmprops.cpp:2005
+#: kfmprops.cpp:2090
 msgid "Device ( /dev/fd0 )"
 msgstr "Laite ( /dev/fd0 )"
 
-#: kfmprops.cpp:2014
+#: kfmprops.cpp:2099
 msgid "Mount Point ( /floppy )"
 msgstr "Liitospiste (/floppy)"
 
-#: kfmprops.cpp:2025
+#: kfmprops.cpp:2110
 msgid "Readonly"
 msgstr "Vain luku"
 
-#: kfmprops.cpp:2031
+#: kfmprops.cpp:2116
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Tiedostojärjestelmät ( iso9660,msdos,minix,oletus )"
 
-#: kfmprops.cpp:2042
+#: kfmprops.cpp:2127
 msgid "Mounted Icon"
 msgstr "Liitetyn kuvake"
 
-#: kfmprops.cpp:2047
+#: kfmprops.cpp:2132
 msgid "Unmounted Icon"
 msgstr "Irroitetun kuvake"
 
@@ -1035,11 +1048,11 @@ msgstr "VIRHE: Työpöytähakemistoa '%s' ei pystytty lukemaan."
 msgid "ERROR: Can not accept drop"
 msgstr "VIRHE: Pudotusta ei voida hyväksyä."
 
-#: kfmman.cpp:1588 root.cpp:1794
+#: kfmman.cpp:1598 root.cpp:1794
 msgid "Dont know what to do."
 msgstr "En tiedä mitä tehdä."
 
-#: kfmman.cpp:1614 kfmtree.cpp:275 root.cpp:1819
+#: kfmman.cpp:1624 kfmtree.cpp:275 root.cpp:1819
 msgid "Dont know what to do"
 msgstr "En tiedä mitä tehdä"
 
@@ -1047,11 +1060,11 @@ msgstr "En tiedä mitä tehdä"
 msgid "The file does not contain a URL"
 msgstr "Tiedostossa ei ole URL:ää"
 
-#: kfmman.cpp:492
+#: kfmman.cpp:502
 msgid "Contacting host "
 msgstr "Muodostan yhteyttä koneeseen "
 
-#: kfmman.cpp:496
+#: kfmman.cpp:506
 msgid "Working ..."
 msgstr "Työskentelen ..."
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKEYS\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,19 +54,15 @@ msgstr "Alku"
 msgid "End"
 msgstr "Loppu"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Nykyinen teema"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "KDE oletus"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE pieni"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "&Näppäinteema"
 
@@ -218,3 +214,6 @@ msgstr "Siirrä työpöytä ylös"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Siirrä työpöytä alas"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE pieni"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KROOTWM\n"
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,83 +14,83 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:135 krootwm.C:729
+#: krootwm.C:208 krootwm.C:252
+msgid "Execute command"
+msgstr "Suorita"
+
+#: krootwm.C:210 krootwm.C:260
+msgid "Lock screen"
+msgstr "Lukitse istunto"
+
+#: krootwm.C:211 krootwm.C:261
+msgid "Logout"
+msgstr "Lopeta"
+
+#: krootwm.C:219 krootwm.C:254
+msgid "Refresh desktop"
+msgstr "Päivitä työpöytä"
+
+#: krootwm.C:220 krootwm.C:256
+msgid "Unclutter windows"
+msgstr "Järjestä ikkunat"
+
+#: krootwm.C:221 krootwm.C:257
+msgid "Cascade windows"
+msgstr "Sarjoita ikkunat"
+
+#: krootwm.C:222 krootwm.C:258
+msgid "Arrange icons"
+msgstr "Järjestä kuvakkeet"
+
+#: krootwm.C:223 krootwm.C:253
+msgid "Display properties"
+msgstr "Näytön ominaisuudet"
+
+#: krootwm.C:231 krootwm.C:251
+msgid "Help on desktop"
+msgstr "Työpöydän ohje"
+
+#: krootwm.C:232
+msgid "About KDE..."
+msgstr ""
+
+#: krootwm.C:247 krootwm.C:274 krootwm.C:739 krootwm.C:747
+msgid "New"
+msgstr "Uusi"
+
+#: krootwm.C:248 krootwm.C:275
+msgid "Bookmarks"
+msgstr "Kirjanmerkit"
+
+#: krootwm.C:276
+msgid "Desk"
+msgstr ""
+
+#: krootwm.C:277
+msgid "Windows"
+msgstr ""
+
+#: krootwm.C:325
+msgid "Edit Bookmarks"
+msgstr "Muokkaa kirjanmerkkejä"
+
+#: krootwm.C:339 krootwm.C:749
 msgid "Folder"
 msgstr "Kansio"
 
-#: krootwm.C:165
+#: krootwm.C:343
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
 
-#: krootwm.C:234 krootwm.C:278
-msgid "Execute command"
-msgstr "Suorita"
-
-#: krootwm.C:236 krootwm.C:286
-msgid "Lock screen"
-msgstr "Lukitse istunto"
-
-#: krootwm.C:237 krootwm.C:287
-msgid "Logout"
-msgstr "Lopeta"
-
-#: krootwm.C:245 krootwm.C:280
-msgid "Refresh desktop"
-msgstr "Päivitä työpöytä"
-
-#: krootwm.C:246 krootwm.C:282
-msgid "Unclutter windows"
-msgstr "Järjestä ikkunat"
-
-#: krootwm.C:247 krootwm.C:283
-msgid "Cascade windows"
-msgstr "Sarjoita ikkunat"
-
-#: krootwm.C:248 krootwm.C:284
-msgid "Arrange icons"
-msgstr "Järjestä kuvakkeet"
-
-#: krootwm.C:249 krootwm.C:279
-msgid "Display properties"
-msgstr "Näytön ominaisuudet"
-
-#: krootwm.C:257 krootwm.C:277
-msgid "Help on desktop"
-msgstr "Työpöydän ohje"
-
-#: krootwm.C:258
-msgid "About KDE..."
-msgstr ""
-
-#: krootwm.C:273 krootwm.C:300 krootwm.C:719 krootwm.C:727
-msgid "New"
-msgstr "Uusi"
-
-#: krootwm.C:274 krootwm.C:301
-msgid "Bookmarks"
-msgstr "Kirjanmerkit"
-
-#: krootwm.C:302
-msgid "Desk"
-msgstr ""
-
-#: krootwm.C:303
-msgid "Windows"
-msgstr ""
-
-#: krootwm.C:339
-msgid "Edit Bookmarks"
-msgstr "Muokkaa kirjanmerkkejä"
-
-#: krootwm.C:750
+#: krootwm.C:770
 msgid "Could not create folder"
 msgstr "En voi luoda kansiota"
 
-#: krootwm.C:815
+#: krootwm.C:835
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:819
+#: krootwm.C:839
 msgid "Usage:"
 msgstr "Käyttö:"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-12 01:17+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-01 22:18+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -131,54 +131,54 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan inte lägga in det här som en knapp i panelen!"
 
-#: pfilemenu.C:415
+#: pfilemenu.C:416
 msgid "(empty folder)"
 msgstr "(tom katalog)"
 
-#: pfilemenu.C:470
+#: pfilemenu.C:471
 msgid "Open Folder"
 msgstr "Öppna katalogen"
 
-#: pfilemenu.C:481
+#: pfilemenu.C:482
 msgid "(Too Many Files)"
 msgstr "(För många filer)"
 
-#: pfilemenu.C:490
+#: pfilemenu.C:491
 msgid "(Access Denied)"
 msgstr "(Åtkomst nekas)"
 
-#: pfilemenu.C:493
+#: pfilemenu.C:494
 msgid "(Unreadable)"
 msgstr "(Oläsbar)"
 
-#: pfilemenu.C:742
+#: pfilemenu.C:743
 msgid "Shared:"
 msgstr "Delade:"
 
-#: pfilemenu.C:744
+#: pfilemenu.C:745
 msgid "Entries shared among all users"
 msgstr "Poster som delas av alla användare"
 
-#: pfilemenu.C:763
+#: pfilemenu.C:764
 msgid "Personal:"
 msgstr "Personliga:"
 
-#: pfilemenu.C:765
+#: pfilemenu.C:766
 msgid "Personal entries"
 msgstr "Personliga poster"
 
-#: pfilemenu.C:783
+#: pfilemenu.C:784
 msgid "Recent:"
 msgstr "Senaste:"
 
-#: pfilemenu.C:785
+#: pfilemenu.C:786
 msgid "Recent entries"
 msgstr "Senaste poster"
 
-#: pfilemenu.C:831
+#: pfilemenu.C:832
 msgid "Options..."
 msgstr "Inställningar..."
 
-#: pfilemenu.C:833
+#: pfilemenu.C:834
 msgid "Customize Disk Navigator"
 msgstr "Anpassa disknavigatorn"

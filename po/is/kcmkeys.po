@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1998-12-16 01:13+0100\n"
 "PO-Revision-Date: 1998-12-10 12:57+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -48,19 +48,15 @@ msgstr "Heim"
 msgid "End"
 msgstr "Enda"
 
-#: global.cpp:81 standard.cpp:83
+#: global.cpp:81
 msgid "Current scheme"
 msgstr "Núverandi stilliskrá"
 
-#: global.cpp:83 standard.cpp:84
+#: global.cpp:83
 msgid "KDE default"
 msgstr "Sjálfgefið í KDE"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE lítið"
-
-#: global.cpp:90 standard.cpp:90
+#: global.cpp:90
 msgid "&Key scheme"
 msgstr "&Takkastilliskrá"
 
@@ -211,3 +207,6 @@ msgstr "Skipta á skjáborð fyrir ofan"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Skipta á skjáborð fyrir neðan"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE lítið"
