@@ -1841,8 +1841,11 @@ void Manager::switchDesktop(int new_desktop){
   Client* c;
   for (c=clients_sorted.first(); c ; c=clients_sorted.next()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
-      c->hideClient();
-      setWindowState(c, IconicState); 
+      // protection for electric borders
+      if (QWidget::mouseGrabber() != c){
+	c->hideClient();
+	setWindowState(c, IconicState); 
+      }
     }
   }
   current_desktop = new_desktop;
@@ -1852,8 +1855,11 @@ void Manager::switchDesktop(int new_desktop){
 
   for (c=clients_sorted.last(); c ; c=clients_sorted.prev()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
-      c->showClient();
-      setWindowState(c, NormalState);
+      // protection for electric borders
+      if (c->state != NormalState){
+	c->showClient();
+	setWindowState(c, NormalState);
+      }
     }
     if (c->isSticky() && ! c->isIconified() && c != current()){
       if (clients_traversing.removeRef(c))
