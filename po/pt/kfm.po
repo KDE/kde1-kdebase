@@ -1213,11 +1213,11 @@ msgstr "Saltar"
 
 #: krenamewin.cpp:36
 msgid "Overwrite"
-msgstr "Escrever por cima"
+msgstr "Sobrepôr"
 
 #: krenamewin.cpp:41
 msgid "Overwrite All"
-msgstr "Escrever por Cima de Todos"
+msgstr "Sobrepôr Tudo"
 
 #: krenamewin.cpp:52
 msgid "You try to overwrite"
