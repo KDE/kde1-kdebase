@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -32,7 +32,7 @@ msgid ""
 "Do you want to save your changes ?"
 msgstr "Θέλετε να αποθηκέυσετε τις αλλαγές"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "ΚΕΝΟ"
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Διαχωριστής"
 
-#: confmenu.cpp:102 confmenu.cpp:316
+#: confmenu.cpp:102 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "¶νοιγμα/ Κλείσμο"
 
@@ -80,23 +80,31 @@ msgstr "¶νοιγμα/ Κλείσμο"
 msgid "! PROTECTED Button !"
 msgstr "! ΠΡΟΣΤΑΤΕΥΟΜΕΝΟ Κουμπί"
 
-#: confmenu.cpp:115
+#: confmenu.cpp:116
+msgid "Select item for moving"
+msgstr ""
+
+#: confmenu.cpp:117
+msgid "Select menu for moving"
+msgstr ""
+
+#: confmenu.cpp:119
 msgid "New"
 msgstr ""
 
-#: confmenu.cpp:171 confmenu.cpp:299
+#: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Προσοχή !"
 
-#: confmenu.cpp:172
+#: confmenu.cpp:177
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Αν διαγράψετε αυτό το κουμπί θα χάσετε όλους τους υποκαταλόγους του"
 
-#: confmenu.cpp:280
+#: confmenu.cpp:297
 msgid "Wrong filename"
 msgstr "Λάθος όνομα αρχείου"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -104,12 +112,12 @@ msgstr ""
 "Ένα αρχείο του KDE με αυτό το όνομα υπάρχει ήδη. \n"
 "Παρακαλώ επιλέξτε ένα νέο όνομα."
 
-#: confmenu.cpp:300
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 "Αλλάζοντας τον τύπο αυτού του κουμπιού θα διαγραφούν όλοι οι υποκαταλόγοι του"
 
-#: confmenu.cpp:321 confmenu.cpp:909
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "Όχι εντολή"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-22 01:14+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN (gb2312)\n"
@@ -131,6 +131,11 @@ msgstr ""
 
 #: main.C:273
 msgid "Sessions"
+msgstr ""
+
+#: main.C:471
+#, c-format
+msgid "(%d columns x %d lines)"
 msgstr ""
 
 #: main.C:501

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-10-23 17:20+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -38,32 +38,32 @@ msgstr "¡Entrada errónea!"
 msgid "Session Type:"
 msgstr "Tipo de sesión:"
 
-#: kgreeter.cpp:262
+#: kgreeter.cpp:266
 msgid "Go!"
 msgstr "Iniciar"
 
-#: kgreeter.cpp:278
+#: kgreeter.cpp:282
 msgid "Shutdown..."
 msgstr "Finalizando..."
 
-#: kgreeter.cpp:520
+#: kgreeter.cpp:524
 msgid "Logins not available right now."
 msgstr "Entrada no disponible en este momento."
 
-#: kgreeter.cpp:561
+#: kgreeter.cpp:565
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:615 kgreeter.cpp:642
+#: kgreeter.cpp:619 kgreeter.cpp:646
 msgid "Sorry -- your account has expired."
 msgstr "Su cuenta ha expirado."
 
-#: kgreeter.cpp:620 kgreeter.cpp:647
+#: kgreeter.cpp:624 kgreeter.cpp:651
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Atención: su cuenta expira el %s"
 
-#: kgreeter.cpp:674
+#: kgreeter.cpp:678
 msgid "Home directory not available"
 msgstr "Su directorio no esta disponible"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,31 +45,31 @@ msgstr "Η σύνδεση απέτυχε!"
 msgid "Session Type:"
 msgstr "Τύπος σύνδεσης:"
 
-#: kgreeter.cpp:262
+#: kgreeter.cpp:266
 msgid "Go!"
 msgstr "Συνέχεια"
 
-#: kgreeter.cpp:278
+#: kgreeter.cpp:282
 msgid "Shutdown..."
 msgstr "Κλείσιμο..."
 
-#: kgreeter.cpp:520
+#: kgreeter.cpp:524
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:561
+#: kgreeter.cpp:565
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:615 kgreeter.cpp:642
+#: kgreeter.cpp:619 kgreeter.cpp:646
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:620 kgreeter.cpp:647
+#: kgreeter.cpp:624 kgreeter.cpp:651
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:674
+#: kgreeter.cpp:678
 msgid "Home directory not available"
 msgstr ""

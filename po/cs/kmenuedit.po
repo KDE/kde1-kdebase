@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-11-03 13:39+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "\n"
 "Pøejete si ulo¾it va¹e zmìny?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "PRÁZDNÉ"
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Oddìlovaè"
 
-#: confmenu.cpp:102 confmenu.cpp:316
+#: confmenu.cpp:102 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Otevøít/ Zavøít"
 
@@ -85,23 +85,31 @@ msgstr "Otevøít/ Zavøít"
 msgid "! PROTECTED Button !"
 msgstr "! CHRÁNÌNÉ tlaèítko !"
 
-#: confmenu.cpp:115
+#: confmenu.cpp:116
+msgid "Select item for moving"
+msgstr ""
+
+#: confmenu.cpp:117
+msgid "Select menu for moving"
+msgstr ""
+
+#: confmenu.cpp:119
 msgid "New"
 msgstr "Nový"
 
-#: confmenu.cpp:171 confmenu.cpp:299
+#: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Pozor !"
 
-#: confmenu.cpp:172
+#: confmenu.cpp:177
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Zru¹ení této polo¾ky vyma¾e v¹echny její submenu"
 
-#: confmenu.cpp:280
+#: confmenu.cpp:297
 msgid "Wrong filename"
 msgstr "Chybné jméno souboru"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -109,11 +117,11 @@ msgstr ""
 "Ji¾ existuje kdelnk soubor s tímto jménem. \n"
 "Prosím zvolte jiné jméno souboru."
 
-#: confmenu.cpp:300
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Zmìna typu této polo¾ky vyma¾e v¹echny její submenu"
 
-#: confmenu.cpp:321 confmenu.cpp:909
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "¾ádný pøíkaz"
 

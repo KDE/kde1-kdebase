@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-11-07 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Вы хотите записать изменения ?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "ПУСТО"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Разделитель"
 
-#: confmenu.cpp:102 confmenu.cpp:316
+#: confmenu.cpp:102 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Открыть/Закрыть"
 
@@ -86,23 +86,31 @@ msgstr "Открыть/Закрыть"
 msgid "! PROTECTED Button !"
 msgstr "! ЗАЩИЩЕННАЯ КНОПКА !"
 
-#: confmenu.cpp:115
+#: confmenu.cpp:116
+msgid "Select item for moving"
+msgstr ""
+
+#: confmenu.cpp:117
+msgid "Select menu for moving"
+msgstr ""
+
+#: confmenu.cpp:119
 msgid "New"
 msgstr "Новый"
 
-#: confmenu.cpp:171 confmenu.cpp:299
+#: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Внимание !"
 
-#: confmenu.cpp:172
+#: confmenu.cpp:177
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Если вы удалите эту кнопку, то вы лишитесь всех его подменю"
 
-#: confmenu.cpp:280
+#: confmenu.cpp:297
 msgid "Wrong filename"
 msgstr "Неверное имя файла"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -110,11 +118,11 @@ msgstr ""
 "kdelnk-файл с таким именем уже существует.\n"
 "Пожайлуста выберите другое имя."
 
-#: confmenu.cpp:300
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Изменение типа этой кнопки удалит все ее подменю"
 
-#: confmenu.cpp:321 confmenu.cpp:909
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "нет команды"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: 1998-10-23 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 "\n"
 "¿Desea guardar los cambios?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "VACIO"
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:102 confmenu.cpp:316
+#: confmenu.cpp:102 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Abrir/ Cerrar"
 
@@ -78,23 +78,31 @@ msgstr "Abrir/ Cerrar"
 msgid "! PROTECTED Button !"
 msgstr "¡ Botón Protegido !"
 
-#: confmenu.cpp:115
+#: confmenu.cpp:116
+msgid "Select item for moving"
+msgstr ""
+
+#: confmenu.cpp:117
+msgid "Select menu for moving"
+msgstr ""
+
+#: confmenu.cpp:119
 msgid "New"
 msgstr "Nuevo"
 
-#: confmenu.cpp:171 confmenu.cpp:299
+#: confmenu.cpp:176 confmenu.cpp:316
 msgid "Warning !"
 msgstr "¡ Atención !"
 
-#: confmenu.cpp:172
+#: confmenu.cpp:177
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Si borra esté botón perderá todos los súbmenus del mismo"
 
-#: confmenu.cpp:280
+#: confmenu.cpp:297
 msgid "Wrong filename"
 msgstr "Nombré de archivo erróneo"
 
-#: confmenu.cpp:281
+#: confmenu.cpp:298
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -102,11 +110,11 @@ msgstr ""
 "Ya existe un archivo de tipo kdelnk con ese nombre. \n"
 "Por favor elija otro nombre de archivo."
 
-#: confmenu.cpp:300
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "El cambio de tipo de este botón borrará todos los submenús del mismo"
 
-#: confmenu.cpp:321 confmenu.cpp:909
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "no existe el comando"
 

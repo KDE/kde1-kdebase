@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-22 01:14+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,6 +128,11 @@ msgstr "Novo"
 #: main.C:273
 msgid "Sessions"
 msgstr "Sessões"
+
+#: main.C:471
+#, c-format
+msgid "(%d columns x %d lines)"
+msgstr ""
 
 #: main.C:501
 #, c-format
