@@ -45,6 +45,13 @@ done
 mv $TMPFILE /etc/kde/kdmrc
 fi
 
+echo -n "Patching away old kdm bug... "
+sed "s|/etc/X11/config|/etc/X11/kdm/config|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
+cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
+rm -f /etc/X11/xdm/Xsetup_0-new
+echo "done."
+
+
 if ! grep -q "^# Start kdebase added code" /etc/X11/xdm/Xsetup_0; then
 echo "we have to patch /etc/X11/xdm/Xsetup_0 to run kdmdesktop"
 cat >> /etc/X11/xdm/Xsetup_0 <<EOF
