@@ -80,14 +80,14 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 	topLayout->addLayout( stackLayout );
 	
 	QListBox *lbSchemes = new QListBox( this );
-	lbSchemes->insertItem( "Current scheme" );
-	lbSchemes->insertItem( "KDE default" );
-	lbSchemes->insertItem( "KDE lite" );
+	lbSchemes->insertItem( i18n("Current scheme") );
+	lbSchemes->insertItem( i18n("KDE default") );
+	lbSchemes->insertItem( i18n("KDE lite") );
 	
 	lbSchemes->adjustSize();
 	lbSchemes->setMinimumHeight( 2*lbSchemes->height() );
 	
-	QLabel *label = new QLabel( lbSchemes, "&Key scheme", this );
+	QLabel *label = new QLabel( lbSchemes, i18n("&Key scheme"), this );
 	label->adjustSize();
 	label->setFixedHeight( label->height() );
 	

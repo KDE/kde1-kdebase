@@ -15,7 +15,7 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
 	setFocusPolicy(QWidget::StrongFocus);
-	setCaption( i18n("Add a color scheme"));
+	setCaption( i18n("Add a key scheme"));
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 
@@ -29,9 +29,9 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	
 	QLabel* tmpQLabel;
 	tmpQLabel = new QLabel( nameLine, 
-			i18n( "&Enter a name for the new color scheme\n"\
+			i18n( "&Enter a name for the new key scheme\n"\
 					"to be added to your personal list.\n\n"\
-					"The colors currently used in the preview will\n"\
+					"The keys currently used in the preview will\n"\
 					"be copied into this scheme to begin with." ), this );
 	tmpQLabel->setAlignment( AlignLeft | AlignBottom | ShowPrefix );
 	tmpQLabel->setFixedHeight( tmpQLabel->sizeHint().height() );

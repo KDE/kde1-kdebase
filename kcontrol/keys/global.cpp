@@ -87,7 +87,7 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 	connect( sList, SIGNAL( highlighted( int ) ),
 			SLOT( slotPreviewScheme( int ) ) );
 	
-	QLabel *label = new QLabel( sList, "&Key scheme", this );
+	QLabel *label = new QLabel( sList, i18n("&Key scheme"), this );
 	label->adjustSize();
 	label->setFixedHeight( label->height() );
 	
