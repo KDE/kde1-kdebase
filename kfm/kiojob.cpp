@@ -22,6 +22,7 @@
 #include "kioslave/kio_errors.h"
 #include "krenamewin.h"
 #include "passworddialog.h"
+#include "utils.h"
 #include "config-kfm.h"
 
 #include <klocale.h>
@@ -1287,7 +1288,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
     if ( !u.isMalformed() )
     {
       u.setPassword( "" );
-      url = u.url().data();
+      url = stringSqueeze( u.url(), 100 );
     }
     
     KRenameWin *r = 0L;
@@ -1419,11 +1420,11 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 	okToContinue = FALSE;
 	break;
       case KIO_ERROR_CouldNotMount:
-	ksprintf(&msg, i18n("Could not mount\nError log:\n\n%s"),_error);
+	ksprintf(&msg, i18n("Could not mount\nError log:\n\n%s"),url.data());
 	okToContinue = FALSE;
 	break;
       case KIO_ERROR_CouldNotUnmount:
-	ksprintf(&msg, i18n("Could not unmount\nError log:\n\n%s"),_error);
+	ksprintf(&msg, i18n("Could not unmount\nError log:\n\n%s"),url.data());
 	okToContinue = FALSE;
 	break;
       }
