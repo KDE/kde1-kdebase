@@ -15,6 +15,7 @@ Description: KDE core applications
  and others.
 
 Package: kdewallpapers
+Recommends: kdebase
 Architecture: all
 Description: Some wallpapers for KDE 
 

@@ -2,15 +2,14 @@
 
 set -e
 
-if [ "$1" = "purge" ]
-then
-  update-rc.d kdm remove >/dev/null
-fi  
-
 case "$1" in
 remove) chmod a-x /etc/menu-methods/kde 
 	grep -v '\<kde\>' /etc/X11/window-managers > /etc/X11/window-managers.temp
 	mv /etc/X11/window-managers.temp /etc/X11/window-managers
 	;; 
+purge)
+    update-rc.d kdm remove >/dev/null
+    ;;
+
 esac   
 #DEBHELPER#

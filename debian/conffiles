@@ -1,6 +1,5 @@
 /etc/kde/kfmrc
 /etc/kde/kdmrc
-/etc/menu-methods/kde
 /etc/kde/desktop
 /etc/init.d/kdm
 /etc/kde/kcmlocalerc
