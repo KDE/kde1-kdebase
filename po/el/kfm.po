@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-09 01:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,187 +14,195 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:257
+#: kfmgui.cpp:259
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:988
+#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:271 kfmgui.cpp:1047
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:282
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ΛΑΘΟΣ: Το πρότυπο δεν υπάρχει '%s'"
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:306
 msgid "&New"
 msgstr "&Νέο"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:311
 #, fuzzy
 msgid "&Run..."
 msgstr "&Τρέξε"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:313
 msgid "Open &Terminal"
 msgstr "¶νοιγμα &Τερματικού"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:316
 #, fuzzy
 msgid "&Open Location..."
 msgstr "&Ανοιγμα Τοποθεσίας"
 
-#: kfmgui.cpp:316
+#: finddlg.cpp:66 kfmgui.cpp:318
 msgid "&Find"
 msgstr "&Αναζήτηση"
 
-#: kfmgui.cpp:334
+#: kfmgui.cpp:336
 msgid "&Move to Trash"
 msgstr "&Μετακίνηση στα Σκουπίδια"
 
-#: kfmgui.cpp:339
+#: kfmgui.cpp:341
 msgid "&Select"
 msgstr "&Επιλογή"
 
-#: kfmgui.cpp:341
+#: kfmgui.cpp:343
 #, fuzzy
 msgid "Select &all"
 msgstr "&Επιλογή"
 
-#: kfmgui.cpp:344
+#: kfmgui.cpp:346
+msgid "&Find in page..."
+msgstr ""
+
+#: kfmgui.cpp:348
+msgid "Find &next"
+msgstr ""
+
+#: kfmgui.cpp:351
 #, fuzzy
 msgid "Mime Types"
 msgstr "Τύπος MIME"
 
-#: kfmgui.cpp:346
+#: kfmgui.cpp:353
 #, fuzzy
 msgid "Applications"
 msgstr "Προκαθορισμένη Εφαρμογή"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:359
 #, fuzzy
 msgid "Global Mime Types"
 msgstr "Τύπος MIME"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:361
 #, fuzzy
 msgid "Global Applications"
 msgstr "Προκαθορισμένη Εφαρμογή"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:368
 msgid "Show &Dot Files"
 msgstr "Εμφάνιση &.Αρχείων"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:370
 msgid "Show Tr&ee"
 msgstr "Εμφάνιση &Δέντρου"
 
-#: kfmgui.cpp:365
+#: kfmgui.cpp:372
 msgid "&Visual Schnauzer"
 msgstr ""
 
 # WHAT IS THIS?
-#: kfmgui.cpp:367
+#: kfmgui.cpp:374
 msgid "&HTML View"
 msgstr "Θέα με &HTML"
 
-#: kfmgui.cpp:370
+#: kfmgui.cpp:377
 msgid "&Icon View"
 msgstr "Θέα με &Εικονίδια"
 
-#: kfmgui.cpp:372
+#: kfmgui.cpp:379
 msgid "&Text View"
 msgstr "Θέα με &Κείμενο"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:381
 msgid "&Long View"
 msgstr "Θέα με τα &Πάντα"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:383
 #, fuzzy
 msgid "&Short View"
 msgstr "Θέα με &Εικονίδια"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:389
 #, fuzzy
 msgid "Rel&oad Tree"
 msgstr "Ξαναφόρτωσε"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:391
 msgid "&Reload Document"
 msgstr "&Ξαναφόρτωσε το Αρχείο"
 
-#: kfmgui.cpp:386
+#: kfmgui.cpp:393
 msgid "Rescan &bindings"
 msgstr "Ξανασάρωσε τις Σ&υσχετίσεις"
 
-#: kfmgui.cpp:389
+#: kfmgui.cpp:396
 msgid "&View Frame Source"
 msgstr ""
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:398
 #, fuzzy
 msgid "View Docu&ment Source"
 msgstr "Κείμενο: Τελειωμένο"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:409
 msgid "Show History"
 msgstr ""
 
-#: kfmgui.cpp:404
+#: kfmgui.cpp:411
 msgid "Show Cache"
 msgstr ""
 
-#: kfmgui.cpp:406
+#: kfmgui.cpp:413
 #, fuzzy
 msgid "Clear Cache"
 msgstr "Καθάρισμα"
 
-#: kfmgui.cpp:409
+#: kfmgui.cpp:416
 msgid "Always look in cache"
 msgstr ""
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:418
 msgid "Never look in cache"
 msgstr ""
 
-#: kfmgui.cpp:413
+#: kfmgui.cpp:420
 msgid "Always save cache"
 msgstr ""
 
-#: kfmgui.cpp:415
+#: kfmgui.cpp:422
 msgid "Never save cache"
 msgstr ""
 
-#: kfmgui.cpp:426
+#: kfmgui.cpp:433
 #, fuzzy
 msgid "Show &Menubar"
 msgstr "Εμφάνιση &Δέντρου"
 
-#: kfmgui.cpp:428
+#: kfmgui.cpp:435
 msgid "Show &Statusbar"
 msgstr ""
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:437
 #, fuzzy
 msgid "Show &Toolbar"
 msgstr "Εμφάνιση &Δέντρου"
 
-#: kfmgui.cpp:432
+#: kfmgui.cpp:439
 msgid "Show &Location bar"
 msgstr ""
 
-#: kfmgui.cpp:435
+#: kfmgui.cpp:442
 #, fuzzy
 msgid "Sa&ve Settings"
 msgstr "&Σώσιμο Ρυθμίσεων"
 
-#: kfmgui.cpp:437
+#: kfmgui.cpp:444
 msgid "Configure Browser..."
 msgstr ""
 
-#: kfmgui.cpp:476
+#: kfmgui.cpp:483
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -206,27 +214,27 @@ msgid ""
 "Lars.Hoss@munich.netsurf.de"
 msgstr ""
 
-#: kfmgui.cpp:495
+#: kfmgui.cpp:502
 msgid "&Bookmarks"
 msgstr "&Σελιδοδείκτες"
 
-#: kfmgui.cpp:496
+#: kfmgui.cpp:503
 msgid "&Cache"
 msgstr ""
 
-#: kfmgui.cpp:523 kfmman.cpp:1070
+#: kfmgui.cpp:530 kfmman.cpp:1070
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:533 kfmman.cpp:1078
+#: kfmgui.cpp:540 kfmman.cpp:1078
 msgid "Forward"
 msgstr "Μπροστά"
 
-#: kfmgui.cpp:538
+#: kfmgui.cpp:545
 msgid "Home"
 msgstr "Σπίτι"
 
-#: kfmgui.cpp:595
+#: kfmgui.cpp:602
 #, fuzzy
 msgid "Could not load icon\n"
 msgstr ""
@@ -237,7 +245,7 @@ msgstr ""
 #: kbind.cpp:1554 kbind.cpp:1572 kbind.cpp:1589 kbind.cpp:1647 kbind.cpp:1659
 #: kbind.cpp:1686 kbind.cpp:1701 kbind.cpp:1721 kbind.cpp:1733 kbind.cpp:1749
 #: kbind.cpp:1881 kbind.cpp:1893 kbind.cpp:1938 kbind.cpp:1980 kfmexec.cpp:60
-#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:596 kfmgui.cpp:752
+#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:603 kfmgui.cpp:759
 #: kfmman.cpp:331 kfmman.cpp:1041 kfmman.cpp:1226 kfmman.cpp:1252
 #: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:834
 #: kfmprops.cpp:956 kfmprops.cpp:1083 kfmprops.cpp:1399 kfmprops.cpp:1611
@@ -255,52 +263,60 @@ msgstr ""
 msgid "KFM Error"
 msgstr "Λάθος στο KFM"
 
-#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1040
+#: kfmexec.cpp:59 kfmgui.cpp:758 kfmman.cpp:1040
 #, fuzzy
 msgid "Malformed URL\n"
 msgstr ""
 "Κακοδιατυπωμένο URL\n"
 "%s"
 
-#: kfmgui.cpp:917
+#: kfmgui.cpp:924
 msgid "Select files:"
 msgstr "Επιλέξατε αρχεία:"
 
-#: kfmgui.cpp:940
+#: kfmgui.cpp:980
+msgid "Find Complete"
+msgstr ""
+
+#: kfmgui.cpp:981
+msgid "Continue search from the top of the page?"
+msgstr ""
+
+#: kfmgui.cpp:999
 #, fuzzy
 msgid "&Edit Bookmarks..."
 msgstr "&Σελιδοδείκτες"
 
-#: kfmgui.cpp:950
+#: kfmgui.cpp:1009
 msgid "&Add Bookmark"
 msgstr "&Προσθήκη Σελιδοδείκτη"
 
-#: kfmgui.cpp:980 kfmgui.cpp:987
+#: kfmgui.cpp:1039 kfmgui.cpp:1046
 msgid "New "
 msgstr "Νέο"
 
-#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:214
+#: kfmgui.cpp:1136 kfmgui.cpp:1298 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:385 kfmview.cpp:453 kfmview.cpp:596
 #: kiojob.cpp:87 root.cpp:1154
 msgid "ERROR: Malformed URL"
 msgstr "ΛΑΘΟΣ: Κακοδιατυπωμένη URL"
 
-#: kfmgui.cpp:1193 kfmserver.cpp:179
+#: kfmgui.cpp:1252 kfmserver.cpp:179
 msgid "Open Location:"
 msgstr "¶νοιξε Τοποθεσία:"
 
-#: kfmgui.cpp:1249
+#: kfmgui.cpp:1308
 #, fuzzy
 msgid "KFM Confirm"
 msgstr "Πληροφορίες KFM"
 
-#: kfmgui.cpp:1250
+#: kfmgui.cpp:1309
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
 
-#: kfmgui.cpp:1357
+#: kfmgui.cpp:1416
 msgid "Document: Done"
 msgstr "Κείμενο: Τελειωμένο"
 
@@ -1337,6 +1353,15 @@ msgstr ""
 
 #: open-with.cpp:132
 msgid "This group is empty!"
+msgstr ""
+
+#: finddlg.cpp:41
+#, fuzzy
+msgid "Find:"
+msgstr "&Αναζήτηση"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
 msgstr ""
 
 #: kfmprops.h:73
