@@ -595,7 +595,6 @@ KRootLayout* KRootWidget::findLayout( const char *_url )
 	if ( strcmp( lay->getURL(), _url ) == 0 )
 	    return lay;
     }
-
     return 0L;
 }
 
@@ -1032,8 +1031,9 @@ void KRootWidget::slotDropCopy()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.copy() );
-	tmp += KIOServer::getDestNameForCopy( s );
+	QString tmp = KIOServer::getDestNameForCopy( s );
+        KURL::encodeURL(tmp);
+        tmp.insert(0, desktopDir);
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
 
@@ -1055,8 +1055,9 @@ void KRootWidget::slotDropMove()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.copy() );
-	tmp += KIOServer::getDestNameForCopy( s );
+	QString tmp = KIOServer::getDestNameForCopy( s );
+        KURL::encodeURL(tmp);
+        tmp.insert(0, desktopDir);
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
 
@@ -1078,8 +1079,9 @@ void KRootWidget::slotDropLink()
     char *s;
     for ( s = dropZone->getURLList().first(); s != 0L; s = dropZone->getURLList().next() )
     {
-	QString tmp( desktopDir.copy() );
-	tmp += KIOServer::getDestNameForLink( s );
+	QString tmp = KIOServer::getDestNameForLink( s );
+        KURL::encodeURL(tmp);
+        tmp.insert(0, desktopDir);
 	layoutList.append( new KRootLayout( tmp, x, y ) );
     }
 

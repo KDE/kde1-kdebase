@@ -26,6 +26,7 @@
 #include "kfmpaths.h"
 #include "utils.h"
 #include "config-kfm.h"
+#include "bookmark.h"
 
 #ifdef HAVE_PATHS_H
 #include <paths.h>
@@ -265,6 +266,7 @@ QString KIOServer::getDestNameForCopy( const char *_url )
 
 QString KIOServer::getDestNameForLink( const char *_url )
 {
+  //debug("KIOServer::getDestNameForLink(%s)",_url);
     QString name;
 
     KURL kurl( _url );
@@ -280,47 +282,39 @@ QString KIOServer::getDestNameForLink( const char *_url )
     if ( kurl.isLocalFile() )
     {
 	name = kurl.filename();
-	name.detach();
     }
-    /* else if ( strcmp( kurl.protocol(), "tar" ) == 0 )
-    {		
-	name = "tar:";
-	name += kurl.filename();
-	name += ".kdelnk";
-    } */
-    else if ( strcmp( kurl.protocol(), "http" ) == 0 )
+    else
+    {
+        name = KBookmark::encode(_url); // use the bookmark way of encoding
+    }
+
+    // The old code resulted in file like ftp:filename
+    // instead of ftp://host/path/filename
+    // Used bookmark code instead. David. (post 1.1)
+#if 0
+ QString path = kurl.path(); // initial path
+ if ( strcmp( kurl.protocol(), "http" ) == 0 )
     {
 	name = "http:";
 	name += kurl.filename();
 
 	// HTTP names may end with '/', so append 'index.html' in this case.
-	if ( strlen( kurl.path() ) == 0 )
+	if ( path.isEmpty() )
 	    name += "index.html";
-	else if ( kurl.path()[ strlen( kurl.path() ) - 1 ] == '/' )
+	else if ( path.right(1) == "/" )
 	    name += "index.html";
 
 	name += ".kdelnk";
-	name.detach();
     }
     else if ( strcmp( kurl.protocol(), "ftp" ) == 0 )
     {
 	name = "ftp:";
 
 	// FTP urls may have no path, so append the host as name
-	if ( strlen( kurl.path() ) == 0 )
+	if ( path.isEmpty() )
 	    name += kurl.host();
-	// FTP urls may have no a trailing '/'.
-	else if ( kurl.path()[ strlen( kurl.path() ) - 1 ] == '/' )
-	{
-	    QString s = kurl.url();
-	    s = s.left( s.length() - 1 );
-	    KURL u( s.data() );
-	    name += u.filename();
-	}
-	else
-	    name += kurl.filename();
+        name += kurl.filename();
 	name += ".kdelnk";
-	name.detach();
     }	
     else
     {
@@ -336,7 +330,9 @@ QString KIOServer::getDestNameForLink( const char *_url )
 		
 	name += tmp.data();
     }
+#endif
 
+    name.detach();
     return name;
 }
 

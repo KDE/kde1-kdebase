@@ -1,3 +1,10 @@
+1999-02-18  David Faure  <faure@kde.org>
+
+	* kioserver.cpp (getDestNameForLink): Completely changed the behaviour.
+	 The old code resulted in a filename like "ftp:filename.ext"
+	 instead of "ftp://host/path/filename.ext"
+	 Used bookmark code for encoding instead.
+
 1999-02-16  David Faure  <faure@kde.org>
 
 	* kfmgui.cpp (showSource): Added option Editor to choose the preferred 
