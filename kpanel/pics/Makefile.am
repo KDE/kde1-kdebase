@@ -14,6 +14,7 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/large-kdisknav.xpm $(datadir)/large/kdisknav.xpm
 	$(INSTALL_DATA) $(srcdir)/large-kfm_home.xpm $(datadir)/large/kfm_home.xpm
 	$(INSTALL_DATA) $(srcdir)/large-window_list.xpm $(datadir)/large/window_list.xpm
+	$(INSTALL_DATA) $(srcdir)/large-pers_applnk.xpm $(datadir)/large/pers_applnk.xpm
 
 uninstall-local:
 	rm -f $(datadir)/large/go.xpm
