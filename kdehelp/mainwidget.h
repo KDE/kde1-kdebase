@@ -17,6 +17,7 @@ public:
     int openURL( const char *URL, bool withHistory = true );
     void openNewWindow( const char *url );
 
+    KHelpWindow *helpWindow() { return helpwin; }
 
 public slots:
     void slotEnableMenuItems();

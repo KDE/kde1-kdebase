@@ -582,6 +582,13 @@ void KHelpMain::slotCloneWindow()
 	}
 
 	win->openURL( url );
+
+	if ( !helpwin->canCurrentlyDo(KHelpWindow::Stop) )
+    {
+        win->helpWindow()->setHistory( helpwin->getHistory() );
+        win->enableMenuItems();
+    }
+
 	win->show();
 	enableMenuItems();
 }

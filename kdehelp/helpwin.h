@@ -72,6 +72,9 @@ public:
 	KPageInfo( const char *u, int y )
 		{	url = u; yOffset = y; }
 
+    KPageInfo( const KPageInfo &i )
+        {   url = i.url.copy(); yOffset = i.yOffset; }
+
 	const QString getUrl() const
 		{	return url; }
 	int getOffset() const
@@ -118,6 +121,9 @@ public:
 	bool canCurrentlyDo(AllowedActions action);
 	const char *getCurrentURL();
 
+    const cHistory<KPageInfo> &getHistory() const { return history; }
+	void setHistory( const cHistory<KPageInfo> &hist )
+        {   history = hist; }
 
 signals:
 	void enableMenuItems();
@@ -207,7 +213,7 @@ private:
 	QScrollBar *horz;
 	QLabel *statusBar;
 	QPopupMenu *rmbPopup;
-	QAccel *accel;
+//	QAccel *accel;
 	KHelpView *view;
 	KDNDDropZone *dropZone;
 	KOpenURLDialog *openURLDialog;

@@ -129,7 +129,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	readOptions();
 	man = new cMan;
 	info = new cInfo;
-
+/*
 	accel = new QAccel( this );
 	accel->insertItem( CTRL + Key_C,	COPY );
 	accel->insertItem( CTRL + Key_Insert,	COPY );
@@ -138,7 +138,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	accel->insertItem( CTRL + Key_Q,	QUIT );
 
 	accel->connectItem( COPY, this, SLOT(slotCopy()) );
-
+*/
 	view = new KHelpView( this );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );

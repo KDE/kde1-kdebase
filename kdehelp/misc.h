@@ -40,6 +40,19 @@ public:
 		list.append( item );
 	}
 
+    const cHistory<T> &operator=( const cHistory<T> &hist )
+    {
+        QListIterator<T> it( hist.list );
+        list.clear();
+        for ( ; it.current(); ++it )
+        {
+            list.append( new T( *it.current() ) );
+        }
+        if ( hist.list.at() >= 0 )
+            list.at( hist.list.at() );
+        return *this;
+    }
+
 private:
 	unsigned maxLen;
 	QList<T> list;
