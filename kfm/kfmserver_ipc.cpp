@@ -53,13 +53,13 @@ KfmIpc::~KfmIpc()
 	free( pBody );
 }
 
-void KfmIpc::closeEvent( KSocket *_sock )
+void KfmIpc::closeEvent( KSocket * )
 {
     delete this;
     return;
 }
 
-void KfmIpc::readEvent( KSocket *_sock )
+void KfmIpc::readEvent( KSocket * )
 {
     if ( bHeader )
     {
