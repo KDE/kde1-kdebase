@@ -1,4 +1,4 @@
-kdebase (2:980312-4) unstable; urgency=low
+kdebase (2:980312-4) frozen; urgency=low
 
   * added undocumented man page
   * renamed kdmconfig to switchdm. This name existed twice
