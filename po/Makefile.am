@@ -3,9 +3,10 @@ SUBDIRS = cs da de es fi fr it nl ru sv hu pt pl el hr ro no \
 	zh_TW.Big5 zh_CN.GB2312 sk ca sl en_UK mk pt_BR eo
 
 # this is a general list for merging!
-APPS = kdehelp kdisplay kdm kfind kfm kfontmanager kpanel kvt kwm klock \
-	krootwm kcmbell kcminfo kcminput kcmkwm kcmsamba kcmsample kcontrol \
-	kmenuedit kcmkpanel kcmlocale kcmsyssound kstartondesk
+APPS = kcmbell kcminfo kcminput kcmkeys kcmkfm kcmkpanel kcmkwm \
+	kcmlocale kcmsamba kcmsample kcmsyssound kcontrol kdehelp \
+	kdisplay kdm kdmconfig kfind kfm kfontmanager kikbd \
+	klock kmenuedit kpanel krootwm kstartondesk kvt kwm
 
 merge:
 	@apps='$(APPS)'; \
