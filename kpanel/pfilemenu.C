@@ -105,7 +105,7 @@ int PFileMenu::entryHeight = 0;
 // NOTE: This section is temporary here. It will be removed in future
 // versions (kfm must create kdisknav dirs).
 
-#include <qmsgbox.h>
+// #include <qmsgbox.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <unistd.h>
@@ -119,8 +119,8 @@ static bool testDir2( const char *_name )
     dp = opendir( c.data() );
     if ( dp == NULL ) {
       QString m(_name);
-      QMessageBox::information( 0, klocale->translate("KFM Information"),
-			     klocale->translate("Creating directory:\n") + m );
+      //QMessageBox::information( 0, klocale->translate("KFM Information"),
+      //		     klocale->translate("Creating directory:\n") + m );
 	::mkdir( c.data(), S_IRWXU );
 	return false;
     }
