@@ -1,0 +1,24 @@
+Rxvt release 1.85 has been uploaded to sunsite.unc.edu, file 
+/pub/Linux/Incoming/rxvt-1.85-source.tar.z 
+
+Rxvt is an xterm replacement which uses a little less memory, and is 
+suitable for use on machines with small memories. Tek4010 support
+is removed.
+
+Rclock is also included. This is a simple clock/appointment reminder/
+mail checker.
+
+Modifications were made by Rob Nation (nation@rocket.sanders.lockheed.com) 
+to make it a little more compact, and to add and remove certain features.
+
+Here's what's new since the last release (1.81):
+	1. Fixed ESC c handling.
+	2. Fixed minor selection handling bug.
+	3. Fixed slow refresh during selection process
+	4. Fixed problem of not correctly clearing selections of
+	   1 character.
+
+Rob Nation
+(nation@rocket.sanders.lockheed.com)
+
+

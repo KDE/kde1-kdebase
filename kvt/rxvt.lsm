@@ -1,0 +1,32 @@
+Begin2
+Title        = rxvt
+Version      = 2.07
+Desc1        = An xterm substitute. Performs vt100 emulation for X windows
+Desc2        = Supports ANSI color, scroll back buffer, simple graphics mode
+Author       = R. Nation
+AuthorEmail  = nation@spcot.sanders.com
+Maintainer   = R. Nation
+MaintEmail   = nation@spcot.sanders.com
+Site1        = spcot.sanders.com
+Path1        = /pub/rxvt
+File1        = rxvt-2.07.tar.gz
+FileSize1    = 87K
+Site2        = sunsite.unc.edu
+Path2        = ??
+File2        = rxvt-2.07.tar.gz
+FileSize2    = 87K
+Required1    = X11, gcc
+CopyPolicy1  = Do what you want, but can't make money on it.
+CopyPolicy2  =
+Keywords     = rxvt, xterm, vt100, X11, terminal-emulator
+Comment1     = No binary distribution available!
+Comment2     =
+Comment3     =
+Comment4     =
+RelFiles1    =
+RelFiles2    =
+RelFiles3    =
+Entered      =
+EnteredBy    =
+CheckedEmail =
+End

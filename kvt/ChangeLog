@@ -1,0 +1,274 @@
+since kvt-0.11
+   - kvt should work ok with TERM=xterm-color now!
+
+     This means fixed Home/End and BackSpace/Delete handling, fixed
+     colorhandling, new cursor-visibility sequences, some other new
+     sequences ....  In fact Xemacs  works great now inside a kvt: 
+     korrect keybindings and nice syntaxhighlighting :-)
+     Also the S.u.S.E yast works fine and colorful now. And the midnight
+     commaner, too. :-))
+
+   - a few deep rxvt bugfixes
+
+  - if you install kvt-color (see instructions in ./etc/) there is also
+     support for ACS_BLOCK and ACS_BOARD. This makes for
+     example the scrollbar of yast visible (but you need TERM=kvt-color for
+     that!) Another way would be to replace your xterm-color definitions with
+     those in ./etc/xterm-color
+
+  - new command line option "-no_scrollbar"
+
+since kvt-0.10:
+  - login shell no longer default
+  - TERM="xterm-color" no longer default, but "vt100". This is good
+    enough, supports colors and most termcaps in this world will
+    be able to deal with it. 
+  - no more hanging kvt windows after terminating the command process
+    (for example leaving a shell with "exit")
+  - includes a KDE Desktop Entry and a nice UNIX.xpm Icon 
+    (heavily inspired by Mark's window_list.xpm)
+  - invokes kdehelp from Help->Help
+  - contains a dummy kvt.html file
+  - slightly improved Imakefile and a Makefile.install for installation
+	
+since kvt-0.9:
+  - hopefully fixed a visibility notify problem (I had to disable some
+     performance optimization of rxvt, but this is hardly noticable)
+
+since kvt-0.8:
+  - bugfixes in focus handling.
+  - rstyle is set to DEFAULT_RSTYLE after any color-changes
+    from the menu. With this you can reset weird colors.
+  - kvt is a derived KApplication yet, that means it also writes
+    its configuration into a ".kvtrc" now.
+  - "help" item in the menubar, with "About kvt" and "Help"
+  - kvt now sets QWidget::setSizeIncrement(..). That means it scales
+    similar to rxvt or xterm in steps that are defined by the used charset.
+    (Although this doesn't work yet with kwm-0.3.1, but fvwm understands it)
+                                              (Matthias)
+
+since kvt-0.7:
+  - removed some silly debug messages that I forgot
+  - made the escape sequences for changing the window-title
+    and the icon-name work again.
+    For example: "^[]2 New Window Title ^G"
+  - also re-enabled the command line options for these tasks
+    ("-T" for window-title and "-n" for the icon-name)
+  - the window-title is automatically set to the command's
+    name if one is specified with "-e command"
+  - New command line option "-no_menubar". This overrides the
+    default from the .kderc file (May be usable for an error console)
+                                              (Matthias)
+	
+since kvt-0.6:
+  - checked out rxvt-2.18... oops, they changed a lot.
+    In fact it doesn't seem too easy to add all these additions
+    to kvt :( (I hope that an application like kvt will become
+    completly irrelevant in the near future with the KDE Desktop
+    Environment for more komplex task anyway. And running a simple shell
+    is OK with the current kvt, so it may fit our needs)
+    Anyway the etc/ folder may make some sense.
+    kvt yet also compiles with "TERM=xterm-color" as default
+  - fixed the "-e" bugs. In fact these have been rxvt-2.08 bugs that occured
+    with login_shell enabled ("-ls"). Since kvt has this as default, the bug
+    occured always with kvt, except you invoke it with "-ls-".
+    If just had a look into rxvt-2.18 and build their fixes into kvt,
+    what is still possible with a few renames.
+    Another fix is, that Qt won't see the options following after "-e"
+    anymore.
+  - fixed the "-geometry"-bug. Yet the vt windows geometry can be set
+    with for example -vt_geometry "130x40"
+  - removed some obsolete command line options from rxvt.
+  - new command line option vt_size <tiny|small|normal|large|huge>
+                                              (Matthias)
+	
+since kvt-0.5:
+- "new terminal" keeps command line options 
+- small workaround for a resize-problem
+                                              (Matthias)
+	
+since kvt-0.4:
+- settings can be saved via KConfig (libkde-0.3) by 
+  invoking Options->Save_Options
+- scrollbarwidth/height reduced to 16
+- right-mouse-options-popup remains visible after a 
+  click without drag
+- minor bugfixes (for example cursor-recolering)
+- removed some hacks for qt-1.0. This also means 
+  kvt-0.5 needs qt >= 1.1
+                                              (Matthias)
+
+
+since kvt-0.3:
+- minor bugfixes (also fixed the pixel-garbage
+  that rxvt sometimes left on the screen)
+- renamed "Terminal" to "File". Still not sure about this.  
+                                              (Matthias)
+                  
+
+since kvt-0.2:
+
+- keyhandling and focushandling improved, i.e. usable
+- new scrollbar-options for Matt and all the
+  other UNIX-hackers used to left scrollbars on 
+  terminals :-)
+- shift-Page[Up,Down] also works now.
+- "Secure keyboard" feature available via options-menu.
+- renamed "File" to "Terminal" since there aren't any files.
+  Is this OK with the style-guide?
+                                              (Matthias)
+
+since rxvt:
+
+- renamed the stuff to kvt
+- removed all graphics code
+- removed all scrollbar code
+- broke the event loop
+- let the stuff run in the Qt-Event loop
+- added a nice scrollbar, several menus  and a frame
+- several minor changes to make the switch possible
+                                              (Matthias)
+
+
+2.06 to 2.07
+        1. Fixed problems with rxvt screwing up tty permisssions (?)
+2.03 to 2.06
+        1. Fixed a limit which imposed a maximum width for the
+	   terminal window of 255 characters. There is no limit now.
+	2. Made provision for applications to get mouse-click feedback
+	   when user clicks in a graphics window. See graphics_sample
+2.02 to 2.03
+	1. Fixed memory management just a little.
+
+2.0 to 2.02
+	1. Bug fixes for color and graphics.
+
+1.97 to 2.0
+	1. Added ANSI color support. Compile with -DCOLOR
+	2. Added a graphics mode. Compile with -DGRAPHICS
+1.96 to 1.97
+	1. Bug in refresh() which was causing slow refreshes after
+	   clear-screens was fixed. Showed up during emacs start-up.
+
+1.95 to 1.96
+	1. rxvt did bad things if it received mouse - Motion events
+	   without a preceeding button-press. Fixed.
+1.94 to 1.95
+        1. Created a substitute for XGetDefaults, which seemed to account
+	   for 1/2 to 2/3 of the memory used by rxvt (according to the
+	   SIZE field of ps output). My substitute only reads the
+	   .Xdefaults file. Compile with -DFAKE_RESOURCES to get my mini-
+	   XDefaults handling, -DREAL_RESOURCES to keep XGetDefault.
+
+1.93 to 1.94
+	1. Fixed some minor long-standing errors in the vt100 emulation.
+	2. Fixed ALT-<char> handling in command.c
+	3. Fixed minor bug with start-of-selection location.
+	4. Added xterm-type "extend selection" feature using
+	   mouse button 3. Button 1 always starts a new selection. Button3
+	   tries to extend the current selection if possible.
+	5. Fixed problem with bold-face fonts overflowing into
+	   the next character for some fonts.
+
+1.92 to 1.93
+	1. ran gprof to find bottle-necks in the code. Halved user
+	   time, but had little effect on total time required to
+	   update the display. Seems worth keeping for the more efficient
+	   user-time, though. At this point, I think that most of the elapsed
+	   time is spent waiting for input or waiting for the X buffers
+	   to flush.
+	2. Used to refresh the screen every 2.2 screen-fulls during
+	   flat-out scrolling. Really cuts down on scroll-time. Now,
+	   refresh every screen-full (or when there's a pause in activity),
+	   but when flat-out scrolling starts, decrease the refresh period,
+	   so that its every 10th screenful after a little while. This has
+	   no noticeable visible effect, since the scrolling text is
+	   absolutely unintelligible anyway, but will improve the scroll
+	   "feel" when doing just one or two screenfulls, ie in an ls -l.
+	3. Surrounded  the code which uses XCopyArea with #ifdef's
+	   I have never seen this help performance, but I think that there
+	   may be some video-systems which benefit from this, particularly
+	   in a full-screen editor or slow scrolling type of setting.
+	4. Performance in flat out scrolling, text only, on a sparc-10,
+	   displaying rxvt on an HDS x-terminal:
+		nation@snoopy>/usr/bin/time rxvt -e cat k
+		        6.1 real         3.1 user         2.5 sys
+		nation@snoopy>/usr/bin/time xterm -e cat k
+		       40.8 real         4.6 user         3.4 sys
+
+1.91 to 1.92
+	1. Added greek-keyboard support patches.
+1.90 to 1.91
+	1. assorted minor patches
+1.85 to 1.90 
+	1. assorted minor patches
+1.82 to 1.85
+	1. Fixed ESC c handling.
+	2. Fixed minor selection handling bug.
+
+1.81 to 1.82
+	1. Fixed slow refresh during selection process
+	2. Fixed problem of not correctly clearing selections of
+	   1 character.
+
+1.80 to 1.81
+	1. Fixed some scrolling problems, problems with
+	   partially obscured windows.
+        2. Added some neat debugging capability in debug.c
+        3. Patched up rclock.
+
+1.74 to 1.80
+
+	1. Fixed core dump from selecting past the bottom of the screen
+	2. Fixed a few escape sequences, per the vttest program
+	3. Broke and fixed handling of moved/resize/new-font handling.
+	4. Still can't change tab stops correctly.
+        5. Ran vt-100 test suite. Added capability to change tab stops
+	   and enter reverse video, and to switch from 80 to 132
+	   columns and back. Fixed a seg-fault in scroll().
+
+	
+1.70 to 1.74
+	1. Fixed cursor drawing errors.
+	2. Improved smoothness of scroll-back operations.
+	3. Applied some SVR4 patches.
+	4. Applied HPUX patches, and a few cursor display patches
+	5. Fixed up font-changing routines a bit.
+	6. Fixed a scrolling problem for windows taller than the scroll-back
+	   buffer.
+
+1.6 to 1.7
+        1. Fixed the problem with random rendition flags in the scroll
+	   back buffer
+	2. Fiddled with re-drawing on the scroll-bar, and with
+	   how often refreshing occurs.
+	3. Incorporated some AIX patches.
+	4. Included #ifdef'd changes to support vt100 printer.
+        5. Fixed send_string routine, so that it doesn't loose
+	   data.
+	6. Complete re-write of screen.c
+1.5 to 1.6
+	1. Removed all use of a seperate bold font. Now uses
+	   over-striking exclusively.
+	2. Added some more optimizations for drawing speed when
+	   the window is re-sized or moved.
+        3. Implemented speed ups in screen.c
+
+1.47 to 1.48
+	1. Cleaned up re-drawing on expose events, so rxvt only
+	   re-draws the newly exposed parts of the screen.
+        2. Fixed backspace, which must have broken in 1.45.
+	3. Added command line option of iconic startup.
+
+from 1.45 to 1.47
+	1. Incorporated improved bsd utmp handling from 
+           dperry@ringer.cs.utsa.edu (David Perry)
+	2. Fixed a very minor bug where the solid-cursor can leave a
+	   a bit of a ghost when you resize the window. Its stupid,
+	   but it always bothered me.
+
+from 1.4 to 1.45
+
+	1.  Fixed scrolling error when switching to larger fonts
+	2.  Fixed utmp-entry removal for SYSV type systems.
+	3.  Icorportated patches for FreeBSD and svr4

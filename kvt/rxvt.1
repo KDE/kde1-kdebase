@@ -1,0 +1,198 @@
+.\" @(#)rxvt.1	1.81 10/27/93 (UKC)
+.TH RXVT 1.61 "February 21, 1994"
+.UC
+.SH NAME
+rxvt \- VT100 emulator for the X window system
+.SH SYNOPSIS
+\fBrxvt\fP [ \fIoptions\fP ]
+.SH DESCRIPTION
+\fIRxvt\fP is a VT100 terminal emulator for X.  It is intended as a
+replacement for \fIxterm\fP(1) for users who do not require the more
+esoteric features of \fIxterm\fP.  Specifically \fIrxvt\fP does not
+implement the Tektronix 4014 emulation, session logging and toolkit
+style configurability.  As a result, \fIrxvt\fP uses much less swap
+space than \fIxterm\fP \- a significant advantage on a machine serving
+many X sessions.
+.SH OPTIONS
+The options supported by \fIrxvt\fP (which are a subset of those 
+supported by \fIxterm\fP) are listed 
+below. 
+.IP "\fB-e\fP \fIcommand\fP [ \fIarguments\fP ]"
+Run the command with its command line arguments in the \fIxvt\fP
+window.  If this option is used, it must be the last on the command
+line.  If there is no \fB-e\fP option then the default is to run the
+program specified by the SHELL environment variable or, failing that,
+\fIsh\fP(1).  
+.IP "\fB-display\fP \fIdisplay-name\fP"
+Attempt to open the \fIxvt\fP window on the named X display.  In the
+absence if this option, the display specified by the DISPLAY
+environment variable is used.
+.IP "\fB-geometry\fP \fIwindow-geometry\fP
+Create the window with the specified X window geometry.
+.IP "\fB-bg\fP \fIcolor\fP
+Use the specified color as the window's background color.
+.IP "\fB-fg\fP \fIcolor\fP
+Use the specified color as the window's foreground color.
+.IP "\fB-font\fP \fIfontname\fP
+Set the main text font used by \fIrxvt\fP.
+.IP "\fB-T\fP \fItext\fP
+Set the string that is displayed in the window's title bar if it has one.
+.IP "\fB-n\fP \fItext\fP
+Set the name that will be used to label the window's icon or displayed in
+an icon manager window.  This option also sets the window's title unless
+it is set explicitly.
+.IP "\fB-C\fP
+Capture system console messages.
+.IP "\fB-7\fP
+Run in 7 bit mode, stripping the 8th bit from all character typed on the 
+keyboard.
+.IP "\fB-8\fP
+Run in 8 bit clean mode, allowing the 8th bit of characters typed at the 
+keyboard to be passed to the application.
+.IP "\fB-ls\fP
+Prepend a "-" to argv[0] of the shell which is initiated for the window,
+causing it to be a login shell.
+.IP "\fB-ls-\fP
+Do not prepend a "-" to argv[0] of the shell which is initiated for the window,
+causing it to be a regular shell. Used only to over-ride a resources setting.
+.IP "\fB-ic\fP
+Start iconified, if the window manager supports that option.
+.IP " \fB-fat\fP
+Use an xterm-style fat scrollbar instead of rxvt's native thin scrollbar.
+.IP " \fB-thin\fP
+Use rxvt's native thin scrollbar, no matter what the resources say.
+.IP " \fB-smallfont\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-"<" to toggle to a smaller font.
+.IP " \fB-bigfont\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-">" to toggle to a bigger font.
+.IP " \fB-pageup\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-Prev_Page to toggle to scroll up a page.
+.IP " \fB-pagedown\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-Next_Page to toggle to scroll down a page.
+.IP " \fB-secure\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-"s" to toggle to a bigger font.
+.IP " \fB-sl\fP \fInumber\fP
+Causes rxvt to save \fInumber\fP lines in he scroll back buffer instead of
+the default 64.
+.IP " \fB-meta\fP \fIstring\fP
+Causes rxvt to alter its handling of meta (alt) + keypress. By
+default, rxvt will send an escape prefix when it receives a meta
+keypress. You can specify either "escape","8thbit", or "ignore" for
+\fIstring\fP. "8thbit" causes the 8th bit to be set in the received
+character. 
+
+.SH X RESOURCES
+\fBrxvt\fP accepts resources set in each users ~/.Xdefaults, and probably from a few dozen other places too. If no resources are specified, suitable defaults will be used. Command line arguments can be used to over-ride resources settings. The following resources are allowed:
+.IP "\fBrxvt.command:\fP \fIcommand\fP [ \fIarguments\fP ]"
+The same as command line argument -e.
+.IP "\fBrxvt.geometry:\fP \fIwindow-geometry\fP
+The same as command line argument -geometry.
+.IP "\fBrxvt.background:\fP \fIcolor\fP
+The same as command line argument -bg.
+.IP "\fBrxvt.foreground:\fP \fIcolor\fP
+The same as command line argument -fg.
+.IP "\fBrxvt.font:\fP \fIfontname\fP
+The same as command line argument -font.
+.IP "\fBrxvt.title:\fP \fItext\fP
+The same as command line argument -T.
+.IP "\fBrxvt.icon_name:\fP \fItext\fP
+The same as command line argument -n.
+.IP "\fBrxvt.bits:\fP \fItext\fP
+\fItext\fP must be 7 or 8. 7 is the same as command line option -7, and 8
+is the same as -8.
+.IP "\fBrxvt.login_shell:\fP \fItext\fP
+\fItext\fP must be True or False. True is the same as -ls, and False is the
+same as -ls-.
+.IP "\fBrxvt.scrollbar:\fP \fItext\fP
+\fItext\fP must be Fat  or Thin. Fat is the same as -fat, and thin is the 
+same as -thin.
+.IP " \fBrxvt.smaller_font_key:\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-"<" to toggle to a smaller font.
+.IP " \fBrxvt.bigger_font_key:\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-">" to toggle to a bigger font.
+.IP " \fBrxvt.page_up_key:\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-Prev_Page to toggle to a bigger font.
+.IP " \fBrxvt.page_down_key:\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-Next_Page to toggle to a bigger font.
+.IP " \fBrxvt.secure_key\fP \fIkeysym\fP
+Makes rxvt use key alt-keysym instead of alt-"s" to toggle to a bigger font.
+.IP " \fBrxvt.saveLines\fP \fInumber\fP
+Causes rxvt to save \fInumber\fP lines in he scroll back buffer instead of
+the default 64.
+.IP " \fBrxvt.meta\fP \fIstring\fP
+See the -meta command line option.
+
+.SH TITLES AND ICON NAMES
+One occasionally confusing aspect of \fIrxvt\fP and other X applications
+is the collection
+of names that an application window can have and the relationship
+between the names and the command line options used to set them.  This
+section attempts to make the situation a bit clearer in the case of \fIrxvt\fP.
+.LP
+In fact, each terminal window has two names: its
+title and its icon name.  These names are distinct and have
+different functions, although they usually have the same value.  
+The title is the text that is displayed in
+the title bar, if there is one, and the icon name is the name that
+appears in the window's icon or represents it in the icon manager
+window.
+.SH THE SCROLL BAR
+Lines of text that scroll off the top of the \fIrxvt\fP window are saved
+automatically (up to a preset maximum number) and can be viewed by
+scrolling them back into the window with the scrollbar. 
+.SS The rxvt-style scroll bar
+Pressing a  mouse button while in the scrollbar will cause the window
+contents to scroll continuously with mouse motion.
+
+Pressing the up or down arrows which are at the top and bottom of the 
+scroll bar, will cause the window to scroll by almost a full screen. The same
+effect can be achieved by typing alt-next-page or alt-prev-page. The 
+actual hotkey which is used can be 
+switched through command line or X resources options described above. 
+
+.SS The xterm-style scroll bar
+If the -fat option has been selected, an xterm-compatible scroll bar is
+used instead of the rxvt-style scroll bar.
+
+Pressing a mouse button 2 while in the scrollbar will cause the window
+contents to scroll continuously with mouse motion. 
+
+Pressing mouse button 1
+will move the line adjacent to the pointer to the top of the display window.
+
+Pressing mouse button 2
+will move the line at the top of the display window to a position adjacent to 
+the pointer.
+
+.SH TEXT SELECTION AND INSERTION
+\fIrxvt\fP uses a similar kind of text selection and insertion mechanism
+to \fIxterm\fP.  Pressing and releasing the middle mouse button in an
+\fIrxvt\fP window causes the current text selection to be inserted as if
+it had been typed on the keyboard.  For the insertion to take place,
+both the button press and the button release need to be done with the
+cursor in the \fIrxvt\fP window.
+.LP
+The left and right mouse buttons are used to select text. 
+A text selection starts at the point where the left or right button is 
+pressed, and ends at the point where it is released. Rxvt does not support 
+word and line selection by double clicking.
+
+.SH SECURING THE KEYBOARD
+You can enter or exit from the secure keyboard mode by typing
+alt-s. This is typically a good thing to do when you are typing 
+a password. The actual hotkey which is used can be 
+switched through command line or X resources options described above. 
+
+.SH CHANGING FONTS
+You can change fonts on the fly by typing alt-> or alt-< (that hold down the
+"Alt" key and press "<" or ">". The actual hotkey which is used can be 
+switched through command line or X resources options described above. This 
+will cycle through your default font and 4 others of various sizes.
+
+.SH BUGS
+rxvt-1.6 really is bug free, except for utmp support, which is
+pretty crazy.
+
+.SH AUTHOR
+John Bovey, University of Kent, 1992.
+Very very very heavily modified by Rob Nation (nation@rocket.sanders.lockheed.com)

@@ -1,0 +1,154 @@
+This is rxvt version 1.9, based on xvt version 1.0
+
+
+New since rxvt-1.85
+	1. Improved speed during selection operations.
+	2. Fixed the problem of underlines leaving pixels
+		turned on.
+
+-------------------------------------------------------------------------
+Rxvt is a heavily modified version of xvt (see attached readme). 
+Modifications were made by Rob Nation (nation@rocket.sanders.lockheed.com) 
+to make it a little more compact, and to add a few simple features:
+
+1. Some graphics character set support was added. This support is not
+   complete, but will run most applications which use the vt-100 graphics
+   character sets.
+2. Added a -C option which will cause the window to try to capture system
+   console messages.
+3. Added support for lots more function keys, especially Home, End
+   F1 through F20, Find Insert, Prev Page, Next Page. Other function keys
+   were already handled correctly.
+4. Added 8 bit clean mode.
+5. Addes an option to start the window's shell as a login shell.
+6. Fixed a few bugs.
+7. Provided an alternate scroll-bar style.
+
+Some features were removed to make the code a little more compact:
+1. Double clicking to put a whole word in the cut-and-paste buffer was
+   removed, as was triple clicking to get a whole line. You can still sweep
+   out whole words or lines. 
+2. Can no longer sweep out more than one screenful to paste into the 
+   cut and paste buffer.
+
+
+Bug reports should be directed to nation@rocket.sanders.lockheed.com
+
+----------------------------------------------------------------------------
+This is the README that came with xvt-1.0. It is included mainly to give
+the original author credit for his work. Some comments do not apply to
+rxvt-1.4
+
+		   README file for xvt 1.0
+		   -----------------------
+
+Xvt is an X terminal-emulator that is designed to be more or less
+compatible with xterm while using much less swap space.  It is mainly
+intended for use at sites which use large numbers of X terminals but
+may also be useful on single workstations that are short of memory.  On
+a SPARCstation, an initially invoked xvt uses about 1/3 megabyte of
+swap while xterm uses about 1.3 megabytes (obtained by running pstat
+rather than ps which seems to give unreliable size figures on SPARCs).
+The main way that xvt achieves its small size is by avoiding the use of
+the X toolkit.
+
+The current version of xvt is our default X terminal emulator and has
+been used for eight months by students, computing support staff and
+service users and so is fairly well tested.
+
+Supported architectures
+-----------------------
+
+Sun SPARCStation running SunOS 4.1.?.  There should be not any real
+problems in porting xvt to other platforms although the tty
+initialisation code may need changing on hosts that only support BSD
+sgtty terminal configuration.
+
+Xterm features not supported
+----------------------------
+
+ - Tektronix 4014 emulation
+
+ - Session logging
+
+ - Pop-up menus.  The only one of xterm's popup menu commands that is
+   provided in xvt is displaying and hiding of the scrollbar and this
+   is done simply by pressing any mouse key in the window with the
+   CONTROL key held down.
+
+ - Coloured text cursors
+
+ - Toolkit style configurability.  In particular, xvt does not allow
+   the user to remap the mouse or keyboard keys.
+
+ - Vt100 graphics characters - this will be remedied in the next version.
+
+Major xterm features that are supported
+---------------------------------------
+
+ - VT100 emulation.  Most of the main escape sequences are supported -
+   certainly all those used by the standard screen based UNIX
+   applications.
+
+ - Lines that scroll off the top of the window are saved can be
+   scrolled back with a scrollbar.
+
+ - Text selection and insertion including double and triple click for
+   words and lines.
+
+Other differences between xvt and xterm
+---------------------------------------
+
+ - Xvt has a couple of additional enquiry escape sequences:
+
+   ESC[7n - causes xvt to respond with the name of its X display in a
+	    form that can be used to initialise the DISPLAY environment
+	    variable.  If this is done in a user's .cshrc file it
+	    provides a way to automatically update DISPLAY after an
+	    rlogin.  Something like the following should work if the
+	    initial ^[ in the echo command is an ESC character:
+
+	    if(!($?DISPLAY)) then
+		if($?term) then
+		    if($term =~ xterm*) then
+			stty -echo >/dev/tty
+			echo -n '^[[7n' >/dev/tty
+			setenv DISPLAY `line </dev/tty`
+			stty echo >/dev/tty
+		    endif
+		endif
+	    endif
+
+   ESC[8n - causes xvt to respond with a hex encoded copy of the server's
+	    magic cookie which can be used to update a user's .Xauthority
+	    file.  We have a program to do this which could be made available
+	    if anyone is interested.
+
+Known Bugs
+----------
+
+ - xvt does not know about transferring selections in installments and so
+   making large selections or trying to insert large selections will
+   fail.  The maximum selection size supported is server dependent but
+   seems to be a little under 64k on all our servers.
+
+ - On a heavily loaded machine, a text insertion (middle mouse button)
+   quickly followed by a keyboard key press will sometimes be interpreted
+   in the wrong order.
+
+ - xvt does not look in all the approved places for its X resources.
+   It does, however, work correctly with resources that have been
+   loaded into the server using xrdb
+
+Building and installing xvt
+---------------------------
+
+To build xvt, simply type 'make'.
+
+To install xvt, you should edit the MANDIR and BIN pathnames in the
+Makefile and then type 'make install' as root.  When installed for
+general use, xvt needs to belong to root and have the setuid flag set
+so that it can make entries in the /etc/utmp file.
+
+
+
