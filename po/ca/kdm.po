@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-15 22:42+0100\n"
+"PO-Revision-Date: 1998-12-22 22:37+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "Aturo o engego?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Introduïu la contrasenya de root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -31,7 +31,7 @@ msgstr "Atura i engega"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Engega el servidor X"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -55,7 +55,7 @@ msgstr "Vinga!"
 
 #: kgreeter.cpp:328
 msgid "Shutdown..."
-msgstr "Aturant..."
+msgstr "S'està aturant..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
@@ -77,6 +77,3 @@ msgstr "Avís: el vostre compte venç el %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "El directori d'inici no està disponible"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Sortida kdm"

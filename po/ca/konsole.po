@@ -1,0 +1,182 @@
+# KONSOLE CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: konsole\n"
+"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"PO-Revision-Date: 1998-12-23 00:31+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.C:284
+msgid "&Normal"
+msgstr "&Normal"
+
+#: main.C:287
+msgid "&Small"
+msgstr "&Petita"
+
+#: main.C:288
+msgid "&Medium"
+msgstr "&Mitjana"
+
+#: main.C:289
+msgid "&Large"
+msgstr "&Gran"
+
+#: main.C:290
+msgid "&Huge"
+msgstr "&Enorme"
+
+#: main.C:292
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:293
+msgid "Linux (small)"
+msgstr "Linux (petit)"
+
+#: main.C:296
+msgid "&More ..."
+msgstr "Mé&s ..."
+
+#: main.C:302
+msgid "&Hide"
+msgstr "&Oculta"
+
+#: main.C:303
+msgid "&Left"
+msgstr "&Esquerra"
+
+#: main.C:304
+msgid "&Right"
+msgstr "&Dreta"
+
+#: main.C:310
+msgid "40x15 (&small)"
+msgstr "40x15 (&petita)"
+
+#: main.C:311
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:312
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:313
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:314
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmv&ga)"
+
+#: main.C:323
+msgid "&Menubar"
+msgstr "Barra de &menú"
+
+#: main.C:325
+msgid "&Frame"
+msgstr "M&arc"
+
+#: main.C:327
+msgid "Scroll&bar"
+msgstr "&Barra de scroll"
+
+#: main.C:329
+msgid "BS sends &DEL"
+msgstr "BS envia &DEL"
+
+#: main.C:332
+msgid "&Font"
+msgstr "&Font"
+
+#: main.C:333
+msgid "&Size"
+msgstr "&Mida"
+
+#: main.C:334
+msgid "&Schema"
+msgstr "E&squema"
+
+#: main.C:336
+msgid "&Save options"
+msgstr "&Desa opcions"
+
+#: main.C:340
+msgid "&About ..."
+msgstr "&Quant a ..."
+
+#: main.C:341
+msgid "&User's Manual ..."
+msgstr "Manual d'&usuari ..."
+
+#: main.C:342
+msgid "&Technical Reference ..."
+msgstr "Referència &tècnica ..."
+
+#: main.C:346
+msgid "cd"
+msgstr "cd"
+
+#: main.C:359
+msgid "Sessions"
+msgstr "Sessions"
+
+#: main.C:502
+#, c-format
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+"No s'ha trobat la font `%s'.\n"
+"Comproveu README.linux.console."
+
+#: main.C:607
+#, c-format
+msgid "About %s"
+msgstr "Quant %s"
+
+#: main.C:609
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s versió %s - una terminal X\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Aquest programa és un programa lliure sota els\n"
+"termes de la Llicencia Artística i ve\n"
+"SENSE CAP GARANTIA.\n"
+"Llegiu els detalls a `LICENSE.readme'."
+
+#: main.C:732
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr "`%s' ha acabat anormalment."
+
+#: main.C:735
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+"\n"
+"Codi de retorn = "
+
+#: main.C:928
+msgid "Welcome to the console"
+msgstr "Benvingut a la consola"

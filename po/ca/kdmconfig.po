@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-06-08 23:40+0100\n"
+"PO-Revision-Date: 1998-12-05 18:47+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -144,14 +144,12 @@ msgid "Select fonts"
 msgstr "Fonts sel·leccionades"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Exemple:"
+msgstr "Exemple"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Canviar font"
+msgstr "Canvia font..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -167,24 +165,23 @@ msgstr "Estàndard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Vista prèvia"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Color"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Color"
+msgstr "Color sòlid"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Barreja horitzontal"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Barreja vertical"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -195,39 +192,36 @@ msgid "None"
 msgstr "Cap"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Mosaic"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
-msgstr "Centrat"
+msgstr "Centra"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
-msgstr "Escalat"
+msgstr "Escala"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Dalt esquerra"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Dalt dreta"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Baix esquerra"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Baix dreta"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Fantasia"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -235,7 +229,7 @@ msgstr "Tots els usuaris"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "Usuaris sel·leccionats"
+msgstr "Usuaris seleccionats"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
@@ -246,15 +240,15 @@ msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Mostrar només\n"
-"usuaris sel·leccionats"
+"Mostra només els\n"
+"usuaris seleccionats"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Mostrar tots els usuaris\n"
+"Mostra tots els usuaris\n"
 " excepte els ocults"
 
 #: kdm-users.cpp:97
@@ -267,7 +261,7 @@ msgstr "Usuaris ordenats"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "Cap usuari sel·leccionat"
+msgstr "Cap usuari seleccionat"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
@@ -275,7 +269,7 @@ msgstr "Deso la imatge com imatge per omissió?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr ""
+msgstr "Permís per aturar"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -295,11 +289,11 @@ msgstr "Ordres"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
-msgstr "Aturar"
+msgstr "Atura"
 
 #: kdm-sess.cpp:70
 msgid "Restart"
-msgstr "Reengegar"
+msgstr "Reengega"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
@@ -316,9 +310,3 @@ msgstr "Tipus disponibles"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "sense nom!"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fonts"
-
-#~ msgid "Appearance"
-#~ msgstr "Aparença"

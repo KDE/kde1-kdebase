@@ -1,0 +1,527 @@
+# KIKBD CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kikbd\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"PO-Revision-Date: 1998-12-11 16:14+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kikbd.cpp:116
+msgid "KDE International Keyboard already started on this display."
+msgstr "Ja s'ha engegat en aquesta pantalla el teclat internacional KDE."
+
+#: kikbd.cpp:288
+#, c-format
+msgid ""
+"X codes \"%s\" file does not exist.\n"
+"Using X default codes."
+msgstr ""
+"El fitxer de codis X \"%s\" no existeix.\n"
+"Es faran servir els codis X per omissió."
+
+#: kikbd.cpp:313
+#, c-format
+msgid ""
+"Keyboard map \"%s\" does not exists.\n"
+"Skipping this map."
+msgstr ""
+"El mapa de teclat \"%s\" no existeix.\n"
+"S'omet aquest mapa."
+
+#: kikbd.cpp:330
+msgid "Setup"
+msgstr "Valors"
+
+#: kikbd.cpp:345 kikbd.cpp:358
+#, c-format
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "No es pot eliminar %s dels modificadors.\n"
+
+#: kikbd.cpp:348
+#, c-format
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr "No es pot afegir %s al modificador número 3.\n"
+
+#: kikbd.cpp:370
+#, c-format
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"No es pot establir el mode canvi %s pel teclat %s.\n"
+"Es desactiven els símbols Alt"
+
+#: kikbd.cpp:392
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+"No es pot eliminar Bloq Majús dels modificadors.\n"
+"Es desactiva l'emulació Bloq Majús"
+
+#: keymap.cpp:181
+msgid "KeyMap: cannot allocate memory"
+msgstr "KeyMap: no es pot assignar memòria"
+
+#: keymap.cpp:228
+#, c-format
+msgid ""
+"Can not find symbol \"%s\".\n"
+"May be your default X codes does not match.\n"
+"You can preset X codes in \"Advanced\" section\n"
+"of configuration program."
+msgstr ""
+"No es pot trobar el símbol \"%s\".\n"
+"Potser els vostres codis X per omissió no el tenen.\n"
+"Podeu prefixar els codis X a la secció \"Avançat\"\n"
+"del programa de configuració."
+
+#: keymap.cpp:233
+#, c-format
+msgid "KeyMap: can not find symbol \"%s\"."
+msgstr "KeyMap: no es pot trobar el símbol \"%s\"."
+
+#: keymap.cpp:241
+#, c-format
+msgid "KeyMap: do not understand key code \"%s\"."
+msgstr "KeyMap: no entenc el codi de tecla \"%s\"."
+
+#: keymap.cpp:247
+#, c-format
+msgid "KeyMap: key code \"%s\" go out of range."
+msgstr "KeyMap: el codi de tecla \"%s\" cau fora de rang."
+
+#: kikbdconf.cpp:95
+msgid "Global"
+msgstr "Global"
+
+#: kikbdconf.cpp:95
+msgid "Window"
+msgstr "Finestra"
+
+#: kikbdconf.cpp:95
+msgid "Class"
+msgstr "Classe"
+
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
+msgid "(None)"
+msgstr "(cap)"
+
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
+msgid "Right Alt"
+msgstr "Alt dreta"
+
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
+msgid "Right Control"
+msgstr "Control dreta"
+
+#: kikbdconf.cpp:101
+msgid "Rights (Alt+Shift)"
+msgstr "Dreta (Alt+Majús)"
+
+#: kikbdconf.cpp:102
+msgid "Rights (Ctrl+Alt)"
+msgstr "Dreta (Ctrl+Alt)"
+
+#: kikbdconf.cpp:103
+msgid "Rights (Ctrl+Shift)"
+msgstr "Dreta (Ctrl+Majús)"
+
+#: kikbdconf.cpp:104
+msgid "Lefts  (Alt+Shift)"
+msgstr "Esquerra (Alt+Majús)"
+
+#: kikbdconf.cpp:105
+msgid "Lefts  (Ctrl+Alt)"
+msgstr "Esquerra (Ctrl+Alt)"
+
+#: kikbdconf.cpp:106
+msgid "Lefts  (Ctrl+Shift)"
+msgstr "Esquerra (Ctrl+Majús)"
+
+#: kikbdconf.cpp:107
+msgid "Both Shift's (Shift+Shift)"
+msgstr "Ambdues Majús (Majús+Majús)"
+
+#: kikbdconf.cpp:113
+msgid "Left  Alt"
+msgstr "Alt esquerra"
+
+#: kikbdconf.cpp:114
+msgid "Left  Control"
+msgstr "Control esquerra"
+
+#: kikbdconf.cpp:117
+msgid "Top Left"
+msgstr "Dalt esquerra"
+
+#: kikbdconf.cpp:118
+msgid "Top Right"
+msgstr "Dalt dreta"
+
+#: kikbdconf.cpp:119
+msgid "Bottom Left"
+msgstr "Baix esquerra"
+
+#: kikbdconf.cpp:120
+msgid "Bottom Right"
+msgstr "Baix dreta"
+
+#: kikbdconf.cpp:147
+msgid "X default codes"
+msgstr "Codis X per omissió"
+
+#: kikbdconf.cpp:204
+#, c-format
+msgid ""
+"%s\n"
+"Do you want to start Configuration?"
+msgstr ""
+"%s\n"
+"Voleu engegar la configuració?"
+
+#: kikbdconf.cpp:212
+msgid "Your configuration is empty. Install system default."
+msgstr "La vostra configuració es buida. S'instal·la la del sistema."
+
+#: kikbdconf.cpp:218
+msgid ""
+"Configuration file you have has older format when expected.\n"
+"Some settings may be incorrect."
+msgstr ""
+"El vostre fitxer de configuració té un format més antic de l'esperat.\n"
+"Diversos valors poden ser incorrectes."
+
+#: kikbdconf.cpp:226
+msgid ""
+"Configuration file you have has newer format when expected.\n"
+"Some settings may be incorrect."
+msgstr ""
+"El vostre fitxer de configuració té un format més nou de l'esperat.\n"
+"Diversos valors poden ser incorrectes."
+
+#: kikbdconf.cpp:353
+msgid "unknown"
+msgstr "desconegut"
+
+#: kikbdconf.cpp:357
+msgid "default"
+msgstr "omissió"
+
+#: kikbdconf.cpp:383
+msgid "Author:  Not specified"
+msgstr "Autor: no especificat"
+
+#: kikbdconf.cpp:385
+msgid "Author"
+msgstr "Autor"
+
+#: kikbdconf.cpp:391
+msgid "Description:  "
+msgstr "Descripció:   "
+
+#: kikbdconf.cpp:394
+msgid "Source:  "
+msgstr "Font:    "
+
+#: kikbdconf.cpp:395
+msgid "no file"
+msgstr "cap fitxer"
+
+#: kikbdconf.cpp:396
+msgid "user file"
+msgstr "fitxer d'usuari"
+
+#: kikbdconf.cpp:397
+msgid "system file"
+msgstr "fitxer del sistema"
+
+#: kikbdconf.cpp:402
+msgid "Statistic:  "
+msgstr "Estadístic: "
+
+#: kikbdconf.cpp:405
+msgid "symbols"
+msgstr "símbols"
+
+#: kikbdconf.cpp:408
+msgid "codes"
+msgstr "codis"
+
+#: kikbdconf.cpp:411
+msgid "alternative symbols"
+msgstr "símbols alternatius"
+
+#: kikbdconf.cpp:418
+msgid "language"
+msgstr "idioma"
+
+#: kikbdconf.cpp:419
+msgid "charset"
+msgstr "joc de caràcters"
+
+#: kikbdconf.cpp:457
+msgid "International keyboard ERROR"
+msgstr "ERROR del teclat internacional"
+
+#: kikbdconf.cpp:473
+msgid "International keyboard warning"
+msgstr "Avís del teclat internacional"
+
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
+msgid "International keyboard question"
+msgstr "Pregunta del teclat internacional"
+
+#: kikbdconf.cpp:487
+msgid "Configure"
+msgstr "Configura"
+
+#: kikbdconf.cpp:497
+msgid ""
+"\n"
+"Do you want to continue?"
+msgstr ""
+"\n"
+"Voleu continuar?"
+
+#: widgets.cpp:107
+msgid "List of active keyboard maps"
+msgstr "Llista dels mapes de teclat actius"
+
+#: widgets.cpp:117
+msgid "&Add"
+msgstr "&Afegeix"
+
+#: widgets.cpp:118
+msgid "Adding new keyboard map"
+msgstr "Afegeix un nou mapa de teclat"
+
+#: widgets.cpp:122
+msgid "Remove selected keyboard map"
+msgstr "Elimina el mapa de teclat seleccionat"
+
+#: widgets.cpp:127
+msgid "U&p"
+msgstr "A&munt"
+
+#: widgets.cpp:127
+msgid "Up selected keyboard map"
+msgstr "Puja el mapa de teclat seleccionat"
+
+#: widgets.cpp:131
+msgid "D&own"
+msgstr "A&baix"
+
+#: widgets.cpp:131
+msgid "Down selected keyboard map"
+msgstr "Baixa el mapa de teclat seleccionat"
+
+#: widgets.cpp:135
+msgid "&Info"
+msgstr "&Info"
+
+#: widgets.cpp:136
+msgid "Display information for selected keyboard map"
+msgstr "Mostra informació pel map de teclat seleccionat"
+
+#: widgets.cpp:145
+msgid "Use &hot list"
+msgstr "Usa la llista dels &bons"
+
+#: widgets.cpp:146
+msgid ""
+"Use only default and last active keyboard maps to switching from keyboard"
+msgstr ""
+"Usa només els mapes de teclat per omissió i darrer actiu per canviar de teclat"
+
+#: widgets.cpp:215
+msgid "Adding Keyboard"
+msgstr "Afegint teclat"
+
+#: widgets.cpp:216
+msgid "There is no more keyboard maps"
+msgstr "No hi ha més mapes de teclat"
+
+#: widgets.cpp:249
+msgid "Keyboard map information"
+msgstr "Informació de mapa de teclat"
+
+#: widgets.cpp:283
+msgid "Add Keyboard"
+msgstr "Afegeix teclat"
+
+#: widgets.cpp:287
+msgid "Available keyboard maps"
+msgstr "Mapes de teclat disponibles"
+
+#: widgets.cpp:394
+msgid "Keyboard maps"
+msgstr "Mapes de teclat"
+
+#: widgets.cpp:405
+msgid "Switch and Alt Switch"
+msgstr "Canviar i Alt Canviar"
+
+#: widgets.cpp:410
+msgid "Key(s) to switch between keyboard maps"
+msgstr "Tecles per canviar entre mapes de teclat"
+
+#: widgets.cpp:416
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr "Tecla per activar símbols alternatius al mapa de teclat actual"
+
+#: widgets.cpp:429
+msgid "&Beep"
+msgstr "&Bip"
+
+#: widgets.cpp:430
+msgid "Beep when ever keyboard mapping changed"
+msgstr "Bip sempre que canvii el mapa de teclat"
+
+#: widgets.cpp:433
+msgid "Ad&vanced"
+msgstr "A&vançat"
+
+#: widgets.cpp:433
+msgid "Advanced options"
+msgstr "Opcions avançades"
+
+#: widgets.cpp:450
+msgid "Advanced"
+msgstr "Avançat"
+
+#: widgets.cpp:466
+msgid "&Emulate Caps Lock"
+msgstr "&Emula Bloq Majús"
+
+#: widgets.cpp:467
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+msgstr "Emula Bloq Majús del servidor X. Cal per alguns idiomes"
+
+#: widgets.cpp:473
+msgid "&World Menu"
+msgstr "Menú &mundial"
+
+#: widgets.cpp:474
+msgid "Show menu in any window by holding Switch keys"
+msgstr "Mostra el menú en qualsevol finestra prement les tecles Canviar"
+
+#: widgets.cpp:481
+msgid "&Save Classes"
+msgstr "&Desa classes"
+
+#: widgets.cpp:482
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr "Desa les relacions entre classes de finestres i mapes de teclat"
+
+#: widgets.cpp:488
+msgid "Define X codes"
+msgstr "Defineix codis X"
+
+#: widgets.cpp:491
+msgid "Input"
+msgstr "Entrada"
+
+#: widgets.cpp:495
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr "Comportament estàndard. Mapa de teclat actiu per totes les finestres"
+
+#: widgets.cpp:499
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr "Comportament ampliat. Cada finestra recorda son propi mapa de teclat"
+
+#: widgets.cpp:503
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr "Comportament ampliat. Cada classe de finestra recorda son propi mapa "
+"de teclat"
+
+#: widgets.cpp:551
+msgid "Button Colors"
+msgstr "Colors de botó"
+
+#: widgets.cpp:561
+msgid "Foreground"
+msgstr "Primer pla"
+
+#: widgets.cpp:562
+msgid "Color of the text label"
+msgstr "Color del text de l'etiqueta"
+
+#: widgets.cpp:566
+msgid "With Caps Lock"
+msgstr "Amb Bloq Majús"
+
+#: widgets.cpp:567
+msgid "Background when Emulated Caps Lock active"
+msgstr "Fons quan està actiu l'emulació Bloq Majús"
+
+#: widgets.cpp:573
+msgid "With Alternate"
+msgstr "Amb alternatiu"
+
+#: widgets.cpp:574
+msgid "Background when Alternate switch is pressed"
+msgstr "Fons en prèmer el canvi alternatiu"
+
+#: widgets.cpp:583
+msgid "Button Font"
+msgstr "Font de botó"
+
+#: widgets.cpp:591
+msgid "&Customize Font"
+msgstr "Font a &mida"
+
+#: widgets.cpp:592
+msgid "Customize Font for text label or use global settings"
+msgstr "Font a mida pel text d'etiqueta o usa l'arranjament global"
+
+#: widgets.cpp:596
+msgid "C&hange Font"
+msgstr "C&anvia font"
+
+#: widgets.cpp:641
+msgid "&Autostart"
+msgstr "&Autoengega"
+
+#: widgets.cpp:642
+msgid "Start up automatically"
+msgstr "Engega automàticament"
+
+#: widgets.cpp:648
+msgid "&Docked"
+msgstr "&Encastat"
+
+#: widgets.cpp:649
+msgid "Dock into special area in kpanel"
+msgstr "Encasta a l'àrea especial del panell"
+
+#: widgets.cpp:658
+msgid "Place"
+msgstr "Col·loca"
+
+#: widgets.cpp:665
+msgid "Place in selected corner"
+msgstr "Col·loca al cantó"
+
+#: kcmikbd.cpp:64
+msgid "&General"
+msgstr "&General"
+
+#: kcmikbd.cpp:70
+msgid "&Style"
+msgstr "&Estil"
+
+#: kcmikbd.cpp:76
+msgid "Start&Up"
+msgstr "E&ngega"
+
+#: kcmikbd.cpp:80
+msgid "International Keyboard"
+msgstr "Teclat internacional"

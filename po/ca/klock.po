@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-06-08 23:45+0100\n"
+"PO-Revision-Date: 1998-12-22 23:37+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,14 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Contracció"
+msgstr "Atracció"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Valors KBat"
+msgstr "Valors Atracció"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -33,7 +31,7 @@ msgstr "Mode:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Pilotes"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -45,19 +43,17 @@ msgstr "Polígons"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Cues"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Fulgor"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Contracció"
+msgstr "Quant a Atracció"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -67,11 +63,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Roca Versió 3.3\n"
+"Atracció Versió 1.0\n"
 "\n"
-"Copyright (c) 1992 by Jamie Zawinski\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portat a kscreensave per Martin Jones."
+"Portat a kscreensaver per:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -79,16 +77,15 @@ msgstr "Pancarta"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "Valors kbanner"
+msgstr "Valors Pancarta"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Fallat"
+msgstr "Família:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Mida:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -96,7 +93,7 @@ msgstr "Color:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Negreta"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -135,7 +132,7 @@ msgstr "Rat Penat"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "Valors KBat"
+msgstr "Valors Rat Penat"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -165,23 +162,23 @@ msgstr "Pantalla en blanc"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "Valors kblankscrn"
+msgstr "Valors Pantalla en blanc"
 
 #: blob.cpp:57
 msgid "Random Linear"
-msgstr "Lineal Aleatòri"
+msgstr "Lineal aleatòri"
 
 #: blob.cpp:58
 msgid "Horizonal Sine"
-msgstr "Sinus Horitzontal"
+msgstr "Sinus horitzontal"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
-msgstr "Rebot Circular"
+msgstr "Rebot circular"
 
 #: blob.cpp:60
 msgid "Polar Coordinates"
-msgstr "Coordinades Polars"
+msgstr "Coordinades polars"
 
 #: blob.cpp:61
 msgid "Random"
@@ -197,7 +194,7 @@ msgstr "Valors Taca"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
-msgstr "Segons Trama"
+msgstr "Segons trama"
 
 #: blob.cpp:480
 msgid "Algorithm"
@@ -237,7 +234,7 @@ msgstr "Número de punts:"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
-msgstr "Grandària de punt:"
+msgstr "Mida de punt:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
@@ -259,16 +256,15 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Pasterada v0.1 -- un grumoll d'esferes girant i canviant de grandària\n"
+"Pasterada v0.1 -- un grumoll d'esferes girant i canviant de mida\n"
 "\n"
 "Copyright (c) 1996 by Jeremie PETIT\n"
 "\n"
 "Portat a kscreensave per Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Pantalla en blanc"
+msgstr "La Negra Pantalla de la Mort"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -276,15 +272,15 @@ msgstr "Flama"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "Valors KFlame"
+msgstr "Valors Flama"
 
 #: flame.cpp:423
 msgid "Max Levels:"
-msgstr "Màxim Nivells:"
+msgstr "Màxim nivells:"
 
 #: flame.cpp:438
 msgid "Num Points:"
-msgstr "Número Punts:"
+msgstr "Número punts:"
 
 #: flame.cpp:551
 msgid "About Flame"
@@ -310,7 +306,7 @@ msgstr "Bosc"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "Valors KForest"
+msgstr "Valors Bosc"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -340,7 +336,7 @@ msgstr "Bot"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "Valors KHop"
+msgstr "Valors Bot"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
@@ -370,15 +366,15 @@ msgstr ""
 
 #: laser.cpp:333
 msgid "Laser"
-msgstr "Laser"
+msgstr "Làser"
 
 #: laser.cpp:393
 msgid "Setup KLaser"
-msgstr "Valors KLaser"
+msgstr "Valors Làser"
 
 #: laser.cpp:482
 msgid "About Laser"
-msgstr "Quant a Laser"
+msgstr "Quant a Làser"
 
 #: laser.cpp:483
 msgid ""
@@ -388,7 +384,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Laser Versió 3.3\n"
+"Làser Versió 3.3\n"
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
@@ -396,7 +392,7 @@ msgstr ""
 
 #: lines.cpp:134
 msgid "Setup klines"
-msgstr "Valors klines"
+msgstr "Valors Línies"
 
 #: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
@@ -432,19 +428,19 @@ msgstr ""
 
 #: lissie.cpp:241
 msgid "Lissie"
-msgstr "Lissie"
+msgstr "Molles"
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
-msgstr "Valors KLissie"
+msgstr "Valors Molles"
 
 #: lissie.cpp:353
 msgid "Num of Lissies:"
-msgstr "Número de Lissies:"
+msgstr "Número de molles:"
 
 #: lissie.cpp:480
 msgid "About Lissie"
-msgstr "Quant a Lissie"
+msgstr "Quant a Molles"
 
 #: lissie.cpp:481
 msgid ""
@@ -454,7 +450,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Lissie\n"
+"Molles\n"
 "\n"
 "Copyright (c) 1996 by Alexander Jolk\n"
 "\n"
@@ -466,7 +462,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opció %s no té suport en aquesta plataforma!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -474,14 +469,15 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the kcheckpass!"
 msgstr ""
-"El seu sistema utilitza paraules de pas ombra!\n"
-"Si us plau, contacteu amb l'administrador del sistema.\n"
+"Avís: No es pot bloquejar la pantalla!\n"
 "\n"
-"Digueu-li que us cal suid pels salvapantalles!"
+"El vostre sistema fa servir contrasenyes ombra.\n"
+"Contacteu amb l'administrador del sistema i\n"
+"digueu-li que us cal suid pel programa kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
-msgstr "Paraules de pas ombra"
+msgstr "Contrasenyes ombra"
 
 #: main.cpp:472
 msgid ""
@@ -490,18 +486,20 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"Si us plau, no useu -test juntament amb -lock.\n"
+"Feu servir klock en lloc seu.\n"
 
 #: main.cpp:580
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Us: %s -install|-setup|-test|-desc|-preview mid|-inroot\n"
-"    [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"    [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:583
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -522,21 +520,22 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 "  -corners xxxx     En situar el cursor al racó s'efectua l'acció:\n"
-"                     x = i  cap acció (ignorar)\n"
-"                     x = s  salvar pantalla\n"
-"                     x = l  bloquejar pantalla\n"
+"                     x = i  cap acció (ignora)\n"
+"                     x = s  salva pantalla\n"
+"                     x = l  bloqueja pantalla\n"
 "                    ordre: dalt-esq, dalt-dreta, baix-esq, baix-dreta\n"
 "  -delay num        Temps d'inactivitat abans d'engegar el salvapantalles\n"
 "                      (10 minuts per omissió)\n"
-"  -desc             Imprimir la descripció del salvapantalles a la sortida\n"
-"  -install          Instal·lar el salvapantalles\n"
-"  -lock             Demanar la paraula de pas per aturar el salvapantalles\n"
-"  -nice num         Executar amb el valor nice especificat\n"
+"  -desc             Imprimeix la descripció del salvapantalles a la sortida\n"
+"  -install          Instal·la el salvapantalles\n"
+"  -lock             Demana la paraula de pas per aturar el salvapantalles\n"
+"  -allow-root       Accepta la clau de pas de root per desbloquejar\n"
+"  -nice num         Executa amb el valor nice especificat\n"
 "\n"
-"  -preview wid      Executar a la finestra X especificada\n"
-"  -inroot           Executar a la finestra X\n"
+"  -preview wid      Executa a la finestra X especificada\n"
+"  -inroot           Executa a la finestra X\n"
 "  -setup            Valors del salvapantalles\n"
-"  -test             Invocar el salvapantalles immediatament\n"
+"  -test             Invoca el salvapantalles immediatament\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -552,7 +551,7 @@ msgstr "Valors KMorph3d"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr "Tipus Objecte:"
+msgstr "Tipus objecte:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
@@ -573,24 +572,20 @@ msgstr ""
 "Portat a kscreensave per Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Espai (GL)"
+msgstr "Tubs (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Valors KSlip"
+msgstr "Valors Tubs"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Número d'abelles"
+msgstr "Número de tubs"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Quant a Línies"
+msgstr "Quant a Tubs"
 
 #: pipes.cpp:745
 msgid ""
@@ -598,10 +593,13 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"Tubs\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "Valors kpolygon"
+msgstr "Valors Polígon"
 
 #: polygon.cpp:107
 msgid "Vertices:"
@@ -625,11 +623,11 @@ msgstr ""
 
 #: pyro.cpp:439
 msgid "Pyro"
-msgstr "Pyro"
+msgstr "Focs"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "Valors KPyro"
+msgstr "Valors Focs"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -637,7 +635,7 @@ msgstr "Núvol"
 
 #: pyro.cpp:629
 msgid "About Pyro"
-msgstr "Quant a Pyro"
+msgstr "Quant a Focs"
 
 #: pyro.cpp:630
 msgid ""
@@ -647,7 +645,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Pyro Versió 3.4\n"
+"Focs Versió 3.4\n"
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
@@ -659,12 +657,11 @@ msgstr "Roca"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "Valors krock"
+msgstr "Valors Roca"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Mode:"
+msgstr "Moviment"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -690,7 +687,7 @@ msgstr ""
 
 #: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
-msgstr "Paraula de pas"
+msgstr "Contrasenya"
 
 #: saver.cpp:121
 msgid "Failed"
@@ -746,7 +743,7 @@ msgstr "Gravetat"
 
 #: science.cpp:1027
 msgid "Hide Background"
-msgstr "Amagar fons"
+msgstr "Amaga fons"
 
 #: science.cpp:1053
 msgid "Intensity:"
@@ -769,22 +766,18 @@ msgid "About Science"
 msgstr "Quant a Ciència"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Pantalla en blanc"
+msgstr "Pantalla de diapositives"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Valors Ciència"
+msgstr "Valors Diapositives"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Quant a Ciència"
+msgstr "Quant a Diapositives"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -794,19 +787,21 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Roca Versió 3.3\n"
+"Pantalla de Diapositives Versió 1.1\n"
 "\n"
-"Copyright (c) 1992 by Jamie Zawinski\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Portat a kscreensave per Martin Jones."
+"Portat a kscreensaver per:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293
 msgid "Slip"
-msgstr "Slip"
+msgstr "Relliscada"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "Valors KSlip"
+msgstr "Valors Relliscada"
 
 #: slip.cpp:392
 msgid "Batchcount:"
@@ -814,7 +809,7 @@ msgstr "Pilons:"
 
 #: slip.cpp:488
 msgid "About Slip"
-msgstr "Quant a Slip"
+msgstr "Quant a Relliscada"
 
 #: slip.cpp:489
 msgid ""
@@ -824,7 +819,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Slip\n"
+"Relliscada\n"
 "\n"
 "Copyright (c) 1991 by Scott Draves\n"
 "\n"
@@ -836,7 +831,7 @@ msgstr "Espai (GL)"
 
 #: space.cpp:581
 msgid "Setup KSpace"
-msgstr "Valors KSpace"
+msgstr "Valors Espai"
 
 #: space.cpp:597
 msgid "Warp Interval:"
@@ -844,7 +839,7 @@ msgstr "Interval de deformació:"
 
 #: space.cpp:685
 msgid "About KSpace"
-msgstr "Quant a KSpace"
+msgstr "Quant a Espai"
 
 #: space.cpp:687
 msgid ""
@@ -852,7 +847,7 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
-"KSpace\n"
+"Espai\n"
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 
@@ -862,7 +857,7 @@ msgstr "Eixam"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr "Valors KSwarm"
+msgstr "Valors Eixam"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"

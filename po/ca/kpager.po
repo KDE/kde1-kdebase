@@ -1,0 +1,128 @@
+# KPAGER CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-11-27 18:11+0100\n"
+"PO-Revision-Date: 1998-12-23 00:25+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "Canvia l'escriptori global"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Canvia la barra de menú"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "A la dreta"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "A l'esquerra"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Oculta l'escriptori &global"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Mostra l'escriptori &global"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Oculta la barra de &menú"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 files"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "&Un clic canvia l'escriptori"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "Oculta els &noms d'escriptori"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "Mostra els &noms d'escriptori"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Llis"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Icona"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Mode dibuix"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"La pàgina inici de KPager està a : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager ve SENSE CAP GARANTIA EN ABSOLUT; llegiu els detalls al fitxer COPYING\n"
+"Això és un programa lliure, i el podeu redistribuir sota certes condicions\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Mostra barra de &menú"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Un clic canvia l'escriptori"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Maximitza"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "&Iconitza"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "&No apegalòs"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "&Apegalòs"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "A l'&escriptori"

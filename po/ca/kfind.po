@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-05-20 00:35+0100\n"
+"PO-Revision-Date: 1998-12-05 18:57+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,19 +23,19 @@ msgstr "No es pot obrir o llegir el directori"
 
 #: kfindtop.cpp:121
 msgid "&Start search"
-msgstr "&Engegar cerca"
+msgstr "&Engega cerca"
 
 #: kfindtop.cpp:123
 msgid "S&top search"
-msgstr "&Aturar cerca"
+msgstr "&Atura cerca"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "&Obrir"
+msgstr "&Obre"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
-msgstr "&Afegir al fitxer"
+msgstr "&Afegeix al fitxer"
 
 #: kfindtop.cpp:135
 msgid "&Properties"
@@ -43,23 +43,23 @@ msgstr "&Propietats"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Obrir &Carpeta contenidora"
+msgstr "Obre &Carpeta contenidora"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
-msgstr "&Desar cerca"
+msgstr "&Desa cerca"
 
 #: kfindtop.cpp:158
 msgid "&Select All"
-msgstr "&Seleccionar tot"
+msgstr "&Selecciona-ho tot"
 
 #: kfindtop.cpp:160
 msgid "Unse&lect All"
-msgstr "&Deseleccionar tot"
+msgstr "&Deselecciona-ho tot"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"
-msgstr "&Invertir la selecció"
+msgstr "&Inverteix la selecció"
 
 #: kfindtop.cpp:174
 msgid "&Preferences ..."
@@ -84,7 +84,7 @@ msgstr ""
 
 #: kfindtop.cpp:199
 msgid "Start Search"
-msgstr "Engegar cerca"
+msgstr "Engega cerca"
 
 #: kfindtop.cpp:204
 msgid "New Search"
@@ -92,19 +92,19 @@ msgstr "Nova cerca"
 
 #: kfindtop.cpp:209
 msgid "Stop Search"
-msgstr "Aturar cerca"
+msgstr "Atura cerca"
 
 #: kfindtop.cpp:222
 msgid "Add to archive"
-msgstr "Afegir al fitxer"
+msgstr "Afegeix al fitxer"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Obrir Carpeta contenidora"
+msgstr "Obre Carpeta contenidora"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
-msgstr "Desar resultats cerca"
+msgstr "Desa resultats cerca"
 
 #: kftabdlg.cpp:71
 msgid "&Named:"
@@ -112,15 +112,15 @@ msgstr "A&nomenat:"
 
 #: kftabdlg.cpp:74
 msgid "&Look in:"
-msgstr "&Buscar a:"
+msgstr "&Busca a:"
 
 #: kftabdlg.cpp:77
 msgid "&Browse ..."
-msgstr "&Fullejar"
+msgstr "&Fulleja ..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
-msgstr "Incloure &Subcarpetes"
+msgstr "Inclou &Subcarpetes"
 
 #: kftabdlg.cpp:117
 msgid " Name& Location "
@@ -144,7 +144,7 @@ msgstr "&Tots els fitxers"
 
 #: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
-msgstr "Trobar tots els fitxers creats o &Modificats:"
+msgstr "Troba tots els fitxers creats o &Modificats:"
 
 #: kftabdlg.cpp:148
 msgid "&between"
@@ -168,11 +168,11 @@ msgstr "Del &tipus"
 
 #: kftabdlg.cpp:207
 msgid "&Containing Text:"
-msgstr "&Contenint text:"
+msgstr "que &contenen:"
 
 #: kftabdlg.cpp:212
 msgid "&Size is:"
-msgstr "&Grandària:"
+msgstr "&Mida:"
 
 #: kftabdlg.cpp:235
 msgid "All Files and Folders"
@@ -200,7 +200,7 @@ msgstr "Fitxers executables SUID"
 
 #: kftabdlg.cpp:249
 msgid "(none)"
-msgstr ""
+msgstr "(cap)"
 
 #: kftabdlg.cpp:250
 msgid "At Least"
@@ -228,7 +228,7 @@ msgstr "El valor del dia no és vàlid!!"
 
 #: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
-msgstr "El valor de la grandària no és un número vàlid!!"
+msgstr "El valor de la mida no és un número vàlid!!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
@@ -240,15 +240,15 @@ msgstr "Format de fitxer:"
 
 #: kfoptions.cpp:76
 msgid "Save results to file:"
-msgstr "Desar resultats en el fitxer:"
+msgstr "Desa resultats en el fitxer:"
 
 #: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
-msgstr "Desar resultats en el fitxer ~/.kfind-results.html"
+msgstr "Desa resultats en el fitxer ~/.kfind-results.html"
 
 #: kfoptions.cpp:81
 msgid "Browse"
-msgstr "Fullejar"
+msgstr "Fulleja"
 
 #: kfoptions.cpp:94
 msgid "Plain Text"
@@ -256,15 +256,15 @@ msgstr "Text planer"
 
 #: kfoptions.cpp:123
 msgid "Saving"
-msgstr "&Desar"
+msgstr "&Desa"
 
 #: kfoptions.cpp:130
 msgid "Create Archive:"
-msgstr "Crear fitxer:   "
+msgstr "Crea el fitxer:"
 
 #: kfoptions.cpp:132
 msgid "Add to Archive:"
-msgstr "Afegir a fitxer:"
+msgstr "Afegeix al fitxer:"
 
 #: kfoptions.cpp:136
 msgid "Patterns:"
@@ -272,7 +272,7 @@ msgstr "Patrons:"
 
 #: kfoptions.cpp:139
 msgid "Add New"
-msgstr "Afegir nou"
+msgstr "Afegeix nou"
 
 #: kfoptions.cpp:180
 msgid "Archivers"
@@ -281,7 +281,7 @@ msgstr "Arxivadors"
 #: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
-msgstr "trobats %d fitxer(s)"
+msgstr "s'han trobat %d fitxer(s)"
 
 #: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
@@ -321,7 +321,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"No es possible esborrar\n"
+"No és possible esborrar\n"
 "el fitxer seleccionat"
 
 #: kfwin.cpp:335
@@ -338,14 +338,14 @@ msgid ""
 "is not empty!"
 msgstr ""
 "El directori especificat\n"
-"no està buit!"
+"no és buit!"
 
 #: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"No es possible esborrar\n"
+"No és possible esborrar\n"
 "el directori seleccionat"
 
 #: kfwin.cpp:437
@@ -355,12 +355,3 @@ msgstr "No reconec el tipus d'arxiu!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Error al crear el procés fill!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Tallar"
-
-#~ msgid "Properties"
-#~ msgstr "Propietats"
-
-#~ msgid "Files"
-#~ msgstr "Fitxers"

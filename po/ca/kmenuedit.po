@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-03-19 23:20+0100\n"
+"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"PO-Revision-Date: 1998-12-23 00:34+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
-msgstr "Canviar noms de &Menú"
+msgstr "Canvia noms de &menú"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
-msgstr "Refrescar tipus de &Fitxers"
+msgstr "Refresca tipus de &fitxers"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -43,7 +43,7 @@ msgstr "BUIT"
 
 #: kmenuedit.cpp:339
 msgid "Reload Menus"
-msgstr "Refrescar Menús"
+msgstr "Refresca menús"
 
 #: kmenuedit.cpp:340
 msgid ""
@@ -71,7 +71,7 @@ msgid ""
 " Select Ok to exit KMenuedit."
 msgstr ""
 "No es pot crear el directori pel menú personal.\n"
-" Trieu Bé per sortir de KMenuedit."
+" Seleccioneu Bé per sortir de KMenuedit."
 
 #: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
@@ -79,19 +79,19 @@ msgstr "Separador"
 
 #: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
-msgstr "Obrir/ Tancar"
+msgstr "Obre/ Tanca"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Seleccioneu l'ítem a moure"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Seleccioneu l'ítem a moure"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr ""
+msgstr "Nou"
 
 #: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
@@ -156,7 +156,7 @@ msgstr "Aplicació"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr "Encastar"
+msgstr "Encasta"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -167,18 +167,16 @@ msgid "Device"
 msgstr "Dispositiu"
 
 #: entrydialog.cpp:63
-#, fuzzy
 msgid "Type:"
-msgstr "Tipus FS:"
+msgstr "Tipus:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nom de fitxer:"
 
 #: entrydialog.cpp:82
-#, fuzzy
 msgid "Name:"
-msgstr "Nom de fitxer:"
+msgstr "Nom:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -214,7 +212,7 @@ msgstr "Opcions de terminal:"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr "Patró binari"
+msgstr "Patró binari:"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
@@ -254,11 +252,11 @@ msgstr "Icona desmuntat:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
-msgstr "Canviar noms de menú"
+msgstr "Canvia noms de menú"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Canviar el nom dels menús tal com es mostren a kpanel"
+msgstr "Canvia el nom dels menús tal com es mostren a kpanel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"
@@ -267,9 +265,3 @@ msgstr "Personal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Omissió:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! Botó PROTEGIT !"
-
-#~ msgid "&Reload"
-#~ msgstr "&Refrescar"
