@@ -29,12 +29,13 @@
 #include <config.h>
 extern "C" {
 #include <mediatool.h>
-}
+	   }
 
 char		KMServerPidFile[256];
 
 
 MdCh_IHDR	*IhdrChunk;
+MdCh_STAT	*StatChunk;
 MediaCon	m;
 
 
@@ -94,8 +95,24 @@ void baseinitMediatool(void)
 
 
 // call this for every new connection
-bool initMediatool(void)
+// Returns: 0= Failure to create connection
+//	    1= Uses old connection
+//          2= Created a new connection
+int initMediatool(char *Cid)
 {
+  if (Cid[0]!=0) {
+    int CommId = atoi(Cid);
+    MdConnect(CommId, &m);
+    if (m.shm_adr != NULL) {
+      // OK, there is an old connection
+      StatChunk = (MdCh_STAT*)FindChunkData(m.shm_adr, "STAT");
+      if (StatChunk)
+	if ( ! ( StatChunk->status & MD_STAT_EXITED) )
+	  // OK, everything is good. The Server still lives
+	  return 1;
+    }
+  }
+
   MdConnectNew(&m);
   if ( m.shm_adr == NULL )
     fatalexit("Could not create media connection.\n");
@@ -104,7 +121,7 @@ bool initMediatool(void)
   if (!IhdrChunk)
     fatalexit("No IHDR chunk.\n");
 
-  return(true);
+  return(2);
 }
 
 
@@ -119,7 +136,7 @@ int main ( int, char** )
   char* Opts[10];
   char MaudioText[]="maudio";
   char MediaText[]="-media";
-  //  int forkret;
+  char PidRead[100];
 
 
   XDisConn(1);    // Connect to X-Server
@@ -131,16 +148,31 @@ int main ( int, char** )
   strcpy(KMServerPidFile+strlen(KMServerPidFile),"/.kaudioserver");
 
   baseinitMediatool();
-  if (! initMediatool() )
+
+  // Read old communication id
+  KMServerPidHandle = fopen(KMServerPidFile,"r");
+  if (KMServerPidHandle == NULL)
+    PidRead[0]=0;
+  else
+    fgets(PidRead, 100, KMServerPidHandle);
+
+  fclose(KMServerPidHandle);
+  int ret =  initMediatool(PidRead);
+  if (ret==0)
     fatalexit(NotStarted);
 
+  if (ret ==1 ) {
+    printf("Using old audio server with talk id %s.\n", PidRead);
+    exit (0);
+  }
+
+  // New communication wanted
   // Write communication id file
   KMServerPidHandle = fopen(KMServerPidFile,"w");
-  if (KMServerPidHandle == NULL)
-    {
-      unlink (KMServerPidFile);
-      fatalexit("PID could not get written.\n");
-    }
+  if (KMServerPidHandle == NULL) {
+    unlink (KMServerPidFile);
+    fatalexit("PID could not get written.\n");
+  }
   fprintf(KMServerPidHandle,"%i\n",IhdrChunk->ref);
   fclose(KMServerPidHandle);
 
