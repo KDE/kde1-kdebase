@@ -1,4 +1,4 @@
-kwm: 0.4.6 (patched for QT-1.2)
+kwm: 0.4.7 (patched for QT-1.2 && kdelib-0.8)
 kpanel: 0.14.1
 kfm: 0.6.1
 kwmclient: 0.2

@@ -3,5 +3,5 @@
 
 #define VERSION 0.8
 
-#define PACKAGE kdelibs
+#define PACKAGE kdeapps
 
