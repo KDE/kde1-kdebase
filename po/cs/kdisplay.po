@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-11-15 01:18+0100\n"
-"PO-Revision-Date: 1998-11-11 08:59+01:00\n"
+"PO-Revision-Date: 1998-11-17 10:29+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,8 @@ msgid "&Rename ..."
 msgstr "Pø&ejmenovat ..."
 
 #: backgnd.cpp:184
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Pozadí"
+msgstr "Spoleèné &pozadí"
 
 #: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
@@ -108,17 +107,16 @@ msgid "Setu&p..."
 msgstr "Nas&tavit..."
 
 #: backgnd.cpp:371
-#, fuzzy
 msgid "&Dock into the panel"
 msgstr "&Dokovat v panelu"
 
 #: backgnd.cpp:381
 msgid "Cache size"
-msgstr ""
+msgstr "Velikost cache"
 
 #: backgnd.cpp:399
 msgid "kb"
-msgstr ""
+msgstr "kb"
 
 #: backgnd.cpp:1264
 msgid "Desktop names"
@@ -201,12 +199,11 @@ msgstr "Nastavení náhodného módu"
 
 #: backgnd.cpp:1638
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "&Vybírat soubory z adresáøe"
 
 #: backgnd.cpp:1652
-#, fuzzy
 msgid "&Browse ..."
-msgstr "&Listovat..."
+msgstr "&Listovat ..."
 
 #: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
@@ -225,13 +222,12 @@ msgid "&Add"
 msgstr "Pøid&at"
 
 #: backgnd.cpp:1910
-#, fuzzy
 msgid "Directory error"
-msgstr "Souborová chyba"
+msgstr "Adresáøová chyba"
 
 #: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Vybraný adresáø neexistuje"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -544,6 +540,3 @@ msgstr "Implicitní"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "libovolné"
-
-#~ msgid "One Des&ktop"
-#~ msgstr "Jedna p&racovní plocha"
