@@ -113,6 +113,11 @@ void KFMExec::openURL( const char *_url  )
     {
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, _url );
+	if ( dlg )
+	  {
+	    delete dlg;
+	    dlg = 0L;
+	  }
 	m->show();
 	return;
     }
@@ -168,6 +173,11 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 	if ( tryURL.right(1) != "/" && u.hasPath() )
 	    tryURL += "/";
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
+	if ( dlg )
+	  {
+	    delete dlg;
+	    dlg = 0L;
+	  }
 	m->show();
 
 	// We are a zombie now
@@ -283,6 +293,11 @@ void KFMExec::slotMimeType( const char *_type )
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
 	if ( aCharset != 0 ) m->setCharset(aCharset);
+	if ( dlg )
+	  {
+	    delete dlg;
+	    dlg = 0L;
+	  }
 	m->show();
 	
 	// We are a zombie now
