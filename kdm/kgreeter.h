@@ -95,6 +95,9 @@ private:
      QPushButton*   cancelButton;
      QPushButton*   shutdownButton;
      QComboBox*     sessionargBox;
+#if USESHADOW
+     struct spwd *swd;
+#endif
 };
 #endif /* KGREETER_H */
 
