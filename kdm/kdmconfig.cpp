@@ -66,10 +66,11 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 	  QStrList no_users;
 	  semsplit( nu, no_users);	  
 	  struct passwd *ps;
+#define CHECK_STRING( x) (x != 0 && x[0] != 0)
 	  for( ps = getpwent(); ps ; ps = getpwent()) {
-	       if( ps->pw_dir[0] != 0   &&
-		   ps->pw_shell[0] != 0 &&
-		   ps->pw_gecos[0] != 0 &&
+	       if( CHECK_STRING(ps->pw_dir) &&
+		   CHECK_STRING(ps->pw_shell) &&
+		   CHECK_STRING(ps->pw_gecos) &&
 		   ( no_users.contains( ps->pw_name) == 0)){
 		    // we might have a real user, insert him/her
 		    QPixmap p( user_pix_dir + QString(ps->pw_name) + ".xpm");
@@ -81,6 +82,7 @@ KDMConfig::getUsers( QString s, bool sorted = false)
 			 result->append( new KDMViewItem( ps->pw_name, p));
 	       }
 	  }
+#undef CHECK_STRING
      } else {
 	  QStrList sl;
 	  semsplit( s, sl);

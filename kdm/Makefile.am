@@ -20,7 +20,8 @@ LDADD  = @all_libraries@ -lkdecore -lqt -lXext\
            -lX11 -lXau -lXdmcp -lm $(PASSWDLIB) @LIBSOCKET@ @LIBCRYPT@
 
 # For kdmdesktop
-kdmdesktop_LDADD = @all_libraries@ -lkdecore -lqt -lm -lgif @LIBJPEG@ -lXext -lX11 $(LDADD)
+kdmdesktop_LDADD = @all_libraries@ -lkdecore -lqt -lm -lgif @LIBJPEG@ -lXext\
+		   -lX11 
 
 .h.moc:
 	$(MOC) -o $@ $<

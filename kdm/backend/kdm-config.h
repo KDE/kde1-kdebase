@@ -25,7 +25,7 @@
 #ifdef HAVE_PAM_LIB
 # define USE_PAM 1
 #else
-# ifdef HAVE_SHADOW_LIB
+# ifdef HAVE_SHADOW
 #  define USESHADOW 1
 # endif
 #endif

@@ -107,16 +107,16 @@ verify_root_pw( const char* pw)
      CHECK_PTR( pws);
 #ifndef USE_PAM
 #ifdef USESHADOW
-     if (spws == NULL) {
-	  printf("getspnam() failed.  Are you root?\n");
-	  return false;
+     // If USESHADOW is defined, kdm will work for both shadow and non
+     // shadow systems
+     if( spws != NULL) {
+       char* tmp = pws->pw_passwd;
+       pws->pw_passwd = spws->ps_pwdp;
+       spws->sp_pwdp = tmp;
      }
      endspent();
-     
-     if( strcmp( crypt( pw, spws->sp_pwdp), spws->sp_pwdp)) {
-#else
-     if( strcmp( crypt( pw, pws->pw_passwd), pws->pw_passwd)) {
 #endif /* USESHADOW */
+     if( strcmp( crypt( pw, pws->pw_passwd), pws->pw_passwd)) {
 	  printf("Root passwd verification failed\n");
 	  
 	  return false;
