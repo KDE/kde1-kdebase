@@ -21,7 +21,7 @@ Comment[pl]=Wszystkie ustawienia KDM
 Comment[pt]=Todas as configurações do KDM
 Comment[pt_BR]=Todas as configurações do KDM
 Comment[ro]=Toate setãrile KDM
-Comment[ru]=÷ÓÅ ÕÓÔÁÎÏ×ËÉ KDM
+Comment[ru]=îÁÓÔÒÏÊËÉ KDM
 Comment[sk]=V¹etky nastavenia KDM
 Comment[sv]=Alla KDM-inställningar
 Comment[zh_CN.GB2312]=ËùÓĞµÄ KDE ÉèÖÃ
@@ -40,7 +40,6 @@ Name[pl]=KDM
 Name[pt]=Gestor de Ambiente de Trabalho
 Name[pt_BR]=Gerenciador de Ambiente de Trabalho
 Name[ro]=Gestionar de Ecran
-Name[ru]=õÓÔÁÎÏ×ËÉ KDM
+Name[ru]=îÁÓÔÒÏÊËÉ KDM
 Name[sk]=Nastavenie KDM
 Name[zh_CN.GB2312]=×ÀÃæ¹ÜÀíÆ÷
-

@@ -7,11 +7,13 @@ Name[cs]=ProhlМ╬eХ pro Web
 Name[fr]=Navigateur Web
 Name[no]=Nettlos
 Name[pt_BR]=Navegador Web
+Name[ru]=Просмотрщик
 Comment=You can configure here the web browser
 Comment[cs]=Zde je mo╬nИ nastavit prohlМ╬eХ pro web
 Comment[fr]=Vous pouvez configurer ici le navigateur Web
 Comment[no]=Her kan du konfigurere nettlosen
 Comment[pt_BR]=VocЙ pode configurar aqui o navegador Web
+Comment[ru]=Здесь вы можете настроить просмотрщик
 # This needs a new icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
