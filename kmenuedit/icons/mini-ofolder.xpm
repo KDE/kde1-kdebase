@@ -1,27 +1,26 @@
 /* XPM */
-static char *mini-ofolder[] = {
-/* width height num_colors chars_per_pixel */
-"    16    14       6            1",
-/* colors */
-"  c None",
-". c black",
-"# c gray50",
-"g c white",
-"h c gray85",
-"j c yellow",
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
+"16 14 6 1",
+"  c #000000",
+". c #595959",
+"X c #ffff00",
+"o c #dfdfdf",
+"O c #ffffff",
+"+ c None",
 /* pixels */
-"   #####        ",
-"  #ggggg#       ",
-" #ghjhjhg###### ",
-" #gjhjhjhggggg#.",
-" #ghjhjhjhjhjh#.",
-"#############j#.",
-"#gggggggggg#.h#.",
-"#ghjhjhjhjhj.##.",
-" #ghjhjhjhjh#.#.",
-" #gjhjhjhjhjh.#.",
-"  #gjhjhjhjhj#..",
-"  ############..",
-"   .............",
-"                ",
+"+++.....++++++++",
+"++.OOOOO.+++++++",
+"+.OoXoXoO......+",
+"+.OXoXoXoOOOOO. ",
+"+.OoXoXoXoXoXo. ",
+".............X. ",
+".OOOOOOOOOO. o. ",
+".OoXoXoXoXoX .. ",
+"+.OoXoXoXoXo. . ",
+"+.OXoXoXoXoXo . ",
+"++.OXoXoXoXoX.  ",
+"++............  ",
+"+++             ",
+"++++++++++++++++"
 };

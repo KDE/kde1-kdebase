@@ -1,31 +1,31 @@
 /* XPM */
-/* Drawn  by Nico Schwiring and Mark Donohoe for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*kfontmanager[]={
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 16 9 1",
-"# c #000000",
-"a c #c0c0c0",
-"f c #be5800",
-"d c #ffdca8",
-"g c #585858",
-"b c #0000ff",
-"e c #ffa85a",
-"c c #ffffff",
-". c None",
-".##############.",
-"#aaaaaaaaaaaaaa#",
-"#abbbbbbbbbbbbc#",
-"#abbbbbde#bbbbc#",
-"#abbbbdeefbbbbc#",
-"#abbbbd#be#bbbc#",
-"#abbbdeeeefbbbc#",
-"#abbbd#bbbe#bbc#",
-"#abbb#bbbb##bbc#",
-"#aaaaaaaaaaaaac#",
-"#aaaaaaaaaaaaaa#",
-"#aagaaagaacccaa#",
-"#aaaagagaacagaa#",
-"#aagagaaaacggaa#",
-"#aaaaaaaaaaaaaa#",
-".##############."};
-
+"  c #000000",
+". c #595959",
+"X c #0000ff",
+"o c #be5900",
+"O c #ffaa59",
+"+ c #ffdfaa",
+"@ c #c0c0c0",
+"# c #ffffff",
+"$ c None",
+/* pixels */
+"$              $",
+" @@@@@@@@@@@@@@ ",
+" @XXXXXXXXXXXX# ",
+" @XXXXX+O XXXX# ",
+" @XXXX+OOoXXXX# ",
+" @XXXX+ XO XXX# ",
+" @XXX+OOOOoXXX# ",
+" @XXX+ XXXO XX# ",
+" @XXX XXXX  XX# ",
+" @@@@@@@@@@@@@# ",
+" @@@@@@@@@@@@@@ ",
+" @@.@@@.@@###@@ ",
+" @@@@.@.@@#@.@@ ",
+" @@.@.@@@@#..@@ ",
+" @@@@@@@@@@@@@@ ",
+"$              $"
+};

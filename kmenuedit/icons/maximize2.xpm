@@ -1,23 +1,22 @@
 /* XPM */
-static char *maximize[] = {
-/* width height num_colors chars_per_pixel */
-"    13    12        4            1",
-/* colors */
-". c #000000",
-"# c none",
-"a c #fbfffb",
-"b c #828282",
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
+"13 12 4 1",
+"  c #000000",
+". c #808080",
+"X c #ffffff",
+"o c None",
 /* pixels */
-"#############",
-"#..........##",
-"#.aaaaaaa#.b#",
-"#.a#######.b#",
-"#.a#######.b#",
-"#.a#######.b#",
-"#.a#######.b#",
-"#.a#######.b#",
-"#.########.b#",
-"#..........b#",
-"##bbbbbbbbbb#",
-"#############"
+"ooooooooooooo",
+"o          oo",
+"o XXXXXXXo .o",
+"o Xooooooo .o",
+"o Xooooooo .o",
+"o Xooooooo .o",
+"o Xooooooo .o",
+"o Xooooooo .o",
+"o oooooooo .o",
+"o          .o",
+"oo..........o",
+"ooooooooooooo"
 };

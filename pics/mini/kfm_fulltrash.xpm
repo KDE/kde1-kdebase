@@ -1,31 +1,31 @@
 /* XPM */
-/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*kfm_fulltrash[]={
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 16 9 1",
-"# c #000000",
-"c c #ffffff",
-"b c #808080",
-"e c #c0c0c0",
-"g c #a0a0a4",
-"a c #585858",
-"f c #004000",
-"d c #004040",
-". c None",
-"....###..a......",
-"....bbb##aa.....",
-".....bcbbb##....",
-"..bbbccccbbb###.",
-"..#ddeeeeedd#bb.",
-"..#ebdddddaf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"..#eecebgabf#...",
-"...##eegga##....",
-".....#####......"};
-
+"  c #000000",
+". c #003c00",
+"X c #303030",
+"o c #595959",
+"O c #808080",
+"+ c #a0a0a4",
+"@ c #c0c0c0",
+"# c #ffffff",
+"$ c None",
+/* pixels */
+"$$$$   $$o$$$$$$",
+"$$$$OOO  oo$$$$$",
+"$$$$$O#OOO  $$$$",
+"$$OOO####OOO   $",
+"$$ XX@@@@@XX OO$",
+"$$ @OXXXXXo. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$ @@#@O+oO. $$$",
+"$$$  @@++o  $$$$",
+"$$$$$     $$$$$$"
+};

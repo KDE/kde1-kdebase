@@ -154,20 +154,11 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 	}
     }
 
-    rmb = new QPopupMenu;
-    rmb->setMouseTracking(TRUE);
-    rmb->installEventFilter(this);
-    rmb->insertItem(klocale->translate("New"), menuNew );
-    rmb->insertSeparator();
-    rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
-    rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
-    rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
-    rmb->insertItem(klocale->translate("Refresh desktop"), RMB_REFRESH_DESKTOP);
-    rmb->insertItem(klocale->translate("Arrange icons"), RMB_ARRANGE_ICONS);
-    rmb->insertSeparator();
-    rmb->insertItem(klocale->translate("Lock screen"), RMB_LOCK_SCREEN);
-    rmb->insertItem(klocale->translate("Logout"), RMB_LOGOUT);
-    connect(rmb, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
+    pmenu = new PMenu();
+//    pmenu->setAltSort(foldersFirst);
+    pmenu->parse(QDir(QDir::homeDirPath()+"/.kde/share/applnk"));
+    pmenu->createMenu(new myPopupMenu, this);
+    rmb = pmenu->getQPopupMenu();
 
     mmb = new QPopupMenu;
     mmb->setMouseTracking(TRUE);
@@ -215,41 +206,6 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  
 
 void KRootWm::rmb_menu_activated(int item){
-  switch (item) {
-  case RMB_DISPLAY_PROPERTIES:
-    execute("kcmdisplay");
-    break;
-  case RMB_ARRANGE_ICONS:
-    {
-      KFM* kfm = new KFM; 
-      kfm->sortDesktop();
-      delete kfm;
-    }
-  break;
-  case RMB_EXECUTE:
-    KWM::sendKWMCommand("execute");
-    break;
-  case RMB_REFRESH_DESKTOP:
-    {
-      KFM* kfm = new KFM; 
-      kfm->refreshDesktop();
-      KWM::refreshScreen();
-      delete kfm;
-    }
-  break;
-  case RMB_HELP:
-    execute ("kdehelp");
-    break;
-  case RMB_LOCK_SCREEN:
-    execute ("klock");
-    break;
-  case RMB_LOGOUT:
-    KWM::logout();
-    break;
-  default:
-    // nothing
-    break;
-  }
 }
 
 void KRootWm::mmb_menu_activated(int item){

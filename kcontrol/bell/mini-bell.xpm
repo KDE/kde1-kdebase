@@ -1,25 +1,27 @@
 /* XPM */
-static char *bell[] = {
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 14 7 1",
-". c #000000",
-"# c #808000",
-"a c #808080",
-"b c #b7b700",
-"c c #ffff00",
-"d c #ffff80",
-"  c None",
-"                ",
-"       .        ",
-"     aaaaa      ",
-"    a##   a     ",
-"    a#bcd a     ",
-"   a#bcccd a    ",
-"   a#bcccd a    ",
-"   a#bcccd a    ",
-"   a#bcccd a    ",
-"   a#bcccd a    ",
-"  aabc     aa   ",
-" a##ccccc    a  ",
-" aaaaaaaaaaaaa  ",
-"                "};
-
+"  c #000000",
+". c #808000",
+"X c #bebe00",
+"o c #ffff00",
+"O c #808080",
+"+ c #ffdfaa",
+"@ c None",
+/* pixels */
+"@@@@@@@@@@@@@@@@",
+"@@@@@@@ @@@@@@@@",
+"@@@@@OOOOO@@@@@@",
+"@@@@O..@@@O@@@@@",
+"@@@@O.Xo+@O@@@@@",
+"@@@O.Xooo+@O@@@@",
+"@@@O.Xooo+@O@@@@",
+"@@@O.Xooo+@O@@@@",
+"@@@O.Xooo+@O@@@@",
+"@@@O.Xooo+@O@@@@",
+"@@OOXo@@@@@OO@@@",
+"@O..ooooo@@@@O@@",
+"@OOOOOOOOOOOOO@@",
+"@@@@@@@@@@@@@@@@"
+};

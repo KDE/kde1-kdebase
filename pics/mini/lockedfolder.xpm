@@ -1,29 +1,29 @@
 /* XPM */
-/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*lockedfolder[]={
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 16 7 1",
-"# c #000000",
-"b c #ffffff",
-"d c #a0a0a4",
-"e c #ff8000",
-"c c #be5800",
-"a c #ffa85a",
-". c None",
-"...#.##.........",
-"..#a#bc##.......",
-"..#aaadbc##.....",
-"..#aaaaadbc##...",
-"..#aaaaaaadbc#..",
-"..#aaaaaaaacd#..",
-"..#aaaeaaeacd#..",
-"..#aeaaeeaecd#..",
-"..#eaeeaeeecd#..",
-"..#eeeceececd#..",
-"..#eeeecceccd#..",
-"..##ccceccccd#..",
-"....##ccccccd#..",
-"......##ccccd#..",
-"........##ccd#..",
-"..........###..."};
-
+"  c #000000",
+". c #be5900",
+"X c #ff8200",
+"o c #ffaa59",
+"O c #a0a0a4",
+"+ c #ffffff",
+"@ c None",
+/* pixels */
+"@@@ @  @@@@@@@@@",
+"@@ o +.  @@@@@@@",
+"@@ oooO+.  @@@@@",
+"@@ oooooO+.  @@@",
+"@@ oooooooO+. @@",
+"@@ oooooooo.O @@",
+"@@ oooXooXo.O @@",
+"@@ oXooXXoX.O @@",
+"@@ XoXXoXXX.O @@",
+"@@ XXX.XX.X.O @@",
+"@@ XXXX..X..O @@",
+"@@  ...X....O @@",
+"@@@@  ......O @@",
+"@@@@@@  ....O @@",
+"@@@@@@@@  ..O @@",
+"@@@@@@@@@@   @@@"
+};

@@ -1,29 +1,29 @@
 /* XPM */
-/* Drawn  by Mark Donohoe for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*folder[]={
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 16 7 1",
-"# c #000000",
-"e c #ff8000",
-"d c #c0c0c0",
-"a c #be5800",
-"b c #ffa85a",
-"c c #ffffff",
-". c None",
-"......##........",
-"##..##aa##......",
-"#b##ccddaa##....",
-"#bbb##ccddaa##..",
-"#bbbbb##ccddaa##",
-".#bbbbbb##ccdda#",
-".#bbbbbbbb##cda#",
-".#bbbbbbbbea##a#",
-"..#bebeeeeeea##.",
-"..#eeeeeeeeea##.",
-"..#aeaeeaeeea##.",
-"...##aaaaaaea#..",
-".....##aaaaaa#..",
-".......##aaaa#..",
-".........##aa#..",
-"...........##..."};
-
+"  c #000000",
+". c #be5900",
+"X c #ff8200",
+"o c #ffaa59",
+"O c #c0c0c0",
+"+ c #ffffff",
+"@ c None",
+/* pixels */
+"@@@@@@  @@@@@@@@",
+"  @@  ..  @@@@@@",
+" o  ++OO..  @@@@",
+" ooo  ++OO..  @@",
+" ooooo  ++OO..  ",
+"@ oooooo  ++OO. ",
+"@ oooooooo  +O. ",
+"@ ooooooooX.  . ",
+"@@ oXoXXXXXX.  @",
+"@@ XXXXXXXXX.  @",
+"@@ .X.XX.XXX.  @",
+"@@@  ......X. @@",
+"@@@@@  ...... @@",
+"@@@@@@@  .... @@",
+"@@@@@@@@@  .. @@",
+"@@@@@@@@@@@  @@@"
+};

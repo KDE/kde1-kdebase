@@ -1,22 +1,25 @@
 /* XPM */
-static char *keyboard[] = {
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
 "16 14 5 1",
-". c #000000",
-"# c #808080",
-"a c #c0c0c0",
-"b c None",
-"c c White",
-"bbbbbbbbbbbbbb.#",
-"bbbbbbbbbbbbb.#b",
-"###############.",
-"#cccccccccccccc.",
-"#cac#ac#ac#ac#a.",
-"#ca#.a#.a#.a#.a.",
-"#cc#ac#ac#ac#aa.",
-"#c#.a#.a#.a#.aa.",
-"#caaaaaaaaaaaaa.",
-"#...............",
-"bbbbbbbbbbbbbbbb",
-"bbbbbbbbbbbbbbbb",
-"bbbbbbbbbbbbbbbb",
-"bbbbbbbbbbbbbbbb"};
+"  c #000000",
+". c #808080",
+"X c #c0c0c0",
+"o c #ffffff",
+"O c None",
+/* pixels */
+"OOOOOOOOOOOOOO .",
+"OOOOOOOOOOOOO .O",
+"............... ",
+".oooooooooooooo ",
+".oXo.Xo.Xo.Xo.X ",
+".oX. X. X. X. X ",
+".oo.Xo.Xo.Xo.XX ",
+".o. X. X. X. XX ",
+".oXXXXXXXXXXXXX ",
+".               ",
+"OOOOOOOOOOOOOOOO",
+"OOOOOOOOOOOOOOOO",
+"OOOOOOOOOOOOOOOO",
+"OOOOOOOOOOOOOOOO"
+};

@@ -1,11 +1,9 @@
 /* XPM */
-static char *maximize[] = {
-/* width height num_colors chars_per_pixel */
-"    14    14        3            1",
-/* colors */
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
+"14 14 2 1",
+"  c #000000",
 ". c None",
-"a c Green2",
-"b c Yellow2",
 /* pixels */
 "..............",
 "..............",

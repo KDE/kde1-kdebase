@@ -1,29 +1,28 @@
 /* XPM */
-/* Drawn  by Mark Donohoe for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*exec[]={
-"16 16 7 1",
-"# c #000000",
-"d c #008080",
-"a c #beffff",
-"c c #00c0c0",
-"b c #585858",
-"e c #00c0c0",
-". c None",
-"................",
-".....######.....",
-"..###abcaba###..",
-".#cabcbaababaa#.",
-".#cccaaccaacaa#.",
-".###accaacca###.",
-"#ccccca##aaccaa#",
-"#dd#ecc##cca#cc#",
-"#d#dccccccacc#c#",
-"##adcccccccccd##",
-".#ad#c#cc#d#cd#.",
-".#a#ad#cc#dd#d#.",
-".###ad#dd#dd###.",
-"...#ad#cc#dd#...",
-"...####cc####...",
-"......####......"};
-
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 6 1",
+"  c #000000",
+". c #595959",
+"X c #008080",
+"o c #00bebe",
+"O c #beffff",
+"+ c None",
+/* pixels */
+"++++++++++++++++",
+"+++++      +++++",
+"++   O.oO.O   ++",
+"+ oO.o.OO.O.OO +",
+"+ oooOOooOOoOO +",
+"+   OooOOooO   +",
+" oooooO  OOooOO ",
+" XX ooo  ooO oo ",
+" X XooooooOoo o ",
+"  OXoooooooooX  ",
+"+ OX o oo X oX +",
+"+ O OX oo XX X +",
+"+   OX XX XX   +",
+"+++ OX oo XX +++",
+"+++    oo    +++",
+"++++++    ++++++"
+};

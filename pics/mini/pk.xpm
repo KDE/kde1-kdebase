@@ -1,25 +1,26 @@
 /* XPM */
-/* Drawn  by Mark Donohoe & Jonathan Buzzard for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*pk[]={
-"16 16 3 1",
-"a c #ffffff",
-"# c #0000c0",
-". c None",
-".##..###.###.##.",
-"#a#.#aaa#a#a#aa#",
-"####a#aaaaaa##a#",
-".#aaaa##a###a##.",
-"#aaaaaaaaaaaa#..",
-"#aa###aa##aaaa#.",
-".###a#a#####a#..",
-"#aaaaaaaaaaaaa#.",
-"#aaa###aaaaaaa##",
-"##aaa#aaaaaa##..",
-"#aaaaaaaaaa#aa##",
-"#aa###a##aaaa#..",
-"#aaaa##aaaaa#.##",
-".#aaaaaaaaaa#...",
-"..#aaaaaaaa#....",
-"...########....."};
-
+static char *magick[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 4 1",
+"  c #000000",
+". c #0000be",
+"X c #ffffff",
+"o c None",
+/* pixels */
+"o..oo...o...o..o",
+".X.o.XXX.X.X.XX.",
+"....X.XXXXXX..X.",
+"o.XXXX..X...X..o",
+".XXXXXXXXXXXX.oo",
+".XX...XX..XXXX.o",
+"o...X.X.....X.oo",
+".XXXXXXXXXXXXX.o",
+".XXX...XXXXXXX..",
+"..XXX.XXXXXX..oo",
+".XXXXXXXXXX.XX..",
+".XX...X..XXXX.oo",
+".XXXX..XXXXX.o..",
+"o.XXXXXXXXXX.ooo",
+"oo.XXXXXXXX.oooo",
+"ooo........ooooo"
+};

@@ -25,6 +25,7 @@
 #include <qlabel.h>
 #include <qpushbt.h>
 #include <klined.h>
+#include "pmenu.h"
 
 enum {
   RMB_HELP=100,
@@ -61,7 +62,9 @@ private:
   QStrList templatesList;
   QString desktopPath;
   QString templatePath;
-    
+
+  PMenu *pmenu;
+      
 private slots:
   void slotNewFile( int _id );
   void rmb_menu_activated(int);

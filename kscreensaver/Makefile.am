@@ -12,7 +12,7 @@ INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock kblob.kss
+	kforest.kss klock kblob.kss kswitch.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss
 
@@ -34,6 +34,9 @@ banner.cpp: banner.moc
 
 kblankscrn_kss_SOURCES = $(BASE_SRCS) blankscrn.cpp
 blankscrn.cpp: blankscrn.moc
+
+kswitch_kss_SOURCES = $(BASE_SRCS) switch.cpp
+switch.cpp: switch.moc
 
 kbat_kss_SOURCES = $(BASE_SRCS) bat.cpp
 kbat_kss_LDADD = $(LDADD) $(XPMLIB)
@@ -101,6 +104,9 @@ banner.moc: banner.h
 
 blankscrn.moc: blankscrn.h
 	$(MOC) blankscrn.h -o blankscrn.moc
+
+switch.moc: switch.h
+	$(MOC) switch.h -o switch.moc
 
 rock.moc: rock.h
 	$(MOC) rock.h -o rock.moc
