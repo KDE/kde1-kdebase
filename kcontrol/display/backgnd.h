@@ -44,6 +44,59 @@ private:
     QLineEdit *edit;
 };
 
+class PatternEntry 
+{
+public: 
+    PatternEntry() {}
+    PatternEntry( QString n, uint p[]) { 
+	name = n;
+	for (uint i = 0; i < 8; i++)
+	    pattern[i] = p[i];
+    }
+
+    QString name;
+    uint pattern[8];
+
+    operator==( uint p[] ) {
+	for (uint i = 0; i < 8; i++)
+	    if (pattern[i] != p[i]) 
+		return false;
+	return true;
+    }
+
+    operator==( const char *item) {
+	return name == item;
+    }
+	
+};
+
+class KBPatternDlg : public QDialog
+{
+    Q_OBJECT
+
+public:
+    KBPatternDlg( QColor color1, QColor color2, uint p[], 
+		  QWidget *parent = 0, char *name = 0 );
+    
+protected:
+    int savePatterns();
+   
+protected slots:
+    void selected(const char *item);
+    virtual void done ( int r );
+    
+private:
+    QLabel *preview;
+    QListBox *listBox;
+    QList<PatternEntry> list;
+
+    bool changed;
+    PatternEntry *current;
+    uint *pattern;
+    
+    QColor color1, color2;
+};
+
 class KBackground : public KDisplayModule
 {
 	Q_OBJECT
@@ -68,6 +121,7 @@ protected slots:
 	void slotSwitchDesk( int );
 	void slotRenameDesk();
 	void slotHelp();
+        void slotChangePattern();
 
 protected:
 	void getDeskNameList();
@@ -80,7 +134,7 @@ protected:
 
 protected:
 	enum { Tiled = 1, Centred, Scaled };
-	enum { Flat = 1, Gradient };
+	enum { Flat = 1, Gradient, Pattern };
 	enum { Portrait = 1, Landscape };
 
 	QListBox     *deskListBox;
@@ -91,6 +145,7 @@ protected:
 	QButtonGroup *gfGroup;
 	QButtonGroup *orGroup;
 	QButtonGroup *wpGroup;
+        QPushButton  *changeButton;
 	KBGMonitor* monitor;
 	QComboBox *wpCombo;
 	QColor color1;
@@ -104,6 +159,8 @@ protected:
 	int orMode;
 	int deskNum;
 	int maxDesks;
+
+        uint pattern[8];
 
 	bool changed;
 };

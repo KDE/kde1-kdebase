@@ -39,7 +39,7 @@ protected:
 
 protected:
     enum { Tiled = 1, Centred, Scaled };
-    enum { Flat = 1, Gradient };
+    enum { Flat = 1, Gradient, Pattern };
     enum { Portrait = 1, Landscape };
 
     QString name;
@@ -51,6 +51,7 @@ protected:
     int     gfMode;
     int     orMode;
 
+    uint pattern[8];
     QPixmap *bgPixmap;
     bool    applied;
 
