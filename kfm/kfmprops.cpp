@@ -169,6 +169,8 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     QString path = properties->getKURL()->path();
     KURL::decodeURL( path );
 
+    debug("Je suis ici");
+
     // Extract the directories name without path
     QString filename;
     QString tmp2 = properties->getKURL()->path();
@@ -199,57 +201,71 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     lstat( path, &lbuff );
 
     QLabel *l;
-    int y = 10;
  
+    // BL: layout mngt
+    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, 10); 
+
     l = new QLabel( klocale->translate("Name"), this );
-    l->setGeometry( 10, y, 200, 20 );
-    y += 25;
+    // BL: layout mngt
+    l->setFixedSize(l->sizeHint());
+    layout->addWidget(l, 0, AlignLeft);
     
     name = new QLineEdit( this );
-    name->setGeometry( 10, y, 200, 30 );
+    // BL: layout mngt
+    name->setMinimumSize(200, 30); // Should make this dependent of fontsize
+    name->setMaximumSize(QLayout::unlimited, 30);
+    layout->addWidget(name, 0, AlignLeft);
     name->setText( filename );
     // Dont rename trash or root directory
     if ( isTrash || filename == "/" )
 	name->setEnabled( false );
     oldName = filename;
     oldName.detach();
-    y += 35;
 
     l = new QLabel( klocale->translate("Full Name"), this );
-    l->setGeometry( 10, y, 200, 20 );
-    y += 25;
+    // BL: layout mngt
+    l->setFixedSize(l->sizeHint());
+    layout->addWidget(l, 0, AlignLeft);
     
     fname = new QLineEdit( this );
-    fname->setGeometry( 10, y, 200, 30 );
+    // BL: layout mngt
+    fname->setMinimumSize(200, 30); // Should make this dependent of fontsize
+    fname->setMaximumSize(QLayout::unlimited, 30);
+    layout->addWidget(fname, 0, AlignLeft);
     fname->setText( path );
     fname->setEnabled( false );
-    y += 35;
     
-    y += 10;
+    // BL: layout mngt
+    layout->addSpacing(10);
 
     if ( isTrash )
     {
 	l = new QLabel( klocale->translate( "Is the Trash Bin"), this );
-	l->setGeometry( 10, y, 200, 20 );
-	y += 25;
+	// BL: layout mngt
+	l->setFixedSize(l->sizeHint());
+	layout->addWidget(l, 0, AlignLeft);
     }
     else if ( S_ISDIR( buff.st_mode ) )
     {
 	l = new QLabel( klocale->translate("Is a Directory"), this );
-	l->setGeometry( 10, y, 200, 20 );
-	y += 25;
+	// BL: layout mngt
+	l->setFixedSize(l->sizeHint());
+	layout->addWidget(l, 0, AlignLeft);
     }
     if ( S_ISLNK( lbuff.st_mode ) )
     {
 	l = new QLabel( klocale->translate( "Points to" ), this );
-	l->setGeometry( 10, y, 200, 20 );
-	y += 25;
+	// BL: layout mngt
+	l->setFixedSize(l->sizeHint());
+	layout->addWidget(l, 0, AlignLeft);
     
 	lname = new QLineEdit( this );
-	lname->setGeometry( 10, y, 200, 30 );
+	// BL: layout mngt
+	lname->setMinimumSize(200, 30); // Should make this dependent of fontsize
+	lname->setMaximumSize(QLayout::unlimited, 30);
+	layout->addWidget(lname, 0, AlignLeft);
 	lname->setText( path );
 	lname->setEnabled( false );
-	y += 35;
 
 	char buffer[1024];
 	int n = readlink( path, buffer, 1022 );
@@ -265,8 +281,9 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	int size = buff.st_size;
 	sprintf( buffer, klocale->translate("Size: %i"), size );
 	l = new QLabel( buffer, this );
-	l->setGeometry( 10, y, 200, 20 );
-	y += 25;
+	// BL: layout mngt
+	l->setFixedSize(l->sizeHint());
+	layout->addWidget(l, 0, AlignLeft);
     }
     
     char buffer[1024];
@@ -276,8 +293,9 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	     t->tm_hour,t->tm_min,
 	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );             
     l = new QLabel( buffer, this );
-    l->setGeometry( 10, y, 200, 20 );
-    y += 25;
+    // BL: layout mngt
+    l->setFixedSize(l->sizeHint());
+    layout->addWidget(l, 0, AlignLeft);
 
     t = localtime( &lbuff.st_mtime );
     sprintf( buffer, "%s: %02i:%02i %02i.%02i.%04i", 
@@ -285,8 +303,13 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	     t->tm_hour,t->tm_min,
 	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );          
     l = new QLabel( buffer, this );
-    l->setGeometry( 10, y, 200, 20 );
-    y += 25;
+    // BL: layout mngt
+    l->setFixedSize(l->sizeHint());
+    layout->addWidget(l, 0, AlignLeft);
+
+    // BL: layout mngt
+    layout->addStretch(10);
+    layout->activate();
 }
 
 bool FilePropsPage::supports( KURL *_kurl )
@@ -1119,6 +1142,7 @@ void DirPropsPage::slotApplyGlobal()
 
 ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _props )
 {
+    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, 10);
     binaryPatternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_2" );
     nameEdit = new QLineEdit( this, "LineEdit_3" );
@@ -1129,37 +1153,72 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     delExtensionButton = new QPushButton( "->", this );
 
     binaryPatternEdit->raise();
-    binaryPatternEdit->setGeometry( 10, 40, 210, 30 );
+    binaryPatternEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
+    binaryPatternEdit->setMaximumSize(QLayout::unlimited, 30);
+    //BL binaryPatternEdit->setGeometry( 10, 40, 210, 30 );
     binaryPatternEdit->setText( "" );
     binaryPatternEdit->setMaxLength( 512 );
 
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setGeometry( 10, 10, 300, 30 );
-    tmpQLabel->setText(  klocale->translate("Binary Pattern ( netscape;Netscape; )") );
+    //BL tmpQLabel->setGeometry( 10, 10, 300, 30 );
+    tmpQLabel->setText(  klocale->translate("Binary Pattern (netscape;Netscape;)") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
+
+    layout->addWidget(binaryPatternEdit, 0, AlignLeft);
 
     tmpQLabel = new QLabel( this, "Label_3" );
-    tmpQLabel->setGeometry( 10, 70, 120, 30 );
+    //BL tmpQLabel->setGeometry( 10, 70, 120, 30 );
     tmpQLabel->setText(  klocale->translate("Comment") );
-
-    tmpQLabel = new QLabel( this, "Label_4" );
-    tmpQLabel->setGeometry( 10, 130, 300, 30 );
-    tmpQLabel->setText(  klocale->translate("Name ( in your language )") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
 
     commentEdit->raise();
-    commentEdit->setGeometry( 10, 100, 210, 30 );
+    commentEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
+    commentEdit->setMaximumSize(QLayout::unlimited, 30);
+    //BL commentEdit->setGeometry( 10, 100, 210, 30 );
     commentEdit->setMaxLength( 256 );
+    layout->addWidget(commentEdit, 0, AlignLeft);
+
+    tmpQLabel = new QLabel( this, "Label_4" );
+    //BL tmpQLabel->setGeometry( 10, 130, 300, 30 );
+    tmpQLabel->setText(  klocale->translate("Name ( in your language )") );
+    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
+    layout->addWidget(tmpQLabel, 0, AlignLeft);
 
     nameEdit->raise();
-    nameEdit->setGeometry( 10, 160, 210, 30 );
+    //BL nameEdit->setGeometry( 10, 160, 210, 30 );
     nameEdit->setMaxLength( 256 );
+    nameEdit->setMinimumSize(210, 30); // Should make this dependent of fontsize
+    nameEdit->setMaximumSize(QLayout::unlimited, 30);
+    layout->addWidget(nameEdit, 0, AlignLeft);
+
+    layoutH = new QBoxLayout(QBoxLayout::LeftToRight);
+    layout->addLayout(layoutH, 10);
     
-    extensionsList->setGeometry( 10, 200, 130, 120 );
-    availableExtensionsList->setGeometry( 230, 200, 130, 120 );
-    addExtensionButton->setGeometry( 160, 220, 40, 40 );
-    connect( addExtensionButton, SIGNAL( pressed() ), this, SLOT( slotAddExtension() ) );
-    delExtensionButton->setGeometry( 160, 260, 40, 40 );    
-    connect( delExtensionButton, SIGNAL( pressed() ), this, SLOT( slotDelExtension() ) );
+    //BL extensionsList->setGeometry( 10, 200, 130, 120 );
+    layoutH->addWidget(extensionsList, 10);
+
+    layoutV = new QBoxLayout(QBoxLayout::TopToBottom);
+    layoutH->addLayout(layoutV, 0);
+    layoutV->addStretch(3);
+    //BL addExtensionButton->setGeometry( 160, 220, 40, 40 );
+    addExtensionButton->setFixedSize(40, 40);
+    layoutV->addWidget(addExtensionButton, 0);
+    layoutV->addStretch(3);
+    connect( addExtensionButton, SIGNAL( pressed() ), 
+	     this, SLOT( slotAddExtension() ) );
+    //BL delExtensionButton->setGeometry( 160, 260, 40, 40 );    
+    delExtensionButton->setFixedSize(40, 40);
+    layoutV->addWidget(delExtensionButton, 0);
+    layoutV->addStretch(3);
+    connect( delExtensionButton, SIGNAL( pressed() ), 
+	     this, SLOT( slotDelExtension() ) );
+    //BL availableExtensionsList->setGeometry( 230, 200, 130, 120 );
+    layoutH->addWidget(availableExtensionsList, 10);
+
+    layout->activate();
 
     QString path = _props->getKURL()->path() ;
     KURL::decodeURL( path );	    

@@ -83,6 +83,8 @@ protected:
     QLineEdit *fname;
     QLineEdit *lname;
 
+    QBoxLayout *layout;		// BL: layout mngt
+
     /// The initial filename
     QString oldName;
 };
@@ -312,6 +314,8 @@ protected:
     QListBox  *availableExtensionsList;
     QPushButton *addExtensionButton;
     QPushButton *delExtensionButton;
+    
+    QBoxLayout *layout, *layoutH, *layoutV;
 
     QString nameStr;
     QString extensionsStr;
