@@ -1,0 +1,143 @@
+# Dutch translation of the kwm messages.
+# Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
+#
+
+#: error.C:28
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: Het lijkt alsof er al een windowmanager draait. kwm niet opgestart\n"
+
+#: error.C:42
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: probleem tijdens het initialiseren; stoppen\n"
+
+#: kwm.C:73
+msgid ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No warranty. Please see the README's\n"
+msgstr ""
+"Version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     gebaseerd op 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     gebaseerd op 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Gedeelten komen uit 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     Geen garanties. Lees de READMEs\n"
+
+#: kwm.C:79
+#, c-format
+msgid "patch level %d"
+msgstr "patch level %d"
+
+#: kwm.C:154
+msgid "usage: kwm [-version] [-exec prog] \n"
+msgstr "gebruik: kwm [-version] [-exec prog]\n"
+
+#: kwm.C:566
+msgid "Desktop"
+msgstr "Buroblad"
+
+#: kwm.C:731
+msgid "kwm: exiting on signal\n"
+msgstr "kwm: onderbroken door signaal\n"
+
+#FIXME
+#: main.C:371
+msgid "&Help on desktop"
+msgstr "&Hulp over het buroblad"
+
+#: main.C:372
+msgid "&Execute command"
+msgstr "&Opdracht uitvoeren"
+
+#: main.C:373
+msgid "&Display properties"
+msgstr "&Beeldscherminstellingen"
+
+#: main.C:374
+msgid "&Refresh desktop"
+msgstr "&Ververs buroblad"
+
+#: main.C:375
+msgid "&Arrange icons"
+msgstr "&Pictogrammen schikken"
+
+#FIXME
+#: main.C:377
+msgid "&Lock screen"
+msgstr "Vergrendel &scherm"
+
+#: main.C:378
+msgid "Lo&gout"
+msgstr "&Uitloggen"
+
+#: main.C:1093
+msgid "One"
+msgstr "Een"
+
+#: main.C:1095
+msgid "Two"
+msgstr "Twee"
+
+#: main.C:1097
+msgid "Three"
+msgstr "Drie"
+
+#: main.C:1099
+msgid "Four"
+msgstr "Vier"
+
+#: main.C:1101
+msgid "Five"
+msgstr "Vijf"
+
+#: main.C:1103
+msgid "Six"
+msgstr "Zes"
+
+#: main.C:1105
+msgid "Seven"
+msgstr "Zeven"
+
+#: main.C:1107
+msgid "Eight"
+msgstr "Acht"
+
+#: main.C:1141
+msgid "(Un) Ma&ximize"
+msgstr "Ma&ximaliseren aan/uit"
+
+#: main.C:1142
+msgid "&Iconify"
+msgstr "Mi&nimaliseren"
+
+#: main.C:1143
+msgid "&Move"
+msgstr "&Verplaatsen"
+
+#: main.C:1144
+msgid "&Resize"
+msgstr "&Grootte veranderen"
+
+#: main.C:1145
+msgid "(Un) &Sticky"
+msgstr "&Kleven aan/uit"
+
+#: main.C:1146
+msgid "&To Desktop"
+msgstr "Naar &buroblad"
+
+#: main.C:1148
+msgid "&Close"
+msgstr "&Sluiten"
+
+#: main.C:1149
+msgid "&Destroy"
+msgstr "&Vernietigen"
+
+#: minicli.C:65
+msgid "Command:"
+msgstr "Uitvoeren:"

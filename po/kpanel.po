@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-09-05 12:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr ""
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr ""
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr ""
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr ""
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr ""
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr ""
+
+#: kpanel.C:188
+msgid "Panel"
+msgstr ""
+
+#: kpanel.C:190
+msgid "Lock Screen"
+msgstr ""
+
+#: kpanel.C:192
+msgid "Logout"
+msgstr ""
+
+#: kpanel.C:201
+msgid "Move"
+msgstr ""
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr ""
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr ""
+
+#: kpanel.C:239
+msgid "System"
+msgstr ""
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr ""
+
+#: kpanel.C:348
+msgid "No info available"
+msgstr ""
+
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr ""
+
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr ""
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr ""
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr ""
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr ""
+
+#: props.C:263
+msgid "Location"
+msgstr ""
+
+#: props.C:283
+msgid "Taskbar"
+msgstr ""
+
+#: props.C:284
+msgid "Hidden"
+msgstr ""
+
+#: props.C:296
+msgid "Top/Left"
+msgstr ""
+
+#: props.C:307
+msgid "Tiny Style"
+msgstr ""
+
+#: props.C:308
+msgid "Small Style"
+msgstr ""
+
+#: props.C:309
+msgid "Large Style"
+msgstr ""
+
+#: props.C:321
+msgid "Menu Tooltips"
+msgstr ""
+
+#: props.C:397
+msgid "Visible"
+msgstr ""
+
+#: props.C:404
+msgid "Width"
+msgstr ""
+
+#: props.C:415
+msgid "KPanel Configuration"
+msgstr ""

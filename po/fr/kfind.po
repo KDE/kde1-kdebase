@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-26 12:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Répertoires:"
+
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr "Desolé"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Impossible d'ouvrir ou de lire le répertoire"
+
+#: kfindtop.cpp:110
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+msgstr ""
+
+#: kfindtop.cpp:123
+msgid "&File"
+msgstr "&Fichier"
+
+#: kfindtop.cpp:124
+msgid "&Edit"
+msgstr "&Editer"
+
+#: kfindtop.cpp:125
+msgid "&Options"
+msgstr "&Options"
+
+#: kfindtop.cpp:127
+msgid "&Help"
+msgstr "&Aide"
+
+#: kfindtop.cpp:132 kfindtop.cpp:216
+msgid "Add to archive"
+msgstr "Ajouter aux archives"
+
+#: kfindtop.cpp:135 kfindtop.cpp:221
+msgid "Delete"
+msgstr "Effacer"
+
+#: kfindtop.cpp:137 kfindtop.cpp:226
+msgid "Properties"
+msgstr "Propriétés"
+
+#: kfindtop.cpp:140 kfindtop.cpp:231
+msgid "Open Containing Folder"
+msgstr "Ouvrir le classeur"
+
+#: kfindtop.cpp:143
+msgid "Save Search"
+msgstr "Sauvegarder la recherche"
+
+#: kfindtop.cpp:152
+msgid "Undo"
+msgstr "Défaire"
+
+#: kfindtop.cpp:155
+msgid "Cut"
+msgstr "Couper"
+
+#: kfindtop.cpp:157
+msgid "Copy"
+msgstr "Copier"
+
+#: kfindtop.cpp:160
+msgid "Select All"
+msgstr "Tout séléctioner"
+
+#: kfindtop.cpp:162
+msgid "Invert Selection"
+msgstr "Selection Inverse"
+
+#: kfindtop.cpp:173
+msgid "Preferences ..."
+msgstr "Préférences ..."
+
+#: kfindtop.cpp:177
+msgid "Kfind help"
+msgstr "Aide Kcherche"
+
+#: kfindtop.cpp:193
+msgid "Start Search"
+msgstr "Lancer la recherche"
+
+#: kfindtop.cpp:198
+msgid "New Search"
+msgstr "Nouvelle Recherche"
+
+#: kfindtop.cpp:203
+msgid "Stop Search"
+msgstr "Stopper la recherche"
+
+#: kfindtop.cpp:236
+msgid "Save Search Results"
+msgstr "Sauvegarde les résultats de la recherche"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Préférences"
+
+#: kfoptions.cpp:70
+msgid "File format:"
+msgstr "Format du fichier:"
+
+#: kfoptions.cpp:72
+msgid "Save results to file:"
+msgstr "Sauvegarde les resultats dans le fichier:"
+
+#: kfoptions.cpp:75
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Sauvegarde les resultats dans le fichier ~/.kfind-results.html"
+
+#: kfoptions.cpp:77
+msgid "Browse"
+msgstr "Parcourir"
+
+#: kfoptions.cpp:90
+msgid "Plain Text"
+msgstr "Texte"
+
+#: kfoptions.cpp:119
+msgid "Saving"
+msgstr "Sauvegarde"
+
+#: kfoptions.cpp:125
+msgid "Type Description:"
+msgstr "Description:"
+
+#: kfoptions.cpp:126
+msgid "Icon:"
+msgstr "Icône:"
+
+#: kfoptions.cpp:127 kfoptions.cpp:193
+msgid "Patterns:"
+msgstr "Filtre:"
+
+#: kfoptions.cpp:128
+msgid "Default Application:"
+msgstr "Application standard"
+
+#: kfoptions.cpp:134 kfoptions.cpp:196
+msgid "Add New"
+msgstr "Ajouter"
+
+#: kfoptions.cpp:135 kfoptions.cpp:197
+msgid "Remove"
+msgstr "Enlever"
+
+#: kfoptions.cpp:181
+#, fuzzy
+msgid "Filetypes"
+msgstr "Formats"
+
+#: kfoptions.cpp:187
+msgid "Create Archive:"
+msgstr "Créer archive"
+
+#: kfoptions.cpp:189
+#, fuzzy
+msgid "Add to Archive:"
+msgstr "Ajouter aux archives"
+
+#: kfoptions.cpp:235
+#, fuzzy
+msgid "Archivers"
+msgstr "Ajouter aux archives"
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "&Appelé:"
+
+#: kftabdlg.cpp:49
+msgid "&Look in:"
+msgstr "&Regarder dans:"
+
+#: kftabdlg.cpp:52
+msgid "&Browse ..."
+msgstr "&Parcourir ..."
+
+#: kftabdlg.cpp:64
+msgid "Include &subfolders"
+msgstr "Inclure &sous-classeurs"
+
+#: kftabdlg.cpp:94
+msgid " Name&Location "
+msgstr " Nom&endroit "
+
+#: kftabdlg.cpp:106
+msgid "and"
+msgstr "et"
+
+#: kftabdlg.cpp:107
+msgid "month(s)"
+msgstr "mois"
+
+#: kftabdlg.cpp:108
+msgid "day(s)"
+msgstr "jour(s)"
+
+#: kftabdlg.cpp:114
+msgid "&All files"
+msgstr "&Tous les fichiers"
+
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr "Trouver tous les Fichier crées ou &modifiés:"
+
+#: kftabdlg.cpp:116
+msgid "&between"
+msgstr "&Entre"
+
+#: kftabdlg.cpp:117
+msgid "during the previou&s "
+msgstr "Pendant le précédent&s"
+
+#: kftabdlg.cpp:118
+msgid "&during the previous "
+msgstr "Pendant le précédent "
+
+#: kftabdlg.cpp:166
+msgid " Date Modified "
+msgstr " Date modifiée"
+
+#: kftabdlg.cpp:171
+msgid "Of &type:"
+msgstr "du &type"
+
+#: kftabdlg.cpp:173
+msgid "&Containing Text:"
+msgstr "&Contenant le texte:"
+
+#: kftabdlg.cpp:175
+msgid "&Size is:"
+msgstr "&La taille est"
+
+#: kftabdlg.cpp:198
+msgid "All Files and Folders"
+msgstr "Tous les fichier et répertoires"
+
+#: kftabdlg.cpp:205
+msgid "(none)"
+msgstr "(rien)"
+
+#: kftabdlg.cpp:206
+msgid "At Least"
+msgstr "Au moins"
+
+#: kftabdlg.cpp:207
+msgid "At Most"
+msgstr "Au plus"
+
+#: kftabdlg.cpp:214
+msgid " Advanced "
+msgstr "Avancé"
+
+#: kftabdlg.cpp:377
+msgid "The date is not valid!!"
+msgstr "La date n'est pas valable!"
+
+#: kftabdlg.cpp:389
+msgid "The month(s) value isn't valid!!"
+msgstr "Ce mois n'existe pas!!"
+
+#: kftabdlg.cpp:400
+msgid "The day(s) value isn't valid!!"
+msgstr "Ce jour n'existe pas!!"
+
+#: kftabdlg.cpp:417
+msgid "The value in size isn't valid number!!"
+msgstr "La valeure du chiffre n'est pas valable"
+
+#: kfwin.cpp:99
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d fichier(s) trouvés"
+
+#: kfwin.cpp:136
+msgid "It wasn't possible to save results!"
+msgstr "Impossible de sauvegarder les résultats!"
+
+#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
+msgid "KFind Results File"
+msgstr "KFind fichier des résultats"
+
+#: kfwin.cpp:174
+msgid "Results were saved to file\n"
+msgstr "Resultats sauvegardés sous\n" 
+
+#: kfwin.cpp:189
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Voulez vous réellement effacer le fichier:\n"
+"%s"
+
+#: kfwin.cpp:191
+#, fuzzy
+msgid "Delete File"
+msgstr "Effacer fichier"
+
+#: kfwin.cpp:205
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Vous n'avez les droits nécessaires\n"
+"pour effacer ce fichier"
+
+#: kfwin.cpp:212
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Il est impossible d'effacer\n"
+"les fichier selectionnés"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Vous n'avez les droits nécessaires\n"
+"pour effacer le répertoire selectionné"
+
+#: kfwin.cpp:241
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Le répertoire specifié\n"
+"n'est pas vide!"
+
+
+#: kfwin.cpp:247
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Il est impossible d'effacer\n"
+"le répertoire selectionné"
+
+#: kfwin.cpp:340
+msgid "Couldn't recognize archive type!"
+msgstr "le type de l'archive ne pouvais pas ètre reconnus!"
+
+#: kfwin.cpp:401
+msgid "Error while creating child process!"
+msgstr "Erreur pendant la creation du sous-procès!"
+
+#~ msgid "_abouttext"
+#~ msgstr "_au sujet du texte"
+
+#~ msgid "Help"
+#~ msgstr "Aide"
+
+#~ msgid "_findall"
+#~ msgstr "_tout trouver"

@@ -1,0 +1,97 @@
+
+#: main.cpp:53
+msgid "KDE Font Manager"
+msgstr "KDE-Schriftmanager"
+
+#: main.cpp:61
+msgid "KDE Fonts"
+msgstr "KDE-Schriften"
+
+#: main.cpp:62
+msgid "Font Explorer"
+msgstr "Schriftentest"
+
+#: main.cpp:63
+msgid "Raw X11 Font List"
+msgstr "Unbearbeitete X11-Schriften"
+
+#: kfontmanager.cpp:61
+msgid "Available X11 Fonts"
+msgstr "Vorhandene X11-Schriften"
+
+#: kfontmanager.cpp:68
+msgid "Fonts made available to KDE"
+msgstr "In KDE verfügbare Schriften"
+
+#: kfontmanager.cpp:74
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: kfontmanager.cpp:77
+msgid "Remove"
+msgstr "Entfernen"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "Der Beispieltext des KDE-Schriftenmanager"
+
+#: kfontlist.cpp:65 kfontmanager.cpp:105
+msgid "About kfontmanager"
+msgstr "Über kfontmanager"
+
+#: kfontmanager.cpp:105
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
+msgid "Sorry"
+msgstr "Sorry"
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"Die Umgebungsvariable HOME\n"
+"ist nicht gesetzt.\n"
+
+#: kfontmanager.cpp:283
+msgid ""
+"Can not create:\n"
+" ~/.kde/config/kdefonts\n"
+msgstr ""
+"Kann\n"
+"~/.kde/config/kdefonts\n"
+"nicht erzeugen.\n"
+
+#: kfontmanager.cpp:288
+msgid ""
+"~/.kde/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"~/.kde/config/kdefonts existiert, ist\n"
+"ist aber nicht schreibbar.\n"
+"Die KDE-Schriftenliste kann daher nicht\n"
+"gesichert werden."
+
+#: kfontlist.cpp:65
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
