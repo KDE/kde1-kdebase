@@ -2,13 +2,14 @@
 
 set -e
 
+echo -n "Verifying that KDE is in the window-managers list: ";
 window_manager_entry='/usr/bin/kde'
 if ! grep -q "^$window_manager_entry$" /etc/X11/window-managers 
 then
 	echo $window_manager_entry >> /etc/X11/window-managers 
-        echo "Installed kde in the window-manager list."
 fi
- 
+echo "Done!";
+
 if test -L /var/spool/kdeapplnk; then
   rm -f /var/spool/kdeapplnk
 fi
@@ -24,7 +25,7 @@ fi
 ## Install the linux fonts for konsole
 
 echo -n "Updating fonts: ";
-mkfontdir /usr/X11R6/lib/X11/fonts/misc > /dev/null 2>&1
+/usr/bin/X11/mkfontdir /usr/X11R6/lib/X11/fonts/misc > /dev/null 2>&1
 echo "done!";
 
 ## Run kappfinder 

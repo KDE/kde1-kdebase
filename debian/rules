@@ -67,8 +67,6 @@ binary-arch: checkroot build
 	chmod +x debian/tmp/etc/init.d/kdm
 	cp debian/xdm/* debian/tmp/etc/X11/kdm
 	rm -f debian/tmp/usr/X11R6/lib/X11/kdm/*
-	ln -s /etc/X11/kdm/* debian/tmp/usr/X11R6/lib/X11/kdm/
-	ln -s /etc/X11/kdm/kdm-config debian/tmp/usr/X11R6/lib/X11/kdm/xdm-config
 	cp debian/README.xdm debian/tmp/usr/doc/kdm/README.Debian
 	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
 	cp debian/kdmrc debian/tmp/etc/kde

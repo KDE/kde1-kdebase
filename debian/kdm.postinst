@@ -13,6 +13,13 @@ else
   echo "Created!";
 fi
 
+echo -n "Verifying kdm links: ";
+cd /usr/X11R6/lib/X11/kdm 
+rm *
+ln -s /etc/X11/kdm/kdm-config xdm-cnfig > /dev/null 2>&1
+ln -s /etc/X11/kdm/* .  > /dev/null 2>&1
+echo "Done!";
+
 
 cleanup () {
   # unroll changes in kdm preinst
