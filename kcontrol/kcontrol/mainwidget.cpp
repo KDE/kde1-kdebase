@@ -5,6 +5,7 @@
 
 
 #include <kiconloader.h>
+#include <kcharsets.h>
 
 #include "mainwidget.moc"
 #include "mainwidget.h"
@@ -17,6 +18,7 @@ mainWidget::mainWidget(QWidget *parent , const char *name)
 
   QLabel *heading = new QLabel(klocale->translate("KDE Control Center"),this);
   QFont font("times",18,QFont::Bold);
+  KApplication::getKApplication()->getCharsets()->setQFont(font);
   pmap = iconLoader.loadIcon("kdekcc.xpm");
   heading->setFont(font);
   heading->setGeometry(120,10,200,40);
@@ -32,7 +34,9 @@ void mainWidget::paintEvent(QPaintEvent *)
   QPainter p(this);
   
   QFont normalFont("times",12,QFont::Normal);
+  KApplication::getKApplication()->getCharsets()->setQFont(normalFont);
   QFont boldFont("times",12,QFont::Bold);
+  KApplication::getKApplication()->getCharsets()->setQFont(boldFont);
 
   
   p.drawPixmap(10,250,pmap);
