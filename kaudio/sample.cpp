@@ -81,7 +81,8 @@ int AudioSample::setFilename(char* fname)
       return 1;
     }
 
-  // Set an "approximation" of the header Length (headerLen is calculated precisely later */
+  // Set an "approximation" of the header Length#
+  // (headerLen is calculated precisely later
   headerLen = sizeof(WAVE_HEADER); // !!! Hardcoded WAV, TODO
 
   /* Read in audioheader */
@@ -229,7 +230,7 @@ void AudioSample::seek(uint32 secs, uint32 msecs)
     {
       bytepos = secs * bytes_per_s;
       if (msecs != 0)
-	bytepos = (bytepos * 1000) / msecs; // !!! falsch
+	bytepos = (bytepos * 1000) / msecs; // !!! falsch, TODO
       fseek( audiofile, bytepos+headerLen, SEEK_SET);
     }
   BuferValidLength = 0;

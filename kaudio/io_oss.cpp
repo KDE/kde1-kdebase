@@ -59,11 +59,11 @@ bool AudioDev::grab()
 #ifdef OSS_AUDIO
 
   // Set fragments
-//  int arg = 0x00080010; // 0xMMMMSSSS;
-//  if (ioctl(audiodev, SNDCTL_DSP_SETFRAGMENT, &arg)) {
-//    release();
-//    return false;
-//  }
+  int arg = 0x00080008; // 0xMMMMSSSS;
+  if (ioctl(audiodev, SNDCTL_DSP_SETFRAGMENT, &arg)) {
+    release();
+     return false;
+  }
 
   Param[0]= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , Param);
   Param[0]= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , Param);
