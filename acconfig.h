@@ -67,3 +67,7 @@
 
 /* Define, if you want to use utmp entries */
 #undef UTMP_SUPPORT
+
+#undef HAVE_HP_STL
+
+#undef HAVE_SGI_STL
