@@ -1,5 +1,6 @@
+
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCOMPAT) $(LIBSOCKET)
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCOMPAT) $(LIBSOCKET) $(KDE_RPATH)
 
 SUBDIRS = pics
 
