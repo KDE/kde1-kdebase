@@ -585,7 +585,7 @@ void Client::reconfigure(){
    }
    generateButtons();
    layoutButtons();
-   repaint();
+   paintState(false, true);
    doButtonGrab();
 }
 

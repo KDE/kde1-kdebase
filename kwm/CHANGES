@@ -18,6 +18,7 @@ patchlevel 9 (CT - 27May98):
 	- replaced "shaded" option by "shadedHorizontal" and "shadedVertical".
 	   For the moment it seems vertical shading is much more rapid (of
 	   course, much less gradient steps to calculate in KPixmap).
+                - small bugfix to allow runtime switching between vertical and horizontal (Matthias)
   
 patchlevel 8:
         - WindowResizeType=Opaque improved. No more flickering and a 
