@@ -297,6 +297,7 @@ stricmp(const char *s1, const char *s2) {
 	else return 1;
 }
 
+typedef int (* StdCmpCP)(const void *, const void *);
 int lcexceptionscmp(const char **a, const char **b) { return stricmp(*a, *b); }
 
 int
@@ -390,7 +391,8 @@ void casify(char *p) {
 			/* check for exceptions */
 			for (q=p; *q && !isspace(*q); q++) /*nada*/;
 			tmpch = *q; *q='\0';
-			exp = (char **)bsearch(&p, lcexceptions, lcexceptionslen, sizeof(char *), lcexceptionscmp);
+            exp = (char **)bsearch(&p, lcexceptions, lcexceptionslen,
+                                   sizeof(char *), (StdCmpCP) lcexceptionscmp);
 			*q = tmpch;
 			if (exp!=NULL) {
 				for (q=*exp; *q; q++) *p++=*q;
@@ -4882,7 +4884,7 @@ source_filter(void) {
 			  p = oldv = fgets(diffline, MAXBUF, difffd);
 			  p[strlen(p)-1]='\0';	/* fgets's \n ending => \0 */
 			  deletecnt--;
-		  } while (deletecnt && p=='.');	/* throw out commands in old version */
+		  } while (deletecnt && *p=='.');	/* throw out commands in old version */
 
 		  q = newv = source_gets();
 		  insertcnt--;
@@ -5136,7 +5138,7 @@ main(int argc, char *argv[]) {
 
 	/* count, sort exception strings */
 	for (lcexceptionslen=0; (p=lcexceptions[lcexceptionslen])!=NULL; lcexceptionslen++) /*empty*/;
-	qsort(lcexceptions, lcexceptionslen, sizeof(char*), lcexceptionscmp);
+    qsort(lcexceptions, lcexceptionslen, sizeof(char*), (StdCmpCP) lcexceptionscmp);
 
 	/* map long option names to single letters for switching */
 	/* (GNU probably has a reusable function to do this...) */
@@ -5306,7 +5308,7 @@ main(int argc, char *argv[]) {
 	}
 
 	if (fSource) source_filter(); else preformatted_filter();
-	if (fDiff) close(difffd);
+	if (fDiff) fclose(difffd);
 	/*free(File);	-- let system clean up, perhaps more efficiently */
 
 	return 0;
