@@ -3,7 +3,7 @@
 Name=Display Manager
 Name[de]=Anmeldeschirm
 Name[pl]=Mened¿er wy¶wietlania
-Exec=kdehelp $KDEDIR/doc/HTML/kdm/kdm.html
+Exec=kdehelp $KDEDIR/share/doc/HTML/default/kdm/index.html
 Section=Applications
 DocPath=kdm/index.html
 Title=Kdm
