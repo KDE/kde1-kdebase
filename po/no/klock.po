@@ -14,9 +14,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Sammentrekning"
+msgstr "Tiltrekning"
 
 #: attraction.cpp:803
 msgid "Setup KAttraction"
@@ -48,7 +47,7 @@ msgstr "Haler"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Gløde"
 
 #: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
 #: slidescreen.cpp:563
@@ -60,7 +59,6 @@ msgid "About Attraction"
 msgstr "Om Attraction"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -771,19 +769,16 @@ msgid "About Science"
 msgstr "Om Vitenskap"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Blank skjerm"
+msgstr "Skredskjerm"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Vitenskap-oppsett"
+msgstr "KSkredskjerm-oppsett"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Om Vitenskap"
+msgstr "Om skredskjerm"
 
 #: slidescreen.cpp:559
 msgid ""

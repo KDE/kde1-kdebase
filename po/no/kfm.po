@@ -142,13 +142,11 @@ msgstr "Vis dokumentkoden"
 
 #: kfmgui.cpp:347
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
-# kfmgui.cpp:1320
 #: kfmgui.cpp:355
-#, fuzzy
 msgid "&Document Encoding"
-msgstr "Dokument: Ferdig"
+msgstr "&Dokumentkoding"
 
 # kfmgui.cpp:393
 #: kfmgui.cpp:366
@@ -686,11 +684,11 @@ msgstr "Fast skrifttype"
 
 #: htmlopts.cpp:161
 msgid "Default Charset"
-msgstr ""
+msgstr "Standard tegnsett"
 
 #: htmlopts.cpp:169
 msgid "Use language charset"
-msgstr ""
+msgstr "Bruk språktegnsett"
 
 # htmlopts.cpp:214
 #: htmlopts.cpp:361

@@ -68,7 +68,7 @@ msgstr "Speilet"
 
 #: backgnd.cpp:335
 msgid "Center Tiled"
-msgstr ""
+msgstr "Flislagt sentrert"
 
 #: backgnd.cpp:336
 msgid "Centred"
@@ -80,11 +80,11 @@ msgstr "Sentrert mursten"
 
 #: backgnd.cpp:338
 msgid "Centred Warp"
-msgstr ""
+msgstr "Sentrert dybde"
 
 #: backgnd.cpp:339
 msgid "Centred Maxpect"
-msgstr ""
+msgstr "Sentrert makspekt"
 
 #: backgnd.cpp:340
 msgid "Symmetrical Tiled"
