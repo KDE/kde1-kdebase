@@ -344,13 +344,8 @@ void KfmGui::initMenu()
     connect( &bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
-<<<<<<< kfmgui.cpp
     QString bmFile = p + ".kde/kfm.bookmarks.html";
-    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
-=======
-    QString bmFile = p + "/.kfm.bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
->>>>>>> 1.13
 			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
     
