@@ -46,6 +46,9 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   popup_m->insertItem(i18n("Background Settings"), this, SLOT(settings()));
   popup_m->insertSeparator();
   o_id = popup_m->insertItem(i18n("Common Background"), this, SLOT(toggleOneDesktop()));
+  popup_m->insertSeparator();
+  popup_m->insertItem(i18n("Undock"), this, SLOT(setUndock()));
+
   popup_m->setItemChecked( o_id, oneDesktopMode );
 
   // popup menu for display modes
@@ -75,6 +78,17 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   applyDesktop( current );
   KWM::sendKWMCommand( "kbgwm_change" );
+}
+
+
+void KBGndManager::setUndock()
+{
+  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
+		  KApplication::localconfigdir() + "/kdisplayrc");
+  
+  undock(); // first undock to set docked variable
+  config2.setGroup( "Desktop Common" );
+  config2.writeEntry( "Docking", docked );
 }
 
 
@@ -143,7 +157,7 @@ void KBGndManager::commandReceived( QString com )
       popup_m->setItemChecked( o_id, oneDesktopMode );
 
       desktop = config2.readNumEntry( "DeskNum", 0 );
-      if ( config2.readBoolEntry( "Docking", true ) )
+      if ( config2.readBoolEntry( "Docking", false ) )
 	dock();
       else
 	undock();

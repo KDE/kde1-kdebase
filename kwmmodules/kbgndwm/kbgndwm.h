@@ -49,16 +49,17 @@ public slots:
   void commandReceived( QString );
   void toggleOneDesktop();
 
-  void dock();
-  void undock();
   void timeclick();
   void slotDropEvent( KDNDDropZone * );
   void slotModeSelected( int mode );
+  void setUndock();
 
 private slots:
   void mousePressEvent(QMouseEvent *e);
   void displaySettings();
   void settings();
+  void dock();
+  void undock();
 
 private:
   KWMModuleApplication* kwmmapp;

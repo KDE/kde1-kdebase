@@ -128,7 +128,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   KConfig *config = kapp->getConfig();
   config->setGroup( "Desktop Common" );
   oneDesktopMode = config->readBoolEntry( "OneDesktopMode", false );
-  docking = config->readBoolEntry( "Docking", true );
+  docking = config->readBoolEntry( "Docking", false );
 
   if ( oneDesktopMode )
     deskNum = config->readNumEntry( "DeskNum", 0);
@@ -371,7 +371,6 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   dockButton = new QCheckBox( i18n("&Dock into the panel"), group );
   dockButton->setChecked( docking );
   dockButton->setFixedHeight( dockButton->sizeHint().height() );
-  dockButton->setChecked( docking );
   connect( dockButton, SIGNAL( clicked() ), SLOT( slotToggleDock() ) );
 
   groupLayout->addWidget( dockButton, 5 );
@@ -426,25 +425,36 @@ void KBackground::resizeEvent( QResizeEvent * )
 
 void KBackground::readSettings( int num )
 {
-  
   QString group;
   ksprintf( &group, "/desktop%drc", num);
+
+  bool first_time = false;
+
+  QFileInfo fi( KApplication::localconfigdir() + group );
+  if ( ! fi.exists() ){
+    first_time = true;
+    group = "/kdisplayrc";
+  }
 
   KConfig config(KApplication::kde_configdir() + group,
 		  KApplication::localconfigdir() + group);
 
-  config.setGroup( "Common" );
-  randomMode = config.readBoolEntry( "RandomMode", false );
+  if ( !first_time ) {
+    config.setGroup( "Common" );
+    randomMode = config.readBoolEntry( "RandomMode", false );
 
-  if ( randomMode || !interactive )
-    ksprintf( &group, "Desktop%d", random );
+    if ( randomMode || !interactive )
+      ksprintf( &group, "Desktop%d", random );
+    else
+      group = "Desktop0";
+  }
   else
-    group = "Desktop0";
+    ksprintf( &group, "Desktop%d", num + 1);
 
   config.setGroup( group );
-    
+  
   QString str;
-    
+  
   str = config.readEntry( "Color1" );
   if ( !str.isNull() )
     currentItem.color1.setNamedColor( str );

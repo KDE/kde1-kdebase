@@ -342,6 +342,7 @@ protected:
   bool oneDesktopMode;
   bool interactive;
   bool docking;
+
 };
 
 
