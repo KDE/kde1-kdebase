@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -1222,21 +1222,37 @@ msgstr "Não utilizar Proxy para:"
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:25
 msgid "User &Agent"
 msgstr "&Agente"
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 msgid "&Colors"
 msgstr "&Cores"
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 msgid "&Other"
 msgstr "&Outros"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
 msgstr "Configuração do Browser KFM"
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"

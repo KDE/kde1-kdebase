@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-02-26 20:20+MET\n"
 "Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -1187,22 +1187,38 @@ msgstr "Nincs proxy:"
 msgid "&Proxy"
 msgstr ""
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:25
 msgid "User &Agent"
 msgstr ""
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 msgid "&Colors"
 msgstr ""
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 #, fuzzy
 msgid "&Other"
 msgstr "Többiek"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
 msgstr "FM Böngészõ beállítások"
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"

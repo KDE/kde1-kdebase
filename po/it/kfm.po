@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -1222,22 +1222,38 @@ msgstr "No Proxy per:"
 msgid "&Proxy"
 msgstr "P&roxy"
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:25
 #, fuzzy
 msgid "User &Agent"
 msgstr "Utente &Agent"
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 msgid "&Colors"
 msgstr "&Colori"
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 msgid "&Other"
 msgstr "&Altro"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
 msgstr "Impostazioni Browser KFM"
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -1221,22 +1221,38 @@ msgstr "以下不採用 Proxy"
 msgid "&Proxy"
 msgstr "代理伺服器(&Proxy)"
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:25
 msgid "User &Agent"
 msgstr "使用者委託[&A]"
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 msgid "&Colors"
 msgstr "顏色[&C]"
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 #, fuzzy
 msgid "&Other"
 msgstr "其他[&O]"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
 msgstr "KFM 瀏覽器設定"
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -1230,22 +1230,38 @@ msgstr "以下不采用代理:"
 msgid "&Proxy"
 msgstr "代理[&P]"
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+msgid "&HTTP"
+msgstr ""
+
+#: kkfmoptdlg.cpp:25
 msgid "User &Agent"
 msgstr "用户代理[&A]"
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 msgid "&Colors"
 msgstr "颜色[&C]"
 
 #
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 msgid "&Other"
 msgstr "其他[&O]"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
 msgstr "KFM 浏览器设置"
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
+msgstr ""
 
 #: kfmprops.h:73
 msgid "&General"

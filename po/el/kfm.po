@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1238,22 +1238,39 @@ msgstr ""
 msgid "&Proxy"
 msgstr ""
 
-#: kkfmoptdlg.cpp:21
+#: kkfmoptdlg.cpp:22
+#, fuzzy
+msgid "&HTTP"
+msgstr "HTTP"
+
+#: kkfmoptdlg.cpp:25
 msgid "User &Agent"
 msgstr ""
 
-#: kkfmoptdlg.cpp:27
+#: kkfmoptdlg.cpp:31
 #, fuzzy
 msgid "&Colors"
 msgstr "&Κλείσιμο"
 
-#: kkfmoptdlg.cpp:30
+#: kkfmoptdlg.cpp:34
 #, fuzzy
 msgid "&Other"
 msgstr "Ανάγνωση από ¶λλους"
 
-#: kkfmoptdlg.cpp:50
+#: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
+msgstr ""
+
+#: khttpoptdlg.cpp:13
+msgid "Accept languages:"
+msgstr ""
+
+#: khttpoptdlg.cpp:18
+msgid "Accept character sets:"
+msgstr ""
+
+#: khttpoptdlg.cpp:23
+msgid "Assume HTML"
 msgstr ""
 
 #: kfmprops.h:73
@@ -1528,9 +1545,6 @@ msgstr ""
 
 #~ msgid "FILE"
 #~ msgstr "ΑΡΧΕΙΟ"
-
-#~ msgid "HTTP"
-#~ msgstr "HTTP"
 
 #~ msgid "TAR"
 #~ msgstr "TAR"
