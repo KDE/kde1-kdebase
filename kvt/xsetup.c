@@ -40,9 +40,9 @@
 #include <config.h>
 
 #ifdef HAVE_NCURSES_H
-#include <ncurses.h>
+// #include <ncurses.h>
 #else
-#include <curses.h>
+// #include <curses.h>
 #endif
 #ifdef HAVE_SETUPTERM
 #ifndef setupterm
@@ -307,7 +307,7 @@ int init_display(int argc,char **argv)
     char **ptr = termlist;
     int i;
     while(*ptr) {
-    	if ((setupterm(*ptr, 1, &i)) != ERR && (i == 1)) {
+    	if ((setupterm(*ptr, 1, &i)) != -1 && (i == 1)) {
 	    terminal = safemalloc(strlen(*ptr)+6, "terminal");
 	    sprintf(terminal, "TERM=%s", *ptr);
 	    break;
