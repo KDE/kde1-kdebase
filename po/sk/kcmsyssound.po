@@ -170,6 +170,7 @@ msgstr ""
 "Modulom"
 
 #: syssound.cpp:468
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"

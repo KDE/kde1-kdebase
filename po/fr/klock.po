@@ -387,6 +387,7 @@ msgstr ""
 "Porté vers kscreensave by Emanuel Pirker."
 
 #: main.cpp:280
+#, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 

@@ -1369,5 +1369,5 @@ msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
 
-msgid "Use proxy"
-msgstr "Pou¾íva» proxy"
+#~ msgid "Use proxy"
+#~ msgstr "Pou¾íva» proxy"

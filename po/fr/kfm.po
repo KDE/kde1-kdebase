@@ -7,12 +7,12 @@ msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-05-07 18:15+0200\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
-"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 
 #: kfmgui.cpp:250
 msgid "KFM"
@@ -1023,6 +1023,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1234 kiojob.cpp:1365
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1082,6 +1083,7 @@ msgstr ""
 "Le mot de passe est peut-être incorrect"
 
 #: kiojob.cpp:1300 kiojob.cpp:1407
+#, c-format
 msgid ""
 "Tar reproted an error\n"
 "%s"
@@ -1090,6 +1092,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1308
+#, c-format
 msgid ""
 "Gzip reproted an error for\n"
 "%s"
@@ -1107,6 +1110,7 @@ msgstr ""
 "n'existe pas"
 
 #: kiojob.cpp:1415
+#, c-format
 msgid ""
 "Gzip reproted an error\n"
 "%s"

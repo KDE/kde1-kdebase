@@ -102,6 +102,12 @@ msgstr "非活动标题位图[&I]"
 msgid "Mouse action"
 msgstr "鼠标动作"
 
+#: titlebar.cpp:984
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+
 #
 #: titlebar.cpp:988
 msgid "(Un)Maximize"

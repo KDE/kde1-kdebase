@@ -163,10 +163,11 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Désolé, ce type d'URL n'est pas supporté actuellement par le composant son de "
-"KDE"
+"Désolé, ce type d'URL n'est pas supporté actuellement par le composant son "
+"de KDE"
 
 #: syssound.cpp:468
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
