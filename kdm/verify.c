@@ -272,6 +272,8 @@ struct verify_info	*verify;
        PAM_password = greet->password;
        pam_error = pam_start(KDE_PAM, p->pw_name, &PAM_conversation, &pamh);
        PAM_BAIL;
+       pam_error = pam_set_item(pamh, PAM_TTY, d->name);
+       PAM_BAIL;
        pam_error = pam_authenticate(pamh, 0);
        PAM_BAIL;
        pam_error = pam_acct_mgmt(pamh, 0);
@@ -283,7 +285,6 @@ struct verify_info	*verify;
           have to worry about closing the pam handle?  It will
           be closed when the session is closed.
        */
-       /*pam_end(pamh, PAM_SUCCESS); */          
 #endif /* USE_PAM */
 
 	Debug ("verify succeeded\n");
