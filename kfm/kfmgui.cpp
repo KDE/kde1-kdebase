@@ -21,7 +21,7 @@
 #include <kconfig.h>
 #include <kapp.h>
 #include <kmsgbox.h>
-
+#include <kstdaccel.h>
 #include <kcursor.h>
 
 #include "kfmpaths.h"
@@ -210,6 +210,7 @@ void KfmGui::initStatusBar()
 
 void KfmGui::initMenu()
 {
+    KStdAccel stdAccel;
     menuNew = new KNewMenu();
 
     mfile = new QPopupMenu;
@@ -218,7 +219,7 @@ void KfmGui::initMenu()
     mfile->clear();
     mfile->insertSeparator();
     mfile->insertItem( klocale->translate("New &Window"), 
-		       this, SLOT(slotNewWindow()) );
+		       this, SLOT(slotNewWindow()), stdAccel.openNew() );
     mfile->insertSeparator();
     mfile->insertItem( klocale->translate("&Run..."), 
 		       this, SLOT(slotRun()) );
@@ -226,18 +227,18 @@ void KfmGui::initMenu()
 		       this, SLOT(slotTerminal()), CTRL+Key_T );
     mfile->insertSeparator();
     mfile->insertItem( klocale->translate("&Open Location..."),
-		       this, SLOT(slotOpenLocation()), CTRL+Key_O );
+		       this, SLOT(slotOpenLocation()), stdAccel.open() );
     mfile->insertItem( klocale->translate("&Find"), 
-		       this, SLOT(slotToolFind()), CTRL+Key_F );
+		       this, SLOT(slotToolFind()), stdAccel.find() );
     mfile->insertSeparator();
-    mfile->insertItem( klocale->translate("&Print..."), 
-		       this, SLOT(slotPrint()) );
+    mfile->insertItem( klocale->translate("&Print..."),
+		       this, SLOT(slotPrint()), stdAccel.print() );
     mfile->insertSeparator();        
-    mfile->insertItem( klocale->translate("&Close"), 
-		       this, SLOT(slotClose()), CTRL+Key_W );
+    mfile->insertItem( klocale->translate("&Close"),
+		       this, SLOT(slotClose()), stdAccel.close() );
 // This was meant for testing only. (hoelzer)
 //    file->insertItem( klocale->translate("&Quit..."),  
-//		      this, SLOT(slotQuit()), CTRL+Key_Q );
+//		      this, SLOT(slotQuit()), stdAccel.quit() );
 
     connect( mfile, SIGNAL(aboutToShow()), this, SLOT(slotFile()) );
 
@@ -245,13 +246,13 @@ void KfmGui::initMenu()
     edit = new QPopupMenu;
     CHECK_PTR( edit );
     edit->insertItem( klocale->translate("&Copy"), this, 
-		      SLOT(slotCopy()), CTRL+Key_C );
+		      SLOT(slotCopy()), stdAccel.copy() );
     edit->insertItem( klocale->translate("&Paste"), this, 
-		      SLOT(slotPaste()), CTRL+Key_V );
+		      SLOT(slotPaste()), stdAccel.paste() );
     edit->insertItem( klocale->translate("&Move to Trash"), 
-		      this, SLOT(slotTrash()) );
+		      this, SLOT(slotTrash()), stdAccel.cut() );
     edit->insertItem( klocale->translate("&Delete"), this, 
-		      SLOT(slotDelete())); 
+		      SLOT(slotDelete()));
         // adding Key_Delete here prevents deleting chars in toolbarURL (lined)
 
     edit->insertSeparator();
@@ -261,7 +262,7 @@ void KfmGui::initMenu()
                       SLOT(slotSelectAll()), CTRL+Key_A );
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Find in page..."), this, 
-		      SLOT(slotFind()) );
+		      SLOT(slotFind()), Key_F2 );
     edit->insertItem( klocale->translate("Find &next"), this, 
 		      SLOT(slotFindNext()), Key_F3 );
     edit->insertSeparator();
