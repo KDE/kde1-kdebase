@@ -505,11 +505,6 @@ KMimeType* KMimeType::findType( const char *_url )
     // Used to store a modified value for _url.
     QString tmp( _url );
     
-    // Some of the *.kdelnk files have special hard coded bindings like
-    // mouting/unmounting of devices.
-    if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
-	return kdelnkType;
-    
     // Is it really a directory ?
     if ( KIOServer::isDir( _url ) > 0 )
     {
@@ -541,6 +536,11 @@ KMimeType* KMimeType::findType( const char *_url )
 	return folderType;
     }              
 
+    // Some of the *.kdelnk files have special hard coded bindings like
+    // mouting/unmounting of devices.
+    if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
+	return kdelnkType;
+    
     // Links may appear on the local hard disk only. If this is a link
     // we will use the file/dir the link is pointing to to determine
     // the file type.
