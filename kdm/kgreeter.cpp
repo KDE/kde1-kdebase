@@ -333,9 +333,6 @@ KGreeter::save_wm()
      if (!pwd) return;
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
-#ifdef USESHADOW
-     memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
-#endif
 
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
@@ -362,9 +359,6 @@ KGreeter::load_wm()
      if (!pwd) return;
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
-#ifdef USESHADOW
-     memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
-#endif
 
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
@@ -411,17 +405,17 @@ KGreeter::restrict()
      if (!pwd) return false;
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
+
 #ifdef USESHADOW
+     swd = getspnam(greet->name);
+     endspent();
+     if (!swd) return false;
+     // we don't need the password
      memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
 #endif
 
 #ifdef HAVE_LOGIN_CAP_H
      lc = login_getpwclass(pwd);
-#endif
-#ifdef USESHADOW
-     swd = getspnam(greet->name);
-     endspent();
-     if (!swd) return false;
 #endif
 
      if (restrict_nologin() ||
