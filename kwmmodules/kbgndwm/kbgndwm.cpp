@@ -90,8 +90,8 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
 void KBGndManager::setUndock()
 {
-  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
-		  KApplication::localconfigdir() + "/kdisplayrc");
+  KConfig config2(KApplication::kde_configdir() + "/kcmdisplayrc",
+		  KApplication::localconfigdir() + "/kcmdisplayrc");
 
   undock(); // first undock to set docked variable
   config2.setGroup( "Desktop Common" );
@@ -156,8 +156,8 @@ void KBGndManager::commandReceived( QString com )
 
       QString oldName = desktops[current].getName();
 
-      KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
-		      KApplication::localconfigdir() + "/kdisplayrc");
+      KConfig config2(KApplication::kde_configdir() + "/kcmdisplayrc",
+		      KApplication::localconfigdir() + "/kcmdisplayrc");
 
       config2.setGroup( "Desktop Common" );
       oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", false );
@@ -224,8 +224,8 @@ void KBGndManager::cacheDesktop()
 void KBGndManager::readSettings()
 {
 
-  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
-		  KApplication::localconfigdir() + "/kdisplayrc");
+  KConfig config2(KApplication::kde_configdir() + "/kcmdisplayrc",
+		  KApplication::localconfigdir() + "/kcmdisplayrc");
 
   config2.setGroup( "Desktop Common" );
   oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", false );
@@ -257,8 +257,8 @@ void KBGndManager::toggleOneDesktop()
   oneDesktopMode = !oneDesktopMode;
   desktop = KWM::currentDesktop() - 1;
 
-  KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
-		  KApplication::localconfigdir() + "/kdisplayrc");
+  KConfig config2(KApplication::kde_configdir() + "/kcmdisplayrc",
+		  KApplication::localconfigdir() + "/kcmdisplayrc");
 
   config2.setGroup( "Desktop Common" );
   config2.writeEntry( "OneDesktopMode", oneDesktopMode );

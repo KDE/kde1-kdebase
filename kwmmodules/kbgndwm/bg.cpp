@@ -96,7 +96,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 
   QFileInfo fi( KApplication::localconfigdir() + tmpf );
   if ( ! fi.exists() ){
-    tmpf = "/kdisplayrc";
+    tmpf = "/kcmdisplayrc";
     first_time = true;
   }
 
