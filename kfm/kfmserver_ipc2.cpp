@@ -4,9 +4,9 @@
 
 #include "kfmserver_ipc.h"
 
-void KfmIpc::parse_refreshDesktop( char *_data, int _len )
+void KfmIpc::parse_refreshDesktop( char *, int )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit refreshDesktop(  );
@@ -140,9 +140,9 @@ void KfmIpc::parse_copyClient( char *_data, int _len )
 	free( (void*)_dest );
 }
 
-void KfmIpc::parse_sortDesktop( char *_data, int _len )
+void KfmIpc::parse_sortDesktop( char *, int )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit sortDesktop(  );
