@@ -54,6 +54,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     screenwidth=KWM::geometry( qt_xrootwin()).width();
     screenheight=KWM::geometry( qt_xrootwin()).height();
 
+    Desktop::kwmmapp=kwmmapp;
     desktop[0]=new Desktop(0,screenwidth,screenheight,this,"Global Desktop");
     connect(desktop[0],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
 

@@ -300,6 +300,52 @@ int Desktop::getHeaderHeight(void)
 int Desktop::headerHeight=25;
 
 
+void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
+{
+    QWMatrix matrix;
+    QRect tmp2;
+    double rx,ry;
+    
+    if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
+    else painter->fillRect(tmp,QColor(200,200,200));
+    
+    // The next line causes oclock to behave very strange, I better don't call KWM::getDecoration
+    //        if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
+    //
+    //            tmp2.setRect((int)wp->geometry.x()*ratiox,(int)y+wp->geometry.y()*ratioy,(int)wp->geometry.width()*ratiox,(int)wp->geometry.height()*ratioy);
+    
+    if ((drawWinMode==pixmap)&&(wp->bigPixmap!=0L))
+    {
+        tmp2.setRect(tmp.x()+2,tmp.y()+2,tmp.width()-4,tmp.height()-4);
+        rx=(double)tmp2.width()/wp->bigPixmap->width();
+        ry=(double)tmp2.height()/wp->bigPixmap->height();
+        matrix.scale(rx,ry);
+        if (wp->pixmap!=0L) delete wp->pixmap;
+        wp->pixmap=new QPixmap(wp->bigPixmap->xForm(matrix));
+        painter->drawPixmap(tmp2.x(),tmp2.y(),*wp->pixmap);
+    }
+    else
+    {
+        tmp2.setRect(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
+        painter->fillRect(tmp2,QColor(145,145,145));
+        
+        if (((drawWinMode==icon)||(drawWinMode==pixmap))
+            && (wp->icon->width()!=0)&&(wp->icon->height()!=0))
+        {
+            rx=(double)tmp2.width()/wp->icon->width();
+            ry=(double)(tmp2.height())/wp->icon->height();
+            rx=(rx<ry)? rx : ry;
+            matrix.scale(rx,rx);
+            QPixmap *tmpicon=new QPixmap(wp->icon->xForm(matrix));
+            painter->drawPixmap(tmp2.center().x()-tmpicon->width()/2,tmp2.center().y()-tmpicon->height()/2,*(tmpicon));
+            delete tmpicon;
+        }
+    }
+    
+    painter->drawRect(tmp);
+    
+}
+
 void Desktop::paintEvent(QPaintEvent *)
 {
     tmpScreen->resize(width(),height());
@@ -334,46 +380,9 @@ void Desktop::paintEvent(QPaintEvent *)
     while (wp!=NULL)
     {
         tmp.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
-        
-        if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
-        else painter->fillRect(tmp,QColor(200,200,200));
 
-// The next line causes oclock to behave very strange, I better don't call KWM::getDecoration
-//        if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
-//
-        //            tmp2.setRect((int)wp->geometry.x()*ratiox,(int)y+wp->geometry.y()*ratioy,(int)wp->geometry.width()*ratiox,(int)wp->geometry.height()*ratioy);
-
-        if ((drawWinMode==pixmap)&&(wp->bigPixmap!=0L))
-        {
-            matrix.reset();
-            tmp2.setRect(tmp.x()+2,tmp.y()+2,tmp.width()-4,tmp.height()-4);
-            rx=(double)tmp2.width()/wp->bigPixmap->width();
-            ry=(double)tmp2.height()/wp->bigPixmap->height();
-            matrix.scale(rx,ry);
-            if (wp->pixmap!=0L) delete wp->pixmap;
-            wp->pixmap=new QPixmap(wp->bigPixmap->xForm(matrix));
-            painter->drawPixmap(tmp2.x(),tmp2.y(),*wp->pixmap);
-        }
-        else
-        {
-            tmp2.setRect(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
-            painter->fillRect(tmp2,QColor(145,145,145));
-            
-            if (((drawWinMode==icon)||(drawWinMode==pixmap))
-                && (wp->icon->width()!=0)&&(wp->icon->height()!=0))
-            {
-                matrix.reset();
-                rx=(double)tmp2.width()/wp->icon->width();
-                ry=(double)(tmp2.height())/wp->icon->height();
-                rx=(rx<ry)? rx : ry;
-                matrix.scale(rx,rx);
-                QPixmap *tmpicon=new QPixmap(wp->icon->xForm(matrix));
-                painter->drawPixmap(tmp2.center().x()-tmpicon->width()/2,tmp2.center().y()-tmpicon->height()/2,*(tmpicon));
-                delete tmpicon;
-            }
-        }
+        paintWindow(painter,wp,tmp);
         
-        painter->drawRect(tmp);
         wp=window_list->next();
     }
     painter->setClipping(FALSE);
@@ -415,6 +424,14 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 #endif
     while ((wp!=0L)&&(!wp->minigeometry.contains(*p)))
     {
+        if (kwmmapp!=NULL)
+        {
+            if (!kwmmapp->hasWindow(wp->id))
+            {
+                printf("Doing workaround for not receiving signal\n");
+                removeWindow(wp->id);
+            };
+        };
 #ifdef DESKTOPDEBUG
         printf("minigeom : x %d   y %d    w %d   h %d\n",wp->minigeometry.x(),wp->minigeometry.y(),wp->minigeometry.width(),wp->minigeometry.height());
 #endif
@@ -449,14 +466,20 @@ void Desktop::mousePressEvent (QMouseEvent *e)
     QPainter *painter=new QPainter(qxpm);
     QRect tmp(0,0,qxpm->width(),qxpm->height());
 
+    paintWindow(painter,wp,tmp);
+
+
+    /*
     if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
     else painter->fillRect(tmp,QColor(200,200,200));
+
     if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
     {
         QRect tmp2(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
         painter->fillRect(tmp2,QColor(145,145,145));
     }
     painter->drawRect(tmp);
+*/
     delete painter;
 
     int deltax=dragpos.x();
@@ -858,3 +881,5 @@ void Desktop::setDrawMode(int mode)
     if (drawWinMode==pixmap) grabDesktop();
     update();
 }
+
+KWMModuleApplication *Desktop::kwmmapp=NULL;

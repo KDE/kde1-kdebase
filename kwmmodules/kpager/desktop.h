@@ -26,7 +26,7 @@
 #include <qdropsite.h>
 #include <qlist.h>
 #include <kwm.h>
-#include <kapp.h>
+#include <kwmmapp.h>
 #include <kpixmap.h>
 #include "windowdrag.h"
 
@@ -96,7 +96,10 @@ private:
 
     void grabDesktop(void);
     void grabWindowContents(WindowProperties *wp);
+
+protected:
     
+    virtual void paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp);
 
 public:
     Desktop(int id,int swidth,int sheight, QWidget *parent, char *name);
@@ -133,6 +136,7 @@ public:
     virtual void mouseDoubleClickEvent( QMouseEvent *);
     virtual void resizeEvent (QResizeEvent *);
 
+    static KWMModuleApplication *kwmmapp;
 signals:
     void moveWindow(Window w,int desktop,int x,int y, int origdesk);
     void switchToDesktop(int id);
