@@ -8,6 +8,8 @@ Comment[da]=Hellensk tastatur (Latin-1 keysyms svarende til ISO8859-7 indexer)
 Comment[de]=Griechische Tastatur (Latin-1 keysyms corresponding to ISO8859-7 indexes)
 Comment[es]=Teclado Helenita (símbolos Latin-1 correspondientes a índices ISO8859-7)
 Comment[fr]=Clavier grec (les touches-symboles Latin-1 correspondent aux index ISO8859-7
+Comment[hu]=Hellén Billentyûzet (Latin-1 megfeleltetése az  ISO8859-7 
+indexeknek)
 Comment[no]=Hellenisk tastatur (Latin-1 keysyms i henhold til ISO8859-7-indeksen)
 Comment[pl]=Grecka Klawiatura (symbole w Latin-1 odpowiadaj±ce indeksom w ISO8859-7
 Comment[pt_BR]=Teclado Helênico (teclas Latin-1 correspondendo a ISO8859-7)
@@ -24,6 +26,7 @@ Language[es]=Griego
 Language[fi]=Kreikka
 Language[fr]=Grec
 Language[hr]=Grèki
+Language[hu]=Görög
 Language[is]=Grískt
 Language[it]=Greco
 Language[no]=Gresk

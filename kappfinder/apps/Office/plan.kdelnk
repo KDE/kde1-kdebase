@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
+Name[hu]=Határidõnapló
 Name[is]=Áætlanir
 Name[sl]=Planer
 MiniIcon=mini-plan.xpm
