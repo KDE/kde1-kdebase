@@ -134,8 +134,8 @@ void KHelpMain::createMenu()
 	fileMenu->insertSeparator();
 	fileMenu->insertItem( klocale->translate("&Open File..."), helpwin,
                         SLOT(slotOpenFile()), stdAccel.open() );
-	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin,
-                        SLOT(slotOpenURL()) );
+//	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin,
+//                        SLOT(slotOpenURL()) );
 	fileMenu->insertItem( klocale->translate("&Reload"), helpwin,
                         SLOT(slotReload()) );
 	fileMenu->insertSeparator();
