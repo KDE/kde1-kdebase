@@ -8,6 +8,7 @@ Name[es]=Catal嫕
 Name[en]=Catalan
 Name[fr]=Catalan
 Name[pl]=Katalo御ki
+Name[pt]=Catal緌
 
 [ro]
 Name=Romanian
@@ -16,6 +17,7 @@ Name[fi]=Romania
 Name[pl]=Rumu雟ki
 Name[hu]=Rom嫕
 Name[zh]=羅馬尼亞文
+Name[pt]=Rom幯io
 
 [C]
 Name=Default language
@@ -26,6 +28,7 @@ Name[pl]=Domy郵ny j瞛yk
 Name[fr]=Langue par d嶨aut
 Name[hu]=Alap廨telmezett nyelv
 Name[zh]=預設語言
+Name[pt]=Lingua por omiss緌
 
 [de]
 Name=German
@@ -36,6 +39,7 @@ Name[pl]=Niemiecki
 Name[fr]=Allemand
 Name[hu]=N幦et
 Name[zh]=德文
+Name[pt]=Alem緌
 
 [en_UK]
 Name=English - UK
@@ -46,6 +50,7 @@ Name[pl]=Angielski - UK
 Name[fr]=Anglais - UK
 Name[hu]=Angol - UK
 Name[zh]=英文 - UK
+Name[pt]=Ingl瘰 - UK
 
 [en]
 Name=English - US
@@ -56,6 +61,7 @@ Name[pl]=Angielski - US
 Name[fr]=Anglais - US
 Name[hu]=Angol - US
 Name[zh]=英文 - US
+Name[pt]=Ingl瘰 - EUA
 
 [fr]
 Name=French
@@ -66,6 +72,7 @@ Name[pl]=Francuski
 Name[fr]=Fran蓷is
 Name[hu]=Francia
 Name[zh]=法文
+Name[pt]=Franc瘰
 
 [cs]
 Name=Czech
@@ -76,6 +83,7 @@ Name[pl]=Czeski
 Name[fr]=Tch鋂ue
 Name[hu]=Cseh
 Name[zh]=捷克文
+Name[pt]=Checo
 
 [sv]
 Name=Swedish
@@ -86,6 +94,7 @@ Name[pl]=Szwedzki
 Name[fr]=Su嶮ois
 Name[hu]=Sv嶮
 Name[zh]=瑞典文
+Name[pt]=Sueco
 
 [es]
 Name=Spanish
@@ -96,6 +105,7 @@ Name[pl]=Hiszpa雟ki
 Name[fr]=Espagnol
 Name[hu]=Spanyol
 Name[zh]=西班牙文
+Name[pt]=Espanhol
 
 [ru]
 Name=Russian
@@ -106,6 +116,7 @@ Name[pl]=Rosyjski
 Name[fr]=Russe
 Name[hu]=Orosz
 Name[zh]=俄文
+Name[pt]=Russo
 
 [nl]
 Name=Dutch
@@ -116,6 +127,7 @@ Name[pl]=Holenderski
 Name[fr]=Hollandais
 Name[hu]=Holland
 Name[zh]=荷蘭文
+Name[pt]=Holandes
 
 [hu]
 Name=Hungarian
@@ -126,6 +138,7 @@ Name[pl]=W璕ierski
 Name[fr]=Hongrois
 Name[hu]=Magyar
 Name[zh]=匈牙利文
+Name[pt]=Hungaro
 
 [da]
 Name=Danish
@@ -136,6 +149,7 @@ Name[pl]=Du雟ki
 Name[fr]=Danois
 Name[hu]=D嫕
 Name[zh]=丹麥文
+Name[pt]=Dinamarqu瘰
 
 [fi]
 Name=Finnish
@@ -145,7 +159,9 @@ Name[fi]=Suomi
 Name[pl]=Fi雟ki
 Name[fr]=Finlandais
 Name[hu]=Finn
+Name[pt]=Finlandes
 Name[zh]=芬蘭文
+Name[pt]=Finlandes
 
 [it]
 Name=Italian
@@ -156,6 +172,7 @@ Name[pl]=W這ski
 Name[fr]=Italien
 Name[hu]=Olasz
 Name[zh]=義大利文
+Name[pt]=Italiano
 
 [pt]
 Name=Portuguese
@@ -166,6 +183,7 @@ Name[pl]=Portugalski
 Name[fr]=Portugais
 Name[hu]=Portug嫮
 Name[zh]=葡萄牙文
+Name[pt]=Portugu瘰
 
 [pl]
 Name=Polish
@@ -176,6 +194,7 @@ Name[pl]=Polski
 Name[fr]=Polonais
 Name[hu]=Lengyel
 Name[zh]=波蘭文
+Name[pt]=Polaco
 
 [no]
 Name=Norwegian
@@ -186,6 +205,7 @@ Name[pl]=Norweski
 Name[fr]=Norv嶲ien
 Name[hu]=Norv嶲
 Name[zh]=挪威文
+Name[pt]=Noruegu瘰
 
 [el]
 Name=Greek
@@ -196,6 +216,7 @@ Name[pl]=Grecki
 Name[fr]=Grec
 Name[hu]=G顤鐷
 Name[zh]=希臘文
+Name[pt]=Grego
 
 [hr]
 Name=Croatian
@@ -206,6 +227,7 @@ Name[pl]=Chorwacki
 Name[fr]=Croatien
 Name[hu]=Horv嫢
 Name[zh]=克羅埃西亞文
+Name[pt]=Crota
 
 [sk]
 Name=Slovak
@@ -219,12 +241,16 @@ Name[de]=Chinesisch
 Name[no]=Kinetisk
 Name[zh]=BIG5 中文
 Name[pl]=Chi御ki tradycyjny
+Name[pt]=Chin瘰 tradicional
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
 Name[de]=Vereinfachtes Chinesisch
 Name[no]=Forenklet kinesisk
 Name[pl]=Chi御ki uproszczony
+Name[pt]=Chin瘰 simplificado
 
 [pt_BR]
 Name=Brazil portuguese
+Name[pt]=Portugu瘰 do Brasil
+
