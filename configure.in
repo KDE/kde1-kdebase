@@ -28,7 +28,34 @@ AC_PROG_CPP
 test "$CCC" = "" && CCC="c++ xlC DCC"
 AC_PROG_CXX
 AC_PROG_LN_S
+
 AC_CHECK_LIB(dl, main, [LIBDL="-ldl"])
+AC_SUBST(LIBDL)
+AC_CHECK_HEADERS(dlfcn.h)
+AC_ARG_ENABLE(dlopen,
+[  --disable-dlopen        link kcontrol staticly [default=no]] ,   
+[if test "$enableval" = yes; then
+  enable_dlopen=yes
+else
+  enable_dlopen=no
+fi],
+enable_dlopen=yes)     
+
+# override the user's opinion, if we know it better ;)
+if test $ac_cv_header_dlfcn_h = "no" || test $ac_cv_lib_dl_main = "no"; then
+  enable_dlopen=no
+fi
+
+if test $ac_cv_header_dlfcn_h = "yes" && test $ac_cv_lib_dl_main = "yes"; then
+  AC_DEFINE_UNQUOTED(HAVE_DLFCN)
+fi
+
+if test "$enable_dlopen" = no ; then
+  libtool_enable_shared=no
+else
+  libtool_enable_static=no
+fi
+
 dnl libtool is only for C, so I must force him
 dnl to find the correct flags for C++
 ac_save_cc=$CC
@@ -36,49 +63,25 @@ CC=$CXX
 AM_PROG_LIBTOOL dnl for libraries
 CC=$ac_save_cc
 
-KCC_MODULES=""
 AC_MSG_CHECKING([dynamic loading])
+eval "`egrep '^build_libtool_libs=' libtool`"
+if test "$build_libtool_libs" = "yes" && test "$enable_dlopen" = "yes"; then
+  dynamic_loading=yes
+  AC_DEFINE_UNQUOTED(HAVE_DYNAMIC_LOADING)
+else
+  dynamic_loading=no
+fi
 AC_MSG_RESULT($dynamic_loading)
-if test $dynamic_loading = "no"; then
-  files=`find kcontrolcenter -name "module.h"`
-  rm -f all_modules.new
-  file2=""
-  for i in $files; do 
-    dirname=`echo $i | sed -e "s#kcontrolcenter/##; s#/module.h##"`    
-   	if grep $dirname kcontrolcenter/Makefile.am > /dev/null 2> /dev/null; then
-      file2="$file2 $i"
-    fi
-  done
 
-  for i in $files; do
-    echo $ac_n "#include \".."$ac_c >> all_modules.new
-    filename=`echo $i | sed -e "s#kcontrolcenter##"`
-    echo "$filename\"" >> all_modules.new
-  done
- 
-  echo "" >> all_modules.new
-  echo "#define ADD_MODULES \\" >> all_modules.new
-
-  for i in $files; do
-    
-    echo "#include \"$i\"" > conftest.c
-    echo "ModuleName" >> conftest.c
-    classname=`$CPP conftest.c 2> /dev/null | tail -1`
-    echo "moduleList.append(new ConfigEntry(0L, new $classname(), \"\")); \\" >> all_modules.new
-    
-    filename=`echo $i | sed -e "s#module.h#Makefile.am#"`
-    libname=`grep lib_LTLIBRARIES $filename|sed -e "s#lib_LTLIBRARIES##"|sed -e "s#.*= *##"`
-    filename=`echo "$i$libname" | sed -e "s#kcontrolcenter#\.\.#; s#module.h##"`
-    KCC_MODULES="$KCC_MODULES $filename"
-  done
-  echo "// last line" >> all_modules.new
-  if diff all_modules.new kcontrolcenter/kcc/all_modules.h 2> /dev/null > /dev/null; then
-	   rm all_modules.new
-  else
-    mv all_modules.new kcontrolcenter/kcc/all_modules.h	
-  fi 
+if test "$dynamic_loading" = "no"; then
+KCC_MODULES=\
+"-dlpreopen ../sample/libsample.la "\
+"-dlpreopen ../colors/libcolors.la "
+else
+KCC_MODULES=""
 fi
 AC_SUBST(KCC_MODULES)
+
 kcc_moduledir="\$(prefix)/lib/kcc/modules"
 AC_SUBST(kcc_moduledir)
 

@@ -52,3 +52,7 @@
 
 /* Define if you have gethostname */
 #undef HAVE_GETHOSTNAME  
+
+/* Define if you have dlopen and co. */
+#undef HAVE_DLFCN
+

@@ -880,8 +880,14 @@ global_symbol_pipe="sed -n -e 's/^.* $symcode $sympat$/$symxfrm/p'"
 pipe_works=no
 $rm conftest*
 cat > conftest.c <<EOF
+#ifdef __cplusplus
+extern "C" {
+#endif
 char nm_test_var;
 void nm_test_func(){}
+#ifdef __cplusplus
+}
+#endif
 main(){nm_test_var='a';nm_test_func();return(0);}
 EOF
 
