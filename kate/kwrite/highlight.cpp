@@ -1135,9 +1135,7 @@ int HlManager::wildcardFind(const char *fileName) {
   Highlight *highlight;
   int p1, p2;
   QString w;
-printf("file name %s\n",fileName);
   for (highlight = hlList.first(); highlight != 0L; highlight = hlList.next()) {
-printf("highlight %s\n",highlight->name());
     p1 = 0;
 //    w = highlight->iWildcards;
     highlight->getWildcards(w);
@@ -1145,7 +1143,6 @@ printf("highlight %s\n",highlight->name());
       p2 = w.find(';',p1);
       if (p2 == -1) p2 = w.length();
       if (p1 < p2) {
-printf("wildcard %s\n",w.mid(p1,p2 - p1).data());
         QRegExp regExp(w.mid(p1,p2 - p1),true,true);
         if (regExp.match(fileName) == 0) return hlList.at();
       }
@@ -1185,8 +1182,6 @@ int HlManager::mimeFind(KWriteDoc *doc)
     result = magic.findBufferFileType(buffer,number,doc->fileName());
   else
     result = magic.findBufferType(buffer,number);
-
-printf("MIMETYPE: %s\n", result->getContent().data());
 
   Highlight *highlight;
   int p1, p2;
