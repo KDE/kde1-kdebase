@@ -33,9 +33,8 @@ msgstr "&Avançado"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"utilização: kcmkwm [-init | "
-"{options,buttons,titlebar,borders,mouse,advanced}]\n"
-
+"utilização: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+	
 #: main.cpp:123
 msgid "Window manager style"
 msgstr "Estilo do gestor de janelas"
@@ -194,9 +193,7 @@ msgstr "Mostrar conteúdo das janelas enquanto mudam tamanho"
 
 #: windows.cpp:98
 msgid "Resize animation:"
-msgstr ""
-"Animação\n"
-"mudança tamanho:"
+msgstr "Animação\nmudança tamanho:"
 
 #: windows.cpp:111
 msgid "None"

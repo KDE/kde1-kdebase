@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type:\n"
 "Content-Transfer-Encoding:\n"
 
-#: configlist.cpp:121
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Módulo desconhecido: "
 
@@ -17,11 +17,11 @@ msgstr "Módulo desconhecido: "
 msgid "KDE Control Center"
 msgstr "Centro de Controlo KDE"
 
-#: toplevel.cpp:86
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "Ab&sorver módulos"
 
-#: toplevel.cpp:89
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

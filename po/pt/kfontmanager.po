@@ -40,7 +40,6 @@ msgid ""
 msgstr ""
 "A Ágil Raposa Castanha Saltou Por Cima do Cão\n"
 "AaBbCc123"
-
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
 msgstr "Acerca do kfontmanager"

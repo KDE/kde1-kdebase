@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -9,23 +9,23 @@ msgstr ""
 "Content-Type:\n"
 "Content-Transfer-Encoding:\n"
 
-#: kmenuedit.cpp:69
+#: kmenuedit.cpp:68
 msgid "Change &Menuname"
 msgstr "Mudar Nome do &Menu"
 
-#: kmenuedit.cpp:70
+#: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
 msgstr "Recarregar Tipos de &Ficheiro"
 
-#: kmenuedit.cpp:77
+#: kmenuedit.cpp:76
 msgid "by"
 msgstr "por"
 
-#: kmenuedit.cpp:179 kmenuedit.cpp:204
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Modificações não gravadas!"
 
-#: kmenuedit.cpp:180 kmenuedit.cpp:205
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
 "\n"
 "Do you want to save your changes ?"
@@ -33,15 +33,15 @@ msgstr ""
 "\n"
 "Quer gravar as suas modificações ?"
 
-#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+#: confmenu.cpp:337 confmenu.cpp:929 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "VAZIO"
 
-#: kmenuedit.cpp:343
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Recarregar Menus"
 
-#: kmenuedit.cpp:344
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -69,11 +69,11 @@ msgstr ""
 "Não é possível criar directory para menu personalizado.\n"
 " Seleccione Ok para sair do KMenuedit."
 
-#: confmenu.cpp:91 entrydialog.cpp:60
+#: confmenu.cpp:91 entrydialog.cpp:52
 msgid "Separator"
 msgstr "Separador"
 
-#: confmenu.cpp:103 confmenu.cpp:335
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Abrir/ Fechar"
 
@@ -89,7 +89,7 @@ msgstr "Seleccione menu a mover"
 msgid "New"
 msgstr "Novo"
 
-#: confmenu.cpp:177 confmenu.cpp:318
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Aviso !"
 
@@ -109,11 +109,11 @@ msgstr ""
 "Um ficheiro kdelnk com este nome já existe. \n"
 "Por favor escolha outro nome."
 
-#: confmenu.cpp:319
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Mudar o tipo deste botão vai apagar todos os seus submenus"
 
-#: confmenu.cpp:340 confmenu.cpp:940
+#: confmenu.cpp:338 confmenu.cpp:930
 msgid "no command"
 msgstr "sem comando"
 
@@ -141,108 +141,108 @@ msgstr "Caminho:"
 msgid "PersonalPath:"
 msgstr "Caminho Pessoal:"
 
-#: entrydialog.cpp:61
+#: entrydialog.cpp:53
 msgid "Submenu"
 msgstr "Submenu"
 
-#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
-#: entrydialog.cpp:544
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
 msgid "Application"
 msgstr "Aplicação"
 
-#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
 msgstr "Engolir"
 
-#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
 msgstr "Ligação"
 
-#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:549
 msgid "Device"
 msgstr "Dispositivo"
 
-#: entrydialog.cpp:72
+#: entrydialog.cpp:63
 msgid "Type:"
 msgstr "Tipo:"
 
-#: entrydialog.cpp:79
+#: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nome do Ficheiro:"
 
-#: entrydialog.cpp:94
+#: entrydialog.cpp:82
 msgid "Name:"
 msgstr "Nome:"
 
-#: entrydialog.cpp:109
-msgid "Icon:"
-msgstr "Ícone:"
-
-#: entrydialog.cpp:141
+#: entrydialog.cpp:95
 msgid "Mini Icon:"
 msgstr "Mini Ícone:"
 
-#: entrydialog.cpp:149
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Ícone:"
+
+#: entrydialog.cpp:133
 msgid "Comment:"
 msgstr "Comentário:"
 
-#: entrydialog.cpp:196 entrydialog.cpp:538
+#: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
 msgstr "Executar"
 
-#: entrydialog.cpp:222
+#: entrydialog.cpp:186
 msgid "Execute:"
 msgstr "Executar:"
 
-#: entrydialog.cpp:228
+#: entrydialog.cpp:192
 msgid "Working Directory:"
 msgstr "Directoria de Trabalho:"
 
-#: entrydialog.cpp:241
+#: entrydialog.cpp:205
 msgid "Run in terminal"
 msgstr "Correr em terminal"
 
-#: entrydialog.cpp:245
+#: entrydialog.cpp:211
 msgid "Terminal Options:"
 msgstr "Opções do Terminal:"
 
-#: entrydialog.cpp:310
+#: entrydialog.cpp:292
 msgid "Binary Pattern:"
 msgstr "Padrão Binário:"
 
-#: entrydialog.cpp:325
+#: entrydialog.cpp:300
 msgid "Application to swallow:"
 msgstr "Aplicação para engolir:"
 
-#: entrydialog.cpp:331
+#: entrydialog.cpp:306
 msgid "Title of application:"
 msgstr "Título da aplicação:"
 
-#: entrydialog.cpp:337
+#: entrydialog.cpp:312
 msgid "Application to execute on button press:"
 msgstr "Aplicação a executar quando clicado:"
 
-#: entrydialog.cpp:367
+#: entrydialog.cpp:342
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:415
+#: entrydialog.cpp:391
 msgid "Read Only"
 msgstr "Leitura Apenas"
 
-#: entrydialog.cpp:420
+#: entrydialog.cpp:397
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: entrydialog.cpp:425
+#: entrydialog.cpp:403
 msgid "Mount Point:"
 msgstr "Ponto de Montagem:"
 
-#: entrydialog.cpp:430
+#: entrydialog.cpp:409
 msgid "FS Type:"
 msgstr "Tipo de FS:"
 
-#: entrydialog.cpp:435
+#: entrydialog.cpp:415
 msgid "Unmount Icon:"
 msgstr "Icon para Desmontar:"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd.po\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
 "PO-Revision-Date: 1998-11-20 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -19,6 +19,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"Ficheiro de códigos X \"%s\" não existe.\n"
+"A utilizar códigos por omissão."
 
 #: kikbd.cpp:313
 #, c-format
@@ -26,6 +28,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
+"Mapa de teclado \"%s\" não existe.\n"
+"Mapa ignorado."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -51,24 +55,12 @@ msgstr ""
 "Simbolos do Alt desactivados"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
-"Cannot remove Caps Lock from Modifiers.\n"
+"Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Não consigo remover Caps Lock dos Modificadores.\n"
 "Emulação de Caps Lock desactivada"
-
-#: kikbd.cpp:1003
-#, fuzzy
-msgid "Exiting International Keyboard"
-msgstr "Teclado International"
-
-#: kikbd.cpp:1004
-msgid ""
-"You're about to quit the \"International Keyboard\" tool.\n"
-" Do you want to have it autostarted at your next login?"
-msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -82,6 +74,10 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Não consigo encontrar simbolo \"%s\".\n"
+"Talvez os seus códigos X por omissão não condizam.\n"
+"Pode mudar os códigos X na secção \"Avançado\" do\n"
+"programa de configuração."
 
 #: keymap.cpp:233
 #, c-format
@@ -98,190 +94,192 @@ msgstr "KeyMap: não compreendo o código \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: código \"%s\" fora dos limites."
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Global"
 msgstr "Global"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Window"
 msgstr "Janela"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Class"
 msgstr "Classe"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
 msgstr "(Nenhum)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
 msgstr "Alt Direito"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
 msgstr "Control Direito"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
 msgstr "Direitos (Alt+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
 msgstr "Direitos (Ctrl+Alt)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
 msgstr "Direitos (Ctrl+Shift)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
 msgstr "Esquerdos (Alt+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Esquerdos (Ctrl+Alt)"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Esquerdos (Ctrl+Shift)"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
-msgstr ""
+msgstr "Ambos os Shift's (Shift+Shift)"
 
-#: kikbdconf.cpp:115
-#, fuzzy
-msgid "Right Meta"
-msgstr "Alt Direito"
-
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:113
 msgid "Left  Alt"
 msgstr "Alt Esquerdo"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:114
 msgid "Left  Control"
 msgstr "Control Esquerdo"
 
-#: kikbdconf.cpp:118
-#, fuzzy
-msgid "Left  Meta"
-msgstr "Alt Esquerdo"
-
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:117
 msgid "Top Left"
 msgstr "Topo Esquerdo"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:118
 msgid "Top Right"
 msgstr "Topo Direito"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:119
 msgid "Bottom Left"
 msgstr "Fundo Esquerdo"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:120
 msgid "Bottom Right"
 msgstr "Fundo Direito"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:147
 msgid "X default codes"
 msgstr "Códigos X por omissão"
 
-#: kikbdconf.cpp:209
-#, fuzzy, c-format
+#: kikbdconf.cpp:204
+#, c-format
 msgid ""
 "%s\n"
-"Do you want to configure now?"
+"Do you want to start Configuration?"
 msgstr ""
-"\n"
-"Quer continuar?"
+"%s\n"
+"Quer iniciar a Configuração?"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:212
+msgid "Your configuration is empty. Install system default."
+msgstr "A sua configuração está vazia. Instale valores por defeito do sistema."
+
+#: kikbdconf.cpp:218
 msgid ""
-"You're using \"International Keyboard\" for the first time.\n"
-"I installed a number of default settings."
+"Configuration file you have has older format when expected.\n"
+"Some settings may be incorrect."
 msgstr ""
+"Ficheiro de configuração tem um formato antigo.\n"
+"Alguns parâmetros de configuração podem estar errados."
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:226
+msgid ""
+"Configuration file you have has newer format when expected.\n"
+"Some settings may be incorrect."
+msgstr ""
+"Ficheiro de configuração tem um formato demasiado moderno.\n"
+"Alguns parâmetros de configuração podem estar errados."
+
+#: kikbdconf.cpp:353
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "por omissão"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Autor:  Não especificado"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Descripção:   "
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Fonte:   "
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:395
 msgid "no file"
-msgstr ""
+msgstr "nenhum ficheiro"
+
+#: kikbdconf.cpp:396
+msgid "user file"
+msgstr "ficheiro de utilizador"
+
+#: kikbdconf.cpp:397
+msgid "system file"
+msgstr "ficheiro de sistema"
 
 #: kikbdconf.cpp:402
-msgid "user file"
-msgstr ""
-
-#: kikbdconf.cpp:403
-msgid "system file"
-msgstr ""
-
-#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Estatísticas:  "
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "símbolos"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "códigos"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "símbolos alternativos"
 
-#: kikbdconf.cpp:429
-#, fuzzy
-msgid "Language"
+#: kikbdconf.cpp:418
+msgid "language"
 msgstr "língua"
 
-#: kikbdconf.cpp:433
-#, fuzzy
-msgid "Charset"
+#: kikbdconf.cpp:419
+msgid "charset"
 msgstr "código"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "ERRO do Teclado International"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Aviso do Teclado International"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Pergunta do Teclado International"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Configuração"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:497
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -311,7 +309,7 @@ msgstr "&Subir"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
-msgstr ""
+msgstr "Seleccionar o teclado acima"
 
 #: widgets.cpp:131
 msgid "D&own"
@@ -319,7 +317,7 @@ msgstr "&Descer"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
-msgstr ""
+msgstr "Seleccionar o teclado abaixo"
 
 #: widgets.cpp:135
 msgid "&Info"
@@ -327,16 +325,17 @@ msgstr "&Info"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr ""
+msgstr "Mostrar informações acerca do teclado seleccionado"
 
 #: widgets.cpp:145
 msgid "Use &hot list"
-msgstr ""
+msgstr "Utilizar &recente"
 
 #: widgets.cpp:146
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
+"Utilizar apenas o teclado por omissão e o último activo ao fazer trocas"
 
 #: widgets.cpp:215
 msgid "Adding Keyboard"
@@ -348,7 +347,7 @@ msgstr "Não há mais teclados"
 
 #: widgets.cpp:249
 msgid "Keyboard map information"
-msgstr ""
+msgstr "Informações sobre mapa de teclado"
 
 #: widgets.cpp:283
 msgid "Add Keyboard"
@@ -372,7 +371,7 @@ msgstr "Tecla(s) para mudar de teclado"
 
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr ""
+msgstr "Tecla para activar simbolos Alternativos no mapa actual"
 
 #: widgets.cpp:429
 msgid "&Beep"
@@ -408,7 +407,7 @@ msgstr "&Menu Mundo"
 
 #: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
-msgstr ""
+msgstr "Mostrar menu em qualquer janela ao carregar nas teclas de Mudar"
 
 #: widgets.cpp:481
 msgid "&Save Classes"
@@ -420,7 +419,7 @@ msgstr "Gravar relações entre classes de janelas e mapas de teclado ao sair"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definir códigos X"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -486,27 +485,27 @@ msgstr "&Fonte"
 
 #: widgets.cpp:641
 msgid "&Autostart"
-msgstr "&Arranque"
+msgstr "&Arrancar Automáticamente"
 
 #: widgets.cpp:642
 msgid "Start up automatically"
-msgstr "Iniciar automaticamente"
+msgstr "Arrancar automaticamente"
 
 #: widgets.cpp:648
 msgid "&Docked"
-msgstr ""
+msgstr "&Embeber"
 
 #: widgets.cpp:649
-msgid "Dock into special area in the panel"
-msgstr ""
+msgid "Dock into special area in kpanel"
+msgstr "Embeber numa área especial do painel"
 
 #: widgets.cpp:658
 msgid "Place"
-msgstr ""
+msgstr "Colocar"
 
 #: widgets.cpp:665
 msgid "Place in selected corner"
-msgstr "Colocar no cantos seleccionado"
+msgstr "Colocar no canto seleccionado"
 
 #: kcmikbd.cpp:64
 msgid "&General"
@@ -518,19 +517,8 @@ msgstr "E&stilo"
 
 #: kcmikbd.cpp:76
 msgid "Start&Up"
-msgstr ""
+msgstr "Arranq&ue"
 
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado International"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Quer iniciar a Configuração?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr ""
-#~ "A sua configuração está vazia. Instale valores por defeito do sistema."
