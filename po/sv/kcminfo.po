@@ -1,134 +1,136 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Anders Bengtsson <d96-abe@nada.kth.se>, 1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-07-09 21:45+0200\n"
-"Last-Translator: Anders Bengtsson <d96-abe@nada.kth.se>\n"
+"PO-Revision-Date: 1998-12-13 14:42+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "skärm nr. %d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  dimensioner         : %dx%d pixlar (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  upplösning          : %dx%d punkter per tum\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  djup (%d)            : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "skärmens namn         : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "versionsnummer        : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "tillverkare           : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "tillverkarens release : %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "standardskärmnummer   : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "antal skärmar         : %i"
 
 #: info.cpp:179
-#, fuzzy
 msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Ditt system stöds inte än :-("
+msgstr ""
+"Ingen information tillgänglig\n"
+" eller\n"
+"ditt system stöds inte än :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, okänd hastighet"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s som kör i %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Äsch, kunde inte öppna fstab!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Monteringsplats"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "FS-typ"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "monteringsinställningar"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "okänd CPU-typ"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Inte tillgängligt"
+msgstr "ej tillgängligt"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Antal aktiva processorer= "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Värde"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr ""
+msgstr "DMA-kanal"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "används av"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O-område"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -140,46 +142,46 @@ msgstr "&Processor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Avbrott"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-&kanaler"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "I/O-&portar"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&buss"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Ljud"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Enheter"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&artitioner"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-server"
 
 #: main.cpp:120
 msgid ""
 "usage: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
-msgstr ""
+msgstr "användning: kcminfo [-init | {memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xserver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -221,9 +223,5 @@ msgstr "Inte tillgängligt"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Inte tillgängligt"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "användning: kcminfo [-init | {processor,memory}]\n"

@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Karl Backström <backstrom@kde.org>, 1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-12 14:27+0100\n"
-"PO-Revision-Date: 1998-10-23 23:00+0100\n"
-"Last-Translator: Karl Backström <backstrom@kde.org>\n"
-"Language-Team: Sv <LL@li.org>\n"
+"PO-Revision-Date: 1998-12-13 14:42+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:58
 msgid "&Font"
-msgstr "&Teckensnitt"
+msgstr "&Typsnitt"
 
 #: main.cpp:60
 msgid "&Color"
@@ -24,28 +24,28 @@ msgstr "&Färg"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "Ö&vrigt"
 
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "&Bläddrar-ID"
 
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Skrivbordsikoner"
 
 #: main.cpp:83
-#, fuzzy, c-format
+#, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
-msgstr "användning: kcmkfm [-init | {teckensnitt,färg}]\n"
+msgstr "användning: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:166
 msgid "KFM Configuration"
@@ -53,132 +53,132 @@ msgstr "KFM Konfiguration"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Mellan"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Standardtypsnitt"
 
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Typsnitt med fast breddsteg"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Standardteckenkodning"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Använd språkets teckenkodning"
 
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Bakgrundsfärg:"
 
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Normal textfärg:"
 
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Färg på länkar:"
 
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Färg på följda länkar:"
 
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Ändra muspekaren över länkar"
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Stryk under länkar"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Tillåt inställningar för enskilda URL:er"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "&Katalogträdet följer med när du bläddrar"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Glöm inte att spara dina inställningar!"
 
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Använd proxy"
 
 #: kproxydlg.cpp:67
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP-proxy:"
 
 #: kproxydlg.cpp:82 kproxydlg.cpp:113
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: kproxydlg.cpp:98
 msgid "FTP Proxy:"
-msgstr ""
+msgstr "FTP-proxy:"
 
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Ingen proxy för:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Acceptera språk:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Acceptera teckenkodningar:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Antag HTML"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "På server:"
 
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "logga in som:"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "&Lägg till"
 
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Kända bindningar:"
 
 #: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "x-avstånd för skrivbordsikoner:"
 
 #: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "y-avstånd för skrivbordsikoner:"
 
 #: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "&Rita ej textbakgrund till skrivbordsikoner"
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Förgrundsfärg för ikoner:"
 
 #: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
+msgstr "Bakgrundsfärg för ikoner:"

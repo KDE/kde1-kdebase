@@ -1,18 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Magnus Reftel <d96reftl@dtek.chalmers.se>, 1998.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
-"PO-Revision-Date: 1998-01-20 15:10+0100\n"
-"Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
-"Language-Team: Swedish <LL@li.org>\n"
+"PO-Revision-Date: 1998-12-13 16:01+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: main.cpp:84
 msgid "&Appearance"
@@ -54,7 +54,7 @@ msgstr "Saknade rättigheter"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Hälsningsfras:"
+msgstr "Välkomstmeddelande:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
@@ -66,7 +66,7 @@ msgstr "Klicka eller släpp en blid här"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "GUI-stil"
+msgstr "Gränssnittsstil"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -78,11 +78,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Språk"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Språk:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -146,14 +146,12 @@ msgid "Select fonts"
 msgstr "Välj typsnitt"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Exempel:"
+msgstr "Exempel"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Ändra typsnitt"
+msgstr "Ändra typsnitt..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -169,24 +167,23 @@ msgstr "Normal"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Förhandsgranskning"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Färg:"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Färg:"
+msgstr "Enfärgad"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Horisontell toning"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Vertikal toning"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -197,39 +194,36 @@ msgid "None"
 msgstr "Ingen"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Sida vid sida"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrerad"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Förstorad"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Överst till vänster"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Överst till höger"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Nederst till vänster"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Nederst till höger"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Utspökad"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -276,9 +270,8 @@ msgid "Save image as default image?"
 msgstr "Spara bild som standardbild?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
-msgstr "Tillåt att stänga av:"
+msgstr "Tillåt att stänga av"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -290,7 +283,7 @@ msgstr "Endas root"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Endast från konsollen"
+msgstr "Endast från konsolen"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
@@ -318,10 +311,4 @@ msgstr "Tillgängliga typer"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
-
-#~ msgid "&Fonts"
-#~ msgstr "&Typsnitt"
-
-#~ msgid "Appearance"
-#~ msgstr "Utseende"
+msgstr "utan namn!"

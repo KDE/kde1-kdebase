@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-05-25 17:10+0800\n"
+"PO-Revision-Date: 1998-12-13 15:16+01:00\n"
 "Last-Translator: Karl Backström <karl_b@geocities.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -23,51 +23,51 @@ msgstr "Systemljud"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(inget)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Byt till Skrivbord 1"
+msgstr "Byte till Skrivbord 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Byt till Skrivbord 2"
+msgstr "Byte till Skrivbord 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Byt till Skrivbord 3"
+msgstr "Byte till Skrivbord 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Byt till Skrivbord 4"
+msgstr "Byte till Skrivbord 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Byt till Skrivbord 5"
+msgstr "Byte till Skrivbord 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Byt till Skrivbord 6"
+msgstr "Byte till Skrivbord 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Byt till Skrivbord 7"
+msgstr "Byte till Skrivbord 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Bytt till Skrivbord 8"
+msgstr "Byte till Skrivbord 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
-msgstr "Aktivera fönster"
+msgstr "Fönster aktiverat"
 
 #: syssound.cpp:157
 msgid "Open new window"
-msgstr "Öppna nytt fönster"
+msgstr "Nytt fönster öppnat"
 
 #: syssound.cpp:158
 msgid "Close Window"
-msgstr "Stäng fönster"
+msgstr "Fönster stängt"
 
 #: syssound.cpp:159
 msgid "Startup"
@@ -75,11 +75,11 @@ msgstr "Uppstartning"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Fönster uppskuggat"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Fönster nerskuggat"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
@@ -87,23 +87,23 @@ msgstr "Fönster ikonifirerat"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr "Fönster dikonifierat"
+msgstr "Fönster avikonifierat"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr "Fönster Maximerat"
+msgstr "Fönster maximerat"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr "Fönster Omaxifierat"
+msgstr "Fönster avmaximerat"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Klistrigt Fönster"
+msgstr "Fönster klistrat"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Oklistrit Fönster"
+msgstr "Fönster avklistrat"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -119,23 +119,23 @@ msgstr "Avslutning"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr "Avslutnings meddelande"
+msgstr "Avslutningsmeddelande"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
-msgstr "Fönster förflyttning Start"
+msgstr "Start av fönsterförflyttning"
 
 #: syssound.cpp:174
 msgid "Window Move End"
-msgstr "Fönster förflyttning Slut"
+msgstr "Slut på fönsterförflyttning"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr "Storleksändring av fönster Start"
+msgstr "Start på ändring av fönsters storlek"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr "Storleksändring av fönster Slut"
+msgstr "Slut på ändring av fönsters storlek"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -155,19 +155,19 @@ msgstr "&Ljud:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Ytterligare WAV filer kan släppas över ljudlistan."
+msgstr "Ytterligare WAV-filer kan släppas över ljudlistan."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL:en stöds ej"
 
 #: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Tyvärr, denna typ av URL är för närvarande oanvändbar med KDEs Systemljuds "
-"modul"
+"Tyvärr, denna typ av URL är för närvarande oanvändbar\n"
+"med KDE:s systemljudsmodul"
 
 #: syssound.cpp:468
 #, c-format

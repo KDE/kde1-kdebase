@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
 "POT-Creation-Date: 1998-12-08 01:17+0100\n"
-"PO-Revision-Date: 1998-07-09 15:26+02:00\n"
+"PO-Revision-Date: 1998-12-13 15:43+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "&Rename ..."
 msgstr "&Byt namn ..."
 
 #: backgnd.cpp:195
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Bakgrund"
+msgstr "&Gemensam bakgrund"
 
 #: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
@@ -62,93 +61,84 @@ msgstr "&Bläddra..."
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Arrangemang:"
 
 #: backgnd.cpp:373
-#, fuzzy
 msgid "Tiled"
-msgstr "&Sida vid sida"
+msgstr "Sida vid sida"
 
 #: backgnd.cpp:374
 msgid "Mirrored"
-msgstr ""
+msgstr "Speglat"
 
 #: backgnd.cpp:375
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Centrerad"
+msgstr "Sida vid sida centrerat"
 
 #: backgnd.cpp:376
-#, fuzzy
 msgid "Centred"
-msgstr "&Centrerad"
+msgstr "Centrerat"
 
 #: backgnd.cpp:377
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Centrerad"
+msgstr "Centrerat + tegelstenar"
 
 #: backgnd.cpp:378
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Centrerad"
+msgstr "Centrerat + warp"
 
 #: backgnd.cpp:379
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Centrerad"
+msgstr "Centrerat, max aspekt"
 
 #: backgnd.cpp:380
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Sida vid sida symmetriskt"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symmetriskt speglat"
 
 #: backgnd.cpp:382
-#, fuzzy
 msgid "Scaled"
-msgstr "&Förstorad"
+msgstr "Förstorat"
 
 #: backgnd.cpp:397
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Slumpmässigt"
 
 #: backgnd.cpp:406
-#, fuzzy
 msgid "Setu&p..."
 msgstr "&Anpassa ..."
 
 #: backgnd.cpp:416
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Docka in i panelen"
 
 #: backgnd.cpp:441
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Cachestorlek (KB):"
 
 #: backgnd.cpp:1338
 msgid "Desktop names"
 msgstr "Skrivbordsnamn"
 
 #: backgnd.cpp:1383
-#, fuzzy
 msgid "File error"
-msgstr "Felaktigt namn"
+msgstr "Fel på filen"
 
 #: backgnd.cpp:1384
 msgid "Can't load image file"
-msgstr ""
+msgstr "Kan inte ladda bildfil"
 
 #: backgnd.cpp:1407 backgnd.cpp:1879
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL:en stöds ej"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr ""
+msgstr "Tyvärr, den här typen av URL:er stöds för närvarande inte av KDE:s skärmmodul"
 
 #: backgnd.cpp:1439
 msgid "Two color backgrounds"
@@ -204,44 +194,39 @@ msgstr "Kullersten"
 
 #: backgnd.cpp:1706
 msgid "Random mode setup"
-msgstr ""
+msgstr "Inställningar för slumpläget"
 
 #: backgnd.cpp:1712
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Välj filer från &katalog"
 
 #: backgnd.cpp:1726
-#, fuzzy
 msgid "&Browse ..."
 msgstr "&Bläddra..."
 
 #: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Tidsfördröjning i sekunder :"
 
 #: backgnd.cpp:1759
-#, fuzzy
 msgid "In &order"
-msgstr "Ignorera"
+msgstr "I &ordning"
 
 #: backgnd.cpp:1776
-#, fuzzy
 msgid "Desktops :"
-msgstr "Skrivbord"
+msgstr "Skrivbord :"
 
 #: backgnd.cpp:1815
-#, fuzzy
 msgid "&Add"
-msgstr "&Lägg till ..."
+msgstr "&Lägg till"
 
 #: backgnd.cpp:1986
-#, fuzzy
 msgid "Directory error"
-msgstr "Felaktigt namn"
+msgstr "Fel på katalogen"
 
 #: backgnd.cpp:1987
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Den valda katalogen existerar inte"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -419,7 +404,7 @@ msgstr "&Kräv lösenord"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Tillåt upplåsning med rotlösenordet"
 
 #: scrnsave.cpp:278
 msgid "Show &password as stars"
@@ -447,11 +432,11 @@ msgstr "Rita gränssnittet i Windows 95-stil"
 
 #: general.cpp:244
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Använd stilen även för program som inte ingår i KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Lägg menyraden överst på skärmen i MacOS-stil"
 
 #: general.cpp:273
 msgid "Desktop fonts"
@@ -463,20 +448,19 @@ msgstr "Standard"
 
 #: general.cpp:290
 msgid "Fixed font"
-msgstr "Ej proportionellt"
+msgstr "Med fast breddsteg"
 
 #: general.cpp:296
-#, fuzzy
 msgid "Window title font"
-msgstr "Fönstertext"
+msgstr "För text i namnlisten"
 
 #: general.cpp:301
 msgid "Panel button font"
-msgstr "Panelknappar"
+msgstr "För panelknapparna"
 
 #: general.cpp:306
 msgid "Panel clock font"
-msgstr "Panelklocka"
+msgstr "För panelklockan"
 
 #: general.cpp:336
 msgid "Sample text"
@@ -531,7 +515,7 @@ msgstr "Vald text "
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -560,7 +544,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "vilken som helst"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Skrivbord"

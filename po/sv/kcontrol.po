@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-11-30 01:10+0100\n"
-"PO-Revision-Date: 1998-07-08 14:11+02:00\n"
+"PO-Revision-Date: 1998-12-13 15:20+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -46,28 +46,28 @@ msgstr ""
 
 #: mainwidget.cpp:45
 msgid "System:"
-msgstr ""
+msgstr "System:"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr ""
+msgstr "Användare: "
 
 #: mainwidget.cpp:54
 msgid "Hostname: "
-msgstr ""
+msgstr "Datornamn: "
 
 #: mainwidget.cpp:62
 msgid "System: "
-msgstr ""
+msgstr "System: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr ""
+msgstr "Release: "
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr ""
+msgstr "Version: "
 
 #: mainwidget.cpp:84
 msgid "Machine: "
-msgstr ""
+msgstr "Maskin: "
