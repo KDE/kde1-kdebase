@@ -1266,7 +1266,7 @@ void Theme::iconToMiniIcon(const QString aIcon, const QString aMiniIcon)
 //-----------------------------------------------------------------------------
 void Theme::runKrdb(void) const
 {
-  KSimpleConfig cfg("kdisplayrc", true);
+  KSimpleConfig cfg("kcmdisplayrc", true);
 
   cfg.setGroup("X11");
   if (cfg.readBoolEntry("useResourceManager", true))

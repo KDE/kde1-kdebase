@@ -1,3 +1,7 @@
+1999-1-4  Antonio Larrosa  <larrosa@kde.org>
+
+	* Made it modify kcmdisplayrc instead of kdisplayrc
+
 1998-12-26  Stefan Taferner  <taferner@kde.org> (V0.7)
 
 	* Implemented first version of theme extractor that
