@@ -1,0 +1,216 @@
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Laufschrift"
+
+#: banner.cpp:80
+msgid "Font"
+msgstr "Schrift"
+
+#: banner.cpp:83
+msgid "Family:"
+msgstr "Schriftart:"
+
+#: banner.cpp:99
+msgid "Size:"
+msgstr "Größe:"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Farbe:"
+
+#: banner.cpp:126
+msgid "Bold"
+msgstr "Fett"
+
+#: banner.cpp:131
+msgid "Italic"
+msgstr "Kursiv"
+
+#: banner.cpp:136 polygon.cpp:101
+msgid "Speed:"
+msgstr "Geschwindigkeit:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Lauftext:"
+
+#: banner.cpp:161 polygon.cpp:117
+msgid "About"
+msgstr "Über"
+
+#: banner.cpp:165 banner.cpp:317 blankscrn.cpp:81 polygon.cpp:121
+#: polygon.cpp:213
+msgid "Ok"
+msgstr "Ok"
+
+#: banner.cpp:169 blankscrn.cpp:85 polygon.cpp:125
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "Über Banner"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner Version 0.1\n"
+"\n"
+"Autor: Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE ist großartig"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Fledermäuse"
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Blanker Bildschirm"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Einstellungen"
+
+#: blob.cpp:559
+msgid "Blobs"
+msgstr "Tropfen"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Feuer&Flamme"
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Wald"
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hop (Fractal)"
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laser"
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Linien"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: main.cpp:263
+msgid "Shadow Passwords"
+msgstr "Versteckte Passwörter"
+
+#: main.cpp:264
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator."
+msgstr ""
+"Dieses System benutzt versteckte Passwörter (shadow passwords)!\n"
+"Sie brauchen die Hilfe des System-Verwalters."
+
+#: main.cpp:420
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Benutzung: %s -install|-setup|-test|-desc|-preview wid\n"
+"       [-corners xxxx] [-delay zahl] [-lock] [-nice zahl]\n"
+
+#: main.cpp:423
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Mousezeiger in Ecke führt zu:\n"
+"                     x = i  keine Aktion (ignorieren)\n"
+"                     x = s  Bildschirm schonen\n"
+"                     x = l  Bildschirm verschliessen\n"
+"                    Reihenfolge: links-oben, rechts-oben, links-unten, "
+"rechts-unten\n"
+"  -delay zahl       Zeit, bis der Bildschirmschoner startet\n"
+"                     (Normalerweise 10 Minuten)\n"
+"  -desc             Gibt den Namen des Bildschirmschoners aus\n"
+"  -install          Bildschirmschoner einrichten\n"
+"  -lock             Passwortschutz des Bildschirmschoners\n"
+"  -nice zahl        Starten mit angegebener Priorität (nice level)\n"
+"\n"
+"  -preview wid      Läuft in dem angegeben XWindow\n"
+"  -setup            Bildschirmschoner einstellen\n"
+"  -test             Bildschirmschoner sofort starten\n"
+
+#: morph3d.cpp:936
+msgid "Morph3D (GL)"
+msgstr "3D Körper (GL)"
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Polygone"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Einstellungen"
+
+#: polygon.cpp:81
+msgid "Length:"
+msgstr "Länge:"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Ecken:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Über Polygon"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon Version 0.1\n"
+"\n"
+"Autor: Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Feuerwerk"
+
+#: rock.cpp:429
+msgid "Rock"
+msgstr "Asteroiden"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Fetzen"
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Schwarm"

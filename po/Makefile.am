@@ -2,7 +2,7 @@
 SUBDIRS = cs da de es fi fr it nl ru sv
 
 # this is a general list for merging!
-APPS = kdehelp kdisplay kdm kfind kfm kfontmanager klogout kpanel kvt kwm
+APPS = kdehelp kdisplay kdm kfind kfm kfontmanager klogout kpanel kvt kwm klock
 
 # TODO: This does not any longer work
 merge:
