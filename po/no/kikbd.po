@@ -52,108 +52,117 @@ msgid "KeyMap: cannot allocate memory"
 msgstr "Tastaturkart: kan ikke tildele minne"
 
 #: keymap.cpp:218
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: can not find symbol \"%s\".\n"
 "Do you want to continue?"
-msgstr "Tastaturkart: kan ikke finne symbol %s"
+msgstr ""
+"Tastaturkart: kan ikke finne symbol \"%s\".\n"
+"Vil du fortsette?"
 
 #: keymap.cpp:229
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: do not undestand keycode \"%s\".\n"
 "Do you want to continue?"
-msgstr "Tastaturkart: forstår ikke tastkode %s"
+msgstr ""
+"Tastaturkart: kan ikke forstå tastkode \"%s\".\n"
+"Vil du fortsette?"
+
 
 #: keymap.cpp:235
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: keycode \"%s\" go out of range.\n"
 "Do you want to continue?"
-msgstr "Tastaturkart: tastkode % går utenfor gyldig område"
+msgstr ""
+"Tastaturkart: tastkode \"%s\" går utenfor gyldig område.\n"
+"Vil du fortsette?"
 
 #: kikbdconf.cpp:92
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: kikbdconf.cpp:92
 msgid "Window"
-msgstr ""
+msgstr "Vindu"
 
 #: kikbdconf.cpp:92
 msgid "Class"
-msgstr ""
+msgstr "Klasse"
 
 #: kikbdconf.cpp:95 kikbdconf.cpp:107
 msgid "(None)"
-msgstr ""
+msgstr "(Ingen)"
 
 #: kikbdconf.cpp:96 kikbdconf.cpp:108
 msgid "Right Alt"
-msgstr ""
+msgstr "Høyre Alt"
 
 #: kikbdconf.cpp:97 kikbdconf.cpp:109
 msgid "Right Control"
-msgstr ""
+msgstr "Høyre Control"
 
 #: kikbdconf.cpp:98
 msgid "Rights (Alt+Shift)"
-msgstr ""
+msgstr "Høyre (Alt+Shift)"
 
 #: kikbdconf.cpp:99
 msgid "Rights (Ctrl+Alt)"
-msgstr ""
+msgstr "Høyre (Ctrl+Alt)"
 
 #: kikbdconf.cpp:100
 msgid "Rights (Ctrl+Shift)"
-msgstr ""
+msgstr "Høyre (Ctrl+Shift)"
 
 #: kikbdconf.cpp:101
 msgid "Lefts  (Alt+Shift)"
-msgstr ""
+msgstr "Venstre (Alt+Shift)"
 
 #: kikbdconf.cpp:102
 msgid "Lefts  (Ctrl+Alt)"
-msgstr ""
+msgstr "Venstre (Ctrl+Alt)"
 
 #: kikbdconf.cpp:103
 msgid "Lefts  (Ctrl+Shift)"
-msgstr ""
+msgstr "Venstre (Ctrl+Shift)"
 
 #: kikbdconf.cpp:104
 msgid "Both Shift's (Shift+Shift)"
-msgstr ""
+msgstr "Begge Shift'ene (Shift+Shift)"
 
 #: kikbdconf.cpp:110
 msgid "Left  Alt"
-msgstr ""
+msgstr "Venstre Alt"
 
 #: kikbdconf.cpp:111
 msgid "Left  Control"
-msgstr ""
+msgstr "Venstre Control"
 
 #: kikbdconf.cpp:114
 msgid "Top Left"
-msgstr ""
+msgstr "Venstre topp"
 
 #: kikbdconf.cpp:115
 msgid "Top Right"
-msgstr ""
+msgstr "Høyre topp"
 
 #: kikbdconf.cpp:116
 msgid "Bottom Left"
-msgstr ""
+msgstr "Venstre bunn"
 
 #: kikbdconf.cpp:117
 msgid "Bottom Right"
-msgstr ""
+msgstr "Høyre bunn"
 
 #: kikbdconf.cpp:173
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
-msgstr "Ønsker du å starte Konfigurasjon?"
+msgstr ""
+"%s\n"
+"Ønsker du å starte Konfigurasjon?"
 
 #: kikbdconf.cpp:182
 msgid "Your configuration is empty. Install system default."
@@ -164,98 +173,96 @@ msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Konfigurasjonsfilen du har har et eldre format en forventet.\n"
+"Noen innstillinger kan være feil."
 
 #: kikbdconf.cpp:196
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Konfiugrasjonsfilen du har har et nyere format enn forventet.\n"
+"Noen innstillinger kan være feil."
 
 #: kikbdconf.cpp:298
 msgid "unknown"
-msgstr ""
+msgstr "ukjent"
 
 #: kikbdconf.cpp:302
 msgid "default"
-msgstr ""
+msgstr "standard"
 
 #: kikbdconf.cpp:328
 msgid "Author:  Not specified"
-msgstr ""
+msgstr "Forfatter: Ikke oppgitt"
 
 #: kikbdconf.cpp:330
-#, fuzzy
 msgid "Author"
-msgstr "Autostart"
+msgstr "Forfatter"
 
 #: kikbdconf.cpp:336
-#, fuzzy
 msgid "Description:  "
-msgstr "Beskrivelse"
+msgstr "Beskrivelse: "
 
 #: kikbdconf.cpp:339
 msgid "Source:  "
-msgstr ""
+msgstr "Kilde:  "
 
 #: kikbdconf.cpp:340
 msgid "no file"
-msgstr ""
+msgstr "ingen fil"
 
 #: kikbdconf.cpp:341
 msgid "user file"
-msgstr ""
+msgstr "brukerfil"
 
 #: kikbdconf.cpp:342
 msgid "system file"
-msgstr ""
+msgstr "systemfil"
 
 #: kikbdconf.cpp:347
 msgid "Statistic:  "
-msgstr ""
+msgstr "Statistikk: "
 
 #: kikbdconf.cpp:350
 msgid "symbols"
-msgstr ""
+msgstr "symboler"
 
 #: kikbdconf.cpp:353
 msgid "codes"
-msgstr ""
+msgstr "koder"
 
 #: kikbdconf.cpp:356
 msgid "alternative symbols"
-msgstr ""
+msgstr "alternative symboler"
 
 #: kikbdconf.cpp:363
 msgid "language"
-msgstr ""
+msgstr "språk"
 
 #: kikbdconf.cpp:364
 msgid "charset"
-msgstr ""
+msgstr "tegnsett"
 
 #: kikbdconf.cpp:402
-#, fuzzy
 msgid "International keyboard ERROR"
-msgstr "Internasjonalt tastatur"
+msgstr "Internasjonalt tastatur-FEIL"
 
 #: kikbdconf.cpp:414
-#, fuzzy
 msgid "International keyboard warning"
-msgstr "Internasjonalt tastatur"
+msgstr "Internasjonalt tastatur-varsel"
 
 #: kikbdconf.cpp:421
-#, fuzzy
 msgid "International keyboard question"
-msgstr "Internasjonalt tastatur"
+msgstr "Internasjonalt tastatur-spørsmål"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
 msgstr "Liste med aktive tastaturkart"
 
 #: widgets.cpp:117
-#, fuzzy
 msgid "&Add"
-msgstr "Legg til"
+msgstr "&Legg til"
 
 #: widgets.cpp:118
 msgid "Adding new keyboard map"
@@ -266,18 +273,16 @@ msgid "Remove selected keyboard map"
 msgstr "Fjern valgte tastaturkart"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "U&p"
-msgstr "Opp"
+msgstr "&Opp"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
 msgstr "Opp valgt tastaturkart"
 
 #: widgets.cpp:131
-#, fuzzy
 msgid "D&own"
-msgstr "Ned"
+msgstr "&Ned"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
@@ -285,17 +290,15 @@ msgstr "Ned valgt tastaturkart"
 
 #: widgets.cpp:135
 msgid "&Info"
-msgstr ""
+msgstr "&Info"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Display information for selected keyboard map"
-msgstr "Ned valgt tastaturkart"
+msgstr "Vis informasjon for valgt tastaturkart"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use \"&hotlist\""
-msgstr "Bruk \"hotlist\""
+msgstr "Bruk \"&hotlist\""
 
 #: widgets.cpp:146
 msgid ""
@@ -312,7 +315,7 @@ msgstr "Det finnes ikke flere tastaturkart"
 
 #: widgets.cpp:248
 msgid "Keyboard map information"
-msgstr ""
+msgstr "Tarstaturkart-informasjon"
 
 #: widgets.cpp:282
 msgid "Add Keyboard"
@@ -323,9 +326,8 @@ msgid "Available keyboard maps"
 msgstr "Tilgjengelige tastaturkart"
 
 #: widgets.cpp:378
-#, fuzzy
 msgid "Keyboard maps"
-msgstr "Tastatur"
+msgstr "Tastaturkart"
 
 #: widgets.cpp:389
 msgid "Switch and Alt Switch"
@@ -340,18 +342,16 @@ msgid "Key to activate Alternate symbols in current keyboard map"
 msgstr "Tast for å aktivere alternative symboler i gjeldende tastaturkart"
 
 #: widgets.cpp:413
-#, fuzzy
 msgid "&Beep"
-msgstr "Bip"
+msgstr "&Bip"
 
 #: widgets.cpp:414
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Bip når tastaturkart er endret"
 
 #: widgets.cpp:417
-#, fuzzy
 msgid "Ad&vanced"
-msgstr "Avansert"
+msgstr "A&vansert"
 
 #: widgets.cpp:417
 msgid "Advanced options"
@@ -362,29 +362,25 @@ msgid "Advanced"
 msgstr "Avansert"
 
 #: widgets.cpp:450
-#, fuzzy
 msgid "&Emulate CapsLock"
-msgstr "Emuler \"CapsLock\""
+msgstr "&Emuler CapsLock"
 
 #: widgets.cpp:451
-#, fuzzy
 msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
 msgstr ""
-"Emuler XServer CapsLock. Trengs til noen språk for at de skal være korrekt."
+"Emuler XServer-CapsLock. Trengs til noen språk for at de skal være korrekt"
 
 #: widgets.cpp:457
-#, fuzzy
 msgid "&World Menu"
-msgstr "Verdensmeny"
+msgstr "&Verdensmeny"
 
 #: widgets.cpp:458
 msgid "Show menu in any window by holding Switch keys"
 msgstr "Vis meny i hvilken som helst vindu ved å holde nede Switch taster"
 
 #: widgets.cpp:465
-#, fuzzy
 msgid "&Save Classes"
-msgstr "Lagre klasser"
+msgstr "&Lagre klasser"
 
 #: widgets.cpp:466
 msgid "Save relations between window classes and keyboard maps on exit"
@@ -439,9 +435,8 @@ msgid "Button Font"
 msgstr "Knappeskrifttype"
 
 #: widgets.cpp:570
-#, fuzzy
 msgid "&Customize Font"
-msgstr "Egendefinert skrifttype"
+msgstr "&Egendefinert skrifttype"
 
 #: widgets.cpp:571
 msgid "Customize Font for text label or use global settings"
@@ -449,14 +444,12 @@ msgstr ""
 "Egendefiner skrifttype for tekst merkelapp eller bruk globale innstillinger"
 
 #: widgets.cpp:575
-#, fuzzy
 msgid "C&hange Font"
-msgstr "Endre skrifttype"
+msgstr "&Endre skrifttype"
 
 #: widgets.cpp:620
-#, fuzzy
 msgid "&Autostart"
-msgstr "Autostart"
+msgstr "&Autostart"
 
 #: widgets.cpp:621
 msgid "Start up automaticaly"
@@ -464,7 +457,7 @@ msgstr "Automatisk oppstart"
 
 #: widgets.cpp:627
 msgid "&Docked"
-msgstr ""
+msgstr "&Dokket"
 
 #: widgets.cpp:628
 msgid "Dock into special area in kpanel"
