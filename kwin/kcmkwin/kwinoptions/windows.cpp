@@ -423,9 +423,9 @@ void KWindowConfig::GetSettings( void )
     setResizeAnim(RESIZE_ANIM_OFF);
 
   key = config->readEntry(KWM_RESIZE_OPAQUE);
-  if( key == "on")
+  if( key == "Opaque")
     setResizeOpaque(RESIZE_OPAQUE);
-  else if ( key == "off")
+  else if ( key == "Transparent")
     setResizeOpaque(RESIZE_TRANSPARENT);
 
   // placement policy --- CT 19jan98 ---
