@@ -108,7 +108,7 @@ static bool testDir2( const char *_name )
     dp = opendir( c.data() );
     if ( dp == NULL ) {
       QString m(_name);
-      QMessageBox::information( 0, klocale->translate("KFM Information"), 
+      QMessageBox::information( 0, klocale->translate("KFM Information"),
 			     klocale->translate("Creating directory:\n") + m );
 	::mkdir( c.data(), S_IRWXU );
 	return false;
@@ -135,11 +135,11 @@ getFileInfo(const char* _path, const char* file_name, char* new_file,
   file += "/";
   file += file_name;
 
-  if (len > 7 && new_file[len - 7] == '.' && 
+  if (len > 7 && new_file[len - 7] == '.' &&
       strcmp(new_file + len - 6, "kdelnk") == 0) {
     new_file[len - 7] = 0;
 
-    
+
     // QFileInfo fi(file);
     KSimpleConfig kconfig(file, true);
     kconfig.setGroup("KDE Desktop Entry");
@@ -162,7 +162,7 @@ getFileInfo(const char* _path, const char* file_name, char* new_file,
   else
     return GET_DEFAULT_FILE_ICON(QFileInfo(file));
 }
- 
+
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -170,8 +170,8 @@ getFileInfo(const char* _path, const char* file_name, char* new_file,
 //
 //////////////////////////////////////////////////////////////////////////////
 
-PFileMenu::PFileMenu(bool isRoot) 
-  : tail(0L), path(QString()), isClean(true), lastActivated(0) 
+PFileMenu::PFileMenu(bool isRoot)
+  : tail(0L), path(QString()), isClean(true), lastActivated(0)
 {
   if (!testDir2(KDISKNAV_LOCAL_DIR)) {
     // local dir just created -> add some useful links
@@ -192,7 +192,7 @@ PFileMenu::PFileMenu(QString& _path) : tail(0L), path(_path), isClean(true), las
 
 //////////////////////////////////////////////////////////////////////////////
 
-PFileMenu::PFileMenu(const char* _path) 
+PFileMenu::PFileMenu(const char* _path)
   : tail(0L), path(*new QString(_path)), isClean(true), lastActivated(0)
 {
 }
@@ -235,17 +235,17 @@ void PFileMenu::calculateMaxEntriesOnScreen(PMenuItem* menu)
 // newDirBrowserItem("myfolder") =   this->path + "/myfolder"
 // newDirBrowserItem("myfolder", "/tmp/myfolder") =   "/tmp/myfolder"
 //
-PMenuItem* 
+PMenuItem*
 PFileMenu::newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath)
 {
-  QString newpath = useCurrentPath? this->path + "/" + fi->fileName() 
+  QString newpath = useCurrentPath? this->path + "/" + fi->fileName()
                                   : QString(fi->filePath());
 
-  PMenuItem* fileb = 
+  PMenuItem* fileb =
     new PMenuItem(dirbrowser, fi->fileName() + "/", 0,
                   DEFAULT_FOLDER_ICON,
                   new PFileMenu(newpath), 0, 0, new myPopupMenu(this));
-  
+
   CHECK_PTR(fileb);
   return fileb;
 }
@@ -257,7 +257,7 @@ PFileMenu::newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath)
 //
 // eg. newFileItem("emacs", "/usr/local/bin")
 //
-PMenuItem* 
+PMenuItem*
 PFileMenu::newFileItem(const QFileInfo* fi, bool useCurrentPath)
 {
   QString _path = (useCurrentPath ? this->path: fi->dirPath());
@@ -265,7 +265,7 @@ PFileMenu::newFileItem(const QFileInfo* fi, bool useCurrentPath)
   char name[MAX_FILENAME_LEN];
   char* pixmap = getFileInfo(_path, fi->fileName(), name, fi);
 
-  PMenuItem* fileEntry = new PMenuItem(url, name, 0, 
+  PMenuItem* fileEntry = new PMenuItem(url, name, 0,
                                        pixmap,
                                        0, 0, 0, 0, false, _path);
   CHECK_PTR(fileEntry);
@@ -276,7 +276,7 @@ PFileMenu::newFileItem(const QFileInfo* fi, bool useCurrentPath)
 
 //////////////////////////////////////////////////////////////////////////////
 
-void PFileMenu::deactivated(int _id) 
+void PFileMenu::deactivated(int _id)
 {
   DEBUG_STMT(printf("%d: (%x) deactivated\n", _id, unsigned(this));)
 
@@ -309,14 +309,17 @@ void PFileMenu::deactivated(int _id)
 //////////////////////////////////////////////////////////////////////////////
 
 void
-PFileMenu::aboutToShow() 
+PFileMenu::aboutToShow()
 {
   if (this == PFileMenu::root)
     return;
 
   // HACK; TODO: understand why here we receive >1 events for a submenu;
-  if (this == lastActivated) 
-    return;
+#if QT_VERSION < 141   
+  //should not happen with qt-1.41 any more (matthias)
+   if (this == lastActivated)
+     return;
+#endif
 
   DEBUG_STMT(printf("(%x) activated (clean=%d)\n", unsigned(this),
 		this->isClean);)
@@ -338,7 +341,12 @@ PFileMenu::aboutToShow()
                             0, "mini-eyes.xpm"));
 
   this->createMenu(this->parentItem->cmenu, the_panel);
+  
+  
+#if QT_VERSION < 141
+  // no longer necessary :-) (Matthias)
   this->fixMenuPosition();
+#endif
 
   DEBUG_STMT(printf("[%d %d]\n", ++tot_activated, tot_deactivated);)
 }
@@ -367,7 +375,7 @@ int PFileMenu::parseTail()
 
 //////////////////////////////////////////////////////////////////////////////
 // Adds entries for the given folder to this PFileMenu.
-// Return: number of added entries, -1 if the dir does not exist or is 
+// Return: number of added entries, -1 if the dir does not exist or is
 // unreadable.
 //
 int PFileMenu::parseDir(QDir d, bool addOpenFolderEntry)
@@ -400,14 +408,14 @@ int PFileMenu::parseDir(QDir d, bool addOpenFolderEntry)
     else
       this->add( new PMenuItem(label, klocale->translate("(Unreadable)"),
                                0, UNREADABLE_FOLDER_ICON));
-      
+
     return -1;           // <<---------------
   }
 
   if (addOpenFolderEntry) {
     this->add( new PMenuItem(prog_com, klocale->translate("Open Folder"),
-                           0, "folder_open.xpm", 0, 
-                           this, SLOT(openFolder()), 0, false, 0, 
+                           0, "folder_open.xpm", 0,
+                           this, SLOT(openFolder()), 0, false, 0,
                            klocale->translate(OPEN_FOLDER_TIP)) );
     this->add( new PMenuItem(separator) );
   }
@@ -447,7 +455,7 @@ bool PFileMenu::addFile(QFileInfo* fi, bool useDefaultPath)
     item = newDirBrowserItem(fi, useDefaultPath);
   else
     item = newFileItem(fi, useDefaultPath);
-  
+
   this->add(item);
 
   return true;
@@ -476,11 +484,11 @@ void PFileMenu::addTailMenu(QFileInfoListIterator* _tail)
   myPopupMenu* mpm = new myPopupMenu;
   mpm->parentMenu = this;
 
-  PMenuItem* item = 
+  PMenuItem* item =
     new PMenuItem(dirbrowser, "More...",
                   0, MORE_ICON, pfilemenu, 0, 0,
                   mpm);
-  
+
   this->add(item);
 }
 
@@ -528,7 +536,7 @@ void PFileMenu::insertRecentItem(EntryType type, const char* _path,
     char name[MAX_FILENAME_LEN];
     char* pixmap = getFileInfo(_path, file_name, name);
 
-    
+
     item = new PMenuItem(url, name, 0, pixmap, 0, 0, 0, 0, false, _path);
 
     item->setRealName(file_name);
@@ -555,14 +563,14 @@ void PFileMenu::removeLessRecentItem(EntryType type, QStrList& recentlist)
 
   if (type == url)
     index += the_panel->recent_folders.count();
-    
+
   PFileMenu::root->cmenu->removeItemAt(index);
 }
 
 //////////////////////////////////////////////////////////////////////////////
 
 
-void PFileMenu::updateRecentList(EntryType type, QString _path, 
+void PFileMenu::updateRecentList(EntryType type, QString _path,
                               QStrList& recentlist, int max_size)
 {
   if (!the_panel->show_recent_section)
@@ -595,13 +603,13 @@ void PFileMenu::updateRecentList(EntryType type, QString _path,
 
 //////////////////////////////////////////////////////////////////////////////
 
-void PFileMenu::updateRecentFolders(QString _path) 
+void PFileMenu::updateRecentFolders(QString _path)
 {
-  updateRecentList(dirbrowser, _path, the_panel->recent_folders, 
+  updateRecentList(dirbrowser, _path, the_panel->recent_folders,
                 the_panel->max_recent_folders_entries);
 }
 
-void PFileMenu::updateRecentFiles(QString _path) 
+void PFileMenu::updateRecentFiles(QString _path)
 {
   updateRecentList(url, _path, the_panel->recent_files,
                 the_panel->max_recent_files_entries);
@@ -640,19 +648,19 @@ void PFileMenu::buildRootMenu()
     PFileMenu::root = this;
     bool isFirst = true;
 
-    // Global Section /////////////////////////////////////////////////////  
+    // Global Section /////////////////////////////////////////////////////
 
     if (the_panel->show_global_section) {
       this->add( new PMenuItem(label, "Global:", 0, "background.xpm") );
       this->add( new PMenuItem(separator) );
-      
+
       this->path = QString(KDISKNAV_GLOBAL_DIR);
       QDir globaldir(this->path);
       this->parseDir(globaldir, false);
       isFirst = false;
     }
 
-    
+
     // Local Section /////////////////////////////////////////////////////
 
     if (the_panel->show_local_section) {
@@ -664,7 +672,7 @@ void PFileMenu::buildRootMenu()
 
       this->add( new PMenuItem(label, "Local:", 0, "mini-display.xpm") );
       this->add( new PMenuItem(separator) );
-      
+
       this->path = QString(QDir::homeDirPath() + KDISKNAV_LOCAL_DIR);
       QDir localdir(this->path);
       this->parseDir(localdir, false);
@@ -679,16 +687,16 @@ void PFileMenu::buildRootMenu()
       else
 	this->add( new PMenuItem(separator) );
 
-      PMenuItem* recentItem = 
+      PMenuItem* recentItem =
         new PMenuItem(label, "Recent:", 0, "mini-exclam.xpm");
       the_panel->head_recent_id = recentItem->getId();
       this->add( recentItem );
       this->add( new PMenuItem(separator) );
-      
+
       // Fix recent list if max entry options have been changed...
-      
+
       unsigned count = the_panel->recent_folders.count();
-      
+
       while (count && count > the_panel->max_recent_folders_entries) {
         the_panel->recent_folders.removeFirst();
         count--;
@@ -702,14 +710,14 @@ void PFileMenu::buildRootMenu()
       }
 
       // ...done
-      
+
       this->path = QString("");
-      
-      for (const char* entry = the_panel->recent_folders.first(); entry; 
+
+      for (const char* entry = the_panel->recent_folders.first(); entry;
            entry = the_panel->recent_folders.next())
         this->addFile(entry, false);
-      
-      for (const char* entry = the_panel->recent_files.first(); entry; 
+
+      for (const char* entry = the_panel->recent_files.first(); entry;
            entry = the_panel->recent_files.next())
         this->addFile(entry, false);
     }
@@ -717,8 +725,8 @@ void PFileMenu::buildRootMenu()
     // Options /////////////////////////////////////////////////////
 
     if (the_panel->show_option_entry ||
-        (!the_panel->show_global_section && 
-         !the_panel->show_local_section && 
+        (!the_panel->show_global_section &&
+         !the_panel->show_local_section &&
          !the_panel->show_recent_section)) {
 
       if (isFirst)
@@ -726,12 +734,12 @@ void PFileMenu::buildRootMenu()
       else
 	this->add( new PMenuItem(separator) );
 
-      this->add(new PMenuItem(prog_com, "Options...", 0, 
+      this->add(new PMenuItem(prog_com, "Options...", 0,
                                OPTIONS_ICON, 0, this, SLOT(optionsDlg())));
     }
 
 #ifdef DMALLOC
-    this->add( new PMenuItem(prog_com, "END", 0, "kfm_refresh.xpm", 0, 
+    this->add( new PMenuItem(prog_com, "END", 0, "kfm_refresh.xpm", 0,
                              this, SLOT(end())) );
 #endif
 }
@@ -772,12 +780,12 @@ void PFileMenu::fixMenuPosition()
 
     ++it;
   }
-  
+
   int menu_height = (this->cmenu->count() - count_separators)
                      * PFileMenu::entryHeight + 2 * count_separators;
 
   int new_y = QApplication::desktop()->height() - menu_height;
-              
+
   if (this->cmenu->y() > new_y)
     this->cmenu->move(this->cmenu->x(), new_y -2);
 }
@@ -835,7 +843,7 @@ void PFileMenu::doSelfCheck()
     return;
 
   // tot_activated == tot_deactivated => no Dirbrowser menu is active.
-  
+
 }
 
 #endif
