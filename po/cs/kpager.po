@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
-"PO-Revision-Date: 1998-10-24 20:30 CEST\n"
+"PO-Revision-Date: 1998-12-18 10:26+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,22 +14,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Skrýt &globální pracovní plochu"
+msgstr "Skrýt/zobrazit globální pracovní plochu"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Skrýt &menu"
+msgstr "Zapnout/vypnout menu"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Pøesunout vpravo"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Pøesunout vlevo"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -45,21 +43,19 @@ msgstr "Skrýt &menu"
 
 #: kpager.cpp:101 kpager.cpp:386
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 øádky"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Kliknutí provede zmìnu pracovní plochu"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Skrýt &globální pracovní plochu"
+msgstr "Skrýt &jména pracovních ploch"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Zobrazit &globální pracovní plochu"
+msgstr "Zobrazit &jména pracovních ploch"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -105,32 +101,29 @@ msgstr ""
 "pravidel redistribuovat.\n"
 
 #: kpager.cpp:382
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Skrýt &menu"
+msgstr "Zobrazit &menu"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Kliknutí provede zmìnu pracovní plochu"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr ""
+msgstr "M&aximalizovat"
 
 #: kpager.cpp:447
-#, fuzzy
 msgid "&Iconify"
-msgstr "Ikona"
+msgstr "&Ikonifikovat"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr ""
+msgstr "Od&lepit"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr ""
+msgstr "&Pøilepit"
 
 #: kpager.cpp:453
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Skrýt &globální pracovní plochu"
+msgstr "&Na pracovní plochu"

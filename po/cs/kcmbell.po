@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-01-20 10:10 MET\n"
+"PO-Revision-Date: 1998-12-18 10:00+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,11 +43,8 @@ msgstr "Trvání"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milisekund"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Test"
-
-#~ msgid "ms"
-#~ msgstr "ms"

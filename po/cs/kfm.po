@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-14 09:41+01:00\n"
+"PO-Revision-Date: 1998-12-18 09:55+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -268,9 +268,8 @@ msgid "KFM Error"
 msgstr "Chyba KFM"
 
 #: kfmgui.cpp:556
-#, fuzzy
 msgid "Location:"
-msgstr "Otevøít URL:"
+msgstr "Místo:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:739 kfmman.cpp:1375
 msgid "Malformed URL\n"
@@ -572,6 +571,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Byla nainstalována nová verze KDE.\n"
+"Je mo¾né, ¾e do¹lo ke zmìnì ¹ablon.\n"
+"\n"
+"Pøejete si naistalovat nové verze?"
 
 #: main.cpp:263
 msgid "Cd"
@@ -1166,21 +1169,21 @@ msgstr ""
 "neexistuje "
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar ohlásil chybu\n"
+"Tar ohlásil záva¾nou chybu\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip ohlásil chybu\n"
+"Gzip ohlásil záva¾nou chybu\n"
 "%s"
 
 #: kiojob.cpp:1295
@@ -1457,63 +1460,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Small"
-#~ msgstr "Malý"
-
-#~ msgid "Medium"
-#~ msgstr "Støední"
-
-#~ msgid "Large"
-#~ msgstr "Velký"
-
-#~ msgid "Standard Font"
-#~ msgstr "Standardní font"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Fixovaný font"
-
-#~ msgid "Default Charset"
-#~ msgstr "Implicitní znaková sada"
-
-#~ msgid "Use language charset"
-#~ msgstr "Pou¾ívat znakovou sadu jazyka"
-
-#~ msgid "Background Color:"
-#~ msgstr "Barva pozadí:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Barva normálního textu:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Barva URL odkazu:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Barva pou¾itého odkazu:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Zmìnit kurzor nad odkazem."
-
-#~ msgid "Underline links"
-#~ msgstr "Podtrhnout odkazy"
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Horizontální rozteè sítì na plo¹e:"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Vertikální rozteè sítì na plo¹e:"
-
-#~ msgid "&Allow per-URL settings"
-#~ msgstr "&Povolit nastavování jednotlivých URL"
-
-#~ msgid "Tree &view follows navigation"
-#~ msgstr "&Stromový náhled sleduje procházení"
-
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "&Transparentní text pro ikony na plo¹e."
-
-#~ msgid "Icon foreground color:"
-#~ msgstr "Barva popøedí ikon:"
-
-#~ msgid "Icon background color:"
-#~ msgstr "Barva pozadí ikon:"

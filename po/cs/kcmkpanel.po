@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-12-13 20:04 CET\n"
+"PO-Revision-Date: 1998-12-18 09:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -170,9 +170,8 @@ msgid "&Clock shows time in AM/PM format"
 msgstr "&Hodiny ukazují èas ve formátu AM/PM"
 
 #: options.cpp:124
-#, fuzzy
 msgid "&Clock shows time in Internet beats"
-msgstr "&Hodiny ukazují èas ve formátu AM/PM"
+msgstr "&Hodiny ukazují èas v taktu Internetu"
 
 #: disknav.cpp:38
 msgid "History"

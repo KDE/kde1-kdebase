@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm 0.5\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-11-03 13:44+01:00\n"
+"PO-Revision-Date: 1998-12-18 09:57+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,19 +19,19 @@ msgstr "Ukonèit nebo restartovat?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Vlo¾it heslo superu¾ivatele)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
-msgstr "Ukonèi"
+msgstr "Ukonèit"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Ukonèi a restartuj"
+msgstr "Ukonèit a restartovat"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Znovu spustit X server"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -77,6 +77,3 @@ msgstr "Varování: va¹e konto expiruje %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Domovský adresáø není pøístupný"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Ukonèi kdm"

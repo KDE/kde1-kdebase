@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-01-20 10:10 MET\n"
+"PO-Revision-Date: 1998-12-18 10:00+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Práh"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "pixelù"
 
 #: mouse.cpp:81
 msgid "Button mapping"

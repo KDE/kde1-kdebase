@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
 "POT-Creation-Date: 1998-12-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-13 20:25 CET\n"
+"PO-Revision-Date: 1998-12-18 09:51+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -157,9 +157,3 @@ msgstr ""
 #: main.C:883
 msgid "Welcome to the console"
 msgstr "Vítejte v konzoli"
-
-#~ msgid "New"
-#~ msgstr "Nový"
-
-#~ msgid "(%d columns x %d lines)"
-#~ msgstr "(%d sloupcù x %d øádkù)"
