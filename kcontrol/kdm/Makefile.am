@@ -37,4 +37,4 @@ kdm-sess.moc: kdm-sess.h
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kdmconfig_SOURCES) && mv messages.po ../../po/kdmconfig.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kdmconfig_SOURCES) && mv messages.po ../../po/kdmconfig.pot
