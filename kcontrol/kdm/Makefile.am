@@ -1,10 +1,10 @@
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore -lqt $(KIMGIO_LIBS) -lkimgio -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 SUBDIRS = doc pics 
 
 bin_PROGRAMS = kdmconfig
 
-kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp \
+kdmconfig_SOURCES = main.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp \
 	kdm-users.cpp kdm-sess.cpp klangcombo.cpp kdropsite.cpp
 kdmconfig_LDADD = $(LDADD)
 #kdmconfig_LDFLAGS = -g

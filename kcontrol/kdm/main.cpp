@@ -64,10 +64,7 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
     QFileInfo fi(fn.data());
     if(fi.isReadable() && fi.isWritable())
     {
-#ifdef HAVE_LIBJPEG
-      QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 
-			      0, read_jpeg_jfif, NULL);
-#endif
+      kimgioRegister();
 
       KIconLoader *iconloader = kapp->getIconLoader();
       if(iconloader)
