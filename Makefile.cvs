@@ -14,7 +14,7 @@ all:
 	aclocal
 	autoheader
 	automake
-	perl automoc
+	perl admin/automoc
 	autoconf
 	touch stamp-h.in
 
@@ -23,7 +23,7 @@ dist:
 	aclocal; \
 	autoheader; \
 	automake --foreign --include-deps; \
-	perl automoc; \
+	perl admin/automoc; \
 	autoconf; \
 	LIST=`find ./po -name "*.po"`; \
 	for i in $$LIST; do \

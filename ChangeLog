@@ -1,3 +1,16 @@
+1998-11-23  Alex Zepeda  <garbanzo@hooked.net>
+
+	* Makefile.cvs: Use admin/automoc.
+
+1998-11-18  Alex Zepeda  <garbanzo@hooked.net>
+
+	* README: Adjusted the grammar, and I also added a see also to the PAM
+	documentation.  Also, I documented the configure "extensions".  Of
+	course I make the glaring assumption people actually read this crap.
+
+	* README.pam: Added a minor mention about PAM and FreeBSD (yay!), also
+	"adjusted" the grammar a bit so it makes more sense.
+
 1998-07-27  Stephan Kulow  <coolo@Acrion.kulow.hl.eunet.de>
 
 	* acinclude.m4.in: fixed some things in the MOC test
