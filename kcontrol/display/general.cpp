@@ -266,7 +266,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	fontUseList.append( item );
 	
 	item = new FontUseItem( i18n("Panel clock font"),
-				QFont( "times", 14, QFont::Normal, true ) );
+				QFont( "helvetica", 12, QFont::Normal) );
 	item->setRC( "kpanel", "DateFont", "kpanelrc" );
 	fontUseList.append( item );
 	
