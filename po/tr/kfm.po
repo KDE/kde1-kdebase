@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1ç0\n"
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -285,7 +285,7 @@ msgstr "Simge yüklenemedi\n"
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
-#: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
+#: kiojob.cpp:1482 kiojob.cpp:1490 kiojob.cpp:1725 krenamewin.cpp:124
 #: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
@@ -974,7 +974,7 @@ msgstr "Çalýþýyor..."
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "ÝÇ HATA: Baðlama için bir aygýt belirlemelisiniz"
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1412
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1414
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1019,7 +1019,7 @@ msgstr ""
 "%s'e\n"
 "sembolik bað yapýlamýyor"
 
-#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1361
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1096,7 +1096,7 @@ msgstr ""
 msgid "%d special files will not be moved."
 msgstr ""
 
-#: kiojob.cpp:1338 kiojob.cpp:1416
+#: kiojob.cpp:1338 kiojob.cpp:1418
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1118,7 +1118,7 @@ msgstr ""
 "yazýlamýyor\n"
 "eriþim engellendi"
 
-#: kiojob.cpp:1345 kiojob.cpp:1420
+#: kiojob.cpp:1346 kiojob.cpp:1422
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1127,7 +1127,7 @@ msgstr ""
 "%s\n"
 "için soket yaratýlamýyor"
 
-#: kiojob.cpp:1348 kiojob.cpp:1424
+#: kiojob.cpp:1349 kiojob.cpp:1426
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1136,7 +1136,7 @@ msgstr ""
 "%s'de\n"
 "bilinmeyen sunucu"
 
-#: kiojob.cpp:1352 kiojob.cpp:1428
+#: kiojob.cpp:1353 kiojob.cpp:1430
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1145,7 +1145,7 @@ msgstr ""
 "%s'e\n"
 "baðlanýlamýyor"
 
-#: kiojob.cpp:1356 kiojob.cpp:1432
+#: kiojob.cpp:1357 kiojob.cpp:1434
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1156,7 +1156,7 @@ msgstr ""
 "%s\n"
 "desteði henüz yok."
 
-#: kiojob.cpp:1363
+#: kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1165,7 +1165,7 @@ msgstr ""
 "%s\n"
 "içeriði dökümü verilemiyor"
 
-#: kiojob.cpp:1367
+#: kiojob.cpp:1369
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1176,7 +1176,7 @@ msgstr ""
 "silinemiyor\n"
 "URL yok yada izin verilmiyor"
 
-#: kiojob.cpp:1371 kiojob.cpp:1437
+#: kiojob.cpp:1373 kiojob.cpp:1439
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1187,7 +1187,7 @@ msgstr ""
 "için sisteme girilemiyor.\n"
 "Büyük ihtimal yanlýþ parola"
 
-#: kiojob.cpp:1383
+#: kiojob.cpp:1385
 #, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
@@ -1196,7 +1196,7 @@ msgstr ""
 "%s\n"
 "tar hata bildirdi"
 
-#: kiojob.cpp:1386
+#: kiojob.cpp:1388
 #, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
@@ -1205,11 +1205,11 @@ msgstr ""
 "%s için\n"
 "gzip hata bildirdi"
 
-#: kiojob.cpp:1392
+#: kiojob.cpp:1394
 msgid "Operation technically impossible"
 msgstr ""
 
-#: kiojob.cpp:1395 kiojob.cpp:1408
+#: kiojob.cpp:1397 kiojob.cpp:1410
 #, c-format
 msgid ""
 "File %s\n"
@@ -1218,7 +1218,7 @@ msgstr ""
 "%s dosyasý\n"
 "yok"
 
-#: kiojob.cpp:1398
+#: kiojob.cpp:1400
 #, fuzzy, c-format
 msgid ""
 "Could not write\n"
@@ -1229,7 +1229,7 @@ msgstr ""
 "yazýlamýyor\n"
 "eriþim engellendi"
 
-#: kiojob.cpp:1449
+#: kiojob.cpp:1451
 #, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1238,14 +1238,14 @@ msgstr ""
 "%s\n"
 "tar hata bildirdi"
 
-#: kiojob.cpp:1453
+#: kiojob.cpp:1455
 #, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr "%sgzip hata bildirdi"
 
-#: kiojob.cpp:1457
+#: kiojob.cpp:1459
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1257,7 +1257,7 @@ msgstr ""
 "Hata durumu:\n"
 "%s"
 
-#: kiojob.cpp:1461
+#: kiojob.cpp:1463
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1269,21 +1269,21 @@ msgstr ""
 "Hata durumu:\n"
 "%s"
 
-#: kiojob.cpp:1565
+#: kiojob.cpp:1567
 msgid "Making directory"
 msgstr "Dizin yaratýlýyor"
 
-#: kiojob.cpp:1681 kiojob.cpp:1742 kiojob.cpp:1791
+#: kiojob.cpp:1683 kiojob.cpp:1744 kiojob.cpp:1793
 #, c-format
 msgid "File %i/%i"
 msgstr "Dosya %i/%i"
 
-#: kiojob.cpp:1691 kiojob.cpp:1753
+#: kiojob.cpp:1693 kiojob.cpp:1755
 #, c-format
 msgid "to %s"
 msgstr "%s'e"
 
-#: kiojob.cpp:1722
+#: kiojob.cpp:1724
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1292,22 +1292,22 @@ msgstr ""
 "dizin silinemiyor\n"
 "%s"
 
-#: kiojob.cpp:1824
+#: kiojob.cpp:1826
 #, c-format
 msgid "Mounting %s ..."
 msgstr "%s baðlanýyor..."
 
-#: kiojob.cpp:1826
+#: kiojob.cpp:1828
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "%s ayýrýlýyor..."
 
-#: kiojob.cpp:1854
+#: kiojob.cpp:1856
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "%s'in listesi alýnýyor"
 
-#: kiojob.cpp:2093
+#: kiojob.cpp:2095
 msgid "Segmentation fault in io subprocess"
 msgstr "Girdi Çýktý altiþlemleri sýrasýnda hata"
 
@@ -1498,7 +1498,7 @@ msgstr ""
 "%s URL'si\n"
 "yetersiz"
 
-#: kfmexec/main.cpp:132
+#: kfmexec/main.cpp:135
 #, c-format
 msgid ""
 "The file\n"
@@ -1510,11 +1510,11 @@ msgstr ""
 "dosyasý deðiþmiþ.\n"
 "Kaydetmek ister misiniz?"
 
-#: kfmexec/main.cpp:133
+#: kfmexec/main.cpp:136
 msgid "KFM Question"
 msgstr "KFM Soru"
 
-#: kfmexec/main.cpp:199
+#: kfmexec/main.cpp:202
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"

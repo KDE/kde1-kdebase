@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock-1.1\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-02-05 12:19+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -470,12 +470,12 @@ msgstr ""
 "\n"
 "Douget da kscreensave gant Emanuel Pirker."
 
-#: main.cpp:413
+#: main.cpp:417
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Dibab %s n'eo ket skoraet war ar savienn-mañ !"
 
-#: main.cpp:451
+#: main.cpp:459
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -489,11 +489,11 @@ msgstr ""
 "Kit e darempred gant merour ho reizhiad.\n"
 "Lârit dezhañ e faot deoc'h suid evit ar goulev kcheckpass !"
 
-#: main.cpp:456
+#: main.cpp:464
 msgid "Shadow Passwords"
 msgstr "Tremengerioù kuzhet"
 
-#: main.cpp:506
+#: main.cpp:514
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -504,7 +504,7 @@ msgstr ""
 "na arverit ket mar plij -test a-stroll gant -lock.\n"
 "arverit kentoc'h klock.\n"
 
-#: main.cpp:624
+#: main.cpp:632
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -513,7 +513,7 @@ msgstr ""
 "Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
 "       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
 
-#: main.cpp:627
+#: main.cpp:635
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdehelp\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date:1999-01-26 HO:MI+ZONE\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
@@ -61,12 +61,12 @@ msgstr "Åbn i nyt vindue"
 msgid "Error in info file"
 msgstr "Fejl i info fil"
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr "Node ikke fundet: %s"
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Kan ikke åbne info fil: %s"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -57,12 +57,12 @@ msgstr "Apri in una nuova finestra"
 msgid "Error in info file"
 msgstr "Errore nel file info"
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nodo non trovato: %s"
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Impossibile aprire il file info: %s"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-01-27 23:27+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -448,12 +448,12 @@ msgstr ""
 "\n"
 "Wersja dla KDE: Emanuel Pirker."
 
-#: main.cpp:413
+#: main.cpp:417
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Opcja %s jest nieobs³ugiwana w tym systemie!"
 
-#: main.cpp:451
+#: main.cpp:459
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -467,11 +467,11 @@ msgstr ""
 "W takim przypadku program wymaga\n"
 "ustawionego trybu SUID na plik wykonywalny."
 
-#: main.cpp:456
+#: main.cpp:464
 msgid "Shadow Passwords"
 msgstr "Plik-cieñ z has³ami"
 
-#: main.cpp:506
+#: main.cpp:514
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -482,7 +482,7 @@ msgstr ""
 "Nie mo¿na u¿yæ jednocze¶nie opcji -test oraz -lock.\n"
 "\n"
 
-#: main.cpp:624
+#: main.cpp:632
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -491,7 +491,7 @@ msgstr ""
 "U¿ycie: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:627
+#: main.cpp:635
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

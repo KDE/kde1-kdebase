@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,12 +62,12 @@ msgstr ""
 msgid "Error in info file"
 msgstr ""
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr ""
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr ""

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -61,12 +61,12 @@ msgstr "Yeni pencerede aç"
 msgid "Error in info file"
 msgstr "Info dosyasýnda hata"
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr "%s düðümü bulunamadý."
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "%s info dosyasý açýlamadý."

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.6\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-01-16 10:16+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -61,12 +61,12 @@ msgstr "Otevøi v novém oknì"
 msgid "Error in info file"
 msgstr "Chyba v \"info\" souboru"
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr "Uzel %s nebyl nalezen"
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nelze otevøít info soubor: %s"

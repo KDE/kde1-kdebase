@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-02-13-10:30+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
@@ -269,7 +269,7 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
 #: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
-#: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
+#: kiojob.cpp:1482 kiojob.cpp:1490 kiojob.cpp:1725 krenamewin.cpp:124
 #: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
@@ -954,7 +954,7 @@ msgstr "Í vinnslu... "
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INNRI VILLA: Þú verður að tiltaka tæki til að tengja"
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1412
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1414
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -999,7 +999,7 @@ msgstr ""
 "Ekki tókst að búa til tákntengi\n"
 "%s"
 
-#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1361
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1084,7 +1084,7 @@ msgstr ""
 msgid "%d special files will not be moved."
 msgstr "%d sérstakar skrár verða ekki færðar."
 
-#: kiojob.cpp:1338 kiojob.cpp:1416
+#: kiojob.cpp:1338 kiojob.cpp:1418
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1107,7 +1107,7 @@ msgstr ""
 "%s\n"
 "Hugsanlega hefur þú ekki heimild til þess."
 
-#: kiojob.cpp:1345 kiojob.cpp:1420
+#: kiojob.cpp:1346 kiojob.cpp:1422
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1116,7 +1116,7 @@ msgstr ""
 "Ekki tókst að búa til sökkul fyrir\n"
 "%s"
 
-#: kiojob.cpp:1348 kiojob.cpp:1424
+#: kiojob.cpp:1349 kiojob.cpp:1426
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1125,7 +1125,7 @@ msgstr ""
 "Óþekkt vél í\n"
 "%s"
 
-#: kiojob.cpp:1352 kiojob.cpp:1428
+#: kiojob.cpp:1353 kiojob.cpp:1430
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1134,7 +1134,7 @@ msgstr ""
 "Ekki tókst að tengjast\n"
 "%s"
 
-#: kiojob.cpp:1356 kiojob.cpp:1432
+#: kiojob.cpp:1357 kiojob.cpp:1434
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1144,7 +1144,7 @@ msgstr ""
 "Aðgerðin sem þú baðst um er ekki enn útfærð\n"
 "%s"
 
-#: kiojob.cpp:1363
+#: kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1153,7 +1153,7 @@ msgstr ""
 "Ekki tókst að sýna innihald möppunnar\n"
 "%s"
 
-#: kiojob.cpp:1367
+#: kiojob.cpp:1369
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1164,7 +1164,7 @@ msgstr ""
 "%s\n"
 "Annað hvort er slóðin ekki til eða þú hefur ekki heimild til þess"
 
-#: kiojob.cpp:1371 kiojob.cpp:1437
+#: kiojob.cpp:1373 kiojob.cpp:1439
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1177,7 +1177,7 @@ msgstr ""
 "\n"
 "Hugsanlega var gefið upp rangt lykilorð"
 
-#: kiojob.cpp:1383
+#: kiojob.cpp:1385
 #, c-format
 msgid ""
 "Tar reported an error\n"
@@ -1186,7 +1186,7 @@ msgstr ""
 "Tar sendi villuboð\n"
 "%s"
 
-#: kiojob.cpp:1386
+#: kiojob.cpp:1388
 #, c-format
 msgid ""
 "Gzip reported an error for\n"
@@ -1195,11 +1195,11 @@ msgstr ""
 "Gzip sendi villuboð fyrir\n"
 "%s"
 
-#: kiojob.cpp:1392
+#: kiojob.cpp:1394
 msgid "Operation technically impossible"
 msgstr "Aðgerð er ekki tæknilega möguleg"
 
-#: kiojob.cpp:1395 kiojob.cpp:1408
+#: kiojob.cpp:1397 kiojob.cpp:1410
 #, c-format
 msgid ""
 "File %s\n"
@@ -1208,7 +1208,7 @@ msgstr ""
 "Skráin %s\n"
 "er ekki til"
 
-#: kiojob.cpp:1398
+#: kiojob.cpp:1400
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1219,7 +1219,7 @@ msgstr ""
 "%s\n"
 "Hugsanlega er ekki pláss á diskinum."
 
-#: kiojob.cpp:1449
+#: kiojob.cpp:1451
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1228,7 +1228,7 @@ msgstr ""
 "Tar sendi þessi banvænu villuboð:\n"
 "%s"
 
-#: kiojob.cpp:1453
+#: kiojob.cpp:1455
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1237,7 +1237,7 @@ msgstr ""
 "Gzip sendi þessi banvænu villuboð:\n"
 "%s"
 
-#: kiojob.cpp:1457
+#: kiojob.cpp:1459
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1250,7 +1250,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1461
+#: kiojob.cpp:1463
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1263,21 +1263,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1565
+#: kiojob.cpp:1567
 msgid "Making directory"
 msgstr "Bý til möppu"
 
-#: kiojob.cpp:1681 kiojob.cpp:1742 kiojob.cpp:1791
+#: kiojob.cpp:1683 kiojob.cpp:1744 kiojob.cpp:1793
 #, c-format
 msgid "File %i/%i"
 msgstr "Skrá %i/%i"
 
-#: kiojob.cpp:1691 kiojob.cpp:1753
+#: kiojob.cpp:1693 kiojob.cpp:1755
 #, c-format
 msgid "to %s"
 msgstr "í %s"
 
-#: kiojob.cpp:1722
+#: kiojob.cpp:1724
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1286,22 +1286,22 @@ msgstr ""
 "Ekki tókst að eyða möppunni\n"
 "%s"
 
-#: kiojob.cpp:1824
+#: kiojob.cpp:1826
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Tengi %s inn í skráakerfið..."
 
-#: kiojob.cpp:1826
+#: kiojob.cpp:1828
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Aftengi %s skráakerfinu..."
 
-#: kiojob.cpp:1854
+#: kiojob.cpp:1856
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Sæki listun á %s"
 
-#: kiojob.cpp:2093
+#: kiojob.cpp:2095
 msgid "Segmentation fault in io subprocess"
 msgstr "Minnisvilla í les/skrif undirferli"
 
@@ -1497,7 +1497,7 @@ msgstr ""
 "Slóðin &s\n"
 "er gölluð"
 
-#: kfmexec/main.cpp:132
+#: kfmexec/main.cpp:135
 #, c-format
 msgid ""
 "The file\n"
@@ -1509,11 +1509,11 @@ msgstr ""
 "hefur verið breytt.\n"
 "Viltu vista hana?"
 
-#: kfmexec/main.cpp:133
+#: kfmexec/main.cpp:136
 msgid "KFM Question"
 msgstr "KFM Spurning"
 
-#: kfmexec/main.cpp:199
+#: kfmexec/main.cpp:202
 msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"

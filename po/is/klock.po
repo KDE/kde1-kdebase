@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
@@ -452,12 +452,12 @@ msgstr ""
 "\n"
 "Emanuel Pirker flutti í kscreensave."
 
-#: main.cpp:413
+#: main.cpp:417
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Þetta kerfi styður ekki valmöguleika %s !"
 
-#: main.cpp:451
+#: main.cpp:459
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -471,11 +471,11 @@ msgstr ""
 "kerfisstjórann og segðust þurfa \"suid\" fyrir\n"
 "kcheckpass forritið!"
 
-#: main.cpp:456
+#: main.cpp:464
 msgid "Shadow Passwords"
 msgstr "Skuggalykilorð"
 
-#: main.cpp:506
+#: main.cpp:514
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -486,7 +486,7 @@ msgstr ""
 "Ekki nota -test með -lock.\n"
 "Notaðu frekar klock.\n"
 
-#: main.cpp:624
+#: main.cpp:632
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -495,7 +495,7 @@ msgstr ""
 "Notkun: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "        [-corners xxxx] [-delay tala] [-lock] [-allow-root] [-nice tala]\n"
 
-#: main.cpp:627
+#: main.cpp:635
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

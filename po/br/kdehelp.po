@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp-1.1\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-02-05 11:38+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -67,12 +67,12 @@ msgstr "Digeriñ en ur prenestr nevez"
 msgid "Error in info file"
 msgstr "Fazi er restr 'info'"
 
-#: info.cpp:1284
+#: info.cpp:1289
 #, c-format
 msgid "Node not found: %s"
 msgstr "Ar flosk %s n'eo ket kavet"
 
-#: info.cpp:1429
+#: info.cpp:1434
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "N'hallan ket digeriñ ar restr 'info' : %s"
