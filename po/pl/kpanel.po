@@ -1,0 +1,148 @@
+
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Prywatne menu"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Dodaj element"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr "Dodaj specjalne"
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Konfiguruj"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Konfiguruj panel"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Odµwierz"
+
+#: kpanel.C:188
+msgid "Restart panel"
+msgstr "Odµwierz panel"
+
+#: kpanel.C:189 props.C:327
+msgid "Panel"
+msgstr "Panel"
+
+#: kpanel.C:191
+msgid "Lock Screen"
+msgstr "Zablokuj ekran"
+
+#: kpanel.C:193
+msgid "Lock panel"
+msgstr "Zablokuj panel"
+
+#: kpanel.C:194 kpanel.C:195
+msgid "Logout"
+msgstr "Wyloguj siŠ"
+
+#: kpanel.C:203
+msgid "Move"
+msgstr "Przesu±"
+
+#: kpanel.C:204
+msgid "Remove"
+msgstr "Usu±"
+
+#: kpanel.C:206
+msgid "Properties"
+msgstr "Wþaµciwoµci"
+
+#: kpanel.C:241
+msgid "System"
+msgstr "System"
+
+#: kpanel.C:350
+msgid "No info available"
+msgstr "Informacje niedostŠpne"
+
+#: kpanel.C:437 kpanel.C:453
+msgid "Destroy"
+msgstr "Zniszcz"
+
+#: kpanel.C:440 kpanel.C:450
+msgid "(Un) Sticky"
+msgstr "(Od) Przyklej"
+
+#: kpanel.C:441 kpanel.C:449
+msgid "(Un) Iconify"
+msgstr "(Od) Minimalizuj"
+
+#: kpanel.C:442 kpanel.C:448
+msgid "(Un) Maximize"
+msgstr "(Od) Maksymalizuj"
+
+#: kpanel.C:443 kpanel.C:447
+msgid "On this desktop"
+msgstr "Na tym desktopie"
+
+#: props.C:264
+msgid "Location"
+msgstr "Lokalizacja"
+
+#: props.C:284
+msgid "Taskbar"
+msgstr "Pasek zada±"
+
+#: props.C:285
+msgid "Hidden"
+msgstr "Ukryte"
+
+#: props.C:297
+msgid "Top/Left"
+msgstr "Gra/Lewo"
+
+#: props.C:308
+msgid "Tiny Style"
+msgstr "Maþy"
+
+#: props.C:309
+msgid "Small Style"
+msgstr "ªredni"
+
+#: props.C:310
+msgid "Large Style"
+msgstr "DuÀy"
+
+#: props.C:322
+msgid "Menu Tooltips"
+msgstr "Podpowiedzi menu"
+
+#: props.C:398
+msgid "Visible"
+msgstr "Widoczne"
+
+#: props.C:405
+msgid "Width"
+msgstr "Wysokoµ†"
+
+#: props.C:410
+msgid "Desktops"
+msgstr "Desktopy"
+
+#: props.C:416
+msgid "KPanel Configuration"
+msgstr "Konfiguracja KPanel"
+
+#: tools.C:489
+msgid "No comment available"
+msgstr "Brak komentarza"
+
+#: pmenu.C:252
+msgid "Sorry"
+msgstr "Przykro mi"
+
+#: pmenu.C:253
+msgid ""
+"Could not communicate with nor\n"
+"start a new instance of KFM"
+msgstr ""
+"Nie mogŠ skomunikowa† siŠ lub\n"
+"uruchomi† nowej sesji KFM"
