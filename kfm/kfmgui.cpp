@@ -1247,6 +1247,7 @@ void KfmGui::slotQuit()
     
     // Session management
     pkfm->slotSave();
+    pkfm->slotShutDown();
     
     QString file = kapp->localkdedir().data();
     file += "/share/apps/kfm/pid";

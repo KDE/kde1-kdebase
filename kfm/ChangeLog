@@ -1,3 +1,21 @@
+Fri Jul  3 02:21:39 1998  Torben Weis  <weis@localhost>
+
+	* kfmexec.cpp (slotMimeType): Fixed bug with OpenWithDlg
+	  popuing up when opening remote documents that are not HTML
+	  documents, but images for example.
+
+	* kfm.cpp (Kfm): New Function 'slotShutDown'
+
+	* kfmgui.cpp (slotQuit): Adaptions for shutdown stuff.
+
+	* main.cpp (sig_term_handler): Adaptions for shutdown stuff.
+
+	* kfmview.cpp (slotDropEvent): DnD Fix. Dropping icons from
+	  kmail or ksysv do not crash kfm any more.
+
+	* root.cpp (slotDropEvent): DnD Fix. Dropping icons from
+	  kmail or ksysv do not crash kfm any more.
+
 Sat Jun 27 18:11:23 1998 Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
 
 	* kfmman.cpp (openPopupMenu): fixed multiple equal entries in 

@@ -862,6 +862,14 @@ void KRootWidget::update()
 
 void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 {
+    // check if dropped data is an URL
+    if ( _zone->getDataType() != DndURL )
+    {
+      QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			    klocale->translate("ERROR: You may only drop URLs") );
+      return;
+    }
+
     dropZone = _zone;
     dropFileX = _zone->getMouseX();
     dropFileY = _zone->getMouseY();

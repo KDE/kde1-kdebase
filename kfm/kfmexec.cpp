@@ -178,26 +178,23 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 
 void KFMExec::slotMimeType( const char *_type )
 {
+    // A dirty hack for passing the character set
     char *typestr=0;
     const char *aType=0;
     const char *aCharset=0;
-    if (_type)
+    if ( _type )
     {
-        printf("MimeType: %s\n",_type);
         typestr=new char[strlen(_type)+1];
         strcpy(typestr,_type);
 	aType=strtok(typestr," ;\t\n");
 	char *tmp;
 	while((tmp=strtok(0," ;\t\n"))){
-	    printf("token: %s\n",tmp);
             if ( strncmp(tmp,"charset=",8)==0 ) aCharset=tmp+8;
 	}    
 	if ( aCharset != 0 )
 	{
-	    printf("charset: %s\n",aCharset);
 	    tmp=strpbrk(aCharset," ;\t\n");
 	    if ( tmp != 0 ) *tmp=0;
-	    printf("charset: %s\n",aCharset);
 	}    
     }  
     
@@ -238,18 +235,22 @@ void KFMExec::slotMimeType( const char *_type )
     // No HTML ?
     else if ( aType == 0L || strcmp( aType, "text/html" ) != 0L )
     {
-	// Do we know the mime type ?
-	if ( aType != 0L )
+      bool bdone = false;
+      // Do we know the mime type ?
+      if ( aType != 0L )
+      {
+	KMimeType *mime = KMimeType::findByName( aType );
+	// Try to run the URL if we know the mime type
+	if ( mime && mime->run( tryURL ) )
 	{
-	    KMimeType *mime = KMimeType::findByName( aType );
-	    // Try to run the URL if we know the mime type
-	    if ( mime && mime->run( tryURL ) )
-	    {
-		// We are a zombie now
-		prepareToDie();
-	    }
+	  // We are a zombie now
+	  prepareToDie();
+	  bdone = true;
 	}
+      }
 		
+      if ( !bdone )
+      {    
 	// Ask the user what we should do
 	OpenWithDlg l( klocale->translate("Open With:"), "", 0L, true );
 	if ( l.exec() )
@@ -262,22 +263,19 @@ void KFMExec::slotMimeType( const char *_type )
 	  else
 	  {
 	    QString pattern = l.getText();
-	    // The user did not enter anything ?
-	    if ( pattern.isEmpty() )
-	    {
-	      // We are a zombie now
-	      prepareToDie();
-	    }
-	    else 
+	    // The user did not something ?
+	    if ( !pattern.isEmpty() )
 	    {
 	      QStrList list;
 	      list.append( tryURL );
 	      openWithOldApplication( pattern, list );
-	      
-	      prepareToDie();
 	    }
+
+	    // We are a zombie now
+	    prepareToDie();
 	  }	
 	}
+      }
     }
     // It is HTML
     else

@@ -28,6 +28,7 @@ public:
   
 public slots:
   void slotSave();
+  void slotShutDown();
   void slotTouch();
   void slotInstallSegfaultHandler();
   

@@ -336,6 +336,7 @@ void sig_term_handler( int )
   
   // Save cache and stuff and delete the sockets ...
   pkfm->slotSave();
+  pkfm->slotShutDown();
   
   exit(1);
 }

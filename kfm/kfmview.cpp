@@ -341,11 +341,19 @@ void KfmView::slotDropLeaveEvent( KDNDDropZone * )
 
 void KfmView::slotDropEvent( KDNDDropZone *_zone )
 {
-    QPoint p = view->mapFromGlobal( QPoint( _zone->getMouseX(), _zone->getMouseY() ) );
-    const char *url = view->getURL( p );
+      // check if dropped data is an URL
+      if ( _zone->getDataType() != DndURL )
+      {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You may only drop URLs") );
+	return;
+      }
+      
+      QPoint p = view->mapFromGlobal( QPoint( _zone->getMouseX(), _zone->getMouseY() ) );
+      const char *url = view->getURL( p );
  
-    // Dropped over an object or not ?
-    if ( url == 0L )
+      // Dropped over an object or not ?
+      if ( url == 0L )
 	// dropped over white ground
 	url = manager->getURL();
 
@@ -367,7 +375,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	if ( ( j = testNestedURLs( s, url ) ) )
 	    if ( j == -1 || ( j > nested && nested != -1 ) )
 		nested = j;
-	}
+    }
     
     if ( nested == -1 )
     {
@@ -384,10 +392,8 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
     
     QPoint p2( _zone->getMouseX(), _zone->getMouseY() );
     manager->dropPopupMenu( _zone, url, &p2, ( nested == 0 ? false : true ) );
+  
 }
-
-
-
 
 void KfmView::slotCopy()
 {

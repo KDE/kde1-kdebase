@@ -35,6 +35,7 @@ Kfm::Kfm()
 	kapp->setWmCommand( "" );
 	
 	connect( kapp, SIGNAL( saveYourself() ), this, SLOT( slotSave() ) );
+	connect( kapp, SIGNAL( shutDown() ), this, SLOT( slotShutDown() ) );
 
 	KConfig *config = kapp->getConfig();
 	config->setGroup( "SM" );
@@ -115,7 +116,10 @@ void Kfm::slotSave()
   config->sync();
   
   HTMLCache::save();
+}
 
+void Kfm::slotShutDown()
+{
   // Delete the sockets
   QString sock;
   sock.sprintf("/tmp/kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
