@@ -13,10 +13,9 @@
 
 void kForceLocker()
 {
-	char buffer[256];
+	char *buffer=0;
 
-	strcpy( buffer, getenv( "HOME" ) );
-	strcat( buffer, "/.kss.pid" );
+	sprintf(buffer, "%s/.kss.pid", getenv("HOME"));
 
 	FILE *fp;
 
@@ -31,8 +30,7 @@ void kForceLocker()
 	}
 	else
 	{
-	    strcpy( buffer, KApplication::kde_bindir() );
-	    strcat( buffer, "/kblankscrn.kss" );
+	    sprintf(buffer, "%s/kblankscrn.kss", KApplication::kde_bindir().data());
 	    
 	    if ( fork() == 0 )
 		{
