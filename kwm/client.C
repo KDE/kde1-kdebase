@@ -2122,6 +2122,8 @@ void Client::menuPressed(){
   if (!click_time_initialized) {
       click_time = QTime::currentTime();
       click_time_initialized = TRUE;
+      ignore_release_on_this = buttonMenu;
+      showOperations();
       return;
   }
   if (!isActive()){
