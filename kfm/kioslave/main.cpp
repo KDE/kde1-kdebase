@@ -340,12 +340,8 @@ void KIOSlave::unmount( const char *_point )
              */
             if( (retvalue = WEXITSTATUS( system( buffer ))) == 4 ) {
                 retvalue = 0;
-                sprintf( buffer, "%s \"%s\" %s",
-                         i18n( "The media" ),
-                         res,
-                         i18n( "can now be manually ejected." ));
-                QMessageBox::information( 0,
-                                          i18n( "Volume Management" ), buffer );
+                sprintf( buffer, i18n( "The media \"%s\" can now be manually ejected" ), res );
+                QMessageBox::information( 0, i18n( "Volume Management" ), buffer );
             }
             err = testLogFile( buffer );
         }
