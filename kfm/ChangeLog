@@ -1,3 +1,9 @@
+1999-01-18  David Faure  <faure@kde.org>
+
+	* kbind.cpp: Open Properties when left-clicking a mimetype file.
+	
+	* kfmgui.cpp: Reduce bookmark text size if >40. New function in utils.*
+
 1999-01-15  David Faure  <faure@kde.org>
 
 	* kfmgui.cpp: Patch 15 from Michael Reiher :

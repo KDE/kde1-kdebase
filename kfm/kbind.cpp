@@ -24,6 +24,7 @@
 
 #include "kbind.h"
 #include "kfmpaths.h"
+#include "kfmprops.h"
 #include "kfmgui.h"
 #include "config-kfm.h"
 #include "kfmexec.h"
@@ -1768,6 +1769,12 @@ bool KDELnkMimeType::run( const char *_url )
 	KFMExec *exec = new KFMExec;
 	// Try to open the URl somehow
 	exec->openURL( url );
+	delete config;
+	return TRUE;
+    }
+    else if ( strcmp( typ, "MimeType" ) == 0 )
+    {
+	(void)new Properties ( _url );
 	delete config;
 	return TRUE;
     }
