@@ -708,115 +708,111 @@ __argz_count __argz_stringify __argz_next])
 
   ])
 
-AC_DEFUN(AC_PATH_XPM,
+AC_DEFUN(AC_HAVE_XPM,
  [AC_REQUIRE_CPP()dnl
- 
- xpm_includes=NONE
- xpm_libraries=NONE
- 
- AC_MSG_CHECKING(for XPM)
- AC_ARG_WITH(xpm, [  --without-xpm           disable color pixmap XPM tests])
- if test "x$with_xpm" = xno; then
-   no_xpm=yes
+
+ test -z "$XPM_LDFLAGS" && XPM_LDFLAGS=
+ test -z "$XPM_INCLUDE" && XPM_INCLUDE=
+
+ AC_ARG_WITH(xpm, [  --without-xpm           disable color pixmap XPM tests],
+	xpm_test=$withval, xpm_test="yes")
+ if test "x$xpm_test" = xno; then
+   ac_cv_have_xpm=no
  else
-   if test "x$xpm_includes" != xNONE && test "x$xpm_libraries" != xNONE; then
-     no_xpm=
-   else
- AC_CACHE_VAL(ac_cv_path_xpm,
- [# One or both of these vars are not set, and there is no cached value.
- no_xpm=yes
+   AC_MSG_CHECKING(for XPM)
+   AC_CACHE_VAL(ac_cv_have_xpm,
+   [
+    AC_LANG_C
+    ac_save_ldflags=$LDFLAGS
+    ac_save_cflags=$CFLAGS
+    LDFLAGS="$LDFLAGS $XPM_LDFLAGS $X_LDFLAGS $QT_LDFLAGS -lXpm -lX11 -lXext"
+    CFLAGS="$CFLAGS $X_INCLUDES"
+    test ! -z "$XPM_INCLUDE" && CFLAGS="-I$XPM_INCLUDE $CFLAGS"
+    AC_TRY_LINK([#include <X11/xpm.h>],[],
+	ac_cv_have_xpm="yes",ac_cv_have_xpm="no")
+    LDFLAGS=$ac_save_ldflags
+    CFLAGS=$ac_save_cflags
+   ])dnl
  
- if test "$no_xpm" = yes; then
-   ac_cv_path_xpm="no_xpm=yes"
- else
-   ac_cv_path_xpm="no_xpm= ac_xpm_includes=$ac_xpm_includes ac_xpm_libraries=$ac_xpm_libraries"
- fi])dnl
-   fi
-   eval "$ac_cv_path_xpm"
- fi # with_xpm != no
- 
- if test "$no_xpm" = yes; then
-   AC_MSG_RESULT(no)
- else
-   xpm=yes
-   AC_DEFINE(HAVE_XPM)
-   XPMLIBS="-lXpm"
-   test "x$xpm_includes" = xNONE && xpm_includes=$ac_xpm_includes
-   test "x$xpm_libraries" = xNONE && xpm_libraries=$ac_xpm_libraries
-   ac_cv_path_xpm="no_xpm= ac_xpm_includes=$xpm_includes ac_xpm_libraries=$xpm_libraries"
-   AC_MSG_RESULT([libraries $xpm_libraries, headers $xpm_includes])
+  if test "$ac_cv_have_xpm" = no; then
+    AC_MSG_RESULT(no)
+    XPM_LDFLAGS=""
+    XPMINC=""
+    $2
+  else
+    AC_DEFINE(HAVE_XPM)
+    if test "$XPM_LDFLAGS" = ""; then
+       XPMLIB="-lXpm"
+    else
+       XPMLIB="-L$XPM_LDFLAGS -lXpm"
+    fi
+    if test "$XPM_INCLUDE" = ""; then
+       XPMINC=""
+    else
+       XPMINC="-I$XPM_INCLUDE"
+    fi
+    AC_MSG_RESULT(yes)
+    $1
+  fi
  fi
-  
- if test "x$xpm_libraries" != x && test "x$xpm_libraries" != xNONE ; then
- 	XPMLDFLAGS="$xpm_libraries"
-   XPMLIBPATHS="-L$xpm_libraries"
- fi
- if test "x$xpm_includes" != x && test "x$xpm_includes" != xNONE ; then
-   XPMINC="-I$xpm_includes"
- fi
- 
  AC_SUBST(XPMINC)
- AC_SUBST(XPMLIBS)
- AC_SUBST(XPMLIBPATHS)
+ AC_SUBST(XPMLIB)
 ]) 
 
- AC_DEFUN(AC_PATH_GL,
+AC_DEFUN(AC_HAVE_GL,
  [AC_REQUIRE_CPP()dnl
- 
- gl_includes=NONE
- gl_libraries=NONE
- 
- AC_MSG_CHECKING(for GL)
- AC_ARG_WITH(gl, [  --without-gl            disable 3D GL modes])
- if test "x$with_gl" = xno; then
-   no_gl=yes
- else
-   if test "x$gl_includes" != xNONE && test "x$gl_libraries" != xNONE; then
-     no_gl=
-   else
- AC_CACHE_VAL(ac_cv_path_gl,
- [# One or both of these vars are not set, and there is no cached value.
- no_gl=yes
- 
- if test "$no_gl" = yes; then
-   ac_cv_path_gl="no_gl=yes"
- else
-   ac_cv_path_gl="no_gl= ac_gl_includes=$ac_gl_includes ac_gl_libraries=$ac_gl_libraries"
- fi])dnl
-   fi
-   eval "$ac_cv_path_gl"
- fi # with_gl != no
- 
- if test "$no_gl" = yes; then
-   AC_MSG_RESULT(no)
- else
-   AC_DEFINE(HAVE_GL)
-   GLLIBS="-lMesaGL -lMesaGLU -lXext"
-   test "x$gl_includes" = xNONE && gl_includes=$ac_gl_includes
-   test "x$gl_libraries" = xNONE && gl_libraries=$ac_gl_libraries
-   ac_cv_path_gl="no_gl= ac_gl_includes=$gl_includes ac_gl_libraries=$gl_libraries"
-   AC_MSG_RESULT([libraries $gl_libraries, headers $gl_includes])
-   MORPH3D='$(MORPH3D)'	
- fi
 
- if test "x$gl_libraries" != x && test "x$gl_libraries" != xNONE ; then
- 	GLLDFLAGS=":$gl_libraries"
-   GLLIBPATHS="-L$gl_libraries"
- fi
- if test "x$gl_includes" != x && test "x$gl_includes" != xNONE ; then
-   GLINC="-I$gl_includes"
- fi
+ test -z "$GL_LDFLAGS" && GL_LDFLAGS=
+ test -z "$GL_INCLUDE" && GL_INCLUDE=
+
+ AC_ARG_WITH(gl, [  --without-gl            disable 3D GL modes],
+	gl_test=$withval, gl_test="yes")
+ if test "x$gl_test" = xno; then
+   ac_cv_have_gl=no
+ else
+   AC_MSG_CHECKING(for GL)
+   AC_CACHE_VAL(ac_cv_have_gl,
+   [
+    AC_LANG_C
+    ac_save_ldflags=$LDFLAGS
+    ac_save_cflags=$CFLAGS
+    LDFLAGS="$LDFLAGS $GL_LDFLAGS $X_LDFLAGS $QT_LDFLAGS -lMesaGL -lMesaGLU"-lX11 -lXext"
+    CFLAGS="$CFLAGS $X_INCLUDES"
+    test ! -z "$GL_INCLUDE" && CFLAGS="-I$GL_INCLUDE $CFLAGS"
+    AC_TRY_LINK([],[],
+	ac_cv_have_gl="yes",ac_cv_have_gl="no")
+    LDFLAGS=$ac_save_ldflags
+    CFLAGS=$ac_save_cflags
+   ])dnl
  
- AC_SUBST(MORPH3D)
+  if test "$ac_cv_have_gl" = no; then
+    AC_MSG_RESULT(no)
+    GL_LDFLAGS=""
+    GLINC=""
+    $2
+  else
+    AC_DEFINE(HAVE_GL)
+    if test "$GL_LDFLAGS" = ""; then
+       GLLIB="-lGl"
+    else
+       GLLIB="-L$GL_LDFLAGS -lMesaGL -lMesaGLU""
+    fi
+    if test "$GL_INCLUDE" = ""; then
+       GLINC=""
+    else
+       GLINC="-I$GL_INCLUDE"
+    fi
+    AC_MSG_RESULT(yes)
+    $1
+  fi
+ fi
  AC_SUBST(GLINC)
- AC_SUBST(GLLIBS)
- AC_SUBST(GLLIBPATHS)
-])
- 
+ AC_SUBST(GLLIB)
+]) 
+
  dnl PAM pam
  
  dnl Should test for PAM (Pluggable Authentication Modules)
- dnl test -z "$pam_direct_test_library" && pam_direct_test_library=pam
  AC_DEFUN(AC_PATH_PAM_DIRECT,
  [test -z "$pam_direct_test_library" && pam_direct_test_library=pam
  test -z "$pam_direct_test_library" && pam_direct_test_library=pam_misc
