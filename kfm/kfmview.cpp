@@ -388,7 +388,7 @@ void KfmView::slotFilesChanged( const char *_url )
     if (strstr (_url, LOCALMIME) != 0 ||  // local Mimes or ...
 	strstr (_url, LOCALAPPS) != 0 )   // local apps  written to?
     {
-      gui->slotRescanBindings();
+      // gui->slotRescanBindings(); // newly created mimetypes are invalid...
       return;
     }
     // Note:
