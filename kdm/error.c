@@ -111,7 +111,7 @@ LogError (
 #  ifdef USE_SYSLOG
 	vsyslog (LOG_ERR, fmt, args);
 #  else
-	vprintf (stderr, fmt, args);
+	vfprintf (stderr, fmt, args);
 #  endif
 	va_end(args);
     }
