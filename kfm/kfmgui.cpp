@@ -1052,7 +1052,9 @@ void KfmGui::slotUpdateHistory( bool _back, bool _forward )
     char * s;
     int id;
     for (id = 0, s = hlist->last(); (id<10) && (s != 0L); id++, s = hlist->prev()) {
-        mgo->insertItem ( s, id );
+        QString url (s);
+        KURL::decodeURL(url); // we don't want encoded URLs in the menu
+        mgo->insertItem ( url, id );
     }
 }
 
