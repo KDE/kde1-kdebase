@@ -52,18 +52,23 @@ is the color of the background
 in a File Manager window.
 
 <item> "<bf>Normal Text Color</bf>
-is the color used for displaying normal clickable hypertext
-links for moving around within a hypertext document.
+is the color used for displaying normal 
+test (i.e., text without hypertext links) 
+within a hypertext document viewed with
+the KDE File Manager and Browser, KFM.
 
 <item> "<bf>URL Link Color</bf>" is the color
-in which clickable URL links (to local files, or
-Internet addresses) are shown, <it>before</it> the
-link is followed.
+in which text with clickable hypertext URL links is
+shown on pages viewed with the KDE File Manager 
+and Browser (KFM),
+<it>before</it> the link is followed.
+Directory entries viewed with KFM are also
+URL links.
 
 <item> "<bf>Followed  Link Color</bf>" is the color
-in which clickable  links (both URL links, and
-Normal Text links) are shown, <it>after</it> the
-link has been followed.
+in which clickable  links are shown, <it>after</it> the
+link has been followed, during the period that this
+event is remembered.
 </itemize>
 
 Two further buttons control how links are displayed:
