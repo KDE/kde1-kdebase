@@ -1270,10 +1270,10 @@ void kPanel::doGeometry () {
 
    if (taskbar_frame->autoHidden){
      if (taskbar_position == top){
-       tfy = -taskbar_frame->height()+4;
+       tfy = -th+4;
      }
      else if (taskbar_position == bottom){
-       tfy = taskbar_frame->height()-4;
+       tfy = th-4;
      }
      else { //taskbar_top_left
 	 tfx = -tbhs*taskbar_height+4;
