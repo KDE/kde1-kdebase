@@ -27,11 +27,6 @@ int SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
     }
 }
 
-SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
-{
-}
- 
-
 KProtocolFILE::KProtocolFILE()
 {
 	file = NULL;

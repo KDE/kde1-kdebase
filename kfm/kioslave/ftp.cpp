@@ -120,7 +120,7 @@ int KProtocolFTP::ftpOpen(const char *host)
     struct sockaddr_in sin;
     struct hostent *phe;
     struct servent *pse;
-    int on=1;
+    char on=1;
 
     ftplib_lastresp[0] = '\0';
     memset(&sin,0,sizeof(sin));
@@ -147,7 +147,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     if (setsockopt(sControl,SOL_SOCKET,SO_REUSEADDR,
-		   SETSOCKOPT_OPTVAL_TYPE &on, sizeof(on)) == -1)
+		   &on, sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sControl);
@@ -234,10 +234,10 @@ int KProtocolFTP::ftpPort(void)
 		struct sockaddr sa;
 		struct sockaddr_in in;
     } sin;
-    struct linger lng = { 0, 0 };
+    // struct linger lng = { 0, 0 };
     ksize_t l;
     char buf[64];
-    int on=1;
+    char on=1, lng=0;
 
     l = sizeof(sin);
     if (getsockname(sControl,&sin.sa,&l) < 0)
@@ -249,14 +249,14 @@ int KProtocolFTP::ftpPort(void)
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_REUSEADDR,
-		   SETSOCKOPT_OPTVAL_TYPE &on,sizeof(on)) == -1)
+		   &on,sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_LINGER,
-		   SETSOCKOPT_OPTVAL_TYPE &lng,sizeof(lng)) == -1)
+		   &lng,sizeof(lng)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
@@ -335,8 +335,8 @@ int KProtocolFTP::ftpMkdir( const char *path )
  */
  int KProtocolFTP::accept_connect(void)
 {
-    int sData;
     struct sockaddr addr;
+    int sData;
     ksize_t l;
     fd_set mask;
 
@@ -483,15 +483,17 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 
 	while(fgets(buffer,1024,dirfile) != NULL)
 	{
-		if(char *p_access = strtok(buffer," "))
-		if(char *p_junk = strtok(NULL," "))
-		    if(char *p_owner = strtok(NULL," "))
-			if(char *p_group = strtok(NULL," "))
-			    if(char *p_size = strtok(NULL," "))
-				if(char *p_date_1 = strtok(NULL," "))
-				    if(char *p_date_2 = strtok(NULL," "))
-					if(char *p_date_3 = strtok(NULL," "))
-					    if(char *p_name = strtok(NULL," \r\n"))
+               char *p_access, *p_junk, *p_owner, *p_group;
+               char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
+		if(p_access = strtok(buffer," "))
+		if(p_junk = strtok(NULL," "))
+		    if(p_owner = strtok(NULL," "))
+			if(p_group = strtok(NULL," "))
+			    if(p_size = strtok(NULL," "))
+				if(p_date_1 = strtok(NULL," "))
+				    if(p_date_2 = strtok(NULL," "))
+					if(p_date_3 = strtok(NULL," "))
+					    if(p_name = strtok(NULL," \r\n"))
 					    {
 						de.access	= p_access;
 						de.owner	= p_owner;

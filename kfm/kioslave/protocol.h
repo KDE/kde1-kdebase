@@ -61,9 +61,9 @@ protected:
 	int NotImplemented();
 
 public:
-	const int READ=1, WRITE=2, OVERWRITE=4; 
+	enum Kind { READ = 1, WRITE = 2, OVERWRITE = 4 }; 
 
-	const int FAIL = -1, SUCCESS = 0;
+	enum Status { FAIL = -1, SUCCESS = 0};
 
 	/** functions for files/objects **/
 	virtual int Open(KURL *url, int mode);

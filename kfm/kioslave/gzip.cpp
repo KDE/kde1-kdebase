@@ -78,7 +78,7 @@ long KProtocolGZIP::Read(void *buffer, long len)
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT )
 	{
-	    count = read( Slave.out, buffer + pos, len - pos );
+	    count = read( Slave.out, (char*)buffer + pos, len - pos );
 	    if( count > 0 )
 		pos += count;
 	    if( count == -1 )

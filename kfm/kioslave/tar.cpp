@@ -85,9 +85,10 @@ bool KProtocolTAR::HandleRefill()
 
 long KProtocolTAR::Read( void *_buffer, long _len )
 {
-    long pos = 0, count = -1;
-    
-    // Read untile eof or until the '_buffer' is filled up
+    long pos = 0;
+    ssize_t count = -1;
+ 
+    // Read until eof or until the '_buffer' is filled up
     do
     {
 	int iomask = Slave.WaitIO( 1, 0 );
@@ -95,7 +96,7 @@ long KProtocolTAR::Read( void *_buffer, long _len )
 	// Does the slave has something to read for us ?
 	if ( iomask & KSlave::OUT )
 	{
-	    count = read( Slave.out, _buffer + pos, _len - pos );
+	    count = read( Slave.out, (char*)_buffer + pos, _len - pos );
 	    if( count > 0 )
 		pos += count;
 	    if( count == -1 )
@@ -159,17 +160,20 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT || !moredata )
 	{
+            char *p_access, *p_junk, *p_owner, *p_group, *p_date_4;
+            char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
+
 	    readstr = fgets(buffer,1024,dirfile);
 	    if( readstr )
-		if(char *p_access = strtok(buffer," "))
-		    if(char *p_owner = strtok(NULL,"/"))
-			if(char *p_group = strtok(NULL," "))
-			    if(char *p_size = strtok(NULL," "))
-				if(char *p_date_1 = strtok(NULL," "))
-				    if(char *p_date_2 = strtok(NULL," "))
-					if(char *p_date_3 = strtok(NULL," "))
-					    if(char *p_date_4 = strtok(NULL," "))
-						if(char *p_name = strtok(NULL," \r\n"))
+		if(p_access = strtok(buffer," "))
+		    if(p_owner = strtok(NULL,"/"))
+			if(p_group = strtok(NULL," "))
+			    if(p_size = strtok(NULL," "))
+				if(p_date_1 = strtok(NULL," "))
+				    if(p_date_2 = strtok(NULL," "))
+					if(p_date_3 = strtok(NULL," "))
+					    if(p_date_4 = strtok(NULL," "))
+						if(p_name = strtok(NULL," \r\n"))
 						    if(!strlen(dirpath) || strncmp(p_name,dirpath,strlen(dirpath)) == 0)
 						    {
 							if(strlen(dirpath) < strlen(p_name))

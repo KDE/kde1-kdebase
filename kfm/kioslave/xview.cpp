@@ -46,7 +46,7 @@ void read_xv_file( QImageIO *_imageio )
 
     // debugT("Loading XView file %d %d %d\n",x,y,maxval);
     
-    char block[x*y];
+    char *block = new char[x*y];
 
     if (_imageio->ioDevice()->readBlock(block, x*y) != x*y) 
     {
@@ -90,6 +90,7 @@ void read_xv_file( QImageIO *_imageio )
     _imageio->setStatus( 0 );
 
     // debugT("Loaded image\n");
+    delete block;
     return;
 }
 

@@ -7,6 +7,7 @@
 #include <sys/signal.h>
 #include <sys/time.h>
 #include <sys/types.h>
+#include <signal.h>
 
 KSlave::KSlave()
 {

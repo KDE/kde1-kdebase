@@ -1,7 +1,7 @@
 #include "protocol.h"
 #include "kio_errors.h"
 
-int KProtocol::Error(int KError, QString ErrorMessage, int SysError = 0)
+int KProtocol::Error(int KError, QString ErrorMessage, int SysError)
 {
 	lastErrorMessage = ErrorMessage;
 	lastKError = KError;

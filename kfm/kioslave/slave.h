@@ -1,6 +1,10 @@
 #ifndef _kslave_h
 #define _kslave_h
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <unistd.h>
 #include <stdio.h>
 
@@ -22,7 +26,7 @@ public:
     int Close();
     int Stop();
 
-    const int IN=1, OUT=2, ERR=4;    
+    enum Action { IN=1, OUT=2, ERR=4 };
     int in, out, err;			// FDs to read/write to the slave
 
 private:
