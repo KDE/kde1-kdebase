@@ -1,0 +1,389 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-10-01 16:40:07+0200\n"
+"From: root <flidr@CyberGate.zcu.cz>\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
+"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
+"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Κατάλογοι"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Αδυναμία ανοίγματος ή διαβάσματος υποκαταλόγου."
+
+#: kfindtop.cpp:118
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flνdr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+
+#: kfindtop.cpp:136
+msgid "&Open"
+msgstr "Άνοιγμα"
+
+#: kfindtop.cpp:138
+msgid "&Add to archive"
+msgstr "Προσθήκη στο αρχείο"
+
+#: kfindtop.cpp:141
+msgid "&Delete"
+msgstr "Διαγραφή"
+
+#: kfindtop.cpp:143
+msgid "&Properties"
+msgstr "Ιδιότητες"
+
+#: kfindtop.cpp:146
+msgid "Open Containing &Folder"
+msgstr "Άνοιγμα καταλόγου με περιεχόμενα"
+
+#: kfindtop.cpp:149
+msgid "&Save Search"
+msgstr "Aποθήκευση αναζήτησης"
+
+#: kfindtop.cpp:158
+msgid "&Undo"
+msgstr "Αναίρεση"
+
+#: kfindtop.cpp:161
+msgid "&Cut"
+msgstr "Αποκοπή"
+
+#: kfindtop.cpp:166
+msgid "&Select All"
+msgstr "Επιλογή όλων"
+
+#: kfindtop.cpp:168
+msgid "&Invert Selection"
+msgstr "Αντίστροφη Επιλογή"
+
+#: kfindtop.cpp:179
+msgid "&Preferences ..."
+msgstr "Προτιμήσεις"
+
+#: kfindtop.cpp:183
+msgid "Kfind &help"
+msgstr "Βοήθεια του ΚFind "
+
+#: kfindtop.cpp:186
+#, fuzzy
+msgid "About &Qt"
+msgstr "Περί"
+
+#: kfindtop.cpp:188
+msgid "&About"
+msgstr "Περί"
+
+#: kfindtop.cpp:206
+msgid "Start Search"
+msgstr "Εύρεση τώρα"
+
+#: kfindtop.cpp:211
+msgid "New Search"
+msgstr "Νέα αναζήτηση"
+
+#: kfindtop.cpp:216
+msgid "Stop Search"
+msgstr "Τέλος αναζήτησης"
+
+#: kfindtop.cpp:229
+msgid "Add to archive"
+msgstr "Προσθήκη στο αρχείο"
+
+#: kfindtop.cpp:239
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+#: kfindtop.cpp:244
+msgid "Open Containing Folder"
+msgstr "Άνοιγμα καταλόγου με περιεχόμενα"
+
+#: kfindtop.cpp:249
+msgid "Save Search Results"
+msgstr "Αποθήκευση αποτελεσμάτων αναζήτησης"
+
+#: kftabdlg.cpp:48
+msgid "&Named:"
+msgstr "Ονομασμένο"
+
+#: kftabdlg.cpp:51
+msgid "&Look in:"
+msgstr "Ψάξε σε"
+
+#: kftabdlg.cpp:54
+msgid "&Browse ..."
+msgstr "Εξερεύνηση"
+
+#: kftabdlg.cpp:66
+msgid "Include &subfolders"
+msgstr "Συμπεριλαμβανομένου και των υποκαταλόγων"
+
+#: kftabdlg.cpp:96
+msgid " Name& Location "
+msgstr "Όνομα Περιοχή"
+
+#: kftabdlg.cpp:108
+msgid "and"
+msgstr "και"
+
+#: kftabdlg.cpp:109
+msgid "month(s)"
+msgstr "μήνα"
+
+#: kftabdlg.cpp:110
+msgid "day(s)"
+msgstr "μέρες"
+
+#: kftabdlg.cpp:116
+msgid "&All files"
+msgstr "Όλα τα αρχεία"
+
+#: kftabdlg.cpp:117
+msgid "Find all files created or &modified:"
+msgstr "Εύρεση όλων των αρχείων που δημιουργήθηκαν ή τροποποιήθηκαν"
+
+#: kftabdlg.cpp:118
+msgid "&between"
+msgstr "μεταξύ"
+
+#: kftabdlg.cpp:119
+msgid "during the previou&s "
+msgstr "κατά την προηγούμενη"
+
+#: kftabdlg.cpp:120
+msgid "&during the previous "
+msgstr "κατά το προηγούμενο"
+
+#: kftabdlg.cpp:168
+msgid " Date Modified "
+msgstr "Ημερομηνία τροποποίησης"
+
+#: kftabdlg.cpp:174
+msgid "Of &type:"
+msgstr "Του τύπου"
+
+#: kftabdlg.cpp:176
+msgid "&Containing Text:"
+msgstr "Περιεχόμενο κείμενο"
+
+#: kftabdlg.cpp:179
+msgid "&Size is:"
+msgstr "Το μέγεθος είναι"
+
+#: kftabdlg.cpp:202
+msgid "All Files and Folders"
+msgstr "Όλα τα αρχεία και οι φάκελλοι"
+
+#: kftabdlg.cpp:209
+msgid "(none)"
+msgstr "(κενό)"
+
+#: kftabdlg.cpp:210
+msgid "At Least"
+msgstr "Τελικά"
+
+#: kftabdlg.cpp:211
+msgid "At Most"
+msgstr "Περισσότερο"
+
+#: kftabdlg.cpp:218
+msgid " Advanced "
+msgstr "Για προχωρημένους"
+
+#: kftabdlg.cpp:389
+msgid "The date is not valid!!"
+msgstr "Η ημερομηνία δεν είναι έγκυρη"
+
+#: kftabdlg.cpp:401
+msgid "The month(s) value isn't valid!!"
+msgstr "Η τιμή για τον μήνα δεν είναι έγκυρη!!"
+
+#: kftabdlg.cpp:412
+msgid "The day(s) value isn't valid!!"
+msgstr "Η τιμή για την μέρα δεν είναι έγκυρη!!"
+
+#: kftabdlg.cpp:429
+msgid "The value in size isn't valid number!!"
+msgstr ""
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "Moρφοποιήση αρχείου"
+
+#: kfoptions.cpp:78
+msgid "Save results to file:"
+msgstr "Αποθήκευση αποτελεσμάτων στο αρχείο"
+
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Αποθήκευση αποτελεσμάτων στο αρχείο ~/.kfind-results.html"
+
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Εξερεύνηση"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Aπλό Κείμενο"
+
+#: kfoptions.cpp:125
+msgid "Saving"
+msgstr "Αποθήκευση..."
+
+#: kfoptions.cpp:132
+msgid "Create Archive:"
+msgstr "Δημιουργία αρχείου"
+
+#: kfoptions.cpp:134
+msgid "Add to Archive:"
+msgstr "Προσθήκη στο αρχείο"
+
+#: kfoptions.cpp:138
+msgid "Patterns:"
+msgstr "Πρότυπα"
+
+#: kfoptions.cpp:141
+msgid "Add New"
+msgstr "Προσθήκη νέου"
+
+#: kfoptions.cpp:182
+msgid "Archivers"
+msgstr "Aρχειοθέτες"
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d αρχεία βρέθηκαν"
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr "Αδύνατη η αποθήκευση των αποτελεσμάτων"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "Αρχείο αποτελεσμάτων του KFind "
+
+#: kfwin.cpp:179
+msgid "Information"
+msgstr ""
+
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr "Αποτελέσματα που αποθηκεύτηκαν στο αρχείο"
+
+#: kfwin.cpp:195
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Θέλετε σίγουρα να διαγράψετε το αρχείο:\n"
+"%s"
+
+#: kfwin.cpp:197
+msgid "Delete File"
+msgstr "Διαγραφή αρχείου"
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr "Δεν έχετε το δικαίωμανα διαγράψετε αυτό το αρχείο"
+
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Αδύνατη η διαγραφή\n"
+"του επιλεγμένου αρχείου"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr "Δεν έχετε το δικαίωμανα διαγράψετε αυτόν τον κατάλογο"
+
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Ο επιλεγμένος κατάλογος\n"
+"δεν είναι κενός!"
+
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Αδύνατη η διαγραφή\n"
+"του επιλεγμένου καταλόγου"
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr "Αδύνατη αναγνώριση αρχείου"
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
+msgstr "Αποτυχία κατα την δημιουργία υποδιεργασίας"
+
+#~ msgid "&Copy"
+#~ msgstr "Αντιγραφή"
+
+#~ msgid "&Edit"
+#~ msgstr "Διόρθωση"
+
+#~ msgid "&File"
+#~ msgstr "Αρχείο"
+
+#~ msgid "&Help"
+#~ msgstr "Βοήθεια"
+
+#~ msgid "&Options"
+#~ msgstr "Επιλογές"
+
+#~ msgid "&Quit"
+#~ msgstr "Τερματισμός"
+
+#~ msgid "Cancel"
+#~ msgstr "Άκυρο"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Error"
+#~ msgstr "Λάθος"
+
+#~ msgid "Help"
+#~ msgstr "Βοήθεια"
+
+#~ msgid "OK"
+#~ msgstr "Εντάξει"
+
+#~ msgid "Open"
+#~ msgstr "Άνοιγμα"
+
+#~ msgid "Quit"
+#~ msgstr "Τερματισμός"
+
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgid "Sorry"
+#~ msgstr "Λυπάμαι"
