@@ -284,6 +284,7 @@ AC_OUTPUT(Makefile \
 	kwm2/pics/Makefile \
 	kwmmodules/Makefile \
 	kwmmodules/kwmpager/Makefile \
+	kwmmodules/kbgndwm/Makefile \
 	kwmcom/Makefile \
 	krootwm/Makefile)
 
