@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 int registered = FALSE;
 
