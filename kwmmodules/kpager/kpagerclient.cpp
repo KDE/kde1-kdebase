@@ -650,12 +650,26 @@ void KPagerClient::commandReceived(QString s)
 {
     if (strcmp(s.data(),"kbgwm_change")==0)
     {
+#ifdef KPAGERCLIENTDEBUG
 	printf("KBGWM_CHANGE\n");
+#endif
         for (int i=1;i<=numberofDesktops;i++)
         {
             if (desktop[i]!=0L) desktop[i]->reconfigure();
         }
     }
+    else
+    if ((s.length()>13)&&(strncmp(s.data(),"kbgwm_change_",13)==0))
+    {
+	int dsk;
+	sscanf(s.data(),"kbgwm_change_%d",&dsk);
+#ifdef KPAGERCLIENTDEBUG
+	printf("KBGWM_CHANGE_%d\n",dsk);
+#endif
+	dsk++;
+	if ((dsk>0)&&(dsk<=numberofDesktops)&&(desktop[dsk]!=0L)) 
+		desktop[dsk]->reconfigure();
+    };
 
 #ifdef KPAGERCLIENTDEBUG
     else
@@ -698,7 +712,7 @@ void KPagerClient::updateDesk(int i)
 
 }
 
-char *KPagerClient::getDesktopName(int i)
+const char *KPagerClient::getDesktopName(int i)
 {
     if (i>numberofDesktops) return 0L;
     return desktop[i]->name();

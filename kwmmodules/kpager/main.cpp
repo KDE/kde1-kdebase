@@ -31,6 +31,11 @@
 
 int main(int argc, char **argv)
 {
+    printf("KPager 0.6 Copyright (C) 1998 Antonio Larrosa Jimenez. Malaga (Spain)\n");
+    printf("KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n");
+    printf("This is free software, and you are welcome to redistribute it\n");
+    printf("under certain conditions\n");
+
     KWMModuleApplication *app=new KWMModuleApplication(argc,argv);
 
     kimgioRegister();

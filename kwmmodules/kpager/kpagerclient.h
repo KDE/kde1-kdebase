@@ -93,7 +93,7 @@ public:
     bool is1ClickMode(void) { return Desktop::use1ClickMode; }  
  
     int getNumberOfDesktops(void) { return numberofDesktops; }; 
-    char *getDesktopName(int i); 
+    const char *getDesktopName(int i); 
 
 public slots:
     void moveRight();

@@ -1,3 +1,11 @@
+* Tue Dic  1 7:23:00 CEST 1998
+
+Improved speed when updating background pictures (thanks Matt for the new signal !)
+Hopefully the last fixes to the resize of windows 
+(Now you can use kpager to create the largest window ever in the world
+by resizing it and moving the mouse to the lower-right corner of your
+screen :) )
+
 * Mon Nov 30 7:20:00 CEST 1998 
 
 Some fixes.

@@ -42,6 +42,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     setBackgroundMode(NoBackground);
     mousepressed=false;
     resizing=false;
+    resizingWin=0;
 
     QPainter *qp=new QPainter(this);
     tmpScreen=new QPixmap;
@@ -546,7 +547,7 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     {
 //        printf("m\n");
 	WindowProperties *resizingWP=getWindowProperties(resizingWin);
-        if (resizingWP==0L) {printf("Oops\n");resizing=false;releaseMouse();return;};
+        if (resizingWP==0L) {printf("Oops\n");resizing=false;return;};
         //        resizingWP->minigeometry.setWidth(MAX(0,e->x()-resizingWP->minigeometry.x()));	
         //        resizingWP->minigeometry.setHeight(MAX(0,e->y()/*-getHeaderHeight()*/-resizingWP->minigeometry.y()));
         double ratiox=(double)width()/(double)screen_width;
@@ -632,11 +633,21 @@ void Desktop::mouseReleaseEvent ( QMouseEvent *e )
     if (resizing)
     {
 	WindowProperties *resizingWP=getWindowProperties(resizingWin);
-	if (resizingWP==0L) {resizing=false;releaseMouse();return;};
-	KWM::setGeometry(resizingWP->id,resizingWP->geometry);
+	if (resizingWP==0L) {resizing=false;return;};
+        double ratiox=(double)width()/(double)screen_width;
+        double ratioy=(double)(height()-getHeaderHeight())/(double)screen_height;
+        resizingWP->framegeometry.setWidth(
+                        MAX(10,e->x()/ratiox-resizingWP->framegeometry.x()));
+        resizingWP->geometry.setWidth(
+                        MAX(10,e->x()/ratiox-resizingWP->geometry.x()));
+        resizingWP->framegeometry.setHeight(
+                        MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->framegeometry.y()));
+        resizingWP->geometry.setHeight(
+                        MAX(10,(e->y()-getHeaderHeight())/ratioy-resizingWP->geometry.y()));
+	KWM::setGeometry(resizingWin,resizingWP->geometry);
         resizing=false;
         resizingWP=0L;
-        releaseMouse();
+	resizingWin=0;
 	return;
     };
 
@@ -680,7 +691,6 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
 	if (resizingWP==0L) { resizing=false; return; };
 	resizingWin=resizingWP->id;
 	resizing=true;
-	grabMouse();
         return;
     };
     if (e->button()==RightButton)
