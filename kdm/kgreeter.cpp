@@ -227,6 +227,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      sessiontags.clear();
      KIconLoader iconLoader;
      for( ; it.current(); ++it) {
+#if 0
 	  QString output = QString(it.current());
 	  QPixmap sesspix(iconLoader.loadIcon(QString("session_") 
 					      + it.current() + ".xpm"));
@@ -253,8 +254,11 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 	  p.end();
 	  pmask.end();
 	  pm.setMask( mask);
-	  sessiontags.append(it.current());
 	  sessionargBox->insertItem( pm);
+#else
+	  sessionargBox->insertItem( it.current());
+#endif
+	  sessiontags.append(it.current());
      }
      set_fixed( sessionargBox);
      hbox2->addWidget( sessionargBox);
