@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDEBASE/kcmkfm\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1999-01-03 23:59-0500\n"
+"PO-Revision-Date: 1999-01-26 23:59-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -131,7 +131,7 @@ msgstr "Pause:"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr "Hastighed"
+msgstr "Hastighed:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
@@ -187,15 +187,15 @@ msgstr "Rediger &delte..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Max antal nylige folderindgange"
+msgstr "Max antal nylige folderindgange:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Max antal nylige filindgange"
+msgstr "Max antal nylige filindgange:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Max antal filer i en enkelt folder"
+msgstr "Max antal filer i en enkelt folder:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
@@ -223,4 +223,4 @@ msgstr "Vis indstillingsindgang"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Terminal applikation"
+msgstr "Terminalprogram:"

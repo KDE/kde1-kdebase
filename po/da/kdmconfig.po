@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1999-01-12 18:19+0100\n"
+"PO-Revision-Date: 1999-01-26 18:19+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,11 +53,11 @@ msgstr "Manglende rettigheder"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
-msgstr "Velkomst tekst"
+msgstr "Velkomst tekst:"
 
 #: kdm-appear.cpp:78
 msgid "KDM logo:"
-msgstr "KDM logo"
+msgstr "KDM logo:"
 
 #: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
@@ -65,7 +65,7 @@ msgstr "Klik eller drop et billede her"
 
 #: kdm-appear.cpp:110
 msgid "GUI Style:"
-msgstr "GUI stil"
+msgstr "GUI stil:"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
@@ -88,7 +88,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Der var en fejl ved indlæsningen af billedet:\n"
+"Der opstod en fejl ved indlæsningen af billedet:\n"
 ">"
 
 #: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
@@ -105,7 +105,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Der var en fejl ved skrivningen af billedet:\n"
+"Der opstod en fejl ved skrivningen af billedet:\n"
 ">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
@@ -146,11 +146,11 @@ msgstr "Vælg skrift"
 
 #: kdm-font.cpp:50
 msgid "Example"
-msgstr "Eksempel:"
+msgstr "Eksempel"
 
 #: kdm-font.cpp:52
 msgid "Change font..."
-msgstr "Skift skrift"
+msgstr "Skift skrift..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -165,19 +165,16 @@ msgid "Standard"
 msgstr "Standard"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Velkomst"
+msgstr "Skrift til velkomst"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Fejl"
+msgstr "Skrift ved fejl"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Standard"
+msgstr "Standardskrift"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
@@ -221,19 +218,19 @@ msgstr "Skaleret"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr "For oven til enstre"
+msgstr "TopVenstre"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr "For oven til højre"
+msgstr "TopHøjre"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr "For neden til venstre"
+msgstr "BundVenstre"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr "For neden til højre"
+msgstr "BundHøjre"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
@@ -285,7 +282,7 @@ msgstr "Gem billede som standard billede?"
 
 #: kdm-sess.cpp:52
 msgid "Allow to shutdown"
-msgstr "Tilladelse til at lukke ned:"
+msgstr "Tilladelse til at lukke ned"
 
 #: kdm-sess.cpp:57
 msgid "All"

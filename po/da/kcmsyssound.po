@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-01-12 15:33+0100\n"
+"PO-Revision-Date: 1999-01-26 15:33+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr ""
+msgstr "Forkert fil-efternavn"
 
 #: syssound.cpp:482
 #, c-format
@@ -190,7 +190,10 @@ msgid ""
 "%s\n"
 "is already in the list"
 msgstr ""
+"Filen\n"
+"%s\n"
+"er allerede i listen"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr ""
+msgstr "Fil allerede i listen"

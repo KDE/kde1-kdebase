@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-03 23:10-0500\n"
+"PO-Revision-Date: 1999-01-26 23:10-0500\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr "Inkluder &underfoldere"
 
 #: kftabdlg.cpp:118
 msgid " Name& Location "
-msgstr " Navn& placering"
+msgstr " Navn& placering "
 
 #: kftabdlg.cpp:130
 msgid "and"
@@ -176,7 +176,7 @@ msgstr "&Størrelse er:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -188,7 +188,7 @@ msgstr "Foldere"
 
 #: kftabdlg.cpp:239
 msgid "Symbolic links"
-msgstr "Symbolske links"
+msgstr "Symbolske link"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
@@ -216,7 +216,7 @@ msgstr "Højst"
 
 #: kftabdlg.cpp:263
 msgid " Advanced "
-msgstr " Avanceret"
+msgstr " Avanceret "
 
 #: kftabdlg.cpp:501
 msgid "The date is not valid!!"

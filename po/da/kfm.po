@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-04 01:40+CET-5\n"
+"PO-Revision-Date: 1999-01-26 01:40+CET-5\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Markér &alt"
 
 #: kfmgui.cpp:265
 msgid "&Find in page..."
-msgstr "&Find på siden"
+msgstr "&Find på siden..."
 
 #: kfmgui.cpp:267
 msgid "Find &next"
@@ -187,11 +187,11 @@ msgstr "&Gem Indstillinger for denne URL"
 
 #: kfmgui.cpp:391
 msgid "&Configure File Manager..."
-msgstr "Indstil filbehandler"
+msgstr "Indstil filbehandler..."
 
 #: kfmgui.cpp:393
 msgid "Configure &Browser..."
-msgstr "Indstil &Browser"
+msgstr "Indstil &Browser..."
 
 #: kfmgui.cpp:429
 msgid ""
@@ -271,7 +271,7 @@ msgstr "KFM Fejl"
 
 #: kfmgui.cpp:560
 msgid "Location:"
-msgstr "Sted"
+msgstr "Sted:"
 
 #: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1410
 msgid "Malformed URL\n"
@@ -448,7 +448,6 @@ msgid "The mime type config file "
 msgstr "Mime type opsætningsfilen "
 
 #: kbind.cpp:305
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "indeholder ikke en MimeType=... indgang"
 
@@ -546,7 +545,7 @@ msgstr ""
 
 #: kbind.cpp:2025
 msgid "No mount point in *.kdelnk file"
-msgstr "Intet monterings punkt i *.kdelnk fil"
+msgstr "Intet monteringspunkt i *.kdelnk fil"
 
 #: kbind.cpp:2065
 msgid "Unknown binding"
@@ -950,7 +949,7 @@ msgstr "Filen indeholder ingen URL"
 
 #: kfmman.cpp:516
 msgid "Contacting host "
-msgstr "Kontakter host "
+msgstr "Kontakter vært "
 
 #: kfmman.cpp:520
 msgid "Working ..."
@@ -997,7 +996,7 @@ msgid " ERROR: Could not write to %s"
 msgstr "FEJL: Kunne ikke skrive til %s"
 
 #: kiojob.cpp:567 kiojob.cpp:872
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1025,21 +1024,25 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Særlig fil vil ikke blive kopieret\n"
+"%s"
 
 #: kiojob.cpp:663
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d særlige filer vil ikke blive kopieret."
 
 #: kiojob.cpp:668
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Kopier underfiler fra filer med delprotokol\n"
+"(for eksempel tar-filer)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Delfilskopiering til/fra fjerne steder"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1068,11 +1071,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Særlige filer bliver ikke flyttet\n"
+"%s"
 
 #: kiojob.cpp:1046
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d særlige filer bliver ikke flyttet."
 
 #: kiojob.cpp:1310 kiojob.cpp:1381
 #, c-format
@@ -1111,7 +1116,7 @@ msgid ""
 "Unknown host in\n"
 "%s"
 msgstr ""
-"Ukendt host i\n"
+"Ukendt vært i\n"
 "%s"
 
 #: kiojob.cpp:1323 kiojob.cpp:1393
@@ -1166,7 +1171,7 @@ msgstr ""
 "Måske forkert kodeord"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1175,7 +1180,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1185,7 +1190,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operation teknisk umulig"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
@@ -1228,14 +1233,14 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1426
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not unmount\n"
 "Error log:\n"
 "\n"
 "%s"
 msgstr ""
-"Kunne ikke montere\n"
+"Kunne ikke afmontere\n"
 "Fejl log:\n"
 "\n"
 "%s"
@@ -1376,15 +1381,15 @@ msgstr "Find:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr "Afhængig af bogstavsstørrelse"
+msgstr "Afhængig af bogstav&sstørrelse"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr "Cookie Pas På"
+msgstr "Cookie Pas På!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr "Du modtog en cookie fra værten"
+msgstr "Du modtog en cookie fra værten:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
@@ -1392,7 +1397,7 @@ msgstr "Vil du acceptere eller afslå denne cookie?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
-msgstr "Anvend på"
+msgstr "Anvend på "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
@@ -1496,27 +1501,3 @@ msgid ""
 msgstr ""
 "Syntaks fejl [URLs ....]\n"
 "kfmexec kommando [URLer ....]\n"
-
-#~ msgid "Working Directory"
-#~ msgstr "Arbejds folder"
-
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Vær venlig at ændre adgangskoden i\n"
-#~ "~/.kde/share/apps/kfm/magic"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Ved ikke hvad jeg skal gøre"
-
-#~ msgid ""
-#~ "Could not afmontere\n"
-#~ "Error log:\n"
-#~ "\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Kunne ikke afmontere\n"
-#~ "Fejl log:\n"
-#~ "\n"
-#~ "%s"

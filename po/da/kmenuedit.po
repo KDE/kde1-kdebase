@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
-"PO-Revision-Date: 1998-03-21 13:22+0100\n"
+"PO-Revision-Date: 1999-01-26 13:22+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -224,7 +224,7 @@ msgstr "Anvendelsens navn"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
-msgstr "Anvendelse der udføres ved tryk på knap"
+msgstr "Anvendelse der udføres ved tryk på knap:"
 
 #: entrydialog.cpp:367
 msgid "URL:"
@@ -240,11 +240,11 @@ msgstr "Enhed:"
 
 #: entrydialog.cpp:425
 msgid "Mount Point:"
-msgstr "Mount punkt:"
+msgstr "Monteringspunkt:"
 
 #: entrydialog.cpp:430
 msgid "FS Type:"
-msgstr "FS Type"
+msgstr "FS Type:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/krootwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-12 21:10+0100\n"
+"PO-Revision-Date: 1999-01-26 21:10+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: krootwm.C:223 krootwm.C:270
 msgid "Execute command"
-msgstr "Kør..."
+msgstr "Udfør kommando"
 
 #: krootwm.C:225 krootwm.C:294
 msgid "Lock screen"
@@ -51,7 +51,7 @@ msgstr "Hjælp om Arbejdsplads"
 
 #: krootwm.C:247
 msgid "About KDE..."
-msgstr "Om KDE"
+msgstr "Om KDE..."
 
 #: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
 msgid "New"
@@ -62,38 +62,36 @@ msgid "Bookmarks"
 msgstr "Bogmærker"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Arranger ikoner"
+msgstr "Arranger Vindueslaverikoner"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Vis alt"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Gem andre"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Vis info panel"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Vis lovligt panel"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Genstart"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Agslut"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Vinduer"
+msgstr "Vindueslaver"
 
 #: krootwm.C:306
 msgid "Desk"

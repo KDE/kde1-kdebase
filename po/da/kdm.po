@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1999-01-12 11:27+0100\n"
+"PO-Revision-Date: 1999-01-26 11:27+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "Luk ned eller genstart?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr "(Skriv Root kodeord)"
+msgstr "(Indtast Root kodeord)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -59,11 +59,11 @@ msgstr "Luk ned..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr "Det var ikke muligt at logge ind lige nu"
+msgstr "Det var ikke muligt at logge ind lige nu."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr "login_getcapstr(0) fejlede"
+msgstr "login_getcapstr(0) mislykkedes"
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."

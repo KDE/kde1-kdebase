@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmdisplay\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1999-01-03 17:00+CET-1\n"
+"PO-Revision-Date: 1999-01-26 17:00+CET-1\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
-msgstr "Skriv ny Arbejdsplads navn"
+msgstr "Indtast ny Arbejdsplads navn"
 
 #: backgnd.cpp:110 backgnd.cpp:163
 msgid "Desktop"
@@ -27,7 +27,7 @@ msgstr "&Omdøb..."
 
 #: backgnd.cpp:196
 msgid "&Common Background"
-msgstr "&Baggrund"
+msgstr "&Fælles baggrund"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -59,11 +59,11 @@ msgstr "&Gennemsøg..."
 
 #: backgnd.cpp:368
 msgid "Arrangement:"
-msgstr "Arrangement"
+msgstr "Arrangement:"
 
 #: backgnd.cpp:375
 msgid "Tiled"
-msgstr "F&liselagt"
+msgstr "Fliselagt"
 
 #: backgnd.cpp:376
 msgid "Mirrored"
@@ -103,7 +103,7 @@ msgstr "Skaleret"
 
 #: backgnd.cpp:399
 msgid "Ra&ndom"
-msgstr "Tilfældigt"
+msgstr "Til&fældigt"
 
 #: backgnd.cpp:408
 msgid "Setu&p..."
@@ -115,7 +115,7 @@ msgstr "&Dyk ned i panelet"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
-msgstr "Cache størrelse (kB)"
+msgstr "Cache størrelse (kB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -156,7 +156,7 @@ msgstr "Brug &mønster"
 
 #: backgnd.cpp:1516
 msgid "Preview"
-msgstr "Vis den"
+msgstr "Fremvis"
 
 #: backgnd.cpp:1527
 msgid "Pattern &name"
@@ -212,7 +212,7 @@ msgstr "I &rækkefølge"
 
 #: backgnd.cpp:1777
 msgid "Desktops :"
-msgstr "Arbejdspladser:"
+msgstr "Arbejdspladser :"
 
 #: backgnd.cpp:1816
 msgid "&Add"
@@ -349,12 +349,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Indføj et navn for det nye farveskema\n"
+"Indtast et navn for det nye farveskema\n"
 "der kan blive tilføjet din personlige liste.\n"
 "\n"
-"De farver der for øjeblikket fremvise vil blive kopieret ind i dette skema "
-"som en\n"
-"begyndelse."
+"De farver der for øjeblikket fremvises, vil blive\n"
+"kopieret ind i dette skema som en begyndelse"
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -513,7 +512,7 @@ msgstr "Ny"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr "Skrif&t type"
+msgstr "Skrif&ttype"
 
 #: fontchooser.cpp:89
 msgid "&Bold"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kvt\n"
 "POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-02-27 10:21+0100\n"
+"PO-Revision-Date: 1999-01-26 10:21+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Backspace tasten vil sende en"
 
 #: main.C:442
 msgid "Cursor key set"
-msgstr "Markør nøgle sæt"
+msgstr "Markør nøgle sat"
 
 #: main.C:611
 msgid "&New Terminal"
@@ -123,7 +123,7 @@ msgstr "&Størrelse"
 
 #: main.C:672
 msgid "Terminal..."
-msgstr "Terminal"
+msgstr "Terminal..."
 
 #: main.C:673
 msgid "Font..."
@@ -131,7 +131,7 @@ msgstr "Skrift..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr "Brug &hurtigtaster"
+msgstr "Brug &genvejstaster"
 
 #: main.C:677
 msgid "Save &Options"

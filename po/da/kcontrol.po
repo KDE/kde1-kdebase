@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcontrol\n"
 "POT-Creation-Date: 1999-01-16 01:17+0100\n"
-"PO-Revision-Date:1999-01-12 10:13+0100\n"
+"PO-Revision-Date:1999-01-26 10:13+0100\n"
 "Last-Translator: Erik Kjær Pedersen\n"
 "Language-Team: da<LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,11 +49,11 @@ msgstr "System:"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr "Bruger:"
+msgstr "Bruger: "
 
 #: mainwidget.cpp:54
 msgid "Hostname: "
-msgstr "Hostnavn:"
+msgstr "Hostnavn: "
 
 #: mainwidget.cpp:62
 msgid "System: "

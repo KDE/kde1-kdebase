@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-12 12:35+0100\n"
+"PO-Revision-Date: 1999-01-26 12:35+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Gå!"
 
 #: kpanel.C:341 tools.C:901
 msgid "Where do you want to go tomorrow?"
-msgstr "Hvor vil du gerne hen imorgen"
+msgstr "Hvor vil du gerne hen imorgen?"
 
 #: kpanel.C:416
 msgid "No info available"
@@ -103,7 +103,7 @@ msgstr "Rediger menuer"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr "Tilføj eller fjern anvendelser fra menustrukturen"
+msgstr "Tilføj eller fjern anvendelser fra menustrukturen "
 
 #: events.C:834 props.C:189
 msgid "Restart"
@@ -127,7 +127,7 @@ msgstr "Lås skærm"
 
 #: props.C:451
 msgid "The menu editor is not installed."
-msgstr "Menu editoren er ikke installéret"
+msgstr "Menu editoren er ikke installéret."
 
 #: events.C:888 props.C:452
 msgid "Oops!"
@@ -155,11 +155,11 @@ msgstr "(tom folder)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr "Åben folder"
+msgstr "Åbn folder"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Åbn denne folder (+Shift: start en terminal her)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
@@ -183,7 +183,7 @@ msgstr "Indgange deles blandt brugere"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr "Personlige"
+msgstr "Personlige:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"

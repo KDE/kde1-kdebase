@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-01-28 17:10+CET-1\n"
+"PO-Revision-Date: 1999-01-26 17:10+CET-1\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "Enhed"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr "Monteringssted"
+msgstr "Monteringspunkt"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
@@ -169,7 +169,7 @@ msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr "P&artitioner"
+msgstr "I&nddelinger"
 
 #: main.cpp:109
 msgid "&X-Server"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1999-01-12 17:28+0200\n"
+"PO-Revision-Date: 1999-01-26 17:28+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: Det ser ud til at der allerede kører en window manager. KWM blev ikke "
+"kwm: Det ser ud til at der allerede kører en winduesmanager. KWM blev ikke "
 "startet.\n"
 
 #: main.C:82
@@ -139,31 +139,31 @@ msgstr "Log ud"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Du kan nu logge ud"
+msgstr "Du kan logge ud nu"
 
 #: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"De følgende applikationer indeholder ikke gemte data\n"
-"som ikke findes i den næste session."
+"De følgende applikationer indeholder ugemte data\n"
+"som vil gå tabt i næste session."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"De følgende applikationer kan ikke blive gendannet under næste session,\n"
-"kun genstartet. Vær sikker på at de ikke indeholder vigtige ugemte data."
+"De følgende applikationer kan ikke gendannes under næste session,\n"
+"kun genstartes. Vær sikker på at de ikke indeholder vigtige ugemte data."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"De følgende applikationer er ikke X11-klar og kan derfor ikke blive "
-"gendannet\n"
+"De følgende applikationer er ikke X11-klar og kan derfor ikke"
+"gendannes\n"
 "i din næste session.  Vær sikker på at de ikke indeholder vigtige ugemte "
 "data."
 

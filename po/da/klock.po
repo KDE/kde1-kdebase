@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 99-o1-12 18:21+0100\n"
+"PO-Revision-Date: 99-01-26 18:21+0100\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "KAttraction indstilling"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
-msgstr "Nummer"
+msgstr "Nummer:"
 
 #: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
 msgid "Mode:"
@@ -80,11 +80,11 @@ msgstr "Banner indstilling"
 
 #: banner.cpp:95
 msgid "Family:"
-msgstr "Familie"
+msgstr "Familie:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr "Størrelse"
+msgstr "Størrelse:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -135,7 +135,7 @@ msgstr "KBat indstilling"
 
 #: bat.cpp:564
 msgid "Number of bats:"
-msgstr "Antal flagermus"
+msgstr "Antal flagermus:"
 
 #: bat.cpp:661
 msgid "About Bat"
@@ -229,15 +229,15 @@ msgstr "Indstill KBouboule"
 
 #: bouboule.cpp:1032
 msgid "Number of points:"
-msgstr "Antal punkter"
+msgstr "Antal punkter:"
 
 #: bouboule.cpp:1046
 msgid "Point size:"
-msgstr "Punkt størrelse"
+msgstr "Punkt størrelse:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr "Farveskiftfrekvens"
+msgstr "Farveskiftfrekvens:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
@@ -280,7 +280,7 @@ msgstr "Max niveau:"
 
 #: flame.cpp:438
 msgid "Num Points:"
-msgstr "Antal Punkter"
+msgstr "Antal Punkter:"
 
 #: flame.cpp:551
 msgid "About Flame"
@@ -310,7 +310,7 @@ msgstr "Skov Indstillinger"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
-msgstr "Antal træer"
+msgstr "Antal træer:"
 
 #: forest.cpp:399
 msgid "About Forest"
@@ -340,11 +340,11 @@ msgstr "KHop indstillinger"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
-msgstr "Pixler af samme farve"
+msgstr "Pixler af samme farve:"
 
 #: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
-msgstr "Omgange"
+msgstr "Omgange:"
 
 #: hop.cpp:464
 msgid "About Hop"
@@ -462,7 +462,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Indstillingen %s er ikke støttet på denne platform!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -470,7 +469,7 @@ msgid ""
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
 msgstr ""
-"Advarsel: Du vil ikke være i stabd til at låse skærmen!\n"
+"Advarsel: Du vil ikke være i stand til at låse skærmen!\n"
 "\n"
 "Kontakt din systemadministrator, og sig til ham at du har\n"
 "brug for suid for kcheckpass!"
@@ -487,7 +486,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Vær venlig ikke at brugr -test ammen med -lock.\n"
+"Vær venlig ikke at brugr -test sammen med -lock.\n"
 "brug klock i stedet for.\n"
 "\n"
 
@@ -552,7 +551,7 @@ msgstr "KMorph3D Indstilling"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr "Objekt type"
+msgstr "Objekt type:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
@@ -582,7 +581,7 @@ msgstr "KPipes indstilling"
 
 #: pipes.cpp:678
 msgid "Number of Pipes"
-msgstr "Antal piber:"
+msgstr "Antal piber"
 
 #: pipes.cpp:743
 msgid "About KPipes"
@@ -604,7 +603,7 @@ msgstr "Polygon indstilling"
 
 #: polygon.cpp:107
 msgid "Vertices:"
-msgstr "Sider"
+msgstr "Sider:"
 
 #: polygon.cpp:238
 msgid "About Polygon"
@@ -654,7 +653,7 @@ msgstr ""
 
 #: rock.cpp:441
 msgid "Rock"
-msgstr "Rock"
+msgstr "Klippe"
 
 #: rock.cpp:549
 msgid "Setup krock"
@@ -688,7 +687,7 @@ msgstr ""
 
 #: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
-msgstr "Skrive kodeord"
+msgstr "Indtast kodeord"
 
 #: saver.cpp:121
 msgid "Failed"
@@ -728,7 +727,7 @@ msgstr "Der giver linsen ..."
 
 #: science.cpp:813
 msgid "grabbing screen..."
-msgstr "snupper skærmen"
+msgstr "snupper skærmen..."
 
 #: science.cpp:975
 msgid "Setup Science"
@@ -752,7 +751,7 @@ msgstr "Intensitet:"
 
 #: science.cpp:1083
 msgid "Motion:"
-msgstr "Bevægelse"
+msgstr "Bevægelse:"
 
 #: science.cpp:1304
 msgid "Science Version"
@@ -804,7 +803,7 @@ msgstr "KSlip indstilling"
 
 #: slip.cpp:392
 msgid "Batchcount:"
-msgstr "Antal gange"
+msgstr "Antal gange:"
 
 #: slip.cpp:488
 msgid "About Slip"
@@ -834,7 +833,7 @@ msgstr "KSpace indstilling"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Forvrængnings interval"
+msgstr "Forvrængnings interval:"
 
 #: space.cpp:685
 msgid "About KSpace"
