@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-06-20 13:35 CEST\n"
+"PO-Revision-Date: 1998-10-24 17:49 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +23,11 @@ msgstr "Pra&covní plochy"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Diskový navi&gátor"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "Pou¾ití: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "Pou¾ití: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -52,7 +51,7 @@ msgstr "&Dole"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "V&pravo"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -76,7 +75,7 @@ msgstr "Nahoøe/Vle&vo"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -144,8 +143,8 @@ msgstr "&12h AM/PM"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Upravit &globální"
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Upravit &lokální"

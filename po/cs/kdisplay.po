@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-06-20 14:04 CEST\n"
+"PO-Revision-Date: 1998-10-24 17:12 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -297,7 +297,7 @@ msgstr "Vy¾a&dovat heslo"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Akceptovat heslo superu¾iv. k odemknutí"
 
 #: scrnsave.cpp:278
 msgid "Show &password as stars"
@@ -353,6 +353,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"PØILI© ®LU«OUÈKÝ KÙÒ\n"
+"pøili¹ ¾lu»ouèký kùò\n"
+"0123456789! \\\"£$%^&*()"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -392,7 +395,7 @@ msgstr "Vybraný text"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"

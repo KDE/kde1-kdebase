@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-10-12 11:35+0000\n"
-"PO-Revision-Date: 1998-09-08 09:30+02:00\n"
+"PO-Revision-Date: 1998-10-24 16:54 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "Chyba: ©ablona nexistuje '%s'"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Nový "
+msgstr "&Nový "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -56,9 +55,8 @@ msgid "&Select"
 msgstr "Vy&ber"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "Vy&ber"
+msgstr "Vy&brat v¹e"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -221,12 +219,11 @@ msgstr "Nahoru"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Vpøed"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "Domovský adresáø"
+msgstr "Domù"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -252,7 +249,7 @@ msgstr "Není mo¾né nahrát ikonu\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "Chyba KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -302,9 +299,8 @@ msgid "Document: Done"
 msgstr "Dokument: Hotov"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "CHYBA: Upustil jste URL nad sebou samým"
+msgstr "CHYBA: Je mo¾né upustit pouze URL"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -518,7 +514,7 @@ msgstr "Otevøi pomocí"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Pøesunout"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -534,15 +530,15 @@ msgstr "Pøidej k zálo¾kám"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Malý"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Støední"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Velký"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -585,18 +581,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Transparentní text pro ikony na plo¹e."
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Listuj"
+msgstr "&Prohlí¾eè"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Nemohu zapsat zálo¾ky"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Plné jméno"
+msgstr "Jméno"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -685,7 +679,7 @@ msgstr "U¾ivatel"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Skupina"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -708,9 +702,8 @@ msgid "Ownership"
 msgstr "Vlastnictví"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Vlastnictví"
+msgstr "Vlastník"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1338,7 +1331,7 @@ msgstr "Pøedpokládat HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Tato skupina je prázdná!"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1405,12 +1398,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Ukonèit"
-
-#~ msgid "&About..."
-#~ msgstr "&Informace"
-
-#~ msgid "About KFM"
-#~ msgstr "Informace o KFM"

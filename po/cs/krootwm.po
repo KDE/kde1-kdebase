@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-03-28 22:20 MET\n"
+"PO-Revision-Date: 1998-10-24 16:16 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,11 @@ msgstr "Chyba: ©ablona neexistuje '%s'"
 
 #: krootwm.C:180 krootwm.C:577 krootwm.C:585
 msgid "New"
-msgstr ""
+msgstr "Nový"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Zálo¾ky"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -68,7 +68,7 @@ msgstr "Odhlá¹ení"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Upravit zálo¾ky"
 
 #: krootwm.C:607
 msgid "Could not create folder"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-06-19 08:45 MET DST\n"
+"PO-Revision-Date: 1998-10-24 17:54 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,43 +19,43 @@ msgstr "&Pamì»"
 
 #: main.cpp:82
 msgid "&Processor"
-msgstr "&Procesor"
+msgstr "P&rocesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "Pø&eru¹ení"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-&kanály"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO-porty"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-S&bìrnice"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "Zv&uk"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Zaøízení"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "&Disky"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-Server"
 
 #: main.cpp:120
 msgid ""
@@ -63,6 +63,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"Pou¾ití: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -101,13 +104,3 @@ msgstr "%10ld bytù  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Není pøístupná"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "Pu¾ití: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Tento systém není je¹tì podporován :-("
-
-#, fuzzy
-#~ msgid "Not Available"
-#~ msgstr "Není pøístupná"

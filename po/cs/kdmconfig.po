@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-01-20 10:25 MET\n"
+"PO-Revision-Date: 1998-10-24 17:05 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,17 +33,19 @@ msgstr "&Sezení"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"Pou¾ití: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
 msgstr "Konfigurace KDM"
 
 #: main.cpp:155
-#, fuzzy
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Je mi líto, ale nemáte pøístupová\n"
+msgstr ""
+"Lituji, ale nemáte pøístupová práva\n"
+"ke ètení/zápisu konfigurace KDM."
 
 #: main.cpp:157
 msgid "Missing privileges"
@@ -75,11 +77,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Jazyk:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -141,14 +143,12 @@ msgid "Select fonts"
 msgstr "Vybìr fontù"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Ukázka:"
+msgstr "Ukázka"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Zmìò font"
+msgstr "Zmìnit font..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -164,24 +164,23 @@ msgstr "Standardní"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Barva"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Barva"
+msgstr "Jednobarevné"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Mísit horizontálnì"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Mísit vertikálnì"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -189,42 +188,39 @@ msgstr "Tapeta"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "Nikomu"
+msgstr "®ádná"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Vydlá¾dit"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrovanì"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Zvìt¹enì"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Vlevo nahoøe"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Vpravo nahoøe"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Vlevo dole"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Vpravo dole"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Zdobnì"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -271,7 +267,6 @@ msgid "Save image as default image?"
 msgstr "Ulo¾ obrázek jako implicitní?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
 msgstr "Povolení k shutdownu:"
 
@@ -313,31 +308,4 @@ msgstr "Dostupné typy"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
-
-#~ msgid "Appearance"
-#~ msgstr "Vzhled"
-
-#~ msgid "Browse..."
-#~ msgstr "Listuj..."
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
-
-#~ msgid "Add"
-#~ msgstr "Pøidat"
-
-#~ msgid "permission to the KDM setup file."
-#~ msgstr "ke ètení/zápidu ko konfiguraèního souboru"
-
-#~ msgid "Apply"
-#~ msgstr "Pou¾ít"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"
-
-#~ msgid "Help"
-#~ msgstr "Nápovìda"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fonty"
+msgstr "beze jména!"

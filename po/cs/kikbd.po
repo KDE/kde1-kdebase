@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
-"PO-Revision-Date: 1998-06-21 00:14 CEST\n"
+"PO-Revision-Date: 1998-10-24 16:44 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
@@ -49,108 +49,116 @@ msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: není mo¾né alokovat pamì»"
 
 #: keymap.cpp:218
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: can not find symbol \"%s\".\n"
 "Do you want to continue?"
-msgstr "KeyMap: není mo¾né nalézt symbol %s"
+msgstr ""
+"KeyMap: není mo¾né nalézt symbol \"%s\".\n"
+"Pøejete si pokraèovat?"
 
 #: keymap.cpp:229
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: do not undestand keycode \"%s\".\n"
 "Do you want to continue?"
-msgstr "KeyMap: nerozumím kódu klávesy %s"
+msgstr ""
+"KeyMap: nerozumím kódu klávesy \"%s\".\n"
+"Pøejete si pokraèovat?"
 
 #: keymap.cpp:235
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "KeyMap: keycode \"%s\" go out of range.\n"
 "Do you want to continue?"
-msgstr "KeyMap: kód klávesy %s je mimo rozsah"
+msgstr ""
+"KeyMap: kód klávesy \"%s\" je mimo rozsah.\n"
+"Pøejete si pokraèovat?"
 
 #: kikbdconf.cpp:92
 msgid "Global"
-msgstr ""
+msgstr "Globální"
 
 #: kikbdconf.cpp:92
 msgid "Window"
-msgstr ""
+msgstr "Okno"
 
 #: kikbdconf.cpp:92
 msgid "Class"
-msgstr ""
+msgstr "Tøída"
 
 #: kikbdconf.cpp:95 kikbdconf.cpp:107
 msgid "(None)"
-msgstr ""
+msgstr "(®ádné)"
 
 #: kikbdconf.cpp:96 kikbdconf.cpp:108
 msgid "Right Alt"
-msgstr ""
+msgstr "Pravý Alt"
 
 #: kikbdconf.cpp:97 kikbdconf.cpp:109
 msgid "Right Control"
-msgstr ""
+msgstr "Pravý Control"
 
 #: kikbdconf.cpp:98
 msgid "Rights (Alt+Shift)"
-msgstr ""
+msgstr "Pravé (Alt+Shift)"
 
 #: kikbdconf.cpp:99
 msgid "Rights (Ctrl+Alt)"
-msgstr ""
+msgstr "Pravé (Crtl+Alt)"
 
 #: kikbdconf.cpp:100
 msgid "Rights (Ctrl+Shift)"
-msgstr ""
+msgstr "Pravé (Crtl+Shift)"
 
 #: kikbdconf.cpp:101
 msgid "Lefts  (Alt+Shift)"
-msgstr ""
+msgstr "Levé (Alt+Shift)"
 
 #: kikbdconf.cpp:102
 msgid "Lefts  (Ctrl+Alt)"
-msgstr ""
+msgstr "Levé (Crtl+Alt)"
 
 #: kikbdconf.cpp:103
 msgid "Lefts  (Ctrl+Shift)"
-msgstr ""
+msgstr "Levé (Crtl+Shift)"
 
 #: kikbdconf.cpp:104
 msgid "Both Shift's (Shift+Shift)"
-msgstr ""
+msgstr "Oba pøepínaèe (Shift+Shift)"
 
 #: kikbdconf.cpp:110
 msgid "Left  Alt"
-msgstr ""
+msgstr "Levý Alt"
 
 #: kikbdconf.cpp:111
 msgid "Left  Control"
-msgstr ""
+msgstr "Levý Control"
 
 #: kikbdconf.cpp:114
 msgid "Top Left"
-msgstr ""
+msgstr "Vleho nahoøe"
 
 #: kikbdconf.cpp:115
 msgid "Top Right"
-msgstr ""
+msgstr "Vpravo nahoøe"
 
 #: kikbdconf.cpp:116
 msgid "Bottom Left"
-msgstr ""
+msgstr "Vlevo dole"
 
 #: kikbdconf.cpp:117
 msgid "Bottom Right"
-msgstr ""
+msgstr "Vpravo dole"
 
 #: kikbdconf.cpp:173
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
-msgstr "Chcete spustit konfiguraci?"
+msgstr ""
+"%s\n"
+"Chcete spustit konfiguraci?"
 
 #: kikbdconf.cpp:182
 msgid "Your configuration is empty. Install system default."
@@ -161,98 +169,96 @@ msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Konfiguraèní soubor má sta¹í formát ne¾ je oèekáváno.\n"
+"Nìkterá nastavení nejsou správná."
 
 #: kikbdconf.cpp:196
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
+"Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
+"Nìkterá nastavení nejsou správná."
 
 #: kikbdconf.cpp:298
 msgid "unknown"
-msgstr ""
+msgstr "neznámý"
 
 #: kikbdconf.cpp:302
 msgid "default"
-msgstr ""
+msgstr "implicitní"
 
 #: kikbdconf.cpp:328
 msgid "Author:  Not specified"
-msgstr ""
+msgstr "Autor: neuveden"
 
 #: kikbdconf.cpp:330
-#, fuzzy
 msgid "Author"
-msgstr "Autostart"
+msgstr "Autor"
 
 #: kikbdconf.cpp:336
-#, fuzzy
 msgid "Description:  "
-msgstr "Popis"
+msgstr "Popis:  "
 
 #: kikbdconf.cpp:339
 msgid "Source:  "
-msgstr ""
+msgstr "Zdroj:  "
 
 #: kikbdconf.cpp:340
 msgid "no file"
-msgstr ""
+msgstr "¾ádný soubor"
 
 #: kikbdconf.cpp:341
 msgid "user file"
-msgstr ""
+msgstr "u¾ivatelský soubor"
 
 #: kikbdconf.cpp:342
 msgid "system file"
-msgstr ""
+msgstr "systémový soubor"
 
 #: kikbdconf.cpp:347
 msgid "Statistic:  "
-msgstr ""
+msgstr "Statistika:  "
 
 #: kikbdconf.cpp:350
 msgid "symbols"
-msgstr ""
+msgstr "symboly"
 
 #: kikbdconf.cpp:353
 msgid "codes"
-msgstr ""
+msgstr "kódy"
 
 #: kikbdconf.cpp:356
 msgid "alternative symbols"
-msgstr ""
+msgstr "alternativní symboly"
 
 #: kikbdconf.cpp:363
 msgid "language"
-msgstr ""
+msgstr "jazyk"
 
 #: kikbdconf.cpp:364
 msgid "charset"
-msgstr ""
+msgstr "znaková sada"
 
 #: kikbdconf.cpp:402
-#, fuzzy
 msgid "International keyboard ERROR"
-msgstr "Mezinárodní klávesnice"
+msgstr "Chyba mezinárodní klávesnice"
 
 #: kikbdconf.cpp:414
-#, fuzzy
 msgid "International keyboard warning"
-msgstr "Mezinárodní klávesnice"
+msgstr "Warování mezinárodní klávesnice"
 
 #: kikbdconf.cpp:421
-#, fuzzy
 msgid "International keyboard question"
-msgstr "Mezinárodní klávesnice"
+msgstr "Dotaz mezinárodní klávesnice"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
 msgstr "Seznam aktivních kláv. máp"
 
 #: widgets.cpp:117
-#, fuzzy
 msgid "&Add"
-msgstr "Pøidat"
+msgstr "Pøid&at"
 
 #: widgets.cpp:118
 msgid "Adding new keyboard map"
@@ -263,18 +269,16 @@ msgid "Remove selected keyboard map"
 msgstr "Odstranit zvolenou mapu"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "U&p"
-msgstr "Nahoru"
+msgstr "Na&horu"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
 msgstr "Vybranou Kláv. mapu nahoru"
 
 #: widgets.cpp:131
-#, fuzzy
 msgid "D&own"
-msgstr "Dolù"
+msgstr "D&olù"
 
 #: widgets.cpp:131
 msgid "Down selected keyboard map"
@@ -282,17 +286,15 @@ msgstr "Vybranou Kláv. mapu dolù"
 
 #: widgets.cpp:135
 msgid "&Info"
-msgstr ""
+msgstr "&Info"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Display information for selected keyboard map"
-msgstr "Vybranou Kláv. mapu dolù"
+msgstr "Zobrazit informace o vybrané klávesové mapì"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use \"&hotlist\""
-msgstr "Pou¾ít \"hotlist\""
+msgstr "Pou¾ít \"&hotlist\""
 
 #: widgets.cpp:146
 msgid ""
@@ -311,7 +313,7 @@ msgstr "Ji¾ zde není víc klávesových map"
 
 #: widgets.cpp:248
 msgid "Keyboard map information"
-msgstr ""
+msgstr "Informace o klávesové mapì"
 
 #: widgets.cpp:282
 msgid "Add Keyboard"
@@ -322,13 +324,12 @@ msgid "Available keyboard maps"
 msgstr "Dostupné klávesové mapy"
 
 #: widgets.cpp:378
-#, fuzzy
 msgid "Keyboard maps"
-msgstr "Klávesnice"
+msgstr "Klávesové mapy"
 
 #: widgets.cpp:389
 msgid "Switch and Alt Switch"
-msgstr "Pøenutí a pøepnutí s Altem"
+msgstr "Pøepnutí a pøepnutí s Altem"
 
 #: widgets.cpp:394
 msgid "Key(s) to switch beetwing keyboard maps"
@@ -339,18 +340,16 @@ msgid "Key to activate Alternate symbols in current keyboard map"
 msgstr "Klávesa pro aktivaci altern. symbolù v aktuální kláv. mapì"
 
 #: widgets.cpp:413
-#, fuzzy
 msgid "&Beep"
-msgstr "Zvuk"
+msgstr "&Pípnutí"
 
 #: widgets.cpp:414
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Pípnout pøi ka¾dé zmìnì klávesové mapy"
 
 #: widgets.cpp:417
-#, fuzzy
 msgid "Ad&vanced"
-msgstr "Pokroèilé"
+msgstr "Pok&roèilé"
 
 #: widgets.cpp:417
 msgid "Advanced options"
@@ -361,28 +360,24 @@ msgid "Advanced"
 msgstr "Pokroèilé"
 
 #: widgets.cpp:450
-#, fuzzy
 msgid "&Emulate CapsLock"
-msgstr "Emulovat CapsLock"
+msgstr "&Emulovat CapsLock"
 
 #: widgets.cpp:451
-#, fuzzy
 msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
 msgstr "Emulovat Capslock XServeru. Potøebné pro nìkteré jazyky"
 
 #: widgets.cpp:457
-#, fuzzy
 msgid "&World Menu"
-msgstr "Svìtové menu"
+msgstr "&Svìtové menu"
 
 #: widgets.cpp:458
 msgid "Show menu in any window by holding Switch keys"
 msgstr "Ukazovat menu v ka¾dém oknì pøi stiskuté pøepínací klávese"
 
 #: widgets.cpp:465
-#, fuzzy
 msgid "&Save Classes"
-msgstr "Ulo¾it tøídy"
+msgstr "&Ulo¾it tøídy"
 
 #: widgets.cpp:466
 msgid "Save relations between window classes and keyboard maps on exit"
@@ -437,23 +432,20 @@ msgid "Button Font"
 msgstr "Písmo tlaèítka"
 
 #: widgets.cpp:570
-#, fuzzy
 msgid "&Customize Font"
-msgstr "Nastavit písmo"
+msgstr "&Nastavit písmo"
 
 #: widgets.cpp:571
 msgid "Customize Font for text label or use global settings"
 msgstr "Nastavte písmo pro textový popisek nebo pou¾ijte globální nastavení"
 
 #: widgets.cpp:575
-#, fuzzy
 msgid "C&hange Font"
-msgstr "Zmeòit písmo"
+msgstr "&Zmeòit písmo"
 
 #: widgets.cpp:620
-#, fuzzy
 msgid "&Autostart"
-msgstr "Autostart"
+msgstr "&Autostart"
 
 #: widgets.cpp:621
 msgid "Start up automaticaly"
@@ -461,7 +453,7 @@ msgstr "Spou¹tìt automaticky"
 
 #: widgets.cpp:627
 msgid "&Docked"
-msgstr ""
+msgstr "&Dokované"
 
 #: widgets.cpp:628
 msgid "Dock into special area in kpanel"
@@ -490,42 +482,3 @@ msgstr "Sp&u¹tení"
 #: kcmikbd.cpp:121
 msgid "International Keyboard"
 msgstr "Mezinárodní klávesnice"
-
-#~ msgid "Exit"
-#~ msgstr "Ukonèit"
-
-#~ msgid "kikbd error"
-#~ msgstr "kikbd - chyba"
-
-#~ msgid "kikbd warning"
-#~ msgstr "kikbd - varování"
-
-#~ msgid "kikbd configuration error"
-#~ msgstr "kikbd - chyba v nastavení"
-
-#~ msgid "kikbd configuration message"
-#~ msgstr "kikbd konfiguraèní zpráva"
-
-#~ msgid "Label"
-#~ msgstr "Oznaèení"
-
-#~ msgid "yes"
-#~ msgstr "ano"
-
-#~ msgid "true"
-#~ msgstr "pravda"
-
-#~ msgid "Locale"
-#~ msgstr "Locale"
-
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgid "Options"
-#~ msgstr "Nastavení"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Cancel"
-#~ msgstr "Zru¹it"

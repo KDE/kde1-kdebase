@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-06-18 09:25 MET DST\n"
+"PO-Revision-Date: 1998-10-24 16:26 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,12 @@ msgid "Setup kbanner"
 msgstr "Nastavení kbanneru"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Neúspìsné"
+msgstr "Rodina:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -36,7 +35,7 @@ msgstr "Barva:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Tuèný"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -405,7 +404,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Parametr %s není podporován na této platformì!"
 
 #: main.cpp:378
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -413,9 +411,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Varování: Není mo¾né zablokovat obrazovku!\n"
+"\n"
 "Vá¹ systém pou¾ívá stínová hesla!\n"
 "Prosím kontaktujte svého systémového správce.\n"
-"\n"
 "Øeknìte mu, ¾e potøebujete SUID pro ¹etøièe obrazovky!"
 
 #: main.cpp:383
@@ -429,18 +428,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"prosím nepou¾ívejte -test spoleènì s -lock.\n"
+"pou¾ijte místo toho klock.\n"
+"\n"
 
 #: main.cpp:536
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Pou¾ití: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"         [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:539
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -471,6 +473,7 @@ msgstr ""
 "  -desc             Vypi¹ popis ¹etøièe obrazovky na stdout\n"
 "  -install          Nainstaluj ¹etøiè obrazovky\n"
 "  -lock             Vy¾aduj heslo na ukonèení ¹etøièe obrazovky\n"
+"  -allow-root       akceptovat heslo superu¾ivatele k odemknutí\n"
 "  -nice num         Proveï se specifikovanou hodnotou nice\n"
 "\n"
 "  -preview wid      Proveï ve specifikovaném X oknì\n"
@@ -513,24 +516,20 @@ msgstr ""
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Vesmír (GL)"
+msgstr "Roury (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Nastavení KSlipu"
+msgstr "Nastavení KPipes"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Poèet vèelek:"
+msgstr "Poèet rour"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Informace o liniích"
+msgstr "Informace o KPipes"
 
 #: pipes.cpp:745
 msgid ""
@@ -538,6 +537,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -610,9 +612,8 @@ msgid "Setup krock"
 msgstr "Nastavení Skály"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Mód::"
+msgstr "Pøesouvat"
 
 #: rock.cpp:595
 msgid "Rotate"

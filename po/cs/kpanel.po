@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-10-13 13:29+0200\n"
-"PO-Revision-Date: 1998-06-18 09:26 MET DST\n"
+"PO-Revision-Date: 1998-10-24 16:18 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpanel.C:232
 msgid "Move"
-msgstr ""
+msgstr "Pøesunout"
 
 #: kpanel.C:272
 msgid "Go!"
@@ -95,7 +95,7 @@ msgstr "Spustit panel znova"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Diskový navigátor"
 
 #: props.C:168
 msgid "Panel"
@@ -119,20 +119,20 @@ msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
 #: pfilemenu.C:351
 msgid "(empty folder)"
-msgstr ""
+msgstr "(prázdný adresáø)"
 
 #: pfilemenu.C:408
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(pøíli¹ mnoho souborù)"
 
 #: pfilemenu.C:417
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(pøístup zamezen)"
 
 #: pfilemenu.C:420
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(neèitelné)"
 
 #: pfilemenu.C:427
 msgid "Open Folder"
-msgstr ""
+msgstr "Otevøít adresáø"

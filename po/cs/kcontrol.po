@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol 1.0\n"
 "POT-Creation-Date: 1998-09-10 14:40+0200\n"
-"PO-Revision-Date: 1998-03-28 22:16 MET\n"
+"PO-Revision-Date: 1998-10-24 17:33 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,28 +45,28 @@ msgstr ""
 
 #: mainwidget.cpp:44
 msgid "System:"
-msgstr ""
+msgstr "Systém:"
 
 #: mainwidget.cpp:47
 msgid "User: "
-msgstr ""
+msgstr "U¾ivatel:"
 
 #: mainwidget.cpp:53
 msgid "Hostname: "
-msgstr ""
+msgstr "Jméno poèítaèe:"
 
 #: mainwidget.cpp:61
 msgid "System: "
-msgstr ""
+msgstr "Systém:"
 
 #: mainwidget.cpp:68
 msgid "Release: "
-msgstr ""
+msgstr "Release:"
 
 #: mainwidget.cpp:76
 msgid "Version: "
-msgstr ""
+msgstr "Verze:"
 
 #: mainwidget.cpp:83
 msgid "Machine: "
-msgstr ""
+msgstr "Stroj:"

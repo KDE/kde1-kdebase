@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmsamba\n"
 "POT-Creation-Date: 1998-09-10 15:01+0200\n"
-"PO-Revision-Date: 1998-01-20 10:16 MET\n"
+"PO-Revision-Date: 1998-10-24 17:36 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.cpp:48
 msgid "&Status"
-msgstr ""
+msgstr "&Stav"
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -27,32 +27,32 @@ msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr ""
+msgstr "Chyba pøi spou¹»ení programu smbstatus"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr ""
+msgstr "Chyba! smbstatus nebyl nalezen nebo nepracuje!"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr ""
+msgstr "Slu¾ba"
 
 #: ksmbstatus.cpp:160
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ksmbstatus.cpp:161
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Stroj"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Otevøené soubory"
