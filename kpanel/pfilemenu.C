@@ -466,7 +466,16 @@ int PFileMenu::parseDir(QDir d, bool addOpenFolderEntry)
   if (the_panel->ignore_case)
     d.setSorting(QDir::IgnoreCase | d.sorting());
 
+  if (addOpenFolderEntry) {
+    this->add( new PMenuItem(prog_com, klocale->translate("Open Folder"),
+                           0, "folder_open.xpm", 0,
+                           this, SLOT(openFolder()), 0, false, 0,
+                           klocale->translate(OPEN_FOLDER_TIP)) );
+    this->add( new PMenuItem(separator) );
+  }
+
   const QFileInfoList *list;
+
   if (d.count() > the_panel->max_navigable_folder_entries) {
     list= 0;
     this->add( new PMenuItem(label, klocale->translate("(Too Many Files)"),
@@ -485,14 +494,6 @@ int PFileMenu::parseDir(QDir d, bool addOpenFolderEntry)
                                0, UNREADABLE_FOLDER_ICON));
 
     return -1;           // <<---------------
-  }
-
-  if (addOpenFolderEntry) {
-    this->add( new PMenuItem(prog_com, klocale->translate("Open Folder"),
-                           0, "folder_open.xpm", 0,
-                           this, SLOT(openFolder()), 0, false, 0,
-                           klocale->translate(OPEN_FOLDER_TIP)) );
-    this->add( new PMenuItem(separator) );
   }
 
   QFileInfoListIterator it( *list );
