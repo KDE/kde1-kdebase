@@ -477,7 +477,7 @@ msgstr ""
 
 #: kbind.cpp:1528 kbind.cpp:1545
 msgid "Can only start executables on local disks\n"
-msgstr "Kan bara starta exekverbara filer på lokala diskar"
+msgstr "Kan bara starta exekverbara filer på lokala diskar\n"
 
 #: kbind.cpp:1606 kbind.cpp:1680 kbind.cpp:1830
 msgid ""
