@@ -31,9 +31,15 @@ class mainWidget : public QWidget
   QPixmap pmap;  
   struct utsname info;  
   
-  protected:   
+protected:   
+
   virtual void paintEvent(QPaintEvent *);	  
-  
+  virtual void resizeEvent(QResizeEvent *);
+    
+signals:
+    
+  void resized();
+    
 };
 
 

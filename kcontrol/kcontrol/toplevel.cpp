@@ -29,6 +29,14 @@
 #include "toplevel.moc"
 
 
+void MySplitter::resizeEvent(QResizeEvent *event)
+{
+  QSplitter::resizeEvent(event);
+
+  emit resized();
+}
+
+
 TopLevel::TopLevel (ConfigList *cl)
   : KTopLevelWidget(), ID_GENERAL(1)
 {
@@ -38,24 +46,25 @@ TopLevel::TopLevel (ConfigList *cl)
   setupMenuBar();
   setupStatusBar();
 
-  panner = new KPanner(this, "panner", KPanner::U_ABSOLUTE | KPanner::O_VERTICAL, 200);
-  panner->resize(400,100);
-  panner->setAbsSeparator(200);
+  splitter = new MySplitter(this);
+  connect(splitter, SIGNAL(resized()), this, SLOT(doResize()));
 
-  treelist = new KTreeList(panner->child0());
+  treelist = new KTreeList(splitter);
   configList->fillTreeList(treelist);
+  treelist->setMinimumWidth(200);
+  splitter->setResizeMode(treelist,QSplitter::KeepSize);
 
-  mwidget = new mainWidget(panner->child1());
+  mwidget = new mainWidget(splitter);
+  connect(mwidget, SIGNAL(resized()), this, SLOT(doResize()));
 
   connect(treelist, SIGNAL(selected(int)), this, SLOT(item_selected(int)));
   connect(treelist, SIGNAL(singleSelected(int)), this, SLOT(item_singleSelected(int)));
-  connect(panner, SIGNAL(positionChanged()), this, SLOT(pannerChanged()));
 
-  setView(panner);
-
+  setView(splitter);
   setMinimumSize(450,200);
 
   resize(700,600);
+
   show();
   resizeEvent(NULL);
 
@@ -104,29 +113,18 @@ void TopLevel::setupStatusBar()
 }
 
 
-void TopLevel::pannerChanged()
-{
-  treelist->resize(panner->child0()->width(), panner->child0()->height());
-
-  if (mwidget)
-    mwidget->resize(width()-panner->getAbsSeparator(), height());
-
-  if (KModuleListEntry::visibleWidget)
-    KModuleListEntry::visibleWidget->resize(panner->child1()->width(), panner->child1()->height());
-}
-
-
 void TopLevel::resizeEvent(QResizeEvent *)
 {
   updateRects();
 
-  treelist->resize(panner->child0()->width(), panner->child0()->height());
+  doResize();
+}
 
-  if (mwidget)
-    mwidget->resize(width()-panner->getAbsSeparator(), height());
 
+void TopLevel::doResize()
+{
   if (KModuleListEntry::visibleWidget)
-    KModuleListEntry::visibleWidget->resize(panner->child1()->width(), panner->child1()->height());
+    KModuleListEntry::visibleWidget->resize(mwidget->width(), mwidget->height());
 }
 
 
@@ -138,7 +136,7 @@ void TopLevel::item_selected(int item)
     if (listEntry->isDirectory())
       treelist->expandOrCollapseItem(item);
     else
-      listEntry->execute(panner->child1());
+      listEntry->execute(mwidget);
 }
 
 
@@ -153,7 +151,7 @@ void TopLevel::item_singleSelected(int item)
   statusbar->changeItem(hint.data(), ID_GENERAL);
 
   if (listEntry && !listEntry->isDirectory())
-    listEntry->execute(panner->child1());
+    listEntry->execute(mwidget);
 }
 
 
@@ -183,3 +181,23 @@ void TopLevel::swallowChanged()
   config->sync();
 }
 
+
+void TopLevel::ensureSize(int w, int h)
+{
+  int width=w, height=h;
+
+  if (w < mwidget->width())
+    width = mwidget->width();
+  if (h < mwidget->height())
+    height = mwidget->height();
+
+  width += treelist->width() + 6; // 6 ~= width of QSplitter slider
+  height += menubar->height()+statusbar->height();
+
+  if (width < this->width())
+    width = this->width();
+  if (height < this->height())
+    height = this->height();
+
+  resize(width, height);
+}

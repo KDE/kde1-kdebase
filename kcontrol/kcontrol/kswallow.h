@@ -39,14 +39,18 @@ public:
 
   void swallowWindow(Window w);
 
+  QSize getOrigSize() { return orig; };
+  
 protected: 
+
   void focusInEvent( QFocusEvent * );
   void resizeEvent(QResizeEvent *);
 
 private:
 
   Window  window;
-
+  QSize orig;
+  
 };
 
 #endif

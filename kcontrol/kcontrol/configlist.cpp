@@ -234,7 +234,16 @@ bool KModuleListEntry::execute(QWidget *parent)
 	if (visibleWidget && visibleWidget != swallowWidget) 
 	  visibleWidget->hide();
 
-	swallowWidget->resize(swallowParent->width(), swallowParent->height());
+        // let the toplevel widget resize if necessary
+        connect(this, SIGNAL(ensureSize(int,int)), 
+          qApp->mainWidget(), SLOT(ensureSize(int,int)));
+        emit ensureSize(swallowWidget->getOrigSize().width(),
+          swallowWidget->getOrigSize().height());
+        disconnect(this, SIGNAL(ensureSize(int,int)), 
+          qApp->mainWidget(), SLOT(ensureSize(int,int)));
+
+        swallowWidget->resize(swallowParent->width(), swallowParent->height());
+
 	swallowWidget->raise();
 	swallowWidget->show();
 
@@ -284,8 +293,14 @@ void KModuleListEntry::addWindow(Window w)
       swallowWidget->swallowWindow(w);
       swallowWidget->setFocus(); //workaround (ettrich)
 
+      // let the toplevel widget resize if necessary
+      connect(this, SIGNAL(ensureSize(int,int)), 
+        qApp->mainWidget(), SLOT(ensureSize(int,int)));
+      emit ensureSize(swallowWidget->width(), swallowWidget->height());
+      disconnect(this, SIGNAL(ensureSize(int,int)), 
+        qApp->mainWidget(), SLOT(ensureSize(int,int)));
+     
       swallowWidget->resize(swallowParent->size());
-
       // disconnect from KWM events
       disconnect(kapp, SIGNAL(windowAdd(Window)), this, SLOT(addWindow(Window)));
     }

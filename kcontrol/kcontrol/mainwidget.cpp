@@ -91,3 +91,11 @@ void mainWidget::paintEvent(QPaintEvent *)
   p.end();
 
 }
+
+
+void mainWidget::resizeEvent(QResizeEvent *event)
+{
+  QWidget::resizeEvent(event);
+
+  emit resized();
+}

@@ -94,7 +94,11 @@ private slots:
   void processExit(KProcess *proc);
 
   void addWindow(Window w);
- 
+
+signals:
+
+  void ensureSize(int w, int h);
+   
 };
 
 

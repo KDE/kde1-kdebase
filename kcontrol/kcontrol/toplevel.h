@@ -30,10 +30,29 @@
 #include <ktoolbar.h>
 #include <ktreelist.h>
 #include <kstatusbar.h>
-#include <kpanner.h>
+#include <qsplitter.h>
 
 #include "mainwidget.h"
 #include "configlist.h"
+
+
+class MySplitter : public QSplitter
+{
+  Q_OBJECT
+  
+public:
+
+  MySplitter(QWidget *parent) : QSplitter(parent) {};
+  
+protected:
+
+  void resizeEvent(QResizeEvent *event);
+  
+signals:
+
+  void resized();
+  
+};
 
 
 class TopLevel : public KTopLevelWidget
@@ -43,6 +62,9 @@ class TopLevel : public KTopLevelWidget
 public:
 
   TopLevel(ConfigList *cl);
+
+  
+private:
 
   QPopupMenu *file, *helpMenu, *options;
   int        helpModuleID, helpID, swallowID;
@@ -60,7 +82,7 @@ private:
   KToolBar   *toolbar;
   KTreeList  *treelist;
   KStatusBar *statusbar;
-  KPanner    *panner;
+  MySplitter *splitter;
   ConfigList *configList;
   mainWidget *mwidget;
 
@@ -72,13 +94,19 @@ private:
 
   void updateMenu();
 
+private slots:
+
+  void doResize();
+  
 public slots:
 
-  void pannerChanged();
   void swallowChanged();
     
   void item_selected(int item);
   void item_singleSelected(int item);
+  
+  void ensureSize(int w, int h);
+  
 };
 
 #endif

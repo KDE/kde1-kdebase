@@ -32,7 +32,7 @@ KSwallowWidget::KSwallowWidget(QWidget *parent, const char *name)
 {
   window = 0;
   setFocusPolicy(StrongFocus);
-  resize(480,480);
+  setMinimumSize(480,480);
 }
 
 
@@ -65,7 +65,22 @@ void KSwallowWidget::swallowWindow(Window w)
 
   XReparentWindow(qt_xdisplay(), w, winId(), 0, 0);
   XMapRaised(qt_xdisplay(), w);
-  XResizeWindow(qt_xdisplay(), window, parentWidget()->width(), parentWidget()->height());
+ 
+  // let the swallowd window set the size
+  int x, y;
+  unsigned int width, height, dummy;
+  Window root;
 
+  XGetGeometry(qt_xdisplay(), window, &root, &x, &y, &width, &height, &dummy, &dummy);
+  if (width < parentWidget()->width())
+    width = parentWidget()->width();
+  if (height < parentWidget()->height())
+    height = parentWidget()->height();
+  parentWidget()->resize(width,height);
+  resize(width,height);
+  XResizeWindow(qt_xdisplay(), window, width, height);
+
+  orig = QSize(width,height);
+ 
   show();
 }
