@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -16,55 +16,55 @@ msgstr ""
 
 #: main.cpp:64
 msgid "&Standard shortcuts"
-msgstr ""
+msgstr "&Atalhos padrões"
 
 #: main.cpp:69
 msgid "&Global shortcuts"
-msgstr ""
+msgstr "Atalhos &Globais"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {standard,global}]\n"
-msgstr ""
+msgstr "uso: kcmdisplay [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
-msgstr ""
+msgstr "Configurações de atalhos de teclado"
 
 #: standard.cpp:66
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: standard.cpp:67
 msgid "End"
-msgstr ""
+msgstr "End"
 
 #: global.cpp:81 standard.cpp:83
 msgid "Current scheme"
-msgstr ""
+msgstr "Esquema corrente"
 
 #: global.cpp:83 standard.cpp:84
 msgid "KDE default"
-msgstr ""
+msgstr "Padrão do KDE"
 
 #: standard.cpp:85
 msgid "KDE lite"
-msgstr ""
+msgstr "KDE 'lite'"
 
 #: global.cpp:90 standard.cpp:90
 msgid "&Key scheme"
-msgstr ""
+msgstr "Esquema de &Teclas"
 
 #: global.cpp:101
 msgid "&Add ..."
-msgstr ""
+msgstr "&Adicionar ..."
 
 #: global.cpp:123
 msgid "&Save changes"
-msgstr ""
+msgstr "&Salvar mudanças"
 
 #: global.cpp:182
 msgid "Error removing scheme"
-msgstr ""
+msgstr "Erro ao remover esquema"
 
 #: global.cpp:183
 msgid ""
@@ -72,10 +72,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
+"Este esquema de teclas não pôde ser removido.\n"
+"Talvez você não tenha permissão para alterar esse arquivo\n"
+"no sistema onde o esquema está armazenado."
 
 #: global.cpp:314
 msgid "Naming conflict"
-msgstr ""
+msgstr "Conflito de nome"
 
 #: global.cpp:315
 msgid ""
@@ -83,10 +86,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
+"Escolha um nome único para o novo esquema\n"
+"de teclas. O nome que você digitou já existe\n"
+"na lista de esquemas de teclas."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr ""
+msgstr "Adicionar um novo esquema de teclas"
 
 #: savescm.cpp:32
 msgid ""
@@ -96,3 +102,8 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Digite um nome para o novo esquema de teclas\n"
+"a ser adicionado à sua lista pessoal.\n"
+"\n"
+"As teclas em uso na prévia serão copiadas\n"
+"para dentro desse esquema."
