@@ -102,7 +102,7 @@ msgstr "В центре волны"
 #
 #: backgnd.cpp:380
 msgid "Centred Maxpect"
-msgstr "В центре Maxpect"
+msgstr "Макс. в центре с сохр. осей"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Tiled"
