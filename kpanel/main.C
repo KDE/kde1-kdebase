@@ -141,9 +141,9 @@ int main( int argc, char ** argv ){
   // create $HOME/.kde/share/applnk
   testDir( "/share/applnk" );
   // create default $HOME/.kde/share/applnk/.directory file if there is none
-  QString src_path = KApplication::kde_datadir();
+  QString src_path = KApplication::kde_datadir().copy();
   src_path += "/kpanel/default/personal_directory";
-  QString dest_path = KApplication::localkdedir();  
+  QString dest_path = KApplication::localkdedir().copy();  
   dest_path += "/share/applnk/.directory";
   QFileInfo fi(dest_path);
   if( !fi.exists() ) {
