@@ -99,5 +99,8 @@ int main(int argc, char **argv)
   if (app.runGUI())
     return app.exec();
   else
-    return 0;
+    { 
+      app.init();
+      return 0;
+    }
 }
