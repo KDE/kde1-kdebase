@@ -591,7 +591,7 @@ KMimeType* KMimeType::findType( const char *_url )
     else
 	filename = u.filename();
 
-    KMimeType *typ;
+    KMimeType *typ=0L;
     for ( typ = types->first(); typ != 0L; typ = types->next() )
     {
 	QStrList& pattern = typ->getPattern();
@@ -807,6 +807,9 @@ KMimeBind* KMimeType::findBinding( const char *_name )
 
 const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
 {
+    DIR *dp=NULL;
+    struct dirent *ep=NULL;
+
     /**
      * This function is very tricky and dirty, but it is
      * designed to be as fast as possible.
@@ -865,8 +868,6 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
     
     if ( is_trash )
     {
-        DIR *dp;
-        struct dirent *ep;
 	// "+5" to skip "file:", this is fast :-)
         dp = opendir( KFMPaths::TrashPath() );
 	// Stephan: Congratulation Torben for this trick :-)

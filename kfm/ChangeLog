@@ -1,3 +1,7 @@
+1998-12-07  Alex Zepeda  <garbanzo@hooked.net>
+
+	* kbind.cpp: Quashed another "uninitalized" variable.
+
 1998-12-07  David Faure  <faure@kde.org>
 
 	* Delete showConfigUI from kfmclient options. Added configure
