@@ -5,7 +5,7 @@ data_DATA = cf.kimap csz.kimap pl.kimap rum.kimap ua.kimap \
 	he.kimap rua.kimap rui.kimap rumcyr.kimap skp.kimap sky.kimap skz.kimap \
 	es.kimap no.kimap sv.kimap fi.kimap se.kimap weu.kimap is.kimap \
 	fr_ch.kimap de_ch.kimap dv.kimap hr.kimap it.kimap la.kimap \
-	th.kimap ro.kimap et.kimap
+	th.kimap ro.kimap pt.kimap pt-acc.kimap et.kimap dva.kimap
 
 #  pt.kimap pt-acc.kimap
 

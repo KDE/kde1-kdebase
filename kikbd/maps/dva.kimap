@@ -1,0 +1,121 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Pierre Abbat <phma@oltronics.net>,
+
+# Version: 1.0
+# Date: 1999-07-11
+# Keys for characters:
+# 	inverted exclamation mark	missing
+# ¢	cent sign			AltGr-Shift-c
+# 	pound sign			missing
+# ¤	circle with four rays		altgr-+
+# ¥	yen sign			altgr-y
+# 	broken bar			missing
+# §	section				altgr-shift-s
+# ¨	bare umlaut			altgr-1 space
+# ©	copyright			altgr-c
+# 	superscript a			missing
+# «	left French quotation mark	altgr-<
+#	not				missing
+#	horizontal line			missing
+# ®	registered			altgr-r
+# ¯	overline			altgr--
+# °	degree				altgr-0
+#	plusminus			missing
+#	squared				missing
+#	cubed				missing
+#	bare acute accent		missing
+# µ	mu				altgr-m
+# ¶	paragraph			altgr-p
+#	centered dot			missing
+#  	bare cedilla			missing
+#	superscript one			missing
+#	superscript o			missing
+# »	right French quotation mark	altgr->
+#	1/4				missing
+#	1/2				missing
+#	3/4				missing
+# ¿	inverted question mark		altgr-shift-?
+# àèìòù	dead grave accent		altgr-`
+# áéíóú	dead acute accent		altgr-'
+# âêîôû	dead circumflex			altgr-^
+# ãñõ	dead tilde			altgr-shift-~
+# äëïöü	dead umlaut/diaeresis		altgr-1
+# 	a ring				missing
+#	ash				missing
+# ç	cedilla				altgr-shift-, c
+# ð	edh				altgr-d
+# ø	o slashed			altgr-o
+# þ	thorn				altgr-t
+# ×	times				altgr-*
+# ÷	divide				altgr-/
+# Note: Some of these marked missing are actually present,
+# but in nonsensical locations.
+
+Language=English-Dvorak with accents
+Language[ca]=Anglès-Dvorak
+Language[cs]=Anglický-Dvoøak
+Language[da]=Engelsk-Dvorak
+Language[de]=Englisch-Dvorak
+Language[es]=Inglés-Dvorak
+Language[fi]=Englanti-Dvorak
+Language[fr]=Anglais-Dvorak avec accents
+Language[hr]=Engleski-Dvorak
+Language[is]=Enskt-Dvorak
+Language[it]=Inglese-Dvorak
+Language[no]=Engelsk-Dvorak
+Language[pl]=Angielski-Dvorzak
+Language[pt]=Inglês-Dvorak
+Language[pt_BR]=Inglês-Dvorak
+Language[ro]=Englezeascã-Dvoøak cu diacritice
+Language[ru]=áÎÇÌÉÊÓËÉÊ
+Language[sk]=Anglický-Dvoøak
+Language[sl]=angle¹ko-Dvoøak
+Language[sv]=Engelskt-Dvorak
+
+Label=Dva
+Locale=en
+
+[KeyboardMap]
+keysym2=1,1,exclam,dead_diaeresis,,
+keysym7=6,6,asciicircum,dead_circumflex,dead_circumflex,
+keysym9=8,8,asterisk,multiply,,
+keysym11=0,0,parenright,degree,,
+keysym12=minus,bracketleft,braceleft,bracketright,questiondown,
+keysym13=equal,bracketright,braceright,braceright,dead_ogonek,
+keysym16=q,apostrophe,quotedbl,dead_acute,dead_doubleacute,
+keysym17=w,comma,less,guillemotleft,dead_cedilla,
+keysym18=e,period,greater,guillemotright,dead_belowdot,
+keysym19=r,p,P,paragraph,,
+keysym20=t,y,Y,yen,,
+keysym21=y,f,F,,,
+keysym22=u,g,G,,,
+keysym23=i,c,C,copyright,cent,
+keysym24=o,r,R,registered,,
+keysym25=p,l,L,lstroke,Lstroke,
+keysym26=bracketleft,slash,question,division,questiondown,
+keysym27=bracketright,equal,plus,currency,dead_macron,
+keysym30=a,a,A,at,Greek_OMEGA,
+keysym31=s,o,O,oslash,Ooblique,
+keysym32=d,e,E,eth,ETH,
+keysym33=f,u,U,dstroke,ordfeminine,
+keysym34=g,i,I,eng,ENG,
+keysym35=h,d,D,eth,ETH,
+keysym36=j,h,H,,,
+keysym37=k,t,T,thorn,THORN,
+keysym38=l,n,N,ntilde,Ntilde,
+keysym39=semicolon,s,S,ssharp,section,
+keysym40=apostrophe,minus,underscore,dead_macron,dead_breve,
+keysym41=grave,grave,asciitilde,dead_grave,dead_tilde,
+keysym43=backslash,backslash,bar,,,
+keysym44=z,semicolon,colon,lstroke,Lstroke,
+keysym45=x,q,Q,guillemotright,greater,
+keysym46=c,j,J,cent,copyright,
+keysym47=v,k,K,leftdoublequotemark,grave,
+keysym48=b,x,X,rightdoublequotemark,apostrophe,
+keysym49=n,b,B,,,
+keysym50=m,m,M,mu,,
+keysym51=comma,w,W,horizconnector,multiply,
+keysym52=period,v,V,periodcentered,division,
+keysym53=slash,z,Z,dead_belowdot,dead_abovedot,
