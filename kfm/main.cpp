@@ -4,7 +4,6 @@
 #include "kfmgui.h"
 #include "root.h"
 #include "kfmserver.h"
-#include "xview.h"
 #include "kfmpaths.h"
 #include "kmimemagic.h"
 #include "kfm.h"
@@ -204,7 +203,6 @@ int main( int argc, char ** argv )
     KMimeType::initKMimeMagic();
     
     KHTMLWidget::registerFormats();
-    QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
     
     KFMServer ipc;
     

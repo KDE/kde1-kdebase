@@ -21,7 +21,6 @@
 #include <kstring.h>
 
 #include "kfmman.h"
-#include "xview.h"
 #include "kbind.h"
 #include "config-kfm.h"
 #include "kmsgwin.h"

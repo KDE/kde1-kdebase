@@ -24,7 +24,7 @@ kfm_SOURCES =	\
 	kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp \
 	kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp \
 	kioserver_ipc2.cpp kfmipc.cpp root.cpp kfmman.cpp kiojob.cpp \
-	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
+	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
 	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp khttpoptdlg.cpp open-with.cpp
@@ -33,7 +33,7 @@ noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h htmlopts.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
-	xview.h krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
+	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
 	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h \
 	kstrlist.h cgi.h kbookmarkdlg.h fileentry.h
