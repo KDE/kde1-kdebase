@@ -898,7 +898,6 @@ void kPanel::showMiniPanel ()
   connect( miniPanel, SIGNAL( pressed( int )), this, SLOT( miniButtons(int)) );
 
   miniSystem = new myPushButton(miniPanel);
-  QToolTip::add(miniSystem, klocale->translate("Where do you want to go tomorrow?"));
   miniSystem->setFocusPolicy(NoFocus);
   miniSystem->setPixmap(kapp->getIconLoader()
 			->loadMiniIcon("go.xpm", mh,mh));
