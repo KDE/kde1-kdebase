@@ -32,7 +32,11 @@ extern "C" {
 #ifdef KDE_PAM_SERVICE
 #define KDE_PAM KDE_PAM_SERVICE
 #else
+#ifdef __FreeBSD__
+#define KDE_PAM "login"  /* default PAM service used by kcheckpass */
+#else
 #define KDE_PAM "xdm"  /* default PAM service used by kcheckpass */
+#endif
 #endif
 
 static const char *PAM_username;
