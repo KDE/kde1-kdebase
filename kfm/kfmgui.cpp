@@ -280,7 +280,7 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("&Move to Trash"), 
 		      this, SLOT(slotTrash()) );
     edit->insertItem( klocale->translate("&Delete"), this, 
-		      SLOT(slotDelete()) );
+		      SLOT(slotDelete()), Key_Delete );
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
 		      SLOT(slotSelect()), CTRL+Key_S );

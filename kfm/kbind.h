@@ -281,7 +281,8 @@ public:
      *         the content of the *.kdelnk file => You must tell
      *         about the URL if you want this feature.
      */
-    virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE );
+    virtual const char* getPixmapFile( const char *_url, bool _mini = FALSE )
+        {   return getPixmapFile( _mini ); }
     /**
      * This function returns the icon associated with this mime type. It returns
      * a full qualified filename.
@@ -507,6 +508,11 @@ protected:
      */
     QString pixmapFile;
     QString miniPixmapFile;
+
+    /**
+     * The name of the icon, without path.
+     */
+    QString pixmapName;
     
     /**
      * The pixmap used for the icon.

@@ -678,18 +678,18 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
     {
-	view->write( "<tr><td><a href=\"" );
+	view->write( "<tr><td width=16><a href=\"" );
 
 	view->write( encodedURL.data() );
 	view->write( "\"><img border=0 width=16 height=16 src=\"file:" );
 	view->write( KMimeType::getPixmapFileStatic( filename.data(), TRUE ) );
-	view->write( "\"></td><td>" );
+	view->write( "\"></td><td><cell width=100% padding=0>" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
 	view->writeHTMLquoted ( decoded );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
-	view->write( "</td><td><tt>" ); 
+	view->write( "</cell></a></td><td><tt>" ); 
 	view->write( s->getAccess() );
 	view->write( "</tt></td><td>" );
 	view->write( s->getOwner() );
@@ -701,20 +701,20 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
 	
-	view->write( "</a></td></tr>" );
+	view->write( "</td></tr>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
     {
 	view->write( "<tr><td><a href=\"" );
 	
 	view->write( encodedURL.data() );
-	view->write( "\">" );
+	view->write( "\"><cell width=100% padding=0>" );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
 	view->writeHTMLquoted ( decoded );
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
-	view->write( "</td><td><tt>" );
+	view->write( "</cell></a></td><td><tt>" );
 	view->write( s->getAccess() );
 	view->write( "</tt></td><td>" ); 
 	view->write( s->getOwner() );
@@ -727,7 +727,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( s->getCreationDate() );
 	view->write( "</td></td></tr>" );
     }
-    if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
+    else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
     {	
 	// Begin Link
 	view->write( "<a href=\"" );

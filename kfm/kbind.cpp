@@ -118,13 +118,10 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
     mimeType = _mime_type;
     mimeType.detach();
     
-    pixmapFile = getIconPath( _pixmap );
-    miniPixmapFile = getIconPath( _pixmap, true );
+    pixmapName = _pixmap;
+    pixmapName.detach();
 
     pixmap = 0L;
-    
-    HTMLImage::cacheImage( pixmapFile.data() );
-    HTMLImage::cacheImage( miniPixmapFile.data() );
 }
 
 const char* KMimeType::getIconPath( const char *_icon, bool _mini )
@@ -135,7 +132,12 @@ const char* KMimeType::getIconPath( const char *_icon, bool _mini )
     else if ( !_mini && ( res = (*iconDict)[_icon] ) != 0L )
 	return res->data();
     
-    QString *s = new QString( localIconPath->data() );
+    static QString *s = 0;
+    if ( !s )
+        s = new QString;
+    
+    *s = localIconPath->data();
+
     if ( _mini )
 	*s += "/mini/";
     else
@@ -171,7 +173,6 @@ const char* KMimeType::getIconPath( const char *_icon, bool _mini )
 	return s->data();
     }
     
-    delete s;
     if ( _mini )
 	return defaultMiniIcon->data();
     else
@@ -195,21 +196,26 @@ QPixmap* KMimeType::getPixmap( const char *, bool _mini )
     return pixmap;
 }
 
-// We dont have a look at the URL ( the 1. parameter )
-const char* KMimeType::getPixmapFile( const char *, bool _mini )
-{
-    if ( _mini )
-	return miniPixmapFile;
-    else
-	return pixmapFile;
-}
-
 const char* KMimeType::getPixmapFile( bool _mini )
 {
     if ( _mini )
-	return miniPixmapFile;
+    {
+        if ( miniPixmapFile.isEmpty() )
+        {
+            miniPixmapFile = getIconPath( pixmapName, true );
+            HTMLImage::cacheImage( miniPixmapFile.data() );
+        }
+        return miniPixmapFile;
+    }
     else
-	return pixmapFile;
+    {
+        if ( pixmapFile.isEmpty() )
+        {
+            pixmapFile = getIconPath( pixmapName );
+            HTMLImage::cacheImage( pixmapFile.data() );
+        }
+        return pixmapFile;
+    }
 }
 
 KMimeType* KMimeType::getMagicMimeType( const char *_url )
@@ -278,44 +284,37 @@ void KMimeType::initMimeTypes( const char* _path )
 	    QString file = _path;
 	    file += "/";
 	    file += ep->d_name;
-	    struct stat buff;
-	    stat( file.data(), &buff );
-	    if ( S_ISDIR( buff.st_mode ) )
-		initMimeTypes( file.data() );
-	    else if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
+	    if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
 	    {
-		QFile f( file.data() );
-		if ( !f.open( IO_ReadOnly ) )
-		    return;		
-		f.close();
 		KSimpleConfig config( file, true );
 		config.setGroup( "KDE Desktop Entry" );
 		
-		// Read a new extension groups name
-		// QString ext = ep->d_name;
-		// if ( ext.length() > 7 && ext.right(7) == ".kdelnk" )
-		// ext = ext.left( ext.length() - 7 );
-		
+		QString mime = config.readEntry( "MimeType" );
+
+		// Skip this one ?
+		if ( mime.isEmpty() )
+		{
+            // If we don't have read access, we'll skip quietly.
+            if ( access( file.data(), R_OK ) )
+                continue;
+
+		    QString tmp;
+		    tmp.sprintf( "%s\n%s\n%s", i18n( "The mime type config file " ),
+				 file.data(), i18n("does not conatain a MimeType=... entry" ) );
+		    QMessageBox::message( i18n( "KFM Error" ), tmp );
+		    continue;
+		}
+
 		// Get a ';' separated list of all pattern
 		QString pats = config.readEntry( "Patterns" );
 		QString icon = config.readEntry( "Icon" );
 		QString defapp = config.readEntry( "DefaultApp" );
 		QString comment = config.readEntry( "Comment" );
-		QString mime = config.readEntry( "MimeType" );
-		// Skip this one ?
-		bool bSkip = false;
-		if ( mime.isEmpty() )
-		{
-		    QString tmp;
-		    tmp.sprintf( "%s\n%s\n%s", i18n( "The mime type config file " ),
-				 file.data(), i18n("does not conatain a MimeType=... entry" ) );
-		    QMessageBox::message( i18n( "KFM Error" ), tmp );
-		    bSkip = true;
-		}
+
 		// Is this file type already registered ?
 		KMimeType *t = KMimeType::findByName( mime.data() );
 		// If not then create a new type
-		if ( t == 0L && !bSkip )
+		if ( t == 0L )
 		{
 		    if ( icon.isEmpty() )
 			icon = KMimeType::getDefaultPixmap();
@@ -348,6 +347,13 @@ void KMimeType::initMimeTypes( const char* _path )
 		    }
 		}
 	    }
+        else
+        {
+            struct stat buff;
+            stat( file.data(), &buff );
+            if ( S_ISDIR( buff.st_mode ) )
+                initMimeTypes( file.data() );
+        }
 	}
     }
     closedir(dp);
@@ -496,11 +502,10 @@ KMimeType* KMimeType::findType( const char *_url )
 	return defaultType;
 
     // Used to store a modified value for _url.
-    QString tmp;
+    QString tmp( _url );
     
     // Some of the *.kdelnk files have special hard coded bindings like
     // mouting/unmounting of devices.
-    tmp = _url;
     if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
 	return kdelnkType;
     
@@ -1127,21 +1132,15 @@ void KMimeBind::initApplications( const char * _path )
     {
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{
-	    QString tmp = ep->d_name;	
+	    QString tmp( ep->d_name );	
     
-	    QString file = _path;
+	    QString file( _path );
 	    file += "/";
 	    file += ep->d_name;
-	    struct stat buff;
-	    stat( file.data(), &buff );
-	    if ( S_ISDIR( buff.st_mode ) )
-		initApplications( file.data() );
-	    else if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
+	    if ( tmp.length() > 7 && tmp.right( 7 ) == ".kdelnk" )
 	    {
 		// The name of the application
-		QString app = ep->d_name;
-		if ( app.length() > 7 && app.right(7) == ".kdelnk" )
-		    app = app.left( app.length() - 7 );
+		QString app = tmp.left( tmp.length() - 7 );
 
 		// Do we have read access ?
 		if ( access( file, R_OK ) == 0 )
@@ -1224,6 +1223,13 @@ void KMimeBind::initApplications( const char * _path )
 		    }    
 		}
 	    }
+        else
+        {
+            struct stat buff;
+            stat( file.data(), &buff );
+            if ( S_ISDIR( buff.st_mode ) )
+                initApplications( file.data() );
+        }
 	}
     }
     (void) closedir( dp );
