@@ -100,6 +100,8 @@ DesktopConfig::DesktopConfig()
 	    bgmode = BottomRight;
           else if(strmode == "Fancy")
 	    bgmode = Fancy;
+          else
+            bgmode = Tile;
 
 	  if(bgpic.isEmpty() || bgmode == None)
 	    have_bg_pic = false;
@@ -128,14 +130,20 @@ do_picture_background( DesktopConfig* dc)
 			       read_jpeg_jfif, NULL);
      
      QWidget* desktop = qApp->desktop();
+     KPixmap image;
      int appWidth  =  desktop->width();
      int appHeight =  desktop->height();
      
      //QColor::enterAllocContext();
-     QPixmap image( dc->bgpic);
-     if( image.isNull())
-	  return;
-     QPixmap tmp( appWidth, appHeight);
+
+     if(dc->have_bg_pic)
+     {
+       image.load( dc->bgpic);
+       if( image.isNull())
+	    dc->have_bg_pic = false;
+     }
+     KPixmap tmp;
+     tmp.resize( appWidth, appHeight);
      
      int imWidth = image.width();
      int imHeight = image.height();
@@ -143,27 +151,20 @@ do_picture_background( DesktopConfig* dc)
      int cx = appWidth/2-imWidth/2;
      int cy = appHeight/2-imHeight/2;
      
-     switch(dc->colorMode())
+     if(dc->pictureMode() != Tile && dc->pictureMode() != Scale)
      {
-       default:
-       case Plain:
-         tmp.fill( dc->bgcolor1 );
-         break;
-       case Horizontal:
+       switch(dc->colorMode())
        {
-         KPixmap kp;
-         kp.resize(appWidth, appHeight);
-         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, false);
-         tmp = kp;
-         break;
-       }
-       case Vertical:
-       {
-         KPixmap kp;
-         kp.resize(appWidth, appHeight);
-         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, true);
-         tmp = kp;
-         break;
+         case Horizontal:
+           tmp.gradientFill(dc->bgcolor1, dc->bgcolor2, false);
+           break;
+         case Vertical:
+           tmp.gradientFill(dc->bgcolor1, dc->bgcolor2, true);
+           break;
+         case Plain:
+         default:
+           tmp.fill(dc->bgcolor1);
+           break;
        }
      }
 
@@ -188,7 +189,7 @@ do_picture_background( DesktopConfig* dc)
 	  case Scale: {
 	       QImage i;
                i = image;
-	       image = i.smoothScale(appWidth, appHeight);
+	       image.convertFromImage(i.smoothScale(appWidth, appHeight), 0);
 	       bitBlt( &tmp, 0, 0,
 		       &image, 0, 0, appWidth, appHeight);
 	       break;
@@ -297,40 +298,6 @@ do_fancy_background()
      desktop->setBackgroundPixmap( pm);
 }
 
-static void 
-do_normal_background( DesktopConfig *dc)
-{
-     QWidget* desktop = qApp->desktop();
-     int appWidth  =  desktop->width();
-     int appHeight =  desktop->height();
-
-     switch(dc->colorMode())
-     {
-       default:
-       case Plain:
-         desktop->setBackgroundColor( dc->bgcolor1);
-         break;
-       case Horizontal:
-       {
-         KPixmap kp;
-         kp.resize(appWidth, appHeight);
-         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, false);
-         desktop->setBackgroundPixmap( kp );
-         break;
-       }
-       case Vertical:
-       {
-         KPixmap kp;
-         kp.resize(appWidth, appHeight);
-         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, true);
-         desktop->setBackgroundPixmap( kp );
-         break;
-       }
-     }
-
-     //debug("%X %X %X", dc->bgcolor.red(), dc->bgcolor.green(), dc->bgcolor.blue());
-}
-
 int main(int argc, char **argv)
 {
      // Use same config file as kdm:
@@ -342,11 +309,10 @@ int main(int argc, char **argv)
      
      if( dc->pictureMode() == Fancy)
 	  do_fancy_background();
-     else if( dc->have_bg_pic )
-	  do_picture_background( dc);
      else
-	  do_normal_background( dc);
+	  do_picture_background( dc);
      
      XFlush( qt_xdisplay());
+
      return 0;
 }
