@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+"Content-Type: text/plain; charset=gb2312-80\n"
+"Date: 1997-09-09 17:23:06+0200\n"
+"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+
+#: kdmshutdown.cpp:159
+msgid "Shutdown or restart?"
+msgstr "关闭或重新启动?"
+
+#: kdmshutdown.cpp:175
+msgid "Shutdown"
+msgstr "关闭"
+
+#: kdmshutdown.cpp:189
+msgid "Shutdown and restart"
+msgstr "关闭后重新启动"
+
+#: kdmshutdown.cpp:198
+msgid "Exit kdm"
+msgstr "退出 kdm"
+
+#: kgreeter.cpp:139
+msgid "Login:"
+msgstr "登录:"
+
+#: kgreeter.cpp:151
+msgid "Password:"
+msgstr "密码:"
+
+#: kgreeter.cpp:191
+msgid "Login failed!"
+msgstr "登录失败!"
+
+#: kgreeter.cpp:197
+msgid "Session Type:"
+msgstr "会话类型:"
+
+#: kgreeter.cpp:213
+msgid "Go!"
+msgstr "开始!"
+
+#: kgreeter.cpp:229
+msgid "Shutdown..."
+msgstr "关闭..."

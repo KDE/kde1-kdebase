@@ -171,13 +171,12 @@ msgid "Window resize"
 msgstr "Redimensionner la fenêtre"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animation du titre"
+msgstr "Animation :"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rapide"
 
 #: windows.cpp:98
 msgid "Placement policy"
