@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: 1998-11-27 22:58+0100\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+
+#: main.cpp:29
+msgid "KDE Control Application Sample"
+msgstr "Ejemplo de una aplicación de control del KDE"

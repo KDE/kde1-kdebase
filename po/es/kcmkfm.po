@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"PO-Revision-Date: 1998-11-27 22:55+0100\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+
+#: main.cpp:34
+msgid "&Font"
+msgstr "&Fuente"
+
+#: main.cpp:36
+msgid "&Color"
+msgstr "&Color"
+
+#: main.cpp:63
+msgid "usage: kcmkfm [-init | {font,color}]\n"
+msgstr "modo de uso: kcmkfm [-init | {font,color}]\n"
+
+#: main.cpp:104
+msgid "KFM Configuration"
+msgstr "Configuración del KFM"

@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"PO-Revision-Date: 1998-11-27 23:13+0100\n"
+"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"MIME-Version: 1.0\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "Atajos por defecto"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "Atajos globales"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "modo de uso: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr ""
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Nuevo"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Próximo"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Anterior"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Buscar"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Pos1"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Fin"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Esquema actual"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE por defecto"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE lite"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "Esquema de teclado"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Añadir ..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Guardar cambios"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Error al remover esquema"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Conflicto de nombramiento"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Añadir un esquema de tecado"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr ""
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Ejecutar comando"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Menú de operaciones de la ventana"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Menú del sistema"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Subir ventana"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Bajar ventana"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Cerrar ventana"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Iconizar ventana"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Cambiar tamaño de ventana"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Mover ventana"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "(Des)Pegar ventana"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Cambiar al escritorio 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Cambiar al escritorio 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Cambiar al escritorio 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Cambiar al escritorio 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Cambiar al escritorio 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Cambiar al escritorio 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Cambiar al escritorio 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Cambiar al escritorio 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Cambiar al escritorio a la derecha"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Cambiar al escritorio a la izquierda"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Cambiar al escritorio de arriba"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Cambiar al escritorio de abajo"
