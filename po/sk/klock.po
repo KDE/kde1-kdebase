@@ -520,9 +520,8 @@ msgid "Pipes (GL)"
 msgstr "Rúry (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Nastavenie KSlipu"
+msgstr "Nastavenie KPipes"
 
 #: pipes.cpp:678
 msgid "Number of Pipes"
@@ -613,9 +612,8 @@ msgid "Setup krock"
 msgstr "Nastavenie Skaly"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Re¾im:"
+msgstr "Pohyb"
 
 #: rock.cpp:595
 msgid "Rotate"
