@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-18 18:01+0200\n"
+"PO-Revision-Date: 1998-06-22 21:30+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:59
@@ -162,13 +162,12 @@ msgid "Window resize"
 msgstr "Redimensión de ventanas"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animación del título"
+msgstr "Movimiento:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rápido"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -276,6 +275,3 @@ msgid ""
 msgstr ""
 "Zona de adhesión en ventanas:\n"
 "       (pixels)"
-
-#~ msgid "With animation"
-#~ msgstr "Con animación"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-17 17:48+0200\n"
+"PO-Revision-Date: 1998-06-22 21:31+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: backgnd.cpp:59
@@ -332,9 +332,8 @@ msgid "Panel clock font"
 msgstr "Fuente del reloj del panel"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Elegir texto"
+msgstr "Muestra de texto"
 
 #: general.cpp:306
 msgid ""
@@ -342,6 +341,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -382,23 +384,23 @@ msgstr "Texto marcado"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "&Estilo"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "Negrita"
+msgstr "&Negrita"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "Cursiva"
+msgstr "&Cursiva"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Tamaño"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Tabla de códigos"
 
 #: fontchooser.cpp:262
 msgid "default"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-04-18 01:25+0200\n"
+"PO-Revision-Date: 1998-04-22 21:29+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:50
@@ -52,9 +52,8 @@ msgstr "%10ld bytes  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "no disponible"
+msgstr "No disponible"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
