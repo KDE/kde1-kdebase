@@ -252,8 +252,10 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("&Move to Trash"), 
 		      this, SLOT(slotTrash()), stdAccel.cut() );
     edit->insertItem( klocale->translate("&Delete"), this, 
-		      SLOT(slotDelete()));
-        // adding Key_Delete here prevents deleting chars in toolbarURL (lined)
+		      SLOT(slotDelete()) /*, CTRL+Key_Delete */);
+    // adding Key_Delete here prevents deleting chars in the QLineEdit
+    // When QLineEdit::del() is public, this will be fixed by something
+    // like the current slotSelectAll, testing the focus first.
 
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
@@ -950,7 +952,12 @@ void KfmGui::slotSelectAll()
   // if the URL editor is focused, the user really intends to go to
   // the beginning of the line when they press CTRL-A (a la sh, emacs).  
   if (focusWidget() == lined)
-    lined->setCursorPosition(0);
+  {
+      lined->setCursorPosition(0); 
+      // WORKAROUND FOR QT 1.41, which doesn't move the cursor
+      lined->deselect(); // this redraws it correctly but is a hack.
+      // this has been fixed in QT 1.42 (d->pmDirty = TRUE; was missing)
+  }
   else
     view->getActiveView()->select( 0L, true );
 }
