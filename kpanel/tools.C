@@ -253,6 +253,7 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     }
     painter->drawPixmap( dx, dy, *pixmap() );
   }
+  painter->setPen(colorGroup().text());
   if (!s.isNull()){
     QString s2 = s;
     if (fontMetrics().width(s2) > width()-32){
@@ -445,7 +446,9 @@ void kPanel::set_button_text(QButton* button, const char* s){
 }
 
 QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
-  QColorGroup colgrp = QColorGroup( black, backgroundColor(), white, black, black,
+  QColorGroup colgrp = QColorGroup( colorGroup().text(), 
+				    backgroundColor(), 
+				    white, black, black,
   				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
  				     color1, color1 );
@@ -509,7 +512,9 @@ QPixmap kPanel::create_arrow_pixmap(QPixmap pm){
 
 
 void kPanel::arrow_on_pixmap(QPixmap* pm, ArrowType rt){
-  QColorGroup colgrp = QColorGroup( black, backgroundColor(), white, black, black,
+  QColorGroup colgrp = QColorGroup( colorGroup().text(), 
+				    backgroundColor(), 
+				    white, black, black,
 				    black, white );
   QColorGroup colgrp2 = QColorGroup( color1, color0, color1, color1, color1,
 				     color1, color1 );
