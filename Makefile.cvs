@@ -12,9 +12,11 @@ dist:
 	autoheader
 	automake --foreign --include-deps
 	autoconf
-	list=`find . -name "*.po"`
-	for i in $list; do
-	 file2=`echo $i | sed -e "s#\.po#\.gmo"`; \
-	 msgfmt -o $file2 $i; \
+	pwd
+	LIST=`find ./po -name "*.po"`
+	echo `find ./po -name "*.po"`
+	for i in `find ./po -name "*.po"`; do \
+	 file2=`echo $i | sed -e "s#\.po#\.gmo#"`; \
+	 msgfmt -o $(file2) $i; \
 	done
 
