@@ -85,7 +85,7 @@ int KProtocolTAR::Open( KURL *url, int mode )
 	//dirfile = fdopen( Slave.out, "r" );
 	return rc;
     }
-    return FAIL;
+    return Error( KIO_ERROR_NotImplemented, "can't write to a tar file", 0);
 }
 
 bool KProtocolTAR::HandleRefill()
