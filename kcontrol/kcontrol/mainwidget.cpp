@@ -6,6 +6,7 @@
 
 #include <kiconloader.h>
 #include <kcharsets.h>
+#include <stdio.h>	// for cuserid()
 
 #include "mainwidget.moc"
 #include "mainwidget.h"
