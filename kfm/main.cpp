@@ -62,7 +62,7 @@ int main( int argc, char ** argv )
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/.kfmrc", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/kfmrc", getenv( "KDEDIR" ), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
