@@ -540,33 +540,39 @@ KMimeType* KMimeType::findType( const char *_url )
     // Executable ? Must be on the local drive.
     if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {
+	QString path( u.path() );
+	KURL::decodeURL( path );
+	
 	struct stat buff;
-	stat( _url + 5, &buff );
-	if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
+	// Can we make a stat ?
+	if ( stat( path, &buff ) == 0 )
 	{
-	    FILE *f = fopen( _url + 5, "rb" );
-	    if ( f == 0 )
+	    if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
+	    {
+		FILE *f = fopen( path, "rb" );
+		if ( f == 0 )
+		    return execType;
+		char buffer[ 10 ];
+		int n = fread( buffer, 1, 2, f );
+		fclose( f );
+		buffer[ n ] = 0;
+		// Is it a batchfile
+		if ( strcmp( buffer, "#!" ) == 0 )
+		    return batchType;
+		// It is a binary executable
 		return execType;
-	    char buffer[ 10 ];
-	    int n = fread( buffer, 1, 2, f );
-	    fclose( f );
-	    buffer[ n ] = 0;
-	    // Is it a batchfile
-	    if ( strcmp( buffer, "#!" ) == 0 )
-		return batchType;
-	    // It is a binary executable
-	    return execType;
+	    }
+	    if ( S_ISFIFO( buff.st_mode ) )
+		return PipeType;
+	    if ( S_ISSOCK( buff.st_mode ) )
+		return SocketType;
+	    if ( S_ISCHR( buff.st_mode ) )
+		return CDevType;
+	    if ( S_ISBLK( buff.st_mode ) )
+		return BDevType;  
 	}
-	if ( S_ISFIFO( buff.st_mode ) )
-	  return PipeType;
-	if ( S_ISSOCK( buff.st_mode ) )
-	  return SocketType;
-	if ( S_ISCHR( buff.st_mode ) )
-	  return CDevType;
-	if ( S_ISBLK( buff.st_mode ) )
-	  return BDevType;  
     }
-
+    
     return defaultType;
 }
 
@@ -680,12 +686,12 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     else
     {
 	KMimeType *typ = KMimeType::getMagicMimeType( _url );
-	// debugT("================== Found type '%s'\n", typ->getMimeType());
+	debugT("================== Found type '%s'\n", typ->getMimeType());
 	
 	if ( !typ->hasBindings() )
 	    return;
 
-	// debugT("================ Has Bindings\n");
+	debugT("================ Has Bindings\n");
 	
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )

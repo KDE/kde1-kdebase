@@ -330,6 +330,7 @@ void KfmView::slotPaste()
 
 void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
 {
+    debugT("SHOWING MENU");
     // Show the popup Menu for the given URLs
     manager->openPopupMenu( _urls, _point );
 }
@@ -815,7 +816,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	getSelected( list );
 	char* s;
 	for ( s = list.first(); s != 0L; s = list.next() )
-	    // debugT(" Entry '%s'\n",s);
+	    debugT(" Entry '%s'\n",s);
     
 	if ( list.find( _url ) != -1 )
 	    slotPopupMenu( list, p );

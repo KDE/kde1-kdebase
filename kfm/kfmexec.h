@@ -59,7 +59,7 @@ public slots:
    /**
     * Called if the @ref #job raises an error.
     */
-    void slotError( const char * );
+    void slotError( int, const char * );
     /**
      * Called if the @ref #job found a directory entry.
      * In this case we can assume that we found a directory.

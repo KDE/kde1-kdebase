@@ -46,7 +46,7 @@ KFMExec::KFMExec()
     // a) the mimetype of the URL or
     // b) wether it is a directory 
     job = new KFMJob;
-    connect( job, SIGNAL( error( const char* ) ), this, SLOT( slotError( const char* ) ) );
+    connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
     connect( job, SIGNAL( newDirEntry( KIODirectoryEntry* ) ),
 	     this, SLOT( slotNewDirEntry( KIODirectoryEntry* ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
@@ -151,7 +151,7 @@ void KFMExec::slotCancel()
     return;
 }
 
-void KFMExec::slotError( const char * )
+void KFMExec::slotError( int, const char * )
 {
 }
 

@@ -789,8 +789,8 @@ void KRootWidget::slotPopupOpenWith()
 	}
 	cmd += "\" ";
     }
-    // debugT("Executing '%s'\n", cmd.data());
     
+    debugT("Executing '%s'\n", cmd.data());    
     KMimeBind::runCmd( cmd.data() );
 }              
 
