@@ -58,8 +58,8 @@ protected slots:
     void style_clicked(int);
 
 private:
-    QVBoxLayout *layout;
-
+    QGridLayout *layout;
+   
     enum Location {LTop, Left, Button, Right} location;
     QRadioButton *loc_buttons[4];
     QButtonGroup *loc_group;

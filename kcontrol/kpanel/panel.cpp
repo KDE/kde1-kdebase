@@ -53,7 +53,7 @@ public:
 KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     : KConfigWidget (parent, name), location(LTop), taskbar(TTop)
 {
-    layout = new QVBoxLayout(this, 10);
+    layout = new QGridLayout(this, 2, 2, 10);
     int i, w = 0;
 
     loc_group = new QButtonGroup(i18n("Location"), this);
@@ -70,7 +70,7 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 
     loc_buttons[location]->setChecked(true);
     connect(loc_group, SIGNAL(clicked(int)), SLOT(location_clicked(int)));
-    layout->addWidget(loc_group, 1);
+    layout->addWidget(loc_group, 0, 0);
 
     task_group = new QButtonGroup(i18n("Taskbar"), this);
     task_buttons[0] = new QRadioButton( i18n("&Hidden"),
@@ -89,8 +89,8 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     }
 
     connect(task_group, SIGNAL(clicked(int)), SLOT(taskbar_clicked(int)));
-    layout->addWidget(task_group, 1);
-
+    layout->addWidget(task_group, 0, 1);
+   
 
     style_group = new QButtonGroup(i18n("Style"), this);
 
@@ -107,19 +107,19 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 	    w = style_buttons[i]->width();
     }
 
-    layout->addWidget(style_group, 1);
+    layout->addWidget(style_group, 1, 0);
 
-    w = 4*w + 10;
+    w = w + 15;
 
-    loc_group->setMinimumSize(w, loc_buttons[0]->sizeHint().height() * 3);
-    loc_group->setMaximumSize(1000, loc_buttons[0]->sizeHint().height() * 5);
-    task_group->setMinimumSize(w, task_buttons[0]->sizeHint().height() * 4);
-    task_group->setMaximumSize(1000, task_buttons[0]->sizeHint().height() * 5);
-    style_group->setMinimumSize(w, style_buttons[0]->sizeHint().height() * 3);
-    style_group->setMaximumSize(1000, style_buttons[0]->sizeHint().height() * 5);
-
-    layout->addStretch(2);
+    loc_group->setMinimumSize(w, loc_buttons[0]->sizeHint().height() * 4 + 30);
+    task_group->setMinimumSize(w, task_buttons[0]->sizeHint().height() * 4 + 30);
+    style_group->setMinimumSize(w, style_buttons[0]->sizeHint().height() * 3 + 30);
+   
+    layout->setRowStretch(0, 10);
+    layout->setRowStretch(1, 10);
+   
     layout->activate();
+   
 
     loadSettings();
 }
@@ -145,16 +145,30 @@ KPanelConfig::~KPanelConfig( ) {
 void KPanelConfig::resizeEvent(QResizeEvent *e) {
     KConfigWidget::resizeEvent(e);
     QRect rect;
-    int i, h, w;
+    int i, h, o;
 
     rect = task_group->contentsRect();
-    w = (rect.width() - 10) / 4;
-    h = rect.top() +
-	(rect.height() - task_buttons[0]->sizeHint().height()) / 2;
-
+    h = loc_buttons[0]->height();
+    o = (rect.height() - 4*h) / 5;
+    rect.setTop(rect.top() + 5);
     for (i = 0;  i < 4; i++)
-	task_buttons[i]->move(w * i + 10, h);
+	task_buttons[i]->move(10, 10 + (i+1)*o + i*h);
 
+    rect = loc_group->contentsRect();
+    h = loc_buttons[0]->height();
+    o = (rect.height() - 4*h) / 5;
+    rect.setTop(rect.top() + 5);
+    for (i = 0;  i < 4; i++)
+	loc_buttons[i]->move(10, 10 + (i+1)*o + i*h);
+   
+    rect = style_group->contentsRect();
+    h = style_buttons[0]->height();
+    o = (rect.height() - 3*h) / 4;
+    rect.setTop(rect.top() + 5);
+    for (i = 0;  i < 3; i++)
+	style_buttons[i]->move(10, 10 + (i+1)*o + i*h);
+   
+/*   
     rect = loc_group->contentsRect();
     h = rect.top() +
 	(rect.height() - loc_buttons[0]->sizeHint().height()) / 2;
@@ -166,7 +180,8 @@ void KPanelConfig::resizeEvent(QResizeEvent *e) {
 	(rect.height() - style_buttons[0]->sizeHint().height()) / 2;
     for (i = 0; i < 3; i++)
 	style_buttons[i]->move(w * i + 10, h);
-}
+*/
+ }
 
 void KPanelConfig::loadSettings() {
 
