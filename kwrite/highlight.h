@@ -278,7 +278,7 @@ class Highlight {
 //    const char *mimetypes();
     void use();
     void release();
-    virtual bool isInWord(char c) {return testWw(c);}
+    virtual bool isInWord(char c) {return !testWw(c);}
     virtual void doHighlight(int ctxNum, TextLine *textLine);
   protected:
     virtual void createItemData(ItemDataList &);
