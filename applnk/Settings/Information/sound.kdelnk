@@ -6,6 +6,7 @@ Icon=kcmsound.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-6.html
 Comment=Sound information
+Comment[no]=Lydinformasjon
 Name=Sound
 Name[no]=Lyd
 SwallowTitle=Information about Sound-Cards

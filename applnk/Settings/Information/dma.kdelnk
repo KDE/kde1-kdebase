@@ -9,4 +9,4 @@ Comment[no]=DMA-informasjon
 Name=DMA-Channels
 Name[no]=DMA-kanaler
 SwallowTitle=Information about used DMA-channels
-SwallowTitle=Informasjon om brukte DMA-kanaler
+SwallowTitle[no]=Informasjon om brukte DMA-kanaler

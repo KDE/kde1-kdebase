@@ -7,4 +7,6 @@ DocPath=kcontrol/kcminfo/info-10.html
 Comment=Partition information
 Comment[no]=Partisjoninformasjon
 Name=Partitions
+Name[no]=Partisjoner
 SwallowTitle=Information about Partitions
+SwallowTitle[no]=Informasjon om partisjoner
