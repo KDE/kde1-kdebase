@@ -40,7 +40,9 @@ AC_AIX
 AC_MINIX
 
 dnl Checks for supported features
-AC_ARG_ENABLE(kscreensaver, --enable-kscreensaver	The KDE screen saver, KSCREEN="kscreensaver", KSCREEN="")
+KSCREEN="kscreensaver"
+AC_ARG_ENABLE(kscreensaver,[  --enable-kscreensaver	The KDE screen saver [default=yes]], 
+test $enableval = "no" && KSCREEN="")
 AC_SUBST(KSCREEN)
 
 dnl Checks for libraries.

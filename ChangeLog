@@ -29,3 +29,6 @@
 	added khexdit
 	added .kdelnk for kmines, kedit, ktetris
 	put kwm, kfind's .kdelnk in the right directories
+	replaced --enable-kscreensaver by --disable-kscreensaver
+	updated kpanel to 0.15
+	some bugfixes (thanks Marco)

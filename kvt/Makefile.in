@@ -52,10 +52,12 @@ TARGET = kvt
 .c.o:
 	$(CC) $(CFLAGS) $(INCDIR) $(EXTRA_DEFINES) -c $<
 
+%.moc: %.h
+	$(MOC) $< -o $@
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
+$(TARGET): main.moc $(OBJS)
 	$(CXX) -o kvt $(OBJS) $(LDFLAGS)
 
 install:
@@ -75,4 +77,4 @@ uninstall:
 	rm -f $(UTILSDIR)/UNIX.kdelnk
 
 clean:
-	rm -f kvt $(OBJS) *~ *#
+	rm -f kvt $(OBJS) *~ *.moc *#
