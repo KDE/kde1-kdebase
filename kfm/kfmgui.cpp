@@ -1738,11 +1738,16 @@ void KfmGui::readProperties( KConfig* config )
 
     if (GUI_ready) //if these are local changes...
     {
-      hasLocal = true;
+        hasLocal = true;
       
         mview->setItemChecked( mview->idAt( 3 ), bViewHTMLLocal);
         mview->setItemChecked( mview->idAt( 2 ), visualSchnauzerLocal );
         mview->setItemChecked( mview->idAt( 0 ), showDotLocal );
+        if  (  bViewHTML != bViewHTMLLocal
+            || visualSchnauzer != visualSchnauzerLocal
+            || showDot != showDotLocal )
+            // see slotViewHTML()
+            view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );        
         
         mview->setItemChecked( mview->idAt( 5 ), false);
         mview->setItemChecked( mview->idAt( 6 ), false);

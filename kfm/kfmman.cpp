@@ -290,7 +290,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     	if (newUrlWithoutRef.url() == oldUrlWithoutRef.url())
     	{
 	    // Add old URL to history stacks
-	    view->setUpURL( newUrlWithoutRef.url() );
+	    view->setUpURL( newUrlWithoutRef.url() ); // ?? (David)
 	    view->pushURLToHistory();
 	    if ((nextXOffset != 0) || (nextYOffset != 0))
 	    {
@@ -330,7 +330,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    view->pushURLToHistory();
 
 	    url = _url;
-	    view->setUpURL( "" );
+            setUpURL();
 	    view->begin( _url, nextXOffset, nextYOffset );
 	    view->write( page );
 	    view->parse();
@@ -653,6 +653,30 @@ void KFMManager::writeBodyTag()
 
 }
 
+void KFMManager::setUpURL()
+{
+    KURL u( url.data() );
+    
+    if (!u.isLocalFile()) // if this is not a local file
+        view->setUpURL( "" );
+    else
+    {
+        if ( strcmp( u.path(), "/" ) != 0 )
+        {
+            KURL u2( url.data() );
+            u2.cd("..");
+	
+            QString s = u2.url();
+            if ( s.right( 1 ) != "/" )
+                s += "/";
+
+            view->setUpURL( s );	
+        }
+        else
+            view->setUpURL( "/" );
+    }
+}
+
 void KFMManager::writeBeginning()
 {
     // Push the old URL on the stack if we are allowed to
@@ -672,8 +696,6 @@ void KFMManager::writeBeginning()
     
     writeBodyTag();
     
-    KURL u( url.data() );
-    
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
@@ -682,20 +704,7 @@ void KFMManager::writeBeginning()
 	view->write( "<table cellspacing=0 cellpadding=0 width=100% padding=1>" );
     else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
 	;
-    
-    if ( strcmp( u.path(), "/" ) != 0 )
-    {
-	KURL u2( url.data() );
-	u2.cd("..");
-	
-	QString s = u2.url();
-	if ( s.right( 1 ) != "/" )
-	    s += "/";
-
-	view->setUpURL( s );	
-    }
-    else
-      view->setUpURL( "/" );
+    setUpURL();
 }
 
 void KFMManager::writeEnd()
@@ -1245,7 +1254,7 @@ void KFMManager::slotMimeType( const char *_type )
 	{
 	    bBufferPage = FALSE;
 	    // view->begin( u2 );
-	    view->setUpURL( "" );
+            setUpURL(); // will set "".
 	    view->begin( url, nextXOffset, nextYOffset );
 	    if ( aCharset != 0 )
 	      view->setCharset(aCharset);
@@ -1350,8 +1359,7 @@ void KFMManager::slotFinished()
 	if ( bBufferPage )
 	{
 	    // Display it now
-	    // QString u2 = u.directoryURL();
-	    view->setUpURL( "" );
+            setUpURL();
 	    view->begin( url, nextXOffset, nextYOffset );
 	    view->write( pageBuffer );
 	    view->parse();

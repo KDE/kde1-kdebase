@@ -138,6 +138,11 @@ protected:
      * is turned on.
      */
     QString getVisualSchnauzerIconTag( const char *_url );
+
+    /**
+     * Sets the 'up url' in the kfmview.
+     */
+    void setUpURL();
     
     /**
      * List of all files in the directory.
