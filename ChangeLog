@@ -1,5 +1,7 @@
 Thu Jan 22 14:46:15 1998  Stephan Kulow  <coolo@kde.org>
 
+	* configure.in: fixed an ugly bug in AC_BASE_PATH_KDE
+
 	* kappfinder/kappfinder.in: let kappfinder create by configure to
 	allow the use of the kde_ paths
 

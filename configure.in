@@ -255,5 +255,7 @@ AC_OUTPUT(Makefile \
 	kappfinder/pics/Makefile \
 	kappfinder/Makefile )
 
-chmod +x kappfinder/kappfinder
+AC_OUTPUT_COMMANDS(chmod +x kappfinder/kappfinder)
+
+
 
