@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"PO-Revision-Date: 1998-01-13 7:22+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,19 +164,16 @@ msgid "Standard"
 msgstr "Estándar"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Bienvenida"
+msgstr "Fuente de Bienvenida"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Fallo"
+msgstr "Fuente de Fallo"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Estándar"
+msgstr "Fuente Estándar"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

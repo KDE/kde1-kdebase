@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1998-12-28 9:30+0100\n"
+"PO-Revision-Date: 1998-01-13 7:23+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "MIME-Version: 1.0\n"
@@ -421,7 +421,7 @@ msgstr "Baja"
 
 #: general.cpp:222
 msgid "Style"
-msgstr ""
+msgstr "Estilo"
 
 #: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
@@ -432,9 +432,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "Barra de &Menú arriba de la pantalla al estilo de MacOS"
 
 #: general.cpp:260
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplicar estilo a aplicaciones no-KDE"
+msgstr "&Aplicar fuentes y colores a aplicaciones no-KDE"
 
 #: general.cpp:531
 msgid "General font"
@@ -484,14 +483,13 @@ msgstr "&Colores"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Estilo"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"modo de uso: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+"modo de uso: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
