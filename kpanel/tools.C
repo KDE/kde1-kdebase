@@ -654,8 +654,8 @@ void kPanel::showToolTip(QString s){
   if (menu_tool_tips == -1)
     return;
 
-  if (s.isEmpty())
-    s = klocale->translate("No comment available");
+  //if (s.isEmpty())
+  //   s = klocale->translate("No comment available");
 
   if (s.length() > 60){
     QString s2 = "";
@@ -673,28 +673,30 @@ void kPanel::showToolTip(QString s){
     }
     s = "";
     s.append(s2);
-   }
+  }
 
 
-   tipSleepTimer->start(4000, true);
-   if (s != ""){
-       int t = 1000;
-       t = menu_tool_tips;
-       if (!info_label_is_sleeping && t > 0)
- 	t =100;
-       info_label->hide();
-       info_label->setText(s);
-       info_label->adjustSize();
-       info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
-       if (t>=0){
- 	tipTimer->start(t, true);
-       }
-   }
-   else{
-     info_label->hide();
-     tipTimer->stop();
-     info_label->setText("");
-   }
+  tipSleepTimer->start(4000, true);
+
+  if (s != "" && !s.isEmpty()) {
+    int t = menu_tool_tips;
+
+    if (!info_label_is_sleeping && t > 0)
+      t = 100;
+
+    info_label->hide();
+    info_label->setText(s);
+    info_label->adjustSize();
+    info_label->move(QCursor::pos().x()+6, QCursor::pos().y()+16);
+    if (t>=0){
+      tipTimer->start(t, true);
+    }
+  }
+  else{
+    info_label->hide();
+    tipTimer->stop();
+    info_label->setText("");
+  }
 
 }
 

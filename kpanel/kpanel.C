@@ -385,7 +385,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       else
 	info_label->setFrameStyle( QFrame::Raised | QFrame::Panel );
       info_label->setLineWidth( 1 );
-      info_label->setMargin( 3 );
+      info_label->setMargin( 1 );
       info_label->setAlignment( AlignLeft | AlignTop );
       info_label->setAutoResize( true );
       info_label->setText(klocale->translate("No info available"));
@@ -967,7 +967,7 @@ void kPanel::button_pressed(){
       case 3:
 	if (entries[i].pmi){
 	  KFM* kfm = new KFM;
-	  QString a = entries[i].pmi->fullPathName().copy();
+	  QString a = entries[i].pmi->getFullPathName().copy();
 	  a.prepend("file:");
 	  if (entries[i].pmi->getType() == submenu)
 	    a.append("/.directory");
@@ -1134,26 +1134,26 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
      if (pmi->getType() == submenu){
        PMenu* pm = new PMenu;
        pm->setAltSort(foldersFirst);
-       pm->parse(QDir(pmi->fullPathName()));
+       pm->parse(QDir(pmi->getFullPathName()));
        PMenuItem* pmi2 = new PMenuItem;
-       QFileInfo fi(pmi->fullPathName());
+       QFileInfo fi(pmi->getFullPathName());
        pmi2->parse(&fi, pm);
        pmi = pmi2;
        pm->createMenu(pmi->getQPopupMenu(), this);
        entries[nbuttons-1].pmi = pmi;
 
-       entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->bigIconName(), True)));
+       entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->getBigIconName(), True)));
      }
      else{
-       entries[nbuttons-1].button->setPixmap(load_pixmap(pmi->bigIconName()));
+       entries[nbuttons-1].button->setPixmap(load_pixmap(pmi->getBigIconName()));
 
-       QFile myfile(pmi->fullPathName());
+       QFile myfile(pmi->getFullPathName());
        if (myfile.exists()){
 	 if (myfile.open ( IO_ReadOnly )){
 	   // kalle	   QTextStream mystream(&myfile);
 
 	   myfile.close(); // kalle
-	   KSimpleConfig pConfig(pmi->fullPathName(),true);
+	   KSimpleConfig pConfig(pmi->getFullPathName(),true);
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
 	   if (pConfig.hasKey("SwallowTitle")){

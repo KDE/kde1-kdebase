@@ -90,9 +90,9 @@ public:
   QPopupMenu *getQPopupMenu() { return cmenu; }
   void      removeMenu();
   QString   getSaveName();
-  QString   bigIconName(){ return big_pixmap_name;};
-  QString   text() { return text_name; }
-  QString   fullPathName(){return dir_path + "/" + real_name;}
+  QString   getBigIconName(){ return big_pixmap_name;};
+  QString   getText() { return text_name; }
+  QString   getFullPathName(){return dir_path + "/" + real_name;}
   QString   getComment(){ return comment;}
   QString   getDirPath(){ return dir_path;}
 

@@ -160,7 +160,8 @@ void kPanel::parseMenus(){
     PMenuItem* fileBrowser = 
       new PMenuItem(submenu, klocale->translate("Disk Navigator"),
                     0, "kdisknav.xpm", new PFileMenu(true), 0, 0,
-                    new myPopupMenu);
+                    new myPopupMenu, false, 0,
+		    klocale->translate("Quickly navigate through the filesystem"));
     
 
     pmenu->add( fileBrowser );
@@ -364,14 +365,14 @@ void kPanel::readInConfiguration(){
      config->readListEntry("RecentFiles", recent_files);
 
    if (config->hasKey("ShowGlobalSection"))
-     show_global_section = (config->readEntry("ShowGlobalSection") == "on");
+     show_shared_section = (config->readEntry("ShowGlobalSection") == "on");
    else
-     show_global_section = true;
+     show_shared_section = true;
 
    if (config->hasKey("ShowLocalSection"))
-     show_local_section = (config->readEntry("ShowLocalSection") == "on");
+     show_personal_section = (config->readEntry("ShowLocalSection") == "on");
    else {
-     show_local_section = true;
+     show_personal_section = true;
    }
 
    if (config->hasKey("ShowRecentSection"))

@@ -423,8 +423,8 @@ private:
 
   bool show_dot_files;
   bool ignore_case;   // ignore case when sorting
-  bool show_global_section;
-  bool show_local_section;
+  bool show_shared_section;
+  bool show_personal_section;
   bool show_recent_section;
   bool show_option_entry;
 

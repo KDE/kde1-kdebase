@@ -109,8 +109,9 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
   memb = member;
   dir_path = d.copy();
   comment = co;
-  if (comment.isEmpty())
-    comment = text_name;
+  // PI: no useless comments!
+  //if (comment.isEmpty())
+  //  comment = text_name;
   id = global_id++;
 }
 
@@ -219,8 +220,9 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
   if (pixmap.isNull())
     pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
 
-  if (comment.isEmpty())
-    comment = text_name;
+  // PI: no useless comments!
+  //if (comment.isEmpty())
+  //  comment = text_name;
   if (big_pixmap_name.isEmpty()){
     QString tmp = real_name.copy();
     int pos = tmp.find(".kdelnk");
@@ -270,7 +272,7 @@ void PMenuItem::exec()
 QString PMenuItem::getSaveName()
 {
   getPaths();
-  QString temp = fullPathName();
+  QString temp = getFullPathName();
   if( temp == personal || temp == personal + "/" )
     {
       temp = "$$PERSONAL";
@@ -391,6 +393,9 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
         item->cmenu->id = item->getId();
 
         ((PFileMenu*)(item->sub_menu))->parentItem = item;
+
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
+		 SLOT(showToolTip(QString)) );
 
 	continue;
 
@@ -688,7 +693,7 @@ PMenuItem * PMenu::searchItem(QString name)
       // can't be inside of this menu, so search only for submenus
       for( item = list.first(); item != 0L; item = list.next() )
 	{
-	  if( item->fullPathName() == name)
+	  if( item->getFullPathName() == name)
 	    return item;
 	  if( item->cmenu != 0L )
 	    {
@@ -702,7 +707,7 @@ PMenuItem * PMenu::searchItem(QString name)
       // should be inside of this menu
       for( item = list.first(); item != 0L; item = list.next() )
 	{
-	  if( item->fullPathName() == name )
+	  if( item->getFullPathName() == name )
 	    return item;
 	}
     }

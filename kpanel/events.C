@@ -187,7 +187,7 @@ void kPanel::windowAdd(Window w){
 
       // Exception: do not install a passive grab for the left mouse
       // button if there is no Exec property in the kdelnk file.
-      KSimpleConfig pConfig(entries[bi].pmi->fullPathName(),true);
+      KSimpleConfig pConfig(entries[bi].pmi->getFullPathName(),true);
       pConfig.setGroup("KDE Desktop Entry");
       QString aString = pConfig.readEntry("Exec", "");
       if (aString.isEmpty()){
@@ -826,7 +826,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
   for (i=0;i<nbuttons&&entries[i].drop_zone != _zone;i++);
   if (i<nbuttons && entries[i].pmi){
     KFM* kfm = new KFM;
-    QString com = entries[i].pmi->fullPathName();
+    QString com = entries[i].pmi->getFullPathName();
     com.prepend("file:");
     kfm->exec(com.data(),_zone->getData());
     delete kfm;

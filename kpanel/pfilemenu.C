@@ -69,8 +69,8 @@
 #define TOOMANYFILES_ICON          "mini-bomb.xpm"
 #define OPTIONS_ICON               "application_settings.xpm"
 
-#define KDISKNAV_GLOBAL_DIR       KApplication::kde_datadir() + "/kdisknav"
-#define KDISKNAV_LOCAL_DIR        "/.kde/share/apps/kdisknav"
+#define KDISKNAV_SHARED_DIR       KApplication::kde_datadir() + "/kdisknav"
+#define KDISKNAV_PERSONAL_DIR        "/.kde/share/apps/kdisknav"
 
 #define OPEN_FOLDER_TIP   "Open this folder (+Shift: Launch a terminal here)"
 
@@ -182,17 +182,17 @@ getFileInfo(const char* _path, const char* file_name, char* new_file,
 PFileMenu::PFileMenu(bool isRoot)
   : tail(0L), path(QString()), isClean(true), lastActivated(0)
 {
-  if (!testDir2(KDISKNAV_LOCAL_DIR)) {
-    // local dir just created -> add some useful links
+  if (!testDir2(KDISKNAV_PERSONAL_DIR)) {
+    // personal dir just created -> add some useful links
 #ifdef OLD  // OLD STYLE (symlinks)
     ::symlink(QDir::homeDirPath(), (const char*)
-	      QString(QDir::homeDirPath() +KDISKNAV_LOCAL_DIR + "/Home"));
+	      QString(QDir::homeDirPath() +KDISKNAV_PERSONAL_DIR + "/Home"));
     ::symlink((const char*)(QDir::homeDirPath() + "/Desktop"), (const char*)
-	      QString(QDir::homeDirPath() +KDISKNAV_LOCAL_DIR + "/Desktop"));
+	      QString(QDir::homeDirPath() +KDISKNAV_PERSONAL_DIR + "/Desktop"));
 #else  // NEW STYLE (URL files)
-    QString kdisknav_localdir = QDir::homeDirPath() +KDISKNAV_LOCAL_DIR;
+    QString kdisknav_personaldir = QDir::homeDirPath() +KDISKNAV_PERSONAL_DIR;
 
-    FILE* fout = ::fopen(kdisknav_localdir + "/Home.kdelnk", "w");
+    FILE* fout = ::fopen(kdisknav_personaldir + "/Home.kdelnk", "w");
 
     if (fout != 0L) {
       ::fprintf(fout, "# KDE Config File\n");
@@ -205,7 +205,7 @@ PFileMenu::PFileMenu(bool isRoot)
       ::fclose(fout);
     }
 
-    fout = ::fopen(kdisknav_localdir + "/Desktop.kdelnk", "w");
+    fout = ::fopen(kdisknav_personaldir + "/Desktop.kdelnk", "w");
 
     if (fout != 0L) {
       ::fprintf(fout, "# KDE Config File\n");
@@ -287,6 +287,8 @@ PFileMenu::newDirBrowserItem(const QFileInfo* fi, bool useCurrentPath)
                   new PFileMenu(newpath), 0, 0, new myPopupMenu(this));
 
   CHECK_PTR(fileb);
+  // The tooltip, in this case, is simply annoying
+  fileb->comment = QString();
   return fileb;
 }
 
@@ -350,7 +352,8 @@ PFileMenu::newFileItem(const QFileInfo* fi, bool useCurrentPath)
                                        0, 0, 0, 0, false, _path);
   CHECK_PTR(fileEntry);
   fileEntry->setRealName(fi->fileName());
-
+  // The tooltip, in this case, is simply annoying
+  fileEntry->comment = QString();
   return fileEntry;
 }
 
@@ -710,7 +713,7 @@ void PFileMenu::updateRecentFiles(QString _path)
 void PFileMenu::openFolder()
 {
   // Update the Recent section if the entry is not already in
-  // the Global or Local section;
+  // the Shared or Personal section;
   if (!(this->parentItem && this->parentItem->cmenu &&
       this->parentItem->cmenu->parentMenu == PFileMenu::root))
     updateRecentFolders(this->path);
@@ -740,38 +743,38 @@ void PFileMenu::buildRootMenu()
     PFileMenu::root = this;
     bool isFirst = true;
 
-    // Global Section /////////////////////////////////////////////////////
+    // Shared Section /////////////////////////////////////////////////////
 
-    if (the_panel->show_global_section) {
-      this->add( new PMenuItem(label, i18n("Global:"), 0, "background.xpm",
+    if (the_panel->show_shared_section) {
+      this->add( new PMenuItem(label, i18n("Shared:"), 0, "shared.xpm",
 		 0, 0, 0, 0, FALSE, QString(),
 		 "Entries shared among all users") );
       this->add( new PMenuItem(separator) );
 
-      this->path = QString(KDISKNAV_GLOBAL_DIR);
-      QDir globaldir(this->path);
-      this->parseDir(globaldir, false);
+      this->path = QString(KDISKNAV_SHARED_DIR);
+      QDir shareddir(this->path);
+      this->parseDir(shareddir, false);
       isFirst = false;
     }
 
 
-    // Local Section /////////////////////////////////////////////////////
+    // Personal Section /////////////////////////////////////////////////////
 
-    if (the_panel->show_local_section) {
+    if (the_panel->show_personal_section) {
 
       if (isFirst)
 	isFirst = false;
       else
 	this->add( new PMenuItem(separator) );
 
-      this->add( new PMenuItem(label, i18n("Local:"), 0, "mini-display.xpm",
+      this->add( new PMenuItem(label, i18n("Personal:"), 0, "personal.xpm",
 		 0, 0, 0, 0, FALSE, QString(),
 		 "Personal entries") );
       this->add( new PMenuItem(separator) );
 
-      this->path = QString(QDir::homeDirPath() + KDISKNAV_LOCAL_DIR);
-      QDir localdir(this->path);
-      this->parseDir(localdir, false);
+      this->path = QString(QDir::homeDirPath() + KDISKNAV_PERSONAL_DIR);
+      QDir personaldir(this->path);
+      this->parseDir(personaldir, false);
     }
 
     // Recent Section /////////////////////////////////////////////////////
@@ -823,8 +826,8 @@ void PFileMenu::buildRootMenu()
     // Options /////////////////////////////////////////////////////
 
     if (the_panel->show_option_entry ||
-        (!the_panel->show_global_section &&
-         !the_panel->show_local_section &&
+        (!the_panel->show_shared_section &&
+         !the_panel->show_personal_section &&
          !the_panel->show_recent_section)) {
 
       if (isFirst)
@@ -833,7 +836,8 @@ void PFileMenu::buildRootMenu()
 	this->add( new PMenuItem(separator) );
 
       this->add(new PMenuItem(prog_com, i18n("Options..."), 0,
-                               OPTIONS_ICON, 0, this, SLOT(optionsDlg())));
+			      OPTIONS_ICON, 0, this, SLOT(optionsDlg()),
+			      0, false, QString(), "Customize Disk Navigator"));
     }
 
 #ifdef DMALLOC
@@ -896,6 +900,11 @@ void PMenu::dump()
 {
   printf("PMenu::dump()\n");
   printf("[this = %x]", unsigned(this));
+
+  for(PMenuItem* item = list.first(); item != 0; item = list.next() ) {
+    printf("Dumping child of PMenu(%x):\n", unsigned(this));
+    item->dump();
+  }
 }
 
 void PFileMenu::dump()
@@ -926,6 +935,7 @@ void PMenuItem::dump()
   printf("[this = %x]", unsigned(this));
   printf("[id = %d]", id);
   printf("[entry_type = %d]", entry_type);
+  printf("[text_name = %s]", text_name.data());
   printf("[cmenu = %x]", unsigned(cmenu));
   printf("[sub_menu = %x]", unsigned(sub_menu));
 
