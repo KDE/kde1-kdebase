@@ -82,8 +82,10 @@
 #endif /* !NOSTDHDRS */
 
 #if !defined (apollo) && !defined (VMS)
-#include <malloc.h>
-#include <unistd.h>
+# ifndef __FreeBSD__
+#  include <malloc.h>
+# endif
+# include <unistd.h>
 #endif /* !apollo && !VMS */
 
 #endif /* !news1800 && !sun386 */

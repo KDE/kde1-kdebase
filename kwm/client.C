@@ -8,6 +8,8 @@
 #include <stdio.h>
 #ifndef __FreeBSD__
 #include <malloc.h>
+#else
+#include <stdlib.h>
 #endif
 #include <qapp.h>
 #include <qpushbt.h>
