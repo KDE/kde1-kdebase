@@ -102,7 +102,7 @@ msgstr "Vis tre"
 # kfmgui.cpp:356
 #: kfmgui.cpp:356
 msgid "&Visual Schnauzer"
-msgstr ""
+msgstr "&Bilder som ikoner"
 
 # kfmgui.cpp:358
 #: kfmgui.cpp:358

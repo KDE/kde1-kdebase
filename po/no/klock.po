@@ -148,11 +148,11 @@ msgstr ""
 
 #: blob.cpp:606
 msgid "Blobs"
-msgstr "Blobs"
+msgstr "Klatter"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
 msgid "Setup KBouboule"
@@ -593,11 +593,11 @@ msgstr "Slo feil"
 
 #: science.cpp:74
 msgid "Science"
-msgstr ""
+msgstr "Vitenskap"
 
 #: science.cpp:562
 msgid "Setup Science"
-msgstr "Science-oppsett"
+msgstr "Vitenskap-oppsett"
 
 #: science.cpp:580
 msgid "Mode:"
@@ -629,7 +629,7 @@ msgstr "Bevegelse:"
 
 #: science.cpp:845
 msgid "About Science"
-msgstr "Om Science"
+msgstr "Om Vitenskap"
 
 #: science.cpp:846
 msgid ""
@@ -638,7 +638,7 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
-"Science versjon 0.24.2 beta\n"
+"Vitenskap versjon 0.24.2 beta\n"
 "\n"
 "skrevet av Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
@@ -683,7 +683,7 @@ msgstr "KSpace-oppsett"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Warp-interval:"
 
 #: space.cpp:685
 msgid "About KSpace"

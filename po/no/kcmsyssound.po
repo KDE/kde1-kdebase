@@ -71,11 +71,11 @@ msgstr "Oppstart"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Opprulling av vindu"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Nedrulling av vindu"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
@@ -103,11 +103,11 @@ msgstr "Fjerner fastsetting av vindu"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr ""
+msgstr "Nytt dialogvindu"
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Dialogvindu fjernes"
 
 #: syssound.cpp:171
 msgid "Logout"
