@@ -47,10 +47,10 @@ KInfoApplication::KInfoApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("memory"))
 	addPage(memory = new KMemoryWidget(dialog, "memory"), 
-		klocale->translate("&Memory"), "memory.html");
+		klocale->translate("&Memory"), "info-1.html");
       if (!pages || pages->contains("processor"))
 	addPage(processor = new KProcessorWidget(dialog, "processor"), 
-		klocale->translate("&Processor"), "processor.html");
+		klocale->translate("&Processor"), "info-2.html");
       
       dialog->setApplyButton(0);
       dialog->setCancelButton(0);

@@ -54,13 +54,13 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("windows"))
 	addPage(windows = new KWindowConfig(dialog, "windows"), 
-		klocale->translate("&Windows"), "windows.html");
+		klocale->translate("&Windows"), "kwm-2.html");
       if (!pages || pages->contains("buttons"))
 	addPage(buttons = new KTitlebarButtons(dialog, "buttons"),
-		klocale->translate("&Buttons"), "titlebar.html");
+		klocale->translate("&Buttons"), "kwm-1.html");
       if (!pages || pages->contains("titlebar"))
 	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
-		klocale->translate("&Titlebar"), "titlebar.html");
+		klocale->translate("&Titlebar"), "kwm-1.html");
 
       if (windows || buttons || appearance)
         dialog->show();

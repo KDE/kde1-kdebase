@@ -50,10 +50,10 @@ KInputApplication::KInputApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("mouse"))
 	addPage(mouse = new MouseConfig(dialog, "mouse", FALSE), 
-		klocale->translate("&Mouse"), "mouse.html");
+		klocale->translate("&Mouse"), "input-2.html");
       if (!pages || pages->contains("keyboard"))
 	addPage(keyboard = new KeyboardConfig(dialog, "keyboard", FALSE), 
-		klocale->translate("&Keyboard"), "keyboard.html");
+		klocale->translate("&Keyboard"), "input-1.html");
 
       if (mouse || keyboard)
         dialog->show();

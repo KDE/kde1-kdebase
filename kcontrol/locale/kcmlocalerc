@@ -3,7 +3,7 @@ Languages=de,en,fr,C,cs,sv,es,ru,nl,hu,da,fi,it,pt,pl,no,el,hr,
 
 [C]
 Name=Default language
-Name[de]=Defaule Sprache
+Name[de]=Default Sprache
 Name[fi]=Oletuskieli
 
 [de]

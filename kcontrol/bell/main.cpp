@@ -48,7 +48,7 @@ KBellApplication::KBellApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("bell"))
         addPage(bell = new KBellConfig(dialog, "bell", FALSE), 
-		klocale->translate("&Bell"), "bell.html");
+		klocale->translate("&Bell"), "bell-1.html");
 
       if (bell)
         dialog->show();
