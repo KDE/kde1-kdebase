@@ -179,7 +179,7 @@ void KFMJob::slotError( int _kioerror, const char *_text )
     }
 
     // Print an error
-    QMessageBox::message( klocale->translate("KFM Error"),
+    QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			  _text );
     // Tell our client about it
     emit error( _kioerror, _text );

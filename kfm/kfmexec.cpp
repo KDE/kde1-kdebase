@@ -61,7 +61,7 @@ void KFMExec::openURL( const char *_url  )
     {
 	QString tmp;
 	tmp.sprintf(klocale->translate("Malformed URL\n%s"), _url );
-	QMessageBox::message( klocale->translate("KFM Error"), tmp );
+	QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	delete this;
 	return;
     }
@@ -95,7 +95,7 @@ void KFMExec::openURL( const char *_url  )
 		else
 		{
 		    // The *.kdelnk file is broken
-		    QMessageBox::message( klocale->translate("KFM Error"), 
+		    QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 					  klocale->translate("The file does not contain a URL") );
 		    delete this;
 		    return;

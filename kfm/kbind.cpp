@@ -331,7 +331,7 @@ void KMimeType::init()
     // Lets do some rescue here.
     if ( types->count() == 0 )
     {
-	QMessageBox::message( klocale->translate( "KFM Error" ),
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 			      klocale->translate( "No mime types installed!" ) );
 	
 	// Lets have at least the default for all
@@ -384,7 +384,7 @@ void KMimeType::errorMissingMimeType( const char *_type, KMimeType **_ptr )
     QString tmp = klocale->translate( "Could not find mime type\n" );
     tmp += _type;
     
-    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+    QMessageBox::warning( 0, klocale->translate( "KFM Error" ), tmp );
     
     *_ptr = defaultType;
 }
@@ -1477,7 +1477,7 @@ bool ExecutableMimeType::run( const char *_url )
     KURL u( _url );
     if ( strcmp( u.protocol(), "file" ) != 0 || u.hasSubProtocol() )
     {
-	QMessageBox::message( klocale->translate( "KFM Error" ), 
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ), 
 			      klocale->translate( "Can only start executables on local disks\n" ) );
 	return TRUE;
     }
@@ -1494,7 +1494,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
     KURL u( _url );
     if ( strcmp( u.protocol(), "file" ) != 0 || u.hasSubProtocol() )
     {
-	QMessageBox::message( klocale->translate( "KFM Error" ), 
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ), 
 			      klocale->translate( "Can only start executables on local disks\n" ) );
 	return TRUE;
     }
@@ -1596,7 +1596,7 @@ bool KDELnkMimeType::run( const char *_url )
 	// delete config; // Again, Torben !!!
 	if ( url.isEmpty() )
 	{
-	    QMessageBox::message( klocale->translate( "KFM Error" ),
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 				  klocale->translate( "The \"Link=....\" entry is empty" ) );
 	    delete config;
 	    return TRUE;
@@ -1611,7 +1611,7 @@ bool KDELnkMimeType::run( const char *_url )
     else
     {
 	delete config;
-	QMessageBox::message( klocale->translate( "KFM Error" ),
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 			      klocale->translate( "The config file has no \"Type=...\" line" ) );
 	// Just say: The job is done
 	return TRUE;
@@ -1859,7 +1859,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 	    {
  		QString tmp;
 		tmp.sprintf( "%s %s", klocale->translate( "Unknown binding" ), _binding );
-		QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+		QMessageBox::warning( 0, klocale->translate( "KFM Error" ), tmp );
 		// Say: Yes we have done the job. That is not quite right, but
 		// we want to stop this here, before KFM tries some stupid things :-)
 		return TRUE;

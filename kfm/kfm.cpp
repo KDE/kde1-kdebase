@@ -36,7 +36,7 @@ KFM::KFM()
 
 	if ( flag )
 	{
-	    unsigned int i;
+	    int i;
 	    for ( i = 1; i <= n; i++ )
 	    {
 		printf("URL='%s'\n",urlList.at( i - 1 ) );

@@ -470,7 +470,7 @@ void FilePermissionsPropsPage::applyChanges()
 	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
 	// mask |= p;
 	if ( chmod( path, p ) != 0 )
-	    QMessageBox::message( klocale->translate( "KFM Error" ),
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    
     }
 
@@ -489,7 +489,7 @@ void FilePermissionsPropsPage::applyChanges()
 	    return;
 	}
 	if ( chown( path, pw->pw_uid, g->gr_gid ) != 0 )
-	    QMessageBox::message( klocale->translate( "KFM Error" ),
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 				  klocale->translate( "Could not change owner/group\nPerhaps access denied." ) );
     }    
 }
@@ -502,7 +502,6 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     terminalCheck = new QCheckBox( this, "CheckBox_1" );
     terminalEdit = new QLineEdit( this, "LineEdit_4" );
     execBrowse = new QPushButton( this, "Button_1" );
-    // iconView = new QWidget( this );
     
     QGroupBox* tmpQGroupBox;
     tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
@@ -519,10 +518,6 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 100, 30 );
     tmpQLabel->setText( klocale->translate("Execute") );
-
-    // tmpQLabel = new QLabel( this, "Label_2" );
-    // tmpQLabel->setGeometry( 10, 130, 100, 30 );
-    // tmpQLabel->setText( klocale->translate("Icon") );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
@@ -634,7 +629,7 @@ void ExecPropsPage::applyChanges()
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message( klocale->translate("KFM Error"),
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			      klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
@@ -756,7 +751,7 @@ void URLPropsPage::applyChanges()
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"), 
+	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
@@ -893,7 +888,7 @@ void DirPropsPage::applyChanges()
     QFile f( tmp.data() );
     if ( !f.open( IO_ReadWrite ) )
     {
-      QMessageBox::message(  klocale->translate("Error"), 
+      QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			     klocale->translate("Could not write to\n") + tmp );
 	return;
     }
@@ -1175,7 +1170,7 @@ void ApplicationPropsPage::applyChanges()
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"), 
+	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
@@ -1402,7 +1397,7 @@ void BindingPropsPage::applyChanges()
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"),
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }
@@ -1575,7 +1570,7 @@ void DevicePropsPage::applyChanges()
     QFile f( path );
     if ( !f.open( IO_ReadWrite ) )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"), 
+	QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			        klocale->translate("Could not save properties\nPerhaps permissions denied") );
 	return;
     }

@@ -55,7 +55,7 @@ void testDir( const char *_name )
     if ( m.right(1) == "/" )
       m.truncate( m.length() - 1 );
     
-    QMessageBox::message( klocale->translate("KFM Information"), 
+    QMessageBox::information( 0, klocale->translate("KFM Information"), 
 			  klocale->translate("Creating directory:\n") + m );
     ::mkdir( m, S_IRWXU );
   }
@@ -135,7 +135,7 @@ int main( int argc, char ** argv )
 
     if ( !bTemplates )
     {
-	QMessageBox::message( klocale->translate("KFM Information"),
+	QMessageBox::information( 0, klocale->translate("KFM Information"),
 			      klocale->translate("Installing Templates") );
 	QString cmd;
 	cmd.sprintf("cp %s/share/apps/kfm/Desktop/Templates/* %s", 

@@ -195,11 +195,17 @@ public slots:
     void slotEditApplications();
 
     /**
-     * Menu "Help->About"
+     * Menu "Help->About..."
      */
     void slotAbout();
+
     /**
-     * Menu "Help->How can I..."
+     * Menu "Help->About Qt..."
+     */
+   void slotAboutQt();
+
+    /**
+     * Menu "Help->Help..."
      */
     void slotHelp();
 

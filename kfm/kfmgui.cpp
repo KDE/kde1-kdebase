@@ -440,8 +440,10 @@ void KfmGui::initMenu()
     
     QPopupMenu *help = new QPopupMenu;
     CHECK_PTR( help );
-    help->insertItem( klocale->translate("&About"), this, SLOT(slotAbout()) );
-    help->insertItem( klocale->translate("&How can I ..."), 
+    help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
+    help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
+    help->insertSeparator();
+    help->insertItem( klocale->translate("&Help..."), 
 		      this, SLOT(slotHelp()) );
 
     menu = new KMenuBar( this );
@@ -548,7 +550,7 @@ void KfmGui::initToolBar()
 	    {
 		QString e;
 		e.sprintf( klocale->translate( "Could not load icon\n%s" ), n.data() );
-		QMessageBox::message( klocale->translate( "KFM Error" ), e.data() );
+		QMessageBox::warning( 0, klocale->translate( "KFM Error" ), e.data() );
 	    }
 	    animatedLogo.append( p );
 	}
@@ -1078,10 +1080,10 @@ void KfmGui::slotOpenLocation( )
 
 void KfmGui::slotQuit()
 {
-    if ( !QMessageBox::query( klocale->translate("KFM"), 
-			      klocale->translate("Do you really want to quit"),
-			      klocale->translate("Yes"),
-			      klocale->translate("No") ) )
+    if ( !QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
+			      klocale->translate("Do you really want to quit?"),
+			      klocale->translate("No"),
+			      klocale->translate("Yes ") ) )
 	return;
     
     QString file = QDir::homeDirPath();
@@ -1104,10 +1106,15 @@ void KfmGui::slotClose()
 
 void KfmGui::slotAbout()
 {
-    QString tmp;
-    tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org") );
-    QMessageBox::message( klocale->translate("About"), 
-			  tmp, klocale->translate("Ok") );
+    QString about_title, about_text;
+    about_title.sprintf( klocale->translate("About KFM") );
+    about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(), klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org") );
+    QMessageBox::about( this, about_title, about_text );
+}
+
+void KfmGui::slotAboutQt()
+{
+    QMessageBox::aboutQt( this, "About Qt" );
 }
 
 void KfmGui::slotHelp()

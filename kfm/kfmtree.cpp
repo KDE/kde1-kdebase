@@ -173,7 +173,7 @@ void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint 
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"),
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			       klocale->translate("Dont know what to do") );
 	return;
     }
@@ -292,7 +292,7 @@ void KFMDirTree::slotPopupEmptyTrashBin()
     }
     else
     {
-      QMessageBox::message( klocale->translate("KFM Error"), 
+      QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 			    klocale->translate("Could not access Trash Bin") );
 	return;
     }
@@ -330,11 +330,11 @@ void KFMDirTree::slotPopupTrash()
 
 void KFMDirTree::slotPopupDelete()
 {   
-    // Is the user really shure ?
-    bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
-				  klocale->translate("Do you really want to delete the files?\n\nThere is no way to restore them"), 
-				  klocale->translate("Yes"), 
-				  klocale->translate("No") );
+    // Is the user really sure ?
+    bool ok = QMessageBox::warning( 0, klocale->translate("KFM Warning"), 
+				  klocale->translate("Do you really want to delete the selected file(s)?\n\nThere is no way to restore them."), 
+				  klocale->translate("No"), 
+				  klocale->translate("Yes") );
     if ( ok )
     {
 	QString str( popupDir.data() );

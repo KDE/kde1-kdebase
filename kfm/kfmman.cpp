@@ -250,7 +250,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 		else
 		{
 		    // The *.kdelnk file is broken
-		    QMessageBox::message( klocale->translate("KFM Error"), 
+		    QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 					  klocale->translate("The file does not contain a URL") );
 		    return FALSE;
 		}
@@ -841,7 +841,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
 	{
 	    QString tmp;
 	    tmp.sprintf(klocale->translate("Malformed URL\n%s"), s );
-	    QMessageBox::message( klocale->translate("KFM Error"), tmp );
+	    QMessageBox::warning( 0, klocale->translate("KFM Error"), tmp );
 	    return;
 	}
     }
@@ -994,7 +994,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 	    else
 	    {
 		// We did not find some binding to execute
-		QMessageBox::message( klocale->translate("KFM Error"), 
+		QMessageBox::warning( 0, klocale->translate("KFM Error"), 
 				      klocale->translate("Dont know what to do.") );
 		return;
 	    }
@@ -1020,7 +1020,7 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	QMessageBox::message(  klocale->translate("KFM Error"),
+	QMessageBox::warning( 0, klocale->translate("KFM Error"),
 			       klocale->translate("Dont know what to do") );
 	return;
     }
