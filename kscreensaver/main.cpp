@@ -288,6 +288,9 @@ int main( int argc, char *argv[] )
 	}
 
 	initPasswd();
+	// drop root privileges before we do anything important
+	setuid(getuid());
+
 
 	if ( mode == MODE_INSTALL )
 	{
