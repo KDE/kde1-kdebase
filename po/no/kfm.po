@@ -30,15 +30,13 @@ msgstr "FEIL: Mal finnes ikke '%s'"
 msgid "&New"
 msgstr "&Ny"
 
-# main.cpp:236
 #: kfmgui.cpp:252
-#, fuzzy
 msgid "New &Window"
-msgstr "Ny visning"
+msgstr "Nytt &vindu"
 
 #: kfmgui.cpp:255
 msgid "&Run..."
-msgstr "&Kjør.."
+msgstr "&Kjør..."
 
 #: kfmgui.cpp:257
 msgid "Open &Terminal"
@@ -73,14 +71,12 @@ msgid "Find &next"
 msgstr "Finn &neste"
 
 #: kfmgui.cpp:295
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Mimetyper"
+msgstr "Mime&typer"
 
 #: kfmgui.cpp:297
-#, fuzzy
 msgid "App&lications"
-msgstr "Applikasjoner"
+msgstr "App&likasjoner"
 
 #: kfmgui.cpp:303
 msgid "Global Mime Types"
@@ -91,9 +87,8 @@ msgid "Global Applications"
 msgstr "Globale applikasjoner"
 
 #: kfmgui.cpp:312
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "Vis dotfiler"
+msgstr "Vis &skjulte filer"
 
 #: kfmgui.cpp:314
 msgid "Show Tr&ee"
@@ -101,7 +96,7 @@ msgstr "Vis tre"
 
 #: kfmgui.cpp:316
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Vis &bilder som ikoner"
 
 #: kfmgui.cpp:318
 msgid "&HTML View"
@@ -134,9 +129,7 @@ msgstr "L&ast tre på nytt"
 msgid "&Reload Document"
 msgstr "&Last dokument på nytt"
 
-# kfmgui.cpp:377
 #: kfmgui.cpp:337
-#, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Les til&ordninger på nytt"
 
@@ -155,7 +148,6 @@ msgid "Auto"
 msgstr "Auto"
 
 #: kfmgui.cpp:358
-#, fuzzy
 msgid "Document Encodin&g"
 msgstr "&Dokumentkoding"
 
@@ -215,13 +207,12 @@ msgid "Sa&ve Settings"
 msgstr "Lagre &innstillinger"
 
 #: kfmgui.cpp:408
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "Lagre innstillinger for denne URL"
+msgstr "Lagre innstillinger for denne &URL"
 
 #: kfmgui.cpp:415
 msgid "Set Preferen&ces..."
-msgstr ""
+msgstr "Sett &preferanser..."
 
 #: kfmgui.cpp:455
 msgid ""
@@ -250,7 +241,7 @@ msgstr ""
 
 #: kfmgui.cpp:468
 msgid "&Go"
-msgstr ""
+msgstr "&Gå"
 
 #: kfmgui.cpp:469
 msgid "&Bookmarks"
@@ -333,24 +324,20 @@ msgid "New "
 msgstr "Ny "
 
 #: kfmgui.cpp:1085
-#, fuzzy
 msgid "&Up"
-msgstr "Opp"
+msgstr "&Opp"
 
 #: kfmgui.cpp:1087
 msgid "&Back"
-msgstr ""
+msgstr "&Tilbake"
 
 #: kfmgui.cpp:1089
-#, fuzzy
 msgid "&Forward"
-msgstr "Forover"
+msgstr "&Forover"
 
-# kfmtree.cpp:396
 #: kfmgui.cpp:1091
-#, fuzzy
 msgid "&Home"
-msgstr "Hjem"
+msgstr "&Hjem"
 
 #: kfmgui.cpp:1148 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
 #: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
@@ -1650,21 +1637,17 @@ msgstr "&HTTP"
 msgid "User &Agent"
 msgstr "Bruker&agent"
 
-# kkfmoptdlg.cpp:27
 #: kkfmoptdlg.cpp:55
 msgid "&Colors"
 msgstr "Fa&rger"
 
-# kkfmoptdlg.cpp:30
 #: kkfmoptdlg.cpp:58
 msgid "&Other"
 msgstr "&Andre"
 
-# kkfmoptdlg.cpp:50
 #: kkfmoptdlg.cpp:117
-#, fuzzy
 msgid "KFM Preferences Settings"
-msgstr "KFM Nettlosinnstillinger"
+msgstr "KFM-preferanseinnstillinger"
 
 #: khttpoptdlg.cpp:39
 msgid "Accept languages:"
@@ -1767,21 +1750,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# kfmview.cpp:377
-#~ msgid "ERROR: You dropped some URL over itself"
-#~ msgstr "FEIL: Du droppet en URL over seg selv"
-
-#~ msgid "&Visual Schnauzer"
-#~ msgstr "&Bilder som ikoner"
-
-#~ msgid "Configure Browser..."
-#~ msgstr "Konfigurer &nettlos..."
-
-# kfmprops.cpp:237
-#~ msgid "Name"
-#~ msgstr "Navn"
-
-# kfmprops.cpp:676
-#~ msgid "Browse"
-#~ msgstr "Bla gjennom"

@@ -60,7 +60,7 @@ msgstr "&Bla igjennom..."
 
 #: backgnd.cpp:359
 msgid "Mode:"
-msgstr ""
+msgstr "Modus:"
 
 #: backgnd.cpp:366
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Dokk inn i panel"
 
 #: backgnd.cpp:431
-#, fuzzy
 msgid "Cache size:"
-msgstr "Mellomlagerstørrelse"
+msgstr "Mellomlagerstørrelse:"
 
 #: backgnd.cpp:447
 msgid "kb"

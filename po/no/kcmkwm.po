@@ -117,19 +117,19 @@ msgstr "Pixmap"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Aktiv tittel har ramme med overgang 
 
 #: titlebar.cpp:1044
 msgid "Active pixmap:"
-msgstr "&Aktivt-pixmap"
+msgstr "Aktivt-pixmap:"
 
 #: titlebar.cpp:1049
 msgid "Inactive pixmap:"
-msgstr "&Inaktivt-pixmap"
+msgstr "Inaktivt-pixmap:"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Ingen pixmap under tekst"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"

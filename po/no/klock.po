@@ -268,9 +268,8 @@ msgstr ""
 "Portet til kscreensave av Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Blank skjerm"
+msgstr "Dødens blanke skjerm"
 
 #: flame.cpp:310
 msgid "Flame"
