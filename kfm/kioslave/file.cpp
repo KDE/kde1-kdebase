@@ -4,10 +4,38 @@
 #include <time.h>
 #include <sys/types.h>
 
+int
+SortedKProtocolDirEntry::compareItems( GCI i1, GCI i2)
+{
+    KProtocolDirEntry *de1 = (KProtocolDirEntry *)i1;
+    KProtocolDirEntry *de2 = (KProtocolDirEntry *)i2;
+    if (sortMode & DIRSORT_DIRSFIRST)
+    {
+	if (de1->isdir != de2->isdir)
+	    return ((de1->isdir) ? -1 : 1);
+    }
+    switch (sortMode & 0x7f)
+    {
+	case DIRSORT_BYNAME:
+	    return strcmp( de1->name.data(), de2->name.data() );
+	case DIRSORT_BYSIZE:
+	    return de1->size - de2->size;
+	default:
+	    return strcmp( de1->name.data(), de2->name.data() );
+    }
+}
+
+SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
+{
+}
+ 
+
 KProtocolFILE::KProtocolFILE()
 {
 	file = NULL;
-	dp = 0L;
+	dlist = 0L;
+	de = 0L;
+	sortMode = (DIRSORT_DIRSFIRST | DIRSORT_BYNAME);
 	allowHTML = FALSE;
 }
 
@@ -103,7 +131,8 @@ int KProtocolFILE::atEOF()
 int KProtocolFILE::OpenDir( KURL *url )
 {
     file = 0L;
-    dp = 0L;
+    DIR *dp = 0L;
+    struct dirent *ep;
     
     // Open the directory
     path = url->path();
@@ -136,35 +165,16 @@ int KProtocolFILE::OpenDir( KURL *url )
 	}
     }
     
+    de = 0L;
     dp = opendir( tmp );
     if ( dp == 0L )
 	return FAIL;
 
     if ( path.right(1) != "/" )
 	path += "/";
-    
-    return SUCCESS;
-}
 
-void KProtocolFILE::EmitData( KIOSlaveIPC *_ipc )
-{
-    // Read all data from 'file'
-    char buffer[ 4100 ];
-    while ( !feof( file ) )
-    {
-	int n = fread( buffer, 1, 4096, file );
-	if ( n > 0 )
-	{
-	    buffer[n] = 0;
-	    _ipc->data( buffer );
-	}
-    }
-}
-
-KProtocolDirEntry *KProtocolFILE::ReadDir()
-{
-    struct dirent *ep;
-    // Loop thru all directory entries
+    dlist = new SortedKProtocolDirEntry();
+    dlist->sortMode = sortMode;
     while ( ( ep = readdir( dp ) ) != 0L )
     {
     	QString name(ep->d_name);
@@ -182,15 +192,15 @@ KProtocolDirEntry *KProtocolFILE::ReadDir()
 	struct group * grp = getgrgid( buff.st_gid );
 
 	char buffer[1024];
-	static KProtocolDirEntry de;
+	KProtocolDirEntry *_de = new KProtocolDirEntry();
 	
-	de.isdir = FALSE;
+	_de->isdir = FALSE;
 	if ( S_ISLNK( lbuff.st_mode ) )
 	    buffer[0] = 'l';		
 	else if ( S_ISDIR( buff.st_mode ) )
 	{
 	    buffer[0] = 'd';
-	    de.isdir = TRUE;
+	    _de->isdir = TRUE;
 	}
 	else
 	    buffer[0] = '-';
@@ -239,18 +249,51 @@ KProtocolDirEntry *KProtocolFILE::ReadDir()
 	if ( stat_ret == -1 && S_ISLNK( lbuff.st_mode ) )
 	    strcpy( buffer, "lrwxrwxrwx" );
 	
-	de.access = buffer;
-	de.name = name.data();
-	de.owner = (( user != 0L ) ? user->pw_name : "???" );
-	de.group = (( grp != 0L ) ? grp->gr_name : "???" );
+	_de->access = buffer;
+	_de->name = name.data();
+	_de->owner = (( user != 0L ) ? user->pw_name : "???" );
+	_de->group = (( grp != 0L ) ? grp->gr_name : "???" );
 	QString d;
 	d.sprintf("%02i:%02i %02i.%02i.%02i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1,t->tm_year );
-	de.date = d.data();
-	de.size = buff.st_size;
-	if ( de.isdir )
-	    de.name += "/";
+	_de->date = d.data();
+	_de->size = buff.st_size;
+	if ( _de->isdir )
+	    _de->name += "/";
 
-	return &de;
+	if ( sortMode == DIRSORT_NONE )
+	    dlist->append( _de );
+	else
+	    dlist->inSort( _de );
+    }
+    closedir( dp );
+    de = dlist->first();
+
+    return SUCCESS;
+}
+
+void KProtocolFILE::EmitData( KIOSlaveIPC *_ipc )
+{
+    // Read all data from 'file'
+    char buffer[ 4100 ];
+    while ( !feof( file ) )
+    {
+	int n = fread( buffer, 1, 4096, file );
+	if ( n > 0 )
+	{
+	    buffer[n] = 0;
+	    _ipc->data( buffer );
+	}
+    }
+}
+
+KProtocolDirEntry *KProtocolFILE::ReadDir()
+{
+    // Loop thru all directory entries
+
+    if (de) {
+	KProtocolDirEntry *ode = de;
+	de = dlist->next();
+	return ode;
     }
     return NULL;
 }
@@ -259,9 +302,6 @@ int KProtocolFILE::CloseDir()
 {
     if ( file )
 	fclose( file );
-    if ( dp )
-	closedir( dp );
-    dp = 0L;
     return SUCCESS;
 }
 

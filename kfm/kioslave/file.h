@@ -13,15 +13,29 @@
 #include <pwd.h>
 #include <grp.h>
 
+#define DIRSORT_NONE        0
+#define DIRSORT_BYNAME      1
+#define DIRSORT_BYSIZE      2
+#define DIRSORT_DIRSFIRST 128
+
+class SortedKProtocolDirEntry : public QList<KProtocolDirEntry>
+{
+    int compareItems( GCI i1, GCI i2 );
+public:
+    int sortMode;
+};
+
 class KProtocolFILE :public KProtocol
 {
     Q_OBJECT
 private:
     long size;
     FILE *file;
-    DIR *dp;
+    SortedKProtocolDirEntry *dlist;
+    KProtocolDirEntry *de;
     QString path;
     bool allowHTML;
+    int sortMode;
     
 public:
     KProtocolFILE();
