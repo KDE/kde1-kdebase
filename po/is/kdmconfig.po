@@ -1,7 +1,6 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Logi Ragnarsson <logir@hi.is>, 1998
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
@@ -11,7 +10,7 @@ msgstr ""
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "Útlit"
+msgstr "Út&lit"
 
 #: main.cpp:92
 msgid "&Background"
@@ -99,6 +98,8 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
+"Ekki tókst að vista myndina:\n"
+">"
 
 #: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
@@ -137,7 +138,6 @@ msgid "Select fonts"
 msgstr "Veldu letur"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
 msgstr "Dæmi"
 
@@ -166,17 +166,16 @@ msgid "Color"
 msgstr "Litir"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Litir"
+msgstr "Heilir litir"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Lágrétt blöndun"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Lóðrétt blöndun"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"

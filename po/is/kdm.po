@@ -2,33 +2,28 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Thorarinn Einarsson <thori@mindspring.com>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-05 01:14+0100\n"
 "PO-Revision-Date: 1998-10-28 19:00-0500\n"
-"Last-Translator: Thorarinn Einarsson <thori@mindspring.com>\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=3Diso8859-1\n"
-"Content-Transfer-Encoding: ENCODING\n"
 
 #: kdmshutdown.cpp:171
 msgid "Shutdown or restart?"
-msgstr "Sl=F6kkva e=F0a endurr=E6sa?"
+msgstr "Slökkva eða endurræsa?"
 
 #: kdmshutdown.cpp:187
 msgid "Shutdown"
-msgstr "Sl=F6kkva"
+msgstr "Slökkva"
 
 #: kdmshutdown.cpp:201
 msgid "Shutdown and restart"
-msgstr "Sl=F6kkva og endurr=E6sa"
+msgstr "Slökkva og endurræsa"
 
 #: kdmshutdown.cpp:210
 msgid "Exit kdm"
-msgstr "H=E6tta =ED KDM"
+msgstr "Hætta Í KDM"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -36,11 +31,11 @@ msgstr "Notandanafn:"
 
 #: kgreeter.cpp:234
 msgid "Password:"
-msgstr "Lykilor=F0:"
+msgstr "Lykilorð:"
 
 #: kgreeter.cpp:259
 msgid "Login failed!"
-msgstr "A=F0gangur br=E1st!"
+msgstr "Aðgangur brást!"
 
 #: kgreeter.cpp:265
 msgid "Session Type:"
@@ -48,29 +43,29 @@ msgstr "Tegund setu:"
 
 #: kgreeter.cpp:312
 msgid "Go!"
-msgstr "=C1fram!"
+msgstr "Áfram!"
 
 #: kgreeter.cpp:328
 msgid "Shutdown..."
-msgstr "Sl=F6kkva..."
+msgstr "Slökkva..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr "A=F0gangur banna=F0ur =FEessa stundina."
+msgstr "Aðgangur bannaður þessa stundina."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() mistókst."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr "Fyrirgefi=F0, a=F0gangsleyfi =FEitt er =FAtrunni=F0."
+msgstr "Aðgangsleyfið þitt er útrunnið."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr "A=F0v=F6run: A=F0gangsleyfi =FEitt rennur =FAt %s"
+msgstr "Aðvörun: Aðgangsleyfið þitt rennur út %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr "Heimamappan =FE=EDn finnst ekki"
+msgstr "Heimasvæðið þitt finnst ekki"

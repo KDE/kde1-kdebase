@@ -37,9 +37,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Halda leit áfram frá byrjun?"
 
 #: helpwin.cpp:1324
-#, fuzzy
 msgid "Forward"
-msgstr "Á&fram"
+msgstr "Áfram"
 
 #: helpwin.cpp:1345
 msgid "Open this Link"
@@ -77,19 +76,19 @@ msgstr "Aðvörun: "
 
 #: options.cpp:38
 msgid "Small"
-msgstr ""
+msgstr "Lítið"
 
 #: options.cpp:42
 msgid "Medium"
-msgstr ""
+msgstr "Miðlungs"
 
 #: options.cpp:46
 msgid "Large"
-msgstr ""
+msgstr "Stórt"
 
 #: options.cpp:50
 msgid "Standard Font"
-msgstr "Venjulegt letur: "
+msgstr "Venjulegt letur"
 
 #: options.cpp:67
 msgid "Fixed Font"
@@ -113,7 +112,7 @@ msgstr "Litur skoðaðra tenginga:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Undirstrika tengla"
 
 #: options.cpp:317
 msgid "KDE Help Options"
@@ -167,7 +166,7 @@ msgstr "Kerfisstjórnun"
 
 #: man.cpp:148
 msgid "New"
-msgstr ""
+msgstr "Nýtt"
 
 #: man.cpp:271
 msgid "Reading Dir: "
@@ -179,9 +178,7 @@ msgstr "Mansíður - kafli"
 
 #: man.cpp:498
 msgid "\"man\" system call failed"
-msgstr ""
-"Ekki tókst að gera\n"
-"\"man\" kerfiskallið"
+msgstr "\"man\" kerfiskallið mistókst"
 
 #: man.cpp:516
 msgid "Opening temporary file failed"
@@ -237,13 +234,12 @@ msgid "&Up"
 msgstr "&Upp"
 
 #: mainwidget.cpp:158
-#, fuzzy
 msgid "&Previous"
-msgstr "Fyrri hlekkur"
+msgstr "&Fyrri"
 
 #: mainwidget.cpp:159
 msgid "&Next"
-msgstr ""
+msgstr "&Næsti"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
@@ -352,7 +348,7 @@ msgstr "&Setja Bókamerki"
 
 #: finddlg.cpp:39
 msgid "Find:"
-msgstr "finna:"
+msgstr "Finna:"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
@@ -361,6 +357,3 @@ msgstr "Háð há-/lágstöfum"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Finna"
-
-#~ msgid "&Contents"
-#~ msgstr "Í &innihald"

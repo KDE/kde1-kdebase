@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"POT-Creation-Date: 1998-12-03 01:15+0100\n"
 "PO-Revision-Date: 1998-10-26 22:36+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -17,7 +17,6 @@ msgid "&Titlebar"
 msgstr "&Titilrönd"
 
 #: main.cpp:73
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Kantar"
 
@@ -27,13 +26,13 @@ msgstr "&Mús"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Flókið"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "notkun: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+msgstr ""
+"notkun: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -85,12 +84,11 @@ msgstr "Hægri hlið titlrandar er full... Slökkt verður á lágkunartakka\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
-msgstr ""
+msgstr "Staða titils"
 
 #: titlebar.cpp:939
-#, fuzzy
 msgid "Middle"
-msgstr "Miðtakki"
+msgstr "Miðja"
 
 #: titlebar.cpp:967
 msgid "Shaded Vertically"
@@ -98,7 +96,7 @@ msgstr "Skyggð lóðrétt"
 
 #: titlebar.cpp:973
 msgid "Shaded Horizontally"
-msgstr "Skyggð lágrétt"
+msgstr "Skyggð lárétt"
 
 #: titlebar.cpp:982
 msgid "Plain"
@@ -110,32 +108,27 @@ msgstr "Með mynd"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr ""
+msgstr "Virkur titill með skyggðan ramma"
 
 #: titlebar.cpp:1044
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "Á &virkum glugga"
+msgstr "Virk bitamynd"
 
 #: titlebar.cpp:1049
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Á óv&irkum glugga"
+msgstr "Óvirk bitamynd"
 
 #: titlebar.cpp:1055
 msgid "No pixmap under text"
-msgstr ""
+msgstr "Engin bitamynd undir texta"
 
 #: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Músarvirkni"
 
 #: titlebar.cpp:1074
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Áhrif þess að tvísmella\n"
-"með vinstri músatakka:"
+msgstr "Áhrif þess að tvísmella með vinstri músatakka:"
 
 #: titlebar.cpp:1084
 msgid "(Un)Maximize"
@@ -154,7 +147,6 @@ msgid "(Un)Sticky"
 msgstr "Klístra/losa"
 
 #: titlebar.cpp:1107
-#, fuzzy
 msgid "Title animation"
 msgstr "Rúllandi titill"
 
@@ -163,41 +155,40 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1366
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Hegðun gluggastjóra"
+msgstr "Gluggasjórastillingar - VILLA"
 
 #: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Ekki tókst að vista bitamyndir á höfuðrönd!\n"
+"Hugsanlega hefur þú ekki nægar aðgangsheimildir."
 
 #: windows.cpp:67
-#, fuzzy
 msgid "Windows"
-msgstr "&Gluggar"
+msgstr "Gluggar"
 
 #: windows.cpp:81
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Sjálfgefið aðeins hámarkað lóðrétt"
 
 #: windows.cpp:86
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Sýna innihald glugga á meðan þeir eru færðir"
 
 #: windows.cpp:91
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Sýna innihald meðan stærð glugga er breytt"
 
 #: windows.cpp:97
-#, fuzzy
 msgid "Resize animation:"
 msgstr "Rúllandi titill"
 
 #: windows.cpp:110
 msgid "None"
-msgstr ""
+msgstr "Ekkert"
 
 #: windows.cpp:116
 msgid "Fast"
@@ -227,42 +218,42 @@ msgstr "Slembin"
 msgid "Manual"
 msgstr "Handvirk"
 
-#: windows.cpp:153
+#: windows.cpp:152
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Leyfilegt snið:\n"
+"(% af skjáborði)"
 
-#: windows.cpp:174
-#, fuzzy
+#: windows.cpp:171
 msgid "Focus policy"
 msgstr "Gluggavirkni"
 
-#: windows.cpp:184
+#: windows.cpp:181
 msgid "Click to focus"
 msgstr "Smella til að virkja"
 
-#: windows.cpp:186
+#: windows.cpp:183
 msgid "Focus follows mouse"
 msgstr "Virkni undir mús"
 
-#: windows.cpp:188
+#: windows.cpp:185
 msgid "Classic focus follows mouse"
 msgstr "Hefðbundin 'undir mús'"
 
-#: windows.cpp:190
+#: windows.cpp:187
 msgid "Classic sloppy focus"
 msgstr "Hefðbundin letileg virkni"
 
-#: windows.cpp:202
-#, fuzzy
+#: windows.cpp:198
 msgid "Auto Raise"
-msgstr "Fleyta"
+msgstr "Fleyta sjálfkrafa"
 
-#: windows.cpp:209
+#: windows.cpp:205
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Töf (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -391,7 +382,7 @@ msgstr "Virkja og senda smell"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
-msgstr ""
+msgstr "Færa"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
@@ -399,114 +390,68 @@ msgstr "Breyta stærð"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Lyklaborð og mús"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab flettir í gegnum skjáborð"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab virkar aðeins innan skjáborðs"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Alt-Tab hamur:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + hægri takki"
+msgstr "Grípa hægri músatakka"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Síur"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "&Gluggar"
+msgstr "Gluggar munu:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "hafa litlar skreytingar"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "vera óskreyttir"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "aldrei verða virkir"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "límast við gler"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "vera sleppt úr setustjórn"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "ef þeir falla að:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Titilrönd"
+msgstr "Titilar"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Útlit titilrandar"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Aðgerðavalmynd"
-
-#~ msgid "Window movement"
-#~ msgstr "Gluggar færðir"
-
-#~ msgid "Transparent"
-#~ msgstr "Gegnsæir"
-
-#~ msgid "Opaque"
-#~ msgstr "Heilir"
-
-#~ msgid "Window resize"
-#~ msgstr "Gluggar stækkaðir/minnkaðir"
-
-#~ msgid "Animation:"
-#~ msgstr "Sýna:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Leifilegt snið"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Hámörkun"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Hámarka alveg"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Hámarka lóðrétt"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Gluggum fleytt eftir\n"
-#~ "(<100 slekkur á)"
-
-#~ msgid "miliseconds"
-#~ msgstr "millisekúndur"
+msgstr "Klasar"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"PO-Revision-Date: 1998-12-10 12:57+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
 
@@ -17,9 +17,8 @@ msgid "&Global shortcuts"
 msgstr "&Víðværir flýtihnappar"
 
 #: main.cpp:76
-#, fuzzy
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "notkun: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
@@ -27,27 +26,27 @@ msgstr "Stillingar takkatenginga"
 
 #: standard.cpp:53
 msgid "New"
-msgstr ""
+msgstr "Nýtt"
 
 #: standard.cpp:57
 msgid "Next"
-msgstr ""
+msgstr "Næsta"
 
 #: standard.cpp:58
 msgid "Prior"
-msgstr ""
+msgstr "Fyrra"
 
 #: standard.cpp:63
 msgid "Find"
-msgstr ""
+msgstr "Finna"
 
 #: standard.cpp:66
 msgid "Home"
-msgstr "Home"
+msgstr "Heim"
 
 #: standard.cpp:67
 msgid "End"
-msgstr "End"
+msgstr "Enda"
 
 #: global.cpp:81 standard.cpp:83
 msgid "Current scheme"
@@ -119,96 +118,96 @@ msgstr ""
 
 #: ../../kwm/kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Verkefnastjóri"
 
 #: ../../kwm/kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Gluggadrápshamur"
 
 #: ../../kwm/kwmbindings.cpp:3
 msgid "Execute command"
-msgstr ""
+msgstr "Framkvæma skipun"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr ""
+msgstr "Gluggaaðgerðavalmynd"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Kerfisvalmynd"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Fleyta glugga"
 
 #: ../../kwm/kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Sökkva glugga"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr ""
+msgstr "Loka glugga"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr ""
+msgstr "Glugga í táknmynd"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr ""
+msgstr "Breyta stærð glugga"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
-msgstr ""
+msgstr "Færa glugga"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Líma við eða losa af gleri"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
-msgstr ""
+msgstr "Skipta á skjáborð 1"
 
 #: ../../kwm/kwmbindings.cpp:16
 msgid "Switch to desktop 2"
-msgstr ""
+msgstr "Skipta á skjáborð 2"
 
 #: ../../kwm/kwmbindings.cpp:17
 msgid "Switch to desktop 3"
-msgstr ""
+msgstr "Skipta á skjáborð 3"
 
 #: ../../kwm/kwmbindings.cpp:18
 msgid "Switch to desktop 4"
-msgstr ""
+msgstr "Skipta á skjáborð 4"
 
 #: ../../kwm/kwmbindings.cpp:19
 msgid "Switch to desktop 5"
-msgstr ""
+msgstr "Skipta á skjáborð 5"
 
 #: ../../kwm/kwmbindings.cpp:20
 msgid "Switch to desktop 6"
-msgstr ""
+msgstr "Skipta á skjáborð 6"
 
 #: ../../kwm/kwmbindings.cpp:21
 msgid "Switch to desktop 7"
-msgstr ""
+msgstr "Skipta á skjáborð 7"
 
 #: ../../kwm/kwmbindings.cpp:22
 msgid "Switch to desktop 8"
-msgstr ""
+msgstr "Skipta á skjáborð 8"
 
 #: ../../kwm/kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr ""
+msgstr "Skipta á skjáborð til hægri"
 
 #: ../../kwm/kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr ""
+msgstr "Skipta á skjáborð til vinstri"
 
 #: ../../kwm/kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr ""
+msgstr "Skipta á skjáborð fyrir ofan"
 
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr ""
+msgstr "Skipta á skjáborð fyrir neðan"

@@ -3,18 +3,18 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-09 01:12+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
 #: kpanel.C:273
 msgid "&Move"
-msgstr ""
+msgstr "&Færa"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "&Eiginleikar"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -44,11 +44,11 @@ msgstr "Fela spjaldið"
 msgid "Show the panel"
 msgstr "Sýna spjaldið"
 
-#: kpanel.C:1203
+#: kpanel.C:1200
 msgid "No comment available"
 msgstr "Engin athugasemd"
 
-#: kpanel.C:1212 tools.C:841
+#: kpanel.C:1209 tools.C:841
 msgid "Windowlist"
 msgstr "Gluggalisti"
 
@@ -98,7 +98,7 @@ msgstr "Diskaflakkari"
 
 #: props.C:165
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Flakka hratt um skráakerfið"
 
 #: props.C:171
 msgid "Panel"
@@ -121,12 +121,12 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:829
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-"Ekki er hægt að setja þennan\n"
-"hnapp á spjaldið!"
+msgstr "Ekki er hægt að setja þennan hnapp á spjaldið!"
 
 #: pfilemenu.C:415
 msgid "(empty folder)"
@@ -150,39 +150,32 @@ msgstr "(Ekki læsilegt)"
 
 #: pfilemenu.C:742
 msgid "Shared:"
-msgstr ""
+msgstr "Samnýtt:"
 
 #: pfilemenu.C:744
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Allir notendur samnýta færslur"
 
 #: pfilemenu.C:763
 msgid "Personal:"
-msgstr ""
+msgstr "Einka:"
 
 #: pfilemenu.C:765
 msgid "Personal entries"
-msgstr ""
+msgstr "Einkafærslur"
 
 #: pfilemenu.C:783
 msgid "Recent:"
-msgstr ""
+msgstr "Nýlegt:"
 
 #: pfilemenu.C:785
 msgid "Recent entries"
-msgstr ""
+msgstr "Nýlegar færslur"
 
 #: pfilemenu.C:831
 msgid "Options..."
-msgstr ""
+msgstr "Stillingar..."
 
 #: pfilemenu.C:833
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Diskaflakkari"
-
-#~ msgid "KFM Information"
-#~ msgstr "KFM upplýsingar"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Bý til möppu:\n"
+msgstr "Stilla Diskaflakkara"
