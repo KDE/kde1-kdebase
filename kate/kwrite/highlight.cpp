@@ -15,32 +15,34 @@
 #include "kwdoc.h"
 #include "kmimemagic.h"
 
-char *cTypes[] = {
-  "char","double","float","int","long","short","signed","unsigned","void",0L};
-
 char *cKeywords[] = {
-  "break","case","continue","default","do","else","enum","extern","for",
-  "goto","if","interrupt","register","return","static","struct","switch",
-  "typedef","union","volatile","while",0L};
+  "break", "case", "continue", "default", "do", "else", "enum", "extern",
+  "for", "goto", "if", "interrupt", "register", "return", "struct", "switch",
+  "typedef", "union", "volatile", "while", 0L};
 
-char *cppTypes[] = {
-  "bool",0L};
+char *cTypes[] = {
+  "char", "double", "float", "int", "long", "short", "signed", "static",
+  "unsigned", "void", 0L};
 
 char *cppKeywords[] = {
-  "class","const","delete","friend","inline","new","operator","private",
-  "protected","public","this","virtual",0L};
+  "class", "delete", "false", "friend", "inline", "new", "operator",
+  "private", "protected", "public", "this", "true", "virtual", 0L};
+
+char *cppTypes[] = {
+  "bool", "const", 0L};
 
 char *javaKeywords[] = {
-  "abstract", "boolean", "break", "byte", "case", "cast",
-  "catch", "char", "class", "const", "continue", "default",
-  "do", "double", "else", "extends", "false", "final", 
-  "finally", "float", "for", "future", "generic", "goto",
-  "if", "implements", "import", "inner", "instanceof", "int",
-  "interface", "long", "native", "new", "null", "operator",
-  "outer", "package", "private", "protected", "public", "rest",
-  "return", "short", "static", "super", "switch", "synchronized",
-  "this", "throw", "throws", "transient", "true", "try", 
-  "var", "void", "volatile", "while", 0L};
+  "abstract", "break", "case", "cast", "catch", "class", "continue",
+  "default", "do", "else", "extends", "false", "finally", "for", "future",
+  "generic", "goto", "if", "implements", "import", "inner", "instanceof",
+  "interface", "native", "new", "null", "operator", "outer", "package",
+  "private", "protected", "public", "rest", "return", "super", "switch",
+  "synchronized", "this", "throws", "throw", "transient", "true", "try",
+  "var", "volatile", "while", 0L};
+
+char *javaTypes[] = {
+  "boolean", "byte", "char", "const", "double", "final", "float", "int",
+  "long", "short", "static", "void", 0L};
 
 char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
@@ -66,6 +68,19 @@ char *pythonKeywords[] = {
   "lambda","not","or","pass","print","raise","return","try","while",0L};
 
 char fontSizes[] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,32,48,64,0};
+
+//default item style indexes
+const int dsNormal = 0;
+const int dsKeyword = 1;
+const int dsDataType = 2;
+const int dsDecVal = 3;
+const int dsBaseN = 4;
+const int dsFloat = 5;
+const int dsChar = 6;
+const int dsString = 7;
+const int dsComment = 8;
+const int dsOthers = 9;
+
 
 bool testWw(char c) {
   static char data[] = {0,0,0,0,0,64,255,3,254,255,255,135,254,255,255,7};
@@ -277,7 +292,7 @@ const char *HlCHex::checkHgl(const char *str) {
   }
   return 0L;
 }
-
+ 
 HlCFloat::HlCFloat(int attribute, int context)
   : HlFloat(attribute,context) {
 }
@@ -673,7 +688,7 @@ void Highlight::doHighlight(int, TextLine *textLine) {
 
 void Highlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
+  list.append(new ItemData("Normal Text",dsNormal));
 }
 
 
@@ -758,60 +773,62 @@ CHighlight::~CHighlight() {
 
 void CHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Keyword",1));
-  list.append(new ItemData("Decimal",2));
-  list.append(new ItemData("Octal",3));
-  list.append(new ItemData("Hex",3));
-  list.append(new ItemData("Float",4));
-  list.append(new ItemData("Char",5));
-  list.append(new ItemData("String",6));
-  list.append(new ItemData("String Char",5));
-  list.append(new ItemData("Comment",7));
-  list.append(new ItemData("Preprocessor",8,darkGreen,green,false,false));
-  list.append(new ItemData("Prep. Lib",8,darkYellow,yellow,false,false));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Data Type",dsDataType));
+  list.append(new ItemData("Decimal",dsDecVal));
+  list.append(new ItemData("Octal",dsBaseN));
+  list.append(new ItemData("Hex",dsBaseN));
+  list.append(new ItemData("Float",dsFloat));
+  list.append(new ItemData("Char",dsChar));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("String Char",dsChar));
+  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Preprocessor",dsOthers,darkGreen,green,false,false));
+  list.append(new ItemData("Prep. Lib",dsOthers,darkYellow,yellow,false,false));
 }
 
 void CHighlight::makeContextList() {
   HlContext *c;
-  HlKeyword *keyword;
+  HlKeyword *keyword, *dataType;
 
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
-    c->items.append(new HlCInt(2,0));
-    c->items.append(new HlCOct(3,0));
-    c->items.append(new HlCHex(4,0));
-    c->items.append(new HlCFloat(5,0));
-    c->items.append(new HlCChar(6,0));
-    c->items.append(new HlCharDetect(7,1,'"'));
-    c->items.append(new Hl2CharDetect(9,2,"//"));
-    c->items.append(new Hl2CharDetect(9,3,"/*"));
-    c->items.append(new HlCPrep(10,4));
-  contextList[1] = c = new HlContext(7,0);
-    c->items.append(new HlLineContinue(7,6));
-    c->items.append(new HlCStringChar(8,1));
-    c->items.append(new HlCharDetect(7,0,'"'));
-  contextList[2] = new HlContext(9,0);
-  contextList[3] = c = new HlContext(9,3);
-    c->items.append(new Hl2CharDetect(9,0,"*/"));
-  contextList[4] = c = new HlContext(10,0);
-    c->items.append(new HlLineContinue(10,7));
-    c->items.append(new HlRangeDetect(11,4,"\"\""));
-    c->items.append(new HlRangeDetect(11,4,"<>"));
-    c->items.append(new Hl2CharDetect(9,2,"//"));
-    c->items.append(new Hl2CharDetect(9,5,"/*"));
-  contextList[5] = c = new HlContext(9,5);
-    c->items.append(new Hl2CharDetect(9,4,"*/"));
+    c->items.append(dataType = new HlKeyword(2,0));
+    c->items.append(new HlCInt(3,0));
+    c->items.append(new HlCOct(4,0));
+    c->items.append(new HlCHex(5,0));
+    c->items.append(new HlCFloat(6,0));
+    c->items.append(new HlCChar(7,0));
+    c->items.append(new HlCharDetect(8,1,'"'));
+    c->items.append(new Hl2CharDetect(10,2,"//"));
+    c->items.append(new Hl2CharDetect(10,3,"/*"));
+    c->items.append(new HlCPrep(11,4));
+  contextList[1] = c = new HlContext(8,0);
+    c->items.append(new HlLineContinue(8,6));
+    c->items.append(new HlCStringChar(9,1));
+    c->items.append(new HlCharDetect(8,0,'"'));
+  contextList[2] = new HlContext(10,0);
+  contextList[3] = c = new HlContext(10,3);
+    c->items.append(new Hl2CharDetect(10,0,"*/"));
+  contextList[4] = c = new HlContext(11,0);
+    c->items.append(new HlLineContinue(11,7));
+    c->items.append(new HlRangeDetect(12,4,"\"\""));
+    c->items.append(new HlRangeDetect(12,4,"<>"));
+    c->items.append(new Hl2CharDetect(10,2,"//"));
+    c->items.append(new Hl2CharDetect(10,5,"/*"));
+  contextList[5] = c = new HlContext(10,5);
+    c->items.append(new Hl2CharDetect(10,4,"*/"));
   contextList[6] = new HlContext(0,1);
   contextList[7] = new HlContext(0,4);
 
-  setKeywords(keyword);
+  setKeywords(keyword, dataType);
 }
 
-void CHighlight::setKeywords(HlKeyword *keyword) {
+void CHighlight::setKeywords(HlKeyword *keyword, HlKeyword *dataType) {
 
-//  keyword->addList(cTypes);
   keyword->addList(cKeywords);
+  dataType->addList(cTypes);
 }
 
 
@@ -823,12 +840,12 @@ CppHighlight::CppHighlight(const char *name) : CHighlight(name) {
 CppHighlight::~CppHighlight() {
 }
 
-void CppHighlight::setKeywords(HlKeyword *keyword) {
+void CppHighlight::setKeywords(HlKeyword *keyword, HlKeyword *dataType) {
 
-//  keyword->addList(cTypes);
-//  keyword->addList(cppTypes);
   keyword->addList(cKeywords);
   keyword->addList(cppKeywords);
+  dataType->addList(cTypes);
+  dataType->addList(cppTypes);
 }
 
 
@@ -840,9 +857,10 @@ JavaHighlight::JavaHighlight(const char *name) : CHighlight(name) {
 JavaHighlight::~JavaHighlight() {
 }
 
-void JavaHighlight::setKeywords(HlKeyword *keyword) {
+void JavaHighlight::setKeywords(HlKeyword *keyword, HlKeyword *dataType) {
 
   keyword->addList(javaKeywords);
+  dataType->addList(javaTypes);
 }
 
 
@@ -856,12 +874,12 @@ HtmlHighlight::~HtmlHighlight() {
 
 void HtmlHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Char",5,darkGreen,green,false,false));
-  list.append(new ItemData("Comment",7));
-  list.append(new ItemData("Tag Text",8,black,white,true,false));
-  list.append(new ItemData("Tag",1,darkMagenta,magenta,true,false));
-  list.append(new ItemData("Tag Value",2,darkCyan,cyan,false,false));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Char",dsChar,darkGreen,green,false,false));
+  list.append(new ItemData("Comment",dsComment));
+  list.append(new ItemData("Tag Text",dsOthers,black,white,true,false));
+  list.append(new ItemData("Tag",dsKeyword,darkMagenta,magenta,true,false));
+  list.append(new ItemData("Tag Value",dsDecVal,darkCyan,cyan,false,false));
 }
 
 void HtmlHighlight::makeContextList() {
@@ -893,12 +911,12 @@ BashHighlight::~BashHighlight() {
 
 void BashHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Keyword",1));
-  list.append(new ItemData("Integer",2));
-  list.append(new ItemData("String",6));
-  list.append(new ItemData("Substitution",8));//darkCyan,cyan,false,false);
-  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Integer",dsDecVal));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Substitution",dsOthers));//darkCyan,cyan,false,false);
+  list.append(new ItemData("Comment",dsComment));
 }
 
 void BashHighlight::makeContextList() {
@@ -931,13 +949,13 @@ ModulaHighlight::~ModulaHighlight() {
 
 void ModulaHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Keyword",1));
-  list.append(new ItemData("Decimal",2));
-  list.append(new ItemData("Hex",3));
-  list.append(new ItemData("Float",4));
-  list.append(new ItemData("String",6));
-  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Decimal",dsDecVal));
+  list.append(new ItemData("Hex",dsBaseN));
+  list.append(new ItemData("Float",dsFloat));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Comment",dsComment));
 }
 
 void ModulaHighlight::makeContextList() {
@@ -970,14 +988,14 @@ AdaHighlight::~AdaHighlight() {
 
 void AdaHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Keyword",1));
-  list.append(new ItemData("Decimal",2));
-  list.append(new ItemData("Base-N",3));
-  list.append(new ItemData("Float",4));
-  list.append(new ItemData("Char",5));
-  list.append(new ItemData("String",6));
-  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Decimal",dsDecVal));
+  list.append(new ItemData("Base-N",dsBaseN));
+  list.append(new ItemData("Float",dsFloat));
+  list.append(new ItemData("Char",dsChar));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("Comment",dsComment));
 }
 
 void AdaHighlight::makeContextList() {
@@ -1009,16 +1027,16 @@ PythonHighlight::~PythonHighlight() {
 
 void PythonHighlight::createItemData(ItemDataList &list) {
 
-  list.append(new ItemData("Normal Text",0));
-  list.append(new ItemData("Keyword",1));
-  list.append(new ItemData("Decimal",2));
-  list.append(new ItemData("Octal",3));
-  list.append(new ItemData("Hex",3));
-  list.append(new ItemData("Float",4));
-  list.append(new ItemData("Char",5));
-  list.append(new ItemData("String",6));
-  list.append(new ItemData("String Char",5));
-  list.append(new ItemData("Comment",7));
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Decimal",dsDecVal));
+  list.append(new ItemData("Octal",dsBaseN));
+  list.append(new ItemData("Hex",dsBaseN));
+  list.append(new ItemData("Float",dsFloat));
+  list.append(new ItemData("Char",dsChar));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("String Char",dsChar));
+  list.append(new ItemData("Comment",dsComment));
 }
 
 void PythonHighlight::makeContextList() {
@@ -1239,13 +1257,13 @@ void HlManager::makeAttribs(Highlight *highlight, Attribute *a, int n) {
 }
 
 int HlManager::defaultStyles() {
-  return 9;
+  return 10;
 }
 
 const char *HlManager::defaultStyleName(int n) {
   static const char *names[] = {
-    "Normal","Keyword","Decimal/Value","Base-N Integer","Floating Point",
-    "Character","String","Comment","Others"};
+    "Normal","Keyword","Data Type","Decimal/Value","Base-N Integer",
+    "Floating Point","Character","String","Comment","Others"};
 
   return names[n];
 }
@@ -1258,8 +1276,10 @@ void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
   QRgb col, selCol;
 
   list.setAutoDelete(true);
+  //ItemStyle(color, selected color, bold, italic
   list.append(new ItemStyle(black,white,false,false));
   list.append(new ItemStyle(black,white,true,false));
+  list.append(new ItemStyle(darkRed,white,false,false));
   list.append(new ItemStyle(blue,cyan,false,false));
   list.append(new ItemStyle(darkCyan,cyan,false,false));
   list.append(new ItemStyle(darkMagenta,cyan,false,false));

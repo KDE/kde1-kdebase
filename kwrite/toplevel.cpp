@@ -37,7 +37,7 @@
 const int toolUndo = 1;
 const int toolRedo = 2;
 
-DocSaver docSaver;
+//DocSaver docSaver;
 QList<KWriteDoc> docList; //documents
 HlManager hlManager; //highlight manager
 
@@ -93,12 +93,9 @@ void TopLevel::init() {
 
   show();
 }
-
+/*
 void TopLevel::closeEvent(QCloseEvent *e) {
-  if (queryExit())
-  {
-//e->accept();
-//delete this;
+  if (queryClose()) {
     if (memberList->count() > 1)
     {
       e->accept();
@@ -112,8 +109,8 @@ void TopLevel::closeEvent(QCloseEvent *e) {
     }
   }
 }
-
-bool TopLevel::queryExit() {
+*/
+bool TopLevel::queryClose() {
   int query;
 
   if (kWrite->isModified() && kWrite->isLastView()) {
@@ -263,7 +260,7 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.95\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.96\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
@@ -588,12 +585,7 @@ void TopLevel::writeConfig() {
   kWrite->doc()->writeConfig(config);
 }
 
-// session restore
-void TopLevel::readProperties(KConfig *config) {
-
-  kWrite->readSessionConfig(config);
-}
-
+// session management
 void TopLevel::restore(KConfig *config, int n) {
   const char *url;
 
@@ -606,6 +598,37 @@ void TopLevel::restore(KConfig *config, int n) {
 //  show();
 }
 
+void TopLevel::readProperties(KConfig *config) {
+
+  kWrite->readSessionConfig(config);
+}
+
+void TopLevel::saveProperties(KConfig *config) {
+
+  config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
+  kWrite->writeSessionConfig(config);
+  setUnsavedData(kWrite->isModified());
+}
+
+void TopLevel::saveData(KConfig *config) {//DocSaver::saveYourself() {
+//  KConfig *config;
+  int z;
+  char buf[16];
+  KWriteDoc *doc;
+
+//  config = kapp->getSessionConfig();
+  config->setGroup("Number");
+  config->writeEntry("NumberOfDocuments",docList.count());
+
+  for (z = 1; z <= (int) docList.count(); z++) {
+     sprintf(buf,"Document%d",z);
+     config->setGroup(buf);
+     doc = docList.at(z - 1);
+     doc->writeSessionConfig(config);
+  }
+}
+
+//restore session
 void restore() {
   KConfig *config;
   int docs, windows, z;
@@ -636,87 +659,10 @@ void restore() {
   }
 }
 
-
-//session close
-void TopLevel::saveProperties(KConfig *config) {
-
-  config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
-  kWrite->writeSessionConfig(config);
-  setUnsavedData(kWrite->isModified());
-}
-
-
-//DocSaver::DocSaver() : QObject() {}
-
-void DocSaver::saveYourself() {
-  KConfig *config;
-  int z;
-  char buf[16];
-  KWriteDoc *doc;
-
-  config = kapp->getSessionConfig();
-  config->setGroup("Number");
-  config->writeEntry("NumberOfDocuments",docList.count());
-
-  for (z = 1; z <= (int) docList.count(); z++) {
-     sprintf(buf,"Document%d",z);
-     config->setGroup(buf);
-     doc = docList.at(z - 1);
-     doc->writeSessionConfig(config);
-  }
-}
-/*
-void initHighlight() { //setup highlight and default classes
-  KConfig *config;
-  DefItemStyle *p;
-  QString s;
-  QRgb col, selCol;
-  char family[96];
-  char charset[48];
-
-  defItemStyleList.setAutoDelete(true);
-  defItemStyleList.append(new DefItemStyle("Normal",black,white,false,false));
-  defItemStyleList.append(new DefItemStyle("Keyword",black,white,true,false));
-  defItemStyleList.append(new DefItemStyle("Decimal/Value",blue,cyan,false,false));
-  defItemStyleList.append(new DefItemStyle("Base-N Integer",darkCyan,cyan,false,false));
-  defItemStyleList.append(new DefItemStyle("Floating Point",darkMagenta,cyan,false,false));
-  defItemStyleList.append(new DefItemStyle("Character",magenta,magenta,false,false));
-  defItemStyleList.append(new DefItemStyle("String",red,red,false,false));
-  defItemStyleList.append(new DefItemStyle("Comment",darkGray,gray,false,true));
-  defItemStyleList.append(new DefItemStyle("Others",darkBlue,blue,false,false));
-
-  config = kapp->getConfig();
-  config->setGroup("Highlight Defaults");
-  for (p = defItemStyleList.first(); p != 0L; p = defItemStyleList.next()) {
-    s = config->readEntry(p->name);
-    if (!s.isEmpty()) {
-      sscanf(s,"%X,%X,%d,%d",&col,&selCol,&p->bold,&p->italic);
-      p->col.setRgb(col);
-      p->selCol.setRgb(selCol);
-    }
-  }
-  s = config->readEntry("Font");
-  if (!s.isEmpty()) {
-    sscanf(s,"%95[^,],%d,%47[^,]",family,&itemFont.size,charset);
-    itemFont.family = family;
-    itemFont.charset = charset;
-  }
-
-  hlList.setAutoDelete(true);
-  hlList.append(new Highlight("Normal"));
-  hlList.append(new CHighlight());
-  hlList.append(new CppHighlight());
-  hlList.append(new HtmlHighlight());
-  hlList.append(new BashHighlight());
-  hlList.append(new ModulaHighlight());
-  hlList.append(new AdaHighlight());
-}
-*/
-
 int main(int argc, char** argv) {
   KApplication a(argc,argv);
 
-  QObject::connect(kapp,SIGNAL(saveYourself()),&docSaver,SLOT(saveYourself()));
+//  QObject::connect(kapp,SIGNAL(saveYourself()),&docSaver,SLOT(saveYourself()));
   docList.setAutoDelete(false);
 
   if (kapp->isRestored()) {

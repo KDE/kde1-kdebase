@@ -150,7 +150,6 @@ class KWriteDoc : QObject {
     void killLine(KWriteView *, VConfig &);
     void backspace(KWriteView *, VConfig &);
     void del(KWriteView *, VConfig &);
-    bool hasMarkedText() {return (selectEnd >= selectStart);}
 
 
   protected slots:
@@ -158,7 +157,7 @@ class KWriteDoc : QObject {
     void hlChanged();
 
   public:
-    int getHighlight() { return hlNumber; }
+    int getHighlight() {return hlManager->findHl(highlight);}
   protected:
     void setHighlight(int n);
     void makeAttribs();
@@ -189,6 +188,7 @@ class KWriteDoc : QObject {
     void deselectAll();
     void invertSelection();
 
+    bool hasMarkedText() {return (selectEnd >= selectStart);}
     QString markedText(int flags);
     void delMarkedText(KWriteView *, VConfig &);
 
@@ -243,7 +243,7 @@ class KWriteDoc : QObject {
 //    Attribute **attribs;//[nAttribs];
     HlManager *hlManager;
     Highlight *highlight;
-    int hlNumber;
+//    int hlNumber;
     Attribute attribs[nAttribs];
 
     int tabChars;

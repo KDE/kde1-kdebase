@@ -839,7 +839,7 @@ void KWriteDoc::hlChanged() { //slot
 void KWriteDoc::setHighlight(int n) {
   Highlight *h;
 
-  hlNumber = n;
+//  hlNumber = n;
 
   h = hlManager->getHl(n);
   if (h == highlight) {

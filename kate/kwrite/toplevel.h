@@ -16,7 +16,7 @@
 
 #include "kwview.h"
 #include "kwdoc.h"
-
+/*
 class DocSaver : public QObject {
     Q_OBJECT
   public:
@@ -24,7 +24,7 @@ class DocSaver : public QObject {
   public slots:
     void saveYourself();
 };
-
+*/
 
 class TopLevel : public KTMainWindow {
     Q_OBJECT
@@ -34,8 +34,8 @@ class TopLevel : public KTMainWindow {
     ~TopLevel();
     void init(); //initialize caption, status and show
 
-    virtual void closeEvent(QCloseEvent *e);
-    virtual bool queryExit();
+//    virtual void closeEvent(QCloseEvent *e);
+    virtual bool queryClose();
 
     void loadURL(const char *url, int flags = 0);
   protected:
@@ -50,7 +50,7 @@ class TopLevel : public KTMainWindow {
     int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;
 //    QPopupMenu *file, *edit, *options, *help;
-    QPopupMenu *edit, *options, *recentPopup;//, hlPopup;
+    QPopupMenu *edit, *options, *recentPopup, *hlPopup, *popup;
     QStrList recentFiles;
 
     bool hideToolBar;
@@ -89,15 +89,14 @@ class TopLevel : public KTMainWindow {
     void readConfig();
   public slots:
     void writeConfig();
+
     //session management
   public:
-//    virtual void saveData(KConfig *);
-    void readProperties(KConfig*);
     void restore(KConfig *,int);
-    void saveProperties(KConfig*);
-private:
-
-  QPopupMenu *popup, *hlPopup;
+  protected:
+    virtual void readProperties(KConfig*);
+    virtual void saveProperties(KConfig*);
+    virtual void saveData(KConfig *);
 };
 
 #endif

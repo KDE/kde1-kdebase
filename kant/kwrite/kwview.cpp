@@ -692,7 +692,7 @@ X      : cut
     && e->key() != Key_Delete && e->key() != Key_Backspace) {
 //    printf("input %d\n",e->ascii());
     if (c.flags & cfDelOnInput) {
-      kWriteDoc->cut(this,c);
+      kWriteDoc->delMarkedText(this,c);
       getVConfig(c);
     }
     kWriteDoc->insertChar(this,c,e->ascii());
@@ -785,9 +785,10 @@ X      : cut
             end(c);
             break;
         case Key_Delete:
-            if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText() || e->state() & ShiftButton) {
-              kWriteDoc->cut(this,c);
-            } else kWriteDoc->del(this,c);
+            if (e->state() & ShiftButton) kWriteDoc->cut(this,c);
+            else if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
+              kWriteDoc->delMarkedText(this,c);
+            else kWriteDoc->del(this,c);
             break;
         case Key_Next:
             pageDown(c);

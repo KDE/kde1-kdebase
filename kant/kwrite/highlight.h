@@ -323,7 +323,7 @@ class CHighlight : public GenHighlight {
   protected:
     virtual void createItemData(ItemDataList &);
     virtual void makeContextList();
-    virtual void setKeywords(HlKeyword *);
+    virtual void setKeywords(HlKeyword *keyword, HlKeyword *dataType);
 };
 
 class CppHighlight : public CHighlight {
@@ -331,7 +331,7 @@ class CppHighlight : public CHighlight {
     CppHighlight(const char *name);
     virtual ~CppHighlight();
   protected:
-    virtual void setKeywords(HlKeyword *);
+    virtual void setKeywords(HlKeyword *keyword, HlKeyword *dataType);
 };
 
 class JavaHighlight : public CHighlight {
@@ -339,7 +339,7 @@ class JavaHighlight : public CHighlight {
     JavaHighlight(const char *name);
     virtual ~JavaHighlight();
   protected:
-    virtual void setKeywords(HlKeyword *);
+    virtual void setKeywords(HlKeyword *keyword, HlKeyword *dataType);
 };
 
 class HtmlHighlight : public GenHighlight {
@@ -403,6 +403,7 @@ class HlManager : public QObject {
     int highlightFind(KWriteDoc *doc);
     int wildcardFind(const char *fileName);
     int mimeFind(KWriteDoc *doc);
+    int findHl(Highlight *h) {return hlList.find(h);}
     
     void makeAttribs(Highlight *, Attribute *, int n);
 
