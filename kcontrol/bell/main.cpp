@@ -54,7 +54,7 @@ KBellApplication::KBellApplication(int &argc, char **argv, const char *name)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmbell [-init | bell])\n"));
+          fprintf(stderr, klocale->translate("usage: kcmbell [-init | bell]\n"));
 	  justInit = TRUE;
         }
     }
