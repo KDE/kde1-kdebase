@@ -28,7 +28,7 @@
 
 class DesktopConfig {
 public:
-     DesktopConfig( const char*);
+     DesktopConfig();
      ~DesktopConfig();
      QString bgpic;
      bool bgpictile;
@@ -36,16 +36,12 @@ public:
      bool fancybg;
      QColor bgcolor;
 protected:
-     void initStream( const char*);
-     QFile*         cf;
-     QTextStream*   cs;
      KConfig*       kc;
 };
 
-DesktopConfig::DesktopConfig( const char* rc)
+DesktopConfig::DesktopConfig()
 {
-     initStream( QString(rc) + "/config/kdmrc");
-     kc = new KConfig( cs);
+     kc = kapp->getConfig();
      QString _bgcolor;
      kc->setGroup( "KDMDESKTOP");
 
@@ -64,28 +60,11 @@ DesktopConfig::DesktopConfig( const char* rc)
 	  bgcolor.setNamedColor( _bgcolor.data());
      else
 	  bgcolor = darkCyan;
-     delete kc;
-}
-
-void
-DesktopConfig::initStream( const char* rc)
-{
-     cf = new QFile( rc);
-     if( cf->exists()) {
-          cf->open( IO_ReadOnly);
-          cs = new QTextStream( cf);
-     } else {
-          cs = NULL;
-     }
+     //delete kc;
 }
 
 DesktopConfig::~DesktopConfig()
 {
-     if( cf->isOpen()) 
-	  cf->close();
-     if( cs)
-	  delete cs;
-     
 }
 // NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
 static void 
@@ -236,11 +215,12 @@ do_normal_background( DesktopConfig *dc)
 
 int main(int argc, char **argv)
 {
-     QApplication app(argc, argv);
+     // Use same config file as kdm:
+     KApplication app(argc, argv, "kdm");
      
      //Keep color resources after termination
      XSetCloseDownMode( qt_xdisplay(), RetainTemporary);
-     DesktopConfig* dc = new DesktopConfig( KApplication::kdedir());
+     DesktopConfig* dc = new DesktopConfig();
      
      if( dc->fancybg)
 	  do_fancy_background();

@@ -181,9 +181,15 @@ KDMConfig::getConfig()
      }
 
      // Greet String and fonts:
-     QString hostname(256);
-     gethostname(hostname.data(), 255);
-     
+     QString longhostname(256);
+     gethostname(longhostname.data(), 255);
+     QString hostname;
+     // Remove domainname, because it's generally
+     // too long to look nice in the title:
+     int dot = longhostname.find('.');
+     if( dot != -1) hostname = longhostname.left( dot);
+     else hostname = longhostname;
+
      if( !normal_font.isNull()) {
 	  _normalFont = new QFont( normal_font.data());
 	  _normalFont->setRawMode( true);

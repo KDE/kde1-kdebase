@@ -201,6 +201,9 @@ static struct pam_conv PAM_conversation = {
 	&PAM_conv,
 	NULL
 };
+
+/* for pam session (see session.c)*/
+pam_handle_t *pamh;
 #endif
 
 Verify (d, greet, verify)
@@ -213,7 +216,6 @@ struct verify_info	*verify;
 	struct spwd	*sp;
 #endif
 #ifdef USE_PAM
-	pam_handle_t *pamh;
 	int pam_error;
 #endif USE_PAM
 #if !defined(SVR4) || !defined(GREET_LIB) /* shared lib decls handle this */
@@ -254,8 +256,11 @@ struct verify_info	*verify;
 #else /* USE_PAM */
        #define PAM_BAIL \
 	  if (pam_error != PAM_SUCCESS) { \
-          pam_end(pamh, 0); return 0; \
+          pam_end(pamh, 0); \
+	  pamh = NULL; \
+	  return 0; \
         }
+       pamh = NULL;
        PAM_password = greet->password;
        pam_error = pam_start("xdm", p->pw_name, &PAM_conversation, &pamh);
        PAM_BAIL;
@@ -266,11 +271,11 @@ struct verify_info	*verify;
        PAM_BAIL;
        pam_error = pam_setcred(pamh, 0);
        PAM_BAIL;
-       /* unfortunately, it's not clear at the moment how to do session
-        * management; it's possible, since xdm hangs around, but I don't
-        * see yet how to tear the sessions down.
-        */
-       pam_end(pamh, PAM_SUCCESS);
+       /* setup sessions later.  Since Verify succeded, we don't
+          have to worry about closing the pam handle?  It will
+          be closed when the session is closed.
+       */
+       //pam_end(pamh, PAM_SUCCESS);           
 #endif /* USE_PAM */
 
 	Debug ("verify succeeded\n");

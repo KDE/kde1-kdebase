@@ -1,3 +1,4 @@
+# KDE Config file
 [KDM]
 StdFont=*-helvetica-medium-r-normal--14-*
 FailFont=-*-helvetica-bold-r-normal-*-14-*
@@ -14,8 +15,8 @@ SessionTypes=kde;fvwm;failsafe
 [KDMDESKTOP]
 FancyBackGround=0
 BackgroundColor=darkCyan
-;BackgroundPicture=KDEDIR/lib/pics/wallpapers/WATER01.JPG
-;BackgroundPicture=KDEDIR/lib/pics/wallpapers/STUCCO_R.JPG
-;BackgroundPicture=KDEDIR/lib/pics/wallpapers/kdm_bg.jpg
-;BackgroundPictureTile=1
-;BackgroundPictureCenter=0
+#BackgroundPicture=KDEDIR/lib/pics/wallpapers/WATER01.JPG
+#BackgroundPicture=KDEDIR/lib/pics/wallpapers/STUCCO_R.JPG
+#BackgroundPicture=KDEDIR/lib/pics/wallpapers/kdm_bg.jpg
+#BackgroundPictureTile=1
+#BackgroundPictureCenter=0

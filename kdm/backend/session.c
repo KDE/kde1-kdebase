@@ -57,6 +57,9 @@ from the X Consortium.
 #ifdef K5AUTH
 # include <krb5/krb5.h>
 #endif
+#ifdef USE_PAM
+# include <security/pam_appl.h>
+#endif
 
 #ifndef GREET_USER_STATIC
 #include <dlfcn.h>
@@ -259,6 +262,10 @@ static struct greet_info	greet;
 static struct verify_info	verify;
 
 static Jmp_buf	abortSession;
+
+#ifdef USE_PAM
+extern pam_handle_t *pamh;
+#endif
 
 /* ARGSUSED */
 static SIGVAL
@@ -613,6 +620,14 @@ SessionExit (d, status, removeAuth)
 	    }
 	}
 #endif /* K5AUTH */
+#ifdef USE_PAM
+	if( pamh) {
+	  /* shutdown PAM session */
+	  pam_close_session(pamh, 0);
+	  pam_end(pamh, PAM_SUCCESS);
+	  pamh = NULL;
+	}
+#endif
     }
     Debug ("Display %s exiting with status %d\n", d->name, status);
     exit (status);
@@ -641,6 +656,9 @@ StartClient (verify, d, pidp, name, passwd)
 		Debug ("%s ", *f);
 	Debug ("\n");
     }
+#ifdef USE_PAM
+    if( pamh) pam_open_session( pamh, 0);
+#endif
     switch (pid = fork ()) {
     case 0:
 	CleanUpChild ();
