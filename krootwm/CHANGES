@@ -8,6 +8,7 @@ In 0.1:
 -------
 patchlevel 8:
        - hopefully fixed the ocassional freezes bug
+       - hopefully fixed the ocassional freezes bug
 
 patchlevel 7:
        - new option to have kpanel´s menu on the left mouse button.

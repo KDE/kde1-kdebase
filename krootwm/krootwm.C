@@ -298,10 +298,15 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   int ox, oy;
   XEvent ev;
   
+//   if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+// 		   ButtonPressMask | ButtonReleaseMask |
+// 		   PointerMotionMask |
+// 		   EnterWindowMask | LeaveWindowMask,
+// 		   GrabModeAsync, GrabModeAsync, None, 
+// 		   arrowCursor.handle(), CurrentTime) == GrabSuccess){ 
   XChangeActivePointerGrab( qt_xdisplay(), 
 			    ButtonPressMask | ButtonReleaseMask |
-			    PointerMotionMask |
-			    EnterWindowMask | LeaveWindowMask,
+			    PointerMotionMask ,
 			    arrowCursor.handle(), 0);
   XGrabServer(qt_xdisplay());
   
@@ -356,7 +361,7 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   
   XUngrabServer(qt_xdisplay());
   XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
-  XUngrabPointer(qt_xdisplay(), CurrentTime);
+  XSync(qt_xdisplay(), False);
   
   return True;
 }
