@@ -1,0 +1,5 @@
+1998-11-29  Alex Zepeda  <garbanzo@hooked.net>
+
+	* kcontrol.xpm, Makefile.am: Install the mini kcontrol icon from here
+	too, unbloat the main kcontrol/kcontrol Makefile.
+

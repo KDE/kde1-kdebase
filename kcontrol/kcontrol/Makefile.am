@@ -1,3 +1,5 @@
+# $Id$
+# kdebase/kcontrol/kcontrol
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -13,7 +15,7 @@ BUILT_SOURCES =	toplevel.moc kdelnk.moc mainwidget.moc configlist.moc \
 		kswallow.moc
 noinst_HEADERS = kswallow.h toplevel.h configlist.h mainwidget.h kdelnk.h
 
-EXTRA_DIST = kcontrol.xpm mini-kcontrol.xpm
+EXTRA_DIST = mini-kcontrol.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
@@ -39,16 +41,12 @@ kdelnk.moc: kdelnk.h
 	$(MOC) kdelnk.h -o kdelnk.moc
 
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kcontrol.xpm $(kde_icondir)/kcontrol.xpm
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-kcontrol.xpm $(kde_minidir)/kcontrol.xpm
 
 uninstall-local:
 	rm -f $(APPSDIR)/kcontrol.kdelnk
-	rm -f $(kde_icondir)/kcontrol.xpm
 	rm -f $(kde_minidir)/kcontrol.xpm
 
 
 DISTCLEANFILES = $(BUILT_SOURCES)
-

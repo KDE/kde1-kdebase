@@ -1,0 +1,4 @@
+1998-11-29  Alex Zepeda <garbanzo@hooked.net>
+
+	* kcontrol.xpm, Makefile.am: Install the main kcontrol icon from here.
+
