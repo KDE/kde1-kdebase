@@ -247,15 +247,15 @@ msgstr "milisekúnd"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr "Aktívne pozadie plochy"
+msgstr "Aktívne okraje plochy"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr "Povoli» aktívne pozadie plochy"
+msgstr "Povoli» aktívne okraje plochy"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Presuò ukazateµ cez stred po prepnutí"
+msgstr "Presuò ukazateµ do stredu po prepnutí"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
