@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN (gb2312)\n"
@@ -13,122 +13,122 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:174
+#: main.C:190
 msgid "&Normal"
 msgstr "普通[&N]"
 
-#: main.C:177
+#: main.C:193
 msgid "&Small"
 msgstr "小型[&S]"
 
-#: main.C:178
+#: main.C:194
 msgid "&Medium"
 msgstr "中型[&M]"
 
-#: main.C:179
+#: main.C:195
 msgid "&Large"
 msgstr "大型[&L]"
 
-#: main.C:180
+#: main.C:196
 msgid "&Huge"
 msgstr "巨型[&H]"
 
-#: main.C:183
+#: main.C:199
 msgid "&Linux"
 msgstr ""
 
-#: main.C:187
+#: main.C:203
 msgid "&More ..."
 msgstr "更多[&M] ..."
 
-#: main.C:193
+#: main.C:209
 msgid "&Hide"
 msgstr "隐藏[&H]"
 
-#: main.C:194
+#: main.C:210
 msgid "&Left"
 msgstr "左[&L]"
 
-#: main.C:195
+#: main.C:211
 msgid "&Right"
 msgstr "右[&R]"
 
-#: main.C:201
+#: main.C:217
 msgid "40x15 (&small)"
 msgstr "40x15 (小)[&S]"
 
-#: main.C:202
+#: main.C:218
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:203
+#: main.C:219
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:204
+#: main.C:220
 #, fuzzy
 msgid "80x40 (&xterm)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:205
+#: main.C:221
 #, fuzzy
 msgid "80x52 (ibmv&ga)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:214
+#: main.C:230
 msgid "&Menubar"
 msgstr "菜单条[&M]"
 
-#: main.C:216
+#: main.C:232
 msgid "&Frame"
 msgstr "外框[&F]"
 
-#: main.C:218
+#: main.C:234
 msgid "Scroll&bar"
 msgstr "滚动条[&B]"
 
-#: main.C:220
+#: main.C:236
 msgid "BS sends &DEL"
 msgstr "BS 送出 &DEL"
 
-#: main.C:223
+#: main.C:239
 msgid "&Font"
 msgstr "字体[&F]"
 
-#: main.C:224
+#: main.C:240
 msgid "&Size"
 msgstr "大小[&S]"
 
-#: main.C:225
+#: main.C:241
 #, fuzzy
 msgid "&Schema"
 msgstr "小型[&S]"
 
-#: main.C:227
+#: main.C:243
 msgid "&Save options"
 msgstr "保存选项[&S]"
 
-#: main.C:231
+#: main.C:247
 msgid "&About ..."
 msgstr "关于[&A] ..."
 
-#: main.C:232
+#: main.C:248
 msgid "&User's Manual ..."
 msgstr "使用手册[&U] ..."
 
-#: main.C:233
+#: main.C:249
 msgid "&Technical Reference ..."
 msgstr "技术参考[&T] ..."
 
-#: main.C:241
+#: main.C:260
 msgid "New"
 msgstr ""
 
-#: main.C:242
+#: main.C:261
 msgid "Sessions"
 msgstr ""
 
-#: main.C:865
+#: main.C:907
 msgid "Welcome to the console"
 msgstr "欢迎使用 console"
 

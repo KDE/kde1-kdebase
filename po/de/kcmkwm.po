@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-03-30 16:29+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -31,119 +31,130 @@ msgstr "Benutzung: kcmwkm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
 msgid "Window manager style"
 msgstr "Eigenschaften der Fenster-Anzeige"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Minimieren"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Maximieren"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Anheften"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr "Menü"
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr "Links"
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr "Rechts"
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Die linke Seite der Titelleiste ist voll... Entferne den 'maximieren' "
 "Button\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Die rechte Seite der Titelleiste ist voll... Entferne den 'maximieren' "
 "Button\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Die linke Seite der Titelleiste ist voll... Entferne den 'minimieren' "
 "Button\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Die rechte Seite der Titelleiste ist voll... Entferne den 'minimieren' "
 "Button\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 msgid "Shaded Vertically"
 msgstr "Vertikaler Farbverlauf"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr "Horizontaler Farbverlauf"
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Schlicht"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "&Aktive Pixmap"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "&Inaktive Pixmap"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Aktion der Maus"
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Doppeklick mit linkem MouseButton\n"
 "    auf der Titelzeile führt zu:"
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "Maximieren an/aus"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "Rolladen hoch/runter"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Minimieren"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "Anheften an/aus"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 #, fuzzy
 msgid "Title animation"
 msgstr "Bewegung des Titels"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
 msgstr "ms"
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Eigenschaften der Fenster-Anzeige"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
 
 #: windows.cpp:66
 #, fuzzy

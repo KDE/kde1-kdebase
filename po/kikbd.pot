@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 
 #: kikbd.cpp:324
@@ -79,12 +79,12 @@ msgstr ""
 
 #: keymap.cpp:236
 #, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr ""
 
 #: keymap.cpp:242
 #, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr ""
 
 #: kikbdconf.cpp:95
@@ -313,7 +313,7 @@ msgid "Display information for selected keyboard map"
 msgstr ""
 
 #: widgets.cpp:145
-msgid "Use \"&hotlist\""
+msgid "Use \"&hot list\""
 msgstr ""
 
 #: widgets.cpp:146
@@ -350,7 +350,7 @@ msgid "Switch and Alt Switch"
 msgstr ""
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+msgid "Key(s) to switch between keyboard maps"
 msgstr ""
 
 #: widgets.cpp:416
@@ -378,11 +378,11 @@ msgid "Advanced"
 msgstr ""
 
 #: widgets.cpp:466
-msgid "&Emulate CapsLock"
+msgid "&Emulate Caps Lock"
 msgstr ""
 
 #: widgets.cpp:467
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr ""
 
 #: widgets.cpp:473
@@ -430,15 +430,15 @@ msgid "Foreground"
 msgstr ""
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+msgid "Color of the text label"
 msgstr ""
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+msgid "With Caps Lock"
 msgstr ""
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+msgid "Background when Emulated Caps Lock active"
 msgstr ""
 
 #: widgets.cpp:573
@@ -470,7 +470,7 @@ msgid "&Autostart"
 msgstr ""
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+msgid "Start up automatically"
 msgstr ""
 
 #: widgets.cpp:648

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-10-28 18:35 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
@@ -23,10 +23,10 @@ msgstr ""
 "Pou¾ívám implicitní X kódy."
 
 #: kikbd.cpp:307
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 "Mapa kláves \"%s\" neexistuje.\n"
 "Vynechávám tuto mapu."
@@ -85,13 +85,13 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: není mo¾né nalézt symbol \"%s\"."
 
 #: keymap.cpp:236
-#, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+#, fuzzy, c-format
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: nerozumím kódu klávesy \"%s\"."
 
 #: keymap.cpp:242
-#, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+#, fuzzy, c-format
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
 
 #: kikbdconf.cpp:95
@@ -328,7 +328,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Zobrazit informace o vybrané klávesové mapì"
 
 #: widgets.cpp:145
-msgid "Use \"&hotlist\""
+#, fuzzy
+msgid "Use \"&hot list\""
 msgstr "Pou¾ít \"&hotlist\""
 
 #: widgets.cpp:146
@@ -367,7 +368,8 @@ msgid "Switch and Alt Switch"
 msgstr "Pøepnutí a pøepnutí s Altem"
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "Klávesa(y) na pøepínání mezi mapami"
 
 #: widgets.cpp:416
@@ -395,11 +397,13 @@ msgid "Advanced"
 msgstr "Pokroèilé"
 
 #: widgets.cpp:466
-msgid "&Emulate CapsLock"
+#, fuzzy
+msgid "&Emulate Caps Lock"
 msgstr "&Emulovat CapsLock"
 
 #: widgets.cpp:467
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+#, fuzzy
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emulovat Capslock XServeru. Potøebné pro nìkteré jazyky"
 
 #: widgets.cpp:473
@@ -447,15 +451,18 @@ msgid "Foreground"
 msgstr "Popøedí"
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+#, fuzzy
+msgid "Color of the text label"
 msgstr "Barva textového popisku"
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "S CapsLockem"
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "Pozadí, pøíaktivní emulaci capslocku"
 
 #: widgets.cpp:573
@@ -487,7 +494,8 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+#, fuzzy
+msgid "Start up automatically"
 msgstr "Spou¹tìt automaticky"
 
 #: widgets.cpp:648

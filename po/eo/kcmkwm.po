@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm 1.0pre2\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-07-15 18:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -40,119 +40,130 @@ msgstr "uzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgid "Window manager style"
 msgstr "Stilo de la fenestroregilo"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Minimumigo"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Maksimumigo"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Fikso"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr "Menuo"
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La maldekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la maksimumigilon.\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La dekstra flanko de la titollistelo estas plena...\n"
 "malaktibigas la maksimumigilon.\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La maldekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la minimumigilon.\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La dekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la minimumigilon.\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 msgid "Shaded Vertically"
 msgstr "Vertikala kolorþanøo"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr "Horizontala kolorþanøo"
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Plenkolora"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr "Rastrobildo"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "por &aktiva titolo"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "por &malaktiva titolo"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Musago"
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Æe duobla kliko per maldekstra musbutono\n"
 "    sur la titollistelon:"
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "(Mal)Maksimumigu"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "(Mal)Suprenvolvu"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Piktogramigu"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "(Mal)Fiksu"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 #, fuzzy
 msgid "Title animation"
 msgstr "Titolanima¼o"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
 msgstr "ms"
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Stilo de la fenestroregilo"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
 
 #: windows.cpp:66
 #, fuzzy

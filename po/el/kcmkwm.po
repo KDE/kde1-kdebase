@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,118 +38,129 @@ msgstr "Σύνταξη: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Μορφή Διαχειριστή Παραθύρων"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Ελαχιστοποίηση"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Μεγιστοποίηση"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Σταθερό"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr "Μενού"
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "μεγιστοποίησης\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "μεγιστοποίησης\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Η αριστερή πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "ελαχιστοποίησης\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Η δεξιά πλευρά της γραμμής τίτλου είναι γεμάτη... Απενεργοποίηση πλήκτρου "
 "ελαχιστοποίησης\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 #, fuzzy
 msgid "Shaded Vertically"
 msgstr "Κατακόρυφη μεγιστοποίηση"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr ""
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Απλό"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr "Με εικόνα"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "Εικόνα Ενεργού Παραθύρου"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "Εικόνα ανενεργού παραθύρου"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Ενέργεια ποντικιού "
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr "Διπλό αριστερό κλικ στην γραμμή τίτλου προκαλεί: "
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "(Απο)Μεγιστοποίηση"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "(Απο)Σκίαση"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Εικονοποίηση"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "(Απο)Σταθεροποίηση"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 #, fuzzy
 msgid "Title animation"
 msgstr "Κίνηση τίτλου"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
 msgstr "χιλιοστά του δευτερολέπτου"
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Μορφή Διαχειριστή Παραθύρων"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
 
 #: windows.cpp:66
 #, fuzzy

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -171,6 +171,10 @@ msgstr ""
 msgid "History"
 msgstr ""
 
+#: disknav.cpp:62
+msgid "Edit entries: (drag a folder and create a link)"
+msgstr ""
+
 #: disknav.cpp:64
 msgid "Edit &Local..."
 msgstr "Breyta staðvært..."
@@ -178,6 +182,47 @@ msgstr "Breyta staðvært..."
 #: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Breyta víðvært..."
+
+#: disknav.cpp:112
+msgid "Max recent folder entries:"
+msgstr ""
+
+#: disknav.cpp:121
+msgid "Max recent file entries:"
+msgstr ""
+
+#: disknav.cpp:130
+msgid "Max files in a single folder:"
+msgstr ""
+
+#: disknav.cpp:159
+msgid "Show dot files"
+msgstr ""
+
+#: disknav.cpp:166
+msgid "Ignore case when sorting"
+msgstr ""
+
+#: disknav.cpp:173
+msgid "Show Global section"
+msgstr ""
+
+#: disknav.cpp:180
+#, fuzzy
+msgid "Show Local section"
+msgstr "Staðsetning"
+
+#: disknav.cpp:187
+msgid "Show Recent section"
+msgstr ""
+
+#: disknav.cpp:194
+msgid "Show Option entry"
+msgstr ""
+
+#: disknav.cpp:210
+msgid "Terminal application:"
+msgstr ""
 
 #~ msgid "ms"
 #~ msgstr "ms"

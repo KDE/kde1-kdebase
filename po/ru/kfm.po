@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-01-20 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -212,11 +212,11 @@ msgstr "Закладки"
 msgid "&Cache"
 msgstr "&Буфер"
 
-#: kfmgui.cpp:523 kfmman.cpp:1071
+#: kfmgui.cpp:523 kfmman.cpp:1070
 msgid "Up"
 msgstr "Вверх"
 
-#: kfmgui.cpp:533 kfmman.cpp:1079
+#: kfmgui.cpp:533 kfmman.cpp:1078
 msgid "Forward"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: kbind.cpp:1686 kbind.cpp:1701 kbind.cpp:1721 kbind.cpp:1733 kbind.cpp:1749
 #: kbind.cpp:1881 kbind.cpp:1893 kbind.cpp:1938 kbind.cpp:1980 kfmexec.cpp:60
 #: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:596 kfmgui.cpp:752
-#: kfmman.cpp:332 kfmman.cpp:1042 kfmman.cpp:1227 kfmman.cpp:1253
+#: kfmman.cpp:331 kfmman.cpp:1041 kfmman.cpp:1226 kfmman.cpp:1252
 #: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:834
 #: kfmprops.cpp:956 kfmprops.cpp:1083 kfmprops.cpp:1399 kfmprops.cpp:1611
 #: kfmprops.cpp:1787 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
@@ -251,7 +251,7 @@ msgstr "Не могу загрузить пиктограмму\n"
 msgid "KFM Error"
 msgstr ""
 
-#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
+#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1040
 msgid "Malformed URL\n"
 msgstr "Некорретный URL\n"
 
@@ -271,7 +271,7 @@ msgstr "Добавить Закладку"
 msgid "New "
 msgstr "Новый "
 
-#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:215
+#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:385 kfmview.cpp:453 kfmview.cpp:596
 #: kiojob.cpp:87 root.cpp:1154
 msgid "ERROR: Malformed URL"
@@ -333,7 +333,7 @@ msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ОШИБКА: Вы перенесли директорию на одного из ее поддиректорий"
 
-#: kfmexec.cpp:255 kfmman.cpp:898 kfmview.cpp:481
+#: kfmexec.cpp:255 kfmman.cpp:897 kfmview.cpp:481
 msgid "Open With:"
 msgstr "Открыть с:"
 
@@ -484,47 +484,47 @@ msgstr "Нет точки монтирования в *.kdelnk файле"
 msgid "Unknown binding"
 msgstr "Неизвестная привязка"
 
-#: main.cpp:88 main.cpp:195
+#: main.cpp:87 main.cpp:194
 msgid "KFM Information"
 msgstr "Информация KFM"
 
-#: main.cpp:89
+#: main.cpp:88
 msgid "Creating directory:\n"
 msgstr "Создаю подкаталог:\n"
 
-#: main.cpp:196
+#: main.cpp:195
 msgid "Installing Templates"
 msgstr "Устанавливаю Шаблоны"
 
-#: main.cpp:229
+#: main.cpp:227
 msgid "Cd"
 msgstr "Сменить каталог"
 
-#: main.cpp:230
+#: main.cpp:228
 msgid "New View"
 msgstr "Новый вид"
 
-#: kfmtree.cpp:223 main.cpp:233
+#: kfmtree.cpp:223 main.cpp:231
 msgid "Move to Trash"
 msgstr "Отправить в Корзину"
 
-#: main.cpp:235
+#: main.cpp:233
 msgid "Open with"
 msgstr "Открыть с"
 
-#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+#: kfmman.cpp:1244 kfmtree.cpp:155 main.cpp:235
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
+#: kfmman.cpp:1248 kfmtree.cpp:159 main.cpp:237
 msgid "Link"
 msgstr "Ссылка"
 
-#: main.cpp:240
+#: main.cpp:238
 msgid "Empty Trash Bin"
 msgstr "Очистить корзину"
 
-#: main.cpp:241
+#: main.cpp:239
 msgid "Add to Bookmarks"
 msgstr "Добавить закладку"
 
@@ -914,27 +914,27 @@ msgstr "ОШИБКА: Не могу прочитать подкаталог рабочего стола '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "ОШИБКА: Не могу подтвердить перенос"
 
-#: kfmman.cpp:1228 root.cpp:1758
+#: kfmman.cpp:1227 root.cpp:1758
 msgid "Dont know what to do."
 msgstr "Не знаю, что делать."
 
-#: kfmman.cpp:1254 kfmtree.cpp:164 root.cpp:1783
+#: kfmman.cpp:1253 kfmtree.cpp:164 root.cpp:1783
 msgid "Dont know what to do"
 msgstr "Не знаю, что делать"
 
-#: kfmexec.cpp:93 kfmman.cpp:333
+#: kfmexec.cpp:93 kfmman.cpp:332
 msgid "The file does not contain a URL"
 msgstr "Файл не содержит URL"
 
-#: kfmman.cpp:382
+#: kfmman.cpp:381
 msgid "Contacting host "
 msgstr "Связываюсь с сервером "
 
-#: kfmman.cpp:386
+#: kfmman.cpp:385
 msgid "Working ..."
 msgstr "Работаю..."
 
-#: kfmman.cpp:1121 kfmtree.cpp:230
+#: kfmman.cpp:1120 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Добавить закладку"
 

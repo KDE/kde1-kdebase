@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-04-27 14:14+0100\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -40,119 +40,130 @@ msgstr "utilisation : kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgid "Window manager style"
 msgstr "Style du gestionnaire de fenêtres"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Icônifier"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Maximiser"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Clouer"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr "Gauche"
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr "Droite"
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie gauche de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La partie droite de la barre de titre est pleine...\n"
 "Désactivation du bouton \"Icônifier\".\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 msgid "Shaded Vertically"
 msgstr "Ombrée verticalement"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr "Ombrée horizontalement"
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Uni"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr "Image"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "Image \"&active\""
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "Image \"&inactive\""
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Action à la souris"
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Un double-clic sur la barre de titre \n"
 "avec le bouton gauche de la souris provoquera :"
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "(Dé)Maximiser"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "(Dé)Masquer"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Icônifier"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "(Dé)Clouer"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 #, fuzzy
 msgid "Title animation"
 msgstr "Animation du titre"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
 msgstr "millisecondes"
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Style du gestionnaire de fenêtres"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
 
 #: windows.cpp:66
 #, fuzzy

@@ -160,4 +160,3 @@ msgstr "Nedávne:"
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr "Vlastnosti..."
-

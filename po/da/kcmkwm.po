@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-01-25 13:23\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,119 +38,130 @@ msgstr "brug: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 msgid "Window manager style"
 msgstr "Vindues manager stil"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Minimer"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Maksimer"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Fastsæt"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr ""
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Den venstre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
 "funktion\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
 "funktion\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Den venstre side af titelbjælken er fuld... 'Minimer' knappen er sat ud af "
 "funktion\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
 "funktion\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 #, fuzzy
 msgid "Shaded Vertically"
 msgstr "Maksimer vertikalt"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr ""
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Almindelig"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr ""
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "&Aktiv pixmap"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "&Inaktiv pixmap"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Muse funktion"
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Venstremuseknap dobbelklik\n"
 "på titelbjælken giver:"
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "(U)Maksimer"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "Rul op/ned"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Minimer"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "Fastsæt/Frigiv"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 #, fuzzy
 msgid "Title animation"
 msgstr "Titel animation"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
+msgstr ""
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Vindues manager stil"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
 msgstr ""
 
 #: windows.cpp:66

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-06-05 14:42+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -26,10 +26,10 @@ msgstr ""
 "Bruker standard X-koder."
 
 #: kikbd.cpp:307
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 "Tastaturmappe \"%s\" finnes ikke.\n"
 "Hopper over denne mappen."
@@ -88,13 +88,13 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "Tastaturkart: kan ikke finne symbol \"%s\"."
 
 #: keymap.cpp:236
-#, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+#, fuzzy, c-format
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "Tastaturkart: kan ikke forstå tastkode \"%s\"."
 
 #: keymap.cpp:242
-#, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+#, fuzzy, c-format
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "Tastaturkart: tastkode \"%s\" går utenfor gyldig område."
 
 #: kikbdconf.cpp:95
@@ -331,7 +331,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Vis informasjon for valgt tastaturkart"
 
 #: widgets.cpp:145
-msgid "Use \"&hotlist\""
+#, fuzzy
+msgid "Use \"&hot list\""
 msgstr "Bruk \"&hotlist\""
 
 #: widgets.cpp:146
@@ -368,7 +369,8 @@ msgid "Switch and Alt Switch"
 msgstr "Bryter og Alt bryter"
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "Tast(er) for å skifte mellom tastaturkart"
 
 #: widgets.cpp:416
@@ -396,11 +398,13 @@ msgid "Advanced"
 msgstr "Avansert"
 
 #: widgets.cpp:466
-msgid "&Emulate CapsLock"
+#, fuzzy
+msgid "&Emulate Caps Lock"
 msgstr "&Emuler CapsLock"
 
 #: widgets.cpp:467
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+#, fuzzy
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr ""
 "Emuler XServer-CapsLock. Trengs til noen språk for at de skal være korrekt"
 
@@ -449,15 +453,18 @@ msgid "Foreground"
 msgstr "Forgrunn"
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+#, fuzzy
+msgid "Color of the text label"
 msgstr "Farge på tekst merkelapper"
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "Med CapsLock:"
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "Bakgrunn når emulert CapsLock er aktiv"
 
 #: widgets.cpp:573
@@ -490,7 +497,8 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+#, fuzzy
+msgid "Start up automatically"
 msgstr "Automatisk oppstart"
 
 #: widgets.cpp:648

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-10-28 18:21 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Sada kurzorových kláves"
 msgid "&New Terminal"
 msgstr "&Nový terminál"
 
-#: main.C:618 main.C:1022
+#: main.C:618 main.C:1024
 msgid "&Hide"
 msgstr "Schovat"
 
@@ -94,15 +94,15 @@ msgstr "Linu&x konsole"
 msgid "&Custom Colors"
 msgstr "&Vlastní barva"
 
-#: main.C:663 main.C:948
+#: main.C:663 main.C:950
 msgid "Hide &Menubar"
 msgstr "Skryj &menu"
 
-#: main.C:665 main.C:870 main.C:940
+#: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
 msgstr "Zobraz &menu"
 
-#: main.C:666 main.C:958
+#: main.C:666 main.C:960
 msgid "Secure &keyboard"
 msgstr "Zabezpeèit &klávesnici"
 
@@ -158,23 +158,23 @@ msgstr ""
 "Emulace terminálu pro KDE Desktop Environment\n"
 "zalo¾eno na  rxvt-2.08 Roberta Nationa"
 
-#: main.C:879 main.C:1015
+#: main.C:881 main.C:1017
 msgid "&Show"
 msgstr "Uka¾"
 
-#: main.C:954
+#: main.C:956
 msgid "Unsecure &keyboard"
 msgstr "Vypnout zabezpeèení &klávesnice"
 
-#: main.C:965
+#: main.C:967
 msgid "Terminal Options"
 msgstr "Nastavení terminálu"
 
-#: main.C:1127
+#: main.C:1129
 msgid "Hint"
 msgstr "Upozornìní"
 
-#: main.C:1128
+#: main.C:1130
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -182,7 +182,7 @@ msgstr ""
 "Nové nastavení barev bude zobrazeno\n"
 "po vypnutí zabezpeèení klávesnice."
 
-#: main.C:1429
+#: main.C:1431
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -196,62 +196,62 @@ msgstr ""
 "zalo¾eno na  rxvt-2.08 Roberta Nationa\n"
 "\n"
 
-#: main.C:1433
+#: main.C:1435
 msgid "Permitted arguments are:\n"
 msgstr "Povolené parametry jsou:\n"
 
-#: main.C:1434
+#: main.C:1436
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <pøíkaz> <param> ...   Vykonat pøíkaz s parametry - musí být posledním "
 "parametrem\n"
 
-#: main.C:1435
+#: main.C:1437
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <jméno>          specifikace obrazovky (serveru)\n"
 
-#: main.C:1436
+#: main.C:1438
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       poèáteèní geometrie okna terminálu\n"
 
-#: main.C:1437
+#: main.C:1439
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <name>        specifikuje pipe pro vt100 tiskárnu\n"
 
-#: main.C:1438
+#: main.C:1440
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           barva pozadí\n"
 
-#: main.C:1439
+#: main.C:1441
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           barva textu\n"
 
-#: main.C:1440
+#: main.C:1442
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "vt_font <fontname>        normalní font\n"
 
-#: main.C:1441
+#: main.C:1443
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             vypnout záplatu chyby výbìru fontu v QT\n"
 
-#: main.C:1442
+#: main.C:1444
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1443
+#: main.C:1445
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    nastaví kvt, aby imitoval linux konsoli\n"
 
-#: main.C:1444
+#: main.C:1446
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               skryje menu\n"
 
-#: main.C:1445
+#: main.C:1447
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             skryje pusunovací li¹tu\n"
 
-#: main.C:1446
+#: main.C:1448
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -259,19 +259,19 @@ msgstr ""
 "-T <text>                 text v titulku okna\n"
 "                          (Zastaralé. Pou¾ívejte místo nìj -caption)\n"
 
-#: main.C:1448
+#: main.C:1450
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Typ terminálu. Implicitní je xterm.\n"
 
-#: main.C:1449
+#: main.C:1451
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Zachycovat zprávy systémové konzole\n"
 
-#: main.C:1450
+#: main.C:1452
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 jméno v ikonì nebo oknì ikony\n"
 
-#: main.C:1451
+#: main.C:1453
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -279,7 +279,7 @@ msgstr ""
 "-7                        pracovat v 7 bitovém módu\n"
 "-8                        pracovat v á bitovém módu\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -289,7 +289,7 @@ msgstr ""
 "-ls-                      neinicializovat shell kvt jako login shell "
 "(implicictì)\n"
 
-#: main.C:1455
+#: main.C:1457
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -297,13 +297,13 @@ msgstr ""
 "-meta                     obsluhovat Meta s ESCAPE prefixem, 8THBIT "
 "nastaveno, nebo ignorovat\n"
 
-#: main.C:1456
+#: main.C:1458
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 "-sl <number>              ukládá <number> øádkù do vyrovnávací pamìti pro "
 "zpìtné posunování li¹ty\n"
 
-#: main.C:1457
+#: main.C:1459
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -315,7 +315,7 @@ msgstr ""
 "-pagedown <keysym>        pou¾ívat klávesovou zkratku ALT-<keysym> k "
 "posunování\n"
 
-#: main.C:1461
+#: main.C:1463
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

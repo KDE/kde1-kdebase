@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-05-14 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -205,11 +205,11 @@ msgstr "&Oznake"
 msgid "&Cache"
 msgstr "&Predmemorija"
 
-#: kfmgui.cpp:523 kfmman.cpp:1071
+#: kfmgui.cpp:523 kfmman.cpp:1070
 msgid "Up"
 msgstr "Gore"
 
-#: kfmgui.cpp:533 kfmman.cpp:1079
+#: kfmgui.cpp:533 kfmman.cpp:1078
 msgid "Forward"
 msgstr "Naprijed"
 
@@ -226,7 +226,7 @@ msgstr "Nisam mogao naæi ikonu\n"
 #: kbind.cpp:1686 kbind.cpp:1701 kbind.cpp:1721 kbind.cpp:1733 kbind.cpp:1749
 #: kbind.cpp:1881 kbind.cpp:1893 kbind.cpp:1938 kbind.cpp:1980 kfmexec.cpp:60
 #: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:596 kfmgui.cpp:752
-#: kfmman.cpp:332 kfmman.cpp:1042 kfmman.cpp:1227 kfmman.cpp:1253
+#: kfmman.cpp:331 kfmman.cpp:1041 kfmman.cpp:1226 kfmman.cpp:1252
 #: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:834
 #: kfmprops.cpp:956 kfmprops.cpp:1083 kfmprops.cpp:1399 kfmprops.cpp:1611
 #: kfmprops.cpp:1787 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
@@ -243,7 +243,7 @@ msgstr "Nisam mogao naæi ikonu\n"
 msgid "KFM Error"
 msgstr "KFM Gre¹ka"
 
-#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
+#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1040
 msgid "Malformed URL\n"
 msgstr "Neispravan URL\n"
 
@@ -263,7 +263,7 @@ msgstr "Dodaj &Oznaku"
 msgid "New "
 msgstr "Novi"
 
-#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:215
+#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:214
 #: kfmtree.cpp:318 kfmview.cpp:385 kfmview.cpp:453 kfmview.cpp:596
 #: kiojob.cpp:87 root.cpp:1154
 msgid "ERROR: Malformed URL"
@@ -324,7 +324,7 @@ msgstr "GRE©KA: Ispustili ste URL na njega samog"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "GRE©KA: Ispustili ste direktorij na jedan od njegovih podirektorija"
 
-#: kfmexec.cpp:255 kfmman.cpp:898 kfmview.cpp:481
+#: kfmexec.cpp:255 kfmman.cpp:897 kfmview.cpp:481
 msgid "Open With:"
 msgstr "Otvori s:"
 
@@ -475,47 +475,47 @@ msgstr "Nema mjesta montiranja u *.kdelnk datoteci"
 msgid "Unknown binding"
 msgstr "Nepoznata veza"
 
-#: main.cpp:88 main.cpp:195
+#: main.cpp:87 main.cpp:194
 msgid "KFM Information"
 msgstr "KFM Informacije"
 
-#: main.cpp:89
+#: main.cpp:88
 msgid "Creating directory:\n"
 msgstr "Stvaram direktorij:\n"
 
-#: main.cpp:196
+#: main.cpp:195
 msgid "Installing Templates"
 msgstr "Instaliram predlo¹ke"
 
-#: main.cpp:229
+#: main.cpp:227
 msgid "Cd"
 msgstr "Promjena direktorija"
 
-#: main.cpp:230
+#: main.cpp:228
 msgid "New View"
 msgstr "Novi pogled"
 
-#: kfmtree.cpp:223 main.cpp:233
+#: kfmtree.cpp:223 main.cpp:231
 msgid "Move to Trash"
 msgstr "Baci u smeæe"
 
-#: main.cpp:235
+#: main.cpp:233
 msgid "Open with"
 msgstr "Otvori s"
 
-#: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
+#: kfmman.cpp:1244 kfmtree.cpp:155 main.cpp:235
 msgid "Move"
 msgstr "Premjesti"
 
-#: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
+#: kfmman.cpp:1248 kfmtree.cpp:159 main.cpp:237
 msgid "Link"
 msgstr "Veza"
 
-#: main.cpp:240
+#: main.cpp:238
 msgid "Empty Trash Bin"
 msgstr "Isprazni kantu za smeæe"
 
-#: main.cpp:241
+#: main.cpp:239
 msgid "Add to Bookmarks"
 msgstr "Dodaj Oznakama"
 
@@ -901,27 +901,27 @@ msgstr "GRE©KA: Ne mogu èitati direktorij radnog stola '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "GRE©KA: Ne mogu prihvatiti ispu¹tanje"
 
-#: kfmman.cpp:1228 root.cpp:1758
+#: kfmman.cpp:1227 root.cpp:1758
 msgid "Dont know what to do."
 msgstr "Ne znam ¹to da radim."
 
-#: kfmman.cpp:1254 kfmtree.cpp:164 root.cpp:1783
+#: kfmman.cpp:1253 kfmtree.cpp:164 root.cpp:1783
 msgid "Dont know what to do"
 msgstr "Ne znam ¹to da radim"
 
-#: kfmexec.cpp:93 kfmman.cpp:333
+#: kfmexec.cpp:93 kfmman.cpp:332
 msgid "The file does not contain a URL"
 msgstr "Datoteka ne sadr¾i URL"
 
-#: kfmman.cpp:382
+#: kfmman.cpp:381
 msgid "Contacting host "
 msgstr "Spajam se na "
 
-#: kfmman.cpp:386
+#: kfmman.cpp:385
 msgid "Working ..."
 msgstr "Radim ..."
 
-#: kfmman.cpp:1121 kfmtree.cpp:230
+#: kfmman.cpp:1120 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Dodaj bookmark"
 

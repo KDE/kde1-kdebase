@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-10-29 19:05+0100\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
@@ -14,32 +14,46 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kikbd.cpp:110
+#: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
 msgstr "Kde Internationellt Tangentbord har redan startats på den här skärmen."
 
-#: kikbd.cpp:305
+#: kikbd.cpp:289
+#, c-format
+msgid ""
+"X codes \"%s\" file does not exist.\n"
+"Using X default codes."
+msgstr ""
+
+#: kikbd.cpp:307
+#, c-format
+msgid ""
+"Keyboard map \"%s\" does not exists.\n"
+"Skipping this map."
+msgstr ""
+
+#: kikbd.cpp:324
 msgid "Setup"
 msgstr "Inställnigar"
 
-#: kikbd.cpp:320 kikbd.cpp:333
+#: kikbd.cpp:339 kikbd.cpp:352
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Kan inte ta bort %s från Ändringarna.\n"
 
-#: kikbd.cpp:323
+#: kikbd.cpp:342
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "Kan inte lägga till %s till Ändringen nummer 3.\n"
 
-#: kikbd.cpp:345
+#: kikbd.cpp:364
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
 
-#: kikbd.cpp:367
+#: kikbd.cpp:386
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -47,114 +61,122 @@ msgstr ""
 "Kan inte ta bort Caps Lock från Ändringarna.\n"
 "Caps Lock emulering ej tillgänglig"
 
-#: keymap.cpp:174
+#: keymap.cpp:176
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: kan inte hitta mer minne"
 
-#: keymap.cpp:218
+#: keymap.cpp:223
 #, c-format
 msgid ""
-"KeyMap: can not find symbol \"%s\".\n"
-"Do you want to continue?"
+"Can not find symbol \"%s\".\n"
+"May be your default X codes does not match.\n"
+"You can preset X codes in \"Advanced\" section\n"
+"of configuration program."
+msgstr ""
+
+#: keymap.cpp:228
+#, fuzzy, c-format
+msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: kan inte hitta symbolen \"%s\".\n"
 "Vill du fortsätta ?"
 
-#: keymap.cpp:229
-#, c-format
-msgid ""
-"KeyMap: do not undestand keycode \"%s\".\n"
-"Do you want to continue?"
+#: keymap.cpp:236
+#, fuzzy, c-format
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr ""
-"KeyMap: Förstår inte tangentkoden \"%s\".\n" 
-"Vill du fortsätta ?" 
+"KeyMap: Förstår inte tangentkoden \"%s\".\n"
+"Vill du fortsätta ?"
 
-#: keymap.cpp:235
-#, c-format
-msgid ""
-"KeyMap: keycode \"%s\" go out of range.\n"
-"Do you want to continue?"
+#: keymap.cpp:242
+#, fuzzy, c-format
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr ""
 "KeyMap: tangentkoden \"%s\" är utanför gränsen.\n"
-"Vill du fortsätta ?" 
+"Vill du fortsätta ?"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Global"
 msgstr "Globala"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Window"
 msgstr "Fönster"
 
-#: kikbdconf.cpp:92
+#: kikbdconf.cpp:95
 msgid "Class"
 msgstr "Klass"
 
-#: kikbdconf.cpp:95 kikbdconf.cpp:107
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
 msgstr "(Ingen)"
 
-#: kikbdconf.cpp:96 kikbdconf.cpp:108
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
 msgstr "Höger alt"
 
-#: kikbdconf.cpp:97 kikbdconf.cpp:109
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
 msgstr "Höger control"
 
-#: kikbdconf.cpp:98
+#: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
 msgstr "Höger (Alt+Shift)"
 
-#: kikbdconf.cpp:99
+#: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
 msgstr "Höger (Ctrl+Alt)"
 
-#: kikbdconf.cpp:100
+#: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
 msgstr "Höger (Ctrl+Shift)"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vänster (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vänster (Ctrl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vänster (Ctrl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Båda shiftknapparna (Shift+Shift)"
 
-#: kikbdconf.cpp:110
+#: kikbdconf.cpp:113
 msgid "Left  Alt"
 msgstr "Vänster alt"
 
-#: kikbdconf.cpp:111
+#: kikbdconf.cpp:114
 msgid "Left  Control"
 msgstr "Vänster control"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Top Left"
 msgstr "Övre vänstra"
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:118
 msgid "Top Right"
 msgstr "Övre högra"
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:119
 msgid "Bottom Left"
 msgstr "Nedre vänstra"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:120
 msgid "Bottom Right"
 msgstr "Nedre högra"
 
-#: kikbdconf.cpp:173
+#: kikbdconf.cpp:147
+#, fuzzy
+msgid "X default codes"
+msgstr "standard"
+
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -163,11 +185,11 @@ msgstr ""
 "%s\n"
 "Vill du påbörja konfigurationen?"
 
-#: kikbdconf.cpp:182
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "Din konfiguration är tom. Installerar systemstandard."
 
-#: kikbdconf.cpp:188
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -175,7 +197,7 @@ msgstr ""
 "Konfigurationsfilen är av ett äldre format än väntat.\n"
 "Några av inställningarna kanske inte stämmer."
 
-#: kikbdconf.cpp:196
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -183,77 +205,90 @@ msgstr ""
 "Konfigurationsfilen är av ett nyare format än väntat.\n"
 "Några av inställningarna kanske inte stämmer."
 
-#: kikbdconf.cpp:298
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "okänd"
 
-#: kikbdconf.cpp:302
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "standard"
 
-#: kikbdconf.cpp:328
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Författare: Ingen angiven"
 
-#: kikbdconf.cpp:330
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Författare"
 
-#: kikbdconf.cpp:336
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Beskrivning:  "
 
-#: kikbdconf.cpp:339
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Källa:  "
 
-#: kikbdconf.cpp:340
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "ingen fil"
 
-#: kikbdconf.cpp:341
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "användar-fil"
 
-#: kikbdconf.cpp:342
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "system-fil"
 
-#: kikbdconf.cpp:347
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Statestik:"
 
-#: kikbdconf.cpp:350
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "symboler"
 
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "koder"
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "alternativa symboler"
 
-#: kikbdconf.cpp:363
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr " "
 
-#: kikbdconf.cpp:364
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "teckenuppsättning"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "Internationellt tangentbords FEL"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Internationellt tangentbords varning"
 
-#: kikbdconf.cpp:421
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Internationellt tangentbords fråga"
+
+#: kikbdconf.cpp:487
+msgid "Configure"
+msgstr ""
+
+#: kikbdconf.cpp:497
+#, fuzzy
+msgid ""
+"\n"
+"Do you want to continue?"
+msgstr ""
+"%s\n"
+"Vill du påbörja konfigurationen?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -296,176 +331,195 @@ msgid "Display information for selected keyboard map"
 msgstr "Visa information om den valda teckenuppsättningen"
 
 #: widgets.cpp:145
-msgid "Use \"&hotlist\""
+#, fuzzy
+msgid "Use \"&hot list\""
 msgstr "Använd \"&hotlist\""
 
 #: widgets.cpp:146
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
-"Använd bara standard och sista aktiva teckenuppsättningen för att byta från tangentbord"
+"Använd bara standard och sista aktiva teckenuppsättningen för att byta från "
+"tangentbord"
 
-#: widgets.cpp:214
+#: widgets.cpp:215
 msgid "Adding Keyboard"
 msgstr "Lägger till tangentbord"
 
-#: widgets.cpp:215
+#: widgets.cpp:216
 msgid "There is no more keyboard maps"
 msgstr "Det finns inga fler teckenuppsättningar"
 
-#: widgets.cpp:248
+#: widgets.cpp:249
 msgid "Keyboard map information"
 msgstr "Teckenuppsättnings information"
 
-#: widgets.cpp:282
+#: widgets.cpp:283
 msgid "Add Keyboard"
 msgstr "Lägg till tangentbord"
 
-#: widgets.cpp:286
+#: widgets.cpp:287
 msgid "Available keyboard maps"
 msgstr "Tillgängliga teckenuppsättningar"
 
-#: widgets.cpp:378
+#: widgets.cpp:394
 msgid "Keyboard maps"
 msgstr "Teckenuppsättning"
 
-#: widgets.cpp:389
+#: widgets.cpp:405
 msgid "Switch and Alt Switch"
 msgstr "Byte och alt byte"
 
-#: widgets.cpp:394
-msgid "Key(s) to switch beetwing keyboard maps"
+#: widgets.cpp:410
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "Tangent(er) för att byta mellan teckenuppsättningar"
 
-#: widgets.cpp:400
+#: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr "Tangent  för att aktivera alternativa symboler i nuvarande teckenuppsättningen "
+msgstr ""
+"Tangent  för att aktivera alternativa symboler i nuvarande "
+"teckenuppsättningen "
 
-#: widgets.cpp:413
+#: widgets.cpp:429
 msgid "&Beep"
 msgstr "&Klocka"
 
-#: widgets.cpp:414
+#: widgets.cpp:430
 msgid "Beep when ever keyboard mapping changed"
 msgstr "Klocka när teckenuppsättningen ändras"
 
-#: widgets.cpp:417
+#: widgets.cpp:433
 msgid "Ad&vanced"
 msgstr "Avancerad"
 
-#: widgets.cpp:417
+#: widgets.cpp:433
 msgid "Advanced options"
 msgstr "Avancerade inställningar"
 
-#: widgets.cpp:434
+#: widgets.cpp:450
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: widgets.cpp:450
-msgid "&Emulate CapsLock"
+#: widgets.cpp:466
+#, fuzzy
+msgid "&Emulate Caps Lock"
 msgstr "&Emulera capslock"
 
-#: widgets.cpp:451
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+#: widgets.cpp:467
+#, fuzzy
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emulera xserver-capslock. Behövs för att vissa språk ska bli rätt"
 
-#: widgets.cpp:457
+#: widgets.cpp:473
 msgid "&World Menu"
 msgstr "&Världsmeny"
 
-#: widgets.cpp:458
+#: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
 msgstr "Visa meny i viket fönster som helst genom att hålla ner bytes-knappen"
 
-#: widgets.cpp:465
+#: widgets.cpp:481
 msgid "&Save Classes"
 msgstr "&Spara klasser"
 
-#: widgets.cpp:466
+#: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Spara relationen mellan fönsterklassen och teckenuppsättningen vid avslut"
+msgstr ""
+"Spara relationen mellan fönsterklassen och teckenuppsättningen vid avslut"
 
-#: widgets.cpp:470
+#: widgets.cpp:488
+msgid "Define X codes"
+msgstr ""
+
+#: widgets.cpp:491
 msgid "Input"
 msgstr ""
 
-#: widgets.cpp:474
+#: widgets.cpp:495
 msgid "Standard behavior. Keyboard map active for all windows"
 msgstr "Standard uppförande. Teckenuppsättningen är aktiv för alla fönster"
 
-#: widgets.cpp:478
+#: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "Utökat uppförande. Varje fönster kommer ihåg sin egen teckenuppsättning"
+msgstr ""
+"Utökat uppförande. Varje fönster kommer ihåg sin egen teckenuppsättning"
 
-#: widgets.cpp:482
+#: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Speciellt uppförande. Varje fönsterklass kommer ihåg sin egen teckenuppsättning"
+msgstr ""
+"Speciellt uppförande. Varje fönsterklass kommer ihåg sin egen "
+"teckenuppsättning"
 
-#: widgets.cpp:530
+#: widgets.cpp:551
 msgid "Button Colors"
 msgstr "Knappfärg"
 
-#: widgets.cpp:540
+#: widgets.cpp:561
 msgid "Foreground"
 msgstr "Förgrund"
 
-#: widgets.cpp:541
-msgid "Color of the Text Label"
+#: widgets.cpp:562
+#, fuzzy
+msgid "Color of the text label"
 msgstr "Färg på texten"
 
-#: widgets.cpp:545
-msgid "With CapsLock"
+#: widgets.cpp:566
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "Med capslock"
 
-#: widgets.cpp:546
-msgid "Background when Emulated CapsLock active"
+#: widgets.cpp:567
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "Bakgrund när emulerad capslock är aktiverad"
 
-#: widgets.cpp:552
+#: widgets.cpp:573
 msgid "With Alternate"
 msgstr "Med alternativknapp"
 
-#: widgets.cpp:553
+#: widgets.cpp:574
 msgid "Background when Alternate switch is pressed"
 msgstr "Bakgund då alternatiknappen är nertryckt"
 
-#: widgets.cpp:562
+#: widgets.cpp:583
 msgid "Button Font"
 msgstr "Knappfont"
 
-#: widgets.cpp:570
+#: widgets.cpp:591
 msgid "&Customize Font"
 msgstr "&Valbar teckensnitt"
 
-#: widgets.cpp:571
+#: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
 msgstr "Valbart teckensnitt för texten eller använd globala inställningar"
 
-#: widgets.cpp:575
+#: widgets.cpp:596
 msgid "C&hange Font"
 msgstr "B&yt font"
 
-#: widgets.cpp:620
+#: widgets.cpp:641
 msgid "&Autostart"
 msgstr "&Autostart"
 
-#: widgets.cpp:621
-msgid "Start up automaticaly"
+#: widgets.cpp:642
+#, fuzzy
+msgid "Start up automatically"
 msgstr "Starta upp automatiskt"
 
-#: widgets.cpp:627
+#: widgets.cpp:648
 msgid "&Docked"
 msgstr "&Dockad"
 
-#: widgets.cpp:628
+#: widgets.cpp:649
 msgid "Dock into special area in kpanel"
 msgstr "Docka in i en speciell del av kpanel"
 
-#: widgets.cpp:637
+#: widgets.cpp:658
 msgid "Place"
 msgstr "Plats"
 
-#: widgets.cpp:644
+#: widgets.cpp:665
 msgid "Place in selected corner"
 msgstr "Plats i valt hörn"
 

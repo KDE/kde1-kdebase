@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -31,112 +31,122 @@ msgstr "&My¹ka"
 
 #: main.cpp:79
 msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
-msgstr ""
-"Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+msgstr "Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
 msgstr "Vlastnosti správcu okien"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:119
 msgid "Minimize"
 msgstr "Ikonizácia"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:123
 msgid "Maximize"
 msgstr "Maximalizácia"
 
-#: titlebar.cpp:126
+#: titlebar.cpp:127
 msgid "Sticky"
 msgstr "Prilepenie"
 
-#: titlebar.cpp:134
+#: titlebar.cpp:135
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:171
+#: titlebar.cpp:172
 msgid "Left"
 msgstr "Vµavo"
 
-#: titlebar.cpp:175
+#: titlebar.cpp:176
 msgid "Right"
 msgstr "Vpravo"
 
-#: titlebar.cpp:464
+#: titlebar.cpp:465
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "¥avá strana titulku je plná... zakazujem 'maximalizaèné' tlaèítko\n"
 
-#: titlebar.cpp:497
+#: titlebar.cpp:498
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Pravá strana titulku je plná ... zakazujem 'maximalizaèné' tlaèítko\n"
 
-#: titlebar.cpp:537
+#: titlebar.cpp:538
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "¥avá strana titulku je plná... zakazujem 'minimalizaèné' tlaèítko\n"
 
-#: titlebar.cpp:570
+#: titlebar.cpp:571
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Pravá strana titulku je plná... zakazujem 'minimalizaèné' tlaèítko\n"
 
-#: titlebar.cpp:927
+#: titlebar.cpp:928
 msgid "Shaded Vertically"
 msgstr "Tieòovaný vertikálne"
 
-#: titlebar.cpp:933
+#: titlebar.cpp:934
 msgid "Shaded Horizontally"
 msgstr "Tieòovaný horizontálne"
 
-#: titlebar.cpp:942
+#: titlebar.cpp:943
 msgid "Plain"
 msgstr "Jednoduchý"
 
-#: titlebar.cpp:950 titlebar.cpp:962
+#: titlebar.cpp:951 titlebar.cpp:963
 msgid "Pixmap"
 msgstr "Obrázok"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:991
 msgid "Active pixmap:"
 msgstr "Aktívna pixmapa:"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:996
 msgid "Inactive pixmap:"
 msgstr "Neaktívna pixmapa"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1006
 msgid "Mouse action"
 msgstr "Akcia my¹i"
 
-#: titlebar.cpp:1013
+#: titlebar.cpp:1014
 msgid "Left Button double click does:"
 msgstr "Dvojitý klik µavým tlaèítkom:"
 
-#: titlebar.cpp:1023
+#: titlebar.cpp:1024
 msgid "(Un)Maximize"
 msgstr "Maximalizácia/Spä»"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1025
 msgid "(Un)Shade"
 msgstr "Iba pás titulku (zap./vyp.)"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1026
 msgid "Iconify"
 msgstr "Ikonizova»"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1027
 msgid "(Un)Sticky"
 msgstr "Prilepenie/Odlepenie"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1047
 msgid "Title animation"
 msgstr "Animácia titulku"
 
-#: titlebar.cpp:1062
+#: titlebar.cpp:1063
 msgid "ms"
 msgstr "ms"
+
+#: titlebar.cpp:1252
+#, fuzzy
+msgid "Window manager setup - ERROR"
+msgstr "Vlastnosti správcu okien"
+
+#: titlebar.cpp:1253
+msgid ""
+"There was an error while saving\n"
+"the titlebar pixmaps! Please check permissions."
+msgstr ""
 
 #: windows.cpp:66
 msgid "Windows"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KVT\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgstr "Kursorien asetus"
 msgid "&New Terminal"
 msgstr "&Uusi pääteikkuna"
 
-#: main.C:618 main.C:1022
+#: main.C:618 main.C:1024
 msgid "&Hide"
 msgstr "&Piilota"
 
@@ -93,15 +93,15 @@ msgstr "&Linuxin konsoli"
 msgid "&Custom Colors"
 msgstr "Omat &Värit"
 
-#: main.C:663 main.C:948
+#: main.C:663 main.C:950
 msgid "Hide &Menubar"
 msgstr "Piilota &valikot"
 
-#: main.C:665 main.C:870 main.C:940
+#: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
 msgstr "Näytä &valikot"
 
-#: main.C:666 main.C:958
+#: main.C:666 main.C:960
 msgid "Secure &keyboard"
 msgstr "Varmista &näppäimistö"
 
@@ -157,23 +157,23 @@ msgstr ""
 "Pääte-emulaatio KDE Desktop -ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan."
 
-#: main.C:879 main.C:1015
+#: main.C:881 main.C:1017
 msgid "&Show"
 msgstr "&Näytä"
 
-#: main.C:954
+#: main.C:956
 msgid "Unsecure &keyboard"
 msgstr "Vapauta &näppäimistö"
 
-#: main.C:965
+#: main.C:967
 msgid "Terminal Options"
 msgstr "Päätteen asetukset"
 
-#: main.C:1127
+#: main.C:1129
 msgid "Hint"
 msgstr "Vihje"
 
-#: main.C:1128
+#: main.C:1130
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -181,7 +181,7 @@ msgstr ""
 "Uudet väriasetukset astuvat voimaan\n"
 "heti, kun näppäimistö vapautetaan."
 
-#: main.C:1429
+#: main.C:1431
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -194,62 +194,62 @@ msgstr ""
 "Pääte-emulaatio KDE Desktop Ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
 
-#: main.C:1433
+#: main.C:1435
 msgid "Permitted arguments are:\n"
 msgstr "Sallitut komentorivioptiot ovat:\n"
 
-#: main.C:1434
+#: main.C:1436
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <komento> <arg> ...    suorita komento argumenteilla - pitää olla "
 "viimeinen\n"
 
-#: main.C:1435
+#: main.C:1437
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <nimi>           määrittele näytön nimi (palvelin)\n"
 
-#: main.C:1436
+#: main.C:1438
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <muoto>      aloitusmuoto ikkunalle\n"
 
-#: main.C:1437
+#: main.C:1439
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <nimi>        määrittele putki VT-100 tulostimelle\n"
 
-#: main.C:1438
+#: main.C:1440
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <väri>             taustaväri\n"
 
-#: main.C:1439
+#: main.C:1441
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <väri>             edustaväri\n"
 
-#: main.C:1440
+#: main.C:1442
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <kirjasinnimi>   normaalikirjasin\n"
 
-#: main.C:1441
+#: main.C:1443
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             poista Qt:n fonttivirheen kierto\n"
 
-#: main.C:1442
+#: main.C:1444
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <koko>           tiny, small, normal, large, huge\n"
 
-#: main.C:1443
+#: main.C:1445
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    aseta kvt matkimaan linuxin konsolia\n"
 
-#: main.C:1444
+#: main.C:1446
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               piilota valikkorivi\n"
 
-#: main.C:1445
+#: main.C:1447
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             piilota vierityspalkki\n"
 
-#: main.C:1446
+#: main.C:1448
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -257,19 +257,19 @@ msgstr ""
 "-T <teksti>               ikkunan otsikkoteksti \n"
 "                          (Vanha. Käytä -caption:ia)\n"
 
-#: main.C:1448
+#: main.C:1450
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Päätteen tyyppi. Oletus on xterm.\n"
 
-#: main.C:1449
+#: main.C:1451
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Kaappaa järjestelmän konsoliviestit\n"
 
-#: main.C:1450
+#: main.C:1452
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <teksti>               nimi kuvakkeen yhteydessä\n"
 
-#: main.C:1451
+#: main.C:1453
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -277,7 +277,7 @@ msgstr ""
 "-7                        aja 7-bittisessä tilassa\n"
 "-8                        aja 8-bittisessä tilassa\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -287,7 +287,7 @@ msgstr ""
 "-ls-                      aseta kvt:n komentotulkki ei-login tilaan "
 "(oletus)\n"
 
-#: main.C:1455
+#: main.C:1457
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -295,11 +295,11 @@ msgstr ""
 "-meta <arg>               Käsittele Meta ESCAPE etumerkillä, 8THBIT "
 "asetettu, tai ohita\n"
 
-#: main.C:1456
+#: main.C:1458
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <määrä>               kuinka monta riviä säilytetään puskurissa\n"
 
-#: main.C:1457
+#: main.C:1459
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -309,7 +309,7 @@ msgstr ""
 "-pageup <näpp.symb.>      käytä alt + näppäintä puskurin ylös selaamiseen\n"
 "-pagedown <näpp.symb.>    käytä alt + näppäintä puskurin ylös selaamiseen\n"
 
-#: main.C:1461
+#: main.C:1463
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

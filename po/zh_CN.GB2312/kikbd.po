@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -21,7 +21,7 @@ msgstr ""
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 
 #: kikbd.cpp:324
@@ -73,12 +73,12 @@ msgstr "KeyMap: 无法找到符号 %s"
 
 #: keymap.cpp:236
 #, fuzzy, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: 不能理解键码 %s"
 
 #: keymap.cpp:242
 #, fuzzy, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: 键码 %s 越界"
 
 #: kikbdconf.cpp:95
@@ -318,7 +318,7 @@ msgstr "向下调整选中的键盘映射"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hotlist\""
+msgid "Use \"&hot list\""
 msgstr "使用 \"hoslist\""
 
 #: widgets.cpp:146
@@ -356,7 +356,8 @@ msgid "Switch and Alt Switch"
 msgstr "开关和 Alt 开关"
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "切换键盘映射所使用的快捷键"
 
 #: widgets.cpp:416
@@ -387,12 +388,12 @@ msgstr "高级"
 
 #: widgets.cpp:466
 #, fuzzy
-msgid "&Emulate CapsLock"
+msgid "&Emulate Caps Lock"
 msgstr "模拟大写锁定"
 
 #: widgets.cpp:467
 #, fuzzy
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "模拟 X 服务器大写锁定.某些语言需要"
 
 #: widgets.cpp:473
@@ -442,15 +443,18 @@ msgid "Foreground"
 msgstr "前景"
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+#, fuzzy
+msgid "Color of the text label"
 msgstr "文本标签的颜色"
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "带大写锁定"
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "在模拟的大写锁定起作用时在后台"
 
 #: widgets.cpp:573
@@ -485,7 +489,8 @@ msgid "&Autostart"
 msgstr "自动启动"
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+#, fuzzy
+msgid "Start up automatically"
 msgstr "自动起动"
 
 #: widgets.cpp:648

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: 1998-11-01 14:35+0100\n"
 "Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 
 #: kikbd.cpp:324
@@ -85,12 +85,12 @@ msgstr "KeyMap: Kann Symbol %s nicht finden"
 
 #: keymap.cpp:236
 #, fuzzy, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: Verstehe Zeichencode %s nicht"
 
 #: keymap.cpp:242
 #, fuzzy, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: Zeichenkode %s ist außerhalb des Bereiches"
 
 #: kikbdconf.cpp:95
@@ -328,7 +328,7 @@ msgstr "Ausgewählte Tastaturtabelle nach unten"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hotlist\""
+msgid "Use \"&hot list\""
 msgstr "Verwende ,,Hotlist\""
 
 #: widgets.cpp:146
@@ -368,7 +368,8 @@ msgid "Switch and Alt Switch"
 msgstr "Wechseln und Alt-Wechseln"
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "Taste(n) zum Wechseln der Tastaturtabellen"
 
 #: widgets.cpp:416
@@ -400,12 +401,12 @@ msgstr "Erweitert"
 
 #: widgets.cpp:466
 #, fuzzy
-msgid "&Emulate CapsLock"
+msgid "&Emulate Caps Lock"
 msgstr "Emuliere CapsLock"
 
 #: widgets.cpp:467
 #, fuzzy
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emuliere XServer-CapsLock. Für manche Sprachen benötigt"
 
 #: widgets.cpp:473
@@ -457,15 +458,18 @@ msgid "Foreground"
 msgstr "Vordergrund"
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+#, fuzzy
+msgid "Color of the text label"
 msgstr "Farbe des Text-Labels"
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "Mit CapsLock"
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "Hindergrund, wenn emuliertes CapsLock aktiv ist"
 
 #: widgets.cpp:573
@@ -501,7 +505,8 @@ msgid "&Autostart"
 msgstr "Autostart"
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+#, fuzzy
+msgid "Start up automatically"
 msgstr "Starte automatisch"
 
 #: widgets.cpp:648

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,118 +14,118 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:174
+#: main.C:190
 msgid "&Normal"
 msgstr ""
 
-#: main.C:177
+#: main.C:193
 msgid "&Small"
 msgstr ""
 
-#: main.C:178
+#: main.C:194
 msgid "&Medium"
 msgstr ""
 
-#: main.C:179
+#: main.C:195
 msgid "&Large"
 msgstr ""
 
-#: main.C:180
+#: main.C:196
 msgid "&Huge"
 msgstr ""
 
-#: main.C:183
+#: main.C:199
 msgid "&Linux"
 msgstr ""
 
-#: main.C:187
+#: main.C:203
 msgid "&More ..."
 msgstr ""
 
-#: main.C:193
+#: main.C:209
 msgid "&Hide"
 msgstr ""
 
-#: main.C:194
+#: main.C:210
 msgid "&Left"
 msgstr ""
 
-#: main.C:195
+#: main.C:211
 msgid "&Right"
 msgstr ""
 
-#: main.C:201
+#: main.C:217
 msgid "40x15 (&small)"
 msgstr ""
 
-#: main.C:202
+#: main.C:218
 msgid "80x24 (&vt100)"
 msgstr ""
 
-#: main.C:203
+#: main.C:219
 msgid "80x25 (&ibmpc)"
 msgstr ""
 
-#: main.C:204
+#: main.C:220
 msgid "80x40 (&xterm)"
 msgstr ""
 
-#: main.C:205
+#: main.C:221
 msgid "80x52 (ibmv&ga)"
 msgstr ""
 
-#: main.C:214
+#: main.C:230
 msgid "&Menubar"
 msgstr ""
 
-#: main.C:216
+#: main.C:232
 msgid "&Frame"
 msgstr ""
 
-#: main.C:218
+#: main.C:234
 msgid "Scroll&bar"
 msgstr ""
 
-#: main.C:220
+#: main.C:236
 msgid "BS sends &DEL"
 msgstr ""
 
-#: main.C:223
+#: main.C:239
 msgid "&Font"
 msgstr ""
 
-#: main.C:224
+#: main.C:240
 msgid "&Size"
 msgstr ""
 
-#: main.C:225
+#: main.C:241
 msgid "&Schema"
 msgstr ""
 
-#: main.C:227
+#: main.C:243
 msgid "&Save options"
 msgstr ""
 
-#: main.C:231
+#: main.C:247
 msgid "&About ..."
 msgstr ""
 
-#: main.C:232
+#: main.C:248
 msgid "&User's Manual ..."
 msgstr ""
 
-#: main.C:233
+#: main.C:249
 msgid "&Technical Reference ..."
 msgstr ""
 
-#: main.C:241
+#: main.C:260
 msgid "New"
 msgstr ""
 
-#: main.C:242
+#: main.C:261
 msgid "Sessions"
 msgstr ""
 
-#: main.C:865
+#: main.C:907
 msgid "Welcome to the console"
 msgstr ""

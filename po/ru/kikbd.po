@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-03 09:19+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
-"Skiping this map."
+"Skipping this map."
 msgstr ""
 
 #: kikbd.cpp:324
@@ -80,14 +80,14 @@ msgstr ""
 
 #: keymap.cpp:236
 #, fuzzy, c-format
-msgid "KeyMap: do not undestand keycode \"%s\"."
+msgid "KeyMap: do not understand key code \"%s\"."
 msgstr ""
 "KeyMap: не понятен код символа \"%s\".\n"
 "Вы хотите продолжить?"
 
 #: keymap.cpp:242
 #, fuzzy, c-format
-msgid "KeyMap: keycode \"%s\" go out of range."
+msgid "KeyMap: key code \"%s\" go out of range."
 msgstr ""
 "KeyMap: код сивола \"%s\" выходит за допустимые пределы.\n"
 "Вы хотите продолжить?"
@@ -328,7 +328,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Показать информацию по выбранной раскладке"
 
 #: widgets.cpp:145
-msgid "Use \"&hotlist\""
+#, fuzzy
+msgid "Use \"&hot list\""
 msgstr "И&спользовать \"горячий\" список"
 
 #: widgets.cpp:146
@@ -367,7 +368,8 @@ msgid "Switch and Alt Switch"
 msgstr "Переключатель и Альтернативеый переключатель"
 
 #: widgets.cpp:410
-msgid "Key(s) to switch beetwing keyboard maps"
+#, fuzzy
+msgid "Key(s) to switch between keyboard maps"
 msgstr "Клавиша(ы) для переключения между раскладками"
 
 #: widgets.cpp:416
@@ -395,11 +397,13 @@ msgid "Advanced"
 msgstr "Специальное"
 
 #: widgets.cpp:466
-msgid "&Emulate CapsLock"
+#, fuzzy
+msgid "&Emulate Caps Lock"
 msgstr "&Эмулировать CapsLock"
 
 #: widgets.cpp:467
-msgid "Emulate XServer CapsLock. Needed for some languagesto be correct"
+#, fuzzy
+msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr ""
 "Эмулировать CapsLock. Необходимо для правильной работы CapsLock в некоторых "
 "языках"
@@ -449,15 +453,18 @@ msgid "Foreground"
 msgstr "Передний план"
 
 #: widgets.cpp:562
-msgid "Color of the Text Label"
+#, fuzzy
+msgid "Color of the text label"
 msgstr "Цвет текста"
 
 #: widgets.cpp:566
-msgid "With CapsLock"
+#, fuzzy
+msgid "With Caps Lock"
 msgstr "Вместе с CapsLock"
 
 #: widgets.cpp:567
-msgid "Background when Emulated CapsLock active"
+#, fuzzy
+msgid "Background when Emulated Caps Lock active"
 msgstr "Цвет фона при включенном CapsLock"
 
 #: widgets.cpp:573
@@ -489,7 +496,8 @@ msgid "&Autostart"
 msgstr "&Автостарт"
 
 #: widgets.cpp:642
-msgid "Start up automaticaly"
+#, fuzzy
+msgid "Start up automatically"
 msgstr "Запускать автоматически"
 
 #: widgets.cpp:648
