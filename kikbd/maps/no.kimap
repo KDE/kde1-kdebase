@@ -53,7 +53,6 @@ keysym12=bracketright,dead_diaeresis,dead_circumflex,dead_tilde
 keysym13=semicolon,oslash,Oslash
 keysym14=apostrophe,ae,AE
 keysym15=backslash,apostrophe,asterisk
-keysym16=less,less,greater
 keysym17=comma,comma,semicolon
 keysym18=period,period,colon
 keysym19=slash,minus,underscore
