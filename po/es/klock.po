@@ -509,9 +509,8 @@ msgid "Enter Password"
 msgstr "Contraseñas ocultas"
 
 #: saver.cpp:80
-#, fuzzy
 msgid "Failed"
-msgstr "Familia:"
+msgstr "Error"
 
 #: slip.cpp:287
 msgid "Slip"
