@@ -3,7 +3,7 @@
 Exec=kcmdisplay screensaver
 Icon=kscreensaver.xpm
 Type=Application
-DocPath=kcontrol/kdisplay/scrnsave.html
+DocPath=kcontrol/kdisplay/kdisplay-4.html
 Comment=Screensaver settings
 Comment[de]=Einstellung des Bildschirmschoners
 Comment[da]=Indstil skærmskåneren

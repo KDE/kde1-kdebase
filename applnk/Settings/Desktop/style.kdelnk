@@ -3,7 +3,7 @@
 Exec=kcmdisplay style
 Icon=style.xpm
 Type=Application
-DocPath=kcontrol/dispaly/general.html
+DocPath=kcontrol/kdispaly/kdisplay-6.html
 Comment=Font and general style settings
 Comment[de]=Einstellung des Stils
 Comment[da]=Indstil widget stil

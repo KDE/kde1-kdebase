@@ -3,7 +3,7 @@
 Exec=kcmdisplay background
 Icon=background.xpm
 Type=Application
-DocPath=kcontrol/kdisplay/backgnd.html
+DocPath=kcontrol/kdisplay/kdisplay-3.html
 Comment=Background settings
 Comment[de]=Einstellung des Hintergrunds
 Comment[da]=Indstil baggrunden
