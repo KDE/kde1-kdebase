@@ -70,14 +70,14 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
 		klocale->translate("&Titlebar"), "kwm-2.html");
       if (!pages || pages->contains("borders"))
 	addPage(desktop = new KDesktopConfig(dialog, "borders"), 
-		klocale->translate("Bo&rders"), "kwm-3.html");
+		klocale->translate("Bo&rders"), "kwm.html"); // HELP todo
       if (!pages || pages->contains("mouse"))
 	addPage(mouse = new KMouseConfig(dialog, "mouse"), 
-		klocale->translate("&Mouse"), "kwm-3.html");
+		klocale->translate("&Mouse"), "kwm.html"); // HELP todo
 
       if (!pages || pages->contains("advanced"))
 	addPage(advanced = new KAdvancedConfig(dialog, "advanced"), 
-		klocale->translate("&Advanced"), "kwm-3.html");
+		klocale->translate("&Advanced"), "kwm.html"); // HELP todo
 
       if (options || buttons || appearance || desktop || mouse || advanced)
         dialog->show();
