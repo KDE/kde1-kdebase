@@ -1,0 +1,11 @@
+#!/bin/sh -f
+
+if test $# -ne 1; then
+    echo "usage: kcontrol -init"
+    echo 
+    echo "To configure, use the K^ | Settings menu!"
+    exit
+fi;
+
+kcmbell -init
+kcminput -init
