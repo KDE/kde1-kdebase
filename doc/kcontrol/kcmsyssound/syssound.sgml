@@ -5,8 +5,8 @@
 <!-- Title information -->
 
 <title>KDE System Sounds Help
-<author>The KDE Team
-<date>v0.1 (April 15, 1999)
+<author>The KDE Team,  documentation by Duncan.
+<date>v0.2 (August  23, 1999)
 
 <!-- Table of Contents -->
 <toc>
@@ -21,27 +21,31 @@ so that when one of certain <bf>Events</bf> (such as
 opening a window, changing the desktop, etc.) occurs, a sound file
 associated with that event is played.
 <p>
-Currently, only WAV sound files are supported by the 
+Currently, only sound files in <tt>*.wav</tt> format are supported by the 
 KDE System Sound Module.    
 
 
 <itemize>
 <item>
-Select ``<bf>enable system sounds</bf>'' to activate
-this feature.
+Activate the ``<bf>enable system sounds</bf>'' option to 
+use the <bf>System Sounds</bf> feature.
 </itemize>
 
 To use this feature, you must first have some
-WAV files listed in the <bf>Sounds</bf> box.   This will list
+sound files listed in the <bf>Sounds</bf> box.   This will list
 files from the default location
 <tt>$KDEDIR/share/sounds</tt>; the user can add additional
-WAV files to the list by 
+sound files to the list by 
 dragging them from a File Manager (<tt>kfm</tt>) window onto the sound list. 
 
-(Note: at this time,  
-the standard KDE distribution does not supply any WAV
+Note: at this time,  
+the standard KDE distribution does not supply any default sound
 files for system sounds; you must obtain them from some other
-source such as the ``kdethemes'' package).
+source.
+Some of the  ``Themes'' packages install and activate
+System Sounds.  (Themes are installed
+with the Theme Manager, in the Settings->Desktop menu of the KDE
+Control Center).
 
 <itemize>
 <item>
