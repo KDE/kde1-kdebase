@@ -13,7 +13,7 @@ kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp jpeg.cp
 noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h xview.h jpeg.h jpeginc.h \
 	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h icon.h
 BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc \
-	protocol.moc subprotocol.h cgi.moc gzip.moc icon.moc
+	protocol.moc subprotocol.moc cgi.moc gzip.moc icon.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 kioslave_ipc.cpp: kioslave_ipc.moc
