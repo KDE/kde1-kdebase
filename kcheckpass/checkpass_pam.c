@@ -24,10 +24,7 @@
  *****************************************************************/
 #include <stdlib.h>
 #include <string.h>
-
-extern "C" {
 #include <security/pam_appl.h>
-}
 
 #ifdef KDE_PAM_SERVICE
 #define KDE_PAM KDE_PAM_SERVICE
@@ -58,7 +55,7 @@ PAM_conv (int num_msg, pam_message_type **msg,
   int             size = sizeof(struct pam_response);
 
 #define GET_MEM \
-	if (!(repl = static_cast<pam_response*>(realloc(repl, size)))) \
+	if (!(repl = (realloc(repl, size)))) \
   		return PAM_CONV_ERR; \
 	size += sizeof(struct pam_response)
 #define COPY_STRING(s) (s) ? strdup(s) : NULL
