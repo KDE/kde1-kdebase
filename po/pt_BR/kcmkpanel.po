@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -93,76 +93,75 @@ msgstr "&Largura"
 msgid "Menu Tooltips"
 msgstr "Dicas no Menu"
 
-#: options.cpp:39
+#: options.cpp:62
 msgid "Show &Menu Tooltips"
 msgstr "Mostrar Tooltips nos &Menus"
 
-#: options.cpp:44
+#: options.cpp:84
 msgid "De&lay:"
 msgstr "De&mora:"
 
-#: options.cpp:50 options.cpp:68 options.cpp:86
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
 msgstr "Pequeno"
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
+#: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
 msgstr "Grande"
 
-#: options.cpp:62
+#: options.cpp:110
 msgid "Visuals"
 msgstr "Visuais"
 
-#: options.cpp:64
+#: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "Esconder &Painel"
 
-#: options.cpp:67 options.cpp:85
+#: options.cpp:153 options.cpp:255
 msgid "Delay:"
 msgstr "Demora:"
 
-#: options.cpp:74 options.cpp:93
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
 msgstr "Velocidade:"
 
-#: options.cpp:75 options.cpp:94 options.cpp:103
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
 msgstr "Lento"
 
-#: options.cpp:76 options.cpp:95 options.cpp:104
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
 msgstr "Rápido"
 
-#: options.cpp:82
+#: options.cpp:246
 msgid "Auto Hide &Taskbar"
 msgstr "Esconder &Barra de Tarefas"
 
-#: options.cpp:100
+#: options.cpp:341
 msgid "Animate Show/Hide"
 msgstr "Mostrar/esconder animados"
 
-#: options.cpp:102
-msgid "Speed"
-msgstr "Velocidade"
-
-#: options.cpp:117
+#: options.cpp:395
 msgid "Others"
 msgstr "Outros"
 
-#: options.cpp:118
-msgid "Personal &First"
+#: options.cpp:408
+#, fuzzy
+msgid "Personal Menu Entries &First"
 msgstr "Pessoal &Primeiro"
 
-#: options.cpp:120
-msgid "F&olders First"
+#: options.cpp:416
+#, fuzzy
+msgid "Menu F&olders First"
 msgstr "Diretórios Primeir&o"
 
-#: options.cpp:122
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Relógio mostra hora em formato AM/PM"
 
-#: options.cpp:124
-msgid "&Clock shows time in Internet beats"
+#: options.cpp:432
+#, fuzzy
+msgid "Clock shows time in &Internet beats"
 msgstr "&Relógio mostra hora em toques da Internet"
 
 #: disknav.cpp:38
@@ -220,6 +219,9 @@ msgstr "Mostrar item Opção"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Aplicação de terminal:"
+
+#~ msgid "Speed"
+#~ msgstr "Velocidade"
 
 #~ msgid "Edit &Global..."
 #~ msgstr "Editar &Global..."

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-11-23 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -100,77 +100,75 @@ msgstr "©&irina"
 msgid "Menu Tooltips"
 msgstr "Savjet u izborniku"
 
-#: options.cpp:39
+#: options.cpp:62
 msgid "Show &Menu Tooltips"
 msgstr "Savjet u &izborniku"
 
-#: options.cpp:44
+#: options.cpp:84
 msgid "De&lay:"
 msgstr "&Ka¹njenje:"
 
-#: options.cpp:50 options.cpp:68 options.cpp:86
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
 msgstr "Malo"
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
+#: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
 msgstr "Veliko"
 
-#: options.cpp:62
+#: options.cpp:110
 msgid "Visuals"
 msgstr ""
 
-#: options.cpp:64
+#: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "&Automatski sakrij ploèu"
 
-#: options.cpp:67 options.cpp:85
+#: options.cpp:153 options.cpp:255
 msgid "Delay:"
 msgstr "Ka¹njenje:"
 
-#: options.cpp:74 options.cpp:93
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
 msgstr "Brzina:"
 
-#: options.cpp:75 options.cpp:94 options.cpp:103
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
 msgstr "Sporo"
 
-#: options.cpp:76 options.cpp:95 options.cpp:104
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
 msgstr "Brzo"
 
-#: options.cpp:82
+#: options.cpp:246
 msgid "Auto Hide &Taskbar"
 msgstr "Auto. Sakrij Traku Sa &Zadacima"
 
-#: options.cpp:100
+#: options.cpp:341
 msgid "Animate Show/Hide"
 msgstr ""
 
-#: options.cpp:102
-msgid "Speed"
-msgstr "Brzina"
-
-#: options.cpp:117
+#: options.cpp:395
 msgid "Others"
 msgstr "Druge opcije"
 
-#: options.cpp:118
-msgid "Personal &First"
+#: options.cpp:408
+#, fuzzy
+msgid "Personal Menu Entries &First"
 msgstr "Osobne &Prvo"
 
-#: options.cpp:120
-msgid "F&olders First"
+#: options.cpp:416
+#, fuzzy
+msgid "Menu F&olders First"
 msgstr "&Prvo direktoriji"
 
-#: options.cpp:122
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
-#: options.cpp:124
+#: options.cpp:432
 #, fuzzy
-msgid "&Clock shows time in Internet beats"
+msgid "Clock shows time in &Internet beats"
 msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
 #: disknav.cpp:38
@@ -228,3 +226,6 @@ msgstr ""
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminalska aplikacija:"
+
+#~ msgid "Speed"
+#~ msgstr "Brzina"

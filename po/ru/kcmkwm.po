@@ -73,26 +73,22 @@ msgstr "Справа"
 #: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Левая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
+msgstr "Левая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Правая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
+msgstr "Правая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Левая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
+msgstr "Левая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Правая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
+msgstr "Правая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"

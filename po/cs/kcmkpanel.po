@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-12-18 09:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -101,76 +101,75 @@ msgstr "©íø&ka"
 msgid "Menu Tooltips"
 msgstr "Nápovìdy v menu"
 
-#: options.cpp:39
+#: options.cpp:62
 msgid "Show &Menu Tooltips"
 msgstr "Zobrazovat nápovìdy v &menu"
 
-#: options.cpp:44
+#: options.cpp:84
 msgid "De&lay:"
 msgstr "&Zpo¾dìní"
 
-#: options.cpp:50 options.cpp:68 options.cpp:86
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
 msgstr "Malé"
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
+#: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
 msgstr "Velké"
 
-#: options.cpp:62
+#: options.cpp:110
 msgid "Visuals"
 msgstr "Chování panelu"
 
-#: options.cpp:64
+#: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "&Skrývat panel"
 
-#: options.cpp:67 options.cpp:85
+#: options.cpp:153 options.cpp:255
 msgid "Delay:"
 msgstr "Zpo¾dìní:"
 
-#: options.cpp:74 options.cpp:93
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
 msgstr "Rychlost:"
 
-#: options.cpp:75 options.cpp:94 options.cpp:103
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
 msgstr "Malá"
 
-#: options.cpp:76 options.cpp:95 options.cpp:104
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
 msgstr "Velká"
 
-#: options.cpp:82
+#: options.cpp:246
 msgid "Auto Hide &Taskbar"
 msgstr "S&krývat pruh úloh"
 
-#: options.cpp:100
+#: options.cpp:341
 msgid "Animate Show/Hide"
 msgstr "Animace zobrazení/skrytí"
 
-#: options.cpp:102
-msgid "Speed"
-msgstr "Rychlost"
-
-#: options.cpp:117
+#: options.cpp:395
 msgid "Others"
 msgstr "Ostatní"
 
-#: options.cpp:118
-msgid "Personal &First"
+#: options.cpp:408
+#, fuzzy
+msgid "Personal Menu Entries &First"
 msgstr "&Osobní polo¾ky první"
 
-#: options.cpp:120
-msgid "F&olders First"
+#: options.cpp:416
+#, fuzzy
+msgid "Menu F&olders First"
 msgstr "&Adresáøe první"
 
-#: options.cpp:122
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Hodiny ukazují èas ve formátu AM/PM"
 
-#: options.cpp:124
-msgid "&Clock shows time in Internet beats"
+#: options.cpp:432
+#, fuzzy
+msgid "Clock shows time in &Internet beats"
 msgstr "&Hodiny ukazují èas v taktu Internetu"
 
 #: disknav.cpp:38
@@ -228,3 +227,6 @@ msgstr "Zobrazoval polo¾ku mo¾nosti"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminálová aplikace:"
+
+#~ msgid "Speed"
+#~ msgstr "Rychlost"

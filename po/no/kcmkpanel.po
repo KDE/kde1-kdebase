@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -101,76 +101,75 @@ msgstr "&Bredde"
 msgid "Menu Tooltips"
 msgstr "Menyverktøytips"
 
-#: options.cpp:39
+#: options.cpp:62
 msgid "Show &Menu Tooltips"
 msgstr "Vis &menyverktøytips"
 
-#: options.cpp:44
+#: options.cpp:84
 msgid "De&lay:"
 msgstr "&Forsinkelse:"
 
-#: options.cpp:50 options.cpp:68 options.cpp:86
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
 msgstr "Liten"
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
+#: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
 msgstr "Stor"
 
-#: options.cpp:62
+#: options.cpp:110
 msgid "Visuals"
 msgstr "Bildeside"
 
-#: options.cpp:64
+#: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "Auto-sk&jul panel"
 
-#: options.cpp:67 options.cpp:85
+#: options.cpp:153 options.cpp:255
 msgid "Delay:"
 msgstr "Forsinkelse:"
 
-#: options.cpp:74 options.cpp:93
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
 msgstr "Hurtighet:"
 
-#: options.cpp:75 options.cpp:94 options.cpp:103
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
 msgstr "Sakte"
 
-#: options.cpp:76 options.cpp:95 options.cpp:104
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
 msgstr "Hurtig"
 
-#: options.cpp:82
+#: options.cpp:246
 msgid "Auto Hide &Taskbar"
 msgstr "Auto-skjul ver&ktøylinje"
 
-#: options.cpp:100
+#: options.cpp:341
 msgid "Animate Show/Hide"
 msgstr "Animer vis/skjul"
 
-#: options.cpp:102
-msgid "Speed"
-msgstr "Hastighet"
-
-#: options.cpp:117
+#: options.cpp:395
 msgid "Others"
 msgstr "Andre"
 
-#: options.cpp:118
-msgid "Personal &First"
+#: options.cpp:408
+#, fuzzy
+msgid "Personal Menu Entries &First"
 msgstr "P&ersonlig først"
 
-#: options.cpp:120
-msgid "F&olders First"
+#: options.cpp:416
+#, fuzzy
+msgid "Menu F&olders First"
 msgstr "M&apper først"
 
-#: options.cpp:122
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr "&Klokke viser tid i am/pm-format"
 
-#: options.cpp:124
-msgid "&Clock shows time in Internet beats"
+#: options.cpp:432
+#, fuzzy
+msgid "Clock shows time in &Internet beats"
 msgstr "&Klokke viser tid i Internett-støt"
 
 #: disknav.cpp:38
@@ -228,3 +227,6 @@ msgstr "Vis valgoppføring"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal-applikasjoner:"
+
+#~ msgid "Speed"
+#~ msgstr "Hastighet"

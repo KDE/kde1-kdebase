@@ -49,4 +49,3 @@ msgstr "миллисекунды"
 #: bell.cpp:87
 msgid "Test"
 msgstr "Тест"
-

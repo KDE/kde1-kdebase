@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -108,83 +108,79 @@ msgstr "寬度[&W]"
 msgid "Menu Tooltips"
 msgstr "選單提示"
 
-#: options.cpp:39
+#: options.cpp:62
 #, fuzzy
 msgid "Show &Menu Tooltips"
 msgstr "顯示選單提示[&M]"
 
-#: options.cpp:44
+#: options.cpp:84
 msgid "De&lay:"
 msgstr "延遲[&L]:"
 
-#: options.cpp:50 options.cpp:68 options.cpp:86
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
 msgstr ""
 
-#: options.cpp:51 options.cpp:69 options.cpp:87
+#: options.cpp:98 options.cpp:167 options.cpp:269
 #, fuzzy
 msgid "Large"
 msgstr "大型[&A]"
 
-#: options.cpp:62
+#: options.cpp:110
 msgid "Visuals"
 msgstr ""
 
-#: options.cpp:64
+#: options.cpp:144
 #, fuzzy
 msgid "Auto &Hide Panel"
 msgstr "自動隱藏Panel[&H]"
 
-#: options.cpp:67 options.cpp:85
+#: options.cpp:153 options.cpp:255
 #, fuzzy
 msgid "Delay:"
 msgstr "延遲[&L]:"
 
-#: options.cpp:74 options.cpp:93
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
 msgstr ""
 
-#: options.cpp:75 options.cpp:94 options.cpp:103
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
 msgstr ""
 
-#: options.cpp:76 options.cpp:95 options.cpp:104
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
 msgstr ""
 
-#: options.cpp:82
+#: options.cpp:246
 #, fuzzy
 msgid "Auto Hide &Taskbar"
 msgstr "自動隱藏工作列[&T]"
 
-#: options.cpp:100
+#: options.cpp:341
 msgid "Animate Show/Hide"
 msgstr ""
 
-#: options.cpp:102
-msgid "Speed"
-msgstr ""
-
-#: options.cpp:117
+#: options.cpp:395
 msgid "Others"
 msgstr "其他"
 
-#: options.cpp:118
+#: options.cpp:408
 #, fuzzy
-msgid "Personal &First"
+msgid "Personal Menu Entries &First"
 msgstr "個人選單優先[&F]"
 
-#: options.cpp:120
+#: options.cpp:416
 #, fuzzy
-msgid "F&olders First"
+msgid "Menu F&olders First"
 msgstr "個人選單優先[&F]"
 
-#: options.cpp:122
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
 msgstr ""
 
-#: options.cpp:124
-msgid "&Clock shows time in Internet beats"
+#: options.cpp:432
+msgid "Clock shows time in &Internet beats"
 msgstr ""
 
 #: disknav.cpp:38
