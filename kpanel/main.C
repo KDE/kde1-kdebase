@@ -132,9 +132,7 @@ int main( int argc, char ** argv ){
     }
   }
     
-debug("before %ld", time(NULL));
   the_panel = new kPanel(&myapp);
-debug("after %ld", time(NULL));
   the_panel->connect(&myapp, SIGNAL(init()), 
 		     SLOT(kwmInit()));
   the_panel->connect(&myapp, SIGNAL(windowAdd(Window)), 

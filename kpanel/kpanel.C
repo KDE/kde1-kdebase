@@ -33,7 +33,7 @@ DesktopEntry::DesktopEntry(){
 
 kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		QWidget *parent, const char *name )
-  : QFrame( parent, name ){
+  : QFrame( parent, name,WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     //: QFrame( parent, name){
 
     initing = true;
