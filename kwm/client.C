@@ -1624,7 +1624,7 @@ void Client::placeGimmick(){
     gimmick->move(geometry.x()+geometry.width()*options.GimmickPositionX/100+
 		  options.GimmickOffsetX,
 		  geometry.y()+geometry.height()*options.GimmickPositionY/100+
-		  options.GimmickOffsetY-gimmick->width());
+		  options.GimmickOffsetY-gimmick->height());
     
     // put the gimmick right above the window itself in the stacking order
     Window* new_stack = new Window[2];
