@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmfm \n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
+"PO-Revision-Date: 1998-12-10 22:45+01\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"Language-Team: German <kde-i18n@kde.org>\n"
+
+#: main.cpp:58
+msgid "&Font"
+msgstr "&Zeichensatz"
+
+#: main.cpp:60
+msgid "&Color"
+msgstr "&Farbe"
+
+#: main.cpp:62
+msgid "&Other"
+msgstr "An&dere"
+
+#: main.cpp:65
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: main.cpp:67
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:70
+msgid "User &Agent"
+msgstr "User-&Agent"
+
+#: main.cpp:74
+msgid "&Desktop Icons"
+msgstr "&Desktop Icons"
+
+#: main.cpp:144
+#, c-format
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+msgstr "Benutzung: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
+
+#: main.cpp:227
+msgid "KFM Configuration"
+msgstr "KFM Konfiguration"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Klein"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Mittel"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Groß"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Standardschrift"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Schrift fester Breite"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Default-Zeichensatz"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "Sprach-spezifischen Zeichensatz verwenden"
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Hintergrundfarbe:"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Textfarbe:"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "Farbe für Links:"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Farbe besuchter Links:"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Cursor über Links ändern."
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Unterstreiche Links"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "URL-&spezifische Einstellungen zulassen"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "&Baum-Ansicht folgt Navigation"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Vergessen Sie nicht, die Einstellungen zu speichern!"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Benutze Proxy"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Keinen Proxy für:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Akzeptiere Sprachen:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Akzeptiere Zeichensätze:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Nehme HTML an"
+
+#: useragentdlg.cpp:43
+msgid "On server:"
+msgstr "Auf Server:"
+
+#: useragentdlg.cpp:65
+msgid "login as:"
+msgstr "Einloggen als:"
+
+#: useragentdlg.cpp:85
+msgid "&Add"
+msgstr "&Hinzufügen"
+
+#: useragentdlg.cpp:105
+msgid "Known bindings:"
+msgstr "Bekannte Zuordnungen:"
+
+#: rootopts.cpp:70
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Horizontaler Gitter-Abstand auf dem Desktop:"
+
+#: rootopts.cpp:81
+msgid "Vertical Root Grid Spacing:"
+msgstr "Vertikaler Gitter-Abstand auf dem Desktop:"
+
+#: rootopts.cpp:92
+msgid "&Transparent Text for Root Icons."
+msgstr "Text für Desktop-Icons &transparent unterlegen"
+
+#: rootopts.cpp:103
+msgid "Icon foreground color:"
+msgstr "Vordergrundfarbe der Icons:"
+
+#: rootopts.cpp:115
+msgid "Icon background color:"
+msgstr "Hintergrundfarbe der Icons:"
+
