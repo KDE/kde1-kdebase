@@ -70,7 +70,7 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 			i18n("&Desktops"), "kpanel-3.html");
 	    if (!pages || pages->contains("disknav"))
 		addPage(disknav = new KDiskNavConfig(dialog, "disknav"),
-			i18n("Disk &Navigator"), "../../kdisknav/kdisknav.html");
+			i18n("Disk &Navigator"), "../../kdisknav/kdisknav-3.html");
 	
 	    if (panel || desktops || options || disknav) {
 		dialog->show();
