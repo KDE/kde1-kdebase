@@ -212,9 +212,6 @@ struct passwd {
 #endif /* LESS_THAN_AIX3_2 */
 
 #ifdef HPUX_SECURE_PASSWD
-#if !defined(HAVE_SETEUID)
-#define seteuid(_eu) setresuid(-1, _eu, -1) 
-#endif
 #define passwd s_passwd
 #define getpwnam(_s) getspwnam(_s)
 #define getpwuid(_u) getspwuid(_u)

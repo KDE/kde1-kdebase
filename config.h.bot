@@ -43,3 +43,7 @@ int unsetenv(const char *name);
 #define HAVE_BOOLEAN
 #endif
 
+#if !defined(HAVE_SETEUID)
+#define seteuid(_eu) setresuid(-1, _eu, -1)
+#endif
+
