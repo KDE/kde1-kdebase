@@ -326,27 +326,20 @@ void KIOSlave::del( const char *_url )
     if ( su.isMalformed() )
 	return;
     
-    if ( strcmp( su.protocol(), "file" ) == 0 )
+    if ( ProtocolSupported( _url ) )
     {
-	QString supath( su.path() );  // source path
-	supath.detach();
-
-	int erg;
-
-	struct stat buff;
-	lstat( supath, &buff );
-	if ( S_ISDIR( buff.st_mode ) )
-	    erg = rmdir( supath );
-	else
-	    erg = unlink( supath );
-	
-	if ( erg != 0 )
-	{
+	KProtocol *prot = CreateProtocol( _url );
+        
+        if (prot->Delete( &su) == KProtocol::FAIL)
+        {
 	  // fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
+	    delete prot;
 	    return;
 	}
-    }
+	delete prot;
+    }	
+
 #ifdef TODO
     else if ( strcmp( su.protocol(), "tar" ) == 0 )
     {
@@ -379,36 +372,6 @@ void KIOSlave::del( const char *_url )
 	    QString err2;
 	    err2.sprintf( "%s\n\nError log:\n%s", _url, err.data() );	    
 	    ipc->fatalError( KIO_ERROR_TarError, err2.data(), 0 );
-	    return;
-	}
-    }
-    else if ( strcmp( su.protocol(), "ftp" ) == 0 )
-    {
-	// TODO: Port not implemented!!!
-	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
-        QString user = su.user();
-        QString passwd = su.passwd();
-	if ( user.length() <= 0 )
-	  user = FTP_LOGIN;
-	if ( passwd.length() <= 0 )
-	  passwd = FTP_PASSWD;
-	user.detach();
-	passwd.detach();
-
-	if ( !lockFTP( su.host(), 21, user.data(), passwd.data() ) )
-	    return;
-	
-	int erg;
-	
-	if ( su.path()[ strlen( su.path() ) - 1 ] == '/' )
-	    erg = ftpRmdir( su.path() );
-	else
-	    erg = ftpDelete( su.path() );
-
-	if ( !erg )
-	{
-	  // fprintf( stderr, "ERROR: Could not delete '%s'\n",_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
     }
@@ -726,7 +689,7 @@ void KIOSlave::move( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL u( _src_url );
     if ( u.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
+	// fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
 	return;
     }
@@ -734,7 +697,7 @@ void KIOSlave::move( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
+	// fprintf( stderr, "ERROR: Malformed URL '%s'\n",_src_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
 	return;
     }
@@ -742,14 +705,14 @@ void KIOSlave::move( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL u2( _dest_url );
     if ( u2.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
+	// fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
 	return;
     }
     KURL du( u2.nestedURL() );
     if ( du.isMalformed() )
     {
-	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
+	// fprintf( stderr, "ERROR: Malformed URL '%s'\n",_dest_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
 	return;
     }
@@ -912,7 +875,7 @@ bool KIOSlave::mkdirSimple( const char *_url )
     }
     else
     {
-	fprintf( stderr, "ERROR: Not implemented\n");
+	// fprintf( stderr, "ERROR: Not implemented\n");
 	QString err = "Mkdir ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -940,7 +903,7 @@ bool KIOSlave::delSimple( const char *_url )
     }
     else
     {
-	fprintf( stderr, "ERROR: Not implemented\n");
+	// fprintf( stderr, "ERROR: Not implemented\n");
 	QString err = "Delete ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -981,7 +944,7 @@ bool KIOSlave::copySimple( const char *_src_url, const char *_dest_url, bool _ov
 	{
 	    if ((l = src_prot->Read( buffer, 4096 ) ) < 0)
 	    {
-		fprintf( stderr, "read error (%ld)\n",l);
+		// fprintf( stderr, "read error (%ld)\n",l);
 		ProcessError(src_prot, _src_url);
 		return;
 	    }
@@ -1008,7 +971,7 @@ bool KIOSlave::copySimple( const char *_src_url, const char *_dest_url, bool _ov
     }
     else
     {
-	fprintf( stderr, "ERROR: Not implemented\n");
+	// fprintf( stderr, "ERROR: Not implemented\n");
 	QString err = "Copy ";
 	err += _src_url;
 	err += " to ";

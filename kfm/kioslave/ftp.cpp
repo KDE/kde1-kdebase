@@ -433,7 +433,8 @@ KProtocolFTP::KProtocolFTP()
     dirfile = NULL;
     sControl = sData = sDatal = -1;
     ftplib_lastresp = rspbuf;
-    ftplib_debug = 9;
+//    ftplib_debug = 9;
+    ftplib_debug = 0;
 }
 
 KProtocolFTP::~KProtocolFTP()
@@ -688,7 +689,7 @@ int KProtocolFTP::Open(KURL *url, int mode)
 	bytesleft = size;
 	return(SUCCESS);
     }
-    if(mode & WRITE)
+    else if(mode & WRITE)
     {
 	if(OpenConnection("stor",url->path(),'I') == SUCCESS)
 	    return(SUCCESS);
@@ -703,6 +704,24 @@ int KProtocolFTP::Close()
     
     if ( b )
 	return(SUCCESS);
+    return(FAIL);
+}
+
+int KProtocolFTP::Delete(KURL *url)
+{
+    int result; 
+    
+    if(Connect(url) == FAIL) return(FAIL);
+
+    if ( url->path()[ strlen( url->path() ) - 1 ] == '/' )
+        result = ftpRmdir( url->path() );
+    else
+        result = ftpDelete( url->path() );
+    
+    Close();
+
+    if (result == 1)
+        return (SUCCESS);
     return(FAIL);
 }
 

@@ -24,6 +24,7 @@ int KProtocol::NotImplemented()
 int KProtocol::Open(KURL *, int)			{ return(NotImplemented()); }
 int KProtocol::ReOpen(KURL *_url, int _reload)			{ return(Open(_url,_reload)); }
 int KProtocol::Close()						{ return(NotImplemented()); }
+int KProtocol::Delete(KURL *)				{ return(NotImplemented()); }
 long KProtocol::Read(void *, long)			{ return(NotImplemented()); }
 long KProtocol::Write(void *, long)			{ return(NotImplemented()); }
 int KProtocol::atEOF()						{ return(NotImplemented()); }

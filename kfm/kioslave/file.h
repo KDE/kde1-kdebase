@@ -53,6 +53,8 @@ public:
     long Read(void *buffer, long len);
     long Write(void *buffer, long len);
     
+    int Delete(KURL *url);
+
     long Size();
     
     int atEOF();

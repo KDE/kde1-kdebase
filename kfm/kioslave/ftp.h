@@ -76,6 +76,8 @@ public:
 	int Close();
 	long Size();
 
+	int Delete(KURL *url);
+
 	long Read(void *buffer, long len);
 	long Write(void *buffer, long len);
 

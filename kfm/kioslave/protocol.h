@@ -83,6 +83,8 @@ public:
 	virtual int atEOF();
 	virtual long Size();
 
+	virtual int Delete(KURL *url);
+
 	/** functions for directories **/
 	virtual int OpenDir(KURL *url);
         /**

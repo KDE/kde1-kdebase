@@ -94,6 +94,26 @@ int KProtocolFILE::Open(KURL *url, int mode)
   return SUCCESS;
 }
 
+int KProtocolFILE::Delete(KURL *url)
+{
+    QString supath( url->path() );  // source path
+
+    int erg;
+
+    struct stat buff;
+    lstat( supath, &buff );
+
+    if ( S_ISDIR( buff.st_mode ) )
+          erg = rmdir( supath );
+    else
+          erg = unlink( supath );
+
+    if (erg == 0)
+        return SUCCESS;
+    
+    return FAIL;
+}
+
 int KProtocolFILE::Close()
 {
   if( file )
