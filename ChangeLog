@@ -1,5 +1,8 @@
 1998-03-05  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in: set language to C++ before trying the ksize_t 
+	test
+
 	* configure.in: sorted the Makefile entries alphabeticly (and all 
 	together: we love xemacs! we love xemacs! ;)
 	
