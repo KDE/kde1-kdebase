@@ -16,3 +16,6 @@
 
 /* define if you have setenv */
 #undef HAVE_FUNC_SETENV
+
+/* define if shadow under linux */
+#undef HAVE_SHADOW

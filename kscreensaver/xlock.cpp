@@ -13,7 +13,8 @@ perscreen Scr[MAXSCREENS];
 int batchcount = 100;
 int cycles = 100;
 Bool mono = 0;
-
+Bool allowroot;
+char *ProgramName;
 /*
 Dr. Park's algorithm published in the Oct. '88 ACM
 "Random Number Generators: Good Ones Are Hard To Find"

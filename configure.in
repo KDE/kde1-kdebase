@@ -37,6 +37,13 @@ AC_ARG_ENABLE(kscreensaver,[  --enable-kscreensaver	The KDE screen saver [defaul
 test $enableval = "no" && KSCREEN="")
 AC_SUBST(KSCREEN)
 
+if test $KSCREEN = "kscreensaver"; then
+ case $host in 
+ *-*-linux* )
+    AC_CHECK_HEADER(elf.h, AC_DEFINE(HAVE_SHADOW))
+ esac
+fi 
+
 dnl Checks for libraries.
 AC_PATH_KDE
 
@@ -64,6 +71,7 @@ AC_C_LONG_DOUBLE
 dnl Checks for library functions. MISCOBJS is for kdecore
 AC_CHECK_FUNCS(socket)
 AC_CHECK_FUNCS(powl)
+AC_CHECK_FUNCS(strdup)
 AC_CHECK_KSIZE_T
 AC_CHECK_SETENV
 

@@ -13,6 +13,7 @@
 
 #include "saver.moc"
 
+int checkPasswd(char *);
 
 kScreenSaver::kScreenSaver( Drawable drawable ) : QObject()
 {
@@ -97,6 +98,7 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 
 int KPasswordDlg::tryPassword()
 {
+/*
 	FILE *fp;
 	passwd *pass;
 	char salt[3];
@@ -158,6 +160,9 @@ int KPasswordDlg::tryPassword()
 
 	return FALSE;
 #endif
+*/
+  int e = checkPasswd(password.data());
+  return e;
 }
 
 void KPasswordDlg::timeout()

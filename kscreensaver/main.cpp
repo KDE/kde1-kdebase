@@ -28,6 +28,7 @@ extern void startScreenSaver( Drawable d );
 extern void stopScreenSaver();
 extern int  setupScreenSaver();
 extern const char *getScreenSaverName();
+extern void initPasswd();
 
 #define MODE_NONE		0
 #define MODE_INSTALL	1
@@ -35,12 +36,13 @@ extern const char *getScreenSaverName();
 #define MODE_PREVIEW	3
 #define MODE_TEST		4
 
-static int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
+int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
 static int lockOnce = FALSE;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
 static QString pidFile;
 static KPasswordDlg *passDlg = NULL;
 static QWidget *saverWidget = NULL;
+extern char *ProgramName;
 
 void grabInput( QWidget *w );
 void releaseInput();
@@ -202,7 +204,8 @@ int main( int argc, char *argv[] )
 {
 	Window saveWin;
 	int timeout = 600;
-
+	ProgramName = argv[0];
+	initPasswd();
 	ssApp a( argc, argv );
 
 	if ( argc == 1 )
