@@ -347,7 +347,7 @@ private:
   // easier access to an X11 property
   QString getprop(Window w, Atom a);
   // xgetprop is like getprop but can handle 0-separated string
-  // lists. Will replace \0 with a blank then. Necessary for the WM_COMMAND
+  // lists. Will replace \0 with a blank then. Necessary for the XA_WM_COMMAND
   // property.
   QString xgetprop(Window w, Atom a);
   // kwm internally sometimes uses simple property (long values) 

@@ -381,7 +381,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
  
     titlestring_offset = 0;
     titlestring_offset_delta = 2;
-    animation_is_active = FALSE;
+    titlestring_too_large = FALSE;
     hidden_for_modules = FALSE;
     autoraised_stopped = FALSE;
 
@@ -402,12 +402,14 @@ Client::~Client(){
 }
 
 
+// show the client. This means the decoration frame and the inner window
 void Client::showClient(){
   if (!isShaded())
     XMapWindow(qt_xdisplay(),window);
   show();
 }
 
+// hide the client. This means the decoration frame and the inner window
 void Client::hideClient(){
   hide();
   if (!isShaded()){
@@ -437,6 +439,7 @@ QPixmap* loadIcon(const char* name){
 }
 
 
+// generate the window decoration buttons according to the settings in the options
 void Client::generateButtons(){
   int i;
 
@@ -470,6 +473,8 @@ void Client::generateButtons(){
   }
 }
 
+// layout the window decoration buttons. Necessary after the window
+// changed its size, for example.
 void Client::layoutButtons(){
   int trX = 0;
   int trY = 0;
@@ -552,6 +557,8 @@ void Client::layoutButtons(){
   title_rect.setRect(trX,trY,trW,trH);
 }
 
+// the global options have changed => update the titlebar button
+// settings.
 void Client::reconfigure(){
    int i;
    for (i=0;i<6;i++){
@@ -567,8 +574,11 @@ void Client::reconfigure(){
    doButtonGrab();
 }
 
+// if the titlestring is too large kwm can move it around (titlebar
+// animation). animateTilebar() is invoked from a timer and will
+// simply move it one single step further in this case.
 void Client::animateTitlebar(){
-  if (animation_is_active)
+  if (titlestring_too_large)
     paintState(TRUE);
 }
 
@@ -775,7 +785,8 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
 }
 
 void Client::enterEvent( QEvent * ){
-  // this is ugly but I see no other way.... 
+  // this is ugly but I see no other way.... fake a mouse move event
+  // to set the right cursor shape.
   QMouseEvent me( Event_MouseButtonPress,
 		  mapFromGlobal(QCursor::pos()),
 		  0, 0);
@@ -1114,6 +1125,8 @@ void Client::resizeEvent( QResizeEvent * ){
   
 }  
 
+// create a new pushbutton associated with the specified button
+// functions.
 myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   if (!pm_max){
     pm_max = loadIcon("maximize.xpm");
@@ -1188,6 +1201,9 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   
 }  
 
+// generates a sensefull label property from the name, icon, klass
+// and instance. Also ensures that the label is unique by adding a
+// number in brackets after the name.
 void Client::setLabel(){
   static Atom a = 0;
   if (!a)
@@ -1232,9 +1248,14 @@ void Client::setLabel(){
 
 }
 
+//  a static pointer used to indicate which client defined the
+//  operation popup at present.
 Client* Client::operation_client = 0;
 
 
+// changes the global window operations popup to fit to this
+// client. This means activating/deactivating the items
+// appropriately and setting the right virual desktop.
 void Client::generateOperations(){
   operation_client = this;
   myapp->operations->clear();
@@ -1292,6 +1313,7 @@ void Client::generateOperations(){
 				OP_CLOSE);
 }
 
+// shows the operations popup at the right place near the menu button
 void Client::showOperations(){
   stopAutoraise();
   generateOperations();
@@ -1310,6 +1332,8 @@ void Client::showOperations(){
   }
 }
 
+// windows can have a fixed size, that means the window manager must
+// not resize them in any way.
 bool Client::fixedSize(){
   return (size.flags & PMaxSize ) && (size.flags & PMinSize)
     && (size.max_width <= size.min_width)
@@ -1319,6 +1343,7 @@ bool Client::fixedSize(){
 
 
 
+// activate or deactivate a window.
 void Client::setactive(bool on){
   if (is_active && !on && myapp->operations->isVisible())
     myapp->operations->hide();
@@ -1342,6 +1367,10 @@ void Client::setactive(bool on){
   }
 }  
 
+// Repaint the state of a window. Active or inactive windows differ
+// only in the look of the titlebar. If only_label is true then only
+// the label string is repainted. This is used for the titlebar
+// animation.
 void Client::paintState(bool only_label){
   QRect r = title_rect;
 
@@ -1449,7 +1478,7 @@ void Client::paintState(bool only_label){
     p.setFont(fnt);
     p.setClipRect(r);
     p.setClipping(True);
-    animation_is_active = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
+    titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
     if (titlestring_offset_delta > 0){
       if (titlestring_offset > 0
 	  && titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
@@ -1464,7 +1493,7 @@ void Client::paintState(bool only_label){
       }
     }
 
-    if (!animation_is_active)
+    if (!titlestring_too_large)
       titlestring_offset = 0;
     if (options.TitleAnimation)
       r.moveBy(titlestring_offset,0);
@@ -1477,6 +1506,8 @@ void Client::paintState(bool only_label){
 
 
 
+// set the mouse pointer shape to the specified cursor. Also
+// stores the defined shaped in current_cursor.
 void Client::set_x_cursor(Cursor cur){
   if (cur != current_cursor){
     current_cursor = cur;
@@ -1490,6 +1521,9 @@ void Client::iconifySlot(){
   iconify(True);
 }
 
+// iconify this client. Takes care about floating or transient
+// windows. If animation is true, kwm may show some kind of
+// animation (if set by the options)
 void Client::iconify(bool animation){
   if (isIconified())
     return;
@@ -1521,6 +1555,9 @@ void Client::iconify(bool animation){
   manager->setWindowState(this, IconicState); 
 }
 
+// unIconify this client. Takes care about floating or transient
+// windows. If animation is true, kwm may show some kind of
+// animation (if set by the options)
 void Client::unIconify(bool animation){
   if (isWithdrawn())
     return;
@@ -1555,6 +1592,8 @@ void Client::unIconify(bool animation){
 }
 
 
+// move the client onto a new desktop. Will take floating and
+// transient windows with it.
 void Client::ontoDesktop(int new_desktop){
   if (new_desktop == desktop || isSticky())
     return;
@@ -1595,6 +1634,8 @@ void Client::ontoDesktop(int new_desktop){
 }
 
 
+// maximize this client. Mode can be 0 (normal), 1 (verically) or 2
+// (horizontal). Store the current geometry in geometry_restore
 void Client::maximize(int mode){
   if (isMaximized())
     return;
@@ -1633,6 +1674,8 @@ void Client::maximize(int mode){
   layoutButtons();
 }
 
+// unmaximize this client. Geometry will be as it was before
+// (geometry_restore)
 void Client::unMaximize(){
   if (!isMaximized())
     return;
@@ -1754,7 +1797,8 @@ void Client::menuReleased(){
 }
 
 
-void Client::  handleOperation(int i){
+// handles a window operation 
+void Client::handleOperation(int i){
   switch (i){
   case OP_MOVE:
     manager->raiseClient(this);
@@ -1837,6 +1881,7 @@ void Client::  handleOperation(int i){
 }
 
 
+// set up everything to handle a move (used from Alt-LMB)
 void Client::simple_move(){
   grabMouse();
   ensurePointerGrab();
@@ -1851,6 +1896,7 @@ void Client::simple_move(){
   mouseMoveEvent(0);
 }
 
+// set up everything to handle a resize (used from Alt-RMB)
 void Client::simple_resize(){
   grabMouse();
   ensurePointerGrab();
@@ -1886,10 +1932,16 @@ void Client::simple_resize(){
   mouseMoveEvent(0);
 }
 
+// indicates wether the user is currently dragging a window around.
 bool Client::dragging_is_running(){
   return (dragging_state == dragging_runs);
 }
 
+// this slot is connect with a singleshot timer when we are doing
+// auto raising (related to the focus follow mouse policy). If
+// autoraised_stopped is true it will do nothing.  It will also
+// check wether raising would cover a popup menu and avoid it in
+// such a case.
 void Client::autoRaise(){
   if (autoraised_stopped || do_not_draw)
     return;
@@ -1916,6 +1968,7 @@ void Client::autoRaise(){
   }
 }
 
+// stops the autoraise timer for this client.
 void Client::stopAutoraise(){
   if (!autoraised_stopped
       && isActive()
@@ -1928,6 +1981,8 @@ void Client::stopAutoraise(){
   autoraised_stopped = TRUE;
 }
 
+// returns the client itself it is not transient. If it is transient
+// it will return the main window recursively.
 Client* Client::mainClient(){
   if (trans != None && trans != qt_xrootwin() && trans != window){
     Client* c = manager->getClient(trans);
@@ -1937,6 +1992,9 @@ Client* Client::mainClient(){
   return this;
 }
 
+// an X11 window manager handles a lot of size hints, like minimum
+// size or fixed increment values. adjustSize() will modify the
+// geometry to fullfil the criteria.
 void Client::adjustSize(){
   int dx = geometry.width();
   int dy = geometry.height();
@@ -2012,6 +2070,7 @@ void Client::adjustSize(){
 }
 
 
+// put a passive grab above the window for some button/modifier combinations.
 void Client::doButtonGrab(){
   if (isActive()){
     XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window); 
@@ -2027,6 +2086,9 @@ void Client::doButtonGrab(){
 }
 
 
+// we called grabMouse() but cannot be sure that we really got the
+// grab! IMO this is a qt problem. Anyway this function solves it:
+// it will wait until we _really_ have the pointer grab.
 void Client::ensurePointerGrab(){
   while (XGrabPointer(qt_xdisplay(), winId(), False, 
 		      ButtonPressMask | ButtonReleaseMask |
@@ -2038,6 +2100,8 @@ void Client::ensurePointerGrab(){
 }
 
 
+// returns the id of an kwm command from a given string. (or -1 if
+// there is no such command)
 int Client::operationFromCommand(const QString &com){
   if (com == "winMove")
     return OP_MOVE;
@@ -2061,6 +2125,8 @@ int Client::operationFromCommand(const QString &com){
 }
 
 
+// shade or unshade this client. "shaded" means that only the
+// titlebar is visible.
 void Client::toggleShade(){
   if (getDecoration() != KWM::normalDecoration)
     return;
