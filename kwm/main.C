@@ -713,7 +713,7 @@ void MyApp::readConfiguration(){
     options.FocusPolicy = CLICK_TO_FOCUS;
   else if( key == "FocusFollowsMouse" || key == "FocusFollowMouse")
     options.FocusPolicy = FOCUS_FOLLOWS_MOUSE;
-  else if( key == "ClassicFocusFollowsMouse")
+  else if( key == "ClassicFocusFollowsMouse" || key == "ClassicFocusFollowMouse")
     options.FocusPolicy = CLASSIC_FOCUS_FOLLOWS_MOUSE;
   else if( key == "ClassicSloppyFocus")
     options.FocusPolicy = CLASSIC_SLOPPY_FOCUS;
