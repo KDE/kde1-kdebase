@@ -693,7 +693,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     hlayout = new QHBoxLayout(SEPARATION);
     mainlayout->addLayout(hlayout, 2); // double stretch, because two items
 
-    QVBoxLayout * vlayout; // a vertical layout for the two following items
+/*    QVBoxLayout * vlayout; // a vertical layout for the two following items
     vlayout = new QVBoxLayout(SEPARATION);
     hlayout->addLayout(vlayout, 1);
 
@@ -707,6 +707,10 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     pathEdit->setMaxLength( 256 );
     pathEdit->setMinimumSize( pathEdit->sizeHint() );
     vlayout->addWidget(pathEdit, 1);
+not used */
+
+    /* instead, a label */
+    hlayout->addStretch(1);
 
     // and the icon button, on the right of this vertical layout
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
@@ -794,7 +798,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     config.setDollarExpansion( false );
     config.setGroup( "KDE Desktop Entry" );
     execStr = config.readEntry( "Exec" );
-    pathStr = config.readEntry( "Path" );
+    // pathStr = config.readEntry( "Path" );  not used
     iconStr = config.readEntry( "Icon" );
     swallowExecStr = config.readEntry( "SwallowExec" );
     swallowTitleStr = config.readEntry( "SwallowTitle");
@@ -806,8 +810,9 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !swallowTitleStr.isNull() )
 	swallowTitleEdit->setText( swallowTitleStr.data() );
 
-    if ( !pathStr.isNull() )
+/*    if ( !pathStr.isNull() )
 	pathEdit->setText( pathStr.data() );
+not used */
     if ( !execStr.isNull() )
 	execEdit->setText( execStr.data() );
     if ( !termOptionsStr.isNull() )
@@ -958,7 +963,7 @@ void ExecPropsPage::applyChanges()
     KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "Exec", execEdit->text() );
-    config.writeEntry( "Path", pathEdit->text() );
+//    config.writeEntry( "Path", pathEdit->text() );  not used
     config.writeEntry( "Icon", iconBox->icon() );
     config.writeEntry( "SwallowExec", swallowExecEdit->text() );
     config.writeEntry( "SwallowTitle", swallowTitleEdit->text() );

@@ -212,7 +212,7 @@ private slots:
 protected:
     
     QLineEdit *execEdit;
-    QLineEdit *pathEdit;
+//    QLineEdit *pathEdit; not used
     KIconLoaderButton *iconBox;
     QCheckBox *terminalCheck;
     QLineEdit *terminalEdit;
@@ -221,7 +221,7 @@ protected:
     QButton *execBrowse;
 
     QString execStr;
-    QString pathStr;
+//    QString pathStr; not used
     QString iconStr;
     QString swallowExecStr;
     QString swallowTitleStr;
