@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: kdehelp \n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
-"Last-Translator: Natali Giuliano \n"
+"Last-Translator: Andrea Rizzi \n"
 
 #: attraction.cpp:716
-#, fuzzy
+#         
 msgid "Attraction"
-msgstr "Contrazione"
+msgstr "Attrzione"  
 
 #: attraction.cpp:803
-#, fuzzy
+#           
 msgid "Setup KAttraction"
-msgstr "Configurazione salvaschermo \"Boing\""
+msgstr "Configurazione salvaschermo \"Attrazione\""
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -44,12 +44,12 @@ msgid "Glow"
 msgstr ""
 
 #: attraction.cpp:951
-#, fuzzy
+                 
 msgid "About Attraction"
-msgstr "Contrazione"
+msgstr "Attrazione"  
 
 #: attraction.cpp:952
-#, fuzzy
+#        
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -59,11 +59,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Asteroidi Versione 3.3\n"
+"Attrazione Versione 1.0\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Copyright (c) 1992-1997 di Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Porting su KDE di  Martin Jones."
+"Portato su   kscreensaver da:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> ott 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -74,9 +76,9 @@ msgid "Setup kbanner"
 msgstr "Configurazione salvaschermo \"Testo scorrevole\""
 
 #: banner.cpp:95
-#, fuzzy
+#        
 msgid "Family:"
-msgstr "Sbagliata"
+msgstr "Famiglia:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
@@ -185,7 +187,7 @@ msgstr "Spiacente. Questo salvaschermo ha bisogno di un monitor a colori."
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Configurazione salvaschermo \"Goccie\""
+msgstr "Configurazione salvaschermo \"Gocce\""
 
 #: blob.cpp:468
 msgid "Frame Show sec."
@@ -197,7 +199,7 @@ msgstr "Algoritmo"
 
 #: blob.cpp:570
 msgid "About Blob"
-msgstr "Info su Blob(goccie)"
+msgstr "Info su Blob(gocce)"
 
 #: blob.cpp:571
 msgid ""
@@ -213,7 +215,7 @@ msgstr ""
 
 #: blob.cpp:606
 msgid "Blobs"
-msgstr "Goccie"
+msgstr "Gocce"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
@@ -258,9 +260,9 @@ msgstr ""
 "Importato nei salvaschermo KDE da Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
+#       
 msgid "Black Screen of Death"
-msgstr "Schermo nero"
+msgstr "Schermo nero della morte"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -458,7 +460,7 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:422
-#, fuzzy
+#,       fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -484,13 +486,13 @@ msgid ""
 msgstr ""
 
 #: main.cpp:580
-#, fuzzy, c-format
+#,        c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Uso: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-alloe-root] [-nice num]\n"
 
 #: main.cpp:583
 #, fuzzy
@@ -568,24 +570,24 @@ msgstr ""
 "Porting su KDE di Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
+#,         
 msgid "Pipes (GL)"
-msgstr "Spazio (GL)"
+msgstr "Tubi (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
+#,        
 msgid "Setup KPipes"
-msgstr "Configurazione salvaschermo \"KSlip\""
+msgstr "Configurazione salvaschermo \"Tubi\""
 
 #: pipes.cpp:678
-#, fuzzy
+#,          
 msgid "Number of Pipes"
-msgstr "Numero di api:"
+msgstr "Numero di Tubi:"
 
 #: pipes.cpp:743
-#, fuzzy
+#,               
 msgid "About KPipes"
-msgstr "Info su Klines"
+msgstr "Info su KPipes"
 
 #: pipes.cpp:745
 msgid ""
@@ -657,9 +659,9 @@ msgid "Setup krock"
 msgstr "Configurazione salvaschermo \"Asteroidi\""
 
 #: rock.cpp:589
-#, fuzzy
+#,                 
 msgid "Move"
-msgstr "Modo:"
+msgstr "Sposta"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -764,19 +766,19 @@ msgid "About Science"
 msgstr "Info su Scienza"
 
 #: slidescreen.cpp:419
-#, fuzzy
+#,            
 msgid "SlideScreen"
-msgstr "Schermo nero"
+msgstr ""                   
 
 #: slidescreen.cpp:465
-#, fuzzy
+#,         
 msgid "Setup KSlideScreen"
-msgstr "Configurazione salvaschermo \"Scienza\""
+msgstr "Configurazione salvaschermo \"KSlideScreen\""
 
 #: slidescreen.cpp:558
-#, fuzzy
+#,          
 msgid "About SlideScreen"
-msgstr "Info su Scienza"
+msgstr "Info su SlideScreen"
 
 #: slidescreen.cpp:559
 #, fuzzy
