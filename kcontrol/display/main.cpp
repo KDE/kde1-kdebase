@@ -58,9 +58,6 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 
   if (runGUI())
     {
-      if (!pages || pages->contains("style"))
-	addPage(general = new KGeneral(dialog, KDisplayModule::Setup),
-		klocale->translate("&Fonts etc."), "kdisplay-6.html");
       if (!pages || pages->contains("background"))
         addPage(background = new KBackground(dialog, KDisplayModule::Setup),
 		klocale->translate("&Background"), "kdisplay-3.html");
@@ -71,6 +68,9 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
       if (!pages || pages->contains("colors"))
 	addPage(colors = new KColorScheme(dialog, KDisplayModule::Setup),
 		klocale->translate("&Colors"), "kdisplay-5.html");
+      if (!pages || pages->contains("style"))
+	addPage(general = new KGeneral(dialog, KDisplayModule::Setup),
+		klocale->translate("&Fonts etc."), "kdisplay-6.html");
 
       if (background || screensaver || colors || general)
         dialog->show();
