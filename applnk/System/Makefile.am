@@ -1,4 +1,3 @@
-SUBDIRS = Core
 
 data_DATA = .directory Arrange.kdelnk Kfontmanager.kdelnk kcc.kdelnk
 
