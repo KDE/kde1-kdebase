@@ -5,15 +5,18 @@ LDADD =       $(LIB_KDEUI)
 
 bin_PROGRAMS = kcmbell
 
-kcmbell_SOURCES = main.cpp bell.cpp
-BUILT_SOURCES = bell.moc
-noinst_HEADERS = bell.h geom.h
+kcmbell_SOURCES = main.cpp bell.cpp kslidercontrol.cpp
+BUILT_SOURCES = bell.moc kslidercontrol.moc
+noinst_HEADERS = bell.h geom.h kslidercontrol.h
 
 EXTRA_DIST = bell.xpm mini-bell.xpm
 
 bell.cpp: bell.moc
 bell.moc: bell.h
 	$(MOC) bell.h -o bell.moc
+kslidercontrol.cpp: kslidercontrol.moc
+kslidercontrol.moc: kslidercontrol.h
+	$(MOC) kslidercontrol.h -o kslidercontrol.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)
