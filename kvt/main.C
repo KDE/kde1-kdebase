@@ -690,7 +690,9 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 	       "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 	       "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n\n"
 	       "Terminal emulation for the KDE Desktop Environment\n"
-	       "based on Robert Nation's rxvt-2.08");
+	       "based on Robert Nation's rxvt-2.08\n\n"
+		"Please report bugs at bugs.kde.org\n\n"
+		"NOTE: kvt is obsolete. Use konsole in stead");
 		
     m_help = kapp->getHelpMenu(true, at.data());
     m_help->setAccel(0,0);
