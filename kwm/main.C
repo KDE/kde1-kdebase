@@ -1567,6 +1567,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     manager->leaveNotify(&ev->xcrossing);
     break;
   case ReparentNotify:
+    manager->reparentNotify(&ev->xreparent);
     return true; //do not confuse Qt with these events...
     break;
   case MotionNotify:

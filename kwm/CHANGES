@@ -23,6 +23,7 @@ patchlevel 5:
            mention that I hate all these options....grrr.........
         - ElectricBorderMovePointer is obsolete and no longer supported. Instead there
            is a new option: ElectricBorderPointerWarp=NoWarp,MiddleWarp,FullWarp
+        - some improvements for reparenting
 
 patchlevel 4:
         - raised the number of possible virtual desktops to 32. Note that you need

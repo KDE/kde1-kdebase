@@ -422,12 +422,12 @@ void Manager::unmapNotify(XUnmapEvent *e){
       }
       if (c->unmap_events > 0){
 	// kwm is so clever that windows on other than the current
-	// virutal desktop are unmapped, not just iconified. This
+	// virutal desktop are truely unmapped, not just hideen. This
 	// saves a lot of CPU time if the window is for example an
 	// animation application (video et. al.). Drawback: we can
-	// recieve a lot of unmap notifies after a desktop switch which
-	// have to be ignored. For that reason each client counts self
-	// generated unmap events.
+	// recieve a lot of unmap notifies after a desktop switch
+	// which have to be ignored. For that reason each client
+	// counts self generated unmap events.
 	c->unmap_events--;
 	return;
       }
@@ -828,6 +828,16 @@ void Manager::shapeNotify(XShapeEvent *e){
       setShape(c);
 }
 
+// notification of reparenting events
+void Manager::reparentNotify(XReparentEvent* e){
+  // if sombody else reparents a window which is managed by kwm, we
+  // have to give it free.
+  Client* c = getClient(e->window);
+  Client* p = getClient(e->parent);
+  if (c && c != p){
+    withdraw(c);
+  }
+}
 
 // notification of pointer movements
 void Manager::motionNotify(XMotionEvent* e){
@@ -1883,12 +1893,37 @@ void Manager::manage(Window w, bool mapped){
 // longer)
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
-  c->hideClient();
-  gravitate(c, true);
-  XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
-		  c->geometry.x() , c->geometry.y());
-  XRemoveFromSaveSet(qt_xdisplay(), c->window);
-  setWindowState(c, WithdrawnState);
+
+  // first of all we have to hide the window. We do not use
+  // Client::hideClient() because this would also unmap the managed
+  // window. In withdraw this is dangerous, because somebody else
+  // could have taken over the window (swallowing), see below.
+  c->hide();
+
+  // if we still manage the window, then we should give it free. This
+  // means: we have to reparent it to the root window. But maybe
+  // somebody else already swallowed the window with another reparent
+  // call? Then we recieved a syntetic unmap notify event and
+  // therefore withdraw the window (see unmapNotify). Our reparent
+  // call would be the last one and would win! Not very friendly
+  // towards applications. Therefore check, wether we _really_ still
+  // manage the window before reparenting.
+
+  unsigned int i, nwins;
+  Window dw1, dw2, *wins;
+  XQueryTree(qt_xdisplay(), c->winId(), &dw1, &dw2, &wins, &nwins);
+  for (i = 0; i < nwins; i++) {
+    if (wins[i] == c->window){
+      // we still manage it => do reparenting
+      gravitate(c, true);
+      XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
+		      c->geometry.x() , c->geometry.y());
+      XRemoveFromSaveSet(qt_xdisplay(), c->window);
+      setWindowState(c, WithdrawnState);
+      break;
+    }
+  }
+  XFree((void *) wins);   
   XSelectInput(qt_xdisplay(), c->window, NoEventMask);
   XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, c->window);
   removeClient(c);

@@ -65,6 +65,8 @@ public:
   void propertyNotify(XPropertyEvent *e);
   // a window may be a shaped window
   void shapeNotify(XShapeEvent *e);
+  // notification of reparenting events
+  void reparentNotify(XReparentEvent* e);
   // notification of pointer movements
   void motionNotify(XMotionEvent* e);
   // the pointer entered one of our windows. We may have to activate a
