@@ -128,6 +128,8 @@ AC_OUTPUT(Makefile \
 	kcontrol/info/Makefile \
 	kcontrol/kcontrol/Makefile \
 	kcontrol/kcontrol/pics/Makefile \
+        kcontrol/locale/Makefile \
+        kcontrol/locale/pics/Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
 	kpanel/pics/mini/Makefile \
