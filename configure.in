@@ -183,6 +183,7 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/bell/Makefile \
 	doc/kcontrol/info/Makefile \
 	doc/kcontrol/input/Makefile \
+	doc/kcontrol/keys/Makefile \
 	doc/kcontrol/kpanel/Makefile \
 	doc/kcontrol/kwm/Makefile \
 	doc/kcontrol/locale/Makefile \

@@ -61,12 +61,12 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("standard")){
 	printf("create standard\n");
 	addPage(standard = new KStdConfig(dialog),
-		klocale->translate("&Standard shortcuts"), "kcmkeys-1.html");
+		klocale->translate("&Standard shortcuts"), "keys-1.html");
       }
       if (!pages || pages->contains("global")){
 	printf("create global\n");
 	addPage(global = new KGlobalConfig(dialog),
-		klocale->translate("&Global shortcuts"), "kcmkey-2.html");
+		klocale->translate("&Global shortcuts"), "keys-2.html");
       }
 
       if (standard || global)
