@@ -75,7 +75,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	KSlider *sb;
 	QComboBox *combo;
 
-	setCaption( "Setup kbanner" );
+	setCaption( klocale->translate("Setup kbanner") );
 
 	QGroupBox *group = new QGroupBox( glocale->translate("Font"), this );
 	group->setGeometry( 15, 15, 180, 140 );

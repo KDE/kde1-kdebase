@@ -1,5 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-18 15:43+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: banner.cpp:56
 msgid "Banner"
+msgstr ""
+
+#: banner.cpp:78
+msgid "Setup kbanner"
 msgstr ""
 
 #: banner.cpp:80
@@ -16,7 +36,7 @@ msgstr ""
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
-#: rock.cpp:543 slip.cpp:366 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr ""
 
@@ -73,47 +93,47 @@ msgstr ""
 msgid "Setup kblankscrn"
 msgstr ""
 
-#: blob.cpp:58
+#: blob.cpp:53
 msgid "Random Linear"
 msgstr ""
 
-#: blob.cpp:59
+#: blob.cpp:54
 msgid "Horizonal Sine"
 msgstr ""
 
-#: blob.cpp:60
+#: blob.cpp:55
 msgid "Circular Bounce"
 msgstr ""
 
-#: blob.cpp:61
+#: blob.cpp:56
 msgid "Polar Coordinates"
 msgstr ""
 
-#: blob.cpp:62
+#: blob.cpp:57
 msgid "Random"
 msgstr ""
 
-#: blob.cpp:67
+#: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
 msgstr ""
 
-#: blob.cpp:444
+#: blob.cpp:452
 msgid "Setup Blob Saver"
 msgstr ""
 
-#: blob.cpp:447
+#: blob.cpp:455
 msgid "Frame Show sec."
 msgstr ""
 
-#: blob.cpp:455
+#: blob.cpp:463
 msgid "Algorithm"
 msgstr ""
 
-#: blob.cpp:535
+#: blob.cpp:543
 msgid "About Blob"
 msgstr ""
 
-#: blob.cpp:536
+#: blob.cpp:544
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -121,7 +141,7 @@ msgid ""
 "tiaan@netsys.co.za"
 msgstr ""
 
-#: blob.cpp:571
+#: blob.cpp:579
 msgid "Blobs"
 msgstr ""
 
@@ -290,24 +310,24 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:263
+#: main.cpp:270
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:264
+#: main.cpp:271
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator."
 msgstr ""
 
-#: main.cpp:420
+#: main.cpp:427
 #, c-format
 msgid ""
-"Usage: %s -install|-setup|-test|-desc|-preview wid\n"
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
 
-#: main.cpp:423
+#: main.cpp:430
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -322,6 +342,7 @@ msgid ""
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
@@ -387,7 +408,7 @@ msgstr ""
 msgid "Setup KPyro"
 msgstr ""
 
-#: pyro.cpp:517 rock.cpp:553
+#: pyro.cpp:517 rock.cpp:560
 msgid "Number:"
 msgstr ""
 
@@ -408,27 +429,27 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: rock.cpp:429
+#: rock.cpp:436
 msgid "Rock"
 msgstr ""
 
-#: rock.cpp:537
+#: rock.cpp:544
 msgid "Setup krock"
 msgstr ""
 
-#: rock.cpp:563
+#: rock.cpp:570
 msgid "Move"
 msgstr ""
 
-#: rock.cpp:568
+#: rock.cpp:575
 msgid "Rotate"
 msgstr ""
 
-#: rock.cpp:686
+#: rock.cpp:693
 msgid "About Rock"
 msgstr ""
 
-#: rock.cpp:687
+#: rock.cpp:694
 msgid ""
 "Rock Version 3.3\n"
 "\n"

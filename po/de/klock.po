@@ -1,6 +1,27 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-18 15:43+0100\n"
+"PO-Revision-Date: 1997-10-25 18:26 MET DST\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: banner.cpp:56
 msgid "Banner"
 msgstr "Laufschrift"
+
+#: banner.cpp:78
+#, fuzzy
+msgid "Setup kbanner"
+msgstr "Einstellungen"
 
 #: banner.cpp:80
 msgid "Font"
@@ -16,7 +37,7 @@ msgstr "Kursiv"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
-#: rock.cpp:543 slip.cpp:366 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr "Geschwindigkeit:"
 
@@ -82,47 +103,47 @@ msgstr "Leerer Bildschirm"
 msgid "Setup kblankscrn"
 msgstr "Einstellungen"
 
-#: blob.cpp:58
+#: blob.cpp:53
 msgid "Random Linear"
 msgstr "Zufällige Linien"
 
-#: blob.cpp:59
+#: blob.cpp:54
 msgid "Horizonal Sine"
 msgstr "Sinuskurve"
 
-#: blob.cpp:60
+#: blob.cpp:55
 msgid "Circular Bounce"
 msgstr "Kreisförmige Sprünge"
 
-#: blob.cpp:61
+#: blob.cpp:56
 msgid "Polar Coordinates"
 msgstr "Polarkoordinaten"
 
-#: blob.cpp:62
+#: blob.cpp:57
 msgid "Random"
 msgstr "Zufall"
 
-#: blob.cpp:67
+#: blob.cpp:73
 msgid "Sorry. This screensaver needs a color display"
 msgstr "Dieser Bildschirmschoner läuft nur auf Farbbildschirmen."
 
-#: blob.cpp:444
+#: blob.cpp:452
 msgid "Setup Blob Saver"
 msgstr "Blob Saver einstellen"
 
-#: blob.cpp:447
+#: blob.cpp:455
 msgid "Frame Show sec."
 msgstr "Dia-Show (Sekunden)"
 
-#: blob.cpp:455
+#: blob.cpp:463
 msgid "Algorithm"
 msgstr "Algorithmus"
 
-#: blob.cpp:535
+#: blob.cpp:543
 msgid "About Blob"
 msgstr "Über Blob"
 
-#: blob.cpp:536
+#: blob.cpp:544
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
@@ -134,7 +155,7 @@ msgstr ""
 "Autor: Tiaan Wessel 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:571
+#: blob.cpp:579
 msgid "Blobs"
 msgstr "Tropfen"
 
@@ -332,11 +353,11 @@ msgstr ""
 "\n"
 "Portiert für KDE von Emanuel Pirker."
 
-#: main.cpp:263
+#: main.cpp:270
 msgid "Shadow Passwords"
 msgstr "Versteckte Paßwörter"
 
-#: main.cpp:264
+#: main.cpp:271
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator."
@@ -344,16 +365,17 @@ msgstr ""
 "Dieses System benutzt versteckte Paßwörter (shadow passwords)!\n"
 "Sie brauchen die Hilfe des System-Verwalters."
 
-#: main.cpp:420
-#, c-format
+#: main.cpp:427
+#, fuzzy, c-format
 msgid ""
-"Usage: %s -install|-setup|-test|-desc|-preview wid\n"
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
 "Benutzung: %s -install|-setup|-test|-desc|-preview wid\n"
 "       [-corners xxxx] [-delay zahl] [-lock] [-nice zahl]\n"
 
-#: main.cpp:423
+#: main.cpp:430
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -368,6 +390,7 @@ msgid ""
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
@@ -458,7 +481,7 @@ msgstr "Feuerwerk"
 msgid "Setup KPyro"
 msgstr "Feuerwerk einstellen"
 
-#: pyro.cpp:517 rock.cpp:553
+#: pyro.cpp:517 rock.cpp:560
 msgid "Number:"
 msgstr "Anzahl"
 
@@ -484,27 +507,27 @@ msgstr ""
 "\n"
 "Portiert für KDE von Martin Jones."
 
-#: rock.cpp:429
+#: rock.cpp:436
 msgid "Rock"
 msgstr "Asteroiden"
 
-#: rock.cpp:537
+#: rock.cpp:544
 msgid "Setup krock"
 msgstr "Asteroiden einstellen"
 
-#: rock.cpp:563
+#: rock.cpp:570
 msgid "Move"
 msgstr "Bewegen"
 
-#: rock.cpp:568
+#: rock.cpp:575
 msgid "Rotate"
 msgstr "Drehen"
 
-#: rock.cpp:686
+#: rock.cpp:693
 msgid "About Rock"
 msgstr "Über Asteroiden"
 
-#: rock.cpp:687
+#: rock.cpp:694
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -585,18 +608,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "PO-Revision-Date: 1997-10-25 18:26 MET DST\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"
