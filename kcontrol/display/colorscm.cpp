@@ -29,6 +29,7 @@
 #include <qbitmap.h>
 
 #include <kapp.h>
+#include <kconfig.h>
 #include <kcharsets.h>
 #include <kmsgbox.h>
 #include <ksimpleconfig.h>
@@ -77,7 +78,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 {	
 	changed = FALSE;
 	nSysSchemes = 2;
-	useRM = false;
+	useRM = true;
 
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
@@ -111,7 +112,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	//cs->drawSampleWidgets();
 	cs->setFixedHeight( 150 );
-	connect( cs, SIGNAL( widgetSelected( int ) ), 
+	connect( cs, SIGNAL( widgetSelected( int ) ),
 		 SLOT( slotWidgetColor( int ) ) );
 	
 	topLayout->addMultiCellWidget( cs, 0, 0, 0, 1 );
@@ -122,7 +123,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 	
-	sFileList = new QStrList(); 
+	sFileList = new QStrList();
 	sList = new QListBox( group );
 	
 	sList->clear();
@@ -228,11 +229,11 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	sb = new QSlider( QSlider::Horizontal,group,"Slider" );
 	sb->setRange( 0, 10 );
 	sb->setValue(cs->contrast);
-	sb->setFocusPolicy( QWidget::StrongFocus ); 
+	sb->setFocusPolicy( QWidget::StrongFocus );
 	sb->adjustSize();
 	sb->setFixedHeight( sb->height() );
 	sb->setMinimumWidth(sb->width());
-	connect( sb, SIGNAL( valueChanged( int ) ), 
+	connect( sb, SIGNAL( valueChanged( int ) ),
 				SLOT( sliderValueChanged( int ) ) );
 	
 	QLabel *label = new QLabel( sb, i18n("&Low"), group );
@@ -254,12 +255,14 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	slotPreviewScheme( 0 );
 	
 	topLayout->activate();
+	
+	loadSettings();
 }
 
 void KColorScheme::loadSettings()
 {
-	KSimpleConfig appConfig( KApplication::localconfigdir() + "/kdisplayrc" );
-	useRM = appConfig.readBoolEntry( "useResourceManager", false );
+    KConfigGroupSaver saver(kapp->getConfig(), "X11");
+    useRM = kapp->getConfig()->readBoolEntry( "useResourceManager", true );
 }
 
 void KColorScheme::resizeEvent( QResizeEvent * )
@@ -276,7 +279,7 @@ void KColorScheme::sliderValueChanged( int val )
 
 void KColorScheme::slotSave( )
 {
-	KSimpleConfig *config = 
+	KSimpleConfig *config =
 			new KSimpleConfig( sFileList->at( sList->currentItem() ) );
 				
 	config->setGroup( "Color Scheme" );
@@ -332,7 +335,7 @@ void KColorScheme::slotAdd()
 	
 	bool nameValid;
 	QString sName;
-	QString sFile; 
+	QString sFile;
 	
 	do {
 	
@@ -361,7 +364,7 @@ void KColorScheme::slotAdd()
 		
 			sFile.remove( ind, 1);
 			
-			// Make the next letter upper case 
+			// Make the next letter upper case
 			
 			QString s = sFile.mid( ind, 1 );
 			s = s.upper();
@@ -411,7 +414,7 @@ void KColorScheme::slotAdd()
 	sFile += ".kcsrc";
 	sFileList->append( sFile.data() );
 	
-	KSimpleConfig *config = 
+	KSimpleConfig *config =
 			new KSimpleConfig( sFile.data() );
 			
 	config->setGroup( "Color Scheme" );
@@ -545,7 +548,7 @@ void KColorScheme::readScheme( int index )
 	} if ( index == 0 ) {
 		config  = kapp->getConfig();
 	} else {
-		config = 
+		config =
 			new KSimpleConfig( sFileList->at( index ), true );
 	}
 	
@@ -554,10 +557,10 @@ void KColorScheme::readScheme( int index )
 	else
 		config->setGroup( "Color Scheme" );
 
-	cs->txt = 
+	cs->txt =
 	config->readColorEntry( "foreground", &black );
 
-	cs->back = 
+	cs->back =
 	config->readColorEntry( "background", &lightGray );
 
 	cs->select =
@@ -574,27 +577,27 @@ void KColorScheme::readScheme( int index )
 	
 	if ( index == 0 ) config->setGroup( "WM" );
 	
-	cs->iaTitle = 
+	cs->iaTitle =
 	config->readColorEntry( "inactiveBackground", &darkGray);
 
-	cs->iaTxt = 
+	cs->iaTxt =
 	config->readColorEntry( "inactiveForeground", &lightGray );
 
-	cs->iaBlend = 
+	cs->iaBlend =
 	config->readColorEntry( "inactiveBlend", &lightGray );
 
 	cs->aTitle =
 	config->readColorEntry( "activeBackground", &darkBlue );
 
-	cs->aTxt = 
+	cs->aTxt =
 	config->readColorEntry( "activeForeground", &white );
 
-	cs->aBlend = 
+	cs->aBlend =
 	config->readColorEntry( "activeBlend", &black );
 
 	if ( index == 0 ) config->setGroup( "KDE" );
 
-	cs->contrast = 
+	cs->contrast =
 	config->readNumEntry( "contrast", 7 );
 }
 
@@ -615,13 +618,13 @@ void KColorScheme::readSchemeNames( )
 			QFileInfoListIterator sysIt( *sysList );
 			QFileInfo *fi;
 
-			// Always a current and a default scheme 
+			// Always a current and a default scheme
 			nSysSchemes = 2;
 
 			QString str;
 
 			// This for system files
-			while ( ( fi = sysIt.current() ) ) { 
+			while ( ( fi = sysIt.current() ) ) {
 
 				KSimpleConfig *config =
 						new KSimpleConfig( fi->filePath(), true );
@@ -748,7 +751,7 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   int format;
   unsigned long n, extra;
   int status;
-  
+
   status = XGetWindowProperty(qt_xdisplay(), w, a, 0L, len, False, type, &real_type, &format, &n, &extra, p);
   if (status != Success || *p == 0)
     return -1;
@@ -760,11 +763,11 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
 //Matthias
 static bool getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
-  
+
   if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
     return FALSE;
   }
-  
+
   result = p[0];
   XFree((char *) p);
   return TRUE;
@@ -795,7 +798,7 @@ void KColorScheme::apply( bool  )
 	    ev.xclient.window = rootwins[i];
 	    ev.xclient.message_type = KDEChangePalette;
 	    ev.xclient.format = 32;
-	    
+	
 	    XSendEvent(kde_display, rootwins[i] , False, 0L, &ev);
 	  }
 	}
