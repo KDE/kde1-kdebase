@@ -334,7 +334,7 @@ msgid ""
 "Version "
 msgstr ""
 "KDE hjelpesystem\n"
-"Versjon"
+"Versjon "
 
 #: mainwidget.cpp:584
 msgid "About KDE Help"

@@ -19,7 +19,7 @@ msgstr "&Lyd"
 
 #: main.cpp:80
 msgid "System Sounds"
-msgstr "System lyder"
+msgstr "Systemlyder"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -161,7 +161,8 @@ msgstr "URL som ikke støttes"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "Beklager, denne type URL er for tiden ikke støttet av KDE systemlyder "
+msgstr ""
+"Beklager, denne type URL er for tiden ikke støttet av KDE-systemlydmodulen"
 
 #: syssound.cpp:468
 #, c-format
