@@ -22,6 +22,14 @@
 #include "kwview.h"
 #include "kwdoc.h"
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 struct BufferInfo {
   void *user;
   int w;
@@ -1157,7 +1165,7 @@ void KWrite::loadURL(const char *url, bool insert) {
     }
 
     kfmURL = u.url();
-    kfmFile.sprintf("/tmp/kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
     kfmAction = KWrite::GET;
     kfmInsert = insert;
 
@@ -1201,7 +1209,7 @@ void KWrite::writeURL(const char *url) {
     emit statusMsg(i18n("Waiting for KFM..."));
 
     kfmURL = url;
-    kfmFile.sprintf("/tmp/kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
     kfmAction = KWrite::PUT;
     if (!writeFile(kfmFile)) return;
 
