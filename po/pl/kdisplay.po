@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-12-30 23:49+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -250,10 +250,6 @@ msgstr "¦rednia"
 msgid "Large"
 msgstr "Du¿a"
 
-#: general.cpp:141
-msgid "Italic"
-msgstr "Italic"
-
 #: main.cpp:61
 msgid "&Background"
 msgstr "&T³o"
@@ -273,3 +269,6 @@ msgstr "&Styl"
 #: main.cpp:105
 msgid "Display settings"
 msgstr "Ustawienia wy¶wietlania"
+
+#~ msgid "Italic"
+#~ msgstr "Italic"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.3.5\n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-10-09 14:30 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"

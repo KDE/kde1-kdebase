@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,6 @@ msgstr ""
 #: kfmgui.cpp:278
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr ""
-
-#: kfmgui.cpp:302
-msgid "&New"
 msgstr ""
 
 #: kfmgui.cpp:304
@@ -177,10 +173,6 @@ msgstr ""
 
 #: kfmgui.cpp:465
 msgid "&About..."
-msgstr ""
-
-#: kfmgui.cpp:474
-msgid "&View"
 msgstr ""
 
 #: kfmgui.cpp:475
@@ -485,10 +477,6 @@ msgstr ""
 
 #: main.cpp:209
 msgid "Add to Bookmarks"
-msgstr ""
-
-#: kfmdlg.cpp:48
-msgid "Clear"
 msgstr ""
 
 #: bookmark.cpp:223

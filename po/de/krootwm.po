@@ -1,13 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
-
-#: krootwm.C:61
-msgid "Clear"
-msgstr "Leeren"
 
 #: krootwm.C:109 krootwm.C:406
 msgid "Folder"
@@ -57,3 +53,4 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 #: krootwm.C:463
 msgid "Usage:"
 msgstr "Benutzung:"
+

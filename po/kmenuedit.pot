@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-29 17:46+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Do you want to save your changes"
 msgstr ""
 
-#: confmenu.cpp:315 confmenu.cpp:880 kmenuedit.cpp:230
+#: confmenu.cpp:313 confmenu.cpp:878 kmenuedit.cpp:230
 msgid "EMPTY"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: confmenu.cpp:102 confmenu.cpp:311
+#: confmenu.cpp:102 confmenu.cpp:309
 msgid "Open/ Close"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "! PROTECTED Button !"
 msgstr ""
 
-#: confmenu.cpp:171 confmenu.cpp:294
+#: confmenu.cpp:171 confmenu.cpp:292
 msgid "Warning !"
 msgstr ""
 
@@ -97,21 +97,11 @@ msgid ""
 "Please choose another filename."
 msgstr ""
 
-#: confmenu.cpp:281
-msgid "Empty filename"
-msgstr ""
-
-#: confmenu.cpp:282
-msgid ""
-"The name for this kdelnk-file is missing.\n"
-"Please choose a filename."
-msgstr ""
-
-#: confmenu.cpp:295
+#: confmenu.cpp:293
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr ""
 
-#: confmenu.cpp:316 confmenu.cpp:881
+#: confmenu.cpp:314 confmenu.cpp:879
 msgid "no command"
 msgstr ""
 
@@ -121,19 +111,19 @@ msgid ""
 "before you can drop this item on another window."
 msgstr ""
 
-#: DesktopPathDialogData.cpp:36
+#: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
 msgstr ""
 
-#: DesktopPathDialogData.cpp:48
+#: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
 msgstr ""
 
-#: DesktopPathDialogData.cpp:54
+#: DesktopPathDialogData.cpp:55
 msgid "Path:"
 msgstr ""
 
-#: DesktopPathDialogData.cpp:67
+#: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
 msgstr ""
 
@@ -237,18 +227,18 @@ msgstr ""
 msgid "Unmount Icon:"
 msgstr ""
 
-#: MenuNameDialog.cpp:20
+#: MenuNameDialog.cpp:21
 msgid "Change Menunames"
 msgstr ""
 
-#: MenuNameDialogData.cpp:32
+#: MenuNameDialogData.cpp:33
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr ""
 
-#: MenuNameDialogData.cpp:41
+#: MenuNameDialogData.cpp:42
 msgid "Personal:"
 msgstr ""
 
-#: MenuNameDialogData.cpp:50
+#: MenuNameDialogData.cpp:51
 msgid "Default:"
 msgstr ""

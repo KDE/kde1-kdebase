@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -258,10 +258,6 @@ msgstr "Средний"
 msgid "Large"
 msgstr "Большой"
 
-#: general.cpp:141
-msgid "Italic"
-msgstr "Наклонный"
-
 #
 #: main.cpp:61
 msgid "&Background"
@@ -285,6 +281,9 @@ msgstr "Стиль"
 #: main.cpp:105
 msgid "Display settings"
 msgstr "Настройка дисплея"
+
+#~ msgid "Italic"
+#~ msgstr "Наклонный"
 
 #~ msgid "Remove"
 #~ msgstr "Удалить"

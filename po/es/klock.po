@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,6 @@ msgstr "Configurar kblankscrn"
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr "Color:"
-
-#: banner.cpp:131
-msgid "Italic"
-msgstr "Itálica"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
@@ -565,6 +561,9 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+
+#~ msgid "Italic"
+#~ msgstr "Itálica"
 
 #~ msgid "Font"
 #~ msgstr "Fuente"

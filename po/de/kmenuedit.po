@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1997-12-29 17:46+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -31,7 +31,7 @@ msgstr "Änderungen nicht gespeichert !"
 msgid "Do you want to save your changes"
 msgstr "Sollen die Änderungen gespeichert werden?"
 
-#: confmenu.cpp:315 confmenu.cpp:880 kmenuedit.cpp:230
+#: confmenu.cpp:313 confmenu.cpp:878 kmenuedit.cpp:230
 msgid "EMPTY"
 msgstr "LEER"
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Abschneider"
 
-#: confmenu.cpp:102 confmenu.cpp:311
+#: confmenu.cpp:102 confmenu.cpp:309
 msgid "Open/ Close"
 msgstr "Öffnen / Schliessen"
 
@@ -79,7 +79,7 @@ msgstr "Öffnen / Schliessen"
 msgid "! PROTECTED Button !"
 msgstr ""
 
-#: confmenu.cpp:171 confmenu.cpp:294
+#: confmenu.cpp:171 confmenu.cpp:292
 msgid "Warning !"
 msgstr "Warnung !"
 
@@ -99,23 +99,11 @@ msgstr ""
 "Eine kdelnk-Datei mit diesem Namen existiert schon. \n"
 "Wählen Sie einen anderen Dateiname."
 
-#: confmenu.cpp:281
-msgid "Empty filename"
-msgstr "Leerer Dateiname"
-
-#: confmenu.cpp:282
-msgid ""
-"The name for this kdelnk-file is missing.\n"
-"Please choose a filename."
-msgstr ""
-"Der Name für die kdelnk-Datei fehlt.\n"
-"Bitte wählen Sie einen Namen!"
-
-#: confmenu.cpp:295
+#: confmenu.cpp:293
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ändern des Typs für diesen Button wird alle Untermenüs löschen"
 
-#: confmenu.cpp:316 confmenu.cpp:881
+#: confmenu.cpp:314 confmenu.cpp:879
 msgid "no command"
 msgstr "kein Kommando"
 
@@ -127,19 +115,19 @@ msgstr ""
 "Sorry! Sie müssen Ihre Änderungen speichern, bevor \n"
 "Sie dieses Item auf ein anderes Fenster fallen lassen."
 
-#: DesktopPathDialogData.cpp:36
+#: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
 msgstr "Pfad zu den KDE Desktop Einträgen ist nicht gesetzt."
 
-#: DesktopPathDialogData.cpp:48
+#: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
 msgstr "Ich schlage folgendene Einträge vor:"
 
-#: DesktopPathDialogData.cpp:54
+#: DesktopPathDialogData.cpp:55
 msgid "Path:"
 msgstr "Pfad:"
 
-#: DesktopPathDialogData.cpp:67
+#: DesktopPathDialogData.cpp:68
 msgid "PersonalPath:"
 msgstr "Persönlicher Pfad:"
 
@@ -243,18 +231,20 @@ msgstr ""
 msgid "Unmount Icon:"
 msgstr ""
 
-#: MenuNameDialog.cpp:20
+#: MenuNameDialog.cpp:21
 msgid "Change Menunames"
 msgstr "Menünamen ändern"
 
-#: MenuNameDialogData.cpp:32
+#: MenuNameDialogData.cpp:33
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr "Ändern des Menü-Names wie es im Panel angezeigt wird"
 
-#: MenuNameDialogData.cpp:41
+#: MenuNameDialogData.cpp:42
 msgid "Personal:"
 msgstr "Persönlich:"
 
-#: MenuNameDialogData.cpp:50
+#: MenuNameDialogData.cpp:51
 msgid "Default:"
 msgstr "Standard:"
+
+

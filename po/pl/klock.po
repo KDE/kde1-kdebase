@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-12-30 23:18+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -17,10 +17,6 @@ msgstr "Ustawienia wygaszacza Baner"
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr "Kolor:"
-
-#: banner.cpp:131
-msgid "Italic"
-msgstr "Italic"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
@@ -596,3 +592,6 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Wersja dla kscreensave od Emanuel Pirker."
+
+#~ msgid "Italic"
+#~ msgstr "Italic"

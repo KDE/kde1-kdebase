@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,10 +21,6 @@ msgstr "Beállítások"
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
 msgstr "Szín:"
-
-#: banner.cpp:131
-msgid "Italic"
-msgstr "Dõlt"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
@@ -548,6 +544,9 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+
+#~ msgid "Italic"
+#~ msgstr "Dõlt"
 
 #~ msgid "Font"
 #~ msgstr "Font"
