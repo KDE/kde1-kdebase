@@ -1,14 +1,28 @@
-//                              -*- Mode: C++ -*- 
-// Title            : kfdialog.cpp
-// 
-// Description      : Dialog class to handle input focus -- see headerfile
-// Author           : Steffen Hansen
-// Created On       : Mon Apr 28 21:51:03 1997
-// Last Modified By : Steffen Hansen
-// Last Modified On : Thu Nov 20 12:49:23 1997
-// Update Count     : 7
-// Status           : Unknown, Use with caution!
-// 
+    /*
+
+    Dialog class to handle input focus -- see headerfile
+    $Id$
+
+    Copyright (C) 1997, 1998 Steffen Hansen
+                             stefh@mip.ou.dk
+
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+    */
+ 
 
 #include "kfdialog.h"
 #include <X11/Xlib.h>

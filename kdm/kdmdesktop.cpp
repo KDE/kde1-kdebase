@@ -1,14 +1,28 @@
-//                              -*- Mode: C++ -*- 
-// Title            : kdmdesktop.cpp
-// 
-// Description      : Small util to draw a nice background in Xsetup_*
-// Author           : Steffen Hansen
-// Created On       : Mon Apr 28 21:55:38 1997
-// Last Modified By : Steffen Hansen
-// Last Modified On : Sat Feb 21 12:21:04 1998
-// Update Count     : 5
-// Status           : Unknown, Use with caution!
-// 
+    /*
+
+    Small util to draw a nice background in Xsetup_*
+    $Id$
+
+    Copyright (C) 1997, 1998 Steffen Hansen
+                             stefh@mip.ou.dk
+
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+    */
+ 
 
 #include <kapp.h>
 #include <qstring.h>
