@@ -120,7 +120,7 @@ int KProtocolFTP::ftpOpen(const char *host)
     struct sockaddr_in sin;
     struct hostent *phe;
     struct servent *pse;
-    char on=1;
+    int on=1;
 
     ftplib_lastresp[0] = '\0';
     memset(&sin,0,sizeof(sin));
@@ -147,7 +147,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     if (setsockopt(sControl,SOL_SOCKET,SO_REUSEADDR,
-		   &on, sizeof(on)) == -1)
+		   (char*)&on, sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sControl);
@@ -234,10 +234,10 @@ int KProtocolFTP::ftpPort(void)
 		struct sockaddr sa;
 		struct sockaddr_in in;
     } sin;
-    // struct linger lng = { 0, 0 };
+    struct linger lng = { 0, 0 };
     ksize_t l;
     char buf[64];
-    char on=1, lng=0;
+    int on=1;
 
     l = sizeof(sin);
     if (getsockname(sControl,&sin.sa,&l) < 0)
@@ -249,14 +249,14 @@ int KProtocolFTP::ftpPort(void)
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_REUSEADDR,
-		   &on,sizeof(on)) == -1)
+		   (char*)&on,sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_LINGER,
-		   &lng,sizeof(lng)) == -1)
+		   (char*)&lng,sizeof(lng)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
