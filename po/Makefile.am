@@ -1,16 +1,16 @@
 
 # This has to be set. The rest should be reusable
-DE_POFILES = de_kfind.po  de_kdehelp.po  de_kdisplay.po  de_kvt.po  de_kfm.po  de_kwm.po  de_kfontmanager.po
-DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo de_kfm.gmo de_kwm.gmo de_kfontmanager.gmo
+DE_POFILES = de_kfind.po  de_kdehelp.po  de_kdisplay.po  de_kvt.po  de_kfm.po  de_kwm.po  de_kfontmanager.po  de_klogout.po
+DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo de_kfm.gmo de_kwm.gmo de_kfontmanager.gmo de_klogout.gmo
 
 CZ_POFILES = cz_kfind.po
 CZ_GMFILES = cz_kfind.gmo
 
-ES_POFILES = es_kfind.po  es_kdehelp.po  es_kdisplay.po  es_kvt.po es_kfm.po es_kfontmanager.po es_klogout.po es_kwm.po
-ES_GMFILES = es_kfind.gmo es_kdehelp.gmo es_kdisplay.gmo es_kvt.gmo es_kfm.gmo es_kfontmanager.gmo es_klogout.gmo es_kwm.gmo
+ES_POFILES = es_kfind.po  es_kdehelp.po  es_kdisplay.po  es_kvt.po  es_kfm.po  es_kwm.po  es_kfontmanager.po  es_klogout.po 
+ES_GMFILES = es_kfind.gmo es_kdehelp.gmo es_kdisplay.gmo es_kvt.gmo es_kfm.gmo es_kwm.gmo es_kfontmanager.gmo es_klogout.gmo 
 
-SV_POFILES = sv_kfind.po  sv_kdehelp.po  sv_kdisplay.po  sv_kvt.po
-SV_GMFILES = sv_kfind.gmo sv_kdehelp.gmo sv_kdisplay.gmo sv_kvt.gmo
+SV_POFILES = sv_kfind.po  sv_kdehelp.po  sv_kdisplay.po  sv_kvt.po  sv_kfm.po  sv_kwm.po  sv_kfontmanager.po  sv_klogout.po
+SV_GMFILES = sv_kfind.gmo sv_kdehelp.gmo sv_kdisplay.gmo sv_kvt.gmo sv_kfm.gmo sv_kwm.gmo sv_kfontmanager.gmo sv_klogout.gmo
 
 FR_POFILES = fr_kfind.po  fr_kdehelp.po  fr_kdisplay.po
 FR_GMFILES = fr_kfind.gmo fr_kdehelp.gmo fr_kdisplay.gmo
