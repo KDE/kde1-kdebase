@@ -15,7 +15,7 @@ noinst_HEADERS = kswallow.h toplevel.h configlist.h mainwidget.h kdelnk.h
 EXTRA_DIST = kcontrol.xpm mini-kcontrol.xpm
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
 
 kswallow.cpp: kswallow.moc
 kswallow.moc: kswallow.h
