@@ -1,0 +1,50 @@
+# KDE Config File
+[International Keyboard]
+Authors=Leon Kukovec <sniper@kibla.org>,
+
+Comment=Slovene Keyboard (Slovenia)
+Comment[sl]=Slovenska tipkovnica (Slovenija)
+
+Language=Slovene
+Language[en]=slovene
+Language[sl]=slovensko
+
+Charset=ISO-8859-2
+Label=Sl
+Locale=sl
+
+[KeyboardMap]
+CapsSymbols=e,r,t,y,u,i,o,p,a,s,d,,h,j,z,x,c
+keysym0=grave,dead_diaeresis,
+keysym1=1,1,exclam,asciitilde,
+keysym2=2,2,quotedbl,periodcentered,
+keysym3=3,3,numbersign,asciicircum,
+keysym4=4,4,dollar,cent,
+keysym5=5,5,percent,degree,
+keysym6=6,6,ampersand,twosuperior,
+keysym7=7,7,slash,grave,
+keysym8=8,8,parenleft,
+keysym9=9,9,parenright,
+keysym10=0,0,equal,
+keysym11=minus,apostrophe,question,dead_diaeresis,
+keysym12=equal,plus,asterisk,superrior,
+keysym13=z,y,Y,
+keysym14=y,z,Z,
+keysym15=q,q,Q,backslash,
+keysym16=w,w,W,bar
+keysym17=f,f,F,bracketleft,
+keysym18=g,g,G,bracketright,
+keysym19=v,v,V,at
+keysym20=b,b,B,braceleft,
+keysym21=n,n,N,braceright,
+keysym22=m,m,M,section,
+keysym23=backslash,zcaron,Zcaron,0xa4
+keysym24=semicolon,ccaron,Ccaron,
+keysym25=bracketleft,scaron,Scaron,division,
+keysym26=bracketright,0xF0,0xD0,multiply,
+keysym27=k,k,K,threesuperior,
+keysym28=l,l,L,sterling,
+keysym29=period,period,colon,
+keysym30=comma,comma,semicolon,
+keysym31=slash,minus,underscore,
+keysym32=apostrophe,ae,AE,ssharp,
