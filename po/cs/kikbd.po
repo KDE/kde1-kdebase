@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1998-11-05 01:17+0100\n"
-"PO-Revision-Date: 1998-10-28 18:35 CET\n"
+"PO-Revision-Date: 1998-11-05 07:50+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Pou¾ívám implicitní X kódy."
 
 #: kikbd.cpp:313
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
@@ -85,12 +85,12 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: není mo¾né nalézt symbol \"%s\"."
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: nerozumím kódu klávesy \"%s\"."
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
 
@@ -328,9 +328,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Zobrazit informace o vybrané klávesové mapì"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Pou¾ít \"&hotlist\""
+msgstr "Pou¾ít &hotlist"
 
 #: widgets.cpp:146
 msgid ""
@@ -368,7 +367,6 @@ msgid "Switch and Alt Switch"
 msgstr "Pøepnutí a pøepnutí s Altem"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Klávesa(y) na pøepínání mezi mapami"
 
@@ -397,12 +395,10 @@ msgid "Advanced"
 msgstr "Pokroèilé"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Emulovat CapsLock"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr "Emulovat Capslock XServeru. Potøebné pro nìkteré jazyky"
 
@@ -451,19 +447,16 @@ msgid "Foreground"
 msgstr "Popøedí"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Barva textového popisku"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
 msgstr "S CapsLockem"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
-msgstr "Pozadí, pøíaktivní emulaci capslocku"
+msgstr "Pozadí, pøi aktivní emulaci Capslocku"
 
 #: widgets.cpp:573
 msgid "With Alternate"
@@ -494,7 +487,6 @@ msgid "&Autostart"
 msgstr "&Autostart"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
 msgstr "Spou¹tìt automaticky"
 
