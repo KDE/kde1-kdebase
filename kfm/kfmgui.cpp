@@ -1118,7 +1118,7 @@ void KfmGui::slotUpdateHistoryMenu( )
         u.setPassword(""); // hide password
         QString url(u.url().copy());
         KURL::decodeURL(url); // we don't want encoded URLs in the menu
-        mgo->insertItem ( url, id );
+        mgo->insertItem ( stringSqueeze(url,100), id );
     }
     // Enable or disable Up, Back & Forward menu items
     for (int i=0; i<3; i++) mgo->setItemEnabled( mgo->idAt( i ), itemsEnabled[i] );
