@@ -9,7 +9,7 @@ GMFILES = kfind.gmo kdehelp.gmo kdisplay.gmo kvt.gmo \
 
 POFILES = $(GMFILES:.gmo=.po)
 
-LANG = de
+LANG = sk
 
 localedir = $(kde_locale)
 
