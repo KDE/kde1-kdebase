@@ -864,7 +864,9 @@ void KRootWm::slotNewFile( int _id )
 	}
 	else
 	{
-	    QString cmd( "kfmclient copy \"" );
+          QString cmd( "cp \"" ); // using kfmclient copy here causes
+          // problems with kfmclient openProperties coming next
+          // (depending on machine's speed)
 	    cmd += templatePath + p.data();
 	    cmd += "\" \"";
 	    cmd += desktopPath.data();
@@ -873,6 +875,20 @@ void KRootWm::slotNewFile( int _id )
 	    cmd += name.data();
 	    cmd += "\"";
 	    execute( cmd );
+
+            sleep( 1 );
+            
+            cmd = "kfmclient openProperties \"" ;
+	    cmd += desktopPath.data();
+	    if ( cmd.right( 1 ) != "/" )
+	        cmd += "/";
+	    cmd += name.data();
+	    cmd += "\"";
+	    execute( cmd );
+
+            KFM* kfm = new KFM;
+            kfm->refreshDesktop();
+            delete kfm;
 	}
     }
 }
