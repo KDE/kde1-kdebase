@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-11-09 01:22+0100\n"
-"PO-Revision-Date: 1998-10-24 16:54 CEST\n"
+"PO-Revision-Date: 1998-11-09 08:43+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,15 +56,15 @@ msgstr "Vy&ber"
 
 #: kfmgui.cpp:343
 msgid "Select &all"
-msgstr "Vy&brat v¹e"
+msgstr "V&ybrat v¹e"
 
 #: kfmgui.cpp:346
 msgid "&Find in page..."
-msgstr ""
+msgstr "&Nalézt ve stránce ..."
 
 #: kfmgui.cpp:348
 msgid "Find &next"
-msgstr ""
+msgstr "N&alézt následující"
 
 #: kfmgui.cpp:351
 msgid "Mime Types"
@@ -269,11 +269,11 @@ msgstr "Vyber soubory:"
 
 #: kfmgui.cpp:980
 msgid "Find Complete"
-msgstr ""
+msgstr "Hledání dokonèeno"
 
 #: kfmgui.cpp:981
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Pokraèovat v hledání od vrchu stránky?"
 
 #: kfmgui.cpp:999
 msgid "&Edit Bookmarks..."
@@ -1350,13 +1350,12 @@ msgid "This group is empty!"
 msgstr "Tato skupina je prázdná!"
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Hledej"
+msgstr "Nalézt:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Zohlednit &velikost znakù"
 
 #: kfmprops.h:73
 msgid "&General"

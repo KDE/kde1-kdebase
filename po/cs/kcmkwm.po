@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-08 01:22+0100\n"
-"PO-Revision-Date: 1998-11-03 14:25+01:00\n"
+"PO-Revision-Date: 1998-11-09 08:36+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -83,12 +83,11 @@ msgstr "Pravá strana titulku je plná ... vyøazuji 'minimalizaèní' tlaèítko\n"
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Zarovnání titulku"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Prostøední tlaèítko"
+msgstr "Doprostøed"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
