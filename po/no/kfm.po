@@ -240,6 +240,9 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"Hvis du oppdager feil i programmet eller har ønsker, vennligst send dem "
+"inn som beskrevet på http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
@@ -1195,12 +1198,12 @@ msgstr "Rekursiv kopiering fra/til fjerntliggende sted"
 
 # kiojob.cpp:292 kiojob.cpp:315 kiojob.cpp:334
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Kunne ikke lage symbolsk lenke til\n"
+"Kunne ikke fjerne symbolsk lenke\n"
 "%s"
 
 # kiojob.cpp:809

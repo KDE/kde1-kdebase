@@ -58,7 +58,6 @@ msgstr ""
 "\"Alt\" symboler utkoplet"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -79,12 +78,11 @@ msgstr ""
 "Vil du at det automatisk skal starte ved neste innlogging?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "Tastaturkart: kan ikke tildele minne"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -97,17 +95,17 @@ msgstr ""
 "av konfigurasjonsprogrammet."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "Tastaturkart: kan ikke finne symbol \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "Tastaturkart: kan ikke forstå tastkode \"%s\"."
+msgstr "Tastaturkart: kan ikke lese tastkode \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "Tastaturkart: tastkode \"%s\" går utenfor gyldig område."
 
@@ -309,7 +307,6 @@ msgid "&Add"
 msgstr "&Legg til"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
 msgstr "Legg til nytt tastaturkart"
 
@@ -322,18 +319,16 @@ msgid "U&p"
 msgstr "&Opp"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Fjern valgte tastaturkart"
+msgstr "Flytt valgte tastaturkart opp"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "&Ned"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
-msgstr "Valgte tastaturkart flyttes ned"
+msgstr "Flytt valgte tastaturkart ned"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -348,18 +343,18 @@ msgid "Use &hot list"
 msgstr "Bruk &hurtigliste"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Bruk bare standard og siste aktive tastaturkart for å endre tastatur"
+msgstr ""
+"Bruk kun standard tastaturkart og det tastaturkartet som ble sist når "
+"tastkombinasjonen for å bytte kart blir brukt"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Legger til tastatur"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
 msgstr "Det finnes ikke flere tastaturkart"
 
@@ -384,12 +379,10 @@ msgid "Switch and Alt Switch"
 msgstr "Bryter og Alt bryter"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Tast(er) for å skifte mellom tastaturkart"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Tast for å aktivere alternative symboler i gjeldende tastaturkart"
 
@@ -398,7 +391,6 @@ msgid "&Beep"
 msgstr "&Bip"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Bip når tastaturkart er endret"
 
@@ -419,7 +411,6 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emuler CapsLock"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -431,9 +422,9 @@ msgid "&World Menu"
 msgstr "&Verdensmeny"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
-msgstr "Vis meny i hvilken som helst vindu ved å holde nede Switch taster"
+msgstr "Vis meny i hvilken som helst vindu ved å holde nede tasten(e) som er "
+"valgt for å bytte kart"
 
 #: widgets.cpp:491
 msgid "&Save Classes"
@@ -452,21 +443,21 @@ msgid "Input"
 msgstr "Data inn"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standard oppførsel. Tastaturkart er aktivt for alle vinduer"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Standard oppførsel. Tastaturkart er aktivt for alle vinduer"
+msgstr ""
+"Utvidet oppførsel. Status for tastaturkart er lagret uavhenig for hver vindu"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Standard oppførsel. Tastaturkart er aktivt for alle vinduer"
+msgstr ""
+"Standard oppførsel. Status for tastaturkart er lagret uavhenig for hver "
+"vindu-klasse"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -478,15 +469,15 @@ msgstr "Forgrunn"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Farge på forgrunnen til tekstetikett"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Bakgrunn"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Farge på bakgrunn til tekstetikett"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -501,9 +492,8 @@ msgid "With Alternate"
 msgstr "Med alternativ"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "Bakgrunn når alternativ bryter er nedtrykkt"
+msgstr "Bakgrunn når alternativ tastkombinasjon for bytting av tastaturkart er trykket"
 
 #: widgets.cpp:598
 msgid "Button Font"
