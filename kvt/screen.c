@@ -2572,3 +2572,10 @@ void mouse_report (XButtonEvent * ev, int release)
               (041 + y));
 }
 
+/****************************************************************************
+ * Say whether this window is currently in focus
+ ***************************************************************************/
+int scr_has_focus()
+{
+   return focus;
+}
