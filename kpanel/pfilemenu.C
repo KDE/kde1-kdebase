@@ -304,11 +304,11 @@ PFileMenu::newLinkItem(const QFileInfo* fi, bool useCurrentPath)
   QString url = kconfig.readEntry("URL");
 
   if (url.left(5) == "file:")
-    //correction by Pietro Iglio for memory hog
-    //    url = url.mid(5, 0xffff);   // remove "file:"
     url = url.right(url.length() - 5);   // remove "file:"
 
-  if (url.left(1) != "/")
+  struct stat urlstat;
+
+  if (stat(url, &urlstat) == 0 && !S_ISDIR(urlstat.st_mode))
     return newFileItem(fi, useCurrentPath);   // <<---------
 
   QString pixmap_name = kconfig.readEntry("MiniIcon", DEFAULT_FOLDER_ICON);
