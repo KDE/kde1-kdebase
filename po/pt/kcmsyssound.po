@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-02-03 14:19+0100\n"
 "PO-Revision-Date: 1998-02-03 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -61,39 +61,39 @@ msgstr "Fechar Janela"
 msgid "Startup"
 msgstr "Inicio"
 
-#: syssound.cpp:102
+#: syssound.cpp:103
 msgid "e&nable system sounds"
 msgstr "activa so&ns do sistema"
 
-#: syssound.cpp:107
+#: syssound.cpp:108
 msgid "&Test"
 msgstr "&Testar"
 
-#: syssound.cpp:111
+#: syssound.cpp:112
 msgid "&Events:"
 msgstr "&Eventos:"
 
-#: syssound.cpp:115
+#: syssound.cpp:116
 msgid "&Sounds:"
 msgstr "&Sons:"
 
-#: syssound.cpp:119
+#: syssound.cpp:120
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr "Ficheiro WAV podem ser largados na lista de sons."
 
-#: syssound.cpp:321
+#: syssound.cpp:323
 msgid "Unsupported URL"
 msgstr "UTL não suportada"
 
-#: syssound.cpp:322
+#: syssound.cpp:324
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Desculpe, este tipo de URL não é suportada actualmente pelo Módulo KDE "
-"System Sound"
+"Desculpe, este tipo de URL não é suportada actualmente "
+"pelo Módulo KDE System Sound"
 
-#: syssound.cpp:326
+#: syssound.cpp:328
 #, c-format
 msgid ""
 "Sorry, but \n"
@@ -104,11 +104,11 @@ msgstr ""
 "%s\n"
 "não parece ser um ficheiro WAV!"
 
-#: syssound.cpp:327
+#: syssound.cpp:329
 msgid "Improper File Extension"
 msgstr "Extensão do Ficheiro Imprópria"
 
-#: syssound.cpp:333
+#: syssound.cpp:335
 #, c-format
 msgid ""
 "The file\n"
@@ -119,6 +119,6 @@ msgstr ""
 "%s\n"
 "já pertence à lista"
 
-#: syssound.cpp:334
+#: syssound.cpp:336
 msgid "File Already in List"
 msgstr "Ficheiro Já Pertence à Lista"

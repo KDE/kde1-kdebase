@@ -1,59 +1,59 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay.po\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: backgnd.cpp:196 backgnd.cpp:231
+#: backgnd.cpp:204 backgnd.cpp:239
 msgid "Desktop"
 msgstr "Ambiente de trabalho"
 
-#: backgnd.cpp:241
+#: backgnd.cpp:249
 msgid "Rename..."
-msgstr "Renomear..."
+msgstr "Mudar nome..."
 
-#: backgnd.cpp:247
+#: backgnd.cpp:255
 msgid "Color"
 msgstr "Cor"
 
-#: backgnd.cpp:265
+#: backgnd.cpp:273
 msgid "Flat"
 msgstr "Uniforme"
 
-#: backgnd.cpp:269
+#: backgnd.cpp:277
 msgid "Gradient"
 msgstr "Gradiente"
 
-#: backgnd.cpp:279
+#: backgnd.cpp:287
 msgid "Portrait"
 msgstr "Retrato"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:291
 msgid "Landscape"
 msgstr "Paisagem"
 
-#: backgnd.cpp:290
+#: backgnd.cpp:298
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
-#: backgnd.cpp:322
+#: backgnd.cpp:331
 msgid "Tiled"
 msgstr "Mosaico"
 
-#: backgnd.cpp:326
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "Centrado"
 
-#: backgnd.cpp:330
+#: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Escalonado"
 
-#: backgnd.cpp:480
+#: backgnd.cpp:489
 msgid "Default"
 msgstr "Por defeito"
 
-#: backgnd.cpp:811
+#: backgnd.cpp:821
 msgid "Desktop Title"
 msgstr "Título do Ambiente de Trabalho"
 
@@ -87,19 +87,19 @@ msgstr "Cor dos widgets"
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
-msgstr "Barra de titulo inactiva"
+msgstr "Barra de título inactiva"
 
 #: colorscm.cpp:292
 msgid "Inactive title text"
-msgstr "Texto de titulo inactivo"
+msgstr "Texto de título inactivo"
 
 #: colorscm.cpp:293
 msgid "Active title bar"
-msgstr "Barra de titulo inactiva"
+msgstr "Barra de título inactiva"
 
 #: colorscm.cpp:294
 msgid "Active title text"
-msgstr "Texto de titulo activo"
+msgstr "Texto de título activo"
 
 #: colorscm.cpp:295
 msgid "Background"
@@ -111,11 +111,11 @@ msgstr "Texto"
 
 #: colorscm.cpp:297
 msgid "Select background"
-msgstr "Escolha o fundo"
+msgstr "Fundo seleccionado"
 
 #: colorscm.cpp:298
 msgid "Select text"
-msgstr "Escolha o texto"
+msgstr "Texto seleccionado"
 
 #: colorscm.cpp:299
 msgid "Window background"
@@ -127,11 +127,11 @@ msgstr "Contraste"
 
 #: colorscm.cpp:324 scrnsave.cpp:224
 msgid "Low"
-msgstr "Baixo"
+msgstr "Baixa"
 
 #: colorscm.cpp:328 scrnsave.cpp:221
 msgid "High"
-msgstr "Alto"
+msgstr "Alta"
 
 #: colorscm.cpp:343
 msgid "Save scheme"
@@ -200,7 +200,7 @@ msgstr "min"
 
 #: scrnsave.cpp:213
 msgid "Requires Password"
-msgstr "Necessita Password"
+msgstr "Requer Password"
 
 #: scrnsave.cpp:218
 msgid "Priority:"
@@ -272,8 +272,7 @@ msgstr "E&stilo"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
-msgstr ""
-"utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:112
 msgid "Display settings"

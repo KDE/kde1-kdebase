@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -69,11 +69,11 @@ msgstr "Tamanho da Fonte"
 
 #: options.cpp:40
 msgid "Small"
-msgstr "Pequena"
+msgstr "Pequeno"
 
 #: options.cpp:44
 msgid "Medium"
-msgstr "Média"
+msgstr "Médio"
 
 #: options.cpp:48
 msgid "Large"
@@ -186,79 +186,83 @@ msgstr "<!-- Não edite este ficheiro -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: URL de destino incorrecto: %s\n"
 
-#: mainwidget.cpp:132
+#: mainwidget.cpp:133
 msgid "&New Help Window"
 msgstr "&Nova Janela de Ajuda"
 
-#: mainwidget.cpp:135
+#: mainwidget.cpp:136
 msgid "&Open File..."
 msgstr "Abrir Ficheir&o..."
 
-#: mainwidget.cpp:136
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "Abrir UR&L..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:138
 msgid "&Reload"
 msgstr "&Recarregar"
 
-#: mainwidget.cpp:139
+#: mainwidget.cpp:140
 msgid "&Search"
 msgstr "&Procurar"
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:153
 msgid "&Back"
 msgstr "&Retroceder"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:154
 msgid "&Forward"
 msgstr "&Avançar"
 
 #: mainwidget.cpp:156
+msgid "&Contents"
+msgstr "&Conteúdo"
+
+#: mainwidget.cpp:157
 msgid "&Top"
 msgstr "&Topo"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:158
 msgid "&Up"
 msgstr "&Cima"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:159
 msgid "&Previous"
 msgstr "&Anterior"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:160
 msgid "&Next"
 msgstr "&Seguinte"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:172
 msgid "&General Preferences..."
-msgstr "Preferencias &Gerais..."
+msgstr "Preferências &Gerais..."
 
-#: mainwidget.cpp:174
+#: mainwidget.cpp:175
 msgid "Show &Toolbar"
 msgstr "Mostrar Barra de Ferramen&tas"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:177
 msgid "Show &Location"
 msgstr "Mostrar &Localização"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:178
 msgid "Show Status&bar"
 msgstr "Mostrar &Barra de Status "
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:181
 msgid "&Save Options"
 msgstr "Gravar Opções"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:183
 msgid "KDE Help System\n"
 msgstr "Sistema de Ajuda do KDE\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:184
 msgid "Version "
 msgstr "Versão "
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:186
 msgid ""
 "\n"
 "\n"
@@ -278,55 +282,55 @@ msgstr ""
 "ABSOLUTAMENTE NENHUMA GARANTIA\n"
 "até ao permitido pela lei aplicável."
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:202
 msgid "&Goto"
 msgstr "&Ir Para"
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:203
 msgid "&Bookmarks"
 msgstr "&Favoritos"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:221
 msgid "Previous Document"
 msgstr "Documento Anterior"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:226
 msgid "Next Document"
 msgstr "Próximo Documento"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:233
 msgid "Previous Node"
 msgstr "Nodo Anterior"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:238
 msgid "Next Node"
 msgstr "Próximo Nodo"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:243
 msgid "Up one Node"
 msgstr "Subir um Nodo"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:248
 msgid "Top Node"
 msgstr "Nodo de Topo"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:255
 msgid "Help Contents"
 msgstr "Conteúdo da Ajuda"
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:260
 msgid "Reload current document"
 msgstr "Recarregar documento actual"
 
-#: mainwidget.cpp:264
+#: mainwidget.cpp:265
 msgid "Stop"
 msgstr "Parar"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:289
 msgid "In the Constructor!"
 msgstr "No Construtor!"
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:583
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -334,13 +338,10 @@ msgstr ""
 "Sistema de Ajuda do KDE\n"
 "Versão "
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:585
 msgid "About KDE Help"
 msgstr "Acerca do KDE Help"
 
-#: mainwidget.cpp:617
+#: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
-
-#~ msgid "&Contents"
-#~ msgstr "&Conteudo"
