@@ -22,7 +22,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
         QVBoxLayout *lay = new QVBoxLayout(this, 40 /* big border */, 20);
  
         //----------------- sven---------
-        urlpropsbox = new QCheckBox(klocale->translate("&Allow per-URL settings"),
+        urlpropsbox = new QCheckBox(i18n("&Allow per-URL settings"),
                                     this);
         urlpropsbox->adjustSize();
         urlpropsbox->setMinimumSize(urlpropsbox->size());
@@ -30,7 +30,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
         //-------------------------------
  
         //----------------- david ---------
-        treefollowbox = new QCheckBox(klocale->translate("Tree &view follows navigation"),
+        treefollowbox = new QCheckBox(i18n("Tree &view follows navigation"),
                                     this);
         treefollowbox->adjustSize();
         treefollowbox->setMinimumSize(treefollowbox->size());

@@ -40,7 +40,7 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   lay->setColStretch(4,0);
   //CT
 
-  onserverLA = new QLabel( klocale->translate( "On server:" ), this );
+  onserverLA = new QLabel( i18n( "On server:" ), this );
   onserverLA->setAlignment( AlignRight|AlignVCenter );
   //CT 12Nov1998 layout management
   onserverLA->adjustSize();
@@ -62,7 +62,7 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   //connect( onserverED, SIGNAL( returnPressed() ),
   //		   SLOT( returnPressed() ) );
 
-  loginasLA = new QLabel( klocale->translate( "login as:" ), this );
+  loginasLA = new QLabel( i18n( "login as:" ), this );
   loginasLA->setAlignment( AlignRight|AlignVCenter );
   //CT 12Nov1998 layout management
   loginasLA->adjustSize();
@@ -82,7 +82,7 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   // connect( loginasED, SIGNAL( returnPressed() ),
   //  SLOT( returnPressed() ) );
 
-  addPB = new QPushButton( klocale->translate( "&Add" ), this );
+  addPB = new QPushButton( i18n( "&Add" ), this );
   //CT 12Nov1998 layout management
   addPB->adjustSize();
   addPB->setMinimumSize(addPB->size());
@@ -92,7 +92,7 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   addPB->setEnabled( false );
   connect( addPB, SIGNAL( clicked() ), SLOT( addClicked() ) );
   
-  deletePB = new QPushButton( klocale->translate( "&Delete" ), this );
+  deletePB = new QPushButton( i18n( "&Delete" ), this );
   //CT 12Nov1998 layout management
   deletePB->adjustSize();
   deletePB->setMinimumSize(deletePB->size());
@@ -102,7 +102,7 @@ UserAgentOptions::UserAgentOptions( QWidget * parent, const char * name ) :
   deletePB->setEnabled( false );
   connect( deletePB, SIGNAL( clicked() ), SLOT( deleteClicked() ) );
 
-  bindingsLA = new QLabel( klocale->translate( "Known bindings:" ), this );
+  bindingsLA = new QLabel( i18n( "Known bindings:" ), this );
   //CT 12Nov1998 layout management
   bindingsLA->adjustSize();
   bindingsLA->setMinimumSize(bindingsLA->size());

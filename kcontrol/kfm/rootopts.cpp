@@ -67,8 +67,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         //CT
  
         QLabel *label;
-        label = new QLabel( klocale->translate(
-                            "Horizontal Root Grid Spacing:"), this );
+        label = new QLabel( i18n("Horizontal Root Grid Spacing:"), this );
         label->adjustSize();
         label->setMinimumSize(label->size());
         lay->addWidget(label,ROW_HGRID,1);
@@ -79,8 +78,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         lay->addWidget(hspin,ROW_HGRID,3);
         hspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
  
-        label = new QLabel( klocale->translate(
-                            "Vertical Root Grid Spacing:"), this );
+        label = new QLabel( i18n("Vertical Root Grid Spacing:"), this );
         label->adjustSize();
         label->setMinimumSize(label->size());
         lay->addWidget(label,ROW_VGRID,1);
@@ -91,7 +89,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         lay->addWidget(vspin,ROW_VGRID,3);
         vspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
  
-        iconstylebox = new QCheckBox(klocale->translate("&Transparent Text for Root Icons."),
+        iconstylebox = new QCheckBox(i18n("&Transparent Text for Root Icons."),
                                   this);
         //CT 12Nov1998
         iconstylebox->adjustSize();
@@ -102,7 +100,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         connect(iconstylebox,SIGNAL(toggled(bool)),this,SLOT(makeBgActive(bool)));
  
         //CT 12Nov1998 color buttons
-        label = new QLabel(klocale->translate("Icon foreground color:"),this);
+        label = new QLabel(i18n("Icon foreground color:"),this);
         label->adjustSize();
         label->setMinimumSize(label->size());
         lay->addWidget(label,ROW_ICON_FG,1);
@@ -114,7 +112,7 @@ KRootOptions::KRootOptions( QWidget *parent, const char *name )
         connect( fgColorBtn, SIGNAL( changed( const QColor & ) ),
                 SLOT( slotIconFgColorChanged( const QColor & ) ) );
  
-        bgLabel = new QLabel(klocale->translate("Icon background color:"),this);
+        bgLabel = new QLabel(i18n("Icon background color:"),this);
         bgLabel->adjustSize();
         bgLabel->setMinimumSize(bgLabel->size());
         lay->addWidget(bgLabel,ROW_ICON_BG,1);

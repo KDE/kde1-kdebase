@@ -47,7 +47,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
 
 // Commented out, since in any KControl module, one has to save ("OK" or "Apply") :)
 #if 0
-  lb_info = new QLabel( klocale->translate("Don't forget to save your settings!"), this);
+  lb_info = new QLabel( i18n("Don't forget to save your settings!"), this);
   //CT 12Nov1998 layout management
   lb_info->adjustSize();
   lb_info->setMinimumSize(lb_info->size());
@@ -55,7 +55,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
   //CT
 #endif
 
-  cb_useProxy = new QCheckBox( klocale->translate("Use proxy"), this );
+  cb_useProxy = new QCheckBox( i18n("Use proxy"), this );
   //CT 12Nov1998 layout management
   cb_useProxy->adjustSize();
   cb_useProxy->setMinimumSize(cb_useProxy->size());
@@ -125,7 +125,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const char *name)
   lay->addWidget(le_ftp_port,ROW_FTP,5);
   //CT
 
-  lb_no_prx = new QLabel(klocale->translate("No Proxy for:"), this);
+  lb_no_prx = new QLabel(i18n("No Proxy for:"), this);
   lb_no_prx->setAlignment(AlignVCenter);
   //CT 12Nov1998 layout management
   lb_no_prx->adjustSize();
