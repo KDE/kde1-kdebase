@@ -256,6 +256,11 @@ AC_OUTPUT(Makefile \
 	kappfinder/Makefile \
 	config/Makefile )
 
-AC_OUTPUT_COMMANDS(chmod +x kappfinder/kappfinder)
+AC_OUTPUT_COMMANDS(
+if test -r kappfinder/kappfinder; then
+   chmod +x kappfinder/kappfinder
+fi
+)
+
 
 
