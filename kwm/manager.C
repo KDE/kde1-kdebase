@@ -481,7 +481,7 @@ void Manager::clientMessage(XEvent*  ev){
     c = getClient(w);
     if (c && c->state == NormalState){
       activateClient(c);
-      KWM::raiseSoundEvent("Window Activate");
+      raiseSoundEvent("Window Activate");
     }
   }
   if (e->message_type == kwm_module){
@@ -724,7 +724,7 @@ void Manager::motionNotify(XMotionEvent* e){
     if (c && c == delayed_focus_follow_mouse_client && c != current()
 	&& c->state != WithdrawnState){
       activateClient(c);
-      KWM::raiseSoundEvent("Window Activate");
+      raiseSoundEvent("Window Activate");
     }
     delayed_focus_follow_mouse_client = NULL;
   }
@@ -741,20 +741,20 @@ void Manager::enterNotify(XCrossingEvent *e){
       XSync(qt_xdisplay(), False);
       if (enable_focus_follow_mouse_activation){
 	activateClient(c);
-	KWM::raiseSoundEvent("Window Activate");
+	raiseSoundEvent("Window Activate");
       }
       else {
 	if (e->x_root != QCursor::pos().x()
 	    || e->y_root != QCursor::pos().y()){
 	  activateClient(c);
-	  KWM::raiseSoundEvent("Window Activate");
+	  raiseSoundEvent("Window Activate");
 	}
 	else{
 	  usleep(100);
 	  if (e->x_root != QCursor::pos().x()
 	      || e->y_root != QCursor::pos().y()){
 	    activateClient(c);
-	    KWM::raiseSoundEvent("Window Activate");
+	    raiseSoundEvent("Window Activate");
 	  }
 	  else
 	    delayed_focus_follow_mouse_client = c;
@@ -1245,9 +1245,9 @@ void Manager::manage(Window w, bool mapped){
   }
  
   if (c->trans)
-    KWM::raiseSoundEvent("Window Trans New");
+    raiseSoundEvent("Window Trans New");
   else
-    KWM::raiseSoundEvent("Window New");
+    raiseSoundEvent("Window New");
 
 
   if (!dohide && c->getDecoration())
@@ -1336,9 +1336,9 @@ void Manager::activateClient(Client* c, bool set_revert){
 
 void Manager::removeClient(Client* c){
   if (c->trans)
-    KWM::raiseSoundEvent("Window Trans Delete");
+    raiseSoundEvent("Window Trans Delete");
   else
-    KWM::raiseSoundEvent("Window Delete");
+    raiseSoundEvent("Window Delete");
 
   bool do_nofocus = (current() == c);
   clients.removeRef(c);
@@ -2422,6 +2422,32 @@ void Manager::iconifyFloatingOf(Client* c){
   }
 }
 
+
+void Manager::raiseSoundEvent(const QString &event){
+  XEvent ev;
+  int status;
+  long mask = 0L;
+  memset(&ev, 0, sizeof(ev));
+  ev.xclient.type = ClientMessage;
+  ev.xclient.window = qt_xrootwin();
+  ev.xclient.message_type = kde_sound_event;
+  ev.xclient.format = 8;
+
+  int i;
+  const char* s = event.data();
+  for (i=0;i<19 && s[i];i++)
+    ev.xclient.data.b[i]=s[i];
+  
+  Window* mw;
+  for (mw=modules.first(); mw; mw=modules.next()){
+    ev.xclient.window = *mw;
+    if (ev.xclient.window == qt_xrootwin())
+      mask = SubstructureRedirectMask;
+    XSendEvent(qt_xdisplay(), *mw, 
+	       False, mask, &ev);
+  }
+  XFlush(qt_xdisplay());
+}
 
 void Manager::addModule(Window w){
   Window *wp;

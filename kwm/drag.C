@@ -199,9 +199,11 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     bool return_pressed = false;
 
     if (recalc != dragcalc)
-      KWM::raiseSoundEvent("Window Resize Start");
+      manager->raiseSoundEvent("Window Resize Start");
     else
-      KWM::raiseSoundEvent("Window Move Start");
+      manager->raiseSoundEvent("Window Move Start");
+    XFlush(qt_xdisplay());
+    manager->timeStamp();
 
     // set the focus policy to ClickToFocus to avoid flickering
     FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
@@ -294,9 +296,9 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     options.FocusPolicy =  oldFocusPolicy;
 
     if (recalc != dragcalc)
-      KWM::raiseSoundEvent("Window Resize End");
+      manager->raiseSoundEvent("Window Resize End");
     else
-      KWM::raiseSoundEvent("Window Move End");
+      manager->raiseSoundEvent("Window Move End");
 
     return false;
 }

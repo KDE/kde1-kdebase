@@ -12,8 +12,9 @@ influences from my experiences with the former kwm.
 In 0.10:
 --------
   patchlevel 25:
-     - smart placement (Christian Tibirna)
+     - smart placement (Cristian Tibirna)
      - "Window Activate" sound event (I simply forgot this one...)
+     - more fixes for the sound events
 
   patchlevel 24:
        - supports the following commands in addition:
@@ -36,8 +37,8 @@ In 0.10:
                   "Window UnSticky"
                   "Window New"
                   "Window Delete"
-                  "Window New Trans"
-                  "Window Delete Trans"
+                  "Window Trans New"
+                  "Window Trans Delete"
                   "Logout"
                   "Logout Message"
                   "Window Move Start"

@@ -222,7 +222,7 @@ static void setStringProperty(const char* atomname, const char* value){
 
 
 static void showLogout(){
-  KWM::raiseSoundEvent("Logout Message");
+  manager->raiseSoundEvent("Logout Message");
   if (!klogout){
     klogout = new Klogout(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     // next is a dirty hack to fix a qt-1.2 bug 
@@ -863,7 +863,7 @@ void MyApp::changeToClient(QString label){
     else {
       manager->raiseClient(c);
       manager->activateClient(c);
-      KWM::raiseSoundEvent("Window Activate");
+      manager->raiseSoundEvent("Window Activate");
     }
   }
 }
@@ -888,7 +888,7 @@ void MyApp::changeToTaskClient(QString label){
 }
 
 void MyApp::doLogout(){
-  KWM::raiseSoundEvent("Logout");
+  manager->raiseSoundEvent("Logout");
   saveSession();
   writeConfiguration();
   manager->cleanup();
@@ -1145,7 +1145,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	  if (infoBoxClient->state == NormalState){
 	    manager->raiseClient(infoBoxClient);
 	    manager->activateClient(infoBoxClient);
-	    KWM::raiseSoundEvent("Window Activate");
+	    manager->raiseSoundEvent("Window Activate");
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();
@@ -1255,7 +1255,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  if  (ev->xbutton.button == Button1)
 	    manager->raiseClient(c);
 	  manager->activateClient(c);
-	  KWM::raiseSoundEvent("Window Activate");
+	  manager->raiseSoundEvent("Window Activate");
 	}
  	// unfreeze the passive grab which is active currently
 	if (replay)

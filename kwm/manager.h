@@ -134,6 +134,8 @@ public:
 
   void iconifyFloatingOf(Client* c);
 
+  void raiseSoundEvent(const QString &);
+
 signals:
   void reConfigure();
   void showLogout();

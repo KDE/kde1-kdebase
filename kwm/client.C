@@ -188,7 +188,6 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
   if (!options.ResizeAnimation)
     return;
 
-
   lf = (after.left() - before.left())/400.0;
   rf = (after.right() - before.right())/400.0;
   tf = (after.top() - before.top())/400.0;
@@ -198,11 +197,11 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
   QRect area = before;
   QRect area2;
 
-  XGrabServer(qt_xdisplay());
-
   Time ts = manager->timeStamp();
   Time tt = ts;
   float diff;
+
+  XGrabServer(qt_xdisplay());
   
   do {
     if (area2 != area){
@@ -509,12 +508,17 @@ void Client::mousePressEvent( QMouseEvent *ev ){
       stopAutoraise();
       myapp->operations->popup(QCursor::pos());
     }
-    else
+    else {
+      if (!isActive())
+	manager->raiseSoundEvent("Window Activate");
       manager->activateClient(this);
+    }
     return;  
   }
 
   if ((ev->state() & AltButton) != AltButton){
+    if (!isActive())
+      manager->raiseSoundEvent("Window Activate");
     manager->activateClient( this );
     if (ev->button() == LeftButton)
       manager->raiseClient( this );
@@ -1533,7 +1537,7 @@ void Client::maximize(int mode){
 
   adjustSize();
   if (state == NormalState)
-    KWM::raiseSoundEvent("Window Maximize");
+    manager->raiseSoundEvent("Window Maximize");
     animate_size_change(geometry_restore, geometry,
 			getDecoration()==1,
 			title_rect.x(), 
@@ -1551,7 +1555,7 @@ void Client::unMaximize(){
     return;
   maximized = FALSE;
   if (geometry != geometry_restore && state == NormalState)
-    KWM::raiseSoundEvent("Window UnMaximize");
+    manager->raiseSoundEvent("Window UnMaximize");
     animate_size_change(geometry, geometry_restore,
 			getDecoration()==1,
 			title_rect.x(), 
@@ -1626,9 +1630,9 @@ void Client::stickyToggled(bool depressed){
 
   if (state == NormalState && !trans) {
     if (depressed)
-      KWM::raiseSoundEvent("Window Sticky");
+      manager->raiseSoundEvent("Window Sticky");
     else
-      KWM::raiseSoundEvent("Window UnSticky");
+      manager->raiseSoundEvent("Window UnSticky");
   }
   manager->changedClient(this);
   buttonSticky->setPixmap(*pm);
