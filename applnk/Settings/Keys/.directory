@@ -1,4 +1,5 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Keys
+Name[ru]=Клавиши
 SortOrder=standard.kdelnk,global.kdelnk

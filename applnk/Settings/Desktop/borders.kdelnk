@@ -5,5 +5,7 @@ Icon=desktop_settings.xpm
 Type=Application
 Comment=Desktop Border Options
 Comment[pl]=Opcje brzegu biurka
+Comment[ru]=Установки границ рабочего стола
 Name=Borders
 Name[pl]=Brzeg
+Name[ru]=Границы

@@ -15,5 +15,6 @@ Name[hu]=Asztal
 Name[pt]=Ambiente de Trabalho
 Name[pt_BR]=Ambiente de Trabalho
 Name[ro]=Ecran
+Name[ru]=Рабочий стол
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop_settings.xpm

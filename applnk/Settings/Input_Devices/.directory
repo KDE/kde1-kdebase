@@ -16,5 +16,6 @@ Name[it]=Dispositivi Input
 Name[pt]=Dispositivos de Entrada
 Name[pt_BR]=Dispositivos de Entrada
 Name[ro]=Dispozitive de Intrare
+Name[ru]=Устройства ввода
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=input_devices_settings.xpm
