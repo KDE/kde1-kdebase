@@ -18,7 +18,7 @@
 #include <qpixmap.h>
 
 enum KvtScrollbar{kvt_right, kvt_left};
-enum KvtSize{kvt_tiny, kvt_small, kvt_medium, kvt_large, kvt_huge};
+enum KvtSize{kvt_normal, kvt_tiny, kvt_small, kvt_medium, kvt_large, kvt_huge};
 typedef struct {
   char *text;
   int x, y;

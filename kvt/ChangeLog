@@ -1,4 +1,6 @@
 
+  - fixed the tiny "huge"-bug 
+	
   - Class of characters that form a word can be extenden by the user
     (M G Berberich)
 

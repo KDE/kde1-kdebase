@@ -101,7 +101,7 @@ char ** o_argv;
 void kvt_set_fontnum(char *s_arg){
   int i;
   QString s = s_arg;
-  for (i=kvt_tiny; i<=kvt_huge; i++){
+  for (i=kvt_normal; i<=kvt_huge; i++){
     if (s == kvt_sizes[i])
       font_num = i;
   }
