@@ -22,6 +22,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 #include <signal.h>
 #include <X11/Xlib.h>
 #include <X11/X.h>
@@ -38,50 +39,66 @@ MdCh_IHDR	*IhdrChunk;
 MdCh_STAT	*StatChunk;
 MediaCon	m;
 Display		*globalDisplay;
+pid_t		maudioPID = 0;
 
 
-void MYexit(int retcode)
+
+
+
+/*
+ * disconnectChild() removes the maudio process. This could
+ * be done by using the MdDisconnect() command. But in case
+ * of severe trouble (SHM segment garbled), I still want to
+ * make sure, maudio does get killed.
+ * So I send maudio a "QUIT" signal, which always should work.
+ */
+void disconnectChild()
 {
+  if (maudioPID != 0)
+    kill(maudioPID, SIGQUIT);
+}
+
+
+// myExit(int retcode) ---------------------------------------------------
+//  Cleans up anything that might be neccesary and then exits via
+//  exit(). Thus this function never returns.
+void myExit(int retcode)
+{
+  disconnectChild();
+  unlink (KMServerPidFile);
   exit (retcode);
 }
 
-void disconnectChild()
-{
-  MdDisconnect(&m);
-}
-
-// Signal handler for dying child. Remove communication id file and exit right now.
+// signal handler for various signals. Calls myExit() -------------------
 void mysigchild(int signum)
 {
-  unlink (KMServerPidFile);
-  if ( (signum != SIGSEGV) && (signum != SIGBUS) )
-    disconnectChild();  // don't try to clean this up in case of real trouble
-  MYexit(1);  
+  myExit(1);  
 }
 
-
+// fatalexit() prints out a string and calls myExit() -------------------
 void fatalexit(char *s)
 {
-  fprintf(stderr, s);
-  MYexit(-1);
+  fprintf(stdout, s);
+  myExit(2);
+}
+
+// myXerrorHandler() is my X11 fatal IO-Error-Handler -------------------
+// It quits right away with a message.
+int myXerrorHandler(Display *dsp)
+{
+  fatalexit("kaudioserver: Catching fatal X IO Error. Cleaning up.\n");
 }
 
 
-// call this only *once*
+// Initialization of Mediatool library connection
 void baseinitMediatool(void)
 {
   MdConnectInit();
 }
 
 
-int myXerrorHandler(Display *dsp)
-{
-  disconnectChild();
-  fatalexit("kaudioserver: Catching fatal X IO Error. Cleaning up.\n");
-  // We should never reach this line
-  return 1;
-}
 
+// Create a dummy X11 connection ----------------------------------------
 void initXconnection()
 {
   globalDisplay = XOpenDisplay(NULL);
@@ -92,6 +109,7 @@ void initXconnection()
 	0,
         BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)),
         BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)) );
+    //XMapWindow(dpy, w);
   }
 }
 
@@ -105,7 +123,9 @@ void initXconnection()
 int initMediatool(char *Cid)
 {
   if (Cid[0]!=0) {
+    // There is a string with length > 0
     int CommId = atoi(Cid);
+    // Try to connect to given connection
     MdConnect(CommId, &m);
     if (m.shm_adr != NULL) {
       // OK, there is an old connection
@@ -117,12 +137,16 @@ int initMediatool(char *Cid)
     }
   }
 
+  // We only get here, if there is no living Server ---------------------
   MdConnectNew(&m);
   if ( m.shm_adr == NULL )
     fatalexit("Could not create media connection.\n");
 
+  // Great, a new connection could be created
   IhdrChunk   = (MdCh_IHDR*)FindChunkData(m.shm_adr, "IHDR");
   if (!IhdrChunk)
+    // If there's no header chunk ("IHDR"), something has terribly got
+    // messed up or someone is trying to play bad games with us.
     fatalexit("No IHDR chunk.\n");
 
   return(2);
@@ -164,7 +188,7 @@ int main ( int argc , char **argv )
 
   initXconnection();
   if ( globalDisplay == 0 ) {
-    fprintf(stderr, "kaudioserver: Can't connect to the X Server.\n" \
+    fprintf(stdout, "kaudioserver: Can't connect to the X Server.\n" \
 	" Audio system might not terminate at end of session.\n");
   }
 
@@ -219,21 +243,23 @@ int main ( int argc , char **argv )
   int forkret=fork();
   if (forkret==0) {
     execvp( MaudioText, Opts);
-    fprintf(stderr,"Failed starting audio server!\n");
+    fprintf(stdout,"Failed starting audio server!\n");
   }
   else if (forkret > 0) {
-    /* Stupid SysV IPC throws away SHM piece, when autodeletion is enabled and
-     * when calling exec(). So I just idle around here, waiting for the child
-     * to die :´-)
-     */
+    maudioPID = forkret;
+
     signal(SIGCHLD,mysigchild);
     signal(SIGHUP ,mysigchild);
-    signal(SIGKILL,mysigchild);
     signal(SIGQUIT,mysigchild);
     signal(SIGBUS ,mysigchild);
     signal(SIGSEGV,mysigchild);
     signal(SIGTERM,mysigchild);
  
+    /*
+     * Stupid SysV IPC throws away SHM piece, when autodeletion is enabled
+     * and when calling exec(). So I just idle around here, waiting for the
+     * child to die :'-|
+     */
     while(1) {
       XEvent *event_return;
       if (globalDisplay != 0) {
@@ -245,8 +271,7 @@ int main ( int argc , char **argv )
     }
   }
 
-  fprintf(stderr,"Failed starting audio server!\n");
-  unlink (KMServerPidFile);
-  MYexit(1);
+  fprintf(stdout,"Failed starting audio server!\n");
+  myExit(1);
 }
 
