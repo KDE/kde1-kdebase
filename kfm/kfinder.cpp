@@ -226,6 +226,11 @@ void KFinder::itemList( QList<KFinderItem> &_list )
     }
 }
 
+void KFinder::setBranchVisible( KFinderItem* startItem )
+{
+  finderWin->setBranchVisible( startItem );
+}
+
 KFinder::~KFinder()
 {
     if ( finderWin )
@@ -350,6 +355,48 @@ int KFinderWin::cellWidth( int _column )
     return finder->currentSizeList[ _column ];
 }
 
+void KFinderWin::setBranchVisible( KFinderItem* startItem )
+{
+  KFinderItem* curItem;
+  int i1 = -1, i2 = -1;
+  int branchLevel = -1;
+  bool bFound = false;
+  QListIterator<KFinderItem> it( itemList );
+  //for ( ; it.current(); ++it )
+  for ( curItem = finder->first(); curItem != 0; curItem = finder->next() )
+  {
+    if( bFound ){
+      i2++;
+      if( curItem->getLevel() <= branchLevel )
+        break;
+    }
+    else {
+      i1++;
+      if( curItem == startItem ) {
+	branchLevel = curItem->getLevel();
+	i2 = i1;
+	bFound = true;
+      }    
+    }
+  }
+  
+  int lastRow = lastRowVisible();
+  if( (i2 - i1) > lastRow - topCell() - 2 )
+    setTopCell( i1 ? (i1 - 1) : i1 );
+  else if( i2 > lastRow ) {
+         int newTopCell = topCell() + ( i2 - lastRow );
+         if( findRow(minViewY() + cellHeight() - 1) != topCell())
+           newTopCell++;
+         setTopCell( newTopCell );
+       }
+       else if( i1 < topCell() ) {
+         int newTopCell = topCell() - ( topCell() - i1 );
+	 if( newTopCell )
+           newTopCell--;
+         setTopCell( newTopCell );
+       }	 
+}
+
 void KFinderWin::mousePressEvent( QMouseEvent *_ev )
 {
     int row = findRow( _ev->pos().y() );
@@ -380,9 +427,13 @@ KFinderItem::KFinderItem( KFinder *_finder )
 
 void KFinderItem::mousePressEvent( QMouseEvent *_ev, const QPoint &_globalPoint )
 {
+  bool wasClosed = !isOpen();
   pressed( _ev, _globalPoint );
 
   finder->updateTree();
+
+  if( wasClosed && isOpen() )
+    finder->setBranchVisible( this );
 }
 
 void KFinderItem::fillItemList( QList<KFinderItem>& _list, int _level  )

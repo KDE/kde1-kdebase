@@ -113,6 +113,7 @@ public:
     void setAutoUpdate( bool enable ) { QTableView::setAutoUpdate(enable); }
     bool autoUpdate( void ) { return QTableView::autoUpdate(); }
 
+    void setBranchVisible( KFinderItem* startItem );
 public slots:
     void slotDropEvent( KDNDDropZone *_zone );
     
@@ -155,6 +156,7 @@ public:
     void setColors(QColor bgcolor,QColor textcolor);
     void initColors();
 
+    void setBranchVisible( KFinderItem* startItem );
 signals:
     void buttonPressed( int );
     void drop( QStrList &_urls, const QPoint &_point );
