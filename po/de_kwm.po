@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-31 17:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: error.C:28
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: Es scheint, daß schon ein anderer Windowmanager läuft, kwm angehalten\n"
+
+#: error.C:42
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
+
+#: kwm.C:73
+msgid ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No warranty. Please see the README's\n"
+msgstr ""
+"Version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     basierend auf 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     basierend auf 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Teile von 9wm 1.1 Copyright (c) 1994 David Hogan übernommen.\n"
+"     Jegliche Gewährleistung ausgeschlossen\n"
+
+#: kwm.C:79
+#, c-format
+msgid "patch level %d"
+msgstr "Unterversion %d"
+
+#: kwm.C:154
+msgid "usage: kwm [-version] [-exec prog] \n"
+msgstr "Gebrauch: kwm [-version] [-exec prog]\n"
+
+#: kwm.C:566
+msgid "Desktop"
+msgstr "Arbeitsplatz"
+
+#: kwm.C:731
+msgid "kwm: exiting on signal\n"
+msgstr "kwm: Abbruch durch Signal\n"
+
+#: main.C:371
+msgid "&Help on desktop"
+msgstr "&Hilfe zum Desktop"
+
+#: main.C:372
+msgid "&Execute command"
+msgstr "Befehl &Ausführen"
+
+#: main.C:373
+msgid "&Display properties"
+msgstr "&Bildschirmeigenschaften"
+
+#: main.C:374
+msgid "&Refresh desktop"
+msgstr "Bildschirm &neu aufbauen"
+
+#: main.C:375
+msgid "&Arrange icons"
+msgstr "&Icons neu anordnen"
+
+#: main.C:377
+msgid "&Lock screen"
+msgstr "Bildschirm&schoner"
+
+#: main.C:378
+msgid "Lo&gout"
+msgstr "KDE Be&enden"
+
+#: main.C:1093
+msgid "One"
+msgstr "Eins"
+
+#: main.C:1095
+msgid "Two"
+msgstr "Zwei"
+
+#: main.C:1097
+msgid "Three"
+msgstr "Drei"
+
+#: main.C:1099
+msgid "Four"
+msgstr "Vier"
+
+#: main.C:1101
+msgid "Five"
+msgstr "Fünf"
+
+#: main.C:1103
+msgid "Six"
+msgstr "Sechs"
+
+#: main.C:1105
+msgid "Seven"
+msgstr "Sieben"
+
+#: main.C:1107
+msgid "Eight"
+msgstr "Acht"
+
+#: main.C:1141
+msgid "(Un) Ma&ximize"
+msgstr "Ma&ximieren An/Aus"
+
+#: main.C:1142
+msgid "&Iconify"
+msgstr "Mi&nimieren"
+
+#: main.C:1143
+msgid "&Move"
+msgstr "&Verschieben"
+
+#: main.C:1144
+msgid "&Resize"
+msgstr "&Größe ändern"
+
+#: main.C:1145
+msgid "(Un) &Sticky"
+msgstr "An&heften An/Aus"
+
+#: main.C:1146
+msgid "&To Desktop"
+msgstr "Auf &Arbeitsplatz"
+
+#: main.C:1148
+msgid "&Close"
+msgstr "&Schließen"
+
+#: main.C:1149
+msgid "&Destroy"
+msgstr "&Vernichten"
+
+#: minicli.C:65
+msgid "Command:"
+msgstr "Ausführen"
