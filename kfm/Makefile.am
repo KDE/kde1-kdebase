@@ -62,6 +62,7 @@ kfmexec.cpp: kfmexec.moc
 SUBDIRS = kfmwarn client kioslave pics Desktop
 
 install-local-exec: 
+	$(mkinstalldirs) $(bindir)
 	$(INSTALL_DATA) ./unpack $(bindir)
 
 install-data-local:
@@ -71,7 +72,6 @@ install-data-local:
 	$(INSTALL_DATA) config/desktop $(CONFIGDIR)
 	$(mkinstalldirs) $(KDEDIR)/share
 	$(INSTALL_DATA) magic $(KDEDIR)/share
-	(cd Desktop && $(MAKE) install)
 
 IPC:    clientIPC kioIPC
 
