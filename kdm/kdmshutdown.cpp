@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:52:11 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Fri Jul 11 14:16:14 1997
-// Update Count     : 12
+// Last Modified On : Sun Oct 12 16:27:00 1997
+// Update Count     : 15
 // Status           : Unknown, Use with caution!
 // 
 
@@ -201,7 +201,8 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
      // Passwd line edit
      if( mode == KDMConfig::RootOnly) {
 	  pswdEdit = new QLineEdit( winFrame);
-	  set_min( pswdEdit);
+	  //set_min( pswdEdit);
+	  pswdEdit->setMinimumHeight( pswdEdit->sizeHint().height());
 	  //pswdEdit->setEchoMode( QLineEdit::Password);
 	  QColorGroup   passwdColGroup(
 	       QApplication::palette()->normal().foreground(),
@@ -228,7 +229,7 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
      okButton->setFocusPolicy( StrongFocus);
      cancelButton = new QPushButton( klocale->translate("Cancel"), winFrame);
      set_min( cancelButton);
-     cancelButton->setDefault( true);
+     //cancelButton->setDefault( true);
      cancelButton->setFocusPolicy( StrongFocus);
      h += cancelButton->height() + 10;
      w = QMAX( (okButton->width() + 10 + cancelButton->width()), w);
@@ -251,11 +252,6 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
 void
 KDMShutdown::rb_clicked( int id)
 {
-     /*    if( id)
-	  cur_action = restart;
-     else
-	  cur_action = shutdown;
-	  */
      switch( id) {
      case 0:
 	  cur_action = shutdown;

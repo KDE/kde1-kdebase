@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Wed Oct  8 22:21:46 1997
-// Update Count     : 61
+// Last Modified On : Sun Oct 12 16:30:08 1997
+// Update Count     : 67
 // Status           : Unknown, Use with caution!
 // 
 
@@ -66,7 +66,6 @@ MyApp::MyApp(int &argc, char **argv ):KApplication(argc, argv){
 
 bool 
 MyApp::x11EventFilter( XEvent * ev){
-     //printf("Qt: got one event %d for window %ld\n", ev->type, ev->xany.window);
      if( ev->type == KeyPress){
 	  // This should go away
 	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
@@ -74,19 +73,9 @@ MyApp::x11EventFilter( XEvent * ev){
      }
      // Hack to tell FDialogs to take focus
      if( ev->type == ConfigureNotify) {
-	  QEvent e( Event_Show);
-	  QWidgetList *list = topLevelWidgets();
-	  QWidgetListIt it( *list);
-	  while( it.current()) {
-	       if( it.current()->winId() == 
-		   (( XConfigureEvent *) ev)->window) {
-		    MyApp::sendEvent( it.current(), &e);
-		    break;
-	       }
-	       ++it;
-	  }
-
-	  delete list;
+	  QEvent e( Event_Show);	  
+	  QWidget* target = QWidget::find( (( XConfigureEvent *) ev)->window);
+	  MyApp::sendEvent( target, &e);
      }
      return FALSE;
 }
@@ -333,10 +322,6 @@ KGreeter::go_button_clicked(){
 void
 KGreeter::ReturnPressed()
 {
-     /*if (!isVisible()) {
-	  printf("KGreeter: Not visible\n");
-	  return;
-     }*/
      if( !goButton->isEnabled())
 	  return;
      if( loginEdit->hasFocus()) {

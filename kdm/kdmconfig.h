@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:09 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Mon Oct  6 14:22:03 1997
-// Update Count     : 9
+// Last Modified On : Sun Oct 12 16:00:08 1997
+// Update Count     : 10
 // Status           : Unknown, Use with caution!
 // 
 
@@ -46,7 +46,6 @@ public:
 	// None is defined as a macro somewhere in an X header. GRRRR.
      enum { KNone, All, RootOnly, ConsoleOnly };
 private:
-     void           initStream( const char*);
      void           getConfig();
      KVItemList*    getUsers( QString s = NULL, bool = false);
      QString        kdedir;

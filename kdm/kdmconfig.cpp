@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:49 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Mon Oct  6 14:22:07 1997
-// Update Count     : 49
+// Last Modified On : Sun Oct 12 16:05:54 1997
+// Update Count     : 52
 // Status           : Unknown, Use with caution!
 // 
 
@@ -36,21 +36,7 @@ static void semsplit( const QString& str, QStrList& result)
 KDMConfig::KDMConfig( const char* rc)
 {
      kdedir = rc;
-     initStream( QString(kdedir) + KDMRC);
      getConfig();
-}
-
-void
-KDMConfig::initStream( const char* rc)
-{
-  /* kalle     cf = new QFile( rc);
-     if( cf->exists()) {
-	  cf->open( IO_ReadOnly);
-	  cs = new QTextStream( cf);
-     } else {
-	  cs = NULL;
-     }
-	 */
 }
 
 KVItemList*
