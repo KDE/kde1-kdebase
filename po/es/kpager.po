@@ -3,20 +3,19 @@ msgstr ""
 "POT-Creation-Date: 1998-11-27 18:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-30 07:19:56+0000\n"
-"From: antonio <antlarr@arrakis.es>\n"
+"From: Antonio Larrosa <larrosa@kde.org>\n"
 "Xgettext-Options: -C -ki18n -x /opt/kde/include/kde.pot\n"
 "Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp "
 "kpagerclient.cpp kpager.cpp main.cpp\n"
+"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
 #: kpager.cpp:72
-#, fuzzy
 msgid "Toggle Global Desktop"
-msgstr "Ocultar Escritorio &Global"
+msgstr "(Des)Activar Escritorio Global"
 
 #: kpager.cpp:74
-#, fuzzy
 msgid "Toggle Menubar"
-msgstr "Ocultar barra de menú"
+msgstr "(Des)Activar Barra de menú"
 
 #: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
@@ -32,7 +31,7 @@ msgstr "Ocultar barra de menú"
 
 #: kpager.cpp:95 kpager.cpp:337
 msgid "&2 Rows"
-msgstr ""
+msgstr "&2 Filas"
 
 #: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
@@ -80,28 +79,25 @@ msgstr ""
 "bajo ciertas condiciones\n"
 
 #: kpager.cpp:333
-#, fuzzy
 msgid "Show &Menubar"
-msgstr "Ocultar barra de menú"
+msgstr "&Mostrar Barra de menú"
 
 #: kpager.cpp:388
 msgid "&Maximize"
-msgstr ""
+msgstr "&Maximizar"
 
 #: kpager.cpp:389
-#, fuzzy
 msgid "&Iconify"
-msgstr "Icono"
+msgstr "&Iconizar"
 
 #: kpager.cpp:391
 msgid "&UnSticky"
-msgstr ""
+msgstr "Des&pegar"
 
 #: kpager.cpp:393
 msgid "&Sticky"
-msgstr ""
+msgstr "&Pegar"
 
 #: kpager.cpp:395
-#, fuzzy
 msgid "&To Desktop"
-msgstr "Ocultar Escritorio &Global"
+msgstr "&Al escritorio"
