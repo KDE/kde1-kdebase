@@ -37,6 +37,7 @@ kblankscrn_kss_SOURCES = $(BASE_SRCS) blankscrn.cpp
 blankscrn.cpp: blankscrn.moc
 
 kbat_kss_SOURCES = $(BASE_SRCS) bat.cpp
+kbat_kss_LDADD = $(LDADD) @XPMLIB@
 bat.cpp: bat.moc
 
 krock_kss_SOURCES = $(BASE_SRCS) rock.cpp
