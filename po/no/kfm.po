@@ -37,12 +37,12 @@ msgstr "Kjør"
 # kfmgui.cpp:304
 #: kfmgui.cpp:311
 msgid "Open &Terminal"
-msgstr "Åpne Terminal"
+msgstr "Åpne &terminal"
 
 # kfmgui.cpp:307
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "Åpne ..."
+msgstr "&Åpne ..."
 
 # kfmgui.cpp:309
 #: kfmgui.cpp:316
@@ -1582,70 +1582,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# kfmgui.cpp:299
-#~ msgid "&New Window"
-#~ msgstr "Nytt Vindu"
-
-# kfmgui.cpp:545
-#~ msgid "Stop"
-#~ msgstr "Stopp"
-
-# bookmark.cpp:259 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1529
-# kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
-# kbind.cpp:1669 kbind.cpp:1684 kbind.cpp:1704 kbind.cpp:1716 kbind.cpp:1733
-# kbind.cpp:1855 kbind.cpp:1867 kbind.cpp:1912 kbind.cpp:1954 kfmexec.cpp:60
-# kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:570 kfmgui.cpp:710
-# kfmman.cpp:296 kfmman.cpp:1044 kfmman.cpp:1211 kfmman.cpp:1237
-# kfmprops.cpp:358 kfmprops.cpp:609 kfmprops.cpp:635 kfmprops.cpp:815
-# kfmprops.cpp:937 kfmprops.cpp:1064 kfmprops.cpp:1380 kfmprops.cpp:1592
-# kfmprops.cpp:1768 kfmserver.cpp:39 kfmserver.cpp:157 kfmserver.cpp:237
-# kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301 kfmtree.cpp:163
-# kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
-# kfmview.cpp:351 kfmview.cpp:370 kfmview.cpp:376 kfmview.cpp:439
-# kfmview.cpp:445 kfmview.cpp:451 kfmview.cpp:526 kfmview.cpp:552
-# kfmview.cpp:570 kfmview.cpp:576 kfmview.cpp:582 kiojob.cpp:224
-# kiojob.cpp:232 kiojob.cpp:239 kiojob.cpp:264 kiojob.cpp:283 kiojob.cpp:294
-# kiojob.cpp:316 kiojob.cpp:335 kiojob.cpp:539 kiojob.cpp:779 kiojob.cpp:810
-# kiojob.cpp:851 kiojob.cpp:1658 krenamewin.cpp:120 root.cpp:1087
-# root.cpp:1105 root.cpp:1111 root.cpp:1117 root.cpp:1192 root.cpp:1694
-# root.cpp:1719
-#~ msgid "KFM Error"
-#~ msgstr "KFM Feil"
-
-# kfmman.cpp:1229 kfmtree.cpp:155 main.cpp:243
-#~ msgid "Move"
-#~ msgstr "Flytt"
-
-# kfmman.cpp:1172 kfmtree.cpp:233 main.cpp:244
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-# htmlopts.cpp:35
-#~ msgid "Font Size"
-#~ msgstr "Skriftstørrelse"
-
-# htmlopts.cpp:39
-#~ msgid "Small"
-#~ msgstr "Liten"
-
-# htmlopts.cpp:43
-#~ msgid "Medium"
-#~ msgstr "Midium"
-
-# htmlopts.cpp:47
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-# kiojob.cpp:1194 kiojob.cpp:1202 kiojob.cpp:1211 kiojob.cpp:1219
-# kiojob.cpp:1227 kiojob.cpp:1235 kiojob.cpp:1243 kiojob.cpp:1251
-# kiojob.cpp:1259 kiojob.cpp:1267 kiojob.cpp:1285 kiojob.cpp:1293
-# kiojob.cpp:1300 kiojob.cpp:1311 kiojob.cpp:1326 kiojob.cpp:1334
-# kiojob.cpp:1342 kiojob.cpp:1350 kiojob.cpp:1358 kiojob.cpp:1366
-# kiojob.cpp:1374 kiojob.cpp:1392 kiojob.cpp:1400 kiojob.cpp:1408
-#~ msgid "Continue"
-#~ msgstr "Fortsett"
-
-# kkfmoptdlg.cpp:24
-#~ msgid "&Fonts"
-#~ msgstr "Skri&fttyper"
