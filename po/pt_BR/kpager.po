@@ -9,31 +9,31 @@ msgstr ""
 
 #: kpager.cpp:77 kpager.cpp:156
 msgid "Hide &Global Desktop"
-msgstr ""
+msgstr "Esconder Ambiente &Global"
 
 #: kpager.cpp:79 kpager.cpp:149
 msgid "Show &Global Desktop"
-msgstr ""
+msgstr "Mostrar &Ambiente Global"
 
 #: kpager.cpp:81
 msgid "Hide &Menubar"
-msgstr ""
+msgstr "Esconder &Barra de menu"
 
 #: kpager.cpp:85
 msgid "Plain"
-msgstr ""
+msgstr "Plano"
 
 #: kpager.cpp:88
 msgid "Icon"
-msgstr ""
+msgstr "Ícone"
 
 #: kpager.cpp:91
 msgid "Pixmap"
-msgstr ""
+msgstr "Pixmap"
 
 #: kpager.cpp:95
 msgid "Draw Mode"
-msgstr ""
+msgstr "Modo Desenho"
 
 #: kpager.cpp:99
 msgid ""
@@ -49,3 +49,14 @@ msgid ""
 "This is free software, and you are welcome to redistribute it\n"
 "under certain conditions\n"
 msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Málaga (Espanha)\n"
+"\n"
+"Home-page do KPager: http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager vem SEM QUALQUER GARANTIA; para detalhes, veja o arquivo COPYING.\n"
+"Este é um software gratuito, e você é encorajado a redistribuí-lo\n"
+"sob certas condições.\n"
