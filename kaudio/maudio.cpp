@@ -78,6 +78,10 @@ int main(char argc, char **argv)
 	{ /* Terminate, when Exit pressed */
 	  goto exit_pos;
 	}
+      if ( EventCounterRead(&(KeysChunk->posnew), 0) )
+	{ /* Reposition audio stream */
+	  ASample->seek(KeysChunk->pos_new,0);
+	}
       if ( EventCounterRead(&(KeysChunk->stop), 0) )
 	{ /* Terminate playing, when Stop pressed */
 #ifdef DEBUG
