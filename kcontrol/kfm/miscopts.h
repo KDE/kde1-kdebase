@@ -2,9 +2,7 @@
 //
 // "Misc Options" Tab for KFM configuration
 //
-// (c) Martin R. Jones 1996
-//
-// Port to KControl
+// (c) Sven Radej 1998
 // (c) David Faure 1998
 
 #ifndef __KFM_MISC_OPTIONS_H
@@ -24,9 +22,9 @@ extern KConfigBase *g_pConfig;
 //-----------------------------------------------------------------------------
 // The "Misc Options" Tab contains :
 
-// Root Icons settings (gridwidth/height, transparent text, bg & fg color)
-// ... should create a "Desktop Icons" tab.
-// Misc settings (allow per-url settings, tree view follows navigation)
+// Allow per-url settings         (Sven)
+// Tree view follows navigation   (David)
+// ... there is room for others :))
 
 class KMiscOptions : public KConfigWidget
 {
@@ -38,24 +36,7 @@ public:
         virtual void applySettings();
         virtual void defaultSettings();
  
- private slots:
-        void slotIconFgColorChanged(const QColor &);
-        void slotIconBgColorChanged(const QColor &);
-        void makeBgActive( bool );
- 
 private:
-        QLabel * bgLabel;
-        // Root Icons Settings
-        KNumericSpinBox *hspin;
-        KNumericSpinBox *vspin;
-        QCheckBox *iconstylebox;
-        KColorButton *fgColorBtn;
-        KColorButton *bgColorBtn;
-
-        QColor icon_fg;
-        QColor icon_bg;
-
-        // Misc Settings
         QCheckBox *urlpropsbox;
         QCheckBox *treefollowbox;
 };

@@ -14,6 +14,8 @@
 #include "khttpoptdlg.h"
 #include "useragentdlg.h"
 
+#include "rootopts.h"
+
 KConfigBase *g_pConfig = 0L;
 
 class KfmApplication : public KControlApplication
@@ -33,6 +35,8 @@ private:
   KProxyOptions *m_pProxyOptions;
   KHTTPOptions *m_pHTTPOptions;
   UserAgentOptions *m_pUserAgentOptions;
+
+  KRootOptions *m_pRootOptions;
 };
 
 KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
@@ -45,6 +49,8 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
   m_pProxyOptions = 0L;
   m_pHTTPOptions = 0L;
   m_pUserAgentOptions = 0L;
+
+  m_pRootOptions = 0L;
 
   if ( runGUI() )
   {
@@ -62,9 +68,14 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
     if (!pages || pages->contains("useragent"))
       addPage( m_pUserAgentOptions = new UserAgentOptions( dialog, "useragent"),
                i18n("User &Agent"), "" );
+
+    if (!pages || pages->contains("icons"))
+      addPage( m_pRootOptions = new KRootOptions( dialog, "icons" ),
+               i18n("&Desktop Icons"), "" );
 	    
     if ( m_pFontOptions || m_pColorOptions || m_pMiscOptions
-         || m_pProxyOptions || m_pHTTPOptions || m_pUserAgentOptions)
+         || m_pProxyOptions || m_pHTTPOptions || m_pUserAgentOptions
+         || m_pRootOptions)
     {
       QSize t;
       int w = 0, h = 0;
@@ -116,13 +127,21 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
 	if ( h < t.height() )
 	  h = t.height();
       }
+      if ( m_pRootOptions )
+      {
+	t = m_pRootOptions->minimumSize();
+	if ( w < t.width() )
+	  w = t.width();
+	if ( h < t.height() )
+	  h = t.height();
+      }
       
       dialog->resize(w,h);
       dialog->show();
     }
     else
     {
-      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent}]\n"), argv[0]);
+      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"), argv[0]);
       justInit = true;
     }  
   }
@@ -144,6 +163,10 @@ void KfmApplication::init()
     m_pHTTPOptions->loadSettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->loadSettings();
+
+  if ( m_pRootOptions )
+    m_pRootOptions->loadSettings();
+
 }
 
 void KfmApplication::defaultValues()
@@ -161,6 +184,9 @@ void KfmApplication::defaultValues()
     m_pHTTPOptions->defaultSettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->defaultSettings();
+
+  if ( m_pRootOptions )
+    m_pRootOptions->defaultSettings();
 }
 
 void KfmApplication::apply()
@@ -178,6 +204,9 @@ void KfmApplication::apply()
     m_pHTTPOptions->applySettings();
   if ( m_pUserAgentOptions )
     m_pUserAgentOptions->applySettings();
+
+  if ( m_pRootOptions )
+    m_pRootOptions->applySettings();
 
   if ( fork() == 0 )
   { 
@@ -206,6 +235,3 @@ int main(int argc, char **argv)
   delete g_pConfig;
   return ret;
 }
-
-
-

@@ -4,10 +4,13 @@ LDFLAGS = $(all_libraries) $(KDE_RPATH)
 LDADD =       $(LIB_KDEUI) 
 
 bin_PROGRAMS = kcmkfm
-BUILT_SOURCES = htmlopts.moc miscopts.moc  kproxydlg.moc khttpoptdlg.moc useragentdlg.moc
-noinst_HEADERS = htmlopts.h miscopts.h  kproxydlg.h khttpoptdlg.h useragentdlg.h
+BUILT_SOURCES = htmlopts.moc miscopts.moc  kproxydlg.moc khttpoptdlg.moc \
+	useragentdlg.moc rootopts.moc
+noinst_HEADERS = htmlopts.h miscopts.h  kproxydlg.h khttpoptdlg.h \
+	useragentdlg.h rootopts.h
 
-kcmkfm_SOURCES = main.cpp htmlopts.cpp miscopts.cpp  kproxydlg.cpp khttpoptdlg.cpp useragentdlg.cpp
+kcmkfm_SOURCES = main.cpp htmlopts.cpp miscopts.cpp  kproxydlg.cpp khttpoptdlg.cpp \
+	useragentdlg.cpp rootopts.cpp
 
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkfm_SOURCES) && mv messages.po ../../po/kcmkfm.pot
@@ -34,3 +37,7 @@ khttpoptdlg.moc: khttpoptdlg.h
 useragentdlg.cpp:useragentdlg.moc
 useragentdlg.moc: useragentdlg.h
 	$(MOC) useragentdlg.h -o useragentdlg.moc
+
+rootopts.cpp:rootopts.moc
+rootopts.moc: rootopts.h
+	$(MOC) rootopts.h -o rootopts.moc
