@@ -344,6 +344,10 @@ static const char *parseNameValue(const char *header,
 static void stripDomain(const char *_fqdn, QString &_domain)
 {
     _domain = _fqdn;
+    // Strip trailing dots 
+    while((_domain.length() > 0) && (_domain[_domain.length()-1] == '.'))
+        _domain.remove(_domain.length()-1, 1);
+
     int dot_pos = _domain.find('.');
 
     if (dot_pos != -1)
@@ -526,20 +530,6 @@ bool KCookieJar::extractDomain(const char *_url,
     _path = kurl.path();
     _path = _path.lower();
             
-    int dot_pos = _domain.find('.');
-
-    if (dot_pos != -1)
-    {
-        // Domain contains a '.': remove the hostname from the domain
-        _domain.remove(0, dot_pos);
-        
-        if (_domain.find('.', 1) == -1)
-        {
-           // Domain part should contain at least another '.'
-           // Use the host part instead
-           _domain = _fqdn;
-        }
-    }
     return true;
 }
                                                    
@@ -735,6 +725,14 @@ KCookieAdvice KCookieJar::cookieAdvice(KCookiePtr cookiePtr)
         return KCookieReject;
     }
 
+    if ((cookiePtr->name.find('\"') != -1) ||
+        (cookiePtr->value.find('\"') != -1))
+    {
+        warning("WARNING: Host %s tries to set a suspicious cookie for domain %s",
+              cookiePtr->host.data(), cookiePtr->domain.data());
+        return KCookieReject;
+    }
+
     KCookieList *cookieList = cookieDomains[domain.data()];
     KCookieAdvice advice;
     
@@ -917,10 +915,10 @@ bool KCookieJar::saveCookies(const char *_filename)
     	domain != 0;
     	domain = domainList.next())
     {
+        bool domainPrinted = false;
+
 	KCookieList *cookieList = cookieDomains[domain];
         KCookiePtr cookie=cookieList->first();
-        if (cookie)
-            fprintf(fStream, "[%s]\n", domain);
 
 	for (; cookie != 0;)
         {
@@ -933,6 +931,11 @@ bool KCookieJar::saveCookies(const char *_filename)
 	    }
 	    else if (cookie->expireDate != 0)
             {
+                if (!domainPrinted)
+                {
+                    domainPrinted = true;
+                    fprintf(fStream, "[%s]\n", domain);
+                }
                 // Store persistent cookies
                 QString path("\"");
                 path += cookie->path.data();
