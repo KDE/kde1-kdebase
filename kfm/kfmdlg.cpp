@@ -11,6 +11,7 @@
 #include "kfmdlg.h"
 #include "kURLcompletion.h"
 #include "open-with.h"
+#include "config-kfm.h"
 
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
         : QDialog( parent, 0L, true )
@@ -125,6 +126,10 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   cancel = new QPushButton( klocale->translate("Cancel"), this );
   cancel->setGeometry( 280, 70, 80, 25 );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
+
+  terminal = new QCheckBox( klocale->translate("Run in terminal"), this );
+  terminal->adjustSize();
+  terminal->setGeometry( 360-terminal->width(), 10, terminal->width(), 15 );
   
   edit->setText( _value );
   edit->setFocus();
@@ -172,7 +177,7 @@ void OpenWithDlg::resizeEvent(QResizeEvent *){
 
   if(m_pTree){
 
-    label->setGeometry( 10, 10, width() - 20, 15 );
+    label->setGeometry( 10, 10, width() - terminal->width()-20, 15 );
     edit->setGeometry( 10, 35, width() - 20, 25 );
     ok->setGeometry( 10,height() - 30, (width()-20-30)/4,25 );
     browse->setGeometry( 10 + (width()-20-30)/4 + 10
@@ -182,6 +187,7 @@ void OpenWithDlg::resizeEvent(QResizeEvent *){
     cancel->setGeometry( 10 + 3*((width()-20-30)/4) + 3*10 ,
 			 height() - 30, (width()-20-30)/4, 25 );
     m_pTree->setGeometry( 10, 70, width() - 20, height() - 110 );
+    terminal->setGeometry( 350-terminal->width(), 10, terminal->width(), 15);
 
   }
   else{
@@ -225,6 +231,16 @@ void OpenWithDlg::slotOK(){
 
   if(haveApp){
     m_pBind = KMimeBind::findByName( qName.data() );
+  }
+
+  if( terminal->isChecked() ) {
+    KConfig *config = kapp->getConfig();
+    config->setGroup( "KFM Misc Defaults" );
+    QString t(config->readEntry( "Terminal", DEFAULT_TERMINAL ));
+
+    t += " -e ";
+    t += edit->text();
+    edit->setText( t );
   }
 
   haveApp = false;

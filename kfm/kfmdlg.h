@@ -5,6 +5,7 @@
 #include <qlined.h>
 #include <qpushbt.h>
 #include <qlabel.h>
+#include <qcheckbox.h>
 #include "kURLcompletion.h"
 
 class KApplicationTree;
@@ -109,6 +110,7 @@ protected:
   QPushButton *clear;
   QPushButton *cancel;
   QPushButton* browse;
+  QCheckBox* terminal;
 
   KMimeBind *m_pBind;
 };
