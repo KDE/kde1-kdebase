@@ -13,6 +13,8 @@
 #include <qbitmap.h>
 #include <ksimpleconfig.h>
 
+#define DEFAULT_BOX_WIDTH 45
+
 extern void execute(const char*);
 
 DesktopEntry::DesktopEntry(){
@@ -89,8 +91,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     config->setGroup("kpanel");
     if (!config->hasKey("Style")) {
       config->writeEntry("Style", "normal");
-      config->writeEntry("BoxWidth",45);
-      config->writeEntry("BoxHeight",45);
+      config->writeEntry("BoxWidth", DEFAULT_BOX_WIDTH);
+      config->writeEntry("BoxHeight", DEFAULT_BOX_WIDTH);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
       config->writeEntry("TaskbarButtonMinimumHorizontalSize",3);
@@ -522,7 +524,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			      box_height+2*margin-6);
       label_date->setAlignment( AlignRight|AlignVCenter );
 
-      dock_area->setGeometry(label_date->x() - box_width,
+      dock_area->setGeometry(label_date->x() - DEFAULT_BOX_WIDTH,
 			     3,
 			     2 * box_width - 6,
 			     box_height+2*margin-6);
