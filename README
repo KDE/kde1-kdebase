@@ -101,8 +101,9 @@ Debugging
 ---------
 
 You can use --enable-debug with the configure script, if you want to have
-debug code in your KDE apps and libs.  I recommend to do this, since this
-is alpha software and this makes debugging things a whole lot easier.
+debug code in your KDE apps and libs.  I recommend to do this, since
+nothing is perfect, and this this makes debugging things a whole lot
+easier.
 
 Upgrading
 ---------
@@ -115,7 +116,7 @@ Removal/Uninstallation
 ----------------------
 
 You can use 'make uninstall' if you want to remove the kde from the dirs.
-This feature has not been tested completely.
+This feature has not been tested completely, and is depreciated.
 
 More Info
 ---------

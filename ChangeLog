@@ -1,11 +1,12 @@
 1998-12-05  Alex Zepeda  <garbanzo@hooked.net>
 
-	* README: Updated to "require" Qt 1.41.
+	* README: Updated to "require" Qt 1.41, marked the uninstalling
+	process as depreciated, and clarified the debugging statement.
 
 1998-12-04  Alex Zepeda  <garbanzo@hooked.net>
 
-	* README: Adjusted the configure switch descriptions so they make a bit more
-	sense.
+	* README: Adjusted the configure switch descriptions so they make more
+	sense, are more accurate, and look nicer.
 
 1998-12-02  Alex Zepeda  <garbanzo@hooked.net>
 
