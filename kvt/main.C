@@ -682,7 +682,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 	       "based on Robert Nation's rxvt-2.08");
 		       
     m_help = kapp->getHelpMenu(true, at.data());
-
+    m_help->setAccel(0,0);
     menubar = new KMenuBar( this );
     CHECK_PTR( menubar );
 

@@ -64,7 +64,6 @@ public slots:
 
   void saveYourself();
 
-
 protected:
     void    resizeEvent( QResizeEvent * );
     bool eventFilter( QObject *, QEvent * );
