@@ -25,4 +25,4 @@ data_DATA = maximize2.xpm mini-ball.xpm mini-bball.xpm mini-bomb.xpm \
 	mini.resize.xpm mini.xarchie.xpm mini.xboing.xpm \
 	mini.xlock.xpm mini.xterm.xpm mini.zircon.xpm
 
-datadir = $(prefix)/share/apps/kmenuedit/pics
+datadir = $(prefix)/share/icons/mini
