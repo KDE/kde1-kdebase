@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
-"PO-Revision-Date: 1998-06-13 14:56+0200\n"
+"PO-Revision-Date: 1998-06-18 17:51+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:257
@@ -64,7 +64,7 @@ msgstr "Aplicaciones globales"
 
 #: kfmgui.cpp:359
 msgid "Show &Dot Files"
-msgstr "Mostrar ficheros &ocultos"
+msgstr "Mostrar archivos &ocultos"
 
 #: kfmgui.cpp:361
 msgid "Show Tr&ee"
@@ -192,7 +192,7 @@ msgstr "El formato del URL es incorrecto\n"
 
 #: kfmgui.cpp:904
 msgid "Select files:"
-msgstr "Seleccionar ficheros:"
+msgstr "Seleccionar archivos:"
 
 #: kfmgui.cpp:921
 msgid "&Edit Bookmarks..."
@@ -275,7 +275,7 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"¿Realmente desea borrar los ficheros?\n"
+"¿Realmente desea borrar los archivos?\n"
 "\n"
 "No hay forma de recuperarlos."
 
@@ -939,7 +939,7 @@ msgid ""
 msgstr ""
 "Imposible leer\n"
 "%s\n"
-"El fichero no existe o acceso denegado"
+"El archivo no existe o acceso denegado"
 
 #: kiojob.cpp:1220
 #, c-format
@@ -1219,7 +1219,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1239,15 +1239,15 @@ msgstr "Configuración de KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Aceptar idiomas:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Aceptar tablas de caracteres:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Asumir HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1314,36 +1314,3 @@ msgid ""
 msgstr ""
 "Error sintáctico:\n"
 "kfmexec comando [URLs ....]\n"
-
-#~ msgid "&New Window"
-#~ msgstr "Nueva &ventana"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"
-
-#~ msgid "KFM Error"
-#~ msgstr "Error de KFM"
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid "Properties"
-#~ msgstr "Propiedades"
-
-#~ msgid "Font Size"
-#~ msgstr "Tamaño de la fuente"
-
-#~ msgid "Small"
-#~ msgstr "Pequeña"
-
-#~ msgid "Medium"
-#~ msgstr "Mediana"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "Continue"
-#~ msgstr "Continuar"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fuentes"

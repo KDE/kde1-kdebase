@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-06-13 14:53+0200\n"
+"PO-Revision-Date: 1998-06-18 18:09+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kpanel.C:253
@@ -11,7 +11,7 @@ msgstr "Inicio"
 
 #: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
-msgstr "¿Hasta donde quiere llegar mañana?"
+msgstr "¿Hasta dónde quiere llegar mañana?"
 
 #: kpanel.C:330
 msgid "No info available"
@@ -100,9 +100,3 @@ msgstr "¡Ups!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
-
-#~ msgid "Move"
-#~ msgstr "Mover"
-
-#~ msgid "Properties"
-#~ msgstr "Propiedades"

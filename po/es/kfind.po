@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"PO-Revision-Date: 1998-06-13 15:23+0200\n"
+"PO-Revision-Date: 1998-06-18 18:10+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -182,11 +182,11 @@ msgstr "Enlaces"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr "Ficheros especiales (dispositivos, ...)"
+msgstr "Archivos especiales (dispositivos, ...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr "Ficheros ejecutables"
+msgstr "Archivos ejecutables"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
@@ -346,12 +346,3 @@ msgstr "¡No se pudo reconocer el tipo de archivo!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "¡Error creando proceso hijo!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Cortar"
-
-#~ msgid "Properties"
-#~ msgstr "Propiedades"
-
-#~ msgid "Files"
-#~ msgstr "Ficheros"

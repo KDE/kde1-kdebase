@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-06-13 15:20+0200\n"
+"PO-Revision-Date: 1998-06-18 18:10+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: helpwin.cpp:58
@@ -297,33 +297,3 @@ msgstr "Acerca de la ayuda KDE"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Agregar marcador"
-
-#~ msgid "Font Size"
-#~ msgstr "Tamaño de la fuente"
-
-#~ msgid "Small"
-#~ msgstr "Pequeño"
-
-#~ msgid "Medium"
-#~ msgstr "Medio"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "Fonts"
-#~ msgstr "Fuentes"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Misceláneos"
-
-#~ msgid "&Reload"
-#~ msgstr "Ac&tualizar"
-
-#~ msgid "&Previous"
-#~ msgstr "A&nterior"
-
-#~ msgid "&Next"
-#~ msgstr "&Siguiente"
-
-#~ msgid "Stop"
-#~ msgstr "Alto"

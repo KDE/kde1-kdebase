@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
-"PO-Revision-Date: 1998-06-13 14:56+0200\n"
+"PO-Revision-Date: 1998-06-18 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.C:347
@@ -19,7 +19,7 @@ msgstr "La tecla retroceder produce un"
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Teclas de cursor"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -217,7 +217,7 @@ msgstr "-vt_font <fontname>       fuente normal\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             apagar código contra error de fuentes en Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"

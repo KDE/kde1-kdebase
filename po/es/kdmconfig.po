@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1997-12-31 15:27+0100\n"
-"PO-Revision-Date: 1998-04-17 22:13+0200\n"
+"PO-Revision-Date: 1998-06-18 18:13+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:99
@@ -105,7 +105,7 @@ msgid ""
 "does not seem to be an image file"
 msgstr ""
 "\n"
-"no parece ser un fichero gráfico"
+"no parece ser un archivo gráfico"
 
 #: kdm-appear.cpp:190 kdm-users.cpp:198
 msgid ""
@@ -113,11 +113,11 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Por favor, utilice ficheros con las siguientes extensiones\n"
+"Por favor, utilice archivos con las siguientes extensiones\n"
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Fichero con extensión indebida"
+msgstr "Archivo con extensión indebida"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""

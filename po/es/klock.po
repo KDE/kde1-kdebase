@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-17 09:43+0200\n"
-"PO-Revision-Date: 1998-06-13 15:25+0200\n"
+"PO-Revision-Date: 1998-06-18 17:55+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: banner.cpp:62
@@ -579,83 +579,79 @@ msgstr "Error"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Remolino"
 
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "Velocidad:"
+msgstr "Esfera"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponencial"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Contracción"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Ola"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Curvatura"
 
 #: science.cpp:112
 msgid "Science"
-msgstr ""
+msgstr "Ciencia"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "dibujando lente..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "capturando pantalla..."
 
 #: science.cpp:931
-#, fuzzy
 msgid "Setup Science"
-msgstr "Configurar Líneas"
+msgstr "Configurar ciencia"
 
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "Mitad:"
+msgstr "Modo:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Inverso"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Gravedad"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Esconder fondo"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensidad:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Movimiento:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Ciencia versión"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "escrito por"
 
 #: science.cpp:1262
-#, fuzzy
 msgid "About Science"
-msgstr "Acerca de Líneas"
+msgstr "Acerca de ciencia"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -742,6 +738,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
-
-#~ msgid "Move"
-#~ msgstr "Mover"

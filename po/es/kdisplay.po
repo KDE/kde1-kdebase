@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
-"PO-Revision-Date: 1998-06-13 15:29+0200\n"
+"PO-Revision-Date: 1998-06-17 17:48+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: backgnd.cpp:59
@@ -75,7 +75,7 @@ msgstr "Gradiente horizontal"
 
 #: backgnd.cpp:959
 msgid "Use &pattern"
-msgstr "Usar "
+msgstr "Usar textura"
 
 #: backgnd.cpp:986
 msgid "Preview"
@@ -285,11 +285,11 @@ msgstr "minutos"
 
 #: scrnsave.cpp:267
 msgid "&Require password"
-msgstr "Pedir contraseña"
+msgstr "Pedir &contraseña"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Mostrar contraseña con &estrellas"
 
 #: scrnsave.cpp:281
 msgid "Priority"
@@ -341,7 +341,7 @@ msgstr "Fondo"
 
 #: main.cpp:68
 msgid "&Screensaver"
-msgstr "Salvapantalla"
+msgstr "&Salvapantalla"
 
 #: main.cpp:72
 msgid "&Colors"
@@ -383,6 +383,3 @@ msgstr "KDE por defecto"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "cualquiera"
-
-#~ msgid "&Remove"
-#~ msgstr "Elimina&r"
