@@ -1,7 +1,7 @@
 
 # This has to be set. The rest should be reusable
-DE_POFILES = de_kfind.po  de_kdehelp.po
-DE_GMFILES = de_kfind.gmo de_kdehelp.gmo
+DE_POFILES = de_kfind.po  de_kdehelp.po  de_kdisplay.po
+DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo
 
 CZ_POFILES = cz_kfind.po
 CZ_GMFILES = cz_kfind.gmo
