@@ -481,7 +481,6 @@ msgid "&Style"
 msgstr "&Stíll"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
