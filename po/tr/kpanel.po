@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -155,14 +155,30 @@ msgstr ""
 msgid "Shared:"
 msgstr ""
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 msgid "Personal:"
+msgstr ""
+
+#: pfilemenu.C:765
+msgid "Personal entries"
 msgstr ""
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
+msgstr ""
+
+#: pfilemenu.C:833
+msgid "Customize Disk Navigator"
 msgstr ""

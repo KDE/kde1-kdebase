@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibsPOT-Creation-Date: 1998-01-25 13:21+0100\n"
-"POT-Creation-Date: 1998-11-08 01:22+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-01-22 17:20+0100\n"
 "Last-Translator: Andrea Rizzi <BILIBAO@ouverture.it>\n"
 
-#: configlist.cpp:119
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Modulo sconosciuto:"
 

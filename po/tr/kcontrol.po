@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-11-08 01:22+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ISO 8859-9\n"
 
-#: configlist.cpp:119
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Bilinmeyen Modül: "
 

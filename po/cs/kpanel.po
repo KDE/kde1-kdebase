@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-11-09 08:39+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -157,17 +157,34 @@ msgstr "(neèitelné)"
 msgid "Shared:"
 msgstr ""
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 msgid "Personal:"
+msgstr ""
+
+#: pfilemenu.C:765
+msgid "Personal entries"
 msgstr ""
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr "Nedávné:"
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Mo¾nosti..."
+
+#: pfilemenu.C:833
+#, fuzzy
+msgid "Customize Disk Navigator"
+msgstr "Diskový navigátor"
 
 #~ msgid "Global:"
 #~ msgstr "Globální:"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-11-22 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -29,192 +29,192 @@ msgstr "&Promijeni ime ..."
 msgid "&Common Background"
 msgstr "&Pozadina"
 
-#: backgnd.cpp:213 colorscm.cpp:82
+#: backgnd.cpp:212 colorscm.cpp:82
 msgid "Colors"
 msgstr "Boje"
 
-#: backgnd.cpp:240
+#: backgnd.cpp:239
 msgid "&One Color"
 msgstr "&Jedna Boja"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:256
 msgid "&Two Color"
 msgstr "&Dvije Boje"
 
-#: backgnd.cpp:276
+#: backgnd.cpp:275
 msgid "Set&up ..."
 msgstr "&Podesi..."
 
-#: backgnd.cpp:285
+#: backgnd.cpp:284
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: backgnd.cpp:296 backgnd.cpp:531 backgnd.cpp:545 backgnd.cpp:1150
-#: backgnd.cpp:1307 backgnd.cpp:1843
+#: backgnd.cpp:295 backgnd.cpp:530 backgnd.cpp:544 backgnd.cpp:1149
+#: backgnd.cpp:1306 backgnd.cpp:1844
 msgid "No wallpaper"
 msgstr "Nema pozadinske slike"
 
-#: backgnd.cpp:325
+#: backgnd.cpp:324
 msgid "&Browse..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:333
+#: backgnd.cpp:332
 msgid "Tiled"
 msgstr "Pop&loèano"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:333
 msgid "Mirrored"
 msgstr "Zrcaljeno"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:334
 msgid "Center Tiled"
 msgstr ""
 
-#: backgnd.cpp:336
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "Centrirano"
 
-#: backgnd.cpp:337
+#: backgnd.cpp:336
 msgid "Centred Brick"
 msgstr ""
 
-#: backgnd.cpp:338
+#: backgnd.cpp:337
 #, fuzzy
 msgid "Centred Warp"
 msgstr "&Centrirano"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:338
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "&Centrirano"
 
-#: backgnd.cpp:340
+#: backgnd.cpp:339
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:341
+#: backgnd.cpp:340
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:342
+#: backgnd.cpp:341
 msgid "Scaled"
 msgstr "Razvuèeno"
 
-#: backgnd.cpp:354
+#: backgnd.cpp:353
 msgid "Ra&ndom"
 msgstr "Nasu&mièno"
 
-#: backgnd.cpp:363
+#: backgnd.cpp:362
 msgid "Setu&p..."
 msgstr "&Postavke..."
 
-#: backgnd.cpp:371
+#: backgnd.cpp:370
 msgid "&Dock into the panel"
 msgstr "P&ristani na ploèu"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:379
 msgid "Cache size"
 msgstr "Velièina predmemorija"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:397
 msgid "kb"
 msgstr "kb"
 
-#: backgnd.cpp:1274
+#: backgnd.cpp:1273
 msgid "Desktop names"
 msgstr "Imena radnih povr¹ina"
 
-#: backgnd.cpp:1319
+#: backgnd.cpp:1318
 msgid "File error"
 msgstr "Gre¹ka na datoteci"
 
-#: backgnd.cpp:1320
+#: backgnd.cpp:1319
 msgid "Can't load image file"
 msgstr "Ne mogu uèitati sliku"
 
-#: backgnd.cpp:1343 backgnd.cpp:1813
+#: backgnd.cpp:1342 backgnd.cpp:1814
 msgid "Unsupported URL"
 msgstr "URL nije podr¾an"
 
-#: backgnd.cpp:1344 backgnd.cpp:1814
+#: backgnd.cpp:1343 backgnd.cpp:1815
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "®alim, ova vrsta URLa trenutno nije podr¾ana od strane KDE Display modula"
 
-#: backgnd.cpp:1375
+#: backgnd.cpp:1374
 msgid "Two color backgrounds"
 msgstr "Pozadina sa dvije boje"
 
-#: backgnd.cpp:1412
+#: backgnd.cpp:1411
 msgid "Blend colors from &top to bottom"
 msgstr "Mje¹aj boje s &vrha prema dnu"
 
-#: backgnd.cpp:1418
+#: backgnd.cpp:1417
 msgid "Blend colors from &right to left"
 msgstr "Mje¹aj boje s &desna na lijevo"
 
-#: backgnd.cpp:1424
+#: backgnd.cpp:1423
 msgid "Use &pattern"
 msgstr "Koristi &Uzorak"
 
-#: backgnd.cpp:1451
+#: backgnd.cpp:1450
 msgid "Preview"
 msgstr "Pregled"
 
-#: backgnd.cpp:1462
+#: backgnd.cpp:1461
 msgid "Pattern &name"
 msgstr "&Ime uzorka"
 
-#: backgnd.cpp:1501
+#: backgnd.cpp:1500
 msgid "Current"
 msgstr "Tekuæi"
 
-#: backgnd.cpp:1561
+#: backgnd.cpp:1560
 msgid "Filled"
 msgstr "Popunjeno"
 
-#: backgnd.cpp:1564
+#: backgnd.cpp:1563
 msgid "Fish net"
 msgstr "Ribarska mre¾a"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1566
 msgid "Triangles"
 msgstr "Trokuti"
 
-#: backgnd.cpp:1570
+#: backgnd.cpp:1569
 msgid "Flowers"
 msgstr "Cvijeæe"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1572
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1576
+#: backgnd.cpp:1575
 msgid "Cobbled Pavement"
 msgstr "Ploènik"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1641
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1647
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1662
+#: backgnd.cpp:1661
 msgid "&Browse ..."
 msgstr "Po&tra¾i..."
 
-#: backgnd.cpp:1683
+#: backgnd.cpp:1682
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1695
+#: backgnd.cpp:1694
 msgid "In &order"
 msgstr "P&oredano"
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1711
 msgid "Desktops :"
 msgstr "Radne povr¹ine:"
 
@@ -222,11 +222,11 @@ msgstr "Radne povr¹ine:"
 msgid "&Add"
 msgstr "&Dodaj"
 
-#: backgnd.cpp:1920
+#: backgnd.cpp:1921
 msgid "Directory error"
 msgstr "Gre¹ka na direktoriju"
 
-#: backgnd.cpp:1921
+#: backgnd.cpp:1922
 msgid "Selected directory doesn't exists"
 msgstr "Izabrani direktorij ne postoji"
 

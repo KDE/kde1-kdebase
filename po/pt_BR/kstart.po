@@ -6,6 +6,7 @@ msgstr ""
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
 #: kstart.C:116
+#, c-format
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
@@ -58,7 +59,7 @@ msgstr ""
 " %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
 " cria um xclock decorado e pregado, no canto superior direito da tela.\n"
 " \n"
- " "
+" "
 
 #: kstart.C:156
 msgid ""

@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-11-08 01:22+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: configlist.cpp:119
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Módulo desconhecido: "
 

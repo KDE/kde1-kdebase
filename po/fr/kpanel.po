@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -158,17 +158,34 @@ msgstr "(illisible)"
 msgid "Shared:"
 msgstr ""
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 #, fuzzy
 msgid "Personal:"
+msgstr "Menu personnel en premier"
+
+#: pfilemenu.C:765
+#, fuzzy
+msgid "Personal entries"
 msgstr "Menu personnel en premier"
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
+msgstr ""
+
+#: pfilemenu.C:833
+msgid "Customize Disk Navigator"
 msgstr ""
 
 #~ msgid "Location"

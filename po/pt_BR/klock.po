@@ -764,7 +764,7 @@ msgstr "SlideScreen"
 
 #: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
-msgstr "Configurar KSlideScreen" 
+msgstr "Configurar KSlideScreen"
 
 #: slidescreen.cpp:558
 msgid "About SlideScreen"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
 "Language-Team: Croatian\n"
@@ -156,14 +156,32 @@ msgstr "(Ne mogu èitati)"
 msgid "Shared:"
 msgstr "Dijeljen:"
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 msgid "Personal:"
+msgstr "Osobni:"
+
+#: pfilemenu.C:765
+#, fuzzy
+msgid "Personal entries"
 msgstr "Osobni:"
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr "Nedavni:"
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Postavke..."
+
+#: pfilemenu.C:833
+#, fuzzy
+msgid "Customize Disk Navigator"
+msgstr "Navigator diska"

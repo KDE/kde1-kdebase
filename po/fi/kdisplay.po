@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,189 +29,189 @@ msgstr "&Nimeä Uudelleen..."
 msgid "&Common Background"
 msgstr "&Yhteinen tausta"
 
-#: backgnd.cpp:213 colorscm.cpp:82
+#: backgnd.cpp:212 colorscm.cpp:82
 msgid "Colors"
 msgstr "Värit"
 
-#: backgnd.cpp:240
+#: backgnd.cpp:239
 msgid "&One Color"
 msgstr "&Yksi väri"
 
-#: backgnd.cpp:257
+#: backgnd.cpp:256
 msgid "&Two Color"
 msgstr "K&aksi väriä"
 
-#: backgnd.cpp:276
+#: backgnd.cpp:275
 msgid "Set&up ..."
 msgstr "&Asetukset..."
 
-#: backgnd.cpp:285
+#: backgnd.cpp:284
 msgid "Wallpaper"
 msgstr "Taustakuva"
 
-#: backgnd.cpp:296 backgnd.cpp:531 backgnd.cpp:545 backgnd.cpp:1150
-#: backgnd.cpp:1307 backgnd.cpp:1843
+#: backgnd.cpp:295 backgnd.cpp:530 backgnd.cpp:544 backgnd.cpp:1149
+#: backgnd.cpp:1306 backgnd.cpp:1844
 msgid "No wallpaper"
 msgstr "Ei taustakuvaa"
 
-#: backgnd.cpp:325
+#: backgnd.cpp:324
 msgid "&Browse..."
 msgstr "&Selaa..."
 
-#: backgnd.cpp:333
+#: backgnd.cpp:332
 msgid "Tiled"
 msgstr "Monistettu"
 
-#: backgnd.cpp:334
+#: backgnd.cpp:333
 msgid "Mirrored"
 msgstr "Peilattu"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:334
 msgid "Center Tiled"
 msgstr "Keskitetty monistus"
 
-#: backgnd.cpp:336
+#: backgnd.cpp:335
 msgid "Centred"
 msgstr "Keskitetty"
 
-#: backgnd.cpp:337
+#: backgnd.cpp:336
 msgid "Centred Brick"
 msgstr "Keskitetty tiili"
 
-#: backgnd.cpp:338
+#: backgnd.cpp:337
 msgid "Centred Warp"
 msgstr "Keskitetty"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:338
 msgid "Centred Maxpect"
 msgstr "Keskitetty maxpect"
 
-#: backgnd.cpp:340
+#: backgnd.cpp:339
 msgid "Symmetrical Tiled"
 msgstr "Symmetrinen monistus"
 
-#: backgnd.cpp:341
+#: backgnd.cpp:340
 msgid "Symmetrical Mirrored"
 msgstr "Symmetrinen peilaus"
 
-#: backgnd.cpp:342
+#: backgnd.cpp:341
 msgid "Scaled"
 msgstr "Venytetty"
 
-#: backgnd.cpp:354
+#: backgnd.cpp:353
 msgid "Ra&ndom"
 msgstr "&Satunnainen"
 
-#: backgnd.cpp:363
+#: backgnd.cpp:362
 msgid "Setu&p..."
 msgstr "&Asetukset..."
 
-#: backgnd.cpp:371
+#: backgnd.cpp:370
 msgid "&Dock into the panel"
 msgstr "&Nielaise paneeliin"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:379
 msgid "Cache size"
 msgstr "Välimuisti"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:397
 msgid "kb"
 msgstr "kb"
 
-#: backgnd.cpp:1274
+#: backgnd.cpp:1273
 msgid "Desktop names"
 msgstr "Työpöytien nimet"
 
-#: backgnd.cpp:1319
+#: backgnd.cpp:1318
 msgid "File error"
 msgstr "tiedostovirhe"
 
-#: backgnd.cpp:1320
+#: backgnd.cpp:1319
 msgid "Can't load image file"
 msgstr "En saa ladattua kuvaa"
 
-#: backgnd.cpp:1343 backgnd.cpp:1813
+#: backgnd.cpp:1342 backgnd.cpp:1814
 msgid "Unsupported URL"
 msgstr "tuntematon URL"
 
-#: backgnd.cpp:1344 backgnd.cpp:1814
+#: backgnd.cpp:1343 backgnd.cpp:1815
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Valitettavasti tätä URL -tyyppiä ei tueta"
 
-#: backgnd.cpp:1375
+#: backgnd.cpp:1374
 msgid "Two color backgrounds"
 msgstr "Kaksivärinen tausta"
 
-#: backgnd.cpp:1412
+#: backgnd.cpp:1411
 msgid "Blend colors from &top to bottom"
 msgstr "Sekoita värit &ylhäältä alas"
 
-#: backgnd.cpp:1418
+#: backgnd.cpp:1417
 msgid "Blend colors from &right to left"
 msgstr "&Sekoita värit oikealta vasemmalle"
 
-#: backgnd.cpp:1424
+#: backgnd.cpp:1423
 msgid "Use &pattern"
 msgstr "Käytä k&uviota"
 
-#: backgnd.cpp:1451
+#: backgnd.cpp:1450
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: backgnd.cpp:1462
+#: backgnd.cpp:1461
 msgid "Pattern &name"
 msgstr "Kuvion &nimi"
 
-#: backgnd.cpp:1501
+#: backgnd.cpp:1500
 msgid "Current"
 msgstr "Nykyinen"
 
-#: backgnd.cpp:1561
+#: backgnd.cpp:1560
 msgid "Filled"
 msgstr "Täytetty"
 
-#: backgnd.cpp:1564
+#: backgnd.cpp:1563
 msgid "Fish net"
 msgstr "Kalaverkko"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1566
 msgid "Triangles"
 msgstr "Kolmiot"
 
-#: backgnd.cpp:1570
+#: backgnd.cpp:1569
 msgid "Flowers"
 msgstr "Kukat"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1572
 msgid "Rattan"
 msgstr "Kangas"
 
-#: backgnd.cpp:1576
+#: backgnd.cpp:1575
 msgid "Cobbled Pavement"
 msgstr "Kivetys"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1641
 msgid "Random mode setup"
 msgstr "Satunnaistilan asetukset"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1647
 msgid "Pick files from &directory"
 msgstr "Poimi tiedostoja hakemistosta"
 
-#: backgnd.cpp:1662
+#: backgnd.cpp:1661
 msgid "&Browse ..."
 msgstr "&Selaa ..."
 
-#: backgnd.cpp:1683
+#: backgnd.cpp:1682
 msgid "Timer Delay in seconds :"
 msgstr "Viime sekunneissa:"
 
-#: backgnd.cpp:1695
+#: backgnd.cpp:1694
 msgid "In &order"
 msgstr "&Järjestyksessä"
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1711
 msgid "Desktops :"
 msgstr "Työpöydät :"
 
@@ -219,11 +219,11 @@ msgstr "Työpöydät :"
 msgid "&Add"
 msgstr "&Lisää"
 
-#: backgnd.cpp:1920
+#: backgnd.cpp:1921
 msgid "Directory error"
 msgstr "Hakemistovirhe"
 
-#: backgnd.cpp:1921
+#: backgnd.cpp:1922
 msgid "Selected directory doesn't exists"
 msgstr "Valittua hakemistoa ei ole olemassa"
 

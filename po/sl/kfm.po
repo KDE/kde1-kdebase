@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-29 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-09-25 11:55+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <blazzupancic@hotmail.com>\n"
 "Language-Team: Slovenian\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:934 kbind.cpp:946 kbind.cpp:956 kfmgui.cpp:215 kfmgui.cpp:1033
+#: kbind.cpp:939 kbind.cpp:951 kbind.cpp:961 kfmgui.cpp:215 kfmgui.cpp:1033
 msgid "Folder"
 msgstr "Imenik"
 
@@ -247,18 +247,18 @@ msgstr "Moj dom"
 msgid "Could not load icon\n"
 msgstr "Nisem mogel nalo¾iti ikone\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
-#: kbind.cpp:376 kbind.cpp:428 kbind.cpp:1583 kbind.cpp:1591 kbind.cpp:1609
-#: kbind.cpp:1628 kbind.cpp:1687 kbind.cpp:1699 kbind.cpp:1726 kbind.cpp:1741
-#: kbind.cpp:1761 kbind.cpp:1773 kbind.cpp:1789 kbind.cpp:1925 kbind.cpp:1937
-#: kbind.cpp:1982 kbind.cpp:2024 kfmexec.cpp:60 kfmexec.cpp:92
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:309
+#: kbind.cpp:381 kbind.cpp:433 kbind.cpp:1588 kbind.cpp:1596 kbind.cpp:1614
+#: kbind.cpp:1633 kbind.cpp:1692 kbind.cpp:1704 kbind.cpp:1731 kbind.cpp:1746
+#: kbind.cpp:1766 kbind.cpp:1778 kbind.cpp:1794 kbind.cpp:1930 kbind.cpp:1942
+#: kbind.cpp:1987 kbind.cpp:2029 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:566 kfmgui.cpp:725 kfmman.cpp:341
 #: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
-#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:234 kfmtree.cpp:357
-#: kfmtree.cpp:388 kfmtree.cpp:394 kfmtree.cpp:400 kfmview.cpp:390
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:239 kfmtree.cpp:362
+#: kfmtree.cpp:393 kfmtree.cpp:399 kfmtree.cpp:405 kfmview.cpp:390
 #: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:431 kfmview.cpp:493
 #: kfmview.cpp:499 kfmview.cpp:505 kfmview.cpp:611 kfmview.cpp:615
 #: kfmview.cpp:654 kfmview.cpp:680 kfmview.cpp:701 kfmview.cpp:709
@@ -299,7 +299,7 @@ msgid "New "
 msgstr "Nov"
 
 #: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:389 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
+#: kfmtree.cpp:394 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "NAPAKA: Narobe oblikovan URL"
@@ -337,12 +337,12 @@ msgstr "NAPAKA: Nekaj ste odvrgli na napaèen URL"
 msgid "ERROR: You dropped some URL over itself"
 msgstr "NAPAKA: URL ste odvrgli na isto mesto"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:427 kfmview.cpp:465
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:432 kfmview.cpp:465
 #: kfmview.cpp:745 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM opozorilo"
 
-#: kfmtree.cpp:428 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
+#: kfmtree.cpp:433 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -352,11 +352,11 @@ msgstr ""
 "\n"
 "Nikoli veè jih ne boste dobili nazaj."
 
-#: kfmtree.cpp:395 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
+#: kfmtree.cpp:400 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "NAPAKA: URL ste odvrgli na isto mesto"
 
-#: kfmtree.cpp:401 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
+#: kfmtree.cpp:406 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "NAPAKA: Imenik ste odvrgli na enega izmed njegovih podimenikov"
 
@@ -384,7 +384,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:358 kfmview.cpp:655 root.cpp:1264
+#: kfmtree.cpp:363 kfmview.cpp:655 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "Ko¹ za smeti ni dosegljiv"
 
@@ -421,58 +421,58 @@ msgstr "%s (Povezava)"
 msgid "bytes"
 msgstr "bajtov"
 
-#: kbind.cpp:302
+#: kbind.cpp:307
 msgid "The mime type config file "
 msgstr "Datoteka z nastavitvami mime tipa "
 
-#: kbind.cpp:303
+#: kbind.cpp:308
 msgid "does not conatain a MimeType=... entry"
 msgstr "ne vsebuje vrstice MimeType=..."
 
-#: kbind.cpp:377
+#: kbind.cpp:382
 msgid "No mime types installed!"
 msgstr "Niti en mime tip ni name¹èen!"
 
-#: kbind.cpp:425 kbind.cpp:1207
+#: kbind.cpp:430 kbind.cpp:1212
 msgid "Could not find mime type\n"
 msgstr "Nisem mogel najti mime tipa\n"
 
-#: kbind.cpp:696 kbind.cpp:706 kbind.cpp:1960 kbind.cpp:1961 kbind.cpp:1973
-#: kbind.cpp:1975
+#: kbind.cpp:701 kbind.cpp:711 kbind.cpp:1965 kbind.cpp:1966 kbind.cpp:1978
+#: kbind.cpp:1980
 msgid "Mount"
 msgstr "Vgradi"
 
-#: kbind.cpp:712 kbind.cpp:1951
+#: kbind.cpp:717 kbind.cpp:1956
 msgid "Unmount"
 msgstr "Razgradi"
 
-#: kbind.cpp:1206
+#: kbind.cpp:1211
 msgid "ERROR"
 msgstr "NAPAKA"
 
-#: kbind.cpp:1207
+#: kbind.cpp:1212
 msgid "in "
 msgstr "v"
 
-#: kbind.cpp:1373 kbind.cpp:1466
+#: kbind.cpp:1378 kbind.cpp:1471
 msgid "Could not execute program\n"
 msgstr "Nisem mogel izvr¹iti programa\n"
 
-#: kbind.cpp:1582
+#: kbind.cpp:1587
 msgid "Could not find binding"
 msgstr "Nisem mogel najti zveze"
 
-#: kbind.cpp:1592
+#: kbind.cpp:1597
 msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr "To je dokument in ne program!"
 
-#: kbind.cpp:1610 kbind.cpp:1629
+#: kbind.cpp:1615 kbind.cpp:1634
 msgid "Can only start executables on local disks\n"
 msgstr "Programe lahko za¾enem le s tukaj¹njih pogonov\n"
 
-#: kbind.cpp:1688 kbind.cpp:1762 kbind.cpp:1926
+#: kbind.cpp:1693 kbind.cpp:1767 kbind.cpp:1931
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -480,26 +480,26 @@ msgstr ""
 "S *.kdelnk datotekami lahko delate\n"
 "samo na tukaj¹njem trdem disku"
 
-#: kbind.cpp:1698
+#: kbind.cpp:1703
 #, c-format
 msgid ""
 "Could not access\n"
 "%s"
 msgstr "%s ni dosegljiv"
 
-#: kbind.cpp:1727
+#: kbind.cpp:1732
 msgid "The \"Link=....\" entry is empty"
 msgstr "Vrstica \"Link=...\" je prazna"
 
-#: kbind.cpp:1742
+#: kbind.cpp:1747
 msgid "The config file has no \"Type=...\" line"
 msgstr "Datoteka z nastavitvami ne vsebuje vrstice \"Type=...\""
 
-#: kbind.cpp:1772 kbind.cpp:1936
+#: kbind.cpp:1777 kbind.cpp:1941
 msgid "Could not access"
 msgstr "Nisem mogel dostopiti do"
 
-#: kbind.cpp:1790
+#: kbind.cpp:1795
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -509,15 +509,15 @@ msgstr ""
 "Ta datoteka ne vsebuje vrstice Exec=...\n"
 "Spremenite lastnosti, da boste odpravili te¾avo"
 
-#: kbind.cpp:1888
+#: kbind.cpp:1893
 msgid "ERROR: No Terminal Setting"
 msgstr "NAPAKA: Terminal ni nastavljen"
 
-#: kbind.cpp:1983
+#: kbind.cpp:1988
 msgid "No mount point in *.kdelnk file"
 msgstr "V *.kdelnk datoteki ni toèke za vgradnjo"
 
-#: kbind.cpp:2023
+#: kbind.cpp:2028
 msgid "Unknown binding"
 msgstr "Neznana zveza"
 
@@ -541,7 +541,7 @@ msgstr "Cd"
 msgid "New View"
 msgstr "Nov pogled"
 
-#: kfmtree.cpp:294 main.cpp:228
+#: kfmtree.cpp:299 main.cpp:228
 msgid "Move to Trash"
 msgstr "Odnesi v smeti"
 
@@ -549,11 +549,11 @@ msgstr "Odnesi v smeti"
 msgid "Open with"
 msgstr "Odpri v"
 
-#: kfmman.cpp:1288 kfmtree.cpp:226 main.cpp:232
+#: kfmman.cpp:1288 kfmtree.cpp:231 main.cpp:232
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1292 kfmtree.cpp:230 main.cpp:234
+#: kfmman.cpp:1292 kfmtree.cpp:235 main.cpp:234
 msgid "Link"
 msgstr "Povezava"
 
@@ -993,7 +993,7 @@ msgstr "NAPAKA: Ne morem odvreèi"
 msgid "Dont know what to do."
 msgstr "Ne vem, kaj naj storim."
 
-#: kfmman.cpp:1297 kfmtree.cpp:235 root.cpp:1800
+#: kfmman.cpp:1297 kfmtree.cpp:240 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "Ne vem, kaj naj storim."
 
@@ -1304,19 +1304,19 @@ msgstr "Imenik "
 msgid " does not exist\n"
 msgstr " ne obstaja\n"
 
-#: kfmtree.cpp:301
+#: kfmtree.cpp:306
 msgid "Add To Bookmarks"
 msgstr "Dodaj v kazalo"
 
-#: kfmtree.cpp:467
+#: kfmtree.cpp:472
 msgid "My Home"
 msgstr "Moj dom"
 
-#: kfmtree.cpp:469
+#: kfmtree.cpp:474
 msgid "Desktop"
 msgstr "Namizje"
 
-#: kfmtree.cpp:471
+#: kfmtree.cpp:476
 msgid "Root"
 msgstr "Koren"
 

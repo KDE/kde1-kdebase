@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-11-27 19:54+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -150,14 +150,32 @@ msgstr "(Ilegíble)"
 msgid "Shared:"
 msgstr "Compartido:"
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 msgid "Personal:"
+msgstr "Personal:"
+
+#: pfilemenu.C:765
+#, fuzzy
+msgid "Personal entries"
 msgstr "Personal:"
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr "Reciente:"
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr "Opciones..."
+
+#: pfilemenu.C:833
+#, fuzzy
+msgid "Customize Disk Navigator"
+msgstr "Navegador de disco"

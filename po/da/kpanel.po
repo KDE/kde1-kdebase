@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-11-30 01:10+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,18 +157,36 @@ msgstr "(Ulæselig)"
 msgid "Shared:"
 msgstr ""
 
+#: pfilemenu.C:744
+msgid "Entries shared among all users"
+msgstr ""
+
 #: pfilemenu.C:763
 #, fuzzy
 msgid "Personal:"
+msgstr "Personlige først"
+
+#: pfilemenu.C:765
+#, fuzzy
+msgid "Personal entries"
 msgstr "Personlige først"
 
 #: pfilemenu.C:783
 msgid "Recent:"
 msgstr ""
 
+#: pfilemenu.C:785
+msgid "Recent entries"
+msgstr ""
+
 #: pfilemenu.C:831
 msgid "Options..."
 msgstr ""
+
+#: pfilemenu.C:833
+#, fuzzy
+msgid "Customize Disk Navigator"
+msgstr "Disk Navigator"
 
 #~ msgid "KFM Information"
 #~ msgstr "KFM information"
