@@ -157,8 +157,8 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 
     KURL u( _url );
 
-    // Dont cache the local file system!
-    if ( strcmp( u.protocol(), "file" ) == 0 )
+    // Dont cache the local file system (if no sub protocol)!
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol())
 	return;
 
     // Delete the password if it is in the URL    
