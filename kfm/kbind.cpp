@@ -798,6 +798,14 @@ KMimeBind* KMimeType::findBinding( const char *_kdelnkName )
 	    return b;
     }
     
+    if (defaultType)
+        // Also look in all default bindings
+        for ( b = defaultType->firstBinding(); b != 0L; b = defaultType->nextBinding() )
+        {
+            if ( strcmp( _kdelnkName, b->getKdelnkName() ) == 0L )
+                return b;
+        }
+    
     return 0L;
 }
 
