@@ -716,76 +716,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     int next_minute_break = (60 - cur_time.second()) * 1000 - cur_time.msec();
     QTimer::singleShot(next_minute_break, this, SLOT(slotUpdateClock()));
 
+
     pmenu = new PMenu;
     pmenu->setAltSort(foldersFirst);
     
-    config->setGroup("KDE Desktop Entries");
-    QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
-    QString personal = config->readEntry("PersonalPath", temp.data() );
-    temp = KApplication::kdedir()+"/share/applnk";
-    QString kde_apps = config->readEntry("Path", temp.data() );
-
-
-    if (personalFirst){
-      pmenu->parse(QDir(personal));
-      p_pmenu = new PMenu;
-      p_pmenu->setAltSort(foldersFirst);
-      p_pmenu->parse(QDir(kde_apps));
-      PMenuItem* pmi = new PMenuItem ;
-      QFileInfo fi(personal);
-      pmi->parse(&fi, p_pmenu);
-      pmenu->add( new PMenuItem((EntryType) separator) );
-      pmenu->add( pmi );
-    }
-    else {
-      pmenu->parse(QDir(kde_apps));
-      PMenu* tmp = new PMenu;
-      tmp->setAltSort(foldersFirst);
-      tmp->parse(QDir(personal));
-      tmp->createMenu(new myPopupMenu, this);
-      if (tmp->getQPopupMenu() && tmp->getQPopupMenu()->count()>0){
-	p_pmenu = new PMenu;
-	p_pmenu->setAltSort(foldersFirst);
-	p_pmenu->parse(QDir(personal));
-	PMenuItem* pmi = new PMenuItem ;
-	QFileInfo fi(personal);
-	pmi->parse(&fi, p_pmenu);
-	pmenu->add( new PMenuItem((EntryType) separator) );
-	pmenu->add( pmi );
-      }
-      delete tmp;
-    }
-    
-    pmenu->add( new PMenuItem(separator) );
-    pmenu_add = new PMenu(*pmenu);
-
-    PMenu *panel_menu = new PMenu;
-    panel_menu->add( new PMenuItem(add_but, klocale->translate("Add application"), NULL, NULL, pmenu_add,
-				   NULL, NULL, new myPopupMenu, FALSE, NULL, 
-				   klocale->translate("Add an application or a submenu onto the panel")));
-    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add windowlist"), NULL, NULL, NULL, 
-				   this, SLOT(add_windowlist()), NULL, FALSE, NULL, 
-				   klocale->translate("Add a windowlist menu onto the panel")) );
-    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Configure"), NULL, NULL, NULL, 
-				   this, SLOT(configure_panel()), NULL, FALSE, NULL, 
-				   klocale->translate("Configure panel")) );
-    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Restart"), NULL, NULL, NULL, 
-				   this, SLOT(restart()), NULL, FALSE, NULL, 
-				   klocale->translate("Restart panel")) );
-    pmenu->add( new PMenuItem(submenu, klocale->translate("Panel"), NULL, NULL, panel_menu,
-			      NULL, NULL, new myPopupMenu) );
-    pmenu->add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), NULL, NULL, NULL,
-			      this, SLOT(call_klock()), NULL, FALSE, NULL, 
-			      klocale->translate("Lock screen")) );
-    pmenu->add( new PMenuItem(prog_com, klocale->translate("Logout"), NULL, NULL, NULL,
-			      this, SLOT(ask_logout()), NULL, FALSE, NULL, klocale->translate("Logout")) );
-
-    pmenu->createMenu(new myPopupMenu, this);
-    entries[0].popup = pmenu->getQPopupMenu();
-
-
-
-    read_in_configuration();
+    readInConfiguration();
     KApplication::getKApplication()->getConfig()->sync();
     doGeometry();
     if (panelHiddenString=="00000000"){
@@ -940,7 +875,7 @@ void kPanel::button_pressed(){
 	    KWM::close(entries[i].swallowed);
 	  delete_button(button_to_be_modified);
 	  button_to_be_modified = NULL;
-	  write_out_configuration();
+	  writeOutConfiguration();
 	}
 	break;
       default:
@@ -1104,7 +1039,6 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 		 pConfig.hasKey("SwallowExec")){
 	       KWM::doNotManage(entries[nbuttons-1].swallow);
 	       aString = QString(pConfig.readEntry("SwallowExec")).copy();
-	       // 	     printf("execute %s\n", aString.data());
 	       if (!initing) 
 		 execute(aString.data());
 	       else

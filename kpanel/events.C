@@ -496,7 +496,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
       if (moving_button != panel_button_frame_standalone){
 	moving_button = NULL;
 	reposition();
-	write_out_configuration();
+	writeOutConfiguration();
       }
       else {
 	moving_button = NULL;
@@ -688,7 +688,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
 	  if (x<margin) x=margin;
 	}
 	addButtonInternal(pmi, x, y);
-	write_out_configuration();
+	writeOutConfiguration();
 	return;
       }
     }

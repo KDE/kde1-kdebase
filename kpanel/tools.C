@@ -598,7 +598,7 @@ void kPanel::set_label_date(){
 
 void kPanel::add_windowlist(){
   addButtonInternal(NULL, -1, -1, "windowlist");
-  write_out_configuration();
+  writeOutConfiguration();
 }
 
 void kPanel::ask_logout(){
@@ -673,7 +673,7 @@ void kPanel::addButton(PMenuItem* pmi)
   s.remove(0,1);
   PMenuItem* pmi2 = pmenu->searchItem(s);
   addButtonInternal(pmi2);
-  write_out_configuration();
+  writeOutConfiguration();
 }
 
 

@@ -70,8 +70,8 @@ bool isKdelnkFile(const char* filename){
 
   QFile file(filename);
   if (file.open(IO_ReadOnly)){
-    char s[1024];
-    int r = file.readBlock(s, 1024);
+    char s[64];
+    int r = file.readBlock(s, 64);
     file.close();
 
     if(r == -1)

@@ -1,5 +1,8 @@
 In kpanel-0.18:
 
+    Patchlevel 8:
+       - some tuning. Startup time dramatically reduced.
+
     Patchlevel 7:
        - optimization in loading of kdelnkfiles with readonly 
            ksimpleconfigs. Great speedups :)

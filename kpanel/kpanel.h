@@ -208,7 +208,7 @@ public:
   void desktop_change(int);
   void standalonePanelButtonClicked();
   
-  void configure_panel();
+  void configurePanel();
   void slotPropsApply();
   void slotPropsCancel();
   void slotsl_nr_db(int);
@@ -236,6 +236,7 @@ public:
   QWidget * parentOfSwallowed(Window);
 
   void launchSwallowedApplications();
+  void parseMenus();
 
   
 protected:
@@ -401,9 +402,9 @@ private:
   
   QPixmap load_pixmap(const char* name, bool is_folder = false);
 
-  
-  void write_out_configuration();
-  void read_in_configuration();
+
+  void writeOutConfiguration();
+  void readInConfiguration();
 
   void showMiniPanel(); // sven
   void hideMiniPanel ();

@@ -171,10 +171,13 @@ int main( int argc, char ** argv ){
   // connect to kwm as docking module
   myapp.connectToKWM(true);
   the_panel->launchSwallowedApplications();
+  grabKey(XK_F1, Mod1Mask);
   the_panel->show();
+  myapp.syncX();
+  myapp.processEvents();
+  the_panel->parseMenus();
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);
-  grabKey(XK_F1, Mod1Mask);
   myapp.exec(); 
   return 0;
 }
