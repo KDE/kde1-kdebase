@@ -4,11 +4,13 @@
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
 Comment=German Keyboard (Switzerland)
 Comment[da]=Tysk tastatur (Svejts)
+Comment[de]=Deutsche Tastatur (Schweiz)
 Comment[fr]=Clavier allemand (Suisse)
 Comment[pt_BR]=Teclado Alemão (Suíça)
 
 Language=German (Switzerland)
 Language[da]=Tysk (Svejts)
+Language[de]=Deutsch (Schweiz)
 Language[fr]=Allemand (Suisse)
 Language[pt_BR]=Alemão (Suíça)
 

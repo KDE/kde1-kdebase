@@ -5,11 +5,13 @@ Authors=Nicola Pero <n.pero@mi.flashnet.it>
 
 Comment=Italian Keyboard (Italy)
 Comment[da]=Italiensk tastatur (Italien)
+Comment[de]=Italienische Tastatur (Italien)
 Comment[fr]=Clavier italien (Italie)
 Comment[pt_BR]=Teclado Italiano (Itália)
 
 Language=Italian
 Language[da]=Italiensk
+Language[de]=Italienisch
 Language[fr]=Italien
 Language[pt_BR]=Italiano
 
