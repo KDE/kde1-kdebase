@@ -1793,7 +1793,7 @@ void Client::iconify(bool animation){
     hideClient();
     if (animation){
       KWM::raiseSoundEvent("Window Iconify");
-      if (animate_size_change(this, geometry,
+      if (animate_size_change(this, QRect(geometry.x(), geometry.y(), width(), height()),
 			      KWM::iconGeometry(window),
 			      getDecoration()==KWM::normalDecoration,
 			      title_rect.x(),
@@ -1826,7 +1826,7 @@ void Client::unIconify(bool animation){
       KWM::raiseSoundEvent("Window DeIconify");
       if (animate_size_change(this,
 			      KWM::iconGeometry(window),
-			      geometry,
+			      QRect(geometry.x(), geometry.y(), width(), height()),
 			      getDecoration()==KWM::normalDecoration,
 			      title_rect.x(),
 			      width()-title_rect.right()))
@@ -1893,6 +1893,8 @@ void Client::ontoDesktop(int new_desktop){
 void Client::maximize(int mode, bool animate){
   if (isMaximized())
     return;
+  if (isShaded())
+      toggleShade();
   maximized = true;
   geometry_restore = geometry;
   KWM::setGeometryRestore(window, geometry_restore);
@@ -1949,6 +1951,8 @@ void Client::maximize(int mode, bool animate){
 void Client::unMaximize(){
   if (!isMaximized())
     return;
+  if (isShaded())
+      toggleShade();
   maximized = false;
   if (geometry != geometry_restore && state == NormalState)
     manager->raiseSoundEvent("Window UnMaximize");

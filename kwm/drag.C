@@ -167,14 +167,14 @@ void draw_animation_rectangle(int x, int y, int dx, int dy, bool decorated, int 
 
 
 // draw a transparent representation of the specified client
-void drawbound(Client* c){
+void drawbound(Client* c, bool only_for_move = TRUE){
     int x, y, dx, dy;
 
 
     x = c->geometry.x();
     y = c->geometry.y();
-    dx = c->geometry.width();
-    dy = c->geometry.height();
+    dx = only_for_move?c->width():c->geometry.width();
+    dy = only_for_move?c->height():c->geometry.height();
     if (dx < 0) {
         x += dx;
         dx = -dx;
@@ -261,6 +261,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     QRect other;
 
     bool do_not_clear_rectangle = false;
+    bool only_moving = recalc == dragcalc;
 
     bool transparent = false;
     if (recalc == dragcalc)
@@ -272,7 +273,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     cy = ry = c->geometry.y() + c->old_cursor_pos.y();
     bool return_pressed = false;
 
-    if (recalc != dragcalc)
+    if (!only_moving)
       manager->raiseSoundEvent("Window Resize Start");
     else
       manager->raiseSoundEvent("Window Move Start");
@@ -285,7 +286,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 
     if (transparent){
       XGrabServer(qt_xdisplay());
-      drawbound(c);
+      drawbound(c, only_moving);
     }
 
     while (c->dragging_is_running() && !return_pressed){
@@ -317,7 +318,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	if (rx < 1 || ry < 1 ||
 	    rx >= QApplication::desktop()->width()-1 ||
 	    ry >= QApplication::desktop()->height()-1)
-	  if (recalc == dragcalc)
+	  if (only_moving)
 	    do_not_clear_rectangle =
 	      electricBorder(c, options.WindowMoveType == TRANSPARENT,
 			     rx, ry);
@@ -333,11 +334,11 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 	continue;
       c->geometry = other;
       if (transparent && !do_not_clear_rectangle)
-	drawbound(c);
+	drawbound(c, only_moving);
       do_not_clear_rectangle = false;
       recalc(c, rx, ry);
       if (transparent)
-	drawbound(c);
+	drawbound(c, only_moving);
       else {
 	manager->sendConfig(c);
 	XSync(qt_xdisplay(), False);
@@ -352,7 +353,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     }
 
     if (transparent){
-      drawbound(c);
+      drawbound(c, only_moving);
       manager->sendConfig(c);
       XUngrabServer(qt_xdisplay());
     }
@@ -366,7 +367,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
 
     options.FocusPolicy =  oldFocusPolicy;
 
-    if (recalc != dragcalc)
+    if (!only_moving)
       manager->raiseSoundEvent("Window Resize End");
     else
       manager->raiseSoundEvent("Window Move End");
@@ -388,6 +389,12 @@ bool resizedrag(Client *c, int mode){
 	c->size.height_inc = 1;
     }
 
+    if (c->isShaded()) {
+	c->geometry.setWidth(c->width());
+	c->geometry.setHeight(c->height());
+	c->adjustSize();
+	c->toggleShade();
+    }
 
     c->geometry_restore = c->geometry;
 
@@ -415,7 +422,7 @@ bool resizedrag(Client *c, int mode){
 
 // interactive moving of a client.
 bool movedrag(Client *c){
-  return sweepdrag(c,dragcalc);
+    return sweepdrag(c,dragcalc);
 }
 
 

@@ -12,6 +12,9 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 5:
+        - animation of shaded windows improved
+
 patchlevel 4:
         - improved handling for floating menubars
 
