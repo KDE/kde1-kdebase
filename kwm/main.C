@@ -672,7 +672,7 @@ void MyApp::setupSystemMenuBar()
   systemMenuBar->setGeometry(0, qApp->desktop()->width()+10,100,40);
   systemMenuBarParent->show();
   systemMenuBarParent->hide();
-  if (systemMenuBar->menuBarPos() != KMenuBar::Floating) {
+  if (systemMenuBar->menuBarPos() != KMenuBar::FloatingSystem) {
       delete systemMenuBarParent;
       systemMenuBarParent = 0;
       systemMenuBar = 0;
