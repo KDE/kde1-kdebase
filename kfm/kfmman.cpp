@@ -307,10 +307,9 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 
     // Is page cached ?
     const char *file;
-    if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && 
-         !_reload && 
-         !_data
-       )
+    if ( view->getHTMLCache()->isEnabled() &&
+         ( file = view->getHTMLCache()->isCached( _url ) ) != 0L &&
+         !_reload && !_data )
     {
 	FILE* f = fopen( file, "rb" );
 	if ( f )
