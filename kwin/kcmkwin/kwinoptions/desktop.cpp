@@ -18,7 +18,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <iostream.h> 
+#include <iostream.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -69,22 +69,22 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   eLay->addRowSpacing(0,10);
   eLay->setColStretch(0,0);
   eLay->setColStretch(1,1);
-  
-  enable= new 
+
+  enable= new
     QCheckBox(klocale->translate("Enable active desktop borders"),
 	      ElectricBox);
   enable->adjustSize();
   enable->setMinimumSize(enable->size());
   eLay->addMultiCellWidget(enable,1,1,0,1);
 
-  movepointer = new 
+  movepointer = new
     QCheckBox(klocale->translate("Move pointer towards center after switch"),
 	      ElectricBox);
   movepointer->adjustSize();
   movepointer->setMinimumSize(movepointer->size());
   eLay->addMultiCellWidget(movepointer,2,2,0,1);
 
-  delaylabel = new QLabel(klocale->translate("Desktop switch delay:"), 
+  delaylabel = new QLabel(klocale->translate("Desktop switch delay:"),
 			  ElectricBox);
   delaylabel->adjustSize();
   delaylabel->setMinimumSize(delaylabel->size());
@@ -98,7 +98,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   delaylcd->setMinimumSize(delaylcd->size());
   eLay->addWidget(delaylcd,3,1);
 
-  delayslider = new KSlider(0,MAX_EDGE_RES/10,10,0, 
+  delayslider = new KSlider(0,MAX_EDGE_RES/10,10,0,
 			    KSlider::Horizontal, ElectricBox);
   delayslider->setSteps(10,10);
   delayslider->adjustSize();
@@ -122,7 +122,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   eLay->setColStretch(0,0);
   eLay->setColStretch(1,0);
   eLay->setColStretch(2,1);
-  
+
   BrdrSnapLabel = new QLabel(klocale->translate("Border Snap Zone:\n       (pixels)"), MagicBox);
   BrdrSnapLabel->adjustSize();
   BrdrSnapLabel->setMinimumSize(BrdrSnapLabel->size());
@@ -136,7 +136,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   BrdrSnapLCD->setMinimumSize(BrdrSnapLCD->size());
   eLay->addWidget(BrdrSnapLCD,1,1);
 
-  BrdrSnapSlider = new KSlider(0,MAX_BRDR_SNAP,1,0, 
+  BrdrSnapSlider = new KSlider(0,MAX_BRDR_SNAP,1,0,
 			       KSlider::Horizontal, MagicBox);
   BrdrSnapSlider->setSteps(1,1);
   BrdrSnapSlider->adjustSize();
@@ -161,7 +161,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   WndwSnapLCD->setMinimumSize(WndwSnapLCD->size());
   eLay->addWidget(WndwSnapLCD,3,1);
 
-  WndwSnapSlider = new KSlider(0,MAX_WNDW_SNAP,1,0, 
+  WndwSnapSlider = new KSlider(0,MAX_WNDW_SNAP,1,0,
 			       KSlider::Horizontal, MagicBox);
   WndwSnapSlider->setSteps(1,1);
   WndwSnapSlider->adjustSize();
@@ -169,7 +169,7 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
 				  WndwSnapLCD->width(),
 				  WndwSnapSlider->height());
   eLay->addWidget(WndwSnapSlider,3,2);
-  
+
   connect( WndwSnapSlider, SIGNAL(valueChanged(int)), WndwSnapLCD, SLOT(display(int)) );
 
   eLay->activate();
@@ -235,7 +235,7 @@ void KDesktopConfig::setElectricBordersDelay(int delay)
 {
     delayslider->setValue(delay);
     delaylcd->display(delay);
-    
+
 }
 
 
@@ -269,14 +269,14 @@ void KDesktopConfig::GetSettings( void )
 
   v = config->readNumEntry(KWM_ELECTRIC_BORDER);
   setElectricBorders(v != -1);
-  
+
   v = config->readNumEntry(KWM_ELECTRIC_BORDER_DELAY);
   setElectricBordersDelay(v);
 
   //CT 17mar98 re-allign this reading with the one in kwm  ("on"/"off")
   // matthias: this is obsolete now. Should be fixed in 1.1 with NoWarp, MiddleWarp, FullWarp
   key = config->readEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER);
-  if (key == "MiddleWarp") 
+  if (key == "MiddleWarp")
     setElectricBordersMovePointer(TRUE);
 
   //CT 15mar98 - magics
@@ -308,7 +308,7 @@ void KDesktopConfig::SaveSettings( void )
   config->writeEntry(KWM_ELECTRIC_BORDER_DELAY,getElectricBordersDelay());
 
   bv = getElectricBordersMovePointer();
-  config->writeEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER,bv?"MiddleWarp":"FullWarp");
+  config->writeEntry(KWM_ELECTRIC_BORDER_MOVE_POINTER,bv?"MiddleWarp":"NoWarp");
 
   config->sync();
 
