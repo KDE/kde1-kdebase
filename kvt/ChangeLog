@@ -1,3 +1,4 @@
+  - multiline selection fixed again
  
   - scrollbar problems fixed 
   - should compile on Linux/Alpha now (Christian Czezatke)

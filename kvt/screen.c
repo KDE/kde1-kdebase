@@ -756,6 +756,7 @@ int scroll(int row1,int row2,int count)
       memset(dest2,DEFAULT_RSTYLE,(MyWinInfo.cwidth+1)*count*RENDSIZE);
 
       dest1--;
+      dest1 += MyWinInfo.cwidth + 1; /* Matthias */ 
       for(i=0;i<(count+1);i++)
 	{
 	  *dest1 = 0;
