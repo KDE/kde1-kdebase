@@ -4,7 +4,7 @@ SUBDIRS = cs da de es fi fr it nl ru sv hu pt pl el hr ro
 # this is a general list for merging!
 APPS = kdehelp kdisplay kdm kfind kfm kfontmanager kpanel kvt kwm klock \
 	krootwm kcmbell kcminfo kcminput kcmkwm kcmsamba kcmsample kcontrol \
-	kmenuedit kcmkpanel kcmlocale
+	kmenuedit kcmkpanel kcmlocale kcmsyssound
 
 merge:
 	@apps='$(APPS)'; \

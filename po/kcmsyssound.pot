@@ -1,99 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-02-03 14:19+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1998-01-09 12:34:28+0100\n"
-"From: Christian Czezatke <ceci@klapauzius>\n"
-"Xgettext-Options: -C -ktranslate\n"
-"Files: main.cpp syssound.cpp\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:53
 msgid "&Sound"
-msgstr "&Klänge"
+msgstr ""
 
 #: main.cpp:80
 msgid "System Sounds"
-msgstr "Systemklänge"
+msgstr ""
 
 #: syssound.cpp:69
 msgid "Change to Desktop 1"
-msgstr "Wechsel zu Arbeitsplatz 1"
+msgstr ""
 
 #: syssound.cpp:70
 msgid "Change to Desktop 2"
-msgstr "Wechsel zu Arbeitsplatz 2"
+msgstr ""
 
 #: syssound.cpp:71
 msgid "Change to Desktop 3"
-msgstr "Wechsel zu Arbeitsplatz 3"
+msgstr ""
 
 #: syssound.cpp:72
 msgid "Change to Desktop 4"
-msgstr "Wechsel zu Arbeitsplatz 4"
+msgstr ""
 
 #: syssound.cpp:73
 msgid "Change to Desktop 5"
-msgstr "Wechsel zu Arbeitsplatz 5"
+msgstr ""
 
 #: syssound.cpp:74
 msgid "Change to Desktop 6"
-msgstr "Wechsel zu Arbeitsplatz 6"
+msgstr ""
 
 #: syssound.cpp:75
 msgid "Change to Desktop 7"
-msgstr "Wechsel zu Arbeitsplatz 7"
+msgstr ""
 
 #: syssound.cpp:76
 msgid "Change to Desktop 8"
-msgstr "Wechsel zu Arbeitsplatz 8"
+msgstr ""
 
 #: syssound.cpp:78
 msgid "Activate Window"
-msgstr "Fenster aktivieren"
+msgstr ""
 
 #: syssound.cpp:79
 msgid "Open new window"
-msgstr "Fenster öffnen"
+msgstr ""
 
 #: syssound.cpp:80
 msgid "Close Window"
-msgstr "Fenster schließen"
+msgstr ""
 
 #: syssound.cpp:81
 msgid "Startup"
-msgstr "KDE Start"
+msgstr ""
 
 #: syssound.cpp:103
 msgid "e&nable system sounds"
-msgstr "&Systemklänge aktivieren"
+msgstr ""
 
 #: syssound.cpp:108
 msgid "&Test"
-msgstr "&Anhören"
+msgstr ""
 
 #: syssound.cpp:112
 msgid "&Events:"
-msgstr "&Ereignisse:"
+msgstr ""
 
 #: syssound.cpp:116
 msgid "&Sounds:"
-msgstr "&Klänge:"
+msgstr ""
 
 #: syssound.cpp:120
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr ""
-"Zusätzliche WAV Dateien können auf die \"Klänge\" Liste gezogen werden."
 
 #: syssound.cpp:323
 msgid "Unsupported URL"
-msgstr "nicht unterstützte URL"
+msgstr ""
 
 #: syssound.cpp:324
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Dieser URL Typ wird im Moment von den KDE Systemklängen nicht unterstützt."
 
 #: syssound.cpp:328
 #, c-format
@@ -102,13 +107,10 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file!"
 msgstr ""
-"Sorry, aber\n"
-"%s\n"
-"scheint keine gültige WAV Datei zu sein."
 
 #: syssound.cpp:329
 msgid "Improper File Extension"
-msgstr "ungültige Dateiendung"
+msgstr ""
 
 #: syssound.cpp:335
 #, c-format
@@ -117,10 +119,7 @@ msgid ""
 "%s\n"
 "is already in the list"
 msgstr ""
-"Die Datei\n"
-"%s\n"
-"ist bereits in der Liste."
 
 #: syssound.cpp:336
 msgid "File Already in List"
-msgstr "Datei ist bereits in der Liste."
+msgstr ""

@@ -32,6 +32,7 @@
 #include <kapp.h>
 #include <kwm.h>
 #include <drag.h>
+#include <kstring.h>
 
 #include "syssound.h"
 #include "syssound.moc"
@@ -324,18 +325,14 @@ void KSoundWidget::soundDropped(KDNDDropZone *zone)
     } else {
       // CC: Now check for the ending ".wav"
       if (stricmp(".WAV",url.right(4))) {
-	msg = klocale->translate("Sorry, but \n");
-	msg += url;
-	msg += klocale->translate("\ndoes not seem to be a WAV--file");
+        ksprintf(&msg, i18n("Sorry, but \n%s\ndoes not seem to be a WAV--file!"), url.data());
 	QMessageBox::warning(this, klocale->translate("Improper File Extension"), msg);
       } else {
 	// CC: Hurra! Finally we've got a WAV file to add to the list
 	url = url.right(url.length()-5); // strip the leading "file:"
 	if (!addToSoundList(url)) {
 	  // CC: did not add file because it is already in the list
-	  msg = klocale->translate("The file\n");
-	  msg += url;
-	  msg +=klocale->translate("\nis already in the list");
+	  ksprintf(&msg, i18n("The file\n%s\nis already in the list"), url.data());
 	  QMessageBox::warning(this, klocale->translate("File Already in List"), msg);
 
 	}
