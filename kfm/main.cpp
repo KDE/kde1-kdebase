@@ -165,7 +165,7 @@ int main( int argc, char ** argv )
     // Check if kfm is already running
     KFM::setSilent(true);
     KFM * other_kfm = new KFM();
-    if (other_kfm->isKFMRunning()) {
+    if (other_kfm->isOK() && other_kfm->isKFMRunning()) {
       warning("KFM is already running");
       exit(1);
     }
