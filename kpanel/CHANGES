@@ -1,5 +1,10 @@
 In kpanel-0.18:
 
+    Patchlevel 12:
+       - removed the internal configure dialog. Launces kcmkpanel instead.
+       - fixed small bug in the clock (to the unknown developer who did the
+         changes: it was broken in tiny style.)
+
     Patchlevel 11:
        - fixed the missing-submenus bug (coolo)
 

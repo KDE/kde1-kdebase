@@ -209,9 +209,6 @@ public:
   void standalonePanelButtonClicked();
   
   void configurePanel();
-  void slotPropsApply();
-  void slotPropsCancel();
-  void slotsl_nr_db(int);
     
   
   void restart();

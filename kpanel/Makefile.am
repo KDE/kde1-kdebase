@@ -10,20 +10,17 @@ CXXFLAGS = @NOOPT_CXXFLAGS@
 bin_PROGRAMS = kpanel
 kpanel_LDADD =	$(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 kpanel_SOURCES = kpanel.C props.C layout.C tools.C main.C events.C pmenu.C
-noinst_HEADERS = kpanel.h pmenu.h props.h
-BUILT_SOURCES = kpanel.moc pmenu.moc props.moc
+noinst_HEADERS = kpanel.h pmenu.h
+BUILT_SOURCES = kpanel.moc pmenu.moc 
 SUBDIRS = pics
 
 main.C: kpanel.moc
 pmenu.C: pmenu.moc
-props.C: props.moc
 
 kpanel.moc: kpanel.h
 	$(MOC) kpanel.h -o kpanel.moc
 pmenu.moc: pmenu.h
 	$(MOC) pmenu.h -o pmenu.moc
-props.moc: props.h
-	$(MOC) props.h -o props.moc
 
 messages:
 	$(XGETTEXT) -C --keyword=translate -x ../../kdelibs/po/kde.pot $(kpanel_SOURCES) && mv messages.po ../po/kpanel.pot

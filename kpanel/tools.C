@@ -564,13 +564,12 @@ void kPanel::set_label_date(){
   curtime=time(NULL);
   loctime=localtime(&curtime);
   
-  int rows = 1;
   if (!clockAmPm)
-    strftime(buf,256,"%H:%M\n",loctime);
+    strftime(buf,256,"%H:%M",loctime);
   else 
-    strftime(buf,256,"%I:%M%p\n",loctime);
+    strftime(buf,256,"%I:%M%p",loctime);
   
-  strftime(buf2,256,"%b %d",loctime);
+  strftime(buf2,256,"\n%b %d",loctime);
   
   QToolTip::add(label_date, QString(buf)+QString(buf2));
 
