@@ -1,0 +1,128 @@
+KDE Screen Saver
+~~~~~~~~~~~~~~~~
+This is an alpha release of screen savers for KDE.  The timeout stuff is
+based on a very heavily modified xautolock.
+You should get kdisplay also.
+
+
+Features:
+
+Each screen saver is a stand-alone executable.
+Each screen saver has a setup dialog.
+Interfaces with kdisplay, so no manual setup of screen saver is necessary.
+Hotspots in corners of display to invoke saver/locker.
+Copy kscreensaver.h/cpp to your app and call kForceLock() to lock the
+ screen any time.
+or just run klock
+
+
+Installation:
+
+You will require libkde-0.7.1 or higher
+
+1. Create a KDEDIR environment variable, e.g. /usr/local/kde
+2. Type make
+3. If you DO NOT have shadow passwords type: make install
+   If you   DO   have shadow passwords type: make install-shadow
+
+
+Adding New Screensavers:
+
+To add your own screen savers you must provide four functions:
+
+void startScreenSaver( Drawable d );
+
+  Start the screen saver in the specified window if it is not currently
+  running.
+
+void stopScreenSaver();
+
+  Stop the screen saver if it is currently running.
+
+int  setupScreenSaver();
+
+  Display a dialog so the the user can change the screen saver settings.
+
+const char *getScreenSaverName()
+
+  return the name/description of the screen saver
+
+
+All drawing must be done in Xlib.
+use blankscrn.*, polygon.* and banner.* as examples.
+Naming the screensavers *.kss allows kdisplay to locate the available
+screensavers.
+
+
+CHANGES:
+
+Version 0.3.3
+
+Fix small window problem under kwm (hopefully)
+Fixes for Qt-1.2
+
+
+Version 0.3.2
+
+Updated lines
+added About dialogs for all savers
+Shadow password support added by Martin Hartig
+Use libkdeui for colour dialog
+
+
+Version 0.3.1
+
+Ported some xlock savers.  Basic interface code done, but will need more work
+ for some savers yet to be ported.
+Included "lines" (contributed by
+ Dirk Staneker <dirk.staneker@student.uni-tuebingen.de>)
+locking bug fix
+
+
+Version 0.3
+
+fixes to password stuff
+
+
+Version 0.2
+
+kscreensaver.h/cpp external control files
+SIGUSR1 causes the screen saver to lock immediately
+hopefully StaysOnTop and windows opening after ss invoked will not display
+ over saver window anymore
+minor bug fixes
+
+
+CREDITS:
+
+  lines  -  Copyright (c) 1997 Dirk Staneker
+
+Ported from xlockmore:     (but blame me if they don't work)
+  rock   -  Copyright (c) 1992 by Jamie Zawinski
+  flame  -  Copyright (c) 1991 by Patrick J. Naughton.
+  pyro   -  Copyright (c) 1991 by Patrick J. Naughton.
+  laser  -  Copyright (c) 1995 Pascal Pensa <pensa@aurora.unice.fr>
+
+xlock Copyright Notice:
+
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that
+ the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  No representations are made about the suitability of this
+ software for any purpose.  It is provided "as is" without express or
+ implied warranty.
+
+blank, banner and polygons are my fault
+
+
+TODO:
+
+More screen savers - If you plan to write/port a screen saver, please let
+  me know what you are doing so that effort is not duplicated.
+Support multiple screens - I can't do this - I only have one.
+
+
+Martin Jones.
+mjones@kde.org
+

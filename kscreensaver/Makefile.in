@@ -1,0 +1,130 @@
+#
+# Makefile for kscreensave.   Good Luck
+#
+
+.SUFFIXES: .cpp
+
+CXX = g++
+CC = gcc
+MOC = moc
+INCFLAGS = -I. -I/usr/openwin/include -I$(QTDIR)/include -I$(KDEDIR)/include
+#CXXFLAGS = -g -Wall $(INCFLAGS) -DSTDC_HEADERS $(DEBUG)
+CXXFLAGS = -O2 $(INCFLAGS) -DSTDC_HEADERS $(DEBUG)
+LDFLAGS = -L/usr/openwin/lib -L$(QTDIR)/lib -L$(KDEDIR)/lib -L. -lqt\
+			-lkdecore -lkdeui -lXext -lX11
+
+############# Install ##############
+
+INSTALL = install -s -m 0755
+INSTALL_STICKY = install -s -m 4755
+INSTALL_DATA = install -m 0644
+INSTALL_DIR = install -d -m 0755
+
+prefix = $(KDEDIR)
+BINDIR = $(prefix)/bin
+LIBDIR = $(prefix)/lib
+PICSDIR = $(LIBDIR)/pics
+DOCSDIR = $(prefix)/doc/HTML
+
+########## Implicit Rules ##########
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $<
+
+########## Files ##########
+
+SRCS = main.cpp xautolock.cpp\
+		saver.cpp polygon.cpp banner.cpp blankscrn.cpp klock.cpp\
+		kscreensave.cpp kslider.cpp xlock.cpp rock.cpp flame.cpp lines.cpp\
+		laser.cpp pyro.cpp
+SRCMETA = main.moc saver.moc polygon.moc banner.moc\
+		blankscrn.moc kslider.moc rock.moc flame.moc lines.moc laser.moc\
+		pyro.moc
+HDRS = saver.h polygon.h banner.h\
+		blankscrn.h kscreensave.h kslider.h xlock.h rock.h flame.h lines.h\
+		laser.h pyro.h
+
+BASE_OBJS = main.o xautolock.o saver.o kslider.o
+POLYGON_OBJ = polygon.o
+LINES_OBJ = lines.o
+BANNER_OBJ = banner.o
+BLANK_OBJ = blankscrn.o
+ROCK_OBJ = xlock.o rock.o
+FLAME_OBJ = xlock.o flame.o
+LASER_OBJ = xlock.o laser.o
+PYRO_OBJ = xlock.o pyro.o
+KLOCK_OBJ = klock.o kscreensave.o
+
+OBJS = $(BASE_OBJS) $(POLYGON_OBJ) $(BANNER_OBJ) $(BLANK_OBJ)\
+		$(LINES_OBJ) $(ROCK_OBJ) $(FLAME_OBJ) $(LASER_OBJ) $(PYRO_OBJ)\
+		$(KLOCK_OBJ)
+
+POLYGON = kpolygon.kss
+LINES = klines.kss
+BANNER = kbanner.kss
+BLANK = kblankscrn.kss
+ROCK = krock.kss
+FLAME = kflame.kss
+LASER = klaser.kss
+PYRO = kpyro.kss
+KLOCK = klock
+
+TARGETS = $(POLYGON) $(BANNER) $(BLANK) $(ROCK) $(FLAME) $(LINES)\
+		$(LASER) $(PYRO) $(KLOCK)
+
+########## Build Rules ##########
+
+all: $(TARGETS)
+
+$(POLYGON): $(SRCMETA) $(BASE_OBJS) $(POLYGON_OBJ)
+	$(CXX) -o $(POLYGON) $(BASE_OBJS) $(POLYGON_OBJ) $(LDFLAGS)
+
+$(LINES): $(SRCMETA) $(BASE_OBJS) $(LINES_OBJ)
+	$(CXX) -o $(LINES) $(BASE_OBJS) $(LINES_OBJ) $(LDFLAGS)
+
+$(BANNER): $(SRCMETA) $(BASE_OBJS) $(BANNER_OBJ)
+	$(CXX) -o $(BANNER) $(BASE_OBJS) $(BANNER_OBJ) $(LDFLAGS)
+
+$(BLANK): $(SRCMETA) $(BASE_OBJS) $(BLANK_OBJ)
+	$(CXX) -o $(BLANK) $(BASE_OBJS) $(BLANK_OBJ) $(LDFLAGS)
+
+$(ROCK): $(SRCMETA) $(BASE_OBJS) $(ROCK_OBJ)
+	$(CXX) -o $(ROCK) $(BASE_OBJS) $(ROCK_OBJ) $(LDFLAGS)
+
+$(FLAME): $(SRCMETA) $(BASE_OBJS) $(FLAME_OBJ)
+	$(CXX) -o $(FLAME) $(BASE_OBJS) $(FLAME_OBJ) $(LDFLAGS)
+
+$(LASER): $(SRCMETA) $(BASE_OBJS) $(LASER_OBJ)
+	$(CXX) -o $(LASER) $(BASE_OBJS) $(LASER_OBJ) $(LDFLAGS)
+
+$(PYRO): $(SRCMETA) $(BASE_OBJS) $(PYRO_OBJ)
+	$(CXX) -o $(PYRO) $(BASE_OBJS) $(PYRO_OBJ) $(LDFLAGS)
+
+$(KLOCK): $(SRCMETA) $(KLOCK_OBJ)
+	$(CXX) -o $(KLOCK) $(KLOCK_OBJ) $(LDFLAGS)
+
+install:
+	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGETS) $(BINDIR)
+
+install-shadow:
+	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL_STICKY) $(TARGETS) $(BINDIR)
+
+clean:
+	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS)
+
+veryclean:
+	rm -f *~ *.bak *.BAK $(TARGETS) $(SRCMETA) $(OBJS) core
+
+depend: $(SRCS)
+	@makedepend $(INCFLAGS) $(SRCS) 2> /dev/null
+
+########## Meta objects ##########
+
+%.moc: %.h
+	$(MOC) $< -o $@
+
+##################################
+# DO NOT DELETE
+

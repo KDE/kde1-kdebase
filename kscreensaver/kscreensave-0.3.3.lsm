@@ -1,0 +1,15 @@
+Begin3
+Title:		kscreensave
+Version:	0.3.3
+Entered-date:	130497
+Description:	Qt based screen savers for KDE
+Keywords:	screen saver linux X11 Qt KDE
+Author:		mjones@kde.org (Martin Jones)
+Maintained-by:	mjones@kde.org (Martin Jones)
+Primary-site:	
+Alternate-site:	ftp://fiwi02.wiwi.uni-tuebingen.de/pub/kde/apps/utils
+		39kB kscreensave-0.3.3.tar.gz
+Original-site:	
+Platform:	Linux with Qt GUI library and KDE libraries
+Copying-policy:	GPL
+End
