@@ -79,13 +79,8 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 
 void KDisplayApplication::init()
 {
-  //  return; //Matthias: the stuff below will segfault TODO 
-   KStdConfig *standard =  new KStdConfig(0);
-  delete standard;
-  
-   KGlobalConfig *global =  new KGlobalConfig(0);
-   delete global;
-
+  delete (new KStdConfig(0));
+  delete (new KGlobalConfig(0));
 }
 
 

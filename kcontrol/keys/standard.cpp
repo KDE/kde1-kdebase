@@ -1,10 +1,8 @@
-
 //
-// KDE Display background setup module
+// KDE Shotcut config module
 //
-// Copyright (c)  Martin R. Jones 1996
-//
-// Converted to a kcc module by Matthias Hoelzer 1997
+// Copyright (c)  Mark Donohoe 1998
+// Copyright (c)  Matthias Ettrich 1998
 //
 
 #ifdef HAVE_CONFIG
@@ -50,34 +48,34 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 	dict.setAutoDelete( false );
 	keys = new KAccel( this );
 	
-	keys->insertItem(i18n("Quit"),"Quit" , "CTRL+Q");
-	keys->insertItem(i18n("Open"),"Open" , "CTRL+O");
-	keys->insertItem(i18n("New"), "New", "CTRL+N");
-	keys->insertItem(i18n("Close"), "Close", "CTRL+W");
-	keys->insertItem(i18n("Print"),"Print" , "CTRL+P");
-	keys->insertItem(i18n("Help"), "Help", "F1");
-	keys->insertItem(i18n("Next"), "Next", "Next");
-	keys->insertItem(i18n("Prior"),"Prior" , "Prior");
-	keys->insertItem(i18n("Cut"), "Cut", "CTRL+X");
-	keys->insertItem(i18n("Copy"), "Copy", "CTRL+C");
-	keys->insertItem(i18n("Paste"),"Paste" , "CTRL+V");
-	keys->insertItem(i18n("Undo"),"Undo" , "CTRL+Z");
-	keys->insertItem(i18n("Find"),"Find" , "CTRL+F");
-	keys->insertItem(i18n("Replace"),"Replace" , "CTRL+R");
-	keys->insertItem(i18n("Insert"), "Insert", "CTRL+Insert");
-	keys->insertItem(i18n("Home"), "Home", "CTRL+Home");
-	keys->insertItem(i18n("End"),"End" , "CTRL+End");
+ 	keys->insertItem(i18n("Quit"),"Quit" , "CTRL+Q");
+ 	keys->insertItem(i18n("Open"),"Open" , "CTRL+O");
+ 	keys->insertItem(i18n("New"), "New", "CTRL+N");
+ 	keys->insertItem(i18n("Close"), "Close", "CTRL+W");
+ 	keys->insertItem(i18n("Print"),"Print" , "CTRL+P");
+ 	keys->insertItem(i18n("Help"), "Help", "F1");
+ 	keys->insertItem(i18n("Next"), "Next", "Next");
+ 	keys->insertItem(i18n("Prior"),"Prior" , "Prior");
+ 	keys->insertItem(i18n("Cut"), "Cut", "CTRL+X");
+ 	keys->insertItem(i18n("Copy"), "Copy", "CTRL+C");
+ 	keys->insertItem(i18n("Paste"),"Paste" , "CTRL+V");
+ 	keys->insertItem(i18n("Undo"),"Undo" , "CTRL+Z");
+ 	keys->insertItem(i18n("Find"),"Find" , "CTRL+F");
+ 	keys->insertItem(i18n("Replace"),"Replace" , "CTRL+R");
+ 	keys->insertItem(i18n("Insert"), "Insert", "CTRL+Insert");
+ 	keys->insertItem(i18n("Home"), "Home", "CTRL+Home");
+ 	keys->insertItem(i18n("End"),"End" , "CTRL+End");
 	
-	debug("inserted keys");
+ 	debug("inserted keys");
 	
-	keys->setConfigGlobal( true );
-	keys->readSettings();
+ 	keys->setConfigGlobal( true );
+ 	keys->readSettings();
 	
 	debug("read settings");
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 	
-	QBoxLayout *stackLayout = new QVBoxLayout( this, 4 );
+	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
 	
 	topLayout->addLayout( stackLayout );
 	
@@ -100,144 +98,32 @@ KStdConfig::KStdConfig( QWidget *parent, const char *name )
 	
 	debug("got key dict");
 	
-	kc =  new KKeyChooser( &dict, this );
+ 	kc =  new KKeyChooser( &dict, this );
 	
-	debug("Make key chooser standard");
+ 	debug("Make key chooser standard");
 	
-	topLayout->addWidget( kc, 10 );
+ 	topLayout->addWidget( kc, 10 );
 	
 	topLayout->activate();
 	
-	//keys->setKeyDict( dave );
-	printf("ende des contructors\n");
+
 }
 
-void KStdConfig::resizeEvent( QResizeEvent * )
+KStdConfig::~KStdConfig (){
+  delete keys;
+}
+
+void KStdConfig::loadSettings(  )
 {
- 
 }
-
-void KStdConfig::readSettings( )
-{
-  
-}
-
-void KStdConfig::writeSettings(  )
-{
-	debug("Writing key settings");
-	keys->writeSettings();
-}
-
-void KStdConfig::getDeskNameList()
-{
-   
-}
-
-void KStdConfig::setDesktop( int desk )
-{
-   
-}
-
-void KStdConfig::showSettings()
-{ 
-   
-}
-
-void KStdConfig::slotApply()
-{
-	writeSettings();
-}
-
-void KStdConfig::apply( bool force )
-{
-	
-}
-
-void KStdConfig::retainResources() {
-	
-}
-
-void KStdConfig::setMonitor()
-{
-   
-    
-}
-
-// Attempts to load the specified wallpaper and creates a centred/scaled
-// version if necessary.
-// Note that centred pixmaps are placed on a full screen image of background
-// color1, so if you want to save memory use a small tiled pixmap.
-//
-int KStdConfig::loadWallpaper( const char *name, bool useContext )
-{
-	
-}
-
-void KStdConfig::slotSelectColor1( const QColor &col )
-{
-	
-}
-
-void KStdConfig::slotSelectColor2( const QColor &col )
-{
-
-}
-
-void KStdConfig::slotBrowse()
-{
-	
-}
-
-void KStdConfig::slotWallpaper( const char *filename )
-{
-   
-}
-
-void KStdConfig::slotWallpaperMode( int m )
-{
-
-}
-
-void KStdConfig::slotColorMode( int m )
-{
-	
-}
-
-void KStdConfig::slotSetup2Color()
-{
-   
-}
-
-void KStdConfig::slotStyleMode( int m )
-{
-   
-}
-
-void KStdConfig::slotSwitchDesk( int num )
-{
-   
-}
-
-void KStdConfig::slotRenameDesk()
-{
-   
-}
-
-void KStdConfig::slotHelp()
-{
-
-}
-
-void KStdConfig::loadSettings()
-{
-   
-}
-
 void KStdConfig::applySettings()
 {
 	debug("apply settings");
 	debug("No. of items in dict %d", dict.count() );
 	keys->setKeyDict( dict );
 	debug("set key dict");
-    writeSettings();
+	keys->writeSettings();
+}
+void KStdConfig::defaultSettings(  )
+{
 }

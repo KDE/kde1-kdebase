@@ -1,10 +1,8 @@
-
 //
-// KDE Display background setup module
+// KDE Shotcut config module
 //
-// Copyright (c)  Martin R. Jones 1996
-//
-// Converted to a kcc module by Matthias Hoelzer 1997
+// Copyright (c)  Mark Donohoe 1998
+// Copyright (c)  Matthias Ettrich 1998
 //
 
 #ifdef HAVE_CONFIG
@@ -53,9 +51,7 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 	globalDict->setAutoDelete( true );
 	
 	dict.setAutoDelete( false );
-	printf("neuer accel\n");
 	keys = new KAccel( this );
-	printf("weitergehts mit den bindings\n");
 
 	#include "../../kwm/kwmbindings.cpp"
 	
@@ -160,7 +156,10 @@ KGlobalConfig::KGlobalConfig( QWidget *parent, const char *name )
 	
 	topLayout->activate();
 	
-	//keys->setKeyDict( dave );
+}
+
+KGlobalConfig::~KGlobalConfig (){
+  delete keys;
 }
 
 void KGlobalConfig::slotRemove()
@@ -217,19 +216,9 @@ void KGlobalConfig::slotSave( )
 	saveBt->setEnabled( FALSE );
 }
 
-void KGlobalConfig::resizeEvent( QResizeEvent * )
-{
- 
-}
-
-void KGlobalConfig::readSettings( )
-{
-  
-}
 
 void KGlobalConfig::readScheme( int index )
 {
-  printf("read scheme\n");
 	KConfigBase* config;
 	
 	if( index == 1 ) {
@@ -241,39 +230,37 @@ void KGlobalConfig::readScheme( int index )
 		config = 
 			new KSimpleConfig( sFileList->at( index ), true );
 	}
-printf("1\n");	
-	KEntryIterator *gIt;
+	KEntryIterator *gIt=0;
 	
 	if ( index == 0 )
 		gIt = config->entryIterator( "Global Keys" );
 	else
 		gIt = config->entryIterator( "Global Key Scheme" );
-printf("1\n");	
 		
 	int *keyCode;
 	
-printf("1\n");	
-	gIt->toFirst();
-	while ( gIt->current() ) {
-		keyCode = new int;
-		*keyCode = stringToKey( gIt->current()->aValue );
-		globalDict->insert( gIt->currentKey(), keyCode);
-		//debug( " %s, %d", gIt->currentKey(), *keyCode );
-		++(*gIt);
+ 
+	if (gIt){
+		gIt->toFirst();
+		while ( gIt->current() ) {
+		  keyCode = new int;
+		  *keyCode = stringToKey( gIt->current()->aValue );
+		  globalDict->insert( gIt->currentKey(), keyCode);
+		  //debug( " %s, %d", gIt->currentKey(), *keyCode );
+		  ++(*gIt);
+		}
 	}
-printf("1\n");	
 	
 	kc->aIt->toFirst();
 	while ( kc->aIt->current() ) {
-		if ( globalDict->find( kc->aIt->currentKey() ) ) {
-			kc->aIt->current()->aConfigKeyCode = *globalDict->find( kc->aIt->currentKey() );
-			kc->aIt->current()->aCurrentKeyCode = kc->aIt->current()->aConfigKeyCode;
-			debug("Change: %s", kc->aIt->currentKey() );
-		}
-		++ ( *kc->aIt );
+	  if ( globalDict->find( kc->aIt->currentKey() ) ) {
+	    kc->aIt->current()->aConfigKeyCode = *globalDict->find( kc->aIt->currentKey() );
+	    kc->aIt->current()->aCurrentKeyCode = kc->aIt->current()->aConfigKeyCode;
+	    debug("Change: %s", kc->aIt->currentKey() );
+	  }
+	  ++ ( *kc->aIt );
 	}
 	
-printf("1\n");	
 	kc->listSync();
 }
 
@@ -394,7 +381,7 @@ void KGlobalConfig::slotPreviewScheme( int indx )
 }
 
 void KGlobalConfig::readSchemeNames( )
-{
+ {
 	QString kksPath( kapp->kde_datadir() );
 	kksPath += "/kcmkeys/global";
 	
@@ -465,111 +452,6 @@ void KGlobalConfig::readSchemeNames( )
 		
 }
 
-void KGlobalConfig::writeSettings(  )
-{
-	debug("Writing key settings");
-	keys->writeSettings();
-}
-
-void KGlobalConfig::getDeskNameList()
-{
-   
-}
-
-void KGlobalConfig::setDesktop( int desk )
-{
-   
-}
-
-void KGlobalConfig::showSettings()
-{ 
-   
-}
-
-void KGlobalConfig::slotApply()
-{
-	writeSettings();
-}
-
-void KGlobalConfig::apply( bool force )
-{
-	
-}
-
-void KGlobalConfig::retainResources() {
-	
-}
-
-void KGlobalConfig::setMonitor()
-{
-   
-    
-}
-
-// Attempts to load the specified wallpaper and creates a centred/scaled
-// version if necessary.
-// Note that centred pixmaps are placed on a full screen image of background
-// color1, so if you want to save memory use a small tiled pixmap.
-//
-int KGlobalConfig::loadWallpaper( const char *name, bool useContext )
-{
-	
-}
-
-void KGlobalConfig::slotSelectColor1( const QColor &col )
-{
-	
-}
-
-void KGlobalConfig::slotSelectColor2( const QColor &col )
-{
-
-}
-
-void KGlobalConfig::slotBrowse()
-{
-	
-}
-
-void KGlobalConfig::slotWallpaper( const char *filename )
-{
-   
-}
-
-void KGlobalConfig::slotWallpaperMode( int m )
-{
-
-}
-
-void KGlobalConfig::slotColorMode( int m )
-{
-	
-}
-
-void KGlobalConfig::slotSetup2Color()
-{
-   
-}
-
-void KGlobalConfig::slotStyleMode( int m )
-{
-   
-}
-
-void KGlobalConfig::slotSwitchDesk( int num )
-{
-   
-}
-
-void KGlobalConfig::slotRenameDesk()
-{
-   
-}
-
-void KGlobalConfig::slotHelp()
-{
-
-}
 
 void KGlobalConfig::loadSettings()
 {
@@ -582,5 +464,9 @@ void KGlobalConfig::applySettings()
 	debug("No. of items in dict %d", dict.count() );
 	keys->setKeyDict( dict );
 	debug("set key dict");
-    writeSettings();
+	keys->writeSettings();
+}
+void KGlobalConfig::defaultSettings()
+{
+   
 }
