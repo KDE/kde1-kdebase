@@ -113,7 +113,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     v_lay->addSpacing(5);
 
     //CT 19Dec1998 using layouts
-    t_lay = new QGridLayout(vis_group,5,11,1,1);
+    t_lay = new QGridLayout(5,11,1);
     v_lay->addLayout(t_lay);
 
     t_lay->addRowSpacing(0,5);
@@ -214,7 +214,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
 
  
     //CT 19Dec1998 using layouts
-    t_lay = new QGridLayout(vis_group,5,11,1,1);
+    t_lay = new QGridLayout(5,11,1);
     v_lay->addLayout(t_lay);
 
     t_lay->addRowSpacing(0,5);
@@ -315,7 +315,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     //CT
 
     //CT 19Dec1998 using layouts
-    t_lay = new QGridLayout(vis_group,5,7,1,1);
+    t_lay = new QGridLayout(5,7,1);
     v_lay->addLayout(t_lay);
 
     t_lay->addRowSpacing(0,5);
