@@ -1671,7 +1671,7 @@ void KfmGui::slotConfigureBrowser()
 	      w->view->setDefaultBGColor( coloropts.bg );
 			w->view->setUnderlineLinks( coloropts.underlineLinks );
 	      if(coloropts.changeCursoroverLink)
-		htmlview->setURLCursor( upArrowCursor);
+		htmlview->setURLCursor( handCursor );
 	      else
 		htmlview->setURLCursor( arrowCursor );
 

@@ -171,7 +171,7 @@ void KfmView::setHTMLWidgetOptions(){
   htmlview->setDefaultFontBase( fSize );
   htmlview->setUnderlineLinks(underlineLinks);
   if(changeCursor)
-    htmlview->setURLCursor( upArrowCursor);
+    htmlview->setURLCursor( handCursor );
   else
     htmlview->setURLCursor( arrowCursor );
 
