@@ -121,7 +121,7 @@ msgstr "Bewegen"
 
 #: titlebar.cpp:989
 msgid "(Un)Shade"
-msgstr "Schattiert an/aus"
+msgstr "Rolladen hoch/runter"
 
 #: titlebar.cpp:990
 msgid "Iconify"
