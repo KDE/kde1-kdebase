@@ -266,5 +266,3 @@ msgstr ""
 "Ikkunan vaihtoalue:\n"
 "       (pisteitä)"
 
-#~ msgid "Edge Resistance:"
-#~ msgstr "Reunuksen vastustus:"

@@ -58,9 +58,8 @@ msgid "&Scaled"
 msgstr "V&enytetty"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Taustakuva"
+msgstr "Ei taustakuvaa"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -75,33 +74,28 @@ msgid "Desktop names"
 msgstr "Työpöytien nimet"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Kaksivärinen tausta-asetus"
+msgstr "Kaksivärinen tausta"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "&Sekoita värit vasemmalta oikealle"
+msgstr "Sekoita värit &ylhäältä alas"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "&Sekoita värit vasemmalta oikealle"
+msgstr "&Sekoita värit oikealta vasemmalle"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
-msgstr "K&uvio"
+msgstr "Käytä k&uviota"
 
 #: backgnd.cpp:983
 msgid "Preview"
 msgstr "Esikatselu"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
-msgstr "Kuvion nimi"
+msgstr "Kuvion &nimi"
 
 #: backgnd.cpp:1033
 msgid "Current"
@@ -271,20 +265,19 @@ msgstr "Ohita"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Näytönsäästäjä"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lukitse näyttö"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Näytönsäästäjä"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Näytönsäästäjä"
+msgstr "Ei näytönsäästäjää"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -323,9 +316,8 @@ msgid "Low"
 msgstr "Matala"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
-msgstr "&Kirjasimet"
+msgstr "Kirjasimet"
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"

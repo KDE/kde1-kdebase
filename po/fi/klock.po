@@ -208,6 +208,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Metsä\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: hop.cpp:221
 msgid "Hop"

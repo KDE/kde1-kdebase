@@ -165,7 +165,7 @@ msgid ""
 msgstr "T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
