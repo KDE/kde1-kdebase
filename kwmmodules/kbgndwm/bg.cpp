@@ -23,6 +23,7 @@
 #include <kstring.h>
 #include <kwm.h>
 #include <kurl.h>
+#include <kprocess.h>
 
 #include "bg.h"
 #include "bg.moc"
@@ -96,7 +97,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     first_time = true;
   }
 
-  KConfig config(KApplication::kde_configdir() + tmpf, 
+  KConfig config(KApplication::kde_configdir() + tmpf,
 		  KApplication::localconfigdir() + tmpf);
 
   if ( !first_time ) {
@@ -138,8 +139,8 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	bUseWallpaper = true;
 
 	wallpaper = d.absPath() + "/" + list->at( randomDesk );
-	name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(), 
-		      wpMode, gfMode, orMode, color1.red(), color1.green(), 
+	name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
+		      wpMode, gfMode, orMode, color1.red(), color1.green(),
 		      color1.blue(), color1.red(), color2.green(), color2.blue());
 
 	hasPm = true;
@@ -162,7 +163,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     }
     else
       randomDesk = 0;
-    
+
     // this is mainly for kpager, so that we can at anytime find out how desktop
     //          really looks
     config.writeEntry( "Item", randomDesk );
@@ -237,10 +238,10 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     wallpaper = config.readEntry( "Wallpaper", i18n("No wallpaper") );
 
   name.detach();
-  name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(), 
-		wpMode, gfMode, orMode, color1.red(), color1.green(), 
+  name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
+		wpMode, gfMode, orMode, color1.red(), color1.green(),
 		color1.blue(), color1.red(), color2.green(), color2.blue());
-    
+
   QString tmp;
   for (int i = 0; i < 8; i++) {
     tmp.sprintf("%02x", pattern[i]);
@@ -254,18 +255,29 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 
 void KBackground::randomize()
 {
+    doRandomize( TRUE );
+}
+
+
+void KBackground::doRandomize(bool fromTimer = FALSE)
+{
   if ( randomMode ) {
     readSettings( desk, oneDesktopMode, oneDesk );
-    
+
     if ( ( oneDesktopMode && desk == oneDesk ) ||
 	 ( !oneDesktopMode && desk == ( KWM::currentDesktop() - 1 ) ) )
       {
 	apply();
 	KWM::sendKWMCommand( "kbgwm_change" );
+	return;
       }
   }
+  if (!fromTimer) {
+      KShellProcess proc;
+      proc << "kcmdisplay";
+      proc.start(KShellProcess::DontCare);
+  }
 }
-
 
 QPixmap *KBackground::loadWallpaper()
 {
@@ -320,7 +332,7 @@ void KBackground::apply()
     bgPixmap = new QPixmap;
   }
 
-  if ( !wpPixmap || (wpMode == Centred) || (wpMode == CentredBrick) || 
+  if ( !wpPixmap || (wpMode == Centred) || (wpMode == CentredBrick) ||
        (wpMode == CentredWarp) || ( wpMode == CentredMaxpect) ) {
     if (bgPixmap)
       bgPixmap->resize(w, h);
@@ -344,7 +356,7 @@ void KBackground::apply()
 
 	  pmDesktop.resize( QApplication::desktop()->width(), 20 );
 	  pmDesktop.gradientFill( color2, color1, false, numColors );
-		    
+		
 	}
 
 	delete bgPixmap;
@@ -354,18 +366,18 @@ void KBackground::apply()
 
 	  qApp->desktop()->setBackgroundPixmap(pmDesktop);
 	  *bgPixmap = pmDesktop;
-		    
+		
 	} else {
 	  bgPixmap->resize(w, h);
-		    
+		
 	  if ( orMode == Portrait ) {
 	    for (uint pw = 0; pw <= w; pw += pmDesktop.width())
-	      bitBlt( bgPixmap, pw, 0, &pmDesktop, 0, 0, 
+	      bitBlt( bgPixmap, pw, 0, &pmDesktop, 0, 0,
 		      pmDesktop.width(), h);
 	  } else {
 	    for (uint ph = 0; ph <= h; ph += pmDesktop.height()) {
 	      debug("land %d",ph);
-	      bitBlt( bgPixmap, 0, ph, &pmDesktop, 0, 0, 
+	      bitBlt( bgPixmap, 0, ph, &pmDesktop, 0, 0,
 		      w, pmDesktop.height());
 	    }
 	  }
@@ -376,7 +388,7 @@ void KBackground::apply()
 	startTimer( 0 );
       }
       break;
-	    
+	
     case Flat:
       if (wpPixmap ) {
 	delete bgPixmap;
@@ -387,8 +399,8 @@ void KBackground::apply()
 	applied = true;
       }
       break;
-	    
-    case Pattern: 
+	
+    case Pattern:
       {
 	QPixmap tile(8, 8);
 	tile.fill(color2);
@@ -431,10 +443,10 @@ void KBackground::apply()
     }
 	
   }
-    
+
   if ( wpPixmap )
     {
-	    
+	
       if ( ( wpPixmap->width() > (int)w || wpPixmap->height() > (int)h ||
 	   wpMode == CentredMaxpect ) &&
 	   wpMode != Scaled ) {
@@ -476,7 +488,7 @@ void KBackground::apply()
 
 	    /* quadrant 2 */
  	    bitBlt( bgPixmap, 0, 0, wpPixmap );
-	    
+	
 	    /* quadrant 1 */
 	    QWMatrix S(-1.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 	    QPixmap newp = wpPixmap->xForm( S );
@@ -511,7 +523,7 @@ void KBackground::apply()
 	    if (w == w0) {
 	      /* horizontal center line */
 	      int y, ay;
-      
+
 	      y = h0 - ((h/2)%h0); /* Starting point in picture to copy */
 	      ay = 0;    /* Vertical anchor point */
 	      while (ay < (int)h) {
@@ -529,7 +541,7 @@ void KBackground::apply()
 	    else if (h == h0) {
 	      /* vertical centerline */
 	      int x, ax;
-      
+
 	      x = w0 - ((w/2)%w0); /* Starting point in picture to copy */
 	      ax = 0;    /* Horizontal anchor point */
 	      while (ax < (int)w) {
@@ -547,10 +559,10 @@ void KBackground::apply()
 	    else {
 	      /* vertical and horizontal centerlines */
 	      int x,y, ax,ay;
-      
+
 	      y = h0 - ((h/2)%h0); /* Starting point in picture to copy */
 	      ay = 0;    /* Vertical anchor point */
-      
+
 	      while (ay < (int)h) {
 		x = w0 - ((w/2)%w0);/* Starting point in picture to cpy */
 		ax = 0;    /* Horizontal anchor point */
@@ -600,21 +612,21 @@ void KBackground::apply()
 	    for (i=ay; i < (int)h; i+=h0) {
 	      for (j=ax; j < (int)w; j+=w0) {
 		/* if image goes off tmpPix, only draw subimage */
-	  
+	
 		x = j;  y = i;  w1 = w0;  h1 = h0;  offx = offy = 0;
 		if (x<0)           { offx = -x;  w1 -= offx;  x = 0; }
 		if (x+w1>w0) { w1 = (w0-x); }
 
 		if (y<0)           { offy = -y;  h1 -= offy;  y = 0; }
 		if (y+h1>h0)    { h1 = (h0-y); }
-	  
+	
 		bitBlt( bgPixmap, x, y, wpPixmap, offx, offy );
 	      }
 	    }
 
 	  }
 	  break;
-		    
+		
 	case Centred:
 	case CentredMaxpect:
 	  {
@@ -623,7 +635,7 @@ void KBackground::apply()
 		    wpPixmap->width(), wpPixmap->height() );
 	  }
 	  break;
-		    
+		
 	case Scaled:
 	  {
 	    float sx = (float)w / wpPixmap->width();
@@ -647,7 +659,7 @@ void KBackground::apply()
 	    paint.setPen( white );
 	    for ( i=k=0; i < (int)w; i+=20,k++ ) {
 	      paint.drawLine( 0, i, w, i );
-	      for (j=(k&1) * 20 + 10; j< (int)w; j+=40) 
+	      for (j=(k&1) * 20 + 10; j< (int)w; j+=40)
 		paint.drawLine( j, i, j, i+20 );
 	    }
 
@@ -674,10 +686,10 @@ void KBackground::apply()
 	  }
 	  break;
 	}
-    
+
       delete wpPixmap;
       wpPixmap = 0;
-	    
+	
       // background switch is deferred in case the user switches
       // again while the background is loading
       startTimer( 0 );

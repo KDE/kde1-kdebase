@@ -42,6 +42,7 @@ public:
 
   void setImmediately( const char* _wallpaper, int mode );
 
+    void doRandomize(bool fromTimer = FALSE);
 public slots:
   void randomize();
 

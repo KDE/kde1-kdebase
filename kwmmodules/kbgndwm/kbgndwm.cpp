@@ -85,7 +85,7 @@ void KBGndManager::setUndock()
 {
   KConfig config2(KApplication::kde_configdir() + "/kdisplayrc",
 		  KApplication::localconfigdir() + "/kdisplayrc");
-  
+
   undock(); // first undock to set docked variable
   config2.setGroup( "Desktop Common" );
   config2.writeEntry( "Docking", docked );
@@ -235,7 +235,7 @@ void KBGndManager::readSettings()
 
 void KBGndManager::timeclick()
 {
-  desktops[current].randomize();
+  desktops[current].doRandomize();
 }
 
 
