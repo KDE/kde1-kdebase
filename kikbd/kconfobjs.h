@@ -43,6 +43,11 @@ class KConfigMatchKeysObject: public KConfigObject {
     return separate(((QStrList*)data)->at(index), sep);
   }
 };
+
+
+
+
+
 /**
    This objects can handle a group of objects with keys numbered
    without holes from start number to end. As data used QStrList 
@@ -67,6 +72,11 @@ class KConfigNumberedKeysObject: public KConfigObject {
   KConfigNumberedKeysObject(const char* pKeybase, unsigned pFrom, unsigned pTo,
 			    QStrList& list);
 };
+
+
+
+
+
 /**
   * Boolean Config Object
   */
@@ -88,6 +98,11 @@ public:
 public slots:
   void toggled(bool);
 };
+
+
+
+
+
 /**
   * Int Config Object
   */
@@ -106,6 +121,11 @@ public:
   KConfigIntObject(const char* key, int& val)
     :KConfigObject(&val, FALSE, key){}
 };
+
+
+
+
+
 /**
   OString Config object. 
  */
@@ -124,6 +144,11 @@ public:
   KConfigStringObject(const char* key, QString& val)
     :KConfigObject(&val, FALSE, key){}
 };
+
+
+
+
+
 /**
   * String List Config Object
   */
@@ -143,6 +168,11 @@ public:
   KConfigStrListObject(const char* key, QStrList& val, char pSep=',')
     :KConfigObject(&val, FALSE, key){sep = pSep;}
 };
+
+
+
+
+
 /**
    Object of data type QString witch can have as value one of the
    given string from the list.
@@ -190,6 +220,10 @@ public slots:
     *((QString*)data) = combo.at(index);
   }
 };
+
+
+
+
 /**
    OColor Object
  */
@@ -217,6 +251,10 @@ public:
 public slots:
   void changed(const QColor&);
 };
+
+
+
+
 /**
   * QFont object
   */

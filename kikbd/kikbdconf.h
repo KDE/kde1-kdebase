@@ -45,7 +45,6 @@ class KiKbdConfig: public KObjectConfig {
   QString         autoStartPlace;
   QColor          capsColor, altColor, forColor;
   QFont           font;
-  virtual void emptyLocalConfig();
  public:
   KiKbdConfig();
   ~KiKbdConfig(){}
@@ -129,6 +128,8 @@ class KiKbdConfig: public KObjectConfig {
   KiKbdMapConfig* getMap(const char* name);
   bool hasAltKeys();
   bool oneKeySwitch();
+ public slots:
+  void newUserRc();
 };
 
 #endif

@@ -41,7 +41,7 @@ noinst_HEADERS =
 
 # if you "make distclean", this files get removed. If you want to remove
 # them while "make clean", use CLEANFILES
-DISTCLEANFILES = $(BUILT_SOURCES)
+CLEANFILES = $(BUILT_SOURCES)
 
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:

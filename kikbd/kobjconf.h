@@ -2,8 +2,7 @@
 #define K_OBJ_CONF
 
 #include <qwidget.h>
-#include <ksimpleconfig.h>
-#include <kconfig.h>
+#include "ksimpleconfig.h"
 
 //@Include: kconfobjs.h
 class KObjectConfig;
@@ -65,6 +64,8 @@ class KConfigObject: public QObject {
   }
 };
 
+
+
 /**
    This is hi level user interface to KConfig class.
    It can be used in KApplication to read configuration from single or
@@ -100,25 +101,48 @@ class KConfigObject: public QObject {
    @author Alexander Budnik (budnik@linserv.jinr.ru)
    @short KDE Object Configuration base class
 */
-class KObjectConfig: public KConfig {
+class KObjectConfig: public QObject {
+  Q_OBJECT
  protected:
-  bool                 emptyLocal;
+  KConfigBase         *config;
+  QString              configFile;
   QStrList             groups;
   QList<KConfigObject> entries;
+  bool                 deleteConfig;
+  int                  configType; 
+ protected:
+   void                init();
+   void                initConfig();
  public:
-  /**
-     Construct new Object Configuration class.
-     @param globalFile The global file usually from $KDEDIR/share
-     @param localFile The local or user file usually from $HOME/kde/share
+   enum {External, AppRc, UserFromSystemRc, AppData, File};
+  /** Construct with existing KConfigBase object.
+      @param config     KConfigBase class, for example returned by kapp->getConfig()
+      @param autoDelete if TRUE class pointed by config will be deleted at destruction time
   */
-  KObjectConfig(const char* globalFile=0L, const char* localFile=0L);
-  virtual ~KObjectConfig(){}
+  KObjectConfig(KConfigBase* config, bool autoDelete = FALSE);
+  /** Constructor
+      @param type   if AppRc, name is ignored and Application rc file is used
+                       (user or if does not exists, system).
+                    if File,  name is absolute name of opened file.
+		    if UserFromSystemRc, like AppRc, but if User rc file does not exists,
+		       it will be created with as copy of system rc file or from compiled
+		       in defaults and signal newUserRc will be emited.
+		    if AppData, name is the file name relative to the Application share directory
+		       (~/.kde/share/apps/<app name> or $KDEDIR/.share/apps/<app name>).
+      @param name   this interpreted acording to the value of type
+  */
+  KObjectConfig(int type = AppRc, const char *name = 0L);
+  ~KObjectConfig();
  public:
+  KConfigBase* getConfig() {return config;}
   /**
      set current Group for register object
      @param pGroup The name of the group
   */
   void setGroup(const char *pGroup);
+  /** Return current group
+  */
+  const char* group();
   /**
      Load all registered objects from configuration file.
      Usualy you do not need to reimplement this in the child class.
@@ -129,7 +153,6 @@ class KObjectConfig: public KConfig {
      Usualy you do not need to reimplement this in the child class.
   */
   virtual void saveConfig();
-  virtual void emptyLocalConfig() {}
   /**
      Register object in current group. This object will be deleted
      automatically at destruction time.
@@ -148,6 +171,7 @@ class KObjectConfig: public KConfig {
      @param key The key to look in the registered group
      @param existent value to load data in and to write from
   */
+  // register(char*, bool);
   void registerBool(const char* key, bool& val);
   /**
      Same as above but for int variable.
@@ -191,6 +215,23 @@ class KObjectConfig: public KConfig {
 			     QWidget* parent=0L);
   QWidget* createComboWidget2(QString& val, const char** list=0L,
 			      const char* name=0L, QWidget* parent=0L);
+
+ signals:
+  /** This signal emited when new user rc file created by using UserFromSystemRc
+  */
+  void newUserRcFile();
+  void noUserRcFile(const char*);
+  /** This signal emited when where is no user Application rc file
+  */
+  /** This signal emited when where is no system Application rc file
+  */
+  void noSystemRcFile(const char*);
+  /** This signal emited when where is no user Application data file
+  */
+  void noUserDataFile(const char*);
+  /** This signal emited when where is no system Application data file
+  */
+  void noSystemDataFile(const char*);
 };
 
 #endif

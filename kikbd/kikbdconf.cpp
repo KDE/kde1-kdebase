@@ -68,9 +68,7 @@ static const char* autoStartPlaceLabels[] = {
 //=========================================================
 //   config class
 //=========================================================
-KiKbdConfig::KiKbdConfig()
-  :KObjectConfig(KApplication::kde_configdir() + "/kikbdrc",
-		 KApplication::localconfigdir() + "/kikbdrc")
+KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 {
   setGroup(confMainGroup);
   registerBool(confStringHotList    , hotList);
@@ -106,11 +104,11 @@ KiKbdConfig::KiKbdConfig()
 					autoStartPlaceLabels,
 					sizeof(autoStartPlaceLabels)
 					/sizeof(*autoStartPlaceLabels)));
+  connect(this, SIGNAL(newUserRcFile()), SLOT(newUserRc()));					  
 }
-void KiKbdConfig::emptyLocalConfig()
+void KiKbdConfig::newUserRc()
 {
   message(klocale->translate("Your configuration is empty. Install system default."));
-  saveConfig();
   if(QString(kapp->argv()[0]).find("kikbd") != -1) {
     if(KMsgBox::yesNo(0L, "kikbd", 
 		      klocale->translate("Do you want to start Configuration?"))
@@ -191,8 +189,7 @@ void KiKbdConfig::message(const char* form, const char* str)
 KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
 {
   QString file = name + ".kimap";
-  KObjectConfig config(kapp->kde_datadir() + "/kikbd/" + file,
-		       kapp->localkdedir() + "/share/apps/kikbd/" + file);
+  KObjectConfig config(KObjectConfig::AppData, file);
   config.setGroup(confMainGroup);
   config.registerString(confStringLabel, label);
   config.registerString(confStringComment, comment);
@@ -232,8 +229,8 @@ const QString KiKbdMapConfig::getGoodLabel() const
   if (comment.isNull() || label.isNull())
    item = "default";
   else
-   item.sprintf("%s (%s %s)", (const char*)comment, 
-	       klocale->translate("Label"),
-	       (const char*)label);
+   item.sprintf("%s (%s %s)", (const char*)comment,
+               klocale->translate("Label"),
+               (const char*)label);
   return item;
 }

@@ -1,3 +1,9 @@
+16 September 1998
+        * You have to reconfigure kikbd because it now use readBool from
+	KBaseConfig
+
+kikbd go to CVS 8 September 1998
+
 version 0.2.1 9 April 1998
         * Applying new SDK
 	* Added Czech keyboards

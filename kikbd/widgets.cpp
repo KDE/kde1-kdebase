@@ -220,7 +220,6 @@ void KiKbdGeneralWidget::setLongComment(int i)
 }
 void KiKbdGeneralWidget::addMap()
 {
-  cout << "adding" << endl;
   QDialog dialog(this, "", TRUE);
   dialog.setCaption(klocale->translate("Add Keyboard"));
 
