@@ -298,7 +298,6 @@ msgstr "Om KFM"
 
 # kfmgui.cpp:1227
 #: kfmgui.cpp:1262
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -309,7 +308,7 @@ msgid ""
 "Proxy Manager by Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 msgstr ""
-"Skrevet av: Torben Weis\n"
+"Forfatter: Torben Weis\n"
 "weis@kde.org\n"
 "\n"
 "HTML-widget ved Martin Jones\n"
@@ -1471,7 +1470,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 # kkfmoptdlg.cpp:21
 #: kkfmoptdlg.cpp:25
@@ -1495,15 +1494,15 @@ msgstr "KFM Nettlosinnstillinger"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Aksepter språk:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "aksepter tegnsett:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Anta HTML"
 
 # kfmprops.h:73
 #: kfmprops.h:73
