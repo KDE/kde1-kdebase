@@ -173,7 +173,9 @@ msgstr "`%s' avslutades på ett onormalt sätt."
 msgid ""
 "\n"
 "Return code = "
-msgstr "\nReturkod = "
+msgstr ""
+"\n"
+"Returkod = "
 
 #: main.C:928
 msgid "Welcome to the console"

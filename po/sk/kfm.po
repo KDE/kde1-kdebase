@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1998-12-23 01:14+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -274,8 +274,8 @@ msgstr "Nie je mo¾né naèíta» ikonu\n"
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:948 kfmprops.cpp:1080
 #: kfmprops.cpp:1211 kfmprops.cpp:1685 kfmprops.cpp:2046 kfmprops.cpp:2228
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:258
-#: kfmserver.cpp:305 kfmserver.cpp:314 kfmserver.cpp:322 kfmtree.cpp:325
-#: kfmtree.cpp:452 kfmtree.cpp:483 kfmtree.cpp:489 kfmtree.cpp:495
+#: kfmserver.cpp:305 kfmserver.cpp:314 kfmserver.cpp:322 kfmtree.cpp:341
+#: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
 #: kfmview.cpp:438 kfmview.cpp:588 kfmview.cpp:607 kfmview.cpp:676
 #: kfmview.cpp:682 kfmview.cpp:688 kfmview.cpp:794 kfmview.cpp:798
 #: kfmview.cpp:837 kfmview.cpp:863 kfmview.cpp:884 kfmview.cpp:892
@@ -317,7 +317,7 @@ msgstr "&Upravi» zálo¾ky"
 msgid "&Add Bookmark"
 msgstr "&Prida» zálo¾ku"
 
-#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:373 root.cpp:275
+#: kfmgui.cpp:1060 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:275
 msgid "&New"
 msgstr "&Nový"
 
@@ -341,7 +341,7 @@ msgid "&Home"
 msgstr "Domov"
 
 #: kfmgui.cpp:1144 kfmgui.cpp:1316 kfmjob.cpp:36 kfmman.cpp:244
-#: kfmtree.cpp:484 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
+#: kfmtree.cpp:500 kfmview.cpp:608 kfmview.cpp:677 kfmview.cpp:885
 #: kiojob.cpp:87 root.cpp:1213
 msgid "ERROR: Malformed URL"
 msgstr "Chyba: Chybný formát URL"
@@ -375,12 +375,12 @@ msgstr "CHYBA: URL mô¾ete iba pú¹»a»"
 msgid "ERROR: Drop over malformed URL"
 msgstr "Chyba: Pustenie nad chybným URL"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:522 kfmview.cpp:648
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:538 kfmview.cpp:648
 #: kfmview.cpp:928 krenamewin.cpp:20 root.cpp:1256
 msgid "KFM Warning"
 msgstr "Varovanie KFM"
 
-#: kfmtree.cpp:523 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1257
+#: kfmtree.cpp:539 kfmview.cpp:649 kfmview.cpp:929 root.cpp:1257
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -390,11 +390,11 @@ msgstr ""
 "\n"
 "Neexistuje spôsob, ako ich obnovi»!"
 
-#: kfmtree.cpp:490 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1219
+#: kfmtree.cpp:506 kfmview.cpp:683 kfmview.cpp:893 root.cpp:1219
 msgid "ERROR: You dropped a URL over itself"
 msgstr "CHYBA: Pustili ste URL nad sebou samým"
 
-#: kfmtree.cpp:496 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1225
+#: kfmtree.cpp:512 kfmview.cpp:689 kfmview.cpp:901 root.cpp:1225
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "CHYBA: Pustili ste prieèinok nad niektorým z jeho podprieèinkov"
 
@@ -430,7 +430,7 @@ msgstr ""
 "\n"
 " Bookmarknite toto miesto alebo spravte naò kdelnk na ploche."
 
-#: kfmtree.cpp:453 kfmview.cpp:838 root.cpp:1306
+#: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1306
 msgid "Could not access Trash Bin"
 msgstr "Nemô¾em pristúpi» ku ko¹u"
 
@@ -601,7 +601,7 @@ msgstr "Ís» dnu"
 msgid "New View"
 msgstr "Nový pohµad"
 
-#: kfmtree.cpp:388 main.cpp:271
+#: kfmtree.cpp:404 main.cpp:271
 msgid "Move to Trash"
 msgstr "Presunú» do ko¹a"
 
@@ -609,11 +609,11 @@ msgstr "Presunú» do ko¹a"
 msgid "Open with"
 msgstr "Otvori» pomocou"
 
-#: kfmman.cpp:1634 kfmtree.cpp:317 main.cpp:275
+#: kfmman.cpp:1634 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Presunú»"
 
-#: kfmman.cpp:1638 kfmtree.cpp:321 main.cpp:277
+#: kfmman.cpp:1638 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Odkaz"
 
@@ -977,7 +977,7 @@ msgstr "Chyba: Nemô¾em akceptova» upustenie"
 msgid "Dont know what to do."
 msgstr "Neviem, èo robi»."
 
-#: kfmman.cpp:1643 kfmtree.cpp:326 root.cpp:1856
+#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1856
 msgid "Dont know what to do"
 msgstr "Neviem, èo robi»"
 
@@ -1302,19 +1302,19 @@ msgstr "Prieèinok "
 msgid " does not exist\n"
 msgstr " neexistuje\n"
 
-#: kfmtree.cpp:395
+#: kfmtree.cpp:411
 msgid "Add To Bookmarks"
 msgstr "Prida» do zálo¾iek"
 
-#: kfmtree.cpp:574
+#: kfmtree.cpp:590
 msgid "My Home"
 msgstr "Domovský prieèinok"
 
-#: kfmtree.cpp:576
+#: kfmtree.cpp:592
 msgid "Desktop"
 msgstr "Pracovná plocha"
 
-#: kfmtree.cpp:578
+#: kfmtree.cpp:594
 msgid "Root"
 msgstr "Koreò"
 
