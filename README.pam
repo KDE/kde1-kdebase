@@ -31,6 +31,19 @@ Information about PAM may be found on its homepage
 * "... Unknown session exit code 2816 ....").   
 * However, this compiler works fine for compiling KDE  without PAM support.
 *
+*  details added ( 15 APR 1999) <duncan@kde.org>
+*  The problem is only present when libc6 (glibc) is used: the crash occurs
+*  when PAM attempts to write messages to the System Log using the glibc2
+*  function vsyslog().  This assembles the syslog message  by writing its
+*  various parts into a memory stream; this fails and a message is
+*  left as a NULL string that causes a crash later.   The PAM code taken from
+*  kdm works fine as standalone code though.  This means it is not a simple
+*  glibc bug.    Using a patched glibc where vsyslog() assembles the
+*  message without using the memory stream worked too.
+*  This problem occurs only when all of (kde+kdm+PAM+gcc-2.7.2.3+glibc-2.0.7)
+*  are present.   
+
+
 * This problem is *NOT PRESENT* in Red Hat 4.x systems (libc5): 
 * On these systems you may safely compile KDE with PAM support
 * using the supplied gcc (and gcc-c++) compiler.
@@ -121,3 +134,10 @@ in certain PAM-aware xdm's (e.g., the Red Hat Linux xdm) that it may be
 replacing.  This may be configured to carry out actions when a user opens 
 or closes an kdm session, if a suitable PAM module is available 
 (e.g., mount and unmount user-specific filesystems).
+
+
+
+
+
+
+
