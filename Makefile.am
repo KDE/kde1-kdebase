@@ -27,7 +27,7 @@ install-data-local:
 acinclude.m4: acinclude.m4.in libtool.m4.in kdminclude.m4
 	cat acinclude.m4.in libtool.m4.in kdminclude.m4 > acinclude.m4
 
-EXTRA_DIST = acinclude.m4.in libtool.m4.in kdminclude.m4
+EXTRA_DIST = acinclude.m4.in libtool.m4.in kdminclude.m4 README.pam
 
 messages:
 	rm -rf po.backup
