@@ -36,8 +36,8 @@ KFMServer::KFMServer() : KfmIpcServer()
 	FILE *f = fopen( fn.data(), "wb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-				  klocale->translate( "Could not create ~/.kde/share/apps/kfm/magic" ) );
+	    QMessageBox::warning( 0, i18n( "KFM Error" ),
+				  i18n( "Could not create ~/.kde/share/apps/kfm/magic" ) );
 	    return;
 	}
 	
@@ -46,8 +46,8 @@ KFMServer::KFMServer() : KfmIpcServer()
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 
-	QMessageBox::warning( (QWidget*)0L, klocale->translate( "KFM Warning" ),
-			      klocale->translate( "Please change the password in\n~/.kde/share/apps/kfm/magic" ) );
+	QMessageBox::warning( (QWidget*)0L, i18n( "KFM Warning" ),
+			      i18n( "Please change the password in\n~/.kde/share/apps/kfm/magic" ) );
     }
     else
 	fclose( f );
@@ -74,9 +74,9 @@ void KFMServer::slotSelectRootIcons( int _x, int _y, int _w, int _h, bool _add )
 
 void KFMServer::slotSortDesktop()
 {
-    if ( QMessageBox::warning( (QWidget*)0L, klocale->translate( "KFM Warning" ),
-			  klocale->translate( "Do you really want to rearrange your icons ?" ),
-			  klocale->translate( "Yes" ), klocale->translate( "No" ) ) != 0 )
+    if ( QMessageBox::warning( (QWidget*)0L, i18n( "KFM Warning" ),
+			  i18n( "Do you really want to rearrange your icons ?" ),
+			  i18n( "Yes" ), i18n( "No" ) ) != 0 )
 	return;
     
     if ( root )
@@ -152,8 +152,9 @@ void KFMServer::slotOpenURL( const char* _url )
 	if ( u.isMalformed() )
 	{
 	    QString tmp;
-	    tmp << klocale->translate( "Malformed URL" ) << "\n" << url.data();
-	    QMessageBox::warning( (QWidget*)0L, klocale->translate( "KFM Error" ), tmp );
+	    ksprintf(&tmp,"Malformed URL \n%s", url.data());
+	    QMessageBox::warning( (QWidget*)0L, 
+				  i18n( "KFM Error" ), tmp );
 	    return;
 	}
 
@@ -174,7 +175,7 @@ void KFMServer::slotOpenURL( const char* _url )
     
     QString home = "file:";
     home += QDir::homeDirPath().data();
-    DlgLineEntry l( klocale->translate( "Open Location:" ), home.data(), KRootWidget::getKRootWidget(), true );
+    DlgLineEntry l( i18n( "Open Location:" ), home.data(), KRootWidget::getKRootWidget(), true );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -230,8 +231,10 @@ void KFMServer::slotExec( const char* _url, const char * _documents )
     if ( u.isMalformed() )
     {
 	QString msg;
-	msg << klocale->translate( "The URL" ) << "\n" << _url << klocale->translate( "is malformed\n" );
-	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ), msg );
+	ksprintf(&msg, i18n( "The URL\n%s\nis malformed" ), 
+		 _url);
+	QMessageBox::warning( (QWidget*)0, 
+			      i18n( "KFM Error" ), msg );
 	return;
     }
     
@@ -278,8 +281,8 @@ void KFMClient::slotAuth( const char *_password )
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-				  klocale->translate( "You dont have the file ~/.kde/share/apps/kfm/magic\nAuthorization failed" ) );
+	    QMessageBox::warning( (QWidget*)0, i18n( "KFM Error" ),
+				  i18n( "You dont have the file ~/.kde/share/apps/kfm/magic\nAuthorization failed" ) );
 	    return;
 	}
 	char buffer[ 1024 ];
@@ -287,16 +290,16 @@ void KFMClient::slotAuth( const char *_password )
 	fclose( f );
 	if ( p == 0L )
 	{
-	    QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-				  klocale->translate( "The file ~/.kde/share/apps/kfm/magic is corrupted\nAuthorization failed" ) );
+	    QMessageBox::warning( (QWidget*)0, i18n( "KFM Error" ),
+				  i18n( "The file ~/.kde/share/apps/kfm/magic is corrupted\nAuthorization failed" ) );
 	    return;
 	}
 	*( KFMClient::password ) = buffer;
     }
     if ( *( KFMClient::password ) != _password )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-			      klocale->translate( "Someone tried to authorize himself\nusing a wrong password" ) );
+	QMessageBox::warning( (QWidget*)0, i18n( "KFM Error" ),
+			      i18n( "Someone tried to authorize himself\nusing a wrong password" ) );
 	bAuth = false;
 	return;
     }
