@@ -1088,13 +1088,11 @@ bool MyApp::x11EventFilter( XEvent * ev){
   // since the drag'n'drop protocoll will let us segfault.
   // A Windowmanager isn't really a usual xclient!
   if (ev->type == ClientMessage){
-    if (ev->xclient.window == qt_xrootwin()){
-      if (ev->xclient.message_type == KDEChangePalette
-	  || ev->xclient.message_type == KDEChangeGeneral){
-	KApplication::x11EventFilter(ev);
-	manager->repaintAll();
-	return TRUE;
-      }
+    if (ev->xclient.message_type == KDEChangePalette
+	|| ev->xclient.message_type == KDEChangeGeneral){
+      KApplication::x11EventFilter(ev);
+      manager->repaintAll();
+      return TRUE;
     }
   }
   
@@ -1121,9 +1119,13 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 	}
 	else {
-	  if  (ev->xbutton.button == Button1)
-	    manager->raiseClient(c);
-	  manager->activateClient(c);
+	  if (!c->isActive()){
+	    if  (ev->xbutton.button == Button1)
+	      manager->raiseClient(c);
+	    manager->activateClient(c);
+	  }
+	  else
+	    c->stopAutoraise();
 	}
  	// unfreeze the passive grab which is active currently
   	XSync(qt_xdisplay(), 0);

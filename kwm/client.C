@@ -315,6 +315,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     titlestring_offset_delta = 2;
     animation_is_active = FALSE;
     hidden_for_modules = FALSE;
+    autoraised_stopped = FALSE;
 }  
 
 Client::~Client(){
@@ -471,7 +472,8 @@ void Client::reconfigure(){
   }
   generateButtons();
   layoutButtons();
-  repaint();
+  if (isVisible())
+    repaint();
 }
 
 void Client::animateTitlebar(){
@@ -924,19 +926,22 @@ void Client::setactive(bool on){
   XSync(qt_xdisplay(), 0);
   paintState();
   if (is_active){
-    XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window);
-    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask, window, True, ButtonPressMask, 
+    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
-    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | NumLockMask, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
-    XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask | NumLockMask, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
+//     XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window);
+//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask, window, True, ButtonPressMask, 
+// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
+//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask, window, True, ButtonPressMask, 
+// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
+//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | NumLockMask, window, True, ButtonPressMask, 
+// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
+//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask | NumLockMask, window, True, ButtonPressMask, 
+// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
 
     if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
 	 && options.AutoRaise > 0){
       QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+      autoraised_stopped = FALSE;
     }
   }
   else {
@@ -1414,8 +1419,11 @@ bool Client::dragging_is_running(){
 }
 
 void Client::autoRaise(){
+  if (autoraised_stopped)
+    return;
   if (myapp->operations->isVisible())
     return;
+
   if (isActive())
     manager->raiseClient( this );
 }

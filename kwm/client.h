@@ -177,6 +177,10 @@ public:
 
   bool hidden_for_modules;
 
+  void stopAutoraise(){
+    autoraised_stopped = TRUE;
+  }
+
  public slots:
    void iconify();
    void maximizeToggled(bool);
@@ -223,6 +227,8 @@ private:
   bool animation_is_active;
 
   bool is_active;
+  
+  bool autoraised_stopped;
 
 private slots:
   void autoRaise();
