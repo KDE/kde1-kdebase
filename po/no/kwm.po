@@ -46,7 +46,7 @@ msgstr ""
 "\n"
 "Uansett, hvis du foretrekker moderne vindusbehandling, vennligst velg en \n"
 "av de anbefalte fokuspolitikkene som klikkforfokus eller fokusfølgermus "
-"isteden.\n"
+"isteden."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

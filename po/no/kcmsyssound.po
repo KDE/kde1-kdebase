@@ -173,7 +173,7 @@ msgid ""
 msgstr ""
 "Beklager, men \n"
 "%s\n"
-"ser ikke ut til å være en WAV--fil.\n"
+"ser ikke ut til å være en WAV--fil."
 
 #: syssound.cpp:471
 msgid "Improper File Extension"

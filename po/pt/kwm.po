@@ -34,7 +34,7 @@ msgstr ""
 "os velhos utilizadores de unix se devem sentir confortaveis com o KDE ;-)\n"
 "\n"
 "De qualquer modo, se prefere gestão de janelas mais moderna, selecione uma \n"
-"política de foco como "Cliquar para obter Foco" ou "Foco segue o rato"."
+"política de foco como \"Cliquar para obter Foco\" ou \"Foco segue o rato\"."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
