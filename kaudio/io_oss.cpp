@@ -31,6 +31,60 @@
 #define OSS_AUDIO
 #endif
 
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
+// UnixWare includes
+#ifdef _UNIXWARE
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/soundcard.h>
+#define OSS_AUDIO
+#endif
+
 #include "maudio.h"
 #include "sample.h"
 #include "io_oss.h"

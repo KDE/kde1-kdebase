@@ -40,7 +40,9 @@ from the X Consortium.
 
 #include <X11/X.h>		/* FamilyInternet, etc. */
 
-#ifdef XDMCP
+#ifndef XDMCP
+#include <X11/Xdmcp.h>
+#endif
 
 #ifndef MINIX
 #include <sys/socket.h>		/* struct sockaddr */
@@ -246,4 +248,3 @@ PrintSockAddr (a, len)		/* Debugging routine */
 }
 #endif
 
-#endif /* XDMCP */

@@ -33,6 +33,9 @@
 #include <qpainter.h>
 #include <kconfig.h>
 
+#include <config.h>
+#include <sys/types.h>
+
 // NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
 #include <math.h>
 //#include "gif.h"

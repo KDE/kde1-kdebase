@@ -80,7 +80,7 @@ void read_jpeg_jfif(QImageIO * iio)
     jpeg_create_decompress(&cinfo);
 
     qimageio_jpeg_src(&cinfo, &s);
-    jpeg_read_header(&cinfo, TRUE);
+    jpeg_read_header(&cinfo, (boolean) TRUE);
 
 
 
@@ -265,9 +265,9 @@ int qimageio_fill_input_buffer(j_decompress_ptr cinfo)
     }
     ptr->pub.next_input_byte = ptr->buffer;
     ptr->pub.bytes_in_buffer = nbytes;
-    ptr->start_of_file = FALSE;
+    ptr->start_of_file = (boolean) FALSE;
 
-    return TRUE;
+    return (boolean) TRUE;
 }
 
 
