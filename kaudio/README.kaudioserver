@@ -1,0 +1,25 @@
+
+Hello, this is kaudioserver. It is supposed to be started up automatically
+on startup of KDE. Please add it to your KDE startup script. Put it as soon
+as possible, i.e. as first program before all other application.
+
+kaudioserver needs maudio as backend player. If it is not available,
+kaudioserver will terminate, but will not stop KDE from working.
+But its much more fun, if you get maudio from ftp.kde.org . :-)
+
+*** Advertising on ***
+It will be ported to Sun and other platforms some day, so you may get
+"instant" audio on all platforms if you start using libmediatool and
+friends now. :-)
+Use KAudio class to play sounds easily.
+*** Advertising off ***
+
+
+
+
+Have fun,
+       Chris
+
+--
+KDE Desktop environment                (esken@kde.org)
+  
