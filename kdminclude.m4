@@ -103,11 +103,12 @@ if test -z "$PASSWDLIB" && test "$shadow_support" = "yes"; then
     ])
 fi
 AC_SUBST(PASSWDLIB)
+AC_REQUIRE([KDE_MISC_TESTS])
 AC_CHECK_LIB(util, main, [LIBUTIL="-lutil"]) dnl for FreeBSD
 AC_SUBST(LIBUTIL)
 AC_CHECK_LIB(s, main, [LIB_LIBS="-ls"]) dnl for AIX
 AC_SUBST(LIB_LIBS)
-AC_CHECK_LIB(Xdmcp, main, [LIBXDMCP="-lXdmcp"], , $X_LDFLAGS -lX11) dnl for Unixware
+AC_CHECK_LIB(Xdmcp, main, [LIBXDMCP="-lXdmcp"], , $X_LDFLAGS -lX11 $LIBSOCKET) dnl for Unixware
 AC_SUBST(LIBXDMCP)
 
 if test -n "$LIBXDMCP"; then
