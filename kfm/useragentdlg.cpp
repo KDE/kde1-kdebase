@@ -12,9 +12,9 @@
 #include <qlistbox.h>
 #include <qpushbt.h>
 
-UserAgentDialog::UserAgentDialog( QWidget * parent=0, 
-								  const char * name=0, 
-								  WFlags f=0 ) :
+UserAgentDialog::UserAgentDialog( QWidget * parent, 
+								  const char * name, 
+								  WFlags f ) :
   QDialog( parent, name, true, f )
 {
   onserverLA = new QLabel( klocale->translate( "On server:" ), this );
