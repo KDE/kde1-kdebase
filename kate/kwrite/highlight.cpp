@@ -522,7 +522,7 @@ ItemData::ItemData(const char *name, int defStyleNum)
 
 ItemData::ItemData(const char *name, int defStyleNum,
   const QColor &col, const QColor &selCol, bool bold, bool italic)
-  : name(name), defStyleNum(defStyleNum), ItemStyle(col,selCol,bold,italic),
+  : ItemStyle(col,selCol,bold,italic), name(name), defStyleNum(defStyleNum),
   defStyle(false), defFont(true) {
 }
 
