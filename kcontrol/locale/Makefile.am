@@ -19,9 +19,14 @@ klangcombo.moc: klangcombo.h
 install-data-local: 
 	$(mkinstalldirs) $(kde_confdir)
 	$(INSTALL_DATA) kcmlocalerc $(kde_confdir)/kcmlocalerc
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) locale.xpm $(kde_icondir)
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) mini-locale.xpm $(kde_minidir)/locale.xpm
 
 uninstall-local:
 	rm -f $(kde_confdir)/kcmlocalerc
+	rm -f $(kde_icondir)/locale.xpm
 	rm -f $(kde_minidir)/locale.xpm
 
 messages:
