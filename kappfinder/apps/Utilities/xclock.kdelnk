@@ -13,6 +13,7 @@ Name[it]=Orologio X
 Name[no]=X-klokke
 Name[ro]=X clock
 Name[ru]=XClock
+Name[sv]=X Klocka
 Exec=xclock
 Icon=kclock.xpm
 TerminalOptions=
