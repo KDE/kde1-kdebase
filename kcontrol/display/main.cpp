@@ -25,6 +25,7 @@
 #include <kslider.h>
 
 #include <kcontrol.h>
+#include <kimgio.h>
 #include "display.h"
 #include "colorscm.h"
 #include "scrnsave.h"
@@ -137,6 +138,8 @@ int main(int argc, char **argv)
 
   KDisplayApplication app(argc, argv, "kdisplay");
   app.setTitle(klocale->translate("Display settings"));
+
+  kimgioRegister();
 
   if (app.runGUI())
     return app.exec();

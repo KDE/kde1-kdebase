@@ -39,11 +39,6 @@
 #include <X11/Xlib.h>
 
 
-
-#ifdef HAVE_LIBJPEG
-#include "jpeg.h"
-#endif
-
 #include "backgnd.h"
 #include "backgnd.moc"
 
@@ -98,10 +93,6 @@ KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
 KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
-#ifdef HAVE_LIBJPEG
-    QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 
-			  0, read_jpeg_jfif, NULL);
-#endif
 
       debug("KBackground::KBackground");
 

@@ -1,5 +1,5 @@
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11  $(LIBSOCKET) $(KDE_RPATH)
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
@@ -7,7 +7,7 @@ SUBDIRS = kcs ad
 
 bin_PROGRAMS = kcmdisplay
 
-kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
+kcmdisplay_SOURCES = backgnd.cpp display.cpp \
 		colorscm.cpp savescm.cpp scrnsave.cpp \
 		general.cpp main.cpp widgetcanvas.cpp \
 		fontchooser.cpp kresourceman.cpp
