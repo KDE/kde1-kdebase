@@ -1,0 +1,36 @@
+# KDE International Keyboard Config File
+#
+# Created 1998-12-15.  Please send corrections to both me and the
+# kikbd maintainer.
+
+[International Keyboard]
+Authors=Karl Backström <backstrom@kde.org>,
+
+Comment=Normal layout
+
+Language=Swedish
+
+Charset=ISO-8859-1
+Label=Sv
+Locale=sv
+
+keysym0=grave,bar,section
+keysym1=2,2,quotedbl,at
+keysym2=3,3,numbersign,sterling
+keysym3=4,4,ccedilla,dollar
+keysym4=6,6,ampersand,
+keysym5=7,7,slash,braceleft
+keysym6=8,8,parenleft,bracketleft
+keysym7=9,9,parenright,bracketright
+keysym8=0,0,equal,braceright
+keysym9=minus,question,backslash
+keysym10=equal,dead_acute,dead_grave
+keysym11=bracketleft,aring,Aring
+keysym12=bracketright,dead_diaeresis,asciicircum,asciitilde
+keysym13=semicolon,oe,OE
+keysym14=apostrophe,ae,AE
+keysym15=backslash,apostrophe,asterisk
+keysym16=less,less,greater
+keysym17=comma,comma,semicolon
+keysym18=period,period,colon
+keysym19=slash,minus,underscore
