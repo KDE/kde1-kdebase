@@ -162,7 +162,7 @@ msgstr "Opaco"
 
 #: windows.cpp:89
 msgid "Window resize"
-msgstr "Ridimensionamento &finestre"
+msgstr "Ridimensionamento finestre"
 
 #: windows.cpp:90
 msgid "Animation:"

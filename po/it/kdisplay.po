@@ -345,8 +345,8 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
-"LA VELOCE VOLPE MARRONE SALTO' SUL CANE PIGRO\n"
-"la veloce volpe marrone salto' sul cane pigro\n"
+"MA LA VOLPE COL SUO BALZO HA RAGGIUNTO IL QUIETO FIDO\n"
+"ma la volpe col suo balzo ha raggiunto il quieto fido\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:62
