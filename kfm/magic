@@ -289,6 +289,7 @@
 0	string		\<h1		text/html
 0	string		\<H1		text/html
 0	string		\<!doctype\ HTML		text/html
+0	string		\<!DOCTYPE\ HTML		text/html
 
 #------------------------------------------------------------------------------
 # images:  file(1) magic for image formats (see also "c-lang" for XPM bitmaps)
