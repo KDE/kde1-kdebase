@@ -2010,8 +2010,7 @@ void Client::unMaximize(){
 void Client::maximizeToggled(bool depressed){
   bool do_not_activate = depressed == isMaximized();
 
-  buttonMaximize->setPixmap(buttonMaximize->isOn() ? *pm_max_down : *pm_max);
-  buttonMaximize->update();
+  buttonMaximize->setEnabled( FALSE );
 
   if (!do_not_activate){
     if ( depressed){
@@ -2036,6 +2035,9 @@ void Client::maximizeToggled(bool depressed){
 	manager->activateClient( this );
     }
   }
+  buttonMaximize->setEnabled( TRUE );
+  buttonMaximize->setPixmap(buttonMaximize->isOn() ? *pm_max_down : *pm_max);
+  buttonMaximize->update();
 }
 
 

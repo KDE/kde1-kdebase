@@ -1762,7 +1762,8 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 
     if (c && ev->xbutton.window == c->window){
 	bool no_replay = false;
-	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
+	bool mod1 = (ev->xbutton.state & Mod1Mask) == Mod1Mask;
+	if ( mod1){
 	    switch (ev->xbutton.button) {
 	    case Button1:
 		no_replay = executeMouseBinding(c, options.CommandAll1);
@@ -1792,7 +1793,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 	    }
 	}
  	// unfreeze the passive grab which is active currently
-	if (no_replay)
+	if (no_replay || mod1)
 	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
 	else
 	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);

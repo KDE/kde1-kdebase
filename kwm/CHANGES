@@ -13,6 +13,9 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 7:
+        - small bugfixes
+
 patchlevel 6:
         - dock window handling improved for restart
         - new CheckRaise option for focus follows mouse policies 
