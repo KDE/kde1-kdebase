@@ -526,6 +526,9 @@ void PFileMenu::copyTailFileInfo(QFileInfoListIterator& it)
 void PFileMenu::insertRecentItem(EntryType type, const char* _path,
                                   const char* file_name)
 {
+  if (!root)
+     return;
+
   PMenuItem* item;
   int index = PFileMenu::root->cmenu->indexOf(the_panel->head_recent_id) + 1 +
               the_panel->recent_folders.count();
