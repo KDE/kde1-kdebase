@@ -23,6 +23,7 @@ msgstr ""
 "Pou¾ívam ¹tandardné X kódy."
 
 #: kikbd.cpp:313
+#, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
@@ -84,10 +85,12 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: nemô¾em nájs» symbol \"%s\"."
 
 #: keymap.cpp:241
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: nerozumiem kódu klávesy \"%s\"."
 
 #: keymap.cpp:247
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsahu."
 

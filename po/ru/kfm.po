@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-11-19 13:55+0100\n"
+"POT-Creation-Date: 1998-11-20 01:14+0100\n"
 "PO-Revision-Date: 1998-11-07 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,183 +14,192 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kfmgui.cpp:203
+#: kfmgui.cpp:200
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:998
+#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:212 kfmgui.cpp:1011
 msgid "Folder"
 msgstr "Папка"
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:223
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Шаблон '%s' не найден"
 
-#: kfmgui.cpp:250
+#: kfmgui.cpp:247
 msgid "&New"
 msgstr "Новый "
 
-#: kfmgui.cpp:255
+#: kfmgui.cpp:252
 msgid "&Run..."
 msgstr "Запустить..."
 
-#: kfmgui.cpp:257
+#: kfmgui.cpp:254
 msgid "Open &Terminal"
 msgstr "Открыть Терминал"
 
-#: kfmgui.cpp:260
+#: kfmgui.cpp:257
 msgid "&Open Location..."
 msgstr "Открыть Местоположение..."
 
-#: finddlg.cpp:66 kfmgui.cpp:262
+#: finddlg.cpp:66 kfmgui.cpp:259
 msgid "&Find"
 msgstr "Поиск"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:277
 msgid "&Move to Trash"
 msgstr "Переместить в Корзину"
 
-#: kfmgui.cpp:285
+#: kfmgui.cpp:282
 msgid "&Select"
 msgstr "Выделить"
 
-#: kfmgui.cpp:287
+#: kfmgui.cpp:284
 msgid "Select &all"
 msgstr "Выделить все"
 
-#: kfmgui.cpp:290
+#: kfmgui.cpp:287
 msgid "&Find in page..."
 msgstr ""
 
-#: kfmgui.cpp:292
+#: kfmgui.cpp:289
 msgid "Find &next"
 msgstr ""
 
-#: kfmgui.cpp:295
+#: kfmgui.cpp:292
 msgid "Mime Types"
 msgstr "Типы MIME"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:294
 msgid "Applications"
 msgstr "Приложения"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:300
 msgid "Global Mime Types"
 msgstr "Глобальные Типы MIME"
 
-#: kfmgui.cpp:305
+#: kfmgui.cpp:302
 msgid "Global Applications"
 msgstr "Глобальные Приложения"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:309
 msgid "Show &Dot Files"
 msgstr "Показывать скрытые файлы"
 
-#: kfmgui.cpp:314
+#: kfmgui.cpp:311
 msgid "Show Tr&ee"
 msgstr "Показывать дерево"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:313
 msgid "&Visual Schnauzer"
 msgstr "Визуальный просмотр"
 
-#: kfmgui.cpp:318
+#: kfmgui.cpp:315
 msgid "&HTML View"
 msgstr "&HTML вид"
 
-#: kfmgui.cpp:321
+#: kfmgui.cpp:318
 msgid "&Icon View"
 msgstr "Вид с &пиктограммами"
 
-#: kfmgui.cpp:323
+#: kfmgui.cpp:320
 msgid "&Text View"
 msgstr "Текстовый вид"
 
-#: kfmgui.cpp:325
+#: kfmgui.cpp:322
 msgid "&Long View"
 msgstr "&Длинный вид"
 
 #
-#: kfmgui.cpp:327
+#: kfmgui.cpp:324
 msgid "&Short View"
 msgstr "&Короткий вид"
 
-#: kfmgui.cpp:333
+#: kfmgui.cpp:330
 msgid "Rel&oad Tree"
 msgstr "Пере&грузить дерево"
 
-#: kfmgui.cpp:335
+#: kfmgui.cpp:332
 msgid "&Reload Document"
 msgstr "&Перегрузить Документ"
 
-#: kfmgui.cpp:337
+#: kfmgui.cpp:334
 msgid "Rescan &bindings"
 msgstr "Просканировать пр&ивязки"
 
-#: kfmgui.cpp:340
+#: kfmgui.cpp:337
 msgid "&View Frame Source"
 msgstr "Посмотреть Текст Frame'а"
 
-#: kfmgui.cpp:342
+#: kfmgui.cpp:339
 msgid "View Docu&ment Source"
 msgstr "Посмотреть Текст Документа"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:347
+msgid "Auto"
+msgstr ""
+
+#: kfmgui.cpp:355
+#, fuzzy
+msgid "&Document Encoding"
+msgstr "Документ: Сделано"
+
+#: kfmgui.cpp:366
 msgid "Show History"
 msgstr "Показать историю"
 
-#: kfmgui.cpp:355
+#: kfmgui.cpp:368
 msgid "Show Cache"
 msgstr "Показать Буфер"
 
-#: kfmgui.cpp:357
+#: kfmgui.cpp:370
 msgid "Clear Cache"
 msgstr "Очистить Буфер"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:373
 msgid "Always look in cache"
 msgstr "Всегда искать в Буфере"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:375
 msgid "Never look in cache"
 msgstr "Не искать в Буфере"
 
 #
-#: kfmgui.cpp:364
+#: kfmgui.cpp:377
 msgid "Always save cache"
 msgstr "Всегда сохранять в Буфер"
 
 #
-#: kfmgui.cpp:366
+#: kfmgui.cpp:379
 msgid "Never save cache"
 msgstr "Не сохранять в Буфер"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:390
 msgid "Show &Menubar"
 msgstr "Показать меню"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:392
 msgid "Show &Statusbar"
 msgstr "Показать Строку состояния"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:394
 msgid "Show &Toolbar"
 msgstr "Показать Инструменты"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:396
 msgid "Show &Location bar"
 msgstr "Показать Строку местоположения"
 
-#: kfmgui.cpp:386
+#: kfmgui.cpp:399
 msgid "Sa&ve Settings"
 msgstr "Записать установки"
 
-#: kfmgui.cpp:392
+#: kfmgui.cpp:405
 msgid "Configure Browser..."
 msgstr "Настроить Броузер..."
 
-#: kfmgui.cpp:436
+#: kfmgui.cpp:449
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -214,27 +223,27 @@ msgstr ""
 "Прокси Менеджер Ларса Носса\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:449
+#: kfmgui.cpp:462
 msgid "&Bookmarks"
 msgstr "Закладки"
 
-#: kfmgui.cpp:450
+#: kfmgui.cpp:463
 msgid "&Cache"
 msgstr "&Буфер"
 
-#: kfmgui.cpp:477 main.cpp:239
+#: kfmgui.cpp:490 main.cpp:239
 msgid "Up"
 msgstr "Вверх"
 
-#: kfmgui.cpp:487 main.cpp:241
+#: kfmgui.cpp:500 main.cpp:241
 msgid "Forward"
 msgstr "Вперед"
 
-#: kfmgui.cpp:492
+#: kfmgui.cpp:505
 msgid "Home"
 msgstr "Домашний каталог"
 
-#: kfmgui.cpp:549
+#: kfmgui.cpp:562
 msgid "Could not load icon\n"
 msgstr "Не могу загрузить пиктограмму\n"
 
@@ -243,17 +252,17 @@ msgstr "Не могу загрузить пиктограмму\n"
 #: kbind.cpp:1588 kbind.cpp:1646 kbind.cpp:1658 kbind.cpp:1685 kbind.cpp:1700
 #: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
 #: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:550 kfmgui.cpp:706 kfmman.cpp:341
+#: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:719 kfmman.cpp:341
 #: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
-#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
-#: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
-#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:573 kfmview.cpp:577
-#: kfmview.cpp:616 kfmview.cpp:642 kfmview.cpp:663 kfmview.cpp:671
-#: kfmview.cpp:679 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:363
+#: kfmview.cpp:379 kfmview.cpp:398 kfmview.cpp:404 kfmview.cpp:466
+#: kfmview.cpp:472 kfmview.cpp:478 kfmview.cpp:579 kfmview.cpp:583
+#: kfmview.cpp:622 kfmview.cpp:648 kfmview.cpp:669 kfmview.cpp:677
+#: kfmview.cpp:685 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
 #: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
 #: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
@@ -261,49 +270,49 @@ msgstr "Не могу загрузить пиктограмму\n"
 msgid "KFM Error"
 msgstr "Ошибка KFM"
 
-#: kfmexec.cpp:59 kfmgui.cpp:705 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1053
 msgid "Malformed URL\n"
 msgstr "Некорретный URL\n"
 
-#: kfmgui.cpp:876
+#: kfmgui.cpp:889
 msgid "Select files:"
 msgstr "Выберите файлы:"
 
-#: kfmgui.cpp:931
+#: kfmgui.cpp:944
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:932
+#: kfmgui.cpp:945
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:950
+#: kfmgui.cpp:963
 msgid "&Edit Bookmarks..."
 msgstr "Редактировать Закладки"
 
-#: kfmgui.cpp:960
+#: kfmgui.cpp:973
 msgid "&Add Bookmark"
 msgstr "Добавить Закладку"
 
-#: kfmgui.cpp:990 kfmgui.cpp:997
+#: kfmgui.cpp:1003 kfmgui.cpp:1010
 msgid "New "
 msgstr "Новый "
 
-#: kfmgui.cpp:1087 kfmgui.cpp:1252 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:664
+#: kfmgui.cpp:1100 kfmgui.cpp:1265 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:319 kfmview.cpp:399 kfmview.cpp:467 kfmview.cpp:670
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "ОШИБКА: Некорретный URL"
 
-#: kfmgui.cpp:1206 kfmserver.cpp:188
+#: kfmgui.cpp:1219 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "Открыть Местоположение:"
 
-#: kfmgui.cpp:1263
+#: kfmgui.cpp:1276
 msgid "KFM Confirm"
 msgstr "Подтверждение KFM"
 
-#: kfmgui.cpp:1264
+#: kfmgui.cpp:1277
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -311,28 +320,28 @@ msgstr ""
 "Вы действительно хотите выйти?\n"
 "Большая часть функционала рабочего стола будет утеряна"
 
-#: kfmgui.cpp:1374
+#: kfmgui.cpp:1387
 msgid "Document: Done"
 msgstr "Документ: Сделано"
 
-#: kfmview.cpp:358 root.cpp:892
+#: kfmview.cpp:364 root.cpp:892
 msgid "ERROR: You may only drop URLs"
 msgstr "ОШИБКА: Вы можете переносить только URL"
 
-#: kfmview.cpp:374
+#: kfmview.cpp:380
 msgid "ERROR: Drop over malformed URL"
 msgstr "ОШИБКА: Вы перенесли некорректный URL"
 
-#: kfmview.cpp:399
+#: kfmview.cpp:405
 msgid "ERROR: You dropped some URL over itself"
 msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:432
-#: kfmview.cpp:707 krenamewin.cpp:20 root.cpp:1214
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:438
+#: kfmview.cpp:713 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "Предупреждение KFM"
 
-#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:708 root.cpp:1215
+#: kfmtree.cpp:358 kfmview.cpp:439 kfmview.cpp:714 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -342,23 +351,23 @@ msgstr ""
 "\n"
 "Их невозможно будет восстановить."
 
-#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:672 root.cpp:1177
+#: kfmtree.cpp:325 kfmview.cpp:473 kfmview.cpp:678 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "ОШИБКА: Вы перенесли URL поверх самого себя"
 
-#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:680 root.cpp:1183
+#: kfmtree.cpp:331 kfmview.cpp:479 kfmview.cpp:686 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ОШИБКА: Вы перенесли директорию на одного из ее поддиректорий"
 
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:489
+#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:495
 msgid "Open With:"
 msgstr "Открыть с:"
 
-#: kfmview.cpp:515 root.cpp:1114
+#: kfmview.cpp:521 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ОШИБКА: Невозможно показать свойства нескольких файлов"
 
-#: kfmview.cpp:574
+#: kfmview.cpp:580
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -366,7 +375,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:578
+#: kfmview.cpp:584
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -374,23 +383,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:288 kfmview.cpp:617 root.cpp:1264
+#: kfmtree.cpp:288 kfmview.cpp:623 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "Невозможно получить доступ к Мусорной Корзине"
 
-#: kfmview.cpp:643 root.cpp:1153
+#: kfmview.cpp:649 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "Невозможно вставить в несколько директорий"
 
-#: kfmview.cpp:740
+#: kfmview.cpp:746
 msgid "ERROR: Can not change to multiple directories"
 msgstr "ОШИБКА: Невозможно перейти в несколько директорий"
 
-#: kfmview.cpp:931
+#: kfmview.cpp:937
 msgid "KFM Security Alert"
 msgstr "Предупреждение о безопасности KFM"
 
-#: kfmview.cpp:932
+#: kfmview.cpp:938
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -398,16 +407,16 @@ msgstr ""
 "Эта страница не относится к доверенным\n"
 "но содержит ссылки на локальную файловую систему."
 
-#: kfmview.cpp:1018
+#: kfmview.cpp:1024
 msgid "Symbolic Link"
 msgstr "Символьная Ссылка"
 
-#: kfmview.cpp:1020
+#: kfmview.cpp:1026
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Ссылка)"
 
-#: kfmview.cpp:1040
+#: kfmview.cpp:1046
 msgid "bytes"
 msgstr "байт"
 
@@ -570,72 +579,80 @@ msgstr ""
 msgid "Show Menubar"
 msgstr "Показать меню"
 
-#: htmlopts.cpp:69
+#: htmlopts.cpp:70
 msgid "Small"
 msgstr "Маленький"
 
-#: htmlopts.cpp:78
+#: htmlopts.cpp:79
 msgid "Medium"
 msgstr "Средний"
 
-#: htmlopts.cpp:87
+#: htmlopts.cpp:88
 msgid "Large"
 msgstr "Большой"
 
-#: htmlopts.cpp:102
+#: htmlopts.cpp:103
 msgid "Standard Font"
 msgstr "Стандартный Шрифт"
 
-#: htmlopts.cpp:131
+#: htmlopts.cpp:132
 msgid "Fixed Font"
 msgstr "Фиксированный Шрифт"
 
-#: htmlopts.cpp:325
+#: htmlopts.cpp:161
+msgid "Default Charset"
+msgstr ""
+
+#: htmlopts.cpp:169
+msgid "Use language charset"
+msgstr ""
+
+#: htmlopts.cpp:361
 msgid "Background Color:"
 msgstr "Цвет фона:"
 
-#: htmlopts.cpp:344
+#: htmlopts.cpp:380
 msgid "Normal Text Color:"
 msgstr "Цвет текста:"
 
-#: htmlopts.cpp:363
+#: htmlopts.cpp:399
 msgid "URL Link Color:"
 msgstr "Цвет ссылки:"
 
-#: htmlopts.cpp:382
+#: htmlopts.cpp:418
 msgid "Followed Link Color:"
 msgstr "Цвет пройденной ссылки:"
 
-#: htmlopts.cpp:401
+#: htmlopts.cpp:437
 msgid "Change cursor over link."
 msgstr "Изменять курсор над ссылкой."
 
-#: htmlopts.cpp:412
+#: htmlopts.cpp:448
 msgid "Underline links"
 msgstr ""
 
-#: htmlopts.cpp:529
+#: htmlopts.cpp:565
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Горизонтальный размер сетки"
 
-#: htmlopts.cpp:553
+#: htmlopts.cpp:589
 msgid "Vertical Root Grid Spacing:"
 msgstr "Вертикальный размер сетки"
 
-#: htmlopts.cpp:577
+#: htmlopts.cpp:613
 msgid "Allow per-URL settings"
 msgstr ""
 
-#: htmlopts.cpp:585
+#: htmlopts.cpp:621
 msgid "Transparent Text for Root Icons."
 msgstr "Прозрачный текст для пиктограмм"
 
-#: htmlopts.cpp:599
+#: htmlopts.cpp:635
 #, fuzzy
 msgid "Icon foreground color:"
 msgstr "Цвет фона:"
 
-#: htmlopts.cpp:611
+#: htmlopts.cpp:647
 #, fuzzy
 msgid "Icon background color:"
 msgstr "Цвет фона:"

@@ -37,7 +37,8 @@ msgstr "&Roz¹írené"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+"Pou¾itie: kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"

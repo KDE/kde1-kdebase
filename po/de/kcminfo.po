@@ -51,7 +51,7 @@ msgstr "&X-Server"
 
 #: main.cpp:120
 msgid ""
-"Benutzung: kcminfo [-init | "
+"usage: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
@@ -93,4 +93,3 @@ msgstr "%10ld Bytes  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Nicht errechenbar"
-

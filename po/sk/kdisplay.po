@@ -539,4 +539,3 @@ msgstr "¹tandardné"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "µubovoµné"
-
