@@ -161,19 +161,19 @@ msgid "Standard"
 msgstr "Standard"
 
 #: kdm-font.cpp:157
-#, fuzzy
+#,
 msgid "Greeting font"
-msgstr "Saluto"
+msgstr "Carattere messaggio di benvenuto"
 
 #: kdm-font.cpp:161
-#, fuzzy
+#
 msgid "Fail font"
-msgstr "Errato"
+msgstr "Errore carattere"
 
 #: kdm-font.cpp:165
-#, fuzzy
+#
 msgid "Standard font"
-msgstr "Standard"
+msgstr "Carattere Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

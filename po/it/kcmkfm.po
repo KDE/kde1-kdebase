@@ -106,7 +106,7 @@ msgstr "Sottolinea URL"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Usa sempre i miei colori"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

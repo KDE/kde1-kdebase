@@ -159,7 +159,7 @@ msgstr "(Apri Cartella)"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Apri questa cartella (+Shift: Lancia un terminale qui)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

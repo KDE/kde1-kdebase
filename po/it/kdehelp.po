@@ -117,7 +117,7 @@ msgstr "Sottolina link"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Usa sempre i miei colori"
 
 #: options.cpp:334
 msgid "KDE Help Options"

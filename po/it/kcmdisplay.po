@@ -424,7 +424,7 @@ msgstr "Min"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stile"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -435,9 +435,9 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menu nella parte alta dello schermo in stile MacOS"
 
 #: general.cpp:259
-#, fuzzy
+#, 
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Applica lo stile alla applicazioni non KDE"
+msgstr "&Applica caratteri e colori alle applicazioni non KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -487,13 +487,13 @@ msgstr "&Colori"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stile"
 
 #: main.cpp:83
-#, fuzzy
+#, 
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "utilizzo: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "utilizzo: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"

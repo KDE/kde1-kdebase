@@ -58,38 +58,38 @@ msgid "Bookmarks"
 msgstr "Segnalibri"
 
 #: krootwm.C:280
-#, fuzzy
+#,
 msgid "Arrange Window Maker icons"
-msgstr "Disponi Icone"
+msgstr "Disponi Icone di Window Maker"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Mostra tutto"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Nascondi il resto"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Mostra pannello informazioni"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Mostra pannello legale"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Riavvia"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Esci"
 
 #: krootwm.C:289
-#, fuzzy
+#,
 msgid "Window Maker"
-msgstr "Finestre"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

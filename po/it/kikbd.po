@@ -52,25 +52,28 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 
+
 #: kikbd.cpp:392
-#, fuzzy
+#
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
-"Impossibile rimuovere Caps Lock dai modificatori.\n"
+"Impossibile rimuovere Caps Lock dai Modificatori.\n"
 "Emulazione Caps Lock disabilitata"
 
 #: kikbd.cpp:1003
-#, fuzzy
+#
 msgid "Exiting International Keyboard"
-msgstr "Tastiera Internazionale"
+msgstr "Uscita da Tastiera Internazionale"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Stai per uscire da \"International Keyboard tool\".\n"
+" Vuoi che venga riavviato automaticamente al prossimo login?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -157,9 +160,9 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Entrambi gli Shift"
 
 #: kikbdconf.cpp:115
-#, fuzzy
+#
 msgid "Right Meta"
-msgstr "Alt Destro"
+msgstr "Meta Destro"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -170,9 +173,9 @@ msgid "Left  Control"
 msgstr "Control Sinistro"
 
 #: kikbdconf.cpp:118
-#, fuzzy
+#, 
 msgid "Left  Meta"
-msgstr "Alt Sinistro"
+msgstr "Meta Sinistro"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -195,13 +198,13 @@ msgid "X default codes"
 msgstr "Codici predefiniti di X"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#,  c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Vuoi continuare ?"
+"%s\n"
+"Vuoi Configurare adesso?"
 
 #: kikbdconf.cpp:217
 msgid ""
@@ -262,14 +265,14 @@ msgid "alternative symbols"
 msgstr "simboli alternativi"
 
 #: kikbdconf.cpp:429
-#, fuzzy
+#, 
 msgid "Language"
-msgstr "lingua"
+msgstr "Lingua"
 
 #: kikbdconf.cpp:433
-#, fuzzy
+#, 
 msgid "Charset"
-msgstr "set caratteri"
+msgstr "Set caratteri"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -370,7 +373,7 @@ msgstr "Mappe di tastiera"
 
 #: widgets.cpp:405
 msgid "Switch and Alt Switch"
-msgstr ""
+msgstr "Switch e Alt Switch"
 
 #: widgets.cpp:410
 msgid "Key(s) to switch between keyboard maps"
@@ -503,9 +506,9 @@ msgid "&Docked"
 msgstr "&Nel pannello"
 
 #: widgets.cpp:649
-#, fuzzy
+#
 msgid "Dock into special area in the panel"
-msgstr "Viene mostrato in una zona del pannello"
+msgstr "Viene mostrato in una zona speciale del pannello"
 
 #: widgets.cpp:658
 msgid "Place"

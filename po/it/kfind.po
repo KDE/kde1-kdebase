@@ -172,7 +172,7 @@ msgstr "&Dimensione :"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
