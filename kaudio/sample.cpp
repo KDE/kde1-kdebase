@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream.h>
 #include <sys/stat.h>
 #include "sample.h"
