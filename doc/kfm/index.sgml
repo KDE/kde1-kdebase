@@ -356,9 +356,9 @@ to pass the config file to the printer GUI.
 <item><bf><tt>%d</tt></bf> The path of the documents without file name.
 The <tt>%d</tt> and the <tt>%n</tt> tag together are the same
 as <tt>%f</tt>.
-<item><bf><tt>%c</tt></bf> Name of the application. This is the name of
-the config file itself without path and extension. This way you can set
-the title of the application.
+<item><bf><tt>%c</tt></bf> Name of the application. This is the (possibly
+translated) title of the application, as set in the kdelnk file. This way you
+can set the title of the application.
 </itemize>
 
 
