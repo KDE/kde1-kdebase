@@ -1,0 +1,24 @@
+# KDE Config File
+[International Keyboard]
+Comment=Czech Programmers Keyboard
+Comment[cs]=»esk· program·torsk· kl·vesnice
+Comment[ru]=˛≈€”À¡— ÀÃ¡◊…¡‘’“¡ –“œ«“¡Õ…”‘¡
+Long Comment=Czech Programmers Keyboard
+Long Comment[cs]=»esk· program·torsk· kl·vesnice
+Long Comment[ru]=˛≈€”À¡— ÀÃ¡◊…¡‘’“¡ –“œ«“¡Õ…”‘¡
+Label=Csp
+Locale=cs
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
+keysym0=1,plus,exclam,1,exclam,
+keysym1=2,ecaron,at,2,at,
+keysym2=3,scaron,numbersign,3,numbersign,
+keysym3=4,ccaron,dollar,4,dollar,
+keysym4=5,rcaron,percent,5,percent,
+keysym5=6,zcaron,asciicircum,6,asciicircum,
+keysym6=7,yacute,ampersand,7,ampersand,
+keysym7=8,aacute,asterisk,8,asterisk,
+keysym8=9,iacute,parenleft,9,parenleft,
+keysym9=0,eacute,parenright,0,parenright,
+keysym10=equal,dead_acute,dead_caron,equal,plus,
+keysym11=grave,dead_diaeresis,dead_abovering,grave,asciitilde,

@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+
+#: main.C:33
+msgid "General"
+msgstr "Algemeen"
+
+#: main.C:37
+msgid "Style"
+msgstr "Stijl"
+
+#: main.C:45
+msgid "International Keyboard Settings"
+msgstr "Internationale Toetsenbord Instellingen"
+
+#: widgets.C:43
+msgid "Keyboards"
+msgstr "Toetsenborden"
+
+#: widgets.C:53
+msgid "Add"
+msgstr "Toevoegen"
+
+#: widgets.C:54
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: widgets.C:55
+msgid "Up"
+msgstr "Omhoog"
+
+#: widgets.C:56
+msgid "Down"
+msgstr "Naar beneden"
+
+#: widgets.C:69
+msgid "Switch and Alt Switch"
+msgstr ""
+
+#: widgets.C:77
+msgid "Options"
+msgstr "Opties"
+
+#: widgets.C:81
+msgid "Beep"
+msgstr "Bel"
+
+#: widgets.C:83 widgets.C:228
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: widgets.C:164
+msgid "Add Keyboard"
+msgstr "Toetsenbord toevoegen"
+
+#: widgets.C:174
+msgid "Adding Keyboard"
+msgstr "Bezig met toetsenbord toevoegen"
+
+#: widgets.C:175
+msgid "There is no more keyboards"
+msgstr "Er zijn geen toestenborden meer"
+
+#: widgets.C:180
+msgid "Available Keyboards"
+msgstr "Beschikbare toetsenborden"
+
+#: widgets.C:195 widgets.C:268
+msgid "Ok"
+msgstr "Ok"
+
+#: widgets.C:196
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: widgets.C:240
+msgid "Menu in KPanel"
+msgstr "Menu in KPanel"
+
+#: widgets.C:243
+msgid "World Menu"
+msgstr "Wereld Menu"
+
+#: widgets.C:248
+msgid "Emulate CapsLock"
+msgstr "Capslock emuleren"
+
+#: widgets.C:251
+msgid "Save Classes"
+msgstr "Bewaar klassen"
+
+#: widgets.C:255
+msgid "Input"
+msgstr "Invoer"
+
+#: widgets.C:294
+msgid "Button Colors"
+msgstr "Toetskleur"
+
+#: widgets.C:311
+msgid "Foreground"
+msgstr "Voorgrond"
+
+#: widgets.C:324
+msgid "Normal"
+msgstr "Normaal"
+
+#: widgets.C:337
+msgid "With CapsLock"
+msgstr "Met CapsLock"
+
+#: widgets.C:350
+msgid "With Alternate"
+msgstr ""
+
+#: widgets.C:362
+msgid "Button Font"
+msgstr "Lettertype Knop"
+
+#: widgets.C:370
+msgid "Customize Font"
+msgstr "Lettertype configureren"
+
+#: widgets.C:375
+msgid "Change Font"
+msgstr "Lettertype veranderen"
+
+#: kikbdconf.C:94
+msgid "Your configuration is empty. Install system default."
+msgstr "Je configuratie is leeg. Installeer standaard"
+
+#: kikbdconf.C:150
+msgid "kikbd configuration error"
+msgstr "kikbd configuratie fout"
+
+#: kikbdconf.C:157
+msgid "kikbd configuration message"
+msgstr "kikbd configuratie bericht"
+
+#: kobjconf.C:113
+msgid "yes"
+msgstr "ja"
+
+#: kobjconf.C:114
+msgid "true"
+msgstr "waar"
+
+#: kikbd.C:115
+msgid "KDE International Keyboard already started on this display."
+msgstr "KDE Internatiobaal Toetsenbord al gestart op dit scherm"
+
+#: kikbd.C:285
+msgid "Setup"
+msgstr "Setup"
+
+#: kikbd.C:286
+msgid "Exit"
+msgstr "Afsluiten"
+
+#: kikbd.C:323
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "Kan %s niet verwijderen van Modifiers.\n"
+
+#: kikbd.C:330
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+"Kan geen Mode Switch niet %s zetten voor toetsenbord %s.\n"
+" "
+
+#: kikbd.C:353
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+
+#: kikbd.C:753
+msgid "kikbd error"
+msgstr "kikbd fout"
+
+#: kikbd.C:764
+msgid "kikbd warning"
+msgstr ""
+
+#: keymap.C:218
+msgid "KeyMap: cannot allocate memory"
+msgstr "KeyMap: kan geen geheugen alloceren"
+
+#: keymap.C:263
+msgid "KeyMap: can not find symbol %s"
+msgstr "KeyMap: kan symbool %s niet vinden"
+
+#: keymap.C:272
+msgid "KeyMap: do not undestand keycode %s"
+msgstr "KeyMap: begrijp keycode niet"
+
+#: keymap.C:275
+msgid "KeyMap: keycode %s go out of range"
+msgstr "KeyMap: keycode %s ligt buiten bereik"
+
+#:######################################################
+#:
+msgid "Global"
+msgstr "ALgemeen"
+
+msgid "Window"
+msgstr "Venster"
+
+msgid "Class"
+msgstr "Klasse"
+
+msgid "Rights (Alt+Shift)"
+msgstr "Rechts (Alt+Shift)"
+
+msgid   "Rights (Ctrl+Alt)"
+msgstr "Rechts (Ctrl+Alt)"
+
+msgid   "Rights (Ctrl+Shift)"
+msgstr "Rechts (Ctrl+Shift)"
+
+msgid   "Lefts  (Alt+Shift)"
+msgstr "Links (Alt+Shift)"
+
+msgid   "Lefts  (Ctrl+Alt)"
+msgstr "Links (Ctrl+Alt)"
+
+msgid   "Lefts  (Ctrl+Shift)"
+msgstr "Links (Ctrl+Shift)"
+
+msgid  "None"
+msgstr "Geen"
+
+msgid  "Right Alt"
+msgstr "Rechter ALt"
+
+msgid  "Right Control"
+msgstr "Rechter COntrol"
+
+msgid  "Left  Alt"
+msgstr "Linker ALt"
+
+msgid  "Left  Control"
+msgstr "Linkter Control"
+

@@ -1,0 +1,43 @@
+# KDE Config File
+# Created by Jacek Konieczny (jajcus@zeus.polsl.gliwice.pl)
+#
+
+[International Keyboard]
+Comment=Polish 'programmers' Keyboard
+Comment[ru]=Польская клавиатура
+Comment[pl]=Polska klawiatura programisty
+Long Comment=Keyboard for using in Poland
+Long Comment[ru]=Польская клавиатура 
+Long Comment[pl]=Polska klawiatura programisty 
+Label=Pl
+Locale=pl
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
+keysym0=q,q,Q,,,
+keysym1=w,w,W,,,
+keysym2=e,e,E,ecircumflex,Ecircumflex,
+keysym3=r,r,R,,,
+keysym4=t,t,T,,,
+keysym5=y,y,Y,,,
+keysym6=u,u,U,,,
+keysym7=i,i,I,,,
+keysym8=o,o,O,oacute,Oacute,
+keysym9=p,p,P,,,
+keysym10=a,a,A,plusminus,exclamdown,
+keysym11=s,s,S,paragraph,brokenbar,
+keysym12=d,d,D,,,
+keysym13=f,f,F,,,
+keysym14=g,g,G,,,
+keysym15=h,h,H,,,
+keysym16=j,j,J,,,
+keysym17=k,k,K,,,
+keysym18=l,l,L,threesuperior,sterling,
+keysym19=z,z,Z,questiondown,macron,
+keysym20=x,x,X,onequarter,notsign,
+keysym21=c,c,C,ae,AE,
+keysym22=v,v,V,,,
+keysym23=b,b,B,,,
+keysym24=n,n,N,ntilde,Ntilde,
+keysym25=m,m,M,,,
+

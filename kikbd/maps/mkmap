@@ -1,0 +1,102 @@
+#!/usr/bin/tclsh
+
+proc ask {msg def} {
+    puts -nonewline file1 "$msg \[$def\]: "
+    flush file1
+    gets file0 line
+    if {$line == ""} {set line $def}
+    return $line
+}
+proc readExcept {file expr} {
+    if {[catch {set fd [open $file r]}]} {
+	puts "Error: open file \"file\" for reading"
+	exit
+    }
+    set res ""
+    while {![eof $fd]} {
+	gets $fd line
+	if {![regexp -nocase $expr $line]} {lappend res $line}
+    }
+    close $fd
+    return [join $res "\n"]
+}
+
+switch -- [lindex $argv 0] {
+    "" {
+	set label [ask "Keyboard Label" "Us"]
+	set file  "[string tolower $label].kimap"
+	set comment [ask "Keyboard Comment" "English American Keyboard"]
+	set longcom [ask "Long Comment" "Keyboard for using in USA"]
+	set locale  [ask "Locale" "us"]
+	set buff ""
+	if {[catch {set fd [open $file w]}]} {
+	    puts "Error: can not open \"$file\" for writing"
+	    exit
+	}
+	puts $fd "# KDE Config File\n\[International Keyboard\]"
+	puts $fd "Comment=$comment"
+	puts $fd "Long Comment=$longcom"
+	puts $fd "Label=$label"
+	puts $fd "Locale=$locale"
+	puts $fd "\[KeyboardMap\]"
+	puts $fd \
+	    "CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m"
+	close $fd
+    }
+    map {
+	set buff [readExcept [lindex $argv 1] \
+		      {^.*(keysym|keycode|KeyboardMap|CapsSymbols)}]
+	append buff "\[KeyboardMap\]\n"
+	append buff \
+	    "CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m"
+	if {[catch {set fd [open [lindex $argv 2]]}]} {
+	    puts "Error: can not open xmodmap file"
+	    exit
+	}
+	set col [ask "Which colums in xmodmap?" "3,4"]
+	set col [split $col ","]
+	set codei 0
+	while {![eof $fd]} {
+	    gets $fd line
+	    set key [lindex $line 0]
+	    switch -- [string tolower $key] {
+		keysym -
+		keycode {
+		    set part0 [lindex [split $line "="] 0]
+		    set part1 [lindex [split $line "="] 1]
+		    set type  [lindex $part0 0]
+		    set val   [lindex $part0 1]
+		    append buff "$type$codei=$val,"
+		    foreach colm $col {
+			set val1 [lindex $part1 [expr $colm-1]]
+			append buff "$val1,"
+		    }
+		    append buff "\n"
+		    incr codei
+		}
+	    }
+	}
+	close $fd
+        if {[catch {set fd [open [lindex $argv 1] w]}]} {
+	    puts "Error: open keymap file for writing"
+	    exit
+	}
+	puts $fd $buff
+	close $fd
+    }
+    default {
+	puts "Usage: mkmap"
+	puts "       mkmap map <kimap> <xmodmap>"
+	exit
+    }
+}
+
+
+
+
+
+
+exit
+
+close $infd
+close $outfd

@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+
+#: main.C:33
+msgid "General"
+msgstr "General"
+
+#: main.C:37
+msgid "Style"
+msgstr "Estilo"
+
+#: main.C:45
+msgid "International Keyboard Settings"
+msgstr "Configuracion del teclado internacional"
+
+#: widgets.C:43
+msgid "Keyboards"
+msgstr "Teclados"
+
+#: widgets.C:53
+msgid "Add"
+msgstr "Añadir"
+
+#: widgets.C:54
+msgid "Delete"
+msgstr "Eliminar"
+
+#: widgets.C:55
+msgid "Up"
+msgstr "Arriba"
+
+#: widgets.C:56
+msgid "Down"
+msgstr "Abajo"
+
+#: widgets.C:69
+msgid "Switch and Alt Switch"
+msgstr "Cambiar y Alt Cambiar"
+
+#: widgets.C:77
+msgid "Options"
+msgstr "Opciones"
+
+#: widgets.C:81
+msgid "Beep"
+msgstr "Beep"
+
+#: widgets.C:83 widgets.C:228
+msgid "Advanced"
+msgstr "Avanzadas"
+
+#: widgets.C:164
+msgid "Add Keyboard"
+msgstr "Añadir Teclado"
+
+#: widgets.C:174
+msgid "Adding Keyboard"
+msgstr "Añadiendo teclado"
+
+#: widgets.C:175
+msgid "There is no more keyboards"
+msgstr "No hay más teclados"
+
+#: widgets.C:180
+msgid "Available Keyboards"
+msgstr "Teclados disponibles"
+
+#: widgets.C:195 widgets.C:268
+msgid "Ok"
+msgstr "Aceptar"
+
+#: widgets.C:196
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: widgets.C:240
+msgid "Menu in KPanel"
+msgstr "Menú en el KPanel"
+
+#: widgets.C:243
+msgid "World Menu"
+msgstr "Menú Universal"
+
+#: widgets.C:248
+msgid "Emulate CapsLock"
+msgstr "Emular BloqMayús"
+
+#: widgets.C:251
+msgid "Save Classes"
+msgstr "Guardar Clases"
+
+#: widgets.C:255
+msgid "Input"
+msgstr "Entrada"
+
+#: widgets.C:294
+msgid "Button Colors"
+msgstr "Colores del botón"
+
+#: widgets.C:311
+msgid "Foreground"
+msgstr "Primer plano"
+
+#: widgets.C:324
+msgid "Normal"
+msgstr "Normal"
+
+#: widgets.C:337
+msgid "With CapsLock"
+msgstr "Con BloqMayús"
+
+#: widgets.C:350
+msgid "With Alternate"
+msgstr "Con Alt"
+
+#: widgets.C:362
+msgid "Button Font"
+msgstr "Fuente del botón"
+
+#: widgets.C:370
+msgid "Customize Font"
+msgstr "Personalizar Fuente"
+
+#: widgets.C:375
+msgid "Change Font"
+msgstr "Cambiar Fuente"
+
+#: kikbdconf.C:94
+msgid "Your configuration is empty. Install system default."
+msgstr "Su configuración está vacía. Instalando configuración por defecto"
+
+#: kikbdconf.C:150
+msgid "kikbd configuration error"
+msgstr "error de configuración de kikbd"
+
+#: kikbdconf.C:157
+msgid "kikbd configuration message"
+msgstr "mensaje de configuración de kikbd"
+
+#: kobjconf.C:113
+msgid "yes"
+msgstr "sí"
+
+#: kobjconf.C:114
+msgid "true"
+msgstr "verdadero"
+
+#: kikbd.C:115
+msgid "KDE International Keyboard already started on this display."
+msgstr "KDE Teclado Internacional ya se está ejecutando."
+
+#: kikbd.C:285
+msgid "Setup"
+msgstr "Configurar"
+
+#: kikbd.C:286
+msgid "Exit"
+msgstr "Salir"
+
+#: kikbd.C:323
+msgid "Can not remove %s from Modifiers.\n"
+msgstr "No se puede eliminar %s de los Modificados\n"
+
+#: kikbd.C:330
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled\n"
+msgstr ""
+"No se puede establecer el modo de intercambio a %s para el teclado %s.\n"
+"Símbolos Alt inhabilitados\n"
+
+#: kikbd.C:353
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled\n"
+msgstr ""
+"No se pude eliminar Bloq Mayús de los Modificados.\n"
+"Emulación de Bloq Mayús inhabilitada\n"
+
+#: kikbd.C:753
+msgid "kikbd error"
+msgstr "error de kikbd"
+
+#: kikbd.C:764
+msgid "kikbd warning"
+msgstr "aviso de  kikbd"
+
+#: keymap.C:218
+msgid "KeyMap: cannot allocate memory"
+msgstr "KeyMap: no se pude localizar memoria"
+
+#: keymap.C:263
+msgid "KeyMap: can not find symbol %s"
+msgstr "KeyMap: no de puede encontrar el símbolo %s"
+
+#: keymap.C:272
+msgid "KeyMap: do not undestand keycode %s"
+msgstr "KeyMap: no se puede entender el keycode %s"
+
+#: keymap.C:275
+msgid "KeyMap: keycode %s go out of range"
+msgstr "KeyMap: keycode %s fuera de rango"
+
+#:######################################################
+#:
+msgid "Global"
+msgstr "Global"
+
+msgid "Window"
+msgstr "Ventana"
+
+msgid "Class"
+msgstr "Clase"
+
+msgid "Rights (Alt+Shift)"
+msgstr "Derecha   (Alt+Shift)"
+
+msgid   "Rights (Ctrl+Alt)"
+msgstr "Derecha   (Ctrl+Alt)"
+
+msgid   "Rights (Ctrl+Shift)"
+msgstr "Derecha   (Ctrl+Shift)"
+
+msgid   "Lefts  (Alt+Shift)"
+msgstr "Izquierda (Alt+Shift)"
+
+msgid   "Lefts  (Ctrl+Alt)"
+msgstr "Izquierda (Ctrl+Alt)"
+
+msgid   "Lefts  (Ctrl+Shift)"
+msgstr "Izquierda (Ctrl+Shift)"
+
+msgid  "None"
+msgstr "Ninguno"
+
+msgid  "Right Alt"
+msgstr "Alt Derecho"
+
+msgid  "Right Control"
+msgstr "Control Izquierdo"
+
+msgid  "Left  Alt"
+msgstr "Alt Izquierdo"
+
+msgid  "Left  Control"
+msgstr "Control Izquierdo"
+

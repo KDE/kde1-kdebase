@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>International Keyboard Handbook: Creating new National Keyboard</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE multilanguage X11">
+<META NAME="description" CONTENT="KDE International Keyboard">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="kikbd-7.html">Next</A>
+<A HREF="kikbd-5.html">Previous</A>
+<A HREF="kikbd.html#toc6">Table of Contents</A>
+</P>
+<H3><A NAME="s6">6. Creating new National Keyboard</A></H3>
+
+<P>
+<P>All system keyboard files stores in $KDEDIR/share/apps/kikbd and personal
+in $HOME/.kde/share/apps/kikbd. Each keyboard has two, three or four symbols
+per physical keyboard key (see section <I>National Keyboard</I>).
+Distributions include Tcl program which can help you create new 
+keyboard. The name of this program is mkmap. You can find it in the 
+folder of system keyboard files. Creating of national keyboard 
+consists of two steps.
+<OL>
+<LI>Creating template:
+<PRE>
+       % mkmap
+       Keyboard Label [Us]:
+       Keyboard Comment [English American Keyboard]:
+       Long Comment [Keyboard for using in USA]:
+       Locale [us]:
+    
+</PRE>
+
+You should answer on some questions. <I>Keyboard Label</I> - 
+is the label
+showed inside KiKbd button. <I>Keyboard Comment</I> - short keyboard
+description, showed in KiKbd popup menu. <I>Long Comment</I> - long
+keyboard description, showed in KcmiKbd. <I>Locale</I> - locale
+for this keyboard, usually in small case and equal to 
+<I>Keyboard Label</I>. On success you will get template file in 
+the current directory with extension .kimap.</LI>
+<LI>Adding keyboard map from xmodmap:
+<PRE>
+      % mkmap map &lt;template file> &lt;xmodmap file>
+      Which columns in xmodmap? [3,4]
+    
+</PRE>
+
+You have to specify columns in xmodmap file to be used. Numbers 1,2,3,4
+are valid, type them separated by comma. Xmodmap file can be created by
+the command:
+<PRE>
+     % xmodmap -pke > &lt;xmodmap.file>
+    
+</PRE>
+
+If you create keyboard for you favorite language please send it to me and
+i include it in the next release. Don't use more then 3 symbols 
+for keyboard
+label - this has bad look inside kpanel.</LI>
+</OL>
+<P ALIGN="RIGHT">
+
+<A HREF="kikbd-7.html">Next</A>
+<A HREF="kikbd-5.html">Previous</A>
+<A HREF="kikbd.html#toc6">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

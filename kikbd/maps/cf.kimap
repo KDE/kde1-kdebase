@@ -1,0 +1,28 @@
+# KDE Config File
+# Created by Michel Goraczko
+# Additions CT (25feb98)
+#
+
+[International Keyboard]
+Comment=French Canadian Keyboard
+Comment[ru]=Французко-Канадская клавиатура
+Long Comment=Keyboard for using in QuИbec
+Long Comment[ru]=Французко-Канадская клавиатура
+Label=Cf
+Locale=cf
+
+[KeyboardMap]
+keysym0=2,2,quotedbl,at
+keysym1=3,3,slash,numbersign
+keysym2=6,6,question,Control_asciicircum
+keysym3=apostrophe,dead_grave,dead_circumflex ,braceleft
+keysym4=bracketright,dead_cedilla,dead_diaeresis,bracketright
+keysym5=bracketleft,dead_circumflex, dead_circumflex, bracketleft
+keysym6=slash,eacute,Eacute,slash
+keysym7=bracketleft,dead_circumflex, braceright,bracketleft
+keysym8=grave,numbersign,bar,backslash
+keysym9=semicolon,semicolon,colon,asciitilde
+keysym10=backslash,less,greater,braceright
+keysym11=comma,comma,apostrophe,em_dash
+keysym12=dot,dot,dot,dead_acute
+

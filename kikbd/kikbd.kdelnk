@@ -1,0 +1,18 @@
+# KDE Config File 
+[KDE Desktop Entry]
+Name=Kikbd
+Name[de]=Kikbd
+Name[ru]=Kikbd
+Name[ua]=Kikbd
+Name[pl]=Kikbd
+Name[cf]=Kikbd
+Name[hu]=Kikbd
+Comment=International Keyboard
+Comment[ru]=Интернациональная клавиатура
+Comment[pt]=Teclado Internacional
+Exec=kikbd -caption "%c" %i %m
+Icon=kikbd.xpm
+Type=Application
+DocPath=kikbd/kikbd.html
+Terminal=0
+MiniIcon=mini-kikbd.xpm

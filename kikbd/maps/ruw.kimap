@@ -1,0 +1,61 @@
+# KDE Config File
+# created from xrus distribution
+# modifications by "Denis V. Dmitrienko"
+#
+
+[International Keyboard]
+Comment=Russian Keyboard (cp1251)
+Comment[ru]=Русская клавиатура (cp1251)
+Comment[pl]=Klawiatura rosyjska (cp1251)
+Long Comment=Keyboard for Russian language (windows code page 1251). Has English characters as alternate symbols.
+Long Comment[ru]=Русская клавиатура в кодировке MS Windows (cp1251). Позволяет набирать латинские символы используя Алтернативный переключатель.
+Long Comment[pl]=Klawiatura rosyjska (cp1251) ze znakami ЁaciЯskimi jako alternatywnymi
+Label=RW
+Locale=ru
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicol
+keysym0=1,1,exclam,1,exclam,
+keysym1=2,2,quotedbl,2,at,
+keysym2=3,3,grave,3,numbersign,
+keysym3=4,4,asterisk,4,dollar,
+keysym4=5,5,colon,5,percent,
+keysym5=6,6,comma,6,asciicircum,
+keysym6=7,7,period,7,ampersand,
+keysym7=8,8,semicolon,8,asterisk,
+keysym8=9,9,parenleft,9,parenleft,
+keysym9=0,0,parenright,0,parenright,
+keysym10=q,0xE9,0xC9,q,Q,
+keysym11=w,0xF6,0xD6,w,W,
+keysym12=e,0xF3,0xD3,e,E,
+keysym13=r,0xEA,0xCA,r,R,
+keysym14=t,0xE5,0xC5,t,T,
+keysym15=y,0xED,0xCD,y,Y,
+keysym16=u,0xE3,0xC3,u,U,
+keysym17=i,0xF8,0xD8,i,I,
+keysym18=o,0xF9,0xD9,o,O,
+keysym19=p,0xE7,0xC7,p,P,
+keysym20=bracketleft,0xF5,0xD5,bracketleft,braceleft,
+keysym21=bracketright,0xFA,0xDA,bracketright,braceright,
+keysym22=a,0xF4,0xD4,a,A,
+keysym23=s,0xFB,0xDB,s,S,
+keysym24=d,0xE2,0xC2,d,D,
+keysym25=f,0xE0,0xC0,f,F,
+keysym26=g,0xEF,0xCF,g,G,
+keysym27=h,0xF0,0xD0,h,H,
+keysym28=j,0xEE,0xCE,j,J,
+keysym29=k,0xEB,0xCB,k,K,
+keysym30=l,0xE4,0xC4,l,L,
+keysym31=semicolon,0xE6,0xC6,semicolon,colon,
+keysym32=apostrophe,0xFD,0xDD,apostrophe,quotedbl,
+keysym33=grave,0xB8,0xA8,grave,asciitilde,
+keysym34=z,0xFF,0xDF,z,Z,
+keysym35=x,0xF7,0xD7,x,X,
+keysym36=c,0xF1,0xD1,c,C,
+keysym37=v,0xEC,0xCC,v,V,
+keysym38=b,0xE8,0xC8,b,B,
+keysym39=n,0xF2,0xD2,n,N,
+keysym40=m,0xFC,0xDC,m,M,
+keysym41=comma,0xE1,0xC1,comma,less
+keysym42=period,0xFE,0xDE,period,greater,
+keysym43=slash,slash,question,slash,question,

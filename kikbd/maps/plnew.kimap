@@ -1,0 +1,43 @@
+# KDE Config File
+# Created by Jacek Konieczny (jajcus@zeus.polsl.gliwice.pl)
+#
+
+[International Keyboard]
+Comment=New Polish "programmer's" keyboard
+Comment[ru]=Новая польская клавиатура
+Comment[pl]=Polska klawiatura programisty
+Long Comment=Keyboard for using in Poland (Polish locale)
+Long Comment[ru]=Новая польская клавиатура 
+Long Comment[pl]=Polska klawiatura programisty dla polskich locale
+Label=nPl
+Locale=pl
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
+keysym0=q,q,Q,,,
+keysym1=w,w,W,,,
+keysym2=e,e,E,eogonek,Eogonek,
+keysym3=r,r,R,,,
+keysym4=t,t,T,,,
+keysym5=y,y,Y,,,
+keysym6=u,u,U,,,
+keysym7=i,i,I,,,
+keysym8=o,o,O,0x1f3,0x1d3,
+keysym9=p,p,P,,,
+keysym10=a,a,A,aogonek,Aogonek,
+keysym11=s,s,S,sacute,Sacute,
+keysym12=d,d,D,,,
+keysym13=f,f,F,,,
+keysym14=g,g,G,,,
+keysym15=h,h,H,,,
+keysym16=j,j,J,,,
+keysym17=k,k,K,,,
+keysym18=l,l,L,lstroke,Lstroke,
+keysym19=z,z,Z,zabovedot,Zabovedot,
+keysym20=x,x,X,zacute,Zacute,
+keysym21=c,c,C,cacute,Cacute,
+keysym22=v,v,V,,,
+keysym23=b,b,B,,,
+keysym24=n,n,N,nacute,Nacute,
+keysym25=m,m,M,,,
+

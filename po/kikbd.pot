@@ -1,0 +1,319 @@
+msgid ""
+msgstr ""
+"Date: 1998-03-18 07:06:55+0300\n"
+"From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -C -j -ktranslate\n"
+"Files: kconfobjs.h keymap.h keytrans.h kikbd.h kikbdconf.h kobjconf.h mkconfobjs.h mkeymap.h mkobjconf.h kcmikbd/kconfobjs.h kcmikbd/kikbdconf.h kcmikbd/kobjconf.h kcmikbd/mkconfobjs.h kcmikbd/mkobjconf.h kcmikbd/widgets.h keymap.C keytrans.C kikbd.C kikbdconf.C kobjconf.C mkeymap.C mkikbd.C kcmikbd/kikbdconf.C kcmikbd/kobjconf.C kcmikbd/main.C kcmikbd/widgets.C\n"
+
+#: keymap.C:170
+msgid "KeyMap: cannot allocate memory"
+msgstr ""
+
+#: keymap.C:215
+msgid "KeyMap: can not find symbol %s"
+msgstr ""
+
+#: keymap.C:224
+msgid "KeyMap: do not undestand keycode %s"
+msgstr ""
+
+#: keymap.C:227
+msgid "KeyMap: keycode %s go out of range"
+msgstr ""
+
+#: kikbd.C:90
+msgid "KDE International Keyboard already started on this display."
+msgstr ""
+
+#: kikbd.C:289
+msgid "Setup"
+msgstr ""
+
+#: kikbd.C:290
+msgid "Exit"
+msgstr ""
+
+#: kikbd.C:344 kikbd.C:357
+msgid "Can not remove %s from Modifiers.\n"
+msgstr ""
+
+#: kikbd.C:347
+msgid "Can not add %s to Modifier number 3.\n"
+msgstr ""
+
+#: kikbd.C:372
+msgid ""
+"Can not set Mode Switch as %s for keyboard %s.\n"
+"Alt symbols disabled"
+msgstr ""
+
+#: kikbd.C:394
+msgid ""
+"Can not remove Caps Lock from Modifiers.\n"
+"Caps Lock Emulation disabled"
+msgstr ""
+
+#: kikbd.C:874
+msgid "kikbd error"
+msgstr ""
+
+#: kikbd.C:885
+msgid "kikbd warning"
+msgstr ""
+
+#: kcmikbd/kikbdconf.C:110 kikbdconf.C:110
+msgid "Your configuration is empty. Install system default."
+msgstr ""
+
+#: kcmikbd/kikbdconf.C:114 kikbdconf.C:114
+msgid "Do you want to start Configuration?"
+msgstr ""
+
+#: kcmikbd/kikbdconf.C:176 kikbdconf.C:176
+msgid "kikbd configuration error"
+msgstr ""
+
+#: kcmikbd/kikbdconf.C:183 kikbdconf.C:183
+msgid "kikbd configuration message"
+msgstr ""
+
+#: kcmikbd/kikbdconf.C:231 kikbdconf.C:231
+msgid "Label"
+msgstr ""
+
+#: kcmikbd/kobjconf.C:118 kobjconf.C:118
+msgid "yes"
+msgstr ""
+
+#: kcmikbd/kobjconf.C:119 kobjconf.C:119
+msgid "true"
+msgstr ""
+
+#: kcmikbd/main.C:42
+msgid "&General"
+msgstr ""
+
+#: kcmikbd/main.C:50 kcmikbd/widgets.C:435
+msgid "&Style"
+msgstr ""
+
+#: kcmikbd/main.C:60
+msgid "Start&Up"
+msgstr ""
+
+#: kcmikbd/main.C:103
+msgid "International Keyboard"
+msgstr ""
+
+#: kcmikbd/widgets.C:58
+msgid "Keyboards"
+msgstr ""
+
+#: kcmikbd/widgets.C:68 kcmikbd/widgets.C:69 kcmikbd/widgets.C:70
+msgid " "
+msgstr ""
+
+#: kcmikbd/widgets.C:72
+msgid "List of active keyboard maps"
+msgstr ""
+
+#: kcmikbd/widgets.C:76
+msgid "Add"
+msgstr ""
+
+#: kcmikbd/widgets.C:77
+msgid "Delete"
+msgstr ""
+
+#: kcmikbd/widgets.C:78
+msgid "Up"
+msgstr ""
+
+#: kcmikbd/widgets.C:79
+msgid "Down"
+msgstr ""
+
+#: kcmikbd/widgets.C:90
+msgid "Use \"hotlist\""
+msgstr ""
+
+#: kcmikbd/widgets.C:93
+msgid "Adding new keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:94
+msgid "Remove selected keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:95
+msgid "Up selected keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:96
+msgid "Down selected keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:97
+msgid "Use only default and last active keyboard maps to switching from keyboard"
+msgstr ""
+
+#: kcmikbd/widgets.C:100
+msgid "Switch and Alt Switch"
+msgstr ""
+
+#: kcmikbd/widgets.C:104
+msgid "Key(s) to switch beetwing keyboard maps"
+msgstr ""
+
+#: kcmikbd/widgets.C:109
+msgid "Key to activate Alternate symbols in current keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:112
+msgid "Options"
+msgstr ""
+
+#: kcmikbd/widgets.C:116
+msgid "Beep"
+msgstr ""
+
+#: kcmikbd/widgets.C:118
+msgid "Beep when ever keyboard mapping changed"
+msgstr ""
+
+#: kcmikbd/widgets.C:119 kcmikbd/widgets.C:278
+msgid "Advanced"
+msgstr ""
+
+#: kcmikbd/widgets.C:124
+msgid "Advanced options"
+msgstr ""
+
+#: kcmikbd/widgets.C:214
+msgid "Add Keyboard"
+msgstr ""
+
+#: kcmikbd/widgets.C:224
+msgid "Adding Keyboard"
+msgstr ""
+
+#: kcmikbd/widgets.C:225
+msgid "There is no more keyboard maps"
+msgstr ""
+
+#: kcmikbd/widgets.C:230
+msgid "Available keyboard maps"
+msgstr ""
+
+#: kcmikbd/widgets.C:245 kcmikbd/widgets.C:322
+msgid "Ok"
+msgstr ""
+
+#: kcmikbd/widgets.C:246
+msgid "Cancel"
+msgstr ""
+
+#: kcmikbd/widgets.C:291
+msgid "Emulate CapsLock"
+msgstr ""
+
+#: kcmikbd/widgets.C:293
+msgid "Emulate XServer CapsLock. Needed for some languages to be correct"
+msgstr ""
+
+#: kcmikbd/widgets.C:295
+msgid "World Menu"
+msgstr ""
+
+#: kcmikbd/widgets.C:297
+msgid "Show menu in any window by holding Switch keys"
+msgstr ""
+
+#: kcmikbd/widgets.C:301
+msgid "Save Classes"
+msgstr ""
+
+#: kcmikbd/widgets.C:304
+msgid "Save relations between window classes and keyboard maps on exit"
+msgstr ""
+
+#: kcmikbd/widgets.C:306
+msgid "Input"
+msgstr ""
+
+#: kcmikbd/widgets.C:310
+msgid "Standard behavior. Keyboard map active for all windows"
+msgstr ""
+
+#: kcmikbd/widgets.C:312
+msgid "Extended behavior. Each windows remember it's own keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:314
+msgid "Special behavior. Each windows class remember it's own keyboard map"
+msgstr ""
+
+#: kcmikbd/widgets.C:348
+msgid "Button Colors"
+msgstr ""
+
+#: kcmikbd/widgets.C:365
+msgid "Foreground"
+msgstr ""
+
+#: kcmikbd/widgets.C:369
+msgid "Color of the Text Label"
+msgstr ""
+
+#: kcmikbd/widgets.C:379
+msgid "With CapsLock"
+msgstr ""
+
+#: kcmikbd/widgets.C:383
+msgid "Background when Emulated CapsLock active"
+msgstr ""
+
+#: kcmikbd/widgets.C:395
+msgid "With Alternate"
+msgstr ""
+
+#: kcmikbd/widgets.C:399
+msgid "Background when Alternate switch is pressed"
+msgstr ""
+
+#: kcmikbd/widgets.C:410
+msgid "Button Font"
+msgstr ""
+
+#: kcmikbd/widgets.C:418
+msgid "Customize Font"
+msgstr ""
+
+#: kcmikbd/widgets.C:421
+msgid "Customize Font for text label or use global settings"
+msgstr ""
+
+#: kcmikbd/widgets.C:424
+msgid "Change Font"
+msgstr ""
+
+#: kcmikbd/widgets.C:463
+msgid "Autostart"
+msgstr ""
+
+#: kcmikbd/widgets.C:464
+msgid "Start up automaticaly"
+msgstr ""
+
+#: kcmikbd/widgets.C:474
+msgid "Dock into special area in kpanel"
+msgstr ""
+
+#: kcmikbd/widgets.C:482
+msgid "Place"
+msgstr ""
+
+#: kcmikbd/widgets.C:491
+msgid "Place in selected corner"
+msgstr ""

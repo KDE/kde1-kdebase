@@ -1,0 +1,51 @@
+# KDE Config File
+# created by Sebestyen Zoltan (szoli@digo.inf.elte.hu)
+#
+
+[International Keyboard]
+Comment=Hungarian Keyboard
+Comment[ru]=Венгерская клавиатура
+Comment[pl]=Klawiatura wЙgierska
+Long Comment=Keyboard for using in Hungary
+Long Comment[ru]=Венгерская клавиатура
+Long Comment=Klawiatura wЙgierska
+Label=Hu
+Locale=hu
+
+[KeyboardMap]
+keysym0=grave,0,section
+keysym1=1,1,apostrophe,asciitilde
+keysym2=2,2,quotedbl
+keysym3=3,3,plus,asciicircum
+keysym4=4,4,exclam
+keysym5=5,5,percent
+keysym6=6,6,slash
+keysym7=7,7,equal,grave
+keysym8=8,8,parenleft
+keysym9=9,9,parenright
+keysym10=0,odiaeresis,Odiaeresis
+keysym11=minus,udiaeresis,Udiaeresis
+keysym12=equal,oacute,Oacute
+keysym13=q,q,Q,backslash
+keysym14=w,w,W,bar
+keysym15=e,e,E,asciicircum
+keysym16=i,i,I,Iacute
+keysym17=bracketleft,otilde,Otilde,division
+keysym18=bracketright,uacute,Uacute,multiply
+keysym19=a,a,A,less
+keysym20=f,f,F,bracketleft
+keysym21=g,g,G,bracketright
+keysym22=j,j,J,iacute
+keysym23=semicolon,eacute,Eacute,dollar
+keysym24=apostrophe,aacute,Aacute,ssharp
+keysym25=backslash,ucircumflex,Ucircumflex,currency
+keysym26=z,y,Y,greater
+keysym27=y,z,Z
+keysym28=x,x,X,numbersign
+keysym29=c,c,C,ampersand
+keysym30=v,v,V,at
+keysym31=b,b,B,braceleft
+keysym32=n,n,N,braceright
+keysym33=comma,comma,question,semicolon
+keysym34=period,period,colon
+keysym35=slash,minus,underscore,asterisk

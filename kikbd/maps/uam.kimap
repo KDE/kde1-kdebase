@@ -1,0 +1,60 @@
+# KDE Config File
+# created by "Denis V. Dmitrienko"
+#
+
+[International Keyboard]
+Comment=Ukrainian Keyboard (KOI8-U) Microsoft layout
+Comment[ru]=Украинская клавиатура (КОИ8-У) раскладка Microsoft
+Comment[pl]=Klawiatura ukraiЯska (KOI8-U) Microsoft layout
+Long Comment=Keyboard for Ukrainian language (KOI8-U) with Microsoft layout. Has English characters as alternate symbols.
+Long Comment[ru]=Украинская клавиатура в кодировке КОИ8-У с раскладкой Microsoft. Позволяет набирать латинские символы используя Алтернативный переключатель.
+Long Comment[pl]=Klawiatura ukraiЯska (KOI8-U) ze znakami ЁaciЯskimi jako alternatywnymi. Microsoft layout
+Label=Ua
+Locale=ua
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period
+keysym0=1,1,exclam,1,exclam,
+keysym1=2,2,quotedbl,2,at,
+keysym2=3,3,numbersign,3,numbersign,
+keysym3=4,4,semicolon,4,dollar,
+keysym4=5,5,percent,5,percent,
+keysym5=6,6,colon,6,asciicircum,
+keysym6=7,7,question,7,ampersand,
+keysym7=8,8,asterisk,8,asterisk,
+keysym8=9,9,parenleft,9,parenleft,
+keysym9=0,0,parenright,0,parenright,
+keysym10=q,0xca,0xea,q,Q,
+keysym11=w,0xc3,0xe3,w,W,
+keysym12=e,0xd5,0xf5,e,E,
+keysym13=r,0xcb,0xeb,r,R,
+keysym14=t,0xc5,0xe5,t,T,
+keysym15=y,0xce,0xee,y,Y,
+keysym16=u,0xc7,0xe7,u,U,
+keysym17=i,0xdb,0xfb,i,I,
+keysym18=o,0xdd,0xfd,o,O,
+keysym19=p,0xda,0xfa,p,P,
+keysym20=bracketleft,0xc8,0xe8,bracketleft,braceleft,
+keysym21=bracketright,0xa7,0xb7,bracketright,braceright,
+keysym22=a,0xc6,0xe6,a,A,
+keysym23=s,0xc9,0xe9,s,S,
+keysym24=d,0xd7,0xf7,d,D,
+keysym25=f,0xc1,0xe1,f,F,
+keysym26=g,0xd0,0xf0,g,G,
+keysym27=h,0xd2,0xf2,h,H,
+keysym28=j,0xcf,0xef,j,J,
+keysym29=k,0xcc,0xec,k,K,
+keysym30=l,0xc4,0xe4,l,L,
+keysym31=semicolon,0xd6,0xf6,semicolon,colon,
+keysym32=apostrophe,0xa4,0xb4,apostrophe,quotedbl,
+keysym33=grave,0xad,0xbd,grave,asciitilde,
+keysym34=z,0xd1,0xf1,z,Z,
+keysym35=x,0xde,0xfe,x,X,
+keysym36=c,0xd3,0xf3,c,C,
+keysym37=v,0xcd,0xed,v,V,
+keysym38=b,0xa6,0xb6,b,B,
+keysym39=n,0xd4,0xf4,n,N,
+keysym40=m,0xd8,0xf8,m,M,
+keysym41=comma,0xc2,0xe2,comma,less,
+keysym42=period,0xc0,0xe0,period,greater,
+keysym43=slash,period,comma,slash,question,
