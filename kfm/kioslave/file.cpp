@@ -10,6 +10,8 @@
 #include <qdir.h>
 #include <qintdict.h>
 
+static QString writeWrapped(const char *_str);
+
 SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
 {
 }
@@ -202,6 +204,18 @@ int KProtocolFILE::OpenDir( KURL *url )
 	    {
 		file = f;
 		emit redirection( QString("file:" + t) );
+		return SUCCESS;
+	    }
+
+	// finally, see if a global .kde.html file exists
+	QString global_html(QDir::homeDirPath() + "/.kde-global.html");
+	if (( stat( global_html.data(), &buff ) == 0 ) && S_ISREG( buff.st_mode ))
+	    if ((f = fopen( global_html.data(), "rb" )))
+	    {
+		kdeHtmlSize = buff.st_size;
+		bKdeHtml = TRUE;
+		file = f;
+		emit redirection( QString("file:" + global_html) );
 		return SUCCESS;
 	    }
     }
@@ -444,215 +458,319 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
     char *p = mem;
     char *old = mem;
 
-    // Search All <files...> tags
-    while ( ( p = strstr( p, "<files " ) ) != 0L )
-    {
-	*p = 0;
-	// Write everything up to the start of <files...
-        _ipc->data( IPCMemory( old, strlen( old ) ) );
-	// Make the <files...> tag a 0 terminated string
-	char *begin = p + 1;
-	p = strchr( p + 1, '>' );
-	if ( p == 0 )
-	    p = mem + strlen( mem );
-	*p = 0;
+    // Search *All* tags
+    while ( ( p = strstr( p, "<" ) ) != 0L ) 
 	{
-	    // RegExpr. for wildcard pattern
-	    QRegExp re;
-	    // Wildcard pattern
-	    QString name;
-	    // Filter flags
-	    int filter = 0;
-	    
-	    // Delete the "<files " part of the string
-	    QString str = (const char*) begin + 6;
-	    str = str.simplifyWhiteSpace();
-	    // Parse the arguments of the <files...> tag
-	    // Look at each argument
-	    while ( str.length() > 0 )
-	    {
-		QString token;
-		// Extract the token
-		int i = str.find( ' ' );
-		if ( i == -1 )
+		// make sure that this is null terminated
+		*p = 0;
+
+		// Write everything up to this tag
+		_ipc->data( IPCMemory( old, strlen( old ) ) );
+
+		// Make the tag a 0 terminated string
+		char *begin = p + 1;
+		p = strchr( p + 1, '>' );
+		if ( p == 0 )
+			p = mem + strlen( mem );
+		*p = 0;
+
+		// let's check if this is 'dirname'
+		if (strncasecmp(begin, "path", 4) == 0L)
 		{
-		    token = str.data();
-		    str = "";
-		}
-		else
-		{
-		    token = str.left( i ).data();
-		    str = str.data() + i + 1;
-		}
-		
-		if ( strncasecmp( token, "name=", 5 ) == 0)
-		{
-		    name = token.data() + 5;
-		    // A regular expression
-		    if ( name.left(1) == "/" )
-		    {
-			re = name.data() + 1;
-			re.setWildcard( FALSE );
-		    }
-		    // a wildcard pattern
-		    else
-		    {
-			re = name.data();
-			re.setWildcard( TRUE );
-		    }
-		}
-		else if (strncasecmp( token, "filter=", 7 ) == 0)
-		{		    
-		    QString s( token.data() + 7 );
-		    
-		    int j = 0;
-		    while ( j < (int)s.length() )
-		    {
-			if ( strncasecmp( s.data() + j, "Dirs", 4 ) == 0 )
+			QString dirname;
+			// skip over 'path '
+			QString str = (const char*)begin + 5;
+			str = str.simplifyWhiteSpace();
+
+			// do we want the partial path?
+			if (strncasecmp(str, "partial", 7) == 0)
 			{
-			    filter |= QDir::Dirs;
-			    j += 4;
+				// the default size is 30.. but that can be overruled
+				unsigned int size = 30;
+				int index;
+				if ((index = str.find('=')) > -1)
+					size = str.right(str.length() - index - 1).toInt();
+
+				dirname = u.path();	
+				// truncate this with ... if more than size chars
+				if (dirname.length() > size)
+				{
+					dirname = dirname.right(size);
+					dirname = dirname.right(size - dirname.find('/'));
+					dirname.prepend("...");
+				}
 			}
-			else if ( strncasecmp( s.data() + j, "Files", 5 ) == 0 )
+			// okay.. do we want it as a URL?
+			else if (strncasecmp(str, "url", 3) == 0)
 			{
-			    filter |= QDir::Files;
-			    j += 5;
+				dirname = u.url();
 			}
-			else if ( strncasecmp( s.data() + j, "Drives", 6 ) == 0 )
-			{
-			    filter |= QDir::Drives;
-			    j += 6;
-			}
-			else if ( strncasecmp( s.data() + j, "Executable", 10 ) == 0 )
-			{
-			    filter |= QDir::Executable;
-			    j += 10;
-			}
-			else if ( strncasecmp( s.data() + j, "Hidden", 6 ) == 0 )
-			{
-			    filter |= QDir::Hidden;
-			    j += 6;
-			}
-			else if ( strncasecmp( s.data() + j, "Rest", 4 ) == 0 )
-			{
-			    // filter stays 0;
-			    j += 4;
-			}
+			// hmm... we must want just the path 
 			else
-			{
-			    j = s.find( '|', j );
-			    if ( j == -1 )
-				j = s.length();
-			}
-			
-			// Skip the separator
-			while ( s[ j ] == '|' ) j++;
-		    }
-		}
-	    }
+				dirname = path;
 
-	    QString buff; // no size limitation.
-	    // char buff [ 1024 ];
-	    
-	    // Traverse all files
-	    for ( de = list.first(); de != 0L; de = list.next() )
-	    {
-		if ( de->name != "./" )
+			_ipc->data(IPCMemory(dirname, dirname.length()));
+
+			old = ++p;	
+			continue;
+		}
+
+		// one last chance.  if this is not 'files', then we bug out
+		if (strncasecmp(begin, "files", 5) != 0L)
 		{
-		    bool ok = FALSE;
-		    bool ok2 = TRUE;
-		    QString *s;
-		    // Have we displayed this file already?
-		    for ( s = displayedFiles.first(); s != 0L; s = displayedFiles.next() )
-			if ( strcmp( s->data(), de->name ) == 0 )
-			    ok2 = FALSE;
-		 
-		    buff = "file:";
-		    if ( de->name == ".." )
-		    {
-			KURL u2( u.path() );
-			u2.cdUp();
-			buff += u2.path();
-		    }
-		    else
-		    {
-			buff += u.path();
-			if ( buff.right(1) != "/" )
-			    buff += "/";
-			buff += de->name;
-		    }
+			old = ++p;	
+			QString other_tag("<");
+			other_tag += begin;
+			other_tag += ">";
+			_ipc->data(IPCMemory(other_tag, other_tag.length()));
 
-		    struct stat sbuff;
-		    stat( buff.data()+5, &sbuff );
-
-		    struct stat lbuff;
-		    lstat( buff.data()+5, &lbuff );
-
-		    // Test whether the file matches our filters
-		    if ( ( filter & QDir::Dirs ) == QDir::Dirs && S_ISDIR( sbuff.st_mode ) )
-			ok = TRUE;
-		    if ( ( filter & QDir::Files ) == QDir::Files && S_ISREG( sbuff.st_mode ) )
-			ok = TRUE;
-		    if ( ( filter & QDir::Drives ) == QDir::Drives && 
-			 ( S_ISCHR( sbuff.st_mode ) || S_ISBLK( sbuff.st_mode ) ) )
-			ok = TRUE;
-		    if ( ( filter & QDir::Executable ) == QDir::Executable &&
-			 ( sbuff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) != 0 ) &&
-			 !S_ISDIR( sbuff.st_mode ) )
-			ok = TRUE;
-		    if ( ( filter & QDir::Hidden ) == QDir::Hidden && de->name[0] == '.' &&
-			 de->name != "../" )
-			ok = TRUE;
-		    else if ( filter == 0 )
-			ok = TRUE;
-		 
-		    if ( !name.isEmpty() ) // do we have a "name=" field ?
-		    { // yes: match regexp
-			if ( re.match( de->name ) == -1 )
-			    ok = FALSE;
-		    }
-		    
-		    if ( ok && ok2 )
-		    {
-			// Remember all files we already displayed
-			QString *s = new QString( de->name );
-			displayedFiles.append( s );
-			
-			QString e( "<cell><a href=\"" );
-			e += buff;
-			e += "\"><center>";
-			_ipc->data( IPCMemory( e, e.length() ) );
-			// KFM has to substitute this by the correct icon
-			// This tag must be submitted in an extra data block!
-			e = "<icon ";
-			e += buff;
-			e += ">";
-			_ipc->data( IPCMemory( e, e.length() ) );
-			e = "<br>";
-			// Is it a link
-			if ( de->access[0] == 'l' )
-			{
-			    e += "<i>";
-			    e += de->name;
-			    e += "</i>";
-			}
-			else
-			    e += de->name;
-			e += "</center><br></a></cell>";
-			_ipc->data( IPCMemory( e, e.length() ) );
-		    }
+			continue;
 		}
-	    }
+
+
+		{
+			// RegExpr. for wildcard pattern
+			QRegExp re;
+			// Wildcard pattern
+			QString name;
+			// Filter flags
+			int filter = 0;
+
+			// Delete the "<files " part of the string
+			QString str = (const char*) begin + 6;
+			str = str.simplifyWhiteSpace();
+			// Parse the arguments of the <files...> tag
+			// Look at each argument
+			while ( str.length() > 0 )
+			{
+				QString token;
+				// Extract the token
+				int i = str.find( ' ' );
+				if ( i == -1 )
+				{
+					token = str.data();
+					str = "";
+				}
+				else
+				{
+					token = str.left( i ).data();
+					str = str.data() + i + 1;
+				}
+
+				if ( strncasecmp( token, "name=", 5 ) == 0)
+				{
+					name = token.data() + 5;
+					// A regular expression
+					if ( name.left(1) == "/" )
+					{
+						re = name.data() + 1;
+						re.setWildcard( FALSE );
+					}
+					// a wildcard pattern
+					else
+					{
+						re = name.data();
+						re.setWildcard( TRUE );
+					}
+				}
+				else if (strncasecmp( token, "filter=", 7 ) == 0)
+				{		    
+					QString s( token.data() + 7 );
+
+					int j = 0;
+					while ( j < (int)s.length() )
+					{
+						if ( strncasecmp( s.data() + j, "Dirs", 4 ) == 0 )
+						{
+							filter |= QDir::Dirs;
+							j += 4;
+						}
+						else if ( strncasecmp( s.data() + j, "Files", 5 ) == 0 )
+						{
+							filter |= QDir::Files;
+							j += 5;
+						}
+						else if ( strncasecmp( s.data() + j, "Drives", 6 ) == 0 )
+						{
+							filter |= QDir::Drives;
+							j += 6;
+						}
+						else if ( strncasecmp( s.data() + j, "Executable", 10 ) == 0 )
+						{
+							filter |= QDir::Executable;
+							j += 10;
+						}
+						else if ( strncasecmp( s.data() + j, "Hidden", 6 ) == 0 )
+						{
+							filter |= QDir::Hidden;
+							j += 6;
+						}
+						else if ( strncasecmp( s.data() + j, "Rest", 4 ) == 0 )
+						{
+							// filter stays 0;
+							j += 4;
+						}
+						else
+						{
+							j = s.find( '|', j );
+							if ( j == -1 )
+								j = s.length();
+						}
+
+						// Skip the separator
+						while ( s[ j ] == '|' ) j++;
+					}
+				}
+			}
+
+			QString buff; // no size limitation.
+			// char buff [ 1024 ];
+
+			// Traverse all files
+			for ( de = list.first(); de != 0L; de = list.next() )
+			{
+				if ( de->name != "./" )
+				{
+					bool ok = FALSE;
+					bool ok2 = TRUE;
+					QString *s;
+					// Have we displayed this file already?
+					for ( s = displayedFiles.first(); s != 0L; s = displayedFiles.next() )
+						if ( strcmp( s->data(), de->name ) == 0 )
+							ok2 = FALSE;
+
+					buff = "file:";
+					if ( de->name == ".." )
+					{
+						KURL u2( u.path() );
+						u2.cdUp();
+						buff += u2.path();
+					}
+					else
+					{
+						buff += u.path();
+						if ( buff.right(1) != "/" )
+							buff += "/";
+						buff += de->name;
+					}
+
+					struct stat sbuff;
+					stat( buff.data()+5, &sbuff );
+
+					struct stat lbuff;
+					lstat( buff.data()+5, &lbuff );
+
+					// Test whether the file matches our filters
+
+					// By default, we will *not* show hidden files or .. 
+					if ((de->name[0] == '.') && !(filter & QDir::Hidden))
+						ok = FALSE;
+					else
+					{
+					if ( ( filter & QDir::Dirs ) == QDir::Dirs && S_ISDIR( sbuff.st_mode ) )
+						ok = TRUE;
+					if ( ( filter & QDir::Files ) == QDir::Files && S_ISREG( sbuff.st_mode ) )
+						ok = TRUE;
+					if ( ( filter & QDir::Drives ) == QDir::Drives && 
+							( S_ISCHR( sbuff.st_mode ) || S_ISBLK( sbuff.st_mode ) ) )
+						ok = TRUE;
+					if ( ( filter & QDir::Executable ) == QDir::Executable &&
+							( sbuff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) != 0 ) &&
+							!S_ISDIR( sbuff.st_mode ) )
+						ok = TRUE;
+					if ( ( filter & QDir::Hidden ) == QDir::Hidden && de->name[0] == '.' &&
+							de->name != "../" )
+						ok = TRUE;
+					else if ( filter == 0 )
+						ok = TRUE;
+					}
+					if ( !name.isEmpty() ) // do we have a "name=" field ?
+					{ // yes: match regexp
+						if ( re.match( de->name ) == -1 )
+							ok = FALSE;
+					}
+
+					if ( ok && ok2 )
+					{
+						// Remember all files we already displayed
+						QString *s = new QString( de->name );
+						displayedFiles.append( s );
+
+						QString e( "<cell><a href=\"" );
+						e += buff;
+						e += "\"><center>";
+						_ipc->data( IPCMemory( e, e.length() ) );
+						// KFM has to substitute this by the correct icon
+						// This tag must be submitted in an extra data block!
+						e = "<icon ";
+						e += buff;
+						e += ">";
+						_ipc->data( IPCMemory( e, e.length() ) );
+						e = "<br>";
+						// Is it a link
+						if ( de->access[0] == 'l' )
+						{
+							e += "<i>";
+							e += writeWrapped(de->name);
+							e += "</i>";
+						}
+						else
+							e += writeWrapped(de->name);
+						e += "</center><br></a></cell>";
+						_ipc->data( IPCMemory( e, e.length() ) );
+					}
+				}
+			}
+		}
+
+		old = ++p;	
 	}
-	
-	old = ++p;	
-    }
     
     _ipc->data( IPCMemory( old, strlen( old ) ) );
 
     delete mem;
 
     return SUCCESS;
+}
+
+// this is a VERY VERY VERY simplified version of KFMManager::writeWrapped
+QString writeWrapped(const char *_str)
+{
+	short j, width;
+	char  *part, *pos, *sepPos;
+	char  c;
+	QString final;
+    
+    for (width=0, part=(char*)_str, pos=(char*)_str; *pos; pos++, width++)
+	{
+		if (width < 12)
+			continue;
+
+		// search for a suitable separator in the previous 8 characters
+		for (sepPos=pos, j=0; j < 8 && sepPos > part; j++, sepPos--)
+		{
+			if (ispunct(*sepPos) || isdigit(*sepPos))
+			{
+				pos = sepPos;
+				break;
+			}
+			if (isupper(*sepPos) && !isupper(*(sepPos-1)))
+			{
+				pos = sepPos;
+				break;
+			}               
+		}
+		c = *pos;
+		*pos = '\0';
+		final += part;
+		final += "<br>";
+		*pos = c;
+		part = pos;
+		width = 0;
+	}
+    if (*part) final += part;
+
+	return final;
 }
 
 #include "file.moc"
