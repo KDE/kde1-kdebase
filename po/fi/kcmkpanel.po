@@ -160,7 +160,7 @@ msgstr "Muut"
 
 #: options.cpp:118
 msgid "Personal &First"
-msgstr "Henkilˆkohtainen &ensin"
+msgstr "Omat &ensin"
 
 #: options.cpp:120
 msgid "F&olders First"
@@ -176,71 +176,52 @@ msgstr "Historia"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Muokkaa tietueita: (ved‰ kansio ja luo linkki)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Aseta &Paikallisia..."
+msgstr "Aseta &Omia..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Aseta &Paikallisia..."
+msgstr "Aseta &Jaettuja..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Maksimim‰‰r‰ viimeiset kansioita:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Maksimim‰‰r‰ viimeiset tiedostoja:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Maksimitiedostom‰‰r‰ kansiossa:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "N‰yt‰ pistetiedostot"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ohita kirjaintaso j‰rjestett‰ess‰"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Paikka"
+msgstr "N‰yt‰ Jaettu -osio"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Paikka"
+msgstr "N‰yt‰ Omat -osio"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "N‰yt‰ Viimeiset osio"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "N‰yt‰ Asetukset tietue"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Aseta &Yleisi‰..."
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Kello"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
+msgstr "P‰‰tesovellus:"

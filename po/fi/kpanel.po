@@ -14,13 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-#, fuzzy
 msgid "&Move"
-msgstr "Siirrä"
+msgstr "&Siirrä"
 
 #: kpanel.C:276
 msgid "&Properties"
-msgstr ""
+msgstr "&Asetukset"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -104,7 +103,7 @@ msgstr "Levyselain"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Selaa nopeasti tiedostopuuta"
 
 #: props.C:170
 msgid "Panel"
@@ -156,11 +155,11 @@ msgstr "Avaa kansio"
 
 #: pfilemenu.C:749
 msgid "Shared:"
-msgstr ""
+msgstr "Jaettu:"
 
 #: pfilemenu.C:770
 msgid "Personal:"
-msgstr ""
+msgstr "Oma:"
 
 #: pfilemenu.C:790
 msgid "Recent:"
@@ -169,9 +168,3 @@ msgstr "Viimeiset:"
 #: pfilemenu.C:838
 msgid "Options..."
 msgstr "Asetukset..."
-
-#~ msgid "Global:"
-#~ msgstr "Yleiset:"
-
-#~ msgid "Local:"
-#~ msgstr "Paikalliset:"

@@ -28,7 +28,7 @@ msgstr ""
 "Käytän X:n oletuskooditiedostoa."
 
 #: kikbd.cpp:313
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
@@ -90,12 +90,12 @@ msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: en löydä symbolia \"%s\"."
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: en ymmärrä  näppäinkoodia \"%s\"."
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: näppäinkoodi \"%s\" menee rajojen ulkopuolelle."
 
@@ -333,9 +333,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Näytä tietoja näppäinkartasta"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Käytä \"&erikoislistaa\""
+msgstr "Käytä &erikoislistaa"
 
 #: widgets.cpp:146
 msgid ""
@@ -373,7 +372,6 @@ msgid "Switch and Alt Switch"
 msgstr "Vaihto ja Alt Vaihto"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Vaihtonäppäin näppäinkarttojen välillä"
 
@@ -402,12 +400,10 @@ msgid "Advanced"
 msgstr "Edistyneet optiot"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Emuloi CapsLock:a"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
 msgstr ""
 "Emuloi XServerin CapsLock:a. Tarvitaan jotta jotkin kielet toimivat oikein"
@@ -457,12 +453,10 @@ msgid "Foreground"
 msgstr "Tausta"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
 msgstr "Tekstikentän väri"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
 msgstr "CapsLock:n kanssa"
 
@@ -500,7 +494,6 @@ msgid "&Autostart"
 msgstr "&Automaattikäynnistys"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
 msgstr "Käynnistä automaattisesti"
 

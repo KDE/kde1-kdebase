@@ -32,13 +32,13 @@ msgstr "&Hiiri"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Edistyneet"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "käyttö: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+msgstr ""
+"käyttö: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -90,12 +90,11 @@ msgstr "Otsikon oikea puoli on täynnä... poistan 'pienennä'-napin\n"
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Otsikon sijainti"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Keskinappi"
+msgstr "Keskellä"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
@@ -154,15 +153,16 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1304
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Ikkunamanagerin tyyli"
+msgstr "Ikkunamanagerin asetus - VIRHE"
 
 #: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Tapahtui virhe tallennettaessa otsikon\n"
+"kuvaa! Tarkista oikeudet."
 
 #: windows.cpp:67
 msgid "Windows"
@@ -278,7 +278,7 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Reunan vaihtoalue:\n"
+"Reunan kiinnitysalue:\n"
 "       (pisteitä)"
 
 #: desktop.cpp:151
@@ -286,7 +286,7 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Ikkunan vaihtoalue:\n"
+"Ikkunan kiinnitysalue:\n"
 "       (pisteitä)"
 
 #: mouse.cpp:54
@@ -388,71 +388,68 @@ msgstr "Muuta kokoa"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Näppäimistö ja hiiri"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab vaihtaa työpöytää"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab on rajoitettu työpöytään"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Alt-Tab tila:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Oikea nappi"
+msgstr "Kaappaa hiiren oikea nappi"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Suodattimet"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "Ikkunat"
+msgstr "Ikkunan ominaisuus:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "pienet koristukset"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "ei koristuksia"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "ei saa fokusta"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "käynnistyy naulattuna"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "ei oteta huomioon sessionhallinnassa"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "jos ne noudattavat seuraavaa:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Otsikko"
+msgstr "Otsikot"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
+msgstr "Luokat"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,9 +26,8 @@ msgid "&Rename ..."
 msgstr "&Nimeä Uudelleen..."
 
 #: backgnd.cpp:184
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Tausta"
+msgstr "&Yhteinen tausta"
 
 #: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
@@ -50,8 +49,8 @@ msgstr "&Asetukset..."
 msgid "Wallpaper"
 msgstr "Taustakuva"
 
-#: backgnd.cpp:296 backgnd.cpp:531 backgnd.cpp:545 backgnd.cpp:1150
-#: backgnd.cpp:1307 backgnd.cpp:1843
+#: backgnd.cpp:296 backgnd.cpp:521 backgnd.cpp:535 backgnd.cpp:1140
+#: backgnd.cpp:1297 backgnd.cpp:1833
 msgid "No wallpaper"
 msgstr "Ei taustakuvaa"
 
@@ -60,187 +59,174 @@ msgid "&Browse..."
 msgstr "&Selaa..."
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Tiled"
-msgstr "&Monistettu"
+msgstr "Monistettu"
 
 #: backgnd.cpp:334
 msgid "Mirrored"
-msgstr ""
+msgstr "Peilattu"
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Keskitetty"
+msgstr "Keskitetty monistus"
 
 #: backgnd.cpp:336
-#, fuzzy
 msgid "Centred"
-msgstr "&Keskitetty"
+msgstr "Keskitetty"
 
 #: backgnd.cpp:337
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Keskitetty"
+msgstr "Keskitetty tiili"
 
 #: backgnd.cpp:338
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Keskitetty"
+msgstr "Keskitetty"
 
 #: backgnd.cpp:339
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Keskitetty"
+msgstr "Keskitetty maxpect"
 
 #: backgnd.cpp:340
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Symmetrinen monistus"
 
 #: backgnd.cpp:341
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symmetrinen peilaus"
 
 #: backgnd.cpp:342
-#, fuzzy
 msgid "Scaled"
-msgstr "V&enytetty"
+msgstr "Venytetty"
 
 #: backgnd.cpp:354
 msgid "Ra&ndom"
-msgstr ""
+msgstr "&Satunnainen"
 
 #: backgnd.cpp:363
-#, fuzzy
 msgid "Setu&p..."
 msgstr "&Asetukset..."
 
 #: backgnd.cpp:371
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Nielaise paneeliin"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Cache size"
-msgstr ""
+msgstr "Välimuisti"
 
-#: backgnd.cpp:398
+#: backgnd.cpp:399
 msgid "kb"
-msgstr ""
+msgstr "kb"
 
-#: backgnd.cpp:1274
+#: backgnd.cpp:1264
 msgid "Desktop names"
 msgstr "Työpöytien nimet"
 
-#: backgnd.cpp:1319
-#, fuzzy
+#: backgnd.cpp:1309
 msgid "File error"
-msgstr "Nimeämisvirhe"
+msgstr "tiedostovirhe"
 
-#: backgnd.cpp:1320
+#: backgnd.cpp:1310
 msgid "Can't load image file"
-msgstr ""
+msgstr "En saa ladattua kuvaa"
 
-#: backgnd.cpp:1343 backgnd.cpp:1813
+#: backgnd.cpp:1333 backgnd.cpp:1803
 msgid "Unsupported URL"
-msgstr ""
+msgstr "tuntematon URL"
 
-#: backgnd.cpp:1344 backgnd.cpp:1814
+#: backgnd.cpp:1334 backgnd.cpp:1804
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Valitettavasti tätä URL -tyyppiä ei tueta"
 
-#: backgnd.cpp:1375
+#: backgnd.cpp:1365
 msgid "Two color backgrounds"
 msgstr "Kaksivärinen tausta"
 
-#: backgnd.cpp:1412
+#: backgnd.cpp:1402
 msgid "Blend colors from &top to bottom"
 msgstr "Sekoita värit &ylhäältä alas"
 
-#: backgnd.cpp:1418
+#: backgnd.cpp:1408
 msgid "Blend colors from &right to left"
 msgstr "&Sekoita värit oikealta vasemmalle"
 
-#: backgnd.cpp:1424
+#: backgnd.cpp:1414
 msgid "Use &pattern"
 msgstr "Käytä k&uviota"
 
-#: backgnd.cpp:1451
+#: backgnd.cpp:1441
 msgid "Preview"
 msgstr "Esikatselu"
 
-#: backgnd.cpp:1462
+#: backgnd.cpp:1452
 msgid "Pattern &name"
 msgstr "Kuvion &nimi"
 
-#: backgnd.cpp:1501
+#: backgnd.cpp:1491
 msgid "Current"
 msgstr "Nykyinen"
 
-#: backgnd.cpp:1561
+#: backgnd.cpp:1551
 msgid "Filled"
 msgstr "Täytetty"
 
-#: backgnd.cpp:1564
+#: backgnd.cpp:1554
 msgid "Fish net"
 msgstr "Kalaverkko"
 
-#: backgnd.cpp:1567
+#: backgnd.cpp:1557
 msgid "Triangles"
 msgstr "Kolmiot"
 
-#: backgnd.cpp:1570
+#: backgnd.cpp:1560
 msgid "Flowers"
 msgstr "Kukat"
 
-#: backgnd.cpp:1573
+#: backgnd.cpp:1563
 msgid "Rattan"
 msgstr "Kangas"
 
-#: backgnd.cpp:1576
+#: backgnd.cpp:1566
 msgid "Cobbled Pavement"
 msgstr "Kivetys"
 
-#: backgnd.cpp:1642
+#: backgnd.cpp:1632
 msgid "Random mode setup"
-msgstr ""
+msgstr "Satunnaistilan asetukset"
 
-#: backgnd.cpp:1648
+#: backgnd.cpp:1638
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Poimi tiedostoja hakemistosta"
 
-#: backgnd.cpp:1662
-#, fuzzy
+#: backgnd.cpp:1652
 msgid "&Browse ..."
-msgstr "&Selaa..."
+msgstr "&Selaa ..."
 
-#: backgnd.cpp:1683
+#: backgnd.cpp:1673
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Viime sekunneissa:"
 
-#: backgnd.cpp:1695
-#, fuzzy
+#: backgnd.cpp:1685
 msgid "In &order"
-msgstr "Ohita"
+msgstr "&Järjestyksessä"
 
-#: backgnd.cpp:1712
-#, fuzzy
+#: backgnd.cpp:1702
 msgid "Desktops :"
-msgstr "Työpöytä"
+msgstr "Työpöydät :"
 
-#: backgnd.cpp:1750
-#, fuzzy
+#: backgnd.cpp:1740
 msgid "&Add"
-msgstr "&Lisää ..."
+msgstr "&Lisää"
 
-#: backgnd.cpp:1920
-#, fuzzy
+#: backgnd.cpp:1910
 msgid "Directory error"
-msgstr "Nimeämisvirhe"
+msgstr "Hakemistovirhe"
 
-#: backgnd.cpp:1921
+#: backgnd.cpp:1911
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Valittua hakemistoa ei ole olemassa"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -461,9 +447,8 @@ msgid "Fixed font"
 msgstr "Tasavälinen kirjasin"
 
 #: general.cpp:278
-#, fuzzy
 msgid "Window title font"
-msgstr "Ikkunan teksti"
+msgstr "Ikkunan ostikkokirjasin"
 
 #: general.cpp:283
 msgid "Panel button font"
@@ -488,20 +473,20 @@ msgstr ""
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
 #: main.cpp:63
+msgid "&Fonts etc."
+msgstr "&Kirjasimet"
+
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Tausta"
 
-#: main.cpp:66
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Näytönsäästäjä"
 
-#: main.cpp:70
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Värit"
-
-#: main.cpp:73
-msgid "&Fonts etc."
-msgstr "&Kirjasimet"
 
 #: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
@@ -555,6 +540,3 @@ msgstr "oletus"
 msgid "any"
 msgstr "kaikki"
 
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Työpöytä"
