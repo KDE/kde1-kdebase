@@ -125,7 +125,7 @@ msgstr "Terminál"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
