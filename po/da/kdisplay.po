@@ -272,7 +272,7 @@ msgstr "Skærmskåner"
 #: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:604 scrnsave.cpp:725
 #, fuzzy
 msgid "No screensaver"
-msgstr " Ingen skærmskåner"
+msgstr "Ingen skærmskåner"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
@@ -395,15 +395,11 @@ msgstr "Aktivt vindue"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 #, fuzzy
 msgid "Selected text"
-<<<<<<< kdisplay.po
-msgstr "Vælg tekst"
+msgstr "Markeret tekst"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
-=======
-msgstr "Markeret tekst"
->>>>>>> 1.17
+msgstr "Ny"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
