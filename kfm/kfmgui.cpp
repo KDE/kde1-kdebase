@@ -633,9 +633,9 @@ void KfmGui::handleViewMenu(bool _bHtmlMode)
   mview->setItemEnabled(mview->idAt( 7 ), !bHtmlMode );
   mview->setItemEnabled(mview->idAt( 8 ), !bHtmlMode );
   mview->setItemEnabled(mview->idAt( 10 ), !bHtmlMode ); // reload tree
-  mview->setItemEnabled(mview->idAt( 14 ), bHtmlMode );
-  mview->setItemEnabled(mview->idAt( 15 ), bHtmlMode );
-  mview->setItemEnabled(mview->idAt( 17 ), bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 14 ), bHtmlMode && view->isFrameSet()); // frame source
+  mview->setItemEnabled(mview->idAt( 15 ), bHtmlMode ); // document source
+  mview->setItemEnabled(mview->idAt( 17 ), bHtmlMode ); // document encoding
 }
 //CT
 
