@@ -153,6 +153,7 @@ AC_OUTPUT(Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
 	kfm/Makefile \
+	kfm/kfmsu2 \
 	kfm/Desktop/Makefile \
 	kfm/Desktop/Templates/Makefile \
 	kfm/client/Makefile \
