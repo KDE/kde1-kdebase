@@ -292,7 +292,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
     QLabel *label;
 
     //CT 12Nov1998 layout management
-    QGridLayout *lay = new QGridLayout(this,11,5,10,5);
+    QGridLayout *lay = new QGridLayout(this,12,5,10,5);
     lay->addRowSpacing(0,10);
     lay->addRowSpacing(1,30);
     lay->addRowSpacing(2, 5);
@@ -301,7 +301,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
     lay->addRowSpacing(5,30);
     lay->addRowSpacing(6, 5);
     lay->addRowSpacing(7,30);
-    lay->addRowSpacing(10,10);
+    lay->addRowSpacing(11,10);
     lay->addColSpacing(0,10);
     lay->addColSpacing(2,20);
     lay->addColSpacing(3,80);
@@ -317,7 +317,8 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
     lay->setRowStretch(7,0);
     lay->setRowStretch(8,1);
     lay->setRowStretch(9,1);
-    lay->setRowStretch(10,0);
+    lay->setRowStretch(10,1);
+    lay->setRowStretch(11,0);
 
     lay->setColStretch(0,0);
     lay->setColStretch(1,0);
