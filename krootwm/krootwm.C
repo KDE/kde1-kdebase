@@ -45,7 +45,7 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     label->setGeometry( 10, 10, 330, 15 );
 
     edit = new KLined( this, 0L );
-    
+
     edit->setGeometry( 10, 35, 330, 25 );
     connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
 
@@ -83,7 +83,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     // Torben
     bookmarkId = 10;
     bookmarkDict.setAutoDelete( true );
-    
+
     kwmmapp = kwmmapp_arg;
 
     // parse the configuration
@@ -104,7 +104,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     QString s = kconfig->readEntry("Left", "Selection");
 
     kpanel_menu_on_left_button = (s == "Menu");
-    
+
     if (s != "Selection" && s != "Menu"){
       kconfig->writeEntry("Left", "Selection");
       kconfig->sync();
@@ -113,8 +113,8 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     XGCValues gv;
     unsigned long mask;
 
-    XSelectInput(qt_xdisplay(), qt_xrootwin(), 
- 		 ButtonPressMask | 
+    XSelectInput(qt_xdisplay(), qt_xrootwin(),
+ 		 ButtonPressMask |
  		 ButtonReleaseMask |
  		 ButtonMotionMask
  		 );
@@ -133,9 +133,9 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     menuNew = new QPopupMenu;
     CHECK_PTR( menuNew );
     menuNew->insertItem( klocale->translate("Folder") );
-    connect( menuNew, SIGNAL( activated( int ) ), 
+    connect( menuNew, SIGNAL( activated( int ) ),
 	     this, SLOT( slotNewFile( int ) ) );
-    
+
     templatesList.append( QString( "Folder") );
 
     // Find the templates path
@@ -143,7 +143,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     KSimpleConfig config( configpath );
     config.setGroup( "Paths" );
 
-    connect(kwmmapp, SIGNAL(commandReceived(QString)), 
+    connect(kwmmapp, SIGNAL(commandReceived(QString)),
 		       this, SLOT(kwmCommandReceived(QString)));
 
 
@@ -152,7 +152,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     desktopPath = config.readEntry( "Desktop", desktopPath);
     if ( desktopPath.right(1) != "/")
 	desktopPath += "/";
-  
+
     // Templates Path
     templatePath = desktopPath + "Templates/";
     templatePath = config.readEntry( "Templates" , templatePath);
@@ -170,7 +170,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 
 	while ( ( fi = it.current() ) != 0L )
 	{
-	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 &&
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
 	    {
 		QString tmp = fi->fileName().data();
@@ -213,7 +213,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
                                  cascade
                                  arrange
 
-                                 
+
       */
 
       if (myMenuBar)
@@ -248,7 +248,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
         help->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
         help->insertItem(klocale->translate("About KDE..."), kapp,
                          SLOT(aboutKDE()));
-        
+
         connect(help, SIGNAL(activated(int)), this, SLOT(rmb_menu_activated(int)));
       }
 
@@ -294,8 +294,8 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
       myMenuBar->insertItem(klocale->translate("Windows"), mmb);
       myMenuBar->insertItem(klocale->translate("Help"), help);
     }
-    
-    QApplication::desktop()->installEventFilter(this);  
+
+    QApplication::desktop()->installEventFilter(this);
 
     kwmmapp->connectToKWM();
 
@@ -343,7 +343,7 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
   dp = opendir( _path );
   if ( dp == 0L )
     return;
-  
+
   // Loop thru all directory entries
   while ( ( ep = readdir( dp ) ) != 0L )
   {
@@ -370,7 +370,7 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
 	scanBookmarks( pop, file );
       }
       else
-      {    
+      {
 	KSimpleConfig cfg( file, true );
 	cfg.setGroup( "KDE Desktop Entry" );
 	QString type = cfg.readEntry( "Type" );	
@@ -386,19 +386,19 @@ void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
 	    if ( name.isEmpty() )
 	    {
 	      name = ep->d_name;
-  
+
 	      int i = 0;
 	      while ( ( i = name.find( "%%", i ) ) != -1 )
 	      {
 		name.replace( i, 2, "%");
 		i++;
 	      }
-  
+
 	      while ( ( i = name.find( "%2f" ) ) != -1 )
 		name.replace( i, 3, "/");
 	      while ( ( i = name.find( "%2F" ) ) != -1 )
 		name.replace( i, 3, "/");
-	      
+	
 	      if ( name.length() > 7 && name.right( 7 ) == ".kdelnk" )
 		name.truncate( name.length() - 7 );
 	    }
@@ -457,7 +457,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  y = e->pos().y();
 	  dx = dy = 0;
 	  if (select_rectangle(x,y,dx,dy)){
-	    KFM* kfm = new KFM; 
+	    KFM* kfm = new KFM;
 	    kfm->selectRootIcons(x, y, dx, dy,
 				 (e->state() & ControlButton) == ControlButton);
 	    delete kfm;
@@ -468,8 +468,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
             // Can I take focus from everybody here?
             if (macMode && myMenuBar)
             {
-	      KWM::activateInternal(None);
-              myMenuBar->show();
+	KWM::activateInternal(None);
               myMenuBar->raise();
             }
           }
@@ -489,7 +488,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
   }
   return False;
 }
-	  
+	
 
 void KRootWm::rmb_menu_activated(int item){
   switch (item) {
@@ -498,7 +497,7 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_ARRANGE_ICONS:
     {
-      KFM* kfm = new KFM; 
+      KFM* kfm = new KFM;
       kfm->sortDesktop();
       delete kfm;
     }
@@ -508,7 +507,7 @@ void KRootWm::rmb_menu_activated(int item){
     break;
   case RMB_REFRESH_DESKTOP:
     {
-      KFM* kfm = new KFM; 
+      KFM* kfm = new KFM;
       kfm->refreshDesktop();
       KWM::refreshScreen();
       delete kfm;
@@ -561,31 +560,31 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   int cx, cy, rx, ry;
   int ox, oy;
   XEvent ev;
-  
-//   if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+
+//   if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 // 		   ButtonPressMask | ButtonReleaseMask |
 // 		   PointerMotionMask |
 // 		   EnterWindowMask | LeaveWindowMask,
-// 		   GrabModeAsync, GrabModeAsync, None, 
-// 		   arrowCursor.handle(), CurrentTime) == GrabSuccess){ 
-  XChangeActivePointerGrab( qt_xdisplay(), 
+// 		   GrabModeAsync, GrabModeAsync, None,
+// 		   arrowCursor.handle(), CurrentTime) == GrabSuccess){
+  XChangeActivePointerGrab( qt_xdisplay(),
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask ,
 			    arrowCursor.handle(), 0);
   XGrabServer(qt_xdisplay());
-  
+
   draw_selection_rectangle(x, y, dx, dy);
-  
+
   ox = x;
   oy = y;
-  
+
   cx = x;
   cy = y;
-  
+
   for(;;) {
     XMaskEvent(qt_xdisplay(), ButtonPressMask|ButtonReleaseMask|
 	       PointerMotionMask, &ev);
-    
+
     if (ev.type == MotionNotify){
       rx = ev.xmotion.x_root;
       ry = ev.xmotion.y_root;
@@ -596,9 +595,9 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
       continue;
     cx = rx;
     cy = ry;
-    
+
     draw_selection_rectangle(x, y, dx, dy);
-    
+
     if (cx > ox){	
       x = ox;
       dx = cx - x;
@@ -615,14 +614,14 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
       y = cy;
       dy = oy - y;
     }
-    
+
     draw_selection_rectangle(x, y, dx, dy);
     XFlush(qt_xdisplay());
   }
-  
+
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
-  
+
   XUngrabServer(qt_xdisplay());
   XAllowEvents(qt_xdisplay(), AsyncPointer, CurrentTime);
   XSync(qt_xdisplay(), False);
@@ -656,7 +655,7 @@ void KRootWm::generateWindowlist(){ //sven changed this to slot
 	    (KWM::desktop(callbacklist[i]) == d
 	     && !KWM::isSticky(callbacklist[i])
 	     )
-	    || 
+	    ||
 	    (d == cd && KWM::isSticky(callbacklist[i]))
 	    ){
 	  mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
@@ -675,7 +674,7 @@ void KRootWm::generateWindowlist(){ //sven changed this to slot
 	  (KWM::desktop(callbacklist[i]) == d
 	   && !KWM::isSticky(callbacklist[i])
 	   )
-	  || 
+	  ||
 	  (d == cd && KWM::isSticky(callbacklist[i]))
 	  ){
 	mmb->insertItem(KWM::miniIcon(callbacklist[i], 16, 16),
@@ -691,9 +690,9 @@ void KRootWm::slotNewFile( int _id )
 {
     if ( menuNew->text( _id ) == 0 )
 	return;
-    
+
     QString p = templatesList.at( _id );
-    
+
     QString text = klocale->translate("New");
     text += " ";
     text += p.data();
@@ -707,7 +706,7 @@ void KRootWm::slotNewFile( int _id )
 	text += klocale->translate("Folder");
 	text += ":";
     }
-    
+
     DlgLineEntry l( text.data(), value, 0L );
     if ( l.exec() )
     {
@@ -727,11 +726,11 @@ void KRootWm::slotNewFile( int _id )
 		tmp.sprintf( "%s\n%s", klocale->translate("Could not create folder"), u.data() );
 		QMessageBox::warning( 0L, "Error", tmp );
 		return;
-	    }	    
+	    }	
 	    else
 	    {
-		KFM* kfm = new KFM; 
-		kfm->refreshDesktop(); 
+		KFM* kfm = new KFM;
+		kfm->refreshDesktop();
 		delete kfm;
 	    }
 	}
@@ -753,7 +752,7 @@ void KRootWm::slotNewFile( int _id )
 void KRootWm::slotBookmarkSelected( int _id )
 {
   if ( _id == 1 )
-  {    
+  {
     QString bdir( kapp->localkdedir().data() );
     bdir += "/share/apps/kfm/bookmarks";
     QString cmd( "kfmclient openURL \"" );
@@ -762,14 +761,14 @@ void KRootWm::slotBookmarkSelected( int _id )
     execute( cmd );
     return;
   }
-  
+
   QString* s = bookmarkDict[ _id ];
   if ( s == 0L )
   {
     warning( "Bug in KRootWm Bookmark code. Tell weis@kde.org" );
     return;
   }
-  
+
   QString cmd( "kfmclient openURL \"" );
   cmd += s->data();
   cmd += "\"";
@@ -778,14 +777,8 @@ void KRootWm::slotBookmarkSelected( int _id )
 
 void KRootWm::slotFocusChanged(Window w)
 {
-  if (myMenuBar)
-    if (w)
-      myMenuBar->hide();
-    else
-    {
-      myMenuBar->show();
+  if (myMenuBar && w == None)
       myMenuBar->raise();
-    }
 }
 
 int main( int argc, char *argv[] )
@@ -802,7 +795,7 @@ int main( int argc, char *argv[] )
       printf(klocale->translate("Usage:"));
       printf("%s [-version]\n", argv[0]);
     }
-    ::exit(1); 
+    ::exit(1);
   }
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   KRootWm r(&a);

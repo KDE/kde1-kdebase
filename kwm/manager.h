@@ -522,6 +522,7 @@ private:
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
     
+  void updateMenuBars();  
     
   // optimization for standalone menubars
   bool has_standalone_menubars;
