@@ -26,11 +26,11 @@ msgstr "Postavke zvona"
 
 #: bell.cpp:65
 msgid "Volume"
-msgstr "Jaèina zvuka"
+msgstr "Jakost glasa"
 
 #: bell.cpp:67
 msgid "Pitch"
-msgstr "Jakost glasa"
+msgstr "Visina glasa"
 
 #: bell.cpp:69
 msgid "Hz"
