@@ -166,13 +166,12 @@ msgid "Window resize"
 msgstr "Endre vindustørrelse"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Tittelanimasjon"
+msgstr "Animasjon:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Hurtig"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -281,12 +280,3 @@ msgid ""
 msgstr ""
 "Vindulåsområde:\n"
 "       (punkter)"
-
-#~ msgid "With animation"
-#~ msgstr "Med animasjon"
-
-#~ msgid "Move"
-#~ msgstr "Flytt"
-
-#~ msgid "Restore"
-#~ msgstr "Gjenopprett"

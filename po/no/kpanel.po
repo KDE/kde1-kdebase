@@ -108,9 +108,3 @@ msgstr "Ops!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
-
-#~ msgid "Move"
-#~ msgstr "Flytt"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"

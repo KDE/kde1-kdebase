@@ -249,6 +249,3 @@ msgstr "Personlig:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standardverdi:"
-
-#~ msgid "&Reload"
-#~ msgstr "&Last inn på nytt"

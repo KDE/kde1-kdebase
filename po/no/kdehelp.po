@@ -303,33 +303,3 @@ msgstr "Om KDE hjelp"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
-
-#~ msgid "Font Size"
-#~ msgstr "Skriftstørrelse"
-
-#~ msgid "Small"
-#~ msgstr "Liten"
-
-#~ msgid "Medium"
-#~ msgstr "Medium"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-#~ msgid "Fonts"
-#~ msgstr "Skrifttyper"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Forskjellig"
-
-#~ msgid "&Reload"
-#~ msgstr "Last &inn på nytt"
-
-#~ msgid "&Previous"
-#~ msgstr "&Forrige"
-
-#~ msgid "&Next"
-#~ msgstr "&Neste"
-
-#~ msgid "Stop"
-#~ msgstr "Stopp"

@@ -351,12 +351,3 @@ msgstr "Kunne ikke gjenkjenne arkiv type!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Feil ved opprettelse av underordnet prosess!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Klipp ut"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Files"
-#~ msgstr "Filer"

@@ -339,9 +339,8 @@ msgid "Panel clock font"
 msgstr "Skrifttype på panelklokke"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Velg tekst"
+msgstr "Eksempeltekst"
 
 #: general.cpp:306
 msgid ""
@@ -349,6 +348,9 @@ msgid ""
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"DEN RASKE BRUNE REVEN HOPPET OVER DEN LATE HUNDEN\n"
+"den raske brune reven hoppet over den late hunden\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( ) æ ø å Æ Ø Å"
 
 #: main.cpp:62
 msgid "&Fonts etc."
@@ -388,7 +390,7 @@ msgstr "Valgt tekst"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "S&kriftbilde"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -400,11 +402,11 @@ msgstr "&Kursiv"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Størrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Tegnsett"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -413,6 +415,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
-
-#~ msgid "&Remove"
-#~ msgstr "&Fjern"
