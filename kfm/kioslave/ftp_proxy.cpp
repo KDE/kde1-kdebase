@@ -16,11 +16,6 @@
 #include "ftp_proxy.h"
 #include "kio_errors.h"
 
-extern char * base64_encode_line(const char*);
-extern char *create_www_auth(const char*, const char*);
-extern int revmatch(const char*, const char*);
-extern char *create_generic_auth(const char *prefix, const char *user, const char *passwd);
-
 /*****************************************************************************/
 
 KProtocolProxyFTP::KProtocolProxyFTP () {
