@@ -706,7 +706,7 @@ void kPanel::mousePressEvent( QMouseEvent*  ev  ){
 		  this, SLOT(configurePanel()));
     p->insertItem(klocale->translate("Restart"), 
 		  this, SLOT(restart()));
-    p->move(ev->pos());
+    p->move(mapToGlobal(ev->pos()));
     int ret = p->exec();
   }
 }

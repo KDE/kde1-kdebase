@@ -1,5 +1,8 @@
 In kpanel-0.18:
 
+    Patchlevel 11:
+       - fixed the missing-submenus bug (coolo)
+
     Patchlevel 10:
        - no more passive grab on swallow buttons for the left mouse
          button if the exec-line in the kdelnk-file is empty.

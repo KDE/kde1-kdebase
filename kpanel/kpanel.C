@@ -1003,11 +1003,6 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 
    if (pmi){
      if (pmi->getType() == submenu){
-
-       // the next paragraph is a workaound for qt-1.3,
-       // since Qt has problems with standalone submenus
-       // of other menus :-(
-       
        PMenu* pm = new PMenu;
        pm->setAltSort(foldersFirst);
        pm->parse(QDir(pmi->fullPathName()));
@@ -1017,7 +1012,6 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        pmi = pmi2;
        pm->createMenu(pmi->getQPopupMenu(), this);
        entries[nbuttons-1].pmi = pmi;
-       // end workaround
        
        entries[nbuttons-1].button->setPixmap(create_arrow_pixmap( load_pixmap(pmi->bigIconName(), True)));
      }
