@@ -344,8 +344,13 @@ void KfmGui::initMenu()
     connect( &bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
+<<<<<<< kfmgui.cpp
+    QString bmFile = p + ".kde/kfm.bookmarks.html";
+    bookmarkMenu->insertItem( klocale->translate("Add Bookmark"), 
+=======
     QString bmFile = p + "/.kfm.bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
+>>>>>>> 1.13
 			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
     
@@ -720,7 +725,7 @@ void KfmGui::slotHome()
 void KfmGui::addBookmark( const char *_title, const char *_url )
 {
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kfm.bookmarks.html";
+    QString bmFile = p + "/.kde/kfm.bookmarks.html";
     bookmarkManager.add( _title, _url );
     bookmarkManager.write( bmFile );
 }
@@ -833,6 +838,22 @@ void KfmGui::slotOpenLocation( )
 	    url = "file:";
 	    url += QDir::homeDirPath().data();
 	    url += l.getText() + 1;
+	}
+
+	// Some kludge to add protocol specifier on
+	// well known Locations
+	if ( url.left(4) == "www." ) {
+	    url = "http://";
+	    url += l.getText();
+	}
+	if ( url.left(4) == "ftp." ) {
+	    url = "ftp://";
+	    url += l.getText();
+	}
+	if ( url == "about:kde" ) {
+    		url = getenv( "KDEURL" );
+		if ( url.isEmpty() )
+			url = "http://www.kde.org";
 	}
 	
 	KURL u( url.data() );
