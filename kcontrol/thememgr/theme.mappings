@@ -91,7 +91,7 @@ ConfigFile=kpanelrc
 ConfigGroup=kpanel
 ConfigAppDir=apps/kpanel/pics
 ConfigActivateCmd=kwmcom kpanel:restart
-ConfigInstallCmd=panelBack
+#ConfigInstallCmd=panelBack
 background=BackgroundTexture
 #
 #-----------------------------------------------------------------------------

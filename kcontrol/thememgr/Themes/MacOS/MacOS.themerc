@@ -41,6 +41,7 @@ windowForeground=0,0,0
 #htmlForeground=0,0,255
 #htmlLinks=255,0,0
 #htmlFollowedLinks=0,255,0
+#
 #-----------------------------------------------------------------------------
 [Window Border]
 shapePixmapTop=wm_top.xpm
