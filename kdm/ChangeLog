@@ -1,3 +1,10 @@
+1998-12-04  Steffen Hansen  <stefh@localhost>
+
+	* genauth.c (len;): Read random data from "randomFile" (usually
+		/dev/mem) for auth key.
+
+	* kgreeter.cpp (GreetUser): Removed hardcoded backspace
+
 1998-11-27  Steffen Hansen  <stefh@localhost>
 
 	* Make the authentication cookie more unpredictable by adding

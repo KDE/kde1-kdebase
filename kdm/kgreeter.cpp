@@ -91,13 +91,7 @@ struct verify_info      *verify;
 struct greet_info       *greet;
 
 // Here we store a number for the seed:
-static int event_sum;
-
-// GenerateAuthData calls this to get the seed:
-extern "C" {
-     int greeter_event_sum()
-	  { return event_sum;}
-}
+//static int event_sum;
 
 class MyApp:public KApplication {
 public:
@@ -113,41 +107,33 @@ public:
       * 
       * If someone has a more "proven" way to do this,
       * please contact me /stefh
+      *
+      * NOTE: This is disabled now. We read /dev/mem instead!
+      * /stefh
       */
-     int sum();
+     //static int getSum() { return event_sum;}
 private:
-     // Add one timestamp to recorded events
-     void addEvent( int);
-
-     // max number of stored timestamps:
-     // We dont really need to store the numbers,
-     // so if the method used here is good, i will
-     // change it to just store one number.
-     static const int N_EVENTS = 14;
-
-     int  buf_end;
-     bool buf_full;
-     int *event_buf;
+     // Add one timestamp
+     //void addEvent( int);
+     //static int event_sum;
 };
 
-MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv), 
-     buf_end(0)
-{
-     event_buf = new int[N_EVENTS];
-}
+//int MyApp::event_sum = 42;
+
+MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv)
+{}
 
 MyApp::~MyApp()
-{
-     delete[] event_buf;
-}
+{}
 
 bool 
 MyApp::x11EventFilter( XEvent * ev){
-     if( ev->type == KeyPress ||
+#if 0 
+    if( ev->type == KeyPress ||
 	 ev->type == KeyRelease ) addEvent( ((XKeyEvent*)ev)->time);
      if( ev->type == ButtonPress ||
 	 ev->type == ButtonRelease ) addEvent( ((XButtonEvent*)ev)->time);
-     //if( ev->type == MotionNotify) addEvent( ((XMotionEvent*)ev)->time);
+#endif
      if( ev->type == KeyPress && kgreeter){
 	  // This should go away
 	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
@@ -164,28 +150,19 @@ MyApp::x11EventFilter( XEvent * ev){
      return FALSE;
 }
 
+#if 0
 void
 MyApp::addEvent( int t)
 {
-     event_buf[buf_end++] = t;
-     if( buf_end >= N_EVENTS) {
-	  buf_end  = 0;
-	  buf_full = true;
-     }
+     event_sum = (event_sum << 3) ^ t;
+     printf("addEvent( %d): event_sum = %d\n", t, event_sum);
 }
 
-int
-MyApp::sum()
-{
-     int s = (int)event_buf; // init with "random" pointer value
-     if( buf_full) {
-	  for( int i = 0; i < N_EVENTS; i++) s = (s << 3) ^ event_buf[i];
-     } else {
-	  for( int i = 0; i < buf_end; i++)  s = (s << 3) ^ event_buf[i];
-     }
-     event_sum = s;
-     return s;
+// GenerateAuthData calls this to get the seed:
+extern "C" {
+     int greeter_event_sum() { printf("%d\n",MyApp::getSum());return MyApp::getSum();}
 }
+#endif
 
 static void
 set_min( QWidget* w)
@@ -204,7 +181,6 @@ set_fixed( QWidget* w)
 KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0) 
   : QWidget( parent, t, WStyle_Customize | WStyle_NoBorder | WStyle_Tool)
 {
-     //setMouseTracking( true);
      QFrame* winFrame = new QFrame( this);
      winFrame->setFrameStyle(QFrame::WinPanel| QFrame::Raised);
      QBoxLayout* vbox = new QBoxLayout(  winFrame, 
@@ -879,23 +855,25 @@ GreetUser(
      sigaction(SIGCHLD,NULL,&sig);
  
      argv[2] = d->name;
-     MyApp* myapp = new MyApp( argc, argv );
+     MyApp myapp( argc, argv );
      /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
 	    klocale->language().data(), kapp->appName().data());*/
      QApplication::setOverrideCursor( waitCursor );
      kdmcfg = new KDMConfig( );
      
-     myapp->setFont( *kdmcfg->normalFont());
-     myapp->setStyle( kdmcfg->style());
+     myapp.setFont( *kdmcfg->normalFont());
+     myapp.setStyle( kdmcfg->style());
 
      *dpy = qt_xdisplay();
      
      RegisterCloseOnFork (ConnectionNumber (*dpy));
      SecureDisplay (d, *dpy);
      // this is for a real BackSpace-key
+     // It's a hack, remove it!
+     /*
      KeySym mysym = XK_BackSpace;
      XChangeKeyboardMapping(*dpy, 22, 1, &mysym, 1);
-     
+     */
      // this is necessary, since Qt-1.1 just overwrites the
      // IOErrorHandler that was set by xdm!!!
      // we have to return RESERVER_DISPLAY to restart the server
@@ -922,12 +900,9 @@ GreetUser(
 
      // Clean up and log user in:
      XKillClient( qt_xdisplay(), AllTemporary);
-     //qApp->desktop()->setCursor( arrowCursor);
      qApp->restoreOverrideCursor();
      delete kdmcfg;
-     // Sum up events for seed:
-     myapp->sum();
-     delete myapp;
+     //delete myapp;
      return Greet_Success;
 }
 

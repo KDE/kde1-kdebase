@@ -51,29 +51,9 @@ extern Time_t time ();
 
 static unsigned char	key[8];
 
-#ifdef HASXDMAUTH
-
-typedef unsigned char auth_cblock[8];	/* block size */
-
-typedef struct auth_ks_struct { auth_cblock _; } auth_wrapper_schedule[16];
-
-extern void _XdmcpWrapperToOddParity();
-
-static
-longtochars (l, c)
-    long	    l;
-    unsigned char    *c;
-{
-    c[0] = (l >> 24) & 0xff;
-    c[1] = (l >> 16) & 0xff;
-    c[2] = (l >> 8) & 0xff;
-    c[3] = l & 0xff;
-}
-
-
 # define FILE_LIMIT	1024	/* no more than this many buffers */
 
-static
+static int
 sumFile (name, sum)
 char	*name;
 long	sum[2];
@@ -103,6 +83,25 @@ long	sum[2];
     }
     close (fd);
     return 1;
+}
+
+#ifdef HASXDMAUTH
+
+typedef unsigned char auth_cblock[8];	/* block size */
+
+typedef struct auth_ks_struct { auth_cblock _; } auth_wrapper_schedule[16];
+
+extern void _XdmcpWrapperToOddParity();
+
+static
+longtochars (l, c)
+    long	    l;
+    unsigned char    *c;
+{
+    c[0] = (l >> 24) & 0xff;
+    c[1] = (l >> 16) & 0xff;
+    c[2] = (l >> 8) & 0xff;
+    c[3] = l & 0xff;
 }
 
 static
@@ -177,10 +176,17 @@ int	len;
     	int	    seed;
     	int	    value;
     	int	    i;
-	
-	/* Add random data from X events to seed /stefh */
-    	seed = (ldata[0]) + (ldata[1] << 16) + greeter_event_sum();
-	/*printf("Seed = %d\n", seed);*/
+	int         sum[2];
+
+	/* Read random data from file /stefh */
+	if( !sumFile( randomFile, sum)) {
+	     LogError("Failed to read from randomFile %s\n", randomFile);
+	     /* Dont do anything if the read failed. Just rely on
+	      * the randomness fo ldata[] /stefh
+	      */
+	}
+
+    	seed = (ldata[0]) + (ldata[1] << 16) + sum[0] + sum[1];
     	srand (seed);
     	for (i = 0; i < len; i++)
     	{
