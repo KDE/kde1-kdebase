@@ -200,6 +200,9 @@ keyset keys[] = {
 	{"\eO\200", "\eOe",	"\e[A",	    "\e[B",	"\e[D",	    "\e[C",
 	 "\e[2~",   "\177",	"\010",			"Original XTerm"},
 
+	{"\eOH",    "\eOF",	"\eOA",	    "\eOB",	"\eOD",	    "\eOC",
+	 "\e[2~",   "\e[3~",	"\177",			"Original XTerm II"},
+
 	{"\eOq",    "\eOp",	"\eOA",	    "\eOB",	"\eOD",	    "\eOC",
 	 "\eOr",    "\177",	"\010",			"VT 100"},
 
