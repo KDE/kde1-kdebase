@@ -1,0 +1,37 @@
+# KDE Config File
+[Desktop1]
+WallpaperMode=Tiled
+UseWallpaper=false
+Pattern=255,255,255,255,255,255,255,255,
+Wallpaper=No wallpaper
+ColorMode=Gradient
+Color1=#000080
+Color2=#0004ff
+OrientationMode=Portrait
+[Desktop2]
+WallpaperMode=Tiled
+UseWallpaper=false
+Pattern=255,255,255,255,255,255,255,255,
+Wallpaper=No wallpaper
+ColorMode=Gradient
+Color1=#00bfaf
+Color2=#008080
+OrientationMode=Portrait
+[Desktop3]
+WallpaperMode=Tiled
+Pattern=255,255,255,255,255,255,255,255,
+UseWallpaper=true
+Wallpaper=ruins.jpg
+ColorMode=Flat
+Color1=#a0a0a4
+Color2=#a0a0a4
+OrientationMode=Portrait
+[Desktop4]
+WallpaperMode=Tiled
+UseWallpaper=true
+Pattern=255,255,255,255,255,255,255,255,
+Wallpaper=water01.jpg
+ColorMode=Flat
+Color1=#a0a0a4
+Color2=#a0a0a4
+OrientationMode=Portrait
