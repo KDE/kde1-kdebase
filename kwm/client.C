@@ -316,6 +316,10 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     animation_is_active = FALSE;
     hidden_for_modules = FALSE;
     autoraised_stopped = FALSE;
+    
+    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
+		GrabModeSync, GrabModeAsync, None, normal_cursor );
+    
 }  
 
 Client::~Client(){
@@ -489,6 +493,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
   if (ev->button() == RightButton){
     if (isActive()){
       generateOperations();
+      stopAutoraise();
       myapp->operations->popup(QCursor::pos());
     }
     else
@@ -849,6 +854,8 @@ void Client::generateOperations(){
 
   myapp->operations->insertItem(KWM::getIconifyString(), 
 				OP_ICONIFY);
+  if (trans != None && trans != qt_xrootwin())
+    myapp->operations->setItemEnabled(OP_ICONIFY, FALSE);
 
   myapp->operations->insertItem(KWM::getMoveString(), 
 				OP_MOVE);
@@ -874,14 +881,17 @@ void Client::generateOperations(){
   }
   myapp->desktopMenu->setItemChecked(manager->currentDesktop(), TRUE);
 
-  myapp->operations->insertItem(KWM::getToDesktopString(), 
-				myapp->desktopMenu);
+  int dm = myapp->operations->insertItem(KWM::getToDesktopString(), 
+					 myapp->desktopMenu);
+  if (trans != None && trans != qt_xrootwin())
+    myapp->operations->setItemEnabled(dm, FALSE);
   myapp->operations->insertSeparator();
   myapp->operations->insertItem(KWM::getCloseString(), 
 				OP_CLOSE);
 }
 
 void Client::showOperations(){
+  stopAutoraise();
   generateOperations();
   switch (getDecoration()){
   case 0:
@@ -922,34 +932,15 @@ void Client::setactive(bool on){
     myapp->operations->hide();
 
   is_active=on;
-
-  XSync(qt_xdisplay(), 0);
-  paintState();
+  if (!do_not_draw)
+    paintState();
   if (is_active){
-    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
-//     XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window);
-//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask, window, True, ButtonPressMask, 
-// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask, window, True, ButtonPressMask, 
-// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | NumLockMask, window, True, ButtonPressMask, 
-// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-//     XGrabButton(qt_xdisplay(), AnyButton, Mod1Mask | LockMask | NumLockMask, window, True, ButtonPressMask, 
-// 		GrabModeSync, GrabModeAsync, None, normal_cursor );
-
     if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
 	 && options.AutoRaise > 0){
       QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
       autoraised_stopped = FALSE;
     }
   }
-  else {
-    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
-  }
-  
-  
 }  
 
 void Client::paintState(bool only_label){
@@ -1143,12 +1134,14 @@ void Client::unIconify(bool animation){
     XMapWindow(qt_xdisplay(), window);
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );
-    manager->activateClient(this);
   }
   else {
     manager->raiseClient( this );
   }
   manager->unIconifyTransientOf(this);
+  if (isOnDesktop(manager->currentDesktop()) && animation){
+    manager->activateClient(this);
+  }
 }
 
 
@@ -1157,6 +1150,14 @@ void Client::ontoDesktop(int new_desktop){
     return;
   if (new_desktop < 1 || new_desktop > manager->number_of_desktops)
     return;
+
+  if (trans != None && trans != qt_xrootwin()){
+    // it is forbidden to move transient windows onto other
+    // desktops than their parents
+    Client* c = manager->getClient(trans);
+    if (c && c->desktop != new_desktop)
+      return;
+  }
 
   desktop = new_desktop;
 
@@ -1170,6 +1171,10 @@ void Client::ontoDesktop(int new_desktop){
       manager->noFocus();
     manager->setWindowState(this, IconicState); 
   }
+
+  
+  manager->ontoDesktopTransientOf(this);
+
   if (desktop == manager->currentDesktop() && !isIconified()){
     show();  
     manager->setWindowState(this, NormalState);
@@ -1298,6 +1303,7 @@ void Client::menuPressed(){
   
   if (!isActive()){
     myapp->operations->hide();
+    manager->raiseClient(this);
     manager->activateClient(this);
   }
   
@@ -1325,7 +1331,11 @@ void Client::  handleOperationsPopup(int i){
 			      EnterWindowMask | LeaveWindowMask,
 			      sizeAllCursor.handle(), 0);
     // correct positioning
-    old_cursor_pos = mapFromGlobal(QCursor::pos());
+    {
+      QPoint tmp = mapToGlobal(QPoint(width()/2, TITLEBAR_HEIGHT/2));
+      QCursor::setPos(tmp);
+      old_cursor_pos = mapFromGlobal(tmp);
+    }
     dragging_state = dragging_enabled;
     do_resize = 0;
     mouseMoveEvent(NULL);
@@ -1392,26 +1402,35 @@ void Client::simple_move(){
 
 void Client::simple_resize(){
   grabMouse();
+  // correct positioning
+  old_cursor_pos = mapFromGlobal(QCursor::pos());
+  dragging_state = dragging_enabled;
+  Cursor cursor = sizeAllCursor.handle();
+  if (QCursor::pos().x() < geometry.x()+geometry.width()/2){
+    if (QCursor::pos().y() < geometry.y()+geometry.height()/2){
+      do_resize = 3;
+      cursor = top_left_cursor;
+    }
+    else {
+      do_resize = 2;
+      cursor = bottom_left_cursor;
+    }
+  }
+  else {
+    if (QCursor::pos().y() < geometry.y()+geometry.height()/2){
+      do_resize = 4;
+      cursor = top_right_cursor;
+    }
+    else {
+      do_resize = 1;
+      cursor = bottom_right_cursor;
+    }
+  }
   XChangeActivePointerGrab( qt_xdisplay(), 
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
-			    bottom_right_cursor, 0);
-  // correct positioning
-  old_cursor_pos = mapFromGlobal(QCursor::pos());
-  dragging_state = dragging_enabled;
-  if (QCursor::pos().x() < geometry.x()+geometry.width()/2){
-    if (QCursor::pos().y() < geometry.y()+geometry.height()/2)
-      do_resize = 3;
-    else
-      do_resize = 2;
-  }
-  else {
-    if (QCursor::pos().y() < geometry.y()+geometry.height()/2)
-      do_resize = 4;
-    else
-      do_resize = 1;
-  }
+			    cursor, 0);
   mouseMoveEvent(NULL);
 }
 
@@ -1420,15 +1439,20 @@ bool Client::dragging_is_running(){
 }
 
 void Client::autoRaise(){
-  if (autoraised_stopped)
-    return;
-  if (myapp->operations->isVisible())
+  if (autoraised_stopped || do_not_draw)
     return;
 
   if (isActive())
     manager->raiseClient( this );
 }
 
+void Client::stopAutoraise(){
+  if (!autoraised_stopped
+      && options.FocusPolicy == FOCUS_FOLLOW_MOUSE
+      && options.AutoRaise > 0)
+    autoRaise();
+  autoraised_stopped = TRUE;
+}
 
 
 void Client::adjustSize(){

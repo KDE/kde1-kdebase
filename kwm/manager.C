@@ -825,7 +825,10 @@ void Manager::manage(Window w, bool mapped){
     c->show();
     XMapWindow(qt_xdisplay(), c->window);
     setWindowState(c, NormalState);
-    raiseClient(c);
+//     if (c->decoration_not_allowed)
+//       lowerClient(c);
+//     else
+      raiseClient(c);
     
     if (current() != c)
       colormapFocus(current());
@@ -914,6 +917,7 @@ void Manager::activateClient(Client* c, bool set_revert){
     return;
   if (cc)
     cc->setactive( FALSE );
+
   c->setactive( TRUE );
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
@@ -998,10 +1002,21 @@ void Manager::raiseClient(Client* c){
 }
 
 void Manager::lowerClient(Client* c){
+  QList <Client> tmp;
   clients_sorted.removeRef(c);
   clients_sorted.insert(0,c);
   sendToModules(module_win_lower, c->window);
   XLowerWindow(qt_xdisplay(), c->winId());
+//   Client* cc;
+//   for (cc = clients_sorted.last(); cc; cc = clients_sorted.prev()){
+//     if (cc->decoration_not_allowed)
+//       tmp.append(cc);
+//   }
+//   for (cc = tmp.first(); cc; cc = tmp.next()){
+//     XLowerWindow(qt_xdisplay(), cc->winId());
+//     clients_sorted.removeRef(cc);
+//     clients_sorted.insert(0,cc);
+//   }
 }
 
 void Manager::closeClient(Client* c){
@@ -1923,6 +1938,15 @@ void Manager::unIconifyTransientOf(Client* c){
 	it.current()->hidden_for_modules = FALSE;
 	clients_traversing.insert(0,it.current());
       }
+    }
+  }
+}
+
+void Manager::ontoDesktopTransientOf(Client* c){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window){
+      it.current()->ontoDesktop(c->desktop);
     }
   }
 }

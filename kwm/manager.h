@@ -123,6 +123,7 @@ public:
   
   void iconifyTransientOf(Client* c);
   void unIconifyTransientOf(Client* c);
+  void ontoDesktopTransientOf(Client* c);
 
 signals:
   void reConfigure();

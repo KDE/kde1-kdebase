@@ -1108,8 +1108,12 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case ButtonPress:
     {
       Client *c = manager->getClient(ev->xbutton.window);
+      bool replay = true;
+      if (c)
+	c->stopAutoraise();
       if (c && ev->xbutton.window == c->window){
 	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
+	  replay = false;
 	  if  (ev->xbutton.button == Button1){
 	    c->simple_move();
 	  }
@@ -1118,19 +1122,16 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  else c->simple_resize();
 
 	}
-	else {
-	  if (!c->isActive()){
-	    if  (ev->xbutton.button == Button1)
-	      manager->raiseClient(c);
-	    manager->activateClient(c);
-	  }
-	  else
-	    c->stopAutoraise();
+	else if (!c->isActive()){
+	  if  (ev->xbutton.button == Button1)
+	    manager->raiseClient(c);
+	  manager->activateClient(c);
 	}
  	// unfreeze the passive grab which is active currently
-  	XSync(qt_xdisplay(), 0);
-  	XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
-  	XSync(qt_xdisplay(), 0);
+	if (replay)
+	  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
+	else
+	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
       }
     }
   break;

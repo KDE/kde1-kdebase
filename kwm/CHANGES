@@ -12,6 +12,16 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 16:
+       - fix for "move" via keyboard (pointer warp)
+       - autoraise fixes
+       - fixed the "kwm needs cpu when dragging windows" bug
+       - ontoDesktop also moves the transient windows
+       - transient windows cannot be moved onto different desktops
+         separately anymore
+       - transient windows cannot be iconified separately anymore
+       - few smaller fixes
+
   patchlevel 15:
        - transient windows are iconified/deiconified with their parent
          window. They also dissappear for the modules and the Mod1-Tab

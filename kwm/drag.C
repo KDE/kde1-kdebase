@@ -206,8 +206,8 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
     int cx, cy, rx, ry;
     QRect other;
 
-    int return_pressed = 0;
-    struct timeval t;
+    bool return_pressed = false;
+    bool do_again = false;
 
     getmouse(&cx, &cy);
     recalc (c, cx, cy);
@@ -221,8 +221,14 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
       drawbound(c);
     }
     while (c->dragging_is_running() && !return_pressed && 
-	   XCheckMaskEvent(dpy, ButtonMask, &ev) == 0) {
-      if (XCheckMaskEvent(dpy, KeyPressMask, &ev)){
+	   (do_again 
+	    ||
+	    (!XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev)
+	     && ev.type != ButtonRelease)
+	    )
+	   ) {
+      do_again = false;
+      if (ev.type == KeyPress){
 	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
 	int mx = 0;
 	int my = 0;
@@ -238,6 +244,7 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	}
 	setmouse(cx + mx, cy + my);
       }
+      XSync(dpy, False);
       getmouse(&rx, &ry);
       if (rx == cx && ry == cy)
 	continue;
@@ -259,11 +266,11 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	XSync(qt_xdisplay(), False);
 	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
 	myapp->processEvents(); 
+	XSync(qt_xdisplay(), False);
+	getmouse(&rx, &ry);
+	do_again = (rx != cx || ry != cy);
       }
       XFlush(dpy);
-      t.tv_sec = 0;
-      t.tv_usec = 20*1000;
-      select(0, 0, 0, 0, &t);
       continue;
     }
 
@@ -351,10 +358,9 @@ void killSelect(){
     XEvent ev;
     int cx, cy, rx, ry;
 
-   int return_pressed = 0;
-   int escape_pressed = 0;
-   int button_1_released = 0;
-    struct timeval t;
+    int return_pressed = 0;
+    int escape_pressed = 0;
+    int button_1_released = 0;
 
     getmouse(&cx, &cy);
 
@@ -363,7 +369,9 @@ void killSelect(){
     while (!return_pressed &&
 	   ! escape_pressed &&
 	   ! button_1_released){
-      if (XCheckMaskEvent(dpy, KeyPressMask, &ev)){
+      XMaskEvent(dpy, KeyPressMask | ButtonMask | 
+		 PointerMotionMask, &ev);
+      if (ev.type == KeyPress){
 	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
 	int mx = 0;
 	int my = 0;
@@ -379,7 +387,7 @@ void killSelect(){
 	}
 	setmouse(cx + mx, cy + my);
       }
-      if (XCheckMaskEvent(dpy, ButtonReleaseMask, &ev)){
+      if (ev.type == ButtonRelease){
 	button_1_released = (ev.xbutton.button == Button1);
       }
       
@@ -389,9 +397,6 @@ void killSelect(){
       cx = rx;
       cy = ry;
       XFlush(dpy);
-      t.tv_sec = 0;
-      t.tv_usec = 20*1000;
-      select(0, 0, 0, 0, &t);
       continue;
     }
     if (!escape_pressed){

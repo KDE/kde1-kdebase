@@ -177,9 +177,7 @@ public:
 
   bool hidden_for_modules;
 
-  void stopAutoraise(){
-    autoraised_stopped = TRUE;
-  }
+  void stopAutoraise();
 
  public slots:
    void iconify();
