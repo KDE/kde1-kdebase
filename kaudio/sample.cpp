@@ -127,7 +127,7 @@ int AudioSample::setFilename(char* fname)
   headerLen = sizeof(WAVE_HEADER); // !!! Hardcoded WAV, TODO
 
   /* Read in audioheader */
-  bytes_read = fread(&head, 1, BUFFERSIZE, audiofile);
+  bytes_read = fread(head, 1, BUFFERSIZE, audiofile);
 
   // Probe the file
   // This is the WAV probe code
