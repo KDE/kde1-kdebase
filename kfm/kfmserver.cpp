@@ -80,7 +80,7 @@ void KFMServer::slotSortDesktop()
 	return;
     
     if ( root )
-	KRootWidget::getKRootWidget()->arrangeIcons();
+	KRootWidget::getKRootWidget()->rearrangeIcons();
 }
 
 void KFMServer::slotRefreshDesktop()

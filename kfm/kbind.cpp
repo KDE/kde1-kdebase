@@ -1264,12 +1264,12 @@ bool KMimeBind::runBinding( const char *_url )
 	}
     }        
 
-    QString icon = pixmapFile;
+    QString icon = pixmapFile.data();
     if (!icon.isEmpty())
       icon.prepend("-icon ");
     while ( ( i = cmd.find( "%i" ) ) != -1 )
       cmd.replace( i, 2, icon.data());
-    QString miniicon = miniPixmapFile;
+    QString miniicon = miniPixmapFile.data();
     if (!miniicon.isEmpty())
       miniicon.prepend("-miniicon ");
     while ( ( i = cmd.find( "%m" ) ) != -1 )
@@ -1700,6 +1700,7 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     QString termOptions = config->readEntry( "TerminalOptions" );
     QString icon = config->readEntry( "Icon", "" );
     QString miniicon = config->readEntry( "MiniIcon", "" );
+    printf("icon=%s\n",icon.data());
     
     // At least the executable is needed!
     if ( exec.isEmpty() )

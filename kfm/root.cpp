@@ -360,7 +360,7 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	icon->startmove();
     }
   
-    for ( char *s = _urls.first(); s != 0L; s = _urls.next() )
+    for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KRootIcon* icon = findIcon( s );
         if (icon)
@@ -567,80 +567,10 @@ bool KRootWidget::isPlaceUsed( int x, int y )
     return false;
 }
 
-void KRootWidget::arrangeIcons(){
-
-  rearrangeIcons();
-
-  // the code below is dubious and should be deleted sometime -- Bernd
-
-  /*
-
-    // Matthias
-    // use the free window area  ( no panel ) to layout the icons
-    QRect area = KWM::getWindowRegion(KWM::currentDesktop());
-
-    int max_icons = icon_list.count();
-    int my = area.height() / gridheight;
-    int gx = max_icons / my;
-    int gy = max_icons % my;
-    
-
-    int x, y;
-    for ( x = 0; x <= gx; x++ )
-    {
-	int gy2 = my;
-	if ( x == gx ) // last line
-	    gy2 = gy;
-	for ( y = 0; y < gy2; y++ )
-	{
-	    bool found = false;
-	    QListIterator<KRootIcon> it2( icon_list );
-	    for ( ; it2.current(); ++it2 )
-		if ( it2.current()->gridX() == x && it2.current()->gridY() == y )
-		    found = true;
-	    
-	    // No icon on this place ?
-	    if ( !found )
-	    {
-		// Find right and bottom most icon
-		int maxx = x, maxy = y;
-		KRootIcon *icon = 0;
-		QListIterator<KRootIcon> it3( icon_list );
-		for ( ; it3.current(); ++it3 )
-		{
-		    if ( it3.current()->gridX() > maxx )
-		    {
-			icon = it3.current();
-			maxx = it3.current()->gridX();
-			maxy = it3.current()->gridY();
-		    }
-		    else if ( it3.current()->gridX() == maxx && it3.current()->gridY() > maxy )
-		    {
-			icon = it3.current();
-			maxy = it3.current()->gridY();
-		    }
-		}
-		// Move the right and bottom most icon
-		if ( icon )
-		{
-		    icon->setGridX( x );
-		    icon->setGridY( y );
-		    icon->move( area.x() + gridwidth * x + ( gridwidth - icon->QWidget::width() ) / 2,
-				area.y() + gridheight * y + ( gridheight - icon->QWidget::height() ) );
-		}
-	    }
-	}
-    }
-
-    saveLayout();
-    */
-}
-
-
 void KRootWidget::rearrangeIcons()
 {
   // Call this method after a gridwidth gridheight change
-  // The algorithm is O(n) rather then the optimal O(n*log(n))
+  // The algorithm is O(n^3) rather then the optimal O(n*log(n))
   // but I don't think anyone has a 1000 desktop icons and
   // it's better to be simple so that anyone can easily make 
   // modifications.
@@ -648,7 +578,6 @@ void KRootWidget::rearrangeIcons()
 
     QRect area = KWM::getWindowRegion(KWM::currentDesktop());
 
-    //    int max_icons = icon_list.count();
     int my = area.height() / oldgridheight;
     int mx = area.width() / oldgridwidth;
 
@@ -657,13 +586,16 @@ void KRootWidget::rearrangeIcons()
 
     KRootIcon *icon = 0;
 
+    // Create a sorted list of icons. This way the
+    // rearrangement keeps the order of the icons somehow.
     int x, y;
     for ( x = 0; x <= mx; x++ )
     {
 	for ( y = 0; y <= my; y++ )
 	{
 	  for (icon_list.first() ; (icon = icon_list.current()) ; icon_list.next() )
-	    if ( icon->gridX() == x && icon->gridY() == y ){
+	    if ( icon->gridX() == x && icon->gridY() == y )
+	    {
 	      new_icon_list.append(icon);
 	    }
 	}
@@ -675,9 +607,9 @@ void KRootWidget::rearrangeIcons()
     int k = icon_list.count();
 
     // Let's check whether we would enter a valid state ...
-
-    if( ( k/ny)  >=  nx){
-
+    // This happens if there is not enough space for all icons.
+    if ( ( k / ny ) >= nx )
+    {
       // No good ..
       // The new grid dimension would move some icons off the current
       // visible desktop  --- let's recover.
@@ -693,27 +625,23 @@ void KRootWidget::rearrangeIcons()
       QMessageBox::warning( 0, klocale->translate( "Error"),
 			    klocale->translate("Cannot execute request.\n"\
 			     "New root grid dimensions would move some icons\n"\
-			     "off the desktop.")
-			    );
+			     "off the desktop.") );
       return;
     }
 
     int i;
-    for(icon = new_icon_list.first(),i = 0; icon; icon = new_icon_list.next(),i++){
-
-      y = i % ny;
-      x = i / ny;
-
-      icon->setGridX( x );
-      icon->setGridY( y );
-      icon->move( area.x() + gridwidth * x + 
-		  ( gridwidth - icon->QWidget::width() ) / 2,
-		  area.y() + gridheight * y + 
-		  ( gridheight - icon->QWidget::height() ) );
-
-    }
+    for(icon = new_icon_list.first(),i = 0; icon; icon = new_icon_list.next(),i++)
+    {
+	y = i % ny;
+	x = i / ny;
 	
-
+	icon->setGridX( x );
+	icon->setGridY( y );
+	icon->move( area.x() + gridwidth * x + 
+		    ( gridwidth - icon->QWidget::width() ) / 2,
+		    area.y() + gridheight * y + 
+		    ( gridheight - icon->QWidget::height() ) );
+    }
 
     saveLayout();
 }

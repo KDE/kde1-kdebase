@@ -229,7 +229,6 @@ public:
      * Rearranges all icons on the desktop. The algorithm tries to fit all icons
      * in a certain grid. Starting in the upper left corner of the screen.
      */
-    void arrangeIcons();
     void rearrangeIcons();
     
     /**
