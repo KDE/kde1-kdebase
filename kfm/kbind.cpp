@@ -1172,10 +1172,10 @@ void KMimeBind::initApplications( const char * _path )
 		  bool allowdefault = true;
 		  if ( str_allowdefault == "0" )
 		    allowdefault = false;
+
 		  // Read the terminal settings.
 		  // termOptions will store both values (being 0L if Terminal=="0").
-		  
-		  QString term = config.readEntry( "Terminal" );
+		  QString term = config.readEntry( "Terminal", "0" );
 		  QString termOptions = config.readEntry( "TerminalOptions" );
 		  if (term=="0") termOptions = 0L;
 		  
