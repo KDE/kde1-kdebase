@@ -10,7 +10,7 @@ data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 	pipe.xpm pk.xpm postscript.xpm printer.xpm readme.xpm \
 	readonly.xpm s_src.xpm sound.xpm tex.xpm tgz.xpm trash.xpm \
 	txt.xpm unknown.xpm unzip.xpm video.xpm www.xpm y_src.xpm \
-	zip_mount.xpm zip_unmount.xpm  
+	zip_mount.xpm zip_unmount.xpm ftp.xpm socket.xpm terminal.xpm
 
 datadir = $(kde_icondir)
 SUBDIRS = toolbar wallpapers mini
