@@ -5,8 +5,8 @@
 <!-- Title information -->
 
 <title>KDE Control Center - Input Settings
-<author>Pat Dowler, Matthias H&ouml;lzer
-<date>v1.0, 17. January 1998
+<author>Pat Dowler, Matthias H&ouml;lzer; update by Duncan
+<date>v1.0, 23 August 1999
 
 <!-- Table of contents -->
 <toc>
@@ -15,36 +15,42 @@
 
 <sect>Configuring the Keyboard
 <p>
-Keyboard settings are features of the X server.
+In this dialog, users can adjust the following settings for the keyboard:
+
+<itemize>
+<item><bf>Keyboard repeat</bf>: If Keyboard repeat is
+<bf>On</bf>, the <bf>autorepeat</bf> feature is enabled:
+this causes holding down a key to become equivalent to
+typing it over and over again in rapid succession.
+This featue is disabled when Keyboard Repeat is <bf>Off</bf>.
+
+<item>The <bf>key click volume</bf> is controlled by
+a slider. This feature gives audible feedback to the
+typist when a key is struck.
+</itemize>
+
+Note: Keyboard settings are managed by  the X server.
 While the X server attempts to make good use of the available hardware,
 this is not always possible. 
 For example, on some systems the key click is enabled
 or disabled in the CMOS setup and the X server cannot supply an
 alternative. Thus, if a setting does not seem to do anything, it is 
-is because it is unsupported by
+probably because that feaure is unsupported by
 the X server and/or the hardware.
 
-<p>
-Users can adjust the following settings for the keyboard:
 
-<itemize>
-<item><bf>enable/disable autorepeat</bf> (If enabled, 
-this feature causes holding down a key to become equivalent to
-typing it over and over again in rapid succession).
-<item><bf>key click volume</bf>, which gives audible feedback to the
-typist when a key is struck.
-</itemize>
+
 
 <sect>Configuring the Mouse
 
 <p>
-In this screen, users can adjust the <bf>Accelerated mode</bf> settings for 
+In this dialog, users can adjust the <bf>Accelerated mode</bf> settings for 
 the mouse, and adjust the mappings of the mouse buttons for
 right-handed or left-handed use.
 
 <itemize>
 <item>
-In the <bf>accelerated mode</bf>, 
+In  <bf>accelerated mode</bf>, 
 the distance on the screen moved by the pointer for a given movement of the
 pointing device (e.g., the mouse) is increased by a factor
 called the
@@ -59,16 +65,22 @@ the  <bf>Threshold</bf> distance set with the second slider control.
 This acceleration feature allows for slow, 
 precise pointer motion over small distances and rapid motion across 
 the screen with a short but quick motion of the mouse.
-
 Large acceleration
 values and small threshold values may make the pointer motion
 too jerky
 to be useful, as it will always move very quickly.
 <p>
+
+The <bf>button mapping</bf> selection allows the functions of the right
+and left mouse buttons to be swapped.
 <itemize>
 <item>
-The <bf>button mapping</bf> selection allows the functions of the right
-and left mouse buttons to be swapped, for the convenience of left-handed
-users.
+The <bf>Right handed</bf> choice gives the normal mouse button scheme,
+
+<item>The <bf>Left handed</bf> choice gives the reversed-button scheme,
+for the convenience of left-handed users.
 </itemize>
 </article>
+
+
+
