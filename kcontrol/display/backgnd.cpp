@@ -368,7 +368,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
   pushLayout->addWidget( randomSetupButton, 5 );
 
-  dockButton = new QCheckBox( i18n("&Dock into kpanel"), group );
+  dockButton = new QCheckBox( i18n("&Dock into the panel"), group );
   dockButton->setChecked( docking );
   dockButton->setFixedHeight( dockButton->sizeHint().height() );
   dockButton->setChecked( docking );
