@@ -14,3 +14,4 @@ usr/share/pixmaps/kdmconfig.xpm
 usr/share/icons/kdmconfig.xpm
 usr/share/apps/kdm
 usr/share/apps/kdmconfig
+var/state/kdm

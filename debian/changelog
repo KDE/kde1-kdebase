@@ -1,3 +1,13 @@
+kdebase (4:1.1.1-19990529-2) unstable; urgency=low
+
+  * Fixing some pam stuff which includes a /etc/pam.d/kde file, making
+    the pam name=kde so that it uses the /etc/pam.d/kde file instead of
+    xdm, kdm, or whatever.
+  * Fixing the linux fonts for konsole.
+  * Fixing the /var/state/kdm issue
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Mon, 31 May 1999 17:45:55 -0400
+
 kdebase (4:1.1.1-19990529-1) unstable; urgency=low
 
   * Down to just one lintian warning. (that will probably stay)

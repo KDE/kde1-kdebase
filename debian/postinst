@@ -18,5 +18,15 @@ else
   mkdir /usr/share/wallpapers > /dev/null 2>&1
 fi
 
+
+## Install the linux fonts for konsole
+
+mkfontdir /usr/X11R6/lib/X11/fonts/misc > /dev/null 2>&1
+xset fp rehash > /dev/null 2>&1
+
+## Run kappfinder
+
+/usr/bin/kappfinder > /dev/null 2>&1
+
 #DEBHELPER#
 #KDEHELPER#

@@ -5,6 +5,12 @@
 
 set -e
 
+if test /var/state/kdm; then
+  echo "/var/state/kdm directory already exists...not creating.";
+else
+  mkdir /var/state/kdm > /dev/null 2>&1
+fi
+
 
 cleanup () {
   # unroll changes in kdm preinst

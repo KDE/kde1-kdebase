@@ -7,8 +7,7 @@ Standards-Version: 2.5.0
 Package: kdebase
 Architecture: any
 Depends: menu (>=1.5-5), ${shlibs:Depends}
-Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, korganizer, kdebase-doc
-Recommends: kdebase-i18n
+Suggests: kdewallpapers, kdm, kdeadmin, kdegames, kdegraphics, kdemultimedia, kdenetwork, kdetoys, kdeutils, korganizer, kdebase-doc, kdebase-i18n
 Description: KDE core applications
  This is a suite of all kde core applications :
  file manager kfm, window manager kwm
@@ -28,9 +27,8 @@ Description: Translations of applications in kdebase.
 
 Package: kdm
 Depends: cpp, ${shlibs:Depends}
-Suggests: kdewallpapers, kdebase
+Suggests: kdewallpapers, kdebase, kdebase-i18n
 Conflicts: gdm, wdm, xdm
-Recommends: kdebase-i18n
 Architecture: any
 Description: The K Desktop Manager
  The K Desktop Manager
