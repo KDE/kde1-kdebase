@@ -297,12 +297,16 @@ void MouseConfig::saveParams( void )
 			 TRUE, TRUE, accelRate, 1, thresholdMove);
 
   
-  unsigned char map[3];
+  unsigned char map[5];
+  int remap=1;
   if (handedEnabled)
     {
       switch (num_buttons)
 	{
 	case 1:
+          {
+ 	    map[0] = (unsigned char) 1;
+          }
 	  break;
 	case 2:
 	  if (handed == RIGHT_HANDED)
@@ -330,12 +334,41 @@ void MouseConfig::saveParams( void )
 	      map[2] = (unsigned char) 1;
 	    }
 	  break;
+        case 5:  
+         // Intellimouse case, where buttons 1-3 are left, middle, and
+         // right, and 4-5 are up/down
+         if (handed == RIGHT_HANDED)
+           {
+             map[0] = (unsigned char) 1;
+             map[1] = (unsigned char) 2;
+             map[2] = (unsigned char) 3;
+             map[3] = (unsigned char) 4;
+             map[4] = (unsigned char) 5;
+           }
+         else
+           {
+             map[0] = (unsigned char) 3;
+             map[1] = (unsigned char) 2;
+             map[2] = (unsigned char) 1;
+             map[3] = (unsigned char) 4;
+             map[4] = (unsigned char) 5;
+           }
+         break;
+       default:
+         {
+           //catch-all for mice with four or more than five buttons
+           //Without this, XSetPointerMapping is called with a undefined value
+           //for map
+           remap=0;  //don't remap
+         }
+         break;
 	}
       int retval;
-      while ((retval=XSetPointerMapping(kapp->getDisplay(), map, num_buttons))
-	     == MappingBusy)
-	/* keep trying until the pointer is free */ 
-	;
+      if (remap)
+       while ((retval=XSetPointerMapping(kapp->getDisplay(), map,
+                                         num_buttons)) == MappingBusy)
+         /* keep trying until the pointer is free */
+         { };
     }
 
   config->setGroup("Mouse");
