@@ -59,6 +59,7 @@ public:
   QList<KBookmark> *children() { return &m_lstChildren; }
   
   KBookmark* findBookmark( int _id );
+  KBookmark* findBookmark( const char *_url );
  
   static QString encode( const char* );
   static QString decode( const char* );
@@ -103,7 +104,7 @@ public:
 
   KBookmark* root() { return &m_Root; }
   KBookmark* findBookmark( int _id ) { return m_Root.findBookmark( _id ); }
-
+  KBookmark* findBookmark(const char *_url) {return m_Root.findBookmark( _url ); }
   void emitChanged();
   
 signals:

@@ -112,6 +112,17 @@ public:
      * Save general session management data.
      */
     void saveProperties(int number);
+
+    /**
+     * Writes properties to config. - used for per url properties (sven)
+     */
+    void writeProperties(KConfig *cfg);
+
+    /**
+     * Reads properties from config - used for per url properties (sven)
+     * This doesn't set tree and geometry - just reads it
+     */
+    void loadProperties (KConfig *cfg);
     
     /**
      * Changes the URL displayed in the toolbar. This function is called
@@ -139,6 +150,11 @@ public:
      * Called from kfmexec, when mimeType contains charset information
      */
     void setCharset(const char *_c);
+
+    /**
+     * Returns bookmarkmanager - sven
+     */
+    KBookmarkManager *getBookmarkManager() {return bookmarkManager;}
 
 public slots:
     /**
@@ -600,6 +616,11 @@ protected:
 
     int kfmgui_height;
     int kfmgui_width;
+
+    int localWidth;
+    int localHeight;
+    bool localTree;
+    bool enablePerUrlProps; //sven
 };
 
 #endif

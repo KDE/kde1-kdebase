@@ -43,7 +43,7 @@
 #define AUTOSCROLL_DELAY	150
 #define AUTOSCROLL_STEP		20
 
-//extern KRootWidget* KRootWidget::pKRootWidget;
+#define IconList KRootWidget::pKRootWidget->icon_list
 
 QStrList *KfmView::clipboard;
 
@@ -519,6 +519,65 @@ void KfmView::slotPopupProperties()
     (void)new Properties( popupFiles.first() );
 }
 
+//----------------------------------------------------------------------------
+void KfmView::slotSaveLocalProperties()
+{
+  
+  int isADir;
+  // Check if this is a dir. If it is writable, write it.
+  const char *_url = manager->getURL();
+
+  isADir = strncmp (_url, "file:", 5);
+    
+  if (!isADir)
+  {
+    // No way do find out is it writable; have to check:
+    if (access(&_url[5], W_OK)==0)
+    {
+      QString configname(&_url[5]);
+      configname.append("/.directory");
+      KSimpleConfig cfg(configname.data());
+      gui->writeProperties((KConfig *) &cfg); // will sync on end
+      return;
+    }
+  }
+
+  //Dir not writable or not a file: url. See if it is bookmarked
+  KBookmark *bm = gui->getBookmarkManager()->findBookmark(_url);
+  if (bm)
+  {
+    KSimpleConfig cfg(bm->file());
+    gui->writeProperties((KConfig *) &cfg); // will sync on end
+    return;
+  }
+
+  //Dir not writable or not a file: url. See if it is on desktop
+
+  for (KRootIcon *i = IconList.first(); i; i = IconList.next())
+    if (strstr (i->getURL(), ".kdelnk"))
+    {
+      debug ("Got a kdelnk: %s", &(i->getURL())[5]);
+      KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+      cfg.setGroup("KDE Desktop Entry");
+      if (!strcmp (cfg.readEntry("URL").data(), _url))
+      {
+        debug ("Writing");
+        gui->writeProperties((KConfig *) &cfg); // will sync on end
+        return;
+      }
+    }
+
+  // Not found or not writable:
+  if (!isADir )
+    QMessageBox::warning(0, klocale->translate( "KFM Error" ),
+                         klocale->translate("Can not save properties because\nthis directory is neither writable nor bookmarked.\n\n Bookmark this location first, or make kdelnk to it on desktop.") );
+
+  else 
+    QMessageBox::warning(0, klocale->translate( "KFM Error" ),
+                         klocale->translate("Can not save properties because\nthis URL is neither bookmarked nor on desktop.\n\n Bookmark this location first, or make kdelnk to it on desktop."));
+}
+//----------------------------------------------------------------------------
+
 void KfmView::slotPopupBookmarks()
 {
     char *s;
@@ -689,20 +748,87 @@ const char * KfmView::getURL()
     return manager->getURL();
 }
 
+//------------------------------------------------------------------------
+void KfmView::checkLocalProperties (const char *_url)
+{
+  
+  // Here we read properties. We check if this is a dir with .directory
+  // then if this is the bookmarked url, last if this is on the desktop
+
+  // If KRootWidget doesn't exist, no local properties. This should only happen if a
+  // window is restored by session management, anyway.
+  if (!KRootWidget::pKRootWidget) return;
+
+  // check if this options are enabled:
+  if (!KRootWidget::pKRootWidget->isURLPropesEnabled ())
+    return;
+  
+  int isADir;
+  // Check if this is a dir. If it is writable, write it.
+
+  isADir = strncmp (_url, "file:", 5);
+    
+  if (!isADir)
+  {
+    if (access(&_url[5], W_OK)==0)
+    {
+      QString configname(&_url[5]);
+      configname.append("/.directory");
+      if (access(configname.data(), F_OK)==0)
+      {
+        KSimpleConfig cfg(configname.data());
+        gui->loadProperties((KConfig *) &cfg);
+        return;
+      }
+    }
+  }
+
+  //.directory not readable or not found. See if it is bookmarked
+  KBookmark *bm = gui->getBookmarkManager()->findBookmark(_url);
+  if (bm)
+  {
+    KSimpleConfig cfg(bm->file());
+    gui->loadProperties((KConfig *) &cfg); // will sync on end
+    return;
+  }
+
+  // .directory not readable or not found and not bookmarked.
+  // See if it is on desktop
+
+  for (KRootIcon *i = IconList.first(); i; i = IconList.next())
+    if (strstr (i->getURL(), ".kdelnk"))
+    {
+      KSimpleConfig cfg(&(i->getURL())[5]); // #inline, so it's fast
+      cfg.setGroup("KDE Desktop Entry");
+      if (!strcmp (cfg.readEntry("URL").data(), _url))
+      {
+        gui->loadProperties((KConfig *) &cfg); // will sync on end
+        return;
+      }
+    }
+
+  // Not found or not readable: ignore
+}
+//------------------------------------------------------------------------
+
+
 void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffset )
 {
+    //checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, _refresh, _xoffset, _yoffset );
 }
 
 void KfmView::openURL( const char *_url )
 {
+    checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url );
 }
 
 void KfmView::openURL( const char *_url, const char *_data )
 {
+    //checkLocalProperties (_url);
     emit newURL( _url );
     manager->openURL( _url, FALSE, 0, 0, _data );
 }

@@ -324,13 +324,15 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 {
   	readOptions();
 
-	//CT 12Nov1998
-	QGridLayout *lay = new QGridLayout(this,7,5,10,5);
+        //CT 12Nov1998
+        //Sven: Inserted my checkbox in CT's layout
+        
+	QGridLayout *lay = new QGridLayout(this,8,5,10,5);
 	lay->addRowSpacing(0,15);
-	lay->addRowSpacing(6,10);
+	lay->addRowSpacing(7,10);
 	lay->addColSpacing(0,10);
 	lay->addColSpacing(2,10);
-	lay->addColSpacing(4,10);
+        lay->addColSpacing(4,35); //sven: colorbuttons are big
 
 	lay->setRowStretch(0,0);
 	lay->setRowStretch(1,1);
@@ -338,7 +340,8 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	lay->setRowStretch(3,1);
 	lay->setRowStretch(4,1);
 	lay->setRowStretch(5,1);
-	lay->setRowStretch(6,0);
+	lay->setRowStretch(6,1);
+	lay->setRowStretch(7,0);
 
 	lay->setColStretch(0,0);
 	lay->setColStretch(1,1);
@@ -346,7 +349,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	lay->setColStretch(3,1);
 	lay->setColStretch(4,0);
 	//CT
-
+        
 	QLabel *label;
 
 	label = new QLabel( klocale->translate(
@@ -397,40 +400,50 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 
 	vspin->setValue(gridheight - DEFAULT_GRID_MIN);
 
+        //----------------- sven---------
+        urlpropsbox = new QCheckBox(klocale->translate("Allow per-URL settings"),
+                                    this);
+        urlpropsbox->adjustSize();
+        urlpropsbox->setMinimumSize(urlpropsbox->size());
+        lay->addMultiCellWidget(urlpropsbox,3,3,1,3);
+	urlpropsbox->setChecked(urlprops);
+        //-------------------------------
+
 	iconstylebox = new QCheckBox(klocale->translate("Transparent Text for Root Icons."),
 				  this);
 	//CT	iconstylebox->setGeometry(35, 100, 280, 25);
 	//CT 12Nov1998
 	iconstylebox->adjustSize();
 	iconstylebox->setMinimumSize(iconstylebox->size());
-	lay->addMultiCellWidget(iconstylebox,3,3,1,3);
+	lay->addMultiCellWidget(iconstylebox,4,4,1,3);
 	//CT
 	iconstylebox->setChecked(transparent);
 
+        
 	connect(iconstylebox,SIGNAL(toggled(bool)),this,SLOT(makeBgActive(bool)));
 
 	//CT 12Nov1998 color buttons
 	label = new QLabel(klocale->translate("Icon foreground color:"),this);
 	label->adjustSize();
 	label->setMinimumSize(label->size());
-	lay->addWidget(label,4,1);
+	lay->addWidget(label,5,1);
 
 	fgColorBtn = new KColorButton(icon_fg,this);
 	fgColorBtn->setFixedSize(80,30);
 	fgColorBtn->setMinimumSize(fgColorBtn->size());
-	lay->addWidget(fgColorBtn,4,3);
+	lay->addWidget(fgColorBtn,5,3);
 	connect( fgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconFgColorChanged( const QColor & ) ) );
 
 	bgLabel = new QLabel(klocale->translate("Icon background color:"),this);
 	bgLabel->adjustSize();
 	bgLabel->setMinimumSize(bgLabel->size());
-	lay->addWidget(bgLabel,5,1);
+	lay->addWidget(bgLabel,6,1);
 
 	bgColorBtn = new KColorButton(icon_bg,this);
 	bgColorBtn->setFixedSize(80,30);
 	bgColorBtn->setMinimumSize(bgColorBtn->size());
-	lay->addWidget(bgColorBtn,5,3);
+	lay->addWidget(bgColorBtn,6,3);
 	connect( bgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconBgColorChanged( const QColor & ) ) );
 
@@ -446,7 +459,8 @@ void KMiscOptions::readOptions()
 	config->setGroup( "KFM Misc Defaults" );	
 	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
 	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
-	config->setGroup( "KFM Root Icons" );	
+        urlprops = config->readBoolEntry( "EnablePerURLProps", 0);
+        config->setGroup( "KFM Root Icons" );	
 	transparent = (bool)config->readNumEntry("Style", DEFAULT_ROOT_ICONS_STYLE);
 	//CT 12Nov1998
 	icon_fg = config->readColorEntry("Foreground",&DEFAULT_ICON_FG);
@@ -469,6 +483,10 @@ void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
   {
     changed = true;
   }
+  if(urlprops != urlpropsbox->isChecked())
+  {
+    changed = true;
+  }
 
   rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
   rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;
@@ -477,6 +495,11 @@ void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
     rootopts.iconstyle = 1;
   else
     rootopts.iconstyle = 0;
+
+  if (urlpropsbox->isChecked())
+    rootopts.urlprops = 1;
+  else
+    rootopts.urlprops = 0;
 
   rootopts.changed = changed;
 

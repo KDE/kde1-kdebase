@@ -110,7 +110,9 @@ bool KFMManager::isBindingHardcoded( const char *_txt )
 	return true;
     if ( strcmp( klocale->getAlias(ID_STRING_ADD_TO_BOOMARKS), _txt ) == 0 )
 	return true;
-
+    if ( strcmp( klocale->getAlias(ID_STRING_SAVE_URL_PROPS), _txt ) == 0)
+        return true;
+                                    
     return false;
 }
   
@@ -1066,9 +1068,11 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     else if ( isdir == 1 )
     {
 	int id;
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
+        /* Commented out the open with for directories. DF. */
+	/* id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
 				    view, SLOT( slotPopupOpenWith() ) );
-	popupMenu->insertSeparator();  
+	   popupMenu->insertSeparator();  
+        */
 
 	id = popupMenu->insertItem( i18n( "Up" ), view, SLOT( slotUp() ), 100 );
 	popupMenu->setAccel( ALT + Key_Left, 100 );
@@ -1085,8 +1089,10 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	
 	popupMenu->insertSeparator();  
 
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), view, 
-				    SLOT( slotPopupCd() ) );
+        if (!_current_dir) {
+            id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), view, 
+                                        SLOT( slotPopupCd() ) );
+        }
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
 				    view, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    
@@ -1190,8 +1196,18 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     // Allow properties only if exactly one file is selected
     if ( _urls.count() == 1 )
     {
+        //--------------------------------------------------------------------
+        // Sven's changes: if this is shown view add entry Save settings..
+
+        if (_current_dir && KRootWidget::getKRootWidget()->isURLPropesEnabled ())
+        {
+          popupMenu->insertSeparator();
+          popupMenu->insertItem(klocale->getAlias(ID_STRING_SAVE_URL_PROPS),
+                                view, SLOT(slotSaveLocalProperties()));
+        }
+        //--------------------------------------------------------------------
 	popupMenu->insertSeparator();
-	popupMenu->insertItem( klocale->translate("Properties"), view, SLOT( slotPopupProperties() ) );
+        popupMenu->insertItem( klocale->translate("Properties"), view, SLOT( slotPopupProperties() ) );
     }
     
     // Show the menu

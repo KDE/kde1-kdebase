@@ -90,6 +90,11 @@ public:
     virtual void openURL( const char *_url, const char *_data );
 
     /**
+     * This function tries to read local properties (sven);
+     */
+    void checkLocalProperties (const char *_url);
+    
+    /**
      * Return the currently opened URL.
      */
     const char* getURL();
@@ -358,9 +363,16 @@ public slots:
 			       const QColor& vlink);
 
     void setDefaultBGColor( const QColor& bgcolor );
-	 void setUnderlineLinks( const bool uline );
+
+    void setUnderlineLinks( const bool uline );
 
     void setHTMLWidgetOptions();
+
+    /**
+     * This slot is called from popupmenu which is made in manager. It
+     * saves properties for current url. (sven)
+     */
+    void slotSaveLocalProperties();
 
 protected slots:
     void slotUpdateSelect(int);

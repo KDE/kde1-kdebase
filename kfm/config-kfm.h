@@ -22,6 +22,7 @@ void debugC( const char *msg , ...);
 #define ID_STRING_LINK 12 /* Link */
 #define ID_STRING_TRASH 13 /* Empty Trash Bin*/
 #define ID_STRING_ADD_TO_BOOMARKS 14
+#define ID_STRING_SAVE_URL_PROPS 15 /* sven */
 
 // browser/tree window color defaults -- Bernd
 #define HTML_DEFAULT_BG_COLOR white

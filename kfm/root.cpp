@@ -73,7 +73,9 @@ KRootWidget::KRootWidget( QWidget *parent, const char *name ) : QWidget( parent,
 
 	 config->setGroup( "KFM Misc Defaults" );	
 	 gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
-	 gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+         gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+         // sven
+         allowURLProps = config->readBoolEntry( "EnablePerURLProps", false );
     }
 
     rootDropZone = new KDNDDropZone( this , DndURL );

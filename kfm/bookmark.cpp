@@ -358,6 +358,29 @@ KBookmark* KBookmark::findBookmark( int _id )
   return 0L;
 }
 
+KBookmark* KBookmark::findBookmark( const char *_url )
+{
+  if ( !strcmp ( url(), _url ))
+    return this;
+
+  KBookmark *bm;
+  
+  for ( bm = children()->first(); bm != NULL; bm = children()->next() )
+  {
+    if ( !strcmp ( bm->url(), _url ))
+      return bm;
+    
+    if ( bm->type() == Folder )
+    {
+      KBookmark *b = bm->findBookmark( _url );
+      if ( b )
+	return b;
+    }
+  }
+
+  return 0L;
+}
+
 QString KBookmark::encode( const char *_str )
 {
   QString str( _str );

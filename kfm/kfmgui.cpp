@@ -192,15 +192,29 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     HTMLCache::enableCache(on);
     on=config->readBoolEntry( "SaveCacheEnabled", true );
     HTMLCache::enableSaveCache(on);
-  
+
     initGUI();
 
     windowList->setAutoDelete( false );
     windowList->append( this );
 
+    localWidth = 0;
+    localHeight = 0;
+
     if ( _url )
-	view->openURL( _url );
-    this->resize(kfmgui_width,kfmgui_height);
+      view->openURL( _url );
+    //----------------------------------------------------------------
+    // We create new window - check this location's settings
+    // View did set all local props by now. (sven)
+    if (localWidth && localHeight)
+    {
+      this->resize (localWidth, localHeight);   // set
+      bTreeView = !localTree; // slotShowTree inverts
+      slotShowTreeView();
+    }
+    else                                         // defaults, tree already set
+      this->resize(kfmgui_width,kfmgui_height);
+    //----------------------------------------------------------------
 }
 
 KfmGui* KfmGui::findWindow( const char *_url )
@@ -490,15 +504,9 @@ void KfmGui::initMenu()
     QString about_text;
     about_text.sprintf("KFM Ver. %s\n\n%s", kfm_getrev(),
 klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin Jones\nmjones@kde.org\n\nProxy Manager by Lars Hoss\nLars.Hoss@munich.netsurf.de\n\nBug reports and patches to David Faure\nfaure@kde.org") );
+
     QPopupMenu *help = kapp->getHelpMenu(false, about_text);
-
-
     CHECK_PTR( help );
-    // help->insertItem( "About &Qt...", this, SLOT(slotAboutQt()) );
-//     help->insertItem( klocale->translate("&Help"), 
-// 		      this, SLOT(slotHelp()) );
-//     help->insertSeparator();
-//     help->insertItem( klocale->translate("&About..."), this, SLOT(slotAbout()) );
 
     menu = new KMenuBar( this );
     if ( sumode )
@@ -1443,7 +1451,7 @@ void KfmGui::slotSaveSettings()
 {
   KConfig *config = kapp->getConfig();
   config->setGroup( "Settings" );
-    
+
   config->writeEntry("kfmgui_width",this->width());
   config->writeEntry("kfmgui_height",this->height());
 
@@ -1641,7 +1649,8 @@ void KfmGui::slotConfigureBrowser()
 	  if(rootopts.changed){
 	    config->setGroup( "KFM Misc Defaults" );			
 	    config->writeEntry( "GridWidth", rootopts.gridwidth);
-	    config->writeEntry( "GridHeight", rootopts.gridheight);
+            config->writeEntry( "GridHeight", rootopts.gridheight);
+            config->writeEntry( "EnablePerURLProps", rootopts.urlprops);
 	    config->setGroup( "KFM Root Icons" );			
 	    config->writeEntry( "Style", rootopts.iconstyle);
 	    //CT 12Nov1998
@@ -1698,8 +1707,10 @@ void KfmGui::slotConfigureBrowser()
 								   rootopts.gridwidth ,
 								   rootopts.gridheight
 								   );
+              
 	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
-	      KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
+              KRootWidget::getKRootWidget()->setURLProps(  rootopts.urlprops ); //sven
+              KRootWidget::getKRootWidget()->setRootIconColors( rootopts.icon_fg, rootopts.icon_bg);
 	    }
 
 	  }
@@ -1809,6 +1820,37 @@ void KfmGui::saveProperties( KConfig* config )
 
   config->sync();
 }
+
+//--------------------------------------------------------------------------
+void KfmGui::writeProperties(KConfig *cfg)
+{
+  //Sven - mostly because saveProperties is protected :-(
+  cfg->setGroup("URL properties");
+  cfg->writeEntry("Width", width());
+  cfg->writeEntry("Height", height());
+  saveProperties(cfg); // will sync on end
+}
+
+void KfmGui::loadProperties(KConfig *cfg)
+{
+  cfg->setGroup("URL properties");
+  localWidth = cfg->readNumEntry("Width", 0);
+  localHeight = cfg->readNumEntry("Height", 0);
+  localTree = cfg->readBoolEntry("TreeView", false);
+
+  //adjusting internal state of view mode to match the actual state
+  QString entry = cfg->readEntry("ViewMode", "IconView");
+  if (entry == "LongView")
+    slotLongView();
+  else if (entry == "TextView")
+    slotTextView();
+  else if (entry == "ShortView")
+    slotShortView();
+  else 
+    slotIconView();
+}
+//--------------------------------------------------------------------------
+
 
 KfmGui::~KfmGui()
 {

@@ -237,6 +237,7 @@ int main( int argc, char ** argv )
     klocale->aliasLocale("Link", ID_STRING_LINK);
     klocale->aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
     klocale->aliasLocale("Add to Bookmarks", ID_STRING_ADD_TO_BOOMARKS );
+    klocale->aliasLocale("Save settings for this URL", ID_STRING_SAVE_URL_PROPS );
     
     int arg = 1;
     
