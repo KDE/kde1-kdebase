@@ -75,12 +75,13 @@ static bool isKdelnkFile(const char* name){
 //----------------------------------------------------------------------
 
 
-MenuButton::MenuButton( PMenuItem *p_it, int i, QWidget *parent,
+MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent,
                           const char *name )
   : EditButton( parent, name )
 {
   initMetaObject();
   pmenu_item = p_it;
+  pmenu_parent = p_parent;
   setGreyed(pmenu_item->isReadOnly());
   id = i;
   type = pmenu_item->getType();
@@ -255,12 +256,17 @@ void MenuButton::change_item()
 
 void MenuButton::change_accept()
 {
-  changes_to_save = TRUE;
   QString prot = "";
   QString str_list = "";
   int i, nr;
   if( dialog )
     {
+      if( pmenu_item->getName() != dialog->i_fname->text() )
+	if( pmenu_parent->checkFilenames(dialog->i_fname->text()) )
+	  {
+	    QMessageBox::information(0, "Wrong filename", "Kdelnk-file with this name does already exist. \nPlease choose another filename.", "Ok" );
+	    return;
+	  }
       EntryType old_type = pmenu_item->getType();
       EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
       if( old_type != new_type )
@@ -346,6 +352,7 @@ void MenuButton::change_accept()
       };
       ((ConfigureMenu *) parentWidget()->parentWidget())->update();
       delete dialog;
+      changes_to_save = TRUE;
       dialog = NULL;
       dialog_open = FALSE;
     }
@@ -656,7 +663,7 @@ ConfigureMenu::ConfigureMenu( PMenu *m, QWidget *parent, const char *name )
      //: QFrame( parent, name )
 {
   initMetaObject();
-  setCaption("KTaskbar Menu");
+  //setCaption("KTaskbar Menu");
   setFrameStyle( QFrame::Panel | QFrame::Raised );
   pmenu = m;
   but_list.setAutoDelete(TRUE);
@@ -696,7 +703,7 @@ void ConfigureMenu::append(PMenuItem *item)
   short but_width, but_height;
   MenuButton *but;
   ConfMenuItem *conf_item;
-  but = new MenuButton(item, but_nr, item->isReadOnly() ? prot_group : but_group);
+  but = new MenuButton(item, but_nr, pmenu, item->isReadOnly() ? prot_group : but_group);
   but_width = but->sizeHint().width();
   if( item->getType() == separator )
     but_height = 5;
@@ -939,3 +946,4 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	}
     }
 }
+

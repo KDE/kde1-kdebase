@@ -1098,3 +1098,14 @@ QPoint PMenu::configPos()
 {
   return menu_conf->pos();
 }
+
+bool PMenu::checkFilenames(QString name)
+{
+  PMenuItem *item;
+  for( item = list.first(); item != 0; item = list.next() )
+    {
+      if( item->real_name == name )
+	return TRUE;
+    }
+  return FALSE;
+}

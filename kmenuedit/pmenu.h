@@ -162,6 +162,7 @@ public:
   void       posRequest() { emit reposition (); }
   int        count() { return list.count(); }
   QPoint     configPos();
+  bool checkFilenames(QString name); // returns TRUE if kdelnk-file with this name allready exists
 
 signals:
   void reposition();

@@ -40,7 +40,7 @@ class MenuButton : public EditButton
 {
   Q_OBJECT
 public:
-  MenuButton ( PMenuItem *p_it, int i, QWidget *parent=0, const char* name=0 );
+  MenuButton ( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent=0, const char* name=0 );
   ~MenuButton ();
   
   void setId(int i) { id = i; }
@@ -96,6 +96,7 @@ protected:
   EntryDialog    *dialog;
   bool            dialog_open;
   PMenuItem      *pmenu_item;
+  PMenu          *pmenu_parent;
   bool            move_button;
   bool            submenu_open;
   QPoint          move_offset;
