@@ -335,7 +335,7 @@ Color1_7=Color1!
 Color2_7=Color2!
 #
 [Display-dtm]
-ConfigFile=kdisplayrc
+ConfigFile=kcmdisplayrc
 ConfigGroup=Desktop Common
 ConfigInstallCmd=oneDesktopMode
 ConfigActivateCmd=kwmcom kbgwm_reconfigure
