@@ -22,8 +22,11 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
-    Revision 1.1  1997/05/04 12:39:01  kulow
-    Coolo: added kfontmanager-0.2.1
+
+    Revision 1.6  1997/11/07 18:45:15  kulow
+    some more porting issues. Mainly default arguments and variable binding
+    in for loops
+
     Revision 1.5  1997/08/31 19:45:52  kdecvs
     Kalle:
     adapted to changes in KConfig and KLocale
@@ -39,15 +42,18 @@
     Initial revision
 
     Revision 1.4  1997/05/21 04:44:47  wuebben
+    preparing release 0.2.2
 
+    Revision 1.3  1997/04/29 05:38:06  wuebben
     *** empty log message ***
+
+
+
 #include <qstrlist.h> 
 
-
-
 #include "stdio.h"
+#include <stdio.h>
 
-#include "stdio.h"
 #include "qfile.h"
 #include "kfontmanager.h"
 #include <qstrlist.h> 

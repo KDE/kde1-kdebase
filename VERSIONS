@@ -11,12 +11,12 @@ kpat: 0.3 (patched a lot)
 kview: 0.10
 kpaint: 0.1
 kfind: 0.3
-kedit: 0.4.2 (kedit+)
+kedit: 0.5
 kcalc: 0.1
 kacli: 0.5
 kscreensaver: 0.3.3 (patched for QT-1.2)
 kvt: 0.14 (patched from Matthias)
 khexdit: 0.4.5
 klogout: 0.1
-kfontmanager: 0.2.1
-kjots: 0.2.3
+kfontmanager: 0.2.2
+kjots: 0.2.4

@@ -28,9 +28,10 @@
 
 
 #include <qstrlist.h> 
+#include <qtabdlg.h>
 
 #include <kapp.h>
-#include <qtabdlg.h>
+
 #include "kfontmanager.h"
 #include "kfontlist.h"
 #include "kfontexplorer.h"
@@ -45,7 +46,6 @@ void setup(){
 	QTabDialog *mainWindow = new QTabDialog( 0, 0, TRUE );
 
 	mainWindow->setCaption( "KDE Font Manager" );
-       	mainWindow->resize( 430, 460 );
 	mainWindow->setCancelButton();
 	mainWindow->setApplyButton();
 
@@ -57,6 +57,7 @@ void setup(){
 	mainWindow->addTab( &explorer,"Font Explorer");
 	mainWindow->addTab( &list, "Raw X11 Font List" );
 	
+       	mainWindow->resize( 430, 460 );
 	mainWindow->exec();
 }
 

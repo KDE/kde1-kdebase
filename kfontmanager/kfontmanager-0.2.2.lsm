@@ -1,7 +1,7 @@
 Begin3
 Title:          kfontmanager
-Version:        0.2.1
-Entered-date:   05/01/97
+Version:        0.2.2
+Entered-date:   05/20/97
 Description:    A Font Manager for the KDE project
 Keywords:       KDE, Qt, gui, X11, fonts, font manager
 Author:         <wuebben@math.cornell.edu> Bernd Johannes Wuebben

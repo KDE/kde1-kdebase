@@ -26,17 +26,22 @@
     */
  
 
-
 #include <qstrlist.h> 
-#include <kapp.h>
 #include <qfile.h>
 #include <qtstream.h> 
 #include <qtabdlg.h>
 
+
 #include <sys/stat.h>
 #include <unistd.h>
-#include <X11/Xlib.h>
+
+#include <kapp.h>
 #include "kfontmanager.h"
+
+#include <X11/X.h>
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
 
 extern char DOCS_PATH[256];
 extern char PICS_PATH[256];
@@ -118,7 +123,7 @@ void KFontManager::add_slot(){
     QString new_item = availableFontsList->text(availableFontsList->currentItem());
     QString string;
 
-    for (int i  = 0; i < selectedFontsList->count();i++){
+    for (uint i  = 0; i < selectedFontsList->count();i++){
     
       string = "";
       string = selectedFontsList->text(i);
@@ -141,6 +146,7 @@ void KFontManager::add_slot(){
 
 void KFontManager::resizeEvent(QResizeEvent *e){
 
+  (void) e;
 
   availableLabel->setGeometry (15,10,180,25);
   selectedLabel->setGeometry (width()/2 + 5,10,180,25);
@@ -246,7 +252,9 @@ bool KFontManager::loadKDEInstalledFonts(){
 
   while ( !t.eof() ) {
     QString s = t.readLine();
-    selectedFontsList->insertItem( s );
+    s = s.stripWhiteSpace();
+    if (!s.isEmpty())
+      selectedFontsList->insertItem( s );
   }
 
   fontfile.close();
@@ -286,7 +294,7 @@ bool KFontManager::writeKDEInstalledFonts(){
 
   if( number >  0){
     QString fontname;
-    for(uint i = 0; i < number; i++){
+    for(int i = 0; i < number; i++){
       fontname = selectedFontsList->text(i);
       fontname = fontname.stripWhiteSpace();
       if (!fontname.isEmpty())
@@ -324,13 +332,15 @@ void KFontManager::queryFonts(){
 
   for( int k = 0; k < numFonts; k++){
     
-    if (**fontNames != '-'){ // Font Name doesn't start with a dash -- an alias
+    if (**fontNames != '-'){ // font name doesn't start with a dash -- an alias
       
       /*
+
       qfontname = "";
       qfontname = *fontNames;
       if(fontlist.find(qfontname) == -1)
           fontlist.inSort(qfontname);
+
       */
 
       fontNames ++;
@@ -342,23 +352,23 @@ void KFontManager::queryFonts(){
     int dash = qfontname.find ('-', 1, TRUE); // find next dash
 
     if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // but what do I care -- lets skip it.
+                      // let's skip it.
       fontNames ++;
       continue;
     }
 
-    // the font name is between the second and third dash so:
+    // the font family name is between the second and third dash therefore
     // let's find the third dash:
 
     int dash_two = qfontname.find ('-', dash + 1 , TRUE); 
 
     if (dash == -1) { // No such next dash -- this shouldn't happen.
-                      // But what do I care -- lets skip it.
+                      // let's skip it.
       fontNames ++;
       continue;
     }
 
-    // fish the Name out of the font info string
+    // fish the font family name out of the font info string
 
     qfontname = qfontname.mid(dash +1, dash_two - dash -1);
 

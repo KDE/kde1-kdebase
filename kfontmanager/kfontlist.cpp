@@ -26,12 +26,16 @@
     */
  
 
-
-#include <qstrlist.h> 
-#include <kapp.h>
 #include <qtabdlg.h>
+#include <qstrlist.h> 
+
+#include <kapp.h>
+
 #include "kfontlist.h"
+
+#include <X11/X.h>
 #include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
 extern char DOCS_PATH[256];
 extern char PICS_PATH[256];
@@ -63,6 +67,7 @@ void KFontList::about(){
 
 void KFontList::resizeEvent(QResizeEvent *e){
 
+  (void) e;
   eframe->setGeometry(10,10, width() - 20, height() - 20);
 
 

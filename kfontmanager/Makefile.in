@@ -50,23 +50,21 @@ clean:
 	-rm -f *.o *.bak *~ *% #*
 	-rm -f $(SRCMETA) $(TARGET)
 
+distclean: clean
+	rm -f Makefile
+	
 install: all
-	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
+	$(INSTALL_DIR) $(BINDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
-	[ -d $(DOCSDIR) ] || $(INSTALL_DIR) $(DOCSDIR)
-	$(INSTALL_DATA) ./docs/kfontmanager.html $(DOCSDIR)
-	$(INSTALL_DATA) ./docs/kfontmanager.gif $(DOCSDIR)
-	[ -d $(APPSDIR) ] || $(INSTALL_DIR) $(APPSDIR)
+	$(INSTALL_DIR) $(DOCSDIR)
+	(cd docs && $(MAKE) install)
+	$(INSTALL_DIR) $(APPSDIR)
 	$(INSTALL_DATA) kfontmanager.kdelnk $(APPSDIR)/kfontmanager.kdelnk
 
 uninstall:
 	rm -f $(BINDIR)/$(TARGET)
-	rm -f $(DOCSDIR)/kfontmanager.gif
-	rm -f $(DOCSDIR)/kfontmanager.html
+	(cd docs && $(MAKE) install)
 	rm -f $(APPSDIR)/kfontmanager.kdelnk
-
-####### Explicit dependencies
-
 
 ####### Meta objects
 
