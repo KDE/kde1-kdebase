@@ -33,19 +33,21 @@
 const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
 				   "BottomLeft" };
 
-Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
+Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager",
 						WStyle_Customize | 
 						WStyle_NoBorder | 
-						WStyle_Tool)
+						WStyle_Tool) 
 {
     kwmmapp = a;
     kwmmapp -> connectToKWM();
     KWM::setSticky(winId(), true);
+    KWM::setDecoration(winId(), false);
 
     int count = KWM::numberOfDesktops();
     desktops.setAutoDelete(true);
     desktop_font = new QFont();
     Desktop *desk;
+    style = Undecorated;
 
     for (int i = 0; i < count; i++) {
         desk = new Desktop(a, i + 1, this);
@@ -94,6 +96,21 @@ void Pager::receiveCommand(QString command)
 	initDesktops();
 	placeIt();
     }
+    if (command == "pager:change") {
+	hide();
+	if ( style == Undecorated ) {
+	    setWFlags(0);
+	    KWM::setDecoration(winId(), true);
+	    style = Decorated;
+	} else {
+	    setWFlags(WStyle_Customize | 
+		      WStyle_NoBorder | 
+		      WStyle_Tool);
+	    KWM::setDecoration(winId(), false);
+	    style = Undecorated;
+	}
+	show();	
+    }
 }
 
 void Pager::readSettings()
@@ -128,7 +145,7 @@ void Pager::readSettings()
     
     // Font
     entry = config->readEntry("Font", 
-       // don't blame me, I'm played with xfontsel ;)
+       // don't blame me, I've played with xfontsel ;)
        "-bitstream-courier-medium-i-normal-*-10-*-75-75-m-54-iso8859-*");
     desktop_font->setRawMode(TRUE);
     desktop_font->setFamily(entry);
@@ -207,6 +224,7 @@ void Pager::changeNumber(int)
     for (int i = 0; i < count; i++) {
 	Desktop *desk = new Desktop(kwmmapp, i + 1, this);
 	desktops.append(desk);
+	connect(desk, SIGNAL(doubleClick()), SLOT(decorate()));
 	desk->show();
     }
     
@@ -216,6 +234,11 @@ void Pager::changeNumber(int)
     resizeEvent(NULL);
     initDesktops();
     repaint(true);
+}
+
+void Pager::decorate()
+{
+    KWM::setDecoration(winId(), true);
 }
 
 void Pager::addWindow(Window w)

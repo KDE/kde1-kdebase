@@ -217,6 +217,11 @@ void Desktop::mousePressEvent( QMouseEvent *e )
     }
 }
 
+void Desktop::mouseDoubleClickEvent ( QMouseEvent *)
+{
+    emit doubleClick();
+}
+
 void Desktop::calculate(PagerWindow *win) {
     int x = win->rect.x() * pixmap_size.width() / root_size.width() + 1;
     int y = win->rect.y() * pixmap_size.height() / root_size.height() + 1;

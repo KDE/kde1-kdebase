@@ -27,8 +27,9 @@
 #include <qframe.h>
 
 class QFont;
+class PagerGUI;
 
-class Pager: public QFrame {
+class Pager: public QWidget {
     Q_OBJECT
     
 public:
@@ -36,11 +37,13 @@ public:
     ~Pager();
     
 private:
+    PagerGUI *gui;
     KWMModuleApplication* kwmmapp;
     QList<Desktop> desktops;
     QList<PagerWindow> stickys;
     Desktop *activeDesktop;
     enum Position { TopRight, TopLeft, BottomRight, BottomLeft, Costumized } position;
+    enum Style { Decorated, Undecorated } style;
     static const char *PosStrings[5];
     int posx, posy;
     QFont *desktop_font;
@@ -59,7 +62,8 @@ private slots:
     void lowerWindow(Window);
     void placeIt();
     void receiveCommand(QString command);
-    
+    void decorate();
+
 protected:
     virtual void resizeEvent ( QResizeEvent * );  
     void readSettings();

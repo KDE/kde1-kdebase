@@ -59,6 +59,7 @@ protected:
     void fillPixmap();
     void calculate(PagerWindow* win);
     virtual void mousePressEvent ( QMouseEvent * );
+    virtual void mouseDoubleClickEvent ( QMouseEvent *);
     virtual void drawContents ( QPainter * );
     virtual void resizeEvent ( QResizeEvent * );  
     virtual void paletteChange ( const QPalette &);
@@ -74,6 +75,7 @@ private:
     
 signals:
     void activated(int);
+    void doubleClick();
 };
 
 #endif

@@ -2,13 +2,12 @@
 
 INCLUDES= $(all_includes)
 LDADD	= $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
-# CXXFLAGS += -export-dynamic
 
 #######	Files
 
 appdir = $(kde_appsdir)/System/
 bin_PROGRAMS	= kwmpager
-kwmpager_SOURCES = desktop.cpp pager.cpp 
+kwmpager_SOURCES = desktop.cpp pager.cpp pagergui.cpp
 BUILTSOURCES =	pager.moc desktop.moc
 DISTCLEANFILES = $(BUILTSOURCES)
 
