@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
 "PO-Revision-Date: 1999-02-13 10:42+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -58,7 +58,7 @@ msgstr "sjálfgefinn skjáflötur : %i"
 msgid "number of screens     : %i"
 msgstr "fjöldi skjáflata      : %i"
 
-#: info.cpp:181
+#: info.cpp:179
 msgid ""
 "No Information available\n"
 " or\n"
@@ -79,7 +79,7 @@ msgstr "%s á %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr "Ekki tókst að opna fstab skrána!"
+msgstr "Ekki tókst að opna fstab-skrána!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
 msgid "Device"
@@ -99,7 +99,7 @@ msgstr "Tengi"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr "%s, óþekktur örgjörvi"
+msgstr "óþekktur örgjörvi"
 
 #: info_hpux.cpp:62
 msgid "unavailable"
@@ -115,7 +115,7 @@ msgstr "Gildi"
 
 #: info_linux.cpp:114
 msgid "DMA-Channel"
-msgstr "DMA-Rás"
+msgstr "DMA-rás"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
@@ -123,7 +123,7 @@ msgstr "hver notar"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr "inn/út bil"
+msgstr "inn/út-bil"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -139,15 +139,15 @@ msgstr "Ígri&p"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-&Rásir"
+msgstr "DMA-&rásir"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "&Inn/út gáttir"
+msgstr "&Inn/út-gáttir"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr "PCI &Braut"
+msgstr "PCI-&braut"
 
 #: main.cpp:97
 msgid "S&ound"

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-06 01:17+0200\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
@@ -131,7 +131,7 @@ msgid ""
 "Check README.linux.console for help."
 msgstr ""
 "Leturgerðin `%s' fannst ekki.\n"
-"nánari upplýsingar í README.linux.console skránni."
+"nánari upplýsingar í skránni README.linux.console."
 
 #: main.C:647
 #, c-format
@@ -150,7 +150,7 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
-"%s, útgáfa %s - X skjáhermir\n"
+"%s, útgáfa %s - X-skjáhermir\n"
 "\n"
 "Höfundarréttur (c) 1998 Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
@@ -158,12 +158,12 @@ msgstr ""
 "\"Artistic License\" og ENGIN ÁBYRGÐ er tekin á virkni\n"
 "þess. Sjá nánar í skránni LICENSE.readme"
 
-#: main.C:779
+#: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' hætti óeðlilega."
 
-#: main.C:782
+#: main.C:779
 msgid ""
 "\n"
 "Return code = "
@@ -171,6 +171,6 @@ msgstr ""
 "\n"
 "Skilagildi = "
 
-#: main.C:979
+#: main.C:976
 msgid "Welcome to the console"
 msgstr "Velkomin í skjáherminn"

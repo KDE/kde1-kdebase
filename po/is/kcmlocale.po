@@ -38,11 +38,11 @@ msgstr "Þriðja"
 
 #: locale.cpp:115
 msgid "without name!"
-msgstr "nafnlaust"
+msgstr "nafnlaust!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Virki tumgumálastillingar"
+msgstr "Virkja tungumálastillingar"
 
 #: locale.cpp:182
 msgid ""
@@ -50,4 +50,4 @@ msgid ""
 "To change the language of all programs, you will have to logout first."
 msgstr ""
 "Breyttar tungumálastillingar hafa aðeins áhrif á forrit sem þú keyrir hér\n"
-"eftir. Til að breyta tungumáli allra forrita þaftu að stimpla þig út fyrst."
+"eftir. Til að breyta tungumáli allra forrita þarftu fyrst að stimpla þig út."

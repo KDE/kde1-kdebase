@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-02-13 10:45+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -163,7 +163,7 @@ msgstr " Af &taginu "
 
 #: kftabdlg.cpp:208
 msgid "&Containing Text:"
-msgstr "Sem &Inniheldur:"
+msgstr "Sem &inniheldur:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
@@ -195,7 +195,7 @@ msgstr "Keyranlegar skrár"
 
 #: kftabdlg.cpp:242
 msgid "SUID executable files"
-msgstr "SUID keyranlegar skrár"
+msgstr "SUID-keyranlegar skrár"
 
 #: kftabdlg.cpp:250
 msgid "(none)"
@@ -219,7 +219,7 @@ msgstr "Dagsetningin er gölluð!!"
 
 #: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
-msgstr "Mánaðargildin eru gölluð"
+msgstr "Mánaðargildin eru gölluð!!"
 
 #: kftabdlg.cpp:524
 msgid "The day(s) value isn't valid!!"
@@ -277,24 +277,24 @@ msgstr "Bæta við nýju"
 msgid "Archivers"
 msgstr "Þjöppunarforrit"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
 #, c-format
 msgid "%d file(s) found"
 msgstr "fann %d skrár"
 
-#: kfwin.cpp:250
+#: kfwin.cpp:246
 msgid "It wasn't possible to save results!"
 msgstr "Ekki tókst að vista niðurstöðurnar!"
 
-#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
+#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
 msgid "KFind Results File"
 msgstr "KFind niðurstöðuskrá"
 
-#: kfwin.cpp:287
+#: kfwin.cpp:283
 msgid "Results were saved to file\n"
-msgstr "Niðurtöðurnar voru vistaðar í skrá\n"
+msgstr "Niðurstöðurnar voru vistaðar í skrá\n"
 
-#: kfwin.cpp:302
+#: kfwin.cpp:298
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -303,11 +303,11 @@ msgstr ""
 "Viltu virkilega eyða skránni\n"
 "%s"
 
-#: kfwin.cpp:304
+#: kfwin.cpp:300
 msgid "Delete File"
 msgstr "Eyða skrá"
 
-#: kfwin.cpp:316
+#: kfwin.cpp:312
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -315,7 +315,7 @@ msgstr ""
 "Þú hefur ekki aðgangsheimildir\n"
 "til að eyða þessari skrá"
 
-#: kfwin.cpp:322
+#: kfwin.cpp:318
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -323,7 +323,7 @@ msgstr ""
 "Það er ekki hægt að\n"
 "eyða þessari skrá"
 
-#: kfwin.cpp:340
+#: kfwin.cpp:336
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -331,7 +331,7 @@ msgstr ""
 "Þú hefur ekki aðgangsheimildir\n"
 "til að eyða þessari möppu"
 
-#: kfwin.cpp:345
+#: kfwin.cpp:341
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -339,7 +339,7 @@ msgstr ""
 "Tiltekin mappa\n"
 "er ekki tóm!"
 
-#: kfwin.cpp:350
+#: kfwin.cpp:346
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -347,10 +347,10 @@ msgstr ""
 "Það er ekki hægt að\n"
 "eyða þessari skrá"
 
-#: kfwin.cpp:442
+#: kfwin.cpp:438
 msgid "Couldn't recognize archive type!"
-msgstr "Óþekkt gerð safns"
+msgstr "Óþekkt gerð safns!"
 
-#: kfwin.cpp:501
+#: kfwin.cpp:497
 msgid "Error while creating child process!"
 msgstr "Villa kom upp þegar ræsa átti undirferli!"

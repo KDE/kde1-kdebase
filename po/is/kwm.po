@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1999-02-13 10:41+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -13,7 +13,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"Svo virðist sem gluggastjóri sé núþegar í gangi.\n"
+"Svo virðist sem gluggastjóri sé nú þegar í gangi.\n"
 "kwm er ekki gangsettur\n"
 
 #: main.C:82
@@ -116,7 +116,7 @@ msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á formham\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Sumar bitamyndir eru ekki í lagi. Því er slökkt á glingurham\n"
 
-#: main.C:1531
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr "*** Engin verkefni ***"
 
@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Þessi forrit kunna ekki á X11 og þau er því ekki hægt að endurheimta í "
 "næstu\n"
-"setu. Gaktu úr skugga um að í þeim séu engin mikilvæg óvistuð gögn."
+"setu. Gakktu úr skugga um að í þeim séu engin mikilvæg óvistuð gögn."
 
 #: taskmgr.C:107
 msgid "Switch to"

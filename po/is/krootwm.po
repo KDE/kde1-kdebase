@@ -115,7 +115,7 @@ msgstr "Ekki tókst að búa til möppu"
 
 #: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Höfundarretur 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Höfundarréttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:942
 msgid "Usage:"

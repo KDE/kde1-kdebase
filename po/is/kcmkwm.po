@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-10 01:21+0200\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-10-26 22:36+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -53,116 +53,120 @@ msgstr "Klístrað"
 msgid "Menu"
 msgstr "Valmynd"
 
-#: titlebar.cpp:178 titlebar.cpp:936
+#: titlebar.cpp:178 titlebar.cpp:934
 msgid "Left"
 msgstr "Vinstri"
 
-#: titlebar.cpp:182 titlebar.cpp:946
+#: titlebar.cpp:182 titlebar.cpp:944
 msgid "Right"
 msgstr "Hægri"
 
-#: titlebar.cpp:473
+#: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Vinstri hlið titlrandar er full... Slökkt verður á hámörkunartakka\n"
+msgstr ""
+"Vinstri hlið titilrandar er full... Slökkt verður á hámörkunartakka\n"
 
-#: titlebar.cpp:506
+#: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Hægri hlið titlrandar er full... Slökkt verður á hámörkunartakka\n"
+msgstr ""
+"Hægri hlið titilrandar er full... Slökkt verður á hámörkunartakka\n"
 
-#: titlebar.cpp:546
+#: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Vinstri hlið titlrandar er full... Slökkt verður á lágkunartakka\n"
+msgstr ""
+"Vinstri hlið titilrandar er full... Slökkt verður á lágmörkunartakka\n"
 
-#: titlebar.cpp:579
+#: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Hægri hlið titlrandar er full... Slökkt verður á lágkunartakka\n"
+msgstr ""
+"Hægri hlið titilrandar er full... Slökkt verður á lágmörkunartakka\n"
 
-#: titlebar.cpp:932
+#: titlebar.cpp:930
 msgid "Title Alignment"
 msgstr "Staða titils"
 
-#: titlebar.cpp:941
+#: titlebar.cpp:939
 msgid "Middle"
 msgstr "Miðja"
 
-#: titlebar.cpp:969
+#: titlebar.cpp:967
 msgid "Shaded Vertically"
 msgstr "Skyggð lóðrétt"
 
-#: titlebar.cpp:975
+#: titlebar.cpp:973
 msgid "Shaded Horizontally"
 msgstr "Skyggð lárétt"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:982
 msgid "Plain"
 msgstr "Einlitt"
 
-#: titlebar.cpp:992 titlebar.cpp:1017
+#: titlebar.cpp:990 titlebar.cpp:1015
 msgid "Pixmap"
 msgstr "Með mynd"
 
-#: titlebar.cpp:1005
+#: titlebar.cpp:1003
 msgid "Active title has shaded frame"
 msgstr "Virkur titill með skyggðan ramma"
 
-#: titlebar.cpp:1046
+#: titlebar.cpp:1044
 msgid "Active pixmap:"
 msgstr "Virk bitamynd"
 
-#: titlebar.cpp:1051
+#: titlebar.cpp:1049
 msgid "Inactive pixmap:"
 msgstr "Óvirk bitamynd"
 
-#: titlebar.cpp:1057
+#: titlebar.cpp:1055
 msgid "No pixmap under text"
 msgstr "Engin bitamynd undir texta"
 
-#: titlebar.cpp:1068
+#: titlebar.cpp:1066
 msgid "Mouse action"
 msgstr "Músarvirkni"
 
-#: titlebar.cpp:1076
+#: titlebar.cpp:1074
 msgid "Left Button double click does:"
 msgstr "Áhrif þess að tvísmella með vinstri músatakka:"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1084
 msgid "(Un)Maximize"
 msgstr "Há-/lágmarka"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1085
 msgid "(Un)Shade"
 msgstr "Rúlla glugga upp/niður"
 
-#: titlebar.cpp:1088
+#: titlebar.cpp:1086
 msgid "Iconify"
 msgstr "Í táknmynd"
 
-#: titlebar.cpp:1089
+#: titlebar.cpp:1087
 msgid "(Un)Sticky"
 msgstr "Klístra/losa"
 
-#: titlebar.cpp:1109
+#: titlebar.cpp:1107
 msgid "Title animation"
 msgstr "Rúllandi titill"
 
-#: titlebar.cpp:1125
+#: titlebar.cpp:1123
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1368
+#: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
-msgstr "Gluggasjórastillingar - VILLA"
+msgstr "Gluggastjórastillingar - VILLA"
 
-#: titlebar.cpp:1369
+#: titlebar.cpp:1367
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Ekki tókst að vista bitamyndir á höfuðrönd!\n"
+"Ekki tókst að vista bitamyndir á titilrönd!\n"
 "Hugsanlega hefur þú ekki nægar aðgangsheimildir."
 
 #: windows.cpp:68
@@ -179,7 +183,7 @@ msgstr "Sýna innihald glugga á meðan þeir eru færðir"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
-msgstr "Sýna innihald meðan stærð glugga er breytt"
+msgstr "Sýna innihald á meðan stærð glugga er breytt"
 
 #: windows.cpp:98
 msgid "Resize animation:"
@@ -405,7 +409,7 @@ msgstr "Alt-Tab virkar aðeins innan skjáborðs"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr "Alt-Tab hamur:"
+msgstr "Alt-Tab-hamur:"
 
 #: advanced.cpp:63
 msgid "KDE"
@@ -453,7 +457,7 @@ msgstr "ef þeir falla að:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "Titilar"
+msgstr "Titlar"
 
 #: advanced.cpp:126
 msgid "Classes"

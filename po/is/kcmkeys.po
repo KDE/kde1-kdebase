@@ -10,7 +10,7 @@ msgstr ""
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
-msgstr "&Staðlaðir flýtitakkar"
+msgstr "&Staðlaðir flýtihnappar"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
@@ -22,11 +22,11 @@ msgstr "notkun: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Stillingar takkatenginga"
+msgstr "Stillingar hnappatenginga"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
-msgstr "Núverandi stilliskrá"
+msgstr "Stilliskrá í gildi"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
@@ -34,7 +34,7 @@ msgstr "Sjálfgefið í KDE"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&Takkastilliskrá"
+msgstr "&Hnappastilliskrá"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
@@ -54,9 +54,9 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the key scheme is stored."
 msgstr ""
-"Ekki tókst að fjarlægja þessa takkastilliskrá.\n"
-"Ef til vill hefur þú ekki skrifréttindi á\n"
-"skráakerfið þar sem stilliskráin er geymd."
+"Ekki tókst að fjarlægja þessa hnappastilliskrá.\n"
+"Ef til vill hefur þú ekki skrifréttindi til að\n"
+"breyta skráakerfinu þar sem stilliskráin er geymd."
 
 #: keyconfig.cpp:343
 msgid "Naming conflict"
@@ -68,12 +68,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the key scheme list."
 msgstr ""
-"Veldu nýtt nafn fyrir takkastilliskrána.\n"
+"Veldu nýtt nafn fyrir hnappastilliskrána.\n"
 "Það sem þú valdir er nú þegar í listanum."
 
 #: savescm.cpp:18
 msgid "Add a key scheme"
-msgstr "Bæta takkastilliskrá við"
+msgstr "Bæta hnappastilliskrá við"
 
 #: savescm.cpp:32
 msgid ""
@@ -83,8 +83,8 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"&Sláðu inn nafn fyrir takkastilliskrána\n"
-"sem á að bæta við listann þin.\n"
+"&Sláðu inn nafn fyrir hnappastilliskrána\n"
+"sem á að bæta við listann þinn.\n"
 "Til að byrja með verða stillingarnar á\n"
 "skjánum færðar þar inn."
 
@@ -102,7 +102,7 @@ msgstr "Framkvæma skipun"
 
 #: ../../kwm/kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr "Gluggaaðgerðavalmynd"
+msgstr "Aðgerðavalmynd glugga"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
@@ -209,4 +209,4 @@ msgid "End"
 msgstr "Enda"
 
 #~ msgid "KDE lite"
-#~ msgstr "KDE lítið"
+#~ msgstr "Létt-KDE"

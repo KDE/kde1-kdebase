@@ -10,11 +10,11 @@ msgstr ""
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE Leturstjóri"
+msgstr "KDE-leturstjóri"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDE Letur"
+msgstr "KDE-letur"
 
 #: main.cpp:72
 msgid "Font Explorer"
@@ -22,11 +22,11 @@ msgstr "Leturflakkari "
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Hrár X11 leturlisti"
+msgstr "Hrár X11-leturlisti"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tiltæk X11 letur"
+msgstr "Tiltæk X11-letur"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "Um kletursjóra"
+msgstr "Um kleturstjóra"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kleturstjóri Útgáfa 0.2\n"
+"kleturstjóri, útgáfa 0.2\n"
 "Höfundarréttur 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
@@ -61,7 +61,7 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"HOME umhverfisbreytan\n"
+"HOME-umhverfisbreytan\n"
 "hefur ekkert gildi\n"
 
 #: kfontmanager.cpp:292
@@ -80,7 +80,7 @@ msgid ""
 msgstr ""
 "Skráin ~/.kde/share/config/kdefonts er til,\n"
 "en þú hefur ekki skrifréttindi í hana.\n"
-"Því tókst ekki að vista KDE leturlistann."
+"Því tókst ekki að vista leturlista KDE."
 
 # kfontlist.cpp:62  (I'll be damned if this should be here!)
 #: kfontlist.cpp:62
@@ -90,7 +90,7 @@ msgid ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 msgstr ""
-"kleturstjóri Útgáfa 0.1\n"
+"kleturstjóri, útgáfa 0.1\n"
 "Höfundarréttur 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"

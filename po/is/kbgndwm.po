@@ -30,7 +30,7 @@ msgstr "Flísalagt"
 
 #: kbgndwm.cpp:59
 msgid "Mirrored"
-msgstr "Speiglað"
+msgstr "Speglað"
 
 #: kbgndwm.cpp:60
 msgid "CenterTiled"

@@ -26,7 +26,7 @@ msgstr "notkun: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "KSpjald Stillingar"
+msgstr "Stillingar KSpjaldsins"
 
 #: panel.cpp:59
 msgid "Location"
@@ -34,19 +34,19 @@ msgstr "Staðsetning"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "Efst"
+msgstr "&Efst"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "Vinstri"
+msgstr "&Vinstri"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "Neðst"
+msgstr "&Neðst"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr "Hægri"
+msgstr "&Hægri"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -54,19 +54,19 @@ msgstr "Verkefnaslá"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "Falin"
+msgstr "&Falin"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "Efst"
+msgstr "E&fst"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "Neðst"
+msgstr "N&eðst"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Efst til vinstri"
+msgstr "Efst &til vinstri"
 
 #: panel.cpp:95
 msgid "Style"
@@ -74,11 +74,11 @@ msgstr "Stíll"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "Örsmátt"
+msgstr "Ö&rsmátt"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "Venjulegt"
+msgstr "&Venjulegt"
 
 #: panel.cpp:101
 msgid "L&arge"
@@ -158,7 +158,7 @@ msgstr "Valmynda&möppur fyrst"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr "Klukkan &sýnd á FH/EH formi"
+msgstr "Klukkan &sýnir FH/EH"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
@@ -198,7 +198,7 @@ msgstr "Sýna punktskrár"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Raða óháð há/lág-stöfum"
+msgstr "Raða óháð há-/lágstöfum"
 
 #: disknav.cpp:173
 msgid "Show Shared section"

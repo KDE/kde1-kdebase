@@ -67,7 +67,7 @@ msgid ""
 " Select Ok to exit KMenuedit."
 msgstr ""
 "Ekki tókst að búa til möppu fyrir valmyndina þína.\n"
-" Smelltu á takkann til að loka KValmyndasýsli."
+" Smelltu á \"Í lagi\" til að loka KValmyndasýsli."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
 msgid "Separator"
@@ -254,7 +254,7 @@ msgstr "Breyta nöfnum valmynda"
 msgid "Change the name of the menus as displayed in kpanel"
 msgstr ""
 "Hér má breyta nöfnum valmyndanna\n"
-"sem byrtast á spjaldinu"
+"sem birtast á spjaldinu"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

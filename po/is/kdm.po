@@ -4,14 +4,14 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-08 01:20+0200\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-10-28 19:00-0500\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
-msgstr "Slökkva eða endurræsa?"
+msgstr "Slökkva eða ræsa aftur?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
@@ -23,54 +23,54 @@ msgstr "Slökkva"
 
 #: kdmshutdown.cpp:211
 msgid "Shutdown and restart"
-msgstr "Slökkva og endurræsa"
+msgstr "Slökkva og ræsa aftur"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr "Endurræsa X-þjón"
+msgstr "Ræsa X-þjón aftur"
 
-#: kgreeter.cpp:234
+#: kgreeter.cpp:222
 msgid "Login:"
 msgstr "Notandanafn:"
 
-#: kgreeter.cpp:246
+#: kgreeter.cpp:234
 msgid "Password:"
 msgstr "Lykilorð:"
 
-#: kgreeter.cpp:271
+#: kgreeter.cpp:259
 msgid "Login failed!"
 msgstr "Aðgangur brást!"
 
-#: kgreeter.cpp:277
+#: kgreeter.cpp:265
 msgid "Session Type:"
 msgstr "Tegund setu:"
 
-#: kgreeter.cpp:324
+#: kgreeter.cpp:312
 msgid "Go!"
 msgstr "Áfram!"
 
-#: kgreeter.cpp:340
+#: kgreeter.cpp:328
 msgid "Shutdown..."
 msgstr "Slökkva..."
 
-#: kgreeter.cpp:585
+#: kgreeter.cpp:570
 msgid "Logins not available right now."
 msgstr "Aðgangur bannaður þessa stundina."
 
-#: kgreeter.cpp:626
+#: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() mistókst."
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
 msgstr "Aðgangsleyfið þitt er útrunnið."
 
-#: kgreeter.cpp:685 kgreeter.cpp:712
+#: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Aðvörun: Aðgangsleyfið þitt rennur út %s"
 
-#: kgreeter.cpp:739
+#: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Heimasvæðið þitt finnst ekki"
 

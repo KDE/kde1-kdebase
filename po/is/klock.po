@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-18 01:18+0200\n"
+"POT-Creation-Date: 1999-03-22 01:16+0100\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
@@ -111,7 +111,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Skilti, úrgáfa 0.1\n"
+"Skilti, útgáfa 0.1\n"
 "\n"
 "skrifað af Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -160,11 +160,11 @@ msgstr "Stilla KSverta"
 
 #: blob.cpp:57
 msgid "Random Linear"
-msgstr "Slembið linulegt"
+msgstr "Slembið línulegt"
 
 #: blob.cpp:58
 msgid "Horizonal Sine"
-msgstr "Lágréttur sínus"
+msgstr "Láréttur sínus"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
@@ -196,7 +196,7 @@ msgstr "Reiknirit"
 
 #: blob.cpp:573
 msgid "About Blob"
-msgstr "Um slessu"
+msgstr "Um klessu"
 
 #: blob.cpp:574
 msgid ""
@@ -220,7 +220,7 @@ msgstr "Kúluský"
 
 #: bouboule.cpp:1013
 msgid "Setup KBouboule"
-msgstr "Skilla KKúluský"
+msgstr "Stilla KKúluský"
 
 #: bouboule.cpp:1040
 msgid "Number of points:"
@@ -324,7 +324,7 @@ msgstr ""
 "\n"
 "Höfundarréttur (c) 1995, Pascal Pensa\n"
 "\n"
-"Emanuel Pirker flutti í kscreensave by"
+"Emanuel Pirker flutti í kscreensave"
 
 #: hop.cpp:226
 msgid "Hop"
@@ -356,7 +356,7 @@ msgid ""
 msgstr ""
 "HopP, útgáfa 3.3\n"
 "\n"
-"Höfundarretur (c) 1991, Patrick J. Naughton\n"
+"Höfundarréttur (c) 1991, Patrick J. Naughton\n"
 "\n"
 "Emanuel Pirker flutti í kscreensave."
 
@@ -452,12 +452,12 @@ msgstr ""
 "\n"
 "Emanuel Pirker flutti í kscreensave."
 
-#: main.cpp:436
+#: main.cpp:413
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Þetta kerfi styður ekki valmöguleika %s !"
 
-#: main.cpp:491
+#: main.cpp:451
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -468,14 +468,14 @@ msgstr ""
 "Aðvörun: Þú getur ekki læst skjánum!\n"
 "\n"
 "Kerfið notar skuggalykilorð. Hafðu samband við\n"
-"kerfisstjórann og segðust þurfa \"suid\" fyrir\n"
-"kcheckpass forritið!"
+"kerfisstjórann og segðu að þú þurfir \"suid\" fyrir\n"
+"kcheckpass-forritið!"
 
-#: main.cpp:496
+#: main.cpp:456
 msgid "Shadow Passwords"
 msgstr "Skuggalykilorð"
 
-#: main.cpp:546
+#: main.cpp:506
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -486,7 +486,7 @@ msgstr ""
 "Ekki nota -test með -lock.\n"
 "Notaðu frekar klock.\n"
 
-#: main.cpp:664
+#: main.cpp:624
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -495,7 +495,7 @@ msgstr ""
 "Notkun: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "        [-corners xxxx] [-delay tala] [-lock] [-allow-root] [-nice tala]\n"
 
-#: main.cpp:667
+#: main.cpp:627
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -522,12 +522,12 @@ msgstr ""
 "                    röð: UV, UH, NV, NH\n"
 "  -delay num        Hve lengi óhreyft áður en skjár skreyttur. (10 min.)\n"
 "  -desc             Skrifa lýsingu skjáskreytingarinnar á aðalúttak\n"
-"  -install          Setja skjáskreytingu inn\n"
+"  -install          Setja inn skjáskreytingu\n"
 "  -lock             Krefjast lykilorðs til að stöðva skjáskreytingu\n"
-"  -allow-root       Samþykkja rótarlykilorð til að opena skjá\n"
-"  -nice num         KEyra á tilteknu forgangsþrepi\n"
+"  -allow-root       Samþykkja rótarlykilorð til að opna skjá\n"
+"  -nice num         Keyra á tilteknu forgangsþrepi\n"
 "\n"
-"  -preview wid      Keyra í tilteknum X glugga\n"
+"  -preview wid      Keyra í tilteknum X-glugga\n"
 "  -inroot           Keyra í rótarglugga\n"
 "  -setup            Stilla skjáskreytingu\n"
 "  -test             Virkja skjáskreytinguna samstundis\n"
@@ -642,7 +642,7 @@ msgid ""
 msgstr ""
 "Flugeldar, útgáfa 3.4\n"
 "\n"
-"Höfundarretur (c) 1991, Patrick J. Naughton\n"
+"Höfundarréttur (c) 1991, Patrick J. Naughton\n"
 "\n"
 "Martin Jones flutti í kscreensave."
 
@@ -702,7 +702,7 @@ msgstr "Veldisfall"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr "Smadráttur"
+msgstr "Samdráttur"
 
 #: science.cpp:77
 msgid "Wave"
@@ -726,7 +726,7 @@ msgstr "gríp skjámynd..."
 
 #: science.cpp:988
 msgid "Setup Science"
-msgstr "Stilla Vísindi"
+msgstr "Stilla vísindi"
 
 #: science.cpp:1021
 msgid "Inverse"
@@ -816,7 +816,7 @@ msgid ""
 msgstr ""
 "Sleipt\n"
 "\n"
-"Höfundarrétur (c) 1991, Scott Draves\n"
+"Höfundarréttur (c) 1991, Scott Draves\n"
 "\n"
 "Emanuel Pirker flutti í kscreensave."
 
@@ -826,11 +826,11 @@ msgstr "Geimur (GL)"
 
 #: space.cpp:589
 msgid "Setup KSpace"
-msgstr "Still KGeim"
+msgstr "Stilla KGeim"
 
 #: space.cpp:605
 msgid "Warp Interval:"
-msgstr "Bil milli Varpana"
+msgstr "Bil milli varpana"
 
 #: space.cpp:693
 msgid "About KSpace"
@@ -843,7 +843,7 @@ msgid ""
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
 "KGeimur\n"
-"Höfundarretur (c) 1998\n"
+"Höfundarréttur (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
@@ -852,11 +852,11 @@ msgstr "Mýmökkur"
 
 #: swarm.cpp:337
 msgid "Setup KSwarm"
-msgstr "Still KMýmökk"
+msgstr "Stilla KMýmökk"
 
 #: swarm.cpp:363
 msgid "Number of Bees:"
-msgstr "Fjöldi fluga:"
+msgstr "Fjöldi flugna:"
 
 #: swarm.cpp:458
 msgid "About Swarm"

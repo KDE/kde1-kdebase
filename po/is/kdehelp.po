@@ -3,14 +3,14 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
+"POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
 #: helpwin.cpp:55
 msgid "KDE Help: Open URL"
-msgstr "KDE Hjálp: Opna slóð (URL)"
+msgstr "KDE-hjálp: Opna slóð (URL)"
 
 #: helpwin.cpp:57
 msgid "Open URL"
@@ -54,17 +54,17 @@ msgstr "Opna í nýjum glugga"
 
 #: info.cpp:113 info.cpp:641
 msgid "Error in info file"
-msgstr "Villa í \"info\" skrá"
+msgstr "Villa í \"info\"-skrá"
 
-#: info.cpp:1289
+#: info.cpp:1284
 #, c-format
 msgid "Node not found: %s"
-msgstr "Hlekkurinn %s fanst ekki"
+msgstr "Hlekkurinn %s fannst ekki"
 
-#: info.cpp:1434
+#: info.cpp:1429
 #, c-format
 msgid "Cannot open info file: %s"
-msgstr "Ekki tókst að opna \"info\" skrána %s"
+msgstr "Ekki tókst að opna \"info\"-skrána %s"
 
 #: error.cpp:23
 msgid "Fatal Error: "
@@ -120,7 +120,7 @@ msgstr "Nota alltaf mína liti"
 
 #: options.cpp:334
 msgid "KDE Help Options"
-msgstr "KDE Hjálparstillingar"
+msgstr "KDE-hjálparstillingar"
 
 #: options.cpp:347 options.cpp:348
 msgid "Colors"
@@ -182,7 +182,7 @@ msgstr "Mansíður - kafli"
 
 #: man.cpp:509 man.cpp:518
 msgid "\"man\" system call failed"
-msgstr "\"man\" kerfiskallið mistókst"
+msgstr "\"man\"-kerfiskallið mistókst"
 
 #: man.cpp:536
 msgid "Opening temporary file failed"
@@ -255,7 +255,7 @@ msgstr "Sýna &staðsetningu"
 
 #: mainwidget.cpp:198
 msgid "Show Status&bar"
-msgstr "Sýna Ást&andsstiku"
+msgstr "Sýna ást&andsstiku"
 
 #: mainwidget.cpp:201
 msgid "&Save Options"
@@ -263,7 +263,7 @@ msgstr "&Vista valkosti"
 
 #: mainwidget.cpp:204
 msgid "KDE Help System\n"
-msgstr "KDE hjálparkerfi\n"
+msgstr "KDE-hjálparkerfi\n"
 
 #: mainwidget.cpp:205
 msgid "Version "
@@ -284,7 +284,7 @@ msgstr ""
 "Höfundarréttur 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
 "Þetta forrit fellur undir \"GNU General Public License\" (GPL).\n"
-"Enginn tekur neina ábyrgð á gæðum KDEHelp svo fremi lög leyfa."
+"Enginn tekur neina ábyrgð á gæðum KDEHelp svo fremi sem lög leyfa."
 
 #: mainwidget.cpp:224
 msgid "&Goto"
@@ -324,7 +324,7 @@ msgstr "Innihald hjálparkerfis"
 
 #: mainwidget.cpp:282
 msgid "Reload current document"
-msgstr "Endurlesa þetta skjal"
+msgstr "Lesa þetta skjal aftur"
 
 #: mainwidget.cpp:311
 msgid "In the Constructor!"
@@ -335,12 +335,12 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"KDE Hjálparkerfi\n"
+"KDE-hjálparkerfi\n"
 "Útgáfa "
 
 #: mainwidget.cpp:614
 msgid "About KDE Help"
-msgstr "Um KDE Hjálparkerfið"
+msgstr "Um KDE-hjálparkerfið"
 
 #: mainwidget.cpp:647
 msgid "&Add Bookmark"

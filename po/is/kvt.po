@@ -151,7 +151,7 @@ msgstr ""
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"Skjáhermir fyrir KDE skjáumhverfið unninn úr rxvt-2.08\n"
+"Skjáhermir fyrir KDE-skjáumhverfið unninn úr rxvt-2.08\n"
 "eftir Robert Nation."
 
 #: main.C:897 main.C:1036
@@ -188,7 +188,7 @@ msgid ""
 msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
-"Skjáhermir fyrir KDE skjáumhverfið unnið úr rxvt-2.08\n"
+"Skjáhermir fyrir KDE-skjáumhverfið unnið úr rxvt-2.08\n"
 "eftir Robert Nation.\n"
 
 #: main.C:1478
@@ -207,11 +207,11 @@ msgstr "-display <nafn>           tiltaka X-skjá (þjón)\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_gemoetry <stilling>   upphafsstillingar fyrir vt gluggann\n"
+msgstr "-vt_gemoetry <stilling>   upphafsstillingar fyrir vt-gluggann\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr "-print-pipe <name>        tiltaka pípu fyrir vt100 prentara\n"
+msgstr "-print-pipe <name>        tiltaka pípu fyrir vt100-prentara\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
@@ -236,7 +236,7 @@ msgstr ""
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    láta kvt herma eftir Linux textaham\n"
+msgstr "-linux                    láta kvt herma eftir Linux-textaham\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
@@ -251,7 +251,7 @@ msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
-"-T <texti>                texti í gluggatitli. (Úrelt notið -caption)\n"
+"-T <texti>                texti í gluggatitli. (Úrelt, notið -caption)\n"
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"

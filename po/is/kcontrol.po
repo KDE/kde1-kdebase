@@ -13,7 +13,7 @@ msgstr "Óþekkt eining: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
-msgstr "KDE Stjórnborð"
+msgstr "KDE-stjórnborð"
 
 #: toplevel.cpp:86
 msgid "&Swallow modules"
@@ -29,7 +29,7 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE Stjórnborð - Útgáfa 1.0\n"
+"KDE-stjórnborð - Útgáfa 1.0\n"
 "\n"
 "Höfundur: Matthias Hölzer\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"

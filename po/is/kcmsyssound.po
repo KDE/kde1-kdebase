@@ -74,7 +74,7 @@ msgstr "Rúlla glugga upp"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr "rúlla glugga niður"
+msgstr "Rúlla glugga niður"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
@@ -150,7 +150,7 @@ msgstr "&Hljóð"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Það má sleppa fleiri WAV skrám í hljóðalistann"
+msgstr "Það má sleppa fleiri WAV-skrám í hljóðalistann"
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
@@ -160,7 +160,7 @@ msgstr "Óstudd slóð (URL)"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "KDE Kerfisljóðaeiningin styður ekki svona slóð (URL) í augnablikinu"
+msgstr "KDE-kerfishljóðaeiningin styður ekki svona slóð (URL) í augnablikinu"
 
 #: syssound.cpp:468
 #, c-format
@@ -169,7 +169,7 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Þetta virðist ekki vera WAV skrá:\n"
+"Þetta virðist ekki vera WAV-skrá:\n"
 "%s"
 
 #: syssound.cpp:471

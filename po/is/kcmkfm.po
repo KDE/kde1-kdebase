@@ -121,7 +121,7 @@ msgstr "Skjáhermir"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr ""
+msgstr "Ritill"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -229,4 +229,4 @@ msgstr "Bakgrunnslitur táknmynda:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Sýna faldar skrár á skjáborði"
+msgstr "Sýna &faldar skrár á skjáborði"
