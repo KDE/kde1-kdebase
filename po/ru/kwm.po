@@ -26,7 +26,7 @@ msgstr "kwm: ошибка инициализации; прерывание\n"
 
 #: main.C:470
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Подготавливаю сессию ... "
 
 #: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -118,16 +118,16 @@ msgstr "Восемь"
 
 #: main.C:606
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Неименованный рабочий стол"
 
 #: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
 #: main.C:1054
-#, fuzzy
+#
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
+msgstr "Некоторые пиктограммы некорректны: GimmickMode отключено\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
@@ -139,7 +139,7 @@ msgstr "Команда:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Оопс!"
 
 #
 #: logout.C:36 taskmgr.C:108

@@ -25,7 +25,7 @@ msgstr "Клавиша забой будет посылать "
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "Набор клавиш"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -175,7 +175,7 @@ msgstr ""
 "когда клавиатура будет разблокирована."
 
 #: main.C:1322
-#, fuzzy
+#
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -183,90 +183,94 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Маттиас Эттрих <ettrich@kde.org>\n"
-"(C) 1997 М. Г. Берберих <berberic@fmi.uni-passau.de>\n"
-"\n"
+"(C) 1996, 1997 Маттиас Эттрих\n"
+"(C) 1997 М. Г. Берберих\n"
 "Эмуляция терминала для проекта KDE\n"
-"Основан на rxvt-2.08 Роберта Натиона"
+"Основан на rxvt-2.08 Роберта Натиона\n"
+"\n"
 
 #: main.C:1326
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Разрешенные аргументы:\n"
 
 #: main.C:1327
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <command> <arg> ... запустить команду с параметрами arg - должна быть\n"
+"                       последней опцией\n"
 
 #: main.C:1328
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <name>           использовать дисплей (сервер) <name>\n"
 
 #: main.C:1329
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       начальные размеры окна\n"
 
 #: main.C:1330
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <name>        использовать канал <pipe> для принтера vt100\n"
 
 #: main.C:1331
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <colour>           фоновый цвет\n"
 
 #: main.C:1332
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <colour>           цвет переднего плана\n"
 
 #: main.C:1333
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <fontname>       нормальный шрифт\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             выключает обход ошибки в Qt\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    эмуляция линуксового терминала\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               спрятать меню\n"
 
 #: main.C:1338
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             спрятать полосы прокрутки\n"
 
 #: main.C:1339
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                  установить заголовок <text>\n"
+"                           (Устарела. Используйте -caption)\n"
 
 #: main.C:1341
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Тип терминала, по умолчанию xterm.\n"
 
 #: main.C:1342
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Перехватывать сообщения с системной консоли\n"
 
 #: main.C:1343
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 имя пиктограммы\n"
 
 #: main.C:1344
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                         запускаться в 7 битном режиме\n"
+"-8                         запускаться в 8 битном режиме\n"
 
 #: main.C:1346
 msgid ""
@@ -274,16 +278,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                        запрашивать имя и пароль\n"
+"-ls-                       не запрашивать имени и пароля (по умолчанию)\n"
 
 #: main.C:1348
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta                       обрабатывать клавишу META с префиксом ESCAPE,\n"
+"                           установите 8-ми битный режим, или опция будет\n"
+"                           проигнорирована\n"
 
 #: main.C:1349
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <number>              сохранять number количество строк в буфере\n"
 
 #: main.C:1350
 msgid ""
@@ -292,6 +301,9 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>           использовать клавишу alt-keysym для прокрутки вверх\n"
+"-pagedown <keysym>         использовать клавишу alt-keysym для прокрутки вниз\n"
+
 
 #: main.C:1354
 msgid ""
@@ -301,69 +313,3 @@ msgstr ""
 "-grk9\t\tгреческая клавиатура ELOT 928 (по умолчанию)\n"
 "-grk4\t\tгреческая клавиатура IBM 437\n"
 
-#
-#, fuzzy
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "(C) 1996, 1997 Маттиас Эттрих <ettrich@kde.org>\n"
-#~ "(C) 1997 М. Г. Берберих <berberic@fmi.uni-passau.de>\n"
-#~ "\n"
-#~ "Эмуляция терминала для проекта KDE\n"
-#~ "Основан на rxvt-2.08 Роберта Натиона\n"
-#~ "Допустимые опции:\n"
-#~ "-e <command> <arg> ...\tзапустить команду с с параметрами arg - должена "
-#~ "быть\t\t\tпоследней опцией\n"
-#~ "-display <name>\tиспользовать дисплей (сервер) <name>\n"
-#~ "-vt_geometry <spec>\tначальные размеры окна\n"
-#~ "-print-pipe <name>\tиспользовать канал <pipe> для печати\n"
-#~ "-vt_bg <colour>\t\tфоновый цвет\n"
-#~ "-vt_fg <colour>\t\tцвет переднего плана\n"
-#~ "-vt_font <fontname>\tнормальный шрифт\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tэмуляция линуксового терминала\n"
-#~ "-no_menubar\t\tспрятать меню\n"
-#~ "-no_scrollbar\t\tспрятать полосы прокрутки\n"
-#~ "-T <text>\t\tустановить заголовок <text>\n"
-#~ "-tn <TERM>\t\tТип терминала, по умолчанию xterm.\n"
-#~ "-C\t\t\tПерехватывать сообщения с системной консоли\n"
-#~ "-n <text>\t\tимя пиктограммы\n"
-#~ "-7\t\t\tзапускаться в 7 битном режиме\n"
-#~ "-8\t\t\tзапускаться в 8 битном режиме\n"
-#~ "-ls\t\t\tзапрашивать имя и пароль\n"
-#~ "-ls-\t\t\tне запрашивать имени и пароля (по умолчанию)\n"
-#~ "-meta\t\t\tобрабатывать клавишу META с префиксом ESCAPE, установите 8-ми "
-#~ "битный\n"
-#~ "\t\t\tрежим, или опция будет проигнорирована\n"
-#~ "-sl <number>\t\tсохранять number количество строк в буффере\n"
-#~ "-pageup <keysym>\tиспользовать клавишу alt-keysym для прокрутки вверх\n"
-#~ "-pagedown <keysym>\tиспользовать клавишу alt-keysym для прокрутки вниз\n"

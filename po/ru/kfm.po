@@ -85,11 +85,11 @@ msgstr ""
 
 #: kfmgui.cpp:365
 msgid "&HTML View"
-msgstr "HTML вид"
+msgstr "&HTML вид"
 
 #: kfmgui.cpp:368
 msgid "&Icon View"
-msgstr ""
+msgstr "Вид с &пиктограммами"
 
 #: kfmgui.cpp:370
 msgid "&Text View"
@@ -97,24 +97,24 @@ msgstr "Текстовый вид"
 
 #: kfmgui.cpp:372
 msgid "&Long View"
-msgstr ""
+msgstr "&Длинный вид"
 
 #: kfmgui.cpp:374
-#, fuzzy
+#
 msgid "&Short View"
-msgstr "Текстовый вид"
+msgstr "&Короткий вид"
 
 #: kfmgui.cpp:380
 msgid "Rel&oad Tree"
-msgstr "Перегрузить дерево"
+msgstr "Пере&грузить дерево"
 
 #: kfmgui.cpp:382
 msgid "&Reload Document"
-msgstr "Перегрузить Документ"
+msgstr "&Перегрузить Документ"
 
 #: kfmgui.cpp:384
 msgid "Rescan &bindings"
-msgstr ""
+msgstr "Просканировать пр&ивязки"
 
 #: kfmgui.cpp:387
 msgid "&View Frame Source"
@@ -126,7 +126,7 @@ msgstr "Посмотреть Текст Документа"
 
 #: kfmgui.cpp:400
 msgid "Show History"
-msgstr ""
+msgstr "Показать историю"
 
 #: kfmgui.cpp:402
 msgid "Show Cache"
@@ -145,14 +145,14 @@ msgid "Never look in cache"
 msgstr "Не искать в Буфере"
 
 #: kfmgui.cpp:411
-#, fuzzy
+#
 msgid "Always save cache"
-msgstr "Всегда искать в Буфере"
+msgstr "Всегда сохранять в Буфер"
 
 #: kfmgui.cpp:413
-#, fuzzy
+#
 msgid "Never save cache"
-msgstr "Не искать в Буфере"
+msgstr "Не сохранять в Буфер"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -188,11 +188,11 @@ msgstr "Закладки"
 
 #: kfmgui.cpp:489
 msgid "&Cache"
-msgstr "Cache"
+msgstr "&Буфер"
 
 #: kfmgui.cpp:516 kfmman.cpp:1050
 msgid "Up"
-msgstr ""
+msgstr "Вверх"
 
 #: kfmgui.cpp:588
 msgid "Could not load icon\n"
@@ -230,7 +230,7 @@ msgstr "Открыть Местоположение:"
 
 #: kfmgui.cpp:1230
 msgid "KFM Confirm"
-msgstr ""
+msgstr "Подтверждение KFM"
 
 #: kfmgui.cpp:1231
 msgid ""
@@ -367,7 +367,7 @@ msgstr "Монтировать"
 
 #: kbind.cpp:713 kbind.cpp:1880
 msgid "Unmount"
-msgstr "Демонтировать"
+msgstr "Размонтировать"
 
 #: kbind.cpp:1187
 msgid "ERROR"
@@ -383,7 +383,7 @@ msgstr "Не могу запустить программу\n"
 
 #: kbind.cpp:1527
 msgid "Could not find binding"
-msgstr ""
+msgstr "Не могу найти привязки"
 
 #: kbind.cpp:1537
 msgid ""
@@ -448,7 +448,7 @@ msgstr "Нет точки монтирования в *.kdelnk файле"
 
 #: kbind.cpp:1952
 msgid "Unknown binding"
-msgstr ""
+msgstr "Неизвестная привязка"
 
 #: main.cpp:80 main.cpp:203
 msgid "KFM Information"
@@ -528,12 +528,12 @@ msgstr "Вертикальный размер сетки"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Прозрачный текст для пиктограмм"
 
 #: bookmark.cpp:264
-#, fuzzy
+#
 msgid "Could not write bookmark"
-msgstr "Не могу записать в\n"
+msgstr "Не могу записать закладки"
 
 #: kfmprops.cpp:242
 msgid "Full Name"
@@ -978,7 +978,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1237 kiojob.cpp:1368
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1215,16 +1215,16 @@ msgstr "войти как:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
-msgstr ""
+msgstr "Известные привязки"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
 msgstr "Не забудьте записать свои установки!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
+#
 msgid "Use proxy"
-msgstr "Пользователь"
+msgstr "Использовать прокси"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1240,16 +1240,16 @@ msgstr ""
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
-msgstr ""
+msgstr "&Агент пользователя"
 
 #: kkfmoptdlg.cpp:31
 msgid "&Colors"
-msgstr ""
+msgstr "&Цвета"
 
 #: kkfmoptdlg.cpp:34
-#, fuzzy
+#
 msgid "&Other"
-msgstr "Другие"
+msgstr "&Другие"
 
 #: kkfmoptdlg.cpp:54
 msgid "KFM Browser Settings"
@@ -1257,35 +1257,35 @@ msgstr "Установки Броузера KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Допустимые языки:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Допустимые кодировки:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Предполагать HTML"
 
 #: kfmprops.h:73
 msgid "&General"
-msgstr "Основные"
+msgstr "&Основные"
 
 #: kfmprops.h:108
 msgid "&Permissions"
-msgstr "Права"
+msgstr "&Права"
 
 #: kfmprops.h:198
 msgid "E&xecute"
-msgstr "Выполнить"
+msgstr "&Выполнить"
 
 #: kfmprops.h:246
 msgid "U&RL"
-msgstr "URL"
+msgstr "&URL"
 
 #: kfmprops.h:270
 msgid "&Dir"
-msgstr "Подкаталог"
+msgstr "&Каталог"
 
 #: kfmprops.h:313
 msgid "&Application"
@@ -1293,7 +1293,7 @@ msgstr "Приложение"
 
 #: kfmprops.h:355
 msgid "&Binding"
-msgstr ""
+msgstr "Привязка"
 
 #: kfmprops.h:385
 msgid "De&vice"
@@ -1333,86 +1333,3 @@ msgstr ""
 "Синтаксическая Ошибка:\n"
 "kfmexec комманда [URLs ....]\n"
 
-#~ msgid "&New Window"
-#~ msgstr "Новое окно"
-
-#~ msgid "Stop"
-#~ msgstr "Стоп"
-
-#~ msgid "KFM Error"
-#~ msgstr "Ошибка KFM"
-
-#~ msgid "Move"
-#~ msgstr "Переместить"
-
-#~ msgid "Properties"
-#~ msgstr "Свойства"
-
-#~ msgid "Font Size"
-#~ msgstr "Размер шрифта"
-
-#~ msgid "Small"
-#~ msgstr "Маленький"
-
-#~ msgid "Medium"
-#~ msgstr "Средний"
-
-#~ msgid "Large"
-#~ msgstr "Большой"
-
-#~ msgid "Continue"
-#~ msgstr "Продолжить"
-
-#~ msgid "Run normally"
-#~ msgstr "Запустить"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Запустить на Панели (перетащите на Панель, чтобы запустить)"
-
-#~ msgid "Title of Application"
-#~ msgstr "Заголовок Приложения"
-
-#~ msgid "enter the exact title, as normally shown in the window titlebar"
-#~ msgstr "введите точный заголовок, как обычно показывается в заголовке окна"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Вы можете запустить эту программу либо\n"
-#~ "на Панели, либо в Терминале,\n"
-#~ "но не вместе!"
-
-#~ msgid "&Tool"
-#~ msgstr "Инструмент"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Добавить закладку"
-
-#~ msgid "<!-- Do not edit this file -->"
-#~ msgstr "<!-- Не редактируйте этот файл -->"
-
-#~ msgid "Name"
-#~ msgstr "Имя"
-
-#~ msgid "Group"
-#~ msgstr "Группа"
-
-#~ msgid "Owner"
-#~ msgstr "Владелец"
-
-#~ msgid "Edit Bookmarks"
-#~ msgstr "Редактировать Закладки"
-
-#~ msgid "Move up"
-#~ msgstr "Переместить вверх"
-
-#~ msgid "Move down"
-#~ msgstr "Переместить вниз"
-
-#~ msgid "Rename Bookmark"
-#~ msgstr "Переименовать Закладку"
-
-#~ msgid "Rename Bookmark:"
-#~ msgstr "Переименовать Закладку:"

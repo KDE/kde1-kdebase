@@ -24,7 +24,7 @@ msgstr "Центр управления KDE"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
-msgstr "&Проглоченные модуля"
+msgstr "&Запускать модуля внутри"
 
 #: toplevel.cpp:81
 msgid ""

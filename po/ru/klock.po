@@ -156,32 +156,32 @@ msgid "Bouboule"
 msgstr ""
 
 #: bouboule.cpp:1005
-#, fuzzy
+#
 msgid "Setup KBouboule"
-msgstr "Настройка KFlame"
+msgstr "Настройка KBouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
+#
 msgid "Number of points:"
-msgstr "Количество:"
+msgstr "Количество точек:"
 
 #: bouboule.cpp:1046
-#, fuzzy
+#
 msgid "Point size:"
-msgstr "Кол Точек:"
+msgstr "Размер точек:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Частота изменения цвета:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3-ех мерный режим"
 
 #: bouboule.cpp:1223
-#, fuzzy
+#
 msgid "About Bouboule"
-msgstr "Об Blob"
+msgstr "Об Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -589,84 +589,84 @@ msgstr "Неверно"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "Перекручивать"
 
 #: science.cpp:68
-#, fuzzy
+#
 msgid "Sphere"
-msgstr "Скорость:"
+msgstr "Сфера"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Экспонента"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Конус"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Волна"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Кривая"
 
 #: science.cpp:112
-#, fuzzy
+#
 msgid "Science"
-msgstr "Настройка KLines"
+msgstr "Наука"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "рисую линзы..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "сохраняю экран..."
 
 #: science.cpp:931
-#, fuzzy
+#
 msgid "Setup Science"
-msgstr "Настройка KLines"
+msgstr "Настройка Science"
 
 #: science.cpp:949
-#, fuzzy
+#
 msgid "Mode:"
-msgstr "Середина:"
+msgstr "Режим:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "Инвертировать"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "Гравитация"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Скрыть фон"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr ""
+msgstr "Интенсивность:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "Движение:"
 
 #: science.cpp:1260
 msgid "Science Version"
-msgstr ""
+msgstr "Science версии"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "написан"
 
 #: science.cpp:1262
-#, fuzzy
+#
 msgid "About Science"
-msgstr "О Lines"
+msgstr "О Science"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -674,7 +674,7 @@ msgstr "Slip"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "Натсроить KSlip"
+msgstr "Настроить KSlip"
 
 #: slip.cpp:392
 msgid "Batchcount:"

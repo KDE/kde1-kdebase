@@ -166,7 +166,7 @@ msgid ""
 msgstr "Извините, этот тип URL не поддерживается Модулем СистемныхЗвуков KDE"
 
 #: syssound.cpp:468
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
