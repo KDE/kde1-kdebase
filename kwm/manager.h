@@ -119,6 +119,9 @@ public:
   void killWindowAtPosition(int x, int y);
 
   Client* findClientByLabel(QString label);
+  
+  void iconifyTransientOf(Client* c);
+  void unIconifyTransientOf(Client* c);
 
 signals:
   void reConfigure();

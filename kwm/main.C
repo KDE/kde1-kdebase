@@ -356,18 +356,23 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 
 MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KApplication(argc, argv, rAppName ){
-  if (argc > 1){
-    if (QString("-version") == argv[1]){
+  int i;
+  bool restore_session = True;
+  for (i=1; i<argc; i++){
+    if (QString("-version") == argv[i]){
       printf(KWM_VERSION);
       printf("\n");
       printf(klocale->translate("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"));
       ::exit(0);
     }
+    else if (QString("-nosession") == argv[i]){
+      restore_session = False;
+    }
     else {
       printf(klocale->translate("Usage: "));
-      printf("%s [-version]\n", argv[0]);
+      printf("%s [-version] [-nosession]\n", argv[0]);
+      ::exit(1); 
     }
-    ::exit(1); 
   }
 
   myapp = this;
@@ -465,7 +470,6 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
     number_of_desktops = 8;
   
   KWM::setNumberOfDesktops(number_of_desktops);
-  int i;
   for (i=1; i <= 8; i++){
     QString a = "";
     a.setNum(i);
@@ -509,7 +513,8 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
   connect(manager, SIGNAL(showLogout()), this, SLOT(showLogout()));
   XUngrabServer(qt_xdisplay()); 
   initting = FALSE;
-  restoreSession();
+  if (restore_session)
+    restoreSession();
 }
 
 

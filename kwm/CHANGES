@@ -12,6 +12,13 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 15:
+       - transient windows are iconified/deiconified with their parent
+         window. They also dissappear for the modules and the Mod1-Tab
+         traversal if they were automatically iconified.
+       - new commandline option "-nosession" to disable the restoration
+         of the previous session.
+          
   patchlevel 14:
        - new keybindings Control-F[1..8] for virtual desktop switching
        - new option "ControlTab=[on,off]" to switch off the Control-Tab

@@ -3,7 +3,7 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
-Version 0.10 patchlevel 6
+Version 0.10 patchlevel 15
 
 Please see the CHANGES file for detailed informations about the actual
 development and the history of kwm.
@@ -16,7 +16,7 @@ This document contains
   3) SHORTCUTS
   4) MOUSE CONTROL
   5) LOW LEVEL CONFIGURATION (kwmrc)
-
+  6) COMMAND LINE OPTIONS
 
 
 1) PREFACE
@@ -166,4 +166,12 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     TitleAnimation=50 (milliseconds)
     ResizeAnimation=on, off
     ControlTab=on, off
-	
+
+
+6) COMMAND LINE OPTIONS
+=======================
+   
+ -version     (shows the version number including the patchlevel)
+
+ -nosession   (disables the restoration of the previous session.)
+

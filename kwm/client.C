@@ -314,6 +314,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     titlestring_offset = 0;
     titlestring_offset_delta = 2;
     animation_is_active = FALSE;
+    hidden_for_modules = FALSE;
 }  
 
 Client::~Client(){
@@ -1083,21 +1084,27 @@ void Client::set_x_cursor(Cursor cur){
 
 
 void Client::iconify(){
+  iconify(True);
+}
+
+void Client::iconify(bool animation){
   if (isIconified())
     return;
+  manager->iconifyTransientOf(this);
 
   iconified = True;
 
   if (state == NormalState){
     hide();           // hide the frame
     XUnmapWindow(qt_xdisplay(), window);
-    animate_size_change(geometry, 
-			QRect(geometry.x()+geometry.width()/2,
-			      geometry.y()+geometry.height()/2,
-			      0,0),
-			getDecoration()==1,
-			title_rect.x(), 
-			width()-title_rect.right());
+    if (animation)
+      animate_size_change(geometry, 
+			  QRect(geometry.x()+geometry.width()/2,
+				geometry.y()+geometry.height()/2,
+				0,0),
+			  getDecoration()==1,
+			  title_rect.x(), 
+			  width()-title_rect.right());
     if (isActive())
       manager->noFocus();
   }
@@ -1106,31 +1113,35 @@ void Client::iconify(){
   manager->setWindowState(this, IconicState); 
 }
 
-void Client::unIconify(){
+void Client::unIconify(bool animation){
   if (isWithdrawn())
     return;
-  if (isIconified()){
-    iconified = False;
-    KWM::setIconify(window, False);
-    manager->changedClient(this);
-    if (isOnDesktop(manager->currentDesktop())){
+  if (!isIconified())
+    return;
+  
+  iconified = False;
+  KWM::setIconify(window, False);
+  manager->changedClient(this);
+  if (isOnDesktop(manager->currentDesktop())){
+    if (animation)
       animate_size_change(QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
 				0,0), geometry,
 			  getDecoration()==1,
 			  title_rect.x(), 
 			  width()-title_rect.right());
-      show();                       // unhide the window
-      XRaiseWindow(qt_xdisplay(), winId());
-      XMapWindow(qt_xdisplay(), window);
-      manager->setWindowState(this, NormalState);
-      manager->raiseClient( this );
-      manager->activateClient(this);
-    }
-    else {
-      manager->raiseClient( this );
-    }
+    
+    show();                       // unhide the window
+    XRaiseWindow(qt_xdisplay(), winId());
+    XMapWindow(qt_xdisplay(), window);
+    manager->setWindowState(this, NormalState);
+    manager->raiseClient( this );
+    manager->activateClient(this);
   }
+  else {
+    manager->raiseClient( this );
+  }
+  manager->unIconifyTransientOf(this);
 }
 
 

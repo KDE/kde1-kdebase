@@ -169,10 +169,13 @@ public:
   bool maximized;
   bool iconified;
   
-  void unIconify();
+  void unIconify(bool animation = True);
+  void iconify(bool animation);
   void ontoDesktop(int new_desktop);
   void maximize(int mode = 0);
   void unMaximize();
+
+  bool hidden_for_modules;
 
  public slots:
    void iconify();

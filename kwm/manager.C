@@ -763,13 +763,16 @@ void Manager::manage(Window w, bool mapped){
   // get some KDE specific hints
 
   // transient windows on their parent's desktop
+  Client* pc = NULL;
   if (c->trans != None && c->trans != qt_xrootwin()){
-    Client* pc = getClient(c->trans);
-    if (pc)
+    pc = getClient(c->trans);
+    if (pc){
+      pc = getClient(c->trans);
       c->desktop = pc->desktop;
-    KWM::moveToDesktop(c->window, c->desktop);
+      KWM::moveToDesktop(c->window, c->desktop);
+    }
   }
-  else {
+  if (!pc){
     int desktop_tmp = KWM::desktop(c->window);
     if (!kwm_error && (desktop_tmp>0 && desktop_tmp <= number_of_desktops) )
       c->desktop = desktop_tmp;
@@ -843,6 +846,10 @@ void Manager::manage(Window w, bool mapped){
     else
       c->setactive(FALSE);
   }
+
+  if (c->isIconified())
+    iconifyTransientOf(c);
+
   if (!initting)
     XUngrabServer(qt_xdisplay()); 
   
@@ -899,11 +906,11 @@ void Manager::activateClient(Client* c, bool set_revert){
   if (c->Ptakefocus)
     sendClientMessage(c->window, wm_protocols, wm_take_focus);
   colormapFocus(c);
-  clients_traversing.removeRef(c);
-  clients_traversing.append(c);
+  if (clients_traversing.removeRef(c))
+    clients_traversing.append(c);
   if (!set_revert && cc){
-    clients_traversing.removeRef(cc);
-    clients_traversing.insert(0,cc);
+    if (clients_traversing.removeRef(cc))
+      clients_traversing.insert(0,cc);
   }
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window, 
 		  kwm_active_window, 32,
@@ -1797,7 +1804,8 @@ QStrList* Manager::getClientsOfDesktop(int desk){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (c->isOnDesktop(desk) &&
+    if (c->isOnDesktop(desk) && 
+	!c->hidden_for_modules &&
 	(!c->isSticky() || desk == currentDesktop())){
       if (c->isIconified())
 	result->append(QString("(") + c->label + ")");
@@ -1864,6 +1872,34 @@ Client* Manager::findClientByLabel(QString label){
       return c;
   }
   return NULL;
+}
+
+
+void Manager::iconifyTransientOf(Client* c){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window){
+      it.current()->iconify(False);
+      sendToModules(module_win_remove, it.current()->window);
+      it.current()->hidden_for_modules = TRUE; 
+      clients_traversing.removeRef(it.current());
+    }
+  }
+}
+
+
+void Manager::unIconifyTransientOf(Client* c){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window){
+      it.current()->unIconify(False);
+      if (it.current()->hidden_for_modules){
+	sendToModules(module_win_add, it.current()->window);
+	it.current()->hidden_for_modules = FALSE;
+	clients_traversing.insert(0,it.current());
+      }
+    }
+  }
 }
 
 
