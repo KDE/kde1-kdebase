@@ -1,18 +1,13 @@
-# Íslenskun á kfind.po
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# FIRST AUTHOR <logir@imf.au.dk>, 1998.
+# Logi Ragnarsson <logir@imf.au.dk>, 1998.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
-"Language-Team: is_IS <???>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Language-Team: is\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -198,10 +193,6 @@ msgstr "Keyranlegar skrár"
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
 msgstr "SUID keyranlegar skrár"
-
-#: kftabdlg.cpp:246
-msgid "(none)"
-msgstr ""
 
 #: kftabdlg.cpp:247
 msgid "At Least"

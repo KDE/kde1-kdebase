@@ -1,18 +1,13 @@
-# Íslenskun á kmix.po
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# FIRST AUTHOR <logir@imf.au.dk>, 1998.
+# Logi Ragnarsson <logir@imf.au.dk>, 1998.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
-"Language-Team: is_IS <???>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Language-Team: is\n"
 
 #: main.C:421
 msgid "choose type of color-mode"
@@ -32,11 +27,11 @@ msgstr "Örvatakkastilling"
 
 #: main.C:606
 msgid "&New Terminal"
-msgstr "&Nýjan skjáglugga"
+msgstr "Nýr texta&gluggi"
 
 #: main.C:613 main.C:987
 msgid "&Hide"
-msgstr "&Falin"
+msgstr "&Fela"
 
 #: main.C:614
 msgid "&Left"
@@ -84,15 +79,15 @@ msgstr "&grænt á svörtu"
 
 #: main.C:640
 msgid "black/light&yellow"
-msgstr "svart á &gulu"
+msgstr "svart á g&ulu"
 
 #: main.C:641
 msgid "Linu&x Console"
-msgstr "&Linuxskjár"
+msgstr "&Linux textahamur"
 
 #: main.C:650
 msgid "&Custom Colors"
-msgstr "&Heimasmíðaðir litir"
+msgstr "Að &eigin vali"
 
 #: main.C:657 main.C:921
 msgid "Hide &Menubar"
@@ -108,7 +103,7 @@ msgstr "Öruggt &lyklaborð"
 
 #: main.C:662
 msgid "Scroll&bar"
-msgstr "&Rennistika"
+msgstr "&Rennislá"
 
 #: main.C:663
 msgid "&Font size"
@@ -132,7 +127,7 @@ msgstr "Letur..."
 
 #: main.C:669
 msgid "Save &Options"
-msgstr "&Vista stillingar"
+msgstr "&Vista valkosti"
 
 #: main.C:678
 msgid ""
@@ -164,7 +159,7 @@ msgstr "Óöruggt lyklaborð"
 
 #: main.C:938
 msgid "Terminal Options"
-msgstr "S&kjastillingar"
+msgstr "Skjástillingar"
 
 #: main.C:1092
 msgid "Hint"
@@ -176,7 +171,7 @@ msgid ""
 "when the keyboard is unsecured."
 msgstr ""
 "Nýju litastillingarnar koma fram þegar\n"
-"öryggið verður tekið af lyklaborðinu."
+"öryggið er tekið af lyklaborðinu."
 
 #: main.C:1394
 msgid ""
@@ -189,7 +184,8 @@ msgstr ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
 "Skjáhermir fyrir KDE skjáumhverfið unnið úr rxvt-2.08\n"
-"eftir Robert Nation.\n"
+"eftir Robert Nation."
+"\n"
 
 #: main.C:1398
 msgid "Permitted arguments are:\n"
@@ -199,11 +195,11 @@ msgstr "Lögleg viðföng eru:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <skipun> <viðföng> ...  framkvæma skipun með viðföngum - alltaf aftast!\n"
+"-e <skipun> <viðföng> ... framkvæma skipun með viðföngum - alltaf aftast!\n"
 
 #: main.C:1400
 msgid "-display <name>           specify the display (server)\n"
-msgstr "-display <nafn>           tiltaka skjá (þjón)\n"
+msgstr "-display <nafn>           tiltaka X-skjá (þjón)\n"
 
 #: main.C:1401
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
@@ -231,12 +227,11 @@ msgstr "-no_font_hack             ekki fara framhjá villum í Qt\n"
 
 #: main.C:1407
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
-"-vt_size <stærð>          leturstærð: tiny, small, normal, large, huge\n"
+msgstr "-vt_size <stærð>          leturstærð: tiny, small, normal, large, huge\n"
 
 #: main.C:1408
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    lata kvt herma eftir Linux textaham\n"
 
 #: main.C:1409
 msgid "-no_menubar               hide the menubar\n"
@@ -244,7 +239,7 @@ msgstr "-no_menubar               fela valmyndastiku\n"
 
 #: main.C:1410
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr "-no_scrollbar             fela rennistiku\n"
+msgstr "-no_scrollbar             fela rennislá\n"
 
 #: main.C:1411
 msgid ""
@@ -255,23 +250,23 @@ msgstr ""
 
 #: main.C:1413
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr "-tn <TERM>                Skjágerð. xterm er sjálfgefið.\n"
+msgstr "-tn <TERM>                Skjágerð. Xterm er sjálfgefið.\n"
 
 #: main.C:1414
 msgid "-C                        Capture system console message\n"
-msgstr "-C                       Grípa kerfisskjáboð\n"
+msgstr "-C                        grípa kerfisskjáboð\n"
 
 #: main.C:1415
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr "-n <text>                nafn í táknmynd eða táknmyndarglugga\n"
+msgstr "-n <text>                 nafn í táknmynd eða táknmyndarglugga\n"
 
 #: main.C:1416
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        keyra í 7-bitaham\n"
-"-8                        keyra í 8-bitaham\n"
+"-7                        keyra í 7 bita ham\n"
+"-8                        keyra í 8 bita ham\n"
 
 #: main.C:1418
 msgid ""
@@ -279,7 +274,7 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
-"-ls                       opna innsknaingarskel í kvt\n"
+"-ls                       opna innskráningarskel í kvt\n"
 "-ls                       opna venjulega skel í kvt (sjálfgefið)\n"
 
 #: main.C:1420
