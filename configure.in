@@ -253,9 +253,9 @@ AC_OUTPUT(Makefile \
 	kappfinder/apps/Makefile \
 	kappfinder/pics/mini/Makefile \
 	kappfinder/pics/Makefile \
-	kappfinder/Makefile )
+	kappfinder/Makefile \
+	config/Makefile )
 
 AC_OUTPUT_COMMANDS(chmod +x kappfinder/kappfinder)
-
 
 
