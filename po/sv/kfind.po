@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-07-09 15:30+02:00\n"
+"PO-Revision-Date: 1998-11-07 19:30+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -123,12 +123,12 @@ msgstr "&Bläddra..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
-msgstr "Inkludera &underkataloger"
+msgstr "Sök även i &underkataloger"
 
 # ######## cat ##########
 #: kftabdlg.cpp:114
 msgid " Name& Location "
-msgstr " Namn &plats "
+msgstr " Namn och plats "
 
 #: kftabdlg.cpp:126
 msgid "and"
@@ -204,15 +204,15 @@ msgstr "SUID körbara filer"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(spelar ingen roll)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
-msgstr "Åtminstone"
+msgstr "åtminstone"
 
 #: kftabdlg.cpp:248
 msgid "At Most"
-msgstr "Inte mer än"
+msgstr "inte mer än"
 
 #: kftabdlg.cpp:259
 msgid " Advanced "
@@ -269,7 +269,7 @@ msgstr "Skapa arkiv:"
 
 #: kfoptions.cpp:132
 msgid "Add to Archive:"
-msgstr "Lägg till i arkiv:"
+msgstr "Lägg till arkiv:"
 
 #: kfoptions.cpp:136
 msgid "Patterns:"
@@ -359,4 +359,4 @@ msgstr "Kunde inte känna igen arkivtypen!"
 
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
-msgstr "Ett fel uppstod vid skapandet av barnprocessen!"
+msgstr "Ett fel uppstod då barnprocessen skulle skapas!"

@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Anders Widell <d95-awi@nada.kth.se>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kstart\n"
 "POT-Creation-Date: 1998-10-29 13:59+0100\n"
-"PO-Revision-Date: 1998-05-25 17:18+0800\n"
-"Last-Translator: Karl Backström <karl_b@geocities.com>\n"
+"PO-Revision-Date: 1998-11-07 19:13+01:00\n"
+"Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
+"Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8BIT\n"
 
 #: kstart.C:115
 #, c-format
@@ -42,24 +42,32 @@ msgid ""
 " \n"
 " "
 msgstr ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Verktyg för att starta föråldrade program med KDE:s speciella\n"
+" fönsterinställningar som till exempel ikonifierad, maximerad, på ett\n"
+" specifikt skrivbord, med en speciell dekor eller klistrig\n"
+" \n"
+" Dessutom kommer du med flaggan -activate hoppa till fönstret även om det\n"
+" öppnas på något annat virtuellt skrivbord\n"
+" \n"
+" Användning:\n"
+" %s <kommando> [-window <reguljärt uttryck>] [-desktop <nummer>]\n"
+"               [-sticky] [-iconify] [-maximize] \n"
+"               [-decoration tiny|none] [-activate]\n"
+" \n"
+" Om du inte anger något reguljärt uttryck för fönstrets namnlist kommer det\n"
+" första fönstret som öppnas att tas. Rekommenderas ej!\n"
+" \n"
+" Exempelanvändning:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
+" lägger en sparsamt dekorerad klistrig klocka i skärmens övre högra hörn.\n"
+" \n"
+" "
 
 #: kstart.C:151
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
-
-#~ msgid "Usage:"
-#~ msgstr "Användande:"
-
-#~ msgid "command "
-#~ msgstr "kommando"
-
-#~ msgid "title "
-#~ msgstr "titel"
-
-#~ msgid "desktop"
-#~ msgstr "skrivbord"
-
-#~ msgid "Example"
-#~ msgstr "Exempel"
+msgstr "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
