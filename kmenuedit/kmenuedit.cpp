@@ -297,7 +297,8 @@ void KMenuEdit::saveMenus()
   QString dir_name;
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("KDE Desktop Entries");
-  dir_name = config->readEntry("PersonalPath");
+  QString temp = KApplication::localkdedir() + "/share/applnk";
+  dir_name = config->readEntry("PersonalPath", temp.data());
   dir_name = dir_name.stripWhiteSpace();
   QDir dir(dir_name);
   pers_menu_data->copyLnkFiles(dir);
@@ -308,10 +309,11 @@ void KMenuEdit::saveMenus()
     {
       KConfig kconfig(fi.absFilePath() );
       kconfig.setGroup("KDE Desktop Entry");
-      kconfig.writeEntry("Name", pers_menu_name);
+      kconfig.writeEntry("Name", pers_menu_name, TRUE, FALSE, TRUE);
     }
   // default menu
-  dir_name = config->readEntry("Path");
+  temp = KApplication::kde_appsdir();
+  dir_name = config->readEntry("Path", temp.data());
   dir_name = dir_name.stripWhiteSpace();
   dir.setPath(dir_name);
   glob_menu_data->copyLnkFiles(dir);
@@ -322,7 +324,7 @@ void KMenuEdit::saveMenus()
     {
       KConfig kconfig(fi.absFilePath() );
       kconfig.setGroup("KDE Desktop Entry");
-      kconfig.writeEntry("Name", glob_menu_name);
+      kconfig.writeEntry("Name", glob_menu_name, TRUE, FALSE, TRUE);
     }
   QApplication::restoreOverrideCursor();
   KWM::sendKWMCommand("kpanel:restart");

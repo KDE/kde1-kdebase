@@ -605,9 +605,6 @@ void PMenuItem::exec_fvwm()
   // ((TaskBar *) (main_app->mainWidget()))->send_fvwm_com(command_name);
 }
 
-//--------------------------------------------------------------------------------------
-
-
 QPixmap PMenuItem::getBigPixmap()
 {
   QPixmap pm = global_pix_loader->loadApplicationIcon( big_pixmap_name);
@@ -622,6 +619,8 @@ QPixmap PMenuItem::getBigPixmap()
   }
   return pm;
 }
+
+//--------------------------------------------------------------------------------------
 
 PMenu::PMenu()
 {
@@ -1017,7 +1016,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
       if( parent_item->big_pixmap_name.isEmpty() )
 	parent_item->big_pixmap_name = "folder.xpm";
       kconfig.writeEntry("Icon", parent_item->big_pixmap_name );
-      kconfig.writeEntry("Name", parent_item->text_name );
+      kconfig.writeEntry("Name", parent_item->text_name, TRUE, FALSE, TRUE );
     }
   kconfig.sync();
 }
@@ -1286,9 +1285,10 @@ QString PMenu::uniqueFileName(QString name)
     }
   QString suffix;
   int i = 2;
+  file_name = name + ".kdelnk";
   while( checkFilenames(file_name) )
     {
-      file_name = name + suffix.setNum(i);
+      file_name = name + suffix.setNum(i) + ".kdelnk";
       i++;
     }
   return file_name;
