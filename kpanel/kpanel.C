@@ -710,6 +710,7 @@ void kPanel::desktop_change(int new_desk) {
     hidden_button = tmp_button;
     edit_button->show();
     edit_button->grabKeyboard();
+    edit_button->grabMouse();
     edit_button->setFocus();
     edit_button->installEventFilter(this);
     QColorGroup g = tmp_button->palette().active(); 
@@ -735,6 +736,7 @@ void kPanel::restore_editbutton( bool takeit ) {
   }
   if (edit_button != NULL) {
     edit_button->releaseKeyboard();
+    edit_button->releaseMouse();
     edit_button->hide();
     delete edit_button;
     hidden_button->show();

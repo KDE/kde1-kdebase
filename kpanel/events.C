@@ -219,6 +219,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     break;
     
   case Event_MouseButtonPress: case Event_MouseButtonDblClick: {
+
+
     if (info_label->isVisible())
       info_label->hide();
     tipTimer->stop();
@@ -226,6 +228,15 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     if ( ob == panel_button || QString("myTaskButton") == ob->className())
       break;
     QMouseEvent* mev = (QMouseEvent*)ev;
+
+    if (ob == edit_button){
+      if (!edit_button->rect().contains(mev->pos())){
+	restore_editbutton(false);
+	return true;
+      }
+      break;
+    }
+
 
 
     if (ob->isWidgetType() && ((QWidget*)ob)->isPopup()){

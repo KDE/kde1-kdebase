@@ -1,5 +1,8 @@
 In kpanel-0.17:
  
+    Patchlevel 8:
+       - logout while editing desktop buttons fixed.
+
     Patchlevel 7:
        - alternate sorting order: folders first (Michael Bialas)
          This is default now. You can disable it with
