@@ -21,8 +21,10 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
+#ifndef __osf__
 #ifdef BSD
 #define msgbuf mymsg
+#endif
 #endif
 
 class KHelpMsg : protected msgbuf
