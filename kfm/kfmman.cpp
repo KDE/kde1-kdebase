@@ -320,7 +320,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     QString path = u.path();
     if ( u.isLocalFile() && path.right(7) == ".kdelnk" )
     {
-	// Try tp open the *.kdelnk file
+	// Try to open the *.kdelnk file
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )
 	{
@@ -376,7 +376,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // Stop a running job. Calling this if no job is running does no harm.
     job->stop();
     // We pass our current KIODirectoryEntries. Sometimes this information
-    // can speed up the process of finding out wether tryURL is
+    // can speed up the process of finding out whether tryURL is
     // a directory or some file. Mention that files is cleared
     // at once by a call to this function. 'browse' may emit the signal
     // 'newDirEntry' which uses 'files'. So 'files' has to be cleared
@@ -1110,23 +1110,25 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
       popupMenu->insertSeparator();
     }
     //------------------------------
-    int isdir = KIOServer::isDir( _urls );
+    bool isdir = KIOServer::isDir( _urls );
     
     if ( KIOServer::isTrash( _urls ) )
     {
 	int id;
+        /* Commented out. Left click does it. Why have it on right click menu ?. David.
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
 				    view, SLOT( slotPopupCd() ) );
+        */
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
 				    view, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_TRASH), 
 				    view, SLOT( slotPopupEmptyTrashBin() ) );
     } 
-    else if ( isdir == 1 )
+    else if ( isdir )
     {
 	int id;
-        /* Commented out the open with for directories. DF. */
+        /* Commented out the open with for directories. David. */
 	/* id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
 				    view, SLOT( slotPopupOpenWith() ) );
 	   popupMenu->insertSeparator();  
@@ -1147,10 +1149,12 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
 	
 	popupMenu->insertSeparator();  
 
+        /* Commented out. Left click does it. Why have it on right click menu ?. David.
         if (!_current_dir) {
             id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), view, 
                                         SLOT( slotPopupCd() ) );
         }
+        */
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
 				    view, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    

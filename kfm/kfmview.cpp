@@ -408,7 +408,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	return;
     }
     
-    // Check wether we drop a directory on itself or one of its children
+    // Check whether we drop a directory on itself or one of its children
     int nested = 0;
     QStrList list( _zone->getURLList() );
     char *s;
@@ -428,8 +428,9 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
     }
     if ( nested == 2 )
     {
-	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: You dropped some URL over itself") );
+        // Commented out useless warning. David.
+	// QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+	// 		      klocale->translate("ERROR: You dropped some URL over itself") );
 	return;
     }
     
@@ -476,7 +477,7 @@ void KfmView::slotDelete()
 
 void KfmView::slotPaste()
 {
-    // Check wether we drop a directory on itself or one of its children
+    // Check whether we drop a directory on itself or one of its children
     int nested = 0;
     char *s;
 
@@ -685,7 +686,7 @@ void KfmView::slotPopupPaste()
       return;
     }
     
-    // Check wether we drop a directory on itself or one of its children
+    // Check whether we drop a directory on itself or one of its children
     int nested = 0;
     char *s;
     for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
@@ -1306,7 +1307,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
     }
     else if ( _url != 0L && _mouse->button() == LeftButton )
     {
-	// We can not do much here, since we dont know wether
+	// We can not do much here, since we dont know whether
 	// this may be the start of some DND action.
 	selectedURL = _url;
 	return true;

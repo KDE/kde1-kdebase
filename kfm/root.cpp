@@ -1,12 +1,4 @@
-/*
- * Due to a leak of log, let's start with it...
- *
- * Thu Mar  5 22:47:01 MET 1998 Marcin Dalecki:
- *     Impoved drag and drop handling.
- *
- * Fri Apr 10 18:03:27 CEST 1998 Stefan Westerfeld <stefan@space.twc.de>:
- *     Changed drag and drop again, see comments in moveIcons.
- */
+/* See the file ChangeLog for log */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -244,10 +236,13 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
     else if ( isdir )
     {
 	int id;
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
+        /* Commented out the open with for directories. David. */
+	/* id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH),
 				    this, SLOT( slotPopupOpenWith() ) );
-	popupMenu->insertSeparator();    
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), this, 
+	popupMenu->insertSeparator();
+        */
+
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN), this, 
 				    SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_COPY), this, 
@@ -1562,6 +1557,8 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 
         if ( !bSelected )
         {    
+	  // The selected URL is not marked, so unmark the marked ones.
+          root->unselectAllIcons();
 	  list.append( url.data() );
 	  select( true );
 	}
