@@ -180,24 +180,24 @@ AC_OUTPUT(Makefile \
 	config/Makefile \
 	doc/Makefile \
 	doc/kcontrol/Makefile \
-	doc/kcontrol/bell/Makefile \
-	doc/kcontrol/info/Makefile \
-	doc/kcontrol/input/Makefile \
-	doc/kcontrol/keys/Makefile \
-	doc/kcontrol/kfm/Makefile \
+	doc/kcontrol/kcmbell/Makefile \
+	doc/kcontrol/kcmdisplay/Makefile \
+	doc/kcontrol/kcminfo/Makefile \
+	doc/kcontrol/kcminput/Makefile \
+	doc/kcontrol/kcmkeys/Makefile \
+	doc/kcontrol/kcmkfm/Makefile \
+	doc/kcontrol/kcmkwm/Makefile \
+	doc/kcontrol/kcmlocale/Makefile \
+	doc/kcontrol/kcmsamba/Makefile \
+	doc/kcontrol/kcmsyssound/Makefile \
+	doc/kcontrol/kcmsyssound/de/Makefile \
+	doc/kcontrol/kcmsyssound/no/Makefile \
+	doc/kcontrol/kcmsyssound/en/Makefile \
 	doc/kcontrol/kpanel/Makefile \
-	doc/kcontrol/kwm/Makefile \
-	doc/kcontrol/locale/Makefile \
-	doc/kcontrol/samba/Makefile \
-	doc/kcontrol/syssound/Makefile \
-	doc/kcontrol/syssound/de/Makefile \
-	doc/kcontrol/syssound/no/Makefile \
-	doc/kcontrol/syssound/en/Makefile \
 	doc/kdehelp/Makefile \
 	doc/kdehelp/kwm/Makefile \
 	doc/kdehelp/kpanel/Makefile \
 	doc/kdehelp/quickstart/Makefile \
-	doc/kdisplay/Makefile \
 	doc/kdm/Makefile \
 	doc/kfind/Makefile \
 	doc/kfm/Makefile \
