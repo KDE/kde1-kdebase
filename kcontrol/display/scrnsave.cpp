@@ -112,6 +112,7 @@ KIconLoader iconLoader;
 	{
 		ssSetup = 0;
 		ssPreview = 0;
+		apply( true );
 		return;
 	}
 

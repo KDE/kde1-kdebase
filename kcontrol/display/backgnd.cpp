@@ -206,7 +206,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     // if we are just initialising we don't need to create setup widget
     if ( mode == Init )
     {
-	readSettings( 0 );
+//	readSettings( 0 );
 	return;
     }
 
