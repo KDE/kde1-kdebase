@@ -17,12 +17,12 @@ INSTALL_ROOT=	${.CURDIR}/${PKGNAME}
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
-		kdecore\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
-		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
-		jscript\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
-		khtmlw\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
-		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
-		mediatool\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs
+		kdecore\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
+		kdeui\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
+		jscript\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
+		khtmlw\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
+		kfm\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
+		mediatool\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs
 NO_MTREE=	yup
 USE_GMAKE=	"without a doubt"
 NO_WRKDIR=	"Cause, you've obviously got the source in the parent directory"
