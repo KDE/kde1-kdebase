@@ -440,7 +440,8 @@ void KDMUsersWidget::loadSettings()
   {
     kapp->processEvents(50);
     if( CHECK_STRING(ps->pw_dir) && CHECK_STRING(ps->pw_shell) &&
-      CHECK_STRING(ps->pw_gecos) && ( no_users.contains( ps->pw_name) == 0))
+      //CHECK_STRING(ps->pw_gecos) &&
+      ( no_users.contains( ps->pw_name) == 0))
     {
       kapp->processEvents(50);
       // we might have a real user, insert him/her
