@@ -97,7 +97,7 @@ public:
      *
      * @see #overwriteExistingFiles
      */
-    void KIOJob::setOverWriteExistingFiles( bool _o );
+    void setOverWriteExistingFiles( bool _o );
 
     /**
      * If this flag is set to TRUE, the instance deletes itself after
@@ -244,7 +244,7 @@ protected:
      *
      * @see #passwordDict
      */
-    QString KIOJob::completeURL( const char *_url );
+    QString completeURL( const char *_url );
     
     void done();
     /**

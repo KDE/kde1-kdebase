@@ -96,7 +96,7 @@ public:
      * @return 0L if the URL is not cached, or the filename ( starting with '/' )
      *         of the file, which holds the cached data.
      */
-    const char* HTMLCache::isCached( const char *_url );
+    const char* isCached( const char *_url );
     
     /**
      * Cancels all jobs started by this instance.
