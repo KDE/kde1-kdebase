@@ -2117,6 +2117,7 @@ static void
 refineResult(KMimeMagicResult *r, const char * _filename)
 {
 	QString tmp = r->getContent();
+	tmp.detach();
 	if (tmp.isEmpty())
 		return;
 	if ((strcmp(tmp, "text/x-c") == 0) ||
