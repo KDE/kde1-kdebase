@@ -179,7 +179,7 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
 		    tmp.truncate( tmp.length() - 7 );
-		menuNew->insertItem( config.readEntry("Comment", tmp ) );
+		menuNew->insertItem( config.readEntry("Name", tmp ) );
 	    }
 	    ++it;                               // goto next list element
 	}
@@ -713,7 +713,7 @@ void KRootWm::slotNewFile( int _id )
       config.setGroup( "KDE Desktop Entry" );
       if ( tmp.right(7) == ".kdelnk" )
 	tmp.truncate( tmp.length() - 7 );
-      tmp = config.readEntry("Comment", tmp);
+      tmp = config.readEntry("Name", tmp);
     }
     
     QString text = klocale->translate("New");
