@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-03 01:15+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -223,38 +223,38 @@ msgstr "Sluèajno"
 msgid "Manual"
 msgstr "Ruèno"
 
-#: windows.cpp:152
+#: windows.cpp:153
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:171
+#: windows.cpp:174
 msgid "Focus policy"
 msgstr "Fokusiranje"
 
-#: windows.cpp:181
+#: windows.cpp:184
 msgid "Click to focus"
 msgstr "Klikni za fokusiranje"
 
-#: windows.cpp:183
+#: windows.cpp:186
 msgid "Focus follows mouse"
 msgstr "Fokus slijedi mi¹a"
 
-#: windows.cpp:185
+#: windows.cpp:188
 msgid "Classic focus follows mouse"
 msgstr "Klasièni fokus slijedi mi¹a"
 
-#: windows.cpp:187
+#: windows.cpp:190
 msgid "Classic sloppy focus"
 msgstr "Klasièni neuredni fokus"
 
-#: windows.cpp:198
+#: windows.cpp:202
 msgid "Auto Raise"
 msgstr "Auto. uzdigni"
 
-#: windows.cpp:205
+#: windows.cpp:209
 msgid "Delay (ms)"
 msgstr "Ka¹njenje (ms)"
 

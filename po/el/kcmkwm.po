@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-03 01:15+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,41 +238,41 @@ msgstr ""
 msgid "Manual"
 msgstr "Μενού"
 
-#: windows.cpp:152
+#: windows.cpp:153
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:171
+#: windows.cpp:174
 #, fuzzy
 msgid "Focus policy"
 msgstr "Πολιτική ενεργοποίησης"
 
-#: windows.cpp:181
+#: windows.cpp:184
 msgid "Click to focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:183
+#: windows.cpp:186
 msgid "Focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:185
+#: windows.cpp:188
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:187
+#: windows.cpp:190
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:198
+#: windows.cpp:202
 msgid "Auto Raise"
 msgstr ""
 
-#: windows.cpp:205
+#: windows.cpp:209
 msgid "Delay (ms)"
 msgstr ""
 

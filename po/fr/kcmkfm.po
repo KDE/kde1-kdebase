@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-10 00:19+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
 "Language-Team: Français\n"
@@ -151,23 +151,22 @@ msgstr "&Ajouter"
 msgid "Known bindings:"
 msgstr "Liaisons connues :"
 
-#: rootopts.cpp:71
+#: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
 msgstr "Espacement de la grille horizontale du bureau :"
 
-#: rootopts.cpp:83
+#: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
 msgstr "Espacement de la grille verticale du bureau :"
 
-#: rootopts.cpp:94
+#: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
 msgstr "Texte &transparent pour les icônes du bureau."
 
-#: rootopts.cpp:105
+#: rootopts.cpp:103
 msgid "Icon foreground color:"
 msgstr "Couleur du texte des icônes :"
 
-#: rootopts.cpp:117
+#: rootopts.cpp:115
 msgid "Icon background color:"
 msgstr "Couleur de fond du texte des icônes :"
-

@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-08 01:17+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: 1998-11-27 19:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
-#: krootwm.C:135 krootwm.C:716
+#: krootwm.C:135 krootwm.C:729
 msgid "Folder"
 msgstr "Carpeta"
 
@@ -15,74 +15,74 @@ msgstr "Carpeta"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERROR: La plantilla no existe '%s'"
 
-#: krootwm.C:232 krootwm.C:276
+#: krootwm.C:234 krootwm.C:278
 msgid "Execute command"
 msgstr "Ejecutar comando"
 
-#: krootwm.C:234 krootwm.C:284
+#: krootwm.C:236 krootwm.C:286
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
-#: krootwm.C:235 krootwm.C:285
+#: krootwm.C:237 krootwm.C:287
 msgid "Logout"
 msgstr "Terminar"
 
-#: krootwm.C:243 krootwm.C:278
+#: krootwm.C:245 krootwm.C:280
 msgid "Refresh desktop"
 msgstr "Actualizar escritorio"
 
-#: krootwm.C:244 krootwm.C:280
+#: krootwm.C:246 krootwm.C:282
 msgid "Unclutter windows"
 msgstr "Reordenar ventanas"
 
-#: krootwm.C:245 krootwm.C:281
+#: krootwm.C:247 krootwm.C:283
 msgid "Cascade windows"
 msgstr "Cascadear ventanas"
 
-#: krootwm.C:246 krootwm.C:282
+#: krootwm.C:248 krootwm.C:284
 msgid "Arrange icons"
 msgstr "Ordenar iconos"
 
-#: krootwm.C:247 krootwm.C:277
+#: krootwm.C:249 krootwm.C:279
 msgid "Display properties"
 msgstr "Mostrar propiedades"
 
-#: krootwm.C:255 krootwm.C:275
+#: krootwm.C:257 krootwm.C:277
 msgid "Help on desktop"
 msgstr "Ayuda del escritorio"
 
-#: krootwm.C:256
+#: krootwm.C:258
 msgid "About KDE..."
 msgstr "Acerca del KDE..."
 
-#: krootwm.C:271 krootwm.C:298 krootwm.C:706 krootwm.C:714
+#: krootwm.C:273 krootwm.C:300 krootwm.C:719 krootwm.C:727
 msgid "New"
 msgstr "Nuevo"
 
-#: krootwm.C:272 krootwm.C:299
+#: krootwm.C:274 krootwm.C:301
 msgid "Bookmarks"
 msgstr "Marcadores"
 
-#: krootwm.C:300
+#: krootwm.C:302
 msgid "Desk"
 msgstr "Escritorio"
 
-#: krootwm.C:301
+#: krootwm.C:303
 msgid "Windows"
 msgstr "Ventanas"
 
-#: krootwm.C:337
+#: krootwm.C:339
 msgid "Edit Bookmarks"
 msgstr "Editar marcadores"
 
-#: krootwm.C:736
+#: krootwm.C:750
 msgid "Could not create folder"
 msgstr "Imposible crear carpeta"
 
-#: krootwm.C:801
+#: krootwm.C:815
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:805
+#: krootwm.C:819
 msgid "Usage:"
 msgstr "Modo de uso:"

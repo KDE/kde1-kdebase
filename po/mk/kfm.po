@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-08 01:17+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Macedonian <LL@li.org>\n"
@@ -14,210 +14,190 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-5\n"
 
-#: kfmgui.cpp:202
+#: kfmgui.cpp:199
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 kfmgui.cpp:214 kfmgui.cpp:1034
+#: kbind.cpp:949 kbind.cpp:961 kbind.cpp:971 kfmgui.cpp:211 kfmgui.cpp:1066
+#: kfmman.cpp:52 kfmman.cpp:1554 kfmtree.cpp:35 kfmtree.cpp:516 root.cpp:73
+#: root.cpp:1351
 msgid "Folder"
 msgstr "Direktorium"
 
-#: kfmgui.cpp:225
+#: kfmgui.cpp:222 kfmman.cpp:63 kfmtree.cpp:46 root.cpp:84
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRESKA: Template ne postoi '%s'"
 
-#: kfmgui.cpp:249
-#, fuzzy
-msgid "&New"
-msgstr "Nov "
-
-#: kfmgui.cpp:251
-#, fuzzy
-msgid "New &Window"
-msgstr "&Nov Prozorec"
-
-#: kfmgui.cpp:254
-#, fuzzy
-msgid "&Run..."
-msgstr "&Izvrshi ..."
-
-#: kfmgui.cpp:256
-msgid "Open &Terminal"
-msgstr "Startuvaj &Terminal"
-
-#: kfmgui.cpp:259
-msgid "&Open Location..."
-msgstr "&Otvori Lokacija ..."
-
-#: finddlg.cpp:66 kfmgui.cpp:261
-msgid "&Find"
-msgstr "&Pronajdi"
-
-#: kfmgui.cpp:279
+#: kfmgui.cpp:257
 msgid "&Move to Trash"
 msgstr "&Nosi go vo Gjubre"
 
-#: kfmgui.cpp:286
+#: kfmgui.cpp:264
 msgid "&Select"
 msgstr "&Izberi"
 
-#: kfmgui.cpp:288
+#: kfmgui.cpp:266
 #, fuzzy
 msgid "Select &all"
 msgstr "&Izberi"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:269
 msgid "&Find in page..."
 msgstr ""
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:271
 msgid "Find &next"
 msgstr ""
 
-#: kfmgui.cpp:296
+#: kfmgui.cpp:274
 #, fuzzy
 msgid "Mime &Types"
 msgstr "Mime Tipovi"
 
-#: kfmgui.cpp:298
+#: kfmgui.cpp:276
 #, fuzzy
 msgid "App&lications"
 msgstr "Aplikacii"
 
-#: kfmgui.cpp:304
+#: kfmgui.cpp:282
 msgid "Global Mime Types"
 msgstr "Globalni Mime Tipovi"
 
-#: kfmgui.cpp:306
+#: kfmgui.cpp:284
 msgid "Global Applications"
 msgstr "Globalni Aplikacii"
 
-#: kfmgui.cpp:313
+#: kfmgui.cpp:291
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "Prikazi gi &Dot Dokumentite"
 
-#: kfmgui.cpp:315
+#: kfmgui.cpp:293
 msgid "Show Tr&ee"
 msgstr "Prikazi go &Drvoto"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:295
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:319
+#: kfmgui.cpp:297
 msgid "&HTML View"
 msgstr "&HTML Pogled"
 
-#: kfmgui.cpp:322
+#: kfmgui.cpp:300
 msgid "&Icon View"
 msgstr "&Ikoni Pogled"
 
-#: kfmgui.cpp:324
+#: kfmgui.cpp:302
 msgid "&Text View"
 msgstr "&Tekstualen Pogled"
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:304
 msgid "&Long View"
 msgstr "&Dolg Pogled"
 
-#: kfmgui.cpp:328
+#: kfmgui.cpp:306
 #, fuzzy
 msgid "&Short View"
 msgstr "&Ikoni Pogled"
 
-#: kfmgui.cpp:334
+#: kfmgui.cpp:312
 msgid "Rel&oad Tree"
 msgstr "Pre-&vchitaj go Drvoto"
 
-#: kfmgui.cpp:336
+#: kfmgui.cpp:314
 msgid "&Reload Document"
 msgstr "&Pre-vchitaj go Dokumentot"
 
-#: kfmgui.cpp:338
+#: kfmgui.cpp:316
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Skaniraj gi &bidings"
 
-#: kfmgui.cpp:341
+#: kfmgui.cpp:319
 msgid "&View Frame Source"
 msgstr "&Pogledaj go Dokument vo Ramkata"
 
-#: kfmgui.cpp:343
+#: kfmgui.cpp:321
 msgid "View Docu&ment Source"
 msgstr "Pogledaj go Dokumentot"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:329
 msgid "Auto"
 msgstr ""
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:337
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "Dokument: Zavrsen"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:352
 msgid "Show History"
 msgstr ""
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:354
 msgid "Show Cache"
 msgstr "Prikazzi go Keshot"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:356
 msgid "Clear Cache"
 msgstr "Izbrishi go Keshot"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:359
 msgid "Always look in cache"
 msgstr "Sekogas gledaj vo keshot"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:361
 msgid "Never look in cache"
 msgstr "Nikogas nemoj da gledash vo keshot"
 
-#: kfmgui.cpp:385
+#: kfmgui.cpp:363
 #, fuzzy
 msgid "Always save cache"
 msgstr "Sekogas gledaj vo keshot"
 
-#: kfmgui.cpp:387
+#: kfmgui.cpp:365
 #, fuzzy
 msgid "Never save cache"
 msgstr "Nikogas nemoj da gledash vo keshot"
 
-#: kfmgui.cpp:398
+#: kfmgui.cpp:376
 msgid "Show &Menubar"
 msgstr "Prikazzi &Menu"
 
-#: kfmgui.cpp:400
+#: kfmgui.cpp:378
 msgid "Show &Statusbar"
 msgstr "Prikazzi &Sostojba"
 
-#: kfmgui.cpp:402
+#: kfmgui.cpp:380
 msgid "Show &Toolbar"
 msgstr "Prikazzi &Alatki"
 
-#: kfmgui.cpp:404
+#: kfmgui.cpp:382
 msgid "Show &Location bar"
 msgstr "Prikazzi &Lokacija"
 
-#: kfmgui.cpp:407
+#: kfmgui.cpp:385
 msgid "Sa&ve Settings"
 msgstr "&Zapisi gi Poziciite"
 
-#: kfmgui.cpp:409
+#: kfmgui.cpp:387
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "&Zapisi gi Poziciite"
 
-#: kfmgui.cpp:416
+#: kfmgui.cpp:394
 #, fuzzy
-msgid "&Configure Browser..."
+msgid "&Configure File Manager..."
 msgstr "Podesi go Prebaruvachot ..."
 
-#: kfmgui.cpp:452
+#: kfmgui.cpp:396
+#, fuzzy
+msgid "Configure &Browser..."
+msgstr "Podesi go Prebaruvachot ..."
+
+#: kfmgui.cpp:432
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -232,31 +212,31 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:465
+#: kfmgui.cpp:445
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:466
+#: kfmgui.cpp:446
 msgid "&Bookmarks"
 msgstr "&Bookmarks"
 
-#: kfmgui.cpp:467
+#: kfmgui.cpp:447
 msgid "&Cache"
 msgstr "&Kesh"
 
-#: kfmgui.cpp:494 main.cpp:239
+#: kfmgui.cpp:474 main.cpp:239
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:504 main.cpp:241
+#: kfmgui.cpp:484 main.cpp:241
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:509
+#: kfmgui.cpp:489
 msgid "Home"
 msgstr "Doma"
 
-#: kfmgui.cpp:566
+#: kfmgui.cpp:546
 msgid "Could not load icon\n"
 msgstr "Ne mozzam da vchitam ikona\n"
 
@@ -265,84 +245,112 @@ msgstr "Ne mozzam da vchitam ikona\n"
 #: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
 #: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
 #: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:567 kfmgui.cpp:726 kfmman.cpp:343
-#: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
+#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:706 kfmman.cpp:381
+#: kfmman.cpp:1133 kfmman.cpp:1354 kfmman.cpp:1380 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1484 kfmprops.cpp:1716 kfmprops.cpp:1901
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
-#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:237 kfmtree.cpp:360
-#: kfmtree.cpp:391 kfmtree.cpp:397 kfmtree.cpp:403 kfmview.cpp:390
+#: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:275 kfmtree.cpp:401
+#: kfmtree.cpp:432 kfmtree.cpp:438 kfmtree.cpp:444 kfmview.cpp:390
 #: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:494 kfmview.cpp:500
 #: kfmview.cpp:506 kfmview.cpp:612 kfmview.cpp:616 kfmview.cpp:655
 #: kfmview.cpp:681 kfmview.cpp:702 kfmview.cpp:710 kfmview.cpp:718
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
 #: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
-#: root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187 root.cpp:1193
-#: root.cpp:1274 root.cpp:1787 root.cpp:1812
+#: root.cpp:942 root.cpp:1203 root.cpp:1221 root.cpp:1227 root.cpp:1233
+#: root.cpp:1314 root.cpp:1899 root.cpp:1924
 msgid "KFM Error"
 msgstr "KFM Greska"
 
-#: kfmexec.cpp:59 kfmgui.cpp:725 kfmman.cpp:1094
+#: kfmexec.cpp:59 kfmgui.cpp:705 kfmman.cpp:1132
 msgid "Malformed URL\n"
 msgstr "Pogreshen URL\n"
 
-#: kfmgui.cpp:912
+#: kfmgui.cpp:892
 msgid "Select files:"
 msgstr "Izberi dokumenti:"
 
-#: kfmgui.cpp:967
+#: kfmgui.cpp:947
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:968
+#: kfmgui.cpp:948
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:986
+#: kfmgui.cpp:966
 msgid "&Edit Bookmarks..."
 msgstr "&Editiraj gi Bookmarks ..."
 
-#: kfmgui.cpp:996
+#: kfmgui.cpp:976
 msgid "&Add Bookmark"
 msgstr "&Dodadi Bookmark"
 
-#: kfmgui.cpp:1026 kfmgui.cpp:1033
+#: kfmgui.cpp:1010 kfmman.cpp:1171 kfmtree.cpp:309 root.cpp:298
+#, fuzzy
+msgid "&New"
+msgstr "Nov "
+
+#: kfmgui.cpp:1013
+#, fuzzy
+msgid "New &Window"
+msgstr "&Nov Prozorec"
+
+#: kfmgui.cpp:1016
+#, fuzzy
+msgid "&Run..."
+msgstr "&Izvrshi ..."
+
+#: kfmgui.cpp:1018
+msgid "Open &Terminal"
+msgstr "Startuvaj &Terminal"
+
+#: kfmgui.cpp:1021
+msgid "&Open Location..."
+msgstr "&Otvori Lokacija ..."
+
+#: finddlg.cpp:66 kfmgui.cpp:1023
+msgid "&Find"
+msgstr "&Pronajdi"
+
+#: kfmgui.cpp:1058 kfmgui.cpp:1065 kfmman.cpp:1546 kfmman.cpp:1553
+#: kfmtree.cpp:508 kfmtree.cpp:515 root.cpp:1343 root.cpp:1350
 msgid "New "
 msgstr "Nov "
 
-#: kfmgui.cpp:1082
+#: kfmgui.cpp:1114
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1084
+#: kfmgui.cpp:1116
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1086
+#: kfmgui.cpp:1118
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1088
+#: kfmgui.cpp:1120
 #, fuzzy
 msgid "&Home"
 msgstr "Doma"
 
-#: kfmgui.cpp:1145 kfmgui.cpp:1317 kfmjob.cpp:37 kfmman.cpp:226
-#: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
-#: kiojob.cpp:87 root.cpp:1182
+#: kfmgui.cpp:1177 kfmgui.cpp:1349 kfmjob.cpp:37 kfmman.cpp:264
+#: kfmtree.cpp:433 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
+#: kiojob.cpp:87 root.cpp:1222
 msgid "ERROR: Malformed URL"
 msgstr "GRESKA: Pogresen URL"
 
-#: kfmgui.cpp:1271 kfmserver.cpp:184
+#: kfmgui.cpp:1303 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Otvori Lokacija:"
 
-#: kfmgui.cpp:1328
+#: kfmgui.cpp:1360
 msgid "KFM Confirm"
 msgstr "KFM Potvrdi"
 
-#: kfmgui.cpp:1329
+#: kfmgui.cpp:1361
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -350,11 +358,11 @@ msgstr ""
 "Dali navistina sakate da zavrsite?\n"
 "Vazznite desktop funkcii ke bidat izgubeni"
 
-#: kfmgui.cpp:1439
+#: kfmgui.cpp:1471
 msgid "Document: Done"
 msgstr "Dokument: Zavrsen"
 
-#: kfmview.cpp:391 root.cpp:903
+#: kfmview.cpp:391 root.cpp:943
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "GRESKA: URL vnesen preku samiot sebe si"
@@ -363,12 +371,12 @@ msgstr "GRESKA: URL vnesen preku samiot sebe si"
 msgid "ERROR: Drop over malformed URL"
 msgstr "GRESKA: Pad na sistemot zaradi greshen URL"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:430 kfmview.cpp:466
-#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1225
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:471 kfmview.cpp:466
+#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1265
 msgid "KFM Warning"
 msgstr "KFM Predupreduvanje"
 
-#: kfmtree.cpp:431 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1226
+#: kfmtree.cpp:472 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1266
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -378,19 +386,19 @@ msgstr ""
 "\n"
 "Ne postoi nacin za da gi dobiete nazad."
 
-#: kfmtree.cpp:398 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1188
+#: kfmtree.cpp:439 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1228
 msgid "ERROR: You dropped a URL over itself"
 msgstr "GRESKA: URL vnesen preku samiot sebe si"
 
-#: kfmtree.cpp:404 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1194
+#: kfmtree.cpp:445 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1234
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "GRESKA: Postavivte direktorium preku negov child direktorum"
 
-#: kfmexec.cpp:265 kfmman.cpp:948 kfmview.cpp:523
+#: kfmexec.cpp:265 kfmman.cpp:986 kfmview.cpp:523
 msgid "Open With:"
 msgstr "Otvori so:"
 
-#: kfmview.cpp:554 root.cpp:1125
+#: kfmview.cpp:554 root.cpp:1165
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "GRESKA: Ne mozze da se otvorat osobinite na multiple dokumenti"
 
@@ -410,11 +418,11 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:361 kfmview.cpp:656 root.cpp:1275
+#: kfmtree.cpp:402 kfmview.cpp:656 root.cpp:1315
 msgid "Could not access Trash Bin"
 msgstr "Ne mozzam da se uklucham so Kantata za Gjubre"
 
-#: kfmview.cpp:682 root.cpp:1164
+#: kfmview.cpp:682 root.cpp:1204
 msgid "Can not paste into multiple directories"
 msgstr "Ne mozzam da vnesam vo multiple direktoriumi"
 
@@ -572,7 +580,7 @@ msgstr "Cd"
 msgid "New View"
 msgstr "Nov Pogled"
 
-#: kfmtree.cpp:297 main.cpp:228
+#: kfmtree.cpp:338 main.cpp:228
 msgid "Move to Trash"
 msgstr "Odnesi vo Gjubre"
 
@@ -580,11 +588,11 @@ msgstr "Odnesi vo Gjubre"
 msgid "Open with"
 msgstr "Otvori so"
 
-#: kfmman.cpp:1329 kfmtree.cpp:229 main.cpp:232
+#: kfmman.cpp:1372 kfmtree.cpp:267 main.cpp:232
 msgid "Move"
 msgstr "Odnesi"
 
-#: kfmman.cpp:1333 kfmtree.cpp:233 main.cpp:234
+#: kfmman.cpp:1376 kfmtree.cpp:271 main.cpp:234
 msgid "Link"
 msgstr "Linkuvaj"
 
@@ -1005,7 +1013,7 @@ msgstr ""
 "Nekoj se obidel da si dade sam na sebe autorizacija\n"
 "so koristenje na pogreshena lozinka"
 
-#: root.cpp:706
+#: root.cpp:746
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -1014,36 +1022,36 @@ msgstr ""
 "Ne mozam da go izvrsham baranjeto.\n"
 "Novite dimenzii na mrezata ke ja promenat pozicijata na ikonite"
 
-#: root.cpp:741
+#: root.cpp:781
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Vnatreshna Greska: desktopDir e gresen"
 
-#: root.cpp:752
+#: root.cpp:792
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "GRESKA: Ne mozzam da go prochitam desktop direktoriumot '%s'"
 
-#: root.cpp:951
+#: root.cpp:991
 msgid "ERROR: Can not accept drop"
 msgstr "GRESHKA: Ne mozzam da se zakacham za drop"
 
-#: kfmman.cpp:1312 root.cpp:1788
+#: kfmman.cpp:1355 root.cpp:1900
 msgid "Dont know what to do."
 msgstr "Ne znam sto da pravam ponataka."
 
-#: kfmman.cpp:1338 kfmtree.cpp:238 root.cpp:1813
+#: kfmman.cpp:1381 kfmtree.cpp:276 root.cpp:1925
 msgid "Dont know what to do"
 msgstr "Ne znam sto da pravam ponataka"
 
-#: kfmexec.cpp:93 kfmman.cpp:344
+#: kfmexec.cpp:93 kfmman.cpp:382
 msgid "The file does not contain a URL"
 msgstr "Dokumentot ne sozdrzzi URL"
 
-#: kfmman.cpp:394
+#: kfmman.cpp:432
 msgid "Contacting host "
 msgstr "Priklichivanje na host "
 
-#: kfmman.cpp:398
+#: kfmman.cpp:436
 msgid "Working ..."
 msgstr "Rabotam ..."
 
@@ -1344,19 +1352,19 @@ msgstr "Direktorium "
 msgid " does not exist\n"
 msgstr " ne postoi\n"
 
-#: kfmtree.cpp:304
+#: kfmtree.cpp:345
 msgid "Add To Bookmarks"
 msgstr "Dodadi na Bookmarks"
 
-#: kfmtree.cpp:470
+#: kfmtree.cpp:574
 msgid "My Home"
 msgstr "My Home"
 
-#: kfmtree.cpp:472
+#: kfmtree.cpp:576
 msgid "Desktop"
 msgstr "Desktop"
 
-#: kfmtree.cpp:474
+#: kfmtree.cpp:578
 msgid "Root"
 msgstr "Koren (root)"
 
@@ -1399,69 +1407,6 @@ msgstr "Lozinka"
 #: kfmexec.cpp:141
 msgid "Trying to open"
 msgstr "Se obiduvam da otvoram"
-
-#: useragentdlg.cpp:44
-msgid "On server:"
-msgstr "Na server"
-
-#: useragentdlg.cpp:66
-msgid "login as:"
-msgstr "ukluchen kako:"
-
-#: useragentdlg.cpp:110
-msgid "Known bindings:"
-msgstr "Poznaci bindings:"
-
-#: kproxydlg.cpp:46
-msgid "Don't forget to save your settings!"
-msgstr "Ne zaboravaj da gi zapamtis tvoite setiranja"
-
-#: kproxydlg.cpp:54
-#, fuzzy
-msgid "Use proxy"
-msgstr "Korisnik"
-
-#: kproxydlg.cpp:132
-msgid "No Proxy for:"
-msgstr "Ne postoi Proxy za:"
-
-#: kkfmoptdlg.cpp:35
-msgid "&Proxy"
-msgstr ""
-
-#: kkfmoptdlg.cpp:38
-msgid "&HTTP"
-msgstr ""
-
-#: kkfmoptdlg.cpp:41
-msgid "User &Agent"
-msgstr ""
-
-#: kkfmoptdlg.cpp:47
-msgid "&Colors"
-msgstr ""
-
-#: kkfmoptdlg.cpp:50
-#, fuzzy
-msgid "&Other"
-msgstr "Ostanati"
-
-#: kkfmoptdlg.cpp:100
-#, fuzzy
-msgid "KFM Preferences Settings"
-msgstr "Setiranje na KFM Prebaruvachot"
-
-#: khttpoptdlg.cpp:39
-msgid "Accept languages:"
-msgstr ""
-
-#: khttpoptdlg.cpp:55
-msgid "Accept character sets:"
-msgstr ""
-
-#: khttpoptdlg.cpp:70
-msgid "Assume HTML"
-msgstr ""
 
 #: open-with.cpp:132
 msgid "This group is empty!"
@@ -1541,6 +1486,33 @@ msgid ""
 msgstr ""
 "Sintaktichka Greshka:\n"
 "kfmexec naredbata [URLs ....]\n"
+
+#~ msgid "On server:"
+#~ msgstr "Na server"
+
+#~ msgid "login as:"
+#~ msgstr "ukluchen kako:"
+
+#~ msgid "Known bindings:"
+#~ msgstr "Poznaci bindings:"
+
+#~ msgid "Don't forget to save your settings!"
+#~ msgstr "Ne zaboravaj da gi zapamtis tvoite setiranja"
+
+#, fuzzy
+#~ msgid "Use proxy"
+#~ msgstr "Korisnik"
+
+#~ msgid "No Proxy for:"
+#~ msgstr "Ne postoi Proxy za:"
+
+#, fuzzy
+#~ msgid "&Other"
+#~ msgstr "Ostanati"
+
+#, fuzzy
+#~ msgid "KFM Preferences Settings"
+#~ msgstr "Setiranje na KFM Prebaruvachot"
 
 #~ msgid "ERROR: You dropped some URL over itself"
 #~ msgstr "GRESKA: URL vnesen preku samiot sebe si"

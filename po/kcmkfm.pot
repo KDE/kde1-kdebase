@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-10 00:19+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,22 +151,22 @@ msgstr ""
 msgid "Known bindings:"
 msgstr ""
 
-#: rootopts.cpp:71
+#: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
 msgstr ""
 
-#: rootopts.cpp:83
+#: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
 msgstr ""
 
-#: rootopts.cpp:94
+#: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
 msgstr ""
 
-#: rootopts.cpp:105
+#: rootopts.cpp:103
 msgid "Icon foreground color:"
 msgstr ""
 
-#: rootopts.cpp:117
+#: rootopts.cpp:115
 msgid "Icon background color:"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-03 01:15+0100\n"
+"POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -228,41 +228,41 @@ msgstr "随机"
 msgid "Manual"
 msgstr "手工"
 
-#: windows.cpp:152
+#: windows.cpp:153
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:171
+#: windows.cpp:174
 #, fuzzy
 msgid "Focus policy"
 msgstr "焦点策略"
 
-#: windows.cpp:181
+#: windows.cpp:184
 msgid "Click to focus"
 msgstr "点击取得焦点"
 
-#: windows.cpp:183
+#: windows.cpp:186
 msgid "Focus follows mouse"
 msgstr "焦点随鼠标移动"
 
 #
-#: windows.cpp:185
+#: windows.cpp:188
 msgid "Classic focus follows mouse"
 msgstr "老式地焦点随鼠标移动"
 
 #
-#: windows.cpp:187
+#: windows.cpp:190
 msgid "Classic sloppy focus"
 msgstr "老式的随意取得焦点"
 
-#: windows.cpp:198
+#: windows.cpp:202
 msgid "Auto Raise"
 msgstr ""
 
-#: windows.cpp:205
+#: windows.cpp:209
 msgid "Delay (ms)"
 msgstr ""
 
