@@ -3,7 +3,7 @@ data_DATA = 3floppy_mount.xpm 3floppy_unmount.xpm 5floppy_mount.xpm \
 5floppy_unmount.xpm applications_package.xpm binary.xpm blockdevice.xpm \
 c_src.xpm cdrom_mount.xpm cdrom_unmount.xpm chardevice.xpm core.xpm \
 desktop.xpm document.xpm dvi.xpm exec.xpm f_src.xpm folder.xpm folder_blue.xpm \
-folder_cyan.xpm folder_green.xpm folder_locked.xpm folder_open.xpm \
+folder_cyan.xpm folder_green.xpm folder_open.xpm \
 folder_red.xpm folder_yellow.xpm font.xpm ftp.xpm games_package.xpm gf.xpm \
 graphics_package.xpm h_src.xpm html.xpm image.xpm info.xpm java_src.xpm \
 kfm.xpm kfm_fulltrash.xpm kfm_home.xpm kfm_refresh.xpm kfm_trash.xpm \
