@@ -48,9 +48,11 @@ from the X Consortium.
 #ifdef AIXV3
 # include <usersec.h>
 #endif
-#ifdef SECURE_RPC
-# include <rpc/rpc.h>
+#ifdef HAVE_RPC_KEY_PROT_H
 # include <rpc/key_prot.h>
+#endif
+#ifdef HAVE_RPC_RPC_H
+# include <rpc/rpc.h>
 #endif
 #ifdef K5AUTH
 # include <krb5/krb5.h>
