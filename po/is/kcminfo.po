@@ -1,0 +1,87 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-09-10 20:54+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Minni"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&Örgjörvi"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "notkun: kcminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "Kerfisupplýsingar"
+
+#: memory.cpp:11
+msgid "Total memory"
+msgstr "Heildarminni"
+
+#: memory.cpp:21
+msgid "Free memory"
+msgstr "Laust minni"
+
+#: memory.cpp:29
+msgid "Shared memory"
+msgstr "Samnýtt minni"
+
+#: memory.cpp:37
+msgid "Buffer memory"
+msgstr "Biðminni"
+
+#: memory.cpp:45
+msgid "Swap memory"
+msgstr "Diskminni"
+
+#: memory.cpp:53
+msgid "Free swap memory"
+msgstr "Laust diskminni"
+
+#: memory.cpp:74
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bæti  = %8.2f MB"
+
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101 memory_fbsd.cpp:22 memory_fbsd.cpp:23 memory_fbsd.cpp:24
+msgid "Not available"
+msgstr "Ekki til"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Við styðjum ekki enn þetta kerfi"
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+msgid "Not Available"
+msgstr "Akki til"
+
+#: processor_linux.cpp:19
+msgid "File Error!"
+msgstr "Skráarvilla!"
+
+#: processor_linux.cpp:20
+msgid "Cannot read /proc/cpuinfo"
+msgstr "Ekki tókst að lesa /proc/cpuinfo"
+
+#: processor_fbsd.cpp:47
+#, c-format
+msgid "%s, unknown speed"
+msgstr "%s, óþekktur hraði"
+
+#: processor_fbsd.cpp:49
+#, c-format
+msgid "%s running at %s MHz"
+msgstr "%s á %s MHz"

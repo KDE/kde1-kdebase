@@ -1,0 +1,164 @@
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@imf.au.dk>, 1998
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-20 00:20+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:58
+msgid "KDE Font Manager"
+msgstr "KDE Leturstjóri"
+
+#: main.cpp:71
+msgid "KDE Fonts"
+msgstr "KDE Letur"
+
+#: main.cpp:72
+msgid "Font Explorer"
+msgstr "Letur "
+
+#: main.cpp:73
+msgid "Raw X11 Font List"
+msgstr "Hrár X11 Leturlisti"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "Möguleg X11 Letur"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "Letur sem KDE notar"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "...og þótti sem þrjú sverð væru á lofti."
+
+#: kfontlist.cpp:62 kfontmanager.cpp:109
+msgid "About kfontmanager"
+msgstr "Um kletursjóra"
+
+#: kfontmanager.cpp:109
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kleturstjóri Útgáfa 0.2\n"
+"Höfundarréttur 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"HOME umhverfisbreytan\n"
+"hefur ekkert gildi\n"
+
+#: kfontmanager.cpp:289
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"Ekki tókst að búa til:\n"
+" ~/.kde/share/config/kdefonts\n"
+
+#: kfontmanager.cpp:294
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"Skráin ~/.kde/share/config/kdefonts er til,\n"
+"en þú hefur ekki skrifréttindi í hana.\n"
+"Því tókst ekki að vista KDE leturlistann."
+
+#: kfontlist.cpp:62  (I'll be damned if this should be here!)
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kleturstjóri Útgáfa 0.1\n"
+"Höfundarréttur 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontexplorer.cpp:126
+msgid "Select Font"
+msgstr "Veldu letur"
+
+#: kfontexplorer.cpp:130
+msgid "Requested Font"
+msgstr "Umbeðið letur"
+
+#: kfontexplorer.cpp:135
+msgid "Actual Font"
+msgstr "Raunverulegt letur"
+
+#: kfontexplorer.cpp:139 kfontexplorer.cpp:143
+msgid "Family:"
+msgstr "Fjölskylda:"
+
+#: kfontexplorer.cpp:163 kfontexplorer.cpp:168
+msgid "Size:"
+msgstr "Stærð:"
+
+#: kfontexplorer.cpp:177 kfontexplorer.cpp:182
+msgid "Weight:"
+msgstr "Vægi:"
+
+#: kfontexplorer.cpp:191 kfontexplorer.cpp:199
+msgid "Style:"
+msgstr "Leturbrigði:"
+
+#: kfontexplorer.cpp:234
+msgid "Charset"
+msgstr "Stafasett"
+
+#: kfontexplorer.cpp:246
+msgid "Size"
+msgstr "Stærð"
+
+#: kfontexplorer.cpp:285
+msgid "Weight"
+msgstr "Vægi"
+
+#: kfontexplorer.cpp:286 kfontexplorer.cpp:394
+msgid "normal"
+msgstr "venjulegt"
+
+#: kfontexplorer.cpp:287 kfontexplorer.cpp:396
+msgid "bold"
+msgstr "feitletrað"
+
+#: kfontexplorer.cpp:296
+msgid "Style"
+msgstr "Leturbrigði:"
+
+#: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
+msgid "roman"
+msgstr "lóðletrað"
+
+#: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
+msgid "italic"
+msgstr "skáletrað"
+
+#: kfontexplorer.cpp:326
+msgid "Dolor Ipse"
+msgstr "...sem þrjú sverð væru á lofti."
+
+#: kfontexplorer.cpp:430
+msgid "Bold"
+msgstr "Feitletrað"
+
+#: kfontexplorer.cpp:432
+msgid "Normal"
+msgstr "Venjulegt"

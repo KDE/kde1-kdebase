@@ -1,0 +1,67 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-19 21:30+0200\n"
+"Last-Translator: Logi Ragnarsson <logir>\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Óþekkt eining:"
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "KDE Stjórnborð"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "&Gleypa einingar"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 1.0\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"KDE Stjórnborð - Útgáfa 1.0\n"
+"\n"
+"Höfundur: Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Þakkir fá:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#: mainwidget.cpp:44
+msgid "System:"
+msgstr "Kerfi:"
+
+#: mainwidget.cpp:47
+msgid "User: "
+msgstr "Notandi:"
+
+#: mainwidget.cpp:53
+msgid "Hostname: "
+msgstr "Vél:"
+
+#: mainwidget.cpp:61
+msgid "System: "
+msgstr "Kerfi:"
+
+#: mainwidget.cpp:68
+msgid "Release: "
+msgstr "Útgáfa:"
+
+#: mainwidget.cpp:76
+msgid "Version: "
+msgstr "Dagsett:"
+
+#: mainwidget.cpp:83
+msgid "Machine: "
+msgstr "Örgjörvi"

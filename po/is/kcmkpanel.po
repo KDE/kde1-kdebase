@@ -1,0 +1,146 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:64
+msgid "&Panel"
+msgstr "S&pjald"
+
+#: main.cpp:70
+msgid "&Desktops"
+msgstr "S&kjáborð"
+
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr "Diskaflakkari"
+
+#: main.cpp:109
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "notkun: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+
+#: main.cpp:142
+msgid "KPanel Configuration"
+msgstr "KSpjald Stillingar"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Staðsetning"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "&Efst"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Vinstri"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "&Neðst"
+
+#: panel.cpp:63
+msgid "&Right"
+msgstr "&Hægri"
+
+#: panel.cpp:75
+msgid "Taskbar"
+msgstr "Keyrsluslá"
+
+#: panel.cpp:76
+msgid "&Hidden"
+msgstr "F&alin"
+
+#: panel.cpp:78
+msgid "T&op"
+msgstr "E&fst"
+
+#: panel.cpp:80
+msgid "Botto&m"
+msgstr "Ne&ðst"
+
+#: panel.cpp:82
+msgid "Top/Le&ft"
+msgstr "Efst til v&instri"
+
+#: panel.cpp:95
+msgid "Style"
+msgstr "Stíll"
+
+#: panel.cpp:97
+msgid "T&iny"
+msgstr "&Örsmátt"
+
+#: panel.cpp:99
+msgid "&Normal"
+msgstr "&Venjulegt"
+
+#: panel.cpp:101
+msgid "L&arge"
+msgstr "S&tórt"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "Sý&nileg"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "&Breidd"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Vísbendingar í valmynd"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "Sýna &vísbendingar"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "&Töf"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "ms"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "Annað"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "&Eigin valmynd fyrst"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "&Fela spjald sjálfvirkt"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "Fela &Keyrsluslá sjálfvirkt"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "Klukka"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "24 tíma"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "12 tíma AM/PM"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr "Breyta víðvært..."
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr "Breyta staðvært..."

@@ -1,0 +1,54 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:54
+msgid "&Mouse"
+msgstr "&Mús"
+
+#: main.cpp:57
+msgid "&Keyboard"
+msgstr "&Lyklaborð"
+
+#: main.cpp:63
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "notkun: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:104
+msgid "Input Devices Properties"
+msgstr "Eiginleikar inntakstækja"
+
+#: mouse.cpp:75
+msgid "Acceleration"
+msgstr "Hröðun"
+
+#: mouse.cpp:81
+msgid "Threshold"
+msgstr "Þröskuldur"
+
+#: mouse.cpp:84
+msgid "Button mapping"
+msgstr "Takkanotkun"
+
+#: mouse.cpp:86
+msgid "Right handed"
+msgstr "Rétthent"
+
+#: mouse.cpp:88
+msgid "Left handed"
+msgstr "Örvhent"
+
+#: keyboard.cpp:67
+msgid "Keyboard repeat"
+msgstr ""
+
+#: keyboard.cpp:75
+msgid "Key click volume"
+msgstr "Styrkur takahljóðs"

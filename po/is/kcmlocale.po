@@ -1,0 +1,54 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:52
+msgid "&Locale"
+msgstr "&Staðfærsla"
+
+#: main.cpp:58
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "notkun: kcmlocale [-init | language]\n"
+
+#: main.cpp:86
+msgid "Locale settings"
+msgstr "Staðfærslustillingar"
+
+#: locale.cpp:45
+msgid "Language"
+msgstr "Tungumál"
+
+#: locale.cpp:55
+msgid "First"
+msgstr "Fyrsta"
+
+#: locale.cpp:65
+msgid "Second"
+msgstr "Annað"
+
+#: locale.cpp:75
+msgid "Third"
+msgstr "Þriðja"
+
+#: locale.cpp:115
+msgid "without name!"
+msgstr "nafnlaust"
+
+#: locale.cpp:181
+msgid "Applying language settings"
+msgstr "Virki tumgumálastillingar"
+
+#: locale.cpp:182
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Breyttar tungumálastillingar hafa aðeins áhrif á forrit sem þú keyrir hér\n"
+"eftir. Til að breyta tungumáli allra forrita þaftu að stimpla þig út fyrst."

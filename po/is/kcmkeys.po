@@ -1,0 +1,103 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "&Staðlaðir flýtitakkar"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&Víðværir flýtihnappar"
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+msgstr "usage: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Stillingar takkatenginga"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Home"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "End"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Núverandi stilliskrá"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE sjálfgefið"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE lítið"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "&Takkastilliskrá"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "&Bæta við..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Vista breytingar"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Ekki tókst að fjarlægja stilliskrá"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Ekki tókst að fjarlægja þessa takkastilliskrá.\n"
+"Ef til vill hefur þú ekki skrifréttindi á\n"
+"skráakerfið þar sem stilliskráin er geymd."
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Nafnaárekstur"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Veldu nýtt nafn fyrir takkastilliskrána.\n"
+"Það sem þú valdir er nú þegar í listanum."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Bæta takkastilliskrá við"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Sláðu inn nafn fyrir takkastilliskrána\n"
+"sem á að bæta við listann þin.\n"
+""
+"Til að byrja með verða stillingarnar á\n"
+"skjánum færðar þar inn."

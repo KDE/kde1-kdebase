@@ -1,0 +1,189 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@hi.is>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-05-06 20:59+0200\n"
+"PO-Revision-Date: 1998-10-19 22:00+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
+"Language-Team: is\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Hljóð"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Kerfishljóð"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "Fara á skjáborð 1"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "Fara á skjáborð 2"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "Fara á skjáborð 3"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "Fara á skjáborð 4"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "Fara á skjáborð 5"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "Fara á skjáborð 6"
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "Fara á skjáborð 7"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "Fara á skjáborð 8"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Virkja glugga"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Opna nýjan glugga"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Loka glugga"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Keyra upp"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "Rúlla glugga upp"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "rúlla glugga niður"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Gluggi í táknmynd"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Gluggi úr táknmynd"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Hámarka glugga"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Afhámarka glugga"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Líma glugga við gler"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Losa glugga af gleri"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr "Window Trans New ???"
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr "Window Trans Delete ???"
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Stimpla út"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Kveðjuskilaboð"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Færa glugga, upphaf"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Færa glugga, lok"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Breyta stærð glugga, upphaf"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Breyta stærð glugga, lok"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "&Virkja kerfisljóð"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "&Prófa"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Atburðir:"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "&Hljóð"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Það má sleppa fleiri WAV skrám í hljóðalistann"
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "Óstudd slóð (URL)"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"KDE Kerfisljóðaeiningin styður ekki svona slóð (URL) í augnablikinu"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Þetta virðist ekki vera WAV skrá:\n"
+"%s"
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Röng ending á skráarnafni"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"Þessi skrá er nú þegar í listanum:\n"
+"%s"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Skráin er í listanum"

@@ -1,0 +1,172 @@
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Logi Ragnarsson <logir@imf.au.dk>, 1998
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-21 20:41+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
+"Language-Team: is\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"Svo virðist sem gluggastjóri sé núþegar í gangi.\n"
+"kwm er ekki gangsettur\n"
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: villa í frumstillingu. Hætt við!\n"
+
+#: main.C:483
+msgid "Preparing session ... "
+msgstr "Undirbý setu..."
+
+#: main.C:504
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Höfundarréttur 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:511
+msgid "Usage: "
+msgstr "Notkun: "
+
+#: main.C:522
+msgid "&Maximize"
+msgstr "&Hámarka"
+
+#: main.C:523
+msgid "&Restore"
+msgstr "&Endurheimta"
+
+#: main.C:524
+msgid "&Iconify"
+msgstr "Í &táknmynd"
+
+#: main.C:525
+msgid "&DeIconify"
+msgstr "Úr táknmynd"
+
+#: main.C:526
+msgid "&Sticky"
+msgstr "&Líma við gler"
+
+#: main.C:527
+msgid "&UnSticky"
+msgstr "&Losa af gleri"
+
+#: main.C:528
+msgid "Mo&ve"
+msgstr "&Færa"
+
+#: main.C:529
+msgid "Resi&ze"
+msgstr "&Breyta stærð"
+
+#: main.C:531
+msgid "&To desktop"
+msgstr "Á &skjáborð"
+
+#: main.C:533
+msgid "&Onto current desktop"
+msgstr "Á &þetta skjáborð"
+
+#: main.C:573
+msgid "One"
+msgstr "Eitt"
+
+#: main.C:576
+msgid "Two"
+msgstr "Tvö"
+
+#: main.C:579
+msgid "Three"
+msgstr "Þrjú"
+
+#: main.C:582
+msgid "Four"
+msgstr "Fjögur"
+
+#: main.C:585
+msgid "Five"
+msgstr "Fimm"
+
+#: main.C:588
+msgid "Six"
+msgstr "Sex"
+
+#: main.C:591
+msgid "Seven"
+msgstr "Sjö"
+
+#: main.C:594
+msgid "Eight"
+msgstr "Átta"
+
+#: main.C:608
+msgid "Unnamed Desktop"
+msgstr "Ónefnt skjáborð"
+
+#: main.C:918
+# FIXME?
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr ""
+
+#: main.C:1030
+# FIXME?
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr ""
+
+#: main.C:1353
+# FIXME
+msgid "*** No Tasks ***"
+msgstr "*** Engar keyrslur ***"
+
+#: minicli.C:119
+msgid "Command:"
+msgstr "Skipun:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "Úps!"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "Stimpla út"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Seta búin undir útstimplun"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Þessi forrit innihalda óvistuð gögn sem munu glatast."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Þessi forrit er ekki hægt að endurheimta í næstu setu, heldur bara\n"
+"endurræsa. Gaktu úr skugga um að í þeim séu engin mikilvæg óvistuð gögn."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Þessi forrit kunna ekki á X11 og þau er því ekki hægt að endurheimta í næstu\n"
+"setu. Gaktu úr skugga um að í þeim séu engin mikilvæg óvistuð gögn."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "Skipta á"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "Núverandi seta"
