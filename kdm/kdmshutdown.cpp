@@ -111,7 +111,7 @@ verify_root_pw( const char* pw)
      // shadow systems
      if( spws != NULL) {
        char* tmp = pws->pw_passwd;
-       pws->pw_passwd = spws->ps_pwdp;
+       pws->pw_passwd = spws->sp_pwdp;
        spws->sp_pwdp = tmp;
      }
      endspent();
