@@ -1,3 +1,6 @@
+  
+  - black-on-black fixed: now black-on-white if a 
+    color allocation fails
   - multiline selection fixed again
  
   - scrollbar problems fixed 

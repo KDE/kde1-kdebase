@@ -167,7 +167,7 @@ void init_display(int argc,char **argv)
 {
   XGCValues gcv;
   int i,len;
-  char *display_string, *s;
+  char *display_string;
 
 
   /* yet done in rxvt_main() in rxvt.c . (Matthias) */
@@ -408,28 +408,42 @@ void extract_colors( char *fg_string, char *bg_string){
    */
   XGCValues gcv;
   XSetWindowAttributes winattr;
+  int baw = 0;
   
   /* changed this error handling to black-on-white defaults. Matthias. */ 
 
   if (XParseColor(display,colormap,fg_string,&foreground_color) == 0){
-    error("invalid foreground color %s.\n Will use black.",fg_string);
-    XParseColor(display,colormap,"black",&foreground_color);
+    error("invalid foreground color %s.",fg_string);
+    baw = 1;
   }
-  
-  if (XAllocColor(display,colormap,&foreground_color) == 0)
-    error("can't allocate color %s",fg_string);
+
+  if (!baw && XParseColor(display,colormap,bg_string,&background_color) == 0){
+    error("invalid background color %s.",bg_string);
+    baw = 1;
+  }
+
+  if (!baw && XAllocColor(display,colormap,&foreground_color) == 0){
+    error("can't allocate color %s.",fg_string);
+    baw = 1;
+  }
   else
     foreground = foreground_color.pixel;
 
-  if (XParseColor(display,colormap,bg_string,&background_color) == 0){
-    error("invalid background color %s.\n Will use white.",bg_string);
-    XParseColor(display,colormap,"white",&background_color);
+  if (!baw && XAllocColor(display,colormap,&background_color) == 0){
+    error("can't allocate color %s.",bg_string);
+    baw = 1;
   }
-  
-  if (XAllocColor(display,colormap,&background_color) == 0)
-    error("can't allocate color %s",bg_string);
   else
     background = background_color.pixel;
+
+  if (baw){
+    /* black-on-white default */ 
+    error ("will use black-on-white instead\n");
+    foreground = XBlackPixel(display, screen);
+    background = XWhitePixel(display, screen);
+  }
+  
+
 
   pixel_colors[0] = foreground;
   pixel_colors[1] = background;

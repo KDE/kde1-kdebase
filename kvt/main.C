@@ -166,7 +166,6 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 kVt::kVt( QWidget *parent, const char *name )
   : QWidget( parent, name){
-    int i;
 
     // set the default options
     menubar_visible = TRUE;
@@ -531,7 +530,8 @@ void kVt::color_menu_activated( int item){
     break;
   case 3: 
     fg_string = "black";
-    bg_string = "lightyellow";
+//     bg_string = "lightyellow";
+    bg_string = "#FFFFDD";
     break;
   }
   if (!keyboard_secured){
