@@ -49,6 +49,7 @@ public:
 
 protected slots:
   virtual void slotAdd();
+  virtual void slotSave();
   virtual void slotSaveAs();
   virtual void slotExtract();
   virtual void slotRemove();
@@ -66,6 +67,7 @@ private:
   QGridLayout *mGrid;
   QListBox *mThemesList;
   QPushButton *mBtnAdd;
+  QPushButton *mBtnSave;
   QPushButton *mBtnSaveAs;
   QPushButton *mBtnExtract;
   QPushButton *mBtnRemove;

@@ -261,13 +261,8 @@ bool Theme::load(const QString aPath, QString aName)
   dir.setNameFilter("*.preview.*");
   mPreviewFile = dir[0];
 
-  if (mConfig) {
-      delete mConfig; mConfig = 0;
-  }
-  // read theme config file
-  mConfig = new KSimpleConfig( mThemePath + mThemercFile, true);
-
-  readConfig();
+  // Read .themerc file from disk
+  resync();
 
   return true;
 }
@@ -997,12 +992,8 @@ void Theme::uninstallFiles(const char* aGroupName)
   debug("*** done uninstall of %s", aGroupName);
 }
 
-
-//-----------------------------------------------------------------------------
-void Theme::install(void)
+void Theme::resync()
 {
-  debug("Theme::install() started");
-
 // Reread the .themerc file
   if (mConfig) {
       delete mConfig; mConfig = 0;
@@ -1011,6 +1002,14 @@ void Theme::install(void)
   mConfig = new KSimpleConfig( mThemePath + mThemercFile, true);
 
   readConfig();
+}
+
+//-----------------------------------------------------------------------------
+void Theme::install(void)
+{
+  debug("Theme::install() started");
+
+  resync(); // Sync with the version on disk
 
   loadMappings();
   mCmdList.clear();

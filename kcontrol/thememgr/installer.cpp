@@ -36,6 +36,8 @@
 #include <qmultilinedit.h>
 #include <qtooltip.h>
 #include <kbuttonbox.h>
+#include <kmsgbox.h>
+#include <qmessagebox.h>
 #include <kfiledialog.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -82,8 +84,12 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
   QToolTip::add(mBtnAdd, i18n("Add a new theme to the list."));
   connect(mBtnAdd, SIGNAL(clicked()), SLOT(slotAdd()));
 
+  mBtnSave = bbox->addButton(i18n("Save"));
+  QToolTip::add(mBtnSave, i18n("Save the Work directory"));
+  connect(mBtnSave, SIGNAL(clicked()), SLOT(slotSave()));
+
   mBtnSaveAs = bbox->addButton(i18n("Save as..."));
-  QToolTip::add(mBtnSaveAs, i18n("Save the selected theme as..."));
+  QToolTip::add(mBtnSaveAs, i18n("Save the Work directory as..."));
   connect(mBtnSaveAs, SIGNAL(clicked()), SLOT(slotSaveAs()));
 
   mBtnExtract = bbox->addButton(i18n("Create..."));
@@ -136,8 +142,9 @@ static int findItem(QListBox *list, const QString aText)
   return -1;
 }
 
-static void removeFromList(QListBox *list, QString name)
+static void removeFromList(QListBox *list, QString sName)
 {
+  QString name = sName.stripWhiteSpace();
   int it = findItem(list, (const char *) name);
   if (it >= 0) list->removeItem(it);
   it = findItem(list, (const char *) (name+" "));
@@ -146,17 +153,33 @@ static void removeFromList(QListBox *list, QString name)
 
 static void addToList(QListBox *list, QString name)
 {
-  // WABA: Hack to keep the "Default" theme on top.
+  sSettingTheme = true;
+  // WABA: Horrible Hack to keep the "Default" theme on top.
+  if ((name == "Default ") || (name == "Default"))
+  {
+    bool update = list->autoUpdate();
+    list->setAutoUpdate( false );
+    list->removeItem(0);
+    list->insertItem(name, 0);
+    list->setAutoUpdate( update );
+    list->setCurrentItem(findItem(list, name)); 
+    if ( update )
+       list->repaint();
+    sSettingTheme = false;
+    return;
+  }
+  QString sDefault = list->text(0);
   bool update = list->autoUpdate();
   list->setAutoUpdate( false );
   list->removeItem(0);
   removeFromList(list, name);
   list->inSort(name);
-  list->insertItem("Default ", 0);
+  list->insertItem(sDefault, 0);
   list->setAutoUpdate( update );
   list->setCurrentItem(findItem(list, name)); 
   if ( update )
      list->repaint();
+  sSettingTheme = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -165,6 +188,7 @@ void Installer::readThemesList(void)
   QDir d(Theme::globalThemesDir(), 0, QDir::Name, QDir::Files|QDir::Dirs);
   QStrList* entryList;
   QString name;
+  QString sDefault = "Default ";
 
   if (mTheme) {
     delete mTheme;
@@ -181,8 +205,7 @@ void Installer::readThemesList(void)
   {
     if (name[0]=='.') continue;
     if (name=="CVS" || 
-        name.right(8)==".themerc" || 
-        name.left(8) == "Default.") 
+        name.right(8)==".themerc")
       continue;
     if (!pathToThemeName(name))
     {
@@ -190,6 +213,8 @@ void Installer::readThemesList(void)
       if (!d.exists(path))
          continue;
     }
+    if (name == "Default")
+      continue;
     // Dirty hack: the trailing space marks global themes ;-)
     removeFromList(mThemesList, name);
     mThemesList->inSort(name + " ");
@@ -202,8 +227,7 @@ void Installer::readThemesList(void)
   {
     if (name[0]=='.') continue;
     if (name=="CVS" || 
-        name.right(8)==".themerc" || 
-        name.left(8) == "Default.") 
+        name.right(8)==".themerc")
       continue;
     if (!pathToThemeName(name))
     {
@@ -211,11 +235,16 @@ void Installer::readThemesList(void)
       if (!d.exists(path))
          continue;
     }
+    if (name == "Default")
+    {
+      sDefault = name;
+      continue;
+    }
     removeFromList(mThemesList, name);
     mThemesList->inSort(name);
   }
 
-  mThemesList->insertItem("Default ", 0);
+  mThemesList->insertItem(sDefault, 0);
   mThemesList->setCurrentItem(0);
   slotSetTheme(0);
 }
@@ -272,10 +301,10 @@ void Installer::slotExtract()
   mText->setText("");
   theme.extract();
   theme.save(Theme::themesDir()+name+".tar.gz");
-//  sSettingTheme = true;
   addToList(mThemesList, name);
-//  sSettingTheme = false;
-//  slotSetTheme(mThemesList->currentItem());
+  slotSetTheme(mThemesList->currentItem());
+  KMsgBox::message(this, kapp->name(), i18n("Theme created."),
+	QMessageBox::Default | QMessageBox::Information );
 }
 
 
@@ -288,28 +317,83 @@ void Installer::slotRemove()
   QFileInfo finfo;
 
   if (cur < 0) return;
-  themeFile = Theme::themesDir() + mThemesList->text(cur);
+  QString sName = mThemesList->text(cur);
+  themeFile = Theme::themesDir() + sName;
   finfo.setFile(themeFile+".tar.gz");
   if (finfo.exists())
      themeFile += ".tar.gz";
-  else
-     themeFile += ".tgz";
-  cmd.sprintf("rm -rf \"%s\"", (const char*)themeFile);
-  rc = system(cmd);
-  finfo.setFile(themeFile);
-  if (rc || finfo.exists())
-  {
-    if (rc)
-      warning(i18n("Failed to remove theme:\n%s\n(%s)"), 
-             (const char*)themeFile, strerror(errno));
-    else
-      warning(i18n("Failed to remove theme %s"), (const char*)themeFile);
-    return;
+  else {
+     finfo.setFile(themeFile+".tgz");
+     if (finfo.exists())
+       themeFile += ".tgz";
+     else {
+       finfo.setFile(themeFile);
+       if (!finfo.exists())
+       {
+           themeFile = 0;
+           KMsgBox::message(this, kapp->name(), 
+	     i18n("The "),
+	     QMessageBox::Default | QMessageBox::Warning );
+       }
+     }
   }
-  mThemesList->removeItem(cur);
-  if (cur >= (int)mThemesList->count()) cur--;
-  mThemesList->setCurrentItem(cur);
+
+  if (themeFile)
+  {
+    cmd.sprintf("rm -rf \"%s\"", (const char*)themeFile);
+    rc = system(cmd);
+    finfo.setFile(themeFile);
+    if (rc || finfo.exists())
+    {
+      if (rc)
+        warning(i18n("Failed to remove theme:\n%s\n(%s)"), 
+               (const char*)themeFile, strerror(errno));
+      else
+        warning(i18n("Failed to remove theme %s"), (const char*)themeFile);
+      return;
+    }
+  }
+  else 
+  {
+    KMsgBox::message(this, kapp->name(), 
+	     i18n("The file(s) of this theme could not be found!"),
+	     QMessageBox::Default | QMessageBox::Warning );
+  }
+  // We have removed a local theme... Did it hide a global theme??
+  bool bGlobalTheme = true;
+  QFileInfo fi;
+  fi.setFile(Theme::globalThemesDir()+sName+".tgz");
+  if (!fi.exists())
+  {
+     fi.setFile(Theme::globalThemesDir()+sName+".tar.gz");
+     if (!fi.exists())
+     {
+        fi.setFile(Theme::globalThemesDir()+sName);
+        if (!fi.exists())
+	   bGlobalTheme = false;
+     }
+  }
+  if (bGlobalTheme)
+  {
+    addToList(mThemesList, sName+" "); // Add global theme to list
+  }
+  else
+  {
+    sSettingTheme = true;
+    mThemesList->removeItem(cur);
+    if (cur >= (int)mThemesList->count()) 
+     cur = (int) mThemesList->count()-1;
+    mThemesList->setCurrentItem(cur);
+    sSettingTheme = false;
+  }
   slotSetTheme(cur);
+  if (bGlobalTheme)
+     KMsgBox::message(this, kapp->name(), i18n("Theme removed locally.\n"
+"Now using global version."),
+	QMessageBox::Default | QMessageBox::Information );
+  else
+     KMsgBox::message(this, kapp->name(), i18n("Theme removed."),
+	QMessageBox::Default | QMessageBox::Information );
 }
 
 //-----------------------------------------------------------------------------
@@ -342,13 +426,13 @@ void Installer::slotSetTheme(int id)
     else path = Theme::themesDir() + name;
 
     mTheme = new Theme();
-    enabled = mTheme->load(path, name);
+    enabled = mTheme->load(path+".tgz", name);
     if (!enabled)
     {
       enabled = mTheme->load(path+".tar.gz", name);
       if (!enabled)
       {
-        enabled = mTheme->load(path+".tgz", name);
+        enabled = mTheme->load(path, name);
         if (!enabled)
         {
           mPreview->setText(i18n("(no theme chosen)"));
@@ -360,6 +444,7 @@ void Installer::slotSetTheme(int id)
     }
   }
 
+  mBtnSave->setEnabled(enabled);
   mBtnSaveAs->setEnabled(enabled);
   mBtnRemove->setEnabled(enabled && !isGlobal);
   emit changed(mTheme);
@@ -403,6 +488,9 @@ void Installer::slotAdd()
   }
  
   addToList(mThemesList, theme);
+  slotSetTheme(mThemesList->currentItem());
+  KMsgBox::message(this, kapp->name(), i18n("Theme added."),
+	QMessageBox::Default | QMessageBox::Information );
 }
 
 
@@ -441,6 +529,35 @@ void Installer::slotSaveAs()
   fpath = dlg.selectedFile();
 
   mTheme->save(fpath);
+  KMsgBox::message(this, kapp->name(), i18n("Theme saved."),
+	QMessageBox::Default | QMessageBox::Information );
+
+}
+
+//-----------------------------------------------------------------------------
+void Installer::slotSave()
+{
+  QString name;
+  bool isGlobal = false;
+  int cur;
+
+  if (!mTheme) return;
+
+  cur = mThemesList->currentItem();
+  if (cur < 0) return;
+
+  name = mThemesList->text(cur);
+  name.detach();
+  if (name.isEmpty()) return;
+
+  isGlobal = (name[name.length()-1]==' ');
+  if (isGlobal) name = name.stripWhiteSpace();
+ 
+  mTheme->save(Theme::themesDir()+name+".tar.gz");
+  addToList(mThemesList, name);
+  mBtnRemove->setEnabled(true);
+  KMsgBox::message(this, kapp->name(), i18n("Theme saved."),
+	QMessageBox::Default | QMessageBox::Information );
 }
 
 

@@ -132,6 +132,9 @@ public:
   /** Uninstall files of last theme installation for given group */
   virtual void uninstallFiles(const char* groupName);
 
+  /** Reread the .themerc file from disk **/
+  virtual void resync();
+
 protected:
   /** Write color entry to config file. */
   void writeColorEntry(KConfigBase*, const char* key, const QColor& color);
