@@ -295,7 +295,7 @@ waitAbort (n)
 	Longjmp (tenaciousClient, 1);
 }
 
-#if defined(_POSIX_SOURCE) || defined(SYSV) || defined(SVR4)
+#if defined(_POSIX_SOURCE) || defined(SYSV) || defined(SVR4) || defined(hpux)
 #define killpg(pgrp, sig) kill(-(pgrp), sig)
 #endif
 

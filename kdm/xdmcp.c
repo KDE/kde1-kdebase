@@ -374,7 +374,11 @@ WaitForSomething ()
 		ChildReady= 1;
 	}
 #else
+# if !defined(hpux)	
 	nready = select (WellKnownSocketsMax + 1, &reads, 0, 0, 0);
+# else
+	nready = select (WellKnownSocketsMax + 1, (int*)reads.fds_bits, 0, 0, 0);
+# endif /* hpux */
 #endif
 	Debug ("select returns %d.  Rescan: %d  ChildReady: %d\n",
 		nready, Rescan, ChildReady);

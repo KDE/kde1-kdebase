@@ -22,6 +22,11 @@
 # define SECURE_RPC 1
 #endif
 
+/* Too many systems have trouble with secure rpc,
+   so its disabled for now:
+*/
+#undef SECURE_RPC
+
 #ifdef HAVE_PAM
 # define USE_PAM 1
 #else

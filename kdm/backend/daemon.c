@@ -176,6 +176,10 @@ BecomeDaemon ()
 #endif / * MINIX * /
 #endif / * !__EMX__ * /
 */
+/* HP/UX fix */ 
+#ifndef TIOCNOTTY
+# define TIOCNOTTY _IO('t', 113)
+#endif
     /* This works for Linux /stefh */
     if ((i = open ("/dev/tty", O_RDWR)) >= 0) {	/* did open succeed? */
 	 (void) ioctl (i, TIOCNOTTY, (char *) 0);    /* detach, BSD style */
