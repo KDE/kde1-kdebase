@@ -1,5 +1,10 @@
+SUBDIRS = apps pics
 
 install-data-local: runkappfinder_$(RUN_KAPPFINDER)
+
+install-exec-local:
+	$(mkinstalldirs) $(bindir)
+	$(INSTALL_SCRIPT) ./kappfinder $(bindir)
 
 runkappfinder_yes:
 	echo "Installing non-KDE applications"

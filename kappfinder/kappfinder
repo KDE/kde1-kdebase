@@ -21,14 +21,20 @@
 
 # test the arguments
 if [ $# -ne 1 ]; then
-  echo "usage: $0 \$KDEDIR"
-  exit 1
+  INSTPATH=$HOME/.kde
+else
+  INSTPATH=$1
 fi
-if [ ! -d $1 ]; then
-  echo "the path $1 is not valid!"
+
+if [ ! -d $INSTPATH ]; then
+  echo "the path $INSTPATH is not valid!"
   exit 1
 fi
 
+OLDDIR=`pwd`
+cd $KDEDIR/share/apps/kappfinder
+
+echo "Installing to $INSTPATH"
 
 # iterate over all kdelnk files
 for file in `find apps -name "*.kdelnk"` 
@@ -44,15 +50,15 @@ do
 
     # create the directory
     pathname=`echo $file | sed "s/\/[^\/]*kdelnk$//"`    
-    mkdir -m 755 -p $1/share/applnk/$pathname
+    mkdir -m 755 -p $INSTPATH/share/applnk/$pathname
 
     # copy the kdelnk file
-    cp $file $1/share/applnk/$pathname
+    cp $file $INSTPATH/share/applnk/$pathname
 
     # copy the icon file
     picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
     if [ -f "pics/$picname" ]; then
-      cp pics/$picname $1/share/icons
+      cp pics/$picname $INSTPATH/share/icons
     fi
 
     # copy the mini icon file
@@ -61,7 +67,7 @@ do
       minipic=$picname
     fi
     if [ -f "pics/mini/$minipic" ]; then
-      cp pics/mini/$minipic $1/share/icons/mini
+      cp pics/mini/$minipic $INSTPATH/share/icons/mini
     fi
 
   else  
@@ -75,17 +81,17 @@ for file in `find apps -name ".directory"`
 do
 
   # copy the .directory file
-  cp $file $1/share/applnk/$file 2>/dev/null
+  cp $file $INSTPATH/share/applnk/$file 2>/dev/null
   
   # continue, if the file was not installed
-  if [ ! -f $1/share/applnk/$file ]; then
+  if [ ! -f $INSTPATH/share/applnk/$file ]; then
     continue
   fi
 
   # copy the icon
   picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
   if [ -f "pics/$picname" ]; then
-    cp pics/$picname $1/share/icons
+    cp pics/$picname $INSTPATH/share/icons
   fi
 
   # copy the mini icon file
@@ -94,10 +100,13 @@ do
     minipic=$picname
   fi
   if [ -f "pics/mini/$minipic" ]; then
-    cp pics/mini/$minipic $1/share/icons/mini
+    cp pics/mini/$minipic $INSTPATH/share/icons/mini
   fi
 
 done
+
+
+cd $OLDPATH
 
 
 # exit with success
