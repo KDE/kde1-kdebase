@@ -239,7 +239,8 @@ int GotoLineDialog::getLine() {
   return atoi(e1->text());
 }
 
-SettingsDialog::SettingsDialog(int flags, int wrapAt, int tabWidth,
+
+SettingsDialog::SettingsDialog(int flags, int wrapAt, int tabWidth, int undoSteps,
   QWidget *parent, const char *name)
   : QDialog(parent,name,true) {
 
@@ -333,6 +334,16 @@ SettingsDialog::SettingsDialog(int flags, int wrapAt, int tabWidth,
   r.moveBy(0,25);
   e2->setGeometry(r);
 
+  e3 = new QLineEdit(this);
+  sprintf(buf,"%d",undoSteps);
+  e3->setText(buf);
+  label = new QLabel(e3,i18n("Undo steps:"),this);
+
+  r.moveBy(0,30);
+  label->setGeometry(r);
+  r.moveBy(0,25);
+  e3->setGeometry(r);
+
 
   button = new QPushButton(i18n("&OK"),this);
   button->setDefault(true);
@@ -373,4 +384,8 @@ int SettingsDialog::getWrapAt() {
 
 int SettingsDialog::getTabWidth() {
   return atoi(e2->text());
+}
+
+int SettingsDialog::getUndoSteps() {
+  return atoi(e3->text());
 }

@@ -20,6 +20,11 @@ char *bashKeywords[] = {
   "break","case","done","do","elif","else","esac","exit","export","fi","for",
   "function","if","in","return","select","then","until","while",".",0L};
 
+char *modulaKeywords[] = {
+  "BEGIN","CONST","DEFINITION","DO","ELSE","ELSIF","END","FOR","FROM","IF",
+  "IMPLEMENTATION","IMPORT","MODULE","PROCEDURE","RECORD","REPEAT","RETURN",
+  "THEN","TYPE","VAR","WHILE","WITH","|",0L};
+
 
 HlItem::HlItem(int attribute, int context)
   : attr(attribute), ctx(context) {
@@ -72,12 +77,27 @@ const char *HlStringDetect::checkHgl(const char *s) {
   return 0L;
 }
 
+HlRangeDetect::HlRangeDetect(int attribute, int context, const char *s)
+  : HlItem(attribute,context) {
+  sChar[0] = s[0];
+  sChar[1] = s[1];
+}
+
+const char *HlRangeDetect::checkHgl(const char *s) {
+  if (*s == sChar[0]) {
+    do {
+      s++;
+      if (!*s) return 0L;
+    } while (*s != sChar[1]);
+    return s + 1;
+  }
+  return 0L;
+}
 
 
 KeywordData::KeywordData(const char *str) {
-
   len = strlen(str);
-  s = new char(len);
+  s = new char[len];
   memcpy(s,str,len);
 }
 
@@ -141,28 +161,29 @@ HlFloat::HlFloat(int attribute, int context)
 }
 
 const char *HlFloat::checkHgl(const char *s) {
-  bool b1, b2;
+  bool b;
 
-  b1 = false;
+  b = false;
   while (*s >= '0' && *s <= '9') {
     s++;
-    b1 = true;
+    b = true;
   }
-  if (*s == '.') s++; else return 0L;
-  b2 = false;
-  while (*s >= '0' && *s <= '9') {
+  if (*s == '.') {
     s++;
-    b2 = true;
+    while (*s >= '0' && *s <= '9') {
+      s++;
+      b = true;
+    }
   }
-  if (!b1 && !b2) return 0L;
+  if (!b) return 0L;
   if (*s == 'E' || *s == 'e') s++; else return s;
   if (*s == '-') s++;
-  b1 = false;
+  b = false;
   while (*s >= '0' && *s <= '9') {
     s++;
-    b1 = true;
+    b = true;
   }
-  if (b1) return s; else return 0L;
+  if (b) return s; else return 0L;
 }
 
 
@@ -226,15 +247,15 @@ const char *HlCFloat::checkHgl(const char *s) {
   return s;
 }
 
-HlCStringCont::HlCStringCont(int attribute, int context)
+HlLineContinue::HlLineContinue(int attribute, int context)
   : HlItem(attribute,context) {
 }
 
-bool HlCStringCont::endEnable(char c) {
+bool HlLineContinue::endEnable(char c) {
   return c == '\0';
 }
 
-const char *HlCStringCont::checkHgl(const char *s) {
+const char *HlLineContinue::checkHgl(const char *s) {
   if (*s == '\\') return s + 1;
   return 0L;
 }
@@ -317,7 +338,7 @@ const char *HlCPrep::checkHgl(const char *s) {
   }
   return 0L;
 }
-
+/*
 HlHtmlChar::HlHtmlChar(int attribute, int context)
   : HlItem(attribute,context) {
 }
@@ -332,7 +353,7 @@ const char *HlHtmlChar::checkHgl(const char *s) {
   }
   return 0L;
 }
-
+*/
 HlHtmlTag::HlHtmlTag(int attribute, int context)
   : HlItem(attribute,context) {
 }
@@ -574,24 +595,28 @@ void CHighlight::makeContextList() {
     c->items.append(new Hl2CharDetect(9,3,"/*"));
     c->items.append(new HlCPrep(10,4));
   contextList[1] = c = new HlContext(7,0);
-    c->items.append(new HlCStringCont(7,8));
+    c->items.append(new HlLineContinue(7,6));
     c->items.append(new HlCStringChar(8,1));
     c->items.append(new HlCharDetect(7,0,'"'));
   contextList[2] = new HlContext(9,0);
   contextList[3] = c = new HlContext(9,3);
     c->items.append(new Hl2CharDetect(9,0,"*/"));
   contextList[4] = c = new HlContext(10,0);
-    c->items.append(new HlCharDetect(11,5,'"'));
-    c->items.append(new HlCharDetect(11,6,'<'));
+    c->items.append(new HlLineContinue(10,7));
+    c->items.append(new HlRangeDetect(11,4,"\"\""));
+    c->items.append(new HlRangeDetect(11,4,"<>"));
+//    c->items.append(new HlCharDetect(11,5,'"'));
+//    c->items.append(new HlCharDetect(11,6,'<'));
     c->items.append(new Hl2CharDetect(9,2,"//"));
-    c->items.append(new Hl2CharDetect(9,7,"/*"));
-  contextList[5] = c = new HlContext(11,0);
-    c->items.append(new HlCharDetect(11,4,'"'));
-  contextList[6] = c = new HlContext(11,0);
-    c->items.append(new HlCharDetect(11,4,'>'));
-  contextList[7] = c = new HlContext(9,7);
+    c->items.append(new Hl2CharDetect(9,5,"/*"));
+//  contextList[5] = c = new HlContext(11,0);
+//    c->items.append(new HlCharDetect(11,4,'"'));
+//  contextList[6] = c = new HlContext(11,0);
+//    c->items.append(new HlCharDetect(11,4,'>'));
+  contextList[5] = c = new HlContext(9,5);
     c->items.append(new Hl2CharDetect(9,4,"*/"));
-  contextList[8] = new HlContext(0,1);
+  contextList[6] = new HlContext(0,1);
+  contextList[7] = new HlContext(0,4);
 
   setKeywords(keyword);
 }
@@ -639,7 +664,7 @@ void HtmlHighlight::makeContextList() {
   HlContext *c;
 
   contextList[0] = c = new HlContext(0,0);
-    c->items.append(new HlHtmlChar(1,0));
+    c->items.append(new HlRangeDetect(1,0,"&;"));
     c->items.append(new HlStringDetect(2,1,"<!--"));
     c->items.append(new HlStringDetect(2,2,"<COMMENT>"));
     c->items.append(new HlCharDetect(3,3,'<'));
@@ -675,7 +700,6 @@ void BashHighlight::makeDefAttribs() {
 void BashHighlight::makeContextList() {
   HlContext *c;
   HlKeyword *keyword;
-  char **w;
 
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
@@ -688,13 +712,48 @@ void BashHighlight::makeContextList() {
   contextList[2] = c = new HlContext(4,0);
     c->items.append(new HlCharDetect(4,0,'`'));
 
-  w = bashKeywords;
-  while (*w) {
-    keyword->addWord(*w);
-    w++;
-  }
+  keyword->addList(bashKeywords);
 }
 
+ModulaHighlight::ModulaHighlight(const char *hName) : Highlight(hName) {
+}
+
+ModulaHighlight::~ModulaHighlight() {
+}
+
+void ModulaHighlight::makeDefAttribs() {
+  QFont font1("courier",12,QFont::Normal,false);
+  QFont font2("courier",12,QFont::Bold,false);
+  QFont font3("courier",12,QFont::Normal,true);
+
+  attribs[0] = new Attribute("Normal Text",black,white,font1);
+  attribs[1] = new Attribute("Keyword",black,white,font2);
+  attribs[2] = new Attribute("Decimal",blue,cyan,font1);
+  attribs[3] = new Attribute("Hex",darkCyan,cyan,font1);
+  attribs[4] = new Attribute("Float",darkMagenta,cyan,font1);
+  attribs[5] = new Attribute("String",red,red,font1);
+  attribs[6] = new Attribute("Comment",darkGray,gray,font3);
+
+}
+
+void ModulaHighlight::makeContextList() {
+  HlContext *c;
+  HlKeyword *keyword;
+
+  contextList[0] = c = new HlContext(0,0);
+    c->items.append(keyword = new HlKeyword(1,0));
+    c->items.append(new HlCInt(2,0));
+    c->items.append(new HlCHex(3,0));
+    c->items.append(new HlCFloat(4,0));
+    c->items.append(new HlCharDetect(5,1,'"'));
+    c->items.append(new Hl2CharDetect(6,2,"(*"));
+  contextList[1] = c = new HlContext(5,0);
+    c->items.append(new HlCharDetect(5,0,'"'));
+  contextList[2] = c = new HlContext(6,2);
+    c->items.append(new Hl2CharDetect(6,0,"*)"));
+
+  keyword->addList(modulaKeywords);
+}
 
 
 HighlightDialog::HighlightDialog(QStrList &types, QWidget *parent,

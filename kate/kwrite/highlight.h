@@ -54,6 +54,13 @@ class HlStringDetect : public HlItem {
     int len;
 };
 
+class HlRangeDetect : public HlItem {
+  public:
+    HlRangeDetect(int attribute, int context, const char *);
+    virtual const char *checkHgl(const char *);
+  protected:
+    char sChar[2];
+};
 
 
 class KeywordData {
@@ -111,9 +118,9 @@ class HlCFloat : public HlFloat {
     virtual const char *checkHgl(const char *);
 };
 
-class HlCStringCont : public HlItem {
+class HlLineContinue : public HlItem {
   public:
-    HlCStringCont(int attribute, int context);
+    HlLineContinue(int attribute, int context);
     virtual bool endEnable(char);
     virtual const char *checkHgl(const char *);
 };
@@ -136,13 +143,13 @@ class HlCPrep : public HlItem {
     virtual bool startEnable(char);
     virtual const char *checkHgl(const char *);
 };
-
+/*
 class HlHtmlChar : public HlItem {
   public:
     HlHtmlChar(int attribute, int context);
     virtual const char *checkHgl(const char *);
 };
-
+*/
 class HlHtmlTag : public HlItem {
   public:
     HlHtmlTag(int attribute, int context);
@@ -233,6 +240,15 @@ class BashHighlight : public Highlight {
   public:
     BashHighlight(const char *hName);
     virtual ~BashHighlight();
+  protected:
+    virtual void makeDefAttribs();
+    virtual void makeContextList();
+};
+
+class ModulaHighlight : public Highlight {
+  public:
+    ModulaHighlight(const char *hName);
+    virtual ~ModulaHighlight();
   protected:
     virtual void makeDefAttribs();
     virtual void makeContextList();

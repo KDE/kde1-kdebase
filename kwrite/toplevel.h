@@ -37,7 +37,7 @@ class TopLevel : public KTMainWindow {
     virtual void closeEvent(QCloseEvent *e);
     virtual bool queryExit();
 
-    void loadURL(const char *url);
+    void loadURL(const char *url, int flags = 0);
   protected:
     void setupEditWidget(KWriteDoc *);
     void setupMenuBar();

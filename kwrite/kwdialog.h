@@ -63,10 +63,12 @@ class GotoLineDialog : public QDialog {
 class SettingsDialog : public QDialog {
     Q_OBJECT
   public:
-    SettingsDialog(int flags, int wrapAt, int tabWidth, QWidget *parent, const char *name = 0);
+    SettingsDialog(int flags, int wrapAt, int tabWidth, int undoSteps,
+      QWidget *parent, const char *name = 0);
     int getFlags();
     int getWrapAt();
     int getTabWidth();
+    int getUndoSteps();
   protected:
     QCheckBox *opt1;
     QCheckBox *opt2;
@@ -82,6 +84,7 @@ class SettingsDialog : public QDialog {
     QCheckBox *opt12;
     QLineEdit *e1;
     QLineEdit *e2;
+    QLineEdit *e3;
 };
 
 

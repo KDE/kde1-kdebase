@@ -134,8 +134,8 @@ bool TopLevel::queryExit() {
   return true;
 }
 
-void TopLevel::loadURL(const char *url) {
-  kWrite->loadURL(url);
+void TopLevel::loadURL(const char *url, int flags) {
+  kWrite->loadURL(url,flags);
 }
 
 
@@ -241,7 +241,7 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.93\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.94\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
@@ -263,7 +263,7 @@ void TopLevel::setupMenuBar() {
 
   KWBookPopup *bookPopup;
   bookPopup = new KWBookPopup();
-//  bookPopup->insertItem(i18n("Set &Bookmark..."),kWrite,SLOT(setBookmark()),ALT+Key_B);
+  bookPopup->insertItem(i18n("&Set Bookmark..."),kWrite,SLOT(setBookmark()),ALT+Key_S);
   bookPopup->insertItem(i18n("&Add Bookmark"),kWrite,SLOT(addBookmark()));
   bookPopup->insertItem(i18n("&Clear Bookmarks"),kWrite,SLOT(clearBookmarks()),ALT+Key_C);
   kWrite->installBMPopup(bookPopup);
@@ -397,7 +397,8 @@ void TopLevel::hlDlg() {
   types.append("C");
   types.append("C++");
   types.append("HTML");
-  types.append("BASH");
+  types.append("Bash");
+  types.append("Modula 2");
 
   kWrite->setHighlight(HighlightDialog::getHighlight(types,this,SLOT(newHl(int))));
 }
@@ -416,7 +417,10 @@ void TopLevel::newHl(int index) {
       highlight = new HtmlHighlight("HTML Highlight");
       break;
     case 4:
-      highlight = new BashHighlight("BASH Highlight");
+      highlight = new BashHighlight("Bash Highlight");
+      break;
+    case 5:
+      highlight = new ModulaHighlight("Modula Highlight");
       break;
     default:
       highlight = new NoHighlight("No Highlight");
@@ -642,7 +646,7 @@ int main(int argc, char** argv) {
 //    RESTORE(TopLevel);
   } else {
     TopLevel *t = new TopLevel();
-    if (argc > 1) t->loadURL(argv[1]);
+    if (argc > 1) t->loadURL(argv[1],lfNewFile);
     t->init();
 //    t->show();
   }

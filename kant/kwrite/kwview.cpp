@@ -17,7 +17,7 @@
 #include <kfiledialog.h>
 #include <kdir.h>
 
-#include <X11/Xlib.h>
+#include <X11/Xlib.h> //used to have XSetTransientForHint()
 
 #include "kwview.h"
 #include "kwdoc.h"
@@ -1015,11 +1015,13 @@ void KWrite::copySettings(KWrite *w) {
 void KWrite::optDlg() {
   SettingsDialog *dlg;
 
-  dlg = new SettingsDialog(configFlags,wrapAt,kWriteDoc->tabChars,topLevelWidget());
+  dlg = new SettingsDialog(configFlags,wrapAt,kWriteDoc->tabChars,kWriteDoc->undoSteps,
+    topLevelWidget());
   if (dlg->exec() == QDialog::Accepted) {
     setConfig(dlg->getFlags() | (configFlags & cfOvr));
     wrapAt = dlg->getWrapAt();
     kWriteDoc->setTabWidth(dlg->getTabWidth());
+    kWriteDoc->setUndoSteps(dlg->getUndoSteps());
     kWriteDoc->updateViews();
   }
   delete dlg;
@@ -1053,11 +1055,11 @@ void KWrite::writeFile(QIODevice &dev) {
 }
 
 
-bool KWrite::loadFile(const char *name, bool insert) {
+bool KWrite::loadFile(const char *name, int flags) {
 
- printf("load file %s\n",name);
   QFileInfo info(name);
   if (!info.exists()) {
+    if (flags & lfNewFile) return true;
     QMessageBox::warning(this,
       i18n("Sorry"),
       i18n("The specified File does not exist"),
@@ -1090,9 +1092,9 @@ bool KWrite::loadFile(const char *name, bool insert) {
 
   QFile f(name);
   if (f.open(IO_ReadOnly)) {
-    loadFile(f,insert);
+    loadFile(f,flags & lfInsert);
     f.close();
-    return true;//kWriteDoc->setFileName(name);
+    return true;
   }
   QMessageBox::warning(this,
     i18n("Sorry"),
@@ -1135,7 +1137,7 @@ bool KWrite::writeFile(const char *name) {
 }
 
 
-void KWrite::loadURL(const char *url, bool insert) {
+void KWrite::loadURL(const char *url, int flags) {
   KURL u(url);
 
   if (u.isMalformed()) {
@@ -1167,11 +1169,16 @@ void KWrite::loadURL(const char *url, bool insert) {
 
     QString name(u.path());
     KURL::decodeURL(name);
-    if (loadFile(name,insert)) {
+    if (loadFile(name,flags)) {
       name = u.url();
-      if (!insert) kWriteDoc->setFileName(name);
-      name.prepend(": ");
-      name.prepend(insert ? i18n("Inserted") : i18n("Read"));
+      if (flags & lfInsert) {
+        name.prepend(": ");
+        name.prepend(i18n("Inserted"));
+      } else {
+        kWriteDoc->setFileName(name);
+        name.prepend(": ");
+        name.prepend(i18n("Read"));
+      }
       emit statusMsg(name);
     }
   } else {
@@ -1206,7 +1213,7 @@ void KWrite::loadURL(const char *url, bool insert) {
     kfmURL = u.url();
     kfmFile.sprintf(_PATH_TMP"kwrite%i",time(0L));
     kfmAction = KWrite::GET;
-    kfmInsert = insert;
+    kfmLoadFlags = flags;
 
     connect(kfm,SIGNAL(finished()),this,SLOT(kfmFinished()));
     connect(kfm,SIGNAL(error(int, const char *)),this,SLOT(kfmError(int, const char *)));
@@ -1281,10 +1288,16 @@ void KWrite::kfmFinished() {
   if (kfmAction == GET ) {
 //    KURL u(kfmFile);
   //  if (!kfm->isOK()) printf("kfm not ok!!!\n");
-    if (loadFile(kfmFile,kfmInsert)) {
-      if (!kfmInsert) kWriteDoc->setFileName(kfmURL);
-      kfmURL.prepend(": ");
-      kfmURL.prepend(kfmInsert ? i18n("Inserted") : i18n("Read"));
+
+    if (loadFile(kfmFile,kfmLoadFlags)) {
+      if (kfmLoadFlags & lfInsert) {
+        kfmURL.prepend(": ");
+        kfmURL.prepend(i18n("Inserted"));
+      } else {
+        kWriteDoc->setFileName(kfmURL);
+        kfmURL.prepend(": ");
+        kfmURL.prepend(i18n("Read"));
+      }
       emit statusMsg(kfmURL);
     }
     //clean up
@@ -1369,7 +1382,7 @@ void KWrite::insertFile() {
   url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",topLevelWidget());
   if (url.isEmpty()) return;
 //  kapp->processEvents();
-  loadURL(url,true);
+  loadURL(url,lfInsert);
 }
 
 void KWrite::save() {
@@ -1637,13 +1650,14 @@ void KWrite::replaceAgain() {
 void KWrite::doReplaceAction(int result, bool found) {
   int slen, rlen;
   PointStruc cursor;
+  bool started;
 
   slen = searchFor.length();
   rlen = replaceWith.length();
 
   switch (result) {
     case srYes: //yes
-      kWriteDoc->recordStart(s.cursor);
+      kWriteDoc->recordStart(s.cursor,true);
       kWriteDoc->recordReplace(s.cursor,slen,replaceWith,rlen);
       replaces++;
       if (s.cursor.y == s.startCursor.y && s.cursor.x < s.startCursor.x)
@@ -1654,20 +1668,24 @@ void KWrite::doReplaceAction(int result, bool found) {
     case srNo: //no
       if (!(s.flags & sfBackward)) s.cursor.x += slen;
       break;
-    case srAll: //all
-      deleteReplacePrompt();
-      kWriteDoc->recordStart(s.cursor);
+    case srAll: //replace all
+//      deleteReplacePrompt();
       do {
+        started = false;
         while (found || kWriteDoc->doSearch(s,searchFor)) {
-          found = false;
+          if (!started) {
+            found = false;
+            kWriteDoc->recordStart(s.cursor);
+            started = true;
+          }
           kWriteDoc->recordReplace(s.cursor,slen,replaceWith,rlen);
           replaces++;
           if (s.cursor.y == s.startCursor.y && s.cursor.x < s.startCursor.x)
             s.startCursor.x += rlen - slen;
           if (!(s.flags & sfBackward)) s.cursor.x += rlen;
         }
+        if (started) kWriteDoc->recordEnd(kWriteView,s.cursor,configFlags);
       } while (!askReplaceEnd());
-      kWriteDoc->recordEnd(kWriteView,s.cursor,configFlags);
       return;
     case srCancel: //cancel
       deleteReplacePrompt();
@@ -1817,6 +1835,7 @@ void KWrite::installBMPopup(KWBookPopup *p) {
 //  bookPopup = p;
   connect(p,SIGNAL(exposed()),this,SLOT(updateBMPopup()));
   connect(p,SIGNAL(activated(int)),this,SLOT(gotoBookmark(int)));
+  bmEntries = p->count();
 }
 
 void KWrite::setBookmark(int n) {
@@ -1831,8 +1850,26 @@ void KWrite::setBookmark(int n) {
 }
 
 void KWrite::setBookmark() {
+  QPopupMenu *popup;
+  int z;
+  char s[8];
 
-  setBookmark(0);
+  popup = new QPopupMenu(0L);
+
+  for (z = 1; z <= 9; z++) {
+    sprintf(s,"&%d",z);
+    popup->insertItem(s,z);
+  }
+
+  popup->move(mapToGlobal(QPoint((width() - 41/*popup->width()*/)/2,
+    (height() - 211/*popup->height()*/)/2)));
+
+  z = popup->exec();
+//  printf("map %d %d\n",popup->width(),popup->height());
+  delete popup;
+  if (z > 0) {
+    setBookmark(z - 1);
+  }
 }
 
 void KWrite::addBookmark() {
@@ -1865,7 +1902,7 @@ void KWrite::updateBMPopup() {
 
   p = (KWBookPopup *) sender();
 
-  while (p->count() > 2) {
+  while ((int) p->count() > bmEntries) {
     p->removeItemAt(p->count() - 1);
   }
 
@@ -1873,7 +1910,7 @@ void KWrite::updateBMPopup() {
     b = bookmarks.at(z);
 //  for (b = bookmarks.first(); b != 0L; b = bookmarks.next()) {
     if (b->cursor.y >= 0) {
-      if (p->count() == 2) p->insertSeparator();
+      if ((int) p->count() == bmEntries) p->insertSeparator();
       sprintf(buf,"%s %d",i18n("Line"),b->cursor.y +1);
       p->insertItem(buf,z);
       if (z < 9) p->setAccel(ALT+keys[z],z);
@@ -1913,6 +1950,7 @@ void KWrite::readConfig(KConfig *config) {
 
   wrapAt = config->readNumEntry("WrapAt",78);
   kWriteDoc->setTabWidth(config->readNumEntry("TabWidth",8));
+  kWriteDoc->setUndoSteps(config->readNumEntry("UndoSteps",50));
 }
 
 void KWrite::writeConfig(KConfig *config) {
@@ -1944,6 +1982,7 @@ void KWrite::writeConfig(KConfig *config) {
 
   config->writeEntry("WrapAt",wrapAt);
   config->writeEntry("TabWidth",kWriteDoc->tabChars);
+  config->writeEntry("UndoSteps",kWriteDoc->undoSteps);
 }
 
 void KWrite::readSessionConfig(KConfig *config) {

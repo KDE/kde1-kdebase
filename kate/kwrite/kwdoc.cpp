@@ -482,6 +482,7 @@ KWriteDoc::KWriteDoc() : QObject(0L) {
   selCols[3] = black;
 
   highlight = new CppHighlight("C++ Highlight");
+//  highlight = new ModulaHighlight("Modula Highlight");
   highlight->init();
   attribs = highlight->attrList();
   tabChars = 8;
@@ -493,6 +494,7 @@ KWriteDoc::KWriteDoc() : QObject(0L) {
 
   undoList.setAutoDelete(true);
   undoState = 0;
+  undoSteps = 50;
 
   pseudoModal = 0L;
   clear();
@@ -2052,12 +2054,12 @@ void KWriteDoc::newUndo() {
   }
 }
 
-void KWriteDoc::recordStart(PointStruc &cursor) {
+void KWriteDoc::recordStart(PointStruc &cursor, bool keepModal) {
   KWActionGroup *g;
 
-  setPseudoModal(0L);
+  if (!keepModal) setPseudoModal(0L);
   while ((int) undoList.count() > currentUndo) undoList.removeLast();
-  if (undoList.count() > 50) {
+  while ((int) undoList.count() > undoSteps) {
     undoList.removeFirst();
     currentUndo--;
   }
@@ -2163,6 +2165,11 @@ void KWriteDoc::redo(KWriteView *view, int flags) {
   currentUndo++;
   doActionGroup(g,flags);
   view->updateCursor(g->end);
+}
+
+void KWriteDoc::setUndoSteps(int steps) {
+  if (steps < 5) steps = 5;
+  undoSteps = steps;
 }
 
 void KWriteDoc::setPseudoModal(QWidget *w) {

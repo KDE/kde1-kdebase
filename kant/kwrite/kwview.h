@@ -24,6 +24,7 @@ const sfReplace         = 64;
 const sfAgain           = 128;
 const sfWrapped         = 256;
 const sfFinished        = 512;
+//dialog results
 const srYes             = QDialog::Accepted;
 const srNo              = 10;
 const srAll             = 11;
@@ -49,10 +50,12 @@ const cfMark            = 8192;
 
 //update flags
 const ufDocGeometry     = 1;
-//const ufNoScroll        = 1;
 const ufUpdateOnScroll  = 2;
-//const ufCenter          = 4;
 const ufPos             = 4;
+
+//load flags
+const lfInsert          = 1;
+const lfNewFile         = 2;
 
 void resizeBuffer(void *user, int w, int h);
 
@@ -211,9 +214,9 @@ class KWrite : public QWidget {
     enum action{GET, PUT}; //tells us what kind of job kwrite is waiting for
     void loadFile(QIODevice &, bool insert = false);
     void writeFile(QIODevice &);
-    bool loadFile(const char *name, bool insert = false);
+    bool loadFile(const char *name, int flags = 0);
     bool writeFile(const char *name);
-    void loadURL(const char *url, bool insert = false);
+    void loadURL(const char *url, int flags = 0);
     void writeURL(const char *url);
   protected slots:
     void kfmFinished();
@@ -232,7 +235,7 @@ class KWrite : public QWidget {
     QString kfmURL;
     QString kfmFile;
     action kfmAction;
-    bool kfmInsert;
+    int kfmLoadFlags;
 
 //edit functions
   public:
@@ -290,6 +293,7 @@ class KWrite : public QWidget {
     void updateBMPopup();
   protected:
     QList<KWBookmark> bookmarks;
+    int bmEntries;
 //    KWBookPopup *bookPopup;
 
 //config file / session management functions

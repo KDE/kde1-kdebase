@@ -213,7 +213,7 @@ class KWriteDoc : QObject {
     void doInsLine(KWAction *);
     void doKillLine(KWAction *);
     void newUndo();
-    void recordStart(PointStruc &);
+    void recordStart(PointStruc &, bool keepModal = false);
     void recordAction(KWAction::Action, PointStruc &);
     void recordReplace(PointStruc &, int len, const
       char *text = 0L, int textLen = 0);
@@ -222,6 +222,7 @@ class KWriteDoc : QObject {
     void doActionGroup(KWActionGroup *, int flags);
     void undo(KWriteView *, int flags);
     void redo(KWriteView *, int flags);
+    void setUndoSteps(int steps);
 
     void setPseudoModal(QWidget *);
 
@@ -253,6 +254,7 @@ class KWriteDoc : QObject {
     QList<KWActionGroup> undoList;
     int currentUndo;
     int undoState;
+    int undoSteps;
     int tagStart;
     int tagEnd;
 
