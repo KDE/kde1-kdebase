@@ -837,7 +837,7 @@ msgstr "Sett GID"
 # kfmprops.cpp:462
 #: kfmprops.cpp:470
 msgid "Sticky"
-msgstr ""
+msgstr "Klistrete"
 
 # kfmprops.cpp:480
 #: kfmprops.cpp:488
@@ -963,7 +963,7 @@ msgstr "Navn ( i ditt språk )"
 # kfmprops.cpp:1471
 #: kfmprops.cpp:1479
 msgid "Pattern ( example: *.html;*.HTML; )"
-msgstr ""
+msgstr "Mønster ( eksempel: *.html;*.HTML; )"
 
 # kfmprops.cpp:1479
 #: kfmprops.cpp:1487
