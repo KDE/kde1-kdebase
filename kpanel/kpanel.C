@@ -269,11 +269,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
     popup_item = new myPopupMenu;
-    CHECK_PTR( popup_item);
-    popup_item->insertItem(klocale->translate("Move"));
-    popup_item->insertItem(klocale->translate("Remove"));
+    CHECK_PTR(popup_item);
+    popup_item->insertItem(i18n("&Move"));
+    popup_item->insertItem(i18n("&Remove"));
     popup_item->insertSeparator();
-    popup_item->insertItem(klocale->translate("Properties"));
+    popup_item->insertItem(i18n("&Properties"));
     init_popup(popup_item);
 
     windows = new myPopupMenu;
