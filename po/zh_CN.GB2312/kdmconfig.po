@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 msgid ""
@@ -127,7 +127,7 @@ msgid "Root Only"
 msgstr "只允许超级用户"
 
 msgid "Save image as default image?"
-msgstr "保存为缺省图形?"
+msgstr "保存为默认图形?"
 
 msgid "Scaled"
 msgstr "放大至全屏幕"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-16 15:37+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: kfdird.cpp:46
@@ -14,15 +14,15 @@ msgstr "目录:"
 msgid "Cannot open or read directory."
 msgstr "无法打开或读取目录."
 
+#
 #: kfindtop.cpp:118
-#, fuzzy
 msgid "&Start search"
-msgstr "开始搜寻"
+msgstr "开始搜寻[&S]"
 
+#
 #: kfindtop.cpp:120
-#, fuzzy
 msgid "S&top search"
-msgstr "停止搜寻"
+msgstr "停止搜寻[&T]"
 
 #: kfindtop.cpp:125
 msgid "&Open"
@@ -84,7 +84,7 @@ msgstr "开始搜寻"
 
 #: kfindtop.cpp:201
 msgid "New Search"
-msgstr "新搜寻"
+msgstr "新的搜寻"
 
 #: kfindtop.cpp:206
 msgid "Stop Search"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-18 22:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: main.C:68
@@ -18,7 +18,7 @@ msgstr "kwm: 初始化发生错误; 中止\n"
 
 #: main.C:470
 msgid "Preparing session ... "
-msgstr ""
+msgstr "准备会话 ..."
 
 #: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -42,7 +42,7 @@ msgstr "图标化[&I]"
 
 #: main.C:510
 msgid "&DeIconify"
-msgstr "还原[&D]"
+msgstr "解除图标化[&D]"
 
 #: main.C:511
 msgid "&Sticky"
@@ -50,7 +50,7 @@ msgstr "粘附[&S]"
 
 #: main.C:512
 msgid "&UnSticky"
-msgstr "取消粘附[&U]"
+msgstr "解除粘附[&U]"
 
 #: main.C:513
 msgid "Mo&ve"
@@ -106,12 +106,12 @@ msgstr "无名桌面"
 
 #: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "一些位图是不对的: ShapMode 取消\n"
+msgstr "一些位图是无效的: 取消 ShapMode\n"
 
+#
 #: main.C:1054
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "一些位图是不对的: ShapMode 取消\n"
+msgstr "一些位图是无效的: 取消 ShapMode\n"
 
 #: main.C:1311
 msgid "*** No Tasks ***"
@@ -123,7 +123,7 @@ msgstr "命令:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "哦!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -164,3 +164,21 @@ msgstr "切换至"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "当前会话"
+
+#~ msgid ""
+#~ "You want to switch to another window. Unfortunately you have selected \n"
+#~ "one of the classic focus policies which do not allow this.  These policies "
+#~ "are \n"
+#~ "included not because they make sense, but for compatibility reasons. Well, \n"
+#~ "even old hand unix users should feel comfortable with the K Desktop "
+#~ "Environment ;-)\n"
+#~ "\n"
+#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+#~ msgstr ""
+#~ "你想要切换到另外一个窗口.不幸的是你选择了一种老式的焦点策略 , 这种策略\n"
+#~ "不允许这种切换 . 这些策略之所以被加进来 , 是为了兼容 . 即使最老的 unix\n"
+#~ "使用者也会觉得 KDE 用起来很舒服 :-) .\n"
+#~ "\n"
+#~ "但是 , 如果你更喜欢现代的窗口放置策略 , 请选择推荐的焦点策略之一 , 比如\n"
+#~ "`点击改变焦点' 或 `焦点跟随鼠标' "

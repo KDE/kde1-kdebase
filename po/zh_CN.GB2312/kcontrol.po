@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-29 14:46+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: configlist.cpp:119
@@ -19,6 +19,7 @@ msgid "&Swallow modules"
 msgstr "模块集成显示[&S]"
 
 #: toplevel.cpp:81
+#, fuzzy
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"
@@ -28,7 +29,7 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE 控制中心 - 版本 1.0\n"
+"KDE 控制中心 - 版本 0.3\n"
 "\n"
 "由 Matthias H鰈zer 编写\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"

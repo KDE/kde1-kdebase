@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-16 16:37+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: kfmgui.cpp:257
@@ -136,15 +136,15 @@ msgstr "先在缓存中寻找"
 msgid "Never look in cache"
 msgstr "不在缓存中寻找"
 
+#
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "先在缓存中寻找"
+msgstr "保存缓存"
 
+#
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "不在缓存中寻找"
+msgstr "不保存缓存"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -510,19 +510,19 @@ msgstr "访问过的链接颜色:"
 msgid "Change cursor over link."
 msgstr "在链接上改变光标."
 
+#
 #: htmlopts.cpp:321
-#, fuzzy
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Horizontal Root Grid Spacing:"
+msgstr "水平格子间距:"
 
+#
 #: htmlopts.cpp:335
-#, fuzzy
 msgid "Vertical Root Grid Spacing:"
-msgstr "Vertical Root Grid Spacing:"
+msgstr "垂直格子间距:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "图标用透明的文字."
 
 #
 #: bookmark.cpp:264
@@ -707,7 +707,7 @@ msgstr "全局应用"
 
 #: kfmprops.cpp:1013 kfmprops.cpp:1085 kfmprops.cpp:1142
 msgid "(Default)"
-msgstr "(缺省)"
+msgstr "(默认)"
 
 #: kfmprops.cpp:1074
 msgid "Could not write to\n"
@@ -739,7 +739,7 @@ msgstr "Mime 类型"
 
 #: kfmprops.cpp:1499
 msgid "Default Application"
-msgstr "缺省的应用程序"
+msgstr "默认的应用程序"
 
 #: kfmprops.cpp:1647
 msgid "Device ( /dev/fd0 )"
@@ -816,16 +816,15 @@ msgstr ""
 "有人尝试使用错误的密码\n"
 "来认证自己的身份"
 
+#
 #: root.cpp:672
-#, fuzzy
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
 "不能执行请求.\n"
-"New root grid dimensions would move some icons\n"
-"off the desktop."
+"新的格子大小会使某些图标移到桌面之外"
 
 #: root.cpp:707
 msgid "Internal Error: desktopDir is malformed"
@@ -1217,8 +1216,8 @@ msgstr "已知的关联"
 msgid "Don't forget to save your settings!"
 msgstr "别忘了保存设置!"
 
+#
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
 msgstr "使用代理"
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-16 13:54+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: main.C:347
@@ -12,7 +12,7 @@ msgstr "选择彩色模式"
 
 #: main.C:353
 msgid "Add characters to word class"
-msgstr ""
+msgstr "在词里添加字符"
 
 #: main.C:359
 msgid "The backspace key will send a"
@@ -20,7 +20,7 @@ msgstr "Backspace 键将送出 "
 
 #: main.C:365
 msgid "Cursor key set"
-msgstr ""
+msgstr "光标键定义"
 
 #: main.C:532
 msgid "&New Terminal"
@@ -120,7 +120,7 @@ msgstr "终端..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "字体..."
 
 #: main.C:595
 msgid "Save &Options"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: main.cpp:59
@@ -70,14 +70,14 @@ msgstr "标题行右边空间已满...请移去 '最小化' 按钮\n"
 msgid "Titlebar appearance"
 msgstr "标题行外观"
 
+#
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "垂直最大化"
+msgstr "垂直渐变色"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "水平渐变色"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -112,6 +112,8 @@ msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"鼠标左键在标题行双击\n"
+"    的结果:"
 
 #
 #: titlebar.cpp:993
@@ -125,7 +127,7 @@ msgstr "渐变色/恢复"
 
 #: titlebar.cpp:996
 msgid "Iconify"
-msgstr ""
+msgstr "图标化"
 
 #
 #: titlebar.cpp:997
@@ -152,10 +154,10 @@ msgstr "透明的"
 msgid "Opaque"
 msgstr "不透明的"
 
+#
 #: windows.cpp:89
-#, fuzzy
 msgid "Window resize"
-msgstr "窗口[&W]"
+msgstr "窗口改变大小"
 
 #: windows.cpp:90
 #, fuzzy
@@ -218,15 +220,15 @@ msgstr "点击取得焦点"
 msgid "Focus follows mouse"
 msgstr "焦点随鼠标移动"
 
+#
 #: windows.cpp:133
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "焦点随鼠标移动"
+msgstr "老式地焦点随鼠标移动"
 
+#
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "点击取得焦点"
+msgstr "老式的随意取得焦点"
 
 #: windows.cpp:144
 msgid ""
@@ -276,9 +278,9 @@ msgstr ""
 "Window Snap Zone:\n"
 "       (像素)"
 
-#, fuzzy
+#
 #~ msgid "With animation"
-#~ msgstr "标题动画"
+#~ msgstr "有动画"
 
 #~ msgid "Move"
 #~ msgstr "移动"

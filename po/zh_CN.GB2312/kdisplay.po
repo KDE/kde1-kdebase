@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: backgnd.cpp:59
@@ -58,7 +58,7 @@ msgstr "没有墙纸"
 
 #: backgnd.cpp:335
 msgid "&Browse..."
-msgstr ""
+msgstr "浏览[&B]..."
 
 #
 #: backgnd.cpp:864
@@ -71,11 +71,11 @@ msgstr "两个彩色背景"
 
 #: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
-msgstr "从上到下使用渐变色"
+msgstr "从上到下使用混和色"
 
 #: backgnd.cpp:953
 msgid "Blend colors from &right to left"
-msgstr "从右到左使用渐变色"
+msgstr "从右到左使用混和色"
 
 #: backgnd.cpp:959
 msgid "Use &pattern"
@@ -112,11 +112,11 @@ msgstr "花朵"
 
 #: backgnd.cpp:1108
 msgid "Rattan"
-msgstr "Rattan"
+msgstr "藤茎"
 
 #: backgnd.cpp:1111
 msgid "Cobbled Pavement"
-msgstr "Cobbled Pavement"
+msgstr "卵石路"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
@@ -130,7 +130,7 @@ msgstr "当前的色彩主题"
 #
 #: colorscm.cpp:132
 msgid "KDE default"
-msgstr "KDE 缺省"
+msgstr "KDE 默认"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
@@ -138,7 +138,7 @@ msgstr "添加[&A] ..."
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr "保存[&S]"
+msgstr "保存改动[&S]"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -209,7 +209,7 @@ msgstr "高"
 
 #: colorscm.cpp:317
 msgid "Error removing"
-msgstr "Error removing"
+msgstr "删除错误"
 
 #: colorscm.cpp:318
 msgid ""
@@ -301,7 +301,7 @@ msgstr "需要密码[&R]"
 
 #: scrnsave.cpp:273
 msgid "Show &password as stars"
-msgstr ""
+msgstr "以 `*' 显示密码"
 
 #: scrnsave.cpp:281
 msgid "Priority"
@@ -416,7 +416,7 @@ msgstr ""
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "缺省"
+msgstr "默认"
 
 #: fontchooser.cpp:265
 msgid "any"
@@ -426,8 +426,8 @@ msgstr "任何"
 #~ msgstr "去掉[&R]"
 
 #~ msgid "Default"
-#~ msgstr "缺省"
+#~ msgstr "默认"
 
-#, fuzzy
+#
 #~ msgid "Window title font"
-#~ msgstr "窗口文字"
+#~ msgstr "窗口标题字体"

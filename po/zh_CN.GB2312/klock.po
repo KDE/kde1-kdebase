@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-06-17 09:43+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
-"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: banner.cpp:62
@@ -587,28 +587,28 @@ msgstr "失败"
 
 #: science.cpp:65
 msgid "Whirl"
-msgstr ""
+msgstr "回旋"
 
+#
 #: science.cpp:68
-#, fuzzy
 msgid "Sphere"
-msgstr "速度"
+msgstr "球体"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "指数"
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "收缩"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "波"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "弯曲"
 
 #: science.cpp:112
 msgid "Science"
@@ -616,50 +616,50 @@ msgstr "Science"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "透镜 ..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "截取屏幕..."
 
 #
 #: science.cpp:931
 msgid "Setup Science"
 msgstr "设置 Science"
 
+#
 #: science.cpp:949
-#, fuzzy
 msgid "Mode:"
-msgstr "中间:"
+msgstr "方式:"
 
 #: science.cpp:964
 msgid "Inverse"
-msgstr ""
+msgstr "反转"
 
 #: science.cpp:974
 msgid "Gravity"
-msgstr ""
+msgstr "引力"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "隐藏背景"
 
 #: science.cpp:1009
 msgid "Intensity:"
-msgstr "张力:"
+msgstr "强度:"
 
 #: science.cpp:1039
 msgid "Motion:"
-msgstr ""
+msgstr "动作:"
 
+#
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Science"
+msgstr "Science 版本"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "written by"
 
 #
 #: science.cpp:1262
@@ -707,7 +707,7 @@ msgstr "设置 KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Warp Interval:"
+msgstr "Warp 间隔:"
 
 #
 #: space.cpp:685
@@ -757,7 +757,7 @@ msgstr ""
 #~ msgid "Move"
 #~ msgstr "移动"
 
-#, fuzzy
+#
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"
 #~ "\n"
