@@ -2,7 +2,11 @@
 #include <dither.h>
 #include <qimage.h>
 #include <stdio.h>
+#ifdef __osf__
+#include <machine/endian.h>
+#else
 #include <endian.h>
+#endif
 
 void kwm_gradientFill(KPixmap &pm, QColor ca, QColor cb, bool upDown) {
   if(upDown == FALSE && QColor::numBitPlanes() >= 15) {    
