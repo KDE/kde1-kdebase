@@ -33,27 +33,82 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	QRadioButton *rb;
 	QLabel *label;
 
+	//CT 12Nov1998 layout management
+	QGridLayout *lay = new QGridLayout(this,7,5,10,5);
+	lay->addRowSpacing(0,10);
+	lay->addRowSpacing(4,10);
+	lay->addRowSpacing(0,10);
+	lay->addRowSpacing(3,10);
+
+	lay->setRowStretch(0,0);
+	lay->setRowStretch(1,1);
+	lay->setRowStretch(2,1);
+	lay->setRowStretch(3,0);
+	lay->setRowStretch(4,1);
+	lay->setRowStretch(5,0);
+	lay->setRowStretch(6,0);
+
+	lay->setColStretch(0,0);
+	lay->setColStretch(1,1);
+	lay->setColStretch(2,2);
+	lay->setColStretch(3,0);
+	//CT
+
 	QButtonGroup *bg = new QButtonGroup( klocale->translate("Font Size"), this );
+
+	//CT 12Nov1998 layout management
+	QGridLayout *bgLay = new QGridLayout(bg,2,3,10,5);
+	bgLay->addRowSpacing(0,10);
+	bgLay->setRowStretch(0,0);
+	bgLay->setRowStretch(1,1);
+	//CT
+
 	bg->setExclusive( TRUE );
-	bg->setGeometry( 15, 15, 300, 50 );
+	//CT	bg->setGeometry( 15, 15, 300, 50 );
 
 	rb = new QRadioButton( klocale->translate("Small"), bg );
-	rb->setGeometry( 10, 20, 80, 20 );
+	//CT	rb->setGeometry( 10, 20, 80, 20 );
+	//CT 12Nov1998 layout management
+	rb->adjustSize();
+	rb->setMinimumSize(rb->size());
+	bgLay->addWidget(rb,1,0);
+	//CT
 	rb->setChecked( fSize == 3 );
 
 	rb = new QRadioButton( klocale->translate("Medium"), bg );
-	rb->setGeometry( 100, 20, 80, 20 );
+	//CT	rb->setGeometry( 100, 20, 80, 20 );
+	//CT 12Nov1998 layout management
+	rb->adjustSize();
+	rb->setMinimumSize(rb->size());
+	bgLay->addWidget(rb,1,1);
+	//CT
 	rb->setChecked( fSize == 4 );
 
 	rb = new QRadioButton( klocale->translate("Large"), bg );
-	rb->setGeometry( 200, 20, 80, 20 );
+	//CT	rb->setGeometry( 200, 20, 80, 20 );
+	//CT 12Nov1998 layout management
+	rb->adjustSize();
+	rb->setMinimumSize(rb->size());
+	bgLay->addWidget(rb,1,2);
+	//CT
 	rb->setChecked( fSize == 5 );
 
+	//CT 12Nov1998 layout management
+	bgLay->activate();
+
+	lay->addMultiCellWidget(bg,1,1,1,2);
+	//CT
+
 	label = new QLabel( klocale->translate("Standard Font"), this );
-	label->setGeometry( 15, 90, 100, 20 );
+	//CT	label->setGeometry( 15, 90, 100, 20 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,3,1);
+	//CT
 
 	QComboBox *cb = new QComboBox( false, this );
-	cb->setGeometry( 120, 90, 180, 25 );
+	//CT	cb->setGeometry( 120, 90, 180, 25 );
 	getFontList( standardFonts, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
 	cb->insertStrList( &standardFonts );
 	QStrListIterator sit( standardFonts );
@@ -63,14 +118,26 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 		if ( !strcmp( stdName, sit.current() ) )
 			cb->setCurrentItem( i );
 	}
+
+	//CT 12Nov1998 layout management
+	cb->adjustSize();
+	cb->setMinimumSize(cb->size());
+	lay->addWidget(cb,3,2);
+	//CT
+
 	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotStandardFont( const char * ) ) );
 
 	label = new QLabel( klocale->translate( "Fixed Font"), this );
-	label->setGeometry( 15, 130, 100, 20 );
+	//CT	label->setGeometry( 15, 130, 100, 20 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,5,1);
+	//CT
 
 	cb = new QComboBox( false, this );
-	cb->setGeometry( 120, 130, 180, 25 );
+	//CT	cb->setGeometry( 120, 130, 180, 25 );
 	getFontList( fixedFonts, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
 	cb->insertStrList( &fixedFonts );
 	QStrListIterator fit( fixedFonts );
@@ -80,6 +147,14 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 			cb->setCurrentItem( i );
 	}
        
+	//CT 12Nov1998 layout management
+	cb->adjustSize();
+	cb->setMinimumSize(cb->size());
+	lay->addWidget(cb,5,2);
+
+	lay->activate();
+	//CT
+
 	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotFixedFont( const char * ) ) );
 
@@ -212,48 +287,137 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	KColorButton *colorBtn;
 	QLabel *label;
 
+	//CT 12Nov1998 layout management
+	QGridLayout *lay = new QGridLayout(this,11,5,10,5);
+	lay->addRowSpacing(0,10);
+	lay->addRowSpacing(1,30);
+	lay->addRowSpacing(2, 5);
+	lay->addRowSpacing(3,30);
+	lay->addRowSpacing(4, 5);
+	lay->addRowSpacing(5,30);
+	lay->addRowSpacing(6, 5);
+	lay->addRowSpacing(7,30);
+	lay->addRowSpacing(10,10);
+	lay->addColSpacing(0,10);
+	lay->addColSpacing(2,20);
+	lay->addColSpacing(3,80);
+	lay->addColSpacing(4,10);
+
+	lay->setRowStretch(0,0);
+	lay->setRowStretch(1,0);
+	lay->setRowStretch(2,1);
+	lay->setRowStretch(3,0);
+	lay->setRowStretch(4,1);
+	lay->setRowStretch(5,0);
+	lay->setRowStretch(6,1);
+	lay->setRowStretch(7,0);
+	lay->setRowStretch(8,1);
+	lay->setRowStretch(9,1);
+	lay->setRowStretch(10,0);
+
+	lay->setColStretch(0,0);
+	lay->setColStretch(1,0);
+	lay->setColStretch(2,1);
+	lay->setColStretch(3,0);
+	lay->setColStretch(4,1);
+	//CT
+
 	label = new QLabel( klocale->translate("Background Color:"), this );
-	label->setGeometry( 35, 20, 165, 25 );
+	//CT	label->setGeometry( 35, 20, 165, 25 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,1,1);
+	//CT
 
 	colorBtn = new KColorButton( bgColor, this );
-	colorBtn->setGeometry( 200, 20, 80, 30 );
+	//CT	colorBtn->setGeometry( 200, 20, 80, 30 );
+	//CT 12Nov1998 layout management
+	colorBtn->adjustSize();
+	colorBtn->setMinimumSize(colorBtn->size());
+	lay->addWidget(colorBtn,1,3);
+	//CT
+
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotBgColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Normal Text Color:"), this );
-	label->setGeometry( 35, 60, 165, 25 );
+	//CT	label->setGeometry( 35, 60, 165, 25 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,3,1);
+	//CT
 
 	colorBtn = new KColorButton( textColor, this );
-	colorBtn->setGeometry( 200, 60, 80, 30 );
+	//CT	colorBtn->setGeometry( 200, 60, 80, 30 );
+	//CT 12Nov1998 layout management
+	colorBtn->adjustSize();
+	colorBtn->setMinimumSize(colorBtn->size());
+	lay->addWidget(colorBtn,3,3);
+	//CT
+
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotTextColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("URL Link Color:"), this );
-	label->setGeometry( 35, 100, 165, 25 );
+	//CT	label->setGeometry( 35, 100, 165, 25 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,5,1);
+	//CT
 
 	colorBtn = new KColorButton( linkColor, this );
-	colorBtn->setGeometry( 200, 100, 80, 30 );
+	//CT	colorBtn->setGeometry( 200, 100, 80, 30 );
+	//CT 12Nov1998 layout management
+	colorBtn->adjustSize();
+	colorBtn->setMinimumSize(colorBtn->size());
+	lay->addWidget(colorBtn,5,3);
+	//CT
+
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotLinkColorChanged( const QColor & ) ) );
 
 	label = new QLabel( klocale->translate("Followed Link Color:"), this );
-	label->setGeometry( 35, 140, 165, 25 );
+	//CT	label->setGeometry( 35, 140, 165, 25 );
+	//CT 12Nov1998 layout management
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,7,1);
+	//CT
 
 	colorBtn = new KColorButton( vLinkColor, this );
-	colorBtn->setGeometry( 200, 140, 80, 30 );
+	//CT	colorBtn->setGeometry( 200, 140, 80, 30 );
+	//CT 12Nov1998 layout management
+	colorBtn->adjustSize();
+	colorBtn->setMinimumSize(colorBtn->size());
+	lay->addWidget(colorBtn,7,3);
+	//CT
+
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotVLinkColorChanged( const QColor & ) ) );
 
 	cursorbox = new QCheckBox(klocale->translate("Change cursor over link."),
 				  this);
 
-	cursorbox->setGeometry(35,180,250,28);
+	//CT	cursorbox->setGeometry(35,180,250,28);
+	//CT 12Nov1998 layout management
+	cursorbox->adjustSize();
+	cursorbox->setMinimumSize(cursorbox->size());
+	lay->addMultiCellWidget(cursorbox,8,8,1,3);
+	//CT
 	cursorbox->setChecked(changeCursor);
 
 	underlinebox = new QCheckBox(klocale->translate("Underline links"),
 				  this);
 
-	underlinebox->setGeometry(35,210,250,28);
+	//CT	underlinebox->setGeometry(35,210,250,28);
+	//CT 12Nov1998 layout management
+	underlinebox->adjustSize();
+	underlinebox->setMinimumSize(underlinebox->size());
+	lay->addMultiCellWidget(underlinebox,9,9,1,3);
+	//CT
 	underlinebox->setChecked(underlineLinks);
 }
 
@@ -327,27 +491,36 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
         //CT 12Nov1998
         //Sven: Inserted my checkbox in CT's layout
         
-	QGridLayout *lay = new QGridLayout(this,8,5,10,5);
+	QGridLayout *lay = new QGridLayout(this,10,5,10,5);
 	lay->addRowSpacing(0,15);
-	lay->addRowSpacing(7,10);
+	lay->addRowSpacing(1,30);
+	lay->addRowSpacing(2, 5);
+	lay->addRowSpacing(3,30);
+	lay->addRowSpacing(6,30);
+	lay->addRowSpacing(7, 5);
+	lay->addRowSpacing(8,30);
+	lay->addRowSpacing(9,10);
 	lay->addColSpacing(0,10);
 	lay->addColSpacing(2,10);
+	lay->addColSpacing(3,80);
         lay->addColSpacing(4,35); //sven: colorbuttons are big
 
 	lay->setRowStretch(0,0);
-	lay->setRowStretch(1,1);
+	lay->setRowStretch(1,0);
 	lay->setRowStretch(2,1);
-	lay->setRowStretch(3,1);
+	lay->setRowStretch(3,0);
 	lay->setRowStretch(4,1);
 	lay->setRowStretch(5,1);
-	lay->setRowStretch(6,1);
-	lay->setRowStretch(7,0);
+	lay->setRowStretch(6,0);
+	lay->setRowStretch(7,1);
+	lay->setRowStretch(8,0);
+	lay->setRowStretch(9,0);
 
 	lay->setColStretch(0,0);
-	lay->setColStretch(1,1);
-	lay->setColStretch(2,0);
-	lay->setColStretch(3,1);
-	lay->setColStretch(4,0);
+	lay->setColStretch(1,0);
+	lay->setColStretch(2,1);
+	lay->setColStretch(3,0);
+	lay->setColStretch(4,1);
 	//CT
         
 	QLabel *label;
@@ -365,7 +538,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	hspin  = new KNumericSpinBox(this);
 	//CT	hspin ->setGeometry(225, 20, 40, 25 );
 	//CT 12Nov1998
-	hspin->setFixedSize(40,25);
+	hspin->adjustSize();
 	hspin->setMinimumSize(hspin->size());
 	lay->addWidget(hspin,1,3);
 	//CT
@@ -383,15 +556,15 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	//CT 12Nov1998
 	label->adjustSize();
 	label->setMinimumSize(label->size());
-	lay->addWidget(label,2,1);
+	lay->addWidget(label,3,1);
 	//CT
 
 	vspin  = new KNumericSpinBox(this);
 	//CT	vspin ->setGeometry(225, 60, 40, 25 );
 	//CT 12Nov1998
-	vspin->setFixedSize(40,25);
+	vspin->adjustSize();
 	vspin->setMinimumSize(vspin->size());
-	lay->addWidget(vspin,2,3);
+	lay->addWidget(vspin,3,3);
 	//CT
 	vspin->setRange(0,DEFAULT_GRID_MAX - DEFAULT_GRID_MIN);
 
@@ -405,7 +578,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
                                     this);
         urlpropsbox->adjustSize();
         urlpropsbox->setMinimumSize(urlpropsbox->size());
-        lay->addMultiCellWidget(urlpropsbox,3,3,1,3);
+        lay->addMultiCellWidget(urlpropsbox,4,4,1,3);
 	urlpropsbox->setChecked(urlprops);
         //-------------------------------
 
@@ -415,7 +588,7 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	//CT 12Nov1998
 	iconstylebox->adjustSize();
 	iconstylebox->setMinimumSize(iconstylebox->size());
-	lay->addMultiCellWidget(iconstylebox,4,4,1,3);
+	lay->addMultiCellWidget(iconstylebox,5,5,1,3);
 	//CT
 	iconstylebox->setChecked(transparent);
 
@@ -426,24 +599,24 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 	label = new QLabel(klocale->translate("Icon foreground color:"),this);
 	label->adjustSize();
 	label->setMinimumSize(label->size());
-	lay->addWidget(label,5,1);
+	lay->addWidget(label,6,1);
 
 	fgColorBtn = new KColorButton(icon_fg,this);
-	fgColorBtn->setFixedSize(80,30);
+	fgColorBtn->adjustSize();
 	fgColorBtn->setMinimumSize(fgColorBtn->size());
-	lay->addWidget(fgColorBtn,5,3);
+	lay->addWidget(fgColorBtn,6,3);
 	connect( fgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconFgColorChanged( const QColor & ) ) );
 
 	bgLabel = new QLabel(klocale->translate("Icon background color:"),this);
 	bgLabel->adjustSize();
 	bgLabel->setMinimumSize(bgLabel->size());
-	lay->addWidget(bgLabel,6,1);
+	lay->addWidget(bgLabel,8,1);
 
 	bgColorBtn = new KColorButton(icon_bg,this);
-	bgColorBtn->setFixedSize(80,30);
+	bgColorBtn->adjustSize();
 	bgColorBtn->setMinimumSize(bgColorBtn->size());
-	lay->addWidget(bgColorBtn,6,3);
+	lay->addWidget(bgColorBtn,8,3);
 	connect( bgColorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotIconBgColorChanged( const QColor & ) ) );
 

@@ -11,49 +11,120 @@
 #include <qlined.h>
 #include <qlistbox.h>
 #include <qpushbt.h>
-
+#include <qlayout.h> //CT
 UserAgentDialog::UserAgentDialog( QWidget * parent, 
 								  const char * name, 
 								  WFlags f ) :
   QWidget( parent, name, f )
 {
+
+  //CT 12Nov1998 layout management
+  QGridLayout *lay = new QGridLayout(this,7,5,10,5);
+  lay->addRowSpacing(0,10);
+  lay->addRowSpacing(3,25);
+  lay->addRowSpacing(6,10);
+  lay->addColSpacing(0,10);
+  lay->addColSpacing(4,10);
+
+  lay->setRowStretch(0,0);
+  lay->setRowStretch(1,0);
+  lay->setRowStretch(2,0);
+  lay->setRowStretch(3,0);
+  lay->setRowStretch(4,0);
+  lay->setRowStretch(5,1);
+  lay->setRowStretch(6,0);
+
+  lay->setColStretch(0,0);
+  lay->setColStretch(1,0);
+  lay->setColStretch(2,1);
+  lay->setColStretch(3,1);
+  lay->setColStretch(4,0);
+  //CT
+
   onserverLA = new QLabel( klocale->translate( "On server:" ), this );
-  onserverLA->setGeometry( 10, 20, 60, 30 );
+  //CT  onserverLA->setGeometry( 10, 20, 60, 30 );
   onserverLA->setAlignment( AlignRight|AlignVCenter );
+  //CT 12Nov1998 layout management
+  onserverLA->adjustSize();
+  onserverLA->setMinimumSize(onserverLA->size());
+  lay->addWidget(onserverLA,1,1);
+  //CT
 
   onserverED = new QLineEdit( this );
-  onserverED->setGeometry( 80, 20, 140, 30 );
+  //CT  onserverED->setGeometry( 80, 20, 140, 30 );
+  //CT 12Nov1998 layout management
+  onserverED->adjustSize();
+  onserverED->setMinimumSize(onserverED->size());
+  lay->addWidget(onserverED,1,2);
+  //CT
+
   connect( onserverED, SIGNAL( textChanged( const char* ) ),
 		   SLOT( textChanged( const char* ) ) );
   connect( onserverED, SIGNAL( returnPressed() ),
 		   SLOT( returnPressed() ) );
 
   loginasLA = new QLabel( klocale->translate( "login as:" ), this );
-  loginasLA->setGeometry( 10, 60, 60, 30 );
+  //CT  loginasLA->setGeometry( 10, 60, 60, 30 );
   loginasLA->setAlignment( AlignRight|AlignVCenter );
+  //CT 12Nov1998 layout management
+  loginasLA->adjustSize();
+  loginasLA->setMinimumSize(loginasLA->size());
+  lay->addWidget(loginasLA,2,1);
+  //CT
 
   loginasED = new QLineEdit( this );
-  loginasED->setGeometry( 80, 60, 140, 30 );
+  //CT  loginasED->setGeometry( 80, 60, 140, 30 );
+  //CT 12Nov1998 layout management
+  loginasED->adjustSize();
+  loginasED->setMinimumSize(loginasED->size());
+  lay->addWidget(loginasED,2,2);
+  //CT
+
   connect( loginasED, SIGNAL( textChanged( const char* ) ),
 		   SLOT( textChanged( const char* ) ) );
   connect( loginasED, SIGNAL( returnPressed() ),
 		   SLOT( returnPressed() ) );
 
   addPB = new QPushButton( klocale->translate( "Add" ), this );
-  addPB->setGeometry( 230, 20, 100, 30 );
+  //CT  addPB->setGeometry( 230, 20, 100, 30 );
+  //CT 12Nov1998 layout management
+  addPB->adjustSize();
+  addPB->setMinimumSize(addPB->size());
+  lay->addWidget(addPB,1,3);
+  //CT
+
   addPB->setEnabled( false );
   connect( addPB, SIGNAL( clicked() ), SLOT( addClicked() ) );
   
   deletePB = new QPushButton( klocale->translate( "Delete" ), this );
-  deletePB->setGeometry( 230, 60, 100, 30 );
+  //CT  deletePB->setGeometry( 230, 60, 100, 30 );
+  //CT 12Nov1998 layout management
+  deletePB->adjustSize();
+  deletePB->setMinimumSize(deletePB->size());
+  lay->addWidget(deletePB,2,3);
+  //CT
+
   deletePB->setEnabled( false );
   connect( deletePB, SIGNAL( clicked() ), SLOT( deleteClicked() ) );
 
   bindingsLA = new QLabel( klocale->translate( "Known bindings:" ), this );
-  bindingsLA->setGeometry( 60, 110, 200, 30 );
+  //CT  bindingsLA->setGeometry( 60, 110, 200, 30 );
+  //CT 12Nov1998 layout management
+  bindingsLA->adjustSize();
+  bindingsLA->setMinimumSize(bindingsLA->size());
+  lay->addMultiCellWidget(bindingsLA,4,4,2,3);
+  //CT
 
   bindingsLB = new QListBox( this );
-  bindingsLB->setGeometry( 60, 140, 210, 150 );
+  //CT  bindingsLB->setGeometry( 60, 140, 210, 150 );
+  //CT 12Nov1998 layout management
+  bindingsLB->adjustSize();
+  bindingsLB->setMinimumSize(bindingsLB->size());
+  lay->addMultiCellWidget(bindingsLB,5,5,2,3);
+
+  lay->activate();
+  //CT
+
   bindingsLB->setMultiSelection( false );
   bindingsLB->setScrollBar( true );
   connect( bindingsLB, SIGNAL( highlighted( const char* ) ),
@@ -183,6 +254,11 @@ void UserAgentDialog::listboxHighlighted( const char* _itemtext )
 
 /*
  * $Log$
+ * Revision 1.6  1998/06/27 09:20:08  kalle
+ * Fixing four hundred Makefiles for KDE 1.0, vol. 3
+ * Bumped package version number to 1.0pre
+ * Improved RPM spec file
+ *
  * Revision 1.5  1998/03/04 05:08:23  wuebben
  * Bernd: Made kfm quite a bit more configurable
  * 1.) bg,link,vlink,text colors can be configured

@@ -84,6 +84,15 @@ void KFMServer::slotSortDesktop()
 	KRootWidget::getKRootWidget()->rearrangeIcons();
 }
 
+//CT 13Nov1998
+void KFMServer::slotShowConfig()
+{
+    
+  KfmGui *cfg = new KfmGui;
+  cfg->slotConfigureBrowser();
+}
+//CT
+
 void KFMServer::slotRefreshDesktop()
 {
     if ( root )
@@ -323,6 +332,9 @@ void KFMClient::slotAuth( const char *_password )
     connect( this, SIGNAL( exec( const char*, const char* ) ),
 	     server, SLOT( slotExec( const char *, const char*) ) );    
     connect( this, SIGNAL( sortDesktop() ), server, SLOT( slotSortDesktop() ) );
+    //CT 14Nov1998
+    connect( this, SIGNAL( showConfig() ), server, SLOT( slotShowConfig() ) );
+    //CT
     connect( this, SIGNAL( selectRootIcons( int, int, int, int, bool ) ),
 	     server, SLOT( slotSelectRootIcons( int, int, int, int, bool ) ) );
 }

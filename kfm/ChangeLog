@@ -1,3 +1,9 @@
+1998-11-14  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* layout management for *all* the Browser Configuration dialog
+		tabs - still a problem with KTabCtl layout width.
+	* added "showConfigUI" option to kfmclient.
+
 1998-11-12  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* color selection GUI for the root icons (in htmlopts.cpp, root.cpp,

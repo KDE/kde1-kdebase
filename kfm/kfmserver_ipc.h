@@ -65,6 +65,12 @@ signals:
 	void sortDesktop();
 private:
 	void parse_sortDesktop( char *_data, int _len );
+//CT 14Nov1998
+signals:
+	void showConfig();
+private:
+	void parse_showConfig( char *_data, int _len );
+//CT
 signals:
 	void auth(const char* _password);
 private:

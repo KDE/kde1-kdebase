@@ -148,6 +148,16 @@ void KfmIpc::parse_sortDesktop( char *, int )
 	emit sortDesktop(  );
 }
 
+//CT 14Nov1998
+void KfmIpc::parse_showConfig( char *, int )
+{
+	// int pos = 0;
+
+	// Calling function
+	emit showConfig(  );
+}
+//CT
+
 void KfmIpc::parse_auth( char *_data, int _len )
 {
 	int pos = 0;
