@@ -23,8 +23,9 @@ TODO
 (DONE)Get back your menu after hiding it :-)
 (DONE)Save configuration/position/etc.
 Help (really needed ?)
+Fix the tons of events that kpager receives when the about dialog appears 
+Add support for all those modes that kbgndwm can paint wallpapers in. 
 (DONE)A more useful menu that allows to configure some options like
    reading kbgndwm configuration, etc.
-Fix the tons of events that kpager receives when the about dialog appears 
-Tooltips to see the name of windows
+(DONE)Display the names of the windows somewhere
 

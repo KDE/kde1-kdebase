@@ -693,3 +693,8 @@ void KPagerClient::updateDesk(int i)
 
 }
 
+char *KPagerClient::getDesktopName(int i)
+{
+    if (i>numberofDesktops) return 0L;
+    return desktop[i]->name();
+}

@@ -357,9 +357,24 @@ QPopupMenu *KPager::getOptionlikeMenu(void)
 
 }
 
+QPopupMenu *KPager::getToDesktoplikeMenu(int mark)
+{
+    QPopupMenu *menu=new QPopupMenu;
+    menu->setCheckable( TRUE );
+    for (int i=1;i<=kpagerclient->getNumberOfDesktops();i++)
+    {
+        menu->insertItem(kpagerclient->getDesktopName(i));
+	if (i!=mark)
+            menu->setItemChecked(i-1, FALSE);
+	else
+	    menu->setItemChecked(i-1, TRUE);
+    }
+    connect(menu,SIGNAL(activated(int)),this,SLOT(toDesktop(int)));
+    return menu;
+}
+
 void KPager::showPopupMenu(Window w,QPoint p)
 {
-    printf("Here\n %d,%d\n",p.x(),p.y());
     QPopupMenu *menu;
     QPopupMenu *moptions=getOptionlikeMenu();
     selectedWindow=w;
@@ -372,9 +387,12 @@ void KPager::showPopupMenu(Window w,QPoint p)
 	menu=new KPopupMenu(KWM::title(w),NULL, "KPagerPopupMenu");
         menu->insertItem(i18n("&Maximize"));    
         menu->insertItem(i18n("&Iconify"));    
-        menu->insertItem(i18n("&Sticky"));    
-        menu->insertItem(i18n("&Sticky"),m_options);    
-        menu->insertItem(i18n("&To Desktop"));    
+	if (KWM::isSticky(w))
+	    menu->insertItem(i18n("&UnSticky"));    
+        else
+	    menu->insertItem(i18n("&Sticky"));    
+
+        menu->insertItem(i18n("&To Desktop"),getToDesktoplikeMenu(KWM::desktop(w)));
         menu->insertItem(i18n("&Close"));    
         menu->insertSeparator();
         menu->insertItem(i18n("&Options"),moptions);
@@ -387,13 +405,22 @@ void KPager::showPopupMenu(Window w,QPoint p)
 
 void KPager::windowOperations(int id)
 {
-    printf("%d\n",id);
     switch (id)
     {
 	case (3) : KWM::setMaximize(selectedWindow, true);break;
 	case (4) : KWM::setIconify(selectedWindow, true);break;
-	case (5) : KWM::moveToDesktop(selectedWindow,KWM::currentDesktop());
-		   KWM::setSticky(selectedWindow, true);break;
+	case (5) : if (!KWM::isSticky(selectedWindow))
+		   {
+		      KWM::moveToDesktop(selectedWindow,KWM::currentDesktop());
+		      KWM::setSticky(selectedWindow, true);break;
+                   } else {
+                      KWM::setSticky(selectedWindow, false);break;
+                   };
 	case (7) : KWM::close(selectedWindow);break;
     };    
+}
+
+void KPager::toDesktop(int id)
+{
+    KWM::moveToDesktop(selectedWindow,id+1);
 }

@@ -56,6 +56,8 @@ private:
     virtual void readProperties(KConfig *kcfg);
 
     QPopupMenu *getOptionlikeMenu(void);
+    QPopupMenu *getToDesktoplikeMenu(int mark);
+
 protected:
     virtual void closeEvent ( QCloseEvent * );
 
@@ -77,7 +79,7 @@ public slots:
     void showPopupMenu(Window w,QPoint p);
 
     void windowOperations(int id); 
-
+    void toDesktop(int id);
     
 private:
     KMenuBar *menu;

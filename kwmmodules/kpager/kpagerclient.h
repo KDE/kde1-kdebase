@@ -89,7 +89,10 @@ public:
 
     bool areArrowsVisible(void) { return right->isVisible(); }
     bool is2Rows(void) { return use2Rows; }
-    
+   
+    int getNumberOfDesktops(void) { return numberofDesktops; }; 
+    char *getDesktopName(int i); 
+
 public slots:
     void moveRight();
     void moveLeft();
