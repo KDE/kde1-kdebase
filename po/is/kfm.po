@@ -182,7 +182,7 @@ msgstr "Vista stillingar fyrir þessa s&lóð"
 
 #: kfmgui.cpp:391
 msgid "&Configure File Manager..."
-msgstr "Stilla skráastjóra..."
+msgstr "Stilla &notendaflöt..."
 
 #: kfmgui.cpp:393
 msgid "Configure &Browser..."
@@ -1405,7 +1405,7 @@ msgstr "Þú fékst smáköku frá vélinni:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr "Viltu taka við þessari köku epa hafna henni?"
+msgstr "Viltu taka við þessari köku eða hafna henni?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
