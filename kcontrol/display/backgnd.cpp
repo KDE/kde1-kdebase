@@ -830,25 +830,24 @@ void KBackground::setMonitor()
   matrix.scale( sx, sy );
 	
   if ( wpPixmap.isNull() || !currentItem.bUseWallpaper ||
-       currentItem.wpMode ==Centred || currentItem.wpMode == CentredBrick ||
-       currentItem.wpMode ==CentredWarp || currentItem.wpMode ==CentredMaxpect) {
+       currentItem.wpMode == Centred || currentItem.wpMode == CentredBrick ||
+       currentItem.wpMode == CentredWarp || currentItem.wpMode ==CentredMaxpect) {
 
     KPixmap preview;
     preview.resize( monitor->width()+1, monitor->height()+1 );
 	
     if ( currentItem.ncMode == OneColor ) {
       preview.fill( currentItem.color1 );
-    } else if ( currentItem.ncMode == TwoColor && currentItem.stMode == Gradient ) {
+    } else if ( currentItem.stMode == Gradient ) {
 		
       if( currentItem.orMode == Portrait ) 
 	preview.gradientFill( currentItem.color2, currentItem.color1, true );
       else
 	preview.gradientFill( currentItem.color2, currentItem.color1, false );
 			
-    } else if ( currentItem.ncMode == TwoColor && currentItem.stMode == Pattern ) {
-      preview.patternFill(currentItem.color1, currentItem.color2, currentItem.pattern);
-    }
-	
+    } else
+      preview.patternFill(currentItem.color1,currentItem.color2, currentItem.pattern);
+    
     if ( currentItem.wpMode == CentredBrick ) {
       int i, j, k;
 
@@ -895,7 +894,7 @@ void KBackground::setMonitor()
     
 }
 
-// Attempts to load the specified wallpaper and creates a centred/scaled
+// Attempts to load the specified wallpaper and creates a centred/scaled/mirrored etc.
 // version if necessary.
 // Note that centred pixmaps are placed on a full screen image of background
 // color1, so if you want to save memory use a small tiled pixmap.
@@ -1227,13 +1226,7 @@ void KBackground::slotWallpaper( const char *filename )
 void KBackground::slotWallpaperMode( int m )
 {
   currentItem.wpMode = m + 1;
-  if ( loadWallpaper( currentItem.wallpaper.data() ))
-    {
-      setMonitor();
-      changed = true;
-      if ( rnddlg && interactive )
-	rnddlg->copyCurrent();
-    }
+  slotWallpaper( currentItem.wallpaper.data() );
 }
 
 void KBackground::slotColorMode( int m )

@@ -277,7 +277,7 @@ protected:
   void showSettings();
   void writeSettings( int deskNum );
   void setMonitor();
-  bool  loadWallpaper( const char *filename, bool useContext = TRUE );
+  bool loadWallpaper( const char *filename, bool useContext = TRUE );
   void retainResources();
   void setDefaults();
 
