@@ -27,13 +27,14 @@ install-data-local:
 	$(mkinstalldirs) $(ICONSDIR)
 	$(INSTALL_DATA) $(srcdir)/kfind.xpm $(ICONSDIR)
 	$(mkinstalldirs) $(kde_minidir)
-	$(mkinstalldirs) $(kde_minidir)/../large
+	$(mkinstalldirs) $(kde_icondir)/large
 	$(INSTALL_DATA) $(srcdir)/mini-kfind.xpm $(kde_minidir)/kfind.xpm
-	$(INSTALL_DATA) $(srcdir)/large-kfind.xpm $(kde_minidir)/../large/kfind.xpm
+	$(INSTALL_DATA) $(srcdir)/large-kfind.xpm $(kde_icondir)/large/kfind.xpm
 
 uninstall-local:
 	rm -f $(ICONSDIR)/$(TARGET).xpm
 	rm -f $(kde_minidir)/kfind.xpm
+	rm -f $(kde_icondir)/large/kfind.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kfind_SOURCES) && mv messages.po ../po/kfind.pot
