@@ -57,32 +57,32 @@ void KFMDirTree::fill()
 }
 
 // new slot for updating tree view Sep 5 rjakob
+// _url is an encoded URL
 void KFMDirTree::slotshowDirectory(const char *_url )
 {
-    char *p;
-    char tmp[PATH_MAX],tmp2[PATH_MAX];
+    QString tmp2;
     bool found;
     int loops;
 
     int ypos, xpos, myindex, newypos;
-    int comparelength;
     finderWin->offsets( xpos, ypos );
 
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
-    
-    // debug("slotshowDirectory(%s)\n",_url);
 
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
 
-    strcpy(tmp,u.path());
-    p=tmp+strlen(tmp)-1;
-    if (*p=='/') *p=0;
+    QString tmp (u.url());
+    KURL::decodeURL(tmp);
+    if ( tmp.right(1) == "/" )
+        tmp.truncate(tmp.length() - 1);
     loops=0;
 
-    comparelength=strlen(tmp);
+    // debug("slotshowDirectory(%s)\n",tmp.data());
+
+    int comparelength=tmp.length();
     while(1) {
 
         myindex=0;
@@ -92,14 +92,14 @@ void KFMDirTree::slotshowDirectory(const char *_url )
             kfmitem = (KFMDirTreeItem*)item;
             myindex++;
 
-            strcpy(tmp2,kfmitem->getURL());
+            tmp2 = kfmitem->getURL();
 
-            if (!strncmp(tmp,tmp2,comparelength)) {
+            if (!qstrncmp(tmp,tmp2,comparelength)) {
 	        kfmitem->setOpen(true);
     	        updateTree(false);
 	        found=true;
-	        if (comparelength<(int)strlen(tmp)) {
-		    comparelength=strlen(tmp);
+	        if (comparelength<(int)tmp.length()) {
+		    comparelength=tmp.length();
 		    break;  // break the for() loop
 		    }
     	        finderWin->repaint();
@@ -117,13 +117,13 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 	    break;
 	    }
         comparelength--;
-        while( (comparelength>0) && (tmp[comparelength-1]!='/') )
+        while( (comparelength>0) && (tmp.at(comparelength-1)!='/') )
     	    comparelength--;
         comparelength--;
         if (comparelength<=0) comparelength=1;
         if (++loops>128) break;     // race condition ?
         }
-    debug("\"%s\" not opened\n",tmp);
+    debug("\"%s\" not opened\n",tmp.data());
 }
 
 void KFMDirTree::slotDirectoryChanged( const char *_url )
@@ -134,7 +134,7 @@ void KFMDirTree::slotDirectoryChanged( const char *_url )
     
     // Prepare the path in a way that allows quick comparison
     // with the return value of KFMDirTreeItem::getURL
-    QString tmp( u.path() );
+    QString tmp( u.url() );
     if ( tmp.right(1) == "/" )
 	tmp.truncate( tmp.length() - 1 );
 
@@ -493,13 +493,12 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
     bFilled = FALSE;
     bIsFile = _isfile;
     
-    url = _url;
-    
     QString tmp = _url;
     if ( tmp.right(1) == "/" && tmp != "/" && tmp.right(2) != ":/" )
 	tmp.truncate( tmp.length() - 1 );
     KURL u( tmp );
-    
+    url = u.url(); // returns a URL with file: and encoded
+   
     QString home( QDir::homeDirPath() );
     if ( home.right(1) == "/" )
 	home.truncate( home.length() -1 );
