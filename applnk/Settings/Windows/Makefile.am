@@ -1,4 +1,4 @@
-data_DATA = .directory buttons.kdelnk properties.kdelnk titlebar.kdelnk desktop.kdelnk
+data_DATA = .directory buttons.kdelnk properties.kdelnk titlebar.kdelnk
 
 datadir = $(kde_appsdir)/Settings/Windows
 

@@ -1,5 +1,5 @@
 data_DATA = .directory colors.kdelnk screensaver.kdelnk style.kdelnk \
-            background.kdelnk language.kdelnk
+            background.kdelnk language.kdelnk desktop.kdelnk
 
 datadir = $(kde_appsdir)/Settings/Desktop
 
