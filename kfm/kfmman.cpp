@@ -902,9 +902,10 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( s->getOwner() );
 	view->write( "</td><td>" );
 	view->write( s->getGroup() );
-	view->write( "</td><td align=right>" ); 
+	view->write( "</td><td align=right>" );
 	QString tmp;
-	tmp.sprintf( "%i  &nbsp;&nbsp;&nbsp;</td><td>", s->getSize() );
+        // write the size and then an empty cell to add some space
+	tmp.sprintf( "%i </td><td>&nbsp;</td><td>", s->getSize() );
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
 	
@@ -929,7 +930,8 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( s->getGroup() );
 	view->write( "</td><td align=right>" );
 	QString tmp;
-	tmp.sprintf( "%i   &nbsp;&nbsp;&nbsp;</td><td>", s->getSize() );
+        // write the size and then an empty cell to add some space
+	tmp.sprintf( "%i </td><td>&nbsp;</td><td>", s->getSize() );
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
 	view->write( "</td></tr>" );
