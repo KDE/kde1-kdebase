@@ -7,7 +7,7 @@
 QPixmap* KFinder::openPixmap = 0L;
 QPixmap* KFinder::closePixmap = 0L;
 
-KFinder::KFinder( QWidget *_parent = 0L, QStrList *_headers = 0L, QArray<int> *_sizes = 0L ) : QWidget( _parent )
+KFinder::KFinder( QWidget *_parent, QStrList *_headers, QArray<int> *_sizes ) : QWidget( _parent )
 {
     xOffset = 0;
     
