@@ -269,19 +269,19 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     int h = QApplication::desktop()->height();
 
     // main menu buttons
-    entries[nbuttons].button = 
+    entries[nbuttons++].button = 
       (myPushButton*) new myPushButton( this, klocale->translate("Go!"));
-    entries[nbuttons].button->installEventFilter( this );
+    entries[nbuttons-1].button->installEventFilter( this );
     QToolTip::add(entries[nbuttons].button, 
 		  klocale->translate("Where do you want to go tomorrow?"));
 
-    connect( entries[nbuttons].button, 
+    connect( entries[nbuttons-1].button, 
 	     SIGNAL(clicked()), 
 	     SLOT(button_clicked()) );
-    connect( entries[nbuttons].button, 
+    connect( entries[nbuttons-1].button, 
 	     SIGNAL(pressed()), 
 	     SLOT(button_pressed()) );
-    kde_button = entries[nbuttons].button;
+    kde_button = entries[nbuttons-1].button;
     if (!mBackTexture.isNull())
       kde_button->setBackgroundPixmap( mBackTexture );
 
@@ -634,6 +634,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     int next_minute_break = (60 - cur_time.second()) * 1000 - cur_time.msec();
     QTimer::singleShot(next_minute_break, this, SLOT(slotUpdateClock()));
 
+
     // menus...
     foldersFirst = true;
     if (config->hasKey("FoldersFirst"))
@@ -647,98 +648,76 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("PersonalFirst", "off");
     
-    // the main menu
-    PMenu* systemmenu = new PMenu;
-    systemmenu->setAltSort(foldersFirst);
-    PMenu* personalmenu = new PMenu;
-    personalmenu->setAltSort(foldersFirst);
+
+
+    primary_menu = new PMenu;
+    primary_menu->setAltSort(foldersFirst);
     
     config->setGroup("KDE Desktop Entries");
-
-    // read personal configuration
     QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
-    QString personaldir  = config->readEntry("PersonalPath", temp.data() );
-
-    // read system configuration
+    QString personal = config->readEntry("PersonalPath", temp.data() );
     temp = KApplication::kdedir()+"/share/applnk";
-    QString sysapplnkdir = config->readEntry("Path", temp.data() );
+    QString kde_apps = config->readEntry("Path", temp.data() );
 
-    systemmenu->parse(QDir(sysapplnkdir));
-    systemmenu->setAltSort(foldersFirst);
-    personalmenu->parse(QDir(personaldir));
-    personalmenu->setAltSort(foldersFirst);
 
-    primary_menu = systemmenu;
-    secondary_menu = 0;
-
-    personalmenu->createMenu(new myPopupMenu, this);
-
-    if ( personalmenu->getQPopupMenu() && 
-	 personalmenu->getQPopupMenu()->count()>0 ) {
-      if ( personalFirst ) {
-	
-	primary_menu = personalmenu;
-	secondary_menu = systemmenu;
-	
-      } else {
-
-	secondary_menu = personalmenu;
-      }
-    }
-
-    if ( secondary_menu ) {
-      
-      PMenuItem* additem = new PMenuItem ;
-      QFileInfo fi(personaldir);
-      additem->parse(&fi, secondary_menu);
+    if (personalFirst){
+      primary_menu->parse(QDir(personal));
+      secondary_menu = new PMenu;
+      secondary_menu->setAltSort(foldersFirst);
+      secondary_menu->parse(QDir(kde_apps));
+      PMenuItem* pmi = new PMenuItem ;
+      QFileInfo fi(personal);
+      pmi->parse(&fi, secondary_menu);
       primary_menu->add( new PMenuItem((EntryType) separator) );
-      primary_menu->add( additem );
+      primary_menu->add( pmi );
     }
-
+    else {
+      primary_menu->parse(QDir(kde_apps));
+      PMenu* tmp = new PMenu;
+      tmp->setAltSort(foldersFirst);
+      tmp->parse(QDir(personal));
+      tmp->createMenu(new myPopupMenu, this);
+      if (tmp->getQPopupMenu() && tmp->getQPopupMenu()->count()>0){
+	secondary_menu = new PMenu;
+	secondary_menu->setAltSort(foldersFirst);
+	secondary_menu->parse(QDir(personal));
+	PMenuItem* pmi = new PMenuItem ;
+	QFileInfo fi(personal);
+	pmi->parse(&fi, secondary_menu);
+	primary_menu->add( new PMenuItem((EntryType) separator) );
+	primary_menu->add( pmi );
+      }
+      delete tmp;
+    }
+    
     primary_menu->add( new PMenuItem(separator) );
     addapp_menu = new PMenu(*primary_menu);
-
-    PMenu *panel_menu = new PMenu;
-    panel_menu->
-      add(new PMenuItem(add_but, 
-			klocale->translate("Add application"), 
-			0, 0, addapp_menu,
-			0, 0, new myPopupMenu, FALSE, 0, 
-			klocale->translate("Add an application or a submenu onto the panel")));
-    panel_menu->
-      add( new PMenuItem(prog_com, klocale->translate("Add windowlist"), 
-			 0, 0, 0, 
-			 this, SLOT(add_windowlist()), 0, FALSE, 0, 
-			 klocale->translate("Add a windowlist menu onto the panel")) );
-    panel_menu->
-      add( new PMenuItem(prog_com, klocale->translate("Configure"), 
-			 0, 0, 0, 
-			 this, SLOT(configure_panel()), 0, FALSE, 0, 
-			 klocale->translate("Configure panel")) );
-    panel_menu->
-      add( new PMenuItem(prog_com, klocale->translate("Restart"), 
-			 0, 0, 0, 
-			 this, SLOT(restart()), 0, FALSE, 0, 
-			 klocale->translate("Restart panel")) );
     
-    primary_menu->
-      add( new PMenuItem(submenu, klocale->translate("Panel"), 
-			 0, 0, panel_menu,
-			 0, 0, new myPopupMenu) );
-    primary_menu->
-      add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), 
-			 0, 0, 0,
-			 this, SLOT(call_klock()), 0, FALSE, 0, 
-			 klocale->translate("Lock screen")) );
-    primary_menu->
-      add( new PMenuItem(prog_com, klocale->translate("Logout"), 
-			 0, 0, 0,
-			 this, SLOT(ask_logout()), 0, FALSE, 0, 
-			 klocale->translate("Logout")) );
-
+    PMenu *panel_menu = new PMenu;
+    panel_menu->add( new PMenuItem(add_but, klocale->translate("Add application"), NULL, NULL, addapp_menu,
+				   NULL, NULL, new myPopupMenu, FALSE, NULL, 
+				   klocale->translate("Add an application or a submenu onto the panel")));
+    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add windowlist"), NULL, NULL, NULL, 
+				   this, SLOT(add_windowlist()), NULL, FALSE, NULL, 
+				   klocale->translate("Add a windowlist menu onto the panel")) );
+    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Configure"), NULL, NULL, NULL, 
+				   this, SLOT(configure_panel()), NULL, FALSE, NULL, 
+				   klocale->translate("Configure panel")) );
+    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Restart"), NULL, NULL, NULL, 
+				   this, SLOT(restart()), NULL, FALSE, NULL, 
+				   klocale->translate("Restart panel")) );
+    primary_menu->add( new PMenuItem(submenu, klocale->translate("Panel"), NULL, NULL, panel_menu,
+				     NULL, NULL, new myPopupMenu) );
+    primary_menu->add( new PMenuItem(prog_com, klocale->translate("Lock Screen"), NULL, NULL, NULL,
+				     this, SLOT(call_klock()), NULL, FALSE, NULL, 
+				     klocale->translate("Lock screen")) );
+    primary_menu->add( new PMenuItem(prog_com, klocale->translate("Logout"), NULL, NULL, NULL,
+				     this, SLOT(ask_logout()), NULL, FALSE, NULL, klocale->translate("Logout")) );
+    
     primary_menu->createMenu(new myPopupMenu, this);
-    entries[nbuttons++].popup = primary_menu->getQPopupMenu();
-
+    entries[0].popup = primary_menu->getQPopupMenu();
+    
+    
     read_in_configuration();
     KApplication::getKApplication()->getConfig()->sync();
     doGeometry();
