@@ -1791,7 +1791,7 @@ void KRandomDlg::changeDir()
 
 void KRandomDlg::slotBrowse()
 {
-  QString tmp =  KFileDialog::getDirectory(QDir::currentDirPath(), this, "dirdlg");
+  QString tmp =  KFileDialog::getDirectory(dirLined->text(), this, "dirdlg");
 
   if ( tmp.isEmpty() )
     return;
