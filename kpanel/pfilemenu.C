@@ -4,7 +4,7 @@
 //  KDiskNavigator main file.
 //
 //  Copyright (C) 1998 Pietro Iglio
-//  email:  iglio@fub.it, iglio@geocities.com
+//  email:  iglio@kde.org
 //
 
 //////////////////////////////////////////////////////////////////////////////
@@ -63,7 +63,7 @@
 #define DEFAULT_FOLDER_ICON        "folder.xpm"
 #define DEFAULT_FILE_ICON          "document.xpm"
 #define DEFAULT_EXECUTABLE_ICON    "exec.xpm"
-#define LOCKED_FOLDER_ICON          "lockedfolder.xpm"
+#define LOCKED_FOLDER_ICON         "lockedfolder.xpm"
 #define UNREADABLE_FOLDER_ICON     "mini-question.xpm"
 #define MORE_ICON                  "blockdevice.xpm"
 #define TOOMANYFILES_ICON          "mini-bomb.xpm"
@@ -148,7 +148,6 @@ getFileInfo(const char* _path, const char* file_name, char* new_file,
   if (len > 7 && new_file[len - 7] == '.' &&
       strcmp(new_file + len - 6, "kdelnk") == 0) {
     new_file[len - 7] = 0;
-
 
     // QFileInfo fi(file);
     KSimpleConfig kconfig(file, true);
@@ -679,7 +678,11 @@ void PFileMenu::updateRecentFiles(QString _path)
 //
 void PFileMenu::openFolder()
 {
-  updateRecentFolders(this->path);
+  // Update the Recent section if the entry is not already in
+  // the Global or Local section;
+  if (!(this->parentItem && this->parentItem->cmenu &&
+      this->parentItem->cmenu->parentMenu == PFileMenu::root))
+    updateRecentFolders(this->path);
 
   QDir d(this->path);
 
@@ -709,7 +712,9 @@ void PFileMenu::buildRootMenu()
     // Global Section /////////////////////////////////////////////////////
 
     if (the_panel->show_global_section) {
-      this->add( new PMenuItem(label, i18n("Global:"), 0, "background.xpm") );
+      this->add( new PMenuItem(label, i18n("Global:"), 0, "background.xpm",
+		 0, 0, 0, 0, FALSE, QString(),
+		 "Entries shared among all users") );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(KDISKNAV_GLOBAL_DIR);
@@ -728,7 +733,9 @@ void PFileMenu::buildRootMenu()
       else
 	this->add( new PMenuItem(separator) );
 
-      this->add( new PMenuItem(label, i18n("Local:"), 0, "mini-display.xpm") );
+      this->add( new PMenuItem(label, i18n("Local:"), 0, "mini-display.xpm",
+		 0, 0, 0, 0, FALSE, QString(),
+		 "Personal entries") );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(QDir::homeDirPath() + KDISKNAV_LOCAL_DIR);
@@ -746,7 +753,9 @@ void PFileMenu::buildRootMenu()
 	this->add( new PMenuItem(separator) );
 
       PMenuItem* recentItem =
-        new PMenuItem(label, i18n("Recent:"), 0, "mini-exclam.xpm");
+        new PMenuItem(label, i18n("Recent:"), 0, "mini-exclam.xpm",
+		      0, 0, 0, 0, FALSE, QString(),
+		      "Recent entries");
       the_panel->head_recent_id = recentItem->getId();
       this->add( recentItem );
       this->add( new PMenuItem(separator) );

@@ -72,9 +72,12 @@ public:
 #endif
 
   PMenuItem();
-  PMenuItem( EntryType e, QString t=QString(), QString c=QString(), QString n=QString(), PMenu *menu=0,
-	     QObject *receiver=0, char *member=0, QPopupMenu *cm=0, bool ro = FALSE,
-	     QString d=QString(), QString co=QString() );
+  PMenuItem( EntryType e, QString text=QString(), QString command=QString(),
+	     QString pixmap=QString(), PMenu *submenu=0,
+	     QObject *receiver=0, char *member=0, QPopupMenu *cm=0,
+	     bool readonly = FALSE,
+	     QString dir=QString(), QString comment=QString() );
+
   PMenuItem( PMenuItem &item );
   ~PMenuItem ();
 
@@ -206,6 +209,7 @@ class PFileMenu : public PMenu
   Q_OBJECT
 public:
   friend PMenu;
+  friend PMenuItem;
 
 #ifdef DISKNAV_DEBUG
   virtual void dump();

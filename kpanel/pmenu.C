@@ -252,7 +252,12 @@ void PMenuItem::exec()
 
   if (! ready_for_event_loop){ // hack: avoid doing this when the menu is not fully parsed.
       // otherwise PFileMenu::updateRecentFiles will segfault (Matthias)
-      PFileMenu::updateRecentFiles(cpath);
+
+    // NOTE: Update the Recent section if the entry is not already in
+    // the Global or Local section;
+    // However, to perform this check PMenuItem should have a pointer to
+    // its container (PMenu);
+    PFileMenu::updateRecentFiles(cpath);
   }
 
   KFM* kfm = new KFM;

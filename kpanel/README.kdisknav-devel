@@ -1,7 +1,7 @@
                +++++++++++++++++++++++++++++++++++++++++
                +++++ KDiskNavigator: hacker's guide ++++
                +++++++++++++++++++++++++++++++++++++++++
-               +++++++ Pietro Iglio (iglio@fub.it)++++++
+               +++++++ Pietro Iglio (iglio@kde.org)++++++
 
 Last updated: 2 Oct 1998
 
@@ -88,4 +88,4 @@ a Qt 1.40 problem, will disappear soon.
 
 Please ask me any question if you are going to hack KDiskNavigator.
 
--- Pietro Iglio (iglio@fub.it)
+-- Pietro Iglio (iglio@kde.org)
