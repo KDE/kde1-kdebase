@@ -2,8 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kthememgr\n"
 "POT-Creation-Date: 1999-09-04 23:26+0200\n"
-"PO-Revision-Date: 1999-08-04 23:00+MET\n"
-"Last-Translator: Harri Porten <porten@kde.org>\n"
+"PO-Revision-Date: 1999-09-05 15:00+CEST\n"
+"Last-Translator: Tobias Burnus <burnus@gmx.de>\n"
+"Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: de <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -11,7 +12,7 @@ msgstr ""
 
 #: theme.cpp:164
 msgid "Mappings file theme.mappings not found."
-msgstr ""
+msgstr "Themanabbildungsdatei theme.mappings nicht gefunden."
 
 #: theme.cpp:182
 #, c-format
@@ -72,6 +73,10 @@ msgid ""
 "\n"
 "Entry `%s' is missing or has no value."
 msgstr ""
+"Interner Fehler in den Themenabbildungen\n"
+"(Datei theme.mappings) in Gruppe %s:\n"
+"\n"
+"Eintrag `%s' fehlt oder halt keinen Wert."
 
 #: theme.cpp:601
 #, c-format
@@ -79,6 +84,8 @@ msgid ""
 "Unknown pre-install command `%s' in\n"
 "theme.mappings file in group %s."
 msgstr ""
+"Unbekannter Vorinstallationsbefehl `%s' in der\n"
+"theme.mappings-Datei in Gruppe %s."
 
 #: theme.cpp:672
 #, c-format
@@ -86,6 +93,8 @@ msgid ""
 "Unknown command `%s' in theme.mappings\n"
 "file in group %s."
 msgstr ""
+"Unbekannter Befehl `%s' in der theme.mappings-\n"
+"Datei in Gruppe %s."
 
 #: theme.cpp:711
 #, c-format
@@ -104,7 +113,7 @@ msgstr "Kann keine Sicherheitskopie von %s erstellen: mv liefert %d"
 #: theme.cpp:797
 #, c-format
 msgid "Icon key name %s can not be used"
-msgstr ""
+msgstr "Symbol-Schlüsselname %s kann nicht benutzt werden"
 
 #: theme.cpp:859
 #, c-format
