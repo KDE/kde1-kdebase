@@ -284,7 +284,7 @@ msgstr ""
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
-msgstr "Αποτελέσματα που αποθηκεύτηκαν στο αρχείο"
+msgstr "Αποτελέσματα που αποθηκεύτηκαν στο αρχείο\n"
 
 #: kfwin.cpp:195
 #, c-format
