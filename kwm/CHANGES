@@ -11,7 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
-patchlevel 14: internal cleanups with unmapNotify handling.
+patchlevel 14: 
+        - internal cleanups with unmapNotify handling.
+        - fixed the problems with java and dissappearing windows.
 
 patchlevel 13: Mario Weilguni <mweilguni@kde.org>
         - added a replacement for gradientFill (for color depths

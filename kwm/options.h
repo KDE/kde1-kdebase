@@ -124,7 +124,7 @@ extern kwmOptions options;
 			|| options.FocusPolicy == CLASSIC_SLOPPY_FOCUS)
 
 
-#define DEBUG_EVENTS_ENABLED 
+// #define DEBUG_EVENTS_ENABLED 
 
 #ifdef DEBUG_EVENTS_ENABLED
 #define DEBUG_EVENTS(x,y) debug_events(x,y);
@@ -133,6 +133,7 @@ extern kwmOptions options;
      void debug_events(const char* s, void* v, long int l=0);
 #else
 #define DEBUG_EVENTS(x,y) 
+#define DEBUG_EVENTS2(x,y,z) 
 #endif
 
 #endif // OPTIONS_H

@@ -988,7 +988,6 @@ void Client::paintEvent( QPaintEvent*){
 }
 
 void Client::resizeEvent( QResizeEvent * ){
-  printf("****************client resize event\n");
   // we have been resized => we have to layout the window decoration
   // again and adapt our swallowed application window
   layoutButtons();
