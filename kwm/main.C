@@ -996,9 +996,9 @@ void MyApp::readConfiguration(){
   options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
   config->writeEntry("RstartProtocol", options.rstart);
 
-  QString s  = config->readEntry("TitlebarDoubleClickCommand", "winMaximize");
+  QString s  = config->readEntry("TitlebarDoubleClickCommand", "winShade");
   if (Client::operationFromCommand(s) < 0)
-    s = "winMaximize";
+    s = "winShade";
   options.titlebar_doubleclick_command = Client::operationFromCommand(s);
   config->writeEntry("TitlebarDoubleClickCommand", s);
 
