@@ -1207,7 +1207,7 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding )
 
 bool KMimeBind::runBinding( const char *_url )
 {
-    char getwd_buffer[PATH_MAX];
+    char getwd_buffer[KDEMAXPATHLEN];
 
     KURL u( _url );
     if ( u.isMalformed() )
@@ -1222,7 +1222,7 @@ bool KMimeBind::runBinding( const char *_url )
     QString d = "";
 
 // preset working directory to current working directory
-    getcwd(getwd_buffer,PATH_MAX);
+    getcwd(getwd_buffer,KDEMAXPATHLEN);
     QString workdir(getwd_buffer);
 
     f << "\"" << quote1 << "\"";
