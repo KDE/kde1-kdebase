@@ -457,7 +457,7 @@ static void catch_sig(int sig)
       }
 
       /* init of termios structure		*/
-#if defined (__FreeBSD__) || (__NetBSD__)
+#if defined (__FreeBSD__) || (__NetBSD__) || defined(__bsdi__)
       ioctl(0,TIOCGETA,(char *)&ttmode);
 #else
 #   if defined (_HPUX_SOURCE) || defined(__Lynx__)
@@ -525,7 +525,7 @@ static void catch_sig(int sig)
 
       if(mask == 0x7f)
 	ttmode.c_cflag = B9600 | PARENB | CS7 | CREAD;
-#if defined (__FreeBSD__) || (__NetBSD__)
+#if defined (__FreeBSD__) || (__NetBSD__) || defined(__bsdi__)
       ioctl(0,TIOCSETA,(char *)&ttmode);
 #else
 #   ifdef _HPUX_SOURCE
