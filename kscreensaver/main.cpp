@@ -53,11 +53,13 @@ static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
 static QString pidFile;
 static KPasswordDlg *passDlg = NULL;
 static QWidget *saverWidget = NULL;
+static int desktopWidth = 0, desktopHeight = 0;
 extern char *ProgramName;
 extern Bool allowroot;
 
-void grabInput( QWidget *w );
+bool grabInput( QWidget *w );
 void releaseInput();
+void destroySaverWindow( QWidget *w );
 static void lockNow( int );
 static void cleanup( int );
 void catchSignals();
@@ -194,12 +196,17 @@ void ssApp::slotPassCancel()
 
 //----------------------------------------------------------------------------
 
-void grabInput( QWidget *w)
+bool grabInput( QWidget *w)
 {
-	XGrabKeyboard( qt_xdisplay(), QApplication::desktop()->winId(), True,
-			GrabModeAsync, GrabModeAsync, CurrentTime );
+	int rv = XGrabKeyboard( qt_xdisplay(), QApplication::desktop()->winId(),
+                True, GrabModeAsync, GrabModeAsync, CurrentTime );
 
-	XGrabPointer( qt_xdisplay(), QApplication::desktop()->winId(), True,
+    if (rv == AlreadyGrabbed)
+    {
+        return false;
+    }
+
+	rv = XGrabPointer( qt_xdisplay(), QApplication::desktop()->winId(), True,
 			ButtonPressMask
 			| ButtonReleaseMask | EnterWindowMask | LeaveWindowMask
 			| PointerMotionMask | PointerMotionHintMask | Button1MotionMask
@@ -207,6 +214,13 @@ void grabInput( QWidget *w)
 			| Button5MotionMask | ButtonMotionMask | KeymapStateMask,
 			GrabModeAsync, GrabModeAsync, None, w->cursor().handle(),
 			CurrentTime );
+
+    if (rv == AlreadyGrabbed)
+    {
+        return false;
+    }
+
+    return true;
 }
 
 void releaseInput()
@@ -236,7 +250,12 @@ QWidget *createSaverWindow()
 	QCursor c( bm, bm );
 	w->setCursor( c );
 
-	grabInput( w );
+	if (grabInput( w ) == false)
+    {
+        // The grab failed - we can't save the window now.
+        destroySaverWindow(w);
+        w = 0;
+    }
 
 	return w;
 }
@@ -451,6 +470,19 @@ int main( int argc, char *argv[] )
 	canGetPasswd = true;
 #endif
 
+    // Get the size of the desktop
+    XWindowAttributes attr;
+    if (XGetWindowAttributes(qt_xdisplay(), RootWindow(qt_xdisplay(),
+        qt_xscreen()), &attr) == 0)
+    {
+        debug("Failed getting Root window size");
+    }
+    else
+    {
+        desktopWidth = attr.width;
+        desktopHeight = attr.height;
+    }
+
 	catchSignals();
 	if ( mode == MODE_INSTALL )
 	{
@@ -483,26 +515,26 @@ int main( int argc, char *argv[] )
 
 			saverWidget = createSaverWindow();
 
-			saverWidget->setFixedSize( QApplication::desktop()->width(),
-				 QApplication::desktop()->height() );
-			saverWidget->move( 0, 0 );
+            if (saverWidget)
+            {
+                saverWidget->setFixedSize(desktopWidth, desktopHeight);
+                saverWidget->move( 0, 0 );
+                saverWidget->show();
+                saverWidget->raise();
+                QApplication::flushX();
 
-//			saverWidget->setGeometry( 0, 0, QApplication::desktop()->width(),
-//				 QApplication::desktop()->height() );
-			saverWidget->show();
-			saverWidget->raise();
+                saveWin = saverWidget->winId();
 
-			saveWin = saverWidget->winId();
+                startScreenSaver( saveWin );
+                a.enter_loop();
+                stopScreenSaver();
 
-			startScreenSaver( saveWin );
-			a.enter_loop();
-			stopScreenSaver();
+                destroySaverWindow( saverWidget );
 
-			destroySaverWindow( saverWidget );
-
-			lockOnce = FALSE;
-			if( only1Time ) 
-				break;
+                lockOnce = FALSE;
+                if( only1Time ) 
+                    break;
+            }
 		}
 
         cleanupAutoLock();
@@ -517,22 +549,22 @@ int main( int argc, char *argv[] )
 		}
 		setLock("test");
 		saverWidget = createSaverWindow();
-		saverWidget->setFixedSize( QApplication::desktop()->width(),
-				 QApplication::desktop()->height() );
-		saverWidget->move( 0, 0 );
-//		saverWidget->setGeometry( 0, 0, QApplication::desktop()->width(),
-//				 QApplication::desktop()->height() );
-		saverWidget->show();
-		saverWidget->raise();
-        QApplication::flushX();
+        if (saverWidget)
+        {
+            saverWidget->setFixedSize(desktopWidth, desktopHeight);
+            saverWidget->move( 0, 0 );
+            saverWidget->show();
+            saverWidget->raise();
+            QApplication::flushX();
 
-		saveWin = saverWidget->winId();
+            saveWin = saverWidget->winId();
 
-		startScreenSaver( saveWin );
-		a.enter_loop();
-		stopScreenSaver();
+            startScreenSaver( saveWin );
+            a.enter_loop();
+            stopScreenSaver();
 
-		destroySaverWindow( saverWidget );
+            destroySaverWindow( saverWidget );
+        }
 	}
 	else if ( mode == MODE_PREVIEW )
 	{

@@ -116,6 +116,11 @@
                                               force-lock areas             */
 #define CORNER_DELAY               5       /* number of seconds to wait
                                               before forcing a lock        */
+#define TIME_CHANGE_LIMIT         120      /* if the time changes by more
+                                              than x secs then we will
+                                              assume someone has changed
+                                              date or machine has suspended */
+
 
 #ifndef HasVFork
 #define vfork                      fork
@@ -462,7 +467,7 @@ static int  EvaluateCounter (Display *)
   *  Now trigger the notifier if required. 
   */
   time (&now);
-  
+
  /*
   *  Finally fire up the locker if time has come. 
   */
@@ -639,6 +644,7 @@ int waitTimeout( int timeout )
   Display*              d;          /* display pointer  */
   int rv;
   int (*oldHandler)(Display *, XErrorEvent *);
+  time_t now, prev;
 
   time_limit = timeout;
 
@@ -647,6 +653,8 @@ int waitTimeout( int timeout )
   oldHandler = XSetErrorHandler( catchFalseAlarms );
 
   SetTrigger (time_limit);
+
+  time(&prev);
 
  /*
   *  Main event loop.
@@ -665,12 +673,25 @@ int waitTimeout( int timeout )
     rv = QueryPointer (d);
 	if ( rv != IGNORE )
 		break;
+
+    time(&now);
+
+    if ((now > prev && now - prev > TIME_CHANGE_LIMIT) ||
+        (prev > now && prev - now > TIME_CHANGE_LIMIT+1))
+    {
+      /* the time has changed in one large jump.  This could be because the
+         date was changed, or the machine was suspended.  We'll just
+         reset the triger. */
+      SetTrigger (time_limit);
+    }
+
+    prev = now;
+      
     if ( EvaluateCounter (d) )
 	{
 		rv = IGNORE;
 		break;
 	}
-
 
    /*
     *  It seems that, on some operating systems (VMS to name just one),
