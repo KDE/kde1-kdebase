@@ -200,6 +200,7 @@ private:
 	int 	openHTML( const char *location );
 	int	runCGI( const char *_url );
 	FileType detectFileType( const QString &filename );
+	bool	tryHtmlDefault( QString &filename ) const;
 	void	convertSpecial( const char *buffer, QString &converted );
 	void	enableToolbarButton( int id, bool enable );
 	void	createMenu();

@@ -196,11 +196,9 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotDocumentDone() ) );
 
 	// load bookmarks
-	QString p = KApplication::localkdedir();
-	QString bmFile = p + "/share/apps/kdehelp/bookmarks.html";
+	const QString p = KApplication::localkdedir();
+	const QString bmFile = p + "/share/apps/kdehelp/bookmarks.html";
 	bookmarkManager.read( bmFile );
-
-	QString histFile = p + "/share/apps/kdehelp/history";
 
 	layout();
 }
@@ -248,7 +246,6 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 {
 	char location[256];
 	int pos, rv = 1, viewPos = view->yOffset();
-	const char *colon;
 	bool isRemote = false;
 
 	scrollTo = 0;
@@ -319,7 +316,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	}
 
 	// if this is a relative location, then use path of current URL
-	colon = strchr( fullURL, ':' );
+	const char * colon = strchr( fullURL, ':' );
 	if ( !colon )
 	{
 		int i = currentURL.findRev( '/' );
@@ -337,7 +334,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	oldCursor = view->cursor();
 	view->setCursor( waitCursor );
 
-	if ( fullURL.find( "file:" ) >= 0 )
+	if ( fullURL.contains( "file:" ) )
 	{
 		// use internal CGI sever for local CGI stuff
 		if ( fullURL.find( "cgi-bin" ) > 0 )
@@ -348,38 +345,38 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 		else
 			rv = openFile( location );
 	}
-	else if ( fullURL.find( "info:" ) >= 0 )
+	else if ( fullURL.contains( "info:" ) )
 	{
 		if ( location[0] != '(' )
 			fullURL = "info:(" + currentInfo + ')' + location;
 		else
 		{
 			currentInfo = location+1;
-			int i = currentInfo.find( ')' );
+			const int i = currentInfo.find( ')' );
 			if (i > 0)
 				currentInfo.truncate(i);
 		}
 		if ( ( rv = info->ReadLocation( location ) ) == 0 )
 			formatInfo();
 	}
-	else if ( fullURL.find( "man:" ) >= 0 )
+	else if ( fullURL.contains( "man:" ) )
 	{
 		if ( ( rv = man->ReadLocation( location ) ) == 0 )
 			formatMan();
 	}
-	else if ( fullURL.find( "http:" ) >= 0 )
+	else if ( fullURL.contains( "http:" ) )
 	{
 		KFM *kfm = new KFM;
 		kfm->openURL( fullURL );
 		delete kfm;
 	}
-	else if ( fullURL.find( "ftp:" ) >= 0 )
+	else if ( fullURL.contains( "ftp:" ) )
 	{
 		KFM *kfm = new KFM;
 		kfm->openURL( fullURL );
 		delete kfm;
 	}
-	else if ( fullURL.find( "mailto:" ) >= 0 )
+	else if ( fullURL.contains( "mailto:" ) )
 	{
 		KFM *kfm = new KFM;
 		kfm->openURL( fullURL );
@@ -454,6 +451,12 @@ int KHelpWindow::openFile( const QString &location )
 			break;
 
 		case CannotOpenFile:
+			if( tryHtmlDefault( fileName ) )
+			{
+				fullURL = "file:" + fileName;
+				rv = openHTML( fileName );
+			}
+			else
 			{
 				QMessageBox mb;
 				mb.setText( klocale->translate("Cannot open: ") + fileName );
@@ -499,7 +502,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 		if ( inMenu )
 		{
 			if ( ( curr->type != INFO_NODEMENU &&
-				 curr->type != INFO_NODEMENUCONT ) || rowCount <= 0 )
+			       curr->type != INFO_NODEMENUCONT ) || rowCount <= 0 )
 			{
 				view->write( "</td></tr></table>" );
 				inMenu = FALSE;
@@ -560,7 +563,7 @@ int KHelpWindow::formatInfo( int bodyOnly )
 
 			case INFO_NODEHEADING:
 				{
-					char level = 1;
+					char level = '1';
 					switch ( ((cNodeHeading *)curr)->type )
 					{
 						case INFO_HEADING1:
@@ -794,7 +797,6 @@ int KHelpWindow::openHTML( const char *location )
 	if ( html.ReadLocation( location ) )
 		return 1;
 
-	char buffer[256];
 	int val;
 	QFile file( location) ;
 
@@ -806,12 +808,15 @@ int KHelpWindow::openHTML( const char *location )
 
 	do
 	{
+		char buffer[256];
 		buffer[0] = '\0';
-		val = file.readLine( buffer, 256 );
+		val = file.readLine( buffer, sizeof( buffer ) );
 		if ( strncmp( buffer, "Content-type", 12 ) )
 		    view->write(buffer);
 	}
-	while ( !file.atEnd() );
+	while ( val >= 0 && !file.atEnd() );
+	// must check for both; QFile's "index" gets out of sync
+	// if the file contains nulls (which it should not, of course).
 
 	view->end();
 
@@ -876,27 +881,28 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
                 system( sysCmd );
 		}
 		QFile file( fname );
-		char buf[256];
 		if ( file.open(IO_ReadOnly) )
 		{
+			// check the first 80 lines for some keywords:
 			for ( int i = 0; !file.atEnd(), i < 80; i++ )
 			{
-				file.readLine( buf, 256 );
+				char buf[256];
+				file.readLine( buf, sizeof( buf ) );
 				QString buffer = buf;
-				if ( buffer.find( "<HTML>", 0, FALSE ) >= 0 ||
-					buffer.find( "<BODY", 0, FALSE ) >= 0 )
+				if ( buffer.contains( "<HTML>", FALSE ) ||
+				     buffer.contains( "<BODY",  FALSE ) )
 				{
 					type = HTMLFile;
 					break;
 				}
-				else if ( buffer.find( ".TH" ) >= 0 ||
-						buffer.find( ".so" ) >= 0 )
+				else if ( buffer.contains( ".TH" ) ||
+				          buffer.contains( ".so" ) )
 				{
 					type = ManFile;
 					break;
 				}
-				else if ( buffer.find( "Indirect:" ) >= 0 ||
-						buffer.find( "Node:" ) >= 0 )
+				else if ( buffer.contains( "Indirect:" ) ||
+				          buffer.contains( "Node:" ) )
 				{
 					type = InfoFile;
 					break;
@@ -905,6 +911,7 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 		}
 		else
 			type = CannotOpenFile;
+		// remove the temporary file.
 		if ( strstr( fileName, ".gz" ) )
 			remove( fname );
 	}
@@ -912,28 +919,58 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 	return type;
 }
 
+/**
+ * if we could not find a file in a locale-specific help subtree
+ * try the default tree.
+ * @param fileName is the name of the link target.
+ *        On output it is modified according to the redirection
+ *        by changing the language part to "default".
+ * @return whether a new target was found
+ */
+bool
+KHelpWindow::tryHtmlDefault( QString &fileName )
+const
+{
+	bool found = false;
+
+	if ( fileName.find( ".htm" ) > 0  )
+	{
+		const char * const htmldir = kapp->kde_htmldir();
+		if( fileName.find( htmldir ) == 0 )
+		{
+			const int htmldirlen = strlen( htmldir );
+			const int slashpos = fileName.find( '/', htmldirlen+1 );
+			if( slashpos > 0 )
+			{
+				fileName.replace( htmldirlen, slashpos - htmldirlen,
+				                  "/default" );
+				found = ( access( fileName, 0 ) == 0 );
+			}
+		}
+	}
+
+	return found;
+}
 
 // turn special characters into their HTML equivalents
 //
 void KHelpWindow::convertSpecial( const char *buffer, QString &converted )
 {
-	QString special = "<>&\"";
-	const char *ptr, *replace[] = { "&lt;", "&gt;", "&amp;", "&quot;", 0 };
-	int pos;
+	const QString special = "<>&\"";
+	const char * const replace[] = { "&lt;", "&gt;", "&amp;", "&quot;", 0 };
 
 	converted = "";
 
 	if ( !buffer )
 		return;
-	ptr = buffer;
 
-	while ( *ptr )
+	for ( const char *ptr = buffer; *ptr; ptr++ )
 	{
+		int pos;
 		if ( (pos = special.find( *ptr )) >= 0 )
 			converted += replace[pos];
 		else
 			converted += *ptr;
-		ptr++;
 	}
 }
 
@@ -953,15 +990,13 @@ QString KHelpWindow::getPrefix()
 
 QString KHelpWindow::getLocation()
 {
-	QString loc = "";
-
 	int pos1 = currentURL.find( ':' ) + 1;
 	int pos2 = currentURL.find( '#' );
 
 	if ( pos2 < 0 )
 		pos2 = currentURL.length();
 	
-	loc = currentURL.mid( pos1, pos2-pos1 );
+	const QString loc = currentURL.mid( pos1, pos2-pos1 );
 
 	return loc;
 }
@@ -1127,7 +1162,7 @@ void KHelpWindow::slotBack()
 	if ( history.Current() )
 		history.Current()->setOffset( view->yOffset() );
 
-	KPageInfo *p = history.Back();
+	const KPageInfo * const p = history.Back();
 
 	if ( p )
 	{
@@ -1149,7 +1184,7 @@ void KHelpWindow::slotForward()
 	if ( history.Current() )
 		history.Current()->setOffset( view->yOffset() );
 
-	KPageInfo *p = history.Forward();
+	const KPageInfo * const p = history.Forward();
 
 	if ( p )
 	{
@@ -1426,7 +1461,7 @@ void KHelpWindow::slotFixedFont( const char *n )
 void KHelpWindow::slotColorsChanged( const QColor &bg, const QColor &text,
 	const QColor &link, const QColor &vlink, const bool uline, const bool force)
 {
-    view->setForceDefault( force );
+	view->setForceDefault( force );
 	view->setDefaultBGColor( bg );
 	view->setDefaultTextColors( text, link, vlink );
 	view->setUnderlineLinks(uline);

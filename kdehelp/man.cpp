@@ -276,7 +276,7 @@ void cManSection::ReadDir(const char *dirName )
 	char *ptr;
 	char buffer[256];
 
-	cout << klocale->translate("Reading Dir: ") << dirName << endl;
+//	cout << klocale->translate("Reading Dir: ") << dirName << endl;
 
 	dir = opendir(dirName);
 
@@ -429,7 +429,8 @@ int cMan::ReadLocation(const char *name)
 	char tmpName[80];
 	int i = 0;
 
-	strcpy(tmpName, name);
+	strncpy(tmpName, name, sizeof(tmpName));
+	tmpName[ sizeof( tmpName) - 1 ] = '\0';
 
 	if (*tmpName == '(')				// read a list of pages in this section
 	{
@@ -441,6 +442,7 @@ int cMan::ReadLocation(const char *name)
 				sections[i]->ReadSection();
 				Read(*(sections[i]), HTMLPage);
 				strcpy(posString, klocale->translate("Online Manual - Section"));
+				strcat(posString, " ");
 				strcat(posString, sections[i]->GetName());
 				pos = MAN_POSSECTION;
 				return 0;
@@ -546,17 +548,37 @@ int cMan::ReadLocation(const char *name)
 		}
 		stream.seekg( 0, ios::beg );
 
-		char buffer[256];
 		HTMLPage = "";
 
-		while ( !stream.eof() )
+		// we must check for eof() as well as for good();
+		// if something goes wrong, eof() will never be true.
+		while ( !stream.eof() && stream.good() )            
 		{
-		    stream.getline( buffer, 256 );
-		    HTMLPage += buffer;
-            if ( HTMLPage.right(1) == "-" )
-                HTMLPage.truncate( HTMLPage.length() - 1 );
-            else
-                HTMLPage.append(" ");
+			char buffer[256];
+			stream.getline( buffer, sizeof( buffer ) );
+
+			// if the buffer was too small, give it one more try:
+			while( stream.rdstate() == ios::failbit &&
+                strlen( buffer ) == sizeof( buffer ) - 1 )
+			{
+				HTMLPage += buffer;
+				stream.clear();
+				buffer[0] = '\0';
+				stream.getline( buffer, sizeof( buffer ) );
+			}
+
+			HTMLPage += buffer;
+			if ( HTMLPage.right(1) == "-" )
+				HTMLPage.truncate( HTMLPage.length() - 1 );
+			else
+				HTMLPage.append(" ");
+		}
+
+		if( ! stream.eof() ) {
+			// Put something on the HTML page to tell the user that
+			// something has gone wrong. An internationalized message would
+			// be better.
+			HTMLPage.append( "<HR SIZE=7>???<HR>" );
 		}
 
 		stream.close();
