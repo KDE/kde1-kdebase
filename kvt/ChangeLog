@@ -1,3 +1,6 @@
+ 
+  - should compile on ALPHA now (Christian Czezatke)
+  
   - fixed the multiline selection again
   - kdisplays changes gets recognized during runtime now
   - small bugfix for backspace
