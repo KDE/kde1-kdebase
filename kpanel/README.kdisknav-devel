@@ -1,0 +1,91 @@
+               +++++++++++++++++++++++++++++++++++++++++
+               +++++ KDiskNavigator: hacker's guide ++++
+               +++++++++++++++++++++++++++++++++++++++++
+               +++++++ Pietro Iglio (iglio@fub.it)++++++
+
+Last updated: 2 Oct 1998
+
+
+
+PFileMenu is the main class for KDiskNavigator. It inherits from PMenu
+(KPanel menu), and extends this class with methods to create menus from a
+directory path, update the recent files/folders list, and to correctly
+handle menus whose number of entries does not fit on the screen.
+PFileMenu differs from its parent class PMenu because PFileMenu builds menus
+on-demand, i.e. the menu entries in a submenu are added right before the
+submenu is about to show.
+
+NOTE: PFileMenu implements some functionalities that should be provided by
+Qt. Since such functionalities are likely to be provided by future releases
+of Qt, I'm not going to talk about that in this document.
+
+- The root menu
+
+Every menu under the "Disk Navigator" entry of the K-menu corresponds to an
+instance of class PFileMenu. The first level menu (the one that appears when
+you select "Disk Navigator") is a special one, and is called "root menu".
+The root menu contains the global/local/recent sections (using the option
+dialog you can customize this menu).
+It is the only menu that is not built on-demand: if you change an entry in
+folders such as $KDEDIR/share/apps/kdisknav (= global) or
+~/.kde/share/apps/kdisknav (=local), you have to restart KPanel in order to
+get the root menu updated. This is not a real limitation, since local and
+global entries do not change very frequently, and slow CPUs do not have to
+rebuild the root menu when it is not needed.
+PFileMenu::buildRootMenu() is the method that builds the root menu.
+
+- Building menus on-demand
+
+For how KDiskNavigator works, submenus corresponding to directories are build
+exactly when they are going to be shown and destroyed as soon as the menu
+is closed. For this purpose PFileMenu defines two slots:
+
+	PFileMenu::aboutToShow()
+	PFileMenu::deactivated(int id)
+
+PFileMenu::aboutToShow() receives a signal when the child menu is going to
+be displayed. The main method call in aboutToShow() is PFileMenu::parseDir(),
+that takes a QDir object builds a corresponding menu entry. For instance,
+passing QDir("/usr"), parseDir() builds the menu that you can see when you
+click on a "/usr" entry in KDiskNavigator.
+
+NOTE: before Qt v. 1.40 it was not possible to get a signal right before the
+menu was going to be shown. In fact, KDiskNavigator beta 0.1 was using the
+highlight signal in place of aboutToShow. Since the highlight signal is
+emitted when the mouse highlights a menu entry (and not when the child menu is
+going to be shown), such release of KDiskNavigator was creating a lot of
+useles submenus tracking mouse movements. This is way I decide to drop support
+for versions of Qt older than 1.40.
+
+PFileMenu::deactivated() receives a signal when the child menu is going to
+disappear. It is responsible for releasing memory allocated in a previous
+aboutToShow() call. Note that, whereas the aboutToShow() slot is invoked
+when the object itself is going to show the owned menu, the deactivated()
+slot is invoked for the parent menu, and the 'id' of the submenu that is
+going to be deactivated is passed as argument.
+
+Methods updatedRecentFolders(), updateRecentFiles(), updateRecentList(),
+removeLessRecentItem(), and insertRecentItem() of class PFileMenu are used
+to keep the "Recent" section of the root menu updated.
+TODO: currently the "Recent" section includes only files open with 
+KPanel (KDiskNavigator + apps launched from KPanel). It should also include
+URLS open with KFM.
+
+The slot openFolder() is invoked when the user select the "Open Folder" entry
+on the top of a file menu. This method checks if the Shift button is pressed;
+in such a case, it opens a terminal in the selected directory.
+
+dump() methods are used for debugging purposes. May be I'll remove them as
+soon as KDiskNavigator is declared very stable.
+
+Methods addFile(), getFileInfo(), newFileItem(), newDirBrowseItem() are used
+by parseDir() to build a submenu for a given directory.
+
+Methods parseTail(), addTailMenu() and similar are used to handle menus larger
+than the screen height (as said, they are going to disappear with future
+releases of Qt). Analogously, calculateMaxEntriesOnScreen() is a patch to
+a Qt 1.40 problem, will disappear soon.
+
+Please ask me any question if you are going to hack KDiskNavigator.
+
+-- Pietro Iglio (iglio@fub.it)
