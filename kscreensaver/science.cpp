@@ -1300,7 +1300,7 @@ void KScienceSetup::slotAbout()
 {
 	QString about;
 
-	about.sprintf( "%s 0.26.5 beta\n\n%s Rene Beutler (1998)\nrbeutler@g26.ethz.ch",
+	about.sprintf( "%s 0.26.5\n\n%s Rene Beutler (1998)\nrbeutler@g26.ethz.ch",
 	               i18n( "Science Version"),
 	               i18n( "written by" ) );
 	QMessageBox::message( i18n("About Science"), 
