@@ -84,13 +84,13 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
       KIconLoader *iconloader = kapp->getIconLoader();
       if(iconloader)
       {
-        QString idir(kapp->kdedir()+"/share/apps/kdm/pics/users");
+        QString idir(kapp->kdedir().copy()+"/share/apps/kdm/pics/users");
         iconloader->insertDirectory(0, idir.data());
-        idir = kapp->kdedir()+"/share/apps/kdm/pics";
+        idir = kapp->kdedir().copy()+"/share/apps/kdm/pics";
         iconloader->insertDirectory(0, idir.data());
-        idir = kapp->kdedir()+"/share/wallpapers";
+        idir = kapp->kdedir().copy()+"/share/wallpapers";
         iconloader->insertDirectory(0, idir.data());
-        //idir = kapp->kdedir()+"/share/icons";
+        //idir = kapp->kdedir().copy()+"/share/icons";
         //iconloader->insertDirectory(0, idir.data());
       }
 
