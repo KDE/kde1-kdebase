@@ -148,4 +148,4 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 msgid "Apply"
-msgstr "Anwenden"
+msgstr "Übernehmen"
