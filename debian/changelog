@@ -1,0 +1,221 @@
+kdebase (2:980318-1) unstable; urgency=low
+
+  * new upstream version
+
+ -- Stephan Kulow <coolo@kde.org>  Wed, 18 Mar 1998 23:28:31 +0100
+
+kdebase (2:980317-1) unstable; urgency=low
+
+  * new upstream version
+
+ -- Stephan Kulow <coolo@kde.org>  Wed, 18 Mar 1998 01:48:43 +0100
+
+kdebase (2:980312-1) experimental; urgency=low
+
+  * added -O2 to CXXFLAGS
+  * New upstream release
+
+ -- Stephan Kulow <coolo@kde.org>  Thu, 12 Mar 1998 23:05:14 +0100
+
+kdebase (2:980310-1) experimental; urgency=low
+
+  * disable the run of kappfinder to not create a non-KDE apps like menu twice
+  * changed the README.debian file to reflect the new state of this package
+  * New upstream release
+
+ -- Stephan Kulow <coolo@kde.org>  Mon,  9 Mar 1998 23:12:46 +0100
+
+kdebase (980228-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Stephan Kulow <coolo@kde.org>  Sat, 28 Feb 1998 21:21:55 +0100
+
+kdebase (980227-1) experimental; urgency=low
+
+  * added *.moc to the clean target
+  * added po/no/Makefile to configure.in
+  * disabled all sound applications, because mediatool is broken
+  * disabled rpath
+  * changed section to contrib
+  * New upstream release
+
+ -- Stephan Kulow <coolo@kde.org>  Fri, 27 Feb 1998 20:06:44 +0100
+
+kdebase (1:980225-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Stephan Kulow <coolo@kde.org>  Wed, 25 Dec 1998 21:48:23 +0100
+
+kdebase (1:Beta2-2.1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Fri,  5 Dec 1997 21:18:40 +0100
+
+kdebase (1:Beta2-2) unstable; urgency=low
+
+  * fixed kde / startkde script. added minimal documentation.
+  * fixed klock permissions.
+  * removed startkde script.
+  * removed virtual package names.
+  * fixed utmp file location in kvt.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sat, 29 Nov 1997 12:53:41 +0100
+
+kdebase (1:Beta2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun, 23 Nov 1997 22:27:46 +0100
+
+kdebase (1:Beta1.2-2) unstable; urgency=low
+
+  * start kdepanel only once.
+  * fixed kfm bug.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun,  9 Nov 1997 17:37:38 +0100
+
+kdebase (1:Beta1.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon, 27 Oct 1997 11:49:11 +0100
+
+kdebase (1:Beta1.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon, 20 Oct 1997 11:44:11 +0200
+
+kdebase (971019-1) unstable; urgency=low
+
+  * added module support to kde menu-method (untested)
+  * dependency on new menu version with extensions for kde
+  * new menu method (thanks joost) 
+  * Fixed screen saver path (debian paths)
+  * New upstream release
+  * Fixed more paths (debian paths)
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun, 19 Oct 1997 12:53:44 +0200
+
+kdebase (971013-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon, 13 Oct 1997 08:23:08 +0200
+
+kdebase (971011-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun, 12 Oct 1997 12:13:25 +0200
+
+kdebase (971009-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Thu,  9 Oct 1997 10:51:49 +0200
+
+kdebase (971008-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Wed,  8 Oct 1997 10:07:59 +0200
+
+kdebase (971006-2) unstable; urgency=low
+
+  * daily recompile of everything.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Tue,  7 Oct 1997 10:56:23 +0200
+
+kdebase (971006-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon,  6 Oct 1997 09:24:17 +0200
+
+kdebase (971005-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun,  5 Oct 1997 17:32:13 +0200
+
+kdebase (971003-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Fri,  3 Oct 1997 08:23:44 +0200
+
+kdebase (971002-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Thu,  2 Oct 1997 08:52:11 +0200
+
+kdebase (970930-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Tue, 30 Sep 1997 11:56:08 +0200
+
+kdebase (970929-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon, 29 Sep 1997 09:40:07 +0200
+
+kdebase (970925-2) unstable; urgency=low
+
+  * daily recompile of everything.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Fri, 26 Sep 1997 08:55:56 +0200
+
+kdebase (970925-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Thu, 25 Sep 1997 08:08:36 +0200
+
+kdebase (970924-2) unstable; urgency=low
+
+  * now use kderules.
+  * daily recompile of everything.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Wed, 24 Sep 1997 10:36:09 +0200
+
+kdebase (970924-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Wed, 24 Sep 1997 08:32:38 +0200
+
+kdebase (970923-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Tue, 23 Sep 1997 08:40:36 +0200
+
+kdebase (970922-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Mon, 22 Sep 1997 09:30:58 +0200
+
+kdebase (970921-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sun, 21 Sep 1997 13:50:08 +0200
+
+kdebase (970920-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Andreas Jellinghaus <aj@debian.org>  Sat, 20 Sep 1997 10:36:15 +0200
+
+Local variables:
+mode: debian-changelog
+add-log-mailing-address: "aj@debian.org"
+End:

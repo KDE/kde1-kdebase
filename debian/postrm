@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]
+then
+  update-rc.d kdm remove >/dev/null
+fi  
+
+case "$1" in
+remove) dpkg-divert --package kdebase --remove --rename \
+	 --divert /etc/X11/Xsession.x11 /etc/X11/Xsession 
+	chmod a-x /etc/menu-methods/kde ;;
+esac   

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+  update-rc.d kdm defaults 99 01 >/dev/null
+fi  
+
+chmod +x /etc/menu-methods/kde
+
+if ! grep -q kde /etc/X11/window-managers 
+then
+	echo /usr/X11R6/bin/kde >>/etc/X11/window-managers 
+        echo "Installed kde in the window-manager list."
+fi
+ 
+echo "Updating kdmrc ..."
+(echo -n "s/WINDOWMANAGER/" ; \
+cat /etc/X11/window-managers  |grep -v ^#|while read A ; \
+do echo -n "`basename $A`;" ;  \
+done ; \
+echo "/") > /etc/kde/kdmrc.tmp
+sed `cat /etc/kde/kdmrc.tmp` \
+< /etc/kde/kdmrc.in > /etc/kde/kdmrc
+rm /etc/kde/kdmrc.tmp
+
+if test ! -L /var/lib/applnk; then
+	ln -s /usr/share/applnk/debian_menu /var/lib/applnk
+fi
+
+if test -L /usr/bin/kioslave
+then
+	echo "Removing /usr/bin/kioslave symlink ..."
+	rm /usr/bin/kioslave
+fi
+
+# Starting kdm
+/etc/init.d/kdm start

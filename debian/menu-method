@@ -1,0 +1,32 @@
+#!/usr/sbin/install-menu
+compat="menu-1"
+
+!include menu.h
+
+function default($var,$com)= \
+        "# KDE Config File\n" \
+        "[KDE Desktop Entry]\n" \
+        "Type=Application\n" \
+        "Exec=" $command "\n" \
+        "Name=" title() "\n" \
+        $var  \
+        "Comment=" ifelse($longtitle,$longtitle,$title) "\n" \
+        ifnempty(icon(),"Icon=/usr/X11R6/include/X11/pixmaps/" icon() "\n")
+
+supported
+  x11=  ifelsefile($kdelnk,catfile($kdelnk),default("",$command))
+  text= ifelsefile($kdelnk,catfile($kdelnk),default("Terminal=1\n",$command))
+  kde= ifelsefile($kdelnk,catfile($kdelnk),default("",$command))
+endsupported
+
+genmenu=parent($section) "/" $title ".kdelnk"
+startmenu=""
+endmenu=""
+#submenutitle=""
+rootsection=""
+rootprefix="/var/lib/applnk"
+userprefix="/Personal"
+prerun="rm -rf " prefix() "/* "
+#treewalk="c()"
+treewalk="M"
+preoutput=""

@@ -1,0 +1,97 @@
+#! /bin/sh
+#
+# /etc/X11/Xsession
+#
+# This is the global Xsession file.  It is used by both xdm and xinit.
+
+# If /etc/environment is present, source it. It's useful to put default
+# environment settings in this file, and then source it both here and in
+# /etc/profile.
+if [ -f /etc/environment ] ; then
+  . /etc/environment
+fi
+
+sysmodmap=/etc/X11/Xmodmap
+usrmodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/Xresources
+usrresources=$HOME/.Xresources
+
+startup=$HOME/.xsession
+
+for errfile in \
+  "$HOME/.xsession-errors" "${TMPDIR-/tmp}/xses-$USER" "/tmp/xses-$USER"
+do
+  if ( cp /dev/null "$errfile" 2> /dev/null )
+  then
+    chmod 600 "$errfile"
+    exec > "$errfile" 2>&1
+    break
+  fi
+done
+
+case $# in
+1)
+  case $1 in
+  failsafe)
+    if grep -q ^allow-failsafe /etc/X11/config
+    then
+      exec xterm -geometry 80x24-0-0
+    fi
+    ;;
+  *) 
+    if grep -q /$1$ /etc/X11/window-managers
+    then
+      windowmanager="`grep /$1 /etc/X11/window-managers`"
+    fi
+  esac
+esac
+
+if [ -f $sysresources ]
+then
+  xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]
+then
+  xmodmap $sysmodmap
+fi
+
+if grep -q ^allow-user-resources /etc/X11/config
+then
+  if [ -f $usrresources ]
+  then
+    xrdb -merge $usrresources
+  fi
+fi
+
+if grep -q ^allow-user-modmap /etc/X11/config
+then
+  if [ -f $usrmodmap ]
+  then
+    xmodmap $usrmodmap
+  fi
+fi
+
+if [ -x $startup ] && grep -q ^allow-user-xsession /etc/X11/config
+then
+  exec $startup
+fi
+
+if [ -x $windowmanager ] 
+then
+  exec $windowmanager
+fi
+
+
+if [ -e /etc/X11/window-managers ]
+then
+  for i in `cat /etc/X11/window-managers`
+  do
+    if [ -x $i ]
+    then
+	exec $i
+    fi
+  done
+fi
+
+exec twm
