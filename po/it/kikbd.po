@@ -444,13 +444,15 @@ msgstr "Aspetto standard. Mappa attiva per tutte le finestre"
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
 msgstr ""
-"Aspetto esteso. Lo stato della tastiera e' salvato per ogni finestra indipendentemente"
+"Aspetto esteso. Lo stato della tastiera e' salvato per ogni finestra "
+"indipendentemente"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Aspetto speciale. Lo stato della tastiera e' salvato per ogni classe indipendentemente"
+"Aspetto speciale. Lo stato della tastiera e' salvato per ogni classe "
+"indipendentemente"
 
 #: widgets.cpp:561
 msgid "Button Colors"
