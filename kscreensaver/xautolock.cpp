@@ -86,7 +86,7 @@
 #  include <malloc.h>
 # endif
 # include <unistd.h>
-#iSomeendif /* !apollo && !VMS */
+#endif /* !apollo && !VMS */
 
 #endif /* !news1800 && !sun386 */
 
