@@ -918,6 +918,7 @@ void kVt::color_menu_activated( int item){
 
 
 void kVt::file_menu_activated(int item){
+  int i = 0;
   switch (item){
   case 0: 
      if (fork()==0){
@@ -1116,6 +1117,7 @@ int main(int argc, char **argv)
   for (i=0;i<(signed int)orgarg.count();i++){
     o_argv[i] = orgarg.at(i);
   }
+  o_argv[i] = 0;
 
   kvt = new kVt(sessionconfig, arguments);
 

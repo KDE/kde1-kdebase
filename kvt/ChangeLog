@@ -1,3 +1,6 @@
+since kvt-0.18.3
+  - fixed "New Terminal" (Matthias)
+
 since kvt-0.18.2
   - fixed SM again (Jens stuff was broken, probably I applied the patch
      wrong. Anyways I redid it with C++ and Qt)   (Matthias)
