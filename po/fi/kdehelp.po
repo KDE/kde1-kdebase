@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,19 +42,19 @@ msgstr "Etsint‰ valmis"
 msgid "Continue search from the top of the page?"
 msgstr "Jatka etsimist‰ sivun alusta?"
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1328
 msgid "Forward"
 msgstr "Eteenp‰in"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1349
 msgid "Open this Link"
 msgstr "Avaa t‰m‰ linkki"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1350
 msgid "Add Bookmark"
 msgstr "Lis‰‰ osoitekirjaan"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1351
 msgid "Open in new Window"
 msgstr "Avaa uudessa ikkunassa"
 
@@ -124,7 +124,7 @@ msgstr "Alleviivaa linkit"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "K‰yt‰ aina omia v‰rej‰"
 
 #: options.cpp:334
 msgid "KDE Help Options"
@@ -156,7 +156,7 @@ msgstr "K‰ytt‰j‰n komennot"
 
 #: man.cpp:134
 msgid "System Calls"
-msgstr "Systeemikutsut"
+msgstr "J‰rjestelm‰kutsut"
 
 #: man.cpp:136
 msgid "Subroutines"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KLOCK\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,11 +159,11 @@ msgstr ""
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
-msgstr "Tyhjä ruutu"
+msgstr "Tyhjä näyttö"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "Aseta tyhjää ruutua"
+msgstr "Aseta tyhjää näyttöä"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
-msgstr "Musta kuoleman ruutu"
+msgstr "Musta kuoleman näyttö"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -463,13 +463,12 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Toimintoa %s ei tueta tällä alustalla!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
-"Please contact your system administrator.\n"
-"Tell him that you need suid for the kcheckpass program!"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the kcheckpass!"
 msgstr ""
 "Varoitus: Et voi lukita näyttöä!\n"
 "\n"
@@ -524,8 +523,8 @@ msgid ""
 msgstr ""
 "  -corners xxxx     Kursorin sijoittaminen nurkkaan suorittaa:\n"
 "                     x = i  ei mitään\n"
-"                     x = s  tallenna ruutu\n"
-"                     x = l  lukitse ruutu\n"
+"                     x = s  tallenna näyttö\n"
+"                     x = l  lukitse näyttö\n"
 "                    järjestys: ylävasen, yläoikea, alavasen, alaoikea\n"
 "  -delay num        Aika joka odotetaan ennenkuin näytönsäästäjä\n"
 "                     käynnistetään  (oletus 10min)\n"
@@ -770,11 +769,11 @@ msgstr "Tietoa linssistä"
 
 #: slidescreen.cpp:419
 msgid "SlideScreen"
-msgstr "LiukuRuutu"
+msgstr "LiukuNäyttö"
 
 #: slidescreen.cpp:465
 msgid "Setup KSlideScreen"
-msgstr "Aseta liukuruutua"
+msgstr "Aseta liukunäyttöä"
 
 #: slidescreen.cpp:558
 msgid "About SlideScreen"

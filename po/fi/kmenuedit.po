@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KMENUEDIT\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "Haluatko tallentaa muutokset ?"
 
-#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+#: confmenu.cpp:337 confmenu.cpp:934 kmenuedit.cpp:264
 msgid "EMPTY"
 msgstr "TYHJÄ"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Erotin"
 
-#: confmenu.cpp:103 confmenu.cpp:335
+#: confmenu.cpp:103 confmenu.cpp:333
 msgid "Open/ Close"
 msgstr "Avaa / Sulje"
 
@@ -94,7 +94,7 @@ msgstr "Valitse siirrettävä valikko"
 msgid "New"
 msgstr "Uusi"
 
-#: confmenu.cpp:177 confmenu.cpp:318
+#: confmenu.cpp:177 confmenu.cpp:316
 msgid "Warning !"
 msgstr "Varoitus !"
 
@@ -114,11 +114,11 @@ msgstr ""
 "kdelnk-tiedosto samalla nimellä on jo olemassa. \n"
 "Valitse toinen tiedostonimi."
 
-#: confmenu.cpp:319
+#: confmenu.cpp:317
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Napin tyypin muuttaminen tuhoaa kaikki sen alivalikot"
 
-#: confmenu.cpp:340 confmenu.cpp:940
+#: confmenu.cpp:338 confmenu.cpp:935
 msgid "no command"
 msgstr "ei komentoa"
 
@@ -266,6 +266,3 @@ msgstr "Henkilökohtainen:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Oletus:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! SUOJATTU Nappi !"

@@ -84,7 +84,7 @@ msgstr "&Pieni"
 
 #: panel.cpp:99
 msgid "&Normal"
-msgstr "&Normaali tyyli"
+msgstr "&Normaali"
 
 #: panel.cpp:101
 msgid "L&arge"
@@ -216,15 +216,12 @@ msgstr "N‰yt‰ Omat -osio"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "N‰yt‰ Viimeiset osio"
+msgstr "N‰yt‰ Viimeiset -osio"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "N‰yt‰ Asetukset tietue"
+msgstr "N‰yt‰ Asetukset -tietue"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "P‰‰tesovellus:"
-
-#~ msgid "Speed"
-#~ msgstr "Nopeus"

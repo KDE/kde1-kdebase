@@ -95,11 +95,11 @@ msgstr "Omat &Värit"
 
 #: main.C:663 main.C:950
 msgid "Hide &Menubar"
-msgstr "Piilota &valikot"
+msgstr "Piilota v&alikko"
 
 #: main.C:665 main.C:872 main.C:942
 msgid "Show &Menubar"
-msgstr "Näytä &valikot"
+msgstr "Näytä v&alikko"
 
 #: main.C:666 main.C:960
 msgid "Secure &keyboard"

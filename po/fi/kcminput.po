@@ -56,7 +56,7 @@ msgstr "Vasenkätinen"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"
-msgstr "Näppäimiston toistonopeus"
+msgstr "Näppäimiston toisto"
 
 #: keyboard.cpp:66
 msgid "Key click volume"

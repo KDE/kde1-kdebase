@@ -28,7 +28,7 @@ msgstr "Yhteinen tausta"
 
 #: kbgndwm.cpp:50
 msgid "Undock"
-msgstr "Poista penaalista"
+msgstr "Poista paneelista"
 
 #: kbgndwm.cpp:58
 msgid "Tiled"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,6 @@ msgstr ""
 "Alt symbolit estetty"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -100,97 +99,87 @@ msgstr "KeyMap: en ymm‰rr‰  n‰pp‰inkoodia \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: n‰pp‰inkoodi \"%s\" menee rajojen ulkopuolelle."
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Global"
 msgstr "Yleiset"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Window"
 msgstr "Ikkuna"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Class"
 msgstr "Luokka"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
 msgstr "(Ei mik‰‰n)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
 msgstr "Oikea Alt"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
 msgstr "Oikea Control"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
 msgstr "Oikeat (Alt+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
 msgstr "Oikeat (Ctrl+Alt)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
 msgstr "Oikeat (Ctrl+Shift)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
 msgstr "Vasemmat (Alt+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Vasemmat (Ctrl+Alt)"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Vasemmat (Ctrl+Shift)"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Molemmat shiftit (Shift+Shift)"
 
-#: kikbdconf.cpp:115
-#, fuzzy
-msgid "Right Meta"
-msgstr "Oikea Alt"
-
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:113
 msgid "Left  Alt"
 msgstr "Vasen Alt"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:114
 msgid "Left  Control"
 msgstr "Vasen Control"
 
-#: kikbdconf.cpp:118
-#, fuzzy
-msgid "Left  Meta"
-msgstr "Vasen Alt"
-
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:117
 msgid "Top Left"
 msgstr "Yl‰ vasen"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:118
 msgid "Top Right"
 msgstr "Yl‰ oikea"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:119
 msgid "Bottom Left"
 msgstr "Ala vasen"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:120
 msgid "Bottom Right"
 msgstr "Ala oikea"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:147
 msgid "X default codes"
 msgstr "X oletuskoodit"
 
-#: kikbdconf.cpp:208
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -199,105 +188,103 @@ msgstr ""
 "%s\n"
 "Haluatko k‰ynnist‰‰ asetusohjelman?"
 
-#: kikbdconf.cpp:216
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
-msgstr "Asetuksesi ovat tyhj‰t. Asenna systeemin oletus."
+msgstr "Asetuksesi ovat tyhj‰t. Asenna j‰rjestelm‰n oletus."
 
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
-"Asetustiedostossasi on oletettua vahnempi muoto.\n"
-"Jotkin asetuksista voivat olla v‰‰ri‰."
+"Asetustiedostossasi on oletettua vanhempi muoto.\n"
+"Jotkin asetuksistasi voivat olla v‰‰ri‰."
 
-#: kikbdconf.cpp:230
-#, fuzzy
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 "Asetustiedostossasi on oletettua uudempi muoto.\n"
-"Jotkin asetuksista voivat olla v‰‰ri‰."
+"Jotkin asetuksistasi voivat olla v‰‰ri‰."
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "tuntematon"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "oletus"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Tekij‰: Ei m‰‰ritelty"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Tekij‰"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Kuvaus:  "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "L‰hde:  "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "ei tiedostoa"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "k‰ytt‰j‰tiedosto"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:397
 msgid "system file"
-msgstr "systeemitiedosto"
+msgstr "j‰rjestelm‰tiedosto"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Tilastot:  "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "symbolia"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "koodia"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "vaihtoehtoista symbolia"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr " "
 
-#: kikbdconf.cpp:423
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "kirjasinperhe"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "Kansainv‰lisen n‰pp‰imistˆn virhe"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Kansainv‰liset n‰pp‰imistˆn varoitus"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Kansainv‰lisen n‰pp‰imistˆn kysymys"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr "Asetukset"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:497
 msgid ""
 "\n"
 "Do you want to continue?"

@@ -28,7 +28,7 @@ msgstr "&Muut"
 
 #: main.cpp:68
 msgid "&Proxy"
-msgstr "&Välityspalvelin"
+msgstr "Vä&lityspalvelin"
 
 #: main.cpp:70
 msgid "&HTTP"
@@ -111,7 +111,7 @@ msgstr "Alleviivaa linkit"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Käytä aina omia värejä"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

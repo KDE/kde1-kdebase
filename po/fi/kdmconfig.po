@@ -166,19 +166,16 @@ msgid "Standard"
 msgstr "Vakio"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Tervehdys"
+msgstr "Tervehdyskirjasin"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Virhe"
+msgstr "Virhekirjasin"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Vakio"
+msgstr "Vakiokirjasin"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
