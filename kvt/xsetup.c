@@ -19,8 +19,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <curses.h>
-/* #include <term.h> */
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
@@ -83,18 +81,7 @@ extern void kvt_set_size_increment(int, int);
 				ButtonPressMask \
 			)
 
-static char *terminal_name[] = {
-    "kvt-color",
-    "xterm-color",
-    "xterm",
-    "vt102",
-    "vt100",
-    "dump",
-    0
-};
-
-/*  External global variables that are initialised at startup.
- */
+/*  External global variables that are initialised at startup. */
 Display		*display;
 Window		vt_win=0;		/* vt100 window */
 Window		main_win;	/* parent window */
@@ -195,7 +182,6 @@ void init_display(int argc,char **argv)
   int i, len;
   char *display_string;
   char *terminal = NULL;
-  char *pb;
 
   display_name = getenv("DISPLAY");
 
@@ -325,19 +311,10 @@ void init_display(int argc,char **argv)
 	}
     }
 
-  /* if no terminal has been set by -tn option, find the best.*/
-  if (!terminal) {
-    pb = safemalloc(1024, "tgetent");
-    for(i=0; terminal_name[i]; i++) {
-      if (tgetent(pb, terminal_name[i])!=ERR) {
-        terminal = safemalloc(strlen(terminal_name[i])+6, "terminal");
-	sprintf(terminal, "TERM=%s", terminal_name[i]);
-	putenv(terminal);
-        break;
-      }
-    }
-    safefree(pb, "tgetent", "ready");
-  }
+  /* if no terminal has been set by -tn option, set one */ 
+  terminal = safemalloc(strlen("xterm-color")+6, "terminal");
+  sprintf(terminal, "TERM=%s", "xterm-color");
+  putenv(terminal);
 
   /* to make sure that the GCs are not changed */ 
   gc = 0;
