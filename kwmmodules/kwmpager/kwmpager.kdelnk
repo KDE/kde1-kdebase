@@ -1,0 +1,16 @@
+# KDE Config File
+[KDE Desktop Entry]
+SwallowExec=kwmpager -geometry 50x50
+SwallowTitle=kwmpager
+BinaryPattern=
+Name=KWM Pager
+Protocols=
+MimeType=
+Comment=Shows the positions of the windows
+Exec=kwmpager
+Icon=unknown.xpm
+TerminalOptions=
+Path=
+Type=Application
+Comment[de]=Zeigt die Positionen der Fenster
+Terminal=0

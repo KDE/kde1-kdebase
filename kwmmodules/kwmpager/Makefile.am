@@ -6,6 +6,8 @@ MOC	=	@MOC@
 
 #######	Files
 
+appdir = $(prefix)/share/applnk/System/
+
 bin_PROGRAMS	= kwmpager
 kwmpager_SOURCES = desktop.cpp pager.cpp 
 BUILTSOURCES =	pager.moc desktop.moc
@@ -19,5 +21,10 @@ desktop.cpp: desktop.moc
 desktop.moc: desktop.h
 	$(MOC) desktop.h -o desktop.moc
 
+install-data-local:
+	$(mkinstalldirs) $(appdir)
+	$(INSTALL_DATA) kwmpager.kdelnk $(appdir)
 
+uninstall-local:
+	-rm -f $(appdir)/kwmpager.kdelnk
 
