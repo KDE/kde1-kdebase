@@ -6,6 +6,7 @@
 
 #include <kapp.h>
 #include <kiconloader.h>
+#include <kstdaccel.h>
 
 #include <stdlib.h>
 
@@ -125,38 +126,56 @@ KHelpMain::~KHelpMain()
 
 void KHelpMain::createMenu()
 {
+    KStdAccel stdAccel;
 	fileMenu = new QPopupMenu;
 	CHECK_PTR( fileMenu );
-	fileMenu->insertItem( klocale->translate("&New Help Window"), this, SLOT( slotCloneWindow() ),
-						CTRL+Key_N );
+	fileMenu->insertItem( klocale->translate("&New Help Window"), this,
+                        SLOT( slotCloneWindow() ), stdAccel.openNew() );
 	fileMenu->insertSeparator();
-	fileMenu->insertItem( klocale->translate("&Open File..."), helpwin, SLOT(slotOpenFile()) );
-	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin, SLOT(slotOpenURL()) );
-	fileMenu->insertItem( klocale->translate("&Reload"), helpwin, SLOT(slotReload()) );
+	fileMenu->insertItem( klocale->translate("&Open File..."), helpwin,
+                        SLOT(slotOpenFile()), stdAccel.open() );
+	fileMenu->insertItem( klocale->translate("Open UR&L..."), helpwin,
+                        SLOT(slotOpenURL()) );
+	fileMenu->insertItem( klocale->translate("&Reload"), helpwin,
+                        SLOT(slotReload()) );
 	fileMenu->insertSeparator();
-	fileMenu->insertItem( klocale->translate("&Search"), helpwin, SLOT(slotSearch()) );
+	fileMenu->insertItem( klocale->translate("&Search"), helpwin,
+                        SLOT(slotSearch()) );
 	fileMenu->insertSeparator();
-	fileMenu->insertItem( klocale->translate("&Print..."), helpwin, SLOT(slotPrint()), CTRL+Key_P );
+	fileMenu->insertItem( klocale->translate("&Print..."), helpwin,
+                        SLOT(slotPrint()), stdAccel.print() );
 	fileMenu->insertSeparator();
-	idClose = fileMenu->insertItem(klocale->translate("&Close"),this,SLOT(slotClose()),CTRL+Key_W); // CC :!!!!!
-	fileMenu->insertItem( klocale->translate("&Quit"), this, SLOT(slotQuit()), CTRL+Key_Q );
+	idClose = fileMenu->insertItem(klocale->translate("&Close"),this,
+                        SLOT(slotClose()), stdAccel.close()); // CC :!!!!!
+	fileMenu->insertItem( klocale->translate("&Quit"), this,
+                        SLOT(slotQuit()), stdAccel.quit() );
 
 	editMenu = new QPopupMenu;
 	CHECK_PTR( editMenu );
-	idCopy = editMenu->insertItem(klocale->translate("&Copy"), helpwin, SLOT(slotCopy()), CTRL+Key_C );
-	editMenu->insertItem(klocale->translate("&Find..."), helpwin, SLOT(slotFind()), CTRL+Key_F );
-	editMenu->insertItem(klocale->translate("Find &next"), helpwin, SLOT(slotFindNext()), Key_F3 );
+	idCopy = editMenu->insertItem(klocale->translate("&Copy"), helpwin,
+                        SLOT(slotCopy()), stdAccel.copy() );
+	editMenu->insertItem(klocale->translate("&Find..."), helpwin,
+                        SLOT(slotFind()), stdAccel.find() );
+	editMenu->insertItem(klocale->translate("Find &next"), helpwin,
+                        SLOT(slotFindNext()), Key_F3 );
 
 	gotoMenu = new QPopupMenu;
 	CHECK_PTR( gotoMenu );
-	idBack = gotoMenu->insertItem( klocale->translate("&Back"), helpwin, SLOT(slotBack()) );
-	idForward = gotoMenu->insertItem( klocale->translate("&Forward"), helpwin, SLOT(slotForward()) );
+	idBack = gotoMenu->insertItem( klocale->translate("&Back"), helpwin,
+                        SLOT(slotBack()) );
+	idForward = gotoMenu->insertItem( klocale->translate("&Forward"), helpwin,
+                        SLOT(slotForward()) );
 	gotoMenu->insertSeparator();
-	idDir = gotoMenu->insertItem( klocale->translate("&Contents"), helpwin, SLOT(slotDir()) );
-	idTop = gotoMenu->insertItem( klocale->translate("&Top"), helpwin, SLOT(slotTop()) );
-	idUp = gotoMenu->insertItem( klocale->translate("&Up"), helpwin, SLOT(slotUp()) );
-	idPrev = gotoMenu->insertItem( klocale->translate("&Previous"), helpwin, SLOT(slotPrev()) );
-	idNext = gotoMenu->insertItem( klocale->translate("&Next"), helpwin, SLOT(slotNext()) );
+	idDir = gotoMenu->insertItem( klocale->translate("&Contents"), helpwin,
+                        SLOT(slotDir()) );
+	idTop = gotoMenu->insertItem( klocale->translate("&Top"), helpwin,
+                        SLOT(slotTop()) );
+	idUp = gotoMenu->insertItem( klocale->translate("&Up"), helpwin,
+                        SLOT(slotUp()) );
+	idPrev = gotoMenu->insertItem( klocale->translate("&Previous"), helpwin,
+                        SLOT(slotPrev()) );
+	idNext = gotoMenu->insertItem( klocale->translate("&Next"), helpwin,
+                        SLOT(slotNext()) );
 
 	bookmarkMenu = new QPopupMenu;
 	CHECK_PTR( bookmarkMenu );
@@ -171,13 +190,16 @@ void KHelpMain::createMenu()
 	optionsMenu->insertItem( klocale->translate("&General Preferences..."), this,
 			SLOT(slotOptionsGeneral()) );
 	optionsMenu->insertSeparator();
-	optionsMenu->insertItem(klocale->translate( "Show &Toolbar"), this,SLOT(slotOptionsToolbar()));
+	optionsMenu->insertItem(klocale->translate( "Show &Toolbar"), this,
+                        SLOT(slotOptionsToolbar()));
 
-	optionsMenu->insertItem( klocale->translate("Show &Location"), this, SLOT(slotOptionsLocation()) );
+	optionsMenu->insertItem( klocale->translate("Show &Location"), this,
+                        SLOT(slotOptionsLocation()) );
 	optionsMenu->insertItem( klocale->translate("Show Status&bar"), this,
 		SLOT(slotOptionsStatusbar()) );
 	optionsMenu->insertSeparator();
-	optionsMenu->insertItem( klocale->translate("&Save Options"), this, SLOT(slotOptionsSave()) );
+	optionsMenu->insertItem( klocale->translate("&Save Options"), this,
+                        SLOT(slotOptionsSave()) );
 
 	QString at = klocale->translate("KDE Help System\n");
 	at+= klocale->translate("Version ");
@@ -190,7 +212,8 @@ void KHelpMain::createMenu()
 /*
 	QPopupMenu *helpMenu = new QPopupMenu;
 	CHECK_PTR( helpMenu );
-	helpMenu->insertItem( klocale->translate("&Using KDE Help"), this, SLOT(slotUsingHelp()) ); 
+	helpMenu->insertItem( klocale->translate("&Using KDE Help"), this,
+                        SLOT(slotUsingHelp()) ); 
 	helpMenu->insertSeparator();
 	helpMenu->insertItem( klocale->translate("&About"), this, SLOT(slotAbout()) );
 */
