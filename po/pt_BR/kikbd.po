@@ -55,7 +55,6 @@ msgstr ""
 "Simbolos Alt desligados"
 
 #: kikbd.cpp:392
-#, fuzzy
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -188,16 +187,14 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Sua configuração está vazia. Instalado padrão do sistema."
 
 #: kikbdconf.cpp:218
-#, fuzzy
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
-"O arquivo de configurações está num formato mais velhoque o esperado.\n"
+"O arquivo de configurações está num formato mais velho que o esperado.\n"
 "Algumas configurações podem estar incorretas."
 
 #: kikbdconf.cpp:226
-#, fuzzy
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."

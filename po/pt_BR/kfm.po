@@ -959,17 +959,15 @@ msgstr "Trabalhando..."
 
 #: kfmman.cpp:1631
 msgid "Copy here"
-msgstr ""
+msgstr "Copiar aqui"
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Mover"
+msgstr "Mover aqui"
 
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Link"
+msgstr "Linkar aqui"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
