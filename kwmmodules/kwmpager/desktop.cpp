@@ -22,7 +22,7 @@
 #include "pager.h"
 #include <qpainter.h>
 #include <stdlib.h>
-
+#include <qfontmet.h> 
 
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
@@ -44,9 +44,12 @@ void Desktop::fillPixmap()
     pixmap.resize(pixmap_size);
     pixmap.fill(backgroundColor());
     QPainter p(&pixmap);
-    p.setPen(QColor(0,0,0));
-    
-    for (win = windows.first(); win != 0L; win = windows.next()) {
+    p.setFont(font());
+    QFontMetrics fm = p.fontMetrics();
+
+    for (win = windows.first(); win ; win = windows.next()) {
+	if (win->icony)
+	    continue;
 	QColor col = 
 	    (win == activeWindow) ? 
 	    kapp->activeTitleColor : 
@@ -56,7 +59,18 @@ void Desktop::fillPixmap()
 	int w = win->prect.width();
 	int h = win->prect.height();
 	p.fillRect(x, y, w, h,QBrush(col));
+	p.setPen(QColor(0,0,0));
 	p.drawRect(x, y, w, h);
+	col = 
+	    (win == activeWindow) ? 
+	    kapp->activeTextColor : 
+	    kapp->inactiveTextColor;  
+	p.setPen(col);
+	
+	p.drawText( x + 1, y + 1 , w - 2, h - 2,
+		    AlignVCenter,
+		    win->name, win->name.length()
+		    );
     }    
 }
 
@@ -74,6 +88,8 @@ void Desktop::addWindow(Window w)
     
     win->id = w;
     win->rect = KWM::geometry(w);
+    win->icony = KWM::isIconified(w);
+    win->name = KWM::title(w);
     calculate(win);
 
     windows.append(win);
@@ -140,7 +156,11 @@ void Desktop::changeWindow(Window w)
 	return;
     
     win->rect = KWM::geometry(w);
-    calculate(win);
+    win->icony = KWM::isIconified(w);
+    win->name = KWM::title(w);
+    
+    if (!win->icony)
+	calculate(win);
     fillPixmap();
     repaint( false );
 }

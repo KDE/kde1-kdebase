@@ -24,6 +24,9 @@
 #include <kwmmapp.h>
 #include <X11/X.h>
 #include <qframe.h>
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 class Pager;
 
@@ -31,6 +34,8 @@ struct PagerWindow {
     Window id;
     QRect rect;
     QRect prect;
+    bool icony;
+    QString name;
 };
 
 class Desktop : public QFrame {

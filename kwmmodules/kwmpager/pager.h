@@ -23,15 +23,16 @@
 
 #include <kapp.h>
 #include <kwmmapp.h>
-#include "desktop.h"
+#include <desktop.h>
 #include <qframe.h>
+
+class QFont;
 
 class Pager: public QFrame {
     Q_OBJECT
     
 public:
     Pager(KWMModuleApplication*);
-    ~Pager() {};
     
 private:
     KWMModuleApplication* kwmmapp;
@@ -40,6 +41,7 @@ private:
     enum Position { TopRight, TopLeft, BottomRight, BottomLeft, Costumized } position;
     static const char *PosStrings[5];
     int posx, posy;
+    QFont *desktop_font;
 
 public slots:
     void initDesktops();
@@ -54,7 +56,8 @@ private slots:
     void raiseWindow(Window);
     void lowerWindow(Window);
     void placeIt();
-
+    void receiveCommand(QString command);
+    
 protected:
     virtual void resizeEvent ( QResizeEvent * );  
     void readSettings();

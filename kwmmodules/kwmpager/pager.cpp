@@ -24,6 +24,7 @@
 
 #include "pager.moc"
 #include "version.h"
+#include <qfont.h>
 #include "desktop.h"
 #include <kwm.h>
 #include <unistd.h>
@@ -42,6 +43,7 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
 
     int count = KWM::numberOfDesktops();
     desktops.setAutoDelete(true);
+    desktop_font = new QFont();
 
     for (int i = 0; i < count; i++) {
         Desktop *desk = new Desktop(a, i + 1, this);
@@ -51,8 +53,10 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
     activeDesktop = desktops.at(KWM::currentDesktop() - 1);
     activeDesktop->activate(true);
     
-    connect(kwmmapp, SIGNAL(desktopChange(int)) , SLOT(changeDesktop(int)));
-    connect(kwmmapp, SIGNAL(init()), SLOT(initDesktops()));
+    connect(kwmmapp, SIGNAL(desktopChange(int)) , 
+	    SLOT(changeDesktop(int)));
+    connect(kwmmapp, SIGNAL(init()), 
+	    SLOT(initDesktops()));
     connect(kwmmapp, SIGNAL( desktopNumberChange(int)), 
 	    SLOT(changeNumber(int)));
     connect(kwmmapp, SIGNAL( windowAdd(Window)), 
@@ -67,23 +71,44 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
 	    SLOT(lowerWindow(Window)));
     connect(kwmmapp, SIGNAL( windowActivate(Window)), 
 	    SLOT(windowActivate(Window)));
-    
+    connect(kwmmapp, SIGNAL( commandReceived(QString)),
+	    SLOT(receiveCommand(QString)));
+
     readSettings();
     initDesktops();
     show();
     placeIt();
 }
 
+Pager::~Pager()
+{
+    delete desktop_font;
+}
+
+void Pager::receiveCommand(QString command)
+{
+    if (command == "pager::config") {
+	readSettings();
+	initDesktops();
+	placeIt();
+    }
+}
+
 void Pager::readSettings()
 {
     KConfig *config = kapp->getConfig();
-    config->setGroup("Geometry");
+    config->setGroup("GUI Settings");
+
+    // Size
     QString entry = config->readEntry("Size", "100 100");
     QTextStream str(entry, IO_ReadOnly);
     int w, h;
     str >> w >> h;
     entry.sprintf("%d %d",w,h);
     config->writeEntry("Size", entry);
+    resize(w,h);
+
+    // Geometry
     entry = config->readEntry("Geometry", PosStrings[0]);
     position = Costumized;
     for (int i=0; i<5;i++)
@@ -97,7 +122,13 @@ void Pager::readSettings()
     }
     config->writeEntry("Geometry", entry);
     config->sync();
-    resize(w,h);
+    
+    // Font
+    entry = config->readEntry("Font", 
+       // don't blame me, I'm played with xfontsel ;)
+       "-bitstream-courier-medium-i-normal-*-10-*-75-75-m-54-iso8859-*");
+    desktop_font->setRawMode(TRUE);
+    desktop_font->setFamily(entry);
 }
 
 void Pager::placeIt()
@@ -145,12 +176,13 @@ void Pager::resizeEvent ( QResizeEvent * )
 void Pager::initDesktops()
 {
     for (Desktop *desk = desktops.first(); desk != 0L;
-         desk = desktops.next())
+         desk = desktops.next()) {
 	desk->init();
+	desk->setFont(*desktop_font);
+    }
     for (Window *w = kwmmapp->windows_sorted.first(); w != 0L; 
 	 w = kwmmapp->windows_sorted.next()) {
-	if (!KWM::isIconified(*w))
-	    desktops.at(KWM::desktop(*w) - 1) -> addWindow(*w);
+	desktops.at(KWM::desktop(*w) - 1) -> addWindow(*w);
     }
     for (Desktop *desk = desktops.first(); desk != 0L;
 	 desk = desktops.next())
