@@ -1,3 +1,8 @@
+1998-03-13  Stephan Kulow  <coolo@kde.org>
+
+	* kfmview.cpp: fixed a encoding bug for the trash folder.
+	(patch by Marcin Dalecki <dalecki@cyber.cs.net.pl>)
+
 Sun Mar  8 13:23:00 1998  Jacek Konieczny  <jajcus@zeus.polsl.gliwice.pl>
 
 	* Added charset mime type parameter support.
