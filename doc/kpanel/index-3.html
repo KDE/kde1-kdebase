@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The K Panel Handbook: Configuring the Panel</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE panel">
+<META NAME="description" CONTENT="The KDE Panel Handbook">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<H3><A NAME="s3">3. Configuring the Panel</A></H3>
+
+<P> 
+<EM>kpanel</EM> is a highly flexible and configurable part of the KDE user 
+interface. This section contains directions to help you customize it to 
+your taste. For information about 
+<A HREF="index-4.html#kpanelrc">kpanelrc</A>,
+the kpanel configuration file, see the 
+<A HREF="index-4.html#advanced">Developers' Guide</A> section.
+<P>Instructions are included below to configure
+<UL>
+<LI>
+<A HREF="#confPanelBehavior">Panel Position/Behavior</A></LI>
+<LI>
+<A HREF="#confPanelIcons">Panel Buttons</A></LI>
+<LI>
+<A HREF="#confVDesk">Virtual Desktops</A></LI>
+<LI>
+<A HREF="#confMenu">Application Starter</A></LI>
+</UL>
+<P>
+<H3><A NAME="confPanelBehavior"></A> <A NAME="ss3.1">3.1 Panel Position/Behavior</A>
+</H3>
+
+<P>To configure Panel and Toolbar position and behavior, right-click the panel on
+an area  with no icons, and choose Configure from the menu. Click the Help
+button for specific information on the settings.
+<P>
+<H3><A NAME="confPanelIcons"></A> <A NAME="ss3.2">3.2 Panel Buttons</A>
+</H3>
+
+<P>You can move, delete, or change the properties of a panel button 
+by right-clicking the button's icon 
+and choosing the desired option from the context menu that appears.
+<P>To add a button to the panel, use one of the following three methods:
+<UL>
+<LI>To place a window list button on the panel, choose 
+<B>application starter > Panel > Add Windowlist</B>.
+<P>
+</LI>
+<LI>To place an application from the Application Starter on 
+the panel, choose <B>application starter > Panel > Add Application</B>, 
+then continue through the menu to select the desired application.
+You can also place a submenu from the Application Starter directly on
+the panel using the same procedure; when you drill down to the desired
+submenu, select the first choice in the submenu, which is the submenu 
+itself. For example, to place the Settings submenu on the panel,
+choose <B>application starter > Panel > Add Application > System >
+System</B>.
+<P>
+</LI>
+<LI>Drag an icon from a <EM>kfm</EM> window or the desktop to the panel. 
+Only .kdelnk files and folders containing .kdelnk files can be placed on 
+the panel.  Once you've placed an icon on the panel, 
+right-click the icon and choose Properties from the menu to set it up.
+<B>Note:</B> when you place an icon on the panel this way, be careful not to move
+or delete the original .kdelnk file or folder, or the panel will not be
+able to display the icon.
+</LI>
+</UL>
+<P><B>Tool tips:</B> <EM>kpanel</EM> displays tool tips for buttons on the panel and
+entries in the Application Starter. To set the tool tip for a button,
+right-click the button and choose Properties from the menu. Click the
+Application tab, and put text for the tool tip in the <B>Comment</B> field. You
+may need to restart <EM>kpanel</EM> for the changes to take effect (right-click
+the panel and choose Restart).
+<P>
+<P><B>Application Swallowing:</B> On the Execute tab of the 
+properties of an Application icon, the "Swallowing on panel" settings 
+allow you to have a button on the panel that displays a running 
+application instead of a static icon. This is especially useful 
+for small notification or 
+status applications such as xbiff. Here's how:
+<UL>
+<LI>Set <B>Execute</B> to the name of the application to execute 
+in the panel. Note that this is the Execute setting in the 
+"Swallowing on panel" area.</LI>
+<LI>Set <B>Window Title</B> to the title of the window opened by 
+the application when run normally from the desktop. <EM>kpanel</EM> uses 
+the title to identify which window to pull into the panel. 
+If the window doesn't have a title bar,
+run the application from the desktop and look
+at the taskbar to determine what title to use. </LI>
+</UL>
+<P>
+<H3><A NAME="confVDesk"></A> <A NAME="ss3.3">3.3 Virtual Desktops</A>
+</H3>
+
+<P>To change the labels on the virtual desktop buttons on the panel or change 
+the number of virtual desktops, right-click the panel on an area with 
+no icons, and choose Configure from the menu. Click the Desktops tab 
+in the KPanel Configuration window and make the desired changes 
+(click Help for specific information on the settings).
+<P>
+<H3><A NAME="confMenu"></A> <A NAME="ss3.4">3.4 Application Starter</A>
+</H3>
+
+<P>To customize the user section of the Application Starter, choose 
+<B>application starter > Panel > Edit Menus</B>. Follow the instructions 
+in the <EM>kmenuedit</EM> utility to set up your choices. 
+<P>To make your custom entries the primary entries on the menu, 
+right-click the panel on an area with 
+no icons, and choose Configure from the menu. Click the Options tab 
+and select the "Personal First" choice.
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-4.html">Next</A>
+<A HREF="index-2.html">Previous</A>
+<A HREF="index.html#toc3">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The K Panel Handbook: Developers' Guide</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE panel">
+<META NAME="description" CONTENT="The KDE Panel Handbook">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Table of Contents</A>
+</P>
+<H3><A NAME="advanced"></A> <A NAME="s4">4. Developers' Guide</A></H3>
+
+<P>This section covers topics of interest to expert users and developers.
+It covers the following topics:
+<P>
+<UL>
+<LI>
+<A HREF="#commands">kpanel Commands</A></LI>
+<LI>
+<A HREF="#kpanelrc">kpanelrc Configuration File</A></LI>
+</UL>
+<P>
+<H3><A NAME="commands"></A> <A NAME="ss4.1">4.1 kpanel Commands</A>
+</H3>
+
+<P>You can send commands to <EM>kpanel</EM> via the K Window Manager using either of
+two techniques:
+<P><CODE>KWM::sendKWMCommand(QString)</CODE> (in KDE applications)<BR>
+or<BR>
+<CODE>kwmcom <EM>command</EM></CODE>  (from the command line) 
+<P><EM>kpanel</EM> responds to the following commands:
+<P>
+<UL>
+<LI><B>kpanel:restart</B> restarts the panel, reloading its
+configuration files.
+<P>
+</LI>
+<LI><B>kpanel:hide</B> hides the panel on the current desktop,
+as if the user had clicked
+the small textured bar at the end of the panel.
+<P>
+</LI>
+<LI><B>kpanel:show</B> shows the panel if it was hidden.
+<P>
+</LI>
+<LI><B>kpanel:system</B> opens the Application Starter.
+<P>
+</LI>
+<LI><B>kpanel:goXXXXYYYY</B> opens the Application Starter at a specific
+location on the screen.  For example, <CODE>kpanel:go05000100</CODE>
+opens the menu at coordinates (500,100).
+<P>
+</LI>
+<LI><B>kpanel:icon:#:button</B> changes the icon displayed for <EM>button</EM>
+on the panel.  <EM>#</EM> can be 1-4, and refers to an icon
+defined for the button in the button's .kdelnk file (lines of the form
+icon=<EM>pixmap</EM>, icon2=<EM>pixmap</EM>, etc.).</LI>
+</UL>
+<P>
+<H3><A NAME="kpanelrc"></A> <A NAME="ss4.2">4.2 kpanelrc</A>
+</H3>
+
+<P><EM>kpanel</EM> can be configured using the KDE Control Center 
+(<B>application starter > KDE Control Center</B>). 
+Choose <B>Panel</B> from the
+Applications section to work with the various configuration options. 
+<P>For those who prefer to edit a configuration file, this section explains 
+the options in the kpanelrc file, located in ~/.kde/share/config. 
+<P>The kpanelrc configuration file is divided into two sections:
+<UL>
+<LI>
+<A HREF="#krckpanel">kpanel</A></LI>
+<LI>
+<A HREF="#krckpanelButtons">kpanelButtons</A></LI>
+</UL>
+<P>
+<H4><A NAME="krckpanel"></A> [kpanel]</H4>
+
+<P>The kpanel section contains a number of entries that govern <EM>kpanel</EM>'s
+behavior.
+<P>
+<UL>
+<LI><B>AutoHide=<CODE>on|off</CODE> </B><BR>
+When <CODE>on</CODE>, the panel automatically hides itself when the user moves the
+pointer off the panel.
+<P>
+</LI>
+<LI><B>AutoHideTaskbar=<CODE>on|off</CODE> </B><BR>
+When <CODE>on</CODE>, the taskbar automatically hides itself when the user moves the
+pointer off the panel.
+<P>
+</LI>
+<LI><B>BackgroundTexture=<EM>pixmap</EM></B><BR>
+Displays <EM>pixmap</EM> as the panel background.
+<P>
+</LI>
+<LI><B>BoxHeight=<EM>value</EM> (in pixels) </B><BR>
+<B>BoxWidth=<EM>value</EM> (in pixels) </B><BR>
+These settings determine the height of the panel and the width of
+buttons on the panel, respectively.
+<P>
+</LI>
+<LI><B>ClockAmPm=<CODE>on|off</CODE> </B><BR>
+When <CODE>on</CODE>, the clock on the panel displays an AM/PM indicator; when
+<CODE>off</CODE>, the clock shows time in 24-hour format.
+<P>
+</LI>
+<LI><B>DateFont=<EM>font</EM></B><BR>
+Specifies the font for the clock on the panel.  Use an X font
+specifier, like <CODE>*-times-medium-i-normal--12-*</CODE>.
+<P>
+</LI>
+<LI><B>DateVisible=<CODE>true|false</CODE></B><BR>
+If <CODE>false</CODE>, hides the panel's clock.
+<P>
+</LI>
+<LI><B>DesktopButtonFont=<EM>font</EM></B><BR>
+Specifies the font for the virtual desktop buttons on the panel.
+<P>
+</LI>
+<LI><B>DesktopButtonHorizontalSize=<EM>value</EM> </B><BR>
+Specifies the width of the virtual desktop buttons on the panel. The
+<EM>value</EM> is multiplied by half the <CODE>BoxWidth</CODE>.
+<P>
+</LI>
+<LI><B>DesktopButtonRows=<EM>value</EM> </B><BR>
+Specifies the number of rows of virtual desktop buttons on the panel.
+<P>
+</LI>
+<LI><B>FoldersFirst=<CODE>on|off</CODE></B><BR>
+When <CODE>on</CODE>, submenus on the application starter menu always appear
+at the top.  When <CODE>off</CODE>, all items appear in alphabetical order.
+<P>
+</LI>
+<LI><B>Margin=<EM>value</EM> (in pixels)</B><BR>
+This value specifies the size of the top and bottom border for the panel.
+<P>
+</LI>
+<LI><B>MenuToolTips=<EM>value</EM> (in milliseconds)</B><BR>
+Specifies the length of time a user must hold the mouse over an item
+on the application starter menu before a tooltip appears.
+<P>
+</LI>
+<LI><B>PanelHidden=00000000 </B><BR>
+This setting specifies on which desktops the panel is hidden.  There
+are 8 positions in the setting, corresponding to the 8 desktops. A 0 in
+a position indicates that the panel is visible on the corresponding desktop;
+a 1, that the panel is hidden.  For example, a setting of 01011000 hides the
+panel on desktops 2, 4, and 5.
+<P>
+</LI>
+<LI><B>PersonalFirst=<CODE>on|off</CODE> </B><BR>
+When <CODE>on</CODE>, the user's personal menu settings appear as the primary
+choices on the application starter menu.  When <CODE>off</CODE>, the default
+KDE choices are primary.
+<P>
+</LI>
+<LI><B>Position=<CODE>bottom|top|left|right</CODE> </B><BR>
+Specifies the position of the panel on the screen.
+<P>
+</LI>
+<LI><B>Style=normal|tiny|large </B><BR>
+Specifies the style of the panel. This is used by the graphical kpanel
+configuration utility <EM>kcmkpanel</EM> and does not directly affect the panel's
+appearance.
+<P>
+</LI>
+<LI><B>TaskbarButtonHorizontalSize=<EM>value</EM> </B><BR>
+An integer which specifies the width of the taskbar.
+<P>
+</LI>
+<LI><B>TaskbarPosition=<CODE>top|top_left|bottom|hidden</CODE> </B><BR>
+Specifies the position of the taskbar on the screen.  If <CODE>hidden</CODE>, the
+taskbar is not visible.</LI>
+</UL>
+<P>
+<P>
+<H4><A NAME="krckpanelButtons"></A> [kpanelButtons]</H4>
+
+<P>This section specifies the layout of the panel buttons.
+<P>
+<UL>
+<LI><B>Buttons=<EM>button1</EM>, <EM>button2</EM>, ...</B><BR>
+A list of the buttons on the panel, where <EM>button#</EM> can be
+<CODE>system</CODE> (the application starter), <CODE>windowlist</CODE> (the window list),
+or the absolute path of a .kdelnk file. 
+<P>
+</LI>
+<LI><B>ButtonDelta=<EM>delta1</EM>, <EM>delta2</EM>, ...</B><BR>
+Specifies the positions of the buttons on the panel. The deltas are
+floating point values, and for each button, represent the distance
+from the button immediately to the left/top.
+<P>
+</LI>
+<LI><B>control=<EM>value</EM></B><BR>
+Specifies which button the virtual desktop button group comes after.
+If 0, the group comes immediately after the K button; if 1, it comes
+after the button after the K, and so forth.
+<P>
+</LI>
+<LI><B>controldelta=<EM>delta</EM></B><BR>
+Specifies the distance of the virtual desktop button group
+from the button immediately to the left/top.
+<P>
+</LI>
+</UL>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-5.html">Next</A>
+<A HREF="index-3.html">Previous</A>
+<A HREF="index.html#toc4">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
