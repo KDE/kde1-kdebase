@@ -219,11 +219,11 @@ msgstr "Okno pod my¹ou je aktívne"
 
 #: windows.cpp:120
 msgid "Classic focus follows mouse"
-msgstr "Okno pod my¹ou je aktívne"
+msgstr "Posledné pod my¹ou je aktívne"
 
 #: windows.cpp:122
 msgid "Classic sloppy focus"
-msgstr "Kliknú» pre aktiváciu"
+msgstr "Sloppy aktivácia"
 
 #: windows.cpp:131
 msgid ""
