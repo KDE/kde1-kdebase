@@ -40,51 +40,6 @@
 #define OSS_AUDIO
 #endif
 
-// UnixWare includes
-#ifdef _UNIXWARE
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/types.h>
-#include <sys/soundcard.h>
-#define OSS_AUDIO
-#endif
-
-// UnixWare includes
-#ifdef _UNIXWARE
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/types.h>
-#include <sys/soundcard.h>
-#define OSS_AUDIO
-#endif
-
-// UnixWare includes
-#ifdef _UNIXWARE
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/types.h>
-#include <sys/soundcard.h>
-#define OSS_AUDIO
-#endif
-
-// UnixWare includes
-#ifdef _UNIXWARE
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/types.h>
-#include <sys/soundcard.h>
-#define OSS_AUDIO
-#endif
-
-// UnixWare includes
-#ifdef _UNIXWARE
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <sys/types.h>
-#include <sys/soundcard.h>
-#define OSS_AUDIO
-#endif
-
 #include "maudio.h"
 #include "sample.h"
 #include "io_oss.h"
@@ -131,7 +86,7 @@ void AudioDev::setBugs(int bugs)
 }
 
 
-bool AudioDev::grab()
+bool AudioDev::grab(bool probeOnly)
 {
   if (ParamsChanged) {
     // When playback parameters are changed with setParams(), we have to
@@ -155,6 +110,8 @@ bool AudioDev::grab()
        return false;
      }
      else {
+       if (probeOnly)
+          return true;
        /*
 	* Now set sample format, then channels, then speed. It is important to follow this
 	* scheme. See OSS documentation for more info.
