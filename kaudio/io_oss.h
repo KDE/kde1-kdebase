@@ -8,7 +8,7 @@ class AudioDev
 {
 public:
   enum {POST_BUG=1, CLOSELOOSE_BUG=2}; // next would be 4,8,16,...
-  AudioDev(char *dev, int mode, int options);
+  AudioDev(int devnum);
   /* channels not supported by now */
   void setParams(int8 Bit_p_spl, bool Stereo, uint32 Freq, int8 Channels);
   bool grab();
@@ -23,8 +23,6 @@ private:
   int   audiodev;	/* Should be private, cannot be for now :- */
   char	*devname;
   bool	opened;
-  int	Mode;
-  int	Options;
   int	bit_p_spl;
   bool	stereo;
   uint32 frequency;

@@ -18,14 +18,30 @@
 
 extern int          BUFFSIZE;   // Crap! Must be out into AudioSample class
 
-AudioDev::AudioDev(char *dev, int mode, int options)
+
+
+AudioDev::AudioDev(int devnum)
 {
   opened=false;
-  Mode=mode;
-  bit_p_spl = 0; // This forces setting parameter new in "grab"
-  Options=options;
-  devname =strdup(dev);		// !!! Should use mystrdup()
+  char textDevDSP[]="/dev/dsp";
+  int  lenDevDSP = strlen(textDevDSP);
 
+  bit_p_spl = 0; // This forces setting parameter new in "grab"
+
+  if ( devnum > 10 || devnum<=0 ) {
+    // Illegal or default device number: Use default DSP
+    devname = new char[lenDevDSP+1];
+    strcpy(devname,textDevDSP);  // Yields "/dev/dsp"
+  }
+  else {
+    // Yields "/dev/dspX", with X in [0..9].
+    devname = new char[lenDevDSP+2];
+    strcpy(devname,textDevDSP);
+    textDevDSP[lenDevDSP] = char('0'+(unsigned char)devnum);
+    textDevDSP[lenDevDSP] = 0; // 0-termination of string
+  }
+
+ 
   // Adding a quick hack. Trying out what happens if I feed OSS with
   // Zero-Data when idle. Is OSS perhaps happy then?!?
   silence8 = new char[BUFFER_MAX];
@@ -45,15 +61,15 @@ void AudioDev::setBugs(int bugs)
 bool AudioDev::grab()
 {
   if (ParamsChanged) {
-    // When playback parameters are changed with setParams(), we have to re-open the
-    // device.
+    // When playback parameters are changed with setParams(), we have to
+    // re-open the device.
     release();
   }
     
   if (!opened) {
       /* Open audio device non-blocking! */
 #ifdef OSS_AUDIO
-      audiodev=open(devname, Mode, Options);
+      audiodev=open(devname, O_WRONLY, 0 /* O_NONBLOCK */);
 #else
       audiodev=-1; // fail!
 #endif 
