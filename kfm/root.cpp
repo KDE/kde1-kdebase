@@ -1128,7 +1128,7 @@ void KRootWidget::slotFilesChanged( const char *_url )
 
 void KRootWidget::slotPopupOpenWith()
 {
-    OpenWithDlg l( "Open With:", "", this, true );
+    OpenWithDlg l( klocale->translate("Open With:"), "", this, true );
     if ( l.exec() )
     {
       KMimeBind *bind = l.mimeBind();
