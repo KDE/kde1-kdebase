@@ -41,11 +41,11 @@ msgstr "Päivitä työpöytä"
 
 #: krootwm.C:173
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Järjestä ikkunat"
 
 #: krootwm.C:174
 msgid "Cascade windows"
-msgstr ""
+msgstr "Sarjoita ikkunat"
 
 #: krootwm.C:175
 msgid "Arrange icons"

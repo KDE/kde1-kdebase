@@ -39,7 +39,7 @@ msgstr ""
 
 #: kfindtop.cpp:136
 msgid "&Open"
-msgstr "&Asetukset"
+msgstr "&Avaa"
 
 #: kfindtop.cpp:138
 msgid "&Add to archive"
@@ -127,7 +127,7 @@ msgstr "Etsi &alikansioista"
 
 #: kftabdlg.cpp:96
 msgid " Name& Location "
-msgstr " Nimi& Sijainti "
+msgstr " Nime&ä Sijainti "
 
 #: kftabdlg.cpp:108
 msgid "and"

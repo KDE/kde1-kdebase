@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 1998.
 #
 #, fuzzy
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-03-19 22:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -72,67 +72,67 @@ msgstr "Käynnistys"
 
 #: syssound.cpp:158
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Ikkunan rullaus ylös"
 
 #: syssound.cpp:159
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Ikkunan rullaus alas"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr ""
+msgstr "Ikkunan pienennys"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Ikkuna normaalikokoon"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr ""
+msgstr "Ikkunan suurennus"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Ikkunan suurennuksen poisto"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr ""
+msgstr "Ikkunan naulaus"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Ikkunan naulauksen poisto"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
-msgstr ""
+msgstr "Uusi ikkuna"
 
 #: syssound.cpp:167
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Ikkunan tuhoaminen"
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Lopeta"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Lopetusviesti"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Ikkunan liikutuksen alku"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Ikkunan liikutuksen loppu"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Ikkunan koon muuttamisen alku"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Ikkunan koon muuttamisen loppu"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -159,7 +159,6 @@ msgid "Unsupported URL"
 msgstr "URL:ää ei tueta"
 
 #: syssound.cpp:455
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"

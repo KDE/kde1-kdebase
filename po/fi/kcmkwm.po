@@ -128,7 +128,7 @@ msgstr "Siirrä"
 
 #: titlebar.cpp:990
 msgid "(Un)Shade"
-msgstr "Varjostettu"
+msgstr "Varjosta"
 
 #: titlebar.cpp:991
 msgid "Iconify"
@@ -180,20 +180,19 @@ msgstr "Sarjaan"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktiivinen"
 
 #: windows.cpp:92
 msgid "Random"
 msgstr "Satunnainen"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Valikko"
+msgstr "Manuaalinen"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Sallitty päällekkäisyys:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -244,26 +243,29 @@ msgid "Move pointer towards center after switch"
 msgstr "Siirrä osoitin ruudun keskustaan"
 
 #: desktop.cpp:89
-#, fuzzy
 msgid "Dekstop switch delay:"
-msgstr "Työpöydän vaihtoviime ms:"
+msgstr "Työpöydän vaihtoviime:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Aktiiviset reunukset"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Reunuksen vastustus:"
 
 #: desktop.cpp:118
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Reunan vaihtoalue:\n"
+"       (pisteitä)"
 
 #: desktop.cpp:132
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Ikkunan vaihtoalue:\n"
+"       (pisteitä)"

@@ -24,7 +24,7 @@ msgstr "KDE:n ohjauskeskus"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
-msgstr "&Imase moduli"
+msgstr "&Imaise moduli"
 
 #: toplevel.cpp:81
 msgid ""

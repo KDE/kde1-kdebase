@@ -28,7 +28,7 @@ msgstr "Uudelleenlataa &tiedostotyypit"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr " "
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
