@@ -1001,7 +1001,7 @@ void KIOJob::del()
 	    supath.detach();
 
 	    // Delete a trailing '/', for lstat
-	    if ( supath.right(1) == "/" )
+	    if (( supath.length() > 1 ) && ( supath.right(1) == "/" ))
 	    supath.truncate( supath.length() - 1 );
 
 	    struct stat buff;
@@ -1012,6 +1012,13 @@ void KIOJob::del()
 	    if ( S_ISLNK( lbuff.st_mode ) )
 	    {
 		// No recursion here!
+                // This is a symlink. If it points to a directory, it has a '/' 
+                // appended, which we have to remove
+                if ( S_ISDIR( buff.st_mode ) )
+                {
+                    char * e = p + strlen(p) - 1;
+                    *e='\0';
+                }
 	    }
 	    else if ( S_ISDIR( buff.st_mode ) )
 	    {
