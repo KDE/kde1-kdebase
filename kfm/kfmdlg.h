@@ -29,6 +29,12 @@ public:
      */
     const char * getText() { return edit->text(); }
     
+public slots:
+    /**
+     * The slot for clearing the edit widget
+     */
+    void slotClear();
+
 protected:
     /**
      * The line edit widget
@@ -36,4 +42,6 @@ protected:
     QLineEdit *edit;
 };
 
+
 #endif
+
