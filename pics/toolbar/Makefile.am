@@ -4,7 +4,7 @@ data_DATA = back.xpm bottom.xpm contents.xpm \
 	editcut.xpm editpaste.xpm \
 	exclamation.xpm exit.xpm filefloppy.xpm \
 	filemail.xpm filenew.xpm fileopen.xpm fileprint.xpm \
-	finish.xpm forward.xpm help.xpm \
+	finish.xpm flag.xpm forward.xpm help.xpm \
 	home.xpm idea.xpm lock.xpm next.xpm \
 	page.xpm paintbucket.xpm \
 	prev.xpm reload.xpm send.xpm openbook.xpm \
