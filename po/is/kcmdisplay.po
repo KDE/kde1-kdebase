@@ -424,7 +424,7 @@ msgstr "Teikna viðmótshluti eins og &Windows 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Valslá efst á skjá svipað og á Makkanum""
+msgstr "&Valslá efst á skjá svipað og á Makkanum"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
