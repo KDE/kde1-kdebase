@@ -211,7 +211,7 @@ msgstr "&Malý"
 
 #: colorscm.cpp:246
 msgid "High"
-msgstr "&Veµký"
+msgstr "Veµký"
 
 #: colorscm.cpp:318
 msgid "Error removing"
