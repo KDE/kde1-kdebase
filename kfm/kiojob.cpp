@@ -118,7 +118,7 @@ void KIOJob::list( const char *_url, bool _reload, bool _bHTML )
     if ( dir != 0L )
     {
 	KIODirectoryEntry *e;
-	for ( e = dir->first(); e != 0L; e = dir->next() )
+       for ( e = dir->first(); e != 0L; e = dir->next() )
 	    emit newDirEntry( id, e );
 	done();
 	return;
@@ -525,6 +525,9 @@ void KIOJob::copy()
 
     QStrList tmpList1;
     QStrList tmpList2;
+
+    int skipped = 0;
+    QString skippedFile;
     
     // Recursive directory    
     QListIterator<char> it( cmSrcURLList );
@@ -548,10 +551,30 @@ void KIOJob::copy()
 	    QString dupath( du.path() );  // destination path
 	    dupath.detach();
 
-	    stat( supath.data(), &buff );
-	    if ( S_ISDIR( buff.st_mode ) )
+	    lstat( supath.data(), &buff );
+            if ( S_ISLNK( buff.st_mode ) )
+            {
+                char buffer [1024];
+                int linkLength = readlink( supath.data(), buffer, 1022 );
+                if (linkLength > 0)
+                {
+                     buffer[linkLength] = 0;
+                     if (symlink( buffer, dupath.data()) == -1)
+                     {
+                     	QString tmp;
+			ksprintf(&tmp, i18n( "Could not make symbolic link\n%s"), dupath.data());
+			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+			done();
+			return;
+                     }
+                }
+
+		// Remove links from the copy list
+		tmpList1.append( p );
+		tmpList2.append( p2 );
+            }
+	    else if ( S_ISDIR( buff.st_mode ) )
 	    {
-	      // printf("??????? Is directory '%s'\n",p);
 		if ( ::mkdir( dupath.data(), buff.st_mode ) == -1 )
                 {    
 		    if ( errno != EEXIST )
@@ -559,18 +582,18 @@ void KIOJob::copy()
 			QString tmp;
 			ksprintf(&tmp, i18n( "Could not make directory\n%s"), dupath.data());
 			QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+			done();
 			return;
 		    }
 		}
-		/* else
-		  printf("?? Making of directory ok\n"); */
-		
+
 		DIR *dp;
 		struct dirent *ep;
 		dp = opendir( supath );
 		if ( dp == NULL )
 		{
 		    warning(i18n("ERROR: Could not access directory '%s'"), p );
+		    done();
 		    return;
 		}
 		
@@ -603,13 +626,31 @@ void KIOJob::copy()
 		}
 		
 		closedir( dp );
-		
 		// Remove directories from the copy list
+		tmpList1.append( p );
+		tmpList2.append( p2 );
+	    }
+	    else if ( !S_ISREG( buff.st_mode ) )
+	    {
+		// Remove non-regular files from the copy list
+		// If we copy fifo/sockets/device-files hell breakes out!
+		skipped++;
+		skippedFile = supath.data();
 		tmpList1.append( p );
 		tmpList2.append( p2 );
 	    }
 	}
 	++it2;
+    }
+
+    if (skipped)
+    {
+	QString tmp;
+	if (skipped == 1)
+	    ksprintf(&tmp, i18n( "Special file will not be copied\n%s"), skippedFile.data());
+	else
+	    ksprintf(&tmp, i18n( "%d special files will not be copied."), skipped);
+	QMessageBox::warning( 0, i18n( "KFM Warning" ), tmp.data() );
     }
 
     char *s;
@@ -627,6 +668,12 @@ void KIOJob::copy()
     
     cmCount = cmSrcURLList.count();
 
+    if (!cmCount)
+    {
+        done();
+        return;
+    }
+    
     server->getSlave( this );
 }
 
@@ -688,6 +735,9 @@ void KIOJob::move()
     tmpDelURLList.clear();
     cmDestURLList.clear();
     cmSrcURLList.clear();
+
+    int skipped = 0;
+    QString skippedFile;    
     
     // Recursive directory
     QListIterator<char> itSrc( tmpSrcURLList );
@@ -783,15 +833,37 @@ void KIOJob::move()
 	    if ( i == -1 )
 	    {
 	      // We tried to move across devices ?
-	      // Ok, that is not a real error.
-	      if ( errno == EXDEV )
-	      {
-		struct stat buff;
-		stat( supath, &buff );
-		// We want to move a directory ?
-		// Then we must know each file in the tree ....
-		//** maybe here we should call copy(old,new); del(old) ? (hen) **/
-		if ( S_ISDIR( buff.st_mode ) )
+              // Ok, that is not a real error.
+              if ( errno == EXDEV )
+              {
+                struct stat buff;
+                lstat( supath, &buff );
+                if ( S_ISLNK( buff.st_mode ) )
+                {
+                    char buffer [1024];
+                    int linkLength = readlink( supath.data(), buffer, 1022 );
+                    if (linkLength > 0)
+                    {
+                      buffer[linkLength] = 0;
+                      if (symlink( buffer, dupath.data()) == -1)
+                      {
+                        QString tmp;
+                        ksprintf(&tmp, i18n( "Could not make symbolic link\n%s"), dupath.data());
+                        QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+                        done();
+                        return;
+                      }
+                    }
+                   
+                    // Dont forget to delete this link at the end
+                    tmpDelURLList.append( supath );
+                }
+
+                // We want to move a directory ?
+                // Then we must know each file in the tree ....
+                //** maybe here we should call copy(old,new); del(old) ? (hen) **/
+               
+		else if ( S_ISDIR( buff.st_mode ) )
 		{
 		  if ( ::mkdir( dupath, S_IRWXU ) == -1 )
 		    if ( errno != EEXIST )
@@ -860,6 +932,13 @@ void KIOJob::move()
 		  }
 		  (void) closedir ( dp );
 		}
+                else if ( !S_ISREG( buff.st_mode ) )
+                {
+                  // Don't move non-regular files
+                  // If we copy fifo/sockets/device-files hell breakes out!
+                  skipped++;
+                  skippedFile = supath.data();
+                }
 		else // A usual file
 		{
 		  cmSrcURLList.append( p );
@@ -935,6 +1014,16 @@ void KIOJob::move()
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
     {
 	mvDelURLList.append( p );
+    }
+
+    if (skipped)
+    {
+	QString tmp;
+	if (skipped == 1)
+	    ksprintf(&tmp, i18n( "Special file will not be moved\n%s"), skippedFile.data());
+	else
+	    ksprintf(&tmp, i18n( "%d special files will not be moved."), skipped);
+	QMessageBox::warning( 0, i18n( "KFM Warning" ), tmp.data() );
     }
     
     server->getSlave( this );

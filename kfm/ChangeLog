@@ -1,5 +1,9 @@
 1999-01-13  David Faure  <faure@kde.org>
 
+	* kiojob.cpp: Patch from Waldo Bastian. Now kfm copies/moves
+	symlinks as symlinks in local->local copies. It also checks for
+ 	pipes/sockets/fifo/device files and refuses to copy/move them.
+
 	* kfmman.cpp (openURL): special case for the cache directory :
 	save contents of the cache to index.html before opening the URL.
 
