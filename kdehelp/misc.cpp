@@ -56,3 +56,11 @@ const char *StrUpperStr(const char *haystack, const char *needle)
 	return retPtr;
 }
 
+int safeSystem( const char *cmd )
+{
+    if ( strpbrk( cmd, "`$(;" ) )
+        return -1;
+
+    return system( cmd );
+}
+

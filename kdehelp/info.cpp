@@ -1445,7 +1445,7 @@ void cInfo::Decompress(const char *theFilename, char *workFile)
 	sprintf(tmpFile, "%s/khelpXXXXXX", _PATH_TMP );
 	mktemp(tmpFile);
 	sprintf(sysCmd, "%s < %s > %s", decompressCmd, theFilename, tmpFile);
-	system(sysCmd);
+	safeSystem(sysCmd);
 
 	strcpy(workFile, tmpFile);
 }

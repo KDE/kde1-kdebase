@@ -12,6 +12,7 @@
 char *StrDup(const char *src);
 char *StrUpperDup(const char *src);
 const char *StrUpperStr(const char *haystack, const char *needle);
+int safeSystem( const char *cmd );
 
 
 template<class T> class cHistory

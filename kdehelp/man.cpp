@@ -491,7 +491,7 @@ int cMan::ReadLocation(const char *name)
 		}
 
 		// call 'man' to read man page
-		int status = system(sysCmd);
+		int status = safeSystem(sysCmd);
 
 		if (status < 0)			// system returns -ve on failure
 		{
