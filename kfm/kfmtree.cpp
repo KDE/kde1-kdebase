@@ -67,7 +67,7 @@ void KFMTree::mousePressEvent( QMouseEvent *_e )
 
 KFMTreeView::KFMTreeView( QWidget *parent ) : QWidget(parent )
 {
-  oldPath.setAutoDelete(TRUE);
+  oldPath.setAutoDelete(true);
 
   // load the pixmaps we'll be using
 

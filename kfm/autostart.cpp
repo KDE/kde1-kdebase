@@ -7,15 +7,14 @@
 
 #include "kbind.h"
 #include "kfmgui.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 // Executes all apps/documents in the $HOME/Desktop/Autostart directory
 
 void autostart()
 {
-    QString url = "file:";
-    url += getenv( "HOME" );
-    url += "/Desktop/Autostart/";
+    QString url = "file:" + KFMPaths::AutostartPath();
     
     DIR *dp;
     struct dirent *ep;

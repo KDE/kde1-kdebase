@@ -97,10 +97,11 @@ long KProtocolHTTP::Size()
 	return(size);
 }
 
-KProtocolHTTP::Close()
+int KProtocolHTTP::Close()
 {
 	if(connected) close(sock);
 	connected = 0;
+	return SUCCESS;
 }
 
 int KProtocolHTTP::atEOF()
@@ -108,7 +109,7 @@ int KProtocolHTTP::atEOF()
 	return(bytesleft == 0 || feof(fsocket));
 }
 
-KProtocolHTTP::Read(void *buffer, int len)
+int KProtocolHTTP::Read(void *buffer, int len)
 {
 	if(atEOF()) return(0);
 
@@ -134,7 +135,7 @@ int KProtocolHTTP::init_sockaddr(struct sockaddr_in *server_name, char *hostname
 	return(SUCCESS);
 }
 
-int KProtocolHTTP::Open(KURL *url, int mode)
+int KProtocolHTTP::Open(KURL *url, int )
 {
 	if (connected) Close();
 

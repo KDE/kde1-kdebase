@@ -8,6 +8,7 @@
 #include <qtstream.h>
 
 #include "kbind.h"
+#include "kfmpaths.h"
 #include "kfmgui.h"
 #include <config-kfm.h>
 
@@ -58,13 +59,22 @@ const char* KFolderType::getPixmapFile( const char *_url )
     if ( strncmp( _url, "file:", 5 ) != 0 )
 	return KMimeType::getPixmapFile( _url );
 
+    /* Stephan: this is Torben's code. It allows many (readonly) Trash bins 
     int len = strlen( _url );
     if ( ( len > 6 && strcmp( _url + len - 6, "/Trash" ) == 0 ) ||
 	 ( len > 7 && strcmp( _url + len - 7, "/Trash/" ) == 0 ) )
+      */
+    QString path = _url;
+    if ( path.right(1) != "/" )
+       path += "/";
+    QString path2 = QString("file:") + KFMPaths::TrashPath();
+    
+    if ( path == path2 )
     {
         DIR *dp;
         struct dirent *ep;
         dp = opendir( _url+5 );
+	// Stephan: Congratulation Torben for this trick :-)
         ep=readdir( dp );
         ep=readdir( dp );      // ignore '.' and '..' dirent
         if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
@@ -229,7 +239,7 @@ QPixmap& KDELnkMimeType::getPixmap( const char *_url )
 
 KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
 {
-    bApplicationPattern = FALSE;
+    bApplicationPattern = false;
     
     mimeType = _mime_type;
     mimeType.detach();
@@ -294,9 +304,9 @@ void KMimeType::initApplications( const char * _path )
 		// Allow this program to be a default application for a mime type?
 		// For example gzip should never be a default for any mime type.
 		QString str_allowdefault = config.readEntry( "AllowDefault" );
-		bool allowdefault = TRUE;
+		bool allowdefault = true;
 		if ( str_allowdefault == "0" )
-		    allowdefault = FALSE;
+		    allowdefault = false;
 		
 		// Define an icon for the program file perhaps ?
 		if ( !app_icon.isNull() && !app_pattern.isNull() )
@@ -622,7 +632,7 @@ void KMimeType::init()
     }
        
     types = new QList<KMimeType>;
-    types->setAutoDelete( TRUE );
+    types->setAutoDelete( true );
     
     // Read the application bindings
     QString path = kapp->kdedir();
@@ -777,7 +787,7 @@ KMimeType* KMimeType::findType( const char *_url )
 	    int pattern_len = strlen( s );
 	    const char *filename;
 	    if ( strcmp( u.protocol(), "tar" ) == 0 )
-		filename = u.filename( TRUE );
+		filename = u.filename( true );
 	    else
 		filename = u.filename();
 	    int filename_len = strlen( filename );	
@@ -985,8 +995,8 @@ void KMimeType::runBinding( const char *_url )
     
     // Is there only one binding ?
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
-    KMimeType::getBindings( bindings, _url, FALSE );    
+    bindings.setAutoDelete( true );
+    KMimeType::getBindings( bindings, _url, false );    
     // Any bindings available
     if ( bindings.isEmpty() )
     {
@@ -1164,7 +1174,8 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 	    {
 		KConfig *config = KApplication::getKApplication()->getConfig();
 		config->setGroup( "Terminal" );
-		QString cmd = config->readEntry( "Terminal" );
+		QString cmd = "kvt";
+		cmd = config->readEntry( "Terminal", &cmd );
 		cmd.detach();
 		if ( cmd.isNull() )
 		{
@@ -1213,13 +1224,13 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 		    bool ro;
 		    if ( !readonly.isNull() )
 			if ( readonly == '1' )
-			    ro = TRUE;
+			    ro = true;
 			 
 		    KIOJob *job = new KIOJob;
 		   
 		    // The binding is names 'Mount FSType' => +6
 		    if ( strcasecmp( _binding + 6, "default" ) == 0 )
-			job->mount( FALSE, 0L, dev, 0L );
+			job->mount( false, 0L, dev, 0L );
 		    else
 			job->mount( ro, _binding + 6, dev, point );
 		    delete config;
@@ -1557,15 +1568,15 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, co
 bool KMimeBind::supportsProtocol( const char *_protocol )
 {
     if ( strcmp( protocol1, _protocol ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( protocol2, _protocol ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( protocol3, _protocol ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( protocol4, _protocol ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( protocol5, _protocol ) == 0 )
-	return TRUE;
+	return true;
 
-    return FALSE;
+    return false;
 }

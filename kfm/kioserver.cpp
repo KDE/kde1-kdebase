@@ -14,6 +14,7 @@
 #include "kioserver_ipc.h"
 #include "kioserver.h"
 #include "kbind.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 KIOServer* KIOServer::pKIOServer;
@@ -57,13 +58,13 @@ bool KIODirectoryEntry::mayRead( const char *_user )
     _user = "anonymous";
   
   if ( strcmp( _user, owner.data() ) == 0 && access[1] == 'r' )
-    return TRUE;
+    return true;
   if ( strcmp( _user, group.data() ) == 0 && access[4] == 'r' )
-    return TRUE;
+    return true;
   if ( access[7] == 'r' )
-    return TRUE;
+    return true;
 
-  return FALSE;
+  return false;
 }
 
 bool KIODirectoryEntry::mayWrite( const char *_user )
@@ -72,13 +73,13 @@ bool KIODirectoryEntry::mayWrite( const char *_user )
     _user = "anonymous";
   
   if ( strcmp( _user, owner.data() ) == 0 && access[2] == 'w' )
-    return TRUE;
+    return true;
   if ( strcmp( _user, group.data() ) == 0 && access[5] == 'w' )
-    return TRUE;
+    return true;
   if ( access[8] == 'w' )
-    return TRUE;
+    return true;
 
-  return FALSE;
+  return false;
 }
 
 bool KIODirectoryEntry::mayExec( const char *_user )
@@ -87,21 +88,21 @@ bool KIODirectoryEntry::mayExec( const char *_user )
     _user = "anonymous";
   
   if ( strcmp( _user, owner.data() ) == 0 && access[3] == 'x' )
-    return TRUE;
+    return true;
   if ( strcmp( _user, group.data() ) == 0 && access[6] == 'x' )
-    return TRUE;
+    return true;
   if ( access[9] == 'x' || access[9] == 't' )
-    return TRUE;
+    return true;
 
-  return FALSE;
+  return false;
 }
 
 KIOServer::KIOServer() : KIOSlaveIPCServer()
 {
     pKIOServer = this;
     
-    freeSlaves.setAutoDelete( FALSE );
-    waitingJobs.setAutoDelete( FALSE );
+    freeSlaves.setAutoDelete( false );
+    waitingJobs.setAutoDelete( false );
 
     connect( this, SIGNAL( newClient( KIOSlaveIPC* ) ), this, SLOT( newSlave( KIOSlaveIPC* ) ) );
 }
@@ -136,7 +137,7 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
     if ( dir == 0L )
     {
 	dir = new QList<KIODirectoryEntry>;
-	dir->setAutoDelete( TRUE );
+	dir->setAutoDelete( true );
 	dirList.insert( url.data(), dir );
     }
     
@@ -169,7 +170,7 @@ KIODirectoryEntry* KIOServer::getDirectoryEntry( const char *_url )
     QString name2 = u.filename();    
     name2 += "/";
     
-    KIODirectory *d = getDirectory( u.directoryURL( FALSE ) );
+    KIODirectory *d = getDirectory( u.directoryURL( false ) );
     if ( d == 0L )
       return 0L;
     
@@ -216,7 +217,7 @@ QString KIOServer::getDestNameForLink( const char *_url )
     else if ( strcmp( kurl.protocol(), "tar" ) == 0 )
     {		
 	name = "tar:";
-	name += kurl.filename( TRUE );
+	name += kurl.filename( true );
 	name += ".kdelnk";
 	name.detach();
     }
@@ -276,34 +277,34 @@ bool KIOServer::supports( const char *_url, int _mode )
 {
     KURL u( _url );
     if ( u.isMalformed() )
-	return FALSE;
+	return false;
     
     if ( strcmp( u.protocol(), "http" ) == 0 )
     {
 	if ( _mode == KIO_Read )
-	    return TRUE;
-	return FALSE;
+	    return true;
+	return false;
     }
     else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     {
         if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir ) & _mode ) == _mode )
-	    return TRUE;
-	return FALSE;
+	    return true;
+	return false;
     }
     else if ( strcmp( u.protocol(), "file" ) == 0 )
     {
         if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_Link ) & _mode ) == _mode )
-	    return TRUE;
-	return FALSE;
+	    return true;
+	return false;
     }
     else if ( strcmp( u.protocol(), "tar" ) == 0 )
     {
         if ( ( ( KIO_Delete | KIO_Read ) & _mode ) == _mode )
-	    return TRUE;
-	return FALSE;
+	    return true;
+	return false;
     }
 
-    return FALSE;
+    return false;
 }
 
 bool KIOServer::supports( QStrList & _urls, int _mode )
@@ -311,9 +312,9 @@ bool KIOServer::supports( QStrList & _urls, int _mode )
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
 	if ( !supports( s, _mode ) )
-	    return FALSE;
+	    return false;
     
-    return TRUE;
+    return true;
 }
 
 void KIOServer::sendNotify( const char *_url )
@@ -457,29 +458,26 @@ bool KIOServer::isTrash( QStrList & _urls )
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
 	if ( !isTrash( s ) )
-	    return FALSE;
+	    return false;
     
-    return TRUE;
+    return true;
 }
 
 bool KIOServer::isTrash( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
-	return FALSE;
+	return false;
     
-    QString d1 = getenv( "HOME" );
-    d1 += "/Desktop/Trash/";
-    QString d2 = getenv( "HOME" );
-    d2 += "/Desktop/Trash";
-    // bool isTrash = FALSE;
-    // is it the trash bin ?
+    QString path = u.path();
+    if (path.right(1) != "/")
+      path += "/";
+    
     if ( strcmp( u.protocol(), "file" ) == 0L &&
-	 ( strcmp( u.path(), d1 ) == 0L ||
-	   strcmp( u.path(), d2 ) == 0L ) )
-	return TRUE;
+	 path == KFMPaths::TrashPath() )
+	    return true;
     
-    return FALSE;
+    return false;
 }
 
 bool KIOServer::isDir( QStrList & _urls )
@@ -487,36 +485,36 @@ bool KIOServer::isDir( QStrList & _urls )
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
 	if ( !isDir( s ) )
-	    return FALSE;
+	    return false;
     
-    return TRUE;
+    return true;
 }
 
 bool KIOServer::isDir( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
-	return FALSE;
+	return false;
     
     if ( strcmp( u.protocol(), "http" ) == 0 )
-	return FALSE;
+	return false;
     else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     {
 	if ( strlen( u.path() ) == 0 || strcmp( u.path(), "/" ) == 0L )
-	    return TRUE;
+	    return true;
 	if ( _url[ strlen( _url ) - 1 ] == '/' )
-	    return TRUE;
+	    return true;
 	else
-	    return FALSE;
+	    return false;
     }
     else if ( strcmp( u.protocol(), "tar" ) == 0 )
     {
 	if ( _url[ strlen( _url ) - 1 ] == '/' )
-	    return TRUE;
+	    return true;
 	else if ( _url[ strlen( _url ) - 1 ] == '#' )
-	    return TRUE;
+	    return true;
 	else
-	    return FALSE;
+	    return false;
     }
     else if ( strcmp( u.protocol(), "file" ) == 0 )
     {
@@ -526,12 +524,12 @@ bool KIOServer::isDir( const char *_url )
 	stat( myfn.data(), &buff );
 
 	if ( S_ISDIR( buff.st_mode ) )
-	    return TRUE;
+	    return true;
 	else
-	    return FALSE;
+	    return false;
     }
     else
-	return FALSE;
+	return false;
 }
 
 /* -------------------------------------------------------------------

@@ -419,12 +419,15 @@ protected:
       */
     bool stackLock;
 
+    /* Stephan: I put this info in KFMPaths
+
     /// The path where the templates are stored
     /**
-      This string always ends with "/".
-      */
+       This string always ends with "/".
+       * /
     QString templatePath;
-
+    */ 
+    
     /// The menu "New" in the "File" menu
     /**
       Since the items of this menu are not connected themselves

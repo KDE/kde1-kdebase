@@ -1,5 +1,8 @@
 /* Stephan: added this file to separate the debug outputs
 */
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 // #define TORBENSDEBUG
 #define COOLOSDEBUG

@@ -3,7 +3,7 @@
 #include "file.h"
 #include "ftp.h"
 
-ProtocolSupported(KURL *url)
+int ProtocolSupported(KURL *url)
 {
 	char *prot = url->protocol();
 	if(strcmp(prot,"ftp") == 0) return(1);

@@ -13,7 +13,7 @@ KProtocolFILE::~KProtocolFILE()
 	Close();
 }
 
-KProtocolFILE::Open(KURL *url, int mode)
+int KProtocolFILE::Open(KURL *url, int mode)
 {
 	struct stat st;
 	Close();
@@ -53,13 +53,14 @@ KProtocolFILE::Open(KURL *url, int mode)
 	return(SUCCESS);
 }
 
-KProtocolFILE::Close()
+int KProtocolFILE::Close()
 {
 	if(file) fclose(file);
 	file = NULL;
+	return SUCCESS;
 }
 
-KProtocolFILE::Read(void *buffer, int len)
+int KProtocolFILE::Read(void *buffer, int len)
 {
 	long n = fread(buffer,1,len,file);
 	if(n < 0)
@@ -70,7 +71,7 @@ KProtocolFILE::Read(void *buffer, int len)
 	return(n);
 }
 
-KProtocolFILE::Write(void *buffer, int len)
+int KProtocolFILE::Write(void *buffer, int len)
 {
 	long n = fwrite(buffer,1,len,file);
 	if(n < 0)

@@ -47,11 +47,11 @@ DevicePropsPageData::DevicePropsPageData
 	tmpQLabel->setText( "Unmounted Icon" );
 
 	QComboBox* tmpQComboBox;
-	tmpQComboBox = new QComboBox( FALSE, parent, "ComboBox_1" );
+	tmpQComboBox = new QComboBox( false, parent, "ComboBox_1" );
 	tmpQComboBox->setGeometry( 10, 250, 120, 30 );
 	tmpQComboBox->setSizeLimit( 10 );
 
-	tmpQComboBox = new QComboBox( FALSE, parent, "ComboBox_2" );
+	tmpQComboBox = new QComboBox( false, parent, "ComboBox_2" );
 	tmpQComboBox->setGeometry( 170, 250, 120, 30 );
 	tmpQComboBox->setSizeLimit( 10 );
 

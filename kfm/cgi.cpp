@@ -86,8 +86,8 @@ bool KCGI::runScript()
 	QString tmp;
 	
 	if ( method == "GET" )
-	    setenv( "QUERY_STRING", query.data(), TRUE );
-	setenv( "PATH_INFO", pathInfo.data(), TRUE );
+	    setenv( "QUERY_STRING", query.data(), true );
+	setenv( "PATH_INFO", pathInfo.data(), true );
 	
 	debugT( "Running: %s\n", command.data() );
 	

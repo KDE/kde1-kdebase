@@ -331,8 +331,12 @@ protected:
     void fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu, int &id );
     /**
      * Adds '_url' to the bookmarks with '_title' as description.
-     */
+     */    
     void addBookmark( const char *_title, const char *_url );
+    /** 
+     * Saves the current GUI settings
+     */
+    void saveSettings();
     /**
      * Manager for the bookmarks.
      */

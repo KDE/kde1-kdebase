@@ -29,16 +29,16 @@ KIOJob::KIOJob( int _id )
     server = KIOServer::getKIOServer();
     slave = 0L;
     dlg = 0L;
-    bDisplay = TRUE;
+    bDisplay = true;
     progressBar = 0L;
     line1 = 0L;
     line2 = 0L;
     line3 = 0L;
-    globalNotify = TRUE;
+    globalNotify = true;
     id = _id;
-    overwriteExistingFiles = FALSE;
+    overwriteExistingFiles = false;
     
-    jobList.setAutoDelete( FALSE );
+    jobList.setAutoDelete( false );
     jobList.append( this );
 }
 
@@ -121,7 +121,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
 	    debugT("WARNING: Could not access /etc/fstab\n");
 	else
 	{
-	    bool bend = FALSE;
+	    bool bend = false;
 	    while ( !bend )
 	    {
 		struct mntent * m = getmntent( f );
@@ -132,11 +132,11 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
 			QString n = "file:";
 			n += m->mnt_dir;
 			notifyList.append( n.data() );
-			bend = TRUE;
+			bend = true;
 		    }
 		}
 		else
-		    bend = TRUE;
+		    bend = true;
 	    }
 	    endmntent( f );
 	}
@@ -297,7 +297,7 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 	    d += "/";
 	if ( strcmp( su.protocol(), "tar" ) == 0 )
-	    d += su.filename( TRUE );
+	    d += su.filename( true );
 	else
 	    d += su.filename();
 
@@ -452,7 +452,7 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 	    d += "/";
 	if ( strcmp( su.protocol(), "tar" ) == 0 )
-	    d += su.filename( TRUE );
+	    d += su.filename( true );
 	else
 	    d += su.filename();
 	
@@ -486,13 +486,13 @@ void KIOJob::move()
 	    struct stat buff;
 	    if ( stat( du.path(), &buff ) == 0 && !overwriteExistingFiles )
 	    {
-		KRenameWin *r = new KRenameWin( 0L, p, p2, TRUE );
+		KRenameWin *r = new KRenameWin( 0L, p, p2, true );
 		int button = r->exec();
 		if ( button == 0 ) // Overwrite 
 		{
 		}
 		else if ( button == 1 ) // Overwrite All
-		    overwriteExistingFiles = TRUE;
+		    overwriteExistingFiles = true;
 		else if ( button == 2 ) // Skip
 		{
 		    cmSrcURLList.removeRef( p );
@@ -584,10 +584,10 @@ void KIOJob::move()
 	    cmSrcURLList.removeRef( p );
 	    cmDestURLList.removeRef( p2 );
 	    // ... but send some notifies afterwards
-	    if ( notifyList.find( su.directoryURL( FALSE ) ) == -1 )
-		notifyList.append( su.directoryURL( FALSE ) );
-	    if ( notifyList.find( du.directoryURL( FALSE ) ) == -1 )
-		notifyList.append( du.directoryURL( FALSE ) );
+	    if ( notifyList.find( su.directoryURL( false ) ) == -1 )
+		notifyList.append( su.directoryURL( false ) );
+	    if ( notifyList.find( du.directoryURL( false ) ) == -1 )
+		notifyList.append( du.directoryURL( false ) );
 	}
 	
 	// Dont forget to get the next dest. We get the corresponding src
@@ -607,14 +607,14 @@ void KIOJob::move()
     for (s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
     {
 	KURL u( s );
-	if ( notifyList.find( u.directoryURL( FALSE ) ) == -1 )
-	    notifyList.append( u.directoryURL( FALSE ) );
+	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+	    notifyList.append( u.directoryURL( false ) );
     }
     for (s = cmSrcURLList.first(); s != 0L; s = cmSrcURLList.next() )
     {
 	KURL u( s );		
-	if ( notifyList.find( u.directoryURL( FALSE ) ) == -1 )
-	    notifyList.append( u.directoryURL( FALSE ) );
+	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+	    notifyList.append( u.directoryURL( false ) );
     }
     
     cmCount = cmSrcURLList.count();
@@ -750,16 +750,16 @@ void KIOJob::msgResult2( QWidget * _win, int _button, const char *_src, const ch
     switch( action )
     {
     case KIOJob::JOB_MOVE:
-	moveDelMode = FALSE;
+	moveDelMode = false;
 	if ( _button == 0 ) // Overwrite
 	{
-	    overwriteExistingFiles = TRUE;
+	    overwriteExistingFiles = true;
 	    slaveIsReady();
-	    overwriteExistingFiles = FALSE;
+	    overwriteExistingFiles = false;
 	}
 	else if ( _button == 1 ) // Overwrite All
 	{
-	    overwriteExistingFiles = TRUE;
+	    overwriteExistingFiles = true;
 	    slaveIsReady();
 	}
 	else if ( _button == 2 ) // Skip
@@ -783,15 +783,15 @@ void KIOJob::msgResult2( QWidget * _win, int _button, const char *_src, const ch
     case KIOJob::JOB_COPY:
 	if ( _button == 0 ) // Overwrite
 	{
-	    overwriteExistingFiles = TRUE;
+	    overwriteExistingFiles = true;
 	    cmSrcURLList.insert( 0, src.data() );
 	    cmDestURLList.insert( 0, dest.data() );
 	    slaveIsReady();
-	    overwriteExistingFiles = FALSE;
+	    overwriteExistingFiles = false;
 	}
 	else if ( _button == 1 ) // Overwrite All
 	{
-	    overwriteExistingFiles = TRUE;
+	    overwriteExistingFiles = true;
 	    cmSrcURLList.insert( 0, src.data() );
 	    cmDestURLList.insert( 0, dest.data() );
 	    slaveIsReady();
@@ -990,10 +990,10 @@ void KIOJob::start( int _pid )
 	    break;
 	case KIOJob::JOB_DELETE:
 	    {
-		bool showDlg = TRUE;
+		bool showDlg = true;
 		if ( mvDelURLList.count() == 1 )
 		    if ( strncmp( mvDelURLList.first(), "file", 4 ) == 0 )
-			showDlg = FALSE;
+			showDlg = false;
 		if ( showDlg )
 		{
 		    dlg = new QDialog( 0L );
@@ -1070,8 +1070,8 @@ void KIOJob::start( int _pid )
     
     connect( slave, SIGNAL( done() ), this, SLOT( slaveIsReady() ) );
 
-    started = FALSE;
-    cleanedUp = FALSE;
+    started = false;
+    cleanedUp = false;
     
     slaveIsReady();
 }
@@ -1099,7 +1099,7 @@ void KIOJob::slaveIsReady()
 	    if ( cmSrcURLList.count() == 0 )
 	    {
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 
@@ -1129,7 +1129,7 @@ void KIOJob::slaveIsReady()
 	    if ( !started )
 	    {
 		connect( slave, SIGNAL( progress( int ) ), this, SLOT( slaveProgress( int ) ) );
-		moveDelMode = FALSE;
+		moveDelMode = false;
 	    }
 	    
 	    if ( cmSrcURLList.count() == 0 )
@@ -1141,7 +1141,7 @@ void KIOJob::slaveIsReady()
 		    {
 			debugT("ERROR: Could not delete dir '%s'\n",p );
 			slave->cleanUp();
-			cleanedUp = TRUE;
+			cleanedUp = true;
 			delete dlg;
 			dlg = 0L;
 			done();
@@ -1153,7 +1153,7 @@ void KIOJob::slaveIsReady()
 		debugT("Removing dialog\n");
 
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 	 
@@ -1195,7 +1195,7 @@ void KIOJob::slaveIsReady()
 	    {
 		debugT("Removing dialog\n");
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 
@@ -1222,7 +1222,7 @@ void KIOJob::slaveIsReady()
 	    {
 		debugT("Removing dialog\n");
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 
@@ -1248,7 +1248,7 @@ void KIOJob::slaveIsReady()
 	    if ( started )
 	    {
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 
@@ -1274,7 +1274,7 @@ void KIOJob::slaveIsReady()
 	    if ( started )
 	    {
 		slave->cleanUp();
-		cleanedUp = TRUE;
+		cleanedUp = true;
 		return;
 	    }
 	    
@@ -1285,7 +1285,7 @@ void KIOJob::slaveIsReady()
        warning("case not handled here");
     }
 
-    started = TRUE;
+    started = true;
 }
 
 void KIOJob::slotDirEntry( const char *_url, const char *_name, bool _isDir, int _size,
@@ -1397,7 +1397,7 @@ QString KIOJob::completeURL( const char *_url )
 	{
 	    debugT("A\n");
 	    
-	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", TRUE );
+	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", true );
 	    if ( !dlg->exec() )
 	    {
 		debugT("Cancled\n");

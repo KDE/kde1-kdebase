@@ -17,12 +17,13 @@
 #include "kbind.h"
 #include "kioserver.h"
 #include "kfmgui.h"
+#include "kfmpaths.h"
 #include "root.h"
 #include <config-kfm.h>
 
 Properties::Properties( const char *_url ) : QObject()
 {
-    pageList.setAutoDelete( TRUE );
+    pageList.setAutoDelete( true );
     
     url = _url;
     url.detach();
@@ -145,16 +146,15 @@ PropsPage::PropsPage( Properties *_props ) : QWidget( _props->getTab(), 0L )
 
 FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
-    QString d1 = getenv( "HOME" );
-    d1 += "/Desktop/Trash/";
-    QString d2 = getenv( "HOME" );
-    d2 += "/Desktop/Trash";
-    bool isTrash = FALSE;
+    QString path = properties->getKURL()->path();
+    if ( path.right(1) != "/" )
+      path += "/";
+
+    bool isTrash = false;
     // is it the trash bin ?
     if ( strcmp( properties->getKURL()->protocol(), "file" ) == 0L &&
-	 ( strcmp( properties->getKURL()->path(), d1 ) == 0L ||
-	   strcmp( properties->getKURL()->path(), d2 ) == 0L ) )
-	isTrash = TRUE;
+	 path == KFMPaths::TrashPath())
+           isTrash = true;
     
     struct stat buff;
     stat( properties->getKURL()->path(), &buff );
@@ -173,7 +173,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     name->setGeometry( 10, y, 200, 30 );
     name->setText( properties->getKURL()->filename() );
     if ( isTrash )
-	name->setEnabled( FALSE );
+	name->setEnabled( false );
     oldName = properties->getKURL()->filename();
     oldName.detach();
     y += 35;
@@ -185,7 +185,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     fname = new QLineEdit( this );
     fname->setGeometry( 10, y, 200, 30 );
     fname->setText( properties->getKURL()->path() );
-    fname->setEnabled( FALSE );
+    fname->setEnabled( false );
     y += 35;
     
     y += 10;
@@ -211,7 +211,7 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	lname = new QLineEdit( this );
 	lname->setGeometry( 10, y, 200, 30 );
 	lname->setText( properties->getKURL()->path() );
-	lname->setEnabled( FALSE );
+	lname->setEnabled( false );
 	y += 35;
 
 	char buffer[1024];
@@ -251,9 +251,9 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 bool FilePropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) == 0 )
-	return TRUE;
+	return true;
     
-    return FALSE;
+    return false;
 }
 
 void FilePropsPage::applyChanges()
@@ -367,9 +367,9 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
 bool FilePermissionsPropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) == 0 )
-	return TRUE;
+	return true;
     
-    return FALSE;
+    return false;
 }
 
 void FilePermissionsPropsPage::applyChanges()
@@ -431,7 +431,7 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 {
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
-    iconBox = new QComboBox( FALSE, this, "ComboBox_1" );
+    iconBox = new QComboBox( false, this, "ComboBox_1" );
     terminalCheck = new QCheckBox( this, "CheckBox_1" );
     terminalEdit = new QLineEdit( this, "LineEdit_4" );
     execBrowse = new QPushButton( this, "Button_1" );
@@ -545,11 +545,11 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
 bool ExecPropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
-	return FALSE;
+	return false;
     
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -557,11 +557,11 @@ bool ExecPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return FALSE;
+	return false;
 
     QFile f( _kurl->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return FALSE;
+	return false;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -569,11 +569,11 @@ bool ExecPropsPage::supports( KURL *_kurl )
 
     QString type = config.readEntry( "Type" );
     if ( type.isNull() )
-	return FALSE;
+	return false;
     if ( type != "Application" )
-	return FALSE;
+	return false;
     
-    return TRUE;
+    return true;
 }
 
 void ExecPropsPage::applyChanges()
@@ -653,7 +653,7 @@ void ExecPropsPage::drawIcon()
 URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 {
     URLEdit = new QLineEdit( this, "LineEdit_1" );
-    iconBox = new QComboBox( FALSE, this, "ComboBox_1" );
+    iconBox = new QComboBox( false, this, "ComboBox_1" );
 
     URLEdit->raise();
     URLEdit->setGeometry( 10, 40, 210, 30 );
@@ -719,11 +719,11 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 bool URLPropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
-	return FALSE;
+	return false;
     
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -731,11 +731,11 @@ bool URLPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return FALSE;
+	return false;
 
     QFile f( _kurl->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return FALSE;
+	return false;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -743,9 +743,9 @@ bool URLPropsPage::supports( KURL *_kurl )
 
     QString URL = config.readEntry( "URL" );
     if ( URL.isNull() )
-	return FALSE;
+	return false;
     
-    return TRUE;    
+    return true;    
 }
 
 void URLPropsPage::applyChanges()
@@ -807,11 +807,11 @@ void URLPropsPage::drawIcon()
 
 DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 {
-    iconBox = new QComboBox( FALSE, this, "ComboBox_1" );
+    iconBox = new QComboBox( false, this, "ComboBox_1" );
     iconBox->raise();
     iconBox->setGeometry( 10, 20, 120, 30 );
 
-    wallBox = new QComboBox( FALSE, this, "ComboBox_2" );
+    wallBox = new QComboBox( false, this, "ComboBox_2" );
     wallBox->raise();
     wallBox->setGeometry( 10, 90, 120, 30 );
 
@@ -914,23 +914,21 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 bool DirPropsPage::supports( KURL *_kurl )
 {
     // Is it the trash bin ?
-    QString d1 = getenv( "HOME" );
-    d1 += "/Desktop/Trash/";
-    QString d2 = getenv( "HOME" );
-    d2 += "/Desktop/Trash";
-
+    QString path = _kurl->path();
+    if ( path.right(1) != "/" )
+      path += "/";
+    
     if ( strcmp( _kurl->protocol(), "file" ) == 0L &&
-	 ( strcmp( _kurl->path(), d1 ) == 0L ||
-	   strcmp( _kurl->path(), d2 ) == 0L ) )
-	return FALSE;
+	 path == KFMPaths::TrashPath()) 
+        return false;
     
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     if ( !KIOServer::isDir( _kurl->path() ) )
-	return FALSE;
+	return false;
     
-    return TRUE;    
+    return true;    
 }
 
 void DirPropsPage::applyChanges()
@@ -1216,28 +1214,28 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     if ( !protocolsStr.isNull() )
     {
 	if ( protocolsStr.find( "file;" ) == 0 || protocolsStr.find( ";file;" ) != -1 )
-	    protocolFILE->setChecked( TRUE );
+	    protocolFILE->setChecked( true );
 	if ( protocolsStr.find( "ftp;" ) == 0 || protocolsStr.find( ";ftp;" ) != -1 )
-	    protocolFTP->setChecked( TRUE );
+	    protocolFTP->setChecked( true );
 	if ( protocolsStr.find( "http;" ) == 0 || protocolsStr.find( ";http;" ) != -1 )
-	    protocolHTTP->setChecked( TRUE );
+	    protocolHTTP->setChecked( true );
 	if ( protocolsStr.find( "tar;" ) == 0 || protocolsStr.find( ";tar;" ) != -1 )
-	    protocolTAR->setChecked( TRUE );
+	    protocolTAR->setChecked( true );
 	if ( protocolsStr.find( "man;" ) == 0 || protocolsStr.find( ";man;" ) != -1 )
-	    protocolMAN->setChecked( TRUE );
+	    protocolMAN->setChecked( true );
 	if ( protocolsStr.find( "info;" ) == 0 || protocolsStr.find( ";info;" ) != -1 )
-	    protocolINFO->setChecked( TRUE );
+	    protocolINFO->setChecked( true );
     }
 
     KMimeType *ft;
     for ( ft = KMimeType::getFirstMimeType(); ft != 0L; ft = KMimeType::getNextMimeType() )
     {
 	const char *name = ft->getMimeType();
-	bool insert = TRUE;
+	bool insert = true;
 	
 	for ( uint i = 0; i < extensionsList->count(); i++ )
 	    if ( strcmp( name, extensionsList->text( i ) ) == 0 )
-		insert = FALSE;
+		insert = false;
 	
 	if ( insert && !ft->isApplicationPattern() )
 	    availableExtensionsList->inSort( name );
@@ -1247,11 +1245,11 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 bool ApplicationPropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
-	return FALSE;
+	return false;
     
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -1259,11 +1257,11 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return FALSE;
+	return false;
 
     QFile f( _kurl->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return FALSE;
+	return false;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -1271,11 +1269,11 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 
     QString type = config.readEntry( "Type" );
     if ( type.isNull() )
-	return FALSE;
+	return false;
     if ( type != "Application" )
-	return FALSE;
+	return false;
     
-    return TRUE;
+    return true;
 }
 
 void ApplicationPropsPage::applyChanges()
@@ -1363,8 +1361,8 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     patternEdit = new QLineEdit( this, "LineEdit_1" );
     commentEdit = new QLineEdit( this, "LineEdit_3" );
     mimeEdit = new QLineEdit( this, "LineEdit_3" );
-    iconBox = new QComboBox( FALSE, this, "ComboBox_1" );
-    appBox = new QComboBox( FALSE, this, "ComboBox_2" );
+    iconBox = new QComboBox( false, this, "ComboBox_1" );
+    appBox = new QComboBox( false, this, "ComboBox_2" );
 
     patternEdit->raise();
     patternEdit->setGeometry( 10, 40, 210, 30 );
@@ -1483,11 +1481,11 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 bool BindingPropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
-	return FALSE;
+	return false;
     
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -1495,11 +1493,11 @@ bool BindingPropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return FALSE;
+	return false;
 
     QFile f( _kurl->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return FALSE;
+	return false;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -1507,11 +1505,11 @@ bool BindingPropsPage::supports( KURL *_kurl )
 
     QString type = config.readEntry( "Type" );
     if ( type.isNull() )
-	return FALSE;
+	return false;
     if ( type != "MimeType" )
-	return FALSE;
+	return false;
     
-    return TRUE;
+    return true;
 }
 
 void BindingPropsPage::applyChanges()
@@ -1634,11 +1632,11 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setGeometry( 170, 220, 100, 30 );
     tmpQLabel->setText( "Unmounted Icon" );
     
-    mounted = new QComboBox( FALSE, this, "ComboBox_1" );
+    mounted = new QComboBox( false, this, "ComboBox_1" );
     mounted->setGeometry( 10, 250, 150, 30 );
     mounted->setSizeLimit( 10 );
     
-    unmounted = new QComboBox( FALSE, this, "ComboBox_2" );
+    unmounted = new QComboBox( false, this, "ComboBox_2" );
     unmounted->setGeometry( 170, 250, 150, 30 );
     unmounted->setSizeLimit( 10 );
     
@@ -1663,9 +1661,9 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     if ( !fstypeStr.isNull() )
 	fstype->setText( fstypeStr.data() );
     if ( readonlyStr == "0" )
-	readonly->setChecked( FALSE );
+	readonly->setChecked( false );
     else
-	readonly->setChecked( TRUE );
+	readonly->setChecked( true );
 
     // Load all pixmaps files in the combobox
     QDir d( KMimeType::getIconPath() );
@@ -1714,11 +1712,11 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
 bool DevicePropsPage::supports( KURL *_kurl )
 {
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
-	return FALSE;
+	return false;
 
     FILE *fh = fopen( _kurl->path(), "rb" );
     if ( fh == 0L )
-	return FALSE;
+	return false;
     
     char buffer[ 1024 ];
     buffer[0] = 0;
@@ -1726,11 +1724,11 @@ bool DevicePropsPage::supports( KURL *_kurl )
     fclose( fh );
     
     if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return FALSE;
+	return false;
 
     QFile f( _kurl->path() );
     if ( !f.open( IO_ReadOnly ) )
-	return FALSE;
+	return false;
     
     QTextStream pstream( &f );
     KConfig config( &pstream );
@@ -1738,11 +1736,11 @@ bool DevicePropsPage::supports( KURL *_kurl )
 
     QString type = config.readEntry( "Type" );
     if ( type.isNull() )
-	return FALSE;
+	return false;
     if ( type != "FSDevice" )
-	return FALSE;
+	return false;
     
-    return TRUE;
+    return true;
 }
 
 void DevicePropsPage::applyChanges()

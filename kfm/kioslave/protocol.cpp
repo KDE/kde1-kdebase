@@ -22,17 +22,17 @@ int KProtocol::NotImplemented()
 	return(Error(KIO_ERROR_NotImplemented, "This is not implemented..."));
 }
 
-int KProtocol::Open(KURL *url, int mode)	{ return(NotImplemented()); }
-int KProtocol::Close()						{ return(NotImplemented()); }
-int KProtocol::Read(void *buffer, int len)	{ return(NotImplemented()); }
-int KProtocol::Write(void *buffer, int len)	{ return(NotImplemented()); }
+int KProtocol::Open(KURL *, int )	{ return(NotImplemented()); }
+int KProtocol::Close()			{ return(NotImplemented()); }
+int KProtocol::Read(void *, int )	{ return(NotImplemented()); }
+int KProtocol::Write(void *, int ) 	{ return(NotImplemented()); }
 int KProtocol::atEOF()						{ return(NotImplemented()); }
 long KProtocol::Size()						{ return(NotImplemented()); }
 
-int KProtocol::GetPermissions( KURL &_u ) { debugT("Permissions not impl.\n"); return -1; }
-void KProtocol::SetPermissions( KURL &_u, int _perm ) { debugT("Permissions not impl.\n"); }
+int KProtocol::GetPermissions( KURL & ) { warning("Permissions not impl."); return -1; }
+void KProtocol::SetPermissions( KURL &, int ) { warning("Permissions not impl."); }
 
-int KProtocol::OpenDir(KURL *url)			{ return(NotImplemented()); }
-int KProtocol::CloseDir()					{ return(NotImplemented()); }
-int KProtocol::MkDir(KURL *url)				{ return(NotImplemented()); }
+int KProtocol::OpenDir(KURL *)	{ return(NotImplemented()); }
+int KProtocol::CloseDir()		{ return(NotImplemented()); }
+int KProtocol::MkDir(KURL *)		{ return(NotImplemented()); }
 KProtocolDirEntry *KProtocol::ReadDir()		{ return(NULL); }

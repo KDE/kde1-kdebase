@@ -35,19 +35,19 @@ int KfmIpcServer::getPort()
 
 KfmIpc::KfmIpc( KSocket *_sock )
 {
-    bHeader = TRUE;
+    bHeader = true;
     cHeader = 0;
     pBody = 0L;
 
     connect( _sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( _sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
-    _sock->enableRead( TRUE );
+    _sock->enableRead( true );
     data_sock = _sock;
 }
 
 KfmIpc::~KfmIpc()
 {
-    data_sock->enableRead( FALSE );
+    data_sock->enableRead( false );
     delete data_sock;
     if ( pBody != 0L )
 	free( pBody );
@@ -67,7 +67,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	n = read( data_sock->socket(), headerBuffer + cHeader, 1 );
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
-	    bHeader = FALSE;
+	    bHeader = false;
 	    cHeader = 0;
 	    bodyLen = atoi( headerBuffer );
 	    cBody = 0;
@@ -107,7 +107,7 @@ void KfmIpc::readEvent( KSocket *_sock )
     {
 	pBody[bodyLen] = 0;
 	debugT(">>'%s'\n",pBody);
-	bHeader = TRUE;
+	bHeader = true;
 	parse( pBody, bodyLen );
 	return;
     }

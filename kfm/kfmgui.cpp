@@ -20,6 +20,7 @@
 #include <Kconfig.h>
 #include <kapp.h>
 
+#include "kfmpaths.h"
 #include "kfmgui.h"
 #include "kfmdlg.h"
 #include "kfmprops.h"
@@ -42,34 +43,53 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     connect( animatedLogoTimer, SIGNAL( timeout() ),
 	     this, SLOT( slotAnimatedLogoTimeout() ) );
     
-    debugT("Hi 1\n");
+    /* read the settings. We have some defaults, if the 
+       settings are not defined or if there are unknown
+       words in it. */
+
+    KConfig *config = kapp->getConfig();
+    config->setGroup( "Settings" );
     
-    bTreeViewInitialized = FALSE;
-    bTreeView = FALSE;
-        
-    debugT("Hi 2\n");
+    QString entry;
 
+    entry = "Off"; // default
+    if ( config->readEntry("TreeView", &entry) == entry)
+      bTreeView = false;
+    else
+      bTreeView = true;
+    bTreeViewInitialized = false; // this is alway true
+    
+    entry = "IconView"; // default
     viewMode = ICON_VIEW;
-    showDot = FALSE;
-    visualSchnauzer = FALSE;
-    bViewHTML = TRUE;
+    entry = config->readEntry("ViewMode", &entry);
+    if (entry == "LongView")
+      viewMode = LONG_VIEW;
+    if (entry == "TextView")
+      viewMode = TEXT_VIEW;
 
-    debugT("Hi 3\n");
-
-    KConfig *config = KApplication::getKApplication()->getConfig();
-    config->setGroup( "Templates" );
-    templatePath = config->readEntry( "Path" );
-    if ( templatePath.isNull() )
-    {
-	debugT("ERROR: No path for templates specified in config files\n");
-	exit(1);
-    }
+    entry = "no";
+    if ( config->readEntry("ShowDotFiles",&entry) == "yes")
+      showDot = true;
+    else
+      showDot = false;
+    
+    entry = "Off";
+    if ( config->readEntry("VisualSchnauzer", &entry) == "Off")
+      visualSchnauzer = false;
+    else
+      visualSchnauzer = true;
+    
+    entry = "Yes";
+    if ( config->readEntry("HTMLView", &entry) == entry)
+      bViewHTML = true;
+    else
+      bViewHTML = false;
 
     debugT("Hi 4\n");
     initGUI();
     debugT("Hi 5\n");
 
-    windowList.setAutoDelete( FALSE );
+    windowList.setAutoDelete( false );
     windowList.append( this );
 
     debugT("Hi 6\n");
@@ -174,14 +194,16 @@ void KfmGui::initMenu()
 
     debugT("Menu 2\n");
 
-    connect( menuNew, SIGNAL( activated( int ) ), this, SLOT( slotNewFile( int ) ) );
+    connect( menuNew, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotNewFile( int ) ) );
 
     debugT("Menu 3\n");
 
-    QDir d( templatePath );
+    QDir d( KFMPaths::TemplatesPath() );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
-	debugT("ERROR: Template does not exist '%s'\n",templatePath.data());
+        warning("ERROR: Template does not exist '%s'",
+		KFMPaths::TemplatesPath().data());
     else
     {
 	QFileInfoListIterator it( *list );      // create list iterator
@@ -189,7 +211,8 @@ void KfmGui::initMenu()
 
 	while ( ( fi = it.current() ) != 0L )
 	{
-	    if ( strcmp( fi->fileName().data(), "." ) != 0 && strcmp( fi->fileName().data(), ".." ) != 0 )
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+		 strcmp( fi->fileName().data(), ".." ) != 0 )
 		menuNew->insertItem( fi->fileName().data() );
 	    ++it;                               // goto next list element
 	}
@@ -224,7 +247,7 @@ void KfmGui::initMenu()
 
     mview = new QPopupMenu;
     CHECK_PTR( mview );
-    mview->setCheckable(TRUE);
+    mview->setCheckable(true);
     mview->insertItem( "Show Dot Files", this, SLOT(slotShowDot()), ALT+Key_D );
     mview->insertItem( "Show Tree", this, SLOT(slotShowTreeView()) );
     mview->insertItem( "Visual Schnauzer", this, SLOT(slotShowSchnauzer()) );
@@ -239,8 +262,24 @@ void KfmGui::initMenu()
     mview->insertItem( "Reload Document", view, SLOT(slotReload()), ALT+Key_R );
     mview->insertItem( "Rescan bindings", this, SLOT(slotRescanBindings()) );
 
-    mview->setItemChecked( mview->idAt( 4 ), TRUE );
-    
+    mview->setItemChecked( mview->idAt( 0 ), showDot );
+    mview->setItemChecked( mview->idAt( 1 ), bTreeView );
+    mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
+    mview->setItemChecked( mview->idAt( 4 ), bViewHTML );
+
+    switch (viewMode) 
+      {
+      case ICON_VIEW:
+	mview->setItemChecked( mview->idAt( 5 ), true );
+	break;
+      case LONG_VIEW:
+	mview->setItemChecked( mview->idAt( 6 ), true );
+	break;
+      case TEXT_VIEW:
+	mview->setItemChecked( mview->idAt( 7 ), true );
+	break;
+      }
+
     QPopupMenu *nav = new QPopupMenu;
     CHECK_PTR( nav );
 
@@ -291,47 +330,47 @@ void KfmGui::initToolBar()
     path = KMimeType::getIconPath() + QString("/toolbar/");
     
     pixmap.load(path + "back.xpm");
-    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, SLOT( slotBack() ), FALSE, "Back");
+    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, SLOT( slotBack() ), false, "Back");
     
     pixmap.load(path + "forward.xpm");
-    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, SLOT( slotForward() ), FALSE, "Forward");
+    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, SLOT( slotForward() ), false, "Forward");
     
     pixmap.load(path + "home.xpm");
-    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
+    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), true, "Home");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, SLOT( slotReload() ), TRUE, "Reload");
+    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, SLOT( slotReload() ), true, "Reload");
 
     toolbar->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), TRUE, "Copy");
+    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), true, "Copy");
     
     pixmap.load(path + "editpaste.xpm");
-    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), TRUE, "Paste");
+    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), true, "Paste");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), TRUE, "Help");
+    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), true, "Help");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "exit.xpm");
-    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
+    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), false, "Stop");
 
     path = KMimeType::getIconPath();
     pixmap.load( path + "/kde1.gif" );
     
-    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, SLOT( slotNewWindow() ), FALSE );
-    toolbar->setItemEnabled( 8, TRUE );
+    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, SLOT( slotNewWindow() ), false );
+    toolbar->setItemEnabled( 8, true );
     
     // Load animated logo
     if ( animatedLogo.count() == 0 )
     {
-	animatedLogo.setAutoDelete( TRUE );
+	animatedLogo.setAutoDelete( true );
 	for ( int i = 1; i <= 30; i++ )
 	{
 	    QString n;
@@ -419,9 +458,9 @@ void KfmGui::slotPannerChanged()
 	treeView->initializeTree();  
 
     if ( panner->getSeparator() == 0 )
-      mview->setItemChecked( mview->idAt( 1 ), FALSE );
+      mview->setItemChecked( mview->idAt( 1 ), false );
     else
-      mview->setItemChecked( mview->idAt( 1 ), TRUE );
+      mview->setItemChecked( mview->idAt( 1 ), true );
     
     resizeEvent( 0L );
 }
@@ -434,33 +473,33 @@ void KfmGui::slotSplitWindow()
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
-    bViewHTML = FALSE;
-    mview->setItemChecked( mview->idAt( 4 ), FALSE );
-    mview->setItemChecked( mview->idAt( 5 ), TRUE );
-    mview->setItemChecked( mview->idAt( 6 ), FALSE );
-    mview->setItemChecked( mview->idAt( 7 ), FALSE );
+    bViewHTML = false;
+    mview->setItemChecked( mview->idAt( 4 ), false );
+    mview->setItemChecked( mview->idAt( 5 ), true );
+    mview->setItemChecked( mview->idAt( 6 ), false );
+    mview->setItemChecked( mview->idAt( 7 ), false );
     view->slotUpdateView();
 }
 
 void KfmGui::slotLongView()
 {
     viewMode = LONG_VIEW;
-    bViewHTML = FALSE;
-    mview->setItemChecked( mview->idAt( 4 ), FALSE );
-    mview->setItemChecked( mview->idAt( 5 ), FALSE );
-    mview->setItemChecked( mview->idAt( 6 ), FALSE);
-    mview->setItemChecked( mview->idAt( 7 ), TRUE );
+    bViewHTML = false;
+    mview->setItemChecked( mview->idAt( 4 ), false );
+    mview->setItemChecked( mview->idAt( 5 ), false );
+    mview->setItemChecked( mview->idAt( 6 ), false);
+    mview->setItemChecked( mview->idAt( 7 ), true );
     view->slotUpdateView();
 }
 
 void KfmGui::slotTextView()
 {
     viewMode = TEXT_VIEW;
-    bViewHTML = FALSE;
-    mview->setItemChecked( mview->idAt( 4 ), FALSE );
-    mview->setItemChecked( mview->idAt( 5 ), FALSE );
-    mview->setItemChecked( mview->idAt( 6 ), TRUE );
-    mview->setItemChecked( mview->idAt( 7 ), FALSE );
+    bViewHTML = false;
+    mview->setItemChecked( mview->idAt( 4 ), false );
+    mview->setItemChecked( mview->idAt( 5 ), false );
+    mview->setItemChecked( mview->idAt( 6 ), true );
+    mview->setItemChecked( mview->idAt( 7 ), false );
     view->slotUpdateView();
 }
 
@@ -493,9 +532,9 @@ void KfmGui::slotSelect()
 	if ( pattern.length() == 0 )
 	    return;
 
-	QRegExp re( pattern, TRUE, TRUE );
+	QRegExp re( pattern, true, true );
 	
-	view->getActiveView()->select( re, TRUE );
+	view->getActiveView()->select( re, true );
     }
 }
 
@@ -568,14 +607,11 @@ void KfmGui::slotNewFile( int _id )
 	else
 	{
 	    KIOJob * job = new KIOJob;
-	    QString src = templatePath.data();
-	    if ( src.right( 1 ) != "/" )
-		src += "/";
-	    src += p.data();
+	    QString src = KFMPaths::TemplatesPath() + p.data();
 	    QString dest = view->getURL();
 	    dest.detach();
 	    if ( dest.right( 1 ) != "/" )
-		dest += "/";
+	        dest += "/";
 	    dest += name.data();
 	    debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
 	    job->copy( src.data(), dest.data() );
@@ -660,12 +696,12 @@ void KfmGui::slotNewWindow( )
 
 void KfmGui::slotViewHTML( )
 {
-    bViewHTML = TRUE;
+    bViewHTML = true;
     viewMode = ICON_VIEW;
-    mview->setItemChecked( mview->idAt( 4 ), TRUE );
-    mview->setItemChecked( mview->idAt( 5 ), FALSE );
-    mview->setItemChecked( mview->idAt( 6 ), FALSE );
-    mview->setItemChecked( mview->idAt( 7 ), FALSE );
+    mview->setItemChecked( mview->idAt( 4 ), true );
+    mview->setItemChecked( mview->idAt( 5 ), false );
+    mview->setItemChecked( mview->idAt( 6 ), false );
+    mview->setItemChecked( mview->idAt( 7 ), false );
     view->slotUpdateView();
 }
 
@@ -688,7 +724,7 @@ void KfmGui::slotShowTreeView()
     bTreeView = !bTreeView;
     if ( !bTreeViewInitialized )
     {
-	bTreeViewInitialized = TRUE;
+	bTreeViewInitialized = true;
 	treeView->initializeTree();  
     }
     
@@ -706,7 +742,7 @@ void KfmGui::slotOpenLocation( )
     if ( view->getActiveView()->getURL() )
 	url = view->getActiveView()->getURL();
     
-    DlgLineEntry l( "Open Location:", url.data(), this, TRUE );
+    DlgLineEntry l( "Open Location:", url.data(), this, true );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -750,7 +786,9 @@ void KfmGui::slotQuit()
     // Clean up IO stuff
     KIOJob::deleteAllJobs();
     delete ( KIOServer::getKIOServer() );
-    
+
+    saveSettings();
+
     exit(0);
 }
 
@@ -766,14 +804,7 @@ void KfmGui::slotAbout()
 
 void KfmGui::slotHelp()
 {
-    if ( fork() == 0 )
-    {
-	QString arg = "file:";
-	arg += kapp->kdedir();
-	arg += "/doc/HTML/kfm/kfm.html";
-        execlp( "kdehelp", "kdehelp", arg.data(), 0 );
-        exit( 1 );
-    }
+  kapp->invokeHTMLHelp( "kfm/kfm.html", "" );
 }
 
 void KfmGui::slotTreeViewPopupMenu( const char *_url, const QPoint & )
@@ -836,7 +867,7 @@ void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
     if ( !animatedLogoTimer->isActive() )
     {
 	animatedLogoTimer->start( 50 );
-	toolbar->setItemEnabled( 7, TRUE );
+	toolbar->setItemEnabled( 7, true );
     }
 }
 
@@ -848,7 +879,7 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     {
 	animatedLogoTimer->stop();
 	toolbar->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
-	toolbar->setItemEnabled( 7, FALSE );
+	toolbar->setItemEnabled( 7, false );
 	slotSetStatusBar( "Document: Done" );
     }
 
@@ -856,9 +887,61 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
    _w->gotoAnchor(u.reference());
 }
 
+void KfmGui::saveSettings()
+{
+  KConfig *config = kapp->getConfig();
+  config->setGroup( "Settings" );
+    
+  QString entry;
+
+  if ( bTreeView == false)
+    entry = "Off";
+  else
+    entry = "On";
+  
+  config->writeEntry("TreeView", entry);
+  
+  switch (viewMode)
+    {
+    case ICON_VIEW:
+      entry = "IconView";
+      break;
+    case LONG_VIEW:
+      entry = "LongView";
+      break;
+    case TEXT_VIEW:
+      entry = "TextView";
+      break;
+    }
+
+  config->writeEntry("ViewMode", entry);
+
+  if (showDot == true)
+    entry = "yes";
+  else
+    entry = "no";
+  
+  config->writeEntry("ShowDotFiles", entry);
+
+  if (visualSchnauzer == false)
+    entry = "Off";
+  else
+    entry = "On";
+  
+  config->writeEntry("VisualSchnauzer", entry);
+
+  if (bViewHTML == true)
+    entry = "Yes";
+  else
+    entry = "No";
+  
+  config->writeEntry("HTMLView", entry);
+  config->sync();
+}
+
 KfmGui::~KfmGui()
 {
-    debugT("Deleting KfmGui\n");
+    debug("Deleting KfmGui\n");
     
     debugT("->View\n");
     delete view;
@@ -866,6 +949,10 @@ KfmGui::~KfmGui()
 
     windowList.remove( this );
     debugT("Deleted\n");
+    
+    if ( windowList.isEmpty() )  // the last window closed?
+      saveSettings();
+    
 }
 
 #include "kfmgui.moc"

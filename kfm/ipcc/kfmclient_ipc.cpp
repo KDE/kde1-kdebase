@@ -7,7 +7,7 @@
 
 KfmIpc::KfmIpc( int _port )
 {
-    bHeader = TRUE;
+    bHeader = true;
     cHeader = 0;
     pBody = 0L;
 
@@ -15,8 +15,8 @@ KfmIpc::KfmIpc( int _port )
     sock = new KSocket( "localhost", port );
     connect( sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
-    sock->enableRead( TRUE );
-    connected = TRUE;
+    sock->enableRead( true );
+    connected = true;
 }
 
 KfmIpc::~KfmIpc()
@@ -31,7 +31,7 @@ bool KfmIpc::isConnected()
 
 void KfmIpc::closeEvent( KSocket * _sock )
 {
-    connected = FALSE;
+    connected = false;
 }
 
 void KfmIpc::readEvent( KSocket *_sock )
@@ -42,7 +42,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	n = read( sock->socket(), headerBuffer + cHeader, 1 );
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
-	    bHeader = FALSE;
+	    bHeader = false;
 	    cHeader = 0;
 	    bodyLen = atoi( headerBuffer );
 	    cBody = 0;
@@ -82,7 +82,7 @@ void KfmIpc::readEvent( KSocket *_sock )
     {
 	pBody[bodyLen] = 0;
 	debugT(">>'%s'\n",pBody);
-	bHeader = TRUE;
+	bHeader = true;
 	parse( pBody, bodyLen );
 	return;
     }

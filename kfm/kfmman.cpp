@@ -41,33 +41,33 @@ KAbstractManager::~KAbstractManager()
 bool KAbstractManager::isBindingHardcoded( const char *_txt )
 {
     if ( strcmp( "Cd", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "New View", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Copy", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Delete", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Move to Trash", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Paste", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Open With", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Cut", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Move", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Properties", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Link", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Open", _txt ) == 0 )
-	return TRUE;
+	return true;
     if ( strcmp( "Empty Trash Bin", _txt ) == 0 )
-	return TRUE;
+	return true;
 
-    return FALSE;
+    return false;
 }
   
 void KAbstractManager::writeWrapped( char *_str )
@@ -125,9 +125,9 @@ bool KAbstractManager::eventFilter( QObject *ob, QEvent *ev )
 	&& QCursor::pos() == popupMenuPosition )
     {
 	popupMenuPosition = QPoint(-10,-10);
-	return TRUE;
+	return true;
     }
-    return FALSE;
+    return false;
 }
     
 KFileManager::KFileManager( KfmView * _v ) : KAbstractManager( _v )
@@ -282,7 +282,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 	return;
     }
 
-    QStrList strlist( TRUE );    
+    QStrList strlist( true );    
     // Loop thru all directory entries
     while ( ( ep = readdir( dp ) ) != 0L )
 	strlist.inSort( ep->d_name );
@@ -291,7 +291,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
     // Stores all files we already displayed.
     // This is used for filter option "Rest"
     QList<QString> displayedFiles;
-    displayedFiles.setAutoDelete( TRUE );
+    displayedFiles.setAutoDelete( true );
     // Indicates wether filter option "Rest" is currently selected.
     bool rest;
 
@@ -304,7 +304,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
     // Search All <files...> tags
     while ( ( p = strstr( p, "<files " ) ) != 0L )
     {
-	rest = FALSE;
+	rest = false;
 	
 	*p = 0;
 	// Write everything up to the start of <files...
@@ -340,13 +340,13 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 		    if ( name.data()[0] == '/' )
 		    {
 			re = name.data() + 1;
-			re.setWildcard( FALSE );
+			re.setWildcard( false );
 		    }
 		    // a wildcard pattern
 		    else
 		    {
 			re = name.data();
-			re.setWildcard( TRUE );
+			re.setWildcard( true );
 		    }
 		}
 		else if (strncasecmp( token, "filter=", 7 ) == 0)
@@ -368,7 +368,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 			    filter |= QDir::Hidden;
 			else if ( strcasecmp( f, "Rest" ) == 0 )
 			{
-			    rest = TRUE;
+			    rest = true;
 			    filter = 0;
 			}
 			else
@@ -392,8 +392,8 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 	    {
 		if ( strcmp( fn, "." ) != 0 )
 		{
-		    bool ok = FALSE;
-		    bool ok2 = TRUE;
+		    bool ok = false;
+		    bool ok2 = true;
 		    // Is the filter option rest active ?
 		    if ( rest )
 		    {
@@ -401,7 +401,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 			// Have we displayed this file already?
 			for ( s = displayedFiles.first(); s != 0L; s = displayedFiles.next() )
 			    if ( strcmp( s->data(), fn ) == 0 )
-				ok2 = FALSE;
+				ok2 = false;
 		    }
 		 
 		    if ( strcmp( fn, ".." ) == 0 )
@@ -429,26 +429,26 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 
 		    // Test wether the file matches our filters
 		    if ( ( filter & QDir::Dirs ) == QDir::Dirs && S_ISDIR( sbuff.st_mode ) )
-			ok = TRUE;
+			ok = true;
 		    if ( ( filter & QDir::Files ) == QDir::Files && S_ISREG( sbuff.st_mode ) )
-			ok = TRUE;
+			ok = true;
 		    if ( ( filter & QDir::Drives ) == QDir::Drives && 
 			 ( S_ISCHR( sbuff.st_mode ) || S_ISBLK( sbuff.st_mode ) ) )
-			ok = TRUE;
+			ok = true;
 		    if ( ( filter & QDir::Executable ) == QDir::Executable &&
 			 ( sbuff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) != 0 ) &&
 			 !S_ISDIR( sbuff.st_mode ) )
-			ok = TRUE;
+			ok = true;
 		    if ( ( filter & QDir::Hidden ) == QDir::Hidden && fn[0] == '.' &&
 			 strcmp( fn, ".." ) != 0 )
-			ok = TRUE;
+			ok = true;
 		    else if ( filter == 0 )
-			ok = TRUE;
+			ok = true;
 		    
 		    if ( pname != 0L )
 		    {
 			if ( re.match( fn ) == -1 )
-			    ok = FALSE;
+			    ok = false;
 		    }
 		    
 		    if ( ok && ok2 )
@@ -487,7 +487,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 {
     KURL u( _url );
     if ( u.isMalformed() )
-	return FALSE;
+	return false;
 
     debugT("Changing to %s\n", _url );
 
@@ -518,7 +518,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		}
 		else
 		    openDirHTML( u.path(), _refresh );
-		return TRUE;
+		return true;
 	    }
 	}
 	
@@ -529,7 +529,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	    // KMimeType::runKDEFile( _dir );
 	    debugT("#################### KFileManager::openURL\n");
 	    KMimeType::runBinding( _url );
-	    return FALSE;
+	    return false;
 	}
 	// Are we entering a tar file ?
 	else if ( strstr( _url, ".tar" ) != 0 || strstr( _url, ".tgz") != 0 || strstr( _url, ".tar.gz" ) != 0 )
@@ -548,7 +548,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		view->getTarManager()->openURL( t.data() );
 		view->setActiveManager( view->getTarManager() );
 	    }
-	    return FALSE;
+	    return false;
 	}
 	else
 	{
@@ -556,7 +556,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	    if ( 0 > stat( u.path(), &buff ) )
 	    {
 		debugT("ERROR: Could not access file %s\n",_url );
-		return FALSE;
+		return false;
 	    }
 	    
 	    // Executable ?
@@ -570,11 +570,11 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	    else
 	    {
 		KMimeType::runBinding( _url );
-		return FALSE;
+		return false;
 	    }   
 	}
 	debugT("ERROR: Could not change to %s\n",_url);
-	return FALSE;
+	return false;
     }
 
     // Are we used by the root widget perhaps ?
@@ -582,7 +582,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
     {
 	KfmGui *m = new KfmGui( 0L, 0L, _url );
 	m->show();
-	return FALSE;
+	return false;
     }
 
     url = _url;
@@ -600,7 +600,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
         view->parse();
 	view->write( "<h1>Could not access directory</h1></body></html>" );
 	view->end();
-	return TRUE;
+	return true;
     }
     
     // Name of the file that holds HTML data for this directory.
@@ -608,7 +608,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
     QString html;
     
     // List of all files & directories
-    QStrList strlist( TRUE );
+    QStrList strlist( true );
     
     // Loop thru all directory entries
     while ( ( ep = readdir( dp ) ) != 0L )
@@ -637,24 +637,36 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	    h += "/";
 	h += html.data();
 	openDirHTML( h.data(), _refresh );
-	return TRUE;
+	return true;
     }
 
     // Open ".directory"
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "KFM HTML Defaults" );
-    QString text_color = config->readEntry( "TextColor" );
-    QString link_color = config->readEntry( "LinkColor" );
-    QString bg_color = config->readEntry( "BgColor" );
+    QString text_color = "#000000";
+    text_color = config->readEntry( "TextColor", &text_color );
+    
+    QString link_color = "#FF0000";
+    link_color = config->readEntry( "LinkColor", &link_color );
+
+    QString bg_color = "#FFFFFF";
+    bg_color = config->readEntry( "BgColor" , &bg_color);
+
+    // Stephan: I write this for defaults, if no real set.
+    // Perhaps someone else knows a better place for doing this?
+    config->writeEntry("TextColor", text_color);
+    config->writeEntry("LinkColor", link_color);
+    config->writeEntry("BgColor", bg_color);
+    config->sync();
+
     QString tmp2 = config->readEntry( "BgImage" );
     QString bg_image;
-    if ( !tmp2.isNull() )
-	if ( tmp2.data()[0] != 0 )
-	{
-	    bg_image = kapp->kdedir();
-	    bg_image += "/lib/pics/wallpapers/";
-	    bg_image += tmp2.data();
-	}
+    if ( !tmp2.isEmpty() )
+      {
+	 bg_image = kapp->kdedir();
+	 bg_image += "/lib/pics/wallpapers/";
+	 bg_image += tmp2.data();
+      }
     
     QString d = u.path();
     if ( d.right( 1 ) != "/" )
@@ -774,7 +786,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
     
     debugT("Loop\n");
 
-    bool visualSchnauzer = FALSE;
+    bool visualSchnauzer = false;
     QString xv = u.path();
     if ( view->getGUI()->isVisualSchnauzer() )
     {
@@ -785,13 +797,13 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	dp = opendir( xv.data() );
 	if ( dp != NULL )
 	{
-	    visualSchnauzer = TRUE;
+	    visualSchnauzer = true;
 	    closedir( dp );
 	}
 	else
 	{
 	    if ( ::mkdir( xv.data(), S_IRWXU ) != -1 )
-		visualSchnauzer = TRUE;
+		visualSchnauzer = true;
 	    else
 		QMessageBox::message( "KFM Visual Schnauzer", "Could not create\n" + xv );
 	}
@@ -836,16 +848,16 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		if ( view->getGUI()->isVisualSchnauzer() && visualSchnauzer )
                 {
 		    // Assume XV pic is not available
-		    bool is_avail = FALSE;
+		    bool is_avail = false;
 		    // Assume that the xv pic has size 0
-		    bool is_null = TRUE;
+		    bool is_null = true;
 		    
 		    // Time of the image
 		    struct stat buff;
 		    lstat( str+5, &buff );
 		    time_t t1 = buff.st_mtime;
 		    if ( buff.st_size != 0 )
-			is_null = FALSE;
+			is_null = false;
 		    // Get the times of the xv pic
 		    QString xvfile = xv.data();
 		    xvfile += sfn;
@@ -855,7 +867,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 			time_t t2 = buff.st_mtime;
 			// Is it outdated ?
 			if ( t1 <= t2 )
-			    is_avail = TRUE;
+			    is_avail = true;
 		    }
 		    
 		    // Create the pic if it does not exist
@@ -866,7 +878,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 			if ( !pixmap.isNull() )
 			{
 			    write_xv_file( xvfile, pixmap );
-			    is_avail = TRUE;
+			    is_avail = true;
 			}
 		    }
 		    
@@ -879,16 +891,16 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 			    char str4[ 1024 ];
 			    f.readLine( str4, 1024 );
 			    if ( strncmp( "P7 332", str4, 6 ) != 0 )
-				is_null = TRUE;
+				is_null = true;
 			    // Slip line
 			    f.readLine( str4, 1024 );
 			    f.readLine( str4, 1024 );
 			    if ( strncmp( "#BUILTIN:UNKNOWN", str4, 16 ) == 0 )
-				is_null = TRUE;
+				is_null = true;
 			    f.close();
 			}
 			else
-			    is_null = TRUE;
+			    is_null = true;
 		    }
 		    
 		    if ( is_avail && !is_null )
@@ -1020,7 +1032,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 
     view->end();
     
-    return TRUE;
+    return true;
 }
 
 void KFileManager::slotPopupActivated( int _id )
@@ -1056,9 +1068,9 @@ void KFileManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     popupMenuPosition = QCursor::pos();        
     
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
+    bindings.setAutoDelete( true );
     QStrList bindings2;
-    bindings2.setAutoDelete( TRUE );
+    bindings2.setAutoDelete( true );
     
     // char buffer[ 1024 ];
     
@@ -1075,7 +1087,7 @@ void KFileManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	id = popupMenu->insertItem( "Delete",  view, SLOT( slotPopupDelete() ) );
 	id = popupMenu->insertItem( "Paste",  view, SLOT( slotPopupPaste() ) );
 	if ( KfmView::clipboard.count() == 0 )
-	    popupMenu->setItemEnabled( id, FALSE );
+	    popupMenu->setItemEnabled( id, false );
     }
     else
     {
@@ -1144,7 +1156,7 @@ KFileManager::~KFileManager()
 KTarManager::KTarManager( KfmView * _v )
     : KAbstractManager( _v )
 {
-    files.setAutoDelete( TRUE );
+    files.setAutoDelete( true );
     connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
 }
 
@@ -1156,7 +1168,7 @@ bool KTarManager::openURL( const char *_url, bool _reload )
     if ( u.isMalformed() )
     {
 	debugT("ERROR: Malformed URL\n");
-	return FALSE;
+	return false;
     }
     
     url = _url;
@@ -1167,7 +1179,7 @@ bool KTarManager::openURL( const char *_url, bool _reload )
     if ( !KIOServer::isDir( url.data() ) )
     {
 	KMimeType::runBinding( url.data() );
-	return FALSE;
+	return false;
     }
 
     /* if ( url.right( 1 ) != "#" && url.right( 1 ) != "/" )
@@ -1194,7 +1206,7 @@ bool KTarManager::openURL( const char *_url, bool _reload )
 
     view->getGUI()->slotSetStatusBar( "Reading tar file..." );
 
-    return TRUE;
+    return true;
 }
 
 void KTarManager::slotNewDirEntry( int, KIODirectoryEntry * _entry )
@@ -1392,9 +1404,9 @@ void KTarManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     popupMenuPosition = QCursor::pos();         
 
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
+    bindings.setAutoDelete( true );
     QStrList bindings2;
-    bindings2.setAutoDelete( TRUE );
+    bindings2.setAutoDelete( true );
     
     // char buffer[ 1024 ];
     
@@ -1476,7 +1488,7 @@ KTarManager::~KTarManager()
 KFtpManager::KFtpManager( KfmView * _v )
     : KAbstractManager( _v )
 {
-    files.setAutoDelete( TRUE );
+    files.setAutoDelete( true );
     connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
     job = 0L;
 
@@ -1492,13 +1504,13 @@ bool KFtpManager::openURL( const char *_url, bool _reload )
     if ( u.isMalformed() )
     {
 	debugT("ERROR: Malformed URL\n");
-	return FALSE;
+	return false;
     }
     
     if ( !KIOServer::isDir( _url ) )
     {
 	KMimeType::runBinding( _url );
-	return FALSE;
+	return false;
     }
     
     url = _url;
@@ -1535,10 +1547,10 @@ bool KFtpManager::openURL( const char *_url, bool _reload )
     tmp.sprintf( "Contacting host %s", u.host() );
     view->getGUI()->slotSetStatusBar( tmp );
     
-    job->display( FALSE );
+    job->display( false );
     job->list( url.data(), _reload );
 
-    return TRUE;
+    return true;
 }
 
 void KFtpManager::slotNewDirEntry( int , KIODirectoryEntry * _entry )
@@ -1693,7 +1705,7 @@ void KFtpManager::slotProgressTimeout()
 void KFtpManager::slotProgress( int _percent, int _bytesTransfered )
 {
     int oldBytesTransfered = bytesTransfered;
-    bool stalled = FALSE;
+    bool stalled = false;
     
     percent = _percent;
     bytesTransfered = _bytesTransfered;
@@ -1701,7 +1713,7 @@ void KFtpManager::slotProgress( int _percent, int _bytesTransfered )
     if ( bytesTransfered != oldBytesTransfered )
 	timer2.restart();
     else if ( timer2.elapsed() > 5000 )
-	stalled = TRUE;
+	stalled = true;
 
     float rate = (float)bytesTransfered / 1024. / ( (float)timer1.elapsed() / 1000.0 );
 
@@ -1789,9 +1801,9 @@ void KFtpManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     popupMenuPosition = QCursor::pos();       
     
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
+    bindings.setAutoDelete( true );
     QStrList bindings2;
-    bindings2.setAutoDelete( TRUE );
+    bindings2.setAutoDelete( true );
     
     // char buffer[ 1024 ];
     
@@ -1921,7 +1933,7 @@ KHttpManager::KHttpManager( KfmView * _v )
     connect( popupMenu, SIGNAL( activated( int )), this, SLOT( slotPopupActivated( int )) );
     htmlCache = new HTMLCache();
 
-    running = FALSE;
+    running = false;
     f = 0L;
     
     connect( htmlCache, SIGNAL( urlLoaded( const char*, const char *) ),
@@ -1938,7 +1950,7 @@ bool KHttpManager::openURL( const char *_url, bool )
     if ( u.isMalformed() )
     {
 	debugT("ERROR: Malformed URL\n");
-	return FALSE;
+	return false;
     }
     
     url = _url;
@@ -1952,7 +1964,7 @@ bool KHttpManager::openURL( const char *_url, bool )
     debugT("Requesting\n");
     
     htmlCache->slotURLRequest( url );
-    running = TRUE;
+    running = true;
 
     debugT("Requested\n");
     
@@ -1963,7 +1975,7 @@ bool KHttpManager::openURL( const char *_url, bool )
     
     debugT("Returning\n");
     
-    return TRUE;
+    return true;
 }
 
 void KHttpManager::slotProgress( const char *_url, const char *_filename, 
@@ -2042,7 +2054,7 @@ void KHttpManager::slotShowHTML( const char *_url, const char *_filename )
     view->getGUI()->slotSetStatusBar( "Reading images..." );
     
     debugT("ShowHTML 2\n");
-    running = FALSE;
+    running = false;
     
     char buffer[ 1024 ];
     
@@ -2121,9 +2133,9 @@ void KHttpManager::openPopupMenu( QStrList & _urls, const QPoint & _point )
     popupMenuPosition = QCursor::pos();        
     
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
+    bindings.setAutoDelete( true );
     QStrList bindings2;
-    bindings2.setAutoDelete( TRUE );
+    bindings2.setAutoDelete( true );
     
     // char buffer[ 1024 ];
     
@@ -2199,7 +2211,7 @@ void KHttpManager::stop()
     
     if ( running )
     {
-      running = FALSE;
+      running = false;
       htmlCache->slotCancelURLRequest( url );
     }
 }
@@ -2251,16 +2263,16 @@ bool KCgiManager::openURL( const char *_url, bool )
 	view->write( _url );
 	view->write( "</body></html>" );
 	view->end();
-	return TRUE;
+	return true;
     }
     
     tmpFile.detach();
-    running = TRUE;
+    running = true;
 
     view->getGUI()->slotAddWaitingWidget( view );
     
     debugT("5\n");
-    return TRUE;
+    return true;
 }
 
 void KCgiManager::slotShowHTML()
@@ -2272,7 +2284,7 @@ void KCgiManager::slotShowHTML()
     if ( url.isNull() )
 	return;
         
-    running = FALSE;
+    running = false;
     
     char buffer[ 1024 ];
     
@@ -2322,7 +2334,7 @@ void KCgiManager::stop()
 
     if ( running )
     {
-      running = FALSE;
+      running = false;
       cgiServer->stop();
     }
 }

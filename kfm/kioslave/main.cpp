@@ -21,7 +21,7 @@ void sig_handler(int);
 
 KIOSlave *slave = 0L;
 
-void main( int argc, char **argv )
+int main( int argc, char **argv )
 {
     if ( argc != 2 )
     {
@@ -192,7 +192,7 @@ void KIOSlave::list( const char *_url )
 	{
 	    strcpy( line, s );
 	    // Parse the line
-	    bool err = FALSE;
+	    bool err = false;
 	    bool isdir = ( line[0] == 'd' );
 	    QString owner;
 	    QString group;
@@ -205,7 +205,7 @@ void KIOSlave::list( const char *_url )
 	    char *p = strchr( line, ' ' );
 			    
 	    if ( p == 0L )
-		err = TRUE;
+		err = true;
 	    else
 	    {
 		*p = 0;
@@ -215,7 +215,7 @@ void KIOSlave::list( const char *_url )
 		
 		    p = strchr( p2, '/' );
 		    if ( p == 0L )
-			err = TRUE;
+			err = true;
 		    else
 		    {
 			*p = 0;
@@ -224,7 +224,7 @@ void KIOSlave::list( const char *_url )
 			p2 = p + 1;
 			p = strchr( p2, ' ' );
 			if ( p == 0L )
-			    err = TRUE;
+			    err = true;
 			else
 			{
 			    *p = 0;
@@ -234,7 +234,7 @@ void KIOSlave::list( const char *_url )
 			    while ( *p2 == ' ' ) p2++;
 			    p = strchr( p2, ' ' );
 			    if ( p == 0L )
-				err = TRUE;
+				err = true;
 			    else
 			    {
 				*p = 0;
@@ -243,22 +243,22 @@ void KIOSlave::list( const char *_url )
 				p2 = p + 1;
 				p = strchr( p2, ' ' );
 				if ( p == 0L )
-				    err = TRUE;
+				    err = true;
 				else
 				{
 				    p = strchr( p + 1, ' ' );
 				    if ( p == 0L )
-					err = TRUE;
+					err = true;
 				    else
 				    {
 					p = strchr( p + 1, ' ' );
 					if ( p == 0L )
-					    err = TRUE;
+					    err = true;
 					else
 					{
 					    p = strchr( p + 1, ' ' );
 					    if ( p == 0L )
-						err = TRUE;
+						err = true;
 					    else
 					    {
 						*p = 0;
@@ -307,7 +307,7 @@ void KIOSlave::list( const char *_url )
 
 		prot->OpenDir(&su);
 		ipc->flushDir(_url);
-		while(de = prot->ReadDir())
+		while( (de = prot->ReadDir()) != 0L )
 		{
 			ipc->dirEntry( _url, de->name.data(), de->isdir, de->size,
 							de->date.data(), de->access.data(),
@@ -417,7 +417,7 @@ void KIOSlave::del( const char *_url )
 	{
 	    if ( !lockTgz( su.path() ) )
 		return;
-	    lockedTgzModified = TRUE;
+	    lockedTgzModified = true;
 	    tar = lockedTgzTemp.data();
 	}
 
@@ -635,12 +635,12 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     ipc->done();
 }
 
-bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const char *_passwd )
+bool KIOSlave::lockFTP( const char *_host, int _port, const char* , const char *_passwd )
 {
 #ifdef TODO
     if ( strcmp( _host, lockedFTPHost.data() ) == 0 && _port == lockedFTPPort &&
 	 strcmp( _login, lockedFTPLogin.data() ) == 0 && strcmp( _passwd, lockedFTPPasswd.data() ) == 0 )
-	return TRUE;
+	return true;
     
     unlockFTP();
     
@@ -656,7 +656,7 @@ bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const 
     {
 	debugT("ERROR: Could not connect\n");
 	ipc->fatalError( KIO_ERROR_CouldNotConnect, _host, 0 );
-	return FALSE;
+	return false;
     }
     
     debugT("Login\n");
@@ -667,10 +667,16 @@ bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const 
 	QString err;
 	err.sprintf( "ftp://%s:%s@%s", _login, _passwd, _host );
 	ipc->fatalError( KIO_ERROR_CouldNotLogin, err.data(), 0 );
-	return FALSE;
+	return false;
     }
 
-    return TRUE;
+    return true;
+#else
+//Stephan: Only to avoid warnings
+_host = 0L;
+_port = 0;
+_passwd = 0L;
+return true;
 #endif
 }
 
@@ -684,17 +690,19 @@ bool KIOSlave::unlockFTP()
 	    lockedFTPHost = "";
 	}
 
-    return TRUE;
+    return true;
+#else //Stephan: to avoid warning
+   return true;
 #endif
 }
 
 bool KIOSlave::lockTgz( const char *_name )
 {
     if ( strcmp( _name, lockedTgzSource.data() ) == 0 )
-	return TRUE;
+	return true;
     
     if ( !unlockTgz() )
-	return FALSE;
+	return false;
 
     QString logFile;
     logFile.sprintf( "/tmp/gziplog%i", time( 0L ) );
@@ -702,14 +710,14 @@ bool KIOSlave::lockTgz( const char *_name )
     QString cmd;
     lockedTgzSource = _name;
     lockedTgzSource.detach();
-    lockedTgzModified = FALSE;
+    lockedTgzModified = false;
     lockedTgzTemp.sprintf( "tmp%i.tar", time( 0L ) );
     cmd.sprintf("gzip -d <%s 1>%s 2>%S", _name, lockedTgzTemp.data(), logFile.data() );
     system( cmd );
 
     QString err = testLogFile( logFile.data() );
     if ( err.isNull() )
-	return TRUE;
+	return true;
 
     unlink( lockedTgzTemp.data() );
     unlink( logFile.data() );
@@ -718,15 +726,15 @@ bool KIOSlave::lockTgz( const char *_name )
     err2.sprintf( "%s\n\nError log:\n%s", _name, err.data() );	    
     ipc->fatalError( KIO_ERROR_GzipError, err2.data(), 0 );
 
-    return FALSE;
+    return false;
 }
 
 bool KIOSlave::unlockTgz()
 {
     if ( lockedTgzSource.data() == 0L )
-	return TRUE;
+	return true;
     if ( lockedTgzSource.data()[0] == 0 )
-	return TRUE;
+	return true;
     
     if ( lockedTgzModified )
     {
@@ -745,7 +753,7 @@ bool KIOSlave::unlockTgz()
 	    err2.sprintf( "%s\n\nError log:\n%s", lockedTgzTemp.data(), err.data() );	    
 	    ipc->fatalError( KIO_ERROR_TarError, err2.data(), 0 );
 	    lockedTgzSource = "";
-	    return FALSE;
+	    return false;
 	    
 	}
     }
@@ -754,13 +762,13 @@ bool KIOSlave::unlockTgz()
 
     lockedTgzSource = "";
 
-    return TRUE;
+    return true;
 }
 
 void KIOSlave::cleanUp()
 {
-    bool ok1 = TRUE;
-    bool ok2 = TRUE;
+    bool ok1 = true;
+    bool ok2 = true;
 
     ok1 = unlockTgz();
     ok2 = unlockFTP();

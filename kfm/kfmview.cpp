@@ -29,6 +29,7 @@
 #include "kfmprops.h"
 #include "kbutton.h"
 #include "root.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 QStrList KfmView::clipboard;
@@ -36,7 +37,7 @@ QStrList KfmView::clipboard;
 KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
     : KHTMLView( parent, name, 0, _parent_view )
 {
-    rectStart = FALSE;
+    rectStart = false;
     dPainter = 0L;
     
     htmlCache = new HTMLCache();
@@ -52,12 +53,12 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     dropZone = 0L;
     popupMenu = 0L;
     
-    stackLock = FALSE;
+    stackLock = false;
 
-    backStack.setAutoDelete( FALSE );
-    forwardStack.setAutoDelete( FALSE );
+    backStack.setAutoDelete( false );
+    forwardStack.setAutoDelete( false );
 
-    childViewList.setAutoDelete( FALSE );
+    childViewList.setAutoDelete( false );
     
     initFileManagers();
 
@@ -146,7 +147,8 @@ void KfmView::slotTerminal()
 {
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "Terminal" );
-    QString term = config->readEntry( "Terminal" );
+    QString term = "kvt";
+    term = config->readEntry( "Terminal", &term );
 
     QString dir = getenv( "HOME" );
     
@@ -170,7 +172,7 @@ void KfmView::slotStop()
 
 void KfmView::slotReload()
 {
-    activeManager->openURL( activeManager->getURL(), TRUE );
+    activeManager->openURL( activeManager->getURL(), true );
 }
 
 void KfmView::slotUpdateView()
@@ -182,7 +184,7 @@ void KfmView::slotUpdateView()
 	    v->slotUpdateView();
     }
     else
-	activeManager->openURL( activeManager->getURL(), TRUE );
+	activeManager->openURL( activeManager->getURL(), true );
 }
 
 void KfmView::slotMountNotify()
@@ -190,7 +192,7 @@ void KfmView::slotMountNotify()
     QString u = activeManager->getURL().data();
     
     if ( strncmp( u, "file:" , 5 ) == 0 )
-	activeManager->openURL( u.data(), TRUE );
+	activeManager->openURL( u.data(), true );
 }
 
 void KfmView::slotFilesChanged( const char *_url )
@@ -211,7 +213,7 @@ void KfmView::slotFilesChanged( const char *_url )
 
     debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
     if ( u1 == u2 )
-	activeManager->openURL( activeManager->getURL().data(), TRUE );
+	activeManager->openURL( activeManager->getURL().data(), true );
     debugT("Changed\n");
 }
 
@@ -266,9 +268,7 @@ void KfmView::slotTrash()
 
     KIOJob * job = new KIOJob;
 
-    QString dest = "file:";
-    dest += QDir::homeDirPath().data();
-    dest += "/Desktop/Trash/";
+    QString dest = "file:" + KFMPaths::TrashPath();
     job->move( marked, dest );
 }
 
@@ -299,7 +299,7 @@ void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
 
 void KfmView::slotPopupOpenWith()
 {
-    DlgLineEntry l( "Open With:", "", this, TRUE );
+    DlgLineEntry l( "Open With:", "", this, true );
     if ( l.exec() )
     {
 	QString pattern = l.getText();
@@ -386,9 +386,7 @@ void KfmView::slotPopupTrash()
       debugT("&&> '%s'\n",s);
     
     // job->del( popupFiles );
-    QString dest = "file:";
-    dest += QDir::homeDirPath().data();
-    dest += "/Desktop/Trash/";
+    QString dest = "file:" + KFMPaths::TrashPath();
     job->move( popupFiles, dest );
 }
 
@@ -450,7 +448,7 @@ void KfmView::openURL( const char *_url )
     QString url;
     url = _url;
     
-    bool erg = FALSE;
+    bool erg = false;
     
     QString old_url = "";
     if ( activeManager != 0L )
@@ -500,11 +498,11 @@ void KfmView::openURL( const char *_url )
 	QString *s = new QString( old_url.data() );
 	s->detach();
 	backStack.push( s );
-	forwardStack.setAutoDelete( TRUE );
+	forwardStack.setAutoDelete( true );
 	forwardStack.clear();
-	forwardStack.setAutoDelete( FALSE );
+	forwardStack.setAutoDelete( false );
 	
-	emit historyUpdate( TRUE, FALSE );
+	emit historyUpdate( true, false );
     }
 }
 
@@ -522,13 +520,13 @@ void KfmView::slotForward()
 
     QString *s = forwardStack.pop();
     if ( forwardStack.isEmpty() )
-	emit historyUpdate( TRUE, FALSE );
+	emit historyUpdate( true, false );
     else
-	emit historyUpdate( TRUE, TRUE );
+	emit historyUpdate( true, true );
     
-    stackLock = TRUE;
+    stackLock = true;
     openURL( s->data() );
-    stackLock = FALSE;
+    stackLock = false;
 
     delete s;
 }
@@ -547,13 +545,13 @@ void KfmView::slotBack()
     
     QString *s = backStack.pop();
     if ( backStack.isEmpty() )
-	emit historyUpdate( FALSE, TRUE );
+	emit historyUpdate( false, true );
     else
-	emit historyUpdate( TRUE, TRUE );    
+	emit historyUpdate( true, true );    
 
-    stackLock = TRUE;
+    stackLock = true;
     openURL( s->data() );
-    stackLock = FALSE;
+    stackLock = false;
 
     delete s;
 }
@@ -640,7 +638,7 @@ void KfmView::slotOnURL( const char *_url )
         QString text;
 	QString text2;
 	if ( strcmp( url.protocol(), "tar" ) == 0 )
-	  text = url.filename( TRUE );
+	  text = url.filename( true );
 	else
 	  text = url.filename();
 	text2 = text;
@@ -735,15 +733,15 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	if ( !dPainter )
 	    dPainter = new QPainter;
 	debugT ("KFileView::mousePressEvent: starting a rectangle (w/Painter)\n");   
-	return TRUE;
+	return true;
     }
     // Select a URL with Ctrl Button
     else if ( _url != 0L && _mouse->button() == LeftButton &&
 	      ( _mouse->state() & ControlButton ) == ControlButton )
     {   
 	selectByURL( 0L, _url, !_isselected );
-	ignoreMouseRelease = TRUE;
-	return TRUE;
+	ignoreMouseRelease = true;
+	return true;
     }
     else if ( _url != 0L && _mouse->button() == LeftButton )
     {
@@ -753,16 +751,16 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	// The user selected the first icon
 	if ( list.count() == 0 )
 	{
-	    selectByURL( 0L, _url, TRUE );
-	    return FALSE;
+	    selectByURL( 0L, _url, true );
+	    return false;
 	}
 	// The user selected one of the icons that are already selected
 	if ( list.find( _url ) != -1 )
-	    return FALSE;
+	    return false;
 	// The user selected another icon => deselect the selected ones
 	select( 0L, false );
-	selectByURL( 0L, _url, TRUE );
-	return FALSE;
+	selectByURL( 0L, _url, true );
+	return false;
     }
     // Context Menu
     else if ( _url != 0L && _mouse->button() == RightButton )
@@ -782,12 +780,12 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	{
 	    // The selected URL is not marked, so unmark the marked ones.
 	    select( 0L, false );
-	    selectByURL( 0L, _url, TRUE );
+	    selectByURL( 0L, _url, true );
 	    list.clear();
 	    list.append( _url );
 	    slotPopupMenu( list, p );
 	}
-	return TRUE;
+	return true;
     }
     // Context menu for background ?
     else if ( _url == 0L && _mouse->button() == RightButton )
@@ -798,10 +796,10 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	QStrList list;
 	list.append( activeManager->getURL() );
 	slotPopupMenu( list, p );
-	return TRUE;
+	return true;
     }
     
-    return FALSE;
+    return false;
 }
 
 bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
@@ -814,7 +812,7 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	if ( !dPainter )
 	{
 	    debugT ("KFileView::mouseMoveEvent: no painter\n");
-	    return TRUE;
+	    return true;
 	}
 	dPainter->begin( view );
 	dPainter->setRasterOp (NotROP);
@@ -849,18 +847,18 @@ bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
 	dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
 	dPainter->end();
 	
-	return TRUE;
+	return true;
     }
   
-    return FALSE;
+    return false;
 }
 
 bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 {
     if ( ignoreMouseRelease )
     {
-	ignoreMouseRelease = FALSE;
-	return TRUE;
+	ignoreMouseRelease = false;
+	return true;
     }
     
     if ( rectStart )
@@ -903,17 +901,17 @@ bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
 	delete dPainter;
 	dPainter = 0L;
 	
-	return TRUE;
+	return true;
 	
     }
     
-    return FALSE;
+    return false;
 }
 
 bool KfmView::dndHook( const char *_url, QPoint &_p )
 {
     if ( _url == 0L )
-	return TRUE;
+	return true;
     
     QStrList l;
     getSelected( l );
@@ -955,7 +953,7 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     view->startDrag( new KDNDIcon( pixmap, _p.x() + dx, _p.y() + dy ), 
 		     data.data(), data.length(), DndURL, dx, dy );
     
-    return TRUE;
+    return true;
 }
 
 #include "kfmview.moc"

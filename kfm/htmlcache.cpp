@@ -50,7 +50,7 @@ void HTMLCacheJob::slotProgressTimeout()
 void HTMLCacheJob::slotProgress( int _percent, int _bytesTransfered )
 {
     int oldBytesTransfered = bytesTransfered;
-    bool stalled = FALSE;
+    bool stalled = false;
     
     percent = _percent;
     bytesTransfered = _bytesTransfered;
@@ -58,7 +58,7 @@ void HTMLCacheJob::slotProgress( int _percent, int _bytesTransfered )
     if ( bytesTransfered != oldBytesTransfered )
 	timer2.restart();
     else if ( timer2.elapsed() > 5000 )
-	stalled = TRUE;
+	stalled = true;
     
     emit progress( this, percent, bytesTransfered,
 		   (float)bytesTransfered / 1024. / ( (float)timer1.elapsed() / 1000.0 ), stalled );
@@ -76,8 +76,8 @@ HTMLCache::HTMLCache()
     }    
     cachePath.sprintf( "file:%s/.kfm/cache/", p );
 
-    htmlJobList.setAutoDelete( FALSE );
-    urlDict.setAutoDelete( TRUE );
+    htmlJobList.setAutoDelete( false );
+    urlDict.setAutoDelete( true );
 }
 
 void HTMLCache::slotProgress( HTMLCacheJob *_job, int _percent, int _bytesTransfered,
@@ -112,7 +112,7 @@ void HTMLCache::slotURLRequest( const char *_url )
     tmp.sprintf( "%s%i.%i", cachePath.data(), time( 0L ), fileId++ );
     debugT("&&&&&&&&&&&&&&&&&& New job for '%s' to '%s'\n",_url,tmp.data());
     job = new HTMLCacheJob( _url, tmp.data() );
-    job->display( FALSE );
+    job->display( false );
     connect( job, SIGNAL( finished( HTMLCacheJob * ) ), this, SLOT( slotJobFinished( HTMLCacheJob * ) ) );
     connect( job, SIGNAL( progress( HTMLCacheJob *, int, int, float, bool ) ),
 	     this, SLOT( slotProgress( HTMLCacheJob *, int, int, float, bool ) ) );
@@ -172,9 +172,9 @@ void HTMLCache::urlLoaded( HTMLCacheJob *_job )
 bool HTMLCache::waitsForURL( const char *_url )
 {
     if ( waitingURLList.find( _url ) == -1 )
-	return FALSE;
+	return false;
     
-    return TRUE;
+    return true;
 }
     
 HTMLCache::~HTMLCache()

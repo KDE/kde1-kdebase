@@ -14,13 +14,13 @@
 
 KBookmark::KBookmark()
 {
-	children.setAutoDelete( TRUE );
+	children.setAutoDelete( true );
 	type = URL;
 }
 
 KBookmark::KBookmark( const char *_text, const char *_url )
 {
-	children.setAutoDelete( TRUE );
+	children.setAutoDelete( true );
 	text = _text;
 	url = _url;
 	type = URL;
@@ -83,18 +83,18 @@ void KBookmarkManager::read( const char *filename )
 			if ( strncasecmp( str, "<title>", 7 ) == 0 )
 			{
 				QString t = "";
-				bool bend = FALSE;
+				bool bend = false;
 
 				do
 				{
 					if ( !ht->hasMoreTokens() )
-						bend = TRUE;
+						bend = true;
 					else
 					{
 						str = ht->nextToken();
 						if ( str[0] == TAG_ESCAPE &&
 								strncasecmp( str + 1, "</title>", 8 ) == 0 )
-							bend = TRUE;
+							bend = true;
 						else
 							t += str;
 					}
@@ -158,7 +158,7 @@ const char *KBookmarkManager::parse( HTMLTokenizer *ht, KBookmark *parent,
 						p += 5;
 
 						text = "";
-						bool quoted = FALSE;
+						bool quoted = false;
 						while ( ( *p != ' ' && *p != '>' ) || quoted )
 						{
 							if ( *p == '\"' )

@@ -52,7 +52,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     lineEdit->setText( dest.data() );
     lineEdit->setGeometry( 10, 130, 300, 30 );
     
-    b0->setDefault( TRUE );
+    b0->setDefault( true );
     
     setGeometry( x(), y(), 510, 210 );
 }

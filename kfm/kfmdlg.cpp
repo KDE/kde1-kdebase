@@ -2,7 +2,7 @@
 #include "fileentry.h"
 
 DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
-        : QDialog( parent, 0L, TRUE )
+        : QDialog( parent, 0L, true )
 {
     setGeometry( x(), y(), 200, 110 );
 

@@ -23,7 +23,8 @@ private:
 	int dirfd;
 	int sData,sControl,sDatal;
 
-	#define SETSOCKOPT_OPTVAL_TYPE (void *)
+	// Stephan: Aua
+	// #define SETSOCKOPT_OPTVAL_TYPE (void *)
 
 	#define FTP_BUFSIZ 1024
 	#define ACCEPT_TIMEOUT 30

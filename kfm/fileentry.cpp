@@ -27,9 +27,9 @@ void KFileEntry::keyPressEvent( QKeyEvent *_ev )
 	return;
     }
 
-    bool ctrld = FALSE;
+    bool ctrld = false;
     if (_ev->key() == Key_D && _ev->state() == ControlButton )
-	ctrld = TRUE;
+	ctrld = true;
     
     QString txt = text();
     if ( txt.left(6) != "file:/" && txt.find( ":/" ) != -1 )
@@ -71,10 +71,10 @@ void KFileEntry::keyPressEvent( QKeyEvent *_ev )
 
     const char* matched = 0L;
     int len = guess.length();
-    bool multiple = FALSE;
+    bool multiple = false;
     QString max;
     
-    QStrList strlist( TRUE );    
+    QStrList strlist( true );    
     if ( ctrld && possibility == -1 )
 	possibilityList.clear();
     
@@ -99,7 +99,7 @@ void KFileEntry::keyPressEvent( QKeyEvent *_ev )
 		    max = matched;
 		    max = max.left(i).data();
 		    matched = max.data();
-		    multiple = TRUE;
+		    multiple = true;
 		    QApplication::beep();
 		}
 		else

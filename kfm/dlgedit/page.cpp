@@ -44,11 +44,11 @@ DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel->setGeometry( 170, 220, 100, 30 );
     tmpQLabel->setText( "Unmounted Icon" );
     
-    mounted = new QComboBox( FALSE, parent, "ComboBox_1" );
+    mounted = new QComboBox( false, parent, "ComboBox_1" );
     mounted->setGeometry( 10, 250, 120, 30 );
     mounted->setSizeLimit( 10 );
     
-    unmounted = new QComboBox( FALSE, parent, "ComboBox_2" );
+    unmounted = new QComboBox( false, parent, "ComboBox_2" );
     unmounted->setGeometry( 170, 250, 120, 30 );
     unmounted->setSizeLimit( 10 );
     

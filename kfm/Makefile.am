@@ -9,13 +9,10 @@ KDEINC = $(prefix)/include
 BINDIR = $(prefix)/bin
 LIBDIR = $(prefix)/lib
 DOCSDIR = $(prefix)/doc/HTML/kfm
-DESKTOPDIR = $(HOME)/Desktop
-TRASHDIR = $(HOME)/Trash
-TEMPLATEDIR = $(DESKTOPDIR)/Templates
 
 ####### Files
 
-bin_PROGRAMS = kfm
+bin_PROGRAMS = kfm 
 
 kfm_SOURCES =	\
 	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp \
@@ -23,19 +20,23 @@ kfm_SOURCES =	\
 	kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp \
 	kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp \
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp \
-	krenamewin.cpp passworddialog.cpp cgi.cpp fileentry.cpp debug.cpp
+	krenamewin.cpp passworddialog.cpp cgi.cpp fileentry.cpp debug.cpp \
+	kfmpaths.cpp
 
 noinst_HEADERS =  \
 	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h ipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
-	xview.h krenamewin.h passworddialog.h cgi.h fileentry.h config-kfm.h
+	xview.h krenamewin.h passworddialog.h cgi.h fileentry.h \
+	config-kfm.h kfmpaths.h
 
 BUILTSOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc cgi.moc fileentry.moc
+
+CLEANFILES = $(BUILTSOURCES)
 
 kfmgui.cpp: kfmgui.moc
 kioserver.cpp: kioserver.moc

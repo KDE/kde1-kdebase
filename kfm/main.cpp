@@ -3,6 +3,7 @@
 #include "root.h"
 #include "kfmserver.h"
 #include "xview.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 #include <kapp.h>
@@ -71,7 +72,7 @@ int main( int argc, char ** argv )
     {
 	QString cmd;
 	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/kfmrc", kapp->kdedir().data(), getenv( "HOME" ) );
-	system( cmd.data() );
+	//	system( cmd.data() );
     }
     else
 	fclose( f2 );
@@ -122,33 +123,30 @@ int main( int argc, char ** argv )
     else
 	fclose( f2 );
 
+    KApplication a( argc, argv, "kfm" );
+    
+    // Stephan: I must find a better place for this somewhen
+    KFMPaths::initPaths();
+    
     // Test for existing Templates
-    bool bTemplates = TRUE;
-        c = getenv( "HOME" );
-    c += "/Desktop/Templates";
-    dp = opendir( c.data() );
+    bool bTemplates = true;
+    
+    dp = opendir( KFMPaths::TemplatesPath().data() );
     if ( dp == NULL )
-	bTemplates = FALSE;
+	bTemplates = false;
     else
       closedir( dp );
-
-    KApplication a( argc, argv, "kfm" );
 
     signal(SIGCHLD,sig_handler);
 
     // Test for directories
-    QString d = getenv( "HOME" );
-    d += "/Desktop";
-    testDir( d );
-    d = getenv( "HOME" );
-    d += "/Desktop/Trash";
-    testDir( d );
-    d = getenv( "HOME" );
-    d += "/Desktop/Templates";
-    testDir( d );
-    d = getenv( "HOME" );
-    d += "/Desktop/Autostart";
-    testDir( d );
+    QString d;
+
+    testDir( KFMPaths::DesktopPath() );
+    testDir( KFMPaths::TrashPath() );
+    testDir( KFMPaths::TemplatesPath() );
+    testDir( KFMPaths::AutostartPath() );
+
     QString kd = kapp->kdedir();
     d = kd.copy();
     d += "/apps";
@@ -157,6 +155,8 @@ int main( int argc, char ** argv )
     d += "/mimetypes";
     testDir( d );
     d = kd.copy();
+
+    // Stephan: This must change in the near future
     d += "/lib/pics";
     testDir( d );
     d = kd.copy();
@@ -170,7 +170,8 @@ int main( int argc, char ** argv )
     {
 	QMessageBox::message( "KFM Information", "Installing Templates" );
 	QString cmd;
-	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s/Desktop/Templates", kapp->kdedir().data(), getenv( "HOME" ) );
+	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s", 
+		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
 	system( cmd.data() );
     }
     
@@ -195,7 +196,11 @@ int main( int argc, char ** argv )
     
     debugT("1. Init KIOManager\n");
 
-    KIOServer *server = new KIOServer();
+    //Stephan: This variable is not deleted here, but in the 
+    // slotQuit methode of KFileWindow. I'm not that sure, if
+    // this is the best way! 
+    // KIOServer *server = new KIOServer();
+    new KIOServer();
 
     debugT("2. Init FileTypes\n");
     
@@ -207,13 +212,13 @@ int main( int argc, char ** argv )
     
     debugT("4. Init window\n");
     
-    bool openwin = TRUE;
+    bool openwin = true;
 
     int arg = 1;
     
     if ( argc > arg )
 	if ( strcmp( argv[arg++], "-d" ) == 0 )
-	    openwin = FALSE;
+	    openwin = false;
     
     if ( openwin )
     {
@@ -248,7 +253,7 @@ int main( int argc, char ** argv )
 
         XGetWindowProperty(a.getDisplay(),root,atom,
                            0L,4L,
-                           FALSE,AnyPropertyType,
+                           false,AnyPropertyType,
                            &ActualType,&ActualFormat,
                            &Size,&RemainingBytes,
                            &Data);
@@ -264,11 +269,11 @@ int main( int argc, char ** argv )
 
     debugT("5. running\n");
 
-    bool as = TRUE;
+    bool as = true;
     
     if ( argc > arg )
 	if ( strcmp( argv[arg++], "-na" ) == 0 )    
-	  as = FALSE;
+	  as = false;
     
     if ( as )
       autostart();

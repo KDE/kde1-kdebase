@@ -8,7 +8,7 @@
 
 KIOSlaveIPC::KIOSlaveIPC( int _port )
 {
-    bHeader = TRUE;
+    bHeader = true;
     cHeader = 0;
     pBody = 0L;
 
@@ -16,8 +16,8 @@ KIOSlaveIPC::KIOSlaveIPC( int _port )
     sock = new KSocket( "localhost", port );
     connect( sock, SIGNAL( readEvent(KSocket*) ), this, SLOT( readEvent(KSocket*) ) );
     connect( sock, SIGNAL( closeEvent(KSocket*) ), this, SLOT( closeEvent(KSocket*) ) );
-    sock->enableRead( TRUE );
-    connected = TRUE;
+    sock->enableRead( true );
+    connected = true;
 }
 
 KIOSlaveIPC::~KIOSlaveIPC()
@@ -30,14 +30,14 @@ bool KIOSlaveIPC::isConnected()
     return connected;
 }
 
-void KIOSlaveIPC::closeEvent( KSocket * _sock )
+void KIOSlaveIPC::closeEvent( KSocket * )
 {
-    connected = FALSE;
+    connected = false;
     debugT("##### KIOSLAVE close\n");
     exit(1);
 }
 
-void KIOSlaveIPC::readEvent( KSocket *_sock )
+void KIOSlaveIPC::readEvent( KSocket * )
 {
     debugT("##### KIOSLAVE read\n");
     if ( bHeader )
@@ -46,7 +46,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	n = read( sock->socket(), headerBuffer + cHeader, 1 );
 	if ( headerBuffer[ cHeader ] == ' ' )
 	{
-	    bHeader = FALSE;
+	    bHeader = false;
 	    cHeader = 0;
 	    bodyLen = atoi( headerBuffer );
 	    cBody = 0;
@@ -86,7 +86,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
     {
 	pBody[bodyLen] = 0;
 	debugT(">>'%s'\n",pBody);
-	bHeader = TRUE;
+	bHeader = true;
 	parse( pBody, bodyLen );
 	return;
     }

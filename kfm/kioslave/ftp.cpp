@@ -148,7 +148,7 @@ int KProtocolFTP::ftpOpen(const char *host)
 		return 0;
     }
     if (setsockopt(sControl,SOL_SOCKET,SO_REUSEADDR,
-		   SETSOCKOPT_OPTVAL_TYPE &on, sizeof(on)) == -1)
+		   (char*)&on, sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sControl);
@@ -253,14 +253,14 @@ int KProtocolFTP::ftpPort(void)
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_REUSEADDR,
-		   SETSOCKOPT_OPTVAL_TYPE &on,sizeof(on)) == -1)
+		   (char*) &on,sizeof(on)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);
 		return 0;
     }
     if (setsockopt(sDatal,SOL_SOCKET,SO_LINGER,
-		   SETSOCKOPT_OPTVAL_TYPE &lng,sizeof(lng)) == -1)
+		   (char*)&lng,sizeof(lng)) == -1)
     {
 		perror("setsockopt");
 		close(sDatal);

@@ -10,6 +10,7 @@
 #include "kioserver.h"
 #include "kfmprops.h"
 #include "kiojob.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 #include <qmsgbox.h>
@@ -91,11 +92,7 @@ void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
     
     QString dest = _dest_url;
     if ( dest == "trash:/" )
-    {
-	dest = "file:";
-	dest += QDir::homeDirPath().data();
-	dest += "/Desktop/Trash/";
-    }
+	dest = "file:" + KFMPaths::TrashPath();
 
     debugT("Moving to '%s'\n",dest.data());
     
@@ -123,11 +120,7 @@ void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
     
     QString dest = _dest_url;
     if ( dest == "trash:/" )
-    {
-	dest = "file:";
-	dest += QDir::homeDirPath().data();
-	dest += "/Desktop/Trash/";
-    }
+        dest = "file:" + KFMPaths::TrashPath();
 
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
@@ -163,11 +156,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	url = u.url().copy();
 	
 	if ( url == "trash:/" )
-	{
-	    url = "file:";
-	    url += QDir::homeDirPath().data();
-	    url += "/Desktop/Trash/";
-	}
+	    url = "file:" + KFMPaths::TrashPath();
 	
 	debugT("Seaerching window\n");
 	KfmGui *w = KfmGui::findWindow( url.data() );
@@ -186,7 +175,7 @@ void KFMServer::slotOpenURL( const char* _url )
     
     QString home = "file:";
     home += QDir::homeDirPath().data();
-    DlgLineEntry l( "Open Location:", home.data(), KRootWidget::getKRootWidget(), TRUE );
+    DlgLineEntry l( "Open Location:", home.data(), KRootWidget::getKRootWidget(), true );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -254,7 +243,7 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
 
 KFMClient::KFMClient( KSocket *_sock ) : KfmIpc( _sock )
 {
-    bAuth = TRUE;
+    bAuth = true;
     
     connect( this, SIGNAL( auth( const char* ) ), this, SLOT( slotAuth( const char* ) ) );
 }
@@ -284,11 +273,11 @@ void KFMClient::slotAuth( const char *_password )
     if ( KFMClient::password != _password )
     {
 	QMessageBox::message( "KFM Error", "Someone tried to authorize himself\nusing a wrong password" );
-	bAuth = FALSE;
+	bAuth = false;
 	return;
     }
 
-    bAuth = TRUE;
+    bAuth = true;
     connect( this, SIGNAL( copy( const char*, const char* ) ),
 	     this, SLOT( slotCopy( const char*, const char* ) ) );
     connect( this, SIGNAL( move( const char*, const char* ) ), 
@@ -314,11 +303,7 @@ void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
     
     QString dest = _dest_url;
     if ( dest == "trash:/" )
-    {
-	dest = "file:";
-	dest += QDir::homeDirPath().data();
-	dest += "/Desktop/Trash/";
-    }
+	dest = "file:" + KFMPaths::TrashPath();
 
     debugT("Moving to '%s'\n",dest.data());
     

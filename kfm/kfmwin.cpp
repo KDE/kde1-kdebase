@@ -49,8 +49,8 @@ KFileWindow* KFileWindow::findWindow( const char *_url )
 KFileWindow::KFileWindow( QWidget *, const char *name, const char* _url )
     : KTopLevelWidget( name )
 {
-    bTreeViewInitialized = FALSE;
-    bTreeView = FALSE;
+    bTreeViewInitialized = false;
+    bTreeView = false;
     
     if ( _url != 0L )
     {
@@ -59,36 +59,27 @@ KFileWindow::KFileWindow( QWidget *, const char *name, const char* _url )
 	{
 	    /// TODO: Eine fehlerseite anzeigen, denn dieses Fenster schmiert ab, wenn es
 	    /// geschlossen wird.
-	    printf("ERROR: Malformed URL '%s'\n",_url );
+	    warning("ERROR: Malformed URL '%s'",_url );
 	    return;
 	}
     }
     
     popupMenu = 0L;
     viewMode = ICON_VIEW;
-    showDot = FALSE;
-    visualSchnauzer = FALSE;
+    showDot = false;
+    visualSchnauzer = false;
     
-    bViewHTML = TRUE;
+    bViewHTML = true;
     actualManager = 0L;
-    stackLock = FALSE;
+    stackLock = false;
 
-    KConfig *config = KApplication::getKApplication()->getConfig();
-    config->setGroup( "Templates" );
-    templatePath = config->readEntry( "Path" );
-    if ( templatePath.isNull() )
-    {
-	printf("ERROR: No path for templates specified in config files\n");
-	exit(1);
-    }
-    
     if ( _url != 0L )
-	init( _url );
+        init( _url );
 
-    backStack.setAutoDelete( FALSE );
-    forwardStack.setAutoDelete( FALSE );
+    backStack.setAutoDelete( false );
+    forwardStack.setAutoDelete( false );
 
-    windowList.setAutoDelete( FALSE );
+    windowList.setAutoDelete( false );
     windowList.append( this );
 }
 
@@ -212,12 +203,13 @@ void KFileWindow::initMenu()
     CHECK_PTR( menuNew );
     menuNew->insertItem( "Folder" );
 
-    connect( menuNew, SIGNAL( activated( int ) ), this, SLOT( slotNewFile( int ) ) );
+    connect( menuNew, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotNewFile( int ) ) );
 
-    QDir d( templatePath );
+    QDir d( KFMPaths::TemplatesPath() );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
-	printf("ERROR: Template does not exist '%s'\n",templatePath.data());
+       warning("ERROR: Template does not exist '%s'",templatePath.data());
     else
     {
 	QFileInfoListIterator it( *list );      // create list iterator
@@ -225,9 +217,11 @@ void KFileWindow::initMenu()
 
 	while ( ( fi = it.current() ) != 0L )
 	{
-	    if ( strcmp( fi->fileName().data(), "." ) != 0 && strcmp( fi->fileName().data(), ".." ) != 0 )
-		menuNew->insertItem( fi->fileName().data() );
-	    ++it;                               // goto next list element
+	   if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+		strcmp( fi->fileName().data(), ".." ) != 0 )
+	     
+	       menuNew->insertItem( fi->fileName().data() );
+	     ++it;                               // goto next list element
 	}
     }
     
@@ -316,40 +310,49 @@ void KFileWindow::initToolBar()
     path = KFileType::getIconPath() + QString("/toolbar/");
     
     pixmap.load(path + "back.xpm");
-    toolbar->insertItem(pixmap, 0, SIGNAL( clicked() ), this, SLOT( slotBack() ), FALSE, "Back");
+    toolbar->insertItem(pixmap, 0, SIGNAL( clicked() ), 
+			this, SLOT( slotBack() ), false, "Back");
     
     pixmap.load(path + "forward.xpm");
-    toolbar->insertItem(pixmap, 1, SIGNAL( clicked() ), this, SLOT( slotForward() ), FALSE, "Forward");
+    toolbar->insertItem(pixmap, 1, SIGNAL( clicked() ), this, 
+			SLOT( slotForward() ), false, "Forward");
     
     pixmap.load(path + "home.xpm");
-    toolbar->insertItem(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
+    toolbar->insertItem(pixmap, 2, SIGNAL( clicked() ), 
+			this, SLOT( slotHome() ), true, "Home");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbar->insertItem(pixmap, 3, SIGNAL( clicked() ), this, SLOT( slotViewUpdate() ), TRUE, "Reload");
+    toolbar->insertItem(pixmap, 3, SIGNAL( clicked() ), 
+			this, SLOT( slotViewUpdate() ), true, "Reload");
 
     toolbar->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbar->insertItem(pixmap, 4, SIGNAL( clicked() ), this, SLOT( slotCopy() ), TRUE, "Copy");
+    toolbar->insertItem(pixmap, 4, SIGNAL( clicked() ), 
+			this, SLOT( slotCopy() ), true, "Copy");
     
     pixmap.load(path + "editpaste.xpm");
-    toolbar->insertItem(pixmap, 5, SIGNAL( clicked() ), this, SLOT( slotPaste() ), TRUE, "Paste");
+    toolbar->insertItem(pixmap, 5, SIGNAL( clicked() ), 
+			this, SLOT( slotPaste() ), true, "Paste");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbar->insertItem(pixmap, 6, SIGNAL( clicked() ), this, SLOT( slotHelp() ), TRUE, "Help");
+    toolbar->insertItem(pixmap, 6, SIGNAL( clicked() ), 
+			this, SLOT( slotHelp() ), true, "Help");
     
     toolbar->insertSeparator();
     
     pixmap.load(path + "exit.xpm");
-    toolbar->insertItem(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
+    toolbar->insertItem(pixmap, 7, SIGNAL( clicked() ), 
+			this, SLOT( slotStop() ), false, "Stop");
     
     toolbar->show();
-    toolbar->enableMoving(FALSE);     
-    topOffset = menu->frameGeometry().height() + toolbar->frameGeometry().height();
+    toolbar->enableMoving(false);     
+    topOffset = menu->frameGeometry().height() + 
+      toolbar->frameGeometry().height();
 }
 
 void KFileWindow::initView()
@@ -357,8 +360,10 @@ void KFileWindow::initView()
     horz = new QScrollBar( 0, 0, 10, width(), 0, QScrollBar::Horizontal, pannerChild1, "horz" );
     horz->setGeometry( 0, height() - 16 - 20, width() - 16, 16 );
 
-    vert = new QScrollBar( 0, 0, 65, height(), 0, QScrollBar::Vertical, pannerChild1, "vert" );
-    vert->setGeometry( width() - 16, topOffset, 16, height() - topOffset - 16- 20 );
+    vert = new QScrollBar( 0, 0, 65, height(), 0, 
+			   QScrollBar::Vertical, pannerChild1, "vert" );
+    vert->setGeometry( width() - 16, topOffset, 16, 
+		       height() - topOffset - 16- 20 );
 
     //    horz->setGeometry( 0, pannerChild1->height() - 16, pannerChild1->width() - 16, 16 );
     //    vert->setGeometry( pannerChild1->width() - 16, 0, 16, pannerChild1->height() - 16 );
@@ -369,23 +374,34 @@ void KFileWindow::initView()
     CHECK_PTR( view );
 
     dropZone = new KDNDDropZone( view , DndURL);
-    view->setGeometry( 0, topOffset , width() - vert->width() , height() - topOffset - horz->height() - 20 );
+    view->setGeometry( 0, topOffset , width() - vert->width() , 
+		       height() - topOffset - horz->height() - 20 );
 
-    connect( view, SIGNAL( scrollVert( int ) ), SLOT( slotScrollVert( int ) ) );
-    connect( view, SIGNAL( scrollHorz( int ) ), SLOT( slotScrollHorz( int ) ) );
+    connect( view, SIGNAL( scrollVert( int ) ), 
+	     SLOT( slotScrollVert( int ) ) );
+    connect( view, SIGNAL( scrollHorz( int ) ), 
+	     SLOT( slotScrollHorz( int ) ) );
+    connect( vert, SIGNAL( valueChanged(int) ), 
+	     view, SLOT( slotScrollVert(int) ) );
+    connect( horz, SIGNAL( valueChanged(int) ), 
+	     view, SLOT( slotScrollHorz(int) ) );
+    connect( view, SIGNAL( setTitle(const char *)), 
+	     this, SLOT( slotTitle(const char *)) );
+    connect( view, SIGNAL( doubleClick(const char *, int)), 
+	     this, SLOT( slotDoubleClick(const char *, int)) );
+    connect( view, SIGNAL( popupMenu(const char *, const QPoint & )), 
+	     this, SLOT( slotPopupMenu(const char *, const QPoint &)) );
+    connect( view, SIGNAL( popupMenu2( QStrList&, const QPoint & )), 
+	     this, SLOT( slotPopupMenu( QStrList&, const QPoint &)) );
+    connect( view, SIGNAL( documentChanged() ), 
+	     this, SLOT( slotDocumentChanged() ) );
 
-    connect( vert, SIGNAL( valueChanged(int) ), view, SLOT( slotScrollVert(int) ) );
-    connect( horz, SIGNAL( valueChanged(int) ), view, SLOT( slotScrollHorz(int) ) );
-
-    connect( view, SIGNAL( setTitle(const char *)), this, SLOT( slotTitle(const char *)) );
-    connect( view, SIGNAL( doubleClick(const char *, int)), this, SLOT( slotDoubleClick(const char *, int)) );
-    connect( view, SIGNAL( popupMenu(const char *, const QPoint & )), this, SLOT( slotPopupMenu(const char *, const QPoint &)) );
-    connect( view, SIGNAL( popupMenu2( QStrList&, const QPoint & )), this, SLOT( slotPopupMenu( QStrList&, const QPoint &)) );
-    connect( view, SIGNAL( documentChanged() ), SLOT( slotDocumentChanged() ) );
-
-    connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ), this, SLOT( slotDropEvent( KDNDDropZone *) ) );
-    connect( dropZone, SIGNAL( dropEnter( KDNDDropZone *) ), this, SLOT( slotDropEnterEvent( KDNDDropZone *) ) );
-    connect( dropZone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
+    connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ), 
+	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
+    connect( dropZone, SIGNAL( dropEnter( KDNDDropZone *) ), 
+	     this, SLOT( slotDropEnterEvent( KDNDDropZone *) ) );
+    connect( dropZone, SIGNAL( dropLeave( KDNDDropZone *) ), 
+	     this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 }
 
 void KFileWindow::closeEvent( QCloseEvent *e )
@@ -448,7 +464,8 @@ void KFileWindow::slotTerminal()
 {
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "Terminal" );
-    QString term = config->readEntry( "Terminal" );
+    QString term = "kvt";
+    term = config->readEntry( "Terminal", &term );
 
     QString dir = getenv( "HOME" );
     
@@ -494,7 +511,7 @@ void KFileWindow::slotIconView()
 	return;
     
     viewMode = ICON_VIEW;
-    actualManager->openURL( actualManager->getURL(), FALSE );
+    actualManager->openURL( actualManager->getURL(), false );
     refresh( actualManager );
 }
 
@@ -504,7 +521,7 @@ void KFileWindow::slotLongView()
 	return;
     
     viewMode = LONG_VIEW;
-    actualManager->openURL( actualManager->getURL(), FALSE );
+    actualManager->openURL( actualManager->getURL(), false );
     refresh( actualManager );
 }
 
@@ -514,7 +531,7 @@ void KFileWindow::slotTextView()
 	return;
     
     viewMode = TEXT_VIEW;
-    actualManager->openURL( actualManager->getURL(), FALSE );
+    actualManager->openURL( actualManager->getURL(), false );
     refresh( actualManager );
 }
 
@@ -527,9 +544,9 @@ void KFileWindow::slotSelect()
 	if ( pattern.length() == 0 )
 	    return;
 
-	QRegExp re( pattern, TRUE, TRUE );
+	QRegExp re( pattern, true, true );
 	
-	view->select( 0L, re, TRUE );
+	view->select( 0L, re, true );
     }
 }
 
@@ -618,7 +635,7 @@ void KFileWindow::slotNewFile( int _id )
 	else
 	{
 	    KIOJob * job = new KIOJob;
-	    QString src = templatePath.data();
+	    QString src = KFMPaths::TemplatesPath();
 	    if ( src.right( 1 ) != "/" )
 		src += "/";
 	    src += p.data();
@@ -627,7 +644,7 @@ void KFileWindow::slotNewFile( int _id )
 	    if ( dest.right( 1 ) != "/" )
 		dest += "/";
 	    dest += name.data();
-	    printf("Command copy '%s' '%s'\n",src.data(),dest.data());
+	    debugT("Command copy '%s' '%s'\n",src.data(),dest.data());
 	    job->copy( src.data(), dest.data() );
 	}
     }
@@ -647,15 +664,15 @@ void KFileWindow::slotForward()
     QString *s2 = new QString( actualManager->getURL() );
     s2->detach();
     backStack.push( s2 );
-    enableToolbarButton( 0, TRUE );
+    enableToolbarButton( 0, true );
 
     QString *s = forwardStack.pop();
     if ( forwardStack.isEmpty() )
-	enableToolbarButton( 1, FALSE );
+	enableToolbarButton( 1, false );
     
-    stackLock = TRUE;
+    stackLock = true;
     openURL( s->data() );
-    stackLock = FALSE;
+    stackLock = false;
 
     delete s;
 }
@@ -668,15 +685,15 @@ void KFileWindow::slotBack()
     QString *s2 = new QString( actualManager->getURL() );
     s2->detach();
     forwardStack.push( s2 );
-    enableToolbarButton( 1, TRUE );
+    enableToolbarButton( 1, true );
     
     QString *s = backStack.pop();
     if ( backStack.isEmpty() )
-	enableToolbarButton( 0, FALSE );
+	enableToolbarButton( 0, false );
     
-    stackLock = TRUE;
+    stackLock = true;
     openURL( s->data() );
-    stackLock = FALSE;
+    stackLock = false;
 
     delete s;
 }
@@ -776,7 +793,7 @@ void KFileWindow::slotShowTreeView()
     bTreeView = !bTreeView;
     if ( !bTreeViewInitialized )
     {
-	bTreeViewInitialized = TRUE;
+	bTreeViewInitialized = true;
 	treeView->initializeTree();  
     }
     
@@ -801,7 +818,7 @@ void KFileWindow::slotShowTreeView()
 
 void KFileWindow::slotViewUpdate( )
 {
-    actualManager->openURL( actualManager->getURL(), TRUE );
+    actualManager->openURL( actualManager->getURL(), true );
     refresh( actualManager );
 }
 
@@ -844,7 +861,7 @@ void KFileWindow::slotMountNotify()
     QString u = actualManager->getURL().data();
     
     if ( strncmp( u, "file:" , 5 ) == 0 )
-	actualManager->openURL( u.data(), TRUE );
+	actualManager->openURL( u.data(), true );
 }
 
 void KFileWindow::slotFilesChanged( const char *_url )
@@ -863,7 +880,7 @@ void KFileWindow::slotFilesChanged( const char *_url )
 
     printf("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
     if ( u1 == u2 )
-	actualManager->openURL( actualManager->getURL().data(), TRUE );
+	actualManager->openURL( actualManager->getURL().data(), true );
     printf("Changed\n");
 }
 
@@ -1114,7 +1131,7 @@ void KFileWindow::openURL( const char *_url )
     else */
 	url = _url;
     
-    bool erg = FALSE;
+    bool erg = false;
     
     QString old_url = "";
     if ( actualManager != 0L )
@@ -1158,11 +1175,11 @@ void KFileWindow::openURL( const char *_url )
 	QString *s = new QString( old_url.data() );
 	s->detach();
 	backStack.push( s );
-	enableToolbarButton( 0, TRUE );
-	forwardStack.setAutoDelete( TRUE );
+	enableToolbarButton( 0, true );
+	forwardStack.setAutoDelete( true );
 	forwardStack.clear();
-	forwardStack.setAutoDelete( FALSE );
-	enableToolbarButton( 1, FALSE );
+	forwardStack.setAutoDelete( false );
+	enableToolbarButton( 1, false );
     }
 }
 
@@ -1259,7 +1276,7 @@ void KFileWindow::slotOnURL( const char *_url )
         QString text;
 	QString text2;
 	if ( strcmp( url.protocol(), "tar" ) == 0 )
-	  text = url.filename( TRUE );
+	  text = url.filename( true );
 	else
 	  text = url.filename();
 	text2 = text;

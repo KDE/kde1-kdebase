@@ -14,6 +14,7 @@
 #include "root.h"
 #include "kfmprops.h"
 #include "kfmdlg.h"
+#include "kfmpaths.h"
 #include <config-kfm.h>
 
 #include <X11/Xlib.h>
@@ -49,9 +50,9 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     popupMenuPosition = QCursor::pos();   
     
     QStrList bindings;
-    bindings.setAutoDelete( TRUE );
+    bindings.setAutoDelete( true );
     QStrList bindings2;
-    bindings2.setAutoDelete( TRUE );
+    bindings2.setAutoDelete( true );
     
     // char buffer[ 1024 ];
     
@@ -60,7 +61,7 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     
     if ( istrash )
     {
-	bool isempty = TRUE;
+	bool isempty = true;
         DIR *dp;
         struct dirent *ep;
         dp = opendir( _urls.first() + 5 );
@@ -69,32 +70,42 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	    ep=readdir( dp );
 	    ep=readdir( dp );      // ignore '.' and '..' dirent
 	    if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
-		isempty = FALSE;
+		isempty = false;
 	    closedir( dp );
 	}
 
 	int id;
-	id = popupMenu->insertItem( "Open", rootWidget, SLOT( slotPopupNewView() ) );
-	id = popupMenu->insertItem( "Empty Trash Bin", rootWidget, SLOT( slotPopupEmptyTrash() ) );
+	id = popupMenu->insertItem( "Open", rootWidget, 
+				    SLOT( slotPopupNewView() ) );
+	id = popupMenu->insertItem( "Empty Trash Bin", rootWidget, 
+				    SLOT( slotPopupEmptyTrash() ) );
 	if ( !isempty )
-	    popupMenu->setItemEnabled( id, FALSE );
+	    popupMenu->setItemEnabled( id, false );
     }
     else if ( isdir )
     {
 	int id;
-	id = popupMenu->insertItem( "New View", rootWidget, SLOT( slotPopupNewView() ) );
-	id = popupMenu->insertItem( "Copy", rootWidget, SLOT( slotPopupCopy() ) );
-	id = popupMenu->insertItem( "Move to Trash",  rootWidget, SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem( "Delete",  rootWidget, SLOT( slotPopupDelete() ) );
+	id = popupMenu->insertItem( "New View", rootWidget, 
+				    SLOT( slotPopupNewView() ) );
+	id = popupMenu->insertItem( "Copy", rootWidget, 
+				    SLOT( slotPopupCopy() ) );
+	id = popupMenu->insertItem( "Move to Trash",  rootWidget, 
+				    SLOT( slotPopupTrash() ) );
+	id = popupMenu->insertItem( "Delete",  rootWidget, 
+				    SLOT( slotPopupDelete() ) );
     }
     else
     {
 	int id;
-	id = popupMenu->insertItem( "Open With", rootWidget, SLOT( slotPopupOpenWith() ) );
+	id = popupMenu->insertItem( "Open With", rootWidget, 
+				    SLOT( slotPopupOpenWith() ) );
 	popupMenu->insertSeparator();    
-	id = popupMenu->insertItem( "Copy", rootWidget, SLOT( slotPopupCopy() ) );
-	id = popupMenu->insertItem( "Move to Trash",  rootWidget, SLOT( slotPopupTrash() ) );
-	id = popupMenu->insertItem( "Delete", rootWidget, SLOT( slotPopupDelete() ) );
+	id = popupMenu->insertItem( "Copy", rootWidget, 
+				    SLOT( slotPopupCopy() ) );
+	id = popupMenu->insertItem( "Move to Trash",  rootWidget, 
+				    SLOT( slotPopupTrash() ) );
+	id = popupMenu->insertItem( "Delete", rootWidget, 
+				    SLOT( slotPopupDelete() ) );
     }
     
     rootWidget->setPopupFiles( _urls );
@@ -175,17 +186,16 @@ KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( par
     manager = new KRootManager( this );
     popupMenu = new QPopupMenu();
     
-    noUpdate = FALSE;
+    noUpdate = false;
     
     pKRootWidget = this;
     
-    desktopDir = "file:";
-    desktopDir += QDir::homeDirPath().data();
-    desktopDir += "/Desktop/";
-
+    desktopDir = "file:" + KFMPaths::DesktopPath();
+    
     connect( KIOServer::getKIOServer(), SIGNAL( notify( const char *) ),
     	     this, SLOT( slotFilesChanged( const char *) ) );
-    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), this, SLOT( update() ) );
+    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), 
+	     this, SLOT( update() ) );
 
     icon_list.setAutoDelete( true );
     layoutList.setAutoDelete( true );
@@ -328,21 +338,21 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
     {
 	for ( int y = 80; y <= dheight - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
 	{	
-	    bool isOK = TRUE;
+	    bool isOK = true;
 	    
 	    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	    {
 		debugT("Testing %i|%i against %i|%i '%s'\n",x,y,icon->x(),icon->y(),icon->getURL() );
 		QRect r1( x, y, _width, _height );
 		QRect r2( icon->x(), icon->y(), icon->QWidget::width(),icon->QWidget::height() );
-		if ( r1.intersects( r2 ) == FALSE )
+		if ( r1.intersects( r2 ) == false )
 		{
 		    QRect r3( x + ( ROOT_GRID_WIDTH - _width ) / 2, y, _width, _height );
-		    if ( r2.intersects( r3 ) == TRUE )
-			isOK = FALSE;
+		    if ( r2.intersects( r3 ) == true )
+			isOK = false;
 		}
 		else
-		    isOK = FALSE;
+		    isOK = false;
 	    }
 	    if ( isOK )
 		return QPoint( x + ( ROOT_GRID_WIDTH - _width ) / 2, y );
@@ -384,7 +394,8 @@ void KRootWidget::update()
     
     loadLayout();
     
-    KURL u ( desktopDir.data() );
+    KURL u ( KFMPaths::DesktopPath() ); // KURL::KURL adds a file:
+
     if ( u.isMalformed() )
     {
 	debugT("Internal Error: desktopDir is malformed\n");
@@ -405,7 +416,7 @@ void KRootWidget::update()
     }
     
     QList<KRootIcon> found_icons;
-    found_icons.setAutoDelete( FALSE );
+    found_icons.setAutoDelete( false );
 
     // go thru all files in ~/Desktop.
     while ( ( ep = readdir( dp ) ) != 0L )
@@ -532,12 +543,12 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     if ( dp == NULL )
     {
 	debugT("ERROR: Could not read desktop directory\n");
-	noUpdate = FALSE;
+	noUpdate = false;
 	return;
     }
     
     QList<KRootIcon> found_icons;
-    found_icons.setAutoDelete( FALSE );
+    found_icons.setAutoDelete( false );
 
     // go thru all files in ~/Desktop. Search for new files. We assume that they
     // are a result of the drop. This may be wrong, but it is the best method yet.
@@ -650,25 +661,37 @@ void KRootWidget::slotFilesChanged( const char *_url )
     }
     
     // Calculate the path of the trash bin
-    QString d = getenv( "HOME" );
-    d += "/Desktop/Trash/";
+    QString d = KFMPaths::TrashPath();
 
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
-    
+   
+     QString path = u.path();
+     if ( path.right(1) != "/" )
+     	 path += "/";
     // Update the icon for the trash bin ?
-    if ( strcmp( u.protocol(), "file" ) == 0L && strcmp( u.path(), d.data() ) == 0L )
+    if ( strcmp( u.protocol(), "file" ) == 0L && 
+	 KFMPaths::TrashPath() == path )
     {
 	KRootIcon *icon;
 	// Find the icon representing the trash bin
 	for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	{
+	  /* Stephan: I don't know, why Torben did this in this way:
 	    QString t = icon->getURL();
 	    if ( t.right(1) != "/" )
 		t += "/";
 	    if ( t.right( 7 ) == "/Trash/" )
 		icon->updatePixmap();
+		*/
+	  // Stephan: my replacement
+	  path = icon->getURL();
+	  if ( path.right(1) != "/" )
+	    path += "/";
+	  QString path2 = QString("file:") + KFMPaths::TrashPath();
+	  if ( path2 == path )
+	    icon->updatePixmap();
 	}
     }
 }
@@ -680,7 +703,7 @@ void KRootWidget::setPopupFiles( QStrList &_files )
 
 void KRootWidget::slotPopupOpenWith()
 {
-    DlgLineEntry l( "Open With:", "", this, TRUE );
+    DlgLineEntry l( "Open With:", "", this, true );
     if ( l.exec() )
     {
 	QString pattern = l.getText();
@@ -760,9 +783,7 @@ void KRootWidget::slotPopupTrash()
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
       debugT("&&> '%s'\n",s);
     
-    QString dest = "file:";
-    dest += QDir::homeDirPath().data();
-    dest += "/Desktop/Trash/";
+    QString dest = "file:" + KFMPaths::TrashPath();
     job->move( popupFiles, dest );
 }
 
@@ -788,9 +809,7 @@ void KRootWidget::slotPopupNewView()
 
 void KRootWidget::slotPopupEmptyTrash()
 {
-    QString d = getenv( "HOME" );
-    d += "/Desktop/Trash";
-
+    QString d = KFMPaths::TrashPath();
     QStrList trash;
     
     DIR *dp;
@@ -802,10 +821,7 @@ void KRootWidget::slotPopupEmptyTrash()
 	{
 	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
 	    {
-		QString t = "file:";
-		t += d.data();
-		t += "/";
-		t += ep->d_name;
+		QString t = "file:" + d + ep->d_name;
 		trash.append( t.data() );
 	    }
 	}
@@ -942,9 +958,7 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
     {
 	KIOJob * job = new KIOJob;
 
-	QString dest = "file:";
-	dest += QDir::homeDirPath().data();
-	dest += "/Desktop/Trash/";
+	QString dest = "file:" + KFMPaths::TrashPath();
 	job->move( list, dest );
 	return;
     }
