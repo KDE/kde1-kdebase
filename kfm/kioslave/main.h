@@ -59,6 +59,11 @@ public slots:
     void slotRedirection( const char *_redirect );
     
 protected:
+    /**
+     * Open a protocol with taking care of redirection
+     */
+    int OpenWithRedirect(KProtocol *prot, KURL *url, int mode);
+
     void ProcessError(KProtocol *, const char *);
     
     void get( const char *_url, bool _reload=false, const char *_data=0L, const char *_cookies=0L);

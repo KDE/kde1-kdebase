@@ -95,8 +95,8 @@ void HTMLCache::slotURLRequest( const char *_url )
     
     KURL u( _url );
     
-    QString tmp( KFMPaths::CachePath().data() );
-    tmp << "/" << time(0L) << "." << fileId++ << u.filename();
+    QString tmp( "file:" );
+    tmp << KFMPaths::CachePath().data() << "/" << time(0L) << "." << fileId++ << u.filename();
     
     job = new HTMLCacheJob( _url, tmp.data() );
     job->display( false );

@@ -111,6 +111,21 @@ void KIOSlave::slotRedirection( const char *_url )
     sRedirection = _url;
 }
 
+int KIOSlave::OpenWithRedirect(KProtocol *prot, KURL *url, int mode)
+{
+    int result = KProtocol::FAIL;
+    for(;;)
+    {
+       sRedirection = "";
+       result = prot->Open(url, KProtocol::READ);
+       if (sRedirection.isEmpty())
+           break;
+       *url = sRedirection.data();
+    }
+    return result;
+}
+
+
 void KIOSlave::mkdir( const char *_url )
 {
     KURL u( _url );
@@ -449,6 +464,11 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		KProtocol *src_prot = CreateProtocol(_src_url);
 		KProtocol *dest_prot = CreateProtocol(_dest_url);
 
+                connect( src_prot, SIGNAL( redirection( const char* ) ),
+                         ipc, SLOT( redirection( const char* ) ) );
+                connect( src_prot, SIGNAL( redirection( const char* ) ),
+                         this, SLOT( slotRedirection( const char* ) ) );
+
 		int destmode = KProtocol::WRITE;
 		if( _overwriteExistingFiles ) destmode |= KProtocol::OVERWRITE;
 	
@@ -457,13 +477,11 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 		    ProcessError(dest_prot, _dest_url);
 		    return;
 		}
-
-		if( src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS )
+		if( OpenWithRedirect(src_prot, &su, KProtocol::READ) != KProtocol::SUCCESS )
 		{
 		    ProcessError(src_prot, _src_url);
 		    return;
 		}
-
 		long c = 0, l = 1;
 		float last = 0.0;
 		long size = src_prot->Size();
