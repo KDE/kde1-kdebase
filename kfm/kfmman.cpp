@@ -1154,9 +1154,6 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point, bool _cu
     {
 	int id;
 
-        popupMenu->insertItem( klocale->translate("&New"), menuNew );
-        popupMenu->insertSeparator();
-
         /* Commented out. Left click does it. Why have it on right click menu ?. David.
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
 				    view, SLOT( slotPopupCd() ) );

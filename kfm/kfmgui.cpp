@@ -246,31 +246,10 @@ void KfmGui::initMenu()
 	}
     }
 
-    QPopupMenu *file = new QPopupMenu;
-    CHECK_PTR( file );
-    file->insertItem( klocale->translate("&New"), menuNew );
-    file->insertSeparator();
-    file->insertItem( klocale->translate("New &Window"), 
-		      this, SLOT(slotNewWindow()) );
-    file->insertSeparator();
-    file->insertItem( klocale->translate("&Run..."), 
-		      this, SLOT(slotRun()) );
-    file->insertItem( klocale->translate("Open &Terminal"), 
-		      this, SLOT(slotTerminal()), CTRL+Key_T );
-    file->insertSeparator();
-    file->insertItem( klocale->translate("&Open Location..."),
-		      this, SLOT(slotOpenLocation()), CTRL+Key_L );
-    file->insertItem( klocale->translate("&Find"), this, 
-		      SLOT(slotToolFind()), CTRL+Key_F );
-    file->insertSeparator();
-    file->insertItem( klocale->translate("&Print..."), 
-		      this, SLOT(slotPrint()) );
-    file->insertSeparator();        
-    file->insertItem( klocale->translate("&Close"), 
-		      this, SLOT(slotClose()), CTRL+Key_W );
-// This was meant for testing only. (hoelzer)
-//    file->insertItem( klocale->translate("&Quit..."),  
-//		      this, SLOT(slotQuit()), CTRL+Key_Q );
+    mfile = new QPopupMenu;
+    CHECK_PTR( mfile );
+
+    connect( mfile, SIGNAL(aboutToShow()), this, SLOT(slotFile()) );
 
     QPopupMenu *edit = new QPopupMenu;
     CHECK_PTR( edit );
@@ -461,7 +440,7 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
 	menu->setBackgroundColor( red );
     
     CHECK_PTR( menu );
-    menu->insertItem( klocale->translate("&File"), file );
+    menu->insertItem( klocale->translate("&File"), mfile );
     menu->insertItem( klocale->translate("&Edit"), edit );
     menu->insertItem( klocale->translate("&View"), mview );
     menu->insertItem( klocale->translate("&Go"), mgo );
@@ -1015,6 +994,44 @@ void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
 	    fillBookmarkMenu( bm, subMenu );
 	}
     }
+}
+
+void KfmGui::slotFile()
+{
+  mfile->clear();
+
+  QString url = "file:";
+  url.append(KFMPaths::TrashPath());
+  debug("url:   %s",view->getURL() );
+  debug("trash: %s",url.data());
+  if( view->getURL() == url ) 
+    mfile->insertItem( klocale->getAlias(ID_STRING_TRASH), 
+	        	   view, SLOT( slotPopupEmptyTrashBin() ) );
+  else 
+    mfile->insertItem( klocale->translate("&New"), menuNew );
+
+  mfile->insertSeparator();
+  mfile->insertItem( klocale->translate("New &Window"), 
+	             this, SLOT(slotNewWindow()) );
+  mfile->insertSeparator();
+  mfile->insertItem( klocale->translate("&Run..."), 
+		     this, SLOT(slotRun()) );
+  mfile->insertItem( klocale->translate("Open &Terminal"), 
+		     this, SLOT(slotTerminal()), CTRL+Key_T );
+  mfile->insertSeparator();
+  mfile->insertItem( klocale->translate("&Open Location..."),
+		     this, SLOT(slotOpenLocation()), CTRL+Key_L );
+  mfile->insertItem( klocale->translate("&Find"), 
+                     this, SLOT(slotToolFind()), CTRL+Key_F );
+  mfile->insertSeparator();
+  mfile->insertItem( klocale->translate("&Print..."), 
+               	     this, SLOT(slotPrint()) );
+  mfile->insertSeparator();        
+  mfile->insertItem( klocale->translate("&Close"), 
+		     this, SLOT(slotClose()), CTRL+Key_W );
+// This was meant for testing only. (hoelzer)
+//    file->insertItem( klocale->translate("&Quit..."),  
+//		      this, SLOT(slotQuit()), CTRL+Key_Q );
 }
 
 void KfmGui::slotNewFile( int _id )

@@ -176,6 +176,10 @@ public:
 
 public slots:
     /**
+     * Menu "File->*"
+     */
+    void slotFile();
+    /**
      * Menu "File->Close"
      */
     void slotClose();
@@ -598,6 +602,7 @@ protected:
 
     KStatusBar *statusBar;
 
+    QPopupMenu *mfile;
     QPopupMenu *mview;
     QPopupMenu *mgo;
     QPopupMenu *mcache;

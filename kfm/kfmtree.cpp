@@ -100,7 +100,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
     if ( u.isMalformed() )
 	return;
     
-    printf("slotshowDirectory(%s)\n",_url);
+    // debug("slotshowDirectory(%s)\n",_url);
 
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
@@ -141,7 +141,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         }
         if (found) continue;
         if (comparelength==1) {
-	    printf("should never happen!\n");
+	    debug("should never happen!\n");
 	    break;
 	    }
         comparelength--;
@@ -151,7 +151,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         if (comparelength<=0) comparelength=1;
         if (++loops>128) break;     // race condition ?
         }
-    printf("\"%s\" not opened\n",tmp);
+    debug("\"%s\" not opened\n",tmp);
 }
 
 void KFMDirTree::slotDirectoryChanged( const char *_url )
@@ -529,7 +529,6 @@ void KFMDirTree::slotNewFile( int _id )
 	    KIOJob * job = new KIOJob;
 	    QString u = popupDir;
 	    u.detach();
-            debug("url: %s",u.data());
 	    if ( u.right( 1 ) != "/" )
 		u += "/";
 	    u += name.data();
