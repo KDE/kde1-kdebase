@@ -358,7 +358,7 @@ void KRootWm::updateNewMenu (void)
 		 strcmp( fi->fileName().data(), ".." ) != 0 )
 	    {
 		QString tmp = fi->fileName().data();
-                KSimpleConfig config(templatePath + tmp.data());
+                KSimpleConfig config(templatePath + tmp.data(), true);
                 config.setGroup( "KDE Desktop Entry" );
 		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
@@ -737,7 +737,7 @@ void KRootWm::slotNewFile( int _id )
 
     if ( strcmp( tmp.data(), "Folder" ) != 0 ) {
       QString x = templatePath + p.data();
-      KSimpleConfig config(x);
+      KSimpleConfig config(x, true);
       config.setGroup( "KDE Desktop Entry" );
       if ( tmp.right(7) == ".kdelnk" )
 	tmp.truncate( tmp.length() - 7 );
