@@ -534,7 +534,7 @@ void kVt::color_menu_activated( int item){
     break;
   case 3: 
     fg_string = "black";
-    bg_string = "lightyellow";
+    bg_string = "#ffffe0";
     break;
   }
   if (!keyboard_secured){
