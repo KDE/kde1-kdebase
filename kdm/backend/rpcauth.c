@@ -43,7 +43,9 @@ from the X Consortium.
 #endif
 
 # include   <X11/Xos.h>
+#ifdef HAVE_RPC_RPC_H
 # include   <rpc/rpc.h>
+#endif
 #ifdef HAVE_RPC_KEY_PROT_H
 # include   <rpc/key_prot.h>
 #endif

@@ -22,7 +22,7 @@
 # define SECURE_RPC 1
 #endif
 
-#ifdef HAVE_PAM_LIB
+#ifdef HAVE_PAM
 # define USE_PAM 1
 #else
 # ifdef HAVE_SHADOW

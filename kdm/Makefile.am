@@ -5,7 +5,7 @@ SUBDIRS		= config pics @xdmconfigsubdir@
 MOC	 = @MOC@
 
 # Extra lib. Might be -lpam -dl or -lshadow or nonthing
-PASSWDLIB=@PASSWDLIB@
+PASSWDLIB=@PASSWDLIB@ @PAMLIBS@
 
 INCLUDES = -I.. @all_includes@
 
