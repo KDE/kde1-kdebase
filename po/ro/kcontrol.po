@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"POT-Creation-Date: 1998-09-10 14:40+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -43,3 +43,30 @@ msgstr ""
 "\n"
 "Mulþumiri adresate :S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
+#: mainwidget.cpp:44
+msgid "System:"
+msgstr ""
+
+#: mainwidget.cpp:47
+msgid "User: "
+msgstr ""
+
+#: mainwidget.cpp:53
+msgid "Hostname: "
+msgstr ""
+
+#: mainwidget.cpp:61
+msgid "System: "
+msgstr ""
+
+#: mainwidget.cpp:68
+msgid "Release: "
+msgstr ""
+
+#: mainwidget.cpp:76
+msgid "Version: "
+msgstr ""
+
+#: mainwidget.cpp:83
+msgid "Machine: "
+msgstr ""

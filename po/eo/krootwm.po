@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmrootwm 1.0pre2\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -22,6 +22,10 @@ msgstr "Dosierujo"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERARO: Ne ekzistas Þablono '%'"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -58,6 +62,10 @@ msgstr "Þlosu l' ekranon"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Adiaýu"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

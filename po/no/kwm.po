@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1998-09-10 15:49+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-09-30 17:28+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -27,103 +27,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: feil ved oppstart; avbryter\n"
 
-#: main.C:481
+#: main.C:483
 msgid "Preparing session ... "
 msgstr "Forbereder sesjon ... "
 
-#: main.C:502
+#: main.C:504
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:509
+#: main.C:511
 msgid "Usage: "
 msgstr "Bruk: "
 
-#: main.C:520
+#: main.C:522
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:521
+#: main.C:523
 msgid "&Restore"
 msgstr "&Opprett på nytt"
 
-#: main.C:522
+#: main.C:524
 msgid "&Iconify"
 msgstr "M&inimer"
 
-#: main.C:523
+#: main.C:525
 msgid "&DeIconify"
 msgstr "&Gjør om minimer"
 
-#: main.C:524
+#: main.C:526
 msgid "&Sticky"
 msgstr "&Sett fast"
 
-#: main.C:525
+#: main.C:527
 msgid "&UnSticky"
 msgstr "Ikke fastsatt"
 
-#: main.C:526
+#: main.C:528
 msgid "Mo&ve"
 msgstr "&Flytt"
 
-#: main.C:527
+#: main.C:529
 msgid "Resi&ze"
 msgstr "&Endre størrelse"
 
-#: main.C:529
+#: main.C:531
 msgid "&To desktop"
 msgstr "&Til skrivebord"
 
-#: main.C:531
+#: main.C:533
 msgid "&Onto current desktop"
 msgstr "Til skrivebord i bruk"
 
-#: main.C:571
+#: main.C:573
 msgid "One"
 msgstr "En"
 
-#: main.C:574
+#: main.C:576
 msgid "Two"
 msgstr "To"
 
-#: main.C:577
+#: main.C:579
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:580
+#: main.C:582
 msgid "Four"
 msgstr "Fire"
 
-#: main.C:583
+#: main.C:585
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:586
+#: main.C:588
 msgid "Six"
 msgstr "Seks"
 
-#: main.C:589
+#: main.C:591
 msgid "Seven"
 msgstr "Syv"
 
-#: main.C:592
+#: main.C:594
 msgid "Eight"
 msgstr "Åtte"
 
-#: main.C:606
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr "Skrivebord uten navn"
 
-#: main.C:942
+#: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1054
+#: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1377
+#: main.C:1353
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 
@@ -178,98 +178,74 @@ msgstr "Skift til"
 msgid "Current session"
 msgstr "Nåværende arbeidsperiode"
 
-#: kwmbindings.cpp:1
-msgid "Task manager"
-msgstr "Oppgavebehandler"
+#~ msgid "Task manager"
+#~ msgstr "Oppgavebehandler"
 
-#: kwmbindings.cpp:2
-msgid "Kill window mode"
-msgstr "Drep vindu-modus"
+#~ msgid "Kill window mode"
+#~ msgstr "Drep vindu-modus"
 
-#: kwmbindings.cpp:3
-msgid "Execute command"
-msgstr "Utfør kommando"
+#~ msgid "Execute command"
+#~ msgstr "Utfør kommando"
 
-#: kwmbindings.cpp:4
-msgid "Window operations menu"
-msgstr "Vinduopperasjonsmeny"
+#~ msgid "Window operations menu"
+#~ msgstr "Vinduopperasjonsmeny"
 
-#: kwmbindings.cpp:5
-msgid "Pop-up system menu"
-msgstr "Poppopp-systemmeny"
+#~ msgid "Pop-up system menu"
+#~ msgstr "Poppopp-systemmeny"
 
-#: kwmbindings.cpp:7
-msgid "Window raise"
-msgstr "Legg vindu øverst"
+#~ msgid "Window raise"
+#~ msgstr "Legg vindu øverst"
 
-#: kwmbindings.cpp:8
-msgid "Window lower"
-msgstr "Legg vindu nederst"
+#~ msgid "Window lower"
+#~ msgstr "Legg vindu nederst"
 
-#: kwmbindings.cpp:9
-msgid "Window close"
-msgstr "Lukk vindu"
+#~ msgid "Window close"
+#~ msgstr "Lukk vindu"
 
-#: kwmbindings.cpp:10
-msgid "Window iconify"
-msgstr "Ikoniser vindu"
+#~ msgid "Window iconify"
+#~ msgstr "Ikoniser vindu"
 
-#: kwmbindings.cpp:11
-msgid "Window resize"
-msgstr "Endre størrelse på vindu"
+#~ msgid "Window resize"
+#~ msgstr "Endre størrelse på vindu"
 
-#: kwmbindings.cpp:12
-msgid "Window move"
-msgstr "Flytt vindu"
+#~ msgid "Window move"
+#~ msgstr "Flytt vindu"
 
-#: kwmbindings.cpp:13
-msgid "Window toggle sticky"
-msgstr "Gjør fast/løst vindu"
+#~ msgid "Window toggle sticky"
+#~ msgstr "Gjør fast/løst vindu"
 
-#: kwmbindings.cpp:15
-msgid "Switch to desktop 1"
-msgstr "Skift til skrivebord 1"
+#~ msgid "Switch to desktop 1"
+#~ msgstr "Skift til skrivebord 1"
 
-#: kwmbindings.cpp:16
-msgid "Switch to desktop 2"
-msgstr "Skift til skrivebord 2"
+#~ msgid "Switch to desktop 2"
+#~ msgstr "Skift til skrivebord 2"
 
-#: kwmbindings.cpp:17
-msgid "Switch to desktop 3"
-msgstr "Skift til skrivebord 3"
+#~ msgid "Switch to desktop 3"
+#~ msgstr "Skift til skrivebord 3"
 
-#: kwmbindings.cpp:18
-msgid "Switch to desktop 4"
-msgstr "Skift til skrivebord 4"
+#~ msgid "Switch to desktop 4"
+#~ msgstr "Skift til skrivebord 4"
 
-#: kwmbindings.cpp:19
-msgid "Switch to desktop 5"
-msgstr "Skift til skrivebord 5"
+#~ msgid "Switch to desktop 5"
+#~ msgstr "Skift til skrivebord 5"
 
-#: kwmbindings.cpp:20
-msgid "Switch to desktop 6"
-msgstr "Skift til skrivebord 6"
+#~ msgid "Switch to desktop 6"
+#~ msgstr "Skift til skrivebord 6"
 
-#: kwmbindings.cpp:21
-msgid "Switch to desktop 7"
-msgstr "Skift til skriebord 7"
+#~ msgid "Switch to desktop 7"
+#~ msgstr "Skift til skriebord 7"
 
-#: kwmbindings.cpp:22
-msgid "Switch to desktop 8"
-msgstr "Skift til skriebord 8"
+#~ msgid "Switch to desktop 8"
+#~ msgstr "Skift til skriebord 8"
 
-#: kwmbindings.cpp:24
-msgid "Switch one desktop to the right"
-msgstr "Skrift ett skrivebord til høyre"
+#~ msgid "Switch one desktop to the right"
+#~ msgstr "Skrift ett skrivebord til høyre"
 
-#: kwmbindings.cpp:25
-msgid "Switch one desktop to the left"
-msgstr "Skrift ett skrivebord til venstre"
+#~ msgid "Switch one desktop to the left"
+#~ msgstr "Skrift ett skrivebord til venstre"
 
-#: kwmbindings.cpp:26
-msgid "Switch one desktop up"
-msgstr "Skift ett skrivebord opp"
+#~ msgid "Switch one desktop up"
+#~ msgstr "Skift ett skrivebord opp"
 
-#: kwmbindings.cpp:27
-msgid "Switch one desktop down"
-msgstr "Skift ett skrivebord ned"
+#~ msgid "Switch one desktop down"
+#~ msgstr "Skift ett skrivebord ned"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -210,19 +210,19 @@ msgstr "najviac"
 msgid " Advanced "
 msgstr "Upresni»"
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "Tento dátum neexistuje!"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "Tento mesiac neexistuje!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "Tento deò neexistuje!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "Hodnota veµkosti nie je platné èíslo!"
 
@@ -351,4 +351,3 @@ msgstr "Nemô¾em urèi» typ archívu!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Chyba pri vytváraní procesu!"
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -159,8 +159,18 @@ msgstr "Ligo"
 msgid "Device"
 msgstr "Aparato"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Dosierara tipo:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Dosiernomo:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Dosiernomo:"
 
 #: entrydialog.cpp:95

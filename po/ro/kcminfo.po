@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"POT-Creation-Date: 1998-09-10 20:54+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -60,10 +60,34 @@ msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld octeþi = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
-#: memory.cpp:101
+#: memory.cpp:101 memory_fbsd.cpp:22 memory_fbsd.cpp:23 memory_fbsd.cpp:24
 msgid "Not available"
 msgstr "Nu e disponibil"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
 msgstr "Acest sistem nu este încã suportat."
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+#, fuzzy
+msgid "Not Available"
+msgstr "Nu e disponibil"
+
+#: processor_linux.cpp:19
+msgid "File Error!"
+msgstr ""
+
+#: processor_linux.cpp:20
+msgid "Cannot read /proc/cpuinfo"
+msgstr ""
+
+#: processor_fbsd.cpp:47
+#, c-format
+msgid "%s, unknown speed"
+msgstr ""
+
+#: processor_fbsd.cpp:49
+#, c-format
+msgid "%s running at %s MHz"
+msgstr ""

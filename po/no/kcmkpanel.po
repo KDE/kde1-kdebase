@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -15,19 +15,24 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "&Panel"
 msgstr "&Panel"
 
-#: main.cpp:68
+#: main.cpp:70
 msgid "&Desktops"
 msgstr "&Skrivebord"
 
-#: main.cpp:97
-msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr ""
+
+#: main.cpp:109
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "bruk: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:128
+#: main.cpp:142
 msgid "KPanel Configuration"
 msgstr "KPanel konfigurasjon"
 
@@ -47,35 +52,43 @@ msgstr "V&enstre"
 msgid "&Bottom"
 msgstr "&Bunn"
 
-#: panel.cpp:74
+#: panel.cpp:63
+msgid "&Right"
+msgstr ""
+
+#: panel.cpp:75
 msgid "Taskbar"
 msgstr "Oppgavelinje"
 
-#: panel.cpp:75
+#: panel.cpp:76
 msgid "&Hidden"
 msgstr "&Skjult"
 
-#: panel.cpp:77
+#: panel.cpp:78
 msgid "T&op"
 msgstr "T&opp"
 
-#: panel.cpp:79
+#: panel.cpp:80
 msgid "Botto&m"
 msgstr "Bun&n"
 
-#: panel.cpp:81
+#: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "To&pp/Venstre"
 
-#: panel.cpp:96
+#: panel.cpp:95
+msgid "Style"
+msgstr ""
+
+#: panel.cpp:97
 msgid "T&iny"
 msgstr "&Meget liten"
 
-#: panel.cpp:98
+#: panel.cpp:99
 msgid "&Normal"
 msgstr "&Normal"
 
-#: panel.cpp:100
+#: panel.cpp:101
 msgid "L&arge"
 msgstr "Sto&r"
 
@@ -130,3 +143,11 @@ msgstr "&24 timer"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12 AM/PM"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr ""
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr ""

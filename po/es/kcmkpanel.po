@@ -1,25 +1,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-05-21 10:39+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Santiago Fernández and\n"
 "First-Translator: Jorge Valencia <jorgev@est.unileon.es>\n"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "&Panel"
 msgstr "&Panel"
 
-#: main.cpp:68
+#: main.cpp:70
 msgid "&Desktops"
 msgstr "&Escritorios"
 
-#: main.cpp:97
-msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr ""
+
+#: main.cpp:109
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "modo de uso: kcmpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:128
+#: main.cpp:142
 msgid "KPanel Configuration"
 msgstr "Configuración de KPanel"
 
@@ -39,35 +44,43 @@ msgstr "&Izquierda"
 msgid "&Bottom"
 msgstr "A&bajo"
 
-#: panel.cpp:74
+#: panel.cpp:63
+msgid "&Right"
+msgstr ""
+
+#: panel.cpp:75
 msgid "Taskbar"
 msgstr "Barra de tareas"
 
-#: panel.cpp:75
+#: panel.cpp:76
 msgid "&Hidden"
 msgstr "O&culta"
 
-#: panel.cpp:77
+#: panel.cpp:78
 msgid "T&op"
 msgstr "A&rriba"
 
-#: panel.cpp:79
+#: panel.cpp:80
 msgid "Botto&m"
 msgstr "Aba&jo"
 
-#: panel.cpp:81
+#: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "Arriba/I&zquierda"
 
-#: panel.cpp:96
+#: panel.cpp:95
+msgid "Style"
+msgstr ""
+
+#: panel.cpp:97
 msgid "T&iny"
 msgstr "Pe&queño"
 
-#: panel.cpp:98
+#: panel.cpp:99
 msgid "&Normal"
 msgstr "&Normal"
 
-#: panel.cpp:100
+#: panel.cpp:101
 msgid "L&arge"
 msgstr "&Grande"
 
@@ -122,3 +135,11 @@ msgstr "&24h"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12h am/pm"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr ""
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr ""

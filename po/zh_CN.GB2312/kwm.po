@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -16,108 +16,108 @@ msgstr "kwm: 已经有一个窗口管理器在运行. kwm 没有启动\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: 初始化发生错误; 中止\n"
 
-#: main.C:470
+#: main.C:483
 msgid "Preparing session ... "
 msgstr "准备会话 ..."
 
-#: main.C:489
+#: main.C:504
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:496
+#: main.C:511
 msgid "Usage: "
 msgstr "用法: "
 
-#: main.C:507
+#: main.C:522
 msgid "&Maximize"
 msgstr "最大化[&M]"
 
-#: main.C:508
+#: main.C:523
 msgid "&Restore"
 msgstr "还原[&R]"
 
-#: main.C:509
+#: main.C:524
 msgid "&Iconify"
 msgstr "图标化[&I]"
 
-#: main.C:510
+#: main.C:525
 msgid "&DeIconify"
 msgstr "解除图标化[&D]"
 
-#: main.C:511
+#: main.C:526
 msgid "&Sticky"
 msgstr "粘附[&S]"
 
-#: main.C:512
+#: main.C:527
 msgid "&UnSticky"
 msgstr "解除粘附[&U]"
 
-#: main.C:513
+#: main.C:528
 msgid "Mo&ve"
 msgstr "移动[&V]"
 
-#: main.C:514
+#: main.C:529
 msgid "Resi&ze"
 msgstr "改变窗口大小[&Z]"
 
-#: main.C:516
+#: main.C:531
 msgid "&To desktop"
 msgstr "移至桌面[&T]"
 
-#: main.C:518
+#: main.C:533
 msgid "&Onto current desktop"
 msgstr "移至当前桌面[&O]"
 
-#: main.C:571
+#: main.C:573
 msgid "One"
 msgstr "一"
 
-#: main.C:574
+#: main.C:576
 msgid "Two"
 msgstr "二"
 
-#: main.C:577
+#: main.C:579
 msgid "Three"
 msgstr "三"
 
-#: main.C:580
+#: main.C:582
 msgid "Four"
 msgstr "四"
 
-#: main.C:583
+#: main.C:585
 msgid "Five"
 msgstr "五"
 
-#: main.C:586
+#: main.C:588
 msgid "Six"
 msgstr "六"
 
-#: main.C:589
+#: main.C:591
 msgid "Seven"
 msgstr "七"
 
-#: main.C:592
+#: main.C:594
 msgid "Eight"
 msgstr "八"
 
-#: main.C:606
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr "无名桌面"
 
-#: main.C:942
+#: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "一些位图是无效的: 取消 ShapMode\n"
 
 #
-#: main.C:1054
+#: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "一些位图是无效的: 取消 ShapMode\n"
 
-#: main.C:1311
+#: main.C:1353
 msgid "*** No Tasks ***"
 msgstr "*** 没有任务 ***"
 
-#: minicli.C:116
+#: minicli.C:119
 msgid "Command:"
 msgstr "命令:"
 

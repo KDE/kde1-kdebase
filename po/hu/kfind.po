@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -214,19 +214,19 @@ msgstr "Legfeljebb"
 msgid " Advanced "
 msgstr " Továbbá "
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "A dátum nem érvényes"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "A megadott hónap értéke hibás!!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "A megadott nap értéke hibás!!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "A megadott szöveg nem egy szám!!"
 

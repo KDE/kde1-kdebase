@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,98 +13,130 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:253
+#: kpanel.C:254
 msgid "Go!"
 msgstr "Ís»!"
 
-#: kpanel.C:256 tools.C:787
+#: kpanel.C:257 tools.C:828
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
-#: kpanel.C:330
+#: kpanel.C:331
 msgid "No info available"
 msgstr "Informácia nie je k dispozícii"
 
-#: kpanel.C:369 props.C:156 props.C:157
+#: kpanel.C:370 props.C:173 props.C:174
 msgid "Logout"
 msgstr "Odhlási»"
 
-#: kpanel.C:377 props.C:155
+#: kpanel.C:378 props.C:172
 msgid "Lock screen"
 msgstr "Zablokova» obrazovku"
 
-#: kpanel.C:386
+#: kpanel.C:387
 msgid "Hide the panel"
 msgstr "Schova» panel"
 
-#: kpanel.C:396
+#: kpanel.C:397
 msgid "Show the panel"
 msgstr "Ukáza» panel"
 
-#: kpanel.C:1105 tools.C:616
+#: kpanel.C:1106 tools.C:658
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1114 tools.C:796
+#: kpanel.C:1115 tools.C:837
 msgid "Windowlist"
 msgstr "Zoznam okien"
 
-#: props.C:136
+#: props.C:143
 msgid "Add application"
 msgstr "Prida» aplikáciu"
 
-#: props.C:138
+#: props.C:145
 msgid "Add an application or a submenu onto the panel"
 msgstr "Prida» aplikáciu alebo menu na panel"
 
-#: props.C:139
+#: props.C:146
 msgid "Add windowlist"
 msgstr "Prida» zoznam okien"
 
-#: props.C:141
+#: props.C:148
 msgid "Add a windowlist menu onto the panel"
 msgstr "Prida» zoznam okien na panel"
 
-#: events.C:722 props.C:142
+#: events.C:752 props.C:149
 msgid "Configure"
 msgstr "Nastavenie"
 
-#: props.C:144
+#: props.C:151
 msgid "Configure panel"
 msgstr "Nastavenie panela"
 
-#: props.C:145
+#: props.C:152
 msgid "Edit Menus"
 msgstr "Editova» menu"
 
-#: props.C:147
+#: props.C:154
 msgid "Add or remove applications in the menu structure "
 msgstr "Prida» alebo ubra» aplikácie v ¹truktúre menu "
 
-#: events.C:724 props.C:148
+#: events.C:754 props.C:155
 msgid "Restart"
 msgstr "Spusti» znova"
 
-#: props.C:150
+#: props.C:157
 msgid "Restart panel"
 msgstr "Spusti» panel znova"
 
-#: props.C:151
+#: props.C:160
+msgid "Disk Navigator"
+msgstr ""
+
+#: props.C:168
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:153
+#: props.C:170
 msgid "Lock Screen"
 msgstr "Blokova» obrazovku"
 
-#: props.C:310
+#: props.C:399
 msgid "The menu editor is not installed."
 msgstr "Editor menu nie je nain¹talovaný."
 
-#: events.C:760 props.C:311
+#: events.C:790 props.C:400
 msgid "Oops!"
 msgstr "Oops!"
 
-#: events.C:759
+#: events.C:789
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
+
+#: pfilemenu.C:111
+msgid "KFM Information"
+msgstr ""
+
+#: pfilemenu.C:112
+msgid "Creating directory:\n"
+msgstr ""
+
+#: pfilemenu.C:340
+msgid "(empty folder)"
+msgstr ""
+
+#: pfilemenu.C:397
+msgid "(Too Many Files)"
+msgstr ""
+
+#: pfilemenu.C:406
+msgid "(Access Denied)"
+msgstr ""
+
+#: pfilemenu.C:409
+msgid "(Unreadable)"
+msgstr ""
+
+#: pfilemenu.C:416
+msgid "Open Folder"
+msgstr ""

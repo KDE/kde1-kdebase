@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-17 09:43+0200\n"
+"POT-Creation-Date: 1998-10-01 13:21+0200\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,13 +21,26 @@ msgstr ""
 msgid "Setup kbanner"
 msgstr "Banner indstilling"
 
+#: banner.cpp:95
+#, fuzzy
+msgid "Family:"
+msgstr "Fejlede"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr ""
+
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Farve:"
 
+#: banner.cpp:147
+msgid "Bold"
+msgstr ""
+
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Hastighed:"
@@ -382,33 +395,42 @@ msgstr ""
 "\n"
 "Porteret til kscreensave af Emanuel Pirker."
 
-#: main.cpp:286
+#: main.cpp:349
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:313
+#: main.cpp:378
 msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator.\n"
+"Warning: You won't be able to lock the screen!\n"
 "\n"
-"Tell him, that you need suid for the screensavers!"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
 
-#: main.cpp:318
+#: main.cpp:383
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:476
-#, c-format
+#: main.cpp:428
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+
+#: main.cpp:536
+#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Brug: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:479
+#: main.cpp:539
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -420,6 +442,7 @@ msgid ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -428,7 +451,7 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 
-#: morph3d.cpp:839 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr ""
 
@@ -461,6 +484,32 @@ msgstr ""
 "Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
 "Porteret til kscreensave af Emanuel Pirker."
+
+#: pipes.cpp:299
+msgid "Pipes (GL)"
+msgstr ""
+
+#: pipes.cpp:672
+#, fuzzy
+msgid "Setup KPipes"
+msgstr "KSlip indstilling"
+
+#: pipes.cpp:678
+#, fuzzy
+msgid "Number of Pipes"
+msgstr "Antal bier:"
+
+#: pipes.cpp:743
+#, fuzzy
+msgid "About KPipes"
+msgstr "Om Linier"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -592,53 +641,53 @@ msgstr ""
 msgid "Science"
 msgstr "klines indstilling"
 
-#: science.cpp:447
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr ""
 
-#: science.cpp:769
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr ""
 
-#: science.cpp:931
+#: science.cpp:975
 #, fuzzy
 msgid "Setup Science"
 msgstr "klines indstilling"
 
-#: science.cpp:949
+#: science.cpp:993
 #, fuzzy
 msgid "Mode:"
 msgstr "Midt:"
 
-#: science.cpp:964
+#: science.cpp:1008
 msgid "Inverse"
 msgstr ""
 
-#: science.cpp:974
+#: science.cpp:1018
 msgid "Gravity"
 msgstr ""
 
-#: science.cpp:983
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr ""
 
-#: science.cpp:1009
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr ""
 
-#: science.cpp:1039
+#: science.cpp:1083
 msgid "Motion:"
 msgstr ""
 
-#: science.cpp:1260
+#: science.cpp:1304
 msgid "Science Version"
 msgstr ""
 
-#: science.cpp:1261
+#: science.cpp:1305
 msgid "written by"
 msgstr ""
 
-#: science.cpp:1262
+#: science.cpp:1306
 #, fuzzy
 msgid "About Science"
 msgstr "Om Linier"

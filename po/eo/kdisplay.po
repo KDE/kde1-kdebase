@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 1.0pre2\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-07-13 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Labortabulo"
 msgid "&Rename ..."
 msgstr "&Alinomu ..."
 
-#: backgnd.cpp:193 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:94
 msgid "Colors"
 msgstr "Koloroj"
 
@@ -122,95 +122,95 @@ msgstr "Plekta¼o"
 msgid "Cobbled Pavement"
 msgstr "Pavimo"
 
-#: colorscm.cpp:119
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Kolorskemo"
 
-#: colorscm.cpp:130
+#: colorscm.cpp:131
 msgid "Current scheme"
 msgstr "Aktuala skemo"
 
-#: colorscm.cpp:132
+#: colorscm.cpp:133
 msgid "KDE default"
 msgstr "KDE-origina"
 
-#: colorscm.cpp:145
+#: colorscm.cpp:146
 msgid "&Add ..."
 msgstr "&Aldonu ..."
 
-#: colorscm.cpp:162
+#: colorscm.cpp:163
 msgid "&Save changes"
 msgstr "&Sekurigu þanøojn"
 
-#: colorscm.cpp:176
+#: colorscm.cpp:177
 msgid "Widget color"
 msgstr "Koloro de la fenestra¼o"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:184
 msgid "Inactive title bar"
 msgstr "Neaktiva titollistelo"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:185
 msgid "Inactive title text"
 msgstr "Neaktiva titolteksto"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:186
 msgid "Inactive title blend"
 msgstr "Neaktiva titolkolora¼o"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:187
 msgid "Active title bar"
 msgstr "Aktiva titollistelo"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:188
 msgid "Active title text"
 msgstr "Aktiva titolteksto"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:189
 msgid "Active title blend"
 msgstr "Aktiva titolkolora¼o"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:190
 msgid "Background"
 msgstr "Fono"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:191
 msgid "Text"
 msgstr "Teksto"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:192
 msgid "Select background"
 msgstr "Elektu fonon"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:193
 msgid "Select text"
 msgstr "Elektu tekston"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:194
 msgid "Window background"
 msgstr "Fenestrofono"
 
-#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Fenestroteksto"
 
-#: colorscm.cpp:222
+#: colorscm.cpp:223
 msgid "Contrast"
 msgstr "Kontrasto"
 
-#: colorscm.cpp:238
+#: colorscm.cpp:239
 msgid "&Low"
 msgstr "&Malgranda"
 
-#: colorscm.cpp:246
+#: colorscm.cpp:247
 msgid "High"
 msgstr "Granda"
 
-#: colorscm.cpp:317
+#: colorscm.cpp:320
 msgid "Error removing"
 msgstr "Eraro dum forigado"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:321
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -220,11 +220,11 @@ msgstr ""
 "Verþajne vi ne havas permeson por þanøi la\n"
 "dosierujojn kie la kolorskemo troviøas."
 
-#: colorscm.cpp:375
+#: colorscm.cpp:378
 msgid "Naming error"
 msgstr "Eraro de nomado"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:379
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -268,7 +268,7 @@ msgstr "Þlosu la ekranon"
 msgid "Screen Saver"
 msgstr "Ekrananima¼o"
 
-#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "sen ekrananima¼o"
 
@@ -297,54 +297,58 @@ msgid "&Require password"
 msgstr "&Postulu pasvorton"
 
 #: scrnsave.cpp:273
+msgid "&Accept root password to unlock"
+msgstr ""
+
+#: scrnsave.cpp:279
 msgid "Show &password as stars"
 msgstr "Montru &pasvorton stelete"
 
-#: scrnsave.cpp:281
+#: scrnsave.cpp:287
 msgid "Priority"
 msgstr "Prioritato"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:300
 msgid "&High"
 msgstr "&Alta"
 
-#: scrnsave.cpp:303
+#: scrnsave.cpp:309
 msgid "Low"
 msgstr "Malalta"
 
-#: general.cpp:216
+#: general.cpp:220
 msgid "Fonts etc."
 msgstr "Tiparoj ktp."
 
-#: general.cpp:222
+#: general.cpp:226
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Pentru fenestra¼ojn laý Vin95-stilo"
 
-#: general.cpp:236
+#: general.cpp:240
 msgid "Desktop fonts"
 msgstr "Labortabulaj tiparoj"
 
-#: general.cpp:248
+#: general.cpp:252
 msgid "General font"
 msgstr "Normala tiparo"
 
-#: general.cpp:253
+#: general.cpp:257
 msgid "Fixed font"
 msgstr "Egallarøa tiparo"
 
-#: general.cpp:263
+#: general.cpp:267
 msgid "Panel button font"
 msgstr "Tiparo por la panelbutonoj"
 
-#: general.cpp:268
+#: general.cpp:272
 msgid "Panel clock font"
 msgstr "Tiparo por la panelhorloøo"
 
-#: general.cpp:298
+#: general.cpp:302
 msgid "Sample text"
 msgstr "Ekzemploteksto"
 
-#: general.cpp:306
+#: general.cpp:310
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -374,7 +378,7 @@ msgstr "&Koloroj"
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "uzo: kcmdisplay [-init | {fono,ekrananima¼o,koloroj,stilo}]\n"
 
-#: main.cpp:130
+#: main.cpp:139
 msgid "Display settings"
 msgstr "Ekrankonfigura¼o"
 

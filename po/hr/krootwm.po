@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -21,6 +21,10 @@ msgstr "Direktorij"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak ne postoji '%s'"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -57,6 +61,10 @@ msgstr "Zakljuèaj ekran"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Odjava"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

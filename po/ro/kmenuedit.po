@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -70,8 +70,7 @@ msgstr ""
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
-msgstr ""
-"Nu este posibilã crearea directorului pentru meniul personal."
+msgstr "Nu este posibilã crearea directorului pentru meniul personal."
 
 #: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
@@ -158,8 +157,18 @@ msgstr "Legãturã"
 msgid "Device"
 msgstr "Dispozitiv"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Sistem de fiºiere:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Nume fiºier:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Nume fiºier:"
 
 #: entrydialog.cpp:95

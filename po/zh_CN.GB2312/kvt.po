@@ -1,137 +1,139 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: main.C:347
+#: main.C:421
 msgid "choose type of color-mode"
 msgstr "选择彩色模式"
 
-#: main.C:353
+#: main.C:427
 msgid "Add characters to word class"
 msgstr "在词里添加字符"
 
-#: main.C:359
+#: main.C:433
 msgid "The backspace key will send a"
 msgstr "Backspace 键将送出 "
 
-#: main.C:365
+#: main.C:439
 msgid "Cursor key set"
 msgstr "光标键定义"
 
-#: main.C:532
+#: main.C:606
 msgid "&New Terminal"
 msgstr "新终端[&N]"
 
-#: main.C:539 main.C:915
+#: main.C:613 main.C:987
 msgid "&Hide"
 msgstr "隐藏[&H]"
 
-#: main.C:540
+#: main.C:614
 msgid "&Left"
 msgstr "左边[&L]"
 
-#: main.C:541
+#: main.C:615
 msgid "&Right"
 msgstr "右边[&R]"
 
-#: main.C:546
+#: main.C:620
 msgid "&Normal"
 msgstr "正常[&N]"
 
-#: main.C:547
+#: main.C:621
 msgid "&Tiny"
 msgstr "最小[&T]"
 
-#: main.C:548
+#: main.C:622
 msgid "&Small"
 msgstr "小型[&S]"
 
-#: main.C:549
+#: main.C:623
 msgid "&Medium"
 msgstr "中等[&M]"
 
-#: main.C:550
+#: main.C:624
 msgid "&Large"
 msgstr "大型[&L]"
 
-#: main.C:551
+#: main.C:625
 msgid "&Huge"
 msgstr "超大[&H]"
 
-#: main.C:563
+#: main.C:637
 msgid "&black/white"
 msgstr "黑/白[&B]"
 
-#: main.C:564
+#: main.C:638
 msgid "&white/black"
 msgstr "白/黑[&W]"
 
-#: main.C:565
+#: main.C:639
 msgid "&green/black"
 msgstr "绿/黑[&G]"
 
-#: main.C:566
+#: main.C:640
 msgid "black/light&yellow"
 msgstr "黑/亮黄[&Y]"
 
-#: main.C:567
+#: main.C:641
 msgid "Linu&x Console"
 msgstr "Linu&x 主控台"
 
-#: main.C:576
+#: main.C:650
 msgid "&Custom Colors"
 msgstr "自定义颜色[&C]"
 
-#: main.C:583 main.C:849
+#: main.C:657 main.C:921
 msgid "Hide &Menubar"
 msgstr "隐藏菜单条[&M]"
 
-#: main.C:585 main.C:771 main.C:841
+#: main.C:659 main.C:843 main.C:913
 msgid "Show &Menubar"
 msgstr "显示菜单条[&M]"
 
-#: main.C:586 main.C:859
+#: main.C:660 main.C:931
 msgid "Secure &keyboard"
 msgstr "安全键盘[&K]"
 
-#: main.C:588
+#: main.C:662
 msgid "Scroll&bar"
 msgstr "滚动条[&B]"
 
-#: main.C:589
+#: main.C:663
 msgid "&Font size"
 msgstr "字体大小[&F]"
 
-#: main.C:590
+#: main.C:664
 msgid "&Color"
 msgstr "颜色[&C]"
 
-#: main.C:591
+#: main.C:665
 msgid "&Size"
 msgstr "大小[&S]"
 
-#: main.C:592
+#: main.C:666
 msgid "Terminal..."
 msgstr "终端..."
 
-#: main.C:593
+#: main.C:667
 msgid "Font..."
 msgstr "字体..."
 
-#: main.C:595
+#: main.C:669
 msgid "Save &Options"
 msgstr "保存选项"
 
-#: main.C:604
+#: main.C:678
+#, fuzzy
 msgid ""
 "\n"
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -144,23 +146,23 @@ msgstr ""
 "KDE 桌面环境的终端模拟器\n"
 "基于 Robert Nation 编写的 rxvt-2.08"
 
-#: main.C:780 main.C:908
+#: main.C:852 main.C:980
 msgid "&Show"
 msgstr "显示[&S]"
 
-#: main.C:855
+#: main.C:927
 msgid "Unsecure &keyboard"
 msgstr "取消安全键盘[&K]"
 
-#: main.C:866
+#: main.C:938
 msgid "Terminal Options"
 msgstr "终端选项"
 
-#: main.C:1020
+#: main.C:1092
 msgid "Hint"
 msgstr "提示"
 
-#: main.C:1021
+#: main.C:1093
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -168,7 +170,7 @@ msgstr ""
 "新的颜色设置在取消安全键盘后会\n"
 "显示."
 
-#: main.C:1322
+#: main.C:1394
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -181,61 +183,61 @@ msgstr ""
 "KDE 桌面环境的终端模拟器\n"
 "基于 Robert Nation 编写的 rxvt-2.08\n"
 
-#: main.C:1326
+#: main.C:1398
 msgid "Permitted arguments are:\n"
 msgstr "允许的参数是:\n"
 
-#: main.C:1327
+#: main.C:1399
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 
-#: main.C:1328
+#: main.C:1400
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <name>           specify the display (server)\n"
 
-#: main.C:1329
+#: main.C:1401
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       the initial vt window geometry\n"
 
-#: main.C:1330
+#: main.C:1402
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <name>        specify pipe for vt100 printer\n"
 
-#: main.C:1331
+#: main.C:1403
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <colour>           background color\n"
 
-#: main.C:1332
+#: main.C:1404
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <colour>           foreground color\n"
 
-#: main.C:1333
+#: main.C:1405
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <fontname>       normal font\n"
 
-#: main.C:1334
+#: main.C:1406
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr ""
 
-#: main.C:1335
+#: main.C:1407
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
-#: main.C:1336
+#: main.C:1408
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    set up kvt to mimic linux-console\n"
 
-#: main.C:1337
+#: main.C:1409
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               hide the menubar\n"
 
-#: main.C:1338
+#: main.C:1410
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             hide the scrollbar\n"
 
-#: main.C:1339
+#: main.C:1411
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -243,19 +245,19 @@ msgstr ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 
-#: main.C:1341
+#: main.C:1413
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Terminal type. Default is xterm.\n"
 
-#: main.C:1342
+#: main.C:1414
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Capture system console message\n"
 
-#: main.C:1343
+#: main.C:1415
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 name in icon or icon window\n"
 
-#: main.C:1344
+#: main.C:1416
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -263,7 +265,7 @@ msgstr ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 
-#: main.C:1346
+#: main.C:1418
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -273,7 +275,7 @@ msgstr ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 
-#: main.C:1348
+#: main.C:1420
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -281,11 +283,11 @@ msgstr ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 
-#: main.C:1349
+#: main.C:1421
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr "-sl <number>              save number lines in scroll-back buffer\n"
 
-#: main.C:1350
+#: main.C:1422
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -297,7 +299,7 @@ msgstr ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 
-#: main.C:1354
+#: main.C:1426
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

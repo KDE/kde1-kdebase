@@ -1,10 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-09-10 15:01+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.cpp:48
+msgid "&Status"
+msgstr ""
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -13,3 +17,35 @@ msgstr "ÓÃ·¨: kcmsamba [-init | status]\n"
 #: main.cpp:68
 msgid "Samba"
 msgstr "Samba"
+
+#: ksmbstatus.cpp:114
+msgid "Error launching smbstatus !"
+msgstr ""
+
+#: ksmbstatus.cpp:116
+msgid "Error ! smbstatus not found or non working !"
+msgstr ""
+
+#: ksmbstatus.cpp:158
+msgid "Service"
+msgstr ""
+
+#: ksmbstatus.cpp:160
+msgid "UID"
+msgstr ""
+
+#: ksmbstatus.cpp:161
+msgid "GID"
+msgstr ""
+
+#: ksmbstatus.cpp:162
+msgid "PID"
+msgstr ""
+
+#: ksmbstatus.cpp:163
+msgid "Machine"
+msgstr ""
+
+#: ksmbstatus.cpp:164
+msgid "Open Files"
+msgstr ""

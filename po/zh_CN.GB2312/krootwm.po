@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,6 +14,10 @@ msgstr "文件夹"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "错误: 模板不存在 '%s'"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -50,6 +54,10 @@ msgstr "锁住屏幕"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "离线"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

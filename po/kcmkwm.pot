@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-09-10 14:43+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,14 @@ msgstr ""
 
 #: titlebar.cpp:132
 msgid "Menu"
+msgstr ""
+
+#: titlebar.cpp:169
+msgid "Left"
+msgstr ""
+
+#: titlebar.cpp:173
+msgid "Right"
 msgstr ""
 
 #: titlebar.cpp:462

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdm\n"
-"POT-Creation-Date: 1998-08-30 10:36+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-01 11:27+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -15,67 +15,68 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kdmshutdown.cpp:159
+#: kdmshutdown.cpp:171
 msgid "Shutdown or restart?"
 msgstr "Avslutte eller starte på nytt?"
 
-#: kdmshutdown.cpp:175
+#: kdmshutdown.cpp:187
 msgid "Shutdown"
 msgstr "Avslutt"
 
-#: kdmshutdown.cpp:189
+#: kdmshutdown.cpp:201
 msgid "Shutdown and restart"
 msgstr "Avslutte og starte på nytt"
 
-#: kdmshutdown.cpp:198
+#: kdmshutdown.cpp:210
 msgid "Exit kdm"
 msgstr "Gå ut av kdm"
 
-#: kgreeter.cpp:158
+#: kgreeter.cpp:174
 msgid "Login:"
 msgstr "Logginnnavn:"
 
-#: kgreeter.cpp:170
+#: kgreeter.cpp:186
 msgid "Password:"
 msgstr "Passord:"
 
-#: kgreeter.cpp:195
+#: kgreeter.cpp:211
 msgid "Login failed!"
 msgstr "Feil ved innlogging!"
 
-#: kgreeter.cpp:201
+#: kgreeter.cpp:217
 msgid "Session Type:"
 msgstr "Sesjonstype:"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:233
 msgid "Go!"
 msgstr "Sett igang!"
 
-#: kgreeter.cpp:233
+#: kgreeter.cpp:249
 msgid "Shutdown..."
 msgstr "Avslutte..."
 
-#: kgreeter.cpp:418
-msgid "No login"
-msgstr "Ingen logginn"
+#: kgreeter.cpp:443
+msgid "Logins not available right now."
+msgstr ""
 
-#: kgreeter.cpp:467 kgreeter.cpp:475 kgreeter.cpp:501 kgreeter.cpp:509
-msgid "Expired"
-msgstr "Utgått"
-
-#: kgreeter.cpp:468 kgreeter.cpp:502
+#: kgreeter.cpp:515 kgreeter.cpp:542
 msgid "Sorry -- your account has expired."
 msgstr "Beklager -- din konto har utgått."
 
-#: kgreeter.cpp:473 kgreeter.cpp:507
+#: kgreeter.cpp:520 kgreeter.cpp:547
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Varsel: din konto går ut %s"
 
-#: kgreeter.cpp:541
-msgid "No home"
-msgstr "Intet hjem"
-
-#: kgreeter.cpp:542
+#: kgreeter.cpp:574
 msgid "Home directory not available"
 msgstr "Hjemmekatalog er ikke tilgjengelig"
+
+#~ msgid "No login"
+#~ msgstr "Ingen logginn"
+
+#~ msgid "Expired"
+#~ msgstr "Utgått"
+
+#~ msgid "No home"
+#~ msgstr "Intet hjem"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -228,6 +228,10 @@ msgstr "Nici un utilizator selectat"
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "Salveazã imaginea ca imagine implicitã?"
+
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown"
+msgstr ""
 
 #: kdm-sess.cpp:55
 msgid "All"

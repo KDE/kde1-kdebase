@@ -7,13 +7,37 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkeys\n"
-"POT-Creation-Date: 1998-09-10 15:21+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-09-10 15:15+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "&Vanlige hurtigtaster"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&Globale hurtigtaster"
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+msgstr "bruk: kcmdisplay [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Tastkoblinginnstillinger"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr ""
+
+#: standard.cpp:67
+msgid "End"
+msgstr "End"
 
 #: global.cpp:81 standard.cpp:83
 msgid "Current scheme"
@@ -22,6 +46,10 @@ msgstr "Gjeldende valg"
 #: global.cpp:83 standard.cpp:84
 msgid "KDE default"
 msgstr "KDE standard"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE enkel"
 
 #: global.cpp:90 standard.cpp:90
 msgid "&Key scheme"
@@ -62,22 +90,6 @@ msgstr ""
 "Vennligst velg et unikt navn for det nye tastvalget.\n"
 "Den du allerede valgte finnes allerede i tastvalglisten."
 
-#: main.cpp:64
-msgid "&Standard shortcuts"
-msgstr "&Vanlige hurtigtaster"
-
-#: main.cpp:69
-msgid "&Global shortcuts"
-msgstr "&Globale hurtigtaster"
-
-#: main.cpp:76
-msgid "usage: kcmdisplay [-init | {standard,global}]\n"
-msgstr "bruk: kcmdisplay [-init | {standard,global}]\n"
-
-#: main.cpp:118
-msgid "Key binding settings"
-msgstr "Tastkoblinginnstillinger"
-
 #: savescm.cpp:18
 msgid "Add a key scheme"
 msgstr "Legg til et tastvalg"
@@ -96,22 +108,11 @@ msgstr ""
 "Tastene som nå brukes i forhåndsvisningen vil\n"
 "bli kopiert til dette valget til å begynne med."
 
-#: standard.cpp:57
-msgid "Next"
-msgstr "Neste"
+#~ msgid "Next"
+#~ msgstr "Neste"
 
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Forrige"
+#~ msgid "Prior"
+#~ msgstr "Forrige"
 
-#: standard.cpp:65
-msgid "Insert"
-msgstr "Insert"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "End"
-
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE enkel"
+#~ msgid "Insert"
+#~ msgstr "Insert"

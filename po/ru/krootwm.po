@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -22,6 +22,10 @@ msgstr "Папка"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Заготовка не существует '%s'"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -58,6 +62,10 @@ msgstr "Закрыть экран"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Выйти"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

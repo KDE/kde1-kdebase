@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkwm\n"
-"POT-Creation-Date: 1998-09-10 14:43+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -58,6 +58,14 @@ msgstr "Sitter fast"
 #: titlebar.cpp:132
 msgid "Menu"
 msgstr "Meny"
+
+#: titlebar.cpp:169
+msgid "Left"
+msgstr ""
+
+#: titlebar.cpp:173
+msgid "Right"
+msgstr ""
 
 #: titlebar.cpp:462
 msgid ""

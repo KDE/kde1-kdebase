@@ -6,83 +6,82 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-02-22 20:47+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:99
+#: main.cpp:87
 msgid "&Appearance"
 msgstr "外觀[&A]"
 
-#: main.cpp:103
-msgid "&Fonts"
-msgstr "字型[&F]"
-
-#: main.cpp:107
+#: main.cpp:95
 msgid "&Background"
 msgstr "背景[&B]"
 
-#: main.cpp:110
+#: main.cpp:98
 msgid "&Users"
 msgstr "使用者[&U]"
 
-#: main.cpp:113
+#: main.cpp:101
 msgid "&Sessions"
 msgstr "環境[&S]"
 
-#: main.cpp:118
+#: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "用法: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
-#: main.cpp:125
-msgid ""
-"Sorry, but you don't have read/write\n"
-"permission to the KDM setup file."
-msgstr ""
-"抱歉, 你沒有權限讀取/寫入 KDM 設定檔"
-
-#: main.cpp:127
-msgid "Missing privileges"
-msgstr ""
-
-#: main.cpp:164
+#: main.cpp:145
 msgid "KDM Configuration"
 msgstr "KDM 設定"
 
-#: kdm-appear.cpp:66
-msgid "Appearance"
-msgstr "外觀"
+#: main.cpp:155
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr "抱歉, 你沒有權限讀取/寫入 KDM 設定檔"
 
-#: kdm-appear.cpp:69
+#: main.cpp:157
+msgid "Missing privileges"
+msgstr ""
+
+#: kdm-appear.cpp:70
 msgid "Greeting string:"
 msgstr "問候字串:"
 
-#: kdm-appear.cpp:77
+#: kdm-appear.cpp:78
 msgid "KDM logo:"
 msgstr "DKM 標示:"
 
-#: kdm-appear.cpp:104 kdm-users.cpp:139
+#: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr "按下或拖曳一個圖形至此"
 
-#: kdm-appear.cpp:109
+#: kdm-appear.cpp:110
 msgid "GUI Style:"
 msgstr "圖形使用介面風格"
 
-#: kdm-appear.cpp:115
+#: kdm-appear.cpp:116
 msgid "Motif"
 msgstr ""
 
-#: kdm-appear.cpp:116
+#: kdm-appear.cpp:117
 msgid "Windows"
 msgstr ""
 
-#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr ""
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr ""
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
@@ -90,16 +89,16 @@ msgstr ""
 "讀取圖形時發生錯誤:\n"
 ">"
 
-#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
 msgid "<"
 msgstr "<"
 
-#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
-#: kdm-users.cpp:247
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
 msgid "ERROR"
 msgstr "錯誤"
 
-#: kdm-appear.cpp:154 kdm-users.cpp:162
+#: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
@@ -107,11 +106,11 @@ msgstr ""
 "儲存圖形時發生錯誤:\n"
 ">"
 
-#: kdm-appear.cpp:187 kdm-users.cpp:195
+#: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
 msgstr "對不起, 但是\n"
 
-#: kdm-appear.cpp:189 kdm-users.cpp:197
+#: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
 "\n"
 "does not seem to be an image file"
@@ -119,7 +118,7 @@ msgstr ""
 "\n"
 "這個似乎不是一個圖形檔"
 
-#: kdm-appear.cpp:190 kdm-users.cpp:198
+#: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
 "\n"
 "Please use files with these extensions\n"
@@ -127,11 +126,11 @@ msgstr ""
 "\n"
 "請使用這些副檔名的檔案\n"
 
-#: kdm-appear.cpp:192 kdm-users.cpp:200
+#: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
 msgstr "不正確的檔案副檔名"
 
-#: kdm-appear.cpp:221 kdm-users.cpp:246
+#: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -143,59 +142,59 @@ msgstr ""
 msgid "Select fonts"
 msgstr "選擇字型"
 
-#: kdm-font.cpp:51
+#: kdm-font.cpp:50
 msgid "Change font"
 msgstr "改變字型"
 
-#: kdm-font.cpp:59
+#: kdm-font.cpp:55
 msgid "Greeting"
 msgstr "問候"
 
-#: kdm-font.cpp:60
+#: kdm-font.cpp:56
 msgid "Fail"
 msgstr "失敗"
 
-#: kdm-font.cpp:61
+#: kdm-font.cpp:57
 msgid "Standard"
 msgstr "標準"
 
-#: kdm-font.cpp:62
+#: kdm-font.cpp:59
 msgid "Example:"
 msgstr "範例:"
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr "顏色"
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: kdm-bgnd.cpp:110
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr "鋪排"
 
-#: kdm-bgnd.cpp:114
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr "置於中央"
 
-#: kdm-bgnd.cpp:118
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr "放大至全螢幕"
 
-#: kdm-users.cpp:49
+#: kdm-users.cpp:48
 msgid "All users"
 msgstr "全部使用者"
 
-#: kdm-users.cpp:51
+#: kdm-users.cpp:50
 msgid "Selected users"
 msgstr "已選擇的使用者"
 
-#: kdm-users.cpp:53
+#: kdm-users.cpp:52
 msgid "No-show users"
 msgstr "不顯示的使用者"
 
-#: kdm-users.cpp:80
+#: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
@@ -203,7 +202,7 @@ msgstr ""
 "只顯示\n"
 "已選擇的使用者"
 
-#: kdm-users.cpp:87
+#: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
@@ -219,54 +218,64 @@ msgstr "顯示使用者"
 msgid "Sort users"
 msgstr "使用者排序"
 
-#: kdm-users.cpp:150 kdm-users.cpp:219
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
 msgstr "沒有選擇任何使用者"
 
-#: kdm-users.cpp:151 kdm-users.cpp:220
+#: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "儲存為預設圖形?"
 
-#: kdm-sess.cpp:51
-msgid "Allow to shutdown:"
+#: kdm-sess.cpp:50
+#, fuzzy
+msgid "Allow to shutdown"
 msgstr "允許\關機:"
 
-#: kdm-sess.cpp:58
-msgid "None"
-msgstr "無"
-
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:55
 msgid "All"
 msgstr "全部"
 
-#: kdm-sess.cpp:60
+#: kdm-sess.cpp:56
 msgid "Root Only"
 msgstr "只允許\ Root"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:57
 msgid "Console Only"
 msgstr "只允許\電腦操作台"
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:61
 msgid "Commands"
 msgstr "命令"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:62
 msgid "Shutdown"
 msgstr "關機"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:67
 msgid "Restart"
 msgstr "重新開始"
 
-#: kdm-sess.cpp:86
+#: kdm-sess.cpp:73
 msgid "Session types"
 msgstr "環境類型"
 
-#: kdm-sess.cpp:89
+#: kdm-sess.cpp:75
 msgid "New type"
 msgstr "新類型"
 
-#: kdm-sess.cpp:99
+#: kdm-sess.cpp:83
 msgid "Available types"
 msgstr "可用類型"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr ""
+
+#~ msgid "&Fonts"
+#~ msgstr "字型[&F]"
+
+#~ msgid "Appearance"
+#~ msgstr "外觀"
+
+#~ msgid "None"
+#~ msgstr "無"

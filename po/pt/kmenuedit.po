@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -150,8 +150,18 @@ msgstr "Ligação"
 msgid "Device"
 msgstr "Dispositivo"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Tipo de FS:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Nome do Ficheiro:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Nome do Ficheiro:"
 
 #: entrydialog.cpp:95

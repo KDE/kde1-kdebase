@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-06-17 09:43+0200\n"
+"POT-Creation-Date: 1998-10-01 13:21+0200\n"
 "PO-Revision-Date: 1998-03-16 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -22,13 +22,26 @@ msgstr "Плакат"
 msgid "Setup kbanner"
 msgstr "Настройка kbanner"
 
+#: banner.cpp:95
+#, fuzzy
+msgid "Family:"
+msgstr "Неверно"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr ""
+
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Цвет:"
 
+#: banner.cpp:147
+msgid "Bold"
+msgstr ""
+
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Скорость:"
@@ -155,18 +168,18 @@ msgstr "Блобы"
 msgid "Bouboule"
 msgstr ""
 
-#: bouboule.cpp:1005
 #
+#: bouboule.cpp:1005
 msgid "Setup KBouboule"
 msgstr "Настройка KBouboule"
 
-#: bouboule.cpp:1032
 #
+#: bouboule.cpp:1032
 msgid "Number of points:"
 msgstr "Количество точек:"
 
-#: bouboule.cpp:1046
 #
+#: bouboule.cpp:1046
 msgid "Point size:"
 msgstr "Размер точек:"
 
@@ -178,8 +191,8 @@ msgstr "Частота изменения цвета:"
 msgid "3D mode"
 msgstr "3-ех мерный режим"
 
-#: bouboule.cpp:1223
 #
+#: bouboule.cpp:1223
 msgid "About Bouboule"
 msgstr "Об Bouboule"
 
@@ -386,37 +399,48 @@ msgstr ""
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."
 
-#: main.cpp:286
+#: main.cpp:349
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Опция %s не поддерживается на этой платформе!"
 
-#: main.cpp:313
+#: main.cpp:378
+#, fuzzy
 msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator.\n"
+"Warning: You won't be able to lock the screen!\n"
 "\n"
-"Tell him, that you need suid for the screensavers!"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
 "Ваша система использует скрытые (shadow) пароли!\n"
 "Пожайлуста свяжитесь с вашим системным администратором.\n"
 "\n"
 "Скажите ему, что вам необходимы права (suid root) для хранителей экрана!"
 
-#: main.cpp:318
+#: main.cpp:383
 msgid "Shadow Passwords"
 msgstr "Скрытые Пароли"
 
-#: main.cpp:476
-#, c-format
+#: main.cpp:428
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+
+#: main.cpp:536
+#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Использование: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay кол] [-lock] [-nice кол]\n"
 
-#: main.cpp:479
+#: main.cpp:539
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -428,6 +452,7 @@ msgid ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -453,7 +478,7 @@ msgstr ""
 "  -setup            Настройка хранителя\n"
 "  -test             Запустить хранитель немедленно\n"
 
-#: morph3d.cpp:839 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL не может рисовать в главном окне\n"
 
@@ -486,6 +511,32 @@ msgstr ""
 "Copyright (c) 1997 Марсело Ф. Вианна\n"
 "\n"
 "Переписано на kscreensave Эмануэлем Пиркером."
+
+#: pipes.cpp:299
+msgid "Pipes (GL)"
+msgstr ""
+
+#: pipes.cpp:672
+#, fuzzy
+msgid "Setup KPipes"
+msgstr "Настроить KSlip"
+
+#: pipes.cpp:678
+#, fuzzy
+msgid "Number of Pipes"
+msgstr "Кол Пчел:"
+
+#: pipes.cpp:743
+#, fuzzy
+msgid "About KPipes"
+msgstr "О Lines"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -591,8 +642,8 @@ msgstr "Неверно"
 msgid "Whirl"
 msgstr "Перекручивать"
 
-#: science.cpp:68
 #
+#: science.cpp:68
 msgid "Sphere"
 msgstr "Сфера"
 
@@ -612,59 +663,59 @@ msgstr "Волна"
 msgid "Curvature"
 msgstr "Кривая"
 
-#: science.cpp:112
 #
+#: science.cpp:112
 msgid "Science"
 msgstr "Наука"
 
-#: science.cpp:447
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "рисую линзы..."
 
-#: science.cpp:769
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr "сохраняю экран..."
 
-#: science.cpp:931
 #
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "Настройка Science"
 
-#: science.cpp:949
 #
+#: science.cpp:993
 msgid "Mode:"
 msgstr "Режим:"
 
-#: science.cpp:964
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "Инвертировать"
 
-#: science.cpp:974
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "Гравитация"
 
-#: science.cpp:983
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "Скрыть фон"
 
-#: science.cpp:1009
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "Интенсивность:"
 
-#: science.cpp:1039
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "Движение:"
 
-#: science.cpp:1260
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Science версии"
 
-#: science.cpp:1261
+#: science.cpp:1305
 msgid "written by"
 msgstr "написан"
 
-#: science.cpp:1262
 #
+#: science.cpp:1306
 msgid "About Science"
 msgstr "О Science"
 

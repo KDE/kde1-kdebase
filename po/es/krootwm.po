@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-05-16 20:25+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -13,6 +13,10 @@ msgstr "Carpeta"
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERROR: La plantilla no existe '%s'"
+
+#: krootwm.C:181
+msgid "Bookmarks"
+msgstr ""
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -49,6 +53,10 @@ msgstr "Bloquear pantalla"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Terminar"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

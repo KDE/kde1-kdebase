@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-25 21:43 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -158,9 +158,17 @@ msgstr "Lien"
 msgid "Device"
 msgstr "Périphérique"
 
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Type :"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Nom de fichier :"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Nom :"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -252,12 +260,6 @@ msgstr "Par défaut :"
 
 #~ msgid "&Reload"
 #~ msgstr "&Recharger"
-
-#~ msgid "Type:"
-#~ msgstr "Type :"
-
-#~ msgid "Name:"
-#~ msgstr "Nom :"
 
 #~ msgid ""
 #~ "KMenuedit 0.2.3\n"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-06-18 18:12+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
@@ -150,8 +150,18 @@ msgstr "Enlace"
 msgid "Device"
 msgstr "Dispositivo"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Tipo de sistema de archivos:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Nombre del archivo:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Nombre del archivo:"
 
 #: entrydialog.cpp:95

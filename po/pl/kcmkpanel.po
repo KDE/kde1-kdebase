@@ -1,24 +1,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser \n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-06-25 18:53+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "&Panel"
 msgstr "&Panel"
 
-#: main.cpp:68
+#: main.cpp:70
 msgid "&Desktops"
 msgstr "&Biurka"
 
-#: main.cpp:97
-msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr ""
+
+#: main.cpp:109
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "u¿ycie: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:128
+#: main.cpp:142
 msgid "KPanel Configuration"
 msgstr "Konfiguracja KPanel"
 
@@ -38,35 +43,43 @@ msgstr "Po &lewej"
 msgid "&Bottom"
 msgstr "Na d&ole"
 
-#: panel.cpp:74
+#: panel.cpp:63
+msgid "&Right"
+msgstr ""
+
+#: panel.cpp:75
 msgid "Taskbar"
 msgstr "Pasek zadañ"
 
-#: panel.cpp:75
+#: panel.cpp:76
 msgid "&Hidden"
 msgstr "&Ukryte"
 
-#: panel.cpp:77
+#: panel.cpp:78
 msgid "T&op"
 msgstr "&Góra"
 
-#: panel.cpp:79
+#: panel.cpp:80
 msgid "Botto&m"
 msgstr "&Dó³"
 
-#: panel.cpp:81
+#: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "Góra/&Lewo"
 
-#: panel.cpp:96
+#: panel.cpp:95
+msgid "Style"
+msgstr ""
+
+#: panel.cpp:97
 msgid "T&iny"
 msgstr "Mi&ni"
 
-#: panel.cpp:98
+#: panel.cpp:99
 msgid "&Normal"
 msgstr "No&rmaly"
 
-#: panel.cpp:100
+#: panel.cpp:101
 msgid "L&arge"
 msgstr "D&u¿y"
 
@@ -121,3 +134,11 @@ msgstr "&24h"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12h AM/PM"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr ""
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr ""

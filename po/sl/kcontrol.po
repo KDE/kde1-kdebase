@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-06-29 14:46+0200\n"
+"POT-Creation-Date: 1998-09-10 14:40+0200\n"
 "PO-Revision-Date: 1998-09-24  18:22+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
@@ -43,3 +43,31 @@ msgstr ""
 "\n"
 "Zahvaljujem se:\n"
 "S. Kulowu, P. Dowlerju, M. Wuebbenu & M. Jonesu."
+
+#: mainwidget.cpp:44
+msgid "System:"
+msgstr ""
+
+#: mainwidget.cpp:47
+msgid "User: "
+msgstr ""
+
+#: mainwidget.cpp:53
+msgid "Hostname: "
+msgstr ""
+
+#: mainwidget.cpp:61
+msgid "System: "
+msgstr ""
+
+#: mainwidget.cpp:68
+msgid "Release: "
+msgstr ""
+
+#: mainwidget.cpp:76
+msgid "Version: "
+msgstr ""
+
+#: mainwidget.cpp:83
+msgid "Machine: "
+msgstr ""

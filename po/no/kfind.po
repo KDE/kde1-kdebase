@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfind.po\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-12 14:47+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -212,19 +212,19 @@ msgstr "Mest"
 msgid " Advanced "
 msgstr "Avansert"
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "Datoen er ikke gyldig!!"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "Månedens(enes) verdi er ikke gyldig!!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "Dagen(enes) verdi er ikke gyldig!!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "Verdiens størrelse er ikke et gyldig tall!!"
 

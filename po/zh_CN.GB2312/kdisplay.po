@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -18,7 +18,7 @@ msgstr "桌面"
 msgid "&Rename ..."
 msgstr "重命名[&R] ..."
 
-#: backgnd.cpp:193 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:94
 msgid "Colors"
 msgstr "颜色"
 
@@ -118,100 +118,100 @@ msgstr "藤茎"
 msgid "Cobbled Pavement"
 msgstr "卵石路"
 
-#: colorscm.cpp:119
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "色彩主题"
 
 #
-#: colorscm.cpp:130
+#: colorscm.cpp:131
 msgid "Current scheme"
 msgstr "当前的色彩主题"
 
 #
-#: colorscm.cpp:132
+#: colorscm.cpp:133
 msgid "KDE default"
 msgstr "KDE 默认"
 
-#: colorscm.cpp:145
+#: colorscm.cpp:146
 msgid "&Add ..."
 msgstr "添加[&A] ..."
 
-#: colorscm.cpp:162
+#: colorscm.cpp:163
 msgid "&Save changes"
 msgstr "保存改动[&S]"
 
-#: colorscm.cpp:176
+#: colorscm.cpp:177
 msgid "Widget color"
 msgstr "控件颜色"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:184
 msgid "Inactive title bar"
 msgstr "非活动窗口标题行"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:185
 msgid "Inactive title text"
 msgstr "非活动窗口标题文字"
 
 #
-#: colorscm.cpp:185
+#: colorscm.cpp:186
 msgid "Inactive title blend"
 msgstr "非活动窗口标题行混色"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:187
 msgid "Active title bar"
 msgstr "活动窗口标题行"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:188
 msgid "Active title text"
 msgstr "活动窗口标题文字"
 
 #
-#: colorscm.cpp:188
+#: colorscm.cpp:189
 msgid "Active title blend"
 msgstr "活动窗口标题行混色"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:190
 msgid "Background"
 msgstr "背景"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:191
 msgid "Text"
 msgstr "文字"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:192
 msgid "Select background"
 msgstr "选择背景"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:193
 msgid "Select text"
 msgstr "选择文字"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:194
 msgid "Window background"
 msgstr "窗口背景"
 
-#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "窗口文字"
 
-#: colorscm.cpp:222
+#: colorscm.cpp:223
 msgid "Contrast"
 msgstr "对比"
 
 #
-#: colorscm.cpp:238
+#: colorscm.cpp:239
 msgid "&Low"
 msgstr "低[&L]"
 
-#: colorscm.cpp:246
+#: colorscm.cpp:247
 msgid "High"
 msgstr "高"
 
-#: colorscm.cpp:317
+#: colorscm.cpp:320
 msgid "Error removing"
 msgstr "删除错误"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:321
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -220,11 +220,11 @@ msgstr ""
 "这个色彩主题不能删除.\n"
 "也许你不能改变存放色彩主题的文件系统(没有权限)"
 
-#: colorscm.cpp:375
+#: colorscm.cpp:378
 msgid "Naming error"
 msgstr "命名错误"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:379
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -270,7 +270,7 @@ msgid "Screen Saver"
 msgstr "屏幕保护程序"
 
 #
-#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "没有屏幕保护程序"
 
@@ -300,57 +300,61 @@ msgid "&Require password"
 msgstr "需要密码[&R]"
 
 #: scrnsave.cpp:273
+msgid "&Accept root password to unlock"
+msgstr ""
+
+#: scrnsave.cpp:279
 msgid "Show &password as stars"
 msgstr "以 `*' 显示密码"
 
-#: scrnsave.cpp:281
+#: scrnsave.cpp:287
 msgid "Priority"
 msgstr "优先级"
 
 #
-#: scrnsave.cpp:294
+#: scrnsave.cpp:300
 msgid "&High"
 msgstr "高[&H]"
 
-#: scrnsave.cpp:303
+#: scrnsave.cpp:309
 msgid "Low"
 msgstr "低"
 
-#: general.cpp:216
+#: general.cpp:220
 msgid "Fonts etc."
 msgstr "字体及其他"
 
-#: general.cpp:222
+#: general.cpp:226
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "以 Windows 95 的风格来显示控件"
 
 #
-#: general.cpp:236
+#: general.cpp:240
 msgid "Desktop fonts"
 msgstr "桌面字体"
 
-#: general.cpp:248
+#: general.cpp:252
 msgid "General font"
 msgstr "一般字体"
 
-#: general.cpp:253
+#: general.cpp:257
 msgid "Fixed font"
 msgstr "等宽字体"
 
-#: general.cpp:263
+#: general.cpp:267
 msgid "Panel button font"
 msgstr "面板按钮字体"
 
-#: general.cpp:268
+#: general.cpp:272
 msgid "Panel clock font"
 msgstr "面板时钟字体"
 
-#: general.cpp:298
+#: general.cpp:302
 #, fuzzy
 msgid "Sample text"
 msgstr "选择文字"
 
-#: general.cpp:306
+#: general.cpp:310
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -377,7 +381,7 @@ msgstr "颜色[&C]"
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "用法: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:130
+#: main.cpp:139
 msgid "Display settings"
 msgstr "显示设置"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KWM\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,107 +19,107 @@ msgstr "Kwm: toinen ikkunamanageri on jo käynnissä. Kwm:ää ei käynnistetä.\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "Kwm: Virhe alkurutiineissa; lopetetaan\n"
 
-#: main.C:470
+#: main.C:483
 msgid "Preparing session ... "
 msgstr "Valmistelen sessiota ... "
 
-#: main.C:489
+#: main.C:504
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:496
+#: main.C:511
 msgid "Usage: "
 msgstr "Käyttö: "
 
-#: main.C:507
+#: main.C:522
 msgid "&Maximize"
 msgstr "&Suurenna"
 
-#: main.C:508
+#: main.C:523
 msgid "&Restore"
 msgstr "&Palauta"
 
-#: main.C:509
+#: main.C:524
 msgid "&Iconify"
 msgstr "&Kuvakkeeksi"
 
-#: main.C:510
+#: main.C:525
 msgid "&DeIconify"
 msgstr "P&oista kuvake"
 
-#: main.C:511
+#: main.C:526
 msgid "&Sticky"
 msgstr "&Naulaa"
 
-#: main.C:512
+#: main.C:527
 msgid "&UnSticky"
 msgstr "&Poista naulaus"
 
-#: main.C:513
+#: main.C:528
 msgid "Mo&ve"
 msgstr "S&iirrä"
 
-#: main.C:514
+#: main.C:529
 msgid "Resi&ze"
 msgstr "&Muuta kokoa"
 
-#: main.C:516
+#: main.C:531
 msgid "&To desktop"
 msgstr "&Työpöydälle"
 
-#: main.C:518
+#: main.C:533
 msgid "&Onto current desktop"
 msgstr "&Nykyiselle työpöydälle"
 
-#: main.C:571
+#: main.C:573
 msgid "One"
 msgstr "Yksi"
 
-#: main.C:574
+#: main.C:576
 msgid "Two"
 msgstr "Kaksi"
 
-#: main.C:577
+#: main.C:579
 msgid "Three"
 msgstr "Kolme"
 
-#: main.C:580
+#: main.C:582
 msgid "Four"
 msgstr "Neljä"
 
-#: main.C:583
+#: main.C:585
 msgid "Five"
 msgstr "Viisi"
 
-#: main.C:586
+#: main.C:588
 msgid "Six"
 msgstr "Kuusi"
 
-#: main.C:589
+#: main.C:591
 msgid "Seven"
 msgstr "Seitsemän"
 
-#: main.C:592
+#: main.C:594
 msgid "Eight"
 msgstr "Kahdeksan"
 
-#: main.C:606
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr "Nimeämätön työpöytä"
 
-#: main.C:942
+#: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: ShapeMode poistettu\n"
 
-#: main.C:1054
+#: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kelvollisia: GimmickMode poistettu\n"
 
-#: main.C:1311
+#: main.C:1353
 msgid "*** No Tasks ***"
 msgstr "*** Ei töitä ***"
 
-#: minicli.C:116
+#: minicli.C:119
 msgid "Command:"
 msgstr "Komento:"
 

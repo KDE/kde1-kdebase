@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -22,107 +22,107 @@ msgstr "kwm: veæ postoji jedan window manager. kwm nije pokrenut\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: gre¹ka prilikom inicijalizacije; odustajem\n"
 
-#: main.C:470
+#: main.C:483
 msgid "Preparing session ... "
 msgstr "Pripremam sesiju ..."
 
-#: main.C:489
+#: main.C:504
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:496
+#: main.C:511
 msgid "Usage: "
 msgstr "Uporaba: "
 
-#: main.C:507
+#: main.C:522
 msgid "&Maximize"
 msgstr "&Poveæaj"
 
-#: main.C:508
+#: main.C:523
 msgid "&Restore"
 msgstr "&Vrati"
 
-#: main.C:509
+#: main.C:524
 msgid "&Iconify"
 msgstr "Napravi ga &ikonom"
 
-#: main.C:510
+#: main.C:525
 msgid "&DeIconify"
 msgstr "&Aktiviraj ikonu"
 
-#: main.C:511
+#: main.C:526
 msgid "&Sticky"
 msgstr "Na&lijepi"
 
-#: main.C:512
+#: main.C:527
 msgid "&UnSticky"
 msgstr "&Odlijepi"
 
-#: main.C:513
+#: main.C:528
 msgid "Mo&ve"
 msgstr "Po&makni"
 
-#: main.C:514
+#: main.C:529
 msgid "Resi&ze"
 msgstr "Promjeni velièinu"
 
-#: main.C:516
+#: main.C:531
 msgid "&To desktop"
 msgstr "&Na radnu povr¹inu"
 
-#: main.C:518
+#: main.C:533
 msgid "&Onto current desktop"
 msgstr "Na &tekuæu radnu povr¹inu"
 
-#: main.C:571
+#: main.C:573
 msgid "One"
 msgstr "Jedan"
 
-#: main.C:574
+#: main.C:576
 msgid "Two"
 msgstr "Dva"
 
-#: main.C:577
+#: main.C:579
 msgid "Three"
 msgstr "Tri"
 
-#: main.C:580
+#: main.C:582
 msgid "Four"
 msgstr "Èetiri"
 
-#: main.C:583
+#: main.C:585
 msgid "Five"
 msgstr "Pet"
 
-#: main.C:586
+#: main.C:588
 msgid "Six"
 msgstr "Sest"
 
-#: main.C:589
+#: main.C:591
 msgid "Seven"
 msgstr "Sedam"
 
-#: main.C:592
+#: main.C:594
 msgid "Eight"
 msgstr "Osam"
 
-#: main.C:606
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr "Neimenovana radna povr¹ina"
 
-#: main.C:942
+#: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
 
-#: main.C:1054
+#: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: GimmickMode uga¹en\n"
 
-#: main.C:1311
+#: main.C:1353
 msgid "*** No Tasks ***"
 msgstr "*** Nema Zadaæa ***"
 
-#: minicli.C:116
+#: minicli.C:119
 msgid "Command:"
 msgstr "Naredba:"
 

@@ -162,8 +162,7 @@ msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde "
-"Modul"
+"Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde Modul"
 
 #: syssound.cpp:468
 #, c-format

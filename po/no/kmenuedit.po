@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-21 13:22+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -160,8 +160,18 @@ msgstr "Lenke"
 msgid "Device"
 msgstr "Enhet"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "FS-type:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Filnavn:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Filnavn:"
 
 #: entrydialog.cpp:95

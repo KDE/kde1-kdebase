@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-06-08 23:40+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 #: main.cpp:87
 msgid "&Appearance"
 msgstr "&Aparença"
-
-#: main.cpp:91
-msgid "&Fonts"
-msgstr "&Fonts"
 
 #: main.cpp:95
 msgid "&Background"
@@ -36,8 +32,7 @@ msgstr "&Sessions"
 #: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-msgstr ""
-"us: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr "us: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
@@ -54,10 +49,6 @@ msgstr ""
 #: main.cpp:157
 msgid "Missing privileges"
 msgstr "Manquen privilegis"
-
-#: kdm-appear.cpp:67
-msgid "Appearance"
-msgstr "Aparença"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
@@ -172,23 +163,23 @@ msgstr "Estàndard"
 msgid "Example:"
 msgstr "Exemple:"
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr "Color"
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr "Paper pintat"
 
-#: kdm-bgnd.cpp:109
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr "Mosaic"
 
-#: kdm-bgnd.cpp:113
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr "Centrat"
 
-#: kdm-bgnd.cpp:117
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr "Escalat"
 
@@ -236,9 +227,9 @@ msgstr "Cap usuari sel·leccionat"
 msgid "Save image as default image?"
 msgstr "Deso la imatge com imatge per omissió?"
 
-#: kdm-sess.cpp:54
-msgid "None"
-msgstr "Cap"
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown"
+msgstr ""
 
 #: kdm-sess.cpp:55
 msgid "All"
@@ -280,4 +271,11 @@ msgstr "Tipus disponibles"
 msgid "without name!"
 msgstr "sense nom!"
 
+#~ msgid "&Fonts"
+#~ msgstr "&Fonts"
 
+#~ msgid "Appearance"
+#~ msgstr "Aparença"
+
+#~ msgid "None"
+#~ msgstr "Cap"

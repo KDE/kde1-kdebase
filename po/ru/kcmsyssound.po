@@ -158,8 +158,8 @@ msgstr "Дополнительные WAV файлы могут быть перенесены в список звуков."
 msgid "Unsupported URL"
 msgstr "Неподдерживаемый URL"
 
-#: syssound.cpp:458
 #
+#: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 #: main.cpp:87
 msgid "&Appearance"
 msgstr "Μορφή"
-
-#: main.cpp:91
-msgid "&Fonts"
-msgstr "Γραμματοσειρές"
 
 #: main.cpp:95
 msgid "&Background"
@@ -38,8 +34,8 @@ msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "Σύνταξη: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-#: main.cpp:145
 
+#: main.cpp:145
 msgid "KDM Configuration"
 msgstr "Ρυθμίσεις KDM"
 
@@ -47,69 +43,74 @@ msgstr "Ρυθμίσεις KDM"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr ""
-"Συγγνώμη, αλλά δεν έχετε πρόσβαση στο αρχείο ρυθμίσεων του KDM."
+msgstr "Συγγνώμη, αλλά δεν έχετε πρόσβαση στο αρχείο ρυθμίσεων του KDM."
 
 #: main.cpp:157
 msgid "Missing privileges"
 msgstr "Ελλιπή δικαιώματα πρόσβασης"
 
-#: kdm-appear.cpp:66
-msgid "Appearance"
-msgstr "Μορφή"
-
-#: kdm-appear.cpp:69
+#: kdm-appear.cpp:70
 msgid "Greeting string:"
 msgstr "Χαιρετισμός:"
 
-#: kdm-appear.cpp:77
+#: kdm-appear.cpp:78
 msgid "KDM logo:"
 msgstr "Σήμα του KDM:"
 
-#: kdm-appear.cpp:104 kdm-users.cpp:135
+#: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr "Κάντε κλικ ή τοποθετήστε μια εικόνα εδώ"
 
-#: kdm-appear.cpp:109
+#: kdm-appear.cpp:110
 msgid "GUI Style:"
 msgstr "Τύπος γραφικού περιβάλλοντος:"
 
-#: kdm-appear.cpp:115
+#: kdm-appear.cpp:116
 msgid "Motif"
 msgstr "Motif"
 
-#: kdm-appear.cpp:116
+#: kdm-appear.cpp:117
 msgid "Windows"
 msgstr "Windows"
 
-#: kdm-appear.cpp:143 kdm-appear.cpp:227 kdm-users.cpp:275
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr ""
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr ""
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
-msgstr "Προκλήθηκε σφάλμα κατά την φόρτωση της εικόνας:\n"
+msgstr ""
+"Προκλήθηκε σφάλμα κατά την φόρτωση της εικόνας:\n"
 ">"
 
-#: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
 msgid "<"
 msgstr "<"
 
-#: kdm-appear.cpp:146 kdm-appear.cpp:165 kdm-appear.cpp:230 kdm-users.cpp:196
-#: kdm-users.cpp:278
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
 msgid "ERROR"
 msgstr "ΣΦΑΛΜΑ"
 
-#: kdm-appear.cpp:162 kdm-users.cpp:193
+#: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
-msgstr "Προκλήθηκε σφάλμα κατά την αποθήκευση της εικόνας:\n"
+msgstr ""
+"Προκλήθηκε σφάλμα κατά την αποθήκευση της εικόνας:\n"
 ">"
 
-#: kdm-appear.cpp:195 kdm-users.cpp:226
+#: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
 msgstr "Συγγνώμη, αλλά το αρχείο \n"
 
-#: kdm-appear.cpp:197 kdm-users.cpp:228
+#: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
 "\n"
 "does not seem to be an image file"
@@ -117,7 +118,7 @@ msgstr ""
 "\n"
 "δεν φαίνεται να είναι αρχείο εικόνας"
 
-#: kdm-appear.cpp:198 kdm-users.cpp:229
+#: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
 "\n"
 "Please use files with these extensions\n"
@@ -125,11 +126,11 @@ msgstr ""
 "\n"
 "Παρακαλώ χρησιμοποιήστε αρχεία με τις παρακάτω επεκτάσεις\n"
 
-#: kdm-appear.cpp:200 kdm-users.cpp:231
+#: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
 msgstr "Λανθασμένη επέκταση αρχείου"
 
-#: kdm-appear.cpp:229 kdm-users.cpp:277
+#: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -141,43 +142,43 @@ msgstr ""
 msgid "Select fonts"
 msgstr "Επιλογή γραμματοσειρών"
 
-#: kdm-font.cpp:51
+#: kdm-font.cpp:50
 msgid "Change font"
 msgstr "Αλλαγή γραμματοσειράς"
 
-#: kdm-font.cpp:59
+#: kdm-font.cpp:55
 msgid "Greeting"
 msgstr "Χαιρετισμός"
 
-#: kdm-font.cpp:60
+#: kdm-font.cpp:56
 msgid "Fail"
 msgstr "Αποτυχία"
 
-#: kdm-font.cpp:61
+#: kdm-font.cpp:57
 msgid "Standard"
 msgstr "Κανονικό"
 
-#: kdm-font.cpp:62
+#: kdm-font.cpp:59
 msgid "Example:"
 msgstr "Παράδειγμα:"
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr "Χρώμα"
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr "Ταπετσαρία"
 
-#: kdm-bgnd.cpp:109
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr "Σε παράταξη"
 
-#: kdm-bgnd.cpp:113
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr "Κεντραρισμένο"
 
-#: kdm-bgnd.cpp:117
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr "Προσαρμογή μεγέθους"
 
@@ -217,54 +218,64 @@ msgstr "Εμφάνιση χρηστών"
 msgid "Sort users"
 msgstr "Ταξινόμηση χρηστών"
 
-#: kdm-users.cpp:181 kdm-users.cpp:250
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
 msgstr "Δεν έχει επιλεγεί χρήστης"
 
-#: kdm-users.cpp:182 kdm-users.cpp:251
+#: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "Να σωθεί η εικόνα για εξ ορισμού χρήση;"
 
 #: kdm-sess.cpp:50
-msgid "Allow to shutdown:"
+#, fuzzy
+msgid "Allow to shutdown"
 msgstr "Κλείσιμο συστήματος επιτρέπεται:"
 
-#: kdm-sess.cpp:56
-msgid "None"
-msgstr "σε κανέναν"
-
-#: kdm-sess.cpp:57
+#: kdm-sess.cpp:55
 msgid "All"
 msgstr "σε όλους"
 
-#: kdm-sess.cpp:58
+#: kdm-sess.cpp:56
 msgid "Root Only"
 msgstr "μόνο στον root"
 
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:57
 msgid "Console Only"
 msgstr "μόνο από κονσόλα"
 
-#: kdm-sess.cpp:63
+#: kdm-sess.cpp:61
 msgid "Commands"
 msgstr "Εντολές"
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:62
 msgid "Shutdown"
 msgstr "Κλείσιμο"
 
-#: kdm-sess.cpp:73
+#: kdm-sess.cpp:67
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
-#: kdm-sess.cpp:85
+#: kdm-sess.cpp:73
 msgid "Session types"
 msgstr "Τύποι σύνδεσης"
 
-#: kdm-sess.cpp:88
+#: kdm-sess.cpp:75
 msgid "New type"
 msgstr "Νέος τύπος"
 
-#: kdm-sess.cpp:98
+#: kdm-sess.cpp:83
 msgid "Available types"
 msgstr "Διαθέσιμοι τύποι"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr ""
+
+#~ msgid "&Fonts"
+#~ msgstr "Γραμματοσειρές"
+
+#~ msgid "Appearance"
+#~ msgstr "Μορφή"
+
+#~ msgid "None"
+#~ msgstr "σε κανέναν"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-04-20 22:58+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -159,8 +159,18 @@ msgstr "連結"
 msgid "Device"
 msgstr "裝置"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "檔案系統型態:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "檔案名稱:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "檔案名稱:"
 
 #: entrydialog.cpp:95

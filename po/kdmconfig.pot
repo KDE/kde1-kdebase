@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,6 +210,10 @@ msgstr ""
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
+msgstr ""
+
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown"
 msgstr ""
 
 #: kdm-sess.cpp:55

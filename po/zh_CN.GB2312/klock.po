@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-17 09:43+0200\n"
+"POT-Creation-Date: 1998-10-01 13:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,13 +14,26 @@ msgstr "Banner"
 msgid "Setup kbanner"
 msgstr "设置 kbanner"
 
+#: banner.cpp:95
+#, fuzzy
+msgid "Family:"
+msgstr "失败"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr ""
+
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "颜色:"
 
+#: banner.cpp:147
+msgid "Bold"
+msgstr ""
+
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "速度"
@@ -385,37 +398,48 @@ msgstr ""
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
 
-#: main.cpp:286
+#: main.cpp:349
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:313
+#: main.cpp:378
+#, fuzzy
 msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator.\n"
+"Warning: You won't be able to lock the screen!\n"
 "\n"
-"Tell him, that you need suid for the screensavers!"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the screensavers!"
 msgstr ""
 "您的系统使用 shadow 密码!\n"
 "请联络您的系统管理员.\n"
 "\n"
 "告诉他, 您需要将这屏幕保护程序 suid!"
 
-#: main.cpp:318
+#: main.cpp:383
 msgid "Shadow Passwords"
 msgstr "Shadow Passwords"
 
-#: main.cpp:476
-#, c-format
+#: main.cpp:428
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+
+#: main.cpp:536
+#, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "用法: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:479
+#: main.cpp:539
+#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -427,6 +451,7 @@ msgid ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -451,7 +476,7 @@ msgstr ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 
-#: morph3d.cpp:839 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr "GL 不能在 root visual 中渲染\n"
 
@@ -484,6 +509,33 @@ msgstr ""
 "Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
+
+#: pipes.cpp:299
+#, fuzzy
+msgid "Pipes (GL)"
+msgstr "Space (GL)"
+
+#: pipes.cpp:672
+#, fuzzy
+msgid "Setup KPipes"
+msgstr "设置 KSlip"
+
+#: pipes.cpp:678
+#, fuzzy
+msgid "Number of Pipes"
+msgstr "蜜蜂数目:"
+
+#: pipes.cpp:743
+#, fuzzy
+msgid "About KPipes"
+msgstr "关于 Lines"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -614,55 +666,55 @@ msgstr "弯曲"
 msgid "Science"
 msgstr "Science"
 
-#: science.cpp:447
+#: science.cpp:491
 msgid "rendering lens..."
 msgstr "透镜 ..."
 
-#: science.cpp:769
+#: science.cpp:813
 msgid "grabbing screen..."
 msgstr "截取屏幕..."
 
 #
-#: science.cpp:931
+#: science.cpp:975
 msgid "Setup Science"
 msgstr "设置 Science"
 
 #
-#: science.cpp:949
+#: science.cpp:993
 msgid "Mode:"
 msgstr "方式:"
 
-#: science.cpp:964
+#: science.cpp:1008
 msgid "Inverse"
 msgstr "反转"
 
-#: science.cpp:974
+#: science.cpp:1018
 msgid "Gravity"
 msgstr "引力"
 
-#: science.cpp:983
+#: science.cpp:1027
 msgid "Hide Background"
 msgstr "隐藏背景"
 
-#: science.cpp:1009
+#: science.cpp:1053
 msgid "Intensity:"
 msgstr "强度:"
 
-#: science.cpp:1039
+#: science.cpp:1083
 msgid "Motion:"
 msgstr "动作:"
 
 #
-#: science.cpp:1260
+#: science.cpp:1304
 msgid "Science Version"
 msgstr "Science 版本"
 
-#: science.cpp:1261
+#: science.cpp:1305
 msgid "written by"
 msgstr "written by"
 
 #
-#: science.cpp:1262
+#: science.cpp:1306
 msgid "About Science"
 msgstr "关于 Science"
 

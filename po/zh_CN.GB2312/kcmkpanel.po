@@ -1,24 +1,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "&Panel"
 msgstr "面板"
 
-#: main.cpp:68
+#: main.cpp:70
 msgid "&Desktops"
 msgstr "桌面"
 
-#: main.cpp:97
-msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr ""
+
+#: main.cpp:109
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "用法: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:128
+#: main.cpp:142
 msgid "KPanel Configuration"
 msgstr "KPanel 配置"
 
@@ -38,36 +43,44 @@ msgstr "左边[&L]"
 msgid "&Bottom"
 msgstr "底部[&B]"
 
-#: panel.cpp:74
+#: panel.cpp:63
+msgid "&Right"
+msgstr ""
+
+#: panel.cpp:75
 msgid "Taskbar"
 msgstr "工具条"
 
-#: panel.cpp:75
+#: panel.cpp:76
 msgid "&Hidden"
 msgstr "隐藏[&H]"
 
 #
-#: panel.cpp:77
+#: panel.cpp:78
 msgid "T&op"
 msgstr "顶端[&T]"
 
-#: panel.cpp:79
+#: panel.cpp:80
 msgid "Botto&m"
 msgstr "底部[&M]"
 
-#: panel.cpp:81
+#: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "顶端/左边[&F]"
 
-#: panel.cpp:96
+#: panel.cpp:95
+msgid "Style"
+msgstr ""
+
+#: panel.cpp:97
 msgid "T&iny"
 msgstr "极小[&I]"
 
-#: panel.cpp:98
+#: panel.cpp:99
 msgid "&Normal"
 msgstr "正常[&N]"
 
-#: panel.cpp:100
+#: panel.cpp:101
 msgid "L&arge"
 msgstr "大[&L]"
 
@@ -123,3 +136,11 @@ msgstr "&24小时"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12小时 上午/下午"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr ""
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr ""

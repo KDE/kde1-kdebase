@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-09-24  18:04+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
@@ -14,19 +14,24 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso8859-2\n"
 
-#: main.cpp:62
+#: main.cpp:64
 msgid "&Panel"
 msgstr "&Pult"
 
-#: main.cpp:68
+#: main.cpp:70
 msgid "&Desktops"
 msgstr "&Namizja"
 
-#: main.cpp:97
-msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr ""
+
+#: main.cpp:109
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "Uporaba: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:128
+#: main.cpp:142
 msgid "KPanel Configuration"
 msgstr "Nastavitve KPulta"
 
@@ -46,35 +51,43 @@ msgstr "&Levo"
 msgid "&Bottom"
 msgstr "&Spodaj"
 
-#: panel.cpp:74
+#: panel.cpp:63
+msgid "&Right"
+msgstr ""
+
+#: panel.cpp:75
 msgid "Taskbar"
 msgstr "Opravilna vrstica"
 
-#: panel.cpp:75
+#: panel.cpp:76
 msgid "&Hidden"
 msgstr "S&krita"
 
-#: panel.cpp:77
+#: panel.cpp:78
 msgid "T&op"
 msgstr "Z&goraj"
 
-#: panel.cpp:79
+#: panel.cpp:80
 msgid "Botto&m"
 msgstr "S&podaj"
 
-#: panel.cpp:81
+#: panel.cpp:82
 msgid "Top/Le&ft"
 msgstr "L&evo-zgoraj"
 
-#: panel.cpp:96
+#: panel.cpp:95
+msgid "Style"
+msgstr ""
+
+#: panel.cpp:97
 msgid "T&iny"
 msgstr "&Majhen"
 
-#: panel.cpp:98
+#: panel.cpp:99
 msgid "&Normal"
 msgstr "&Normalen"
 
-#: panel.cpp:100
+#: panel.cpp:101
 msgid "L&arge"
 msgstr "&Velik"
 
@@ -129,3 +142,11 @@ msgstr "&24h"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12h AM/PM"
+
+#: disknav.cpp:43
+msgid "Edit &Global..."
+msgstr ""
+
+#: disknav.cpp:46
+msgid "Edit &Local..."
+msgstr ""

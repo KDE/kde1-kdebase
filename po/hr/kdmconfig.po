@@ -5,41 +5,41 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"  
+"Content-Transfer-Encoding: iso-8859-2\n"
 
-#: main.cpp:99
+#: main.cpp:87
 msgid "&Appearance"
 msgstr "&Izgled"
 
-#: main.cpp:103
-msgid "&Fonts"
-msgstr "&Pisma"
-
-#: main.cpp:107
+#: main.cpp:95
 msgid "&Background"
 msgstr "Po&zadina"
 
-#: main.cpp:110
+#: main.cpp:98
 msgid "&Users"
 msgstr "&Korisnici"
 
-#: main.cpp:113
+#: main.cpp:101
 msgid "&Sessions"
 msgstr "&Sesije"
 
-#: main.cpp:118
+#: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 "uporaba: kdmconfig [-init | {izgled,pismo,pozadina,sesije,korisnici}]\n"
 
-#: main.cpp:125
+#: main.cpp:145
+msgid "KDM Configuration"
+msgstr "KDM Postava"
+
+#: main.cpp:155
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
@@ -47,43 +47,43 @@ msgstr ""
 "®alim, nema¹ odgovarajuæe privilegije\n"
 "za èitanje/pisanje u KDM datoteku za pode¹avanje"
 
-#: main.cpp:127
+#: main.cpp:157
 msgid "Missing privileges"
 msgstr "Nedostaju privilegije"
 
-#: main.cpp:164
-msgid "KDM Configuration"
-msgstr "KDM Postava"
-
-#: kdm-appear.cpp:66
-msgid "Appearance"
-msgstr "Izgled"
-
-#: kdm-appear.cpp:69
+#: kdm-appear.cpp:70
 msgid "Greeting string:"
 msgstr "Pozdravni niz:"
 
-#: kdm-appear.cpp:77
+#: kdm-appear.cpp:78
 msgid "KDM logo:"
 msgstr "KDM logo:"
 
-#: kdm-appear.cpp:104 kdm-users.cpp:139
+#: kdm-appear.cpp:105 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr "Klikni ili ispusti sliku ovdje"
 
-#: kdm-appear.cpp:109
+#: kdm-appear.cpp:110
 msgid "GUI Style:"
 msgstr "Stil GUIa:"
 
-#: kdm-appear.cpp:115
+#: kdm-appear.cpp:116
 msgid "Motif"
 msgstr "Motif"
 
-#: kdm-appear.cpp:116
+#: kdm-appear.cpp:117
 msgid "Windows"
 msgstr "Windows"
 
-#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr ""
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr ""
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
 "There was an error loading the image:\n"
 ">"
@@ -91,17 +91,16 @@ msgstr ""
 "Javila se gre¹ka prilikom uèitavanja slike:\n"
 ">"
 
-
-#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
 msgid "<"
 msgstr "<"
 
-#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
-#: kdm-users.cpp:247
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
 msgid "ERROR"
 msgstr "GRE©KA"
 
-#: kdm-appear.cpp:154 kdm-users.cpp:162
+#: kdm-appear.cpp:186 kdm-users.cpp:194
 msgid ""
 "There was an error saving the image:\n"
 ">"
@@ -109,11 +108,11 @@ msgstr ""
 "Javila se gre¹ka prilikom pospremanja slike:\n"
 ">"
 
-#: kdm-appear.cpp:187 kdm-users.cpp:195
+#: kdm-appear.cpp:219 kdm-users.cpp:227
 msgid "Sorry, but \n"
 msgstr "®alim, ali \n"
 
-#: kdm-appear.cpp:189 kdm-users.cpp:197
+#: kdm-appear.cpp:221 kdm-users.cpp:229
 msgid ""
 "\n"
 "does not seem to be an image file"
@@ -121,7 +120,7 @@ msgstr ""
 "\n"
 "ne izgleda kao slikovna datoteka"
 
-#: kdm-appear.cpp:190 kdm-users.cpp:198
+#: kdm-appear.cpp:222 kdm-users.cpp:230
 msgid ""
 "\n"
 "Please use files with these extensions\n"
@@ -129,11 +128,11 @@ msgstr ""
 "\n"
 "Koristi datoteke sa ovim sufiksima\n"
 
-#: kdm-appear.cpp:192 kdm-users.cpp:200
+#: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"
 msgstr "Pogre¹ni sufiks datoteke"
- 
-#: kdm-appear.cpp:221 kdm-users.cpp:246
+
+#: kdm-appear.cpp:253 kdm-users.cpp:278
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -145,59 +144,59 @@ msgstr ""
 msgid "Select fonts"
 msgstr "Izaberi pisma"
 
-#: kdm-font.cpp:51
+#: kdm-font.cpp:50
 msgid "Change font"
 msgstr "Promijeni pismo"
 
-#: kdm-font.cpp:59
+#: kdm-font.cpp:55
 msgid "Greeting"
 msgstr "Pozdrav"
 
-#: kdm-font.cpp:60
+#: kdm-font.cpp:56
 msgid "Fail"
 msgstr "Kvar"
 
-#: kdm-font.cpp:61
+#: kdm-font.cpp:57
 msgid "Standard"
 msgstr "Standardni"
 
-#: kdm-font.cpp:62
+#: kdm-font.cpp:59
 msgid "Example:"
 msgstr "Primjer:"
 
-#: kdm-bgnd.cpp:67
+#: kdm-bgnd.cpp:66
 msgid "Color"
 msgstr "Boja"
 
-#: kdm-bgnd.cpp:75
+#: kdm-bgnd.cpp:74
 msgid "Wallpaper"
 msgstr "Pozadinska slika"
 
-#: kdm-bgnd.cpp:110
+#: kdm-bgnd.cpp:108
 msgid "Tiled"
 msgstr "Poploèan"
 
-#: kdm-bgnd.cpp:114
+#: kdm-bgnd.cpp:112
 msgid "Centred"
 msgstr "Centriran"
 
-#: kdm-bgnd.cpp:118
+#: kdm-bgnd.cpp:116
 msgid "Scaled"
 msgstr "U mjerilu"
 
-#: kdm-users.cpp:49
+#: kdm-users.cpp:48
 msgid "All users"
 msgstr "Svi korisnici"
 
-#: kdm-users.cpp:51
+#: kdm-users.cpp:50
 msgid "Selected users"
 msgstr "Izabrani korisnici"
 
-#: kdm-users.cpp:53
+#: kdm-users.cpp:52
 msgid "No-show users"
 msgstr "No-show korisnici"
 
-#: kdm-users.cpp:80
+#: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
@@ -205,7 +204,7 @@ msgstr ""
 "Prika¾i samo\n"
 "izabrane korisnike"
 
-#: kdm-users.cpp:87
+#: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
@@ -221,58 +220,64 @@ msgstr "Prika¾i korisnike"
 msgid "Sort users"
 msgstr "Sortiraj korisnike"
 
-#: kdm-users.cpp:150 kdm-users.cpp:219
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
 msgstr "Nijedan korisnik nije izabran"
 
-#: kdm-users.cpp:151 kdm-users.cpp:220
+#: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "Pospremi "
 
-#: kdm-sess.cpp:51
-msgid "Allow to shutdown:"
+#: kdm-sess.cpp:50
+#, fuzzy
+msgid "Allow to shutdown"
 msgstr "Dozvoli ga¹enje"
 
-#: kdm-sess.cpp:58
-msgid "None"
-msgstr "Nikakva"
-
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:55
 msgid "All"
 msgstr "Svi"
 
-#: kdm-sess.cpp:60
+#: kdm-sess.cpp:56
 msgid "Root Only"
 msgstr "Samo korijenski korisnik"
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:57
 msgid "Console Only"
 msgstr "Samo konzola"
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:61
 msgid "Commands"
 msgstr "Komande"
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:62
 msgid "Shutdown"
 msgstr "Ugasi"
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:67
 msgid "Restart"
 msgstr "Pokreni ponovo"
 
-#: kdm-sess.cpp:86
+#: kdm-sess.cpp:73
 msgid "Session types"
 msgstr "Tipovi sesija"
 
-#: kdm-sess.cpp:89
+#: kdm-sess.cpp:75
 msgid "New type"
 msgstr "Novi tip"
 
-#: kdm-sess.cpp:99
+#: kdm-sess.cpp:83
 msgid "Available types"
 msgstr "Dostupni tipovi"
 
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr ""
 
+#~ msgid "&Fonts"
+#~ msgstr "&Pisma"
 
+#~ msgid "Appearance"
+#~ msgstr "Izgled"
 
+#~ msgid "None"
+#~ msgstr "Nikakva"

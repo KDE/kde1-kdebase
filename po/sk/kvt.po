@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,133 +13,135 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:347
+#: main.C:421
 msgid "choose type of color-mode"
 msgstr "Typ farebného módu:"
 
-#: main.C:353
+#: main.C:427
 msgid "Add characters to word class"
 msgstr "Znaky pridané do triedy slov:"
 
 # ???
-#: main.C:359
+#: main.C:433
 msgid "The backspace key will send a"
 msgstr "Backspace bude posielaný ako"
 
-#: main.C:365
+#: main.C:439
 msgid "Cursor key set"
 msgstr "Sada kurzorových kláves"
 
-#: main.C:532
+#: main.C:606
 msgid "&New Terminal"
 msgstr "&Nový terminál"
 
-#: main.C:539 main.C:915
+#: main.C:613 main.C:987
 msgid "&Hide"
 msgstr "&Schova»"
 
-#: main.C:540
+#: main.C:614
 msgid "&Left"
 msgstr "N&aµavo"
 
-#: main.C:541
+#: main.C:615
 msgid "&Right"
 msgstr "Nap&ravo"
 
-#: main.C:546
+#: main.C:620
 msgid "&Normal"
 msgstr "&Normálne"
 
-#: main.C:547
+#: main.C:621
 msgid "&Tiny"
 msgstr "&Drobné"
 
-#: main.C:548
+#: main.C:622
 msgid "&Small"
 msgstr "&Malé"
 
-#: main.C:549
+#: main.C:623
 msgid "&Medium"
 msgstr "&Stredné"
 
-#: main.C:550
+#: main.C:624
 msgid "&Large"
 msgstr "V&eµké"
 
-#: main.C:551
+#: main.C:625
 msgid "&Huge"
 msgstr "&Obrovské"
 
-#: main.C:563
+#: main.C:637
 msgid "&black/white"
 msgstr "èierna/&biela"
 
-#: main.C:564
+#: main.C:638
 msgid "&white/black"
 msgstr "b&iela/èierna"
 
-#: main.C:565
+#: main.C:639
 msgid "&green/black"
 msgstr "zelená/èie&rna"
 
-#: main.C:566
+#: main.C:640
 msgid "black/light&yellow"
 msgstr "èierna/svetlo ¾l&tá"
 
-#: main.C:567
+#: main.C:641
 msgid "Linu&x Console"
 msgstr "Linu&x konzola"
 
-#: main.C:576
+#: main.C:650
 msgid "&Custom Colors"
 msgstr "&Vlastné farby"
 
-#: main.C:583 main.C:849
+#: main.C:657 main.C:921
 msgid "Hide &Menubar"
 msgstr "Skry» &menu"
 
-#: main.C:585 main.C:771 main.C:841
+#: main.C:659 main.C:843 main.C:913
 msgid "Show &Menubar"
 msgstr "Zobrazi» &menu"
 
-#: main.C:586 main.C:859
+#: main.C:660 main.C:931
 msgid "Secure &keyboard"
 msgstr "Zabezpeèi» &klávesnicu"
 
-#: main.C:588
+#: main.C:662
 msgid "Scroll&bar"
 msgstr "R&olovacia li¹ta"
 
-#: main.C:589
+#: main.C:663
 msgid "&Font size"
 msgstr "Veµkos» &písma"
 
-#: main.C:590
+#: main.C:664
 msgid "&Color"
 msgstr "F&arba"
 
-#: main.C:591
+#: main.C:665
 msgid "&Size"
 msgstr "Veµko&s»"
 
-#: main.C:592
+#: main.C:666
 msgid "Terminal..."
 msgstr "&Terminál..."
 
-#: main.C:593
+#: main.C:667
 msgid "Font..."
 msgstr "Písmo..."
 
-#: main.C:595
+#: main.C:669
 msgid "Save &Options"
 msgstr "Ulo¾i» &nastavenie"
 
-#: main.C:604
+#: main.C:678
+#, fuzzy
 msgid ""
 "\n"
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
@@ -152,23 +154,23 @@ msgstr ""
 "Emulácia terminálu pre KDE Desktop Environment\n"
 "zalo¾ené na  rxvt-2.08 Roberta Nationa"
 
-#: main.C:780 main.C:908
+#: main.C:852 main.C:980
 msgid "&Show"
 msgstr "&Ukáza»"
 
-#: main.C:855
+#: main.C:927
 msgid "Unsecure &keyboard"
 msgstr "Vypnú» zabezpeèenie &klávesnice"
 
-#: main.C:866
+#: main.C:938
 msgid "Terminal Options"
 msgstr "Nastavenie terminálu"
 
-#: main.C:1020
+#: main.C:1092
 msgid "Hint"
 msgstr "Rada"
 
-#: main.C:1021
+#: main.C:1093
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -176,7 +178,7 @@ msgstr ""
 "Nové nastavenie farieb sa prejaví\n"
 "po vypnutí zabezpeèenia klávesnice."
 
-#: main.C:1322
+#: main.C:1394
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -190,62 +192,62 @@ msgstr ""
 "Zalo¾ené na  rxvt-2.08 Roberta Nationa\n"
 "\n"
 
-#: main.C:1326
+#: main.C:1398
 msgid "Permitted arguments are:\n"
 msgstr "Povolené argumenty sú:\n"
 
-#: main.C:1327
+#: main.C:1399
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
 "-e <príkaz> <arg> ...     prevedie príkaz s parametrami - musí by» posledný\n"
 "                          argument\n"
 
-#: main.C:1328
+#: main.C:1400
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <meno>           ¹pecifikuje display (server)\n"
 
-#: main.C:1329
+#: main.C:1401
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
 msgstr "-vt_geometry <spec>       poèiatoèná geometria vt okna\n"
 
-#: main.C:1330
+#: main.C:1402
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
 msgstr "-print-pipe <názov>       ¹pecifikuje rúru pre vt100 tlaèiareò\n"
 
-#: main.C:1331
+#: main.C:1403
 msgid "-vt_bg <colour>           background color\n"
 msgstr "-vt_bg <farba>            farba pozadia\n"
 
-#: main.C:1332
+#: main.C:1404
 msgid "-vt_fg <colour>           foreground color\n"
 msgstr "-vt_fg <farba>            farba popredia\n"
 
-#: main.C:1333
+#: main.C:1405
 msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <názov>          normálny font\n"
 
-#: main.C:1334
+#: main.C:1406
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
 msgstr "-no_font_hack             vypnú» obídenie chyby Qt fontu\n"
 
-#: main.C:1335
+#: main.C:1407
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <veµkos»>        tiny, small, normal large, huge\n"
 
-#: main.C:1336
+#: main.C:1408
 msgid "-linux                    set up kvt to mimic linux-console\n"
 msgstr "-linux                    nastaví kvt na emuláciu linuxáckej konzoly\n"
 
-#: main.C:1337
+#: main.C:1409
 msgid "-no_menubar               hide the menubar\n"
 msgstr "-no_menubar               skryje riadok s menu\n"
 
-#: main.C:1338
+#: main.C:1410
 msgid "-no_scrollbar             hide the scrollbar\n"
 msgstr "-no_scrollbar             skryje rolovací pás\n"
 
-#: main.C:1339
+#: main.C:1411
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
@@ -253,19 +255,19 @@ msgstr ""
 "-T <text>                 text v titulku okna \n"
 "                          (Zastaralé. Pou¾ite rad¹ej -caption)\n"
 
-#: main.C:1341
+#: main.C:1413
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
 msgstr "-tn <TERM>                Typ terminálu. ©tandardne xterm.\n"
 
-#: main.C:1342
+#: main.C:1414
 msgid "-C                        Capture system console message\n"
 msgstr "-C                        Odchytáva správy systémovej konzoly\n"
 
-#: main.C:1343
+#: main.C:1415
 msgid "-n <text>                 name in icon or icon window\n"
 msgstr "-n <text>                 názov v ikone alebo okne ikón\n"
 
-#: main.C:1344
+#: main.C:1416
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
@@ -273,7 +275,7 @@ msgstr ""
 "-7                        spusti» v 7-bitovom móde\n"
 "-8                        spusti» v 8-bitovom móde\n"
 
-#: main.C:1346
+#: main.C:1418
 msgid ""
 "-ls                       initiate kvt's shell as a login shell\n"
 "-ls-                      initiate kvt's shell as a non-login shell "
@@ -283,7 +285,7 @@ msgstr ""
 "-ls-                      nespusti» shell kvt ako prihlasovací shell "
 "(¹tand.)\n"
 
-#: main.C:1348
+#: main.C:1420
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
@@ -292,12 +294,12 @@ msgstr ""
 "bitom\n"
 "                          alebo ignorova»\n"
 
-#: main.C:1349
+#: main.C:1421
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
 msgstr ""
 "-sl <èíslo>               ulo¾i» 'èíslo' riadkov do buffra scrollbaru\n"
 
-#: main.C:1350
+#: main.C:1422
 msgid ""
 "-pageup <keysym>          use hot key alt-keysym to scroll up through the "
 "buffer\n"
@@ -307,7 +309,7 @@ msgstr ""
 "-pageup <keysym>          hotkey alt-keysym na prechádzanie hore bufferom\n"
 "-pagedown <keysym>        hotkey alt-keysym na prechádzanie dole bufferom\n"
 
-#: main.C:1354
+#: main.C:1426
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

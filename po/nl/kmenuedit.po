@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -161,9 +161,18 @@ msgstr "Verbinding"
 msgid "Device"
 msgstr "Apparaat"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Bestandssysteem type:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Bestandsnaam:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Naam:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -255,6 +264,3 @@ msgstr "Standaard:"
 
 #~ msgid "&Reload"
 #~ msgstr "&Opnieuw inlezen menus"
-
-#~ msgid "Name:"
-#~ msgstr "Naam:"

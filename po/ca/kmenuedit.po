@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-19 23:20+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -158,8 +158,18 @@ msgstr "Enllaç"
 msgid "Device"
 msgstr "Dispositiu"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "Tipus FS:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "Nom de fitxer:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "Nom de fitxer:"
 
 #: entrydialog.cpp:95

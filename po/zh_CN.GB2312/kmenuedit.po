@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -153,8 +153,18 @@ msgstr "链接"
 msgid "Device"
 msgstr "设备"
 
+#: entrydialog.cpp:63
+#, fuzzy
+msgid "Type:"
+msgstr "文件系统类型:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
+msgstr "文件名:"
+
+#: entrydialog.cpp:82
+#, fuzzy
+msgid "Name:"
 msgstr "文件名:"
 
 #: entrydialog.cpp:95

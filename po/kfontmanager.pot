@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,4 +79,76 @@ msgid ""
 "Copyright 1997\n"
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontexplorer.cpp:126
+msgid "Select Font"
+msgstr ""
+
+#: kfontexplorer.cpp:130
+msgid "Requested Font"
+msgstr ""
+
+#: kfontexplorer.cpp:135
+msgid "Actual Font"
+msgstr ""
+
+#: kfontexplorer.cpp:139 kfontexplorer.cpp:143
+msgid "Family:"
+msgstr ""
+
+#: kfontexplorer.cpp:163 kfontexplorer.cpp:168
+msgid "Size:"
+msgstr ""
+
+#: kfontexplorer.cpp:177 kfontexplorer.cpp:182
+msgid "Weight:"
+msgstr ""
+
+#: kfontexplorer.cpp:191 kfontexplorer.cpp:199
+msgid "Style:"
+msgstr ""
+
+#: kfontexplorer.cpp:234
+msgid "Charset"
+msgstr ""
+
+#: kfontexplorer.cpp:246
+msgid "Size"
+msgstr ""
+
+#: kfontexplorer.cpp:285
+msgid "Weight"
+msgstr ""
+
+#: kfontexplorer.cpp:286 kfontexplorer.cpp:394
+msgid "normal"
+msgstr ""
+
+#: kfontexplorer.cpp:287 kfontexplorer.cpp:396
+msgid "bold"
+msgstr ""
+
+#: kfontexplorer.cpp:296
+msgid "Style"
+msgstr ""
+
+#: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
+msgid "roman"
+msgstr ""
+
+#: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
+msgid "italic"
+msgstr ""
+
+#: kfontexplorer.cpp:326
+msgid "Dolor Ipse"
+msgstr ""
+
+#: kfontexplorer.cpp:430
+msgid "Bold"
+msgstr ""
+
+#: kfontexplorer.cpp:432
+msgid "Normal"
 msgstr ""

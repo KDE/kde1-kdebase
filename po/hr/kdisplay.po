@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-05-14 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Radna povr¹ina"
 msgid "&Rename ..."
 msgstr "&Promijeni ime ..."
 
-#: backgnd.cpp:193 colorscm.cpp:93
+#: backgnd.cpp:193 colorscm.cpp:94
 msgid "Colors"
 msgstr "Boje"
 
@@ -120,95 +120,95 @@ msgstr "Rattan"
 msgid "Cobbled Pavement"
 msgstr "Ploènik"
 
-#: colorscm.cpp:119
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Raspored boja"
 
-#: colorscm.cpp:130
+#: colorscm.cpp:131
 msgid "Current scheme"
 msgstr "Tekuæi raspored boja"
 
-#: colorscm.cpp:132
+#: colorscm.cpp:133
 msgid "KDE default"
 msgstr "KDE uobièajeno"
 
-#: colorscm.cpp:145
+#: colorscm.cpp:146
 msgid "&Add ..."
 msgstr "&Dodaj ..."
 
-#: colorscm.cpp:162
+#: colorscm.cpp:163
 msgid "&Save changes"
 msgstr "&Spremi promjene"
 
-#: colorscm.cpp:176
+#: colorscm.cpp:177
 msgid "Widget color"
 msgstr "Boja widgeta"
 
-#: colorscm.cpp:183
+#: colorscm.cpp:184
 msgid "Inactive title bar"
 msgstr "Naslov neaktivnog prozora"
 
-#: colorscm.cpp:184
+#: colorscm.cpp:185
 msgid "Inactive title text"
 msgstr "Tekst neaktivnog prozora"
 
-#: colorscm.cpp:185
+#: colorscm.cpp:186
 msgid "Inactive title blend"
 msgstr "Smjesa boja neaktivnog prozora"
 
-#: colorscm.cpp:186
+#: colorscm.cpp:187
 msgid "Active title bar"
 msgstr "Naslov aktivnog prozora"
 
-#: colorscm.cpp:187
+#: colorscm.cpp:188
 msgid "Active title text"
 msgstr "Tekst aktivnog prozora"
 
-#: colorscm.cpp:188
+#: colorscm.cpp:189
 msgid "Active title blend"
 msgstr "Smjesa boja aktivnog prozora"
 
-#: colorscm.cpp:189
+#: colorscm.cpp:190
 msgid "Background"
 msgstr "Pozadina"
 
-#: colorscm.cpp:190
+#: colorscm.cpp:191
 msgid "Text"
 msgstr "Tekst"
 
-#: colorscm.cpp:191
+#: colorscm.cpp:192
 msgid "Select background"
 msgstr "Boja izabrane pozadine"
 
-#: colorscm.cpp:192
+#: colorscm.cpp:193
 msgid "Select text"
 msgstr "Boja oznaèenog teksta"
 
-#: colorscm.cpp:193
+#: colorscm.cpp:194
 msgid "Window background"
 msgstr "Boja pozadine prozora"
 
-#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+#: colorscm.cpp:195 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
 msgstr "Tekst u prozoru"
 
-#: colorscm.cpp:222
+#: colorscm.cpp:223
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:238
+#: colorscm.cpp:239
 msgid "&Low"
 msgstr "&Nizak"
 
-#: colorscm.cpp:246
+#: colorscm.cpp:247
 msgid "High"
 msgstr "Visok"
 
-#: colorscm.cpp:317
+#: colorscm.cpp:320
 msgid "Error removing"
 msgstr "Gre¹ka prilikom uklanjanja"
 
-#: colorscm.cpp:318
+#: colorscm.cpp:321
 msgid ""
 "This color scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -218,11 +218,11 @@ msgstr ""
 "Mo¾da nema¹ privilegije da mijenja¹ datoteèni\n"
 "sustav na kojem je raspored boja spremljen."
 
-#: colorscm.cpp:375
+#: colorscm.cpp:378
 msgid "Naming error"
 msgstr "Gre¹ka prilikom imenovanja"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:379
 msgid ""
 "Please choose a unique name for the new color\n"
 "scheme. The one you entered already appears\n"
@@ -266,7 +266,7 @@ msgstr "Zakljuèaj zaslon (screen)"
 msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
-#: scrnsave.cpp:189 scrnsave.cpp:360 scrnsave.cpp:571 scrnsave.cpp:686
+#: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
 msgid "No screensaver"
 msgstr "Nema za¹tite zaslona (screensaver)"
 
@@ -295,54 +295,58 @@ msgid "&Require password"
 msgstr "&Zahtjevaj lozinku"
 
 #: scrnsave.cpp:273
+msgid "&Accept root password to unlock"
+msgstr ""
+
+#: scrnsave.cpp:279
 msgid "Show &password as stars"
 msgstr "Prika¾i &lozinku kao zvijezdice"
 
-#: scrnsave.cpp:281
+#: scrnsave.cpp:287
 msgid "Priority"
 msgstr "Prioritet"
 
-#: scrnsave.cpp:294
+#: scrnsave.cpp:300
 msgid "&High"
 msgstr "&Visok"
 
-#: scrnsave.cpp:303
+#: scrnsave.cpp:309
 msgid "Low"
 msgstr "Nizak"
 
-#: general.cpp:216
+#: general.cpp:220
 msgid "Fonts etc."
 msgstr "Pisma itd."
 
-#: general.cpp:222
+#: general.cpp:226
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Crtaj widgete u Windows 95 stilu"
 
-#: general.cpp:236
+#: general.cpp:240
 msgid "Desktop fonts"
 msgstr "Pisma radne povr¹ine"
 
-#: general.cpp:248
+#: general.cpp:252
 msgid "General font"
 msgstr "Opæenito pismo"
 
-#: general.cpp:253
+#: general.cpp:257
 msgid "Fixed font"
 msgstr "Jednoliko pismo"
 
-#: general.cpp:263
+#: general.cpp:267
 msgid "Panel button font"
 msgstr "Pismo gumbi na ploèi"
 
-#: general.cpp:268
+#: general.cpp:272
 msgid "Panel clock font"
 msgstr "Pismo sata na ploèi"
 
-#: general.cpp:298
+#: general.cpp:302
 msgid "Sample text"
 msgstr "Ogledni tekst"
 
-#: general.cpp:306
+#: general.cpp:310
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
@@ -372,7 +376,7 @@ msgstr "&Boja"
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
 
-#: main.cpp:130
+#: main.cpp:139
 msgid "Display settings"
 msgstr "Pode¹avanje prikaza"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-03-16 02:08+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -159,9 +159,17 @@ msgstr "Ссылка"
 msgid "Device"
 msgstr "Устройство"
 
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Тип:"
+
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Имя файла:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Имя:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
@@ -253,9 +261,3 @@ msgstr "По умолчанию:"
 
 #~ msgid "&Reload"
 #~ msgstr "Пергрузить"
-
-#~ msgid "Type:"
-#~ msgstr "Тип:"
-
-#~ msgid "Name:"
-#~ msgstr "Имя:"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1997-09-05 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -21,13 +21,13 @@ msgstr "Подкаталоги:"
 msgid "Cannot open or read directory."
 msgstr "Не возможно открыть или прочитать подкаталог."
 
-#: kfindtop.cpp:118
 #
+#: kfindtop.cpp:118
 msgid "&Start search"
 msgstr "&Начать поиск"
 
-#: kfindtop.cpp:120
 #
+#: kfindtop.cpp:120
 msgid "S&top search"
 msgstr "Ос&тановить поиск"
 
@@ -62,8 +62,8 @@ msgid "&Select All"
 msgstr "&Выделить все"
 
 #
-#: kfindtop.cpp:157
 #
+#: kfindtop.cpp:157
 msgid "Unse&lect All"
 msgstr "О&чистить все"
 
@@ -223,19 +223,19 @@ msgstr "Не более"
 msgid " Advanced "
 msgstr " Расширенный "
 
-#: kftabdlg.cpp:492
+#: kftabdlg.cpp:494
 msgid "The date is not valid!!"
 msgstr "Дата не верна!!"
 
-#: kftabdlg.cpp:504
+#: kftabdlg.cpp:506
 msgid "The month(s) value isn't valid!!"
 msgstr "Значение месяца не верно!!"
 
-#: kftabdlg.cpp:515
+#: kftabdlg.cpp:517
 msgid "The day(s) value isn't valid!!"
 msgstr "Значения дня не верно!!"
 
-#: kftabdlg.cpp:532
+#: kftabdlg.cpp:534
 msgid "The value in size isn't valid number!!"
 msgstr "Значение размера - не число!!"
 
@@ -364,4 +364,3 @@ msgstr "Не могу распознать тип архива!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Ошибка создания процесса!"
-

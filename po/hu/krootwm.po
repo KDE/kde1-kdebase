@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-02-26 20:45+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -18,6 +18,10 @@ msgstr "Mappa"
 #: krootwm.C:150
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
+msgstr ""
+
+#: krootwm.C:181
+msgid "Bookmarks"
 msgstr ""
 
 #: krootwm.C:183
@@ -55,6 +59,10 @@ msgstr "Képernyõ zárolása"
 #: krootwm.C:193
 msgid "Logout"
 msgstr "Kilépés"
+
+#: krootwm.C:219
+msgid "Edit Bookmarks"
+msgstr ""
 
 #: krootwm.C:607
 msgid "Could not create folder"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"POT-Creation-Date: 1998-09-10 20:54+0200\n"
 "PO-Revision-Date: 1998-09-24 18:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
@@ -60,10 +60,34 @@ msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld bajtov = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
-#: memory.cpp:101
+#: memory.cpp:101 memory_fbsd.cpp:22 memory_fbsd.cpp:23 memory_fbsd.cpp:24
 msgid "Not available"
 msgstr "Ni na voljo"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
 msgstr "Ta sistem je neznan :("
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+#, fuzzy
+msgid "Not Available"
+msgstr "Ni na voljo"
+
+#: processor_linux.cpp:19
+msgid "File Error!"
+msgstr ""
+
+#: processor_linux.cpp:20
+msgid "Cannot read /proc/cpuinfo"
+msgstr ""
+
+#: processor_fbsd.cpp:47
+#, c-format
+msgid "%s, unknown speed"
+msgstr ""
+
+#: processor_fbsd.cpp:49
+#, c-format
+msgid "%s running at %s MHz"
+msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-09-10 15:21+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,12 +14,40 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr ""
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr ""
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {standard,global}]\n"
+msgstr ""
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr ""
+
+#: standard.cpp:66
+msgid "Home"
+msgstr ""
+
+#: standard.cpp:67
+msgid "End"
+msgstr ""
+
 #: global.cpp:81 standard.cpp:83
 msgid "Current scheme"
 msgstr ""
 
 #: global.cpp:83 standard.cpp:84
 msgid "KDE default"
+msgstr ""
+
+#: standard.cpp:85
+msgid "KDE lite"
 msgstr ""
 
 #: global.cpp:90 standard.cpp:90
@@ -56,22 +84,6 @@ msgid ""
 "in the key scheme list."
 msgstr ""
 
-#: main.cpp:64
-msgid "&Standard shortcuts"
-msgstr ""
-
-#: main.cpp:69
-msgid "&Global shortcuts"
-msgstr ""
-
-#: main.cpp:76
-msgid "usage: kcmdisplay [-init | {standard,global}]\n"
-msgstr ""
-
-#: main.cpp:118
-msgid "Key binding settings"
-msgstr ""
-
 #: savescm.cpp:18
 msgid "Add a key scheme"
 msgstr ""
@@ -83,24 +95,4 @@ msgid ""
 "\n"
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
-msgstr ""
-
-#: standard.cpp:57
-msgid "Next"
-msgstr ""
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr ""
-
-#: standard.cpp:65
-msgid "Insert"
-msgstr ""
-
-#: standard.cpp:67
-msgid "End"
-msgstr ""
-
-#: standard.cpp:85
-msgid "KDE lite"
 msgstr ""

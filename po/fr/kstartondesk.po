@@ -14,26 +14,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
+# kstartondesk.C:72
 #: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
+# kstartondesk.C:76
 #: kstartondesk.C:76
 msgid "Usage:"
 msgstr "Utilisation"
 
+# kstartondesk.C:78
 #: kstartondesk.C:78
 msgid "command "
 msgstr "commande"
 
+# kstartondesk.C:79
 #: kstartondesk.C:79
 msgid "title "
 msgstr "titre"
 
+# kstartondesk.C:80
 #: kstartondesk.C:80
 msgid "desktop"
 msgstr "bureau"
 
+# kstartondesk.C:82
 #: kstartondesk.C:82
 msgid "Example"
 msgstr "Exemple"

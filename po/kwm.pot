@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-09-10 15:49+0200\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,103 +24,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr ""
 
-#: main.C:481
+#: main.C:483
 msgid "Preparing session ... "
 msgstr ""
 
-#: main.C:502
+#: main.C:504
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:509
+#: main.C:511
 msgid "Usage: "
 msgstr ""
 
-#: main.C:520
+#: main.C:522
 msgid "&Maximize"
 msgstr ""
 
-#: main.C:521
+#: main.C:523
 msgid "&Restore"
 msgstr ""
 
-#: main.C:522
+#: main.C:524
 msgid "&Iconify"
 msgstr ""
 
-#: main.C:523
+#: main.C:525
 msgid "&DeIconify"
 msgstr ""
 
-#: main.C:524
+#: main.C:526
 msgid "&Sticky"
 msgstr ""
 
-#: main.C:525
+#: main.C:527
 msgid "&UnSticky"
 msgstr ""
 
-#: main.C:526
+#: main.C:528
 msgid "Mo&ve"
 msgstr ""
 
-#: main.C:527
+#: main.C:529
 msgid "Resi&ze"
 msgstr ""
 
-#: main.C:529
+#: main.C:531
 msgid "&To desktop"
 msgstr ""
 
-#: main.C:531
+#: main.C:533
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:571
+#: main.C:573
 msgid "One"
 msgstr ""
 
-#: main.C:574
+#: main.C:576
 msgid "Two"
 msgstr ""
 
-#: main.C:577
+#: main.C:579
 msgid "Three"
 msgstr ""
 
-#: main.C:580
+#: main.C:582
 msgid "Four"
 msgstr ""
 
-#: main.C:583
+#: main.C:585
 msgid "Five"
 msgstr ""
 
-#: main.C:586
+#: main.C:588
 msgid "Six"
 msgstr ""
 
-#: main.C:589
+#: main.C:591
 msgid "Seven"
 msgstr ""
 
-#: main.C:592
+#: main.C:594
 msgid "Eight"
 msgstr ""
 
-#: main.C:606
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:942
+#: main.C:918
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1054
+#: main.C:1030
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
-#: main.C:1377
+#: main.C:1353
 msgid "*** No Tasks ***"
 msgstr ""
 
@@ -164,100 +164,4 @@ msgstr ""
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr ""
-
-#: kwmbindings.cpp:1
-msgid "Task manager"
-msgstr ""
-
-#: kwmbindings.cpp:2
-msgid "Kill window mode"
-msgstr ""
-
-#: kwmbindings.cpp:3
-msgid "Execute command"
-msgstr ""
-
-#: kwmbindings.cpp:4
-msgid "Window operations menu"
-msgstr ""
-
-#: kwmbindings.cpp:5
-msgid "Pop-up system menu"
-msgstr ""
-
-#: kwmbindings.cpp:7
-msgid "Window raise"
-msgstr ""
-
-#: kwmbindings.cpp:8
-msgid "Window lower"
-msgstr ""
-
-#: kwmbindings.cpp:9
-msgid "Window close"
-msgstr ""
-
-#: kwmbindings.cpp:10
-msgid "Window iconify"
-msgstr ""
-
-#: kwmbindings.cpp:11
-msgid "Window resize"
-msgstr ""
-
-#: kwmbindings.cpp:12
-msgid "Window move"
-msgstr ""
-
-#: kwmbindings.cpp:13
-msgid "Window toggle sticky"
-msgstr ""
-
-#: kwmbindings.cpp:15
-msgid "Switch to desktop 1"
-msgstr ""
-
-#: kwmbindings.cpp:16
-msgid "Switch to desktop 2"
-msgstr ""
-
-#: kwmbindings.cpp:17
-msgid "Switch to desktop 3"
-msgstr ""
-
-#: kwmbindings.cpp:18
-msgid "Switch to desktop 4"
-msgstr ""
-
-#: kwmbindings.cpp:19
-msgid "Switch to desktop 5"
-msgstr ""
-
-#: kwmbindings.cpp:20
-msgid "Switch to desktop 6"
-msgstr ""
-
-#: kwmbindings.cpp:21
-msgid "Switch to desktop 7"
-msgstr ""
-
-#: kwmbindings.cpp:22
-msgid "Switch to desktop 8"
-msgstr ""
-
-#: kwmbindings.cpp:24
-msgid "Switch one desktop to the right"
-msgstr ""
-
-#: kwmbindings.cpp:25
-msgid "Switch one desktop to the left"
-msgstr ""
-
-#: kwmbindings.cpp:26
-msgid "Switch one desktop up"
-msgstr ""
-
-#: kwmbindings.cpp:27
-msgid "Switch one desktop down"
 msgstr ""
