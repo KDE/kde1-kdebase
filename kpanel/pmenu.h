@@ -4,7 +4,7 @@
 //  kpanel
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 
 /*
@@ -96,6 +96,8 @@ public:
   int getId(){return id;}
   void setRealName(QString _real_name) { real_name = _real_name; }
 
+  bool writeConfig( QDir dir );
+
 public slots:
   void exec();
   void addFolderToRecentList();
@@ -173,6 +175,8 @@ protected slots:
   virtual void highlighted(int id);
 
 protected:
+  QString uniqueFileName(QString name, QString dir_name);
+
   QList<PMenuItem> list;
   myPopupMenu      *cmenu;
 

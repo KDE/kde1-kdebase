@@ -6,6 +6,7 @@
 #include "kpanel.h"
 #include <qapp.h>
 #include <kwmmapp.h>
+#include <qdir.h>
 #include <qmsgbox.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,6 +14,8 @@
 #include "kpanel_version.h"
 #include <X11/keysym.h>
 
+#include <dirent.h>
+#include <sys/stat.h>
 
 kPanel *the_panel;
 int o_argc;
@@ -48,6 +51,18 @@ bool MyApp::x11EventFilter( XEvent * ev){
   }
 
   return KWMModuleApplication::x11EventFilter(ev);
+}
+
+void testDir( const char *_name )
+{
+  DIR *dp;
+  QString c = KApplication::localkdedir();
+  c += _name;
+  dp = opendir( c.data() );
+  if ( dp == NULL )
+    ::mkdir( c.data(), S_IRWXU );
+  else
+    closedir( dp );
 }
 
 
@@ -92,6 +107,14 @@ int main( int argc, char ** argv ){
       sleep(1);
     }
   }
+  
+  // create $HOME/.kde/share/apps/kpanel/applnk
+  testDir( "" );
+  testDir( "/share" );
+  testDir( "/share/config" );
+  testDir( "/share/apps" );
+  testDir( "/share/apps/kpanel" );
+  testDir( "/share/apps/kpanel/applnk" );
     
   the_panel = new kPanel(&myapp);
   the_panel->connect(&myapp, SIGNAL(init()), 

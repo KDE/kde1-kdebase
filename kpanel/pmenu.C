@@ -4,7 +4,7 @@
 //  This file is part of KPanel
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@bonn.netsurf.de
+//  email:  Christoph.Neerfeld@home.ivm.de or chris@kde.org
 //
 
 /*
@@ -284,6 +284,26 @@ QString PMenuItem::getSaveName()
     }
 
   return temp;
+}
+
+bool PMenuItem::writeConfig( QDir dir )
+{
+  QString file = dir.absPath();
+  dir_path = file.copy();
+  file += ( (QString) "/" + real_name );
+  QFile config(file);
+  if( !config.open(IO_ReadWrite) )
+    return FALSE;
+  config.close();
+  KConfig kconfig(file);
+  kconfig.setGroup("KDE Desktop Entry");
+  kconfig.writeEntry("Name", text_name );
+  kconfig.writeEntry("Exec", command_name );
+  kconfig.writeEntry("Type", "Application");
+  kconfig.writeEntry("Icon", big_pixmap_name );
+  kconfig.writeEntry("MiniIcon", pixmap_name );
+  kconfig.sync();
+  return TRUE;
 }
 
 
@@ -699,10 +719,54 @@ PMenuItem * PMenu::searchItem(QString name)
 	dir->parse(QDir(name));
 	pmi = new PMenuItem(submenu);
 	pmi->parse(&i, dir);
+      } else {
+	// create a new kdelnk-file on the fly
+	if( i.isExecutable() ) {
+	  pmi = new PMenuItem(unix_com,        // type
+			      i.fileName(),    // name
+			      i.absFilePath()  // command
+			      );
+	  pmi->big_pixmap_name = "exec.xpm";
+	  pmi->pixmap_name = "";
+	  QString dir_name = KApplication::localkdedir() + "/share/apps/kpanel/applnk";
+	  pmi->real_name = uniqueFileName(i.fileName(), dir_name );
+	  if( pmi->real_name != 0 ) {
+	    if( !pmi->writeConfig(QDir(dir_name))) {
+	      delete pmi;
+	      pmi = 0;
+	    }
+	  } else {
+	    delete pmi;
+	    pmi = 0;
+	  }
+	}
       }
     }
   }
   return pmi;
+}
+
+QString PMenu::uniqueFileName(QString name, QString dir_name)
+{
+  QDir dir(dir_name);
+  if( !dir.exists() ) {
+      return 0;
+  }
+
+  QString file_name = name.simplifyWhiteSpace();
+  while( file_name.contains('/') )
+    {
+      file_name.replace(file_name.find('/'), 1, "_");
+    }
+  QString suffix;
+  int i = 2;
+  file_name = name + ".kdelnk";
+  while( dir.exists(file_name) )
+    {
+      file_name = name + suffix.setNum(i) + ".kdelnk";
+      i++;
+    }
+  return file_name;
 }
 
 PMenuItem * PMenu::searchItem(int id)
