@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfind\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-20 22:28+0800\n"
+"Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "目錄:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "不能開啟或讀取目錄."
+
+#: kfindtop.cpp:115
+msgid "&Open"
+msgstr "開啟[&O]"
+
+#: kfindtop.cpp:117
+msgid "&Add to archive"
+msgstr "加至壓縮檔[&A]"
+
+#: kfindtop.cpp:122
+msgid "&Properties"
+msgstr "內容[&P]"
+
+#: kfindtop.cpp:125
+msgid "Open Containing &Folder"
+msgstr "開啟包含檔案的資料夾[&F]"
+
+#: kfindtop.cpp:128
+msgid "&Save Search"
+msgstr "儲存搜尋結果[&S]"
+
+#: kfindtop.cpp:140
+msgid "&Cut"
+msgstr "剪下[&C]"
+
+#: kfindtop.cpp:145
+msgid "&Select All"
+msgstr "選擇全部[&S]"
+
+#: kfindtop.cpp:147
+msgid "&Invert Selection"
+msgstr "反轉選擇[&I]"
+
+#: kfindtop.cpp:158
+msgid "&Preferences ..."
+msgstr "功\能設定[&P] ..."
+
+#: kfindtop.cpp:163
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Fl獮r <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+
+#: kfindtop.cpp:183
+msgid "Start Search"
+msgstr "開始搜尋"
+
+#: kfindtop.cpp:188
+msgid "New Search"
+msgstr "新搜尋"
+
+#: kfindtop.cpp:193
+msgid "Stop Search"
+msgstr "停止搜尋"
+
+#: kfindtop.cpp:206
+msgid "Add to archive"
+msgstr "加至壓縮檔"
+
+#: kfindtop.cpp:216
+msgid "Properties"
+msgstr "內容"
+
+#: kfindtop.cpp:221
+msgid "Open Containing Folder"
+msgstr "開啟包含檔案的資料夾"
+
+#: kfindtop.cpp:226
+msgid "Save Search Results"
+msgstr "儲存搜尋結果"
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "名稱[&N]:"
+
+#: kftabdlg.cpp:50
+msgid "&Look in:"
+msgstr "在[&L]"
+
+#: kftabdlg.cpp:53
+msgid "&Browse ..."
+msgstr "瀏覽[&B] ..."
+
+#: kftabdlg.cpp:65
+msgid "Include &subfolders"
+msgstr "包含子資料夾[&S]"
+
+#: kftabdlg.cpp:95
+msgid " Name& Location "
+msgstr " 名稱與位置[& ] "
+
+#: kftabdlg.cpp:107
+msgid "and"
+msgstr "至"
+
+#: kftabdlg.cpp:108
+msgid "month(s)"
+msgstr "個月"
+
+#: kftabdlg.cpp:109
+msgid "day(s)"
+msgstr "天"
+
+#: kftabdlg.cpp:115
+msgid "&All files"
+msgstr "所有檔案[&A]"
+
+#: kftabdlg.cpp:116
+msgid "Find all files created or &modified:"
+msgstr "搜尋所有造出或修改的檔案[&M]:"
+
+#: kftabdlg.cpp:117
+msgid "&between"
+msgstr "期間[&B]: "
+
+#: kftabdlg.cpp:118
+msgid "during the previou&s "
+msgstr "之前幾月[&S] "
+
+#: kftabdlg.cpp:119
+msgid "&during the previous "
+msgstr "之前幾天[&D]"
+
+#: kftabdlg.cpp:167
+msgid " Date Modified "
+msgstr " 修改日期 "
+
+#: kftabdlg.cpp:173
+msgid "Of &type:"
+msgstr "檔案型態[&T]"
+
+#: kftabdlg.cpp:175
+msgid "&Containing Text:"
+msgstr "檢索內文[&C]"
+
+#: kftabdlg.cpp:178
+msgid "&Size is:"
+msgstr "檔案大小[&S]"
+
+#: kftabdlg.cpp:201
+msgid "All Files and Folders"
+msgstr "所有檔案與資料夾"
+
+#: kftabdlg.cpp:209
+msgid "At Least"
+msgstr "最少"
+
+#: kftabdlg.cpp:210
+msgid "At Most"
+msgstr "最多"
+
+#: kftabdlg.cpp:217
+msgid " Advanced "
+msgstr " 進階 "
+
+#: kftabdlg.cpp:389
+msgid "The date is not valid!!"
+msgstr "無效的日期"
+
+#: kftabdlg.cpp:401
+msgid "The month(s) value isn't valid!!"
+msgstr "無效的月份值"
+
+#: kftabdlg.cpp:412
+msgid "The day(s) value isn't valid!!"
+msgstr "無效的天數值"
+
+#: kftabdlg.cpp:429
+msgid "The value in size isn't valid number!!"
+msgstr "無效的檔案大小"
+
+#: kfoptions.cpp:51
+msgid "Preferences"
+msgstr "功\能設定"
+
+#: kfoptions.cpp:73
+msgid "File format:"
+msgstr "檔案格式: "
+
+#: kfoptions.cpp:75
+msgid "Save results to file:"
+msgstr "儲存結果到檔案:"
+
+#: kfoptions.cpp:78
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "儲存結果到 ~/.kfind-results.html 檔案"
+
+#: kfoptions.cpp:80
+msgid "Browse"
+msgstr "瀏覽"
+
+#: kfoptions.cpp:93
+msgid "Plain Text"
+msgstr "一般文件"
+
+#: kfoptions.cpp:122
+msgid "Saving"
+msgstr "儲存"
+
+#: kfoptions.cpp:129
+msgid "Create Archive:"
+msgstr "建立壓縮檔"
+
+#: kfoptions.cpp:131
+msgid "Add to Archive:"
+msgstr "加至壓縮檔:"
+
+#: kfoptions.cpp:135
+msgid "Patterns:"
+msgstr "副檔名"
+
+#: kfoptions.cpp:138
+msgid "Add New"
+msgstr "加入新的項目"
+
+#: kfoptions.cpp:179
+msgid "Archivers"
+msgstr "壓縮檔"
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr "找到 %d 個檔案"
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr "無法儲存搜尋結果!"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "KFind 搜尋結果檔案"
+
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr "搜尋結果已經儲存至檔案\n"
+
+#: kfwin.cpp:195
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"確定要刪除檔案:\n"
+"%s"
+
+#: kfwin.cpp:197
+msgid "Delete File"
+msgstr "刪除檔案"
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr "沒有權限刪除這個檔案"
+
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr "無法刪除選定的檔案"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr "沒有權限刪除這個目錄"
+
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr "指定的目錄不是空的!"
+
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr "無法刪除選定的目錄"
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr "無法辨識壓縮檔格式!"
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
+msgstr "造出子程序時發生錯誤!"
+
