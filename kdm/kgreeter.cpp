@@ -482,6 +482,7 @@ KGreeter::restrict_expired(){
 bool
 KGreeter::restrict_expired(){
 #define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
+#define ONEDAY (86400L)
      struct passwd *pwd;
      struct spwd *swd;
      time_t warntime;
@@ -497,12 +498,12 @@ KGreeter::restrict_expired(){
      warntime = DEFAULT_WARN;
 
      if (swd->sp_expire)
-	 if (swd->sp_expire <= time(NULL)) {
+	 if (swd->sp_expire*ONEDAY <= time(NULL)) {
 	     QMessageBox::critical(NULL, i18n("Expired"),
 				   i18n("Sorry -- your account has expired."),
 				   i18n("&Ok"));
 	     return true;
-	 } else if (swd->sp_expire - time(NULL) < warntime) {
+	 } else if (swd->sp_expire*ONEDAY - time(NULL) < warntime) {
 	     QString str;
 	     str.sprintf(i18n("Warning: your account expires on %s"),
 			 ctime(&swd->sp_expire));  // use locales
