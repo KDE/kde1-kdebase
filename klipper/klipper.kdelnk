@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Cut & paste history (klipper)
+Name[no]=Klipp- og limehistorie (klipper)
 Exec=klipper
 Icon=klipper.xpm
 Type=Application
