@@ -26,3 +26,7 @@ install-data-local: mini-kwrite.xpm
 
 uninstall-local:
 	-rm -f $(kde_minidir)/kwrite.xpm
+
+messages:
+	$(XGETTEXT) -C -ki18n -ktranslate -x $(includedir)/kde.pot $(kwrite_SOURCES) && mv messages.po ../po/kwrite.pot
+
