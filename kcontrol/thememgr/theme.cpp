@@ -162,7 +162,7 @@ void Theme::load(const QString aPath)
   // cleanup work directory
   cmd.sprintf("rm %s*", (const char*)workDir());
   rc = system(cmd);
-  if (rc) warning("Error during cleanup of work directory: rc=%d\n%s",
+  if (rc) warning(i18n("Error during cleanup of work directory: rc=%d\n%s"),
 		  rc, (const char*)cmd);
 
   // unpack theme package
