@@ -49,6 +49,7 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   : KTopLevelWidget( name )
 {
   initMetaObject();
+  setCaption(KApplication::getKApplication()->getCaption());
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("kmenuedit");
   f_main = new QFrame(this);
@@ -56,23 +57,19 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
 
   menubar = new KMenuBar( this, "menubar" );
   QPopupMenu *file = new QPopupMenu;
-  file->insertItem("Reload", this, SLOT(reload()) );
-  file->insertItem("Save", this, SLOT(save()) );
+  file->insertItem(klocale->translate("Reload"), this, SLOT(reload()) );
+  file->insertItem(klocale->translate("Save"), this, SLOT(save()) );
   file->insertSeparator();
-  file->insertItem("Quit", qApp, SLOT(quit()), CTRL+Key_Q);
+  file->insertItem(klocale->translate("Quit"), qApp, SLOT(quit()), CTRL+Key_Q);
   //QPopupMenu *edit_menu = new QPopupMenu;
   QPopupMenu *options = new QPopupMenu;
-  options->insertItem("Reload Filetypes", this, SLOT(reloadFileTypes()) );
-  QPopupMenu *help = new QPopupMenu;
-  //help->insertItem("Help", this, SLOT(startHelp()), CTRL+Key_H );
-  help->insertItem("About", this, SLOT(about()) );
+  options->insertItem(klocale->translate("Reload Filetypes"), this, SLOT(reloadFileTypes()) );
 
-  menubar->insertItem( "&File", file );
-  //menubar->insertItem( "&Edit", edit_menu);
-  menubar->insertItem( "&Options", options);
+  menubar->insertItem( klocale->translate("File"), file );
+  //menubar->insertItem( klocale->translate("Edit"), edit_menu);
+  menubar->insertItem( klocale->translate("Options"), options);
   menubar->insertSeparator();
-  menubar->insertItem( "&Help", KApplication::getKApplication()->getHelpMenu(TRUE, "Kmenuedit 0.2.0\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@mail.bonn.netsurf.de") );
-  //menubar->insertItem( "&Help", help, ALT+Key_H );
+  menubar->insertItem( klocale->translate("Help"), KApplication::getKApplication()->getHelpMenu(TRUE, "KMenuedit 0.2.1\n(C) by Christoph Neerfeld\nChristoph.Neerfeld@bonn.netsurf.de") );
 
   // create toolbar
   toolbar = new KToolBar(this);
@@ -84,9 +81,6 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   toolbar->insertButton(temp_pix, 1, SIGNAL(clicked()), this,
                       SLOT(save()), TRUE, "Save");
   toolbar->insertSeparator();
-  //temp_pix = global_pix_loader->loadIcon("exit.xpm");
-  //toolbar->insertButton(temp_pix, 2, SIGNAL(clicked()), qApp,
-  //                    SLOT(quit()), TRUE, "Exit");
   toolbar->setBarPos( (KToolBar::BarPosition) config->readNumEntry("ToolBarPos") );
   setMenu(menubar);
   addToolBar(toolbar);

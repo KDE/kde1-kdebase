@@ -273,9 +273,9 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	  // kalle	  QTextStream st( (QIODevice *) &config);
 	  KConfig kconfig(file);
 	  kconfig.setGroup("KDE Desktop Entry");
-	  comment = kconfig.readEntry("Comment");
-	  text_name = kconfig.readEntry("Name", text_name);
-	  pixmap_name = kconfig.readEntry("MiniIcon");
+	  comment         = kconfig.readEntry("Comment");
+	  text_name       = kconfig.readEntry("Name", text_name);
+	  pixmap_name     = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
 	  dir_path        = fi->dirPath(TRUE);
 	  config.close();
