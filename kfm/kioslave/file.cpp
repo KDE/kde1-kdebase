@@ -8,6 +8,7 @@
 #include <qregexp.h>
 
 #include <qdir.h>
+#include <qintdict.h>
 
 SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
 {
@@ -162,7 +163,13 @@ int KProtocolFILE::OpenDir( KURL *url )
     DIR *dp = 0L;
     struct dirent *ep;
     struct stat buff;
-    
+
+    // Cache for user and group names (patch by Philipp Hullmann, modified by David)
+    QIntDict<QString> usercache;      // maps long ==> QString *
+    QIntDict<QString> groupcache;
+    usercache.setAutoDelete( TRUE );
+    groupcache.setAutoDelete( TRUE );
+
     // Open the directory
     path = url->path();
     // Save a copy
@@ -226,8 +233,6 @@ int KProtocolFILE::OpenDir( KURL *url )
 	struct stat lbuff;
 	/* int lstat_ret = */ lstat( fname, &lbuff );
 	struct tm *t = localtime( &lbuff.st_mtime );
-	struct passwd * user = getpwuid( buff.st_uid );
-	struct group * grp = getgrgid( buff.st_gid );
 
 	char buffer[1024];
 	KProtocolDirEntry *_de = new KProtocolDirEntry();
@@ -295,8 +300,30 @@ int KProtocolFILE::OpenDir( KURL *url )
    	
 	_de->access = buffer;
 	_de->name = (const char*)ep->d_name;
-	_de->owner = (( user != 0L ) ? user->pw_name : "???" );
-	_de->group = (( grp != 0L ) ? grp->gr_name : "???" );
+
+        // Now get the user and group names, but looking in the cache first
+        if ( usercache[ buff.st_uid ] )
+            _de->owner = usercache[ buff.st_uid ]->data();
+        else {
+            struct passwd * user = getpwuid( buff.st_uid );
+            if ( user != 0L ) {
+                usercache.insert( buff.st_uid, new QString( user->pw_name ) );
+                _de->owner = user->pw_name;
+            } else
+                _de->owner = "???";
+        }
+
+        if ( groupcache[ buff.st_gid ] )
+            _de->group = groupcache[ buff.st_gid ]->data();
+        else {
+            struct group * grp = getgrgid( buff.st_gid );
+            if ( grp != 0L ) {
+                groupcache.insert( buff.st_gid, new QString( grp->gr_name ) );
+                _de->group = grp->gr_name;
+            } else
+                _de->group = "???";
+        }
+
 	QString d;
 	d.sprintf("%02i:%02i %02i.%02i.%02i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1,t->tm_year );
 	_de->date = d.data();

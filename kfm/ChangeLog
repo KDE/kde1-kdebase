@@ -1,5 +1,9 @@
 1999-01-11  David Faure  <faure@kde.org>
 
+	* kioslave/file.cpp (OpenDir): Added a cache to reduce calls to 
+	getpwuid and getgrgid. Improves speed, esp for NIS users (kb1536).
+	Initial patch from Philipp Hullmann <hullmann@nano.uni-hannover.de>.
+
 	* kbind.cpp: Store and use terminal settings (set in applnks) in
 	KMimeBind.
 	* kbind.h: Made findType private and called getMagicMimeType
