@@ -642,7 +642,9 @@ int KHelpWindow::formatMan( int bodyOnly )
 		curr = curr->next;
 	}
 
-	QFont font( fixedFont, HTMLFont::pointSize( fontBase - 1 ) );
+        int fonts[7];
+        view->getFontSizes(fonts);
+	QFont font( fixedFont, fonts[fontBase - 1] );
 	QFontMetrics fm( font );
 
 	QString gridWidth;
