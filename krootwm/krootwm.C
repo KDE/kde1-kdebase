@@ -392,7 +392,8 @@ void KRootWm::updateNewMenu (void)
     templatesList.clear();
 
     templatesList.append( QString( "Folder") );
-    menuNew->insertItem( klocale->translate("Folder") );
+    //menuNew->insertItem( klocale->translate("Folder") );
+    menuNew->insertItem( kapp->getIconLoader()->loadMiniIcon("folder.xpm"), i18n("Folder") );
     QDir d( templatePath );
     const QFileInfoList *list = d.entryInfoList();
     if ( list == 0L )
@@ -414,7 +415,10 @@ void KRootWm::updateNewMenu (void)
 		templatesList.append( tmp );
 		if ( tmp.right(7) == ".kdelnk" )
 		    tmp.truncate( tmp.length() - 7 );
-		menuNew->insertItem( config.readEntry("Name", tmp ) );
+		// menuNew->insertItem( config.readEntry("Name", tmp ) );
+                menuNew->insertItem( kapp->getIconLoader()->loadMiniIcon(config.readEntry("Icon",tmp)),
+                                     config.readEntry("Name",tmp));
+
 	    }
 	    ++it;                               // goto next list element
 	}

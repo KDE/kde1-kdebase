@@ -46,7 +46,8 @@ void KNewMenu::fillMenu()
     }
 
     this->clear();
-    this->insertItem( klocale->translate("Folder") );
+    //this->insertItem( klocale->translate("Folder") );
+    this->insertItem( kapp->getIconLoader()->loadMiniIcon("folder.xpm"), i18n("Folder") );
 
     char * templ = templatesList->first(); // skip 'Folder'
     for ( templ = templatesList->next(); (templ); templ = templatesList->next())
@@ -56,7 +57,9 @@ void KNewMenu::fillMenu()
         config.setGroup( "KDE Desktop Entry" );
         if ( tmp.right(7) == ".kdelnk" )
             tmp.truncate( tmp.length() - 7 );
-        this->insertItem( config.readEntry("Name", tmp ) );
+        // this->insertItem( config.readEntry("Name", tmp ) );
+        this->insertItem( kapp->getIconLoader()->loadMiniIcon(config.readEntry("Icon",tmp)),
+                          config.readEntry("Name",tmp));
     }
 }
 
