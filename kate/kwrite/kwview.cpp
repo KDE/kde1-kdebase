@@ -781,7 +781,7 @@ X      : cut
             end(c);
             break;
         case Key_Delete:
-            if (c.flags & cfDelOnInput || e->state() & ShiftButton) {
+            if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText() || e->state() & ShiftButton) {
               kWriteDoc->cut(this,c);
             } else kWriteDoc->del(this,c);
             break;

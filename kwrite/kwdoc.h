@@ -147,6 +147,7 @@ class KWriteDoc : QObject {
     void killLine(KWriteView *, VConfig &);
     void backspace(KWriteView *, VConfig &);
     void del(KWriteView *, VConfig &);
+    bool hasMarkedText() { return !(selectEnd < selectStart); }
 
 
   protected slots:
