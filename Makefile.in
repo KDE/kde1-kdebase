@@ -12,7 +12,7 @@ INSTALL = @INSTALL@
 
 top_builddir = .
 
-SUBDIRS =  kacli kfm kdehelp kdisplay kfontmanager kedit kfind kghostview kmines kpanel kpat ktetris kvt kview kwm klogout kwmclient kpaint kcalc khexdit kjots @KSCREEN@ pics 
+SUBDIRS =  kfm kdehelp kdisplay kfontmanager kfind kpanel kvt kwm klogout kwmclient @KSCREEN@ pics 
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 CONFIG_HEADER_IN = config.h.in
@@ -79,9 +79,6 @@ apps:
            || case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
         done && test -z "$$fail"
 
-srchapps: 
-	./searchapps
-	
 install: 
 	$(mkinstalldirs) $(incdir)
 	@INSTALL_DATA@ config.h $(incdir)
@@ -90,8 +87,7 @@ install:
 	(cd $$subdir && $(MAKE) install) \
 	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
 	done && test -z "$$fail"
-	$(MAKE) srchapps
-		@echo ""
+	@echo ""
 	@echo ""
 	@echo ""
 	@echo "*************** Important *************************"
