@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Network
+Name[de]=Netzwerk
 Name[pl]=Sieæ
 Name[cs]=Sí»
 MiniIcon=html.xpm

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Settings
+Name[de]=Einstellungen
 Name[pl]=Ustawienia
 Name[cs]=Nastavení
 MiniIcon=kcontrol.xpm
