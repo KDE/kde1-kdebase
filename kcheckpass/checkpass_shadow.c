@@ -31,21 +31,30 @@
 
 int authenticate(const char *login, const char *passwd)
 {
-  struct spwd *pw;
+  struct passwd *pw;
   char* crpt_passwd;
+  char* cp;
+  struct spwd *sp;
   int result;
 
-  pw = getspnam(login);
+  pw = getpwnam(login);
   if ( pw == 0 ) {
     endspent();
     return 2; // cannot read password database
   }
+  else
+   sp = getspnam(pw->pw_name);
+   if (sp)
+     cp = sp->sp_pwdp;
+   else
+     cp = pw->pw_passwd;
+
 #if defined( __linux__ ) && defined( HAVE_PW_ENCRYPT )
-  crpt_passwd = pw_encrypt(passwd, pw->sp_pwdp);  // (1)
+  crpt_passwd = pw_encrypt(passwd, cp);  // (1)
 #else  
-  crpt_passwd = crypt(passwd, pw->sp_pwdp);
+  crpt_passwd = crypt(passwd, cp);
 #endif
-  result = strcmp(pw->sp_pwdp, crpt_passwd );
+  result = strcmp(cp, crpt_passwd);
   endspent();
   if (result == 0)
     return 1; // success
