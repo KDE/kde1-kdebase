@@ -374,7 +374,7 @@ msgstr ""
 "dieses Verzeichnis nicht schreibbar ist und auch kein\n"
 "Lesezeichen dafür angelegt wurde.\n"
 "\n"
-"Legen Sie zunächst ein Lesezeichen auf dieses Verzeichnis an\n
+"Legen Sie zunächst ein Lesezeichen auf dieses Verzeichnis an\n"
 "oder legen Sie einen Verweis auf den Desktop."
 
 #: kfmview.cpp:616

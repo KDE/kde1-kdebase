@@ -57,6 +57,7 @@ msgid ""
 msgstr ""
 "Aufruf: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
