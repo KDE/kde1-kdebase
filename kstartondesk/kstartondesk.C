@@ -49,13 +49,13 @@ void KStartOnDesk::windowAdd(Window w){
       KWM::prepareForSwallowing(w);
       KWM::moveToDesktop(w, desktop);
       XSync(qt_xdisplay(), False);
-      XMapWindow(qt_xdisplay(), w);
-      XSync(qt_xdisplay(), False);
-      if (activate)
-	KWM::activate(w);
-      XSync(qt_xdisplay(), False);
-      ::exit(0);
     }
+    XMapWindow(qt_xdisplay(), w);
+    XSync(qt_xdisplay(), False);
+    if (activate)
+      KWM::activate(w);
+    XSync(qt_xdisplay(), False);
+    ::exit(0);
   }
 }
 
