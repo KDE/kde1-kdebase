@@ -258,9 +258,8 @@ msgid "Auto Raise"
 msgstr "Auto-Elevar"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Elevar"
+msgstr "Elevar ao clicar"
 
 #: windows.cpp:216
 msgid "Delay (ms)"

@@ -58,7 +58,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Navegar rapidamente pelo sistema de arquivos"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Adicionar aplicação"
 
@@ -67,17 +66,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Adicionar uma aplicação ou um submenu ao painel"
 
 #: props.C:170
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Navegador de Disco"
+msgstr "Adicionar Navegador de Disco"
 
 #: props.C:172
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Adicionar lista de janelas ao painel"
+msgstr "Adicionar um menu de Navegador de Disco no Painel"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Adicionar lista de janelas"
 
@@ -138,7 +134,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:883
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Navegador de Disco"
 
