@@ -47,9 +47,7 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
 
     for (int i = 0; i < count; i++) {
         Desktop *desk = new Desktop(a, i + 1, this);
-	connect(kapp, SIGNAL(kdisplayPaletteChanged()),
-		desk, SLOT(refresh()));
-        desktops.append(desk);
+	desktops.append(desk);
     }
     
     activeDesktop = desktops.at(KWM::currentDesktop() - 1);

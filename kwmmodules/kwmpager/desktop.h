@@ -61,10 +61,8 @@ protected:
     virtual void mousePressEvent ( QMouseEvent * );
     virtual void drawContents ( QPainter * );
     virtual void resizeEvent ( QResizeEvent * );  
+    virtual void paletteChange ( const QPalette &);
     PagerWindow *activeWindow;
-
-public slots:    
-    void refresh();
 
 private:
     KWMModuleApplication* kwmmapp;

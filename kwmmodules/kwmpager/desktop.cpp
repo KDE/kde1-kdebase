@@ -81,7 +81,7 @@ void Desktop::init()
     pixmap.fill(backgroundColor());
 }
 
-void Desktop::refresh()
+void Desktop::paletteChange(const QPalette &)
 {
     fillPixmap();
     repaint(true);
