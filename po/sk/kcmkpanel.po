@@ -107,7 +107,7 @@ msgstr "Ostatné"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr "Prvý osobný"
+msgstr "Osobné menu j&e hlavné"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
