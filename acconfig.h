@@ -47,4 +47,8 @@
 /* define, where to find the XDM configurations */
 #undef XDMDIR
 
+/* Define if you have getdomainname */
+#undef HAVE_GETDOMAINNAME  
 
+/* Define if you have gethostname */
+#undef HAVE_GETHOSTNAME  

@@ -13,6 +13,23 @@
 
 #include <kwm.h>
 
+#ifdef HAVE_SYSENT_H
+#include <sysent.h>
+#endif
+
+/* this is needed for AIX */
+#ifndef HAVE_GETDOMAINNAME
+extern "C" {
+int getdomainname (char *Name, int Namelen);
+}
+#endif  
+
+#ifndef HAVE_GETHOSTNAME
+extern "C" {
+int gethostname (char *Name, int Namelen);
+}
+#endif  
+
 extern bool kwm_error;
 
 extern Manager* manager;

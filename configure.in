@@ -148,6 +148,8 @@ dnl Checks for library functions. MISCOBJS is for kdecore
 AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid usleep)
 AC_CHECK_KSIZE_T
 AC_CHECK_SETENV
+AC_CHECK_GETDOMAINNAME
+AC_CHECK_GETHOSTNAME
 
 dnl output files
 topdir=`pwd`
