@@ -2,6 +2,7 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
