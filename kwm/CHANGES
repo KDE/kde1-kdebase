@@ -11,6 +11,19 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 5:
+        - no more harecoded "Helvetica" font. kwm uses the generalFont instead.
+        - two new focus policies: CLASSIC_FOCUS_FOLLOWS_MOUSE and
+           CLASSIC_SLOPPY_FOCUS. Both break the fancy Alt-Tab feature as well as
+           the "switch-to"-function in the taskmanager/taskbar. Anyway, old hand twm
+           fans seems unable to live without _true_ focus follows mouse :-) 
+        - changed autoraise semantics: autoraise only works when the pointer is 
+           inside the window. Just having the focus is no longer sufficient.
+        - fixed manual placement in combination with electricBorders. Did I already
+           mention that I hate all these options....grrr.........
+        - ElectricBorderMovePointer is obsolete and no longer supported. Instead there
+           is a new option: ElectricBorderPointerWarp=NoWarp,MiddleWarp,FullWarp
+
 patchlevel 4:
         - raised the number of possible virtual desktops to 32. Note that you need
            a current libkdecore to take the full benefit from this.
@@ -125,7 +138,7 @@ patchlevel 29:
        possible on the current desktop.
      - small bugfix for FreeBSD (Marc van Kempen)
      - menuButton (if defined) on the top
-     - Extended semantics for AutoRaise in FocusFollowMouse mode:
+     - Extended semantics for AutoRaise in FocusFollowsMouse mode:
                  AutoRaise=-1 
        This will not start an auto timer, but you can raise the most recent
        activated window with a simple click inside the window (= Raise
@@ -252,7 +265,7 @@ patchlevel 29:
          opaque mode)
        - tiny fix for gravity handling
        - *many* modifications to autoraise
-       - fix for FocusFollowMouse
+       - fix for FocusFollowsMouse
        - animation a bit faster
        - small fix for resize/move with the mouse 
        - works together with newest kfm to keep the root icons 
@@ -288,7 +301,7 @@ patchlevel 29:
          of the previous session.
        - new list entry "proxyignore" in the [session]-group of kwmrc
          to specify WM_COMMANDS that should be ignored
-       - fixed the minicli-focus-follow-mouse problem
+       - fixed the minicli-focus-follows-mouse problem
        - yakb fixed for Stephan, small adaption to new kcc module
           
   patchlevel 14:
@@ -296,7 +309,7 @@ patchlevel 29:
        - new option "ControlTab=[on,off]" to switch off the Control-Tab
          shortcut.
        - fixed the "last window is iconified and deficonified"-focus-
-         follows-mouse-bug
+         followss-mouse-bug
        - fixed the autoraise-over-operations-menu bug 
        - Uwe's fix for the timing problem of the resize animation
        - history command completion with Tab in minicli
@@ -370,8 +383,8 @@ patchlevel 29:
          like xfig, which destroy their window instead of saving theirselfs.
          kwm even enables the proxy (if possible) for those lying programs.
          (Please do not look at the hacks necessary to support this rubbish)
-       - no more flickering with opaque move and FocusFollowMouse
-       - Alt-Tab works now even with FocusFollowMouse
+       - no more flickering with opaque move and FocusFollowsMouse
+       - Alt-Tab works now even with FocusFollowsMouse
        - Alt-Tab/Control-Tab can be aborted with Escape (Thanks to Christian
          for this idea)
        - re-enabled MWM decoration hints for StarOffice (floatwinshells)
@@ -464,11 +477,11 @@ In 0.9:
     patchlevel 6:
          - new power-user mousebindings inside windows:
                Alt-LMB still moves
-               Alt-MMB raises (good for FocusFollowMouse)
+               Alt-MMB raises (good for FocusFollowsMouse)
                Alt-RMB invokes resize
     patchlevel 5:
          - autoraise: AutoRaise=<timer value>.
-           0 means no AutoRaise at all. Works only with FocusFollowMouse.
+           0 means no AutoRaise at all. Works only with FocusFollowsMouse.
          - bugfix in handling iconified windows during startup
            (for example kdm´s xconsole)
          - automatic module unregistration
@@ -599,9 +612,9 @@ In 0.7:
          - move/resize without raising a window with MMB
          - entering a window without raise with MMB or RMB
          - Doubleclick on title toggles maximize
-         - improved focus follow mouse
+         - improved focus follows mouse
          - New focus policy: click-to-focus
-         - kwmrc option "FocusPolicy=ClickToFocus/FocusFollowMouse"
+         - kwmrc option "FocusPolicy=ClickToFocus/FocusFollowsMouse"
          - kwmrc option "TitlebarLook=shaded/plain"
 
     patchlevel 6:

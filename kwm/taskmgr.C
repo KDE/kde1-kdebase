@@ -35,7 +35,7 @@ KListBoxItem_Desktop::KListBoxItem_Desktop(const char *text) :
 void KListBoxItem_Desktop::paint(QPainter *p) {
   p->save();
   QFont f=p->font();
-  f.setBold(TRUE);
+  f.setBold(true);
   p->setFont(f);
   QFontMetrics fm = p->fontMetrics();
   p->drawText( 3,  fm.ascent() + fm.leading()/2, _text.data() );
@@ -48,14 +48,14 @@ const char *KListBoxItem_Desktop::text() const {
 
 int KListBoxItem_Desktop::height(const QListBox *lb) const {
   QFont f = lb->font();
-  f.setBold(TRUE);  
+  f.setBold(true);  
   QFontMetrics fm(f);
   return fm.lineSpacing();
 }
 
 int KListBoxItem_Desktop::width(const QListBox *lb) const {
   QFont f = lb->font();
-  f.setBold(TRUE);  
+  f.setBold(true);  
   QFontMetrics fm(f);
   return fm.boundingRect(_text.data()).width();
 }
@@ -101,7 +101,7 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     setMouseTracking(True);
     frame = new QFrame( this );
     frame->installEventFilter( this );
-    frame->setMouseTracking(TRUE);
+    frame->setMouseTracking(true);
     frame->setFrameStyle(QFrame::WinPanel | QFrame:: Raised);
     button = new QPushButton(klocale->translate("Switch to"), this);
     button_logout = new QPushButton(klocale->translate("Logout"), this);
@@ -119,12 +119,12 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     connect(button_cancel, SIGNAL(clicked()), SLOT(cleanup()));
     label = new QLabel(klocale->translate("Current session"), this);
     label->installEventFilter( this );
-    label->setMouseTracking(TRUE);
+    label->setMouseTracking(true);
     label->setAlignment(AlignCenter);
 
     listbox = new QListBox(this);
     listbox->installEventFilter( this );
-    listbox->setMouseTracking(TRUE);
+    listbox->setMouseTracking(true);
     connect(listbox, SIGNAL(selected(int)), SLOT(listboxSelect(int)));
 
 }
@@ -134,8 +134,9 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
   int w = 360;
   int h = 0;
 
-  QFont fnt("Helvetica", 14, QFont::Bold);
-  KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+  QFont fnt = kapp->generalFont;
+  fnt.setBold(true);
+  fnt.setPointSize(14);
   label->setFont(fnt);
   label->adjustSize();
   
@@ -193,7 +194,7 @@ void Ktask::resizeEvent(QResizeEvent *){
 }
 
 void Ktask::SetPointerGrab(QPoint pos){
-  QWidget* w = QApplication::widgetAt( pos, TRUE);
+  QWidget* w = QApplication::widgetAt( pos, true);
   if (!w)
     return;
   if (w->topLevelWidget() == this){
@@ -201,7 +202,7 @@ void Ktask::SetPointerGrab(QPoint pos){
       mouseGrabber()->releaseMouse();
       w->removeEventFilter(this);
       w->installEventFilter(this);
-      w->setMouseTracking(TRUE);
+      w->setMouseTracking(true);
       w->grabMouse();
     }
   }
@@ -240,7 +241,7 @@ bool Ktask::do_grabbing(){
   if (reactive)
     reactive->setactive(False);
   XGrabServer(qt_xdisplay());
-  do_not_draw = TRUE;
+  do_not_draw = true;
   show();
   XSetInputFocus (qt_xdisplay(), winId(), RevertToParent, CurrentTime);
   if (XGrabKeyboard(qt_xdisplay(), winId(),True,GrabModeAsync,
@@ -280,11 +281,11 @@ void Ktask::cleanup() {
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
   hide();
-  do_not_draw = FALSE;
+  do_not_draw = false;
   if (reactive){
     reactive->setactive(True);
     XSetInputFocus (qt_xdisplay(), reactive->window, 
 		    RevertToPointerRoot, CurrentTime);
   }
-  XSync(qt_xdisplay(), FALSE);
+  XSync(qt_xdisplay(), false);
 }

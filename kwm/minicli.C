@@ -179,7 +179,7 @@ bool Minicli::do_grabbing(){
     return False;
   lineedit->grabMouse();
 //   XGrabServer(qt_xdisplay());
-  do_not_draw = TRUE;
+  do_not_draw = true;
   raise();
   lineedit->setFocus();
   return True;
@@ -202,13 +202,13 @@ void Minicli::cleanup(){
 //   XUngrabServer(qt_xdisplay());
   lineedit->releaseMouse();
   hide();
-  do_not_draw = FALSE;
+  do_not_draw = false;
   if (reactive){
     reactive->setactive(True);
     XSetInputFocus (qt_xdisplay(), reactive->window, 
 		    RevertToPointerRoot, CurrentTime);
   }
-  XSync(qt_xdisplay(), FALSE);
+  XSync(qt_xdisplay(), false);
 }
 
 void Minicli::commandCompletion(){

@@ -10,8 +10,8 @@ SUBDIRS 	= pics
 
 #######	Files
 
-kwm_SOURCES	= client.C manager.C main.C minicli.C drag.C logout.C taskmgr.C kURLcompletion.cpp
-BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc logout.moc taskmgr.moc kURLcompletion.moc
+kwm_SOURCES	= client.C manager.C main.C minicli.C warning.C drag.C logout.C taskmgr.C kURLcompletion.cpp
+BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc warning.moc logout.moc taskmgr.moc kURLcompletion.moc
 
 client.C:client.moc
 client.moc: client.h
@@ -28,6 +28,10 @@ main.moc: main.h
 minicli.C:minicli.moc
 minicli.moc: minicli.h
 	$(MOC) minicli.h -o minicli.moc
+
+warning.C:warning.moc
+warning.moc: warning.h
+	$(MOC) warning.h -o warning.moc
 
 logout.C:logout.moc
 logout.moc: logout.h

@@ -306,7 +306,7 @@ public:
   bool hidden_for_modules;
 
   // stops the autoraise timer for this client.
-  void stopAutoraise();
+  void stopAutoraise(bool do_raise = true);
 
   // returns the client itself it is not transient. If it is transient
   // it will return the main window recursively.

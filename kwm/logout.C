@@ -205,7 +205,7 @@ void Klogout::SetPointerGrab(QPoint pos){
       mouseGrabber()->releaseMouse();
       w->removeEventFilter(this);
       w->installEventFilter(this);
-      w->setMouseTracking(TRUE);
+      w->setMouseTracking(true);
       w->grabMouse();
     }
   }
@@ -245,7 +245,7 @@ bool Klogout::do_grabbing(){
     reactive->setactive(False);
   manager->darkenScreen();
   XGrabServer(qt_xdisplay());
-  do_not_draw = TRUE;
+  do_not_draw = true;
   show();
   XSetInputFocus (qt_xdisplay(), winId(), RevertToParent, CurrentTime);
   if (XGrabKeyboard(qt_xdisplay(), winId(),True,GrabModeAsync,
@@ -289,7 +289,7 @@ void Klogout::cleanup(){
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
   hide();
-  do_not_draw = FALSE;
+  do_not_draw = false;
   if (reactive){
     reactive->setactive(True);
     XSetInputFocus (qt_xdisplay(), reactive->window, 

@@ -70,7 +70,9 @@ public:
   // the pointer entered one of our windows. We may have to activate a
   // window (when focus follows mouse) or handle electric borders.
   void enterNotify(XCrossingEvent *e);
-  // the pointer left one of our windows. 
+  // the pointer left one of our windows. This will stop a possible
+  // autoraise process.The brain-dead classic focus follows mouse policy
+  // will also take the focus away from it.
   void leaveNotify(XCrossingEvent *e);
     
 
@@ -126,10 +128,13 @@ public:
   // emits a signal to the kwm modules that a client has changed.
   void changedClient(Client* c);
 
-  // this is called if the current client loses focus. noFocus may
-  // give the focus to a window which had the focus before, or put the
-  // focus to a dummy window if there´s no window left on this
-  // desktop.
+  // this is called if the current client loses focus. This can happen
+  // if the window is destroyed, the client becomes unmapped or the
+  // user has chosen the brain dead classic focus follows mouse policy
+  // and the mouse pointer has left the window. noFocus may give the
+  // focus to a window which had the focus before, or put the focus to
+  // a dummy window if there´s no window left on this desktop or the
+  // user has chosen an archaic (=classic) desktop policy.
   void noFocus();
   // used by noFocus to put the X11 focus to a dummy window
   void focusToNull();

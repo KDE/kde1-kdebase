@@ -18,6 +18,7 @@
 
 #include "client.h"
 #include "minicli.h"
+#include "warning.h"
 #include "logout.h"
 #include "taskmgr.h"
 #include <kwm.h>
@@ -56,7 +57,7 @@ bool ignore_badwindow;
 
 int handler(Display *d, XErrorEvent *e){
     char msg[80], req[80], number[80];
-    bool ignore_badwindow = TRUE; //maybe temporary
+    bool ignore_badwindow = true; //maybe temporary
 
     if (initting && 
 	(
@@ -85,6 +86,7 @@ int handler(Display *d, XErrorEvent *e){
 }
 
 static Minicli* minicli = 0;
+static KWarning* kwarning = 0;
 static Klogout* klogout = 0;
 static Ktask* ktask = 0;
 static QLabel* infoLabel = 0;
@@ -125,8 +127,12 @@ static QList<QLabel> *infoBoxWindowsLabel = 0;
 static void setInfoBoxText(QString text, Window w){
   if (!infoFrame)
     createInfoBox();
-  if (!infoFrame->isVisible())
-    infoLabel->setFont(QFont("Helvetica", 14, QFont::Bold));
+  if (!infoFrame->isVisible()){
+    QFont fnt = kapp->generalFont;
+    fnt.setBold(true);
+    fnt.setPointSize(14);
+    infoLabel->setFont(fnt);
+  }
 
   infoLabel->setText("");
   int d = 0;
@@ -274,10 +280,8 @@ void sighandler(int) {
     QApplication::exit();
 }
 
-
-
 bool focus_grabbed(){
-  return minicli?minicli->isVisible():False;
+  return minicli?minicli->isVisible():False || kwarning?kwarning->isVisible():False;
 }
 
 void showMinicli(){
@@ -285,6 +289,18 @@ void showMinicli(){
     minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
   }
   while (!minicli->do_grabbing());
+}
+
+void showWarning(const char* text){
+  XEvent ev;
+  if (!kwarning){
+    kwarning = new KWarning(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+  }
+  kwarning->setText(text);
+  manager->timeStamp();
+  while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
+  myapp->processEvents(); 
+  while (!kwarning->do_grabbing());
 }
 
 static void setStringProperty(const char* atomname, const char* value){
@@ -434,6 +450,32 @@ static void grabKey(KeySym keysym, unsigned int mod){
 }
 
 
+// Like manager->activateClient but also raises the window and sends a
+// sound event. In addition switchActivateClient also takes care about
+// crappy focus policies: It will show a warning message in such a
+// case.
+void switchActivateClient(Client* c){
+  manager->raiseClient(c);
+  if (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE
+      || options.FocusPolicy == CLASSIC_SLOPPY_FOCUS){ 
+    
+    showWarning(
+		klocale->translate(
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop Environment ;-)\n\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+));
+    
+  }
+  else {
+    manager->activateClient(c);
+    manager->raiseSoundEvent("Window Activate");
+  }
+}
+
 
 
 MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc, argv, rAppName ){
@@ -460,7 +502,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   }
 
   myapp = this;
-  initting = TRUE;
+  initting = true;
   XSetErrorHandler(handler);
 
   // these should be internationalized!
@@ -480,7 +522,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   desktopMenu = new QPopupMenu; 
   desktopMenu->installEventFilter(this);
   desktopMenu->setMouseTracking(True);
-  desktopMenu->setCheckable(TRUE);
+  desktopMenu->setCheckable(true);
   
   QObject::connect(desktopMenu, SIGNAL(activated(int)), this, SLOT(handleDesktopPopup(int)));
 
@@ -602,7 +644,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   connect(manager, SIGNAL(reConfigure()), this, SLOT(reConfigure()));
   connect(manager, SIGNAL(showLogout()), this, SLOT(showLogout()));
   XUngrabServer(qt_xdisplay()); 
-  initting = FALSE;
+  initting = false;
   if (restore_session)
     restoreSession();
 }
@@ -666,8 +708,12 @@ void MyApp::readConfiguration(){
   key = config->readEntry("FocusPolicy");
   if( key == "ClickToFocus")
     options.FocusPolicy = CLICK_TO_FOCUS;
-  else if( key == "FocusFollowMouse")
-    options.FocusPolicy = FOCUS_FOLLOW_MOUSE;
+  else if( key == "FocusFollowsMouse" || key == "FocusFollowMouse")
+    options.FocusPolicy = FOCUS_FOLLOWS_MOUSE;
+  else if( key == "ClassicFocusFollowsMouse")
+    options.FocusPolicy = CLASSIC_FOCUS_FOLLOWS_MOUSE;
+  else if( key == "ClassicSloppyFocus")
+    options.FocusPolicy = CLASSIC_SLOPPY_FOCUS;
   else{
     config->writeEntry("FocusPolicy","ClickToFocus");
     options.FocusPolicy = CLICK_TO_FOCUS;
@@ -785,14 +831,16 @@ void MyApp::readConfiguration(){
     config->writeEntry("ElectricBorderNumberOfPushes", options.ElectricBorderNumberOfPushes);
   }
 
-  key = config->readEntry("ElectricBorderMovePointer");
-  if( key == "on")
-    options.ElectricBorderMovePointer = true;
-  else if( key == "off")
-    options.ElectricBorderMovePointer = false;
+  key = config->readEntry("ElectricBorderPointerWarp");
+  if( key == "NoWarp")
+    options.ElectricBorderPointerWarp = NO_WARP;
+  else if( key == "MiddleWarp")
+    options.ElectricBorderPointerWarp = MIDDLE_WARP;
+  else if( key == "FullWarp")
+    options.ElectricBorderPointerWarp = FULL_WARP;
   else{
-    config->writeEntry("ElectricBorderMovePointer", "off");
-    options.ElectricBorderMovePointer = false;
+    config->writeEntry("ElectricBorderPointerWarp", "FullWarp");
+    options.ElectricBorderPointerWarp = FULL_WARP;
   }
 
 
@@ -1052,9 +1100,7 @@ void MyApp::changeToClient(QString label){
     if (c->isIconified())
       c->unIconify();
     else {
-      manager->raiseClient(c);
-      manager->activateClient(c);
-      manager->raiseSoundEvent("Window Activate");
+      switchActivateClient(c);
     }
   }
 }
@@ -1345,15 +1391,13 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	  == key.keycode){
 	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
 	hideInfoBox();
-	tab_grab = FALSE;
+	tab_grab = false;
 	if (infoBoxClient){
 	  if (!infoBoxClient->isOnDesktop(manager->currentDesktop()))
 	    manager->switchDesktop(infoBoxClient->desktop);
 	  
 	  if (infoBoxClient->state == NormalState){
-	    manager->raiseClient(infoBoxClient);
-	    manager->activateClient(infoBoxClient);
-	    manager->raiseSoundEvent("Window Activate");
+	    switchActivateClient(infoBoxClient);
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();
@@ -1430,7 +1474,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	|| ev->xclient.message_type == KDEChangeGeneral){
       KApplication::x11EventFilter(ev);
       manager->repaintAll();
-      return TRUE;
+      return true;
     }
   }
   
@@ -1440,7 +1484,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case KeyRelease:
     handleKeyRelease(ev->xkey);
-    return FALSE;
+    return false;
     break;
   case ButtonPress:
     {
@@ -1477,7 +1521,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case ButtonRelease:
     break;
   case CreateNotify:
-    return TRUE;
+    return true;
     break;
   case MapRequest:
     manager->mapRequest(&ev->xmaprequest);
@@ -1491,13 +1535,13 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case UnmapNotify:
     manager->unmapNotify(&ev->xunmap);
     if (ev->xunmap.window != ev->xunmap.event){
-      return TRUE;
+      return true;
     }
     break;
   case DestroyNotify:
     manager->destroyNotify(&ev->xdestroywindow);
     if (ev->xdestroywindow.window != ev->xdestroywindow.event){
-      return TRUE;
+      return true;
     }
     break;
   case ClientMessage:
@@ -1523,7 +1567,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     manager->leaveNotify(&ev->xcrossing);
     break;
   case ReparentNotify:
-    return TRUE; //do not confuse Qt with these events...
+    return true; //do not confuse Qt with these events...
     break;
   case MotionNotify:
     manager->motionNotify(&ev->xmotion);
@@ -1532,12 +1576,12 @@ bool MyApp::x11EventFilter( XEvent * ev){
     // this is because Qt cannot handle (usually does not need to)
     // SubstructureNotify events. 
     if (ev->xconfigure.window != ev->xconfigure.event){
-      return TRUE;
+      return true;
     }
     break;
   case MapNotify:
     if (ev->xmap.window != ev->xmap.event){
-      return TRUE;
+      return true;
     }
     break;
   case Expose:
@@ -1554,7 +1598,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   }
 
-  return FALSE;
+  return false;
 }
 
 

@@ -24,7 +24,9 @@ enum WINDOW_MOVE_TYPE {
 
 enum FOCUS_POLICY {
   CLICK_TO_FOCUS,
-  FOCUS_FOLLOW_MOUSE
+  FOCUS_FOLLOWS_MOUSE,
+  CLASSIC_FOCUS_FOLLOWS_MOUSE,
+  CLASSIC_SLOPPY_FOCUS
 };
 
 enum TITLEBAR_LOOK{
@@ -53,6 +55,11 @@ enum PLACEMENT_POLICY {
   MANUAL_PLACEMENT
 };
    
+enum ELECTRIC_BORDER_POINTER_WARP {
+  FULL_WARP,
+  MIDDLE_WARP,
+  NO_WARP
+};
 
 struct kwmOptions {
 
@@ -66,7 +73,7 @@ struct kwmOptions {
   int AutoRaise;
   int ElectricBorder;
   int ElectricBorderNumberOfPushes;
-  bool ElectricBorderMovePointer;
+  ELECTRIC_BORDER_POINTER_WARP ElectricBorderPointerWarp;
   bool ControlTab;
   bool Button3Grab;
   //CT 18jan98, 07mar98, 17mar98
@@ -98,6 +105,9 @@ struct kwmOptions {
 };
 
 extern kwmOptions options;
+
+#define CLASSIC_FOCUS  (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE \
+			|| options.FocusPolicy == CLASSIC_SLOPPY_FOCUS)
 
 
 #endif // OPTIONS_H

@@ -375,7 +375,7 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
     while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 
     if (c->isMaximized()){
-      c->maximized = FALSE;
+      c->maximized = false;
       c->geometry_restore = c->geometry;
       if (c->buttonMaximize->isOn())
 	c->buttonMaximize->toggle();

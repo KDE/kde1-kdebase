@@ -49,6 +49,7 @@ extern bool initting;
 extern bool focus_grabbed();
 extern void showMinicli();
 extern void showTask();
+extern void switchActivateClient(Client*);
 
 Manager::Manager(): QObject(){
 
@@ -398,9 +399,10 @@ void Manager::mapRequest(XMapRequestEvent *e){
 	break;
       case NormalState:
 	c->showClient();
-        raiseClient(c);
-        setWindowState(c, NormalState);
-	activateClient(c);
+	raiseClient(c);
+	setWindowState(c, NormalState);
+	if (!CLASSIC_FOCUS)
+	  activateClient(c);
         break;
       }
     }
@@ -415,7 +417,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
       if(c->reparenting){
 	// if we are reparenting then X will send us a synethic unmap
 	// notify. Just unset reparenting and return in this case.
-	c->reparenting = FALSE;
+	c->reparenting = false;
 	return;
       }
       if (c->unmap_events > 0){
@@ -578,8 +580,7 @@ void Manager::clientMessage(XEvent*  ev){
     Window w = (Window) e->data.l[0];
     c = getClient(w);
     if (c && c->state == NormalState){
-      activateClient(c);
-      raiseSoundEvent("Window Activate");
+      switchActivateClient(c);
     }
   }
   if (e->message_type == kwm_module){
@@ -792,11 +793,11 @@ void Manager::propertyNotify(XPropertyEvent *e){
     if (c->getDecoration() != dec){
       if (dec){
 	c->decoration = dec;
-	gravitate(c, FALSE);
+	gravitate(c, false);
 	sendConfig(c);
       }
       else {
-	gravitate(c, TRUE);
+	gravitate(c, true);
 	c->decoration = dec;
 	sendConfig(c);
       }
@@ -835,7 +836,7 @@ void Manager::motionNotify(XMotionEvent* e){
   // questioned in the enterNotify handler to determine, wether the
   // focus should be set (if in FocusFollowMouse policy)
   enable_focus_follow_mouse_activation = true;
-  if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
+  if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){ 
     c = getClient(e->window);
     if (c && c == delayed_focus_follow_mouse_client && c != current()
 	&& c->state != WithdrawnState){
@@ -850,8 +851,21 @@ void Manager::motionNotify(XMotionEvent* e){
 // window (when focus follows mouse) or handle electric borders.
 void Manager::enterNotify(XCrossingEvent *e){
   Client *c;
-  if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
-    // focus follow mouse is somewhat tricky. kwm does not do it so
+
+  if (CLASSIC_FOCUS){
+    // classic focus follows mouse is simple: if a window has been
+    // entered that does not have the focus, it is activated. This
+    // breaks a lot, including Alt-Tab, but some users seem to want it
+    // this way...
+    // Same applies to classic sloppy focus
+    c = getClient(e->window);
+    if (c != 0 && c != current() && c->state != WithdrawnState){
+      activateClient(c);
+      raiseSoundEvent("Window Activate");
+    }
+  }
+  else if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){ 
+    // focus follows mouse is somewhat tricky. kwm does not do it so
     // simple that the focus is always under the mouse. Instead the
     // focus is only moved around if the user explitely moves the mouse
     // pointer.  This allows users to use the advanced alt-tab feature
@@ -905,8 +919,20 @@ void Manager::enterNotify(XCrossingEvent *e){
   }
 }
 
-// the pointer left one of our windows.
-void Manager::leaveNotify(XCrossingEvent * /* e */){
+// the pointer left one of our windows. This will stop a possible
+// autoraise process.The brain-dead classic focus follows mouse policy
+// will also take the focus away from it.
+void Manager::leaveNotify(XCrossingEvent * e){
+  Client* c;
+  if (options.FocusPolicy != CLICK_TO_FOCUS){
+    c = getClient(e->window);
+    if (c != 0 && c == current() && c->winId() == e->window &&
+	c->state != WithdrawnState && !c->geometry.contains(QPoint(e->x_root, e->y_root))){
+      c->stopAutoraise(false);
+      if (options.FocusPolicy == CLASSIC_FOCUS_FOLLOWS_MOUSE)
+	noFocus();
+    }
+  }
 }
 
 // switch to another virtual desktop according to the specified direction.
@@ -929,11 +955,14 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
-    if(!options.ElectricBorderMovePointer){
+    if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
     }
-    else{
+    else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
       QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+    }
+    else{
+      QCursor::setPos(QCursor::pos().x(), 3);
     }
 
     break;
@@ -951,11 +980,14 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
-    if(!options.ElectricBorderMovePointer){
+    if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QCursor::pos().x(),3);
     }
-    else{
+    else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
       QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()/2);
+    }
+    else{
+      QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
     }
 
     break;
@@ -972,11 +1004,14 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
-    if(!options.ElectricBorderMovePointer){
+    if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
     }
-    else{
+    else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
       QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
+    }
+    else{
+      QCursor::setPos(3, QCursor::pos().y());
     }
 
     break;
@@ -993,13 +1028,15 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
-    if(!options.ElectricBorderMovePointer){
+    if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(3,QCursor::pos().y());
     }
-    else{
+    else if (options.ElectricBorderPointerWarp == MIDDLE_WARP){
       QCursor::setPos(QApplication::desktop()->width()/2, QCursor::pos().y());
     }
-
+    else{
+      QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
+    }
     break;
   }
 }
@@ -1382,7 +1419,7 @@ void Manager::deskUnclutter() {
     if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
       continue;
     smartPlacement(cl);
-    sendConfig(cl, FALSE); //ask Matthias if this is the best way
+    sendConfig(cl, false); //ask Matthias if this is the best way
     //restore the pos in clients list (munged by smartPlacement
     // Matthias: yes, Christian, I think so :-) 
     clients.findRef(bm); 
@@ -1397,12 +1434,12 @@ void Manager::deskCascade() {
   Client *cl;
   cl = clients.first();
   cascadePlacement(cl,True);
-  sendConfig(cl, FALSE);
+  sendConfig(cl, false);
   for(cl = clients.next(); cl; cl = clients.next()) {
     if((!cl->isOnDesktop(currentDesktop())) || (cl->isIconified()) )
       continue;
     cascadePlacement(cl,False);
-    sendConfig(cl, FALSE);
+    sendConfig(cl, false);
   }
 }
 
@@ -1524,7 +1561,7 @@ void Manager::snapToWindow(Client *c) {
 void Manager::manage(Window w, bool mapped){
 
   bool dohide;
-  bool pseudo_session_management = FALSE;
+  bool pseudo_session_management = false;
   int state;
   XClassHint klass;
   XWMHints *hints;
@@ -1587,7 +1624,7 @@ void Manager::manage(Window w, bool mapped){
 	if (s == proxy_hints->at(i)){
 	  QString d = proxy_props->at(i);
 	  KWM::setProperties(c->window, d);
-	  pseudo_session_management = TRUE;
+	  pseudo_session_management = true;
 	  XSync(qt_xdisplay(), False);
 	  proxy_hints->removeRef(0);
 	  proxy_props->removeRef(0);
@@ -1705,7 +1742,7 @@ void Manager::manage(Window w, bool mapped){
   }
 
   if (mapped)
-    c->reparenting = TRUE;
+    c->reparenting = true;
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
   switch (c->getDecoration()){
   case KWM::noDecoration:
@@ -1722,14 +1759,14 @@ void Manager::manage(Window w, bool mapped){
   
   if (shape) {
     XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
-    ignore_badwindow = TRUE;       /* magic */
+    ignore_badwindow = true;       /* magic */
     setShape(c);
-    ignore_badwindow = FALSE;
+    ignore_badwindow = false;
   }
   
   XAddToSaveSet(qt_xdisplay(), c->window);
   XSync(qt_xdisplay(), False);
-  sendConfig(c, FALSE);
+  sendConfig(c, false);
   XSync(qt_xdisplay(), False);
 
   // get some KDE specific hints
@@ -1799,7 +1836,7 @@ void Manager::manage(Window w, bool mapped){
      */
 
     // avoid flickering
-    c->maximized = TRUE;
+    c->maximized = true;
     c->buttonMaximize->toggle();
     
     c->geometry_restore = tmprec;
@@ -1811,11 +1848,12 @@ void Manager::manage(Window w, bool mapped){
     raiseSoundEvent("Window New");
 
 
-  if (!dohide && c->getDecoration() != KWM::noDecoration) {
+  if (!dohide && c->getDecoration() != KWM::noDecoration 
+      && !CLASSIC_FOCUS) {
     activateClient(c);
   }
   else
-    c->setactive(FALSE);
+    c->setactive(false);
 
   if (c->isIconified())
     iconifyTransientOf(c);
@@ -1831,10 +1869,12 @@ void Manager::manage(Window w, bool mapped){
     XEvent ev;
     while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
     Window w = c->window;
-    myapp->processEvents();
     c = manager->getClient(w);
     if (!c)
       return;
+    myapp->processEvents();
+    if (!c->isActive()) // may happen due to the crappy classic focus policies
+      activateClient(c);
     c->handleOperation(OP_MOVE);
   }
 }
@@ -1844,7 +1884,7 @@ void Manager::manage(Window w, bool mapped){
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
   c->hideClient();
-  gravitate(c, TRUE);
+  gravitate(c, true);
   XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
 		  c->geometry.x() , c->geometry.y());
   XRemoveFromSaveSet(qt_xdisplay(), c->window);
@@ -1896,12 +1936,12 @@ void Manager::activateClient(Client* c, bool set_revert){
   if (c == cc)
     return;
   if (cc){
-    cc->setactive( FALSE );
+    cc->setactive( false );
     if (cc->mainClient() != c->mainClient())
       iconifyFloatingOf(cc->mainClient());
   }
 
-  c->setactive( TRUE );
+  c->setactive( true );
   unIconifyTransientOf(c->mainClient());
 
   focusToClient(c);
@@ -2049,28 +2089,35 @@ void Manager::changedClient(Client* c){
   sendToModules(module_win_change, c);
 }
 
-// this is called if the current client loses focus. noFocus may
-// give the focus to a window which had the focus before, or put the
-// focus to a dummy window if there´s no window left on this
-// desktop.
+// this is called if the current client loses focus. This can happen
+// if the window is destroyed, the client becomes unmapped or the
+// user has chosen the brain dead classic focus follows mouse policy
+// and the mouse pointer has left the window. noFocus may give the
+// focus to a window which had the focus before, or put the focus to
+// a dummy window if there´s no window left on this desktop or the
+// user has chosen an archaic (=classic) desktop policy.
 void Manager::noFocus(){
   Client* c;
-  for (c = clients_traversing.last();
-       c && (c->isActive() || c->state != NormalState); 
-       c = clients_traversing.prev());
-  if (c && c->state == NormalState) {
-    activateClient(c, false);
-    return;
-  }
 
+  if (!CLASSIC_FOCUS){
+    for (c = clients_traversing.last();
+	 c && (c->isActive() || c->state != NormalState); 
+	 c = clients_traversing.prev());
+    if (c && c->state == NormalState) {
+      activateClient(c, false);
+      return;
+    }
+  }
+   
   c = current();
   if (c){
     c->setactive(False);
     iconifyFloatingOf(c->mainClient());
   }
+  
   focusToNull();
   sendToModules(module_win_activate, 0);
-  
+
 }
 
 // used by noFocus to put the X11 focus to a dummy window
@@ -2236,7 +2283,7 @@ void Manager::cleanup(){
   XWindowChanges wc;
   
   for (c = clients.first(); c; c = clients.next()) {
-    gravitate(c, TRUE);
+    gravitate(c, true);
     
     XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), c->geometry.x() , c->geometry.y());
     
@@ -2454,11 +2501,11 @@ void Manager::getWindowProtocols(Client *c){
   if (XGetWMProtocols(qt_xdisplay(), c->window, &p, &n)){
     for (i = 0; i < n; i++)
       if (p[i] == wm_delete_window)
-	c->Pdeletewindow = TRUE;
+	c->Pdeletewindow = true;
       else if (p[i] == wm_take_focus)
-	c->Ptakefocus = TRUE;
+	c->Ptakefocus = true;
       else if (p[i] == wm_save_yourself){
-	c->Psaveyourself = TRUE;
+	c->Psaveyourself = true;
       }
     if (n>0)
       XFree(p);
@@ -2632,12 +2679,12 @@ bool Manager::getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
   
   if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
-    return FALSE;
+    return false;
   }
   
   result = p[0];
   XFree((char *) p);
-  return TRUE;
+  return true;
 }
 
 // kwm internally sometimes uses rectangle properties 
@@ -2820,13 +2867,13 @@ void Manager::logout(){
 		   PropertyChangeMask| StructureNotifyMask );
       command = xgetprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
-      XSync(qt_xdisplay(), FALSE);
+      XSync(qt_xdisplay(), false);
       sendClientMessage(c->window, wm_protocols, wm_save_yourself);
       // wait for clients response
       do {
 	XWindowEvent(qt_xdisplay(), c->window, PropertyChangeMask
 		     | StructureNotifyMask, &ev);
-	XSync(qt_xdisplay(), FALSE);
+	XSync(qt_xdisplay(), false);
 	if (ev.type != PropertyNotify){
 	  // special code for clients like xfig which unamp their
 	  // window instead of setting XA_WM_COMMAND....
@@ -3134,7 +3181,7 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
   // DON'T automatically iconify floating menues if the focus policy is
   // focus follows mouse, since otherwise it will be exceptionally hard
   // to get control over them back! (Marcin Dalecki)
-  if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE)
+  if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE)
     return;
     
   QListIterator<Client> it(clients);

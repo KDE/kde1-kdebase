@@ -59,7 +59,7 @@ extern MyApp* myapp;
 extern QPushButton* ignore_release_on_this;
 
 
-bool do_not_draw = FALSE;
+bool do_not_draw = false;
 myPushButton::myPushButton(QWidget *parent, const char* name)
   : QPushButton( parent, name ){
     setFocusPolicy(NoFocus);
@@ -70,7 +70,7 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
 void myPushButton::enterEvent( QEvent * ){
   flat = False;
   if (!do_not_draw)
-    repaint(FALSE);
+    repaint(false);
 }
 
 void myPushButton::leaveEvent( QEvent * ){
@@ -83,18 +83,18 @@ void myPushButton::paint(QPainter *painter){
   if ( isDown() || (isOn() && !flat)) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), 
-		      height(), colorGroup(), TRUE );
+		      height(), colorGroup(), true );
     else
       qDrawShadePanel( painter, 0, 0, width(), 
-		       height(), colorGroup(), TRUE, 2, 0L );
+		       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat ) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), height(),
-		      colorGroup(), FALSE );
+		      colorGroup(), false );
     else {
       qDrawShadePanel( painter, 0, 0, width(), height(), 
-		       colorGroup(), FALSE, 2, 0L );
+		       colorGroup(), false, 2, 0L );
 //       painter->setPen(black);
 //       painter->drawRect(0,0,width(),height()); 
     }
@@ -119,8 +119,8 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
   bool hit = hitButton( e->pos() );
   if ( hit ){
     last_button = e->button();
-    setDown( TRUE );
-    repaint( FALSE );
+    setDown( true );
+    repaint( false );
     emit pressed();
   }
 }
@@ -131,11 +131,11 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     return;
   }
   bool hit = hitButton( e->pos() );
-  setDown( FALSE );
+  setDown( false );
   if ( hit ){
     if ( isToggleButton() )
       setOn( !isOn() );
-    repaint( FALSE );
+    repaint( false );
     if ( isToggleButton() )
       emit toggled( isOn() );
     emit released();
@@ -162,13 +162,13 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   bool hit = hitButton( e->pos() );
   if ( hit ) {
     if ( !isDown() ) {
-      setDown(TRUE);
-      repaint(FALSE);
+      setDown(true);
+      repaint(false);
       emit pressed();
     }
   } else {
     if ( isDown() ) {
-      setDown(FALSE);
+      setDown(false);
       repaint();
       emit released();
     }
@@ -337,8 +337,8 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     window = w;
 
-    reparenting = FALSE;
-    backing_store = FALSE;
+    reparenting = false;
+    backing_store = false;
     state = WithdrawnState;
     maximized = False;
     iconified = False;
@@ -349,16 +349,16 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     ncmapwins = 0;
     cmapwins = 0;
     wmcmaps = 0;
-    is_active = FALSE;
+    is_active = false;
     trans = None;
     decoration = 1;
     wants_focus = true;
-    do_close = FALSE;
+    do_close = false;
     
     // standard window manager protocols
-    Pdeletewindow = FALSE;
-    Ptakefocus = FALSE;
-    Psaveyourself = FALSE;
+    Pdeletewindow = false;
+    Ptakefocus = false;
+    Psaveyourself = false;
 
     dragging_state = dragging_nope;
     do_resize = 0;
@@ -398,9 +398,9 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
  
     titlestring_offset = 0;
     titlestring_offset_delta = 2;
-    titlestring_too_large = FALSE;
-    hidden_for_modules = FALSE;
-    autoraised_stopped = FALSE;
+    titlestring_too_large = false;
+    hidden_for_modules = false;
+    autoraised_stopped = false;
 
     doButtonGrab();
     unmap_events = 0;
@@ -474,13 +474,13 @@ void Client::generateButtons(){
   }
   if (!buttonMaximize){
     buttonMaximize = new myPushButton(this);
-    buttonMaximize->setToggleButton(TRUE);
+    buttonMaximize->setToggleButton(true);
     buttonMaximize->hide();
     connect( buttonMaximize, SIGNAL(toggled(bool)), SLOT(maximizeToggled(bool)));
   }
   if (!buttonSticky){
     buttonSticky = new myPushButton(this);
-    buttonSticky->setToggleButton(TRUE);
+    buttonSticky->setToggleButton(true);
     buttonSticky->hide();
     connect( buttonSticky, SIGNAL(toggled(bool)), SLOT(stickyToggled(bool)));
   }
@@ -593,8 +593,9 @@ void Client::reconfigure(){
 // animation). animateTilebar() is invoked from a timer and will
 // simply move it one single step further in this case.
 void Client::animateTitlebar(){
-  if (titlestring_too_large)
-    paintState(TRUE);
+  if (titlestring_too_large){
+    paintState(true);
+  }
 }
 
 
@@ -609,17 +610,19 @@ void Client::mousePressEvent( QMouseEvent *ev ){
       myapp->operations->popup(QCursor::pos());
     }
     else {
-      if (!isActive())
+      if (!isActive()){
 	manager->raiseSoundEvent("Window Activate");
-      manager->activateClient(this);
+	manager->activateClient(this);
+      }
     }
     return;  
   }
 
   if ((ev->state() & AltButton) != AltButton){
-    if (!isActive())
+    if (!isActive()){
       manager->raiseSoundEvent("Window Activate");
-    manager->activateClient( this );
+      manager->activateClient( this );
+    }
     if (ev->button() == LeftButton)
       manager->raiseClient( this );
   }
@@ -1174,7 +1177,7 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   switch(buttonFunction){
   case MAXIMIZE: 
     button->setPixmap(*pm_max);
-    button->setToggleButton(TRUE);
+    button->setToggleButton(true);
     buttonMaximize = button;
     connect( button, SIGNAL(toggled(bool)), SLOT(maximizeToggled(bool)));
     break;
@@ -1194,7 +1197,7 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
     break;
   case STICKY:
     button->setPixmap(*pm_pin_up);
-    button->setToggleButton(TRUE);
+    button->setToggleButton(true);
     buttonSticky = button;
     connect( button, SIGNAL(toggled(bool)), SLOT(stickyToggled(bool)));
     break;
@@ -1289,14 +1292,14 @@ void Client::generateOperations(){
   }
   
   if (fixedSize())
-    myapp->operations->setItemEnabled(OP_MAXIMIZE, FALSE);
+    myapp->operations->setItemEnabled(OP_MAXIMIZE, false);
 
 
 
   myapp->operations->insertItem(KWM::getIconifyString(), 
 				OP_ICONIFY);
   if (!wantsFocus() || (trans != None && trans != qt_xrootwin()))
-    myapp->operations->setItemEnabled(OP_ICONIFY, FALSE);
+    myapp->operations->setItemEnabled(OP_ICONIFY, false);
 
   myapp->operations->insertItem(KWM::getMoveString(), 
 				OP_MOVE);
@@ -1304,7 +1307,7 @@ void Client::generateOperations(){
 				OP_RESIZE);
 
   if (fixedSize())
-    myapp->operations->setItemEnabled(OP_RESIZE, FALSE);
+    myapp->operations->setItemEnabled(OP_RESIZE, false);
 
   if (isSticky())
     myapp->operations->insertItem(KWM::getUnStickyString(), 
@@ -1313,7 +1316,7 @@ void Client::generateOperations(){
     myapp->operations->insertItem(KWM::getStickyString(), 
 				  OP_STICKY);
   if (trans != None && trans != qt_xrootwin() && trans != window)
-    myapp->operations->setItemEnabled(OP_STICKY, FALSE);
+    myapp->operations->setItemEnabled(OP_STICKY, false);
 
   myapp->desktopMenu->clear();
   int i;
@@ -1322,12 +1325,12 @@ void Client::generateOperations(){
       b.append(KWM::getDesktopName(i));
       myapp->desktopMenu->insertItem(b, i);
   }
-  myapp->desktopMenu->setItemChecked(manager->currentDesktop(), TRUE);
+  myapp->desktopMenu->setItemChecked(manager->currentDesktop(), true);
 
   int dm = myapp->operations->insertItem(KWM::getToDesktopString(), 
 					 myapp->desktopMenu);
   if (trans != None && trans != qt_xrootwin() && trans != window)
-    myapp->operations->setItemEnabled(dm, FALSE);
+    myapp->operations->setItemEnabled(dm, false);
   myapp->operations->insertSeparator();
   myapp->operations->insertItem(KWM::getCloseString(), 
 				OP_CLOSE);
@@ -1372,17 +1375,18 @@ void Client::setactive(bool on){
   if (!do_not_draw)
     paintState();
   if (is_active){
-    if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
+    if ( options.FocusPolicy != CLICK_TO_FOCUS
 	 && options.AutoRaise != 0){
       if (options.AutoRaise > 0)
 	QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
-      autoraised_stopped = FALSE;
+      autoraised_stopped = false;
     }
     else {
       doButtonGrab();
     }
   }
   else {
+    stopAutoraise(false);
     doButtonGrab();
   }
 }  
@@ -1493,8 +1497,9 @@ void Client::paintState(bool only_label){
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
 
   if (label){
-    QFont fnt("Helvetica", 12, QFont::Bold);
-    KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+    QFont fnt = kapp->generalFont;
+    fnt.setPointSize(12);
+    fnt.setBold(true);
     p.setFont(fnt);
     p.setClipRect(r);
     p.setClipping(True);
@@ -1606,7 +1611,7 @@ void Client::unIconify(bool animation){
     manager->raiseClient( this );
   }
   manager->unIconifyTransientOf(this);
-  if (isOnDesktop(manager->currentDesktop()) && animation){
+  if (isOnDesktop(manager->currentDesktop()) && animation &&!CLASSIC_FOCUS){
     manager->activateClient(this);
   }
 }
@@ -1648,9 +1653,9 @@ void Client::ontoDesktop(int new_desktop){
     showClient();  
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );
-    manager->activateClient( this );
+    if (!CLASSIC_FOCUS)
+      manager->activateClient( this );
   }
-
 }
 
 
@@ -1659,7 +1664,7 @@ void Client::ontoDesktop(int new_desktop){
 void Client::maximize(int mode){
   if (isMaximized())
     return;
-  maximized = TRUE;
+  maximized = true;
   geometry_restore = geometry;
   KWM::setGeometryRestore(window, geometry_restore);
   QRect maxRect = KWM::getWindowRegion(desktop);
@@ -1699,7 +1704,7 @@ void Client::maximize(int mode){
 void Client::unMaximize(){
   if (!isMaximized())
     return;
-  maximized = FALSE;
+  maximized = false;
   if (geometry != geometry_restore && state == NormalState)
     manager->raiseSoundEvent("Window UnMaximize");
   if (animate_size_change(this, geometry, geometry_restore,
@@ -1741,7 +1746,8 @@ void Client::maximizeToggled(bool depressed){
     
     if (state == NormalState){
       manager->raiseClient( this );
-      manager->activateClient( this );
+      if (!CLASSIC_FOCUS)
+	manager->activateClient( this );
     }
   }
 }
@@ -1767,7 +1773,8 @@ void Client::stickyToggled(bool depressed){
       showClient();  
       manager->setWindowState(this, NormalState);
       manager->raiseClient( this );
-      manager->activateClient( this );
+      if (!CLASSIC_FOCUS)
+	manager->activateClient( this );
     }
   }
   else{
@@ -1795,12 +1802,13 @@ void Client::menuPressed(){
   if (!isActive()){
     myapp->operations->hide();
     manager->raiseClient(this);
-    manager->activateClient(this);
+    if (!CLASSIC_FOCUS)
+      manager->activateClient(this);
   }
   if (click_time.msecsTo(QTime::currentTime())<700){
     // some kind of doubleclick => close. Will be checked in the
     // menuReleased handler.
-    do_close = TRUE;
+    do_close = true;
   }
   else {
     ignore_release_on_this = buttonMenu;
@@ -1813,7 +1821,7 @@ void Client::menuPressed(){
 
 void Client::menuReleased(){
   if (do_close) closeClicked();
-  do_close = FALSE;
+  do_close = false;
 }
 
 
@@ -1963,8 +1971,10 @@ bool Client::dragging_is_running(){
 // check wether raising would cover a popup menu and avoid it in
 // such a case.
 void Client::autoRaise(){
-  if (autoraised_stopped || do_not_draw)
+  if (autoraised_stopped || do_not_draw){
+    autoraised_stopped = false;
     return;
+  }
 
   if (isActive()){
      if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
@@ -1974,31 +1984,32 @@ void Client::autoRaise(){
 		      GrabModeAsync, GrabModeAsync, None, 
 		      None , CurrentTime) == GrabSuccess){ 
        XUngrabPointer(qt_xdisplay(), CurrentTime);
-       XSync(qt_xdisplay(), FALSE);
+       XSync(qt_xdisplay(), false);
        manager->raiseClient( this );
      }
      else {
-       if ( options.FocusPolicy == FOCUS_FOLLOW_MOUSE
+       if ( options.FocusPolicy != CLICK_TO_FOCUS
 	    && options.AutoRaise != 0){
 	 if (options.AutoRaise > 0)
 	   QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
-	 autoraised_stopped = FALSE;
+	 autoraised_stopped = false;
        }
      }
   }
 }
 
 // stops the autoraise timer for this client.
-void Client::stopAutoraise(){
+void Client::stopAutoraise(bool do_raise){
   if (!autoraised_stopped
       && isActive()
       && !do_not_draw
-      && options.FocusPolicy == FOCUS_FOLLOW_MOUSE
-      && options.AutoRaise != 0){
+      && options.FocusPolicy != CLICK_TO_FOCUS
+      && options.AutoRaise != 0
+      && do_raise){
     manager->raiseClient( this );
     doButtonGrab();
   }
-  autoraised_stopped = TRUE;
+  autoraised_stopped = true;
 }
 
 // returns the client itself it is not transient. If it is transient
