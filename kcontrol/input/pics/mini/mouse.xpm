@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn  by Andreas Thienemann for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*mouse[]={
+"16 16 7 1",
+"a c #ffffff",
+"c c #ff0000",
+"d c #c0c0c0",
+"b c #808080",
+"e c #0000c0",
+"# c #000000",
+". c None",
+".###............",
+"#...............",
+".#...##.........",
+"..###aa#........",
+"....#bbb#.......",
+"..##abaaa#......",
+".#aabacaaa#.....",
+".#daaaaaeaa#....",
+".#ddaaaeaaaa#...",
+"..#ddaaaaaaaa#..",
+"...#ddaaaaaaad#.",
+"....#ddaaaaaad#.",
+".....#ddaaaadb#.",
+"......#ddaddb#..",
+".......#ddbb#...",
+"........####...."};
+

@@ -1,3 +1,7 @@
+# $Id$
+# kdebase/kcontrol/input
+
+SUBDIRS = pics
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -36,4 +40,3 @@ messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcminput_SOURCES) && mv messages.po ../../po/kcminput.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
-
