@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-22 23:37+0100\n"
+"PO-Revision-Date: 1999-01-21 23:24+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -462,7 +462,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opció %s no té suport en aquesta plataforma!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"

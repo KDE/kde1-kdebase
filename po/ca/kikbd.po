@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1998-01-10 23:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"PO-Revision-Date: 1999-01-21 23:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,17 +65,6 @@ msgid ""
 msgstr ""
 "No es pot eliminar Bloq Majús dels modificadors.\n"
 "Es desactiva l'emulació Bloq Majús"
-
-#: kikbd.cpp:1003
-#, fuzzy
-msgid "Exiting International Keyboard"
-msgstr "Teclat internacional"
-
-#: kikbd.cpp:1004
-msgid ""
-"You're about to quit the \"International Keyboard\" tool.\n"
-" Do you want to have it autostarted at your next login?"
-msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -162,9 +151,8 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Ambdues Majús (Majús+Majús)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
-msgstr "Alt dreta"
+msgstr "Meta dreta"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -175,9 +163,8 @@ msgid "Left  Control"
 msgstr "Control esquerra"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
-msgstr "Alt esquerra"
+msgstr "Meta esquerra"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -200,99 +187,99 @@ msgid "X default codes"
 msgstr "Codis X per omissió"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Voleu continuar?"
+"%s\n"
+"Voleu configurar ara?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Esteu fent servir \"Teclat internacional\" per primer cop.\n"
+"He instal·lat un arranjament per omissió."
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "desconegut"
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "omissió"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:387
 msgid "Author:  Not specified"
 msgstr "Autor: no especificat"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:389
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:395
 msgid "Description:  "
 msgstr "Descripció:   "
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:398
 msgid "Source:  "
 msgstr "Font:    "
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:399
 msgid "no file"
 msgstr "cap fitxer"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:400
 msgid "user file"
 msgstr "fitxer d'usuari"
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:401
 msgid "system file"
 msgstr "fitxer del sistema"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:406
 msgid "Statistic:  "
 msgstr "Estadístic: "
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:409
 msgid "symbols"
 msgstr "símbols"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:412
 msgid "codes"
 msgstr "codis"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:415
 msgid "alternative symbols"
 msgstr "símbols alternatius"
 
-#: kikbdconf.cpp:429
-#, fuzzy
+#: kikbdconf.cpp:427
 msgid "Language"
-msgstr "idioma"
+msgstr "Idioma"
 
-#: kikbdconf.cpp:433
-#, fuzzy
+#: kikbdconf.cpp:431
 msgid "Charset"
-msgstr "joc de caràcters"
+msgstr "Joc de caràcters"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "ERROR del teclat internacional"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Avís del teclat internacional"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Pregunta del teclat internacional"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Configura"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -510,7 +497,6 @@ msgid "&Docked"
 msgstr "&Encastat"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Encasta a l'àrea especial del plafó"
 
@@ -537,27 +523,3 @@ msgstr "E&ngega"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclat internacional"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Voleu engegar la configuració?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "La vostra configuració es buida. S'instal·la la del sistema."
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "El vostre fitxer de configuració té un format més antic de l'esperat.\n"
-#~ "Diversos valors poden ser incorrectes."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "El vostre fitxer de configuració té un format més nou de l'esperat.\n"
-#~ "Diversos valors poden ser incorrectes."

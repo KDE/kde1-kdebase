@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-05 18:57+0100\n"
+"PO-Revision-Date: 1999-01-20 00:07+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgstr "&Mida:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -297,7 +297,7 @@ msgstr "Fitxer de resultats de KFind"
 
 #: kfwin.cpp:283
 msgid "Results were saved to file\n"
-msgstr "Els resultats s'han desat al fitxer\n"
+msgstr "Els resultats s'han desat en el fitxer\n"
 
 #: kfwin.cpp:298
 #, c-format

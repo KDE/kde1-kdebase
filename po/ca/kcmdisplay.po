@@ -1,12 +1,12 @@
-# KDISPLAY CATALAN TRANSLATION
+# KCMDISPLAY CATALAN TRANSLATION
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Sebastià Pla <sastia@redestb.es>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdisplay\n"
+"Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-29 22:36+0100\n"
+"PO-Revision-Date: 1999-01-20 23:44+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -321,7 +321,7 @@ msgid ""
 "system where the color scheme is stored."
 msgstr ""
 "Aquest esquema de color no s'ha pogut eliminar.\n"
-"Potser no teniu permissos per alterar el fitxer\n"
+"Potser no teniu permisos per alterar el fitxer\n"
 "de sistema on es guarda l'esquema de color."
 
 #: colorscm.cpp:362
@@ -422,7 +422,7 @@ msgstr "Baixa"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Estil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -433,9 +433,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "Barra de &menú dalt de la pantalla a l'estil MacOS"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Aplica estil a les aplicacions no KDE"
+msgstr "&Aplica fonts i colors a les aplicacions no KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -485,13 +484,13 @@ msgstr "&Colors"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Estil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "us: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"ús: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -540,18 +539,3 @@ msgstr "predeterminat"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualsevol"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Fonts etc."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Fonts d'escriptori"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Fonts etc."
-
-#~ msgid "Mode:"
-#~ msgstr "Mode:"
-
-#~ msgid "kb"
-#~ msgstr "kb"

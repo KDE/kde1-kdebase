@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-23 23:42+0100\n"
+"PO-Revision-Date: 1999-01-21 23:25+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,38 +62,36 @@ msgid "Bookmarks"
 msgstr "Punts"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Arranja icones"
+msgstr "Arranja icones de Window Maker"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Mostra-ho tot"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Mostra l'altre"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Mostra plafó info"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Mostra plafó legal"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Reengega"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Sortida"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Finestres"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

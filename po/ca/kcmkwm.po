@@ -173,7 +173,7 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 "Hi ha hagut un error en desar\n"
-"els pixmaps de la barra de títol! Comproveu els permissos."
+"els pixmaps de la barra de títol! Comproveu els permisos."
 
 #: windows.cpp:68
 msgid "Windows"

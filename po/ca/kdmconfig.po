@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-12-05 18:47+0100\n"
+"PO-Revision-Date: 1999-01-20 00:01+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,19 +164,16 @@ msgid "Standard"
 msgstr "Estàndard"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Salutació"
+msgstr "Fonts de salutació"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Fallada"
+msgstr "Font d'error"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Estàndard"
+msgstr "Font estàndard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
