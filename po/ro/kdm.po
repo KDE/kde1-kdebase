@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Inchide sau restarteaza?"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Inchide"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Inchide si restarteaza"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Iesire din kdm"
+
+#: kgreeter.cpp:136
+msgid "Login:"
+msgstr "Nume:"
+
+#: kgreeter.cpp:141
+msgid "Password:"
+msgstr "Parola:"
+
+#: kgreeter.cpp:175
+msgid "Login failed!"
+msgstr "Autentificare nereusita !"
+
+#: kgreeter.cpp:181
+msgid "Session Type:"
+msgstr "Tipul sesiunii :"
+
+#: kgreeter.cpp:197
+msgid "Go!"
+msgstr "Validare"
+
+#: kgreeter.cpp:213
+msgid "Shutdown..."
+msgstr "Inchide..."
