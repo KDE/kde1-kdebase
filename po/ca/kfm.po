@@ -1,0 +1,1334 @@
+# KFM CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfm\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-03-03 10:30+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kfmgui.cpp:258
+msgid "KFM"
+msgstr "KFM"
+
+#: kbind.cpp:914 kbind.cpp:926 kbind.cpp:936 kfmgui.cpp:270 kfmgui.cpp:941
+msgid "Folder"
+msgstr "Carpeta"
+
+#: kfmgui.cpp:281
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "ERROR: Plantilla inexistent '%s'"
+
+#: kfmgui.cpp:307
+msgid "&New Window"
+msgstr "&Finestra Nova"
+
+#: kfmgui.cpp:310
+msgid "&Run..."
+msgstr "&Engegar..."
+
+#: kfmgui.cpp:312
+msgid "Open &Terminal"
+msgstr "Obrir Te&rminal"
+
+#: kfmgui.cpp:315
+msgid "&Open Location..."
+msgstr "Obrir &Localització"
+
+#: kfmgui.cpp:323
+msgid "&Quit..."
+msgstr "&Sortir..."
+
+#: kfmgui.cpp:332
+msgid "&Move to Trash"
+msgstr "A la &Paperera"
+
+#: kfmgui.cpp:337
+msgid "&Select"
+msgstr "&Seleccionar"
+
+#: kfmgui.cpp:341
+msgid "Mime Types"
+msgstr "Tipus Mime"
+
+#: kfmgui.cpp:343
+msgid "Applications"
+msgstr "Aplicacions"
+
+#: kfmgui.cpp:349
+msgid "Global Mime Types"
+msgstr "Tipus Mime globals"
+
+#: kfmgui.cpp:351
+msgid "Global Applications"
+msgstr "Aplicacions globals"
+
+#: kfmgui.cpp:358
+msgid "Show &Dot Files"
+msgstr "Mostrar &Ocults"
+
+#: kfmgui.cpp:360
+msgid "Show Tr&ee"
+msgstr "Mostrar &Arbre"
+
+#: kfmgui.cpp:362
+msgid "&Visual Schnauzer"
+msgstr "&Visual Schnauzer"
+
+#: kfmgui.cpp:364
+msgid "&HTML View"
+msgstr "Vista &HTML"
+
+#: kfmgui.cpp:367
+msgid "&Icon View"
+msgstr "Vista d'&Icones"
+
+#: kfmgui.cpp:369
+msgid "&Text View"
+msgstr "Vista de &Text"
+
+#: kfmgui.cpp:371
+msgid "&Long View"
+msgstr "Vista &Llarga"
+
+#: kfmgui.cpp:377
+msgid "Rel&oad Tree"
+msgstr "Re&frescar Arbre"
+
+#: kfmgui.cpp:379
+msgid "&Reload Document"
+msgstr "&Refrescar Document"
+
+#: kfmgui.cpp:381
+msgid "Rescan &bindings"
+msgstr "Ree&xplorar Lligams"
+
+#: kfmgui.cpp:384
+msgid "&View Frame Source"
+msgstr "Veure Font del &Marc"
+
+#: kfmgui.cpp:386
+msgid "View Docu&ment Source"
+msgstr "Veure Font del &Document"
+
+#: kfmgui.cpp:397
+msgid "Show Cache"
+msgstr "Mostrar Cau"
+
+#: kfmgui.cpp:399
+msgid "Clear Cache"
+msgstr "Netejar Cau"
+
+#: kfmgui.cpp:402
+msgid "Always look in cache"
+msgstr "Mirar sempre al cau"
+
+#: kfmgui.cpp:404
+msgid "Never look in cache"
+msgstr "No mirar mai al cau"
+
+#: kfmgui.cpp:412
+msgid "Show &Menubar"
+msgstr "Mostrar barra de &Menú"
+
+#: kfmgui.cpp:414
+msgid "Show &Statusbar"
+msgstr "Mostrar barra d'&Estat"
+
+#: kfmgui.cpp:416
+msgid "Show &Toolbar"
+msgstr "Mostrar barra d'E&ines"
+
+#: kfmgui.cpp:418
+msgid "Show &Location bar"
+msgstr "Mostrar barra de &Localització"
+
+#: kfmgui.cpp:421
+msgid "Sa&ve Settings"
+msgstr "&Desar Arranjament"
+
+#: kfmgui.cpp:423
+msgid "Configure Browser..."
+msgstr "Configurar Fullejador..."
+
+#: kfmgui.cpp:449
+msgid "&Find"
+msgstr "&Buscar"
+
+#: kfmgui.cpp:458
+msgid "&Add Bookmark"
+msgstr "&Afegir Punt"
+
+#: kfmgui.cpp:461 kfmgui.cpp:893
+msgid "&Edit Bookmarks..."
+msgstr "&Editar Punts..."
+
+#: kfmgui.cpp:472
+msgid "&About..."
+msgstr "&Quant..."
+
+#: kfmgui.cpp:482
+msgid "&Bookmarks"
+msgstr "&Punts"
+
+#: kfmgui.cpp:483
+msgid "&Tool"
+msgstr "E&ina"
+
+#: kfmgui.cpp:484
+msgid "&Cache"
+msgstr "&Cau"
+
+#: kfmgui.cpp:521
+msgid "Home"
+msgstr "Llar"
+
+#: kfmgui.cpp:554
+msgid "Stop"
+msgstr "Aturar"
+
+#: kfmgui.cpp:578
+msgid "Could not load icon\n"
+msgstr "No s'ha pogut carregar l'icona\n"
+
+#: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1510 kbind.cpp:1518
+#: kbind.cpp:1536 kbind.cpp:1553 kbind.cpp:1614 kbind.cpp:1626 kbind.cpp:1653
+#: kbind.cpp:1668 kbind.cpp:1688 kbind.cpp:1700 kbind.cpp:1716 kbind.cpp:1839
+#: kbind.cpp:1851 kbind.cpp:1896 kbind.cpp:1938 kfmexec.cpp:59 kfmexec.cpp:93
+#: kfmexec/main.cpp:47 kfmgui.cpp:579 kfmgui.cpp:705 kfmjob.cpp:181
+#: kfmman.cpp:268 kfmman.cpp:871 kfmman.cpp:1038 kfmman.cpp:1064
+#: kfmprops.cpp:370 kfmprops.cpp:625 kfmprops.cpp:651 kfmprops.cpp:766
+#: kfmprops.cpp:871 kfmprops.cpp:1002 kfmprops.cpp:1130 kfmprops.cpp:1448
+#: kfmprops.cpp:1661 kfmprops.cpp:1840 kfmserver.cpp:39 kfmserver.cpp:157
+#: kfmserver.cpp:237 kfmserver.cpp:284 kfmserver.cpp:293 kfmserver.cpp:301
+#: kfmtree.cpp:163 kfmtree.cpp:282 kfmtree.cpp:313 kfmtree.cpp:319
+#: kfmtree.cpp:325 kfmview.cpp:253 kfmview.cpp:272 kfmview.cpp:278
+#: kfmview.cpp:338 kfmview.cpp:344 kfmview.cpp:350 kfmview.cpp:421
+#: kfmview.cpp:443 kfmview.cpp:461 kfmview.cpp:467 kfmview.cpp:473
+#: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
+#: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:523 kiojob.cpp:750
+#: kiojob.cpp:781 kiojob.cpp:818 kiojob.cpp:1619 krenamewin.cpp:120
+#: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
+#: root.cpp:1497 root.cpp:1522
+msgid "KFM Error"
+msgstr "Error KFM"
+
+#: kfmexec.cpp:58 kfmgui.cpp:704 kfmman.cpp:870
+msgid "Malformed URL\n"
+msgstr "URL erroni\n"
+
+#: kfmgui.cpp:873
+msgid "Select files:"
+msgstr "Seleccioneu fitxers:"
+
+#: kfmgui.cpp:890
+msgid "Add Bookmark"
+msgstr "Afegir Punt"
+
+#: kfmgui.cpp:933 kfmgui.cpp:940
+msgid "New "
+msgstr "Nou "
+
+#: kfmgui.cpp:1032 kfmgui.cpp:1192 kfmjob.cpp:32 kfmman.cpp:190
+#: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:339 kfmview.cpp:462
+#: kiojob.cpp:70 root.cpp:985
+msgid "ERROR: Malformed URL"
+msgstr "ERROR: URL erroni"
+
+#: kfmgui.cpp:1146 kfmserver.cpp:178
+msgid "Open Location:"
+msgstr "Obrir Localització:"
+
+#: kfmgui.cpp:1202
+msgid "KFM Confirm"
+msgstr "Confirmació KFM"
+
+#: kfmgui.cpp:1203
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"De veres voleu sortir?\n"
+"Es perdrà funcionalitat important de l'escriptori"
+
+#: kfmgui.cpp:1230
+msgid "About KFM"
+msgstr "Quant a KFM"
+
+#: kfmgui.cpp:1231
+msgid ""
+"Author: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget by Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
+msgstr ""
+"Autor: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"Estri HTML per Martin Jones\n"
+"mjones@kde.org"
+"\n"
+"Gestor de Procuració per Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
+
+#: kfmgui.cpp:1323
+msgid "Document: Done"
+msgstr "Document: Fet"
+
+#: kfmview.cpp:254
+msgid "ERROR: Drop over malformed URL"
+msgstr "ERROR: Amollat sobre un URL erroni"
+
+#: kfmview.cpp:279
+msgid "ERROR: You dropped some URL over itself"
+msgstr "ERROR: Heu amollat algun URL sobre ell mateix"
+
+#: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
+#: kfmview.cpp:497 krenamewin.cpp:20 root.cpp:1026
+msgid "KFM Warning"
+msgstr "Avís KFM"
+
+#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1027
+msgid ""
+"Do you really want to delete the selected file(s)?\n"
+"\n"
+"There is no way to restore them."
+msgstr ""
+"De veres voleu esborrar el(s) fitxer(s) seleccionat(s)?\n"
+"\n"
+"No hi haura manera de recuperar-los"
+
+#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
+msgid "ERROR: You dropped a URL over itself"
+msgstr "ERROR: Heu amollat un URL sobre ell mateix"
+
+#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:997
+msgid "ERROR: You dropped a directory over one of its children"
+msgstr "ERROR: Heu amollat un directori sobre un dels seus fills"
+
+#: kfmexec.cpp:235 kfmman.cpp:733 kfmview.cpp:367
+msgid "Open With:"
+msgstr "Obrir amb:"
+
+#: kfmview.cpp:384 root.cpp:939
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "ERROR: No es poden obrir les propietats de diversos fitxers"
+
+#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
+msgid "Could not access Trash Bin"
+msgstr "No s'ha pogut accedir al cubell"
+
+#: kfmview.cpp:444 root.cpp:967
+msgid "Can not paste into multiple directories"
+msgstr "No es pot enganxar en diversos directoris"
+
+#: kfmview.cpp:533
+msgid "ERROR: Can not change to multiple directories"
+msgstr "ERROR: No es pot canviar a diversos directoris"
+
+#: kfmview.cpp:617
+msgid "KFM Security Alert"
+msgstr "Alerta de seguretat KFM"
+
+#: kfmview.cpp:618
+msgid ""
+"This page is untrusted\n"
+"but it contains a link to your local file system."
+msgstr ""
+"Aquesta pàgina no es fiable\n"
+"pero conté un enllaç al seu sistema de fitxers local."
+
+#: kfmview.cpp:704
+msgid "Symbolic Link"
+msgstr "Enllaç simbòlic"
+
+#: kfmview.cpp:706
+#, c-format
+msgid "%s (Link)"
+msgstr "%s (Enllaç)"
+
+#: kfmview.cpp:726
+msgid "bytes"
+msgstr "bytes"
+
+#: kbind.cpp:304
+msgid "The mime type config file "
+msgstr "El fitxer de configuració del tipus mime "
+
+#: kbind.cpp:305
+msgid "does not conatain a MimeType=... entry"
+msgstr "no conté un tipus mime=... entrada"
+
+#: kbind.cpp:380
+msgid "No mime types installed!"
+msgstr "No hi han tipus mime instal·lats!"
+
+#: kbind.cpp:429 kbind.cpp:1169
+msgid "Could not find mime type\n"
+msgstr "No s'ha trobat el tipus mime\n"
+
+#: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1874 kbind.cpp:1875 kbind.cpp:1887
+#: kbind.cpp:1889
+msgid "Mount"
+msgstr "Muntar"
+
+#: kbind.cpp:719 kbind.cpp:1865
+msgid "Unmount"
+msgstr "Desmuntar"
+
+#: kbind.cpp:1168
+msgid "ERROR"
+msgstr "ERROR"
+
+#: kbind.cpp:1169
+msgid "in "
+msgstr "a "
+
+#: kbind.cpp:1312 kbind.cpp:1398
+msgid "Could not execute program\n"
+msgstr "No s'ha pogut engegar el programa\n"
+
+#: kbind.cpp:1509
+msgid "Could not find binding"
+msgstr "No s'ha pogut trobar el lligam"
+
+#: kbind.cpp:1519
+msgid ""
+"This is a document!\n"
+"Not an application"
+msgstr ""
+"Això es un document!\n"
+"No una aplicació"
+
+#: kbind.cpp:1537 kbind.cpp:1554
+msgid "Can only start executables on local disks\n"
+msgstr "Només es poden engegar executables al disc local\n"
+
+#: kbind.cpp:1615 kbind.cpp:1689 kbind.cpp:1840
+msgid ""
+"Can work with *.kdelnk files only\n"
+"on local hard disk"
+msgstr ""
+"Es pot treballar amb fitxers *.kdelnk\n"
+"només en el disc local"
+
+#: kbind.cpp:1625
+#, c-format
+msgid ""
+"Could not access\n"
+"%s"
+msgstr ""
+"No s'ha pogut accedir\n"
+"%s"
+
+#: kbind.cpp:1654
+msgid "The \"Link=....\" entry is empty"
+msgstr "La entrada \"Enllaç=....\" és buida"
+
+#: kbind.cpp:1669
+msgid "The config file has no \"Type=...\" line"
+msgstr "El fitxer de configuració no te línia \"Tipus=...\""
+
+#: kbind.cpp:1699 kbind.cpp:1850
+msgid "Could not access"
+msgstr "No s'ha pogut accedir"
+
+#: kbind.cpp:1717
+msgid ""
+"This file does not contain an\n"
+"Exec=....\n"
+"entry. Edit the Properties\n"
+"to solve the problem"
+msgstr ""
+"Aquest fitxer no conté una entrada\n"
+"Exec=....\n"
+"Editeu les propietats\n"
+"per resoldre el problema"
+
+#: kbind.cpp:1806
+msgid "ERROR: No Terminal Setting"
+msgstr "ERROR: No hi ha arranjament de terminal"
+
+#: kbind.cpp:1897
+msgid "No mount point in *.kdelnk file"
+msgstr "No hi ha punt de muntatge al fitxer *.kdelnk"
+
+#: kbind.cpp:1937
+msgid "Unknown binding"
+msgstr "Lligam desconegut"
+
+#: main.cpp:65 main.cpp:178
+msgid "KFM Information"
+msgstr "Informació KFM"
+
+#: main.cpp:66
+msgid "Creating directory:\n"
+msgstr "Creant directori:\n"
+
+#: main.cpp:179
+msgid "Installing Templates"
+msgstr "Instal·lant plantilles"
+
+#: main.cpp:215
+msgid "Cd"
+msgstr "Cd"
+
+#: main.cpp:216
+msgid "New View"
+msgstr "Vista nova"
+
+#: kfmtree.cpp:223 main.cpp:219
+msgid "Move to Trash"
+msgstr "A la Paperera"
+
+#: main.cpp:221
+msgid "Open with"
+msgstr "Obrir amb"
+
+#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:223
+msgid "Move"
+msgstr "Moure"
+
+#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:224
+msgid "Properties"
+msgstr "Propietats"
+
+#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:225
+msgid "Link"
+msgstr "Enllaç"
+
+#: main.cpp:226
+msgid "Empty Trash Bin"
+msgstr "Buidar la paperera"
+
+#: main.cpp:227
+msgid "Add to Bookmarks"
+msgstr "Afegir Punt"
+
+#: bookmark.cpp:229
+msgid "<!-- Do not edit this file -->"
+msgstr "<!-- No editeu aquest fitxer -->"
+
+#: kfmprops.cpp:223
+msgid "Name"
+msgstr "Nom"
+
+#: kfmprops.cpp:240
+msgid "Full Name"
+msgstr "Nom complet"
+
+#: kfmprops.cpp:258
+msgid "Is the Trash Bin"
+msgstr "És la paperera"
+
+#: kfmprops.cpp:265
+msgid "Is a Directory"
+msgstr "És un directori"
+
+#: kfmprops.cpp:272
+msgid "Points to"
+msgstr "Apunta a"
+
+#: kfmprops.cpp:297
+#, c-format
+msgid "Size: %i"
+msgstr "Grandària: %i"
+
+#: kfmprops.cpp:307
+msgid "Last Access"
+msgstr "Darrer accés"
+
+#: kfmprops.cpp:317
+msgid "Last Modified"
+msgstr "Darrera modificació"
+
+#: kfmprops.cpp:371
+msgid ""
+"Could not rename the file or directory\n"
+"The destination seems to already exist\n"
+msgstr ""
+"No s'ha pogut renombrar el fitxer o el directori\n"
+"Sembla que la destinació ja existeix\n"
+
+#: kfmprops.cpp:421
+msgid "Access permissions"
+msgstr "Permisos d'accés"
+
+#: kfmprops.cpp:427
+msgid ""
+"Show\n"
+"Entries"
+msgstr ""
+"Mostrar\n"
+"Entrades"
+
+#: kfmprops.cpp:429
+msgid "Read"
+msgstr "Lectura"
+
+#: kfmprops.cpp:434
+msgid ""
+"Write\n"
+"Entries"
+msgstr ""
+"Escriure\n"
+"Entrades"
+
+#: kfmprops.cpp:436
+msgid "Write"
+msgstr "Escriptura"
+
+#: kfmprops.cpp:441
+msgid ""
+"Change\n"
+"Into"
+msgstr ""
+"Canviar\n"
+"A"
+
+#: kfmprops.cpp:443
+msgid "Exec"
+msgstr "Execució"
+
+#: kfmprops.cpp:447
+msgid "Special"
+msgstr "Especial"
+
+#: kfmprops.cpp:451
+msgid "User"
+msgstr "Usuari"
+
+#: kfmprops.cpp:456 kfmprops.cpp:555
+msgid "Group"
+msgstr "Grup"
+
+#: kfmprops.cpp:461
+msgid "Others"
+msgstr "Altres"
+
+#: kfmprops.cpp:474
+msgid "Set UID"
+msgstr "Establir UID"
+
+#: kfmprops.cpp:475
+msgid "Set GID"
+msgstr "Establir GID"
+
+#: kfmprops.cpp:476
+msgid "Sticky"
+msgstr "Apegalós"
+
+#: kfmprops.cpp:494
+msgid "Ownership"
+msgstr "Propietat"
+
+#: kfmprops.cpp:500
+msgid "Owner"
+msgstr "Amo"
+
+#: kfmprops.cpp:626
+msgid ""
+"Could not change permissions\n"
+"Perhaps access denied."
+msgstr ""
+"No s'han pogut canviar els permisos\n"
+"Potser s'ha denegat l'accés."
+
+#: kfmprops.cpp:641
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " ERROR: Cap usuari %s"
+
+#: kfmprops.cpp:646
+#, c-format
+msgid " ERROR: No group %s"
+msgstr "Cap grup %s"
+
+#: kfmprops.cpp:652
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"No s'ha pogut canviar l'amo/grup\n"
+"Potser s'ha denegat l'accés."
+
+#: kfmprops.cpp:689
+msgid "Execute"
+msgstr "Execució"
+
+#: kfmprops.cpp:693
+msgid "Browse"
+msgstr "Fullejar"
+
+#: kfmprops.cpp:697
+msgid "Working Directory"
+msgstr "Directori de treball"
+
+#: kfmprops.cpp:713
+msgid "Run normally"
+msgstr "Execució normal"
+
+#: kfmprops.cpp:717
+msgid "Run in Panel (drag onto Panel to execute)"
+msgstr "Execució al panell (amollar sobre el panell per executar)"
+
+#: kfmprops.cpp:721
+msgid "Title of Application"
+msgstr "Títol de l'aplicació"
+
+#: kfmprops.cpp:726
+msgid "enter the exact title, as normally shown in the window titlebar"
+msgstr "entreu el títol exacte, tal surt a la barra de títol de la finestra"
+
+#: kfmprops.cpp:730
+msgid "Run in terminal"
+msgstr "Execució a terminal"
+
+#: kfmprops.cpp:738
+msgid "Terminal Options"
+msgstr "Opcions de terminal"
+
+#: kfmprops.cpp:767
+msgid ""
+"You can run this program either\n"
+"in the Panel or in a Terminal, \n"
+"but not both!"
+msgstr ""
+"Podeu executar el programa o bé\n"
+"al panell o a una terminal, \n"
+"pero no als dos!"
+
+#: kfmprops.cpp:872 kfmprops.cpp:1003 kfmprops.cpp:1449 kfmprops.cpp:1662
+#: kfmprops.cpp:1841
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"No s'han pogut desar les propietats\n"
+"Potser s'han denegat els permisos"
+
+#: kfmprops.cpp:926
+msgid "URL"
+msgstr "URL"
+
+#: kfmprops.cpp:1029
+msgid "Apply global"
+msgstr "Aplicar global"
+
+#: kfmprops.cpp:1069 kfmprops.cpp:1142 kfmprops.cpp:1199
+msgid "(Default)"
+msgstr "(Omissió)"
+
+#: kfmprops.cpp:1131
+msgid "Could not write to\n"
+msgstr "No s'ha pogut escriure a\n"
+
+#: kfmprops.cpp:1244
+msgid "(None)"
+msgstr "(Cap)"
+
+#: kfmprops.cpp:1290
+msgid "Binary Pattern (netscape;Netscape;)"
+msgstr "Patró binari (netscape;Netscape;)"
+
+#: kfmprops.cpp:1297 kfmprops.cpp:1551
+msgid "Comment"
+msgstr "Comentari"
+
+#: kfmprops.cpp:1308
+msgid "Name ( in your language )"
+msgstr "Nom ( en la vostra llengua )"
+
+#: kfmprops.cpp:1539
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "Patró ( exemple: *.html;*.HTML; )"
+
+#: kfmprops.cpp:1547
+msgid "Mime Type"
+msgstr "Tipus mime"
+
+#: kfmprops.cpp:1558
+msgid "Default Application"
+msgstr "Aplicació per omissió"
+
+#: kfmprops.cpp:1707
+msgid "Device ( /dev/fd0 )"
+msgstr "Dispositiu ( /dev/fd0 )"
+
+#: kfmprops.cpp:1715
+msgid "Mount Point ( /floppy )"
+msgstr "Punt de muntatge ( /floppy )"
+
+#: kfmprops.cpp:1725
+msgid "Readonly"
+msgstr "Només lectura"
+
+#: kfmprops.cpp:1731
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "Sistemes de fitxers ( iso9660,msdos,minix,default )"
+
+#: kfmprops.cpp:1741
+msgid "Mounted Icon"
+msgstr "Icona muntat"
+
+#: kfmprops.cpp:1745
+msgid "Unmounted Icon"
+msgstr "Icona desmuntat"
+
+#: kfmserver.cpp:40
+msgid "Could not create ~/.kde/share/apps/kfm/magic"
+msgstr "No s'ha pogut crear ~/.kde/share/apps/kfm/magic"
+
+#: kfmserver.cpp:50
+msgid ""
+"Please change the password in\n"
+"~/.kde/share/apps/kfm/magic"
+msgstr ""
+"Canvieu la paraula de pas a\n"
+"~/.kde/share/apps/kfm/magic"
+
+#: kfmserver.cpp:78
+msgid "Do you really want to rearrange your icons ?"
+msgstr "De veres voleu rearranjar les icones ?"
+
+#: kfmserver.cpp:234
+#, c-format
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed"
+msgstr ""
+"L'URL\n"
+"%s\n"
+"és erroni"
+
+#: kfmserver.cpp:285
+msgid ""
+"You dont have the file ~/.kde/share/apps/kfm/magic\n"
+"Authorization failed"
+msgstr ""
+"No teniu el fitxer ~/.kde/share/apps/kfm/magic\n"
+"Ha fallat l'autorització"
+
+#: kfmserver.cpp:294
+msgid ""
+"The file ~/.kde/share/apps/kfm/magic is corrupted\n"
+"Authorization failed"
+msgstr ""
+"El fitxer ~/.kde/share/apps/kfm/magic s'ha fet malbé\n"
+"Ha fallat l'autorització"
+
+#: kfmserver.cpp:302
+msgid ""
+"Someone tried to authorize himself\n"
+"using a wrong password"
+msgstr ""
+"Algú ha provat d'autoritzar-se ell mateix\n"
+"fent servir una paraula de pas equivocada"
+
+#: root.cpp:578
+msgid "Internal Error: desktopDir is malformed"
+msgstr "Error intern: desktopDir és erroni"
+
+#: root.cpp:589
+#, c-format
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "ERROR: No s'ha pogut llegir el directori '%s' de l'escriptori"
+
+#: root.cpp:780
+msgid "ERROR: Can not accept drop"
+msgstr "ERROR: No puc acceptar amollar"
+
+#: kfmman.cpp:1039 root.cpp:1498
+msgid "Dont know what to do."
+msgstr "No se que fer."
+
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1523
+msgid "Dont know what to do"
+msgstr "No se que fer"
+
+#: kfmexec.cpp:94 kfmman.cpp:269
+msgid "The file does not contain a URL"
+msgstr "El fitxer no conté un URL"
+
+#: kfmman.cpp:320
+msgid "Contacting host "
+msgstr "Contactant host "
+
+#: kfmman.cpp:324
+msgid "Working ..."
+msgstr "Treballant ..."
+
+#: kfmman.cpp:934 kfmtree.cpp:230
+msgid "Add To Bookmarks"
+msgstr "Afegir Punt"
+
+#: kiojob.cpp:119
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr "ERROR INTERN: Com a mínim ha d'especificar el dispositiu a muntar"
+
+#: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:1137 kiojob.cpp:1277
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"URL erroni\n"
+"%s"
+
+#: kiojob.cpp:233
+msgid "Can only make links on local file system"
+msgstr "Només puc fer enllaços sobre el sistema de fitxers local"
+
+#: kiojob.cpp:256 kiojob.cpp:275
+#, c-format
+msgid ""
+"Could not overwrite\n"
+"%s"
+msgstr ""
+"No s'ha pogut sobreescriure\n"
+"%s"
+
+#: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
+#, c-format
+msgid ""
+"Could not make symlink to\n"
+"%s"
+msgstr ""
+"No s'ha pogut fer un enllaç simbòlic a\n"
+"%s"
+
+#: kiojob.cpp:361
+#, c-format
+msgid " ERROR: Could not write to %s"
+msgstr " ERROR: No s'ha pogut escriure a %s"
+
+#: kiojob.cpp:522 kiojob.cpp:749 kiojob.cpp:1194
+#, c-format
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"No s'ha pogut crear el directori\n"
+"%s"
+
+#: kiojob.cpp:535 kiojob.cpp:965
+#, c-format
+msgid "ERROR: Could not access directory '%s'"
+msgstr "ERROR: No s'ha pogut accedir al directori '%s'"
+
+#: kiojob.cpp:780
+#, c-format
+msgid ""
+"Could not access directory\n"
+"%s"
+msgstr ""
+"No s'ha pogut accedir al directori\n"
+"%s"
+
+#: kiojob.cpp:817
+#, c-format
+msgid ""
+"Could not move directory\n"
+"%s\n"
+"to %s\n"
+"Perhaps access denied"
+msgstr ""
+"No s'ha pogut traslladar el directori\n"
+"%s\n"
+"a '%s'\n"
+"Potser s'ha denegat l'accés"
+
+#: kiojob.cpp:1141 kiojob.cpp:1149 kiojob.cpp:1158 kiojob.cpp:1166
+#: kiojob.cpp:1174 kiojob.cpp:1182 kiojob.cpp:1190 kiojob.cpp:1198
+#: kiojob.cpp:1206 kiojob.cpp:1214 kiojob.cpp:1232 kiojob.cpp:1240
+#: kiojob.cpp:1247 kiojob.cpp:1258 kiojob.cpp:1273 kiojob.cpp:1281
+#: kiojob.cpp:1289 kiojob.cpp:1297 kiojob.cpp:1305 kiojob.cpp:1313
+#: kiojob.cpp:1321 kiojob.cpp:1339 kiojob.cpp:1347 kiojob.cpp:1355
+msgid "Continue"
+msgstr "Continuar"
+
+#: kiojob.cpp:1145 kiojob.cpp:1285
+#, c-format
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"No s'ha pogut llegir\n"
+"%s\n"
+"Fitxer inexistent o accés denegat"
+
+#: kiojob.cpp:1153
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"No s'ha pogut escriure\n"
+"%s\n"
+"Potser s'ha denegat l'accés"
+
+#: kiojob.cpp:1162 kiojob.cpp:1293
+#, c-format
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr ""
+"No s'ha pogut crear Socket per\n"
+"%s"
+
+#: kiojob.cpp:1170 kiojob.cpp:1301
+#, c-format
+msgid ""
+"Unknwon host in\n"
+"%s"
+msgstr ""
+"Host desconegut a\n"
+"%s"
+
+#: kiojob.cpp:1178 kiojob.cpp:1309
+#, c-format
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr ""
+"No s'ha pogut conectar amb\n"
+"%s"
+
+#: kiojob.cpp:1186 kiojob.cpp:1317
+#, c-format
+msgid ""
+"The requested action\n"
+"%s\n"
+"is not implemented yet."
+msgstr ""
+"L'acció sol·licitada\n"
+"'%s'\n"
+"encara no és implementada."
+
+#: kiojob.cpp:1202
+#, c-format
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"No s'ha pogut llistar el contingut del directori\n"
+"%s"
+
+#: kiojob.cpp:1210
+#, c-format
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"No s'ha pogut esborrar\n"
+"%s\n"
+"No existeix l'URL o s'ha denegat el permís"
+
+#: kiojob.cpp:1220 kiojob.cpp:1327
+#, c-format
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"No s'ha pogut fer el login de\n"
+"%s\n"
+"Potser la clau de pas és equivocada"
+
+#: kiojob.cpp:1236 kiojob.cpp:1343
+#, c-format
+msgid ""
+"Tar reproted an error\n"
+"%s"
+msgstr ""
+"Tar ha informat d'un error\n"
+"%s"
+
+#: kiojob.cpp:1244
+#, c-format
+msgid ""
+"Gzip reproted an error for\n"
+"%s"
+msgstr ""
+"Gzip ha informat d'un error per\n"
+"%s"
+
+#: kiojob.cpp:1254 kiojob.cpp:1269
+#, c-format
+msgid ""
+"File %s\n"
+"does not exist"
+msgstr ""
+"El fitxer %s\n"
+"no existeix"
+
+#: kiojob.cpp:1351
+#, c-format
+msgid ""
+"Gzip reproted an error\n"
+"%s"
+msgstr ""
+"Gzip ha informat d'un error\n"
+"%s"
+
+#: kiojob.cpp:1359
+#, c-format
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"No s'ha pogut muntar\n"
+"Registre d'error:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1365
+#, c-format
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"No s'ha pogut desmuntar\n"
+"Registre d'error:\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1502
+msgid "Making directory"
+msgstr "Creant directori"
+
+#: kiojob.cpp:1584 kiojob.cpp:1638 kiojob.cpp:1680
+#, c-format
+msgid "File %i/%i"
+msgstr "Fitxer %i/%i"
+
+#: kiojob.cpp:1587 kiojob.cpp:1642
+#, c-format
+msgid "to %s"
+msgstr "a %s"
+
+#: kiojob.cpp:1618
+#, c-format
+msgid ""
+"Could not delete directory\n"
+"%s"
+msgstr ""
+"No s'ha pogut esborrar directori\n"
+"%s"
+
+#: kiojob.cpp:1708
+#, c-format
+msgid "Mounting %s ..."
+msgstr "Muntant %s ..."
+
+#: kiojob.cpp:1710
+#, c-format
+msgid "Unmounting %s ..."
+msgstr "Desmuntant %s ..."
+
+#: kiojob.cpp:1738
+#, c-format
+msgid "Retrieving listing of %s"
+msgstr "Recuperant el llistat de %s"
+
+#: kiojob.cpp:1963
+msgid "Segmentation fault in io subprocess"
+msgstr "Fallada de segmentació en subprocés E/S"
+
+#: autostart.cpp:28
+msgid "KFM Installation Error"
+msgstr "Error d'instal·lació KFM"
+
+#: autostart.cpp:29
+msgid "The directory "
+msgstr "El directori "
+
+#: autostart.cpp:30
+msgid " does not exist\n"
+msgstr " no existeix\n"
+
+#: kfmtree.cpp:391
+msgid "My Home"
+msgstr "Llar"
+
+#: kfmtree.cpp:393
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: kfmtree.cpp:395
+msgid "Root"
+msgstr "Arrel"
+
+#: kbookmarkdlg.cpp:35 krenamewin.cpp:26
+msgid "Rename"
+msgstr "Renombrar"
+
+#: krenamewin.cpp:31
+msgid "Skip"
+msgstr "Saltar"
+
+#: krenamewin.cpp:36
+msgid "Overwrite"
+msgstr "Sobreescriure"
+
+#: krenamewin.cpp:41
+msgid "Overwrite All"
+msgstr "Sobreescriure tot"
+
+#: krenamewin.cpp:52
+msgid "You try to overwrite"
+msgstr "Proveu de sobreescriure"
+
+#: krenamewin.cpp:63
+msgid "already exists. Overwrite with"
+msgstr "ja existeix. Sobreescriure amb"
+
+#: krenamewin.cpp:71
+msgid "Or rename to"
+msgstr "O renombrar a"
+
+#: krenamewin.cpp:121
+msgid "You did not change the name!\n"
+msgstr "No heu canviat el nom!\n"
+
+#: passworddialog.cpp:41 passworddialog.cpp:80
+msgid "Password"
+msgstr "Paraula de pas"
+
+#: kfmexec.cpp:137
+msgid "Trying to open"
+msgstr "Provant d'obrir"
+
+#: useragentdlg.cpp:20
+msgid "On server:"
+msgstr "Al servidor:"
+
+#: useragentdlg.cpp:31
+msgid "login as:"
+msgstr "login com:"
+
+#: useragentdlg.cpp:52
+msgid "Known bindings:"
+msgstr "Enllaçs coneguts:"
+
+#: kproxydlg.cpp:14
+msgid "Don't forget to save your settings!"
+msgstr "No oblideu desar els arranjaments!"
+
+#: kproxydlg.cpp:43
+msgid "No Proxy for:"
+msgstr "Sense procuració:"
+
+#: kkfmoptdlg.cpp:39
+msgid "KFM Browser Settings"
+msgstr "Arranjaments del Fullejador KFM"
+
+#: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
+msgid "Edit Bookmarks"
+msgstr "Editar Punts"
+
+#: kbookmarkdlg.cpp:36
+msgid "Move up"
+msgstr "Amunt"
+
+#: kbookmarkdlg.cpp:37
+msgid "Move down"
+msgstr "Avall"
+
+#: kbookmarkdlg.cpp:176
+msgid "Rename Bookmark"
+msgstr "Renombrar punt"
+
+#: kbookmarkdlg.cpp:178
+msgid "Rename Bookmark:"
+msgstr "Renombrar punt:"
+
+#: kfmprops.h:73
+msgid "&General"
+msgstr "&General"
+
+#: kfmprops.h:108
+msgid "&Permissions"
+msgstr "&Permissos"
+
+#: kfmprops.h:198
+msgid "E&xecute"
+msgstr "E&xecució"
+
+#: kfmprops.h:249
+msgid "U&RL"
+msgstr "U&RL"
+
+#: kfmprops.h:273
+msgid "&Dir"
+msgstr "&Dir"
+
+#: kfmprops.h:316
+msgid "&Application"
+msgstr "&Aplicació"
+
+#: kfmprops.h:358
+msgid "&Binding"
+msgstr "&Lligam"
+
+#: kfmprops.h:388
+msgid "De&vice"
+msgstr "Di&spositiu"
+
+#: kfmexec/main.cpp:46
+#, c-format
+msgid ""
+"The URL %s\n"
+"is malformed"
+msgstr ""
+"L'URL %s\n"
+"és erroni"
+
+#: kfmexec/main.cpp:132
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"El fitxer\n"
+"%s\n"
+"ha estat modificat.\n"
+"Vol desar-lo?"
+
+#: kfmexec/main.cpp:133
+msgid "KFM Question"
+msgstr "Pregunta KFM"
+
+#: kfmexec/main.cpp:199
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
+msgstr ""
+"Error de sintàxi:\n"
+"comanda kfmexec [URLs....]\n"
+
+
+
+
