@@ -13,20 +13,20 @@
 
 <!-- Begin the document -->
 
-<sect> Memory usage information
+<sect>Memory Usage
 <p>
 This page displays information about the current memory usage. It is updated regularly. 
 <p>
 The exact information displayed is system-dependent. 
 On some systems, memory usage information cannot be displayed yet.
 <p>
-On Linux this information is read from <tt>/proc/meminfo</tt>,
+On Linux, this information is read from <tt>/proc/meminfo</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
 
-<sect> Information about the processor
+<sect>Processor
 <p>
 This page displays information about the system 
 Central Processing Unit (CPU).
@@ -34,14 +34,14 @@ Central Processing Unit (CPU).
 The exact information displayed is system-dependent. 
 On some systems, processor information cannot be displayed yet.
 <p>
-On Linux this information is read from <tt>/proc/cpuinfo</tt>,
-which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
+On Linux, this information is read from <tt>/proc/cpuinfo</tt>,
+which is only available if the <tt>/proc</tt> pseudo-filesystem is compiled into the kernel.
 
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the Interrupt Request (IRQ) lines in use.
+<sect>Interrupt Request (IRQ) Lines in Use.
 <p>
 This page displays information about the Interrupt Request
 Lines in use, and the devices that use them.
@@ -62,13 +62,13 @@ one a device is actually configured for.
 The exact information displayed is system-dependent. 
 On some systems, IRQ  information cannot be displayed yet.
 <p>
-On Linux this information is read from <tt>/proc/interrupts</tt>,
+On Linux, this information is read from <tt>/proc/interrupts</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the DMA channels.
+<sect>DMA Channels
 <p>
 This page displays information about the DMA (Direct Memory
 Access) Channels.  A DMA channel is a direct connection 
@@ -79,13 +79,13 @@ eight DMA channels (0-7).
 The exact information displayed is system-dependent. 
 On some systems, DMA Channel information cannot be displayed yet.
 <p>
-On Linux this information is read from <tt>/proc/dma</tt>,
+On Linux, this information is read from <tt>/proc/dma</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 A list of all currently-registered (ISA bus) DMA channels that are in use is shown.
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the I/O-ports
+<sect>I/O-ports
 <p>
 This page displays information about the I/O-ports.
 
@@ -103,45 +103,45 @@ which are expressed as a range of hexadecimal numbers.
 The exact information displayed is system-dependent. On some systems,
 I/O-port information can not yet be displayed.
 <p>
-On Linux this information is read from <tt>/proc/ioports</tt>
+On Linux, this information is read from <tt>/proc/ioports</tt>
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 A list of all currently-registered I/O port regions that are in use is shown.
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the PCI-bus and installed PCI-cards
+<sect>PCI-bus and Installed PCI Cards
 <p>
-This page displays information about the PCI-bus and installed PCI-cards, and
+This page displays information about the PCI-bus and installed PCI cards, and
 other devices
 that use the Peripheral Component Interconnect (PCI) bus.
 <p>
 The exact information displayed is system-dependent. On some systems,
 PCI-information can not yet be displayed.
 <p>
-On Linux this information is read from <tt>/proc/pci</tt>
+On Linux, this information is read from <tt>/proc/pci</tt>
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 A listing of all PCI devices found during kernel initialization, and their configuration, is
 shown.
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the installed soundcards
+<sect>Soundcards
 <p>
-This page displays information about the installed soundcards in the system.
+This page displays information about any soundcards installed in the system.
 <p>
 The exact information displayed is system-dependent. 
 On some systems, soundcard information cannot be displayed yet.
 <p>
-On Linux this information is read either from <tt>/dev/sndstat</tt>, if present,
+On Linux, this information is read either from <tt>/dev/sndstat</tt>, if present,
 or from <tt>/proc/sound</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem is compiled into the 
 (2.1.x or later) kernel.
 
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the available devices
+<sect>Available Devices
 <p>
 This page displays information about the available devices,
 
@@ -149,45 +149,45 @@ This page displays information about the available devices,
 The exact information displayed is system-dependent. 
 On some systems, device information cannot be displayed yet.
 <p>
-On Linux this information is  read from <tt>/proc/devices</tt> and <tt>/proc/misc</tt>,
+On Linux, this information is read from <tt>/proc/devices</tt> and <tt>/proc/misc</tt>,
 which are only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 Devices are listed by group (Character, Block, or Miscellaneous), and by major numbers.
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the SCSI-interface
+<sect>SCSI Interfaces
 <p>
-This page displays information about the SCSI-interface and the attached SCSI-devices.
+This page displays information about Small Computer Systems Interface (SCSI) Interfaces and the attached SCSI devices.
 
 <p>
 The exact information displayed is system-dependent. 
 On some systems SCSI information cannot be displayed yet.
 <p>
-On Linux this information is read from <tt>/proc/scsi/scsi</tt>,
+On Linux, this information is read from <tt>/proc/scsi/scsi</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem is  compiled into the kernel.
 A listing of all SCSI devices known to the kernel is shown.
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the partitions
+<sect>Partitions
 <p>
-This page displays information about the partitions.
+This page displays information about partitions on your hard drives.
 
 <p>
 The exact information displayed is system-dependent. 
 On some systems, partition information cannot be displayed yet.
 <p>
-On Linux this information is  read from <tt>/proc/partitions</tt>,
+On Linux, this information is  read from <tt>/proc/partitions</tt>,
 which is only available if the <tt>/proc</tt> pseudo-filesystem  is compiled into the 
 (2.1.x or later) kernel.
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
-<sect> Information about the X-Server that is being used.
+<sect>X-Server
 <p>
-This page displays information about the X-Server.
+This page displays information about the X-Server being used.
 <p>
 The exact information displayed is system-dependent. 
 On some systems, X-Server information cannot be displayed yet.
@@ -196,10 +196,11 @@ On some systems, X-Server information cannot be displayed yet.
 On most KDE-Platforms this dialog shows the name of the X11-display,
 the X11 version number, a vendor string, the vendor release number,
 the default screen number and the number of available screens.
-Furthermore this dialog also shows the dimensions in pixels and centimeters,
-the resolution in dots per inch (dpi), and the available color-depths for every screen.
+For each screen, this dialog also shows the dimensions each display in 
+pixels and centimeters, the resolution in dots per inch (dpi), and the 
+available color depths. 
 
 <p>
-The user cannot modify settings on this page.
+The user cannot modify any settings on this page.
  
 </article>
