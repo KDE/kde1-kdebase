@@ -21,7 +21,7 @@ case "$1" in
     ;;
   stop)
       echo -n "Stopping kde display manager: kdm"    
-      start-stop-daemon --stop --quiet --pid /var/run/xdm-pid || echo " not running"
+      start-stop-daemon --stop --quiet --pid /var/run/xdm.pid || echo " not running"
       echo "."
     ;;
 # the last options are taken from kerneld
