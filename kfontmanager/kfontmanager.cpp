@@ -164,7 +164,7 @@ void KFontManager::resizeEvent(QResizeEvent *e){
 }
 
 void KFontManager::helpselected(){
-  
+  /*  
   if ( fork() == 0 )
     {
       QString path = DOCS_PATH;
@@ -173,7 +173,8 @@ void KFontManager::helpselected(){
       ::exit( 1 );      
       
     }	 
-
+	*/ 
+kapp->invokeHTMLHelp( "kfontmanager/index.html", "" );
 }
 
 void KFontManager::apply(bool){
