@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn  by Nico Schirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*input_devices_settings[]={
+"16 16 7 1",
+"# c #000000",
+"a c #c0c0c0",
+"b c #ffffff",
+"d c #808080",
+"c c #a0a0a4",
+"e c #00c0c0",
+". c None",
+"...##...........",
+"..#aa##.........",
+".#abcba##.......",
+"#acccbcba##.....",
+"#cbacbbbcba##...",
+".##cbacbbbcba##.",
+"...##cbacccbcad#",
+".##..##cbaccadd#",
+"#aa#...##cbadd#.",
+"####.....##cd#..",
+"#ac#..###bb###..",
+"#ba#..#d#bb#cc##",
+".##..####b#bbcc#",
+"....#e#..#abbc#.",
+"...#e#....##a#..",
+"...##.......#..."};
+
