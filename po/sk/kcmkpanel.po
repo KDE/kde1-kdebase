@@ -79,7 +79,7 @@ msgstr "©týl"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "Malý"
+msgstr "&Malý"
 
 #: panel.cpp:99
 msgid "&Normal"
@@ -111,11 +111,11 @@ msgstr "&Oneskorenie:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr "Malý"
+msgstr "Malé"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
 msgid "Large"
-msgstr "Veµký"
+msgstr "Veµké"
 
 #: options.cpp:62
 msgid "Visuals"
@@ -127,7 +127,7 @@ msgstr "Automaticky skry» &panel"
 
 #: options.cpp:67 options.cpp:85
 msgid "Delay:"
-msgstr "Pauza:"
+msgstr "Oneskorenie:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
@@ -135,11 +135,11 @@ msgstr "Rýchlos»:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr "Pomaly"
+msgstr "Pom."
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr "Rýchlo"
+msgstr "Rých."
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
