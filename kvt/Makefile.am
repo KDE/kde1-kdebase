@@ -13,7 +13,7 @@ UTILSDIR = $(prefix)/apps/Utilities
 bin_PROGRAMS = kvt
 
 kvt_SOURCES = \
-	rxvt.C command.c screen.c utmp.c \
+	command.c screen.c utmp.c \
 	xsetup.c debug.c resources.c main.C\
 	grkelot.c
 
