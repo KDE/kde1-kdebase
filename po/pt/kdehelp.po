@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: helpwin.cpp:55
 msgid "KDE Help: Open URL"
@@ -109,7 +113,7 @@ msgstr "Cor do Link Seguido:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Sublinar ligações"
 
 #: options.cpp:317
 msgid "KDE Help Options"
@@ -353,6 +357,3 @@ msgstr "&Maísculas/Minusculas"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Procurar"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Abrir UR&L..."

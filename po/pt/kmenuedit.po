@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
@@ -75,11 +79,11 @@ msgstr "Abrir/ Fechar"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Seleccione item a mover"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Seleccione menu a mover"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -257,6 +261,3 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Por omissão:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! Botão PROTEGIDO !"

@@ -1,20 +1,21 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1998-11-12 01:17+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-08-26 14:27:08+0200\n"
-"From: M G Berberich <berberic@thingol>\n"
-"Xgettext-Options: --keyword=translate\n"
-"Files: main.C\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
+"PO-Revision-Dated: 1997-08-26 14:27:08+0200\n"
 
 #: main.C:424
 msgid "choose type of color-mode"
-msgstr "Escolha tipo de modo de cor"
+msgstr "Modo de cor"
 
 #: main.C:430
 msgid "Add characters to word class"
-msgstr "Adicionar caracteres a classe de palavra"
+msgstr "Adicionar caracteres à classe palavra"
 
 #: main.C:436
 msgid "The backspace key will send a"
@@ -66,19 +67,19 @@ msgstr "&Enorme"
 
 #: main.C:642
 msgid "&black/white"
-msgstr "&negro/branco"
+msgstr "&Negro/branco"
 
 #: main.C:643
 msgid "&white/black"
-msgstr "&branco/negro"
+msgstr "&Branco/negro"
 
 #: main.C:644
 msgid "&green/black"
-msgstr "&verde/branco"
+msgstr "&Verde/branco"
 
 #: main.C:645
 msgid "black/light&yellow"
-msgstr "negro/&amarelo claro"
+msgstr "Negro/&amarelo claro"
 
 #: main.C:646
 msgid "Linu&x Console"
@@ -98,7 +99,7 @@ msgstr "Mostrar &Barra de Menu"
 
 #: main.C:666 main.C:960
 msgid "Secure &keyboard"
-msgstr "Bloquear &teclado"
+msgstr "Bloquear &Teclado"
 
 #: main.C:668
 msgid "Scroll&bar"
@@ -126,14 +127,13 @@ msgstr "Fontes..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Activar &teclas de funções"
 
 #: main.C:677
 msgid "Save &Options"
 msgstr "Gravar &Opções"
 
 #: main.C:686
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -148,6 +148,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Emulação de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation"

@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"PO-Revision-Date: 1997-09-09 17:23:06+0200\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
@@ -15,7 +15,7 @@ msgstr "Desligar ou reinicializar?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Insira a Senha de Root)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -27,7 +27,7 @@ msgstr "Desligar e reinicializar"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Reiniciar o Servidor X"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -55,24 +55,21 @@ msgstr "Desligar..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Logins não disponíveis."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() falhou."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Desculpe -- a sua conta expirou."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Aviso: a sua conta expira em %s"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
-
-#~ msgid "Exit kdm"
-#~ msgstr "Abandonar kdm"
+msgstr "Directoria pessoal não disponível"

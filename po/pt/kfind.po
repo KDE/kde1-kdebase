@@ -1,9 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -97,127 +101,127 @@ msgstr "Abrir a Pasta que Contem"
 msgid "Save Search Results"
 msgstr "Gravar Resultados da Pesquisa"
 
-#: kftabdlg.cpp:72
+#: kftabdlg.cpp:71
 msgid "&Named:"
 msgstr "&Nome:"
 
-#: kftabdlg.cpp:75
+#: kftabdlg.cpp:74
 msgid "&Look in:"
 msgstr "&Procurar em:"
 
-#: kftabdlg.cpp:78
+#: kftabdlg.cpp:77
 msgid "&Browse ..."
 msgstr "&Examinar ..."
 
-#: kftabdlg.cpp:84
+#: kftabdlg.cpp:83
 msgid "Include &subfolders"
 msgstr "Incluir &subpastas"
 
-#: kftabdlg.cpp:118
+#: kftabdlg.cpp:117
 msgid " Name& Location "
-msgstr " Nome& Localização "
+msgstr "Nome e Localização"
 
-#: kftabdlg.cpp:130
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "e"
 
-#: kftabdlg.cpp:131
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "mês(es)"
 
-#: kftabdlg.cpp:132
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "dia(s)"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "&Todos os ficheiros"
 
-#: kftabdlg.cpp:148
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "Procurar todos os ficheiros criados ou modificados:"
 
-#: kftabdlg.cpp:149
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "&entre"
 
-#: kftabdlg.cpp:150
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "durante o(s) último(&s)"
 
-#: kftabdlg.cpp:151
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "&durante o(s) último(s)"
 
-#: kftabdlg.cpp:199
+#: kftabdlg.cpp:198
 msgid " Date Modified "
-msgstr " Data de Modificação "
+msgstr "Data de Modificação"
 
-#: kftabdlg.cpp:206
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "Do &tipo:"
 
-#: kftabdlg.cpp:208
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "&Contendo:"
 
-#: kftabdlg.cpp:213
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "&Tamanho é:"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "Todos os Ficheiros e Pastas"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr "Pastas"
 
-#: kftabdlg.cpp:239
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr "Links simbólicos"
 
-#: kftabdlg.cpp:240
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr "Ficheiros especiais (sockets, dispositivos...)"
 
-#: kftabdlg.cpp:241
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr "Ficheiros executaveis"
 
-#: kftabdlg.cpp:242
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr "Ficheiros executaveis SUID"
 
-#: kftabdlg.cpp:250
+#: kftabdlg.cpp:249
 msgid "(none)"
-msgstr ""
+msgstr "(nenhum)"
 
-#: kftabdlg.cpp:251
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "No Mínimo"
 
-#: kftabdlg.cpp:252
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "No Máximo"
 
-#: kftabdlg.cpp:263
+#: kftabdlg.cpp:262
 msgid " Advanced "
-msgstr " Avançado "
+msgstr "Avançado"
 
-#: kftabdlg.cpp:501
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "A data não é válida!!"
 
-#: kftabdlg.cpp:513
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "O valor do(s) mês(es) não é válido!!"
 
-#: kftabdlg.cpp:524
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "O valor do(s) dia(s) não é válido!!"
 
-#: kftabdlg.cpp:541
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "O valor em tamanho não é um número válido"
 
@@ -269,24 +273,24 @@ msgstr "Adicionar Novo"
 msgid "Archivers"
 msgstr "Arquivadores"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
 #, c-format
 msgid "%d file(s) found"
 msgstr "%d ficheiro(s) encontrado(s)"
 
-#: kfwin.cpp:246
+#: kfwin.cpp:245
 msgid "It wasn't possible to save results!"
 msgstr "Não foi possível guardar os resultados!"
 
-#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
 msgid "KFind Results File"
 msgstr "Ficheiro de Resultados do KFind"
 
-#: kfwin.cpp:283
+#: kfwin.cpp:282
 msgid "Results were saved to file\n"
 msgstr "Os resultados foram gravados no ficheiro\n"
 
-#: kfwin.cpp:298
+#: kfwin.cpp:297
 #, c-format
 msgid ""
 "Do you really want to delete file:\n"
@@ -295,11 +299,11 @@ msgstr ""
 "Deseja mesmo apagar o ficheiro:\n"
 "%s"
 
-#: kfwin.cpp:300
+#: kfwin.cpp:299
 msgid "Delete File"
 msgstr "Apagar o Ficheiro"
 
-#: kfwin.cpp:312
+#: kfwin.cpp:311
 msgid ""
 "You have no permission\n"
 " to delete this file"
@@ -307,7 +311,7 @@ msgstr ""
 "Não tem permissões\n"
 " para apagar este ficheiro"
 
-#: kfwin.cpp:318
+#: kfwin.cpp:317
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
@@ -315,7 +319,7 @@ msgstr ""
 "Não foi possível apagar\n"
 "o ficheiro seleccionado"
 
-#: kfwin.cpp:336
+#: kfwin.cpp:335
 msgid ""
 "You have no permission\n"
 " to delete this directory"
@@ -323,7 +327,7 @@ msgstr ""
 "Não tem permissões\n"
 " para apagar esta directoria"
 
-#: kfwin.cpp:341
+#: kfwin.cpp:340
 msgid ""
 "Specified directory\n"
 "is not empty!"
@@ -331,7 +335,7 @@ msgstr ""
 "A directoria especificada\n"
 "não está vazia!"
 
-#: kfwin.cpp:346
+#: kfwin.cpp:345
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
@@ -339,10 +343,10 @@ msgstr ""
 "Não é possível apagar\n"
 "a directoria seleccionada"
 
-#: kfwin.cpp:438
+#: kfwin.cpp:437
 msgid "Couldn't recognize archive type!"
 msgstr "Não foi possível reconhecer o tipo de arquivo!"
 
-#: kfwin.cpp:497
+#: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Erro ao criar o processo filho!"

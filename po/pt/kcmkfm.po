@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkfm\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"PO-Revision-Date: 1998-12-28 00:00+0000\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
+
+#: main.cpp:61
+msgid "&Font"
+msgstr "&Fonte"
+
+#: main.cpp:63
+msgid "&Color"
+msgstr "&Cor"
+
+#: main.cpp:65
+msgid "&Other"
+msgstr "&Outros"
+
+#: main.cpp:68
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: main.cpp:70
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:73
+msgid "User &Agent"
+msgstr "&Agente"
+
+#: main.cpp:76
+msgid "Coo&kies"
+msgstr "Coo&kies"
+
+#: main.cpp:80
+msgid "&Desktop Icons"
+msgstr "&Ícones de Fundo"
+
+#: main.cpp:89
+#, c-format
+msgid ""
+"usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+msgstr ""
+"utilização: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+
+#: main.cpp:178
+msgid "KFM Configuration"
+msgstr "Configuração do KFM"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Pequena"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Média"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Grande"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Fonte Normal"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Fonte Fixa"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr "Código por Omissão"
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr "Utilizar código da língua"
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Cor de Fundo:"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Cor do Texto Normal:"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "Cor dos Ligações:"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Cor das Ligações Seguidas:"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Mudar cursor sobre link"
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Sublinhar Ligações"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "Permitir configur&ações por URL"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "Ár&vore segue a navegação"
+
+#: miscopts.cpp:43
+msgid "Terminal"
+msgstr "Terminal"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "Não se esqueça de gravar a sua configuração"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Usar proxy"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr "Proxy HTTP:"
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr "Porta:"
+
+#: kproxydlg.cpp:98
+msgid "FTP Proxy:"
+msgstr "Proxy FTP:"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Sem proxy em:"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Línguas aceites:"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Caracteres aceites:"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Assumir HTML"
+
+#: useragentdlg.cpp:45
+msgid "On server:"
+msgstr "Servidor:"
+
+#: useragentdlg.cpp:67
+msgid "login as:"
+msgstr "Login:"
+
+#: useragentdlg.cpp:87
+msgid "&Add"
+msgstr "&Adicionar"
+
+#: useragentdlg.cpp:107
+msgid "Known bindings:"
+msgstr "Dependências conhecidas:"
+
+#: kcookiesdlg.cpp:49
+msgid "&Enable Cookies"
+msgstr "&Activar Cookies"
+
+#: kcookiesdlg.cpp:56
+msgid "Default accept policy"
+msgstr "Política de aceitação"
+
+#: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
+msgid "Accept"
+msgstr "Aceitar"
+
+#: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
+msgid "Ask"
+msgstr "Perguntar"
+
+#: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
+msgid "Reject"
+msgstr "Rejeitar"
+
+#: kcookiesdlg.cpp:90
+msgid "Domain specific settings:"
+msgstr "Configurações por domínio"
+
+#: kcookiesdlg.cpp:97
+msgid "Change domain accept policy"
+msgstr "Mudar política de aceitação do domínio"
+
+#: kcookiesdlg.cpp:239
+msgid "You must enter a domain first !"
+msgstr "Tem de inserir um domínio primeiro !"
+
+#: rootopts.cpp:73
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Espaçamento horizontal:"
+
+#: rootopts.cpp:84
+msgid "Vertical Root Grid Spacing:"
+msgstr "Espaçamento vertical:"
+
+#: rootopts.cpp:95
+msgid "&Transparent Text for Desktop Icons."
+msgstr "&Texto transparente"
+
+#: rootopts.cpp:106
+msgid "Icon foreground color:"
+msgstr "Cor primeiro plano:"
+
+#: rootopts.cpp:118
+msgid "Icon background color:"
+msgstr "Cor de fundo:"
+
+#: rootopts.cpp:131
+msgid "Show &Hidden Files on Desktop"
+msgstr "Mostrar ficheiros &ocultos"

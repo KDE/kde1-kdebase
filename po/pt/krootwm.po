@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: krootwm.C:221 krootwm.C:268
 msgid "Execute command"
@@ -19,7 +23,7 @@ msgstr "Sair"
 
 #: krootwm.C:232 krootwm.C:270
 msgid "Refresh desktop"
-msgstr "Refrescar ambiente de trabalho"
+msgstr "Redesenhar"
 
 #: krootwm.C:233 krootwm.C:272
 msgid "Unclutter windows"
@@ -35,35 +39,35 @@ msgstr "Ordenar ícones"
 
 #: krootwm.C:236 krootwm.C:269
 msgid "Display properties"
-msgstr "Propriedades do écran"
+msgstr "Propriedades"
 
 #: krootwm.C:244 krootwm.C:267
 msgid "Help on desktop"
-msgstr "Ajuda do ambiente de trabalho"
+msgstr "Ajuda"
 
 #: krootwm.C:245
 msgid "About KDE..."
-msgstr ""
+msgstr "Acerca do KDE..."
 
 #: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
-msgstr ""
+msgstr "Novo(a)"
 
 #: krootwm.C:264 krootwm.C:287
 msgid "Bookmarks"
-msgstr ""
+msgstr "Favoritos"
 
 #: krootwm.C:288
 msgid "Desk"
-msgstr ""
+msgstr "Secretária"
 
 #: krootwm.C:289
 msgid "Windows"
-msgstr ""
+msgstr "Janelas"
 
 #: krootwm.C:344
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Editar"
 
 #: krootwm.C:358 krootwm.C:771
 msgid "Folder"

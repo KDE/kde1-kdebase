@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys\n"
+"POT-Creation-Date: 1998-12-18 02:05+0100\n"
+"PO-Revision-Date: 1998-01-26 20:00+0000\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n" 
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "Atalhos &Standard"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "Atalhos &Globais"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "utilização: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Configuração dos atalhos de teclado"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Esquema actual"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "Normal do KDE"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "&Esquema de teclas"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "&Adicionar ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Gravar alterações"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Erro ao remover esquema"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Este esquema de teclas não pode ser removido.\n"
+"Talvez não tenha permissão para alteração o ficheiro\n"
+"onde ele está armazenado."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Conflito de nomes"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Por favor escolha um nome único para o novo\n"
+"esquema de teclas. O que inseriu já faz parte\n"
+"da lista de esquemas de teclas."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Adicionar um esquema de teclas"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"Insira um nome para o novo esquema de teclas\n"
+"que irá ser adicionado à sua lista pessoal.\n"
+"\n"
+"As teclas actualmente utilizadas serão copiadas\n"
+"para este esquema."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Gestor de tarefas"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Modo matar janela"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Executar comando"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Menu de operações da janela"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Menu de sistema"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Levantar janela"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Baixar janela"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Fechar janela"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Iconificar janela"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Tamanho da janela"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Mover janela"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Pregar janela"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Mudar para o ecrã 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Mudar para o ecrã 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Mudar para o ecrã 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Mudar para o ecrã 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Mudar para o ecrã 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Mudar para o ecrã 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Mudar para o ecrã 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Mudar para o ecrã 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Mudar um ecrã para a direita"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Mudar um ecrã para a esquerda"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Mudar um ecrã para cima"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Mudar um ecrã para baixo"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Novo"
+
+#: stdbindings.cpp:7
+msgid "Next"
+msgstr "Próximo"
+
+#: stdbindings.cpp:8
+msgid "Prior"
+msgstr "Anterior"
+
+#: stdbindings.cpp:13
+msgid "Find"
+msgstr "Procurar"
+
+#: stdbindings.cpp:16
+msgid "Home"
+msgstr "Início"
+
+#: stdbindings.cpp:17
+msgid "End"
+msgstr "Fim"

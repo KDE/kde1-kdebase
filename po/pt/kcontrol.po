@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: configlist.cpp:120
 msgid "Unknown module: "
@@ -53,11 +57,11 @@ msgstr "Sistema: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr ""
+msgstr "Versão:"
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr "Versão: "
+msgstr "Data: "
 
 #: mainwidget.cpp:84
 msgid "Machine: "

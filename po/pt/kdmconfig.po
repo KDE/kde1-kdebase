@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1998-10-29 14:31+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: main.cpp:84
 msgid "&Appearance"
@@ -69,11 +73,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Língua"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Língua:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -137,14 +141,12 @@ msgid "Select fonts"
 msgstr "Seleccionar fontes"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Exemplo:"
+msgstr "Exemplo"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Mudar fonte"
+msgstr "Mudar fonte..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -160,24 +162,23 @@ msgstr "Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Testar"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Cor"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Cor"
+msgstr "Cor Sólida"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Mistura Horizontal"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Mistura Vertical"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -188,39 +189,36 @@ msgid "None"
 msgstr "Nenhum"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Mosaico"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
 msgstr "Centrado"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Escalado"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "TopoEsquerdo"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "TopoDireito"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "FundoEsquerdo"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "FundoDireito"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Especial"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -267,9 +265,8 @@ msgid "Save image as default image?"
 msgstr "Gravar imagem como imagem por omissão?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
-msgstr "Permitir desligar:"
+msgstr "Permitir desligar"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -309,10 +306,4 @@ msgstr "Tipos disponíveis"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
-
-#~ msgid "&Fonts"
-#~ msgstr "&Fontes"
-
-#~ msgid "Appearance"
-#~ msgstr "Aparência"
+msgstr "sem nome!"

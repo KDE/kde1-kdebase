@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kcmsamba\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: main.cpp:48
 msgid "&Status"
@@ -19,11 +23,11 @@ msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr "Erro ao executar smbstatus !"
+msgstr "Erro ao executar smbstatus!"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr "Erro ! smbstatus não foi encontrado ou nao funciona !"
+msgstr "Erro! smbstatus não foi encontrado ou nao funciona!"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
@@ -39,12 +43,12 @@ msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Máquina"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Ficheiros Abertos"

@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kcmbell\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: main.cpp:52
 msgid "&Bell"
@@ -35,11 +39,8 @@ msgstr "Duração"
 
 #: bell.cpp:72
 msgid "milliseconds"
-msgstr ""
+msgstr "milisegundos"
 
 #: bell.cpp:87
 msgid "Test"
 msgstr "Testar"
-
-#~ msgid "ms"
-#~ msgstr "ms"

@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -103,37 +107,35 @@ msgstr "De&mora:"
 
 #: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr ""
+msgstr "Pequena"
 
 #: options.cpp:98 options.cpp:167 options.cpp:269
-#, fuzzy
 msgid "Large"
-msgstr "&Grande"
+msgstr "Grande"
 
 #: options.cpp:110
 msgid "Visuals"
-msgstr ""
+msgstr "Efeitos visuais"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
 msgstr "Esconder &Painel"
 
 #: options.cpp:153 options.cpp:255
-#, fuzzy
 msgid "Delay:"
-msgstr "De&mora:"
+msgstr "Demora:"
 
 #: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr ""
+msgstr "Velocidade:"
 
 #: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr ""
+msgstr "Baixa"
 
 #: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
-msgstr ""
+msgstr "Alta"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
@@ -141,101 +143,80 @@ msgstr "Esconder &Barra de Tarefas"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animar Mostrar/Esconder"
 
 #: options.cpp:395
 msgid "Others"
 msgstr "Outros"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
-msgstr "Pessoal &Primeiro"
+msgstr "Entradas de menu &pessoais primeiro"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
-msgstr "Pessoal &Primeiro"
+msgstr "Pastas primeir&o no menu"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Relógio mostra as horas no formato AM/PM"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "&Relógio mostra as horas em formato &Internet"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "História"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Editar entradas: (arraste uma paste e crie uma ligação)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Editar &Local..."
+msgstr "Editar &Pessoal..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Editar &Local..."
+msgstr "Editar &Partilhado..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Máx. pastas recentes:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Máx. ficheiros recentes:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Máx. de ficheiros numa pasta:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Mostrar ficheiros começados por ."
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignorar maiúsculas ao ordenar"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Localização"
+msgstr "Mostrar secção partilhada"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Localização"
+msgstr "Mostrar secção pessoal"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Mostrar secção recente"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Mostrar entrada de opções"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Editar &Global..."
-
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Relógio"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
+msgstr "Aplicação terminal:"

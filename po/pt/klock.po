@@ -1,19 +1,21 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: attraction.cpp:716
-#, fuzzy
 msgid "Attraction"
-msgstr "Contracção"
+msgstr "Atracção"
 
 #: attraction.cpp:803
-#, fuzzy
 msgid "Setup KAttraction"
-msgstr "Configurar Morcego"
+msgstr "Configurar Atracção"
 
 #: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
 msgid "Number:"
@@ -25,7 +27,7 @@ msgstr "Modo:"
 
 #: attraction.cpp:834 slidescreen.cpp:498
 msgid "Balls"
-msgstr ""
+msgstr "Bolas"
 
 #: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
 msgid "Lines"
@@ -37,19 +39,17 @@ msgstr "Poligonos"
 
 #: attraction.cpp:837 slidescreen.cpp:501
 msgid "Tails"
-msgstr ""
+msgstr "Caudas"
 
 #: attraction.cpp:850 slidescreen.cpp:514
 msgid "Glow"
-msgstr ""
+msgstr "Brilho"
 
 #: attraction.cpp:951
-#, fuzzy
 msgid "About Attraction"
-msgstr "Contracção"
+msgstr "Acerca do Atracção"
 
 #: attraction.cpp:952
-#, fuzzy
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -59,11 +59,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rocha Versão 3.3\n"
+"Atracção Versão 1.0\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Transposto para kscreensave by Martin Jones."
+"Transporto para o kscreensaver por:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> outubro 1998"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -74,13 +76,12 @@ msgid "Setup kbanner"
 msgstr "Configurar Mensagem"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Falhou"
+msgstr "Família:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Tamanho:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -88,7 +89,7 @@ msgstr "Cor:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Negrito"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -258,9 +259,8 @@ msgstr ""
 "Portado para kscreensave por Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Écran Vazio"
+msgstr "Ecrã da Morte"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -458,7 +458,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opção %s não é suportada neste plataforma!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -466,9 +465,11 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the kcheckpass!"
 msgstr ""
+"Aviso: Não irá conseguir trancar o ecrã!\n"
+"\n"
 "Este sistema utiliza shadow passwords!\n"
 "Por favor contacte o seu administrador de sistema.\n"
-"Diga-lhe que precisa de suid para os screensavers!"
+"Diga-lhe que precisa de suid para o kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -481,18 +482,20 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"por favor não use -test juntamente com -lock.\n"
+"utilize em vez disto klock .\n"
 
 #: main.cpp:580
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Utilização: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num] [-nice num]\n"
 
 #: main.cpp:583
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -512,7 +515,7 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Colocar o cursor no écran produz a seguinte acção:\n"
+"  -corners xxxx     Colocar o cursor no canto produz a seguinte acção:\n"
 "                     x = i  nenhuma acção (ignorar)\n"
 "                     x = s  proteger écran\n"
 "                     x = l  bloquear écran\n"
@@ -565,24 +568,20 @@ msgstr ""
 "Transposto para kscreensave por Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Espaço (GL)"
+msgstr "Canos (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Configurar Slip"
+msgstr "Configurar Canos"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Abelhas:"
+msgstr "Número de Canos"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Acerca do Lines"
+msgstr "Acerca do Canos"
 
 #: pipes.cpp:745
 msgid ""
@@ -590,6 +589,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"Canos\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
@@ -654,9 +656,8 @@ msgid "Setup krock"
 msgstr "Configurar Rocha"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Modo:"
+msgstr "Mover"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -761,22 +762,18 @@ msgid "About Science"
 msgstr "Acerca do Ciência"
 
 #: slidescreen.cpp:419
-#, fuzzy
 msgid "SlideScreen"
-msgstr "Écran Vazio"
+msgstr "Ecrã Deslizante"
 
 #: slidescreen.cpp:465
-#, fuzzy
 msgid "Setup KSlideScreen"
-msgstr "Configurar Ciência"
+msgstr "Configurar Ecrã Deslizante"
 
 #: slidescreen.cpp:558
-#, fuzzy
 msgid "About SlideScreen"
-msgstr "Acerca do Ciência"
+msgstr "Acerca do Ecrã Deslizante"
 
 #: slidescreen.cpp:559
-#, fuzzy
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -786,11 +783,13 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Rocha Versão 3.3\n"
+"Ecrã Deslizante Versão 1.1\n"
 "\n"
-"Copyright (c) 1992 por Jamie Zawinski\n"
+"Copyright (c) 1992-1997 por Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Transposto para kscreensave by Martin Jones."
+"Transporto to kscreensaver por:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> outubro 1998"
 
 #: slip.cpp:293
 msgid "Slip"

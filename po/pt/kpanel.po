@@ -3,15 +3,19 @@ msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: kpanel.C:284
 msgid "&Move"
-msgstr ""
+msgstr "&Mover"
 
 #: kpanel.C:287
 msgid "&Properties"
-msgstr ""
+msgstr "&Propriedades"
 
 #: kpanel.C:330
 msgid "Go!"
@@ -43,7 +47,7 @@ msgstr "Mostrar o painel"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Iconificar outras &janelas"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -55,10 +59,9 @@ msgstr "Lista de Janelas"
 
 #: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Navegue rápidamente pelos seus ficheiros"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Adicionar Aplicação"
 
@@ -68,15 +71,13 @@ msgstr "Adicionar uma aplicação ou um submenu ao painel"
 
 #: props.C:174
 msgid "Add Disk Navigator"
-msgstr ""
+msgstr "Adicionar Navegador"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Adicionar lista de janelas ao painel"
+msgstr "Adicionar um Navegador ao painel"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Adicionar Lista de Janelas"
 
@@ -110,7 +111,7 @@ msgstr "Reinicializar painel"
 
 #: props.C:193
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Navegador"
 
 #: props.C:201
 msgid "Panel"
@@ -133,10 +134,12 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: tools.C:908
 msgid "KDiskNavigator"
-msgstr ""
+msgstr "Navegador"
 
 #: events.C:855
 msgid "Cannot put this as button onto the panel!"
@@ -144,52 +147,52 @@ msgstr "Não é possivel adicionar isto ao painel como botão!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr ""
+msgstr "(pasta vazia)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr ""
+msgstr "Abrir Pasta"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Demasiados Ficheiros)"
 
 #: pfilemenu.C:500
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Permissão Recusada)"
 
 #: pfilemenu.C:503
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Ilegível)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Partilhado:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Entradas partilhas entre todos os utilizadores"
 
 #: pfilemenu.C:773
 msgid "Personal:"
-msgstr ""
+msgstr "Pessoal:"
 
 #: pfilemenu.C:775
 msgid "Personal entries"
-msgstr ""
+msgstr "Entradas pessoais"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Recentes:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Entradas recentes"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Opções..."
 
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
-msgstr ""
+msgstr "Configurar Navegador"

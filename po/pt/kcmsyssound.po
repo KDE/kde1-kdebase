@@ -3,7 +3,11 @@ msgstr ""
 "Project-Id-Version: kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1998-02-03 20:00+0000\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt\n"
+"MIME-Version:\n"
+"Content-Type:\n"
+"Content-Transfer-Encoding:\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -15,7 +19,7 @@ msgstr "Sons do Sistema"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(nenhum)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -131,7 +135,7 @@ msgstr "Fim da Mudança de Tamanho da Janela"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "activar so&ns do sistema"
+msgstr "Activar so&ns"
 
 #: syssound.cpp:203
 msgid "&Test"
