@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -49,10 +49,6 @@ msgstr "Zentriert"
 #: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Vergrößert"
-
-#: backgnd.cpp:345
-msgid "Browse..."
-msgstr "Auswählen..."
 
 #: backgnd.cpp:489
 msgid "Default"
@@ -266,6 +262,11 @@ msgstr "&Bildschirmschoner"
 msgid "&Style"
 msgstr "S&til"
 
-#: main.cpp:105
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"Benutzung: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:112
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"

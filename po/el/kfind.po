@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -36,10 +36,6 @@ msgstr "¶νοιγμα"
 msgid "&Add to archive"
 msgstr "Προσθήκη στο αρχείο"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "Διαγραφή"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "Ιδιότητες"
@@ -51,10 +47,6 @@ msgstr "¶νοιγμα καταλόγου με περιεχόμενα"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "Aποθήκευση αναζήτησης"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "Αναίρεση"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -79,10 +71,6 @@ msgstr "Βοήθεια του ΚFind "
 #: kfindtop.cpp:186
 #, fuzzy
 msgid "About &Qt"
-msgstr "Περί"
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr "Περί"
 
 #: kfindtop.cpp:206
@@ -278,10 +266,6 @@ msgstr "Αδύνατη η αποθήκευση των αποτελεσμάτων"
 msgid "KFind Results File"
 msgstr "Αρχείο αποτελεσμάτων του KFind "
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Αποτελέσματα που αποθηκεύτηκαν στο αρχείο\n"
@@ -342,6 +326,15 @@ msgstr "Αδύνατη αναγνώριση αρχείου"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Αποτυχία κατα την δημιουργία υποδιεργασίας"
+
+#~ msgid "&Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "&Undo"
+#~ msgstr "Αναίρεση"
+
+#~ msgid "&About"
+#~ msgstr "Περί"
 
 #~ msgid "&Copy"
 #~ msgstr "Αντιγραφή"

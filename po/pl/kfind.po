@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-08 23:48+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -42,10 +42,6 @@ msgstr "&Otwórz"
 msgid "&Add to archive"
 msgstr "&Dodaj do archiwum"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Skasuj..."
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&W³a¶ciwo¶ci..."
@@ -57,10 +53,6 @@ msgstr "Otwórz zawarto¶æ &katalogu"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "&Zachowaj wyniki"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "&Cofnij"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -85,10 +77,6 @@ msgstr "Pomo&c"
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "Informacje o &Qt"
-
-#: kfindtop.cpp:188
-msgid "&About"
-msgstr "&Informacje o KFind"
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -283,10 +271,6 @@ msgstr "Nie mo¿na zachowaæ wyników!"
 msgid "KFind Results File"
 msgstr "Plik z rezultatami KFind"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr "Informacja"
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Rezultaty zosta³y zachowane w pliku\n"
@@ -351,3 +335,15 @@ msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "B³±d podczas tworzenia procesu potomnego!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Skasuj..."
+
+#~ msgid "&Undo"
+#~ msgstr "&Cofnij"
+
+#~ msgid "&About"
+#~ msgstr "&Informacje o KFind"
+
+#~ msgid "Information"
+#~ msgstr "Informacja"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.3.5\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-10-09 14:30 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -47,10 +47,6 @@ msgstr "&Otevøít"
 msgid "&Add to archive"
 msgstr "Pøidat do &archivu"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Smazat"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&Vlastnosti"
@@ -62,10 +58,6 @@ msgstr "Otevøít o&dpovídající adresáø"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "U&lo¾it výsledky"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "&Zpìt"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -90,10 +82,6 @@ msgstr "&Nápovìda kfindu"
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "Informace o &Qt"
-
-#: kfindtop.cpp:188
-msgid "&About"
-msgstr "&Informace"
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -288,10 +276,6 @@ msgstr "Nebylo mo¾né ulo¾it výsledky!"
 msgid "KFind Results File"
 msgstr "Soubor s výstupy KFindu"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr "Informace"
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Výsledky byly ulo¾eny do souboru\n"
@@ -356,3 +340,15 @@ msgstr "Nemohu urèit typ archivu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Chyba pøi vytváøení procesu!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Smazat"
+
+#~ msgid "&Undo"
+#~ msgstr "&Zpìt"
+
+#~ msgid "&About"
+#~ msgstr "&Informace"
+
+#~ msgid "Information"
+#~ msgstr "Informace"

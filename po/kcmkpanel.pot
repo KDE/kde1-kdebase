@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"POT-Creation-Date: 1998-01-16 20:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,51 +22,55 @@ msgstr ""
 msgid "&Desktops"
 msgstr ""
 
-#: main.cpp:84
+#: main.cpp:65
+msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr ""
+
+#: main.cpp:94
 msgid "KPanel Configuration"
 msgstr ""
 
-#: panel.cpp:57
+#: panel.cpp:58
 msgid "Location"
 msgstr ""
 
-#: panel.cpp:64
+#: panel.cpp:66
 msgid "Taskbar"
 msgstr ""
 
-#: panel.cpp:65
+#: panel.cpp:67
 msgid "Hidden"
 msgstr ""
 
-#: panel.cpp:68
+#: panel.cpp:70
 msgid "Top/Left"
 msgstr ""
 
-#: panel.cpp:88
+#: panel.cpp:91
 msgid "Tiny Style"
 msgstr ""
 
-#: panel.cpp:89
+#: panel.cpp:92
 msgid "Normal Style"
 msgstr ""
 
-#: panel.cpp:90
+#: panel.cpp:93
 msgid "Large Style"
 msgstr ""
 
-#: panel.cpp:98
+#: panel.cpp:101
 msgid "Menu Tooltips"
 msgstr ""
 
-#: panel.cpp:100
+#: panel.cpp:103
 msgid "Personal First"
 msgstr ""
 
-#: panel.cpp:102
+#: panel.cpp:105
 msgid "Auto Hide Panel"
 msgstr ""
 
-#: panel.cpp:104
+#: panel.cpp:107
 msgid "Auto Hide Taskbar"
 msgstr ""
 

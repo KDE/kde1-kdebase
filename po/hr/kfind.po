@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -42,10 +42,6 @@ msgstr "&Otvori"
 msgid "&Add to archive"
 msgstr "&Dodaj u arhivu"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Bri¹i"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&Vrijednosti"
@@ -57,10 +53,6 @@ msgstr "Otvori &direktorij"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "Sni&mi tra¾eno"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "&Vrati"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -85,10 +77,6 @@ msgstr "Kfind &pomoæ"
 #: kfindtop.cpp:186
 #, fuzzy
 msgid "About &Qt"
-msgstr "&O programu"
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr "&O programu"
 
 #: kfindtop.cpp:206
@@ -284,10 +272,6 @@ msgstr "Nisam mogao snimiti rezultate!"
 msgid "KFind Results File"
 msgstr "KFind datoteka s rezultatima"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Rezultati su snimljeni u datoteku\n"
@@ -348,6 +332,15 @@ msgstr "Ne prepoznajem vrstu arhive!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Gre¹ka prilikom kreiranja nasljednog procesa!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Bri¹i"
+
+#~ msgid "&Undo"
+#~ msgstr "&Vrati"
+
+#~ msgid "&About"
+#~ msgstr "&O programu"
 
 #~ msgid "&Copy"
 #~ msgstr "&Kopiraj"

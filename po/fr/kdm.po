@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-09 00:00 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -29,26 +29,26 @@ msgstr "Réinitialisation du système"
 msgid "Exit kdm"
 msgstr "Quitter kdm"
 
-#: kgreeter.cpp:137
+#: kgreeter.cpp:136
 msgid "Login:"
 msgstr "Utilisateur :"
 
-#: kgreeter.cpp:142
+#: kgreeter.cpp:141
 msgid "Password:"
 msgstr "Mot de passe :"
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:175
 msgid "Login failed!"
 msgstr "Authentification échouée !"
 
-#: kgreeter.cpp:182
+#: kgreeter.cpp:181
 msgid "Session Type:"
 msgstr "Type de session :"
 
-#: kgreeter.cpp:198
+#: kgreeter.cpp:197
 msgid "Go!"
 msgstr "Entrer !"
 
-#: kgreeter.cpp:214
+#: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr "Arréter..."

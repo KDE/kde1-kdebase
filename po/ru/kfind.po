@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-09-05 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -49,11 +49,6 @@ msgid "&Add to archive"
 msgstr "Добавить в архив"
 
 #
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "Удалить"
-
-#
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "Свойства"
@@ -67,11 +62,6 @@ msgstr "Открыть папку, в которой содержится файл"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "Сохранить поиск"
-
-#
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "Откат"
 
 #
 #: kfindtop.cpp:161
@@ -100,10 +90,6 @@ msgstr "Помощь Kfind"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr ""
 
 #: kfindtop.cpp:206
@@ -300,10 +286,6 @@ msgstr "Невозможно сохранить результат!"
 msgid "KFind Results File"
 msgstr "Файл результатов KFind"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Результаты были записаны в файл\n"
@@ -368,6 +350,14 @@ msgstr "Не могу распознать тип архива!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Ошибка создания процесса!"
+
+#
+#~ msgid "&Delete"
+#~ msgstr "Удалить"
+
+#
+#~ msgid "&Undo"
+#~ msgstr "Откат"
 
 #~ msgid "Delete"
 #~ msgstr "Удалить"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm \n"
-"POT-Creation-Date: 1998-01-07 23:43+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-08 23:58+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -18,91 +18,91 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: b³±d podczas inicjacji; przerwanie\n"
 
-#: main.C:369
+#: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:376
+#: main.C:377
 msgid "Usage: "
 msgstr "U¿ycie: "
 
-#: main.C:387
+#: main.C:388
 msgid "&Maximize"
 msgstr "&Maksymalizuj"
 
-#: main.C:388
+#: main.C:389
 msgid "&Restore"
 msgstr "Przy&wróæ"
 
-#: main.C:389
+#: main.C:390
 msgid "&Iconify"
 msgstr "Mi&nimalizuj"
 
-#: main.C:390
+#: main.C:391
 msgid "&DeIconify"
 msgstr "Przy&wróæ"
 
-#: main.C:391
+#: main.C:392
 msgid "&Sticky"
 msgstr "Przyk&lej"
 
-#: main.C:392
+#: main.C:393
 msgid "&UnSticky"
 msgstr "Odk&lej"
 
-#: main.C:393
+#: main.C:394
 msgid "Mo&ve"
 msgstr "Prz&enie¶"
 
-#: main.C:394
+#: main.C:395
 msgid "Resi&ze"
 msgstr "&Rozmiar"
 
-#: main.C:396
+#: main.C:397
 msgid "&To desktop"
 msgstr "Wy¶lij na &desktop"
 
-#: main.C:398
+#: main.C:399
 msgid "&Onto current desktop"
 msgstr "Wy¶lij na ten &desktop"
 
-#: main.C:448
+#: main.C:449
 msgid "One"
 msgstr "Jeden"
 
-#: main.C:451
+#: main.C:452
 msgid "Two"
 msgstr "Dwa"
 
-#: main.C:454
+#: main.C:455
 msgid "Three"
 msgstr "Trzy"
 
-#: main.C:457
+#: main.C:458
 msgid "Four"
 msgstr "Cztery"
 
-#: main.C:460
+#: main.C:461
 msgid "Five"
 msgstr "Piêæ"
 
-#: main.C:463
+#: main.C:464
 msgid "Six"
 msgstr "Sze¶æ"
 
-#: main.C:466
+#: main.C:467
 msgid "Seven"
 msgstr "Siedem"
 
-#: main.C:469
+#: main.C:470
 msgid "Eight"
 msgstr "Osiem"
 
-#: main.C:742
+#: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektóre pixmapy s± b³êdne: ShapeMode jest wy³±czony\n"
 
-#: main.C:973
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr "*** Brak zadañ ***"
 

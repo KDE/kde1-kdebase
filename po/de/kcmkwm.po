@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-01-02 19:41+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -17,7 +17,11 @@ msgstr "&Buttons"
 msgid "&Titlebar"
 msgstr "&Titelzeile"
 
-#: main.cpp:91
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "Benutzung: kcmwkm [-init | {windows,buttons,titlebar}]\n"
+
+#: main.cpp:98
 msgid "Window manager style"
 msgstr "Eigenschaften der Fenster-Anzeige"
 

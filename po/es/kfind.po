@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,6 @@ msgstr "&Opciones"
 msgid "&Add to archive"
 msgstr "Agregar al archivo"
 
-#: kfindtop.cpp:141
-#, fuzzy
-msgid "&Delete"
-msgstr "Eliminar"
-
 #: kfindtop.cpp:143
 #, fuzzy
 msgid "&Properties"
@@ -65,11 +60,6 @@ msgstr "Abrir Carpeta que lo Contiene"
 #, fuzzy
 msgid "&Save Search"
 msgstr "Guardar Búsqueda"
-
-#: kfindtop.cpp:158
-#, fuzzy
-msgid "&Undo"
-msgstr "Deshacer"
 
 #: kfindtop.cpp:161
 #, fuzzy
@@ -98,10 +88,6 @@ msgstr "Ayuda de Kfind"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr ""
 
 # *********** Tooltips ************
@@ -300,10 +286,6 @@ msgstr "¡No se pudo guardar los resultados!"
 msgid "KFind Results File"
 msgstr "Archivo de resultados de KFind"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Los resultados fueron guardados\n"
@@ -368,6 +350,14 @@ msgstr "No se pudo reconocer el tipo de archivo!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Error creando proceso hijo!"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Eliminar"
+
+#, fuzzy
+#~ msgid "&Undo"
+#~ msgstr "Deshacer"
 
 #~ msgid "Delete"
 #~ msgstr "Eliminar"

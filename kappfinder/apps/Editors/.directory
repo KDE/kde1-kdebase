@@ -3,6 +3,7 @@
 Name=Editors
 Name[de]=Editoren
 Name[pl]=Edytory
+Name[fi]=Editorit
 MiniIcon=
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
 Icon=kedit.xpm

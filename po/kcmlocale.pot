@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-16 21:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,37 +15,43 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:51
-msgid "&Bell"
+msgid "&Locale"
 msgstr ""
 
 #: main.cpp:57
-msgid "usage: kcmbell [-init | bell]\n"
+msgid "usage: kcmlocale [-init | language]\n"
 msgstr ""
 
-#: main.cpp:81
-msgid "Bell settings"
+#: main.cpp:79
+msgid "Locale settings"
 msgstr ""
 
-#: bell.cpp:85
-msgid "Volume"
+#: locale.cpp:40
+msgid "Language"
 msgstr ""
 
-#: bell.cpp:86
-msgid "Pitch"
+#: locale.cpp:43
+msgid "First"
 msgstr ""
 
-#: bell.cpp:87
-msgid "Duration"
+#: locale.cpp:49
+msgid "Second"
 msgstr ""
 
-#: bell.cpp:89
-msgid "Hz"
+#: locale.cpp:55
+msgid "Third"
 msgstr ""
 
-#: bell.cpp:90
-msgid "ms"
+#: locale.cpp:89
+msgid "without name!"
 msgstr ""
 
-#: bell.cpp:92
-msgid "Test"
+#: locale.cpp:154
+msgid "Applying language settings"
+msgstr ""
+
+#: locale.cpp:155
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-01-07 23:43+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-08 23:43 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr\n"
 "Language-Team: Français\n"
@@ -25,91 +25,91 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: erreur pendant l'initialisation; abandon\n"
 
-#: main.C:369
+#: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:376
+#: main.C:377
 msgid "Usage: "
 msgstr "Utilisation : "
 
-#: main.C:387
+#: main.C:388
 msgid "&Maximize"
 msgstr "&Maximiser"
 
-#: main.C:388
+#: main.C:389
 msgid "&Restore"
 msgstr "Res&taurer"
 
-#: main.C:389
+#: main.C:390
 msgid "&Iconify"
 msgstr "&Mettre en icône"
 
-#: main.C:390
+#: main.C:391
 msgid "&DeIconify"
 msgstr "&Rétablir"
 
-#: main.C:391
+#: main.C:392
 msgid "&Sticky"
 msgstr "Fi&xer"
 
-#: main.C:392
+#: main.C:393
 msgid "&UnSticky"
 msgstr "&Libérer"
 
-#: main.C:393
+#: main.C:394
 msgid "Mo&ve"
 msgstr "Dé&placer"
 
-#: main.C:394
+#: main.C:395
 msgid "Resi&ze"
 msgstr "Redi&mensionner"
 
-#: main.C:396
+#: main.C:397
 msgid "&To desktop"
 msgstr "&Vers le bureau"
 
-#: main.C:398
+#: main.C:399
 msgid "&Onto current desktop"
 msgstr "&Sur le bureau actuel"
 
-#: main.C:448
+#: main.C:449
 msgid "One"
 msgstr "Un"
 
-#: main.C:451
+#: main.C:452
 msgid "Two"
 msgstr "Deux"
 
-#: main.C:454
+#: main.C:455
 msgid "Three"
 msgstr "Trois"
 
-#: main.C:457
+#: main.C:458
 msgid "Four"
 msgstr "Quatre"
 
-#: main.C:460
+#: main.C:461
 msgid "Five"
 msgstr "Cinq"
 
-#: main.C:463
+#: main.C:464
 msgid "Six"
 msgstr "Six"
 
-#: main.C:466
+#: main.C:467
 msgid "Seven"
 msgstr "Sept"
 
-#: main.C:469
+#: main.C:470
 msgid "Eight"
 msgstr "Huit"
 
-#: main.C:742
+#: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides ; ShapeMode déactivé\n"
 
-#: main.C:973
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 

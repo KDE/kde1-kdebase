@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,10 +41,6 @@ msgstr ""
 msgid "&Add to archive"
 msgstr ""
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr ""
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr ""
@@ -55,10 +51,6 @@ msgstr ""
 
 #: kfindtop.cpp:149
 msgid "&Save Search"
-msgstr ""
-
-#: kfindtop.cpp:158
-msgid "&Undo"
 msgstr ""
 
 #: kfindtop.cpp:161
@@ -83,10 +75,6 @@ msgstr ""
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr ""
 
 #: kfindtop.cpp:206
@@ -280,10 +268,6 @@ msgstr ""
 
 #: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
 msgid "KFind Results File"
-msgstr ""
-
-#: kfwin.cpp:179
-msgid "Information"
 msgstr ""
 
 #: kfwin.cpp:180

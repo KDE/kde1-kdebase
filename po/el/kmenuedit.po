@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KROOTWM\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:109 krootwm.C:406
+#: krootwm.C:109 krootwm.C:471
 msgid "Folder"
 msgstr "Kansio"
 
@@ -51,14 +51,14 @@ msgstr "Lukitse ruutu"
 msgid "Logout"
 msgstr "Lopeta"
 
-#: krootwm.C:426
+#: krootwm.C:491
 msgid "Could not create folder"
 msgstr "En voi luoda kansiota"
 
-#: krootwm.C:459
+#: krootwm.C:524
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:463
+#: krootwm.C:528
 msgid "Usage:"
 msgstr "Käyttö:"

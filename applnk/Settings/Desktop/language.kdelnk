@@ -10,4 +10,5 @@ Name=Language
 Name[de]=Sprache
 Name[fi]=Kieli
 SwallowTitle=Language
+SwallowTitle[de]=Sprache
 SwallowTitle[fi]=Kieli

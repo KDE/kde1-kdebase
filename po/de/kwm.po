@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-01-07 23:43+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -16,91 +16,91 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
 
-#: main.C:369
+#: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:376
+#: main.C:377
 msgid "Usage: "
 msgstr "Verwendung: "
 
-#: main.C:387
+#: main.C:388
 msgid "&Maximize"
 msgstr "&Maximieren"
 
-#: main.C:388
+#: main.C:389
 msgid "&Restore"
 msgstr "&Wiederherstellen"
 
-#: main.C:389
+#: main.C:390
 msgid "&Iconify"
 msgstr "Mi&nimieren"
 
-#: main.C:390
+#: main.C:391
 msgid "&DeIconify"
 msgstr "(&De)Iconisieren"
 
-#: main.C:391
+#: main.C:392
 msgid "&Sticky"
 msgstr "&Anheften an"
 
-#: main.C:392
+#: main.C:393
 msgid "&UnSticky"
 msgstr "Anhe&ften aus"
 
-#: main.C:393
+#: main.C:394
 msgid "Mo&ve"
 msgstr "&Verschieben"
 
-#: main.C:394
+#: main.C:395
 msgid "Resi&ze"
 msgstr "G&röße ändern"
 
-#: main.C:396
+#: main.C:397
 msgid "&To desktop"
 msgstr "A&uf Arbeitsplatz"
 
-#: main.C:398
+#: main.C:399
 msgid "&Onto current desktop"
 msgstr "Auf aktuellen Arbeitsplatz"
 
-#: main.C:448
+#: main.C:449
 msgid "One"
 msgstr "Eins"
 
-#: main.C:451
+#: main.C:452
 msgid "Two"
 msgstr "Zwei"
 
-#: main.C:454
+#: main.C:455
 msgid "Three"
 msgstr "Drei"
 
-#: main.C:457
+#: main.C:458
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:460
+#: main.C:461
 msgid "Five"
 msgstr "Fünf"
 
-#: main.C:463
+#: main.C:464
 msgid "Six"
 msgstr "Sechs"
 
-#: main.C:466
+#: main.C:467
 msgid "Seven"
 msgstr "Sieben"
 
-#: main.C:469
+#: main.C:470
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:742
+#: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
-#: main.C:973
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 

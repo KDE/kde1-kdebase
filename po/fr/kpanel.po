@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-08 23:50 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -13,88 +13,88 @@ msgstr ""
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
 
-#: kpanel.C:208
+#: kpanel.C:210
 msgid "Move"
 msgstr "Déplacer"
 
-#: kpanel.C:211
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Propriétés"
 
-#: kpanel.C:243
+#: kpanel.C:245
 msgid "Go!"
 msgstr "Go !"
 
-#: kpanel.C:245 tools.C:818
+#: kpanel.C:247 tools.C:804
 msgid "Where do you want to go tomorrow?"
 msgstr "Où voulez-vous aller demain ?"
 
-#: kpanel.C:318
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Information inexistante"
 
-#: kpanel.C:354 kpanel.C:774 kpanel.C:775
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Quitter"
 
-#: kpanel.C:362 kpanel.C:773
+#: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
 msgstr "Verrouiller l'écran"
 
-#: kpanel.C:371
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr "Cacher le panneau"
 
-#: kpanel.C:381
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:757
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Ajouter application"
 
-#: kpanel.C:759
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr "Ajouter une application ou un sous-menu au panneau"
 
-#: kpanel.C:760
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr "Ajouter la liste des fenêtres"
 
-#: kpanel.C:762
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
-#: kpanel.C:763
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Configurer"
 
-#: kpanel.C:765
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Configurer le panneau"
 
-#: kpanel.C:766
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Relancer"
 
-#: kpanel.C:768
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Relancer le panneau"
 
-#: kpanel.C:769 props.C:311
+#: kpanel.C:774 props.C:311
 msgid "Panel"
 msgstr "Panneau"
 
-#: kpanel.C:771
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-#: kpanel.C:1138 tools.C:613
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Commentaire inexistant"
 
-#: kpanel.C:1147 tools.C:827
+#: kpanel.C:1152 tools.C:813
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 

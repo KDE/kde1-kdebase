@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-11-17 13:02:08+0100\n"
 "From: didier Belot <dib@avo.fr>\n"
@@ -42,10 +42,6 @@ msgstr "&Ouvrir"
 msgid "&Add to archive"
 msgstr "&Ajouter à l'archive..."
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Supprimer"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&Propriétés"
@@ -57,10 +53,6 @@ msgstr "Ouvrir le &dossier conteneur"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "&Enregistrer la recherche"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "Dé&faire"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -85,10 +77,6 @@ msgstr "&Aide Kfind"
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "A propos de &Qt"
-
-#: kfindtop.cpp:188
-msgid "&About"
-msgstr "&A propos..."
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -283,10 +271,6 @@ msgstr "Impossible d'enregistrer les résultats!"
 msgid "KFind Results File"
 msgstr "Fichier de résultats KFind"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr "Information"
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Résultats enregistrés dans le fichier\n"
@@ -351,6 +335,18 @@ msgstr "Type d'archive inconnu!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Erreur en créant le processus enfant!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Supprimer"
+
+#~ msgid "&Undo"
+#~ msgstr "Dé&faire"
+
+#~ msgid "&About"
+#~ msgstr "&A propos..."
+
+#~ msgid "Information"
+#~ msgstr "Information"
 
 #~ msgid "Delete"
 #~ msgstr "Supprimer"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-12 12:21+CET\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -14,6 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:61
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr ""
+
+#: main.cpp:68
 msgid "Samba"
 msgstr "Samba"

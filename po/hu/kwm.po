@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-07 23:43+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,99 +21,99 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: hiba inicializálás közben; megszakítom a futást\n"
 
-#: main.C:369
+#: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:376
+#: main.C:377
 msgid "Usage: "
 msgstr ""
 
-#: main.C:387
+#: main.C:388
 #, fuzzy
 msgid "&Maximize"
 msgstr "(Ne) ma&ximalizál"
 
-#: main.C:388
+#: main.C:389
 #, fuzzy
 msgid "&Restore"
 msgstr "Mé&retez"
 
-#: main.C:389
-msgid "&Iconify"
-msgstr "&Ikonizál"
-
 #: main.C:390
-#, fuzzy
-msgid "&DeIconify"
+msgid "&Iconify"
 msgstr "&Ikonizál"
 
 #: main.C:391
 #, fuzzy
-msgid "&Sticky"
-msgstr "(Ne) &Ragaszt"
+msgid "&DeIconify"
+msgstr "&Ikonizál"
 
 #: main.C:392
 #, fuzzy
-msgid "&UnSticky"
+msgid "&Sticky"
 msgstr "(Ne) &Ragaszt"
 
 #: main.C:393
 #, fuzzy
+msgid "&UnSticky"
+msgstr "(Ne) &Ragaszt"
+
+#: main.C:394
+#, fuzzy
 msgid "Mo&ve"
 msgstr "&Mozgat"
 
-#: main.C:394
+#: main.C:395
 #, fuzzy
 msgid "Resi&ze"
 msgstr "Mé&retez"
 
-#: main.C:396
+#: main.C:397
 #, fuzzy
 msgid "&To desktop"
 msgstr "&Asztalra átrak"
 
-#: main.C:398
+#: main.C:399
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:448
+#: main.C:449
 msgid "One"
 msgstr "Egyes"
 
-#: main.C:451
+#: main.C:452
 msgid "Two"
 msgstr "Kettes"
 
-#: main.C:454
+#: main.C:455
 msgid "Three"
 msgstr "Hármas"
 
-#: main.C:457
+#: main.C:458
 msgid "Four"
 msgstr "Négyes"
 
-#: main.C:460
+#: main.C:461
 msgid "Five"
 msgstr "Ötös"
 
-#: main.C:463
+#: main.C:464
 msgid "Six"
 msgstr "Hatos"
 
-#: main.C:466
+#: main.C:467
 msgid "Seven"
 msgstr "Hetes"
 
-#: main.C:469
+#: main.C:470
 msgid "Eight"
 msgstr "Nyolcas"
 
-#: main.C:742
+#: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:973
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr ""
 

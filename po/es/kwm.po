@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-07 23:43+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,97 +26,97 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: error durante la inicialización; abortando\n"
 
-#: main.C:369
+#: main.C:370
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:376
+#: main.C:377
 msgid "Usage: "
 msgstr "Uso: "
 
-#: main.C:387
+#: main.C:388
 #, fuzzy
 msgid "&Maximize"
 msgstr "(Des) Ma&ximizar"
 
-#: main.C:388
+#: main.C:389
 #, fuzzy
 msgid "&Restore"
 msgstr "Cambiar tamaño"
 
-#: main.C:389
+#: main.C:390
 msgid "&Iconify"
 msgstr "&Iconizar"
 
-#: main.C:390
+#: main.C:391
 #, fuzzy
 msgid "&DeIconify"
 msgstr "&Deiconizar"
 
-#: main.C:391
+#: main.C:392
 msgid "&Sticky"
 msgstr "Pegar"
 
-#: main.C:392
+#: main.C:393
 msgid "&UnSticky"
 msgstr "Despegar"
 
-#: main.C:393
+#: main.C:394
 #, fuzzy
 msgid "Mo&ve"
 msgstr "&Mover"
 
-#: main.C:394
+#: main.C:395
 #, fuzzy
 msgid "Resi&ze"
 msgstr "Cambiar tamaño"
 
-#: main.C:396
+#: main.C:397
 #, fuzzy
 msgid "&To desktop"
 msgstr "Al Escritorio"
 
-#: main.C:398
+#: main.C:399
 msgid "&Onto current desktop"
 msgstr "Al escritorio actual"
 
-#: main.C:448
+#: main.C:449
 msgid "One"
 msgstr "Uno"
 
-#: main.C:451
+#: main.C:452
 msgid "Two"
 msgstr "Dos"
 
-#: main.C:454
+#: main.C:455
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:457
+#: main.C:458
 msgid "Four"
 msgstr "Cuatro"
 
-#: main.C:460
+#: main.C:461
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:463
+#: main.C:464
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:466
+#: main.C:467
 msgid "Seven"
 msgstr "Siete"
 
-#: main.C:469
+#: main.C:470
 msgid "Eight"
 msgstr "Ocho"
 
-#: main.C:742
+#: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:973
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr "*** Sin tareas ***"
 

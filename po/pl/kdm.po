@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1998-01-03 14:29+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -22,26 +22,26 @@ msgstr "Ponowne uruchomienie systemu"
 msgid "Exit kdm"
 msgstr "Zakoñcz kdm"
 
-#: kgreeter.cpp:137
+#: kgreeter.cpp:136
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:142
+#: kgreeter.cpp:141
 msgid "Password:"
 msgstr "Has³o:"
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:175
 msgid "Login failed!"
 msgstr "Brak dostêpu!"
 
-#: kgreeter.cpp:182
+#: kgreeter.cpp:181
 msgid "Session Type:"
 msgstr "Argumenty sesji:"
 
-#: kgreeter.cpp:198
+#: kgreeter.cpp:197
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kgreeter.cpp:214
+#: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr "Zamkniêcie..."

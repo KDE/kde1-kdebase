@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -42,10 +42,6 @@ msgstr "&Öppna"
 msgid "&Add to archive"
 msgstr "&Lägg till i arkiv"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Radera"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&Egenskaper"
@@ -57,10 +53,6 @@ msgstr "Öpnna inehållande &folder"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "&Spara sökning"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "&Ångra"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -85,10 +77,6 @@ msgstr "&Hjälp om KFind"
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "Om &QT"
-
-#: kfindtop.cpp:188
-msgid "&About"
-msgstr "&Om"
 
 # *********** Tooltips ************
 #: kfindtop.cpp:206
@@ -288,10 +276,6 @@ msgstr "Det gick inte att spara resultaten!"
 msgid "KFind Results File"
 msgstr "KFind resultatfil"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Resultaten sparades till fil\n"
@@ -357,6 +341,15 @@ msgstr "Kunde inte känna igen någon arkivtyp!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Ett fel uppstod vid skapandet av barn-process!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Radera"
+
+#~ msgid "&Undo"
+#~ msgstr "&Ångra"
+
+#~ msgid "&About"
+#~ msgstr "&Om"
 
 #~ msgid "Delete"
 #~ msgstr "Radera"

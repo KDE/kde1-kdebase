@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-01-02 19:41+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -26,7 +26,11 @@ msgstr "&Dekorace okna"
 msgid "&Titlebar"
 msgstr "&Titulek"
 
-#: main.cpp:91
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr ""
+
+#: main.cpp:98
 msgid "Window manager style"
 msgstr "Vlastnosti správce oken"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-09 22:34 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -21,7 +21,11 @@ msgstr "&Souris"
 msgid "&Keyboard"
 msgstr "&Clavier"
 
-#: main.cpp:85
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr ""
+
+#: main.cpp:92
 msgid "Input Devices Properties"
 msgstr "Propriétés des périphériques d'entrée"
 

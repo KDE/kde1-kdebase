@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel \n"
-"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"POT-Creation-Date: 1998-01-16 20:59+0100\n"
 "PO-Revision-Date: 1997-01-03 14:23+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,51 +14,55 @@ msgstr "&Panel"
 msgid "&Desktops"
 msgstr "&Desktopy"
 
-#: main.cpp:84
+#: main.cpp:65
+msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr ""
+
+#: main.cpp:94
 msgid "KPanel Configuration"
 msgstr "Konfiguracja KPanel"
 
-#: panel.cpp:57
+#: panel.cpp:58
 msgid "Location"
 msgstr "Lokacja"
 
-#: panel.cpp:64
+#: panel.cpp:66
 msgid "Taskbar"
 msgstr "Pasek zadañ"
 
-#: panel.cpp:65
+#: panel.cpp:67
 msgid "Hidden"
 msgstr "Ukryty"
 
-#: panel.cpp:68
+#: panel.cpp:70
 msgid "Top/Left"
 msgstr "Góra/Lewo"
 
-#: panel.cpp:88
+#: panel.cpp:91
 msgid "Tiny Style"
 msgstr "Ma³y"
 
-#: panel.cpp:89
+#: panel.cpp:92
 msgid "Normal Style"
 msgstr "¦redni"
 
-#: panel.cpp:90
+#: panel.cpp:93
 msgid "Large Style"
 msgstr "Du¿y"
 
-#: panel.cpp:98
+#: panel.cpp:101
 msgid "Menu Tooltips"
 msgstr "Podpowiedzi menu"
 
-#: panel.cpp:100
+#: panel.cpp:103
 msgid "Personal First"
 msgstr "Wpierw prywatne"
 
-#: panel.cpp:102
+#: panel.cpp:105
 msgid "Auto Hide Panel"
 msgstr "Ukrywaj panel"
 
-#: panel.cpp:104
+#: panel.cpp:107
 msgid "Auto Hide Taskbar"
 msgstr "Ukrywaj pasek zadañ"
 

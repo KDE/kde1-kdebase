@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,39 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:62
+#: main.cpp:61
 msgid "KDE Font Manager"
 msgstr "Administrador de Fuentes del KDE"
 
-#: main.cpp:75
+#: main.cpp:74
 msgid "KDE Fonts"
 msgstr "Fuentes del KDE"
 
-#: main.cpp:76
+#: main.cpp:75
 msgid "Font Explorer"
 msgstr "Explorador de Fuentes"
 
-#: main.cpp:77
+#: main.cpp:76
 msgid "Raw X11 Font List"
 msgstr "Lista de Fuentes de X11"
 
-#: kfontmanager.cpp:61
+#: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
 msgstr "Fuentes disponibles de X11"
 
-#: kfontmanager.cpp:68
+#: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
 msgstr "Fuentes disponibles para el KDE"
 
-#: kfontmanager.cpp:87
+#: kfontmanager.cpp:86
 msgid "The KDE Font Manager Example String"
 msgstr "El String de Ejemplo del Administrador de Fuentes del KDE"
 
-#: kfontlist.cpp:64 kfontmanager.cpp:109
+#: kfontlist.cpp:63 kfontmanager.cpp:108
 msgid "About kfontmanager"
 msgstr "Acerca de kfontmanager"
 
-#: kfontmanager.cpp:109
+#: kfontmanager.cpp:108
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -58,7 +58,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:209
+#: kfontmanager.cpp:208
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -66,7 +66,7 @@ msgstr ""
 "La variable de entorno HOME\n"
 "no esta configurada\n"
 
-#: kfontmanager.cpp:286
+#: kfontmanager.cpp:285
 #, fuzzy
 msgid ""
 "Can not create:\n"
@@ -75,7 +75,7 @@ msgstr ""
 "No se pudo crear:\n"
 " ~/.kde/config/kdefonts\n"
 
-#: kfontmanager.cpp:291
+#: kfontmanager.cpp:290
 #, fuzzy
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
@@ -86,7 +86,7 @@ msgstr ""
 "no se puede escribir en él\n"
 "No se puede salvar la lista de fuentes del KDE."
 
-#: kfontlist.cpp:64
+#: kfontlist.cpp:63
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

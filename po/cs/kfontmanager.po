@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:07+0100\n"
 "PO-Revision-Date: 1998-01-08 12:50 MET\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,39 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:62
+#: main.cpp:61
 msgid "KDE Font Manager"
 msgstr "Správce znakových sad KDE"
 
-#: main.cpp:75
+#: main.cpp:74
 msgid "KDE Fonts"
 msgstr "Znakové sady KDE"
 
-#: main.cpp:76
+#: main.cpp:75
 msgid "Font Explorer"
 msgstr "Prùzkumník znakových sad"
 
-#: main.cpp:77
+#: main.cpp:76
 msgid "Raw X11 Font List"
 msgstr "Seznam znakových sad"
 
-#: kfontmanager.cpp:61
+#: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
 msgstr "Dostupné znakové sady"
 
-#: kfontmanager.cpp:68
+#: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
 msgstr "Sady dostupné pro KDE"
 
-#: kfontmanager.cpp:87
+#: kfontmanager.cpp:86
 msgid "The KDE Font Manager Example String"
 msgstr "Vzorový text Správce znakových sad"
 
-#: kfontlist.cpp:64 kfontmanager.cpp:109
+#: kfontlist.cpp:63 kfontmanager.cpp:108
 msgid "About kfontmanager"
 msgstr "Informace o kfontmanageru"
 
-#: kfontmanager.cpp:109
+#: kfontmanager.cpp:108
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -58,13 +58,13 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:209
+#: kfontmanager.cpp:208
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr "Není nastavená promìnná prostøedí HOME\n"
 
-#: kfontmanager.cpp:286
+#: kfontmanager.cpp:285
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -72,7 +72,7 @@ msgstr ""
 "Nemohu vytvoøit:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:291
+#: kfontmanager.cpp:290
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -82,7 +82,7 @@ msgstr ""
 "ale nelze do nìj zapisovat\n"
 "Nemohu ulo¾it seznam znakových sad pro KDE."
 
-#: kfontlist.cpp:64
+#: kfontlist.cpp:63
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

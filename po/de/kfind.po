@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-10-25 17:54 MET DST\n"
 "Last-Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
 
@@ -36,10 +36,6 @@ msgstr "Ö&ffnen"
 msgid "&Add to archive"
 msgstr "Zum &Archiv hinzufügen"
 
-#: kfindtop.cpp:141
-msgid "&Delete"
-msgstr "&Löschen"
-
 #: kfindtop.cpp:143
 msgid "&Properties"
 msgstr "&Eigenschaften"
@@ -51,10 +47,6 @@ msgstr "Öffnen des entsprechenden &Verzeichnisses"
 #: kfindtop.cpp:149
 msgid "&Save Search"
 msgstr "&Suchergebnisse speichern"
-
-#: kfindtop.cpp:158
-msgid "&Undo"
-msgstr "&Rückgängig"
 
 #: kfindtop.cpp:161
 msgid "&Cut"
@@ -79,10 +71,6 @@ msgstr "Kfind-&Hilfe"
 #: kfindtop.cpp:186
 msgid "About &Qt"
 msgstr "Über &Qt"
-
-#: kfindtop.cpp:188
-msgid "&About"
-msgstr "Ü&ber..."
 
 #: kfindtop.cpp:206
 msgid "Start Search"
@@ -277,10 +265,6 @@ msgstr "Es konnte nicht gesichert werden!"
 msgid "KFind Results File"
 msgstr "KFind Ergebnisdatei"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr "Information"
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "Ergebnisse wurden gespeichert unter\n"
@@ -345,3 +329,15 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
+
+#~ msgid "&Delete"
+#~ msgstr "&Löschen"
+
+#~ msgid "&Undo"
+#~ msgstr "&Rückgängig"
+
+#~ msgid "&About"
+#~ msgstr "Ü&ber..."
+
+#~ msgid "Information"
+#~ msgstr "Information"

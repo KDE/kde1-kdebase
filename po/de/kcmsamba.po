@@ -1,10 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: main.cpp:61
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "Benutzung: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
 msgid "Samba"
 msgstr "Samba"

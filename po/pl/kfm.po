@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-01-10 12:48+0100\n"
+"POT-Creation-Date: 1998-01-16 22:07+0100\n"
 "PO-Revision-Date: 1998-01-13 14:00+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -10,7 +10,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:909 kbind.cpp:921 kbind.cpp:931 kfmgui.cpp:268 kfmgui.cpp:931
+#: kbind.cpp:914 kbind.cpp:926 kbind.cpp:936 kfmgui.cpp:268 kfmgui.cpp:931
 msgid "Folder"
 msgstr "Folder"
 
@@ -187,10 +187,10 @@ msgstr "Stop"
 msgid "Could not load icon\n"
 msgstr "Nie mogê za³adowaæ ikony\n"
 
-#: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1504 kbind.cpp:1512
-#: kbind.cpp:1530 kbind.cpp:1547 kbind.cpp:1608 kbind.cpp:1620 kbind.cpp:1647
-#: kbind.cpp:1662 kbind.cpp:1682 kbind.cpp:1694 kbind.cpp:1710 kbind.cpp:1833
-#: kbind.cpp:1845 kbind.cpp:1890 kbind.cpp:1932 kfmexec.cpp:59 kfmexec.cpp:93
+#: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1509 kbind.cpp:1517
+#: kbind.cpp:1535 kbind.cpp:1552 kbind.cpp:1613 kbind.cpp:1625 kbind.cpp:1652
+#: kbind.cpp:1667 kbind.cpp:1687 kbind.cpp:1699 kbind.cpp:1715 kbind.cpp:1838
+#: kbind.cpp:1850 kbind.cpp:1895 kbind.cpp:1937 kfmexec.cpp:59 kfmexec.cpp:93
 #: kfmexec/main.cpp:47 kfmgui.cpp:573 kfmgui.cpp:699 kfmjob.cpp:181
 #: kfmman.cpp:268 kfmman.cpp:871 kfmman.cpp:1038 kfmman.cpp:1064
 #: kfmprops.cpp:367 kfmprops.cpp:622 kfmprops.cpp:648 kfmprops.cpp:763
@@ -361,36 +361,36 @@ msgstr "nie zawiera informacji MimeType=..."
 msgid "No mime types installed!"
 msgstr "Nie zainstalowano typów mime!"
 
-#: kbind.cpp:429 kbind.cpp:1164
+#: kbind.cpp:429 kbind.cpp:1169
 msgid "Could not find mime type\n"
 msgstr "Nie mogê znale¼æ typu mime\n"
 
-#: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1868 kbind.cpp:1869 kbind.cpp:1881
-#: kbind.cpp:1883
+#: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1873 kbind.cpp:1874 kbind.cpp:1886
+#: kbind.cpp:1888
 msgid "Mount"
 msgstr "Zamontuj"
 
-#: kbind.cpp:719 kbind.cpp:1859
+#: kbind.cpp:719 kbind.cpp:1864
 msgid "Unmount"
 msgstr "Odmontuj"
 
-#: kbind.cpp:1163
+#: kbind.cpp:1168
 msgid "ERROR"
 msgstr "B£¡D"
 
-#: kbind.cpp:1164
+#: kbind.cpp:1169
 msgid "in "
 msgstr "w "
 
-#: kbind.cpp:1306 kbind.cpp:1392
+#: kbind.cpp:1311 kbind.cpp:1397
 msgid "Could not execute program\n"
 msgstr "Nie mogê uruchomiæ polecenia\n"
 
-#: kbind.cpp:1503
+#: kbind.cpp:1508
 msgid "Could not find binding"
 msgstr "Nie mogê znale¼æ skojarzenia"
 
-#: kbind.cpp:1513
+#: kbind.cpp:1518
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -398,11 +398,11 @@ msgstr ""
 "To jest dokument!\n"
 "Nie aplikacja"
 
-#: kbind.cpp:1531 kbind.cpp:1548
+#: kbind.cpp:1536 kbind.cpp:1553
 msgid "Can only start executables on local disks\n"
 msgstr "Uruchomiæ program mo¿na tylko z dysku lokalnego\n"
 
-#: kbind.cpp:1609 kbind.cpp:1683 kbind.cpp:1834
+#: kbind.cpp:1614 kbind.cpp:1688 kbind.cpp:1839
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -410,7 +410,7 @@ msgstr ""
 "Z plikami *.kdelnk mo¿na pracowaæ\n"
 "tylko na dysku lokalnym"
 
-#: kbind.cpp:1619
+#: kbind.cpp:1624
 #, c-format
 msgid ""
 "Could not access\n"
@@ -419,19 +419,19 @@ msgstr ""
 "Brak dostêpu\n"
 "%s"
 
-#: kbind.cpp:1648
+#: kbind.cpp:1653
 msgid "The \"Link=....\" entry is empty"
 msgstr "Linia \"Links=....\" w pliku konfiguracyjnym jest pusta"
 
-#: kbind.cpp:1663
+#: kbind.cpp:1668
 msgid "The config file has no \"Type=...\" line"
 msgstr "Plik konfiguracyjny nie ma linii \"Type=...\""
 
-#: kbind.cpp:1693 kbind.cpp:1844
+#: kbind.cpp:1698 kbind.cpp:1849
 msgid "Could not access"
 msgstr "Nie ma dostêpu"
 
-#: kbind.cpp:1711
+#: kbind.cpp:1716
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -443,15 +443,15 @@ msgstr ""
 "Wyedytuj w³a¶ciwo¶ci\n"
 "aby rozwi±zaæ ten problem"
 
-#: kbind.cpp:1800
+#: kbind.cpp:1805
 msgid "ERROR: No Terminal Setting"
 msgstr "B£¡D: Brak ustawieñ terminala"
 
-#: kbind.cpp:1891
+#: kbind.cpp:1896
 msgid "No mount point in *.kdelnk file"
 msgstr "Brak miejsca podmontowania w pliku *.kdelnk"
 
-#: kbind.cpp:1931
+#: kbind.cpp:1936
 msgid "Unknown binding"
 msgstr "Nieznane skojarzenie"
 

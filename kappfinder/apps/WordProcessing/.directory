@@ -3,6 +3,7 @@
 Name=Word Processing
 Name[de]=Textverarbeitung
 Name[pl]=Przetwarzanie tekstów
+Name[fi]=Tekstinkäsittely
 MiniIcon=
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=emacs.xpm

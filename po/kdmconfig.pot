@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,17 +34,22 @@ msgstr ""
 msgid "&Sessions"
 msgstr ""
 
-#: main.cpp:119
+#: main.cpp:118
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+
+#: main.cpp:125
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
 
-#: main.cpp:121
+#: main.cpp:127
 msgid "Missing privileges"
 msgstr ""
 
-#: main.cpp:158
+#: main.cpp:164
 msgid "KDM Configuration"
 msgstr ""
 
@@ -165,10 +170,6 @@ msgstr ""
 
 #: kdm-bgnd.cpp:118
 msgid "Scaled"
-msgstr ""
-
-#: kdm-bgnd.cpp:124
-msgid "Browse..."
 msgstr ""
 
 #: kdm-users.cpp:49

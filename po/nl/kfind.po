@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -44,11 +44,6 @@ msgstr "&Instellingen"
 msgid "&Add to archive"
 msgstr "Voeg aan archief toe"
 
-#: kfindtop.cpp:141
-#, fuzzy
-msgid "&Delete"
-msgstr "Verwijderen"
-
 #: kfindtop.cpp:143
 #, fuzzy
 msgid "&Properties"
@@ -63,11 +58,6 @@ msgstr "Open de omvattende map"
 #, fuzzy
 msgid "&Save Search"
 msgstr "Bewaar zoekresultaten"
-
-#: kfindtop.cpp:158
-#, fuzzy
-msgid "&Undo"
-msgstr "Ongedaan maken"
 
 #: kfindtop.cpp:161
 #, fuzzy
@@ -96,10 +86,6 @@ msgstr "Kfind help"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
-msgstr ""
-
-#: kfindtop.cpp:188
-msgid "&About"
 msgstr ""
 
 # *********** Tooltips ************
@@ -299,10 +285,6 @@ msgstr "Het was niet mogelijk de resultaten op te slaan!"
 msgid "KFind Results File"
 msgstr "KFind resultatenbestand"
 
-#: kfwin.cpp:179
-msgid "Information"
-msgstr ""
-
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
 msgstr "De resultaten zijn in het bestand bewaard\n"
@@ -370,6 +352,14 @@ msgstr "Het archieftype kon niet herkend worden"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Fout tijdens het creëren van een kindproces!"
+
+#, fuzzy
+#~ msgid "&Delete"
+#~ msgstr "Verwijderen"
+
+#, fuzzy
+#~ msgid "&Undo"
+#~ msgstr "Ongedaan maken"
 
 #~ msgid "Delete"
 #~ msgstr "Verwijderen"

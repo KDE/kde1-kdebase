@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -24,27 +24,27 @@ msgstr "Ugasi i restartaj"
 msgid "Exit kdm"
 msgstr "Zavr¹i i odlogiraj se"
 
-#: kgreeter.cpp:137
+#: kgreeter.cpp:136
 msgid "Login:"
 msgstr "Login:"
 
-#: kgreeter.cpp:142
+#: kgreeter.cpp:141
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:175
 msgid "Login failed!"
 msgstr "Login netoèan!"
 
-#: kgreeter.cpp:182
+#: kgreeter.cpp:181
 msgid "Session Type:"
 msgstr "Vrst rasporeda"
 
-#: kgreeter.cpp:198
+#: kgreeter.cpp:197
 msgid "Go!"
 msgstr "Idi!"
 
-#: kgreeter.cpp:214
+#: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr "Gasim se..."
 

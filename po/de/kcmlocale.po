@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlocale\n"
+"POT-Creation-Date: 1998-01-16 21:10+0100\n"
+"PO-Revision-Date: 1998-01-16 21:08+0100\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Lokales"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "Benutzung: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Lokale Einstellungen"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Sprache"
+
+#: locale.cpp:43
+msgid "First"
+msgstr "Erste"
+
+#: locale.cpp:49
+msgid "Second"
+msgstr "Zweite"
+
+#: locale.cpp:55
+msgid "Third"
+msgstr "Dritte"
+
+#: locale.cpp:89
+msgid "without name!"
+msgstr "ohne Namen!"
+
+#: locale.cpp:154
+msgid "Applying language settings"
+msgstr "Anwendung der Sprachen-Einstellung"
+
+#: locale.cpp:155
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Die Sprache wurde nur für neu zu startende Anwendungen geändert.\n"
+"Um die Sprache für alle Programme zu ändern, müssen Sie sich ausloggen."

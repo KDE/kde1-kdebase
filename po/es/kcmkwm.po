@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-02 19:41+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,11 @@ msgstr "&Botones"
 msgid "&Titlebar"
 msgstr "Barra de &Títulos"
 
-#: main.cpp:91
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr ""
+
+#: main.cpp:98
 msgid "Window manager style"
 msgstr "Estilo del gestor de ventanas"
 

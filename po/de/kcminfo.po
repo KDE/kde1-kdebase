@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-12-29 15:28+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -13,7 +13,11 @@ msgstr "&Speicher"
 msgid "&Processor"
 msgstr "&Prozessor"
 
-#: main.cpp:66
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "Benutzung: kcminfo [-init | {processor, memory}]\n"
+
+#: main.cpp:74
 msgid "System Information"
 msgstr "Informationen über das System "
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-08 23:46+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -10,7 +10,11 @@ msgstr ""
 msgid "&Bell"
 msgstr "&Brzêczyk"
 
-#: main.cpp:75
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr ""
+
+#: main.cpp:81
 msgid "Bell settings"
 msgstr "Ustawienia brzêczyka"
 

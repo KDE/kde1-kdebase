@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMINPUT\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,11 @@ msgstr "&Hiiri"
 msgid "&Keyboard"
 msgstr "&Näppäimistö"
 
-#: main.cpp:85
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr ""
+
+#: main.cpp:92
 msgid "Input Devices Properties"
 msgstr "Syöttölaitteiden ominaisuudet"
 

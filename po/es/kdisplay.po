@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,10 +57,6 @@ msgstr "Centrado"
 #: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Escalado"
-
-#: backgnd.cpp:345
-msgid "Browse..."
-msgstr "Examinar..."
 
 #: backgnd.cpp:489
 #, fuzzy
@@ -278,10 +274,17 @@ msgstr "Bloqueo de Pantalla"
 msgid "&Style"
 msgstr ""
 
-#: main.cpp:105
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+
+#: main.cpp:112
 #, fuzzy
 msgid "Display settings"
 msgstr "Configuración de la pantalla"
+
+#~ msgid "Browse..."
+#~ msgstr "Examinar..."
 
 #~ msgid "Italic"
 #~ msgstr "Cursiva"

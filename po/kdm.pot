@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,26 +30,26 @@ msgstr ""
 msgid "Exit kdm"
 msgstr ""
 
-#: kgreeter.cpp:137
+#: kgreeter.cpp:136
 msgid "Login:"
 msgstr ""
 
-#: kgreeter.cpp:142
+#: kgreeter.cpp:141
 msgid "Password:"
 msgstr ""
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:175
 msgid "Login failed!"
 msgstr ""
 
-#: kgreeter.cpp:182
+#: kgreeter.cpp:181
 msgid "Session Type:"
 msgstr ""
 
-#: kgreeter.cpp:198
+#: kgreeter.cpp:197
 msgid "Go!"
 msgstr ""
 
-#: kgreeter.cpp:214
+#: kgreeter.cpp:213
 msgid "Shutdown..."
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-03 14:27+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -49,10 +49,6 @@ msgstr "Na ¶rodku"
 #: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Skalowana"
-
-#: backgnd.cpp:345
-msgid "Browse..."
-msgstr "Przegl±daj..."
 
 #: backgnd.cpp:489
 msgid "Default"
@@ -266,6 +262,13 @@ msgstr "&Wygaszacz"
 msgid "&Style"
 msgstr "&Styl"
 
-#: main.cpp:105
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+
+#: main.cpp:112
 msgid "Display settings"
 msgstr "Ustawienia wy¶wietlania"
+
+#~ msgid "Browse..."
+#~ msgstr "Przegl±daj..."

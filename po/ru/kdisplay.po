@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -56,10 +56,6 @@ msgstr "В центре"
 #: backgnd.cpp:339
 msgid "Scaled"
 msgstr "Изменять размер"
-
-#: backgnd.cpp:345
-msgid "Browse..."
-msgstr "Просмотреть..."
 
 #
 #: backgnd.cpp:489
@@ -277,10 +273,17 @@ msgstr "Хранитель экрана"
 msgid "&Style"
 msgstr "Стиль"
 
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+
 #
-#: main.cpp:105
+#: main.cpp:112
 msgid "Display settings"
 msgstr "Настройка дисплея"
+
+#~ msgid "Browse..."
+#~ msgstr "Просмотреть..."
 
 #~ msgid "Italic"
 #~ msgstr "Наклонный"

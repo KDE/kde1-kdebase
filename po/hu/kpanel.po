@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -13,90 +13,90 @@ msgstr ""
 "Content-Type: text/plain; charset=Latin2\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: kpanel.C:208
+#: kpanel.C:210
 msgid "Move"
 msgstr "Áthelyez"
 
-#: kpanel.C:211
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: kpanel.C:243
+#: kpanel.C:245
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:245 tools.C:818
+#: kpanel.C:247 tools.C:804
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:318
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:354 kpanel.C:774 kpanel.C:775
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Kilép"
 
-#: kpanel.C:362 kpanel.C:773
+#: kpanel.C:367 kpanel.C:778
 #, fuzzy
 msgid "Lock screen"
 msgstr "Képernyõzár"
 
-#: kpanel.C:371
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:381
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:757
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Program hozzáadása"
 
-#: kpanel.C:759
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr ""
 
-#: kpanel.C:760
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr ""
 
-#: kpanel.C:762
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 
-#: kpanel.C:763
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Konfigurálás"
 
-#: kpanel.C:765
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Panel konfigurálása"
 
-#: kpanel.C:766
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Újraindítás"
 
-#: kpanel.C:768
+#: kpanel.C:773
 #, fuzzy
 msgid "Restart panel"
 msgstr "Újraindítás"
 
-#: kpanel.C:769 props.C:311
+#: kpanel.C:774 props.C:311
 msgid "Panel"
 msgstr ""
 
-#: kpanel.C:771
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Képernyõzár"
 
-#: kpanel.C:1138 tools.C:613
+#: kpanel.C:1143 tools.C:621
 #, fuzzy
 msgid "No comment available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:1147 tools.C:827
+#: kpanel.C:1152 tools.C:813
 msgid "Windowlist"
 msgstr ""
 

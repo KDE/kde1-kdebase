@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-09 20:19+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgid "Color:"
 msgstr "Couleur:"
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
-#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1020 polygon.cpp:101
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
 #: rock.cpp:550 slip.cpp:366 swarm.cpp:330
 msgid "Speed:"
 msgstr "Vitesse:"
@@ -415,19 +415,19 @@ msgstr "GL ne peus pas calculer avec une \"root visual\"\n"
 msgid "Morph3D (GL)"
 msgstr "Morph3D (GL)"
 
-#: morph3d.cpp:1014
+#: morph3d.cpp:1015
 msgid "Setup KMorph3d"
 msgstr "Install KMorph3d"
 
-#: morph3d.cpp:1030
+#: morph3d.cpp:1031
 msgid "Object Type:"
 msgstr "Type d'objet:"
 
-#: morph3d.cpp:1118
+#: morph3d.cpp:1120
 msgid "About Morph3D"
 msgstr "Au sujet de Morph3D"
 
-#: morph3d.cpp:1119
+#: morph3d.cpp:1121
 msgid ""
 "Morph3D\n"
 "\n"
