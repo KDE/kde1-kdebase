@@ -63,8 +63,4 @@ void debugC( const char *msg , ...);
 #define DEFAULT_TERMINAL "konsole"
 
 // Default UserAgent string (e.g. Konqueror/1.1)
-#ifdef I_WANT_TO_USE_THE_OLD_STYLE_KFM_USER_AGENT_STRING_WHICH_DOES_NOT_WORK_WITH_GCC_AND_PEDANTIC_
-#define DEFAULT_USERAGENT_STRING QString("Konqueror/")+('0'+KDE_VERSION_MAJOR)+"."+('0'+KDE_VERSION_MINOR)
-#else
 #define DEFAULT_USERAGENT_STRING QString("Konqueror/")+KDE_VERSION_STRING
-#endif
