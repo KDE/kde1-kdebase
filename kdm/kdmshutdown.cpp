@@ -310,6 +310,7 @@ KDMShutdown::bye_bye()
 {
      if( cur_action) {
 	  if( fork() == 0) {
+	       sleep(1);
 	       system( cur_action);
 	       exit(0);
 	  } else {
