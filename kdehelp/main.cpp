@@ -115,6 +115,10 @@ int main(int argc, char *argv[])
 			// skip caption
 			if ( strcasecmp( argv[i], "-caption" ) == 0 )
 				i++;
+			if ( strcasecmp( argv[i], "-icon" ) == 0 )
+				i++;
+			if ( strcasecmp( argv[i], "-miniicon" ) == 0 )
+				i++;
 			continue;
 		}
 
