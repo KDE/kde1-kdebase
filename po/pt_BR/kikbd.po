@@ -86,7 +86,7 @@ msgid ""
 "of configuration program."
 msgstr ""
 "Símbolo \"%s\" não encontrado.\n"
-"Talvez seus códigos X padrões nãocoincidam.\n"
+"Talvez seus códigos X padrões não coincidam.\n"
 "Você pode pré-selecionar códigos X na seção 'Avançada.'"
 
 #: keymap.cpp:233

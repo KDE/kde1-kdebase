@@ -148,7 +148,7 @@ msgstr "Aplicação"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
-msgstr "Engolir"
+msgstr "Embutir"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
@@ -208,7 +208,7 @@ msgstr "Padrão Binário:"
 
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "Aplicação para engolir:"
+msgstr "Aplicação para embutir:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"

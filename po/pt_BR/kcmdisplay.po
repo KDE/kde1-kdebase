@@ -499,7 +499,7 @@ msgstr "Janela ativa"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 msgid "Selected text"
-msgstr "Texto seleccionado"
+msgstr "Texto selecionado"
 
 #: widgetcanvas.cpp:212
 msgid "New"

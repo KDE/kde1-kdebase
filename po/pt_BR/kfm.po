@@ -772,7 +772,7 @@ msgstr "&Navegar..."
 
 #: kfmprops.cpp:723
 msgid "Swallowing on panel"
-msgstr "Engolir no painel"
+msgstr "Embutir no painel"
 
 #: kfmprops.cpp:750
 msgid "Window Title"
