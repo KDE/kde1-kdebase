@@ -772,7 +772,11 @@ void kPanel::addButton(PMenuItem* pmi)
 
 
 void kPanel::delete_button(QWidget* button){
-  int i;
+  int i,tmp_width,tmp_height;
+
+  tmp_width  = button->width();
+  tmp_height = button->height();
+
   for (i=0; i<nbuttons && entries[i].button!=button; i++);
   if (i<nbuttons && button){
     if (entries[i].drop_zone)
@@ -780,9 +784,15 @@ void kPanel::delete_button(QWidget* button){
     if (entries[i].swallowed)
       KWM::close(entries[i].swallowed);
     nbuttons--;
-    for (;i<nbuttons;i++)
-      entries[i] = entries[i+1];
+    for (;i<nbuttons;i++){
+       entries[i] = entries[i+1];
+       if (orientation == vertical)
+          entries[i].button->move(entries[i].button->x(), entries[i].button->y() - tmp_height );
+       else 
+          entries[i].button->move(entries[i].button->x() - tmp_width, entries[i].button->y());
+    }
     delete button;
+
     if (kde_button == button)
       kde_button = 0;
   }
@@ -801,7 +811,7 @@ void kPanel::cleanup(){
 	 KWM::close(entries[i].swallowed);
 	 XFlush(qt_xdisplay());
        }
-
+     QApplication::syncX();
 }
 
 void kPanel::showSystem(){

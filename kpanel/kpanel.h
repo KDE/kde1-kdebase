@@ -319,6 +319,8 @@ private:
 
   QWidget *moving_button;
   QPoint moving_button_offset;
+// tu
+  QPoint moving_button_oldpos;
 
   QWidget *wait_cursor_button;
   QLineEdit *edit_button; // used for the editable desktop buttons
@@ -382,6 +384,7 @@ private:
   void reposition(int l = 0);
   void find_a_free_place();
   void check_button_bounds(QWidget* button);
+  void reflow_buttons(QWidget* button);
 
   void load_and_set_some_fonts();
 

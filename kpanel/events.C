@@ -110,8 +110,16 @@ void kPanel::hideTaskbar(){
 
 
 void kPanel::kwmInit(){
-  if (taskbar_buttons.count()>0)
-    restart();
+    if (taskbar_buttons.count()>0) {
+	while (taskbar_buttons.first() ) {
+	    myTaskButton* b = taskbar_buttons.first();
+	    taskbar_buttons.removeRef(b);
+	    taskbar->remove(b);
+	    delete b;
+	}
+	layoutTaskbar();
+	doGeometry();
+    }
 }
 
 
@@ -615,6 +623,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
       }
       if (moving_button != panel_button_frame_standalone &&
 	  moving_button != panel_button_frame_standalone2){
+   reflow_buttons(moving_button);
 	moving_button = 0;
 	reposition();
 	writeOutConfiguration();
@@ -647,6 +656,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     }
 
     if (moving_button){
+      if (moving_button_oldpos == QPoint(0,0)) moving_button_oldpos = QPoint(moving_button->x(),moving_button->y());
       if (moving_button == panel_button_frame_standalone
 	  || moving_button == panel_button_frame_standalone2){
 	moving_button->move(QCursor::pos() - moving_button_offset);

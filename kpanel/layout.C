@@ -298,3 +298,70 @@ void kPanel::check_button_bounds(QWidget* button){
 	button->move(bound_bottom_right, button->y());
   }
 }
+
+void kPanel::reflow_buttons(QWidget* moved_button){
+// 06.01.1999 thomas.unger@mannheim-netz.de (tu) 
+
+    int my_pos;
+    for(my_pos=0 ; my_pos<nbuttons && moved_button != entries[my_pos].button ; my_pos++);
+
+    reposition(); // let existing code make life easier (check for control-panel ...)
+    // ok ... now check if moving_button was really moved  to another pos ...
+    if ( ((moving_button_oldpos.x() - moved_button->x() > 0) || (moving_button_oldpos.y() - moved_button->y() > 0))
+         && (my_pos < nbuttons ) ) {
+
+       // well, the panel is "visually divided" into two parts by the control-panel.
+       // So I think we have to treat the buttons located on these parts separately. 
+
+       int tmp_nbuttons = nbuttons; // default: touch all buttons
+
+       if (orientation == vertical){
+          if (entries[my_pos].button->y() < bound_top_left){
+             // determine which buttons are below control-panel
+             for(tmp_nbuttons=my_pos ; tmp_nbuttons < nbuttons && entries[tmp_nbuttons].button->y()< bound_top_left ; tmp_nbuttons++);
+          }
+       }
+       else {
+          if ( entries[my_pos].button->x() < bound_top_left ){
+             for(tmp_nbuttons=my_pos ; tmp_nbuttons < nbuttons && entries[tmp_nbuttons].button->x()< bound_top_left ; tmp_nbuttons++);
+         }
+      }
+
+       my_pos++; // only buttons right/below moving_button are to be adjusted...
+
+        // calculate delta between moving_button-oldpos and the next button to the right / below
+       int mydelta_x =  moving_button_oldpos.x() + moved_button->width()
+    	 - entries[my_pos-1].button->x() - entries[my_pos-1].button->width();
+
+       int mydelta_y =  moving_button_oldpos.y() + moved_button->height() 
+    	 - entries[my_pos-1].button->y() - entries[my_pos-1].button->height();
+
+        // now adjust buttons-pos right from moving_button
+       for( ; my_pos < tmp_nbuttons  ; my_pos++){
+            if (orientation == vertical){
+                // will mydelta_? position the button on the control-panel ?
+                if ((bound_top_left - entries[my_pos].button->height() < entries[my_pos].button->y()-mydelta_y) 
+                    && (bound_bottom_right > entries[my_pos].button->y()-mydelta_y)) {
+                    // move right/below to control-panel
+                    entries[my_pos].button->move( entries[my_pos].button->x(), bound_bottom_right) ;
+                }
+                else { // move with calculated delta
+                    entries[my_pos].button->move(entries[my_pos].button->x(), entries[my_pos].button->y() - mydelta_y );
+                }
+            }
+            else{ 
+                if (( bound_top_left - entries[my_pos].button->width() < entries[my_pos].button->x()-mydelta_x) 
+                    && (bound_bottom_right > entries[my_pos].button->x()-mydelta_x)) {
+                    // move right/below to control-panel
+                    entries[my_pos].button->move(bound_bottom_right ,entries[my_pos].button->y() );
+                }
+                else { // move with calculated delta
+                    entries[my_pos].button->move(entries[my_pos].button->x() - mydelta_x, entries[my_pos].button->y());
+                }
+            }
+        }
+    }
+    // resetting moving_button_oldpos ...
+    moving_button_oldpos = QPoint(0,0);
+}
+
