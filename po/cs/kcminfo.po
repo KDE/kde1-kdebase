@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1998-12-14 10:02+01:00\n"
+"PO-Revision-Date: 1999-02-04 09:08+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "  rozli¹ení                 : %dx%d bodù na palec\n"
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr "  hloubka (%d)              :"
+msgstr "  hloubka (%d)               : "
 
 #: info.cpp:85
 #, c-format
