@@ -2,6 +2,7 @@
  * kbgndwm.h.  Part of the KDE Project.
  *
  * Copyright (C) 1997 Martin Jones
+ *               1998 Matej Koss
  *
  */
 
@@ -9,8 +10,6 @@
 #define __KBGNDWM_H__
 
 //----------------------------------------------------------------------------
-
-#include <qapp.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -28,26 +27,52 @@
 
 //----------------------------------------------------------------------------
 
-class KBGndManager: public QObject
+
+class KBGndManager: public QWidget
 {
-    Q_OBJECT
+
+  Q_OBJECT
+
 public:
-    KBGndManager( KWMModuleApplication * );
+  KBGndManager( KWMModuleApplication * );
+
 protected:
-    void applyDesktop( int d );
-    void cacheDesktop();
-    void readSettings();
+  void applyDesktop( int d );
+  void cacheDesktop();
+  void readSettings();
+
+  void paintEvent(QPaintEvent *e);
 
 public slots:
-    void desktopChange( int );
-    void commandReceived( QString );
+  void desktopChange( int );
+  void commandReceived( QString );
+  void toggleOneDesktop();
+
+  void dock();
+  void undock();
+  void timeclick();
+
+private slots:
+  void mousePressEvent(QMouseEvent *e);
+  void settings();
 
 private:
-    KWMModuleApplication* kwmmapp;
+  KWMModuleApplication* kwmmapp;
+  QPopupMenu *popup_m;
+  QPixmap pixmap;
 
-    KBackground *desktops;
-    int current;
+  KBackground *desktops;
+  int current;
+
+  bool oneDesktopMode;
+  int desktop;
+
+  bool docked;
+
+  int o_id;
 };
+
+
 
 //----------------------------------------------------------------------------
 

@@ -2,6 +2,7 @@
  * bg.h.  Part of the KDE Project.
  *
  * Copyright (C) 1997 Martin Jones
+ *               1998 Matej Koss
  *
  */
 
@@ -10,56 +11,84 @@
 
 #include <qcolor.h>
 #include <qpixmap.h>
+#include <qtimer.h>
 
 //----------------------------------------------------------------------------
 
 class KBackground : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 public:
-    KBackground();
-    ~KBackground();
+  KBackground();
+  ~KBackground();
 
-    void apply();
-    // cancel an apply which has not yet been completed
-    void cancel();
-    void readSettings( const char *group );
+  void apply();
+  // cancel an apply which has not yet been completed
+  void cancel();
+  void readSettings( int num, bool one, int desknum );
 
-    const QString &getName() const
-	{ return name; }
+  const QString &getName() const
+    { return name; }
 
-    bool hasPixmap() const
-	{ return hasPm; }
-    bool isApplied() const
-	{ return applied; }
+  bool hasPixmap() const
+    { return hasPm; }
+  bool isApplied() const
+    { return applied; }
+
+  void setOneDesktop( bool one, int onedesk ) {
+    oneDesktopMode = one;
+    oneDesk = onedesk;
+  }
+
+public slots:
+  void randomize();
 
 protected:
-    QPixmap *loadWallpaper();
-    virtual void timerEvent( QTimerEvent * );
+  QPixmap *loadWallpaper();
+  virtual void timerEvent( QTimerEvent * );
 
 protected:
-    enum { Tiled = 1, Centred, Scaled };
-    enum { Flat = 1, Gradient, Pattern };
-    enum { Portrait = 1, Landscape };
+  enum { Tiled = 1,
+	 Mirrored,
+	 CenterTiled,
+	 Centred,
+	 CentredBrick,
+	 CentredWarp,
+	 CentredMaxpect,
+	 SymmetricalTiled,
+	 SymmetricalMirrored,
+	 Scaled };
+  enum { Flat = 1, Gradient, Pattern };
+  enum { Portrait = 1, Landscape };
 
-    QString name;
+  QString name;
 
-    QString wallpaper;
-    QColor  color1;
-    QColor  color2;
-    int     wpMode;
-    int     gfMode;
-    int     orMode;
+  QString wallpaper;
+  QColor  color1;
+  QColor  color2;
+  int     wpMode;
+  int     gfMode;
+  int     orMode;
 
-    uint pattern[8];
-    QPixmap *bgPixmap;
-    bool    applied;
+  QTimer *timerRandom;
 
-    bool    hasPm;
-	bool bUseWallpaper;
+  uint pattern[8];
+  QPixmap *bgPixmap;
+  bool    applied;
+
+  bool    hasPm;
+
+  bool bUseWallpaper;
+
+  bool randomMode;
+  int randomDesk;
+
+  bool oneDesktopMode;
+  int oneDesk;
+
+  int desk;
 };
 
 //----------------------------------------------------------------------------
 
 #endif
-

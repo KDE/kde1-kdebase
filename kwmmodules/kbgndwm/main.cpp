@@ -5,6 +5,7 @@
  *
  */
 
+#include <time.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/stat.h>
@@ -31,6 +32,7 @@ int main( int argc, char *argv[] )
 	    printf( KDISPLAYWM_VERSION );
 	    printf("\n");
 	    printf("Copyright (C) 1997 Martin Jones (mjones@kde.org)\n");
+	    printf("              1998 Matej  Koss  (koss@napri.sk)\n");
 	    ::exit(0);
 	}
 	else
@@ -41,13 +43,16 @@ int main( int argc, char *argv[] )
 	::exit(1); 
     }
 
+    // Initialize random generator
+    time_t now = time(NULL);
+    srand((unsigned int)now);
+
     KBGndManager kbgnd( &a );
 
     kbgnd.connect(&a, SIGNAL(desktopChange(int)), SLOT(desktopChange(int)));
     kbgnd.connect(&a, SIGNAL(commandReceived(QString)), SLOT(commandReceived(QString)));
 
     a.connectToKWM();
-
     return a.exec();
 }
 
