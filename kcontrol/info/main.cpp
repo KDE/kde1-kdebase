@@ -54,7 +54,15 @@ KInfoApplication::KInfoApplication(int &argc, char **argv, const char *name)
       
       dialog->setApplyButton(0);
       dialog->setCancelButton(0);
-      dialog->show();
+
+      if (memory || processor)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcminfo [-init | {processor,memory}]\n"));
+          justInit = TRUE;
+        }
+
     }
 }
 

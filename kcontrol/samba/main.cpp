@@ -45,11 +45,18 @@ KSambaApplication::KSambaApplication(int &argc, char **argv,
   if (runGUI())
     {
       if (!pages || pages->contains("status"))
-	addPage(status = new NetMon(dialog, "bell"), "&Status", "sambastatus.html");
+	addPage(status = new NetMon(dialog, "status"), "&Status", "sambastatus.html");
       
       dialog->setApplyButton(0);
       dialog->setCancelButton(0);
-      dialog->show();
+
+      if (status)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcmsamba [-init | status]\n"));
+          justInit = TRUE;
+        }
     }
 }
 

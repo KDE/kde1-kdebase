@@ -55,7 +55,14 @@ KInputApplication::KInputApplication(int &argc, char **argv, const char *name)
 	addPage(keyboard = new KeyboardConfig(dialog, "keyboard", FALSE), 
 		klocale->translate("&Keyboard"), "keyboard.html");
 
-      dialog->show();
+      if (mouse || keyboard)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcminput [-init | {mouse,keyboard}]\n"));
+          justInit = TRUE;
+        }
+
     }
 }
 

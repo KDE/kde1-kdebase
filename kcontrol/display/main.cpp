@@ -69,7 +69,14 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
 	addPage(general = new KGeneral(dialog, KDisplayModule::Setup), 
 		klocale->translate("&Style"), "general.html");
 
-      dialog->show();
+      if (background || screensaver || colors || general)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"));
+          justInit = TRUE;
+        }
+      
     }
 }
 

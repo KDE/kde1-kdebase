@@ -62,7 +62,14 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
 	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
 		klocale->translate("&Titlebar"), "titlebar.html");
 
-      dialog->show();
+      if (windows || buttons || appearance)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"));
+          justInit = TRUE;
+        }
+
     }
 }
 

@@ -58,7 +58,15 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
       if (!pages || pages->contains("desktops"))
 	addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
 		klocale->translate("&Desktops"), "desktops.html");
-      dialog->show();
+
+      if (panel || desktops)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcmkpanel [-init | {panel,desktops}]\n"));
+          justInit = TRUE;
+        }
+     
     }
 }
 

@@ -50,7 +50,13 @@ KBellApplication::KBellApplication(int &argc, char **argv, const char *name)
         addPage(bell = new KBellConfig(dialog, "bell", FALSE), 
 		klocale->translate("&Bell"), "bell.html");
 
-      dialog->show();
+      if (bell)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kcmbell [-init | bell])\n"));
+	  justInit = TRUE;
+        }
     }
 }
 

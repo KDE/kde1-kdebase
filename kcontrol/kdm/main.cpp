@@ -111,8 +111,14 @@ KDMConfigApplication::KDMConfigApplication(int &argc, char **argv, const char *n
       if (!pages || pages->contains("sessions"))
         addPage(sessions = new KDMSessionsWidget(dialog, "sessions", FALSE),
                                   klocale->translate("&Sessions"), "kdm-sess.html");
+      if (appearance || font || background || sessions || users)
+        dialog->show();
+      else
+        {
+          fprintf(stderr, klocale->translate("usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"));
+          justInit = TRUE;
+        }
 
-      dialog->show();
     }
     else
     {
