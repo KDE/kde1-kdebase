@@ -493,8 +493,10 @@ void TopLevel::timeout() {
 }
 
 void TopLevel::newCaption() {
-  setCaption(kWrite->fileName());
-// printf("caption %s\n",kWrite->fileName());
+    if (kWrite->fileName())
+	setCaption(kWrite->fileName());
+    else
+	setCaption(kapp->getCaption() );
 }
 
 void TopLevel::newUndo() {
