@@ -37,7 +37,7 @@ noinst_HEADERS =  \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h \
 	open-with.h finddlg.h kcookiejar.h kcookiewin.h popup.h \
-	kstrlist.h cgi.h kbookmarkdlg.h kintlist.h
+	kstrlist.h kbookmarkdlg.h kintlist.h
 
 METASOURCES =	\
 	kfmgui.moc kfmview.moc kbind.moc \

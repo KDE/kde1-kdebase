@@ -5,7 +5,6 @@ class KFMManager;
 
 #include "kfmview.h"
 #include "htmlcache.h"
-#include "cgi.h"
 #include "kfmjob.h"
 
 #include "popup.h"
