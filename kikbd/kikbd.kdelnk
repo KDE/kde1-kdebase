@@ -1,27 +1,25 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=International Keyboard Layout
-Name[es]=Kikbd
 Name[de]=Kikbd
-Name[no]=Internasjonalt tastaturutseende
+Name[es]=Kikbd
 Name[ru]=Kikbd
-Name[ua]=Kikbd
-Name[pl]=Kikbd
-Name[cf]=Kikbd
 Name[hu]=Kikbd
-Name[pt_BR]=Kikbd
-Name[sk]=Kikbd
 Name[fi]=Kansainvälinen näppäimistö
+Name[pl]=Kikbd
+Name[no]=Internasjonalt tastaturutseende
+Name[sk]=Kikbd
+Name[pt_BR]=Kikbd
 Comment=International Keyboard
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado internacional
-Comment[no]=Internationalt tastatur
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
-Comment[pt]=Teclado Internacional
-Comment[pt_BR]=Teclado Internacional
 Comment[fi]=Kansainvälinen näppäimistö
+Comment[pt]=Teclado Internacional
 Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[no]=Internationalt tastatur
 Comment[sk]=Medzinárodná klávesnica
+Comment[pt_BR]=Teclado Internacional
 Exec=kikbd -caption "%c" %i %m
 Icon=kikbd.xpm
 Type=Application

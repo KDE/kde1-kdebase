@@ -1,26 +1,21 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Lyx
-Name[no]=Lyx
-Name[is_IS]=Lyx
-Name[es]=Lyx
-Name[pl]=Lyx
-Name[sk]=Lyx
 Comment=LaTeX Word Processor
-Comment[es]=Editor de textos LaTeX
 Comment[de]=LaTeX-Textverarbeitung
-Comment[no]=LaTeX-tekstbehandling
-Comment[pl]=Edytor tekstu dla LaTeX
 Comment[fr]=Editeur de textes basÈ sur LaTeX
-Comment[pt]=Processdor de textos LaTex
-Comment[pt_BR]=Processador de textos LaTeX
-Comment[it]=Manipolatore Testi LaTex
 Comment[cs]=Textov˝ procesor pro LaTeX
-Comment[sk]=Textov˝ procesor pre LaTeX
-Comment[fi]=LaTeX -tekstink‰sittelyohjelma
-Comment[ro]=Programul de Tehnoredactare LaTeX
+Comment[es]=Editor de textos LaTeX
 Comment[ru]=Ù≈À”‘œ◊Ÿ  –“œ√≈””œ“ ƒÃ— LaTeX'¡
-Comment[is_IS]=Lyx
+Comment[fi]=LaTeX -tekstink‰sittelyohjelma
+Comment[it]=Manipolatore Testi LaTex
+Comment[pt]=Processdor de textos LaTex
+Comment[pl]=Edytor tekstu dla LaTeX
+Comment[ro]=Programul de Tehnoredactare LaTeX
+Comment[no]=LaTeX-tekstbehandling
+Comment[sk]=Textov˝ procesor pre LaTeX
+Comment[pt_BR]=Processador de textos LaTeX
+Comment[is]=Lyx
 WmCommand=
 BinaryPattern=
 MiniIcon=

@@ -1,20 +1,7 @@
 [KDE Desktop Entry]
 Name=Internet
-Name[is_IS]=Netiğ
-Name[es]=Internet
-Name[de]=Internet
-Name[eo]=Interreto
-Name[no]=Internett
-Name[nl]=Internet
-Name[pl]=Internet
-Name[cs]=Internet
-Name[sk]=Internet
-Name[fi]=Internet
-Name[fr]=Internet
-Name[sv]=Internet
-Name[hu]=Internet
-Name[pt]=Internet
-Name[pt_BR]=Internet
 Name[ru]=éÎÔÅÒÎÅÔ
-Name[ca]=Internet
+Name[no]=Internett
+Name[eo]=Interreto
+Name[is]=Netiğ
 Icon=network_package.xpm

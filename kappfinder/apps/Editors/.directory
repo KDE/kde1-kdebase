@@ -1,21 +1,19 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Editors
-Name[is_IS]=Ritlar
-Name[es]=Editores
-Name[fr]=Editeurs de texte
 Name[de]=Editoren
-Name[no]=Tekstredigerere
-Name[pl]=Edytory
-Name[fi]=Editorit
-Name[sv]=Editorer
-Name[it]=Editors
-Name[pt]=Editores
-Name[pt_BR]=Editores
+Name[fr]=Editeurs de texte
 Name[cs]=Editory
-Name[sk]=Editory
+Name[sv]=Editorer
+Name[es]=Editores
 Name[ru]=Редакторы
-Name[ca]=Editors
+Name[fi]=Editorit
+Name[pt]=Editores
+Name[pl]=Edytory
+Name[no]=Tekstredigerere
+Name[sk]=Editory
+Name[pt_BR]=Editores
+Name[is]=Ritlar
 MiniIcon=
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
 Icon=kedit.xpm

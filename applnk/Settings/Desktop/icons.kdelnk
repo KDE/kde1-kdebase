@@ -3,13 +3,13 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-1.html
 Name=Desktop Icons
-Name[pt_BR]=Ícones do Ambiente
-Name[no]=Skrivebordsikoner
 Name[fr]=Icônes du bureau
+Name[no]=Skrivebordsikoner
+Name[pt_BR]=Ícones do Ambiente
 Comment=You can customize here the desktop icons
-Comment[pt_BR]=Você pode personalizar aqui os ícones do Ambiente
-Comment[no]=Her kan du selv definere ikonene på skrivebordet
 Comment[fr]=Vous pouvez personnaliser ici les icônes du bureau
+Comment[no]=Her kan du selv definere ikonene på skrivebordet
+Comment[pt_BR]=Você pode personalizar aqui os ícones do Ambiente
 # Needs another icon !
 Icon=kfm.xpm
 Exec=kcmkfm icons

@@ -1,20 +1,20 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Toys
-Name[is_IS]=Leikföng
-Name[es]=Ocio
-Name[fr]=Petits outils sympa
 Name[de]=Spielzeuge
-Name[no]=Leketøy
-Name[pl]=Zabawa
-Name[fi]=Lelut
+Name[fr]=Petits outils sympa
+Name[cs]=Hraèky
 Name[sv]=Leksaker
+Name[es]=Ocio
+Name[ru]=éÇÒÕÛËÉ
+Name[fi]=Lelut
 Name[it]=Giochini
 Name[pt]=Brincadeiras
-Name[pt_BR]=Brinquedos
-Name[cs]=Hraèky
+Name[pl]=Zabawa
+Name[no]=Leketøy
 Name[sk]=Hraèky
-Name[ru]=éÇÒÕÛËÉ
 Name[ca]=Joguines
+Name[pt_BR]=Brinquedos
+Name[is]=Leikföng
 SortOrder=xeyes.kdelnk,xpinguin.kdelnk
 Icon=games_package.xpm

@@ -1,24 +1,24 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Network
-Name[is_IS]=Net
-Name[es]=Red
-Name[fr]=Réseau
 Name[de]=Netzwerk
-Name[no]=Nettverk
-Name[eo]=Reto
-Name[da]=Netværk
-Name[pl]=Sieæ
+Name[fr]=Réseau
 Name[cs]=Sí»
-Name[sk]=Sie»
-Name[fi]=Verkko
-Name[hu]=Hálózat
 Name[sv]=Nätverk
+Name[es]=Red
+Name[ru]=óÅÔØ
+Name[hu]=Hálózat
+Name[da]=Netværk
+Name[fi]=Verkko
 Name[it]=Rete
 Name[pt]=Rede
-Name[pt_BR]=Rede
+Name[pl]=Sieæ
 Name[ro]=Reþea
-Name[ru]=óÅÔØ
+Name[no]=Nettverk
+Name[sk]=Sie»
 Name[ca]=Xarxa
+Name[pt_BR]=Rede
+Name[eo]=Reto
+Name[is]=Net
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network_settings.xpm

@@ -1,20 +1,20 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Graphica
-Name[is_IS]=Myndvinnsla
-Name[es]=Gr·ficos
-Name[fr]=Graphiques
 Name[de]=Graphik
-Name[no]=Grafikk
-Name[pl]=Grafika
-Name[fi]=Grafiikka
+Name[fr]=Graphiques
+Name[cs]=Grafika
 Name[sv]=Grafik
+Name[es]=Gr·ficos
+Name[ru]=Á“¡∆…À¡
+Name[fi]=Grafiikka
 Name[it]=Grafica
 Name[pt]=Gr·ficos
-Name[pt_BR]=Gr·ficos
-Name[cs]=Grafika
+Name[pl]=Grafika
+Name[no]=Grafikk
 Name[sk]=Grafika
-Name[ru]=Á“¡∆…À¡
 Name[ca]=Gr‡fics
+Name[pt_BR]=Gr·ficos
+Name[is]=Myndvinnsla
 SortOrder=acroread.kdelnk,xpaint.kdelnk,xv.kdelnk
 Icon=graphics_package.xpm

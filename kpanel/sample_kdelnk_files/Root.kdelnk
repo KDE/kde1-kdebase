@@ -2,9 +2,6 @@
 [KDE Desktop Entry]
 MiniIcon=folder_red.xpm
 Comment=Root Folder
-Comment[pt_BR]=Pasta Raiz
-Comment[es]=Carpeta Raiz
-Comment[no]=Rot-mappe
 URL=file:/
 Icon=folder_red.xpm
 Type=Link

@@ -1,24 +1,24 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Settings
-Name[is_IS]=Stillingar
-Name[es]=Configuración
 Name[de]=Einstellungen
-Name[da]=Indstillinger
-Name[no]=Innstillinger
-Name[eo]=Konfigura¼o
-Name[pl]=Ustawienia
+Name[fr]=Configuration
 Name[cs]=Nastavení
-Name[sk]=Nastavenie
+Name[sv]=Inställningar
+Name[es]=Configuración
+Name[ru]=õÓÔÁÎÏ×ËÉ
+Name[hu]=Beállítások
+Name[da]=Indstillinger
 Name[fi]=Asetukset
 Name[it]=Impostazioni
-Name[fr]=Configuration
-Name[sv]=Inställningar
-Name[hu]=Beállítások
 Name[pt]=Configuração
-Name[pt_BR]=Configuração
+Name[pl]=Ustawienia
 Name[ro]=Configurare
-Name[ru]=õÓÔÁÎÏ×ËÉ
+Name[no]=Innstillinger
+Name[sk]=Nastavenie
 Name[ca]=Configuració
+Name[pt_BR]=Configuração
+Name[eo]=Konfigura¼o
+Name[is]=Stillingar
 SortOrder=Desktop,Input_Devices,KWM,Network,Information,Sound
 Icon=settings_package.xpm

@@ -1,14 +1,13 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Cut & paste history (klipper)
-Name[pt_BR]=Histórico de corte/cópia (klipper)
-Name[no]=Klippe- og limehistorie (klipper)
 Name[cs]=Historie kopírování a vkládání (klipper)
+Name[no]=Klippe- og limehistorie (klipper)
+Name[pt_BR]=Histórico de corte/cópia (klipper)
 Exec=klipper
 Icon=klipper.xpm
 Type=Application
 DocPath=klipper/klipper.html
 Comment=
-Comment[pt_BR]=
 Terminal=0
 MiniIcon=klipper.xpm

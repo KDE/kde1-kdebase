@@ -1,20 +1,20 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Word Processing
-Name[is_IS]=Ritvinnsla
-Name[es]=Procesadores de texto
-Name[fr]=Traitement de textes
 Name[de]=Textverarbeitung
-Name[no]=Tekstbehandling
-Name[pl]=Przetwarzanie tekstÛw
-Name[fi]=Tekstink‰sittely
+Name[fr]=Traitement de textes
+Name[cs]=TextovÈ procesory
 Name[sv]=Ordbehandlare
+Name[es]=Procesadores de texto
+Name[ru]=Ù≈À”‘œ◊Ÿ≈ –“œ√≈””œ“Ÿ
+Name[fi]=Tekstink‰sittely
 Name[it]=Manipolazione Testi
 Name[pt]=Processamento de Texto
-Name[pt_BR]=Processamento de Texto
-Name[cs]=TextovÈ procesory
+Name[pl]=Przetwarzanie tekstÛw
+Name[no]=Tekstbehandling
 Name[sk]=TextovÈ procesory
-Name[ru]=Ù≈À”‘œ◊Ÿ≈ –“œ√≈””œ“Ÿ
 Name[ca]=Processament de textos
+Name[pt_BR]=Processamento de Texto
+Name[is]=Ritvinnsla
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=package.xpm

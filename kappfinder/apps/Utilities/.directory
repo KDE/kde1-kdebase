@@ -1,20 +1,25 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Utilities
-Name[is_IS]=Tól
-Name[es]=Utilidades
-Name[pl]=U¿ytki
+Name[de]=Werkzeuge
 Name[fr]=Utilitaires
-Name[de]=Hilfsmittel
-Name[no]=Verktøy
-Name[fi]=Työkalut
-Name[sv]=Nyttoprogram
-Name[it]=Applicazioni
-Name[pt]=Utilitários
-Name[pt_BR]=Utilitários
 Name[cs]=Nástroje
-Name[sk]=Nástroje
+Name[sv]=Verktyg
+Name[es]=Utilidades
 Name[ru]=ðÏÌÅÚÎÏÅ
+Name[nl]=Hulpmiddelen
+Name[hu]=Segédeszközök
+Name[da]=Værktøjer
+Name[fi]=Apuohjelmat
+Name[it]=Accessori
+Name[pt]=Utilitários
+Name[pl]=U¿ytki
+Name[ro]=Utilitare
+Name[no]=Verktøy
+Name[sk]=Pomôcky
 Name[ca]=Utilitats
+Name[pt_BR]=Utilitários
+Name[eo]=Utila¼oj
+Name[is]=Tól
 SortOrder=xcalc.kdelnk,xclipboard.kdelnk,xconsole.kdelnk,xterm.kdelnk
 Icon=utilities_package.xpm

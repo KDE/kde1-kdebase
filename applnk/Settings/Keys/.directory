@@ -3,12 +3,12 @@
 Icon=keyboard.xpm
 Name=Keys
 Name[de]=Tastenbelegungen
+Name[cs]=Kl·vesy
 Name[es]=Teclas
-Name[no]=Taster
 Name[ru]=ÎÃ¡◊…€…
-Name[pt_BR]=Teclas
 Name[fi]=N‰pp‰imet
+Name[no]=Taster
 Name[sk]=Kl·vesy
 Name[ca]=Tecles
-Name[cs]=Kl·vesy
+Name[pt_BR]=Teclas
 SortOrder=standard.kdelnk,global.kdelnk

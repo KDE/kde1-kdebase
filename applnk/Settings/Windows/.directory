@@ -1,24 +1,24 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Windows
-Name[is_IS]=Gluggar
-Name[es]=Ventanas
 Name[de]=Fenster
-Name[no]=Vinduer
-Name[eo]=Fenestroj
 Name[fr]=Fenêtres
-Name[da]=Vinduer
-Name[pl]=Okna
 Name[cs]=Okna
-Name[sk]=Okná
-Name[fi]=Ikkunat
 Name[sv]=Fönster
-Name[it]=Finestre
-Name[hu]=Ablakok
-Name[pt]=Janelas
-Name[pt_BR]=Janelas
-Name[ro]=Ferestre
+Name[es]=Ventanas
 Name[ru]=ïËÎÁ
+Name[hu]=Ablakok
+Name[da]=Vinduer
+Name[fi]=Ikkunat
+Name[it]=Finestre
+Name[pt]=Janelas
+Name[pl]=Okna
+Name[ro]=Ferestre
+Name[no]=Vinduer
+Name[sk]=Okná
 Name[ca]=Finestres
+Name[pt_BR]=Janelas
+Name[eo]=Fenestroj
+Name[is]=Gluggar
 SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
 Icon=kwm.xpm

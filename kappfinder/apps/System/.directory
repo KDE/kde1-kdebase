@@ -1,20 +1,19 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=System
-Name[is_IS]=Kerfi
-Name[es]=Sistema
 Name[fr]=SystËme
-Name[de]=System
-Name[no]=System
-Name[pl]=System
-Name[fi]=Systeemi
-Name[sv]=System
-Name[it]=Sistema
-Name[pt]=Sistema
-Name[pt_BR]=Sistema
 Name[cs]=SystÈm
-Name[sk]=SystÈm
+Name[es]=Sistema
 Name[ru]=Û…”‘≈Õ¡
+Name[nl]=Systeem
+Name[hu]=Rendszer
+Name[fi]=J‰rjestelm‰
+Name[it]=name[it]=Sistema
+Name[pt]=Sistema
+Name[ro]=Sistem
+Name[sk]=SystÈm
 Name[ca]=Sistema
+Name[pt_BR]=Sistema
+Name[is]=Kerfi
 SortOrder=xosview.kdelnk
 Icon=system_package.xpm

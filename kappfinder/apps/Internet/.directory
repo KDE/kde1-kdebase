@@ -1,19 +1,9 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Internet
-Name[is_IS]=Netiğ
-Name[es]=Internet
-Name[de]=Internet
+Name[ru]=éÎÔÅÒÎÅÔ
 Name[no]=Internett
-Name[pl]=Internet
-Name[fr]=Internet
-Name[fi]=Internet
-Name[sv]=Internet
-Name[pt]=Internet
-Name[pt_BR]=Internet
-Name[cs]=Internet
-Name[sk]=Internet
-Name[ru]=Internet
-Name[ca]=Internet
+Name[eo]=Interreto
+Name[is]=Netiğ
 SortOrder=xftp.kdelnk
 Icon=network_package.xpm

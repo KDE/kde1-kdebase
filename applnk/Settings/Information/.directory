@@ -1,22 +1,21 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Information
-Name[is_IS]=Upplýsingar
-Name[es]=Información
-Name[no]=Informasjon
 Name[fr]=Informations
-Name[pl]=Informacje
 Name[cs]=Informace
-Name[eo]=Informoj
-Name[sk]=Informácie
-Name[fi]=Tietoja
-Name[sv]=Information
-Name[it]=Informazioni
-Name[hu]=Információ
-Name[pt]=Informações
-Name[pt_BR]=Informações
-Name[ro]=Informaþii
+Name[es]=Información
 Name[ru]=éÎÆÏÒÍÁÃÉÑ
+Name[hu]=Információ
+Name[fi]=Tietoja
+Name[it]=Informazioni
+Name[pt]=Informações
+Name[pl]=Informacje
+Name[ro]=Informaþii
+Name[no]=Informasjon
+Name[sk]=Informácie
 Name[ca]=Informació
+Name[pt_BR]=Informações
+Name[eo]=Informoj
+Name[is]=Upplýsingar
 SortOrder=memory.kdelnk,processor.kdelnk
 Icon=information_settings.xpm
