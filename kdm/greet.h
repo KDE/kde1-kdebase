@@ -97,6 +97,9 @@ typedef enum {
  * option such as SECURE_RPC or K5AUTH.
  */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 extern greet_user_rtn GreetUser(
 #if NeedFunctionPrototypes
     struct display *d,
@@ -106,6 +109,9 @@ extern greet_user_rtn GreetUser(
     struct dlfuncs *dlfcns
 #endif
 );
+#ifdef __cplusplus
+}
+#endif
 
 typedef greet_user_rtn (*GreetUserProc)(
 #if NeedFunctionPrototypes

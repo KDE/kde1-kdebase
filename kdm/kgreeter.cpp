@@ -27,7 +27,6 @@
 #include "kgreeter.h"
 #include <qmsgbox.h>
 
-extern "C" {
 #include "dm.h"
 #include "greet.h"
 #include <signal.h>
@@ -38,6 +37,7 @@ extern "C" {
 #endif
 
 // Make the C++ compiler shut the f... up:
+extern "C" {
 int Verify( struct display*, struct greet_info*, struct verify_info*);
 char** parseArgs( char**, const char*);
 void DeleteXloginResources( struct display*, Display*);

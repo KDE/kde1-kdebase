@@ -1,5 +1,6 @@
 /* $XConsortium: session.c,v 1.72.1.1 95/06/19 20:29:12 gildea Exp $ */
 /* $XFree86: xc/programs/xdm/session.c,v 3.7 1995/07/08 10:32:08 dawes Exp $ */
+/* $Id$ */
 /*
 
 Copyright (c) 1988  X Consortium
@@ -250,13 +251,13 @@ int XmuPrintDefaultErrorMessage (dpy, event, fp)
 static	struct dlfuncs	dlfuncs = {
 	PingServer,
 	SessionPingFailed,
-	Debug,
+	(void*) Debug,
 	RegisterCloseOnFork,
 	(void*) SecureDisplay,
 	(void*) UnsecureDisplay,
 	ClearCloseOnFork,
 	SetupDisplay,
-	LogError,
+	(void*) LogError,
 	(void*) SessionExit,
 	(void*) DeleteXloginResources,
 	source,
@@ -265,8 +266,8 @@ static	struct dlfuncs	dlfuncs = {
 	parseArgs,
 	printEnv,
 	systemEnv,
-	LogOutOfMem,
-	setgrent,
+	(void*) LogOutOfMem,
+	(void*) setgrent,
 	getgrent,
 	endgrent,
 #ifdef USESHADOW
