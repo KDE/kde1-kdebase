@@ -310,7 +310,7 @@ void KBackground::apply()
   bgPixmap = QPixmapCache::find( name );
   if ( bgPixmap )
     {
-      debug( "Desktop background found in cache" );
+      //      debug( "Desktop background found in cache" );
       qApp->desktop()->setBackgroundPixmap( *bgPixmap );
       setPixmapProperty( bgPixmap );
       bgPixmap = 0;
@@ -371,7 +371,7 @@ void KBackground::apply()
 		      pmDesktop.width(), h);
 	  } else {
 	    for (uint ph = 0; ph <= h; ph += pmDesktop.height()) {
-	      debug("land %d",ph);
+	      //	      debug("land %d",ph);
 	      bitBlt( bgPixmap, 0, ph, &pmDesktop, 0, 0,
 		      w, pmDesktop.height());
 	    }
