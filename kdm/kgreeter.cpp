@@ -32,6 +32,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#include <qbitmap.h>
 #include <qmsgbox.h>
 #include <kstring.h>
 
@@ -220,32 +221,40 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 
      QStrListIterator it ( *kdmcfg->sessionTypes());
      sessiontags.clear();
+     KIconLoader iconLoader;
      for( ; it.current(); ++it) {
-       QPainter p;
-
-       QString output = QString(it.current());
-
-       int w = fontMetrics().width(output) + 24;
-       QPixmap pm(w, 16);
-
-       KIconLoader iconLoader;
-       QPixmap sessflag(iconLoader.loadIcon(QString("session_") + it.current() + ".xpm"));
-  
-       pm.fill(colorGroup().background());
-       p.begin(&pm);
-
-       p.drawText(24,1,w-24,16,AlignLeft | AlignTop,output);
-       if (!sessflag.isNull())
-         p.drawPixmap(1,1,sessflag);
-       p.end();
-
-       sessiontags.append(it.current());
-       sessionargBox->insertItem(pm);
+	  QString output = QString(it.current());
+	  QPixmap sesspix(iconLoader.loadIcon(QString("session_") 
+					      + it.current() + ".xpm"));
+	  QPainter p;
+	  QPainter pmask;
+	  QFontMetrics fm = sessionargBox->fontMetrics();
+	  QPixmap pm( sesspix.width() + fm.width( it.current() ) + 6,
+		      QMAX( sesspix.height(), fm.lineSpacing() + 1 ));
+	  QBitmap mask( sesspix.width() + fm.width( it.current() ) + 6,
+			QMAX( sesspix.height(), fm.lineSpacing() + 1 ), true);
+	  pm.fill(colorGroup().background());
+	  p.begin(&pm);
+	  pmask.begin( &mask);
+	  p.drawPixmap( 3, 0, sesspix);
+	  if( !sesspix.isNull())
+	       pmask.drawPixmap( 3, 0, sesspix.createHeuristicMask());
+	  int yPos;
+	  if ( sesspix.height() < fm.height() )
+	       yPos = fm.ascent() + fm.leading()/2;
+	  else
+	       yPos = sesspix.height()/2 - fm.height()/2 + fm.ascent();
+	  p.drawText( sesspix.width() + 5, yPos, it.current() );
+	  pmask.drawText( sesspix.width() + 5, yPos, it.current() );
+	  p.end();
+	  pmask.end();
+	  pm.setMask( mask);
+	  sessiontags.append(it.current());
+	  sessionargBox->insertItem( pm);
      }
-     
      set_fixed( sessionargBox);
      hbox2->addWidget( sessionargBox);
-
+     
      goButton = new QPushButton( klocale->translate("Go!"), this);
      connect( goButton, SIGNAL( clicked()), SLOT(go_button_clicked()));
 
