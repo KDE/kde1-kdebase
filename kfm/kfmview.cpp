@@ -917,10 +917,12 @@ void KfmView::setUpURL( const char *_url )
 {
   m_strUpURL = _url;
 
-  if ( m_strUpURL.isEmpty() )
-    gui->enableToolbarButton( 0, false );
-  else
-    gui->enableToolbarButton( 0, true );
+  //CT 16Dec1998 handle View menu
+  bool has_upURL = !( m_strUpURL == "/"  || m_strUpURL.isEmpty() );
+  gui->enableToolbarButton( 0, has_upURL );
+
+  has_upURL = has_upURL || (m_strUpURL == "/" );
+  gui->handleViewMenu(has_upURL);
 }
 
 void KfmView::slotUp()

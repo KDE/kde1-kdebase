@@ -678,7 +678,7 @@ void KFMManager::writeBeginning()
 	view->setUpURL( s );	
     }
     else
-      view->setUpURL( "" );
+      view->setUpURL( "/" );
 }
 
 void KFMManager::writeEnd()

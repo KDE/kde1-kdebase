@@ -241,7 +241,8 @@ void KfmGui::initMenu()
 
     connect( mfile, SIGNAL(aboutToShow()), this, SLOT(slotFile()) );
 
-    QPopupMenu *edit = new QPopupMenu;
+    /*CT QPopupMenu *  -- make it visible outside this method */
+    edit = new QPopupMenu;
     CHECK_PTR( edit );
     edit->insertItem( klocale->translate("&Copy"), this, 
 		      SLOT(slotCopy()), CTRL+Key_C );
@@ -452,6 +453,8 @@ void KfmGui::enableToolbarButton( int id, bool enable )
 	return;
     
     toolbarButtons->setItemEnabled( id, enable );
+    if (id == 0) mgo->setItemEnabled(mgo->idAt( 0 ), enable );
+
 }
 
 void KfmGui::initToolBar()
@@ -608,6 +611,26 @@ void KfmGui::updateView()
         treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 }
 
+
+//CT 16Dec1998 -- handle the View menu according with the type of view
+void KfmGui::handleViewMenu(bool has_upURL) 
+{
+  edit->setItemEnabled(edit->idAt( 2 ), has_upURL);
+  edit->setItemEnabled(edit->idAt( 3 ), has_upURL);
+
+  mview->setItemEnabled(mview->idAt( 0 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 2 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 5 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 6 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 7 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 8 ), has_upURL );
+  mview->setItemEnabled(mview->idAt( 11  ), !has_upURL );
+  mview->setItemEnabled(mview->idAt( 14 ), !has_upURL );
+  mview->setItemEnabled(mview->idAt( 15 ), !has_upURL );
+  mview->setItemEnabled(mview->idAt( 17 ), !has_upURL );
+}
+//CT
+
 void KfmGui::slotReloadTree()
 {
     if ( bTreeViewInitialized )
@@ -705,8 +728,8 @@ void KfmGui::slotURLEntered()
 	else if (url.find("www") == 0)
 	  url.prepend("http://");
 
-	// Does url begin with ftp?  (sven)
-	else if (url.find("ftp") == 0)
+	// Does url begin with "ftp."?  (sven)
+	else if (url.find("ftp.") == 0)
 	  url.prepend("ftp://");
 
 	KURL u( url.data() );

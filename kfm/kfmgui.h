@@ -176,6 +176,8 @@ public:
      */
     inline bool isMenuBarHidden() {return !showMenubar;}
 
+    void handleViewMenu(bool);//CT 16Dec1998
+
 public slots:
     /**
      * Menu "File->*"
@@ -515,7 +517,7 @@ protected:
     virtual void initStatusBar();
     virtual void initPanner();
     virtual void initTreeView();
-   
+
     /**
      * Read Kfm specific session management data.
      */
@@ -606,6 +608,7 @@ protected:
     KStatusBar *statusBar;
 
     QPopupMenu *mfile;
+    QPopupMenu *edit;//CT 16Dec1998
     QPopupMenu *mview;
     QPopupMenu *mgo;
     QPopupMenu *mcache;
