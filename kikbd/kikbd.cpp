@@ -486,7 +486,7 @@ void KiKbdApplication::loadConfig()
     */
     mainWidget()->hide();
     mainWidget()->recreate(0L, docked?0:(WStyle_Customize|WStyle_NoBorder),
-			   QPoint(0, 0), FALSE);
+			   QPoint(3000, 3000), FALSE);
     /**
        set special property
     */

@@ -646,7 +646,7 @@ KiKbdStartupWidget::KiKbdStartupWidget(QWidget* parent):QWidget(parent)
   vbox->addWidget(widget=kikbdConfig->
 		  createWidget(&kikbdConfig->getDocking(), group, 
 			       gettext("&Docked"),
-			       gettext("Dock into special area in kpanel")),
+			       gettext("Dock into special area in the panel")),
 		  0);
   connect(widget, SIGNAL(toggled(bool)), SLOT(slotInvert(bool)));
 
