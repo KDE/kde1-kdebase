@@ -3,7 +3,7 @@
 ##
 
 INCLUDES= $(all_includes)
-LDADD	= $(all_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 $(KDE_RPATH)
+LDADD	= $(all_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 $(KDE_RPATH) $(LIBSOCKET)
 DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt

@@ -1,5 +1,5 @@
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 -lgif $(LIBJPEG)
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 -lgif $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

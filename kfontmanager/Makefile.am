@@ -2,7 +2,7 @@
 
 ###################################################################
 
-LDADD   =	$(all_libraries) -lkdecore -lqt -lm -lXext -lX11 $(KDE_RPATH)
+LDADD   =	$(all_libraries) -lkdecore -lqt -lm -lXext -lX11 $(KDE_RPATH) $(LIBSOCKET)
 INCLUDES=	$(all_includes)
 
 ####### Files
