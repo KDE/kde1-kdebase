@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-02-09 01:13+0100\n"
-"PO-Revision-Date: 1999-01-22 23:26+01:00\n"
+"PO-Revision-Date: 1999-02-23 10:12+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1041,12 +1041,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Rekurzivní kopírování ze/do vzdálených míst"
 
 #: kiojob.cpp:904
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Není mo¾né vytvoøit symbolický odkaz\n"
+"Není mo¾né odstranit symbolický odkaz\n"
 "%s"
 
 #: kiojob.cpp:952
@@ -1208,7 +1208,7 @@ msgstr ""
 "neexistuje "
 
 #: kiojob.cpp:1398
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1216,7 +1216,7 @@ msgid ""
 msgstr ""
 "Není mo¾né zapsat\n"
 "%s\n"
-"Pravdìpodobnì nemáte pøístupová práva."
+"Pravdìpodobnì je plný disk."
 
 #: kiojob.cpp:1449
 #, c-format
@@ -1518,6 +1518,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Unknown binding"
-#~ msgstr "Chyba: Neznámá vazba"
