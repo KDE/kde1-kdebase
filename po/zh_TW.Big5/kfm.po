@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-06 01:13+0100\n"
+"POT-Creation-Date: 1999-01-07 01:18+0100\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -221,7 +221,7 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:444 kfmgui.cpp:1112
+#: kfmgui.cpp:444 kfmgui.cpp:1113
 msgid "&Go"
 msgstr ""
 
@@ -255,17 +255,17 @@ msgstr "無法載入圖示\n"
 #: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
 #: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
 #: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
-#: kfmexec/main.cpp:47 kfmgui.cpp:549 kfmgui.cpp:749 kfmman.cpp:361
-#: kfmman.cpp:1388 kfmman.cpp:1616 kfmman.cpp:1642 kfmprops.cpp:380
-#: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:948 kfmprops.cpp:1080
-#: kfmprops.cpp:1211 kfmprops.cpp:1685 kfmprops.cpp:2046 kfmprops.cpp:2228
+#: kfmexec/main.cpp:47 kfmgui.cpp:549 kfmgui.cpp:750 kfmman.cpp:361
+#: kfmman.cpp:1390 kfmman.cpp:1618 kfmman.cpp:1644 kfmprops.cpp:380
+#: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
+#: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
 #: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
 #: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
 #: kfmview.cpp:441 kfmview.cpp:591 kfmview.cpp:610 kfmview.cpp:679
-#: kfmview.cpp:685 kfmview.cpp:691 kfmview.cpp:797 kfmview.cpp:801
-#: kfmview.cpp:840 kfmview.cpp:866 kfmview.cpp:887 kfmview.cpp:895
-#: kfmview.cpp:903 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:685 kfmview.cpp:691 kfmview.cpp:801 kfmview.cpp:805
+#: kfmview.cpp:844 kfmview.cpp:870 kfmview.cpp:891 kfmview.cpp:899
+#: kfmview.cpp:907 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:561
 #: kiojob.cpp:801 kiojob.cpp:832 kiojob.cpp:873 kiojob.cpp:1331
 #: kiojob.cpp:1339 kiojob.cpp:1567 krenamewin.cpp:120 popup.cpp:102
@@ -279,67 +279,67 @@ msgstr "KFM 發生錯誤"
 msgid "Location:"
 msgstr "開啟位置:"
 
-#: kfmexec.cpp:59 kfmgui.cpp:748 kfmman.cpp:1387
+#: kfmexec.cpp:59 kfmgui.cpp:749 kfmman.cpp:1389
 msgid "Malformed URL\n"
 msgstr "不正確的 URL\n"
 
-#: kfmgui.cpp:934
+#: kfmgui.cpp:935
 msgid "Select files:"
 msgstr "選擇檔案:"
 
-#: kfmgui.cpp:1000
+#: kfmgui.cpp:1001
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1001
+#: kfmgui.cpp:1002
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1019
+#: kfmgui.cpp:1020
 msgid "&Edit Bookmarks..."
 msgstr "編輯書籤[&E]..."
 
-#: kfmgui.cpp:1029
+#: kfmgui.cpp:1030
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
 
-#: kfmgui.cpp:1063 kfmman.cpp:1427 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1064 kfmman.cpp:1429 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "新 "
 
-#: kfmgui.cpp:1088
+#: kfmgui.cpp:1089
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1090
+#: kfmgui.cpp:1091
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1092
+#: kfmgui.cpp:1093
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1094
+#: kfmgui.cpp:1095
 #, fuzzy
 msgid "&Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:1163 kfmgui.cpp:1322 kfmjob.cpp:36 kfmman.cpp:244
-#: kfmtree.cpp:500 kfmview.cpp:611 kfmview.cpp:680 kfmview.cpp:888
+#: kfmgui.cpp:1164 kfmgui.cpp:1323 kfmjob.cpp:36 kfmman.cpp:244
+#: kfmtree.cpp:500 kfmview.cpp:611 kfmview.cpp:680 kfmview.cpp:892
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "錯誤: 不正確的 URL"
 
-#: kfmgui.cpp:1276 kfmserver.cpp:245
+#: kfmgui.cpp:1277 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "開啟位置:"
 
-#: kfmgui.cpp:1333
+#: kfmgui.cpp:1334
 msgid "KFM Confirm"
 msgstr "KFM 確認"
 
-#: kfmgui.cpp:1334
+#: kfmgui.cpp:1335
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -347,7 +347,7 @@ msgstr ""
 "真的要離開嗎?\n"
 "將會失去重要的桌面功\能."
 
-#: kfmgui.cpp:1447
+#: kfmgui.cpp:1448
 msgid "Document: Done"
 msgstr "文件: 完成"
 
@@ -360,12 +360,12 @@ msgstr "錯誤: 拖曳一個 URL 到自己本身"
 msgid "ERROR: Drop over malformed URL"
 msgstr "錯誤: 拖曳到不正確的 URL"
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:651 kfmview.cpp:931
+#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:651 kfmview.cpp:935
 #: krenamewin.cpp:20 root.cpp:1266
 msgid "KFM Warning"
 msgstr "KFM 警告"
 
-#: kfmtree.cpp:539 kfmview.cpp:652 kfmview.cpp:932 root.cpp:1267
+#: kfmtree.cpp:539 kfmview.cpp:652 kfmview.cpp:936 root.cpp:1267
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -375,23 +375,23 @@ msgstr ""
 "\n"
 "刪除的檔案無法還原!"
 
-#: kfmtree.cpp:506 kfmview.cpp:686 kfmview.cpp:896 root.cpp:1229
+#: kfmtree.cpp:506 kfmview.cpp:686 kfmview.cpp:900 root.cpp:1229
 msgid "ERROR: You dropped a URL over itself"
 msgstr "錯誤: 拖曳一個 URL 到自己本身"
 
-#: kfmtree.cpp:512 kfmview.cpp:692 kfmview.cpp:904 root.cpp:1235
+#: kfmtree.cpp:512 kfmview.cpp:692 kfmview.cpp:908 root.cpp:1235
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "錯誤: 拖曳一個目錄到它其中一個子目錄上"
 
-#: kfmexec.cpp:286 kfmman.cpp:1180 kfmview.cpp:708
+#: kfmexec.cpp:286 kfmman.cpp:1182 kfmview.cpp:708
 msgid "Open With:"
 msgstr "以...開啟:"
 
-#: kfmview.cpp:739 root.cpp:1166
+#: kfmview.cpp:743 root.cpp:1166
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "錯誤: 無法開啟多個檔案的特質內容"
 
-#: kfmview.cpp:798
+#: kfmview.cpp:802
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -399,7 +399,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:802
+#: kfmview.cpp:806
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -407,23 +407,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:469 kfmview.cpp:841 root.cpp:1316
+#: kfmtree.cpp:469 kfmview.cpp:845 root.cpp:1316
 msgid "Could not access Trash Bin"
 msgstr "無法讀取垃圾桶"
 
-#: kfmview.cpp:867 root.cpp:1205
+#: kfmview.cpp:871 root.cpp:1205
 msgid "Can not paste into multiple directories"
 msgstr "無法貼入多檔目錄中"
 
-#: kfmview.cpp:964
+#: kfmview.cpp:968
 msgid "ERROR: Can not change to multiple directories"
 msgstr "錯誤: 無法改變多個目錄"
 
-#: kfmview.cpp:1230
+#: kfmview.cpp:1234
 msgid "KFM Security Alert"
 msgstr "KFM 安全警報"
 
-#: kfmview.cpp:1231
+#: kfmview.cpp:1235
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -431,16 +431,16 @@ msgstr ""
 "這個 page 不被信任\n"
 "但它包涵一個鍊結到您的區域檔案系統."
 
-#: kfmview.cpp:1335
+#: kfmview.cpp:1339
 msgid "Symbolic Link"
 msgstr "符號鏈結"
 
-#: kfmview.cpp:1337
+#: kfmview.cpp:1341
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (鏈結)"
 
-#: kfmview.cpp:1357
+#: kfmview.cpp:1361
 msgid "bytes"
 msgstr "位元組"
 
@@ -449,7 +449,8 @@ msgid "The mime type config file "
 msgstr "Mime 類型設定檔"
 
 #: kbind.cpp:304
-msgid "does not conatain a MimeType=... entry"
+#, fuzzy
+msgid "does not contain a MimeType=... entry"
 msgstr "沒有包含 MimeType=... 內容"
 
 #: kbind.cpp:392
@@ -586,11 +587,11 @@ msgstr "移至垃圾桶"
 msgid "Open with"
 msgstr "以...開啟"
 
-#: kfmman.cpp:1634 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1636 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "搬移"
 
-#: kfmman.cpp:1638 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1640 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "鏈結"
 
@@ -767,7 +768,7 @@ msgstr ""
 "無法改變權限\n"
 "或許\是拒絕存取."
 
-#: kfmprops.cpp:673 kfmprops.cpp:732
+#: kfmprops.cpp:673 kfmprops.cpp:736
 msgid "Execute"
 msgstr "執行"
 
@@ -776,28 +777,24 @@ msgstr "執行"
 msgid "&Browse..."
 msgstr "瀏覽"
 
-#: kfmprops.cpp:701
-msgid "Working Directory"
-msgstr "工作目錄"
-
-#: kfmprops.cpp:719
+#: kfmprops.cpp:723
 msgid "Swallowing on panel"
 msgstr "含入至 panel 中"
 
-#: kfmprops.cpp:746
+#: kfmprops.cpp:750
 msgid "Window Title"
 msgstr "視窗標題"
 
-#: kfmprops.cpp:766
+#: kfmprops.cpp:770
 msgid "Run in terminal"
 msgstr "在終端機中執行"
 
-#: kfmprops.cpp:774
+#: kfmprops.cpp:778
 msgid "Terminal Options"
 msgstr "終端機選項"
 
-#: kfmprops.cpp:949 kfmprops.cpp:1081 kfmprops.cpp:1686 kfmprops.cpp:2047
-#: kfmprops.cpp:2229
+#: kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1698 kfmprops.cpp:2059
+#: kfmprops.cpp:2241
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -809,76 +806,76 @@ msgstr ""
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1103
+#: kfmprops.cpp:1115
 #, fuzzy
 msgid "Background"
 msgstr "背景顏色:"
 
-#: kfmprops.cpp:1113
+#: kfmprops.cpp:1125
 msgid "Apply global"
 msgstr "套用至整體設定"
 
-#: kfmprops.cpp:1151 kfmprops.cpp:1223 kfmprops.cpp:1281
+#: kfmprops.cpp:1163 kfmprops.cpp:1235 kfmprops.cpp:1293
 msgid "(Default)"
 msgstr "(預設)"
 
-#: kfmprops.cpp:1212
+#: kfmprops.cpp:1224
 msgid "Could not write to\n"
 msgstr "無法寫入\n"
 
-#: kfmprops.cpp:1342
+#: kfmprops.cpp:1354
 msgid "(None)"
 msgstr "(無)"
 
-#: kfmprops.cpp:1388
+#: kfmprops.cpp:1400
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "二進位樣式 (netscape;Netscape;)"
 
-#: kfmprops.cpp:1395 kfmprops.cpp:1790
+#: kfmprops.cpp:1407 kfmprops.cpp:1802
 msgid "Comment"
 msgstr "說明"
 
-#: kfmprops.cpp:1406
+#: kfmprops.cpp:1418
 msgid "Name ( in your language )"
 msgstr "名稱 ( 用您的語言 )"
 
-#: kfmprops.cpp:1767
+#: kfmprops.cpp:1779
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "樣式 (舉例: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1779
+#: kfmprops.cpp:1791
 msgid "Mime Type"
 msgstr "Mime 類型"
 
-#: kfmprops.cpp:1808
+#: kfmprops.cpp:1820
 msgid "Default Application"
 msgstr "預設的應用程式"
 
-#: kfmprops.cpp:1848
+#: kfmprops.cpp:1860
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:2093
+#: kfmprops.cpp:2105
 msgid "Device ( /dev/fd0 )"
 msgstr "裝置 ( /dev/fd0 )"
 
-#: kfmprops.cpp:2102
+#: kfmprops.cpp:2114
 msgid "Mount Point ( /floppy )"
 msgstr "Mount Point ( /floppy )"
 
-#: kfmprops.cpp:2113
+#: kfmprops.cpp:2125
 msgid "Readonly"
 msgstr "唯讀"
 
-#: kfmprops.cpp:2119
+#: kfmprops.cpp:2131
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "檔案系統 (iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:2130
+#: kfmprops.cpp:2142
 msgid "Mounted Icon"
 msgstr "Mounted 圖示"
 
-#: kfmprops.cpp:2135
+#: kfmprops.cpp:2147
 msgid "Unmounted Icon"
 msgstr "Unmounted 圖示"
 
@@ -945,11 +942,11 @@ msgstr "錯誤: 無法讀取桌面目錄 '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "錯誤: 拖曳無法接受"
 
-#: kfmman.cpp:1617 root.cpp:1841
+#: kfmman.cpp:1619 root.cpp:1841
 msgid "Dont know what to do."
 msgstr "不知道該如何做."
 
-#: kfmman.cpp:1643 kfmtree.cpp:342 root.cpp:1866
+#: kfmman.cpp:1645 kfmtree.cpp:342 root.cpp:1866
 msgid "Dont know what to do"
 msgstr "不知道該如何做"
 
@@ -1456,6 +1453,9 @@ msgid ""
 msgstr ""
 "文法錯誤:\n"
 "kfmexec 命令 [URLs ....]\n"
+
+#~ msgid "Working Directory"
+#~ msgstr "工作目錄"
 
 #~ msgid ""
 #~ "Please change the password in\n"
