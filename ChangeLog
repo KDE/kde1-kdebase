@@ -1,5 +1,8 @@
 Fri Jan 30 15:47:50 1998  Stephan Kulow  <coolo@kde.org>
 
+	* acinclude.m4.in: export LIBRARY_PATH after reset to the saved
+	value
+	
 	* acinclude.m4.in: unset the LIBRARY_PATH to get a relieable
 	result when trying to find, if Qt compiles without -L
 
