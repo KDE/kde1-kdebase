@@ -39,17 +39,16 @@ msgid "Logout"
 msgstr "Odhlásit"
 
 #: kpanel.C:315 kpanel.C:663
-#, fuzzy
 msgid "Lock screen"
-msgstr "Blokovat obrazovku"
+msgstr "Zablokovat obrazovku"
 
 #: kpanel.C:326
 msgid "Hide the panel"
-msgstr ""
+msgstr "Schovat panel"
 
 #: kpanel.C:342
 msgid "Show the panel"
-msgstr ""
+msgstr "Ukázat panel"
 
 #: kpanel.C:647
 msgid "Add application"
@@ -57,15 +56,15 @@ msgstr "Pøidat aplikaci"
 
 #: kpanel.C:649
 msgid "Add an application or a submenu onto the panel"
-msgstr ""
+msgstr "Pøidat aplikaci nebo menu na panel"
 
 #: kpanel.C:650
 msgid "Add windowlist"
-msgstr ""
+msgstr "Pøidat seznam oken"
 
 #: kpanel.C:652
 msgid "Add a windowlist menu onto the panel"
-msgstr ""
+msgstr "Pøidat seznam oken na panel"
 
 #: kpanel.C:653
 msgid "Configure"
@@ -80,9 +79,8 @@ msgid "Restart"
 msgstr "Spustit znova"
 
 #: kpanel.C:658
-#, fuzzy
 msgid "Restart panel"
-msgstr "Spustit znova"
+msgstr "Spustit panel znova"
 
 #: kpanel.C:659 props.C:297
 msgid "Panel"
@@ -93,13 +91,12 @@ msgid "Lock Screen"
 msgstr "Blokovat obrazovku"
 
 #: kpanel.C:1012 tools.C:503
-#, fuzzy
 msgid "No comment available"
-msgstr "Informace není k dispozici"
+msgstr "Komentáø není k dispozici"
 
 #: kpanel.C:1021 tools.C:690
 msgid "Windowlist"
-msgstr ""
+msgstr "Seznam oken"
 
 #: props.C:239
 msgid "Location"
@@ -142,31 +139,9 @@ msgid "Width"
 msgstr "©íøka"
 
 #: props.C:360
-#, fuzzy
 msgid "Desktops"
-msgstr "Pracovní plocha"
+msgstr "Pracovní plochy"
 
 #: props.C:366
 msgid "KPanel Configuration"
 msgstr "Konfigurace KPanelu"
-
-#~ msgid "Personal menu"
-#~ msgstr "Osobní menu"
-
-#~ msgid "Add special"
-#~ msgstr "Pøidat speciální"
-
-#~ msgid "Destroy"
-#~ msgstr "Zniè"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "Pøipevnìní (zapnout/vypnout)"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "Ikonifikovat/Obnovit"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "Maximalizovat/Obnovit"
-
-#~ msgid "On this desktop"
-#~ msgstr "Na tuto pracovní plochu"

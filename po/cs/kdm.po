@@ -1,10 +1,17 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Content-Type: text/plain; charset=\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 
 #: kdmshutdown.cpp:229 kgreeter.cpp:207
 msgid "Cancel"
@@ -20,7 +27,7 @@ msgstr "Start!"
 
 #: kgreeter.cpp:179
 msgid "Login failed!"
-msgstr "Pøihlá¹ení neúspì¹né"
+msgstr "Pøihlá¹ení neúspì¹né!"
 
 #: kgreeter.cpp:145
 msgid "Login:"
@@ -36,7 +43,7 @@ msgstr "Pøístupové heslo:"
 
 #: kgreeter.cpp:185
 msgid "Session Type:"
-msgstr "  Typ sezení:"
+msgstr "Typ sezení:"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"

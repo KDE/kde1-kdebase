@@ -53,7 +53,7 @@ msgstr "KDE Nápovìda"
 
 #: helpwin.cpp:378
 msgid "Waiting for kmail to be finished..."
-msgstr "Èekám na ukonèení programu kmail ..."
+msgstr "Èekám na dokonèení programu kmail ..."
 
 #: helpwin.cpp:451 info.cpp:272
 msgid "Cannot open: "

@@ -2,7 +2,6 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,7 +18,8 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: zdá se, ¾e je spu¹tìný jiný window manager manager.kwm není spu¹»en\n"
+"kwm: zdá se, ¾e je ji¾ spu¹tìn jiný správce oken.\n"
+"kwm nespu¹tìn\n"
 
 #: main.C:78
 msgid "kwm: failure during initialisation; aborting\n"
@@ -27,59 +27,51 @@ msgstr "kwm: selhání bìhem inicializace; ukonèuji\n"
 
 #: main.C:363
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:367
 msgid "Usage: "
-msgstr ""
+msgstr "Pou¾ití:"
 
 #: main.C:378
-#, fuzzy
 msgid "Maximize"
-msgstr "(Od)Ma&ximalizuj"
+msgstr "Maximalizovat"
 
 #: main.C:379
 msgid "Restore"
-msgstr ""
+msgstr "Obnovit"
 
 #: main.C:380
-#, fuzzy
 msgid "Iconify"
-msgstr "&Ikonifikuj"
+msgstr "Ikonifikovat"
 
 #: main.C:381
-#, fuzzy
 msgid "DeIconify"
-msgstr "&Ikonifikuj"
+msgstr "Odikonifikovat"
 
 #: main.C:382
-#, fuzzy
 msgid "Sticky"
-msgstr "&Pøipevnìní (zapnout/vypnout)"
+msgstr "Pøilepit"
 
 #: main.C:383
-#, fuzzy
 msgid "UnSticky"
-msgstr "&Pøipevnìní (zapnout/vypnout)"
+msgstr "Odlepit"
 
 #: main.C:384
-#, fuzzy
 msgid "Move"
-msgstr "Pøe&suò"
+msgstr "Pøesunout"
 
 #: main.C:385
-#, fuzzy
 msgid "Resize"
-msgstr "&Zmìò velikost"
+msgstr "Zmìnit velikost"
 
 #: main.C:387
-#, fuzzy
 msgid "To desktop"
-msgstr "&Na pracovní plochu"
+msgstr "Na pracovní plochu"
 
 #: main.C:389
 msgid "Onto current desktop"
-msgstr ""
+msgstr "Na souèasnou pracovní plochu"
 
 #: main.C:437
 msgid "One"
@@ -115,89 +107,48 @@ msgstr "Osmá"
 
 #: main.C:841
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** ®ádné úlohy ***"
 
 #: minicli.C:66
 msgid "Command:"
 msgstr "Pøíkaz:"
 
 #: logout.C:35 task.C:36
-#, fuzzy
 msgid "Logout"
-msgstr "O&dhlá¹ení"
+msgstr "Odhlá¹ení"
 
 #: logout.C:45
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sezení pøipraveno k odhlá¹ení"
 
 #: logout.C:51
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Následující aplikace obsahují neulo¾ená data, která budou ztracena \n"
+"ve va¹em pøí¹tím sezení."
 
 #: logout.C:62
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Následující aplikace nemohou být obnoveny v následujícím sezení, mohou být\n"
+"pouze snovu spu¹tìny. Ujistìte se, ¾e neobsahují dùle¾itá neulo¾ená data."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Následující aplikace jsou pøizpùsobeny X11, ale pøesto nemohou být obnoveny\n"
+"ve va¹em pøí¹tím sezení. Ujistìte se, ¾e neobsahují dùle¾itá neulo¾ená data."
 
 #: task.C:35
 msgid "Switch to"
-msgstr ""
+msgstr "Pøepni do"
 
 #: task.C:49
 msgid "Current session"
-msgstr ""
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: verze 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     zalo¾eno na verzi 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     zalo¾eno na verzi 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Èasti pøevzaté z  9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     Bez záruky. Prosím pøeètìte si README\n"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "Pou¾ití: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Pracovní plocha"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: ukonèení po signálu\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "&Nápovìda pracovní plochy"
-
-#~ msgid "&Execute command"
-#~ msgstr "Vykonej &pøíkaz"
-
-#~ msgid "&Display properties"
-#~ msgstr "&Vlastnosti obrazovky"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "&Obnov pracovní plochu"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "&Uspoøádej ikony"
-
-#~ msgid "&Lock screen"
-#~ msgstr "&©etøiè obrazovky"
-
-#~ msgid "&Close"
-#~ msgstr "&Uzavøi"
-
-#~ msgid "&Destroy"
-#~ msgstr "&Zniè"
+msgstr "Souèasné sezení"
