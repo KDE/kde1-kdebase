@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Norwegian translations for KDE Base, kwm
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: $Id$\n"
 "POT-Creation-Date: 1998-09-10 15:49+0200\n"
-"PO-Revision-Date: 1998-02-26 21:17:+0100\n"
-"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"PO-Revision-Date: 1998-09-30 17:28:+0200\n"
+"Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: ISO_8859-1\n"
 
 #: main.C:68
 msgid ""
@@ -178,104 +178,96 @@ msgstr "Nåværende arbeidsperiode"
 
 #: kwmbindings.cpp:1
 msgid "Task manager"
-msgstr ""
+msgstr "Oppgavebehandler"
 
 #: kwmbindings.cpp:2
 msgid "Kill window mode"
-msgstr ""
+msgstr "Drep vindu-modus"
 
 #: kwmbindings.cpp:3
 msgid "Execute command"
-msgstr ""
+msgstr "Utfør kommando"
 
 #: kwmbindings.cpp:4
 msgid "Window operations menu"
-msgstr ""
+msgstr "Vinduopperasjonsmeny"
 
 #: kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr ""
+msgstr "Poppopp-systemmeny"
 
 #: kwmbindings.cpp:7
 msgid "Window raise"
-msgstr ""
+msgstr "Legg vindu øverst"
 
 #: kwmbindings.cpp:8
 msgid "Window lower"
-msgstr ""
+msgstr "Legg vindu nederst"
 
 #: kwmbindings.cpp:9
 msgid "Window close"
-msgstr ""
+msgstr "Lukk vindu"
 
 #: kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr ""
+msgstr "Ikoniser vindu"
 
 #: kwmbindings.cpp:11
 msgid "Window resize"
-msgstr ""
+msgstr "Endre størrelse på vindu"
 
 #: kwmbindings.cpp:12
 msgid "Window move"
-msgstr ""
+msgstr "Flytt vindu"
 
 #: kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr ""
+msgstr "Gjør fast/løst vindu"
 
 #: kwmbindings.cpp:15
-#, fuzzy
 msgid "Switch to desktop 1"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 1"
 
 #: kwmbindings.cpp:16
-#, fuzzy
 msgid "Switch to desktop 2"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 2"
 
 #: kwmbindings.cpp:17
-#, fuzzy
 msgid "Switch to desktop 3"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 3"
 
 #: kwmbindings.cpp:18
-#, fuzzy
 msgid "Switch to desktop 4"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 4"
 
 #: kwmbindings.cpp:19
-#, fuzzy
 msgid "Switch to desktop 5"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 5"
 
 #: kwmbindings.cpp:20
-#, fuzzy
 msgid "Switch to desktop 6"
-msgstr "Skift til"
+msgstr "Skift til skrivebord 6"
 
 #: kwmbindings.cpp:21
-#, fuzzy
 msgid "Switch to desktop 7"
-msgstr "Skift til"
+msgstr "Skift til skriebord 7"
 
 #: kwmbindings.cpp:22
-#, fuzzy
 msgid "Switch to desktop 8"
-msgstr "Skift til"
+msgstr "Skift til skriebord 8"
 
 #: kwmbindings.cpp:24
 msgid "Switch one desktop to the right"
-msgstr ""
+msgstr "Skrift ett skrivebord til høyre"
 
 #: kwmbindings.cpp:25
 msgid "Switch one desktop to the left"
-msgstr ""
+msgstr "Skrift ett skrivebord til venstre"
 
 #: kwmbindings.cpp:26
 msgid "Switch one desktop up"
-msgstr ""
+msgstr "Skift ett skrivebord opp"
 
 #: kwmbindings.cpp:27
 msgid "Switch one desktop down"
-msgstr ""
+msgstr "Skift ett skrivebord ned"
