@@ -546,39 +546,3 @@ msgstr "&Avvio"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Tastiera Internazionale"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr "Aspetto esteso. Ogni finestra ricorda la propria mappa di tastiera"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr ""
-#~ "Aspetto seciale. Ogni classe di finestre ricorda la propria mappa di tastiera"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Colore del testo delle etichette"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Vuoi iniziare la Configurazione?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "La tua configurazione risulta vuota. Installo valori predefiniti."
-
-#, fuzzy
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "I tuoi file di configurazione hanno un formato vecchio.\n"
-#~ "Alcune impostazioni potranno essere scorrette."
-
-#, fuzzy
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "I tuoi file di configurazione hanno un formato vecchio.\n"
-#~ "Alcune impostazioni potranno essere scorrette."
