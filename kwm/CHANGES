@@ -26,6 +26,7 @@ In 0.10:
        - sticky cares about transient windows now
 
        - fix for proxyignore
+       - window dragging fixed (problems with some compilers)
 
   patchlevel 15:
        - transient windows are iconified/deiconified with their parent

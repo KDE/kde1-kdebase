@@ -220,14 +220,12 @@ int sweepdrag(Client* c, XButtonEvent * /* e0 */,
       XGrabServer(dpy);
       drawbound(c);
     }
-    while (c->dragging_is_running() && !return_pressed && 
-	   (do_again 
-	    ||
-	    (!XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev)
-	     && ev.type != ButtonRelease)
-	    )
-	   ) {
+    
+    while (c->dragging_is_running() && !return_pressed){
+      if (!do_again)
+	XMaskEvent(dpy, ButtonMask|KeyPressMask|PointerMotionMask, &ev);
       do_again = false;
+      return_pressed = ev.type == ButtonRelease;
       if (ev.type == KeyPress){
 	int kc = XKeycodeToKeysym(dpy, ev.xkey.keycode, 0);
 	int mx = 0;
