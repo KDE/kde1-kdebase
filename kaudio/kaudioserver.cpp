@@ -1,5 +1,3 @@
-// THIS IS DAMNED HACKED. PLEASE DO NOT LOOK AT THE CODE, PLEASE //
-
 /*
    Copyright (c) 1997 Christian Esken (esken@kde.org)
 
@@ -48,6 +46,7 @@ void MYexit(int retcode)
 void mysigchild(int /*signum*/)
 {
   unlink (KMServerPidFile);
+  MdDisconnect(&m);
   MYexit(1);  
 }
 
@@ -182,9 +181,15 @@ int main ( int argc , char **argv )
      * to die :´-)
      */
     signal(SIGCHLD,mysigchild);
-    while(1) {
+    signal(SIGHUP ,mysigchild);
+    signal(SIGKILL,mysigchild);
+    signal(SIGQUIT,mysigchild);
+    signal(SIGBUS ,mysigchild);
+    signal(SIGSEGV,mysigchild);
+    signal(SIGTERM,mysigchild);
+ 
+    while(1)
       sleep(100);
-    }
   }
 
   fprintf(stderr,"Failed starting audio server!\n");

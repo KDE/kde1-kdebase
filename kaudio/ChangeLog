@@ -1,21 +1,27 @@
+1998-06-17  Christian Esken  <esken@kde.org>
+
+	* ADDING MdDisconnect(). *BSD users should be much happier now.
+
 Sat Apr 25 02:21:18 1998    <chris@magicon.ping.de>
 
 	* Cleaned up some stuff. Removed error messages when device is busy
 	* Reduced buffers from 160 to 8 ;-)
-	* This is the first good and reliable version. Voila, we have now a sound
-	capable desktop.
+	* This is the first good and reliable version. Voila, we have now a
+	sound capable desktop.
 
 Fri Apr 24 23:13:43 1998    <chris@magicon.ping.de>
 
-	*  Checked, why long media caused pops and noises. Found out maudio was not
-	the guilty one, but the UI kmedia, which caused a dirty loopback
-	with maudio.
+	*  Checked, why long media caused pops and noises. Found out maudio
+	was not the guilty one, but the UI kmedia, which caused a dirty
+	loopback with maudio.
 	* some cleanups
-	* emitSilence() is called now always, if device is open and not playing any
-	useful data. This is especially important when the automaton is in state "PAUSE".
-	* Multi Buffers get cleared now when a new media gets opened. This fixes the
-	"repeated output" bug nobody reported till now.
-	* Warped the verison number to V0.80. We are nearing the final 1.0 version :-)
+	* emitSilence() is called now always, if device is open and not
+	playing any useful data. This is especially important when the
+	automaton is in state "PAUSE".
+	* Multi Buffers get cleared now when a new media gets opened. This
+	fixes the "repeated output" bug nobody reported till now.
+	* Warped the verison number to V0.80. We are nearing the final 1.0
+	version :-)
 	* Adding "-version" command line switch
 
 
