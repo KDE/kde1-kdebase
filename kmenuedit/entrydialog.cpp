@@ -440,7 +440,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 void EntryDialog::pixnameChanged()
 {
   QString new_name = i_pixmap->text();
-  b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 70, 70 ));
+  b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 24, 24 ));
 }
 
 void EntryDialog::bigPixnameChanged()

@@ -264,9 +264,14 @@ void MenuButton::change_accept()
       if( pmenu_item->getName() != dialog->i_fname->text() )
 	if( pmenu_parent->checkFilenames(dialog->i_fname->text()) )
 	  {
-	    QMessageBox::information(0, "Wrong filename", "Kdelnk-file with this name does already exist. \nPlease choose another filename.", "Ok" );
+	    QMessageBox::information(dialog, "Wrong filename", "A kdelnk-file with this name does already exist. \nPlease choose another filename.", "Ok" );
 	    return;
 	  }
+      if( pmenu_item->getName().isEmpty() )
+	{
+	  QMessageBox::information(dialog, "Empty filename", "The name for this kdelnk-file is missing. \nPlease choose a filename.", "Ok" );
+	  return;
+	}
       EntryType old_type = pmenu_item->getType();
       EntryType new_type = (EntryType) (dialog->c_type->currentItem()+1);
       if( old_type != new_type )
@@ -935,7 +940,28 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
       fi.setFile( name.mid(5, name.length()) );
       //if( !fi.extension().contains("kdelnk") )
       if( !isKdelnkFile(fi.absFilePath()) )
-	continue;
+	{
+	  if( fi.isExecutable() )
+	    {
+	      new_item = new PMenuItem;
+	      new_item->setText(fi.fileName());
+	      new_item->setCommand(fi.absFilePath());
+	      new_item->setType(unix_com);
+	      append( new_item );
+	      pmenu->add( new_item );
+	      changes_to_save = TRUE;
+	      QString file_name = fi.fileName();
+	      QString suffix;
+	      int i = 2;
+	      while( pmenu->checkFilenames(file_name) )
+		{
+		  file_name = fi.fileName() + suffix.setNum(i);
+		  i++;
+		}
+	      new_item->setName(file_name);
+	    }
+	  continue;
+	}
       new_item = new PMenuItem;
       if( new_item->parse(&fi) < 0 )
 	delete new_item;

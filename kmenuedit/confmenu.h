@@ -62,6 +62,9 @@ signals:
   void delButton( int );
   void pasteButton( int );
 
+public slots:
+  void change_item();
+
 protected slots:
   void open();
   void sOpen(int) { open(); }
@@ -70,7 +73,6 @@ protected slots:
   void copyItem();
   void pasteItem() { emit pasteButton( id); }
   void delete_item();
-  void change_item();
   void change_accept();
   void change_reject();
   void popupMenu( int );

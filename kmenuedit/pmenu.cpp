@@ -788,7 +788,6 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 	dir_list.append(name);
       ++temp_it;
     }
-
   QString sort_order;
   PMenuItem *item;
   for( item = list.first(); item != 0; item = list.next() )
@@ -818,11 +817,14 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 	{
 	  if( !item->read_only )
 	    item->writeConfig(base_dir);
-	  file_list.remove(item->real_name); // + ".kdelnk");
+	  if( item->getType() != separator )
+	    {
+	      file_list.remove(item->real_name); // + ".kdelnk");
+	    }
 	}
     }
   // remove files not in pmenu
-  for( name = file_list.first(); !name.isEmpty(); name = file_list.next() )
+  for( name = file_list.first(); name != 0; name = file_list.next() )
     {
       if( isKdelnkFile(base_dir.absFilePath(name)) )
 	{
@@ -831,7 +833,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
 	}
     }
   // remove dirs not in pmenu
-  for( name = dir_list.first(); !name.isEmpty(); name = dir_list.next() )
+  for( name = dir_list.first(); name != 0; name = dir_list.next() )
     {
       debug("will remove dir: %s", (const char *) name );
       QDir sub_dir(base_dir);

@@ -207,7 +207,7 @@ void KMenuEdit::startHelp()
 void KMenuEdit::about()
 {
   QMessageBox::message( "About", \
-                        "Kmenuedit 0.2.2\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
+                        "Kmenuedit 0.2.3\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
 }
 
 void KMenuEdit::loadMenus()
@@ -302,15 +302,17 @@ void KMenuEdit::reload()
     {
       if( QMessageBox::warning(this, "Reload Menus",
 			      "Reloading the menus will discard all changes.\n
-Are you sure you want to reload ?", "Yes", "No" ) == 0 )
+Are you sure you want to reload ?", "Yes", "No" ) != 0 )
         {
-	  loadMenus();
-	  QPoint p( 5, 5 );
-	  pers_menu_data->popupConfig( p, f_move, FALSE );
-	  p.setX( QApplication::desktop()->width() / 2 );
-	  glob_menu_data->popupConfig( p, f_move, FALSE );
+	  return;
 	}
     }
+  QPoint p_pers = pers_menu_data->configPos();
+  QPoint p_glob = glob_menu_data->configPos();
+  loadMenus();
+  pers_menu_data->popupConfig( p_pers, f_move, FALSE );
+  glob_menu_data->popupConfig( p_glob, f_move, FALSE );
+  changes_to_save = FALSE;
 }
 
 void KMenuEdit::save()
