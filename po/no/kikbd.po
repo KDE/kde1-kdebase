@@ -66,15 +66,16 @@ msgstr ""
 "Caps Lock-emulering er koplet ut"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Internasjonalt tastatur"
+msgstr "Avslutter Internasjonalt tastatur"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Du holder på å avslutte \"Internasjonalt tastatur\"-verktøyet.\n"
+"Vil du at det automatisk skal starte ved neste innlogging?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -197,19 +198,21 @@ msgid "X default codes"
 msgstr "X-standardkoder"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Vil du fortsette?"
+"%s\n"
+"Vil du konfigurere nå?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Du bruker \"Internasjonalt tastatur\" for første gang.\n"
+"Jeg installerte en rekke standardinnstillinger."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -264,14 +267,12 @@ msgid "alternative symbols"
 msgstr "alternative symboler"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
-msgstr "språk"
+msgstr "Språk"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
-msgstr "tegnsett"
+msgstr "Tegnsett"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -505,9 +506,8 @@ msgid "&Docked"
 msgstr "&Dokket"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
-msgstr "Dokke inn i spesielt område i kpanel"
+msgstr "Dokke inn i spesielt område i panelet"
 
 #: widgets.cpp:658
 msgid "Place"
@@ -532,27 +532,3 @@ msgstr "&Oppstart"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internasjonalt tastatur"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Ønsker du å starte konfigurasjon?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Konfigurasjon din er tom. Installer systemstandard."
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfigurasjonsfilen du har har et eldre format en forventet.\n"
-#~ "Noen innstillinger kan være feil."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiugrasjonsfilen du har har et nyere format enn forventet.\n"
-#~ "Noen innstillinger kan være feil."
