@@ -66,6 +66,8 @@ QString displayName()
     int i = d.find( ':' );
     if ( i != -1 )
 	d[i] = '_';
-    
+    if ( d.find( '.' ) == -1 )
+	d += ".0";
+    printf("NAME of DISPLAY = '%s'\n",d.data());
     return d;
 }

@@ -4,7 +4,7 @@ LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 
 bin_PROGRAMS = kfmclient
 
-kfmclient_SOURCES = kfmclient.cpp kfmclient_ipc.cpp kfmclient_ipc2.cpp ipc.cpp ../debug.cpp
+kfmclient_SOURCES = kfmclient.cpp kfmclient_ipc.cpp kfmclient_ipc2.cpp ipc.cpp
 noinst_HEADERS = kfmclient_ipc.h ipc.h
 
 kfmclient_DEPENDENCIES = debug.o

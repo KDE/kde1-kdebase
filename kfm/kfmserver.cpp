@@ -149,7 +149,10 @@ void KFMServer::slotOpenURL( const char* _url )
 	if ( url == "trash:/" )
 	    url = "file:" + KFMPaths::TrashPath();
 	
-	KfmGui *w = KfmGui::findWindow( url.data() );
+	KFMExec exec;
+	exec.openURL( _url );
+	
+	/* KfmGui *w = KfmGui::findWindow( url.data() );
 	if ( w != 0L )
 	{
 	    w->show();
@@ -157,7 +160,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	}
 	
 	KfmGui *f = new KfmGui( 0L, 0L, url.data() );
-	f->show();
+	f->show(); */
 	return;
     }
     
