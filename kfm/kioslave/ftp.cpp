@@ -185,7 +185,7 @@ int KProtocolFTP::ftpOpen(const char *host)
  *
  * return 1 if proper response received, 0 otherwise
  */
-int KProtocolFTP::ftpSendCmd(char *cmd, char expresp)
+int KProtocolFTP::ftpSendCmd(const char *cmd, char expresp)
 {
     char buf[256];
     if (ftplib_debug > 2)

@@ -46,7 +46,7 @@ private:
 	int readline(char *buf,int max,netbuf *ctl);
 	int readresp(char c);
 	int ftpOpen(const char *host);
-	int ftpSendCmd(char *cmd, char expresp);
+	int ftpSendCmd(const char *cmd, char expresp);
 	int ftpLogin( const char *user, const char *pass, QString *redirect = 0L);
 	int ftpPort();
 	int ftpMkdir(const char *path);
