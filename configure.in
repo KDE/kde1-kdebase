@@ -252,7 +252,7 @@ AC_OUTPUT(Makefile \
 	kdm/config/Makefile \
 	kdm/pics/Makefile \
 	kdm/xdmconfig/Makefile \
-	kmedia/Makefile \
+	kaudio/Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
 	doc/Makefile \

@@ -3,7 +3,7 @@
 
 SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt \
 	kwm klogout kwmclient kdm kscreensaver \
-	kmenuedit kmedia \
+	kmenuedit kaudio \
 	pics po mimetypes doc applnk
 
 install-data-local:
