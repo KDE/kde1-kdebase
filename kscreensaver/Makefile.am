@@ -3,7 +3,7 @@
 #
 
 INCLUDES = $(all_includes)
-LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCRYPT) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBCRYPT) $(LIBSOCKET) $(KDE_RPATH)
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 # for shadow passwords override the value
