@@ -5,7 +5,6 @@
 Authors=Tomas Furmonavièius <f1926@kaunas.aiva.lt>
 
 Language=Lithuanian
-Language[br]=Lituaneg
 Language[ca]=Lituà
 Language[cs]=Litevský
 Language[da]=Litauisk
@@ -30,13 +29,12 @@ Label=Lt
 Locale=lt
 
 [KeyboardMap]
-CapsSymbols=1,2,3,4,5,6,7,8,9,0,-,=
-keysym0=,,,agrave,Agrave,
-keysym1=,,,egrave,Egrave,
-keysym2=,,,ae,AE,
-keysym3=,,,ediaeresis,Ediaeresis,
-keysym4=,,,aacute,Aacute,
-keysym5=,,,eth,ETH,
-keysym6=,,,oslash,Ooblique,
-keysym7=,,,ucircumflex,Ucircumflex,
-keysym12=,,,thorn,THORN,
+keysym0=1,agrave,Agrave,1,exclam,
+keysym1=2,egrave,Egrave,2,at,
+keysym2=3,ae,AE,3,numbersign,
+keysym3=4,ediaeresis,Ediaeresis,4,dollar,
+keysym4=5,aacute,Aacute,5,percent,
+keysym5=6,eth,ETH,6,asciicircum,
+keysym6=7,oslash,Ooblique,7,ampersand,
+keysym7=8,ucircumflex,Ucircumflex,8,asterisk,
+keysym8=equal,thorn,THORN,equal,plus,
