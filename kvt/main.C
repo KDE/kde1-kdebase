@@ -665,6 +665,7 @@ void kVt::options_menu_activated( int item){
   case 9:
     // save options
     {
+      kvtconfig->setGroup("kvt");
       if (menubar_visible)
 	kvtconfig->writeEntry("menubar", "visible");
       else
