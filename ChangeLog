@@ -17,3 +17,5 @@
 0.8: removed a bug in kghostview
 	lifted installation process of several apps
 	splitt kdebase into kdelibs and kdeapps	
+	updated khtmlw, kfm and kdehelp
+	added kcalc and kpaint

@@ -17,10 +17,10 @@ LDFLAGS = @all_libraries@ -lqt -lkdecore -lkhtmlw -lXext -lX11 @LIBSOCKET@ @LIBC
 
 ########## Files ##########
 
-SRCS = search.cpp mansrch.cpp
+SRCS = search.cpp mansrch.cpp htmlsrch.cpp
 SRCMETA =
 HDRS = mansrch.h
-OBJS = search.o mansrch.o
+OBJS = search.o mansrch.o htmlsrch.o
 
 TARGET = helpsearch
 

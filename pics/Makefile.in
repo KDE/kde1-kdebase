@@ -1,6 +1,6 @@
 INSTALL_DATA = @INSTALL@ -m 0644
-INSTALL_DIR = @mkinstalldirs@
-PICS = `find . -type f \( -name "*.xpm" -or -name "*.jpg" \) -print`
+INSTALL_DIR = @INSTALL@ -d -m 0755
+PICS = `find . -type f \( -name "*.xpm" -or -name "*.jpg" -or -name "*.xbm" -or -name "*.ppm" -or -name "*.gif" \) -print`
 prefix = @prefix@
 libdir = $(prefix)/lib
 

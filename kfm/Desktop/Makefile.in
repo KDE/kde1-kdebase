@@ -16,7 +16,7 @@ DESKTOPLNKS = "./ftp.kde.org.kdelnk" \
 	"./Netscape.kdelnk"
 
 TEMPLATEDIR = @prefix@/lib/kfm/Desktop/
-INSTALL_DIR = @mkinstalldirs@
+INSTALL_DIR = @INSTALL@ -d -m 0755
 INSTALL_DATA = @INSTALL@ -m 644
 
 all:

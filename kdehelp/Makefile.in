@@ -15,7 +15,7 @@ DEFS = -DHAVE_CONFIG_H
 
 INSTALL = @INSTALL@ -m 0755
 INSTALL_DATA = @INSTALL@ -m 0644
-INSTALL_DIR = @mkinstalldirs@ 
+INSTALL_DIR = @INSTALL@ -d -m 0755
 
 prefix = @prefix@
 BINDIR = $(prefix)/bin

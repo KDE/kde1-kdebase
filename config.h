@@ -67,7 +67,7 @@
 #define HAVE_LIBJPEG 1
 
 /* Define if you have the qt library (-lqt).  */
-#define HAVE_LIBQT 1
+/* #undef HAVE_LIBQT */
 
 #ifndef HAVE_BOOL
 #define HAVE_BOOL
@@ -75,3 +75,8 @@ typedef int bool;
 const bool false = 0;
 const bool true = 1;
 #endif
+ 
+/* Define if the `long double' type works.  */
+/* #undef HAVE_LONG_DOUBLE */
+
+

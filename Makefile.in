@@ -48,8 +48,10 @@ RANLIB = @RANLIB@
 VERSION = @VERSION@
 x_includes = @x_includes@
 x_libraries = @x_libraries@
+all_includes = @all_includes@
+all_libraries = @all_libraries@
 
-SUBDIRS =  kacli kdehelp kdisplay kedit kfind kfm kghostview kmines kpanel kpat ktetris kview kwm kwmclient pics apps
+SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kview kwm kwmclient kpaint kcalc pics apps
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 CONFIG_HEADER_IN = config.h.in
