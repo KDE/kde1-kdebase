@@ -126,16 +126,6 @@ msgstr ""
 msgid "Current session"
 msgstr ""
 
-#: error.C:28
-msgid ""
-"kwm: it looks like there's already a window manager running.  kwm not "
-"started\n"
-msgstr ""
-
-#: error.C:42
-msgid "kwm: failure during initialisation; aborting\n"
-msgstr ""
-
 #: kwm.C:73
 msgid ""
 "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
