@@ -609,7 +609,7 @@ msgid ""
 "The destination seems to already exist\n"
 msgstr ""
 "Impossibile rinominare il file o la directory\n"
-"La destinazione sembra esistere già"
+"La destinazione sembra esistere già\n"
 
 #: kfmprops.cpp:414
 msgid "Access permissions"
@@ -1386,5 +1386,5 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Errorore di sintassi:\n"
-"kfmexec comando [URL ....]"
+"kfmexec comando [URL ....]\n"
 

@@ -19,7 +19,7 @@ msgstr "Znovu naèíta» menu"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
-msgstr "Zmìni» názov menu"
+msgstr "Zmeni» názov menu"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
