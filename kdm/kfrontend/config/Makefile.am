@@ -1,9 +1,12 @@
 
-data_DATA = $(BUILT_SOURCES) xdm-config Xresources Xservers Xaccess Xsession \
+data_DATA = $(CONFIG_FILES) xdm-config Xresources Xservers Xaccess Xsession \
 	GiveConsole TakeConsole Xsetup_0
 datadir = $(ac_xdmdir)
-BUILT_SOURCES = Xservers.ws xdm-config Xservers Xsetup
-CLEANFILES = $(BUILT_SOURCES)
+
+CONFIG_FILES = Xservers.ws xdm-config Xservers Xsetup 
+all-local: $(CONFIG_FILES)
+
+CLEANFILES = $(CONFIG_FILES)
 
 Xservers: Xservers.ws
 	$(RM) -f Xservers
