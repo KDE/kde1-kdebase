@@ -273,7 +273,9 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	cbRoot->setMinimumSize( cbRoot->sizeHint() );
 	cbRoot->setChecked( allowRoot );
 	connect( cbRoot, SIGNAL( toggled( bool ) ), SLOT( slotAllowRoot( bool ) ) );
-	groupLayout->addWidget( cbRoot );	
+
+	cbRoot->hide(); // Christian: added, because kcheckpass doesn't support this
+	//groupLayout->addWidget( cbRoot ); // don't add it to layout, either
 
 	cbStars = new QCheckBox(  i18n("Show &password as stars"), group );
 	cbStars->setMinimumSize( cbStars->sizeHint() );

@@ -1,3 +1,8 @@
+1998-12-23  Christian Esken  <esken@kde.org>
+
+	* scrnsave.cpp: Removed the "Allow unlock by root" checkbox,
+	because kcheckpass doesn't support this option.
+
 1998-12-07  Alex Zepeda  <garbanzo@hooked.net>
 
 	* general.cpp: Initialized a variable to NULL.
