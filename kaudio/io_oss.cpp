@@ -28,7 +28,7 @@
 #include "sys/ioctl.h"
 #include <sys/types.h>
 #include <soundcard.h>
-#define OSS_MIXER
+#define OSS_AUDIO
 #endif
 
 #include "maudio.h"
