@@ -914,33 +914,36 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 }
 
 void MyApp::handleKeyRelease(XKeyEvent key){
-//   int kc = XKeycodeToKeysym(qt_xdisplay(), key.keycode, 0);
-//   int km = key.state & (ControlMask | Mod1Mask | ShiftMask);
+  int i;
   if (tab_grab){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
-    if (xmk->modifiermap[xmk->max_keypermod * Mod1MapIndex] == key.keycode){
-      XUngrabKeyboard(qt_xdisplay(), CurrentTime);
-      hideInfoBox();
-      tab_grab = FALSE;
-      if (infoBoxClient){
-	if (infoBoxClient->state == NormalState){
-	  manager->raiseClient(infoBoxClient);
-	  manager->activateClient(infoBoxClient);
-	}
-	else{ // IconicState
-	  infoBoxClient->unIconify();
+    for (i=0; i<xmk->max_keypermod; i++)
+      if (xmk->modifiermap[xmk->max_keypermod * Mod1MapIndex + i] 
+	  == key.keycode){
+	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+	hideInfoBox();
+	tab_grab = FALSE;
+	if (infoBoxClient){
+	  if (infoBoxClient->state == NormalState){
+	    manager->raiseClient(infoBoxClient);
+	    manager->activateClient(infoBoxClient);
+	  }
+	  else{ // IconicState
+	    infoBoxClient->unIconify();
+	  }
 	}
       }
-    }
   }
   if (control_grab){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
-    if (xmk->modifiermap[xmk->max_keypermod * ControlMapIndex] == key.keycode){
-      XUngrabKeyboard(qt_xdisplay(), CurrentTime);
-      hideInfoBox();
-      control_grab = False;
-      manager->switchDesktop(infoBoxVirtualDesktop);
-    }
+    for (i=0; i<xmk->max_keypermod; i++)
+      if (xmk->modifiermap[xmk->max_keypermod * ControlMapIndex + i] 
+	  == key.keycode){
+	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+	hideInfoBox();
+	control_grab = False;
+	manager->switchDesktop(infoBoxVirtualDesktop);
+      }
   }
 }
 

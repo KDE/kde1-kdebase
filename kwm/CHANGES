@@ -17,6 +17,7 @@ In 0.10:
          libkdecore to work)
        - Alt-MouseButton fix: works regardless NumLock/Capslock now
        - correct cursorfont for Alt-RMB rsize and Alt-LMB move
+       - fixed control/tab release
   patchlevel 9:
        - small fix for kwm modules
        - further qt-1.3 changes: with 1.3 the mouse sometimes hang
