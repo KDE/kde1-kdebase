@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kpanel\n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"Language-Team: czech <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
+#: main.cpp:57
+msgid "&Panel"
+msgstr "&Panel"
+
+#: main.cpp:60
+msgid "&Desktops"
+msgstr "P&racovní plochy"
+
+#: main.cpp:84
+msgid "KPanel Configuration"
+msgstr "Konfigurace KPanelu"
+
+#: panel.cpp:57
+msgid "Location"
+msgstr "Umístìní"
+
+#: panel.cpp:64
+msgid "Taskbar"
+msgstr "Taskbar"
+
+#: panel.cpp:65
+msgid "Hidden"
+msgstr "Skrytý"
+
+#: panel.cpp:68
+msgid "Top/Left"
+msgstr "Nahoøe/Vlevo"
+
+#: panel.cpp:88
+msgid "Tiny Style"
+msgstr "Drobný"
+
+#: panel.cpp:89
+msgid "Normal Style"
+msgstr "Normální"
+
+#: panel.cpp:90
+msgid "Large Style"
+msgstr "Velký"
+
+#: panel.cpp:98
+msgid "Menu Tooltips"
+msgstr "Nápovìdy v menu"
+
+#: panel.cpp:100
+msgid "Personal First"
+msgstr "Osobní první"
+
+#: panel.cpp:102
+msgid "Auto Hide Panel"
+msgstr "Skrývat panel"
+
+#: panel.cpp:104
+msgid "Auto Hide Taskbar"
+msgstr "Skrývat pruh úloh"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Viditelný"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "©íøka"
