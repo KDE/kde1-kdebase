@@ -208,6 +208,7 @@ int KProtocolTAR::makeRelative(QString & tmp)
 
 int KProtocolTAR::OpenDir(KURL *url)
 {
+    //debug("KProtocolTAR::OpenDir(%s)",url->url().data());
     dirpath = url->path();
 
     // extracting /xxx from a tarfile containing the file xxx won't work
@@ -259,7 +260,14 @@ int KProtocolTAR::OpenDir(KURL *url)
 	  }
           
           if (makeRelative(tmp)==FAIL)
-              return Error(KIO_ERROR_CouldNotList, "No such dir", 0);
+          {
+              if (tmp.right(1)!="/") tmp+="/"; // Try again with slash appended
+              if (makeRelative(tmp)!=FAIL)
+                  // The file exists but not the directory
+                  return Error(KIO_ERROR_NotADirectory, "No such dir", 0);
+              else
+                  return Error(KIO_ERROR_CouldNotList, "No such dir", 0);
+          }
 
 	  int i = tmp.find ("/");
 	  // this is first slash; If there is something behind this slash,
