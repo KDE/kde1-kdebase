@@ -1814,6 +1814,9 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 
 
 bool MyApp::x11EventFilter( XEvent * ev){
+  static Atom kwm_win_frame_geometry = 0;
+  if (! kwm_win_frame_geometry)
+    kwm_win_frame_geometry = XInternAtom(qt_xdisplay(),"KWM_WIN_FRAME_GEOMETRY",False);
 
     if (process_events_mode) {
 	switch (ev->type) {
@@ -1824,17 +1827,25 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	    if (manager->getClient(ev->xcrossing.window))
 		return TRUE;
 	    break;
+	case PropertyNotify:
+	  {
+	    // ignore kwm_win_frame_geometry (we generate lots of the
+	    // when doing opaque resizing, so the event stack would
+	    // overflow
+	    if (ev->xproperty.atom == kwm_win_frame_geometry)
+	      return TRUE;
+	  }
 	case ButtonPress:
 	case ButtonRelease:
 	case KeyPress:
 	case KeyRelease:
 	case ClientMessage:
-	case PropertyNotify:
 	    // process these later
 	    if (events_count == 49) {
 		events_count--;
 	    }
 	    events[events_count++] = *ev;
+ 	    // debug("events: %d", events_count);
 	    return TRUE;
 	    break ;
 	}
@@ -1990,7 +2001,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 
 void MyApp::myProcessEvents() {
-    bool inHere = FALSE;
+    static bool inHere = FALSE;
     if (inHere)
 	return;
     inHere = TRUE;

@@ -13,6 +13,10 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 8:
+        - delayed internal event handling fix (kwm sometimes lost the 
+           mouse on opaque resize)
+
 patchlevel 7:
         - small bugfixes
         - improved (faster) configure request handling
