@@ -188,7 +188,7 @@ msgstr "Symbolske lenker"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr "Sepsialfiler (sockets, enhetsfiler...)"
+msgstr "Spesialfiler (sockets, enhetsfiler...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"

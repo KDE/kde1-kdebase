@@ -22,7 +22,6 @@ msgid "&Titlebar"
 msgstr "&Tittellinje"
 
 #: main.cpp:70
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Kanter"
 
@@ -31,9 +30,8 @@ msgid "&Mouse"
 msgstr "&Mus"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
-msgstr "bruk: kcmkwm [-init | {windows,buttons,titlebar,desktop,mouse}]\n"
+msgstr "bruk: kcmkwm [-init | {optinos,buttons,titlebar,borders,mouse}]\n"
 
 #: main.cpp:114
 msgid "Window manager style"
@@ -104,12 +102,10 @@ msgid "Pixmap"
 msgstr "Pixmap"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "Active pixmap:"
 msgstr "&Aktivt-pixmap"
 
 #: titlebar.cpp:995
-#, fuzzy
 msgid "Inactive pixmap:"
 msgstr "&Inaktivt-pixmap"
 
@@ -118,11 +114,8 @@ msgid "Mouse action"
 msgstr "Musfunksjon"
 
 #: titlebar.cpp:1013
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Venstremusknapp-dobbelklikk\n"
-"    på tittellinje gjør følgende:"
+msgstr "Venstremusknapp-dobbelklikk gjør:"
 
 #: titlebar.cpp:1023
 msgid "(Un)Maximize"
@@ -141,7 +134,6 @@ msgid "(Un)Sticky"
 msgstr "(Un)Sticky"
 
 #: titlebar.cpp:1046
-#, fuzzy
 msgid "Title animation"
 msgstr "Tittelanimasjon"
 
@@ -150,9 +142,8 @@ msgid "ms"
 msgstr "ms"
 
 #: windows.cpp:66
-#, fuzzy
 msgid "Windows"
-msgstr "&Vinduer"
+msgstr "Vinduer"
 
 #: windows.cpp:80
 msgid "Vertical maximization only by default"
@@ -232,9 +223,8 @@ msgid "Classic sloppy focus"
 msgstr "Klikk for fokus"
 
 #: windows.cpp:197
-#, fuzzy
 msgid "Auto Raise"
-msgstr "Legg øverst"
+msgstr "Legg automatisk øverst"
 
 #: windows.cpp:204
 msgid "Delay (ms)"

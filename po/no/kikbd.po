@@ -83,17 +83,17 @@ msgstr ""
 "av konfigurasjonsprogrammet."
 
 #: keymap.cpp:228
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "Tastaturkart: kan ikke finne symbol \"%s\"."
 
 #: keymap.cpp:236
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr "Tastaturkart: kan ikke forstå tastkode \"%s\"."
 
 #: keymap.cpp:242
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr "Tastaturkart: tastkode \"%s\" går utenfor gyldig område."
 
@@ -283,7 +283,6 @@ msgid "Configure"
 msgstr "Konfigurer"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"

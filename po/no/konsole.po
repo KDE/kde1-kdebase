@@ -1,10 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
+# Norwegian translations for KDE Base, konsole
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: KDE BASE/konsole\n"
 "POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
@@ -35,7 +35,7 @@ msgstr "&Kjempemessig"
 
 #: main.C:183
 msgid "&Linux"
-msgstr ""
+msgstr "&Linux"
 
 #: main.C:187
 msgid "&More ..."
@@ -66,14 +66,12 @@ msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
 #: main.C:204
-#, fuzzy
 msgid "80x40 (&xterm)"
-msgstr "80x24 (&vt100)"
+msgstr "80x40 (&xterm)"
 
 #: main.C:205
-#, fuzzy
 msgid "80x52 (ibmv&ga)"
-msgstr "80x25 (&ibmpc)"
+msgstr "80x52 (ibmv&ga)"
 
 #: main.C:214
 msgid "&Menubar"
@@ -100,9 +98,8 @@ msgid "&Size"
 msgstr "&Størrelse"
 
 #: main.C:225
-#, fuzzy
 msgid "&Schema"
-msgstr "&Liten"
+msgstr "&Schema"
 
 #: main.C:227
 msgid "&Save options"
@@ -122,39 +119,12 @@ msgstr "&Teknisk referanse ..."
 
 #: main.C:241
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #: main.C:242
 msgid "Sessions"
-msgstr ""
+msgstr "Sesjoner"
 
 #: main.C:865
 msgid "Welcome to the console"
 msgstr "Velkommen til konsollet"
-
-#~ msgid "&VGA"
-#~ msgstr "&VGA"
-
-#~ msgid "&black/white"
-#~ msgstr "&stort/hvit"
-
-#~ msgid "&white/black"
-#~ msgstr "&hvit/sort"
-
-#~ msgid "&green/black"
-#~ msgstr "&grønn/sort"
-
-#~ msgid "black/light&yellow"
-#~ msgstr "sort/lyse&gul"
-
-#~ msgid "&System colors"
-#~ msgstr "&Systemfarge"
-
-#~ msgid "&Custom Colors"
-#~ msgstr "&Egendefinert farge"
-
-#~ msgid "&Color"
-#~ msgstr "&Farge"
-
-#~ msgid "&Background"
-#~ msgstr "&Bakgrunn"
