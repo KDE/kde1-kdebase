@@ -168,7 +168,7 @@ msgstr "Av &type:"
 
 #: kftabdlg.cpp:204
 msgid "&Containing Text:"
-msgstr "Som &inneholder tekst:"
+msgstr "&Inneholder tekst:"
 
 #: kftabdlg.cpp:209
 msgid "&Size is:"
