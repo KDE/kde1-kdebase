@@ -52,9 +52,8 @@ msgstr "%10ld Bytes  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "nicht errechenbar"
+msgstr "Nicht errechenbar"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
