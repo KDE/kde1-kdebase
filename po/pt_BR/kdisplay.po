@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-10-30 11:57+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -331,19 +331,24 @@ msgstr "Fonte geral"
 msgid "Fixed font"
 msgstr "Fonte fixa"
 
-#: general.cpp:282
+#: general.cpp:278
+#, fuzzy
+msgid "Window title font"
+msgstr "Texto da janela"
+
+#: general.cpp:283
 msgid "Panel button font"
 msgstr "Fonte dos botões do painel"
 
-#: general.cpp:287
+#: general.cpp:288
 msgid "Panel clock font"
 msgstr "Fonte do relógio do painel"
 
-#: general.cpp:317
+#: general.cpp:318
 msgid "Sample text"
 msgstr "Texto de amostra"
 
-#: general.cpp:325
+#: general.cpp:326
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"

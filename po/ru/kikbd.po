@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -13,35 +13,35 @@ msgstr ""
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE Интернациональная Клавиатура уже запушена на этом Дисплее"
 
-#: kikbd.cpp:289
+#: kikbd.cpp:288
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:307
+#: kikbd.cpp:313
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
 
-#: kikbd.cpp:324
+#: kikbd.cpp:330
 msgid "Setup"
 msgstr "Конфигурация"
 
-#: kikbd.cpp:339 kikbd.cpp:352
+#: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Не возможно удалить %s из таблицы модификаторов.\n"
 
-#: kikbd.cpp:342
+#: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr ""
 
-#: kikbd.cpp:364
+#: kikbd.cpp:370
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -50,7 +50,7 @@ msgstr ""
 "Не возможно выставить Mode Switch %s для %s.\n"
 "Альтернативные символы отключены."
 
-#: kikbd.cpp:386
+#: kikbd.cpp:392
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -58,11 +58,11 @@ msgstr ""
 "Не возможно удалить CapsLock из таблицы модификаторов.\n"
 "Эмуляция CapsLock выключена."
 
-#: keymap.cpp:176
+#: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: не возможно выделить память"
 
-#: keymap.cpp:223
+#: keymap.cpp:228
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -71,21 +71,21 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: невозможно найти символ \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:236
+#: keymap.cpp:241
 #, fuzzy, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr ""
 "KeyMap: не понятен код символа \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:242
+#: keymap.cpp:247
 #, fuzzy, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr ""
@@ -329,7 +329,7 @@ msgstr "Показать информацию по выбранной раскладке"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hot list\""
+msgid "Use &hot list"
 msgstr "И&спользовать \"горячий\" список"
 
 #: widgets.cpp:146

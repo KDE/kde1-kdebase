@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -104,15 +104,15 @@ msgstr "Acht"
 msgid "Unnamed Desktop"
 msgstr "Unbenannter Desktop"
 
-#: main.C:919
+#: main.C:926
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
-#: main.C:1031
+#: main.C:1038
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
 
-#: main.C:1356
+#: main.C:1363
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 

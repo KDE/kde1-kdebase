@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1998-11-01 14:35+0100\n"
 "Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -20,35 +20,35 @@ msgid "KDE International Keyboard already started on this display."
 msgstr ""
 "Die KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
 
-#: kikbd.cpp:289
+#: kikbd.cpp:288
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:307
+#: kikbd.cpp:313
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
 
-#: kikbd.cpp:324
+#: kikbd.cpp:330
 msgid "Setup"
 msgstr "Einstellungen"
 
-#: kikbd.cpp:339 kikbd.cpp:352
+#: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Kann %s nicht von den Modikikatoren entfernen.\n"
 
-#: kikbd.cpp:342
+#: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "Kann %s nicht zum Modifikator Nummer 3 hinzufügen.\n"
 
-#: kikbd.cpp:364
+#: kikbd.cpp:370
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -57,7 +57,7 @@ msgstr ""
 "Kann den Modusschalter nicht auf %s setzten bei Tastatur %s.\n"
 "Alt-Symbole deaktiviert"
 
-#: kikbd.cpp:386
+#: kikbd.cpp:392
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -65,11 +65,11 @@ msgstr ""
 "Kann CapsLock nicht von den Modifikatoren entfernen.\n"
 "CapsLock-Emulation deaktiviert"
 
-#: keymap.cpp:176
+#: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: Kann Speicher nicht reservieren"
 
-#: keymap.cpp:223
+#: keymap.cpp:228
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -78,17 +78,17 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: Kann Symbol %s nicht finden"
 
-#: keymap.cpp:236
+#: keymap.cpp:241
 #, fuzzy, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: Verstehe Zeichencode %s nicht"
 
-#: keymap.cpp:242
+#: keymap.cpp:247
 #, fuzzy, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: Zeichenkode %s ist außerhalb des Bereiches"
@@ -328,7 +328,7 @@ msgstr "Ausgewählte Tastaturtabelle nach unten"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hot list\""
+msgid "Use &hot list"
 msgstr "Verwende ,,Hotlist\""
 
 #: widgets.cpp:146

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1998-10-23 17:33+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -10,35 +10,35 @@ msgstr ""
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE Teclado Internacional ya se está ejecutando."
 
-#: kikbd.cpp:289
+#: kikbd.cpp:288
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:307
+#: kikbd.cpp:313
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
 
-#: kikbd.cpp:324
+#: kikbd.cpp:330
 msgid "Setup"
 msgstr "Configurar"
 
-#: kikbd.cpp:339 kikbd.cpp:352
+#: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "No se puede eliminar %s de los Modificados\n"
 
-#: kikbd.cpp:342
+#: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "No se pudo añadir %s al modificador número 3\n"
 
-#: kikbd.cpp:364
+#: kikbd.cpp:370
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -47,7 +47,7 @@ msgstr ""
 "No se puede establecer el modo de intercambio a %s para el teclado %s.\n"
 "Símbolos Alt inhabilitados"
 
-#: kikbd.cpp:386
+#: kikbd.cpp:392
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -55,11 +55,11 @@ msgstr ""
 "No se pude eliminar el bloqueo de mayúsculas de los modificadores.\n"
 "Emulación de bloqueo de mayúsculas inhabilitada"
 
-#: keymap.cpp:176
+#: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: no se pude localizar memoria"
 
-#: keymap.cpp:223
+#: keymap.cpp:228
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -68,21 +68,21 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: no de puede encontrar el símbolo \"%s\".\n"
 "Quiere continuar?"
 
-#: keymap.cpp:236
+#: keymap.cpp:241
 #, fuzzy, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr ""
 "KeyMap: no se puede entender el código \"%s\".\n"
 "Quiere continuar?"
 
-#: keymap.cpp:242
+#: keymap.cpp:247
 #, fuzzy, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr ""
@@ -327,7 +327,7 @@ msgstr "Mostrar información del mapa seleccionado"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hot list\""
+msgid "Use &hot list"
 msgstr "Usar \"&hotlist\""
 
 #: widgets.cpp:146

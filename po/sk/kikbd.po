@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-05 01:17+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,7 +13,7 @@ msgstr ""
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE Medzinárodná klávesnica bola u¾ na tomto displayi spustená."
 
-#: kikbd.cpp:289
+#: kikbd.cpp:288
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Súbor s X kódmi \"%s\" neexistuje.\n"
 "Pou¾ívam ¹tandardné X kódy."
 
-#: kikbd.cpp:307
+#: kikbd.cpp:313
 #, fuzzy, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
@@ -31,21 +31,21 @@ msgstr ""
 "Klávesová mapa \"%s\" neexistuje.\n"
 "Vynechávam ju."
 
-#: kikbd.cpp:324
+#: kikbd.cpp:330
 msgid "Setup"
 msgstr "Nastavenie"
 
-#: kikbd.cpp:339 kikbd.cpp:352
+#: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Nemô¾em zru¹i» %s z modifikátorov.\n"
 
-#: kikbd.cpp:342
+#: kikbd.cpp:348
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "Nemô¾em prida» %s k modifikátoru èislo 3.\n"
 
-#: kikbd.cpp:364
+#: kikbd.cpp:370
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -54,7 +54,7 @@ msgstr ""
 "Nemô¾em nastavi» prepínaè re¾imu ako %s pre klávesnicu %s.\n"
 "Alt symboly zakázané"
 
-#: kikbd.cpp:386
+#: kikbd.cpp:392
 msgid ""
 "Can not remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -62,11 +62,11 @@ msgstr ""
 "Nemô¾em zru¹i» Caps Lock z modifikátorov.\n"
 "Emulácia Caps Locku zakázaná"
 
-#: keymap.cpp:176
+#: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: nemô¾em alokova» pamä»"
 
-#: keymap.cpp:223
+#: keymap.cpp:228
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -79,17 +79,17 @@ msgstr ""
 "Mô¾ete prednastavi» X kódy v sekcii \"Roz¹írené\"\n"
 "konfiguraèného programu."
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: nemô¾em nájs» symbol \"%s\"."
 
-#: keymap.cpp:236
+#: keymap.cpp:241
 #, fuzzy, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: nerozumiem kódu klávesy \"%s\"."
 
-#: keymap.cpp:242
+#: keymap.cpp:247
 #, fuzzy, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsahu."
@@ -330,7 +330,7 @@ msgstr "Zobrazi» informácie o zvolenej klávesovej mape"
 
 #: widgets.cpp:145
 #, fuzzy
-msgid "Use \"&hot list\""
+msgid "Use &hot list"
 msgstr "Pou¾i» \"&hotlist\""
 
 #: widgets.cpp:146
