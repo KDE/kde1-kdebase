@@ -9,6 +9,11 @@ kde_icon_DATA = kdisknav.xpm
 install-data-local:
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-default.xpm $(kde_minidir)
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-go.xpm $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-kdisknav.xpm $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-kfm_home.xpm $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-window_list.xpm $(kde_minidir)/../large
 
 uninstall-local:
 	-rm -f $(kde_minidir)/mini-default.xpm

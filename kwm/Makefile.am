@@ -27,6 +27,8 @@ kde_icon_DATA = kwm.xpm
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kwm.xpm $(kde_minidir)/kwm.xpm
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) $(srcdir)/large-kwm.xpm $(kde_minidir)/../large/kwm.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/kwm.xpm

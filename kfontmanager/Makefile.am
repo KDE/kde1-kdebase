@@ -21,6 +21,8 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/kfontmanager.xpm $(kde_icondir)/kfontmanager.xpm
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) $(srcdir)/mini-kfontmanager.xpm $(kde_minidir)/kfontmanager.xpm
+	$(mkinstalldirs) $(kde_minidir)/../large
+	$(INSTALL_DATA) $(srcdir)/large-kfontmanager.xpm $(kde_minidir)/../large/kfontmanager.xpm
 
 uninstall-local:
 	rm -f $(kde_icondir)/kfontmanager.xpm
