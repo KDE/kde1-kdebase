@@ -25,14 +25,14 @@ KFMServer::KFMServer() : KfmIpcServer()
 {
     // Create the password file if it does not exist
     QString fn = getenv( "HOME" );
-    fn += "/.kfm/magic";
+    fn += "/.kde/kfm/magic";
     FILE *f = fopen( fn.data(), "rb" );
     if ( f == 0L )
     {
 	FILE *f = fopen( fn.data(), "wb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::message("KFM Error", "Could not create ~/.kfm/magic" );
+	    QMessageBox::message("KFM Error", "Could not create ~/.kde/kfm/magic" );
 	    return;
 	}
 	
@@ -41,7 +41,7 @@ KFMServer::KFMServer() : KfmIpcServer()
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 
-	QMessageBox::message("KFM Warning", "Please change the password in\n\r~/.kfm/magic" );
+	QMessageBox::message("KFM Warning", "Please change the password in\n\r~/.kde/kfm/magic" );
     }
     else
 	fclose( f );
@@ -255,11 +255,11 @@ void KFMClient::slotAuth( const char *_password )
     if ( KFMClient::password->isNull() )
     {
 	QString fn = getenv( "HOME" );
-	fn += "/.kfm/magic";
+	fn += "/.kde/kfm/magic";
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::message( "KFM Error", "You dont have the file ~/.kfm/magic\n\rAuthorization failed" );
+	    QMessageBox::message( "KFM Error", "You dont have the file ~/.kde/kfm/magic\n\rAuthorization failed" );
 	    return;
 	}
 	char buffer[ 1024 ];
@@ -267,7 +267,7 @@ void KFMClient::slotAuth( const char *_password )
 	fclose( f );
 	if ( p == 0L )
 	{
-	    QMessageBox::message( "KFM Error", "The file ~/.kfm/magic is corrupted\n\rAuthorization failed" );
+	    QMessageBox::message( "KFM Error", "The file ~/.kde/kfm/magic is corrupted\n\rAuthorization failed" );
 	    return;
 	}
 	*( KFMClient::password ) = buffer;

@@ -23,5 +23,6 @@
  * structure of a GZIP file.
  */
 #define KIO_ERROR_NotPossible 18
+#define KIO_ERROR_SlaveDied 19
 
 #endif

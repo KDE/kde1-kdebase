@@ -47,6 +47,11 @@ KIOSlaveIPC::KIOSlaveIPC( KSocket *_sock )
 
 KIOSlaveIPC::~KIOSlaveIPC()
 {
+    /**
+     * MODIFIED
+     */
+    emit closed();
+    
     data_sock->enableRead( FALSE );
     delete data_sock;
     if ( pBody != 0L )

@@ -77,7 +77,7 @@ int main( int argc, char ** argv )
     
     // Test for kfm directories
     c = getenv( "HOME" );
-    c += "/.kfm";
+    c += "/.kde/kfm";
     dp = opendir( c.data() );
     if ( dp == NULL )
 	::mkdir( c.data(), S_IRWXU );
@@ -88,7 +88,7 @@ int main( int argc, char ** argv )
     }
     
     c = getenv( "HOME" );
-    c += "/.kfm/cache";
+    c += "/.kde/kfm/cache";
     dp = opendir( c.data() );
     if ( dp == NULL )
 	::mkdir( c.data(), S_IRWXU );
@@ -97,9 +97,12 @@ int main( int argc, char ** argv )
 	debugT("Exist '%s'\n", c.data() );
 	closedir( dp );
     }
-
+    // Clean this directory
+    c.sprintf("rm -f %s/.kde/kfm/cache/*", getenv( "HOME" ) );
+    system( c );
+    
     c = getenv( "HOME" );
-    c += "/.kfm/tmp";
+    c += "/.kde/kfm/tmp";
     dp = opendir( c.data() );
     if ( dp == NULL )
 	::mkdir( c.data(), S_IRWXU );
@@ -108,6 +111,10 @@ int main( int argc, char ** argv )
 	debugT("Exist '%s'\n", c.data() );
 	closedir( dp );
     }
+    // Clean this directory
+    c.sprintf("rm -f %s/.kde/kfm/tmp/*", getenv( "HOME" ) );
+    system( c );
+
     FILE *f2;
     c = getenv( "HOME" );
     c += "/.kde/desktop";
@@ -175,7 +182,7 @@ int main( int argc, char ** argv )
     KFMServer ipc;
     
     QString file = QDir::homeDirPath();
-    file += "/.kfm.run";
+    file += "/.kde/kfm/pid";
     
     FILE *f = fopen( file.data(), "wb" );
     if ( f == 0L )

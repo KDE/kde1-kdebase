@@ -415,7 +415,7 @@ void KfmGui::initMenu()
     connect( &bookmarkManager, SIGNAL( changed() ), 
 	     this, SLOT( slotBookmarksChanged() ) );
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/kfm.bookmarks.html";
+    QString bmFile = p + "/.kde/kfm/bookmarks.html";
     bookmarkMenu->insertItem( klocale->translate("&Add Bookmark"), 
 			      this, SLOT(slotAddBookmark()) );
     bookmarkManager.read( bmFile );
@@ -842,7 +842,7 @@ void KfmGui::slotHome()
 void KfmGui::addBookmark( const char *_title, const char *_url )
 {
     QString p = getenv( "HOME" );
-    QString bmFile = p + "/.kde/kfm.bookmarks.html";
+    QString bmFile = p + "/.kde/kfm/bookmarks.html";
     bookmarkManager.add( _title, _url );
     bookmarkManager.write( bmFile );
 }
@@ -1035,7 +1035,7 @@ void KfmGui::slotQuit()
 	return;
     
     QString file = QDir::homeDirPath();
-    file += "/.kfm.run";
+    file += "/.kde/kfm/pid";
     unlink( file.data() );
 
     // Clean up IO stuff

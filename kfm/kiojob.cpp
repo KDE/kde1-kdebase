@@ -848,6 +848,8 @@ void KIOJob::doIt( KIOSlaveIPC * _slave )
     connect( slave, SIGNAL( fatalError( int, const char*, int ) ),
 	     this, SLOT( fatalError( int, const char*, int ) ) );
     connect( slave, SIGNAL( setPID( int ) ), this, SLOT( start( int ) ) );
+    connect( slave, SIGNAL( closed() ), this, SIGNAL( slotSlaveClosed() ) );
+
     slave->getPID();
 }
 
@@ -1637,14 +1639,16 @@ void KIOJob::slotInfo( const char *_text )
 void KIOJob::cancel()
 {
     debugT("**********A\n");
-    pid_t p = (pid_t)slave->pid;
+    if ( slave )
+    {
+	KIOSlaveIPC *s = slave;
+	slave = 0L;
+	pid_t p = (pid_t)s->pid;    
+	delete s;
+	kill( p, SIGTERM );
+    }
     
-    debugT("Cancel\n");
-    delete slave;
-    delete dlg;
-    dlg = 0L;
     slave = 0L;
-    kill( p, SIGTERM );
     
     done();
 }
@@ -1654,7 +1658,11 @@ void KIOJob::done()
     debugT("Done\n");
     
     if ( slave != 0L )
+    {
+	disconnect( server, 0, this, 0 );
 	server->freeSlave( slave );
+    }
+    
     if ( dlg != 0L )
     {
 	if ( line1 != 0L )
@@ -1688,12 +1696,7 @@ void KIOJob::done()
     slave = 0L;
     
     if ( bAutoDelete )
-    {
-	printf("=============== DESTRUCT kiojob=%x ================\n",this);
 	delete this;
-    }
-    else
-	printf("=============== DONE kiojob=%x ================\n",this);
 }
 
 void KIOJob::deleteAllJobs()
@@ -1757,6 +1760,19 @@ QString KIOJob::completeURL( const char *_url )
     }
     
     return QString( _url );
+}
+
+void KIOJob::slotSlaveClosed()
+{
+    // We assumed that the slave is going to die.
+    if ( slave == 0L )
+	return;
+    
+    slave = 0L;
+    
+    emit error( KIO_ERROR_SlaveDied, klocale->translate( "Segmentation fault in io subprocess" ) );
+
+    cancel();
 }
 
 #include "kiojob.moc"

@@ -114,6 +114,7 @@ public slots:
     void slaveProgress( int _percent );
     void cancel();
     void start( int _pid );
+    void slotSlaveClosed();
     
     void slotData( IPCMemory _mem );
     void fatalError( int _kioerror, const char* _url, int _errno );

@@ -49,7 +49,7 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
 	     this, SLOT( slotImageLoaded( const char*, const char* ) ) );
     connect( this, SIGNAL( imageRequest( const char * ) ), htmlCache, SLOT( slotURLRequest( const char * ) ) );
     connect( this, SIGNAL( cancelImageRequest( const char * ) ),
-	     htmlCache, SLOT( slotCancelURLRequest( const char * ) ) );    
+	     htmlCache, SLOT( slotCancelURLRequest( const char * ) ) );
 
     gui = _gui;
  
@@ -157,6 +157,7 @@ void KfmView::slotTerminal()
 void KfmView::slotStop()
 {
     manager->stop();
+    htmlCache->stop();
 }
 
 void KfmView::slotReload()

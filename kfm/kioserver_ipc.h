@@ -97,6 +97,12 @@ protected:
    char *pBody;
    int cBody;
    int bodyLen;
+
+signals:
+   /**
+    * MODIFIED
+    */
+   void closed();
 };
 
 class KIOSlaveIPCServer : public QObject

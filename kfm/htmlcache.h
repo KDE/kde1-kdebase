@@ -11,6 +11,8 @@
 
 #include "kiojob.h"
 
+#define MAX_JOBS 4
+
 /// This job downloads pages/images from the Web
 /**
   This class provides a nice interface for KIOJob.
@@ -119,6 +121,11 @@ public:
      */
     const char* HTMLCache::isCached( const char *_url );
     
+    /**
+     * Cancels all jobs started by this instance.
+     */
+    void stop();
+    
 public slots:
     /**
      * Checks in an already loaded URL.
@@ -128,19 +135,18 @@ public slots:
      * The KHTMLWidget may request an URL using this function.
      */
     void slotURLRequest( const char * _url );
-    /// This function cancels a request.
     /**
-      If two instances of HTMLCache request the same URL and ine instance
-      cancels the request, then the job wont be canceled.
-      */
+     * This function cancels a request.
+     * If two instances of HTMLCache request the same URL and ine instance
+     * cancels the request, then the job wont be canceled.
+     */
     void slotCancelURLRequest( const char * _url );
 
-    /// Called if the job has been finished
-    /**
-      This slot is bound to HTMLCacheJob. It calls the 'urlLoaded' function of
-      all instances of this class. This function exists, because no static slots
-      are possible.
-      */
+    /** Called if the job has been finished
+     * This slot is bound to HTMLCacheJob. It calls the 'urlLoaded' function of
+     * all instances of this class. This function exists, because no static slots
+     * are possible.
+     */
     void slotJobFinished( HTMLCacheJob * _job );
 
     /**
@@ -161,7 +167,7 @@ protected:
     static QString cachePath;
 
     /// List of all running jobs
-    static QList<HTMLCacheJob> htmlJobList;
+    static QList<HTMLCacheJob> staticJobList;
     
     /// Dict. of all cached URLs
     /**
@@ -173,11 +179,25 @@ protected:
     /// List of all instances
     static QList<HTMLCache> instanceList;
 
-    /// List of all URLs this instance is waiting fot
+    /**
+     * List of all URLs this instance is waiting for.
+     */
     QStrList waitingURLList;
     
     /// This variable holds a new valid and for this process unique fileId.
     static int fileId;
+
+    /**
+     * List of all requests which could not be started yet since no
+     * job was available.
+     */
+    QStrList todoURLList;
+
+    /**
+     * List of all jobs startd by this instance. This is always a
+     * subset of the jobs in @ref #staticJobList.
+     */
+    QList<HTMLCacheJob> instanceJobList;
 };
 
 #endif
