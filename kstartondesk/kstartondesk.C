@@ -44,7 +44,8 @@ void KStartOnDesk::timerDone(){
 
 void KStartOnDesk::windowAdd(Window w){
   QString t = KWM::titleWithState(w);
-  if (t == title){
+  QRegExp r = title;
+  if (r.match(t)){
     if (KWM::desktop(w) != desktop){
       KWM::prepareForSwallowing(w);
       KWM::moveToDesktop(w, desktop);
