@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>KDE Control Center - KWM: Configuring window properties</TITLE>
+<TITLE>KDE Control Center - KWM: Configuring the titlebar appearance and action</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE,KControl,Window manager,KWM,Windows,Titlebar">
 <META NAME="description" CONTENT="KDE Control Center - KWM">
@@ -14,50 +14,60 @@
  
 <P ALIGN="RIGHT">
 
-Next<A HREF="kwm-2.html">Previous</A>
+<A HREF="kwm-4.html">Next</A>
+<A HREF="kwm-2.html">Previous</A>
 <A HREF="kwm.html#toc3">Table of Contents</A>
 </P>
-<H3><A NAME="s3">3. Configuring window properties</A></H3>
+<H3><A NAME="s3">3. Configuring the titlebar appearance and action</A></H3>
 
-<P>The window manager supports the following window-manipulation
-features:
+<P>
+<P>With this dialog, you can change the visual appearance 
+of the titlebar and partially choose how it acts..
+<P>
+<P>The <B>Title Alignment</B> selection sets the position of the window
+title in the titlebar (left-justified, centered, or right-justified)
+<P>
+<P>
+<P>
+<P>There are four  options for the titlebar <B>Appearance</B>:
 <P>
 <UL>
-<LI>window moving: transparent or opaque</LI>
-<LI>window resizing: animated or instant</LI>
-<LI>window maximizing: expand to full screen or just expand vertically</LI>
-<LI>focus policy: click or follow mouse</LI>
-<LI>auto raise: window will be raised automatically</LI>
+<LI> <B>Shaded Vertically</B>: fills the bar with a color gradient from 
+top to bottom</LI>
+<LI> <B>Shaded Horizontally</B>: fills the bar with a color gradient from side to
+side</LI>
+<LI> <B>Plain</B>: fills the bar with a simple color</LI>
+<LI> <B>Pixmap</B>: allows you to select pixmaps which are 
+tiled to fill the
+titlebar; in this case click on the <B>Active pixmap</B> and
+<B>inactive pixmap</B> buttons to select pixmaps for the active
+and inactive titlebars.  You may also choose not to
+extend the pixmap tiling under the text on the titlebar.</LI>
 </UL>
 <P>
-<P>Transparent window movement mode supplies a wireframe of the window
-which the user can place, while opaque movement mode means the contents
-of the window remain visible while it is being moved.
 <P>
-<P>The resizing animation looks really cool. Try it.
 <P>
-<P>The window that is "in focus" receives keyboard input and has the
-active titlebar appearance (usually colored instead of gray). The
-focus can be switched to another window with the keyboard (Alt-TAB)
-or the mouse. If "click to focus" is selected, the user must click
-in the new window to give it the focus. If "focus follows mouse"
-is selected, the focus switches to a widnow as soon as the pointer
-enters it. This makes focus switching without raising a window easier,
-but at the expense that the position of the pointer is important even
-when the pointer isn't being used. Note that kwm uses what is called
-"sloppy focus" in the latter mode: a window stay in focus after the
-pointer leaves if the pointer has not entered another window and given
-it the focus (i.e. the deskop or root window and kpanel do not get
-the focus).
+<P>The <B>Mouse action</B>  section lets you choose what happens when you 
+doubleclick
+on the titlebar of a window with the left mouse button. The most convenient
+actions to choose are (Un)Maximize and (Un)Shade. The default is set
+to (Un)Maximize.
 <P>
-<P>Auto raise serves to bring a window to the front (top) when it gets the
-focus. This mode applies to "focus follows mouse" policy only. Auto raise
-can be disabled by setting the delay to zero (0).
+<P>If the  window title is too long to be completely
+displayed on the window titlebar, the
+the "<B>Title animation</B>" option allows the text to slide
+back and forth, so all the title can be read.
+The slider bar controls the period of this motion; setting the period
+to 0 switches off this feature.
+<P>
+<P>
+<P>
 <P>
 <P>
 <P ALIGN="RIGHT">
 
-Next<A HREF="kwm-2.html">Previous</A>
+<A HREF="kwm-4.html">Next</A>
+<A HREF="kwm-2.html">Previous</A>
 <A HREF="kwm.html#toc3">Table of Contents</A>
 </P>
 <CENTER>

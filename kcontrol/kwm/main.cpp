@@ -61,23 +61,23 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
     {
       if (!pages || pages->contains("options"))
 	addPage(options = new KWindowConfig(dialog, "options"), 
-		klocale->translate("&Options"), "kwm-3.html");
+		klocale->translate("&Options"), "kwm-1.html");
       if (!pages || pages->contains("buttons"))
 	addPage(buttons = new KTitlebarButtons(dialog, "buttons"),
-		klocale->translate("&Buttons"), "kwm-1.html");
+		klocale->translate("&Buttons"), "kwm-2.html");
       if (!pages || pages->contains("titlebar"))
 	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
-		klocale->translate("&Titlebar"), "kwm-2.html");
+		klocale->translate("&Titlebar"), "kwm-3.html");
       if (!pages || pages->contains("borders"))
 	addPage(desktop = new KDesktopConfig(dialog, "borders"), 
-		klocale->translate("Bo&rders"), "kwm.html"); // HELP todo
+		klocale->translate("Bo&rders"), "kwm-4.html"); 
       if (!pages || pages->contains("mouse"))
 	addPage(mouse = new KMouseConfig(dialog, "mouse"), 
-		klocale->translate("&Mouse"), "kwm.html"); // HELP todo
+		klocale->translate("&Mouse"), "kwm-5.html"); 
 
       if (!pages || pages->contains("advanced"))
 	addPage(advanced = new KAdvancedConfig(dialog, "advanced"), 
-		klocale->translate("&Advanced"), "kwm.html"); // HELP todo
+		klocale->translate("&Advanced"), "kwm-6.html"); 
 
       if (options || buttons || appearance || desktop || mouse || advanced)
         dialog->show();

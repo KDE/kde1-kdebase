@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>KDE Control Center - KWM: Configuring the titlebar buttons</TITLE>
+<TITLE>KDE Control Center - KWM: Configuring Window Management Options.</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE,KControl,Window manager,KWM,Windows,Titlebar">
 <META NAME="description" CONTENT="KDE Control Center - KWM">
@@ -17,18 +17,135 @@
 <A HREF="kwm-2.html">Next</A>
 Previous<A HREF="kwm.html#toc1">Table of Contents</A>
 </P>
-<H3><A NAME="s1">1. Configuring the titlebar buttons</A></H3>
+<H3><A NAME="s1">1. Configuring Window Management Options.</A></H3>
 
-<P>This dialog configures the placement of the buttons in the titlebars.
+<P>The Window  Manager Options screen allows configuration
+of  three distinct properties:
 <P>
-<P>The placement of buttons on each side of the titlebar follows a simple
-rule: buttons which are higher up in the list appear <EM>inside</EM>
-or near the middle of the window relative to buttons that are farther
-down on the list. This allows for most sensible button arrangements.
+<OL>
+<LI> Appearance of <B>Windows</B> while being moved or resized.</LI>
+<LI> Window <B>Placement Policy</B>.</LI>
+<LI> Window <B>Focus policy</B>.</LI>
+</OL>
 <P>
-<P>Since a maximum of three (3) buttons are allowed on each side of the
-titlebar, trying to place a fourth button on either side will cause the
-innermost one to be switched off.
+<H3><A NAME="ss1.1">1.1 Appearance of moving and resizing <B>Windows</B></A>
+</H3>
+
+<P>If <B>Vertical maximization only  by default</B> is selected,
+windows will expand vertically to the full height of the screen if
+the maximization button is clicked, but their width will not change.
+(If this option is <B>not</B> selected, the width will also
+expand to fill the screen).
+<P>
+<P>If <B>Display content in moving windows</B> is selected,
+the content of a moving window will move as the window is moved
+("opaque" motion).
+If this option is <B>not</B> selected, only an empty
+"wireframe" representation of the window will be seen moving;
+the content of the window will remain at the original location
+until the motion is finished, at which time it will suddenly jump to
+its new location ("transparent"  motion).
+<P>
+<P>The <B>Display content in resizing windows</B> is 
+similar to the previous option: if selected, a window
+will behave in an "opaque" manner while being resized;
+otherwise, it will behave in a "transparent" manner.
+<P>
+<P>The <B>Resize animation</B> slider controls whether, and how fast,
+an animated representation of the window expands or contracts
+when a window maximization of minimization button is clicked.
+If the slider control is set to its leftmost postion, the size change
+will be instantaneous; otherwise, the slider controls the speed
+of the change.
+<P>
+<H3><A NAME="ss1.2">1.2 Window <B>Placement Policy</B>.</A>
+</H3>
+
+<P>Any of five different Window placement policies may be selected
+from the list box.   These determine where a new window will
+be placed on the desktop when it is first opened.   
+<P>
+<UL>
+<LI> The "smart" placement policy allows a minimal
+cluttering of the desktop. It's also acting independently on each desk.
+Try it. You'll be amazed how fast the brain will learn to anticipate
+the position of the new window to be created. You'll become able
+to place the mouse pointer in that region before the window appears :-)
+</LI>
+<LI> The "random" placement policy places newly-created windows
+at a random place on the desktop.
+
+</LI>
+<LI> The "cascade" placement acts somewhat similar to the 
+"random" placement, but it is more consistent in the choice of the 
+window position and keeps track of available "cascaded" positions for
+each desktop separately. 
+ </LI>
+<LI> The "manual" placement creates a window that moves with the mouse
+pointer until placed down by clicking a mouse button.
+</LI>
+<LI> The "interactive" placement policy is a cross between the
+"smart" and the "manual" policies: in this case the window placement
+is automatic if the windows can be placed without overlapping
+each other "too much", otherwise the placement policy becomes
+manual.  The "allowed overlap" is set in the box that opens
+when this selection is made.
+</LI>
+</UL>
+<P>
+<H3><A NAME="ss1.3">1.3 Window <B>Focus policy</B>.</A>
+</H3>
+
+<P>The window that is "in focus" receives keyboard input and has the
+active titlebar appearance (usually colored instead of gray). The
+focus can be switched to another window with the keyboard (Alt+Tab)
+or the mouse.   The <B>Focus policy</B> determines which window
+is in focus at a given time.  When the focus policy follows the KDE
+style, the Alt+Tab key combination allows the focus to be transferred
+between windows on a graphical listing of the open windows.
+<P>
+<UL>
+<LI> If <B>click to focus</B> (KDE style)
+is selected, the user must click the mouse
+inside a window to raise it to the front and give it the focus. 
+</LI>
+<LI>If <B>Focus follows mouse</B> (KDE style)
+is selected, the focus switches to a window as soon as the pointer
+enters it. This makes focus switching without raising a window easier,
+but with the disadvantage that the position of the pointer is important even
+when the pointer isn't being used. The window remains in focus until the
+mouse pointer enters another window, to which focus then passes, so
+some window is always in focus.
+
+</LI>
+<LI> The <B>Classic sloppy focus</B> policy is similar to
+the "Focus follows mouse" policy, except that the action of the
+Alt+Tab key combination switches the focus directly between windows
+in the CDE desktop style, rather than in the graphical KDE style.
+
+
+</LI>
+<LI> The <B>Classic focus follows mouse</B>  policy is a  similar
+CDE-style policy, except that
+the window loses  focus as soon as the mouse pointer leaves it.
+If the mouse pointer is not in any window, (for example, is on the desktop
+background or Panel), <B>no</B> window is in focus.
+</LI>
+</UL>
+<P>
+<P>Selection of the <B>Auto Raise</B> feature 
+serves to raise a window to the front (top) when it gets the
+focus. If a <B>delay</B> in milliseconds is set using the slider control,
+the window is only raised if the mouse is still inside the window
+after a period equal to this delay has elapsed since focus passed to it.
+(This does not apply when the "click to focus" policy is in force). 
+<P>
+<P>Selection of the <B>Click Raise</B> feature allows a window
+to be raised to the front by clicking the mouse anywhere inside it.
+If this feature is not selected, only a click on a window's
+titlebar will raise it to the front.
+(This does not apply when the "click to focus" policy is in force). 
+<P>
 <P>
 <P ALIGN="RIGHT">
 

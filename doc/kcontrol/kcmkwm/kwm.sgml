@@ -5,18 +5,156 @@
 <!-- Title information -->
 
 <title>KDE Control Center - KWM
-<author>Matthias Hoelzer, Pat Dowler
-<date>v1.0, 17. January 1998
+<author>Matthias Hoelzer, Pat Dowler; revised and updated by Duncan H.
+<date>v1.1, 30. January 1999
 
 <!-- Table of contents -->
 <toc>
 
 <!-- Begin the document -->
 
+
+
+<sect>Configuring Window Management Options.
+<p>
+The Window  Manager Options screen allows configuration
+of  three distinct properties:
+ 
+<enum>
+<item> Appearance of <bf>Windows</bf> while being moved or resized.
+<item> Window <bf>Placement Policy</bf>.
+<item> Window <bf>Focus policy</bf>.
+</enum>
+
+<sect1> Appearance of moving and resizing <bf>Windows</bf>
+<p>
+If <bf>Vertical maximization only  by default</bf> is selected,
+windows will expand vertically to the full height of the screen if
+the maximization button is clicked, but their width will not change.
+(If this option is <bf>not</bf> selected, the width will also
+expand to fill the screen).
+
+<p>
+If <bf>Display content in moving windows</bf> is selected,
+the content of a moving window will move as the window is moved
+("opaque" motion).
+If this option is <bf>not</bf> selected, only an empty
+"wireframe" representation of the window will be seen moving;
+the content of the window will remain at the original location
+until the motion is finished, at which time it will suddenly jump to
+its new location ("transparent"  motion).
+
+<p>
+The <bf>Display content in resizing windows</bf> is 
+similar to the previous option: if selected, a window
+will behave in an "opaque" manner while being resized;
+otherwise, it will behave in a "transparent" manner.
+
+<p>
+The <bf>Resize animation</bf> slider controls whether, and how fast,
+an animated representation of the window expands or contracts
+when a window maximization of minimization button is clicked.
+If the slider control is set to its leftmost postion, the size change
+will be instantaneous; otherwise, the slider controls the speed
+of the change.
+
+<sect1> Window <bf>Placement Policy</bf>.
+<p>
+Any of five different Window placement policies may be selected
+from the list box.   These determine where a new window will
+be placed on the desktop when it is first opened.   
+
+<itemize>
+<item> The "smart" placement policy allows a minimal
+cluttering of the desktop. It's also acting independently on each desk.
+Try it. You'll be amazed how fast the brain will learn to anticipate
+the position of the new window to be created. You'll become able
+to place the mouse pointer in that region before the window appears :-)
+
+<item> The "random" placement policy places newly-created windows
+at a random place on the desktop.
+
+
+<item> The "cascade" placement acts somewhat similar to the 
+"random" placement, but it is more consistent in the choice of the 
+window position and keeps track of available "cascaded" positions for
+each desktop separately. 
+ 
+<item> The "manual" placement creates a window that moves with the mouse
+pointer until placed down by clicking a mouse button.
+
+<item> The "interactive" placement policy is a cross between the
+"smart" and the "manual" policies: in this case the window placement
+is automatic if the windows can be placed without overlapping
+each other "too much", otherwise the placement policy becomes
+manual.  The "allowed overlap" is set in the box that opens
+when this selection is made.
+
+</itemize>
+
+<sect1> Window <bf>Focus policy</bf>.
+<p>
+The window that is "in focus" receives keyboard input and has the
+active titlebar appearance (usually colored instead of gray). The
+focus can be switched to another window with the keyboard (Alt+Tab)
+or the mouse.   The <bf>Focus policy</bf> determines which window
+is in focus at a given time.  When the focus policy follows the KDE
+style, the Alt+Tab key combination allows the focus to be transferred
+between windows on a graphical listing of the open windows.
+
+<itemize>
+<item> If <bf>click to focus</bf> (KDE style)
+is selected, the user must click the mouse
+inside a window to raise it to the front and give it the focus. 
+
+<item>If <bf>Focus follows mouse</bf> (KDE style)
+is selected, the focus switches to a window as soon as the pointer
+enters it. This makes focus switching without raising a window easier,
+but with the disadvantage that the position of the pointer is important even
+when the pointer isn't being used. The window remains in focus until the
+mouse pointer enters another window, to which focus then passes, so
+some window is always in focus.
+
+
+<item> The <bf>Classic sloppy focus</bf> policy is similar to
+the "Focus follows mouse" policy, except that the action of the
+Alt+Tab key combination switches the focus directly between windows
+in the CDE desktop style, rather than in the graphical KDE style.
+
+
+
+<item> The <bf>Classic focus follows mouse</bf>  policy is a  similar
+CDE-style policy, except that
+the window loses  focus as soon as the mouse pointer leaves it.
+If the mouse pointer is not in any window, (for example, is on the desktop
+background or Panel), <bf>no</bf> window is in focus.
+
+</itemize>
+
+<p>
+Selection of the <bf>Auto Raise</bf> feature 
+serves to raise a window to the front (top) when it gets the
+focus. If a <bf>delay</bf> in milliseconds is set using the slider control,
+the window is only raised if the mouse is still inside the window
+after a period equal to this delay has elapsed since focus passed to it.
+(This does not apply when the "click to focus" policy is in force). 
+
+<p>
+Selection of the <bf>Click Raise</bf> feature allows a window
+to be raised to the front by clicking the mouse anywhere inside it.
+If this feature is not selected, only a click on a window's
+titlebar will raise it to the front.
+(This does not apply when the "click to focus" policy is in force). 
+
+
 <sect>Configuring the titlebar buttons
 
 <p>
-This dialog configures the placement of the buttons in the titlebars.
+This dialog configures the placement of up to five buttons in the titlebars,
+with the listed functions (Minimize. Maximize,
+Sticky, Close, and Menu) and symbols. Each button can be placed
+on the left, on the right, or not at all.
+
 
 <p>
 The placement of buttons on each side of the titlebar follows a simple
@@ -29,87 +167,188 @@ Since a maximum of three (3) buttons are allowed on each side of the
 titlebar, trying to place a fourth button on either side will cause the
 innermost one to be switched off.
 
+
+
+
 <sect>Configuring the titlebar appearance and action
 <p>
 
-With this dialog, you can change the visual appearance of the titlebar and partially choose how it acts..
+With this dialog, you can change the visual appearance 
+of the titlebar and partially choose how it acts..
+
 <p>
-There are three options for the titlebar coloring:
+The <bf>Title Alignment</bf> selection sets the position of the window
+title in the titlebar (left-justified, centered, or right-justified)
+
+
+
+<p>
+There are four  options for the titlebar <bf>Appearance</bf>:
 
 <itemize>
-<item> Shaded, fills the bar with a color gradient
-<item> Plain, fills the bar with a simple color
-<item> Pixmap, allows you to select pixmaps which are tilled to fill the
-titlebar
+<item> <bf>Shaded Vertically</bf>: fills the bar with a color gradient from 
+top to bottom
+<item> <bf>Shaded Horizontally</bf>: fills the bar with a color gradient from side to
+side
+<item> <bf>Plain</bf>: fills the bar with a simple color
+<item> <bf>Pixmap</bf>: allows you to select pixmaps which are 
+tiled to fill the
+titlebar; in this case click on the <bf>Active pixmap</bf> and
+<bf>inactive pixmap</bf> buttons to select pixmaps for the active
+and inactive titlebars.  You may also choose not to
+extend the pixmap tiling under the text on the titlebar.
 </itemize>
 
-<p>
-The shading scheme that is used by kwm for the shaded titlebar
-option does not show up in the titlebar preview, so you have to
-select Apply to see it. Sorry :-)
+
 
 <p>
-The mouse action section lets you choose what happens when you doubleclick
+The <bf>Mouse action</bf>  section lets you choose what happens when you 
+doubleclick
 on the titlebar of a window with the left mouse button. The most convenient
-actions to choose should be (Un)Maximize and (Un)Shade. The default is set
+actions to choose are (Un)Maximize and (Un)Shade. The default is set
 to (Un)Maximize.
  
 <p>
-Enabling "title animation" tells kwm to cause long window titles (too
-long to fit in the colored area of the titlebar) to slide back and forth
-in order to be visible. 
+If the  window title is too long to be completely
+displayed on the window titlebar, the
+the "<bf>Title animation</bf>" option allows the text to slide
+back and forth, so all the title can be read.
+The slider bar controls the period of this motion; setting the period
+to 0 switches off this feature.
 
-<sect>Configuring window properties
+
+
+
+
+<sect> Configuring Desktop Border Properties
 <p>
-The window manager supports the following window-manipulation
-features:
 
-<itemize>window moving: transparent or opaque
-<item>window resizing: animated or instant
-<item>window placement policy: smart or cascade or random
-<item>window maximizing: expand to full screen or just expand vertically
-<item>focus policy: click or follow mouse
-<item>auto raise: window will be raised automatically
+The <bf>Active desktop borders</bf> feature allows you to change to an adjacent
+desktop by bringing the mouse pointer to the edge of the screen, and keeping it
+there for a specified time.  The relative positions of the desktops are the
+same as the arrangement of buttons of the Panel that select them: for example,
+placing the pointer on the right side of the screen causes a jump to the next
+desktop to the right, unless the current desktop is the last one on the
+right, in which case the jump is back to the leftmost desktop.  When
+active desktop borders are activated, you may also
+drag a window with you as you move between desktops.
+
+<p>
+Select <bf>Enable active desktop borders</bf> to turn this feature on.
+
+<p>
+If the feature is activated, you can select <bf>Move pointer towards center
+after switch</bf> to cause the pointer to jump directly to the center of 
+the new desktop when such a change takes place.
+<p>
+To guard against unwanted jumps between desktops, you can set
+the <bf>Desktop switch delay</bf> which specifies how long
+(in seconds)  the
+pointer must remain at the edge of the screen for this to be
+interpreted as a desktop switch command.
+<p>
+
+The <bf>Magic Borders</bf> settings allow a <bf>snap zone</bf>
+measured in pixels to be set.   The edge of the screen is surrounded by
+the <bf>Border Snap Zone</bf>, and the edge of any window is surrounded
+by the <bf>Window Snap Zone</bf>. If you move the edge of a  window into
+the snap zone of the edge of the screen or of another window, the window that
+is being moved will jump
+("snap") so its edge is in direct contact with that edge.
+
+
+<sect> Configuring Mouse Button Actions
+<p>
+This screen allows you to configure the actions of clicks
+of the three mouse buttons while the pointer is over a window.
+
+The <bf>Titlebar and frame</bf> settings allow configuration of
+the action of mouse button clicks while the pointer is over
+the titlebar of either <bf>Active</bf> windows (with focus)
+or <bf>Inactive</bf> windows (without focus).  Choose the
+possible actions from those in the list boxes.
+
+The <bf>Inactive inner window</bf> settings configure
+the action of mouse clicks when the pointer is over the
+interior of an inactive window.
+
+
+The  final <bf>Inner window, titlebar and frame</bf>
+settings configure the action of clicking the mouse 
+buttons <bf>while the Alt key is held down</bf>,
+when the pointer is over any part of a window, whether
+active or not.
+
+
+<sect> Advanced Window Manager Settings.
+<p>
+This screen allows you to configure various
+advanced Window Manager features.
+
+In the <bf>Keyboard and Mouse</bf> settings:
+<itemize>
+<item>If <bf>Ctrl-Tab walks through desktops</bf> is selected,
+this key combination can be used to switch desktops.
+<item> The Alt+Tab key combination is used to switch focus
+between different windows, making each window active in turn.  
+If <bf>Alt-Tab is limited to current desktop</bf> is selected,
+only the open windows in the current desktop will be
+cycled through.   Using the <bf>Alt-Tab mode</bf>
+list box, the action of the Alt-Tab key can be chosen to
+be in the graphical KDE style, or the "Classic" CDE style.
+
+<item> The <bf>Grab the Right Mouse Button</bf> setting
+(NEEDS DOCUMENTATION)
+
 </itemize>
 
-<p>
-Transparent window movement mode supplies a wireframe of the window
-which the user can place, while opaque movement mode means the contents
-of the window remain visible while it is being moved.
+The <bf>Filters</bf> settings 
+(NEED DOCUMENTATION)
 
-<p>
-The resizing animation looks really cool. Try it.
-
-<p>
-The "random" placement of windows on the desktop at their creation is
-the default. The "cascade" placement acts somewhat similar to the 
-"random" placement, but it is more consequent in the choice of the 
-window position and keeps track of available "cascaded" positions for
-each desktop separately. The "smart" placement policy allows a minimal
-cluttering of the desktop. It's also acting independently on each desk.
-Try it. You'll be amazed how fast the brain will learn to anticipate
-the position of the new window to be created. You'll become able
-to place the mouse pointer in that region before the window to appear :-)
- 
-<p>
-The window that is "in focus" receives keyboard input and has the
-active titlebar appearance (usually colored instead of gray). The
-focus can be switched to another window with the keyboard (Alt-TAB)
-or the mouse. If "click to focus" is selected, the user must click
-in the new window to give it the focus. If "focus follows mouse"
-is selected, the focus switches to a widnow as soon as the pointer
-enters it. This makes focus switching without raising a window easier,
-but at the expense that the position of the pointer is important even
-when the pointer isn't being used. Note that kwm uses what is called
-"sloppy focus" in the latter mode: a window stay in focus after the
-pointer leaves if the pointer has not entered another window and given
-it the focus (i.e. the deskop or root window and kpanel do not get
-the focus).
-
-<p>
-Auto raise serves to bring a window to the front (top) when it gets the
-focus. This mode applies to "focus follows mouse" policy only. Auto raise
-can be disabled by setting the delay to zero (0).
 
 
 </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
