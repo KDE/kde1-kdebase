@@ -605,7 +605,7 @@ msgstr "Die Datei enthält keine URL"
 #: kfmman.cpp:262
 #, c-format
 msgid "Contacting host %s"
-msgstr "Nehme Verbindung auf"
+msgstr "Verbinde mit %s"
 
 #: kfmexec.cpp:62 kfmman.cpp:624 kiojob.cpp:883 kiojob.cpp:1003
 #, c-format
