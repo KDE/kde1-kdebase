@@ -16,11 +16,11 @@ msgstr "KDE Centrum sterowania"
 
 #: toplevel.cpp:79
 msgid "&Swallow modules"
-msgstr "&Wbudowane modu³y"
+msgstr "&Zadokowane modu³y"
 
 #: toplevel.cpp:82
 msgid "&About KControl..."
-msgstr "&Informacje o KControl"
+msgstr "&Informacje o KControl..."
 
 #: toplevel.cpp:85
 msgid "&Using KControl"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminput \n"
 "POT-Creation-Date: 1998-01-16 22:09+0100\n"
-"PO-Revision-Date: 1998-01-08 23:46+0100\n"
+"PO-Revision-Date: 1998-01-18 12:19+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -16,7 +16,7 @@ msgstr "Kl&awiatura"
 
 #: main.cpp:62
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
-msgstr ""
+msgstr "u¿ycie: kcminput [-init | {mouse,keyboard}]\n"
 
 #: main.cpp:92
 msgid "Input Devices Properties"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
-"POT-Creation-Date: 1998-01-17 11:23+0100\n"
+"POT-Creation-Date: 1998-01-16 22:07+0100\n"
 "PO-Revision-Date: 1998-01-17 13:54+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -161,7 +161,7 @@ msgstr "&Dodaj zak³adkê"
 
 #: kfmgui.cpp:466
 msgid "&About..."
-msgstr "&Informacje o kfm"
+msgstr "&Informacje o kfm..."
 
 #: kfmgui.cpp:476
 msgid "&Bookmarks"
@@ -204,8 +204,8 @@ msgstr "Nie mogê za³adowaæ ikony\n"
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
 #: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
 #: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1482 krenamewin.cpp:104
-#: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
-#: root.cpp:1452 root.cpp:1477
+#: root.cpp:965 root.cpp:983 root.cpp:989 root.cpp:995 root.cpp:1066
+#: root.cpp:1451 root.cpp:1476
 msgid "KFM Error"
 msgstr "B³±d KFM"
 
@@ -227,7 +227,7 @@ msgstr "Nowy "
 
 #: kfmgui.cpp:1012 kfmgui.cpp:1172 kfmjob.cpp:32 kfmman.cpp:190
 #: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:339 kfmview.cpp:462
-#: kiojob.cpp:70 root.cpp:985
+#: kiojob.cpp:70 root.cpp:984
 msgid "ERROR: Malformed URL"
 msgstr "B£¡D: B³êdny URL "
 
@@ -282,11 +282,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
-#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1026
+#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1025
 msgid "KFM Warning"
 msgstr "Ostrze¿enie KFM"
 
-#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1027
+#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1026
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -296,11 +296,11 @@ msgstr ""
 "\n"
 "Nie bêdzie mo¿na ju¿ ich odzyskaæ"
 
-#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
+#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:990
 msgid "ERROR: You dropped a URL over itself"
 msgstr "B£¡D: Upu¶ci³e¶ URL na ten sam"
 
-#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:997
+#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:996
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 
@@ -308,15 +308,15 @@ msgstr "B£¡D: Upu¶ci³e¶ katalog na jeden z jego podkatalogów"
 msgid "Open With:"
 msgstr "Otwórz z:"
 
-#: kfmview.cpp:384 root.cpp:939
+#: kfmview.cpp:384 root.cpp:938
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "B£¡D: Nie mogê otworzyæ w³a¶ciwo¶ci dla wielu plików naraz"
 
-#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
+#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1067
 msgid "Could not access Trash Bin"
 msgstr "Nie ma dostêpu do ¶mietnika"
 
-#: kfmview.cpp:444 root.cpp:967
+#: kfmview.cpp:444 root.cpp:966
 msgid "Can not paste into multiple directories"
 msgstr "Nie mogê wkleiæ do kilku katalogów naraz"
 
@@ -833,15 +833,15 @@ msgstr "B³±d wewnêtrzny: desktopDir jest b³êdny"
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "B£¡D: Nie mo¿na odczytaæ katalogu desktopu '%s'"
 
-#: root.cpp:780
+#: root.cpp:779
 msgid "ERROR: Can not accept drop"
 msgstr "B£¡D: Nie mo¿na upu¶ciæ"
 
-#: kfmman.cpp:1039 root.cpp:1453
+#: kfmman.cpp:1039 root.cpp:1452
 msgid "Dont know what to do."
 msgstr "Nie wiem co zrobiæ."
 
-#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1478
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1477
 msgid "Dont know what to do"
 msgstr "Nie wiem co zrobiæ"
 
