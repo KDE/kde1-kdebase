@@ -749,19 +749,17 @@ void MyApp::readConfiguration(){
     options.TitlebarLook = H_SHADED;
   }
 
-  if (config->hasKey("TitlebarPixmapActive")){
+  //CT 23Sep1998 - fixed the name of the titlebar pixmaps to become
+  //   consistent with the buttons pixmaps definition technique
+  if (options.TitlebarLook == PIXMAP) {
     *(options.titlebarPixmapActive) = getIconLoader()
-      ->loadIcon(config->readEntry("TitlebarPixmapActive"));
-  }
-  if (config->hasKey("TitlebarPixmapInactive")){
+      ->loadIcon("activetitlebar.xpm");
     *(options.titlebarPixmapInactive) = getIconLoader()
-      ->loadIcon(config->readEntry("TitlebarPixmapInactive"));
-  }
-
-  if (options.titlebarPixmapInactive->size() == QSize(0,0))
-    *options.titlebarPixmapInactive = *options.titlebarPixmapActive;
-
-  if (options.TitlebarLook == PIXMAP){
+      ->loadIcon("inactivetitlebar.xpm");
+    
+    if (options.titlebarPixmapInactive->size() == QSize(0,0))
+      *options.titlebarPixmapInactive = *options.titlebarPixmapActive;
+    
     if (options.titlebarPixmapActive->size() == QSize(0,0))
       options.TitlebarLook = PLAIN;
   }
@@ -894,42 +892,18 @@ void MyApp::readConfiguration(){
     options.shapePixmapBottomRight = new QPixmap;
 
 
+    //CT 23Sep1998 - fixed the name of the shaped borders pixmaps to become
+    //   consistent with the buttons pixmaps definition technique
+    *(options.shapePixmapTop) = getIconLoader()	->loadIcon("top.xpm");
+    *(options.shapePixmapBottom) = getIconLoader()->loadIcon("bottom.xpm");
+    *(options.shapePixmapLeft) = getIconLoader()->loadIcon("left.xpm");
+    *(options.shapePixmapRight) = getIconLoader()->loadIcon("right.xpm");
+    *(options.shapePixmapTopLeft) = getIconLoader()->loadIcon("topleft.xpm");
+    *(options.shapePixmapTopRight) = getIconLoader()->loadIcon("topright.xpm");
+    *(options.shapePixmapBottomLeft) = getIconLoader()->loadIcon("bottomleft.xpm");
+    *(options.shapePixmapBottomRight) = getIconLoader()->loadIcon("bottomright.xpm");
 
-    if (config->hasKey("ShapePixmapTop")){
-      *(options.shapePixmapTop) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapTop"));
-    }
-    if (config->hasKey("ShapePixmapBottom")){
-      *(options.shapePixmapBottom) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapBottom"));
-    }
-    if (config->hasKey("ShapePixmapLeft")){
-      *(options.shapePixmapLeft) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapLeft"));
-    }
-    if (config->hasKey("ShapePixmapRight")){
-      *(options.shapePixmapRight) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapRight"));
-    }
-    if (config->hasKey("ShapePixmapTopLeft")){
-      *(options.shapePixmapTopLeft) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapTopLeft"));
-    }
-    if (config->hasKey("ShapePixmapTopRight")){
-      *(options.shapePixmapTopRight) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapTopRight"));
-    }
-    if (config->hasKey("ShapePixmapBottomLeft")){
-      *(options.shapePixmapBottomLeft) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapBottomLeft"));
-    }
-    if (config->hasKey("ShapePixmapBottomRight")){
-      *(options.shapePixmapBottomRight) = getIconLoader()
-	->loadIcon(config->readEntry("ShapePixmapBottomRight"));
-    }
-
-
-
+    
     if (
 	options.shapePixmapTop->isNull() ||
 	options.shapePixmapLeft->isNull() ||
@@ -953,9 +927,9 @@ void MyApp::readConfiguration(){
 	BORDER = options.shapePixmapRight->width();
     }
   }
-
-
-
+  
+  
+  
   // Windows Placement config --- CT 18jan98 ---
   key = config->readEntry("WindowsPlacement");
   //CT isn't this completely dangerous? what if there are white spaces?
