@@ -37,6 +37,7 @@
 #include <unistd.h>
 
 #include <kapp.h>
+#include <kcharsets.h>
 #include "kfontmanager.h"
 
 #include <X11/X.h>
@@ -80,6 +81,7 @@ KFontManager::KFontManager (QWidget * parent, const char *name)
   connect(help,SIGNAL(clicked()),SLOT(helpselected()));
 
   example_label = new QLabel(this,"examples");
+  
   example_label->setAlignment(AlignCenter);
 //  example_label->setBackgroundColor(white);
   example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
@@ -182,7 +184,9 @@ void KFontManager::display_available_example(int i){
   QString string;
 
   string = availableFontsList->text(i);
-  example_label->setFont(QFont(string,14));
+  QFont fnt=QFont(string,14);
+  kapp->getCharsets()->setQFont(fnt);
+  example_label->setFont(fnt);
   
 }
 
@@ -192,8 +196,9 @@ void KFontManager::display_selected_example(int i){
   QString string;
 
   string = selectedFontsList->text(i);
-  example_label->setFont(QFont(string,14));
-  
+  QFont fnt=QFont(string,14);
+  kapp->getCharsets()->setQFont(fnt);
+  example_label->setFont(fnt);
   
 }
 
