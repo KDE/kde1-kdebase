@@ -2,6 +2,7 @@
 
 [International Keyboard]
 Comment=German Keyboard (Germany)
+Comment[fi]=Saksalainen nДppДimistЖ
 Comment[no]=Tysk tastatus (Tyskland)
 Comment[pt_BR]=Teclado AlemЦo (Alemanha)
 Comment[ru]=Немецкая клавиатура (Германия)
@@ -9,6 +10,7 @@ Comment[ru]=Немецкая клавиатура (Германия)
 Language=German
 Language[cs]=NЛmeckЩ
 Language[fi]=Saksa
+Language[it]=Tedesco
 Language[no]=Tysk
 Language[pt_BR]=emЦo
 Language[ru]=Немецкий

@@ -16,6 +16,7 @@ Comment[fr]=Indicateur d'état de Samba
 Comment[hr]=Pratitelj statusa Sambe
 Comment[hu]=Samba állapotkijelzés
 Comment[is]=Eftirlit með stöðu Samba
+Comment[it]=Montior dello stato del Samba
 Comment[no]=Monitor for Samba-status
 Comment[pl]=Monitor stanu Samby
 Comment[pt]=Monitor de estado do Samba

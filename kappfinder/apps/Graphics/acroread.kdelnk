@@ -3,6 +3,7 @@
 Name=Acrobat Reader
 Name[fi]=Acrobat -lukija
 Name[is]=Acrobat lesarinn
+Name[it]=Lettore Acrobat
 Name[no]=Acrobat-leser
 MimeType=application/pdf;
 Exec=acroread %f
@@ -14,6 +15,7 @@ Comment[cs]=Prohlí¾eè PDF dokumentù
 Comment[es]=Visor de documentos PDF
 Comment[fi]=PDF-dokumenttien näyttäjä
 Comment[is]=xpdf:  Tól til að skoða PDF skrár
+Comment[it]=Lettore documenti PDF
 Comment[no]=PDF-dokumentfremviser
 Comment[pl]=Przegl±darka dokumentów PDF
 Comment[pt_BR]=Visualizador de documentos PDF

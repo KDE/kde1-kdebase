@@ -11,6 +11,7 @@ Comment[de]=Konfiguration der Standard-Tastenbelegungen
 Comment[es]=Configuración de teclas normales
 Comment[fi]=Perusnäppäinten asetukset
 Comment[is]=Stillingar venjulegra flýtihnappa
+Comment[it]=Configurazione dei tasti standard
 Comment[no]=Konfigurasjon av vanlige taster
 Comment[pl]=Ustawienia standardowych klawiszy
 Comment[pt_BR]=Configuração das teclas padrão
@@ -23,6 +24,7 @@ Name[de]=name[de]=Standard-Tastenbelegungen
 Name[es]=Teclas normales
 Name[fi]=Perusnäppäimet
 Name[is]=Venjulegir flýtihnappar
+Name[it]=Tasti standard
 Name[no]=Vanlige taster
 Name[pl]=Standardowe klawisze
 Name[pt_BR]=Teclas padrão

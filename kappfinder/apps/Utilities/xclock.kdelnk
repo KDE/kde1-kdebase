@@ -9,6 +9,7 @@ MimeType=
 Name=X Clock
 Name[fi]=X-kello
 Name[is]=X klukka
+Name[it]=Orologio X
 Name[no]=X-klokke
 Name[ru]=XClock
 Exec=xclock

@@ -3,127 +3,218 @@ Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,he,hr,hu,is,it,ko,mk,nl,no,pl
 
 [br]
 Name=Breton
+Name[it]=Bretone
 Name[no]=Bretangsk
+Name[pt_BR]=Bretão
 
 [ca]
 Name=Catalan
+Name[fi]=Katalonia
+Name[it]=Catalano
+Name[pt_BR]=Catalão
 
 [ro]
 Name=Romanian
+Name[fi]=Romania
+Name[it]=Rumeno
 Name[no]=Rumensk
+Name[pt_BR]=Romano
 
 [C]
 Name=Default language
+Name[fi]=Oletuskieli
+Name[it]=Lingua predefinita
 Name[no]=Standardspråk
+Name[pt_BR]=Idioma padrão
 
 [de]
 Name=German
+Name[fi]=Saksa
+Name[it]=Tedesco
 Name[no]=Tysk
+Name[pt_BR]=Alemão
 
 [en_UK]
 Name=English - UK
+Name[fi]=Englanti - UK
+Name[it]=Inglese - UK
 Name[no]=Engelsk - UK
+Name[pt_BR]=Inglês - Reino Unido
 
 
 [en]
 Name=English - US
+Name[fi]=Englanti - US
+Name[it]=Inglese - US
 Name[no]=Engelsk - US
+Name[pt_BR]=Inglês - EUA
 
 [fr]
 Name=French
+Name[fi]=Ranska
+Name[it]=Francese
 Name[no]=Fransk
+Name[pt_BR]=Francês
 
 [cs]
 Name=Czech
+Name[fi]=Tshekki
+Name[it]=Ceco
 Name[no]=Tjekkisk
+Name[pt_BR]=Tcheco
 
 [is]
 Name=Icelandic
+Name[fi]=Islanti
+Name[it]=Islandese
 Name[no]=Islandsk
+Name[pt_BR]=Islândico
 
 [sv]
 Name=Swedish
+Name[fi]=Ruotsi
+Name[it]=Svedese
 Name[no]=Svensk
+Name[pt_BR]=Sueco
 
 [es]
 Name=Spanish
+Name[fi]=Espanja
+Name[it]=Spagnolo
 Name[no]=Spansk
+Name[pt_BR]=Espanhol
 
 [ru]
 Name=Russian
+Name[fi]=Venäjä
+Name[it]=Russo
 Name[no]=Russisk
+Name[pt_BR]=Russo
 
 [nl]
 Name=Dutch
+Name[fi]=Hollanti
+Name[it]=Olandese
 Name[no]=Nederlandsk
+Name[pt_BR]=Holandês
 
 [hu]
 Name=Hungarian
+Name[fi]=Unkari
+Name[it]=Ungherese
 Name[no]=Ungarsk
+Name[pt_BR]=Húngaro
 
 [da]
 Name=Danish
+Name[fi]=Tanska
+Name[it]=Danese
 Name[no]=Dansk
 
 [fi]
 Name=Finnish
+Name[fi]=Suomi
+Name[it]=Finlandese
 Name[no]=Finsk
+Name[pt_BR]=Finlandês
 
 [it]
 Name=Italian
+Name[fi]=Italia
+Name[it]=Italiano
 Name[no]=Italiensk
+Name[pt_BR]=Italiano
 
 [pt]
 Name=Portuguese
+Name[fi]=Portugal
+Name[it]=Portoghese
 Name[no]=Portugisisk
+Name[pt_BR]=Português
 
 [pl]
 Name=Polish
+Name[fi]=Puola
+Name[it]=Polacco
 Name[no]=Polsk
+Name[pt_BR]=Polonês
 
 [no]
 Name=Norwegian
+Name[fi]=Norja
+Name[it]=Norvegese
 Name[no]=Norsk
+Name[pt_BR]=Norueguês
 
 [el]
 Name=Greek
+Name[fi]=Kreikka
+Name[it]=Greco
 Name[no]=Gresk
+Name[pt_BR]=Grego
 
 [hr]
 Name=Croatian
+Name[fi]=Kroatia
+Name[it]=Croato
 Name[no]=Kroatisk
+Name[pt_BR]=Croata
 
 [sk]
 Name=Slovak
+Name[fi]=Slovakki
+Name[it]=Slovacco
 Name[no]=Slovakisk
+Name[pt_BR]=Eslovaco
 
 [zh_TW.Big5]
 Name=Chinese
+Name[fi]=Kiina
+Name[it]=Cinese
 Name[no]=Kinesisk
+Name[pt_BR]=Chinês
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
+Name[fi]=Yksinkertaistettu Kiina
+Name[it]=Cinese Semplificato
 Name[no]=Forenklet kinesisk
+Name[pt_BR]=Chinês Simplificado
 
 [pt_BR]
 Name=Brazil portuguese
+Name[fi]=Brasilian portugal
+Name[it]=Portoghese brasiliano
 Name[no]=Brasiliansk portugisisk
+Name[pt_BR]=Português do Brasil
 
 [eo]
 Name=Esperanto
 
 [mk]
 Name=Macedonian
+Name[fi]=Makedonia
+Name[it]=Macedone
 Name[no]=Makedonsk
+Name[pt_BR]=Macedoniano
 
 [ko]
 Name=Korean
+Name[fi]=Korea
+Name[it]=Coreano
 Name[no]=Koreansk
+Name[pt_BR]=Coreano
 
 [tr]
 Name=Turkish
+Name[fi]=Turkki
+Name[it]=Turco
 Name[no]=Tyrkisk
+Name[pt_BR]=Turco
 
 [he]
 Name=Hebrew
+Name[fi]=Heprea
+Name[it]=Ebraico
 Name[no]=Hebraisk
+Name[pt_BR]=Hebreu

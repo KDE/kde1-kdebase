@@ -4,7 +4,10 @@
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,
 
 Language=English
+Language[fi]=Englanti
+Language[it]=Inglese
 Language[no]=Engelsk
+Language[pt_BR]=Inglês
 
 Label=En
 Locale=en

@@ -9,7 +9,7 @@ Comment[de]=Microsoft-Layout. Englische Zeichen als Alternativ-Belegung.
 Comment[fi]=Microsoft järjestys. Sisältää englantilaiset kirjaimet vaihtoehtoisina symboleina.
 Comment[is]=Microsoft uppsetning.  Hefur ensk aukatákn.
 Comment[no]=Microsoft-utseende. Har engelske tegn som alternative symboler.
-Comment[pt_BR]=Disposição Microsoft. Tem caracteres ingleses bem como símbolos alternativos.Comment=Disposição Microsoft. Tem caracteres ingleses bem como símbolos alternativos.
+Comment[pt_BR]=Disposição Microsoft. Tem caracteres ingleses bem como símbolos alternativos.
 Comment[ru]=òÁÓËÌÁÄËÏÊ Microsoft. ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÊ ĞÅÒÅËÌÀŞÁÔÅÌØ.
 Comment[sv]=Microsofts teckenuppsätnning. Har engelska bokstäver som alternativa symboler.
 
@@ -17,6 +17,7 @@ Language=Russian
 Language[cs]=Ruskı
 Language[de]=Russische
 Language[fi]=Venäjä
+Language[it]=Russo
 Language[no]=Russisk
 Language[pl]=Rosyjski
 Language[pt_BR]=sso
