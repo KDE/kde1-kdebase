@@ -199,20 +199,26 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
     changed = FALSE;
     maxDesks = 8;
-    deskNum = desktop;
-
-    readSettings( deskNum );
+    deskNum = 0;
 
     setName( klocale->translate("Desktop") );
 
     // if we are just initialising we don't need to create setup widget
     if ( mode == Init )
-	    return;
+    {
+	readSettings( 0 );
+	return;
+    }
 
     if ( KWM::isKWMInitialized() )
+    {
 	maxDesks = KWM::numberOfDesktops();
+	deskNum = KWM::currentDesktop() - 1;
+    }
     else
 	maxDesks = 1;
+
+    readSettings( deskNum );
 
     QLabel *label;
     QPushButton *button;
@@ -236,6 +242,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     deskListBox = new QListBox( group );
     deskListBox->setGeometry( 20, 25, 120, 75 );
     getDeskNameList();
+    deskListBox->setCurrentItem( deskNum );
     connect( deskListBox, SIGNAL( highlighted(int) ),
 	SLOT( slotSwitchDesk(int) ) );
 
