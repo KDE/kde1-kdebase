@@ -1,5 +1,6 @@
 #include <qstring.h>
 #include <qmsgbox.h>
+
 #include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
@@ -27,7 +28,7 @@ void autostart()
     }
     
     // Loop thru all directory entries
-    while ( ep = readdir( dp ) )
+    while ( ( ep = readdir( dp ) ) )
     {
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{

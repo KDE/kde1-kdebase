@@ -99,7 +99,6 @@ uninstall:
 	(cd apps && $(MAKE) uninstall)
 	(cd filetypes && $(MAKE) uninstall)
 	rm -f $(BINDIR)/$(TARGET)
-	rm -f $(BINDIR)/setupKFM
 	rm -f $(BINDIR)/kioslave
 	rm -f $(BINDIR)/kfmclient
 	rm -f $(BINDIR)/unpack

@@ -8,12 +8,8 @@
 #ifndef __BOOKMARK_H__
 #define __BOOKMARK_H__
 
-#include <qlist.h>
-#include <qstring.h>
-#include <qobject.h>
+#include "html.h"
 #include <qtstream.h>
-
-#include <html.h>
 
 class KBookmark
 {
@@ -49,7 +45,7 @@ public:
 	KBookmarkManager();
 
 	void setTitle( const char *t )
-       {   title = t; }
+		{	title = t; }
 
 	void read( const char *filename );
 	void write( const char *filename );

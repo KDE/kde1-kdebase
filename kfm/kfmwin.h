@@ -4,6 +4,10 @@
 // accelerator ids
 #define COPY                1
 #define PASTE               2
+#define UP                  3
+#define DOWN                4
+#define PGUP                5
+#define PGDOWN              6     
 #define QUIT                13
 #define HELP                50
 
@@ -194,6 +198,11 @@ public slots:
     void slotScrollVert( int );
     /// Connected to the HTML widget
     void slotScrollHorz( int );
+
+    void slotKeyUp ();
+    void slotKeyDown ();
+    void slotPageUp ();
+    void slotPageDown ();    
 
     /// Called if the panner changes its position
     void slotPannerChanged();

@@ -208,13 +208,15 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     char buffer[1024];
     struct tm *t = localtime( &lbuff.st_atime );
-    sprintf( buffer, "Last Access: %i:%i %i.%i.%i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon,t->tm_year );
+    sprintf( buffer, "Last Access: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,t->tm_mday,
+	     t->tm_mon + 1,t->tm_year + 1900 );   
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
 
     t = localtime( &lbuff.st_mtime );
-    sprintf( buffer, "Last Modified: %i:%i %i.%i.%i", t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon,t->tm_year );
+    sprintf( buffer, "Last Modified: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,
+	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );      
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
@@ -257,7 +259,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     struct passwd * user = getpwuid( buff.st_uid );
     struct group * g = getgrgid( buff.st_gid );
     
-    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO );
+    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO | S_ISUID | S_ISGID | S_ISVTX );    
     strOwner = "";
     strGroup = "";
     if ( user != 0L )
@@ -272,7 +274,6 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     }    
 
     QLabel *l;
-    QBoxLayout *bl2;
     int y = 10;
     
     l = new QLabel( "Access permissions", this );
@@ -287,6 +288,9 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permUX = new QCheckBox( "User Exec", this );
     permUX->setGeometry( 210, y, 100, 30 );
     permUX->setChecked( ( buff.st_mode & S_IXUSR ) == S_IXUSR );
+    permUS = new QCheckBox( "Set UID", this );
+    permUS->setGeometry( 310, y, 100, 30 );
+    permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );       
     y += 35;
     permGR = new QCheckBox( "Group Read", this );
     permGR->setGeometry( 10, y, 100, 30 );
@@ -297,6 +301,9 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permGX = new QCheckBox( "Group Exec", this );
     permGX->setGeometry( 210, y, 100, 30 );
     permGX->setChecked( ( buff.st_mode & S_IXGRP ) == S_IXGRP );
+    permGS = new QCheckBox( "Set GID ", this );
+    permGS->setGeometry( 310, y, 100, 30 );
+    permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );      
     y += 35;
     permOR = new QCheckBox( "Others Read", this );
     permOR->setGeometry( 10, y, 100, 30 );
@@ -307,6 +314,9 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permOX = new QCheckBox( "Others Exec", this );
     permOX->setGeometry( 210, y, 100, 30 );
     permOX->setChecked( ( buff.st_mode & S_IXOTH ) == S_IXOTH );
+    permOS = new QCheckBox( "Sticky", this );
+    permOS->setGeometry( 310, y, 100, 30 );
+    permOS->setChecked( ( buff.st_mode & S_ISVTX ) == S_ISVTX );       
     y += 35;
 
     y += 10;
@@ -342,18 +352,24 @@ void FilePermissionsPropsPage::applyChanges()
 	p |= S_IWUSR;
     if ( permUX->isChecked() )
 	p |= S_IXUSR;
+    if ( permUS->isChecked() )
+        p |= S_ISUID;    
     if ( permGR->isChecked() )
 	p |= S_IRGRP;
     if ( permGW->isChecked() )
 	p |= S_IWGRP;
     if ( permGX->isChecked() )
 	p |= S_IXGRP;
+    if ( permGS->isChecked() )
+        p |= S_ISGID;       
     if ( permOR->isChecked() )
 	p |= S_IROTH;
     if ( permOW->isChecked() )
 	p |= S_IWOTH;
     if ( permOX->isChecked() )
 	p |= S_IXOTH;
+    if ( permOS->isChecked() )
+        p |= S_ISVTX;       
 
     if ( p != permissions )
     {

@@ -22,7 +22,6 @@ void testDir();
 void testDir( const char *_name )
 {
   DIR *dp;
-  struct dirent *ep;
   dp = opendir( _name );
   if ( dp == NULL )
   {
@@ -30,7 +29,8 @@ void testDir( const char *_name )
     QMessageBox::message( "KFM Information", "Creating directory:\n" + m );
     ::mkdir( _name, S_IRWXU );
   }
-  closedir( dp );
+  else
+      closedir( dp );
 }
 
 int main( int argc, char ** argv )
@@ -39,13 +39,14 @@ int main( int argc, char ** argv )
     QString c = getenv( "HOME" );
     c += "/.kde";
     DIR *dp;
-    struct dirent *ep;
     dp = opendir( c.data() );
     if ( dp == NULL )
 	::mkdir( c.data(), S_IRWXU );
     else
+    {
 	printf("Exist '%s'\n", c.data() );
-    closedir( dp );
+	closedir( dp );
+    }
 
     c = getenv( "HOME" );
     c += "/.kde/config";
@@ -53,9 +54,11 @@ int main( int argc, char ** argv )
     if ( dp == NULL )
 	::mkdir( c.data(), S_IRWXU );
     else
+    {
 	printf("Exist '%s'\n", c.data() );
-    closedir( dp );
-
+	closedir( dp );
+    }
+    
     c = getenv( "HOME" );
     c += "/.kde/config/kfmrc";
     FILE *f2 = fopen( c.data(), "rb" );
@@ -87,7 +90,8 @@ int main( int argc, char ** argv )
     dp = opendir( c.data() );
     if ( dp == NULL )
 	bTemplates = FALSE;
-    closedir( dp );
+    else
+        closedir( dp );
 
     KApplication a( argc, argv, "kfm" );
 

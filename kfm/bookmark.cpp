@@ -49,11 +49,8 @@ void KBookmarkManager::read( const char *filename )
 	QFile file( filename );
 
 	if ( !file.open( IO_ReadOnly ) )
-	{
-	    emit changed();
-	    return;
-	}
-	
+		return;
+
 	root.clear();
 
 	QString text;
@@ -66,11 +63,12 @@ void KBookmarkManager::read( const char *filename )
 	}
 	while ( !file.atEnd() );
 
-        HTMLTokenizer *ht = new HTMLTokenizer;
+	HTMLTokenizer *ht = new HTMLTokenizer;
 
-        ht->begin();
-        ht->write( text );
-        ht->end();
+	ht->begin();
+	ht->write( text );
+	ht->end();
+
 	const char *str;
 
 	while ( ht->hasMoreTokens() )

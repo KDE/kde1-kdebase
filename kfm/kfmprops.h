@@ -102,13 +102,16 @@ protected:
     QCheckBox *permUR;
     QCheckBox *permUW;
     QCheckBox *permUX;
+    QCheckBox *permUS;
     QCheckBox *permGR;
     QCheckBox *permGW;
     QCheckBox *permGX;
+    QCheckBox *permGS;
     QCheckBox *permOR;
     QCheckBox *permOW;
     QCheckBox *permOX;
-
+    QCheckBox *permOS;
+  
     QLineEdit *grp;
     QLineEdit *owner;
 

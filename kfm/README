@@ -1,4 +1,4 @@
-Alpha Version 0.6.6
+Alpha Version 0.6.7
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
 
@@ -470,6 +470,12 @@ Version 0.6.6
 - Applied patches from Matthias
 
 - Fixed bug with .kfmrc
+
+Version 0.6.7
+
+- Applied patches from Stephan
+
+- Fixed warning that occured during linking.
 
 Authors
 -------

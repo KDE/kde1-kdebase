@@ -39,16 +39,16 @@ public:
       URL is already displayed. In this case some files changed and an update
       has to be done.
       */
-    virtual bool openURL( const char *_url, bool _refresh = FALSE ) { }
+    virtual bool openURL( const char *, bool = FALSE ) { return FALSE; }
   
     /// The user pressed the right mouse button over _url (or some selected URLs ) at point _p.
     /**
       You can not expect that you are the 'actualManager' of KFileWindow
       when this function is called. For example KHttpManager
       */
-    virtual void openPopupMenu( QStrList & _url, const QPoint &_p ) { }
+    virtual void openPopupMenu( QStrList &, const QPoint & ) { }
     /// The user dropped the URLs _source over the URL _url at the point _p.
-    virtual void dropPopupMenu( KDNDDropZone *_zone, const char *_url, const QPoint *_p ) { }
+    virtual void dropPopupMenu( KDNDDropZone *, const char *, const QPoint * ) { }
 
     /// The user pressed the stop button
     /**

@@ -121,7 +121,7 @@ int doIt( int argc, char **argv )
 	}
 	kfm.refreshDesktop();
     }
-    if ( strcmp( argv[1], "sortDesktop" ) == 0 )
+    else if ( strcmp( argv[1], "sortDesktop" ) == 0 )
     {
 	if ( argc != 2 )
 	{

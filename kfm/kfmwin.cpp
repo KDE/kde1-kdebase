@@ -46,7 +46,7 @@ KFileWindow* KFileWindow::findWindow( const char *_url )
     return 0L;
 }
 
-KFileWindow::KFileWindow( QWidget *parent, const char *name, const char* _url )
+KFileWindow::KFileWindow( QWidget *, const char *name, const char* _url )
     : KTopLevelWidget( name )
 {
     bTreeViewInitialized = FALSE;
@@ -191,6 +191,16 @@ void KFileWindow::initAccel()
     accel->insertItem(ALT   + Key_Q, QUIT);
     accel->insertItem(ALT   + Key_H, HELP);
     
+    accel->insertItem (Key_Up, UP);
+    accel->insertItem (Key_Down, DOWN);
+    accel->insertItem (Key_Prior, PGUP);
+    accel->insertItem (Key_Next, PGDOWN);
+
+    accel->connectItem(UP, this, SLOT (slotKeyUp ()));
+    accel->connectItem(DOWN, this, SLOT (slotKeyDown ()));
+    accel->connectItem(PGUP, this, SLOT (slotPageUp ()));
+    accel->connectItem(PGDOWN, this, SLOT (slotPageDown ()));
+
     accel->connectItem( COPY, this, SLOT(slotCopy()) );
     accel->connectItem( PASTE, this, SLOT(slotPaste()) );
     accel->connectItem( QUIT, this, SLOT(slotQuit()) );
@@ -344,10 +354,10 @@ void KFileWindow::initToolBar()
 
 void KFileWindow::initView()
 {
-    horz = new QScrollBar( 0, 0, 10, 40, 0, QScrollBar::Horizontal, pannerChild1, "horz" );
+    horz = new QScrollBar( 0, 0, 10, width(), 0, QScrollBar::Horizontal, pannerChild1, "horz" );
     horz->setGeometry( 0, height() - 16 - 20, width() - 16, 16 );
 
-    vert = new QScrollBar( 0, 0, 10, 40, 0, QScrollBar::Vertical, pannerChild1, "vert" );
+    vert = new QScrollBar( 0, 0, 65, height(), 0, QScrollBar::Vertical, pannerChild1, "vert" );
     vert->setGeometry( width() - 16, topOffset, 16, height() - topOffset - 16- 20 );
 
     //    horz->setGeometry( 0, pannerChild1->height() - 16, pannerChild1->width() - 16, 16 );
@@ -857,11 +867,11 @@ void KFileWindow::slotFilesChanged( const char *_url )
     printf("Changed\n");
 }
 
-void KFileWindow::slotDropEnterEvent( KDNDDropZone *_zone )
+void KFileWindow::slotDropEnterEvent( KDNDDropZone * )
 {
 }
 
-void KFileWindow::slotDropLeaveEvent( KDNDDropZone *_zone )
+void KFileWindow::slotDropLeaveEvent( KDNDDropZone * )
 {
 }
 
@@ -940,7 +950,7 @@ void KFileWindow::slotPaste()
 
 void KFileWindow::slotAbout()
 {
-    QMessageBox::message( "About", "KFM 0.6.6\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
+    QMessageBox::message( "About", "KFM 0.6.7\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
 }
 
 void KFileWindow::slotHelp()
@@ -954,6 +964,26 @@ void KFileWindow::slotHelp()
         exit( 1 );
     }
 }
+
+void KFileWindow::slotKeyUp ()
+{
+ vert->subtractLine ();
+}
+
+void KFileWindow::slotKeyDown ()
+{
+ vert->addLine ();
+}
+
+void KFileWindow::slotPageUp ()
+{
+ vert->subtractPage ();
+}
+
+void KFileWindow::slotPageDown ()
+{
+ vert->addPage ();
+}                    
 
 void KFileWindow::slotPopupMenu( QStrList &_urls, const QPoint &_point )
 {
@@ -1197,10 +1227,12 @@ void KFileWindow::slotOnURL( const char *_url )
     }
     else
     {
+        QString com;
+      
 	KFileType *typ = KFileType::findType( _url );
 	if ( typ )
 	{
-	    QString com = typ->getComment( _url );
+	    com = typ->getComment( _url );
 	    if ( !com.isNull() )
 		statusBar2->setText( com.data() );
 	    else
@@ -1209,7 +1241,66 @@ void KFileWindow::slotOnURL( const char *_url )
 	else
 	    statusBar2->setText( "" );
 	
-	statusBar->setText( _url );
+	// patch from Sven
+	// statusBar->setText( _url );
+
+        KURL url (_url);
+	if ( url.isMalformed() )
+        {
+	  statusBar->setText( _url );
+	  return;
+	}
+	
+        struct stat buff;
+        stat( url.path(), &buff );
+
+        struct stat lbuff;
+        lstat( url.path(), &lbuff );
+        QString text;
+	QString text2;
+	if ( strcmp( url.protocol(), "tar" ) == 0 )
+	  text = url.filename( TRUE );
+	else
+	  text = url.filename();
+	text2 = text;
+	text2.detach();
+	
+        if ( strcmp( url.protocol(), "file") == 0 )
+        {
+          if (S_ISLNK( lbuff.st_mode ) )
+          {
+	    QString tmp;
+	    if ( com.isNull() )
+	      tmp = "Symblic Link";
+	    else
+	      tmp.sprintf("%s (Link)", com.data() );
+            statusBar2->setText( tmp.data() );
+            char buff_two[1024];
+            text += "->";
+            int n = readlink (url.path(), buff_two, 1022);
+            if (n == -1)
+            {
+               statusBar->setText( text2.data() );
+               return;
+            }
+	    buff_two[n] = 0;
+	    text += buff_two;
+	  }
+	  else if ( S_ISREG( buff.st_mode ) )
+          {
+	     text += " ";
+	     if (buff.st_size < 1024)
+	       text.sprintf( "%s (%ld bytes)", text2.data(), (long) buff.st_size);
+	     else
+             {
+	       float d = (float) buff.st_size/1024.0;
+	       text.sprintf( "%s (%.2f K)", text2.data(), d);
+	     }
+	  }
+	  statusBar->setText(text);
+	}
+        else
+	  statusBar->setText( _url );
     }
 }
 

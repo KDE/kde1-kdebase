@@ -153,7 +153,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 
     QStrList strlist( TRUE );    
     // Loop thru all directory entries
-    while ( ep = readdir( dp ) )
+    while ( ( ep = readdir( dp ) ) )
 	strlist.inSort( ep->d_name );
     (void) closedir( dp );
 	
@@ -455,7 +455,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
     QStrList strlist( TRUE );
     
     // Loop thru all directory entries
-    while ( ep = readdir( dp ) )
+    while ( ( ep = readdir( dp ) ) )
     {
 	strlist.inSort( ep->d_name );
 	if ( strcmp( ep->d_name, ".kde.html" ) == 0 )
@@ -638,6 +638,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
     
     char buffer[ 1024 ];    
     char* fn;
+
     for ( fn = strlist.first(); fn != 0L; fn = strlist.next() )
     {
 	// Dont display the file "."
@@ -784,20 +785,50 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		    buffer[0] = 'l';
 		else
 		    buffer[0] = '-';
+
+                char uxbit,gxbit,oxbit;
+
+                if ( (buff.st_mode & (S_IXUSR|S_ISUID)) == (S_IXUSR|S_ISUID) )
+                        uxbit = 's';
+                else if ( (buff.st_mode & (S_IXUSR|S_ISUID)) == S_ISUID )
+                        uxbit = 'S';
+                else if ( (buff.st_mode & (S_IXUSR|S_ISUID)) == S_IXUSR )
+                        uxbit = 'x';
+                else
+                        uxbit = '-';
+
+                if ( (buff.st_mode & (S_IXGRP|S_ISGID)) == (S_IXGRP|S_ISGID) )
+                        gxbit = 's';
+                else if ( (buff.st_mode & (S_IXGRP|S_ISGID)) == S_ISGID )
+                        gxbit = 'S';
+                else if ( (buff.st_mode & (S_IXGRP|S_ISGID)) == S_IXGRP )
+                        gxbit = 'x';
+                else
+                        gxbit = '-';
+ 
+                if ( (buff.st_mode & (S_IXOTH|S_ISVTX)) == (S_IXOTH|S_ISVTX) )
+                        oxbit = 't';
+                else if ( (buff.st_mode & (S_IXOTH|S_ISVTX)) == S_ISVTX )
+                        oxbit = 'T';
+                else if ( (buff.st_mode & (S_IXOTH|S_ISVTX)) == S_IXOTH )
+                        oxbit = 'x';
+                else
+                        oxbit = '-';
+             
 		sprintf( buffer + 1,
-			 "%c%c%c%c%c%c%c%c%c</tt></td><td>%8s</td><td>%8s</td><td>%i</td><td>%i:%i</td><td>%i.%i.%i</td><td>",
+			 "%c%c%c%c%c%c%c%c%c</tt></td><td>%8s</td><td>%8s</td><td align=right>%i</td><td>%02i:%02i</td><td>%02i.%02i.%02i</td><td>",
 			 ((( buff.st_mode & S_IRUSR ) == S_IRUSR ) ? 'r' : '-' ),
 			 ((( buff.st_mode & S_IWUSR ) == S_IWUSR ) ? 'w' : '-' ),
-			 ((( buff.st_mode & S_IXUSR ) == S_IXUSR ) ? 'x' : '-' ),
+			 uxbit,
 			 ((( buff.st_mode & S_IRGRP ) == S_IRGRP ) ? 'r' : '-' ),
 			 ((( buff.st_mode & S_IWGRP ) == S_IWGRP ) ? 'w' : '-' ),
-			 ((( buff.st_mode & S_IXGRP ) == S_IXGRP ) ? 'x' : '-' ),
+			 gxbit,
 			 ((( buff.st_mode & S_IROTH ) == S_IROTH ) ? 'r' : '-' ),
 			 ((( buff.st_mode & S_IWOTH ) == S_IWOTH ) ? 'w' : '-' ),
-			 ((( buff.st_mode & S_IXOTH ) == S_IXOTH ) ? 'x' : '-' ),
+			 oxbit,
 			 (( user != 0L ) ? user->pw_name : "???" ),
 			 (( grp != 0L ) ? grp->gr_name : "???" ),
-			 buff.st_size, t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon,t->tm_year );
+			 buff.st_size, t->tm_hour,t->tm_min,t->tm_mday,t->tm_mon + 1,t->tm_year );
 		view->write( buffer );
 		// Delete a trailing .kdelnk in the filename
 		if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
@@ -891,8 +922,6 @@ void KFileManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     bindings.setAutoDelete( TRUE );
     QStrList bindings2;
     bindings2.setAutoDelete( TRUE );
-    
-    char buffer[ 1024 ];
     
     bool isdir = KIOServer::isDir( _urls );
 
@@ -1025,7 +1054,7 @@ void KTarManager::slotNewDirEntry( int, KIODirectoryEntry * _entry )
     }
 }
 
-void KTarManager::slotShowFiles( int _id )
+void KTarManager::slotShowFiles( int )
 {
     view->begin();
     view->write( "<html><title>" );
@@ -1201,8 +1230,6 @@ void KTarManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     QStrList bindings2;
     bindings2.setAutoDelete( TRUE );
     
-    char buffer[ 1024 ];
-    
     bool isdir = KIOServer::isDir( _urls );
 
     if ( isdir )
@@ -1323,7 +1350,7 @@ bool KFtpManager::openURL( const char *_url, bool _reload )
     return TRUE;
 }
 
-void KFtpManager::slotNewDirEntry( int _id, KIODirectoryEntry * _entry )
+void KFtpManager::slotNewDirEntry( int, KIODirectoryEntry * _entry )
 {
     if ( _entry != 0L )
     {
@@ -1338,7 +1365,7 @@ void KFtpManager::stop()
     window->enableToolbarButton( 7, FALSE );
 }
 
-void KFtpManager::slotShowFiles( int _id )
+void KFtpManager::slotShowFiles( int )
 {
     job = 0L;
     window->enableToolbarButton( 7, FALSE );
@@ -1510,8 +1537,6 @@ void KFtpManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     bindings.setAutoDelete( TRUE );
     QStrList bindings2;
     bindings2.setAutoDelete( TRUE );
-    
-    char buffer[ 1024 ];
     
     bool isdir = KIOServer::isDir( _urls );
 
@@ -1712,7 +1737,7 @@ void KHttpManager::slotShowHTML( const char *_url, const char *_filename )
     view->parse();
 } 
 
-void KHttpManager::slotPopupActivated( int _id )
+void KHttpManager::slotPopupActivated( int )
 {
     // TODO
     /*

@@ -47,8 +47,6 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     QStrList bindings2;
     bindings2.setAutoDelete( TRUE );
     
-    char buffer[ 1024 ];
-    
     bool isdir = KIOServer::isDir( _urls );
 
     if ( isdir )
@@ -338,13 +336,12 @@ void KRootWidget::update()
     found_icons.setAutoDelete( FALSE );
 
     // go thru all files in ~/Desktop.
-    while ( ep = readdir( dp ) )
+    while ( ( ep = readdir( dp ) ) )
     {
 	// We are not interested in '.' and '..'
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{   
 	    KRootIcon *icon;
-	    bool ok = false;
 
 	    QString file = desktopDir;
 	    file.detach();
@@ -471,13 +468,12 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 
     // go thru all files in ~/Desktop. Search for new files. We assume that they
     // are a result of the drop. This may be wrong, but it is the best method yet.
-    while ( ep = readdir( dp ) )
+    while ( ( ep = readdir( dp ) ) )
     {
 	// We are not interested in '.' and '..'
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{   
 	    KRootIcon *icon;
-	    bool ok = false;
 
 	    QString file = desktopDir;
 	    file.detach();
@@ -513,7 +509,7 @@ KIORootJob::KIORootJob( KRootWidget *_root, int _x, int _y ) : KIOJob()
     dropFileY = _y;
 }
 
-void KIORootJob::slotDropNotify( int _id, const char *_url )
+void KIORootJob::slotDropNotify( int, const char *_url )
 {
     QString u = _url;
     u.detach();
@@ -727,8 +723,11 @@ void KRootIcon::init()
     QPainter p2;
     p2.begin( &mask );
     p2.setFont( font() );
-    
-    p2.drawText( textXOffset, textYOffset, file );
+
+    // Patch for background in icon text
+    // p2.drawText( textXOffset, textYOffset, file );
+    p2.fillRect( textXOffset-1, textYOffset-ascent-1,
+		 width+2, ascent+descent+2, color1 );   
 
     if ( pixmap.mask() == 0L )
 	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap.width(), pixmap.height(), color1 );
@@ -737,7 +736,7 @@ void KRootIcon::init()
     
     p2.end();
     
-    setBackgroundColor( white );    
+    setBackgroundColor( QColor("blue2") );
 
     this->width = w;
     this->height = pixmap.height() + 5 + ascent + descent + 4;
@@ -780,7 +779,7 @@ void KRootIcon::resizeEvent( QResizeEvent * )
 }
 
 
-void KRootIcon::paintEvent( QPaintEvent *_event ) 
+void KRootIcon::paintEvent( QPaintEvent * ) 
 {
     bitBlt( this, pixmapXOffset, pixmapYOffset, &pixmap );
 
@@ -813,7 +812,7 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
     }
 }
 
-void KRootIcon::mouseDoubleClickEvent( QMouseEvent *_mouse )
+void KRootIcon::mouseDoubleClickEvent( QMouseEvent * )
 {
     root->getManager()->openURL( url.data() );
 }
@@ -828,7 +827,7 @@ void KRootIcon::dragEndEvent()
     pressed = false;
 }
 
-void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
+void KRootIcon::dndMouseReleaseEvent( QMouseEvent * )
 {
     pressed = false;
 }

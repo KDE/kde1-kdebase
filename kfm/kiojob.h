@@ -30,6 +30,7 @@ public:
       so the client always knows which job sent him the signal.
       */
     KIOJob( int _id = 0 );
+    ~KIOJob();
     
     void doIt( KIOSlaveIPC * _slave );
 
