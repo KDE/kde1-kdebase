@@ -28,7 +28,6 @@ Description: Translations of applications in kdebase.
 Package: kdm
 Depends: cpp, ${shlibs:Depends}
 Suggests: kdewallpapers, kdebase, kdebase-i18n
-Conflicts: gdm, wdm, xdm
 Architecture: any
 Description: The K Desktop Manager
  The K Desktop Manager
