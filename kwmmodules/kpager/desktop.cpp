@@ -26,7 +26,7 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-#define DESKTOPDEBUG
+//#define DESKTOPDEBUG
 //#define DESKTOPDEBUG2
 //#define ALLOWSELFPICTURE
 
