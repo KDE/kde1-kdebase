@@ -1,0 +1,6 @@
+1998-11-22  Christian Esken  <esken@kde.org>
+
+	* Makefile.am: Adding $(LIBCRYPT)
+	* Adding #include of <pwd.h> and <sys/types.h>
+	
+
