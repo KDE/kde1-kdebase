@@ -44,6 +44,20 @@ uninstall-local:
 
 ########## Meta objects ##########
 
-%.moc: %.h
-	$(MOC) $< -o $@
+helpwin.moc: helpwin.h
+	$(MOC) helpwin.h -o helpwin.moc
+
+options.moc: options.h
+	$(MOC) options.h -o options.moc
+
+bookmark.moc: bookmark.h
+	$(MOC) bookmark.h -o bookmark.moc
+
+cgi.moc: cgi.h
+	$(MOC) cgi.h -o cgi.moc
+
+mainwidget.moc: mainwidget.h
+	$(MOC) mainwidget.h -o mainwidget.moc
+
+
 

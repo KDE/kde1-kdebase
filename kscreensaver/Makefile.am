@@ -81,6 +81,53 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 
 ########## Meta objects ##########
 
-%.moc: %.h
-	$(MOC) $< -o $@
+main.moc: main.h
+	$(MOC) main.h -o main.moc
+
+saver.moc: saver.h
+	$(MOC) saver.h -o saver.moc
+
+polygon.moc: polygon.h
+	$(MOC) polygon.h -o polygon.moc
+
+banner.moc: banner.h
+	$(MOC) banner.h -o banner.moc
+
+blankscrn.moc: blankscrn.h
+	$(MOC) blankscrn.h -o blankscrn.moc
+
+rock.moc: rock.h
+	$(MOC) rock.h -o rock.moc
+
+flame.moc: flame.h
+	$(MOC) flame.h -o flame.moc
+
+lines.moc: lines.h
+	$(MOC) lines.h -o lines.moc
+
+laser.moc: laser.h
+	$(MOC) laser.h -o laser.moc
+
+pyro.moc: pyro.h
+	$(MOC) pyro.h -o pyro.moc
+
+hop.moc: hop.h
+	$(MOC) hop.h -o hop.moc
+
+forest.moc: forest.h
+	$(MOC) forest.h -o forest.moc
+
+swarm.moc: swarm.h
+	$(MOC) swarm.h -o swarm.moc
+
+bat.moc: bat.h
+	$(MOC) bat.h -o bat.moc
+
+slip.moc: slip.h
+	$(MOC) slip.h -o slip.moc
+
+lissie.moc: lissie.h
+	$(MOC) lissie.h -o lissie.moc
+
+
 

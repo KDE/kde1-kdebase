@@ -58,9 +58,6 @@ htmlcache.cpp: htmlcache.moc
 cgi.cpp: cgi.moc
 bookmark.cpp: bookmark.moc
 
-%.moc: %.h
-	$(MOC) $< -o $@      
-
 SUBDIRS = kfmwarn client kioslave 
 
 install-local-exec: 
@@ -91,4 +88,63 @@ clientIPC: ./ipcc/kfm.ipc
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
+
+# Meta Objects
+
+kfmgui.moc: kfmgui.h
+	$(MOC) kfmgui.h -o kfmgui.moc
+
+kfmview.moc: kfmview.h
+	$(MOC) kfmview.h -o kfmview.moc
+
+root.moc: root.h
+	$(MOC) root.h -o root.moc
+
+kfmdlg.moc: kfmdlg.h
+	$(MOC) kfmdlg.h -o kfmdlg.moc
+
+bookmark.moc: bookmark.h
+	$(MOC) bookmark.h -o bookmark.moc
+
+kfmprops.moc: kfmprops.h
+	$(MOC) kfmprops.h -o kfmprops.moc
+
+kfmserver_ipc.moc: kfmserver_ipc.h
+	$(MOC) kfmserver_ipc.h -o kfmserver_ipc.moc
+
+kfmserver.moc: kfmserver.h
+	$(MOC) kfmserver.h -o kfmserver.moc
+
+kioserver.moc: kioserver.h
+	$(MOC) kioserver.h -o kioserver.moc
+
+kioserver_ipc.moc: kioserver_ipc.h
+	$(MOC) kioserver_ipc.h -o kioserver_ipc.moc
+
+kfmman.moc: kfmman.h
+	$(MOC) kfmman.h -o kfmman.moc
+
+kiojob.moc: kiojob.h
+	$(MOC) kiojob.h -o kiojob.moc
+
+kmsgwin.moc: kmsgwin.h
+	$(MOC) kmsgwin.h -o kmsgwin.moc
+
+htmlcache.moc: htmlcache.h
+	$(MOC) htmlcache.h -o htmlcache.moc
+
+kfmtree.moc: kfmtree.h
+	$(MOC) kfmtree.h -o kfmtree.moc
+
+krenamewin.moc: krenamewin.h
+	$(MOC) krenamewin.h -o krenamewin.moc
+
+passworddialog.moc: passworddialog.h
+	$(MOC) passworddialog.h -o passworddialog.moc
+
+cgi.moc: cgi.h
+	$(MOC) cgi.h -o cgi.moc
+
+fileentry.moc: fileentry.h
+	$(MOC) fileentry.h -o fileentry.moc
 
