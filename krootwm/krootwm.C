@@ -251,7 +251,9 @@ void KRootWm::buildMenubars() {
     }
 
     rmb->clear();
+    rmb->disconnect( this );
     mmb->clear();
+    mmb->disconnect( this );
 
     printf(myMenuBar ? "menuBar\n" : "no menuBar\n");
     if (!myMenuBar)
