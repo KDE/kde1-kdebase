@@ -1,3 +1,7 @@
+1999-05-05  Harri Porten  <porten@kde.org>
+
+	* main.cpp: added another missing semicolon in the seteuid replacement
+
 1998-12-13  Christian Esken  <esken@kde.org>
 
 	* Calling kcheckpass (only on Shadow systems). This checks if the password

@@ -455,7 +455,7 @@ int main( int argc, char *argv[] )
 #ifdef HAVE_SETEUID
 	seteuid(0);
 #else
-    setreuid(-1, 0)
+        setreuid(-1, 0);
 #endif // HAVE_SETEUID
 	initPasswd();
 	// ... and drop them again before doing anything important
