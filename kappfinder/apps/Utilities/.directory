@@ -5,6 +5,7 @@ Name[pl]=U¿ytki
 Name[de]=Hilfsmittel
 Name[fi]=Työkalut
 Name[sv]=Nyttoprogram
+Name[pt]=Utilitários
 MiniIcon=
 SortOrder=xcalc.kdelnk,xclipboard.kdelnk,xconsole.kdelnk,xterm.kdelnk
 Icon=kcalc.xpm

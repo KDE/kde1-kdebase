@@ -8,6 +8,7 @@ Name[fi]=Ikkunat
 Name[sv]=Fönster
 Name[it]=Finestre
 Name[hu]=Ablakok
+Name[pt]=Janelas
 MiniIcon=windows.xpm
 SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
 Icon=kcmkwm.xpm

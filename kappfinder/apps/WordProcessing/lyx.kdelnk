@@ -11,6 +11,7 @@ Comment[pl]=Edytor tekstu lyx
 Comment[fr]=Editeur de textes Lyx
 Comment[fi]=Lyx tekstinkäsittelyohjelma
 Comment[sv]=Lyx latexeditor
+Comment[pt]=Processador de textos lyx
 Name=Lyx
 Exec=lyx
 Icon=lyx.xpm

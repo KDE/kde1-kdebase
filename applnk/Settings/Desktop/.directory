@@ -8,6 +8,7 @@ Name[fi]=Työpöytä
 Name[sv]=Skrivbord
 Name[it]=Desktop
 Name[hu]=Asztal
+Name[pt]=Ambiente de trabalho
 MiniIcon=style.xpm
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=Desktop.xpm

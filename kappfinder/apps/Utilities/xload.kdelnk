@@ -10,4 +10,5 @@ Comment[fr]=Indicateur de charge sous X
 Comment[de]=X Auslastungsanzeige
 Comment[sv]=X Lastmätare
 Comment[fi]=X kuormitusmittari
+Comment[pt]=Monitor de carga para X
 Icon=xload.xpm

@@ -9,6 +9,7 @@ Name[fi]=Verkko
 Name[hu]=Hálózat
 Name[sv]=Nätverk
 Name[it]=Rete
+Name[pt]=Rede
 MiniIcon=html.xpm
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network.xpm

@@ -5,6 +5,7 @@ Name[de]=Textverarbeitung
 Name[pl]=Przetwarzanie tekstów
 Name[fi]=Tekstinkäsittely
 Name[sv]=Ordbehandlare
+Name[pt]=Processamento de Texto
 MiniIcon=
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=emacs.xpm

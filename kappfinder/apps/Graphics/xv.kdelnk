@@ -12,6 +12,7 @@ Comment[fr]=Afficheur d'images XV
 Comment[pl]=Przegl±darka plików graficznych XV
 Comment[fi]=XV kuvien näyttäjä
 Comment[sv]=XV Bildvisare
+Comment[pt]=Visualizador de Imagens XV
 Exec=xv
 Icon=xv.xpm
 TerminalOptions=

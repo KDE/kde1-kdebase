@@ -12,6 +12,7 @@ Comment[de]=X Taschenrechner
 Comment[pl]=X Kalkulator
 Comment[fi]=X Laskin
 Comment[sv]=X Kalkylator
+Comment[pt]=Calculadora X
 Exec=xcalc
 Icon=xcalc.xpm
 TerminalOptions=

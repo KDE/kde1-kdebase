@@ -12,6 +12,7 @@ Comment[pl]=Aplikacja do malowania Xpaint
 Comment[fi]=Xpaint piirto-ohjelma
 Comment[sv]=XPaint ritprogram
 Comment[fr]=Application de peinture XPaint
+Comment[pt]=Aplicação de pintura XPaint
 Exec=xpaint
 Icon=xpaint.xpm
 TerminalOptions=
