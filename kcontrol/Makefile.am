@@ -1,4 +1,4 @@
-SUBDIRS = sample samba bell display input kwm info
+SUBDIRS = sample samba bell display input kwm info kdm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_bindir)

@@ -144,6 +144,10 @@ AC_OUTPUT(Makefile \
 	kcontrol/bell/Makefile \
 	kcontrol/kwm/Makefile \
 	kcontrol/samba/Makefile \
+	kcontrol/kdm/Makefile \
+	kcontrol/kdm/applnk/Makefile \
+	kcontrol/kdm/doc/Makefile \
+	kcontrol/kdm/pics/Makefile \
 	kcontrol/info/Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
