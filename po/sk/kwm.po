@@ -47,7 +47,7 @@ msgstr ""
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Pripravujem sedenie ... "
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
