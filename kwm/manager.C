@@ -501,6 +501,7 @@ void Manager::clientMessage(XEvent*  ev){
   }
 
   if (e->message_type == kwm_command){
+    bool forwardToModules = FALSE;
     char c[21];
     int i;
     for (i=0;i<20;i++)
@@ -532,7 +533,7 @@ void Manager::clientMessage(XEvent*  ev){
     else if (com == "restart"){
 	cleanup();
 	XSync(qt_xdisplay(), false);
-	execlp("kwm", NULL);
+	execlp("kwm", "kwm", "-nosession", NULL);
 	exit(1);
     }
     else if (Client::operationFromCommand(com) > -1){
@@ -583,8 +584,19 @@ void Manager::clientMessage(XEvent*  ev){
     else if (com == "deskCascade") {
       deskCascade();
     }
-
+    else if (com == "macStyleOn") {
+	myapp->setupSystemMenuBar();
+	forwardToModules = TRUE;
+    }
+    else if (com == "macStyleOff") {
+	myapp->removeSystemMenuBar();
+	forwardToModules = TRUE;
+    }
     else {
+	forwardToModules = TRUE;
+    }
+
+    if (forwardToModules) {
       // forward unknown command to the modules
       long mask = 0L;
       Window* mw;
@@ -2055,6 +2067,9 @@ void Manager::manage(Window w, bool mapped){
       activateClient(c);
     c->handleOperation(OP_MOVE);
   }
+
+  if (c->isMenuBar())
+      updateMenuBar( c );
 }
 
 // put the client in withdraw state (which means it is not managed any
@@ -2068,7 +2083,7 @@ void Manager::withdraw(Client* c){
   // window. In withdraw this is dangerous, because somebody else
   // could have taken over the window (swallowing), see below.
   c->hide();
-  
+
 
   // if we still manage the window, then we should give it free. This
   // means: we have to reparent it to the root window. But maybe
@@ -2086,7 +2101,7 @@ void Manager::withdraw(Client* c){
       destroyNotify(&ev.xdestroywindow);
       return;
   }
-  
+
   unsigned int i, nwins;
   Window dw1, dw2, *wins;
   XQueryTree(qt_xdisplay(), c->winId(), &dw1, &dw2, &wins, &nwins);
@@ -2106,7 +2121,7 @@ void Manager::withdraw(Client* c){
   XFree((void *) wins);
   XSelectInput(qt_xdisplay(), c->window, NoEventMask);
   XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, c->window);
-  
+
   removeClient(c);
 }
 
@@ -2477,13 +2492,26 @@ void Manager::updateMenuBars()
 
  QListIterator<Client> it(clients);
  QRect r =  KWM::getWindowRegion(currentDesktop());
- for (it.toFirst(); it.current(); ++it){
-     if (it.current()->isMenuBar() && it.current()->isOnDesktop(currentDesktop())){
+ for (it.toFirst(); it.current(); ++it)
+     if (it.current()->isMenuBar() && it.current()->isOnDesktop(currentDesktop())) {
 	 it.current()->geometry.setRect(r.x(),(r.y()-1)<=0?-2:r.y()-1, r.width(), // check panel top
 					it.current()->geometry.height());
-	 sendConfig(it.current() );
+	 sendConfig( it.current() );
      }
- }
+}
+
+// make the passed menubar fit to the current desktop region
+void Manager::updateMenuBar(Client* c)
+{
+    if (!c->isMenuBar() || !has_standalone_menubars)
+	return;
+    if (c->isOnDesktop(currentDesktop())){
+	QRect r =  KWM::getWindowRegion(currentDesktop());
+	c->geometry.setRect(r.x(),(r.y()-1)<=0?-2:r.y()-1, r.width(), // check panel top
+			    c->geometry.height());
+	sendConfig( c );
+    }
+
 }
 
 // make the maximized windows fit to the current desktop region

@@ -261,9 +261,9 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	cbMac->setMinimumSize(cbMac->size());
 
 	if( macStyle )
-	        cbMac->setChecked( true );
+	    cbMac->setChecked( true );
 	else
-		cbMac->setChecked( false);
+	    cbMac->setChecked( false);
 	
 	connect( cbMac, SIGNAL( clicked() ), SLOT( slotMacStyle()  )  );
 	
@@ -462,13 +462,8 @@ void KGeneral::writeSettings()
 	config->writeEntry( "macStyle", macStyle?"on":"off", true, true);
 	//CT
 
-	//CT 05Dec1998 - assure that krootwm shuts the macStyle *before*
-	if (!macStyle) KWM::sendKWMCommand("toggleMacStyle");
-
 	config->sync();
-
-	//CT 05Dec1998 - assure that krootwm starts the macStyle
-	if (macStyle) KWM::sendKWMCommand("toggleMacStyle");
+	
 	
 	KConfigGroupSaver saver(kapp->getConfig(), "X11");
 	kapp->getConfig()->writeEntry( "useResourceManager", useRM );
@@ -492,6 +487,16 @@ void KGeneral::writeSettings()
 	}
 	
 	fontUseList.at( lbFonts->currentItem() );
+
+	if (macStyle) {
+	    KWM::sendKWMCommand("macStyleOn");
+	}
+	else {
+	    KWM::sendKWMCommand("macStyleOff");
+	}
+	QApplication::syncX();
+	
+
 }
 
 void KGeneral::slotApply()

@@ -522,10 +522,13 @@ private:
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
 
-   // make the menubars fit to the current desktop region  
+   // make all menubars fit to the current desktop region
   void updateMenuBars();
 
-    // make the maximized windows fit to the current desktop region  
+  // make the passed menubar fit to the current desktop region
+  void updateMenuBar(Client* c);
+
+    // make the maximized windows fit to the current desktop region
   void updateMaximizedWindows();
 
   // optimization for standalone menubars

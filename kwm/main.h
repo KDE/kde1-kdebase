@@ -43,12 +43,13 @@ public:
   // a popup menu which contains all virtual desktops. For performance
   // and memory saving issues all clients use this object.
   QPopupMenu* desktopMenu;
-    
-    
+
+
     KMenuBar* systemMenuBar;
     QWidget* systemMenuBarParent;
-    
+
     void setupSystemMenuBar();
+    void removeSystemMenuBar();
     void resetSystemMenuBar();
     void raiseSystemMenuBar();
 
@@ -147,7 +148,7 @@ private:
   bool process_events_mode;
   XEvent events[50];
   int events_count ;
-    
+
   int fileSystemMenuId;
 
 };

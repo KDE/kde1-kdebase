@@ -659,6 +659,9 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
 void MyApp::setupSystemMenuBar()
 {
+  if (systemMenuBar)
+      return;
+  kapp->getConfig()->reparseConfiguration();
   systemMenuBarParent = new QWidget;
   systemMenuBar = new KMenuBar(systemMenuBarParent);
 
@@ -666,7 +669,7 @@ void MyApp::setupSystemMenuBar()
   file->insertItem(KWM::getCloseString(), this, SLOT( slotWindowClose() ) );
   fileSystemMenuId = systemMenuBar->insertItem( klocale->translate("File"), file);
 
-  systemMenuBarParent->setGeometry(-10,-10,100,40);
+  systemMenuBar->setGeometry(0, qApp->desktop()->width()+10,100,40);
   systemMenuBarParent->show();
   systemMenuBarParent->hide();
   if (systemMenuBar->menuBarPos() != KMenuBar::Floating) {
@@ -674,6 +677,14 @@ void MyApp::setupSystemMenuBar()
       systemMenuBarParent = 0;
       systemMenuBar = 0;
   }
+}
+
+void MyApp::removeSystemMenuBar()
+{
+    delete systemMenuBar;
+    systemMenuBar = 0;
+    delete systemMenuBarParent;
+    systemMenuBarParent = 0;
 }
 
 void MyApp::resetSystemMenuBar()
