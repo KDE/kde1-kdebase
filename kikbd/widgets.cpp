@@ -215,7 +215,6 @@ void KiKbdMapsWidget::addMap()
 		     i18n("There is no more keyboard maps"));
     return;
   }
-
   KiKbdAddDialog addDialog(this);
   if(addDialog.exec(mapsToAdd))
     addMap(mapsToAdd.at(addDialog.selectedMap()));
@@ -335,8 +334,11 @@ int KiKbdAddDialog::exec(const QStrList& toAdd)
       prefIndex = i;
   }
   maps->setCurrentItem(prefIndex);
-  maps->listBox()->setCurrentItem(prefIndex);
-  maps->listBox()->centerCurrentItem();
+  QListBox *box = maps->listBox();
+  if(box) {
+    maps->listBox()->setCurrentItem(prefIndex);
+    maps->listBox()->centerCurrentItem();
+  }
   setInfo(prefIndex);
   
   //--- execute dialog
