@@ -1,9 +1,12 @@
 // minicli
 // Copyright (C) 1997 Matthias Ettrich
+//
+// Torben added command completion
+// 09.11.97
 
 #include <qlined.h>
 #include <qlabel.h>
-
+#include <kURLcompletion.h>
 
 void execute(const char* cmd);
 
@@ -26,5 +29,7 @@ private:
   QLabel* label;
   Client* reactive;
   void commandCompletion();
+
+  KURLCompletion kurlcompletion;
 };
 

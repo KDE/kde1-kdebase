@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <signal.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 #include <kprocess.h>
 #include "manager.h"
@@ -27,6 +28,45 @@ QListIterator <char> *it;
 
 void execute(const char* cmd){
   char* shell = NULL;
+  QString tmp;
+  
+  // Torben
+  // WWW Adress ?
+  if ( strncmp( cmd, "www.", 4 ) == 0 ) {
+      tmp = "kfmclient openURL http://";
+      tmp += cmd;
+      cmd = tmp.data();
+  }
+  // FTP Adress ?
+  else if ( strncmp( cmd, "ftp.", 4 ) == 0 ) {
+      tmp = "kfmclient openURL ftp://";
+      tmp += cmd;
+      cmd = tmp.data();
+  }
+  // Looks like an URL ?
+  else if ( strstr( cmd, "://" ) != 0L )
+  {
+      tmp = "kfmclient openURL ";
+      tmp += cmd;
+      cmd = tmp.data();
+  }
+  // Usual file or executable
+  else
+  {
+      struct stat buff;
+      const char *p = cmd;
+      if ( strncmp( p, "file:", 5 ) == 0 )
+	  p = p + 5;
+      // Just a document ?
+      if ( stat( p, &buff ) == 0 && S_ISREG( buff.st_mode ) )
+      {
+	  // Tell KFM to open the document
+	  tmp = "kfmclient openURL ";
+	  tmp += cmd;
+	  cmd = tmp.data();
+      }
+  }
+  
   if (!shell){
     if ( ( shell = getenv("SHELL") ) && *shell ) // make sure SHELL is not empty
       shell = qstrdup(getenv("SHELL"));
@@ -53,6 +93,11 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
     lineedit = new QLineEdit(this);
     lineedit->installEventFilter( this );
     connect(lineedit, SIGNAL(returnPressed()), SLOT(return_pressed()));
+    // Torben
+    connect( &kurlcompletion, SIGNAL (setText (const char *)),
+	     lineedit, SLOT (setText (const char *)));
+    connect ( lineedit, SIGNAL (textChanged(const char *)),
+	      &kurlcompletion, SLOT (edited(const char *)));
     label = new QLabel(klocale->translate("Command:"), this);
     label->adjustSize();
     setGeometry(QApplication::desktop()->width()/2 - 200,
@@ -94,8 +139,13 @@ bool Minicli::eventFilter( QObject *ob, QEvent * e){
       return True;
     }
     else if (((QKeyEvent*)e)->key() == Key_Tab){
-      commandCompletion();
-      return True;
+	// commandCompletion();  ;; Torben
+	kurlcompletion.make_completion();
+	return True;
+    }
+    // Torben
+    else if ( ( ((QKeyEvent*)e)->state() == ControlButton ) && ((QKeyEvent*)e)->key() == Key_D ) {
+	kurlcompletion.make_rotation();
     }
   }
   return False;
