@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Type=Application
 Exec=kvt -T "%c"
-Icon=UNIX.xpm
+Icon=kvt.xpm
 DocPath=kvt.html
 Comment=Terminal Emulation (kvt)
 Comment[nl]=Terminal emulatie (kvt)
