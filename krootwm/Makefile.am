@@ -9,15 +9,11 @@ bin_PROGRAMS	= krootwm
 krootwm_SOURCES	= krootwm.C
 BUILTSOURCES =	krootwm.moc 
 DISTCLEANFILES = $(BUILTSOURCES)
-noinst_HEADERS = krootwm.h pmenu.h version.h
+noinst_HEADERS = krootwm.h version.h
 
 krootwm.C:krootwm.moc
 krootwm.moc: krootwm.h
 	$(MOC) krootwm.h -o krootwm.moc
-
-pmenu.C:pmenu.moc
-pmenu.moc: pmenu.h
-	$(MOC) pmenu.h -o pmenu.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x../../kdelibs/po/kde.pot $(krootwm_SOURCES) && mv messages.po ../po/krootwm.pot
