@@ -178,7 +178,7 @@ void KPrepareDlg::hide()
 	frame->hide();
 }
 
-void KPrepareDlg::setText( const char *msg = 0 )
+void KPrepareDlg::setText( const char *msg )
 {
 	if( msg != 0 )
 	{
@@ -201,7 +201,7 @@ void KPreviewWidget::paintEvent( QPaintEvent *event )
 		saver->do_refresh( event->rect() );
 }
 
-void KPreviewWidget::notifySaver( KScienceSaver *s = 0 )
+void KPreviewWidget::notifySaver( KScienceSaver *s )
 {
 	saver = s;
 }
@@ -210,7 +210,7 @@ void KPreviewWidget::notifySaver( KScienceSaver *s = 0 )
 // Screen Saver
 //
 
-KScienceSaver::KScienceSaver( Drawable drawable, bool s = false, bool gP = false ) : kScreenSaver( drawable )
+KScienceSaver::KScienceSaver( Drawable drawable, bool s, bool gP ) : kScreenSaver( drawable )
 {
 	xRootWin = buffer = 0;
 	dlg = 0;
