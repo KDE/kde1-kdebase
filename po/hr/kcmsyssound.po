@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"POT-Creation-Date: 1998-03-19 22:19+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"  
+"Content-Transfer-Encoding: iso-8859-2\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -21,102 +21,167 @@ msgstr "&Zvuk"
 msgid "System Sounds"
 msgstr "&Sistemski zvuci"
 
-#: syssound.cpp:69
+#: syssound.cpp:144
 msgid "Change to Desktop 1"
 msgstr "Premjesti se na radnu povr¹inu 1"
 
-#: syssound.cpp:70
+#: syssound.cpp:145
 msgid "Change to Desktop 2"
 msgstr "Premjesti se na radnu povr¹inu 2"
 
-#: syssound.cpp:71
+#: syssound.cpp:146
 msgid "Change to Desktop 3"
 msgstr "Premjesti se na radnu povr¹inu 3"
 
-#: syssound.cpp:72
+#: syssound.cpp:147
 msgid "Change to Desktop 4"
 msgstr "Premjesti se na radnu povr¹inu 4"
 
-#: syssound.cpp:73
+#: syssound.cpp:148
 msgid "Change to Desktop 5"
 msgstr "Premjesti se na radnu povr¹inu 5"
 
-#: syssound.cpp:74
+#: syssound.cpp:149
 msgid "Change to Desktop 6"
 msgstr "Premjesti se na radnu povr¹inu 6"
 
-#: syssound.cpp:75
+#: syssound.cpp:150
 msgid "Change to Desktop 7"
 msgstr "Premjesti se na radnu povr¹inu 7"
 
-#: syssound.cpp:76
+#: syssound.cpp:151
 msgid "Change to Desktop 8"
 msgstr "Premjesti se na radnu povr¹inu 8"
 
-#: syssound.cpp:78
+#: syssound.cpp:153
 msgid "Activate Window"
 msgstr "Aktiviraj prozor"
 
-#: syssound.cpp:79
+#: syssound.cpp:154
 msgid "Open new window"
 msgstr "Novi prozor"
 
-#: syssound.cpp:80
+#: syssound.cpp:155
 msgid "Close Window"
 msgstr "Zatvori prozor"
 
-#: syssound.cpp:81
+#: syssound.cpp:156
 msgid "Startup"
 msgstr "Podizanje"
 
-#: syssound.cpp:103
+#: syssound.cpp:158
+msgid "Window Shade Up"
+msgstr ""
+
+#: syssound.cpp:159
+msgid "Window Shade Down"
+msgstr ""
+
+#: syssound.cpp:160
+msgid "Window Iconify"
+msgstr ""
+
+#: syssound.cpp:161
+msgid "Window DeIconify"
+msgstr ""
+
+#: syssound.cpp:162
+msgid "Window Maximize"
+msgstr ""
+
+#: syssound.cpp:163
+msgid "Window UnMaximize"
+msgstr ""
+
+#: syssound.cpp:164
+msgid "Window Sticky"
+msgstr ""
+
+#: syssound.cpp:165
+msgid "Window UnSticky"
+msgstr ""
+
+#: syssound.cpp:166
+msgid "Window Trans New"
+msgstr ""
+
+#: syssound.cpp:167
+msgid "Window Trans Delete"
+msgstr ""
+
+#: syssound.cpp:168
+msgid "Logout"
+msgstr ""
+
+#: syssound.cpp:169
+msgid "Logout Message"
+msgstr ""
+
+#: syssound.cpp:170
+msgid "Window Move Start"
+msgstr ""
+
+#: syssound.cpp:171
+msgid "Window Move End"
+msgstr ""
+
+#: syssound.cpp:172
+msgid "Window Resize Start"
+msgstr ""
+
+#: syssound.cpp:173
+msgid "Window Resize End"
+msgstr ""
+
+#: syssound.cpp:195
 msgid "e&nable system sounds"
 msgstr "&omoguæi sistemske zvuke"
 
-#: syssound.cpp:108
+#: syssound.cpp:200
 msgid "&Test"
 msgstr "&Proba"
 
-#: syssound.cpp:112
+#: syssound.cpp:204
 msgid "&Events:"
 msgstr "&Dogaðaji"
 
-#: syssound.cpp:116
+#: syssound.cpp:208
 msgid "&Sounds:"
 msgstr "&Zvuci"
 
-#: syssound.cpp:120
+#: syssound.cpp:213
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr "Dodatne WAV datoteke mogu biti baèene na zvuènu listu."
 
-#: syssound.cpp:323
+#: syssound.cpp:453
 msgid "Unsupported URL"
 msgstr "Nepodr¾ani URL"
 
-#: syssound.cpp:324
+#: syssound.cpp:455
+#, fuzzy
 msgid ""
-"Sorry, this type of URL is currently unsupported by the KDE System Sound "
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
 "Na¾alost, ovaj tip URLa nije trenutno podr¾an od strane KDE System Sound "
 "Modula"
 
-#: syssound.cpp:328
-#, c-format
+#: syssound.cpp:465
+#, fuzzy, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
-"does not seem to be a WAV--file!"
+"does not seemto be a WAV--file."
 msgstr ""
 "Na¾alost, ali \n"
 "%s\n"
 "ne izgleda kao WAV datoteka!"
 
-#: syssound.cpp:329
+#: syssound.cpp:468
 msgid "Improper File Extension"
 msgstr "Pogre¹ni sufiks datoteke"
 
-#: syssound.cpp:335
+#: syssound.cpp:479
 #, c-format
 msgid ""
 "The file\n"
@@ -127,7 +192,6 @@ msgstr ""
 "%s\n"
 "je veæ na listi"
 
-#: syssound.cpp:336
+#: syssound.cpp:481
 msgid "File Already in List"
 msgstr "Datoteka je veæ na listi"
-

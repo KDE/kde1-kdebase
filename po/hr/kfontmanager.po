@@ -5,27 +5,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"POT-Creation-Date: 1998-03-19 22:16+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"  
+"Content-Transfer-Encoding: iso-8859-2\n"
 
-#: main.cpp:61
+#: main.cpp:58
 msgid "KDE Font Manager"
 msgstr "Upravitelj KDE pisama"
 
-#: main.cpp:74
+#: main.cpp:71
 msgid "KDE Fonts"
 msgstr "KDE pisma"
 
-#: main.cpp:75
+#: main.cpp:72
 msgid "Font Explorer"
 msgstr "Istra¾ivaè pisama"
 
-#: main.cpp:76
+#: main.cpp:73
 msgid "Raw X11 Font List"
 msgstr "Sirova lista X11 pisama"
 
@@ -37,15 +37,15 @@ msgstr "Dostupna X11 pisma"
 msgid "Fonts made available to KDE"
 msgstr "Pisma dostupna KDEu"
 
-#: kfontmanager.cpp:86
+#: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "Ogledni string upravitelja KDE pisama"
 
-#: kfontlist.cpp:63 kfontmanager.cpp:108
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "O kfontmanageru"
 
-#: kfontmanager.cpp:108
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -57,7 +57,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:208
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -65,7 +65,7 @@ msgstr ""
 "Okoli¹na varijabla HOME\n"
 "nije namje¹tena\n"
 
-#: kfontmanager.cpp:285
+#: kfontmanager.cpp:289
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Ne mogu kreirati:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:290
+#: kfontmanager.cpp:294
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -83,7 +83,7 @@ msgstr ""
 "ali ne mogu pisati u njega\n"
 "Ne mogu pospremiti KDE listu pisama."
 
-#: kfontlist.cpp:63
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"POT-Creation-Date: 1998-03-19 22:17+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"  
+"Content-Transfer-Encoding: iso-8859-2\n"
 
 #: banner.cpp:56
 msgid "Banner"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
 #: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
-#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+#: rock.cpp:550 slip.cpp:366 space.cpp:587 swarm.cpp:330
 msgid "Speed:"
 msgstr ""
 
@@ -301,7 +301,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:296
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr ""
+
+#: main.cpp:306
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -309,18 +314,18 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 
-#: main.cpp:301
+#: main.cpp:311
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:457
+#: main.cpp:469
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
 
-#: main.cpp:460
+#: main.cpp:472
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -340,7 +345,7 @@ msgid ""
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
 
-#: morph3d.cpp:839
+#: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
 msgstr ""
 
@@ -451,11 +456,11 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:50 saver.cpp:110
+#: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
 msgstr ""
 
-#: saver.cpp:80
+#: saver.cpp:82
 msgid "Failed"
 msgstr ""
 
@@ -482,6 +487,29 @@ msgid ""
 "Copyright (c) 1991 by Scott Draves\n"
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+
+#: space.cpp:491
+msgid "Space (GL)"
+msgstr ""
+
+#: space.cpp:581
+msgid "Setup KSpace"
+msgstr ""
+
+#: space.cpp:597
+msgid "Warp Interval:"
+msgstr ""
+
+#: space.cpp:685
+msgid "About KSpace"
+msgstr ""
+
+#: space.cpp:687
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
 
 #: swarm.cpp:252
