@@ -527,8 +527,6 @@ KMimeType* KMimeType::findType( const char *_url )
 	return folderType;
     }              
 
-    KMimeType *typ;
-
     // Links may appear on the local hard disk only. If this is a link
     // we will use the file/dir the link is pointing to to determine
     // the file type.
@@ -578,7 +576,8 @@ KMimeType* KMimeType::findType( const char *_url )
     }
     else
 	filename = u.filename();
-    
+
+    KMimeType *typ;
     for ( typ = types->first(); typ != 0L; typ = types->next() )
     {
 	QStrList& pattern = typ->getPattern();
