@@ -6,170 +6,154 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:248
+#: kpanel.C:210
 msgid "Move"
 msgstr "Mutã"
 
-#: kpanel.C:251
+#: kpanel.C:213
 msgid "Properties"
 msgstr "Proprietãþi"
 
-#: kpanel.C:273
+#: kpanel.C:245
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:247 tools.C:804
 msgid "Where do you want to go tomorrow?"
-msgstr "Unde vrei sã mergi mâine"
+msgstr "Ia ghici, ce poate fi ãsta ???"
 
-#: kpanel.C:342
+#: kpanel.C:320
 msgid "No info available"
 msgstr "Nici o informaþie disponibilã"
 
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:359 kpanel.C:779 kpanel.C:780
 msgid "Logout"
 msgstr "Ieºire"
 
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:367 kpanel.C:778
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
-#: kpanel.C:410
+#: kpanel.C:376
 msgid "Hide the panel"
 msgstr "Ascunde panoul"
 
-#: kpanel.C:421
+#: kpanel.C:386
 msgid "Show the panel"
 msgstr "Afiºeazã panoul"
 
-#: kpanel.C:704
+#: kpanel.C:762
 msgid "Add application"
 msgstr "Adaugã o aplicaþie"
 
-#: kpanel.C:707
+#: kpanel.C:764
 msgid "Add an application or a submenu onto the panel"
 msgstr "Adaugã o aplicaþie sau un submeniu"
 
-#: kpanel.C:709
+#: kpanel.C:765
 msgid "Add windowlist"
 msgstr "Adaugã listã de ferestre"
 
-#: kpanel.C:712
+#: kpanel.C:767
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: kpanel.C:714
+#: kpanel.C:768
 msgid "Configure"
 msgstr "Configurare"
 
-#: kpanel.C:717
+#: kpanel.C:770
 msgid "Configure panel"
 msgstr "Configurare panou"
 
-#: kpanel.C:719
+#: kpanel.C:771
 msgid "Restart"
 msgstr "Restartare"
 
-#: kpanel.C:722
+#: kpanel.C:773
 msgid "Restart panel"
 msgstr "Restartare Panou"
 
-#: kpanel.C:725 props.C:396
+#: kpanel.C:774 props.C:311
 msgid "Panel"
 msgstr "Panou"
 
-#: kpanel.C:729
+#: kpanel.C:776
 msgid "Lock Screen"
 msgstr "Blocheazã ecranul"
 
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1143 tools.C:621
 msgid "No comment available"
 msgstr "Nici un comentariu disponibil"
 
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1152 tools.C:813
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: props.C:327
+#: props.C:241
 msgid "Location"
 msgstr "Locaþie"
 
-#: props.C:340
+#: props.C:256
 msgid "Taskbar"
-msgstr "Taskbar :)"
+msgstr "Taskbar"
 
-#: props.C:341
+#: props.C:257
 msgid "Hidden"
 msgstr "Ascuns"
 
-#: props.C:350
+#: props.C:269
 msgid "Top/Left"
-msgstr "StângaSus"
+msgstr "Stg./Sus"
 
-#: props.C:380
+#: props.C:280
 msgid "Tiny Style"
 msgstr "Mic"
 
-#: props.C:381
+#: props.C:281
 msgid "Normal Style"
 msgstr "Normal"
 
-#: props.C:382
+#: props.C:282
 msgid "Large Style"
 msgstr "Mare"
 
-#: props.C:401
+#: props.C:294
 msgid "Menu Tooltips"
 msgstr "Bule de informatie"
 
-#: props.C:447
-msgid "Others"
-msgstr ""
-
-#: props.C:449
+#: props.C:298
 msgid "Personal First"
 msgstr "Întâi cele personale"
 
-#: props.C:452
+#: props.C:302
 msgid "Auto Hide Panel"
 msgstr "Auto-Ascunde panoul"
 
-#: props.C:455
+#: props.C:306
 msgid "Auto Hide Taskbar"
 msgstr "Auto-Ascunde Taskbarul"
 
-#: props.C:473
-msgid "Clock"
-msgstr ""
-
-#: props.C:475
-msgid "24h"
-msgstr ""
-
-#: props.C:479
-msgid "12h AM/PM"
-msgstr ""
-
-#: props.C:540
+#: props.C:362
 msgid "Visible"
 msgstr "Vizibil"
 
-#: props.C:547
+#: props.C:369
 msgid "Width"
 msgstr "Lãþime"
 
-#: props.C:552
+#: props.C:374
 msgid "Desktops"
 msgstr "Ecrane"
 
-#: props.C:558
+#: props.C:380
 msgid "KPanel Configuration"
 msgstr "Configurare KPanel"

@@ -1,7 +1,8 @@
 
 # This has to be set. The rest should be reusable
 GMFILES = kwm.gmo kdm.gmo kcmlocale.gmo kcontrol.gmo kfm.gmo \
-	kpanel.gmo krootwm.gmo kvt.gmo  kdehelp.gmo
+	kpanel.gmo krootwm.gmo kvt.gmo  kdehelp.gmo kcmbell.gmo \
+	kcminfo.gmo kcminput.gmo kcmkpanel.gmo kfontmanager.gmo
 
 POFILES = $(GMFILES:.gmo=.po)
 

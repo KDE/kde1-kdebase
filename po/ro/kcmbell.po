@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Bell"
+msgstr "&Difuzor"
+
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "folosire: kcmbell [-init | bell]\n"
+
+#: main.cpp:81
+msgid "Bell settings"
+msgstr "Setãrile difuzorului"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "Volum"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "Frecvenþã"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Duratã"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr ""
+
+#: bell.cpp:90
+msgid "ms"
+msgstr ""
+
+#: bell.cpp:92
+msgid "Test"
+msgstr "Testeazã"

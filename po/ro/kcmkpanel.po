@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-01-16 20:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:57
+msgid "&Panel"
+msgstr "&Panou"
+
+#: main.cpp:60
+msgid "&Desktops"
+msgstr "&Ferestre"
+
+#: main.cpp:65
+msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
+msgstr "folosire: kcmkpanel [-init | {panel,desktops}]\n"
+
+#: main.cpp:94
+msgid "KPanel Configuration"
+msgstr "Configurare KPanel"
+
+#: panel.cpp:58
+msgid "Location"
+msgstr "Locaþie"
+
+#: panel.cpp:66
+msgid "Taskbar"
+msgstr "Taskbar"
+
+#: panel.cpp:67
+msgid "Hidden"
+msgstr "Ascuns"
+
+#: panel.cpp:70
+msgid "Top/Left"
+msgstr "Stânga/Sus"
+
+#: panel.cpp:91
+msgid "Tiny Style"
+msgstr "Mic"
+
+#: panel.cpp:92
+msgid "Normal Style"
+msgstr "Normal"
+
+#: panel.cpp:93
+msgid "Large Style"
+msgstr "Mare"
+
+#: panel.cpp:101
+msgid "Menu Tooltips"
+msgstr "Bule de informaþie"
+
+#: panel.cpp:103
+msgid "Personal First"
+msgstr "Întâi cele personale"
+
+#: panel.cpp:105
+msgid "Auto Hide Panel"
+msgstr "Auto-ascunde panoul"
+
+#: panel.cpp:107
+msgid "Auto Hide Taskbar"
+msgstr "Auto-ascunde taskbar-ul"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Vizibil"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Lãþime"

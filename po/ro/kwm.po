@@ -6,22 +6,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-01-16 22:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:67
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am "
-"pornit kwm-ul\n"
-
+"kwm: se pare ca este deja în funcþiune un alt Window Manager, aºa cã nu am pornit kwm-ul\n"
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: eroare în timpul iniþializãrii; pa \n"
@@ -36,7 +34,7 @@ msgstr "Folosire: "
 
 #: main.C:388
 msgid "&Maximize"
-msgstr "&Maximizare"
+msgstr "Ma&ximizare"
 
 #: main.C:389
 msgid "&Restore"
@@ -44,7 +42,7 @@ msgstr "&Refacere"
 
 #: main.C:390
 msgid "&Iconify"
-msgstr "&Minimizare"
+msgstr "Mi&nimizare"
 
 #: main.C:391
 msgid "&DeIconify"
@@ -56,11 +54,11 @@ msgstr "&Lipicioasã"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "&Nelipicioasã"
+msgstr "Nelipicioasã"
 
 #: main.C:394
 msgid "Mo&ve"
-msgstr "Mu&tã"
+msgstr "&Mutã"
 
 #: main.C:395
 msgid "Resi&ze"
@@ -68,7 +66,7 @@ msgstr "Schim&bã dimensiunea"
 
 #: main.C:397
 msgid "&To desktop"
-msgstr "Î&n ecranul"
+msgstr "În &ecranul"
 
 #: main.C:399
 msgid "&Onto current desktop"
@@ -96,11 +94,11 @@ msgstr "Cinci"
 
 #: main.C:464
 msgid "Six"
-msgstr "ªasex"
+msgstr "ªase"
 
 #: main.C:467
 msgid "Seven"
-msgstr "ªaptex"
+msgstr "ªapte"
 
 #: main.C:470
 msgid "Eight"
@@ -110,7 +108,7 @@ msgstr "Opt"
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:986
+#: main.C:975
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 
@@ -141,7 +139,6 @@ msgid ""
 msgstr ""
 "Aplicaþiile urmãtoare nu pot fi refãcute în sesiunea urmãtoare,\n"
 "ci doar restartate. Asigurã-te cã nu conþin date nesalvate importante."
-
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
