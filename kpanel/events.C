@@ -191,10 +191,11 @@ void kPanel::kwmCommandReceived(QString com){
     // search for the identity
     QString identity = com.right(com.length() - 13);
     int i;
-    for (i=0; i<nbuttons && entries[i].identity != identity;i++);
-    if (i<nbuttons){
-      if (entries[i].icon[in])
-	entries[i].button->setPixmap(*(entries[i].icon[in]));
+    for (i=0; i<nbuttons;i++){
+      if (entries[i].identity == identity){
+	if (entries[i].icon[in])
+	  entries[i].button->setPixmap(*(entries[i].icon[in]));
+      }
     }
   }
 }
