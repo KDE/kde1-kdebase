@@ -738,6 +738,14 @@ void KfmGui::openFilteredURL ( const char * _url )
         // Exit if the user did not enter a URL
         if ( url.isEmpty() )
 	        return;
+        // Strip off "file:/" in order to properly
+        // expand local URLs when necessary.
+        if ( url.find ("file:/") == 0 )
+        {
+            url.remove (0, 6);
+            if ( url.isEmpty() )
+                url = "/";
+        }
         // Home directory?
         if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
         {
