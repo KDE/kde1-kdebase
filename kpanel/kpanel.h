@@ -181,6 +181,8 @@ public:
   void kwmDesktopNameChange(int, QString);
   void kwmDesktopNumberChange(int);
   void kwmCommandReceived(QString);
+  void dockWindowAdd(Window);
+  void dockWindowRemove(Window);
 
   void windowlistActivated(int);
 
@@ -285,6 +287,7 @@ private:
   QPopupMenu *taskbarPopup;
 
   QLabel *label_date;
+  QFrame *dock_area;
 
   QWidget *moving_button;
   QPoint moving_button_offset;
@@ -337,6 +340,7 @@ private:
 
   //layout
   void layoutTaskbar();
+  void layoutDockArea();
   void reposition(int l = 0);
   void find_a_free_place();
   void check_button_bounds(QWidget* button);

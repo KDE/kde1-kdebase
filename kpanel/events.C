@@ -170,6 +170,55 @@ void kPanel::windowRaise(Window /* w */){
     panel_button_frame_standalone->raise();
 }
 
+
+void kPanel::layoutDockArea(){
+  if (kwmmapp->dock_windows.count() == 0){
+    dock_area->hide();
+    return;
+  }
+  Window* w;
+  int i;
+  if (orientation == vertical){
+    dock_area->setGeometry(dock_area->x(),
+			   dock_area->y() + dock_area->height()
+			   - kwmmapp->dock_windows.count() * 24 - 2,
+			   dock_area->width(),
+			   kwmmapp->dock_windows.count() * 24 + 2);
+    i = 0;
+    for (w = kwmmapp->dock_windows.first(); w; 
+	 w = kwmmapp->dock_windows.next()){
+      XMoveResizeWindow(qt_xdisplay(), *w, 
+			dock_area->width()/2-12, 1+ i * 24, 24, 24);
+      i++;
+    }
+  }else {
+    dock_area->setGeometry(dock_area->x() + dock_area->width()
+			   - kwmmapp->dock_windows.count() * 24 - 2,
+			   dock_area->y(),
+			   kwmmapp->dock_windows.count() * 24 + 2,
+			   dock_area->height());
+    i = 0;
+    for (w = kwmmapp->dock_windows.first(); w; 
+	 w = kwmmapp->dock_windows.next()){
+      XMoveResizeWindow(qt_xdisplay(), *w, 
+			1 + i * 24, dock_area->height()/2-12, 24, 24);
+      i++;
+    }
+  }
+  dock_area->show();
+}
+
+void kPanel::dockWindowAdd(Window w){
+  XReparentWindow(qt_xdisplay(), w, dock_area->winId(), 0, 0);
+  XMapWindow(qt_xdisplay(), w);
+  layoutDockArea();
+}
+void kPanel::dockWindowRemove(Window){
+  layoutDockArea();
+}
+
+
+
 myTaskButton* kPanel::taskButtonFromWindow(Window w){
   myTaskButton* b;
   for (b=taskbar_buttons.first(); b; b = taskbar_buttons.next()){

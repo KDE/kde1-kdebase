@@ -156,12 +156,18 @@ int main( int argc, char ** argv ){
 		     SLOT(kwmDesktopNumberChange(int)));
   the_panel->connect(&myapp, SIGNAL(commandReceived(QString)), 
 		     SLOT(kwmCommandReceived(QString)));
+  the_panel->connect(&myapp, SIGNAL(dockWindowAdd(Window)), 
+		     SLOT(dockWindowAdd(Window)));
+  the_panel->connect(&myapp, SIGNAL(dockWindowRemove(Window)), 
+		     SLOT(dockWindowRemove(Window)));
 
   the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()), 
 		     SLOT(kdisplayPaletteChanged()));
 
   myapp.setMainWidget(the_panel);
-  myapp.connectToKWM();
+
+  // connect to kwm as docking module
+  myapp.connectToKWM(true);
   the_panel->show();
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);

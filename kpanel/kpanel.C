@@ -234,6 +234,9 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       }
     }
 
+    dock_area = new QFrame(this);
+    dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
+    dock_area->hide();
     
     entries[nbuttons++].button = (myPushButton*) new myPushButton( this, klocale->translate("Go!"));
     entries[nbuttons-1].button->installEventFilter( this );
@@ -510,6 +513,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 			      2*box_width-6, 
 			      box_height+2*margin-6);
       label_date->setAlignment( AlignRight|AlignVCenter );
+
+      dock_area->setGeometry(label_date->x() - box_width,
+			     3,
+			     2 * box_width - 6,
+			     box_height+2*margin-6);
       
       
 
@@ -570,11 +578,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
 
       label_date->setGeometry(3,
-			      h - margin - 3-box_height,
+			      h - margin - 3-box_height*3/4,
 			      box_width+2*margin-6, 
-			      box_height);
+			      box_height*3/4);
 
       label_date->setAlignment( AlignHCenter|AlignBottom);
+
+      dock_area->setGeometry(3,
+			     label_date->y() - box_height,
+			     box_width+2*margin-6, 
+			     box_height);
 
 
       if (position == top_left){

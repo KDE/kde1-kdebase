@@ -681,11 +681,40 @@ void kPanel::delete_button(QWidget* button){
   }
 }
 
+static void waitForX(){
+  static Window w = 0;
+  static Atom a = 0;
+  if (!a)
+    a = XInternAtom(qt_xdisplay(), "WAIT_FOR_X", False);
+  int mask;
+  XSetWindowAttributes attr;
+  if (w == 0) {
+    mask = CWOverrideRedirect;
+    attr.override_redirect = 1;
+    w = XCreateWindow(qt_xdisplay(), qt_xrootwin(), 0, 0, 1, 1, 0, CopyFromParent,
+		      InputOnly, CopyFromParent, mask, &attr);
+    XSelectInput(qt_xdisplay(), w, 
+	       PropertyChangeMask);
+    XMapWindow(qt_xdisplay(), w);
+  }
+  XEvent ev;
+  XChangeProperty(qt_xdisplay(), w, a, a, 8,
+		  PropModeAppend, (unsigned char *)"", 0);
+  XWindowEvent(qt_xdisplay(), w, PropertyChangeMask, &ev);
+}
+
 void kPanel::cleanup(){
      int i;
+     Window *w;
+     for (w = kwmmapp->dock_windows.first(); w;
+ 	  w = kwmmapp->dock_windows.next()){
+       XReparentWindow(qt_xdisplay(), *w, qt_xrootwin(), 0, 0);
+       XFlush(qt_xdisplay());
+     }
      for (i=0; i<nbuttons; i++)
        if (entries[i].swallowed)
 	 KWM::close(entries[i].swallowed);
+     
 }
 
 void kPanel::showSystem(){

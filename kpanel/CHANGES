@@ -1,5 +1,8 @@
 In kpanel-0.18:
 
+    Patchlevel 4:
+       - First proof-of-concept implementation of docking
+
     Patchlevel 3:
        - new commandline option: "-no-KDE-compliant-window-manager"
          forces startup regardless of the module communication.
