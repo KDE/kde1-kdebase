@@ -1708,9 +1708,9 @@ if test "$ac_cv_have_shload" = "yes"; then
 fi
 
 if test "$enable_dlopen" = no ; then
-  $1
+  test -n "$1" && eval $1
 else
-  $2
+  test -n "$2" && eval $2
 fi
 
 ])
