@@ -851,6 +851,9 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	toolbar->setItemEnabled( 7, FALSE );
 	slotSetStatusBar( "Document: Done" );
     }
+
+   KURL u( view -> getURL());
+   _w->gotoAnchor(u.reference());
 }
 
 KfmGui::~KfmGui()
