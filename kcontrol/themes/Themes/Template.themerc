@@ -125,3 +125,19 @@ WindowUnMaximize=
 WindowUnSticky=
 #
 #-----------------------------------------------------------------------------
+[Icons]
+# The trashcan needs special treatment:
+#
+#Trash=mytrash.xpm:my-mini-trash.xpm
+#TrashFull=full-mytrash.xpm:full-my-mini-trash.xpm
+#
+# All other icons shall have the name of the mime type, either
+# relative to the $KDEDIR/share/mimelnk or relative to the
+# $KDEDIR/share/applnk directory. Examples:
+#
+#application/x-tar=mytar.xpm
+#audio/x-midi=midisound.xpm:mini-midisound.xpm
+#KControl=mycontrolpad.xpm:mycontrolpad.mini.xpm
+#Graphics/kview=kview.xpm:mini-kview.xpm
+#
+#-----------------------------------------------------------------------------

@@ -248,7 +248,7 @@ void Installer::slotImport()
 void Installer::slotExport()
 {
   QString fname, fpath, cmd, themeFile;
-  int rc, cur;
+  int cur;
   static QString path;
   if (path.isEmpty()) path = QDir::homeDirPath();
 

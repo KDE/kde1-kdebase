@@ -87,6 +87,7 @@ public:
   /** Theme packet installation options */
   bool instPanel, instIcons, instColors, instWindowBorder;
   bool instWindowTitlebar, instWallpapers, instSounds;
+  bool instCleanupIcons;
 
   /** Clear config contents */
   virtual void clear(void);
@@ -108,6 +109,9 @@ public:
   /** Create directory hierarchy, relative to given base directory
       or ~/.kde if none given. Returns true on success. */
   static bool mkdirhier(const char* dirHier, const char* baseDir=NULL);
+
+  /** Delete installed icons and reinstall backup copies. */
+  virtual void cleanupInstalledIcons(void);
 
 signals:
   /** This signal is emitted after import() or load() */
@@ -146,6 +150,9 @@ protected:
   /** Install theme group. Returns number of installed files. */
   virtual int installGroup(const char* groupName);
 
+  /** Install icons from Icon group. Returns number of installed icons. */
+  virtual int installIcons(void);
+
   /** Apply color scheme change to all open windows. Taken from
       kdisplay / colorscm.cpp */
   virtual void colorSchemeApply(void);
@@ -165,6 +172,15 @@ protected:
   /** Delete all files in work directory. */
   virtual void cleanupWorkDir(void);
 
+  /** Rename file by adding a tilde (~) to the filename. Returns
+      true if file exists. */
+  virtual bool backupFile(const QString filename) const;
+
+  /** Load/save config settings */
+  virtual void loadSettings(void);
+  virtual void saveSettings(void);
+
+
 protected:
   QString mName;           // Name of the theme
   QString mFileName;       // Name+path
@@ -172,10 +188,12 @@ protected:
   QString mDescription;
   QString mThemercFile;    // Name of the .themerc file
   QString mPreviewFile;    // Name of the preview image
+  QString mRestartCmd;     // Shell command that restarts an app
   QPixmap mPreview;
   QString mConfigDir;
   KSimpleConfig* mMappings;
   QStrList mCmdList;
+  QStrList mInstIcons;     // List of installed icons
 };
 
 #endif /*THEME_H*/

@@ -154,6 +154,7 @@ ConfigFile=kwmrc
 ConfigGroup=General
 ConfigAppDir=apps/kwm/pics
 ConfigNextGroup=Window Titlebar-2
+ConfigInstallCmd=winTitlebar
 CloseButton=:close.xpm
 MaximizeButton=:maximize.xpm
 MaximizeDownButton=:maximizedown.xpm
@@ -179,7 +180,6 @@ ConfigAppDir=apps/kwm/pics
 ConfigFile=kwmrc
 ConfigActivateCmd=kwmcom restart
 ConfigInstallCmd=winShapeMode
-#
 ShapePixmapBottom=:wm_bottom.xpm
 ShapePixmapBottomLeft=:wm_bottomleft.xpm
 ShapePixmapBottomRight=:wm_bottomright.xpm
@@ -269,3 +269,9 @@ ConfigInstallCmd=oneDesktopMode
 ConfigActivateCom=kbgwm_reconfigure
 #
 #-----------------------------------------------------------------------------
+# This group is handled special. Here are all the icons that do not match
+# exactly one kdelnk icon entry. The icon name is the name of the icon
+# it will have when it is copied to ~/.kde/share/icons
+[Icons]
+Trash=kfm_trash.xpm
+TrashFull=kfm_fulltrash.xpm

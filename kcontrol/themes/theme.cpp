@@ -25,12 +25,14 @@
 #include <qdir.h>
 #include <qfile.h>
 #include <qfileinfo.h>
+#include <qstrlist.h>
 #include <kapp.h>
 #include <qdir.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <kwm.h>
+#include <kmsgbox.h>
 #include <qwindowdefs.h>
 #include <sys/stat.h>
 #include <assert.h>
@@ -46,7 +48,7 @@
 
 
 //-----------------------------------------------------------------------------
-Theme::Theme(): ThemeInherited(0) 
+Theme::Theme(): ThemeInherited(0), mInstIcons(true)
 {
   int len;
 
@@ -63,13 +65,39 @@ Theme::Theme(): ThemeInherited(0)
 
   // ensure that work directory exists
   mkdirhier(workDir());
+
+  loadSettings();
 }
 
 
 //-----------------------------------------------------------------------------
 Theme::~Theme()
 {
+  saveSettings();
   if (mMappings) delete mMappings;
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::loadSettings(void)
+{
+  KConfig* cfg = kapp->getConfig();
+
+  cfg->setGroup("Install");
+  mRestartCmd = cfg->readEntry("restart-cmd",
+			       "kill `pidof %s`; %s >/dev/null 2>&1 &");
+  mInstIcons = cfg->readListEntry("installed-icons", ':');
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::saveSettings(void)
+{
+  KConfig* cfg = kapp->getConfig();
+
+  cfg->setGroup("Install");
+  cfg->writeEntry("installed-icons", mInstIcons);
+  cfg->sync();
 }
 
 
@@ -389,10 +417,10 @@ int Theme::installGroup(const char* aGroupName)
     debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
     // Process all mapping entries for the group
     it = mMappings->entryIterator(group);
-    for (entry=it->toFirst(); entry; entry=it->operator++())
+    if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
     {
       key = it->currentKey();
-      if (key.left(6)=="Config") continue;
+      if (stricmp(key.left(6),"Config")==0) continue;
       value = entry->aValue;
       len = value.length();
       if (len>0 && value[len-1]=='!')
@@ -513,24 +541,242 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
 //-----------------------------------------------------------------------------
 void Theme::doCmdList(void)
 {
-  QString cmd;
+  QString cmd, str, appName;
+  bool kwmRestart = false;
+  int rc;
 
   for (cmd=mCmdList.first(); !cmd.isNull(); cmd=mCmdList.next())
   {
     if (strncmp(cmd, "kwmcom", 6) == 0)
-      KWM::sendKWMCommand(cmd.mid(6,256).stripWhiteSpace());
+    {
+      cmd = cmd.mid(6,256).stripWhiteSpace();
+      if (stricmp(cmd,"restart") == 0) kwmRestart = true;
+      else KWM::sendKWMCommand(cmd);
+    }
     else if (cmd == "applyColors")
       colorSchemeApply();
+    else if (strncmp(cmd, "restart", 7) == 0)
+    {
+      appName = cmd.mid(7,256).stripWhiteSpace();
+      str.sprintf(i18n("Restart %s to activate the new settings?"),
+		  (const char*)appName);
+      rc = KMsgBox::yesNo(NULL,i18n("Restart Application"), str,
+			  KMsgBox::QUESTION|KMsgBox::DB_FIRST,
+			  i18n("Yes"), i18n("No"));
+      if (rc == 1)
+      {
+	str.sprintf(mRestartCmd, (const char*)appName, 
+		    (const char*)appName);
+	system(str);
+      }
+    }
   }
 
+  if (kwmRestart) KWM::sendKWMCommand("restart");
   mCmdList.clear();
+}
+
+
+//-----------------------------------------------------------------------------
+bool Theme::backupFile(const QString fname) const
+{
+  QFileInfo fi(fname);
+  QString cmd;
+  int rc;
+
+  if (!fi.exists()) return false;
+
+  unlink(fname + '~');
+  cmd.sprintf("mv \"%s\" \"%s~\"", (const char*)fname,
+	      (const char*)fname);
+  rc = system(cmd);
+  if (rc) warning(i18n("Cannot make backup copy of %s: mv returned %d"),
+		  (const char*)fname, rc);
+  return (rc==0);
+}
+
+
+//-----------------------------------------------------------------------------
+int Theme::installIcons(void)
+{
+  int iconsInstalled = 0;
+  KEntryIterator* it;
+  KSimpleConfig* cfg = NULL;
+  KEntryDictEntry* entry;
+  QString key, value, mapval, fname, fpath, destName, icon, miniIcon;
+  QString iconDir, miniIconDir, cmd;
+  QStrList pathList(true);
+  QFileInfo finfo;
+  const char* path;
+  bool backupDone = false;
+  bool doBackups;
+  int i;
+
+  debug("*** beginning with Icons");
+
+  doBackups = mInstIcons.isEmpty();
+  mInstIcons.clear();
+
+  setGroup("Icons");
+  mMappings->setGroup("Icons");
+
+  // Construct search path for kdelnk files
+  pathList.append(kapp->localkdedir() + "/share/applnk");
+  pathList.append(kapp->localkdedir() + "/share/mimelnk");
+  pathList.append(kapp->kde_appsdir());
+  pathList.append(kapp->kde_mimedir());
+
+  mkdirhier("share/icons/mini");
+  iconDir = kapp->localkdedir() + "/share/icons/";
+  miniIconDir = kapp->localkdedir() + "/share/icons/mini/";
+
+    // Process all mapping entries for the group
+  it = entryIterator("Icons");
+  if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
+  {
+    key = it->currentKey();
+    value = entry->aValue;
+    i = value.find(':');
+    if (i>=0)
+    {
+      icon = value.left(i);
+      miniIcon = value.mid(i+1, 1024);
+    }
+    else
+    {
+      icon = value;
+      miniIcon = 0;
+    }
+
+    // test if there is a 1:1 mapping in the mappings file
+    destName = mMappings->readEntry(key,0);
+
+    // if not we have to search for the proper kdelnk file
+    // and extract the icon name from there.
+    if (destName.isEmpty())
+    {
+      fname = "/" + key + ".kdelnk";
+      for (fpath=0, path=pathList.first(); path; path=pathList.next())
+      {
+	fpath = path + fname;
+	finfo.setFile(fpath);
+	if (finfo.exists()) break;
+	fpath = 0;
+      }
+      if (!fpath.isEmpty())
+      {
+	cfg = new KSimpleConfig(fpath, true);
+	cfg->setGroup("KDE Desktop Entry");
+	destName = cfg->readEntry("Icon", 0);
+	delete cfg;
+      }
+    }
+
+    // If we have still not found a destination icon name we will install
+    // the icons with their current name
+    if (destName.isEmpty())
+    {
+      warning(i18n("No proper kdelnk file found for %s.\n"
+		   "Installing icon(s) as %s"),
+	      (const char*)key, (const char*)icon);
+      destName = icon;
+    }
+
+    if (destName.isEmpty()) continue;
+
+    // Rename existing icons
+    if (doBackups)
+    {
+      if (backupFile(iconDir+destName)) backupDone = true;
+      if (backupFile(miniIconDir+destName)) backupDone = true;
+    }
+
+    // Copy new icons in place
+    if (!icon.isEmpty())
+    {
+      value = iconDir+destName;
+      installFile(icon, value);
+      if (mInstIcons.find(value) < 0)
+	mInstIcons.append(strdup(destName));
+      iconsInstalled++;
+    }
+    if (!miniIcon.isEmpty())
+    {
+      value = miniIconDir+destName;
+      installFile(miniIcon, value);
+      if (mInstIcons.find(value) < 0)
+	mInstIcons.append(strdup("mini/"+destName));
+      iconsInstalled++;
+    }
+  }
+
+#ifdef NOT_NEEDED
+  if (backupDone)
+  {
+    warning(i18n("Existing icons in\n%s and\n%s\n"
+		 "were renamed by adding a tilde (~).\n"),
+	    (const char*)iconDir, (const char*)miniIconDir);
+  }
+#endif
+
+  // Schedule restart of kfm
+  value = "restart kfm";
+  if (iconsInstalled > 0 && mCmdList.find(value) < 0)
+    mCmdList.append(value);
+
+  debug("*** done with Icons (%d icons installed)", iconsInstalled);
+
+  return iconsInstalled;
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::cleanupInstalledIcons(void)
+{
+  QString icon, iconDir, value;
+  QString cmd, fname;
+  QFileInfo finfo;
+  bool reverted = false;
+  int processed = 0;
+
+  debug("*** beginning with icon cleanup");
+
+  iconDir = kapp->localkdedir() + "/share/icons/";
+
+  for (icon=mInstIcons.first(); !icon.isEmpty(); icon=mInstIcons.next())
+  {
+    reverted = false;
+    fname = iconDir + icon;
+    if (unlink(fname)==0) reverted = true;
+    finfo.setFile(fname+'~');
+    if (finfo.exists())
+    {
+      cmd.sprintf("mv \"%s~\" \"%s\"", (const char*)fname,
+		  (const char*)fname);
+      system(cmd);
+      reverted = true;
+    }
+
+    if (reverted) 
+    {
+      debug("reverted icon %s", (const char*)fname);
+      processed++;
+    }
+  }
+  mInstIcons.clear();
+
+  // Schedule restart of kfm
+  value = "restart kfm";
+  if (reverted && mCmdList.find(value)<0) mCmdList.append(value);
+
+  debug("*** done with icon cleanup (reverted %d icons)", processed);
 }
 
 
 //-----------------------------------------------------------------------------
 void Theme::install(void)
 {
-  debug("Theme::install()");
+  debug("Theme::install() started");
 
   loadMappings();
   mCmdList.clear();
@@ -541,27 +787,15 @@ void Theme::install(void)
   if (instWindowTitlebar) installGroup("Window Titlebar");
   if (instWallpapers) installGroup("Display");
   if (instColors) installGroup("Colors");
+  if (instCleanupIcons) cleanupInstalledIcons();
+  if (instIcons) installIcons();
+
+  debug("*** executing command list");
 
   doCmdList();
 
-#ifdef BROKEN
-  installColors();
-  installPanel();
-  installDisplay();
-  installWM();
-  installSounds();
-
-  KWM::sendKWMCommand("kbgwm_reconfigure");
-  KWM::sendKWMCommand("configure");
-  KWM::sendKWMCommand("kpanel:restart");
-  KWM::sendKWMCommand("syssnd_restart");
-  colorSchemeApply();
-
-  sleep(1);
-  system("xrefresh");
-#endif
-
   debug("Theme::install() done");
+  saveSettings();
 }
 
 
@@ -851,149 +1085,6 @@ void Theme::colorSchemeApply(void)
   
   XFree((char*)rootwins);
 }
-
-
-
-
-#ifdef BROKEN
-//-----------------------------------------------------------------------------
-void Theme::installSounds(void)
-{
-  bool enabled;
-
-  enabled = installGroup("Sounds");
-
-  cfg->setGroup("GlobalConfiguration");
-  cfg->writeEntry("EnableSounds", enabled ? "Yes" : "No");
-  cfg->sync();
-  delete cfg;
-}
-
-//-----------------------------------------------------------------------------
-void Theme::installWM(void)
-{
-  KSimpleConfig* cfg;
-  QString key, str, name, value, oldValue, group, fname, dirname;
-  int i;
-  bool shapeMode = false;
-
-  static const char* borderKeyTab[] =
-  {
-    "ShapePixmapTop", "ShapePixmapBottom", "ShapePixmapLeft", 
-    "ShapePixmapRight", "ShapePixmapTopLeft", "ShapePixmapBottomLeft", 
-    "ShapePixmapTopRight", "ShapePixmapBottomRight", 0
-  };
-  static const char* borderDestFileTab[] =
-  {
-    "wm_top.xpm", "wm_bottom.xpm", "wm_left.xpm",
-    "wm_right.xpm", "wm_topleft.xpm", "wm_bottomleft.xpm", 
-    "wm_topright.xpm", "wm_bottomright.xpm", 0
-  };
-  static const char* buttonKeyTab[] =
-  {
-    "TitlebarPixmapActive", "TitlebarPixmapInactive", "CloseButton",
-    "MinimizeButton", "MaximizeButton", "MenuButton", "StickyButton", 0
-  };
-  static const char* buttonDestFileTab[] =
-  {
-    "activetitlebar.xpm", "inactivetitlebar.xpm", "close.xpm",
-    "iconify.xpm", "maximize.xpm", "menu.xpm", "sticky.xpm", 0
-  };
-
-  if (!instWindowBorder && !instWindowTitlebar) return;
-
-  dirname = kapp->localkdedir() + "/share/apps/kwm/pics/";
-  if (!mkdirhier("share/apps/kwm/pics")) return;
-  cfg = new KSimpleConfig(mConfigDir+"/kwmrc");
-
-  cfg->setGroup("General");
-
-  if (instWindowBorder)
-  {
-    debug("installing window border");
-    setGroup("Window Border");
-    for (i=0; borderKeyTab[i]; i++)
-    {
-      value = readEntry(borderKeyTab[i], 0);
-      fname = dirname + borderDestFileTab[i];
-      unlink(fname);
-      if (!value.isEmpty())
-      {
-	installFile(value, fname);
-	shapeMode = true;
-      }
-    }
-    cfg->writeEntry("ShapeMode", shapeMode ? "on" : "off");
-  }
-
-  if (instWindowTitlebar)
-  {
-    debug("installing window titlebar");
-    setGroup("Window Titlebar");
-    for (i=0; buttonKeyTab[i]; i++)
-    {
-      value = readEntry(buttonKeyTab[i], 0);
-      fname = dirname + buttonDestFileTab[i];
-      unlink(fname);
-      if (!value.isEmpty()) installFile(value, fname);
-    }
-
-    if (hasKey("TitlebarPixmapActive") || hasKey("TitlebarPixmapInactive"))
-      value = "pixmap";
-    else if (cfg->readEntry("TitlebarLook") == "pixmap")
-      value = "shadedHorizontal";
-    else value = 0;
-    if (!value.isEmpty()) cfg->writeEntry("TitlebarLook", value);
-  }
-
-  cfg->sync();
-  delete cfg;
-}
-
-
-//-----------------------------------------------------------------------------
-void Theme::installDisplay(void)
-{
-  KSimpleConfig* cfg;
-  QString key, str, name, value, group, fname;
-  int i, num;
-
-  if (!instWallpapers) return;
-  debug("installing wallpapers");
-
-  if (!mkdirhier("share/apps/kdisplay/color-scheme")) return;
-  if (!mkdirhier("share/apps/kdisplay/pics")) return;
-
-  setGroup("Display");
-  num = readNumEntry("Desktops", 1);
-
-  for (i=0; i<num; i++)
-  {
-    name.sprintf("%s/desktop%drc", (const char*)mConfigDir, i);
-    cfg = new KSimpleConfig(name);
-    group.sprintf("Desktop%d", i);
-    cfg->setGroup(group);
-
-    key.sprintf("Wallpaper%d", i);
-    value = readEntry(key, 0);
-    cfg->writeEntry("UseWallpaper", !value.isEmpty());
-    if (!value.isEmpty())
-    {
-      fname = kapp->localkdedir() + "/share/apps/kdisplay/pics/" + value;
-      cfg->writeEntry("Wallpaper", fname);
-      installFile(value, fname);
-    }
-    else cfg->writeEntry("Wallpaper", "");
-
-    key.sprintf("WallpaperMode%d", i);
-    cfg->writeEntry("WallpaperMode", readEntry(key, 0));
-
-    cfg->sync();
-    delete cfg;
-  }
-}
-#endif //BROKEN
-
 
 //-----------------------------------------------------------------------------
 #include "theme.moc"

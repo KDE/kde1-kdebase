@@ -34,10 +34,10 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
   connect(theme, SIGNAL(apply()), SLOT(slotThemeApply()));
 
-  mGrid = new QGridLayout(this, 10, 5, 10, 6);
+  mGrid = new QGridLayout(this, 11, 5, 10, 6);
   mGridRow = 0;
 
-  lbl = new QLabel(i18n("Install the following parts:"), this);
+  lbl = new QLabel(i18n("Work on the following parts:"), this);
   lbl->setMinimumSize(lbl->sizeHint());
   mGrid->addMultiCellWidget(lbl, 0, 0, 0, 4);
   mGrid->setRowStretch(0, 3);
@@ -56,7 +56,9 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   mCbxPanel = newLine("Panel", i18n("Panel"), &mStatPanel);
   mCbxSounds = newLine("Sounds", i18n("Sounds"), &mStatSounds);
   mCbxIcons = newLine("Icons", i18n("Icons"), &mStatIcons);
-  mCbxIcons->setEnabled(false);
+  mCbxCleanupIcons = newLine("Cleanup Icons", i18n("Revert old icons"), 
+			     &mStatCleanupIcons);
+  mStatCleanupIcons->hide();
 
   btn = new QPushButton(i18n("Invert"), this);
   btn->setFixedSize(btn->sizeHint());
@@ -126,8 +128,9 @@ void Options::applySettings()
   theme->instWindowTitlebar = mCbxWindowTitlebar->isChecked();
   theme->instWallpapers = mCbxWallpapers->isChecked();
   theme->instPanel = mCbxPanel->isChecked();
-  theme->instIcons = mCbxIcons->isChecked();
   theme->instSounds = mCbxSounds->isChecked();
+  theme->instIcons = mCbxIcons->isChecked();
+  theme->instCleanupIcons = mCbxCleanupIcons->isChecked();
 }
 
 
@@ -139,8 +142,9 @@ void Options::slotInvert()
   mCbxWindowTitlebar->setChecked(!mCbxWindowTitlebar->isChecked());
   mCbxWallpapers->setChecked(!mCbxWallpapers->isChecked());
   mCbxPanel->setChecked(!mCbxPanel->isChecked());
-  mCbxIcons->setChecked(!mCbxIcons->isChecked());
   mCbxSounds->setChecked(!mCbxSounds->isChecked());
+  mCbxIcons->setChecked(!mCbxIcons->isChecked());
+  mCbxCleanupIcons->setChecked(!mCbxCleanupIcons->isChecked());
 }
 
 
@@ -220,6 +224,7 @@ void Options::writeConfig()
   cfg->setGroup("Options");
   cfg->writeEntry("panel", mCbxPanel->isChecked());
   cfg->writeEntry("icons", mCbxIcons->isChecked());
+  cfg->writeEntry("cleanup-icons", mCbxCleanupIcons->isChecked());
   cfg->writeEntry("colors", mCbxColors->isChecked());
   cfg->writeEntry("window-border", mCbxWindowBorder->isChecked());
   cfg->writeEntry("window-titlebar", mCbxWindowTitlebar->isChecked());
@@ -236,6 +241,7 @@ void Options::readConfig()
   cfg->setGroup("Options");
   mCbxPanel->setChecked(cfg->readBoolEntry("panel", true));
   mCbxIcons->setChecked(cfg->readBoolEntry("icons", true));
+  mCbxCleanupIcons->setChecked(cfg->readBoolEntry("cleanup-icons", true));
   mCbxColors->setChecked(cfg->readBoolEntry("colors", true));
   mCbxWindowBorder->setChecked(cfg->readBoolEntry("window-border", true));
   mCbxWindowTitlebar->setChecked(cfg->readBoolEntry("window-titlebar", true));

@@ -1,3 +1,7 @@
+1998-12-18  Stefan Taferner  <taferner@kde.org> (V0.5)
+
+	* Added icon support. See Template.kthemerc for usage.
+
 1998-12-17  Stefan Taferner  <taferner@kde.org>
 
 	* Added TitleFont, TitleFrameShaded, TitleAlignment to
