@@ -1,4 +1,4 @@
-data_DATA = kpanelrc desktop0rc desktop1rc desktop2rc desktop3rc
+data_DATA = kpanelrc
 
 datadir = $(kde_confdir)
 
