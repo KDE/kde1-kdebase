@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,6 +21,16 @@ msgstr "Könyvtárak:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Nem lehet megnyitni vagy olvasni a könyvtárat."
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Keresés indítása"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Állj"
 
 #: kfindtop.cpp:122
 msgid "&Open"

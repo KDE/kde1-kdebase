@@ -211,7 +211,7 @@ msgstr "&Malý"
 
 #: colorscm.cpp:246
 msgid "High"
-msgstr "Veµký"
+msgstr "&Veµký"
 
 #: colorscm.cpp:318
 msgid "Error removing"
@@ -273,11 +273,11 @@ msgstr "Zamknú» obrazovku"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
-msgstr "©etøiè obrazovky"
+msgstr "©etriè obrazovky"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
 msgid "No screensaver"
-msgstr "Bez ¹etøièa obrazovky"
+msgstr "Bez ¹etrièa &obrazovky"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -353,7 +353,7 @@ msgstr "&Pozadie"
 
 #: main.cpp:68
 msgid "&Screensaver"
-msgstr "©etøiè &obrazovky"
+msgstr "©etriè &obrazovky"
 
 #: main.cpp:72
 msgid "&Colors"

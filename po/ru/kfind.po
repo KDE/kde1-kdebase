@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.2\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: 1997-09-05 03:06+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -20,6 +20,16 @@ msgstr "Подкаталоги:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Не возможно открыть или прочитать подкаталог."
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Начать поиск"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Остановить поиск"
 
 #
 #: kfindtop.cpp:122

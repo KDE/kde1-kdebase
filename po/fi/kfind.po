@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMBELL\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,16 @@ msgstr "Hakemistot:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Tiedostoa tai hakemistoa ei voitu avata."
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Aloita etsintä"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Lopeta etsintä"
 
 #: kfindtop.cpp:122
 msgid "&Open"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: 1998-05-14 18:13 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -20,6 +20,16 @@ msgstr "Adresáøe:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Nemohu otevøít nebo èíst adresáø."
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Spustit hledání"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Zastavit hledání"
 
 #: kfindtop.cpp:122
 msgid "&Open"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,16 @@ msgstr "Foldere:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Kan ikke åbne eller læse folder."
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Start søgning"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Stop søgning"
 
 #: kfindtop.cpp:122
 msgid "&Open"

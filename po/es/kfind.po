@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-16 20:39+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
+"PO-Revision-Date: 1998-05-21 10:49+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -12,6 +12,17 @@ msgstr "Directorios:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "No se pudo abrir o leer el directorio."
+
+# *********** Tooltips ************
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Iniciar búsqueda"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Detener búsqueda"
 
 #: kfindtop.cpp:122
 msgid "&Open"
@@ -64,8 +75,9 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Fachada gráfica para la herramienta find\n"
+"Interfaz gráfico para la herramienta find\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
 "Gracias a Stephan Kulow\n"
 "<coolo@kde.org>"
 

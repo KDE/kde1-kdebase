@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "PO-Revision-Date: 1998-05-17 20:00-0500-\n"
 "Last-Translator: Vlatko Cingoski <vlatko@eml.hiroshima-u.ac.jp>\n"
 "Language-Team: Macedonian\n"
@@ -20,6 +20,16 @@ msgstr "Direktoriumi"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Ne mozzam da go otvoram ili prochitam direktoriumot"
+
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Pochni so Prebaruvanje"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Zapri go Prebaruvanjeto"
 
 #: kfindtop.cpp:122
 msgid "&Open"

@@ -1,15 +1,19 @@
 [KDE Desktop Entry]
 Name=Trash
+Name[es]=Papelera
 Name[de]=Papierkorb
 Name[pl]=¦mietnik
+Name[no]=Papirkurv
 Name[fi]=Roskakori
 Name[fr]=Poubelle
 Name[it]=Cestino
 Name[cs]=Ko¹
 Name[sk]=Kô¹
 Comment=Contains removed files 
+Comment[es]=Contiene los archivos suprimidos
 Comment[fr]=La poubelle contient les fichiers détruits
 Comment[de]=Enthält die gelöschten Dateien
+Comment[no]=Inneholder data som er slettet
 Comment[pl]=Pliki przeznaczone do skasowania
 Comment[fi]=Sisältää poistetut tiedostot
 Comment[it]=Questa Cartella contiene i file da cancellare

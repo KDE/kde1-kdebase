@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-05-16 20:11+0200\n"
+"PO-Revision-Date: 1998-05-21 10:39+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
-"First-Translator: Santiago Fernández andFirst-Translator: Jorge Valencia "
-"<jorgev@est.unileon.es>\n"
+"First-Translator: Santiago Fernández and\n"
+"First-Translator: Jorge Valencia <jorgev@est.unileon.es>\n"
 
 #: main.cpp:62
 msgid "&Panel"
@@ -13,7 +13,7 @@ msgstr "&Panel"
 
 #: main.cpp:68
 msgid "&Desktops"
-msgstr "Escritorios"
+msgstr "&Escritorios"
 
 #: main.cpp:97
 msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
@@ -25,7 +25,7 @@ msgstr "Configuración de KPanel"
 
 #: panel.cpp:59
 msgid "Location"
-msgstr "Localización"
+msgstr "Posición"
 
 #: panel.cpp:60
 msgid "&Top"
@@ -105,7 +105,7 @@ msgstr "Pe&rsonales primero"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Auto-ocultar pá&nel"
+msgstr "Auto-ocultar pa&nel"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-16 20:50+0200\n"
+"PO-Revision-Date: 1998-05-21 11:28+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kpanel.C:213
@@ -19,7 +19,7 @@ msgstr "Inicio"
 
 #: kpanel.C:256 tools.C:800
 msgid "Where do you want to go tomorrow?"
-msgstr "Hasta dónde quiere llegar mañana?"
+msgstr "¿Hasta dónde quiere llegar mañana?"
 
 #: kpanel.C:329
 msgid "No info available"

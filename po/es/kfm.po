@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-18 18:03+0200\n"
-"PO-Revision-Date: 1998-05-16 21:00+0200\n"
+"PO-Revision-Date: 1998-05-21 10:43+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:250
@@ -152,7 +152,7 @@ msgstr "Mostrar barra de &herramientas"
 
 #: kfmgui.cpp:416
 msgid "Show &Location bar"
-msgstr "Mostar barra de &situación"
+msgstr "Mostar &dirección"
 
 #: kfmgui.cpp:419
 msgid "Sa&ve Settings"
@@ -184,7 +184,7 @@ msgstr "Parar"
 
 #: kfmgui.cpp:574
 msgid "Could not load icon\n"
-msgstr "No se pudo leer el ícono\n"
+msgstr "No se pudo leer el icono\n"
 
 #: bookmark.cpp:259 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1529
 #: kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
@@ -247,7 +247,7 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
-"Realmente quiere salir?\n"
+"¿Realmente quiere salir?\n"
 "El escritorio perderá una parte importante de su funcionalidad."
 
 #: kfmgui.cpp:1231
@@ -385,7 +385,7 @@ msgstr "ERROR"
 
 #: kbind.cpp:1188
 msgid "in "
-msgstr "en"
+msgstr "en "
 
 #: kbind.cpp:1332 kbind.cpp:1418
 msgid "Could not execute program\n"
@@ -486,7 +486,7 @@ msgstr "Tirar a la papelera"
 
 #: main.cpp:241
 msgid "Open with"
-msgstr "Abrir con:"
+msgstr "Abrir con"
 
 #: kfmman.cpp:1206 kfmtree.cpp:155 main.cpp:243
 msgid "Move"
@@ -816,7 +816,7 @@ msgstr ""
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Realmente desea reorganizar sus iconos?"
+msgstr "¿Realmente desea reorganizar sus iconos?"
 
 #: kfmserver.cpp:234
 #, c-format

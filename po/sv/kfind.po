@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-24 00:14+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -16,6 +16,17 @@ msgstr "Kataloger:"
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
 msgstr "Kan inte öppna eller läsa katalog"
+
+# *********** Tooltips ************
+#: kfindtop.cpp:115
+#, fuzzy
+msgid "&Start search"
+msgstr "Starta sökning"
+
+#: kfindtop.cpp:117
+#, fuzzy
+msgid "S&top search"
+msgstr "Avbryt sökning"
 
 #: kfindtop.cpp:122
 msgid "&Open"
