@@ -149,6 +149,15 @@ int testNestedURLs( const char *_src, const char *_dest )
     return 0;
 }
 
+QString stringSqueeze( const char *str, unsigned int maxlen )
+{
+    QString s ( str );
+    if (s.length() > maxlen) {
+        int part = (maxlen-3)/2;
+        return QString(s.left(part) + "..." + s.right(part));
+    }
+    else return s;
+}
 
 void encodeFileName( QString& fn )
 {

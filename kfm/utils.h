@@ -24,7 +24,7 @@
  * If all files are local, then everything is as usual.
  *
  * The filenames are just appended to '_cmd' if '_cmd' does not
- * conatin "%f" somewhere.
+ * contain "%f" somewhere.
  */
 void openWithOldApplication( const char *_cmd, QStrList& _urlList, const char *_workdir=0L );
 
@@ -36,6 +36,14 @@ QString displayName();
  *         are equal.
  */
 int testNestedURLs( const char *_src, const char *_dest );
+
+/**
+ * @param str A string to squeeze if necessary
+ * @param maxlen The maximum length of the string returned
+ * @return A string containing str if its length is < maxlen, and
+ * containing '...' in the middle of it if its length was > maxlen.
+ */
+QString stringSqueeze( const char *str, unsigned int maxlen );
 
 void encodeFileName( QString& fn );
 void decodeFileName( QString& fn );

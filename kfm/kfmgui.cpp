@@ -1048,12 +1048,14 @@ void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
     {
 	if ( bm->type() == KBookmark::URL )
 	{
-	    menu->insertItem( *(bm->miniPixmap()), bm->text(), bm->id() );
+	    menu->insertItem( *(bm->miniPixmap()),
+                              stringSqueeze(bm->text(), 40), bm->id() );
 	}
 	else
 	{	    
 	    QPopupMenu *subMenu = new QPopupMenu;
-	    menu->insertItem( *(bm->miniPixmap()), bm->text(), subMenu );
+	    menu->insertItem( *(bm->miniPixmap()),
+                              stringSqueeze(bm->text(), 40), subMenu );
 	    fillBookmarkMenu( bm, subMenu );
 	}
     }
