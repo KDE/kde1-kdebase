@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: en saanut haettua muistia"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -76,21 +76,21 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: en löydä symbolia \"%s\".\n"
 "Haluatko jatkaa?"
 
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr ""
 "KeyMap: en ymmärrä  näppäinkoodia \"%s\".\n"
 "Haluatko jatkaa?"
 
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr ""
@@ -178,18 +178,18 @@ msgstr "Ala oikea"
 msgid "X default codes"
 msgstr "oletus"
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
 msgstr "Haluatko käynnistää Asetukset?"
 
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "Asetuksesi ovat tyhjät. Asenna systeemin oletus."
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -197,7 +197,7 @@ msgstr ""
 "Asetustiedostossasi on oletettua vahnempi muoto.\n"
 "Jotkin asetuksista voivat olla vääriä."
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -205,83 +205,83 @@ msgstr ""
 "Asetustiedostossasi on oletettua uudempi muoto.\n"
 "Jotkin asetuksista voivat olla vääriä."
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "tuntematon"
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "oletus"
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Tekijä: Ei määritelty"
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Tekijä"
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Kuvaus:  "
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Lähde:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "ei tiedostoa"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "käyttäjätiedosto"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "systeemitiedosto"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Tilastot:  "
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "symbolia"
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "koodia"
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "vaihtoehtoista symbolia"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr " "
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "kirjasinperhe"
 
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "Kansainvälisen näppäimistön virhe"
 
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Kansainväliset näppäimistön varoitus"
 
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Kansainvälisen näppäimistön kysymys"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 #, fuzzy
 msgid ""
 "\n"

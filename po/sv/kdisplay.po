@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-07-09 15:26+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -14,111 +14,111 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Ange nytt skrivbordsnamn"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 msgid "&Rename ..."
 msgstr "&Byt namn ..."
 
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 msgid "Colors"
 msgstr "Färg"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 msgid "&One Color"
 msgstr "&En färg"
 
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 msgid "&Two Color"
 msgstr "&Två färger"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 msgid "Set&up ..."
 msgstr "&Anpassa ..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "Bakgrundsmönster"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 msgid "Ti&led"
 msgstr "&Sida vid sida"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 msgid "&Centred"
 msgstr "&Centrerad"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 msgid "&Scaled"
 msgstr "&Förstorad"
 
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 msgid "No wallpaper"
 msgstr "Inget mönster"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "&Bläddra..."
 
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 msgid "Desktop names"
 msgstr "Skrivbordsnamn"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 msgid "Two color backgrounds"
 msgstr "Tvåfärgade bakgrunder"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr "Tona färgen &uppifrån och ned"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr "Tona färgen från &höger till vänster"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr "Använd &mönster"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr "Förhandsvisning"
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr "Mönster&namn"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr "Aktuellt"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 msgid "Filled"
 msgstr "Fylld"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr "Fisknät"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr "Trianglar"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr "Blommor"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr "Rotting"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr "Kullersten"
 
@@ -362,28 +362,28 @@ msgstr ""
 "den främsta orsaken till problem är lösningar\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "&Fonts etc."
 msgstr "&Typsnitt etc."
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Bakgrund"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Skärmsläckare"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Färg"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "användning: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Skärminställningar"
 

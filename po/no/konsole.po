@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:04+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Sessions"
 msgstr ""
 
-#: main.C:843
+#: main.C:865
 msgid "Welcome to the console"
 msgstr "Velkommen til konsollet"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1997-09-05 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,128 +13,128 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Введите название нового рабочего стола"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "Рабочий стол"
 
 #
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 msgid "&Rename ..."
 msgstr "&Переименовать..."
 
 #
 #
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 msgid "Colors"
 msgstr "Цвета"
 
 #
 #
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 msgid "&One Color"
 msgstr "&Один Цвет"
 
 #
 #
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 msgid "&Two Color"
 msgstr "&Два Цвета"
 
 #
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 msgid "Set&up ..."
 msgstr "&Настроить..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "Обои"
 
 #
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 msgid "Ti&led"
 msgstr "Черепицей"
 
 #
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 msgid "&Centred"
 msgstr "В &центре"
 
 #
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 msgid "&Scaled"
 msgstr "Изменять размер"
 
 #
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 msgid "No wallpaper"
 msgstr "Без обоев"
 
 #
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "&Просмотреть..."
 
 #
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 msgid "Desktop names"
 msgstr "Названия рабочих столов"
 
 #
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 msgid "Two color backgrounds"
 msgstr "Двухцветный фон"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr "Изменять цвет с&верху вниз"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr "Изменять цвет с&права налево"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr "Использовать &шаблон"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr "&Имя шаблона"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr "Текущий"
 
 #
 #
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 msgid "Filled"
 msgstr "Закрашенный"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr "Рыбацкая сеть"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr "Треугольники"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr "Цветы"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr "Плетение"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr "Мостовая"
 
@@ -397,32 +397,32 @@ msgstr ""
 "0 1 2 3 4 5 6 7 8 9   ! \" ё $ % ^ & * ( )"
 
 #
-#: main.cpp:62
+#: main.cpp:63
 msgid "&Fonts etc."
 msgstr "&Шрифты и т.д."
 
 #
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Фон"
 
 #
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Хранитель экрана"
 
 #
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Цвета"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "использование: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Настройка дисплея"
 

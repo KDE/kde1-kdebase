@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-05-22 10:10+0000\n"
 "Last-Translator: Sasha Konecni <sasha@msi-uk.com>\n"
 "Language-Team: Macedonian\n"
@@ -12,120 +12,120 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-5\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr ""
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "Desktop"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 #, fuzzy
 msgid "&Rename ..."
 msgstr "Preimeni..."
 
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 #, fuzzy
 msgid "Colors"
 msgstr "&Boi"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 #, fuzzy
 msgid "&One Color"
 msgstr "&Boi"
 
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 #, fuzzy
 msgid "&Two Color"
 msgstr "&Boi"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 #, fuzzy
 msgid "Set&up ..."
 msgstr "Postavka..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 msgid "Ti&led"
 msgstr "Poplochan"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 msgid "&Centred"
 msgstr "&Centriran"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 msgid "&Scaled"
 msgstr "&Vo Razmer"
 
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 #, fuzzy
 msgid "No wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "&Prelistaj..."
 
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 #, fuzzy
 msgid "Desktop names"
 msgstr "Desktop"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Selektiraj pozadina"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr ""
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr ""
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr ""
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr ""
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr ""
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 #, fuzzy
 msgid "Filled"
 msgstr "Poplochan"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr ""
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr ""
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr ""
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr ""
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr ""
 
@@ -373,29 +373,29 @@ msgid ""
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:63
 #, fuzzy
 msgid "&Fonts etc."
 msgstr "Fontovi"
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Pozadina"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Zashtituvach na Ekran"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Boi"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "upotreba:  kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Pokazi gi postavkite"
 

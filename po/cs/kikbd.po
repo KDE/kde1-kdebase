@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-10-28 18:35 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: není mo¾né alokovat pamì»"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -79,17 +79,17 @@ msgstr ""
 "Mù¾ete nastavit X kódy v sekci \"Pokroèilé\"\n"
 "konfiguraèního programu."
 
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: není mo¾né nalézt symbol \"%s\"."
 
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr "KeyMap: nerozumím kódu klávesy \"%s\"."
 
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr "KeyMap: kód klávesy \"%s\" je mimo rozsah."
@@ -174,7 +174,7 @@ msgstr "Vpravo dole"
 msgid "X default codes"
 msgstr "Implicitní X kódy"
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -183,11 +183,11 @@ msgstr ""
 "%s\n"
 "Chcete spustit konfiguraci?"
 
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "Va¹e konfigurace je prázdná. Nainstalujte standardní natavení."
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -195,7 +195,7 @@ msgstr ""
 "Konfiguraèní soubor má sta¹í formát ne¾ je oèekáváno.\n"
 "Nìkterá nastavení nejsou správná."
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -203,83 +203,83 @@ msgstr ""
 "Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
 "Nìkterá nastavení nejsou správná."
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "neznámý"
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "implicitní"
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Autor: neuveden"
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Popis:  "
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Zdroj:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "¾ádný soubor"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "u¾ivatelský soubor"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "systémový soubor"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Statistika:  "
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "symboly"
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "kódy"
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "alternativní symboly"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr "jazyk"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "znaková sada"
 
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "Chyba mezinárodní klávesnice"
 
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Warování mezinárodní klávesnice"
 
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Dotaz mezinárodní klávesnice"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr "Nastavit"
 
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 msgid ""
 "\n"
 "Do you want to continue?"

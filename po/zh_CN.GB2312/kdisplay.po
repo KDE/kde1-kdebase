@@ -1,120 +1,120 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "¼üÈëĞÂµÄ×ÀÃæµÄÃû³Æ"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "×ÀÃæ"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 msgid "&Rename ..."
 msgstr "ÖØÃüÃû[&R] ..."
 
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 msgid "Colors"
 msgstr "ÑÕÉ«"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 msgid "&One Color"
 msgstr "µ¥É«[&C]"
 
 #
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 msgid "&Two Color"
 msgstr "Ë«É«[&C]"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 msgid "Set&up ..."
 msgstr "ÉèÖÃ[&U] ..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "Ç½Ö½"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 msgid "Ti&led"
 msgstr "²¢ÁĞ[&L]"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 msgid "&Centred"
 msgstr "·ÅÖÃÔÚÖĞ¼ä[&C]"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 msgid "&Scaled"
 msgstr "±ÈÀıËõ·Å[&S]"
 
 #
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 msgid "No wallpaper"
 msgstr "Ã»ÓĞÇ½Ö½"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "ä¯ÀÀ[&B]..."
 
 #
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 msgid "Desktop names"
 msgstr "×ÀÃæÃû³Æ"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 msgid "Two color backgrounds"
 msgstr "Á½¸ö²ÊÉ«±³¾°"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr "´ÓÉÏµ½ÏÂÊ¹ÓÃ»ìºÍÉ«"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr "´ÓÓÒµ½×óÊ¹ÓÃ»ìºÍÉ«"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr "Ê¹ÓÃ»¨Ñù[&P]"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr "Ô¤ÀÀ"
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr "»¨ÑùÃû[&N]"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr "µ±Ç°µÄ"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 msgid "Filled"
 msgstr "Ìî³äµÄ"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr "ÓãÍø"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr "Èı½ÇĞÎ"
 
 #
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr "»¨¶ä"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr "ÌÙ¾¥"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr "ÂÑÊ¯Â·"
 
@@ -365,27 +365,27 @@ msgid ""
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "&Fonts etc."
 msgstr "×ÖÌå¼°ÆäËû[&F]"
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "±³¾°[&B]"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "ÆÁÄ»±£»¤³ÌĞò[&S]"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "ÑÕÉ«[&C]"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "ÓÃ·¨: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "ÏÔÊ¾ÉèÖÃ"
 

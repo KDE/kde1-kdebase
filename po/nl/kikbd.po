@@ -1,5 +1,5 @@
 msgid ""
-msgstr "POT-Creation-Date: 1998-10-29 14:31+0100\n"
+msgstr "POT-Creation-Date: 1998-10-30 11:57+0100\n"
 
 # kikbd.C:115
 #: kikbd.cpp:116
@@ -59,7 +59,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: kan geen geheugen alloceren"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -69,19 +69,19 @@ msgid ""
 msgstr ""
 
 # keymap.C:263
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: kan symbool %s niet vinden"
 
 # keymap.C:272
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr "KeyMap: begrijp keycode niet"
 
 # keymap.C:275
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr "KeyMap: keycode %s ligt buiten bereik"
@@ -169,7 +169,7 @@ msgstr ""
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -177,106 +177,106 @@ msgid ""
 msgstr ""
 
 # kikbdconf.C:94
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "Je configuratie is leeg. Installeer standaard"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr ""
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr ""
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr ""
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr ""
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr ""
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr ""
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr ""
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr ""
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr ""
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr ""
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr ""
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr ""
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr ""
 
 # main.C:45
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 #, fuzzy
 msgid "International keyboard question"
 msgstr "Internationale Toetsenbord Instellingen"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr ""
 
 # keymap.C:263
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 #, fuzzy
 msgid ""
 "\n"

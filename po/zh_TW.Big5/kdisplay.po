@@ -6,130 +6,130 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "¿é¤J·sªº®à­±¦WºÙ"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "®à­±"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 #, fuzzy
 msgid "&Rename ..."
 msgstr "­«·s©R¦W[&R] ..."
 
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 #, fuzzy
 msgid "Colors"
 msgstr "ÃC¦â"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 #, fuzzy
 msgid "&One Color"
 msgstr "²Ä¤@ºØÃC¦â[&O]"
 
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 #, fuzzy
 msgid "&Two Color"
 msgstr "²Ä¤GºØÃC¦â[&T]"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 #, fuzzy
 msgid "Set&up ..."
 msgstr "³]©w[&U]..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "®à¥¬"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 #, fuzzy
 msgid "Ti&led"
 msgstr "¾Q±Æ[&L]"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 #, fuzzy
 msgid "&Centred"
 msgstr "¸m©ó¤¤¥¡[&C]"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 #, fuzzy
 msgid "&Scaled"
 msgstr "©ñ¤j¦Ü¥þ¿Ã¹õ[&S]"
 
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 #, fuzzy
 msgid "No wallpaper"
 msgstr "¨S¦³®à¥¬"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "ÂsÄý[&B]..."
 
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 #, fuzzy
 msgid "Desktop names"
 msgstr "®à­±¦WºÙ"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "Âù¦â­I´º"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr "¥Ñ¤W¨ì¤U²V¦X¨âºØÃC¦â[&T]"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr "¥Ñ¥k¦Ü¥ª½Õ©M¨âºØÃC¦â[&R]"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr "¨Ï¥Îªá¼Ë[&P]"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr "¹wÄý"
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr "ªá¼Ë¦WºÙ[&N]"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr "¥Ø«e"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 #, fuzzy
 msgid "Filled"
 msgstr "¶ñº¡"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr "³½ºô"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr "¤T¨¤"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr "ªá"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr "ÃÃ½¯"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr "ÃZ§Z¥Û¤H¦æ¹D"
 
@@ -384,28 +384,28 @@ msgid ""
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:63
 #, fuzzy
 msgid "&Fonts etc."
 msgstr "¬ÛÃö¦r«¬[&F]"
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "­I´º[&B]"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "¿Ã¹õ«OÅ@µ{¦¡[&S]"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "ÃC¦â[&C]"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "¥Îªk: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Åã¥Ü¾¹³]©w"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: 无法申请内存"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -66,17 +66,17 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: 无法找到符号 %s"
 
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr "KeyMap: 不能理解键码 %s"
 
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr "KeyMap: 键码 %s 越界"
@@ -161,111 +161,111 @@ msgstr ""
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, fuzzy, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
 msgstr "你想要起动配置吗 ?"
 
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "你的配置是空的.安装系统默认配置."
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
 msgstr ""
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr ""
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr ""
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 #, fuzzy
 msgid "Author"
 msgstr "自动启动"
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 #, fuzzy
 msgid "Description:  "
 msgstr "描述"
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr ""
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr ""
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr ""
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr ""
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr ""
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr ""
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr ""
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr ""
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr ""
 
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 #, fuzzy
 msgid "International keyboard question"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 #, fuzzy
 msgid ""
 "\n"

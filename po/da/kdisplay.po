@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,115 +13,115 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:59
+#: backgnd.cpp:54
 msgid "Enter new desktop name"
 msgstr "Skriv nyt Arbejdsplads navn"
 
-#: backgnd.cpp:115 backgnd.cpp:150
+#: backgnd.cpp:106 backgnd.cpp:141
 msgid "Desktop"
 msgstr "Arbejdsplads"
 
-#: backgnd.cpp:167
+#: backgnd.cpp:158
 msgid "&Rename ..."
 msgstr "&Omdøb..."
 
-#: backgnd.cpp:193 colorscm.cpp:94
+#: backgnd.cpp:184 colorscm.cpp:94
 msgid "Colors"
 msgstr "Farver"
 
-#: backgnd.cpp:220
+#: backgnd.cpp:211
 #, fuzzy
 msgid "&One Color"
 msgstr "&En farve"
 
-#: backgnd.cpp:237
+#: backgnd.cpp:228
 #, fuzzy
 msgid "&Two Color"
 msgstr "&To farver"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:247
 msgid "Set&up ..."
 msgstr "&Indstillinger..."
 
-#: backgnd.cpp:265
+#: backgnd.cpp:256
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:266
 msgid "Ti&led"
 msgstr "F&liselagt"
 
-#: backgnd.cpp:283
+#: backgnd.cpp:274
 msgid "&Centred"
 msgstr "&Centreret"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:282
 msgid "&Scaled"
 msgstr "&Skaleret"
 
-#: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
+#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
 msgid "No wallpaper"
 msgstr "Intet tapet"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "&Browse..."
 msgstr "&Gennemsøg..."
 
-#: backgnd.cpp:864
+#: backgnd.cpp:855
 msgid "Desktop names"
 msgstr "Arbejdsplads navne"
 
-#: backgnd.cpp:910
+#: backgnd.cpp:901
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "To farve baggrund"
 
-#: backgnd.cpp:947
+#: backgnd.cpp:938
 msgid "Blend colors from &top to bottom"
 msgstr "Bland farver fra &top til bund"
 
-#: backgnd.cpp:953
+#: backgnd.cpp:944
 msgid "Blend colors from &right to left"
 msgstr "Bland farver fra &højre til venstre"
 
-#: backgnd.cpp:959
+#: backgnd.cpp:950
 msgid "Use &pattern"
 msgstr "Brug &mønster"
 
-#: backgnd.cpp:986
+#: backgnd.cpp:977
 msgid "Preview"
 msgstr ""
 
-#: backgnd.cpp:997
+#: backgnd.cpp:988
 msgid "Pattern &name"
 msgstr "Mønster &navn"
 
-#: backgnd.cpp:1036
+#: backgnd.cpp:1027
 msgid "Current"
 msgstr "Aktuelle"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1087
 #, fuzzy
 msgid "Filled"
 msgstr "Udfyldt"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1090
 msgid "Fish net"
 msgstr "Fiskenet"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1093
 msgid "Triangles"
 msgstr "Triangler"
 
-#: backgnd.cpp:1105
+#: backgnd.cpp:1096
 msgid "Flowers"
 msgstr "Blomster"
 
-#: backgnd.cpp:1108
+#: backgnd.cpp:1099
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1111
+#: backgnd.cpp:1102
 msgid "Cobbled Pavement"
 msgstr "Toppede brosten"
 
@@ -364,27 +364,27 @@ msgid ""
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:63
 msgid "&Fonts etc."
 msgstr "Skri&ftsnit etc."
 
-#: main.cpp:65
+#: main.cpp:66
 msgid "&Background"
 msgstr "&Baggrund"
 
-#: main.cpp:68
+#: main.cpp:69
 msgid "&Screensaver"
 msgstr "&Skærmskåner"
 
-#: main.cpp:72
+#: main.cpp:73
 msgid "&Colors"
 msgstr "&Farver"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "brug: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:139
+#: main.cpp:140
 msgid "Display settings"
 msgstr "Skærm indstillinger"
 

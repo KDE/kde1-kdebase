@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "PO-Revision-Date: 1998-10-16 21:00++0200\n"
 "Last-Translator: Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: nie mogê zaalokowaæ pamiêci"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -76,21 +76,21 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: nie mogê znale¼æ symbolu \"%s\".\n"
 "Czy mam kontynuowaæ?"
 
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr ""
 "KeyMap: nie rozumiem kodu znaku \"%s\".\n"
 "Czy mam kontynuowaæ?"
 
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr ""
@@ -178,7 +178,7 @@ msgstr "Dolny Prawy"
 msgid "X default codes"
 msgstr "domy¶lny"
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -187,12 +187,12 @@ msgstr ""
 "%s\n"
 "Czy chcesz rozpocz±æ konfiguracjê ?"
 
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr ""
 "Brak Twoich plików konfiguracyjnych. Zainstaluj domy¶lne pliki konfiguracyjne"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -201,7 +201,7 @@ msgstr ""
 "program.\n"
 "Niektóre ustawienia mog± byæ nieprawid³owe."
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -210,83 +210,83 @@ msgstr ""
 "program.\n"
 "Niektóre ustawienia mog± byæ nieprawid³owe."
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "nieznany"
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "domy¶lny"
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Autor: Nie podano"
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Opis:   "
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "¬ród³o:   "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "brak pliku"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "plik u¿ytkownika"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "plik systemowy"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Statystyka:  "
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "symbole"
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "kody"
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "alternatywne symbole"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr "jêzyk"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "zestaw znaków"
 
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "Klawiatura Miêdzynarodowa: B£¡D"
 
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Klawiatura Miêdzynarodowa: ostrze¿enie"
 
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Klawiatura Miêdzynarodowa: pytanie"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 #, fuzzy
 msgid ""
 "\n"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-10-30 11:57+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "KeyMap: cannot allocate memory"
 msgstr "KeyMap: не возможно выделить память"
 
-#: keymap.cpp:222
+#: keymap.cpp:223
 #, c-format
 msgid ""
 "Can not find symbol \"%s\".\n"
@@ -71,21 +71,21 @@ msgid ""
 "of configuration program."
 msgstr ""
 
-#: keymap.cpp:227
+#: keymap.cpp:228
 #, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr ""
 "KeyMap: невозможно найти символ \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:235
+#: keymap.cpp:236
 #, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr ""
 "KeyMap: не понятен код символа \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:241
+#: keymap.cpp:242
 #, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr ""
@@ -173,7 +173,7 @@ msgstr "Внизу справа"
 msgid "X default codes"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:203
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -182,11 +182,11 @@ msgstr ""
 "%s\n"
 "Вы хотите запустить программу конфигурации?"
 
-#: kikbdconf.cpp:211
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "Ваша конфигурация пуста. Установлена начальная конфигурация."
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
@@ -194,7 +194,7 @@ msgstr ""
 "Ваш конфигурационный файл имеет версию старее чем ожидается.\n"
 "Некоторые установки могут быть не коректны."
 
-#: kikbdconf.cpp:225
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
@@ -202,83 +202,83 @@ msgstr ""
 "Ваш конфигурационный файл имеет версию новее чем ожидается.\n"
 "Некоторые установки могут быть не коректны."
 
-#: kikbdconf.cpp:352
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:356
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:382
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Автор:  Не определен"
 
-#: kikbdconf.cpp:384
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Автор"
 
-#: kikbdconf.cpp:390
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Описание:  "
 
-#: kikbdconf.cpp:393
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Источник:  "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "нет файла"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "файл пользователя"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "системный файл"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Статистика:  "
 
-#: kikbdconf.cpp:404
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "символов"
 
-#: kikbdconf.cpp:407
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "кодов"
 
-#: kikbdconf.cpp:410
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "алтернативные символы"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr "язык"
 
-#: kikbdconf.cpp:418
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "кодировка"
 
-#: kikbdconf.cpp:456
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "ОШИБКА национальной клавиатуры"
 
-#: kikbdconf.cpp:472
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Предупреждение национальной клавиатуры"
 
-#: kikbdconf.cpp:479 kikbdconf.cpp:484 kikbdconf.cpp:497
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Вопрос национальной клавиатуры"
 
-#: kikbdconf.cpp:486
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:496
+#: kikbdconf.cpp:497
 #, fuzzy
 msgid ""
 "\n"
