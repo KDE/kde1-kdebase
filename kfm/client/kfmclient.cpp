@@ -7,39 +7,13 @@
 #include <qdir.h>
 #include <qmsgbox.h>
 #include <qstring.h>
+#include <kfm.h>
 #include <kfmclient_ipc.h>
 #include "config-kfm.h"
 
 char flag = 0;
 
 int doIt( int argc, char **argv );
-
-QString displayName()
-{
-  // note: We can not rely on DISPLAY. If KDE is started by
-  // KDM, DISPLAY will be something like ":0", but this is
-  // not unique if we start KDE several times in a network
-
-  QString d = QString(getenv("DISPLAY"));
-
-  int i = d.find( ':' );
-  if ( i != -1 )
-    d[i] = '_';
-  if (i==0)
-    {
-      // we are running local, so add the hostname
-      char name[25];
-
-      if (gethostname(name, 25) == 0)
-	d = name + d;
-    }
-
-  if ( d.find( '.' ) == -1 )
-    d += ".0";
-
-  return d;
-}
-
 
 int main( int argc, char **argv )
 {
