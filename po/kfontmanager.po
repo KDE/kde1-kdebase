@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-31 17:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "KDE Font Manager"
+msgstr ""
+
+#: main.cpp:61
+msgid "KDE Fonts"
+msgstr ""
+
+#: main.cpp:62
+msgid "Font Explorer"
+msgstr ""
+
+#: main.cpp:63
+msgid "Raw X11 Font List"
+msgstr ""
+
+#: kfontmanager.cpp:61
+msgid "Available X11 Fonts"
+msgstr ""
+
+#: kfontmanager.cpp:68
+msgid "Fonts made available to KDE"
+msgstr ""
+
+#: kfontmanager.cpp:74
+msgid "Add"
+msgstr ""
+
+#: kfontmanager.cpp:77
+msgid "Remove"
+msgstr ""
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr ""
+
+#: kfontlist.cpp:65 kfontmanager.cpp:105
+msgid "About kfontmanager"
+msgstr ""
+
+#: kfontmanager.cpp:105
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontmanager.cpp:212 kfontmanager.cpp:283 kfontmanager.cpp:288
+msgid "Sorry"
+msgstr ""
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+
+#: kfontmanager.cpp:283
+msgid ""
+"Can not create:\n"
+" ~/.kde/config/kdefonts\n"
+msgstr ""
+
+#: kfontmanager.cpp:288
+msgid ""
+"~/.kde/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+
+#: kfontlist.cpp:65
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
