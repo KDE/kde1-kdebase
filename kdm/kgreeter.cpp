@@ -334,7 +334,7 @@ KGreeter::save_wm()
 
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
-#if USESHADOW
+#ifdef USESHADOW
      memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
 #endif
 
@@ -364,7 +364,7 @@ KGreeter::load_wm()
 
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
-#if USESHADOW
+#ifdef USESHADOW
      memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
 #endif
 
@@ -414,14 +414,14 @@ KGreeter::restrict()
 
      // we don't need the password
      memset(pwd->pw_passwd, 0, strlen(pwd->pw_passwd));
-#if USESHADOW
+#ifdef USESHADOW
      memset(swd->sp_pwdp, 0, strlen(swd->sp_pwdp));
 #endif
 
 #ifdef HAVE_LOGIN_CAP_H
      lc = login_getpwclass(pwd);
 #endif
-#if USESHADOW
+#ifdef USESHADOW
      swd = getspnam(greet->name);
      endspent();
      if (!swd) return false;
@@ -479,24 +479,46 @@ KGreeter::restrict_nologin()
      // don't deny root to log in
      if (pwd && !pwd->pw_uid) return false;
 
-#ifdef HAVE_LOGIN_CAP_H
-     char *file = login_getcapstr(lc, "nologin", "", NULL);
-     if (login_getcapbool(lc, "ignorenologin", 0)) return false;
-#else
 #ifndef _PATH_NOLOGIN
 #define _PATH_NOLOGIN "/etc/nologin"
 #endif
-     char *file = _PATH_NOLOGIN;
+
+#ifdef HAVE_LOGIN_CAP_H
+     /* Do we ignore a nologin file? */
+     if (login_getcapbool(lc, "ignorenologin", 0))
+       return false;
+
+     char *file;
+     /* Note that <file> will be "" if there is no nologin capability */
+     if ((file = login_getcapstr(lc, "nologin", "", NULL)) == NULL) {
+       QMessageBox::critical(NULL, NULL, i18n("bah"), i18n("&OK"));
+       return true;
+     }
 #endif
-     if (!file) return false;
-     QFile f(file);
-     QString s;  
-     if ( f.open(IO_ReadOnly) ) {
+
+     QFile f;
+
+#ifdef HAVE_LOGIN_CAP_H
+     if (*file) {
+       f.setName(file);
+       f.open(IO_ReadOnly);
+     }
+#endif
+
+     if (f.handle() == -1) {
+       f.setName(_PATH_NOLOGIN);
+       f.open(IO_ReadOnly);
+     }
+
+     if (f.handle() != -1) {
+       QString s;
        QTextStream t( &f ); 
+
        while ( !t.eof() )
          s += t.readLine() + "\n";  
        f.close();
        QMessageBox::critical(NULL, NULL, s, i18n("&OK"));
+
        return true;
      }
 
