@@ -1,6 +1,6 @@
 
 INCLUDES = @all_includes@ 
-LDADD = @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11 
+LDADD = @all_libraries@ -lkdeui -lkdecore -lqt -lXext -lX11 
 MOC   	= @MOC@
 
 SUBDIRS = icons

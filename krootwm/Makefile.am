@@ -1,8 +1,7 @@
 ####### Fiddle here
 
 INCLUDES = @all_includes@ 
-LDADD   = @all_libraries@ -lkdecore -lkdeui -lkfm -lqt -lXext -lX11 @LIBSOCKET@
-MOC	=	@MOC@
+LDADD   = @all_libraries@ -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
 
 #######	Files
 
