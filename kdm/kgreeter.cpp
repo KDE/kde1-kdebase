@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Mon Oct  6 14:26:15 1997
-// Update Count     : 59
+// Last Modified On : Wed Oct  8 22:21:46 1997
+// Update Count     : 61
 // Status           : Unknown, Use with caution!
 // 
 
@@ -409,7 +409,7 @@ GreetUser(
      int argc = 4;
      char* argv[5] = {"kdm", "-display", NULL, NULL, NULL};
      argv[2] = d->name;
-     MyApp myapp( argc, argv );
+     MyApp* myapp = new MyApp( argc, argv );
      /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
 	    klocale->language().data(), kapp->appName().data());*/
      QApplication::setOverrideCursor( waitCursor );
@@ -420,8 +420,8 @@ GreetUser(
      else
 	  kdmcfg = new KDMConfig( KApplication::kdedir());
      
-     myapp.setFont( *kdmcfg->normalFont());
-     myapp.setStyle( kdmcfg->style());
+     myapp->setFont( *kdmcfg->normalFont());
+     myapp->setStyle( kdmcfg->style());
 
      *dpy = qt_xdisplay();
      
@@ -448,8 +448,8 @@ GreetUser(
 	  SessionExit (d, OBEYSESS_DISPLAY, FALSE);
      }              
      // Clean up and log user in:
-     delete kdmcfg;
-     QColor::destroyAllocContext( -1); // free all colors
      XKillClient( qt_xdisplay(), AllTemporary);
+     delete kdmcfg;
+     delete myapp;
      return Greet_Success;
 }
