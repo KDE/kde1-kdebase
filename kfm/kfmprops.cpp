@@ -608,7 +608,7 @@ bool ExecPropsPage::supports( KURL *_kurl )
     struct stat lbuff;
     lstat( t, &lbuff );
 
-    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+    if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
 
     if ( !f.open( IO_ReadOnly ) )
@@ -807,7 +807,7 @@ bool URLPropsPage::supports( KURL *_kurl )
     struct stat lbuff;
     lstat( path, &lbuff );
 
-    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+    if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
@@ -1365,7 +1365,7 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
     struct stat lbuff;
     lstat( path, &lbuff );
 
-    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+    if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
@@ -1622,7 +1622,7 @@ bool BindingPropsPage::supports( KURL *_kurl )
     struct stat lbuff;
     lstat( path, &lbuff );
 
-    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+    if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
@@ -1873,7 +1873,7 @@ bool DevicePropsPage::supports( KURL *_kurl )
     struct stat lbuff;
     lstat( path, &lbuff );
 
-    if ( S_ISDIR( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
+    if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
     if ( !f.open( IO_ReadOnly ) )
 	return false;
