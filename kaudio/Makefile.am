@@ -9,8 +9,7 @@ maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp
 demo_SOURCES = democlient.cpp
 kplayaudio_SOURCES = kplayaudio.cpp
-MOCS = democlient.moc kplayaudio.moc
-DISTCLEANFILES = $(MOCS)
+METASOURCES = democlient.moc kplayaudio.moc
 
 bin_PROGRAMS = maudio kaudioserver kplayaudio
 noinst_PROGRAMS = demo
@@ -23,16 +22,5 @@ EXTRA_DIST = $(data_DATA) VERSION
 
 version.h: VERSION
 	sed "s/0/#define APP_VERSION 0/" <VERSION >version.h
-
-democlient.cpp: democlient.moc
-
-democlient.moc: democlient.h
-	$(MOC) -o democlient.moc $(srcdir)/democlient.h
-
-kplayaudio.cpp: kplayaudio.moc
-
-kplayaudio.moc: kplayaudio.h
-	$(MOC) -o kplayaudio.moc $(srcdir)/kplayaudio.h
-
 
 messages:

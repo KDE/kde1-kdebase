@@ -6,18 +6,10 @@ LDADD =    $(LIB_KDEUI)
 bin_PROGRAMS = kcmbell
 
 kcmbell_SOURCES = main.cpp bell.cpp kslidercontrol.cpp
-BUILT_SOURCES = bell.moc kslidercontrol.moc
+METASOURCES = bell.moc kslidercontrol.moc
 noinst_HEADERS = bell.h geom.h kslidercontrol.h
 
 EXTRA_DIST = bell.xpm mini-bell.xpm
-
-bell.cpp: bell.moc
-bell.moc: bell.h
-	$(MOC) $(srcdir)/bell.h -o bell.moc
-
-kslidercontrol.cpp: kslidercontrol.moc
-kslidercontrol.moc: kslidercontrol.h
-	$(MOC) $(srcdir)/kslidercontrol.h -o kslidercontrol.moc
 
 kde_icon_DATA = bell.xpm
 
@@ -30,6 +22,4 @@ uninstall-local:
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmbell_SOURCES) && mv messages.po ../../po/kcmbell.pot
-
-DISTCLEANFILES = $(BUILT_SOURCES)
 

@@ -30,7 +30,7 @@
 #include "keymap.h"
 #include "keytrans.h"
 #include "kikbdconf.h"
-#include "keymap.moc.h"
+#include "keymap.moc"
 
 /**
    constructors

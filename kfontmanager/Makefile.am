@@ -10,25 +10,12 @@ INCLUDES=	$(all_includes)
 bin_PROGRAMS = kfontmanager
 noinst_HEADERS = kfontmanager.h kfontlist.h kfontexplorer.h version.h
 kfontmanager_SOURCES = main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp
-BUILT_SOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
+METASOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 EXTRA_DIST = kfontmanager.xpm mini-kfontmanager.xpm
 
-kfontmanager.cpp: kfontmanager.moc
-kfontlist.cpp: kfontlist.moc
-kfontexplorer.cpp: kfontexplorer.moc
-
 ####### Meta objects
-
-kfontmanager.moc: kfontmanager.h
-	$(MOC) $(srcdir)/kfontmanager.h -o kfontmanager.moc
-
-kfontexplorer.moc: kfontexplorer.h
-	$(MOC) $(srcdir)/kfontexplorer.h -o kfontexplorer.moc
-
-kfontlist.moc: kfontlist.h
-	$(MOC) $(srcdir)/kfontlist.h -o kfontlist.moc
 
 install-data-local:
 	$(mkinstalldirs) $(kde_icondir)

@@ -34,7 +34,7 @@
 
 #include "kobjconf.h"
 #include "kconfobjs.h"
-#include "kconfobjs.moc.h"
+#include "kconfobjs.moc"
 
 /*********************************************************************
  * regexp matched keys Config Object

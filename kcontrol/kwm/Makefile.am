@@ -11,30 +11,9 @@ bin_PROGRAMS = kcmkwm
 
 kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp desktop.cpp \
 		mouse.cpp advanced.cpp
-BUILT_SOURCES = titlebar.moc windows.moc desktop.moc mouse.moc advanced.moc
+METASOURCES = titlebar.moc windows.moc desktop.moc mouse.moc advanced.moc
 noinst_HEADERS = windows.h desktop.h titlebar.h geom.h mouse.h advanced.h
-
-windows.cpp: windows.moc
-windows.moc: windows.h
-	$(MOC) $(srcdir)/windows.h -o windows.moc
-
-desktop.cpp: desktop.moc
-desktop.moc: desktop.h
-	$(MOC) $(srcdir)/desktop.h -o desktop.moc
-
-titlebar.cpp: titlebar.moc
-titlebar.moc: titlebar.h
-	$(MOC) $(srcdir)/titlebar.h -o titlebar.moc
-
-mouse.cpp: mouse.moc
-mouse.moc: mouse.h
-	$(MOC) $(srcdir)/mouse.h -o mouse.moc
-
-advanced.cpp: advanced.moc
-advanced.moc: advanced.h
-	$(MOC) $(srcdir)/advanced.h -o advanced.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkwm_SOURCES) && mv messages.po ../../po/kcmkwm.pot
 
-DISTCLEANFILES = $(BUILT_SOURCES)

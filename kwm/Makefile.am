@@ -6,51 +6,19 @@ bin_PROGRAMS 	= kwm
 INCLUDES	=  $(all_includes)
 LDFLAGS 	= $(all_libraries) $(KDE_RPATH)
 kwm_LDADD 	= $(LIB_KFM) $(LIB_KDEUI)
-DISTCLEANFILES	= $(BUILT_SOURCES)
+DISTCLEANFILES	= $(METASOURCES)
 SUBDIRS 	= pics
 
 #######	Files
 
 kwm_SOURCES	= client.C manager.C main.C minicli.C warning.C drag.C \
 	logout.C taskmgr.C kURLcompletion.cpp gradientFill.C 
-BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc \
+METASOURCES	= client.moc manager.moc main.moc minicli.moc \
 	warning.moc logout.moc taskmgr.moc kURLcompletion.moc 
 noinst_HEADERS = client.h options.h manager.h main.h gradientFill.h \
 	minicli.h logout.h taskmgr.h warning.h version.h kURLcompletion.h 
 
 EXTRA_DIST = kwm.xpm mini-kwm.xpm
-
-client.C:client.moc
-client.moc: client.h
-	$(MOC) $(srcdir)/client.h -o client.moc
-
-manager.C:manager.moc
-manager.moc: manager.h
-	$(MOC) $(srcdir)/manager.h -o manager.moc
-
-main.C:main.moc
-main.moc: main.h
-	$(MOC) $(srcdir)/main.h -o main.moc
-
-minicli.C:minicli.moc
-minicli.moc: minicli.h
-	$(MOC) $(srcdir)/minicli.h -o minicli.moc
-
-warning.C:warning.moc
-warning.moc: warning.h
-	$(MOC) $(srcdir)/warning.h -o warning.moc
-
-logout.C:logout.moc
-logout.moc: logout.h
-	$(MOC) $(srcdir)/logout.h -o logout.moc
-
-taskmgr.C:taskmgr.moc
-taskmgr.moc: taskmgr.h
-	$(MOC) $(srcdir)/taskmgr.h -o taskmgr.moc
-
-kURLcompletion.cpp:kURLcompletion.moc
-kURLcompletion.moc: kURLcompletion.h
-	$(MOC) $(srcdir)/kURLcompletion.h -o kURLcompletion.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot

@@ -9,15 +9,5 @@ bin_PROGRAMS = kfmexec
 
 kfmexec_SOURCES = main.cpp
 noinst_HEADERS = main.h
-BUILT_SOURCES =	main.moc
-
-DISTCLEANFILES = $(BUILT_SOURCES)
-
-main.cpp: main.moc
-
-####### Meta objects
-
-main.moc: main.h
-	$(MOC) $(srcdir)/main.h -o main.moc
-
+METASOURCES =	main.moc
 

@@ -34,7 +34,7 @@
 
 #include "kconfobjs.h"
 #include "kikbdconf.h"
-#include "kikbdconf.moc.h"
+#include "kikbdconf.moc"
 
 //=========================================================
 //    data

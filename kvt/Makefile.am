@@ -5,7 +5,7 @@
 INCLUDES= $(all_includes)
 LDADD	=       $(LIBCURSES) $(LIB_KDEUI)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-DISTCLEANFILES = main.moc
+METASOURCES = main.moc
 
 bin_PROGRAMS = kvt
 
@@ -17,11 +17,6 @@ kvt_SOURCES = \
 noinst_HEADERS = debug.h rxvt.h command.h screen.h xsetup.h sbar.h kvt_version.h main.h
 
 EXTRA_DIST = kvt.xpm mini-kvt.xpm
-
-main.C: main.moc
-
-main.moc: main.h
-	$(MOC) $(srcdir)/main.h -o main.moc
 
 icon_DATA = kvt.xpm
 icondir = $(kde_icondir)

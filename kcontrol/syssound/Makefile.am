@@ -18,7 +18,7 @@ kcmsyssound_LDADD   =   -lmediatool     -lstdc++ $(LIB_KDEUI) $(LIBCOMPAT)
 noinst_HEADERS = syssound.h
 
 # just to make sure, automake makes them 
-BUILTSOURCES =	syssound.moc
+METASOURCES =	syssound.moc
 
 # if you "make distclean", this files get removed. If you want to remove
 # them while "make clean", use CLEANFILES
@@ -39,10 +39,4 @@ install-data-local:
 # remove ALL you have installed in install-data-local or install-exec-local
 uninstall-local:
 	-rm -f $(kde_minidir)/kcmsyssound.xpm
-
-# add a dependency for every moc file to be full portable
-# I've added a key binding to emacs for this. 
-syssound.cpp:syssound.moc
-syssound.moc: syssound.h
-	$(MOC)  $(srcdir)/syssound.h -o syssound.moc
 

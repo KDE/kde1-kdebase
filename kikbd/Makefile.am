@@ -18,8 +18,8 @@ SUBDIRS = doc maps
 ####### This part is very kless specific
 # you can add here more. This one gets installed 
 bin_PROGRAMS = 	kikbd kcmikbd
-BUILT_SOURCES = kconfobjs.moc.h  kobjconf.moc.h \
-	widgets.moc.h keymap.moc.h kikbd.moc.h kikbdconf.moc.h
+METASOURCES = kconfobjs.moc  kobjconf.moc \
+	widgets.moc keymap.moc kikbd.moc kikbdconf.moc
 
 kikbd_SOURCES = kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp \
 	kobjconf.cpp kconfobjs.cpp
@@ -60,23 +60,4 @@ install-data-local:
 
 uninstall-local:
 	-rm -f $(kde_minidir)/kikbd.xpm
-
-kconfobjs.moc.h: kconfobjs.h
-	$(MOC) -o kconfobjs.moc.h $(srcdir)/kconfobjs.h
-kobjconf.moc.h: kobjconf.h
-	$(MOC) -o kobjconf.moc.h $(srcdir)/kobjconf.h
-widgets.moc.h: widgets.h
-	$(MOC) -o widgets.moc.h $(srcdir)/widgets.h
-keymap.moc.h: keymap.h
-	$(MOC) -o keymap.moc.h $(srcdir)/keymap.h
-kikbd.moc.h: kikbd.h
-	$(MOC) -o kikbd.moc.h $(srcdir)/kikbd.h
-kikbdconf.moc.h: kikbdconf.h
-	$(MOC) -o kikbdconf.moc.h $(srcdir)/kikbdconf.h
-kconfobjs.cpp:kconfobjs.moc.h
-keymap.cpp:keymap.moc.h
-kikbd.cpp:kikbd.moc.h
-kikbdconf.cpp:kikbdconf.moc.h
-kobjconf.cpp:kobjconf.moc.h
-widgets.cpp:widgets.moc.h   
 

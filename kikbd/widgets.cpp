@@ -38,7 +38,7 @@
 #include <kcolordlg.h>
 
 #include "widgets.h"
-#include "widgets.moc.h"
+#include "widgets.moc"
 
 //====================================================
 // helper functions

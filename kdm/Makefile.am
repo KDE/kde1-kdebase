@@ -59,24 +59,7 @@ kdmdesktop_SOURCES = \
 
 noinst_HEADERS = kdmconfig.h kdmview.h kdm-config.h kdmshutdown.h kfdialog.h dm.h kgreeter.h greet.h
 
-MOCSRC = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
-DISTCLEANFILES = $(MOCSRC)
-
-kfdialog.cpp: kfdialog.moc
-kfdialog.moc: kfdialog.h
-	$(MOC) $(srcdir)/kfdialog.h -o kfdialog.moc
-
-kdmview.cpp: kdmview.moc
-kdmview.moc: kdmview.h
-	$(MOC) $(srcdir)/kdmview.h -o kdmview.moc
-
-kdmshutdown.cpp: kdmshutdown.moc
-kdmshutdown.moc: kdmshutdown.h
-	$(MOC) $(srcdir)/kdmshutdown.h -o kdmshutdown.moc
-
-kgreeter.cpp: kgreeter.moc
-kgreeter.moc: kgreeter.h
-	$(MOC) $(srcdir)/kgreeter.h -o kgreeter.moc
+METASOURCES = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kdm_SOURCES) $(kdmdesktop_SOURCES) && mv messages.po ../po/kdm.pot

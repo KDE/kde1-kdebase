@@ -8,16 +8,8 @@ LDADD   =   $(LIB_KIMGIO)     $(LIB_KDEUI)
 
 bin_PROGRAMS	= kbgndwm
 kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp 
-DISTCLEANFILES = kbgndwm.moc bg.moc
+METASOURCES = kbgndwm.moc bg.moc
 noinst_HEADERS = kbgndwm.h bg.h version.h config-kbgndwm.h
-
-kbgndwm.cpp: kbgndwm.moc
-kbgndwm.moc: kbgndwm.h
-	$(MOC) $(srcdir)/kbgndwm.h -o kbgndwm.moc
-
-bg.cpp: bg.moc
-bg.moc: bg.h
-	$(MOC) $(srcdir)/bg.h -o bg.moc
 
 EXTRA_DIST = README
 

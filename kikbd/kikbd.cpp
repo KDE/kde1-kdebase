@@ -41,7 +41,7 @@
 #include <X11/Xatom.h>
 
 #include "kikbd.h"
-#include "kikbd.moc.h"
+#include "kikbd.moc"
 
 KiKbdConfig *kikbdConfig = 0L;
 //=========================================================

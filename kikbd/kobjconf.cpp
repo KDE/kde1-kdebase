@@ -27,7 +27,7 @@
 #include <ksimpleconfig.h>
 
 #include "kobjconf.h"
-#include "kobjconf.moc.h"
+#include "kobjconf.moc"
 
 const char *configGroup   = "KObjectConfig";
 const char *configVersion = "Version";

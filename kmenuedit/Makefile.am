@@ -13,7 +13,7 @@ kmenuedit_SOURCES = kmenuedit.cpp main.cpp pmenu.cpp \
 	DesktopPathDialogData.cpp entrydialog.cpp \
 	MenuNameDialog.cpp MenuNameDialogData.cpp
 
-MOCS =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
+METASOURCES =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
 	button.moc IconPathDialog.moc IconPathDialogData.moc\
 	DesktopPathDialog.moc DesktopPathDialogData.moc\
 	entrydialog.moc\
@@ -25,53 +25,6 @@ noinst_HEADERS = kmenuedit.h pmenu.h MenuNameDialog.h cpopmenu.h \
 		DesktopPathDialogData.h entrydialog.h
 
 EXTRA_DIST = kmenuedit.xpm mini-kmenuedit.xpm
-
-DISTCLEANFILES = $(MOCS)
-
-kmenuedit.cpp:kmenuedit.moc
-kmenuedit.moc: kmenuedit.h
-	$(MOC) $(srcdir)/kmenuedit.h -o kmenuedit.moc
-
-pmenu.cpp:pmenu.moc
-pmenu.moc: pmenu.h
-	$(MOC) $(srcdir)/pmenu.h -o pmenu.moc
-
-cpopmenu.cpp:cpopmenu.moc
-cpopmenu.moc: cpopmenu.h
-	$(MOC) $(srcdir)/cpopmenu.h -o cpopmenu.moc
-
-confmenu.cpp:confmenu.moc
-confmenu.moc: confmenu.h
-	$(MOC) $(srcdir)/confmenu.h -o confmenu.moc
-
-button.cpp:button.moc
-button.moc: button.h
-	$(MOC) $(srcdir)/button.h -o button.moc
-
-IconPathDialog.cpp:IconPathDialog.moc IconPathDialogData.moc
-IconPathDialog.moc: IconPathDialog.h
-	$(MOC) $(srcdir)/IconPathDialog.h -o IconPathDialog.moc
-
-IconPathDialogData.moc: IconPathDialogData.h
-	$(MOC) $(srcdir)/IconPathDialogData.h -o IconPathDialogData.moc
-
-DesktopPathDialog.cpp: DesktopPathDialog.moc DesktopPathDialogData.moc
-DesktopPathDialog.moc: DesktopPathDialog.h
-	$(MOC) $(srcdir)/DesktopPathDialog.h -o DesktopPathDialog.moc
-
-DesktopPathDialogData.moc: DesktopPathDialogData.h
-	$(MOC) $(srcdir)/DesktopPathDialogData.h -o DesktopPathDialogData.moc
-
-entrydialog.cpp: entrydialog.moc
-entrydialog.moc: entrydialog.h
-	$(MOC) $(srcdir)/entrydialog.h -o entrydialog.moc
-
-MenuNameDialog.cpp: MenuNameDialog.moc MenuNameDialogData.moc
-MenuNameDialog.moc: MenuNameDialog.h
-	$(MOC) $(srcdir)/MenuNameDialog.h -o MenuNameDialog.moc
-
-MenuNameDialogData.moc: MenuNameDialogData.h
-	$(MOC) $(srcdir)/MenuNameDialogData.h -o MenuNameDialogData.moc
 
 kde_icon_DATA = kmenuedit.xpm
 

@@ -10,40 +10,10 @@ kdmconfig_SOURCES = main.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp 
 	kdm-users.cpp kdm-sess.cpp klangcombo.cpp kdropsite.cpp
 kdmconfig_LDADD = $(LDADD)
 #kdmconfig_LDFLAGS = -g
-BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc \
-	klangcombo.moc
+METASOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc \
+	klangcombo.moc kdropsite.moc
 noinst_HEADERS = kdm-appear.h kdm-font.h kdm-bgnd.h kdm-users.h kdm-sess.h klangcombo.h \
 	utils.h kdropsite.h
-
-kdm-appear.cpp: kdm-appear.moc
-kdm-appear.moc: kdm-appear.h
-	$(MOC) $(srcdir)/kdm-appear.h -o kdm-appear.moc
-
-klangcombo.cpp: klangcombo.moc
-klangcombo.moc: klangcombo.h
-	$(MOC) $(srcdir)/klangcombo.h -o klangcombo.moc
-
-kdm-font.cpp: kdm-font.moc
-kdm-font.moc: kdm-font.h
-	$(MOC) $(srcdir)/kdm-font.h -o kdm-font.moc
-
-kdm-bgnd.cpp: kdm-bgnd.moc
-kdm-bgnd.moc: kdm-bgnd.h
-	$(MOC) $(srcdir)/kdm-bgnd.h -o kdm-bgnd.moc
-
-kdm-users.cpp: kdm-users.moc
-kdm-users.moc: kdm-users.h
-	$(MOC) $(srcdir)/kdm-users.h -o kdm-users.moc
-
-kdm-sess.cpp: kdm-sess.moc
-kdm-sess.moc: kdm-sess.h
-	$(MOC) $(srcdir)/kdm-sess.h -o kdm-sess.moc
-
-kdropsite.cpp: kdropsite.moc
-kdropsite.moc: kdropsite.h
-	$(MOC) $(srcdir)/kdropsite.h -o kdropsite.moc
-
-DISTCLEANFILES = $(BUILT_SOURCES)
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kdmconfig_SOURCES) && mv messages.po ../../po/kdmconfig.pot

@@ -6,14 +6,10 @@ LDADD    = $(LIB_KDEUI)
 bin_PROGRAMS = kcmsamba
 
 kcmsamba_SOURCES = main.cpp ksmbstatus.cpp
-BUILT_SOURCES = ksmbstatus.moc
+METASOURCES = ksmbstatus.moc
 noinst_HEADERS = ksmbstatus.h
 
 EXTRA_DIST = smbstatus.xpm mini-smbstatus.xpm
-
-ksmbstatus.cpp: ksmbstatus.moc 
-ksmbstatus.moc: ksmbstatus.h
-	$(MOC) $(srcdir)/ksmbstatus.h -o ksmbstatus.moc
 
 kde_icon_DATA = smbstatus.xpm
 
