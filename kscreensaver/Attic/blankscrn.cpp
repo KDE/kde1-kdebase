@@ -4,6 +4,7 @@
 //
 // Copyright (c)  Martin R. Jones 1996
 //
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include <stdlib.h>
 #include <qcolor.h>
@@ -11,6 +12,9 @@
 #include <kapp.h>
 #include "kcolordlg.h"
 #include "blankscrn.h"
+#include "helpers.h"
+#include <kbuttonbox.h>
+#include <qlayout.h>
 
 #include "blankscrn.moc"
 
@@ -62,29 +66,46 @@ KBlankSetup::KBlankSetup( QWidget *parent, const char *name )
 
 	setCaption( glocale->translate("Setup kblankscrn") );
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);
+
 	label = new QLabel( glocale->translate("Color:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	colorPush = new QPushButton( "", this );
-	colorPush->setGeometry( 15, 40, 90, 25 );
+	min_height(colorPush);
+	colorPush->setMinimumWidth(80);
 	QColorGroup colgrp( black, color, color.light(),
 		color.dark(), color.dark(120), black, white );
 	colorPush->setPalette( QPalette( colgrp, colgrp, colgrp ) );
 	connect( colorPush, SIGNAL( clicked() ), SLOT( slotColor() ) );
+	tl11->addWidget(colorPush);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new KBlankSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	KButtonBox *bbox = new KButtonBox(this);	
+	bbox->addStretch(1);
+
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 // read settings from config file

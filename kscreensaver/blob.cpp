@@ -35,6 +35,10 @@
 #include "blob.moc"
 #include "blob.h"
 
+#include "helpers.h"
+#include <kbuttonbox.h>
+#include <qlayout.h>
+
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
 extern KLocale *glocale;
@@ -439,6 +443,8 @@ KBlobSetup::KBlobSetup
 )
 : QDialog( parent, name, TRUE )
 {
+  QLabel *label;
+
   initAlg();
 	QPushButton *button;
 	char str[32];
@@ -451,27 +457,43 @@ KBlobSetup::KBlobSetup
 
 	setCaption(glocale->translate("Setup Blob Saver"));
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);
+
 	// seconds to generate on a frame
-	(new QLabel(glocale->translate("Frame Show sec."), 
-		    this))->setGeometry(10, 15, 120, 20);
+	label = new QLabel(glocale->translate("Frame Show sec."), 
+		    this);
+	min_size(label);
 	stime = new QLineEdit(this);
-	stime->setGeometry(10, 35, 100, 20);
+	fixed_size(stime);
 	sprintf(str, "%d", showtime);
 	stime->setText(str);
+	tl11->addWidget(label);
+	tl11->addWidget(stime);
+	tl11->addSpacing(10);
 
 	// available algorithms
-	(new QLabel(glocale->translate("Algorithm"), this))->setGeometry(10, 60, 120, 20);
+	label = new QLabel(glocale->translate("Algorithm"), this);
+	min_size(label);
 	algs = new QListBox(this);
-	algs->setGeometry(10, 80, 150, 105);
+	algs->setMinimumSize(150, 105);
 	for (int i = 0; i <= ALG_RANDOM; i++)
 		algs->insertItem(alg_str[i]);
 	algs->setCurrentItem(alg);
+	tl11->addWidget(label);
+	tl11->addWidget(algs);
+	tl11->addStretch(1);
 
 	// preview window
 	QWidget *preview = new QWidget( this );
-	preview->setGeometry(170, 15, 220, 170);
+	preview->setFixedSize(220, 170);
 	preview->setBackgroundColor(black);
 	preview->show();
+	tl1->addWidget(preview);
 	saver = new KBlobSaver(preview->winId());
 	saver->setDimension(3);
 	if (QPixmap::defaultDepth() >= 24)
@@ -480,22 +502,27 @@ KBlobSetup::KBlobSetup
 		saver->setColorInc(4);
 
 	// so selecting an algorithm will start previewing that alg
-	connect(algs, SIGNAL(highlighted(int)), saver, SLOT(setAlgorithm(int)));
+	connect(algs, SIGNAL(highlighted(int)), saver, 
+		SLOT(setAlgorithm(int)));
+
+	KButtonBox *bbox = new KButtonBox(this);
 
 	// show an address to send flame mail to
-	button = new QPushButton(glocale->translate("About"), this);
-	button->setGeometry(170, 210, 50, 25);
-	connect(button, SIGNAL(clicked()), SLOT(slotAbout()));
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
 	// means attempt to register settings with kde registry
-	button = new QPushButton(glocale->translate("OK"), this);
-	button->setGeometry(275, 210, 50, 25);
-	connect(button, SIGNAL(clicked()), SLOT(slotOkPressed()));
+	button = bbox->addButton( glocale->translate("Ok"));	
+	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	// ignore changes
-	button = new QPushButton(glocale->translate("Cancel"), this);
-	button->setGeometry(340, 210, 50, 25);
-	connect(button, SIGNAL(clicked()), SLOT(reject()));
+	button = bbox->addButton(glocale->translate("Cancel"));
+	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void KBlobSetup::readSettings()

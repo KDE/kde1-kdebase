@@ -5,6 +5,8 @@
 // based on kpolygon from Martin R. Jones 1996
 // mailto:dirk.staneker@student.uni-tuebingen.de
 //
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
+
 
 #include <stdlib.h>
 #include <qcolor.h>
@@ -19,6 +21,10 @@
 #include "kslider.h"
 #include "lines.h"
 #include "lines.moc"
+
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
@@ -127,70 +133,99 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 
 	setCaption(glocale->translate("Setup klines"));
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);
+
 	label=new QLabel(glocale->translate("Length:"), this);
-	label->setGeometry(15, 15, 60, 20);
+	min_size(label);
+	tl11->addWidget(label);
 
 	sb=new KSlider(KSlider::Horizontal, this);
-	sb->setGeometry(15, 35, 90, 20);
 	sb->setRange(1, MAXLENGTH+1);
 	sb->setSteps(MAXLENGTH/4, MAXLENGTH/2);
 	sb->setValue(length);
 	connect(sb, SIGNAL(valueChanged(int)), SLOT(slotLength(int)));
+	sb->setMinimumSize(90, 20);
+	tl11->addWidget(sb);
+	tl11->addSpacing(5);
 
 	label=new QLabel(glocale->translate("Speed:"), this);
-	label->setGeometry(15, 55, 60, 20);
+	min_size(label);
+	tl11->addWidget(label);
 
 	sb=new KSlider( KSlider::Horizontal, this );
-	sb->setGeometry( 15, 75, 90, 20 );
 	sb->setRange( 0, 100 );
 	sb->setSteps( 25, 50 );
 	sb->setValue( speed );
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	sb->setMinimumSize(90, 20);
+	tl11->addWidget(sb);
+	tl11->addSpacing(5);
 
         label=new QLabel(glocale->translate("Beginning:"), this);
-        label->setGeometry(15, 95, 100, 20);
+	min_size(label);
+	tl11->addWidget(label);
+
         colorPush0=new QPushButton(this);
-        colorPush0->setGeometry(15, 115, 100, 20);
         QColorGroup colgrp0(black, colstart, colstart.light(), colstart.dark(),
 			   colstart.dark(120), black, white);
         colorPush0->setPalette(QPalette(colgrp0, colgrp0, colgrp0));
         connect(colorPush0, SIGNAL(clicked()), SLOT(slotColstart()));
+	min_width(colorPush0);
+	colorPush0->setFixedHeight(20);
+	tl11->addWidget(colorPush0);
+	tl11->addSpacing(5);
 
         label=new QLabel(glocale->translate("Middle:"), this);
-        label->setGeometry(15, 135, 100, 20);
+	min_size(label);
+	tl11->addWidget(label);
+
         colorPush1=new QPushButton(this);
-        colorPush1->setGeometry(15, 155, 100, 20);
         QColorGroup colgrp1(black, colmid, colmid.light(), colmid.dark(),
                            colmid.dark(120), black, white);
         colorPush1->setPalette(QPalette(colgrp1, colgrp1, colgrp1));
         connect(colorPush1, SIGNAL(clicked()), SLOT(slotColmid()));
+	colorPush1->setFixedHeight(20);
+	tl11->addWidget(colorPush1);
+	tl11->addSpacing(5);
 
         label=new QLabel(glocale->translate("End:"), this);
-        label->setGeometry(15, 175, 100, 20);
+	min_size(label);
+	tl11->addWidget(label);
+
         colorPush2=new QPushButton(this);
-        colorPush2->setGeometry(15, 195, 100, 20);
         QColorGroup colgrp2(black, colend, colend.light(), colend.dark(),
                            colend.dark(120), black, white);
         colorPush2->setPalette(QPalette(colgrp2, colgrp2, colgrp2));
         connect(colorPush2, SIGNAL(clicked()), SLOT(slotColend()));
+	colorPush2->setFixedHeight(20);
+	tl11->addWidget(colorPush2);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver=new kLinesSaver(preview->winId());
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect(button, SIGNAL(clicked()), SLOT(slotAbout()));
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 // read settings from config file

@@ -4,6 +4,7 @@
 //
 // Copyright (c)  Martin R. Jones 1996
 //
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include <stdlib.h>
 #include <qcolor.h>
@@ -14,6 +15,11 @@
 #include <qgrpbox.h>
 #include <qmsgbox.h>
 #include <kapp.h>
+
+#include <kgroupbox.h>
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
 
 #include "kslider.h"
 #include "kcolordlg.h"
@@ -66,7 +72,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 {
 	saver = NULL;
 	speed = 50;
-
+	
 	readSettings();
 
 	QString str;
@@ -77,14 +83,20 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 
 	setCaption( klocale->translate("Setup kbanner") );
 
-	QGroupBox *group = new QGroupBox( glocale->translate("Font"), this );
-	group->setGeometry( 15, 15, 180, 140 );
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);	
 
-	label = new QLabel( glocale->translate("Family:"), group );
-	label->setGeometry( 15, 15, 50, 20 );
+	KGroupBox *group = new KGroupBox( glocale->translate("Font"), this );
+	QGridLayout *gl = new QGridLayout(group->inner(), 4, 2, 5);
 
-	combo = new QComboBox( FALSE, group );
-	combo->setGeometry( 65, 15, 100, 25 );
+	label = new QLabel( glocale->translate("Family:"), group->inner() );
+	min_size(label);
+	gl->addWidget(label, 0, 0);
+
+	combo = new QComboBox( FALSE, group->inner() );
 	int i = 0;
 	while ( fonts[i] )
 	{
@@ -93,14 +105,17 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 			combo->setCurrentItem( i );
 		i++;
 	}
+	min_width(combo);
+	fixed_height(combo);
+	gl->addWidget(combo, 0, 1);
 	connect( combo, SIGNAL( activated( const char * ) ),
 			SLOT( slotFamily( const char * ) ) );
 
-	label = new QLabel( glocale->translate("Size:"), group );
-	label->setGeometry( 15, 45, 60, 20 );
+	label = new QLabel( glocale->translate("Size:"), group->inner() );
+	min_size(label);
+	gl->addWidget(label, 1, 0);	
 
-	combo = new QComboBox( FALSE, group );
-	combo->setGeometry( 65, 45, 100, 25 );
+	combo = new QComboBox( FALSE, group->inner() );
 	i = 0;
 	while ( sizes[i] )
 	{
@@ -111,64 +126,91 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 			combo->setCurrentItem( i );
 		i++;
 	}
+	min_width(combo);
+	fixed_height(combo);
+	gl->addWidget(combo, 1, 1);
 	connect( combo, SIGNAL( activated( int ) ), SLOT( slotSize( int ) ) );
 
-	label = new QLabel( glocale->translate("Color:"), group );
-	label->setGeometry( 15, 80, 50, 20 );
+	label = new QLabel( glocale->translate("Color:"), group->inner() );
+	min_size(label);
+	gl->addWidget(label, 2, 0);
 
-	colorPush = new QPushButton( group );
-	colorPush->setGeometry( 65, 80, 100, 20 );
+	colorPush = new QPushButton( group->inner() );
+	min_width(colorPush);
+	colorPush->setFixedHeight(20);
+	gl->addWidget(colorPush, 2, 1);
 	QColorGroup colgrp( black, fontColor, fontColor.light(),
 			fontColor.dark(), fontColor.dark(120), black, white );
 	colorPush->setPalette( QPalette( colgrp, colgrp, colgrp ) );
 	connect( colorPush, SIGNAL( clicked() ), SLOT( slotColor() ) );
-
-	QCheckBox *cb = new QCheckBox( glocale->translate("Bold"), group );
-	cb->setGeometry( 15, 110, 60, 20 );
+	
+	QCheckBox *cb = new QCheckBox( glocale->translate("Bold"), 
+				       group->inner() );
+	min_size(cb);
 	cb->setChecked( bold );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotBold( bool ) ) );
+	gl->addWidget(cb, 3, 0);
 
-	cb = new QCheckBox( glocale->translate("Italic"), group );
-	cb->setGeometry( 95, 110, 60, 20 );
+	cb = new QCheckBox( glocale->translate("Italic"), group->inner() );
+	min_size(cb);
 	cb->setChecked( italic );
+	gl->addWidget(cb, 3, 1);
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotItalic( bool ) ) );
 
+	preview = new QWidget( this );
+	preview->setFixedSize( 220, 170 );
+	preview->setBackgroundColor( black );
+	preview->show();    // otherwise saver does not get correct size
+	saver = new KBannerSaver( preview->winId() );
+	tl1->addWidget(preview);
+
+	gl->activate();
+	group->activate();
+	tl11->addWidget(group);
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 155, 60, 20 );
+	min_size(label);
+	tl11->addStretch(1);
+	tl11->addWidget(label);
 
 	sb = new KSlider( KSlider::Horizontal, this );
-	sb->setGeometry( 15, 175, 180, 20 );
+	sb->setMinimumWidth( 180);
+	sb->setFixedHeight(20);
 	sb->setRange( 0, 100 );
 	sb->setSteps( 25, 50 );
-	sb->setValue( speed );
+	sb->setValue( speed );	
+	tl11->addWidget(sb);
 	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
 
+	QHBoxLayout *tl2 = new QHBoxLayout;
+	tl->addLayout(tl2);
+
 	label = new QLabel( glocale->translate("Message:"), this );
-	label->setGeometry( 15, 205, 60, 20 );
+	fixed_size(label);
+	tl2->addWidget(label);
 
 	QLineEdit *ed = new QLineEdit( this );
-	ed->setGeometry( 75, 205, 355, 20 );
+	min_width(ed);
+	fixed_height(ed);
+	tl2->addWidget(ed);
 	ed->setText( message );
 	connect( ed, SIGNAL( textChanged( const char * ) ), 
 			SLOT( slotMessage( const char * ) ) );
 
-	preview = new QWidget( this );
-	preview->setGeometry( 210, 15, 220, 170 );
-	preview->setBackgroundColor( black );
-	preview->show();    // otherwise saver does not get correct size
-	saver = new KBannerSaver( preview->winId() );
-
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 210, 245, 50, 25 );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 315, 245, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 380, 245, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 // read settings from config file

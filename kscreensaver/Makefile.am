@@ -16,9 +16,13 @@ bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss 
 
-BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp
+BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp \
+	    helpers.cpp
+
 main.cpp: main.moc
 saver.cpp: saver.moc
+
+kgroupbox.cpp: kgroupbox.moc
 
 kpolygon_kss_SOURCES = $(BASE_SRCS) polygon.cpp
 polygon.cpp: polygon.moc
@@ -29,7 +33,7 @@ swarm.cpp: swarm.moc
 klissie_kss_SOURCES = $(BASE_SRCS) lissie.cpp
 lissie.cpp: lissie.moc
 
-kbanner_kss_SOURCES = $(BASE_SRCS) banner.cpp
+kbanner_kss_SOURCES = $(BASE_SRCS) banner.cpp  kgroupbox.cpp
 banner.cpp: banner.moc
 
 kblankscrn_kss_SOURCES = $(BASE_SRCS) blankscrn.cpp
@@ -83,11 +87,13 @@ klock_SOURCES = klock.cpp kscreensave.cpp
 BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
-		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc
+		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc \
+		kgroupbox.moc
+
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
-		lissie.h blob.h space.h bouboule.h
+		lissie.h blob.h space.h bouboule.h  kgroupbox.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate *.cpp -x ../../kdelibs/po/kde.pot && mv messages.po ../po/klock.pot
@@ -153,6 +159,9 @@ bouboule.moc: bouboule.h
 
 morph3d.moc: morph3d.h
 	$(MOC) morph3d.h -o morph3d.moc
+
+kgroupbox.moc: kgroupbox.h
+	$(MOC) kgroupbox.h -o kgroupbox.moc
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)

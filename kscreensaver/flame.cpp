@@ -16,6 +16,13 @@
  * 06-Jun-91: Written. (received from Scott Graves, spot@cs.cmu.edu).
  */
 
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
+
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
+
 #include "xlock.h"
 #include <math.h>
 
@@ -393,53 +400,76 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *slider;
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);	
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 35, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( 0, 100 );
 	slider->setSteps( 25, 50 );
 	slider->setValue( speed );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Max Levels:"), this );
-	label->setGeometry( 15, 65, 90, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( 10, 110 );
 	slider->setSteps( 25, 50 );
 	slider->setValue( maxLevels );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotLevels( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
+
 
 	label = new QLabel( glocale->translate("Num Points:"), this );
-	label->setGeometry( 15, 115, 90, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 135, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( 1000, 11000 );
 	slider->setSteps( 2500, 5000 );
 	slider->setValue( numPoints );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotPoints( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotPoints( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kFlameSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void kFlameSetup::readSettings()

@@ -56,6 +56,11 @@ screensavers.
 
 CHANGES:
 
+Version 0.3.7
+
+added geometry management to all screensaver setups except kmorph3d (Mario
+Weilguni <mweilguni@kde.org>)
+
 Version 0.3.6
 
 added "blob" saver from Tiaan Wessels <tiaan@netsys.co.za>

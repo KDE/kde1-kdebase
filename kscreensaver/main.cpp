@@ -206,7 +206,7 @@ void destroySaverWindow( QWidget *w )
 
 int main( int argc, char *argv[] )
 {
-	Window saveWin;
+	Window saveWin = 0;
 	int timeout = 600;
 	ProgramName = argv[0];
 	ssApp a( argc, argv );

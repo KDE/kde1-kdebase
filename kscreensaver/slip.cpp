@@ -13,6 +13,8 @@
    Last revised: 10-Jul-97
    Please contact me in case of problems, bugs etc!
 */
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
+
 
 #define MINSPEED 0
 #define MAXSPEED 100
@@ -255,6 +257,10 @@ drawslip(Window win)
 
 #include "slip.moc"
 
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
 extern KLocale *glocale;
@@ -363,43 +369,61 @@ kSlipSetup::kSlipSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *slider;
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);	
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 35, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( MINSPEED, MAXSPEED );
 	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Batchcount:"), this );
-	label->setGeometry( 15, 65, 90, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( MINBATCH, MAXBATCH );
 	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotLevels( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kSlipSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void kSlipSetup::readSettings()

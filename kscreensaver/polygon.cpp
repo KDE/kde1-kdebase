@@ -4,6 +4,7 @@
 //
 // Copyright (c)  Martin R. Jones 1996
 //
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include <stdlib.h>
 #include <qcolor.h>
@@ -19,6 +20,11 @@
 #include "polygon.h"
 
 #include "polygon.moc"
+
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
 
 #define MAXLENGTH	65
 #define MAXVERTICES	19
@@ -78,53 +84,76 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 
 	setCaption( glocale->translate("Setup kpolygon") );
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);	
+
 	label = new QLabel( glocale->translate("Length:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	sb = new KSlider( KSlider::Horizontal, this );
-	sb->setGeometry( 15, 35, 90, 20 );
+	sb->setMinimumSize( 90, 20 );
 	sb->setRange( 1, MAXLENGTH );
 	sb->setSteps( 8, 32 );
 	sb->setValue( length );
-	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotLength( int ) ) );
+	connect( sb, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotLength( int ) ) );
+	tl11->addWidget(sb);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Vertices:"), this );
-	label->setGeometry( 15, 60, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
+
 
 	sb = new KSlider( KSlider::Horizontal, this );
-	sb->setGeometry( 15, 80, 90, 20 );
+	sb->setMinimumSize( 90, 20 );
 	sb->setRange( 3, MAXVERTICES );
 	sb->setSteps( 2, 2 );
 	sb->setValue( vertices );
-	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotVertices( int ) ) );
+	connect( sb, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotVertices( int ) ) );
+	tl11->addWidget(sb);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 105, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	sb = new KSlider( KSlider::Horizontal, this );
-	sb->setGeometry( 15, 125, 90, 20 );
+	sb->setMinimumSize( 90, 20 );
 	sb->setRange( 0, 100 );
 	sb->setSteps( 25, 50 );
 	sb->setValue( speed );
-	connect( sb, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( sb, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(sb);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kPolygonSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 // read settings from config file

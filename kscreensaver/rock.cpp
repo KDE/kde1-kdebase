@@ -23,6 +23,7 @@ static char sccsid[] = "@(#)rock.c	3.3 95/09/24 xlockmore";
  * software for any purpose.  It is provided "as is" without express or
  * implied warranty.
  */
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include <math.h>
 #include "xlock.h"
@@ -404,6 +405,10 @@ void rock_setRotate( bool rotate )
 
 #include "rock.moc"
 
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
 extern KLocale *glocale;
@@ -547,53 +552,74 @@ kRockSetup::kRockSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *slider;
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 35, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( 0, 100 );
 	slider->setSteps( 25, 50 );
 	slider->setValue( speed );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Number:"), this );
-	label->setGeometry( 15, 65, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( 20, 260 );
 	slider->setSteps( 20, 80 );
 	slider->setValue( number );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotNumber( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotNumber( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	QCheckBox *cb = new QCheckBox( glocale->translate("Move"), this );
-	cb->setGeometry( 15, 115, 60, 20 );
+	min_size(cb);
 	cb->setChecked( move );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotMove( bool ) ) );
+	tl11->addWidget(cb);
 
 	cb = new QCheckBox( glocale->translate("Rotate"), this );
-	cb->setGeometry( 15, 135, 60, 20 );
+	min_size(cb);
 	cb->setChecked( rotate );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotRotate( bool ) ) );
+	tl11->addWidget(cb);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();	// otherwise saver does not get correct size
 	saver = new kRockSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void kRockSetup::readSettings()

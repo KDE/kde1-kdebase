@@ -12,6 +12,7 @@
    Contact me in case of problems, not the original author!
    Last revised: 10-Jul-97
 */
+// layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #define MAXSPEED 100
 #define MINSPEED 0
@@ -219,6 +220,10 @@ drawswarm(Window win)
 #include "swarm.h"
 
 #include "swarm.moc"
+#include <qlayout.h>
+#include <kbuttonbox.h>
+#include "helpers.h"
+
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
@@ -327,43 +332,61 @@ kSwarmSetup::kSwarmSetup( QWidget *parent, const char *name )
 	QPushButton *button;
 	KSlider *slider;
 
+	QVBoxLayout *tl = new QVBoxLayout(this, 10, 10);
+	QHBoxLayout *tl1 = new QHBoxLayout;
+	tl->addLayout(tl1);
+	QVBoxLayout *tl11 = new QVBoxLayout(5);
+	tl1->addLayout(tl11);	
+
 	label = new QLabel( glocale->translate("Speed:"), this );
-	label->setGeometry( 15, 15, 60, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 35, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( MINSPEED, MAXSPEED );
 	slider->setSteps( (MAXSPEED-MINSPEED)/4, (MAXSPEED-MINSPEED)/2 );
 	slider->setValue( speed );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotSpeed( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotSpeed( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addSpacing(5);
 
 	label = new QLabel( glocale->translate("Number of Bees:"), this );
-	label->setGeometry( 15, 65, 90, 20 );
+	min_size(label);
+	tl11->addWidget(label);
 
 	slider = new KSlider( KSlider::Horizontal, this );
-	slider->setGeometry( 15, 85, 90, 20 );
+	slider->setMinimumSize( 90, 20 );
 	slider->setRange( MINBATCH, MAXBATCH );
 	slider->setSteps( (MAXBATCH-MINBATCH)/4, (MAXBATCH-MINBATCH)/2 );
 	slider->setValue( maxLevels );
-	connect( slider, SIGNAL( valueChanged( int ) ), SLOT( slotLevels( int ) ) );
+	connect( slider, SIGNAL( valueChanged( int ) ), 
+		 SLOT( slotLevels( int ) ) );
+	tl11->addWidget(slider);
+	tl11->addStretch(1);
 
 	preview = new QWidget( this );
-	preview->setGeometry( 130, 15, 220, 170 );
+	preview->setFixedSize( 220, 170 );
 	preview->setBackgroundColor( black );
 	preview->show();    // otherwise saver does not get correct size
 	saver = new kSwarmSaver( preview->winId() );
+	tl1->addWidget(preview);
 
-	button = new QPushButton( glocale->translate("About"), this );
-	button->setGeometry( 130, 210, 50, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
+	KButtonBox *bbox = new KButtonBox(this);	
+	button = bbox->addButton( glocale->translate("About"));
+	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
+	bbox->addStretch(1);
 
-	button = new QPushButton( glocale->translate("Ok"), this );
-	button->setGeometry( 235, 210, 50, 25 );
+	button = bbox->addButton( glocale->translate("Ok"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
-	button = new QPushButton( glocale->translate("Cancel"), this );
-	button->setGeometry( 300, 210, 50, 25 );
+	button = bbox->addButton(glocale->translate("Cancel"));
 	connect( button, SIGNAL( clicked() ), SLOT( reject() ) );
+	bbox->layout();
+	tl->addWidget(bbox);
+
+	tl->freeze();
 }
 
 void kSwarmSetup::readSettings()
@@ -428,5 +451,3 @@ void kSwarmSetup::slotAbout()
 			     glocale->translate("Swarm\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Emanuel Pirker."),
 			     glocale->translate("Ok"));
 }
-
-
