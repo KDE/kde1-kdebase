@@ -15,7 +15,7 @@
 #include <qdstream.h>
 #include <qdatetm.h>
 #include <qstring.h>
-#include <qtstream.h> 
+#include <qtstream.h>
 
 #include <stdlib.h>
 #include <time.h>
@@ -61,7 +61,7 @@ QString fontString( QFont rFont )
 			break;
 		case QFont::AnyCharSet:
 		default:
-			aValue += "-*";
+			aValue += "*-*";
 			break;
 		case QFont::Latin2:
 			aValue += "iso8859-2";
@@ -91,7 +91,7 @@ QString fontString( QFont rFont )
 	return aValue;
 }
 
-main( int argc, char ** argv ) 
+main( int argc, char ** argv )
 {
 	KApplication a( argc, argv );
 	
@@ -112,7 +112,7 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define FOREGROUND " );
 	preproc += s;
-	 
+	
 	backCol = config->readColorEntry( "background", &lightGray );
 	s.sprintf("#%02x%02x%02x\n", backCol.red(), backCol.green(), backCol.blue());
 	s.prepend( "#define BACKGROUND " );
@@ -282,9 +282,9 @@ main( int argc, char ** argv )
 
 				QFile f( fi->filePath() );
 
-				if ( f.open(IO_ReadOnly) ) {    
+				if ( f.open(IO_ReadOnly) ) {
 
-					QTextStream t( &f ); 
+					QTextStream t( &f );
 
     				while ( !t.eof() ) {
         				propString += t.readLine();
@@ -306,9 +306,9 @@ main( int argc, char ** argv )
 
 			QFile f( fi->filePath() );
 
-			if ( f.open(IO_ReadOnly) ) {    
+			if ( f.open(IO_ReadOnly) ) {
 
-				QTextStream t( &f ); 
+				QTextStream t( &f );
 
     			while ( !t.eof() ) {
         			propString += t.readLine();

@@ -57,19 +57,15 @@ KResourceMan::KResourceMan()
 		
 			// extract the key-values pair and remove from string
 			
-			keypair = s.left(i);
+			keypair = s.left(i).simplifyWhiteSpace();
 			s.remove(0,i+1);
 			
 			// split key and value and add to dictionary
 			
-			keypair.simplifyWhiteSpace();
-			
 			i = keypair.find( ":" );
 			if( i != -1 ) {
-				key = keypair.left( i );
-				key.simplifyWhiteSpace();
-				value = keypair.right( keypair.length() - i - 1 );
-				value.simplifyWhiteSpace();
+				key = keypair.left( i ).simplifyWhiteSpace();
+				value = keypair.right( keypair.length() - i - 1 ).simplifyWhiteSpace();
 				//debug("%s -> %s", key.data(), value.data() );
 				propDict->insert( key.data(), new QString( value.data() ) );
 			}
@@ -89,7 +85,7 @@ void KResourceMan::sync()
 	if ( !propDict->isEmpty() ) {
 		
 		time_t timestamp;
-		::time( &timestamp ); 
+		::time( &timestamp );
 		
 		QDictIterator <QString> it( *propDict );
 		QString keyvalue;
@@ -128,14 +124,14 @@ void KResourceMan::sync()
 void KResourceMan::setGroup( const QString& rGroup )
 {
 	QString s("General");
-	if ( rGroup == s ) 
+	if ( rGroup == s )
 		prefix.sprintf( "*" );
 	else
 		prefix.sprintf( "%s.", rGroup.data() );
 }
 
-QString KResourceMan::readEntry( const QString& rKey, 
-			    const char* pDefault ) const 
+QString KResourceMan::readEntry( const QString& rKey,
+			    const char* pDefault ) const
 {
 	if( !propDict->isEmpty() ) {
 		
@@ -177,7 +173,7 @@ int KResourceMan::readNumEntry( const QString& rKey, int nDefault ) const
 }
 
 
-QFont KResourceMan::readFontEntry( const QString& rKey, 
+QFont KResourceMan::readFontEntry( const QString& rKey,
 							  const QFont* pDefault ) const
 {
   QFont aRetFont;
@@ -190,13 +186,13 @@ QFont KResourceMan::readFontEntry( const QString& rKey,
 	  if( nIndex == -1 )
 		return aRetFont;
 	  aRetFont.setFamily( aValue.left( nIndex ) );
-	  
+	
 	  // find second part (point size)
 	  int nOldIndex = nIndex;
 	  nIndex = aValue.find( ',', nOldIndex+1 );
 	  if( nIndex == -1 )
 		return aRetFont;
-	  aRetFont.setPointSize( aValue.mid( nOldIndex+1, 
+	  aRetFont.setPointSize( aValue.mid( nOldIndex+1,
 										 nIndex-nOldIndex-1 ).toInt() );
 
 	  // find third part (style hint)
@@ -204,7 +200,7 @@ QFont KResourceMan::readFontEntry( const QString& rKey,
 	  nIndex = aValue.find( ',', nOldIndex+1 );
 	  if( nIndex == -1 )
 		return aRetFont;
-	  aRetFont.setStyleHint( (QFont::StyleHint)aValue.mid( nOldIndex+1, 
+	  aRetFont.setStyleHint( (QFont::StyleHint)aValue.mid( nOldIndex+1,
 													nIndex-nOldIndex-1 ).toUInt() );
 
 	  // find fourth part (char set)
@@ -212,7 +208,7 @@ QFont KResourceMan::readFontEntry( const QString& rKey,
 	  nIndex = aValue.find( ',', nOldIndex+1 );
 	  if( nIndex == -1 )
 		return aRetFont;
-	  aRetFont.setCharSet( (QFont::CharSet)aValue.mid( nOldIndex+1, 
+	  aRetFont.setCharSet( (QFont::CharSet)aValue.mid( nOldIndex+1,
 									   nIndex-nOldIndex-1 ).toUInt() );
 
 	  // find fifth part (weight)
@@ -253,7 +249,7 @@ QColor KResourceMan::readColorEntry( const QString& rKey,
   if( !aValue.isNull() )
 	{
   	  bool bOK;
-	  
+	
 	  // Support #ffffff style colour naming.
 	  if( aValue.find("#") == 0 ) {
 	  	aRetColor.setNamedColor( aValue );
@@ -265,7 +261,7 @@ QColor KResourceMan::readColorEntry( const QString& rKey,
 	  if( nIndex == -1 )
 		return aRetColor;
 	  nRed = aValue.left( nIndex ).toInt( &bOK );
-	  
+	
 	  // find second part (green)
 	  int nOldIndex = nIndex;
 	  nIndex = aValue.find( ',', nOldIndex+1 );
@@ -356,7 +352,7 @@ QString KResourceMan::writeEntry( const QString& rKey, const QFont& rFont )
 			break;
 		case QFont::AnyCharSet:
 		default:
-			aValue += "-*";
+			aValue += "*-*";
 			break;
 		case QFont::Latin2:
 			aValue += "iso8859-2";
