@@ -895,7 +895,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( s->getGroup() );
 	view->write( "</td><td align=right>" ); 
 	QString tmp;
-	tmp.sprintf( "%i</td><td>", s->getSize() );
+	tmp.sprintf( "%i   </td><td>", s->getSize() );
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
 	
@@ -920,10 +920,10 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	view->write( s->getGroup() );
 	view->write( "</td><td align=right>" );
 	QString tmp;
-	tmp.sprintf( "%i</td><td>", s->getSize() );
+	tmp.sprintf( "%i   </td><td>", s->getSize() );
 	view->write( tmp.data() );
 	view->write( s->getCreationDate() );
-	view->write( "</td></td></tr>" );
+	view->write( "</td></tr>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::SHORT_VIEW )
     {	
