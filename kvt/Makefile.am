@@ -9,7 +9,7 @@ DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt
 
-data_DATA = UNIX.xpm
+data_DATA = kvt.xpm
 datadir = $(prefix)/share/icons
 
 kvt_SOURCES = \
