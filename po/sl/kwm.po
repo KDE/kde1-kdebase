@@ -1,0 +1,161 @@
+# KWM translation to Slovene language.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-30 11:38+0100\n"
+"Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
+"Language-Team: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso-8859-2\n"
+
+#: main.C:67
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: zgleda, da je nek okenski vmesnik ¾e nalo¾en. kwm se ne more"
+"zagnati\n"
+
+#: main.C:81
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: napaka med inicializacijo; konèujem\n"
+
+#: main.C:448
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:455
+msgid "Usage: "
+msgstr "Uporaba:"
+
+#: main.C:466
+msgid "&Maximize"
+msgstr "Po&veèaj"
+
+#: main.C:467
+msgid "&Restore"
+msgstr "Po&vrni"
+
+#: main.C:468
+msgid "&Iconify"
+msgstr "S&krij"
+
+#: main.C:469
+msgid "&DeIconify"
+msgstr "Pri&ka¾i"
+
+#: main.C:470
+msgid "&Sticky"
+msgstr "Pri&lepi"
+
+#: main.C:471
+msgid "&UnSticky"
+msgstr "Od&lepi"
+
+#: main.C:472
+msgid "Mo&ve"
+msgstr "&Premakni"
+
+#: main.C:473
+msgid "Resi&ze"
+msgstr "Pre&oblikuj"
+
+#: main.C:475
+msgid "&To desktop"
+msgstr "Na mi&zo"
+
+#: main.C:477
+msgid "&Onto current desktop"
+msgstr "Na to mi&zo"
+
+#: main.C:530
+msgid "One"
+msgstr "Ena"
+
+#: main.C:533
+msgid "Two"
+msgstr "Dva"
+
+#: main.C:536
+msgid "Three"
+msgstr "Tri"
+
+#: main.C:539
+msgid "Four"
+msgstr "©t&iri"
+
+#: main.C:542
+msgid "Five"
+msgstr "Pet"
+
+#: main.C:545
+msgid "Six"
+msgstr "©&est"
+
+#: main.C:548
+msgid "Seven"
+msgstr "Sedem"
+
+#: main.C:551
+msgid "Eight"
+msgstr "Osem"
+
+#: main.C:855
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
+
+#: main.C:1164
+msgid "*** No Tasks ***"
+msgstr " Brezdelje "
+
+#: minicli.C:115
+msgid "Command:"
+msgstr "Ukaz:"
+
+#: logout.C:36 taskmgr.C:107
+msgid "Logout"
+msgstr "Odjavi me"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Vse je pripravljeno za odjavo"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Naslednji programi vsebujejo neshranjene podatke,\n"
+"ki bodo do naslednje seanse unièeni."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Naslednji programi ne morejo biti obnovljeni v naslednji seansi,\n"
+"lahko jih le ponovno za¾enem.\n"
+"Preverite, èe mogoèe ne vsebujejo pomembnih neshranjenih informacij."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Naslednji programi se ne zavedajo okolja X11 in jih zato ne morem obnoviti\n"
+"v naslednji seansi. Preverite, èe mogoèe ne vsebujejo pomembnih "
+"neshranjenih informacij."
+
+#: taskmgr.C:106
+msgid "Switch to"
+msgstr "Preklopi v"
+
+#: taskmgr.C:120
+msgid "Current session"
+msgstr "Sedanja seansa"
