@@ -4,11 +4,11 @@ msgstr ""
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
 "PO-Revision-Date: 1998-01-08 19:24+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: helpwin.cpp:55
 msgid "KDE Help: Open URL"
@@ -362,6 +362,3 @@ msgstr "Distinguir mayúsculas"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Buscar"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Abrir &URL"

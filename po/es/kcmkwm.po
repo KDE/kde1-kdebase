@@ -4,11 +4,11 @@ msgstr ""
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: main.cpp:67
 msgid "&Buttons"

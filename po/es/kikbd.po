@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
-"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"Last-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
+"Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
@@ -62,17 +62,6 @@ msgid ""
 msgstr ""
 "No se pude eliminar el bloqueo de mayúsculas de los modificadores.\n"
 "Emulación de bloqueo de mayúsculas inhabilitada"
-
-#: kikbd.cpp:1003
-#, fuzzy
-msgid "Exiting International Keyboard"
-msgstr "Teclado internacional"
-
-#: kikbd.cpp:1004
-msgid ""
-"You're about to quit the \"International Keyboard\" tool.\n"
-" Do you want to have it autostarted at your next login?"
-msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -196,99 +185,99 @@ msgid "X default codes"
 msgstr "códigos que usa X por defecto"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Quiere continuar?"
+"%s\n"
+"Quiere configurar ahora?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Esta usando \"Teclado internacional\" por primera vez.\n"
+"Se instalaron los valores por defecto."
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "desconocido"
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "por defecto"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:387
 msgid "Author:  Not specified"
 msgstr "Autor: No especificado"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:389
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:395
 msgid "Description:  "
 msgstr "Descripción: "
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:398
 msgid "Source:  "
 msgstr "Fuente:  "
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:399
 msgid "no file"
 msgstr "sin archivo"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:400
 msgid "user file"
 msgstr "archivo del usuario"
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:401
 msgid "system file"
 msgstr "archivo del sistema"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:406
 msgid "Statistic:  "
 msgstr "Estadística: "
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:409
 msgid "symbols"
 msgstr "símbolos"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:412
 msgid "codes"
 msgstr "códigos"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:415
 msgid "alternative symbols"
 msgstr "símbolos alternativos"
 
-#: kikbdconf.cpp:429
-#, fuzzy
+#: kikbdconf.cpp:427
 msgid "Language"
-msgstr "idioma"
+msgstr "Idioma"
 
-#: kikbdconf.cpp:433
-#, fuzzy
+#: kikbdconf.cpp:431
 msgid "Charset"
-msgstr "mapa de caracteres"
+msgstr "Mapa de caracteres"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Error del teclado internacional"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Advertencia del teclado internacional"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Pregunta del teclado internacional"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Configurar"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -502,7 +491,6 @@ msgid "&Docked"
 msgstr "Empotrado"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Empotrar en area especial del panel"
 
@@ -529,27 +517,3 @@ msgstr "Inicio"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado internacional"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Quiere iniciar la configuración?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Su configuración está vacía. Instalando configuración por defecto"
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "El archivo de configuración tiene un formato anticuado.\n"
-#~ "La configuración puede ser incorrecta."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "El archivo de configuración tiene un formato mas reciente al previsto.\n"
-#~ "La configuración puede ser incorrecta."

@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-12-28 9:30+0100\n"
-"Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"Last-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
+"Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: krootwm.C:223 krootwm.C:270
 msgid "Execute command"
@@ -59,38 +59,36 @@ msgid "Bookmarks"
 msgstr "Marcadores"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Ordenar iconos"
+msgstr "Ordenar iconos de Window Maker"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Mostrar todo"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Esconder otros"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Mostrar panel de información"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Mostrar panel legal"
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Recomenzar"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Salir"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Ventanas"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

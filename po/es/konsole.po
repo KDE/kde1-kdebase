@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-11-27 23:01+0100\n"
-"Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
-"Language-Team: Spanish <kde-es@kyb.ml.org>\n"
+"PO-Revision-Date: 1999-01-20 19:05+0100\n"
+"Last-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
+"Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"First-Translator: Boris Wesslowski <bwess@gmx.net>\n"
+"First-Translator: Boris Wesslowski <Boris@Wesslowski.com>\n"
 
 #: main.C:284
 msgid "&Normal"
@@ -177,9 +177,3 @@ msgstr ""
 #: main.C:928
 msgid "Welcome to the console"
 msgstr "Bienvenido a la consola"
-
-#~ msgid "New"
-#~ msgstr "Nuevo"
-
-#~ msgid "(%d columns x %d lines)"
-#~ msgstr "(%d columas x %d renglones)"
