@@ -28,7 +28,13 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
  *            on start-up to ensure correct operation (except Ultrix).
  */
 
+#include <kmsgbox.h>
+#include "main.h" // for MODE_TEST
 #include "xlockmore.h"
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 #ifdef VMS
 #include <str$routines.h>
@@ -36,6 +42,10 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
 #define ROOT "SYSTEM"
 #else
 #define ROOT "root"
+#endif
+
+#ifdef HAVE_CRYPT_H
+#include <crypt.h>
 #endif
 
 extern char *ProgramName;
@@ -490,8 +500,11 @@ getCryptedUserPasswd(void)
 	/* Program probably needs to be setuid to root.  */
 	/* If this is not possible, compile with -DUSE_XLOCKRC */
 #ifdef HAVE_SHADOW
-	if (passwd_invalid(pw->pw_passwd))
-		error("%s: it looks like you have shadow passwording.\nContact your administrator.\n");
+	if (passwd_invalid(pw->pw_passwd)) {
+	    KMsgBox::message(NULL, "Shadow Passwords", "Your system uses shadow passwords!\nPlease contact your system administrator.");
+	    mode = MODE_TEST;
+	    // exit(1);
+	};
 #endif
 	(void) strcpy(userpass, pw->pw_passwd);
 

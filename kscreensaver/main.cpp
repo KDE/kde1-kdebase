@@ -30,12 +30,6 @@ extern int  setupScreenSaver();
 extern const char *getScreenSaverName();
 extern void initPasswd();
 
-#define MODE_NONE		0
-#define MODE_INSTALL	1
-#define MODE_SETUP		2
-#define MODE_PREVIEW	3
-#define MODE_TEST		4
-
 int mode = MODE_NONE, lock = FALSE, passOk = FALSE;
 static int lockOnce = FALSE;
 static int xs_timeout, xs_interval, xs_prefer_blanking, xs_allow_exposures;
@@ -205,8 +199,8 @@ int main( int argc, char *argv[] )
 	Window saveWin;
 	int timeout = 600;
 	ProgramName = argv[0];
-	initPasswd();
 	ssApp a( argc, argv );
+	initPasswd();
 
 	if ( argc == 1 )
 		usage( argv[0] );
