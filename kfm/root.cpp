@@ -1590,6 +1590,7 @@ void KRootIcon::updatePixmap()
     
     init();
     setGeometry( x(), y(), width, height );
+    resizeEvent( 0L );	// <-- Added by Lars ( 04/06/98 ): fixes bug when changing icon
     repaint();
 }
 
