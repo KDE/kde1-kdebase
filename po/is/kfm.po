@@ -3,192 +3,192 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-21 01:15+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1998-12-31-21:12+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
 
-#: kfmgui.cpp:205
+#: kfmgui.cpp:204
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:223
+#: kfmgui.cpp:222
 msgid "New &Window"
 msgstr "Nýr &gluggi"
 
-#: kfmgui.cpp:226
+#: kfmgui.cpp:225
 msgid "&Run..."
 msgstr "&Keyra..."
 
-#: kfmgui.cpp:228
+#: kfmgui.cpp:227
 msgid "Open &Terminal"
 msgstr "Opna &skjáhermi"
 
-#: kfmgui.cpp:231
+#: kfmgui.cpp:230
 msgid "&Open Location..."
 msgstr "&Opna stað..."
 
-#: finddlg.cpp:66 kfmgui.cpp:233
+#: finddlg.cpp:66 kfmgui.cpp:232
 msgid "&Find"
 msgstr "&Finna"
 
-#: kfmgui.cpp:254
+#: kfmgui.cpp:253
 msgid "&Move to Trash"
 msgstr "&Henda í ruslið"
 
-#: kfmgui.cpp:261
+#: kfmgui.cpp:260
 msgid "&Select"
 msgstr "&Velja"
 
-#: kfmgui.cpp:263
+#: kfmgui.cpp:262
 msgid "Select &all"
 msgstr "Velja &allt"
 
-#: kfmgui.cpp:266
+#: kfmgui.cpp:265
 msgid "&Find in page..."
 msgstr "&Finna á síðu"
 
-#: kfmgui.cpp:268
+#: kfmgui.cpp:267
 msgid "Find &next"
 msgstr "Finna &næsta"
 
-#: kfmgui.cpp:271
+#: kfmgui.cpp:270
 msgid "Mime &Types"
 msgstr "MIME &tög"
 
-#: kfmgui.cpp:273
+#: kfmgui.cpp:272
 msgid "App&lications"
 msgstr "For&rit"
 
-#: kfmgui.cpp:279
+#: kfmgui.cpp:278
 msgid "Global Mime Types"
 msgstr "Víðvær MIME tög"
 
-#: kfmgui.cpp:281
+#: kfmgui.cpp:280
 msgid "Global Applications"
 msgstr "Víðvær forrit"
 
-#: kfmgui.cpp:288
+#: kfmgui.cpp:287
 msgid "Show Hi&dden Files"
 msgstr "Sýna &faldar skrár"
 
-#: kfmgui.cpp:290
+#: kfmgui.cpp:289
 msgid "Show Tr&ee"
 msgstr "Sýna t&ré"
 
-#: kfmgui.cpp:292
+#: kfmgui.cpp:291
 msgid "Sho&w Thumbnails"
 msgstr "Sýna þumal&myndir"
 
-#: kfmgui.cpp:294
+#: kfmgui.cpp:293
 msgid "&HTML View"
 msgstr "&HTML sýn"
 
-#: kfmgui.cpp:297
+#: kfmgui.cpp:296
 msgid "&Icon View"
 msgstr "&Táknmyndasýn"
 
-#: kfmgui.cpp:299
+#: kfmgui.cpp:298
 msgid "&Text View"
 msgstr "Te&xtasýn"
 
-#: kfmgui.cpp:301
+#: kfmgui.cpp:300
 msgid "&Long View"
 msgstr "&Löng sýn"
 
-#: kfmgui.cpp:303
+#: kfmgui.cpp:302
 msgid "&Short View"
 msgstr "&Stutt sýn"
 
-#: kfmgui.cpp:309
+#: kfmgui.cpp:308
 msgid "Rel&oad Tree"
 msgstr "&Endurlesa tré"
 
-#: kfmgui.cpp:311
+#: kfmgui.cpp:310
 msgid "&Reload Document"
 msgstr "Endurlesa &skjal"
 
-#: kfmgui.cpp:313
+#: kfmgui.cpp:312
 msgid "Rescan &Bindings"
 msgstr "Endurlesa l&yklabindingar"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:315
 msgid "&View Frame Source"
 msgstr "Skoða HTML texta &ramma"
 
-#: kfmgui.cpp:318
+#: kfmgui.cpp:317
 msgid "View Docu&ment Source"
 msgstr "Skoða HTML texta &skjals"
 
-#: kfmgui.cpp:326
+#: kfmgui.cpp:325
 msgid "Auto"
 msgstr "Sjálfvirkt"
 
-#: kfmgui.cpp:334
+#: kfmgui.cpp:333
 msgid "Document Encodin&g"
 msgstr "Stafatafla skjals"
 
-#: kfmgui.cpp:350
+#: kfmgui.cpp:349
 msgid "Show History"
 msgstr "Sýna sögu"
 
-#: kfmgui.cpp:352
+#: kfmgui.cpp:351
 msgid "Show Cache"
 msgstr "Sýna skyndiminni"
 
-#: kfmgui.cpp:354
+#: kfmgui.cpp:353
 msgid "Clear Cache"
 msgstr "Tæma skyndiminni"
 
-#: kfmgui.cpp:357
+#: kfmgui.cpp:356
 msgid "Always look in cache"
 msgstr "Alltaf að líta í skyndiminni"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:358
 msgid "Never look in cache"
 msgstr "Aldrei að líta i skyndiminni"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:360
 msgid "Always save cache"
 msgstr "Alltaf að vista skyndiminni"
 
-#: kfmgui.cpp:363
+#: kfmgui.cpp:362
 msgid "Never save cache"
 msgstr "Aldrei að vista skyndiminni"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:373
 msgid "Show &Menubar"
 msgstr "Sýna &valslá"
 
-#: kfmgui.cpp:376
+#: kfmgui.cpp:375
 msgid "Show &Statusbar"
 msgstr "Sýna &stöðuslá"
 
-#: kfmgui.cpp:378
+#: kfmgui.cpp:377
 msgid "Show &Toolbar"
 msgstr "Sýna &tækjaslá"
 
-#: kfmgui.cpp:380
+#: kfmgui.cpp:379
 msgid "Show &Location bar"
 msgstr "Sýna s&taðslá"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:382
 msgid "Sa&ve Settings"
 msgstr "&Vista stillingar"
 
-#: kfmgui.cpp:385
+#: kfmgui.cpp:384
 msgid "Save Settings for this &URL"
 msgstr "Vista stillingar fyrir þessa s&lóð"
 
-#: kfmgui.cpp:392
+#: kfmgui.cpp:391
 msgid "&Configure File Manager..."
 msgstr "Stilla skráastjóra..."
 
-#: kfmgui.cpp:394
+#: kfmgui.cpp:393
 msgid "Configure &Browser..."
 msgstr "Stilla &flakkara..."
 
-#: kfmgui.cpp:430
+#: kfmgui.cpp:429
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -214,31 +214,31 @@ msgstr ""
 "Nú í höndum David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1126
+#: kfmgui.cpp:442
 msgid "&Go"
 msgstr "&Fara"
 
-#: kfmgui.cpp:444
+#: kfmgui.cpp:443
 msgid "&Bookmarks"
 msgstr "&Bókamerki"
 
-#: kfmgui.cpp:445
+#: kfmgui.cpp:444
 msgid "&Cache"
 msgstr "Bið&minni"
 
-#: kfmgui.cpp:475 main.cpp:282
+#: kfmgui.cpp:474 main.cpp:282
 msgid "Up"
 msgstr "Upp"
 
-#: kfmgui.cpp:485 main.cpp:284
+#: kfmgui.cpp:484 main.cpp:284
 msgid "Forward"
 msgstr "Fram"
 
-#: kfmgui.cpp:490
+#: kfmgui.cpp:489
 msgid "Home"
 msgstr "Heim"
 
-#: kfmgui.cpp:547
+#: kfmgui.cpp:546
 msgid "Could not load icon\n"
 msgstr "Ekki tókst að lesa táknmynd\n"
 
@@ -247,8 +247,8 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 #: kbind.cpp:1665 kbind.cpp:1724 kbind.cpp:1736 kbind.cpp:1763 kbind.cpp:1784
 #: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
 #: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
-#: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
-#: kfmman.cpp:1410 kfmman.cpp:1638 kfmman.cpp:1684 kfmprops.cpp:380
+#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:367
+#: kfmman.cpp:1411 kfmman.cpp:1639 kfmman.cpp:1685 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
 #: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
@@ -266,69 +266,69 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 msgid "KFM Error"
 msgstr "KFM Villa"
 
-#: kfmgui.cpp:561
+#: kfmgui.cpp:560
 msgid "Location:"
 msgstr "Slóð:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:757 kfmman.cpp:1409
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1410
 msgid "Malformed URL\n"
 msgstr "Gölluð slóð\n"
 
-#: kfmgui.cpp:944
+#: kfmgui.cpp:943
 msgid "Select files:"
 msgstr "Veldu skrár:"
 
-#: kfmgui.cpp:1012
+#: kfmgui.cpp:1011
 msgid "Find Complete"
 msgstr "Leit lokið"
 
-#: kfmgui.cpp:1013
+#: kfmgui.cpp:1012
 msgid "Continue search from the top of the page?"
 msgstr "Halda leit áfram frá upphafi síðu?"
 
-#: kfmgui.cpp:1031
+#: kfmgui.cpp:1030
 msgid "&Edit Bookmarks..."
 msgstr "Sýs&la með bókamerki..."
 
-#: kfmgui.cpp:1041
+#: kfmgui.cpp:1040
 msgid "&Add Bookmark"
 msgstr "&Setja bókamerki"
 
-#: kfmgui.cpp:1077 kfmman.cpp:1449 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1450 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "Hér &verði"
 
-#: kfmgui.cpp:1102
+#: kfmgui.cpp:1098
 msgid "&Up"
 msgstr "&Upp"
 
-#: kfmgui.cpp:1104
+#: kfmgui.cpp:1100
 msgid "&Back"
 msgstr "&Aftur"
 
-#: kfmgui.cpp:1106
+#: kfmgui.cpp:1102
 msgid "&Forward"
 msgstr "&Áfram"
 
-#: kfmgui.cpp:1108
+#: kfmgui.cpp:1104
 msgid "&Home"
 msgstr "&Heim"
 
-#: kfmgui.cpp:1177 kfmgui.cpp:1345 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1171 kfmgui.cpp:1339 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "VILLA: Gölluð slóð"
 
-#: kfmgui.cpp:1299 kfmserver.cpp:245
+#: kfmgui.cpp:1293 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Opna stað:"
 
-#: kfmgui.cpp:1356
+#: kfmgui.cpp:1350
 msgid "KFM Confirm"
 msgstr "KFM Staðfesting"
 
-#: kfmgui.cpp:1357
+#: kfmgui.cpp:1351
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -336,7 +336,7 @@ msgstr ""
 "Viltu örugglega hætta?\n"
 "Mikilvægur hluti eiginleika skjáborðsins hverfur"
 
-#: kfmgui.cpp:1484
+#: kfmgui.cpp:1478
 msgid "Document: Done"
 msgstr "Skjal: Komið"
 
@@ -372,7 +372,7 @@ msgstr "VILLA: Þú slepptir slóð á sjálfa sig"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VILLA: Þú slepptir möppu á einhverja undurmöppu hennar"
 
-#: kfmexec.cpp:298 kfmman.cpp:1198 kfmview.cpp:587
+#: kfmexec.cpp:298 kfmman.cpp:1199 kfmview.cpp:587 root.cpp:1131
 msgid "Open With:"
 msgstr "Opna með:"
 
@@ -585,11 +585,11 @@ msgstr "Henda í ruslið"
 msgid "Open with"
 msgstr "Opna með"
 
-#: kfmman.cpp:1676 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1677 kfmtree.cpp:333 main.cpp:275
 msgid "Move"
 msgstr "Færa"
 
-#: kfmman.cpp:1680 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1681 kfmtree.cpp:337 main.cpp:277
 msgid "Link"
 msgstr "Tengi"
 
@@ -926,11 +926,11 @@ msgstr "Innri villa: desktopDir er gallað"
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "VILLA: Ekki tókst að lesa skjáborðsmöppu '%s'"
 
-#: kfmman.cpp:1662 root.cpp:992 root.cpp:1012
+#: kfmman.cpp:1663 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
 msgstr "ERROR: Get ekki tekið við því sem var sleppt."
 
-#: kfmman.cpp:1639 kfmman.cpp:1685 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
+#: kfmman.cpp:1640 kfmman.cpp:1686 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
 msgid "Dont know what to do."
 msgstr "Ég veit ekki hvað ég á að gera."
 

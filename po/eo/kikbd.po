@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -67,6 +67,17 @@ msgid ""
 msgstr ""
 "Ne eblas forigi Majusklecþaltilon de la modifiloj.\n"
 "Majusklecþaltil-imitado malebligita"
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Internacia Klavaro"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -205,85 +216,85 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "nekonata"
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "implicita"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Aýtoro: ne indikita"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Aýtoro"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Priskribo:  "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Fonto:  "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "neniu dosiero"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "uzanto-dosiero"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "sistem-dosiero"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Statistiko:  "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "simboloj"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "koderoj"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "alternativaj simboloj"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 #, fuzzy
 msgid "Language"
 msgstr "lingvo"
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 #, fuzzy
 msgid "Charset"
 msgstr "signaro"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "ERARO de Internacia Klavaro"
 
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Averto de Internacia Klavaro"
 
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Demando de Internacio Klavaro"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Agordu"
 
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 msgid ""
 "\n"
 "Do you want to continue?"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -58,6 +58,17 @@ msgid ""
 msgstr ""
 "Не возможно удалить CapsLock из таблицы модификаторов.\n"
 "Эмуляция CapsLock выключена."
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Интернациональная Клавиатура"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -199,85 +210,85 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Автор:  Не определен"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Автор"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Описание:  "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Источник:  "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "нет файла"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "файл пользователя"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "системный файл"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Статистика:  "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "символов"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "кодов"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "алтернативные символы"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 #, fuzzy
 msgid "Language"
 msgstr "язык"
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 #, fuzzy
 msgid "Charset"
 msgstr "кодировка"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "ОШИБКА национальной клавиатуры"
 
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Предупреждение национальной клавиатуры"
 
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Вопрос национальной клавиатуры"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 #, fuzzy
 msgid ""
 "\n"

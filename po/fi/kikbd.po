@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KIKBD\n"
-"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,6 +66,17 @@ msgid ""
 msgstr ""
 "En saanut poistettua Caps Lock:a Modifier:sta.\n"
 "Caps Lock emulaatio poistettu"
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Kansainvälinen näppäimistö"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -204,85 +215,85 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "tuntematon"
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "oletus"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Tekijä: Ei määritelty"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Tekijä"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Kuvaus:  "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Lähde:  "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "ei tiedostoa"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "käyttäjätiedosto"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "järjestelmätiedosto"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Tilastot:  "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "symbolia"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "koodia"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "vaihtoehtoista symbolia"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 #, fuzzy
 msgid "Language"
 msgstr " "
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 #, fuzzy
 msgid "Charset"
 msgstr "kirjasinperhe"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "Kansainvälisen näppäimistön virhe"
 
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Kansainväliset näppäimistön varoitus"
 
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Kansainvälisen näppäimistön kysymys"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Asetukset"
 
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 msgid ""
 "\n"
 "Do you want to continue?"

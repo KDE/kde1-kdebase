@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1998-12-29 22:19+01:00\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
@@ -65,6 +65,17 @@ msgid ""
 msgstr ""
 "Kan inte ta bort Caps Lock från Ändringarna.\n"
 "Caps Lock emulering ej tillgänglig"
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Internationellt Tangentbord"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -203,85 +214,85 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "okänd"
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "standard"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Författare: Ingen angiven"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Författare"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Beskrivning:  "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Källa:  "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "ingen fil"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "användar-fil"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "system-fil"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Statestik:"
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "symboler"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "koder"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "alternativa symboler"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 #, fuzzy
 msgid "Language"
 msgstr "tangentbord"
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 #, fuzzy
 msgid "Charset"
 msgstr "teckenuppsättning"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "Internationellt tangentbords FEL"
 
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Internationellt tangentbords varning"
 
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Internationellt tangentbords fråga"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Inställningar"
 
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 msgid ""
 "\n"
 "Do you want to continue?"

@@ -1,5 +1,5 @@
 msgid ""
-msgstr "POT-Creation-Date: 1999-01-19 01:20+0100\n"
+msgstr "POT-Creation-Date: 1999-01-22 01:13+0100\n"
 
 # kikbd.C:115
 #: kikbd.cpp:116
@@ -54,6 +54,18 @@ msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr "Kan %s niet verwijderen van Modifiers.\n"
+
+# main.C:45
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Internationale Toetsenbord Instellingen"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 # keymap.C:218
 #: keymap.cpp:181
@@ -194,90 +206,90 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr ""
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr ""
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr ""
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr ""
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr ""
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr ""
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr ""
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr ""
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr ""
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr ""
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr ""
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 msgid "Language"
 msgstr ""
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 msgid "Charset"
 msgstr ""
 
 # main.C:45
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 #, fuzzy
 msgid "International keyboard question"
 msgstr "Internationale Toetsenbord Instellingen"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr ""
 
 # keymap.C:263
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 #, fuzzy
 msgid ""
 "\n"
