@@ -34,7 +34,7 @@
 #include "grkelot.h"
 #endif
 
-// Stephan: a little bit hardcoded :)
+/* Stephan: a little bit hardcoded :) */
 #if !defined PRINT_PIPE
 #define PRINT_PIPE
 #endif

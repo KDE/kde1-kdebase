@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h> // CC: for isspace
+#include <ctype.h> /* CC: for isspace */
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xresource.h>
@@ -14,7 +14,7 @@
 #include "sbar.h"
 #include "debug.h"
 
-// Stephan: a little bit hardcoded :)
+/* Stephan: a little bit hardcoded :) */
 #if !defined PRINT_PIPE
 #define PRINT_PIPE
 #endif

@@ -60,7 +60,7 @@ int screenNum = 0, rstyle=0, save_rstyle = 0, focus = 0;
 int drow,dcol, save_row, save_col, save_charset_num;
 char save_charset = 'B';
 
-//Stephan: a little bit hardcoded :)
+/* Stephan: a little bit hardcoded :) */
 #ifndef COLOR
 #define COLOR
 #endif
