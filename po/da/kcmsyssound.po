@@ -71,35 +71,35 @@ msgstr "Opstart"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Rul vindue op"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Rul vindue ned"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr ""
+msgstr "Skjul vindue"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Vis vindue"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr ""
+msgstr "Maksimér vindue"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Gendan vindue"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr ""
+msgstr "Fastsæt vindue"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Frigiv vindue"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -111,27 +111,27 @@ msgstr ""
 
 #: syssound.cpp:171
 msgid "Logout"
-msgstr ""
+msgstr "Log ud"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr ""
+msgstr "Udlognings meddelelse"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
-msgstr ""
+msgstr "Flyt vindue start"
 
 #: syssound.cpp:174
 msgid "Window Move End"
-msgstr ""
+msgstr "Flyt vindue slut"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Skift størrelse start"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr ""
+msgstr "Skift størrelse slut"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -139,11 +139,11 @@ msgstr "&Iværksæt system lyde"
 
 #: syssound.cpp:203
 msgid "&Test"
-msgstr ""
+msgstr "&Test"
 
 #: syssound.cpp:207
 msgid "&Events:"
-msgstr "&Hændelser"
+msgstr "&Hændelser:"
 
 #: syssound.cpp:211
 msgid "&Sounds:"

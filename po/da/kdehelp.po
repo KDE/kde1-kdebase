@@ -35,11 +35,11 @@ msgstr "Ukendt format: "
 
 #: helpwin.cpp:1090
 msgid "Find Complete"
-msgstr ""
+msgstr "Søgning færdig"
 
 #: helpwin.cpp:1091
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Fortsæt fra begyndelsen af siden?"
 
 #: helpwin.cpp:1329
 msgid "Open this Link"
@@ -147,7 +147,7 @@ msgstr "Spil"
 
 #: man.cpp:476
 msgid "System Administration"
-msgstr ""
+msgstr "System Administration"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -192,11 +192,11 @@ msgstr "&Søg"
 
 #: mainwidget.cpp:149
 msgid "&Find..."
-msgstr ""
+msgstr "&Find..."
 
 #: mainwidget.cpp:150
 msgid "Find &next"
-msgstr ""
+msgstr "Find &næste"
 
 #: mainwidget.cpp:154
 msgid "&Back"
@@ -212,7 +212,7 @@ msgstr "&Indhold"
 
 #: mainwidget.cpp:158
 msgid "&Top"
-msgstr ""
+msgstr "&Top"
 
 #: mainwidget.cpp:159
 msgid "&Up"
@@ -244,7 +244,7 @@ msgstr "KDE Hjælpe System\n"
 
 #: mainwidget.cpp:185
 msgid "Version "
-msgstr ""
+msgstr "Version "
 
 #: mainwidget.cpp:187
 msgid ""
@@ -294,7 +294,7 @@ msgstr "En node op"
 
 #: mainwidget.cpp:249
 msgid "Top Node"
-msgstr ""
+msgstr "Top Node"
 
 #: mainwidget.cpp:256
 msgid "Help Contents"
@@ -302,7 +302,7 @@ msgstr "Hjælp indhold"
 
 #: mainwidget.cpp:261
 msgid "Reload current document"
-msgstr "Genlæs dette dokument"
+msgstr "Genindlæs dette dokument"
 
 #: mainwidget.cpp:290
 msgid "In the Constructor!"
@@ -326,15 +326,15 @@ msgstr "&Tilføj bogmærke"
 
 #: finddlg.cpp:41
 msgid "Find:"
-msgstr ""
+msgstr "Find:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Store/Små bogstaver"
 
 #: finddlg.cpp:66
 msgid "&Find"
-msgstr ""
+msgstr "&Find"
 
 #~ msgid "Could not start or find KFM"
 #~ msgstr "Kunne ikke starte eller finde KFM"

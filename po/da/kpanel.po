@@ -75,11 +75,11 @@ msgstr "Konfigurer panel"
 
 #: props.C:152
 msgid "Edit Menus"
-msgstr ""
+msgstr "Redigér menuer"
 
 #: props.C:154
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Tilføj eller fjern applikationer fra menustrukturen"
 
 #: events.C:754 props.C:155
 msgid "Restart"
@@ -91,11 +91,11 @@ msgstr "Genstart panel"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Disk Navigator"
 
 #: props.C:168
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: props.C:170
 msgid "Lock Screen"
@@ -103,43 +103,43 @@ msgstr "Lås skærm"
 
 #: props.C:399
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Menu redigéringsprogrammet er ikke installéret"
 
 #: events.C:790 props.C:400
 msgid "Oops!"
-msgstr ""
+msgstr "Ups!"
 
 #: events.C:789
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Kan ikke placere dette som en trykknap på panelet!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "KFM information"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Opretter folder:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(tom folder)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(for mange filer)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Adgang nægtet)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Ulæselig)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Åben folder"
 
 #~ msgid "Move"
 #~ msgstr "Flyt"

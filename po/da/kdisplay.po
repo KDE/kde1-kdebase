@@ -15,7 +15,7 @@ msgstr ""
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Skriv nyt Arbejdsplads navn"
 
 #: backgnd.cpp:115 backgnd.cpp:150
 msgid "Desktop"
@@ -32,16 +32,16 @@ msgstr "Farver"
 #: backgnd.cpp:220
 #, fuzzy
 msgid "&One Color"
-msgstr "&Farver"
+msgstr "&En farve"
 
 #: backgnd.cpp:237
 #, fuzzy
 msgid "&Two Color"
-msgstr "&Farver"
+msgstr "&To farver"
 
 #: backgnd.cpp:256
 msgid "Set&up ..."
-msgstr "&Indstil..."
+msgstr "&Indstillinger..."
 
 #: backgnd.cpp:265
 msgid "Wallpaper"
@@ -69,24 +69,24 @@ msgstr "&Gennemsøg..."
 
 #: backgnd.cpp:864
 msgid "Desktop names"
-msgstr "Arbejdsplads navn"
+msgstr "Arbejdsplads navne"
 
 #: backgnd.cpp:910
 #, fuzzy
 msgid "Two color backgrounds"
-msgstr "Vælg baggrund"
+msgstr "To farve baggrund"
 
 #: backgnd.cpp:947
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "Bland farver fra &top til bund"
 
 #: backgnd.cpp:953
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "Bland farver fra &højre til venstre"
 
 #: backgnd.cpp:959
 msgid "Use &pattern"
-msgstr ""
+msgstr "Brug &mønster"
 
 #: backgnd.cpp:986
 msgid "Preview"
@@ -94,36 +94,36 @@ msgstr ""
 
 #: backgnd.cpp:997
 msgid "Pattern &name"
-msgstr ""
+msgstr "Mønster &navn"
 
 #: backgnd.cpp:1036
 msgid "Current"
-msgstr ""
+msgstr "Aktuelle"
 
 #: backgnd.cpp:1096
 #, fuzzy
 msgid "Filled"
-msgstr "Fliselagt"
+msgstr "Udfyldt"
 
 #: backgnd.cpp:1099
 msgid "Fish net"
-msgstr ""
+msgstr "Fiskenet"
 
 #: backgnd.cpp:1102
 msgid "Triangles"
-msgstr ""
+msgstr "Triangler"
 
 #: backgnd.cpp:1105
 msgid "Flowers"
-msgstr ""
+msgstr "Blomster"
 
 #: backgnd.cpp:1108
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
 #: backgnd.cpp:1111
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Toppede brosten"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -132,19 +132,19 @@ msgstr "Farve skema"
 #: colorscm.cpp:131
 #, fuzzy
 msgid "Current scheme"
-msgstr "Farve skema"
+msgstr "Aktuelle skema"
 
 #: colorscm.cpp:133
 msgid "KDE default"
-msgstr ""
+msgstr "KDE standard"
 
 #: colorscm.cpp:146
 msgid "&Add ..."
-msgstr ""
+msgstr "&Tilføj..."
 
 #: colorscm.cpp:163
 msgid "&Save changes"
-msgstr ""
+msgstr "&Gem ændringer"
 
 #: colorscm.cpp:177
 msgid "Widget color"
@@ -161,7 +161,7 @@ msgstr "Inaktiv titeltekst"
 #: colorscm.cpp:186
 #, fuzzy
 msgid "Inactive title blend"
-msgstr "Inaktiv titelbjælke"
+msgstr "Inaktiv titel blanding"
 
 #: colorscm.cpp:187
 msgid "Active title bar"
@@ -174,7 +174,7 @@ msgstr "Aktiv titeltekst"
 #: colorscm.cpp:189
 #, fuzzy
 msgid "Active title blend"
-msgstr "Aktiv titelbjælke"
+msgstr "Aktiv titelblanding"
 
 #: colorscm.cpp:190
 msgid "Background"
@@ -214,7 +214,7 @@ msgstr "Høj"
 
 #: colorscm.cpp:320
 msgid "Error removing"
-msgstr ""
+msgstr "Kunne ikke fjerne"
 
 #: colorscm.cpp:321
 msgid ""
@@ -222,10 +222,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Farve skemaet kunne ikke fjernes.\n"
+"Måske har du ikke tilladelse til at ændre det\n"
+"filsystem hvor farve skemaet er gemt."
 
 #: colorscm.cpp:378
 msgid "Naming error"
-msgstr ""
+msgstr "Navngivelses fejl"
 
 #: colorscm.cpp:379
 msgid ""
@@ -233,11 +236,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Vælg venligst et unikt navn for det nye farveskema.\n"
+"Navnet du skrev findes allerede i farveskema listen.\n"
 
 #: savescm.cpp:18
 #, fuzzy
 msgid "Add a color scheme"
-msgstr "Farve skema"
+msgstr "Tilføj et farve skema"
 
 #: savescm.cpp:32
 msgid ""
@@ -254,11 +259,11 @@ msgstr "Ignorer"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Gem skærm"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lås skærm"
 
 #: scrnsave.cpp:113 scrnsave.cpp:182
 msgid "Screen Saver"
@@ -267,11 +272,11 @@ msgstr "Skærmskåner"
 #: scrnsave.cpp:189 scrnsave.cpp:367 scrnsave.cpp:605 scrnsave.cpp:726
 #, fuzzy
 msgid "No screensaver"
-msgstr "&Skærmskåner"
+msgstr " Ingen skærmskåner"
 
 #: scrnsave.cpp:210
 msgid "&Setup ..."
-msgstr "&Indstil..."
+msgstr "&Indstillinger..."
 
 #: scrnsave.cpp:218
 msgid "&Test"
@@ -283,11 +288,11 @@ msgstr "Indstillinger"
 
 #: scrnsave.cpp:251
 msgid "&Wait for"
-msgstr ""
+msgstr "&Vent på"
 
 #: scrnsave.cpp:261
 msgid "min."
-msgstr ""
+msgstr "min."
 
 #: scrnsave.cpp:267
 msgid "&Require password"
@@ -295,11 +300,11 @@ msgstr "K&ræver kodeord"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "Accepter at root kodeord låser op"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"
-msgstr ""
+msgstr "Vis kodeord som stjerner"
 
 #: scrnsave.cpp:287
 msgid "Priority"
@@ -319,12 +324,12 @@ msgstr "Skriftsnit etc."
 
 #: general.cpp:226
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Tegn Widgets i Windows 95 stil"
 
 #: general.cpp:240
 #, fuzzy
 msgid "Desktop fonts"
-msgstr "Arbejdsplads"
+msgstr "Arbejdsplads skriftsnit"
 
 #: general.cpp:252
 msgid "General font"
@@ -332,21 +337,21 @@ msgstr "Generelt skriftsnit"
 
 #: general.cpp:257
 msgid "Fixed font"
-msgstr ""
+msgstr "Fast skriftsnit"
 
 #: general.cpp:267
 #, fuzzy
 msgid "Panel button font"
-msgstr "Generelt skriftsnit"
+msgstr "Panelknap skriftsnit"
 
 #: general.cpp:272
 msgid "Panel clock font"
-msgstr ""
+msgstr "Panel ur skriftsnit"
 
 #: general.cpp:302
 #, fuzzy
 msgid "Sample text"
-msgstr "Vælg tekst"
+msgstr "Tekst eksempel"
 
 #: general.cpp:310
 msgid ""
@@ -390,7 +395,7 @@ msgstr "Aktivt vindue"
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
 #, fuzzy
 msgid "Selected text"
-msgstr "Vælg tekst"
+msgstr "Markeret tekst"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -398,23 +403,23 @@ msgstr ""
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "&Fed"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "&Kursiv"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "&Størrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Karaktér sæt"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr ""
+msgstr "standard"
 
 #: fontchooser.cpp:265
 msgid "any"

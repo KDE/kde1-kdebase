@@ -15,7 +15,7 @@ msgstr ""
 
 #: krootwm.C:120 krootwm.C:587
 msgid "Folder"
-msgstr ""
+msgstr "Folder"
 
 #: krootwm.C:150
 #, c-format
@@ -24,7 +24,7 @@ msgstr "FEJL: Skabelon eksisterer ikke ´%s´"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Bogmærker"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -64,7 +64,7 @@ msgstr "Log ud"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Redigér bogmærker"
 
 #: krootwm.C:607
 msgid "Could not create folder"

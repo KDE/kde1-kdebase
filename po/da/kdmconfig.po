@@ -70,11 +70,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Sprog"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Sprog:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -262,7 +262,7 @@ msgstr "Tilgængelige typer"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "uden navn!"
 
 #~ msgid "&Fonts"
 #~ msgstr "&Skriftsnit"

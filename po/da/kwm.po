@@ -131,7 +131,7 @@ msgstr "Kommando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Uuups!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
