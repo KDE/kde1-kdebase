@@ -1,9 +1,18 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Andrea Rizzi <bilibao@ouverture.it>\n"
+msgstr "Project-Id-Version: PACKAGE VERSION"
+"POT-Creation-Date: 1998-02-19 22:49+0100\n"
+"PO-Revision-Date: 1998-02-03 16:00+0100\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
+"Language-Team: Italiano <it@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+""
 
 #: kfmgui.cpp:247
 msgid "KFM"
@@ -16,7 +25,7 @@ msgstr "Cartella"
 #: kfmgui.cpp:270
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "ERRORE: Il modello '%s' è inesistente"
+msgstr "ERORRE: Modello inesistente '%s'"
 
 #: kfmgui.cpp:296
 msgid "&New Window"
@@ -148,7 +157,7 @@ msgstr "Sal&va Impostazioni"
 
 #: kfmgui.cpp:412
 msgid "Configure Browser..."
-msgstr "Configure Browser..."
+msgstr "Configura Browser..."
 
 #: kfmgui.cpp:438
 msgid "&Find"
@@ -176,11 +185,11 @@ msgstr "&Strumenti"
 
 #: kfmgui.cpp:473
 msgid "&Cache"
-msgstr "&Cache"
+msgstr "&Cache "
 
 #: kfmgui.cpp:510
 msgid "Home"
-msgstr "Home"
+msgstr "Home "
 
 #: kfmgui.cpp:543
 msgid "Stop"
@@ -214,29 +223,29 @@ msgstr "Errore KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:695 kfmman.cpp:920
 msgid "Malformed URL\n"
-msgstr "Indirizzo (URL) Maldefinito\n"
+msgstr "URL Maldefinita\n"
 
 #: kfmgui.cpp:842
 msgid "Select files:"
-msgstr "Scelta file:"
+msgstr "Seleziona file:"
 
 #: kfmgui.cpp:859
 msgid "Add Bookmark"
-msgstr "Aggiungi Segnalibro"
+msgstr "Aggiungi segnalibro"
 
 #: kfmgui.cpp:902 kfmgui.cpp:909
 msgid "New "
-msgstr "Nuovo "
+msgstr "Nuovo"
 
 #: kfmgui.cpp:1001 kfmgui.cpp:1161 kfmjob.cpp:32 kfmman.cpp:188
 #: kfmtree.cpp:318 kfmview.cpp:369 kfmview.cpp:438 kfmview.cpp:565
 #: kiojob.cpp:70 root.cpp:1126
 msgid "ERROR: Malformed URL"
-msgstr "ERRORE: Indirizzo (URL) Maldefinito"
+msgstr "ERRORE: URL Maldefinita"
 
 #: kfmgui.cpp:1115 kfmserver.cpp:178
 msgid "Open Location:"
-msgstr "Apri Locazione:"
+msgstr "Apri locazione:"
 
 #: kfmgui.cpp:1171
 msgid "KFM Confirm"
@@ -255,7 +264,6 @@ msgid "About KFM"
 msgstr "Info sul KFM"
 
 #: kfmgui.cpp:1200
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -313,8 +321,7 @@ msgstr "Apri con...:"
 
 #: kfmview.cpp:483 root.cpp:1080
 msgid "ERROR: Can not open properties for multiple files"
-msgstr ""
-"ERRORE: Non si possono cambiare le proprietà di più file contemporaneamente"
+msgstr "ERRORE: Non si possono cambiare le proprietà di più file contemporaneamente"
 
 #: kfmtree.cpp:287 kfmview.cpp:525 root.cpp:1213
 msgid "Could not access Trash Bin"
@@ -351,7 +358,7 @@ msgstr "%s (Collegamento)"
 
 #: kfmview.cpp:824
 msgid "bytes"
-msgstr "bytes"
+msgstr "byte"
 
 #: kbind.cpp:302
 msgid "The mime type config file "
@@ -367,7 +374,7 @@ msgstr "Nessun Mime Type installato!"
 
 #: kbind.cpp:425 kbind.cpp:1163
 msgid "Could not find mime type\n"
-msgstr "Impossibile trovare il mime type\n"
+msgstr "Impossibile trovare il mimetype\n"
 
 #: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1852 kbind.cpp:1853 kbind.cpp:1865
 #: kbind.cpp:1867
@@ -404,7 +411,7 @@ msgstr ""
 
 #: kbind.cpp:1519 kbind.cpp:1536
 msgid "Can only start executables on local disks\n"
-msgstr "Si possono avviare solo eseguibili su dischi locali\n"
+msgstr "Si possono avviare soltanto programmi su dischi locali\n"
 
 #: kbind.cpp:1594 kbind.cpp:1668 kbind.cpp:1818
 msgid ""
@@ -425,11 +432,11 @@ msgstr ""
 
 #: kbind.cpp:1633
 msgid "The \"Link=....\" entry is empty"
-msgstr "Il campo \"Link=..\" è vuoto"
+msgstr "The \"Link=....\" entry is empty"
 
 #: kbind.cpp:1648
 msgid "The config file has no \"Type=...\" line"
-msgstr "Il file di configurazione non ha la voce \"Type=...\""
+msgstr "Il file di configurazione non ha la linea \"Type=...\""
 
 #: kbind.cpp:1678 kbind.cpp:1828
 msgid "Could not access"
@@ -473,7 +480,7 @@ msgstr "Installazione dei Modelli..."
 
 #: main.cpp:208
 msgid "Cd"
-msgstr "Cd"
+msgstr "Cd "
 
 #: main.cpp:209
 msgid "New View"
@@ -509,59 +516,59 @@ msgstr "Aggiungi ai Segnalibri"
 
 #: htmlopts.cpp:35
 msgid "Font Size"
-msgstr ""
+msgstr "Dimensioni Carattere"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
-msgstr ""
+msgstr "Caratteri Standard"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr ""
+msgstr "Carattere a spaziatura fissa"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
-msgstr ""
+msgstr "Colore di Sfondo"
 
 #: htmlopts.cpp:222
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Colore testo:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr ""
+msgstr "Colore collegamenti URL"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Colore colegamenti seguiti:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Cambia cursore sui collegamenti."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Spaziatura Orizontale griglia:"
 
 #: htmlopts.cpp:335
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Spaziatura Verticale griglia:"
 
 #: bookmark.cpp:229
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Do not edit this file (Non modificare questo file)--> "
+msgstr "<!-- Non Modificare Questo FILE -->"
 
 #: kfmprops.cpp:220
 msgid "Name"
@@ -569,7 +576,7 @@ msgstr "Nome"
 
 #: kfmprops.cpp:237
 msgid "Full Name"
-msgstr "Nome Completo"
+msgstr "Nome completo"
 
 #: kfmprops.cpp:255
 msgid "Is the Trash Bin"
@@ -577,7 +584,7 @@ msgstr "E' il cestino"
 
 #: kfmprops.cpp:262
 msgid "Is a Directory"
-msgstr "E' una Directory"
+msgstr "E' una directory"
 
 #: kfmprops.cpp:269
 msgid "Points to"
@@ -602,7 +609,7 @@ msgid ""
 "The destination seems to already exist\n"
 msgstr ""
 "Impossibile rinominare il file o la directory\n"
-"La destinazione sembra già esistente\n"
+"La destinazione sembra esistere già"
 
 #: kfmprops.cpp:414
 msgid "Access permissions"
@@ -732,8 +739,7 @@ msgstr "Titolo dell'applicazione"
 
 #: kfmprops.cpp:717
 msgid "enter the exact title, as normally shown in the window titlebar"
-msgstr ""
-"inserisci il titolo esatto, come viene normalmente mostrato nella TitleBar"
+msgstr "inserisci il titolo esatto, come viene normalmente mostrato nella TitleBar"
 
 #: kfmprops.cpp:721
 msgid "Run in terminal"
@@ -812,7 +818,7 @@ msgstr "Dispositivo ( /dev/fd0 )"
 
 #: kfmprops.cpp:1694
 msgid "Mount Point ( /floppy )"
-msgstr "Mount Point ( /floppy )"
+msgstr "Punto di montaggio (/floppy)"
 
 #: kfmprops.cpp:1704
 msgid "Readonly"
@@ -887,6 +893,9 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"Impossibile eseguire la richiesta\n"
+"Le nuove dimensioni della griglia potrebbero\n"
+"far spostare alcune icone fuori dal Desktop."
 
 #: root.cpp:719
 msgid "Internal Error: desktopDir is malformed"
@@ -1066,9 +1075,9 @@ msgid ""
 "%s\n"
 "is not implemented yet."
 msgstr ""
-"The requested action\n"
+"L'azione richiesta\n"
 "%s\n"
-"is not implemented yet."
+"non è stata ancora implementata."
 
 #: kiojob.cpp:1232
 #, c-format
@@ -1170,7 +1179,7 @@ msgstr "Sto creando la directory"
 #: kiojob.cpp:1614 kiojob.cpp:1668 kiojob.cpp:1710
 #, c-format
 msgid "File %i/%i"
-msgstr "File %i/%i"
+msgstr "File %i/%i "
 
 #: kiojob.cpp:1617 kiojob.cpp:1672
 #, c-format
@@ -1215,7 +1224,7 @@ msgstr "La directory"
 
 #: autostart.cpp:30
 msgid " does not exist\n"
-msgstr " non esiste\n"
+msgstr " does not exist\n"
 
 #: kfmtree.cpp:396
 msgid "My Home"
@@ -1223,11 +1232,11 @@ msgstr "La mia Home"
 
 #: kfmtree.cpp:398
 msgid "Desktop"
-msgstr "Desktop"
+msgstr "Desktop "
 
 #: kfmtree.cpp:400
 msgid "Root"
-msgstr "Root"
+msgstr "Root "
 
 #: kbookmarkdlg.cpp:35 krenamewin.cpp:26
 msgid "Rename"
@@ -1246,11 +1255,8 @@ msgid "Overwrite All"
 msgstr "Sovrascrivi tutti"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr ""
-"Impossibile sovrascrivere\n"
-"%s"
+msgstr "Impossibile sovrascrivere%s"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
@@ -1262,7 +1268,7 @@ msgstr "o rinomina in"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"
-msgstr "Non hai cambiato il nome!\n"
+msgstr "You did not change the name!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
@@ -1286,7 +1292,7 @@ msgstr "Collegamenti conosciuti"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Non ti dimenticare di salvare le impostazioni!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
@@ -1379,8 +1385,6 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
-"Errore di sintassi:\n"
-"kfmexec comando [URL ...]\n"
+"Errorore di sintassi:\n"
+"kfmexec comando [URL ....]"
 
-#~ msgid "Only HTTP-Proxy is implemented yet!"
-#~ msgstr "Solo il proxy per HTTP è implementato!"
