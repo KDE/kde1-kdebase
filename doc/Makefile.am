@@ -1,3 +1,2 @@
-SUBDIRS = kdehelp kdisplay kfm kdm kpanel kwm kvt kfontmanager kfind kmenuedit kcontrol kdisknav kpager
-
+SUBDIRS = kcontrol kdehelp kdisknav kdm kfind kfm kfontmanager kmenuedit kpager kpanel kvt kwm
 messages:
