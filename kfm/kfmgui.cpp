@@ -727,29 +727,13 @@ void KfmGui::slotURLEntered()
     if ( view->getActiveView() )
     {
         QString url = toolbarURL->getLinedText( TOOLBAR_URL_ID );
-
-    	/*
-         while (url.find(' ') == 0)
-    	  url.remove(0, 1);
-    	 while (url.findRev(' ') == (signed) url.length()-1)
-	      url.remove(url.length()-1, 1);
-
-         Replacement for the above statements. Instead use
-         the built-in QString function to strip any leading
-         and trailing spaces from the URL. ( Dawit A. )
-        */
+        // strip any leading and trailing spaces.
         url.stripWhiteSpace();
-
         // Exit if the user did not enter a URL
-        if ( url[0] == 0 )
+        if ( url.isEmpty() )
 	        return;
-
-    	// Root directory?
-	if ( url[0] == '/' )
-            url.prepend( "file:" );
-
         // Home directory?
-        else if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
+        if ( url.find ( QRegExp ( "^~.*" ) ) == 0 )
         {
             int length = url.length();
             int index = url.find ( "/" );
@@ -758,32 +742,28 @@ void KfmGui::slotURLEntered()
             else
             {
               struct passwd *dir = ((index == -1) ? getpwnam(url.mid(1,length).data()) : getpwnam( url.mid(1,index-1).data()));
-               if ( !dir ) return; // unkown user
+               if ( !dir ) return; // unknown user
               (index == -1) ? url.replace (0, length,  dir->pw_dir) : url.replace (0, index, dir->pw_dir);
             }
-            url.prepend("file:");
         }
-        //Valid URL?
-        // Do nothing if URL, for our purposes here, is VALID. This check is
-        // case insensitive i.e both www & WWW are seen as valid. (Dawit A.)
-        else if ( url.find( "://" ) >= 0 ||
-                  url.find ( "mailto:", 0, false ) == 0 ||
-                  url.find( "file:/", 0, false ) == 0 ||
-                  url.find ( "news:", 0, false  ) == 0 ) ;
-
-        // No protocol. Does url begin with www? (sven)
+        // No protocol, but begins with www? (sven)
     	else if ( url.find( "www.", 0, false ) == 0 )
-	      url.prepend("http://");  // Unecessary since we bind "http://" as default protocol.
+            url.prepend("http://");  // Is this necessary since we default to "http://" below ?? (Dawit A.)
 
-    	// No protocol. Does url begin with "ftp."?  (sven)
+    	// No protocol, but begins with "ftp."?  (sven)
 	    else if ( url.find( "ftp.", 0, false ) == 0 )
-    	  url.prepend("ftp://");
+            url.prepend("ftp://");
 
+        // Valid URL?
+        // Do nothing if url, for our purposes here, is VALID.
+        // This check is case in-sensitive . (Dawit A.)
+        else if ( url.find ( QRegExp ("[a-zA-Z0-9\\+\\.\\-]+:/?/?.*") ) == 0 ||
+                  url.find ( QRegExp ("^//*.*") ) == 0 ) ;
         /*
            When all else fails, check if the user entered a URL that
-           exists under the current directory on the local host. If
-           it is not, attach "http://" as the default protocol. This
-           provides a short URL support to users, Ex. "linux.org" (Dawit A)
+           exists under the current directory. If it does not, attach
+           "http://" as default protocol. This enables us to provide
+           short URL support to users, Ex. "linux.org" (Dawit A)
         */
         else
         {
@@ -792,11 +772,10 @@ void KfmGui::slotURLEntered()
             QFileInfo f ( QDir::currentDirPath().append( "/" ).append( url ).data() );
             if ( f.exists() )
                 url = f.filePath();
-            else
+            else if ( url.left(1) != ":" )
                 url = url.prepend ("http://");
         }
-
-	KURL u( url.data() );
+    	KURL u( url.data() );
     	if ( u.isMalformed() )
 	    {
 	        QString tmp;
@@ -804,11 +783,11 @@ void KfmGui::slotURLEntered()
 	        QMessageBox::critical( (QWidget*)0L, klocale->translate( "KFM Error" ), tmp );
             return;
         }
-        view->openURL( url.data() );
+        view->openURL( u.url().data() );
         //  update tree view Sep 5 rjakob
-        if (url.left(5)=="file:")
-    	    if (bTreeView && pkfm->isTreeViewFollowMode())
-		treeView->slotshowDirectory(url.data()+5);
+        if ( u.protocol() == "file" )
+            if (bTreeView && pkfm->isTreeViewFollowMode())
+                treeView->slotshowDirectory(url.data()+5);
     }
 }
 
