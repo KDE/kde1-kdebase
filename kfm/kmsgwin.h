@@ -40,6 +40,8 @@ public:
     KMsgWin(QWidget *parent = 0, const char *caption = 0, const char *message = 0, int flags = INFORMATION,
             const char *b1text = 0, const char *b2text = 0, const char *b3text = 0, const char *b4text = 0);
 
+  ~KMsgWin();
+
 protected:
     enum {B_SPACING = 10, B_WIDTH = 80};
     QLabel      *msg, *picture;

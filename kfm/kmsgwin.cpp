@@ -52,6 +52,12 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
     setGeometry( x(), y(), w + 20, h);
 }
 
+
+KMsgWin::~KMsgWin()
+{
+}
+
+
 void KMsgWin::initMe(const char *caption, const char *message,
                      const char *b1text, const char *b2text, const char *b3text, const char *b4text,
                     const QPixmap & icon)
