@@ -321,11 +321,12 @@ int AudioSample::readDataI()
 #ifdef DEBUG
   //  cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
 #endif
-  len = fread(RBuffer, 1, len_toRead, audiofile);
 
-  if (len==0) {
+  if (len_toRead == 0) // -<- This ends the media
     return 0;
-  }
+  len = fread(RBuffer, 1, len_toRead, audiofile);
+  if (len==0)
+    return 0; // -<- Just paranoia
 
   // Always pad with ZeroData!!!
   if (bit_p_spl == 8)

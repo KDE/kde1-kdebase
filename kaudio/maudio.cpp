@@ -183,6 +183,7 @@ int main(char argc, char **argv)
     case START_MEDIA:
       *StatStatPtr = MD_STAT_BUSY;
       SoftStop=0;
+      WBold = 0;
       PtrFname = strrchr(filename, '/');
       if ( PtrFname == NULL )
 	PtrFname = filename;
@@ -238,8 +239,16 @@ int main(char argc, char **argv)
        * this is called one time. But if the audio device is busy (EAGAIN),
        * I have to retry.
        */
+      if ( (ASample->buffersValid == 0) /*&& (bytes_read == 0) */ ) {
+        // Nothing to read and to write. OK,then finish
+        SoftStop = 1;
+        PlayerStatus = STOP_MEDIA;
+        break;
+      }
+
+
       if (WBold == ASample->WBuffer)
-	cerr << "maudio: !!!!! ALARM CALL (perhaps you gave a SIGSTOP or such?) !!!!!\n";
+	cerr << "maudio: warning (please ignore)\n";
 
       ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
       WBold = ASample->WBuffer;
@@ -269,11 +278,6 @@ int main(char argc, char **argv)
 	}
 	else
 	  PlayerStatus = PLAYING;
-      }
-      if ( (ASample->buffersValid == 0) && (bytes_read == 0)) {
-	// Nothing to read and to write. OK,then finish
-	SoftStop = 1;
-	PlayerStatus = STOP_MEDIA;
       }
     break_pos:
       break;
