@@ -38,9 +38,15 @@ from the X Consortium.
  * generate SecureRPC authorization records
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 # include   <X11/Xos.h>
 # include   <rpc/rpc.h>
+#ifdef HAVE_RPC_KEY_PROT_H
 # include   <rpc/key_prot.h>
+#endif
 # include   "dm.h"
 
 /*ARGSUSED*/
