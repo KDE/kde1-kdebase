@@ -1,6 +1,6 @@
 
 INCLUDES=       $(all_includes) -I..
-LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET)
+LDADD   =       $(all_libraries) -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
 
 ####### Files
 
