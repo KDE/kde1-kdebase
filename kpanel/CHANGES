@@ -6,6 +6,7 @@ In kpanel-0.17:
        - empty "Personal" folder is ignored
        - weird taskbar bug (wrong window) fixed. Thanks to Stephan Kulow
          for bug hunting.
+       - active taskbar button painted down (for Stephan Kulow :-)
     Patchlevel 3:
        - fixed the dragging of data onto panel buttons
        - no more need for the kdelnk suffix (but mimetype)

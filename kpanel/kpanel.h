@@ -84,6 +84,8 @@ protected:
   void drawButton( QPainter *p ){paint(p);}
   virtual void drawButtonLabel( QPainter *painter );
   bool never_flat;
+  bool flat_means_down;
+  bool draw_down;
 };
 
 
@@ -94,7 +96,7 @@ class myTaskButton: public myPushButton
 public:
   myTaskButton ( QWidget *parent=0, const char* name=0 );
   void setText(const char*);
-  void setActive();
+  void setActive(bool value = TRUE);
   Window win;
   int virtual_desktop;
  protected:

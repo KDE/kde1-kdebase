@@ -51,6 +51,8 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
     setFocusPolicy(NoFocus);
     flat = True;
     never_flat = False;
+    flat_means_down = False;
+    draw_down = False;
 }
 
 myPushButton::~myPushButton () {
@@ -63,7 +65,7 @@ myPushButton* myPushButton::most_recent_pressed = NULL;
 void myPushButton::enterEvent( QEvent * ){
   flat = False;
   if (!never_flat)
-    repaint(FALSE);
+    repaint();
 }
 
 void myPushButton::leaveEvent( QEvent * ){
@@ -76,8 +78,11 @@ void myPushButton::leaveEvent( QEvent * ){
 }
 
 void myPushButton::paint(QPainter *painter){
+  draw_down = (isDown() || (isOn()) && (never_flat || !flat));
+  if (flat_means_down && !never_flat && flat)
+    draw_down = TRUE;
   drawButtonLabel(painter);
-  if ( (isDown() || (isOn()) && (never_flat || !flat)) ) {
+  if (draw_down ) {
     if ( style() == WindowsStyle )
       qDrawWinButton( painter, 0, 0, width(), 
 		      height(), colorGroup(), TRUE );
@@ -103,7 +108,7 @@ void myPushButton::drawButtonLabel(QPainter *painter){
   if ( pixmap() ) {
     int dx = ( width() - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
-    if ( isDown() && style() == WindowsStyle ) {
+    if ( draw_down && style() == WindowsStyle ) {
       dx++;
       dy++;
     }
@@ -177,6 +182,7 @@ myTaskButton::myTaskButton(QWidget *parent, const char* name)
     win = None;
     virtual_desktop = 1;
     never_flat = True;
+    flat_means_down = True;
 }
 
 myTaskButton::~myTaskButton () {
@@ -184,12 +190,21 @@ myTaskButton::~myTaskButton () {
     active = NULL;
 }
 
-void myTaskButton::setActive(){
-  myTaskButton* tmp = active;
-  active = this;
-  if (tmp)
-    tmp->repaint();
-  repaint();
+void myTaskButton::setActive(bool value){
+  if (value){
+    myTaskButton* tmp = active;
+    active = this;
+    if (tmp)
+      tmp->setActive(FALSE);
+    never_flat = FALSE;
+    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), TRUE));
+    repaint();
+  }
+  else {
+    never_flat = TRUE;
+    flat = !(rect().contains(mapFromGlobal(QCursor::pos()), TRUE));
+    repaint();
+  }
 }
 
 void myTaskButton::setText(const char* arg){
@@ -218,7 +233,7 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
     painter->drawPixmap( dx, dy, *pixmap() );
   }
   if (!s.isNull()){
-    if ( isDown() && style() == WindowsStyle ) 
+    if ( draw_down && style() == WindowsStyle ) 
       painter->drawText( 33, 1, width()-31, height()+1, AlignLeft|AlignVCenter, s);
     else
       painter->drawText( 32, 0, width()-32, height(), AlignLeft|AlignVCenter, s);
