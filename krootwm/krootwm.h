@@ -11,7 +11,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
+#include <sys/time.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
 #include <qwidget.h>
