@@ -33,7 +33,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	warning(klocale->translate("ERROR: Malformed URL"));
+        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
 	return false;
     }
 

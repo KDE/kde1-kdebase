@@ -249,7 +249,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	warning(klocale->translate("ERROR: Malformed URL"));
+        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path()); 
 	return false;
     }
 

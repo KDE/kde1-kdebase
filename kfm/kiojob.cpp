@@ -85,7 +85,7 @@ void KIOJob::mkdir( const char *_url )
     KURL u( _url );
     if ( u.isMalformed() )
     {
-        warning(i18n("ERROR: Malformed URL"));
+        warning(QString(i18n("ERROR: Malformed URL"))+" : %s",u.path());
 	return;
     }
     
