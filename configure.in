@@ -73,8 +73,6 @@ dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl output files
-mkinstalldirs="$(SHELL) `pwd`/mkinstalldirs"
-AC_SUBST(mkinstalldirs)
 AC_SUBST(x_includes)
 AC_SUBST(x_libraries)
 AC_SUBST(topdir)

@@ -76,19 +76,21 @@ ac_qt_includes=$qt_incdir
 qt_libdirs="/usr/lib/qt/lib /usr/local/qt/lib /usr/lib/qt /usr/lib $x_libraries"
 test -n "$QTDIR" && qt_libdirs="$QTDIR/lib $QTDIR $qt_libdirs"
 AC_FIND_FILE(libqt.so libqt.a libqt.sl, $qt_libdirs, qt_libdir)
-ac_qt_ltest "$ac_qt_libraries" = NO; then
+ac_qt_libraries=$qt_libdir
+ 
+if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
   ac_cv_have_qt="have_qt=no"
   ac_qt_notfound=""
   if test "$ac_qt_includes" = NO; then
     if test "$ac_qt_libraries" = NO; then
       ac_qt_notfound="(headers and libraries)";
-    else 
+    else
       ac_qt_notfound="(headers)";
     fi
   else
     ac_qt_notfound="(libraries)";
   fi
-  
+
   AC_MSG_ERROR([QT $ac_qt_notfound not found. Please check your installation! ]);
 else
   ac_cv_have_qt="have_qt=yes \
@@ -117,8 +119,6 @@ else
  all_includes="$all_includes $QT_INCLUDES"
 fi
 
-if test "$qt_libraries" = "$x_libraries"; then
- QT_LDF
 if test "$qt_libraries" = "$x_libraries"; then
  QT_LDFLAGS=""
 else
@@ -244,8 +244,6 @@ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" LD="$LD" RANLIB="$RANLIB" \
 $ac_aux_dir/ltconfig $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
 || AC_MSG_ERROR([libtool configure failed])
 ])
- 
-
 
 # Do all the work for Automake.  This macro actually does too much --
 # some checks are only needed if your package does certain things.

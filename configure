@@ -1771,19 +1771,21 @@ do
   done
 done
 
-ac_qt_ltest "$ac_qt_libraries" = NO; then
+ac_qt_libraries=$qt_libdir
+ 
+if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
   ac_cv_have_qt="have_qt=no"
   ac_qt_notfound=""
   if test "$ac_qt_includes" = NO; then
     if test "$ac_qt_libraries" = NO; then
       ac_qt_notfound="(headers and libraries)";
-    else 
+    else
       ac_qt_notfound="(headers)";
     fi
   else
     ac_qt_notfound="(libraries)";
   fi
-  
+
   { echo "configure: error: QT $ac_qt_notfound not found. Please check your installation! " 1>&2; exit 1; };
 else
   ac_cv_have_qt="have_qt=yes \
@@ -1813,8 +1815,6 @@ else
  all_includes="$all_includes $QT_INCLUDES"
 fi
 
-if test "$qt_libraries" = "$x_libraries"; then
- QT_LDF
 if test "$qt_libraries" = "$x_libraries"; then
  QT_LDFLAGS=""
 else
@@ -2665,8 +2665,6 @@ test "$program_suffix" != NONE &&
 test "$program_transform_name" = "" && program_transform_name="s,x,x,"
 
 
-mkinstalldirs="$(SHELL) `pwd`/mkinstalldirs"
-
 
 
 
@@ -2850,7 +2848,6 @@ s%@KDE_LDFLAGS@%$KDE_LDFLAGS%g
 s%@KDE_INCLUDES@%$KDE_INCLUDES%g
 s%@all_includes@%$all_includes%g
 s%@all_libraries@%$all_libraries%g
-s%@mkinstalldirs@%$mkinstalldirs%g
 s%@x_includes@%$x_includes%g
 s%@x_libraries@%$x_libraries%g
 s%@topdir@%$topdir%g
