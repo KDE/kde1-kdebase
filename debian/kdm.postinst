@@ -5,10 +5,12 @@
 
 set -e
 
+echo -n "Verifying /var/state/kdm dir: ";
 if test /var/state/kdm; then
-  echo "/var/state/kdm directory already exists...not creating.";
+  echo "Exists!";
 else
   mkdir /var/state/kdm > /dev/null 2>&1
+  echo "Created!";
 fi
 
 

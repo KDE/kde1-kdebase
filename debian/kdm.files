@@ -15,3 +15,4 @@ usr/share/icons/kdmconfig.xpm
 usr/share/apps/kdm
 usr/share/apps/kdmconfig
 var/state/kdm
+etc/pam.d/kde

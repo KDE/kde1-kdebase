@@ -1,0 +1,6 @@
+#%PAM-1.0
+
+auth       required	pam_unix_auth.so 
+account    required	pam_unix_acct.so
+password   required	pam_unix_passwd.so shadow 
+session    required	pam_unix_session.so
