@@ -40,12 +40,9 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 
     url = _url;
     post_data = _data;
+    bHTML = _bHTML;
     
-    if ( job )
-	delete job;	
-    job = 0L;
-
-    // We are not shure yet
+    // We are not sure yet
     isDir = FALSE;
     isHTML = FALSE;
     bCheckedMimeType = FALSE;
@@ -54,7 +51,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     f = 0L;
     
     bool isFile = FALSE;
-    // Lets have a look at what we already know about the URL.
+    // Let's have a look at what we already know about the URL.
     if ( _currentURL && _list && strncmp( _currentURL, _url, strlen( _currentURL ) ) == 0L )
     {
 	// Get the current directory
@@ -76,16 +73,37 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     // return.
     if ( _list )
 	_list->clear();
-    
+
+    openFileOrDir(_reload, isFile);
+    return true;
+}
+
+void KFMJob::openFileOrDir(bool _reload, bool _isFile)
+{
     // Can we get a directory listing with the protocol or do we know that it is a file ?
     // Or does KIOServer know that it is a file
-    if ( KIOServer::getKIOServer()->supports( _url, KIO_List ) && !isFile && KIOServer::isDir( _url ) != 0 )
-    {
-	if ( url.right( 1 ) != "/" && u.hasPath() )
-	    url += "/"; 
+    if ( KIOServer::getKIOServer()->supports( url, KIO_List ) && !_isFile &&
+         KIOServer::isDir( url ) != 0 ) {
 
-	// Lets try to load it as directory
+        openDir(_reload);
+    }
+    else
+	openFile(_reload);
+    
+}
+
+void KFMJob::openDir(bool _reload)
+{
+	// Let's try to load it as directory
 	bFileLoad = FALSE;
+        if ( job )
+            delete job;	
+        job = 0L;
+
+        KURL u( url );
+ 	if ( url.right( 1 ) != "/" && u.hasPath() )
+	    url += "/";
+
 	job = new KIOJob;
 	job->setAutoDelete( FALSE );
 	job->display( false );
@@ -99,17 +117,16 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
 
 	// If we get HTML, then slotDirHTMLData will receive the HTML code.
-	job->list( url, _reload, _bHTML );
-    }
-    else
-	openFile(_reload);
-    
-    return true;
+	job->list( url, _reload, bHTML );
 }
 
 void KFMJob::openFile(bool _reload)
 {
+    bFileLoad = TRUE;
     isDir = FALSE;
+    if ( job )
+	delete job;	
+    job = 0L;
     
     // OK, we try to load the file
     job = new KIOJob;
@@ -129,8 +146,6 @@ void KFMJob::openFile(bool _reload)
     if ( url.left(4) == "file" && url.right(1) == "/" && url.right(2) != ":/" )
 	url = url.left( url.length() - 1 );
     
-    bFileLoad = TRUE;
-
     if (!cookiejar)
     {
         printf("Making cookiejar....\n");
@@ -148,7 +163,7 @@ void KFMJob::slotRedirection( const char *_url )
 {
     url = _url;
     emit redirection( _url );
-    openFile( false);
+    openFileOrDir(false);
 }
 
 void KFMJob::slotCookie( const char *_url, const char *_cookie_str )
