@@ -1,0 +1,9 @@
+22.10.97, Torben
+
+ - Added Henner's URL completion mode
+ - Applied patch to kfmman's word wrap function ( Thanks to Paul Kendal )
+ - Changed behaviour of "File->Run"
+ - Added IconLoader to "class KFM", patches KfmProperties to work with this class
+ - Added Henners patch for properties dialog. Permissions are now a joy to change :-)
+ - Removed seg faulting when clicking on URL links on the desktop
+ - Applied patch to make kfm compile on ALPHAS smoothly
