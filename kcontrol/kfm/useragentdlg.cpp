@@ -150,7 +150,7 @@ void UserAgentOptions::loadSettings()
         }
   // if there was no entry at all, we set at least a default
   if( entries == 0 )
-        strlist.append( DEFAULT_USERAGENT_STRING );
+        strlist.append( QString("*:"+DEFAULT_USERAGENT_STRING) );
   bindingsLB->clear();
   bindingsLB->insertStrList( &strlist );
 }
@@ -158,7 +158,8 @@ void UserAgentOptions::loadSettings()
 void UserAgentOptions::defaultSettings()
 {
   bindingsLB->clear();
-  bindingsLB->insertItem( DEFAULT_USERAGENT_STRING );
+  bindingsLB->insertItem( QString("*:"+DEFAULT_USERAGENT_STRING) );
+  bindingsLB->update();
 }
 
 void UserAgentOptions::applySettings()
