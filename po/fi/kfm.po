@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-01-16 22:07+0100\n"
+"POT-Creation-Date: 1998-01-17 11:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,8 +212,8 @@ msgstr "Ikonin lataus epäonnistui\n"
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
 #: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
 #: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1482 krenamewin.cpp:104
-#: root.cpp:965 root.cpp:983 root.cpp:989 root.cpp:995 root.cpp:1066
-#: root.cpp:1451 root.cpp:1476
+#: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
+#: root.cpp:1452 root.cpp:1477
 msgid "KFM Error"
 msgstr "KFM VIRHE"
 
@@ -235,7 +235,7 @@ msgstr "Uusi "
 
 #: kfmgui.cpp:1012 kfmgui.cpp:1172 kfmjob.cpp:32 kfmman.cpp:190
 #: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:339 kfmview.cpp:462
-#: kiojob.cpp:70 root.cpp:984
+#: kiojob.cpp:70 root.cpp:985
 msgid "ERROR: Malformed URL"
 msgstr "VIRHE: Virheellinen URL."
 
@@ -286,11 +286,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "Pudotit tiedoston itsensä päälle"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
-#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1025
+#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1026
 msgid "KFM Warning"
 msgstr "KFM varoitus"
 
-#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1026
+#: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1027
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -300,11 +300,11 @@ msgstr ""
 "\n"
 "Niitä ei pysty tuhoamisen jälkeen palauttamaan."
 
-#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:990
+#: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
 msgid "ERROR: You dropped a URL over itself"
 msgstr "VIRHE: Pudotit URL:n itsensä päälle"
 
-#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:996
+#: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:997
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VIRHE: Pudotit hakemiston sen alihakemiston päälle"
 
@@ -312,15 +312,15 @@ msgstr "VIRHE: Pudotit hakemiston sen alihakemiston päälle"
 msgid "Open With:"
 msgstr "Avaa sovelluksessa:"
 
-#: kfmview.cpp:384 root.cpp:938
+#: kfmview.cpp:384 root.cpp:939
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "VIRHE: Ominaisuuksia ei voi avata usealle tiedostolle."
 
-#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1067
+#: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
 msgid "Could not access Trash Bin"
 msgstr "Roskakoria ei voitu käsitellä."
 
-#: kfmview.cpp:444 root.cpp:966
+#: kfmview.cpp:444 root.cpp:967
 msgid "Can not paste into multiple directories"
 msgstr "Liittäminen ei ole mahdollista useaan hakemistoon."
 
@@ -835,15 +835,15 @@ msgstr "Sisäinen virhe: desktopDir on virheellinen"
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "VIRHE: Työpöytähakemistoa '%s' ei voitu lukea."
 
-#: root.cpp:779
+#: root.cpp:780
 msgid "ERROR: Can not accept drop"
 msgstr "VIRHE: Pudotusta ei voida hyväksyä."
 
-#: kfmman.cpp:1039 root.cpp:1452
+#: kfmman.cpp:1039 root.cpp:1453
 msgid "Dont know what to do."
 msgstr "En tiedä mitä tehdä."
 
-#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1477
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1478
 msgid "Dont know what to do"
 msgstr "En tiedä mitä tehdä"
 
