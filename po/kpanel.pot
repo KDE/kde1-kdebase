@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-msgid "Move"
+msgid "&Move"
+msgstr ""
+
+#: kpanel.C:276
+msgid "&Properties"
 msgstr ""
 
 #: kpanel.C:313

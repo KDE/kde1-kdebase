@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KONSOLE\n"
-"POT-Creation-Date: 1998-11-04 01:15+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,118 +14,123 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:190
+#: main.C:201
 msgid "&Normal"
 msgstr "&Normaali"
 
-#: main.C:193
+#: main.C:204
 msgid "&Small"
 msgstr "&Pieni"
 
-#: main.C:194
+#: main.C:205
 msgid "&Medium"
 msgstr "&Keskikokoinen"
 
-#: main.C:195
+#: main.C:206
 msgid "&Large"
 msgstr "&Suuri"
 
-#: main.C:196
+#: main.C:207
 msgid "&Huge"
 msgstr "&Valtava"
 
-#: main.C:199
+#: main.C:209
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:203
+#: main.C:210
+#, fuzzy
+msgid "Linux (small)"
+msgstr "40x15 (&pieni)"
+
+#: main.C:213
 msgid "&More ..."
 msgstr "&Lisää..."
 
-#: main.C:209
+#: main.C:219
 msgid "&Hide"
 msgstr "&Piilota"
 
-#: main.C:210
+#: main.C:220
 msgid "&Left"
 msgstr "&Vasen"
 
-#: main.C:211
+#: main.C:221
 msgid "&Right"
 msgstr "&Oikea"
 
-#: main.C:217
+#: main.C:227
 msgid "40x15 (&small)"
 msgstr "40x15 (&pieni)"
 
-#: main.C:218
+#: main.C:228
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:219
+#: main.C:229
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:220
+#: main.C:230
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:221
+#: main.C:231
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:230
+#: main.C:240
 msgid "&Menubar"
 msgstr "&Valikkorivi"
 
-#: main.C:232
+#: main.C:242
 msgid "&Frame"
 msgstr "&Kehys"
 
-#: main.C:234
+#: main.C:244
 msgid "Scroll&bar"
 msgstr "&Vierityspalkki"
 
-#: main.C:236
+#: main.C:246
 msgid "BS sends &DEL"
 msgstr "BS lähettää &DEL"
 
-#: main.C:239
+#: main.C:249
 msgid "&Font"
 msgstr "&Kirjasin"
 
-#: main.C:240
+#: main.C:250
 msgid "&Size"
 msgstr "K&oko"
 
-#: main.C:241
+#: main.C:251
 msgid "&Schema"
 msgstr "&Värimalli"
 
-#: main.C:243
+#: main.C:253
 msgid "&Save options"
 msgstr "&Tallenna asetukset"
 
-#: main.C:247
+#: main.C:257
 msgid "&About ..."
 msgstr "&Tietoja ..."
 
-#: main.C:248
+#: main.C:258
 msgid "&User's Manual ..."
 msgstr "&Käyttöohje ..."
 
-#: main.C:249
+#: main.C:259
 msgid "&Technical Reference ..."
 msgstr "Tekninen &referenssi ..."
 
-#: main.C:260
+#: main.C:270
 msgid "New"
 msgstr "Uusi"
 
-#: main.C:261
+#: main.C:271
 msgid "Sessions"
 msgstr "Sessiot"
 
-#: main.C:909
+#: main.C:787
 msgid "Welcome to the console"
 msgstr "Tervetuloa konsoliin"

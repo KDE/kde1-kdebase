@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/konsole\n"
-"POT-Creation-Date: 1998-11-04 01:15+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-06-10 00:50+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -13,118 +13,123 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:190
+#: main.C:201
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:193
+#: main.C:204
 msgid "&Small"
 msgstr "&Liten"
 
-#: main.C:194
+#: main.C:205
 msgid "&Medium"
 msgstr "&Middels"
 
-#: main.C:195
+#: main.C:206
 msgid "&Large"
 msgstr "&Stor"
 
-#: main.C:196
+#: main.C:207
 msgid "&Huge"
 msgstr "&Kjempemessig"
 
-#: main.C:199
+#: main.C:209
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:203
+#: main.C:210
+#, fuzzy
+msgid "Linux (small)"
+msgstr "40x15 (&liten)"
+
+#: main.C:213
 msgid "&More ..."
 msgstr "&Mer ..."
 
-#: main.C:209
+#: main.C:219
 msgid "&Hide"
 msgstr "&Skjul"
 
-#: main.C:210
+#: main.C:220
 msgid "&Left"
 msgstr "&Venstre"
 
-#: main.C:211
+#: main.C:221
 msgid "&Right"
 msgstr "&Høyre"
 
-#: main.C:217
+#: main.C:227
 msgid "40x15 (&small)"
 msgstr "40x15 (&liten)"
 
-#: main.C:218
+#: main.C:228
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:219
+#: main.C:229
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:220
+#: main.C:230
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:221
+#: main.C:231
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:230
+#: main.C:240
 msgid "&Menubar"
 msgstr "&Menylinje"
 
-#: main.C:232
+#: main.C:242
 msgid "&Frame"
 msgstr "&Ramme"
 
-#: main.C:234
+#: main.C:244
 msgid "Scroll&bar"
 msgstr "&Rullelinje"
 
-#: main.C:236
+#: main.C:246
 msgid "BS sends &DEL"
 msgstr "BS sender &DEL"
 
-#: main.C:239
+#: main.C:249
 msgid "&Font"
 msgstr "&Skrifttype"
 
-#: main.C:240
+#: main.C:250
 msgid "&Size"
 msgstr "&Størrelse"
 
-#: main.C:241
+#: main.C:251
 msgid "&Schema"
 msgstr "&Schema"
 
-#: main.C:243
+#: main.C:253
 msgid "&Save options"
 msgstr "&Lagre valg"
 
-#: main.C:247
+#: main.C:257
 msgid "&About ..."
 msgstr "&Om ..."
 
-#: main.C:248
+#: main.C:258
 msgid "&User's Manual ..."
 msgstr "&Brukermanual ..."
 
-#: main.C:249
+#: main.C:259
 msgid "&Technical Reference ..."
 msgstr "&Teknisk referanse ..."
 
-#: main.C:260
+#: main.C:270
 msgid "New"
 msgstr "Ny"
 
-#: main.C:261
+#: main.C:271
 msgid "Sessions"
 msgstr "Sesjoner"
 
-#: main.C:909
+#: main.C:787
 msgid "Welcome to the console"
 msgstr "Velkommen til konsollet"

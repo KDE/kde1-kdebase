@@ -3,13 +3,17 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
 #: kpanel.C:273
-msgid "Move"
+msgid "&Move"
+msgstr ""
+
+#: kpanel.C:276
+msgid "&Properties"
 msgstr ""
 
 #: kpanel.C:313

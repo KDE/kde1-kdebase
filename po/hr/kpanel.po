@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,8 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Premjesti"
+
+#: kpanel.C:276
+msgid "&Properties"
+msgstr ""
 
 #: kpanel.C:313
 msgid "Go!"

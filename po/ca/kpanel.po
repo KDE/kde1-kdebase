@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-05-20 23:55\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN  <LL@li.org>\n"
@@ -14,8 +14,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Moure"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "Propietats"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -158,6 +164,3 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "Propietats"

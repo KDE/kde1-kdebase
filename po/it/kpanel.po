@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -10,8 +10,14 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Sposta"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "Proprietà"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -154,6 +160,3 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "Proprietà"

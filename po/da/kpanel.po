@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,8 +14,14 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Flyt"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "Indstillinger"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -164,9 +170,6 @@ msgstr ""
 
 #~ msgid "Creating directory:\n"
 #~ msgstr "Opretter folder:\n"
-
-#~ msgid "Properties"
-#~ msgstr "Indstillinger"
 
 #~ msgid "Location"
 #~ msgstr "Placering"

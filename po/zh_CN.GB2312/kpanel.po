@@ -1,14 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "移动"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "特性"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -151,6 +157,3 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "特性"

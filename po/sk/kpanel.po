@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -14,8 +14,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Presunú»"
+
+#: kpanel.C:276
+msgid "&Properties"
+msgstr ""
 
 #: kpanel.C:313
 msgid "Go!"

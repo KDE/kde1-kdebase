@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -14,8 +14,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Flytt"
+
+#: kpanel.C:276
+msgid "&Properties"
+msgstr ""
 
 #: kpanel.C:313
 msgid "Go!"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -14,8 +14,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Déplacer"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "Propriétés"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -159,9 +165,6 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "Propriétés"
 
 #~ msgid "Location"
 #~ msgstr "Emplacement"

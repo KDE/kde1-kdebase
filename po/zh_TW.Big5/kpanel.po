@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-04-20 23:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,8 +15,14 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "移動"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "內容"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -159,6 +165,3 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "內容"

@@ -5,125 +5,130 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-04 01:15+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "Last-Translator: Lars Doelle\n"
 
-#: main.C:190
+#: main.C:201
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:193
+#: main.C:204
 msgid "&Small"
 msgstr "&Klein"
 
-#: main.C:194
+#: main.C:205
 msgid "&Medium"
 msgstr "&Mittel"
 
-#: main.C:195
+#: main.C:206
 msgid "&Large"
 msgstr "&Gross"
 
-#: main.C:196
+#: main.C:207
 msgid "&Huge"
 msgstr "&Riesig"
 
-#: main.C:199
+#: main.C:209
 msgid "&Linux"
 msgstr ""
 
-#: main.C:203
+#: main.C:210
+#, fuzzy
+msgid "Linux (small)"
+msgstr "40x15 (&klein)"
+
+#: main.C:213
 msgid "&More ..."
 msgstr "&Mehr ..."
 
-#: main.C:209
+#: main.C:219
 msgid "&Hide"
 msgstr "&aus"
 
-#: main.C:210
+#: main.C:220
 msgid "&Left"
 msgstr "&links"
 
-#: main.C:211
+#: main.C:221
 msgid "&Right"
 msgstr "&rechts"
 
-#: main.C:217
+#: main.C:227
 msgid "40x15 (&small)"
 msgstr "40x15 (&klein)"
 
-#: main.C:218
+#: main.C:228
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:219
+#: main.C:229
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:220
+#: main.C:230
 #, fuzzy
 msgid "80x40 (&xterm)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:221
+#: main.C:231
 #, fuzzy
 msgid "80x52 (ibmv&ga)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:230
+#: main.C:240
 msgid "&Menubar"
 msgstr "&Menuleiste"
 
-#: main.C:232
+#: main.C:242
 msgid "&Frame"
 msgstr "&Rahmen"
 
-#: main.C:234
+#: main.C:244
 msgid "Scroll&bar"
 msgstr "&Roll&balken"
 
-#: main.C:236
+#: main.C:246
 msgid "BS sends &DEL"
 msgstr "BS sendet &DEL"
 
-#: main.C:239
+#: main.C:249
 msgid "&Font"
 msgstr "Zeichensatz"
 
-#: main.C:240
+#: main.C:250
 msgid "&Size"
 msgstr "&Groesse"
 
-#: main.C:241
+#: main.C:251
 #, fuzzy
 msgid "&Schema"
 msgstr "&Klein"
 
-#: main.C:243
+#: main.C:253
 msgid "&Save options"
 msgstr "&Einstellungen sichern"
 
-#: main.C:247
+#: main.C:257
 msgid "&About ..."
 msgstr "&Ueber ..."
 
-#: main.C:248
+#: main.C:258
 msgid "&User's Manual ..."
 msgstr "Ben&utzer-Handbuch ..."
 
-#: main.C:249
+#: main.C:259
 msgid "&Technical Reference ..."
 msgstr "&Technische Referenz ..."
 
-#: main.C:260
+#: main.C:270
 msgid "New"
 msgstr ""
 
-#: main.C:261
+#: main.C:271
 msgid "Sessions"
 msgstr ""
 
-#: main.C:909
+#: main.C:787
 msgid "Welcome to the console"
 msgstr "Willkommen an der Konsole"
 

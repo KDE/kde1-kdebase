@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 1.0pre2\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -15,7 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: kpanel.C:273
-msgid "Move"
+msgid "&Move"
+msgstr ""
+
+#: kpanel.C:276
+msgid "&Properties"
 msgstr ""
 
 #: kpanel.C:313

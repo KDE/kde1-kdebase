@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,8 +15,14 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:273
-msgid "Move"
+#, fuzzy
+msgid "&Move"
 msgstr "Verplaatsen"
+
+#: kpanel.C:276
+#, fuzzy
+msgid "&Properties"
+msgstr "Eigenschappen"
 
 #: kpanel.C:313
 msgid "Go!"
@@ -159,9 +165,6 @@ msgstr ""
 #: pfilemenu.C:740
 msgid "Options..."
 msgstr ""
-
-#~ msgid "Properties"
-#~ msgstr "Eigenschappen"
 
 #~ msgid "Location"
 #~ msgstr "Plaats"

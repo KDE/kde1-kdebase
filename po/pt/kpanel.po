@@ -1,12 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: kpanel.C:273
-msgid "Move"
+msgid "&Move"
+msgstr ""
+
+#: kpanel.C:276
+msgid "&Properties"
 msgstr ""
 
 #: kpanel.C:313

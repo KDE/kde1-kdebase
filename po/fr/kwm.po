@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-07 01:24+0100\n"
 "PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -113,15 +113,15 @@ msgstr "Huitième"
 msgid "Unnamed Desktop"
 msgstr "Bureau sans nom"
 
-#: main.C:926
+#: main.C:939
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: ShapeMode désactivé\n"
 
-#: main.C:1038
+#: main.C:1051
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides: GimmickMode désactivé\n"
 
-#: main.C:1363
+#: main.C:1376
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 
