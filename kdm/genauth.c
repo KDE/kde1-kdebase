@@ -49,6 +49,10 @@ extern Time_t time ();
 #define Time_t time_t
 #endif
 
+#ifndef X_GETTIMEOFDAY
+#define X_GETTIMEOFDAY(t) gettimeofday(t)
+#endif
+
 static unsigned char	key[8];
 
 # define FILE_LIMIT	1024	/* no more than this many buffers */
