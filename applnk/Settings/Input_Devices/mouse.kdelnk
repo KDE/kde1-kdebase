@@ -13,3 +13,4 @@ Name[de]=Maus
 Name[pl]=Mysz
 Name[cs]=My¹
 Init=kcminput -init
+SwallowTitle=Mouse settings

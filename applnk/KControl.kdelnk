@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcontrol
+Icon=kcontrol.xpm
+Type=Application
+MiniIcon=kcontrol.xpm
+DocPath=kcontrol/index.html
+Comment=KDE Control Center
+Comment[de]=KDE Kontrollzentrum
+Name=KDE Control Center
+Name[de]=KDE Kontrollzentrum

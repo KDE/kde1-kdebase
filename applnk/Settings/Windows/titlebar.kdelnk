@@ -11,3 +11,4 @@ Name=Titlebar
 Name[de]=Titelleiste
 Name[pl]=Pasek tytu³owy
 Name[cs]=Titulek
+SwallowTitle=Window titlebar

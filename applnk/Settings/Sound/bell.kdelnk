@@ -13,3 +13,4 @@ Name[de]=Glocke
 Name[pl]=Brzêczyk
 Name[cs]=Zvonek
 Init=kcmbell -init
+SwallowTitle=Bell settings
