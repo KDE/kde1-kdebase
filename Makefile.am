@@ -1,7 +1,7 @@
 ## kdebase/Makefile.am
 ## (C) 1997 Stephan Kulow
 
-SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
+SUBDIRS = kcheckpass kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
 	kmenuedit kaudio kcontrol kappfinder pics applnk doc po  \
 	config kstart kikbd konsole
