@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-02-03 23:49+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -268,10 +268,10 @@ msgstr "No s'ha pogut carregar l'icona\n"
 #: kfmview.cpp:476 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:583
 #: kfmview.cpp:589 kfmview.cpp:714 kfmview.cpp:718 kfmview.cpp:757
 #: kfmview.cpp:784 kfmview.cpp:805 kfmview.cpp:813 kfmview.cpp:821
-#: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
-#: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
-#: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
-#: kiojob.cpp:1482 kiojob.cpp:1490 kiojob.cpp:1725 krenamewin.cpp:124
+#: kiojob.cpp:242 kiojob.cpp:250 kiojob.cpp:257 kiojob.cpp:282 kiojob.cpp:301
+#: kiojob.cpp:312 kiojob.cpp:336 kiojob.cpp:355 kiojob.cpp:572 kiojob.cpp:590
+#: kiojob.cpp:895 kiojob.cpp:908 kiojob.cpp:925 kiojob.cpp:956 kiojob.cpp:1004
+#: kiojob.cpp:1485 kiojob.cpp:1497 kiojob.cpp:1732 krenamewin.cpp:124
 #: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
@@ -327,7 +327,7 @@ msgstr "&Inici"
 
 #: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
-#: kiojob.cpp:88 root.cpp:1247
+#: kiojob.cpp:91 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "ERROR: URL erroni"
 
@@ -360,7 +360,7 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "ERROR: Heu amollat sobre un URL erroni"
 
 #: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
-#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1290
+#: kiojob.cpp:668 kiojob.cpp:1078 krenamewin.cpp:24 root.cpp:1290
 msgid "KFM Warning"
 msgstr "Avís KFM"
 
@@ -960,11 +960,11 @@ msgstr "S'està contactant host "
 msgid "Working ..."
 msgstr "S'està treballant ..."
 
-#: kiojob.cpp:135
+#: kiojob.cpp:138
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "ERROR INTERN: Com a mínim heu d'especificar el dispositiu a muntar"
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1414
+#: kiojob.cpp:241 kiojob.cpp:249 kiojob.cpp:1338 kiojob.cpp:1417
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -973,11 +973,11 @@ msgstr ""
 "URL erroni\n"
 "%s"
 
-#: kiojob.cpp:255
+#: kiojob.cpp:258
 msgid "Can only make links on local file system"
 msgstr "Només puc fer enllaços sobre el sistema de fitxers local"
 
-#: kiojob.cpp:278 kiojob.cpp:297
+#: kiojob.cpp:281 kiojob.cpp:300
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -986,7 +986,7 @@ msgstr ""
 "No s'ha pogut sobreescriure\n"
 "%s"
 
-#: kiojob.cpp:307 kiojob.cpp:332 kiojob.cpp:351
+#: kiojob.cpp:310 kiojob.cpp:335 kiojob.cpp:354
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -995,12 +995,12 @@ msgstr ""
 "No s'ha pogut fer un enllaç simbòlic a\n"
 "%s"
 
-#: kiojob.cpp:387
+#: kiojob.cpp:390
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " ERROR: No s'ha pogut escriure a %s"
 
-#: kiojob.cpp:568 kiojob.cpp:891
+#: kiojob.cpp:571 kiojob.cpp:894
 #, c-format
 msgid ""
 "Could not make symbolic link\n"
@@ -1009,7 +1009,7 @@ msgstr ""
 "No s'ha pogut fer un enllaç simbòlic a\n"
 "%s"
 
-#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1361
+#: kiojob.cpp:589 kiojob.cpp:924 kiojob.cpp:1364
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1018,12 +1018,12 @@ msgstr ""
 "No s'ha pogut crear el directori\n"
 "%s"
 
-#: kiojob.cpp:598 kiojob.cpp:1168
+#: kiojob.cpp:601 kiojob.cpp:1171
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "ERROR: No s'ha pogut accedir al directori '%s'"
 
-#: kiojob.cpp:662
+#: kiojob.cpp:665
 #, c-format
 msgid ""
 "Special file will not be copied\n"
@@ -1032,12 +1032,12 @@ msgstr ""
 "El fitxer especial no es copiarà\n"
 "%s"
 
-#: kiojob.cpp:664
+#: kiojob.cpp:667
 #, c-format
 msgid "%d special files will not be copied."
 msgstr "no es copiaràn %d fitxers especials."
 
-#: kiojob.cpp:669
+#: kiojob.cpp:672
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
@@ -1045,11 +1045,11 @@ msgstr ""
 "Còpia recursiva del fitxer amb subprotocol\n"
 "(per exemple, fitxers tar)"
 
-#: kiojob.cpp:674
+#: kiojob.cpp:677
 msgid "Recurse copying from/to distant locations"
 msgstr "Còpia recursiva de/a localitzacions distants"
 
-#: kiojob.cpp:904
+#: kiojob.cpp:907
 #, fuzzy, c-format
 msgid ""
 "Could not remove symbolic link\n"
@@ -1058,7 +1058,7 @@ msgstr ""
 "No s'ha pogut fer un enllaç simbòlic a\n"
 "%s"
 
-#: kiojob.cpp:952
+#: kiojob.cpp:955
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1067,7 +1067,7 @@ msgstr ""
 "No s'ha pogut accedir al directori\n"
 "%s"
 
-#: kiojob.cpp:1000
+#: kiojob.cpp:1003
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1080,7 +1080,7 @@ msgstr ""
 "a '%s'\n"
 "Potser s'ha denegat l'accés"
 
-#: kiojob.cpp:1072
+#: kiojob.cpp:1075
 #, c-format
 msgid ""
 "Special file will not be moved\n"
@@ -1089,12 +1089,12 @@ msgstr ""
 "El fitxer especial no es mourà\n"
 "%s"
 
-#: kiojob.cpp:1074
+#: kiojob.cpp:1077
 #, c-format
 msgid "%d special files will not be moved."
 msgstr "no es mouran %d fitxers especials."
 
-#: kiojob.cpp:1338 kiojob.cpp:1418
+#: kiojob.cpp:1341 kiojob.cpp:1421
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1105,7 +1105,7 @@ msgstr ""
 "%s\n"
 "Fitxer inexistent o accés denegat"
 
-#: kiojob.cpp:1341
+#: kiojob.cpp:1344
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1116,7 +1116,7 @@ msgstr ""
 "%s\n"
 "Potser s'ha denegat l'accés"
 
-#: kiojob.cpp:1346 kiojob.cpp:1422
+#: kiojob.cpp:1349 kiojob.cpp:1425
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1125,7 +1125,7 @@ msgstr ""
 "No s'ha pogut crear Socket per\n"
 "%s"
 
-#: kiojob.cpp:1349 kiojob.cpp:1426
+#: kiojob.cpp:1352 kiojob.cpp:1429
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1134,7 +1134,7 @@ msgstr ""
 "Host desconegut a\n"
 "%s"
 
-#: kiojob.cpp:1353 kiojob.cpp:1430
+#: kiojob.cpp:1356 kiojob.cpp:1433
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1143,7 +1143,7 @@ msgstr ""
 "No s'ha pogut connectar amb\n"
 "%s"
 
-#: kiojob.cpp:1357 kiojob.cpp:1434
+#: kiojob.cpp:1360 kiojob.cpp:1437
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1154,7 +1154,7 @@ msgstr ""
 "'%s'\n"
 "encara no és implementada."
 
-#: kiojob.cpp:1365
+#: kiojob.cpp:1368
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1163,7 +1163,7 @@ msgstr ""
 "No s'ha pogut llistar el contingut del directori\n"
 "%s"
 
-#: kiojob.cpp:1369
+#: kiojob.cpp:1372
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1174,7 +1174,7 @@ msgstr ""
 "%s\n"
 "No existeix l'URL o s'ha denegat el permís"
 
-#: kiojob.cpp:1373 kiojob.cpp:1439
+#: kiojob.cpp:1376 kiojob.cpp:1442
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1185,7 +1185,7 @@ msgstr ""
 "%s\n"
 "Potser la contrasenya és equivocada"
 
-#: kiojob.cpp:1385
+#: kiojob.cpp:1388
 #, c-format
 msgid ""
 "Tar reported an error\n"
@@ -1194,7 +1194,7 @@ msgstr ""
 "Tar ha informat d'un error\n"
 "%s"
 
-#: kiojob.cpp:1388
+#: kiojob.cpp:1391
 #, c-format
 msgid ""
 "Gzip reported an error for\n"
@@ -1203,11 +1203,11 @@ msgstr ""
 "Gzip ha informat d'un error per\n"
 "%s"
 
-#: kiojob.cpp:1394
+#: kiojob.cpp:1397
 msgid "Operation technically impossible"
 msgstr "L'operació és tècnicament impossible"
 
-#: kiojob.cpp:1397 kiojob.cpp:1410
+#: kiojob.cpp:1400 kiojob.cpp:1413
 #, c-format
 msgid ""
 "File %s\n"
@@ -1216,7 +1216,7 @@ msgstr ""
 "El fitxer %s\n"
 "no existeix"
 
-#: kiojob.cpp:1400
+#: kiojob.cpp:1403
 #, fuzzy, c-format
 msgid ""
 "Could not write\n"
@@ -1227,7 +1227,7 @@ msgstr ""
 "%s\n"
 "Potser s'ha denegat l'accés"
 
-#: kiojob.cpp:1451
+#: kiojob.cpp:1454
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1236,7 +1236,7 @@ msgstr ""
 "Tar ha informat d'un error fatal\n"
 "%s"
 
-#: kiojob.cpp:1455
+#: kiojob.cpp:1458
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1245,7 +1245,7 @@ msgstr ""
 "Gzip ha informat d'un error fatal\n"
 "%s"
 
-#: kiojob.cpp:1459
+#: kiojob.cpp:1462
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1258,7 +1258,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1463
+#: kiojob.cpp:1466
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1271,21 +1271,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1567
+#: kiojob.cpp:1574
 msgid "Making directory"
 msgstr "S'està creant el directori"
 
-#: kiojob.cpp:1683 kiojob.cpp:1744 kiojob.cpp:1793
+#: kiojob.cpp:1690 kiojob.cpp:1751 kiojob.cpp:1800
 #, c-format
 msgid "File %i/%i"
 msgstr "Fitxer %i/%i"
 
-#: kiojob.cpp:1693 kiojob.cpp:1755
+#: kiojob.cpp:1700 kiojob.cpp:1762
 #, c-format
 msgid "to %s"
 msgstr "a %s"
 
-#: kiojob.cpp:1724
+#: kiojob.cpp:1731
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1294,22 +1294,22 @@ msgstr ""
 "No s'ha pogut esborrar el directori\n"
 "%s"
 
-#: kiojob.cpp:1826
+#: kiojob.cpp:1833
 #, c-format
 msgid "Mounting %s ..."
 msgstr "S'està muntant %s ..."
 
-#: kiojob.cpp:1828
+#: kiojob.cpp:1835
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "S'està desmuntant %s ..."
 
-#: kiojob.cpp:1856
+#: kiojob.cpp:1863
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "S'està recuperant el llistat de %s"
 
-#: kiojob.cpp:2095
+#: kiojob.cpp:2104
 msgid "Segmentation fault in io subprocess"
 msgstr "Fallada de segmentació en subprocés E/S"
 

@@ -466,8 +466,8 @@ msgstr ""
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
 msgstr ""
-"Comportement spécial. Chaque classe de fenêtre mémorise sa propre disposition de "
-"clavier"
+"Comportement spécial. Chaque classe de fenêtre mémorise sa propre "
+"disposition de clavier"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -561,4 +561,3 @@ msgstr "&Démarrage"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Clavier International"
-

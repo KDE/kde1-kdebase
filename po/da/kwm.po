@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-02-16 17:28+0200\n"
 "Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Ingen opgaver ***"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-03-12 11:03+0000\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -35,47 +35,47 @@ msgstr "Réinitialisation du système"
 msgid "Restart X Server"
 msgstr "Redémarrer le Serveur X"
 
-#: kgreeter.cpp:222
+#: kgreeter.cpp:232
 msgid "Login:"
 msgstr "Utilisateur :"
 
-#: kgreeter.cpp:234
+#: kgreeter.cpp:244
 msgid "Password:"
 msgstr "Mot de passe :"
 
-#: kgreeter.cpp:259
+#: kgreeter.cpp:269
 msgid "Login failed!"
 msgstr "Mot de passe incorrect !"
 
-#: kgreeter.cpp:265
+#: kgreeter.cpp:275
 msgid "Session Type:"
 msgstr "Session :"
 
-#: kgreeter.cpp:312
+#: kgreeter.cpp:322
 msgid "Go!"
 msgstr "Entrer !"
 
-#: kgreeter.cpp:328
+#: kgreeter.cpp:338
 msgid "Shutdown..."
 msgstr "Arrêter..."
 
-#: kgreeter.cpp:570
+#: kgreeter.cpp:580
 msgid "Logins not available right now."
 msgstr "Connexion impossible maintenant."
 
-#: kgreeter.cpp:611
+#: kgreeter.cpp:621
 msgid "login_getcapstr() failed."
 msgstr "login_getcapstr() a échoué"
 
-#: kgreeter.cpp:665 kgreeter.cpp:692
+#: kgreeter.cpp:675 kgreeter.cpp:702
 msgid "Sorry -- your account has expired."
 msgstr "Désolé -- votre compte est perimé."
 
-#: kgreeter.cpp:670 kgreeter.cpp:697
+#: kgreeter.cpp:680 kgreeter.cpp:707
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Attention : votre compte sera périmé le %s"
 
-#: kgreeter.cpp:724
+#: kgreeter.cpp:734
 msgid "Home directory not available"
 msgstr "Répertoire home non disponible"

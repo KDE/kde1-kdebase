@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.0pre2\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-12-02 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -278,10 +278,10 @@ msgstr "Ne eblis enlegi la piktogramon\n"
 #: kfmview.cpp:476 kfmview.cpp:495 kfmview.cpp:577 kfmview.cpp:583
 #: kfmview.cpp:589 kfmview.cpp:714 kfmview.cpp:718 kfmview.cpp:757
 #: kfmview.cpp:784 kfmview.cpp:805 kfmview.cpp:813 kfmview.cpp:821
-#: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
-#: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
-#: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
-#: kiojob.cpp:1482 kiojob.cpp:1490 kiojob.cpp:1725 krenamewin.cpp:124
+#: kiojob.cpp:242 kiojob.cpp:250 kiojob.cpp:257 kiojob.cpp:282 kiojob.cpp:301
+#: kiojob.cpp:312 kiojob.cpp:336 kiojob.cpp:355 kiojob.cpp:572 kiojob.cpp:590
+#: kiojob.cpp:895 kiojob.cpp:908 kiojob.cpp:925 kiojob.cpp:956 kiojob.cpp:1004
+#: kiojob.cpp:1485 kiojob.cpp:1497 kiojob.cpp:1732 krenamewin.cpp:124
 #: popup.cpp:109 root.cpp:943 root.cpp:1228 root.cpp:1246 root.cpp:1252
 #: root.cpp:1258 root.cpp:1339 root.cpp:1864 root.cpp:1889
 msgid "KFM Error"
@@ -341,7 +341,7 @@ msgstr "Mia hejmo"
 
 #: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
-#: kiojob.cpp:88 root.cpp:1247
+#: kiojob.cpp:91 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "ERARO: Misformita URL"
 
@@ -374,7 +374,7 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "ERARO: Faligo super misformita URL"
 
 #: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
-#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1290
+#: kiojob.cpp:668 kiojob.cpp:1078 krenamewin.cpp:24 root.cpp:1290
 msgid "KFM Warning"
 msgstr "KFM-averto"
 
@@ -970,11 +970,11 @@ msgstr "Kontaktante la komputilon "
 msgid "Working ..."
 msgstr "Agante ..."
 
-#: kiojob.cpp:135
+#: kiojob.cpp:138
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNA ERARO: Vi devas indiki almenaý unu aparaton por munto"
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1414
+#: kiojob.cpp:241 kiojob.cpp:249 kiojob.cpp:1338 kiojob.cpp:1417
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -983,11 +983,11 @@ msgstr ""
 "Misformita URL\n"
 "%s"
 
-#: kiojob.cpp:255
+#: kiojob.cpp:258
 msgid "Can only make links on local file system"
 msgstr "Eblas fari ligojn nur sur la loka dosieraro"
 
-#: kiojob.cpp:278 kiojob.cpp:297
+#: kiojob.cpp:281 kiojob.cpp:300
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -996,7 +996,7 @@ msgstr ""
 "Ne eblis anstataýigi\n"
 "b%s"
 
-#: kiojob.cpp:307 kiojob.cpp:332 kiojob.cpp:351
+#: kiojob.cpp:310 kiojob.cpp:335 kiojob.cpp:354
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -1005,12 +1005,12 @@ msgstr ""
 "Ne eblis krei simbolan ligon al\n"
 "%s"
 
-#: kiojob.cpp:387
+#: kiojob.cpp:390
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " ERARO: Ne eblis skribi al %s"
 
-#: kiojob.cpp:568 kiojob.cpp:891
+#: kiojob.cpp:571 kiojob.cpp:894
 #, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
@@ -1019,7 +1019,7 @@ msgstr ""
 "Ne eblis krei simbolan ligon al\n"
 "%s"
 
-#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1361
+#: kiojob.cpp:589 kiojob.cpp:924 kiojob.cpp:1364
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1028,34 +1028,34 @@ msgstr ""
 "Ne eblis krei dosierujon\n"
 "%s"
 
-#: kiojob.cpp:598 kiojob.cpp:1168
+#: kiojob.cpp:601 kiojob.cpp:1171
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "ERARO: Ne eblis aliri la dosierujon '%s'"
 
-#: kiojob.cpp:662
+#: kiojob.cpp:665
 #, c-format
 msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:664
+#: kiojob.cpp:667
 #, c-format
 msgid "%d special files will not be copied."
 msgstr ""
 
-#: kiojob.cpp:669
+#: kiojob.cpp:672
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
 
-#: kiojob.cpp:674
+#: kiojob.cpp:677
 msgid "Recurse copying from/to distant locations"
 msgstr ""
 
-#: kiojob.cpp:904
+#: kiojob.cpp:907
 #, fuzzy, c-format
 msgid ""
 "Could not remove symbolic link\n"
@@ -1064,7 +1064,7 @@ msgstr ""
 "Ne eblis krei simbolan ligon al\n"
 "%s"
 
-#: kiojob.cpp:952
+#: kiojob.cpp:955
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1073,7 +1073,7 @@ msgstr ""
 "Ne eblis aliri la dosierujon\n"
 "%s"
 
-#: kiojob.cpp:1000
+#: kiojob.cpp:1003
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1086,19 +1086,19 @@ msgstr ""
 "al %s\n"
 "Verþajne aliro estas malpermesita"
 
-#: kiojob.cpp:1072
+#: kiojob.cpp:1075
 #, c-format
 msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1074
+#: kiojob.cpp:1077
 #, c-format
 msgid "%d special files will not be moved."
 msgstr ""
 
-#: kiojob.cpp:1338 kiojob.cpp:1418
+#: kiojob.cpp:1341 kiojob.cpp:1421
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1109,7 +1109,7 @@ msgstr ""
 "%s\n"
 "La dosiero ne ekzistas aý la aliro estas malpermesita"
 
-#: kiojob.cpp:1341
+#: kiojob.cpp:1344
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1120,7 +1120,7 @@ msgstr ""
 "%s\n"
 "Verþajne la aliro estas malpermesita"
 
-#: kiojob.cpp:1346 kiojob.cpp:1422
+#: kiojob.cpp:1349 kiojob.cpp:1425
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1129,7 +1129,7 @@ msgstr ""
 "Ne eblis krei konektilon por\n"
 "%s"
 
-#: kiojob.cpp:1349 kiojob.cpp:1426
+#: kiojob.cpp:1352 kiojob.cpp:1429
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1138,7 +1138,7 @@ msgstr ""
 "Nekonata komputilo en\n"
 "%s"
 
-#: kiojob.cpp:1353 kiojob.cpp:1430
+#: kiojob.cpp:1356 kiojob.cpp:1433
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1147,7 +1147,7 @@ msgstr ""
 "Ne eblis konektiøi al\n"
 "%s"
 
-#: kiojob.cpp:1357 kiojob.cpp:1434
+#: kiojob.cpp:1360 kiojob.cpp:1437
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1158,7 +1158,7 @@ msgstr ""
 "%s\n"
 "estas ankoraý ne realigita."
 
-#: kiojob.cpp:1365
+#: kiojob.cpp:1368
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1167,7 +1167,7 @@ msgstr ""
 "Ne eblis listigi la enhavon de la dosierujo\n"
 "%s"
 
-#: kiojob.cpp:1369
+#: kiojob.cpp:1372
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1178,7 +1178,7 @@ msgstr ""
 "%s\n"
 "URL ne ekzistas aý estas malpermesita"
 
-#: kiojob.cpp:1373 kiojob.cpp:1439
+#: kiojob.cpp:1376 kiojob.cpp:1442
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1189,7 +1189,7 @@ msgstr ""
 "%s\n"
 "Verþajne la pasvorto estas maløusta"
 
-#: kiojob.cpp:1385
+#: kiojob.cpp:1388
 #, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
@@ -1198,7 +1198,7 @@ msgstr ""
 "Tar komunikis eraron\n"
 "%s"
 
-#: kiojob.cpp:1388
+#: kiojob.cpp:1391
 #, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
@@ -1207,11 +1207,11 @@ msgstr ""
 "Gzip komunikis eraron por\n"
 "%s"
 
-#: kiojob.cpp:1394
+#: kiojob.cpp:1397
 msgid "Operation technically impossible"
 msgstr ""
 
-#: kiojob.cpp:1397 kiojob.cpp:1410
+#: kiojob.cpp:1400 kiojob.cpp:1413
 #, c-format
 msgid ""
 "File %s\n"
@@ -1220,7 +1220,7 @@ msgstr ""
 "Dosiero %s\n"
 "ne ekzistas"
 
-#: kiojob.cpp:1400
+#: kiojob.cpp:1403
 #, fuzzy, c-format
 msgid ""
 "Could not write\n"
@@ -1231,7 +1231,7 @@ msgstr ""
 "%s\n"
 "Verþajne la aliro estas malpermesita"
 
-#: kiojob.cpp:1451
+#: kiojob.cpp:1454
 #, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1240,7 +1240,7 @@ msgstr ""
 "Tar komunikis eraron\n"
 "%s"
 
-#: kiojob.cpp:1455
+#: kiojob.cpp:1458
 #, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1249,7 +1249,7 @@ msgstr ""
 "Gzip komunikis eraron\n"
 "%s"
 
-#: kiojob.cpp:1459
+#: kiojob.cpp:1462
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1262,7 +1262,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1463
+#: kiojob.cpp:1466
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1275,21 +1275,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1567
+#: kiojob.cpp:1574
 msgid "Making directory"
 msgstr "Kreante dosierujon"
 
-#: kiojob.cpp:1683 kiojob.cpp:1744 kiojob.cpp:1793
+#: kiojob.cpp:1690 kiojob.cpp:1751 kiojob.cpp:1800
 #, c-format
 msgid "File %i/%i"
 msgstr "Dosiero %i/%i"
 
-#: kiojob.cpp:1693 kiojob.cpp:1755
+#: kiojob.cpp:1700 kiojob.cpp:1762
 #, c-format
 msgid "to %s"
 msgstr "al %s"
 
-#: kiojob.cpp:1724
+#: kiojob.cpp:1731
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1298,22 +1298,22 @@ msgstr ""
 "Ne eblis forigi la dosierujon\n"
 "%s"
 
-#: kiojob.cpp:1826
+#: kiojob.cpp:1833
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Muntante %s ..."
 
-#: kiojob.cpp:1828
+#: kiojob.cpp:1835
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Malmuntante %s ..."
 
-#: kiojob.cpp:1856
+#: kiojob.cpp:1863
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Retrovante listigon de %s"
 
-#: kiojob.cpp:2095
+#: kiojob.cpp:2104
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmenteraro en en/el-iga subprocezo"
 

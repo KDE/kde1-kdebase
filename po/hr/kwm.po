@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -118,7 +118,7 @@ msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Neke pixmape nisu va¾eæe: GimmickMode uga¹en\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Nema Zadaæa ***"
 

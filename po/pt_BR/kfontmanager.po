@@ -162,4 +162,3 @@ msgstr "Negrito"
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr "Normal"
-

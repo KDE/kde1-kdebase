@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: Sat Feb 27 1999 19:07:36+0200\n"
 "Last-Translator: Paul Ionescu <ipaul@romsys.ro>\n"
 "Language-Team: Romanian <ro@li.org>\n"
@@ -36,47 +36,47 @@ msgstr "Închide ºi restarteazã"
 msgid "Restart X Server"
 msgstr "Restarteazã serverul X"
 
-#: kgreeter.cpp:222
+#: kgreeter.cpp:232
 msgid "Login:"
 msgstr "Nume utilizator :"
 
-#: kgreeter.cpp:234
+#: kgreeter.cpp:244
 msgid "Password:"
 msgstr "Parolã:"
 
-#: kgreeter.cpp:259
+#: kgreeter.cpp:269
 msgid "Login failed!"
 msgstr "Autentificare nereuºitã !"
 
-#: kgreeter.cpp:265
+#: kgreeter.cpp:275
 msgid "Session Type:"
 msgstr "Tipul sesiunii :"
 
-#: kgreeter.cpp:312
+#: kgreeter.cpp:322
 msgid "Go!"
 msgstr "Porneºte !"
 
-#: kgreeter.cpp:328
+#: kgreeter.cpp:338
 msgid "Shutdown..."
 msgstr "Închide..."
 
-#: kgreeter.cpp:570
+#: kgreeter.cpp:580
 msgid "Logins not available right now."
 msgstr "Momentan nu se acceptã nici un utilizator."
 
-#: kgreeter.cpp:611
+#: kgreeter.cpp:621
 msgid "login_getcapstr() failed."
 msgstr "A eºuat login_getcapstr() "
 
-#: kgreeter.cpp:665 kgreeter.cpp:692
+#: kgreeter.cpp:675 kgreeter.cpp:702
 msgid "Sorry -- your account has expired."
 msgstr "Din pãcate contul dumneavoastrã a expirat."
 
-#: kgreeter.cpp:670 kgreeter.cpp:697
+#: kgreeter.cpp:680 kgreeter.cpp:707
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "Atenþie: contul dumneavoastrã expirã în %s"
 
-#: kgreeter.cpp:724
+#: kgreeter.cpp:734
 msgid "Home directory not available"
 msgstr "Directorul dumneavoastrã nu este disponibil"

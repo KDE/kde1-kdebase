@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -120,7 +120,7 @@ msgstr "תלטובמ םילמס תרוצת :םייקוח םניא םילמס המכ\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "תלטובמ קימיג תרוצת :םייקוח םניא םילמס המכ\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "***תומישמ ןיא***"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1999-03-27 21:30+MET\n"
 "Last-Translator:Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
@@ -117,7 +117,7 @@ msgstr "Einige Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Einige Pixmaps sind ungültig: Gimmick-Modus ausgeschaltet\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Keine laufenden Programme ***"
 

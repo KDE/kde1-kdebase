@@ -313,36 +313,31 @@ msgstr "删除文件"
 msgid ""
 "You have no permission\n"
 " to delete this file"
-msgstr ""
-"你没有权限删除这个文件"
+msgstr "你没有权限删除这个文件"
 
 #: kfwin.cpp:322
 msgid ""
 "It isn't possible to delete\n"
 "selected file"
-msgstr ""
-"无法删除选中的文件"
+msgstr "无法删除选中的文件"
 
 #: kfwin.cpp:340
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr ""
-"你没有权限删除这个目录"
+msgstr "你没有权限删除这个目录"
 
 #: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
-msgstr ""
-"指定的目录不是空的!"
+msgstr "指定的目录不是空的!"
 
 #: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
-msgstr ""
-"无法删除选定的目录"
+msgstr "无法删除选定的目录"
 
 #: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"

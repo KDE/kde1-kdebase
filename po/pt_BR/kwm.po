@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter<epx@netville.com.br>\n"
 
@@ -113,7 +113,7 @@ msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alguns pixmaps não são válidos: GimmikMode desativado\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 

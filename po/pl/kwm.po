@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm \n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-12-29 22:18+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -114,7 +114,7 @@ msgstr "Niektóre pixmapy s± b³êdne: ShapeMode jest wy³±czony\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektóre pixmapy s± b³êdne: GimmickMode jest wy³±czony\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Brak zadañ ***"
 

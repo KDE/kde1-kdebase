@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-03-31 01:21+0200\n"
 "PO-Revision-Date: 1999-03-31 21:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -452,12 +452,12 @@ msgstr ""
 "\n"
 "由 Emanuel Pirker 移植到 kscreensave."
 
-#: main.cpp:413
+#: main.cpp:417
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "选项%s在这个平台上不支持!"
 
-#: main.cpp:451
+#: main.cpp:459
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -471,11 +471,11 @@ msgstr ""
 "请联络你的系统管理员.\n"
 "告诉他,你需要将这屏幕保护程序suid!"
 
-#: main.cpp:456
+#: main.cpp:464
 msgid "Shadow Passwords"
 msgstr "Shadow口令"
 
-#: main.cpp:506
+#: main.cpp:514
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -487,7 +487,7 @@ msgstr ""
 "请使用klock.\n"
 "\n"
 
-#: main.cpp:624
+#: main.cpp:632
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -496,7 +496,7 @@ msgstr ""
 "用法: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:627
+#: main.cpp:635
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

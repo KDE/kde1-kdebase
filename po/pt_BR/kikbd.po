@@ -79,6 +79,7 @@ msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: impossível alocar memória"
 
 #: keymap.cpp:233
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -90,14 +91,17 @@ msgstr ""
 "Você pode pré-selecionar códigos X na seção 'Avançada.'"
 
 #: keymap.cpp:238
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: símbolo \"%s\" não encontrado"
 
 #: keymap.cpp:246
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: impossível ler keycode \"%s\"."
 
 #: keymap.cpp:252
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: keycode \"%s\" está fora da faixa."
 
@@ -338,7 +342,9 @@ msgstr "Use &hot-list"
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr "Usar somente mapas padrões/últimos ativos quando a seqüência de teclas de chaveamento é usada"
+msgstr ""
+"Usar somente mapas padrões/últimos ativos quando a seqüência de teclas de "
+"chaveamento é usada"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
@@ -442,7 +448,8 @@ msgstr "Comportamento estendido. Mapa de teclado salvo para cada janela"
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Comportamento especial. Mapa de teclado salvo para cada classe de janela"
+msgstr ""
+"Comportamento especial. Mapa de teclado salvo para cada classe de janela"
 
 #: widgets.cpp:561
 msgid "Button Colors"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -122,7 +122,7 @@ msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 

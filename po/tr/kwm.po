@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-03-22 01:16+0100\n"
+"POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -120,7 +120,7 @@ msgstr "Bazi simgeler geçersiz: ShapeMode kullanýlmýyor\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Bazý simgeler geçersiz: GimmickMode kullanýlmýyor\n"
 
-#: main.C:1524
+#: main.C:1531
 msgid "*** No Tasks ***"
 msgstr "*** Görev Yok ***"
 
