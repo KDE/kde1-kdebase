@@ -1,4 +1,10 @@
-* Mon Nov 13 00:05:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
+* Sun Nov 15 15:00:00 CEST 1998 
+
+Updated kpager to the new kbgndwm configure style
+I still have to implement the new kbgndwm draw modes, but the
+old ones already work
+
+* Fri Nov 13 00:05:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 The arrow buttons now move whole desktop view when clicked and
 still scrolls the view when pressed for a while (but faster than before)

@@ -635,7 +635,7 @@ void KPagerClient::paintEvent(QPaintEvent *)
 
 void KPagerClient::commandReceived(QString s)
 {
-    if (strcmp(s.data(),"kbgwm_reconfigure")==0)
+    if (strcmp(s.data(),"kbgwm_change")==0)
     {
         for (int i=1;i<=numberofDesktops;i++)
         {

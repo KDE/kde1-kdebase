@@ -112,6 +112,7 @@ void Desktop::addWindow(Window w,int pos)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -174,6 +175,7 @@ void Desktop::changeWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -201,6 +203,7 @@ void Desktop::raiseWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -230,6 +233,7 @@ void Desktop::lowerWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
+    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -476,13 +480,19 @@ void Desktop::mouseMoveEvent (QMouseEvent *e)
     bool ok;
     WindowProperties *wp=windowAtPosition(&e->pos(),&ok,&dragpos);
     if (wp==0L) return;
-    
+
+    wp->highlighted=true;    
 //    if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
 //        KWM::activateInternal(wp->id);
 
-    printf("%s\n",wp->name.data());
+//    printf("%s\n",wp->name.data());
 }
-
+/*
+void Desktop::mouseReleaseEvent (QMouseEvent *e)
+{
+    printf("release\n");
+}
+*/
 void Desktop::mousePressEvent (QMouseEvent *e)
 {
 #if QT_VERSION >= 141
@@ -557,10 +567,27 @@ void Desktop::mouseDoubleClickEvent( QMouseEvent *)
 
 void Desktop::readBackgroundSettings(void)
 {
-    KConfig config(KApplication::kde_configdir() + "/kdisplayrc",
+    KConfig configglobal(KApplication::kde_configdir() + "/kdisplayrc",
                    KApplication::localconfigdir() + "/kdisplayrc");
+    configglobal.setGroup("Desktop Common");
+    char s[50];
+    if (configglobal.readBoolEntry("OneDesktopMode"))
+    {
+        sprintf(s,"/desktop%drc",configglobal.readNumEntry("DeskNum",0));
+    }
+    else
+    {
+        sprintf(s,"/desktop%drc",id-1);
+    };
+
+    KConfig config(KApplication::kde_configdir() + s,
+                   KApplication::localconfigdir() + s);
+
+    config.setGroup( "Common" );
+    int randomid=config.readNumEntry("Item");    
+
     char group[50];
-    sprintf(group,"Desktop%d",id);
+    sprintf(group,"Desktop%d",randomid);
     
     config.setGroup ( group );
 
@@ -634,41 +661,6 @@ void Desktop::readBackgroundSettings(void)
         printf("[%d]Use wallpaper\n",id);
 #endif
     }
-/*
-    if ((!useWallpaper)||(wallpaper.isEmpty()))
-    {
-        switch (gfMode)
-        {
-        case Gradient:
-            {
-                int numColors=4;
-                if (QColor::numBitPlanes() > 8)
-                    numColors=16;
-                KPixmap *kbigBackgroundPixmap = new KPixmap;
-                kbigBackgroundPixmap->resize(width(),height());
-                kbigBackgroundPixmap->gradientFill(color2,color1,(orMode==Portrait)?true:false,numColors);
-                backgroundPixmap=new QPixmap;
-                *backgroundPixmap=*kbigBackgroundPixmap;
-                delete kbigBackgroundPixmap;
-                useBackgroundInfoFromKbgndwm=true;
-#ifdef DESKTOPDEBUG
-                printf("[%d]Use background\n",id);
-#endif
-            } break;
-        case Flat:
-            {
-                if (backgroundPixmap==0L)
-                {
-                    backgroundPixmap=new QPixmap;
-                    backgroundPixmap->resize(width(),height()-getHeaderHeight());
-                }
-                backgroundPixmap->fill(color1);
-                useBackgroundInfoFromKbgndwm=true;
-            } break;
-            
-        }
-        };
-        */
 };
 
 QPixmap *Desktop::loadWallpaper(QString wallpaper)
