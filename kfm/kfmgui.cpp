@@ -63,6 +63,9 @@ QList<QPixmap> KfmGui::animatedLogo;
 KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     : KTopLevelWidget( name )
 {
+    toolbarButtons = 0L;
+    toolbarURL = 0L;
+    
     // Timer used for animated logo
     animatedLogoTimer = new QTimer( this );
     animatedLogoCounter = 0;
@@ -110,6 +113,54 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
       bViewHTML = true;
     else
       bViewHTML = false;
+
+    entry = config->readEntry("Toolbar", "top");
+    showToolbar = true;
+    if ( entry == "top" )
+	toolbarPos = KToolBar::Top;
+    else if ( entry == "left" )
+	toolbarPos = KToolBar::Left;
+    else if ( entry == "right" )
+	toolbarPos = KToolBar::Right;    
+    else if ( entry == "bottom" )
+	toolbarPos = KToolBar::Bottom;    
+    else if ( entry == "floating" )
+	toolbarPos = KToolBar::Floating;    
+    else
+	showToolbar = false;
+
+    entry = config->readEntry("LocationBar", "top");
+    showLocationBar = true;
+    if ( entry == "top" )
+	locationBarPos = KToolBar::Top;
+    else if ( entry == "bottom" )
+	locationBarPos = KToolBar::Bottom;    
+    else if ( entry == "floating" )
+	locationBarPos = KToolBar::Floating;    
+    else
+	showLocationBar = false;
+
+    entry = config->readEntry("Menubar", "top");
+    showMenubar = true;
+    if ( entry == "top" )
+	menubarPos = KMenuBar::Top;
+    else if ( entry == "bottom" )
+	menubarPos = KMenuBar::Bottom;    
+    else if ( entry == "floating" )
+	menubarPos = KMenuBar::Floating;    
+    else
+	showMenubar = false;
+
+    entry = config->readEntry("Statusbar", "top");
+    showStatusbar = true;
+    if ( entry == "top" )
+	statusbarPos = KStatusBar::Top;
+    else if ( entry == "bottom" )
+	statusbarPos = KStatusBar::Bottom;    
+    else if ( entry == "floating" )
+	statusbarPos = KStatusBar::Floating;    
+    else
+	showStatusbar = false;
 
     initGUI();
 
@@ -195,6 +246,8 @@ void KfmGui::initStatusBar()
     
     statusBar->show();
     setStatusBar( statusBar );
+    if ( !showStatusbar )
+	statusBar->enable( KStatusBar::Hide );
 }
 
 void KfmGui::initMenu()
@@ -289,9 +342,6 @@ void KfmGui::initMenu()
 		       this, SLOT(slotTextView()) );
     mview->insertItem( klocale->translate("&Long View"),
 		       this, SLOT(slotLongView()) );
-    mview->insertSeparator();
-    mview->insertItem( klocale->translate("&Save Settings"),
-		       this, SLOT(slotSaveSettings()) );
     /* mview->insertSeparator();
     mview->insertItem( klocale->translate("Split &window"),
 		       this, SLOT(slotSplitWindow()) ); */
@@ -303,11 +353,33 @@ void KfmGui::initMenu()
     mview->insertSeparator();
     mview->insertItem( klocale->translate("&View Frame Source"),
 		       this, SLOT(slotViewFrameSource()) );
+    mview->insertItem( klocale->translate("View Docu&ment Source"),
+		       this, SLOT(slotViewDocumentSource()) );
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
     mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML );
+
+    moptions = new QPopupMenu;
+    CHECK_PTR( moptions );
+    moptions->setCheckable(true);
+    moptions->insertItem( klocale->translate("Show &Menubar"),
+			  this, SLOT(slotShowMenubar()) );
+    moptions->insertItem( klocale->translate("Show &Statusbar"),
+			  this, SLOT(slotShowStatusbar()) );
+    moptions->insertItem( klocale->translate("Show &Toolbar"),
+			  this, SLOT(slotShowToolbar()) );
+    moptions->insertItem( klocale->translate("Show &Location bar"),
+			  this, SLOT(slotShowLocationBar()) );
+    moptions->insertSeparator();
+    moptions->insertItem( klocale->translate("Sa&ve Settings"),
+			  this, SLOT(slotSaveSettings()) );
+
+    moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
+    moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );
+    moptions->setItemChecked( moptions->idAt( 2 ), showToolbar );
+    moptions->setItemChecked( moptions->idAt( 3 ), showLocationBar );
 
     switch (viewMode) 
       {
@@ -353,6 +425,7 @@ void KfmGui::initMenu()
     menu->insertItem( klocale->translate("&View"), mview );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
     menu->insertItem( klocale->translate("&Tool"), tool );
+    menu->insertItem( klocale->translate("&Options"), moptions );
     menu->insertSeparator();
     menu->insertItem( klocale->translate("&Help"), help );
     menu->show();
@@ -362,64 +435,64 @@ void KfmGui::initMenu()
 
 void KfmGui::enableToolbarButton( int id, bool enable )
 {
-    if ( toolbar == 0L )
+    if ( toolbarButtons == 0L )
 	return;
     
-    toolbar->setItemEnabled( id, enable );
+    toolbarButtons->setItemEnabled( id, enable );
 }
 
 void KfmGui::initToolBar()
 {
     QString file, path;
     QPixmap pixmap;
-    toolbar = new KToolBar(this, "kfmwin-toolbar");
+    toolbarButtons = new KToolBar(this, "kfmwin-toolbar");
     path = kapp->kdedir() + "/share/toolbar/";
     
     pixmap.load(path + "back.xpm");
-    toolbar->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 0, SIGNAL( clicked() ), view, 
 			  SLOT( slotBack() ), false, 
 			  klocale->translate("Back"));
     
     pixmap.load(path + "forward.xpm");
-    toolbar->insertButton(pixmap, 1, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 1, SIGNAL( clicked() ), view, 
 			  SLOT( slotForward() ), false, 
 			  klocale->translate("Forward"));
     
     pixmap.load(path + "home.xpm");
-    toolbar->insertButton(pixmap, 2, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 2, SIGNAL( clicked() ), this, 
 			  SLOT( slotHome() ), true, 
 			  klocale->translate("Home") );
     
-    toolbar->insertSeparator();
+    toolbarButtons->insertSeparator();
     
     pixmap.load(path + "reload.xpm");
-    toolbar->insertButton(pixmap, 3, SIGNAL( clicked() ), view, 
+    toolbarButtons->insertButton(pixmap, 3, SIGNAL( clicked() ), view, 
 			  SLOT( slotReload() ), true, 
 			  klocale->translate("Reload") );
 
-    toolbar->insertSeparator();
+    toolbarButtons->insertSeparator();
     
     pixmap.load(path + "editcopy.xpm");
-    toolbar->insertButton(pixmap, 4, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 4, SIGNAL( clicked() ), this, 
 			  SLOT( slotCopy() ), true, 
 			  klocale->translate("Copy") );
     
     pixmap.load(path + "editpaste.xpm");
-    toolbar->insertButton(pixmap, 5, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 5, SIGNAL( clicked() ), this, 
 			  SLOT( slotPaste() ), true, 
 			  klocale->translate("Paste") );
     
-    toolbar->insertSeparator();
+    toolbarButtons->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbar->insertButton(pixmap, 6, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 6, SIGNAL( clicked() ), this, 
 			  SLOT( slotHelp() ), true, 
 			  klocale->translate("Help"));
     
-    toolbar->insertSeparator();
+    toolbarButtons->insertSeparator();
     
     pixmap.load(path + "exit.xpm");
-    toolbar->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
 			  SLOT( slotStop() ), false, 
 			  klocale->translate("Stop"));
 
@@ -427,9 +500,9 @@ void KfmGui::initToolBar()
 
     pixmap.load( path + "/kde1.xpm" );
     
-    toolbar->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
+    toolbarButtons->insertButton(pixmap, 8, SIGNAL( clicked() ), this, 
 			  SLOT( slotNewWindow() ), false );
-    toolbar->setItemEnabled( 8, true );
+    toolbarButtons->setItemEnabled( 8, true );
     
     // Load animated logo
     if ( animatedLogo.count() == 0 )
@@ -451,9 +524,22 @@ void KfmGui::initToolBar()
 	}
     }
 	    
-    addToolBar( toolbar );
-    toolbar->setBarPos(KToolBar::Top);
-    toolbar->show();                
+    addToolBar( toolbarButtons );
+    toolbarButtons->setBarPos( toolbarPos );
+    toolbarButtons->show();                
+    if ( !showToolbar )
+	toolbarButtons->enable( KToolBar::Hide );
+
+    toolbarURL = new KToolBar(this, "URL History");
+    toolbarURL->insertLined( "", TOOLBAR_URL_ID,
+			  SIGNAL( returnPressed() ), this, SLOT( slotURLEntered() ) );
+    addToolBar( toolbarURL );
+    toolbarURL->setFullWidth( TRUE );
+    toolbarURL->setItemAutoSized( TOOLBAR_URL_ID, TRUE );
+    toolbarURL->setBarPos( locationBarPos );
+    toolbarURL->show();                
+    if ( !showLocationBar )
+	toolbarURL->enable( KToolBar::Hide );
 }
 
 void KfmGui::initView()
@@ -463,6 +549,7 @@ void KfmGui::initView()
     
     connect( view, SIGNAL( setTitle(const char *)), this, SLOT( slotTitle(const char *)) );
     connect( view, SIGNAL( historyUpdate( bool, bool ) ), this, SLOT( slotUpdateHistory( bool, bool ) ) );
+    connect( view, SIGNAL( newURL( const char * ) ), this, SLOT( slotNewURL( const char * ) ) );
     connect( view, SIGNAL( documentStarted( KHTMLView * ) ), 
 	     this, SLOT( slotAddWaitingWidget( KHTMLView * ) ) );
     connect( view, SIGNAL( documentDone( KHTMLView * ) ), 
@@ -481,6 +568,24 @@ void KfmGui::closeEvent( QCloseEvent *e )
 void KfmGui::updateView()
 {
     view->slotUpdateView();
+}
+
+void KfmGui::slotURLEntered()
+{
+    if ( view->getActiveView() )
+	view->getActiveView()->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+}
+
+void KfmGui::slotNewURL( const char *_url )
+{
+    toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
+    
+    if ( historyList.find( _url ) == -1 )
+	return;
+    
+    historyList.insert( 0, _url );
+    /* toolbarURL->clearCombo( TOOLBAR_URL_ID );
+    toolbarURL->insertComboList( TOOLBAR_URL_ID, &historyList, 0 ); */
 }
 
 void KfmGui::slotRescanBindings()
@@ -772,6 +877,46 @@ void KfmGui::slotNewWindow( )
     f->show();
 }
 
+void KfmGui::slotShowMenubar()
+{
+    showMenubar = !showMenubar;
+    moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
+    // TODO: does not work yet
+}
+
+void KfmGui::slotShowToolbar()
+{
+    showToolbar = !showToolbar;
+    moptions->setItemChecked( moptions->idAt( 2 ), showToolbar );
+    if ( !showToolbar )
+	toolbarButtons->enable( KToolBar::Hide );
+    else
+	toolbarButtons->enable( KToolBar::Show );
+    resizeEvent( 0L );
+}
+
+void KfmGui::slotShowLocationBar()
+{
+    showLocationBar = !showLocationBar;
+    moptions->setItemChecked( moptions->idAt( 3 ), showLocationBar );
+    if ( !showLocationBar )
+	toolbarURL->enable( KToolBar::Hide );
+    else
+	toolbarURL->enable( KToolBar::Show );
+    resizeEvent( 0L );
+}
+
+void KfmGui::slotShowStatusbar()
+{
+    showStatusbar = !showStatusbar;
+    moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );
+    if ( !showStatusbar )
+	statusBar->enable( KStatusBar::Hide );
+    else
+	statusBar->enable( KStatusBar::Show );
+    resizeEvent( 0L );
+}
+
 void KfmGui::slotShowDot()
 {
     showDot = !showDot;
@@ -951,7 +1096,7 @@ void KfmGui::slotAnimatedLogoTimeout()
     animatedLogoCounter++;
     if ( animatedLogoCounter == animatedLogo.count() )
 	animatedLogoCounter = 0;
-    toolbar->setButtonPixmap( 8, *( animatedLogo.at( animatedLogoCounter ) ) );
+    toolbarButtons->setButtonPixmap( 8, *( animatedLogo.at( animatedLogoCounter ) ) );
 }
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
@@ -962,7 +1107,7 @@ void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
     if ( !animatedLogoTimer->isActive() )
     {
 	animatedLogoTimer->start( 50 );
-	toolbar->setItemEnabled( 7, true );
+	toolbarButtons->setItemEnabled( 7, true );
     }
 }
 
@@ -973,8 +1118,8 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
     if ( waitingWidgetList.count() == 0 )
     {
 	animatedLogoTimer->stop();
-	toolbar->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
-	toolbar->setItemEnabled( 7, false );
+	toolbarButtons->setButtonPixmap( 8, *( animatedLogo.at( 0 ) ) );
+	toolbarButtons->setItemEnabled( 7, false );
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
 
@@ -1031,6 +1176,43 @@ void KfmGui::slotSaveSettings()
     entry = "no";
   
   config->writeEntry("HTMLView", entry);
+
+  if ( !showToolbar )
+      config->writeEntry( "Toolbar", "hide" );
+  else if ( toolbarButtons->barPos() == KToolBar::Top )
+      config->writeEntry( "Toolbar", "top" );
+  else if ( toolbarButtons->barPos() == KToolBar::Bottom )
+      config->writeEntry( "Toolbar", "bottom" );
+  else if ( toolbarButtons->barPos() == KToolBar::Left )
+      config->writeEntry( "Toolbar", "left" );
+  else if ( toolbarButtons->barPos() == KToolBar::Right )
+      config->writeEntry( "Toolbar", "right" );
+  else if ( toolbarButtons->barPos() == KToolBar::Floating )
+      config->writeEntry( "Toolbar", "floating" );
+
+  if ( !showLocationBar )
+      config->writeEntry( "LocationBar", "hide" );
+  else if ( toolbarURL->barPos() == KToolBar::Top )
+      config->writeEntry( "LocationBar", "top" );
+  else if ( toolbarURL->barPos() == KToolBar::Bottom )
+      config->writeEntry( "LocationBar", "bottom" );
+  else if ( toolbarURL->barPos() == KToolBar::Floating )
+      config->writeEntry( "LocationBar", "floating" );
+
+  if ( !showStatusbar )
+      config->writeEntry( "Statusbar", "hide" );
+  else
+      config->writeEntry( "Statusbar", "bottom" );
+
+  if ( !showMenubar )
+      config->writeEntry( "Menubar", "hide" );
+  else if ( menu->menuBarPos() == KMenuBar::Top )
+      config->writeEntry( "Menubar", "top" );
+  else if ( menu->menuBarPos() == KMenuBar::Bottom )
+      config->writeEntry( "Menubar", "bottom" );
+  else if ( menu->menuBarPos() == KMenuBar::Floating )
+      config->writeEntry( "Menubar", "floating" );
+
   config->sync();
 }
 
@@ -1044,9 +1226,22 @@ void KfmGui::slotViewFrameSource()
     debugT("RUNNING '%s'\n",cmd.data());
     KMimeBind::runCmd( cmd );
 }
+
+void KfmGui::slotViewDocumentSource()
+{
+    QString cmd;
+    cmd.sprintf("kedit \"%s\"", view->getURL() );
+    debugT("RUNNING '%s'\n",cmd.data());
+    KMimeBind::runCmd( cmd );
+}
     
 KfmGui::~KfmGui()
 {
+    if ( toolbarButtons )
+	delete toolbarButtons;
+    if ( toolbarURL )
+	delete toolbarURL;
+    
     delete view;
     windowList.remove( this );
     // if ( windowList.isEmpty() )   the last window closed?

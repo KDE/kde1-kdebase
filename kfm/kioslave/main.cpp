@@ -217,11 +217,11 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     
     // Look in /etc/fstab ?
     if ( _fstype == 0L || _point == 0L )
-	sprintf( buffer, "mount %s >/tmp/mnt%i\n",_dev, t );
+	sprintf( buffer, "mount %s 2>/tmp/mnt%i",_dev, t );
     else if ( _ro )
-	sprintf( buffer, "mount -rt %s %s %s >/tmp/mnt%i\n",_fstype, _dev, _point, t );
+	sprintf( buffer, "mount -rt %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );
     else
-	sprintf( buffer, "mount -rt %s %s %s >/tmp/mnt%i\n",_fstype, _dev, _point, t );
+	sprintf( buffer, "mount -rt %s %s %s 2>/tmp/mnt%i",_fstype, _dev, _point, t );
 		
     printf("EXEC: '%s'\n",buffer);
     
@@ -230,12 +230,14 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     sprintf( buffer, "/tmp/mnt%i", t );
 
     QString err = testLogFile( buffer );
-    if ( err.isNull() )
+    if ( err.isEmpty() )
     {
+	printf("=================== MOUNT OK\n");
 	ipc->done();
 	return;
     }
 
+    printf("=================== MOUNT FAILED\n");
     ipc->fatalError( KIO_ERROR_CouldNotMount, err.data(), 0 );
     return;
 }
@@ -246,7 +248,7 @@ void KIOSlave::unmount( const char *_point )
 
     int t = (int)time( 0L );
     
-    sprintf( buffer, "umount %s 2>/tmp/mnt%i\n",_point, t );
+    sprintf( buffer, "umount %s 2>/tmp/mnt%i",_point, t );
     system( buffer );
 
     sprintf( buffer, "/tmp/mnt%i", t );
@@ -600,7 +602,10 @@ QString KIOSlave::testLogFile( const char *_filename )
     stat( _filename, &buff );
     int size = buff.st_size;
     if ( size == 0 )
+    {
+	unlink( _filename );
 	return QString();
+    }
     
     QString err = "";
     

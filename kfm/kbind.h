@@ -52,7 +52,7 @@ public:
     KMimeBind( const char *_name, const char *_cmd, bool _allowdefault, const char *_prot1,
 	       const char *_prot2 = 0, const char * _prot3 = 0,
 	       const char* _prot4 = 0, const char * _prot5 = 0 );
-    ~KMimeBind() {}
+    virtual ~KMimeBind() {}
     
     /**
      * @return the programs name
@@ -77,6 +77,11 @@ public:
      * Tests wether this file binding supports the specified protocol.
      */
     bool supportsProtocol( const char *_protocol );
+
+    /**
+     * Uses this binding ( read: application ) to open the document '_url'.
+     */
+    virtual bool runBinding( const char *_url );
 
     /**
      * Register another application.
@@ -112,35 +117,18 @@ public:
      */
     static void clearApplicationList() { appList.clear(); }
 
-    static bool runBinding( const char *_url, KMimeBind *bind );
     /**
-     * Tries to execute the binding named _binding for the file _url.
-     * The default binding is "Open". For example when the user double clicks
-     * on something and you dont know a specific binding, then select "Open".
-     * If you want to pass some URLs to an executable ( for examples documents to open )
-     * then you can pass a list of all URLs in '_args'. This makes sense only with 
-     * executables or *.kdelnk files of the type "Exec".
-     * '_url' may be an executable, a directory, or just a document.
-     * If it is a directory or a document then the '_args' dont matter. If in the other case
-     * '_url' is an executable then '_binding' is not used.
+     * This function tries to find out about the mime type of the URL.
+     * It then searches the matching binding and tells the binding
+     * to open the document. This is used for example if you know the
+     * binding is "KView" and the URL is "file:/tmp/image.gif". This
+     * happens for example if you deal with context sensitive popup menus
+     * like @ref KFMManager does. This is just a very simple
+     * convenience function.
      *
      * @return TRUE if the function knew what to do with the URL
      */
-    static bool runBinding( const char *_url, const char *_binding, QStrList * _args = 0L );
-    /**
-     * Runs the default binding.
-     * If there is only one binding, this one is executed otherwise the default
-     * binding is executed. If there are multiple bindings and none of them is the default
-     * one, the first one is executed. Usually used when the user clicks
-     * on an URL. Files named *.kdelnk are executed, too.
-     * This function only determines the default binding and calls 'runBinding( .., .. )'
-     * to do the real job. If no binding can be found, the binding "Open" is given a try.
-     * Note that this function does NOT execute bindings which are not allowed as
-     * default bindings ( @ref KMimeBind::isAllowedAsDefault ).
-     *
-     * @return TRUE if the function knew what to do with the URL
-     */
-    static bool runBinding( const char *_url );
+    static bool runBinding( const char *_url, const char *_binding );
 
     /**
      * Runs the given command using fork.
@@ -342,6 +330,18 @@ public:
      * @see #bindings
      */
     virtual bool run( const char *_url );
+    
+    /**
+     * Compareable to @ref #run, but we know the name of the binding.
+     */
+    virtual bool runBinding( const char *_url, const char *_binding );
+    
+    /**
+     * This function is overloaded by @ref ExecutableMimeType and
+     * @ref KDELnkMimeType. For usual documents is does not make sense
+     * since they are no applications :-)
+     */
+    virtual bool runAsApplication( const char *_url, QStrList *_arguments );
     
     /**
      * Tells wether bindings are available.
@@ -612,6 +612,15 @@ public:
     KDELnkMimeType( const char *_mime_type, const char *_pixmap ) :
 	KMimeType( _mime_type, _pixmap ) { }
 
+    virtual bool run( const char *_url );
+    
+    /**
+     * Compareable to @ref #run, but we know the name of the binding.
+     */
+    virtual bool runBinding( const char *_url, const char *_binding );
+
+    virtual bool runAsApplication( const char *_url, QStrList *_arguments );
+
     /**
      * WARNING: This function is NOT reentrant. Copy the returned
      * string before calling the function again.
@@ -644,6 +653,35 @@ protected:
      * this variable, this causes the whole stuff to be NOT reentrant.
      */
     QString pixmapFile2;
+};
+
+class ExecutableMimeType : public KMimeType
+{
+public:
+    /**
+     * Create an ExecutableMimeType.
+     */
+    ExecutableMimeType( const char *_mime_type, const char *_pixmap ) :
+	KMimeType( _mime_type, _pixmap ) { }
+
+    virtual bool run( const char *_url );
+    
+    virtual bool runAsApplication( const char *_url, QStrList *_arguments );
+};
+
+class KFMAutoMount : public QObject
+{
+    Q_OBJECT
+public:
+    KFMAutoMount( bool _readonly, const char *_format, const char *_device, const char *_mountpoint );
+    
+public slots:
+    void slotFinished( int );
+    void slotError( int _id, const char *_text );
+    
+protected:
+    KIOJob *job;
+    QString device;
 };
 
 #endif

@@ -9,6 +9,8 @@
 #define PGUP                3
 #define PGDOWN              4     
 
+#define TOOLBAR_URL_ID 1000
+
 class KfmGui;
 
 #include <qwidget.h>
@@ -18,6 +20,8 @@ class KfmGui;
 #include <kpanner.h>
 #include <ktopwidget.h>
 #include <kstatusbar.h>
+#include <ktoolbar.h>
+#include <kmenubar.h>
 
 #include "kfmview.h"
 #include "bookmark.h"
@@ -211,6 +215,10 @@ public slots:
      * Menu "View->Frame Source"
      */
     void slotViewFrameSource();
+    /**
+     * Menu "View->Document Source"
+     */
+    void slotViewDocumentSource();
     
     /**
      * Menu "Bookmarks->Add Bookmark"
@@ -296,6 +304,22 @@ public slots:
     void slotUpdateHistory( bool _back, bool _forward );
 
     /**
+     * This slot is called whenever a new URL is opened. This URL is
+     * then appended to the history list.
+     *
+     * @see #historyList
+     * @see #toolbarURL
+     */
+    void slotNewURL( const char *_url );
+    
+    /**
+     * This slot is called whenever the user entered a new URL in the toolbar.
+     *
+     * @see #initToolbar
+     */
+    void slotURLEntered();
+    
+    /**
      * Call this slot if a @ref KHTMLView widget is waiting for net 
      * ressources. This will start an animated logo.
      * Call @ref #slotRemoveWaitingWidget if the widget got the stuff completely.
@@ -317,6 +341,11 @@ public slots:
 protected slots:    
     void slotAnimatedLogoTimeout();
 
+    void slotShowToolbar();
+    void slotShowStatusbar();
+    void slotShowMenubar();
+    void slotShowLocationBar();
+    
 protected:
 
     /**
@@ -385,10 +414,6 @@ protected:
      */
     bool visualSchnauzer;
     
-    /**
-     * The toolbar.
-     */
-    KToolBar *toolbar;
     KMenuBar *menu;
 
     KPanner *panner;
@@ -398,6 +423,8 @@ protected:
     KStatusBar *statusBar;
 
     QPopupMenu *mview;
+    QPopupMenu *moptions;
+    
     /**
      * The menu "New" in the "File" menu.
      * Since the items of this menu are not connected themselves
@@ -475,6 +502,26 @@ protected:
      * the same order as the 'New' menu.
      */
     QStrList templatesList;
+    
+    /**
+     * The Toolbar that holds the history line.xb
+     */
+    KToolBar* toolbarURL;
+    KToolBar* toolbarButtons;
+    
+    /**
+     * This list contains all previuosly visited URLs.
+     */
+    QStrList historyList;
+
+    bool showToolbar;
+    KToolBar::BarPosition toolbarPos;
+    bool showStatusbar;
+    KStatusBar::Position statusbarPos;
+    bool showMenubar;
+    KMenuBar::menuPosition menubarPos;
+    bool showLocationBar;
+    KToolBar::BarPosition locationBarPos;
 };
 
 #endif

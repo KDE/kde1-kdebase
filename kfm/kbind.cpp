@@ -14,6 +14,7 @@
 #include "kfmpaths.h"
 #include "kfmgui.h"
 #include <config-kfm.h>
+#include "kfmexec.h"
 
 #include <klocale.h>
 
@@ -504,6 +505,9 @@ void KMimeType::initMimeTypes( const char* _path )
 			types->append( t = new KFolderType( ext.data(), icon.data() ) );
 		    else if ( mime == "application/x-kdelnk" )
 			types->append( t = new KDELnkMimeType( ext.data(), icon.data() ) );
+		    else if ( mime == "application/x-executable" ||
+			      mime == "application/x-shellscript" )
+			types->append( t = new ExecutableMimeType( ext.data(), icon.data() ) );
 		    else
 			types->append( t = new KMimeType( ext.data(), icon.data() ) );
 		}
@@ -939,7 +943,7 @@ KMimeType* KMimeType::findType( const char *_url )
     // providing real executables, we first check the extension before looking
     // at the flags.
     // Executable ? Must be on the local drive.
-    if ( strcmp( u.protocol(), "file" ) == 0 && ( u.reference() == 0L || *(u.reference()) == 0 ) )
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {
 	struct stat buff;
 	stat( _url + 5, &buff );
@@ -1113,107 +1117,11 @@ KMimeBind* KMimeType::findBinding( const char *_name )
     return 0L;
 }
 
-bool KMimeType::run( const char *_url )
-{
-    // Do we have some default binding ?
-    if ( !defaultBinding.isEmpty() )
-    {
-	KMimeBind* bind = findBinding( defaultBinding );
-	if ( bind )
-	    return KMimeBind::runBinding( _url, bind );
-    }
-    
-    // Only one binding ?
-    if ( bindings.count() == 1 )
-    {
-	KMimeBind* bind = bindings.first();
-	if ( bind->isAllowedAsDefault() )
-	    return KMimeBind::runBinding( _url, bind );    
-    }
-
-    // Take first binding which is allowed as default
-    KMimeBind *bind;
-    for ( bind = bindings.first(); bind != 0L; bind = bindings.next() )
-    {
-	if ( bind->isAllowedAsDefault() )
-	    return KMimeBind::runBinding( _url, bindings.first() );
-    }
-
-    return FALSE;
-}
-
-bool KMimeBind::runBinding( const char *_url )
-{    
-    KMimeType *typ = KMimeType::findType( _url );
-
-    // KFM must execute *.kdelnk. So dont look for bindings here.
-    // Perhaps this function is called again from within ::runBinding( .. ,.. ).
-    // Have a look at the code for type "URL".
-    QString u = _url;
-    if ( u.length() > 7 && u.left(5) == "file:" && u.right( 7 ) == ".kdelnk" )
-    {
-	return KMimeBind::runBinding( _url, 
-				      klocale->getAlias(ID_STRING_OPEN) );
-    }
-    
-    // Is there only one binding ?
-    QStrList bindings;
-    bindings.setAutoDelete( true );
-    KMimeType::getBindings( bindings, _url, false );    
-    // Any bindings available
-    if ( bindings.isEmpty() )
-    {
-	// Try the default binding named "Open"
-	return KMimeBind::runBinding( _url, 
-				      klocale->getAlias(ID_STRING_OPEN) );
-    }
-    
-    // Only one binding ?
-    if ( bindings.count() == 1 )
-    {
-	KMimeBind* bind = 0L;
-	if ( typ )
-	    bind = typ->findBinding( bindings.first() );
-	if ( bind && !bind->isAllowedAsDefault() )
-	{
-	    // Try the default binding named "Open"
-	    return KMimeBind::runBinding( _url, klocale->getAlias(ID_STRING_OPEN) );
-	}
-	else
-	    return KMimeBind::runBinding( _url, bindings.first() );    
-    }
-
-    // Find default binding
-    if ( typ->getDefaultBinding() != 0 )
-    {
-	return KMimeBind::runBinding( _url, typ->getDefaultBinding() );    
-    }
-
-    // Take first binding which is allowed as default
-    char *s;
-    for ( s = bindings.first(); s != 0L; s = bindings.next() )
-    {
-	KMimeBind *b = 0L;
-	if ( typ )
-	    b = typ->findBinding( s );
-	if ( b && b->isAllowedAsDefault() )
-	{
-	    return KMimeBind::runBinding( _url, bindings.first() );
-	}
-    }
-    
-    // Try the default binding named "Open"
-    return KMimeBind::runBinding( _url, klocale->getAlias(ID_STRING_OPEN));    
-}
-
-
-bool KMimeBind::runBinding( const char *_url, const char *_binding, QStrList * _arguments )
+bool KMimeBind::runBinding( const char *_url, const char *_binding )
 {
     if ( _binding == 0L )
 	_binding = "";
 
-    debugT("Binding is '%s', URL is '%s'\n",_binding,_url);
-
     KURL u( _url );
     if ( u.isMalformed() )
 	return FALSE;
@@ -1223,277 +1131,27 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding, QStrList * _
     QString decodedURL( _url );
     KURL::decodeURL( decodedURL );
     
-    // Is it an executable on the local hard disk ?
-    if ( strcmp( u.protocol(), "file" ) == 0 && 
-	 strcasecmp( _binding,  klocale->getAlias(ID_STRING_OPEN) ) == 0 &&
-	 u.childURL().isEmpty() )
-    {
-	struct stat buff;
-	if ( stat( decodedPath, &buff ) == 0 )
-	{
-	    if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
-	    {
-		debugT("Executing '%s'\n",decodedPath.data());
-		
-		QString exec = KIOServer::shellQuote( decodedPath );
-		QString cmd = "\"";
-		cmd += exec;
-		cmd += "\" ";
-		
-		if ( _arguments != 0L )
-		{
-		    char *s;
-		    for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
-		    {
-			KURL su( s );
-			cmd += "\"";
-			if ( strcmp( u.protocol(), "file" ) == 0 )
-			{
-			    QString dec( su.path() );
-			    KURL::decodeURL( dec );
-			    dec = KIOServer::shellQuote( dec );
-			    cmd += dec;
-			}
-			else
-			{
-			    QString dec( s );
-			    KURL::decodeURL( dec );
-			    dec = KIOServer::shellQuote( dec );
-			    cmd += dec;
-			}
-			cmd += "\" ";
-		    }
-		}
-		
-		cmd += "&";
-		system( cmd.data() );
-		return TRUE;
-	    }
-	}
-    }
+    KMimeType *typ = KMimeType::getMagicMimeType( _url );    
+    debugT("KMB: URL='%s' TYPE='%s'\n",_url, typ->getMimeType());
     
-    // Used to store a modified value for _url
-    QString tmp;
-    
-    debugT("Testing for KDE Desktop Entry\n");
-    
-    KFMConfig *config = 0L;
-    // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
-    // ... but only if it is on the local hard disk!
-    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-	config = KMimeBind::openKFMConfig( _url );
-    
-    // Could we open the config file ?
-    if ( config != 0L )
-    {
-	debugT("################### Is a KDE Desktop Entry file\n");
-	QString typ = config->readEntry( "Type" );
-	QString exec = config->readEntry( "Exec" );
-	// Must we start an executable ?
-	if ( !exec.isNull() )
-	{
-	    QString term = config->readEntry( "Terminal" );
-	    QString termOptions = config->readEntry( "TerminalOptions" );
-
-	    QString f = "";
-	    QString u = "";
-	    QString n = "";
-	    QString d = "";
-	    if ( _arguments != 0L )
-	    {
-		char *s;
-		for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
-		{
-		    KURL su( s );
-		    QString decoded( su.path() );
-		    KURL::decodeURL( decoded );
-		    decoded = KIOServer::shellQuote( decoded ).data();
-		    f += "\"";
-		    f += decoded;
-		    f += "\" ";
-		    u += "\"";
-		    u += s;
-		    u += "\" ";
-		    QString tmp = decoded.data();
-		    // Is it a directory ? Then strip the "/"
-		    if ( tmp.right(1) == "/" )
-			tmp = tmp.left( tmp.length() - 1 );
-		    int i = tmp.findRev( "/" );
-		    if ( i != -1 )
-		    {
-			n += "\"";
-			n += tmp.mid( i + 1, tmp.length() );
-			n += "\" ";
-			d += "\"";
-			d += tmp.left( i + 1 );
-			d += "\" ";
-		    }
-		}
-	    }
-
-	    int i;
-	    while ( ( i = exec.find( "%f" ) ) != -1 )
-		exec.replace( i, 2, f.data() );
-	    while ( ( i = exec.find( "%u" ) ) != -1 )
-		exec.replace( i, 2, u.data() );
-	    while ( ( i = exec.find( "%n" ) ) != -1 )
-		exec.replace( i, 2, n.data() );
-	    while ( ( i = exec.find( "%d" ) ) != -1 )
-		exec.replace( i, 2, d.data() );
-	    while ( ( i = exec.find( "%k" ) ) != -1 )
-		exec.replace( i, 2, _url );
-	    while ( ( i = exec.find( "%c" ) ) != -1 )
-            {
-	      QString s = _url;
-	      if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
-	      {
-		s = s.left(s.length()-7);
-              }
-              int a = s.findRev("/");
-              if ( a > -1 )
-                s = s.right(s.length()-1-a);
-              exec.replace(i,2,s.data());
-            }     
-
-	    if ( term == "1" )
-	    {
-		KConfig *config = KApplication::getKApplication()->getConfig();
-		config->setGroup( "Terminal" );
-		QString cmd = "kvt";
-		cmd = config->readEntry( "Terminal", cmd );
-		cmd.detach();
-		if ( cmd.isNull() )
-		{
-		    warning(klocale->translate("ERROR: No Terminal Setting"));
-		    delete config;
-		    return TRUE;
-		}
-		cmd += " ";
-		if ( !termOptions.isNull() )
-		{
-		    cmd += termOptions.data();
-		    cmd += " ";
-		}
-		cmd += "-e ";
-		cmd += exec.data();
-		cmd += " &";
-		debugT("Running '%s'\n",cmd.data());
-		system( cmd.data() );
-	    }
-	    else
-	    {
-		QString cmd = exec.data();
-		cmd += " &";
-		debugT("Running '%s'\n",cmd.data());
-		system( cmd.data() );
-	    }
-	    delete config;
-	}
-	// Is it a device like CDROM or Floppy ?
-	else if ( typ == "FSDevice" && strcmp( u.protocol(), "file" ) == 0 )
-	{
-	    QString point = config->readEntry( "MountPoint" );
-	    QString dev = config->readEntry( "Dev" );
-	    if ( !point.isNull() && !dev.isNull() )
-	    {
-		if ( strcmp( _binding, "Unmount" ) == 0 )
-		{
-		    KIOJob * job = new KIOJob();
-		    job->unmount( point.data() );
-		    delete config;
-		    return TRUE;
-		}
-		else if ( strncmp( _binding, "Mount ", 6 ) == 0 )
-		{
-		    QString readonly = config->readEntry( "ReadOnly" );
-		    bool ro = FALSE;
-		    if ( !readonly.isNull() )
-			if ( readonly == '1' )
-			    ro = true;
-			 
-		    KIOJob *job = new KIOJob;
-		   
-		    // The binding is names 'Mount FSType' => +6
-		    if ( strcasecmp( _binding + 6, "default" ) == 0 )
-			job->mount( false, 0L, dev, 0L );
-		    else
-			job->mount( ro, _binding + 6, dev, point );
-		    delete config;
-		    return TRUE;
-		}
-		else if ( strcmp( _binding, 
-				  klocale->getAlias(ID_STRING_OPEN) ) == 0 )
-		{
-		    QString mp = KIOServer::findDeviceMountPoint( dev.data() );
-		    if ( !mp.isNull() )
-		    {
-			QString mp2 = "file:";
-			mp2 += mp;
-			debugT("KDE: Opening %s\n",mp2.data());
-			KfmGui *m = new KfmGui( 0L, 0L, mp2.data() );
-			m->show();
-		    }
-		    else
-			warning(klocale->translate("ERROR: You must first mount the device. Use the right mouse button"));
-		    delete config;
-		    return TRUE;
-		}
-		else
-		{
-		    warning(klocale->translate("ERROR: Unknown Binding '%s'"),
-			    _binding);
-		    delete config;
-		}
-	    }
-	}
-	else if ( strcmp( typ, "Link" ) == 0 )
-	{
-	    QString url = config->readEntry( "URL" );
-	    delete config;
-	    if ( !url.isNull() )
-	    {
-		debugT("######################## It is a link\n");
-		// Can KFM handle such an ULR ? Does the user wish the default binding => _binding == "open" ?
-		if ( ( strncasecmp( url.data(), "tar:", 4 ) == 0 || strncasecmp( url.data(), "http:", 5 ) == 0 ||
-		     strncasecmp( url.data(), "file:", 5 ) == 0 || strncasecmp( url.data(), "ftp:", 4 ) == 0 ) &&
-		     strcasecmp( _binding, "open" ) == 0 && KIOServer::isDir( url ) > 0 )
-		{
-		    KfmGui *m = new KfmGui( 0L, "3", url.data() );
-		    m->show();
-		}
-		// Call runBinding( .. ) again with the URL as parameter.
-		// Perhaps we have an external program for such URLs
-		else
-		    return KMimeBind::runBinding( url.data() );
-		return TRUE;
-	    }
-	}
-	else
-	    delete config;
-    }
-
-    debugT("Testing for other Binding\n");
-    
-    KMimeType *typ = KMimeType::findType( _url );
-    KMimeBind *bind;
+    /* KMimeBind *bind;
+    // We know the mime type ?
     if ( typ )
+	// Iterate over all applications bound to the mime type
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
 	    debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
+	    // Is it the one we want ?
 	    if ( strcmp( bind->getProgram(), _binding ) == 0 )
-		return runBinding( _url, bind );
+		return bind->runBinding( _url );
 	}
 
-    // If we still dont know what to do, perhaps we can open a new window with the URL ?
-    /* if ( KIOServer::isDir( _url ) && strcasecmp( _binding, "open" ) == 0 )
-    {
-	KfmGui * m = new KfmGui( 0L, 0L, _url );
-	m->show();
-    } */
-    return FALSE;
+    // Perhaps some binding is hard coded ?
+    return FALSE; */
+    return typ->runBinding( _url, _binding );
 }
 
-bool KMimeBind::runBinding( const char *_url, KMimeBind *bind )
+bool KMimeBind::runBinding( const char *_url )
 {
     KURL u( _url );
     if ( u.isMalformed() )
@@ -1504,7 +1162,7 @@ bool KMimeBind::runBinding( const char *_url, KMimeBind *bind )
     QString decodedURL( _url );
     KURL::decodeURL( decodedURL );
 
-    debugT("!!! '%s'\n",bind->getCmd());
+    debugT("!!! '%s'\n",getCmd());
 
     QString quote1 = KIOServer::shellQuote( decodedPath ).copy();
     QString quote2 = KIOServer::shellQuote( decodedURL ).copy();
@@ -1530,7 +1188,7 @@ bool KMimeBind::runBinding( const char *_url, KMimeBind *bind )
 	d += "\"";
     }
     
-    QString cmd = bind->getCmd();
+    QString cmd = getCmd();
     cmd.detach();
     
     // Did the user forget to append something like '%f' ?
@@ -1575,76 +1233,83 @@ bool KMimeBind::runBinding( const char *_url, KMimeBind *bind )
 
 void KMimeBind::runCmd( const char *_cmd )
 {
+    debugT("CMD='%s'\n",_cmd );
+    
     char *cmd = new char[ strlen( _cmd ) + 1 ];
     strcpy( cmd, _cmd );
     
-    QString exec;
     QStrList args;
     
-    char *p2;
-    char *p = strchr( cmd, ' ' );
-    if ( p == 0L )
+    char *p2 = 0L;
+    char *p = cmd;
+    // Skip leading spaces
+    while ( *p == ' ' ) p++;
+    // Iterate over all args in the string
+    do
     {
-	exec = cmd;
-	exec.detach();
-    }
-    else
-    {
-	*p++ = 0;
-	exec = cmd;
-	exec.detach();
-
-	while ( *p == ' ' ) p++;
-	do
+	// Found a quoted string ?
+	if ( *p == '\"' )
 	{
-	    // Found a quotes string ?
-	    if ( *p == '\"' )
+	    // Find the end of the quotes string
+	    p++;
+	    p2 = p;
+	    while ( *p2 != '\"' && *p2 != 0 )
 	    {
-		// Find the end of the quotes string
-		p++;
-		p2 = p;
-		while ( *p2 != '\"' && *p2 != 0 )
-		{
-		    if ( *p2 == '\\' && p2[1] == '\"' )
-			p2 += 2;
-		    else
-			p2++;
-		}
+		if ( *p2 == '\\' && p2[1] == '\"' )
+		    p2 += 2;
+		else
+		    p2++;
 	    }
-	    else // the string is not quoted
-		p2 = strchr( p, ' ' );
-	    
-	    // add to the list of parameters
-	    if ( p2 )
-	    {
-		*p2++ = 0;
-		QString tmp = KIOServer::shellUnquote( p ).copy();
-		args.append( tmp.data() );
-		p = p2;
-		while ( *p == ' ' ) p++;   
-	    }
-	} while ( p2 );
-	if ( strlen( p ) > 0 )
-	    args.append( p );
+	}
+	else // the string is not quoted
+	    p2 = strchr( p, ' ' );
+	
+	// add to the list of parameters
+	if ( p2 )
+	{
+	    *p2++ = 0;
+	    QString tmp = KIOServer::shellUnquote( p ).copy();
+	    args.append( tmp.data() );
+	    p = p2;
+	    while ( *p == ' ' ) p++;   
+	}
+    } while ( p2 );
+    // Append the rest
+    if ( strlen( p ) > 0 )
+    {
+	QString tmp = KIOServer::shellUnquote( p ).copy();
+	args.append( tmp );
     }
     
-    char **argv = new char*[ args.count() + 2 ];
+    // Delete the quotes around the executables name
+    /* if ( exec.left(1) == "\"" )
+	exec = exec.data() + 1;
+    if ( exec.right(1) == "\"" )
+	exec.truncate( exec.length() - 1 ); */
+    
+    char **argv = new char*[ args.count() + 3 ];
     char* s;
-    argv[ 0 ] = (char*)exec.data();
-    int i = 1;
+    int i = 0;
     for ( s = args.first(); s != 0L; s = args.next() )
 	argv[ i++ ] = (char*)s;
     argv[ i ] = 0L;
     
-    debugT("Running '%s'\n",exec.data() );
+    if ( i == 0 )
+    {
+	warning("0 sized command, '%s'\n", _cmd );
+	return;
+    }
+    
+    debugT("Running '%s'\n",argv[0] );
 
     int pid;
     if ( ( pid = fork() ) == 0 )
     {    
-	execvp( exec.data(), argv );
+	execvp( argv[0], argv );
 	QString txt = klocale->translate("Could not execute program\n");
-	txt += exec.data();
+	txt += argv[0];
 
+	// Run this program if something went wrong
 	char* a[ 3 ];
 	a[ 0 ] = "kfmwarn";
 	a[ 1 ] = txt.data();
@@ -1838,3 +1503,533 @@ bool KMimeBind::supportsProtocol( const char *_protocol )
 
     return false;
 }
+
+/*****************************************************************************
+ *****************************************************************************
+ **
+ ** The following methods are used to open the documents, applications
+ ** or whatever.
+ **
+ *****************************************************************************
+ *****************************************************************************/
+
+/*****************************************************************************
+ *
+ * KMimeType
+ *
+ *****************************************************************************/
+
+bool KMimeType::run( const char *_url )
+{
+    debugT("*********************** MIST\n");
+    
+    // Do we have some default binding ?
+    if ( !defaultBinding.isEmpty() )
+    {
+	KMimeBind* bind = findBinding( defaultBinding );
+	if ( bind )
+	    return bind->runBinding( _url );
+    }
+    
+    // Only one binding ?
+    if ( bindings.count() == 1 )
+    {
+	KMimeBind* bind = bindings.first();
+	if ( bind->isAllowedAsDefault() )
+	    return bind->runBinding( _url  );    
+    }
+
+    // Take first binding which is allowed as default
+    KMimeBind *bind;
+    for ( bind = bindings.first(); bind != 0L; bind = bindings.next() )
+    {
+	if ( bind->isAllowedAsDefault() )
+	    return bindings.first()->runBinding( _url );
+    }
+
+    return FALSE;
+}
+
+bool KMimeType::runBinding( const char *_url, const char *_binding )
+{
+    KMimeBind *bind;
+    // Iterate over all applications bound to the mime type
+    for ( bind = firstBinding(); bind != 0L; bind = nextBinding() )
+    {
+	debugT("!!! '%s' vs '%s'\n",bind->getProgram(), _binding );
+	// Is it the one we want ?
+	if ( strcmp( bind->getProgram(), _binding ) == 0 )
+	    return bind->runBinding( _url );
+    }
+
+    QString tmp;
+    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not find binding" ), _binding );
+    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+    // Tell, that we have done the job since there is not more to do except showing
+    // the above error message.
+    return TRUE;
+}
+
+bool KMimeType::runAsApplication( const char *, QStrList * )
+{
+    QMessageBox::message( klocale->translate( "KFM Error" ),
+			  klocale->translate( "This is a document!\n\rNot an application" ) );
+    // Tell, that we have done the job since there is not more to do except showing
+    // the above error message.
+    return TRUE;
+}
+
+/*****************************************************************************
+ *
+ * ExecutableMimeType
+ *
+ *****************************************************************************/
+
+bool ExecutableMimeType::run( const char *_url )
+{
+    KURL u( _url );
+    if ( strcmp( u.protocol(), "file" ) != 0 || u.hasSubProtocol() )
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ), 
+			      klocale->translate( "Can only start executables on local disks\n" ) );
+	return TRUE;
+    }
+			     
+    QString cmd;
+    cmd.sprintf( "\"%s\"",  KIOServer::shellQuote( u.path() ).data() );
+    KMimeBind::runCmd( cmd );
+
+    return TRUE;
+}
+
+bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_arguments )
+{
+    KURL u( _url );
+    if ( strcmp( u.protocol(), "file" ) != 0 || u.hasSubProtocol() )
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ), 
+			      klocale->translate( "Can only start executables on local disks\n" ) );
+	return TRUE;
+    }
+    
+    QString decodedPath( u.path() );
+    KURL::decodeURL( decodedPath );
+    QString decodedURL( _url );
+    KURL::decodeURL( decodedURL );
+
+    QString exec = KIOServer::shellQuote( decodedPath );
+    QString cmd = "\"";
+    cmd += exec;
+    cmd += "\" ";
+    
+    if ( _arguments != 0L )
+    {
+	char *s;
+	for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
+	{
+	    KURL su( s );
+	    cmd += "\"";
+	    if ( strcmp( u.protocol(), "file" ) == 0 )
+	    {
+		QString dec( su.path() );
+		KURL::decodeURL( dec );
+		dec = KIOServer::shellQuote( dec );
+		cmd += dec;
+	    }
+	    else
+	    {
+		QString dec( s );
+		KURL::decodeURL( dec );
+		dec = KIOServer::shellQuote( dec );
+		cmd += dec;
+	    }
+	    cmd += "\" ";
+	}
+    }
+    
+    KMimeBind::runCmd( cmd );
+    // system( cmd.data() );
+    return TRUE;
+}
+
+/*****************************************************************************
+ *
+ * KDELnkMimeType
+ *
+ *****************************************************************************/
+
+bool KDELnkMimeType::run( const char *_url )
+{
+    debugT("******************************** LNK RUN\n");
+    
+    KURL u( _url );
+    KFMConfig *config = 0L;
+    // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
+    // ... but only if it is on the local hard disk!
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	config = KMimeBind::openKFMConfig( _url );
+    else
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+
+    // Could we open the config file ?
+    if ( config == 0L )
+    {
+	QString tmp;
+	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+
+    QString typ = config->readEntry( "Type" );
+    debugT("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Type='%s'\n",typ.data());
+    
+    // Must we start an executable ?
+    if ( typ == "Application" )
+    {
+	delete config;
+	debugT("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Application kdelnk\n");
+	return runAsApplication( _url, 0L );
+    }
+    // Is it a device like CDROM or Floppy ?
+    else if ( typ == "FSDevice" )
+    {
+	delete config;
+	// Try to mount&open the device
+	return runBinding( _url, klocale->getAlias( ID_STRING_OPEN ) );
+    }
+    else if ( strcmp( typ, "Link" ) == 0 )
+    {
+	QString url = config->readEntry( "URL" );
+	delete config;
+	if ( url.isEmpty() )
+	{
+	    QMessageBox::message( klocale->translate( "KFM Error" ),
+				  klocale->translate( "The \"Link=....\" entry is empty" ) );
+	    delete config;
+	    return TRUE;
+	}
+	
+	debugT("######################## It is a link\n");
+	KFMExec *exec = new KFMExec;
+	// Try to open the URl somehow
+	exec->openURL( url );
+	delete config;
+	return TRUE;
+    }
+    else
+    {
+	delete config;
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+			      klocale->translate( "The config file has no \"Type=...\" line" ) );
+	// Just say: The job is done
+	return TRUE;
+    }
+    
+    delete config;
+    return FALSE;
+}
+
+bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
+{
+    KURL u2( _url );
+    KFMConfig *config = 0L;
+    // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
+    // ... but only if it is on the local hard disk!
+    if ( strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
+	config = KMimeBind::openKFMConfig( _url );
+    else
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+    
+    // Could we open the config file ?
+    if ( config == 0L )
+    {
+	QString tmp;
+	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+    
+    QString exec = config->readEntry( "Exec" );
+    QString term = config->readEntry( "Terminal" );
+    QString termOptions = config->readEntry( "TerminalOptions" );
+    
+    // At least the executable is needed!
+    if ( exec.isEmpty() )
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+		     klocale->translate( "This files does not contain an\n\rExec=....\n\rentry. Edit the Properties\n\rto solve the probelm" ) );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+    
+    QString f = "";
+    QString u = "";
+    QString n = "";
+    QString d = "";
+    if ( _arguments != 0L )
+    {
+	char *s;
+	for ( s = _arguments->first(); s != 0L; s = _arguments->next() )
+	{
+	    KURL su( s );
+	    QString decoded( su.path() );
+	    KURL::decodeURL( decoded );
+	    decoded = KIOServer::shellQuote( decoded ).data();
+	    f += "\"";
+	    f += decoded;
+	    f += "\" ";
+	    u += "\"";
+	    u += s;
+	    u += "\" ";
+	    QString tmp = decoded.data();
+	    // Is it a directory ? Then strip the "/"
+	    if ( tmp.right(1) == "/" )
+		tmp = tmp.left( tmp.length() - 1 );
+	    int i = tmp.findRev( "/" );
+	    if ( i != -1 )
+	    {
+		n += "\"";
+		n += tmp.mid( i + 1, tmp.length() );
+		n += "\" ";
+		d += "\"";
+		d += tmp.left( i + 1 );
+		d += "\" ";
+	    }
+	}
+    }
+    
+    int i;
+    while ( ( i = exec.find( "%f" ) ) != -1 )
+	exec.replace( i, 2, f.data() );
+    while ( ( i = exec.find( "%u" ) ) != -1 )
+	exec.replace( i, 2, u.data() );
+    while ( ( i = exec.find( "%n" ) ) != -1 )
+	exec.replace( i, 2, n.data() );
+    while ( ( i = exec.find( "%d" ) ) != -1 )
+	exec.replace( i, 2, d.data() );
+    while ( ( i = exec.find( "%k" ) ) != -1 )
+	exec.replace( i, 2, _url );
+    while ( ( i = exec.find( "%c" ) ) != -1 )
+    {
+	QString s = _url;
+	if ( s.length() > 7 && s.right( 7 ) == ".kdelnk" )
+	{
+	    s = s.left(s.length()-7);
+	}
+	int a = s.findRev("/");
+	if ( a > -1 )
+	    s = s.right(s.length()-1-a);
+	exec.replace(i,2,s.data());
+    }     
+    
+    if ( term == "1" )
+    {
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Terminal" );
+	QString cmd = "kvt";
+	cmd = config->readEntry( "Terminal", cmd );
+	cmd.detach();
+	if ( cmd.isNull() )
+	{
+	    warning(klocale->translate("ERROR: No Terminal Setting"));
+	    delete config;
+	    return TRUE;
+	}
+	cmd += " ";
+	if ( !termOptions.isNull() )
+	{
+	    cmd += termOptions.data();
+	    cmd += " ";
+	}
+	cmd += "-e ";
+	cmd += exec.data();
+	debugT("Running '%s'\n",cmd.data());
+	// system( cmd.data() );
+	KMimeBind::runCmd( cmd );
+    }
+    else
+    {
+	QString cmd = exec.data();
+	debugT("Running '%s'\n",cmd.data());
+	// system( cmd.data() );
+	KMimeBind::runCmd( cmd );
+    }
+
+    return TRUE;
+}
+
+bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
+{
+    KURL u( _url );
+    KFMConfig *config = 0L;
+    // Is it a "[KDE Desktop Entry]" file and do we want to open it ?
+    // ... but only if it is on the local hard disk!
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+	config = KMimeBind::openKFMConfig( _url );
+    else
+    {
+	QMessageBox::message( klocale->translate( "KFM Error" ),
+		     klocale->translate( "Can work with *.kdelnk files only\n\ron local hard disk" ) );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+
+    // Could we open the config file ?
+    if ( config == 0L )
+    {
+	QString tmp;
+	sprintf( "%s\n\r%s", klocale->translate( "Could not access" ), _url );
+	QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+	// Say: Yes we have done the job. That is not quite right, but
+	// we want to stop this here, before KFM tries some stupid things :-)
+	return TRUE;
+    }
+
+    debugT("################### Is a KDE Desktop Entry file\n");
+    QString typ = config->readEntry( "Type" );
+    
+    if ( typ == "FSDevice" )
+    {
+	QString point = config->readEntry( "MountPoint" );
+	QString dev = config->readEntry( "Dev" );
+	if ( !point.isNull() && !dev.isNull() )
+	{
+	    if ( strcmp( _binding, klocale->translate( "Unmount" ) ) == 0 )
+	    {
+		KIOJob * job = new KIOJob();
+		job->unmount( point.data() );
+		delete config;
+		return TRUE;
+	    }
+	    else if ( strncmp( _binding, klocale->translate( "Mount" ), 5 ) == 0 )
+	    {
+		QString readonly = config->readEntry( "ReadOnly" );
+		bool ro = FALSE;
+		if ( !readonly.isNull() )
+		    if ( readonly == '1' )
+			ro = true;
+		
+		KIOJob *job = new KIOJob;
+		
+		// The binding is names 'Mount FSType' => +6
+		if ( strcasecmp( _binding, klocale->translate( "Mount default" ) ) == 0 ||
+		     strcasecmp( _binding, klocale->translate( "Mount" ) ) == 0 )
+		    job->mount( false, 0L, dev, 0L );
+		else
+		    job->mount( ro, _binding + 6, dev, point );
+		delete config;
+		return TRUE;
+	    }
+	    else if ( strcmp( _binding, klocale->getAlias(ID_STRING_OPEN) ) == 0 )
+	    {
+		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
+		// Is the device already mounted ?
+		if ( !mp.isNull() )
+		{
+		    QString mp2 = "file:";
+		    mp2 += mp;
+		    // Open a new window
+		    KfmGui *m = new KfmGui( 0L, 0L, mp2.data() );
+		    m->show();
+		    delete config;
+		    return TRUE;
+		}
+		else
+		{
+		    QString readonly = config->readEntry( "ReadOnly" );
+		    bool ro = FALSE;
+		    if ( !readonly.isNull() )
+			if ( readonly == '1' )
+			    ro = true;
+		    
+		    new KFMAutoMount( ro, 0L, dev, 0L );
+
+		    delete config;
+		    return TRUE;
+		}
+	    }
+	    else
+	    {
+ 		QString tmp;
+		tmp.sprintf( "%s %s", klocale->translate( "Unknown binding" ), _binding );
+		QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+		// Say: Yes we have done the job. That is not quite right, but
+		// we want to stop this here, before KFM tries some stupid things :-)
+		return TRUE;
+	    }
+	}    
+    }
+    
+    if ( config )
+	delete config;
+
+    return KMimeType::runBinding( _url, _binding );
+}
+
+/***********************************************************************
+ ***********************************************************************
+ **
+ ** Utility classes
+ **
+ ***********************************************************************
+ ***********************************************************************/
+
+
+/***********************************************************************
+ *
+ * Utility classes
+ *
+ ***********************************************************************/
+
+KFMAutoMount::KFMAutoMount( bool _readonly, const char *_format, const char *_device, const char *_mountpoint )
+{
+    device = _device;
+    
+    job = new KIOJob();
+    connect( job, SIGNAL( finished( int ) ), this, SLOT( slotFinished( int ) ) );
+    connect( job, SIGNAL( error( int, const char* ) ), this, SLOT( slotError( int, const char* ) ) );
+    
+    if ( !_format )
+	job->mount( false, 0L, _device, 0L );
+    else
+	job->mount( _readonly, _format, _device, _mountpoint );
+}
+
+void KFMAutoMount::slotFinished( int )
+{
+    job->setAutoDelete( TRUE );
+
+    QString mp = KIOServer::findDeviceMountPoint( device );
+    KfmGui *m = new KfmGui( 0L, 0L, mp );
+    m->show();
+
+    delete this;
+}
+
+void KFMAutoMount::slotError( int, const char *_text )
+{
+    debugT("AUTOMOUNT '%s'\n",_text);
+    
+    job->setAutoDelete( TRUE );
+    delete this;
+}
+
+#include "kbind.moc"

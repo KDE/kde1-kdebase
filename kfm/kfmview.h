@@ -123,6 +123,13 @@ signals:
      */
     void historyUpdate( bool _back, bool _forward );
     
+    /**
+     * Emitted whenever a new URL is visited.
+     *
+     * @see KfmGui::slotNewURL
+     */
+    void newURL( const char *_url );
+    
 public slots:
 
     /**

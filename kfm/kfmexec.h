@@ -73,11 +73,11 @@ public slots:
      *              if @ref #job does not know anything about the mime type.
      */
     void slotMimeType( const char *_type );
+
     /**
-     * Called if the job is finished to do some clean up
-     * and prepare to die.
+     * Called if the user presses the dialogs cancel button.
      */
-    void slotSetDone();
+    void slotCancel();
     
 protected:
     /**

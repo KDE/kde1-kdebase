@@ -125,42 +125,6 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
     mntPoint = _point;
     mntPoint.detach();
 
-    // Get the mount directory
-    /*
-    if ( _point == 0L )
-    {
-	FILE *f = setmntent( "/etc/fstab", 0 );
-	if ( f == 0 )
-	    debugT("WARNING: Could not access /etc/fstab\n");
-	else
-	{
-	    bool bend = false;
-	    while ( !bend )
-	    {
-		struct mntent * m = getmntent( f );
-		if ( m != 0L )
-		{
-		    if ( strcmp( m->mnt_fsname, _dev ) == 0 )
-		    {
-			QString n = "file:";
-			n += m->mnt_dir;
-			notifyList.append( n.data() );
-			bend = true;
-		    }
-		}
-		else
-		    bend = true;
-	    }
-	    endmntent( f );
-	}
-    }
-    else
-    {
-	QString n = "file:";
-	n += _point;
-	notifyList.append( n.data() );
-    } */
-
     QString n = KIOServer::findDeviceMountPoint( _dev, "/etc/fstab" );
     if ( !n.isNull() )
     {
@@ -226,38 +190,140 @@ void KIOJob::link( const char *_src_url, const char *_dest_url )
 
 void KIOJob::link()
 {
+    skipURLList.clear();
+    
     char *p;
     char *p2 = cmDestURLList.first();
+    // Loop over all filess
     for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
     {
 	KURL su( p );
 	KURL du( p2 );
 	
-	if ( notifyList.find( du.directoryURL() ) == -1 )
-	    notifyList.append( du.directoryURL() );
+	// Which directories do we have to notify ?
+	if ( notifyList.find( du.directoryURL( false ) ) == -1 )
+	    notifyList.append( du.directoryURL( false ) );
 	
 	if ( su.isMalformed() )
 	{
-	    warning(klocale->translate("ERROR: Malformed URL '%s'"),p);
+	    QString tmp;
+	    tmp.sprintf( "%s\n\r%s", klocale->translate( "Malformed URL" ), p );
+	    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+	    done();
+	    return;
 	}
 	else if ( du.isMalformed() )
 	{
-	  warning(klocale->translate("ERROR: Malformed URL '%s'"),p2);
+	    QString tmp;
+	    tmp.sprintf( "%s\n\r%s", klocale->translate( "Malformed URL" ), p );
+	    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+	    done();
+	    return;
 	}	
 	// I can only make links on the local file system.
 	else if ( strcmp( du.protocol(), "file" ) != 0L )
 	{
-	    warning(klocale->translate("ERROR: Can only make links on local file system"));
+	    QMessageBox::message( klocale->translate( "KFM Error" ),
+				  klocale->translate("Can only make links on local file system") );
+	    done();
+	    return;
 	}
+	// No error yet ...
 	else
 	{
 	    // Do we link a file on the local disk?
-	    if ( strcmp( su.protocol(), "file" ) == 0 )
+	    if ( strcmp( su.protocol(), "file" ) == 0 && !su.hasSubProtocol() )
 	    {
+		// Make a symlink
 		if ( symlink( su.path(), du.path() ) == -1 )
-		    warning(klocale->translate("ERROR: Could not make symlink to %s"),du.path() );
+		{
+		    // Does the destination already exist ?
+		    if ( errno == EEXIST )
+		    {
+			// Are we allowed to overwrite the files ?
+			if ( overwriteExistingFiles )
+			{
+			    // Try to delete the destination
+			    if ( unlink( du.path() ) != 0 )
+			    {
+				QString tmp;
+				tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not overwrite" ), du.path() );
+				QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+				done();
+				return;
+			    }
+			}
+			else
+			{
+			    // Ask the user what to do
+			    KRenameWin *r = new KRenameWin( 0L, su.path(), du.path(), true );
+			    int button = r->exec();
+			    if ( button == 0 ) // Overwrite 
+			    {
+				// Try to delete the destination
+				if ( unlink( du.path() ) != 0 )
+				{
+				    delete r;
+				    QString tmp;
+				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not overwrite" ), du.path() );
+				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+				    done();
+				    return;
+				}
+				// Try again
+				if ( symlink( su.path(), du.path() ) == -1 )
+				{
+				    QString tmp;
+				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+				    done();
+				    return;
+				}
+			    }
+			    else if ( button == 1 ) // Overwrite All
+				overwriteExistingFiles = true;
+			    else if ( button == 2 ) // Skip
+			    {
+				skipURLList.append( p );
+				skipURLList.append( p2 );
+				continue;
+			    }
+			    else if ( button == 3 ) // Rename
+			    {
+				// Get the new destinations name
+				du = r->getNewName();
+				// Try again
+				if ( symlink( su.path(), du.path() ) == -1 )
+				{
+				    QString tmp;
+				    tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+				    QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+				    done();
+				    return;
+				}
+			    }
+			    else if ( button == 4 ) // Cancel
+			    {
+				delete r;
+				done();
+				return;
+			    }
+			    delete r;
+			}
+		    }
+		    else
+		    {
+			// Some error occured while we tried to symlink
+			QString tmp;
+			tmp.sprintf( "%s\n\r%s", klocale->translate( "Could not make symlink to" ), du.path() );
+			QMessageBox::message( klocale->translate( "KFM Error" ), tmp );
+			done();
+			return;
+		    }
+		    
+		}
 	    }
-	    // Make a link to a file in a tar archive, ftp, http or what ever
+	    // Make a link from a file in a tar archive, ftp, http or what ever
 	    else
 	    {
 		QFile f( du.path() );

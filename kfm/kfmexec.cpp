@@ -60,7 +60,7 @@ void KFMExec::openURL( const char *_url  )
 	QString tmp;
 	tmp.sprintf(klocale->translate("Malformed URL\n%s"), _url );
 	QMessageBox::message( klocale->translate("KFM Error"), tmp );
-	slotSetDone();
+	delete this;
 	return;
     }
 
@@ -86,7 +86,7 @@ void KFMExec::openURL( const char *_url  )
 		if ( !u2.isEmpty() )
 		{
 		    // It is a link and we have new URL => Recursion with the new URL
-		    openURL( u2  );
+		    openURL( u2 );
 		    return;
 		}
 		else
@@ -94,7 +94,7 @@ void KFMExec::openURL( const char *_url  )
 		    // The *.kdelnk file is broken
 		    QMessageBox::message( klocale->translate("KFM Error"), 
 					  klocale->translate("The file does not contain a URL") );
-		    slotSetDone();
+		    delete this;
 		    return;
 		}
 	    }
@@ -116,7 +116,6 @@ void KFMExec::openURL( const char *_url  )
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, _url );
 	m->show();
-	slotSetDone();
 	return;
     }
     // We are not shure about the URL
@@ -133,7 +132,7 @@ void KFMExec::openURL( const char *_url  )
     dlg->resize( 300, 120 );
     QPushButton *pb = new QPushButton( klocale->translate("Cancel"), dlg );
     pb->setGeometry( 110, 70, 80, 30 );
-    connect( pb, SIGNAL( clicked() ), this, SLOT( slotSetDone() ) );
+    connect( pb, SIGNAL( clicked() ), this, SLOT( slotCancel() ) );
     QLabel* line1 = new QLabel( dlg );
     line1->setGeometry( 10, 10, 280, 20 );
     line1->setText( klocale->translate("Trying to open") );
@@ -142,6 +141,12 @@ void KFMExec::openURL( const char *_url  )
     line2->setText( tryURL );
     
     dlg->show();
+}
+
+void KFMExec::slotCancel()
+{
+    delete this;
+    return;
 }
 
 void KFMExec::slotError( const char * )
@@ -164,23 +169,25 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
 	m->show();
 
 	// We have done our job, so lets set the "ready to die" flag
-	slotSetDone();
+	delete this;
+	return;
     }
 }
 
 void KFMExec::slotMimeType( const char *_type )
 {
-    // Set the "ready to die" flag
-    slotSetDone();
     // Stop browsing. We need an application
     job->stop();
-
+    delete job;
+    job = 0L;
+    
     // GZIP
     if ( _type && strcmp( _type, "application/x-gzip" ) == 0L )
     {
 	job->stop();
 	tryURL += "#gzip:/";
 	openURL( tryURL );
+	return;
     }
     // TAR
     else if ( _type && strcmp( _type, "application/x-tar" ) == 0L )
@@ -203,19 +210,22 @@ void KFMExec::slotMimeType( const char *_type )
 	job->stop();
 	tryURL += "#tar:/";
 	openURL( tryURL );
+	return;
     }
     // No HTML ?
     else if ( _type == 0L || strcmp( _type, "text/html" ) != 0L )
     {
-	// Try to run the default binding on the URL since we
-	// know that it is a real file ( directories have no
-	// mime-type :-) 
-	if ( KMimeBind::runBinding( tryURL ) )
+	// Do we know the mime type ?
+	if ( _type != 0L )
 	{
-	    debugT("Our job is done\n");
-	    return;
+	    KMimeType *mime = KMimeType::findByName( _type );
+	    if ( mime->run( tryURL ) )
+	    {
+		delete this;
+		return;
+	    }
 	}
-	
+		
 	// Ask the user what we should do
 	DlgLineEntry l( klocale->translate("Open With:"), "", 0L, true );
 	debugT("OPENING DLG\n");
@@ -223,8 +233,11 @@ void KFMExec::slotMimeType( const char *_type )
 	{
 	    QString pattern = l.getText();
 	    if ( pattern.isEmpty() )
+	    {
+		delete this;
 		return;
-
+	    }
+	    
 	    QString decoded( tryURL );
 	    KURL::decodeURL( decoded );
 	    decoded = KIOServer::shellQuote( decoded ).data();
@@ -238,6 +251,9 @@ void KFMExec::slotMimeType( const char *_type )
 	    debugT("Executing stuff '%s'\n", cmd.data());
 	    
 	    KMimeBind::runCmd( cmd.data() );
+
+	    delete this;
+	    return;
 	}
     }
     // It is HTML
@@ -246,19 +262,9 @@ void KFMExec::slotMimeType( const char *_type )
 	// Ok, lets open a new window
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
 	m->show();
+	delete this;
+	return;
     }
-}
-
-void KFMExec::slotSetDone()
-{
-    if ( dlg )
-    {
-	delete dlg;
-	dlg = 0L;
-    }
-    if ( job )
-	job->stop();
-    bDone = TRUE;
 }
 
 QString KFMExec::openLocalURL( const char *_url )
@@ -310,14 +316,14 @@ QString KFMExec::openLocalURL( const char *_url )
 	tryURL = _url;
     }
     // Executables
-    else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
+    /* else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
 	      strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
     {
 	KMimeBind::runCmd( _url );
 	// No URL left since we have done the job
 	// => return an empty string
 	return QString();
-    }
+    } */
     else
     {
 	debugT("EXEC MIMETYPE\n");
@@ -327,8 +333,9 @@ QString KFMExec::openLocalURL( const char *_url )
 	    // => return an empty string
 	    return QString();
 
+	debugT("Could not run\n");
 	// We could not execute the mimetype
-	tryURL += _url;
+	tryURL = _url;
     }
     
     return tryURL;
@@ -336,7 +343,17 @@ QString KFMExec::openLocalURL( const char *_url )
 
 KFMExec::~KFMExec()
 {
-    delete job;
+    if ( dlg )
+    {
+	delete dlg;
+	dlg = 0L;
+    }
+    if ( job )
+	job->stop();
+    bDone = TRUE;
+
+    if ( job )
+	delete job;
 }
 
 #include "kfmexec.moc"

@@ -1,12 +1,12 @@
 /* XPM */
 static char * kmultiple_xpm[] = {
 "31 35 6 1",
-" 	none",
-".	c #C71BC30BC71B",
-"X	c #FFFFFFFFFFFF",
-"o	c #000000000000",
-"O	c #410341034103",
-"+	c #861782078617",
+" 	c None",
+".	c #c7c7c7",
+"X	c #ffffff",
+"o	c #000000",
+"O	c #414141",
+"+	c #868686",
 "             ..    ...         ",
 "            .XX.. .XXX..       ",
 "           .XXXXX.XXXXXX..     ",
@@ -42,3 +42,4 @@ static char * kmultiple_xpm[] = {
 "             O+.XXX+.          ",
 "              oO+.+.           ",
 "                 +.            "};
+

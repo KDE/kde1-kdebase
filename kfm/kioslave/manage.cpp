@@ -6,6 +6,7 @@
 #include "tar.h"
 #include "cgi.h"
 #include "gzip.h"
+#include "icon.h"
 
 int ProtocolSupported(const char *url)
 {
@@ -39,6 +40,7 @@ int HaveProto(const char *url)
 	if( strncmp( url, "http:", 5 ) == 0) return 1;
 	if( strncmp( url, "cgi:", 4 ) == 0) return 1;
 	if( strncmp( url, "gzip:", 5 ) == 0) return 1;
+	if( strncmp( url, "icon:", 5 ) == 0) return 1;
 	return(0);
 }
 
@@ -63,6 +65,7 @@ KProtocol *CreateProtocol(const char *url)
     if( strncmp( lasturl, "http:", 5 ) == 0 ) return( new KProtocolHTTP );
     if( strncmp( lasturl, "ftp:", 4 ) == 0 ) return( new KProtocolFTP );
     if( strncmp( lasturl, "cgi:", 4 ) == 0 ) return( new KProtocolCGI );
+    if( strncmp( lasturl, "icon:", 4 ) == 0 ) return( new KProtocolICON );
     if( strncmp( lasturl, "gzip:", 5 ) == 0 )
     {
 	KSubProtocol *sub = new KProtocolGZIP;

@@ -11,6 +11,7 @@
 #include "kfmprops.h"
 #include "kiojob.h"
 #include "kfmpaths.h"
+#include "kfmexec.h"
 #include <config-kfm.h>
 
 #include <qmsgbox.h>
@@ -244,14 +245,21 @@ void KFMServer::slotOpenProperties( const char* _url )
 
 void KFMServer::slotExec( const char* _url, const char * _binding )
 {
+    if ( _binding == 0L && _url != 0L )
+    {
+	KFMExec *e = new KFMExec;
+	e->openURL( _url );
+	return;
+    }
+    
     // Attention this is a little hack by me (Matthias)
-    QStrList sl;
+    /* QStrList sl;
     sl.append(_binding);   
 
     if ( _binding == 0L )
 	KMimeBind::runBinding( _url );
     else
-	KMimeBind::runBinding( _url, _binding, &sl );
+	KMimeBind::runBinding( _url, _binding, &sl ); */
 }
 
 KFMClient::KFMClient( KSocket *_sock ) : KfmIpc( _sock )

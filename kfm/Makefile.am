@@ -32,7 +32,7 @@ BUILT_SOURCES =	\
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc fileentry.moc \
-	kfmjob.moc kfmexec.moc cgi.moc
+	kfmjob.moc kfmexec.moc cgi.moc kbind.moc
 
 CLEANFILES = $(BUILT_SOURCES)
 
@@ -56,6 +56,7 @@ htmlcache.cpp: htmlcache.moc
 bookmark.cpp: bookmark.moc
 kfmjob.cpp: kfmjob.moc
 kfmexec.cpp: kfmexec.moc
+kbind.cpp: kbind.moc
 
 %.moc: %.h
 	$(MOC) $< -o $@      

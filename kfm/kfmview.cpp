@@ -515,6 +515,7 @@ const char * KfmView::getURL()
 
 void KfmView::openURL( const char *_url )
 {
+    emit newURL( _url );
     debugT("############### openURL ######################\n");
     manager->openURL( _url );
 }

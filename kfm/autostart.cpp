@@ -8,6 +8,7 @@
 #include "kbind.h"
 #include "kfmgui.h"
 #include "kfmpaths.h"
+#include "kfmexec.h"
 #include <config-kfm.h>
 
 #include <klocale.h>
@@ -26,7 +27,7 @@ void autostart()
     {
 	QMessageBox::message( klocale->translate("KFM Installation Error"), 
 			      klocale->translate("The directory ") + url +
-			      klocale->translate(" does not exist\nRun 'setupKFM' to solve the problem") );
+			      klocale->translate(" does not exist\n\r") );
 	exit(1);
     }
     
@@ -38,7 +39,10 @@ void autostart()
 	    QString u2 = url.data();
 	    u2 += ep->d_name;
 	    
-	    KURL u( u2 );
+	    KFMExec *e = new KFMExec();
+	    e->openURL( u2 );
+
+	    /* KURL u( u2 );
 	    // Is it a directory? If not ...
 	    if ( !KIOServer::isDir( u2 ) )
 	    {
@@ -86,8 +90,8 @@ void autostart()
 	    {
 		KfmGui *m = new KfmGui( 0L, 0L, u2 );
 		m->show();
-	    }
-	}
+	    } */
+	} 
     }
     (void) closedir( dp );
 }

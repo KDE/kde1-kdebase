@@ -232,6 +232,25 @@ int doIt( int argc, char **argv )
 	
 	kfm.moveClient( src.data(), argv[ argc - 1 ] );
     }
+    else if ( strcmp( argv[1], "copy" ) == 0 )
+    {
+	if ( argc <= 3 )
+	{
+	    debugT( "Syntax Error: Too many/few arguments\n" );
+	    exit(1);
+	}
+	QString src = "";
+	int i = 2;
+	while ( i <= argc - 2 )
+	{
+	    src += argv[i];
+	    if ( i < argc - 2 )
+		src += "\n";
+	    i++;
+	}
+	
+	kfm.copy( src.data(), argv[ argc - 1 ] );
+    }
     else if ( strcmp( argv[1], "folder" ) == 0 )
     {
 	if ( argc <=2 )
@@ -253,8 +272,9 @@ int doIt( int argc, char **argv )
 	
 	  kfm.moveClient( src.data(), argv[ argc - 1 ] );
 	}
-	else {
-	  kfm.openURL( argv[2] );
+	else
+	{
+	    kfm.openURL( argv[2] );
 	}
     }
     else if ( strcmp( argv[1], "selectRootIcons" ) == 0 )

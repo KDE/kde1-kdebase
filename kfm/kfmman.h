@@ -102,6 +102,12 @@ protected:
     bool eventFilter( QObject *, QEvent * );
 
     void writeWrapped( char * );
+
+    /**
+     * Produces the image tag to display the icon if the visual schnauzer
+     * is turned on.
+     */
+    QString getVisualSchnauzerIconTag( const char *_url );
     
     /**
      * List of all files in the directory.

@@ -1,19 +1,19 @@
 
 INCLUDES=       @all_includes@ -I..
-LDADD   =       @all_libraries@ -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
+LDADD   =       @all_libraries@ -lkdecore -lqt -lXext -lX11 -ljpeg @LIBSOCKET@
 MOC     =       @MOC@
 
 ####### Files
 
 bin_PROGRAMS = kioslave
 
-kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp \
-	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp \
+kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp jpeg.cpp \
+	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp icon.cpp \
 	slave.cpp tar.cpp subprotocol.cpp cgi.cpp gzip.cpp ../debug.cpp
-noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h \
-	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h
+noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h xview.h jpeg.h jpeginc.h \
+	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h icon.h
 BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc \
-	protocol.moc cgi.moc gzip.moc subprotocol.moc
+	protocol.moc subprotocol.h cgi.moc gzip.moc icon.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 kioslave_ipc.cpp: kioslave_ipc.moc
@@ -26,6 +26,7 @@ protocol.cpp: protocol.moc
 subprotocol.cpp: subprotocol.moc
 cgi.cpp: cgi.moc
 gzip.cpp: gzip.moc
+icon.cpp: icon.moc
 
 debug.o: ../debug.cpp ../config-kfm.h
 	$(CXXCOMPILE) -c ../debug.cpp
@@ -52,5 +53,7 @@ cgi.moc: cgi.h
 	$(MOC) cgi.h -o cgi.moc
 gzip.moc: gzip.h
 	$(MOC) gzip.h -o gzip.moc
+icon.moc: icon.h
+	$(MOC) icon.h -o icon.moc
 
 

@@ -701,6 +701,7 @@ Version 1.23
 - locked folders have locked icon again.
 - Better/more error messages
 - Does not crash if mime types are missing.
+- Calling kmail for "href=mailto"
 
 Translation
 -----------

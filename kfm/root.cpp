@@ -290,16 +290,28 @@ void KRootWidget::getSelectedURLs( QStrList &_list )
 {
   KRootIcon *icon;
   for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
-    if ( icon->isSelected() )
-      _list.append( icon->getURL() );
+      if ( icon->isSelected() )
+	  _list.append( icon->getURL() );
 }
 
 QString KRootWidget::getSelectedURLs()
 {
-    QString erg;
+    QStrList list;
+    getSelectedURLs( list );
+    
+    QString erg( "" );
 
-    // TODO: Liste aller selektierten URLs zurueckgeben
-    return QString( erg );
+    bool first = TRUE;
+    char *s;
+    for ( s = list.first(); s != 0L; s = list.next() )
+    {
+	if ( !first )
+	    erg += "\n";
+	erg += s;
+	first = FALSE;
+    }
+    
+    return erg;
 }
 
 void KRootWidget::saveLayout()
@@ -337,7 +349,6 @@ void KRootWidget::loadLayout()
 	    fgets( buffer, 1024, f );
 	    if ( buffer[ 0 ] != 0 )
 	    {
-		debugT("I am here\n");
 		const char *p = buffer;
 		char *p2 = strchr( p, ';' );
 		*p2++ = 0;
@@ -354,11 +365,6 @@ void KRootWidget::loadLayout()
 		p2 = strchr( p, ';' );
 		*p2++ = 0;
 		QString y = p;
-		/* StringTokenizer st( s, ";" );
-		QString u = st.nextToken();
-		QString t = st.nextToken();
-		QString x = st.nextToken();
-		QString y = st.nextToken(); */
 		KRootLayout *l = new KRootLayout( u.data(), atoi( t.data() ), atoi( x.data() ), atoi( y.data() ) );
 		layoutList.append( l );
 	    }
@@ -758,7 +764,9 @@ void KRootWidget::slotPopupOpenWith()
 	if ( pattern.length() == 0 )
 	    return;
     }
-
+    else
+	return;
+    
     QString cmd;
     cmd = l.getText();
     cmd += " ";
@@ -894,6 +902,8 @@ KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) 
 {
     bSelected = FALSE;
   
+    popupMenu = new QPopupMenu();
+    
     url = _url;
     url.detach();
     pixmap.load( _pixmap_file );
@@ -1051,8 +1061,6 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
     }
     else if ( _mouse->button() == LeftButton )
     {
-        root->unselectAllIcons();
-
 	// This might be the start of a drag. So we save
 	// the position and set a flag.
 	pressed = true;
@@ -1102,6 +1110,8 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
 
     if ( _mouse->button() != LeftButton || ( _mouse->state() & ControlButton ) == ControlButton )
       return;
+
+    root->unselectAllIcons();
     
     root->openURL( url.data() );                          
 
@@ -1119,30 +1129,37 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
     if ( abs( x - press_x ) > Dnd_X_Precision || abs( y - press_y ) > Dnd_Y_Precision )
     {
 	QString data = root->getSelectedURLs();
-	
+
+	QPixmap pixmap2;
+	// No URL selected ?
 	if ( data.isNull() )
 	    data = url;
+	else 
+	{
+	    // Multiple URLs ?
+	    if ( data.find( '\n' ) != -1 )
+	    {
+		debugT("*************** MULTIPLE ICONS ***************\n");
+		QString tmp = kapp->kdedir();
+		tmp += "/share/apps/kfm/pics/kmultiple.xpm";
+		pixmap2.load( tmp );
+		if ( pixmap2.isNull() )
+		    warning("KFM: Could not find '%s'\n",tmp.data());
+	    }
+	}
 	
 	QPoint p = mapToGlobal( _mouse->pos() );
 	QPoint p2 = mapToGlobal( QPoint( press_x, press_y ) );
 	int dx = QWidget::x() - p2.x() + pixmapXOffset;
 	int dy = QWidget::y() - p2.y() + pixmapYOffset;
-	startDrag( new KDNDIcon( pixmap, p.x() + dx, p.y() + dy ), url.data(), url.length(), DndURL, dx, dy );
+
+	// Multiple URLs ?
+	if ( !pixmap2.isNull() )
+	    startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
+	else
+	    startDrag( new KDNDIcon( pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
     }
 }
-
-/*
- * Called when we start dragging Icons from the desktop around and release
- * the mouse button over the desktop again. In this case I just move
- * the icons from their original place to the new one.
- */
-/* void KRootIcon::rootDropEvent( int _x, int _y )
-{
-    QPoint p = mapToGlobal( QPoint( press_x, press_y ) );
-    root->moveIcons( (const char *)dndData, p.x() - _x, p.y() - _y );
-
-    KDNDWidget::rootDropEvent();
-}*/
 
 void KRootIcon::updatePixmap()
 {
@@ -1213,24 +1230,24 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
 	// Executables or only of interest on the local hard disk
 	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	{
-	    // Run the executable with the dropped 
-	    // files as arguments
-	    if ( KMimeBind::runBinding( _dest, 
-					klocale->getAlias(ID_STRING_OPEN), 
-					&(_zone->getURLList() ) ) )
-		// Everything went fine
+	    KMimeType *typ = KMimeType::getMagicMimeType( _dest );
+	    if ( typ->runAsApplication( _dest, &(_zone->getURLList() ) ) )
 		return;
-	    else
-	    {
-		// We did not find some binding to execute
-	      QMessageBox::message( klocale->translate("KFM Error"),
-				    klocale->translate("Dont know what to do.") );
-		return;
-	    }
+	}
+	else
+	{
+	    // We did not find some binding to execute
+	    QMessageBox::message( klocale->translate("KFM Error"),
+				  klocale->translate("Dont know what to do.") );
+	    return;
 	}
     }
     
+    debugT("Trying to copy\n");
+    
     popupMenu->clear();
+    
+    debugT("1\n");
     
     int id = -1;
     // Ask wether we can read from the dropped URL.
@@ -1254,8 +1271,10 @@ void KRootIcon::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPo
 	return;
     }
 
+    debugT("2\n");
     // Show the popup menu
     popupMenu->popup( *_p );
+    debugT("3\n");
 }
 
 void KRootIcon::slotDropCopy()
@@ -1278,6 +1297,9 @@ void KRootIcon::slotDropLink()
 
 KRootIcon::~KRootIcon()
 {
+    if ( popupMenu )
+	delete popupMenu;
+    
     delete dropZone;
 }
 

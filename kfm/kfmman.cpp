@@ -179,6 +179,19 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	return false;
     }
 
+    if ( strcmp( u.protocol(), "mailto" ) == 0 )
+    {
+	QString subject;
+	QString to( u.path() );
+	int i;
+	if ( ( i = to.find( '?' ) ) != -1 )
+	    to = to.left( i ).data();
+	QString cmd;
+	cmd.sprintf( "kmail to \"%s\" subject \"%s\"", to.data(), subject.data() );
+	KMimeBind::runCmd( cmd );
+	return false;
+    }
+    
     // Is page cached ?
     const char *file;
     if ( ( file = view->getHTMLCache()->isCached( _url ) ) != 0L && !_reload )
@@ -543,11 +556,19 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	filename += s->getName();
 		
 	view->write( filename.data() );
-	view->write( "\"><center><img border=0 src=\"file:" );
-
-	view->write( KMimeType::getPixmapFileStatic( filename ) );
-
-	view->write( "\"><br>" );
+	if ( view->getGUI()->isVisualSchnauzer() )
+	{
+	    view->write( "\">" );
+	    view->write( getVisualSchnauzerIconTag( filename ).data() );
+	    view->write( "<br>" );
+	}
+	else
+	{
+	    view->write( "\"><center><img border=0 src=\"file:" );
+	    view->write( KMimeType::getPixmapFileStatic( filename ) );
+	    view->write( "\"><br>" );
+	}
+	
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("<i>");
 	strcpy( buffer, decoded );
@@ -723,15 +744,6 @@ void KFMManager::slotMimeType( const char *_type )
 	    // Have we registered this mime type in KDE ?
 	    if ( typ && typ->run( tryURL ) )
 		return;
-	}
-		
-	// Try to run the default binding on the URL since we
-	// know that it is a real file, but we dont know the
-	// mime type, or the mime type is not registered in KDE.
-	if ( KMimeBind::runBinding( tryURL ) )
-	{
-	    debugT("Our job is done\n");
-	    return;
 	}
 	
 	// Ask the user what we should do
@@ -1010,11 +1022,15 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
 	// Executables or only of interest on the local hard disk
 	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
 	{
-	    // Run the executable with the dropped 
+	    KMimeType *typ = KMimeType::getMagicMimeType( _dest );
+	    if ( typ->runAsApplication( _dest, &(_zone->getURLList() ) ) )
+		return;
+
+	    /* // Run the executable with the dropped 
 	    // files as arguments
 	    if ( KMimeBind::runBinding( _dest, klocale->getAlias(ID_STRING_OPEN), &(_zone->getURLList() ) ) )
 		// Everything went fine
-		return;
+		return; */
 	    else
 	    {
 		// We did not find some binding to execute
@@ -1069,6 +1085,113 @@ void KFMManager::slotDropLink()
 {
     KIOJob * job = new KIOJob;
     job->link( dropZone->getURLList(), dropDestination.data() );
+}
+
+QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
+{
+    // directories URL
+    KURL u( url );
+    // URL of the file we need an icon for
+    KURL u2( _url );
+    
+    // Look for .xvpics directory on local hard disk only.
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    {
+	struct stat buff;
+	lstat( u2.path(), &buff );
+	// Is it a regular file ?
+	if ( S_ISREG( buff.st_mode ) )
+	{
+	    // Path for .xvpics
+	    QString xv = u.directory();
+	    if ( xv.right(1) != "/" )
+		xv += "/.xvpics";
+	    else
+		xv += ".xvpics";
+	    debugT("XV='%s'\n",xv.data());
+	    
+	    // Does the .xvpics directory exist ?
+	    DIR *dp = opendir( xv.data() );
+	    if ( dp != NULL )
+	    {
+		closedir( dp );
+		
+		xv += "/";
+		debugT("XV2='%s'\n",xv.data());
+		
+		// Assume XV pic is not available
+		bool is_avail = FALSE;
+		// Assume that the xv pic has size 0
+		bool is_null = TRUE;
+		
+		// Time of the original image
+		time_t t1 = buff.st_mtime;
+		if ( buff.st_size != 0 )
+		    is_null = FALSE;
+		// Get the times of the xv pic
+		QString xvfile( xv.data() );
+		xvfile += u2.filename();
+		if ( !xv.isEmpty() )
+		{
+		    debugT("Local XVFile '%s'\n",xvfile.data());
+		    // Is the XV pic available ?
+		    if ( lstat( xvfile, &buff ) == 0 )
+		    {
+			time_t t2 = buff.st_mtime;
+			// Is it outdated ?
+			if ( t1 <= t2 )
+			    is_avail = TRUE;
+		    }
+		}
+		
+		// Do we have a thumb nail image already ?
+		if ( is_avail && !is_null )
+		{
+		    // Does it really contain an image ?
+		    FILE *f = fopen( xvfile, "rb" );
+		    if ( f != 0L )
+		    {
+			char str4[ 1024 ];
+			fgets( str4, 1024, f );
+			if ( strncmp( "P7 332", str4, 6 ) != 0 )
+			    is_null = TRUE;
+			// Skip line
+			fgets( str4, 1024, f );
+			fgets( str4, 1024, f );
+			if ( strncmp( "#BUILTIN:UNKNOWN", str4, 16 ) == 0 )
+			    is_null = TRUE;
+			fclose( f );
+		    }
+		}
+		
+		if ( is_avail && !is_null )
+		{
+		    printf("******** XVPIC found for '%s'\n",_url );
+		    QString result;
+		    result.sprintf("<img border=0 src=\"file:%s\">", xvfile.data() );
+		    return result;
+		}
+	    }
+	}
+    
+	// At this time the icon protocol works for local files only.
+	KMimeType *mime = KMimeType::getMagicMimeType( _url );
+	if ( strcmp( mime->getMimeType(), "image/jpeg" ) == 0 ||
+	     strcmp( mime->getMimeType(), "image/gif" ) == 0 ||
+	     strcmp( mime->getMimeType(), "image/x-xpm" ) == 0 )
+	{
+	    printf("*********** TRYING for '%s'\n",_url );
+	    QString result;
+	    result.sprintf("<img border=0 src=\"icon:%s\">", u2.path() );
+	    return result;
+	}
+    }
+    
+    printf("************ DEFAULT for '%s'\n",_url);
+    KMimeType *mime = KMimeType::getMagicMimeType( _url );
+    QString result;
+    result.sprintf("<img border=0 src=\"file:%s\">", mime->getPixmapFile( _url ) );
+    return result;
 }
 
 #include "kfmman.moc"
