@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-16 10:11+01:00\n"
+"PO-Revision-Date: 1999-01-22 23:22+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
 "MIME-Version: 1.0\n"
@@ -63,15 +63,16 @@ msgstr ""
 "Emulace Caps Locku zablokována"
 
 #: kikbd.cpp:1003
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Mezinárodní klávesnice"
+msgstr "Ukonèuji mezinárodní klávesnici"
 
 #: kikbd.cpp:1004
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Chystáte se ukonèit nástroj \"Mezinárodní klávesnice\".\n"
+" Pøejete si, aby se pøístì spou¹tìla automaticky?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -194,19 +195,21 @@ msgid "X default codes"
 msgstr "Implicitní X kódy"
 
 #: kikbdconf.cpp:209
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Pøejete si pokraèovat?"
+"%s\n"
+"Pøejete provést nastavení?"
 
 #: kikbdconf.cpp:217
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Pou¾íváte nástroj \"Mezinárdní klávesnice\" poprvé.\n"
+"Instaluji nìkolik implicitních nastavení."
 
 #: kikbdconf.cpp:359
 msgid "unknown"
@@ -261,14 +264,12 @@ msgid "alternative symbols"
 msgstr "alternativní symboly"
 
 #: kikbdconf.cpp:429
-#, fuzzy
 msgid "Language"
 msgstr "jazyk"
 
 #: kikbdconf.cpp:433
-#, fuzzy
 msgid "Charset"
-msgstr "znaková sada"
+msgstr "Znaková sada"
 
 #: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
@@ -502,7 +503,6 @@ msgid "&Docked"
 msgstr "&Dokované"
 
 #: widgets.cpp:649
-#, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Pohlcovat ve speciální oblasti v kpanelu"
 
@@ -529,27 +529,3 @@ msgstr "Sp&u¹tení"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Mezinárodní klávesnice"
-
-#~ msgid ""
-#~ "%s\n"
-#~ "Do you want to start Configuration?"
-#~ msgstr ""
-#~ "%s\n"
-#~ "Chcete spustit konfiguraci?"
-
-#~ msgid "Your configuration is empty. Install system default."
-#~ msgstr "Va¹e konfigurace je prázdná. Nainstalujte standardní natavení."
-
-#~ msgid ""
-#~ "Configuration file you have has older format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiguraèní soubor má sta¹í formát ne¾ je oèekáváno.\n"
-#~ "Nìkterá nastavení nemusí být správná."
-
-#~ msgid ""
-#~ "Configuration file you have has newer format than expected.\n"
-#~ "Some settings may be incorrect."
-#~ msgstr ""
-#~ "Konfiguraèní soubor má novìj¹í formát ne¾ je oèekáváno.\n"
-#~ "Nìkterá nastavení nemusí být správná."

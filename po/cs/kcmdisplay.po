@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1999-01-16 10:21+01:00\n"
+"PO-Revision-Date: 1999-01-22 23:31+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "&Náhodná"
 
 #: backgnd.cpp:408
 msgid "Setu&p..."
-msgstr "Nas&tavit..."
+msgstr "N&astavit..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
@@ -384,7 +384,7 @@ msgstr "Na&stavit ..."
 
 #: scrnsave.cpp:217
 msgid "&Test"
-msgstr "&Test"
+msgstr "T&est"
 
 #: scrnsave.cpp:230
 msgid "Settings"
@@ -486,7 +486,7 @@ msgstr "&Barvy"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr "Styl"
+msgstr "S&tyl"
 
 #: main.cpp:83
 msgid ""
@@ -520,7 +520,7 @@ msgstr "T&yp písma"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "&Tuèné"
+msgstr "T&uèné"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
