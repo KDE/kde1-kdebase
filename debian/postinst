@@ -17,14 +17,21 @@ then
 fi
  
 echo "Updating kdmrc ..."
-(echo -n "s/WINDOWMANAGER/" ; \
-cat /etc/X11/window-managers  |grep -v ^#|while read A ; \
-do echo -n "`basename $A`;" ;  \
-done ; \
-echo "/") > /etc/kde/kdmrc.tmp
-sed `cat /etc/kde/kdmrc.tmp` \
-< /etc/kde/kdmrc.in > /etc/kde/kdmrc
-rm /etc/kde/kdmrc.tmp
+grep -vE "^(NoUsers|GUIStyle|SessionTypes)" /etc/kde/kdmrc > /tmp/kdmrc
+echo "[KDM]" >> /tmp/kdmrc  
+echo -n "NoUsers=" >> /tmp/kdmrc
+for user in `sed -e "s#^\([^:]*\):.*:\([0-9]*\):.*\$#\2-\1#" /etc/passwd`; do 
+    id=`echo $user | sed -e "s#-.*##"`
+    if test -n "$id" && expr "$id" \> 1000 && expr "$id" \< 65500; then
+	echo -n "`echo $user | sed -e "s#[0-9]*-##"`;" >> /tmp/kdmrc
+    fi
+done
+echo "" >> /tmp/kdmrc
+echo -n "SessionTypes=kde" >> /tmp/kdmrc
+for session in `grep -v "^#" | sed -e 's#^.*/\([^/]*\)$#\1#' | sort -u | grep -v kde`; do
+    echo -n "$session;" >> /tmp/kdmrc
+done
+-mv /tmp/kdmrc /etc/kde/kdmrc
 
 if test ! -L /var/spool/kdeapplnk; then
 	ln -s /usr/share/applnk/debian_menu /var/spool/kdeapplnk

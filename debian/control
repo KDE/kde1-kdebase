@@ -19,6 +19,7 @@ Architecture: all
 Description: Some wallpapers for KDE 
 
 Package: kdebase-i18n
+Depends: kdebase
 Architecture: all
 Description: Translations of applications in kdebase.
  It contains translations into 31 languages

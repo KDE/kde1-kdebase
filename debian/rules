@@ -49,8 +49,6 @@ binary-arch2:
 	dh_installdirs
 	make prefix=`pwd`/debian/tmp/usr install
 	dh_movefiles
-	-mv debian/tmp/etc/kde/kdmrc \
-			debian/tmp/etc/kde/kdmrc.in
 	perl -w debian/kderules
 	cp debian/README.kde debian/tmp/usr/doc/kde
 	install -d debian/tmp/etc/init.d
