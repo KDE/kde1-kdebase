@@ -51,8 +51,6 @@ void WidgetCanvas::drawSampleWidgets()
     				back.dark(120),
     				txt, window );
 	
-	QColor col = QWidget::backgroundColor(); 
-
 	// We will need this brush.
 	
 	QBrush brush(SolidPattern);
@@ -240,17 +238,12 @@ void WidgetCanvas::drawSampleWidgets()
     // Valance
 
 	qDrawWinPanel ( &paint, 0, 0, width(), height(),
-	parentWidget()->colorGroup(), TRUE, 0);
+					parentWidget()->colorGroup(), TRUE, 0);
 
-    //qDrawShadePanel ( &paint, 0, height()-17,width(), 17, cg, FALSE, 2,
-    //&brush);
-    //paint.setPen( col.light() );paint.setBrush( col.light() );
-    //paint.drawRect( 1, height()-17, width()-3, 15);
-	
 	// Stop the painting
 	
-	hotspots[ spot++ ]
-	= HotSpot( QRect( 0, 0, width(), height() ), 6 );
+	hotspots[ spot++ ] =
+	HotSpot( QRect( 0, 0, width(), height() ), 6 );
 	
 	repaint( FALSE );          
 }

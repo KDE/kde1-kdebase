@@ -77,6 +77,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 {	
 	changed = FALSE;
 	nSysSchemes = 2;
+	useRM = false;
 
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
@@ -174,7 +175,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 
 	group = new QGroupBox(  i18n("Widget color"), this );
 	
-	stackLayout->addWidget( group, 1 );
+	stackLayout->addWidget( group, 15 );
 
 	groupLayout = new QVBoxLayout( group, 10, 5 );
 
@@ -198,7 +199,8 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 			SLOT( slotWidgetColor(int)  )  );
 	
 
-	groupLayout->addSpacing( 20 );		
+	groupLayout->addSpacing( 20 );	
+	groupLayout->addStretch( 10 );	
 	groupLayout->addWidget( wcCombo );
 	
 	colorButton = new KColorButton( group );
@@ -214,11 +216,12 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	group->setMinimumHeight( 3*wcCombo->height()+20 );
 		
 	groupLayout->addWidget( colorButton );
+	groupLayout->addStretch( 10 );	
 	groupLayout->activate();
 
 	group = new QGroupBox(  i18n("Contrast"), this );
 	
-	stackLayout->addWidget( group, 1 );
+	stackLayout->addWidget( group, 10 );
 
 	groupLayout = new QHBoxLayout( group, 10 );
 	
@@ -229,8 +232,8 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	sb->adjustSize();
 	sb->setFixedHeight( sb->height() );
 	sb->setMinimumWidth(sb->width());
-	connect( sb, SIGNAL(valueChanged(int)), 
-		 SLOT(sliderValueChanged(int)) );
+	connect( sb, SIGNAL( valueChanged( int ) ), 
+				SLOT( sliderValueChanged( int ) ) );
 	
 	QLabel *label = new QLabel( sb, i18n("&Low"), group );
 	label->setFixedHeight( sb->sizeHint().height() );
@@ -246,9 +249,17 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	groupLayout->addWidget( label );
 	groupLayout->activate();
+	
+	group->setMinimumHeight( 2*sb->height()+20 );
 	slotPreviewScheme( 0 );
 	
 	topLayout->activate();
+}
+
+void KColorScheme::loadSettings()
+{
+	KSimpleConfig appConfig( KApplication::localconfigdir() + "/kdisplayrc" );
+	useRM = appConfig.readBoolEntry( "useResourceManager", false );
 }
 
 void KColorScheme::resizeEvent( QResizeEvent * )
@@ -583,33 +594,37 @@ void KColorScheme::readSchemeNames( )
 	
 	QDir d;
 	d.setPath( kcsPath );
-	d.setFilter( QDir::Files );
-	d.setSorting( QDir::Name );
-	d.setNameFilter("*.kcsrc");
 	
-	if ( const QFileInfoList *sysList = d.entryInfoList() ) {
-		QFileInfoListIterator sysIt( *sysList );
-		QFileInfo *fi;
+	if( d.exists() ) {
+		d.setFilter( QDir::Files );
+		d.setSorting( QDir::Name );
+		d.setNameFilter("*.kcsrc");
 
-		// Always a current and a default scheme 
-		nSysSchemes = 2;
+		if ( const QFileInfoList *sysList = d.entryInfoList() ) {
+			QFileInfoListIterator sysIt( *sysList );
+			QFileInfo *fi;
 
-		QString str;
+			// Always a current and a default scheme 
+			nSysSchemes = 2;
 
-		// This for system files
-		while ( ( fi = sysIt.current() ) ) {           // for each file...
+			QString str;
 
-			KSimpleConfig *config = new KSimpleConfig( fi->filePath(), true );
-			config->setGroup( "Color Scheme" );
-			str = config->readEntry( "name" );
+			// This for system files
+			while ( ( fi = sysIt.current() ) ) { 
 
-			sList->insertItem( str.data() );
-			sFileList->append( fi->filePath() );
+				KSimpleConfig *config =
+						new KSimpleConfig( fi->filePath(), true );
+				config->setGroup( "Color Scheme" );
+				str = config->readEntry( "name" );
 
-			++sysIt;
-			nSysSchemes++;
+				sList->insertItem( str.data() );
+				sFileList->append( fi->filePath() );
 
-			delete config;
+				++sysIt;
+				nSysSchemes++;
+
+				delete config;
+			}
 		}
 	}
 	
@@ -617,26 +632,28 @@ void KColorScheme::readSchemeNames( )
 	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
 	
 	d.setPath( kcsPath );
-	d.setFilter( QDir::Files );
-	d.setSorting( QDir::Name );
-	d.setNameFilter("*.kcsrc");
-	
-	if ( const QFileInfoList *userList = d.entryInfoList() ) {
-		QFileInfoListIterator userIt( *userList );
-		QFileInfo *fi;
-		QString str;
+	if( d.exists() ) {
+		d.setFilter( QDir::Files );
+		d.setSorting( QDir::Name );
+		d.setNameFilter("*.kcsrc");
 
-		// This for users files
-		while ( ( fi = userIt.current() ) ) {
+		if ( const QFileInfoList *userList = d.entryInfoList() ) {
+			QFileInfoListIterator userIt( *userList );
+			QFileInfo *fi;
+			QString str;
 
-			KSimpleConfig config( fi->filePath(), true );
-			config.setGroup( "Color Scheme" );
-			str = config.readEntry( "name" );
+			// This for users files
+			while ( ( fi = userIt.current() ) ) {
 
-			sList->insertItem( str.data() );
-			sFileList->append( fi->filePath() );
+				KSimpleConfig config( fi->filePath(), true );
+				config.setGroup( "Color Scheme" );
+				str = config.readEntry( "name" );
 
-			++userIt;
+				sList->insertItem( str.data() );
+				sFileList->append( fi->filePath() );
+
+				++userIt;
+			}
 		}
 	}
 		
@@ -669,31 +686,33 @@ void KColorScheme::writeSettings()
 	sys->writeEntry("contrast", cs->contrast, true, true);
     sys->sync();
 	
-	QApplication::setOverrideCursor( waitCursor );
-	
-	KResourceMan *krdb = new KResourceMan();
-	
-	krdb->setGroup( "General" );
-	krdb->writeEntry("background", cs->back );
-	krdb->writeEntry("selectBackground", cs->select );
-	krdb->writeEntry("foreground", cs->txt );
-	krdb->writeEntry("windowForeground", cs->windowTxt );
-	krdb->writeEntry("windowBackground", cs->window );
-	krdb->writeEntry("selectForeground", cs->selectTxt );
-	
-	krdb->setGroup( "WM" );
-	krdb->writeEntry("activeForeground", cs->aTxt );
-	krdb->writeEntry("inactiveBackground", cs->iaTitle );
-	krdb->writeEntry("inactiveBlend", cs->iaBlend );
-	krdb->writeEntry("activeBackground", cs->aTitle );
-	krdb->writeEntry("activeBlend", cs->aBlend );
-	krdb->writeEntry("inactiveForeground", cs->iaTxt );
-	
-	krdb->setGroup( "KDE" );
-	krdb->writeEntry("contrast", cs->contrast );
-    krdb->sync();
-	
-	QApplication::restoreOverrideCursor();
+	if ( useRM ) {
+		QApplication::setOverrideCursor( waitCursor );
+
+		KResourceMan *krdb = new KResourceMan();
+
+		krdb->setGroup( "General" );
+		krdb->writeEntry("background", cs->back );
+		krdb->writeEntry("selectBackground", cs->select );
+		krdb->writeEntry("foreground", cs->txt );
+		krdb->writeEntry("windowForeground", cs->windowTxt );
+		krdb->writeEntry("windowBackground", cs->window );
+		krdb->writeEntry("selectForeground", cs->selectTxt );
+
+		krdb->setGroup( "WM" );
+		krdb->writeEntry("activeForeground", cs->aTxt );
+		krdb->writeEntry("inactiveBackground", cs->iaTitle );
+		krdb->writeEntry("inactiveBlend", cs->iaBlend );
+		krdb->writeEntry("activeBackground", cs->aTitle );
+		krdb->writeEntry("activeBlend", cs->aBlend );
+		krdb->writeEntry("inactiveForeground", cs->iaTxt );
+
+		krdb->setGroup( "KDE" );
+		krdb->writeEntry("contrast", cs->contrast );
+    	krdb->sync();
+
+		QApplication::restoreOverrideCursor();
+	}
 }
 
 void KColorScheme::slotApply()

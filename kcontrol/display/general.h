@@ -112,6 +112,7 @@ protected:
 	QList <FontUseItem> fontUseList;
 	
 	Bool defaultCharset;
+	bool useRM;
 	Window root;
 	int screen;
 };

@@ -30,7 +30,7 @@ public:
 	virtual void readSettings( int ) {};
 	virtual void apply( bool Force = FALSE);
 	virtual void applySettings();
-	virtual void loadSettings() {};
+	virtual void loadSettings();
 	
 	QColor colorPushColor;
 	
@@ -72,6 +72,7 @@ protected:
 	int nSysSchemes;
 	
 	bool changed;
+	bool useRM;
 	
 	Window          root;
 	int screen;

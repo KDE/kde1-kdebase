@@ -186,7 +186,7 @@ void KFontChooser::getFontList( QStrList &list, const char *pattern )
 
 void KFontChooser::getFontList( QStrList &list, bool fixed )
 {
-	// Use KDE fonts fs there is a KDE font list and only if the KDE fonts
+	// Use KDE fonts if there is a KDE font list and check that the fonts
 	// exist on the server where the desktop is running.
 	
 	QStrList lstSys, lstKDE;

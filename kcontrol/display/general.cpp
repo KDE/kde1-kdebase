@@ -123,9 +123,10 @@ void FontPreview::setPreviewFont( const QFont &fnt )
 
 KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
-{	
-        int i;
+{
+	int i;
 	changed = false;
+	useRM = false;
 	
 	debug("KGeneral::KGeneral");
 	
@@ -269,14 +270,15 @@ void KGeneral::readSettings( int )
 	KConfig config;
 	config.setGroup( "KDE" );
 
-	str = config.readEntry( "widgetStyle" );
-	if ( !str.isNull() ) {
-		if ( str == "Windows 95" )
-			applicationStyle = WindowsStyle;
-		else
-			applicationStyle = MotifStyle;
-	} else
+	str = config.readEntry( "widgetStyle", "Motif" );
+	if ( str == "Windows 95" )
+		applicationStyle = WindowsStyle;
+	else
 		applicationStyle = MotifStyle;
+
+		
+	KSimpleConfig appConfig( KApplication::localconfigdir() + "/kdisplayrc" );
+	useRM = appConfig.readBoolEntry( "useResourceManager", false );
 }
 
 void KGeneral::writeSettings()
@@ -298,21 +300,23 @@ void KGeneral::writeSettings()
 	config->writeEntry("widgetStyle", str, true, true);
 	config->sync();
 	
-	QApplication::setOverrideCursor( waitCursor );
-	
-	KResourceMan *krdb = new KResourceMan();
-	for ( int i = 0; i < (int) fontUseList.count(); i++ ) {
-		FontUseItem *it = fontUseList.at( i );
-		if ( !it->rcFile() ) {
-			krdb->setGroup( it->rcGroup() );
-			krdb->writeEntry( it->rcKey(), it->font() );
+	if ( useRM ) {
+		QApplication::setOverrideCursor( waitCursor );
+
+		KResourceMan *krdb = new KResourceMan();
+		for ( int i = 0; i < (int) fontUseList.count(); i++ ) {
+			FontUseItem *it = fontUseList.at( i );
+			if ( !it->rcFile() ) {
+				krdb->setGroup( it->rcGroup() );
+				krdb->writeEntry( it->rcKey(), it->font() );
+			}
 		}
+		krdb->setGroup( "KDE" );
+		krdb->writeEntry( "widgetStyle", str );
+		krdb->sync();
+
+		QApplication::restoreOverrideCursor();
 	}
-	krdb->setGroup( "KDE" );
-	krdb->writeEntry( "widgetStyle", str );
-	krdb->sync();
-	
-	QApplication::restoreOverrideCursor();
 	
 	fontUseList.at( lbFonts->currentItem() );
 }
