@@ -7,7 +7,7 @@ BackGroundPictureTile=1
 [KDM]
 SortUsers=true
 #Users=root;johndoe
-NoUsers=sync;halt;reboot;shutdown;mail;
+NoUsers=bin;daemon;games;halt;mail;man;news;nobody;reboot;shutdown;sync;uucp;xten;
 GreetString=K Desktop Environment [HOSTNAME]
 UserView=true
 #ShutdownButton=RootOnly
