@@ -494,7 +494,8 @@ msgstr "&Style"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"utilisation : kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+"utilisation : kcmdisplay [-init | "
+"{background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -543,5 +544,3 @@ msgstr "par défaut"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "n'importe lequel"
-
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -257,11 +257,11 @@ msgstr "תיבה תיירפס"
 msgid "Could not load icon\n"
 msgstr "למס גיצהל ןתינ אל\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1619 kbind.cpp:1627 kbind.cpp:1645
-#: kbind.cpp:1664 kbind.cpp:1723 kbind.cpp:1735 kbind.cpp:1762 kbind.cpp:1777
-#: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
-#: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:63 kfmexec.cpp:115
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:306
+#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1620 kbind.cpp:1628 kbind.cpp:1646
+#: kbind.cpp:1665 kbind.cpp:1724 kbind.cpp:1736 kbind.cpp:1763 kbind.cpp:1784
+#: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
+#: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
 #: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
 #: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1674 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
@@ -273,9 +273,9 @@ msgstr "למס גיצהל ןתינ אל\n"
 #: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:694 kfmview.cpp:698
 #: kfmview.cpp:737 kfmview.cpp:763 kfmview.cpp:784 kfmview.cpp:792
 #: kfmview.cpp:800 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
-#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:566
-#: kiojob.cpp:584 kiojob.cpp:852 kiojob.cpp:873 kiojob.cpp:904 kiojob.cpp:952
-#: kiojob.cpp:1420 kiojob.cpp:1428 kiojob.cpp:1656 krenamewin.cpp:120
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:567
+#: kiojob.cpp:585 kiojob.cpp:862 kiojob.cpp:883 kiojob.cpp:914 kiojob.cpp:962
+#: kiojob.cpp:1431 kiojob.cpp:1439 kiojob.cpp:1667 krenamewin.cpp:120
 #: popup.cpp:105 root.cpp:943 root.cpp:1224 root.cpp:1242 root.cpp:1248
 #: root.cpp:1254 root.cpp:1335 root.cpp:1860 root.cpp:1885
 msgid "KFM Error"
@@ -369,7 +369,7 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "הייוגש תבותכ ךותל הרירג :האיגש"
 
 #: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:828
-#: kiojob.cpp:653 kiojob.cpp:1026 krenamewin.cpp:20 root.cpp:1286
+#: kiojob.cpp:658 kiojob.cpp:1036 krenamewin.cpp:20 root.cpp:1286
 msgid "KFM Warning"
 msgstr "KFM  רייסמ הרהזא"
 
@@ -439,70 +439,70 @@ msgstr ""
 "חוטבכ גווסמ וניא ףדה\n"
 "ךלש םיצבקה תכרעמל םירושיק ליכמ אוה םלוא"
 
-#: kfmview.cpp:1236
+#: kfmview.cpp:1224
 msgid "Symbolic Link"
 msgstr "ךרד רוציק"
 
-#: kfmview.cpp:1238
+#: kfmview.cpp:1226
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (ךרד רוציק)"
 
-#: kfmview.cpp:1258
+#: kfmview.cpp:1246
 msgid "bytes"
 msgstr "םיתב"
 
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "The mime type config file "
 msgstr "םירכומה םיצבקה תמישר"
 
-#: kbind.cpp:304
+#: kbind.cpp:305
 #, fuzzy
 msgid "does not contain a MimeType=... entry"
 msgstr "ןייוצמה ץבוקה גוס תא תללוכ הניא"
 
-#: kbind.cpp:392
+#: kbind.cpp:393
 msgid "No mime types installed!"
 msgstr "! םירכומ םיצבק תורדגה ונקתוה אל"
 
-#: kbind.cpp:440 kbind.cpp:1214
+#: kbind.cpp:441 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "םירכומה םיצבקב אצמנ וניא ץבוקה גוס\n"
 
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1995 kbind.cpp:1996 kbind.cpp:2008
-#: kbind.cpp:2010
+#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2002 kbind.cpp:2003 kbind.cpp:2015
+#: kbind.cpp:2017
 msgid "Mount"
 msgstr "רבחתה"
 
-#: kbind.cpp:726 kbind.cpp:1986
+#: kbind.cpp:727 kbind.cpp:1993
 msgid "Unmount"
 msgstr "קתנתה"
 
-#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:951 kbind.cpp:963 kbind.cpp:973 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr "הייקית"
 
-#: kbind.cpp:1213
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "האיגש"
 
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "in "
 msgstr " ב "
 
-#: kbind.cpp:1355 kbind.cpp:1923
+#: kbind.cpp:1356 kbind.cpp:1930
 msgid "ERROR: No Terminal Setting"
 msgstr "לנימרט תורדגה ןיא :האיגש"
 
-#: kbind.cpp:1409 kbind.cpp:1502
+#: kbind.cpp:1410 kbind.cpp:1503
 msgid "Could not execute program\n"
 msgstr "םושיי ץירהל ןתינ אל\n"
 
-#: kbind.cpp:1618
+#: kbind.cpp:1619
 msgid "Could not find binding"
 msgstr "רשקה אוצמל היה ןתינ אל"
 
-#: kbind.cpp:1628
+#: kbind.cpp:1629
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -510,11 +510,11 @@ msgstr ""
 "!ךמסמ הז\n"
 "הצרהל םושיי אל הז"
 
-#: kbind.cpp:1646 kbind.cpp:1665
+#: kbind.cpp:1647 kbind.cpp:1666
 msgid "Can only start executables on local disks\n"
 msgstr "םיממוקמ םיננוכ לע קר םימושי ץירהל ןתינ\n"
 
-#: kbind.cpp:1724 kbind.cpp:1798 kbind.cpp:1961
+#: kbind.cpp:1725 kbind.cpp:1805 kbind.cpp:1968
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -522,7 +522,7 @@ msgstr ""
 "קר .kdelink יצבק םע דובעל ןתינ\n"
 "םיימוקמ םיננוכב"
 
-#: kbind.cpp:1734
+#: kbind.cpp:1735
 #, c-format
 msgid ""
 "Could not access\n"
@@ -531,19 +531,19 @@ msgstr ""
 "ץבוקל השיג ןיא\n"
 "%s"
 
-#: kbind.cpp:1763
+#: kbind.cpp:1764
 msgid "The \"Link=....\" entry is empty"
 msgstr "קיר רושיק אוה \"Link....\" רושיקה"
 
-#: kbind.cpp:1778
+#: kbind.cpp:1785
 msgid "The config file has no \"Type=...\" line"
 msgstr "\"Type=...\" תרוש ןיא היצרוגיפנוקה ץבוקל"
 
-#: kbind.cpp:1808 kbind.cpp:1971
+#: kbind.cpp:1815 kbind.cpp:1978
 msgid "Could not access"
 msgstr "השיג ןיא"
 
-#: kbind.cpp:1826
+#: kbind.cpp:1833
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -556,11 +556,11 @@ msgstr ""
 "ץבוקה יניפאמ תא ךורע\n"
 "הייעבה ןורתפל"
 
-#: kbind.cpp:2018
+#: kbind.cpp:2025
 msgid "No mount point in *.kdelnk file"
 msgstr "*.kdelink ה ץבוקב רוביח תדוקנל הרדגה ןיא"
 
-#: kbind.cpp:2058
+#: kbind.cpp:2065
 msgid "Unknown binding"
 msgstr "עודי אל רוביח"
 
@@ -978,7 +978,7 @@ msgstr "....ןתמה"
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "ןקתהה םש ןייצל תוחפל שי ןקתה רבחל ידכ :האיגש"
 
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1286 kiojob.cpp:1352
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1296 kiojob.cpp:1363
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1012,14 +1012,14 @@ msgstr "ךרד רוציק רוציל ןתינ אל%s ל"
 msgid " ERROR: Could not write to %s"
 msgstr "%s ל בותכל ןתינ אל :האיגש"
 
-#: kiojob.cpp:565 kiojob.cpp:851
+#: kiojob.cpp:566 kiojob.cpp:861
 #, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr "ךרד רוציק רוציל ןתינ אל%s ל"
 
-#: kiojob.cpp:583 kiojob.cpp:872 kiojob.cpp:1308
+#: kiojob.cpp:584 kiojob.cpp:882 kiojob.cpp:1319
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1028,24 +1028,28 @@ msgstr ""
 "היירפס רוציל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:595 kiojob.cpp:1119
+#: kiojob.cpp:596 kiojob.cpp:1129
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr ""
 
-#: kiojob.cpp:650
+#: kiojob.cpp:655
 #, c-format
 msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:652
+#: kiojob.cpp:657
 #, c-format
 msgid "%d special files will not be copied."
 msgstr ""
 
-#: kiojob.cpp:903
+#: kiojob.cpp:662
+msgid "Recurse copying from/to distant locations"
+msgstr ""
+
+#: kiojob.cpp:913
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1054,7 +1058,7 @@ msgstr ""
 "היירפסל השיג ןיא :האיגש\n"
 "%s"
 
-#: kiojob.cpp:951
+#: kiojob.cpp:961
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1067,19 +1071,19 @@ msgstr ""
 "%s ל\n"
 "תאז תושעל האשרה ךל ןיא יכ ןכתי"
 
-#: kiojob.cpp:1023
+#: kiojob.cpp:1033
 #, c-format
 msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1025
+#: kiojob.cpp:1035
 #, c-format
 msgid "%d special files will not be moved."
 msgstr ""
 
-#: kiojob.cpp:1289 kiojob.cpp:1356
+#: kiojob.cpp:1299 kiojob.cpp:1367
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1090,7 +1094,7 @@ msgstr ""
 "%s\n"
 "האשרה ךל ןיאש וא םייק וניא ץבוקה"
 
-#: kiojob.cpp:1292
+#: kiojob.cpp:1302
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1101,7 +1105,7 @@ msgstr ""
 "%s\n"
 "הביתכ תואשרה ךל ןיא יכ ןכתיי"
 
-#: kiojob.cpp:1296 kiojob.cpp:1360
+#: kiojob.cpp:1306 kiojob.cpp:1371
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1110,7 +1114,7 @@ msgstr ""
 "ל רוביח רוציל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:1299 kiojob.cpp:1364
+#: kiojob.cpp:1309 kiojob.cpp:1375
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1119,7 +1123,7 @@ msgstr ""
 "עודי אל תרש םש\n"
 "%s"
 
-#: kiojob.cpp:1302 kiojob.cpp:1368
+#: kiojob.cpp:1312 kiojob.cpp:1379
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1128,7 +1132,7 @@ msgstr ""
 "תרשל רבחתהל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:1305 kiojob.cpp:1372
+#: kiojob.cpp:1315 kiojob.cpp:1383
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1138,7 +1142,7 @@ msgstr ""
 "תשקובמה הלועפה\n"
 "%sןיידע תשמוממ הנניא"
 
-#: kiojob.cpp:1311
+#: kiojob.cpp:1322
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1147,7 +1151,7 @@ msgstr ""
 "היירפסה תלוכת תא גיצהל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:1315
+#: kiojob.cpp:1326
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1158,7 +1162,7 @@ msgstr ""
 "%s רושיקה תא\n"
 "תואשרה ךל ןיאש וא םייק וניא רושיקה"
 
-#: kiojob.cpp:1319 kiojob.cpp:1377
+#: kiojob.cpp:1330 kiojob.cpp:1388
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1169,7 +1173,7 @@ msgstr ""
 "%s\n"
 "הייוגש המסיסהו ןכתי"
 
-#: kiojob.cpp:1330
+#: kiojob.cpp:1341
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1178,7 +1182,7 @@ msgstr ""
 "האיגש לע החוויד tar ביכראה תנכות\n"
 "%s ץבוקב"
 
-#: kiojob.cpp:1333
+#: kiojob.cpp:1344
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1187,7 +1191,7 @@ msgstr ""
 "האיגש לע החוויד gzip הסיחדה תנכות\n"
 "%s ץבוקב"
 
-#: kiojob.cpp:1339 kiojob.cpp:1348
+#: kiojob.cpp:1350 kiojob.cpp:1359
 #, c-format
 msgid ""
 "File %s\n"
@@ -1197,7 +1201,7 @@ msgstr ""
 "%s\n"
 "םייק וניא"
 
-#: kiojob.cpp:1389
+#: kiojob.cpp:1400
 #, fuzzy, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1206,7 +1210,7 @@ msgstr ""
 "האיגש לע החוויד tar ביכראה תנכות\n"
 "%s ץבוקב"
 
-#: kiojob.cpp:1393
+#: kiojob.cpp:1404
 #, fuzzy, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1215,7 +1219,7 @@ msgstr ""
 "האיגש לע החוויד gzip הסיחדה תנכות\n"
 "%s ץבוקב"
 
-#: kiojob.cpp:1397
+#: kiojob.cpp:1408
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1228,7 +1232,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1401
+#: kiojob.cpp:1412
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1241,21 +1245,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1505
+#: kiojob.cpp:1516
 msgid "Making directory"
 msgstr "היירפס רצוי"
 
-#: kiojob.cpp:1621 kiojob.cpp:1675 kiojob.cpp:1717
+#: kiojob.cpp:1632 kiojob.cpp:1686 kiojob.cpp:1728
 #, c-format
 msgid "File %i/%i"
 msgstr "%i %i ץבוק"
 
-#: kiojob.cpp:1624 kiojob.cpp:1679
+#: kiojob.cpp:1635 kiojob.cpp:1690
 #, c-format
 msgid "to %s"
 msgstr "%s ל"
 
-#: kiojob.cpp:1655
+#: kiojob.cpp:1666
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1264,22 +1268,22 @@ msgstr ""
 "היירפיס קוחמל ןתינ אל\n"
 "%s"
 
-#: kiojob.cpp:1745
+#: kiojob.cpp:1756
 #, c-format
 msgid "Mounting %s ..."
 msgstr "...%s ןקתה רבחמ"
 
-#: kiojob.cpp:1747
+#: kiojob.cpp:1758
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "... %s ןקתהמ קתנתמ"
 
-#: kiojob.cpp:1775
+#: kiojob.cpp:1786
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "%s לש הלוכתה תמישר אביימ"
 
-#: kiojob.cpp:2013
+#: kiojob.cpp:2024
 msgid "Segmentation fault in io subprocess"
 msgstr "טלפ-טלק לש הרגיש תתב ןורכזל השיג :הרומח האיגש"
 

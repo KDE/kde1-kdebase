@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-01-16 19:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -464,12 +464,13 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
 #: main.cpp:422
+#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
-"Please contact your system administrator,\n"
-"tell him, that you need suid for the kcheckpass!"
+"Please contact your system administrator.\n"
+"Tell him that you need suid for the kcheckpass program!"
 msgstr ""
 "Attention : Vous ne pourrez pas verrouiller l'écran !\n"
 "\n"
@@ -887,5 +888,3 @@ msgstr ""
 "Copyright (c) 1991 par Patrick J. Naughton\n"
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
-
-

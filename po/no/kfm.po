@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -261,11 +261,11 @@ msgstr "Hjem"
 msgid "Could not load icon\n"
 msgstr "Kunne ikke laste ikon\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
-#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1619 kbind.cpp:1627 kbind.cpp:1645
-#: kbind.cpp:1664 kbind.cpp:1723 kbind.cpp:1735 kbind.cpp:1762 kbind.cpp:1777
-#: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
-#: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:63 kfmexec.cpp:115
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:306
+#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1620 kbind.cpp:1628 kbind.cpp:1646
+#: kbind.cpp:1665 kbind.cpp:1724 kbind.cpp:1736 kbind.cpp:1763 kbind.cpp:1784
+#: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
+#: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
 #: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
 #: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1674 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
@@ -277,9 +277,9 @@ msgstr "Kunne ikke laste ikon\n"
 #: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:694 kfmview.cpp:698
 #: kfmview.cpp:737 kfmview.cpp:763 kfmview.cpp:784 kfmview.cpp:792
 #: kfmview.cpp:800 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
-#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:566
-#: kiojob.cpp:584 kiojob.cpp:852 kiojob.cpp:873 kiojob.cpp:904 kiojob.cpp:952
-#: kiojob.cpp:1420 kiojob.cpp:1428 kiojob.cpp:1656 krenamewin.cpp:120
+#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:567
+#: kiojob.cpp:585 kiojob.cpp:862 kiojob.cpp:883 kiojob.cpp:914 kiojob.cpp:962
+#: kiojob.cpp:1431 kiojob.cpp:1439 kiojob.cpp:1667 krenamewin.cpp:120
 #: popup.cpp:105 root.cpp:943 root.cpp:1224 root.cpp:1242 root.cpp:1248
 #: root.cpp:1254 root.cpp:1335 root.cpp:1860 root.cpp:1885
 msgid "KFM Error"
@@ -380,7 +380,7 @@ msgstr "FEIL: Dropp over en misdannet URL"
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
 #: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:828
-#: kiojob.cpp:653 kiojob.cpp:1026 krenamewin.cpp:20 root.cpp:1286
+#: kiojob.cpp:658 kiojob.cpp:1036 krenamewin.cpp:20 root.cpp:1286
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
@@ -470,84 +470,84 @@ msgstr ""
 "men den inneholder en lenke til ditt lokale filsystem."
 
 # kfmview.cpp:824
-#: kfmview.cpp:1236
+#: kfmview.cpp:1224
 msgid "Symbolic Link"
 msgstr "Symbolsk Lenke"
 
 # kfmview.cpp:826
-#: kfmview.cpp:1238
+#: kfmview.cpp:1226
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Lenke)"
 
 # kfmview.cpp:846
-#: kfmview.cpp:1258
+#: kfmview.cpp:1246
 msgid "bytes"
 msgstr "byte"
 
 # kbind.cpp:302
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "The mime type config file "
 msgstr "Mimetypekonfigurasjonsfilen"
 
 # kbind.cpp:303
-#: kbind.cpp:304
+#: kbind.cpp:305
 msgid "does not contain a MimeType=... entry"
 msgstr "inneholder ikke noe MimeType=...-innslag"
 
 # kbind.cpp:377
-#: kbind.cpp:392
+#: kbind.cpp:393
 msgid "No mime types installed!"
 msgstr "Ingen mimetyper installert!"
 
 # kbind.cpp:425 kbind.cpp:1188
-#: kbind.cpp:440 kbind.cpp:1214
+#: kbind.cpp:441 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "Kunne ikke finne mimetype\n"
 
 # kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 # kbind.cpp:1905
-#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1995 kbind.cpp:1996 kbind.cpp:2008
-#: kbind.cpp:2010
+#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2002 kbind.cpp:2003 kbind.cpp:2015
+#: kbind.cpp:2017
 msgid "Mount"
 msgstr "Monter"
 
 # kbind.cpp:713 kbind.cpp:1881
-#: kbind.cpp:726 kbind.cpp:1986
+#: kbind.cpp:727 kbind.cpp:1993
 msgid "Unmount"
 msgstr "Demonter"
 
-#: kbind.cpp:950 kbind.cpp:962 kbind.cpp:972 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:951 kbind.cpp:963 kbind.cpp:973 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr "Mappe"
 
 # kbind.cpp:1187
-#: kbind.cpp:1213
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "FEIL"
 
 # kbind.cpp:1188
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "in "
 msgstr "i "
 
 # kbind.cpp:1822
-#: kbind.cpp:1355 kbind.cpp:1923
+#: kbind.cpp:1356 kbind.cpp:1930
 msgid "ERROR: No Terminal Setting"
 msgstr "FEIL: Ingen terminalinstillinger"
 
 # kbind.cpp:1332 kbind.cpp:1418
-#: kbind.cpp:1409 kbind.cpp:1502
+#: kbind.cpp:1410 kbind.cpp:1503
 msgid "Could not execute program\n"
 msgstr "Kunne ikke utføre program\n"
 
 # kbind.cpp:1528
-#: kbind.cpp:1618
+#: kbind.cpp:1619
 msgid "Could not find binding"
 msgstr "Kunne ikke finne tilordning"
 
 # kbind.cpp:1538
-#: kbind.cpp:1628
+#: kbind.cpp:1629
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -556,12 +556,12 @@ msgstr ""
 "Ikke et program"
 
 # kbind.cpp:1556 kbind.cpp:1573
-#: kbind.cpp:1646 kbind.cpp:1665
+#: kbind.cpp:1647 kbind.cpp:1666
 msgid "Can only start executables on local disks\n"
 msgstr "Kan bare starte programmer på lokale disker\n"
 
 # kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
-#: kbind.cpp:1724 kbind.cpp:1798 kbind.cpp:1961
+#: kbind.cpp:1725 kbind.cpp:1805 kbind.cpp:1968
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -570,7 +570,7 @@ msgstr ""
 "den lokale harddisken"
 
 # kbind.cpp:1641
-#: kbind.cpp:1734
+#: kbind.cpp:1735
 #, c-format
 msgid ""
 "Could not access\n"
@@ -580,22 +580,22 @@ msgstr ""
 "%s"
 
 # kbind.cpp:1670
-#: kbind.cpp:1763
+#: kbind.cpp:1764
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=....\"-innslaget er tomt"
 
 # kbind.cpp:1685
-#: kbind.cpp:1778
+#: kbind.cpp:1785
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 
 # kbind.cpp:1715 kbind.cpp:1866
-#: kbind.cpp:1808 kbind.cpp:1971
+#: kbind.cpp:1815 kbind.cpp:1978
 msgid "Could not access"
 msgstr "Kunne ikke få adgang til"
 
 # kbind.cpp:1734
-#: kbind.cpp:1826
+#: kbind.cpp:1833
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -608,12 +608,12 @@ msgstr ""
 "for å løse problemet"
 
 # kbind.cpp:1913
-#: kbind.cpp:2018
+#: kbind.cpp:2025
 msgid "No mount point in *.kdelnk file"
 msgstr "Ingen monteringssted i *.kdelnk-fil"
 
 # kbind.cpp:1953
-#: kbind.cpp:2058
+#: kbind.cpp:2065
 msgid "Unknown binding"
 msgstr "Ukjent tilordning"
 
@@ -1105,7 +1105,7 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERN FEIL: Du må i det minste spesifisere en enhet for montering"
 
 # kiojob.cpp:223 kiojob.cpp:231 kiojob.cpp:1190 kiojob.cpp:1330
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1286 kiojob.cpp:1352
+#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1296 kiojob.cpp:1363
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -1146,7 +1146,7 @@ msgid " ERROR: Could not write to %s"
 msgstr " FEIL: Kunne ikke skrive til %s"
 
 # kiojob.cpp:292 kiojob.cpp:315 kiojob.cpp:334
-#: kiojob.cpp:565 kiojob.cpp:851
+#: kiojob.cpp:566 kiojob.cpp:861
 #, c-format
 msgid ""
 "Could not make symbolic link\n"
@@ -1156,7 +1156,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:538 kiojob.cpp:778 kiojob.cpp:1247
-#: kiojob.cpp:583 kiojob.cpp:872 kiojob.cpp:1308
+#: kiojob.cpp:584 kiojob.cpp:882 kiojob.cpp:1319
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1166,12 +1166,12 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:551 kiojob.cpp:997
-#: kiojob.cpp:595 kiojob.cpp:1119
+#: kiojob.cpp:596 kiojob.cpp:1129
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "FEIL: Kunne ikke åpne katalog '%s'"
 
-#: kiojob.cpp:650
+#: kiojob.cpp:655
 #, c-format
 msgid ""
 "Special file will not be copied\n"
@@ -1180,13 +1180,17 @@ msgstr ""
 "Spesialfil vil ikke bli kopiert\n"
 "%s"
 
-#: kiojob.cpp:652
+#: kiojob.cpp:657
 #, c-format
 msgid "%d special files will not be copied."
 msgstr "%d spesialfiler vil ikke bli kopiert."
 
+#: kiojob.cpp:662
+msgid "Recurse copying from/to distant locations"
+msgstr ""
+
 # kiojob.cpp:809
-#: kiojob.cpp:903
+#: kiojob.cpp:913
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1196,7 +1200,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:850
-#: kiojob.cpp:951
+#: kiojob.cpp:961
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1209,7 +1213,7 @@ msgstr ""
 "til %s\n"
 "Muligens ble tilgang nektet"
 
-#: kiojob.cpp:1023
+#: kiojob.cpp:1033
 #, c-format
 msgid ""
 "Special file will not be moved\n"
@@ -1218,13 +1222,13 @@ msgstr ""
 "Spesialfil vil ikke bli flyttet\n"
 "%s"
 
-#: kiojob.cpp:1025
+#: kiojob.cpp:1035
 #, c-format
 msgid "%d special files will not be moved."
 msgstr "%d spesialfiler vil ikke bli flyttet."
 
 # kiojob.cpp:1198 kiojob.cpp:1338
-#: kiojob.cpp:1289 kiojob.cpp:1356
+#: kiojob.cpp:1299 kiojob.cpp:1367
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1236,7 +1240,7 @@ msgstr ""
 "Filen eksisterer ikke eller tilgang nektes"
 
 # kiojob.cpp:1206
-#: kiojob.cpp:1292
+#: kiojob.cpp:1302
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1248,7 +1252,7 @@ msgstr ""
 "Muligens ble tilgang nektet"
 
 # kiojob.cpp:1215 kiojob.cpp:1346
-#: kiojob.cpp:1296 kiojob.cpp:1360
+#: kiojob.cpp:1306 kiojob.cpp:1371
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1258,7 +1262,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1223 kiojob.cpp:1354
-#: kiojob.cpp:1299 kiojob.cpp:1364
+#: kiojob.cpp:1309 kiojob.cpp:1375
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1268,7 +1272,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1231 kiojob.cpp:1362
-#: kiojob.cpp:1302 kiojob.cpp:1368
+#: kiojob.cpp:1312 kiojob.cpp:1379
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1278,7 +1282,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1239 kiojob.cpp:1370
-#: kiojob.cpp:1305 kiojob.cpp:1372
+#: kiojob.cpp:1315 kiojob.cpp:1383
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1290,7 +1294,7 @@ msgstr ""
 "er ikke implementert ennå."
 
 # kiojob.cpp:1255
-#: kiojob.cpp:1311
+#: kiojob.cpp:1322
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1300,7 +1304,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1263
-#: kiojob.cpp:1315
+#: kiojob.cpp:1326
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1312,7 +1316,7 @@ msgstr ""
 "URLen eksisterer ikke eller tilgang nektet"
 
 # kiojob.cpp:1273 kiojob.cpp:1380
-#: kiojob.cpp:1319 kiojob.cpp:1377
+#: kiojob.cpp:1330 kiojob.cpp:1388
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1324,7 +1328,7 @@ msgstr ""
 "Kanskje feil passord"
 
 # kiojob.cpp:1289 kiojob.cpp:1396
-#: kiojob.cpp:1330
+#: kiojob.cpp:1341
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1334,7 +1338,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1297
-#: kiojob.cpp:1333
+#: kiojob.cpp:1344
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1344,7 +1348,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1307 kiojob.cpp:1322
-#: kiojob.cpp:1339 kiojob.cpp:1348
+#: kiojob.cpp:1350 kiojob.cpp:1359
 #, c-format
 msgid ""
 "File %s\n"
@@ -1354,7 +1358,7 @@ msgstr ""
 "eksisterer ikke"
 
 # kiojob.cpp:1289 kiojob.cpp:1396
-#: kiojob.cpp:1389
+#: kiojob.cpp:1400
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1364,7 +1368,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1404
-#: kiojob.cpp:1393
+#: kiojob.cpp:1404
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1374,7 +1378,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1412
-#: kiojob.cpp:1397
+#: kiojob.cpp:1408
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1388,7 +1392,7 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1418
-#: kiojob.cpp:1401
+#: kiojob.cpp:1412
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1402,24 +1406,24 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1509
-#: kiojob.cpp:1505
+#: kiojob.cpp:1516
 msgid "Making directory"
 msgstr "Oppretter katalog"
 
 # kiojob.cpp:1623 kiojob.cpp:1677 kiojob.cpp:1719
-#: kiojob.cpp:1621 kiojob.cpp:1675 kiojob.cpp:1717
+#: kiojob.cpp:1632 kiojob.cpp:1686 kiojob.cpp:1728
 #, c-format
 msgid "File %i/%i"
 msgstr "Fil %i/%i"
 
 # kiojob.cpp:1626 kiojob.cpp:1681
-#: kiojob.cpp:1624 kiojob.cpp:1679
+#: kiojob.cpp:1635 kiojob.cpp:1690
 #, c-format
 msgid "to %s"
 msgstr "til %s"
 
 # kiojob.cpp:1657
-#: kiojob.cpp:1655
+#: kiojob.cpp:1666
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1429,25 +1433,25 @@ msgstr ""
 "%s"
 
 # kiojob.cpp:1747
-#: kiojob.cpp:1745
+#: kiojob.cpp:1756
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Monterer %s ..."
 
 # kiojob.cpp:1749
-#: kiojob.cpp:1747
+#: kiojob.cpp:1758
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Avmonterer %s ..."
 
 # kiojob.cpp:1777
-#: kiojob.cpp:1775
+#: kiojob.cpp:1786
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Gjennvinner listing av %s"
 
 # kiojob.cpp:2004
-#: kiojob.cpp:2013
+#: kiojob.cpp:2024
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmenteringsfeil i iu-underprosess"
 

@@ -433,8 +433,8 @@ msgstr "&Joonista elemendid Windows 95 stiilis"
 msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menüüriba ekraani ülaservas MacOS'i stiilis"
 
-#: general.cpp:259
 #
+#: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
 msgstr "&Rakenda fonte ja värve mitte-KDE rakendustele"
 
@@ -492,7 +492,8 @@ msgstr "&Stiil"
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"kasutusviis: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
+"kasutusviis: kcmdisplay [-init | "
+"{background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"

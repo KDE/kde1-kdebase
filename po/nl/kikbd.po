@@ -1,5 +1,5 @@
 msgid ""
-msgstr "POT-Creation-Date: 1999-01-14 01:18+0100\n"
+msgstr "POT-Creation-Date: 1999-01-19 01:20+0100\n"
 
 # kikbd.C:115
 #: kikbd.cpp:116
@@ -180,35 +180,25 @@ msgstr ""
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:208
-#, c-format
+# keymap.C:263
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
-msgstr ""
+"Do you want to configure now?"
+msgstr "KeyMap: kan symbool %s niet vinden"
 
-# kikbdconf.C:94
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Je configuratie is leeg. Installeer standaard"
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr ""
 
@@ -256,38 +246,38 @@ msgstr ""
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+msgid "Language"
 msgstr ""
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+msgid "Charset"
 msgstr ""
 
 # main.C:45
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "Internationale Toetsenbord Instellingen"
 
 # main.C:45
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 #, fuzzy
 msgid "International keyboard question"
 msgstr "Internationale Toetsenbord Instellingen"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
 # keymap.C:263
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 #, fuzzy
 msgid ""
 "\n"
@@ -541,7 +531,7 @@ msgid "&Docked"
 msgstr ""
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+msgid "Dock into special area in the panel"
 msgstr ""
 
 #: widgets.cpp:658
@@ -573,6 +563,10 @@ msgstr ""
 #, fuzzy
 msgid "International Keyboard"
 msgstr "Internationale Toetsenbord Instellingen"
+
+# kikbdconf.C:94
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Je configuratie is leeg. Installeer standaard"
 
 # widgets.C:54
 #~ msgid "Delete"

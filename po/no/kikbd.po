@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-06-05 14:42+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -185,40 +185,26 @@ msgstr "Høyre bunn"
 msgid "X default codes"
 msgstr "X-standardkoder"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Ønsker du å starte konfigurasjon?"
+"\n"
+"Vil du fortsette?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Konfigurasjon din er tom. Installer systemstandard."
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Konfigurasjonsfilen du har har et eldre format en forventet.\n"
-"Noen innstillinger kan være feil."
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Konfiugrasjonsfilen du har har et nyere format enn forventet.\n"
-"Noen innstillinger kan være feil."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "ukjent"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "standard"
 
@@ -266,31 +252,33 @@ msgstr "koder"
 msgid "alternative symbols"
 msgstr "alternative symboler"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "språk"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "tegnsett"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Internasjonalt tastatur-FEIL"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Internasjonalt tastatur-varsel"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Internasjonalt tastatur-spørsmål"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -506,7 +494,8 @@ msgid "&Docked"
 msgstr "&Dokket"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Dokke inn i spesielt område i kpanel"
 
 #: widgets.cpp:658
@@ -532,3 +521,27 @@ msgstr "&Oppstart"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internasjonalt tastatur"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Ønsker du å starte konfigurasjon?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Konfigurasjon din er tom. Installer systemstandard."
+
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Konfigurasjonsfilen du har har et eldre format en forventet.\n"
+#~ "Noen innstillinger kan være feil."
+
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Konfiugrasjonsfilen du har har et nyere format enn forventet.\n"
+#~ "Noen innstillinger kan være feil."

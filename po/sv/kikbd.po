@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-29 22:19+01:00\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
@@ -188,42 +188,26 @@ msgstr "Nedre högra"
 msgid "X default codes"
 msgstr "X standard koder"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Vill du påbörja konfigurationen?"
+"\n"
+"Vill du fortsätta?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Din konfiguration är tom. Installerar systemstandard."
-
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Konfigurationsfilen är av ett äldre format än väntat.\n"
-"Några av inställningarna kanske inte stämmer."
-
-#: kikbdconf.cpp:230
-#, fuzzy
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Konfigurationsfilen är av ett nyare format än väntat.\n"
-"Några av inställningarna kanske inte stämmer."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "okänd"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "standard"
 
@@ -271,31 +255,33 @@ msgstr "koder"
 msgid "alternative symbols"
 msgstr "alternativa symboler"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "tangentbord"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "teckenuppsättning"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Internationellt tangentbords FEL"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Internationellt tangentbords varning"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Internationellt tangentbords fråga"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Inställningar"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -516,7 +502,8 @@ msgid "&Docked"
 msgstr "&Dockad"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Docka in i en speciell del av kpanel"
 
 #: widgets.cpp:658
@@ -542,3 +529,29 @@ msgstr "&Uppstart"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internationellt Tangentbord"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Vill du påbörja konfigurationen?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Din konfiguration är tom. Installerar systemstandard."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Konfigurationsfilen är av ett äldre format än väntat.\n"
+#~ "Några av inställningarna kanske inte stämmer."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Konfigurationsfilen är av ett nyare format än väntat.\n"
+#~ "Några av inställningarna kanske inte stämmer."

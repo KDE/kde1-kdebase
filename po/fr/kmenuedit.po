@@ -265,5 +265,3 @@ msgstr "Personnel :"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Par défaut :"
-
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,34 +175,24 @@ msgstr ""
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:208
+#: kikbdconf.cpp:209
 #, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr ""
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr ""
 
@@ -250,31 +240,31 @@ msgstr ""
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+msgid "Language"
 msgstr ""
 
-#: kikbdconf.cpp:423
-msgid "charset"
-msgstr ""
-
-#: kikbdconf.cpp:461
-msgid "International keyboard ERROR"
+#: kikbdconf.cpp:431
+msgid "Charset"
 msgstr ""
 
 #: kikbdconf.cpp:477
+msgid "International keyboard ERROR"
+msgstr ""
+
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr ""
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr ""
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -486,7 +476,7 @@ msgid "&Docked"
 msgstr ""
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+msgid "Dock into special area in the panel"
 msgstr ""
 
 #: widgets.cpp:658

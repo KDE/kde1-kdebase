@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,42 +183,26 @@ msgstr "Basso Destra"
 msgid "X default codes"
 msgstr "Codici predefiniti di X"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Vuoi iniziare la Configurazione?"
+"\n"
+"Vuoi continuare ?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "La tua configurazione risulta vuota. Installo valori predefiniti."
-
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"I tuoi file di configurazione hanno un formato vecchio.\n"
-"Alcune impostazioni potranno essere scorrette."
-
-#: kikbdconf.cpp:230
-#, fuzzy
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"I tuoi file di configurazione hanno un formato vecchio.\n"
-"Alcune impostazioni potranno essere scorrette."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "sconosciuto"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "predefinito"
 
@@ -266,31 +250,33 @@ msgstr "codici"
 msgid "alternative symbols"
 msgstr "simboli alternativi"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "lingua"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "set caratteri"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Errore Tastiera internazionale"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Avviso Tastiera internazionale"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Domanda Tastiera internazionale"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Configura"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -506,7 +492,8 @@ msgid "&Docked"
 msgstr "&Nel pannello"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Viene mostrato in una zona del pannello"
 
 #: widgets.cpp:658
@@ -532,3 +519,29 @@ msgstr "&Avvio"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Tastiera Internazionale"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Vuoi iniziare la Configurazione?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "La tua configurazione risulta vuota. Installo valori predefiniti."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "I tuoi file di configurazione hanno un formato vecchio.\n"
+#~ "Alcune impostazioni potranno essere scorrette."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "I tuoi file di configurazione hanno un formato vecchio.\n"
+#~ "Alcune impostazioni potranno essere scorrette."

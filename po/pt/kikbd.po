@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd.po\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-11-20 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -177,36 +177,26 @@ msgstr "Fundo Direito"
 msgid "X default codes"
 msgstr "Códigos X por omissão"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Quer iniciar a Configuração?"
+"\n"
+"Quer continuar?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "A sua configuração está vazia. Instale valores por defeito do sistema."
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "por omissão"
 
@@ -254,31 +244,33 @@ msgstr "códigos"
 msgid "alternative symbols"
 msgstr "símbolos alternativos"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "língua"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "código"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "ERRO do Teclado International"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Aviso do Teclado International"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Pergunta do Teclado International"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -494,7 +486,7 @@ msgid "&Docked"
 msgstr ""
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+msgid "Dock into special area in the panel"
 msgstr ""
 
 #: widgets.cpp:658
@@ -520,3 +512,14 @@ msgstr ""
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado International"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Quer iniciar a Configuração?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr ""
+#~ "A sua configuração está vazia. Instale valores por defeito do sistema."

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -184,42 +184,26 @@ msgstr "Внизу справа"
 msgid "X default codes"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
 "%s\n"
 "Вы хотите запустить программу конфигурации?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Ваша конфигурация пуста. Установлена начальная конфигурация."
-
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Ваш конфигурационный файл имеет версию старее чем ожидается.\n"
-"Некоторые установки могут быть не коректны."
-
-#: kikbdconf.cpp:230
-#, fuzzy
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Ваш конфигурационный файл имеет версию новее чем ожидается.\n"
-"Некоторые установки могут быть не коректны."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "по умолчанию"
 
@@ -267,31 +251,33 @@ msgstr "кодов"
 msgid "alternative symbols"
 msgstr "алтернативные символы"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "язык"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "кодировка"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "ОШИБКА национальной клавиатуры"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Предупреждение национальной клавиатуры"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Вопрос национальной клавиатуры"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 #, fuzzy
 msgid ""
 "\n"
@@ -518,7 +504,8 @@ msgid "&Docked"
 msgstr "&Docked"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Разместиться в специальной области kpanel"
 
 #: widgets.cpp:658
@@ -544,3 +531,29 @@ msgstr "&Запуск"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Интернациональная Клавиатура"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Вы хотите запустить программу конфигурации?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Ваша конфигурация пуста. Установлена начальная конфигурация."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ваш конфигурационный файл имеет версию старее чем ожидается.\n"
+#~ "Некоторые установки могут быть не коректны."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ваш конфигурационный файл имеет версию новее чем ожидается.\n"
+#~ "Некоторые установки могут быть не коректны."

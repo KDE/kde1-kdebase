@@ -13,7 +13,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
 msgstr "Luk ned eller genstart?"
@@ -78,4 +77,3 @@ msgstr "Advarsel: din konto udløber den %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Din hjemmefolder er ikke til stede"
-

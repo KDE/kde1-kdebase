@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-17 14:15+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -190,42 +190,26 @@ msgstr "Jobb alsó"
 msgid "X default codes"
 msgstr "Alapértelmezett X kódok"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"El akarja indítani a Konfigurációt?"
+"\n"
+"Folytatni akarja?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Az ön konfigurációja üres. Alapértelmezést telepítem."
-
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Az ön konfigurációs állománya régebbi mint gondolná. :)\n"
-"Néhány beállítás esetleg rossz lehet."
-
-#: kikbdconf.cpp:230
-#, fuzzy
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Az ön konfigurációs állománya újabb mint gondolná. :)\n"
-"Néhány beállítás esetleg rossz lehet."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "ismeretlen"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "alapértelmezett"
 
@@ -273,31 +257,33 @@ msgstr "kódok"
 msgid "alternative symbols"
 msgstr "alternatív szimbólumok"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "nyelv"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "karakterkészlet"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Nemzetközi billentyûzetkiosztás HIBA"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Nemzetközi billentyûzetkiosztás figyelmeztetés"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Nemzetközi billentyûzetkiosztás kérdés"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Konfigurálás"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -517,7 +503,8 @@ msgid "&Docked"
 msgstr "&Dokkolva"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Csatlakozzon be a panelbe"
 
 #: widgets.cpp:658
@@ -543,3 +530,29 @@ msgstr "Indulás"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Nemzetközi Billentyûzetkiosztás"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "El akarja indítani a Konfigurációt?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Az ön konfigurációja üres. Alapértelmezést telepítem."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Az ön konfigurációs állománya régebbi mint gondolná. :)\n"
+#~ "Néhány beállítás esetleg rossz lehet."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Az ön konfigurációs állománya újabb mint gondolná. :)\n"
+#~ "Néhány beállítás esetleg rossz lehet."

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdenonebeta\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -186,37 +186,26 @@ msgstr ""
 msgid "X default codes"
 msgstr "podrazumijevano"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
 "%s\n"
 "Da li ¾elite poèeti sa postavom?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr ""
-"Va¹a datoteka sa postavom je prazna. Postavi uobièajenu sistemsku datoteku."
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "nepoznat"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "podrazumijevano"
 
@@ -264,34 +253,36 @@ msgstr "kodovi"
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "jezik"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "skup znakova"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "Internacionalna tipkovnica "
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "Internacionalna tipkovnica"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 #, fuzzy
 msgid "International keyboard question"
 msgstr "Internacionalna tipkovnica"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 #, fuzzy
 msgid ""
 "\n"
@@ -514,7 +505,8 @@ msgid "&Docked"
 msgstr ""
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Pristani na ploèu"
 
 #: widgets.cpp:658
@@ -540,3 +532,14 @@ msgstr "P&oèni"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internacionalna tipkovnica"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Da li ¾elite poèeti sa postavom?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr ""
+#~ "Va¹a datoteka sa postavom je prazna. Postavi uobièajenu sistemsku datoteku."

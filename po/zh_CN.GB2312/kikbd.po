@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -170,34 +170,24 @@ msgstr ""
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:208
+#: kikbdconf.cpp:209
 #, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr "你想要起动配置吗 ?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "你的配置是空的.安装系统默认配置."
-
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-
-#: kikbdconf.cpp:230
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr ""
 
@@ -247,34 +237,34 @@ msgstr ""
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+msgid "Language"
 msgstr ""
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+msgid "Charset"
 msgstr ""
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 #, fuzzy
 msgid "International keyboard question"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 #, fuzzy
 msgid ""
 "\n"
@@ -507,7 +497,8 @@ msgid "&Docked"
 msgstr ""
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "嵌入到 kpanel 的特别区域"
 
 #: widgets.cpp:658
@@ -533,6 +524,15 @@ msgstr "启动[&U]"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "国际键盘"
+
+#, fuzzy
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr "你想要起动配置吗 ?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "你的配置是空的.安装系统默认配置."
 
 #~ msgid "Exit"
 #~ msgstr "退出"

@@ -326,5 +326,3 @@ msgstr "Types disponibles"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "sans nom !"
-
-

@@ -13,7 +13,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
 #: main.cpp:53
 msgid "&Sound"
 msgstr "&Lyd"
@@ -179,3 +178,19 @@ msgstr ""
 "Desværre ser\n"
 "%s\n"
 "ikke ud til at være en WAV-fil!"
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr ""
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -190,42 +190,26 @@ msgstr "Malsupre dekstre"
 msgid "X default codes"
 msgstr "implicitaj X-kodoj"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Æu vi volas lanæi la agorda¼on?"
+"\n"
+"Æu vi volas daýrigi?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Via agorda¼o estas malplena. Instalas sistem-implica¼oj."
-
-#: kikbdconf.cpp:222
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Agordodosiero via estas de pli malnova formo ol atendita.\n"
-"Kelkaj aferoj povus esti maløustaj."
-
-#: kikbdconf.cpp:230
-#, fuzzy
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Agordodosiero via estas de pli nova formo ol atendita.\n"
-"Klakaj aferoj povus esti maløustaj."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "nekonata"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "implicita"
 
@@ -273,31 +257,33 @@ msgstr "koderoj"
 msgid "alternative symbols"
 msgstr "alternativaj simboloj"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "lingvo"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "signaro"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "ERARO de Internacia Klavaro"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Averto de Internacia Klavaro"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Demando de Internacio Klavaro"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Agordu"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -513,7 +499,8 @@ msgid "&Docked"
 msgstr "&Dokita"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Doku en speciala loko en la panelo"
 
 #: widgets.cpp:658
@@ -539,3 +526,29 @@ msgstr "&Lanæo"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internacia Klavaro"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Æu vi volas lanæi la agorda¼on?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Via agorda¼o estas malplena. Instalas sistem-implica¼oj."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Agordodosiero via estas de pli malnova formo ol atendita.\n"
+#~ "Kelkaj aferoj povus esti maløustaj."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Agordodosiero via estas de pli nova formo ol atendita.\n"
+#~ "Klakaj aferoj povus esti maløustaj."

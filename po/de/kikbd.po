@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1998-11-01 14:35+0100\n"
 "Last-Translator: Harri Porten <porten@kde.org>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -192,40 +192,26 @@ msgstr "Unten/Rechts"
 msgid "X default codes"
 msgstr "X Standard codes"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
-msgstr "Möchten Sie die Konfiguration starten?"
-
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Ihre Konfiguration ist leer. Installiere Voreinstellung"
-
-#: kikbdconf.cpp:222
-#, fuzzy
-msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"Do you want to configure now?"
 msgstr ""
-"Ihre Konfigurationsdatei hat ein älteres Format als erwartet.\n"
-"Einige Einstellungen können fehlerhaft sein."
+"\n"
+"Möchten Sie die fortfahren?"
 
-#: kikbdconf.cpp:230
-#, fuzzy
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Ihre Konfigurationsdatei hat ein neueres Format als erwartet.\n"
-"Einige Einstellungen können fehlerhaft sein."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "Unbekannt"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "Standard"
 
@@ -273,31 +259,33 @@ msgstr "Codes"
 msgid "alternative symbols"
 msgstr "Alternative Symbole"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "Sprache"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "Zeichensatz"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Internationale Tastatur - FEHLER"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Internationale Tastatur - Warnung"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Internationale Tastatur - Frage"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Konfigurieren"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -517,7 +505,8 @@ msgid "&Docked"
 msgstr "Einge&bunden in KPanel"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Docke in KPanel in einem besonderen Bereich"
 
 #: widgets.cpp:658
@@ -543,3 +532,27 @@ msgstr "Programms&tart"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internationale Tastatur"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr "Möchten Sie die Konfiguration starten?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Ihre Konfiguration ist leer. Installiere Voreinstellung"
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ihre Konfigurationsdatei hat ein älteres Format als erwartet.\n"
+#~ "Einige Einstellungen können fehlerhaft sein."
+
+#, fuzzy
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ihre Konfigurationsdatei hat ein neueres Format als erwartet.\n"
+#~ "Einige Einstellungen können fehlerhaft sein."

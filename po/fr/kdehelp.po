@@ -370,5 +370,3 @@ msgstr "Respecter la casse"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Rechercher"
-
-

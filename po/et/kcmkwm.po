@@ -38,7 +38,8 @@ msgstr "&Täpsemalt"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"kasutusviis: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+"kasutusviis: kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -71,26 +72,22 @@ msgstr "Parem"
 #: titlebar.cpp:471
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Vasak pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
+msgstr "Vasak pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr ""
-"Parem pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
+msgstr "Parem pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Vasak pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
+msgstr "Vasak pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Parem pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
+msgstr "Parem pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
@@ -295,7 +292,7 @@ msgid ""
 "       (pixels)"
 msgstr ""
 "Piirde haaramistsoon:\n"
-"	(pikselit)"
+"\t(pikselit)"
 
 #: desktop.cpp:151
 msgid ""
@@ -303,7 +300,7 @@ msgid ""
 "       (pixels)"
 msgstr ""
 "Akna haaramistsoon:\n"
-"	(pikselit)"
+"\t(pikselit)"
 
 #: mouse.cpp:54
 msgid "Active"

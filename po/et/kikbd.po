@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-19 01:20+0100\n"
 "PO-Revision-Date: 1999-01-17 23:41:41+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -58,8 +58,8 @@ msgstr ""
 "Mode switch'i kui %s pole võimalik seada klaviatuuri %s\n"
 "jaoks. Alt sümbolid keelatud"
 
-#: kikbd.cpp:392
 #
+#: kikbd.cpp:392
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -151,8 +151,8 @@ msgstr "Vasakud (Ctrl+Shift)"
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Mõlemad Shift'id (Shift+Shift)"
 
-#: kikbdconf.cpp:115
 #
+#: kikbdconf.cpp:115
 msgid "Right Meta"
 msgstr "Parem Meta"
 
@@ -164,8 +164,8 @@ msgstr "Vasak Alt"
 msgid "Left  Control"
 msgstr "Vasak Control"
 
-#: kikbdconf.cpp:118
 #
+#: kikbdconf.cpp:118
 msgid "Left  Meta"
 msgstr "Vasak Meta"
 
@@ -189,42 +189,26 @@ msgstr "All paremal"
 msgid "X default codes"
 msgstr "X'i vaikimisi koodid"
 
-#: kikbdconf.cpp:208
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Soovid sa konfigureerimise käivitada?"
+"\n"
+"Soovid sa jätkata?"
 
-#: kikbdconf.cpp:216
-msgid "Your configuration is empty. Install system default."
-msgstr "Su konfiguratsioon on tühi. Installeeri süsteemi vaikeväärtused."
-
-#: kikbdconf.cpp:222
-#
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format than expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Koniguratsioonifail on vanemas formaadis kui oli oodatud.\n"
-"Mõned seadistused võivad olla ebakorrektsed."
-
-#: kikbdconf.cpp:230
-#
-msgid ""
-"Configuration file you have has newer format than expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Konfiguratsioonifail on uuemas formaadis kui oli oodatud.\n"
-"Mõned seadistused võivad olla ebakorrektsed."
 
 #: kikbdconf.cpp:357
 msgid "unknown"
 msgstr "tundmatu"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:361 kikbdconf.cpp:434
 msgid "default"
 msgstr "vaikimisi"
 
@@ -272,31 +256,33 @@ msgstr "koodid"
 msgid "alternative symbols"
 msgstr "alternatiivsed sümbolid"
 
-#: kikbdconf.cpp:422
-msgid "language"
+#: kikbdconf.cpp:427
+#, fuzzy
+msgid "Language"
 msgstr "keel"
 
-#: kikbdconf.cpp:423
-msgid "charset"
+#: kikbdconf.cpp:431
+#, fuzzy
+msgid "Charset"
 msgstr "kooditabel"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:477
 msgid "International keyboard ERROR"
 msgstr "Rahvusvahelise klaviatuuri VIGA"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:493
 msgid "International keyboard warning"
 msgstr "Rahvusvahelise klaviatuuri hoiatus"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
 msgid "International keyboard question"
 msgstr "Rahvusvahelise klaviatuuri küsimus"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:507
 msgid "Configure"
 msgstr "Konfigureeri"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:517
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -512,7 +498,8 @@ msgid "&Docked"
 msgstr "&Dokitud"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Doki spetsiaalses alas paneelil"
 
 #: widgets.cpp:658
@@ -538,3 +525,29 @@ msgstr "Al&glaadimine"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Rahvusvaheline klaviatuur"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Soovid sa konfigureerimise käivitada?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr "Su konfiguratsioon on tühi. Installeeri süsteemi vaikeväärtused."
+
+#
+#~ msgid ""
+#~ "Configuration file you have has older format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Koniguratsioonifail on vanemas formaadis kui oli oodatud.\n"
+#~ "Mõned seadistused võivad olla ebakorrektsed."
+
+#
+#~ msgid ""
+#~ "Configuration file you have has newer format than expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Konfiguratsioonifail on uuemas formaadis kui oli oodatud.\n"
+#~ "Mõned seadistused võivad olla ebakorrektsed."
