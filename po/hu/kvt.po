@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Date: 1997-08-26 14:27:08+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Last-translator: Kiss Tamas <kisst@postabank.hu>\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
+#: main.C:220
+msgid "Add characters to word class"
+msgstr "Karakterek hozzáadása a szó osztályhoz"
+
+#: main.C:224
+msgid "choose type of color-mode"
+msgstr "válassz szín módot"
+
+#: main.C:227
+msgid "Ok"
+msgstr "Rendben"
+
+#: main.C:229
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: main.C:357
+msgid "&New Terminal"
+msgstr "Új &terminál"
+
+#: main.C:359
+msgid "E&xit"
+msgstr "&Kilépés"
+
+#: main.C:364 main.C:669
+msgid "&Hide"
+msgstr "&Elrejt"
+
+#: main.C:365
+msgid "&Left"
+msgstr "&Bal"
+
+#: main.C:366
+msgid "&Right"
+msgstr "&Jobb"
+
+#: main.C:371
+msgid "&Normal"
+msgstr "&Normál"
+
+#: main.C:372
+msgid "&Tiny"
+msgstr "&Apró"
+
+#: main.C:373
+msgid "&Small"
+msgstr "K&icsi"
+
+#: main.C:374
+msgid "&Medium"
+msgstr "&Közepes"
+
+#: main.C:375
+msgid "&Large"
+msgstr "&Nagy"
+
+#: main.C:376
+msgid "&Huge"
+msgstr "Ó&riás"
+
+#: main.C:388
+msgid "&black/white"
+msgstr "&fekete/fehér"
+
+#: main.C:389
+msgid "&white/black"
+msgstr "f&ehér/fekete"
+
+#: main.C:390
+msgid "&green/black"
+msgstr "&zöld/fekete"
+
+#: main.C:391
+msgid "black/light&yellow"
+msgstr "fekete/világos&sárga"
+
+#: main.C:392
+msgid "Linu&x Console"
+msgstr "Linu&x Konzol"
+
+#: main.C:399 main.C:594
+msgid "Hide &Menubar"
+msgstr "Menü &elrejtése"
+
+#: main.C:401 main.C:460 main.C:586
+msgid "Show &Menubar"
+msgstr "Menü &megmutatása"
+
+#: main.C:402 main.C:604
+msgid "Secure &keyboard"
+msgstr "&Biztonságos billentyûzet"
+
+#: main.C:404
+msgid "Scroll&bar"
+msgstr "Gördítõsáv"
+
+#: main.C:405
+msgid "&Font size"
+msgstr "&Betû méret"
+
+#: main.C:406
+msgid "&Color"
+msgstr "&Szín"
+
+#: main.C:407
+msgid "&Size"
+msgstr "&Méret"
+
+#: main.C:408
+msgid "Terminal..."
+msgstr "Terminál..."
+
+#: main.C:410
+msgid "Save &Options"
+msgstr "&Beállítások elmentése"
+
+#: main.C:419
+msgid "&About..."
+msgstr "&Névjegy..."
+
+#: main.C:420 main.C:430
+msgid "&Help"
+msgstr "&Segítség"
+
+#: main.C:427
+msgid "&File"
+msgstr "&File"
+
+#: main.C:428
+msgid "&Options"
+msgstr "&Beállítások"
+
+#: main.C:469 main.C:662
+msgid "&Show"
+msgstr "&Mutasd"
+
+#: main.C:600
+msgid "Unsecure &keyboard"
+msgstr "&Normál billentyûzet"
+
+#: main.C:739
+msgid "Hint"
+msgstr "Tanács"
+
+#: main.C:740
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr "Új színbeállítások akkor fognak megjelenni,\n"
+"ha a billentyûzet fel lesz oldva titkosítás alól."
+
+#: main.C:760
+msgid "About kvt"
+msgstr "A kvt-rõl"
+
+#: main.C:760
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminál emulátor a KDE grafikus környezethez\n"
+"Robert Nation rxvt-2.08 alapján"
+
+#: main.C:922
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminál emulátor a KDE grafikus környezethez\n"
+"Robert Nation rxvt-2.08 alapján"
+"\n"
+"Megengedett paraméterek :\n"
+"-e <parancs> <paraméterek> ... \tparancs végrehajtása paraméterekkel - az utolsó paraméternek kell lennie\n"
+"-display <név> \tmegjelenítõ képernyõ (server)\n"
+"-vt_geometry <érték>\tterminál ablak geometriája\n"
+"-print-pipe <név> \tátirányitás vt100 sornyomtatóra\n"
+"-vt_bg <szín> \t\tháttér szín\n"
+"-vt_fg <szín> \t\tbetû szín\n"
+"-vt_font <betû neve> \tnormál betû\n"
+"-vt_size <méret> \ttiny(apró), small(kicsi), normal(normál), large(nagy), huge(óriás)\n"
+"-linux\t\t\tmegjelenés Linux konzol szerûen\n"
+"-no_menubar\t\tmenüsor elrejtése\n"
+"-no_scrollbar\t\tgördítõsáv elrejtése\n"
+"-T <szöveg>\t\tszõveg az ablak fejlecében\n"
+"-tn <tipus>\t\tTerminál tipusa. Alapértelmezett az xterm.\n"
+"-C\t\t\tA rendszer konzol üzeneteit kiírja.\n"
+"-n <szöveg>\t\taz ikon neve\n"
+"-7\t\t\t7 bit-es mód\n"
+"-8\t\t\t8 bit-es mód\n"
+"-ls\t\t\tvégrehajtja a .login vagy a .profile-t.\n"
+"-ls-\t\t\tnem hajtja végre a login parancsokat\n"
+"-meta\t\t\tMeta (Alt) + billentyû viselkedésének megváltoztatása\n"
+"-sl <szám>\t\telmenti a megadott számú sort a visszagörgetéshez\n"
+"-pageup <billentyû>\ta megadott billentyûvel lehet viszzafelé görgetni\n"
+"-pagedown <billentyû>\ta megadott billentyûvel lehet elõre görgetni\n"
+#: main.C:954
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\tgörög kbd = ELOT 928 (alap)\n"
+"-grk4\t\tgörög kbd = IBM 437\n"
+
+#: main.C:970
+msgid "Terminal Options"
+msgstr "Terminál beállítások"
