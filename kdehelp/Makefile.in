@@ -8,7 +8,7 @@ CXX = @CXX@
 MOC = @MOC@
 INCFLAGS = -I. @all_includes@ -I../kfm/libkfm -I.. -I../..
 CXXFLAGS = @CXXFLAGS@ 
-LDFLAGS = @LDFLAGS@ @all_libraries@ -L../kfm/libkfm -lkfm -lkhtmlw -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
+LDFLAGS = @LDFLAGS@ @all_libraries@ -L../kfm/libkfm -lkfm @LIBKHTMLW@ -lkdeui -lkdecore -lqt -lXext -lX11 @LIBSOCKET@ @LIBCOMPAT@ -lgif -ljpeg
 DEFS = -DHAVE_CONFIG_H
 
 ############# Install ##############
