@@ -1,15 +1,21 @@
-* Wed Sep 30 7:42:00 CEST 1998  Antonio Larrosa <antlarr@kde.org>
+* Fri Oct  2 7:45:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
+
+Added locales
+Added kaccel support
+Added session management
+
+* Wed Sep 30 7:42:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 Added pixmap draw mode - It's AMAZING !
 Added a test for Qt 1.41 to disable xdnd if there's an older version
  ( but kpager is not kpager withouth xdnd :( )
 Removed some bugs
 
-* Mon Sep 28 9:12:00 CEST 1998  Antonio Larrosa <antlarr@kde.org>
+* Mon Sep 28 9:12:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 I forgot to add jpeginc.h
 
-* Mon Sep 28 7:40:00 CEST 1998  Antonio Larrosa <antlarr@kde.org>
+* Mon Sep 28 7:40:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 Increased painting speed and removed flickering by adding a buffer
 Added icon draw mode
@@ -18,7 +24,7 @@ Improved colors usage (using QColorGroup)
 Respond to kbgndwm commands (for configuration changes)
 Other small changes
 
-* Sun Sep 27 10:03:00 CEST 1998  Antonio Larrosa <antlarr@kde.org>
+* Sun Sep 27 10:03:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
-Initial release
+Initial public release
 

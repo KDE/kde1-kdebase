@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Date: 1998-09-30 07:19:56+0000\n"
+"From: antonio <antlarr@arrakis.es>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -C -ki18n -x /opt/kde/include/kde.pot\n"
+"Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp kpager.cpp main.cpp\n"
+
+#: kpager.cpp:77 kpager.cpp:156
+msgid "Hide &Global Desktop"
+msgstr "Ocultar Escritorio &Global"
+
+#: kpager.cpp:79 kpager.cpp:149
+msgid "Show &Global Desktop"
+msgstr "Mostrar Escritorio &Global"
+
+#: kpager.cpp:81
+msgid "Hide &Menubar"
+msgstr "Ocultar barra de menú"
+
+#: kpager.cpp:85
+msgid "Plain"
+msgstr "Sencillo"
+
+#: kpager.cpp:88
+msgid "Icon"
+msgstr "Icono"
+
+#: kpager.cpp:91
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: kpager.cpp:95
+msgid "Draw Mode"
+msgstr "Modo de dibujo"
+
+#: kpager.cpp:99
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jiménez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Málaga (España)\n"
+"\n"
+"La página oficial de KPager está en :\n"
+"http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager viene con ABSOLUTAMENTE NINGUNA GARANTIA; para detalles ver el fichero "
+"COPYING\n"
+"Esto es software gratuito, y usted puede distribuirlo\n"
+"bajo ciertas condiciones\n"

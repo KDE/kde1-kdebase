@@ -44,6 +44,9 @@ int main(int argc, char **argv)
 	{
 	   return 1;
 	}
+
+    app->enableSessionManagement(TRUE);
+
 #ifdef HAVE_LIBJPEG
     QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 0, read_jpeg_jfif, NULL);
 #endif
@@ -51,13 +54,19 @@ int main(int argc, char **argv)
     KPager *kpager=new KPager(app,"KPager");
 
     if (kpager==NULL) 
-	{
+    {
 	   delete app;
 	   return 1;
-	}
+    }
 
     app->setMainWidget ( kpager );
 
+
+    if (app->isRestored())
+    {
+        if (kpager->canBeRestored(1)) kpager->restore(1);
+    }
+    
     kpager->show();
 
     return app->exec();

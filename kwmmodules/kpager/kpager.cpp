@@ -28,6 +28,7 @@
 #include <unistd.h>
 #include <qkeycode.h>
 #include <qmessagebox.h>
+#include <kaccel.h>
 #include "version.h"
 //#include <X11/Xlib.h>
     
@@ -67,18 +68,26 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     QObject::connect(kwmmapp,SIGNAL(commandReceived(QString)),
                      kpagerclient,SLOT(commandReceived(QString)));
 
+    kKeysAccel=new KAccel(this);
+    kKeysAccel->insertItem(i18n("Toggle Global Desktop"),"Toggle Global Desktop", Key_0);
+    kKeysAccel->connectItem("Toggle Global Desktop", this, SLOT(options_toggleGlobalDesktop()));
+    kKeysAccel->insertItem(i18n("Toggle Menubar"), "Toggle Menubar", Key_Space );
+    kKeysAccel->connectItem("Toggle Menubar", this, SLOT(options_toggleMenuBar()));
+
+    kKeysAccel->readSettings();
 
     m_file = new QPopupMenu;
-    m_file->insertItem(i18n("&Open..."), this, SLOT(file_Open()), CTRL+Key_O );
-    m_file->insertSeparator();
     m_file->insertItem( i18n("&Quit"), kapp, SLOT(quit()), CTRL+Key_Q );
     m_options = new QPopupMenu;
     if (kpagerclient->isVisibleGlobalDesktop())
         m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
     else
         m_options->insertItem(i18n("Show &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
+
+    kKeysAccel->changeMenuAccel(m_options,1, "Toggle Global Desktop");
         
     m_options->insertItem(i18n("Hide &Menubar"), this, SLOT(options_toggleMenuBar()), Key_Space , 2 );
+    kKeysAccel->changeMenuAccel(m_options,2, "Toggle Menubar");
     m_options->insertSeparator();
     m_drawmode = new QPopupMenu;
     m_drawmode->setCheckable( TRUE );
@@ -98,9 +107,9 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     sprintf(aboutstring,
             i18n("%s\n\n" \
                  "(C) 1998 Antonio Larrosa Jimenez\n"
-                 "larrosa@kde.org\n"
-                 "antlarr@arrakis.es\n" \
+                 "larrosa@kde.org\t\tantlarr@arrakis.es\n" \
                  "Malaga (Spain)\n\n" \
+		 "KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n\n" \
                  "KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n" \
                  "This is free software, and you are welcome to redistribute it\n" \
                  "under certain conditions\n"), VERSION_TXT );
@@ -115,7 +124,7 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     menu->show();
     menubar_visible=true;
     setMenu(menu);
-    setGeometry(x(),y(),380,140);
+//    setGeometry(x(),y(),380,140);
 };
 
 KPager::~KPager()
@@ -135,23 +144,15 @@ KPager::~KPager()
 
 };
 
-void KPager::file_Open()
-{
-//    QMessageBox::about( this , kapp->getCaption(), "Hello");
-    printf("Damnit Jim, I'm a pager, not a text editor ! :-)\n");
-}
-
 void KPager::options_toggleGlobalDesktop()
 {
     if (kpagerclient->isVisibleGlobalDesktop())
     {
-        printf("a");
         m_options->changeItem(i18n("Show &Global Desktop"), 1);
         kpagerclient->setVisibleGlobalDesktop(false);
     }
     else
     {
-        printf("b");
         kpagerclient->setVisibleGlobalDesktop(true);
         m_options->changeItem(i18n("Hide &Global Desktop"), 1);
     }
@@ -203,4 +204,46 @@ void KPager::options_drawPixmap()
     
     kpagerclient->setDrawMode(2);
 
+}
+
+
+void KPager::saveProperties(KConfig *kcfg)
+{
+    kcfg->writeEntry("visibleMenuBar",menubar_visible);
+    kcfg->writeEntry("visibleGlobalDesktop",kpagerclient->isVisibleGlobalDesktop());
+    kcfg->writeEntry("drawMode",kpagerclient->getDrawMode());
+}
+
+void KPager::readProperties(KConfig *kcfg)
+{
+    if (kcfg->readBoolEntry("visibleMenuBar"))
+    {
+        if (!menubar_visible)
+            options_toggleMenuBar();
+    }
+    else
+    {
+        if (menubar_visible)
+            options_toggleMenuBar();
+        
+    }
+    if (kcfg->readBoolEntry("visibleGlobalDesktop"))
+    {
+        if (!kpagerclient->isVisibleGlobalDesktop())
+            options_toggleGlobalDesktop();
+    }
+    else
+    {
+        if (kpagerclient->isVisibleGlobalDesktop())
+            options_toggleGlobalDesktop();
+        
+    }
+
+    int i=kcfg->readNumEntry("drawMode");
+    switch (i)
+    {
+    case 0 : options_drawPlain();break;
+    case 1 : options_drawIcon();break;
+    case 2 : options_drawPixmap();break;
+    }
 }

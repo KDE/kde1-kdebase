@@ -48,6 +48,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     deltax=0;
     maxdeltax=0;
     visibleGlobalDesktop=true;
+    drawMode=0;
     for (int i=0;i<MAXDESKTOPS;i++) desktop[i]=0L;
     numberofDesktops=0;
     screenwidth=KWM::geometry( qt_xrootwin()).width();
@@ -480,6 +481,8 @@ void KPagerClient::commandReceived(QString s)
 
 void KPagerClient::setDrawMode(int mode)
 {
+    if (mode>2) return;
+    drawMode=mode;
     for (int i=0;i<=numberofDesktops;i++)
     {
         if (desktop[i]!=NULL) desktop[i]->setDrawMode(mode);

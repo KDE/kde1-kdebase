@@ -55,6 +55,7 @@ private:
     
     QWidget *desktopContainer;
     bool visibleGlobalDesktop;
+    int drawMode;
     
     KTriangleButton *left;
     KTriangleButton *right;
@@ -83,6 +84,7 @@ public:
     bool isVisibleGlobalDesktop(void) { return visibleGlobalDesktop; };
 
     void setDrawMode(int mode);
+    int getDrawMode(void) { return drawMode; };
     
 public slots:
     void moveRight();

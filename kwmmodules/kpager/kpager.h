@@ -30,6 +30,7 @@
 #include "kpagerclient.h"
 
 class KApplication;
+class KAccel;
 class QPopupMenu;
 class KPagerClient;
 
@@ -41,17 +42,23 @@ private:
     QPopupMenu *m_options;
     QPopupMenu *m_drawmode;
     QPopupMenu *m_help;
+    KAccel *kKeysAccel;
 
     KPagerClient *kpagerclient;
 
     bool menubar_visible;
+
+
+    virtual void saveProperties(KConfig *kcfg);
+    virtual void readProperties(KConfig *kcfg);
+
 public:
+
     KPager(KWMModuleApplication *kwmmapp,const char *name=0);
     virtual ~KPager();
 
 public slots:
 
-    void file_Open();
     void options_toggleMenuBar();
     void options_toggleGlobalDesktop();
     void options_drawPlain();
