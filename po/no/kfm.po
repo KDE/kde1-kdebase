@@ -304,19 +304,14 @@ msgstr "Fortsett søk fra toppen av siden?"
 msgid "&Edit Bookmarks..."
 msgstr "&Endre bokmerker..."
 
-# kfmgui.cpp:896
 #: kfmgui.cpp:995
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
 
-# kfmgui.cpp:926 kfmgui.cpp:933
 #: kfmgui.cpp:1025 kfmgui.cpp:1032
 msgid "New "
-msgstr "Ny"
+msgstr "Ny "
 
-# kfmgui.cpp:1023 kfmgui.cpp:1185 kfmjob.cpp:32 kfmman.cpp:220
-# kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
-# kiojob.cpp:71 root.cpp:1106
 #: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:35 kfmman.cpp:224
 #: kfmtree.cpp:389 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
 #: kiojob.cpp:87 root.cpp:1171
@@ -748,7 +743,7 @@ msgstr "Bakgrunnsfarge for ikon:"
 # kfmprops.cpp:676
 #: kfmdlg.cpp:113
 msgid "&Browser"
-msgstr "&Gjennomblaer"
+msgstr "&Bla gjennom"
 
 # bookmark.cpp:259
 #: bookmark.cpp:296
