@@ -14,6 +14,8 @@ In 0.10:
 --------
   patchlevel 9:
        - small fix for kwm modules
+       - further qt-1.3 changes: with 1.3 the mouse sometimes hang
+         for the global modal dialogs (session manager et. al.)
   patchlevel 8:
        - needs qt-1.3
        - for modules: 

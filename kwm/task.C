@@ -108,12 +108,8 @@ void Ktask::SetPointerGrab(QPoint pos){
       mouseGrabber()->releaseMouse();
       w->removeEventFilter(this);
       w->installEventFilter(this);
+      w->setMouseTracking(TRUE);
       w->grabMouse();
-      XChangeActivePointerGrab( qt_xdisplay(), 
- 				ButtonPressMask | ButtonReleaseMask |
- 				PointerMotionMask |
- 				EnterWindowMask | LeaveWindowMask,
- 				None, CurrentTime);
     }
   }
 }
@@ -161,11 +157,6 @@ bool Ktask::do_grabbing(){
   }
   raise();
   listbox->grabMouse();
-  XChangeActivePointerGrab( qt_xdisplay(), 
-			    ButtonPressMask | ButtonReleaseMask |
-			    PointerMotionMask |
-			    EnterWindowMask | LeaveWindowMask,
-			    None, 0);
   SetPointerGrab(QCursor::pos());
   listbox->setFocus();
   

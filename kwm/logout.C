@@ -202,12 +202,8 @@ void Klogout::SetPointerGrab(QPoint pos){
       mouseGrabber()->releaseMouse();
       w->removeEventFilter(this);
       w->installEventFilter(this);
+      w->setMouseTracking(TRUE);
       w->grabMouse();
-      XChangeActivePointerGrab( qt_xdisplay(), 
- 				ButtonPressMask | ButtonReleaseMask |
- 				PointerMotionMask |
- 				EnterWindowMask | LeaveWindowMask,
- 				None, CurrentTime);
     }
   }
 }
@@ -256,11 +252,6 @@ bool Klogout::do_grabbing(){
   }
   raise();
   button->grabMouse();
-  XChangeActivePointerGrab( qt_xdisplay(), 
-			    ButtonPressMask | ButtonReleaseMask |
-			    PointerMotionMask |
-			    EnterWindowMask | LeaveWindowMask,
-			    None, 0);
   SetPointerGrab(QCursor::pos());
   button->setFocus();
   
