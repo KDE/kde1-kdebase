@@ -1273,6 +1273,7 @@ void KfmGui::slotAnimatedLogoTimeout()
 
 void KfmGui::slotAddWaitingWidget( KHTMLView *_w )
 {
+    debug( "Adding waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
     if ( waitingWidgetList.findRef( _w ) != -1 )
 	return;
     waitingWidgetList.append( _w );
@@ -1294,6 +1295,8 @@ void KfmGui::slotRemoveWaitingWidget( KHTMLView *_w )
 	toolbarButtons->setItemEnabled( 7, false );
 	slotSetStatusBar( klocale->translate("Document: Done") );
     }
+
+    debug( "Removed waiting: %ld, %d", (unsigned long)_w, waitingWidgetList.count() );
 
    KURL u( view->getURL());
    _w->gotoAnchor(u.reference());

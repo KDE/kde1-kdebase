@@ -1,3 +1,11 @@
+Sun Mar 29 21:05:16 1998  Martin Jones  <mjones@kde.org>
+
+	* It seemed kfmView::openURL(...) had gained some more parameters.
+	  This meant that KHTMLView::openURL( const char *) was no longer
+	  overloaded and frames could not be opened.
+	  Added a kfmView::openURL( const char *) and frames are happy
+	  again.
+
 Sat Mar 28 20:11:50 1998  Torben Weis  <weis@localhost>
 
 	* Complete new and cool bookmark management.

@@ -650,6 +650,12 @@ void KfmView::openURL( const char *_url, bool _refresh, int _xoffset, int _yoffs
     manager->openURL( _url, _refresh, _xoffset, _yoffset );
 }
 
+void KfmView::openURL( const char *_url )
+{
+    emit newURL( _url );
+    manager->openURL( _url );
+}
+
 void KfmView::pushURLToHistory()
 {
     if ( stackLock )

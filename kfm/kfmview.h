@@ -83,7 +83,9 @@ public:
      * Open the URL.
      * The function asks the @ref #manager to open the URL.
      */
-    virtual void openURL( const char *_url, bool _refresh = false, int _xoffset = 0, int _yoffset = 0 );
+    virtual void openURL( const char *_url, bool _refresh, int _xoffset = 0, int _yoffset = 0 );
+
+    virtual void openURL( const char *_url );
 
     /**
      * Return the currently opened URL.
