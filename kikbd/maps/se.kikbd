@@ -1,0 +1,48 @@
+# KDE Config File
+#
+# This needs to be eval'ed for all the keys to work correctly,
+# at least in xemacs 20.4:
+#
+# (define-key function-key-map 'dead-circumflex 'compose-circumflex-map)
+# (define-key function-key-map 'dead-tilde 'compose-tilde-map)
+       
+[International Keyboard]
+Authors=Lars Hamrén <hamren@sdu.se>
+
+Language=Swedish
+
+Label=Se
+Locale=se
+
+[KeyboardMap]
+
+# First row
+keycode249=49,paragraph,onehalf
+keysym02=1,1,exclam
+keysym03=2,2,quotedbl,at
+keysym04=3,3,numbersign,sterling
+keysym05=4,4,currency,dollar
+keysym06=5,5,percent
+keysym07=6,6,ampersand
+keysym08=7,7,slash,braceleft
+keysym09=8,8,parenleft,bracketleft
+keysym10=9,9,parenright,bracketright
+keysym11=0,0,equal,braceright
+keysym12=minus,plus,question,backslash
+keysym13=equal,dead_acute,dead_grave
+keycode251=51,apostrophe,asterisk
+keycode222=22,BackSpace
+
+# Second row
+keycode234=34,aring,Aring
+keycode235=35,dead_diaeresis,dead_circumflex,dead_tilde
+
+# Third row
+keycode247=47,odiaeresis,Odiaeresis
+keycode248=48,adiaeresis,Adiaeresis
+
+# Fourth row
+keycode294=94,less,greater,bar
+keycode259=59,comma,semicolon,
+keycode260=60,period,colon,
+keycode261=61,minus,underscore,
