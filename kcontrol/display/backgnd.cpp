@@ -1903,7 +1903,9 @@ void KRandomDlg::addToPicList( QString pic )
 
 void KRandomDlg::slotAdd()
 {
-  addToPicList( i18n("No wallpaper") );
+  QString name=KFileDialog::getOpenFileName(kapp->kde_wallpaperdir());
+  if(!name.isEmpty())
+    addToPicList(name);
 }
 
 
