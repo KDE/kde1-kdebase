@@ -1,5 +1,7 @@
 Sat Feb  7 10:56:00 1998  Stephan Kulow  <coolo@kde.org>
 
+	* configure.in: good news - KDE is relocatable again.
+
 	* libtool.m4.in: updated to latest libtool 1.0i
 
 Fri Feb  6 21:26:51 1998  Stephan Kulow  <coolo@kde.org>
