@@ -626,7 +626,10 @@ void KfmGui::slotPrint()
 void KfmGui::slotPannerChanged()
 {
     if ( !bTreeViewInitialized )
-	treeView->initializeTree();  
+    {
+        bTreeViewInitialized = TRUE;
+        treeView->initializeTree();
+    }
 
     if ( panner->getSeparator() == 0 )
       mview->setItemChecked( mview->idAt( 1 ), false );
