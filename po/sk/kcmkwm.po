@@ -78,13 +78,12 @@ msgid "Titlebar appearance"
 msgstr "Vzhµad titulku"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximalizuj vertikálne"
+msgstr "Tieòovaný vertikálne"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Tieòovaný horizontálne"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -167,14 +166,12 @@ msgid "Opaque"
 msgstr "Nepriehµadný"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Vlastnosti okna"
+msgstr "Zmena veµkosti"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animácia titulku"
+msgstr "Animácia"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -229,12 +226,10 @@ msgid "Focus follows mouse"
 msgstr "Okno pod my¹ou je aktívne"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Okno pod my¹ou je aktívne"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Kliknú» pre aktiváciu"
 
