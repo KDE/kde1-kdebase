@@ -315,8 +315,12 @@ void MenuButton::change_accept()
       pmenu_item->setPixmapName(dialog->i_pixmap->text());
       pmenu_item->setBigPixmapName(dialog->i_big_pixmap->text());
       pmenu_item->setComment(dialog->i_comment->text());
-      pmenu_item->setPixmap( global_pix_loader->loadApplicationMiniIcon( dialog->i_pixmap->text(),
-									 70, 70 ) );
+      if( ((QString) dialog->i_pixmap->text()).isEmpty() )
+	pmenu_item->setPixmap( global_pix_loader->
+			       loadApplicationMiniIcon( dialog->i_big_pixmap->text(), 16, 16 ) );
+      else
+	pmenu_item->setPixmap( global_pix_loader->
+			       loadApplicationMiniIcon( dialog->i_pixmap->text(), 16, 16 ) );
       setPixmap( pmenu_item->getPixmap() );
       switch( (int) new_type ) {
       case (int) unix_com:

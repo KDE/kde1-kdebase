@@ -2,7 +2,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -440,13 +440,19 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 void EntryDialog::pixnameChanged()
 {
   QString new_name = i_pixmap->text();
-  b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 24, 24 ));
+  if( new_name.isEmpty() )
+    b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(i_big_pixmap->text(),
+								    16, 16 ));
+  else
+    b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 16, 16 ));
 }
 
 void EntryDialog::bigPixnameChanged()
 {
   QString new_name = i_big_pixmap->text();
   b_big_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(new_name, 70, 70 ));
+  if( ((QString) i_pixmap->text()).isEmpty() )
+    b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 16, 16 ));
 }
 
 void EntryDialog::umountPixnameChanged()

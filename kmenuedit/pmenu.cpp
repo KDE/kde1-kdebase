@@ -828,14 +828,14 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item)
     {
       if( isKdelnkFile(base_dir.absFilePath(name)) )
 	{
-	  debug("will remove file: %s", (const char *) name );
+	  //debug("will remove file: %s", (const char *) name );
 	  base_dir.remove(name);
 	}
     }
   // remove dirs not in pmenu
   for( name = dir_list.first(); name != 0; name = dir_list.next() )
     {
-      debug("will remove dir: %s", (const char *) name );
+      //debug("will remove dir: %s", (const char *) name );
       QDir sub_dir(base_dir);
       if(sub_dir.cd(name))
 	{
