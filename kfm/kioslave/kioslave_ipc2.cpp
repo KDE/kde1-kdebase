@@ -232,17 +232,17 @@ void KIOSlaveIPC::parse_list( char *_data, int _len )
 	free( (void*)_url );
 }
 
-void KIOSlaveIPC::parse_getPID( char *_data, int _len )
+void KIOSlaveIPC::parse_getPID( char *, int  )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit getPID(  );
 }
 
-void KIOSlaveIPC::parse_cleanUp( char *_data, int _len )
+void KIOSlaveIPC::parse_cleanUp( char *, int )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit cleanUp(  );

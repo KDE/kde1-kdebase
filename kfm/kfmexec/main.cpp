@@ -173,8 +173,9 @@ int main( int argc, char **argv )
 	exit(1);
     }
     
-    KFMExec *exec = new KFMExec( argc, argv );
-        
+    // KFMExec *exec = new KFMExec( argc, argv );
+    KFMExec exec(argc, argv);
+
     app.exec();
 
     return 0;
