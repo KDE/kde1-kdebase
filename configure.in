@@ -10,7 +10,7 @@ AC_CANONICAL_SYSTEM
 AC_ARG_PROGRAM
 
 dnl Automake doc recommends to do this only here. (Janos)
-AM_INIT_AUTOMAKE(kdebase, 0.90) dnl searches for some needed programs
+AM_INIT_AUTOMAKE(kdebase, 1.0pre) dnl searches for some needed programs
 
 dnl make $KDEDIR the default for the installation
 AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local/kde})
@@ -263,6 +263,7 @@ AC_OUTPUT(Makefile \
 	kfm/kfmwarn/Makefile \
 	kfm/kioslave/Makefile \
 	kfm/pics/Makefile \
+	kfm/config/Makefile	\
 	kfontmanager/Makefile \
 	kmenuedit/Makefile \
 	kmenuedit/icons/Makefile \
@@ -271,6 +272,8 @@ AC_OUTPUT(Makefile \
 	kpanel/pics/mini/Makefile \
 	krootwm/Makefile \
 	kscreensaver/Makefile \
+	kscreensaver/bitmaps/Makefile	\
+	kscreensaver/pixmaps/Makefile	\
 	kstartondesk/Makefile \
 	kvt/Makefile \
 	kwm/Makefile \

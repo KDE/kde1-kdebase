@@ -18,6 +18,13 @@ MOCS =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
 	entrydialog.moc\
 	MenuNameDialog.moc MenuNameDialogData.moc
 
+noinst_HEADERS = kmenuedit.h pmenu.h MenuNameDialog.h cpopmenu.h \
+				MenuNameDialogData.h confmenu.h button.h IconPathDialog.h \
+				IconPathDialogData.h DesktopPathDialog.h \
+				DesktopPathDialogData.h entrydialog.h
+
+EXTRA_DIST = kmenuedit.xpm mini-kmenuedit.xpm
+
 DISTCLEANFILES = $(MOCS)
 
 kmenuedit.cpp:kmenuedit.moc
@@ -63,7 +70,7 @@ MenuNameDialog.moc: MenuNameDialog.h
 	$(MOC) MenuNameDialog.h -o MenuNameDialog.moc
 MenuNameDialogData.moc: MenuNameDialogData.h
 	$(MOC) MenuNameDialogData.h -o MenuNameDialogData.moc
-	
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) kmenuedit.xpm $(kde_icondir)/kmenuedit.xpm

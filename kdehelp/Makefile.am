@@ -14,7 +14,9 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 noinst_HEADERS = helpwin.h info.h error.h misc.h man.h options.h\
 		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h\
-		booktoken.h
+		booktoken.h fmthtml.h fmtbase.h dbnew.h khelp.h
+
+EXTRA_DIST = kdehelp.xpm mini-kdehelp.xpm
 
 helpwin.cpp: helpwin.moc
 options.cpp: options.moc

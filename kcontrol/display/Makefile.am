@@ -14,6 +14,7 @@ kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc \
 		scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc \
 		kresourceman.moc
+noinst_HEADERS = backgnd.h display.h colorscm.h savescm.h scrnsave.h general.h widgetcanvas.h fontchooser.h kresourceman.h
 
 backgnd.cpp:backgnd.moc
 backgnd.moc: backgnd.h
@@ -38,15 +39,15 @@ scrnsave.moc: scrnsave.h
 general.cpp:general.moc
 general.moc: general.h
 	$(MOC) general.h -o general.moc
-	
+
 widgetcanvas.cpp:widgetcanvas.moc
 widgetcanvas.moc: widgetcanvas.h
 	$(MOC) widgetcanvas.h -o widgetcanvas.moc
-	
+
 fontchooser.cpp:fontchooser.moc
 fontchooser.moc: fontchooser.h
 	$(MOC) fontchooser.h -o fontchooser.moc
-	
+
 kresourceman.cpp:kresourceman.moc
 kresourceman.moc: kresourceman.h
 	$(MOC) kresourceman.h -o kresourceman.moc
@@ -63,6 +64,8 @@ install-data-local:
 	$(mkinstalldirs) $(kde_icondir)
 	$(INSTALL_DATA) background.xpm $(kde_icondir)/background.xpm
 	$(INSTALL_DATA) palette.xpm $(kde_icondir)/palette.xpm
+
+EXTRA_DIST = mini-background.xpm mini-colors.xpm mini-screensaver.xpm mini-style.xpm monitor.xpm background.xpm palette.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/background.xpm

@@ -10,6 +10,9 @@ bin_PROGRAMS	= kwmpager
 kwmpager_SOURCES = desktop.cpp pager.cpp
 BUILTSOURCES =	pager.moc desktop.moc
 DISTCLEANFILES = $(BUILTSOURCES)
+noinst_HEADERS = pager.h desktop.h version.h
+
+EXTRA_DIST = kwmpager.kdelnk
 
 pager.cpp: pager.moc
 pager.moc: pager.h

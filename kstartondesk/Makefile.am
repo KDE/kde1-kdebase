@@ -10,6 +10,8 @@ kstartondesk_SOURCES	= kstartondesk.C
 BUILTSOURCES =	kstartondesk.moc 
 DISTCLEANFILES = $(BUILTSOURCES)
 
+noinst_HEADERS = kstartondesk.h version.h
+
 kstartondesk.C:kstartondesk.moc
 kstartondesk.moc: kstartondesk.h
 	$(MOC) kstartondesk.h -o kstartondesk.moc

@@ -8,6 +8,7 @@ kdmconfig_SOURCES = main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-
 kdmconfig_LDADD = $(LDADD)
 #kdmconfig_LDFLAGS = -g
 BUILT_SOURCES =  kdm-appear.moc kdm-font.moc kdm-bgnd.moc kdm-users.moc kdm-sess.moc klangcombo.moc
+noinst_HEADERS = kdm-appear.h kdm-font.h kdm-bgnd.h kdm-users.h kdm-sess.h klangcombo.h utils.h
 
 kdm-appear.cpp: kdm-appear.moc
 kdm-appear.moc: kdm-appear.h

@@ -24,6 +24,8 @@ BUILTSOURCES =	syssound.moc
 # them while "make clean", use CLEANFILES
 DISTCLEANFILES = $(BUILTSOURCES)
 
+EXTRA_DIST = syssound.xpm mini-syssound.xpm
+
 # make messages.po. Move this one to ../po/ and "make merge" in po
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x../../../kdelibs/po/kde.pot $(kcmsyssound_SOURCES) && mv messages.po ../../po/kcmsyssound.pot

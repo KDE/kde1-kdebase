@@ -6,6 +6,7 @@ LDADD = -lkdeui -lkdecore -lqt -lXext -lX11 -lmediatool $(LIBSOCKET) $(LIBCOMPAT
 
 bin_PROGRAMS = kwmsound
 kwmsound_SOURCES = kwmsound.C
+noinst_HEADERS = kwmsound.h
 
 BUILTSOURCES = kwmsound.moc
 DISTCLEANFILES = $(BUILTSOURCES)

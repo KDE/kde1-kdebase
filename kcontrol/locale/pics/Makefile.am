@@ -7,3 +7,5 @@ data_DATA = flag_de.gif flag_en.gif flag_fr.gif flag_C.gif flag_cs.gif \
 
 datadir = $(kde_datadir)/kcmlocale/pics
 
+EXTRA_DIST = $(data_DATA)
+

@@ -11,3 +11,6 @@ network_settings.xpm panel_settings.xpm sound_settings.xpm
 
 datadir = $(kde_icondir)
 
+EXTRA_DIST = $(data_DATA) $(logo_DATA)
+
+

@@ -5,6 +5,9 @@ bin_PROGRAMS = kcmbell
 
 kcmbell_SOURCES = main.cpp bell.cpp
 BUILT_SOURCES = bell.moc
+noinst_HEADERS = bell.h geom.h
+
+EXTRA_DIST = bell.xpm mini-bell.xpm
 
 bell.cpp: bell.moc
 bell.moc: bell.h

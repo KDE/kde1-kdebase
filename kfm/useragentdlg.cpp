@@ -183,6 +183,17 @@ void UserAgentDialog::listboxHighlighted( const char* _itemtext )
 
 /*
  * $Log$
+ * Revision 1.5  1998/03/04 05:08:23  wuebben
+ * Bernd: Made kfm quite a bit more configurable
+ * 1.) bg,link,vlink,text colors can be configured
+ * 2.) Fonts can be configured
+ * 3.) Whether the cursor changes over a link can be configured
+ *
+ * TODO: Background pixmaps, linedit colors,perhaps link cursor configurable
+ *
+ * Note: Most of the code is form kdehelp, so things are hopefully OK. However
+ * kfm has become a somewhat complex beast. Please test as much as possible;-)
+ *
  * Revision 1.4  1998/01/10 01:38:31  torben
  * Torben: Bug fixes ( see CHANGES )
  *
@@ -191,8 +202,5 @@ void UserAgentDialog::listboxHighlighted( const char* _itemtext )
  *
  * Revision 1.2  1997/11/24 21:31:59  kulow
  * I would like to remind everyone, not to use default arguments in the implementation ;)
- *
- * Revision 1.1  1997/11/21 08:07:31  kalle
- * Make ourselves known via the UserAgent line.
  *
  */

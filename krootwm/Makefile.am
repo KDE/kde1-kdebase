@@ -9,6 +9,7 @@ bin_PROGRAMS	= krootwm
 krootwm_SOURCES	= krootwm.C
 BUILTSOURCES =	krootwm.moc 
 DISTCLEANFILES = $(BUILTSOURCES)
+noinst_HEADERS = krootwm.h pmenu.h version.h
 
 krootwm.C:krootwm.moc
 krootwm.moc: krootwm.h

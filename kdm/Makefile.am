@@ -45,7 +45,7 @@ kdmlib_source = access.c \
 	   verify.c \
 	   xdmauth.c \
 	   xdmcp.c
-			
+
 kdm_SOURCES = kdmconfig.cpp \
 	kdmshutdown.cpp \
 	kdmview.cpp \
@@ -56,6 +56,8 @@ kdm_SOURCES = kdmconfig.cpp \
 kdmdesktop_SOURCES = \
 	kdmdesktop.cpp \
 	jpeg.cpp
+
+noinst_HEADERS = kdmconfig.h kdmview.h kdm-config.h kdmshutdown.h kfdialog.h dm.h kgreeter.h greet.h
 
 MOCSRC = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
 DISTCLEANFILES = $(MOCSRC)

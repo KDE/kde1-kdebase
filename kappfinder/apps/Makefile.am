@@ -4,3 +4,5 @@ SUBDIRS = Editors Internet Toys WordProcessing Development Graphics System \
 data_DATA = .directory
 
 datadir = $(kde_datadir)/kappfinder/apps
+
+EXTRA_DIST = $(data_DATA)

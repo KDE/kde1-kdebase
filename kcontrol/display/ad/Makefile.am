@@ -6,6 +6,8 @@ ML.ad Nedit.ad Netscape.ad XCalc.ad XTerm.ad XV.ad
 
 datadir = $(kde_datadir)/kdisplay/app-defaults
 
+EXTRA_DIST = $(data_DATA)
+
 bin_PROGRAMS = krdb
 
 krdb_SOURCES = krdb.cpp

@@ -4,3 +4,5 @@ data_DATA = close.xpm maximize.xpm maximizedown.xpm menu.xpm\
 
 datadir = $(kde_datadir)/kwm/pics
 
+EXTRA_DIST = $(data_DATA)
+

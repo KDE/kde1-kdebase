@@ -26,3 +26,5 @@ data_DATA = maximize2.xpm mini-ball.xpm mini-bball.xpm mini-bomb.xpm \
 	mini.xlock.xpm mini.xterm.xpm mini.zircon.xpm
 
 datadir = $(kde_minidir)
+
+EXTRA_DIST = $(data_DATA)

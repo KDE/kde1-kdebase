@@ -6,4 +6,6 @@ data_DATA = syssound.html syssound-1.html syssound-2.html syssound-3.html logotp
 # you have given the datas in data_DATA
 datadir = $(kde_htmldir)/de/kcontrol/kcmsyssound
 
+EXTRA_DIST = $(data_DATA)
+
 

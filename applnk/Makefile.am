@@ -4,4 +4,6 @@ data_DATA = Help.kdelnk Home.kdelnk Kfind.kdelnk Krefresh.kdelnk Trash.kdelnk KC
 
 datadir = $(kde_appsdir)
 
+EXTRA_DIST = $(data_DATA)
+
 messages:

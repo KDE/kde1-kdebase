@@ -19,4 +19,6 @@ www.xpm x.xpm y_src.xpm zip_mount.xpm zip_unmount.xpm
 datadir = $(kde_icondir)
 SUBDIRS = wallpapers mini
 
+EXTRA_DIST = $(data_DATA)
+
 messages:

@@ -11,6 +11,8 @@ icondir = $(kde_icondir)
 data_DATA = directory.trash directory.autostart directory.templates
 datadir = $(kde_datadir)/kfm
 
+EXTRA_DIST = kfm.xpm link.xpm directory.trash directory.autostart directory.templates kfmsu kfmsu2 startkde unpack magic
+
 ####### Files
 
 bin_SCRIPTS = kfmsu kfmsu2 startkde unpack
@@ -33,7 +35,8 @@ noinst_HEADERS =  \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
 	xview.h krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
-	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h
+	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h \
+	kstrlist.h cgi.h kbookmarkdlg.h fileentry.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \
@@ -166,7 +169,7 @@ khttpoptdlg.cpp:khttpoptdlg.moc
 khttpoptdlg.moc:khttpoptdlg.h
 	$(MOC) khttpoptdlg.h -o khttpoptdlg.moc
      
-SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec
+SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
 
 install-data-local:
 	$(mkinstalldirs) $(CONFIGDIR)

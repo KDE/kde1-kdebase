@@ -20,6 +20,7 @@
 #ifndef __KDMAPPEAR_H__
 #define __KDMAPPEAR_H__
 
+#include <qdir.h>
 #include <qimage.h>
 #include <qfileinf.h>
 #include <kcolorbtn.h>

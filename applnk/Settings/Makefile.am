@@ -4,3 +4,4 @@ data_DATA = .directory
 
 datadir = $(kde_appsdir)/Settings
 
+EXTRA_DIST = $(data_DATA)

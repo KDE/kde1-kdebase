@@ -3,3 +3,5 @@ data_DATA = index.html kdm-appear.html kdm-font.html kdm-backgnd.html kdm-users.
 
 datadir = $(kde_htmldir)/en/kcontrol/kdmconfig
 
+EXTRA_DIST = $(data_DATA)
+

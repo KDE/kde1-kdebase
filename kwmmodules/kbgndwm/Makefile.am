@@ -9,6 +9,7 @@ bin_PROGRAMS	= kbgndwm
 kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp jpeg.cpp
 BUILTSOURCES =	kbgndwm.moc
 DISTCLEANFILES = $(BUILTSOURCES)
+noinst_HEADERS = kbgndwm.h bg.h version.h
 
 kbgndwm.cpp: kbgndwm.moc
 kbgndwm.moc: kbgndwm.h

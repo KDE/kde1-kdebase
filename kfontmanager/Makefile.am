@@ -7,10 +7,12 @@ INCLUDES=	$(all_includes)
 
 ####### Files
 bin_PROGRAMS = kfontmanager
-noinst_HEADERS = kfontmanager.h kfontlist.h kfontexplorer.h
+noinst_HEADERS = kfontmanager.h kfontlist.h kfontexplorer.h version.h
 kfontmanager_SOURCES = main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp
 BUILT_SOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
+
+EXTRA_DIST = kfontmanager.xpm mini-kfontmanager.xpm
 
 kfontmanager.cpp: kfontmanager.moc
 kfontlist.cpp: kfontlist.moc

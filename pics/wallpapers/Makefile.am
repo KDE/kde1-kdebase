@@ -7,3 +7,5 @@ data_DATA = marble01.jpg ocean01.jpg paper01.jpg water01.jpg \
 	bowtie.gif gray2.gif greek.gif
 
 datadir = $(kde_wallpaperdir)
+
+EXTRA_DIST = $(data_DATA)

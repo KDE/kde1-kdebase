@@ -5,6 +5,9 @@ bin_PROGRAMS = kcminput
 
 kcminput_SOURCES = main.cpp mouse.cpp keyboard.cpp
 BUILT_SOURCES = mouse.moc keyboard.moc
+noinst_HEADERS = mouse.h keyboard.h geom.h
+
+EXTRA_DIST = mouse.xpm mini-mouse.xpm keyboard.xpm mini-keyboard.xpm
 
 mouse.cpp: mouse.moc geom.h
 mouse.moc: mouse.h

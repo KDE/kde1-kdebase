@@ -13,6 +13,10 @@ kvt_SOURCES = \
 	xsetup.c debug.c resources.c main.C\
 	grkelot.c
 
+noinst_HEADERS = debug.h rxvt.h command.h screen.h xsetup.h sbar.h kvt_version.h main.h
+
+EXTRA_DIST = kvt.xpm mini-kvt.xpm
+
 main.C: main.moc
 
 main.moc: main.h

@@ -7,6 +7,8 @@ bin_PROGRAMS = kcmlocale
 
 kcmlocale_SOURCES = main.cpp locale.cpp klangcombo.cpp
 BUILT_SOURCES = locale.moc
+noinst_HEADERS = locale.h klangcombo.h
+EXTRA_DIST = kcmlocalerc locale.xpm mini-locale.xpm
 
 locale.cpp: locale.moc
 locale.moc: locale.h

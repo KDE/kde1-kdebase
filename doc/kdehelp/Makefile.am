@@ -4,3 +4,4 @@ data_DATA = devel.html index.html intro.html main.html kogo3.gif ksearch.html si
  
 datadir = $(kde_htmldir)/en/kdehelp
  
+EXTRA_DIST = $(data_DATA)

@@ -5,6 +5,9 @@ bin_PROGRAMS = kcmkwm
 
 kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp desktop.cpp
 BUILT_SOURCES = titlebar.moc windows.moc desktop.moc
+noinst_HEADERS = windows.h desktop.h titlebar.h geom.h
+
+EXTRA_DIST = mini-windows.xpm mini-titlebar.xpm mini-buttons.xpm kcmkwm.xpm
 
 windows.cpp: windows.moc
 windows.moc: windows.h

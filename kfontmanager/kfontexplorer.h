@@ -22,12 +22,11 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
+    Revision 1.4  1997/11/09 22:31:42  wuebben
+    Bernd: colorscheme related fixes
+
     Revision 1.3  1997/11/09 04:05:01  wuebben
     Bernd: necessary iso charset changes
-
-    Revision 1.2  1997/05/22 13:30:52  kulow
-    Coolo: updated kedit to 0.5
-    updated kfontmanager to 0.2.2
 
     Revision 1.1  1997/05/21 04:47:09  wuebben
     Initial revision

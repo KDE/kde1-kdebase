@@ -1,4 +1,4 @@
-
+EXTRA_DIST = mini-kdmconfig.xpm kdmconfig.xpm monitor.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)

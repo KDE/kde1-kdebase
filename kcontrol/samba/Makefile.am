@@ -5,6 +5,9 @@ bin_PROGRAMS = kcmsamba
 
 kcmsamba_SOURCES = main.cpp ksmbstatus.cpp
 BUILT_SOURCES = ksmbstatus.moc
+noinst_HEADERS = ksmbstatus.h
+
+EXTRA_DIST = smbstatus.xpm mini-smbstatus.xpm
 
 ksmbstatus.cpp: ksmbstatus.moc 
 ksmbstatus.moc: ksmbstatus.h

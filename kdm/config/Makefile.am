@@ -7,5 +7,6 @@ DISTCLEANFILES = kdmrc
 kdmrc: kdmrc.cpp
 	sed -e "s#KDEDIR#$(prefix)#" kdmrc.cpp > kdmrc
 
+EXTRA_DIST = kdmrc.cpp
 
 

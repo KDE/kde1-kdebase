@@ -4,3 +4,5 @@ mathematica.xpm nedit.xpm netscape.xpm pinguin.xpm plan.xpm wabi.xpm \
 wp.xpm x.xpm xemacs.xpm xfmail.xpm
 
 datadir = $(kde_datadir)/kappfinder/pics/mini
+
+EXTRA_DIST = $(data_DATA)

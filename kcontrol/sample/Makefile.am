@@ -5,6 +5,8 @@ noinst_PROGRAMS = kcmsample
 
 kcmsample_SOURCES = main.cpp
 
+EXTRA_DIST = mini-sample.xpm
+
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-sample.xpm $(kde_minidir)/sample.xpm

@@ -5,3 +5,5 @@ network_settings.xpm panel_settings.xpm sound_settings.xpm
 
 datadir = $(kde_minidir)
 
+EXTRA_DIST = $(data_DATA)
+

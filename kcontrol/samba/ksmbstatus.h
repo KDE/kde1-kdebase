@@ -8,6 +8,8 @@
 #include <kcontrol.h>
 #include <kprocess.h>
 
+class KTabListBox;
+
 class NetMon : public KConfigWidget
 {
 Q_OBJECT

@@ -58,7 +58,7 @@ private:
 
 /*
  * $Log$
- * Revision 1.1  1997/11/21 08:07:34  kalle
- * Make ourselves known via the UserAgent line.
+ * Revision 1.2  1997/12/20 01:46:13  hoss
+ * *** empty log message ***
  *
  */

@@ -11,7 +11,8 @@ kioslave_SOURCES = kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp xview.cpp jpeg.cp
 	ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp icon.cpp \
 	slave.cpp tar.cpp subprotocol.cpp cgi.cpp gzip.cpp ../debug.cpp ftp_proxy.cpp
 noinst_HEADERS = kioslave_ipc.h main.h ipc.h protocol.h http.h xview.h jpeg.h jpeginc.h \
-	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h icon.h ftp_proxy.h
+	file.h ftp.h manage.h slave.h tar.h subprotocol.h cgi.h gzip.h icon.h ftp_proxy.h kio_errors.h
+
 BUILT_SOURCES =	kioslave_ipc.moc main.moc http.moc file.moc tar.moc ftp.moc \
 	protocol.moc subprotocol.moc cgi.moc gzip.moc icon.moc ftp_proxy.moc
 DISTCLEANFILES = $(BUILT_SOURCES)

@@ -17,8 +17,12 @@ bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss 
 
+EXTRA_DIST = kscreensaver.xpm mini-kscreensaver.xpm kscience.gif kscience-small.gif
+
 BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp \
 	    helpers.cpp
+
+SUBDIRS = pixmaps bitmaps
 
 main.cpp: main.moc
 saver.cpp: saver.moc
@@ -98,7 +102,8 @@ BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
-		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h
+		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h main.h \
+		xautolock.h xlockmore.h mode.h helpers.h morph3d.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n *.cpp -x ../../kdelibs/po/kde.pot && mv messages.po ../po/klock.pot

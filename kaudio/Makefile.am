@@ -11,10 +11,12 @@ DISTCLEANFILES = $(MOCS)
 
 bin_PROGRAMS = maudio kaudioserver
 noinst_PROGRAMS = demo
-noinst_HEADERS = version.h
+noinst_HEADERS = version.h maudio.h sample.h io_oss.h democlient.h
 
 datadir = $(kde_htmldir)/en/kmedia/
 data_DATA = maudio.html
+
+EXTRA_DIST = $(data_DATA) VERSION
 
 version.h: VERSION
 	sed "s/0/#define APP_VERSION 0/" <VERSION >version.h

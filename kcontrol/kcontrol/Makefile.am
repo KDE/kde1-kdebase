@@ -10,6 +10,9 @@ kcontrol_SOURCES = configlist.cpp main.cpp toplevel.cpp kdelnk.cpp mainwidget.cp
 		   kswallow.cpp
 BUILT_SOURCES =	toplevel.moc kdelnk.moc mainwidget.moc configlist.moc \
 		kswallow.moc
+noinst_HEADERS = kswallow.h toplevel.h configlist.h mainwidget.h kdelnk.h
+
+EXTRA_DIST = kcontrol.xpm mini-kcontrol.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcontrol_SOURCES) && mv messages.po ../../po/kcontrol.pot
