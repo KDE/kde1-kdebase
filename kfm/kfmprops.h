@@ -268,6 +268,7 @@ class DirPropsPage : public PropsPage
 public:
     /// Constructor
     DirPropsPage( Properties *_props );
+    ~DirPropsPage() {};
 
     virtual const char* getTabName() { return "Dir"; }
     virtual void applyChanges();
