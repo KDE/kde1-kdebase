@@ -263,11 +263,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	     SLOT(windowlistActivated(int)) );
     init_popup(windowlist);
 
-    // dock area
-    dock_area = new QFrame(this);
-    dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
-    dock_area->hide();
-    
     QPushButton* tmp_push_button = NULL;
     QButton* tmp_button = NULL;
     int w = QApplication::desktop()->width();
@@ -383,6 +378,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	label_date->hide();
       }
     }
+
+    // Dock area
+    dock_area = new QFrame(this);
+    dock_area->setFrameStyle(QFrame::Panel| QFrame::Sunken);
+    dock_area->hide();
+    
 
     load_and_set_some_fonts();
 
