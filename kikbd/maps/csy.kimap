@@ -3,6 +3,7 @@
 [International Keyboard]
 Comment=Typewriter Keyboard (QWERTY)
 Comment[cs]=Klávesnice psacího stroje (QWERTY)
+Comment[sk]=Klávesnica písacieho stroja (QWERTY)
 Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTY)
 Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
 
@@ -11,6 +12,7 @@ Language[no]=Tjekkisk
 Language[ru]=şÅÛÓËÉÊ
 Language[fi]=Tsekki
 Language[pl]=Czeski
+Language[sk]=Èeská
 
 Label=Csy
 Locale=cs
