@@ -387,6 +387,21 @@ void KfmGui::initMenu()
     mview->setItemChecked( mview->idAt( 2 ), visualSchnauzer );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML );
 
+    mcache = new QPopupMenu;
+    CHECK_PTR( mcache );
+    mcache->setCheckable(true);
+    mcache->insertItem( klocale->translate( "Show Cache" ),
+			this, SLOT( slotShowCache() ) );
+    mcache->insertItem( klocale->translate( "Clear Cache" ),
+			this, SLOT( slotClearCache() ) );
+    mcache->insertSeparator();
+    mcache->insertItem( klocale->translate( "Always look in cache" ),
+			this, SLOT( slotCacheOn() ) );
+    mcache->insertItem( klocale->translate( "Never look in cache" ),
+			this, SLOT( slotCacheOff() ) );
+    
+    mcache->setItemChecked( mcache->idAt( 3 ), true );
+
     moptions = new QPopupMenu;
     CHECK_PTR( moptions );
     moptions->setCheckable(true);
@@ -458,6 +473,7 @@ void KfmGui::initMenu()
     menu->insertItem( klocale->translate("&View"), mview );
     menu->insertItem( klocale->translate("&Bookmarks"), bookmarkMenu );
     menu->insertItem( klocale->translate("&Tool"), tool );
+    menu->insertItem( klocale->translate("&Cache"), mcache );
     menu->insertItem( klocale->translate("&Options"), moptions );
     menu->insertSeparator();
     menu->insertItem( klocale->translate("&Help"), help );
@@ -620,10 +636,45 @@ void KfmGui::slotReloadTree()
 	treeView->update();
 }
 
+void KfmGui::slotShowCache()
+{
+    HTMLCache::save();
+    
+    QString s;
+    s.sprintf("file:%s/.kde/share/apps/kfm/cache/index.html", getenv( "HOME" ) );
+    view->openURL( s );
+}
+
+void KfmGui::slotClearCache()
+{
+    HTMLCache::clear();
+}
+
+void KfmGui::slotCacheOn()
+{
+    mcache->setItemChecked( mcache->idAt( 3 ), true );
+    mcache->setItemChecked( mcache->idAt( 4 ), false );
+
+    HTMLCache::enableCache( true );
+}
+
+void KfmGui::slotCacheOff()
+{
+    mcache->setItemChecked( mcache->idAt( 3 ), false );
+    mcache->setItemChecked( mcache->idAt( 4 ), true );
+
+    HTMLCache::enableCache( false );
+}
+
 void KfmGui::slotURLEntered()
 {
     if ( view->getActiveView() )
-	view->getActiveView()->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+	view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+}
+
+void KfmGui::setToolbarURL( const char *_url )
+{
+    toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
 }
 
 void KfmGui::slotNewURL( const char *_url )
@@ -726,8 +777,6 @@ void KfmGui::slotSplitWindow()
 void KfmGui::slotViewHTML( )
 {
     bViewHTML = !mview->isItemChecked( mview->idAt(3) );
-    // debugT("VIEW is '%i' %d\n",(int)bViewHTML, mview->idAt(3));
-    // viewMode = ICON_VIEW;
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
     view->slotUpdateView();
 }
@@ -735,31 +784,28 @@ void KfmGui::slotViewHTML( )
 void KfmGui::slotIconView()
 {
     viewMode = ICON_VIEW;
-    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), true );
     mview->setItemChecked( mview->idAt( 6 ), false );
     mview->setItemChecked( mview->idAt( 7 ), false );
-    view->slotUpdateView();
+    view->slotUpdateView( false );
 }
 
 void KfmGui::slotLongView()
 {
     viewMode = LONG_VIEW;
-    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), false);
     mview->setItemChecked( mview->idAt( 7 ), true );
-    view->slotUpdateView();
+    view->slotUpdateView( false );
 }
 
 void KfmGui::slotTextView()
 {
     viewMode = TEXT_VIEW;
-    // bViewHTML = false;
     mview->setItemChecked( mview->idAt( 5 ), false );
     mview->setItemChecked( mview->idAt( 6 ), true );
     mview->setItemChecked( mview->idAt( 7 ), false );
-    view->slotUpdateView();
+    view->slotUpdateView( false );
 }
 
 void KfmGui::slotKeyUp()

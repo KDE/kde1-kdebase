@@ -1,5 +1,7 @@
+#include <qdir.h>
 #include "utils.h"
 #include <stdlib.h>
+#include <sys/stat.h>
 
 void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 {
@@ -73,3 +75,80 @@ QString displayName()
     printf("NAME of DISPLAY = '%s'\n",d.data());
     return d;
 }
+
+int testNestedURLs( const char *_src, const char *_dest )
+{
+    // The quick check
+    if ( strcmp( _src, _dest ) == 0 )
+	return 2;
+
+    KURL u1( _src );
+    KURL u2( _dest );
+    if ( u1.isMalformed() || u2.isMalformed() )
+	return -1;
+    if ( strcmp( u1.protocol(), "file" ) != 0 || u1.hasSubProtocol() ||
+	 strcmp( u2.protocol(), "file" ) != 0 || u2.hasSubProtocol() )
+    {
+	// Inclusion ?
+	if ( strcmp( _src, _dest ) == 0 )
+	    return 2;
+	if ( strncmp( _src, _dest, strlen( _src ) ) == 0 )
+	    return 1;
+
+	return 0;
+    }
+    
+    QString canonical1;
+    QString canonical2;
+
+    // Get the canonical path.
+    QDir dir( u1.path() );
+    canonical1 = dir.canonicalPath();
+    if ( canonical1.isEmpty() )
+	canonical1 = u1.path();
+
+    QDir dir2( u2.path() );
+    canonical2 = dir2.canonicalPath();
+    if ( canonical2.isEmpty() )
+	canonical2 = u2.path();
+	
+    int i = 0;
+    
+    struct stat buff;
+    if ( stat( canonical1, &buff ) == 0 && S_ISDIR( buff.st_mode ) )
+	i++;
+    if ( stat( canonical2, &buff ) == 0 && S_ISDIR( buff.st_mode ) )
+	i++;
+    
+    // both files
+    if ( i == 0 )
+	return ( strcmp( canonical1, canonical2 ) == 0L ? 2 : 0 );
+    
+    if ( canonical1.right(1) != "/" )
+	canonical1 += "/";
+    if ( canonical2.right(1) != "/" )
+	canonical2 += "/";
+    
+    // Are both symlinks equal ?
+    if ( strcmp( canonical1, canonical2 ) == 0 )
+	return 2;
+    if ( strncmp( canonical1, canonical2, canonical1.length() ) == 0 )
+	return 1;
+
+    return 0;
+}
+
+QString& operator<<( QString& _str, int _v )
+{
+    QString tmp;
+    tmp.setNum( _v );
+    _str += tmp.data();
+    return _str;
+}
+
+QString& operator<<( QString& _str, const char* _v )
+{
+    _str += _v;
+    return _str;
+}
+

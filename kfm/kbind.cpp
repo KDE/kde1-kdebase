@@ -1,3 +1,5 @@
+#include <qdir.h>
+
 #include <unistd.h>
 #include <sys/types.h>
 #include <stddef.h>
@@ -36,9 +38,21 @@ KMimeType *SocketType;
 KMimeType *CDevType;
 KMimeType *BDevType;   
 
-char KMimeType::icon_path[ 1024 ];
+// Holds the path of global icons, but it is not a URL.
+QString *globalIconPath = 0L;
+// Holds the path of local icons, but it is not a URL.
+QString *localIconPath = 0L;
+// Holds the full qualified path and name of the default icon,
+// but this is NOT a URL
+QString *defaultIcon = 0L;
+// Holds the full qualified path and name of the default mini icon,
+// but this is NOT a URL
+QString *defaultMiniIcon = 0L;
 
 QStrList *KMimeBind::appList;
+
+QDict<QString>* KMimeType::iconDict = 0L;
+QDict<QString>* KMimeType::miniIconDict = 0L;
 
 /***************************************************************
  *
@@ -50,27 +64,98 @@ KMimeType::KMimeType( const char *_mime_type, const char *_pixmap )
 {
     if ( pixmapCache == 0L )
 	pixmapCache = new QPixmapCache;
+    if ( globalIconPath == 0L )
+    {
+	globalIconPath = new QString( kapp->kdedir() );
+	*globalIconPath += "/share/icons";
+    }
+    if ( localIconPath == 0L )
+    {
+	localIconPath = new QString( getenv( "HOME" ) );
+	*localIconPath += "/.kde/share/icons";
+    }    
+    if ( defaultIcon == 0L )
+    {
+	defaultIcon = new QString( globalIconPath->data() );
+	*defaultIcon += "/";
+	*defaultIcon += getDefaultPixmap();
+    }
+    if ( defaultMiniIcon == 0L )
+    {
+	defaultMiniIcon = new QString( globalIconPath->data() );
+	*defaultMiniIcon += "/mini/";
+	*defaultMiniIcon += getDefaultPixmap();
+    }
+    if ( iconDict == 0L )
+	iconDict = new QDict<QString>;
+    if ( miniIconDict == 0L )
+	miniIconDict = new QDict<QString>;
     
     bApplicationPattern = false;
     
     mimeType = _mime_type;
     mimeType.detach();
     
-    pixmapFile = getIconPath();
-    pixmapFile += "/";
-    pixmapFile.detach();
-    pixmapFile += _pixmap;
-
-    miniPixmapFile = getIconPath();
-    miniPixmapFile += "/mini/";
-    miniPixmapFile.detach();
-    miniPixmapFile += _pixmap;
+    pixmapFile = getIconPath( _pixmap );
+    miniPixmapFile = getIconPath( _pixmap, true );
 
     pixmap = 0L;
     
     HTMLImage::cacheImage( pixmapFile.data() );
+    HTMLImage::cacheImage( miniPixmapFile.data() );
 }
 
+const char* KMimeType::getIconPath( const char *_icon, bool _mini )
+{
+    QString *res;
+    if ( _mini && ( res = (*miniIconDict)[_icon] ) != 0L )
+	return res->data();
+    else if ( !_mini && ( res = (*iconDict)[_icon] ) != 0L )
+	return res->data();
+    
+    QString *s = new QString( localIconPath->data() );
+    if ( _mini )
+	*s += "/mini/";
+    else
+	*s += "/";
+    *s += _icon;
+    
+    FILE *f = fopen( s->data(), "r" );
+    if ( f != 0L )
+    {
+	fclose( f );
+	if ( _mini )
+	    miniIconDict->insert( _icon, s );
+	else
+	    iconDict->insert( _icon, s );
+	return s->data();
+    }
+
+    *s = globalIconPath->data();
+    if ( _mini )
+	*s += "/mini/";
+    else
+	*s += "/";
+    *s += _icon;
+    
+    f = fopen( s->data(), "r" );
+    if ( f != 0L )
+    {
+	fclose( f );
+	if ( _mini )
+	    miniIconDict->insert( _icon, s );
+	else
+	    iconDict->insert( _icon, s );
+	return s->data();
+    }
+    
+    delete s;
+    if ( _mini )
+	return defaultMiniIcon->data();
+    else
+	return defaultIcon->data();
+}
+    
 // We dont have a look at the URL ( the 1. parameter )
 QPixmap* KMimeType::getPixmap( const char *, bool _mini )
 {
@@ -105,61 +190,8 @@ const char* KMimeType::getPixmapFile( bool _mini )
 	return pixmapFile;
 }
 
-void KMimeType::setPixmap( const char *_file )
-{
-    pixmapFile = getIconPath();
-    pixmapFile.detach();
-    pixmapFile += "/";
-    pixmapFile += _file;
-
-    miniPixmapFile = getIconPath();
-    miniPixmapFile.detach();
-    miniPixmapFile += "/mini/";
-    miniPixmapFile += _file;
-    
-    HTMLImage::cacheImage( pixmapFile.data() );
-}
-
 KMimeType* KMimeType::getMagicMimeType( const char *_url )
 {
-    /*
-    // Just for speedup, because KURL is slow
-    if ( strncmp( _url, "file:/", 6 ) == 0 || _url[0] == '/' )
-    {
-	KURL u( _url );
-	// Not a tar file ?
-	if ( !u.hasSubProtocol() )
-	{
-	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
-
-	    // Is it a directory or dont we know anything about it ?
-	    if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ||
-		 strcmp( "application/octet-stream", result->getContent() ) == 0 )
-		return KMimeType::findType( _url );
-
-	    // Can we trust the result ?
-	    if ( result->getAccuracy() >= 50 )
-	    {
-		KMimeType *type = KMimeType::findByName( result->getContent() );
-		// Do we know this mime type ?
-		if ( type )
-		    return type;
-	    }
-	    // Try the usual way
-	    KMimeType *type = KMimeType::findType( _url );
-	    // Perhaps we should better listen to the magic :-)
-	    if ( ( type == 0L || type->isDefault() ) && result->getContent() != 0L && result->getAccuracy() >= 30 )
-	    {
-		KMimeType *type = KMimeType::findByName( result->getContent() );
-		// Do we know this mime type ?
-		if ( type )
-		    return type;
-	    }
-	}
-    }
-    
-    return KMimeType::findType( _url ); */
-
     KMimeType *type = KMimeType::findType( _url );
     if ( type != defaultType )
 	return type;
@@ -302,11 +334,6 @@ void KMimeType::initMimeTypes( const char* _path )
 
 void KMimeType::init()
 {
-    QString ipath = kapp->kdedir();
-    ipath.detach();
-    ipath += "/share/icons";
-    strcpy( icon_path, ipath.data() );
-    
     types = new QList<KMimeType>;
     types->setAutoDelete( true );
 
@@ -577,21 +604,6 @@ KMimeType* KMimeType::findType( const char *_url )
 	// Can we make a stat ?
 	if ( stat( path, &buff ) == 0 )
 	{
-	    if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
-	    {
-		FILE *f = fopen( path, "rb" );
-		if ( f == 0 )
-		    return execType;
-		char buffer[ 10 ];
-		int n = fread( buffer, 1, 2, f );
-		fclose( f );
-		buffer[ n ] = 0;
-		// Is it a batchfile
-		if ( strcmp( buffer, "#!" ) == 0 )
-		    return batchType;
-		// It is a binary executable
-		return execType;
-	    }
 	    if ( S_ISFIFO( buff.st_mode ) )
 		return PipeType;
 	    if ( S_ISSOCK( buff.st_mode ) )
@@ -600,6 +612,24 @@ KMimeType* KMimeType::findType( const char *_url )
 		return CDevType;
 	    if ( S_ISBLK( buff.st_mode ) )
 		return BDevType;  
+
+	    if ( ( buff.st_mode & ( S_IXUSR | S_IXGRP | S_IXOTH ) ) != 0 )
+	    {
+		FILE *f = fopen( path, "rb" );
+		if ( f == 0 )
+		    return execType;
+		char buffer[ 10 ];
+		int n = fread( buffer, 1, 2, f );
+		fclose( f );
+		if ( n < 0 )
+		    return execType;
+		buffer[ n ] = 0;
+		// Is it a batchfile
+		if ( strcmp( buffer, "#!" ) == 0 )
+		    return batchType;
+		// It is a binary executable
+		return execType;
+	    }
 	}
     }
     
@@ -826,23 +856,13 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
         ep=readdir( dp );      // ignore '.' and '..' dirent
         if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
         {
-           pixmapFile2 = getIconPath();
-           pixmapFile2.detach();
-	   if ( _mini )
-	       pixmapFile2 += "/mini/kfm_trash.xpm";
-	   else
-	       pixmapFile2 += "/kfm_trash.xpm";
+           pixmapFile2 = getIconPath( "kfm_trash.xpm", _mini );
 	   closedir( dp );
 	   return pixmapFile2.data();
          }
          else
          {
-	   pixmapFile2 = getIconPath();
-	   pixmapFile2.detach();
-	   if ( _mini )
-	       pixmapFile2 += "/mini/kfm_fulltrash.xpm";
-	   else
-	       pixmapFile2 += "/kfm_fulltrash.xpm";
+	   pixmapFile2 = getIconPath( "kfm_fulltrash.xpm", _mini );
 	   closedir( dp );
 	   return pixmapFile2.data();
          }
@@ -867,13 +887,7 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
     if ( icon.isEmpty() )
 	return KMimeType::getPixmapFile( _url, _mini );
 
-    pixmapFile2 = getIconPath();
-    pixmapFile2.detach();
-    if ( _mini )
-	pixmapFile2 += "/mini/";
-    else
-	pixmapFile2 += "/";
-    pixmapFile2 += icon.data();
+    pixmapFile2 = getIconPath( icon, _mini );
 
     return pixmapFile2.data();
 }
@@ -909,9 +923,9 @@ QString KFolderType::getComment( const char *_url )
     if ( !f.open( IO_ReadOnly ) )
 	  return QString( klocale->translate("Folder") );
     
-	f.close(); //kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( n ); // kalle
+    f.close();
+
+    KConfig config( n );
     config.setGroup( "KDE Desktop Entry" );
     
     QString com = config.readEntry( "Comment" );
@@ -931,7 +945,7 @@ QString KFolderType::getComment( const char *_url )
 const char* KDELnkMimeType::getPixmapFile( const char *_url, bool _mini )
 {
     // Try to read the file as a [KDE Desktop Entry]
-  KConfig *config = KMimeBind::openKConfig( _url ); // kalle
+    KConfig *config = KMimeBind::openKConfig( _url );
     
     if ( config != 0L )
     {
@@ -946,16 +960,10 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url, bool _mini )
 	    if ( !dev.isEmpty() && !icon.isEmpty() && !icon2.isEmpty() )
 	    {
 		QString mp = KIOServer::findDeviceMountPoint( dev.data() );
-		pixmapFile2 = getIconPath();
-		pixmapFile2.detach();
-		if ( _mini )
-		    pixmapFile2 += "/mini/";
-		else
-		    pixmapFile2 += "/";
 		if ( mp.isNull() )
-		    pixmapFile2 += icon2.data();
+		    pixmapFile2 = getIconPath( icon2, _mini );
 		else
-		    pixmapFile2 += icon.data();
+		    pixmapFile2 = getIconPath( icon, _mini );
 		return pixmapFile2.data();
 	    }
 	}
@@ -965,13 +973,7 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url, bool _mini )
 	    delete config;
 	    if ( !icon.isEmpty() )
 	    {
-		pixmapFile2 = getIconPath();
-		pixmapFile2.detach();
-		if ( _mini )
-		    pixmapFile2 += "/mini/";
-		else
-		    pixmapFile2 += "/";
-		pixmapFile2 += icon.data();
+		pixmapFile2 = getIconPath( icon, _mini );
 		return pixmapFile2.data();
 	    }
 	}

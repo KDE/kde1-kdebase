@@ -19,7 +19,8 @@
 #include "kfmdlg.h"
 #include "kfmpaths.h"
 #include "kfmexec.h"
-#include <config-kfm.h>
+#include "utils.h"
+#include "config-kfm.h"
 
 #include <string.h>
 
@@ -182,10 +183,17 @@ void KRootWidget::openPopupMenu( QStrList &_urls, const QPoint &_point )
     else if ( isdir )
     {
 	int id;
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN_WITH), 
+				    this, SLOT( slotPopupOpenWith() ) );
+	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), this, 
 				    SLOT( slotPopupNewView() ) );
+	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_COPY), this, 
 				    SLOT( slotPopupCopy() ) );
+	if ( KIOServer::supports( _urls, KIO_Write ) && KfmView::clipboard->count() != 0 )
+	    id = popupMenu->insertItem( klocale->getAlias( ID_STRING_PASTE ), 
+					this, SLOT( slotPopupPaste() ) );
 	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_MOVE_TO_TRASH),  this, 
 				    SLOT( slotPopupTrash() ) );
 	id = popupMenu->insertItem(  klocale->getAlias(ID_STRING_DELETE), 
@@ -728,27 +736,24 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	}
     }
 
+    bool nested = false;
     // Test wether the destination includes the source
     QString url( KIOServer::canonicalURL( KFMPaths::DesktopPath() ) );
     for ( s = list.first(); s != 0L; s = list.next() )
     {
 	if ( !KIOServer::testDirInclusion( s, url ) )
-	{
-	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-				  klocale->translate( "You dropped some file over itself\nor one of its sub-directories" ) );
-	    return;
-	}
+	    nested = true;
     }
 	    
     int id = 1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
-	 KIOServer::supports( desktopDir.data(), KIO_Write ) )
+	 KIOServer::supports( desktopDir.data(), KIO_Write ) && !nested )
 	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ), this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( _zone->getURLList(), KIO_Delete ) &&
-	 KIOServer::supports( desktopDir.data(), KIO_Write ) )
+	 KIOServer::supports( desktopDir.data(), KIO_Write ) && !nested )
 	id = popupMenu->insertItem( klocale->getAlias( ID_STRING_MOVE ), this, SLOT( slotDropMove() ) );
     // We can link everything on the local file system
     if ( KIOServer::supports( desktopDir.data(), KIO_Link ) )
@@ -935,6 +940,49 @@ void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name
 	icon->rename( _new_name );
 	saveLayout();
     }
+}
+
+void KRootWidget::slotPopupPaste()
+{
+    if ( popupFiles.count() != 1 )
+    {
+	QMessageBox::warning( (QWidget*)0, klocale->translate("KFM Error"), 
+			      klocale->translate("Can not paste into multiple directories") );
+	return;
+    }
+    
+    // Check wether we drop a directory on itself or one of its children
+    int nested = 0;
+    char *s;
+    for ( s = KfmView::clipboard->first(); s != 0L; s = KfmView::clipboard->next() )
+    {
+	int j;
+	if ( ( j = testNestedURLs( s, popupFiles.first() ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+	}
+    
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
+    }
+    if ( nested == 2 )
+    {
+	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a URL over itself") );
+	return;
+    }
+    if ( nested == 1 )
+    {
+	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a directory over one of its children") );
+	return;
+    }
+
+    KIOJob * job = new KIOJob;
+    job->copy( (*KfmView::clipboard), popupFiles.first() );
 }
 
 void KRootWidget::slotPopupCopy()

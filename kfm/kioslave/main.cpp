@@ -94,6 +94,11 @@ void KIOSlave::getPID()
     ipc->setPID( (int)getpid() );
 }
 
+void KIOSlave::slotRedirection( const char *_url )
+{
+    sRedirection = _url;
+}
+
 void KIOSlave::mkdir( const char *_url )
 {
     KURL u( _url );
@@ -136,8 +141,6 @@ void KIOSlave::mkdir( const char *_url )
 
 void KIOSlave::list( const char *_url, bool _bHTML )
 {
-    const char *old_url = _url;
-
     KURL u( _url );
     if ( u.isMalformed() )
     {
@@ -146,7 +149,11 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	return;
     }
 
-    KURL su( u.nestedURL() );
+    KURL su;
+    if ( u.hasSubProtocol() )
+	su = u.nestedURL().data();
+    else
+	su = _url;
     if ( su.isMalformed() )
     {
 	fprintf( stderr, "ERROR: Malformed URL '%s'\n",_url );
@@ -154,11 +161,17 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	return;
     }
 
-    if (ProtocolSupported(_url))
+    if ( ProtocolSupported( _url ) )
     {
 	KProtocolDirEntry *de;
-	KProtocol *prot = CreateProtocol(_url);
-	
+	KProtocol *prot = CreateProtocol( _url );
+
+	sRedirection = "";
+	connect( prot, SIGNAL( redirection( const char* ) ),
+		 ipc, SLOT( redirection( const char* ) ) );
+	connect( prot, SIGNAL( redirection( const char* ) ),
+		 this, SLOT( slotRedirection( const char* ) ) );
+
 	prot->AllowHTML( _bHTML );
 	if ( prot->OpenDir(&su) == KProtocol::FAIL )
 	{
@@ -172,15 +185,24 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	    return;
 	}
 	    
-	ipc->flushDir(old_url);
+	if ( !sRedirection.isEmpty() )
+	    _url = sRedirection.data();
+	
+	ipc->flushDir( _url );
 	// Do we get some HTML as response
 	if ( prot->isHTML() )
 	{
 	    // Let us emit all the HTML
 	    prot->EmitData( ipc );
+	    prot->CloseDir();
 	}
 	else // We get directory entries
 	{
+	    // Remove password
+	    KURL u( _url );
+	    u.setPassword( "" );
+	    QString url = u.url().data();
+	    
 	    // Emit them all ...
 	    while( ( de = prot->ReadDir() ) )
 	    {
@@ -192,7 +214,7 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 		  printf("*>      access: %s\n",de->access.data());
 		  printf("*> owner/group: %s/%s\n",de->owner.data(),de->group.data());
 		  */
-		ipc->dirEntry(old_url, de->name.data(), de->isdir, de->size,
+		ipc->dirEntry( url, de->name.data(), de->isdir, de->size,
 			      de->date.data(), de->access.data(),
 			      de->owner.data(), de->group.data());
 	    }

@@ -15,6 +15,7 @@
 #include "kfmprops.h"
 #include "kfmgui.h"
 #include "kfmpaths.h"
+#include "utils.h"
 
 KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 {
@@ -327,6 +328,36 @@ void KFMDirTree::slotPopupCopy()
 
 void KFMDirTree::slotPopupPaste()
 {
+    // Check wether we drop a directory on itself or one of its children
+    int nested = 0;
+    char *s;
+    for ( s = KfmView::clipboard->first(); s != 0L; s = KfmView::clipboard->next() )
+    {
+	int j;
+	if ( ( j = testNestedURLs( s, popupDir ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+	}
+    
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
+    }
+    if ( nested == 2 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a URL over itself") );
+	return;
+    }
+    if ( nested == 1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a directory over one of its children") );
+	return;
+    }
+
     KIOJob * job = new KIOJob;
     job->copy( (*KfmView::clipboard), popupDir );
 }

@@ -249,6 +249,7 @@ public slots:
       */
     void slotPopupProperties();
     void slotPopupCopy();
+    void slotPopupPaste();
     void slotPopupDelete();
     void slotPopupTrash();
     void slotPopupNewView();

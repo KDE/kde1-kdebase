@@ -37,4 +37,33 @@
  - If files from the desktop are moved to the trash bin, then existing files
    in the trashcan are going to be overwritten wthout bothering the user first.
  - Tooltips on root icons
+ - Changing the font will force the root icons to update => no more display errors
 
+04.12.97 Torben
+
+ - Warning dialog before rearrangig of icons is done
+ - It should not be possible any more, to copy files or directories over themselves
+   or a directory in one of its children ( at least I hope so :-)
+ - Bernhard Leconte applyed some kfmprops layout patch
+ - Password is deleted before we show the URL in some warning dialog.
+   Before this patch, everyone could see your password if an error occured, ooops :-)
+ - Added additional menu entries to directories on desktop. Now they have the same
+   popup menus as directories in a KFM window
+ - Icons in ~/.kde/share/icons do work as expected now ( they are displayed :-)
+ - ftp://weis@localhost shows the home directory of user weis and
+   ftp://weis@localhost/ shows the root directory now.
+ - Links in tar files are recognized correctly
+ - Fixed bug in kfmexec. Works with local files now, too.
+ - Does detect fifos and socket disregegarding wether the 'x' flag is set or not.
+   And it does not seg fault any more due to such a fifo/socket.
+ - Fixed bug in history handling
+ - Cache content is saved on exit and reloaded on startup of kfm
+ - Extra menu for cache
+ - Overview of files in cache is available now, in fact you can use kfm
+   as a very cool offline browser now.
+ - FTP can handle files with spaces and has no problems with UNIX file system links any more.
+ - HTTP Header files "Host:" does now conatain the port number is a special
+   one is given.
+ - You can enter directories in minicli now and KFM will open it
+ - if untrusted pages ( http etc. ) contain links to the local file system,
+   then a warning is displayed and the action is rejected.

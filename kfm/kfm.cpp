@@ -1,3 +1,5 @@
+#include <qdir.h>
+
 #include "kurl.h"
 #include "kfmgui.h"
 #include "kfm.h"
@@ -5,6 +7,7 @@
 #include <qstrlist.h>
 #include <kapp.h>
 #include <kconfig.h>
+#include <htmlcache.h>
 
 KFM *KFM::pKfm = 0L;
 
@@ -14,6 +17,8 @@ KFM::KFM()
     
     kapp->setTopWidget( this );
 
+    HTMLCache::load();
+    
     if ( KfmGui::rooticons )
     {
 	kapp->enableSessionManagement( TRUE );
@@ -85,6 +90,8 @@ void KFM::slotSave()
     config->setGroup( "SM" );
     config->writeEntry( "URLs", urlList );
     config->sync();
+
+    HTMLCache::save();
 }
 
 #include "kfm.moc"

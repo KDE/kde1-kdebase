@@ -7,6 +7,8 @@
 
 #include <qregexp.h>
 
+#include <qdir.h>
+
 SortedKProtocolDirEntry::~SortedKProtocolDirEntry()
 {
 }
@@ -528,8 +530,7 @@ bool KProtocolFILE::OpenKdeHtml( KIOSlaveIPC *_ipc )
 		    if ( de->name == ".." )
 		    {
 			KURL u2( u.path() );
-			u2.cd("..");
-			u2.cleanURL();
+			u2.cdUp();
 			strcpy( buff, "file:" );
 			strcat( buff, u2.path() );
 		    }

@@ -1,3 +1,4 @@
+#include <qdir.h>
 #include <qstrlist.h>
 #include <qdict.h>
 
@@ -159,22 +160,24 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 
 KIODirectory* KIOServer::getDirectory( const char *_url )
 {
+    KURL u( _url );
+    
     QString url = _url;
     // Add a trailing '/'
-    if ( url.right(1) != "/" )
+    if ( url.right(1) != "/" && u.hasPath() )
       url += "/";
     return dirList[ url.data() ];
 }
 
 KIODirectoryEntry* KIOServer::getDirectoryEntry( const char *_url )
 {
-    QString dir = _url;
+    QString url = _url;
     // Delete a trailing '/'
-    dir.detach();
-    if ( dir.right(1) == "/" )
-      dir = dir.left( dir.length() - 1 );
+    url.detach();
+    if ( url.right(1) == "/" )
+      url.truncate( url.length() - 1 );
  
-    KURL u( dir );
+    KURL u( url );
     if ( u.isMalformed() )
       return 0L;
    
@@ -196,7 +199,14 @@ KIODirectoryEntry* KIOServer::getDirectoryEntry( const char *_url )
 
 void KIOServer::slotFlushDir( const char *_url )
 {
-    QList<KIODirectoryEntry> *dir = dirList[ _url ];
+    KURL u( _url );
+    
+    QString url = _url;
+    // Add a trailing '/'
+    if ( url.right(1) != "/" && u.hasPath() )
+      url += "/";
+
+    QList<KIODirectoryEntry> *dir = dirList[ url ];
     if ( dir == 0L )
 	return;
     
@@ -250,7 +260,7 @@ QString KIOServer::getDestNameForLink( const char *_url )
     else if ( strcmp( kurl.protocol(), "tar" ) == 0 )
     {		
 	name = "tar:";
-	name += kurl.filename( true );
+	name += kurl.filename();
 	name += ".kdelnk";
 	name.detach();
     }

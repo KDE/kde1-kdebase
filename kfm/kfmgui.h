@@ -120,21 +120,28 @@ public:
 	KTopLevelWidget::savePropertiesInternal(kapp->getConfig(), number);
     }
     
-
+    /**
+     * Changes the URL displayed in the toolbar. This function is called
+     * for example if we get a redirection message from kioslave.
+     */
+    void setToolbarURL( const char *_text );
+    
     static bool sumode;
     static bool rooticons;
     
-	/*
-	 * hack to get static classes up and running even with C++-Compilers/
-	 * Systems where a constructor of a class element declared static
+    /*
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	static void InitStatic() {
+     */
+    static void InitStatic() {
     	animatedLogo = new QList<QPixmap>;
-		windowList = new QList<KfmGui>;
-		bookmarkManager = new KBookmarkManager;
-	}
+	windowList = new QList<KfmGui>;
+	bookmarkManager = new KBookmarkManager;
+    
+    }
+
 public slots:
     /**
      * Menu "File->Close"
@@ -274,6 +281,23 @@ public slots:
      * Menu "View->Reload Tree"
      */
     void slotReloadTree();
+    
+    /**
+     * Cache "View->Show Cache"
+     */
+    void slotShowCache();
+    /**
+     * Cache "View->Clear Cache"
+     */
+    void slotClearCache();
+    /**
+     * Cache "View->Alway look in cache"
+     */
+    void slotCacheOn();
+    /**
+     * Cache "View->Never look in cache"
+     */
+    void slotCacheOff();
     
     /**
      * Menu "Bookmarks->Add Bookmark"
@@ -483,6 +507,7 @@ protected:
     KStatusBar *statusBar;
 
     QPopupMenu *mview;
+    QPopupMenu *mcache;
     QPopupMenu *moptions;
     
     /**

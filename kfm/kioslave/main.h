@@ -55,6 +55,8 @@ public slots:
     void cleanUp();
     /// Tells the server about the PID.
     void getPID();
+
+    void slotRedirection( const char *_redirect );
     
 protected:
     void ProcessError(KProtocol *, const char *);
@@ -78,6 +80,8 @@ protected:
       */
     FILE *copyDestFile;
     QString copyDestFileName;    
+
+    QString sRedirection;
 };
 
 #endif

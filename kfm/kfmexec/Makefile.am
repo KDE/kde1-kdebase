@@ -14,9 +14,6 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 main.cpp: main.moc
 
-debug.o: ../debug.cpp ../config-kfm.h
-	$(CXXCOMPILE) -c ../debug.cpp
-
 ####### Meta objects
 
 main.moc: main.h

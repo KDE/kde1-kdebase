@@ -10,6 +10,7 @@ class KMimeBind;
 #include <qstrlist.h>
 #include <qfile.h>
 #include <qpmcache.h>
+#include <qdict.h>
 
 #include <kurl.h>
 #include <kapp.h>
@@ -221,10 +222,6 @@ public:
      */
     virtual void append( KMimeBind * );
 
-    /**
-     * Set the icon.
-     */
-    virtual void setPixmap( const char * );
     /**
      * Add a pattern which matches this type. Patterns are for example
      * "*.tgz" or "*.jpg".
@@ -465,9 +462,12 @@ public:
     static void errorMissingMimeType( const char *_type, KMimeType **_ptr );
 
     /**
-     * @return the path for the icons
+     * @return the path for the specific icon.
+     *         First the local path is tried, if that has no success, we try
+     *         the global path.
      */
-    static const char* getIconPath() { return icon_path; }
+    // static const char* getIconPath() { return icon_path; }
+    static const char* getIconPath( const char *_icon, bool _mini = false );
 
     static const char* getDefaultPixmap() { return "unknown.xpm"; }
 
@@ -544,11 +544,6 @@ protected:
     QString mimeType;
     
     /**
-     * The path to the icons.
-     */
-    static char icon_path[ 1024 ];
-
-    /**
      * This flag is set if this file type is only an application pattern.
      *
      * @see #setApplicationPattern for details.
@@ -556,6 +551,8 @@ protected:
     bool bApplicationPattern;
 
     static KMimeMagic *magic;
+    static QDict<QString>* iconDict;
+    static QDict<QString>* miniIconDict;
 };
 
 /**

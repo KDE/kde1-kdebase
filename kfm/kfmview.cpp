@@ -193,16 +193,16 @@ void KfmView::slotReload()
     manager->openURL( manager->getURL(), true );
 }
 
-void KfmView::slotUpdateView()
+void KfmView::slotUpdateView( bool _reload )
 {
     if ( isFrame() )
     {
 	KfmView *v;
 	for ( v = childViewList.first(); v != 0L; v = childViewList.next() )
-	    v->slotUpdateView();
+	    v->slotUpdateView( _reload );
     }
     else
-	manager->openURL( manager->getURL(), true );
+	manager->openURL( manager->getURL(), _reload );
 }
 
 void KfmView::slotMountNotify()
@@ -241,69 +241,46 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
     QPoint p = view->mapFromGlobal( QPoint( _zone->getMouseX(), _zone->getMouseY() ) );
     const char *url = view->getURL( p );
  
-    // Dropped over an object ?
-    if ( url != 0L )
+    // Dropped over an object or not ?
+    if ( url == 0L )
+	// dropped over white ground
+	url = manager->getURL();
+
+    KURL u( url );
+    if ( u.isMalformed() )
     {
-	KURL u( url );
-	if ( u.isMalformed() )
-	{
-	    warning( klocale->translate("ERROR: Drop over malformed URL"));
-	    return;
-	}
-	
-	// Clear out symlinks if we are on the local hard disk
-	QString canonical = url;
-	if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-	{
-	    // Get the canonical path.
-	    QDir dir( u.path() );
-	    canonical = dir.canonicalPath();
-	    if ( canonical.isEmpty() )
-		canonical = u.path();
-	    // fprintf(stderr,"u='%s' can='%s'\n",u.path(),dir.canonicalPath().data());
-	}
-	
-	// Check wether we drop a file on itself
-	QStrList list( _zone->getURLList() );
-	char *s;
-	for ( s = list.first(); s != 0L; s = list.next() )
-	{
-	    // fprintf(stderr,"U2='%s' U1='%s'\n",s,canonical.data());
-	    QString url2( s );
-	    // replace all symlinks if we are on the local hard disk
-	    KURL u2( s );
-	    if ( !u2.isMalformed() )
-	    {
-		if ( strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
-		{
-		    // Get the canonical path.
-		    QDir dir2( u2.path() );
-		    url2 = dir2.canonicalPath();
-		    if ( url2.isEmpty() )
-			url2 = u2.path();
-		    // fprintf(stderr,"2. u='%s' can='%s'\n",u2.path(),dir2.canonicalPath().data());
-		}
-	    }
-	    
-	    // fprintf(stderr,"U2='%s' U1='%s'\n",url2.data(),canonical.data());
-	    
-	    // Are both symlinks equal ?
-	    if ( strcmp( url2, canonical ) == 0 )
-	    {
-		QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
-				      klocale->translate( "You dropped some file over itself" ) );
-		return;
-	    }
-	}
-	
-	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
-	manager->dropPopupMenu( _zone, url, &p );
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Drop over malformed URL") );
+	return;
     }
-    else // dropped over white ground
+    
+    // Check wether we drop a directory on itself or one of its children
+    int nested = 0;
+    QStrList list( _zone->getURLList() );
+    char *s;
+    for ( s = list.first(); s != 0L; s = list.next() )
     {
-	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
-	manager->dropPopupMenu( _zone, manager->getURL(), &p );
+	int j;
+	if ( ( j = testNestedURLs( s, url ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+	}
+    
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
     }
+    if ( nested == 2 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped some URL over itself") );
+	return;
+    }
+    
+    QPoint p2( _zone->getMouseX(), _zone->getMouseY() );
+    manager->dropPopupMenu( _zone, url, &p2, ( nested == 0 ? false : true ) );
 }
 
 void KfmView::slotCopy()
@@ -342,6 +319,36 @@ void KfmView::slotDelete()
 
 void KfmView::slotPaste()
 {
+    // Check wether we drop a directory on itself or one of its children
+    int nested = 0;
+    char *s;
+    for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
+    {
+	int j;
+	if ( ( j = testNestedURLs( s, manager->getURL() ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+    }
+    
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
+    }
+    if ( nested == 2 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a URL over itself") );
+	return;
+    }
+    if ( nested == 1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a directory over one of its children") );
+	return;
+    }
+
     KIOJob * job = new KIOJob;
     job->copy( (*clipboard), manager->getURL().data() );
 }
@@ -365,59 +372,6 @@ void KfmView::slotPopupOpenWith()
       return;
     
     openWithOldApplication( l.getText(), popupFiles );
-    /*
-    // Find out wether there are some URL with a
-    // protocol != "file"
-    bool prot = FALSE;
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
-    {
-      KURL u( s );
-      if ( !u.isMalformed() )
-	if ( strcmp( u.protocol(), "file" ) != 0 )
-	  prot = TRUE;
-    }
-
-    // Are there externel files ?
-    if ( prot )
-    {
-      QString cmd;
-      cmd = l.getText();
-      cmd += " %f";
-      QStrList list;
-      list.append( cmd );
-      
-      for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
-      {
-	list.append( s );
-      }
-      
-      KMimeBind::runCmd( "kfmexec", list );
-    }
-    // Only local files
-    else
-    {	
-      QString cmd( l.getText() );
-      cmd += " ";
-
-      QString tmp;
-      
-      char *s;
-      for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
-      {
-	cmd += "\"";
-	KURL file = s;    
-	
-	QString decoded( file.path() );
-	KURL::decodeURL( decoded );
-	decoded = KIOServer::shellQuote( decoded ).data();
-	cmd += decoded.data();
-	cmd += "\" ";
-      }
-      // debugT("Executing '%s'\n", cmd.data());
-      
-      KMimeBind::runCmd( cmd.data() );
-    } */
 }              
 
 void KfmView::slotPopupProperties()
@@ -488,6 +442,36 @@ void KfmView::slotPopupPaste()
 	return;
     }
     
+    // Check wether we drop a directory on itself or one of its children
+    int nested = 0;
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    {
+	int j;
+	if ( ( j = testNestedURLs( s, manager->getURL() ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+	}
+    
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
+    }
+    if ( nested == 2 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a URL over itself") );
+	return;
+    }
+    if ( nested == 1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: You dropped a directory over one of its children") );
+	return;
+    }
+
     KIOJob * job = new KIOJob;
     job->copy( (*clipboard), popupFiles.first() );
 }
@@ -558,7 +542,6 @@ const char * KfmView::getURL()
 void KfmView::openURL( const char *_url )
 {
     emit newURL( _url );
-    // debugT("############### openURL ######################\n");
     manager->openURL( _url );
 }
 
@@ -568,7 +551,6 @@ void KfmView::slotURLToStack( const char *_url )
 	return;
     
     QString *s = new QString( _url );
-    s->detach();
     backStack.push( s );
     forwardStack.setAutoDelete( true );
     forwardStack.clear();
@@ -623,8 +605,17 @@ void KfmView::slotBack()
 
 void KfmView::slotURLSelected( const char *_url, int _button, const char *_target )
 {
-    // // debugT("######### Click '%s' target='%s'\n",_url,_target);
- 
+    // Security
+    KURL u1( _url );
+    KURL u2( manager->getURL() );
+    if ( ( strcmp( u1.protocol(), "file" ) == 0 || strcmp( u1.protocol(), "cgi" ) == 0 ) &&
+	 strcmp( u2.protocol(), "file" ) != 0 && strcmp( u2.protocol(), "cgi" ) != 0 )
+    {
+	QMessageBox::critical( (QWidget*)0L, klocale->translate( "KFM Security Alert" ),
+			       klocale->translate( "This page is untrusted\nbut it contains a link to your local file system." ) );
+	return;
+    }
+    
     if ( !_url )
 	return;
     
@@ -633,17 +624,13 @@ void KfmView::slotURLSelected( const char *_url, int _button, const char *_targe
 	KHTMLView *v = findView( _target );
 	if ( v )
 	{
-	    // debugT("Found Frame\n");
 	    v->openURL( _url );
 	    return;
 	}
 	else
 	{
-	    // debugT("New GUI\n");
 	    KfmGui *m = new KfmGui( 0L, 0L, _url );
-	    // debugT("New GUI2\n");
 	    m->show();
-	    // debugT("New GUI3\n");
 	    return;
 	}
     }

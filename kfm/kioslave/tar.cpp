@@ -48,8 +48,10 @@ int KProtocolTAR::Open( KURL *url, int mode )
     {
 	char *path = url->path();		// extracting /xxx from a tarfile
 	while( *path == '/' ) path++;	// containing the file xxx won't work
-	QString Command;
-	Command.sprintf( "tar -%%sOxf - %s", path );
+	// QString Command;
+	// Command.sprintf( "tar -%%sOxf - %s", path );
+	QString Command( "tar -%sOxf - " );
+	Command +=  path;
 	return( AttachTAR( Command ) );
     }
     return FAIL;
@@ -133,14 +135,14 @@ long KProtocolTAR::Size()
 
 int KProtocolTAR::OpenDir(KURL *url)
 {
+    subdir = "";
     dirpathmem = dirpath = strdup( url->path() );
     while( dirpath[0] == '/' ) dirpath++;	
     
     // extracting /xxx from a tarfile
     // containing the file xxx won't work
     
-    QString Command;
-    Command.sprintf("tar -%%stvf -");
+    QString Command( "tar -%stvf -");
     int rc = AttachTAR( Command.data() );
     dirfile = fdopen( Slave.out, "r" );
     return rc;
@@ -160,35 +162,67 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT || !moredata )
 	{
-            char *p_access, *p_owner, *p_group, *p_date_4;
-            char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
+            char *p_access = 0L, *p_owner = 0L, *p_group = 0L, *p_date_4 = 0L;
+            char *p_size = 0L, *p_date_1 = 0L, *p_date_2 = 0L, *p_date_3 = 0L, *p_name = 0L;
 	    
 	    readstr = fgets(buffer,1024,dirfile);
+	    printf("%s",readstr);
+	    
 	    if( readstr && (p_access = strtok(buffer," ")) != 0 && (p_owner = strtok(NULL,"/")) != 0 &&
 		(p_group = strtok(NULL," ")) != 0 && (p_size = strtok(NULL," ")) != 0 &&
 		(p_date_1 = strtok(NULL," ")) != 0 && (p_date_2 = strtok(NULL," ")) != 0 &&
 		(p_date_3 = strtok(NULL," ")) != 0 && (p_date_4 = strtok(NULL," ")) != 0 &&
-		(p_name = strtok(NULL," \r\n")) != 0 &&
-		(!strlen(dirpath) || strncmp(p_name,dirpath,strlen(dirpath)) == 0))
+		(p_name = strtok(NULL,"\r\n")) != 0 &&
+		( !strlen( dirpath ) || strncmp( p_name, dirpath, strlen( dirpath ) ) == 0 ) )
 		{
-		    if (strlen(dirpath) < strlen(p_name))
+		    if( p_name[ strlen( p_name ) - 1 ] == '/' )
+			p_name[ strlen( p_name ) - 1 ] = 0;
+		    if ( p_access[0] == 'l' )
 		    {
-			p_name += strlen(dirpath);
-			if(p_name[strlen(p_name)-1] == '/')
-			    p_name[strlen(p_name)-1]=0;
-			if(!strchr(p_name,'/'))
+			QString tmp( p_name );
+			int i = tmp.findRev( " -> " );
+			if ( i != -1 )
+			    tmp.truncate( i );
+			strcpy( p_name, tmp.data() );
+		    }
+		    
+		    if ( strlen( dirpath ) < strlen( p_name ) )
+		    {
+			p_name += strlen( dirpath );
+			if( !strchr( p_name, '/' ) )
+			{
+			    subdir = p_name;
+			    de.access	= p_access;
+			    de.owner	= p_owner;
+			    de.group	= p_group;
+			    de.size	= atoi(p_size);
+			    de.isdir	= ( p_access[0] == 'd' );
+			    de.name	= p_name;
+			    if( de.isdir )
+				de.name += "/";
+			    de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
+			    /* doesn't understand time */
+			    return( &de );
+			}
+			else if ( p_access[0] == 'd' );
+			{
+			    char *p = strchr( p_name, '/' );
+			    *p = 0;
+			    if ( subdir != p_name )
 			    {
+				subdir = p_name;
 				de.access	= p_access;
 				de.owner	= p_owner;
 				de.group	= p_group;
-				de.size		= atoi(p_size);
-				de.isdir	= p_access[0]=='d';
-				de.name		= p_name;
-				if(de.isdir) de.name += "/";
+				de.size	        = 0;
+				de.isdir	= true;
+				de.name	        = p_name;
+				de.name += "/";
 				de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
 				/* doesn't understand time */
-				return(&de);
+				return( &de );
 			    }
+			}
 		    }
 		}
 	    // when URL doesn't pass QC, give it to cachemanager (to be written)

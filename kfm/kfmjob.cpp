@@ -26,8 +26,6 @@ KFMJob::KFMJob( )
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )
 {
-    // debugT("Changing to ftp %s\n", _url );
-    
     KURL u( _url );
     if ( u.isMalformed() )
     {
@@ -41,8 +39,6 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
 	delete job;	
     job = 0L;
 
-    // dataBuffer = "";
-    
     // We are not shure yet
     isDir = FALSE;
     isHTML = FALSE;
@@ -79,7 +75,7 @@ bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_c
     // Or does KIOServer know that it is a file
     if ( KIOServer::getKIOServer()->supports( _url, KIO_List ) && !isFile && KIOServer::isDir( _url ) != 0 )
     {
-	if ( url.right( 1 ) != "/" )
+	if ( url.right( 1 ) != "/" && u.hasPath() )
 	    url += "/"; 
 
 	// Lets try to load it as directory
@@ -134,6 +130,8 @@ void KFMJob::openFile()
 void KFMJob::slotRedirection( const char *_url )
 {
     url = _url;
+    printf("Got redirection '%s'\n",_url);
+    emit redirection( _url );
 }
 
 void KFMJob::slotInfo( const char *_text )

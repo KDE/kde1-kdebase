@@ -2,13 +2,20 @@
 #include <stdlib.h>
 
 #include "htmlcache.h"
-#include <config-kfm.h>
+#include "kbind.h"
+#include "utils.h"
+
+#include "config-kfm.h"
+
+#include <qfileinf.h>
+#include <qdatetm.h>
 
 QString *HTMLCache::cachePath;
 QList<HTMLCacheJob> *HTMLCache::staticJobList;
 QDict<QString> *HTMLCache::urlDict;
 QList<HTMLCache> *HTMLCache::instanceList;
 int HTMLCache::fileId = 0;
+bool HTMLCache::bCacheEnabled = true;
 
 HTMLCacheJob::HTMLCacheJob( const char *_url, const char *_dest ) : KIOJob()
 {
@@ -61,7 +68,9 @@ HTMLCache::HTMLCache()
 void HTMLCache::slotURLRequest( const char *_url )
 {
     // Is the URL already cached ?
-    QString *s = (*urlDict)[ _url ];
+    QString *s = 0L;
+    if ( bCacheEnabled ) 
+	s = (*urlDict)[ _url ];
     if ( s != 0L )
     {
 	emit urlLoaded(  _url, s->data() );
@@ -85,8 +94,12 @@ void HTMLCache::slotURLRequest( const char *_url )
 	return;
     }
     
-    QString tmp;
-    tmp.sprintf( "%s%i.%i", cachePath->data(), time( 0L ), fileId++ );
+    KURL u( _url );
+    
+    QString tmp( cachePath->data() );
+    tmp << time(0L) << "." << fileId++ << u.filename();
+    
+    // tmp.sprintf( "%s%i.%i.%s", cachePath->data(), time( 0L ), fileId++, u->filename() );
     job = new HTMLCacheJob( _url, tmp.data() );
     job->display( false );
     connect( job, SIGNAL( finished( HTMLCacheJob * ) ), this, SLOT( slotJobFinished( HTMLCacheJob * ) ) );
@@ -216,6 +229,111 @@ void HTMLCache::stop()
     }
     
     instanceJobList.clear();
+}
+
+void HTMLCache::save()
+{
+    QString p( getenv( "HOME" ) );
+    p += "/.kde/share/apps/kfm/cache/index.html";
+    FILE *f = fopen( p, "w" );
+    if ( f == 0L )
+    {
+	warning("Could not write '%s'\n", p.data() );
+	return;
+    }
+    
+    fprintf( f, "<HTML><HEAD><TITLE>KFM Cache</TITLE></HEAD><BODY><H2>Contents of the cache</H2>\n" );
+    fprintf( f, "<p>Use the icons for drag and drop actions, since they refere to the cache files " );
+    fprintf( f, "on your hard disk, while you should use the textual links for browsing</p><hr>\n" );
+    fprintf( f, "<table>\n" );
+    
+    QDictIterator<QString> it( *urlDict );
+    for ( ; it.current(); ++it )
+	// Do not save the VERY large URL's. Some people store complete stories
+	// in the URL's reference part!
+	if ( it.current()->length() < 1024 )
+	{
+	    fprintf( f, "<tr><td><a href=\"%s\"><img border=0 src=\"%s\"></a></td> ",
+		     it.current()->data(), KMimeType::getPixmapFileStatic( it.current()->data(), TRUE ) );
+	    fprintf( f, "<td><a href=\"%s\">\n%s\n</a></td>", it.currentKey(), it.currentKey() );
+	    QFileInfo finfo( it.current()->data() );
+	    fprintf( f, "<td>%s</td></tr>\n", finfo.lastModified().toString().data() );
+	}
+    
+    fprintf( f, "</table></BODY></HTML>\n" );
+    fclose( f );
+
+    p = getenv( "HOME" );
+    p += "/.kde/share/apps/kfm/cache/index.txt";
+    f = fopen( p, "w" );
+    if ( f == 0L )
+    {
+	warning("Could not write '%s'\n", p.data() );
+	return;
+    }
+
+    QDictIterator<QString> it2( *urlDict );
+    for ( ; it2.current(); ++it2 )
+	fprintf( f, "%s\n%s\n" , it2.currentKey(), it2.current()->data() );
+    
+    fclose( f );
+}
+
+void HTMLCache::load()
+{
+    QString path( getenv( "HOME" ) );
+    path += "/.kde/share/apps/kfm/cache/index.txt";
+    FILE *f = fopen( path, "r" );
+    if ( f == 0L )
+    {
+	warning("Could not read '%s'\n", path.data() );
+	return;
+    }
+ 
+    QString url;
+    char buffer[ 2048 ];
+    char *p = 0L;
+    do
+    {
+	p = fgets( buffer, 2048, f );
+	if ( p )
+	{
+	    url = buffer;
+	    if ( url.right(1) == "\n" )
+		url.truncate( url.length() - 1 );
+	    p = fgets( buffer, 2048, f );
+	    if ( p )
+	    {
+		QString *s = new QString( buffer );
+		if ( s->right(1) == "\n" )
+		    s->truncate( s->length() - 1 );
+		urlDict->insert( url, s );
+	    }
+	}
+    } while ( p );
+    
+    fclose( f );
+}
+
+void HTMLCache::clear()
+{
+    QStrList todie;
+    
+    QDictIterator<QString> it( *urlDict );
+    for ( ; it.current(); ++it )
+	if ( unlink( it.currentKey() ) )
+	    todie.append( it.currentKey() );
+	
+    const char *s;
+    for ( s = todie.first(); s != 0L; s = todie.next() )
+	urlDict->remove( s );
+
+    save();
+}
+
+void HTMLCache::enableCache( bool _enable )
+{
+    bCacheEnabled = _enable;
 }
 
 #include "htmlcache.moc"

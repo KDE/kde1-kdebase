@@ -24,21 +24,21 @@ class KIOJob : public QObject
 public:
     enum Jobs { JOB_COPY, JOB_MOVE, JOB_DELETE, JOB_MOUNT, JOB_UNMOUNT, JOB_LIST, JOB_MKDIR, JOB_LINK, JOB_GET };
     
-    /// Constructs a new job
     /**
-      '_id' can be used to identify the job. Every signal transmitts this id,
-      so the client always knows which job sent him the signal.
-      */
+     * Constructs a new job.
+     * '_id' can be used to identify the job. Every signal transmitts this id,
+     * so the client always knows which job sent him the signal.
+     */
     KIOJob( int _id = 0 );
     ~KIOJob();
     
     void doIt( KIOSlaveIPC * _slave );
 
-    /// Turns the status window on or off.
     /**
-      By default the window is shown. You can not turn the window
-      off once it appeared.
-      */
+     * Turns the status window on or off.
+     * By default the window is shown. You can not turn the window
+     * off once it appeared.
+     */
     void display( bool _display = FALSE ) { bDisplay = _display; }
     
     void copy( QStrList & _src_url_list, const char *_dest_dir_url );    
@@ -50,12 +50,12 @@ public:
     void link( const char *_src_url, const char *_dest_url );
     void del( QStrList & _url_list );    
     void del( const char *_url );
-    /// Mounts a device
     /**
-      '_point' is NOT an URL, it is just an usual path like "/cdrom".
-      You must only specify '_dev' and set the others to 0L, or you must
-      give values for every parameter.
-      */
+     * Mounts a device.
+     * '_point' is NOT an URL, it is just an usual path like "/cdrom".
+     * You must only specify '_dev' and set the others to 0L, or you must
+     * give values for every parameter.
+     */
     void mount( bool _ro, const char *_fstype, const char* _dev, const char *_point );
     void unmount( const char *_point );
     /**
@@ -109,16 +109,17 @@ public:
      */
     bool isAutoDelete() { return bAutoDelete; }
     
-	/*
-	 * hack to get static classes up and running even with C++-Compilers/
-	 * Systems where a constructor of a class element declared static
+    /*
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	static void InitStatic() {
+     */
+    static void InitStatic() {
     	passwordDict = new QDict<QString>;
     	jobList = new QList<KIOJob>;
-	}
+    }
+
 public slots:
     void slaveIsReady();
     void slaveProgress( int _percent );
@@ -129,11 +130,11 @@ public slots:
     void slotData( IPCMemory _mem );
     void fatalError( int _kioerror, const char* _url, int _errno );
     void msgResult( QWidget*, int );
-    /// Called if the user closes the rename dialog.
     /**
-      This dialog is shown if a file already exists but the user job tried to
-      overwrite it.
-      */
+     * Called if the user closes the rename dialog.
+     * This dialog is shown if a file already exists but the user job tried to
+     * overwrite it.
+     */
     void msgResult2( QWidget*, int, const char*, const char* );
     
     void slotDirEntry( const char *_url, const char *_name, bool _isDir, int _size,
@@ -180,11 +181,12 @@ signals:
      */
     void progress( int _percent, int _bytesTransfered );
     
-    /// Tells about the amount of bytes read
     /**
-      Not implemented yet
+     * Tells about the amount of bytes read.
+     * Not implemented yet.
      */
     void bytes( int _bytes );    
+
 protected:
     /**
      * Looks wether the '_url' specifies a user but not a password. If so the
@@ -198,47 +200,51 @@ protected:
     QString KIOJob::completeURL( const char *_url );
     
     void done();
-    /// This one makes recursive copy possible
     /**
-      This function assumes that cmSrcURLList and cmDestURLList are filled
-      correctly. It searches in cmSrcURLList for directories. If it finds one,
-      it recursively traverses these and adds those files to the 2 lists.
-      After that is tells the server that this job is waiting for a slave.
-      */
+     * This one makes recursive copy possible.
+     * This function assumes that cmSrcURLList and cmDestURLList are filled
+     * correctly. It searches in cmSrcURLList for directories. If it finds one,
+     * it recursively traverses these and adds those files to the 2 lists.
+     * After that is tells the server that this job is waiting for a slave.
+     */
     void copy();
-    /// This one makes recursive moves possible
     /**
-      This function assumes that cmSrcURLList and cmDestURLList are filled
-      correctly. It searches in cmSrcURLList for directories. If it finds one,
-      it recursively traverses these and adds those files to the 2 lists.
-      After that is tells the server that this job is waiting for a slave.
-      */
+     * This one makes recursive moves possible.
+     * This function assumes that cmSrcURLList and cmDestURLList are filled
+     * correctly. It searches in cmSrcURLList for directories. If it finds one,
+     * it recursively traverses these and adds those files to the 2 lists.
+     * After that is tells the server that this job is waiting for a slave.
+     */
     void move();
-    /// This one makes recursive deletion possible
     /**
-      This function assumes that mvDelURLList is filled correctly.
-      It searches in mvDelURLList for directories. If it finds one,
-      it recursively traverses these and adds those files to the list.
-      After that is tells the server that this job is waiting for a slave.
-      */
+     * This one makes recursive deletion possible.
+     * This function assumes that mvDelURLList is filled correctly.
+     * It searches in mvDelURLList for directories. If it finds one,
+     * it recursively traverses these and adds those files to the list.
+     * After that is tells the server that this job is waiting for a slave.
+     */
     void del();
-    /// This function does the real linking stuff on local file systems
+    /**
+     * This function does the real linking stuff on local file systems.
+     */
     void link();
     
     KIOSlaveIPC *slave;
 
-    /// Used for COPY command
+    /**
+     * Used for COPY command.
+     */
     KStrList cmSrcURLList;
     KStrList cmDestURLList;
-    /// Used to store all directories in a move command
     /**
-      When moving across device, we have to copy and delete. Directoies
-      are not copied themselves but only their files. But they have to
-      be deleted at the end. This list holds them. This list contains only
-      directories on the local file system. This list is used by the
-      del command to, to hold the URLs of all files/dirs that have to
-      be deleted.
-      */
+     * Used to store all directories in a move command.
+     * When moving across device, we have to copy and delete. Directoies
+     * are not copied themselves but only their files. But they have to
+     * be deleted at the end. This list holds them. This list contains only
+     * directories on the local file system. This list is used by the
+     * del command to, to hold the URLs of all files/dirs that have to
+     * be deleted.
+     */
     KStrList mvDelURLList;
     
     /**
@@ -258,98 +264,127 @@ protected:
      */
     KStrList skipURLList;
     
-    /// Used to store infos for MOUNT / UNMOUNT command
+    /**
+     * Used to store infos for MOUNT / UNMOUNT command.
+     */
     QString mntFSType;
     QString mntDev;
     QString mntPoint;
     bool mntReadOnly;
 
-    /// Used by the command MKDIR
+    /**
+     * Used by the command MKDIR.
+     */
     QString mkdirURL;
     
-    /// Used by DELETE/MOVE/COPY to store total count of files to process.
+    /**
+     * Used by DELETE/MOVE/COPY to store total count of files to process.
+     */
     int cmCount;
         
-    /// Tells wether we already connected slots/signals to the slave
+    /**
+     * Tells wether we already connected slots/signals to the slave.
+     */
     bool started;
 
-    /// The URL, as used by the LIST command.
+    /**
+     * The URL, as used by the LIST command.
+     */
     QString lstURL;
     
     KIOServer *server;
 
-    /// The action that is currently taking place.
+    /**
+     * The action that is currently taking place.
+     */
     Jobs action;
 
-    /// The dialog. May be 0L.
+    /**
+     * The dialog. May be 0L.
+     */
     QDialog *dlg;
-    /// The dialogs progress bar. May be 0L.
+    /**
+     * The dialogs progress bar. May be 0L.
+     */
     KProgress *progressBar;
-    /// May be 0L
+    /**
+     * May be 0L.
+     */
     QLabel *line1;
-    /// May be 0L
+    /**
+     * May be 0L.
+     */
     QLabel *line2;
-    /// May be 0L
+    /**
+     * May be 0L.
+     */
     QLabel *line3;
     
-    /// The modus when moving files
     /**
-      If we want to move files across devices, we have to copy and then delete
-      them. This flag indicates wether we should delete a file next turn,
-      or copy the next one.
-      */
+     * The modus when moving files.
+     * If we want to move files across devices, we have to copy and then delete
+     * them. This flag indicates wether we should delete a file next turn,
+     * or copy the next one.
+     */
     bool moveDelMode;
 
-    /// Flag indicated wether the slave had been told to clean up
     /**
-      When the ob does not need the slave, the slave is told to clean up and
-      this flag is set. If the slave tells that he did the clean up, the dialog
-      window ( if any ) well be deleted and the job is deleted. But mention
-      that the cleanup may raise errors.
-      */
+     * Flag indicated wether the slave had been told to clean up.
+     * When the ob does not need the slave, the slave is told to clean up and
+     * this flag is set. If the slave tells that he did the clean up, the dialog
+     * window ( if any ) well be deleted and the job is deleted. But mention
+     * that the cleanup may raise errors.
+     */
     bool cleanedUp;
 
-    /// List of URLs to notify
     /**
-      When a job is completed a notify signal is emitted for every URL in
-      this list.
-      */
+     * List of URLs to notify.
+     * When a job is completed a notify signal is emitted for every URL in
+     * this list.
+     */
     KStrList notifyList;
 
-    /// The last error
     /**
-      If 'fatalError' is called, this variable holds the error value. This is
-      used later by 'msgResult'.
-      */
+     * The last error.
+     * If 'fatalError' is called, this variable holds the error value. This is
+     * used later by 'msgResult'.
+     */
     int kioError;
 
-    /// Flag for global notifies
-    /**
-      If this flag is FALSE, the server wont be told to emit notify signals.
-      */
+    /** Flag for global notifies.
+     * If this flag is FALSE, the server wont be told to emit notify signals.
+     */
     bool globalNotify;
 
-    /// A unique ID.
+    /**
+     * A unique ID.
+     */
     int id;
 
-    /// A flag that shows wether the job should open a status window.
+    /**
+     * A flag that shows wether the job should open a status window.
+     */
     bool bDisplay;
 
-    /// List of all running jobs.
+    /**
+     * List of all running jobs.
+     */
     static QList<KIOJob> *jobList;
 
-    /// This flag is set to TRUE if existing files should be overwritten by copy/move jobs
+    /**
+     * This flag is set to TRUE if existing files should be overwritten by copy/move jobs.
+     */
     bool overwriteExistingFiles;
     
-    /// The last source we tried to copy/move
     /**
-      This info is needed if the file already exists, to show the right URLs in the dialog.
-      */
+     * The last source we tried to copy/move.
+     * This info is needed if the file already exists, to show the right URLs in the dialog.
+     */
     QString lastSource;
-    /// The last destination of copy/move
     /**
-      This info is needed if the file already exists, to show the right URLs in the dialog.
-      */
+     * The last destination of copy/move.
+     * This info is needed if the file already exists, to show the right URLs in the dialog.
+     */
     QString lastDest;
 
     /**

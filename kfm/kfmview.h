@@ -291,8 +291,12 @@ public slots:
      * to be rescaned. This may happen but dont expect it to. Use this function if
      * for example the view mode changed. The function wont reload framesets. Only
      * the content of the single frames is updated.
+     *
+     * @param _reload tells wether just a refresh of the representation should be
+     *                done ( false ) or wether the data is invalid and has to be
+     *                refetched ( true ).
      */
-    void slotUpdateView( );
+    void slotUpdateView( bool _reload = true );
 
 protected slots:
     /**

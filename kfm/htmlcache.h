@@ -109,19 +109,37 @@ public:
      * Cancels all jobs started by this instance.
      */
     void stop();
+
+    /**
+     * Writes the contents of @ref urlDict to disk
+     */
+    static void save();
+    /**
+     * Tries to load the file written by @ref #save
+     */
+    static void load();
+    /**
+     * Tries to clear the complete cache.
+     */
+    static void clear();
+    /**
+     * Enables or disbales the cache.
+     */
+    static void enableCache( bool _enable );
     
-	/*
-	 * hack to get static classes up and running even with C++-Compilers/
-	 * Systems where a constructor of a class element declared static
+    /*
+     * hack to get static classes up and running even with C++-Compilers/
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	static void InitStatic() {
+     */
+    static void InitStatic() {
     	cachePath = new QString;
     	staticJobList = new QList<HTMLCacheJob>;
     	urlDict = new QDict<QString>;
     	instanceList = new QList<HTMLCache>;
-	}
+    }
+
 public slots:
     /**
      * Checks in an already loaded URL.
@@ -168,10 +186,18 @@ protected:
     /**
      * Dict. of all cached URLs.
      * urlDict[ "http://www.kde.org/index.html" ] returns a string containing
-     * the file that holds the cached data.
+     * the full path of the file that holds the cached data.
      */
     static QDict<QString> *urlDict;
 
+    /**
+     * If the cache is disabled, then the value of this member is set to
+     * false and it is not allowed to lookup entries in @ref #urlDict.
+     *
+     * @see #enableCache
+     */
+    static bool bCacheEnabled;
+    
     /**
      * List of all instances
      */
@@ -201,3 +227,7 @@ protected:
 };
 
 #endif
+
+
+
+

@@ -1,3 +1,5 @@
+#include <qdir.h>
+
 #include "kbind.h"
 #include "kfmgui.h"
 #include "root.h"
@@ -71,17 +73,17 @@ void testDir( const char *_name )
 
 void InitStaticMembers()
 {
-	/*
-	 * hack to get static classes up and running even with C++-Compilers
-	 * Systems where a constructor of a class element declared static
+    /*
+     * hack to get static classes up and running even with C++-Compilers
+     * Systems where a constructor of a class element declared static
      * would never get called (Aix, Alpha,...). In the next versions these
      * elements should disappear.
-	 */
-	KMimeBind::InitStatic();
-	HTMLCache::InitStatic();
-	KfmGui::InitStatic();
-	KfmView::InitStatic();
-	KIOJob::InitStatic();
+     */
+    KMimeBind::InitStatic();
+    HTMLCache::InitStatic();
+    KfmGui::InitStatic();
+    KfmView::InitStatic();
+    KIOJob::InitStatic();
 }
 
 int main( int argc, char ** argv )
@@ -103,8 +105,8 @@ int main( int argc, char ** argv )
     QString c;
     
     // Clean this directory
-    c.sprintf("rm -f %s/.kde/share/apps/kfm/cache/*", getenv( "HOME" ) );
-    system( c );
+    // c.sprintf("rm -f %s/.kde/share/apps/kfm/cache/*", getenv( "HOME" ) );
+    // system( c );
     
     // Clean this directory
     c.sprintf("rm -f %s/.kde/share/apps/kfm/tmp/*", getenv( "HOME" ) );

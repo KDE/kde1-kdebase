@@ -43,7 +43,7 @@ private:
 	int readresp(char c);
 	int ftpOpen(const char *host);
 	int ftpSendCmd(char *cmd, char expresp);
-	int ftpLogin( const char *user, const char *pass);
+	int ftpLogin( const char *user, const char *pass, QString *redirect = 0L);
 	int ftpPort();
 	int ftpMkdir(const char *path);
 	int ftpChdir( const char *path);

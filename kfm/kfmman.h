@@ -32,8 +32,12 @@ public:
     virtual void openPopupMenu( QStrList & _url, const QPoint &_p );
     /**
      * The user dropped the URLs _source over the URL _url at the point _p.
+     * 
+     * @param _nestedURLs indicates wether the URLs in '_zone' include a directory which
+     *                    is equal to '_url' or at least a child of '_url'. In this case
+     *                    only linking is allowed.
      */
-    virtual void dropPopupMenu( KDNDDropZone *_zone, const char *_url, const QPoint *_p );
+    virtual void dropPopupMenu( KDNDDropZone *_zone, const char *_url, const QPoint *_p, bool _nestedURLs = false );
 
     /**
      * Stop the @ref #KFMJob that downloads the directory information
@@ -76,6 +80,7 @@ public slots:
     void slotData( const char *_data, int _len );
     void slotMimeType( const char *_type );
     void slotInfo( const char *_text );
+    void slotRedirection( const char *_url );
     
 protected:
     /**

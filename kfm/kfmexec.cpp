@@ -4,6 +4,8 @@
 #include <qlabel.h>
 #include <qpushbt.h>
 
+#include <sys/stat.h>
+
 #include "kfmexec.h"
 #include "kbind.h"
 #include "config-kfm.h"
@@ -159,8 +161,11 @@ void KFMExec::slotNewDirEntry( KIODirectoryEntry * _entry )
     {
 	// Ok, we are done, so lets stop the job ...
 	job->stop();
+	
+	KURL u( tryURL );
+	
 	// ... and open a new window
-	if ( tryURL.right(1) != "/" )
+	if ( tryURL.right(1) != "/" && u.hasPath() )
 	    tryURL += "/";
 	KfmGui *m = new KfmGui( 0L, 0L, tryURL );
 	m->show();
@@ -262,6 +267,21 @@ void KFMExec::slotMimeType( const char *_type )
 QString KFMExec::openLocalURL( const char *_url )
 {
     KURL u( _url );
+
+    // Is it a local directory ?
+    struct stat buff;
+    if ( stat( u.path(), &buff ) == 0 && S_ISDIR( buff.st_mode ) )
+    {
+	KfmGui *w = KfmGui::findWindow( _url );
+	if ( w != 0L )
+	{
+	    w->show();
+	    return QString();
+	}
+	w = new KfmGui( 0L, 0L, _url );
+	w->show();
+	return QString();
+    }
     
     QString tryURL;
     
@@ -271,9 +291,10 @@ QString KFMExec::openLocalURL( const char *_url )
     // We must support plugin protocols here!
     // Do we try to open a tar file?
     // tar files ( zipped ones ) can be recognized by extension very fast
-    QString tmp = _url;
+    QString tmp = u.path();
     if ( tmp.right(4) == ".tgz" || tmp.right(7) == ".tar.gz" )
     {
+	printf("!!!!!!!!!!!!!! TGZ !!!!!!!!!!!!!!!!\n");
 	// We change the destination on the fly
 	tryURL = "file:";
 	tryURL += u.path();

@@ -203,7 +203,7 @@ int KProtocolFTP::ftpSendCmd(char *cmd, char expresp)
  *
  * return 1 if logged in, 0 otherwise
  */
-int KProtocolFTP::ftpLogin( const char *user, const char *pass)
+int KProtocolFTP::ftpLogin( const char *user, const char *pass, QString *redirect)
 {
     char tempbuf[64];
 
@@ -220,7 +220,29 @@ int KProtocolFTP::ftpLogin( const char *user, const char *pass)
     }      
     sprintf(tempbuf,"pass %s",pass);
 
-    return ftpSendCmd(tempbuf,'2');
+    if ( redirect == 0L )
+	return ftpSendCmd(tempbuf,'2');
+
+    if ( ftpSendCmd( tempbuf, '2' ) == 1 )
+    {
+	strcpy(tempbuf,"pwd");
+	if ( ftpSendCmd( tempbuf, '2' ) == 0 )
+	    return 0;
+	
+	char *p = rspbuf;
+	while ( isdigit( *p ) ) p++;
+	while ( *p == ' ' || *p == '\t' ) p++;
+	if ( *p != '"' )
+	    return 1;
+	char *p2 = strchr( p + 1, '"' );
+	if ( p2 == 0L )
+	    return 1;
+	*p2 = 0;
+	*redirect = p + 1;
+	return 1;
+    }
+    else
+	return 0;
 }
 
 /*
@@ -407,17 +429,17 @@ void KProtocolFTP::ftpQuit(void)
 
 KProtocolFTP::KProtocolFTP()
 {
-	dirfile = NULL;
-	sControl = sData = sDatal = -1;
-	ftplib_lastresp = rspbuf;
-	ftplib_debug = 9;
+    dirfile = NULL;
+    sControl = sData = sDatal = -1;
+    ftplib_lastresp = rspbuf;
+    ftplib_debug = 9;
 }
 
 KProtocolFTP::~KProtocolFTP()
 {
-	if(dirfile) CloseDir();
-
-	Close();
+    if( dirfile )
+	CloseDir();
+    Close();
 }
 
 int KProtocolFTP::OpenConnection(const char *command, const char *path, char mode)
@@ -432,18 +454,17 @@ int KProtocolFTP::OpenConnection(const char *command, const char *path, char mod
 				"Could not setup ftp data port", errno);
 
     if (path != NULL)
-		sprintf(buf,"%s %s",command,path);
-	else
+	sprintf(buf,"%s %s",command,path);
+    else
     	strcpy(buf,command);
 
     if (!ftpSendCmd(buf,'1')) return Error(KIO_ERROR_CouldNotConnect,
-				"Error requesting file/dir from server");
+					   "Error requesting file/dir from server");
     if ((sData = accept_connect()) < 0)
     {
-		if (sData == -2) perror("accept");
-		else fprintf( stderr, "ERROR!: %s",rspbuf);
-		return Error(KIO_ERROR_CouldNotConnect,
-				"Could not establish data connection",errno);
+	if (sData == -2) perror("accept");
+	else fprintf( stderr, "ERROR!: %s",rspbuf);
+	return Error(KIO_ERROR_CouldNotConnect, "Could not establish data connection",errno);
     }
 
     return SUCCESS;
@@ -452,28 +473,46 @@ int KProtocolFTP::OpenConnection(const char *command, const char *path, char mod
 int KProtocolFTP::CloseConnection()
 {
     /** readresp('2') ?? gibt an ob Transmission erfolgreich war! **/
-    if(sData != -1)
+    if( sData != -1 )
     {
-	shutdown(sData,2);
-	close(sData);
+	shutdown( sData, 2 );
+	close( sData );
 	sData = -1;
     }
 
-    if(sDatal != -1)
+    if( sDatal != -1 )
     {
-	close(sDatal);
+	close( sDatal );
 	sDatal = -1;
     }
     return 1;
 }
 
-int KProtocolFTP::OpenDir(KURL *url)
+int KProtocolFTP::OpenDir( KURL *url )
 {
-	if(Connect(url) == FAIL) return(FAIL);
-	if(OpenConnection("list",url->path(),'A') == FAIL) return(FAIL);
-	dirfile = fdopen(sData,"r");
-	if(!dirfile) return(FAIL);
-	return(SUCCESS);
+    QString path( url->path() );
+    bool haspath = url->hasPath();
+    
+    if( Connect( url ) == FAIL )
+	return (FAIL);
+
+    // Did we get a redirect ?
+    if ( path != url->path() || haspath != url->hasPath() )
+    {
+	printf("Emit Redirection in kioslave\n");
+	// Remove password
+	KURL u( *url );
+	u.setPassword("");
+	emit redirection( u.url().data() );
+    }
+    
+    if( OpenConnection( "list", url->path(), 'A' ) == FAIL )
+	return (FAIL);
+
+    dirfile = fdopen( sData, "r" );
+    if( !dirfile )
+	return (FAIL);
+    return (SUCCESS);
 }
 
 KProtocolDirEntry *KProtocolFTP::ReadDir()
@@ -492,7 +531,16 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 			    if ((p_date_1 = strtok(NULL," ")) != 0)
 				if ((p_date_2 = strtok(NULL," ")) != 0)
 				    if ((p_date_3 = strtok(NULL," ")) != 0)
-					if ((p_name = strtok(NULL," \r\n")) != 0) {
+					if ((p_name = strtok(NULL,"\r\n")) != 0) {
+					    if ( p_access[0] == 'l' )
+					    {
+						QString tmp( p_name );
+						int i = tmp.findRev( " -> " );
+						if ( i != -1 )
+						    tmp.truncate( i );
+						strcpy( p_name, tmp.data() );
+					    }
+
 					    de.access	= p_access;
 					    de.owner	= p_owner;
 					    de.group	= p_group;
@@ -504,19 +552,19 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
 					    return(&de);
 					}
     }
-	return(NULL);
+    return(NULL);
 }
 
 int KProtocolFTP::CloseDir()
 {
-	if(dirfile)
-	{
-		fclose(dirfile);
-		dirfile = NULL;
-		CloseConnection();
-		ftpQuit();
-	}
-	return(SUCCESS);
+    if( dirfile )
+    {
+	fclose( dirfile );
+	dirfile = NULL;
+	CloseConnection();
+	ftpQuit();
+    }
+    return(SUCCESS);
 }
 
 int KProtocolFTP::Connect(KURL *url)
@@ -537,10 +585,35 @@ int KProtocolFTP::Connect(KURL *url)
 	passwd = FTP_PASSWD;
     }
 
-    if(!ftpLogin(user,passwd))
-	return(Error(KIO_ERROR_CouldNotLogin, "invalid passwd or username"));
+    QString redirect;
+    // Do we have the root directory and a user ?
+    // ( for example ftp://weis@localhost )
+    // So we can expect redirection to the home directory of user weis
+    // if ( strcmp( url->path(), "/" ) == 0 && url->user() != 0L && url->user()[0] != 0 && !url->hasPath() )
+    printf("PATH=%s\n",url->path());
+    if ( !url->hasPath() )
+    {
+	printf("NO PATH\n");
+	int ret = ftpLogin( user, passwd, &redirect );
+	// We could login and got a redirect ?
+	if ( ret && !redirect.isEmpty() )
+	{
+	    if ( redirect.right(1) != "/" )
+		redirect += "/";
+	    
+	    printf("REDIRECTION '%s'\n",redirect.data());
+	    url->cd( redirect.data() );
+	    printf("Now URL is '%s'\n",url->url().data());
+	}
+	if ( ret == 1 )
+	    return (SUCCESS);
+	return( Error( KIO_ERROR_CouldNotLogin, "invalid passwd or username") );
+    }
     
-    return(SUCCESS);
+    if( !ftpLogin( user, passwd ) )
+	return( Error( KIO_ERROR_CouldNotLogin, "invalid passwd or username") );
+    
+    return (SUCCESS);
 }
 
 // Patch from Alessandro Mirone <alex@greco2.polytechnique.fr>
@@ -562,7 +635,7 @@ int KProtocolFTP::Open(KURL *url, int mode)
     {
 	int rc = OpenConnection("retr",url->path(),'I');
 	if(rc == FAIL)
-	    return Error(KIO_ERROR_CouldNotConnect,"Error building connection");
+	    return Error(KIO_ERROR_FileDoesNotExist,"Could not retrieve file");
     
     	// Read the size from the response string
     	if ( strlen( rspbuf ) > 4 )
@@ -594,7 +667,11 @@ int KProtocolFTP::Open(KURL *url, int mode)
 
 int KProtocolFTP::Close()
 {
-    if(CloseConnection()) return(SUCCESS);
+    bool b = CloseConnection();
+    ftpQuit();
+    
+    if ( b )
+	return(SUCCESS);
     return(FAIL);
 }
 

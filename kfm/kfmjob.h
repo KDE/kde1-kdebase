@@ -61,6 +61,7 @@ signals:
     void mimeType( const char *_type );
     void error( int _kioerror, const char *_text );
     void info( const char *_text );
+    void redirection( const char *_url );
     
 protected:
     void openFile();

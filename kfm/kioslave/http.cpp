@@ -108,12 +108,12 @@ KProtocolHTTP::KProtocolHTTP()
 
 KProtocolHTTP::~KProtocolHTTP()
 {
-	Close();
+    Close();
 }
 
 long KProtocolHTTP::Size()
 {
-	return(size);
+    return(size);
 }
 
 int KProtocolHTTP::Close()
@@ -126,7 +126,7 @@ int KProtocolHTTP::Close()
 
 int KProtocolHTTP::atEOF()
 {
-	return(bytesleft == 0 || feof(fsocket));
+    return( bytesleft == 0 || feof( fsocket ) );
 }
 
 long KProtocolHTTP::Read(void *buffer, long len)
@@ -308,6 +308,13 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 
 	command += "Host: "; /* support for virtual hosts */
 	command += _url->host();
+	if ( _url->port() != 0 )
+	{
+	    command += ":";
+	    QString tmp;
+	    tmp.setNum( _url->port() );
+	    command += tmp;
+	}
 	command += "\n";
  
 	if( strlen(_url->user()) != 0 )

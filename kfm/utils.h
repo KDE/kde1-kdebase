@@ -13,7 +13,7 @@
 
 #include "kbind.h"
 
-/**M
+/**
  * Opens the documents in '_urlList' using '_cmd' as command.
  * The files in '_urlList' are URLs or filenames. The filenames
  * are NOT shell quoted, but '_cmd' has to be shell quoted.
@@ -29,5 +29,15 @@
 void openWithOldApplication( const char *_cmd, QStrList& _urlList );
 
 QString displayName();
+
+/**
+ * @return -1 on error, 0 if the URLs are nor nested neither equal
+ *         1 if '_src' is a child of '_dest' and 2 if '_src' and '_dest'
+ *         are equal.
+ */
+int testNestedURLs( const char *_src, const char *_dest );
+
+QString& operator<<( QString&, int );
+QString& operator<<( QString&, const char* );
 
 #endif

@@ -33,6 +33,10 @@ private:
 
     KSlave Slave;
     char *dirpathmem, *dirpath;
+    /**
+     * This variable is used in @ref #ReadDir only.
+     */
+    QString subdir;
     FILE *dirfile;
     bool bEOF;
 

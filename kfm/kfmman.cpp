@@ -49,6 +49,7 @@ KFMManager::KFMManager( KfmView *_v )
     connect( job, SIGNAL( data( const char *, int ) ), this, SLOT( slotData( const char *, int ) ) );
     connect( job, SIGNAL( mimeType( const char* ) ), this, SLOT( slotMimeType( const char* ) ) );
     connect( job, SIGNAL( info( const char* ) ), this, SLOT( slotInfo( const char* ) ) );
+    connect( job, SIGNAL( redirection( const char* ) ), this, SLOT( slotRedirection( const char* ) ) );
 }
 
 KFMManager::~KFMManager()
@@ -222,11 +223,15 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	    }
 	    fclose( f );
 
+	    // Add old URL to history
+	    view->slotURLToStack( url.data() );
+
 	    url = _url;
 	    view->begin( _url );	    
 	    view->write( page );
 	    view->parse();
 	    view->end();
+
 	    return true;
 	}
 	else
@@ -243,8 +248,8 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	QFile file( path );
 	if ( file.open( IO_ReadOnly ) )
 	{
-	  file.close(); // kalle
-	  // kalle	    QTextStream pstream( &file );
+	    file.close();
+
 	    KConfig config( path );
 	    config.setGroup( "KDE Desktop Entry" );
 	    QString typ = config.readEntry( "Type" );
@@ -309,9 +314,13 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	return true;
 
     QString tmp;
-    tmp.sprintf( klocale->translate("Contacting host %s"), u.host() );
-    view->getGUI()->slotSetStatusBar( tmp );
-
+    if ( u.host() != 0L && u.host()[0] != 0 )
+    {
+	tmp.sprintf( klocale->translate("Contacting host %s"), u.host() );
+	view->getGUI()->slotSetStatusBar( tmp );
+    }
+    else
+	view->getGUI()->slotSetStatusBar( klocale->translate( "Working ..." ) );
     return true;
 }
 
@@ -655,6 +664,14 @@ void KFMManager::stop()
 	view->end();
 }
 
+void KFMManager::slotRedirection( const char *_url )
+{
+    printf("REDIRECTION!!!\n");
+    url = _url;
+    view->getGUI()->setToolbarURL( _url );
+    // view->getGUI()->slotSetStatusBar( _text );
+}
+
 void KFMManager::slotInfo( const char *_text )
 {
     view->getGUI()->slotSetStatusBar( _text );
@@ -971,7 +988,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     popupMenu->popup( _point );
 }
 
-void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p )
+void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QPoint *_p, bool _nestedURLs )
 {
     dropDestination = _dest;
     dropDestination.detach();
@@ -1015,12 +1032,12 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
     int id = -1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
-	 KIOServer::supports( _dest, KIO_Write ) )
+	 KIOServer::supports( _dest, KIO_Write ) && !_nestedURLs )
 	id = popupMenu->insertItem(  klocale->translate("Copy"), 
 				     this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Move ) &&
-	 KIOServer::supports( _dest, KIO_Write ) )
+	 KIOServer::supports( _dest, KIO_Write ) && !_nestedURLs )
 	id = popupMenu->insertItem(  klocale->translate("Move"),
 				     this, SLOT( slotDropMove() ) );
     // Ask wether we can link the URL 
