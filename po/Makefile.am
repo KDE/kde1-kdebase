@@ -6,8 +6,8 @@ DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo de_kfm.gmo d
 NL_POFILES =  nl_kfind.po  nl_kdehelp.po  nl_kdisplay.po  nl_kvt.po  nl_kfm.po  nl_kwm.po  nl_kfontmanager.po  nl_klogout.po
 NL_GMFILES = nl_kfind.gmo nl_kdehelp.gmo nl_kdisplay.gmo nl_kvt.gmo nl_kfm.gmo nl_kwm.gmo nl_kfontmanager.gmo nl_klogout.gmo  
 
-CZ_POFILES = cz_kfind.po
-CZ_GMFILES = cz_kfind.gmo
+CZ_POFILES = cz_kfind.po  cz_kdehelp.po  cz_kdisplay.po  cz_kvt.po  cz_kwm.po  cz_kfontmanager.po  cz_klogout.po  cz_kdm.po 
+CZ_GMFILES = cz_kfind.gmo cz_kdehelp.gmo cz_kdisplay.gmo cz_kvt.gmo cz_kwm.gmo cz_kfontmanager.gmo cz_klogout.gmo cz_kdm.gmo
 
 DA_POFILES = da_kdm.po
 DA_GMFILES = da_kdm.gmo
