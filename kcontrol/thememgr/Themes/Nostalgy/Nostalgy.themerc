@@ -1,0 +1,64 @@
+# KDE Config File
+#-----------------------------------------------------------------------------
+[General]
+name=Nostalgy
+author=Robert Flemming & Daniel M. Duley
+email=mosfet@kde.org
+description=A simple original theme that tries to combine the best aspects of familiar interfaces.
+version=0.1
+#-----------------------------------------------------------------------------
+[Display]
+CommonDesktop=true
+Wallpaper0=Nostalgy.jpg
+WallpaperMode0=tiled
+RootIconTextStyle=1
+RootIconTextForeground=255,255,255
+RootIconTextBackground=0,0,0
+#-----------------------------------------------------------------------------
+[Colors]
+activeBlend=192,192,192
+inactiveBackground=192,192,192
+activeBackground=192,192,192
+inactiveBlend=192,192,192
+inactiveForeground=107,107,107
+activeForeground=0,0,0        
+foreground=0,0,0
+selectForeground=255,255,255
+selectBackground=49,49,156
+background=192,192,192
+windowForeground=0,0,0
+windowBackground=255,255,255   
+contrast=7
+#-----------------------------------------------------------------------------
+[Window Border]
+shapePixmapTop=wm_top.xpm
+shapePixmapBottom=wm_bottom.xpm
+shapePixmapLeft=wm_left.xpm
+shapePixmapRight=wm_right.xpm
+shapePixmapTopLeft=wm_topleft.xpm
+shapePixmapTopRight=wm_topright.xpm
+shapePixmapBottomLeft=wm_bottomleft.xpm
+shapePixmapBottomRight=wm_bottomright.xpm
+#-----------------------------------------------------------------------------
+[Window Titlebar]
+CloseButton=close.xpm
+MaximizeButton=maximize.xpm
+MaximizeDownButton=maximizedown.xpm
+MinimizeButton=iconify.xpm
+TitlebarPixmapActive=activetitlebar.xpm
+TitlebarPixmapInactive=inactivetitlebar.xpm
+PixmapUnderTitleText=no
+TitleFrameShaded=no
+TitleAlignment=middle
+#-----------------------------------------------------------------------------
+[Window Button Layout]
+ButtonA=Close
+ButtonB=Off
+ButtonC=Off
+ButtonD=Maximize
+ButtonE=Iconify
+ButtonF=Off
+#-----------------------------------------------------------------------------
+[Icons]
+#-----------------------------------------------------------------------------
+[Extra Icons]
