@@ -588,7 +588,7 @@ void KGeneral::slotPreviewFont( int index )
 
 void KGeneral::slotHelp()
 {
-	kapp->invokeHTMLHelp( "kdisplay/kdisplay-6.html", "" );
+	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-6.html", "" );
 }
 
 void KGeneral::applySettings()

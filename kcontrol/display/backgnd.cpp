@@ -496,7 +496,7 @@ void KBackground::readSettings( int num )
   QFileInfo fi( KApplication::localconfigdir() + group );
   if ( ! fi.exists() ){
     first_time = true;
-    group = "/kdisplayrc";
+    group = "/kcmdisplayrc";
   }
 
   KConfig config(KApplication::kde_configdir() + group,

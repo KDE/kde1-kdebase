@@ -818,7 +818,7 @@ void KColorScheme::slotPreviewScheme( int indx )
 
 void KColorScheme::slotHelp()
 {
-	kapp->invokeHTMLHelp( "kdisplay/kdisplay-5.html", "" );
+	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-5.html", "" );
 }
 
 void KColorScheme::applySettings()

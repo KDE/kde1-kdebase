@@ -711,7 +711,7 @@ void KScreenSaver::slotSetupDone(KProcess *)
 
 void KScreenSaver::slotHelp()
 {
-	kapp->invokeHTMLHelp( "kdisplay/kdisplay-4.html", "" );
+	kapp->invokeHTMLHelp( "kcmdisplay/kdisplay-4.html", "" );
 }
 
 void KScreenSaver::slotCornerAction( int num, char action )

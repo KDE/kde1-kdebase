@@ -136,7 +136,7 @@ int main(int argc, char **argv)
   // Please don't use this as it prevents users from choosing exactly the
   // colors they want - Mark Donohoe
 
-  KDisplayApplication app(argc, argv, "kdisplay");
+  KDisplayApplication app(argc, argv, "kcmdisplay");
   app.setTitle(klocale->translate("Display settings"));
 
   kimgioRegister();
