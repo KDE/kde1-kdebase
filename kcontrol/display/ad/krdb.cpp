@@ -222,7 +222,7 @@ main( int argc, char ** argv )
 	QStrList *userNames = 0;
 	QFileInfoListIterator *userIt = 0;
 		
-	QString adPath( kapp->kde_datadir() );
+	QString adPath = kapp->kde_datadir().copy();
 	adPath += "/kdisplay/app-defaults";
 	QDir dSys;
 	dSys.setPath( adPath );
