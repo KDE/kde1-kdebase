@@ -1,45 +1,45 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-14 12:18+0100\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
+#: kmenuedit.cpp:62
+msgid "&Reload"
+msgstr "Menüs neu &laden"
+
 #: kmenuedit.cpp:68
-msgid "Change Menuname"
-msgstr "Menünamen ändern"
+msgid "Change &Menuname"
+msgstr "&Menünamen ändern"
 
 #: kmenuedit.cpp:69
-msgid "Reload Filetypes"
-msgstr "Dateibindungen neu laden"
+msgid "Reload &Filetypes"
+msgstr "&Dateibindungen neu laden"
 
-#: kmenuedit.cpp:75 kmenuedit.cpp:211
-msgid ""
-"KMenuedit 0.2.3\n"
-"(C) by Christoph Neerfeld\n"
-"Christoph.Neerfeld@bonn.netsurf.de"
-msgstr ""
-"KMenuedit 0.2.3\n"
-"(C) von Christoph Neerfeld\n"
-"Christoph.Neerfeld@bonn.netsurf.de"
+#: kmenuedit.cpp:76
+msgid "by"
+msgstr "von"
 
-#: kmenuedit.cpp:164
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Änderungen nicht gespeichert !"
 
-#: kmenuedit.cpp:165
-msgid "Do you want to save your changes"
-msgstr "Sollen die Änderungen gespeichert werden?"
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr "\nSollen die Änderungen gespeichert werden?"
 
-#: confmenu.cpp:313 confmenu.cpp:878 kmenuedit.cpp:230
+#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "LEER"
 
-#: kmenuedit.cpp:306
+#: kmenuedit.cpp:335
 msgid "Reload Menus"
 msgstr "Menüs neu laden"
 
-#: kmenuedit.cpp:307
+#: kmenuedit.cpp:336
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Trennlinie"
 
-#: confmenu.cpp:102 confmenu.cpp:309
+#: confmenu.cpp:102 confmenu.cpp:317
 msgid "Open/ Close"
 msgstr "Öffnen / Schliessen"
 
@@ -79,7 +79,7 @@ msgstr "Öffnen / Schliessen"
 msgid "! PROTECTED Button !"
 msgstr "! GESCHÜTZTER Button !"
 
-#: confmenu.cpp:171 confmenu.cpp:292
+#: confmenu.cpp:171 confmenu.cpp:300
 msgid "Warning !"
 msgstr "Warnung !"
 
@@ -87,11 +87,11 @@ msgstr "Warnung !"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Wenn Sie diesen Button löschen, verlieren Sie alle Untermenüs"
 
-#: confmenu.cpp:273
+#: confmenu.cpp:281
 msgid "Wrong filename"
 msgstr "Falscher Dateiname"
 
-#: confmenu.cpp:274
+#: confmenu.cpp:282
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -99,11 +99,11 @@ msgstr ""
 "Eine kdelnk-Datei mit diesem Namen existiert schon. \n"
 "Wählen Sie einen anderen Dateiname."
 
-#: confmenu.cpp:293
+#: confmenu.cpp:301
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Ändern des Typs für diesen Button wird alle Untermenüs löschen"
 
-#: confmenu.cpp:314 confmenu.cpp:879
+#: confmenu.cpp:322 confmenu.cpp:911
 msgid "no command"
 msgstr "kein Kommando"
 
@@ -135,19 +135,20 @@ msgstr "Persönlicher Pfad:"
 msgid "Submenu"
 msgstr "Untermenü"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:509
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
 msgid "Application"
 msgstr "Anwendung"
 
-#: entrydialog.cpp:55
-msgid "Fvwm Command"
-msgstr "Fvwm Kommando"
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr ""
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:515
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
 msgstr "Verweis"
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:518
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
 msgid "Device"
 msgstr "Gerät"
 
@@ -175,13 +176,9 @@ msgstr "Icon"
 msgid "Comment:"
 msgstr "Kommentar:"
 
-#: entrydialog.cpp:165 entrydialog.cpp:508
+#: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
 msgstr "Auszuführen"
-
-#: entrydialog.cpp:169 entrydialog.cpp:512
-msgid "Fvwm"
-msgstr "Fvwm"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
@@ -204,30 +201,38 @@ msgid "Binary Pattern:"
 msgstr "Binär-Muster:"
 
 #: entrydialog.cpp:300
-msgid "Fvwm Command:"
-msgstr "Fvwm Kommando:"
+msgid "Application to swallow:"
+msgstr "einzubettende Anwendung:"
 
-#: entrydialog.cpp:315
+#: entrydialog.cpp:306
+msgid "Title of application:"
+msgstr "Titel der Anwendung:"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr ""
+
+#: entrydialog.cpp:342
 msgid "URL:"
 msgstr "URL:"
 
-#: entrydialog.cpp:364
+#: entrydialog.cpp:391
 msgid "Read Only"
 msgstr "Nur Lesen"
 
-#: entrydialog.cpp:370
+#: entrydialog.cpp:397
 msgid "Device:"
 msgstr "Gerät:"
 
-#: entrydialog.cpp:376
+#: entrydialog.cpp:403
 msgid "Mount Point:"
 msgstr "Einhäng-Punkt"
 
-#: entrydialog.cpp:382
+#: entrydialog.cpp:409
 msgid "FS Type:"
 msgstr "DS Typ:"
 
-#: entrydialog.cpp:388
+#: entrydialog.cpp:415
 msgid "Unmount Icon:"
 msgstr "Aushäng-Icon:"
 
@@ -246,3 +251,21 @@ msgstr "Persönlich:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standard:"
+
+#~ msgid ""
+#~ "KMenuedit 0.2.3\n"
+#~ "(C) by Christoph Neerfeld\n"
+#~ "Christoph.Neerfeld@bonn.netsurf.de"
+#~ msgstr ""
+#~ "KMenuedit 0.2.3\n"
+#~ "(C) von Christoph Neerfeld\n"
+#~ "Christoph.Neerfeld@bonn.netsurf.de"
+
+#~ msgid "Fvwm Command"
+#~ msgstr "Fvwm Kommando"
+
+#~ msgid "Fvwm"
+#~ msgstr "Fvwm"
+
+#~ msgid "Fvwm Command:"
+#~ msgstr "Fvwm Kommando:"

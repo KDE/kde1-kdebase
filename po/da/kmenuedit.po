@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-14 12:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,38 +14,45 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
+#: kmenuedit.cpp:62
+#, fuzzy
+msgid "&Reload"
+msgstr "Genindlæs menuer"
+
 #: kmenuedit.cpp:68
-msgid "Change Menuname"
+#, fuzzy
+msgid "Change &Menuname"
 msgstr "Skift menunavn"
 
 #: kmenuedit.cpp:69
-msgid "Reload Filetypes"
+#, fuzzy
+msgid "Reload &Filetypes"
 msgstr "Genindlæs filtyper"
 
-#: kmenuedit.cpp:75 kmenuedit.cpp:211
-msgid ""
-"KMenuedit 0.2.3\n"
-"(C) by Christoph Neerfeld\n"
-"Christoph.Neerfeld@bonn.netsurf.de"
+#: kmenuedit.cpp:76
+msgid "by"
 msgstr ""
 
-#: kmenuedit.cpp:164
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Ændringer ikke gemt!"
 
-#: kmenuedit.cpp:165
-msgid "Do you want to save your changes"
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+#, fuzzy
+msgid ""
+"\n"
+"Do you want to save your changes ?"
 msgstr "Vil du gemme dine ændringer?"
 
-#: confmenu.cpp:313 confmenu.cpp:878 kmenuedit.cpp:230
+#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
 msgstr "TOM"
 
-#: kmenuedit.cpp:306
+#: kmenuedit.cpp:335
 msgid "Reload Menus"
 msgstr "Genindlæs menuer"
 
-#: kmenuedit.cpp:307
+#: kmenuedit.cpp:336
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -77,7 +84,7 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: confmenu.cpp:102 confmenu.cpp:309
+#: confmenu.cpp:102 confmenu.cpp:317
 msgid "Open/ Close"
 msgstr "Åben/Luk"
 
@@ -85,7 +92,7 @@ msgstr "Åben/Luk"
 msgid "! PROTECTED Button !"
 msgstr "! BESKYTTET Knap !"
 
-#: confmenu.cpp:171 confmenu.cpp:292
+#: confmenu.cpp:171 confmenu.cpp:300
 msgid "Warning !"
 msgstr "Advarsel!"
 
@@ -93,11 +100,11 @@ msgstr "Advarsel!"
 msgid "If you delete this button you will lose all of its submenus"
 msgstr "Hvis du sletter denne knap vil du miste all dens undermenuer"
 
-#: confmenu.cpp:273
+#: confmenu.cpp:281
 msgid "Wrong filename"
 msgstr "Forkert filnavn"
 
-#: confmenu.cpp:274
+#: confmenu.cpp:282
 msgid ""
 "A kdelnk-file with this name does already exist. \n"
 "Please choose another filename."
@@ -105,11 +112,11 @@ msgstr ""
 "En kdelnk fil med dette navn eksisterer allerede.\n"
 "Vælg venlist et andet navn."
 
-#: confmenu.cpp:293
+#: confmenu.cpp:301
 msgid "Changing the type of this button will delete all of its submenus"
 msgstr "Hvis du ændrer typen på denne knap vil du miste alle dens undermenuer"
 
-#: confmenu.cpp:314 confmenu.cpp:879
+#: confmenu.cpp:322 confmenu.cpp:911
 msgid "no command"
 msgstr "ingen kommando"
 
@@ -141,19 +148,20 @@ msgstr "Personlig Sti:"
 msgid "Submenu"
 msgstr "Undermenu"
 
-#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:509
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
 msgid "Application"
 msgstr "Applikation"
 
-#: entrydialog.cpp:55
-msgid "Fvwm Command"
-msgstr "FWvm kommando"
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr ""
 
-#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:515
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
 msgstr ""
 
-#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:518
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
 msgid "Device"
 msgstr "Enhed"
 
@@ -181,13 +189,9 @@ msgstr "Ikon:"
 msgid "Comment:"
 msgstr "Kommentar:"
 
-#: entrydialog.cpp:165 entrydialog.cpp:508
+#: entrydialog.cpp:165 entrydialog.cpp:535
 msgid "Execute"
 msgstr "Kør"
-
-#: entrydialog.cpp:169 entrydialog.cpp:512
-msgid "Fvwm"
-msgstr "Fwvm"
 
 #: entrydialog.cpp:186
 msgid "Execute:"
@@ -210,30 +214,40 @@ msgid "Binary Pattern:"
 msgstr "Filnavne:"
 
 #: entrydialog.cpp:300
-msgid "Fvwm Command:"
-msgstr "Fwvm kommando:"
+#, fuzzy
+msgid "Application to swallow:"
+msgstr "Applikation"
 
-#: entrydialog.cpp:315
+#: entrydialog.cpp:306
+#, fuzzy
+msgid "Title of application:"
+msgstr "Applikation"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr ""
+
+#: entrydialog.cpp:342
 msgid "URL:"
 msgstr ""
 
-#: entrydialog.cpp:364
+#: entrydialog.cpp:391
 msgid "Read Only"
 msgstr "Kun læsbar"
 
-#: entrydialog.cpp:370
+#: entrydialog.cpp:397
 msgid "Device:"
 msgstr "Enhed:"
 
-#: entrydialog.cpp:376
+#: entrydialog.cpp:403
 msgid "Mount Point:"
 msgstr "Mount punkt:"
 
-#: entrydialog.cpp:382
+#: entrydialog.cpp:409
 msgid "FS Type:"
 msgstr ""
 
-#: entrydialog.cpp:388
+#: entrydialog.cpp:415
 msgid "Unmount Icon:"
 msgstr "Unmount ikon:"
 
@@ -252,3 +266,12 @@ msgstr "Personlig:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standard:"
+
+#~ msgid "Fvwm Command"
+#~ msgstr "FWvm kommando"
+
+#~ msgid "Fvwm"
+#~ msgstr "Fwvm"
+
+#~ msgid "Fvwm Command:"
+#~ msgstr "Fwvm kommando:"
