@@ -20,7 +20,7 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm: sembra che ci sia già un windows manager in esecuzione\n"
-"kwm non può essere avviato."
+"kwm non può essere avviato.\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
