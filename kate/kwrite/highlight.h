@@ -278,7 +278,7 @@ class Highlight {
 //    const char *mimetypes();
     void use();
     void release();
-    virtual bool isInWord(char);
+    virtual bool isInWord(char c) {return testWw(c);}
     virtual void doHighlight(int ctxNum, TextLine *textLine);
   protected:
     virtual void createItemData(ItemDataList &);
@@ -385,6 +385,18 @@ class PythonHighlight : public GenHighlight {
   protected:
     virtual void createItemData(ItemDataList &);
     virtual void makeContextList();
+};
+
+class PerlHighlight : public Highlight {
+  public:
+    PerlHighlight(const char *name);
+
+    virtual void doHighlight(int ctxNum, TextLine *);
+  protected:
+    virtual void createItemData(ItemDataList &);
+    virtual void init();
+    virtual void done();
+    HlKeyword *keyword;
 };
 
 

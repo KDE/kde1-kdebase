@@ -67,6 +67,18 @@ char *pythonKeywords[] = {
   "except","exec"," finally","for","from","global","if","import","in","is",
   "lambda","not","or","pass","print","raise","return","try","while",0L};
 
+char *perlKeywords[] = {
+  "and","&&", "bless","caller","cmp","continue","dbmclose","dbmopen","do",
+  "die", "dump", "eval", "elsif","eq","exit", "foreach","for","ge", "goto",
+  "gt","if","import", "last","le","local","lt","my","next","ne","no","not",
+  "!","or","||", "package","ref","redo","require","return","sub","tied",
+  "tie","unless","until","untie","use","wantarray","while","xor", 0L};
+
+
+//char cEscapeChars[] = "abefnrtv\"\'\\";
+//char perlEscapeChars[] = "tnrfbaeluLUEQ";
+
+
 char fontSizes[] = {4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,32,48,64,0};
 
 //default item style indexes
@@ -83,7 +95,7 @@ const int dsOthers = 9;
 
 
 bool testWw(char c) {
-  static char data[] = {0,0,0,0,0,64,255,3,254,255,255,135,254,255,255,7};
+  static char data[] = {0,0,0,0,0,0,255,3,254,255,255,135,254,255,255,7};
   if (c & 128) return false;
   return !(data[c >> 3] & (1 << (c & 7)));
 }
@@ -318,16 +330,45 @@ HlCStringChar::HlCStringChar(int attribute, int context)
   : HlItem(attribute,context) {
 }
 
-const char *checkCStringChar(const char *str) {
-  static char echars[] = "abefnrtv\"\'\\";
+//checks for hex and oct (for example \x1b or \033)
+const char *checkCharHexOct(const char *str) {
   const char *s;
   int n;
 
-  if (str[0] == '\\' && str[1] != 0) {
-    s = str + 1;
-    if (strchr(echars,*s)) {
+  s = str;
+  if (*s == 'x') {
+    n = 0;
+    do {
       s++;
-    } else if (*s == 'x') {
+      n *= 16;
+      if (*s >= '0' && *s <= '9') n += *s - '0';
+      else if (*s >= 'A' && *s <= 'F') n += *s - 'A' + 10;
+      else if (*s >= 'a' && *s <= 'f') n += *s - 'a' + 10;
+      else break;
+      if (n >= 256) return 0L;
+    } while (true);
+    if (s - str == 1) return 0L;
+  } else {
+    if (!(*s >= '0' && *s <= '7')) return 0L;
+    n = *s - '0';
+    do {
+      s++;
+      n *= 8;
+      if (*s >= '0' && *s <= '7') n += *s - '0'; else break;
+      if (n >= 256) return s;
+    } while (s - str < 3);
+  }
+  return s;
+}
+
+//checks for C escape chars like \n
+const char *checkEscapedChar(const char *s) {
+
+  if (s[0] == '\\' && s[1] != 0) {
+    s++;
+    if (strchr("abefnrtv\"\'\\",*s)) {
+      s++;
+    } else return checkCharHexOct(s); /*if (*s == 'x') {
       n = 0;
       do {
         s++;
@@ -348,14 +389,14 @@ const char *checkCStringChar(const char *str) {
         if (*s >= '0' && *s <= '7') n += *s - '0'; else break;
         if (n >= 256) return s;
       } while (s - str < 4);
-    }
+    }        */
     return s;
   }
   return 0L;
 }
 
 const char *HlCStringChar::checkHgl(const char *str) {
-  return checkCStringChar(str);
+  return checkEscapedChar(str);
 }
 
 
@@ -366,8 +407,8 @@ HlCChar::HlCChar(int attribute, int context)
 const char *HlCChar::checkHgl(const char *str) {
   const char *s;
 
-  if (str[0] == '\'' && str[1] != 0) {
-    s = checkCStringChar(&str[1]); //try to match escaped char
+  if (str[0] == '\'' && str[1] != 0 && str[1] != '\'') {
+    s = checkEscapedChar(&str[1]); //try to match escaped char
     if (!s) s = &str[2];           //match single non-escaped char
     if (*s == '\'') return s + 1;
   }
@@ -475,7 +516,7 @@ const char *HlAdaBaseN::checkHgl(const char *s) {
     c2 = 'A' + base - 10;
     c3 = 'a' + base - 10;
     while ((*s >= '0' && *s < c1) || (*s >= 'A' && *s < c2)
-      || (*s >= 'a' && *s < c3)) {
+      || (*s >= 'a' && *s < c3) || *s == '_') {
       s++;
     }
     if (*s == '#') {
@@ -673,13 +714,13 @@ void Highlight::release() {
   if (refCount == 0) done();
 }
 
-
+/*
 bool Highlight::isInWord(char ch) {
   static char data[] = {0,0,0,0,0,0,255,3,254,255,255,135,254,255,255,7};
   if (ch & 128) return true;
   return data[ch >> 3] & (1 << (ch & 7));
 }
-
+*/
 void Highlight::doHighlight(int, TextLine *textLine) {
 
   textLine->setAttribs(0,0,textLine->length());
@@ -784,7 +825,7 @@ void CHighlight::createItemData(ItemDataList &list) {
   list.append(new ItemData("String",dsString));
   list.append(new ItemData("String Char",dsChar));
   list.append(new ItemData("Comment",dsComment));
-  list.append(new ItemData("Preprocessor",dsOthers,darkGreen,green,false,false));
+  list.append(new ItemData("Preprocessor",dsOthers));
   list.append(new ItemData("Prep. Lib",dsOthers,darkYellow,yellow,false,false));
 }
 
@@ -795,10 +836,10 @@ void CHighlight::makeContextList() {
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
     c->items.append(dataType = new HlKeyword(2,0));
-    c->items.append(new HlCInt(3,0));
+    c->items.append(new HlCFloat(6,0));
     c->items.append(new HlCOct(4,0));
     c->items.append(new HlCHex(5,0));
-    c->items.append(new HlCFloat(6,0));
+    c->items.append(new HlCInt(3,0));
     c->items.append(new HlCChar(7,0));
     c->items.append(new HlCharDetect(8,1,'"'));
     c->items.append(new Hl2CharDetect(10,2,"//"));
@@ -964,9 +1005,9 @@ void ModulaHighlight::makeContextList() {
 
   contextList[0] = c = new HlContext(0,0);
     c->items.append(keyword = new HlKeyword(1,0));
-    c->items.append(new HlInt(2,0));
-    c->items.append(new HlMHex(3,0));
     c->items.append(new HlFloat(4,0));
+    c->items.append(new HlMHex(3,0));
+    c->items.append(new HlInt(2,0));
     c->items.append(new HlCharDetect(5,1,'"'));
     c->items.append(new Hl2CharDetect(6,2,"(*"));
   contextList[1] = c = new HlContext(5,0);
@@ -1076,6 +1117,207 @@ void PythonHighlight::makeContextList() {
   keyword->addList(pythonKeywords);
 }
 
+PerlHighlight::PerlHighlight(const char *name) : Highlight(name) {
+  dm = "application/x-perl";
+}
+
+void PerlHighlight::createItemData(ItemDataList &list) {
+
+  list.append(new ItemData("Normal Text",dsNormal));
+  list.append(new ItemData("Keyword",dsKeyword));
+  list.append(new ItemData("Variable",dsDecVal));
+  list.append(new ItemData("Operator",dsOthers));
+  list.append(new ItemData("String",dsString));
+  list.append(new ItemData("String Char",dsChar));
+  list.append(new ItemData("Comment",dsComment));
+}
+
+/*
+hardcoded perl highlight
+
+Op Customary  Generic     Meaning    Interpolates         Modifiers
+1     ''       q{}       Literal         no
+2     ""      qq{}       Literal         yes
+3     ``      qx{}       Command         yes (no for ')
+4             qw{}      Word list        no
+5     //       m{}    Pattern match      yes (no for ')   cgimosx
+6              s{}{}   Substitution      yes (no for ')   egimosx
+7             tr{}{}   Translation       no               cds
+7              y{}{}   Translation       no               cds
+*/
+void PerlHighlight::doHighlight(int ctxNum, TextLine *textLine) {
+  static char *opList[] = {"q", "qq", "qx", "qw", "m", "s", "tr", "y"};
+  static int opLenList[] = {1, 2, 2, 2, 1, 1, 2, 1};
+  char delimiter;
+  int op;
+  int argCount;
+  bool interpolating;
+  bool string;
+
+  const char *str, *s, *s2;
+  bool lastWw;
+  int pos, z, l;
+
+  delimiter = ctxNum >> 8;
+  op = (ctxNum >> 5) & 7;
+  argCount = (ctxNum >> 3) & 3;
+  interpolating = !((ctxNum >> 2) & 1);
+  string = ctxNum & 1;
+
+  str = textLine->getString();
+  lastWw = true;
+
+  s = str;
+  while (*s) {
+    pos = s - str;
+    if (op == 0 && lastWw) {
+      //match keyword
+      s2 = keyword->checkHgl(s);
+      if (s2 && testWw(*s2)) {
+        s = s2;
+        textLine->setAttribs(1, pos, s - str);
+        goto newContext;
+      }
+      //match perl operator
+      for (z = 0; z < 8; z++) {
+        l = opLenList[z];
+        if (!memcmp(s,opList[z],l) && testWw(s[l])) {
+          //operator found
+          if (z < 7) z++;
+          op = z;
+          argCount = (op >= 6) ? 2 : 1;
+          s += l;
+          textLine->setAttribs(3, pos, pos + l);
+          goto newContext;
+        }
+      }
+      //match customary
+      if (*s == '\'') {
+        op = 1;
+        interpolating = false;
+      }
+      if (*s == '"') {
+        op = 2;
+      }
+      if (*s == '`') {
+        op = 3;
+      }
+      if (*s == '/') {
+        op = 5;
+      }
+      if (op != 0) {
+        delimiter = *s;
+        s++;
+        argCount = 1;
+        string = true;
+        textLine->setAttribs(3, pos, pos + 1);
+        goto newContext;
+      }
+    }
+    if (!string) {
+      //comment
+      if (lastWw && *s == '#') {
+        do {
+          s++;
+        } while (*s != '\0');
+        textLine->setAttribs(6, pos, s - str);
+        textLine->setAttr(6);
+        goto finished;
+      }
+      //delimiter
+      if (op != 0 && (unsigned char) *s > 32) {
+        delimiter = *s;
+        s++;
+        string = true;
+        if (op == 1 || op == 4 || op == 7 || (delimiter == '\'' && op != 2))
+          interpolating = false;
+        textLine->setAttribs(3, pos, pos + 1);
+        goto newContext;
+      }
+    }
+    if (interpolating) {
+      //variable
+      if (*s == '$' || *s == '@' || *s == '%') {
+        s2 = s;
+        do {
+          s2++;
+        } while ((!testWw(*s2) || *s2 == '#') && (!string || *s2 != delimiter));
+        if (s2 - s > 1) {
+          s = s2;
+          textLine->setAttribs(2, pos, s2 - str);
+          goto newContext;
+        }
+      }
+    }
+    if (string) {
+      //escaped char
+      if (interpolating) {
+        if (*s == '\\' && s[1] != '\0') {
+          s++;
+          s2 = checkCharHexOct(s);
+          if (s2) s = s2; else s++;
+          textLine->setAttribs(5, pos, s - str);
+          goto newContext;
+        }
+      }
+      //string end
+      z = 0;
+      if (delimiter == '(' && *s == ')') {
+        z = 1;
+      } else if (delimiter == '<' && *s == '>') {
+        z = 1;
+      } else if (delimiter == '[' && *s == ']') {
+        z = 1;
+      } else if (delimiter == '{' && *s == '}') {
+        z = 1;
+      } else if (delimiter == *s) {
+        z = 2;
+      }
+      s++;
+      if (z) {
+        argCount--;
+        if (argCount < 1) {
+          //match operator modifiers
+          if (op == 5) while (*s && strchr("cgimosx", *s)) s++;
+          if (op == 6) while (*s && strchr("egimosx", *s)) s++;
+          if (op == 7) while (*s && strchr("cds", *s)) s++;
+          op = 0;
+        }
+        textLine->setAttribs(3, pos, s - str);
+        if (z == 1 || op == 0) {
+          interpolating = true;
+          string = false;
+        }
+      } else {
+        textLine->setAttribs(4, pos, pos + 1);
+      }
+      goto newContext;
+    }
+    s++;
+    textLine->setAttribs(0, pos, pos + 1);
+    newContext:
+    lastWw = testWw(s[-1]);
+  }
+  textLine->setAttr(0);
+  finished:
+
+  ctxNum = delimiter << 8;
+  ctxNum |= op << 5;
+  ctxNum |= argCount << 3;
+  if (!interpolating) ctxNum |= 1 << 2;
+  if (string) ctxNum |= 1;
+  textLine->setContext(ctxNum);
+}
+
+void PerlHighlight::init() {
+  keyword = new HlKeyword(0,0);
+  keyword->addList(perlKeywords);
+}
+
+void PerlHighlight::done() {
+  delete keyword;
+}
+
 
 HlManager::HlManager() : QObject(0L) {
 
@@ -1089,6 +1331,7 @@ HlManager::HlManager() : QObject(0L) {
   hlList.append(new ModulaHighlight("Modula 2"));
   hlList.append(new AdaHighlight("Ada"));
   hlList.append(new PythonHighlight("Python"));
+  hlList.append(new PerlHighlight("Perl"));
 }
 
 HlManager::~HlManager() {
@@ -1273,16 +1516,16 @@ void HlManager::getDefaults(ItemStyleList &list, ItemFont &font) {
 
   list.setAutoDelete(true);
   //ItemStyle(color, selected color, bold, italic
-  list.append(new ItemStyle(black,white,false,false));
-  list.append(new ItemStyle(black,white,true,false));
-  list.append(new ItemStyle(darkRed,white,false,false));
-  list.append(new ItemStyle(blue,cyan,false,false));
-  list.append(new ItemStyle(darkCyan,cyan,false,false));
-  list.append(new ItemStyle(darkMagenta,cyan,false,false));
-  list.append(new ItemStyle(magenta,magenta,false,false));
-  list.append(new ItemStyle(red,red,false,false));
-  list.append(new ItemStyle(darkGray,gray,false,true));
-  list.append(new ItemStyle(darkBlue,blue,false,false));
+  list.append(new ItemStyle(black,white,false,false));     //normal
+  list.append(new ItemStyle(black,white,true,false));      //keyword
+  list.append(new ItemStyle(darkRed,white,false,false));   //datatype
+  list.append(new ItemStyle(blue,cyan,false,false));       //decimal/value
+  list.append(new ItemStyle(darkCyan,cyan,false,false));   //base n
+  list.append(new ItemStyle(darkMagenta,cyan,false,false));//float
+  list.append(new ItemStyle(magenta,magenta,false,false)); //char
+  list.append(new ItemStyle(red,red,false,false));         //string
+  list.append(new ItemStyle(darkGray,gray,false,true));    //comment
+  list.append(new ItemStyle(darkGreen,green,false,false)); //others
 
   config = kapp->getConfig();
   config->setGroup("Default Item Styles");

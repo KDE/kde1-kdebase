@@ -69,7 +69,7 @@ class TextLine {
     char *text;
     unsigned char *attribs;
     unsigned char attr;
-    unsigned char ctx;
+    int ctx;
 };
 
 
