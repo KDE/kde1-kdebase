@@ -23,12 +23,12 @@ icondir = $(kde_icondir)
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(kde_icondir)t.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kvt.xpm $(kde_minidir)/kvt.xpm
 	$(mkinstalldirs) $(kde_icondir)/large
 	$(INSTALL_DATA) $(srcdir)/large-kvt.xpm $(kde_icondir)/large/kvt.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)t.xpm
+	rm -f $(kde_minidir)/kvt.xpm
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kvt_SOURCES) && mv messages.po ../po/kvt.pot
