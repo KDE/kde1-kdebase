@@ -652,6 +652,17 @@ int KProtocolHTTP::ProcessHeader()
 	    {
 		Close();
 		KURL u( url );
+                u.setReference( 0 );
+                u.setSearchPart( 0 );
+                QString p = u.httpPath();
+                if ( p.length() > 0 )
+                {
+                    int pos = p.findRev( '/' );
+                    if ( pos >= 0 )
+                        p.truncate( pos );
+                }
+                p += "/";
+                u.setPath( p );
 		KURL u2( u, buffer + 10 );
 		if (!u2.isMalformed())
 		{
