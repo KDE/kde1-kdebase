@@ -3,20 +3,24 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
 Comment=German Keyboard (Switzerland)
+Comment[cs]=Nìmecká klávesnice (©výcarsko)
 Comment[da]=Tysk tastatur (Svejts)
 Comment[de]=Deutsche Tastatur (Schweiz)
 Comment[es]=Teclado Alemán (Suiza)
 Comment[fr]=Clavier allemand (Suisse)
 Comment[is]=Þýskt lyklaborð - Sviss
+Comment[it]=Tastiera Tedesca (Svizzera)
 Comment[pt_BR]=Teclado Alemão (Suíça)
 Comment[sk]=Nemecká klávesnica (©vajèiarsko)
 
 Language=German (Switzerland)
+Language[cs]=Nìmecký (©výcarsko)
 Language[da]=Tysk (Svejts)
 Language[de]=Deutsch (Schweiz)
 Language[es]=Alemán (Suiza)
 Language[fr]=Allemand (Suisse)
 Language[is]=Þýskt (Svissneskt)
+Language[it]=Tedesco (Svizzera)
 Language[pt_BR]=Alemão (Suíça)
 Language[sk]=Nemecký (©vajèiarsko)
 

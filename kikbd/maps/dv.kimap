@@ -4,11 +4,13 @@
 Authors=Rob Mayoff <mayoff@dqd.com>
 
 Language=English/Dvorak
+Language[cs]=Anglický/Dvorak
 Language[da]=Engelsk/Dvorak
 Language[de]=Englisch/Dvorak-Tastatur
 Language[es]=Inglés/Dvorak
 Language[fr]=Anglais/Dvorak
 Language[is]=Enskt (Dvorak)
+Language[it]=Inglese/Dvorak
 Language[pt_BR]=Inglês/Dvorak
 Language[sk]=Anglický/Dvorak
 

@@ -29,6 +29,8 @@ Label=Hu2
 Locale=hu
 Charset=ISO-8859-2
 Comment=Hungarian keyboard layout for keyboards with 101 keys.
+Comment[de]=Ungarische Tastaturbelegung für 101 Tasten.
+Comment[fr]=Disposition de clavier hongrois pour clavier 101 touches.
 
 [KeyboardMap]
 keysym0=grave,iacute,Iacute,0

@@ -4,9 +4,11 @@
 Authors=Paul Ionescu <ipaul@romsys.ro>
 
 Language=Romanian
+Language[cs]=Rumunský
 Language[da]=Rumænsk
 Language[de]=Rumänisch
 Language[fr]=Roumain
+Language[it]=Rumeno
 Language[pt_BR]=Romeno
 Comment=Romanian keyboard layout \t(diacriticele sunt mapate pe ALTGR+[q,a,s,t,i] ) 
 Label=Ro

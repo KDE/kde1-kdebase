@@ -3,18 +3,22 @@
 Authors=Leon Kukovec <sniper@kibla.org>,
 
 Comment=Slovene Keyboard (Slovenia)
+Comment[cs]=Slovinská klávesnice (Slovinsko)
 Comment[da]=Slovensk tastatur (Slovenien)
 Comment[de]=Slowenische Tastatur (Slowenien)
 Comment[es]=Teclado Esloveno (Eslovenia)
 Comment[fr]=Clavier slovène (Slovénie)
+Comment[it]=Tastiera Slovena (Slovenia)
 Comment[pt_BR]=Teclado Esloveno (Eslovênia)
 Comment[sk]=Slovinská klávesnica (Slovinsko)
 
 Language=Slovene
+Language[cs]=Slovinský
 Language[da]=Slovvensk
 Language[de]=Slowenisch
 Language[es]=Esloveno
 Language[fr]=Slovène
+Language[it]=Sloveno
 Language[pt_BR]=Esloveno
 Language[sk]=Slovinský
 

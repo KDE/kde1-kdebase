@@ -2,11 +2,13 @@
 [KDE Desktop Entry]
 Icon=mini-bx2.xpm
 Name=Debian Appliations
+Name[cs]=Aplikace Debianu
 Name[da]=Debian Anvendelser
 Name[de]=Debian-Anwendungen
 Name[es]=Aplicaciones Debian
 Name[fr]=Applications Debian
 Name[is]=Debian Forrit
+Name[it]=Applicazioni Debian
 Name[pt_BR]=Aplicativos Debian
 Name[sk]=Debianovské Aplikácie
 

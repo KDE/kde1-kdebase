@@ -4,15 +4,19 @@
 Authors=Vedran Vyroubal <vedran.vyroubal@fer.hr>,
 
 Comment=Croatian keyboard layout
+Comment[cs]=Rozvr¾ení chorvatské klávesnice
 Comment[da]=Kroatisk tastaturudlægning
 Comment[fr]=Disposition de clavier croate
+Comment[it]=Layout Tastiera Croata
 Comment[pt_BR]=Disposição de teclado croata
 Comment[sk]=Chorvátske rozlo¾enie klávesnice
 
 Language=Croatian
+Language[cs]=Chorvatský
 Language[da]=Kroatisk
 Language[de]=Kroatisch
 Language[fr]=Croate
+Language[it]=Croato
 Language[pt_BR]=Croata
 Language[sk]=Chorvátsky
 
