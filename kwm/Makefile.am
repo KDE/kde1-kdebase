@@ -40,4 +40,4 @@ task.moc: task.h
 	$(MOC) task.h -o task.moc
 
 messages:
-	@XGETTEXT@ -C --keyword=translate -x ../../kdelibs/po/kde.po $(kwm_SOURCES) 
+	@XGETTEXT@ -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) 
