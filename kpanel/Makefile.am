@@ -31,11 +31,13 @@ messages:
 install-data-local:
 	if [ ! -d $(kdisknavdir) ] ; then \
 		$(mkinstalldirs) $(kdisknavdir) ; \
-		$(LN_S) / $(kdisknavdir)/Root ; \
-		$(LN_S) ${KDEDIR} $(kdisknavdir)/KDE ; \
+		for f in Root KDE ; do \
+			cp sample_kdelnk_files/$$f.kdelnk $(kdisknavdir)/. ; \
+		done ; \
 		for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
-		  if  test -d $$dir ; then  \
-			$(LN_S) $$dir $(kdisknavdir)/CD-ROM ; \
+		  if  test -d $$dir ; then \
+			cp sample_kdelnk_files/CD-ROM.kdelnk $(kdisknavdir)/. ; \
+			echo "URL=$$dir" >> $(kdisknavdir)/CD-ROM.kdelnk ; \
 			break; \
 		  fi ; \
 		done \

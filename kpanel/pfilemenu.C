@@ -184,10 +184,41 @@ PFileMenu::PFileMenu(bool isRoot)
 {
   if (!testDir2(KDISKNAV_LOCAL_DIR)) {
     // local dir just created -> add some useful links
+#ifdef OLD  // OLD STYLE (symlinks)
     ::symlink(QDir::homeDirPath(), (const char*)
 	      QString(QDir::homeDirPath() +KDISKNAV_LOCAL_DIR + "/Home"));
     ::symlink((const char*)(QDir::homeDirPath() + "/Desktop"), (const char*)
 	      QString(QDir::homeDirPath() +KDISKNAV_LOCAL_DIR + "/Desktop"));
+#else  // NEW STYLE (URL files)
+    QString kdisknav_localdir = QDir::homeDirPath() +KDISKNAV_LOCAL_DIR;
+
+    FILE* fout = ::fopen(kdisknav_localdir + "/Home.kdelnk", "w");
+
+    if (fout != 0L) {
+      ::fprintf(fout, "# KDE Config File\n");
+      ::fprintf(fout, "[KDE Desktop Entry]\n");
+      ::fprintf(fout, "MiniIcon=kfm_home.xpm\n");
+      ::fprintf(fout, "Comment=Personal Files\n");
+      ::fprintf(fout, "URL=file:$HOME\n");
+      ::fprintf(fout, "Icon=kfm_home.xpm\n");
+      ::fprintf(fout, "Type=Link\n");
+      ::fclose(fout);
+    }
+
+    fout = ::fopen(kdisknav_localdir + "/Desktop.kdelnk", "w");
+
+    if (fout != 0L) {
+      ::fprintf(fout, "# KDE Config File\n");
+      ::fprintf(fout, "[KDE Desktop Entry]\n");
+      ::fprintf(fout, "MiniIcon=desktop_settings.xpm\n");
+      ::fprintf(fout, "Comment=Your desktop\n");
+      ::fprintf(fout, "URL=file:$HOME/Desktop\n");
+      ::fprintf(fout, "Icon=desktop_settings.xpm\n");
+      ::fprintf(fout, "Type=Link\n");
+      ::fclose(fout);
+    }
+
+#endif
   }
 
   if (isRoot)

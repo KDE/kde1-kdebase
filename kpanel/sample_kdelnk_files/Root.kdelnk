@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_red.xpm
+Comment=Root Folder
+URL=file:/
+Icon=folder_red.xpm
+Type=Link

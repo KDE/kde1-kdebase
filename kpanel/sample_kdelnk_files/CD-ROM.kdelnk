@@ -1,0 +1,6 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=cdrom_mount.xpm
+Comment=CD-ROM
+Icon=cdrom_mount.xpm
+Type=Link
