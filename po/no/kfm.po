@@ -1147,7 +1147,7 @@ msgstr " FEIL: Kunne ikke skrive til %s"
 
 # kiojob.cpp:292 kiojob.cpp:315 kiojob.cpp:334
 #: kiojob.cpp:565 kiojob.cpp:851
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1177,11 +1177,13 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Spesialfil vil ikke bli kopiert\n"
+"%s"
 
 #: kiojob.cpp:652
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d spesialfiler vil ikke bli kopiert."
 
 # kiojob.cpp:809
 #: kiojob.cpp:903
@@ -1213,11 +1215,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Spesialfil vil ikke bli flyttet\n"
+"%s"
 
 #: kiojob.cpp:1025
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d spesialfiler vil ikke bli flyttet."
 
 # kiojob.cpp:1198 kiojob.cpp:1338
 #: kiojob.cpp:1289 kiojob.cpp:1356
