@@ -3,9 +3,9 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_
 
 bin_PROGRAMS = kcmkpanel
 
-kcmkpanel_SOURCES = main.cpp panel.cpp desktops.cpp options.cpp
-BUILT_SOURCES = panel.moc desktops.moc options.moc
-noinst_HEADERS = panel.h desktops.h options.h
+kcmkpanel_SOURCES = main.cpp panel.cpp desktops.cpp options.cpp disknav.cpp
+BUILT_SOURCES = panel.moc desktops.moc options.moc disknav.moc
+noinst_HEADERS = panel.h desktops.h options.h disknav.h
 
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
@@ -24,3 +24,6 @@ options.cpp:options.moc
 options.moc: options.h
 	$(MOC) options.h -o options.moc
 
+disknav.cpp:disknav.moc
+disknav.moc: disknav.h
+	$(MOC) disknav.h -o disknav.moc
