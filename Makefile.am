@@ -6,7 +6,7 @@ SUBDIRS = kcheckpass kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kmenuedit kaudio kcontrol kappfinder pics applnk doc config\
 	kstart kikbd konsole po
 
-AUTOMAKE_OPTIONS = foreign
+AUTOMAKE_OPTIONS = foreign 1.4
 
 install-data-local:
 	@echo ""

@@ -7,9 +7,7 @@ PASSLIB= $(PASSWDLIB) $(PAMLIBS)
 
 INCLUDES = $(all_includes)
 
-#CFLAGS   = -Wall -Wno-implicit -Wno-return-type
-CFLAGS   += -DHAVE_CONFIG_H
-CXXFLAGS += -DHAVE_CONFIG_H
+#AM_CFLAGS   = -Wall -Wno-implicit -Wno-return-type
 
 bin_PROGRAMS = kdm kdmdesktop
 
