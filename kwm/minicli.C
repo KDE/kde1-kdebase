@@ -99,8 +99,19 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
   : QFrame(parent, name, f){
     if (!history){
       history = new QList <char>;
-      history->append("");
+      
+      // read in the saved history list (M.H.)
+      KConfig *config = kapp->getConfig();
+      QStrList hist;
+      config->setGroup("MiniCli");
+      config->readListEntry("History", hist);
+      for (unsigned int i=0; i<hist.count(); i++)
+        if (strcmp(hist.at(i),"") != 0)
+          history->append(qstrdup(hist.at(i)));	
+
       it = new QListIterator <char> (*history);
+      history->append("");
+      it->toLast();
     }
     if (!it->isEmpty())
       it->toLast();
@@ -210,6 +221,24 @@ void Minicli::cleanup(){
 		    RevertToPointerRoot, CurrentTime);
   }
   XSync(qt_xdisplay(), false);
+
+
+  // save history list (M.H.)
+
+  KConfig *config = kapp->getConfig();
+  config->setGroup("MiniCli");
+
+  unsigned int max = config->readNumEntry("HistoryLength", 50);
+  QStrList hist;
+  if (history) 
+    for (char *entry = history->first(); entry != 0; entry = history->next())
+      if (strcmp(entry,"") != 0)
+        hist.append(entry);
+  while (hist.count() > max)
+    hist.removeFirst();
+
+  config->writeEntry("History", hist);
+  config->sync();
 }
 
 void Minicli::commandCompletion(){
