@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm desktop
+Icon=desktop.xpm
+Type=Application
+Comment=Desktop Options
+Name=Desktop
+SwallowTitle=Desktop Options
