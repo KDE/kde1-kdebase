@@ -168,7 +168,7 @@ msgstr "Gjeldende"
 
 #: backgnd.cpp:1626
 msgid "Filled"
-msgstr "Fyllt"
+msgstr "Fylt"
 
 #: backgnd.cpp:1629
 msgid "Fish net"
