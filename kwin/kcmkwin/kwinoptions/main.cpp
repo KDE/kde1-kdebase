@@ -23,6 +23,7 @@
 #include <kwm.h>
 #include <kcontrol.h>
 #include "windows.h"
+#include "desktop.h"
 #include "titlebar.h"
 #include <ksimpleconfig.h>
 
@@ -42,6 +43,7 @@ private:
   KWindowConfig *windows;
   KTitlebarButtons *buttons;
   KTitlebarAppearance *appearance;
+  KDesktopConfig *desktop;
 };
 
 
@@ -61,12 +63,15 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
       if (!pages || pages->contains("titlebar"))
 	addPage(appearance = new KTitlebarAppearance(dialog, "titlebar"), 
 		klocale->translate("&Titlebar"), "kwm-2.html");
+      if (!pages || pages->contains("desktop"))
+	addPage(desktop = new KDesktopConfig(dialog, "desktop"), 
+		klocale->translate("&Desktop"), "kwm-3.html");
 
-      if (windows || buttons || appearance)
+      if (windows || buttons || appearance || desktop)
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"));
           justInit = TRUE;
         }
 
@@ -84,6 +89,8 @@ void KKWMApplication::apply()
 {
   if (windows)
     windows->applySettings();
+  if (desktop)
+    desktop->applySettings();
   if (buttons)
     buttons->applySettings();
   if (appearance)
