@@ -228,6 +228,15 @@ void KFMServer::slotRefreshDirectory( const char* _url )
 
 void KFMServer::slotOpenProperties( const char* _url )
 {
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+        QString tmp;
+        ksprintf(&tmp,"Malformed URL \n%s", _url);
+        QMessageBox::warning( (QWidget*)0L, 
+                              i18n( "KFM Error" ), tmp );
+        return;
+    }
     (void)new Properties( _url );
 }
 
