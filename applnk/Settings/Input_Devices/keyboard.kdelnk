@@ -3,7 +3,7 @@
 Exec=kcminput keyboard
 Icon=keyboard.xpm
 Type=Application
-DocPath=kcontrol/kcminput.html#keyboard
+DocPath=kcontrol/input/keyboard.html
 Comment=Keyboard settings
 Comment[de]=Einstellung der Tastaturparameter
 Name=Keyboard

@@ -3,7 +3,7 @@
 Exec=kcmdisplay colors
 Icon=colors.xpm
 Type=Application
-DocPath=kdisplay/kdisplay-5.html
+DocPath=kdisplay/kdisplay/colorscm.html
 Comment=Color settings
 Comment[de]=Einstellung der Bildschirmfarben
 Name=Colors

@@ -3,7 +3,7 @@
 Exec=kcmbell bell
 Icon=bell.xpm
 Type=Application
-DocPath=kcontrol/kcminput.html#keyboard
+DocPath=kcontrol/bell/bell.html
 Comment=Bell settings
 Comment[de]=Einstellung der Tastaturglocke
 Name=Bell
