@@ -1,0 +1,42 @@
+
+#: krootwm.C:63
+msgid "Help on desktop"
+msgstr "Pomoæ na radnoj površini"
+
+#: krootwm.C:64
+msgid "Execute command"
+msgstr "Izvedi naredbu"
+
+#: krootwm.C:65
+msgid "Display properties"
+msgstr "Prika¾i svojstva zaslona"
+
+#: krootwm.C:66
+msgid "Refresh desktop"
+msgstr "Osvje¾i radnu površinu"
+
+#: krootwm.C:67
+msgid "Arrange icons"
+msgstr "Rasporedi ikone"
+
+#: krootwm.C:69
+msgid "Lock screen"
+msgstr "Zakljuèaj ekran"
+
+#: krootwm.C:70
+msgid "Logout"
+msgstr "Odjava"
+
+#: krootwm.C:274
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:278
+msgid "Usage:"
+msgstr "Iskori¹tenje:"
+
+
+
+
+
+
