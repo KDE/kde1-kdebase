@@ -48,8 +48,14 @@ set_fixed( QWidget* w)
 #ifdef USE_PAM
 static const char *PAM_password;
 
+#ifdef PAM_MESSAGE_NONCONST
+typedef struct pam_message pam_message_type;
+#else
+typedef const struct pam_message pam_message_type;
+#endif
+
 static int PAM_conv (int num_msg,
-		     const struct pam_message **msg,
+		     pam_message_type **msg,
 		     struct pam_response **resp,
 		     void *) {
      int count = 0, replies = 0;
