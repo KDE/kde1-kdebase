@@ -109,9 +109,23 @@ bool AudioDev::grab(bool probeOnly)
          cerr << "maudio: Cannot open audio device.\n";
          return false;
        }
+       else {
+	 // errno == EBUSY
+	 if ( probeOnly )
+	   return true; // OK, the device *could* be opened
+	 else
+	   return false; // No, the device can not be opened NOW
+       }
+     }
+
+     // We only get here, if the device If the device could NOT be opened
+
+     if (probeOnly) {
+       // If we only wanted to probe for the device, close it and return here
+       close(audiodev);
+       return true;
      }
      else {
-       if (!probeOnly) {
        /*
 	* Now set sample format, then channels, then speed. It is important to follow this
 	* scheme. See OSS documentation for more info.
@@ -145,10 +159,9 @@ bool AudioDev::grab(bool probeOnly)
        Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);
        Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
 #endif
-       }
        ParamsChanged=false;
+       opened = true;
      }
-     opened = true;
   }
   return opened;
 }
