@@ -401,6 +401,10 @@ void Manager::clientMessage(XEvent*  ev){
       if (current())
 	current()->handleOperationsPopup(OP_STICKY);
     }
+    else if (com == "winOperations") {
+      if (current())
+	current()->showOperations();
+    }
     else if (com == "desktop1") {
       switchDesktop(1);
     }

@@ -14,11 +14,11 @@ In 0.10:
   patchlevel 24:
        - supports the following commands in addition:
 
-	refreshScreen, darkenScreen, logout, commandLine, taskManager,
-	configure, winMove, winResize, winRestore, winIconify,
-	winClose, winSticky, desktop1, desktop2, desktop3, desktop4,
-	desktop5, desktop6, desktop7, desktop8, desktop+1,d desktop+2, 
-	desktop%2
+     refreshScreen, darkenScreen, logout, commandLine, taskManager,
+     configure, winMove, winResize, winRestore, winIconify, winClose,
+     winSticky, winOperations, desktop1, desktop2, desktop3, desktop4, 
+     desktop5, desktop6, desktop7, desktop8, desktop+1, desktop+2, 
+     desktop-1, desktop-2, desktop%2
 
 
   patchlevel 23:
