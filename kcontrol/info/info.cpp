@@ -149,7 +149,7 @@ void KInfoListWidget::defaultSettings()
 	lBox->setGeometry(SCREEN_XY_OFFSET,SCREEN_XY_OFFSET,
                      width() -2*SCREEN_XY_OFFSET,
 		     height()-2*SCREEN_XY_OFFSET);
-	lBox->setTableFont(QFont("Courier"));
+	lBox->setTableFont(kapp->fixedFont);
 	lBox->enableKey();
 	lBox->setAutoUpdate(TRUE);
 

@@ -18,7 +18,7 @@ KMemoryWidget::KMemoryWidget(QWidget *parent, const char *name)
   totalMem = new QLabel("0k", this);
   totalMem->move(STARTX2,STARTY+0*DY);
   totalMem->setAutoResize(TRUE);
-  QFont courierFont("Courier");
+  QFont courierFont(kapp->fixedFont);
   KApplication::getKApplication()->getCharsets()->setQFont(courierFont);
   totalMem->setFont(courierFont);
 
