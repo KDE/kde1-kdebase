@@ -55,6 +55,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 
     last_tip_widget = 0;
 
+    callbacklist = 0L;
+
     setFrameStyle(QFrame::Panel| QFrame::Raised);
 
     setMouseTracking(true);

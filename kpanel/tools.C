@@ -351,6 +351,8 @@ void kPanel::generateWindowlist(QPopupMenu* p){
   int i = 0;
   int nw = kwmmapp->windows.count();
   p->clear();
+  if (callbacklist)
+    delete [] callbacklist;
   callbacklist = new Window[nw];
   for (w = kwmmapp->windows.first(); w; w = kwmmapp->windows.next())
     callbacklist[i++]=*w;
@@ -399,7 +401,6 @@ void kPanel::generateWindowlist(QPopupMenu* p){
       }
     }
   }
-  delete [] callbacklist;
 }
 
 
@@ -409,7 +410,7 @@ void kPanel::windowlistActivated(int item){
   }
   else {
     Window w = callbacklist[item];
-    delete [] callbacklist;
+    //    delete [] callbacklist;
     KWM::activate(w);
   }
 }
