@@ -151,6 +151,7 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 			break;
 
 		case Key_Return:
+            timer.stop();
 			waitForAuthentication = true;
 			if ( tryPassword() )
 				emit passOk();
