@@ -132,11 +132,9 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     // Creates the new menu
     menuNew = new QPopupMenu;
     CHECK_PTR( menuNew );
-    menuNew->insertItem( klocale->translate("Folder") );
+
     connect( menuNew, SIGNAL( activated( int ) ),
 	     this, SLOT( slotNewFile( int ) ) );
-
-    templatesList.append( QString( "Folder") );
 
     // Find the templates path
     QString configpath = KApplication::localkdedir() + "/share/config/kfmrc";
@@ -159,38 +157,13 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     if ( templatePath.right(1) != "/")
 	templatePath += "/";
 
-    QDir d( templatePath );
-    const QFileInfoList *list = d.entryInfoList();
-    if ( list == 0L )
-        warning(klocale->translate("ERROR: Template does not exist '%s'"), templatePath.data());
-    else
-    {
-	QFileInfoListIterator it( *list );      // create list iterator
-	QFileInfo *fi;                          // pointer for traversing
-
-	while ( ( fi = it.current() ) != 0L )
-	{
-	    if ( strcmp( fi->fileName().data(), "." ) != 0 &&
-		 strcmp( fi->fileName().data(), ".." ) != 0 )
-	    {
-		QString tmp = fi->fileName().data();
-                KSimpleConfig config(templatePath + tmp.data());
-                config.setGroup( "KDE Desktop Entry" );
-		templatesList.append( tmp );
-		if ( tmp.right(7) == ".kdelnk" )
-		    tmp.truncate( tmp.length() - 7 );
-		menuNew->insertItem( config.readEntry("Name", tmp ) );
-	    }
-	    ++it;                               // goto next list element
-	}
-    }
-
     // Bookmark code ( Torben )
     bookmarks = new QPopupMenu();
     connect( bookmarks, SIGNAL( activated( int ) ),
 	     SLOT( slotBookmarkSelected( int ) ) );
     updateBookmarkMenu();
 
+    updateNewMenu (); // needs to be here because of templates path. David.
  
     buildMenubars();
 }
@@ -331,6 +304,8 @@ void KRootWm::kwmCommandReceived(QString com)
     macMode = !macMode;
     buildMenubars();
   }
+  if (com== "krootwm:refreshNew")
+    updateNewMenu ();
 }
 
 void KRootWm::updateBookmarkMenu (void)
@@ -342,6 +317,40 @@ void KRootWm::updateBookmarkMenu (void)
   QString bdir( kapp->localkdedir().data() );
   bdir += "/share/apps/kfm/bookmarks";
   scanBookmarks( bookmarks, bdir );
+}
+
+void KRootWm::updateNewMenu (void)
+{
+    menuNew->clear();
+    templatesList.clear();
+
+    templatesList.append( QString( "Folder") );
+    menuNew->insertItem( klocale->translate("Folder") );
+    QDir d( templatePath );
+    const QFileInfoList *list = d.entryInfoList();
+    if ( list == 0L )
+        warning(klocale->translate("ERROR: Template does not exist '%s'"), templatePath.data());
+    else
+    {
+	QFileInfoListIterator it( *list );      // create list iterator
+	QFileInfo *fi;                          // pointer for traversing
+
+	while ( ( fi = it.current() ) != 0L )
+	{
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 &&
+		 strcmp( fi->fileName().data(), ".." ) != 0 )
+	    {
+		QString tmp = fi->fileName().data();
+                KSimpleConfig config(templatePath + tmp.data());
+                config.setGroup( "KDE Desktop Entry" );
+		templatesList.append( tmp );
+		if ( tmp.right(7) == ".kdelnk" )
+		    tmp.truncate( tmp.length() - 7 );
+		menuNew->insertItem( config.readEntry("Name", tmp ) );
+	    }
+	    ++it;                               // goto next list element
+	}
+    }
 }
 
 //----------------------------------------------
