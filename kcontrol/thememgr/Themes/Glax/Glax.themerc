@@ -3,19 +3,17 @@
 [General]
 Author=Kurt Granroth
 Homepage=http://kde.themes.org
-Version=0.1
+Version=0.2
 description=This is a combination of the Galaxy and Grex themes
 Email=granroth@kde.org
 #-----------------------------------------------------------------------------
 [Display]
 CommonDesktop=true
-UseWallpaper=true
-Pattern=255,255,255,255,255,255,255,255,
-ColorMode=Flat
-Color1=#000000
-Color2=#a0a0a4
-OrientationMode=Portrait
-Wallpaper=Glax.jpg
+ColorMode0=Flat
+Color0_1=#000000
+Color0_2=#a0a0a4
+Wallpaper0=Glax.jpg
+WallpaperMode0=Centred
 #-----------------------------------------------------------------------------
 [Colors]
 contrast=7
