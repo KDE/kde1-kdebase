@@ -7,11 +7,13 @@ Comment[da]=Fransk tastatur (Svejts)
 Comment[de]=Französische Tastatur (Schweiz)
 Comment[fr]=Clavier français (Suisse)
 Comment[pt_BR]=Teclado Francês (Suíça)
+Comment[sk]=Francúzska klávesnica (©vajèiarsko)
 Language=French (Switzerland)
 Language[da]=Fransk (Svejts)
 Language[de]=Französisch (Deutsch)
 Language[fr]=Français (Suisse)
 Language[pt_BR]=Francês (Suíça)
+Language[sk]=Francúzsky (©vajèiarsko)
 
 Label=CH
 Locale=fr_CH

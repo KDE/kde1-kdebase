@@ -7,12 +7,14 @@ Comment[da]=Tysk tastatur (Svejts)
 Comment[de]=Deutsche Tastatur (Schweiz)
 Comment[fr]=Clavier allemand (Suisse)
 Comment[pt_BR]=Teclado Alemão (Suíça)
+Comment[sk]=Nemecká klávesnica (©vajèiarsko)
 
 Language=German (Switzerland)
 Language[da]=Tysk (Svejts)
 Language[de]=Deutsch (Schweiz)
 Language[fr]=Allemand (Suisse)
 Language[pt_BR]=Alemão (Suíça)
+Language[sk]=Nemecký (©vajèiarsko)
 
 Label=CH
 Locale=de_CH

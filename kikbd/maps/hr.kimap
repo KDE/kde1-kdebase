@@ -7,12 +7,14 @@ Comment=Croatian keyboard layout
 Comment[da]=Kroatisk tastaturudlægning
 Comment[fr]=Disposition de clavier croate
 Comment[pt_BR]=Disposição de teclado croata
+Comment[sk]=Chorvátske rozlo¾enie klávesnice
 
 Language=Croatian
 Language[da]=Kroatisk
 Language[de]=Kroatisch
 Language[fr]=Croate
 Language[pt_BR]=Croata
+Language[sk]=Chorvátsky
 
 Label=Hr 
 Locale=hr

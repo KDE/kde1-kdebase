@@ -8,12 +8,14 @@ Comment[da]=Italiensk tastatur (Italien)
 Comment[de]=Italienische Tastatur (Italien)
 Comment[fr]=Clavier italien (Italie)
 Comment[pt_BR]=Teclado Italiano (Itália)
+Comment[sk]=Talianska klávesnica (Taliansko)
 
 Language=Italian
 Language[da]=Italiensk
 Language[de]=Italienisch
 Language[fr]=Italien
 Language[pt_BR]=Italiano
+Language[sk]=Taliansky
 
 Charset=iso-8859-1
 Label=It

@@ -7,12 +7,14 @@ Comment[da]=Slovensk tastatur (Slovenien)
 Comment[de]=Slowenische Tastatur (Slowenien)
 Comment[fr]=Clavier slovène (Slovénie)
 Comment[pt_BR]=Teclado Esloveno (Eslovênia)
+Comment[sk]=Slovinská klávesnica (Slovinsko)
 
 Language=Slovene
 Language[da]=Slovvensk
 Language[de]=Slowenisch
 Language[fr]=Slovène
 Language[pt_BR]=Esloveno
+Language[sk]=Slovinský
 
 Charset=ISO-8859-2
 Label=Sl
