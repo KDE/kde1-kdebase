@@ -20,6 +20,7 @@ Name[ru]=Рабочий стол
 Name[sk]=Plocha
 Name[sl]=Namizje
 Name[sv]=Skrivbordet
+Name[ca]=Escriptori
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop.xpm
 MiniIcon=desktop.xpm

@@ -26,6 +26,7 @@ Name[sl]=Upravljalnik datotek
 Name[sv]=Filhanteraren
 Comment=You can configure the look and feel of the File Manager here 
 Comment[ja]=¤³¤³¤Ç¥Õ¥¡¥¤¥ë¥Þ¥Í¡¼¥¸¥ã¤Î¤ß¤¿¤á¤ò¥«¥¹¥¿¥Þ¥¤¥º¤Ç¤­¤Þ¤¹
+Comment[ca]=Aquí podeu configurar l'aspecte i efecte del gestor de fitxers
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
 Exec=kcmkfm font color misc
