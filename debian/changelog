@@ -1,3 +1,10 @@
+kdebase (4:1.1.1-19990701-1) unstable; urgency=low
+
+  * New upstream CVS version 
+  * This is pre-1.1.2 (frozen)
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Thu, 01 Jul 1999 23:45:27 -0400
+
 kdebase (4:1.1.1-19990624-1) unstable; urgency=low
 
   * Fixing some missing documentation for kdm.  
