@@ -7,5 +7,5 @@ SwallowTitle=xload
 Exec=xosview
 Comment=Informations about your system status
 Comment[fi]=Tietoja systeemin tilasta
-Comment[fr]=Informations sur votre système
+Comment[fr]=Informations sur l'état de votre système
 Comment[pt]=Informações sobre o seu sistema

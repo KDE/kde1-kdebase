@@ -166,7 +166,7 @@ msgstr ""
 "Modula"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"

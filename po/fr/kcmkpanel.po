@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-02-25 21:36 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -111,11 +111,11 @@ msgstr "Menu \"P&ersonnel\" en premier"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Panneau &auto-cachable"
+msgstr "Panneau &auto-masquable"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Barre de &tâches auto-cachable"
+msgstr "Barre de &tâches auto-masquable"
 
 #: options.cpp:81
 msgid "Clock"

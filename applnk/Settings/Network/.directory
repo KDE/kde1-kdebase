@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Network
+Name[fr]=Réseau
 Name[de]=Netzwerk
 Name[da]=Netværk
 Name[pl]=Sieæ

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Toys
+Name[fr]=Petits outils sympa
 Name[de]=Spielzeuge
 Name[pl]=Zabawa
 Name[fi]=Lelut

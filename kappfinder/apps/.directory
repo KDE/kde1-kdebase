@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Icon=mini-bx2.xpm
 Name=non-KDE Apps
+Name[fr]=Applications non-KDE
 Name[DE]=nicht-KDE Programme
 Name[pl]=Aplikacje spoza KDE
 Name[fi]=Muut sovellukset

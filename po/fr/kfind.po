@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-17 23:30 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -27,7 +27,7 @@ msgstr "&Ouvrir"
 
 #: kfindtop.cpp:117
 msgid "&Add to archive"
-msgstr "&Ajouter à l'archive..."
+msgstr "&Ajouter à l'archive ..."
 
 #: kfindtop.cpp:122
 msgid "&Properties"
@@ -55,7 +55,7 @@ msgstr "&Inverser la sélection"
 
 #: kfindtop.cpp:158
 msgid "&Preferences ..."
-msgstr "&Préférences..."
+msgstr "&Préférences ..."
 
 #: kfindtop.cpp:163
 #, c-format
@@ -68,7 +68,7 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 "KFind %s\n"
-"Interface graphique de l'utilitaire de recherche\n"
+"Interface graphique de l'utilitaire de recherche find\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Remerciements à Stephan Kulow\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: kfindtop.cpp:183
 msgid "Start Search"
-msgstr "Démarrer la recherche"
+msgstr "Lancer la recherche"
 
 #: kfindtop.cpp:188
 msgid "New Search"
@@ -88,7 +88,7 @@ msgstr "Stopper la recherche"
 
 #: kfindtop.cpp:206
 msgid "Add to archive"
-msgstr "Ajouter à l'archive..."
+msgstr "Ajouter à l'archive ..."
 
 #: kfindtop.cpp:216
 msgid "Properties"
@@ -112,7 +112,7 @@ msgstr "Regarder &dans :"
 
 #: kftabdlg.cpp:53
 msgid "&Browse ..."
-msgstr "&Parcourir..."
+msgstr "&Parcourir ..."
 
 #: kftabdlg.cpp:65
 msgid "Include &subfolders"
@@ -160,7 +160,7 @@ msgstr " Date de modification "
 
 #: kftabdlg.cpp:173
 msgid "Of &type:"
-msgstr " Du &type :"
+msgstr "Du &type :"
 
 #: kftabdlg.cpp:175
 msgid "&Containing Text:"
@@ -172,7 +172,7 @@ msgstr "&La taille est :"
 
 #: kftabdlg.cpp:201
 msgid "All Files and Folders"
-msgstr "Tout les fichiers et dossiers"
+msgstr "Tous les fichiers et dossiers"
 
 #: kftabdlg.cpp:209
 msgid "At Least"
@@ -188,19 +188,19 @@ msgstr " Avancé "
 
 #: kftabdlg.cpp:389
 msgid "The date is not valid!!"
-msgstr "La date est incorrecte !!"
+msgstr "La date est incorrecte !"
 
 #: kftabdlg.cpp:401
 msgid "The month(s) value isn't valid!!"
-msgstr "Le mois est incorrect !!"
+msgstr "Le mois est incorrect !"
 
 #: kftabdlg.cpp:412
 msgid "The day(s) value isn't valid!!"
-msgstr "Le jour est incorrect !!"
+msgstr "Le jour est incorrect !"
 
 #: kftabdlg.cpp:429
 msgid "The value in size isn't valid number!!"
-msgstr "La taille est un nombre incorrect !!"
+msgstr "La taille est un nombre incorrect !"
 
 #: kfoptions.cpp:51
 msgid "Preferences"
@@ -232,11 +232,11 @@ msgstr "Enregistrement"
 
 #: kfoptions.cpp:129
 msgid "Create Archive:"
-msgstr "Création de l'archive :"
+msgstr "Créer l'archive :"
 
 #: kfoptions.cpp:131
 msgid "Add to Archive:"
-msgstr "Ajoute à l'archive :"
+msgstr "Ajouter à l'archive :"
 
 #: kfoptions.cpp:135
 msgid "Patterns:"
@@ -273,7 +273,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Voulez-vous réellement supprimer ce fichier:\n"
+"Voulez-vous réellement supprimer le fichier :\n"
 "%s"
 
 #: kfwin.cpp:197
@@ -285,8 +285,8 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Vous n'avez pas de permission\n"
-" pour supprimer ce fichier"
+"Vous n'avez pas la permission\n"
+" de supprimer ce fichier"
 
 #: kfwin.cpp:216
 msgid ""
@@ -301,7 +301,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Vous n'avez pas de permission\n"
+"Vous n'avez pas la permission\n"
 " de supprimer ce répertoire"
 
 #: kfwin.cpp:239
@@ -326,10 +326,10 @@ msgstr "Type d'archive inconnu !"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
-msgstr "Erreur en créant le processus fils !"
+msgstr "Erreur lors de la création du processus fils !"
 
 #~ msgid "Kfind &help"
-#~ msgstr "&Aide Kfind"
+#~ msgstr "&Aide sur Kfind"
 
 #~ msgid "About &Qt"
 #~ msgstr "A propos de &Qt"

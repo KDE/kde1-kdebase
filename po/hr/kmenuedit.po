@@ -253,9 +253,3 @@ msgstr "Osobni:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Uobièajeni:"
-
-#~ msgid "Type:"
-#~ msgstr "Vrsta:"
-
-#~ msgid "Name:"
-#~ msgstr "Ime:"

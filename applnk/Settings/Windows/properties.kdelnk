@@ -12,7 +12,7 @@ Comment[cs]=Vlastnosti okna
 Comment[sk]=Vlastnosti okna
 Comment[sv]=Fönsteregenskaper
 Comment[fi]=Ikkunan ominaisuudet
-Comment[fr]=Propriétés des fenêtres
+Comment[fr]=Configuration des fenêtres
 Comment[pt]=Propriedades das janelas
 Comment[it]=Proprieta' delle finestre
 Comment[hu]=Ablak beállításai
@@ -39,4 +39,3 @@ SwallowTitle[hu]=Ablak beállításai
 SwallowTitle[sk]=Vlastnosti okna
 SwallowTitle[cs]=Vlastnosti okna
 SwallowTitle[hr]=Svojstva prozora
-

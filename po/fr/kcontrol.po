@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-01-25 18:15 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: configlist.cpp:119
 msgid "Unknown module: "
-msgstr "Module inconnu : "
+msgstr "Module inconnu :"
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
-msgstr "Centre de contrôle KDE"
+msgstr "Centre de contrôle de KDE"
 
 #: toplevel.cpp:78
 msgid "&Swallow modules"
@@ -35,7 +35,7 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE Control Center - Version 0.3\n"
+"Centre de contrôle de KDE - Version 0.3\n"
 "\n"
 "Ecrit par Matthias Hölzer\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"

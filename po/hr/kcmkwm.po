@@ -127,18 +127,16 @@ msgid "Move"
 msgstr "Premjesti"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Zasjenjeno"
+msgstr "Nezasjenjeno"
 
 #: titlebar.cpp:991
 msgid "Iconify"
 msgstr "Napravi ga ikonom"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Zalijepi"
+msgstr "Odlijepi"
 
 #: titlebar.cpp:993
 msgid "Resize"
@@ -267,6 +265,3 @@ msgid ""
 msgstr ""
 "Window Snap Zone:\n"
 "       (pikseli)"
-
-#~ msgid "Edge Resistance:"
-#~ msgstr "Otpor ivice:"

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Editors
+Name[fr]=Editeurs de texte
 Name[de]=Editoren
 Name[pl]=Edytory
 Name[fi]=Editorit

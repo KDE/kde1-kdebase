@@ -32,8 +32,7 @@ Init=kcminput -init
 SwallowTitle=Keyboard properties
 SwallowTitle[pl]=Ustawienia klawiatury
 SwallowTitle[sv]=Inställningar för tangentbord
-SwallowTitle[fr]=Propriétés du clavier
+SwallowTitle[fr]=Configuration du clavier
 SwallowTitle[pt]=Configuração do teclado
 SwallowTitle[hu]=Billentyûzet beállításai
 SwallowTitle[hr]=Svojstva tipkovnice
-

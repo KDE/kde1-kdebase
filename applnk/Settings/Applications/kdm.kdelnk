@@ -14,13 +14,14 @@ Comment[fr]=Configuration de KDM
 Comment[pt]=Todas as configurações do KDM
 Comment[hr]=Sve KDM postave
 Name=Desktop Manager
+Name[fr]=Configuration du bureau
 Name[hr]=Upravitelj radne povr¹ine
 Name[pt]=Gestor de Ambiente de Trabalho
 SwallowTitle=KDM all
 SwallowTitle[pl]=Wszystkie ustawienia KDM
 SwallowTitle[fi]=KDM kaikki
 SwallowTitle[sv]=KDM alla
-SwallowTitle[fr]=Configuration KDM 
+SwallowTitle[fr]=Configuration de KDM 
 SwallowTitle[pt]=Configuração KDM
 SwallowTitle[hr]=KDM sve
 

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Development
+Name[fr]=Développement
 Name[de]=Entwicklung
 Name[pl]=Narzêdzia programistów
 Name[fi]=Kehitystyökalut

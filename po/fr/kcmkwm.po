@@ -7,12 +7,12 @@ msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "PO-Revision-Date: 1998-04-27 14:14+0100\n"
-"Main-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
-"Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
+"Main-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 
 #: main.cpp:59
 msgid "&Windows"
@@ -24,7 +24,7 @@ msgstr "&Boutons"
 
 #: main.cpp:65
 msgid "&Titlebar"
-msgstr "Barre de &titres"
+msgstr "Barre de &titre"
 
 #: main.cpp:68
 msgid "&Desktop"
@@ -40,7 +40,7 @@ msgstr "Style du gestionnaire de fenêtres"
 
 #: titlebar.cpp:117
 msgid "Minimize"
-msgstr "Mettre en icône"
+msgstr "Icônifier"
 
 #: titlebar.cpp:121
 msgid "Maximize"
@@ -58,33 +58,33 @@ msgstr "Menu"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La partie gauche de la barre de titres est pleine...\n"
+"La partie gauche de la barre de titre est pleine ...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"La partie droite de la barre de titres est pleine...\n"
+"La partie droite de la barre de titre est pleine ...\n"
 "Désactivation du bouton \"Maximiser\".\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La partie gauche de la barre de titres est pleine...\n"
-"Désactivation du bouton \"Mettre en icône\".\n"
+"La partie gauche de la barre de titre est pleine ...\n"
+"Désactivation du bouton \"Icônifier\".\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"La partie droite de la barre de titres est pleine...\n"
-"Désactivation du bouton \"Mettre en icône\".\n"
+"La partie droite de la barre de titre est pleine ...\n"
+"Désactivation du bouton \"Icônifier\".\n"
 
 #: titlebar.cpp:925
 msgid "Titlebar appearance"
-msgstr "Apparence de la barre de titres"
+msgstr "Apparence de la barre de titre"
 
 #: titlebar.cpp:927
 msgid "Shaded"
@@ -123,12 +123,12 @@ msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
-"Double clic sur la barre de titre \n"
-"avec le bouton gauche de la souris :"
+"Un double-clic sur la barre de titre \n"
+"avec le bouton gauche de la souris provoquera :"
 
 #: titlebar.cpp:988
 msgid "(Un)Maximize"
-msgstr "Maximiser/Minimiser"
+msgstr "(Dé)Maximiser"
 
 #: titlebar.cpp:989
 msgid "Move"
@@ -136,19 +136,19 @@ msgstr "Déplacer"
 
 #: titlebar.cpp:990
 msgid "(Un)Shade"
-msgstr "Masquer/Démasquer"
+msgstr "(Dé)Masquer"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr "Iconifier"
+msgstr "Icônifier"
 
 #: titlebar.cpp:992
 msgid "(Un)Sticky"
-msgstr "Clouer/Déclouer"
+msgstr "(Dé)Clouer"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr "Retailler"
+msgstr "Redimensionner"
 
 #: titlebar.cpp:994
 msgid "Restore"
@@ -172,15 +172,15 @@ msgstr "Opaque"
 
 #: windows.cpp:79
 msgid "Resize Animation"
-msgstr "Animation des fenêtres"
+msgstr "Animation lors des redimensionnements"
 
 #: windows.cpp:84
 msgid "Placement policy"
-msgstr "Politique de placement"
+msgstr "Politique de placement des fenêtres"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr "Intelligent"
+msgstr "Intelligente"
 
 #: windows.cpp:88
 msgid "Cascade"
@@ -188,7 +188,7 @@ msgstr "En cascade"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr "Interactif"
+msgstr "Interactive"
 
 #: windows.cpp:92
 msgid "Random"
@@ -196,11 +196,11 @@ msgstr "Aléatoire"
 
 #: windows.cpp:94
 msgid "Manual"
-msgstr "Manuel"
+msgstr "Manuelle"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr "Permettre le recouvrement:"
+msgstr "Permettre le recouvrement :"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -231,8 +231,8 @@ msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
-"Delai pour l'auto-élévation\n"
-"(désactivé si <100ms)"
+"Délai avant le passage au premier plan\n"
+"(désactivé si inférieur à 100 ms)"
 
 #: windows.cpp:123
 msgid "miliseconds"
@@ -248,11 +248,11 @@ msgstr "Rendre actifs les bords du bureau"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Curseur au centre de l'écran après le changement de bureau"
+msgstr "Placer la souris au centre de l'écran après un changement de bureau"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr "Délai avant changement de bureau"
+msgstr "Délai avant un changement de bureau :"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
@@ -263,7 +263,7 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zone d'attraction des bords:\n"
+"Zone d'attraction des bords :\n"
 "       (pixels)"
 
 #: desktop.cpp:116
@@ -271,5 +271,5 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Zone d'attraction des fenêtres:\n"
+"Zone d'attraction des fenêtres :\n"
 "       (pixels)"

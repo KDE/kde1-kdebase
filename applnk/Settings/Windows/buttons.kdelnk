@@ -12,7 +12,7 @@ Comment[cs]=Uspoøádání dekorací oken
 Comment[sk]=Usporiadanie dekorácií okien
 Comment[sv]=Placering av knappar
 Comment[fi]=Ikkunan nappien järjestys
-Comment[fr]=Placement des boutons des fenêtres
+Comment[fr]=Emplacement des boutons des fenêtres
 Comment[pt]=Colocação dos botões das janelas
 Comment[hu]=Az ablak gombjainak elrendezése
 Comment[hr]=Raspored gumbiju na prozorima
@@ -38,4 +38,3 @@ SwallowTitle[hu]=Ablak gombjai
 SwallowTitle[sk]=Dekorácia okien
 SwallowTitle[cs]=Dekorace oken 
 SwallowTitle[hr]=Gumbi na prozorima
-

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-04-17 15:21+0200\n"
 "PO-Revision-Date: 1998-01-25 18:31 CET\n"
-"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain;\n"
@@ -32,7 +32,7 @@ msgstr "Nouvelle &fenêtre"
 
 #: kfmgui.cpp:302
 msgid "&Run..."
-msgstr "&Exécuter..."
+msgstr "&Exécuter ..."
 
 #: kfmgui.cpp:304
 msgid "Open &Terminal"
@@ -40,15 +40,15 @@ msgstr "Ouvrir un &terminal"
 
 #: kfmgui.cpp:307
 msgid "&Open Location..."
-msgstr "&Ouvrir l'adresse..."
+msgstr "&Ouvrir l'URL ..."
 
 #: kfmgui.cpp:309
 msgid "&Find"
-msgstr "&Chercher"
+msgstr "Re&chercher"
 
 #: kfmgui.cpp:317
 msgid "&Quit..."
-msgstr "&Quitter..."
+msgstr "&Quitter ..."
 
 #: kfmgui.cpp:326
 msgid "&Move to Trash"
@@ -56,11 +56,11 @@ msgstr "Envoyer à la &poubelle"
 
 #: kfmgui.cpp:331
 msgid "&Select"
-msgstr "&Selectionner"
+msgstr "&Sélectionner"
 
 #: kfmgui.cpp:335
 msgid "Mime Types"
-msgstr "Types Mime"
+msgstr "Types MIME"
 
 #: kfmgui.cpp:337
 msgid "Applications"
@@ -68,7 +68,7 @@ msgstr "Applications"
 
 #: kfmgui.cpp:343
 msgid "Global Mime Types"
-msgstr "Types Mime globaux"
+msgstr "Types MIME globaux"
 
 #: kfmgui.cpp:345
 msgid "Global Applications"
@@ -76,36 +76,36 @@ msgstr "Applications globales"
 
 #: kfmgui.cpp:352
 msgid "Show &Dot Files"
-msgstr "Montrer les fichiers &cachés"
+msgstr "Fichiers cac&hés"
 
 #: kfmgui.cpp:354
 msgid "Show Tr&ee"
-msgstr "Montrer l'&arborescence"
+msgstr "&Arborescence"
 
 #: kfmgui.cpp:356
 msgid "&Visual Schnauzer"
-msgstr "\"&Visual Schnauzer\""
+msgstr "&Mini-images"
 
 #: kfmgui.cpp:358
 msgid "&HTML View"
-msgstr "Vue &HTML"
+msgstr "&HTML"
 
 #: kfmgui.cpp:361
 msgid "&Icon View"
-msgstr "Vue &Icône"
+msgstr "&Grandes icônes"
 
 #: kfmgui.cpp:363
 msgid "&Text View"
-msgstr "Vue &texte"
+msgstr "&Texte"
 
 #: kfmgui.cpp:365
 msgid "&Long View"
-msgstr "Vue lar&ge"
+msgstr "&Détails"
 
 #: kfmgui.cpp:367
 #, fuzzy
 msgid "&Short View"
-msgstr "Vue &Icône"
+msgstr "&Petites icônes"
 
 #: kfmgui.cpp:373
 msgid "Rel&oad Tree"
@@ -121,7 +121,7 @@ msgstr "Relire les &liaisons"
 
 #: kfmgui.cpp:380
 msgid "&View Frame Source"
-msgstr "Voir le source du ca&dre"
+msgstr "Voir le source du &cadre"
 
 #: kfmgui.cpp:382
 msgid "View Docu&ment Source"
@@ -129,7 +129,7 @@ msgstr "Voir le &source du document"
 
 #: kfmgui.cpp:393
 msgid "Show History"
-msgstr ""
+msgstr "Afficher l'historique"
 
 #: kfmgui.cpp:395
 msgid "Show Cache"
@@ -161,7 +161,7 @@ msgstr "Afficher la barre d'&outils"
 
 #: kfmgui.cpp:416
 msgid "Show &Location bar"
-msgstr "Afficher l'&adresse"
+msgstr "Afficher l'UR&L"
 
 #: kfmgui.cpp:419
 msgid "Sa&ve Settings"
@@ -169,11 +169,11 @@ msgstr "&Enregistrer les options"
 
 #: kfmgui.cpp:421
 msgid "Configure Browser..."
-msgstr "Configurer le butineur..."
+msgstr "Configurer le navigateur ..."
 
 #: kfmgui.cpp:464
 msgid "&About..."
-msgstr "&A propos..."
+msgstr "&A propos ..."
 
 #: kfmgui.cpp:474
 msgid "&Bookmarks"
@@ -189,7 +189,7 @@ msgstr "Stop"
 
 #: kfmgui.cpp:569
 msgid "Could not load icon\n"
-msgstr "Ne peut charger l'icône\n"
+msgstr "Impossible de charger l'icône\n"
 
 #: bookmark.cpp:259 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1529
 #: kbind.cpp:1537 kbind.cpp:1555 kbind.cpp:1572 kbind.cpp:1630 kbind.cpp:1642
@@ -211,11 +211,11 @@ msgstr "Ne peut charger l'icône\n"
 #: root.cpp:1105 root.cpp:1111 root.cpp:1117 root.cpp:1192 root.cpp:1694
 #: root.cpp:1719
 msgid "KFM Error"
-msgstr "Erreur KFM"
+msgstr "Erreur de KFM"
 
 #: kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
 msgid "Malformed URL\n"
-msgstr "URL malformée\n"
+msgstr "URL mal écrite\n"
 
 #: kfmgui.cpp:869
 msgid "Select files:"
@@ -223,7 +223,7 @@ msgstr "Sélectionner les fichiers :"
 
 #: kfmgui.cpp:886
 msgid "&Edit Bookmarks..."
-msgstr "Editer les &signets..."
+msgstr "Modifier les &signets ..."
 
 #: kfmgui.cpp:896
 msgid "&Add Bookmark"
@@ -237,11 +237,11 @@ msgstr "Nouveau "
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
 #: kiojob.cpp:71 root.cpp:1106
 msgid "ERROR: Malformed URL"
-msgstr "ERREUR : URL malformée"
+msgstr "ERREUR : URL mal écrite"
 
 #: kfmgui.cpp:1139 kfmserver.cpp:178
 msgid "Open Location:"
-msgstr "Ouvrir l'adresse :"
+msgstr "Ouvrir l'URL :"
 
 #: kfmgui.cpp:1195
 msgid "KFM Confirm"
@@ -252,8 +252,8 @@ msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
-"Voulez-vous vraiment sortir ?\n"
-"Des fonctions importantes du bureau seront perdues"
+"Désirez-vous vraiment sortir ?\n"
+"Des fonctionnalités importantes du bureau seront perdues."
 
 #: kfmgui.cpp:1226
 msgid "About KFM"
@@ -285,11 +285,11 @@ msgstr "Document : terminé"
 
 #: kfmview.cpp:352
 msgid "ERROR: Drop over malformed URL"
-msgstr "ERREUR : URL incorrecte malformée déposée"
+msgstr "ERREUR : utilisation d'une URL mal écrite"
 
 #: kfmview.cpp:377
 msgid "ERROR: You dropped some URL over itself"
-msgstr "ERREUR : vous avez déposé un fichier sur lui-même"
+msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 #: kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
@@ -308,7 +308,7 @@ msgstr ""
 
 #: kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
 msgid "ERROR: You dropped a URL over itself"
-msgstr "ERREUR : vous avez déposé un fichier sur lui-même"
+msgstr "ERREUR : vous avez déposé un fichier URL sur lui-même"
 
 #: kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
 msgid "ERROR: You dropped a directory over one of its children"
@@ -320,11 +320,11 @@ msgstr "Ouvrir avec :"
 
 #: kfmview.cpp:485 root.cpp:1057
 msgid "ERROR: Can not open properties for multiple files"
-msgstr "ERREUR : Impossible d'ouvrir les propriétés pour plusieurs fichiers"
+msgstr "ERREUR : impossible d'ouvrir les propriétés pour plusieurs fichiers"
 
 #: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
 msgid "Could not access Trash Bin"
-msgstr "Impossible d'accéder à la poubelle"
+msgstr "Impossible d'accéder à la corbeille"
 
 #: kfmview.cpp:553 root.cpp:1088
 msgid "Can not paste into multiple directories"
@@ -361,7 +361,7 @@ msgstr "octets"
 
 #: kbind.cpp:302
 msgid "The mime type config file "
-msgstr "Le fichier de configuration du type mime"
+msgstr "Le fichier de configuration de type MIME"
 
 #: kbind.cpp:303
 msgid "does not conatain a MimeType=... entry"
@@ -369,11 +369,11 @@ msgstr "ne contient aucune entrée MimeType=..."
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
-msgstr "Aucun type mime installé !"
+msgstr "Aucun type MIME installé !"
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
-msgstr "Impossible de trouver le type mime\n"
+msgstr "Impossible de trouver le type MIME\n"
 
 #: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1905

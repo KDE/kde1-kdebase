@@ -11,7 +11,7 @@ Comment[cs]=Emulátor terminálu (kvt)
 Comment[sk]=Emulátor terminálu (kvt)
 Comment[sv]=Terminalemulering (kvt)
 Comment[fi]=Terminaaliemulaattori (kvt)
-Comment[fr]=Emulation de terminal (kvt)
+Comment[fr]=Emulateur de Terminal (kvt)
 Comment[it]=Emulazione Terminale (kvt)
 Comment[pt]=Emulador de Terminal
 Comment[hr]=Emulator Terminala (kvt)
@@ -26,4 +26,3 @@ Name[fr]=Terminal
 Name[it]=Terminale
 Name[pt]=Terminal
 Name[hr]=Terminal
-

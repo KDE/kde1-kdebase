@@ -58,9 +58,8 @@ msgid "&Scaled"
 msgstr "&Razvuèeno"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Pozadinska slika"
+msgstr "Nema pozadinske slike"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -75,33 +74,28 @@ msgid "Desktop names"
 msgstr "Imena radnih povr¹ina"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Postava pozadine sa dvije boje"
+msgstr "Pozadina sa dvije boje"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "&Mje¹aj boje s desna na lijevo"
+msgstr "Mje¹aj boje s &vrha prema dnu"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "&Mje¹aj boje s desna na lijevo"
+msgstr "Mje¹aj boje s &desna na lijevo"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
-msgstr "&Uzorak"
+msgstr "Koristi &Uzorak"
 
 #: backgnd.cpp:983
 msgid "Preview"
 msgstr "Pregled"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
-msgstr "Ime uzorka"
+msgstr "&Ime uzorka"
 
 #: backgnd.cpp:1033
 msgid "Current"
@@ -282,9 +276,8 @@ msgid "Screen Saver"
 msgstr "Za¹tita zaslona"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Za¹tita zaslona"
+msgstr "Nema za¹tite zaslona (screensaver)"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -323,9 +316,8 @@ msgid "Low"
 msgstr "Nizak"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
-msgstr "P&isma itd."
+msgstr "Pisma itd."
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
@@ -406,15 +398,3 @@ msgstr "podrazumjevano"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
-
-#~ msgid "Blen&d"
-#~ msgstr "&Mje¹aj"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwmcom: ne mogu komunicirati s kwm\n"
-
-#~ msgid "Lock"
-#~ msgstr "Zakljuèaj"
-
-#~ msgid "General"
-#~ msgstr "Opæenito"

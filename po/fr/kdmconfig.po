@@ -8,6 +8,7 @@ msgstr ""
 "POT-Creation-Date: 1998-01-16 22:09+0100\n"
 "PO-Revision-Date: 1998-01-19 23:16 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
@@ -49,7 +50,7 @@ msgstr ""
 
 #: main.cpp:127
 msgid "Missing privileges"
-msgstr "Privilèges manquant"
+msgstr "Privilèges manquants"
 
 #: main.cpp:164
 msgid "KDM Configuration"
@@ -61,15 +62,15 @@ msgstr "Apparence"
 
 #: kdm-appear.cpp:69
 msgid "Greeting string:"
-msgstr "Chaîne de bienvenue :"
+msgstr "Texte de bienvenue :"
 
 #: kdm-appear.cpp:77
 msgid "KDM logo:"
-msgstr "Logo KDM :"
+msgstr "Logo de KDM :"
 
 #: kdm-appear.cpp:104 kdm-users.cpp:139
 msgid "Click or drop an image here"
-msgstr "Cliquer ou déposer une image ici"
+msgstr "Cliquez ou déposez une image ici"
 
 #: kdm-appear.cpp:109
 msgid "GUI Style:"
@@ -88,7 +89,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Il y a eu une erreur lors du chargement de l'image\n"
+"Une erreur est apparue lors du chargement de l'image :\n"
 ">"
 
 #: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
@@ -105,7 +106,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Il y a eu une erreur lors de l'enregistrement de l'image :\n"
+"Une erreur est apparue lors de l'enregistrement de l'image :\n"
 ">"
 
 #: kdm-appear.cpp:187 kdm-users.cpp:195
@@ -116,17 +117,17 @@ msgstr "Désolé, mais \n"
 msgid ""
 "\n"
 "does not seem to be an image file"
-msgstr "\nne semble pas être un fichier d'image"
+msgstr "\nne semble pas être un fichier image"
 
 #: kdm-appear.cpp:190 kdm-users.cpp:198
 msgid ""
 "\n"
 "Please use files with these extensions\n"
-msgstr "\nS'il vous plait, utilisez des fichiers avec ces extensions\n"
+msgstr "\nVeuillez utiliser des fichiers avec ces extensions\n"
 
 #: kdm-appear.cpp:192 kdm-users.cpp:200
 msgid "Improper File Extension"
-msgstr "Extension du fichier impropre"
+msgstr "Extension du fichier inadéquate"
 
 #: kdm-appear.cpp:221 kdm-users.cpp:246
 msgid ""
@@ -134,7 +135,7 @@ msgid ""
 "It will not be saved..."
 msgstr ""
 "<\n"
-"Il ne sera pas enregistré..."
+"Il ne sera pas enregistré ..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
@@ -190,14 +191,14 @@ msgstr "Utilisateurs sélectionnés"
 
 #: kdm-users.cpp:53
 msgid "No-show users"
-msgstr "Utilisateurs à ne pas montrer"
+msgstr "Utilisateurs à ne pas afficher"
 
 #: kdm-users.cpp:80
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
-"Montrer seulement\n"
+"Afficher seulement\n"
 "les utilisateurs sélectionnés"
 
 #: kdm-users.cpp:87
@@ -205,12 +206,12 @@ msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Montrer tous les utilisateurs\n"
-"sauf ceux à ne pas montrer"
+"Lister tous les utilisateurs\n"
+"sauf ceux à ne pas afficher"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "Montrer les utilisateurs"
+msgstr "Lister les utilisateurs"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
@@ -222,11 +223,11 @@ msgstr "Pas d'utilisateur sélectionné"
 
 #: kdm-users.cpp:151 kdm-users.cpp:220
 msgid "Save image as default image?"
-msgstr "Enregistrer l'image comme l'image pas défaut ?"
+msgstr "Enregistrer l'image comme image pas défaut ?"
 
 #: kdm-sess.cpp:51
 msgid "Allow to shutdown:"
-msgstr "Autoriser l'arrêt de la machine ?"
+msgstr "Autoriser l'arrêt de la machine :"
 
 #: kdm-sess.cpp:58
 msgid "None"
@@ -238,7 +239,7 @@ msgstr "Tous"
 
 #: kdm-sess.cpp:60
 msgid "Root Only"
-msgstr "Root seulement"
+msgstr "root seulement"
 
 #: kdm-sess.cpp:61
 msgid "Console Only"
@@ -266,4 +267,4 @@ msgstr "Nouveau type"
 
 #: kdm-sess.cpp:99
 msgid "Available types"
-msgstr "Type disponibles"
+msgstr "Types disponibles"
