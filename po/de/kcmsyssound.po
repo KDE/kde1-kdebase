@@ -116,7 +116,7 @@ msgstr "Die Datei\n"
 msgid ""
 "\n"
 "is already in the list"
-msgstr "ist bereits in der Liste."
+msgstr "\nist bereits in der Liste."
 
 #: syssound.cpp:339
 msgid "File Already in List"
