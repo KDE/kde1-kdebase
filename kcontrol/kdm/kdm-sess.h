@@ -30,7 +30,7 @@ class MyListBox : public QListBox
 {
 public:
 	MyListBox(QWidget *parent) : QListBox(parent) {}
-	isItemVisible(int id) { return itemVisible(id); }
+	bool isItemVisible(int id) { return itemVisible(id); }
 };
 
 class KDMSessionsWidget : public KConfigWidget
