@@ -5,6 +5,15 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
 #endif
 
 /*-
+ * passwd.cpp, part of the KDE kscreensaver
+ *
+ * changes: 06-Jun-98: updated for PAM support.
+ * Code is taken essentially verbatim from xlockmore 4.09. 
+ * PAM support in xlockmore is attributed as:
+ * 24-Jan-98: Updated PAM support and made it configure-able.
+ *            Marc Ewing <marc@redhat.com>  Original PAM support from
+ *            25-Jul-96 Michael K. Johnson <johnsonm@redhat.com>
+ *---------------------------------------------------------
  * passwd.c - passwd stuff.
  *
  * Copyright (c) 1988-91 by Patrick J. Naughton.
@@ -12,12 +21,6 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
  * Revision History:
  *
  * Changes of David Bagley <bagleyd@bigfoot.com>
- *
- * ------changes incorporated for PAM from xlockmore 4.09--
- * 24-Jan-98: Update PAM support and made it configure-able.
- *            Marc Ewing <marc*redhat.com> Original PAM support from
- *            25-Jul-96 Michael K. Johnson <johnsonm@redhat.com>
- * --end of changelog for PAM support-----------------------
  * 25-May-96: When xlock is compiled with shadow passwords it will still
  *            work on non shadowed systems.  Marek Michalkiewicz
  *            <marekm@i17linuxb.ists.pwr.wroc.pl>
@@ -37,6 +40,18 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
 #include <kmsgbox.h>
 #include "main.h" // for MODE_PREVIEW
 #include "xlockmore.h"
+
+#ifdef HAVE_PAM
+#define USE_PAM 1
+extern "C" {
+#include <security/pam_appl.h>
+}
+#else /* !USE_PAM */
+#ifdef HAVE_SHADOW
+#define USE_SHADOW 1
+#endif
+#endif
+
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -141,23 +156,15 @@ new_pwlnode(void)
 #include <prot.h>
 #endif
 
-#if defined( __linux__ ) && defined( __ELF__ ) && !defined( HAVE_SHADOW )
-/* Linux may or may not have shadow passwords, so it is best to make the same
-   binary work with both shadow and non-shadow passwords. It's easy with the
-   ELF libc since it has getspnam() and there is no need for any additional
-   libraries like libshadow.a.  This is a quick hack; it probably should be
-   done properly in the Imakefile.  */
-#define HAVE_SHADOW
-#endif
 
-#if defined( __linux__ ) && defined( HAVE_SHADOW ) && defined( HAVE_PW_ENCRYPT )
+#if defined( __linux__ ) && defined( USE_SHADOW ) && defined( HAVE_PW_ENCRYPT )
 /* Deprecated - long passwords have known weaknesses.  Also, pw_encrypt is
    non-standard (requires libshadow.a) while everything else you need to
    support shadow passwords is in the standard (ELF) libc.  */
 #define crypt pw_encrypt
 #endif
 
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 #ifndef __hpux
 #include <shadow.h>
 #endif
@@ -210,8 +217,7 @@ struct passwd {
 
 char        user[PASSLENGTH];
 
-#ifdef PAM
-#include <security/pam_appl.h>
+#ifdef USE_PAM
 /* used to pass the password to the conversation function */
 static char *PAM_password;
 
@@ -222,7 +228,7 @@ static char *PAM_password;
  */
 static int
 PAM_conv(int num_msg,
-	 /* const */ struct pam_message **msg,
+	 const struct pam_message **msg,
 	 struct pam_response **resp,
 	 void *appdata_ptr)
 {
@@ -277,13 +283,13 @@ static struct pam_conv PAM_conversation =
 	NULL
 };
 
-#endif /* PAM */
+#endif /* USE_PAM */
 
-#if !defined( ultrix ) && !defined( PAM )
+#if !defined( ultrix ) && !defined( USE_PAM )
 static char userpass[PASSLENGTH];
 static char rootpass[PASSLENGTH];
 
-#endif /* !ultrix */
+#endif /* !ultrix && !USE_PAM */
 
 #ifdef DCE_PASSWD
 static int  usernet, rootnet;
@@ -309,7 +315,7 @@ my_passwd_entry(void)
 	int         uid;
 	struct passwd *pw;
 
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	struct spwd *spw;
 
 #endif
@@ -336,7 +342,7 @@ my_passwd_entry(void)
 	if (!pw)
 #endif
 		pw = getpwuid(uid);
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	if ((spw = getspnam(pw->pw_name)) != NULL) {
 		char       *tmp;	/* swap */
 
@@ -437,7 +443,8 @@ getUserName(void)
 #endif /* !HP_PASSWDETC */
 }
 
-#if defined( HAVE_SHADOW )
+#if !defined( USE_PAM )
+#if defined( USE_SHADOW )
 static int
 passwd_invalid(char *passwd)
 {
@@ -447,7 +454,7 @@ passwd_invalid(char *passwd)
 }
 #endif
 
-#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( BSD_AUTH ) && !defined (PAM )
+#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( BSD_AUTH )
 /* This routine is not needed if HAVE_FCNTL_H and USE_MULTIPLE_ROOT */
 static void
 getCryptedUserPasswd(void)
@@ -506,7 +513,7 @@ getCryptedUserPasswd(void)
 	/* Check if there is any chance of unlocking the display later...  */
 	/* Program probably needs to be setuid to root.  */
 	/* If this is not possible, compile with -DUSE_XLOCKRC */
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	if (passwd_invalid(pw->pw_passwd)) 
 	  canGetPasswd = false;
 #endif
@@ -565,7 +572,7 @@ getCryptedRootPasswd(void)
 #else /* !OSF1_ENH_SEC */
 	struct passwd *pw;
 
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	struct spwd *spw;
 
 #endif
@@ -576,7 +583,7 @@ getCryptedRootPasswd(void)
 		if (!(pw = getpwuid(0)))
 			/*if ((pw = (struct passwd *) getpwuid(0)) == NULL) */
 			error("%s: could not get encrypted root password.\n");
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	if ((spw = getspnam(pw->pw_name)) != NULL) {
 		char       *tmp;	/* swap */
 
@@ -598,8 +605,8 @@ getCryptedRootPasswd(void)
 #endif /* !HP_PASSWDETC */
 }
 
-#endif /* !ultrix && !DCE_PASSWD && !BSD_AUTH  && !PAM */
-
+#endif /* !ultrix && !DCE_PASSWD && !BSD_AUTH */
+#endif /* !USE_PAM */
 
 /* 
  * we don't allow for root to have no password, but we handle the case
@@ -628,7 +635,8 @@ checkPasswd(char *buffer)
 		done = !strcmp(rootpass, crypt(buffer, rootpass));
 #else /* !DCE_PASSWD */
 
-#ifdef PAM
+#ifdef USE_PAM
+
 /*-
  * Use PAM to do authentication.  No session logging, only authentication.
  * Bail out if there are any errors.
@@ -644,7 +652,7 @@ checkPasswd(char *buffer)
     pam_end(pamh, 0); return 0; \
 }
 	PAM_password = buffer;
-	pam_error = pam_start("xlock", user, &PAM_conversation, &pamh);
+	pam_error = pam_start("kscreensaver", user, &PAM_conversation, &pamh);
 	PAM_BAIL;
 	pam_error = pam_authenticate(pamh, 0);
 	if (pam_error != PAM_SUCCESS) {
@@ -661,8 +669,8 @@ checkPasswd(char *buffer)
 	pam_end(pamh, PAM_SUCCESS);
 	/* If this point is reached, the user has been authenticated. */
 	done = True;
+#else /* !USE_PAM */
 
-#else /* !PAM */
 
 #ifdef ultrix
 	done = ((authenticate_user((struct passwd *) getpwnam(user),
@@ -766,7 +774,7 @@ checkPasswd(char *buffer)
 
 #endif /* !BSD_AUTH */
 #endif /* !ultrix */
-#endif /* !PAM */
+#endif /* !USE_PAM */
 #endif /* !DCE_PASSWD */
 
 	return !canGetPasswd || done;
@@ -1260,7 +1268,7 @@ set_multiple(void)
 	char        buf[BUFMAX], xlen;
 	pid_t       cid;
 
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 	struct spwd *spw;
 
 #endif
@@ -1283,7 +1291,7 @@ set_multiple(void)
 		while ((pw = getpwent()) != (struct passwd *) NULL) {
 			if (pw->pw_uid != 0)
 				continue;
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 			if ((spw = getspnam(pw->pw_name)) != NULL) {
 				char       *tmp;	/* swap */
 
@@ -1318,7 +1326,7 @@ set_multiple(void)
 				sbuf += xlen + 1;
 			}
 		}
-#ifdef HAVE_SHADOW
+#ifdef USE_SHADOW
 		endspent();
 #endif
 		cbuf = &buf[sbuf];
@@ -1421,7 +1429,7 @@ void
 initPasswd(void)
 {
         getUserName();
-#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( PAM )
+#if !defined( ultrix ) && !defined( DCE_PASSWD ) && !defined( USE_PAM)
 	if ( mode != MODE_PREVIEW ) {
 #ifdef        BSD_AUTH
                 struct passwd *pwd = getpwnam(user);
@@ -1435,7 +1443,7 @@ initPasswd(void)
 		    getCryptedRootPasswd();
 #endif /* !BSD_AUTH */
         }
-#endif /* !ultrix && !DCE_PASSWD  && !PAM */
+#endif /* !ultrix && !DCE_PASSWD && !USE_PAM*/
 #ifdef DCE_PASSWD
         initDCE();
 #endif
