@@ -40,6 +40,8 @@
 #include <kstring.h>
 #include <kwm.h> // for sendKWMCommand. David.
 
+#define FIRSTFILEMENUITEM 100
+
 bool KfmGui::sumode = false;
 bool KfmGui::rooticons = true;
 
@@ -211,6 +213,30 @@ void KfmGui::initMenu()
 
     mfile = new QPopupMenu;
     CHECK_PTR( mfile );
+  
+    mfile->clear();
+    mfile->insertSeparator();
+    mfile->insertItem( klocale->translate("New &Window"), 
+		       this, SLOT(slotNewWindow()) );
+    mfile->insertSeparator();
+    mfile->insertItem( klocale->translate("&Run..."), 
+		       this, SLOT(slotRun()) );
+    mfile->insertItem( klocale->translate("Open &Terminal"), 
+		       this, SLOT(slotTerminal()), CTRL+Key_T );
+    mfile->insertSeparator();
+    mfile->insertItem( klocale->translate("&Open Location..."),
+		       this, SLOT(slotOpenLocation()), CTRL+Key_O );
+    mfile->insertItem( klocale->translate("&Find"), 
+		       this, SLOT(slotToolFind()), CTRL+Key_F );
+    mfile->insertSeparator();
+    mfile->insertItem( klocale->translate("&Print..."), 
+		       this, SLOT(slotPrint()) );
+    mfile->insertSeparator();        
+    mfile->insertItem( klocale->translate("&Close"), 
+		       this, SLOT(slotClose()), CTRL+Key_W );
+// This was meant for testing only. (hoelzer)
+//    file->insertItem( klocale->translate("&Quit..."),  
+//		      this, SLOT(slotQuit()), CTRL+Key_Q );
 
     connect( mfile, SIGNAL(aboutToShow()), this, SLOT(slotFile()) );
 
@@ -990,44 +1016,20 @@ void KfmGui::fillBookmarkMenu( KBookmark *parent, QPopupMenu *menu )
 
 void KfmGui::slotFile()
 {
-  mfile->clear();
+    if( mfile->findItem( FIRSTFILEMENUITEM ) )
+        mfile->removeItem( FIRSTFILEMENUITEM );  
 
-  QString url = "file:";
-  url.append(KFMPaths::TrashPath());
-  //debug("url:   %s",view->getURL() );
-  //debug("trash: %s",url.data());
-  if( view->getURL() == url ) 
-    mfile->insertItem( klocale->getAlias(ID_STRING_TRASH), 
-	        	   view, SLOT( slotPopupEmptyTrashBin() ) );
-  else 
-  {
-    mfile->insertItem( klocale->translate("&New"), menuNew );
-    // The menu applies to the current directory
-    menuNew->setPopupFiles ( view->getURL() );
-  }
-
-  mfile->insertSeparator();
-  mfile->insertItem( klocale->translate("New &Window"), 
-	             this, SLOT(slotNewWindow()) );
-  mfile->insertSeparator();
-  mfile->insertItem( klocale->translate("&Run..."), 
-		     this, SLOT(slotRun()) );
-  mfile->insertItem( klocale->translate("Open &Terminal"), 
-		     this, SLOT(slotTerminal()), CTRL+Key_T );
-  mfile->insertSeparator();
-  mfile->insertItem( klocale->translate("&Open Location..."),
-		     this, SLOT(slotOpenLocation()), CTRL+Key_O );
-  mfile->insertItem( klocale->translate("&Find"), 
-                     this, SLOT(slotToolFind()), CTRL+Key_F );
-  mfile->insertSeparator();
-  mfile->insertItem( klocale->translate("&Print..."), 
-               	     this, SLOT(slotPrint()) );
-  mfile->insertSeparator();        
-  mfile->insertItem( klocale->translate("&Close"), 
-		     this, SLOT(slotClose()), CTRL+Key_W );
-// This was meant for testing only. (hoelzer)
-//    file->insertItem( klocale->translate("&Quit..."),  
-//		      this, SLOT(slotQuit()), CTRL+Key_Q );
+    QString url = "file:";
+    url.append(KFMPaths::TrashPath());
+    if( view->getURL() == url ) 
+        mfile->insertItem( klocale->getAlias(ID_STRING_TRASH), 
+		       view, SLOT( slotPopupEmptyTrashBin() ), 0, FIRSTFILEMENUITEM, 0 );
+    else 
+    {
+      mfile->insertItem( klocale->translate("&New"), menuNew, FIRSTFILEMENUITEM, 0 );
+      // The menu applies to the current directory
+      menuNew->setPopupFiles( view->getURL() );
+    }
 }
 
 void KfmGui::slotStop()
