@@ -21,7 +21,7 @@ msgstr "<!-- Diese Datei bitte nicht verändern -->"
 #: cgi.cpp:84
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: Ziel URL hat falsches Format: %s\n"
+msgstr "CGI: Ziel-URL hat falsches Format: %s\n"
 
 #: error.cpp:26
 msgid "Fatal Error: "
@@ -53,7 +53,7 @@ msgstr "KDE Hilfe"
 
 #: helpwin.cpp:378
 msgid "Waiting for kmail to be finished..."
-msgstr "Es wäre schön, wenn KDE jetzt fertig wäre..."
+msgstr "Es wäre schön, wenn kmail jetzt fertig wäre..."
 
 #: helpwin.cpp:451 info.cpp:272
 msgid "Cannot open: "
@@ -195,7 +195,7 @@ msgstr "Benutzung von &KDE Hilfe"
 
 #: mainwidget.cpp:179
 msgid "&About"
-msgstr "&Info"
+msgstr "&Über..."
 
 #: mainwidget.cpp:183
 msgid "&File"
@@ -211,7 +211,7 @@ msgstr "&Seite"
 
 #: mainwidget.cpp:186
 msgid "&Bookmarks"
-msgstr "&Favoriten"
+msgstr "&Lesezeichen"
 
 #: mainwidget.cpp:187
 msgid "&Options"
@@ -271,7 +271,7 @@ msgstr "Information über KDE Hilfe"
 
 #: mainwidget.cpp:562
 msgid "&Add Bookmark"
-msgstr "&Favoriten hinzufügen"
+msgstr "&Lesezeichen hinzufügen"
 
 #: man.cpp:86 man.cpp:790
 msgid "Online Manuals"
@@ -317,7 +317,7 @@ msgstr "Diverses"
 
 #: man.cpp:471
 msgid "System Administration"
-msgstr "Systemadminstration"
+msgstr "Systemadministration"
 
 #: man.cpp:473
 msgid "New"

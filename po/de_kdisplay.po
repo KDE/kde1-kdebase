@@ -49,15 +49,15 @@ msgstr "Einfach"
 
 #: backgnd.cpp:189
 msgid "Gradient"
-msgstr "Verlaufend"
+msgstr "Farbverlauf"
 
 #: backgnd.cpp:202
 msgid "Portrait"
-msgstr ""
+msgstr "Portrait"
 
 #: backgnd.cpp:206
 msgid "Landscape"
-msgstr ""
+msgstr "Landscape"
 
 #: backgnd.cpp:224
 msgid "Wallpaper"
@@ -85,7 +85,7 @@ msgstr "Ignorieren"
 
 #: scrnsave.cpp:47
 msgid "Lock"
-msgstr ""
+msgstr "Blockieren"
 
 #: scrnsave.cpp:103 scrnsave.cpp:161
 msgid "Screen Saver"
@@ -137,11 +137,11 @@ msgstr "Fenster im Vordergrund"
 
 #: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
 msgid "Window text"
-msgstr "Window Text"
+msgstr "Fenstertext"
 
 #: colorscm.cpp:209
 msgid "Disabled"
-msgstr "Verweigert"
+msgstr "Abgeschaltet"
 
 #: colorscm.cpp:216 colorscm.cpp:217
 msgid "Selected"
@@ -157,7 +157,7 @@ msgstr "Entfernen"
 
 #: colorscm.cpp:284
 msgid "Widget color"
-msgstr ""
+msgstr "Widgetfarbe"
 
 #: colorscm.cpp:289
 msgid "Inactive title bar"
@@ -181,11 +181,11 @@ msgstr "Text"
 
 #: colorscm.cpp:295
 msgid "Select background"
-msgstr "Hintergrund ausgewählt"
+msgstr "Hintergrund auswählen"
 
 #: colorscm.cpp:296
 msgid "Select text"
-msgstr "Ausgewählter Text"
+msgstr "Text auswählen"
 
 #: colorscm.cpp:297
 msgid "Window background"
@@ -233,15 +233,15 @@ msgstr "Oberflächenerscheinung"
 
 #: general.cpp:64
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: general.cpp:65
 msgid "Windows 95"
-msgstr ""
+msgstr "Windows 95"
 
 #: general.cpp:74
 msgid "Fonts"
-msgstr "Zeichensaetze"
+msgstr "Zeichensätze"
 
 #: general.cpp:79
 msgid "General font"

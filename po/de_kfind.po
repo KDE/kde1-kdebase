@@ -21,7 +21,7 @@ msgstr "Verzeichnisse:"
 #
 #: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
 msgid "Sorry"
-msgstr "Sorry"
+msgstr "Tut mir leid"
 
 #
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
@@ -63,7 +63,7 @@ msgstr "&Hilfe"
 #
 #: kfindtop.cpp:132 kfindtop.cpp:216
 msgid "Add to archive"
-msgstr "Zum Archive hinzufügen"
+msgstr "Zum Archiv hinzufügen"
 
 #
 #: kfindtop.cpp:135 kfindtop.cpp:221
@@ -78,7 +78,7 @@ msgstr "Eigenschaften"
 #
 #: kfindtop.cpp:140 kfindtop.cpp:231
 msgid "Open Containing Folder"
-msgstr "Öffen des Entsprechenden Verzeichnisses"
+msgstr "Öffnen des entsprechenden Verzeichnisses"
 
 #
 #: kfindtop.cpp:143
@@ -170,7 +170,7 @@ msgstr "Auswählen"
 #
 #: kfoptions.cpp:90
 msgid "Plain Text"
-msgstr "Einfache Datei"
+msgstr "Textdatei"
 
 #
 #: kfoptions.cpp:119
@@ -195,7 +195,7 @@ msgstr "Filter:"
 #
 #: kfoptions.cpp:128
 msgid "Default Application:"
-msgstr ""
+msgstr "Default-Anwendung:"
 
 #
 #: kfoptions.cpp:134 kfoptions.cpp:196
@@ -220,12 +220,12 @@ msgstr "Archiv erzeugen"
 #
 #: kfoptions.cpp:189
 msgid "Add to Archive:"
-msgstr "Zum Archive hinzufügen"
+msgstr "Zum Archiv hinzufügen"
 
 #
 #: kfoptions.cpp:235
 msgid "Archivers"
-msgstr "Archive"
+msgstr "Archivprogramme"
 
 #
 #: kftabdlg.cpp:47
@@ -260,12 +260,12 @@ msgstr "und"
 #
 #: kftabdlg.cpp:107
 msgid "month(s)"
-msgstr "Monat(en)"
+msgstr "Monat(e)"
 
 #
 #: kftabdlg.cpp:108
 msgid "day(s)"
-msgstr "Tag(en)"
+msgstr "Tag(e)"
 
 #
 #: kftabdlg.cpp:114
@@ -275,7 +275,7 @@ msgstr "Alle Dateien"
 #
 #: kftabdlg.cpp:115
 msgid "Find all files created or &modified:"
-msgstr "Suche alle Dateien erstellt oder verändert:"
+msgstr "Suche alle erstellten oder veränderten Dateien:"
 
 #
 #: kftabdlg.cpp:116
@@ -340,22 +340,22 @@ msgstr " Erweitert "
 #
 #: kftabdlg.cpp:377
 msgid "The date is not valid!!"
-msgstr "Das Datum existiert nicht!!"
+msgstr "Das Datum existiert nicht!"
 
 #
 #: kftabdlg.cpp:389
 msgid "The month(s) value isn't valid!!"
-msgstr "Der Monat existiert nicht!!"
+msgstr "Der Monat existiert nicht!"
 
 #
 #: kftabdlg.cpp:400
 msgid "The day(s) value isn't valid!!"
-msgstr "Der Tag existiert nicht!!"
+msgstr "Der Tag existiert nicht!"
 
 #
 #: kftabdlg.cpp:417
 msgid "The value in size isn't valid number!!"
-msgstr "Der Wert der Größe ist keine Zahl"
+msgstr "Der Wert der Größe ist keine Zahl!"
 
 #
 #: kfwin.cpp:99
@@ -366,17 +366,17 @@ msgstr "%d Datei(en) gefunden"
 #
 #: kfwin.cpp:136
 msgid "It wasn't possible to save results!"
-msgstr "Es war unmögliche zu sichern!"
+msgstr "Es konnte nicht gesichert werden!"
 
 #
 #: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
 msgid "KFind Results File"
-msgstr "KFind Resulatsdatei"
+msgstr "KFind Ergebnisdatei"
 
 #
 #: kfwin.cpp:174
 msgid "Results were saved to file\n"
-msgstr "Resultate wurden gespeichert unter\n"
+msgstr "Ergebnisse wurden gespeichert unter\n"
 
 #
 #: kfwin.cpp:189
@@ -391,7 +391,7 @@ msgstr ""
 #
 #: kfwin.cpp:191
 msgid "Delete File"
-msgstr "Datei Löschen"
+msgstr "Datei löschen"
 
 #
 #: kfwin.cpp:205
@@ -399,8 +399,8 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Sie haben keine Rechte\n"
-" um dieses File zu löschen"
+"Sie haben keine Rechte,\n"
+" um diese Datei zu löschen"
 
 #
 #: kfwin.cpp:212
@@ -417,7 +417,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Sie haben keine Rechte\n"
+"Sie haben keine Rechte,\n"
 " um dieses Verzeichnis zu löschen"
 
 #
@@ -435,7 +435,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"Es ist nicht möglich, das\n"
+"Es ist nicht möglich, daß\n"
 "angegebene Verzeichnis zu löschen"
 
 #
@@ -446,4 +446,4 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 #
 #: kfwin.cpp:401
 msgid "Error while creating child process!"
-msgstr "Fehler beim generieren des Unterprozess!"
+msgstr "Fehler beim Erzeugen des Unterprozess!"

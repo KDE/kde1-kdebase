@@ -88,11 +88,11 @@ msgstr "Linux Konsole"
 
 #: main.C:399 main.C:594
 msgid "Hide &Menubar"
-msgstr "Menüleiste unsichtbar"
+msgstr "Menüleiste verbergen"
 
 #: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
-msgstr "Menüleiste sichtbar"
+msgstr "Menüleiste anzeigen"
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
@@ -100,7 +100,7 @@ msgstr "Tastatur sperren"
 
 #: main.C:404
 msgid "Scroll&bar"
-msgstr ""
+msgstr "Schiebebalken"
 
 #: main.C:405
 msgid "&Font size"
@@ -155,7 +155,7 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
-"Die neuen Farbeinstellungen werden sichtbar\n"
+"Die neuen Farbeinstellungen werden sichtbar,\n"
 "sobald die Tastatur entsperrt ist."
 
 #: main.C:760
@@ -226,18 +226,18 @@ msgstr ""
 "-vt_fg <Farbe>\t\tVordergrundfarbe\n"
 "-vt_font <Zeichensatz>\tStandardzeichensatz\n"
 "-vt_size <Größe>\tSchriftgröße (tiny, small, normal, large, huge)\n"
-"-linux\t\t\tkvt simuliert eine linux-Konsole\n"
+"-linux\t\t\tkvt simuliert eine Linux-Konsole\n"
 "-no_menubar\t\tMenüleiste unsichtbar\n"
-"-no_scrollbar\t\tScrollbar unsichtbar\n"
+"-no_scrollbar\t\tVerschiebeleiste unsichtbar\n"
 "-T <Text>\t\tText in der Titelleiste\n"
 "-tn <Text>\t\tTerminaltyp (die Umgebungsvariable TERM enthält <Text>)\n"
 "-C\t\t\tÜbernehme Systemkonsolenmeldungen in kvt\n"
 "-n <Text>\t\tName für Icons und Windowmanager\n"
 "-7\t\t\t7-bit Modus\n"
 "-8\t\t\t8-bit Modus\n"
-"-ls\t\t\tkvt startet eine login-Shell\n"
-"-ls-\t\t\tkvt startet keine login-Shell\n"
-"-meta [escape|8thbit]\tbehandle Meta als ESC-Prefix, oder setze 8tes Bit. \n"
+"-ls\t\t\tkvt startet eine Login-Shell\n"
+"-ls-\t\t\tkvt startet keine Login-Shell\n"
+"-meta [escape|8thbit]\tbehandele Meta als ESC-Prefix, oder setze 8tes Bit. \n"
 "-sl <Zahl>\t\tBehalte <Zahl> Zeilen im scroll-back Speicher\n"
 "-pageup <Taste>\t\tALT-<Taste> scrollt im Speicher hinauf\n"
 "-pagedown <Taste>\tALT-<Taste> scrollt im Speicher herunter\n"
