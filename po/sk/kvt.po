@@ -26,6 +26,10 @@ msgstr "Znaky pridané do triedy slov:"
 msgid "The backspace key will send a"
 msgstr "Backspace bude posielaný ako"
 
+#: main.C:336
+msgid "Cursor key set"
+msgstr "Sada kurzorových kláves"
+
 #: main.C:459
 msgid "&New Terminal"
 msgstr "&Nový terminál"
