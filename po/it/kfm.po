@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1999-03-23 01:20+0100\n"
+"POT-Creation-Date: 1999-03-25 01:17+0100\n"
 "PO-Revision-Date: Sat Dec 5 1998 21:52:54+0200\n"
 "Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -260,7 +260,7 @@ msgstr "Home"
 msgid "Could not load icon\n"
 msgstr "Impossibile caricare l'icona\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:362 htmlcache.cpp:395 kbind.cpp:229
+#: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
@@ -1332,7 +1332,7 @@ msgstr "Caricamento contenuto di %s"
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmentation fault in un sottoprocesso di IO"
 
-#: htmlcache.cpp:363
+#: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
@@ -1340,7 +1340,7 @@ msgstr ""
 " non è una directory ! Avviso di sicurezza ! \n"
 "Si consiglia di controllare.\n"
 
-#: htmlcache.cpp:396
+#: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-03-23 01:20+0100\n"
+"POT-Creation-Date: 1999-03-25 01:17+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -258,7 +258,7 @@ msgstr "我的家"
 msgid "Could not load icon\n"
 msgstr "无法载入图标\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:362 htmlcache.cpp:395 kbind.cpp:229
+#: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
@@ -1315,13 +1315,13 @@ msgstr "取回 %s 列表"
 msgid "Segmentation fault in io subprocess"
 msgstr "I/O 子进程 Segmentation fault"
 
-#: htmlcache.cpp:363
+#: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
 
-#: htmlcache.cpp:396
+#: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"

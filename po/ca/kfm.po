@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-23 01:20+0100\n"
+"POT-Creation-Date: 1999-03-25 01:17+0100\n"
 "PO-Revision-Date: 1999-02-03 23:49+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -253,7 +253,7 @@ msgstr "Inici"
 msgid "Could not load icon\n"
 msgstr "No s'ha pogut carregar l'icona\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:362 htmlcache.cpp:395 kbind.cpp:229
+#: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
@@ -1313,7 +1313,7 @@ msgstr "S'està recuperant el llistat de %s"
 msgid "Segmentation fault in io subprocess"
 msgstr "Fallada de segmentació en subprocés E/S"
 
-#: htmlcache.cpp:363
+#: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
@@ -1321,7 +1321,7 @@ msgstr ""
 " no és un directori ! Alerta de seguretat !\n"
 "Si us plau, comproveu-ho.\n"
 
-#: htmlcache.cpp:396
+#: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"

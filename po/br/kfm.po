@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version:kfm-1.1\n"
-"POT-Creation-Date: 1999-03-23 01:20+0100\n"
+"POT-Creation-Date: 1999-03-25 01:17+0100\n"
 "PO-Revision-Date: 1999-01-29 11:24+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -254,7 +254,7 @@ msgstr "Er Gêr"
 msgid "Could not load icon\n"
 msgstr "Ne m'eus ket gallet kargañ an arlun\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:362 htmlcache.cpp:395 kbind.cpp:229
+#: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1574 kbind.cpp:1582 kbind.cpp:1600
 #: kbind.cpp:1619 kbind.cpp:1678 kbind.cpp:1690 kbind.cpp:1717 kbind.cpp:1738
 #: kbind.cpp:1758 kbind.cpp:1770 kbind.cpp:1786 kbind.cpp:1921 kbind.cpp:1933
@@ -1316,7 +1316,7 @@ msgstr "Oc'h adtapout rolladur %s"
 msgid "Segmentation fault in io subprocess"
 msgstr "Fazi krennennañ en isargerzh e/d"
 
-#: htmlcache.cpp:363
+#: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
@@ -1324,7 +1324,7 @@ msgstr ""
 " n'eo ket ur renkell ! Kemenn surentez !\n"
 "Gwiriit se ma plij.\n"
 
-#: htmlcache.cpp:396
+#: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
