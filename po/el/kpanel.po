@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -19,7 +19,7 @@ msgstr "Ιδιότητες"
 msgid "Go!"
 msgstr "Εκτέλεση"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Που θέλετε να πάτε αύριο;"
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Δεν υπάρχει σχετικό σχόλιο"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
@@ -130,13 +130,13 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

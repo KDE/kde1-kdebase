@@ -172,7 +172,9 @@ msgstr "'%s' byl nesprávnì ukonèen."
 msgid ""
 "\n"
 "Return code = "
-msgstr "\nNávratový kód = "
+msgstr ""
+"\n"
+"Návratový kód = "
 
 #: main.C:928
 msgid "Welcome to the console"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-12-19 18:30+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -25,7 +25,7 @@ msgstr "&Egenskaper"
 msgid "Go!"
 msgstr "Starta!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Vart vill du gå imorgon?"
 
@@ -57,7 +57,7 @@ msgstr "Ikonifiera de andra &fönstren"
 msgid "No comment available"
 msgstr "Ingen kommentar tillgänglig"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Fönsterlista"
 
@@ -133,13 +133,13 @@ msgstr "Menyeditorn är inte installerad."
 msgid "Oops!"
 msgstr "Hoppsan!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Disknavigator"
 

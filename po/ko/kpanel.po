@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "출발!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "내일 어디로 가시겠습니까?"
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "설명이 없습니다"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "윈도우목록"
 
@@ -137,13 +137,13 @@ msgstr "메뉴 편집기가 설치되지 않았습니다."
 msgid "Oops!"
 msgstr "아!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

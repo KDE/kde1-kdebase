@@ -339,7 +339,8 @@ msgstr "Usa la llista dels &bons"
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
 msgstr ""
-"Usa només els mapes de teclat per omissió i darrer actiu per canviar de teclat"
+"Usa només els mapes de teclat per omissió i darrer actiu per canviar de "
+"teclat"
 
 #: widgets.cpp:215
 msgid "Adding Keyboard"
@@ -439,8 +440,9 @@ msgstr "Comportament ampliat. Cada finestra recorda son propi mapa de teclat"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Comportament ampliat. Cada classe de finestra recorda son propi mapa "
-"de teclat"
+msgstr ""
+"Comportament ampliat. Cada classe de finestra recorda son propi mapa de "
+"teclat"
 
 #: widgets.cpp:551
 msgid "Button Colors"

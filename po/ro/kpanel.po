@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Ia ghici, ce poate fi ãsta ???"
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Nici un comentariu disponibil"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
@@ -137,13 +137,13 @@ msgstr "Editorul de meniuri nu este instalat. "
 msgid "Oops!"
 msgstr "Hopa !"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

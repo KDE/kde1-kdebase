@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -20,7 +20,7 @@ msgstr "特性"
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "窗口列表"
 
@@ -131,13 +131,13 @@ msgstr "菜单编辑器没有安装."
 msgid "Oops!"
 msgstr "错误!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

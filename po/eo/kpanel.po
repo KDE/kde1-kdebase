@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-12-02 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "&Ecoj"
 msgid "Go!"
 msgstr "Ek!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "La fina venko estas proksima!"
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Neniu komento havebla"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Fenestrolisto"
 
@@ -138,7 +138,7 @@ msgstr "La menuredaktilo ne estas instalita."
 msgid "Oops!"
 msgstr "Ho ve!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -146,7 +146,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:905
+#: tools.C:908
 #, fuzzy
 msgid "KDiskNavigator"
 msgstr "Disknavigilo"

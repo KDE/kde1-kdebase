@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KPANEL\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Asetukset"
 msgid "Go!"
 msgstr "Siirry!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Mihin haluat t‰n‰‰n menn‰?"
 
@@ -57,7 +57,7 @@ msgstr "Pienenn‰ &muut ikkunat"
 msgid "No comment available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Ikkunalista"
 
@@ -133,7 +133,7 @@ msgstr "Valikkoeditoria ei ole asennettu."
 msgid "Oops!"
 msgstr "Hups!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Levyselain"
 

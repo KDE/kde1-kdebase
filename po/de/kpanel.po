@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -25,7 +25,7 @@ msgstr "&Eigenschaften"
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -137,7 +137,7 @@ msgstr "Der Menu-Editor ist nicht installiert."
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -145,7 +145,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:905
+#: tools.C:908
 #, fuzzy
 msgid "KDiskNavigator"
 msgstr "Platten-Navigator"

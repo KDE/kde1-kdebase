@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-12-21 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "Настройки"
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Где вы хотите быть завтра?"
 
@@ -57,7 +57,7 @@ msgstr "Свернуть другие окна"
 msgid "No comment available"
 msgstr "Нет комментариев"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Список окон"
 
@@ -133,7 +133,7 @@ msgstr "Редактор меню не установлен."
 msgid "Oops!"
 msgstr "Оопс!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Исследователь диска"
 

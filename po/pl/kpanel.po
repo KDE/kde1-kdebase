@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-06-20 13:36+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Go!"
 msgstr "Id¼!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "A gdzie siê to dzisiaj wybierasz?"
 
@@ -50,7 +50,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Lista okien"
 
@@ -129,13 +129,13 @@ msgstr "Edytor menu jest niezainstalowany."
 msgid "Oops!"
 msgstr "Ojej!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.2\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1997-09-21 19:39+MET\n"
 "Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Tulajdonságok"
 msgid "Go!"
 msgstr "Mehet!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Nincs róla info"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Ablaklista"
 
@@ -139,13 +139,13 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,7 +25,7 @@ msgstr "&Nastavenie"
 msgid "Go!"
 msgstr "Ís»!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Zoznam okien"
 
@@ -137,7 +137,7 @@ msgstr "Editor menu nie je nain¹talovaný."
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -145,7 +145,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:905
+#: tools.C:908
 #, fuzzy
 msgid "KDiskNavigator"
 msgstr "Navigátor disku"

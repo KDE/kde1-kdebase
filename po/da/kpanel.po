@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Indstillinger"
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr ""
 msgid "No comment available"
 msgstr "Ingen tilgængelig kommentar"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
@@ -139,13 +139,13 @@ msgstr "Menu redigéringsprogrammet er ikke installéret"
 msgid "Oops!"
 msgstr "Ups!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
 
-#: tools.C:905
+#: tools.C:908
 #, fuzzy
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"

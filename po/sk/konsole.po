@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-22 01:15+0100\n"
 "PO-Revision-Date: 1998-12-23 12:00+0001\n"
 "Last-Translator: Juraj Bednar <bednar@isternet.sk>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -13,128 +13,135 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.C:268
+#: main.C:284
 msgid "&Normal"
 msgstr "&Normálne"
 
-#: main.C:271
+#: main.C:287
 msgid "&Small"
 msgstr "&Malé"
 
-#: main.C:272
+#: main.C:288
 msgid "&Medium"
 msgstr "&Stredné"
 
-#: main.C:273
+#: main.C:289
 msgid "&Large"
 msgstr "&Veµké"
 
-#: main.C:274
+#: main.C:290
 msgid "&Huge"
 msgstr "&Obrovské"
 
-#: main.C:276
+#: main.C:292
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:277
+#: main.C:293
 msgid "Linux (small)"
 msgstr "Linux (malá)"
 
-#: main.C:280
+#: main.C:296
 msgid "&More ..."
 msgstr "&Viac ..."
 
-#: main.C:286
+#: main.C:302
 msgid "&Hide"
 msgstr "&Skry»"
 
-#: main.C:287
+#: main.C:303
 msgid "&Left"
 msgstr "&Vµavo"
 
-#: main.C:288
+#: main.C:304
 msgid "&Right"
 msgstr "V&pravo"
 
-#: main.C:294
+#: main.C:310
 msgid "40x15 (&small)"
 msgstr "40x15 (&malá)"
 
-#: main.C:295
+#: main.C:311
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:296
+#: main.C:312
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:297
+#: main.C:313
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:298
+#: main.C:314
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:307
+#: main.C:323
 msgid "&Menubar"
 msgstr "&Menu"
 
-#: main.C:309
+#: main.C:325
 msgid "&Frame"
 msgstr "&Rám"
 
-#: main.C:311
+#: main.C:327
 msgid "Scroll&bar"
 msgstr "Scroll&bar"
 
-#: main.C:313
+#: main.C:329
 msgid "BS sends &DEL"
 msgstr "BS posiela &DEL"
 
-#: main.C:316
+#: main.C:332
 msgid "&Font"
 msgstr "&Písmo"
 
-#: main.C:317
+#: main.C:333
 msgid "&Size"
 msgstr "&Veµkos»"
 
-#: main.C:318
+#: main.C:334
 msgid "&Schema"
 msgstr "&Schéma"
 
-#: main.C:320
+#: main.C:336
 msgid "&Save options"
 msgstr "&Ulo¾i» nastavenie"
 
-#: main.C:324
+#: main.C:340
 msgid "&About ..."
 msgstr "&Informácie ..."
 
-#: main.C:325
+#: main.C:341
 msgid "&User's Manual ..."
 msgstr "&U¾ívateµský manuál ..."
 
-#: main.C:326
+#: main.C:342
 msgid "&Technical Reference ..."
 msgstr "&Tecnická dokumentácia ..."
 
-#: main.C:330
+#: main.C:346
 msgid "cd"
 msgstr "cd"
 
-#: main.C:343
+#: main.C:359
 msgid "Sessions"
 msgstr "Sedenia"
 
-#: main.C:588
+#: main.C:502
+#, c-format
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+
+#: main.C:607
 #, c-format
 msgid "About %s"
 msgstr "Informácie o %s"
 
-#: main.C:590
+#: main.C:609
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -155,6 +162,17 @@ msgstr ""
 "BEZ AKEJKO¥VEK ZÁRUKY.\n"
 "Preèítajte si `LICENSE.readme´ pre podrobnosti."
 
-#: main.C:908
+#: main.C:732
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr ""
+
+#: main.C:735
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+
+#: main.C:928
 msgid "Welcome to the console"
 msgstr "Vitajte na konzole"

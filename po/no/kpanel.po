@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-24 01:14+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Egenskaper"
 msgid "Go!"
 msgstr "Sett igang!"
 
-#: kpanel.C:333 tools.C:887
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
 msgstr "Hvor vil du dra i morgen?"
 
@@ -57,7 +57,7 @@ msgstr "Ikoniser andre &vinduer"
 msgid "No comment available"
 msgstr "Ingen kommentar tilgjengelig"
 
-#: kpanel.C:1246 tools.C:896
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Vindusliste"
 
@@ -133,7 +133,7 @@ msgstr "Meny-editoren er ikke installert."
 msgid "Oops!"
 msgstr "Ops!"
 
-#: tools.C:644
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
@@ -141,7 +141,7 @@ msgstr ""
 "\n"
 "%d. %b"
 
-#: tools.C:905
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Disknavigator"
 
