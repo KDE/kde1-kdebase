@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-04 01:15+0100\n"
+"POT-Creation-Date: 1999-02-05 01:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -285,51 +285,51 @@ msgstr ""
 msgid "&Edit Bookmarks..."
 msgstr ""
 
-#: kfmgui.cpp:1041
+#: kfmgui.cpp:1043
 msgid "&Add Bookmark"
 msgstr ""
 
-#: kfmgui.cpp:1077 kfmman.cpp:1460 kfmtree.cpp:389 root.cpp:286
+#: kfmgui.cpp:1079 kfmman.cpp:1460 kfmtree.cpp:389 root.cpp:286
 msgid "&New"
 msgstr ""
 
-#: kfmgui.cpp:1150
+#: kfmgui.cpp:1152
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1152
+#: kfmgui.cpp:1154
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1154
+#: kfmgui.cpp:1156
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1156
+#: kfmgui.cpp:1158
 msgid "&Home"
 msgstr ""
 
-#: kfmgui.cpp:1225 kfmgui.cpp:1393 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1227 kfmgui.cpp:1395 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:500 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
 #: kiojob.cpp:88 root.cpp:1245
 msgid "ERROR: Malformed URL"
 msgstr ""
 
-#: kfmgui.cpp:1347 kfmserver.cpp:257
+#: kfmgui.cpp:1349 kfmserver.cpp:257
 msgid "Open Location:"
 msgstr ""
 
-#: kfmgui.cpp:1404
+#: kfmgui.cpp:1406
 msgid "KFM Confirm"
 msgstr ""
 
-#: kfmgui.cpp:1405
+#: kfmgui.cpp:1407
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
 msgstr ""
 
-#: kfmgui.cpp:1538
+#: kfmgui.cpp:1540
 msgid "Document: Done"
 msgstr ""
 
