@@ -1175,7 +1175,7 @@ void Client::resizeEvent( QResizeEvent * ){
 	x += pm.width();
       }
       else {
-	p.drawPixmap(x,height()-BORDER,pm,
+	p.drawPixmap(x,height()-BORDER+1,pm,
 		     0,0,width()-w4-x,pm.height());
 	break;
       }
