@@ -152,10 +152,10 @@ AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid)
 AC_CHECK_KSIZE_T
 AC_CHECK_SETENV
 
-KWM="kwm klogout kwmclient"
+KWM="kwm klogout kwmclient kpanel"
 AC_ARG_WITH(kwm2, [  --with-kwm2             If you want to try the new kwm],
 if test "x$withval" = "xyes"; then
-KWM="kwm2 kwmcom krootwm"
+KWM="kwm2 kwmcom krootwm kpanel2"
 fi)
 AC_SUBST(KWM)
 
@@ -169,6 +169,8 @@ AC_ARG_PROGRAM
 AC_OUTPUT(Makefile \
 	kpanel/Makefile \
 	kpanel/pics/Makefile \
+	kpanel2/Makefile \
+	kpanel2/pics/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
