@@ -26,9 +26,11 @@
 #include "kfmprops.h"
 #include "kbutton.h"
 #include "root.h"
+#include "kbind.h"
 #include <config-kfm.h>
 
 #include <klocale.h>
+#include <string.h>
 #define klocale KLocale::klocale()
 
 char* kfm_getrev();
@@ -43,8 +45,9 @@ char* kfm_getrev()
     if ( flag )
 	return rev;
     flag = true;
-    
-    if ((p = strchr(revision, ':'))) {
+
+    char *dummy = strdup( revision );
+    if ((p = strchr(dummy, ':'))) {
 	rev = p + 2;
 	p = strchr(rev, '$');
 	*--p = 0;
@@ -251,23 +254,23 @@ void KfmGui::initMenu()
     file->insertItem( klocale->translate("&New"), menuNew );
     file->insertSeparator();
     file->insertItem( klocale->translate("&New Window"), 
-		      this, SLOT(slotNewWindow()), ALT+Key_N );
+		      this, SLOT(slotNewWindow()) );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Run"), 
-		      this, SLOT(slotRun()), ALT+Key_R );
+		      this, SLOT(slotRun()) );
     file->insertItem( klocale->translate("Open &Terminal"), 
-		      this, SLOT(slotTerminal()), ALT+Key_E );
+		      this, SLOT(slotTerminal()) );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Open Location"),
-		      this, SLOT(slotOpenLocation()), ALT+Key_L );
+		      this, SLOT(slotOpenLocation()), CTRL+Key_L );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Print..."), 
-		      this, SLOT(slotPrint()), ALT+Key_P );
+		      this, SLOT(slotPrint()) );
     file->insertSeparator();        
     file->insertItem( klocale->translate("&Close"), 
-		      this, SLOT(slotClose()), ALT+Key_C );
+		      this, SLOT(slotClose()), CTRL+Key_W );
     file->insertItem( klocale->translate("&Quit"),  
-		      this, SLOT(slotQuit()), ALT+Key_Q );
+		      this, SLOT(slotQuit()), CTRL+Key_Q );
 
     QPopupMenu *edit = new QPopupMenu;
     CHECK_PTR( edit );
@@ -276,7 +279,7 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("&Paste"), this, 
 		      SLOT(slotPaste()), CTRL+Key_V );
     edit->insertItem( klocale->translate("&Move to Trash"), 
-		      this, SLOT(slotTrash()),  ALT+Key_T );
+		      this, SLOT(slotTrash()) );
     edit->insertItem( klocale->translate("&Delete"), this, 
 		      SLOT(slotDelete()) );
     edit->insertSeparator();
@@ -287,20 +290,20 @@ void KfmGui::initMenu()
     CHECK_PTR( mview );
     mview->setCheckable(true);
     mview->insertItem( klocale->translate("Show &Dot Files"),
-		       this, SLOT(slotShowDot()), ALT+Key_D );
+		       this, SLOT(slotShowDot()) );
     mview->insertItem( klocale->translate("Show Tr&ee"), 
 		       this, SLOT(slotShowTreeView()) );
     mview->insertItem( klocale->translate("&Visual Schnauzer"),
 		       this, SLOT(slotShowSchnauzer()) );
     mview->insertItem( klocale->translate("&HTML View"),
-		       this, SLOT(slotViewHTML()), ALT+Key_H );
+		       this, SLOT(slotViewHTML()) );
     mview->insertSeparator();
     mview->insertItem( klocale->translate("&Icon View"),
-		       this, SLOT(slotIconView()), ALT+Key_I );
+		       this, SLOT(slotIconView()) );
     mview->insertItem( klocale->translate("&Text View"),
 		       this, SLOT(slotTextView()) );
     mview->insertItem( klocale->translate("&Long View"),
-		       this, SLOT(slotLongView()), ALT+Key_O );
+		       this, SLOT(slotLongView()) );
     mview->insertSeparator();
     mview->insertItem( klocale->translate("&Save Settings"),
 		       this, SLOT(slotSaveSettings()) );
@@ -309,9 +312,12 @@ void KfmGui::initMenu()
 		       this, SLOT(slotSplitWindow()) ); */
     mview->insertSeparator();
     mview->insertItem( klocale->translate("&Reload Document"),
-		       view, SLOT(slotReload()), ALT+Key_R );
+		       view, SLOT(slotReload()) );
     mview->insertItem( klocale->translate("Rescan &bindings"),
 		       this, SLOT(slotRescanBindings()) );
+    mview->insertSeparator();
+    mview->insertItem( klocale->translate("&View Frame Source"),
+		       this, SLOT(slotViewFrameSource()) );
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
@@ -888,6 +894,10 @@ void KfmGui::slotClose()
 
 void KfmGui::slotAbout()
 {
+    printf("1\n");
+    printf("'%s'\n",kfm_getrev());
+    printf("2\n");
+    
     QString tmp;
     tmp.sprintf("KFM %s\n\n%s", kfm_getrev(), klocale->translate("(c) by Torben Weis\nweis@kde.org\n\nand the KFM team") );
     QMessageBox::message( klocale->translate("About"), 
@@ -1031,17 +1041,21 @@ void KfmGui::slotSaveSettings()
   config->sync();
 }
 
+void KfmGui::slotViewFrameSource()
+{
+    if ( !view->getActiveView() )
+	return;
+    
+    QString cmd;
+    cmd.sprintf("kedit \"%s\"", view->getActiveView()->getURL() );
+    debugT("RUNNING '%s'\n",cmd.data());
+    KMimeBind::runCmd( cmd );
+}
+    
 KfmGui::~KfmGui()
 {
-    debugT("Deleting KfmGui\n");
-    
-    debugT("->View\n");
     delete view;
-    debugT("<-View\n");
-
     windowList.remove( this );
-    debugT("Deleted\n");
-    
     // if ( windowList.isEmpty() )   the last window closed?
     // saveSettings();
 }

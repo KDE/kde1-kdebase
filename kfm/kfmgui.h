@@ -207,6 +207,10 @@ public slots:
      * Menu "View->Split Window"
      */
     void slotSplitWindow();
+    /**
+     * Menu "View->Frame Source"
+     */
+    void slotViewFrameSource();
     
     /**
      * Menu "Bookmarks->Add Bookmark"
