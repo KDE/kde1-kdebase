@@ -217,6 +217,9 @@ void KfmView::setHTMLWidgetOptions(){
   textColor = config->readColorEntry( "TextColor", &HTML_DEFAULT_TXT_COLOR );
   linkColor = config->readColorEntry( "LinkColor", &HTML_DEFAULT_LNK_COLOR );
   vLinkColor = config->readColorEntry( "VLinkColor", &HTML_DEFAULT_VLNK_COLOR);
+
+  bool forceDefaults = config->readBoolEntry( "ForceDefaultColors", false );
+  view->setForceDefault( forceDefaults );
   
   setDefaultTextColors(textColor,linkColor,vLinkColor);
   setDefaultBGColor(bgColor);
