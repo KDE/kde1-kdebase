@@ -20,6 +20,7 @@ Comment[it]=Editor finestre di Dialogo Qt
 Comment[cs]=Editor dialogЫ pro Qt
 Comment[sk]=Editor dialСgov pre Qt
 Comment[ro]=Editor de dialoguri Qt
+Comment[ru]=Редактор диалогов для Qt
 Exec=dlgedit
 Icon=kcmkwm.xpm
 TerminalOptions=

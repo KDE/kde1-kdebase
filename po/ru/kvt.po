@@ -126,7 +126,7 @@ msgstr "Терминал..."
 
 #: main.C:593
 msgid "Font..."
-msgstr ""
+msgstr "Шрифт..."
 
 #: main.C:595
 msgid "Save &Options"

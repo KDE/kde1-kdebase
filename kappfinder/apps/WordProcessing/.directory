@@ -12,5 +12,6 @@ Name[pt]=Processamento de Texto
 Name[pt_BR]=Processamento de Texto
 Name[cs]=TextovИ procesory
 Name[sk]=TextovИ procesory
+Name[ru]=Текстовые процессоры
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=package.xpm

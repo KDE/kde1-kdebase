@@ -12,5 +12,6 @@ Name[pt]=Utilitários
 Name[pt_BR]=Utilitários
 Name[cs]=Nástroje
 Name[sk]=Nástroje
+Name[ru]=ğÏÌÅÚÎÏÅ
 SortOrder=xcalc.kdelnk,xclipboard.kdelnk,xconsole.kdelnk,xterm.kdelnk
 Icon=utilities_package.xpm

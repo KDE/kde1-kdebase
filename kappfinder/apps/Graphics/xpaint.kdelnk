@@ -20,6 +20,7 @@ Comment[it]=Applicazione di pittura XPaint
 Comment[cs]=Aplikace pro kreslení bitmapovıch obrázkù
 Comment[sk]=Aplikácia pre kreslenie bitmapovıch obrázkov
 Comment[ro]=Aplicaşie de desen scalar (bitmap)
+Comment[ru]=çÒÁÆÉŞÅÓËÉÊ ÒÅÄÁËÔÏÒ Xpaint
 Exec=xpaint
 Icon=xpaint.xpm
 TerminalOptions=

@@ -17,6 +17,7 @@ Comment[sk]=Upozoròuje na novú po¹tu
 Comment[fi]=Postista ilmoitus
 Comment[fr]=Notification d'arrivée de courrier
 Comment[ro]=Urmãritor de poºtã
+Comment[ru]=ğÏŞÔÏ×ÏÅ ÏĞÏ×ÅİÅÎÉÅ
 Exec=kmail
 Icon=mail.xpm
 TerminalOptions=

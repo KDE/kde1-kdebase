@@ -41,11 +41,11 @@ msgstr "Обновить рабочий стол"
 
 #: krootwm.C:188
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Разбросать окна"
 
 #: krootwm.C:189
 msgid "Cascade windows"
-msgstr ""
+msgstr "Разместить окна каскадом"
 
 #: krootwm.C:190
 msgid "Arrange icons"
@@ -65,7 +65,7 @@ msgstr "Не могу создать папку"
 
 #: krootwm.C:666
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Матиас Этрих (ettrich@kde.org)\n"
 
 #: krootwm.C:670
 msgid "Usage:"

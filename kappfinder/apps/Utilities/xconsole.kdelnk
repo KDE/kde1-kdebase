@@ -20,6 +20,7 @@ Comment[sk]=Konzola pre Xwindow
 Comment[pt]=Console X
 Comment[pt_BR]=Console X
 Comment[ro]=ConsolЦ de X
+Comment[ru]=Консоль для Xwindows
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

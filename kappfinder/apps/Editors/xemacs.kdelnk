@@ -24,6 +24,7 @@ Comment[cs]=Editor X Emacs
 Comment[sk]=Editor X Emacs
 Comment[it]=Emacs per XWin
 Comment[de]=X Emacs
+Comment[ru]=Emacs для Xwindows
 SwallowExec=
 SwallowTitle=
 WmCommand=

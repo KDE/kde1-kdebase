@@ -20,4 +20,5 @@ Comment[it]=Controllo carico Cpu
 Comment[cs]=Kontrola zatМ╬enМ pro XWindow
 Comment[sk]=Kontrola za╩a╬enia pre XWindow
 Comment[ro]=MonitorizeazЦ НncЦrcarea sistemului
+Comment[ru]=Монитор загрузки для Xwindows
 Icon=xload.xpm

@@ -20,6 +20,7 @@ Comment[it]=Tux, la mascotte di Linux
 Comment[cs]=Tux, maskot Linuxu
 Comment[sk]=Tux, maskot Linuxu
 Comment[ro]=Mascota Linuxului, Tux
+Comment[ru]=Tux, Üอยฬลอม Linux'ม
 Exec=xpinguin
 Icon=pinguin.xpm
 TerminalOptions=

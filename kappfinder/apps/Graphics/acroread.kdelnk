@@ -12,6 +12,7 @@ Comment=PDF document viewer
 Comment[no]=PDF-dokumentfremviser
 Comment[ro]=Vizualizor de documente PDF
 Comment[pl]=Przegl╠darka dokumentСw PDF
+Comment[ru]=Просмотрщик PDF документов
 Terminal=0
 MiniIcon=kghostview.xpm
 Caption=PDF Viewer

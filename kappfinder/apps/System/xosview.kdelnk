@@ -20,6 +20,7 @@ Comment[it]=Monitor di Sistema
 Comment[cs]=Monitor systИmu
 Comment[sk]=Monitor systИmu
 Comment[ro]=Monitorizare de sistem
+Comment[ru]=Системный монитор
 Exec=xosview
 Icon=Information.xpm
 TerminalOptions=

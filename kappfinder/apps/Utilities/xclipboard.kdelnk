@@ -20,6 +20,7 @@ Comment[it]=Visualizzazione Appunti
 Comment[cs]=Prohlí¾eè clipboardu
 Comment[sk]=Prehliadaè clipboardu
 Comment[ro]=Vizualizare Clipboard
+Comment[ru]=âÕÆÅÒ ÏÂÍÅÎÁ Xwindows
 Exec=xclipboard
 Icon=kfind.xpm
 TerminalOptions=
