@@ -3,10 +3,11 @@
 	   <markus.wuebben@kde.org>
    Date:   September '97         */
 
+// __USE_XOPEN is required on glibc 2.1.x based systems for cuserid();
+#define __USE_XOPEN
 
 #include <kiconloader.h>
 #include <kcharsets.h>
-#include <stdio.h>	// for cuserid()
 
 #include "mainwidget.moc"
 #include "mainwidget.h"
