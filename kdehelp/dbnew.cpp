@@ -66,7 +66,7 @@ void *operator new(size_t Size)
 	void *Mem = GetMem(Size, NULL, 0);
 
 	if (DBNew_Verbose)
-		fprintf(Out, "Allocated: File unknown, Size: %d, Addr: 0x%x\n",
+	      fprintf(Out, "Allocated: File unknown, Size: %d, Addr: 0x%x\n",
 			int(Size), int(Mem));
 
 	return Mem;
@@ -201,7 +201,7 @@ void *GetMem(size_t Size, const char *Filename, int Line, char Flag)
 
 	if (!Mem)
 	{
-		fprintf(Out, "Out of Memory!!!\n");
+	        fprintf(Out, "Out of Memory!!!\n");
 		exit(1);
 	}
 

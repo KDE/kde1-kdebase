@@ -20,6 +20,11 @@
 
 #include "dbnew.h"
 
+#include <klocale.h>
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
+
 #define TMPDIR			"/tmp"
 #define EATSPACE(ptr)	while ((*ptr == ' ')||(*ptr == '\t')) ptr++;
 
@@ -80,7 +85,7 @@ int cIndirectList::Read(const char *filename)
 				file = strtok(buffer, ":");
 				if (file == NULL)
 				{
-					Error.Set(ERR_FATAL, "Error in info file");
+					Error.Set(ERR_FATAL, klocale->translate("Error in info file"));
 					return 1;
 				}
 				posPtr = strtok(NULL, ".");
@@ -264,7 +269,7 @@ void cTagTable::CreateTable(const char *filename)
 
 	if (stream.fail())
 	{
-		cout << "Cannot open : " << filename << endl;
+		cout << klocale->translate("Cannot open: ") << filename << endl;
 		exit(1);
 	}
 
@@ -591,7 +596,7 @@ void cNodeLineList::AddMenu(const char *buffer)
 	}
 	else
 	{
-		Error.Set(ERR_WARNING, "Error in info file");
+		Error.Set(ERR_WARNING, klocale->translate("Error in info file"));
 		return;
 	}
 
@@ -1220,7 +1225,7 @@ int cInfo::ReadLocation(const char *theNodeName)
 	if (offset < 0)
 	{
 		char msg[128];
-		sprintf(msg, "Node not found: %s", nodeName);
+		sprintf(msg, klocale->translate("Node not found: %s"), nodeName);
 		Error.Set(ERR_WARNING, msg);
 		delete [] nodeName;
 		return 1;
@@ -1365,7 +1370,7 @@ int cInfo::FindFile(const char *theFilename)
 	}
 
 	char msg[256];
-	sprintf(msg, "Cannot open info file: %s", theFilename);
+	sprintf(msg, klocale->translate("Cannot open info file: %s"), theFilename);
 	Error.Set(ERR_WARNING, msg);
 	return 1;
 

@@ -19,6 +19,7 @@
 #include <Kconfig.h>
 #include <kurl.h>
 #include <kfm.h>
+#include <klocale.h>
 #include "cgi.h"
 #include "kbutton.h"
 #include "helpwin.h"
@@ -32,6 +33,10 @@
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
+
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
 
 static QString QUOTE( "\"" );
 static QString DOCS_PATH;
@@ -53,21 +58,21 @@ static unsigned char hand_mask_bits[] = {
 KOpenURLDialog::KOpenURLDialog( QWidget *parent, const char *name )
 	: QDialog( parent, name )
 {
-	setCaption( "KDE Help: Open URL" );
+	setCaption( klocale->translate("KDE Help: Open URL") );
 
-	QLabel *label = new QLabel( "Open URL", this );
+	QLabel *label = new QLabel( klocale->translate("Open URL"), this );
 	label->setGeometry( 20, 20, 60, 20 );
 	
 	lineEdit = new QLineEdit( this );
 	lineEdit->setGeometry( 30+label->width(), 20, 140, 20 );
 	lineEdit->setFocus();
 
-	QPushButton *openButton = new QPushButton( "Open", this );
+	QPushButton *openButton = new QPushButton( klocale->translate("Open"), this );
 	openButton->setGeometry( 20, 60, 50, 30 );
 	openButton->setDefault( TRUE );
 	connect( openButton, SIGNAL(clicked()), SLOT(openPressed()) );
 
-	QPushButton *cancelButton = new QPushButton( "Cancel", this );
+	QPushButton *cancelButton = new QPushButton( klocale->translate("Cancel"), this );
 	cancelButton->setGeometry( 230-50, 60, 50, 30 );
 	connect( cancelButton, SIGNAL(clicked()), SLOT(reject()) );
 }
@@ -85,7 +90,7 @@ KLocationBar::KLocationBar( QWidget *parent, const char *name )
 {
 	QBoxLayout *gm = new QBoxLayout( this, QBoxLayout::LeftToRight, 4 );
 
-	QLabel *label = new QLabel( " Location:", this );
+	QLabel *label = new QLabel( klocale->translate(" Location:"), this );
 	label->setMaximumSize( label->sizeHint() );
 	gm->addWidget( label );
 
@@ -362,14 +367,15 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 	}
 	else if ( fullURL.find( "ftp:" ) >= 0 )
 	{
-		QString cmd = "kfmclient exec ";
+	        QString cmd = "kfmclient exec ";
 		cmd += fullURL;
 		cmd += " Open";
 		system( cmd );
 	}
 	else if ( fullURL.find( "mailto:" ) >= 0 )
 	{
-		QMessageBox::message("KDE Help","Waiting for kmail to be finished...");
+		QMessageBox::message(klocale->translate("KDE Help"),
+				     klocale->translate("Waiting for kmail to be finished..."));
 	}
 
 	if ( !rv )
@@ -442,8 +448,8 @@ int KHelpWindow::openFile( const QString &location )
 		case CannotOpenFile:
 			{
 				QMessageBox mb;
-				mb.setText( "Cannot open: " + fileName );
-				mb.setButtonText( "Oops!" );
+				mb.setText( klocale->translate("Cannot open: ") + fileName );
+				mb.setButtonText( klocale->translate("Oops!") );
 				mb.show();
 			}
 			break;
@@ -451,8 +457,8 @@ int KHelpWindow::openFile( const QString &location )
 		default:
 			{
 				QMessageBox mb;
-				mb.setText( "Unknown format: " + fileName );
-				mb.setButtonText( "Oops!" );
+				mb.setText( klocale->translate("Unknown format: ") + fileName );
+				mb.setButtonText( klocale->translate("Oops!") );
 				mb.show();
 			}
 	}
@@ -802,7 +808,9 @@ int KHelpWindow::openRemote( const char *_url )
 	KURL u( remoteFile.data() );
 	if ( u.isMalformed() )
 	{
-		QMessageBox::message( "Error", "Malformed URL", "Ok" );
+		QMessageBox::message( klocale->translate("Error"), 
+				      klocale->translate("Malformed URL"), 
+				      klocale->translate("Ok") );
 		return 1;
 	}
 
@@ -817,7 +825,9 @@ int KHelpWindow::openRemote( const char *_url )
 
 	if ( !remotePage->isOK() )
 	{
-		QMessageBox::message ("Error", "Could not start or find KFM", "Ok");
+		QMessageBox::message (klocale->translate("Error"), 
+				      klocale->translate("Could not start or find KFM"), 
+				      klocale->translate("Ok"));
 		delete remotePage;
 		remotePage = NULL;
 		return 1;
@@ -1282,9 +1292,9 @@ void KHelpWindow::slotPopupMenu( const char *url, const QPoint &p )
 	rmbPopup = new QPopupMenu;
 	rmbPopup->installEventFilter( this );
 
-	id = rmbPopup->insertItem( "Back", this, SLOT( slotBack() ) );
+	id = rmbPopup->insertItem( klocale->translate("Back"), this, SLOT( slotBack() ) );
 	rmbPopup->setItemEnabled( id, history.IsBack() );
-	id = rmbPopup->insertItem( "Forward", this, SLOT( slotForward() ) );
+	id = rmbPopup->insertItem( klocale->translate("Forward"), this, SLOT( slotForward() ) );
 	rmbPopup->setItemEnabled( id, history.IsForward() );
 	
 	if ( url )
@@ -1305,9 +1315,9 @@ void KHelpWindow::slotPopupMenu( const char *url, const QPoint &p )
 			if ( ( pos  = newURL.findRev( '\"' ) ) > 0)
 				newURL.truncate( pos );
 		}
-		rmbPopup->insertItem("Open this Link",this,SLOT(slotPopupOpenURL()));
-		rmbPopup->insertItem("Add Bookmark",this,SLOT(slotPopupAddBookmark()));
-		rmbPopup->insertItem("Open in new Window",this,SLOT(slotPopupOpenNew()));
+		rmbPopup->insertItem(klocale->translate("Open this Link"),this,SLOT(slotPopupOpenURL()));
+		rmbPopup->insertItem(klocale->translate("Add Bookmark"),this,SLOT(slotPopupAddBookmark()));
+		rmbPopup->insertItem(klocale->translate("Open in new Window"),this,SLOT(slotPopupOpenNew()));
 	}
 
 	rmbPopup->popup( p );

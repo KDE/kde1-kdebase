@@ -22,6 +22,11 @@
 
 #include "dbnew.h"
 
+#include <klocale.h>
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
+
 #define MAXSECTIONLEN	4
 #define TMPDIR	"/tmp"
 
@@ -78,13 +83,13 @@ int cManTextList::MakeDirectory()
 	char text[80];
 	char page[80];
 
-	AddText("Online Manuals", MAN_HEADING1);
+	AddText(klocale->translate("Online Manuals"), MAN_HEADING1);
 	AddCR();
 	AddCR();
 
 	for (int i = 0; i < numSections; i++)
 	{
-		sprintf(text, "Section %s", sections[i]->GetName());
+		sprintf(text, klocale->translate("Section %s"), sections[i]->GetName());
 		sprintf(page, "(%s)", sections[i]->GetName());
 		AddDir(text, page, sections[i]->GetDesc(), MAN_DIRBOOK);
 	}
@@ -100,7 +105,7 @@ int cManTextList::Read(cManSection &sect)
 	char buffer[256];
 	sect.MoveToHead();
 
-	sprintf(buffer, "Online manual - Section %s", sect.GetName());
+	sprintf(buffer, klocale->translate("Online manual - Section %s"), sect.GetName());
 	AddText(buffer, MAN_HEADING1);
 	AddCR();
 	AddCR();
@@ -449,23 +454,23 @@ cManSection::cManSection(const char *theName)
 	if ( sdesc.isNull() )
 	{
 		if ( strncmp( theName, "1", 1 ) == 0 )
-			sdesc = "User Commands";
+			sdesc = klocale->translate("User Commands");
 		else if ( strncmp( theName, "2", 1 ) == 0 )
-			sdesc = "System Calls";
+			sdesc = klocale->translate("System Calls");
 		else if ( strncmp( theName, "3", 1 ) == 0 )
-			sdesc = "Subroutines";
+			sdesc = klocale->translate("Subroutines");
 		else if ( strncmp( theName, "4", 1 ) == 0 )
-			sdesc = "Devices";
+			sdesc = klocale->translate("Devices");
 		else if ( strncmp( theName, "5", 1 ) == 0 )
-			sdesc = "File Formats";
+			sdesc = klocale->translate("File Formats");
 		else if ( strncmp( theName, "6", 1 ) == 0 )
-			sdesc = "Games";
+			sdesc = klocale->translate("Games");
 		else if ( strncmp( theName, "7", 1 ) == 0 )
-			sdesc = "Miscellaneous";
+			sdesc = klocale->translate("Miscellaneous");
 		else if ( strncmp( theName, "8", 1 ) == 0 )
-			sdesc = "System Administration";
+			sdesc = klocale->translate("System Administration");
 		else if ( strncmp( theName, "n", 1 ) == 0 )
-			sdesc = "New";
+			sdesc = klocale->translate("New");
 		else
 			sdesc = "";
 
@@ -574,7 +579,7 @@ void cManSection::ReadDir(const char *dirName)
 	char *ptr;
 	char buffer[256];
 
-	cout << "Reading Dir : " << dirName << endl;
+	cout << klocale->translate("Reading Dir: ") << dirName << endl;
 
 	dir = opendir(dirName);
 
@@ -771,7 +776,7 @@ int cMan::ReadLocation(const char *name)
 				Reset();
 				sections[i]->ReadSection();
 				manList.Read(*(sections[i]));
-				strcpy(posString, "Online Manual - Section ");
+				strcpy(posString, klocale->translate("Online Manual - Section"));
 				strcat(posString, sections[i]->GetName());
 				pos = MAN_POSSECTION;
 				return 0;
@@ -782,7 +787,7 @@ int cMan::ReadLocation(const char *name)
 		{
 			Reset();
 			manList.MakeDirectory();
-			strcpy(posString, "Online Manuals");
+			strcpy(posString, klocale->translate("Online Manuals"));
 			pos = MAN_POSDIR;
 			return 0;
 		}
@@ -829,7 +834,7 @@ int cMan::ReadLocation(const char *name)
 
 		if (status < 0)			// system returns -ve on failure
 		{
-			Error.Set(ERR_WARNING, "\"man\" system call failed");
+			Error.Set(ERR_WARNING, klocale->translate("\"man\" system call failed"));
 			return 1;
 		}
 
@@ -847,7 +852,7 @@ int cMan::ReadLocation(const char *name)
 
 		if (stream.fail())
 		{
-			Error.Set(ERR_FATAL, "Opening temporary file failed");
+			Error.Set(ERR_FATAL, klocale->translate("Opening temporary file failed"));
 			return 1;
 		}
 

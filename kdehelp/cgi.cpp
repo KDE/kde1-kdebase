@@ -21,7 +21,13 @@
 #include "cgi.h"
 
 #include "cgi.moc"
+#include <kmisc.h>
 
+#include <klocale.h>
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
+// #define klocale KLocale::getGlobalLocale()
 
 KCGI::KCGI()
 {
@@ -75,8 +81,9 @@ bool KCGI::get( const char *_url, const char *_dest, const char *_method )
 
 	if ( url.isMalformed() )
 	{
-		printf( "CGI: Destination URL malformed: %s\n", _dest );
-		return false;
+	    printf( klocale->translate("CGI: Destination URL malformed: %s\n"),
+		    _dest );
+	    return false;
 	}
 
 	destFile = url.path();

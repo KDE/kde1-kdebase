@@ -11,6 +11,7 @@
 #include <qmsgbox.h>
 #include <kapp.h>
 #include <drag.h>
+#include <klocale.h>
 #include "error.h"
 #include "khelp.h"
 #include "mainwidget.h"
@@ -24,6 +25,7 @@ void catchSignals();
 
 static int msgqid = -1;
 static QString pidFile;
+KLocale locale("kdehelp");
 
 //-----------------------------------------------------------------------------
 // timer used to monitor msg queue for request for new window
@@ -73,7 +75,9 @@ void errorHandler( int type, char *msg )
 {
 	QApplication::setOverrideCursor( arrowCursor );
 
-	QMessageBox::message( "Error", msg, "Ok" );
+	QMessageBox::message( locale.translate("Error"), 
+			      msg, 
+			      locale.translate("Ok") );
 
 	QApplication::restoreOverrideCursor();
 
@@ -117,11 +121,8 @@ int main(int argc, char *argv[])
 
 	if ( i == argc )
 	{
-		char *kdedir = getenv( "KDEDIR" );
-		if (!kdedir)
-			kdedir = "/usr/local/kde"; 
 		initDoc = "file:";
-		initDoc += kdedir;
+		initDoc += kapp->kdedir();
 		initDoc += "/doc/HTML/index.html";
 	}
 
@@ -184,7 +185,7 @@ int main(int argc, char *argv[])
 	msgqid = msgget( key, IPC_CREAT | 0600 );
 
 	fp = fopen( pidFile, "w" );
-	fprintf( fp, "%d %d\n", getpid(), msgqid );
+	fprintf( fp, "%ld %d\n", getpid(), msgqid );
 	fclose( fp );
 
 	// so that everything is cleaned up
@@ -197,8 +198,10 @@ int main(int argc, char *argv[])
 
 	KApplication a( argc, argv, "kdehelp" );
 
+	//	KLocale::setGlobalLocale(&locale);
+	
 	KHelpMain *helpWin = new KHelpMain;
-
+	
 	if ( !helpWin->openURL( url ) )
 	{
 		helpWin->show();

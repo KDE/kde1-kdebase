@@ -21,6 +21,11 @@
 
 #include "options.moc"
 
+#include <klocale.h>
+#include <klocale.h>
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
 
 //-----------------------------------------------------------------------------
 
@@ -32,23 +37,23 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	QRadioButton *rb;
 	QLabel *label;
 
-	QButtonGroup *bg = new QButtonGroup( "Font Size", this );
+	QButtonGroup *bg = new QButtonGroup( klocale->translate("Font Size"), this );
 	bg->setExclusive( TRUE );
 	bg->setGeometry( 15, 15, 300, 50 );
 
-	rb = new QRadioButton( "Small", bg );
+	rb = new QRadioButton( klocale->translate("Small"), bg );
 	rb->setGeometry( 10, 20, 80, 20 );
 	rb->setChecked( fSize == 3 );
 
-	rb = new QRadioButton( "Medium", bg );
+	rb = new QRadioButton( klocale->translate("Medium"), bg );
 	rb->setGeometry( 100, 20, 80, 20 );
 	rb->setChecked( fSize == 4 );
 
-	rb = new QRadioButton( "Large", bg );
+	rb = new QRadioButton( klocale->translate("Large"), bg );
 	rb->setGeometry( 200, 20, 80, 20 );
 	rb->setChecked( fSize == 5 );
 
-	label = new QLabel( "Standard Font", this );
+	label = new QLabel( klocale->translate("Standard Font"), this );
 	label->setGeometry( 15, 90, 100, 20 );
 
 	QComboBox *cb = new QComboBox( false, this );
@@ -65,7 +70,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotStandardFont( const char * ) ) );
 
-	label = new QLabel( "Fixed Font", this );
+	label = new QLabel( klocale->translate( "Fixed Font"), this );
 	label->setGeometry( 15, 130, 100, 20 );
 
 	cb = new QComboBox( false, this );
@@ -203,7 +208,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	KColorButton *colorBtn;
 	QLabel *label;
 
-	label = new QLabel( "Background Color:", this );
+	label = new QLabel( klocale->translate("Background Color:"), this );
 	label->setGeometry( 35, 20, 150, 25 );
 
 	colorBtn = new KColorButton( bgColor, this );
@@ -211,7 +216,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotBgColorChanged( const QColor & ) ) );
 
-	label = new QLabel( "Normal Text Color:", this );
+	label = new QLabel( klocale->translate("Normal Text Color:"), this );
 	label->setGeometry( 35, 60, 150, 25 );
 
 	colorBtn = new KColorButton( textColor, this );
@@ -219,7 +224,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotTextColorChanged( const QColor & ) ) );
 
-	label = new QLabel( "URL Link Color:", this );
+	label = new QLabel( klocale->translate("URL Link Color:"), this );
 	label->setGeometry( 35, 100, 150, 25 );
 
 	colorBtn = new KColorButton( linkColor, this );
@@ -227,7 +232,7 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
 		SLOT( slotLinkColorChanged( const QColor & ) ) );
 
-	label = new QLabel( "Followed Link Color:", this );
+	label = new QLabel( klocale->translate("Followed Link Color:"), this );
 	label->setGeometry( 35, 140, 150, 25 );
 
 	colorBtn = new KColorButton( vLinkColor, this );
@@ -298,20 +303,20 @@ void KColorOptions::slotVLinkColorChanged( const QColor &col )
 KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 	: QTabDialog( parent, name )
 {
-	setCaption( "KDE Help Options" );
+	setCaption( klocale->translate("KDE Help Options") );
 
 	resize( 350, 300 );
 
 	setCancelButton();
 	setApplyButton();
 
-	fontOptions = new KFontOptions( this, "Fonts" );
-	addTab( fontOptions, "Fonts" );
+	fontOptions = new KFontOptions( this, klocale->translate("Fonts") );
+	addTab( fontOptions, klocale->translate("Fonts") );
 	connect( this, SIGNAL( applyButtonPressed() ),
 		fontOptions, SLOT( slotApplyPressed() ) );
 
-	colorOptions = new KColorOptions( this, "Colors" );
-	addTab( colorOptions, "Colors" );
+	colorOptions = new KColorOptions( this, klocale->translate("Colors") );
+	addTab( colorOptions, klocale->translate("Colors") );
 	connect( this, SIGNAL( applyButtonPressed() ),
 		colorOptions, SLOT( slotApplyPressed() ) );
 }

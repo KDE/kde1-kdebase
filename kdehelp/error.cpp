@@ -10,6 +10,11 @@
 #include "error.h"
 
 cError Error;
+#include <klocale.h>
+#include <klocale.h>
+// this is just a hack, 'til someone find a better solution
+extern KLocale locale;
+static KLocale* klocale = &locale;
 
 // ============================================================================
 // The default error handler
@@ -18,12 +23,12 @@ void DefHandler(int type, const char *theMsg)
 {
 	if (type == ERR_FATAL)
 	{
-		cout << "Fatal Error: " << theMsg << endl;
+		cout << klocale->translate("Fatal Error: ") << theMsg << endl;
 		exit(1);
 	}
 	else
 	{
-		cout << "Warning: " << theMsg << endl;
+		cout << klocale->translate("Warning: ") << theMsg << endl;
 	}
 }
 
