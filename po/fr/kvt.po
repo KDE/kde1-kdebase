@@ -95,7 +95,7 @@ msgstr "Cacher Barre de &Menu"
 
 #: main.C:401 main.C:460 main.C:586
 msgid "Show &Menubar"
-msgstr "Afficher Barre de &Menu""
+msgstr "Afficher Barre de &Menu"
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
@@ -104,7 +104,6 @@ msgstr "Bloquer &Clavier"
 
 #: main.C:404
 msgid "Scroll&bar"
-#msgstr "Scroll&bar"
 msgstr  "&Barre de défilement"
 
 #: main.C:405

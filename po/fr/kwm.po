@@ -8,7 +8,7 @@ msgstr ""
 
 #: main.C:77
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: érreur pendant l'initialisation; commande annulée"
+msgstr "kwm: érreur pendant l'initialisation; commande annulée\n"
 
 #: main.C:352
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -159,7 +159,7 @@ msgstr "Sous-version %d"
 
 #: kwm.C:154
 msgid "usage: kwm [-version] [-exec prog] \n"
-msgstr "utilisation: kwm [-version] [-exec programme] \n""
+msgstr "utilisation: kwm [-version] [-exec programme] \n"
 
 #: kwm.C:566
 msgid "Desktop"

@@ -390,7 +390,7 @@ msgstr ""
 
 #: morph3d.cpp:836
 msgid "GL can not render with root visual\n"
-msgstr "GL ne peus pas calculer avec une \"root visual\""
+msgstr "GL ne peus pas calculer avec une \"root visual\"\n"
 
 #: morph3d.cpp:937
 msgid "Morph3D (GL)"
@@ -478,7 +478,6 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-msgid ""
 "Pyro Version 3.4\n"
 "\n"
 "Touts droits réservés (c) 1991 par Patrick J. Naughton\n"
