@@ -100,8 +100,8 @@ install:
 	@echo " He will forward it to the right developer."
 	@echo " You can reach him under kde-bugs@kde.org"
 	@echo ""
-	@echo " Fun with the KDE wishes you Stephan Kulow 
-	@echo " <coolo@kde.org> and all the other KDE developers.
+	@echo " Fun with the KDE wishes you Stephan Kulow "
+	@echo " <coolo@kde.org> and all the other KDE developers."
 	@echo "****************************************************"
 	@echo ""
 
