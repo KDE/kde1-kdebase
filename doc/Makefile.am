@@ -1,1 +1,1 @@
-SUBDIRS = kdehelp kdisplay kfm kdm kwm kvt kfontmanager kfind kmenuedit
+SUBDIRS = kdehelp kdisplay kfm kdm kwm kvt kfontmanager kfind kmenuedit kcontrol
