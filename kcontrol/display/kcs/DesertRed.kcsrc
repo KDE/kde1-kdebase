@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=Desert red
+BackgroundColor=214,205,187
+SelectColor=128,0,0
+TextColor=0,0,0
+ActiveTitleTextColor=255,255,255
+InactiveTitleBarColor=0,0,0
+InactiveTitleBlendColor=214,205,187
+ActiveTitleBarColor=128,0,0
+ActiveTitleBlendColor=0,0,0
+Contrast=3
+InactiveTitleTextColor=214,214,214
+WindowTextColor=0,0,0
+WindowColor=255,255,255
+SelectTextColor=255,255,255

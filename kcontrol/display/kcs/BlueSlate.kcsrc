@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=Blue slate
+BackgroundColor=#9db9c8
+SelectColor=#558097
+TextColor=#000000
+ActiveTitleTextColor=#ffffff
+InactiveTitleBarColor=#9c9c9c
+InactiveTitleBlendColor=#9db9c8
+ActiveTitleBarColor=#558097
+ActiveTitleBlendColor=#9db9c8
+Contrast=5
+InactiveTitleTextColor=#d6d6d6
+WindowTextColor=#000000
+WindowColor=#c3c3c3
+SelectTextColor=#ffffff

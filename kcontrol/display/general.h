@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 //
-// KDE Display color scheme setup module
+// KDE Display fonts, styles setup module
 //
 // Copyright (c)  Mark Donohoe 1997
 //
@@ -47,6 +47,7 @@ protected slots:
 
 protected:
 	void fillCharsetCombo();
+	void getFontList( QStrList &list, bool fixed = false );
 	void getFontList( QStrList &list, const char *pattern );
 	void addFont( QStrList &list, const char *xfont );
 	
@@ -90,7 +91,7 @@ public:
 
 protected slots:
 	
-	void slotChangeStyle(int );
+	void slotChangeStyle();
 	void slotApply();
 	void slotPreviewFont( QFont fnt );
 	void slotHelp();

@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=Atlas green
+BackgroundColor=#afb49f
+SelectColor=#6f7a63
+TextColor=#000000
+ActiveTitleTextColor=#ffffff
+InactiveTitleBarColor=#000000
+InactiveTitleBlendColor=#afb49f
+ActiveTitleBarColor=#6f7a63
+ActiveTitleBlendColor=#000000
+Contrast=5
+InactiveTitleTextColor=#afb49f
+WindowTextColor=#000000
+WindowColor=#ffffff
+SelectTextColor=#ffffff

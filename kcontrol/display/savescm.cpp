@@ -15,6 +15,7 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	: QDialog( parent, name, TRUE )
 {
 	setFocusPolicy(QWidget::StrongFocus);
+	setCaption( i18n("Add a color scheme"));
 	
 	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 
@@ -22,13 +23,16 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 	topLayout->addLayout( stackLayout );
 
 	nameLine = new QLineEdit( this );
+	nameLine->setFocus();
 	nameLine->setMaxLength(18);
 	nameLine->setFixedHeight( nameLine->sizeHint().height() );
 	
 	QLabel* tmpQLabel;
 	tmpQLabel = new QLabel( nameLine, 
-			i18n( "&Enter the name of a new\n"\
-					"color scheme to be added to the list." ), this );
+			i18n( "&Enter a name for the new color scheme\n"\
+					"to be added to your personal list.\n\n"\
+					"The colors currently used in the preview will\n"\
+					"be copied into this scheme to begin with." ), this );
 	tmpQLabel->setAlignment( AlignLeft | AlignBottom | ShowPrefix );
 	tmpQLabel->setFixedHeight( tmpQLabel->sizeHint().height() );
 	tmpQLabel->setMinimumWidth( tmpQLabel->sizeHint().width() );

@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=Solaris CDE
+BackgroundColor=#aeb2c3
+SelectColor=#718ba5
+TextColor=#000000
+ActiveTitleTextColor=#ffffff
+InactiveTitleBarColor=#aeb2c3
+InactiveTitleBlendColor=#aeb2c3
+ActiveTitleBarColor=#b24d7a
+ActiveTitleBlendColor=#aeb2c3
+Contrast=3
+InactiveTitleTextColor=#000000
+WindowTextColor=#000000
+WindowColor=#9397a5
+SelectTextColor=#ffffff

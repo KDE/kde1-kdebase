@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=CDE
+BackgroundColor=#999999
+SelectColor=#326284
+TextColor=#ffffff
+ActiveTitleTextColor=#ffffff
+ActiveTitleBlendColor=#999999
+InactiveTitleBarColor=#818181
+InactiveTitleBlendColor=#999999
+ActiveTitleBarColor=#326284
+Contrast=7
+InactiveTitleTextColor=#ffffff
+WindowTextColor=#ffffff
+WindowColor=#818181
+SelectTextColor=#ffffff

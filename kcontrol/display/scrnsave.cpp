@@ -146,7 +146,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	monitorLabel->setAlignment( AlignCenter );
 	monitorLabel->setPixmap( p );
 	monitorLabel->setMinimumSize( 220, 160 );
-					 
+		 
 	topLayout->addMultiCellWidget( monitorLabel, 1, 1, 1, 2 );
 
 	monitor = new KSSMonitor( monitorLabel );
@@ -224,6 +224,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
 	
+	groupLayout->addSpacing( 20 );
 	groupLayout->addLayout( pushLayout );
 	
 	waitEdit = new QLineEdit( group );

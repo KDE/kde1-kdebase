@@ -1,0 +1,16 @@
+# KDE Config File
+[Color Scheme]
+Name=Pale gray
+BackgroundColor=#d6d6d6
+SelectColor=#000000
+TextColor=#000000
+ActiveTitleTextColor=#ffffff
+InactiveTitleBarColor=#a0a0a0
+InactiveTitleBlendColor=#d6d6d6
+ActiveTitleBarColor=#000000
+ActiveTitleBlendColor=#d6d6d6
+Contrast=3
+InactiveTitleTextColor=#d6d6d6
+WindowTextColor=#000000
+WindowColor=#ffffff
+SelectTextColor=#ffffff

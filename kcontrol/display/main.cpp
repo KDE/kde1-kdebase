@@ -62,12 +62,13 @@ KDisplayApplication::KDisplayApplication(int &argc, char **argv, const char *nam
       if (!pages || pages->contains("background"))
         addPage(background = new KBackground(dialog, KDisplayModule::Setup), 
 		klocale->translate("&Background"), "kdisplay-3.html");
+	  if (!pages || pages->contains("screensaver"))
+	  addPage(screensaver = new KScreenSaver(dialog, KDisplayModule::Setup),
+		  klocale->translate("&Screensaver"), "kdisplay-4.html");
+      
       if (!pages || pages->contains("colors"))
 	  addPage(colors = new KColorScheme(dialog, KDisplayModule::Setup), 
 		  klocale->translate("&Colors"), "kdisplay-5.html");
-      if (!pages || pages->contains("screensaver"))
-	  addPage(screensaver = new KScreenSaver(dialog, KDisplayModule::Setup),
-		  klocale->translate("&Screensaver"), "kdisplay-4.html");
       
 
       if (background || screensaver || colors || general)

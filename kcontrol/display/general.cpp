@@ -62,9 +62,9 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	cmbFont = new QComboBox( false, this );
 	cmbFont->setFixedHeight( cmbFont->sizeHint().height() );
 	
-	//getFontList( fontList, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
-	getFontList( fontList, "-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
+	getFontList( fontList, true );
 	cmbFont->insertStrList( &fontList );
+	
 	
 	QStrListIterator it( fontList );
 	for ( i = 0; it.current(); ++it, i++ ) {
@@ -106,8 +106,8 @@ KFontChooser::KFontChooser( QWidget *parent, const char *name )
 	
 	sbSize = new KNumericSpinBox( this );
 	
-	sbSize->setStep( 2 );
-	sbSize->setRange( 8, 20 );
+	sbSize->setStep( 1 );
+	sbSize->setRange( 8, 18 );
 	sbSize->setValue( 12 );
 	
 	connect( sbSize, SIGNAL( valueDecreased() ),
@@ -150,12 +150,41 @@ void KFontChooser::getFontList( QStrList &list, const char *pattern )
 	int num;
 	char **xFonts = XListFonts( qt_xdisplay(), pattern, 1000, &num );
 
+	debug("number of fonts found %d", num);
+
 	for ( int i = 0; i < num; i++ )
 	{
 		addFont( list, xFonts[i] );
 	}
 
 	XFreeFontNames( xFonts );
+}
+
+
+void KFontChooser::getFontList( QStrList &list, bool fixed )
+{
+	// Use KDE fonts fs there is a KDE font list and only if the KDE fonts
+	// exist on the server where the desktop is running.
+	
+	QStrList lstSys, lstKDE;
+	
+	if ( fixed ) {
+		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-m-*-*-*" );
+		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-c-*-*-*" );
+	} else
+		getFontList( lstSys, "-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
+		
+	if ( !kapp->getKDEFonts( &lstKDE ) ) {
+		debug("No kapp fonts found");
+		list = lstSys;
+		return;
+	}
+	
+	for( int i = 0; i < lstKDE.count(); i++ ) {
+		if ( lstSys.find( lstKDE.at( i ) ) != -1 ) {
+			list.append( lstKDE.at( i ) );
+		}
+	}
 }
 
 void KFontChooser::addFont( QStrList &list, const char *xfont )
@@ -302,7 +331,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	else
 		cbStyle->setChecked( False);
 	
-	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle( 0 )  )  );
+	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle()  )  );
 	
 	topLayout->addWidget( cbStyle, 10 );
 	
@@ -345,7 +374,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	fontTypeList->insertItem( i18n("General font") );
 	fontTypeList->insertItem( i18n("Fixed font") );
 	fontTypeList->insertItem( i18n("Window title font") );
-	fontTypeList->insertItem( i18n("Panel font") );
+	fontTypeList->insertItem( i18n("Panel button font") );
 	fontTypeList->insertItem( i18n("Panel clock font") );
 	fontTypeList->setCurrentItem( 0 );
 	connect( fontTypeList, SIGNAL( highlighted( int ) ),
@@ -385,18 +414,13 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 }
 
 
-void KGeneral::slotChangeStyle(int)
+void KGeneral::slotChangeStyle()
 {
-	int selection;
-	
-	selection = stCombo->currentItem()+1;
-	switch(selection) {
-		case 1:	applicationStyle=MotifStyle;
-				break;
-		case 2:	applicationStyle=WindowsStyle;
-				break;
-	}
-	
+	if( cbStyle->isChecked() )
+		applicationStyle = WindowsStyle;
+	else
+		applicationStyle = MotifStyle;
+				
 	changed=TRUE;
 }
 
@@ -455,13 +479,13 @@ void KGeneral::readSettings( int )
 	if ( !str.isNull() )
 	{
 		if( str == "Windows 95" ) {
-			applicationStyle=WindowsStyle;
+			applicationStyle = WindowsStyle;
 		}
 		else {
-			applicationStyle=MotifStyle;
+			applicationStyle = MotifStyle;
 		}
 	} else {
-		applicationStyle=MotifStyle;
+		applicationStyle = MotifStyle;
 	}
 
 }
@@ -501,12 +525,15 @@ void KGeneral::writeSettings()
 	systemConfig->setGroup( "GUI Style" );
 
 	QString str;
-	if(applicationStyle==WindowsStyle)
+	if( applicationStyle == WindowsStyle )
 		str.sprintf("Windows 95" );
 	else
 		str.sprintf("Motif" );
 	systemConfig->writeEntry("Style", str, true, true);
 	systemConfig->sync();
+	
+	//For writing to kpanel
+	//config = new KSimpleConfig(KApplication::localconfigdir() + "/kpanelrc");
 }
 
 void KGeneral::slotApply()
