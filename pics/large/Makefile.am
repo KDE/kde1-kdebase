@@ -16,7 +16,9 @@ pers_applnk.xpm pk.xpm postscript.xpm resource.xpm shell_script.xpm sound.xpm \
 system_package.xpm tape_archive.xpm terminal.xpm tex.xpm tgz.xpm trash.xpm \
 txt.xpm unknown.xpm utilities_package.xpm video.xpm window_list.xpm www.xpm \
 y_src.xpm zip_mount.xpm zip_unmount.xpm trash_full.xpm kfm_fulltrash.xpm \
-settings_package.xpm shredder.xpm 
+settings_package.xpm shredder.xpm document.xpm editors_package.xpm library.xpm \
+magneto-optical_mount.xpm magneto-optical_unmount.xpm readme.xpm single_doc.xpm \
+socket.xpm tablet.xpm x.xpm script.xpm
 
 
 # FIXME - there is no $(kde_largedir) yet

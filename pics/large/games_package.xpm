@@ -1,5 +1,5 @@
 /* XPM */
-static char * games_package_xpm[] = {
+static char * large_games_package_xpm[] = {
 "48 48 250 2",
 "  	c None",
 ". 	c #020204",
@@ -231,7 +231,7 @@ static char * games_package_xpm[] = {
 "e+	c #FFFFFF",
 "f+	c #D8D8D8",
 "g+	c #686868",
-"h+	c #CECECE",
+"h+	c #DBDBDB",
 "i+	c #FEF694",
 "j+	c #FEF284",
 "k+	c #999999",
@@ -291,7 +291,7 @@ static char * games_package_xpm[] = {
 "              . . 7+7+7+0+7+j+i+i+i+j+j+q+*.r+A.A.A.A.A.k+l+d+e+f+a+|+|+|+|+|+a+h+k+Y.Y.s+*.    ",
 "                  . . 0+i+0+i+j+j+p+q+j+q+t+*.*.r+A.A.A.A.A.k+l+d+e+f+a+a+|+a+h+k+Y.Y.s+*.      ",
 "                      . . i+j+p+p+j+j+t+t+u+u+v+*.*.r+A.A.A.A.A.k+l+d+e+f+a+h+k+Y.Y.s+*.        ",
-"                          . . j+q+t+q+u+u+u+v+v+h g *.*.r+A.A.A.A.A.l+f+e+f+k+Y.Y.s+*.          ",
+"                          . . j+q+t+q+u+u+u+v+v+h g *.*.r+A.A.A.A.A.l+f+e+h+k+Y.Y.s+*.          ",
 "                              . . q+u+u+u+v+v+w+g A 1+O *.*.r+A.A.A.A.A.x+f+3+Y.s+*.            ",
 "                                  . . v+v+w+w+y+#.z y O z+. *.*.r+A.A.A.3+a+3+s+*.              ",
 "                                      . . w+y+y+z y O . .       *.*.r+A.3+a+s+*.                ",

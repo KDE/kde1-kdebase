@@ -17,7 +17,8 @@ postscript.xpm printer.xpm readme.xpm readonly.xpm resource.xpm s_src.xpm \
 script.xpm settings_package.xpm socket.xpm sound.xpm system_package.xpm \
 tablet.xpm terminal.xpm tex.xpm tgz.xpm trash.xpm txt.xpm unknown.xpm \
 utilities_package.xpm video.xpm www.xpm x.xpm y_src.xpm zip_mount.xpm \
-zip_unmount.xpm kmultiple.xpm shredder.xpm
+zip_unmount.xpm kmultiple.xpm shredder.xpm single_doc.xpm \
+pers_applnk.xpm
 
 
 datadir = $(kde_icondir)
