@@ -89,7 +89,7 @@ KResourceMan::~KResourceMan()
 
 void KResourceMan::sync()
 {
-	
+
 	if ( !propDict->isEmpty() ) {
 		
 		time_t timestamp;
@@ -128,8 +128,8 @@ void KResourceMan::sync()
 		proc.start( KProcess::Block );
 		
 		QDir d( _PATH_TMP );
-		if ( d.exists() )
-			d.remove( fileName );
+ 		if ( d.exists() )
+ 			d.remove( fileName );
 	
 		propDict->clear();
 	}

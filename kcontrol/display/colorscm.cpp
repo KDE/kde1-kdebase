@@ -709,33 +709,38 @@ void KColorScheme::writeSettings()
 	sys->writeEntry("contrast", cs->contrast, true, true);
     sys->sync();
 	
-	if ( useRM ) {
-		QApplication::setOverrideCursor( waitCursor );
+ 	if ( useRM ) {
+ 		QApplication::setOverrideCursor( waitCursor );
+		//Matthias: krdb seems to be more advanced then the kresourceman....
+		// so simply use krdb
+		KProcess proc;
+		proc.setExecutable("krdb");
+		proc.start( KProcess::Block );
 
-		KResourceMan *krdb = new KResourceMan();
+// 		KResourceMan *krdb = new KResourceMan();
 
-		krdb->setGroup( "General" );
-		krdb->writeEntry("background", cs->back );
-		krdb->writeEntry("selectBackground", cs->select );
-		krdb->writeEntry("foreground", cs->txt );
-		krdb->writeEntry("windowForeground", cs->windowTxt );
-		krdb->writeEntry("windowBackground", cs->window );
-		krdb->writeEntry("selectForeground", cs->selectTxt );
+// 		krdb->setGroup( "General" );
+// 		krdb->writeEntry("background", cs->back );
+// 		krdb->writeEntry("selectBackground", cs->select );
+// 		krdb->writeEntry("foreground", cs->txt );
+// 		krdb->writeEntry("windowForeground", cs->windowTxt );
+// 		krdb->writeEntry("windowBackground", cs->window );
+// 		krdb->writeEntry("selectForeground", cs->selectTxt );
 
-		krdb->setGroup( "WM" );
-		krdb->writeEntry("activeForeground", cs->aTxt );
-		krdb->writeEntry("inactiveBackground", cs->iaTitle );
-		krdb->writeEntry("inactiveBlend", cs->iaBlend );
-		krdb->writeEntry("activeBackground", cs->aTitle );
-		krdb->writeEntry("activeBlend", cs->aBlend );
-		krdb->writeEntry("inactiveForeground", cs->iaTxt );
+// 		krdb->setGroup( "WM" );
+// 		krdb->writeEntry("activeForeground", cs->aTxt );
+// 		krdb->writeEntry("inactiveBackground", cs->iaTitle );
+// 		krdb->writeEntry("inactiveBlend", cs->iaBlend );
+// 		krdb->writeEntry("activeBackground", cs->aTitle );
+// 		krdb->writeEntry("activeBlend", cs->aBlend );
+// 		krdb->writeEntry("inactiveForeground", cs->iaTxt );
 
-		krdb->setGroup( "KDE" );
-		krdb->writeEntry("contrast", cs->contrast );
-    	krdb->sync();
+// 		krdb->setGroup( "KDE" );
+// 		krdb->writeEntry("contrast", cs->contrast );
+//     	krdb->sync();
 
-		QApplication::restoreOverrideCursor();
-	}
+ 		QApplication::restoreOverrideCursor();
+ 	}
 }
 
 void KColorScheme::slotApply()
