@@ -6,7 +6,6 @@ MiniIcon=kcmscsi.xpm
 Type=Application
 DocPath=kcontrol/kcminfo/info-9.html
 Comment=SCSI information
-Comment[br]=Titouroù war SCSI
 Comment[ca]=Informació de SCSI
 Comment[cs]=Informace o SCSI
 Comment[da]=SCSI-information

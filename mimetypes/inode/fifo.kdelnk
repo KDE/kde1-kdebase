@@ -1,7 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Pipe
-Comment[br]=Korzenn (FIFO)
 Comment[ca]=Tub (pipe)
 Comment[cs]=FIFO roura
 Comment[de]=Weiterleitung (Pipe)

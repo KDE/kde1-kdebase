@@ -3,7 +3,6 @@
 WmCommand=
 BinaryPattern=
 Name=Acrobat Reader
-Name[br]=Lenner Acrobat
 Name[da]=Acrobat læser
 Name[fi]=Acrobat -lukija
 Name[hr]=Acrobat èitaè
@@ -18,7 +17,6 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=Reader for Acrobat documents
-Comment[br]=Lenner evit teulioù Acrobat
 Comment[ca]=Lector de documents Acrobat
 Comment[cs]=Prohlí¾eè PDF souborù
 Comment[da]=Læseprogram for Acrbat dokumenter

@@ -1,7 +1,6 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=International Keyboard Layout
-Name[br]=Tres ar stokellaoueg etrevroadel
 Name[ca]=Disposició del teclat internacional
 Name[cs]=Rozvr¾ení mezinárodní klávesnice
 Name[da]=International tastaturudlægning
@@ -23,7 +22,6 @@ Name[sk]=Kikbd
 Name[sl]=Razporeditev mednarodne tipkovnice
 Name[sv]=Layout för internationellt tangentbord
 Comment=International Keyboard
-Comment[br]=Stokellaoueg etrevroadel
 Comment[ca]=Teclat internacional
 Comment[cs]=Mezinárodní klávesnice
 Comment[da]=Internationalt tastatur

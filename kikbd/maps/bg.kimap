@@ -7,7 +7,6 @@
 Authors=Jordan Ostreff <http://www.biscom.net/~jostreff/>,
 
 Comment=Phonetic layout. Has English characters as alternate symbols.
-Comment[br]=Tres moueziadek. Nodoù saoz dezhañ evel arouezennoù divoutin.
 Comment[ca]=Disposició fonètica. Té els caràcters anglesos com símbols.
 Comment[cs]=Fonetické rozvr¾ení. Má anglické znaky jako altenativní symboly.
 Comment[da]=Fonetisk udlægning. Har engelske tegn som alternative symboler
@@ -29,7 +28,6 @@ Comment[sl]=Fonetièna razporeditev. Angle¹ki znaki kot alternativni.
 Comment[sv]=Fonetisk layout. Har engelska tecken som alternativa symboler.
 
 Language=Bulgarian
-Language[br]=Bulgareg
 Language[ca]=Búlgar
 Language[cs]=Bulharský
 Language[da]=Bulgarsk

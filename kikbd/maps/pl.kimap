@@ -4,7 +4,6 @@
 Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
-Comment[br]=Stokellaoueg ar gouleverien polonat
 Comment[ca]=Teclat de programadors polonès
 Comment[cs]= Polská 'programátorská' klávesnice
 Comment[da]=Polsk programmørtastatur
@@ -27,7 +26,6 @@ Comment[sl]=Poljska ,,programerska`` tipkovnica
 Comment[sv]=Polskt programmeringstangentbord
 
 Language=Polish
-Language[br]=Poloneg
 Language[ca]=Polonès
 Language[cs]=Polský
 Language[da]=Polsk

@@ -1,7 +1,6 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=File manager ( Super User Mode )
-Name[br]=Merour restroù (mod gourarveriad)
 Name[ca]=Gestor de fitxers ( Mode super usuari )
 Name[cs]=Správce souborù ( Super u¾ivatelský mod )
 Name[da]=Filmanager (Superbruger modus )
@@ -28,7 +27,6 @@ Type=Application
 Exec=kfmsu -caption "%c" %i %m
 DocPath=kfm/index.html
 Comment=The KDE file manager
-Comment[br]=Merour restroù KDE
 Comment[ca]=El gestor de fitxers KDE
 Comment[cs]=KDE Správce souborù
 Comment[da]=KDE's filmanager

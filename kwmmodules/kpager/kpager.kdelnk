@@ -2,7 +2,6 @@
 [KDE Desktop Entry]
 BinaryPattern=
 Name=Desktop Pager
-Name[br]=Pajenner ar burev
 Name[ca]=Paginador d'escriptori
 Name[cs]=Mapa pracovní plochy
 Name[da]=Arbejdspladsskifter
@@ -24,7 +23,6 @@ Name[sv]=Skrivbordsbläddrare
 Protocols=
 MimeType=
 Comment=Manage your windows
-Comment[br]=A ver ho prenester
 Comment[ca]=Gestiona les seves finestres
 Comment[cs]=Spravuje va¹e okna
 Comment[da]=Styr dine vinduer

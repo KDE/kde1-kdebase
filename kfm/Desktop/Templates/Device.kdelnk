@@ -8,7 +8,6 @@ ReadOnly=0
 FSType=Default
 Type=FSDevice
 Name=File System Device
-Name[br]=Trobarzhell reizhiad restroù
 Name[ca]=Dispositiu de sistema de fitxers
 Name[cs]=Zaøízení souborového systému
 Name[da]=Filsystemsenhed

@@ -5,7 +5,6 @@ MimeType=application/x-object
 Icon=binary.xpm
 Patterns=*.o;
 Comment=Object Code
-Comment[br]=Kod amkan
 Comment[ca]=Codi objecte
 Comment[cs]=Objektový kód
 Comment[da]=Objektkode

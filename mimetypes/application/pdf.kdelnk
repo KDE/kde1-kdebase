@@ -6,7 +6,6 @@ Icon=pdf.xpm
 Patterns=*.pdf;*.PDF;
 DefaultApp=acroread
 Comment=Pdf Document
-Comment[br]=Teul Pdf
 Comment[ca]=Document pdf
 Comment[cs]=PDF dokument
 Comment[da]=Pdf dokument

@@ -6,7 +6,6 @@ Icon=video.xpm
 Patterns=*.avi;*.AVI;
 DefaultApp=aktion
 Comment=Microsoft AVI Video
-Comment[br]=Fiñvskeudenn Microsoft AVI
 Comment[ca]=Vídeo Microsoft AVI
 Comment[cs]=Filmy ve formátu Microsoft AVI
 Comment[da]=Microsoft AVI video

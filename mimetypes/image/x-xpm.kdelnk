@@ -5,7 +5,6 @@ Mimetype=image/x-xpm
 Icon=image.xpm
 Patterns=*.xpm;*.XPM;
 Comment=X pixmaps
-Comment[br]=Skeudenn X (piksmap)
 Comment[ca]=Pixmaps X
 Comment[cs]=Obrázek ve formátu XPM
 Comment[da]=X-pixmaps

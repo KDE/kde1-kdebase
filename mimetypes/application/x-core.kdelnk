@@ -5,7 +5,6 @@ Icon=core.xpm
 Patterns=core;core.*;
 MimeType=application/x-core
 Comment=Core dump
-Comment[br]=Tumpañ an dreujenn
 Comment[ca]=Bolcat de nucli
 Comment[da]=Dumpning af kode
 Comment[de]=Speicherauszug (Core dump)

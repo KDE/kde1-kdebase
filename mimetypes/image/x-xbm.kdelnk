@@ -5,7 +5,6 @@ MimeType=image/x-xbm
 Icon=image.xpm
 Patterns=*.xbm;*.XBM;
 Comment=X bitmap
-Comment[br]=Skeudenn XBM
 Comment[ca]=Bitmap X
 Comment[cs]=Obrázek ve formátu XBM
 Comment[da]=X-bitmap

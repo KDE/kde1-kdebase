@@ -3,7 +3,6 @@
 WmCommand=
 BinaryPattern=
 Name=Appfinder
-Name[br]=Klask arloadoù
 Name[ca]=Buscaprogrames
 Name[cs]=Hledaè aplikací
 Name[de]=Anwendungssuche
@@ -28,7 +27,6 @@ Name[zh_CN.GB2312]=Ó¦ÓÃ³ÌÐòËÑÑ°
 Protocols=
 MimeType=
 Comment=Application finder
-Comment[br]=Klask an arloadoù staliaet endeo
 Comment[ca]=Buscador de programes d'aplicació
 Comment[cs]=Hledá aplikace a pøidá je do panelu
 Comment[da]=Finder anvendelserne

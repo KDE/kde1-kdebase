@@ -5,7 +5,6 @@ MimeType=application/x-font
 Icon=font.xpm
 Patterns=*.pfa;*.PFB;*.pfb;*.gsf;*.pcf.Z;
 Comment=Fonts
-Comment[br]=Nodrezh
 Comment[cs]=Znaková sada
 Comment[da]=Skrifter
 Comment[de]=Schriftarten

@@ -4,7 +4,6 @@
 Authors=Sebestyen Zoltan <szoli@digo.inf.elte.hu>, Köteles Ferenc <fecuska@freemail.c3.hu>
 
 Language=Hungarian
-Language[br]=Hungareg
 Language[ca]=Hongarès
 Language[cs]=Maïarskı
 Language[da]=Ungarsk
@@ -39,6 +38,7 @@ Comment[hu]=Magyar 101 gombos billentyûzet kiosztás
 Comment[no]=Ungarsk tastaturutseende for tastaturer med 101 taster.
 Comment[pl]=Wêgierski uk³ad dla klawiatury ze 101 klawiszami.
 Comment[pt_BR]=Disposição húngara para teclados com 101 teclas.
+Comment[ro]=Tastaturã Ungureascã pentru tastaturi cu 101 taste.
 Comment[ru]=÷ÅÎÇÅÒÓËÁÑ ÒÁÓËÌÁÄËÁ ÄÌÑ ËÌÁ×ÉÁÔÕÒ ÓÏ 101 ËÌÁ×ÉÛÅÊ
 Comment[sk]=Maïarská klávesová mapa pre klávesnice so 101 klávesmi.
 

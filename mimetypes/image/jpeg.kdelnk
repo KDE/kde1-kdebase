@@ -5,7 +5,6 @@ MimeType=image/jpeg
 Icon=image.xpm
 Patterns=*.jpeg;*.jpg;*.JPG;
 Comment=Jpeg images
-Comment[br]=Skeudenn Jpeg
 Comment[ca]=Imatges jpeg
 Comment[cs]=Obrázek ve formátu JPEG
 Comment[da]=Jpeg-billeder

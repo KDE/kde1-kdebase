@@ -1,7 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Arrange Icons
-Name[br]=Kempenn an arlunioù
 Name[ca]=Arranja les icones
 Name[cs]=Uspoøádej ikony
 Name[da]=Arranger ikoner
@@ -28,7 +27,6 @@ Name[zh_CN.GB2312]=ÅÅÁÐÍ¼±ê
 BinaryPattern=
 Protocols=
 Comment=Arrange Desktop Icons
-Comment[br]=Kempenn arlunioù ar gorretaol
 Comment[ca]=Arranja les icones de l'escriptori
 Comment[cs]=Uspoøádá ikony na pracovní plo¹e
 Comment[da]=Arranger ikonerne på Arbejdspladsen

@@ -2,7 +2,6 @@
 [KDE Desktop Entry]
 MiniIcon=desktop_settings.xpm
 Comment=Your desktop
-Comment[br]=Ho purev
 Comment[ca]=El vostre escriptori
 Comment[cs]=Va¹e pracovní plocha
 Comment[da]=Din arbejdsplads
@@ -17,6 +16,7 @@ Comment[no]=Ditt skrivebord
 Comment[pl]=Twój desktop
 Comment[pt]=O seu ambiente de trabalho
 Comment[pt_BR]=Seu ambiente de trabalho
+Comment[ro]=Spaşiul de lucru
 Comment[ru]=÷ÁÛ ÒÁÂÏŞÉÊ ÓÔÏÌ
 Comment[sk]=Va¹a plocha
 Comment[sl]=Namizje

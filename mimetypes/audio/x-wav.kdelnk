@@ -5,7 +5,6 @@ MimeType=audio/x-wav
 Icon=sound.xpm
 Patterns=*.wav;*.WAV;
 Comment=Wav file
-Comment[br]=Restr son furmad Wav
 Comment[ca]=Fitxer wav
 Comment[da]=Wav-fil
 Comment[de]=WAV-Dokument

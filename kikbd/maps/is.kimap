@@ -13,7 +13,6 @@
 Authors=Bjarni R. Einarsson <bre@netverjar.is>
 
 Language=Icelandic
-Language[br]=Islandeg
 Language[cs]=Islandský
 Language[da]=Islandsk
 Language[es]=Islandés
@@ -25,6 +24,7 @@ Language[no]=Islandsk
 Language[pl]=Islandzki
 Language[pt]=Islândico
 Language[pt_BR]=Islândico
+Language[ro]=Islandezã
 Language[sk]=Islandský
 
 Label=is

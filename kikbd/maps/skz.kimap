@@ -4,7 +4,6 @@
 Authors=Jan ONDREJ (SAL) <ondrejj@salstar.shadow.sk>
 
 Comment=Typewriter Keyboard (QWERTZ)
-Comment[br]=Stokellaoueg ur skriverez (QWERTZ)
 Comment[ca]=Teclat de m‡quina d'escriure (QWERTZ)
 Comment[cs]=Kl·vesnice psacÌho stroje (QWERTZ)
 Comment[da]=Skrivemaskine tastatur (QWERTZ)
@@ -19,13 +18,13 @@ Comment[no]=Skrivemaskintastatur (QWERTZ)
 Comment[pl]=Klawiatura maszynistki (QWERTZ)
 Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilÛgrafo (QWERTZ)
+Comment[ro]=Tastatur„ (QWERTZ)
 Comment[ru]=ÈŒ‘≈“Œ¡√…œŒ¡ÃÿŒ¡— ÀÃ¡◊…¡‘’“¡
 Comment[sk]=Medzin·rodn· kl·vesnica
 Comment[sl]=Razpored QWERTZ
 Comment[sv]=Maskinskrivningstangentbord (QWERTZ)
 
 Language=Slovak
-Language[br]=Sloveg
 Language[ca]=Eslovac
 Language[cs]=Slovensk˝
 Language[da]=Slovakisk

@@ -1,7 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Menu Editor
-Name[br]=Aozer lañserioù
 Name[ca]=Editor de menús
 Name[cs]=Editor menu
 Name[da]=Menuredigering
@@ -33,7 +32,6 @@ Path=
 DocPath=kmenuedit/index.html
 Terminal=0
 Comment=Program to change the menus of kpanel
-Comment[br]=Goulev evit kemmañ lañserioù kpanel
 Comment[ca]=Programa per canviar els menús del plafó
 Comment[cs]=Program urèený ke zmìnì menu pro kpanel
 Comment[da]=Program der kan ændre menuerne i kpanel

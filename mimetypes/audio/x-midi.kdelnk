@@ -5,7 +5,6 @@ MimeType=audio/x-midi
 Icon=sound.xpm
 Patterns=*.mid;*.MID;
 Comment=Midi file
-Comment[br]=Restr Midi (sonerezh)
 Comment[ca]=Fitxer midi
 Comment[cs]=Midi soubor
 Comment[da]=Midi-fil

@@ -2,7 +2,6 @@
 
 [International Keyboard]
 Comment=Programmers Keyboard
-Comment[br]=Stokellaoueg ar gouleverien
 Comment[ca]=Teclat de programadors
 Comment[cs]=Nastavení klávesnice
 Comment[da]=Programmørtastatur
@@ -27,7 +26,6 @@ Comment[sv]=Programmeringstangentbord
 Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Czech
-Language[br]=Tchekeg
 Language[ca]=Txec
 Language[cs]=Èeskı
 Language[da]=Tjekkisk

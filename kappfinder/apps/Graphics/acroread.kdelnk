@@ -1,7 +1,6 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Acrobat Reader
-Name[br]=Lenner Acrobat
 Name[da]=Acrobat læser
 Name[fi]=Acrobat -lukija
 Name[hr]=Acrobat èitaè
@@ -18,7 +17,6 @@ Icon=kghostview.xpm
 Type=Application
 DocPath=
 Comment=PDF document viewer
-Comment[br]=Diskouezer teulioù PDF
 Comment[ca]=Visualitzador de documents PDF
 Comment[cs]=Prohlí¾eè PDF dokumentù
 Comment[da]=PostScript dokument fremviser

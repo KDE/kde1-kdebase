@@ -5,7 +5,6 @@ Mimetype=application/x-zip
 Icon=tgz.xpm
 Patterns=*.zip;*.ZIP;
 Comment=Zip archive
-Comment[br]=Diell Zip
 Comment[ca]=Arxiu zip
 Comment[cs]=Zip archív
 Comment[da]=Zip arkiv
