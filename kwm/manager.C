@@ -30,6 +30,7 @@ static char stipple_bits[] = {
 extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
 
+extern void show_minicli();
 
 Manager::Manager(): QObject(){
   manager = this;
@@ -308,6 +309,8 @@ void Manager::clientMessage(XClientMessageEvent *  e){
       darkenScreen();
     else if (com == "logout")
       logout();
+    else if (com == "execute")
+      show_minicli();
     else if (com == "configure"){
       emit reConfigure();
       Client* t;

@@ -91,6 +91,7 @@ static QFrame* infoFrameInner = NULL;
 extern bool do_not_draw;
 
 
+
 static int infoBoxVirtualDesktop = 0;
 static Client* infoBoxClient = NULL;
 static QPixmap* pm_unknown = NULL;
@@ -198,6 +199,14 @@ void sighandler(int) {
     QApplication::exit();
 }
 
+
+
+void show_minicli(){
+  if (!minicli){
+    minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+  }
+  while (!minicli->do_grabbing());
+}
 
 static void setStringProperty(const char* atomname, const char* value){
   Atom a = XInternAtom(qt_xdisplay(), atomname, False);
@@ -866,10 +875,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
   
   if( (kc == XK_F2)  && (km == Mod1Mask) ){
     freeKeyboard(False);
-    if (!minicli){
-      minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
-    }
-    while (!minicli->do_grabbing());
+    show_minicli();
     return False;
   }    
 

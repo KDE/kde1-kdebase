@@ -12,6 +12,10 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 12:
+       - new command "execute" for minicli (temporary solution until
+         we finally get a real kcli)
+
   patchlevel 11:
        - session management for unamanged windows modified. Since this
          is a KDE special for applications like kfm, other programms

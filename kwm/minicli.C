@@ -41,6 +41,8 @@ void execute(const char* cmd){
   signal(SIGCHLD, catch_child);
   if (!(fork())){ // child
     freopen("/dev/null", "r", stdin);
+    freopen("/dev/null", "w", stdout);
+    freopen("/dev/null", "w", stderr);
     setsid();
     execl(shell, shell, "-c", cmd, NULL);
     exit(1);
