@@ -165,7 +165,6 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
             char *p_size = 0L, *p_date_1 = 0L, *p_date_2 = 0L, *p_date_3 = 0L, *p_name = 0L;
 	    
 	    readstr = fgets(buffer,1024,dirfile);
-	    printf("%s",readstr);
 	    
 	    if( readstr && (p_access = strtok(buffer," ")) != 0 && (p_owner = strtok(NULL,"/")) != 0 &&
 		(p_group = strtok(NULL," ")) != 0 && (p_size = strtok(NULL," ")) != 0 &&

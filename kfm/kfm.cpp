@@ -38,7 +38,6 @@ KFM::KFM()
 	
 	QStrList urlList;
 	int n = config->readListEntry( "URLs", urlList );
-	printf("N=%i\n",n);
 	
 	if ( !flag && KfmGui::rooticons == true )
 	{
@@ -54,7 +53,6 @@ KFM::KFM()
 	    int i;
 	    for ( i = 1; i <= n; i++ )
 	    {
-		printf("URL='%s'\n",urlList.at( i - 1 ) );
 		KfmGui *m = new KfmGui( 0L, 0L, urlList.at( i - 1 ) );
 		m->readProperties(i);
 		m->show();

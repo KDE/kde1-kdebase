@@ -1178,6 +1178,9 @@ void KfmGui::slotQuit()
 			      klocale->translate("No") ) )
 	return;
     
+    // Session management
+    pkfm->slotSave();
+    
     QString file = QDir::homeDirPath();
     file += "/.kde/share/apps/kfm/pid";
     file += displayName();

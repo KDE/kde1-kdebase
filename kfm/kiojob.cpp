@@ -739,7 +739,10 @@ void KIOJob::move()
 		  goto ende2;
 		}
 		else if ( button == 3 ) // Rename
-		    du = r->getNewName();
+		{
+		  du = r->getNewName();
+		  dupath = du.path();
+		}
 		else if ( button == 4 ) // Cancel
 		{
 		    delete r;
@@ -887,10 +890,9 @@ void KIOJob::move()
 	    tmp.truncate( tmp.length() - 1 );
 	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
-	  {
-	    printf("========= NOTIFY '%s'\n", u.directoryURL( false ) );
-	    notifyList.append( u.directoryURL( false ) );
-	  }
+	{
+	  notifyList.append( u.directoryURL( false ) );
+	}
     }
     for ( s = cmSrcURLList.first(); s != 0L; s = cmSrcURLList.next() )
     {
@@ -899,10 +901,9 @@ void KIOJob::move()
 	    tmp.truncate( tmp.length() - 1 );
 	KURL u( tmp );
 	if ( notifyList.find( u.directoryURL( false ) ) == -1 )
-	  {
-	    printf("========= NOTIFY '%s'\n", u.directoryURL( false ) );
-	    notifyList.append( u.directoryURL( false ) );
-	  }
+	{
+	  notifyList.append( u.directoryURL( false ) );
+	}
     }
     
     cmCount = cmSrcURLList.count();

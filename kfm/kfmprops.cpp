@@ -988,6 +988,7 @@ void URLPropsPage::applyChanges()
     config.setGroup( "KDE Desktop Entry" );
     config.writeEntry( "URL", URLEdit->text() );
     config.writeEntry( "Icon", iconBox->icon() );
+    config.writeEntry( "MiniIcon", iconBox->icon() );
     config.sync();
 }
 

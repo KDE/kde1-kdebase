@@ -1,5 +1,18 @@
 Thu Apr 16 04:10:25 1998  Torben Weis  <weis@localhost>
 
+	* kfmprops.cpp (applyChanges): Sets icon and miniicon equal.
+	  In the past miniicon was not set at all.
+	
+	* kiojob.cpp (move): Serious bug in file moving code solved.
+	  Renaming the destination does now work. The existing file is
+	  not overwritten ( expect the user wants KFM to do so ).
+
+	* kfmgui.cpp (slotQuit): KFM does Session Management, too,
+	  when the user selects the menu item "Quit".
+
+	* kioslave/tar.cpp (ReadDir): Null pointer bug fix. Caused
+	  problems on suns.
+
 	* kbind.cpp (getPixmapFile): Some fixes ( encode/decode ).
 	  Uses KSimpleConfig in read only mode. This is hopefully faster.
 
