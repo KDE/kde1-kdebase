@@ -1,3 +1,10 @@
+1999-01-30  Peter Silva <peter.silva@kde.org>
+
+	* Added Weu keyboard which allows access to all accented 
+	  characters on a normal US keyboard without losing normal
+	  key bindings (all accented & dead keys accessed via switch_key)
+	  Dig that US & EU flag...
+
 1999-01-20  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* reverted the modifs for the disabling of kikdb autostart
