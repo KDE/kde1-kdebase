@@ -34,7 +34,6 @@
 
 
 static QString QUOTE( "\"" );
-static QString PIXDIR;
 static QString DOCS_PATH;
 
 #define hand_width 16
@@ -108,6 +107,10 @@ KBookmarkManager KHelpWindow::bookmarkManager;
 int  KHelpWindow::fontBase = 3;
 QString KHelpWindow::standardFont;
 QString KHelpWindow::fixedFont;
+QColor KHelpWindow::bgColor;
+QColor KHelpWindow::textColor;
+QColor KHelpWindow::linkColor;
+QColor KHelpWindow::vLinkColor;
 
 KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	: QWidget( parent, name ), history(50), format(&html)
@@ -119,18 +122,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	scrollTo = 0;
 	rmbPopup = NULL;
 
-	char *kdedir = getenv( "KDEDIR" );
-	if (!kdedir)
-		kdedir = "/usr/local/kde";
-	if ( kdedir )
-	{
-		PIXDIR = kdedir;
-		PIXDIR += "/lib/pics/";
-		DOCS_PATH = kdedir;
-		DOCS_PATH += "/doc/HTML/";
-	}
-//	else
-//		QMessageBox::message( "KDE Help", "Please set a $KDEDIR environment variable" );
+	DOCS_PATH = kapp->kdedir() + "/doc/HTML/";
 
 	readOptions();
 	man = new cMan;
@@ -155,7 +147,7 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
 	QCursor handCursor( cb, cm, 0, 0 );
 
-	view = new KHTMLWidget( this, NULL, PIXDIR );
+	view = new KHTMLWidget( this );
 	CHECK_PTR( view );
 	view->setDefaultFontBase( fontBase );
 	view->setStandardFont( standardFont );
@@ -165,6 +157,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	view->setFocus();
 	view->installEventFilter( this );
 	view->setUpdatesEnabled( true );
+	view->setDefaultBGColor( bgColor );
+	view->setDefaultTextColors( textColor, linkColor, vLinkColor );
 
 	vert = new QScrollBar( 0, 0, 12, view->height(), 0,
 			QScrollBar::Vertical, this, "vert" );
@@ -233,17 +227,19 @@ void KHelpWindow::readOptions()
 	KConfig *config = KApplication::getKApplication()->getConfig();
 	config->setGroup( "Appearance" );
 
-	QString bf = config->readEntry( "BaseFontSize" );
-	if ( !bf.isEmpty() )
-		fontBase = bf.toInt();
+	QString qs = config->readEntry( "BaseFontSize" );
+	if ( !qs.isEmpty() )
+		fontBase = qs.toInt();
 
-	standardFont = config->readEntry( "StandardFont" );
-	if ( standardFont.isEmpty() )
-		standardFont = "times";
+	qs = "times";
+	standardFont = config->readEntry( "StandardFont", &qs );
+	qs = "courier";
+	fixedFont = config->readEntry( "FixedFont", &qs );
 
-	fixedFont = config->readEntry( "FixedFont" );
-	if ( fixedFont.isEmpty() )
-		fixedFont = "courier";
+	bgColor = config->readColorEntry( "BgColor", &white );
+	textColor = config->readColorEntry( "TextColor", &black );
+	linkColor = config->readColorEntry( "LinkColor", &blue );
+	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
 }
 
 
@@ -1420,6 +1416,17 @@ void KHelpWindow::slotFixedFont( const char *n )
 {
 	fixedFont = n;
 	view->setFixedFont( n );
+	view->parse();
+	busy = true;
+	emit enableMenuItems();
+}
+
+
+void KHelpWindow::slotColorsChanged( const QColor &bg, const QColor &text,
+	const QColor &link, const QColor &vlink )
+{
+	view->setDefaultBGColor( bg );
+	view->setDefaultTextColors( text, link, vlink );
 	view->parse();
 	busy = true;
 	emit enableMenuItems();

@@ -15,7 +15,6 @@
 QList<KHelpMain> KHelpMain::helpWindowList;
 KHelpOptionsDialog *KHelpMain::optionsDialog = NULL;
 static QString DOCS_PATH;
-static QString PIXDIR;
 
 
 KHelpMain::KHelpMain(const char *name)
@@ -23,15 +22,9 @@ KHelpMain::KHelpMain(const char *name)
 {
 	QString kdedir;
 	helpwin = new KHelpWindow(this, name);     
-	const char *env_var = (const char *)getenv("KDEDIR");
-
 	CHECK_PTR(helpwin);
-	if (NULL != env_var) 
-		kdedir = env_var;
-	else 
-		kdedir = "/usr/local/kde";
-	PIXDIR    = kdedir + "/lib/pics/";
-	DOCS_PATH = kdedir + "/doc/HTML/";
+
+	DOCS_PATH = kapp->kdedir() + "/doc/HTML/";
 
 
 	createMenu();
@@ -70,6 +63,11 @@ KHelpMain::KHelpMain(const char *name)
 		connect( optionsDialog->fontOptions,
 			SIGNAL(fixedFont( const char * )),
 			helpwin, SLOT(slotFixedFont( const char * )) );
+		connect( optionsDialog->colorOptions,
+			SIGNAL(colorsChanged(const QColor&, const QColor&,
+			const QColor&, const QColor&)),
+			helpwin, SLOT(slotColorsChanged(const QColor&,
+			const QColor&, const QColor&, const QColor&)) );
 	}
 
 	setMinimumSize( 200, 100 );
@@ -197,13 +195,13 @@ void KHelpMain::createToolbar()
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/back.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 0, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 0, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotBack() ),
 			    FALSE, "Previous Document");
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/forward.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 1, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 1, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotForward() ),
 			    FALSE, "Next Document");
 
@@ -211,25 +209,25 @@ void KHelpMain::createToolbar()
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/prev.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 2, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 2, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotPrev() ),
 			    FALSE, "Previous Node");
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/next.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 3, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 3, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotNext() ),
 			    FALSE, "Next Node");
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/up.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 4, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 4, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotUp() ),
 			    FALSE, "Up one Node");
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/top.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 5, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 5, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotTop() ),
 			    FALSE, "Top Node");
 
@@ -237,13 +235,13 @@ void KHelpMain::createToolbar()
 
 	pmpath = kapp->findFile( "lib/pics/toolbar/contents.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 6, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 6, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotDir() ),
 			    FALSE, "Help Contents");
 
 	pmpath = kapp->findFile( "lib/pics/stop.xpm" );
 	pixmap.load( pmpath );
-	tb->insertItem(pixmap, 7, SIGNAL( clicked() ),
+	tb->insertButton(pixmap, 7, SIGNAL( clicked() ),
 			    helpwin, SLOT( slotStopProcessing() ),
 			    FALSE, "Stop");
 
@@ -274,6 +272,7 @@ void KHelpMain::readConfig()
 		showToolBar = true;
 
 	// now the position for the toolbar
+/*
 	o = config->readEntry( "ToolBarPos" );
 	if ( o.isEmpty() )
 		toolBar()->setBarPos(KToolBar::Top);
@@ -287,7 +286,7 @@ void KHelpMain::readConfig()
 		toolBar()->setBarPos(KToolBar::Right);
 	else
 		toolBar()->setBarPos(KToolBar::Top);
-
+*/
 	o = config->readEntry( "ShowStatusBar" );
 	if ( !o.isEmpty() && o.find( "No", 0, false ) == 0 )
 		showStatusBar = false;
@@ -431,14 +430,19 @@ void KHelpMain::slotOptionsGeneral()
 		KHelpMain *w;
 		for (w = helpWindowList.first(); w != NULL; w = helpWindowList.next() )
 		{
-			connect( optionsDialog->fontOptions, SIGNAL(fontSize( int )),
-				 w->helpwin, SLOT(slotFontSize( int )) );
-			connect( optionsDialog->fontOptions,
-				SIGNAL(standardFont( const char * )),
-				w->helpwin, SLOT(slotStandardFont( const char * )) );
-			connect( optionsDialog->fontOptions,
-				SIGNAL(fixedFont( const char * )),
-				w->helpwin, SLOT(slotFixedFont( const char * )) );
+		    connect( optionsDialog->fontOptions, SIGNAL(fontSize(int)),
+			 w->helpwin, SLOT(slotFontSize( int )) );
+		    connect( optionsDialog->fontOptions,
+			SIGNAL(standardFont( const char * )),
+			w->helpwin, SLOT(slotStandardFont( const char * )) );
+		    connect( optionsDialog->fontOptions,
+			SIGNAL(fixedFont( const char * )),
+			w->helpwin, SLOT(slotFixedFont( const char * )) );
+		    connect( optionsDialog->colorOptions,
+			SIGNAL(colorsChanged(const QColor&, const QColor&,
+			const QColor&, const QColor&)),
+			w->helpwin, SLOT(slotColorsChanged(const QColor&,
+			const QColor&, const QColor&, const QColor&)) );
 		}
 	}
 

@@ -34,7 +34,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.4.17"
+#define KDEHELP_VERSION		"0.4.18"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -169,6 +169,8 @@ public slots:
 	void	slotFontSize( int );
 	void	slotStandardFont( const char * );
 	void	slotFixedFont( const char * );
+	void	slotColorsChanged( const QColor&, const QColor&, const QColor&,
+		    const QColor& );
 	void	slotPopupOpenURL();
 	void	slotPopupAddBookmark();
 	void	slotPopupOpenNew();
@@ -225,6 +227,11 @@ private:
 	static int  fontBase;
 	static QString standardFont;
 	static QString fixedFont;
+
+	static QColor bgColor;
+	static QColor textColor;
+	static QColor linkColor;
+	static QColor vLinkColor;
 
 	QString fullURL;
 	QString currentURL;

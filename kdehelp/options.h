@@ -49,15 +49,45 @@ private:
 
 //-----------------------------------------------------------------------------
 
+class KColorOptions : public QWidget
+{
+	Q_OBJECT
+public:
+	KColorOptions( QWidget *parent = NULL, const char *name = NULL );
+
+signals:
+	void	colorsChanged( const QColor &bg, const QColor &text,
+			    const QColor &link, const QColor &vlink );
+
+protected slots:
+	void	slotApplyPressed();
+	void	slotBgColorChanged( const QColor &col );
+	void	slotTextColorChanged( const QColor &col );
+	void	slotLinkColorChanged( const QColor &col );
+	void	slotVLinkColorChanged( const QColor &col );
+
+private:
+	void	readOptions();
+
+private:
+	QColor bgColor;
+	QColor textColor;
+	QColor linkColor;
+	QColor vLinkColor;
+	bool   changed;
+};
+
+//-----------------------------------------------------------------------------
+
 class KHelpOptionsDialog : public QTabDialog
 {
 	Q_OBJECT
-
 public:
 	KHelpOptionsDialog( QWidget *parent = NULL, const char *name = NULL );
 
 public:
 	KFontOptions *fontOptions;
+	KColorOptions *colorOptions;
 };
 
 

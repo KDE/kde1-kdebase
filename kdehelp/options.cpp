@@ -14,6 +14,7 @@
 #include <Kconfig.h>
 #include <X11/Xlib.h>
 
+#include "kcolorbtn.h"
 #include "options.h"
 
 #include "dbnew.h"
@@ -174,7 +175,7 @@ void KFontOptions::slotApplyPressed()
 	if ( o.isNull() || o != fixedName )
 		emit fixedFont( fixedName );
 
-//	config->sync();
+	config->sync();
 }
 
 void KFontOptions::slotFontSize( int i )
@@ -194,6 +195,106 @@ void KFontOptions::slotFixedFont( const char *n )
 
 //-----------------------------------------------------------------------------
 
+KColorOptions::KColorOptions( QWidget *parent, const char *name )
+    : QWidget( parent, name )
+{
+	readOptions();
+
+	KColorButton *colorBtn;
+	QLabel *label;
+
+	label = new QLabel( "Background Color:", this );
+	label->setGeometry( 35, 20, 150, 25 );
+
+	colorBtn = new KColorButton( bgColor, this );
+	colorBtn->setGeometry( 185, 20, 80, 30 );
+	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotBgColorChanged( const QColor & ) ) );
+
+	label = new QLabel( "Normal Text Color:", this );
+	label->setGeometry( 35, 60, 150, 25 );
+
+	colorBtn = new KColorButton( textColor, this );
+	colorBtn->setGeometry( 185, 60, 80, 30 );
+	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotTextColorChanged( const QColor & ) ) );
+
+	label = new QLabel( "URL Link Color:", this );
+	label->setGeometry( 35, 100, 150, 25 );
+
+	colorBtn = new KColorButton( linkColor, this );
+	colorBtn->setGeometry( 185, 100, 80, 30 );
+	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotLinkColorChanged( const QColor & ) ) );
+
+	label = new QLabel( "Followed Link Color:", this );
+	label->setGeometry( 35, 140, 150, 25 );
+
+	colorBtn = new KColorButton( vLinkColor, this );
+	colorBtn->setGeometry( 185, 140, 80, 30 );
+	connect( colorBtn, SIGNAL( changed( const QColor & ) ),
+		SLOT( slotVLinkColorChanged( const QColor & ) ) );
+}
+
+void KColorOptions::readOptions()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Appearance" );
+	
+	bgColor = config->readColorEntry( "BgColor", &white );
+	textColor = config->readColorEntry( "TextColor", &black );
+	linkColor = config->readColorEntry( "LinkColor", &blue );
+	vLinkColor = config->readColorEntry( "VLinkColor", &magenta );
+
+	changed = false;
+}
+
+void KColorOptions::slotApplyPressed()
+{
+	KConfig *config = KApplication::getKApplication()->getConfig();
+	config->setGroup( "Appearance" );
+
+	config->writeEntry( "BgColor", bgColor );
+	config->writeEntry( "TextColor", textColor );
+	config->writeEntry( "LinkColor", linkColor );
+	config->writeEntry( "VLinkColor", vLinkColor );
+
+	if ( changed )
+	    emit colorsChanged( bgColor, textColor, linkColor, vLinkColor );
+
+	config->sync();
+}
+
+void KColorOptions::slotBgColorChanged( const QColor &col )
+{
+	if ( bgColor != col )
+    	    changed = true;
+	bgColor = col;
+}
+
+void KColorOptions::slotTextColorChanged( const QColor &col )
+{
+	if ( textColor != col )
+	    changed = true;
+	textColor = col;
+}
+
+void KColorOptions::slotLinkColorChanged( const QColor &col )
+{
+	if ( linkColor != col )
+    	    changed = true;
+	linkColor = col;
+}
+
+void KColorOptions::slotVLinkColorChanged( const QColor &col )
+{
+	if ( vLinkColor != col )
+    	    changed = true;
+	vLinkColor = col;
+}
+
+//-----------------------------------------------------------------------------
+
 KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 	: QTabDialog( parent, name )
 {
@@ -208,5 +309,10 @@ KHelpOptionsDialog::KHelpOptionsDialog( QWidget *parent, const char *name )
 	addTab( fontOptions, "Fonts" );
 	connect( this, SIGNAL( applyButtonPressed() ),
 		fontOptions, SLOT( slotApplyPressed() ) );
+
+	colorOptions = new KColorOptions( this, "Colors" );
+	addTab( colorOptions, "Colors" );
+	connect( this, SIGNAL( applyButtonPressed() ),
+		colorOptions, SLOT( slotApplyPressed() ) );
 }
 
