@@ -3,7 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=XsLite
-MiniIcon=
+MiniIcon=mini-xslight.xpm
 Protocols=
 MimeType=
 Comment=XsLite

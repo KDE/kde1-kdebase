@@ -3,7 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
-MiniIcon=
+MiniIcon=mini-plan.xpm
 Protocols=
 MimeType=
 Comment=Calendar Manager
