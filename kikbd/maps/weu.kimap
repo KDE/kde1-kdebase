@@ -4,6 +4,7 @@
 Authors=Peter Silva <Peter.Silva@kde.org>
 
 Language=European (west) on a US keyboard.
+Language[cs]=Západoevropský na US klávesnici
 Language[is]=Evrópskt (vestur) á bandarísku lyklaborði.
 Language[no]=Europeisk (vest) på et US-tastatur.
 Language[pt_BR]=Europeu (ocidental) em um teclado Americano

@@ -5,12 +5,9 @@ Icon=ftp.xpm
 Type=Link
 Name=FTP URL
 Name[ca]=URL d'FTP
-Name[da]=nt=FTP URL
-Name[eo]=nt=Trovilo por dosieroj
 Name[es]=URL de FTP
 Name[fi]=FTP -linkki
 Name[fr]=Adresse FTP
-Name[hu]=nt=File keresõ eszköz
 Name[is]=FTP slóð
 Name[it]=Indirizzo FTP
 Name[no]=FTP-URL

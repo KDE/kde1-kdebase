@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Desktop
+Name[cs]=Pracovní plocha
 Name[pt]=Ambiente de Trabalho
 Name[pt_BR]=Ambiente de Trabalho
 Name[ro]=Ecran

@@ -3,7 +3,6 @@
 WmCommand=
 BinaryPattern=
 Name=Tux
-Name[cs]=Tux
 MiniIcon=sample.xpm
 Protocols=
 MimeType=

@@ -4,6 +4,7 @@ Exec=passwd
 Icon=passwd.xpm
 TerminalOptions=
 Comment=Changes your password
+Comment[cs]=Zmìní va¹e heslo
 Comment[de]=Ändert Ihr Passwort
 Comment[is]=Breytir lykilorði þínu
 Comment[no]=Bytter passordet ditt

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Development
+Name[cs]=Vývojové nástroje
 Name[de]=Entwicklung
 Name[pl]=Narzêdzia programistów
 Name[pt]=Desenvolvimento

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Applications
+Name[cs]=Aplikace
 Name[de]=Anwendungen
 Name[nl]=Toepassingen
 Name[pl]=Aplikacje

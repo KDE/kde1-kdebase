@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Games
+Name[cs]=Hry
 Name[pl]=Gry
 Name[pt]=Jogos
 Name[pt_BR]=Jogos
