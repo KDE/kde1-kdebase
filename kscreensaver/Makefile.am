@@ -74,7 +74,7 @@ METASOURCES = main.moc saver.moc polygon.moc banner.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
 		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc \
 		kgroupbox.moc science.moc pipes.moc attraction.moc \
-        slidescreen.moc
+        slidescreen.moc bsod.moc
 
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
