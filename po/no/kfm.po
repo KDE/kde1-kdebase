@@ -1366,7 +1366,7 @@ msgstr ""
 
 # kiojob.cpp:1206
 #: kiojob.cpp:1368
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1374,7 +1374,7 @@ msgid ""
 msgstr ""
 "Kunne ikke skrive\n"
 "%s\n"
-"Muligens ble tilgang nektet"
+"Kanskje disken er full"
 
 # kiojob.cpp:1289 kiojob.cpp:1396
 #: kiojob.cpp:1419
