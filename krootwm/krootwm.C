@@ -3,9 +3,10 @@
  *
  * Copyright (C) 1997 Matthias Ettrich
  *
+ * DlgLineEntry (c) 1997 Torben Weis, weis@kde.org
  */
 
-
+#include <qdir.h>
 
 #include "krootwm.moc"
 #include "version.h"
@@ -13,11 +14,15 @@
 #include <signal.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/types.h>
 
+#include <qmsgbox.h>
 #include <kfm.h>
 #include <kprocess.h>
+#include <ksimpleconfig.h>
 
 void execute(const char* cmd){
   char* shell = NULL;
@@ -33,6 +38,46 @@ void execute(const char* cmd){
   proc.start(KProcess::DontCare);
 }
 
+DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent )
+        : QDialog( parent, 0L, true )
+{
+    setGeometry( x(), y(), 350, 110 );
+
+    QLabel *label = new QLabel( _text , this );
+    label->setGeometry( 10, 10, 330, 15 );
+
+    edit = new KLined( this, 0L );
+    
+    edit->setGeometry( 10, 40, 330, 25 );
+    connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
+
+    QPushButton *ok;
+    QPushButton *clear;
+    QPushButton *cancel;
+    ok = new QPushButton( klocale->translate("Ok"), this );
+    ok->setGeometry( 10,70, 80,30 );
+    connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+
+    clear = new QPushButton( klocale->translate("Clear"), this );
+    clear->setGeometry( 135, 70, 80, 30 );
+    connect( clear, SIGNAL(clicked()), SLOT(slotClear()) );
+
+    cancel = new QPushButton( klocale->translate("Cancel"), this );
+    cancel->setGeometry( 260, 70, 80, 30 );
+    connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
+
+    edit->setText( _value );
+    edit->setFocus();
+}
+
+DlgLineEntry::~DlgLineEntry()
+{
+}
+
+void DlgLineEntry::slotClear()
+{
+    edit->setText("");
+}
 
 KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
   :QObject(){
@@ -57,9 +102,62 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 	
     gc = XCreateGC(qt_xdisplay(), qt_xrootwin(), mask, &gv);
 
+    // Torben
+    // Creates the new menu
+    menuNew = new QPopupMenu;
+    CHECK_PTR( menuNew );
+    menuNew->insertItem( klocale->translate("Folder") );
+    connect( menuNew, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotNewFile( int ) ) );
+    
+    templatesList.append( QString( "Folder") );
+
+    // Find the templates path
+    QString configpath = getenv( "HOME" );
+    configpath += "/.kde/share/config/kfmrc";
+    KSimpleConfig config( configpath );
+    config.setGroup( "Paths" );
+
+    // Desktop Path
+    desktopPath = QDir::homeDirPath() + "/Desktop/";
+    desktopPath = config.readEntry( "Desktop", desktopPath);
+    if ( desktopPath.right(1) != "/")
+	desktopPath += "/";
+  
+    // Templates Path
+    templatePath = desktopPath + "Templates/";
+    templatePath = config.readEntry( "Templates" , templatePath);
+    if ( templatePath.right(1) != "/")
+	templatePath += "/";
+
+    QDir d( templatePath );
+    const QFileInfoList *list = d.entryInfoList();
+    if ( list == 0L )
+        warning(klocale->translate("ERROR: Template does not exist '%s'"), templatePath.data());
+    else
+    {
+	QFileInfoListIterator it( *list );      // create list iterator
+	QFileInfo *fi;                          // pointer for traversing
+
+	while ( ( fi = it.current() ) != 0L )
+	{
+	    if ( strcmp( fi->fileName().data(), "." ) != 0 && 
+		 strcmp( fi->fileName().data(), ".." ) != 0 )
+	    {
+		QString tmp = fi->fileName().data();
+		templatesList.append( tmp );
+		if ( tmp.right(7) == ".kdelnk" )
+		    tmp.truncate( tmp.length() - 7 );
+		menuNew->insertItem( tmp );
+	    }
+	    ++it;                               // goto next list element
+	}
+    }
+
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
+    rmb->insertItem(klocale->translate("New"), menuNew );
     rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
     rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
     rmb->insertItem(klocale->translate("Display properties"), RMB_DISPLAY_PROPERTIES);
@@ -268,6 +366,68 @@ void KRootWm::generateWindowlist(QPopupMenu* p){
   }
 }
 
+void KRootWm::slotNewFile( int _id )
+{
+    if ( menuNew->text( _id ) == 0 )
+	return;
+    
+    QString p = templatesList.at( _id );
+    
+    QString text = klocale->translate("New");
+    text += " ";
+    text += p.data();
+    text += ":";
+    const char *value = p.data();
+
+    if ( strcmp( p.data(), "Folder" ) == 0 ) {
+	value = "";
+	text = klocale->translate("New");
+	text += " ";
+	text += klocale->translate("Folder");
+	text += ":";
+    }
+    
+    DlgLineEntry l( text.data(), value, 0L );
+    if ( l.exec() )
+    {
+	QString name = l.getText();
+	if ( name.length() == 0 )
+	    return;
+	
+	if ( strcmp( p.data(), "Folder" ) == 0 )
+	{
+	    QString u = desktopPath.data();
+	    if ( u.right( 1 ) != "/" )
+		u += "/";
+	    u += name.data();
+	    if ( mkdir( u, S_IRWXU ) == -1 )
+	    {
+		QString tmp;
+		tmp.sprintf( "%s\n%s", klocale->translate("Could not create folder"), u.data() );
+		QMessageBox::warning( 0L, "Error", tmp );
+		return;
+	    }	    
+	    else
+	    {
+		KFM* kfm = new KFM; 
+		kfm->refreshDesktop(); 
+		delete kfm;
+	    }
+	}
+	else
+	{
+	    QString cmd( "kfmclient copy \"" );
+	    cmd += templatePath + p.data();
+	    cmd += "\" \"";
+	    cmd += desktopPath.data();
+	    if ( cmd.right( 1 ) != "/" )
+	        cmd += "/";
+	    cmd += name.data();
+	    cmd += "\"";
+	    execute( cmd );
+	}
+    }
+}
 
 int main( int argc, char *argv[] )
 {
