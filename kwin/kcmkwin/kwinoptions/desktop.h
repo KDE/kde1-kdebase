@@ -69,9 +69,6 @@ private:
   void setElectricBordersMovePointer( bool );
 
   //CT 15mar98 - magics
-  int getEdgeResistance();
-  void setEdgeResistance( int );
-  
   int getBorderSnapZone();
   void setBorderSnapZone( int );
   
@@ -88,9 +85,9 @@ private:
 
   //CT 15mar98 - magics
   QButtonGroup *MagicBox;
-  KSlider *EdgeResSlider, *BrdrSnapSlider, *WndwSnapSlider;
-  QLabel *EdgeResLabel, *BrdrSnapLabel, *WndwSnapLabel;
-  QLCDNumber *EdgeResLCD, *BrdrSnapLCD, *WndwSnapLCD;
+  KSlider *BrdrSnapSlider, *WndwSnapSlider;
+  QLabel *BrdrSnapLabel, *WndwSnapLabel;
+  QLCDNumber  *BrdrSnapLCD, *WndwSnapLCD;
   //CT ---
 };
 

@@ -40,7 +40,6 @@
 #define KWM_ELECTRIC_BORDER_MOVE_POINTER     "ElectricBorderMovePointer"
 
 //CT 15mar 98 - magics
-#define KWM_EDGE_RESISTANCE                  "EdgeResistance"
 #define KWM_BRDR_SNAP_ZONE                   "BorderSnapZone"
 #define KWM_WNDW_SNAP_ZONE                   "WindowSnapZone"
 
@@ -62,7 +61,6 @@ KDesktopConfig::~KDesktopConfig ()
   //CT 15mar98 - safer? Maybe
   delete ElectricBox;
   
-  delete EdgeResLabel;  delete EdgeResSlider;  delete EdgeResLCD;
   delete BrdrSnapLabel; delete BrdrSnapSlider; delete BrdrSnapLCD;
   delete WndwSnapLabel; delete WndwSnapSlider; delete WndwSnapLCD;
   delete MagicBox;
@@ -101,20 +99,6 @@ KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   //CT 15mar98 - add EdgeResistance, BorderAttractor, WindowsAttractor config
   MagicBox = new QButtonGroup(klocale->translate("Magic Borders"), this);
 
-  EdgeResLabel = new QLabel(klocale->translate("Edge Resistance:"), MagicBox);
-
-  EdgeResSlider = new KSlider(0,1000,10,0, KSlider::Horizontal, MagicBox);
-  EdgeResSlider->setSteps(10,10);
-
-  EdgeResLCD = new QLCDNumber (5, MagicBox);
-  EdgeResLCD->setFrameStyle( QFrame::NoFrame );
-
-  connect( EdgeResSlider, SIGNAL(valueChanged(int)), EdgeResLCD, SLOT(display(int)) );
-  EdgeResLabel->adjustSize();
-  EdgeResSlider->adjustSize();
-  EdgeResLCD->adjustSize();
-
-  
   BrdrSnapLabel = new QLabel(klocale->translate("Border Snap Zone:\n       (pixels)"), MagicBox);
 
   BrdrSnapSlider = new KSlider(0,50,1,0, KSlider::Horizontal, MagicBox);
@@ -214,14 +198,6 @@ void KDesktopConfig::setElectricBorders(int delay)
 
 
 //CT 15mar98 - magics
-int KDesktopConfig::getEdgeResistance() {
-  return EdgeResSlider->value();
-}
-
-void KDesktopConfig::setEdgeResistance(int resist) {
-  EdgeResSlider->setValue(resist);
-  EdgeResLCD->display(resist);
-}
 
 int KDesktopConfig::getBorderSnapZone() {
   return BrdrSnapSlider->value();
@@ -262,12 +238,6 @@ void KDesktopConfig::GetSettings( void )
   }
 
   //CT 15mar98 - magics
-  v = config->readNumEntry(KWM_EDGE_RESISTANCE);
-  if (v > MAX_EDGE_RES) setEdgeResistance(1000);
-  else if (v < 0) setEdgeResistance (0);
-  else setEdgeResistance(v);
-
-
   v = config->readNumEntry(KWM_BRDR_SNAP_ZONE);
   if (v > MAX_BRDR_SNAP) setBorderSnapZone(MAX_BRDR_SNAP);
   else if (v < 0) setBorderSnapZone (0);
@@ -295,9 +265,6 @@ void KDesktopConfig::SaveSettings( void )
   config->sync();
 
   //CT 15mar98 - magics
-  v = getEdgeResistance();
-  config->writeEntry(KWM_EDGE_RESISTANCE,v);
-  
   v = getBorderSnapZone();
   config->writeEntry(KWM_BRDR_SNAP_ZONE,v);
 
@@ -355,27 +322,13 @@ void KDesktopConfig::resizeEvent(QResizeEvent *)
 			 this->width() - 40, 200);
 
   // the other box's internal arrangement
-  xpos = EdgeResLabel->width() + EdgeResLCD->width();
-  if ((BrdrSnapLabel->width() + BrdrSnapLCD->width()) > xpos)
-    xpos = BrdrSnapLabel->width() + BrdrSnapLCD->width();
+  xpos = BrdrSnapLabel->width() + BrdrSnapLCD->width();
   if ((WndwSnapLabel->width() + WndwSnapLCD->width()) > xpos)
     xpos = WndwSnapLabel->width() + WndwSnapLCD->width();
   
   xpos = xpos + SPACE_XO;
   ypos = SPACE_YO;
 
-  EdgeResLabel->setGeometry(SPACE_XO,
-			    ypos + (EdgeResLCD->height() - EdgeResLabel->height())/2,
-			    EdgeResLabel->width(), EdgeResLabel->height());
-  
-  EdgeResLCD->setGeometry(xpos - EdgeResLCD->width(),
-			  ypos,
-			  EdgeResLCD->width(),EdgeResLCD->height());
-  EdgeResSlider->setGeometry(xpos,
-			     ypos + (EdgeResLCD->height() - 20)/2,
-			     180, 30);
-  
-  ypos = ypos + EdgeResLCD->height() + SPACE_YI;
   BrdrSnapLabel->setGeometry(SPACE_XO,
 			     ypos + (BrdrSnapLCD->height() - BrdrSnapLabel->height())/2,
 			     BrdrSnapLabel->width(), BrdrSnapLabel->height());
