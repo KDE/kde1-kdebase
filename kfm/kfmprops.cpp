@@ -1251,7 +1251,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     addExtensionButton = new QPushButton( "<-", this );
     delExtensionButton = new QPushButton( "->", this );
 
-    protocolFTP = new QCheckBox( this );
+    /* protocolFTP = new QCheckBox( this );
     protocolFTP->setText( klocale->translate("FTP") );
     protocolFILE = new QCheckBox( this );
     protocolFILE->setText( klocale->translate("FILE") );
@@ -1281,7 +1281,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     protocolINFO->setGeometry( 120, 180, 100, 20 );
     protocolINFO->raise();
     protocolMAN->setGeometry( 220, 180, 100, 20 );
-    protocolMAN->raise();
+    protocolMAN->raise(); */
 
     binaryPatternEdit->raise();
     binaryPatternEdit->setGeometry( 10, 40, 210, 30 );
@@ -1301,11 +1301,12 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     commentEdit->setGeometry( 10, 100, 210, 30 );
     commentEdit->setMaxLength( 256 );
     
-    extensionsList->setGeometry( 10, 220, 130, 100 );
-    availableExtensionsList->setGeometry( 230, 220, 130, 100 );
-    addExtensionButton->setGeometry( 160, 230, 40, 40 );
+    // extensionsList->setGeometry( 10, 220, 130, 100 );
+    extensionsList->setGeometry( 10, 140, 130, 180 );
+    availableExtensionsList->setGeometry( 230, 140, 130, 180 );
+    addExtensionButton->setGeometry( 160, 190, 40, 40 );
     connect( addExtensionButton, SIGNAL( pressed() ), this, SLOT( slotAddExtension() ) );
-    delExtensionButton->setGeometry( 160, 270, 40, 40 );    
+    delExtensionButton->setGeometry( 160, 230, 40, 40 );    
     connect( delExtensionButton, SIGNAL( pressed() ), this, SLOT( slotDelExtension() ) );
 
     QString path = _props->getKURL()->path() ;
@@ -1336,6 +1337,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 	    pos = pos2 + 1;
 	}
     }
+    /*
     if ( !protocolsStr.isNull() )
     {
 	if ( protocolsStr.find( "file;" ) == 0 || protocolsStr.find( ";file;" ) != -1 )
@@ -1351,7 +1353,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 	if ( protocolsStr.find( "info;" ) == 0 || protocolsStr.find( ";info;" ) != -1 )
 	    protocolINFO->setChecked( true );
     }
-
+    */
     KMimeType *ft;
     for ( ft = KMimeType::getFirstMimeType(); ft != 0L; ft = KMimeType::getNextMimeType() )
     {
@@ -1439,7 +1441,7 @@ void ApplicationPropsPage::applyChanges()
 	    tmp += ";";
     config.writeEntry( "BinaryPattern", tmp.data() );
 
-    protocolsStr = "";
+    /* protocolsStr = "";
     if ( protocolFILE->isChecked() )
 	protocolsStr += "file;";
     if ( protocolFTP->isChecked() )
@@ -1451,7 +1453,9 @@ void ApplicationPropsPage::applyChanges()
     if ( protocolMAN->isChecked() )
 	protocolsStr += "man;";
     if ( protocolINFO->isChecked() )
-	protocolsStr += "info;";
+	protocolsStr += "info;"; */
+    // HACK
+    protocolsStr = "file;ftp;http;tar;cgi;";
     config.writeEntry( "Protocols", protocolsStr.data() );
 
     extensionsStr = "";

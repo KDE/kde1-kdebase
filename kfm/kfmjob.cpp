@@ -246,6 +246,7 @@ void KFMJob::slotFinished( int )
     // Did we only try to load the URL as directory and did we get 0 entries ?
     if ( !bFileLoad && !isDir )
     {
+	debugT("======================= TELLING JOB to destroy itself\n");
 	disconnect( job, 0, this, 0 );
 	job->setAutoDelete( TRUE );
 	job = 0L;
@@ -265,7 +266,7 @@ void KFMJob::slotFinished( int )
 	    //testMimeType( dataBuffer );
 	}
     } 
-    
+
     disconnect( job, 0, this, 0 );
     job->setAutoDelete( TRUE );
     job = 0L;

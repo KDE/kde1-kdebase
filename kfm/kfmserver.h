@@ -48,7 +48,7 @@ public slots:
 protected:
     KIOJob *job;
     bool bAuth;
-    static QString password;
+    static QString *password;
     KFMServer *server;
 };
 

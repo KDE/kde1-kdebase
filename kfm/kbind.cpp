@@ -350,7 +350,7 @@ void KMimeType::init()
     
     // Read the application bindings
     path = kapp->kdedir();
-    path += "/apps";
+    path += "/share/applnk";
     KMimeBind::initApplications( path.data() );
 }
 
@@ -679,10 +679,14 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     // usual files
     else
     {
-	KMimeType *typ = KMimeType::findType( _url );
+	KMimeType *typ = KMimeType::getMagicMimeType( _url );
+	debugT("================== Found type '%s'\n", typ->getMimeType());
+	
 	if ( !typ->hasBindings() )
 	    return;
 
+	debugT("================ Has Bindings\n");
+	
 	KMimeBind *bind;
 	for ( bind = typ->firstBinding(); bind != 0L; bind = typ->nextBinding() )
 	{
@@ -1056,7 +1060,7 @@ void KMimeBind::initApplications( const char * _path )
 		// The pattern to identify the binary
 		QString app_pattern = config.readEntry( "BinaryPattern" );
 		QString comment = config.readEntry( "Comment" );
-		// A ';' separated list of extension groups
+		// A ';' separated list of mime types
 		QString mime = config.readEntry( "MimeType" );
 		// A ';' separated list of protocols
 		QString protocols = config.readEntry( "Protocols" );
@@ -1151,10 +1155,14 @@ void KMimeBind::initApplications( const char * _path )
 			    QMessageBox::message( klocale->translate("ERROR"), 
 						  klocale->translate("Could not find mime type\n") + bind + "\n" + klocale->translate("in ") + file );
 			else
+			{
+			    debugT( "Added Binding '%s' to '%s'\n",app.data(),t->getMimeType() );
+			    
 			    t->append( new KMimeBind( app.data(), exec.data(), allowdefault,
 						      prots[0].data(),
 						      prots[1].data(), prots[2].data(),
 						      prots[3].data(), prots[4].data() ) );
+			}
 		    }
 		    
 		    pos2++;

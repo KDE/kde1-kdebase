@@ -23,6 +23,7 @@ QList<KFMExec> *execList = 0L;
 
 KFMExec::KFMExec()
 {
+    /*
     // Create a list of currently running KFMExecs
     if ( execList == 0L )
     {
@@ -36,7 +37,7 @@ KFMExec::KFMExec()
 	if ( e->isDone() )
 	    execList->removeRef( e );
     execList->append( this );
-    
+    */
     // We are not prepared to die yet
     bDone = FALSE;
     dlg = 0L;
@@ -220,7 +221,7 @@ void KFMExec::slotMimeType( const char *_type )
 	if ( _type != 0L )
 	{
 	    KMimeType *mime = KMimeType::findByName( _type );
-	    if ( mime->run( tryURL ) )
+	    if ( mime && mime->run( tryURL ) )
 	    {
 		delete this;
 		return;
@@ -353,9 +354,6 @@ KFMExec::~KFMExec()
 	delete dlg;
 	dlg = 0L;
     }
-    if ( job )
-	job->stop();
-    bDone = TRUE;
 
     if ( job )
 	delete job;

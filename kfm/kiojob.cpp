@@ -49,6 +49,7 @@ KIOJob::KIOJob( int _id )
 
 KIOJob::~KIOJob()
 {
+    debugT("===================== ~KIOJOB=%x\n",this);
     jobList.removeRef( this );
 }
 
@@ -1687,7 +1688,12 @@ void KIOJob::done()
     slave = 0L;
     
     if ( bAutoDelete )
+    {
+	printf("=============== DESTRUCT kiojob=%x ================\n",this);
 	delete this;
+    }
+    else
+	printf("=============== DONE kiojob=%x ================\n",this);
 }
 
 void KIOJob::deleteAllJobs()

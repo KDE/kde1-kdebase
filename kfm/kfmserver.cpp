@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-QString KFMClient::password;
+QString* KFMClient::password = 0L;
 
 KFMServer::KFMServer() : KfmIpcServer()
 {
@@ -249,7 +249,10 @@ KFMClient::KFMClient( KSocket *_sock, KFMServer *_server ) : KfmIpc( _sock )
 
 void KFMClient::slotAuth( const char *_password )
 {
-    if ( KFMClient::password.isNull() )
+    if ( KFMClient::password == 0L )
+	KFMClient::password = new QString;
+    
+    if ( KFMClient::password->isNull() )
     {
 	QString fn = getenv( "HOME" );
 	fn += "/.kfm/magic";
@@ -267,9 +270,9 @@ void KFMClient::slotAuth( const char *_password )
 	    QMessageBox::message( "KFM Error", "The file ~/.kfm/magic is corrupted\n\rAuthorization failed" );
 	    return;
 	}
-	KFMClient::password = buffer;
+	*( KFMClient::password ) = buffer;
     }
-    if ( KFMClient::password != _password )
+    if ( *( KFMClient::password ) != _password )
     {
 	QMessageBox::message( "KFM Error", "Someone tried to authorize himself\nusing a wrong password" );
 	bAuth = false;
