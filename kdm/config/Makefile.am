@@ -1,7 +1,7 @@
 
-datadir	= $(prefix)/share/config
+confdir	= $(kde_confdir)
 
-data_DATA = kdmrc
+conf_DATA = kdmrc
 DISTCLEANFILES = kdmrc
 
 kdmrc: kdmrc.cpp
