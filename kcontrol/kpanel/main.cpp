@@ -79,7 +79,7 @@ void KKPanelApplication::apply()
 
 int main(int argc, char **argv)
 {
-    KKPanelApplication app(argc, argv, "kcmpanel");
+    KKPanelApplication app(argc, argv, "kcmkpanel");
     
     app.setTitle(klocale->translate("KPanel Configuration"));
     
