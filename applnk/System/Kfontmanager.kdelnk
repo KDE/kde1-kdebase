@@ -17,7 +17,7 @@ Name[pt]=Gestor de Fontes
 Name[pt_BR]=Gerenciador de Fontes
 Name[hu]=Fontkezelo
 Name[hr]=Upravitelj pisama
-Name[zh_GB2312]=×ÖÌå¹ÜÀíÆ÷
+Name[zh_CN.GB2312]=×ÖÌå¹ÜÀíÆ÷
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
@@ -37,6 +37,6 @@ Comment[hu]=KDE Font beállító
 Comment[pt]=Gestor de fontes utilizadas no KDE
 Comment[pt_BR]=Gerenciador de fontes do KDE
 Comment[hr]=KDE upravitelj pisama
-Comment[zh_GB2312]=KDE ×ÖÌå¹ÜÀíÆ÷
+Comment[zh_CN.GB2312]=KDE ×ÖÌå¹ÜÀíÆ÷
 
 Type=Application
