@@ -196,11 +196,11 @@ void KFMJob::testMimeType( const char *_text)
     printf("SAMPLE:\n%s\n",_text);
     
     KMimeMagicResult *result = KMimeType::findBufferType( _text, strlen( _text ) );
-    printf("RETURN '%s'\n",result->getContent().data() );
+    fprintf(stderr,"RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
     {
-	printf("IS HTML\n");
+	fprintf(stderr,"IS HTML\n");
 	isHTML = TRUE;
 	emit mimeType( "text/html" );
 	emit data( _text );
@@ -211,7 +211,7 @@ void KFMJob::testMimeType( const char *_text)
     }
     else
     {
-	printf("UNKNOWN TYPE\n");
+	fprintf(stderr,"UNKNOWN TYPE\n");
 	// Dont know the mime type
 	emit mimeType( 0L );
     }
