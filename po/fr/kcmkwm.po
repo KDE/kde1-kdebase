@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-03-02 00:16+0100\n"
-"PO-Revision-Date: 1998-01-25 18:14 CET\n"
+"PO-Revision-Date: 1998-03-09 23:01 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -111,48 +111,47 @@ msgstr "Image \"&inactive\""
 
 #: titlebar.cpp:981
 msgid "Mouse action"
-msgstr ""
+msgstr "Action à la souris"
 
 #: titlebar.cpp:983
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Double clic sur la barre de titre \n"
+"avec le bouton gauche de la souris :"
 
 #: titlebar.cpp:987
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maximiser"
+msgstr "Maximiser/Minimiser"
 
 #: titlebar.cpp:988
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 #: titlebar.cpp:989
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Dégradé"
+msgstr "Dégradé/Plein"
 
 #: titlebar.cpp:990
 msgid "Iconify"
-msgstr ""
+msgstr "Iconifier"
 
 #: titlebar.cpp:991
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Clouer"
+msgstr "Clouer/Déclouer"
 
 #: titlebar.cpp:992
 msgid "Resize"
-msgstr ""
+msgstr "Retailler"
 
 #: titlebar.cpp:993
 msgid "Restore"
-msgstr ""
+msgstr "Restaurer"
 
 #: titlebar.cpp:994
 msgid "Operations Menu"
-msgstr ""
+msgstr "Menu des opérations"
 
 #: windows.cpp:77
 msgid "Window movement"
@@ -209,9 +208,3 @@ msgstr ""
 #: windows.cpp:113
 msgid "miliseconds"
 msgstr "millisecondes"
-
-#~ msgid "Random placement"
-#~ msgstr "Placement aléatoire"
-
-#~ msgid "Smart placement"
-#~ msgstr "Placement intelligent"
