@@ -300,9 +300,11 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     hidden_for_modules = FALSE;
     autoraised_stopped = FALSE;
     
-    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, ButtonPressMask, 
-		GrabModeSync, GrabModeAsync, None, normal_cursor );
- 
+    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, 
+		ButtonPressMask, GrabModeSync, GrabModeAsync, 
+		None, normal_cursor );
+    if (!options.Button3Grab)
+      XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
     unmap_events = 0;
 }  
 
@@ -475,6 +477,12 @@ void Client::reconfigure(){
    generateButtons();
    layoutButtons();
    repaint();
+   if (options.Button3Grab)
+     XGrabButton(qt_xdisplay(), Button3, AnyModifier, window, True, 
+		 ButtonPressMask, GrabModeSync, GrabModeAsync, 
+		 None, normal_cursor );
+   else
+     XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
 }
 
 void Client::animateTitlebar(){
@@ -585,7 +593,7 @@ void Client::mouseDoubleClickEvent( QMouseEvent* ev){
   if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
       ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
     if (!isMaximized())
-      maximize( options.MaximizeOnlyVertically?1:0 );
+      maximize( options.MaximizeOnlyVertically?1:0);
     else
       unMaximize();
   }

@@ -13,6 +13,9 @@ In 0.10:
 --------
   patchlevel 20:
        - self-transient do not crash kwm anymore
+       - new option:
+              Button3Grab=on/off  
+         to make "missbehaving" clients like GIMP usable on a KDE desktop.
   
   patchlevel 19:
        - small fixes for swallowing

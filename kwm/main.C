@@ -324,6 +324,7 @@ static QString rectToString(QRect r){
 
 static void grabKey(KeySym keysym, unsigned int mod){
   static int NumLockMask = 0;
+  if (!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
@@ -603,32 +604,42 @@ void MyApp::readConfiguration(){
 
   key = config->readEntry("ResizeAnimation");
   if( key == "on")
-    options.ResizeAnimation = 1;
+    options.ResizeAnimation = true;
   else if( key == "off")
-    options.ResizeAnimation = 0;
+    options.ResizeAnimation = false;
   else{
     config->writeEntry("ResizeAnimation", "on");
-    options.ResizeAnimation = 1;
+    options.ResizeAnimation = true;
   }
 
   key = config->readEntry("ControlTab");
   if( key == "on")
-    options.ControlTab = 1;
+    options.ControlTab = true;
   else if( key == "off")
-    options.ControlTab = 0;
+    options.ControlTab = false;
   else{
     config->writeEntry("ControlTab", "on");
-    options.ControlTab = 1;
+    options.ControlTab = true;
+  }
+
+  key = config->readEntry("Button3Grab");
+  if( key == "on")
+    options.Button3Grab = true;
+  else if( key == "off")
+    options.Button3Grab = false;
+  else{
+    config->writeEntry("Button3Grab", "on");
+    options.Button3Grab = true;
   }
 
   key = config->readEntry("MaximizeOnlyVertically");
   if( key == "on")
-    options.MaximizeOnlyVertically = 1;
+    options.MaximizeOnlyVertically = true;
   else if( key == "off")
-    options.MaximizeOnlyVertically = 0;
+    options.MaximizeOnlyVertically = false;
   else{
     config->writeEntry("MaximizeOnlyVertically", "off");
-    options.MaximizeOnlyVertically = 0;
+    options.MaximizeOnlyVertically = false;
   }
 
   if (config->hasKey("TitleAnimation")){
