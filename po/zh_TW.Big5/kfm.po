@@ -6,207 +6,207 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-01-16 01:17+0100\n"
 "PO-Revision-Date: 1998-04-20 22:30+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:204
+#: kfmgui.cpp:205
 msgid "KFM"
 msgstr "KDE 檔案總管"
 
-#: kfmgui.cpp:222
+#: kfmgui.cpp:223
 #, fuzzy
 msgid "New &Window"
 msgstr "新視窗[&N]"
 
-#: kfmgui.cpp:225
+#: kfmgui.cpp:226
 msgid "&Run..."
 msgstr "執行[&R]..."
 
-#: kfmgui.cpp:227
+#: kfmgui.cpp:228
 msgid "Open &Terminal"
 msgstr "開啟終端機[&T]"
 
-#: kfmgui.cpp:230
+#: kfmgui.cpp:231
 msgid "&Open Location..."
 msgstr "開啟位置[&O]..."
 
-#: finddlg.cpp:66 kfmgui.cpp:232
+#: finddlg.cpp:66 kfmgui.cpp:233
 msgid "&Find"
 msgstr "尋找[&F]"
 
-#: kfmgui.cpp:253
+#: kfmgui.cpp:254
 msgid "&Move to Trash"
 msgstr "移至垃圾桶[&M]"
 
-#: kfmgui.cpp:260
+#: kfmgui.cpp:261
 msgid "&Select"
 msgstr "選擇[&S]"
 
-#: kfmgui.cpp:262
+#: kfmgui.cpp:263
 #, fuzzy
 msgid "Select &all"
 msgstr "選擇[&S]"
 
-#: kfmgui.cpp:265
+#: kfmgui.cpp:266
 msgid "&Find in page..."
 msgstr ""
 
-#: kfmgui.cpp:267
+#: kfmgui.cpp:268
 msgid "Find &next"
 msgstr ""
 
-#: kfmgui.cpp:270
+#: kfmgui.cpp:271
 #, fuzzy
 msgid "Mime &Types"
 msgstr "Mime 類型"
 
-#: kfmgui.cpp:272
+#: kfmgui.cpp:273
 #, fuzzy
 msgid "App&lications"
 msgstr "應用程式"
 
-#: kfmgui.cpp:278
+#: kfmgui.cpp:279
 msgid "Global Mime Types"
 msgstr "整體 Mime 類型"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:281
 msgid "Global Applications"
 msgstr "整體應用程式"
 
-#: kfmgui.cpp:287
+#: kfmgui.cpp:288
 #, fuzzy
 msgid "Show Hi&dden Files"
 msgstr "顯示隱藏檔案[&D]"
 
-#: kfmgui.cpp:289
+#: kfmgui.cpp:290
 msgid "Show Tr&ee"
 msgstr "顯示樹狀目錄[&E]"
 
-#: kfmgui.cpp:291
+#: kfmgui.cpp:292
 msgid "Sho&w Thumbnails"
 msgstr ""
 
-#: kfmgui.cpp:293
+#: kfmgui.cpp:294
 msgid "&HTML View"
 msgstr "檢視 &HTML"
 
-#: kfmgui.cpp:296
+#: kfmgui.cpp:297
 msgid "&Icon View"
 msgstr "圖示顯示[&I]"
 
-#: kfmgui.cpp:298
+#: kfmgui.cpp:299
 msgid "&Text View"
 msgstr "文字顯示[&T]"
 
-#: kfmgui.cpp:300
+#: kfmgui.cpp:301
 msgid "&Long View"
 msgstr "詳細顯示[&L]"
 
-#: kfmgui.cpp:302
+#: kfmgui.cpp:303
 #, fuzzy
 msgid "&Short View"
 msgstr "圖示顯示[&I]"
 
-#: kfmgui.cpp:308
+#: kfmgui.cpp:309
 msgid "Rel&oad Tree"
 msgstr "重新載入樹狀目錄[&O]"
 
-#: kfmgui.cpp:310
+#: kfmgui.cpp:311
 msgid "&Reload Document"
 msgstr "重新載入文件[&R]"
 
-#: kfmgui.cpp:312
+#: kfmgui.cpp:313
 #, fuzzy
 msgid "Rescan &Bindings"
 msgstr "重新掃描檔案關聯[&B]"
 
-#: kfmgui.cpp:315
+#: kfmgui.cpp:316
 msgid "&View Frame Source"
 msgstr "觀看 Frame 原始檔[&V]"
 
-#: kfmgui.cpp:317
+#: kfmgui.cpp:318
 msgid "View Docu&ment Source"
 msgstr "觀看文件原始檔[&M]"
 
-#: kfmgui.cpp:325
+#: kfmgui.cpp:326
 msgid "Auto"
 msgstr ""
 
-#: kfmgui.cpp:333
+#: kfmgui.cpp:334
 #, fuzzy
 msgid "Document Encodin&g"
 msgstr "文件: 完成"
 
-#: kfmgui.cpp:349
+#: kfmgui.cpp:350
 msgid "Show History"
 msgstr "秀出歷史列表"
 
-#: kfmgui.cpp:351
+#: kfmgui.cpp:352
 msgid "Show Cache"
 msgstr "秀出快取"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:354
 msgid "Clear Cache"
 msgstr "清除快取"
 
-#: kfmgui.cpp:356
+#: kfmgui.cpp:357
 msgid "Always look in cache"
 msgstr "先在 快取 中尋找"
 
-#: kfmgui.cpp:358
+#: kfmgui.cpp:359
 msgid "Never look in cache"
 msgstr "不在 快取 中尋找"
 
-#: kfmgui.cpp:360
+#: kfmgui.cpp:361
 #, fuzzy
 msgid "Always save cache"
 msgstr "先在 快取 中尋找"
 
-#: kfmgui.cpp:362
+#: kfmgui.cpp:363
 #, fuzzy
 msgid "Never save cache"
 msgstr "不在 快取 中尋找"
 
-#: kfmgui.cpp:373
+#: kfmgui.cpp:374
 msgid "Show &Menubar"
 msgstr "顯示選單列[&M]"
 
-#: kfmgui.cpp:375
+#: kfmgui.cpp:376
 msgid "Show &Statusbar"
 msgstr "顯示狀態列[&S]"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:378
 msgid "Show &Toolbar"
 msgstr "顯示工具列[&T]"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:380
 msgid "Show &Location bar"
 msgstr "顯示位置列[&L]"
 
-#: kfmgui.cpp:382
+#: kfmgui.cpp:383
 msgid "Sa&ve Settings"
 msgstr "儲存設定[&V]"
 
-#: kfmgui.cpp:384
+#: kfmgui.cpp:385
 #, fuzzy
 msgid "Save Settings for this &URL"
 msgstr "儲存設定[&V]"
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:392
 #, fuzzy
 msgid "&Configure File Manager..."
 msgstr "設定瀏覽器..."
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:394
 #, fuzzy
 msgid "Configure &Browser..."
 msgstr "設定瀏覽器..."
 
-#: kfmgui.cpp:429
+#: kfmgui.cpp:430
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -221,32 +221,32 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:442 kfmgui.cpp:1122
+#: kfmgui.cpp:443 kfmgui.cpp:1123
 msgid "&Go"
 msgstr ""
 
-#: kfmgui.cpp:443
+#: kfmgui.cpp:444
 msgid "&Bookmarks"
 msgstr "書籤[&B]"
 
-#: kfmgui.cpp:444
+#: kfmgui.cpp:445
 msgid "&Cache"
 msgstr "快取[&C]"
 
-#: kfmgui.cpp:474 main.cpp:282
+#: kfmgui.cpp:475 main.cpp:282
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:484 main.cpp:284
+#: kfmgui.cpp:485 main.cpp:284
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:489
+#: kfmgui.cpp:490
 #, fuzzy
 msgid "Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:546
+#: kfmgui.cpp:547
 msgid "Could not load icon\n"
 msgstr "無法載入圖示\n"
 
@@ -255,7 +255,7 @@ msgstr "無法載入圖示\n"
 #: kbind.cpp:1664 kbind.cpp:1723 kbind.cpp:1735 kbind.cpp:1762 kbind.cpp:1777
 #: kbind.cpp:1797 kbind.cpp:1809 kbind.cpp:1825 kbind.cpp:1960 kbind.cpp:1972
 #: kbind.cpp:2017 kbind.cpp:2059 kfmexec.cpp:63 kfmexec.cpp:115
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:367
+#: kfmexec/main.cpp:47 kfmgui.cpp:548 kfmgui.cpp:758 kfmman.cpp:367
 #: kfmman.cpp:1400 kfmman.cpp:1628 kfmman.cpp:1654 kfmprops.cpp:380
 #: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
 #: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
@@ -274,72 +274,72 @@ msgstr "無法載入圖示\n"
 msgid "KFM Error"
 msgstr "KFM 發生錯誤"
 
-#: kfmgui.cpp:560
+#: kfmgui.cpp:561
 #, fuzzy
 msgid "Location:"
 msgstr "開啟位置:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1399
+#: kfmexec.cpp:62 kfmgui.cpp:757 kfmman.cpp:1399
 msgid "Malformed URL\n"
 msgstr "不正確的 URL\n"
 
-#: kfmgui.cpp:942
+#: kfmgui.cpp:943
 msgid "Select files:"
 msgstr "選擇檔案:"
 
-#: kfmgui.cpp:1010
+#: kfmgui.cpp:1011
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:1011
+#: kfmgui.cpp:1012
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:1029
+#: kfmgui.cpp:1030
 msgid "&Edit Bookmarks..."
 msgstr "編輯書籤[&E]..."
 
-#: kfmgui.cpp:1039
+#: kfmgui.cpp:1040
 msgid "&Add Bookmark"
 msgstr "加入書籤[&A]"
 
-#: kfmgui.cpp:1073 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "新 "
 
-#: kfmgui.cpp:1098
+#: kfmgui.cpp:1099
 msgid "&Up"
 msgstr ""
 
-#: kfmgui.cpp:1100
+#: kfmgui.cpp:1101
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1102
+#: kfmgui.cpp:1103
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1104
+#: kfmgui.cpp:1105
 #, fuzzy
 msgid "&Home"
 msgstr "我的家"
 
-#: kfmgui.cpp:1173 kfmgui.cpp:1332 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1223
 msgid "ERROR: Malformed URL"
 msgstr "錯誤: 不正確的 URL"
 
-#: kfmgui.cpp:1286 kfmserver.cpp:245
+#: kfmgui.cpp:1296 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "開啟位置:"
 
-#: kfmgui.cpp:1343
+#: kfmgui.cpp:1353
 msgid "KFM Confirm"
 msgstr "KFM 確認"
 
-#: kfmgui.cpp:1344
+#: kfmgui.cpp:1354
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -347,7 +347,7 @@ msgstr ""
 "真的要離開嗎?\n"
 "將會失去重要的桌面功\能."
 
-#: kfmgui.cpp:1471
+#: kfmgui.cpp:1481
 msgid "Document: Done"
 msgstr "文件: 完成"
 

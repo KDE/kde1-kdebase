@@ -3,11 +3,11 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-13 01:13+0100\n"
+"POT-Creation-Date: 1999-01-16 01:17+0100\n"
 "PO-Revision-Date: 1998-10-19 21:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir>\n"
 
-#: configlist.cpp:120
+#: configlist.cpp:121
 msgid "Unknown module: "
 msgstr "Óþekkt eining: "
 
