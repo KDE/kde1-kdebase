@@ -2,8 +2,11 @@
 
 [International Keyboard]
 Comment=Deutsches (BRD) Tastatur-Layout
+Comment[cs]=Rozvr¾ení Nìmecké (SRN) klávesnice
+Comment[pt_BR]=eclado Alemão
 
 Language=German
+Language[cs]=Nìmecký
 
 Label=De
 Locale=de

@@ -6,6 +6,7 @@ Type=Application
 DocPath=kcontrol/kdmconfig/index.html
 Comment=All Konsole Settings
 Comment[ca]=Tot l'arranjament de la consola
+Comment[cs]=¹echna nastavení programu Konsole
 Comment[de]=Alle Konsoleneinstellungen
 Comment[no]=Alle Konsoll-instillinger
 Comment[pt_BR]=Todas as configurações do Konsole

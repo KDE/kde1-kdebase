@@ -7,8 +7,11 @@
 Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude.com>,Alexander Budnik <budnik@linserv.jinr.ru>
 
 Comment=Has latin characters as alternate symbols.
+Comment[cs]=Obsahuje znaky latinky jako alternativní symboly.
+Comment[pt_BR]=Tem caracteres latinos bem como símbolos alternativos.
 
 Language=Russian
+Language[cs]=Ruský
 
 Charset=iso8859-5
 Label=Ri

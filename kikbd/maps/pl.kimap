@@ -4,8 +4,11 @@
 Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
+Comment[cs]= Polská 'programátorská' klávesnice
+Comment[pt_BR]=Teclado Polonês
 
 Language=Polish
+Language[cs]=polský
 
 Label=Pl
 Locale=pl

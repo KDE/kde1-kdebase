@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 BinaryPattern=
 Name=Background module
+Name[cs]=Modul pro pozadí
 Name[de]=Hintergrundmodul
 Name[es]=Módulo de fondo de pantalla
 Name[fi]=KWM -taustamoduli
@@ -16,6 +17,7 @@ Name[sk]=Modul pozadia
 Protocols=
 MimeType=
 Comment=Manages the background texture
+Comment[cs]=Spravuje strukturu pozadí pracovní plochy
 Comment[de]=Manages den Desktophintergrund
 Comment[es]=Gestiona la textura de fondo de la pantalla
 Comment[fi]=Hallitsee taustakuvaa

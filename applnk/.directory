@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Default
+Name[cs]=Implicitní
 Name[no]=Standard
 Name[pt_BR]=Padrão
 SortOrder=Applications,apps,Games,Graphics,Internet,Multimedia,Network,Settings,System,Utilities

@@ -2,22 +2,5 @@
 [KDE Desktop Entry]
 MiniIcon=cdrom_mount.xpm
 Comment=CD-ROM
-Comment[cs]=FIFO roura
-Comment[de]=Pipe
-Comment[es]=Tubería
-Comment[fi]=Putki
-Comment[fr]=FIFO (canal de communication)
-Comment[hr]=CD Player
-Comment[hu]=CD lejátszó
-Comment[is]=Pípa
-Comment[it]=Pipe
-Comment[no]=Pipe
-Comment[pl]=Kolejka
-Comment[pt]=Pipe
-Comment[pt_BR]=SGML
-Comment[ro]=Canal de comunicaþie de tip FIFO
-Comment[ru]=ëÁÎÁÌ FIFO
-Comment[sk]=FIFO rúra
-Comment[sv]=Cd spelare
 Icon=cdrom_mount.xpm
 Type=Link

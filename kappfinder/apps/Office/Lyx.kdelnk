@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Lyx
+Name[cs]=LyX
 Comment=LaTeX Word Processor
 Comment[cs]=Textový procesor pro LaTeX
 Comment[de]=LaTeX-Textverarbeitung

@@ -21,6 +21,7 @@ Name[sk]=Mapa pracovnej plochy
 Protocols=
 MimeType=
 Comment=Shows the positions of the windows
+Comment[cs]=Zobrazuje umís»ení oken
 Comment[de]=Zeigt die Positionen der Fenster
 Comment[es]=Muestra la posición de las ventanas
 Comment[fi]=Näyttää ikkunoiden paikat

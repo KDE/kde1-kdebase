@@ -4,8 +4,11 @@
 Authors=Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Microsoft layout. Has English characters as alternate symbols.
+Comment[cs]=Rozvr¾ení podle Microsoftu. Obsahuje anglické znaky jako alternativní symboly.
+Comment[pt_BR]=Disposição Microsoft. Tem caracteres ingleses bem como símbolos alternativos.
 
 Language=Russian
+Language[cs]=Ruský
 
 Charset=cp1251
 Label=RW

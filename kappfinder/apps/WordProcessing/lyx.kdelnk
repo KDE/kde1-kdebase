@@ -22,6 +22,7 @@ Comment[ru]=Текстовый процессор LyX
 Comment[sk]=TextovЩ procesor LyX
 Comment[sv]=Lyx latexeditor
 Name=Lyx
+Name[cs]=LyX
 Exec=lyx
 Icon=lyx.xpm
 TerminalOptions=

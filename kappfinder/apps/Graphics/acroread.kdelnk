@@ -10,6 +10,7 @@ Icon=kghostview.xpm
 Type=Application
 DocPath=
 Comment=PDF document viewer
+Comment[cs]=Prohlí¾eè PDF dokumentù
 Comment[es]=Visor de documentos PDF
 Comment[fi]=PDF-dokumenttien näyttäjä
 Comment[is]=xpdf: Tól til að skoða PDF skrár

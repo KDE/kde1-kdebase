@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=International Keyboard Layout
+Name[cs]=Rozvr¾ení mezinárodní klávesnice
 Name[de]=Kikbd
 Name[es]=Kikbd
 Name[fi]=Kansainvälinen näppäimistö
@@ -11,6 +12,7 @@ Name[pt_BR]=Kikbd
 Name[ru]=Kikbd
 Name[sk]=Kikbd
 Comment=International Keyboard
+Comment[cs]=Mezinárodní klávesnice
 Comment[de]=Internationale Tastatur
 Comment[es]=Teclado internacional
 Comment[fi]=Kansainvälinen näppäimistö

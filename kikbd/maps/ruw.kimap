@@ -4,8 +4,11 @@
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has English characters as alternate symbols.
+Comment[cs]=Obsahuje anglické znaky ja alternativní symboly.
+Comment[pt_BR]=Tem caracteres ingleses bem como símbolos alternativos.
 
 Language=Russian
+Language[cs]=Ruský
 
 Charset=cp1251
 Label=RW
