@@ -189,6 +189,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   str = config.readEntry( "Color2", DEFAULT_COLOR_2 );
   color2.setNamedColor( str );
 
+  gfMode = DEFAULT_COLOR_MODE;
   str = config.readEntry( "ColorMode", "unset" );
   if ( str == "Gradient" ) {
       gfMode = Gradient;
@@ -205,13 +206,12 @@ void KBackground::readSettings( int num, bool one, int onedesk )
       pattern[i] = (i < size) ? QString(strl.at(i)).toUInt() : 255;
   }
 
-  orMode=Portrait;
+  orMode = DEFAULT_ORIENTATION_MODE;
   str = config.readEntry( "OrientationMode", "unset" );
   if ( str == "Landscape" )
     orMode = Landscape;
-  else
-    orMode = DEFAULT_ORIENTATION_MODE;
 
+  wpMode = DEFAULT_WALLPAPER_MODE;
   str = config.readEntry( "WallpaperMode", "unset" );
   if ( str == "Mirrored" )
     wpMode = Mirrored;
@@ -231,15 +231,11 @@ void KBackground::readSettings( int num, bool one, int onedesk )
     wpMode = SymmetricalMirrored;
   else if ( str == "Scaled" )
     wpMode = Scaled;
-  else
-    wpMode = DEFAULT_WALLPAPER_MODE;
 
-  wallpaper.sprintf( i18n("No wallpaper") );
+  wallpaper = DEFAULT_WALLPAPER;
   bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_WALLPAPER_MODE );
   if ( bUseWallpaper )
     wallpaper = config.readEntry( "Wallpaper", DEFAULT_WALLPAPER );
-  else
-    wallpaper = DEFAULT_WALLPAPER;
 
   name.detach();
   name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),

@@ -27,6 +27,8 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 
   docked = false;
 
+  this->setGeometry( -100,-100, 10, 10);
+
   readSettings();
 
   desktops = new KBackground [ MAX_DESKTOPS ];
@@ -86,6 +88,7 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   else
     command << "kbgwm_change_" << current;
   KWM::sendKWMCommand( command.data() );
+
 }
 
 
