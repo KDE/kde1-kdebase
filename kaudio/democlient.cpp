@@ -32,7 +32,7 @@ KApplication *globalKapp;
 
 int main ( int argc, char** argv)
 {
-  globalKapp = new KApplication( argc, argv, "kmix" );
+  globalKapp = new KApplication( argc, argv, "Demo-Audioclient" );
 
   /************* initialization ************************************/
   DemoClient *myClient = new DemoClient();
