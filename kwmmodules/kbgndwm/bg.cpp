@@ -150,7 +150,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
 	wallpaper = d.absPath() + "/" + list->at( randomDesk );
 	name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
 		      wpMode, gfMode, orMode, color1.red(), color1.green(),
-		      color1.blue(), color1.red(), color2.green(), color2.blue());
+		      color1.blue(), color2.red(), color2.green(), color2.blue());
 
 	hasPm = true;
 
@@ -244,7 +244,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   name.detach();
   name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(),
 		wpMode, gfMode, orMode, color1.red(), color1.green(),
-		color1.blue(), color1.red(), color2.green(), color2.blue());
+		color1.blue(), color2.red(), color2.green(), color2.blue());
 
   QString tmp;
   for (int i = 0; i < 8; i++) {
