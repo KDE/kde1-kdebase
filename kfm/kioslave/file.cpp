@@ -51,9 +51,6 @@ KProtocolFILE::~KProtocolFILE()
 
 int KProtocolFILE::Open(KURL *url, int mode)
 {
-  QString p( url->path() );
-  KURL::decodeURL( p );
-    
   struct stat st;
   Close();
 
@@ -61,7 +58,7 @@ int KProtocolFILE::Open(KURL *url, int mode)
   
   if( mode & READ )
   {
-    file = fopen( p, "rb");
+    file = fopen( url->path(), "rb");
     if( !file )
     {
       Error(KIO_ERROR_CouldNotRead,"Can't open File for reading",errno);
@@ -74,14 +71,14 @@ int KProtocolFILE::Open(KURL *url, int mode)
   {
     if( !( mode & OVERWRITE ) )
     {
-      if(stat( p, &st) != -1)
+      if(stat( url->path(), &st) != -1)
       {
 	Error( KIO_ERROR_FileExists, "File already exists", errno );
 	return(FAIL);
       }
     }
 
-    file = fopen( p, "wb");
+    file = fopen( url->path(), "wb");
     if( !file )
     {
       Error(KIO_ERROR_CouldNotWrite,"Can't open file for writing",errno);
@@ -143,7 +140,6 @@ int KProtocolFILE::OpenDir( KURL *url )
     
     // Open the directory
     path = url->path();
-    KURL::decodeURL(path);
     // Save a copy
     QString tmp = path.data();
     if ( path.right(1) != "/" )
@@ -329,21 +325,15 @@ int KProtocolFILE::CloseDir()
 
 int KProtocolFILE::MkDir(KURL *url)
 {
-    QString p( url->path() );
-    KURL::decodeURL( p );
-    
-    if ( ::mkdir( p, S_IXUSR | S_IWUSR | S_IRUSR ) != 0L )
+    if ( ::mkdir( url->path(), S_IXUSR | S_IWUSR | S_IRUSR ) != 0L )
 	return Error( KIO_ERROR_CouldNotMkdir, "Could not mkdir '%s'", errno );
     return SUCCESS;
 }
 
 int KProtocolFILE::GetPermissions( KURL &_u )
 {
-    QString p( _u.path() );
-    KURL::decodeURL( p );
-    
     struct stat buff;
-    stat( p, &buff );
+    stat( _u.path(), &buff );
 
     return (int)(buff.st_mode);
 }

@@ -305,7 +305,6 @@ void KIOSlave::del( const char *_url )
     {
 	QString supath( su.path() );  // source path
 	supath.detach();
-	KURL::decodeURL( supath );
 
 	int erg;
 
