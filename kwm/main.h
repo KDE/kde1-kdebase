@@ -32,7 +32,7 @@ public:
   // store the session in the kwm configuration file
   void saveSession();
   // restore the session from the kwm configuration file
-  void restoreSession();
+  void restoreSession(bool);//CT the *bool* helps to handle -nosession
 
   // clean up everything and exit
   void cleanup();

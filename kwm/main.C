@@ -694,8 +694,8 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   setupSystemMenuBar();
 
-  if (restore_session)
-    restoreSession();
+  //CT 03Apr1999 - always call restore which handles nosession internally
+  restoreSession(restore_session);
 }
 
 
@@ -1350,20 +1350,27 @@ void MyApp::saveSession(){
   config->sync();
 }
 
-void MyApp::restoreSession(){
+void MyApp::restoreSession(bool indeed){
   KConfig* config = getKApplication()->getConfig();
   config->setGroup( "Session" );
-  QString command;
 
-  QStrList* com = new QStrList;
+
+  //CT 03Apr1999 - avoid the - nosession segfault - create the needed proxy_
+  //         strings, but don't execute the commands
+  if (indeed) {
+    QString command;
+    QStrList* com = new QStrList;
+    config->readListEntry("tasks", *com);
+    for (command = com->first(); !command.isNull(); command = com->next())
+      execute(command.data());
+    delete com;
+  }
+
   QStrList* ph = new QStrList;
   QStrList* pp = new QStrList;
   QStrList* pi = new QStrList;
+  //CT
 
-  config->readListEntry("tasks", *com);
-  for (command = com->first(); !command.isNull(); command = com->next())
-    execute(command.data());
-  delete com;
   config->readListEntry("proxyhints", *ph);
   config->readListEntry("proxyprops", *pp);
   config->readListEntry("proxyignore", *pi);
