@@ -14,6 +14,8 @@
 
 #define Inherited QDialog
 
+#define SEPARATION 10
+
 #include <qlabel.h>
 #include <kapp.h>
 
@@ -26,71 +28,77 @@ MenuNameDialogData::MenuNameDialogData
 	Inherited( parent, name, TRUE, 0 )
 {
 	QLabel* dlgedit_Label_1;
-	dlgedit_Label_1 = new QLabel( this, "Label_1" );
-	dlgedit_Label_1->setGeometry( 16, 16, 328, 24 );
-	dlgedit_Label_1->setMinimumSize( 10, 10 );
-	dlgedit_Label_1->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_1->setText( klocale->translate("Change the name of the menus as displayed in kpanel") );
-	dlgedit_Label_1->setAlignment( 289 );
-	dlgedit_Label_1->setMargin( -1 );
+	dlgedit_Label_1 = new QLabel(klocale->translate("Change the name of the menus as displayed in kpanel"), 
+				     this, "Label_1" );
+	dlgedit_Label_1->setFixedSize(dlgedit_Label_1->sizeHint());
 
 	QLabel* dlgedit_Label_2;
-	dlgedit_Label_2 = new QLabel( this, "Label_2" );
-	dlgedit_Label_2->setGeometry( 24, 48, 56, 24 );
-	dlgedit_Label_2->setMinimumSize( 10, 10 );
-	dlgedit_Label_2->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_2->setText( klocale->translate("Personal:") );
-	dlgedit_Label_2->setAlignment( 290 );
-	dlgedit_Label_2->setMargin( -1 );
+	dlgedit_Label_2 = new QLabel(klocale->translate("Personal:"),
+				     this, "Label_2" );
+	dlgedit_Label_2->setFixedSize(dlgedit_Label_2->sizeHint());
 
 	QLabel* dlgedit_Label_3;
-	dlgedit_Label_3 = new QLabel( this, "Label_3" );
-	dlgedit_Label_3->setGeometry( 24, 88, 56, 16 );
-	dlgedit_Label_3->setMinimumSize( 10, 10 );
-	dlgedit_Label_3->setMaximumSize( 32767, 32767 );
-	dlgedit_Label_3->setText( klocale->translate("Default:") );
-	dlgedit_Label_3->setAlignment( 290 );
-	dlgedit_Label_3->setMargin( -1 );
+	dlgedit_Label_3 = new QLabel(klocale->translate("Default:"),
+				     this, "Label_3" );
+	dlgedit_Label_3->setFixedSize(dlgedit_Label_3->sizeHint());
+
+	int h = 2*fontMetrics().height();
 
 	i_personal = new QLineEdit( this, "LineEdit_1" );
-	i_personal->setGeometry( 96, 48, 232, 24 );
-	i_personal->setMinimumSize( 10, 10 );
-	i_personal->setMaximumSize( 32767, 32767 );
-	i_personal->setText( "" );
-	i_personal->setMaxLength( 32767 );
-	i_personal->setEchoMode( QLineEdit::Normal );
-	i_personal->setFrame( TRUE );
+	i_personal->setMinimumSize(fontMetrics().width("----------"), h);
+	i_personal->setMaximumSize(QLayout::unlimited, h);
 
 	i_default = new QLineEdit( this, "LineEdit_2" );
-	i_default->setGeometry( 96, 80, 232, 24 );
-	i_default->setMinimumSize( 10, 10 );
-	i_default->setMaximumSize( 32767, 32767 );
-	i_default->setText( "" );
-	i_default->setMaxLength( 32767 );
-	i_default->setEchoMode( QLineEdit::Normal );
-	i_default->setFrame( TRUE );
+	i_default->setMinimumSize(fontMetrics().width("----------"), h);
+	i_default->setMaximumSize(QLayout::unlimited, h);
 
+	int w = (int)(1.8 * QMAX(fontMetrics().width(klocale->translate("Ok")),
+			   fontMetrics().width(klocale->translate("Cancel"))));
+	
 	b_ok = new QPushButton( this, "PushButton_1" );
-	b_ok->setGeometry( 40, 128, 80, 24 );
-	b_ok->setMinimumSize( 10, 10 );
-	b_ok->setMaximumSize( 32767, 32767 );
+	b_ok->setFixedSize(w,h);
 	connect( b_ok, SIGNAL(pressed()), SLOT(accept()) );
 	b_ok->setText( klocale->translate("Ok") );
 	b_ok->setAutoRepeat( FALSE );
 	b_ok->setAutoResize( FALSE );
 
 	b_cancel = new QPushButton( this, "PushButton_2" );
-	b_cancel->setGeometry( 232, 128, 80, 24 );
-	b_cancel->setMinimumSize( 10, 10 );
-	b_cancel->setMaximumSize( 32767, 32767 );
+	b_cancel->setFixedSize(w,h);
 	connect( b_cancel, SIGNAL(pressed()), SLOT(reject()) );
 	b_cancel->setText( klocale->translate("Cancel") );
 	b_cancel->setAutoRepeat( FALSE );
 	b_cancel->setAutoResize( FALSE );
 
-	resize( 352,168 );
-	setMinimumSize( 0, 0 );
-	setMaximumSize( 32767, 32767 );
+	layoutTB = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION);
+
+	layoutTB->addWidget(dlgedit_Label_1, 0);
+	layoutTB->addSpacing(h/2);
+	layoutTB->addStretch(2);
+
+	layoutLE = new QGridLayout(2, 2);
+	layoutTB->addLayout(layoutLE);
+	layoutLE->addWidget(dlgedit_Label_2, 0, 0, AlignRight|AlignVCenter);
+	layoutLE->addWidget(dlgedit_Label_3, 1, 0, AlignRight|AlignVCenter);
+	layoutLE->addWidget(i_personal, 0, 1);
+	layoutLE->addWidget(i_default, 1, 1);
+	layoutLE->setColStretch(1, 10);
+
+	layoutTB->addSpacing(h/2);
+	layoutTB->addStretch(5);
+	
+	layoutLR = new QBoxLayout(QBoxLayout::LeftToRight);
+	layoutTB->addLayout(layoutLR);
+	layoutLR->addStretch(10);
+	layoutLR->addWidget(b_ok, 0);
+	layoutLR->addStretch(10);
+	layoutLR->addWidget(b_cancel, 0);
+	layoutLR->addStretch(10);
+	
+
+	layoutTB->addStretch(5);
+	layoutTB->activate();
+
+	resize(0,0);		// resize to minimum size...
 }
 
 

@@ -16,6 +16,7 @@
 #include <qdialog.h>
 #include <qpushbt.h>
 #include <qlined.h>
+#include <qlayout.h>
 
 class MenuNameDialogData : public QDialog
 {
@@ -43,6 +44,9 @@ protected:
     QPushButton* b_ok;
     QPushButton* b_cancel;
 
+    QBoxLayout  *layoutTB, *layoutLR;
+    QGridLayout *layoutLE;
+    
 };
 
 #endif // MenuNameDialogData_included
