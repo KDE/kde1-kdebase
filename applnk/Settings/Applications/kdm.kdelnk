@@ -26,23 +26,6 @@ Comment[ru]=îÁÓÔÒÏÊËÉ KDM
 Comment[sk]=V¹etky nastavenia KDM
 Comment[sv]=Alla KDM-inställningar
 Comment[zh_CN.GB2312]=ËùÓĞµÄ KDE ÉèÖÃ
-Name=Desktop Manager
-Name[ca]=Gestor d'Escriptori
-Name[cs]=Nastavení KDM
-Name[de]=Desktop-Manager
-Name[eo]=Labortabula Regilo
-Name[es]=Gestor de escritorio
-Name[fi]=KDM-asetukset
-Name[fr]=Configuration du bureau
-Name[hr]=Upravitelj radne povr¹ine
-Name[is]=Skráningarstjóri ( KDM )
-Name[it]=Gestione Desktop
-Name[no]=Skrivebordsbehandler
-Name[pl]=KDM
-Name[pt]=Gestor de Ambiente de Trabalho
-Name[pt_BR]=Gerenciador de Ambiente de Trabalho
-Name[ro]=Administrator de Ecran
-Name[ru]=îÁÓÔÒÏÊËÉ KDM
-Name[sk]=Nastavenie KDM
-Name[sv]=Skrivbordshanteraren
-Name[zh_CN.GB2312]=×ÀÃæ¹ÜÀíÆ÷
+Name=Login Manager
+
+
