@@ -178,14 +178,12 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
 #: disknav.cpp:64
-#, fuzzy
 msgid "Edit &Personal..."
-msgstr "Rediger &lokal..."
+msgstr "Rediger &personlige..."
 
 #: disknav.cpp:74
-#, fuzzy
 msgid "Edit &Shared..."
-msgstr "Rediger &lokal..."
+msgstr "Rediger &delte..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -208,29 +206,21 @@ msgid "Ignore case when sorting"
 msgstr "Ignorer bokstavstørrelse ved sortering"
 
 #: disknav.cpp:173
-#, fuzzy
 msgid "Show Shared section"
-msgstr "Vis lokal-seksjon"
+msgstr "Vis seksjon for delte"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Personal section"
-msgstr "Vis lokal-seksjon"
+msgstr "Vis seksjon for personlige"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Vis nylig-seksjon"
+msgstr "Vis seksjon for nylige"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Vis valg-oppføring"
+msgstr "Vis valgoppføring"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal-applikasjoner:"
-
-#~ msgid "Edit &Global..."
-#~ msgstr "Rediger &global..."
-
-#~ msgid "Show Global section"
-#~ msgstr "Vis global-seksjon"

@@ -103,7 +103,7 @@ msgstr "Disknavigator"
 
 #: props.C:164
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Rask navigering gjennom filsystemet"
 
 #: props.C:170
 msgid "Panel"
@@ -155,11 +155,11 @@ msgstr "Åpne mappe"
 
 #: pfilemenu.C:749
 msgid "Shared:"
-msgstr ""
+msgstr "Delte:"
 
 #: pfilemenu.C:770
 msgid "Personal:"
-msgstr ""
+msgstr "Personlige:"
 
 #: pfilemenu.C:790
 msgid "Recent:"
