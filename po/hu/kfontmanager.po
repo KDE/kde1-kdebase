@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:61
+#: main.cpp:58
 msgid "KDE Font Manager"
 msgstr "KDE fontkezelõ"
 
-#: main.cpp:74
+#: main.cpp:71
 msgid "KDE Fonts"
 msgstr "KDE fontok"
 
-#: main.cpp:75
+#: main.cpp:72
 msgid "Font Explorer"
 msgstr "Font felfedezõ"
 
-#: main.cpp:76
+#: main.cpp:73
 msgid "Raw X11 Font List"
 msgstr "Nyers X11 fontlista"
 
@@ -38,15 +38,15 @@ msgstr "Elérhetõ X11 fontok"
 msgid "Fonts made available to KDE"
 msgstr "KDE számára használható fontok"
 
-#: kfontmanager.cpp:86
+#: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "árvíztûrõ tükörfúrógép ABC ÁÍÛÕ ÜÖÚÓÉ"
 
-#: kfontlist.cpp:63 kfontmanager.cpp:108
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "A kfontmanagerrõl"
 
-#: kfontmanager.cpp:108
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -54,7 +54,7 @@ msgid ""
 "wuebben@math.cornell.edu\n"
 msgstr ""
 
-#: kfontmanager.cpp:208
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -62,7 +62,7 @@ msgstr ""
 "A HOME környezeti változó\n"
 "nincs beállítva\n"
 
-#: kfontmanager.cpp:285
+#: kfontmanager.cpp:289
 #, fuzzy
 msgid ""
 "Can not create:\n"
@@ -71,7 +71,7 @@ msgstr ""
 "Nem tudtam létrehozni a\n"
 " ~/.kde/config/kdefonts file-t\n"
 
-#: kfontmanager.cpp:290
+#: kfontmanager.cpp:294
 #, fuzzy
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
@@ -82,7 +82,7 @@ msgstr ""
 "létezik, de nem írható, ezért\n"
 "nem tudom elmenteni a fontlistát."
 
-#: kfontlist.cpp:63
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

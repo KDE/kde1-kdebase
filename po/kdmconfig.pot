@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,43 +14,43 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:99
+#: main.cpp:87
 msgid "&Appearance"
 msgstr ""
 
-#: main.cpp:103
+#: main.cpp:91
 msgid "&Fonts"
 msgstr ""
 
-#: main.cpp:107
+#: main.cpp:95
 msgid "&Background"
 msgstr ""
 
-#: main.cpp:110
+#: main.cpp:98
 msgid "&Users"
 msgstr ""
 
-#: main.cpp:113
+#: main.cpp:101
 msgid "&Sessions"
 msgstr ""
 
-#: main.cpp:118
+#: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
 
-#: main.cpp:125
+#: main.cpp:145
+msgid "KDM Configuration"
+msgstr ""
+
+#: main.cpp:155
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
 
-#: main.cpp:127
+#: main.cpp:157
 msgid "Missing privileges"
-msgstr ""
-
-#: main.cpp:164
-msgid "KDM Configuration"
 msgstr ""
 
 #: kdm-appear.cpp:66
@@ -65,7 +65,7 @@ msgstr ""
 msgid "KDM logo:"
 msgstr ""
 
-#: kdm-appear.cpp:104 kdm-users.cpp:139
+#: kdm-appear.cpp:104 kdm-users.cpp:135
 msgid "Click or drop an image here"
 msgstr ""
 
@@ -81,48 +81,48 @@ msgstr ""
 msgid "Windows"
 msgstr ""
 
-#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+#: kdm-appear.cpp:143 kdm-appear.cpp:227 kdm-users.cpp:275
 msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+#: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
 msgid "<"
 msgstr ""
 
-#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
-#: kdm-users.cpp:247
+#: kdm-appear.cpp:146 kdm-appear.cpp:165 kdm-appear.cpp:230 kdm-users.cpp:196
+#: kdm-users.cpp:278
 msgid "ERROR"
 msgstr ""
 
-#: kdm-appear.cpp:154 kdm-users.cpp:162
+#: kdm-appear.cpp:162 kdm-users.cpp:193
 msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
 
-#: kdm-appear.cpp:187 kdm-users.cpp:195
+#: kdm-appear.cpp:195 kdm-users.cpp:226
 msgid "Sorry, but \n"
 msgstr ""
 
-#: kdm-appear.cpp:189 kdm-users.cpp:197
+#: kdm-appear.cpp:197 kdm-users.cpp:228
 msgid ""
 "\n"
 "does not seem to be an image file"
 msgstr ""
 
-#: kdm-appear.cpp:190 kdm-users.cpp:198
+#: kdm-appear.cpp:198 kdm-users.cpp:229
 msgid ""
 "\n"
 "Please use files with these extensions\n"
 msgstr ""
 
-#: kdm-appear.cpp:192 kdm-users.cpp:200
+#: kdm-appear.cpp:200 kdm-users.cpp:231
 msgid "Improper File Extension"
 msgstr ""
 
-#: kdm-appear.cpp:221 kdm-users.cpp:246
+#: kdm-appear.cpp:229 kdm-users.cpp:277
 msgid ""
 "<\n"
 "It will not be saved..."
@@ -160,37 +160,37 @@ msgstr ""
 msgid "Wallpaper"
 msgstr ""
 
-#: kdm-bgnd.cpp:110
+#: kdm-bgnd.cpp:109
 msgid "Tiled"
 msgstr ""
 
-#: kdm-bgnd.cpp:114
+#: kdm-bgnd.cpp:113
 msgid "Centred"
 msgstr ""
 
-#: kdm-bgnd.cpp:118
+#: kdm-bgnd.cpp:117
 msgid "Scaled"
 msgstr ""
 
-#: kdm-users.cpp:49
+#: kdm-users.cpp:48
 msgid "All users"
 msgstr ""
 
-#: kdm-users.cpp:51
+#: kdm-users.cpp:50
 msgid "Selected users"
 msgstr ""
 
-#: kdm-users.cpp:53
+#: kdm-users.cpp:52
 msgid "No-show users"
 msgstr ""
 
-#: kdm-users.cpp:80
+#: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
 msgstr ""
 
-#: kdm-users.cpp:87
+#: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
@@ -204,54 +204,54 @@ msgstr ""
 msgid "Sort users"
 msgstr ""
 
-#: kdm-users.cpp:150 kdm-users.cpp:219
+#: kdm-users.cpp:181 kdm-users.cpp:250
 msgid "No user selected"
 msgstr ""
 
-#: kdm-users.cpp:151 kdm-users.cpp:220
+#: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "Save image as default image?"
 msgstr ""
 
-#: kdm-sess.cpp:51
+#: kdm-sess.cpp:50
 msgid "Allow to shutdown:"
 msgstr ""
 
-#: kdm-sess.cpp:58
+#: kdm-sess.cpp:56
 msgid "None"
 msgstr ""
 
-#: kdm-sess.cpp:59
+#: kdm-sess.cpp:57
 msgid "All"
 msgstr ""
 
-#: kdm-sess.cpp:60
+#: kdm-sess.cpp:58
 msgid "Root Only"
 msgstr ""
 
-#: kdm-sess.cpp:61
+#: kdm-sess.cpp:59
 msgid "Console Only"
 msgstr ""
 
-#: kdm-sess.cpp:65
+#: kdm-sess.cpp:63
 msgid "Commands"
 msgstr ""
 
-#: kdm-sess.cpp:67
+#: kdm-sess.cpp:65
 msgid "Shutdown"
 msgstr ""
 
-#: kdm-sess.cpp:75
+#: kdm-sess.cpp:73
 msgid "Restart"
 msgstr ""
 
-#: kdm-sess.cpp:86
+#: kdm-sess.cpp:85
 msgid "Session types"
 msgstr ""
 
-#: kdm-sess.cpp:89
+#: kdm-sess.cpp:88
 msgid "New type"
 msgstr ""
 
-#: kdm-sess.cpp:99
+#: kdm-sess.cpp:98
 msgid "Available types"
 msgstr ""

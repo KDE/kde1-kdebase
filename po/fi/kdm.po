@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,26 +25,26 @@ msgstr "Sammuta ja käynnistä uudelleen"
 msgid "Exit kdm"
 msgstr "Poistu kdm:stä"
 
-#: kgreeter.cpp:136
+#: kgreeter.cpp:137
 msgid "Login:"
 msgstr "Käyttäjätunnus:"
 
-#: kgreeter.cpp:141
+#: kgreeter.cpp:142
 msgid "Password:"
 msgstr "Salasana:"
 
-#: kgreeter.cpp:175
+#: kgreeter.cpp:176
 msgid "Login failed!"
 msgstr "Kirjautuminen epäonnistui!"
 
-#: kgreeter.cpp:181
+#: kgreeter.cpp:182
 msgid "Session Type:"
 msgstr "Istunnon tyyppi:"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:198
 msgid "Go!"
 msgstr "Aloita!"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Alasajo..."

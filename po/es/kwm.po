@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,11 +112,11 @@ msgstr "Siete"
 msgid "Eight"
 msgstr "Ocho"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Sin tareas ***"
 
@@ -124,16 +124,16 @@ msgstr "*** Sin tareas ***"
 msgid "Command:"
 msgstr "Comando:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 #, fuzzy
 msgid "Logout"
 msgstr "Salir"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Sesión preparada para el logout"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -141,7 +141,7 @@ msgstr ""
 "Las siguientes apliaciones contierne datos que\n"
 "se perderán en la siguiente sesión."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -150,7 +150,7 @@ msgstr ""
 "sesión, solo recomenzar. Asegurese que no contienen datos importantes\n"
 "que se puedan perder."
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -159,11 +159,11 @@ msgstr ""
 "en la siguiente sesión. Asegúrese de que no contienen datos importantes\n"
 "no salvados."
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Pasar a"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Sesión actual"
 

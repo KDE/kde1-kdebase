@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,134 +34,134 @@ msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Stile Manager Finestre"
 
-#: titlebar.cpp:113
+#: titlebar.cpp:114
 msgid "Minimize"
 msgstr "Iconifica"
 
-#: titlebar.cpp:117
+#: titlebar.cpp:118
 msgid "Maximize"
 msgstr "Ingrandisci"
 
-#: titlebar.cpp:121
+#: titlebar.cpp:122
 msgid "Sticky"
 msgstr "Appiccicato"
 
-#: titlebar.cpp:129
+#: titlebar.cpp:130
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:459
+#: titlebar.cpp:460
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
 "'Ingrandisci'\n"
 
-#: titlebar.cpp:492
+#: titlebar.cpp:493
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Il lato destro della barra Titolo è pieno siabilito il pulsante "
 "'Ingrandisci'\n"
 
-#: titlebar.cpp:532
+#: titlebar.cpp:533
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
 "'Iconifica'\n"
 
-#: titlebar.cpp:565
+#: titlebar.cpp:566
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Il lato destro della barra Titolo è pieno siabilito il pulsante 'Iconifica'\n"
 
-#: titlebar.cpp:916
+#: titlebar.cpp:917
 msgid "Titlebar appearance"
 msgstr "Aspetto Barra Titolo"
 
-#: titlebar.cpp:918
+#: titlebar.cpp:919
 msgid "Shaded"
 msgstr "Sfumata"
 
-#: titlebar.cpp:921
+#: titlebar.cpp:922
 msgid "Plain"
 msgstr "Tinta Unita"
 
-#: titlebar.cpp:924 titlebar.cpp:944
+#: titlebar.cpp:925 titlebar.cpp:945
 msgid "Pixmap"
 msgstr "Immagine"
 
-#: titlebar.cpp:931
+#: titlebar.cpp:932
 msgid "Title Animation"
 msgstr "Animazione Titolo"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:935
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:955
+#: titlebar.cpp:956
 msgid "&Active pixmap"
 msgstr "Immagine &Attiva"
 
-#: titlebar.cpp:957
+#: titlebar.cpp:958
 msgid "&Inactive pixmap"
 msgstr "Immagine &Inattiva"
 
-#: windows.cpp:69
+#: windows.cpp:70
 msgid "Window movement"
 msgstr "Movimento finestra"
 
-#: windows.cpp:70
+#: windows.cpp:71
 msgid "Transparent"
 msgstr "Trasparente"
 
-#: windows.cpp:71
+#: windows.cpp:72
 msgid "Opaque"
 msgstr "Opaco"
 
-#: windows.cpp:74
+#: windows.cpp:75
 msgid "Resize Animation"
 msgstr "Animazione Ridimensionamento"
 
-#: windows.cpp:79
+#: windows.cpp:80
 msgid "Placement policy"
 msgstr "Comparsa"
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Random placement"
 msgstr "Casuale"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Smart placement"
 msgstr "Elegante"
 
-#: windows.cpp:84
+#: windows.cpp:85
 msgid "Maximize Style"
 msgstr "Stile Ingrandimento"
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Maximize fully"
 msgstr "Ingrandimento totale"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Maximize vertically"
 msgstr "Ingrandimento verticale"
 
-#: windows.cpp:89
+#: windows.cpp:90
 msgid "Focus Policy"
 msgstr "Attivazione"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Click to focus"
 msgstr "Click per attivare"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Focus follows mouse"
 msgstr "Attiva al passaggio del mouse"
 
-#: windows.cpp:96
+#: windows.cpp:97
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -169,6 +169,6 @@ msgstr ""
 "Primo piano automatico\n"
 "(<100 disabilitato)"
 
-#: windows.cpp:99
+#: windows.cpp:100
 msgid "miliseconds"
 msgstr "millisecondi"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-02-14 12:18+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 22:22 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -59,11 +59,11 @@ msgstr ""
 "Recharger les menus va abandonner tous vos changements.\n"
 "Etes-vous sûrs de vouloir recharger ?"
 
-#: button.cpp:209 main.cpp:80 main.cpp:93
+#: button.cpp:209 main.cpp:77 main.cpp:90
 msgid "KMenuedit"
 msgstr "KMenuEdit"
 
-#: main.cpp:81
+#: main.cpp:78
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -71,7 +71,7 @@ msgstr ""
 "Le répertoire pour votre menu personnel n'existe pas.\n"
 "Voulez-vous le créer maintenant ?"
 
-#: main.cpp:94
+#: main.cpp:91
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

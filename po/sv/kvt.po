@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-23 15:45:33+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
@@ -161,7 +161,7 @@ msgstr ""
 "Nya färginställningar kommer att \n"
 "användas när tangentbordet låses upp."
 
-#: main.C:1084
+#: main.C:1087
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -228,7 +228,7 @@ msgstr ""
 "-pagedown <keysym>\tanvänd snabbtangentne alt-keysym för att skrolla ner "
 "genom buffern\n"
 
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

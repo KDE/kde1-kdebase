@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit \n"
-"POT-Creation-Date: 1998-02-14 12:18+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 12:44+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -52,11 +52,11 @@ msgstr ""
 "Prze³adowanie menu spowoduje anulowanie zmian.\n"
 "Czy na pewno chcesz prze³adowaæ ?"
 
-#: button.cpp:209 main.cpp:80 main.cpp:93
+#: button.cpp:209 main.cpp:77 main.cpp:90
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:81
+#: main.cpp:78
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -64,7 +64,7 @@ msgstr ""
 "Katalog dla twojego prywatnego menu nie istnieje.\n"
 " Czy utworzyæ go teraz ?"
 
-#: main.cpp:94
+#: main.cpp:91
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
@@ -24,27 +24,27 @@ msgstr "Finalizar y reiniciar"
 msgid "Exit kdm"
 msgstr "Finalizar kdm"
 
-#: kgreeter.cpp:136
+#: kgreeter.cpp:137
 msgid "Login:"
 msgstr "Entrada:"
 
-#: kgreeter.cpp:141
+#: kgreeter.cpp:142
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: kgreeter.cpp:175
+#: kgreeter.cpp:176
 msgid "Login failed!"
 msgstr "Entrada errónea!"
 
-#: kgreeter.cpp:181
+#: kgreeter.cpp:182
 msgid "Session Type:"
 msgstr "Tipo de sesión:"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:198
 msgid "Go!"
 msgstr "Iniciar"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Finalizando..."
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-17 19:46 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -29,37 +29,37 @@ msgstr "utilisation : kcminfo [-init | {processor,memory}]\n"
 msgid "System Information"
 msgstr "Informations systèmes"
 
-#: memory.cpp:10
+#: memory.cpp:11
 msgid "Total memory"
 msgstr "Mémoire totale"
 
-#: memory.cpp:18
+#: memory.cpp:21
 msgid "Free memory"
 msgstr "Mémoire libre"
 
-#: memory.cpp:26
+#: memory.cpp:29
 msgid "Shared memory"
 msgstr "Mémoire partagée"
 
-#: memory.cpp:34
+#: memory.cpp:37
 msgid "Buffer memory"
 msgstr "Mémoire tampon"
 
-#: memory.cpp:42
+#: memory.cpp:45
 msgid "Swap memory"
 msgstr "Mémoire d'échange"
 
-#: memory.cpp:50
+#: memory.cpp:53
 msgid "Free swap memory"
 msgstr "Mémoire d'échange libre"
 
-#: memory.cpp:71
+#: memory.cpp:74
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld octets = %8.2f Mo"
 
-#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
-#: memory.cpp:98
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
 msgid "not available"
 msgstr "non disponible"
 

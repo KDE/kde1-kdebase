@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: main.C:236
 msgid "Add characters to word class"
@@ -162,7 +162,7 @@ msgstr ""
 "As novas definições de cor serão mostradas\n"
 "quando o teclado estiver destrancado."
 
-#: main.C:1084
+#: main.C:1087
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -228,7 +228,7 @@ msgstr ""
 "-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar "
 "no buffer\n"
 
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

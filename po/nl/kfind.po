@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
 "From: root <flidr@CyberGate.zcu.cz>\n"
@@ -202,19 +202,19 @@ msgstr "hoog uit"
 msgid " Advanced "
 msgstr " Geavanceerd "
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "De datum is niet geldig!"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "The maand(en) waarde is niet geldig!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "The dag(en) waarde is niet geldig!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "De waarde in \"grootte\" is niet een geldig nummer!"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.16\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -167,7 +167,7 @@ msgstr ""
 "когда клавиатура будет разблокирована."
 
 #
-#: main.C:1084
+#: main.C:1087
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -233,7 +233,7 @@ msgstr ""
 "-pageup <keysym>\tиспользовать клавишу alt-keysym для прокрутки вверх\n"
 "-pagedown <keysym>\tиспользовать клавишу alt-keysym для прокрутки вниз\n"
 
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

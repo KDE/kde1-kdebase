@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt 0.18.1\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 10:54 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -168,7 +168,7 @@ msgstr ""
 "Nové nastavení barev bude zobrazeno\n"
 "po vypnutí zabezpeèení klávesnice."
 
-#: main.C:1084
+#: main.C:1087
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -236,7 +236,7 @@ msgstr ""
 "-pagedown <keysym>\tpou¾ívat klávesovou zkratku ALT-<keysym> k posunování \n"
 "\t\t\tli¹ty dolù vyrovnávací pamìtí\n"
 
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

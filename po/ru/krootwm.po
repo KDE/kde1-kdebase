@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -14,51 +14,51 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: krootwm.C:109 krootwm.C:471
+#: krootwm.C:122 krootwm.C:498
 msgid "Folder"
 msgstr "Папка"
 
-#: krootwm.C:136
+#: krootwm.C:149
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ОШИБКА: Заготовка не существует '%s'"
 
-#: krootwm.C:162
+#: krootwm.C:175
 msgid "Help on desktop"
 msgstr "Помощь по рабочему столу"
 
-#: krootwm.C:163
+#: krootwm.C:176
 msgid "Execute command"
 msgstr "Запустить"
 
-#: krootwm.C:164
+#: krootwm.C:177
 msgid "Display properties"
 msgstr "Свойства дисплея"
 
-#: krootwm.C:165
+#: krootwm.C:178
 msgid "Refresh desktop"
 msgstr "Обновить рабочий стол"
 
-#: krootwm.C:166
+#: krootwm.C:179
 msgid "Arrange icons"
 msgstr "Выровнять пиктограммы"
 
-#: krootwm.C:168
+#: krootwm.C:181
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
-#: krootwm.C:169
+#: krootwm.C:182
 msgid "Logout"
 msgstr "Выйти"
 
-#: krootwm.C:491
+#: krootwm.C:518
 msgid "Could not create folder"
 msgstr "Не могу создать папку"
 
-#: krootwm.C:524
+#: krootwm.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:528
+#: krootwm.C:555
 msgid "Usage:"
 msgstr "Использование:"

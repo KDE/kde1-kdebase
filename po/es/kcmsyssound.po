@@ -1,4 +1,3 @@
-
 # kcmsyssound.pot translate file to Spanish
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-22 4:19+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-02-22 4:19+0100\n"
-"Last-Translator: Santiago Fernández and Jorge Valencia <jorgev@est.unileon.es>\n"
+"Last-Translator: Santiago Fernández and Jorge Valencia "
+"<jorgev@est.unileon.es>\n"
 "Language-Team: SPANISH <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -71,39 +71,39 @@ msgstr "Cerrar Ventana"
 msgid "Startup"
 msgstr "Comienzo"
 
-#: syssound.cpp:103
+#: syssound.cpp:102
 msgid "e&nable system sounds"
 msgstr "a&ctivar sonidos del sistema"
 
-#: syssound.cpp:108
+#: syssound.cpp:107
 msgid "&Test"
 msgstr "&Testear"
 
-#: syssound.cpp:112
+#: syssound.cpp:111
 msgid "&Events:"
 msgstr "&Eventos:"
 
-#: syssound.cpp:116
+#: syssound.cpp:115
 msgid "&Sounds:"
 msgstr "&Sonidos:"
 
-#: syssound.cpp:120
+#: syssound.cpp:119
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr "Archivos WAV adicionales pueden ser posados en la lista de sonidos."
 
-#: syssound.cpp:323
+#: syssound.cpp:321
 msgid "Unsupported URL"
 msgstr "URL no soportada"
 
-#: syssound.cpp:324
+#: syssound.cpp:322
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Lo sentimos, este tipo de URL no esta actualmente soportada por el módulo"
-"KDE System Sound"
+"Lo sentimos, este tipo de URL no esta actualmente soportada por el móduloKDE "
+"System Sound"
 
-#: syssound.cpp:328
+#: syssound.cpp:326
 #, c-format
 msgid ""
 "Sorry, but \n"
@@ -114,11 +114,11 @@ msgstr ""
 "%s\n"
 "no parece ser un archivo WAV !"
 
-#: syssound.cpp:329
+#: syssound.cpp:327
 msgid "Improper File Extension"
 msgstr "Extensión de Archivo Impropia"
 
-#: syssound.cpp:335
+#: syssound.cpp:333
 #, c-format
 msgid ""
 "The file\n"
@@ -129,6 +129,6 @@ msgstr ""
 "%s\n"
 "ya esta en la lista"
 
-#: syssound.cpp:336
+#: syssound.cpp:334
 msgid "File Already in List"
 msgstr "El archivo ya esta en lista"

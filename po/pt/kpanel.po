@@ -1,166 +1,166 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: kpanel.C:248
+#: kpanel.C:211
 msgid "Move"
 msgstr "Mover"
 
-#: kpanel.C:251
+#: kpanel.C:214
 msgid "Properties"
 msgstr "Propriedades"
 
-#: kpanel.C:273
+#: kpanel.C:246
 msgid "Go!"
 msgstr "Começar!"
 
-#: kpanel.C:276 tools.C:805
+#: kpanel.C:248 tools.C:816
 msgid "Where do you want to go tomorrow?"
 msgstr "Onde é que queres ir amanhã?"
 
-#: kpanel.C:342
+#: kpanel.C:321
 msgid "No info available"
 msgstr "Nenhuma informação disponível"
 
-#: kpanel.C:394 kpanel.C:734 kpanel.C:737
+#: kpanel.C:360 props.C:217 props.C:218
 msgid "Logout"
 msgstr "Sair"
 
-#: kpanel.C:402 kpanel.C:732
+#: kpanel.C:368 props.C:216
 msgid "Lock screen"
 msgstr "Trancar écran"
 
-#: kpanel.C:410
+#: kpanel.C:377
 msgid "Hide the panel"
 msgstr "Esconder o painel"
 
-#: kpanel.C:421
+#: kpanel.C:387
 msgid "Show the panel"
 msgstr "Mostrar o painel"
 
-#: kpanel.C:704
-msgid "Add application"
-msgstr "Adicionar aplicação"
-
-#: kpanel.C:707
-msgid "Add an application or a submenu onto the panel"
-msgstr "Adicionar uma aplicação ou um submenu ao painel"
-
-#: kpanel.C:709
-msgid "Add windowlist"
-msgstr "Adicionar lista de janelas"
-
-#: kpanel.C:712
-msgid "Add a windowlist menu onto the panel"
-msgstr "Adicionar lista de janelas ao painel"
-
-#: kpanel.C:714
-msgid "Configure"
-msgstr "Configurar"
-
-#: kpanel.C:717
-msgid "Configure panel"
-msgstr "Configurar painel"
-
-#: kpanel.C:719
-msgid "Restart"
-msgstr "Reinicializar"
-
-#: kpanel.C:722
-msgid "Restart panel"
-msgstr "Reinicializar painel"
-
-#: kpanel.C:725 props.C:396
-msgid "Panel"
-msgstr "Painel"
-
-#: kpanel.C:729
-msgid "Lock Screen"
-msgstr "Trancar Écran"
-
-#: kpanel.C:1101 tools.C:621
+#: kpanel.C:1078 tools.C:632
 msgid "No comment available"
 msgstr "Nenhum comentário disponivel"
 
-#: kpanel.C:1110 tools.C:814
+#: kpanel.C:1087 tools.C:825
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
-#: props.C:327
+#: props.C:200
+msgid "Add application"
+msgstr "Adicionar aplicação"
+
+#: props.C:202
+msgid "Add an application or a submenu onto the panel"
+msgstr "Adicionar uma aplicação ou um submenu ao painel"
+
+#: props.C:203
+msgid "Add windowlist"
+msgstr "Adicionar lista de janelas"
+
+#: props.C:205
+msgid "Add a windowlist menu onto the panel"
+msgstr "Adicionar lista de janelas ao painel"
+
+#: props.C:206
+msgid "Configure"
+msgstr "Configurar"
+
+#: props.C:208
+msgid "Configure panel"
+msgstr "Configurar painel"
+
+#: props.C:209
+msgid "Restart"
+msgstr "Reinicializar"
+
+#: props.C:211
+msgid "Restart panel"
+msgstr "Reinicializar painel"
+
+#: props.C:212 props.C:467
+msgid "Panel"
+msgstr "Painel"
+
+#: props.C:214
+msgid "Lock Screen"
+msgstr "Trancar Écran"
+
+#: props.C:398
 msgid "Location"
 msgstr "Localização"
 
-#: props.C:340
+#: props.C:411
 msgid "Taskbar"
 msgstr "Barra de Tarefas"
 
-#: props.C:341
+#: props.C:412
 msgid "Hidden"
 msgstr "Escondido"
 
-#: props.C:350
+#: props.C:421
 msgid "Top/Left"
 msgstr "Topo/Esquerdo"
 
-#: props.C:380
+#: props.C:451
 msgid "Tiny Style"
 msgstr "Estilo Pequeno"
 
-#: props.C:381
+#: props.C:452
 msgid "Normal Style"
 msgstr "Estilo Normal"
 
-#: props.C:382
+#: props.C:453
 msgid "Large Style"
 msgstr "Estilo Grande"
 
-#: props.C:401
+#: props.C:472
 msgid "Menu Tooltips"
 msgstr "Dicas no Menu"
 
-#: props.C:447
+#: props.C:518
 msgid "Others"
 msgstr "Outros"
 
-#: props.C:449
+#: props.C:520
 msgid "Personal First"
 msgstr "Pessoal Primeiro"
 
-#: props.C:452
+#: props.C:523
 msgid "Auto Hide Panel"
 msgstr "Esconder Painel Automaticamente"
 
-#: props.C:455
+#: props.C:526
 msgid "Auto Hide Taskbar"
 msgstr "Esconder Barra de Tarefas Automaticamente"
 
-#: props.C:473
+#: props.C:544
 msgid "Clock"
 msgstr "Relógio"
 
-#: props.C:475
+#: props.C:546
 msgid "24h"
 msgstr "24h"
 
-#: props.C:479
+#: props.C:550
 msgid "12h AM/PM"
 msgstr "12h AM/PM"
 
-#: props.C:540
+#: props.C:611
 msgid "Visible"
 msgstr "Visíveis"
 
-#: props.C:547
+#: props.C:618
 msgid "Width"
 msgstr "Largura"
 
-#: props.C:552
+#: props.C:623
 msgid "Desktops"
 msgstr "Ambientes de Trabalho"
 
-#: props.C:558
+#: props.C:629
 msgid "KPanel Configuration"
 msgstr "Configuração do Painel"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm \n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 12:41+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -98,11 +98,11 @@ msgstr "Siedem"
 msgid "Eight"
 msgstr "Osiem"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektóre pixmapy s± b³êdne: ShapeMode jest wy³±czony\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Brak zadañ ***"
 
@@ -110,15 +110,15 @@ msgstr "*** Brak zadañ ***"
 msgid "Command:"
 msgstr "Polecenie:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "Wyloguj siê"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Sesja przygotowana do wylogowania"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -126,7 +126,7 @@ msgstr ""
 "Nastêpuj±ce aplikacje zawieraj± niezachowane dane,\n"
 "które nie bêd± odzyskane przy nastêpnej sesji."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -134,7 +134,7 @@ msgstr ""
 "Nastêpuj±ce aplikacje nie bêd± przywrócone przy nastêpnej sesji,\n"
 "a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ wszystkie dane."
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -143,10 +143,10 @@ msgstr ""
 "nastêpnej sesji, a jedynie ponownie uruchomione. Upewnij siê, ¿e zachowa³e¶ "
 "wszystkie dane."
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Prze³±cz na"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Bierz±ca sesja"

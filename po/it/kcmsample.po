@@ -17,4 +17,3 @@ msgstr ""
 #: main.cpp:29
 msgid "KDE Control Application Sample"
 msgstr ""
-

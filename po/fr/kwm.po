@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 00:14 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr\n"
 "Language-Team: Français\n"
@@ -105,11 +105,11 @@ msgstr "Sept"
 msgid "Eight"
 msgstr "Huit"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Quelques pixmaps ne sont pas valides ; ShapeMode déactivé\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Aucune tâche ***"
 
@@ -117,15 +117,15 @@ msgstr "*** Aucune tâche ***"
 msgid "Command:"
 msgstr "Commande : "
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "Quitter KDE"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Session préparée pour quitter"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -133,7 +133,7 @@ msgstr ""
 "Les applications suivantes contiennent des données non enregistrées\n"
 "qui seront perdues lors de votre prochaine session."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -142,7 +142,7 @@ msgstr ""
 "session, seulement relancées. Assurez-vous qu'elles ne contiennent pas de\n"
 "données importantes non enregistrées."
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -151,10 +151,10 @@ msgstr ""
 "être restaurées lors de votre prochaine session. Assurez-vous qu'elles ne\n"
 "contiennent pas de données importantes non enregistrées."
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Changer pour"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Session actuelle"

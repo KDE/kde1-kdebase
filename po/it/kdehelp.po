@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -195,83 +195,79 @@ msgstr "<!-- Non Modificare Questo FILE -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Indirizzo (URL) di destinazione maldefinito: %s\n"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Nuova finestra KDEhelp "
 
-#: mainwidget.cpp:136
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Apri File..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:136
 msgid "Open UR&L..."
 msgstr "Apri indirizzo(UR&L)..."
 
-#: mainwidget.cpp:138
+#: mainwidget.cpp:137
 msgid "&Reload"
 msgstr "&Ricarica"
 
-#: mainwidget.cpp:140
+#: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Cerca"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:152
 msgid "&Back"
 msgstr "&Indietro"
 
-#: mainwidget.cpp:154
+#: mainwidget.cpp:153
 msgid "&Forward"
 msgstr "&Avanti"
 
 #: mainwidget.cpp:156
-msgid "&Contents"
-msgstr "&Contenuti"
-
-#: mainwidget.cpp:157
 msgid "&Top"
 msgstr "In &alto"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Su"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:158
 msgid "&Previous"
 msgstr "&Precedente"
 
-#: mainwidget.cpp:160
+#: mainwidget.cpp:159
 msgid "&Next"
 msgstr "P&rossimo"
 
-#: mainwidget.cpp:172
+#: mainwidget.cpp:171
 msgid "&General Preferences..."
 msgstr "Preferenze &Generali..."
 
-#: mainwidget.cpp:175
+#: mainwidget.cpp:174
 msgid "Show &Toolbar"
 msgstr "Mostra &Toolbar"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:176
 msgid "Show &Location"
 msgstr "Mostra &Locazione"
 
-#: mainwidget.cpp:178
+#: mainwidget.cpp:177
 msgid "Show Status&bar"
 msgstr "Mostra Status&bar"
 
-#: mainwidget.cpp:181
+#: mainwidget.cpp:180
 msgid "&Save Options"
 msgstr "&Salva opzioni"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:182
 msgid "KDE Help System\n"
 msgstr "Sistema di Aiuto KDE\n"
 
-#: mainwidget.cpp:184
+#: mainwidget.cpp:183
 msgid "Version "
 msgstr "Versione"
 
-#: mainwidget.cpp:186
+#: mainwidget.cpp:185
 msgid ""
 "\n"
 "\n"
@@ -289,55 +285,55 @@ msgstr ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by \n"
 "applicable law."
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:201
 msgid "&Goto"
 msgstr "&Vai a"
 
-#: mainwidget.cpp:203
+#: mainwidget.cpp:202
 msgid "&Bookmarks"
 msgstr "&Segnalibri"
 
-#: mainwidget.cpp:221
+#: mainwidget.cpp:220
 msgid "Previous Document"
 msgstr "Documento precedente"
 
-#: mainwidget.cpp:226
+#: mainwidget.cpp:225
 msgid "Next Document"
 msgstr "Documento successivo"
 
-#: mainwidget.cpp:233
+#: mainwidget.cpp:232
 msgid "Previous Node"
 msgstr "Nodo Precedente"
 
-#: mainwidget.cpp:238
+#: mainwidget.cpp:237
 msgid "Next Node"
 msgstr "Nodo Successivo"
 
-#: mainwidget.cpp:243
+#: mainwidget.cpp:242
 msgid "Up one Node"
 msgstr "Su di un Nodo"
 
-#: mainwidget.cpp:248
+#: mainwidget.cpp:247
 msgid "Top Node"
 msgstr "Primo Nodo "
 
-#: mainwidget.cpp:255
+#: mainwidget.cpp:254
 msgid "Help Contents"
 msgstr "Contenuti guida"
 
-#: mainwidget.cpp:260
+#: mainwidget.cpp:259
 msgid "Reload current document"
 msgstr "Rileggi il documento attivo"
 
-#: mainwidget.cpp:265
+#: mainwidget.cpp:264
 msgid "Stop"
 msgstr "Ferma"
 
-#: mainwidget.cpp:289
+#: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "Nel constructor!"
 
-#: mainwidget.cpp:583
+#: mainwidget.cpp:582
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -345,10 +341,13 @@ msgstr ""
 "Guida KDE\n"
 "versione "
 
-#: mainwidget.cpp:585
+#: mainwidget.cpp:584
 msgid "About KDE Help"
 msgstr "Info sulla guida KDE"
 
-#: mainwidget.cpp:618
+#: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Aggiungi Segnalibro"
+
+#~ msgid "&Contents"
+#~ msgstr "&Contenuti"

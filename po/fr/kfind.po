@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-17 23:30 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -194,19 +194,19 @@ msgstr "Au plus"
 msgid " Advanced "
 msgstr " Avancé "
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "La date est incorrecte !!"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "Le mois est incorrect !!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "Le jour est incorrect !!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "La taille est un nombre incorrect !!"
 

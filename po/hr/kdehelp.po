@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,86 +195,82 @@ msgstr "<!-- Ne mijenjajte ovu datoteku -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Neispravan ciljni URL: %s \n"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Novi prozor pomoæi"
 
-#: mainwidget.cpp:136
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Otvori datoteku..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:136
 msgid "Open UR&L..."
 msgstr "Otvori UR&L..."
 
-#: mainwidget.cpp:138
+#: mainwidget.cpp:137
 msgid "&Reload"
 msgstr ""
 
-#: mainwidget.cpp:140
+#: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Tra¾i"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:152
 msgid "&Back"
 msgstr "Naza&d"
 
-#: mainwidget.cpp:154
+#: mainwidget.cpp:153
 msgid "&Forward"
 msgstr "Nap&rijed"
 
 #: mainwidget.cpp:156
-msgid "&Contents"
-msgstr "&Sadr¾aj"
-
-#: mainwidget.cpp:157
 msgid "&Top"
 msgstr "&Vrh"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:157
 msgid "&Up"
 msgstr "&Gore"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:158
 msgid "&Previous"
 msgstr "&Prethodni"
 
-#: mainwidget.cpp:160
+#: mainwidget.cpp:159
 msgid "&Next"
 msgstr "Sli&jedeæi"
 
-#: mainwidget.cpp:172
+#: mainwidget.cpp:171
 msgid "&General Preferences..."
 msgstr "Osnovno pod&e¹avanje..."
 
-#: mainwidget.cpp:175
+#: mainwidget.cpp:174
 msgid "Show &Toolbar"
 msgstr "Poka¾i &Alate"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:176
 msgid "Show &Location"
 msgstr "Poka¾i &Mjesto"
 
-#: mainwidget.cpp:178
+#: mainwidget.cpp:177
 msgid "Show Status&bar"
 msgstr "Poka¾i S&tatus"
 
-#: mainwidget.cpp:181
+#: mainwidget.cpp:180
 msgid "&Save Options"
 msgstr "&Snimi opcije"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:182
 #, fuzzy
 msgid "KDE Help System\n"
 msgstr ""
 "KDE sustav pomoæi\n"
 "Verzija "
 
-#: mainwidget.cpp:184
+#: mainwidget.cpp:183
 msgid "Version "
 msgstr ""
 
-#: mainwidget.cpp:186
+#: mainwidget.cpp:185
 msgid ""
 "\n"
 "\n"
@@ -285,55 +281,55 @@ msgid ""
 "applicable law."
 msgstr ""
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:201
 msgid "&Goto"
 msgstr "&Idi na"
 
-#: mainwidget.cpp:203
+#: mainwidget.cpp:202
 msgid "&Bookmarks"
 msgstr "&Bookmarks"
 
-#: mainwidget.cpp:221
+#: mainwidget.cpp:220
 msgid "Previous Document"
 msgstr "Prethodni dokument"
 
-#: mainwidget.cpp:226
+#: mainwidget.cpp:225
 msgid "Next Document"
 msgstr "Slijedeæi dokument"
 
-#: mainwidget.cpp:233
+#: mainwidget.cpp:232
 msgid "Previous Node"
 msgstr "Prethodni node"
 
-#: mainwidget.cpp:238
+#: mainwidget.cpp:237
 msgid "Next Node"
 msgstr "Slijedeæi node"
 
-#: mainwidget.cpp:243
+#: mainwidget.cpp:242
 msgid "Up one Node"
 msgstr "Gore jedan node"
 
-#: mainwidget.cpp:248
+#: mainwidget.cpp:247
 msgid "Top Node"
 msgstr "Najvi¹i node"
 
-#: mainwidget.cpp:255
+#: mainwidget.cpp:254
 msgid "Help Contents"
 msgstr "Sadr¾aj pomoæi"
 
-#: mainwidget.cpp:260
+#: mainwidget.cpp:259
 msgid "Reload current document"
 msgstr ""
 
-#: mainwidget.cpp:265
+#: mainwidget.cpp:264
 msgid "Stop"
 msgstr "Stani"
 
-#: mainwidget.cpp:289
+#: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "U konstruktor!"
 
-#: mainwidget.cpp:583
+#: mainwidget.cpp:582
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -341,13 +337,16 @@ msgstr ""
 "KDE sustav pomoæi\n"
 "Verzija "
 
-#: mainwidget.cpp:585
+#: mainwidget.cpp:584
 msgid "About KDE Help"
 msgstr "O KDE pomoæi"
 
-#: mainwidget.cpp:618
+#: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Dodaj bookmark"
+
+#~ msgid "&Contents"
+#~ msgstr "&Sadr¾aj"
 
 #~ msgid "Cancel"
 #~ msgstr "Odustani"

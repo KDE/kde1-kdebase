@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 10:27 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -194,19 +194,19 @@ msgstr "nejvíce"
 msgid " Advanced "
 msgstr "Upøesnit"
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "Toto datum neexistuje!"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "Tento mìsíc neexistuje!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "Tento den neexistuje!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "Hodnota velikosti není platné èíslo!"
 

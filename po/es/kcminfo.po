@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,37 +30,37 @@ msgstr "modo de uso: kcminfo [-init | {processor,memory}]\n"
 msgid "System Information"
 msgstr "Información del sistema"
 
-#: memory.cpp:10
+#: memory.cpp:11
 msgid "Total memory"
 msgstr "Memoria total"
 
-#: memory.cpp:18
+#: memory.cpp:21
 msgid "Free memory"
 msgstr "Memoria libre"
 
-#: memory.cpp:26
+#: memory.cpp:29
 msgid "Shared memory"
 msgstr "Memoria compartida"
 
-#: memory.cpp:34
+#: memory.cpp:37
 msgid "Buffer memory"
 msgstr "Memoria en buffer"
 
-#: memory.cpp:42
+#: memory.cpp:45
 msgid "Swap memory"
 msgstr "Memoria de intercambio (swap)"
 
-#: memory.cpp:50
+#: memory.cpp:53
 msgid "Free swap memory"
 msgstr "Memoria de intercambio (swap) libre"
 
-#: memory.cpp:71
+#: memory.cpp:74
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld bytes  = %8.2f MB"
 
-#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
-#: memory.cpp:98
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
 msgid "not available"
 msgstr "no disponible"
 

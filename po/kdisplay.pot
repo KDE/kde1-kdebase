@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,55 +14,55 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:204 backgnd.cpp:239
+#: backgnd.cpp:196 backgnd.cpp:231
 msgid "Desktop"
 msgstr ""
 
-#: backgnd.cpp:249
+#: backgnd.cpp:241
 msgid "Rename..."
 msgstr ""
 
-#: backgnd.cpp:255
+#: backgnd.cpp:247
 msgid "Color"
 msgstr ""
 
-#: backgnd.cpp:273
+#: backgnd.cpp:265
 msgid "Flat"
 msgstr ""
 
-#: backgnd.cpp:277
+#: backgnd.cpp:269
 msgid "Gradient"
 msgstr ""
 
-#: backgnd.cpp:287
+#: backgnd.cpp:279
 msgid "Portrait"
 msgstr ""
 
-#: backgnd.cpp:291
+#: backgnd.cpp:283
 msgid "Landscape"
 msgstr ""
 
-#: backgnd.cpp:298
+#: backgnd.cpp:290
 msgid "Wallpaper"
 msgstr ""
 
-#: backgnd.cpp:331
+#: backgnd.cpp:322
 msgid "Tiled"
 msgstr ""
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "Centred"
 msgstr ""
 
-#: backgnd.cpp:339
+#: backgnd.cpp:330
 msgid "Scaled"
 msgstr ""
 
-#: backgnd.cpp:489
+#: backgnd.cpp:480
 msgid "Default"
 msgstr ""
 
-#: backgnd.cpp:821
+#: backgnd.cpp:811
 msgid "Desktop Title"
 msgstr ""
 

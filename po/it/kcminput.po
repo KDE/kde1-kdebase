@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-02-03 15:22+0100\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -26,34 +26,34 @@ msgstr "&Tastiera"
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "utilizzo: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:92
+#: main.cpp:94
 msgid "Input Devices Properties"
 msgstr "Proprietà dei dispositivi di Input"
 
-#: mouse.cpp:76
+#: mouse.cpp:75
 msgid "Acceleration"
 msgstr "Accelerazione"
 
-#: mouse.cpp:82
+#: mouse.cpp:81
 msgid "Threshold"
 msgstr "Movimento minima"
 
-#: mouse.cpp:85
+#: mouse.cpp:84
 msgid "Button mapping"
 msgstr "Impostazione Tasti"
 
-#: mouse.cpp:87
+#: mouse.cpp:86
 msgid "Right handed"
 msgstr "Mano Destra"
 
-#: mouse.cpp:89
+#: mouse.cpp:88
 msgid "Left handed"
 msgstr "Mano Sinistra"
 
-#: keyboard.cpp:68
+#: keyboard.cpp:67
 msgid "Keyboard repeat"
 msgstr "Ripetizioni tastiera"
 
-#: keyboard.cpp:76
+#: keyboard.cpp:75
 msgid "Key click volume"
 msgstr "Volume key click"

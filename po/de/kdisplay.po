@@ -1,60 +1,60 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: backgnd.cpp:204 backgnd.cpp:239
+#: backgnd.cpp:196 backgnd.cpp:231
 msgid "Desktop"
 msgstr "Desktop"
 
-#: backgnd.cpp:249
+#: backgnd.cpp:241
 msgid "Rename..."
 msgstr "Umbenennen..."
 
-#: backgnd.cpp:255
+#: backgnd.cpp:247
 msgid "Color"
 msgstr "Farbe"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:265
 msgid "Flat"
 msgstr "Einfach"
 
-#: backgnd.cpp:277
+#: backgnd.cpp:269
 msgid "Gradient"
 msgstr "Verlaufend"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:279
 msgid "Portrait"
 msgstr "Hochformat"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:283
 msgid "Landscape"
 msgstr "Querformat"
 
-#: backgnd.cpp:298
+#: backgnd.cpp:290
 msgid "Wallpaper"
 msgstr "Hintergrundgrafik"
 
-#: backgnd.cpp:331
+#: backgnd.cpp:322
 msgid "Tiled"
 msgstr "Fliesen"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "Centred"
 msgstr "Zentriert"
 
 # ???Scaled heißt "Skaliert", das kann _größer_ und _kleiner_ sein
-#: backgnd.cpp:339
+#: backgnd.cpp:330
 msgid "Scaled"
 msgstr "Vergrößert"
 
-#: backgnd.cpp:489
+#: backgnd.cpp:480
 msgid "Default"
 msgstr "Standard"
 
-#: backgnd.cpp:821
+#: backgnd.cpp:811
 msgid "Desktop Title"
 msgstr "Desktop Name"
 

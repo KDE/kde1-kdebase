@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-17 23:51 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -343,7 +343,12 @@ msgstr ""
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
 
-#: main.cpp:296
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr ""
+
+#: main.cpp:306
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -355,11 +360,11 @@ msgstr ""
 "\n"
 "Dites-lui que vous avez besoin d'avoir les mises en veilles setuid root."
 
-#: main.cpp:301
+#: main.cpp:311
 msgid "Shadow Passwords"
 msgstr "Mots de passes cachés"
 
-#: main.cpp:457
+#: main.cpp:469
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -368,7 +373,7 @@ msgstr ""
 "utilisation: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:460
+#: main.cpp:472
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

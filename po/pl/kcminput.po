@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput \n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 12:19+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -18,34 +18,34 @@ msgstr "Kl&awiatura"
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "u¿ycie: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:92
+#: main.cpp:94
 msgid "Input Devices Properties"
 msgstr "W³a¶ciwo¶ci urz±dzeñ wej¶ciowych"
 
-#: mouse.cpp:76
+#: mouse.cpp:75
 msgid "Acceleration"
 msgstr "Przyspieszenie"
 
-#: mouse.cpp:82
+#: mouse.cpp:81
 msgid "Threshold"
 msgstr "Wstrzymanie"
 
-#: mouse.cpp:85
+#: mouse.cpp:84
 msgid "Button mapping"
 msgstr "Mapowanie klawiszy"
 
-#: mouse.cpp:87
+#: mouse.cpp:86
 msgid "Right handed"
 msgstr "Praworêczna"
 
-#: mouse.cpp:89
+#: mouse.cpp:88
 msgid "Left handed"
 msgstr "Leworêczna"
 
-#: keyboard.cpp:68
+#: keyboard.cpp:67
 msgid "Keyboard repeat"
 msgstr "Powtarzanie klawiszy"
 
-#: keyboard.cpp:76
+#: keyboard.cpp:75
 msgid "Key click volume"
 msgstr "G³o¶no¶æ klikniêcia"

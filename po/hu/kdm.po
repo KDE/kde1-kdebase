@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -27,27 +27,27 @@ msgstr "Leállítás és újraindítás"
 msgid "Exit kdm"
 msgstr "Kilép"
 
-#: kgreeter.cpp:136
+#: kgreeter.cpp:137
 msgid "Login:"
 msgstr "Név:"
 
-#: kgreeter.cpp:141
+#: kgreeter.cpp:142
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: kgreeter.cpp:175
+#: kgreeter.cpp:176
 msgid "Login failed!"
 msgstr "Érvénytelen bejelentkezés!"
 
-#: kgreeter.cpp:181
+#: kgreeter.cpp:182
 msgid "Session Type:"
 msgstr "Futási stílus"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:198
 msgid "Go!"
 msgstr "Mehet!"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Leállítás..."
 

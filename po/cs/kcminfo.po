@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 10:04 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -29,37 +29,37 @@ msgstr "Pu¾ití: kcminfo [-init | {processor,memory}]\n"
 msgid "System Information"
 msgstr "Informace o systému"
 
-#: memory.cpp:10
+#: memory.cpp:11
 msgid "Total memory"
 msgstr "Pamì» celkem"
 
-#: memory.cpp:18
+#: memory.cpp:21
 msgid "Free memory"
 msgstr "Volná pamì»"
 
-#: memory.cpp:26
+#: memory.cpp:29
 msgid "Shared memory"
 msgstr "Sdílená pamì»"
 
-#: memory.cpp:34
+#: memory.cpp:37
 msgid "Buffer memory"
 msgstr "Vyrovnávací pamì»"
 
-#: memory.cpp:42
+#: memory.cpp:45
 msgid "Swap memory"
 msgstr "Swapovací pamì»"
 
-#: memory.cpp:50
+#: memory.cpp:53
 msgid "Free swap memory"
 msgstr "Volná swapovací pamì»"
 
-#: memory.cpp:71
+#: memory.cpp:74
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
 msgstr "%10ld bytù  = %8.2f MB"
 
-#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
-#: memory.cpp:98
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
 msgid "not available"
 msgstr "není pøístupná"
 

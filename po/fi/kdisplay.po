@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,55 +13,55 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: backgnd.cpp:204 backgnd.cpp:239
+#: backgnd.cpp:196 backgnd.cpp:231
 msgid "Desktop"
 msgstr "Työpöytä"
 
-#: backgnd.cpp:249
+#: backgnd.cpp:241
 msgid "Rename..."
 msgstr "Nimeä Uudelleen..."
 
-#: backgnd.cpp:255
+#: backgnd.cpp:247
 msgid "Color"
 msgstr "Väri"
 
-#: backgnd.cpp:273
+#: backgnd.cpp:265
 msgid "Flat"
 msgstr "Tasainen väri"
 
-#: backgnd.cpp:277
+#: backgnd.cpp:269
 msgid "Gradient"
 msgstr "Väriliuku"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:279
 msgid "Portrait"
 msgstr "Pystysuunnassa"
 
-#: backgnd.cpp:291
+#: backgnd.cpp:283
 msgid "Landscape"
 msgstr "Vaakasuunnassa"
 
-#: backgnd.cpp:298
+#: backgnd.cpp:290
 msgid "Wallpaper"
 msgstr "Taustakuva"
 
-#: backgnd.cpp:331
+#: backgnd.cpp:322
 msgid "Tiled"
 msgstr "Monistettu"
 
-#: backgnd.cpp:335
+#: backgnd.cpp:326
 msgid "Centred"
 msgstr "Keskitetty"
 
-#: backgnd.cpp:339
+#: backgnd.cpp:330
 msgid "Scaled"
 msgstr "Venytetty"
 
-#: backgnd.cpp:489
+#: backgnd.cpp:480
 msgid "Default"
 msgstr "Oletus"
 
-#: backgnd.cpp:821
+#: backgnd.cpp:811
 msgid "Desktop Title"
 msgstr "Työpöydän otsikko"
 

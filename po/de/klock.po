@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -335,7 +335,12 @@ msgstr ""
 "\n"
 "Portiert für KDE von Emanuel Pirker."
 
-#: main.cpp:296
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Die Option %s wird auf dieser Plattform nicht unterstützt!"
+
+#: main.cpp:306
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -347,11 +352,11 @@ msgstr ""
 "\n"
 "Sagen Sie ihm, daß Sie setuid auf den Bildschirmschonern brauchen!"
 
-#: main.cpp:301
+#: main.cpp:311
 msgid "Shadow Passwords"
 msgstr "Versteckte Paßwörter"
 
-#: main.cpp:457
+#: main.cpp:469
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -360,7 +365,7 @@ msgstr ""
 "Benutzung: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay zahl] [-lock] [-nice zahl]\n"
 
-#: main.cpp:460
+#: main.cpp:472
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"

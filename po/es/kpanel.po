@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-28 10:06+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,166 +14,166 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kpanel.C:210
+#: kpanel.C:211
 msgid "Move"
 msgstr "Mover"
 
-#: kpanel.C:213
+#: kpanel.C:214
 msgid "Properties"
 msgstr "Propiedades"
 
-#: kpanel.C:245
+#: kpanel.C:246
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:247 tools.C:805
+#: kpanel.C:248 tools.C:816
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
-#: kpanel.C:320
+#: kpanel.C:321
 msgid "No info available"
 msgstr "No hay información"
 
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:360 props.C:217 props.C:218
 msgid "Logout"
 msgstr "Terminar"
 
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:368 props.C:216
 #, fuzzy
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
-#: kpanel.C:376
+#: kpanel.C:377
 msgid "Hide the panel"
 msgstr ""
 
-#: kpanel.C:386
+#: kpanel.C:387
 msgid "Show the panel"
 msgstr ""
 
-#: kpanel.C:762
-msgid "Add application"
-msgstr "Añadir aplicación"
-
-#: kpanel.C:764
-msgid "Add an application or a submenu onto the panel"
-msgstr ""
-
-#: kpanel.C:765
-msgid "Add windowlist"
-msgstr ""
-
-#: kpanel.C:767
-msgid "Add a windowlist menu onto the panel"
-msgstr ""
-
-#: kpanel.C:768
-msgid "Configure"
-msgstr "Configurar"
-
-#: kpanel.C:770
-msgid "Configure panel"
-msgstr "Configurar panel"
-
-#: kpanel.C:771
-msgid "Restart"
-msgstr "Reiniciar"
-
-#: kpanel.C:773
-msgid "Restart panel"
-msgstr "Reiniciar panel"
-
-#: kpanel.C:774 props.C:396
-msgid "Panel"
-msgstr "Panel"
-
-#: kpanel.C:776
-msgid "Lock Screen"
-msgstr "Bloquear pantalla"
-
-#: kpanel.C:1143 tools.C:621
+#: kpanel.C:1078 tools.C:632
 msgid "No comment available"
 msgstr "No hay comentarios"
 
-#: kpanel.C:1152 tools.C:814
+#: kpanel.C:1087 tools.C:825
 msgid "Windowlist"
 msgstr ""
 
-#: props.C:327
+#: props.C:200
+msgid "Add application"
+msgstr "Añadir aplicación"
+
+#: props.C:202
+msgid "Add an application or a submenu onto the panel"
+msgstr ""
+
+#: props.C:203
+msgid "Add windowlist"
+msgstr ""
+
+#: props.C:205
+msgid "Add a windowlist menu onto the panel"
+msgstr ""
+
+#: props.C:206
+msgid "Configure"
+msgstr "Configurar"
+
+#: props.C:208
+msgid "Configure panel"
+msgstr "Configurar panel"
+
+#: props.C:209
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: props.C:211
+msgid "Restart panel"
+msgstr "Reiniciar panel"
+
+#: props.C:212 props.C:467
+msgid "Panel"
+msgstr "Panel"
+
+#: props.C:214
+msgid "Lock Screen"
+msgstr "Bloquear pantalla"
+
+#: props.C:398
 msgid "Location"
 msgstr "Localización"
 
-#: props.C:340
+#: props.C:411
 msgid "Taskbar"
 msgstr "Barra de tareas"
 
-#: props.C:341
+#: props.C:412
 msgid "Hidden"
 msgstr "Oculto"
 
-#: props.C:350
+#: props.C:421
 msgid "Top/Left"
 msgstr "Arriba/Izquierda"
 
-#: props.C:380
+#: props.C:451
 msgid "Tiny Style"
 msgstr "Aspecto diminuto"
 
-#: props.C:381
+#: props.C:452
 #, fuzzy
 msgid "Normal Style"
 msgstr "Aspecto pequeño"
 
-#: props.C:382
+#: props.C:453
 msgid "Large Style"
 msgstr "Aspecto grande"
 
-#: props.C:401
+#: props.C:472
 msgid "Menu Tooltips"
 msgstr "Ayuda de menú"
 
-#: props.C:447
+#: props.C:518
 msgid "Others"
 msgstr ""
 
-#: props.C:449
+#: props.C:520
 #, fuzzy
 msgid "Personal First"
 msgstr "Menú personal"
 
-#: props.C:452
+#: props.C:523
 msgid "Auto Hide Panel"
 msgstr ""
 
-#: props.C:455
+#: props.C:526
 msgid "Auto Hide Taskbar"
 msgstr ""
 
-#: props.C:473
+#: props.C:544
 msgid "Clock"
 msgstr ""
 
-#: props.C:475
+#: props.C:546
 msgid "24h"
 msgstr ""
 
-#: props.C:479
+#: props.C:550
 msgid "12h AM/PM"
 msgstr ""
 
-#: props.C:540
+#: props.C:611
 msgid "Visible"
 msgstr "Visible"
 
-#: props.C:547
+#: props.C:618
 msgid "Width"
 msgstr "Ancho"
 
-#: props.C:552
+#: props.C:623
 msgid "Desktops"
 msgstr "Escritorios"
 
-#: props.C:558
+#: props.C:629
 msgid "KPanel Configuration"
 msgstr "Configuración de KPanel"
 

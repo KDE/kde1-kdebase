@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 14:45+0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Sewdish <LL@li.org>\n"
@@ -30,26 +30,26 @@ msgstr "Stänga av och starta om"
 msgid "Exit kdm"
 msgstr "Avsluta kdm"
 
-#: kgreeter.cpp:136
+#: kgreeter.cpp:137
 msgid "Login:"
 msgstr "Namn:"
 
-#: kgreeter.cpp:141
+#: kgreeter.cpp:142
 msgid "Password:"
 msgstr "Lösenord:"
 
-#: kgreeter.cpp:175
+#: kgreeter.cpp:176
 msgid "Login failed!"
 msgstr "Inloggning misslyckades"
 
-#: kgreeter.cpp:181
+#: kgreeter.cpp:182
 msgid "Session Type:"
 msgstr "Sessionstyp:"
 
-#: kgreeter.cpp:197
+#: kgreeter.cpp:198
 msgid "Go!"
 msgstr "Starta!"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Stänger av..."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 15:35 +0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -34,129 +34,129 @@ msgstr "användning: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Stil på fönsterhanteraren"
 
-#: titlebar.cpp:113
+#: titlebar.cpp:114
 msgid "Minimize"
 msgstr "Minimera"
 
-#: titlebar.cpp:117
+#: titlebar.cpp:118
 msgid "Maximize"
 msgstr "Maximera"
 
-#: titlebar.cpp:121
+#: titlebar.cpp:122
 msgid "Sticky"
 msgstr "Klistrig"
 
-#: titlebar.cpp:129
+#: titlebar.cpp:130
 msgid "Menu"
 msgstr "Meny"
 
-#: titlebar.cpp:459
+#: titlebar.cpp:460
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Den vänstra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
 
-#: titlebar.cpp:492
+#: titlebar.cpp:493
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Den högra delen av namnlisten är full. Stänger av 'maximera'-knappen\n"
 
-#: titlebar.cpp:532
+#: titlebar.cpp:533
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Den vänstra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
 
-#: titlebar.cpp:565
+#: titlebar.cpp:566
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Den högra delen av namnlisten är full. Stänger av 'minimera'-knappen\n"
 
-#: titlebar.cpp:916
+#: titlebar.cpp:917
 msgid "Titlebar appearance"
 msgstr "Utseende på namnlisten"
 
-#: titlebar.cpp:918
+#: titlebar.cpp:919
 msgid "Shaded"
 msgstr "Gradient"
 
-#: titlebar.cpp:921
+#: titlebar.cpp:922
 msgid "Plain"
 msgstr "Ren"
 
-#: titlebar.cpp:924 titlebar.cpp:944
+#: titlebar.cpp:925 titlebar.cpp:945
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:931
+#: titlebar.cpp:932
 msgid "Title Animation"
 msgstr "Namnlistsanimering"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:935
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:955
+#: titlebar.cpp:956
 msgid "&Active pixmap"
 msgstr "&Aktiv pixmap"
 
-#: titlebar.cpp:957
+#: titlebar.cpp:958
 msgid "&Inactive pixmap"
 msgstr "&Inaktiv pixmap"
 
-#: windows.cpp:69
+#: windows.cpp:70
 msgid "Window movement"
 msgstr "Fönsterflyttning"
 
-#: windows.cpp:70
+#: windows.cpp:71
 msgid "Transparent"
 msgstr "Transparent"
 
-#: windows.cpp:71
+#: windows.cpp:72
 msgid "Opaque"
 msgstr "Solid"
 
-#: windows.cpp:74
+#: windows.cpp:75
 msgid "Resize Animation"
 msgstr "Animerad storleksändring"
 
-#: windows.cpp:79
+#: windows.cpp:80
 msgid "Placement policy"
 msgstr ""
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Random placement"
 msgstr ""
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Smart placement"
 msgstr ""
 
-#: windows.cpp:84
+#: windows.cpp:85
 msgid "Maximize Style"
 msgstr "Maximeringsstil"
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Maximize fully"
 msgstr "Maximera helt"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Maximize vertically"
 msgstr "Maximera vertikalt"
 
-#: windows.cpp:89
+#: windows.cpp:90
 msgid "Focus Policy"
 msgstr "Fokus-policy"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Click to focus"
 msgstr "Klicka för att fokusera"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Focus follows mouse"
 msgstr "Fokus följer musen"
 
-#: windows.cpp:96
+#: windows.cpp:97
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -164,6 +164,6 @@ msgstr ""
 "Fördröjning på automatisk\n"
 "höjning (<100 stänger av)"
 
-#: windows.cpp:99
+#: windows.cpp:100
 msgid "miliseconds"
 msgstr "millisekunder"

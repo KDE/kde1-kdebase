@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-08 23:37 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français <fr@kde.org>\n"
@@ -194,83 +194,79 @@ msgstr "<!-- Ne pas éditer ce fichier -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: URL de destination incorrecte : %s\n"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Nouvelle fenêtre d'aide"
 
-#: mainwidget.cpp:136
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Ouvrir un fichier..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:136
 msgid "Open UR&L..."
 msgstr "Ouvrir une UR&L..."
 
-#: mainwidget.cpp:138
+#: mainwidget.cpp:137
 msgid "&Reload"
 msgstr "&Recharger"
 
-#: mainwidget.cpp:140
+#: mainwidget.cpp:139
 msgid "&Search"
 msgstr "&Chercher"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:152
 msgid "&Back"
 msgstr "En a&rrière"
 
-#: mainwidget.cpp:154
+#: mainwidget.cpp:153
 msgid "&Forward"
 msgstr "En a&vant"
 
 #: mainwidget.cpp:156
-msgid "&Contents"
-msgstr "&Contenu"
-
-#: mainwidget.cpp:157
 msgid "&Top"
 msgstr "&Début"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:157
 msgid "&Up"
 msgstr "Re&monter"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:158
 msgid "&Previous"
 msgstr "&Précédent"
 
-#: mainwidget.cpp:160
+#: mainwidget.cpp:159
 msgid "&Next"
 msgstr "&Suivant"
 
-#: mainwidget.cpp:172
+#: mainwidget.cpp:171
 msgid "&General Preferences..."
 msgstr "Préférences &générales..."
 
-#: mainwidget.cpp:175
+#: mainwidget.cpp:174
 msgid "Show &Toolbar"
 msgstr "Montrer la barre d'ou&tils"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:176
 msgid "Show &Location"
 msgstr "Montrer l'&adresse"
 
-#: mainwidget.cpp:178
+#: mainwidget.cpp:177
 msgid "Show Status&bar"
 msgstr "Montrer la &barre d'état"
 
-#: mainwidget.cpp:181
+#: mainwidget.cpp:180
 msgid "&Save Options"
 msgstr "&Enregistrer les options"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:182
 msgid "KDE Help System\n"
 msgstr "Système d'aide de KDE\n"
 
-#: mainwidget.cpp:184
+#: mainwidget.cpp:183
 msgid "Version "
 msgstr "Version "
 
-#: mainwidget.cpp:186
+#: mainwidget.cpp:185
 msgid ""
 "\n"
 "\n"
@@ -295,55 +291,55 @@ msgstr ""
 "commerciale ou d'aptitude à satisfaire un but donné.  Se référer\n"
 "au \"GNU General Public License\" pour plus de détails."
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:201
 msgid "&Goto"
 msgstr "&Aller à"
 
-#: mainwidget.cpp:203
+#: mainwidget.cpp:202
 msgid "&Bookmarks"
 msgstr "&Signets"
 
-#: mainwidget.cpp:221
+#: mainwidget.cpp:220
 msgid "Previous Document"
 msgstr "Document précédent"
 
-#: mainwidget.cpp:226
+#: mainwidget.cpp:225
 msgid "Next Document"
 msgstr "Document suivant"
 
-#: mainwidget.cpp:233
+#: mainwidget.cpp:232
 msgid "Previous Node"
 msgstr "Noeud précédent"
 
-#: mainwidget.cpp:238
+#: mainwidget.cpp:237
 msgid "Next Node"
 msgstr "Noeud suivant"
 
-#: mainwidget.cpp:243
+#: mainwidget.cpp:242
 msgid "Up one Node"
 msgstr "Remonter d'un noeud"
 
-#: mainwidget.cpp:248
+#: mainwidget.cpp:247
 msgid "Top Node"
 msgstr "Premier noeud"
 
-#: mainwidget.cpp:255
+#: mainwidget.cpp:254
 msgid "Help Contents"
 msgstr "Contenu de l'aide"
 
-#: mainwidget.cpp:260
+#: mainwidget.cpp:259
 msgid "Reload current document"
 msgstr "Recharger le document en cours"
 
-#: mainwidget.cpp:265
+#: mainwidget.cpp:264
 msgid "Stop"
 msgstr "Stop"
 
-#: mainwidget.cpp:289
+#: mainwidget.cpp:288
 msgid "In the Constructor!"
 msgstr "Dans le constructor!"
 
-#: mainwidget.cpp:583
+#: mainwidget.cpp:582
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -351,10 +347,13 @@ msgstr ""
 "Système d'aide de KDE\n"
 "Version "
 
-#: mainwidget.cpp:585
+#: mainwidget.cpp:584
 msgid "About KDE Help"
 msgstr "A propos de l'aide KDE"
 
-#: mainwidget.cpp:618
+#: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Ajouter un signet"
+
+#~ msgid "&Contents"
+#~ msgstr "&Contenu"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -14,6 +14,7 @@ msgid "Cannot open or read directory."
 msgstr "Não foi possível abrir ou ler a directoria."
 
 #: kfindtop.cpp:118
+#, c-format
 msgid ""
 "KFind %s\n"
 "Frontend to find utility\n"
@@ -24,8 +25,7 @@ msgid ""
 msgstr ""
 "KFind %s\n"
 "Interface para o programa find\n"
-"Miroslav Flødr <flidr@kky.zcu.cz>"
-"\n"
+"Miroslav Flødr <flidr@kky.zcu.cz>\n"
 "Agradecimentos a Stephan Kulow\n"
 "<coolo@kde.org>"
 
@@ -185,19 +185,19 @@ msgstr "No Máximo"
 msgid " Advanced "
 msgstr " Avançado "
 
-#: kftabdlg.cpp:389
+#: kftabdlg.cpp:390
 msgid "The date is not valid!!"
 msgstr "A data não é válida!!"
 
-#: kftabdlg.cpp:401
+#: kftabdlg.cpp:402
 msgid "The month(s) value isn't valid!!"
 msgstr "O valor do(s) mês(es) não é válido!!"
 
-#: kftabdlg.cpp:412
+#: kftabdlg.cpp:413
 msgid "The day(s) value isn't valid!!"
 msgstr "O valor do(s) dia(s) não é válido!!"
 
-#: kftabdlg.cpp:429
+#: kftabdlg.cpp:430
 msgid "The value in size isn't valid number!!"
 msgstr "O valor em tamanho não é um número válido"
 

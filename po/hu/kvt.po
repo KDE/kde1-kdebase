@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "Last-Translator: Kiss Tamas <kisst@postabank.hu>\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -198,7 +198,7 @@ msgstr ""
 "ha a billentyûzet fel lesz oldva titkosítás alól."
 
 # main.C:922
-#: main.C:1084
+#: main.C:1087
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -264,7 +264,7 @@ msgstr ""
 "-pagedown <billentyû>\ta megadott billentyûvel lehet elõre görgetni\n"
 
 # main.C:954
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

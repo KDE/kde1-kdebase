@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -310,7 +310,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:296
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr ""
+
+#: main.cpp:306
 #, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
@@ -321,11 +326,11 @@ msgstr ""
 "A rendszered shadow password-öket\n"
 "használd, lépj kapcsolatba a rendszergazdával."
 
-#: main.cpp:301
+#: main.cpp:311
 msgid "Shadow Passwords"
 msgstr "Shadow password-ök"
 
-#: main.cpp:457
+#: main.cpp:469
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -334,7 +339,7 @@ msgstr ""
 "Használat: %s -install|-setup|-test|-desc|-preview wid\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:460
+#: main.cpp:472
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,11 +116,11 @@ msgstr "Zeven"
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr ""
 
@@ -128,38 +128,38 @@ msgstr ""
 msgid "Command:"
 msgstr "Uitvoeren:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 #, fuzzy
 msgid "Logout"
 msgstr "&Uitloggen"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr ""
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr ""
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr ""
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:61
+#: main.cpp:58
 msgid "KDE Font Manager"
 msgstr ""
 
-#: main.cpp:74
+#: main.cpp:71
 msgid "KDE Fonts"
 msgstr ""
 
-#: main.cpp:75
+#: main.cpp:72
 msgid "Font Explorer"
 msgstr ""
 
-#: main.cpp:76
+#: main.cpp:73
 msgid "Raw X11 Font List"
 msgstr ""
 
@@ -38,15 +38,15 @@ msgstr ""
 msgid "Fonts made available to KDE"
 msgstr ""
 
-#: kfontmanager.cpp:86
+#: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr ""
 
-#: kfontlist.cpp:63 kfontmanager.cpp:108
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr ""
 
-#: kfontmanager.cpp:108
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -54,26 +54,26 @@ msgid ""
 "wuebben@math.cornell.edu\n"
 msgstr ""
 
-#: kfontmanager.cpp:208
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
 
-#: kfontmanager.cpp:285
+#: kfontmanager.cpp:289
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
 
-#: kfontmanager.cpp:290
+#: kfontmanager.cpp:294
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
 
-#: kfontlist.cpp:63
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

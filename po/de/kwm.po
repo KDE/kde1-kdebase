@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -96,11 +96,11 @@ msgstr "Sieben"
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 
@@ -108,15 +108,15 @@ msgstr "*** Keine Programme ***"
 msgid "Command:"
 msgstr "Kommando:"
 
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "KDE beenden"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Sitzung für Abmelden vorbereitet"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -124,7 +124,7 @@ msgstr ""
 "Die folgenden Programme enthalten ungespeicherte Daten,\n"
 "die nicht wiederhergestellt werden können."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -132,7 +132,7 @@ msgstr ""
 "Die folgenden Programme können in der nächsten Sitzung nicht voll-\n"
 "kommen wiederhergestellt werden. Sie sollten keine wichtigen Daten enthalten."
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -141,10 +141,10 @@ msgstr ""
 "Sitzung nicht wiederhergestellt werden. Sie sollten keine wichtigen Daten "
 "enthalten."
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Wechseln zu"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Aktuelle Sitzung"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 # Dutch translation of the kfontmanager messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-#: main.cpp:61
+#: main.cpp:58
 msgid "KDE Font Manager"
 msgstr "KDE-lettertypebeheer"
 
-#: main.cpp:74
+#: main.cpp:71
 msgid "KDE Fonts"
 msgstr "KDE-lettertypes"
 
-#: main.cpp:75
+#: main.cpp:72
 msgid "Font Explorer"
 msgstr "Lettertype verkenner"
 
-#: main.cpp:76
+#: main.cpp:73
 msgid "Raw X11 Font List"
 msgstr "Ruwe X11 lettertypelijst"
 
@@ -41,15 +41,15 @@ msgstr "Beschikbare X11 lettertypes"
 msgid "Fonts made available to KDE"
 msgstr "Lettertypes beschikbaar voor KDE"
 
-#: kfontmanager.cpp:86
+#: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "De KDE-lettertypebeheer voorbeeldtekst"
 
-#: kfontlist.cpp:63 kfontmanager.cpp:108
+#: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
 msgstr "Info"
 
-#: kfontmanager.cpp:108
+#: kfontmanager.cpp:109
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -61,7 +61,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:208
+#: kfontmanager.cpp:212
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -69,14 +69,14 @@ msgstr ""
 "De omgevingsvariabele HOME\n"
 "is niet gezet\n"
 
-#: kfontmanager.cpp:285
+#: kfontmanager.cpp:289
 #, fuzzy
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr "Kan ~/.kde/config/kdefonts niet maken\n"
 
-#: kfontmanager.cpp:290
+#: kfontmanager.cpp:294
 #, fuzzy
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
@@ -87,7 +87,7 @@ msgstr ""
 "maar is niet schrijfbaar\n"
 "KDE-Lettertypelijst niet opgeslagen."
 
-#: kfontlist.cpp:63
+#: kfontlist.cpp:62
 msgid ""
 "kfontmanager Version 0.1\n"
 "Copyright 1997\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-03 14:19+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,39 +70,42 @@ msgstr "Chiusura finestra"
 msgid "Startup"
 msgstr "Avvio"
 
-#: syssound.cpp:103
+#: syssound.cpp:102
 msgid "e&nable system sounds"
 msgstr "&abilita suoni di sistema"
 
-#: syssound.cpp:108
+#: syssound.cpp:107
 msgid "&Test"
 msgstr "&Prova"
 
-#: syssound.cpp:112
+#: syssound.cpp:111
 msgid "&Events:"
 msgstr "&Eventi:"
 
-#: syssound.cpp:116
+#: syssound.cpp:115
 msgid "&Sounds:"
 msgstr "&Suoni"
 
-#: syssound.cpp:120
+#: syssound.cpp:119
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista dei suoni"
+msgstr ""
+"File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista dei "
+"suoni"
 
-#: syssound.cpp:323
+#: syssound.cpp:321
 msgid "Unsupported URL"
 msgstr "URL non supportata"
 
-#: syssound.cpp:324
+#: syssound.cpp:322
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Mi dispiace ma questo tipo di URL al momento non è supportata dal sistema suoni KDE\n"
+"Mi dispiace ma questo tipo di URL al momento non è supportata dal sistema "
+"suoni KDE\n"
 "Modulo"
 
-#: syssound.cpp:328
+#: syssound.cpp:326
 #, c-format
 msgid ""
 "Sorry, but \n"
@@ -113,11 +116,11 @@ msgstr ""
 "%s\n"
 "non sembra essere un file Wave"
 
-#: syssound.cpp:329
+#: syssound.cpp:327
 msgid "Improper File Extension"
 msgstr "Estensione file Impropria"
 
-#: syssound.cpp:335
+#: syssound.cpp:333
 #, c-format
 msgid ""
 "The file\n"
@@ -128,7 +131,6 @@ msgstr ""
 "%s\n"
 "è già nella lista"
 
-#: syssound.cpp:336
+#: syssound.cpp:334
 msgid "File Already in List"
 msgstr ""
-

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 00:12 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -169,7 +169,7 @@ msgstr ""
 "Les nouvelles couleurs seront activées\n"
 "avec la réactivation du clavier."
 
-#: main.C:1084
+#: main.C:1087
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -237,7 +237,7 @@ msgstr ""
 "-pagedown <keysym>\tutiliser la séquence alt-keysym pour avancer dans le "
 "tampon\n"
 
-#: main.C:1115
+#: main.C:1118
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"

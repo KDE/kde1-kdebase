@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-03 14:19+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-02-11 14:46+0100\n"
 "Last-Translator: Cola Damien <damien@wanadoo.fr>\n"
 "Language-Team: FRENCH <FR@li.org>\n"
@@ -70,32 +70,32 @@ msgstr "Fermer la fenetre"
 msgid "Startup"
 msgstr "Demarrage"
 
-#: syssound.cpp:103
+#: syssound.cpp:102
 msgid "e&nable system sounds"
 msgstr "Permettre les so&ns systeme"
 
-#: syssound.cpp:108
+#: syssound.cpp:107
 msgid "&Test"
 msgstr "&Test"
 
-#: syssound.cpp:112
+#: syssound.cpp:111
 msgid "&Events:"
 msgstr "&Evenements"
 
-#: syssound.cpp:116
+#: syssound.cpp:115
 msgid "&Sounds:"
 msgstr "&Sons:"
 
-#: syssound.cpp:120
+#: syssound.cpp:119
 msgid "Additional WAV files can be dropped onto the sound list."
 msgstr ""
 "Des fichiers WAV supplementaires peuvent etre deposes dans la liste de sons."
 
-#: syssound.cpp:323
+#: syssound.cpp:321
 msgid "Unsupported URL"
 msgstr "URL non supportee"
 
-#: syssound.cpp:324
+#: syssound.cpp:322
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
@@ -103,7 +103,7 @@ msgstr ""
 "Desole, ce type d'URL n'est pas supportee actuellement par le composant son "
 "de KDE"
 
-#: syssound.cpp:328
+#: syssound.cpp:326
 #, c-format
 msgid ""
 "Sorry, but \n"
@@ -114,11 +114,11 @@ msgstr ""
 "%s\n"
 "ne semble pas etre un fichier WAV !"
 
-#: syssound.cpp:329
+#: syssound.cpp:327
 msgid "Improper File Extension"
 msgstr "Extension de fichier non conforme"
 
-#: syssound.cpp:335
+#: syssound.cpp:333
 #, c-format
 msgid ""
 "The file\n"
@@ -129,6 +129,6 @@ msgstr ""
 "%s\n"
 "est deja dans la liste"
 
-#: syssound.cpp:336
+#: syssound.cpp:334
 msgid "File Already in List"
 msgstr "Fichier deja dans la liste"

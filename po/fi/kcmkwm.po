@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,127 +34,127 @@ msgstr "käyttö: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Ikkunamanagerin tyyli"
 
-#: titlebar.cpp:113
+#: titlebar.cpp:114
 msgid "Minimize"
 msgstr "Pienennä"
 
-#: titlebar.cpp:117
+#: titlebar.cpp:118
 msgid "Maximize"
 msgstr "Suurenna"
 
-#: titlebar.cpp:121
+#: titlebar.cpp:122
 msgid "Sticky"
 msgstr "Pysyvä"
 
-#: titlebar.cpp:129
+#: titlebar.cpp:130
 msgid "Menu"
 msgstr "Valikko"
 
-#: titlebar.cpp:459
+#: titlebar.cpp:460
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Otsikon vasen puoli on täynnä... poistan 'suurenna' napin\n"
 
-#: titlebar.cpp:492
+#: titlebar.cpp:493
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Otsikon oikea puoli on täynnä... poistan 'suurenna' napin\n"
 
-#: titlebar.cpp:532
+#: titlebar.cpp:533
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Otsikon vasen puoli on täynnä... poistan 'pienennä' napin\n"
 
-#: titlebar.cpp:565
+#: titlebar.cpp:566
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
 
-#: titlebar.cpp:916
+#: titlebar.cpp:917
 msgid "Titlebar appearance"
 msgstr "Otsikon ulkonäkö"
 
-#: titlebar.cpp:918
+#: titlebar.cpp:919
 msgid "Shaded"
 msgstr "Varjostettu"
 
-#: titlebar.cpp:921
+#: titlebar.cpp:922
 msgid "Plain"
 msgstr "Koristelematon"
 
-#: titlebar.cpp:924 titlebar.cpp:944
+#: titlebar.cpp:925 titlebar.cpp:945
 msgid "Pixmap"
 msgstr "Kuva"
 
-#: titlebar.cpp:931
+#: titlebar.cpp:932
 msgid "Title Animation"
 msgstr "Otsikon animaatio"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:935
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:955
+#: titlebar.cpp:956
 msgid "&Active pixmap"
 msgstr "&Aktiivinen kuva"
 
-#: titlebar.cpp:957
+#: titlebar.cpp:958
 msgid "&Inactive pixmap"
 msgstr "&Poissaoleva kuva"
 
-#: windows.cpp:69
+#: windows.cpp:70
 msgid "Window movement"
 msgstr "Ikkunan liikutus"
 
-#: windows.cpp:70
+#: windows.cpp:71
 msgid "Transparent"
 msgstr "Läpinäkyvä"
 
-#: windows.cpp:71
+#: windows.cpp:72
 msgid "Opaque"
 msgstr "Kuultava"
 
-#: windows.cpp:74
+#: windows.cpp:75
 msgid "Resize Animation"
 msgstr "Aseta animaation koko"
 
-#: windows.cpp:79
+#: windows.cpp:80
 msgid "Placement policy"
 msgstr "Sijoitustyyli"
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Random placement"
 msgstr "Satunnainen sijoitus"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Smart placement"
 msgstr "Älykäs sijoitus"
 
-#: windows.cpp:84
+#: windows.cpp:85
 msgid "Maximize Style"
 msgstr "Suurenna tyyli"
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Maximize fully"
 msgstr "Suurenna täysin"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Maximize vertically"
 msgstr "Suurenna pystysuunnassa"
 
-#: windows.cpp:89
+#: windows.cpp:90
 msgid "Focus Policy"
 msgstr "Kohdistustapa"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Click to focus"
 msgstr "Kohdista napilla"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Focus follows mouse"
 msgstr "Kohdistus seuraa hiirtä"
 
-#: windows.cpp:96
+#: windows.cpp:97
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -162,6 +162,6 @@ msgstr ""
 "automaattinoston viive\n"
 "(<100 poistaa)"
 
-#: windows.cpp:99
+#: windows.cpp:100
 msgid "miliseconds"
 msgstr "millisekuntia"

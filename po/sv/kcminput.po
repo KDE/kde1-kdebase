@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-20 15:20+0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,34 +26,34 @@ msgstr "&Tangentbord"
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
 msgstr "användning: kcminput [-init | {mouse,keyboard}]\n"
 
-#: main.cpp:92
+#: main.cpp:94
 msgid "Input Devices Properties"
 msgstr "Inställningar för inmatningsenheter"
 
-#: mouse.cpp:76
+#: mouse.cpp:75
 msgid "Acceleration"
 msgstr "Acceleration"
 
-#: mouse.cpp:82
+#: mouse.cpp:81
 msgid "Threshold"
 msgstr "Tröskelvärde"
 
-#: mouse.cpp:85
+#: mouse.cpp:84
 msgid "Button mapping"
 msgstr "Knapptolkning"
 
-#: mouse.cpp:87
+#: mouse.cpp:86
 msgid "Right handed"
 msgstr "Högerhänt"
 
-#: mouse.cpp:89
+#: mouse.cpp:88
 msgid "Left handed"
 msgstr "Vänsterhänt"
 
-#: keyboard.cpp:68
+#: keyboard.cpp:67
 msgid "Keyboard repeat"
 msgstr "Tangentbordsupprepning"
 
-#: keyboard.cpp:76
+#: keyboard.cpp:75
 msgid "Key click volume"
 msgstr "Volym på tangentklick"

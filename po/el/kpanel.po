@@ -1,168 +1,168 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-01-28 10:06+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
-#: kpanel.C:210
+#: kpanel.C:211
 msgid "Move"
 msgstr "Μετακίνηση"
 
-#: kpanel.C:213
+#: kpanel.C:214
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: kpanel.C:245
+#: kpanel.C:246
 msgid "Go!"
 msgstr "Εκτέλεση"
 
-#: kpanel.C:247 tools.C:805
+#: kpanel.C:248 tools.C:816
 msgid "Where do you want to go tomorrow?"
 msgstr "Που θέλετε να πάτε αύριο;"
 
-#: kpanel.C:320
+#: kpanel.C:321
 msgid "No info available"
 msgstr "Δεν υπάρχουν σχετικές πληροφορίες"
 
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:360 props.C:217 props.C:218
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:368 props.C:216
 msgid "Lock screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: kpanel.C:376
+#: kpanel.C:377
 msgid "Hide the panel"
 msgstr "Απόκρυψη του πίνακα"
 
-#: kpanel.C:386
+#: kpanel.C:387
 msgid "Show the panel"
 msgstr "Εμφάνιση του πίνακα"
 
-#: kpanel.C:762
-msgid "Add application"
-msgstr "Προσθήκη εφαρμογής"
-
-#: kpanel.C:764
-msgid "Add an application or a submenu onto the panel"
-msgstr "Προσθήκη εφαρμογής ή υποκαταλόγου στον πίνακα"
-
-#: kpanel.C:765
-msgid "Add windowlist"
-msgstr "Προσθήκη λίστας παραθύρων"
-
-#: kpanel.C:767
-msgid "Add a windowlist menu onto the panel"
-msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
-
-#: kpanel.C:768
-msgid "Configure"
-msgstr "Διαμόρφωση"
-
-#: kpanel.C:770
-msgid "Configure panel"
-msgstr "Πίνακας διαμόρφωσης"
-
-#: kpanel.C:771
-msgid "Restart"
-msgstr "Επανεκίννηση"
-
-#: kpanel.C:773
-msgid "Restart panel"
-msgstr "Επανεκίννηση πίνακα"
-
-#: kpanel.C:774 props.C:396
-msgid "Panel"
-msgstr "Πίνακας"
-
-#: kpanel.C:776
-msgid "Lock Screen"
-msgstr "Κλέιδωμα οθόνης"
-
-#: kpanel.C:1143 tools.C:621
+#: kpanel.C:1078 tools.C:632
 msgid "No comment available"
 msgstr "Δεν υπάρχει σχετικό σχόλιο"
 
-#: kpanel.C:1152 tools.C:814
+#: kpanel.C:1087 tools.C:825
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
-#: props.C:327
+#: props.C:200
+msgid "Add application"
+msgstr "Προσθήκη εφαρμογής"
+
+#: props.C:202
+msgid "Add an application or a submenu onto the panel"
+msgstr "Προσθήκη εφαρμογής ή υποκαταλόγου στον πίνακα"
+
+#: props.C:203
+msgid "Add windowlist"
+msgstr "Προσθήκη λίστας παραθύρων"
+
+#: props.C:205
+msgid "Add a windowlist menu onto the panel"
+msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
+
+#: props.C:206
+msgid "Configure"
+msgstr "Διαμόρφωση"
+
+#: props.C:208
+msgid "Configure panel"
+msgstr "Πίνακας διαμόρφωσης"
+
+#: props.C:209
+msgid "Restart"
+msgstr "Επανεκίννηση"
+
+#: props.C:211
+msgid "Restart panel"
+msgstr "Επανεκίννηση πίνακα"
+
+#: props.C:212 props.C:467
+msgid "Panel"
+msgstr "Πίνακας"
+
+#: props.C:214
+msgid "Lock Screen"
+msgstr "Κλέιδωμα οθόνης"
+
+#: props.C:398
 msgid "Location"
 msgstr "Τοποθεσία"
 
-#: props.C:340
+#: props.C:411
 msgid "Taskbar"
 msgstr "Μπάρα εργασιών"
 
-#: props.C:341
+#: props.C:412
 msgid "Hidden"
 msgstr "Απόκρυψη"
 
-#: props.C:350
+#: props.C:421
 msgid "Top/Left"
 msgstr "Πάνω/Αριστερά"
 
-#: props.C:380
+#: props.C:451
 msgid "Tiny Style"
 msgstr "Μικροσκοπικό ύφος"
 
-#: props.C:381
+#: props.C:452
 msgid "Normal Style"
 msgstr "Κανονικό ύφος"
 
-#: props.C:382
+#: props.C:453
 msgid "Large Style"
 msgstr "Μεγάλο ύφος"
 
-#: props.C:401
+#: props.C:472
 #, fuzzy
 msgid "Menu Tooltips"
 msgstr "Υποδείξεις για το μενου"
 
-#: props.C:447
+#: props.C:518
 msgid "Others"
 msgstr ""
 
-#: props.C:449
+#: props.C:520
 #, fuzzy
 msgid "Personal First"
 msgstr "Προσωπικά πρώτα"
 
-#: props.C:452
+#: props.C:523
 msgid "Auto Hide Panel"
 msgstr "Αυτόματη απόκρυψη πίνακα"
 
-#: props.C:455
+#: props.C:526
 msgid "Auto Hide Taskbar"
 msgstr "Αυτόματη απόκρυψη μπάρας εργασιών"
 
-#: props.C:473
+#: props.C:544
 msgid "Clock"
 msgstr ""
 
-#: props.C:475
+#: props.C:546
 msgid "24h"
 msgstr ""
 
-#: props.C:479
+#: props.C:550
 msgid "12h AM/PM"
 msgstr ""
 
-#: props.C:540
+#: props.C:611
 msgid "Visible"
 msgstr "Ορατό"
 
-#: props.C:547
+#: props.C:618
 msgid "Width"
 msgstr "Πλάτος"
 
-#: props.C:552
+#: props.C:623
 msgid "Desktops"
 msgstr "Επιφάνεια εργασίας"
 
-#: props.C:558
+#: props.C:629
 msgid "KPanel Configuration"
 msgstr "Διαμόρφωση KPanel"

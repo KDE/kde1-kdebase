@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-01-28 10:06+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -13,163 +13,163 @@ msgstr ""
 "Content-Type: text/plain;\n"
 "Content-Transfer-Encoding: 8bits\n"
 
-#: kpanel.C:210
+#: kpanel.C:211
 msgid "Move"
 msgstr "Déplacer"
 
-#: kpanel.C:213
+#: kpanel.C:214
 msgid "Properties"
 msgstr "Propriétés"
 
-#: kpanel.C:245
+#: kpanel.C:246
 msgid "Go!"
 msgstr "Go !"
 
-#: kpanel.C:247 tools.C:805
+#: kpanel.C:248 tools.C:816
 msgid "Where do you want to go tomorrow?"
 msgstr "Où voulez-vous aller demain ?"
 
-#: kpanel.C:320
+#: kpanel.C:321
 msgid "No info available"
 msgstr "Information inexistante"
 
-#: kpanel.C:359 kpanel.C:779 kpanel.C:780
+#: kpanel.C:360 props.C:217 props.C:218
 msgid "Logout"
 msgstr "Quitter"
 
-#: kpanel.C:367 kpanel.C:778
+#: kpanel.C:368 props.C:216
 msgid "Lock screen"
 msgstr "Verrouiller l'écran"
 
-#: kpanel.C:376
+#: kpanel.C:377
 msgid "Hide the panel"
 msgstr "Cacher le panneau"
 
-#: kpanel.C:386
+#: kpanel.C:387
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:762
+#: kpanel.C:1078 tools.C:632
+msgid "No comment available"
+msgstr "Commentaire inexistant"
+
+#: kpanel.C:1087 tools.C:825
+msgid "Windowlist"
+msgstr "Liste des fenêtres"
+
+#: props.C:200
 msgid "Add application"
 msgstr "Ajouter application"
 
-#: kpanel.C:764
+#: props.C:202
 msgid "Add an application or a submenu onto the panel"
 msgstr "Ajouter une application ou un sous-menu au panneau"
 
-#: kpanel.C:765
+#: props.C:203
 msgid "Add windowlist"
 msgstr "Ajouter la liste des fenêtres"
 
-#: kpanel.C:767
+#: props.C:205
 msgid "Add a windowlist menu onto the panel"
 msgstr ""
 "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
-#: kpanel.C:768
+#: props.C:206
 msgid "Configure"
 msgstr "Configurer"
 
-#: kpanel.C:770
+#: props.C:208
 msgid "Configure panel"
 msgstr "Configurer le panneau"
 
-#: kpanel.C:771
+#: props.C:209
 msgid "Restart"
 msgstr "Relancer"
 
-#: kpanel.C:773
+#: props.C:211
 msgid "Restart panel"
 msgstr "Relancer le panneau"
 
-#: kpanel.C:774 props.C:396
+#: props.C:212 props.C:467
 msgid "Panel"
 msgstr "Panneau"
 
-#: kpanel.C:776
+#: props.C:214
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-#: kpanel.C:1143 tools.C:621
-msgid "No comment available"
-msgstr "Commentaire inexistant"
-
-#: kpanel.C:1152 tools.C:814
-msgid "Windowlist"
-msgstr "Liste des fenêtres"
-
-#: props.C:327
+#: props.C:398
 msgid "Location"
 msgstr "Emplacement"
 
-#: props.C:340
+#: props.C:411
 msgid "Taskbar"
 msgstr "Barre de tâches"
 
-#: props.C:341
+#: props.C:412
 msgid "Hidden"
 msgstr "Caché"
 
-#: props.C:350
+#: props.C:421
 msgid "Top/Left"
 msgstr "Haut/Gauche"
 
-#: props.C:380
+#: props.C:451
 msgid "Tiny Style"
 msgstr "Style petit"
 
-#: props.C:381
+#: props.C:452
 msgid "Normal Style"
 msgstr "Style normal"
 
-#: props.C:382
+#: props.C:453
 msgid "Large Style"
 msgstr "Style grand"
 
-#: props.C:401
+#: props.C:472
 msgid "Menu Tooltips"
 msgstr "InfoBulles sur les menus"
 
-#: props.C:447
+#: props.C:518
 msgid "Others"
 msgstr "Autres"
 
-#: props.C:449
+#: props.C:520
 msgid "Personal First"
 msgstr "Menu personnel en premier"
 
-#: props.C:452
+#: props.C:523
 msgid "Auto Hide Panel"
 msgstr "Panneau auto-cachable"
 
-#: props.C:455
+#: props.C:526
 msgid "Auto Hide Taskbar"
 msgstr "Barre de tâches auto-cachable"
 
-#: props.C:473
+#: props.C:544
 msgid "Clock"
 msgstr "Horloge"
 
-#: props.C:475
+#: props.C:546
 msgid "24h"
 msgstr "24h"
 
-#: props.C:479
+#: props.C:550
 msgid "12h AM/PM"
 msgstr "12h AM/PM"
 
-#: props.C:540
+#: props.C:611
 msgid "Visible"
 msgstr "Visible"
 
-#: props.C:547
+#: props.C:618
 msgid "Width"
 msgstr "Largeur"
 
-#: props.C:552
+#: props.C:623
 msgid "Desktops"
 msgstr "Bureaux"
 
-#: props.C:558
+#: props.C:629
 msgid "KPanel Configuration"
 msgstr "Configuration du panneau"

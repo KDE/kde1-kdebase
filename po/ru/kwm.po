@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -112,11 +112,11 @@ msgstr "Семь"
 msgid "Eight"
 msgstr "Восемь"
 
-#: main.C:743
+#: main.C:744
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:986
+#: main.C:1011
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 
@@ -125,15 +125,15 @@ msgid "Command:"
 msgstr "Команда:"
 
 #
-#: logout.C:35 taskmgr.C:106
+#: logout.C:36 taskmgr.C:107
 msgid "Logout"
 msgstr "Выйти"
 
-#: logout.C:45
+#: logout.C:46
 msgid "Session prepared for logout"
 msgstr "Сессии подготовленные к выходу"
 
-#: logout.C:51
+#: logout.C:52
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
@@ -141,7 +141,7 @@ msgstr ""
 "Эти приложения содержат незаписанные данные, которые\n"
 "Будут потеряны в следующей сессии."
 
-#: logout.C:62
+#: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
@@ -149,7 +149,7 @@ msgstr ""
 "Эти приложения не могут быть восстановлены в следующей сессии.\n"
 "Только перезапущены. Убедитесь, что они не содержат важных данных"
 
-#: logout.C:73
+#: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
@@ -157,10 +157,10 @@ msgstr ""
 "Эти приложения не X11 и поэтому не могут быть восстановлены в следуюющей\n"
 "сессии. Убедитесь, что они не содержат важных данных"
 
-#: taskmgr.C:105
+#: taskmgr.C:106
 msgid "Switch to"
 msgstr "Переключиться"
 
-#: taskmgr.C:119
+#: taskmgr.C:120
 msgid "Current session"
 msgstr "Текущая сессия"

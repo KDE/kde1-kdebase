@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -324,7 +324,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:296
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr ""
+
+#: main.cpp:306
 #, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
@@ -335,11 +340,11 @@ msgstr ""
 "El sistema utiliza contraseñas ocultas\n"
 "por favor, consulte con el administrador de sus sistema."
 
-#: main.cpp:301
+#: main.cpp:311
 msgid "Shadow Passwords"
 msgstr "Contraseñas ocultas"
 
-#: main.cpp:457
+#: main.cpp:469
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -348,7 +353,7 @@ msgstr ""
 "Uso: %s -install|-setup|-test|-desc|-preview wid\n"
 "     [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:460
+#: main.cpp:472
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"

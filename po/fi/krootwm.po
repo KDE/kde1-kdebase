@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KROOTWM\n"
-"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,51 +14,51 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:109 krootwm.C:471
+#: krootwm.C:122 krootwm.C:498
 msgid "Folder"
 msgstr "Kansio"
 
-#: krootwm.C:136
+#: krootwm.C:149
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
 
-#: krootwm.C:162
+#: krootwm.C:175
 msgid "Help on desktop"
 msgstr "Työpöydän ohje"
 
-#: krootwm.C:163
+#: krootwm.C:176
 msgid "Execute command"
 msgstr "Suorita"
 
-#: krootwm.C:164
+#: krootwm.C:177
 msgid "Display properties"
 msgstr "Näytön ominaisuudet"
 
-#: krootwm.C:165
+#: krootwm.C:178
 msgid "Refresh desktop"
 msgstr "Päivitä työpöytä"
 
-#: krootwm.C:166
+#: krootwm.C:179
 msgid "Arrange icons"
 msgstr "Järjestä ikonit"
 
-#: krootwm.C:168
+#: krootwm.C:181
 msgid "Lock screen"
 msgstr "Lukitse istunto"
 
-#: krootwm.C:169
+#: krootwm.C:182
 msgid "Logout"
 msgstr "Lopeta"
 
-#: krootwm.C:491
+#: krootwm.C:518
 msgid "Could not create folder"
 msgstr "En voi luoda kansiota"
 
-#: krootwm.C:524
+#: krootwm.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:528
+#: krootwm.C:555
 msgid "Usage:"
 msgstr "Käyttö:"
