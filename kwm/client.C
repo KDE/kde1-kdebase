@@ -360,6 +360,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     iconified = False;
     sticky = False;
     shaded = False;
+    stays_on_top = False;
     cmap = None;
     border = 0;
     ncmapwins = 0;
@@ -368,7 +369,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     is_active = false;
     trans = None;
     leader = None;
-    decoration = 1;
+    decoration = KWM::normalDecoration;
     wants_focus = true;
     is_menubar = false;
     do_close = false;

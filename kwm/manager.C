@@ -877,6 +877,8 @@ void Manager::propertyNotify(XPropertyEvent *e){
       }
     }
 
+    c->stays_on_top = d & KWM::staysOnTop;
+    
     bool is_menubar = (d & KWM::standaloneMenuBar) != 0;
     has_standalone_menubars |= is_menubar;
     c->is_menubar = is_menubar;
@@ -1815,17 +1817,19 @@ void Manager::manage(Window w, bool mapped){
     }
   }
   DEBUG_EVENTS2("manage..... Client", c,c->window)
-  if ( hasShape(c) )
-	c->decoration = KWM::noDecoration;
 
   // get KDE specific decoration hint
-  if (c->getDecoration() == KWM::normalDecoration){
-    long dec = KWM::getDecoration(c->window);
-    c->decoration = dec & 255;
-    c->is_menubar = (dec & KWM::standaloneMenuBar) != 0;
-    has_standalone_menubars |= c->is_menubar;
-    c->wants_focus = !c->is_menubar && (dec & KWM::noFocus) == 0;
+  {
+      long dec = KWM::getDecoration(c->window);
+      c->decoration = dec & 255;
+      c->is_menubar = (dec & KWM::standaloneMenuBar) != 0;
+      has_standalone_menubars |= c->is_menubar;
+      c->wants_focus = !c->is_menubar && (dec & KWM::noFocus) == 0;
+      c->stays_on_top = (dec & KWM::staysOnTop) != 0;
   }
+
+  if ( hasShape(c) )
+      c->decoration = KWM::noDecoration;
 
   XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask |
 	       EnterWindowMask | PropertyChangeMask | PointerMotionMask);
@@ -2292,6 +2296,15 @@ void Manager::raiseClient(Client* c){
     }
   } while (!tmp2.isEmpty());
 
+  
+  // stays on top windows
+  if (!c->isStaysOnTop() && !c->mainClient()->isStaysOnTop()) {
+      for (c = clients_sorted.first(); c ; c = clients_sorted.next()){
+	  if ( c->isStaysOnTop() && !tmp.contains( c ))
+	      tmp.append( c );
+      }
+  }
+  
   // finally do the raising
 
   for (c=tmp.first();c;c=tmp.next()){

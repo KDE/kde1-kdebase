@@ -16,7 +16,10 @@ In 0.13:
 patchlevel 8:
         - delayed internal event handling fix (kwm sometimes lost the 
            mouse on opaque resize)
-	- minicli in-memory history has now a maximum limit (CT)
+        - minicli in-memory history has now a maximum limit (CT)
+        - added handling for the KWM::staysOnTop property. The internal
+           functionality was there already, just the activation was missing.
+           Cannot break any existing code.
 
 patchlevel 7:
         - small bugfixes

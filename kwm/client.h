@@ -222,6 +222,11 @@ public:
   bool isShaded(){
     return shaded;
   }
+    
+    // is the window supposed to stay on top
+  bool isStaysOnTop(){
+      return stays_on_top;
+  }
 
   // windows can have a fixed size, that means the window manager must
   // not resize them in any way.
@@ -282,6 +287,7 @@ public:
   bool iconified;
   bool shaded;
   bool shaped;
+  bool stays_on_top;
 
   // unIconify this client. Takes care about floating or transient
   // windows. If animation is true, kwm may show some kind of
@@ -321,7 +327,7 @@ public:
   // returns the client itself it is not transient. If it is transient
   // it will return the main window recursively.
   Client* mainClient();
-    
+
     // returns whether the client is only a dialog window
     //#### uses build-in iterator ot the manager's client list!!
   bool isDialog() {
