@@ -348,7 +348,7 @@ void KBackground::apply()
     if (bgPixmap)
       bgPixmap->resize(w, h);
 
-    QPixmap pmDesktop;
+    KPixmap pmDesktop;
     switch (gfMode) {
 
     case Gradient:
