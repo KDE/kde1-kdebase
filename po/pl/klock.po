@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-01-09 20:19+0100\n"
-"PO-Revision-Date: 1997-01-03 14:36+0100\n"
+"PO-Revision-Date: 1998-01-10 18:52+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -337,7 +337,6 @@ msgstr ""
 "Wesja dla kscreensave od Emanuel Pirker."
 
 #: main.cpp:296
-#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -345,7 +344,9 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Twój system u¿ywa shadow passwords!\n"
-"Skontaktuj siê ze swoim administratorem."
+"Skontaktuj siê ze swoim administratorem.\n"
+"\n"
+"Potrzebujesz ustawionego suid dla wygaszaczy ekranu!"
 
 #: main.cpp:301
 msgid "Shadow Passwords"

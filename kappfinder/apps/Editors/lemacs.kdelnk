@@ -6,3 +6,4 @@ Type=Application
 Name=LEmacs
 Name[de]=LEmacs
 Comment=Lucid Emacs
+Comment[pl]=Lucid Emacs

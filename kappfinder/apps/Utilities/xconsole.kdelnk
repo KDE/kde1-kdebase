@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=X Console viewer
 Comment[de]=X Konsole
+Comment[pl]=X Konsola
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=X Clipboard viewer
 Comment[de]=X Zwischenablage
+Comment[pl]=X Przegl±darka schowka
 Exec=xclipboard
 Icon=kfind.xpm
 TerminalOptions=

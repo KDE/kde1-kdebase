@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment[de]=Das lyx Textprogramm
+Comment[pl]=Edytor tekstu lyx
 Name=Lyx
 Exec=lyx
 Icon=lyx.xpm

@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=X Terminal
 Name[de]=X Terminal
+Comment[pl]=X Terminal
 Exec=xterm
 Icon=kvt.xpm
 TerminalOptions=

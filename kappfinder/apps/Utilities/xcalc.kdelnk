@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=X Calculator
 Comment[de]=X Taschenrechner
+Comment[pl]=X Kalkulator
 Exec=xcalc
 Icon=xcalc.xpm
 TerminalOptions=

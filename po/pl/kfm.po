@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1998-01-10 12:48+0100\n"
-"PO-Revision-Date: 1998-01-08 23:49+0100\n"
+"PO-Revision-Date: 1998-01-10 18:50+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -791,7 +791,7 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Czy na pewno chcesz przestawiæ ikony?"
 
 #: kfmserver.cpp:234
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The URL\n"
 "%s\n"
@@ -799,7 +799,7 @@ msgid ""
 msgstr ""
 "URL\n"
 "%s\n"
-"jest b³êdny\n"
+"jest b³êdny"
 
 #: kfmserver.cpp:285
 msgid ""

@@ -12,4 +12,5 @@ Path=
 Type=Application
 Comment=The X clock
 Comment[de]=Die X Uhr
+Comment[pl]=X Zegar
 Terminal=0

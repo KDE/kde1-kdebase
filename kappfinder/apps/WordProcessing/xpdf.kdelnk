@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=PDF Viewer
 Comment[de]=PDF Betrachter
+Comment[pl]=Przegl±darka PDF
 Exec=xpdf
 Icon=gv.xpm
 TerminalOptions=

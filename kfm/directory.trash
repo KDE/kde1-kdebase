@@ -1,5 +1,7 @@
 [KDE Desktop Entry]
 Name=Trash
 Name[de]=Mülleimer
+Name[pl]=¦mietnik
 Comment=Contains removed files 
 Comment[de]=Enthält die gelöschten Dateien
+Comment[pl]=Pliki przeznaczone do skasowania

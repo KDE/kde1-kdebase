@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=System Monitor
 Comment[de]=Systemmonitor
+Comment[pl]=Monitor systemu
 Exec=xosview
 Icon=Information.xpm
 TerminalOptions=

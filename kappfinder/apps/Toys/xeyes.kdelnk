@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=X Eyes
+Comment[pl]=X Oczy
 Name[de]=X Augen
 Exec=xeyes
 Icon=xeyes.xpm

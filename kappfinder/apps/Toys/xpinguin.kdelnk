@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=Tux, the Linux mascot
 Comment[de]=Tux, das Linux Maskottchen
+Comment[pl]=Tux, maskotka Linuxa
 Exec=xpinguin
 Icon=pinguin.xpm
 TerminalOptions=

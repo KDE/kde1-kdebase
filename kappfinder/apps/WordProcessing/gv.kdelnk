@@ -8,6 +8,7 @@ MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=
 Comment[de]=Postscript Betrachter
+Comment[pl]=Przegl±darka Postscript gv
 Exec=gv
 Icon=gv.xpm
 TerminalOptions=

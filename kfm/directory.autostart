@@ -1,3 +1,5 @@
 [KDE Desktop Entry]
 Name=Autostart
 Name[de]=Autostart
+Name[pl]=Autostart
+Comment[pl]=Programy uruchamiane przy starcie KDE

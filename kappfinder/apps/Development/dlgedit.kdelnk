@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=Qt Dialog Editor
 Comment[de]=Qt Dialog Editor
+Comment[pl]=Qt Dialog Editor
 Exec=dlgedit
 Icon=kcmkwm.xpm
 TerminalOptions=

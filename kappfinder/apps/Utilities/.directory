@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Utilities
+Name[pl]=U¿ytki
 MiniIcon=
 SortOrder=xcalc.kdelnk,xclipboard.kdelnk,xconsole.kdelnk,xterm.kdelnk
 Icon=kcalc.xpm

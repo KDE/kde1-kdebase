@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Internet
+Name[pl]=Internet
 MiniIcon=www.xpm
 SortOrder=xftp.kdelnk
 Icon=www.xpm

@@ -4,4 +4,5 @@ Exec=ddd
 Type=Application
 Comment=Data Display Debugger
 Comment[de]=DD Debugger
+Comment[pl]=Data Display Debugger
 Name=DDD

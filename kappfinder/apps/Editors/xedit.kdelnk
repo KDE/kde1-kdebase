@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=X Editor
+Comment[pl]=X Editor
 Name[de]=X Editor
 Exec=xedit
 Icon=edit.xpm

@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=Emacs
+Comment[pl]=Emacs
 Name[de]=Emacs
 Exec=emacs
 Icon=emacs.xpm

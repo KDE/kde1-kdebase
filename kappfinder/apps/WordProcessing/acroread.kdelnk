@@ -7,6 +7,7 @@ MiniIcon=
 Protocols=
 MimeType=
 Comment=
+Comment[pl]=Przegl±darka plików Adobe Portable Document Format
 Exec=acroread
 Icon=gv.xpm
 TerminalOptions=
