@@ -14,17 +14,20 @@ case "$1" in
       then
         echo "WARNING : can only start kdm or xdm, but not both !"
     fi
-    echo -n "s/WINDOWMANAGERS/" > /etc/kde/kdmrc.tmp
+
+    echo -n 's/^SessionTypes=.*/SessionTypes=' > /tmp/kdm.sed
     cat /etc/X11/window-managers |while read A; 
     do
         if test -x "$A"
         then
-    	    echo -n "`basename $A`;" >> /etc/kde/kdmrc.tmp
+    	    echo -n "`basename $A`;" >> /tmp/kdm.sed
         fi
     done
-    echo "/" >> /etc/kde/kdmrc.tmp
-    sed "`cat /etc/kde/kdmrc.tmp`" < /etc/kde/kdmrc.in > /etc/kde/kdmrc
-    rm /etc/kde/kdmrc.tmp
+    echo -n "failsafe;/" >> /tmp/kdm.sed
+    cp /etc/kde/kdmrc /tmp/kdmrc.old
+    sed -f /tmp/kdm.sed < /tmp/kdmrc.old > /etc/kde/kdmrc
+    rm -f /tmp/kdm.sed /tmp/kdmrc.old
+
     echo -n "Starting kde display manager: kdm"    
     start-stop-daemon --start --quiet --exec /usr/bin/X11/kdm
     echo "."
