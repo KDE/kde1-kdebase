@@ -7,5 +7,7 @@ MiniIcon=kcontrol.xpm
 DocPath=kcontrol/index.html
 Comment=KDE Control Center
 Comment[de]=KDE Kontrollzentrum
+Comment[pl]=KDE Centrum kontroli
 Name=KDE Control Center
 Name[de]=KDE Kontrollzentrum
+Name[pl]=KDE Centrum kontroli
