@@ -90,8 +90,9 @@ msgid "KeyMap: can't allocate memory"
 msgstr "Gat ekki tekið frá minni"
 
 # keymap.cpp:228
-#: keymap.cpp:233
 # c-format
+#: keymap.cpp:233
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -415,8 +416,8 @@ msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
 msgstr ""
-"Nota aðeins sjálfgefna hnappatöflu og síðast notaðar hnappatöflur til að"
-"skipta á milli"
+"Nota aðeins sjálfgefna hnappatöflu og síðast notaðar hnappatöflur til "
+"aðskipta á milli"
 
 # widgets.cpp:215
 #: widgets.cpp:224
@@ -539,15 +540,13 @@ msgstr "Venjuleg hegðun. Hnappataflan virk í öllum gluggum"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr ""
-"Auka hegðun. Hnappataflan er vistuð í hverjum glugga fyrir sig"
+msgstr "Auka hegðun. Hnappataflan er vistuð í hverjum glugga fyrir sig"
 
 # widgets.cpp:495
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr ""
-"Sérstök hegðun. Hnappataflan er vistuð í hverjum gluggaflokk fyrir sig"
+msgstr "Sérstök hegðun. Hnappataflan er vistuð í hverjum gluggaflokk fyrir sig"
 
 # widgets.cpp:551
 #: widgets.cpp:561
