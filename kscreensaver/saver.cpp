@@ -5,6 +5,7 @@
 #include <X11/Xlib.h>
 #include <qbitmap.h>
 #include <kapp.h>
+#include <kcharsets.h>
 #include <qpushbt.h>
 #include <qlined.h>
 #include <qframe.h>
@@ -47,6 +48,7 @@ KPasswordDlg::KPasswordDlg( QWidget *parent ) : QWidget( parent )
 	frame->setGeometry( 0, 0, 200, 100 );
 
 	QFont font( "helvetica", 18 );
+	KApplication::getKApplication()->getCharsets()->setQFont(font);
 	label = new QLabel( glocale->translate("Enter Password"), frame );
 	label->setGeometry( 20, 20, 160, 30 );
 	label->setAlignment( AlignCenter );

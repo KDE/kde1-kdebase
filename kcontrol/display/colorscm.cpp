@@ -25,6 +25,7 @@
 #include <qchkbox.h>
 #include <qcombo.h>
 #include <kapp.h>
+#include <kcharsets.h>
 #include <kmsgbox.h>
 
 #include <X11/Xlib.h>
@@ -136,8 +137,10 @@ void WidgetCanvas::drawSampleWidgets()
     paint.setBrush( inactiveTitleColor );
     paint.setPen( inactiveTitleColor );
     paint.drawRect( 5, 5, width()-30, 20 );
-    
-    paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
+   
+    QFont fnt("Helvetica", 12, QFont::Bold);
+    KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+    paint.setFont( fnt );
     paint.setPen( inactiveTextColor );
     paint.drawText( (width()-25)/2-40, 20, klocale->translate("Inactive window") );
 	textLen = paint.fontMetrics().width(  klocale->translate("Inactive window") );
@@ -153,7 +156,7 @@ void WidgetCanvas::drawSampleWidgets()
     paint.setBrush( activeTitleColor );paint.setPen( activeTitleColor );
     paint.drawRect( 25, 30+5, width()-32, 20 ); 
     
-    paint.setFont( QFont("Helvetica", 12, QFont::Bold) );
+    paint.setFont( fnt );
     paint.setPen( activeTextColor );
     paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  klocale->translate("Active window") );
 	textLen = paint.fontMetrics().width(  klocale->translate("Active window" ));
@@ -164,8 +167,9 @@ void WidgetCanvas::drawSampleWidgets()
     // Menu bar
   
     qDrawShadePanel ( &paint, 25, 55, width()-32, 28, cg, FALSE, 2, &brush);
-    
-    paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+   
+    fnt.setBold(FALSE);
+    paint.setFont( fnt );
     paint.setPen(textColor );
     textLen = paint.fontMetrics().width( klocale->translate("File") );
     qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
@@ -174,7 +178,7 @@ void WidgetCanvas::drawSampleWidgets()
     hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
     hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
     
-    paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+    paint.setFont( fnt );
     paint.setPen( textColor );
     paint.drawText( 35 + textLen + 20, 69+5, klocale->translate("Edit") );
     textLen = paint.fontMetrics().width( klocale->translate("Edit") );
@@ -187,7 +191,8 @@ void WidgetCanvas::drawSampleWidgets()
     qDrawShadePanel ( &paint, 25, 80+5-4, width()-7-25-2, 
 		      height(), cg, TRUE, 2, &brush);
     
-    paint.setFont( QFont("Helvetica", 14, QFont::Normal) );
+    fnt.setPointSize(14);
+    paint.setFont( fnt );
     paint.setPen( windowTextColor );
     paint.drawText( 200, 127-10, klocale->translate( "Window text") );
     textLen = paint.fontMetrics().width( klocale->translate("Window text") );
@@ -204,14 +209,15 @@ void WidgetCanvas::drawSampleWidgets()
     brush.setColor( backgroundColor );
     qDrawShadePanel ( &paint, 30, 80, 84, height(), cg, FALSE, 2, &brush);
 
-    paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+    fnt.setPointSize(12);
+    paint.setFont( fnt );
     paint.setPen( lightGray.dark() );
     paint.drawText( 38, 97, klocale->translate("Disabled") );
     
     qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
     &brush);
    
-    paint.setFont( QFont("Helvetica", 12, QFont::Normal) );
+    paint.setFont( fnt );
     paint.setPen( textColor );
     paint.drawText( 38, 119, klocale->translate("Selected") );
     textLen = paint.fontMetrics().width( klocale->translate("Selected") );
@@ -421,6 +427,7 @@ void KColorScheme::writeScheme()
 	KConfig *config = kapp->getConfig();
 	config->setGroup( schemeFile.data() );
 
+
 	config->writeEntry("BackgroundColor", sampleWidgets->backgroundColor);
 	config->writeEntry("SelectColor", sampleWidgets->selectColor);
 	config->writeEntry("TextColor", sampleWidgets->textColor);
@@ -432,6 +439,15 @@ void KColorScheme::writeScheme()
 	config->writeEntry("WindowColor", sampleWidgets->windowColor);
 	config->writeEntry("SelectTextColor", sampleWidgets->selectTextColor);
 	config->writeEntry("Contrast", sampleWidgets->contrast);
+	
+	str.sprintf("#%02x%02x%02x", sampleWidgets->windowColor.red(), sampleWidgets->windowColor.green(), sampleWidgets->windowColor.blue());
+	config->writeEntry("WindowColor", str);
+	
+	str.sprintf("#%02x%02x%02x", sampleWidgets->selectTextColor.red(), sampleWidgets->selectTextColor.green(), sampleWidgets->selectTextColor.blue());
+	config->writeEntry("SelectTextColor", str);
+	
+	str.sprintf("%d", sampleWidgets->contrast);
+	config->writeEntry("Contrast", str);
 	
 	config->sync();
 }
