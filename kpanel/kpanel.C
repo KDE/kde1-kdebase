@@ -605,6 +605,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				h - margin - 2*label_date->height() -5,
 				box_width+2*margin-6, 
 				2*label_date->height());
+
       else
 	label_date->setGeometry(3,
 				h,
@@ -733,6 +734,16 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     // to make the clock more precise, start the clock
     // on the next minute break
     set_label_date();
+
+    // fix label_date size (PGB)
+    QFont tmpfont = label_date->font();
+    QString teststr = (clockAmPm ? "00:00AM" : "00:00");
+    while(label_date->fontMetrics().width(teststr) > 
+	  label_date->width()) {
+      tmpfont.setPointSize(tmpfont.pointSize()-1);
+      label_date->setFont(tmpfont);
+    }
+
     QTime cur_time = QTime::currentTime();
     clock_timer_id = 0;
     int next_minute_break = (60 - cur_time.second()) * 1000 - cur_time.msec();
@@ -1439,7 +1450,7 @@ void kPanel::load_and_set_some_fonts(){
     //QFont tmpfont;
     //tmpfont.setRawMode(true);
     //tmpfont.setFamily(config->readEntry("DateFont"));
-	QFont tmpfont = config->readFontEntry( "DateFont" );
+    QFont tmpfont = config->readFontEntry( "DateFont" );
     label_date->setFont(tmpfont);
   }
   
