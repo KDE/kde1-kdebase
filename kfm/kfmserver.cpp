@@ -229,8 +229,7 @@ void KFMServer::slotExec( const char* _url, const char * _documents )
     if ( u.isMalformed() )
     {
 	QString msg;
-	msg.sprintf("%s\n%s\n%s", klocale->translate( "The URL" ), _url,
-		    klocale->translate( "is malformed\n" ) );
+	msg.sprintf(klocale->translate("The URL\n%s\nis malformed\n"), _url);
 	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ), msg );
 	return;
     }

@@ -43,7 +43,7 @@ KFMExec::KFMExec( int argc, char **argv )
 	    if ( u.isMalformed() )
 	    {
 		QString err;
-		err.sprintf( "%s\n%s", argv[ i - 1 ], klocale->translate( "is malformed" ) );
+		err.sprintf( klocale->translate("The URL %s\nis malformed"), argv[ i - 1 ] );
 		QMessageBox::message( klocale->translate( "KFM Error" ), err );
 	    }
 	    // Must KFM fetch the file ?
@@ -196,7 +196,7 @@ int main( int argc, char **argv )
 
     if ( argc < 2 )
     {
-	fprintf( stderr, "Syntax Error:\nkfmexec command [URLs ....]\n" );
+	fprintf( stderr, klocale->translate("Syntax Error:\nkfmexec command [URLs ....]\n") );
 	exit(1);
     }
     
