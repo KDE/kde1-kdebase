@@ -282,6 +282,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr "Vil du virkelig slette filen:\n"
+"%s" 
 
 #: kfwin.cpp:197
 msgid "Delete File"
