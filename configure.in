@@ -263,6 +263,7 @@ AC_OUTPUT(Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \
 	applnk/Internet/Makefile \
+	applnk/Multimedia/Makefile \
 	applnk/System/Core/Makefile \
 	applnk/System/Makefile \
 	applnk/Utilities/Makefile \

@@ -1,7 +1,10 @@
 [KDE Desktop Entry]
+Name=Refresh Desktop
+Name[de]=Desktop neuzeichnen
 BinaryPattern=
 Protocols=
 Comment=Update desktop icons
+Comment[de]=Zeichnet alle Elemente auf dem Desktop neu
 Exec=kfmclient refreshDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=
