@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-02 01:14+0100\n"
 "PO-Revision-Date: 1998-10-30 13:11+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:944 kbind.cpp:956 kbind.cpp:966 kfmgui.cpp:215 kfmgui.cpp:1033
+#: kbind.cpp:942 kbind.cpp:954 kbind.cpp:964 kfmgui.cpp:215 kfmgui.cpp:1033
 msgid "Folder"
 msgstr "Katalog"
 
@@ -247,18 +247,18 @@ msgstr "Hem"
 msgid "Could not load icon\n"
 msgstr "Kunde inte ladda ikonen\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:314
-#: kbind.cpp:386 kbind.cpp:438 kbind.cpp:1593 kbind.cpp:1601 kbind.cpp:1619
-#: kbind.cpp:1638 kbind.cpp:1697 kbind.cpp:1709 kbind.cpp:1736 kbind.cpp:1751
-#: kbind.cpp:1771 kbind.cpp:1783 kbind.cpp:1799 kbind.cpp:1935 kbind.cpp:1947
-#: kbind.cpp:1992 kbind.cpp:2034 kfmexec.cpp:60 kfmexec.cpp:92
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:312
+#: kbind.cpp:384 kbind.cpp:436 kbind.cpp:1591 kbind.cpp:1599 kbind.cpp:1617
+#: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
+#: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1933 kbind.cpp:1945
+#: kbind.cpp:1990 kbind.cpp:2032 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:566 kfmgui.cpp:725 kfmman.cpp:345
 #: kfmman.cpp:1105 kfmman.cpp:1317 kfmman.cpp:1343 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
-#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:239 kfmtree.cpp:362
-#: kfmtree.cpp:393 kfmtree.cpp:399 kfmtree.cpp:405 kfmview.cpp:390
+#: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:237 kfmtree.cpp:360
+#: kfmtree.cpp:391 kfmtree.cpp:397 kfmtree.cpp:403 kfmview.cpp:390
 #: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:431 kfmview.cpp:493
 #: kfmview.cpp:499 kfmview.cpp:505 kfmview.cpp:611 kfmview.cpp:615
 #: kfmview.cpp:654 kfmview.cpp:680 kfmview.cpp:701 kfmview.cpp:709
@@ -299,7 +299,7 @@ msgid "New "
 msgstr "Ny "
 
 #: kfmgui.cpp:1122 kfmgui.cpp:1291 kfmjob.cpp:36 kfmman.cpp:228
-#: kfmtree.cpp:394 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
+#: kfmtree.cpp:392 kfmview.cpp:426 kfmview.cpp:494 kfmview.cpp:702
 #: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "FEL: Felaktig URL"
@@ -336,12 +336,12 @@ msgstr "FEL: Du släppte på en felaktig URL"
 msgid "ERROR: You dropped some URL over itself"
 msgstr "FEL: En URL släpptes på sig själv"
 
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:432 kfmview.cpp:465
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:430 kfmview.cpp:465
 #: kfmview.cpp:745 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM Varning"
 
-#: kfmtree.cpp:433 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
+#: kfmtree.cpp:431 kfmview.cpp:466 kfmview.cpp:746 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -351,11 +351,11 @@ msgstr ""
 "\n"
 "Det går inte att återskapa dem."
 
-#: kfmtree.cpp:400 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
+#: kfmtree.cpp:398 kfmview.cpp:500 kfmview.cpp:710 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEL: En URL släpptes på sig själv"
 
-#: kfmtree.cpp:406 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
+#: kfmtree.cpp:404 kfmview.cpp:506 kfmview.cpp:718 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEL: Du släppte en katalog på en av dess underkataloger"
 
@@ -383,7 +383,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:363 kfmview.cpp:655 root.cpp:1264
+#: kfmtree.cpp:361 kfmview.cpp:655 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "Kunde inte komma åt papperskorgen"
 
@@ -420,48 +420,48 @@ msgstr "%s (länk)"
 msgid "bytes"
 msgstr "byte"
 
-#: kbind.cpp:312
+#: kbind.cpp:310
 msgid "The mime type config file "
 msgstr "Konfigfilen för MIME-typer "
 
-#: kbind.cpp:313
+#: kbind.cpp:311
 msgid "does not conatain a MimeType=... entry"
 msgstr "innehåller ingen MimeType=...-post"
 
-#: kbind.cpp:387
+#: kbind.cpp:385
 msgid "No mime types installed!"
 msgstr "Inga MIME-typer installerade!"
 
-#: kbind.cpp:435 kbind.cpp:1217
+#: kbind.cpp:433 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "Kunde inte hitta MIME-typen\n"
 
-#: kbind.cpp:706 kbind.cpp:716 kbind.cpp:1970 kbind.cpp:1971 kbind.cpp:1983
-#: kbind.cpp:1985
+#: kbind.cpp:704 kbind.cpp:714 kbind.cpp:1968 kbind.cpp:1969 kbind.cpp:1981
+#: kbind.cpp:1983
 msgid "Mount"
 msgstr "Montera"
 
-#: kbind.cpp:722 kbind.cpp:1961
+#: kbind.cpp:720 kbind.cpp:1959
 msgid "Unmount"
 msgstr "Avmontera"
 
-#: kbind.cpp:1216
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "FEL"
 
-#: kbind.cpp:1217
+#: kbind.cpp:1215
 msgid "in "
 msgstr "i "
 
-#: kbind.cpp:1383 kbind.cpp:1476
+#: kbind.cpp:1381 kbind.cpp:1474
 msgid "Could not execute program\n"
 msgstr "Kunde inte köra programmet\n"
 
-#: kbind.cpp:1592
+#: kbind.cpp:1590
 msgid "Could not find binding"
 msgstr "Kunde inte hitta bindning"
 
-#: kbind.cpp:1602
+#: kbind.cpp:1600
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -469,11 +469,11 @@ msgstr ""
 "Det här är ett dokument,\n"
 "inte något program!"
 
-#: kbind.cpp:1620 kbind.cpp:1639
+#: kbind.cpp:1618 kbind.cpp:1637
 msgid "Can only start executables on local disks\n"
 msgstr "Kan bara starta program på lokala diskar\n"
 
-#: kbind.cpp:1698 kbind.cpp:1772 kbind.cpp:1936
+#: kbind.cpp:1696 kbind.cpp:1770 kbind.cpp:1934
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -481,7 +481,7 @@ msgstr ""
 "Kan bara arbeta med *.kdelnk-filer\n"
 "på lokala hårddiskar"
 
-#: kbind.cpp:1708
+#: kbind.cpp:1706
 #, c-format
 msgid ""
 "Could not access\n"
@@ -490,19 +490,19 @@ msgstr ""
 "Kunde inte komma åt\n"
 "%s"
 
-#: kbind.cpp:1737
+#: kbind.cpp:1735
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=...\"-posten är tom"
 
-#: kbind.cpp:1752
+#: kbind.cpp:1750
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfig-filen har ingen \"Type=...\"-rad"
 
-#: kbind.cpp:1782 kbind.cpp:1946
+#: kbind.cpp:1780 kbind.cpp:1944
 msgid "Could not access"
 msgstr "Kunde inte komma åt"
 
-#: kbind.cpp:1800
+#: kbind.cpp:1798
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -514,15 +514,15 @@ msgstr ""
 "Redigera filens egenskaper\n"
 "för att åtgärda problemet"
 
-#: kbind.cpp:1898
+#: kbind.cpp:1896
 msgid "ERROR: No Terminal Setting"
 msgstr "FEL: Ingen terminalinställning"
 
-#: kbind.cpp:1993
+#: kbind.cpp:1991
 msgid "No mount point in *.kdelnk file"
 msgstr "Ingen monteringsplats i *.kdelnk-filen"
 
-#: kbind.cpp:2033
+#: kbind.cpp:2031
 msgid "Unknown binding"
 msgstr "Okänd bindning"
 
@@ -546,7 +546,7 @@ msgstr "Byt katalog"
 msgid "New View"
 msgstr "Ny vy"
 
-#: kfmtree.cpp:299 main.cpp:228
+#: kfmtree.cpp:297 main.cpp:228
 msgid "Move to Trash"
 msgstr "Flytta till papperskorgen"
 
@@ -554,11 +554,11 @@ msgstr "Flytta till papperskorgen"
 msgid "Open with"
 msgstr "Öppna med"
 
-#: kfmman.cpp:1335 kfmtree.cpp:231 main.cpp:232
+#: kfmman.cpp:1335 kfmtree.cpp:229 main.cpp:232
 msgid "Move"
 msgstr "Flytta"
 
-#: kfmman.cpp:1339 kfmtree.cpp:235 main.cpp:234
+#: kfmman.cpp:1339 kfmtree.cpp:233 main.cpp:234
 msgid "Link"
 msgstr "Länk"
 
@@ -1003,7 +1003,7 @@ msgstr "FEL: Kan inte ta emot släppt ikon"
 msgid "Dont know what to do."
 msgstr "Vet inte vad som skall göras."
 
-#: kfmman.cpp:1344 kfmtree.cpp:240 root.cpp:1800
+#: kfmman.cpp:1344 kfmtree.cpp:238 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "Vet inte vad som skall göras"
 
@@ -1314,19 +1314,19 @@ msgstr "Katalogen "
 msgid " does not exist\n"
 msgstr " existerar inte\n"
 
-#: kfmtree.cpp:306
+#: kfmtree.cpp:304
 msgid "Add To Bookmarks"
 msgstr "Lägg till bokmärken"
 
-#: kfmtree.cpp:472
+#: kfmtree.cpp:470
 msgid "My Home"
 msgstr "Hemkatalogen"
 
-#: kfmtree.cpp:474
+#: kfmtree.cpp:472
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: kfmtree.cpp:476
+#: kfmtree.cpp:474
 msgid "Root"
 msgstr "Rotkatalogen"
 
