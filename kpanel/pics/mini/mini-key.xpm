@@ -1,7 +1,8 @@
 /* XPM */
 static char*mini[]={
-"16 16 4 1",
+"16 16 5 1",
 "# c #808080",
+"c c #c3c3c3",
 "a c #000000",
 ". c None",
 "b c #ffffff",
@@ -13,11 +14,11 @@ static char*mini[]={
 "...aba#..aba#...",
 "...aba#..aba#...",
 "..aaaaaaaaaaa...",
-"..a.........a#..",
-"..a.#######.a#..",
-"..a.bbbbbbb.a#..",
-"..a.#######.a#..",
-"..a.........a#..",
+"..accccccccca#..",
+"..ac#######ca#..",
+"..acbbbbbbbca#..",
+"..ac#######ca#..",
+"..accccccccca#..",
 "..aaaaaaaaaaa#..",
 "...###########..",
 "................"};
