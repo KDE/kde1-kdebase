@@ -15,6 +15,7 @@
 #include <qfiledlg.h>
 #include <qradiobt.h>
 #include <qpainter.h>
+#include <qlayout.h>
 #include <kapp.h>
 #include <kwm.h>
 #include <stdlib.h>
@@ -142,165 +143,207 @@ void GPixmap::gradientFill(QColor color1, QColor color2, bool updown, int num_co
 	delete [] ditherPalette;
 }	 
 
+//----------------------------------------------------------------------------
+
+KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
+    : QDialog( parent, 0, true )
+{
+    QPushButton *ok, *cancel;
+    QVBoxLayout *vlayout = new QVBoxLayout( this, 20 );
+
+    edit = new QLineEdit( this );
+    edit->setText( t );
+    edit->setFixedHeight( edit->sizeHint().height() );
+    edit->setFocus();
+    vlayout->addWidget( edit );
+
+    QHBoxLayout *hlayout = new QHBoxLayout;
+    vlayout->addLayout( hlayout );
+
+    hlayout->addStretch();
+
+    ok = new QPushButton( klocale->translate( "Ok" ), this );
+    ok->setDefault( true );
+    connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+    hlayout->addWidget( ok );
+
+    cancel = new QPushButton( klocale->translate( "Cancel" ), this );
+    connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
+    hlayout->addWidget( cancel );
+
+    QSize btnSize = ok->sizeHint();
+    if ( btnSize.width() < cancel->sizeHint().width() )
+    btnSize = cancel->sizeHint();
+
+    ok->setFixedSize( btnSize );
+    cancel->setFixedSize( btnSize );
+
+    vlayout->freeze();
+}
+
+//----------------------------------------------------------------------------
 
 KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
 #ifdef HAVE_LIBGIF
     QImageIO::defineIOHandler("GIF", "^GIF[0-9][0-9][a-z]", 
-			      0, read_gif_file, NULL);
+			  0, read_gif_file, NULL);
 #endif
 #ifdef HAVE_LIBJPEG
     QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 
-			      0, read_jpeg_jfif, NULL);
+			  0, read_jpeg_jfif, NULL);
 #endif
 
-  KIconLoader iconLoader;
+    KIconLoader iconLoader;
 
-	changed = FALSE;
-	maxDesks = 8;
-	deskNum = desktop;
+    changed = FALSE;
+    maxDesks = 8;
+    deskNum = desktop;
 
-	readSettings( deskNum );
+    readSettings( deskNum );
 
-	setName( klocale->translate("Desktop") );
+    setName( klocale->translate("Desktop") );
 
-	// if we are just initialising we don't need to create setup widget
-	if ( mode == Init )
-		return;
+    // if we are just initialising we don't need to create setup widget
+    if ( mode == Init )
+	    return;
 
-	QLabel *label;
-	QPushButton *button;
-	QGroupBox *group;
-	QRadioButton *rb;
+    if ( KWM::isKWMInitialized() )
+	maxDesks = KWM::numberOfDesktops();
+    else
+	maxDesks = 1;
 
-	QPixmap p = iconLoader.loadIcon("monitor.xpm");
+    QLabel *label;
+    QPushButton *button;
+    QGroupBox *group;
+    QRadioButton *rb;
 
-	label = new QLabel( this );
-	label->setPixmap( p );
-	label->setMinimumSize( label->sizeHint() );
-	label->move( 200, 15 );
+    QPixmap p = iconLoader.loadIcon("monitor.xpm");
 
-	monitor = new KBGMonitor( label );
-	monitor->setGeometry( 20, 10, 157, 111 );
-	monitor->setBackgroundColor( color1 );
+    label = new QLabel( this );
+    label->setPixmap( p );
+    label->setMinimumSize( label->sizeHint() );
+    label->move( 250, 15 );
 
-	prevButton = new QPushButton( klocale->translate("<<"), this );
-	prevButton->setGeometry( 150, 80, 40, 25 );
-	prevButton->setEnabled( false );
-	connect( prevButton, SIGNAL( clicked() ), SLOT( slotPrevDesk() ) );
+    monitor = new KBGMonitor( label );
+    monitor->setGeometry( 20, 10, 157, 111 );
+    monitor->setBackgroundColor( color1 );
 
-	nextButton = new QPushButton( klocale->translate(">>"), this );
-	nextButton->setGeometry( 400, 80, 40, 25 );
-	connect( nextButton, SIGNAL( clicked() ), SLOT( slotNextDesk() ) );
+    group = new QGroupBox( klocale->translate("Desktop"), this );
+    group->setGeometry( 15, 15, 210, 155 );
 
-	label = new QLabel( klocale->translate("Desktop Title"), this );
-	label->setGeometry( 15, 20, 100, 25 );
+    deskListBox = new QListBox( group );
+    deskListBox->setGeometry( 20, 25, 120, 75 );
+    getDeskNameList();
+    connect( deskListBox, SIGNAL( highlighted(int) ),
+	SLOT( slotSwitchDesk(int) ) );
 
-	deskEdit = new QLineEdit( this );
-	deskEdit->setGeometry( 15, 45, 100, 25 );
-	connect( deskEdit, SIGNAL( textChanged( const char * ) ),
-		SLOT( slotDeskTitleChanged( const char * ) ) );
+    button = new QPushButton( klocale->translate( "Rename..." ), group );
+    button->setGeometry( 20, 115, 120, 25 );
+    if ( !KWM::isKWMInitialized() )
+	button->setEnabled( false );
+    connect( button, SIGNAL( clicked() ), SLOT( slotRenameDesk() ) );
 
-	group = new QGroupBox( klocale->translate("Color"), this );
-	group->setGeometry( 15, 190, 210, 130 );
+    group = new QGroupBox( klocale->translate("Color"), this );
+    group->setGeometry( 15, 190, 210, 130 );
 
-	colButton1 = new KColorButton( group );
-	colButton1->setGeometry( 15, 25, 75, 30 );
-	connect( colButton1, SIGNAL( changed( const QColor & ) ),
-		SLOT( slotSelectColor1( const QColor & ) ) );
+    colButton1 = new KColorButton( group );
+    colButton1->setGeometry( 15, 25, 75, 30 );
+    connect( colButton1, SIGNAL( changed( const QColor & ) ),
+	    SLOT( slotSelectColor1( const QColor & ) ) );
 
-	colButton2 = new KColorButton( group );
-	colButton2->setGeometry( 15, 80, 75, 30 );
-	connect( colButton2, SIGNAL( changed( const QColor & ) ),
-		SLOT( slotSelectColor2( const QColor & ) ) );
-
-
-	gfGroup = new QButtonGroup( this );
-	gfGroup->hide();
-	gfGroup->setExclusive( TRUE );
-
-	rb = new QRadioButton( klocale->translate("Flat"), group );
-	rb->setGeometry( 100, 20, 100, 20 );
-	gfGroup->insert( rb, Flat );
-
-	rb = new QRadioButton( klocale->translate("Gradient"), group );
-	rb->setGeometry( 100, 40, 100, 20 );
-	gfGroup->insert( rb, Gradient );
-
-	connect( gfGroup, SIGNAL( clicked( int ) ), SLOT( slotGradientMode( int ) ) );
-
-	orGroup = new QButtonGroup( this );
-	orGroup->hide();
-	orGroup->setExclusive( TRUE );
-
-	rbPortrait = new QRadioButton( klocale->translate("Portrait"), group );
-	rbPortrait->setGeometry( 100, 75, 100, 20 );
-	orGroup->insert( rbPortrait, Portrait );
-
-	rbLandscape = new QRadioButton( klocale->translate("Landscape"), group );
-	rbLandscape->setGeometry( 100, 95, 100, 20 );
-	orGroup->insert( rbLandscape, Landscape );
-
-	connect( orGroup, SIGNAL( clicked( int ) ), SLOT( slotOrientMode( int ) ) );
+    colButton2 = new KColorButton( group );
+    colButton2->setGeometry( 15, 80, 75, 30 );
+    connect( colButton2, SIGNAL( changed( const QColor & ) ),
+	    SLOT( slotSelectColor2( const QColor & ) ) );
 
 
-	group = new QGroupBox( klocale->translate("Wallpaper"), this );
-	group->setGeometry( 240, 190, 215, 130 );
+    gfGroup = new QButtonGroup( this );
+    gfGroup->hide();
+    gfGroup->setExclusive( TRUE );
 
-	QString path = kapp->kdedir();
-	path += "/share/wallpapers";
-	QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
-	const QStrList *list = d.entryList();
+    rb = new QRadioButton( klocale->translate("Flat"), group );
+    rb->setGeometry( 100, 20, 100, 20 );
+    gfGroup->insert( rb, Flat );
 
-	wpCombo = new QComboBox( group );
-	wpCombo->setGeometry( 15, 20, 190, 25 );
-	wpCombo->insertItem( NO_WALLPAPER, 0 );
-	wpCombo->setCurrentItem( 0 );
+    rb = new QRadioButton( klocale->translate("Gradient"), group );
+    rb->setGeometry( 100, 40, 100, 20 );
+    gfGroup->insert( rb, Gradient );
 
-	QStrListIterator it( *list );
-	for ( int i = 1; it.current(); ++it, i++ )
-	{
-		wpCombo->insertItem( it.current() );
-		if ( wallpaper == it.current() )
-			wpCombo->setCurrentItem( i );
-	}
+    connect( gfGroup, SIGNAL( clicked( int ) ), SLOT( slotGradientMode( int ) ) );
 
-	if ( wallpaper != NO_WALLPAPER && wpCombo->currentItem() == 0 )
-	{
-		wpCombo->insertItem( wallpaper );
-		wpCombo->setCurrentItem( wpCombo->count()-1 );
-	}
-	connect( wpCombo, SIGNAL( activated( const char * ) ),
-			SLOT( slotWallpaper( const char * )  )  );
+    orGroup = new QButtonGroup( this );
+    orGroup->hide();
+    orGroup->setExclusive( TRUE );
 
-	wpGroup = new QButtonGroup( this );
-	wpGroup->hide();
-	wpGroup->setExclusive( TRUE );
+    rbPortrait = new QRadioButton( klocale->translate("Portrait"), group );
+    rbPortrait->setGeometry( 100, 75, 100, 20 );
+    orGroup->insert( rbPortrait, Portrait );
 
-	rb = new QRadioButton( klocale->translate("Tiled"), group );
-	rb->setGeometry( 20, 50, 85, 25 );
-	wpGroup->insert( rb, Tiled );
+    rbLandscape = new QRadioButton( klocale->translate("Landscape"), group );
+    rbLandscape->setGeometry( 100, 95, 100, 20 );
+    orGroup->insert( rbLandscape, Landscape );
 
-	rb = new QRadioButton( klocale->translate("Centred"), group );
-	rb->setGeometry( 20, 75, 85, 25 );
-	wpGroup->insert( rb, Centred );
+    connect( orGroup, SIGNAL( clicked( int ) ), SLOT( slotOrientMode( int ) ) );
 
-	rb = new QRadioButton( klocale->translate("Scaled"), group );
-	rb->setGeometry( 20, 100, 85, 25 );
-	wpGroup->insert( rb, Scaled );
 
-	connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
+    group = new QGroupBox( klocale->translate("Wallpaper"), this );
+    group->setGeometry( 240, 190, 215, 130 );
 
-	button = new QPushButton( klocale->translate("Browse..."), group );
-	button->setGeometry( 125, 55, 80, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
+    QString path = kapp->kdedir();
+    path += "/share/wallpapers";
+    QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
+    const QStrList *list = d.entryList();
 
-	button = new QPushButton( klocale->translate("Help"), group );
-	button->setGeometry( 125, 90, 80, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
-	
-	showSettings();
+    wpCombo = new QComboBox( group );
+    wpCombo->setGeometry( 15, 20, 190, 25 );
+    wpCombo->insertItem( NO_WALLPAPER, 0 );
+    wpCombo->setCurrentItem( 0 );
+
+    QStrListIterator it( *list );
+    for ( int i = 1; it.current(); ++it, i++ )
+    {
+	wpCombo->insertItem( it.current() );
+	if ( wallpaper == it.current() )
+	    wpCombo->setCurrentItem( i );
+    }
+
+    if ( wallpaper != NO_WALLPAPER && wpCombo->currentItem() == 0 )
+    {
+	wpCombo->insertItem( wallpaper );
+	wpCombo->setCurrentItem( wpCombo->count()-1 );
+    }
+    connect( wpCombo, SIGNAL( activated( const char * ) ),
+		SLOT( slotWallpaper( const char * )  )  );
+
+    wpGroup = new QButtonGroup( this );
+    wpGroup->hide();
+    wpGroup->setExclusive( TRUE );
+
+    rb = new QRadioButton( klocale->translate("Tiled"), group );
+    rb->setGeometry( 20, 50, 85, 25 );
+    wpGroup->insert( rb, Tiled );
+
+    rb = new QRadioButton( klocale->translate("Centred"), group );
+    rb->setGeometry( 20, 75, 85, 25 );
+    wpGroup->insert( rb, Centred );
+
+    rb = new QRadioButton( klocale->translate("Scaled"), group );
+    rb->setGeometry( 20, 100, 85, 25 );
+    wpGroup->insert( rb, Scaled );
+
+    connect( wpGroup, SIGNAL( clicked( int ) ), SLOT( slotWallpaperMode( int ) ) );
+
+    button = new QPushButton( klocale->translate("Browse..."), group );
+    button->setGeometry( 125, 55, 80, 25 );
+    connect( button, SIGNAL( clicked() ), SLOT( slotBrowse() ) );
+
+    button = new QPushButton( klocale->translate("Help"), group );
+    button->setGeometry( 125, 90, 80, 25 );
+    connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
+    
+    showSettings();
 }
 
 void KBackground::readSettings( int num )
@@ -358,9 +401,6 @@ void KBackground::readSettings( int num )
 		wallpaper = str;
 		loadWallpaper( str );
 	}
-
-	deskName = KWM::getDesktopName(num+1);
-	maxDesks = KWM::numberOfDesktops();
 }
 
 void KBackground::writeSettings( int num )
@@ -417,10 +457,32 @@ void KBackground::writeSettings( int num )
 			break;
 	}
 
-	KWM::setDesktopName(num+1, deskName);
 	changed = FALSE;
 
-  config->sync();
+	config->sync();
+}
+
+void KBackground::getDeskNameList()
+{
+    int i;
+    int current = deskListBox->currentItem();
+
+    if ( current < 0 )
+	current = 0;
+
+    deskListBox->setUpdatesEnabled( false );
+    deskListBox->clear();
+
+    if ( KWM::isKWMInitialized() )
+    {
+	for ( i = 0; i < maxDesks; i++ )
+	    deskListBox->insertItem( KWM::getDesktopName(i+1) );
+    }
+    else
+       deskListBox->insertItem( klocale->translate( "Default" ) );
+    
+    deskListBox->setCurrentItem( current );
+    deskListBox->setUpdatesEnabled( true );
 }
 
 void KBackground::setDesktop( int desk )
@@ -433,20 +495,10 @@ void KBackground::setDesktop( int desk )
     deskNum = desk;
 
     if ( deskNum <= 0 )
-    {
 	deskNum = 0;
-	prevButton->setEnabled( false);
-    }
-    else
-	prevButton->setEnabled( true );
 
     if ( deskNum >= maxDesks - 1 )
-    {
 	deskNum = maxDesks - 1;
-	nextButton->setEnabled( false );
-    }
-    else
-	nextButton->setEnabled( true );
 
     readSettings( deskNum );
     showSettings();
@@ -455,7 +507,6 @@ void KBackground::setDesktop( int desk )
 
 void KBackground::showSettings()
 { 
-    deskEdit->setText( deskName );
     colButton1->setColor( color1 );
     colButton2->setColor( color2 );
     ((QRadioButton *)gfGroup->find( Flat ))->setChecked( gfMode == Flat );
@@ -555,8 +606,6 @@ void KBackground::retainResources() {
 
 void KBackground::setMonitor()
 {
-	QApplication::setOverrideCursor( waitCursor );
-
 	if ( !wallpaper.isNull() && wallpaper != NO_WALLPAPER )
 	{
 		float sx = (float)monitor->width() / QApplication::desktop()->width();
@@ -579,8 +628,6 @@ void KBackground::setMonitor()
 		monitor->setBackgroundPixmap( preview );	
 	}
 	else monitor->setBackgroundColor( color1 );
-
-	QApplication::restoreOverrideCursor();
 }
 
 // Attempts to load the specified wallpaper and creates a centred/scaled
@@ -594,6 +641,8 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 	QString filename;
 	int rv = FALSE;
 	QPixmap tmp;
+
+	QApplication::setOverrideCursor( waitCursor );
 
 	if ( useContext )
 	{
@@ -647,6 +696,8 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 	if ( useContext )
 		QColor::leaveAllocContext();
 
+	QApplication::restoreOverrideCursor();
+
 	return rv;
 }
 
@@ -656,6 +707,9 @@ void KBackground::slotSelectColor1( const QColor &col )
 
 	if ( gfMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
 	{
+		// force the background to be made with different background
+		if ( wpMode == Centred )
+		    loadWallpaper( wallpaper );
 		setMonitor();
 	}
 
@@ -748,20 +802,22 @@ void KBackground::slotOrientMode( int m )
 	changed = TRUE;
 }
 
-void KBackground::slotPrevDesk()
+void KBackground::slotSwitchDesk( int num )
 {
-    setDesktop( deskNum - 1 );
+    setDesktop( num );
 }
 
-void KBackground::slotNextDesk()
+void KBackground::slotRenameDesk()
 {
-    setDesktop( deskNum + 1 );
-}
+    KRenameDeskDlg dlg( KWM::getDesktopName( deskNum+1 ), this );
 
-void KBackground::slotDeskTitleChanged( const char * arg)
-{
-    changed = true;
-    deskName = arg;
+    dlg.setCaption( klocale->translate( "Desktop Title" ) );
+
+    if ( dlg.exec() == QDialog::Accepted )
+    {
+	KWM::setDesktopName( deskNum+1, dlg.title() );
+	getDeskNameList();
+    }
 }
 
 void KBackground::slotHelp()

@@ -11,6 +11,7 @@
 #include <qwidget.h>
 #include <qpushbt.h>
 #include <qcombo.h>
+#include <qlistbox.h>
 #include <qradiobt.h>
 #include <qlined.h>
 #include <qbttngrp.h>
@@ -27,6 +28,20 @@ public:
 
 	// we don't want no steenking palette change
 	virtual void setPalette( const QPalette & ) {};
+};
+
+class KRenameDeskDlg : public QDialog
+{
+    Q_OBJECT
+public:
+    KRenameDeskDlg( const char *t, QWidget *parent );
+    virtual ~KRenameDeskDlg() {}
+
+    const char *title()
+	{  return edit->text(); }
+
+private:
+    QLineEdit *edit;
 };
 
 class KBackground : public KDisplayModule
@@ -50,12 +65,12 @@ protected slots:
 	void slotWallpaperMode( int );
 	void slotGradientMode( int );
 	void slotOrientMode( int );
-	void slotPrevDesk();
-	void slotNextDesk();
-	void slotDeskTitleChanged( const char * );
+	void slotSwitchDesk( int );
+	void slotRenameDesk();
 	void slotHelp();
 
 protected:
+	void getDeskNameList();
 	void setDesktop( int );
 	void showSettings();
 	void writeSettings( int deskNum = 0 );
@@ -67,10 +82,8 @@ protected:
 	enum { Tiled = 1, Centred, Scaled };
 	enum { Flat = 1, Gradient };
 	enum { Portrait = 1, Landscape };
-	
-	QLineEdit *deskEdit;
-	QPushButton *prevButton;
-	QPushButton *nextButton;
+
+	QListBox     *deskListBox;
 	QRadioButton *rbPortrait;
 	QRadioButton *rbLandscape;
 	KColorButton *colButton1;
@@ -85,6 +98,7 @@ protected:
 	QString wallpaper;
 	QPixmap wpPixmap;
 	QString deskName;
+	QStrList deskNames;
 	int wpMode;
 	int gfMode;
 	int orMode;
