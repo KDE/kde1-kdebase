@@ -12,7 +12,7 @@
 #endif
 
 #define DEF_XDM_CONFIG XDMDIR##"/xdm-config"
-#define DEF_AUTH_DIR XDMDIR
+#define DEF_AUTH_DIR XDMDIR##"/authDir"
 
 /* Authorization stuff */
 /* How do we check for HASXDMAUTH? Use Imake ?? */

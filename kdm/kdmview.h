@@ -6,8 +6,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:46:59 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Mon Jun 16 19:59:00 1997
-// Update Count     : 6
+// Last Modified On : Thu Sep  4 17:05:46 1997
+// Update Count     : 7
 // Status           : Unknown, Use with caution!
 // 
 
@@ -67,7 +67,7 @@ public:
      virtual void show();
      QSize sizeHint() const;
      int sizeHintHeight( int) const;
-     //int absMinHeight() const { return cellHeight()+2*frameWidth();}
+     int minimumHeight() const { return cellHeight()+2*frameWidth();}
 signals:
      void selected( int);
 protected:

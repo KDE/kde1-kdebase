@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:45:44 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Tue Jun 17 02:38:27 1997
-// Update Count     : 64
+// Last Modified On : Thu Sep  4 17:06:00 1997
+// Update Count     : 65
 // Status           : Unknown, Use with caution!
 // 
 
@@ -106,8 +106,10 @@ KDMView::KDMView( QWidget* parent, const char* name, WFlags f)
      }
      itemList = new KVItemList;
      setFocusPolicy( StrongFocus );
-     setNumCols( /*numCols*/ 1 );
+     setNumCols( 1 );
      cur_col = cur_row = -1;
+     setCurrentRow( -1);
+     setCurrentCol( -1);
 }
 
 KDMView::~KDMView()
@@ -313,7 +315,6 @@ KDMView::mousePressEvent( QMouseEvent *e )
 void
 KDMView::mouseDoubleClickEvent( QMouseEvent * )
 {
-     //mouseReleaseEvent( e );
      if ( currentItem() >= 0 ) {
 	  emit selected( currentItem());
      }
