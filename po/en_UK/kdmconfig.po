@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdmconfig\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-26 21:22+1000\n"
+"Last-Translator: Martin Jones <mjones@kde.org>\n"
+
+#: main.cpp:87
+msgid "&Appearance"
+msgstr ""
+
+#: main.cpp:91
+msgid "&Fonts"
+msgstr ""
+
+#: main.cpp:95
+msgid "&Background"
+msgstr ""
+
+#: main.cpp:98
+msgid "&Users"
+msgstr ""
+
+#: main.cpp:101
+msgid "&Sessions"
+msgstr ""
+
+#: main.cpp:106
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+
+#: main.cpp:145
+msgid "KDM Configuration"
+msgstr ""
+
+#: main.cpp:155
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+
+#: main.cpp:157
+msgid "Missing privileges"
+msgstr ""
+
+#: kdm-appear.cpp:67
+msgid "Appearance"
+msgstr ""
+
+#: kdm-appear.cpp:70
+msgid "Greeting string:"
+msgstr ""
+
+#: kdm-appear.cpp:78
+msgid "KDM logo:"
+msgstr ""
+
+#: kdm-appear.cpp:105 kdm-users.cpp:135
+msgid "Click or drop an image here"
+msgstr ""
+
+#: kdm-appear.cpp:110
+msgid "GUI Style:"
+msgstr ""
+
+#: kdm-appear.cpp:116
+msgid "Motif"
+msgstr ""
+
+#: kdm-appear.cpp:117
+msgid "Windows"
+msgstr ""
+
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr ""
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr ""
+
+#: kdm-appear.cpp:168 kdm-appear.cpp:252 kdm-users.cpp:275
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-users.cpp:195
+msgid "<"
+msgstr ""
+
+#: kdm-appear.cpp:171 kdm-appear.cpp:190 kdm-appear.cpp:255 kdm-users.cpp:196
+#: kdm-users.cpp:278
+msgid "ERROR"
+msgstr ""
+
+#: kdm-appear.cpp:187 kdm-users.cpp:193
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+
+#: kdm-appear.cpp:220 kdm-users.cpp:226
+msgid "Sorry, but \n"
+msgstr ""
+
+#: kdm-appear.cpp:222 kdm-users.cpp:228
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+
+#: kdm-appear.cpp:223 kdm-users.cpp:229
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+
+#: kdm-appear.cpp:225 kdm-users.cpp:231
+msgid "Improper File Extension"
+msgstr ""
+
+#: kdm-appear.cpp:254 kdm-users.cpp:277
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr ""
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr ""
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr ""
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr ""
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr ""
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr ""
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "Colour"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr ""
+
+#: kdm-bgnd.cpp:109
+msgid "Tiled"
+msgstr ""
+
+#: kdm-bgnd.cpp:113
+msgid "Centred"
+msgstr ""
+
+#: kdm-bgnd.cpp:117
+msgid "Scaled"
+msgstr ""
+
+#: kdm-users.cpp:48
+msgid "All users"
+msgstr ""
+
+#: kdm-users.cpp:50
+msgid "Selected users"
+msgstr ""
+
+#: kdm-users.cpp:52
+msgid "No-show users"
+msgstr ""
+
+#: kdm-users.cpp:79
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+
+#: kdm-users.cpp:86
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr ""
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr ""
+
+#: kdm-users.cpp:181 kdm-users.cpp:250
+msgid "No user selected"
+msgstr ""
+
+#: kdm-users.cpp:182 kdm-users.cpp:251
+msgid "Save image as default image?"
+msgstr ""
+
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown:"
+msgstr ""
+
+#: kdm-sess.cpp:56
+msgid "None"
+msgstr ""
+
+#: kdm-sess.cpp:57
+msgid "All"
+msgstr ""
+
+#: kdm-sess.cpp:58
+msgid "Root Only"
+msgstr ""
+
+#: kdm-sess.cpp:59
+msgid "Console Only"
+msgstr ""
+
+#: kdm-sess.cpp:63
+msgid "Commands"
+msgstr ""
+
+#: kdm-sess.cpp:65
+msgid "Shutdown"
+msgstr ""
+
+#: kdm-sess.cpp:73
+msgid "Restart"
+msgstr ""
+
+#: kdm-sess.cpp:85
+msgid "Session types"
+msgstr ""
+
+#: kdm-sess.cpp:88
+msgid "New type"
+msgstr ""
+
+#: kdm-sess.cpp:98
+msgid "Available types"
+msgstr ""
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr ""

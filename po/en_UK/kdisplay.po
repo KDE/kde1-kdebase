@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdisplay\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-26 21:22+1000\n"
+"Last-Translator: Martin Jones <mjones@kde.org>\n"
+
+#: backgnd.cpp:57
+msgid "Enter new desktop name"
+msgstr ""
+
+#: backgnd.cpp:113 backgnd.cpp:148
+msgid "Desktop"
+msgstr ""
+
+#: backgnd.cpp:165
+msgid "&Rename ..."
+msgstr ""
+
+#: backgnd.cpp:191 colorscm.cpp:93
+msgid "Colors"
+msgstr "Colours"
+
+#: backgnd.cpp:218
+msgid "&One Color"
+msgstr "&One Colour"
+
+#: backgnd.cpp:235
+msgid "&Two Color"
+msgstr "&Two Colour"
+
+#: backgnd.cpp:254
+msgid "Set&up ..."
+msgstr ""
+
+#: backgnd.cpp:263
+msgid "Wallpaper"
+msgstr ""
+
+#: backgnd.cpp:273
+msgid "Ti&led"
+msgstr ""
+
+#: backgnd.cpp:281
+msgid "&Centred"
+msgstr ""
+
+#: backgnd.cpp:289
+msgid "&Scaled"
+msgstr ""
+
+#: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
+msgid "No wallpaper"
+msgstr ""
+
+#: backgnd.cpp:333
+msgid "&Browse..."
+msgstr ""
+
+#: backgnd.cpp:530
+msgid "Default"
+msgstr ""
+
+#: backgnd.cpp:861
+msgid "Desktop names"
+msgstr ""
+
+#: backgnd.cpp:907
+msgid "Two color backgrounds"
+msgstr "Two colour backgrounds"
+
+#: backgnd.cpp:944
+msgid "Blend colors from &top to bottom"
+msgstr "Blend colours from &top to bottom"
+
+#: backgnd.cpp:950
+msgid "Blend colors from &right to left"
+msgstr "Blend colours from &right to left"
+
+#: backgnd.cpp:956
+msgid "Use &pattern"
+msgstr ""
+
+#: backgnd.cpp:983
+msgid "Preview"
+msgstr ""
+
+#: backgnd.cpp:994
+msgid "Pattern &name"
+msgstr ""
+
+#: backgnd.cpp:1033
+msgid "Current"
+msgstr ""
+
+#: backgnd.cpp:1093
+msgid "Filled"
+msgstr ""
+
+#: backgnd.cpp:1096
+msgid "Fish net"
+msgstr ""
+
+#: backgnd.cpp:1099
+msgid "Triangles"
+msgstr ""
+
+#: backgnd.cpp:1102
+msgid "Flowers"
+msgstr ""
+
+#: backgnd.cpp:1105
+msgid "Rattan"
+msgstr ""
+
+#: backgnd.cpp:1108
+msgid "Cobbled Pavement"
+msgstr ""
+
+#: colorscm.cpp:119
+msgid "Color Scheme"
+msgstr "Colour Scheme"
+
+#: colorscm.cpp:130
+msgid "Current scheme"
+msgstr ""
+
+#: colorscm.cpp:132
+msgid "KDE default"
+msgstr ""
+
+#: colorscm.cpp:145
+msgid "&Add ..."
+msgstr ""
+
+#: colorscm.cpp:153
+msgid "&Remove"
+msgstr ""
+
+#: colorscm.cpp:162
+msgid "&Save changes"
+msgstr ""
+
+#: colorscm.cpp:176
+msgid "Widget color"
+msgstr ""
+
+#: colorscm.cpp:183
+msgid "Inactive title bar"
+msgstr ""
+
+#: colorscm.cpp:184
+msgid "Inactive title text"
+msgstr ""
+
+#: colorscm.cpp:185
+msgid "Inactive title blend"
+msgstr ""
+
+#: colorscm.cpp:186
+msgid "Active title bar"
+msgstr ""
+
+#: colorscm.cpp:187
+msgid "Active title text"
+msgstr ""
+
+#: colorscm.cpp:188
+msgid "Active title blend"
+msgstr ""
+
+#: colorscm.cpp:189
+msgid "Background"
+msgstr ""
+
+#: colorscm.cpp:190
+msgid "Text"
+msgstr ""
+
+#: colorscm.cpp:191
+msgid "Select background"
+msgstr ""
+
+#: colorscm.cpp:192
+msgid "Select text"
+msgstr ""
+
+#: colorscm.cpp:193
+msgid "Window background"
+msgstr ""
+
+#: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr ""
+
+#: colorscm.cpp:222
+msgid "Contrast"
+msgstr ""
+
+#: colorscm.cpp:238
+msgid "&Low"
+msgstr ""
+
+#: colorscm.cpp:246
+msgid "High"
+msgstr ""
+
+#: colorscm.cpp:318
+msgid "Error removing"
+msgstr ""
+
+#: colorscm.cpp:319
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"This colour scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the colour scheme is stored."
+
+#: colorscm.cpp:376
+msgid "Naming error"
+msgstr ""
+
+#: colorscm.cpp:377
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"Please choose a unique name for the new colour\n"
+"scheme. The one you entered already appears\n"
+"in the colour scheme list."
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "Add a colour scheme"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Enter a name for the new colour scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colours currently used in the preview will\n"
+"be copied into this scheme to begin with."
+
+#: scrnsave.cpp:48
+msgid "Ignore"
+msgstr ""
+
+#: scrnsave.cpp:49
+msgid "Save Screen"
+msgstr ""
+
+#: scrnsave.cpp:50
+msgid "Lock Screen"
+msgstr ""
+
+#: scrnsave.cpp:110 scrnsave.cpp:179
+msgid "Screen Saver"
+msgstr ""
+
+#: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
+msgid "No screensaver"
+msgstr ""
+
+#: scrnsave.cpp:207
+msgid "&Setup ..."
+msgstr ""
+
+#: scrnsave.cpp:215
+msgid "&Test"
+msgstr ""
+
+#: scrnsave.cpp:228
+msgid "Settings"
+msgstr ""
+
+#: scrnsave.cpp:248
+msgid "&Wait for"
+msgstr ""
+
+#: scrnsave.cpp:258
+msgid "min."
+msgstr ""
+
+#: scrnsave.cpp:264
+msgid "&Require password"
+msgstr ""
+
+#: scrnsave.cpp:272
+msgid "Priority"
+msgstr ""
+
+#: scrnsave.cpp:285
+msgid "&High"
+msgstr ""
+
+#: scrnsave.cpp:294
+msgid "Low"
+msgstr ""
+
+#: general.cpp:147
+msgid "Fonts etc."
+msgstr ""
+
+#: general.cpp:153
+msgid "&Draw widgets in the style of Windows 95"
+msgstr ""
+
+#: general.cpp:167
+msgid "Desktop fonts"
+msgstr ""
+
+#: general.cpp:179
+msgid "General font"
+msgstr ""
+
+#: general.cpp:184
+msgid "Fixed font"
+msgstr ""
+
+#: general.cpp:189
+msgid "Window title font"
+msgstr ""
+
+#: general.cpp:194
+msgid "Panel button font"
+msgstr ""
+
+#: general.cpp:199
+msgid "Panel clock font"
+msgstr ""
+
+#: main.cpp:61
+msgid "&Fonts etc."
+msgstr ""
+
+#: main.cpp:64
+msgid "&Background"
+msgstr ""
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr ""
+
+#: main.cpp:71
+msgid "&Colors"
+msgstr "&Colours"
+
+#: main.cpp:77
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+
+#: main.cpp:117
+msgid "Display settings"
+msgstr ""
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr ""
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr ""
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr ""
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr ""
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr ""
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr ""
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr ""

@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-26 21:22+1000\n"
+"Last-Translator: Martin Jones <mjones@kde.org>\n"
+
+#: main.C:67
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+
+#: main.C:81
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr ""
+
+#: main.C:448
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:455
+msgid "Usage: "
+msgstr ""
+
+#: main.C:466
+msgid "&Maximize"
+msgstr "&Maximise"
+
+#: main.C:467
+msgid "&Restore"
+msgstr ""
+
+#: main.C:468
+msgid "&Iconify"
+msgstr ""
+
+#: main.C:469
+msgid "&DeIconify"
+msgstr ""
+
+#: main.C:470
+msgid "&Sticky"
+msgstr ""
+
+#: main.C:471
+msgid "&UnSticky"
+msgstr ""
+
+#: main.C:472
+msgid "Mo&ve"
+msgstr ""
+
+#: main.C:473
+msgid "Resi&ze"
+msgstr ""
+
+#: main.C:475
+msgid "&To desktop"
+msgstr ""
+
+#: main.C:477
+msgid "&Onto current desktop"
+msgstr ""
+
+#: main.C:530
+msgid "One"
+msgstr ""
+
+#: main.C:533
+msgid "Two"
+msgstr ""
+
+#: main.C:536
+msgid "Three"
+msgstr ""
+
+#: main.C:539
+msgid "Four"
+msgstr ""
+
+#: main.C:542
+msgid "Five"
+msgstr ""
+
+#: main.C:545
+msgid "Six"
+msgstr ""
+
+#: main.C:548
+msgid "Seven"
+msgstr ""
+
+#: main.C:551
+msgid "Eight"
+msgstr ""
+
+#: main.C:855
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr ""
+
+#: main.C:1164
+msgid "*** No Tasks ***"
+msgstr ""
+
+#: minicli.C:115
+msgid "Command:"
+msgstr ""
+
+#: logout.C:36 taskmgr.C:107
+msgid "Logout"
+msgstr ""
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr ""
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+
+#: taskmgr.C:106
+msgid "Switch to"
+msgstr ""
+
+#: taskmgr.C:120
+msgid "Current session"
+msgstr ""

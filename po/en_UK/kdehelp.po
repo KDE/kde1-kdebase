@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdehelp\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-04-26 21:22+1000\n"
+"Last-Translator: Martin Jones <mjones@kde.org>\n"
+
+#: helpwin.cpp:58
+msgid "KDE Help: Open URL"
+msgstr ""
+
+#: helpwin.cpp:60
+msgid "Open URL"
+msgstr ""
+
+#: helpwin.cpp:454 info.cpp:274
+msgid "Cannot open: "
+msgstr ""
+
+#: helpwin.cpp:455 helpwin.cpp:464
+msgid "Oops!"
+msgstr ""
+
+#: helpwin.cpp:463
+msgid "Unknown format: "
+msgstr ""
+
+#: helpwin.cpp:833
+msgid "Could not start or find KFM"
+msgstr ""
+
+#: helpwin.cpp:1322
+msgid "Open this Link"
+msgstr ""
+
+#: helpwin.cpp:1323
+msgid "Add Bookmark"
+msgstr ""
+
+#: helpwin.cpp:1324
+msgid "Open in new Window"
+msgstr ""
+
+#: info.cpp:86 info.cpp:601
+msgid "Error in info file"
+msgstr ""
+
+#: info.cpp:1230
+#, c-format
+msgid "Node not found: %s"
+msgstr ""
+
+#: info.cpp:1375
+#, c-format
+msgid "Cannot open info file: %s"
+msgstr ""
+
+#: error.cpp:23
+msgid "Fatal Error: "
+msgstr ""
+
+#: error.cpp:28
+msgid "Warning: "
+msgstr ""
+
+#: options.cpp:36
+msgid "Font Size"
+msgstr ""
+
+#: options.cpp:40
+msgid "Small"
+msgstr ""
+
+#: options.cpp:44
+msgid "Medium"
+msgstr ""
+
+#: options.cpp:48
+msgid "Large"
+msgstr ""
+
+#: options.cpp:52
+msgid "Standard Font"
+msgstr ""
+
+#: options.cpp:69
+msgid "Fixed Font"
+msgstr ""
+
+#: options.cpp:208
+msgid "Background Color:"
+msgstr "Background Colour:"
+
+#: options.cpp:216
+msgid "Normal Text Color:"
+msgstr "Normal Text Colour:"
+
+#: options.cpp:224
+msgid "URL Link Color:"
+msgstr "URL Link Colour:"
+
+#: options.cpp:232
+msgid "Followed Link Color:"
+msgstr "Followed Link Colour:"
+
+#: options.cpp:303
+msgid "KDE Help Options"
+msgstr ""
+
+#: options.cpp:311 options.cpp:312
+msgid "Fonts"
+msgstr ""
+
+#: options.cpp:316 options.cpp:317
+msgid "Colors"
+msgstr "Colours"
+
+#: man.cpp:84 man.cpp:788
+msgid "Online Manuals"
+msgstr ""
+
+#: man.cpp:90
+#, c-format
+msgid "Section %s"
+msgstr ""
+
+#: man.cpp:106
+#, c-format
+msgid "Online manual - Section %s"
+msgstr ""
+
+#: man.cpp:455
+msgid "User Commands"
+msgstr ""
+
+#: man.cpp:457
+msgid "System Calls"
+msgstr ""
+
+#: man.cpp:459
+msgid "Subroutines"
+msgstr ""
+
+#: man.cpp:461
+msgid "Devices"
+msgstr ""
+
+#: man.cpp:463
+msgid "File Formats"
+msgstr ""
+
+#: man.cpp:465
+msgid "Games"
+msgstr ""
+
+#: man.cpp:467
+msgid "Miscellaneous"
+msgstr ""
+
+#: man.cpp:469
+msgid "System Administration"
+msgstr ""
+
+#: man.cpp:580
+msgid "Reading Dir: "
+msgstr ""
+
+#: man.cpp:777
+msgid "Online Manual - Section"
+msgstr ""
+
+#: man.cpp:835
+msgid "\"man\" system call failed"
+msgstr ""
+
+#: man.cpp:853
+msgid "Opening temporary file failed"
+msgstr ""
+
+#: cgi.cpp:80
+#, c-format
+msgid "CGI: Destination URL malformed: %s\n"
+msgstr ""
+
+#: mainwidget.cpp:132
+msgid "&New Help Window"
+msgstr ""
+
+#: mainwidget.cpp:135
+msgid "&Open File..."
+msgstr ""
+
+#: mainwidget.cpp:136
+msgid "Open UR&L..."
+msgstr ""
+
+#: mainwidget.cpp:137
+msgid "&Reload"
+msgstr ""
+
+#: mainwidget.cpp:139
+msgid "&Search"
+msgstr ""
+
+#: mainwidget.cpp:152
+msgid "&Back"
+msgstr ""
+
+#: mainwidget.cpp:153
+msgid "&Forward"
+msgstr ""
+
+#: mainwidget.cpp:156
+msgid "&Top"
+msgstr ""
+
+#: mainwidget.cpp:157
+msgid "&Up"
+msgstr ""
+
+#: mainwidget.cpp:158
+msgid "&Previous"
+msgstr ""
+
+#: mainwidget.cpp:159
+msgid "&Next"
+msgstr ""
+
+#: mainwidget.cpp:171
+msgid "&General Preferences..."
+msgstr ""
+
+#: mainwidget.cpp:174
+msgid "Show &Toolbar"
+msgstr ""
+
+#: mainwidget.cpp:176
+msgid "Show &Location"
+msgstr ""
+
+#: mainwidget.cpp:177
+msgid "Show Status&bar"
+msgstr ""
+
+#: mainwidget.cpp:180
+msgid "&Save Options"
+msgstr ""
+
+#: mainwidget.cpp:182
+msgid "KDE Help System\n"
+msgstr ""
+
+#: mainwidget.cpp:183
+msgid "Version "
+msgstr ""
+
+#: mainwidget.cpp:185
+msgid ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"This program is licensed under the GNU General Public License (GPL).\n"
+"KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
+"applicable law."
+msgstr ""
+
+#: mainwidget.cpp:201
+msgid "&Goto"
+msgstr ""
+
+#: mainwidget.cpp:202
+msgid "&Bookmarks"
+msgstr ""
+
+#: mainwidget.cpp:220
+msgid "Previous Document"
+msgstr ""
+
+#: mainwidget.cpp:225
+msgid "Next Document"
+msgstr ""
+
+#: mainwidget.cpp:232
+msgid "Previous Node"
+msgstr ""
+
+#: mainwidget.cpp:237
+msgid "Next Node"
+msgstr ""
+
+#: mainwidget.cpp:242
+msgid "Up one Node"
+msgstr ""
+
+#: mainwidget.cpp:247
+msgid "Top Node"
+msgstr ""
+
+#: mainwidget.cpp:254
+msgid "Help Contents"
+msgstr ""
+
+#: mainwidget.cpp:259
+msgid "Reload current document"
+msgstr ""
+
+#: mainwidget.cpp:264
+msgid "Stop"
+msgstr ""
+
+#: mainwidget.cpp:288
+msgid "In the Constructor!"
+msgstr ""
+
+#: mainwidget.cpp:582
+msgid ""
+"KDE Help System\n"
+"Version "
+msgstr ""
+
+#: mainwidget.cpp:584
+msgid "About KDE Help"
+msgstr ""
+
+#: mainwidget.cpp:617
+msgid "&Add Bookmark"
+msgstr ""
