@@ -125,6 +125,8 @@ void KDesktopConfig::setElectricBordersMovePointer(bool move){
     movepointer->setChecked(false);
   }
 
+  movepointer->setEnabled(enable->isChecked());
+
 }
 
 void KDesktopConfig::setElectricBorders(int delay)
@@ -133,6 +135,8 @@ void KDesktopConfig::setElectricBorders(int delay)
   {
     enable->setChecked(false);
     movepointer->setEnabled(false);
+    delayslider->setValue(0);
+    delaylcd->display(0);
     
   }
   else
@@ -143,7 +147,11 @@ void KDesktopConfig::setElectricBorders(int delay)
     delayslider->setValue(delay);
     delaylcd->display(delay);
   }
+
+  setEBorders();
+
 }
+
 
 void KDesktopConfig::GetSettings( void )
 {

@@ -967,8 +967,9 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   lPixmapInactive->adjustSize();
 
   iconLoader = new KIconLoader();
-  for (int i=5; i>=0; i--)
-    iconLoader->getDirList()->remove(i);
+
+  iconLoader->getDirList()->clear();
+   
   iconLoader->insertDirectory(0, kapp->kde_datadir()+"/kwm/toolbar");
   iconLoader->insertDirectory(1, kapp->kde_toolbardir());
   iconLoader->insertDirectory(2, kapp->kde_datadir()+"/kwm/pics");
