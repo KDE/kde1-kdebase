@@ -64,7 +64,7 @@ About::About (QWidget * aParent, const char *aName, bool aInit)
   box->addWidget(frm);
   box->addSpacing(5);
 
-  lbl = new QLabel("Kde Theme Manager", this);
+  lbl = new QLabel(i18n("KDE Theme Manager"), this);
   lbl->setFont(fnt);
   lbl->setMinimumSize(lbl->sizeHint());
   box->addWidget(lbl);

@@ -1,6 +1,7 @@
 /* (C) 1998 Stefan Taferner <taferner@kde.org>
  */
 #include <qlayout.h>
+#include <kapp.h>
 #include "groupdetails.h"
 #include "theme.h"
 #include "global.h"
@@ -24,29 +25,29 @@ GroupDetails::GroupDetails(const char* aGroupName):
 
   topLayout->addLayout(buttonLayout);
 
-  btnAdd = new QPushButton("Add", this);
+  btnAdd = new QPushButton(i18n("Add"), this);
   btnAdd->setFixedSize(btnAdd->sizeHint());
   buttonLayout->addWidget(btnAdd);
   connect(btnAdd, SIGNAL(clicked()), this, SLOT(slotAdd()));
 
-  btnRemove = new QPushButton("Remove", this);
+  btnRemove = new QPushButton(i18n("Remove"), this);
   btnRemove->setFixedSize(btnRemove->sizeHint());
   buttonLayout->addWidget(btnRemove);
   connect(btnRemove, SIGNAL(clicked()), this, SLOT(slotRemove()));
 
-  btnEdit = new QPushButton("Edit", this);
+  btnEdit = new QPushButton(i18n("Edit"), this);
   btnEdit->setFixedSize(btnEdit->sizeHint());
   buttonLayout->addWidget(btnEdit);
   connect(btnEdit, SIGNAL(clicked()), this, SLOT(slotEdit()));
 
   buttonLayout->addStretch(10);
 
-  btnOk = new QPushButton("Ok", this);
+  btnOk = new QPushButton(i18n("OK"), this);
   btnOk->setFixedSize(btnOk->sizeHint() - QSize(6,2));
   connect(btnOk, SIGNAL(clicked()), this, SLOT(slotOk()));
   buttonLayout->addWidget(btnOk);
 
-  btnCancel = new QPushButton("Cancel", this);
+  btnCancel = new QPushButton(i18n("Cancel"), this);
   btnCancel->setFixedSize(btnCancel->sizeHint() - QSize(6,2));
   connect(btnCancel, SIGNAL(clicked()), this, SLOT(slotCancel()));
   buttonLayout->addWidget(btnCancel);
