@@ -159,7 +159,7 @@ msgstr "Otvori» prieèinok"
 
 #: pfilemenu.C:481
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
+msgstr "Otvori» tento prieèinok (+Shift: Spusti» tu term.)"
 
 #: pfilemenu.C:489
 msgid "(Too Many Files)"
