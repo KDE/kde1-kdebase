@@ -1168,7 +1168,7 @@ void msgHandler(QtMsgType type, const char* msg)
   }
 }
 
-main(int argc, char** argv)
+int main(int argc, char** argv)
 {
   qInstallMsgHandler(msgHandler);
   KiKbdApplication appl(argc, argv);
