@@ -86,6 +86,8 @@ int main(char argc, char **argv)
     StatChunk->pos_max	= ASample->duration();
     StatChunk->pos_current	= ASample->playpos();
 
+    KeysChunk->is_alive = 1; // Give a sign, maudio is still alive
+
     if ( EventCounterRead(&(KeysChunk->exit), 0) ) {
       // Terminate, when Exit pressed
       goto exit_pos;
@@ -429,6 +431,8 @@ void ma_atexit(void)
 {
   /* Notify mediatool of exiting slave */
   if (IsSlave) {
+    if (KeysChunk)
+      KeysChunk->is_alive = 0;
     if(StatStatPtr)
       *StatStatPtr =  MD_STAT_EXITED;
   }

@@ -37,6 +37,7 @@ char		KMServerPidFile[maxFnameLen];
 
 MdCh_IHDR	*IhdrChunk;
 MdCh_STAT	*StatChunk;
+MdCh_KEYS	*KeysChunk;
 MediaCon	m;
 Display		*globalDisplay;
 pid_t		maudioPID = 0;
@@ -131,6 +132,9 @@ void fatalexit(char *s)
 int myXerrorHandler(Display *dsp)
 {
   fatalexit("kaudioserver: Catching fatal X IO Error. Cleaning up.\n");
+
+  // We should never pass this line
+  return 0;
 }
 
 
@@ -149,7 +153,7 @@ void initXconnection()
   Display *dpy = globalDisplay;
   if ( globalDisplay != 0 ) {
     XSetIOErrorHandler(myXerrorHandler);
-    Window w = XCreateSimpleWindow(dpy, DefaultRootWindow(dpy), 0,0,1,1, \
+    XCreateSimpleWindow(dpy, DefaultRootWindow(dpy), 0,0,1,1, \
 	0,
         BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)),
         BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)) );
@@ -173,11 +177,27 @@ int initMediatool(char *Cid)
     MdConnect(CommId, &m);
     if (m.shm_adr != NULL) {
       // OK, there is an old connection
+      KeysChunk = (MdCh_KEYS*)FindChunkData(m.shm_adr, "KEYS");
       StatChunk = (MdCh_STAT*)FindChunkData(m.shm_adr, "STAT");
-      if (StatChunk)
-	if ( ! ( StatChunk->status & MD_STAT_EXITED) )
-	  // OK, everything is good. The Server still lives
-	  return 1;
+      if (StatChunk && KeysChunk) {
+	if ( ! ( StatChunk->status & MD_STAT_EXITED) ) {
+	  /* OK. The Server seems to be still alive. Now, I'll probe, if he
+           * REALLY is alive. A server that is alive, will set the is_alive
+           * flag to 1 as soon as possible.
+           */
+          KeysChunk->is_alive = 0;
+          int tries;
+          for (tries=100; tries > 0; tries--) {
+            if (KeysChunk->is_alive == 1)
+              // Aha - Server has set the "Alive" flag. Very good
+              break;
+            else
+              usleep(50000);
+          }
+          if (tries != 0)
+	    return 1; // Yes. The server really lives
+        }
+      }
     }
   }
 
