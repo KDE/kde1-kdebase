@@ -1078,7 +1078,7 @@ char	*user, *home;
     if (user)
     {
 	env = setEnv (env, "USER", user);
-#if defined(SYSV) || defined(SVR4)
+#if defined(SYSV) || defined(SVR4) || defined(linux)
 	env = setEnv (env, "LOGNAME", user);
 #endif
     }

@@ -19,7 +19,7 @@ kdisplay kde Modules
 kdmconfig x11 Apps/KDE/System
 kfind x11 Apps/KDE/Tools
 kfmclient kde Modules
-kfmsu x11 System
+kfmsu x11 Apps/KDE/System
 kfontmanager kde Modules
 kikbd x11 Apps/KDE/Tools
 kmenuedit kde Modules 

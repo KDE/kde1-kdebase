@@ -99,7 +99,7 @@ char	*user, *home, *shell;
     env = setEnv (env, "DISPLAY", d->name);
     env = setEnv (env, "HOME", home);
     env = setEnv (env, "USER", user);
-#if defined(SYSV) || defined(SVR4)
+#if defined(SYSV) || defined(SVR4) || defined(linux)
     env = setEnv (env, "LOGNAME", user);
 #endif
     env = setEnv (env, "PATH", useSystemPath ? d->systemPath : d->userPath);

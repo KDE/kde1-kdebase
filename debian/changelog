@@ -1,9 +1,65 @@
+kdebase (4:1.1.1-19990818-1) unstable; urgency=low
+
+  * New upstream CVS version
+  * Fixing dependency issues with qt
+  * Building with pam unlike the last couple
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Wed, 18 Aug 1999 02:30:27 -0400
+
+kdebase (4:1.1.1-19990817-1) unstable; urgency=low
+
+  * New upstream CVS version
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Tue, 17 Aug 1999 11:45:27 -0400
+
+kdebase (4:1.1.1-19990812-1) unstable; urgency=low
+
+  * New upstream CVS version
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Thu, 12 Aug 1999 14:45:27 -0400
+
+kdebase (4:1.1.1-19990803-1) unstable; urgency=low
+
+  * New upstream CVS version
+  * kvt pty issue solved
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Tue, 03 Aug 1999 12:15:27 -0400
+
+kdebase (4:1.1.1-19990717-3) unstable; urgency=low
+ 
+  * Fixes LOGNAME issue with kdm (hopefully?)
+ 
+ -- Ivan E. Moore II <rkrusty@debian.org>  Wed, 21 Jul 1999 20:15:27 -0400
+                                                                                kdebase (4:1.1.1-19990717-2) unstable; urgency=low
+
+  * Fixes LOGNAME issue with kdm
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Wed, 21 Jul 1999 13:50:27 -0400
+
+kdebase (4:1.1.1-19990717-1.2) unstable; urgency=low
+
+  * Fixing pam issue.  (trying to keep up with CVS is a pain at times)
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Tue, 20 Jul 1999 03:00:27 -0400
+
+kdebase (4:1.1.1-19990717-1.1) unstable; urgency=low
+
+  * fixing rman issue
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sun, 18 Jul 1999 22:45:27 -0400
+
+kdebase (4:1.1.1-19990717-1) unstable; urgency=low
+
+  * New upstream CVS version
+
+ -- Ivan E. Moore II <rkrusty@debian.org>  Sat, 17 Jul 1999 01:45:27 -0400
+
 kdebase (4:1.1.1-19990701-1) unstable; urgency=low
 
   * New upstream CVS version 
   * This is pre-1.1.2 (frozen)
 
- -- Ivan E. Moore II <rkrusty@debian.org>  Thu, 01 Jul 1999 23:45:27 -0400
+ -- Ivan E. Moore II <rkrusty@debian.org>  Tue, 01 Jul 1999 23:45:27 -0400
 
 kdebase (4:1.1.1-19990624-1) unstable; urgency=low
 

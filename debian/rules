@@ -11,6 +11,7 @@ $(BUILDDIR)/build-stamp:
 	if test ! -f configure; then \
 	  $(MAKE) -f admin/Makefile.common ;\
 	fi 
+	$(MAKE) -f Makefile.cvs
 	test -d $(BUILDDIR) || mkdir $(BUILDDIR) ;\
 	if test ! -f $(BUILDDIR)/config.status; then \
 	cd $(BUILDDIR) ;\
@@ -19,7 +20,7 @@ $(BUILDDIR)/build-stamp:
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	../configure --with-shadow --without-pam \
-	--with-install-root=`pwd`/../debian/tmp \
+	--with-install-root=`pwd`/../debian/tmp --with-qt-dir=/usr/lib/qt1g \
 	--disable-rpath --with-xdmdir=/usr/X11R6/lib/X11/kdm ; \
 	fi
 	make -C $(BUILDDIR)
@@ -72,7 +73,7 @@ binary-arch: checkroot build
         fi; done
 	rm -f debian/tmp/usr/X11R6/lib/X11/kdm/*
 	cp debian/README.xdm debian/tmp/usr/doc/kdm/README.Debian
-	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
+	cp debian/kdm.options.5.gz debian/tmp/usr/share/man/man5
 	cp debian/kdmrc debian/tmp/etc/kde
 	chmod +x debian/tmp/etc/X11/kdm/Xreset* \
 	debian/tmp/etc/X11/kdm/Xsetup* \
@@ -83,7 +84,6 @@ binary-arch: checkroot build
 	install -d debian/tmp/usr/X11R6/lib/X11/fonts/misc
 	cp debian/kappfinder debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
-	ln -s kde debian/tmp/usr/bin/startkde
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.kdelnk \
@@ -91,20 +91,19 @@ binary-arch: checkroot build
 	dh_undocumented 
 	perl -w admin/debianrules
 	mv debian/tmp/usr/share/mimelnk/magic debian/tmp/etc/kde
-	ln -s /etc/kde/magic debian/tmp/usr/share/mimelnk/magic
 	cp konsole/other/linux*.pcf.gz debian/tmp/usr/X11R6/lib/X11/fonts/misc
 	mkdir -p debian/tmp/usr/share/apps/kdisknav/KDE
+	-rm -f `find debian/ -print | grep rman`
 	for file in debian/KDE/*; do \
 	 if test -f $$file; then cp $$file debian/tmp/usr/share/apps/kdisknav/KDE ;\
 	fi; done
 	-rm -f debian/tmp/usr/share/apps/kdisknav/KDE.kdelnk
 	dh_movefiles
-	ln -s en debian/kdebase-doc/usr/doc/kde/HTML/default
 	install -d debian/kdm/var/state/kdm
-#	cp debian/kde.pamd debian/tmp/etc/pam.d/kde
 	dh_installdocs
 	dh_installmenu
 	dh_installchangelogs
+	dh_link
 	dh_strip
 	dh_compress
 	dh_fixperms
@@ -113,7 +112,6 @@ binary-arch: checkroot build
 	chmod 4755 debian/tmp/usr/bin/konsole_grantpty
 	chmod 4755 debian/tmp/usr/bin/kvt
 	chown root.root debian/kdm/etc/pam.d/kde
-#	chown root.root debian/tmp/etc/pam.d/kde
 	chown root.root debian/kdm/var/state/kdm
 	dh_suidregister
 	dh_makeshlibs
