@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,43 +83,48 @@ msgstr ""
 "De rechterkant van de titelbalk is vol... de 'minimalizeren' knop wordt "
 "afgezet\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Uiterlijk titelbalk"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "Schaduw"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "Maximale verticale grootte"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "Normaal"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "Titel bewegen"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr ""
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "&Actieve pixmap"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "&Inactieve pixmap"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr "Muis handeling"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
@@ -127,38 +132,38 @@ msgstr ""
 "LinkerMuisKnop dubbele klik\n"
 "    op titelbalk bewerktstelligt:"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 #, fuzzy
 msgid "(Un)Maximize"
 msgstr "Maximalizeren"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:994
 msgid "Move"
 msgstr "Verplaats"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 #, fuzzy
 msgid "(Un)Shade"
 msgstr "Schaduw"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "Minimalizeer"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 #, fuzzy
 msgid "(Un)Sticky"
 msgstr "Vastplakken"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "Verander grootte"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:999
 msgid "Restore"
 msgstr "Herstel"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "Operaties menu"
 
@@ -170,67 +175,83 @@ msgstr "Verplaatsing vensters"
 msgid "Transparent"
 msgstr "Transparant"
 
-#: windows.cpp:76
+#: windows.cpp:76 windows.cpp:82
 msgid "Opaque"
 msgstr "Ondoorzichtig"
 
 #: windows.cpp:79
-msgid "Resize Animation"
-msgstr "Animatie bij veranderen grootte"
+#, fuzzy
+msgid "Window resize"
+msgstr "&Vensters"
 
-#: windows.cpp:84
+#: windows.cpp:80
+#, fuzzy
+msgid "With animation"
+msgstr "Titel bewegen"
+
+#: windows.cpp:85
 msgid "Placement policy"
 msgstr "Plaatsing nieuwe vensters"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Smart"
 msgstr "Intelligent"
 
-#: windows.cpp:88
+#: windows.cpp:89
 msgid "Cascade"
 msgstr "Gedeeltelijk overlappend"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Interactive"
 msgstr "Interactief"
 
-#: windows.cpp:92
+#: windows.cpp:93
 msgid "Random"
 msgstr "Willekeurig"
 
-#: windows.cpp:94
+#: windows.cpp:95
 msgid "Manual"
 msgstr "Handmatig"
 
-#: windows.cpp:101
+#: windows.cpp:102
 msgid "Allowed Overlap:"
 msgstr "Toegestane overlapping:"
 
-#: windows.cpp:108
+#: windows.cpp:109
 msgid "Maximize Style"
 msgstr "Maximalizatie Stijl"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "Maximize fully"
 msgstr "Schermvullend venster"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "Maximize vertically"
 msgstr "Maximale verticale grootte"
 
-#: windows.cpp:113
+#: windows.cpp:114
 msgid "Focus Policy"
 msgstr "Gedrag focus"
 
-#: windows.cpp:114
+#: windows.cpp:116
 msgid "Click to focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:115
+#: windows.cpp:118
 msgid "Focus follows mouse"
 msgstr "Focus volgt de muis"
 
 #: windows.cpp:120
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "Focus volgt de muis"
+
+#: windows.cpp:122
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "Klikken voor focus"
+
+#: windows.cpp:131
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -238,7 +259,7 @@ msgstr ""
 "Vertraging voor automatisch\n"
 "naar voren brengen (<100 afzetten)"
 
-#: windows.cpp:123
+#: windows.cpp:134
 msgid "miliseconds"
 msgstr "milliseconden"
 
@@ -278,6 +299,12 @@ msgid ""
 msgstr ""
 "Venster Verspring Zone:\n"
 "       (pixels)"
+
+#~ msgid "Shaded"
+#~ msgstr "Schaduw"
+
+#~ msgid "Resize Animation"
+#~ msgstr "Animatie bij veranderen grootte"
 
 #~ msgid "Edge Resistance:"
 #~ msgstr "Grens weerstand:"

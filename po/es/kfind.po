@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-24 00:14+0200\n"
-"PO-Revision-Date: 1998-05-21 10:49+0200\n"
+"PO-Revision-Date: 1998-05-30 07:49+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -15,14 +15,12 @@ msgstr "No se pudo abrir o leer el directorio."
 
 # *********** Tooltips ************
 #: kfindtop.cpp:115
-#, fuzzy
 msgid "&Start search"
-msgstr "Iniciar búsqueda"
+msgstr "&Iniciar búsqueda"
 
 #: kfindtop.cpp:117
-#, fuzzy
 msgid "S&top search"
-msgstr "Detener búsqueda"
+msgstr "&Detener búsqueda"
 
 #: kfindtop.cpp:122
 msgid "&Open"

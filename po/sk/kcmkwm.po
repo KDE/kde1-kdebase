@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -73,43 +73,48 @@ msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Pravá strana titulku je plná... zakazujem 'minimalizaèné' tlaèítko\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Vzhµad titulku"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "Tieòovaný"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "Maximalizuj vertikálne"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "Jednoduchý"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "Obrázok"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "Animácia titulku"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "Obrázok pre titulok &aktívneho okna"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "Obrázok pre titulok &neaktívneho okna"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr "Akcia my¹i"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
@@ -117,35 +122,35 @@ msgstr ""
 "Dvojitý klik µavým tlaèítkom\n"
 "    na titulku spraví:"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 msgid "(Un)Maximize"
 msgstr "Maximalizácia/Spä»"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:994
 msgid "Move"
 msgstr "Presun"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Iba pás titulku (zap./vyp.)"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "Ikonizova»"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 msgid "(Un)Sticky"
 msgstr "Prilepenie/Odlepenie"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "Zmena veµkosti"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:999
 msgid "Restore"
 msgstr "Obnovenie"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "Menu operácií"
 
@@ -157,67 +162,83 @@ msgstr "Pohyb okna"
 msgid "Transparent"
 msgstr "Transparentný"
 
-#: windows.cpp:76
+#: windows.cpp:76 windows.cpp:82
 msgid "Opaque"
 msgstr "Nepriehµadný"
 
 #: windows.cpp:79
-msgid "Resize Animation"
-msgstr "Animácia pri zmene veµkosti"
+#, fuzzy
+msgid "Window resize"
+msgstr "&Vlastnosti okna"
 
-#: windows.cpp:84
+#: windows.cpp:80
+#, fuzzy
+msgid "With animation"
+msgstr "Animácia titulku"
+
+#: windows.cpp:85
 msgid "Placement policy"
 msgstr "Spôsob umiestòovania"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Smart"
 msgstr "Elegantne"
 
-#: windows.cpp:88
+#: windows.cpp:89
 msgid "Cascade"
 msgstr "Kaskáda"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Interactive"
 msgstr "Interaktívne"
 
-#: windows.cpp:92
+#: windows.cpp:93
 msgid "Random"
 msgstr "Náhodne"
 
-#: windows.cpp:94
+#: windows.cpp:95
 msgid "Manual"
 msgstr "Manuálne"
 
-#: windows.cpp:101
+#: windows.cpp:102
 msgid "Allowed Overlap:"
 msgstr "Povolený prekryv:"
 
-#: windows.cpp:108
+#: windows.cpp:109
 msgid "Maximize Style"
 msgstr "©týl maximalizácie"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "Maximize fully"
 msgstr "Maximalizuj úplne"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "Maximize vertically"
 msgstr "Maximalizuj vertikálne"
 
-#: windows.cpp:113
+#: windows.cpp:114
 msgid "Focus Policy"
 msgstr "Spôsob aktivácie okna"
 
-#: windows.cpp:114
+#: windows.cpp:116
 msgid "Click to focus"
 msgstr "Kliknú» pre aktiváciu"
 
-#: windows.cpp:115
+#: windows.cpp:118
 msgid "Focus follows mouse"
 msgstr "Okno pod my¹ou je aktívne"
 
 #: windows.cpp:120
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "Okno pod my¹ou je aktívne"
+
+#: windows.cpp:122
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "Kliknú» pre aktiváciu"
+
+#: windows.cpp:131
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -225,7 +246,7 @@ msgstr ""
 "Oneskorenie pred presunutím\n"
 "okna navrch (<100 vypína)"
 
-#: windows.cpp:123
+#: windows.cpp:134
 msgid "miliseconds"
 msgstr "milisekúnd"
 
@@ -264,6 +285,12 @@ msgid ""
 msgstr ""
 "Úchytná zóna\n"
 "okna (v bodoch):"
+
+#~ msgid "Shaded"
+#~ msgstr "Tieòovaný"
+
+#~ msgid "Resize Animation"
+#~ msgstr "Animácia pri zmene veµkosti"
 
 #~ msgid "Edge Resistance:"
 #~ msgstr "Sila rohov:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1998-04-30 11:38+0100\n"
 "Last-Translator: Bla¾ Zupanèiè <Blaz.Zupancic@guest.arnes.si>\n"
 "Language-Team: Slovenian\n"
@@ -14,112 +14,134 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: zgleda, da je nek okenski vmesnik ¾e nalo¾en. kwm se ne morezagnati\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: napaka med inicializacijo; konèujem\n"
 
-#: main.C:449
+#: main.C:464
+msgid ""
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies "
+"are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop "
+"Environment ;-)\n"
+"\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+msgstr ""
+
+#: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:456
+#: main.C:498
 msgid "Usage: "
 msgstr "Uporaba:"
 
-#: main.C:467
+#: main.C:509
 msgid "&Maximize"
 msgstr "Po&veèaj"
 
-#: main.C:468
+#: main.C:510
 msgid "&Restore"
 msgstr "Po&vrni"
 
-#: main.C:469
+#: main.C:511
 msgid "&Iconify"
 msgstr "S&krij"
 
-#: main.C:470
+#: main.C:512
 msgid "&DeIconify"
 msgstr "Pri&ka¾i"
 
-#: main.C:471
+#: main.C:513
 msgid "&Sticky"
 msgstr "Pri&lepi"
 
-#: main.C:472
+#: main.C:514
 msgid "&UnSticky"
 msgstr "Od&lepi"
 
-#: main.C:473
+#: main.C:515
 msgid "Mo&ve"
 msgstr "&Premakni"
 
-#: main.C:474
+#: main.C:516
 msgid "Resi&ze"
 msgstr "Pre&oblikuj"
 
-#: main.C:476
+#: main.C:518
 msgid "&To desktop"
 msgstr "Na mi&zo"
 
-#: main.C:478
+#: main.C:520
 msgid "&Onto current desktop"
 msgstr "Na to mi&zo"
 
-#: main.C:531
+#: main.C:573
 msgid "One"
 msgstr "Ena"
 
-#: main.C:534
+#: main.C:576
 msgid "Two"
 msgstr "Dva"
 
-#: main.C:537
+#: main.C:579
 msgid "Three"
 msgstr "Tri"
 
-#: main.C:540
+#: main.C:582
 msgid "Four"
 msgstr "©t&iri"
 
-#: main.C:543
+#: main.C:585
 msgid "Five"
 msgstr "Pet"
 
-#: main.C:546
+#: main.C:588
 msgid "Six"
 msgstr "©&est"
 
-#: main.C:549
+#: main.C:591
 msgid "Seven"
 msgstr "Sedem"
 
-#: main.C:552
+#: main.C:594
 msgid "Eight"
 msgstr "Osem"
 
-#: main.C:566
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:875
+#: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
 
-#: main.C:1193
+#: main.C:1043
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Nekatere slike niso veljavne: ShapeMode je onesposobljen\n"
+
+#: main.C:1281
 msgid "*** No Tasks ***"
 msgstr " Brezdelje "
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Ukaz:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
@@ -14,119 +14,141 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr "kwm: оконный менеджер уже работает. kwm не запущен.\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ошибка инициализации; прерывание\n"
 
-#: main.C:449
+#: main.C:464
+msgid ""
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies "
+"are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop "
+"Environment ;-)\n"
+"\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+msgstr ""
+
+#: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Маттиас Эттрих (ettrich@kde.org)\n"
 
-#: main.C:456
+#: main.C:498
 msgid "Usage: "
 msgstr "Использование:"
 
 #
-#: main.C:467
+#: main.C:509
 msgid "&Maximize"
 msgstr "Максимизировать"
 
 #
-#: main.C:468
+#: main.C:510
 msgid "&Restore"
 msgstr "Восстановить"
 
-#: main.C:469
+#: main.C:511
 msgid "&Iconify"
 msgstr "Минимизировать"
 
 #
-#: main.C:470
+#: main.C:512
 msgid "&DeIconify"
 msgstr "Максимизировать"
 
 #
-#: main.C:471
+#: main.C:513
 msgid "&Sticky"
 msgstr "Прищемить"
 
 #
-#: main.C:472
+#: main.C:514
 msgid "&UnSticky"
 msgstr "Отщемить"
 
 #
-#: main.C:473
+#: main.C:515
 msgid "Mo&ve"
 msgstr "Переместить"
 
 #
-#: main.C:474
+#: main.C:516
 msgid "Resi&ze"
 msgstr "Изменить размер"
 
 #
-#: main.C:476
+#: main.C:518
 msgid "&To desktop"
 msgstr "На рабочий стол"
 
-#: main.C:478
+#: main.C:520
 msgid "&Onto current desktop"
 msgstr "На текуший рабочий стол"
 
-#: main.C:531
+#: main.C:573
 msgid "One"
 msgstr "Один"
 
-#: main.C:534
+#: main.C:576
 msgid "Two"
 msgstr "Два"
 
-#: main.C:537
+#: main.C:579
 msgid "Three"
 msgstr "Три"
 
-#: main.C:540
+#: main.C:582
 msgid "Four"
 msgstr "Четыре"
 
-#: main.C:543
+#: main.C:585
 msgid "Five"
 msgstr "Пять"
 
-#: main.C:546
+#: main.C:588
 msgid "Six"
 msgstr "Шесть"
 
-#: main.C:549
+#: main.C:591
 msgid "Seven"
 msgstr "Семь"
 
-#: main.C:552
+#: main.C:594
 msgid "Eight"
 msgstr "Восемь"
 
-#: main.C:566
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:875
+#: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
-#: main.C:1193
+#: main.C:1043
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
+
+#: main.C:1281
 msgid "*** No Tasks ***"
 msgstr "*** Задач нет ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Команда:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
 
 #
 #: logout.C:36 taskmgr.C:107

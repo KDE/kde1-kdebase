@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMKWM\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,43 +74,48 @@ msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Otsikon ulkonäkö"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "Varjostettu"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "Suurenna pystysuunnassa"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "Koristelematon"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "Kuva"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "Otsikon animaatio"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "&Aktiivinen kuva"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "&Poissaoleva kuva"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr "Hiiren toiminta"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
@@ -118,35 +123,35 @@ msgstr ""
 "Vasemman hiirenapin tuplapainallus\n"
 "    otsikkopalkkiin tekee:"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 msgid "(Un)Maximize"
 msgstr "Suurenna/Pienennä"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:994
 msgid "Move"
 msgstr "Siirrä"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Varjosta"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "Ikoniksi"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 msgid "(Un)Sticky"
 msgstr "Naulaa"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "Muuta kokoa"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:999
 msgid "Restore"
 msgstr "Palauta"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "Toimintovalikko"
 
@@ -158,67 +163,83 @@ msgstr "Ikkunan liikutus"
 msgid "Transparent"
 msgstr "Läpinäkyvä"
 
-#: windows.cpp:76
+#: windows.cpp:76 windows.cpp:82
 msgid "Opaque"
 msgstr "Kuultava"
 
 #: windows.cpp:79
-msgid "Resize Animation"
-msgstr "Muuta animaation kokoa"
+#, fuzzy
+msgid "Window resize"
+msgstr "&Ikkunat"
 
-#: windows.cpp:84
+#: windows.cpp:80
+#, fuzzy
+msgid "With animation"
+msgstr "Otsikon animaatio"
+
+#: windows.cpp:85
 msgid "Placement policy"
 msgstr "Sijoitustyyli"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Smart"
 msgstr "Älykäs"
 
-#: windows.cpp:88
+#: windows.cpp:89
 msgid "Cascade"
 msgstr "Sarjoita"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Interactive"
 msgstr "Interaktiivinen"
 
-#: windows.cpp:92
+#: windows.cpp:93
 msgid "Random"
 msgstr "Satunnainen"
 
-#: windows.cpp:94
+#: windows.cpp:95
 msgid "Manual"
 msgstr "Manuaalinen"
 
-#: windows.cpp:101
+#: windows.cpp:102
 msgid "Allowed Overlap:"
 msgstr "Sallitty päällekkäisyys:"
 
-#: windows.cpp:108
+#: windows.cpp:109
 msgid "Maximize Style"
 msgstr "Suurennustyyli"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "Maximize fully"
 msgstr "Suurenna täysin"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "Maximize vertically"
 msgstr "Suurenna pystysuunnassa"
 
-#: windows.cpp:113
+#: windows.cpp:114
 msgid "Focus Policy"
 msgstr "Kohdistustapa"
 
-#: windows.cpp:114
+#: windows.cpp:116
 msgid "Click to focus"
 msgstr "Kohdista hiiren napilla"
 
-#: windows.cpp:115
+#: windows.cpp:118
 msgid "Focus follows mouse"
 msgstr "Kohdistus seuraa hiirtä"
 
 #: windows.cpp:120
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "Kohdistus seuraa hiirtä"
+
+#: windows.cpp:122
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "Kohdista hiiren napilla"
+
+#: windows.cpp:131
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -226,7 +247,7 @@ msgstr ""
 "automaattinoston viive\n"
 "(<100 poistaa)"
 
-#: windows.cpp:123
+#: windows.cpp:134
 msgid "miliseconds"
 msgstr "millisekuntia"
 
@@ -265,3 +286,9 @@ msgid ""
 msgstr ""
 "Ikkunan vaihtoalue:\n"
 "       (pisteitä)"
+
+#~ msgid "Shaded"
+#~ msgstr "Varjostettu"
+
+#~ msgid "Resize Animation"
+#~ msgstr "Muuta animaation kokoa"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1998-01-18 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -79,80 +79,85 @@ msgid ""
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "Вид заголовка"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "Градиент"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "Вертикально"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "Обычный"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "Картинка"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "Анимация заголовка"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr "мс"
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "&Активная пиктограмма"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "&Неактивная пиктограмма"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr ""
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 #, fuzzy
 msgid "(Un)Maximize"
 msgstr "Максимизировать"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:994
 msgid "Move"
 msgstr ""
 
 #
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 msgid "(Un)Shade"
 msgstr "Градиент"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "Минимизировать"
 
 #
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 msgid "(Un)Sticky"
 msgstr "Приколоть"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "Изменить размер"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:999
 msgid "Restore"
 msgstr "Восстановить"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "Меню операций"
 
@@ -164,68 +169,84 @@ msgstr "Перемещение окна"
 msgid "Transparent"
 msgstr "Прозрачно"
 
-#: windows.cpp:76
+#: windows.cpp:76 windows.cpp:82
 msgid "Opaque"
 msgstr "Непрозрачно"
 
 #: windows.cpp:79
-msgid "Resize Animation"
-msgstr "Анимация изменения размера"
+#, fuzzy
+msgid "Window resize"
+msgstr "&Окна"
 
-#: windows.cpp:84
+#: windows.cpp:80
+#, fuzzy
+msgid "With animation"
+msgstr "Анимация заголовка"
+
+#: windows.cpp:85
 msgid "Placement policy"
 msgstr "Правила расположения"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Smart"
 msgstr "Умные"
 
-#: windows.cpp:88
+#: windows.cpp:89
 msgid "Cascade"
 msgstr "Каскадом"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Interactive"
 msgstr ""
 
-#: windows.cpp:92
+#: windows.cpp:93
 msgid "Random"
 msgstr "Случайно"
 
 #
-#: windows.cpp:94
+#: windows.cpp:95
 msgid "Manual"
 msgstr "Ручное"
 
-#: windows.cpp:101
+#: windows.cpp:102
 msgid "Allowed Overlap:"
 msgstr "Возможны перекрытия:"
 
-#: windows.cpp:108
+#: windows.cpp:109
 msgid "Maximize Style"
 msgstr "Тип максимизации"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "Maximize fully"
 msgstr "Полностью"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "Maximize vertically"
 msgstr "Вертикально"
 
-#: windows.cpp:113
+#: windows.cpp:114
 msgid "Focus Policy"
 msgstr "Вид фокуса"
 
-#: windows.cpp:114
+#: windows.cpp:116
 msgid "Click to focus"
 msgstr "Щелчоком"
 
-#: windows.cpp:115
+#: windows.cpp:118
 msgid "Focus follows mouse"
 msgstr "За мышкой"
 
 #: windows.cpp:120
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "За мышкой"
+
+#: windows.cpp:122
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "Щелчоком"
+
+#: windows.cpp:131
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -233,7 +254,7 @@ msgstr ""
 "Задержка авто-уменьшения\n"
 "(<100 отключается)"
 
-#: windows.cpp:123
+#: windows.cpp:134
 msgid "miliseconds"
 msgstr "миллисекунд"
 
@@ -268,3 +289,9 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+
+#~ msgid "Shaded"
+#~ msgstr "Градиент"
+
+#~ msgid "Resize Animation"
+#~ msgstr "Анимация изменения размера"

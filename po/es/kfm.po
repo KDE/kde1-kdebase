@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-18 18:03+0200\n"
-"PO-Revision-Date: 1998-05-21 10:43+0200\n"
+"PO-Revision-Date: 1998-05-30 07:56+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:250
@@ -562,7 +562,7 @@ msgstr "Espacio vertical red fondo:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Texto transparente para iconos del escritorio."
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -826,7 +826,8 @@ msgid ""
 "is malformed"
 msgstr ""
 "La URL\n"
-"%ses incorrecta"
+"%s\n"
+"es incorrecta"
 
 #: kfmserver.cpp:285
 msgid ""

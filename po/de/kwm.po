@@ -1,116 +1,138 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: Es scheint, daß schon ein anderer Windowmanager läuft, kwm angehalten\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
 
-#: main.C:449
+#: main.C:464
+msgid ""
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies "
+"are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop "
+"Environment ;-)\n"
+"\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+msgstr ""
+
+#: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:456
+#: main.C:498
 msgid "Usage: "
 msgstr "Verwendung: "
 
-#: main.C:467
+#: main.C:509
 msgid "&Maximize"
 msgstr "&Maximieren"
 
-#: main.C:468
+#: main.C:510
 msgid "&Restore"
 msgstr "&Wiederherstellen"
 
-#: main.C:469
+#: main.C:511
 msgid "&Iconify"
 msgstr "Mi&nimieren"
 
-#: main.C:470
+#: main.C:512
 msgid "&DeIconify"
 msgstr "(&De)Iconisieren"
 
-#: main.C:471
+#: main.C:513
 msgid "&Sticky"
 msgstr "&Anheften an"
 
-#: main.C:472
+#: main.C:514
 msgid "&UnSticky"
 msgstr "Anhe&ften aus"
 
-#: main.C:473
+#: main.C:515
 msgid "Mo&ve"
 msgstr "&Verschieben"
 
-#: main.C:474
+#: main.C:516
 msgid "Resi&ze"
 msgstr "G&röße ändern"
 
-#: main.C:476
+#: main.C:518
 msgid "&To desktop"
 msgstr "A&uf Arbeitsplatz"
 
-#: main.C:478
+#: main.C:520
 msgid "&Onto current desktop"
 msgstr "Auf aktuellen Arbeitsplatz"
 
-#: main.C:531
+#: main.C:573
 msgid "One"
 msgstr "Eins"
 
-#: main.C:534
+#: main.C:576
 msgid "Two"
 msgstr "Zwei"
 
-#: main.C:537
+#: main.C:579
 msgid "Three"
 msgstr "Drei"
 
-#: main.C:540
+#: main.C:582
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:543
+#: main.C:585
 msgid "Five"
 msgstr "Fünf"
 
-#: main.C:546
+#: main.C:588
 msgid "Six"
 msgstr "Sechs"
 
-#: main.C:549
+#: main.C:591
 msgid "Seven"
 msgstr "Sieben"
 
-#: main.C:552
+#: main.C:594
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:566
+#: main.C:608
 msgid "Unnamed Desktop"
 msgstr "Unbenannter Desktop"
 
-#: main.C:875
+#: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
 
-#: main.C:1193
+#: main.C:1043
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Ein paar Pixmaps sind ungültig: Shape-Modus ausgeschaltet\n"
+
+#: main.C:1281
 msgid "*** No Tasks ***"
 msgstr "*** Keine Programme ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Kommando:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"

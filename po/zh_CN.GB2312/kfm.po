@@ -1026,7 +1026,7 @@ msgstr ""
 "建立套接字"
 
 #: kiojob.cpp:1234 kiojob.cpp:1365
-#,  c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
@@ -1295,8 +1295,8 @@ msgstr "字体[&F]"
 msgid "&Colors"
 msgstr "颜色[&C]"
 
-#: kkfmoptdlg.cpp:30
 #
+#: kkfmoptdlg.cpp:30
 msgid "&Other"
 msgstr "其他[&O]"
 

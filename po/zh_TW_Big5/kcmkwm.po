@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: 1998-04-20 21:19+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -82,43 +82,48 @@ msgstr ""
 "標題列右邊空間已滿...\n"
 "請移去 '最小化' 按鈕\n"
 
-#: titlebar.cpp:925
+#: titlebar.cpp:926
 msgid "Titlebar appearance"
 msgstr "標題列外觀"
 
-#: titlebar.cpp:927
-msgid "Shaded"
-msgstr "漸層"
+#: titlebar.cpp:928
+#, fuzzy
+msgid "Shaded Vertically"
+msgstr "垂直最大化"
 
 #: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr ""
+
+#: titlebar.cpp:934
 msgid "Plain"
 msgstr "樸素"
 
-#: titlebar.cpp:933 titlebar.cpp:953
+#: titlebar.cpp:937 titlebar.cpp:958
 msgid "Pixmap"
 msgstr "圖形"
 
-#: titlebar.cpp:940
+#: titlebar.cpp:944
 msgid "Title Animation"
 msgstr "標題列動畫"
 
-#: desktop.cpp:91 titlebar.cpp:943
+#: desktop.cpp:91 titlebar.cpp:947
 msgid "ms"
 msgstr "ms(毫秒)"
 
-#: titlebar.cpp:964
+#: titlebar.cpp:969
 msgid "&Active pixmap"
 msgstr "作用中標題列圖示[&A]"
 
-#: titlebar.cpp:966
+#: titlebar.cpp:971
 msgid "&Inactive pixmap"
 msgstr "無作用標題列圖示[&I]"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:987
 msgid "Mouse action"
 msgstr "滑鼠動作"
 
-#: titlebar.cpp:984
+#: titlebar.cpp:989
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
@@ -126,38 +131,38 @@ msgstr ""
 "在標題列雙敲擊\n"
 "  滑鼠左鍵會導致:"
 
-#: titlebar.cpp:988
+#: titlebar.cpp:993
 #, fuzzy
 msgid "(Un)Maximize"
 msgstr "(解除)最大化"
 
-#: titlebar.cpp:989
+#: titlebar.cpp:994
 msgid "Move"
 msgstr "移動"
 
-#: titlebar.cpp:990
+#: titlebar.cpp:995
 #, fuzzy
 msgid "(Un)Shade"
 msgstr "(解除)視窗縮至標題列"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:996
 msgid "Iconify"
 msgstr "圖示化"
 
-#: titlebar.cpp:992
+#: titlebar.cpp:997
 #, fuzzy
 msgid "(Un)Sticky"
 msgstr "(解除)黏附"
 
-#: titlebar.cpp:993
+#: titlebar.cpp:998
 msgid "Resize"
 msgstr "改變視窗大小"
 
-#: titlebar.cpp:994
+#: titlebar.cpp:999
 msgid "Restore"
 msgstr "還原"
 
-#: titlebar.cpp:995
+#: titlebar.cpp:1000
 msgid "Operations Menu"
 msgstr "跳出操作選單"
 
@@ -169,68 +174,84 @@ msgstr "視窗的移動"
 msgid "Transparent"
 msgstr "透明的"
 
-#: windows.cpp:76
+#: windows.cpp:76 windows.cpp:82
 msgid "Opaque"
 msgstr "不透明的"
 
 #: windows.cpp:79
-msgid "Resize Animation"
-msgstr "大小改變的動畫"
+#, fuzzy
+msgid "Window resize"
+msgstr "視窗[&W]"
 
-#: windows.cpp:84
+#: windows.cpp:80
+#, fuzzy
+msgid "With animation"
+msgstr "標題列動畫"
+
+#: windows.cpp:85
 msgid "Placement policy"
 msgstr "配置策略"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Smart"
 msgstr "聰明"
 
-#: windows.cpp:88
+#: windows.cpp:89
 msgid "Cascade"
 msgstr "重疊顯示"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Interactive"
 msgstr "互動式"
 
-#: windows.cpp:92
+#: windows.cpp:93
 msgid "Random"
 msgstr "隨機放置"
 
-#: windows.cpp:94
+#: windows.cpp:95
 #, fuzzy
 msgid "Manual"
 msgstr "手動"
 
-#: windows.cpp:101
+#: windows.cpp:102
 msgid "Allowed Overlap:"
 msgstr "允許\覆蓋\"
 
-#: windows.cpp:108
+#: windows.cpp:109
 msgid "Maximize Style"
 msgstr "最大化型態"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "Maximize fully"
 msgstr "完全最大化"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "Maximize vertically"
 msgstr "垂直最大化"
 
-#: windows.cpp:113
+#: windows.cpp:114
 msgid "Focus Policy"
 msgstr "焦點策略"
 
-#: windows.cpp:114
+#: windows.cpp:116
 msgid "Click to focus"
 msgstr "按鍵取得焦點"
 
-#: windows.cpp:115
+#: windows.cpp:118
 msgid "Focus follows mouse"
 msgstr "焦點隨滑鼠移動"
 
 #: windows.cpp:120
+#, fuzzy
+msgid "Classic focus follows mouse"
+msgstr "焦點隨滑鼠移動"
+
+#: windows.cpp:122
+#, fuzzy
+msgid "Classic sloppy focus"
+msgstr "按鍵取得焦點"
+
+#: windows.cpp:131
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -238,7 +259,7 @@ msgstr ""
 "視窗自動彈起的\n"
 "延遲時間(<100 取消此功\能)"
 
-#: windows.cpp:123
+#: windows.cpp:134
 msgid "miliseconds"
 msgstr "miliseconds(毫秒)"
 
@@ -277,3 +298,9 @@ msgid ""
 msgstr ""
 "視窗切換區域:\n"
 "      (點數)"
+
+#~ msgid "Shaded"
+#~ msgstr "漸層"
+
+#~ msgid "Resize Animation"
+#~ msgstr "大小改變的動畫"

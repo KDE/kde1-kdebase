@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-05-06 20:58+0200\n"
+"POT-Creation-Date: 1998-05-30 13:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,121 +17,143 @@ msgstr ""
 # Dutch translation of the kwm messages.
 # Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
 #
-#: main.C:67
+#: main.C:68
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
 "kwm: Het lijkt alsof er al een windowmanager draait. kwm niet opgestart\n"
 
-#: main.C:81
+#: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: probleem tijdens het initialiseren; stoppen\n"
 
-#: main.C:449
+#: main.C:464
+msgid ""
+"You want to switch to another window. Unfortunately you have selected \n"
+"one of the classic focus policies which do not allow this.  These policies "
+"are \n"
+"included not because they make sense, but for compatibility reasons. Well, \n"
+"even old hand unix users should feel comfortable with the K Desktop "
+"Environment ;-)\n"
+"\n"
+"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+msgstr ""
+
+#: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:456
+#: main.C:498
 msgid "Usage: "
 msgstr "Gebruik: "
 
-#: main.C:467
+#: main.C:509
 #, fuzzy
 msgid "&Maximize"
 msgstr "Ma&ximaliseren aan/uit"
 
-#: main.C:468
+#: main.C:510
 #, fuzzy
 msgid "&Restore"
 msgstr "&Herstel"
 
-#: main.C:469
+#: main.C:511
 msgid "&Iconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:470
+#: main.C:512
 #, fuzzy
 msgid "&DeIconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:471
+#: main.C:513
 #, fuzzy
 msgid "&Sticky"
 msgstr "&Vastplakken"
 
-#: main.C:472
+#: main.C:514
 #, fuzzy
 msgid "&UnSticky"
 msgstr "&Losweken"
 
-#: main.C:473
+#: main.C:515
 #, fuzzy
 msgid "Mo&ve"
 msgstr "&Verplaatsen"
 
-#: main.C:474
+#: main.C:516
 #, fuzzy
 msgid "Resi&ze"
 msgstr "&Grootte veranderen"
 
-#: main.C:476
+#: main.C:518
 #, fuzzy
 msgid "&To desktop"
 msgstr "Naar &buroblad"
 
-#: main.C:478
+#: main.C:520
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:531
+#: main.C:573
 msgid "One"
 msgstr "Een"
 
-#: main.C:534
+#: main.C:576
 msgid "Two"
 msgstr "Twee"
 
-#: main.C:537
+#: main.C:579
 msgid "Three"
 msgstr "Drie"
 
-#: main.C:540
+#: main.C:582
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:543
+#: main.C:585
 msgid "Five"
 msgstr "Vijf"
 
-#: main.C:546
+#: main.C:588
 msgid "Six"
 msgstr "Zes"
 
-#: main.C:549
+#: main.C:591
 msgid "Seven"
 msgstr "Zeven"
 
-#: main.C:552
+#: main.C:594
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:566
+#: main.C:608
 #, fuzzy
 msgid "Unnamed Desktop"
 msgstr "Buroblad"
 
-#: main.C:875
+#: main.C:931
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
-#: main.C:1193
+#: main.C:1043
+#, fuzzy
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
+
+#: main.C:1281
 msgid "*** No Tasks ***"
 msgstr "*** Geen Taken ***"
 
 #: minicli.C:115
 msgid "Command:"
 msgstr "Uitvoeren:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr ""
 
 #: logout.C:36 taskmgr.C:107
 #, fuzzy
