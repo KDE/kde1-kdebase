@@ -354,6 +354,24 @@ main( int argc, char ** argv )
 		}
 	}
 
+        // primitive ~/.Xdefaults support
+        {
+          QFile f(QDir::home() + "/.Xdefaults");
+          
+          if ( f.open(IO_ReadOnly) ) {
+            
+            QTextStream t( &f );
+            
+            while ( !t.eof() ) {
+              propString += t.readLine();
+              propString +="\n";
+            }
+            f.close();
+          }
+          tmp.writeBlock( propString.data(), propString.length() );
+          propString.resize(0);
+        }
+        
 	tmp.close();
 
 	KProcess proc;
