@@ -326,15 +326,14 @@ msgstr "Записать опции"
 
 #
 #: mainwidget.cpp:183
-#, fuzzy
+#
 msgid "KDE Help System\n"
 msgstr ""
 "Система KDE Help\n"
-"Версии "
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Версия "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -432,74 +431,3 @@ msgstr "О KDE Help"
 msgid "&Add Bookmark"
 msgstr "Добавить закладку"
 
-#
-#~ msgid "New"
-#~ msgstr "Новый"
-
-#
-#~ msgid "Back"
-#~ msgstr "Назад"
-
-#
-#~ msgid "Forward"
-#~ msgstr "Вперед"
-
-#
-#~ msgid "&Print..."
-#~ msgstr "Распечатать"
-
-#
-#~ msgid "&Close"
-#~ msgstr "Закрыть"
-
-#
-#~ msgid "&Quit"
-#~ msgstr "Выход"
-
-#
-#~ msgid "&Copy"
-#~ msgstr "Копировать"
-
-#
-#~ msgid "&File"
-#~ msgstr "Файл"
-
-#
-#~ msgid "&Edit"
-#~ msgstr "Редактировать"
-
-#
-#~ msgid "&Options"
-#~ msgstr "Опции"
-
-#
-#~ msgid "&Help"
-#~ msgstr "Помощь"
-
-#
-#~ msgid "Cancel"
-#~ msgstr "Отмена"
-
-#
-#~ msgid " Location:"
-#~ msgstr " Местонахождение:"
-
-#
-#~ msgid "KDE Help"
-#~ msgstr "KDE Help"
-
-#
-#~ msgid "Waiting for kmail to be finished..."
-#~ msgstr "Ждем-с пока kmail завершится..."
-
-#
-#~ msgid "Ok"
-#~ msgstr "Ок"
-
-#
-#~ msgid "&Using KDE Help"
-#~ msgstr "Использование KDE Help"
-
-#
-#~ msgid "&About"
-#~ msgstr "О программе"

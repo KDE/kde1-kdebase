@@ -1,0 +1,159 @@
+# Перевод kcmkwm.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkwm\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-18 05:04+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:57
+msgid "&Windows"
+msgstr "&Окна"
+
+#: main.cpp:60
+msgid "&Buttons"
+msgstr "&Кнопки"
+
+#: main.cpp:63
+msgid "&Titlebar"
+msgstr "&Заголовок"
+
+#: main.cpp:69
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+
+#: main.cpp:98
+msgid "Window manager style"
+msgstr "Вид главного форточника"
+
+#: titlebar.cpp:113
+msgid "Minimize"
+msgstr "Минимизировать"
+
+#: titlebar.cpp:117
+msgid "Maximize"
+msgstr "Максимизировать"
+
+#: titlebar.cpp:121
+msgid "Sticky"
+msgstr "Приколоть"
+
+#: titlebar.cpp:129
+msgid "Menu"
+msgstr "Меню"
+
+#: titlebar.cpp:459
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Левая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
+
+#: titlebar.cpp:492
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Правая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
+
+#: titlebar.cpp:532
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Левая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
+
+#: titlebar.cpp:565
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
+
+#: titlebar.cpp:916
+msgid "Titlebar appearance"
+msgstr "Вид заголовка"
+
+#: titlebar.cpp:918
+msgid "Shaded"
+msgstr "Градиент"
+
+#: titlebar.cpp:921
+msgid "Plain"
+msgstr "Обычный"
+
+#: titlebar.cpp:924 titlebar.cpp:944
+msgid "Pixmap"
+msgstr "Картинка"
+
+#: titlebar.cpp:931
+msgid "Title Animation"
+msgstr "Анимация заголовка"
+
+#: titlebar.cpp:934
+msgid "ms"
+msgstr "мс"
+
+#: titlebar.cpp:955
+msgid "&Active pixmap"
+msgstr "&Активная пиктограмма"
+
+#: titlebar.cpp:957
+msgid "&Inactive pixmap"
+msgstr "&Неактивная пиктограмма"
+
+#: windows.cpp:66
+msgid "Window movement"
+msgstr "Перемещение окна"
+
+#: windows.cpp:67
+msgid "Transparent"
+msgstr "Прозрачно"
+
+#: windows.cpp:68
+msgid "Opaque"
+msgstr "Непрозрачно"
+
+#: windows.cpp:71
+msgid "Resize Animation"
+msgstr "Анимация изменения размера"
+
+#: windows.cpp:76
+msgid "Focus Policy"
+msgstr "Вид фокуса"
+
+#: windows.cpp:77
+msgid "Click to focus"
+msgstr "Щелчоком"
+
+#: windows.cpp:78
+msgid "Focus follows mouse"
+msgstr "За мышкой"
+
+#: windows.cpp:81
+msgid "Maximize Style"
+msgstr "Тип максимизации"
+
+#: windows.cpp:82
+msgid "Maximize fully"
+msgstr "Полностью"
+
+#: windows.cpp:83
+msgid "Maximize vertically"
+msgstr "Вертикально"
+
+#: windows.cpp:88
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"Задержка авто-уменьшения\n"
+"(<100 отключается)"
+
+#: windows.cpp:91
+msgid "miliseconds"
+msgstr "миллисекунд"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.10\n"
 "POT-Creation-Date: 1998-01-16 22:08+0100\n"
-"PO-Revision-Date: 1997-12-27 03:05+06:00\n"
+"PO-Revision-Date: 1998-01-18 05:15+06:00\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: ru <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +114,7 @@ msgstr "Восемь"
 
 #: main.C:743
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Некоторые пиктограммы некорректны: ShapeMode отключено\n"
 
 #: main.C:975
 msgid "*** No Tasks ***"
@@ -165,70 +165,3 @@ msgstr "Переключиться"
 msgid "Current session"
 msgstr "Текущая сессия"
 
-#~ msgid "&Close"
-#~ msgstr "Закрыть"
-
-#
-#~ msgid "Iconify"
-#~ msgstr "Минимизировать"
-
-#~ msgid ""
-#~ "kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
-#~ "     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
-#~ "     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
-#~ "     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
-#~ "     No warranty. Please see the README's\n"
-#~ msgstr ""
-#~ "kwm: версия 0.9 Copyright (c) 1996, 1997 Маттиас Эттрих\n"
-#~ "     основан на версии 0.2 - 0.5 Copyright (c) 1996, 1997 Брайан Купер \n"
-#~ "     основан на версии 0.1 Copyright (c) 1996 Маттиас Эттрих \n"
-#~ "     Частично заимствован из 9wm 1.1 Copyright (c) 1994 Давид Хоган\n"
-#~ "     Никаких гарантий. Пожайлуста, смотрите README\n"
-
-#~ msgid "patch level %d"
-#~ msgstr "patch level %d"
-
-#~ msgid "usage: kwm [-version] [-exec prog] \n"
-#~ msgstr "использование: kwm [-version] [-exec prog] \n"
-
-#~ msgid "Desktop"
-#~ msgstr "Рабочий стол"
-
-#~ msgid "kwm: exiting on signal\n"
-#~ msgstr "kwm: выхожу по сигналу\n"
-
-#~ msgid "&Help on desktop"
-#~ msgstr "Помощь по рабочему столу"
-
-#~ msgid "&Execute command"
-#~ msgstr "Выполнить команду"
-
-#~ msgid "&Display properties"
-#~ msgstr "Свойства дисплея"
-
-#~ msgid "&Refresh desktop"
-#~ msgstr "Обновить рабочий стол"
-
-#~ msgid "&Arrange icons"
-#~ msgstr "Упорядочить пиктограммы"
-
-#~ msgid "&Lock screen"
-#~ msgstr "Закрыть экран"
-
-#~ msgid "Lo&gout"
-#~ msgstr "Выйти"
-
-#~ msgid "(Un) Ma&ximize"
-#~ msgstr "(Де) Максимизировать"
-
-#~ msgid "&Move"
-#~ msgstr "Переместить"
-
-#~ msgid "(Un) &Sticky"
-#~ msgstr "(Де) Прищемить"
-
-#~ msgid "&To Desktop"
-#~ msgstr "На рабочий стол"
-
-#~ msgid "&Destroy"
-#~ msgstr "Уничтожить"

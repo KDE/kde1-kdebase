@@ -1,0 +1,69 @@
+# Перевод kcminfo
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminfo\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-18 04:22+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Память"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&Процессор"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "ипользование: kcminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "Системная информация"
+
+#: memory.cpp:10
+msgid "Total memory"
+msgstr "Всего памяти"
+
+#: memory.cpp:18
+msgid "Free memory"
+msgstr "Свободно памяти"
+
+#: memory.cpp:26
+msgid "Shared memory"
+msgstr "Разделяемой памяти"
+
+#: memory.cpp:34
+msgid "Buffer memory"
+msgstr "Занято под буфера"
+
+#: memory.cpp:42
+msgid "Swap memory"
+msgstr "Подгружаемой памяти"
+
+#: memory.cpp:50
+msgid "Free swap memory"
+msgstr "Свободно подгружаемой памяти"
+
+#: memory.cpp:71
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld байт  = %8.2f Мб"
+
+#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
+#: memory.cpp:98
+msgid "not available"
+msgstr "не известно"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Эта система не поддерживается :-("

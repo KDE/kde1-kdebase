@@ -1,0 +1,57 @@
+# Перевод kcontrol
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcontrol\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-18 05:26+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Неизвестный модуль"
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "Центр управления KDE"
+
+#: toplevel.cpp:79
+msgid "&Swallow modules"
+msgstr "&Проглоченные модуля"
+
+#: toplevel.cpp:82
+msgid "&About KControl..."
+msgstr "&Об KControl"
+
+#: toplevel.cpp:85
+msgid "&Using KControl"
+msgstr "&Использование KControl"
+
+#: toplevel.cpp:100
+msgid "About KControl"
+msgstr "Об KControl"
+
+#: toplevel.cpp:101
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias HЖlzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr""
+"Центр управления KDE - версия 0.3\n"
+"\n"
+"Написан Маттиасом Хелцером\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Спасибо:\n"
+"С. Кулову, П. Доулеру, М. Вуббену & М. Джонсу."

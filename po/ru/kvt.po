@@ -84,9 +84,9 @@ msgid "Linu&x Console"
 msgstr "Линуксовая консоль"
 
 #: main.C:427
-#, fuzzy
+#
 msgid "&Custom Colors"
-msgstr "Цвет"
+msgstr "&Цвет"
 
 #: main.C:434 main.C:735
 msgid "Hide &Menubar"
@@ -167,7 +167,7 @@ msgstr ""
 "когда клавиатура будет разблокирована."
 
 #: main.C:1084
-#, fuzzy
+#
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -241,26 +241,4 @@ msgstr ""
 "-grk9\t\tгреческая клавиатура ELOT 928 (по умолчанию)\n"
 "-grk4\t\tгреческая клавиатура IBM 437\n"
 
-#~ msgid "E&xit"
-#~ msgstr "Выход"
-
-#~ msgid "Ok"
-#~ msgstr "Ок"
-
-#~ msgid "Cancel"
-#~ msgstr "Отмена"
-
-#~ msgid "&About..."
-#~ msgstr "О программе"
-
-#~ msgid "&Help"
-#~ msgstr "Помощь"
-
-#~ msgid "&File"
-#~ msgstr "Файл"
-
-#~ msgid "&Options"
-#~ msgstr "Опции"
-
-#~ msgid "About kvt"
-#~ msgstr "О kvt"
+#

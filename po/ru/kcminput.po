@@ -1,0 +1,59 @@
+# Перевод kcminput.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminput\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-18 04:44+0600\n"
+"Last-Translator: Denis Pershin>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "&Mouse"
+msgstr "&Мышь"
+
+#: main.cpp:56
+msgid "&Keyboard"
+msgstr "&Клавиатура"
+
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "использование: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:92
+msgid "Input Devices Properties"
+msgstr "Свойства Устройств Ввода"
+
+#: mouse.cpp:76
+msgid "Acceleration"
+msgstr "Ускорение"
+
+#: mouse.cpp:82
+msgid "Threshold"
+msgstr "Порог"
+
+#: mouse.cpp:85
+msgid "Button mapping"
+msgstr "Раскладка кнопок"
+
+#: mouse.cpp:87
+msgid "Right handed"
+msgstr "Правша"
+
+#: mouse.cpp:89
+msgid "Left handed"
+msgstr "Левша"
+
+#: keyboard.cpp:68
+msgid "Keyboard repeat"
+msgstr "Устанавливать скорость"
+
+#: keyboard.cpp:76
+msgid "Key click volume"
+msgstr "Скорость повторения"
