@@ -39,6 +39,7 @@ class KPager : public KTMainWindow
 private:
     QPopupMenu *m_file;
     QPopupMenu *m_options;
+    QPopupMenu *m_drawmode;
     QPopupMenu *m_help;
 
     KPagerClient *kpagerclient;
@@ -53,6 +54,9 @@ public slots:
     void file_Open();
     void options_toggleMenuBar();
     void options_toggleGlobalDesktop();
+    void options_drawPlain();
+    void options_drawIcon();
+    void options_drawPixmap();
     
 private:
     KMenuBar *menu;

@@ -40,6 +40,8 @@ struct WindowProperties
     QRect framegeometry;
     QRect miniframegeometry;
     QPixmap *icon;
+    QPixmap *pixmap;
+    QPixmap *bigPixmap; // well, not so big :-)
 };
 
 class Desktop : public QWidget , QDropSite
@@ -59,8 +61,9 @@ private:
     bool desktopActived;
     static int headerHeight;
     
-    enum { plain, icon, pixmap } drawWinMode;
+    enum drawModes { plain = 0, icon = 1, pixmap = 2} drawWinMode;
 
+    WindowProperties *getWindowProperties(Window w);
     int getIndexOfWindow(Window w);
     WindowProperties *windowAtPosition(const QPoint *p,bool *ok=0L,QPoint *pos=0L);
 
@@ -90,6 +93,9 @@ private:
     void readBackgroundSettings(void);     // read kbgndwm settings
     void prepareBackground(void);          // fills the backgroundPixmap
     QPixmap *loadWallpaper(QString wallpaper);
+
+    void grabDesktop(void);
+    void grabWindowContents(WindowProperties *wp);
     
 
 public:
@@ -109,16 +115,21 @@ public:
     void lowerWindow(Window w);
     void activateWindow(Window w);
 
+
+
     void reconfigure(void); // Reads again the kbgndwm settings
+    void setDrawMode(int mode); // sets the mode to draw windows
 
     static int getHeaderHeight(void);
     
     virtual void paintEvent(QPaintEvent *);
 
     virtual void mousePressEvent (QMouseEvent *e);
+#if QT_VERSION >= 141
     virtual void dragEnterEvent(QDragEnterEvent *e);
     virtual void dragMoveEvent   (QDragMoveEvent *e);
     virtual void dropEvent       (QDropEvent *e);
+#endif
     virtual void mouseDoubleClickEvent( QMouseEvent *);
     virtual void resizeEvent (QResizeEvent *);
 

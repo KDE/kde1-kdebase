@@ -25,6 +25,8 @@
 #include "windowdrag.h"
 #include <stdio.h>
 
+#if QT_VERSION >= 141
+
 windowDrag::windowDrag(Window w,int deltax,int deltay, int origdesk,QWidget *parent)
     : QStoredDrag("application/x-kpager",parent,"windowdrag")
 {
@@ -57,3 +59,5 @@ bool windowDrag::decode( QDropEvent *e, Window &w,int &deltax,int &deltay,int &o
     }
     return FALSE;
 }
+
+#endif

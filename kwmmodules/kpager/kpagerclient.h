@@ -82,6 +82,7 @@ public:
     void setVisibleGlobalDesktop(bool status);
     bool isVisibleGlobalDesktop(void) { return visibleGlobalDesktop; };
 
+    void setDrawMode(int mode);
     
 public slots:
     void moveRight();

@@ -46,8 +46,6 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     KWM::setWmCommand(winId(), "kpager");
     KWM::setUnsavedDataHint(winId(),false);
     
-    QObject::connect(kwmmapp,SIGNAL(desktopChange(int)),
-                     kpagerclient,SLOT(desktopChanged(int)));
     QObject::connect(kwmmapp,SIGNAL(windowAdd(Window)),
                      kpagerclient,SLOT(windowAdded(Window)));
     QObject::connect(kwmmapp,SIGNAL(windowRemove(Window)),
@@ -81,7 +79,21 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
         m_options->insertItem(i18n("Show &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
         
     m_options->insertItem(i18n("Hide &Menubar"), this, SLOT(options_toggleMenuBar()), Key_Space , 2 );
+    m_options->insertSeparator();
+    m_drawmode = new QPopupMenu;
+    m_drawmode->setCheckable( TRUE );
+    m_drawmode->insertItem(i18n("Plain"),this,SLOT(options_drawPlain()));
+    m_drawmode->setId(0,1);
+    m_drawmode->setItemChecked(1,TRUE);
+    m_drawmode->insertItem(i18n("Icon"),this,SLOT(options_drawIcon()));
+    m_drawmode->setId(1,2);
+    m_drawmode->setItemChecked(2,FALSE);
+    m_drawmode->insertItem(i18n("Pixmap"),this,SLOT(options_drawPixmap()));
+    m_drawmode->setId(2,3);
+    m_drawmode->setItemChecked(3,FALSE);
 
+    m_options->insertItem(i18n("Draw Mode"),m_drawmode);
+    
     char aboutstring[500];
     sprintf(aboutstring,
             i18n("%s\n\n" \
@@ -114,6 +126,7 @@ KPager::~KPager()
 
     delete m_file;
     delete m_options;
+    delete m_drawmode;
     delete m_help;
     delete menu;
 #ifdef KPAGERDEBUG
@@ -161,5 +174,33 @@ void KPager::options_toggleMenuBar()
         }
         updateRects();        
     }
+
+}
+
+void KPager::options_drawPlain()
+{
+    m_drawmode->setItemChecked(1, TRUE);
+    m_drawmode->setItemChecked(2, FALSE);
+    m_drawmode->setItemChecked(3, FALSE);
+    
+    kpagerclient->setDrawMode(0);
+}
+
+void KPager::options_drawIcon()
+{
+    m_drawmode->setItemChecked(1, FALSE);
+    m_drawmode->setItemChecked(2, TRUE);
+    m_drawmode->setItemChecked(3, FALSE);
+    
+    kpagerclient->setDrawMode(1);
+}
+
+void KPager::options_drawPixmap()
+{
+    m_drawmode->setItemChecked(1, FALSE);
+    m_drawmode->setItemChecked(2, FALSE);
+    m_drawmode->setItemChecked(3, TRUE);
+    
+    kpagerclient->setDrawMode(2);
 
 }

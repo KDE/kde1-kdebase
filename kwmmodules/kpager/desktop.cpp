@@ -49,7 +49,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     useBackgroundInfoFromKbgndwm=false;
     useWallpaper=false;
 
-    drawWinMode=icon;
+    drawWinMode=plain;
     KConfig *kcfg=(KApplication::getKApplication())->getConfig();
     QFont *defaultfont=new QFont("helvetica",12);
     desktopfont=new QFont(kcfg->readFontEntry("DesktopFont",defaultfont));
@@ -75,6 +75,9 @@ Desktop::~Desktop()
 
 void Desktop::setDesktopActived(bool status)
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]Actived Desktop\n",id);
+#endif
     desktopActived=status;
     if (status==true)
     {
@@ -84,6 +87,7 @@ void Desktop::setDesktopActived(bool status)
             wp=window_list->next();
         }
         if ((wp!=NULL)&&(wp->active==true)) wp->active=false;
+        if (drawWinMode==pixmap) grabDesktop();
     }
     
     update();
@@ -106,10 +110,24 @@ void Desktop::addWindow(Window w,int pos)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    /* set mini geom */
     wp->icon=new QPixmap(KWM::icon(w));
+    wp->pixmap=0L;
+    wp->bigPixmap=0L;
+    if (drawWinMode==pixmap) grabWindowContents(wp);
     if (pos==-1) window_list->append(wp);
      else window_list->insert(pos,wp);
     update();
+}
+
+WindowProperties *Desktop::getWindowProperties(Window w)
+{
+    WindowProperties *wp=window_list->first();
+    while ((wp!=NULL)&&(wp->id!=w))
+    {
+        wp=window_list->next();
+    }
+    return wp;
 }
 
 int Desktop::getIndexOfWindow(Window w)
@@ -126,6 +144,9 @@ int Desktop::getIndexOfWindow(Window w)
 
 void Desktop::removeWindow(Window w)
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]Remove window %ld\n",id,w);
+#endif
     window_list->remove(getIndexOfWindow(w));
     update();
 }
@@ -135,6 +156,10 @@ void Desktop::changeWindow(Window w)
 #ifdef DESKTOPDEBUG
     printf("[%d]Change window %ld\n",id,w);
 #endif
+    WindowProperties *wpback=getWindowProperties(w);
+    if (wpback==NULL) return;
+    QPixmap *tmpbigPixmap=0L;
+    if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     uint wid=getIndexOfWindow(w);
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
@@ -143,13 +168,20 @@ void Desktop::changeWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    /* set mini geom */
     wp->icon=new QPixmap(KWM::icon(w));
+    wp->pixmap=0L;
+    wp->bigPixmap=tmpbigPixmap;
+//    if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->insert(wid,wp);
     update();
 }
 
 void Desktop::raiseWindow(Window w)
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]Raise window %ld\n",id,w);
+#endif
     uint wid=getIndexOfWindow(w);
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
@@ -158,14 +190,24 @@ void Desktop::raiseWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    /* set mini geom */
     wp->icon=new QPixmap(KWM::icon(w));
+    wp->pixmap=0L;
+    wp->bigPixmap=0L;
+    if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->append(wp);
     update();
 }
 
 void Desktop::lowerWindow(Window w)
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]Lower window %ld\n",id,w);
+#endif
     uint wid=getIndexOfWindow(w);
+    WindowProperties *wpback=getWindowProperties(w);
+    QPixmap *tmpbigPixmap=0L;
+    if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
@@ -173,18 +215,23 @@ void Desktop::lowerWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    /* set mini geom */
     wp->icon=new QPixmap(KWM::icon(w));
+    wp->pixmap=0L;
+    wp->bigPixmap=tmpbigPixmap;
+//    if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->insert(0,wp);
     update();
 }
 
 void Desktop::activateWindow(Window w)
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]Activate window %ld\n",id,w);
+#endif
+
     WindowProperties *wp=window_list->first();
     int end=0;
-#ifdef DESKTOPDEBUG
-    printf("activate Window\n");
-#endif
     while ((wp!=NULL)&&(end<2))
     {
         if (wp->active==true)
@@ -281,6 +328,9 @@ void Desktop::paintEvent(QPaintEvent *)
 
     double ratiox=(double)width()/(double)screen_width;
     double ratioy=(double)(height()-y)/(double)screen_height;
+    double rx,ry;
+    QWMatrix matrix;
+
     while (wp!=NULL)
     {
         tmp.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
@@ -290,24 +340,37 @@ void Desktop::paintEvent(QPaintEvent *)
 
 // The next line causes oclock to behave very strange, I better don't call KWM::getDecoration
 //        if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
-        {
-//        tmp2.setRect((int)wp->geometry.x()*ratiox,(int)y+wp->geometry.y()*ratioy,(int)wp->geometry.width()*ratiox,(int)wp->geometry.height()*ratioy);
-            tmp2.setRect(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
+//
+        //            tmp2.setRect((int)wp->geometry.x()*ratiox,(int)y+wp->geometry.y()*ratioy,(int)wp->geometry.width()*ratiox,(int)wp->geometry.height()*ratioy);
 
-            painter->fillRect(tmp2,QColor(145,145,145));
+        if ((drawWinMode==pixmap)&&(wp->bigPixmap!=0L))
+        {
+            matrix.reset();
+            tmp2.setRect(tmp.x()+2,tmp.y()+2,tmp.width()-4,tmp.height()-4);
+            rx=(double)tmp2.width()/wp->bigPixmap->width();
+            ry=(double)tmp2.height()/wp->bigPixmap->height();
+            matrix.scale(rx,ry);
+            if (wp->pixmap!=0L) delete wp->pixmap;
+            wp->pixmap=new QPixmap(wp->bigPixmap->xForm(matrix));
+            painter->drawPixmap(tmp2.x(),tmp2.y(),*wp->pixmap);
         }
-
-        if ((drawWinMode==icon)&&(wp->icon->width()!=0)&&(wp->icon->height()!=0))
+        else
         {
-            QWMatrix matrix;
-
-            double rx=(double)tmp2.width()/wp->icon->width();
-            double ry=(double)(tmp2.height())/wp->icon->height();
-            rx=(rx<ry)? rx : ry;
-            matrix.scale(rx,rx);
-            QPixmap *tmpicon=new QPixmap(wp->icon->xForm(matrix));
-            painter->drawPixmap(tmp2.center().x()-tmpicon->width()/2,tmp2.center().y()-tmpicon->height()/2,*(tmpicon));
-            delete tmpicon;
+            tmp2.setRect(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
+            painter->fillRect(tmp2,QColor(145,145,145));
+            
+            if (((drawWinMode==icon)||(drawWinMode==pixmap))
+                && (wp->icon->width()!=0)&&(wp->icon->height()!=0))
+            {
+                matrix.reset();
+                rx=(double)tmp2.width()/wp->icon->width();
+                ry=(double)(tmp2.height())/wp->icon->height();
+                rx=(rx<ry)? rx : ry;
+                matrix.scale(rx,rx);
+                QPixmap *tmpicon=new QPixmap(wp->icon->xForm(matrix));
+                painter->drawPixmap(tmp2.center().x()-tmpicon->width()/2,tmp2.center().y()-tmpicon->height()/2,*(tmpicon));
+                delete tmpicon;
+            }
         }
         
         painter->drawRect(tmp);
@@ -376,6 +439,7 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 
 void Desktop::mousePressEvent (QMouseEvent *e)
 {
+#if QT_VERSION >= 141
     QPoint dragpos;
     bool ok;
     WindowProperties *wp=windowAtPosition(&e->pos(),&ok,&dragpos);
@@ -404,7 +468,11 @@ void Desktop::mousePressEvent (QMouseEvent *e)
     wd->setPixmap(*qxpm,QPoint(deltax,deltay));
     delete qxpm;
     wd->dragCopy();
+#endif
 }
+
+
+#if QT_VERSION >= 141
 
 void Desktop::dragEnterEvent(QDragEnterEvent *e)
 {
@@ -434,8 +502,9 @@ void Desktop::dropEvent(QDropEvent *e)
         y=(int)(y/ratioy);
         emit moveWindow(w,id,x,y,origdesk);
     }
-    
+
 }
+#endif
 
 void Desktop::mouseDoubleClickEvent( QMouseEvent *)
 {
@@ -720,8 +789,6 @@ void Desktop::resizeEvent (QResizeEvent *)
 {
     if (!useBackgroundInfoFromKbgndwm) return;
     prepareBackground();
-
-
 }
 
 void Desktop::reconfigure(void)
@@ -729,5 +796,65 @@ void Desktop::reconfigure(void)
     useWallpaper=false;
     readBackgroundSettings();
     prepareBackground();
+    update();
+}
+
+void Desktop::grabDesktop(void)
+{
+#ifdef DESKTOPDEBUG
+    printf("[%d] grabDsk **************************\n",id);
+#endif
+    WindowProperties *wp=window_list->first();
+    while (wp!=NULL)
+    {
+        grabWindowContents(wp);
+        wp=window_list->next();
+    }
+#ifdef DESKTOPDEBUG
+    printf("[%d] grabDsk(end) -------------------\n",id);
+#endif
+};
+
+void Desktop::grabWindowContents(WindowProperties *wp)
+{
+    if (wp->id==(KApplication::getKApplication())->mainWidget()->winId())
+    {
+        /* I don't like recursive pixmaps */
+#ifdef DESKTOPDEBUG
+        printf("grabselfWin\n");
+#endif
+        if (wp->bigPixmap==0L) wp->bigPixmap=new QPixmap(50,50);
+        else
+            wp->bigPixmap->resize(50,50);
+            
+        wp->bigPixmap->fill(QColor(145,145,145));
+#ifdef DESKTOPDEBUG
+        printf("grabselfWin(end)\n");
+#endif
+        return;
+    }
+    if ((!desktopActived)&&(!KWM::isSticky(wp->id)))
+    {
+        return;
+    }
+#ifdef DESKTOPDEBUG
+    printf("[%d]grabWin %ld\n",id,wp->id);
+#endif
+    QPixmap *tmp=new QPixmap(QPixmap::grabWindow(wp->id));
+    double rx=(double)100/tmp->width();
+    QWMatrix matrix;
+    matrix.scale(rx,rx);
+    if (wp->bigPixmap!=0L) delete wp->bigPixmap;
+    wp->bigPixmap=new QPixmap(tmp->xForm(matrix));
+    delete tmp;
+#ifdef DESKTOPDEBUG
+    printf("[%d]grabWin(end)\n",id);
+#endif
+}
+
+void Desktop::setDrawMode(int mode)
+{
+    drawWinMode=(drawModes)mode;
+    if (drawWinMode==pixmap) grabDesktop();
     update();
 }

@@ -113,7 +113,7 @@ void KTriangleButton::paint( QPainter *painter )
       double m=((double)(l/2))/maxi;
       while (i<=maxi)
       {
-          painter->drawLine(x,y+i*m,x,y+l-i*m);
+          painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
           x++;
           i++;
       };
@@ -140,7 +140,7 @@ void KTriangleButton::paint( QPainter *painter )
       double m=((double)(l/2))/maxi;
       while (i<=maxi)
       {
-          painter->drawLine(x,y+i*m,x,y+l-i*m);
+          painter->drawLine(x,y+(int)(i*m),x,y+l-(int)(i*m));
           x--;
           i++;
       };

@@ -25,6 +25,9 @@
 #include <qdragobject.h>
 #include <X11/Xlib.h>
 
+#if QT_VERSION >= 141
+
+
 class windowDrag : public QStoredDrag
 {
 public:
@@ -35,3 +38,5 @@ public:
     static bool decode ( QDropEvent *e, Window &w,int &deltax,int &deltay,int &origdesk);
     
 };
+
+#endif

@@ -477,3 +477,11 @@ void KPagerClient::commandReceived(QString s)
         printf("KPager: Command (%s) is not for me\n",s.data());
 #endif
 };
+
+void KPagerClient::setDrawMode(int mode)
+{
+    for (int i=0;i<=numberofDesktops;i++)
+    {
+        if (desktop[i]!=NULL) desktop[i]->setDrawMode(mode);
+    }
+}
