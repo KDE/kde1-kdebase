@@ -157,10 +157,12 @@ void kPanel::parseMenus(){
 			      this, SLOT(ask_logout()), 0, false, 0, klocale->translate("Logout")) );
 
     pmenu->createMenu(new myPopupMenu, this);
-    entries[0].popup = pmenu->getQPopupMenu();
 
+    int i;
+    for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
+    entries[i].popup = pmenu->getQPopupMenu();
     ready_for_event_loop = false;
-    entries[0].button->setCursor(arrowCursor);
+    kde_button->setCursor(arrowCursor);
 }
 
 

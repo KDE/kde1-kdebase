@@ -125,23 +125,6 @@ void kPanel::reposition(int l){
     }
   } while (changed); 
 
-  // the first button is always the KDE button
-//   if (orientation == vertical){
-//     if (nbuttons > 1 && entries[0].button->y() > entries[1].button->y())
-//       entries[0].button->move(entries[0].button->x(), 
-// 			      entries[1].button->y()-entries[0].button->height());
-//     if (entries[0].button->y()<panel_button->y() + panel_button->height()) 
-// 	  entries[0].button->move(entries[0].button->x(),
-// 				  panel_button->y() + panel_button->height());
-//   }
-//   else{
-//     if (nbuttons > 1 && entries[0].button->x() > entries[1].button->x())
-//       entries[0].button->move(entries[1].button->x() - entries[0].button->width(), 
-// 			      entries[0].button->y()); 
-//     if (entries[0].button->x()<panel_button->x() + panel_button->width()) 
-// 	  entries[0].button->move(panel_button->x() + panel_button->width(),
-// 				  entries[0].button->y());
-//   }
 
   if (orientation == vertical){
     for (i=0; i<nbuttons-1; i++){

@@ -360,7 +360,9 @@ void kPanel::kwmCommandReceived(QString com){
   // Command from krootwm: open GO-menu, Syntax: "kpanel:goxxxxyyyy"
   if (com.length()== 17 && com.left(9) == "kpanel:go"){
     QPoint pos(com.mid( 9, 4).toInt(), com.mid(13, 4).toInt());
-    entries[0].popup->popup(pos);
+    int i;
+    for (i=0; i<nbuttons && entries[i].button!=kde_button; i++);
+    entries[i].popup->popup(pos);
   }
 
 }
