@@ -230,6 +230,8 @@ public:
   
   QWidget * parentOfSwallowed(Window);
 
+  void launchSwallowedApplications();
+
   
 protected:
     void    resizeEvent( QResizeEvent * );
@@ -392,6 +394,10 @@ private:
   QPushButton *miniDesk;
   
   int clock_timer_id;
+
+  bool initing;
+
+  QStrList swallowed_applications;
 };
 
 

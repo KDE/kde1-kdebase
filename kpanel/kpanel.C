@@ -35,6 +35,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
   : QFrame( parent, name,WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     //: QFrame( parent, name){
 
+    initing = true;
+
     kwmmapp = kwmapp_arg;
     int i;
     
@@ -790,6 +792,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		      KWM::getDesktopName(i+1));
     }
     
+    initing = false;
 }
 
 void kPanel::restart(){
@@ -1089,12 +1092,18 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   KConfig pConfig(pmi->fullPathName() );
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
-	   if (pConfig.hasKey("SwallowTitle"))
-	  entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
-	   if (pConfig.hasKey("SwallowExec")){
-	     aString = QString(pConfig.readEntry("SwallowExec")).copy();
-// 	     printf("execute %s\n", aString.data());
-	     execute(aString.data());
+	   if (pConfig.hasKey("SwallowTitle")){
+	     entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
+	     if (!entries[nbuttons-1].swallow.isEmpty() &&
+		 pConfig.hasKey("SwallowExec")){
+	       KWM::doNotManage(entries[nbuttons-1].swallow);
+	       aString = QString(pConfig.readEntry("SwallowExec")).copy();
+	       // 	     printf("execute %s\n", aString.data());
+	       if (!initing) 
+		 execute(aString.data());
+	       else
+		 swallowed_applications.append(aString);
+	     }
 	   }
 	   if (pConfig.hasKey("PanelIdentity")){
 	     entries[nbuttons-1].icon[0] = new QPixmap();
@@ -1151,6 +1160,13 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
    reposition();
 }
 
+
+void kPanel::launchSwallowedApplications(){
+  char* s;
+  for (s = swallowed_applications.first(); s;
+       s = swallowed_applications.next())
+    execute(s);
+}
 
 
 

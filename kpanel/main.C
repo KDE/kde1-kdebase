@@ -168,6 +168,7 @@ int main( int argc, char ** argv ){
 
   // connect to kwm as docking module
   myapp.connectToKWM(true);
+  the_panel->launchSwallowedApplications();
   the_panel->show();
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);

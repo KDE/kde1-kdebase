@@ -712,8 +712,10 @@ void kPanel::cleanup(){
        XFlush(qt_xdisplay());
      }
      for (i=0; i<nbuttons; i++)
-       if (entries[i].swallowed)
+       if (entries[i].swallowed){
 	 KWM::close(entries[i].swallowed);
+	 XFlush(qt_xdisplay());
+       }
      
 }
 
