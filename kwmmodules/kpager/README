@@ -22,9 +22,9 @@ TODO
 (DONE)A 2 rows mode to people used to kpanel's desktop arrangement
 (DONE)Get back your menu after hiding it :-)
 (DONE)Save configuration/position/etc.
-Help (really needed ?)
+(DONE)Help (really needed ?)
 Fix the tons of events that kpager receives when the about dialog appears 
-Add support for all those modes that kbgndwm can paint wallpapers in. 
+(DONE)Add support for all those modes that kbgndwm can paint wallpapers in. 
 (DONE)A more useful menu that allows to configure some options like
    reading kbgndwm configuration, etc.
 (DONE)Display the names of the windows somewhere

@@ -686,7 +686,7 @@ void Desktop::mousePressEvent ( QMouseEvent *e )
         mousepressed=true;
         return;
     }
-    if (e->button()==MidButton) 
+    if ((e->button()==MidButton)&&(desktopActived)) 
     {
         bool ok;
         WindowProperties *resizingWP=windowAtPosition(&e->pos(),&ok);
