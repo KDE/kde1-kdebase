@@ -6,7 +6,7 @@ LIBDIR  = $(prefix)/lib
 DOCSDIR = $(prefix)/doc/HTML/kfontmanager
 APPSDIR = $(prefix)/apps/System
 
-install = @install@
+install = @INSTALL@
 INSTALL = $(install) -m 0755
 INSTALL_DATA = $(install) -m 0644
 INSTALL_DIR = $(install) -d -m 0755   
