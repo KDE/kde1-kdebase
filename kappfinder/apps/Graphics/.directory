@@ -12,5 +12,5 @@ Name[pt]=Gráficos
 Name[pt_BR]=Gráficos
 Name[cs]=Grafika
 Name[sk]=Grafika
-SortOrder=xpaint.kdelnk,xv.kdelnk
+SortOrder=acroread.kdelnk,xpaint.kdelnk,xv.kdelnk
 Icon=graphics_package.xpm
