@@ -25,6 +25,13 @@
 #include <X11/keysymdef.h>
 #include "keytrans.h"
 
+KeySym KeyTranslate::stringOrNumToCode(const char* s)
+{
+  unsigned code = 0;
+  if(sscanf(s, "%d", &code) != 1)
+    return (KeySym)-1;
+  return code;
+}
 KeySym KeyTranslate::stringToSym(const char* s)
 {
   return XStringToKeysym(s);

@@ -87,7 +87,7 @@ class KiKbdAddDialog: public QDialog {
   KiKbdMapInfoWidget *label;
  public:
   KiKbdAddDialog(QWidget* parent);
-  int exec(const QStrList&);
+  int exec(const QStrList&, QStrList&);
   int selectedMap() const {return maps->currentItem();}
  public slots:
   void setInfo(int);

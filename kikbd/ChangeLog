@@ -1,3 +1,9 @@
+19 October 1998
+        * us.kimap removed, use en.kimap
+	* Added support to preload x codes from separate file. This is a solution
+	for "symbol not found" error
+	* better language substitution in "Add Map" dialog
+
 4 October 1998	Lars Knoll <knoll@mpi-hd.mpg.de>
 	* Added Hebrew keyboard
 

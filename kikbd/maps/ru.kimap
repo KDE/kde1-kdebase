@@ -2,7 +2,6 @@
 
 [International Keyboard]
 Authors=Alexander Budnik <budnik@linserv.jinr.ru>,Denis V. Dmitrienko <denis@null.net>,
-Authors[ru]=Александр Будник <budnik@linserv.jinr.ru>,Денис Дмитриенко <denis@null.net>
 
 Comment=Has latin characters as alternate symbols.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.

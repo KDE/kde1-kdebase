@@ -19,11 +19,13 @@
    
   */
 #include <stream.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <qfileinf.h>
 #include <qdir.h>
 #include <qcolor.h>
 #include <qpainter.h>
+#include <qdict.h>
 
 #include <kconfig.h>
 #include <kapp.h>
@@ -64,6 +66,7 @@ static const char* confStringCustFont   = "CustomizeFont";
 static const char* confStringAutoStart  = "AutoStart";
 static const char* confStringDocking    = "Docking";  
 static const char* confStringHotList    = "HotList";  
+static const char* confStringCodes      = "Codes";  
 static const char* confStringAutoStartPlace  = "AutoStartPlace";
 static const char* swConfigString[] = {
   "None",
@@ -122,6 +125,32 @@ const QColor mapUserColor   = darkBlue;
 const QColor mapNoFileColor = darkRed;
 
 //=========================================================
+//   special widget
+//=========================================================
+class KiKbdCodesObject: public KConfigComboObject {
+protected:
+  KiKbdConfig* owner;
+public:
+  KiKbdCodesObject(KiKbdConfig* owner)
+    :KConfigComboObject(confStringCodes, *((QString*)&owner->getCodes()),
+			QStrList(), 0),
+     owner(owner) {}
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L)
+    {
+      list = owner->availableMaps("codes");
+      if(labels) delete labels;
+      labels = new QStrList();
+      for(unsigned i=0; i<list.count(); i++)
+	labels->append(owner->getMap(list.at(i))->getLabel());
+      // preppend x default
+      list.insert(0, "");
+      labels->insert(0, i18n("X default codes"));
+      num = list.count();
+      return KConfigComboObject::createWidget(parent, name);
+    }
+};
+
+//=========================================================
 //   config class
 //=========================================================
 KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
@@ -149,6 +178,7 @@ KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 	<< new KConfigColorObject(confStringAltColor, altColor)
 	<< new KConfigColorObject(confStringForColor, forColor)
 	<< new KConfigFontObject(confStringFont,  font)
+	<< new KiKbdCodesObject(this)
 	<< setGroup(confStartupGroup)
 	<< new KConfigBoolObject(confStringAutoStart, autoStart)
 	<< new KConfigBoolObject(confStringDocking, docking)
@@ -169,11 +199,10 @@ void KiKbdConfig::loadConfig()
 }
 void ask(const char* msg)
 {
-  if(QString(kapp->argv()[0]).find("kikbd") != -1) {
+  if(!KiKbdConfig::isConfigProgram()) {
     if(KiKbdMsgBox::yesNo(gettext("%s\nDo you want to start "
 				  "Configuration?"), msg)) {
-      system("kcmikbd -startkikbd&");
-      ::exit(0);
+      KiKbdConfig::startConfigProgram();
     }
   } else KiKbdMsgBox::warning(msg);
 }
@@ -217,6 +246,7 @@ void KiKbdConfig::setDefaults()
   autoMenu     = emuCapsLock = custFont  = saveClasses = FALSE;
   switchComb     = "Control_R+Shift_R";
   altSwitchComb  = "Alt_R";
+  codes          = "";
   autoStartPlace = input = 0;
   capsColor = QColor(0, 128, 128);
   altColor  = QColor(255, 255, 0);
@@ -229,16 +259,23 @@ bool KiKbdConfig::oneKeySwitch() const
 {
   return (!switchComb.contains('+')) && (switchComb != "None");
 }
-QStrList KiKbdConfig::availableMaps()
+QStrList KiKbdConfig::availableMaps(const char* subdir = "")
 {
-  static QStrList *list = 0L;
+  static QDict<QStrList> *dict = 0L;
 
-  if(list) return *list;
-
+  QStrList* list;
+  if(dict) {
+    if((list = dict->find(subdir))) return *list;
+  } else {
+    dict = new QDict<QStrList>;
+    dict->setAutoDelete(TRUE);
+  }
   list = new QStrList();
+  dict->insert(subdir, list);
+
   QStrList dirs;
-  dirs.append(kapp->kde_datadir() + "/kikbd");
-  dirs.append(kapp->localkdedir() + "/share/apps/kikbd");
+  dirs.append(kapp->kde_datadir() + "/kikbd/"+subdir);
+  dirs.append(kapp->localkdedir() + "/share/apps/kikbd/"+subdir);
   unsigned i;for(i=0; i<dirs.count(); i++)
     {
       QDir dir(dirs.at(i));  
@@ -249,6 +286,7 @@ QStrList KiKbdConfig::availableMaps()
       unsigned j;for(j=0; j<entry.count(); j++)
 	{
 	  QString name = entry.at(j);
+	  if(*subdir) name = QString(subdir) + "/" + name;
 	  name.resize(name.find(".")+1);
 	  if(list->find(name) == -1) list->inSort(name);
 	}
@@ -263,6 +301,22 @@ bool KiKbdConfig::readAutoStart()
 	 << new KConfigBoolObject(confStringAutoStart, autoStart);
   config.loadConfig();
   return autoStart;
+}
+void KiKbdConfig::startConfigProgram(int opt)
+{
+  switch(opt) {
+  case Config_Normal: 
+    if(!fork()) {
+      execlp("kcmikbd", 0L);
+      ::exit(1);
+    }
+    break;
+  case Config_StartKikbd: execlp("kcmikbd", "kcmikbd", "-startkikbd", 0L);
+  }
+}
+bool KiKbdConfig::isConfigProgram()
+{
+  return QString(kapp->argv()[0]).find("kikbd") == -1;
 }
 
 //=========================================================
@@ -400,23 +454,47 @@ void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
   QString msg(128);
   msg.sprintf(i18n(form), i18n(s1), i18n(s2));
   KMsgBox::message(0, i18n("International keyboard ERROR"), msg,
-		   KMsgBox::STOP);
+		   KMsgBox::EXCLAMATION);
   ::exit(1);
 }
 /**
    we use this to show dialog with error
 */
-void KiKbdMsgBox::warning(const char* form, const char* s1, 
-			  const char *s2)
+QString setMsg(const char* form, const char* s1, const char *s2)
 {
   QString msg(128);
   msg.sprintf(i18n(form), i18n(s1), i18n(s2));
-  KMsgBox::message(0, i18n("International keyboard warning"), msg);
+  return msg;
+}
+void KiKbdMsgBox::warning(const char* form, const char* s1, 
+			  const char *s2)
+{
+  KMsgBox::message(0, i18n("International keyboard warning"),
+		   setMsg(form, s1, s2),
+		   KMsgBox::INFORMATION);
 }
 
 int KiKbdMsgBox::yesNo(const char* form, const char* s1, const char *s2)
 {
-  QString msg(128);
-  msg.sprintf(i18n(form), i18n(s1), i18n(s2));
-  return KMsgBox::yesNo(0, i18n("International keyboard question"), msg) == 1;
+  return KMsgBox::yesNo(0, i18n("International keyboard question"),
+			setMsg(form, s1, s2)) == 1;
+}
+void KiKbdMsgBox::ask(const char* form, const char* s1, const char *s2)
+{
+  switch(KMsgBox::yesNoCancel(0, i18n("International keyboard question"),
+			      setMsg(form, s1, s2),
+			      KMsgBox::QUESTION, i18n("Configure"),
+			      i18n("Continue"), i18n("Quit"))) {
+  case 2: return;
+  case 1: KiKbdConfig::startConfigProgram(KiKbdConfig::Config_StartKikbd);
+  case 3: ::exit(0);
+  }
+}
+void KiKbdMsgBox::askContinue(const char* form, const char* s1, const char *s2)
+{
+  QString msg = setMsg(form, s1, s2);
+  msg += i18n("\nDo you want to continue?");
+  if(KMsgBox::yesNo(0, i18n("International keyboard question"),
+		    msg) == 1) return;
+  ::exit(0);
 }

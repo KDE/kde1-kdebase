@@ -174,35 +174,57 @@ void KConfigStrListObject::writeObject(KObjectConfig* config)
  * Combo Object
  */
 KConfigComboObject::KConfigComboObject(const char* key, int& val,
-				       const char** list,
-				       unsigned num, const char** labels,
+				       const char** vlist,
+				       unsigned num, const char** vlabels,
 				       int type)
-  :KConfigObject(&val, FALSE, key)
+  :KConfigObject(&val, FALSE, key),
+   labels(vlabels ? new QStrList() : 0L),
+   pstring(0L), pindex(&val), num(num), type(type)
+   
 {
-  this->list   = list;
-  this->labels = labels;
-  this->type   = type;
-  this->num    = num;
-  pindex  = &val;
-  pstring = 0L;
+  for(unsigned i=0; i<num; i++) {
+    if(vlist  ) list.append(vlist[i]);
+    if(vlabels) labels->append(vlabels[i]);
+  }
+}
+KConfigComboObject::KConfigComboObject(const char* key, int& val,
+				       const QStrList& vlist,
+				       unsigned num, const QStrList* vlabels,
+				       int type)
+  :KConfigObject(&val, FALSE, key), list(vlist),
+   labels(vlabels ? new QStrList(*vlabels) : 0L),
+   pstring(0L), pindex(&val), num(num), type(type)
+{
 }
 KConfigComboObject::KConfigComboObject(const char* key, QString& val,
-				       const char** list,
-				       unsigned num, const char** labels,
+				       const char** vlist,
+				       unsigned num, const char** vlabels,
 				       int type)
-  :KConfigObject(&val, FALSE, key)
+  :KConfigObject(&val, FALSE, key),
+   labels(vlabels ? new QStrList() : 0L),
+   pstring(&val), pindex(0L), num(num), type(type)
 {
-  this->list   = list;
-  this->labels = labels;
-  this->type   = type;
-  this->num    = num;
-  pstring = &val;
-  pindex  = 0L;
+  for(unsigned i=0; i<num; i++) {
+    if(vlist  ) list.append(vlist[i]);
+    if(vlabels) labels->append(vlabels[i]);
+  }
+}
+KConfigComboObject::KConfigComboObject(const char* key, QString& val,
+				       const QStrList& vlist,
+				       unsigned num, const QStrList* vlabels,
+				       int type)
+  :KConfigObject(&val, FALSE, key), list(vlist),
+   labels(vlabels ? new QStrList(*vlabels) : 0L),
+   pstring(&val), pindex(0L), num(num), type(type)
+{
+}
+KConfigComboObject::~KConfigComboObject()
+{
+  if(labels) delete labels;
 }
 int KConfigComboObject::getIndex(const QString& string) const
 {
-  unsigned i;for(i=num; --i>0 && string!=list[i];);
-  return i;
+  return ((QStrList*)&list)->find(string);
 }
 void KConfigComboObject::readObject(KObjectConfig* config)
 {
@@ -223,7 +245,7 @@ QWidget* KConfigComboObject::createWidget(QWidget* parent,
     wid = new QComboBox(parent);
     for(i=0; i<num; i++)
       ((QComboBox*)wid)->
-	insertItem(i18n(labels&&labels[i]?labels[i]:list[i]));
+	insertItem(i18n(labels?labels->at(i):list.at(i)));
     wid->setMinimumSize(wid->sizeHint());
     connect(wid, SIGNAL(activated(int)), SLOT(setData(int)));
     break;
@@ -232,7 +254,7 @@ QWidget* KConfigComboObject::createWidget(QWidget* parent,
     int height = 0;
     unsigned i;for(i=0; i<num; i++) {
       QRadioButton *but = 
-	new QRadioButton(i18n(labels&&labels[i]?labels[i]:list[i]),
+	new QRadioButton(i18n(labels?labels->at(i):list.at(i)),
 			 (QButtonGroup*)wid);
       but->setMinimumSize(but->sizeHint());
       height = but->height();

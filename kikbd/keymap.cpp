@@ -19,6 +19,7 @@
    
   */
 #include <stream.h>
+#include <string.h>
 #include <stdlib.h>
 #include <qfile.h>
 #include <qregexp.h>
@@ -28,6 +29,7 @@
 #include "kikbd.h"
 #include "keymap.h"
 #include "keytrans.h"
+#include "kikbdconf.h"
 #include "keymap.moc.h"
 
 /**
@@ -164,7 +166,7 @@ KeySyms::KeySyms()
 {
   syms = 0;
 }
-void KeySyms::allocSyms(int min, int max, int codes)
+void KeySyms::allocSyms(KeySym min, KeySym max, unsigned codes)
 {
   unsigned nsize = (max-min+1)*codes;
   if((!syms) || (nsize > ((maxKeyCode-minKeyCode+1)*kcodes))) {
@@ -173,6 +175,7 @@ void KeySyms::allocSyms(int min, int max, int codes)
     if(syms == 0) {
       KiKbdMsgBox::error(gettext("KeyMap: cannot allocate memory"));
     }
+    memset(syms, 0, sizeof(KeySym)*nsize);
   }
   minKeyCode = min;
   maxKeyCode = max;
@@ -215,27 +218,29 @@ int KeySyms::findSym(const char* ssym)
       if(KeyTranslate::tolower(syms[i]) 
 	 == KeyTranslate::tolower(sym)) return i;
     }
-  if(!KiKbdMsgBox::yesNo(gettext("KeyMap: can not find symbol \"%s\".\n"
-				 "Do you want to continue?"), ssym))
-    ::exit(0);  
+  if(kikbdConfig && kikbdConfig->getCodes() == "") {
+    KiKbdMsgBox::ask(gettext("Can not find symbol \"%s\".\n"
+			     "May be your default X codes does not match.\n"
+			     "You can preset X codes in \"Advanced\" section\n"
+			     "of configuration program."), ssym);
+  } else
+    KiKbdMsgBox::askContinue(gettext("KeyMap: can not find symbol \"%s\"."),
+			     ssym);
   return -1;
 }
 int KeySyms::findCode(const char* scode)
 {
-  unsigned int code = 0;
-  if(sscanf(scode, "%x", &code) != 1)
-    if(sscanf(scode, "%d", &code) != 1)
-      if(KiKbdMsgBox
-	 ::yesNo(gettext("KeyMap: do not undestand keycode \"%s\".\n"
-			 "Do you want to continue?"), scode))
-	return -1;
-      else ::exit(0);
+  KeySym code = KeyTranslate::stringOrNumToCode(scode);
+  if(code == (KeySym)-1) {
+    KiKbdMsgBox::askContinue(gettext("KeyMap: do not undestand keycode \"%s\".")
+			     , scode);
+    return -1;
+  }
   if(code < minKeyCode || code > maxKeyCode) {
-    if(KiKbdMsgBox
-       ::yesNo(gettext("KeyMap: keycode \"%s\" go out of range.\n" 
-		       "Do you want to continue?"), scode))
-      return -1;
-    else ::exit(0);
+    KiKbdMsgBox
+       ::askContinue(gettext("KeyMap: keycode \"%s\" go out of range."),
+		     scode);
+    return -1;
   }
   return (code-minKeyCode)*kcodes;
 }
@@ -252,6 +257,41 @@ KeySyms& KeySyms::operator=(KeySyms& s)
   unsigned i; for(i=0; i<(maxKeyCode-minKeyCode+1)*kcodes; i++) {
     syms[i] = s.syms[i];
   }
+  return *this;
+}
+KeySyms& KeySyms::operator=(KiKbdMapConfig* map)
+{
+  QList<QStrList>& codes = map->getKeycodes();
+  // find symbols per code and min max code
+  KeySym min = (unsigned)-1, max = 0;
+  unsigned ncodes = 0;
+  for(unsigned i = 0; i < codes.count(); i++) {
+    QStrList code = *codes.at(i);
+    KeySym keycode = KeyTranslate::stringOrNumToCode(code.at(0));
+    if(ncodes < code.count()-1) ncodes = code.count()-1;
+    if(min > keycode) min = keycode;
+    if(max < keycode) max = keycode;
+  }
+  // allocate space
+  allocSyms(min, max, ncodes<4?4:ncodes);
+  // set
+  for(unsigned i = 0; i < codes.count(); i++) {
+    QStrList code = *codes.at(i);
+    int from  = (KeyTranslate::stringOrNumToCode(code.at(0)) - minKeyCode)
+      * kcodes;
+    for(unsigned j = 1; j < code.count(); j++) {
+      change(from, code.at(j), j-1);
+    }
+  }
+  /*cout << form("%d %d %d", minKeyCode, maxKeyCode, kcodes) << endl;
+  for(int i = 0; i<(max-min+1)*kcodes; i+=kcodes) {
+    cout << form("%4d : ", min+(i/kcodes));
+    for(int j=0; j<kcodes; j++) {
+      cout << form(" %6d", syms[i+j]);
+    }
+    cout << endl;
+  }
+  ::exit(0);*/
   return *this;
 }
 

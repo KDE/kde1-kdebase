@@ -205,10 +205,11 @@ void KiKbdMapsWidget::addMap()
 {
   //--- create list of map to add
   QStrList list = kikbdConfig->availableMaps();
-  QStrList mapsToAdd;
+  QStrList mapsToAdd, sortList;
   unsigned i;for(i=0; i<list.count(); i++)
     if(mapsStr.find(list.at(i)) == -1) {
-      mapsToAdd.inSort(list.at(i));
+      sortList.inSort(kikbdConfig->getMap(list.at(i))->getGoodLabel());
+      mapsToAdd.insert(sortList.at(), list.at(i));
     }
   if(mapsToAdd.count() == 0) {
     KMsgBox::message(0, i18n("Adding Keyboard"),
@@ -216,7 +217,7 @@ void KiKbdMapsWidget::addMap()
     return;
   }
   KiKbdAddDialog addDialog(this);
-  if(addDialog.exec(mapsToAdd))
+  if(addDialog.exec(mapsToAdd, mapsStr))
     addMap(mapsToAdd.at(addDialog.selectedMap()));
 }
 void KiKbdMapsWidget::deleteMap()
@@ -320,26 +321,41 @@ void KiKbdAddDialog::setInfo(int i)
   topLayout->activate();
   resize(0, 0);
 }
-int KiKbdAddDialog::exec(const QStrList& toAdd) 
+int KiKbdAddDialog::exec(const QStrList& toAdd, QStrList& mapStr) 
 { 
   mapsToAdd = toAdd;
   //--- load list of maps
-  QString preferedLang;
-  int prefIndex = 0;
-  preferedLang = kapp->getLocale()->language();
-  for(unsigned i=0; i<mapsToAdd.count(); i++) {
+  // also look up prefered language
+  QStrList preferedLang;
+  int *prefIndex = new int[4];
+  unsigned j;for(j = 0; j < 4; prefIndex[j++]=-1);
+  preferedLang = kapp->getLocale()->languageList();
+  if(preferedLang.find("en") == -1) preferedLang.insert(0, "en");
+  // add
+  unsigned i;for(i = 0; i < mapsToAdd.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig->getMap(mapsToAdd.at(i));
     maps->insertItem(mapLine(map));
-    if(!prefIndex && preferedLang == map->getLocale())
-      prefIndex = i;
+    for(j = 0; j < 4; j++)
+      if((prefIndex[j] == -1) && preferedLang.at(j) == map->getLocale()) {
+	int k;for(k = mapStr.count(); k-- > 0;) {
+	  KiKbdMapConfig *map1 = kikbdConfig->getMap(mapStr.at(k));
+	  if(map->getLocale() == map1->getLocale()
+	     && map->getCharset() == map1->getCharset()) break;
+	}
+	if(k < 0) prefIndex[j] = i;
+      }
   }
-  maps->setCurrentItem(prefIndex);
+  int prefIndex0;
+  for(j=0; j<4 && (prefIndex0=prefIndex[j],prefIndex0 == -1);
+      prefIndex0=0, j++);
+  delete prefIndex;
+  maps->setCurrentItem(prefIndex0);
   QListBox *box = maps->listBox();
   if(box) {
-    box->setCurrentItem(prefIndex);
+    box->setCurrentItem(prefIndex0);
     box->centerCurrentItem();
   }
-  setInfo(prefIndex);
+  setInfo(prefIndex0);
   
   //--- execute dialog
   return QDialog::exec();
@@ -465,6 +481,11 @@ void KiKbdGeneralWidget::advanced()
 			       gettext("&Save Classes"), 
 			       gettext("Save relations between window "
 				       "classes and keyboard maps on exit")));
+  // custom codes
+  hbox->addWidget(kikbdConfig->
+		  createWidget(&kikbdConfig->getCodes(), group,
+			       0L, 
+			       gettext("Define X codes")));
   // input
   QButtonGroup* butg = (QButtonGroup*)kikbdConfig->
     createWidget(&kikbdConfig->getInput(), group, gettext("Input"));

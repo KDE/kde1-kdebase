@@ -1,7 +1,6 @@
 # KDE Config File
 [International Keyboard]
-Comment=Codes for pc101 keyboard
-Label=pc101
+Label=Codes for pc101 keyboard
 
 [KeyboardMap]
 keycode1=9,Escape,,

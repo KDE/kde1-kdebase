@@ -174,9 +174,9 @@ public:
 class KConfigComboObject: public KConfigObject {
   Q_OBJECT
  protected:
+  QStrList     list, *labels;
   QString     *pstring;
   int         *pindex;
-  const char **list, **labels;
   unsigned     num;
   short        type;
   /** KConfigObject reimplemented write data method
@@ -200,6 +200,10 @@ class KConfigComboObject: public KConfigObject {
   */
   KConfigComboObject(const char* key, int& val, const char** list,
 		     unsigned num, const char** labels=0L, int type=Combo);
+  /** Same as above differ only in arguments accepted
+   */
+  KConfigComboObject(const char* key, int& val, const QStrList& list,
+		     unsigned num, const QStrList* labels=0L, int type=Combo);
   /**
      Construct new object with list of available values given by array
      of NULL terminated character strings.
@@ -211,6 +215,11 @@ class KConfigComboObject: public KConfigObject {
   */
   KConfigComboObject(const char* key, QString& val, const char** list,
 		     unsigned num, const char** labels=0L, int type=Combo);
+  /** Same as above differ only in arguments accepted
+   */
+  KConfigComboObject(const char* key, QString& val, const QStrList& list,
+		     unsigned num, const QStrList* labels=0L, int type=Combo);
+  ~KConfigComboObject();
   /**
      Create widget to change value of the KConfigComboObject data.
      If type==Combo, QComboWidget will be created with locale
@@ -221,9 +230,9 @@ class KConfigComboObject: public KConfigObject {
   */
   virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L);
   int  getIndex() const {return pindex?*pindex:getIndex(*pstring);}
-  void setIndex(int i)  {if(pstring) *pstring = list[i]; else *pindex = i;}
+  void setIndex(int i)  {if(pstring) *pstring = list.at(i); else *pindex = i;}
   QString getString() const {
-    return QString(pindex?list[*pindex]:(const char*)*pstring);
+    return QString(pindex?((QStrList*)&list)->at(*pindex):(const char*)*pstring);
   }
  public slots:
   void setData(int);

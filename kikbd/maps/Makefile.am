@@ -4,7 +4,3 @@ datadir = $(kde_datadir)/kikbd
 
 EXTRA_DIST = $(data_DATA)
 SUBDIRS = codes
-
-
-
-

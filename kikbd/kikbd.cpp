@@ -43,6 +43,7 @@
 #include "kikbd.h"
 #include "kikbd.moc.h"
 
+KiKbdConfig *kikbdConfig = 0L;
 //=========================================================
 // constant definitions
 //=========================================================
@@ -103,6 +104,11 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   }
 
   /**
+     construct main widget
+  */
+  setMainWidget(button = new KiKbdButton());
+
+  /**
      look for started kikbd
   */
   Window win = findKiKbdWindow();
@@ -110,11 +116,6 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
     KiKbdMsgBox::error(gettext("KDE International Keyboard already "
 			       "started on this display."));
 
-  /**
-     construct main widget
-  */
-  setMainWidget(button = new KiKbdButton());
-  
   /**
      create menu and connect signals
   */
@@ -209,7 +210,7 @@ void KiKbdApplication::save()
   kikbdConfig.loadConfig();
   kikbdConfig << kikbdConfig.setGroup(confRunTimeGroup)
 	      << new KConfigNumberedKeysObject(confClassBase, 0, 
-					      list.count(), list);
+	      list.count(), list);
   kikbdConfig.saveConfig();
 }
 
@@ -246,6 +247,7 @@ void KiKbdApplication::loadConfig()
 	      << new KConfigNumberedKeysObject(confClassBase, 0, 100,
 					       classInput);
   kikbdConfig.loadConfig();
+  ::kikbdConfig = &kikbdConfig;
 
   /**
      set three palette: normal, with capslock, with alt
@@ -279,6 +281,18 @@ void KiKbdApplication::loadConfig()
   */
   //processEvents();
 
+  /** Set initial x codes
+   */
+  KeySyms initSyms;
+  if(kikbdConfig.getCodes() != "")
+    if(kikbdConfig.getMap(kikbdConfig.getCodes())->getNoFile()) {
+      KiKbdMsgBox::ask(gettext("X codes \"%s\" file does not exist.\n"
+			       "Using X default codes."),
+		       kikbdConfig.getCodes());
+      initSyms = globalKeySyms;
+    }
+    else initSyms = kikbdConfig.getMap(kikbdConfig.getCodes());
+  else initSyms = globalKeySyms;
   /**
      here we are loading all used symbols in all maps
      also we are create popup menu and necasary connections
@@ -289,7 +303,12 @@ void KiKbdApplication::loadConfig()
   QStrList maps = kikbdConfig.getMaps();
   unsigned i;for(i=0; i<maps.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig.getMap(maps.at(i));
-    keyMaps.append(new KeyMap(*map, globalKeySyms));
+    if(map->getNoFile()) {
+      KiKbdMsgBox::ask(gettext("Keyboard map \"%s\" does not exists.\n"
+			       "Skiping this map."), maps.at(i));
+      continue;
+    }
+    keyMaps.append(new KeyMap(*map, initSyms));
     menu->insertItem(map->getIcon(), map->getGoodLabel());
     /**
        we want to automaticaly adjust kikbd button size
@@ -496,7 +515,8 @@ void KiKbdApplication::loadConfig()
       mainWidget()->move(x, y);
     }
   }
-  
+
+  ::kikbdConfig = 0L;
   inConfig = (isInit = FALSE);
 }
 QString KiKbdApplication::windowClass(Window w)
@@ -967,7 +987,7 @@ void KiKbdApplication::activateMenu(int i)
   if(i == (int)menu->count()-1) {
     exit();
   } else if(i == (int)menu->count()-2) {
-    system("kcmikbd&");
+    KiKbdConfig::startConfigProgram();
   } else setKeyMapTo(i);
 }
 

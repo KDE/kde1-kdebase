@@ -78,7 +78,7 @@ class KiKbdConfig: public KObjectConfig {
   bool            keyboardBeep, hotList, autoStart, docking;
   bool            autoMenu, emuCapsLock, custFont, saveClasses;
   int             input, autoStartPlace;
-  QString         switchComb, altSwitchComb;
+  QString         switchComb, altSwitchComb, codes;
   QColor          capsColor, altColor, forColor;
   QFont           font;
  public:
@@ -99,6 +99,7 @@ class KiKbdConfig: public KObjectConfig {
   const QColor&  getForColor    () const {return forColor;     }
   const QFont&   getFont        () const {return font;         }
   const int& getAutoStartPlace  () const {return autoStartPlace;}
+  const QString& getCodes       () const {return codes;}
   const QString& getSwitchRef   () const {return switchComb;}
   const QString& getAltSwitchRef() const {return altSwitchComb;}
   QStrList& getMaps() {return maps;}
@@ -115,19 +116,25 @@ class KiKbdConfig: public KObjectConfig {
   void            setDefaults();
   virtual void loadConfig();
  public:
+  enum {Config_Normal=0, Config_StartKikbd};
   static bool     readAutoStart();
-  static QStrList availableMaps();
+  static QStrList availableMaps(const char* subdir = "");
+  static void     startConfigProgram(int opt=Config_Normal);
+  static bool     isConfigProgram();
  public slots:
   void newUserRc();
   void olderVersion(float);
   void newerVersion(float);
 };
+extern KiKbdConfig *kikbdConfig;
 
 class KiKbdMsgBox {
  public:
   static void error(const char* form, const char* s1=0L, const char *s2=0L);
   static void warning(const char* form, const char* s1=0L, const char *s2=0L);
   static int  yesNo(const char* form, const char* s1=0L, const char *s2=0L);
+  static void ask(const char* form, const char* s1=0L, const char *s2=0L);
+  static void askContinue(const char* form, const char* s1=0L, const char *s2=0L);
 };
 
 #define gettext(text) text

@@ -30,9 +30,9 @@
 */
 class KeySyms {
  protected:
-  KeySym *syms;
-  unsigned  minKeyCode, maxKeyCode, kcodes;
-  void allocSyms(int, int, int);
+  KeySym *syms, minKeyCode, maxKeyCode;
+  unsigned  kcodes;
+  void allocSyms(KeySym, KeySym, unsigned);
   friend class KeyMap;
  public:
   KeySyms();
@@ -50,6 +50,7 @@ class KeySyms {
   void expandCodes(unsigned);
   bool isNull() {return syms == 0L;}
   KeySyms& operator=(KeySyms&);
+  KeySyms& operator=(KiKbdMapConfig*);
  public:
   static KeySym stringToSym(const char*);
 };

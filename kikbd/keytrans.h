@@ -27,7 +27,7 @@ class KeyTranslate {
   static KeySym tolower(KeySym);
   static KeySym stringToSym(const char*);
   static KeySym stringOrHexToSym(const char*);
-  static int    stringOrNumToCode(const char*);
+  static KeySym stringOrNumToCode(const char*);
   static const char* stringFromSym(KeySym);
 };
 
