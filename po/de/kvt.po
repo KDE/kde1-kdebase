@@ -232,11 +232,3 @@ msgid ""
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
 
-#~ msgid "E&xit"
-#~ msgstr "&Beenden"
-
-#~ msgid "&Foreground Color"
-#~ msgstr "&Vordergrund-Farbe"
-
-#~ msgid "&Background Color"
-#~ msgstr "&Hintergrund-Farbe"

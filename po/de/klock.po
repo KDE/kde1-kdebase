@@ -594,5 +594,3 @@ msgstr ""
 "\n"
 "Portiert für KDE von Emanuel Pirker."
 
-#~ msgid "Font"
-#~ msgstr "Schrift"

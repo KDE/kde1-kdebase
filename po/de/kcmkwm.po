@@ -23,51 +23,55 @@ msgstr ""
 
 #: titlebar.cpp:110
 msgid "Minimize"
-msgstr ""
+msgstr "Minimieren"
 
 #: titlebar.cpp:114
 msgid "Maximize"
-msgstr ""
+msgstr "Maximieren"
 
 #: titlebar.cpp:118
 msgid "Sticky"
-msgstr ""
+msgstr "Anheften"
 
 #: titlebar.cpp:126
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: titlebar.cpp:458
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
+"Die linke Seite der Titelzeile ist voll... Entferne den 'maximieren' Button\n"
 
 #: titlebar.cpp:491
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
+"Die rechte Seite der Titelzeile ist voll... Entferne den 'maximieren' Button\n"
 
 #: titlebar.cpp:531
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
+"Die linke Seite der Titelzeile ist voll... Entferne den 'minimieren' Button\n"
 
 #: titlebar.cpp:564
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
+"Die rechte Seite der Titelzeile ist voll... Entferne den 'minimieren' Button\n"
 
 #: titlebar.cpp:915
 msgid "Titlebar appearance"
-msgstr ""
+msgstr "Titelzeilen-Erscheinung"
 
 #: titlebar.cpp:917
 msgid "Shaded"
-msgstr ""
+msgstr "Schattiert"
 
 #: titlebar.cpp:920
 msgid "Plain"
-msgstr ""
+msgstr "Schlicht"
 
 #: titlebar.cpp:923 titlebar.cpp:943
 msgid "Pixmap"
@@ -75,19 +79,19 @@ msgstr ""
 
 #: titlebar.cpp:930
 msgid "Title Animation"
-msgstr ""
+msgstr "Bewegung des Titels"
 
 #: titlebar.cpp:933
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: titlebar.cpp:954
 msgid "&Active pixmap"
-msgstr ""
+msgstr "&Aktive Pixmap"
 
 #: titlebar.cpp:956
 msgid "&Inactive pixmap"
-msgstr ""
+msgstr "&Inaktive Pixmap"
 
 #: windows.cpp:63
 msgid "Window movement"
@@ -95,7 +99,7 @@ msgstr ""
 
 #: windows.cpp:64
 msgid "Transparent"
-msgstr ""
+msgstr "Transparent"
 
 #: windows.cpp:65
 msgid "Opaque"

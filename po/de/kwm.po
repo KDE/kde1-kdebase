@@ -145,5 +145,3 @@ msgstr "Wechseln zu"
 msgid "Current session"
 msgstr "Aktuelle Sitzung"
 
-#~ msgid "&Close"
-#~ msgstr "&Schlieﬂen"

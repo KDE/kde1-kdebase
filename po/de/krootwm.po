@@ -58,5 +58,3 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgid "Usage:"
 msgstr "Benutzung:"
 
-#~ msgid "New"
-#~ msgstr "Neu"

@@ -1252,55 +1252,6 @@ msgstr ""
 msgid "KFM Question"
 msgstr "KFM-Frage"
 
-#~ msgid "Delete"
-#~ msgstr "Löschen"
-
-#~ msgid "&Print..."
-#~ msgstr "&Drucken..."
-
-#~ msgid "&Close"
-#~ msgstr "&Schließen"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopieren"
-
-#~ msgid "&Paste"
-#~ msgstr "&Einfügen"
-
-#~ msgid "Back"
-#~ msgstr "Zurück"
-
-#~ msgid "Forward"
-#~ msgstr "Weiter"
-
-#~ msgid "Reload"
-#~ msgstr "Neu laden"
-
-#~ msgid "Copy"
-#~ msgstr "Kopieren"
-
-#~ msgid "Paste"
-#~ msgstr "Einfügen"
-
-#~ msgid "Cut"
-#~ msgstr "Ausschneiden"
-
-#~ msgid "&Help"
-#~ msgstr "&Hilfe"
-
-#~ msgid "&File"
-#~ msgstr "&Datei"
-
-#~ msgid "&Edit"
-#~ msgstr "&Bearbeiten"
-
-#~ msgid "&Options"
-#~ msgstr "&Optionen"
-
-#, fuzzy
-#~ msgid "&Help..."
-#~ msgstr "&Hilfe"
-
 #, fuzzy
 #~ msgid "Do you really want to quit?"
 #~ msgstr "Wirklich beenden?"

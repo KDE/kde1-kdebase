@@ -349,35 +349,3 @@ msgstr "Information über KDE-Hilfe"
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
 
-#~ msgid "New"
-#~ msgstr "Neu"
-
-#~ msgid "Back"
-#~ msgstr "Zurück"
-
-#~ msgid "Forward"
-#~ msgstr "Weiter"
-
-#~ msgid "&Print..."
-#~ msgstr "Dru&cken ..."
-
-#~ msgid "&Close"
-#~ msgstr "S&chließen"
-
-#~ msgid "&Quit"
-#~ msgstr "&Beenden"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopieren"
-
-#~ msgid "&File"
-#~ msgstr "&Datei"
-
-#~ msgid "&Edit"
-#~ msgstr "&Editieren"
-
-#~ msgid "&Options"
-#~ msgstr "&Optionen"
-
-#~ msgid "&Help"
-#~ msgstr "&Hilfe"

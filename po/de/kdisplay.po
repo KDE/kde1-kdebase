@@ -274,5 +274,3 @@ msgstr "S&til"
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"
 
-#~ msgid "Remove"
-#~ msgstr "Entfernen"

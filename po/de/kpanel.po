@@ -157,36 +157,3 @@ msgstr "Desktops"
 msgid "KPanel Configuration"
 msgstr "KPanel-Einstellungen"
 
-#~ msgid "Remove"
-#~ msgstr "Entfernen"
-
-#~ msgid "System"
-#~ msgstr "System"
-
-#~ msgid "Destroy"
-#~ msgstr "Zerstören"
-
-#~ msgid "(Un) Sticky"
-#~ msgstr "(Nicht) Fest"
-
-#~ msgid "(Un) Iconify"
-#~ msgstr "Minimieren/Normal"
-
-#~ msgid "(Un) Maximize"
-#~ msgstr "Maximieren/Normal"
-
-#~ msgid "On this desktop"
-#~ msgstr "Auf diesem Desktop"
-
-#~ msgid "Lock panel"
-#~ msgstr "Panel sperren"
-
-#~ msgid "Sorry"
-#~ msgstr "Schade"
-
-#~ msgid ""
-#~ "Could not communicate with nor\n"
-#~ "start a new instance of KFM"
-#~ msgstr ""
-#~ "Keine Kommunikation mit KFM und\n"
-#~ "kein (Neu)Starten von KFM möglich."

@@ -47,5 +47,3 @@ msgstr ""
 "Dank an:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#~ msgid "E&xit"
-#~ msgstr "&Beenden"

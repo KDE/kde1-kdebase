@@ -88,11 +88,3 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#~ msgid "Add"
-#~ msgstr "Hinzufügen"
-
-#~ msgid "Remove"
-#~ msgstr "Entfernen"
-
-#~ msgid "Sorry"
-#~ msgstr "Sorry"
