@@ -135,6 +135,12 @@ extern int map_alert;
 KeySym AlertKeysym = XK_i;
 #endif
 
+extern void clean_exit( int r );
+extern void cleanutent( void );
+extern void makeutent( char *ttyname );
+extern void scr_fore_color( int color );
+extern void scr_back_color( int color );
+
 int comm_fd = -1;/* file descriptor connected to the command */
 static int comm_pid;	/* process id if child */
 static int x_fd;	/* file descriptor of the X server connection */

@@ -52,6 +52,9 @@ extern unsigned long	foreground;	/* foreground pixel value */
 extern unsigned long	background;	/* background pixel value */
 extern struct sbar_info sbar;
 
+static int alloc_color( int color );
+static void free_color( int color );
+
 WindowInfo MyWinInfo;
 ScreenInfo screens[NSCREENS];
 ScreenInfo *cScreen = screens;
@@ -2578,7 +2581,7 @@ void scr_rev_vid(int mode)
 /***************************************************************************
  * Free a color. [bmg]
  **************************************************************************/
-int free_color(int color)
+void free_color(int color)
 {
   XFreeColors(display, colormap, &pixel_colors[color], 1, 0);
   colors_loaded[color] = 0;
@@ -2607,7 +2610,7 @@ int alloc_color(int color)
 /***************************************************************************
  * Set the text foreground color
  **************************************************************************/
-scr_fore_color(int color)
+void scr_fore_color(int color)
 {
 #ifdef DEBUG
   check_text("set_color");  
@@ -2634,7 +2637,7 @@ scr_fore_color(int color)
 /***************************************************************************
  * Set the text background color
  **************************************************************************/
-scr_back_color(int color)
+void scr_back_color(int color)
 {
 #ifdef DEBUG
   check_text("set_back_color");  

@@ -58,6 +58,8 @@ extern void kvt_set_scrollbar(int);
 /* needed for font switching */ 
 extern void kvt_set_size_increment(int, int);
 
+extern void clean_exit( int r );
+
 
 #define XVT_CLASS	"XTerm"
 

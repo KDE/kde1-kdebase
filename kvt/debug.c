@@ -89,7 +89,7 @@ void *safemalloc(int size, const char *identifier)
  * before freeing.
  *
  ***************************************************************************/
-void *safefree(void *ptr, char *id1, char *id2)
+void safefree(void *ptr, char *id1, char *id2)
 {
 #ifdef DEBUG_MALLOC
   int i;
