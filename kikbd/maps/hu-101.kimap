@@ -36,7 +36,9 @@ Comment[es]=Disposición de teclado Húngara para teclados con 101 teclas
 Comment[fr]=Disposition de clavier hongrois pour clavier 101 touches.
 Comment[no]=Ungarsk tastaturutseende for tastaturer med 101 taster.
 Comment[pl]=Wêgierski uk³ad dla klawiatury ze 101 klawiszami.
+Comment[pt_BR]=Disposição húngara para teclados com 101 teclas.
 Comment[ru]=÷ÅÎÇÅÒÓËÁÑ ÒÁÓËÌÁÄËÁ ÄÌÑ ËÌÁ×ÉÁÔÕÒ ÓÏ 101 ËÌÁ×ÉÛÅÊ
+Comment[sk]=Maïarská klávesová mapa pre klávesnice so 101 klávesmi.
 
 [KeyboardMap]
 keysym0=grave,iacute,Iacute,0
