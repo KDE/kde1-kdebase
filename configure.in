@@ -88,7 +88,7 @@ KDE_CHECK_KIMGIO
 
 AC_HAVE_GL(GL_SAVERS="kmorph3d.kss kspace.kss kpipes.kss",GL_SAVERS="")
 AC_SUBST(GL_SAVERS)
-AC_HAVE_XPM(XPM_SAVERS="kbat.kss",XPM_SAVERS="")
+AC_HAVE_XPM(XPM_SAVERS="kbat.kss kmatrix.kss",XPM_SAVERS="")
 AC_SUBST(XPM_SAVERS)
 
 dnl Checks for header files.
@@ -356,6 +356,7 @@ AC_OUTPUT(Makefile \
 	po/tr/Makefile \
 	po/is/Makefile \
 	po/sv/Makefile \
+	po/br/Makefile \
 	po/zh_TW.Big5/Makefile \
 	po/zh_CN.GB2312/Makefile \
 	po/en_UK/Makefile )
