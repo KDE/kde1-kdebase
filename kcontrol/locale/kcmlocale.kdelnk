@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
+Languages=C,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB2312,zh_TW_Big5,
 
 [ro]
 Name=Romanian
@@ -26,14 +26,23 @@ Name[fr]=Allemand
 Name[hu]=N幦et
 Name[zh]=德文
 
+[en_UK]
+Name=English - UK
+Name[de]=English - UK
+Name[fi]=Englanti - UK
+Name[pl]=Angielski - UK
+Name[fr]=Anglais - UK
+Name[hu]=Angol - UK
+Name[zh]=英文 - UK
+
 [en]
-Name=English
-Name[de]=English
-Name[fi]=Englanti
-Name[pl]=Angielski
-Name[fr]=Anglais
-Name[hu]=Angol
-Name[zh]=英文
+Name=English - US
+Name[de]=English - US
+Name[fi]=Englanti - US
+Name[pl]=Angielski - US
+Name[fr]=Anglais - US
+Name[hu]=Angol - US
+Name[zh]=英文 - US
 
 [fr]
 Name=French
@@ -175,7 +184,7 @@ Name=Slovak
 Name[de]=Slovakisch
 
 [zh_TW_Big5]
-Name=Chinese
+Name=Traditional Chinese
 Name[de]=Chinesisch
 Name[zh]=BIG5 中文
 
