@@ -310,7 +310,7 @@ int KProtocolFILE::OpenDir( KURL *url )
                 usercache.insert( buff.st_uid, new QString( user->pw_name ) );
                 _de->owner = user->pw_name;
             } else
-                _de->owner = "???";
+                _de->owner.setNum(buff.st_uid);
         }
 
         if ( groupcache[ buff.st_gid ] )
@@ -321,7 +321,7 @@ int KProtocolFILE::OpenDir( KURL *url )
                 groupcache.insert( buff.st_gid, new QString( grp->gr_name ) );
                 _de->group = grp->gr_name;
             } else
-                _de->group = "???";
+                _de->group.setNum(buff.st_gid);
         }
 
 	QString d;
