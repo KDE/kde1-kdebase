@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-09 09:39+0200\n"
+"PO-Revision-Date: 1998-05-11 20:39+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -35,7 +35,7 @@ msgstr "&Guardar búsqueda"
 
 #: kfindtop.cpp:147
 msgid "&Cut"
-msgstr "&Recortar"
+msgstr "&Cortar"
 
 #: kfindtop.cpp:152
 msgid "&Select All"
@@ -180,7 +180,7 @@ msgstr "Carpetas"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr "Ligas"
+msgstr "Enlaces"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"

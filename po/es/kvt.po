@@ -19,7 +19,7 @@ msgstr "La tecla retroceder produce un"
 
 #: main.C:399
 msgid "&New Terminal"
-msgstr "&Nueva terminal"
+msgstr "&Nuevo terminal"
 
 #: main.C:406 main.C:754
 msgid "&Hide"
@@ -145,7 +145,7 @@ msgstr "&Remover seguridad del teclado"
 
 #: main.C:717
 msgid "Terminal Options"
-msgstr "Opciones de la terminal"
+msgstr "Opciones del terminal"
 
 #: main.C:859
 msgid "Hint"
@@ -189,7 +189,7 @@ msgstr "-display <name>           especificar la pantalla (servidor)\n"
 
 #: main.C:1146
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>       la geometría inicial de la terminal\n"
+msgstr "-vt_geometry <spec>       la geometría inicial del terminal\n"
 
 #: main.C:1147
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-04-18 01:29+0200\n"
+"PO-Revision-Date: 1998-05-11 21:09+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:59
@@ -39,7 +39,7 @@ msgstr "Maximizar"
 
 #: titlebar.cpp:125
 msgid "Sticky"
-msgstr "Fijar"
+msgstr "Pegar"
 
 #: titlebar.cpp:133
 msgid "Menu"
@@ -135,7 +135,7 @@ msgstr "Iconificar"
 
 #: titlebar.cpp:992
 msgid "(Un)Sticky"
-msgstr "(De)Fijar"
+msgstr "(Des)Pegar"
 
 #: titlebar.cpp:993
 msgid "Resize"

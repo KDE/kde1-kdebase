@@ -4,8 +4,8 @@ msgstr ""
 "POT-Creation-Date: 1998-05-06 20:59+0200\n"
 "PO-Revision-Date: 1998-04-21 18:28+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
-"First-Translator: Santiago Fernández and Jorge Valencia "
-"<jorgev@est.unileon.es>\n"
+"First-Translator: Santiago Fernández and Jorge Valencia\n"
+"First-Translator: <jorgev@est.unileon.es>\n"
 
 #: main.cpp:53
 msgid "&Sound"
@@ -65,11 +65,11 @@ msgstr "Comienzo"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr "Sombrear ventana"
+msgstr "Cerrar persiana"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr "Desombrear ventana"
+msgstr "Abrir persiana"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
@@ -160,7 +160,7 @@ msgstr ""
 "sonido del sistema de KDE"
 
 #: syssound.cpp:468
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-09 09:59+0200\n"
+"PO-Revision-Date: 1998-05-11 21:06+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: banner.cpp:62
@@ -46,7 +46,7 @@ msgstr ""
 
 #: banner.cpp:461
 msgid "KDE is great"
-msgstr "¡KDE es estupendo!"
+msgstr "KDE - la máquina en acción"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
-msgstr "Pantalla en blanco"
+msgstr "Pantalla negra"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-09 10:18+0200\n"
+"PO-Revision-Date: 1998-05-11 10:18+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.C:67
@@ -150,7 +150,7 @@ msgstr ""
 
 #: taskmgr.C:106
 msgid "Switch to"
-msgstr "Pasar a"
+msgstr "Cambiar a"
 
 #: taskmgr.C:120
 msgid "Current session"

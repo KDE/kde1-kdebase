@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:51+0200\n"
-"PO-Revision-Date: 1998-04-17 20:59+0200\n"
+"PO-Revision-Date: 1998-05-11 21:01+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: helpwin.cpp:58
@@ -35,7 +35,7 @@ msgstr "Abrir este vínculo"
 
 #: helpwin.cpp:1323
 msgid "Add Bookmark"
-msgstr "Agregar a favoritos"
+msgstr "Agregar a marcadores"
 
 #: helpwin.cpp:1324
 msgid "Open in new Window"
@@ -279,7 +279,7 @@ msgstr "Ir a"
 
 #: mainwidget.cpp:202
 msgid "&Bookmarks"
-msgstr "&Favoritos"
+msgstr "&Marcadores"
 
 #: mainwidget.cpp:220
 msgid "Previous Document"
@@ -336,4 +336,4 @@ msgstr "Acerca de la ayuda KDE"
 
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
-msgstr "&Agregar favorito"
+msgstr "&Agregar marcador"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-07 18:15+0200\n"
-"PO-Revision-Date: 1998-05-09 09:54+0200\n"
+"PO-Revision-Date: 1998-05-11 21:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:250
@@ -168,7 +168,7 @@ msgstr "A&cerca de..."
 
 #: kfmgui.cpp:474
 msgid "&Bookmarks"
-msgstr "&Favoritos"
+msgstr "&Marcadores"
 
 #: kfmgui.cpp:475
 msgid "&Cache"
@@ -176,7 +176,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Atrás"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -218,11 +218,11 @@ msgstr "Seleccionar ficheros:"
 
 #: kfmgui.cpp:891
 msgid "&Edit Bookmarks..."
-msgstr "&Editar favoritos..."
+msgstr "&Editar marcadores..."
 
 #: kfmgui.cpp:901
 msgid "&Add Bookmark"
-msgstr "&Añadir favorito"
+msgstr "&Añadir marcador"
 
 #: kfmgui.cpp:931 kfmgui.cpp:938
 msgid "New "
@@ -339,7 +339,7 @@ msgid ""
 "but it contains a link to your local file system."
 msgstr ""
 "Esta página no es segura\n"
-"pero contiene una liga a su sistema de archivos local."
+"pero contiene un enlace a su sistema de archivos local."
 
 #: kfmview.cpp:842
 msgid "Symbolic Link"
@@ -348,7 +348,7 @@ msgstr "Enlace simbólico"
 #: kfmview.cpp:844
 #, c-format
 msgid "%s (Link)"
-msgstr "%s (Liga)"
+msgstr "%s (Enlace)"
 
 #: kfmview.cpp:864
 msgid "bytes"
@@ -498,7 +498,7 @@ msgstr "Propiedades"
 
 #: kfmman.cpp:1210 kfmtree.cpp:159 main.cpp:245
 msgid "Link"
-msgstr "Ligar"
+msgstr "Enlazar"
 
 #: main.cpp:246
 msgid "Empty Trash Bin"
@@ -506,7 +506,7 @@ msgstr "Vaciar la papelera"
 
 #: main.cpp:247
 msgid "Add to Bookmarks"
-msgstr "Añadir a Favoritos"
+msgstr "Añadir a marcadores"
 
 #: htmlopts.cpp:35
 msgid "Font Size"
@@ -542,15 +542,15 @@ msgstr "Color del texto normal:"
 
 #: htmlopts.cpp:230
 msgid "URL Link Color:"
-msgstr "Color de ligas:"
+msgstr "Color de enlaces:"
 
 #: htmlopts.cpp:238
 msgid "Followed Link Color:"
-msgstr "Color de ligas visitadas:"
+msgstr "Color de enlaces visitados:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr "Cambiar puntero sobre ligas."
+msgstr "Cambiar puntero sobre enlaces."
 
 #: htmlopts.cpp:321
 msgid "Horizontal Root Grid Spacing:"
@@ -562,7 +562,7 @@ msgstr "Espacio vertical red fondo:"
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
-msgstr "Imposible escribir favorito"
+msgstr "Imposible escribir marcador"
 
 #: kfmprops.cpp:241
 msgid "Full Name"
@@ -893,7 +893,7 @@ msgstr "Trabajando ..."
 
 #: kfmman.cpp:1084 kfmtree.cpp:230
 msgid "Add To Bookmarks"
-msgstr "Añadir a Favoritos"
+msgstr "Añadir a marcadores"
 
 #: kiojob.cpp:129
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
@@ -910,7 +910,7 @@ msgstr ""
 
 #: kiojob.cpp:249
 msgid "Can only make links on local file system"
-msgstr "ERROR: Sólo se pueden crear ligas en sistemas de archivos locales"
+msgstr "ERROR: Sólo se pueden crear enlaces en sistemas de archivos locales"
 
 #: kiojob.cpp:272 kiojob.cpp:291
 #, c-format
@@ -927,7 +927,7 @@ msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr ""
-"Imposible crear liga a\n"
+"Imposible crear enlace a\n"
 "%s"
 
 #: kiojob.cpp:377
