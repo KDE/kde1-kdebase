@@ -23,11 +23,11 @@ msgstr "Língua"
 
 #: locale.cpp:55
 msgid "First"
-msgstr "Primeiro"
+msgstr "Primeira"
 
 #: locale.cpp:65
 msgid "Second"
-msgstr "Segundo"
+msgstr "Segunda"
 
 #: locale.cpp:75
 msgid "Third"

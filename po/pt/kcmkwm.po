@@ -251,7 +251,7 @@ msgstr "Activar margens do ambiente de trabalho activas"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Move ponteiro para o centro depois de mudança"
+msgstr "Mover ponteiro para o centro depois de mudança"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"

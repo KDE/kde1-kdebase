@@ -47,7 +47,7 @@ msgstr "&Centrado"
 
 #: backgnd.cpp:291
 msgid "&Scaled"
-msgstr "&Escalonado"
+msgstr "&Escalado"
 
 #: backgnd.cpp:307 backgnd.cpp:427 backgnd.cpp:440 backgnd.cpp:788
 msgid "No wallpaper"
