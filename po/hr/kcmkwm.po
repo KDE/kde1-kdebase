@@ -67,14 +67,12 @@ msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Poveæaj' gumb\n"
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr "Lijeva strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"Desna strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
+msgstr "Desna strana naslovne trake je puna... onemoguæujem 'Smanji' gumb\n"
 
 #: titlebar.cpp:926
 msgid "Titlebar appearance"

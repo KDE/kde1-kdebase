@@ -126,8 +126,8 @@ msgid ""
 "    on titlebar does:"
 msgstr ""
 
-#: titlebar.cpp:993
 #
+#: titlebar.cpp:993
 msgid "(Un)Maximize"
 msgstr "(Мин)Максимизировать"
 
@@ -173,13 +173,13 @@ msgstr "Прозрачно"
 msgid "Opaque"
 msgstr "Непрозрачно"
 
-#: windows.cpp:79
 #
+#: windows.cpp:79
 msgid "Window resize"
 msgstr "Изменить размер окна"
 
-#: windows.cpp:80
 #
+#: windows.cpp:80
 msgid "With animation"
 msgstr "С анимацией"
 
@@ -236,13 +236,13 @@ msgstr "Щелчоком"
 msgid "Focus follows mouse"
 msgstr "Фокус за мышкой"
 
-#: windows.cpp:120
 #
+#: windows.cpp:120
 msgid "Classic focus follows mouse"
 msgstr "Классичекий фокус за мышкой"
 
-#: windows.cpp:122
 #
+#: windows.cpp:122
 msgid "Classic sloppy focus"
 msgstr "Классический фокус щелчком"
 

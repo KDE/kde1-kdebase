@@ -1254,6 +1254,7 @@ msgstr ""
 
 # kiojob.cpp:1223 kiojob.cpp:1354
 #: kiojob.cpp:1234 kiojob.cpp:1365
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
