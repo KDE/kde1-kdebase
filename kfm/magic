@@ -95,7 +95,7 @@
 # MPEG Layer 3 sound files
 # Modified the 11/20/97 at 15:59:04 by Christophe Prud'homme <christophe.prudhomme@asci.fr>
 0       belong          0xfffb          audio/x-mp3
-                                                                  
+
 #------------------------------------------------------------------------------
 # c-lang:  file(1) magic for C programs or various scripts
 #
@@ -173,7 +173,7 @@
 0       string          #!/usr/local/bin/perl           application/x-perl
 0       string          #!\ /usr/local/bin/perl         application/x-perl
 0       string          eval\ "exec\ /usr/local/bin/perl application/x-perl
- 
+
 #------------------------------------------------------------------------------
 # compress:  file(1) magic for pure-compression formats (no archives)
 #
