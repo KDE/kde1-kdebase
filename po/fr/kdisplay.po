@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: 1998-01-19 23:44 CET\n"
+"PO-Revision-Date: 1998-01-25 18:27 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -254,13 +254,12 @@ msgid "Large"
 msgstr "Grand"
 
 #: general.cpp:173
-#, fuzzy
 msgid "default"
-msgstr "Défaut"
+msgstr "défaut"
 
 #: general.cpp:176
 msgid "any"
-msgstr ""
+msgstr "n'importe"
 
 #: main.cpp:61
 msgid "&Background"

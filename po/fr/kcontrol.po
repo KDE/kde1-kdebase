@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
-"PO-Revision-Date: 1998-01-09 22:57 CET\n"
+"PO-Revision-Date: 1998-01-25 18:15 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: configlist.cpp:119
 msgid "Unknown module: "
-msgstr "Module unconnu : "
+msgstr "Module inconnu : "
 
 #: main.cpp:46 mainwidget.cpp:18
 msgid "KDE Control Center"

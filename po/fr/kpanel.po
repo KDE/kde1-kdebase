@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
+"PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "POT-Creation-Date: 1998-01-28 10:06+0100\n"
-"PO-Revision-Date: 1998-01-17 23:53 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "InfoBulles sur les menus"
 
 #: props.C:447
 msgid "Others"
-msgstr ""
+msgstr "Autres"
 
 #: props.C:449
 msgid "Personal First"
@@ -148,15 +148,15 @@ msgstr "Barre de tâches auto-cachable"
 
 #: props.C:473
 msgid "Clock"
-msgstr ""
+msgstr "Horloge"
 
 #: props.C:475
 msgid "24h"
-msgstr ""
+msgstr "24h"
 
 #: props.C:479
 msgid "12h AM/PM"
-msgstr ""
+msgstr "12h AM/PM"
 
 #: props.C:540
 msgid "Visible"

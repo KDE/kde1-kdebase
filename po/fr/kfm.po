@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
-"PO-Revision-Date: 1998-01-25 00:20 CET\n"
+"PO-Revision-Date: 1998-01-25 18:31 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -263,7 +263,6 @@ msgid "About KFM"
 msgstr "A propos de KFM"
 
 #: kfmgui.cpp:1231
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -278,7 +277,10 @@ msgstr ""
 "weis@kde.org\n"
 "\n"
 "Widget HTML par Martin Jones\n"
-"mjones@kde.org"
+"mjones@kde.org\n"
+"\n"
+"Gestionnaire de proxy par Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1323
 msgid "Document: Done"
@@ -1230,7 +1232,7 @@ msgstr "Liaisons connues :"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "N'oubliez pas d'enregistrer vos options"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
@@ -1238,7 +1240,7 @@ msgstr "Pas de proxy pour :"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
-msgstr "KFM - Configuration du butineur"
+msgstr "KFM - Options du butineur"
 
 #: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
 msgid "Edit Bookmarks"
