@@ -1,5 +1,5 @@
  
-SUBDIRS = cs da de es fi fr it nl ru sv hu pt pl el hr
+SUBDIRS = cs da de es fi fr it nl ru sv hu pt pl el hr ro
 
 # this is a general list for merging!
 APPS = kdehelp kdisplay kdm kfind kfm kfontmanager kpanel kvt kwm klock \
