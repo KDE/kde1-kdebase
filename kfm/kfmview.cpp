@@ -230,6 +230,9 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	    // Get the canonical path.
 	    QDir dir( u.path() );
 	    canonical = dir.canonicalPath();
+	    if ( canonical.isEmpty() )
+		canonical = u.path();
+	    fprintf(stderr,"u='%s' can='%s'\n",u.path(),dir.canonicalPath().data());
 	}
 	
 	// Check wether we drop a file on itself
@@ -237,6 +240,7 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 	char *s;
 	for ( s = list.first(); s != 0L; s = list.next() )
 	{
+	    fprintf(stderr,"U2='%s' U1='%s'\n",s,canonical.data());
 	    QString url2( s );
 	    // replace all symlinks if we are on the local hard disk
 	    KURL u2( s );
@@ -247,8 +251,13 @@ void KfmView::slotDropEvent( KDNDDropZone *_zone )
 		    // Get the canonical path.
 		    QDir dir2( u2.path() );
 		    url2 = dir2.canonicalPath();
+		    if ( url2.isEmpty() )
+			url2 = u2.path();
+		    fprintf(stderr,"2. u='%s' can='%s'\n",u2.path(),dir2.canonicalPath().data());
 		}
 	    }
+	    
+	    fprintf(stderr,"U2='%s' U1='%s'\n",url2.data(),canonical.data());
 	    
 	    // Are both symlinks equal ?
 	    if ( strcmp( url2, canonical ) == 0 )

@@ -274,6 +274,13 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	{
 	    tryURL = _url;
 	}
+	// Executables
+	else if ( strcmp( typ->getMimeType(), "application/x-executable" ) == 0L ||
+		  strcmp( typ->getMimeType(), "application/x-shellscript" ) == 0L )
+	{
+	    KMimeBind::runCmd( u.path() );
+	    return false;
+	}
 	else
 	{
 	    printf("EXEC MIMETYPE\n");
@@ -515,12 +522,16 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     
     if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
     { 
+	// Delete ".kdelnk" extension ( only in Icon View )
+	if ( decoded.right(7) == ".kdelnk" )
+	    decoded.truncate( decoded.length() - 7 );
+
 	view->write( "<cell><a href=\"" );
 	
 	QString filename( url );
 	filename.detach();
 	filename += s->getName();
-	
+		
 	view->write( filename.data() );
 	view->write( "\"><center><img border=0 src=\"file:" );
 

@@ -257,7 +257,7 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url )
     // The default behavior.
     pixmap_file = getIconPath();
     pixmap_file.detach();
-    pixmap_file += "/unknown.xpm";
+    pixmap_file += "/kmailion.xpm";
     return pixmap_file.data();
 }
 
