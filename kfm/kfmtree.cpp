@@ -80,6 +80,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
+    KFMDirTreeItem *selectedSubTree = 0L;
 
     QString tmp (u.url());
     KURL::decodeURL(tmp);
@@ -107,6 +108,21 @@ void KFMDirTree::slotshowDirectory(const char *_url )
       basePath.truncate( truncPos );
       // check if the url is in the same subtree as the currently selected item
       urlBelowBasePath = basePath == tmp.left(basePath.length());
+ 
+      // get the root item for the currently selected subtree
+      if( urlBelowBasePath ) 
+      {
+	for( item = node.first(); item != 0L; item = node.next() )
+	{
+	  selectedSubTree = (KFMDirTreeItem*)item;
+	  QString nodeURL( selectedSubTree->getURL() );
+	  if( nodeURL.right(1) == "/" )
+	    nodeURL.truncate(nodeURL.length() - 1);
+	  debug("node URL %s",nodeURL.data());
+	  if( nodeURL == basePath )
+	    break;
+	}
+      }
     }
 
     while(1) {
@@ -118,7 +134,7 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 	// if url is in the same subtree just skip the preceding subtrees
 	// just to speed it up a little
         if( urlBelowBasePath )
-	  for ( item = first(); item != lastSelectedItem; item = next() );
+	  for ( item = first(); item != selectedSubTree; item = next() );
 	else
 	  item = first();
 
