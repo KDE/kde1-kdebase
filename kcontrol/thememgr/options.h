@@ -12,6 +12,7 @@ class QComboBox;
 class QPushButton;
 class QBoxLayout;
 class QGridLayout;
+class Theme;
 
 #define OptionsInherited KConfigWidget
 class Options : public KConfigWidget
@@ -27,8 +28,10 @@ public:
   /** Update status information on available groups of current theme. */
   virtual void updateStatus(void);
 
+public slots:
+  void slotThemeChanged(Theme *theme);
+
 protected slots:
-  virtual void slotThemeChanged();
   virtual void slotThemeApply();
   virtual void slotCbxClicked();
   virtual void slotDetails();
@@ -56,6 +59,7 @@ protected:
   QGridLayout *mGrid;
   bool mGui;
   int mGridRow;
+  Theme *mTheme;
 };
 
 #endif /*OPTIONS_H*/

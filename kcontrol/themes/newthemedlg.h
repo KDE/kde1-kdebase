@@ -38,7 +38,7 @@ public:
   virtual ~NewThemeDlg();
 
   const char* fileName(void) const { return mEdtFilename->text(); }
-  const char* description(void) const { return mEdtDesc->text(); }
+  QString description(void) const { return mEdtDesc->text(); }
   const char* author(void) const { return mEdtAuthor->text(); }
   const char* email(void) const { return mEdtEmail->text(); }
   const char* homepage(void) const { return mEdtHomepage->text(); }

@@ -132,13 +132,6 @@ public:
   /** Uninstall files of last theme installation for given group */
   virtual void uninstallFiles(const char* groupName);
 
-signals:
-  /** This signal is emitted after import() or load() */
-  void changed();
-
-  /** This signal is emitted to ask for apply of all changes. */
-  void apply();
-
 protected:
   /** Write color entry to config file. */
   void writeColorEntry(KConfigBase*, const char* key, const QColor& color);

@@ -24,6 +24,7 @@
 #define INSTALLER_H
 
 #include <kcontrol.h>
+#include "theme.h"
 
 class QGridLayout;
 class QListBox;
@@ -43,18 +44,23 @@ public:
   virtual void defaultSettings();
   virtual void applySettings();
 
+  /** Scan Themes directory for available theme packages */
+  virtual void readThemesList(void);
+
 protected slots:
   virtual void slotAdd();
   virtual void slotSaveAs();
   virtual void slotExtract();
   virtual void slotRemove();
-  virtual void slotThemeChanged();
+  virtual void slotThemeChanged(Theme *theme);
   virtual void slotSetTheme(int);
 
-protected:
-  /** Scan Themes directory for available theme packages */
-  virtual void readThemesList(void);
-
+signals:  
+  /** This signal is emitted after import() or load() */
+  void changed(Theme *theme);   
+  /** This signal is emitted to ask for apply of all changes. */  
+  void apply(Theme *theme);
+  
 private:
   bool mGui;
   QGridLayout *mGrid;
@@ -66,6 +72,7 @@ private:
   QMultiLineEdit *mText;
   QLabel *mPreview;
   bool mEditing;
+  Theme *mTheme;
 };
 
 #endif /*INSTALLER_H*/

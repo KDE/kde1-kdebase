@@ -30,7 +30,6 @@
 
 #include "newthemedlg.h"
 #include "themecreator.h"
-#include "global.h"
 
 
 //-----------------------------------------------------------------------------
@@ -48,7 +47,6 @@ NewThemeDlg::NewThemeDlg():
   mEdtHomepage = newLine(i18n("&Webpage"));
   mEdtDesc = newMultiLine(i18n("&Description"));
 
-  
   mGrid->addRowSpacing(mGridRow++, 10);
 
   KButtonBox *bbox = new KButtonBox( this);
@@ -95,8 +93,7 @@ void NewThemeDlg::setValues(void)
   mEdtAuthor->setText(cfg->readEntry("author"));
   mEdtEmail->setText(cfg->readEntry("email"));
   mEdtHomepage->setText(cfg->readEntry("homepage", "http://kde.themes.org"));
-  mEdtDesc->setText(i18n("Give a short description of the theme
-here..."));
+  mEdtDesc->setText(i18n("Give a short description of the theme here..."));
 }
 
 

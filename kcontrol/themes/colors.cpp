@@ -39,7 +39,6 @@
 #include "colors.h"
 #include "themecreator.h"
 #include "widgetcanvas.h"
-#include "global.h"
 
 
 //-----------------------------------------------------------------------------

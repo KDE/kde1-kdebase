@@ -4,7 +4,6 @@
 #include <kapp.h>
 #include "groupdetails.h"
 #include "theme.h"
-#include "global.h"
 
 //-----------------------------------------------------------------------------
 GroupDetails::GroupDetails(const char* aGroupName):

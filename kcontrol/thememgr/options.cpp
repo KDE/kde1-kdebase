@@ -13,7 +13,6 @@
 
 #include "options.h"
 #include "themecreator.h"
-#include "global.h"
 #include "groupdetails.h"
 
 #include <assert.h>
@@ -26,14 +25,13 @@ Options::Options (QWidget * aParent, const char *aName, bool aInit)
   QLabel* lbl;
   QPushButton* btn;
 
+  mTheme = 0;
+
   mGui = !aInit;
   if (!mGui)
   {
     return;
   }
-  connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
-  connect(theme, SIGNAL(apply()), SLOT(slotThemeApply()));
-
   mGrid = new QGridLayout(this, 16, 6, 10, 6);
   mGridRow = 0;
 
@@ -133,24 +131,32 @@ QCheckBox* Options::newLine(const char* aGroupName, const char* aText,
 //-----------------------------------------------------------------------------
 void Options::loadSettings()
 {
-  debug("Options::loadSettings() called");
+//  debug("Options::loadSettings() called");
 }
 
 
 //-----------------------------------------------------------------------------
 void Options::applySettings()
 {
-  theme->instColors = mCbxColors->isChecked();
-  theme->instWindowBorder = mCbxWindowBorder->isChecked();
-  theme->instWindowTitlebar = mCbxWindowTitlebar->isChecked();
-  theme->instWindowButtonLayout = mCbxWindowButtonLayout->isChecked();
-  theme->instWallpapers = mCbxWallpapers->isChecked();
-  theme->instPanel = mCbxPanel->isChecked();
-  theme->instSounds = mCbxSounds->isChecked();
-  theme->instIcons = mCbxIcons->isChecked();
-  theme->instWindowGimmick = mCbxGimmick->isChecked();
-  theme->instKfm = mCbxKfm->isChecked();
-  theme->instOverwrite = !mCbxOverwrite->isChecked();
+  if (!mTheme) return;
+  mTheme->instColors = mCbxColors->isChecked();
+  mTheme->instWindowBorder = mCbxWindowBorder->isChecked();
+  mTheme->instWindowTitlebar = mCbxWindowTitlebar->isChecked();
+  mTheme->instWindowButtonLayout = mCbxWindowButtonLayout->isChecked();
+  mTheme->instWallpapers = mCbxWallpapers->isChecked();
+  mTheme->instPanel = mCbxPanel->isChecked();
+  mTheme->instSounds = mCbxSounds->isChecked();
+  mTheme->instIcons = mCbxIcons->isChecked();
+  mTheme->instWindowGimmick = mCbxGimmick->isChecked();
+  mTheme->instKfm = mCbxKfm->isChecked();
+  mTheme->instOverwrite = !mCbxOverwrite->isChecked();
+}
+
+void Options::slotThemeChanged(Theme *theme)
+{
+//  debug("Options::slotThemeChanged() called");
+  mTheme = theme;
+  updateStatus();
 }
 
 
@@ -220,14 +226,6 @@ void Options::slotThemeApply()
 
 
 //-----------------------------------------------------------------------------
-void Options::slotThemeChanged()
-{
-  debug("Options::slotThemeChanged() called");
-  updateStatus();
-}
-
-
-//-----------------------------------------------------------------------------
 void Options::updateStatus(const char* aGroupName, QLabel* aLblStatus)
 {
   const char* statusStr;
@@ -235,7 +233,7 @@ void Options::updateStatus(const char* aGroupName, QLabel* aLblStatus)
   assert(aGroupName!=0);
   assert(aLblStatus!=NULL);
 
-  if (theme->hasGroup(aGroupName, true))
+  if (mTheme && mTheme->hasGroup(aGroupName, true))
     statusStr = i18n("available");
   else statusStr = i18n("empty");
 

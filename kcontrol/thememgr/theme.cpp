@@ -268,7 +268,6 @@ bool Theme::load(const QString aPath, QString aName)
 
   readConfig();
 
-  emit changed();
   return true;
 }
 
@@ -280,7 +279,6 @@ bool Theme::save(const QString aPath)
   QFile file;
   int rc;
 
-  emit apply();
   writeConfig();
 
   mConfig->sync();
@@ -1030,7 +1028,6 @@ void Theme::install(void)
 //-----------------------------------------------------------------------------
 void Theme::readCurrent(void)
 {
-  emit changed();
 }
 
 

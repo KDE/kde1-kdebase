@@ -44,7 +44,6 @@
 
 #include "installer.h"
 #include "themecreator.h"
-#include "global.h"
 #include "newthemedlg.h"
 
 static bool sSettingTheme = false;
@@ -56,6 +55,7 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
 {
   KButtonBox* bbox;
 
+  mTheme = 0;
   mGui = !aInit;
   if (!mGui)
   {
@@ -64,7 +64,7 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
 
   mEditing = false;
 
-  connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
+  connect(this, SIGNAL(changed(Theme *)), SLOT(slotThemeChanged(Theme *)));
 
   mGrid = new QGridLayout(this, 2, 3, 6, 6);
   mThemesList = new QListBox(this);
@@ -104,9 +104,6 @@ Installer::Installer (QWidget *aParent, const char *aName, bool aInit)
   mGrid->setRowStretch(1, 1);
   mGrid->activate();
   bbox->layout();
-
-  readThemesList();
-  slotSetTheme(-1);
 }
 
 
@@ -169,6 +166,11 @@ void Installer::readThemesList(void)
   QStrList* entryList;
   QString name;
 
+  if (mTheme) {
+    delete mTheme;
+    mTheme = 0;
+  }
+
 //  d.setNameFilter("*.tar.gz");
   mThemesList->clear();
 
@@ -204,6 +206,8 @@ void Installer::readThemesList(void)
     mThemesList->inSort(name + " ");
   }
   mThemesList->insertItem("Default ", 0);
+  mThemesList->setCurrentItem(0);
+  slotSetTheme(0);
 }
 
 
@@ -218,44 +222,50 @@ void Installer::loadSettings()
 void Installer::applySettings()
 {
   debug("Installer::applySettings() called");
+  if (!mTheme) return;
+  mTheme->install();
 }
 
 void Installer::defaultSettings()
 {
-    mThemesList->setCurrentItem(0);
+  mThemesList->setCurrentItem(0);
+  slotSetTheme(0);
 }
 
 
 //-----------------------------------------------------------------------------
 void Installer::slotExtract()
 {
-  QString name;
+  ThemeCreator theme;
+
   NewThemeDlg dlg;
 
   if (!dlg.exec()) return;
+
+  QString desc = dlg.description();
+  theme.setDescription((const char *) desc);
+
+  QString name = dlg.fileName();
+
+  theme.setVersion("0.1");
+  theme.setAuthor(dlg.author());
+  theme.setEmail(dlg.email());
+  theme.setHomepage(dlg.homepage());
+
   dlg.hide();
 
-  name = dlg.fileName();
-  if (!theme->create(name)) return;
-
-  theme->setVersion("0.1");
-  theme->setDescription(dlg.description());
-  theme->setAuthor(dlg.author());
-  theme->setEmail(dlg.email());
-  theme->setHomepage(dlg.homepage());
+  if (!theme.create(name)) return;
 
   mEditing = true;
 
   mPreview->setText("");
   mText->setText("");
-  theme->extract();
-  theme->save(Theme::themesDir()+name+".tar.gz");
-  sSettingTheme = true;
+  theme.extract();
+  theme.save(Theme::themesDir()+name+".tar.gz");
+//  sSettingTheme = true;
   addToList(mThemesList, name);
-  sSettingTheme = false;
-
-  mBtnSaveAs->setEnabled(true);
-  mBtnRemove->setEnabled(true);
+//  sSettingTheme = false;
+//  slotSetTheme(mThemesList->currentItem());
 }
 
 
@@ -289,6 +299,7 @@ void Installer::slotRemove()
   mThemesList->removeItem(cur);
   if (cur >= (int)mThemesList->count()) cur--;
   mThemesList->setCurrentItem(cur);
+  slotSetTheme(cur);
 }
 
 //-----------------------------------------------------------------------------
@@ -297,6 +308,12 @@ void Installer::slotSetTheme(int id)
   bool enabled, isGlobal=false;
 
   if (sSettingTheme) return;
+
+  if (mTheme) {
+    delete mTheme;
+    mTheme = 0;
+    emit changed(mTheme);
+  }
 
   if (id < 0)
   {
@@ -314,20 +331,24 @@ void Installer::slotSetTheme(int id)
     if (isGlobal) path = Theme::globalThemesDir() + name.stripWhiteSpace();
     else path = Theme::themesDir() + name;
 
-    enabled = theme->load(path+".tar.gz", name);
+    mTheme = new Theme();
+    enabled = mTheme->load(path+".tar.gz", name);
     if (!enabled)
     {
-      enabled = theme->load(path+".tgz", name);
+      enabled = mTheme->load(path+".tgz", name);
       if (!enabled)
       {
         mPreview->setText(i18n("(no theme chosen)"));
         mText->setText("");
+	delete mTheme;
+        mTheme = 0;
       }
     }
   }
 
   mBtnSaveAs->setEnabled(enabled);
   mBtnRemove->setEnabled(enabled && !isGlobal);
+  emit changed(mTheme);
 }
 
 
@@ -380,6 +401,8 @@ void Installer::slotSaveAs()
   QFileInfo finfo;
   int cur;
 
+  if (!mTheme) return;
+
   if (path.isEmpty()) path = QDir::homeDirPath();
 
   cur = mThemesList->currentItem();
@@ -403,21 +426,30 @@ void Installer::slotSaveAs()
   path = dlg.dirPath();
   fpath = dlg.selectedFile();
 
-  theme->save(fpath);
+  mTheme->save(fpath);
 }
 
 
 //-----------------------------------------------------------------------------
-void Installer::slotThemeChanged()
+void Installer::slotThemeChanged(Theme *theme)
 {
-  mText->setText(theme->description()); 
+  if (!theme)
+  {
+     mText->setText("");
+     mBtnSaveAs->setEnabled(false);
+     mPreview->setText("");
+  }
+  else
+  {
+     mText->setText(theme->description()); 
+     mBtnSaveAs->setEnabled(true);
 
-  mBtnSaveAs->setEnabled(TRUE);
-
-  if (theme->preview().isNull())
-    mPreview->setText(i18n("(no preview pixmap)"));
-  else mPreview->setPixmap(theme->preview());
-  //mPreview->setFixedSize(theme->preview().size());
+     if (theme->preview().isNull())
+        mPreview->setText(i18n("(no preview pixmap)"));
+     else 
+        mPreview->setPixmap(theme->preview());
+     //mPreview->setFixedSize(theme->preview().size());
+  }
 }
 
 

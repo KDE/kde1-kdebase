@@ -15,7 +15,6 @@
 
 #include "about.h"
 #include "themecreator.h"
-#include "global.h"
 #include "version.h"
 
 
@@ -30,8 +29,6 @@ About::About (QWidget * aParent, const char *aName, bool aInit)
   QFont fnt;
 
   if (aInit) return;
-
-  connect(theme, SIGNAL(changed()), SLOT(slotThemeChanged()));
 
   box = new QVBoxLayout(this, 20, 6);
 
@@ -91,9 +88,18 @@ About::~About()
 
 
 //-----------------------------------------------------------------------------
-void About::slotThemeChanged()
+void About::slotThemeChanged(Theme *theme)
 {
   QString str, value;
+
+  if (!theme)
+  {
+    lblTheme->setText("");
+    lblVersion->setText("");
+    lblAuthor->setText("");
+    lblHomepage->setText("");
+    return;
+  }
 
   // Theme name
   value = theme->name();

@@ -82,7 +82,6 @@ bool ThemeCreator::create(const QString aThemeName)
 
   setGroupGeneral();
 
-  emit changed();
   return true;
 }
 
@@ -192,7 +191,6 @@ int ThemeCreator::extractGroup(const char* aGroupName)
     // Set group in config file
     cfg->setGroup(cfgGroup);
     debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
-printf("%s: [%s]\n", (const char*)cfgFile, (const char*)cfgGroup);
     // Process all mapping entries for the group
     it = mMappings->entryIterator(group);
     if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
@@ -223,19 +221,13 @@ printf("%s: [%s]\n", (const char*)cfgFile, (const char*)cfgGroup);
       if (cfgKey.isEmpty()) cfgKey = key;
       value = cfg->readEntry(cfgKey);
 
-printf("Line 220: cfgKey = %s cfgValue = %s value =%s\n", 
-(const char *) cfgKey, (const char *) cfgValue, (const char *) value);
-
       if (doCopyFile)
       {
-printf("DoCopyFile!\n");
         if (!cfgValue.isEmpty()) {
-// Add path!
           value =appDir+cfgValue;
         }
 	if (!value.isEmpty())
 	{
-printf("extractFile! value =%s\n", (const char *) (value));
 	  str = extractFile(value);
 	  if (!str.isEmpty())
 	  {
@@ -249,14 +241,10 @@ printf("extractFile! value =%s\n", (const char *) (value));
       // Set config entry
       if (value == emptyValue) value = "";
       debug("%s=%s", (const char*)key, (const char*)value);
-printf("Line 264: ey = %s value =%s\n", 
-(const char *) key, (const char *) value);
       if (value.isEmpty()) {
          mConfig->deleteEntry(key, false);
-printf("deleteEntry..\n");
       } else {
          mConfig->writeEntry(key, value);
-printf("writeEntry..\n");
       }
     }
 
@@ -325,7 +313,6 @@ const QString ThemeCreator::extractFile(const QString& aFileName)
 
   if (!finfo.exists() || !finfo.isFile())
   {
-printf("File %s does not exist or is no file.", (const char*)aFileName);
     debug("File %s does not exist or is no file.", (const char*)aFileName);
     return 0;
   }
@@ -351,8 +338,6 @@ printf("File %s does not exist or is no file.", (const char*)aFileName);
     fname = str;
   }
 
-printf("Extracting %s to %s", (const char*)aFileName,
-	(const char*)(mThemePath + fname));
   debug("Extracting %s to %s", (const char*)aFileName,
 	(const char*)(mThemePath + fname));
 

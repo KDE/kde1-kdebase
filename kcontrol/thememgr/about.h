@@ -24,8 +24,8 @@ public:
   virtual void loadSettings();
   virtual void applySettings();
 
-protected slots:
-  virtual void slotThemeChanged();
+public slots:
+  virtual void slotThemeChanged( Theme *theme);
 
 protected:
   QLabel *lblTheme, *lblAuthor, *lblVersion, *lblHomepage;

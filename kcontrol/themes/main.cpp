@@ -21,6 +21,7 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <stdlib.h>
 #include <kimgio.h>
 #include <kslider.h>
 #include <kmsgbox.h>
@@ -29,15 +30,12 @@
 #include <kcontrol.h>
 #undef private
 
-#include "themecreator.h"
 #include "installer.h"
-#include "global.h"
 #include "options.h"
 #include "about.h"
+#include "theme.h"
 
-
-ThemeCreator* theme = NULL;
-static msg_handler oldMsgHandler = NULL;
+static msg_handler oldMsgHandler = 0;
 
 
 //-----------------------------------------------------------------------------
@@ -46,7 +44,6 @@ class KThemesApplication : public KControlApplication
 public:
 
   KThemesApplication(int &argc, char **arg, const char *name);
-  ~KThemesApplication();
 
   virtual void init();
   virtual void apply();
@@ -66,8 +63,10 @@ KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
 {
   initMetaObject();
 
-  mInstaller = NULL;
-  theme = new ThemeCreator;
+  if (!(Theme::mkdirhier(Theme::workDir()))) exit(1);
+  if (!(Theme::mkdirhier(Theme::themesDir()))) exit(1);
+
+  mInstaller = 0;
 
   if (runGUI())
   {
@@ -75,15 +74,14 @@ KThemesApplication::KThemesApplication(int &argc, char **argv, const char *name)
     addPage(mOptions = new Options(dialog), i18n("Contents"), "kthememgr-2.html" );
     addPage(mAbout = new About(dialog), i18n("About"), "kthememgr-3.html" );
 
+    connect(mInstaller, SIGNAL(changed(Theme *)), 
+            mOptions, SLOT(slotThemeChanged(Theme *)));
+    connect(mInstaller, SIGNAL(changed(Theme *)), 
+            mAbout, SLOT(slotThemeChanged(Theme *)));
+
     dialog->show();
+    mInstaller->readThemesList();
   }
-}
-
-
-//-----------------------------------------------------------------------------
-KThemesApplication::~KThemesApplication()
-{
-  if (theme) delete theme;
 }
 
 //-----------------------------------------------------------------------------
@@ -106,7 +104,6 @@ void KThemesApplication::apply()
   mAbout->applySettings();
   mOptions->applySettings();
   mInstaller->applySettings();
-  theme->install();
 }
 
 
@@ -152,8 +149,6 @@ void init(void)
 {
   oldMsgHandler = qInstallMsgHandler(msgHandler);
 
-  if (!(Theme::mkdirhier(Theme::workDir()))) exit(1);
-  if (!(Theme::mkdirhier(Theme::themesDir()))) exit(1);
 }
 
 
@@ -167,10 +162,11 @@ void cleanup(void)
 //-----------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
+  char *ch = malloc(100);
+  kimgioRegister();
+
   KThemesApplication app(argc, argv, "kthememgr");
   app.setTitle(i18n("Kde Theme Manager"));
-
-  kimgioRegister();
   init();
 
   if (app.runGUI()) app.exec();
