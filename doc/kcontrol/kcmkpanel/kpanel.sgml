@@ -6,7 +6,7 @@
 
 <title>KDE Control Center - Panel Settings
 <author>The KDE Team
-<date>v0.1, 19 June 1998.
+<date>v1.0, April 12 1999.
 
 <!-- Table of contents -->
 <toc>
@@ -42,59 +42,64 @@ virtual desktop buttons, etc.
 
 <sect> Panel Options.
 <p>
+The ``<bf>Menu Tooltips</bf>'' section controls the Tooltips, which
+are small descriptive hints about the functions of buttons and
+menu items on the panel.
 <itemize>
 <item>
-<bf>Menu Tooltips</bf>
-Tooltips are small descriptive hints that appear
-after a short delay when the mouse pointer is over
-a button on the Panel or an entry in the Application Starter
-list.  If you enable Tooltips, you can use the slider
-to set the <bf>delay</bf> before they appear.
+If ``<bf>Show Menu Tooltips</bf>'' is enabled, the Tooltip appears,
+after a <bf>Delay</bf> set by the slider control, when the mouse
+pointer is positioned above a Panel menu item.
 </itemize>
 
-``<bf>Visuals</bf>'' means settings that allow the Panel and Taskbar
-dynamic ``autohide'' feature to be controlled:
+The ``<bf>Visuals</bf>'' section controls
+the Panel and Taskbar ``autohide'' feature:
+this allows the panel and taskbar to be easily available 
+when needed, but be hidden at other times
+to free up space on the screen.
+
+
 <itemize>
 <item>
-If <bf>Auto Hide Panel</bf> is selected, the Panel will ``hide''
-below the bottom edge of the screen, until this edge is touched
-with the mouse pointer.  It will then reappear, and if the mouse 
-pointer is removed, it will ``hide'' again after a delay set by the
-<bf>Delay</bf> slider; the speed at which the Panel moves into and
-out of the hidden position is set by the <bf>Speed</bf> slider
-on the right.   This feature allows the panel to be available 
-when needed, without otherwise obscuring a region of the visible
-screen.
+If ``<bf>Auto Hide Panel</bf>'' is selected, the Panel will ``hide''
+behind the edge of the screen to which it is attached.  This happens
+after the <bf>Delay</bf> set by the slider control has elapsed
+since the Panel was last touched by the mouse pointer.
+The Panel reappears when the screen edge behind which it is hiding
+is touched with the pointer.  
+The <bf>Speed</bf> with which the Panel moves into and out of
+hiding is controlled by the second slider control.
 
 <item>
-If <bf>Auto Hide Taskbar</bf> is selected, the Taskbar will
-behave in a similar fashion: it ``hides'' behind the edge of the screen along
-which it has been placed, and reappears when its hiding place is touched with
-the mouse pointer. The delay before it hides again, and the speed with which
-it moves into and out of hiding, are set with the 
-<bf>Delay</bf> and <bf>Speed</bf> slider controls.
+The ``<bf>Auto Hide Taskbar</bf>''  feature acts on the Taskbar in the
+same manner as ``Auto Hide Panel'' acts on the Panel.
 
 <item>
 The Panel (but not the Taskbar) has a second feature that allows it to
-be moved out of the visible region of the screen.  If one of the two
-arrows at each end of the Panel is clicked on, the Panel  disappears by
-moving parallel to the edge of the screen in the direction of
-this arrow, until only the other arrow is visible;
-the Panel will only be restored when the second arrow is clicked on.
-If <bf>Animate Show/Hide</bf> is selected, this motion takes place
+be moved off the screen.  If one of the
+arrows at either end of the Panel is clicked on, the Panel  
+slides parallel to the edge of the screen in the direction of
+this arrow, and disappears.  Only the other arrow remains visible:
+clicking on this restores the Panel.   By default, this motion
+is instantaneous, but if
+If ``<bf>Animate Show/Hide</bf>'' is selected, this motion takes place
 smoothly, with a <bf>Speed</bf> that is controlled by the slider
-control; otherwise, the disappearance/reappearance of the Panel
-is instantaneous.  
+control.
 </itemize>
 
 
-<bf>Other</bf> options control the placement of the user's personal
-entries in the  Application Starter menu that appears
-when the big <bf>K</bf> button is selected.
-The default configuration places the system's KDE applications
-as the first entries in the Application Starter menu, followed by a
-``Personal'' menu containing the  entries which are personal to
-the user (and set in the user's own <tt>~/.kde/share/applnk/</tt>
+The ``<bf>Others</bf>'' section contains
+options that control the placement of the user's personal
+entries in the  Application Starter menu (which appears
+when the big <bf>K</bf> button is selected), and the format
+of the Panel clock.
+
+By default, the KDE system applications (not configurable by the user)
+are the first entries in the <bf>Application Starter</bf> menu, 
+followed by a
+``Personal'' menu containing the entries which belong to the
+user (and reside
+in  the user's <tt>~/.kde/share/applnk/</tt>
 directory).  
 
 <itemize>
@@ -104,16 +109,16 @@ entries first in the Application Starter Menu, followed by a ``default''
 menu which contains the system's KDE applications.
 </itemize>
 
-The default placement of the items in the user's Personal Menu
-Entries is to list individual application entries in
-<tt>~/.kde/share/applnk/</tt> first, followed by a list of Menu Folders
-in which collections  of application entries can be placed (e.g.,
+The default placement of the items within the user's Personal Menu
+Entries puts individual application entries 
+first, followed by Menu Folders
+in which additional collections of application entries are grouped (e.g.,
 those created when the user runs the <bf>Appfinder</bf> in the
 System menu).
 <itemize>
-Selecting <bf>Menu Folders First</bf> causes the folders in the
-user's Personal Menu Entries to be shown first, before those individual
-entries in the user's Personal Menu  which are not in folders.
+Selecting <bf>Menu Folders First</bf> causes folders in the
+user's Personal Menu Entries to be placed before entries
+for individual applications.
 </itemize>
 
 <bf>Panel clock format</bf>.
@@ -131,7 +136,7 @@ the Swatch watch company,
 where the 24 hour day is divided into 1000 ``beats'', measured from
 midnight  UTC+1 (GMT+1), so noon UTC+1 is written as
 ``@500'' Internet time.
-(@000 means midnight, winter time,  at Biel, Switzerland, the location of
+(@000 means midnight, Winter time,  at Biel, Switzerland, the location of
 the company headquarters,).
 
 <sect>Configuring Virtual Desktops
