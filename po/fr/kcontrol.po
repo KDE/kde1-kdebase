@@ -45,11 +45,11 @@ msgstr ""
 
 #: mainwidget.cpp:45
 msgid "System:"
-msgstr ""
+msgstr "Système:"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr ""
+msgstr "Utilisateur:"
 
 #: mainwidget.cpp:54
 msgid "Hostname: "
@@ -57,7 +57,7 @@ msgstr ""
 
 #: mainwidget.cpp:62
 msgid "System: "
-msgstr ""
+msgstr "Système: "
 
 #: mainwidget.cpp:69
 msgid "Release: "
@@ -65,11 +65,11 @@ msgstr ""
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr ""
+msgstr "Version: "
 
 #: mainwidget.cpp:84
 msgid "Machine: "
-msgstr ""
+msgstr "Machine: "
 
 #~ msgid "&About KControl..."
 #~ msgstr "&A propos..."

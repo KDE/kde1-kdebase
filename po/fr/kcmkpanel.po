@@ -6,13 +6,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-12-08 22:30 CET\n"
+"PO-Revision-Date: 1998-02-25 21:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
-"Translator: Francois-Xavier DURANCEAU <Francois-Xavier.Duranceau@loria.fr>\n"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -24,11 +23,12 @@ msgstr "&Bureaux"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "Disk &Navigator"
+msgstr ""
 
 #: main.cpp:79
+#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "utilisation : kcmkpanel [-init | {panel,options,desktops}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -112,31 +112,33 @@ msgstr "&Délai :"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr "Court"
+msgstr "Petit"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
+#, fuzzy
 msgid "Large"
-msgstr "Long"
+msgstr "G&rand"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr "Visuels"
+msgstr ""
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Panneau &auto-masquable"
 
 #: options.cpp:67 options.cpp:85
+#, fuzzy
 msgid "Delay:"
-msgstr "Délai :"
+msgstr "&Délai :"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr "Vitesse :"
+msgstr "Vitesse:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr "Lent"
+msgstr "Lente"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
@@ -148,7 +150,7 @@ msgstr "Barre de &tâches auto-masquable"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr "Animation pour Afficher/Cacher"
+msgstr ""
 
 #: options.cpp:102
 msgid "Speed"
@@ -163,12 +165,13 @@ msgid "Personal &First"
 msgstr "Menu p&ersonnel en premier"
 
 #: options.cpp:120
+#, fuzzy
 msgid "F&olders First"
-msgstr "Répert&oires en premier"
+msgstr "Menu p&ersonnel en premier"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr "Affi&cher l'heure de l'horloge au format AM/PM"
+msgstr "Afficher l'heure au format AM/PM"
 
 #: disknav.cpp:38
 msgid "History"
@@ -176,52 +179,66 @@ msgstr "Historique"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Modifier les entrées : (déposer un répertoire et créer un lien)"
+msgstr ""
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "Modifier les liens &personnels..."
+msgstr ""
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Modifier les liens partagé&s..."
+msgstr ""
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Nombre maximum de répertoires dans Récent :"
+msgstr "Nombre max d'entrée de répertoires récents:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Nombre maximum de fichiers dans Récent :"
+msgstr "Nombre max d'entrée de fichiers récents:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Nombre maximum de fichiers dans un répertoire :"
+msgstr "Nombre max de fichiers dans un répertoire:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr "Afficher les fichiers cachés"
+msgstr ""
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Trier en ignorant la casse"
+msgstr ""
 
 #: disknav.cpp:173
+#, fuzzy
 msgid "Show Shared section"
-msgstr "Afficher la section Partagés"
+msgstr "Emplacement"
 
 #: disknav.cpp:180
+#, fuzzy
 msgid "Show Personal section"
-msgstr "Afficher la section Personnels"
+msgstr "Emplacement"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Afficher la section Récents"
+msgstr "Montrer la section des entrées récentes"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Afficher l'entrée Options"
+msgstr "Montrer l'entrée des options"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Programme de Terminal :"
+msgstr ""
+
+#~ msgid "ms"
+#~ msgstr "ms"
+
+#~ msgid "Clock"
+#~ msgstr "Horloge"
+
+#~ msgid "&24h"
+#~ msgstr "&24h"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "&12h AM/PM"
