@@ -1,13 +1,13 @@
 # Перевод kcmkpanel.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-11-07 04:52+0600\n"
+"PO-Revision-Date: 1999-01-15 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -107,12 +107,12 @@ msgstr "Ширина"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Тоолтипсы у меню"
+msgstr "Тултипсы у меню"
 
 #
 #: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Тоолтипсы у меню"
+msgstr "Тултипсы у меню"
 
 #: options.cpp:84
 msgid "De&lay:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-10 02:51+0600\n"
+"PO-Revision-Date: 1999-01-15 02:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -457,7 +457,7 @@ msgstr "Низкий"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Стиль"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -468,9 +468,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "Меню наверху экрана, как в MacOS"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "Применять стиль для приложений не из KDE"
+msgstr "Применять шрифты и цвета к приложениям не из KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -527,14 +526,13 @@ msgstr "&Цвета"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Стиль"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"использование: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+"использование: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #
 #: main.cpp:150
@@ -587,15 +585,3 @@ msgstr "по умолчанию"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "любой"
-
-#
-#~ msgid "Fonts etc."
-#~ msgstr "Шрифты и т.п."
-
-#
-#~ msgid "Desktop fonts"
-#~ msgstr "Шрифты рабочего стола"
-
-#
-#~ msgid "&Fonts etc."
-#~ msgstr "&Шрифты и т.д."

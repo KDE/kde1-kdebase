@@ -1,12 +1,12 @@
 # Перевод kdmconfig
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-01-18 05:26+0600\n"
+"PO-Revision-Date: 1999-01-15 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,19 +164,16 @@ msgid "Standard"
 msgstr "Стандартный"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Приглашение"
+msgstr "Шрифт приглашения"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Провал"
+msgstr "Шрифт нейдачи"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Стандартный"
+msgstr "Стандартный шрифт"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

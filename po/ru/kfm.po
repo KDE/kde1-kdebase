@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-25 03:51+0600\n"
+"PO-Revision-Date: 1999-01-15 03:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1007,12 +1007,12 @@ msgid " ERROR: Could not write to %s"
 msgstr " ОШИБКА: Не могу записать в %s"
 
 #: kiojob.cpp:565 kiojob.cpp:851
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Не могу сделать ссылку на\n"
+"Не могу создать символьную ссылку\n"
 "%s"
 
 #: kiojob.cpp:583 kiojob.cpp:872 kiojob.cpp:1308
@@ -1035,11 +1035,13 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Специальный файл не будет скопирован\n"
+"%s"
 
 #: kiojob.cpp:652
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d специальный(х) файл(ы) не будет(ут) скопирован(ы)."
 
 #: kiojob.cpp:903
 #, c-format
@@ -1069,11 +1071,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Специальный файл не будет перемещен\n"
+"%s"
 
 #: kiojob.cpp:1025
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d специальный(х) файл(ы) не будет(ут) перемещено."
 
 #: kiojob.cpp:1289 kiojob.cpp:1356
 #, c-format
