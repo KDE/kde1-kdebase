@@ -100,7 +100,6 @@ msgstr "Afficher Barre de &Menu"
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
 msgstr "Bloquer &Clavier"
-#
 
 #: main.C:404
 msgid "Scroll&bar"
