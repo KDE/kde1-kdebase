@@ -1,0 +1,17 @@
+1988-12-19 Duncan Haldane <f.d.m.haldane@cwix.com>
+	* Converted global.cpp, global.h to keyconfig.cpp,
+	keyconfig.h, that can now be used to configure both
+	the standard keys  and the global keys 
+	in the same sophisticated manner as  
+	global.cpp did for just the global keys.
+	* converted main.cpp to use keyconfig.cpp rather than
+	global.cpp and standard.cpp for standard and globall
+	key configuration.  KGlobalConfig and KStdConfig disappear. 
+	(KGlobalConfig is renamed to KKeyConfig)
+	* appropriate changes to Makefile.am.
+	* standard key binding are now #include'd from
+	stdbindings.cpp
+        *  standard.cpp, standard.h are left here for now.
+	The entries that used to use them in main.cpp and
+	Makefile.am are just commented out for now.
+	

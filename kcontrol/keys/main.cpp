@@ -28,9 +28,12 @@
 #include <kslider.h>
 
 #include <kcontrol.h>
-#include "standard.h"
-#include "global.h"
+//#include "standard.h"
+//#include "global.h"
+#include "keyconfig.h"
 #include <kwm.h>
+
+bool global_switch = false ;
 
 class KKeyApplication : public KControlApplication
 {
@@ -44,8 +47,10 @@ public:
 
 private:
 
-  KStdConfig *standard;
-  KGlobalConfig *global;
+//  KStdConfig *standard;
+//  KGlobalConfig *global;
+  KKeyConfig *standard;
+  KKeyConfig *global;
 };
 
 
@@ -60,13 +65,20 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
 
       if (!pages || pages->contains("standard")){
 	printf("create standard\n");
-	addPage(standard = new KStdConfig(dialog),
+//	addPage(standard = new KStdConfig(dialog),
+//		klocale->translate("&Standard shortcuts"), "keys-1.html");
+ 	global_switch = false ;
+ 	addPage(standard = new KKeyConfig(dialog),
 		klocale->translate("&Standard shortcuts"), "keys-1.html");
       }
       if (!pages || pages->contains("global")){
 	printf("create global\n");
-	addPage(global = new KGlobalConfig(dialog),
+//	addPage(global = new KGlobalConfig(dialog),
+//		klocale->translate("&Global shortcuts"), "keys-2.html");
+ 	global_switch = true ;
+	addPage(global = new KKeyConfig(dialog),
 		klocale->translate("&Global shortcuts"), "keys-2.html");
+
       }
 
       if (standard || global)
@@ -83,10 +95,12 @@ KKeyApplication::KKeyApplication(int &argc, char **argv, const char *name)
 
 void KKeyApplication::init()
 {
-  KStdConfig *standard=new KStdConfig(0);
+//  KStdConfig *standard=new KStdConfig(0);
+  KKeyConfig *standard=new KKeyConfig(0);
   standard->keys->writeSettings();
   delete standard;
-  KGlobalConfig *global = new KGlobalConfig(0);
+//  KGlobalConfig *global = new KGlobalConfig(0);
+  KKeyConfig *global = new KKeyConfig(0);
   global->keys->writeSettings();
   delete global;
 }
