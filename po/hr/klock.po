@@ -171,7 +171,6 @@ msgstr ""
 "\n"
 "Prilagodio kscreensaveru Martin Jones."
 
-
 #: forest.cpp:200
 msgid "Forest"
 msgstr "©uma"
@@ -256,12 +255,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-Laser verzija 3.3.\n"
+"Laser verzija 3.3.\n"
 "\n"
 "Copyright (c) 1995 Pascal Pensa\n"
 "\n"
 "Prilagodio kscreensaveru Martin Jones."
-
 
 #: lines.cpp:110
 msgid "Lines"
@@ -333,7 +331,6 @@ msgstr ""
 "\n"
 "Prilagodio kscreensaveru Emanuel Pirker."
 
-
 #: main.cpp:263
 msgid "Shadow Passwords"
 msgstr "Shadow lozinke"
@@ -376,7 +373,7 @@ msgstr ""
 
 #: morph3d.cpp:836
 msgid "GL can not render with root visual\n"
-msgstr "GL ne mo¾e raditi s root visualom"
+msgstr "GL ne mo¾e raditi s root visualom\n"
 
 #: morph3d.cpp:937
 msgid "Morph3D (GL)"
