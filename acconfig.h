@@ -32,6 +32,9 @@
 /* define if you have PAM (Pluggable Authentication Modules); Redhat-Users! */
 #undef HAVE_PAM
 
+/* if defined, changes the default name of the PAM service used by KDE */
+#undef KDE_PAM_SERVICE
+
 /* Define to 1 if NLS is requested.  */
 #undef ENABLE_NLS
 
