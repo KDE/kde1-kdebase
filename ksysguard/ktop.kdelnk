@@ -3,7 +3,7 @@
 BinaryPattern=ktop;
 Comment=Task Manager and Performance Monitor
 Comment[cs]=Správce úloh a monitor výkonu
-Comment[da]=Procesliste og ydelsesmåler
+Comment[da]=Opgavemanager og ydelsesmåler
 Comment[es]=Administrador de Tareas y Monitor de Rendimiento
 Comment[fi]=Proessien- ja suorituskyvynhallinta
 Comment[fr]=ktop : Gestionnaire de tâches et Indicateur ressources
@@ -19,7 +19,7 @@ Comment[sk]=Správca úloh a monitorovanie výkonu
 Comment[sv]=Hanterar aktiviteter och visar prestanda
 Name=Task Manager
 Name[cs]=Správce úloh
-Name[da]=Jobstyring
+Name[da]=Brugermanager
 Name[de]=Programmanager
 Name[es]=Administrador de Tareas
 Name[fi]=Prosessienhallinta
