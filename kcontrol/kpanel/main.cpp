@@ -25,6 +25,7 @@
 #include "panel.h"
 #include "desktops.h"
 #include "options.h"
+#include "disknav.h"
 #include <ksimpleconfig.h>
 
 KConfigBase *config;
@@ -43,6 +44,7 @@ private:
     KPanelConfig *panel;
     KDesktopsConfig *desktops;
     KOptionsConfig *options;
+    KDiskNavConfig *disknav;
 };
 
 void sd(const QSize& r) {
@@ -53,7 +55,7 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 				       const char *name)
     : KControlApplication(argc, argv, name)
 {
-    panel = 0; desktops = 0; options = 0;
+    panel = 0; desktops = 0; options = 0, disknav = 0;
 
     if (runGUI())
 	{
@@ -66,8 +68,11 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 	    if (!pages || pages->contains("desktops"))
 		addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
 			i18n("&Desktops"), "kpanel-3.html");
+	    if (!pages || pages->contains("disknav"))
+		addPage(disknav = new KDiskNavConfig(dialog, "disknav"),
+			i18n("Disk &Navigator"), "kdisknav.html");
 	    
-	    if (panel || desktops || options) {
+	    if (panel || desktops || options || disknav) {
 		QSize t;
 		int w = 0, h = 0;
 		
@@ -90,11 +95,18 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 		    if (h < t.height())
 			h = t.height();
 		}
+		if (disknav) {
+		    t = disknav->minimumSize();
+		    if (w < t.width())
+			w = t.width();
+		    if (h < t.height())
+			h = t.height();
+		}
 		dialog->resize(w,h);
 		dialog->show();
 	    }
 	    else {
-		fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,options,desktops}]\n"));
+		fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"));
 		justInit = true;
 	    }
 	    
@@ -114,6 +126,8 @@ void KKPanelApplication::apply()
     bool restarted = false;
     if (desktops) // desktop restarts kpanel by it's own
 	restarted = desktops->justSave();
+    if (disknav)
+	disknav->saveSettings();
     if (!restarted)
 	KWM::sendKWMCommand("kpanel:restart");
 }
