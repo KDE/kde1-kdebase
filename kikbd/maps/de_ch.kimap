@@ -3,8 +3,10 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>, Ernst Rall <ErnstRall@gmx.net>
 Comment=German Keyboard (Switzerland)
+Comment[pt_BR]=Teclado Alemão (Suíça)
 
 Language=German (Switzerland)
+Language[pt_BR]=Alemão (Suíça)
 
 Label=CH
 Locale=de_CH

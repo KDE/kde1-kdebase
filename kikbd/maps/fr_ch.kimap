@@ -3,7 +3,9 @@
 [International Keyboard]
 Authors=Cyrill Schneider <cyrill.schneider@bluewin.ch>
 Comment=French Keyboard (Switzerland)
+Comment[pt_BR]=Teclado Francês (Suíça)
 Language=French (Switzerland)
+Language[pt_BR]=Francês (Suíça)
 
 Label=CH
 Locale=fr_CH

@@ -4,6 +4,7 @@
 Authors=Rob Mayoff <mayoff@dqd.com>
 
 Language=English/Dvorak
+Language[pt_BR]=Inglês/Dvorak
 
 Label=Dv
 Locale=en
