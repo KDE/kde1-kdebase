@@ -206,7 +206,7 @@ void KBGndManager::readSettings()
   if ( config2.readBoolEntry( "Docking", true ) )
     dock();
 
-  int cache = config2->readNumEntry( "CacheSize", 1024 );
+  int cache = config2.readNumEntry( "CacheSize", 1024 );
 
   if ( cache < 128 )
     cache = 128;
