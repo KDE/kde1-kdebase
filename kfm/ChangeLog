@@ -1,5 +1,7 @@
 Fri Jul  3 02:21:39 1998  Torben Weis  <weis@localhost>
 
+	* kfmdlg.cpp (slotSelected): Fixed bug in OpenWithDlg.
+
 	* kfmexec.cpp (slotMimeType): Fixed bug with OpenWithDlg
 	  popuing up when opening remote documents that are not HTML
 	  documents, but images for example.

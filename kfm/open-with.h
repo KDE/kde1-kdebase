@@ -15,6 +15,7 @@ public:
   bool parsed;
   bool directory;
   QString path;
+  QString appname;
   QString exec;
 };
 
@@ -37,10 +38,9 @@ protected:
 public slots:
   void expanded(int index);
   void selected(int index);
-  // void highlighted(int index);
 
 signals:
-  void selected( const char *_name );
+  void selected( const char *_name, const char *_exec );
 };
 
 #endif

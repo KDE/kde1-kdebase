@@ -27,11 +27,12 @@ KAppTreeListItem::KAppTreeListItem( const char *name, QPixmap *pixmap,
   directory = dir;
   path = p;
   c.simplifyWhiteSpace();
-  // int pos;
-  // if( (pos = c.find( ' ')) > 0 )
-  // exec = c.left( pos );
-  // else
-  exec = c;
+  int pos;
+  if( (pos = c.find( ' ')) > 0 )
+    exec = c.left( pos );
+  else
+    exec = c;
+  appname = name;
 }
 
 // ----------------------------------------------------------------------
@@ -119,7 +120,7 @@ void KApplicationTree::parseKdelnkFile( QFileInfo *fi, KTreeList *tree, KAppTree
      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16); 
   }
 
-  it2 = new KAppTreeListItem( (const char *)text_name, &pixmap, false, false, fi->isDir(), fi->absFilePath(), command_name );	
+  it2 = new KAppTreeListItem( text_name.data(), &pixmap, false, false, fi->isDir(), fi->absFilePath(), command_name );	
 
     if( item == 0 )
       tree->insertItem( it2 );
@@ -201,8 +202,8 @@ void KApplicationTree::selected(int index)
 {
   KAppTreeListItem *item = (KAppTreeListItem *)tree->itemAt( index );
 
-  if( (!item->directory) && !(item->exec.isEmpty()) )
-     emit selected( (const char *) item->exec ); 
+  if( ( !item->directory ) && !( item->exec.isEmpty() ) && !( item->appname.isEmpty() ) )
+     emit selected( item->appname.data(), item->exec.data() ); 
   else
     tree->expandOrCollapseItem( index );
 }

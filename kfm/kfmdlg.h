@@ -80,7 +80,7 @@ public slots:
    */
   void slotClear();
   void slotBrowse();
-  void slotSelected( const char* );
+  void slotSelected( const char* _name, const char* _exec );
   
 protected:
   /**
@@ -103,4 +103,3 @@ protected:
 };
 
 #endif
-

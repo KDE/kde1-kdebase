@@ -149,7 +149,7 @@ void OpenWithDlg::slotBrowse()
   cancel->setGeometry( 280, 280, 80, 25 );
 
   m_pTree = new KApplicationTree( this );
-  connect( m_pTree, SIGNAL( selected( const char* ) ), this, SLOT( slotSelected( const char* ) ) );
+  connect( m_pTree, SIGNAL( selected( const char*, const char* ) ), this, SLOT( slotSelected( const char*, const char* ) ) );
   m_pTree->setGeometry( 10, 70, 350, 200 );
   m_pTree->show();
   m_pTree->setFocus();
@@ -157,11 +157,14 @@ void OpenWithDlg::slotBrowse()
   resize( width(), height() + 210 );
 }
 
-void OpenWithDlg::slotSelected( const char* _name )
+void OpenWithDlg::slotSelected( const char* _name, const char* _exec )
 {
-  edit->setText( "" );
   m_pBind = KMimeBind::findByName( _name );
-  
+  if ( !m_pBind )
+    edit->setText( _exec );
+  else
+    edit->setText( "" );
+
   accept();
 }
 
