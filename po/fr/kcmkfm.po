@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kfm\n"
+"POT-Creation-Date: 1998-12-15 01:15+0100\n"
+"PO-Revision-Date: 1998-01-25 18:31 CET\n"
+"Last-Translator: David Faure <David.Faure@insa-lyon.fr>\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain;\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
+
+#: main.cpp:58
+msgid "&Font"
+msgstr "P&olices"
+
+#: main.cpp:60
+msgid "&Color"
+msgstr "&Couleurs"
+
+#: main.cpp:62
+msgid "&Other"
+msgstr "&Autres"
+
+#: main.cpp:65
+msgid "&Proxy"
+msgstr "&Proxy"
+
+#: main.cpp:67
+msgid "&HTTP"
+msgstr "&HTTP"
+
+#: main.cpp:70
+msgid "User &Agent"
+msgstr "A&gent utilisateur"
+
+#: main.cpp:74
+msgid "&Desktop Icons"
+msgstr "&Icônes du bureau"
+
+#: main.cpp:83
+#, c-format
+msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr ""
+
+#: main.cpp:166
+msgid "KFM Configuration"
+msgstr "Configuration de KFM"
+
+#: htmlopts.cpp:64
+msgid "Small"
+msgstr "Petite"
+
+#: htmlopts.cpp:69
+msgid "Medium"
+msgstr "Moyenne"
+
+#: htmlopts.cpp:74
+msgid "Large"
+msgstr "Grosse"
+
+#: htmlopts.cpp:83
+msgid "Standard Font"
+msgstr "Police par défaut"
+
+#: htmlopts.cpp:97
+msgid "Fixed Font"
+msgstr "Police de taille fixe"
+
+#: htmlopts.cpp:114
+msgid "Default Charset"
+msgstr ""
+
+#: htmlopts.cpp:122 htmlopts.cpp:276
+msgid "Use language charset"
+msgstr ""
+
+#: htmlopts.cpp:329
+msgid "Background Color:"
+msgstr "Couleur de fond :"
+
+#: htmlopts.cpp:341
+msgid "Normal Text Color:"
+msgstr "Couleur du texte normal :"
+
+#: htmlopts.cpp:353
+msgid "URL Link Color:"
+msgstr "Couleur des URL :"
+
+#: htmlopts.cpp:365
+msgid "Followed Link Color:"
+msgstr "Couleur des URL suivies :"
+
+#: htmlopts.cpp:377
+msgid "Change cursor over link."
+msgstr "Changer le curseur au-dessus d'un lien."
+
+#: htmlopts.cpp:383
+msgid "Underline links"
+msgstr "Souligner les liens"
+
+#: miscopts.cpp:25
+msgid "&Allow per-URL settings"
+msgstr "Permettre la sauvegarde des paramètres pour chaque URL"
+
+#: miscopts.cpp:33
+msgid "Tree &view follows navigation"
+msgstr "La vue arborescente suit la navigation"
+
+#: kproxydlg.cpp:50
+msgid "Don't forget to save your settings!"
+msgstr "N'oubliez pas d'enregistrer vos options !"
+
+#: kproxydlg.cpp:58
+msgid "Use proxy"
+msgstr "Utiliser le proxy"
+
+#: kproxydlg.cpp:67
+msgid "HTTP Proxy:"
+msgstr ""
+
+#: kproxydlg.cpp:82 kproxydlg.cpp:113
+msgid "Port:"
+msgstr ""
+
+#: kproxydlg.cpp:98
+#, fuzzy
+msgid "FTP Proxy:"
+msgstr "&Proxy"
+
+#: kproxydlg.cpp:128
+msgid "No Proxy for:"
+msgstr "Pas de proxy pour :"
+
+#: khttpoptdlg.cpp:38
+msgid "Accept languages:"
+msgstr "Accepter les langues :"
+
+#: khttpoptdlg.cpp:52
+msgid "Accept character sets:"
+msgstr "Accepter les tables de caractères :"
+
+#: khttpoptdlg.cpp:65
+msgid "Assume HTML"
+msgstr "Considérer comme du HTML"
+
+#: useragentdlg.cpp:43
+msgid "On server:"
+msgstr "Sur le serveur :"
+
+#: useragentdlg.cpp:65
+msgid "login as:"
+msgstr "Connexion en tant que :"
+
+#: useragentdlg.cpp:85
+msgid "&Add"
+msgstr "&Ajouter"
+
+#: useragentdlg.cpp:105
+msgid "Known bindings:"
+msgstr "Liaisons connues :"
+
+#: rootopts.cpp:70
+msgid "Horizontal Root Grid Spacing:"
+msgstr "Espacement de la grille horizontale du bureau :"
+
+#: rootopts.cpp:81
+msgid "Vertical Root Grid Spacing:"
+msgstr "Espacement de la grille verticale du bureau :"
+
+#: rootopts.cpp:92
+#, fuzzy
+msgid "&Transparent Text for Desktop Icons."
+msgstr "Texte &transparent pour les icônes du bureau."
+
+#: rootopts.cpp:103
+msgid "Icon foreground color:"
+msgstr "Couleur du texte des icônes :"
+
+#: rootopts.cpp:115
+msgid "Icon background color:"
+msgstr "Couleur de fond du texte des icônes :"
