@@ -239,7 +239,7 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	top2Layout->addWidget( cbStyle, 10 );
 
-	cbRes = new QCheckBox( i18n( "&Use Resource Manager" ),
+	cbRes = new QCheckBox( i18n( "&Apply style to non-KDE apps" ),
 				 this );
 	cbRes->setMinimumSize(cbRes->sizeHint());
 
