@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-11-14 01:18+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -113,45 +113,47 @@ msgstr "Ooops!"
 msgid ""
 "\n"
 "%b %d"
-msgstr "\n%b %d"
+msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 
-#: pfilemenu.C:389
+#: pfilemenu.C:420
 msgid "(empty folder)"
 msgstr "(pasta vazia)"
 
-#: pfilemenu.C:446
+#: pfilemenu.C:477
 msgid "(Too Many Files)"
 msgstr "(Arquivos demais)"
 
-#: pfilemenu.C:455
+#: pfilemenu.C:486
 msgid "(Access Denied)"
 msgstr "(Acesso negado)"
 
-#: pfilemenu.C:458
+#: pfilemenu.C:489
 msgid "(Unreadable)"
 msgstr "(Ilegível)"
 
-#: pfilemenu.C:465
+#: pfilemenu.C:496
 msgid "Open Folder"
 msgstr "Abrir Pasta"
 
-#: pfilemenu.C:715
+#: pfilemenu.C:746
 msgid "Global:"
 msgstr "Global:"
 
-#: pfilemenu.C:736
+#: pfilemenu.C:767
 msgid "Local:"
 msgstr "Local:"
 
-#: pfilemenu.C:756
+#: pfilemenu.C:787
 msgid "Recent:"
 msgstr "Recente:"
 
-#: pfilemenu.C:804
+#: pfilemenu.C:835
 msgid "Options..."
 msgstr "Options..."
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
-"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>"
-"Content-Type: text/plain; charset=\n"
+"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>Content-Type: "
+"text/plain; charset=\n"
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Files: kikbd.C mkikbd.C keytrans.C keymap.C mkeymap.C kikbdconf.C kobjconf.C "
@@ -18,14 +18,18 @@ msgstr "Teclado Internacional do KDE já foi iniciado nesse display"
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
-msgstr "Arquivo de códigos \"%s\" do X não existe.\nUtilizando códigos padrões do X."
+msgstr ""
+"Arquivo de códigos \"%s\" do X não existe.\n"
+"Utilizando códigos padrões do X."
 
 #: kikbd.cpp:313
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
-msgstr "Mapa de teclado \"%s\" não existe.\nPulando este mapa."
+msgstr ""
+"Mapa de teclado \"%s\" não existe.\n"
+"Pulando este mapa."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -69,18 +73,23 @@ msgid ""
 "May be your default X codes does not match.\n"
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
-msgstr "Símbolo \"%s\" não encontrado.\nTalvez seus códigos X padrões não"
-       "coincidam.\nVocê pode pré-selecionar códigos X na seção 'Avançada.'"
+msgstr ""
+"Símbolo \"%s\" não encontrado.\n"
+"Talvez seus códigos X padrões nãocoincidam.\n"
+"Você pode pré-selecionar códigos X na seção 'Avançada.'"
 
 #: keymap.cpp:233
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
 msgstr "KeyMap: símbolo \"%s\" não encontrado"
 
 #: keymap.cpp:241
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
 msgstr "KeyMap: keycode \"%s\" ininteligível"
 
 #: keymap.cpp:247
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: keycode \"%s\" está fora da faixa"
 
@@ -165,10 +174,13 @@ msgid "X default codes"
 msgstr "Códigos padrões do X"
 
 #: kikbdconf.cpp:204
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to start Configuration?"
-msgstr "%s\nVocê quer iniciar a Configuração ?"
+msgstr ""
+"%s\n"
+"Você quer iniciar a Configuração ?"
 
 #: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
@@ -178,15 +190,17 @@ msgstr "Sua configuração está vazia. Instalado padrão do sistema."
 msgid ""
 "Configuration file you have has older format when expected.\n"
 "Some settings may be incorrect."
-msgstr "O arquivo de configurações está num formato mais velho"
-       "que o esperado.\nAlgumas configurações podem estar incorretas."
+msgstr ""
+"O arquivo de configurações está num formato mais velhoque o esperado.\n"
+"Algumas configurações podem estar incorretas."
 
 #: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format when expected.\n"
 "Some settings may be incorrect."
-msgstr "O arquivo de configurações está num formato mais novo que "
-       "o esperado.\nAlgumas configurações podem estar incorretas."
+msgstr ""
+"O arquivo de configurações está num formato mais novo que o esperado.\n"
+"Algumas configurações podem estar incorretas."
 
 #: kikbdconf.cpp:353
 msgid "unknown"
@@ -268,7 +282,9 @@ msgstr "Configurar"
 msgid ""
 "\n"
 "Do you want to continue?"
-msgstr "\nVocê quer continuar?"
+msgstr ""
+"\n"
+"Você quer continuar?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -417,7 +433,9 @@ msgstr "Comportamento estendido. Cada janela tem seu próprio mapa de teclado"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Comportamento especial. Cada classe de janela lembra de seu próprio mapa de teclado."
+msgstr ""
+"Comportamento especial. Cada classe de janela lembra de seu próprio mapa de "
+"teclado."
 
 #: widgets.cpp:551
 msgid "Button Colors"
@@ -499,7 +517,7 @@ msgstr "E&stilo"
 msgid "Start&Up"
 msgstr "&Iniciar"
 
-#: kcmikbd.cpp:121
+#: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado Internacional"
 

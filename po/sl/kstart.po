@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstartondesk\n"
-"POT-Creation-Date: 1998-10-29 13:59+0100\n"
+"POT-Creation-Date: 1998-11-19 13:55+0100\n"
 "PO-Revision-Date: 1998-06-21 00:52+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovenian\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
 
-#: kstart.C:115
+#: kstart.C:116
 #, c-format
 msgid ""
 "\n"
@@ -44,7 +44,7 @@ msgid ""
 " "
 msgstr ""
 
-#: kstart.C:151
+#: kstart.C:152
 #, fuzzy
 msgid ""
 "\n"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-19 13:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:999
+#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:998
 msgid "Folder"
 msgstr "폴더"
 
@@ -189,7 +189,7 @@ msgstr "설정 저장(&v)"
 msgid "Configure Browser..."
 msgstr "브라우저 설정..."
 
-#: kfmgui.cpp:437
+#: kfmgui.cpp:436
 #, fuzzy
 msgid ""
 "Author: Torben Weis\n"
@@ -213,28 +213,28 @@ msgstr ""
 "프락시 관리자: Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:450
+#: kfmgui.cpp:449
 msgid "&Bookmarks"
 msgstr "즐겨 찾기(&B)"
 
-#: kfmgui.cpp:451
+#: kfmgui.cpp:450
 msgid "&Cache"
 msgstr "캐쉬(&C)"
 
-#: kfmgui.cpp:478 main.cpp:242
+#: kfmgui.cpp:477 main.cpp:239
 msgid "Up"
 msgstr "상위 디렉토리"
 
-#: kfmgui.cpp:488 main.cpp:244
+#: kfmgui.cpp:487 main.cpp:241
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:493
+#: kfmgui.cpp:492
 #, fuzzy
 msgid "Home"
 msgstr "홈 디렉토리"
 
-#: kfmgui.cpp:550
+#: kfmgui.cpp:549
 msgid "Could not load icon\n"
 msgstr "Icon을 불러 올 수 없음\n"
 
@@ -243,67 +243,67 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kbind.cpp:1588 kbind.cpp:1646 kbind.cpp:1658 kbind.cpp:1685 kbind.cpp:1700
 #: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
 #: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:551 kfmgui.cpp:707 kfmman.cpp:341
-#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:375
-#: kfmprops.cpp:626 kfmprops.cpp:652 kfmprops.cpp:879 kfmprops.cpp:1008
-#: kfmprops.cpp:1139 kfmprops.cpp:1471 kfmprops.cpp:1703 kfmprops.cpp:1888
+#: kfmexec/main.cpp:47 kfmgui.cpp:550 kfmgui.cpp:706 kfmman.cpp:341
+#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
+#: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
+#: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
 #: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
-#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:572 kfmview.cpp:576
-#: kfmview.cpp:615 kfmview.cpp:641 kfmview.cpp:662 kfmview.cpp:670
-#: kfmview.cpp:678 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:573 kfmview.cpp:577
+#: kfmview.cpp:616 kfmview.cpp:642 kfmview.cpp:663 kfmview.cpp:671
+#: kfmview.cpp:679 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
 #: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
-#: krenamewin.cpp:120 root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187
-#: root.cpp:1193 root.cpp:1274 root.cpp:1785 root.cpp:1810
+#: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
+#: root.cpp:1182 root.cpp:1263 root.cpp:1774 root.cpp:1799
 msgid "KFM Error"
 msgstr ""
 
-#: kfmexec.cpp:59 kfmgui.cpp:706 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:705 kfmman.cpp:1053
 msgid "Malformed URL\n"
 msgstr "형식에 맞지 않는 URL\n"
 
-#: kfmgui.cpp:877
+#: kfmgui.cpp:876
 msgid "Select files:"
 msgstr "파일 선택:"
 
-#: kfmgui.cpp:932
+#: kfmgui.cpp:931
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:933
+#: kfmgui.cpp:932
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:951
+#: kfmgui.cpp:950
 msgid "&Edit Bookmarks..."
 msgstr "즐겨찾기 편집(&E)..."
 
-#: kfmgui.cpp:961
+#: kfmgui.cpp:960
 msgid "&Add Bookmark"
 msgstr "즐겨찾기 추가(&A)"
 
-#: kfmgui.cpp:991 kfmgui.cpp:998
+#: kfmgui.cpp:990 kfmgui.cpp:997
 msgid "New "
 msgstr "새로 만들기"
 
-#: kfmgui.cpp:1088 kfmgui.cpp:1253 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:663
-#: kiojob.cpp:87 root.cpp:1182
+#: kfmgui.cpp:1087 kfmgui.cpp:1252 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:664
+#: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "오류: 형식에 맞지 않는 URL"
 
-#: kfmgui.cpp:1207 kfmserver.cpp:188
+#: kfmgui.cpp:1206 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "위치 열기:"
 
-#: kfmgui.cpp:1264
+#: kfmgui.cpp:1263
 msgid "KFM Confirm"
 msgstr "KFM 확인"
 
-#: kfmgui.cpp:1265
+#: kfmgui.cpp:1264
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -311,11 +311,11 @@ msgstr ""
 "정말 끝내시겠습니까?\n"
 "중요한 데스크탑 기능을 사용할 수 없게 될 수도 있습니다"
 
-#: kfmgui.cpp:1372
+#: kfmgui.cpp:1374
 msgid "Document: Done"
 msgstr "문서: 완료"
 
-#: kfmview.cpp:358 root.cpp:903
+#: kfmview.cpp:358 root.cpp:892
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "오류: 대상 URL과 원본 URL이 같습니다"
@@ -329,11 +329,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "오류: 대상 URL과 원본 URL이 같습니다"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:432
-#: kfmview.cpp:706 krenamewin.cpp:20 root.cpp:1225
+#: kfmview.cpp:707 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM 경고"
 
-#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:707 root.cpp:1226
+#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:708 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -343,11 +343,11 @@ msgstr ""
 "\n"
 "복구할 방법이 없습니다."
 
-#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:671 root.cpp:1188
+#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:672 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "오류: 대상 URL과 원본 URL이 같습니다"
 
-#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:679 root.cpp:1194
+#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:680 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "오류: 하나 이상의 하부 디렉토리 아래에 떨어뜨릴 수 없습니다"
 
@@ -355,11 +355,11 @@ msgstr "오류: 하나 이상의 하부 디렉토리 아래에 떨어뜨릴 수 없습니다"
 msgid "Open With:"
 msgstr "열기:"
 
-#: kfmview.cpp:515 root.cpp:1125
+#: kfmview.cpp:515 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "오류: 여러 파일의 등록정보를 한꺼번에 열 수 없습니다"
 
-#: kfmview.cpp:573
+#: kfmview.cpp:574
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -367,7 +367,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:577
+#: kfmview.cpp:578
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -375,23 +375,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:288 kfmview.cpp:616 root.cpp:1275
+#: kfmtree.cpp:288 kfmview.cpp:617 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "휴지통에 접근할 수 없습니다"
 
-#: kfmview.cpp:642 root.cpp:1164
+#: kfmview.cpp:643 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "여러 디렉토리로 붙여넣기를 할 수 없습니다"
 
-#: kfmview.cpp:739
+#: kfmview.cpp:740
 msgid "ERROR: Can not change to multiple directories"
 msgstr "오류: 여러 디렉토리로 한꺼번에 변경할 수 없습니다"
 
-#: kfmview.cpp:930
+#: kfmview.cpp:931
 msgid "KFM Security Alert"
 msgstr "KFM 보안 경보"
 
-#: kfmview.cpp:931
+#: kfmview.cpp:932
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -399,16 +399,16 @@ msgstr ""
 "이 페이지는 신뢰할 수 없습니다\n"
 "하지만 사용자의 지역 파일 시스템에 대한 연결을 포함하고 있습니다."
 
-#: kfmview.cpp:1017
+#: kfmview.cpp:1018
 msgid "Symbolic Link"
 msgstr "바로가기"
 
-#: kfmview.cpp:1019
+#: kfmview.cpp:1020
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (연결)"
 
-#: kfmview.cpp:1039
+#: kfmview.cpp:1040
 msgid "bytes"
 msgstr "바이트"
 
@@ -518,7 +518,7 @@ msgstr "*.kdelnk 파일에 파일시스템을 연결할 지점이 없습니다"
 msgid "Unknown binding"
 msgstr "알 수 없는 바인딩입니다"
 
-#: main.cpp:87 main.cpp:194
+#: main.cpp:87 main.cpp:191
 msgid "KFM Information"
 msgstr "KFM 정보"
 
@@ -526,47 +526,47 @@ msgstr "KFM 정보"
 msgid "Creating directory:\n"
 msgstr "디렉토리 만듬:\n"
 
-#: main.cpp:195
+#: main.cpp:192
 msgid "Installing Templates"
 msgstr "템플릿 설치중"
 
-#: main.cpp:227
+#: main.cpp:224
 msgid "Cd"
 msgstr "디렉토리 이동"
 
-#: main.cpp:228
+#: main.cpp:225
 msgid "New View"
 msgstr "새로 보기"
 
-#: kfmtree.cpp:224 main.cpp:231
+#: kfmtree.cpp:224 main.cpp:228
 msgid "Move to Trash"
 msgstr "휴지통에 버리기"
 
-#: main.cpp:233
+#: main.cpp:230
 msgid "Open with"
 msgstr "열기"
 
-#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:235
+#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:232
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:237
+#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:234
 msgid "Link"
 msgstr "연결"
 
-#: main.cpp:238
+#: main.cpp:235
 msgid "Empty Trash Bin"
 msgstr "휴지통 비우기"
 
-#: main.cpp:239
+#: main.cpp:236
 msgid "Add to Bookmarks"
 msgstr "즐겨찾기에 추가"
 
-#: main.cpp:240
+#: main.cpp:237
 msgid "Save settings for this URL"
 msgstr ""
 
-#: main.cpp:241
+#: main.cpp:238
 #, fuzzy
 msgid "Show Menubar"
 msgstr "메뉴 표시줄(&M)"
@@ -650,41 +650,41 @@ msgstr "찾아보기"
 msgid "Could not write bookmark"
 msgstr "즐겨찾기에 쓸 수 없습니다"
 
-#: kfmprops.cpp:236
+#: kfmprops.cpp:238
 #, fuzzy
 msgid "File Name"
 msgstr "전체 경로"
 
-#: kfmprops.cpp:251
+#: kfmprops.cpp:253
 msgid "Full Name"
 msgstr "전체 경로"
 
-#: kfmprops.cpp:268
+#: kfmprops.cpp:270
 msgid "Is the Trash Bin"
 msgstr "휴지통"
 
-#: kfmprops.cpp:275
+#: kfmprops.cpp:277
 msgid "Is a Directory"
 msgstr "디렉토리"
 
-#: kfmprops.cpp:282
+#: kfmprops.cpp:284
 msgid "Points to"
 msgstr "연결된 곳"
 
-#: kfmprops.cpp:307
+#: kfmprops.cpp:309
 #, c-format
 msgid "Size: %i"
 msgstr "크기: %i"
 
-#: kfmprops.cpp:317
+#: kfmprops.cpp:319
 msgid "Last Access"
 msgstr "최근 접근"
 
-#: kfmprops.cpp:327
+#: kfmprops.cpp:329
 msgid "Last Modified"
 msgstr "최근 수정"
 
-#: kfmprops.cpp:376
+#: kfmprops.cpp:378
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -692,11 +692,11 @@ msgstr ""
 "파일, 디렉토리 이름을 변경할 수 없습니다\n"
 "이미 있는 이름일 가능성이 있습니다.\n"
 
-#: kfmprops.cpp:424
+#: kfmprops.cpp:426
 msgid "Access permissions"
 msgstr "접근 권한"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:432
 msgid ""
 "Show\n"
 "Entries"
@@ -704,11 +704,11 @@ msgstr ""
 "항목\n"
 "보기"
 
-#: kfmprops.cpp:432
+#: kfmprops.cpp:434
 msgid "Read"
 msgstr "읽기"
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:439
 msgid ""
 "Write\n"
 "Entries"
@@ -716,11 +716,11 @@ msgstr ""
 "쓰기\n"
 "항목"
 
-#: kfmprops.cpp:439
+#: kfmprops.cpp:441
 msgid "Write"
 msgstr "쓰기"
 
-#: kfmprops.cpp:444
+#: kfmprops.cpp:446
 msgid ""
 "Change\n"
 "Into"
@@ -728,48 +728,48 @@ msgstr ""
 "으로\n"
 "바꾸기"
 
-#: kfmprops.cpp:446
+#: kfmprops.cpp:448
 msgid "Exec"
 msgstr "실행"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:452
 msgid "Special"
 msgstr "특정"
 
-#: kfmprops.cpp:454
+#: kfmprops.cpp:456
 msgid "User"
 msgstr "사용자"
 
-#: kfmprops.cpp:459 kfmprops.cpp:558
+#: kfmprops.cpp:461 kfmprops.cpp:560
 msgid "Group"
 msgstr ""
 
-#: kfmprops.cpp:464
+#: kfmprops.cpp:466
 msgid "Others"
 msgstr "기타"
 
-#: kfmprops.cpp:477
+#: kfmprops.cpp:479
 msgid "Set UID"
 msgstr "UID 설정"
 
-#: kfmprops.cpp:478
+#: kfmprops.cpp:480
 msgid "Set GID"
 msgstr "GID 설정"
 
-#: kfmprops.cpp:479
+#: kfmprops.cpp:481
 msgid "Sticky"
 msgstr "스티키"
 
-#: kfmprops.cpp:497
+#: kfmprops.cpp:499
 msgid "Ownership"
 msgstr "소유권"
 
-#: kfmprops.cpp:503
+#: kfmprops.cpp:505
 #, fuzzy
 msgid "Owner"
 msgstr "소유권"
 
-#: kfmprops.cpp:627
+#: kfmprops.cpp:629
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -777,17 +777,17 @@ msgstr ""
 "권한을 변경할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:642
+#: kfmprops.cpp:644
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " 오류: %s 사용자가 없습니다"
 
-#: kfmprops.cpp:647
+#: kfmprops.cpp:649
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " 오류: %s 그룹이 없습니다"
 
-#: kfmprops.cpp:653
+#: kfmprops.cpp:655
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -795,37 +795,37 @@ msgstr ""
 "소유자/그룹을 변경할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:665 kfmprops.cpp:724
+#: kfmprops.cpp:667 kfmprops.cpp:726
 msgid "Execute"
 msgstr "실행파일"
 
-#: kfmprops.cpp:681
+#: kfmprops.cpp:683
 #, fuzzy
 msgid "&Browse..."
 msgstr "찾아보기"
 
-#: kfmprops.cpp:693
+#: kfmprops.cpp:695
 msgid "Working Directory"
 msgstr "작업 디렉토리"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:713
 msgid "Swallowing on panel"
 msgstr "Swallowing on panel"
 
-#: kfmprops.cpp:738
+#: kfmprops.cpp:740
 msgid "Window Title"
 msgstr "창 제목"
 
-#: kfmprops.cpp:758
+#: kfmprops.cpp:760
 msgid "Run in terminal"
 msgstr "터미널에서 실행"
 
-#: kfmprops.cpp:766
+#: kfmprops.cpp:768
 msgid "Terminal Options"
 msgstr "터미널 선택사항"
 
-#: kfmprops.cpp:880 kfmprops.cpp:1009 kfmprops.cpp:1472 kfmprops.cpp:1704
-#: kfmprops.cpp:1889
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1474 kfmprops.cpp:1706
+#: kfmprops.cpp:1891
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -833,80 +833,80 @@ msgstr ""
 "등록정보를 저장할 수 없습니다\n"
 "허가가 거부되었습니다"
 
-#: kfmprops.cpp:934
+#: kfmprops.cpp:936
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:1031
+#: kfmprops.cpp:1033
 #, fuzzy
 msgid "Background"
 msgstr "배경 색:"
 
-#: kfmprops.cpp:1041
+#: kfmprops.cpp:1043
 msgid "Apply global"
 msgstr "모두 적용"
 
-#: kfmprops.cpp:1079 kfmprops.cpp:1151 kfmprops.cpp:1208
+#: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
 msgid "(Default)"
 msgstr "(기본값)"
 
-#: kfmprops.cpp:1140
+#: kfmprops.cpp:1142
 msgid "Could not write to\n"
 msgstr "Could not write to\n"
 
-#: kfmprops.cpp:1269
+#: kfmprops.cpp:1271
 msgid "(None)"
 msgstr "(없음)"
 
-#: kfmprops.cpp:1315
+#: kfmprops.cpp:1317
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "이진 패턴 (netscape;Netscape;)"
 
-#: kfmprops.cpp:1322 kfmprops.cpp:1573
+#: kfmprops.cpp:1324 kfmprops.cpp:1575
 msgid "Comment"
 msgstr "설명"
 
-#: kfmprops.cpp:1333
+#: kfmprops.cpp:1335
 msgid "Name ( in your language )"
 msgstr "이름"
 
-#: kfmprops.cpp:1550
+#: kfmprops.cpp:1552
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "패턴 (예: *.html;*.HTML; )"
 
-#: kfmprops.cpp:1562
+#: kfmprops.cpp:1564
 msgid "Mime Type"
 msgstr "Mime 형식"
 
-#: kfmprops.cpp:1591
+#: kfmprops.cpp:1593
 msgid "Default Application"
 msgstr "기본 응용프로그램"
 
-#: kfmprops.cpp:1631
+#: kfmprops.cpp:1633
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:1753
+#: kfmprops.cpp:1755
 msgid "Device ( /dev/fd0 )"
 msgstr "장치 ( /dev/fd0 )"
 
-#: kfmprops.cpp:1762
+#: kfmprops.cpp:1764
 msgid "Mount Point ( /floppy )"
 msgstr "파일시스템을 연결할 지점 ( /floppy )"
 
-#: kfmprops.cpp:1773
+#: kfmprops.cpp:1775
 msgid "Readonly"
 msgstr "읽기전용"
 
-#: kfmprops.cpp:1779
+#: kfmprops.cpp:1781
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "파일시스템 ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1790
+#: kfmprops.cpp:1792
 msgid "Mounted Icon"
 msgstr "파일시스템 연결을 표시하는 아이콘"
 
-#: kfmprops.cpp:1795
+#: kfmprops.cpp:1797
 msgid "Unmounted Icon"
 msgstr "파일시스템 연결 끊기를 표시하는 아이콘"
 
@@ -961,7 +961,7 @@ msgstr ""
 "누군가 틀린 암호로 로그인을\n"
 "시도하고 있습니다"
 
-#: root.cpp:706
+#: root.cpp:695
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -971,24 +971,24 @@ msgstr ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 
-#: root.cpp:741
+#: root.cpp:730
 msgid "Internal Error: desktopDir is malformed"
 msgstr "내부 오류: 데스크탑 디렉토리가 형식에 어긋남"
 
-#: root.cpp:752
+#: root.cpp:741
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "오류: '%s' 데스크탑 디렉토리를 읽을 수 없습니다"
 
-#: root.cpp:951
+#: root.cpp:940
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1267 root.cpp:1786
+#: kfmman.cpp:1267 root.cpp:1775
 msgid "Dont know what to do."
 msgstr "무엇을 해야할 지 모르겠음"
 
-#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1811
+#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "무엇을 해야할 지 모르겠음"
 
@@ -1442,30 +1442,30 @@ msgstr ""
 msgid "&Permissions"
 msgstr "접근 권한"
 
-#: kfmprops.h:199
+#: kfmprops.h:201
 #, fuzzy
 msgid "E&xecute"
 msgstr "실행파일"
 
-#: kfmprops.h:245
+#: kfmprops.h:247
 #, fuzzy
 msgid "U&RL"
 msgstr "URL"
 
-#: kfmprops.h:269
+#: kfmprops.h:271
 msgid "&Dir"
 msgstr ""
 
-#: kfmprops.h:313
+#: kfmprops.h:315
 #, fuzzy
 msgid "&Application"
 msgstr "응용프로그램"
 
-#: kfmprops.h:355
+#: kfmprops.h:357
 msgid "&Binding"
 msgstr "바인딩(&B)"
 
-#: kfmprops.h:385
+#: kfmprops.h:387
 msgid "De&vice"
 msgstr "장치(&v)"
 

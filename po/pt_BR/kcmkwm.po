@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-11 01:18+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -29,7 +29,8 @@ msgstr "&Avançado"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"utilização: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse,advanced}]\n"
+"utilização: kcmkwm [-init | "
+"{windows,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -159,7 +160,8 @@ msgstr "Configuração do gerenciador de janelas - ERRO"
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
-msgstr "Houve um erro na gravação\n"
+msgstr ""
+"Houve um erro na gravação\n"
 "das figuras da barra de título. Cheque as permissões."
 
 #: windows.cpp:66
@@ -219,8 +221,9 @@ msgstr "Manual"
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
-msgstr "Sobreposição permitida:\n"
-       "(% do espaço do ambiente)"
+msgstr ""
+"Sobreposição permitida:\n"
+"(% do espaço do ambiente)"
 
 #: windows.cpp:170
 msgid "Focus policy"

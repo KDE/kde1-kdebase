@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-10-29 13:59+0100\n"
+"POT-Creation-Date: 1998-11-19 13:55+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
-#: kstart.C:115
+#: kstart.C:116
 #, c-format
 msgid ""
 "\n"
@@ -57,8 +57,10 @@ msgstr ""
 " cria um xclock decorado e pregado, no canto superior direito da tela.\n"
 " "
 
-#: kstart.C:151
+#: kstart.C:152
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "\nCopyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+"\n"
+"Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

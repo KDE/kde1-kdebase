@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-19 13:55+0100\n"
 "PO-Revision-Date: 1998-02-26 20:20+MET\n"
 "Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "KFM"
 msgstr ""
 
-#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:999
+#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:215 kfmgui.cpp:998
 msgid "Folder"
 msgstr "Könyvtár"
 
@@ -191,7 +191,7 @@ msgstr "&Beállítások mentése"
 msgid "Configure Browser..."
 msgstr "Böngészõ beállítása..."
 
-#: kfmgui.cpp:437
+#: kfmgui.cpp:436
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -206,27 +206,27 @@ msgid ""
 "faure@kde.org"
 msgstr ""
 
-#: kfmgui.cpp:450
+#: kfmgui.cpp:449
 msgid "&Bookmarks"
 msgstr "&Kedvenc"
 
-#: kfmgui.cpp:451
+#: kfmgui.cpp:450
 msgid "&Cache"
 msgstr "&Gyorstár"
 
-#: kfmgui.cpp:478 main.cpp:242
+#: kfmgui.cpp:477 main.cpp:239
 msgid "Up"
 msgstr ""
 
-#: kfmgui.cpp:488 main.cpp:244
+#: kfmgui.cpp:487 main.cpp:241
 msgid "Forward"
 msgstr ""
 
-#: kfmgui.cpp:493
+#: kfmgui.cpp:492
 msgid "Home"
 msgstr "Kezdõlap"
 
-#: kfmgui.cpp:550
+#: kfmgui.cpp:549
 msgid "Could not load icon\n"
 msgstr "A %s ikon nem található\n"
 
@@ -235,67 +235,67 @@ msgstr "A %s ikon nem található\n"
 #: kbind.cpp:1588 kbind.cpp:1646 kbind.cpp:1658 kbind.cpp:1685 kbind.cpp:1700
 #: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
 #: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:551 kfmgui.cpp:707 kfmman.cpp:341
-#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:375
-#: kfmprops.cpp:626 kfmprops.cpp:652 kfmprops.cpp:879 kfmprops.cpp:1008
-#: kfmprops.cpp:1139 kfmprops.cpp:1471 kfmprops.cpp:1703 kfmprops.cpp:1888
+#: kfmexec/main.cpp:47 kfmgui.cpp:550 kfmgui.cpp:706 kfmman.cpp:341
+#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
+#: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
+#: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
 #: kfmserver.cpp:303 kfmserver.cpp:311 kfmtree.cpp:164 kfmtree.cpp:287
 #: kfmtree.cpp:318 kfmtree.cpp:324 kfmtree.cpp:330 kfmview.cpp:357
 #: kfmview.cpp:373 kfmview.cpp:392 kfmview.cpp:398 kfmview.cpp:460
-#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:572 kfmview.cpp:576
-#: kfmview.cpp:615 kfmview.cpp:641 kfmview.cpp:662 kfmview.cpp:670
-#: kfmview.cpp:678 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
+#: kfmview.cpp:466 kfmview.cpp:472 kfmview.cpp:573 kfmview.cpp:577
+#: kfmview.cpp:616 kfmview.cpp:642 kfmview.cpp:663 kfmview.cpp:671
+#: kfmview.cpp:679 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
 #: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:556
 #: kiojob.cpp:796 kiojob.cpp:827 kiojob.cpp:868 kiojob.cpp:1682
-#: krenamewin.cpp:120 root.cpp:902 root.cpp:1163 root.cpp:1181 root.cpp:1187
-#: root.cpp:1193 root.cpp:1274 root.cpp:1785 root.cpp:1810
+#: krenamewin.cpp:120 root.cpp:891 root.cpp:1152 root.cpp:1170 root.cpp:1176
+#: root.cpp:1182 root.cpp:1263 root.cpp:1774 root.cpp:1799
 msgid "KFM Error"
 msgstr "KFM Hiba"
 
-#: kfmexec.cpp:59 kfmgui.cpp:706 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:705 kfmman.cpp:1053
 msgid "Malformed URL\n"
 msgstr "Hibás URL\n"
 
-#: kfmgui.cpp:877
+#: kfmgui.cpp:876
 msgid "Select files:"
 msgstr "Kijelölt file-ok:"
 
-#: kfmgui.cpp:932
+#: kfmgui.cpp:931
 msgid "Find Complete"
 msgstr ""
 
-#: kfmgui.cpp:933
+#: kfmgui.cpp:932
 msgid "Continue search from the top of the page?"
 msgstr ""
 
-#: kfmgui.cpp:951
+#: kfmgui.cpp:950
 msgid "&Edit Bookmarks..."
 msgstr "&Kedvencek módosítása"
 
-#: kfmgui.cpp:961
+#: kfmgui.cpp:960
 msgid "&Add Bookmark"
 msgstr "&Hozzáadás a kedvencekhez"
 
-#: kfmgui.cpp:991 kfmgui.cpp:998
+#: kfmgui.cpp:990 kfmgui.cpp:997
 msgid "New "
 msgstr "Új "
 
-#: kfmgui.cpp:1088 kfmgui.cpp:1253 kfmjob.cpp:35 kfmman.cpp:224
-#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:663
-#: kiojob.cpp:87 root.cpp:1182
+#: kfmgui.cpp:1087 kfmgui.cpp:1252 kfmjob.cpp:35 kfmman.cpp:224
+#: kfmtree.cpp:319 kfmview.cpp:393 kfmview.cpp:461 kfmview.cpp:664
+#: kiojob.cpp:87 root.cpp:1171
 msgid "ERROR: Malformed URL"
 msgstr "HIBA: hibás URL"
 
-#: kfmgui.cpp:1207 kfmserver.cpp:188
+#: kfmgui.cpp:1206 kfmserver.cpp:188
 msgid "Open Location:"
 msgstr "Hely megnyitása:"
 
-#: kfmgui.cpp:1264
+#: kfmgui.cpp:1263
 msgid "KFM Confirm"
 msgstr "KFM Megerõsítés"
 
-#: kfmgui.cpp:1265
+#: kfmgui.cpp:1264
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -303,11 +303,11 @@ msgstr ""
 "Valóban ki kíván lépni?\n"
 "Így fontos asztalfunkciókat fog elveszíteni."
 
-#: kfmgui.cpp:1372
+#: kfmgui.cpp:1374
 msgid "Document: Done"
 msgstr "Dokumentum: kész"
 
-#: kfmview.cpp:358 root.cpp:903
+#: kfmview.cpp:358 root.cpp:892
 #, fuzzy
 msgid "ERROR: You may only drop URLs"
 msgstr "Saját magára ejtette az URL-t"
@@ -321,11 +321,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "Saját magára ejtette az URL-t"
 
 #: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:357 kfmview.cpp:432
-#: kfmview.cpp:706 krenamewin.cpp:20 root.cpp:1225
+#: kfmview.cpp:707 krenamewin.cpp:20 root.cpp:1214
 msgid "KFM Warning"
 msgstr "KFM figyelmeztetés"
 
-#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:707 root.cpp:1226
+#: kfmtree.cpp:358 kfmview.cpp:433 kfmview.cpp:708 root.cpp:1215
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -335,11 +335,11 @@ msgstr ""
 "\n"
 "A végrehajtás visszavonhatatlan következményekkel jár."
 
-#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:671 root.cpp:1188
+#: kfmtree.cpp:325 kfmview.cpp:467 kfmview.cpp:672 root.cpp:1177
 msgid "ERROR: You dropped a URL over itself"
 msgstr "Saját magára ejtette az URL-t"
 
-#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:679 root.cpp:1194
+#: kfmtree.cpp:331 kfmview.cpp:473 kfmview.cpp:680 root.cpp:1183
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "A könyvtárat saját magába ejtette"
 
@@ -347,11 +347,11 @@ msgstr "A könyvtárat saját magába ejtette"
 msgid "Open With:"
 msgstr "Megnyitás a következõvel:"
 
-#: kfmview.cpp:515 root.cpp:1125
+#: kfmview.cpp:515 root.cpp:1114
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "Nem lehet több file tulajdonságait egyszerre megnyitni"
 
-#: kfmview.cpp:573
+#: kfmview.cpp:574
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -359,7 +359,7 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmview.cpp:577
+#: kfmview.cpp:578
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -367,23 +367,23 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 
-#: kfmtree.cpp:288 kfmview.cpp:616 root.cpp:1275
+#: kfmtree.cpp:288 kfmview.cpp:617 root.cpp:1264
 msgid "Could not access Trash Bin"
 msgstr "A Kuka nem elérhetõ"
 
-#: kfmview.cpp:642 root.cpp:1164
+#: kfmview.cpp:643 root.cpp:1153
 msgid "Can not paste into multiple directories"
 msgstr "Nem lehet beilleszteni egyszerre több könyvtárba"
 
-#: kfmview.cpp:739
+#: kfmview.cpp:740
 msgid "ERROR: Can not change to multiple directories"
 msgstr "Nem lehet egyszerre több könyvtárba lépni"
 
-#: kfmview.cpp:930
+#: kfmview.cpp:931
 msgid "KFM Security Alert"
 msgstr "KFM Biztonsági figyelmeztetés"
 
-#: kfmview.cpp:931
+#: kfmview.cpp:932
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -391,16 +391,16 @@ msgstr ""
 "Ez az oldal nem ellenõrzött,\n"
 "de a helyi filerendszerre mutató hivatkozást tartalmaz."
 
-#: kfmview.cpp:1017
+#: kfmview.cpp:1018
 msgid "Symbolic Link"
 msgstr "Szimbolikus lánc"
 
-#: kfmview.cpp:1019
+#: kfmview.cpp:1020
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (lánc)"
 
-#: kfmview.cpp:1039
+#: kfmview.cpp:1040
 msgid "bytes"
 msgstr "byte"
 
@@ -505,7 +505,7 @@ msgstr "Nincs csatlakozási hely a kdelink file-ban"
 msgid "Unknown binding"
 msgstr "Ismeretlen hozzárendelés"
 
-#: main.cpp:87 main.cpp:194
+#: main.cpp:87 main.cpp:191
 msgid "KFM Information"
 msgstr "KFM Információ"
 
@@ -513,47 +513,47 @@ msgstr "KFM Információ"
 msgid "Creating directory:\n"
 msgstr "Könyvtár létrehozása:\n"
 
-#: main.cpp:195
+#: main.cpp:192
 msgid "Installing Templates"
 msgstr "Sablonok installálása"
 
-#: main.cpp:227
+#: main.cpp:224
 msgid "Cd"
 msgstr ""
 
-#: main.cpp:228
+#: main.cpp:225
 msgid "New View"
 msgstr "Új nézet"
 
-#: kfmtree.cpp:224 main.cpp:231
+#: kfmtree.cpp:224 main.cpp:228
 msgid "Move to Trash"
 msgstr "Kukába dob"
 
-#: main.cpp:233
+#: main.cpp:230
 msgid "Open with"
 msgstr "Megnyitás mással"
 
-#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:235
+#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:232
 msgid "Move"
 msgstr "Mozgat"
 
-#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:237
+#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:234
 msgid "Link"
 msgstr "Lánc"
 
-#: main.cpp:238
+#: main.cpp:235
 msgid "Empty Trash Bin"
 msgstr "Kuka ürítése"
 
-#: main.cpp:239
+#: main.cpp:236
 msgid "Add to Bookmarks"
 msgstr "Hozzáadás a kedvencekhez"
 
-#: main.cpp:240
+#: main.cpp:237
 msgid "Save settings for this URL"
 msgstr ""
 
-#: main.cpp:241
+#: main.cpp:238
 #, fuzzy
 msgid "Show Menubar"
 msgstr "&Menüsor megjelenítése"
@@ -636,41 +636,41 @@ msgstr "Tallóz"
 msgid "Could not write bookmark"
 msgstr "Nem lehet írni\n"
 
-#: kfmprops.cpp:236
+#: kfmprops.cpp:238
 #, fuzzy
 msgid "File Name"
 msgstr "Teljes név"
 
-#: kfmprops.cpp:251
+#: kfmprops.cpp:253
 msgid "Full Name"
 msgstr "Teljes név"
 
-#: kfmprops.cpp:268
+#: kfmprops.cpp:270
 msgid "Is the Trash Bin"
 msgstr "a szemetes kuka"
 
-#: kfmprops.cpp:275
+#: kfmprops.cpp:277
 msgid "Is a Directory"
 msgstr "egy könyvtár"
 
-#: kfmprops.cpp:282
+#: kfmprops.cpp:284
 msgid "Points to"
 msgstr "mutat"
 
-#: kfmprops.cpp:307
+#: kfmprops.cpp:309
 #, c-format
 msgid "Size: %i"
 msgstr "Méret: %i"
 
-#: kfmprops.cpp:317
+#: kfmprops.cpp:319
 msgid "Last Access"
 msgstr "Utolsó hozzáférés"
 
-#: kfmprops.cpp:327
+#: kfmprops.cpp:329
 msgid "Last Modified"
 msgstr "Utolsó módosítás"
 
-#: kfmprops.cpp:376
+#: kfmprops.cpp:378
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -678,77 +678,77 @@ msgstr ""
 "Nem lehet átnevezni a file-t vagy könyvtárat.\n"
 "A célnév már létezik.\n"
 
-#: kfmprops.cpp:424
+#: kfmprops.cpp:426
 msgid "Access permissions"
 msgstr "Hozzáférési jogok"
 
-#: kfmprops.cpp:430
+#: kfmprops.cpp:432
 msgid ""
 "Show\n"
 "Entries"
 msgstr ""
 
-#: kfmprops.cpp:432
+#: kfmprops.cpp:434
 msgid "Read"
 msgstr "Olvasás"
 
-#: kfmprops.cpp:437
+#: kfmprops.cpp:439
 msgid ""
 "Write\n"
 "Entries"
 msgstr ""
 
-#: kfmprops.cpp:439
+#: kfmprops.cpp:441
 msgid "Write"
 msgstr "Írás"
 
-#: kfmprops.cpp:444
+#: kfmprops.cpp:446
 msgid ""
 "Change\n"
 "Into"
 msgstr ""
 
-#: kfmprops.cpp:446
+#: kfmprops.cpp:448
 msgid "Exec"
 msgstr "Végrehajtás"
 
-#: kfmprops.cpp:450
+#: kfmprops.cpp:452
 msgid "Special"
 msgstr "Speciális"
 
-#: kfmprops.cpp:454
+#: kfmprops.cpp:456
 msgid "User"
 msgstr "Felhasználó"
 
-#: kfmprops.cpp:459 kfmprops.cpp:558
+#: kfmprops.cpp:461 kfmprops.cpp:560
 msgid "Group"
 msgstr "Csoport"
 
-#: kfmprops.cpp:464
+#: kfmprops.cpp:466
 msgid "Others"
 msgstr "Többiek"
 
-#: kfmprops.cpp:477
+#: kfmprops.cpp:479
 msgid "Set UID"
 msgstr ""
 
-#: kfmprops.cpp:478
+#: kfmprops.cpp:480
 msgid "Set GID"
 msgstr ""
 
-#: kfmprops.cpp:479
+#: kfmprops.cpp:481
 msgid "Sticky"
 msgstr ""
 
-#: kfmprops.cpp:497
+#: kfmprops.cpp:499
 msgid "Ownership"
 msgstr "Tulajdonos"
 
-#: kfmprops.cpp:503
+#: kfmprops.cpp:505
 msgid "Owner"
 msgstr "Tulajdonos"
 
-#: kfmprops.cpp:627
+#: kfmprops.cpp:629
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -756,17 +756,17 @@ msgstr ""
 "Nem lehet a jogokat állítani\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:642
+#: kfmprops.cpp:644
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " HIBA: Nincs '%s' user"
 
-#: kfmprops.cpp:647
+#: kfmprops.cpp:649
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " HIBA: Nincs '%s' csoport"
 
-#: kfmprops.cpp:653
+#: kfmprops.cpp:655
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -774,37 +774,37 @@ msgstr ""
 "Nem lehet a tulajdonost/csoportot állítani.\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:665 kfmprops.cpp:724
+#: kfmprops.cpp:667 kfmprops.cpp:726
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: kfmprops.cpp:681
+#: kfmprops.cpp:683
 #, fuzzy
 msgid "&Browse..."
 msgstr "Tallóz"
 
-#: kfmprops.cpp:693
+#: kfmprops.cpp:695
 msgid "Working Directory"
 msgstr "Munkakönyvtár"
 
-#: kfmprops.cpp:711
+#: kfmprops.cpp:713
 msgid "Swallowing on panel"
 msgstr ""
 
-#: kfmprops.cpp:738
+#: kfmprops.cpp:740
 msgid "Window Title"
 msgstr ""
 
-#: kfmprops.cpp:758
+#: kfmprops.cpp:760
 msgid "Run in terminal"
 msgstr "Futtatás terminálban"
 
-#: kfmprops.cpp:766
+#: kfmprops.cpp:768
 msgid "Terminal Options"
 msgstr "Terminál opciók"
 
-#: kfmprops.cpp:880 kfmprops.cpp:1009 kfmprops.cpp:1472 kfmprops.cpp:1704
-#: kfmprops.cpp:1889
+#: kfmprops.cpp:882 kfmprops.cpp:1011 kfmprops.cpp:1474 kfmprops.cpp:1706
+#: kfmprops.cpp:1891
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -812,79 +812,79 @@ msgstr ""
 "Nem lehet a tulajdonságokat menteni\n"
 "Hozzáférés megtagadva."
 
-#: kfmprops.cpp:934
+#: kfmprops.cpp:936
 msgid "URL"
 msgstr ""
 
-#: kfmprops.cpp:1031
+#: kfmprops.cpp:1033
 msgid "Background"
 msgstr ""
 
-#: kfmprops.cpp:1041
+#: kfmprops.cpp:1043
 msgid "Apply global"
 msgstr "Globálisan alkalmaz"
 
-#: kfmprops.cpp:1079 kfmprops.cpp:1151 kfmprops.cpp:1208
+#: kfmprops.cpp:1081 kfmprops.cpp:1153 kfmprops.cpp:1210
 msgid "(Default)"
 msgstr "(Alapértelmezett)"
 
-#: kfmprops.cpp:1140
+#: kfmprops.cpp:1142
 msgid "Could not write to\n"
 msgstr "Nem lehet írni\n"
 
-#: kfmprops.cpp:1269
+#: kfmprops.cpp:1271
 msgid "(None)"
 msgstr "(Semmi)"
 
-#: kfmprops.cpp:1315
+#: kfmprops.cpp:1317
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr ""
 
-#: kfmprops.cpp:1322 kfmprops.cpp:1573
+#: kfmprops.cpp:1324 kfmprops.cpp:1575
 msgid "Comment"
 msgstr "Megjegyzés"
 
-#: kfmprops.cpp:1333
+#: kfmprops.cpp:1335
 msgid "Name ( in your language )"
 msgstr "Név (magyarul)"
 
-#: kfmprops.cpp:1550
+#: kfmprops.cpp:1552
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Minta (pl.: *.html;*.HTML;)"
 
-#: kfmprops.cpp:1562
+#: kfmprops.cpp:1564
 msgid "Mime Type"
 msgstr "MIME típus"
 
-#: kfmprops.cpp:1591
+#: kfmprops.cpp:1593
 msgid "Default Application"
 msgstr "Alapértelmezett program"
 
-#: kfmprops.cpp:1631
+#: kfmprops.cpp:1633
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:1753
+#: kfmprops.cpp:1755
 msgid "Device ( /dev/fd0 )"
 msgstr "Meghajtó (/dev=fd0)"
 
-#: kfmprops.cpp:1762
+#: kfmprops.cpp:1764
 msgid "Mount Point ( /floppy )"
 msgstr "Mount pont (/floppy)"
 
-#: kfmprops.cpp:1773
+#: kfmprops.cpp:1775
 msgid "Readonly"
 msgstr "Csak olvasható"
 
-#: kfmprops.cpp:1779
+#: kfmprops.cpp:1781
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filerendszerek (iso9660,msdos,minix,alapértelmezett)"
 
-#: kfmprops.cpp:1790
+#: kfmprops.cpp:1792
 msgid "Mounted Icon"
 msgstr "Csatlakoztatott ikon"
 
-#: kfmprops.cpp:1795
+#: kfmprops.cpp:1797
 msgid "Unmounted Icon"
 msgstr "Nem csatlakoztatott ikon"
 
@@ -936,31 +936,31 @@ msgid ""
 "using a wrong password"
 msgstr "Valaki hibás jelszóval próbálta azonosítani magát"
 
-#: root.cpp:706
+#: root.cpp:695
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
 
-#: root.cpp:741
+#: root.cpp:730
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Belsõ hiba: elrontott desktopDir"
 
-#: root.cpp:752
+#: root.cpp:741
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "Hiba: a(z) '%s' asztalkönyvtár nem olvasható"
 
-#: root.cpp:951
+#: root.cpp:940
 msgid "ERROR: Can not accept drop"
 msgstr "Hiba: nem lehet egérrel ejteni"
 
-#: kfmman.cpp:1267 root.cpp:1786
+#: kfmman.cpp:1267 root.cpp:1775
 msgid "Dont know what to do."
 msgstr ""
 
-#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1811
+#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1800
 msgid "Dont know what to do"
 msgstr ""
 
@@ -1390,27 +1390,27 @@ msgstr "Á&ltalános"
 msgid "&Permissions"
 msgstr "&Hozzáférési jogok"
 
-#: kfmprops.h:199
+#: kfmprops.h:201
 msgid "E&xecute"
 msgstr "&Végrehajtás"
 
-#: kfmprops.h:245
+#: kfmprops.h:247
 msgid "U&RL"
 msgstr ""
 
-#: kfmprops.h:269
+#: kfmprops.h:271
 msgid "&Dir"
 msgstr ""
 
-#: kfmprops.h:313
+#: kfmprops.h:315
 msgid "&Application"
 msgstr "&Alkalmazás"
 
-#: kfmprops.h:355
+#: kfmprops.h:357
 msgid "&Binding"
 msgstr "&Kötés"
 
-#: kfmprops.h:385
+#: kfmprops.h:387
 msgid "De&vice"
 msgstr "&Eszköz"
 
