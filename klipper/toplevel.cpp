@@ -216,6 +216,13 @@ void TopLevel::showPopupMenu()
       mousePressEvent(0L);
   }
   else {
-      pQPMmenu->popup(QCursor::pos() );
+    pQPMmenu->move(-1000,-1000);
+    pQPMmenu->show();
+    pQPMmenu->hide();
+    QPoint g = QCursor::pos();
+    if ( pQPMmenu->height() < g.y() )
+      pQPMmenu->popup(QPoint( g.x(), g.y() - pQPMmenu->height()));
+    else
+      pQPMmenu->popup(QPoint(g.x(), g.y()));
   }
 }
