@@ -6,7 +6,7 @@ be restarted with "kwmcom kpanel:restart".
 KDE applications itself should not use kwmcom, but use the class KWM
 (which is a part of libkdecore) instead.
 
-Nevertheless kwmcom might be usefull anyway, for example for kwm
+Nevertheless kwmcom might be useful anyway, for example for kwm
 module programmers. The KWMModuleApplication-class will emit a signal
 commandRecieved(QString) when a command arrives.
 
