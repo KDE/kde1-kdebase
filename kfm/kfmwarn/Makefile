@@ -1,0 +1,52 @@
+# Generated automatically from Makefile.in by configure.
+
+INCDIR  =       -I/usr/openwin/include -I/home/kulow/prod/qt-1.2/include -I/home/kulow/prod/kde/include -I../.. -I./
+CXXFLAGS+=      $(INCDIR) 
+LDFLAGS =       -L/usr/openwin/lib -L/home/kulow/prod/qt-1.2/lib -L/home/kulow/prod/kde/lib -lqt -lXext -lX11 -lkdecore -lsocket -lnsl
+CXX     =       c++
+MOC     =       /home/kulow/prod/qt-1.2/bin/moc
+
+####### Files
+
+SOURCES =	main.cpp
+HEADERS =	
+OBJECTS =	main.o
+SRCMETA =	
+TARGET	=	kfmwarn
+
+####### Implicit rules
+
+.SUFFIXES: .cpp
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $(INCDIR) $<
+
+####### Build rules
+
+all: $(TARGET)
+
+$(TARGET): $(SRCMETA) $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+depend:
+	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null
+
+showfiles:
+	@echo $(SOURCES) $(HEADERS) Makefile
+
+clean:
+	-rm -f *.o *.bak *~ *% #*
+	-rm -f $(SRCMETA) $(TARGET)
+
+
+####### Meta objects
+
+kioslave_ipc.moc: kioslave_ipc.h
+	$(MOC) kioslave_ipc.h -o kioslave_ipc.moc
+
+main.moc: main.h
+	$(MOC) main.h -o main.moc
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.
+
+
