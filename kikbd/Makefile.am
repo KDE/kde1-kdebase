@@ -67,6 +67,17 @@ uninstall-local:
 	-rm -f $(kde_icondir)/kikbd.xpm
 	-rm -f $(kde_minidir)/kikbd.xpm
 
+kconfobjs.moc.cpp: kconfobjs.h
+	$(MOC) -o $@ $<
+kobjconf.moc.cpp: kobjconf.h
+	$(MOC) -o $@ $<
+widgets.moc.cpp: widgets.h
+	$(MOC) -o $@ $<
+keymap.moc.cpp: keymap.h
+	$(MOC) -o $@ $<
+kikbd.moc.cpp: kikbd.h
+	$(MOC) -o $@ $<
+
 
 
 
