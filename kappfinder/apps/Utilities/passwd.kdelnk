@@ -3,7 +3,7 @@
 Exec=passwd
 Icon=passwd.xpm
 TerminalOptions=
-Comment=Changes your passord
+Comment=Changes your password
 Comment[ca]=Canvieu la vostra contrasenya
 Comment[cs]=Zmìní va¹e heslo
 Comment[es]=Cambia su contraseña
