@@ -2373,7 +2373,6 @@ void Manager::noFocus(){
 
   Client::hideGimmick();
   focusToNull();
-  myapp->raiseSystemMenuBar();
   sendToModules(module_win_activate, 0);
 
 }

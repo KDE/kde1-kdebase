@@ -663,6 +663,7 @@ void MyApp::setupSystemMenuBar()
       return;
   kapp->getConfig()->reparseConfiguration();
   systemMenuBarParent = new QWidget;
+  systemMenuBarParent->setGeometry(0, qApp->desktop()->width()+10,100,40);
   systemMenuBar = new KMenuBar(systemMenuBarParent);
 
   QPopupMenu* file = new QPopupMenu;
