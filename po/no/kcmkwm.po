@@ -153,7 +153,7 @@ msgstr "Lag til ikon"
 
 #: titlebar.cpp:1087
 msgid "(Un)Sticky"
-msgstr "(Un)Sticky"
+msgstr "(Ikke)fastsatt"
 
 #: titlebar.cpp:1107
 msgid "Title animation"
@@ -435,11 +435,11 @@ msgstr "Vinduer vil:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr "har tynn dekorasjon"
+msgstr "ha tynn dekorasjon"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr "har ingen dekorasjon"
+msgstr "ikke ha noen dekorasjon"
 
 #: advanced.cpp:106
 msgid "never gain focus"
@@ -447,7 +447,7 @@ msgstr "aldri oppnå fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "start som fastsatt"
+msgstr "starte som fastsatt"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
@@ -459,7 +459,7 @@ msgstr "hvis de passer følgende:"
 
 #: advanced.cpp:121
 msgid "Titles"
-msgstr "Tittler"
+msgstr "Titler"
 
 #: advanced.cpp:126
 msgid "Classes"
