@@ -1,3 +1,4 @@
+
 //                              -*- Mode: C++ -*- 
 // Title            : kgreeter.cpp
 // 
@@ -5,8 +6,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Hans Petter Bieker
-// Last Modified On : Thu Aug 20 17:11:01 CEST 1998
-// Update Count     : 152
+// Last Modified On : Thu Aug 20 17:28:08 CEST 1998
+// Update Count     : 153
 // Status           : Unknown, Use with caution!
 // 
 
@@ -484,30 +485,31 @@ KGreeter::restrict_expired(){
      struct passwd *pwd;
      struct spwd *swd;
      time_t warntime;
-     int quietlog;
 
      pwd= getpwnam(greet->name);
      swd= getspnam(greet->name);
-     if (!pwd) return false;
+     if (!pwd || !swd) return false;
      endpwent();
 
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
-     quietlog = 0;
      warntime = DEFAULT_WARN;
 
      if (swd->sp_expire)
-       if (swd->sp_expire <= time(NULL)) {
-         QMessageBox::critical(NULL, i18n("Expired"), i18n("Sorry -- your account has expired."), i18n("&Ok"));
-         return true;
-       } else if (swd->sp_expire - time(NULL) < warntime && !quietlog) {
-         QString str;
-         str.sprintf(i18n("Warning: your account expires on %s"), ctime(&swd->sp_expire));  // use locales
-         QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
-       }
+	 if (swd->sp_expire <= time(NULL)) {
+	     QMessageBox::critical(NULL, i18n("Expired"),
+				   i18n("Sorry -- your account has expired."),
+				   i18n("&Ok"));
+	     return true;
+	 } else if (swd->sp_expire - time(NULL) < warntime) {
+	     QString str;
+	     str.sprintf(i18n("Warning: your account expires on %s"),
+			 ctime(&swd->sp_expire));  // use locales
+	     QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
+	 }
 
-     return false;
+    return false;
 }
 #else */!USESHADOW*/
 bool
