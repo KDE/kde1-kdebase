@@ -4,7 +4,7 @@
 
 INCLUDES = $(all_includes)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD = $(PAMLIBS) $(LIBCRYPT) $(LIB_KDEUI) -lm
+LDADD = $(PAMLIBS) $(LIBCRYPT) $(LIB_KDEUI) $(PASSWDLIB) -lm 
 
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
