@@ -1075,7 +1075,6 @@ macsbug (Window window, int delay)
 
 void BSODSaver::draw_bsod (Window win)
 {
-      KConfig *config = KApplication::getKApplication()->getConfig();
       int i=-1;
       i = (random()%8);
       switch (i) {
@@ -1143,11 +1142,7 @@ config->sync();
 BSODSaver::BSODSaver (Drawable d)
  : kScreenSaver(d)
 {
-#ifndef __FreeBSD_
-	srandomdev();
-#else
 	srandom(time(0));
-#endif
 	timer = new QTimer(this);
 	readSettings();
 	timer->start(delay);
@@ -1182,6 +1177,7 @@ void stopScreenSaver ()
 
 int setupScreenSaver ()
 {
+	return 0;
 }
 
 const char *getScreenSaverName ()
