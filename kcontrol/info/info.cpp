@@ -110,6 +110,8 @@ bool GetInfo_XServer_Generic( KTabListBox *lBox )
 
 #ifdef linux
 #include "info_linux.cpp"
+#elif __svr4__
+#include "info_svr4.cpp"
 #elif sgi || sun
 #include "info_sgi.cpp"
 #elif __FreeBSD__
