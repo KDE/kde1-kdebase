@@ -1,0 +1,32 @@
+/* XPM */
+static char *mini-winprops[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        9            1",
+/* colors */
+". c #000000",
+"# c #c0c0c0",
+"a c #ffffff",
+"b c #808080",
+"c c #a0a0a0",
+"d c #000080",
+"e c #0000be",
+"f c #0000ff",
+"g c #ffffbe",
+/* pixels */
+"................",
+".....fffffff...b",
+"..b#.ddddddd#.bb",
+".##############b",
+".bbbbbbbbbbbbbbb",
+".bggggggggggga.b",
+".bggggggg#ggg..b",
+".bgggggga#bggc.b",
+".bggg.ga#g##g..b",
+".bg..a..b#bgga.b",
+".bg.#.#.g#gggb.b",
+".bg.#.#.gggggc.b",
+".bg..b..gggggc.b",
+".bggg.ggggggga.b",
+".b.............b",
+".bbbbbbbbbbbbbbb"
+};
