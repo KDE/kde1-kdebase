@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 199-01-17 21:55:14+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -35,7 +35,7 @@ msgstr "Värvid"
 
 #: backgnd.cpp:251
 msgid "&One Color"
-msgstr "&Ühevärviline"
+msgstr "Ü&hevärviline"
 
 #: backgnd.cpp:268
 msgid "&Two Color"
@@ -145,7 +145,7 @@ msgstr "Kahevärviline taust"
 
 #: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
-msgstr "Sujuv üleminek &ülevalt alla"
+msgstr "Sujuv üleminek ülevalt &alla"
 
 #: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
@@ -423,7 +423,7 @@ msgstr "Madal"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stiil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -434,9 +434,9 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Menüüriba ekraani ülaservas MacOS'i stiilis"
 
 #: general.cpp:259
-#, fuzzy
+#
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Rakenda stiili mitte-KDE rakendustele"
+msgstr "&Rakenda fonte ja värve mitte-KDE rakendustele"
 
 #: general.cpp:530
 msgid "General font"
@@ -486,14 +486,13 @@ msgstr "&Värvid"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stiil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 msgstr ""
-"kasutusviis: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+"kasutusviis: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -542,12 +541,3 @@ msgstr "vaikimisi"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "iga"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Fondid jne."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Töölaua fondid"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Fondid jne."

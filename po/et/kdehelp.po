@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 199-01-18 00:10+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -236,7 +236,7 @@ msgstr "&Algusesse"
 
 #: mainwidget.cpp:173
 msgid "&Up"
-msgstr "&‹les"
+msgstr "‹&les"
 
 #: mainwidget.cpp:175
 msgid "&Previous"
@@ -248,7 +248,7 @@ msgstr "&J‰rgmine"
 
 #: mainwidget.cpp:190
 msgid "&General Preferences..."
-msgstr "&‹ldine h‰‰lestus..."
+msgstr "‹l&dine h‰‰lestus..."
 
 #: mainwidget.cpp:193
 msgid "Show &Toolbar"

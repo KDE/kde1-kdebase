@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-01-11 01:13+0100\n"
-"PO-Revision-Date: 1999-01-09 22:30 CET\n"
+"PO-Revision-Date: 1999-01-16 16:30 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -113,7 +113,7 @@ msgstr "Souligner les liens"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
-msgstr ""
+msgstr "Toujours utiliser mes couleurs"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1999-01-17 23:41:41+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -59,7 +59,7 @@ msgstr ""
 "jaoks. Alt sümbolid keelatud"
 
 #: kikbd.cpp:392
-#, fuzzy
+#
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -152,9 +152,9 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Mõlemad Shift'id (Shift+Shift)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
+#
 msgid "Right Meta"
-msgstr "Parem Alt"
+msgstr "Parem Meta"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -165,9 +165,9 @@ msgid "Left  Control"
 msgstr "Vasak Control"
 
 #: kikbdconf.cpp:118
-#, fuzzy
+#
 msgid "Left  Meta"
-msgstr "Vasak Alt"
+msgstr "Vasak Meta"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
@@ -203,7 +203,7 @@ msgid "Your configuration is empty. Install system default."
 msgstr "Su konfiguratsioon on tühi. Installeeri süsteemi vaikeväärtused."
 
 #: kikbdconf.cpp:222
-#, fuzzy
+#
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
@@ -212,12 +212,12 @@ msgstr ""
 "Mõned seadistused võivad olla ebakorrektsed."
 
 #: kikbdconf.cpp:230
-#, fuzzy
+#
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
 msgstr ""
-"Konfiguratsioonifail on uuemas formmadis kui oli oodatud.\n"
+"Konfiguratsioonifail on uuemas formaadis kui oli oodatud.\n"
 "Mõned seadistused võivad olla ebakorrektsed."
 
 #: kikbdconf.cpp:357
@@ -322,7 +322,7 @@ msgstr "Eemalda valitud klahvitabel"
 
 #: widgets.cpp:127
 msgid "U&p"
-msgstr "&Üles"
+msgstr "Ül&es"
 
 #: widgets.cpp:127
 msgid "Up selected keyboard map"
@@ -525,7 +525,7 @@ msgstr "Koht valitud nurgas"
 
 #: kcmikbd.cpp:64
 msgid "&General"
-msgstr "&Üldine"
+msgstr "Ül&dine"
 
 #: kcmikbd.cpp:70
 msgid "&Style"

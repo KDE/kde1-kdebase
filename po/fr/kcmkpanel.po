@@ -168,7 +168,7 @@ msgstr "Affi&cher l'heure de l'horloge au format AM/PM"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr ""
+msgstr "Afficher l'heure en beats &Internet"
 
 #: disknav.cpp:38
 msgid "History"

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1999-01-17 22:27:31+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Estonian <heathcliff@iname.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
@@ -39,11 +39,11 @@ msgstr "Asukoht"
 
 #: panel.cpp:60
 msgid "&Top"
-msgstr "&Üleval"
+msgstr "Ül&eval"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "&Vasakul"
+msgstr "Va&sakul"
 
 #: panel.cpp:62
 msgid "&Bottom"
@@ -51,7 +51,7 @@ msgstr "&All"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr "&Paremal"
+msgstr "Pa&remal"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -59,11 +59,11 @@ msgstr "Tegumiriba"
 
 #: panel.cpp:76
 msgid "&Hidden"
-msgstr "P&eidetud"
+msgstr "Pei&detud"
 
 #: panel.cpp:78
 msgid "T&op"
-msgstr "&Üleval"
+msgstr "Üle&val"
 
 #: panel.cpp:80
 msgid "Botto&m"
@@ -71,7 +71,7 @@ msgstr "A&ll"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "Üle&val/vasakul"
+msgstr "Üleval/vasa&kul"
 
 #: panel.cpp:95
 msgid "Style"
@@ -79,7 +79,7 @@ msgstr "Stiil"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "P&isike"
+msgstr "&Pisike"
 
 #: panel.cpp:99
 msgid "&Normal"
@@ -91,7 +91,7 @@ msgstr "S&uur"
 
 #: desktops.cpp:73
 msgid "&Visible"
-msgstr "N&ähtav"
+msgstr "Nä&htav"
 
 #: desktops.cpp:82
 msgid "&Width"

@@ -121,7 +121,7 @@ msgstr "Liens soulignés"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Toujours utiliser mes couleurs"
 
 #: options.cpp:334
 msgid "KDE Help Options"
@@ -371,26 +371,4 @@ msgstr "Respecter la casse"
 msgid "&Find"
 msgstr "&Rechercher"
 
-#~ msgid "Open UR&L..."
-#~ msgstr "Ouvrir une UR&L..."
 
-#~ msgid "&Contents"
-#~ msgstr "&Contenu"
-
-#~ msgid "Could not start or find KFM"
-#~ msgstr "Impossible de démarrer ou de trouver KFM"
-
-#~ msgid "Font Size"
-#~ msgstr "Taille de la police"
-
-#~ msgid "Fonts"
-#~ msgstr "Polices"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Divers"
-
-#~ msgid "&Reload"
-#~ msgstr "&Recharger"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"

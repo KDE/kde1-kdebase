@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-13 01:13+0100\n"
 "PO-Revision-Date: 1998-01-25 18:15 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; \n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: configlist.cpp:121
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Module inconnu :"
 
@@ -45,37 +45,29 @@ msgstr ""
 
 #: mainwidget.cpp:45
 msgid "System:"
-msgstr "Système:"
+msgstr "Système :"
 
 #: mainwidget.cpp:48
 msgid "User: "
-msgstr "Utilisateur:"
+msgstr "Utilisateur : "
 
 #: mainwidget.cpp:54
-msgid "Hostname: "
-msgstr ""
+msgid "Hostname : "
+msgstr "Hostname : "
 
 #: mainwidget.cpp:62
 msgid "System: "
-msgstr "Système: "
+msgstr "Système : "
 
 #: mainwidget.cpp:69
 msgid "Release: "
-msgstr ""
+msgstr "Release : "
 
 #: mainwidget.cpp:77
 msgid "Version: "
-msgstr "Version: "
+msgstr "Version : "
 
 #: mainwidget.cpp:84
 msgid "Machine: "
-msgstr "Machine: "
+msgstr "Machine : "
 
-#~ msgid "&About KControl..."
-#~ msgstr "&A propos..."
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Utilisation"
-
-#~ msgid "About KControl"
-#~ msgstr "A propos"

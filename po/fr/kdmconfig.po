@@ -168,19 +168,16 @@ msgid "Standard"
 msgstr "Standard"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Bienvenue"
+msgstr "Police de Bienvenue"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Echec"
+msgstr "Police d'Echec"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Standard"
+msgstr "Police Standard"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
@@ -240,7 +237,7 @@ msgstr "Bas/Droite"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Fantaisie"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -330,8 +327,4 @@ msgstr "Types disponibles"
 msgid "without name!"
 msgstr "sans nom !"
 
-#~ msgid "&Fonts"
-#~ msgstr "&Polices"
 
-#~ msgid "Appearance"
-#~ msgstr "Apparence"

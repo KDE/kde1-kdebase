@@ -83,15 +83,15 @@ msgstr "Ouvrir / Fermer"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Sélectionner un élément à déplacer"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Sélectionner un menu à déplacer"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
 #: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
@@ -266,26 +266,4 @@ msgstr "Personnel :"
 msgid "Default:"
 msgstr "Par défaut :"
 
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "Bouton protégé !"
 
-#~ msgid "&Reload"
-#~ msgstr "&Recharger"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuEdit 0.2.3\n"
-#~ "(c) par Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Commande FVWM"
-
-#~ msgid "Fvwm"
-#~ msgstr "FVWM"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Commande FVWM :"

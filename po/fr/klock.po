@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-08 21:30 CET\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"PO-Revision-Date: 1999-01-16 19:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
 "Language-Team: Français\n"
@@ -87,7 +87,7 @@ msgstr "Famille :"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr "Taille:"
+msgstr "Taille :"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -265,9 +265,8 @@ msgstr ""
 "Porté vers kscreensave par Cedric Tefft"
 
 #: bsod.cpp:1192
-#, fuzzy
 msgid "Black Screen of Death"
-msgstr "Ecran vide"
+msgstr "Ecran vide de la mort"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -465,17 +464,16 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'option %s n'est pas supportée sur cette plateforme !"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
-"Please contact your system administrator.\n"
-"Tell him that you need suid for the kcheckpass program!"
+"Please contact your system administrator,\n"
+"tell him, that you need suid for the kcheckpass!"
 msgstr ""
 "Attention : Vous ne pourrez pas verrouiller l'écran !\n"
 "\n"
-"Votre système utilise des mots de passe cachés !\n"
+"Votre système utilise des mots de passe cachés.\n"
 "Veuillez contacter votre administrateur système.\n"
 "\n"
 "Dites-lui que vous avez besoin d'avoir les mises en veille setuid root."
@@ -890,5 +888,4 @@ msgstr ""
 "\n"
 "Porté vers kscreensave by Emanuel Pirker."
 
-#~ msgid "Ok"
-#~ msgstr "Ok"
+
