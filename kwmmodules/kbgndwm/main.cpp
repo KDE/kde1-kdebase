@@ -11,20 +11,18 @@
 #include <qimage.h>
 #include <qwidcoll.h>
 #include <kwmmapp.h>
+#include <kimgio.h>
 
 #include "kbgndwm.h"
 #include "version.h"
 
 #include <X11/Xlib.h>
 
-#ifdef HAVE_LIBJPEG
-#include "jpeg.h"
-#endif
- 
-
 int main( int argc, char *argv[] )
 {
     KWMModuleApplication a (argc, argv);
+
+    kimgioRegister();
 
     if ( argc > 1 )
     {

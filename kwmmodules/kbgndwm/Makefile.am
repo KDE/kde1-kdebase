@@ -1,12 +1,12 @@
 ####### Fiddle here
 
 INCLUDES = $(all_includes)
-LDADD   = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(LIBJPEG) $(KDE_RPATH)
+LDADD   = $(all_libraries) -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
 
 #######	Files
 
 bin_PROGRAMS	= kbgndwm
-kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp jpeg.cpp
+kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp 
 DISTCLEANFILES = kbgndwm.moc bg.moc
 noinst_HEADERS = kbgndwm.h bg.h version.h
 
