@@ -15,3 +15,6 @@ uninstall-local:
 	rm -r $(kde_appsdir)/apps
 
 EXTRA_DIST = $(bin_SCRIPTS)
+
+messages:
+
