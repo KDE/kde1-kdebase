@@ -1237,6 +1237,13 @@ void kVt::onDrop( KDNDDropZone* _zone )
 }
 
 void kVt::menubarMoved(){
+
+  if ( !menubar_visible ) {
+    menubar->hide(); // Overkill? 
+    return;
+  }
+
+  // We only get here with a visible menu bar
   int new_pos = menubar->menuBarPos();
   if (new_pos == KMenuBar::Top || new_pos == KMenuBar::Flat){
     if (frame->height() == height())
