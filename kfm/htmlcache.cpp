@@ -142,9 +142,17 @@ void HTMLCache::slotError( HTMLCacheJob *_job, int, const char * )
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 {
     //debug("%p HTMLCache::slotJobFinished",_job);
-  KURL u( _job->getDestURL() );
-  
-  urlDict->insert( _job->getSrcURL(), new QString( u.path() ) );
+
+    // Remove "file:" but not using KURL, it will change /tmp//... into /tmp/...
+    QString * s = new QString ( _job->getDestURL() + 5 );
+    // Test if file exists really (job might have been cancelled)
+    // and is not empty (happens often when the window is closed while loading)
+    struct stat buff; 
+    if ( lstat( s->data(), &buff ) == 0 && buff.st_size > 0)
+    {
+        //debug("HTMLCACHE::slotJobFinished : inserting %s",s->data());
+        urlDict->insert( _job->getSrcURL(), s );
+    }
 
     // Tell all instances
     HTMLCache *p;
@@ -201,6 +209,7 @@ void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
     
     fwrite( _data, 1, strlen( _data ), f );
     fclose( f );
+    //debug("HTMLCACHE::slotCheckinURL : inserting %s",tmp.data());
     urlDict->insert( _url, new QString( tmp.data() ) );
 }
 
@@ -321,8 +330,10 @@ void HTMLCache::load()
 	  
 	  // Does file really exist ?
 	  struct stat buff;
-	  if ( lstat( s->data(), &buff ) == 0 )
+	  if ( lstat( s->data(), &buff ) == 0 ) {
+            //debug("HTMLCACHE : inserting %s",s->data());
 	    urlDict->insert( url, s );
+          } //else debug("HTMLCACHE : _not_ inserting %s",s->data());
 	}
       }
     } while ( p );
@@ -335,6 +346,7 @@ void HTMLCache::load()
   }
 
   // Delete files which are not in the dict
+  // except index.html and index.txt
   DIR *dp = 0L;
   struct dirent *ep;
   
@@ -354,7 +366,8 @@ void HTMLCache::load()
   
   while ( ( ep = readdir( dp ) ) != 0L )
   {
-    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L
+         && strcmp( ep->d_name, "index.txt" ) != 0L && strcmp( ep->d_name, "index.html" ) != 0L )
     {
       QString name( KFMPaths::CachePath().data() );
       name += "/";
@@ -367,7 +380,10 @@ void HTMLCache::load()
 	  found = true;
 
       if ( !found )
+      {
+        //debug("HTMLCACHE : deleting %s",name.data());
 	unlink( name.data() );
+      }
     }
   }
 }
