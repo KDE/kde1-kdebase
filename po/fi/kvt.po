@@ -168,7 +168,6 @@ msgstr ""
 "heti kun näppäimistö vapautetaan."
 
 #: main.C:1151
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -176,13 +175,11 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
-"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
-"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
 "Terminaaliemulaatio KDE Desktop Ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan."
+"\n"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"

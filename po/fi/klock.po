@@ -58,19 +58,19 @@ msgstr "KDE on mahtava"
 
 #: bat.cpp:457
 msgid "Bat"
-msgstr "Mailat"
+msgstr "Lepakot"
 
 #: bat.cpp:532
 msgid "Setup KBat"
-msgstr "Aseta mailoja"
+msgstr "Aseta lepakkoja"
 
 #: bat.cpp:548
 msgid "Number of bats:"
-msgstr "Mailojen lukumäärä:"
+msgstr "Lepakkojen lukumäärä:"
 
 #: bat.cpp:636
 msgid "About Bat"
-msgstr "Tietoja mailoista"
+msgstr "Tietoja lepakoista"
 
 #: bat.cpp:637
 msgid ""
@@ -104,7 +104,7 @@ msgstr "Vaakasuuntainen sini"
 
 #: blob.cpp:55
 msgid "Circular Bounce"
-msgstr "Ympyrämuotoinen törmäily"
+msgstr "Ympyrän törmäily"
 
 #: blob.cpp:56
 msgid "Polar Coordinates"
@@ -124,7 +124,7 @@ msgstr "Aseta Kupla ruudunsäästäjää"
 
 #: blob.cpp:455
 msgid "Frame Show sec."
-msgstr "Näytä ruutuja sekunnissa."
+msgstr "Näyttöaika sek."
 
 #: blob.cpp:463
 msgid "Algorithm"
@@ -342,7 +342,7 @@ msgstr ""
 #: main.cpp:279
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr ""
+msgstr "Toimintoa %s ei tueta tällä alustalla!"
 
 #: main.cpp:306
 msgid ""
@@ -511,7 +511,7 @@ msgstr "Aseta tähtiä"
 
 #: rock.cpp:570
 msgid "Move"
-msgstr "Siirry"
+msgstr "Siirrä"
 
 #: rock.cpp:575
 msgid "Rotate"

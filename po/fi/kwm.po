@@ -41,7 +41,7 @@ msgstr "&Ikoniksi"
 
 #: main.C:469
 msgid "&DeIconify"
-msgstr "P&oista Ikoni"
+msgstr "P&oista ikonisointi"
 
 #: main.C:470
 msgid "&Sticky"

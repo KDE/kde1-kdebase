@@ -15,44 +15,39 @@ msgstr ""
 
 #: backgnd.cpp:59
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Uuden työpöydän nimi"
 
 #: backgnd.cpp:112 backgnd.cpp:147
 msgid "Desktop"
 msgstr "Työpöytä"
 
 #: backgnd.cpp:162
-#, fuzzy
 msgid "&Rename ..."
-msgstr "Nimeä Uudelleen..."
+msgstr "&Nimeä Uudelleen..."
 
 #: backgnd.cpp:182 colorscm.cpp:90
-#, fuzzy
 msgid "Colors"
-msgstr "&Värit"
+msgstr "Värit"
 
 #: backgnd.cpp:205
-#, fuzzy
 msgid "&One Color"
-msgstr "&Värit"
+msgstr "&Yksi väri"
 
 #: backgnd.cpp:217
-#, fuzzy
 msgid "&Two Color"
-msgstr "&Värit"
+msgstr "K&aksi väriä"
 
 #: backgnd.cpp:235
 msgid "Blen&d"
-msgstr ""
+msgstr "Se&koita"
 
 #: backgnd.cpp:241
 msgid "&Pattern"
-msgstr ""
+msgstr "K&uvio"
 
 #: backgnd.cpp:249
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Asetukset..."
+msgstr "&Asetukset..."
 
 #: backgnd.cpp:259
 msgid "Wallpaper"
@@ -79,81 +74,76 @@ msgid "Default"
 msgstr "Oletus"
 
 #: backgnd.cpp:810
-#, fuzzy
 msgid "Desktop names"
-msgstr "Työpöytä"
+msgstr "Työpöytien nimet"
 
 #: backgnd.cpp:847
 msgid "Two color background setup"
-msgstr ""
+msgstr "Kaksivärinen tausta-asetus"
 
 #: backgnd.cpp:893
 msgid "Pattern name"
-msgstr ""
+msgstr "Kuvion nimi"
 
 #: backgnd.cpp:900
 msgid "Preview"
-msgstr ""
+msgstr "Esikatselu"
 
 #: backgnd.cpp:922
 msgid "&Blend colors from right to left"
-msgstr ""
+msgstr "&Sekoita värit vasemmalta oikealle"
 
 #: backgnd.cpp:953
 msgid "Current"
-msgstr ""
+msgstr "Nykyinen"
 
 #: backgnd.cpp:984
-#, fuzzy
 msgid "Filled"
-msgstr "&Monistettu"
+msgstr "Täytetty"
 
 #: backgnd.cpp:987
 msgid "Fish net"
-msgstr ""
+msgstr "Kalaverkko"
 
 #: backgnd.cpp:990
 msgid "Triangles"
-msgstr ""
+msgstr "Kolmiot"
 
 #: backgnd.cpp:993
 msgid "Flowers"
-msgstr ""
+msgstr "Kukat"
 
 #: backgnd.cpp:996
 msgid "Rattan"
-msgstr ""
+msgstr "Kangas"
 
 #: backgnd.cpp:999
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Kivetys"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Väriteema"
 
 #: colorscm.cpp:131
-#, fuzzy
 msgid "Current scheme"
-msgstr "Väriteema"
+msgstr "Nykyinen teema"
 
 #: colorscm.cpp:133
-#, fuzzy
 msgid "KDE default"
-msgstr "KDE Oletus"
+msgstr "KDE:n Oletus"
 
 #: colorscm.cpp:146
 msgid "&Add ..."
-msgstr ""
+msgstr "&Lisää ..."
 
 #: colorscm.cpp:152
-#, fuzzy
 msgid "&Remove"
-msgstr "Tallenna teema"
+msgstr "&Poista"
 
 #: colorscm.cpp:159
 msgid "&Save changes"
-msgstr ""
+msgstr "&Tallenna muutokset"
 
 #: colorscm.cpp:170
 msgid "Widget color"
@@ -168,9 +158,8 @@ msgid "Inactive title text"
 msgstr "Passivinen otsikkoteksti"
 
 #: colorscm.cpp:179
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "Passiivinen otsikkopalkki"
+msgstr "Passiivisen otsikon sekoitus"
 
 #: colorscm.cpp:180
 msgid "Active title bar"
@@ -181,9 +170,8 @@ msgid "Active title text"
 msgstr "Aktiivinen otsikkoteksti"
 
 #: colorscm.cpp:182
-#, fuzzy
 msgid "Active title blend"
-msgstr "Aktiivinen otsikkopalkki"
+msgstr "Aktiivisen otsikon sekoitus"
 
 #: colorscm.cpp:183
 msgid "Background"
@@ -214,9 +202,8 @@ msgid "Contrast"
 msgstr "Kontrasti"
 
 #: colorscm.cpp:221
-#, fuzzy
 msgid "&Low"
-msgstr "Matala"
+msgstr "&Matala"
 
 #: colorscm.cpp:229
 msgid "High"
@@ -224,7 +211,7 @@ msgstr "Korkea"
 
 #: colorscm.cpp:295
 msgid "Error removing"
-msgstr ""
+msgstr "Virhe poistaessa"
 
 #: colorscm.cpp:296
 msgid ""
@@ -232,10 +219,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Väriteemaa ei saatu poistettua.\n"
+"Sinulla ei todennäköisesti ole oikeuksia muuttaa\n"
+"väritiedostoa siellä minne se on talletettu."
 
 #: colorscm.cpp:355
 msgid "Naming error"
-msgstr ""
+msgstr "Nimeämisvirhe"
 
 #: colorscm.cpp:356
 msgid ""
@@ -243,15 +233,17 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Valitse oma nimi uudelle väriteemalle.\n"
+"Antamasi nimi on jo olemassa väriteema-\n"
+"listalla."
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: Tiedonsiirto kwm:n kanssa epäonnistui\n"
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Väriteema"
+msgstr "Lisää bäriteema"
 
 #: savescm.cpp:32
 msgid ""
@@ -261,6 +253,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Anna nimi uudelle väriteemalle joka\n"
+"lisätään henkilökohtaiseen listaasi.\n"
+"\n"
+"Esikatselussa käytetyt värit kopioidaan\n"
+"väriteemaan käyttöön."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -275,14 +272,12 @@ msgid "Screen Saver"
 msgstr "Näytönsäästäjä"
 
 #: scrnsave.cpp:203
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Asetukset..."
+msgstr "&Asetukset..."
 
 #: scrnsave.cpp:209
-#, fuzzy
 msgid "&Test"
-msgstr "Kokeile"
+msgstr "&Kokeile"
 
 #: scrnsave.cpp:219
 msgid "Settings"
@@ -290,27 +285,23 @@ msgstr "Asetukset"
 
 #: scrnsave.cpp:237
 msgid "&Wait for"
-msgstr ""
+msgstr "&Odota"
 
 #: scrnsave.cpp:246
-#, fuzzy
 msgid "min."
-msgstr "min"
+msgstr "min."
 
 #: scrnsave.cpp:252
-#, fuzzy
 msgid "&Require password"
-msgstr "Vaatii salasanan"
+msgstr "&Vaatii salasanan"
 
 #: scrnsave.cpp:259
-#, fuzzy
 msgid "Priority"
 msgstr "Prioriteetti:"
 
 #: scrnsave.cpp:272
-#, fuzzy
 msgid "&High"
-msgstr "Korkea"
+msgstr "&Korkea"
 
 #: scrnsave.cpp:281
 msgid "Low"
@@ -318,11 +309,11 @@ msgstr "Matala"
 
 #: general.cpp:84
 msgid "&Bold"
-msgstr ""
+msgstr "&Paksunnettu"
 
 #: general.cpp:91
 msgid "&Italic"
-msgstr ""
+msgstr "&Italic"
 
 #: general.cpp:225
 msgid "default"
@@ -338,12 +329,11 @@ msgstr "Yleinen"
 
 #: general.cpp:327
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Piirrä työkalut Windows 95 tyylillä"
 
 #: general.cpp:351
-#, fuzzy
 msgid "Desktop fonts"
-msgstr "Työpöytä"
+msgstr "Työpöydän kirjasimet"
 
 #: general.cpp:374
 msgid "General font"
@@ -351,26 +341,23 @@ msgstr "Yleinen kirjasin"
 
 #: general.cpp:375
 msgid "Fixed font"
-msgstr ""
+msgstr "Tasavälinen kirjasin"
 
 #: general.cpp:376
-#, fuzzy
 msgid "Window title font"
-msgstr "Ikkunan teksti"
+msgstr "Ikkunan otsikon kirjasin"
 
 #: general.cpp:377
-#, fuzzy
 msgid "Panel button font"
-msgstr "Yleinen kirjasin"
+msgstr "Paneelin napin kirjasin"
 
 #: general.cpp:378
 msgid "Panel clock font"
-msgstr ""
+msgstr "Paneelin kellon kirjasin"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Kirjasimet"
+msgstr "&Kirjasimet"
 
 #: main.cpp:64
 msgid "&Background"
@@ -401,77 +388,6 @@ msgid "Active window"
 msgstr "Aktiivinen ikkuna"
 
 #: widgetcanvas.cpp:177 widgetcanvas.cpp:178
-#, fuzzy
 msgid "Selected text"
-msgstr "Valitse teksti"
+msgstr "Valittu teksti"
 
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Tallenna teema"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Olet valinnut nimen joka on jo väriteeman käytössä"
-
-#~ msgid "Display Setup"
-#~ msgstr "Näytön asetukset"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Työpöydän väriteemoja ei löytynyt.\n"
-#~ "Haluatko asentaa oletusteemat nyt?"
-
-#~ msgid "Disabled"
-#~ msgstr "Valitsematon"
-
-#~ msgid "Selected"
-#~ msgstr "Valittu"
-
-#~ msgid "Name"
-#~ msgstr "Nimi"
-
-#~ msgid "Wait:"
-#~ msgstr "Viive:"
-
-#~ msgid "Widget style"
-#~ msgstr "Työkalun tyyli"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Näyte"
-
-#~ msgid "Small"
-#~ msgstr "Pieni"
-
-#~ msgid "Medium"
-#~ msgstr "Keskikoko"
-
-#~ msgid "Large"
-#~ msgstr "Suuri"
-
-#~ msgid "&Style"
-#~ msgstr "T&yyli"
-
-#~ msgid "Color"
-#~ msgstr "Väri"
-
-#~ msgid "&Flat"
-#~ msgstr "&Tasainen väri"
-
-#~ msgid "&Gradient"
-#~ msgstr "&Väriliuku"
-
-#~ msgid "&Portrait"
-#~ msgstr "&Pystysuunnassa"
-
-#~ msgid "&Landscape"
-#~ msgstr "V&aakasuunnassa"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Työpöydän otsikko"

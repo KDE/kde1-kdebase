@@ -135,11 +135,11 @@ msgstr "ja"
 
 #: kftabdlg.cpp:109
 msgid "month(s)"
-msgstr "kuukauden/kuukausien aikana"
+msgstr "kuukauden aikana"
 
 #: kftabdlg.cpp:110
 msgid "day(s)"
-msgstr "päivän/päivien aikana"
+msgstr "päivän aikana"
 
 #: kftabdlg.cpp:116
 msgid "&All files"

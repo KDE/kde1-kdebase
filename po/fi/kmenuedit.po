@@ -128,7 +128,7 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "Polkua KDE Desktopin tietueisiin ei ole asetettu"
+msgstr "Polkua KDE:n tietueisiin ei ole asetettu."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"

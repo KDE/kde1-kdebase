@@ -1,478 +1,284 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay.po\n"
-"POT-Creation-Date: 1998-03-22 22:46+0100\n"
+"POT-Creation-Date: 1998-03-09 00:13+0100\n"
 "PO-Revision-Date: 1998-01-26 14:00+0000\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
-#: backgnd.cpp:59
-msgid "Enter new desktop name"
-msgstr ""
-
-#: backgnd.cpp:112 backgnd.cpp:147
+#: backgnd.cpp:239 backgnd.cpp:274
 msgid "Desktop"
 msgstr "Ambiente de trabalho"
 
-#: backgnd.cpp:162
-#, fuzzy
-msgid "&Rename ..."
+#: backgnd.cpp:284
+msgid "Rename..."
 msgstr "Mudar nome..."
 
-#: backgnd.cpp:182 colorscm.cpp:90
-#, fuzzy
-msgid "Colors"
-msgstr "&Cor"
+#: backgnd.cpp:290
+msgid "Color"
+msgstr "Cor"
 
-#: backgnd.cpp:205
-#, fuzzy
-msgid "&One Color"
-msgstr "&Cor"
+#: backgnd.cpp:309
+msgid "&Flat"
+msgstr "&Uniforme"
 
-#: backgnd.cpp:217
-#, fuzzy
-msgid "&Two Color"
-msgstr "&Cor"
+#: backgnd.cpp:313
+msgid "&Gradient"
+msgstr "&Gradiente"
 
-#: backgnd.cpp:235
-msgid "Blen&d"
-msgstr ""
+#: backgnd.cpp:327
+msgid "&Portrait"
+msgstr "&Retrato"
 
-#: backgnd.cpp:241
-msgid "&Pattern"
-msgstr ""
+#: backgnd.cpp:331
+msgid "&Landscape"
+msgstr "&Paisagem"
 
-#: backgnd.cpp:249
-#, fuzzy
-msgid "Set&up ..."
-msgstr "Configurar..."
-
-#: backgnd.cpp:259
+#: backgnd.cpp:342
 msgid "Wallpaper"
 msgstr "Papel de parede"
 
-#: backgnd.cpp:269
-#, fuzzy
+#: backgnd.cpp:374
 msgid "Ti&led"
-msgstr "Mosaico"
+msgstr "&Mosaico"
 
-#: backgnd.cpp:275
-#, fuzzy
+#: backgnd.cpp:378
 msgid "&Centred"
-msgstr "Centrado"
+msgstr "&Centrado"
 
-#: backgnd.cpp:281
-#, fuzzy
+#: backgnd.cpp:382
 msgid "&Scaled"
-msgstr "Escalonado"
+msgstr "&Escalonado"
 
-#: backgnd.cpp:317
+#: backgnd.cpp:388
 msgid "&Browse..."
-msgstr ""
+msgstr "&Escolher..."
 
-#: backgnd.cpp:484
+#: backgnd.cpp:549
 msgid "Default"
 msgstr "Por defeito"
 
-#: backgnd.cpp:810
-#, fuzzy
-msgid "Desktop names"
-msgstr "Ambiente de trabalho"
+#: backgnd.cpp:888
+msgid "Desktop Title"
+msgstr "Título do Ambiente de Trabalho"
 
-#: backgnd.cpp:847
-msgid "Two color background setup"
-msgstr ""
+#: colorscm.cpp:142 colorscm.cpp:143
+msgid "Inactive window"
+msgstr "Janela inactiva"
 
-#: backgnd.cpp:893
-msgid "Pattern name"
-msgstr ""
+#: colorscm.cpp:158 colorscm.cpp:159
+msgid "Active window"
+msgstr "Janela activa"
 
-#: backgnd.cpp:900
-msgid "Preview"
-msgstr ""
-
-#: backgnd.cpp:922
-msgid "&Blend colors from right to left"
-msgstr ""
-
-#: backgnd.cpp:953
-msgid "Current"
-msgstr ""
-
-#: backgnd.cpp:984
-#, fuzzy
-msgid "Filled"
-msgstr "Mosaico"
-
-#: backgnd.cpp:987
-msgid "Fish net"
-msgstr ""
-
-#: backgnd.cpp:990
-msgid "Triangles"
-msgstr ""
-
-#: backgnd.cpp:993
-msgid "Flowers"
-msgstr ""
-
-#: backgnd.cpp:996
-msgid "Rattan"
-msgstr ""
-
-#: backgnd.cpp:999
-msgid "Cobbled Pavement"
-msgstr ""
-
-#: colorscm.cpp:120
-msgid "Color Scheme"
-msgstr "Esquema de cor"
-
-#: colorscm.cpp:131
-#, fuzzy
-msgid "Current scheme"
-msgstr "Esquema de cor"
-
-#: colorscm.cpp:133
-#, fuzzy
-msgid "KDE default"
-msgstr "KDE por Defeito"
-
-#: colorscm.cpp:146
-msgid "&Add ..."
-msgstr ""
-
-#: colorscm.cpp:152
-#, fuzzy
-msgid "&Remove"
-msgstr "Gravar esquema"
-
-#: colorscm.cpp:159
-msgid "&Save changes"
-msgstr ""
-
-#: colorscm.cpp:170
-msgid "Widget color"
-msgstr "Cor dos widgets"
-
-#: colorscm.cpp:177
-msgid "Inactive title bar"
-msgstr "Barra de título inactiva"
-
-#: colorscm.cpp:178
-msgid "Inactive title text"
-msgstr "Texto de título inactivo"
-
-#: colorscm.cpp:179
-#, fuzzy
-msgid "Inactive title blend"
-msgstr "Barra de título inactiva"
-
-#: colorscm.cpp:180
-msgid "Active title bar"
-msgstr "Barra de título inactiva"
-
-#: colorscm.cpp:181
-msgid "Active title text"
-msgstr "Texto de título activo"
-
-#: colorscm.cpp:182
-#, fuzzy
-msgid "Active title blend"
-msgstr "Barra de título inactiva"
-
-#: colorscm.cpp:183
-msgid "Background"
-msgstr "Fundo"
-
-#: colorscm.cpp:184
-msgid "Text"
-msgstr "Texto"
-
-#: colorscm.cpp:185
-msgid "Select background"
-msgstr "Fundo seleccionado"
-
-#: colorscm.cpp:186
-msgid "Select text"
-msgstr "Texto seleccionado"
-
-#: colorscm.cpp:187
-msgid "Window background"
-msgstr "Fundo da janela"
-
-#: colorscm.cpp:188 widgetcanvas.cpp:164 widgetcanvas.cpp:165
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
 msgstr "Texto da janela"
 
-#: colorscm.cpp:208
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Escolhido"
+
+#: colorscm.cpp:252 colorscm.cpp:264
+msgid "Color Scheme"
+msgstr "Esquema de cor"
+
+#: colorscm.cpp:286
+msgid "Widget color"
+msgstr "Cor dos widgets"
+
+#: colorscm.cpp:291
+msgid "Inactive title bar"
+msgstr "Barra de título inactiva"
+
+#: colorscm.cpp:292
+msgid "Inactive title text"
+msgstr "Texto de título inactivo"
+
+#: colorscm.cpp:293
+msgid "Active title bar"
+msgstr "Barra de título inactiva"
+
+#: colorscm.cpp:294
+msgid "Active title text"
+msgstr "Texto de título activo"
+
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "Fundo"
+
+#: colorscm.cpp:296
+msgid "Text"
+msgstr "Texto"
+
+#: colorscm.cpp:297
+msgid "Select background"
+msgstr "Fundo seleccionado"
+
+#: colorscm.cpp:298
+msgid "Select text"
+msgstr "Texto seleccionado"
+
+#: colorscm.cpp:299
+msgid "Window background"
+msgstr "Fundo da janela"
+
+#: colorscm.cpp:311
 msgid "Contrast"
 msgstr "Contraste"
 
-#: colorscm.cpp:221
-#, fuzzy
-msgid "&Low"
+#: colorscm.cpp:324 scrnsave.cpp:224
+msgid "Low"
 msgstr "Baixa"
 
-#: colorscm.cpp:229
+#: colorscm.cpp:328 scrnsave.cpp:221
 msgid "High"
 msgstr "Alta"
 
-#: colorscm.cpp:295
-msgid "Error removing"
-msgstr ""
+#: colorscm.cpp:343
+msgid "Save scheme"
+msgstr "Gravar esquema"
 
-#: colorscm.cpp:296
+#: colorscm.cpp:374 colorscm.cpp:382
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
+
+#: colorscm.cpp:467
+msgid "KDE Default"
+msgstr "KDE por Defeito"
+
+#: colorscm.cpp:695
+msgid "Display Setup"
+msgstr "Configuração do Écran"
+
+#: colorscm.cpp:696
 msgid ""
-"This color scheme could not be removed.\n"
-"Perhaps you do not have permission to alter the file\n"
-"system where the color scheme is stored."
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
 msgstr ""
-
-#: colorscm.cpp:355
-msgid "Naming error"
-msgstr ""
-
-#: colorscm.cpp:356
-msgid ""
-"Please choose a unique name for the new color\n"
-"scheme. The one you entered already appears\n"
-"in the color scheme list."
-msgstr ""
+"Não foram encontrados esquemas de cores\n"
+"para o ambiente de trabalho.\n"
+"Quer instalar os esquemas de cor por defeito agora ?"
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: falha na comunicação com o kwm\n"
 
-#: savescm.cpp:18
-#, fuzzy
-msgid "Add a color scheme"
-msgstr "Esquema de cor"
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Nome"
 
-#: savescm.cpp:32
-msgid ""
-"&Enter a name for the new color scheme\n"
-"to be added to your personal list.\n"
-"\n"
-"The colors currently used in the preview will\n"
-"be copied into this scheme to begin with."
-msgstr ""
-
-#: scrnsave.cpp:48
+#: scrnsave.cpp:47
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: scrnsave.cpp:50
+#: scrnsave.cpp:49
 msgid "Lock"
 msgstr "Trancar"
 
-#: scrnsave.cpp:108 scrnsave.cpp:177
+#: scrnsave.cpp:107 scrnsave.cpp:163
 msgid "Screen Saver"
 msgstr "Protecção do Écran"
 
-#: scrnsave.cpp:203
-#, fuzzy
-msgid "&Setup ..."
+#: scrnsave.cpp:184
+msgid "Setup..."
 msgstr "Configurar..."
 
-#: scrnsave.cpp:209
-#, fuzzy
-msgid "&Test"
+#: scrnsave.cpp:188
+msgid "Test"
 msgstr "Testar"
 
-#: scrnsave.cpp:219
+#: scrnsave.cpp:196
 msgid "Settings"
 msgstr "Definições"
 
-#: scrnsave.cpp:237
-msgid "&Wait for"
-msgstr ""
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "Esperar:"
 
-#: scrnsave.cpp:246
-#, fuzzy
-msgid "min."
+#: scrnsave.cpp:210
+msgid "min"
 msgstr "min"
 
-#: scrnsave.cpp:252
-#, fuzzy
-msgid "&Require password"
+#: scrnsave.cpp:213
+msgid "Requires Password"
 msgstr "Requer Password"
 
-#: scrnsave.cpp:259
-#, fuzzy
-msgid "Priority"
+#: scrnsave.cpp:218
+msgid "Priority:"
 msgstr "Prioridade:"
 
-#: scrnsave.cpp:272
-#, fuzzy
-msgid "&High"
-msgstr "Alta"
-
-#: scrnsave.cpp:281
-msgid "Low"
-msgstr "Baixa"
-
-#: general.cpp:84
-msgid "&Bold"
-msgstr ""
-
-#: general.cpp:91
-msgid "&Italic"
-msgstr ""
-
-#: general.cpp:225
-msgid "default"
-msgstr "por defeito"
-
-#: general.cpp:228
-msgid "any"
-msgstr "qualquer"
-
-#: general.cpp:320
+#: general.cpp:61
 msgid "General"
 msgstr "Geral"
 
-#: general.cpp:327
-msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+#: general.cpp:65
+msgid "Widget style"
+msgstr "Estilo dos widgets"
 
-#: general.cpp:351
-#, fuzzy
-msgid "Desktop fonts"
-msgstr "Ambiente de trabalho"
+#: general.cpp:70
+msgid "Motif"
+msgstr "Motif"
 
-#: general.cpp:374
+#: general.cpp:71
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:80
+msgid "Fonts"
+msgstr "Fontes"
+
+#: general.cpp:85
 msgid "General font"
 msgstr "Fonte geral"
 
-#: general.cpp:375
-msgid "Fixed font"
-msgstr ""
+#: general.cpp:110
+msgid "Sample"
+msgstr "Amostra"
 
-#: general.cpp:376
-#, fuzzy
-msgid "Window title font"
-msgstr "Texto da janela"
+#: general.cpp:116
+msgid "Small"
+msgstr "Pequena"
 
-#: general.cpp:377
-#, fuzzy
-msgid "Panel button font"
-msgstr "Fonte geral"
+#: general.cpp:120
+msgid "Medium"
+msgstr "Média"
 
-#: general.cpp:378
-msgid "Panel clock font"
-msgstr ""
+#: general.cpp:124
+msgid "Large"
+msgstr "Grande"
+
+#: general.cpp:173
+msgid "default"
+msgstr "por defeito"
+
+#: general.cpp:176
+msgid "any"
+msgstr "qualquer"
 
 #: main.cpp:61
-#, fuzzy
-msgid "&Fonts etc."
-msgstr "Fontes"
-
-#: main.cpp:64
 msgid "&Background"
 msgstr "&Fundo"
+
+#: main.cpp:64
+msgid "&Colors"
+msgstr "&Cor"
 
 #: main.cpp:67
 msgid "&Screensaver"
 msgstr "&Protecção do Écran"
 
-#: main.cpp:71
-msgid "&Colors"
-msgstr "&Cor"
+#: main.cpp:70
+msgid "&Style"
+msgstr "E&stilo"
 
-#: main.cpp:78
+#: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "utilização: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:118
+#: main.cpp:112
 msgid "Display settings"
 msgstr "Configuração do Écran"
-
-#: widgetcanvas.cpp:108 widgetcanvas.cpp:109
-msgid "Inactive window"
-msgstr "Janela inactiva"
-
-#: widgetcanvas.cpp:128 widgetcanvas.cpp:129
-msgid "Active window"
-msgstr "Janela activa"
-
-#: widgetcanvas.cpp:177 widgetcanvas.cpp:178
-#, fuzzy
-msgid "Selected text"
-msgstr "Texto seleccionado"
-
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Gravar esquema"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
-
-#~ msgid "Display Setup"
-#~ msgstr "Configuração do Écran"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Não foram encontrados esquemas de cores\n"
-#~ "para o ambiente de trabalho.\n"
-#~ "Quer instalar os esquemas de cor por defeito agora ?"
-
-#~ msgid "Disabled"
-#~ msgstr "Desactivado"
-
-#~ msgid "Selected"
-#~ msgstr "Escolhido"
-
-#~ msgid "Name"
-#~ msgstr "Nome"
-
-#~ msgid "Wait:"
-#~ msgstr "Esperar:"
-
-#~ msgid "Widget style"
-#~ msgstr "Estilo dos widgets"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Amostra"
-
-#~ msgid "Small"
-#~ msgstr "Pequena"
-
-#~ msgid "Medium"
-#~ msgstr "Média"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "&Style"
-#~ msgstr "E&stilo"
-
-#~ msgid "Color"
-#~ msgstr "Cor"
-
-#, fuzzy
-#~ msgid "&Flat"
-#~ msgstr "Uniforme"
-
-#, fuzzy
-#~ msgid "&Gradient"
-#~ msgstr "Gradiente"
-
-#, fuzzy
-#~ msgid "&Portrait"
-#~ msgstr "Retrato"
-
-#, fuzzy
-#~ msgid "&Landscape"
-#~ msgstr "Paisagem"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Título do Ambiente de Trabalho"

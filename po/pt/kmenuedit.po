@@ -1,39 +1,37 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-03-19 22:17+0100\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: kmenuedit.cpp:62
-#, fuzzy
 msgid "&Reload"
-msgstr "Recarregar Menus"
+msgstr "&Recarregar Menus"
 
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "Mudar Nome do Menu"
+msgstr "Mudar Nome do &Menu"
 
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "Recarregar Tipos de Ficheiro"
+msgstr "Recarregar Tipos de &Ficheiro"
 
 #: kmenuedit.cpp:76
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
 msgstr "Modificações não gravadas!"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to save your changes ?"
-msgstr "Quer gravar as suas modificações"
+msgstr ""
+"\n"
+"Quer gravar as suas modificações ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -146,7 +144,7 @@ msgstr "Aplicação"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Engolir"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -205,18 +203,16 @@ msgid "Binary Pattern:"
 msgstr "Padrão Binário:"
 
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "Aplicação"
+msgstr "Aplicação para engolir:"
 
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "Aplicação"
+msgstr "Título da aplicação:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "Aplicação a executar quando clicado:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -257,21 +253,3 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Por defeito:"
-
-#~ msgid ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) by Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-#~ msgstr ""
-#~ "KMenuedit 0.2.3\n"
-#~ "(C) por Christoph Neerfeld\n"
-#~ "Christoph.Neerfeld@bonn.netsurf.de"
-
-#~ msgid "Fvwm Command"
-#~ msgstr "Comando do Fvwm"
-
-#~ msgid "Fvwm"
-#~ msgstr "Fvwm"
-
-#~ msgid "Fvwm Command:"
-#~ msgstr "Comando do Fvwm:"

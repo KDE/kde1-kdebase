@@ -71,7 +71,7 @@ msgstr "Lisää ikkunalista"
 
 #: props.C:139
 msgid "Add a windowlist menu onto the panel"
-msgstr "Lisää ikkunalista-valikko paneeliin"
+msgstr "Lisää ikkunalista -valikko paneeliin"
 
 #: events.C:705 props.C:140
 msgid "Configure"
@@ -97,59 +97,3 @@ msgstr "Paneeli"
 msgid "Lock Screen"
 msgstr "Lukitse näyttö"
 
-#~ msgid "Location"
-#~ msgstr "Sijainti"
-
-#~ msgid "Taskbar"
-#~ msgstr "Työpalkki"
-
-#~ msgid "Hidden"
-#~ msgstr "Piilotettu"
-
-#~ msgid "Top/Left"
-#~ msgstr "Ylhäällä/Vasemmalla"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Pieni tyyli"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normaali tyyli"
-
-#~ msgid "Large Style"
-#~ msgstr "Suuri tyyli"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Valikon vinkit"
-
-#~ msgid "Others"
-#~ msgstr "Muut"
-
-#~ msgid "Personal First"
-#~ msgstr "Käyttäjän valikko"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Piilota paneeli"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Piilota työpalkki"
-
-#~ msgid "Clock"
-#~ msgstr "Kello"
-
-#~ msgid "24h"
-#~ msgstr "24h"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12h AM/PM"
-
-#~ msgid "Visible"
-#~ msgstr "Näkyvissä"
-
-#~ msgid "Width"
-#~ msgstr "Leveys"
-
-#~ msgid "Desktops"
-#~ msgstr "Työpöydät"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "KPanelin asetukset"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
+"POT-Creation-Date: 1998-03-10 22:48+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -19,12 +19,11 @@ msgstr "&Barra de Título"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "&Ambiente de Trabalho"
 
 #: main.cpp:74
-#, fuzzy
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr "utilização: kcmkwm [-init | {windows,buttons,titlebar}]\n"
+msgstr "utilização: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -94,7 +93,7 @@ msgstr "Imagem"
 msgid "Title Animation"
 msgstr "Animação do título"
 
-#: desktop.cpp:93 titlebar.cpp:943
+#: desktop.cpp:76 titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
@@ -108,119 +107,105 @@ msgstr "Imagem &inactiva"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "Acção do rato"
 
 #: titlebar.cpp:984
 msgid ""
 "LeftMouseButton double click\n"
 "    on titlebar does:"
 msgstr ""
+"Duplo click com botão esquerdo\n"
+"   na barra de título faz:"
 
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "Maximizar"
+msgstr "(Des)Maximizar"
 
 #: titlebar.cpp:989
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "Sombreada"
+msgstr "(Des)Sombrear"
 
 #: titlebar.cpp:991
 msgid "Iconify"
-msgstr ""
+msgstr "Iconificar"
 
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "Pregar"
+msgstr "(Des)Pregar"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "Mudar Tamanho"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "Restaurar"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "Menu de Operações"
 
-#: windows.cpp:74
+#: windows.cpp:72
 msgid "Window movement"
 msgstr "Movimentação das Janelas"
 
-#: windows.cpp:75
+#: windows.cpp:73
 msgid "Transparent"
 msgstr "Transparente"
 
-#: windows.cpp:76
+#: windows.cpp:74
 msgid "Opaque"
 msgstr "Opaca"
 
-#: windows.cpp:79
+#: windows.cpp:77
 msgid "Resize Animation"
 msgstr "Animação de Tamanho"
 
-#: windows.cpp:84
+#: windows.cpp:82
 msgid "Placement policy"
 msgstr "Política de Posicionamento"
 
-#: windows.cpp:86
+#: windows.cpp:84
 msgid "Smart"
-msgstr ""
+msgstr "Inteligente"
+
+#: windows.cpp:86
+msgid "Cascade"
+msgstr "Cascata"
 
 #: windows.cpp:88
-msgid "Cascade"
-msgstr ""
-
-#: windows.cpp:90
-msgid "Interactive"
-msgstr ""
-
-#: windows.cpp:92
 msgid "Random"
-msgstr ""
+msgstr "Aleatória"
 
-#: windows.cpp:94
-#, fuzzy
-msgid "Manual"
-msgstr "Menu"
-
-#: windows.cpp:101
-msgid "Allowed Overlap:"
-msgstr ""
-
-#: windows.cpp:108
+#: windows.cpp:93
 msgid "Maximize Style"
 msgstr "Estilo de Maximização"
 
-#: windows.cpp:109
+#: windows.cpp:94
 msgid "Maximize fully"
 msgstr "Maximizar totalmente"
 
-#: windows.cpp:110
+#: windows.cpp:95
 msgid "Maximize vertically"
 msgstr "Maximizar verticalmente"
 
-#: windows.cpp:113
+#: windows.cpp:98
 msgid "Focus Policy"
 msgstr "Política de Foco"
 
-#: windows.cpp:114
+#: windows.cpp:99
 msgid "Click to focus"
 msgstr "Clicar para obter foco"
 
-#: windows.cpp:115
+#: windows.cpp:100
 msgid "Focus follows mouse"
 msgstr "Foco segue o rato"
 
-#: windows.cpp:120
+#: windows.cpp:105
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -228,48 +213,22 @@ msgstr ""
 "Demora do levantamento automático\n"
 "(<100 desactiva)"
 
-#: windows.cpp:123
+#: windows.cpp:108
 msgid "miliseconds"
 msgstr "milisegundos"
 
-#: desktop.cpp:79
+#: desktop.cpp:62
 msgid "Active desktop borders"
-msgstr ""
+msgstr "Margens do ambiente de trabalho activas"
 
-#: desktop.cpp:81
+#: desktop.cpp:64
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "Activar margens do ambiente de trabalho activas"
 
-#: desktop.cpp:83
+#: desktop.cpp:66
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "Move ponteiro para o centro depois de mudança"
 
-#: desktop.cpp:89
-msgid "Dekstop switch delay:"
-msgstr ""
-
-#: desktop.cpp:102
-msgid "Magic Borders"
-msgstr ""
-
-#: desktop.cpp:104
-msgid "Edge Resistance:"
-msgstr ""
-
-#: desktop.cpp:118
-msgid ""
-"Border Snap Zone:\n"
-"       (pixels)"
-msgstr ""
-
-#: desktop.cpp:132
-msgid ""
-"Window Snap Zone:\n"
-"       (pixels)"
-msgstr ""
-
-#~ msgid "Random placement"
-#~ msgstr "Posicionamento aleatório"
-
-#~ msgid "Smart placement"
-#~ msgstr "Posicionamento inteligente"
+#: desktop.cpp:72
+msgid "Dekstop switch delay in ms:"
+msgstr "Demora de mudança em ms:"

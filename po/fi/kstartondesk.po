@@ -16,7 +16,7 @@ msgstr ""
 
 #: kstartondesk.C:70
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: kstartondesk.C:74
 msgid "Usage:"

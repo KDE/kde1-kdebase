@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kstartondesk\n"
+"POT-Creation-Date: 1998-03-19 22:20+0100\n"
+"PO-Revision-Date: 1998-03-20 20:00+0000\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+
+#: kstartondesk.C:70
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: kstartondesk.C:74
+msgid "Usage:"
+msgstr "Utilização:"
+
+#: kstartondesk.C:76
+msgid "command "
+msgstr "comando "
+
+#: kstartondesk.C:77
+msgid "title "
+msgstr "título "
+
+#: kstartondesk.C:78
+msgid "desktop"
+msgstr "ambiente de trabalho"
+
+#: kstartondesk.C:80
+msgid "Example"
+msgstr "Exemplo"

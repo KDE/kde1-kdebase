@@ -80,11 +80,11 @@ msgstr "Ikkunan rullaus alas"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr "Ikkunan pienennys"
+msgstr "Ikkuna Ikoniksi"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr "Ikkuna normaalikokoon"
+msgstr "Ikkunan palautus ikonista"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
@@ -165,7 +165,7 @@ msgid ""
 msgstr "T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
@@ -173,7 +173,7 @@ msgid ""
 msgstr ""
 "Tiedosto \n"
 "%s\n"
-"ei n‰yt‰ olevan WAV--tiedosto!"
+"ei n‰yt‰ olevan WAV-tiedosto."
 
 #: syssound.cpp:468
 msgid "Improper File Extension"
