@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-13 12:13+0200\n"
-"PO-Revision-Date: 1998-05-11 21:00+0200\n"
+"PO-Revision-Date: 1998-05-16 21:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:250
@@ -44,15 +44,15 @@ msgstr "&Salir..."
 
 #: kfmgui.cpp:326
 msgid "&Move to Trash"
-msgstr "Tirar a la &papelera"
+msgstr "&Tirar a la papelera"
 
 #: kfmgui.cpp:331
 msgid "&Select"
-msgstr "&Seleccionar"
+msgstr "S&eleccionar"
 
 #: kfmgui.cpp:335
 msgid "Mime Types"
-msgstr "&Tipos MIME"
+msgstr "Tipos &MIME"
 
 #: kfmgui.cpp:337
 msgid "Applications"
@@ -68,7 +68,7 @@ msgstr "Aplicaciones globales"
 
 #: kfmgui.cpp:352
 msgid "Show &Dot Files"
-msgstr "&Mostrar los ficheros ocultos"
+msgstr "Mostrar ficheros &ocultos"
 
 #: kfmgui.cpp:354
 msgid "Show Tr&ee"
@@ -84,7 +84,7 @@ msgstr "Vista de &HTML"
 
 #: kfmgui.cpp:361
 msgid "&Icon View"
-msgstr "Vista de &íconos"
+msgstr "Vista de &iconos"
 
 #: kfmgui.cpp:363
 msgid "&Text View"
@@ -132,7 +132,7 @@ msgstr "&Limpiar cache"
 
 #: kfmgui.cpp:400
 msgid "Always look in cache"
-msgstr "&Siempre ver en el cache"
+msgstr "&Siempre mirar en el cache"
 
 #: kfmgui.cpp:402
 msgid "Never look in cache"
@@ -176,7 +176,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr "Atrás"
+msgstr "Arriba"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -695,7 +695,7 @@ msgstr ""
 
 #: kfmprops.cpp:662
 msgid "Swallowing on panel"
-msgstr "Empotrar en el pánel"
+msgstr "Empotrar en el panel"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
@@ -812,7 +812,7 @@ msgstr ""
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Realmente desea reorganizar sus íconos?"
+msgstr "Realmente desea reorganizar sus iconos?"
 
 #: kfmserver.cpp:234
 #, c-format
@@ -856,7 +856,7 @@ msgid ""
 msgstr ""
 "Imposible ejecutar acción.\n"
 "Las nuevas dimensiones de la red de fondo\n"
-"moverían algunos íconos fuera del escritorio"
+"moverían algunos iconos fuera del escritorio"
 
 #: root.cpp:696
 msgid "Internal Error: desktopDir is malformed"
@@ -1256,9 +1256,8 @@ msgid "Don't forget to save your settings!"
 msgstr "No olvide guardar sus cambios!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Usuario"
+msgstr "Usar proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

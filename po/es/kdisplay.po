@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:59+0200\n"
-"PO-Revision-Date: 1998-05-09 10:16+0200\n"
+"PO-Revision-Date: 1998-05-16 20:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: backgnd.cpp:58
@@ -329,11 +329,11 @@ msgstr "Fuente fija"
 
 #: general.cpp:263
 msgid "Panel button font"
-msgstr "Fuente de botones del pánel"
+msgstr "Fuente de botones del panel"
 
 #: general.cpp:268
 msgid "Panel clock font"
-msgstr "Fuente del reloj del pánel"
+msgstr "Fuente del reloj del panel"
 
 #: main.cpp:62
 msgid "&Fonts etc."

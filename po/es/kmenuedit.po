@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-05-09 10:47+0200\n"
+"PO-Revision-Date: 1998-05-16 20:47+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kmenuedit.cpp:62
@@ -236,7 +236,7 @@ msgstr "Cambiar nombre de los menús"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "Cambiar el nombre del menú como está mostrado en el pánel"
+msgstr "Cambiar el nombre del menú como está mostrado en el panel"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

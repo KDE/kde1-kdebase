@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-04-18 00:34+0200\n"
+"PO-Revision-Date: 1998-05-16 20:25+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: krootwm.C:120 krootwm.C:568
@@ -40,7 +40,7 @@ msgstr "Cascadear ventanas"
 
 #: krootwm.C:191
 msgid "Arrange icons"
-msgstr "Odenar íconos"
+msgstr "Ordenar iconos"
 
 #: krootwm.C:193
 msgid "Lock screen"

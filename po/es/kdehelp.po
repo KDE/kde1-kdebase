@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:51+0200\n"
-"PO-Revision-Date: 1998-05-11 21:01+0200\n"
+"PO-Revision-Date: 1998-05-16 21:01+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: helpwin.cpp:58
@@ -31,7 +31,7 @@ msgstr "KFM no se pudo iniciar o encontrar"
 
 #: helpwin.cpp:1322
 msgid "Open this Link"
-msgstr "Abrir este vínculo"
+msgstr "Abrir este enlace"
 
 #: helpwin.cpp:1323
 msgid "Add Bookmark"
@@ -65,7 +65,7 @@ msgstr "Advertencia: "
 
 #: options.cpp:36
 msgid "Font Size"
-msgstr "Tamaño de la Fuente"
+msgstr "Tamaño de la fuente"
 
 #: options.cpp:40
 msgid "Small"
@@ -81,7 +81,7 @@ msgstr "Grande"
 
 #: options.cpp:52
 msgid "Standard Font"
-msgstr "Fuente Normal"
+msgstr "Fuente normal"
 
 #: options.cpp:69
 msgid "Fixed Font"
@@ -89,19 +89,19 @@ msgstr "Fuente fija"
 
 #: options.cpp:208
 msgid "Background Color:"
-msgstr "Color de fondo:"
+msgstr "Color del fondo:"
 
 #: options.cpp:216
 msgid "Normal Text Color:"
-msgstr "Color de texto:"
+msgstr "Color del texto:"
 
 #: options.cpp:224
 msgid "URL Link Color:"
-msgstr "Color del vínculo:"
+msgstr "Color del enlace:"
 
 #: options.cpp:232
 msgid "Followed Link Color:"
-msgstr "Color del vínculo ya accedido:"
+msgstr "Color del enlace ya accedido:"
 
 #: options.cpp:303
 msgid "KDE Help Options"
@@ -188,68 +188,68 @@ msgstr "&Nueva ventana de ayuda"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
-msgstr "Abrir archiv&o"
+msgstr "Abrir &archivo"
 
 #: mainwidget.cpp:136
 msgid "Open UR&L..."
-msgstr "Abrir UR&L"
+msgstr "Abrir &URL"
 
 #: mainwidget.cpp:137
 msgid "&Reload"
-msgstr "&Refrescar"
+msgstr "Ac&tualizar"
 
 #: mainwidget.cpp:139
 msgid "&Search"
-msgstr "Bu&scar"
+msgstr "&Buscar"
 
 #: mainwidget.cpp:152
 msgid "&Back"
-msgstr "Atrás"
+msgstr "&Atrás"
 
 #: mainwidget.cpp:153
 msgid "&Forward"
-msgstr "Adelante"
+msgstr "A&delante"
 
 #: mainwidget.cpp:156
 msgid "&Top"
-msgstr "Principio"
+msgstr "&Principio"
 
 #: mainwidget.cpp:157
 msgid "&Up"
-msgstr "Arriba"
+msgstr "A&rriba"
 
 #: mainwidget.cpp:158
 msgid "&Previous"
-msgstr "Anterior"
+msgstr "A&nterior"
 
 #: mainwidget.cpp:159
 msgid "&Next"
-msgstr "Siguiente"
+msgstr "&Siguiente"
 
 #: mainwidget.cpp:171
 msgid "&General Preferences..."
-msgstr "Preferencias generales..."
+msgstr "&Preferencias..."
 
 #: mainwidget.cpp:174
 msgid "Show &Toolbar"
-msgstr "Mostrar barra de herramientas"
+msgstr "Mostrar barra de &herramientas"
 
 #: mainwidget.cpp:176
 msgid "Show &Location"
-msgstr "Mostrar dirección"
+msgstr "Mostrar &dirección"
 
 #: mainwidget.cpp:177
 msgid "Show Status&bar"
-msgstr "Mostrar &barra de estado"
+msgstr "Mostrar barra de &estado"
 
 #: mainwidget.cpp:180
 msgid "&Save Options"
-msgstr "Guardar opciones"
+msgstr "&Guardar opciones"
 
 # er... translating debug messages, isn't it too much?
 #: mainwidget.cpp:182
 msgid "KDE Help System\n"
-msgstr "Sistema de syuda del KDE\n"
+msgstr "Sistema de ayuda del KDE\n"
 
 #: mainwidget.cpp:183
 msgid "Version "
@@ -275,7 +275,7 @@ msgstr ""
 
 #: mainwidget.cpp:201
 msgid "&Goto"
-msgstr "Ir a"
+msgstr "&Ir a"
 
 #: mainwidget.cpp:202
 msgid "&Bookmarks"
@@ -319,7 +319,7 @@ msgstr "Alto"
 
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
-msgstr "En el Constructor!"
+msgstr "En el constructor!"
 
 # er... translating debug messages, isn't it too much?
 #: mainwidget.cpp:582

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-05-11 20:50+0200\n"
+"PO-Revision-Date: 1998-05-16 20:50+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kpanel.C:213
@@ -35,11 +35,11 @@ msgstr "Bloquear pantalla"
 
 #: kpanel.C:385
 msgid "Hide the panel"
-msgstr "Esconder el pánel"
+msgstr "Esconder el panel"
 
 #: kpanel.C:395
 msgid "Show the panel"
-msgstr "Mostrar el pánel"
+msgstr "Mostrar el panel"
 
 #: kpanel.C:1104 tools.C:616
 msgid "No comment available"
@@ -55,7 +55,7 @@ msgstr "Añadir aplicación"
 
 #: props.C:138
 msgid "Add an application or a submenu onto the panel"
-msgstr "Añadir aplicación o submenú al pánel"
+msgstr "Añadir aplicación o submenú al panel"
 
 #: props.C:139
 msgid "Add windowlist"
@@ -63,7 +63,7 @@ msgstr "Añadir lista de ventanas"
 
 #: props.C:141
 msgid "Add a windowlist menu onto the panel"
-msgstr "Añadir una lista de ventanas al pánel"
+msgstr "Añadir una lista de ventanas al panel"
 
 #: events.C:714 props.C:142
 msgid "Configure"
@@ -71,7 +71,7 @@ msgstr "Configurar"
 
 #: props.C:144
 msgid "Configure panel"
-msgstr "Configurar pánel"
+msgstr "Configurar panel"
 
 #: props.C:145
 msgid "Edit Menus"
@@ -91,7 +91,7 @@ msgstr "Reiniciar panel"
 
 #: props.C:151
 msgid "Panel"
-msgstr "Pánel"
+msgstr "Panel"
 
 #: props.C:153
 msgid "Lock Screen"
@@ -107,4 +107,4 @@ msgstr "Ups!"
 
 #: events.C:751
 msgid "Cannot put this as button onto the panel!"
-msgstr "Imposible poner este botón en el pánel."
+msgstr "Imposible poner este botón en el panel."
