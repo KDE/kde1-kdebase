@@ -92,6 +92,8 @@ void KStart::applyStyle(Window w) {
     }
     if (decoration != KWM::normalDecoration) {
 	KWM::setDecoration(w, decoration);
+	if (decoration & KWM::staysOnTop )
+	  XRaiseWindow( qt_xdisplay(), w);
     }
 
     XSync(qt_xdisplay(), False);
