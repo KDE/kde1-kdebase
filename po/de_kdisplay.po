@@ -42,11 +42,6 @@ msgstr "Vergrößert"
 msgid "Browse..."
 msgstr "Auswählen..."
 
-#: backgnd.cpp:278 colorscm.cpp:282 general.cpp:142 input.cpp:97
-#: scrnsave.cpp:188
-msgid "Help"
-msgstr "Hilfe"
-
 #: colorscm.cpp:141 colorscm.cpp:142
 msgid "Inactive window"
 msgstr "Fenster im Hintergrund"
@@ -54,14 +49,6 @@ msgstr "Fenster im Hintergrund"
 #: colorscm.cpp:157 colorscm.cpp:158
 msgid "Active window"
 msgstr "Fenster im Vordergrund"
-
-#: colorscm.cpp:173 colorscm.cpp:174
-msgid "File"
-msgstr "Datei"
-
-#: colorscm.cpp:181 colorscm.cpp:182
-msgid "Edit"
-msgstr "Bearbeiten"
 
 #: colorscm.cpp:194 colorscm.cpp:195 colorscm.cpp:300
 msgid "Window text"
@@ -89,19 +76,19 @@ msgstr ""
 
 #: colorscm.cpp:291
 msgid "Inactive title bar"
-msgstr ""
+msgstr "Inaktive Titelleiste"
 
 #: colorscm.cpp:292
 msgid "Inactive title text"
-msgstr ""
+msgstr "Inaktiver Titelleistentext"
 
 #: colorscm.cpp:293
 msgid "Active title bar"
-msgstr ""
+msgstr "Aktive Titelleiste"
 
 #: colorscm.cpp:294
 msgid "Active title text"
-msgstr ""
+msgstr "Aktiver Titelleistentext"
 
 #: colorscm.cpp:296
 msgid "Text"
@@ -109,15 +96,15 @@ msgstr "Text"
 
 #: colorscm.cpp:297
 msgid "Select background"
-msgstr ""
+msgstr "Hintergrund ausgewählt"
 
 #: colorscm.cpp:298
 msgid "Select text"
-msgstr ""
+msgstr "Ausgewählter Text"
 
 #: colorscm.cpp:299
 msgid "Window background"
-msgstr ""
+msgstr "Fensterhintergrund"
 
 #: colorscm.cpp:311
 msgid "Contrast"
@@ -145,7 +132,7 @@ msgstr "KDE Standard"
 
 #: colorscm.cpp:689
 msgid "Display Setup"
-msgstr ""
+msgstr "Farbpaletten"
 
 #: colorscm.cpp:690
 msgid ""
@@ -161,7 +148,7 @@ msgstr "Allgemein"
 
 #: general.cpp:61
 msgid "Widget style"
-msgstr ""
+msgstr "Oberflächenerscheinung"
 
 #: general.cpp:66
 msgid "Motif"
@@ -177,7 +164,7 @@ msgstr "Zeichensaetze"
 
 #: general.cpp:81
 msgid "General font"
-msgstr ""
+msgstr "Allg. Zeichensatz"
 
 #: general.cpp:106
 msgid "Sample"
@@ -197,11 +184,11 @@ msgstr "Groß"
 
 #: general.cpp:132
 msgid "Bold"
-msgstr ""
+msgstr "Fett"
 
 #: general.cpp:137
 msgid "Italic"
-msgstr ""
+msgstr "Kursiv"
 
 #: input.cpp:42
 msgid "Input"
@@ -209,7 +196,7 @@ msgstr "Eingabe"
 
 #: input.cpp:54
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatur"
 
 #: input.cpp:57
 msgid "Auto Repeat"
