@@ -55,7 +55,7 @@ msgstr "Mostra &Nomi Desktop"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
-msgstr "Piano"
+msgstr "Tinta unita"
 
 #: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
