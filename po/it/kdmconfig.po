@@ -137,7 +137,7 @@ msgstr ""
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Seleziona fonts"
+msgstr "Seleziona font"
 
 #        
 #: kdm-font.cpp:50
@@ -154,7 +154,7 @@ msgstr "Saluto"
 
 #: kdm-font.cpp:58
 msgid "Fail"
-msgstr "Errato"
+msgstr "Errore"
 
 #: kdm-font.cpp:59
 msgid "Standard"
@@ -167,7 +167,7 @@ msgstr "Carattere messaggio di benvenuto"
 #
 #: kdm-font.cpp:161
 msgid "Fail font"
-msgstr "Errore carattere"
+msgstr "Carattere messaggio di errore"
 
 #
 #: kdm-font.cpp:165
