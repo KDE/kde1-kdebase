@@ -1,0 +1,144 @@
+# Íslenskun á kpanel.po
+
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# FIRST AUTHOR <logir@imf.au.dk>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-05 01:30+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
+"Language-Team: is_IS <???>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:254
+msgid "Go!"
+msgstr "Núna!"
+
+#: kpanel.C:257 tools.C:828
+msgid "Where do you want to go tomorrow?"
+msgstr "Hvert vilt þú komast á morgun?"
+
+#: kpanel.C:331
+msgid "No info available"
+msgstr "Engar upplýsingar fáanlegar"
+
+#: kpanel.C:370 props.C:173 props.C:174
+msgid "Logout"
+msgstr "Skrá út"
+
+#: kpanel.C:378 props.C:172
+msgid "Lock screen"
+msgstr "Læsa skjá"
+
+#: kpanel.C:387
+msgid "Hide the panel"
+msgstr "Fela spjaldið"
+
+#: kpanel.C:397
+msgid "Show the panel"
+msgstr "Sýna spjaldið"
+
+#: kpanel.C:1106 tools.C:658
+msgid "No comment available"
+msgstr "Engin athugasemd"
+
+#: kpanel.C:1115 tools.C:837
+msgid "Windowlist"
+msgstr "Gluggalisti"
+
+#: props.C:143
+msgid "Add application"
+msgstr "Bæta forriti við"
+
+#: props.C:145
+msgid "Add an application or a submenu onto the panel"
+msgstr "Bæta forriti eða undirvalmynd á pjaldið"
+
+#: props.C:146
+msgid "Add windowlist"
+msgstr "Bæta við gluggalista"
+
+#: props.C:148
+msgid "Add a windowlist menu onto the panel"
+msgstr "Bæta gluggalistavalmynd á spjaldið"
+
+#: events.C:752 props.C:149
+msgid "Configure"
+msgstr "Stilla"
+
+#: props.C:151
+msgid "Configure panel"
+msgstr "Stilla spjaldið"
+
+#: props.C:152
+msgid "Edit Menus"
+msgstr "Sýsla með valmyndir"
+
+#: props.C:154
+msgid "Add or remove applications in the menu structure "
+msgstr "Bæta forritum við valmyndakerfið, eða taka þau út"
+
+#: events.C:754 props.C:155
+msgid "Restart"
+msgstr "Endurræsa"
+
+#: props.C:157
+msgid "Restart panel"
+msgstr ""
+
+#: props.C:160
+msgid "Disk Navigator"
+msgstr "??????"
+
+#: props.C:168
+msgid "Panel"
+msgstr "Spjald"
+
+#: props.C:170
+msgid "Lock Screen"
+msgstr "Læsa skjá"
+
+#: props.C:399
+msgid "The menu editor is not installed."
+msgstr "Valmyndaritillinn er ekki settur upp."
+
+#: events.C:790 props.C:400
+msgid "Oops!"
+msgstr "Úps!"
+
+#: events.C:789
+msgid "Cannot put this as button onto the panel!"
+msgstr "Ekki er hægt að setja þennan"
+
+#: pfilemenu.C:111
+msgid "KFM Information"
+msgstr "KFM upplýsingar"
+
+#: pfilemenu.C:112
+msgid "Creating directory:\n"
+msgstr "Bý til möppu:\n"
+
+#: pfilemenu.C:340
+msgid "(empty folder)"
+msgstr "(tóm mappa)"
+
+#: pfilemenu.C:397
+msgid "(Too Many Files)"
+msgstr "(Of margar skrár)"
+
+#: pfilemenu.C:406
+msgid "(Access Denied)"
+msgstr "(Aðgangi hafnað)"
+
+#: pfilemenu.C:409
+msgid "(Unreadable)"
+msgstr "(Ekki læsilegt)"
+
+#: pfilemenu.C:416
+msgid "Open Folder"
+msgstr "Opna möppu"

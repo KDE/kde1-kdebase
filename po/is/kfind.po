@@ -1,0 +1,355 @@
+# Íslenskun á kfind.po
+
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# FIRST AUTHOR <logir@imf.au.dk>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"PO-Revision-Date: 1998-10-05 01:30+0200\n"
+"Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
+"Language-Team: is_IS <???>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Möppur:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Ekki tókst að opna eða lesa möppu."
+
+#: kfindtop.cpp:118
+msgid "&Start search"
+msgstr "&Hefja leit"
+
+#: kfindtop.cpp:120
+msgid "S&top search"
+msgstr "&Stöðva leit"
+
+#: kfindtop.cpp:125
+msgid "&Open"
+msgstr "&Opna"
+
+#: kfindtop.cpp:127
+msgid "&Add to archive"
+msgstr "&Bæta við safn"
+
+#: kfindtop.cpp:132
+msgid "&Properties"
+msgstr "&Eiginleikar"
+
+#: kfindtop.cpp:135
+msgid "Open Containing &Folder"
+msgstr "Opna &möppuna"
+
+#: kfindtop.cpp:138
+msgid "&Save Search"
+msgstr "&Vista leit"
+
+#: kfindtop.cpp:155
+msgid "&Select All"
+msgstr "&Velja allt"
+
+#: kfindtop.cpp:157
+msgid "Unse&lect All"
+msgstr "&Hætta við allt val"
+
+#: kfindtop.cpp:159
+msgid "&Invert Selection"
+msgstr "&Víxla vali"
+
+#: kfindtop.cpp:171
+msgid "&Preferences ..."
+msgstr "&Stillingar ..."
+
+#: kfindtop.cpp:176
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Notendaflötur á find forritið eftir\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Sérstakar þakkir fær Stephan Kulow\n"
+"<coolo@kde.org>"
+
+#: kfindtop.cpp:196
+msgid "Start Search"
+msgstr "Hefja leit"
+
+#: kfindtop.cpp:201
+msgid "New Search"
+msgstr "Ný leit"
+
+#: kfindtop.cpp:206
+msgid "Stop Search"
+msgstr "Stöðva leit"
+
+#: kfindtop.cpp:219
+msgid "Add to archive"
+msgstr "Bæta við safn"
+
+#: kfindtop.cpp:234
+msgid "Open Containing Folder"
+msgstr "Opna möppu"
+
+#: kfindtop.cpp:239
+msgid "Save Search Results"
+msgstr "Vista niðurstöður leitar"
+
+#: kftabdlg.cpp:71
+msgid "&Named:"
+msgstr "&Nafn:"
+
+#: kftabdlg.cpp:74
+msgid "&Look in:"
+msgstr "&Leita í:"
+
+#: kftabdlg.cpp:77
+msgid "&Browse ..."
+msgstr "&Flakka ..."
+
+#: kftabdlg.cpp:83
+msgid "Include &subfolders"
+msgstr "Leita í &undirmöppum"
+
+#: kftabdlg.cpp:114
+msgid " Name& Location "
+msgstr " N&afn og staðsetning"
+
+#: kftabdlg.cpp:126
+msgid "and"
+msgstr "og"
+
+#: kftabdlg.cpp:127
+msgid "month(s)"
+msgstr "mánuðir"
+
+#: kftabdlg.cpp:128
+msgid "day(s)"
+msgstr "dagar"
+
+#: kftabdlg.cpp:143
+msgid "&All files"
+msgstr "&Allar skrár"
+
+#: kftabdlg.cpp:144
+msgid "Find all files created or &modified:"
+msgstr "Finna allar skrár búnar til eða &breytt:"
+
+#: kftabdlg.cpp:145
+msgid "&between"
+msgstr "á &milli"
+
+#: kftabdlg.cpp:146
+msgid "during the previou&s "
+msgstr "&síðustu"
+
+#: kftabdlg.cpp:147
+msgid "&during the previous "
+msgstr "&síðustu "
+
+#: kftabdlg.cpp:195
+msgid " Date Modified "
+msgstr " Breytingadagur "
+
+#: kftabdlg.cpp:202
+msgid "Of &type:"
+msgstr " Af &taginu "
+
+#: kftabdlg.cpp:204
+msgid "&Containing Text:"
+msgstr "Sem &Inniheldur:"
+
+#: kftabdlg.cpp:209
+msgid "&Size is:"
+msgstr "&Stærð:"
+
+#: kftabdlg.cpp:232
+msgid "All Files and Folders"
+msgstr "Allar skrár og möppur"
+
+#: kftabdlg.cpp:234
+msgid "Folders"
+msgstr "Möppur"
+
+#: kftabdlg.cpp:235
+msgid "Symbolic links"
+msgstr "Skráarvísanir"
+
+#: kftabdlg.cpp:236
+msgid "Special files (sockets, device files...)"
+msgstr "Sérstakar skrár (sökklar, tæki...)"
+
+#: kftabdlg.cpp:237
+msgid "Executable files"
+msgstr "Keyranlegar skrár"
+
+#: kftabdlg.cpp:238
+msgid "SUID executable files"
+msgstr "SUID keyranlegar skrár"
+
+#: kftabdlg.cpp:247
+msgid "At Least"
+msgstr "Að minnsta kosti"
+
+#: kftabdlg.cpp:248
+msgid "At Most"
+msgstr "Í mesta lagi"
+
+#: kftabdlg.cpp:259
+msgid " Advanced "
+msgstr " Flókin leit "
+
+#: kftabdlg.cpp:494
+msgid "The date is not valid!!"
+msgstr "Dagsetningin er gölluð!!"
+
+#: kftabdlg.cpp:506
+msgid "The month(s) value isn't valid!!"
+msgstr "Mánaðargildin eru gölluð"
+
+#: kftabdlg.cpp:517
+msgid "The day(s) value isn't valid!!"
+msgstr "Dagagildin eru gölluð!!"
+
+#: kftabdlg.cpp:534
+msgid "The value in size isn't valid number!!"
+msgstr "Stærðargildið er ekki tala!!"
+
+#: kfoptions.cpp:52
+msgid "Preferences"
+msgstr ""
+
+#: kfoptions.cpp:74
+msgid "File format:"
+msgstr "Skráarform:"
+
+#: kfoptions.cpp:76
+msgid "Save results to file:"
+msgstr "Vista niðurstöður í skrá:"
+
+#: kfoptions.cpp:79
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Vista niðurstöpur í skránni ~/.kfind-results.html"
+
+#: kfoptions.cpp:81
+msgid "Browse"
+msgstr "Flakka"
+
+#: kfoptions.cpp:94
+msgid "Plain Text"
+msgstr "Hreinn texti"
+
+#: kfoptions.cpp:123
+msgid "Saving"
+msgstr "Vista"
+
+#: kfoptions.cpp:130
+msgid "Create Archive:"
+msgstr "Búa til:"
+
+#: kfoptions.cpp:132
+msgid "Add to Archive:"
+msgstr "Bæta við:"
+
+#: kfoptions.cpp:136
+msgid "Patterns:"
+msgstr "Mynstur:"
+
+#: kfoptions.cpp:139
+msgid "Add New"
+msgstr "Bæta við nýju"
+
+#: kfoptions.cpp:180
+msgid "Archivers"
+msgstr "Þjöppunarforrit"
+
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
+#, c-format
+msgid "%d file(s) found"
+msgstr "fann %d skrár"
+
+#: kfwin.cpp:245
+msgid "It wasn't possible to save results!"
+msgstr "Ekki tókst að vista niðurstöðurnar!"
+
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
+msgid "KFind Results File"
+msgstr "KFind niðurstöðuskrá"
+
+#: kfwin.cpp:282
+msgid "Results were saved to file\n"
+msgstr "Niðurtöðurnar voru vistaðar í skrá\n"
+
+#: kfwin.cpp:297
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Viltu virkilega yeða skránni\n"
+"%s"
+
+#: kfwin.cpp:299
+msgid "Delete File"
+msgstr "Eyða skrá"
+
+#: kfwin.cpp:311
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Þú hefur ekki aðgangsheimildir\n"
+"til að eyða þessari skrá"
+
+#: kfwin.cpp:317
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Það er ekki hægt að\n"
+"eyða þessari skrá"
+
+#: kfwin.cpp:335
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Þú hefur ekki aðgangsheimildir\n"
+"til að eyða þessari möppu"
+
+#: kfwin.cpp:340
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Tiltekin mappa\n"
+"er ekki tóm!"
+
+#: kfwin.cpp:345
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Það er ekki hægt að\n"
+"eyða þessari skrá"
+
+#: kfwin.cpp:437
+msgid "Couldn't recognize archive type!"
+msgstr "Óþekkt gerð safns"
+
+#: kfwin.cpp:496
+msgid "Error while creating child process!"
+msgstr "Villa kom upp þegar ræsa átti undirferli!"
