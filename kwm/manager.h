@@ -437,6 +437,7 @@ private:
   Atom kde_unregister_sound_event;
 
    Atom qt_sizegrip;
+   Atom qt_sizegrip2;
 
   // used to store the current desktop internally
   int current_desktop;

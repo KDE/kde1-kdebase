@@ -136,6 +136,7 @@ Manager::Manager(): QObject(){
   kde_unregister_sound_event = XInternAtom(qt_xdisplay(), "KDE_UNREGISTER_SOUND_EVENT", False);
 
   qt_sizegrip = XInternAtom(qt_xdisplay(), "QT_SIZEGRIP", False);
+  qt_sizegrip2 = XInternAtom(qt_xdisplay(), "_QT_SIZEGRIP", False);
 
   gv.function = GXxor;
   gv.line_width = 0;
@@ -1785,8 +1786,10 @@ void Manager::manage(Window w, bool mapped){
   if (!c){
       // create a very new client
       long d = 0;
-      if (!getSimpleProperty(w, qt_sizegrip, d, XA_WINDOW))
-	  getSimpleProperty( w, qt_sizegrip, d ); // old version with qt_sizegrip as type
+      if (!getSimpleProperty(w, qt_sizegrip2, d, XA_WINDOW)) {
+	  if (!getSimpleProperty(w, qt_sizegrip, d, XA_WINDOW))
+	      getSimpleProperty( w, qt_sizegrip, d ); // old version with qt_sizegrip as type
+      }
       c = new Client(w, d);
 
     // overwrite Qt-defaults because we need SubstructureNotifyMask
