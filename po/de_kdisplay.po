@@ -107,9 +107,6 @@ msgstr ""
 msgid "Text"
 msgstr "Text"
 
-msgid "Save"
-msgstr "Speichern"
-
 #: colorscm.cpp:297
 msgid "Select background"
 msgstr ""
@@ -251,7 +248,8 @@ msgstr "KDE Umgebungseinstellungen"
 msgid ""
 "Usage: %s -init|-setup\n"
 "\n"
-msgstr "Benutzung: %s -init|-setup\n"
+msgstr ""
+"Benutzung: %s -init|-setup\n"
 "\n"
 
 #: main.cpp:130
@@ -309,3 +307,6 @@ msgstr "Nach Password fragen"
 #: scrnsave.cpp:214
 msgid "Priority:"
 msgstr "Priorität"
+
+#~ msgid "Save"
+#~ msgstr "Speichern"

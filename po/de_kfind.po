@@ -1,153 +1,208 @@
-msgid "Add to archive"
-msgstr "Zum Archive hinzufügen"
-
-msgid "Delete"
-msgstr "Löschen"
-
-msgid "Properties"
-msgstr "Eigenschaften"
-
-msgid "Open Containing Folder"
-msgstr "Öffen des Entsprechenden Verzeichnisses"
-
-msgid "Save Search"
-msgstr "Suchergebnisse speichern"
-
+#: kfindtop.cpp:109
 msgid "_abouttext"
-msgstr "Kfind %s\n Grafische Oberfläche für Programm find\nMiroslav Flídr <flidr@kky.zcu.cz>"
+msgstr ""
+"Kfind %s\n"
+" Grafische Oberfläche für Programm find\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
 
+#: kfindtop.cpp:124
 msgid "&File"
 msgstr "&Datei"
 
+#: kfindtop.cpp:125
 msgid "&Edit"
 msgstr "&Bearbeiten"
 
+#: kfindtop.cpp:126
 msgid "&Options"
 msgstr "&Einstellungen"
 
+#: kfindtop.cpp:128
 msgid "&Help"
 msgstr "&Hilfe"
 
+#: kfindtop.cpp:133 kfindtop.cpp:217
+msgid "Add to archive"
+msgstr "Zum Archive hinzufügen"
+
+#: kfindtop.cpp:136 kfindtop.cpp:222
+msgid "Delete"
+msgstr "Löschen"
+
+#: kfindtop.cpp:138 kfindtop.cpp:227
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: kfindtop.cpp:141 kfindtop.cpp:232
+msgid "Open Containing Folder"
+msgstr "Öffen des Entsprechenden Verzeichnisses"
+
+#: kfindtop.cpp:144
+msgid "Save Search"
+msgstr "Suchergebnisse speichern"
+
+#: kfindtop.cpp:153
 msgid "Undo"
 msgstr "Rückgängig"
 
+#: kfindtop.cpp:156
 msgid "Cut"
 msgstr "Ausschneiden"
 
+#: kfindtop.cpp:158
 msgid "Copy"
 msgstr "Kopieren"
 
+#: kfindtop.cpp:161
 msgid "Select All"
 msgstr "Alle auswählen"
 
+#: kfindtop.cpp:163
 msgid "Invert Selection"
 msgstr "Auswahl invertieren"
 
+#: kfindtop.cpp:174
 msgid "Preferences ..."
 msgstr "Präferenzen ..."
 
-msgid " Name&Location "
-msgstr " Name&Pfad "
-
-msgid " Date Modified "
-msgstr " Änderungsdatum "
-
-msgid " Advanced "
-msgstr " Erweitert "
-
-msgid "&Named:"
-msgstr "Name:"
-
-msgid "&Look in:"
-msgstr "Suche in:"
-
-msgid "Include &subfolders"
-msgstr "Unterverzeichnisse einschliessen"
-
-msgid "&Browse ..."
-msgstr "Ä&ndern..."
-
-msgid "Browse"
-msgstr "Auswählen"
-
-msgid "&All files"
-msgstr "Alle Dateien"
-
-msgid "_findall"
-msgstr "Suche alle Dateien erstellt oder verändert:"
-
-msgid "&between"
-msgstr "zwischen  "
-
-msgid "and"
-msgstr "und"
-
-msgid "during the previou&s "
-msgstr "in den letzten"
-
-msgid "&during the previous "
-msgstr "in den letzten"
-
-msgid "month(s)"
-msgstr "Monat(en)"
-
-msgid "day(s)"
-msgstr "Tag(en)"
-
+#: kfindtop.cpp:178
 msgid "Kfind help"
 msgstr "Kfind Hilfe"
 
+# *********** Tooltips ************
+#: kfindtop.cpp:194
+msgid "Start Search"
+msgstr "Suche starten"
+
+#: kfindtop.cpp:199
+msgid "New Search"
+msgstr "Neue Suche"
+
+#: kfindtop.cpp:204
+msgid "Stop Search"
+msgstr "Suche abbrechen"
+
+#: kfindtop.cpp:237
+msgid "Save Search Results"
+msgstr "Suchergebnisse speichern"
+
+#: kfindtop.cpp:243
+msgid "Help"
+msgstr "Hilfe"
+
+# ********* Options *************
+#: kfoptions.cpp:51
+msgid "Preferences"
+msgstr "Präferenzen"
+
+#: kfoptions.cpp:67
+msgid "File format:"
+msgstr "Dateiformat"
+
+#: kfoptions.cpp:69
+msgid "Save results to file:"
+msgstr "Ergebnisse speichern in:"
+
+#: kfoptions.cpp:72
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Ergebnisse speichern in ~/.kfind-results.html"
+
+#: kfoptions.cpp:74
+msgid "Browse"
+msgstr "Auswählen"
+
+#: kfoptions.cpp:87
+msgid "Plain Text"
+msgstr "Einfache Datei"
+
+#: kfoptions.cpp:116
+msgid "Saving"
+msgstr "Speichern"
+
+#: kftabdlg.cpp:44
+msgid "&Named:"
+msgstr "Name:"
+
+#: kftabdlg.cpp:46
+msgid "&Look in:"
+msgstr "Suche in:"
+
+#: kftabdlg.cpp:49
+msgid "&Browse ..."
+msgstr "Ä&ndern..."
+
+#: kftabdlg.cpp:61
+msgid "Include &subfolders"
+msgstr "Unterverzeichnisse einschliessen"
+
+#: kftabdlg.cpp:91
+msgid " Name&Location "
+msgstr " Name&Pfad "
+
+#: kftabdlg.cpp:103
+msgid "and"
+msgstr "und"
+
+#: kftabdlg.cpp:104
+msgid "month(s)"
+msgstr "Monat(en)"
+
+#: kftabdlg.cpp:105
+msgid "day(s)"
+msgstr "Tag(en)"
+
+#: kftabdlg.cpp:111
+msgid "&All files"
+msgstr "Alle Dateien"
+
+#: kftabdlg.cpp:112
+msgid "_findall"
+msgstr "Suche alle Dateien erstellt oder verändert:"
+
+#: kftabdlg.cpp:114
+msgid "&between"
+msgstr "zwischen  "
+
+#: kftabdlg.cpp:115
+msgid "during the previou&s "
+msgstr "in den letzten"
+
+#: kftabdlg.cpp:116
+msgid "&during the previous "
+msgstr "in den letzten"
+
+#: kftabdlg.cpp:164
+msgid " Date Modified "
+msgstr " Änderungsdatum "
+
+#: kftabdlg.cpp:169
 msgid "Of &type:"
 msgstr "Vom &Typ:"
 
-msgid "_alltypes"
-msgstr "Alle Dateien und Verzeichnisse"
-
+#: kftabdlg.cpp:171
 msgid "&Containing Text:"
 msgstr "Beinhaltet Text:"
 
-msgid "&Size is:" 
+#: kftabdlg.cpp:173
+msgid "&Size is:"
 msgstr "Größe ist:"
 
-msgid "At Least" 
+#: kftabdlg.cpp:196
+msgid "_alltypes"
+msgstr "Alle Dateien und Verzeichnisse"
+
+#: kftabdlg.cpp:204
+msgid "(none)"
+msgstr ""
+
+#: kftabdlg.cpp:205
+msgid "At Least"
 msgstr "mindestens"
 
-msgid "At Most" 
+#: kftabdlg.cpp:206
+msgid "At Most"
 msgstr "höchstens"
 
-# ********* Options *************
-msgid "Preferences" 
-msgstr "Präferenzen"
-
-msgid "Saving" 
-msgstr "Speichern"
-
-msgid "File format:" 
-msgstr "Dateiformat"
-
-msgid "Save results to file:" 
-msgstr "Ergebnisse speichern in:"
-
-msgid "Save results to file ~/.kfind-results.html" 
-msgstr "Ergebnisse speichern in ~/.kfind-results.html"
-
-msgid "Plain Text" 
-msgstr "Einfache Datei"
-
-#*********** Tooltips ************
-
-msgid "Start Search" 
-msgstr "Suche starten"
-
-msgid "New Search" 
-msgstr "Neue Suche"
-
-msgid "Stop Search" 
-msgstr "Suche abbrechen"
-
-msgid "Save Search Results" 
-msgstr "Suchergebnisse speichern"
-
-msgid "Help" 
-msgstr "Hilfe"
-
+#: kftabdlg.cpp:213
+msgid " Advanced "
+msgstr " Erweitert "
