@@ -953,7 +953,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this); 
 
-  pixmapActive = pixmapInactive = 0;
+  //CT pixmapActive = pixmapInactive = 0;
 
   pbPixmapActive = new QPushButton(pixmapBox);
   pbPixmapInactive = new QPushButton(pixmapBox);
@@ -971,12 +971,12 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   iconLoader->getDirList()->clear();
    
-  iconLoader->insertDirectory(0, kapp->kde_datadir()+"/kwm/toolbar");
-  iconLoader->insertDirectory(1, kapp->kde_toolbardir());
-  iconLoader->insertDirectory(2, kapp->kde_datadir()+"/kwm/pics");
-  iconLoader->insertDirectory(3, kapp->localkdedir()+"/share/apps/kwm/toolbar");
+  iconLoader->insertDirectory(0, kapp->localkdedir()+"/share/apps/kwm/pics");
+  iconLoader->insertDirectory(1, kapp->kde_datadir()+"/kwm/pics");
+  iconLoader->insertDirectory(2, kapp->localkdedir()+"/share/apps/kwm/toolbar");
+  iconLoader->insertDirectory(3, kapp->kde_datadir()+"/kwm/toolbar");
   iconLoader->insertDirectory(4, kapp->localkdedir()+"/share/toolbar");
-  iconLoader->insertDirectory(5, kapp->localkdedir()+"/share/apps/kwm/pics");
+  iconLoader->insertDirectory(5, kapp->kde_toolbardir());
 
 
   //CT 11feb98 - Title double click
@@ -1198,8 +1198,50 @@ void KTitlebarAppearance::SaveSettings( void )
   else
       config->writeEntry(KWM_TITLEBARLOOK, "plain");
 
+  /*CT 18Oct1998 - these are no more needed
   config->writeEntry("TitlebarPixmapActive", sPixmapActive);
   config->writeEntry("TitlebarPixmapInactive", sPixmapInactive);
+  */
+  
+  //CT 18Oct1998 - save the pixmaps
+  if (t == TITLEBAR_PIXMAP ) {
+    //first, a backup
+    sPixmapInactive = kapp->localkdedir() +
+      "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
+    
+    if (!pixmapInactiveOld.isNull())
+      pixmapInactiveOld.save(sPixmapInactive,"XPM");
+    
+    sPixmapInactive = kapp->localkdedir() +
+      "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
+    
+    if (!pixmapInactiveOld.isNull())
+      pixmapInactiveOld.save(sPixmapInactive,"XPM");
+    
+    //then, the save
+    sPixmapActive = kapp->localkdedir() +
+      "/share/apps/kwm/pics/activetitlebar.xpm";
+    sPixmapInactive = kapp->localkdedir() +
+      "/share/apps/kwm/pics/inactivetitlebar.xpm";
+    
+    bool a_saved, i_saved;
+    if (!pixmapActive.isNull()) 
+      a_saved = pixmapActive.save(sPixmapActive,"XPM");
+    else a_saved = FALSE;
+    
+    if (!pixmapInactive.isNull())
+      i_saved = pixmapInactive.save(sPixmapInactive,"XPM");
+    else
+      i_saved = FALSE;
+    
+    //and a little check
+    if (!a_saved || !i_saved) {
+      QMessageBox::critical(this, "Titlebar Appearence",
+			    "There was an error while saving\n"
+			    "the titlebar pixmaps! Please check permissions.");
+    }
+  }
+  //CT
 
   int a = getTitleAnim();
   config->writeEntry(KWM_TITLEANIMATION, a);
@@ -1259,12 +1301,14 @@ void KTitlebarAppearance::GetSettings( void )
   else
     setTitlebar(TITLEBAR_PLAIN);
 
-  sPixmapActive = config->readEntry("TitlebarPixmapActive");
-  sPixmapInactive = config->readEntry("TitlebarPixmapInactive");
+  sPixmapActive = "activetitlebar.xpm";
+  sPixmapInactive = "inactivetitlebar.xpm";
   if (!sPixmapActive.isEmpty())
-    pbPixmapActive->setPixmap(iconLoader->loadIcon(sPixmapActive));
+    pbPixmapActive->setPixmap(pixmapActiveOld =
+			      iconLoader->loadIcon(sPixmapActive));
   if (!sPixmapInactive.isEmpty())
-    pbPixmapInactive->setPixmap(iconLoader->loadIcon(sPixmapInactive));
+    pbPixmapInactive->setPixmap(pixmapInactiveOld = 
+				iconLoader->loadIcon(sPixmapInactive));
 
 
   int k = config->readNumEntry(KWM_TITLEANIMATION,0);
@@ -1304,14 +1348,14 @@ void KTitlebarAppearance::titlebarChanged()
 void KTitlebarAppearance::activePressed()
 {
   KIconLoaderDialog dlg(iconLoader, this);
-  QString name = sPixmapActive;
-  QPixmap map;
+  QString name ;//CT= sPixmapActive;
+  //CT  QPixmap map;
 
-  map = dlg.selectIcon(name, "*");
+  pixmapActive = dlg.selectIcon(name, "*");
   if (!name.isEmpty())
     {
-      sPixmapActive = name;
-      pbPixmapActive->setPixmap(map);
+      //CT      sPixmapActive = name;
+      pbPixmapActive->setPixmap(pixmapActive);
     }
 }
 
@@ -1319,14 +1363,14 @@ void KTitlebarAppearance::activePressed()
 void KTitlebarAppearance::inactivePressed()
 {
   KIconLoaderDialog dlg(iconLoader, this);
-  QString name = sPixmapInactive;
-  QPixmap map;
+  QString name ;//CT= sPixmapInactive;
+  //CT  QPixmap map;
 
-  map = dlg.selectIcon(name, "*");
+  pixmapInactive = dlg.selectIcon(name, "*");
   if (!name.isEmpty())
     {
-      sPixmapInactive = name;
-      pbPixmapInactive->setPixmap(map);
+      //CT      sPixmapInactive = name;
+      pbPixmapInactive->setPixmap(pixmapInactive);
     }
 }
 

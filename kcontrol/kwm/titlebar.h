@@ -183,7 +183,7 @@ private:
  QGroupBox *pixmapBox;
  QLabel *lPixmapActive, *lPixmapInactive;
  QPushButton *pbPixmapActive, *pbPixmapInactive;
- QPixmap *pixmapActive, *pixmapInactive;
+ QPixmap pixmapActive, pixmapInactive, pixmapActiveOld, pixmapInactiveOld;
 
  QString sPixmapActive, sPixmapInactive; 
 
