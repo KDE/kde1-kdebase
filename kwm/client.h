@@ -69,11 +69,11 @@ public:
   Window      window;
   
   Window      trans;
-  bool      decorated;
+  long      decoration;
   bool      decoration_not_allowed;
   
-  bool isDecorated(){
-    return decorated;
+  long getDecoration(){
+    return decoration;
   }
 
   int         desktop;

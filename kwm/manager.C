@@ -66,9 +66,10 @@ Manager::Manager(): QObject(){
   kwm_win_iconified = XInternAtom(qt_xdisplay(),"KWM_WIN_ICONIFIED",False);
   kwm_win_sticky = XInternAtom(qt_xdisplay(),"KWM_WIN_STICKY",False);
   kwm_win_maximized = XInternAtom(qt_xdisplay(),"KWM_WIN_MAXIMIZED",False);
-  kwm_win_decorated = XInternAtom(qt_xdisplay(),"KWM_WIN_DECORATED",False);
+  kwm_win_decoration = XInternAtom(qt_xdisplay(),"KWM_WIN_DECORATION",False);
   kwm_win_icon = XInternAtom(qt_xdisplay(),"KWM_WIN_ICON",False);
   kwm_win_desktop = XInternAtom(qt_xdisplay(),"KWM_WIN_DESKTOP",False);
+  kwm_win_frame_geometry = XInternAtom(qt_xdisplay(),"KWM_WIN_FRAME_GEOMETRY",False);
 
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
   kwm_activate_window = XInternAtom(qt_xdisplay(), "KWM_ACTIVATE_WINDOW", False);
@@ -149,17 +150,25 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     if (e->value_mask & CWY)
       y = e->y;
 
-    if (!c->isDecorated()){
+    switch (c->getDecoration()){
+    case 0:
       if (e->value_mask & CWWidth)
 	dx = e->width;
       if (e->value_mask & CWHeight)
 	dy = e->height;
-    }
-    else {
+      break;
+    case 2:
+      if (e->value_mask & CWWidth)
+	dx = e->width + 2 * BORDER;
+      if (e->value_mask & CWHeight)
+	dy = e->height + 2 * BORDER;
+      break;
+    default:
       if (e->value_mask & CWWidth)
 	dx = e->width + 2 * BORDER;
       if (e->value_mask & CWHeight)
 	dy = e->height + 2 * BORDER + TITLEBAR_HEIGHT;
+    break;
     }
 
     c->geometry.setRect(x, y, dx, dy);
@@ -179,14 +188,21 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
 
     // e->parent can have a wrong (obsolete) meaning here!
     XConfigureWindow(qt_xdisplay(), c->winId(), e->value_mask, &wc);
-    if (c->isDecorated()){
-      wc.x = BORDER;
-      wc.y = BORDER+TITLEBAR_HEIGHT;
-    }
-    else {
+    switch (c->getDecoration()){
+    case 0:
       wc.x = 0;
       wc.y = 0;
+      break;
+    case 2:
+      wc.x = BORDER;
+      wc.y = BORDER;
+      break;
+    default:
+      wc.x = BORDER;
+      wc.y = BORDER+TITLEBAR_HEIGHT;
+      break;
     }
+
     wc.width = e->width;
     wc.height = e->height;
     
@@ -487,20 +503,21 @@ void Manager::propertyNotify(XPropertyEvent *e){
     if (c->isSticky() != KWM::isSticky(c->window))
       c->buttonSticky->toggle();
   }
-  else if (a == kwm_win_decorated){
-    if (c->isDecorated() != KWM::isDecorated(c->window)){
-      if (KWM::isDecorated(c->window)){
+  else if (a == kwm_win_decoration){
+    if (c->getDecoration() != KWM::getDecoration(c->window)){
+      int dec = KWM::getDecoration(c->window);
+      if (dec){
 	if (c->decoration_not_allowed)
-	  KWM::setDecoration(c->window, FALSE);
+	  KWM::setDecoration(c->window, 0);
 	else {
-	  c->decorated = TRUE;
+	  c->decoration = dec;
 	  gravitate(c, FALSE);
 	  sendConfig(c);
 	}
       }
       else {
 	gravitate(c, TRUE);
-	c->decorated = FALSE;
+	c->decoration = dec;
 	sendConfig(c);
       }
     }
@@ -634,13 +651,13 @@ void Manager::manage(Window w, bool mapped){
     XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
     if ( n > 1 ) {
       c->decoration_not_allowed = TRUE;
-      c->decorated = FALSE;
+      c->decoration = 0;
     }
   }
 
   // get KDE specific decoration hint
-  if (c->isDecorated())
-    c->decorated = KWM::isDecorated(c->window);
+  if (c->getDecoration() == 1)
+    c->decoration = KWM::getDecoration(c->window);
 
   XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | EnterWindowMask | PropertyChangeMask);
   
@@ -675,10 +692,10 @@ void Manager::manage(Window w, bool mapped){
   getWindowTrans(c);
   getMwmHints(c);
 
-  if(c->trans || !c->isDecorated()){
+  if(c->trans || c->getDecoration()!=1){
     int i;
     if (c->buttons[0] && 
-	(c->buttons[0] != c->buttonMenu || !c->isDecorated()))
+	(c->buttons[0] != c->buttonMenu || c->getDecoration()!=1))
       c->buttons[0]->hide();
     for (i=1; i<6; i++){
       if (c->buttons[i])
@@ -689,9 +706,19 @@ void Manager::manage(Window w, bool mapped){
   // readjust dx,dy,x,y so they are Client sizes
   if (!pseudo_session_management)
     gravitate(c,0);
-  else if (c->isDecorated()) { 
-    c->geometry.setWidth(c->geometry.width() + 2*BORDER);
-    c->geometry.setHeight(c->geometry.height()+ 2*BORDER+TITLEBAR_HEIGHT);
+  else{
+    switch (c->getDecoration()){
+    case 0:
+      break;
+    case 2:
+      c->geometry.setWidth(c->geometry.width() + 2*BORDER);
+      c->geometry.setHeight(c->geometry.height()+ 2*BORDER);
+      break;
+    default:
+      c->geometry.setWidth(c->geometry.width() + 2*BORDER);
+      c->geometry.setHeight(c->geometry.height()+ 2*BORDER+TITLEBAR_HEIGHT);
+      break;
+    }
   }
   
   if (mapped || c->trans 
@@ -708,11 +735,18 @@ void Manager::manage(Window w, bool mapped){
   if (mapped)
     c->reparenting = TRUE;
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
-  if (c->isDecorated())
+  switch (c->getDecoration()){
+  case 0:
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+    break;
+  case 2:
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER), (BORDER));
+    break;
+  default:
     XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER), (BORDER) + 
 		    TITLEBAR_HEIGHT);
-  else
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
+  break;
+  }
   
   if (shape) {
     XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
@@ -804,7 +838,7 @@ void Manager::manage(Window w, bool mapped){
   
 
   if (!dohide){
-    if (c->isDecorated())
+    if (c->getDecoration())
       activateClient(c);
     else
       c->setactive(FALSE);
@@ -1061,23 +1095,32 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
   c->setGeometry(c->geometry);
+  
+  setQRectProperty(c->window, kwm_win_frame_geometry, c->geometry);
 
   ce.type = ConfigureNotify;
   ce.event = c->window;
   ce.window = c->window;
-
   
-  if (c->isDecorated()){
-    ce.x = c->geometry.x() + BORDER;
-    ce.y = c->geometry.y() + BORDER + TITLEBAR_HEIGHT;
-    ce.width = c->geometry.width() - 2*BORDER;
-    ce.height = c->geometry.height() - 2*BORDER - TITLEBAR_HEIGHT;
-    }
-  else {
+  switch (c->getDecoration()){
+  case 0:
     ce.x = c->geometry.x();
     ce.y = c->geometry.y();
     ce.width = c->geometry.width();
     ce.height = c->geometry.height();
+    break;
+  case 2:
+    ce.x = c->geometry.x() + BORDER;
+    ce.y = c->geometry.y() + BORDER;
+    ce.width = c->geometry.width() - 2*BORDER;
+    ce.height = c->geometry.height() - 2*BORDER;
+    break;
+  default:
+    ce.x = c->geometry.x() + BORDER;
+    ce.y = c->geometry.y() + BORDER + TITLEBAR_HEIGHT;
+    ce.width = c->geometry.width() - 2*BORDER;
+    ce.height = c->geometry.height() - 2*BORDER - TITLEBAR_HEIGHT;
+    break;
   }
   
   ce.border_width = c->border;
@@ -1231,16 +1274,23 @@ void Manager::setShape(Client* c){
   /* cheat: don't try to add a border if the window is non-rectangular */
   rect = XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
   if (n > 1){
-    if (c->isDecorated())
-      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
-			 (BORDER), (BORDER) + TITLEBAR_HEIGHT,
-			 c->window, ShapeBounding, ShapeSet);
-      
-    else 
+    switch (c->getDecoration()){
+    case 0:
       XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
 			 0, 0,
 			 c->window, ShapeBounding, ShapeSet);
-    
+      break;
+    case 2:
+      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
+			 (BORDER), (BORDER),
+			 c->window, ShapeBounding, ShapeSet);
+      break;
+    default:
+      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
+			 (BORDER), (BORDER) + TITLEBAR_HEIGHT,
+			 c->window, ShapeBounding, ShapeSet);
+      break;
+    }
   }
   XFree((void*)rect);
 }
@@ -1330,9 +1380,10 @@ void Manager::getMwmHints(Client  *c){
       if(nitems >= 4)
 	{
 	  // only interested in decorations
-  	  if (c->isDecorated()){
-  	    c->decorated = (mwm_hints->decorations != 0);
-	    KWM::setDecoration(c->window, c->isDecorated());
+  	  if (c->getDecoration() == 1){
+  	    if (!mwm_hints->decorations)
+	      c->decoration = 0;
+	    KWM::setDecoration(c->window, c->getDecoration());
 	  }
 	}
       XFree((char *)mwm_hints);
@@ -1343,8 +1394,11 @@ void Manager::getMwmHints(Client  *c){
 
 void Manager::gravitate(Client* c, bool invert){
   int gravity, dx, dy, delta;
-  if (!c->isDecorated())
+  if (!c->getDecoration())
     return;
+  
+  int titlebar_height = (c->getDecoration() != 1)?0:TITLEBAR_HEIGHT;
+
   dx = dy = 0;
 
   gravity = NorthWestGravity;
@@ -1368,28 +1422,28 @@ void Manager::gravitate(Client* c, bool invert){
     break;
   case WestGravity:
     dx = 0;
-    dy = -delta-TITLEBAR_HEIGHT;
+    dy = -delta-titlebar_height;
     break;
   case CenterGravity:
   case StaticGravity:
     dx = -delta;
-    dy = -delta-TITLEBAR_HEIGHT;
+    dy = -delta-titlebar_height;
     break;
   case EastGravity:
     dx = -2*delta;
-    dy = -delta-TITLEBAR_HEIGHT;
+    dy = -delta-titlebar_height;
     break;
   case SouthWestGravity:
     dx = 0;
-    dy = -2*delta-TITLEBAR_HEIGHT;
+    dy = -2*delta-titlebar_height;
     break;
   case SouthGravity:
     dx = -delta;
-    dy = -2*delta-TITLEBAR_HEIGHT;
+    dy = -2*delta-titlebar_height;
     break;
   case SouthEastGravity:
     dx = -2*delta;
-    dy = -2*delta-TITLEBAR_HEIGHT;
+    dy = -2*delta-titlebar_height;
     break;
   default:
     fprintf(stderr, "kwm: bad window gravity %d for 0x%lx\n", gravity, c->window);
@@ -1397,12 +1451,12 @@ void Manager::gravitate(Client* c, bool invert){
   if (invert) {
     c->geometry.moveBy(-dx, -dy);
     c->geometry.setWidth(c->geometry.width() - 2*BORDER);
-    c->geometry.setHeight(c->geometry.height()- 2*BORDER-TITLEBAR_HEIGHT);
+    c->geometry.setHeight(c->geometry.height()- 2*BORDER-titlebar_height);
   }
   else {
     c->geometry.moveBy(dx, dy);
     c->geometry.setWidth(c->geometry.width() + 2*BORDER);
-    c->geometry.setHeight(c->geometry.height()+ 2*BORDER+TITLEBAR_HEIGHT);
+    c->geometry.setHeight(c->geometry.height()+ 2*BORDER+titlebar_height);
   }
 }
 
@@ -1442,6 +1496,17 @@ bool Manager::getSimpleProperty(Window w, Atom a, long &result){
   XFree((char *) p);
   return TRUE;
 }
+
+void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
+  long data[4];
+  data[0] = rect.x();
+  data[1] = rect.y();
+  data[2] = rect.width();
+  data[3] = rect.height();
+  XChangeProperty(qt_xdisplay(), w, a, a, 32,
+		  PropModeReplace, (unsigned char *)&data, 4);
+}
+
 
 
 void Manager::sendClientMessage(Window w, Atom a, long x){

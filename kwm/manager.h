@@ -159,6 +159,7 @@ private:
   int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p);
   QString getprop(Window w, Atom a);
   bool getSimpleProperty(Window w, Atom a, long &result);
+  void setQRectProperty(Window w, Atom a, const QRect &rect);
   void sendClientMessage(Window w, Atom a, long x);
 
   // Atoms
@@ -179,9 +180,10 @@ private:
   Atom   kwm_win_iconified;
   Atom   kwm_win_sticky;
   Atom   kwm_win_maximized;
-  Atom   kwm_win_decorated;
+  Atom   kwm_win_decoration;
   Atom   kwm_win_icon;
   Atom   kwm_win_desktop;
+  Atom   kwm_win_frame_geometry;
 
   Atom kwm_command;
   Atom kwm_activate_window;

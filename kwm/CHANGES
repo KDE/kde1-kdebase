@@ -12,6 +12,13 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 13:
+       - new decoration style (tiny decoration). Useful for floating
+         menu- or toolbars. Can be set via KWM::setDecoration(...)
+       - KWM::geometry(Window w, bool including_frame = FALSE) has
+         including_frame as additional argument. Useful for
+         pager modules.
+         
   patchlevel 12:
        - new command "execute" for minicli (temporary solution until
          we finally get a real kcli)

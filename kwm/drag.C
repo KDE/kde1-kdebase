@@ -190,7 +190,7 @@ void drawbound(Client* c){
         y += dy;
         dy = -dy;
     }
-    draw_animation_rectangle(x,y,dx,dy, c->isDecorated(),
+    draw_animation_rectangle(x,y,dx,dy, c->getDecoration()==1,
 			     c->title_rect.x(), 
 			     c->width()-c->title_rect.right());
     

@@ -268,7 +268,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     wmcmaps = 0;
     is_active = FALSE;
     trans = None;
-    decorated = TRUE;
+    decoration = 1;
     decoration_not_allowed = FALSE;
     
     
@@ -354,12 +354,12 @@ void Client::generateButtons(){
   
   for (i=0;i<6;i++){
     buttons[i] = getNewButton( options.buttons[i]);
-    if (!trans){
+    if (getDecoration() == 1 && !trans){
       if (buttons[i])
 	buttons[i]->show();
     }
     else {
-      if (buttons[i] && (i>0 || buttons[i] != buttonMenu))
+      if (buttons[i] && (getDecoration() != 1 || i>0 || buttons[i] != buttonMenu))
 	buttons[i]->hide();
     }
   }
@@ -383,7 +383,7 @@ void Client::layoutButtons(){
   int trW = 0;
   int trH = 0;
   
-  if (!isDecorated()){
+  if (getDecoration() != 1){
     // nothing
   } else {
     trX = BORDER;
@@ -595,7 +595,7 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
       && dragging_state != dragging_enabled){
     old_cursor_pos = ev->pos();
 
-    if (!isDecorated())
+    if (!getDecoration())
       return;
     // maybe we have to change the look of the cursor according
     // to the exact position 
@@ -676,7 +676,7 @@ void Client::enterEvent( QEvent * ){
 }
 
 void Client::leaveEvent( QEvent * ){
-  if (isDecorated())
+  if (getDecoration())
     set_x_cursor(normal_cursor);
 }
 
@@ -692,13 +692,22 @@ void Client::paintEvent( QPaintEvent* ev ){
 void Client::resizeEvent( QResizeEvent * ){
   layoutButtons();
 
-  if (isDecorated())
+  switch (getDecoration()){
+  case 0:
+    XMoveResizeWindow(qt_xdisplay(), window, 0,0,
+		      geometry.width(), geometry.height());
+    break;
+  case 2:
+    XMoveResizeWindow(qt_xdisplay(), window, (BORDER), (BORDER),
+		      geometry.width() - 2*BORDER, 
+		      geometry.height() - 2*BORDER);
+    break;
+  default:
     XMoveResizeWindow(qt_xdisplay(), window, (BORDER), (BORDER) + TITLEBAR_HEIGHT,
 		      geometry.width() - 2*BORDER, 
 		      geometry.height() - 2*BORDER - TITLEBAR_HEIGHT);
-  else
-    XMoveResizeWindow(qt_xdisplay(), window, 0,0,
-		      geometry.width(), geometry.height());
+    break;
+  }
     
 }  
 
@@ -867,11 +876,19 @@ void Client::generateOperations(){
 
 void Client::showOperations(){
   generateOperations();
-  if (isDecorated())
+  switch (getDecoration()){
+  case 0:
+    myapp->operations->popup(geometry.topLeft());
+    break;
+  case 2:
+    myapp->operations->popup(QPoint(geometry.x() + BORDER, 
+			     geometry.y() + BORDER));
+    break;
+  default:
     myapp->operations->popup(QPoint(geometry.x() + BORDER, 
 			     geometry.y() + BORDER + TITLEBAR_HEIGHT));
-  else
-    myapp->operations->popup(geometry.topLeft());
+    break;
+  }
 }
 
 bool Client::fixedSize(){
@@ -927,7 +944,7 @@ void Client::setactive(bool on){
 void Client::paintState(bool only_label){
   QRect r = title_rect;
 
-  if (r.width() <= 0 || r.height() <= 0 || !isDecorated())
+  if (r.width() <= 0 || r.height() <= 0 || getDecoration()!=1)
     return;
   int x;
 
@@ -1074,7 +1091,7 @@ void Client::iconify(){
 			QRect(geometry.x()+geometry.width()/2,
 			      geometry.y()+geometry.height()/2,
 			      0,0),
-			isDecorated(),
+			getDecoration()==1,
 			title_rect.x(), 
 			width()-title_rect.right());
     if (isActive())
@@ -1096,7 +1113,7 @@ void Client::unIconify(){
       animate_size_change(QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
 				0,0), geometry,
-			  isDecorated(),
+			  getDecoration()==1,
 			  title_rect.x(), 
 			  width()-title_rect.right());
       show();                       // unhide the window
@@ -1167,7 +1184,7 @@ void Client::maximize(int mode){
   adjustSize();
   if (state == NormalState)
     animate_size_change(geometry_restore, geometry,
-			isDecorated(),
+			getDecoration()==1,
 			title_rect.x(), 
 			width()-title_rect.right());
   KWM::setMaximize(window, maximized);
@@ -1184,7 +1201,7 @@ void Client::unMaximize(){
   maximized = FALSE;
   if (geometry != geometry_restore && state == NormalState)
     animate_size_change(geometry, geometry_restore,
-			isDecorated(),
+			getDecoration()==1,
 			title_rect.x(), 
 			width()-title_rect.right());
   geometry = geometry_restore;
@@ -1402,13 +1419,25 @@ void Client::adjustSize(){
       ((geometry_restore.height()-dy)/size.height_inc)*size.height_inc;
   }
   
-  if (isDecorated()){
+  switch(getDecoration()){
+  case 0:
+    break;
+  case 2:
+    if (dx < 2*BORDER+BUTTON_SIZE)
+      dx = 2*BORDER+BUTTON_SIZE+1;
+    if (dy < 2*BORDER+20+1)
+      dy = 2*BORDER+20+1;
+    dx -= 2*BORDER;
+    dy -= 2*BORDER;
+    break;
+  default:
     if (dx < 2*BORDER+BUTTON_SIZE)
       dx = 2*BORDER+BUTTON_SIZE+1;
     if (dy < 2*BORDER+TITLEBAR_HEIGHT+20+1)
       dy = 2*BORDER+TITLEBAR_HEIGHT+20+1;
     dx -= 2*BORDER;
     dy -= 2*BORDER+TITLEBAR_HEIGHT;
+  break;
   }
   
   if (size.flags & PMaxSize) {
@@ -1430,9 +1459,18 @@ void Client::adjustSize(){
     if (dy < size.base_height)
       dy = size.base_height;
     }
-  if (isDecorated()){
+
+  switch(getDecoration()){
+  case 0:
+    break;
+  case 2:
+    dx += 2*BORDER;
+    dy += 2*BORDER;
+    break;
+  default:
     dx += 2*BORDER;
     dy += 2*BORDER + TITLEBAR_HEIGHT;
+    break;
   }
   
   geometry.setWidth(dx);
