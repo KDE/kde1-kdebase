@@ -35,8 +35,9 @@
 QList<KIOJob> *KIOJob::jobList;
 QDict<QString> *KIOJob::passwordDict;
 
-//#define done() \
-// {  debug("-------------------- %s, %d : calling done()",__FUNCTION__,__LINE__); this->done(); }
+/*#define done() \
+  {  debug("-------------------- %s, %d : calling done()",__FUNCTION__,__LINE__); this->done(); }
+*/
 
 KIOJob::KIOJob( int _id )
 {
