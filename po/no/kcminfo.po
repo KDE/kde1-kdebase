@@ -1,0 +1,72 @@
+
+
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-21 13:14+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Minne"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&CPU"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "bruk: KCminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "System informasjon"
+
+#: memory.cpp:11
+msgid "Total memory"
+msgstr "Totalt minne"
+
+#: memory.cpp:21
+msgid "Free memory"
+msgstr "Fritt minne"
+
+#: memory.cpp:29
+msgid "Shared memory"
+msgstr "Delt minne"
+
+#: memory.cpp:37
+msgid "Buffer memory"
+msgstr "Buffer minne"
+
+#: memory.cpp:45
+msgid "Swap memory"
+msgstr "Vekslefil minne"
+
+#: memory.cpp:53
+msgid "Free swap memory"
+msgstr "Fri vekslefil minne"
+
+#: memory.cpp:74
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
+
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
+msgid "not available"
+msgstr "ikke tilgjengelig"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Det er foreløpig ikke støtte for dette system :-{"

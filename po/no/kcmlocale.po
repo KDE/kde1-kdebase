@@ -1,0 +1,59 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-21 13:48+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Lokale"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "bruk: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Lokale oppsett"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Språk"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Først"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Andre"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Tredje"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "uten navn!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Benytter språk oppsett"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr "Endret språkoppsett gjelder bare for nystartede applikasjoner.\n"
+"For å endre språket til alle programmer, må du først logge deg ut."
