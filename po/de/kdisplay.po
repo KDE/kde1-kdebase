@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-03-22 20:16+0100\n"
+"POT-Creation-Date: 1998-03-22 22:46+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -18,7 +18,7 @@ msgstr "Desktop"
 msgid "&Rename ..."
 msgstr "Umbenennen..."
 
-#: backgnd.cpp:182
+#: backgnd.cpp:182 colorscm.cpp:90
 #, fuzzy
 msgid "Colors"
 msgstr "&Farben"
@@ -120,123 +120,138 @@ msgstr ""
 msgid "Cobbled Pavement"
 msgstr ""
 
-#: colorscm.cpp:167 colorscm.cpp:168
-msgid "Inactive window"
-msgstr "Fenster im Hintergrund"
-
-#: colorscm.cpp:187 colorscm.cpp:188
-msgid "Active window"
-msgstr "Fenster im Vordergrund"
-
-#: colorscm.cpp:223 colorscm.cpp:224 colorscm.cpp:382
-msgid "Window text"
-msgstr "Fenstertext"
-
-#: colorscm.cpp:236 colorscm.cpp:237
-#, fuzzy
-msgid "Selected text"
-msgstr "Aktiver Text"
-
-#: colorscm.cpp:301 colorscm.cpp:335
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Farbpalette"
 
-#: colorscm.cpp:349
+#: colorscm.cpp:131
 #, fuzzy
-msgid "&New scheme ..."
+msgid "Current scheme"
+msgstr "Farbpalette"
+
+#: colorscm.cpp:133
+#, fuzzy
+msgid "KDE default"
+msgstr "KDE-Standard"
+
+#: colorscm.cpp:146
+msgid "&Add ..."
+msgstr ""
+
+#: colorscm.cpp:152
+#, fuzzy
+msgid "&Remove"
 msgstr "Palette speichern"
 
-#: colorscm.cpp:356
-#, fuzzy
-msgid "&Remove scheme"
-msgstr "Palette speichern"
+#: colorscm.cpp:159
+msgid "&Save changes"
+msgstr ""
 
-#: colorscm.cpp:366
+#: colorscm.cpp:170
 msgid "Widget color"
 msgstr "Widgetfarbe"
 
-#: colorscm.cpp:373
+#: colorscm.cpp:177
 msgid "Inactive title bar"
 msgstr "Inaktive Titelleiste"
 
-#: colorscm.cpp:374
+#: colorscm.cpp:178
 msgid "Inactive title text"
 msgstr "Inaktiver Titeltext"
 
-#: colorscm.cpp:375
+#: colorscm.cpp:179
+#, fuzzy
+msgid "Inactive title blend"
+msgstr "Inaktive Titelleiste"
+
+#: colorscm.cpp:180
 msgid "Active title bar"
 msgstr "Aktive Titelleiste"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:181
 msgid "Active title text"
 msgstr "Aktiver Titeltext"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:182
+#, fuzzy
+msgid "Active title blend"
+msgstr "Aktive Titelleiste"
+
+#: colorscm.cpp:183
 msgid "Background"
 msgstr "Hintergrund"
 
-#: colorscm.cpp:378
+#: colorscm.cpp:184
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:185
 msgid "Select background"
 msgstr "Aktiver Hintergrund"
 
-#: colorscm.cpp:380
+#: colorscm.cpp:186
 msgid "Select text"
 msgstr "Aktiver Text"
 
-#: colorscm.cpp:381
+#: colorscm.cpp:187
 msgid "Window background"
 msgstr "Fensterhintergrund"
 
-#: colorscm.cpp:402
+#: colorscm.cpp:188 widgetcanvas.cpp:164 widgetcanvas.cpp:165
+msgid "Window text"
+msgstr "Fenstertext"
+
+#: colorscm.cpp:208
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:415
+#: colorscm.cpp:221
 #, fuzzy
 msgid "&Low"
 msgstr "Niedrig"
 
-#: colorscm.cpp:423
+#: colorscm.cpp:229
 msgid "High"
 msgstr "Hoch"
 
-#: colorscm.cpp:449
-#, fuzzy
-msgid "New color scheme"
-msgstr "Farbpalette"
-
-#: colorscm.cpp:480 colorscm.cpp:488
-msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Der gew‰hlte Name existiert schon"
-
-#: colorscm.cpp:552
-msgid "KDE Default"
-msgstr "KDE-Standard"
-
-#: colorscm.cpp:814
-msgid "Display Setup"
-msgstr "Farbpaletten"
-
-#: colorscm.cpp:815
-msgid ""
-"No desktop color schemes were found.\n"
-"Do you want to install the default color schemes now ?"
+#: colorscm.cpp:295
+msgid "Error removing"
 msgstr ""
-"Es wurden keine Farbpaletten gefunden.\n"
-"Wollen Sie jetzt Standardfarbpaletten installieren?"
+
+#: colorscm.cpp:296
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+
+#: colorscm.cpp:355
+msgid "Naming error"
+msgstr ""
+
+#: colorscm.cpp:356
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: Die Kommunikation mit kwm schlug fehl\n"
 
-#: savescm.cpp:30
+#: savescm.cpp:18
+#, fuzzy
+msgid "Add a color scheme"
+msgstr "Farbpalette"
+
+#: savescm.cpp:32
 msgid ""
-"&Enter the name of a new\n"
-"color scheme to be added to the list."
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
 msgstr ""
 
 #: scrnsave.cpp:48
@@ -265,31 +280,31 @@ msgstr "Testen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: scrnsave.cpp:236
+#: scrnsave.cpp:237
 msgid "&Wait for"
 msgstr ""
 
-#: scrnsave.cpp:245
+#: scrnsave.cpp:246
 #, fuzzy
 msgid "min."
 msgstr "Minuten"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:252
 #, fuzzy
 msgid "&Require password"
 msgstr "Nach Paﬂwort fragen"
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:259
 #, fuzzy
 msgid "Priority"
 msgstr "Priorit‰t"
 
-#: scrnsave.cpp:271
+#: scrnsave.cpp:272
 #, fuzzy
 msgid "&High"
 msgstr "Hoch"
 
-#: scrnsave.cpp:280
+#: scrnsave.cpp:281
 msgid "Low"
 msgstr "Niedrig"
 
@@ -301,46 +316,46 @@ msgstr ""
 msgid "&Italic"
 msgstr ""
 
-#: general.cpp:196
+#: general.cpp:225
 msgid "default"
 msgstr "Standard"
 
-#: general.cpp:199
+#: general.cpp:228
 msgid "any"
 msgstr "irgendein"
 
-#: general.cpp:291
+#: general.cpp:320
 msgid "General"
 msgstr "Allgemein"
 
-#: general.cpp:298
+#: general.cpp:327
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:322
+#: general.cpp:351
 #, fuzzy
 msgid "Desktop fonts"
 msgstr "Desktop"
 
-#: general.cpp:345
+#: general.cpp:374
 msgid "General font"
 msgstr "Standardschrift"
 
-#: general.cpp:346
+#: general.cpp:375
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:347
+#: general.cpp:376
 #, fuzzy
 msgid "Window title font"
 msgstr "Fenstertext"
 
-#: general.cpp:348
+#: general.cpp:377
 #, fuzzy
-msgid "Panel font"
+msgid "Panel button font"
 msgstr "Standardschrift"
 
-#: general.cpp:349
+#: general.cpp:378
 msgid "Panel clock font"
 msgstr ""
 
@@ -354,21 +369,51 @@ msgid "&Background"
 msgstr "&Hintergrund"
 
 #: main.cpp:67
-msgid "&Colors"
-msgstr "&Farben"
-
-#: main.cpp:70
 msgid "&Screensaver"
 msgstr "&Bildschirmschoner"
 
-#: main.cpp:77
+#: main.cpp:71
+msgid "&Colors"
+msgstr "&Farben"
+
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr ""
 "Benutzung: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:117
+#: main.cpp:118
 msgid "Display settings"
 msgstr "Eigenschaften der Umgebung"
+
+#: widgetcanvas.cpp:108 widgetcanvas.cpp:109
+msgid "Inactive window"
+msgstr "Fenster im Hintergrund"
+
+#: widgetcanvas.cpp:128 widgetcanvas.cpp:129
+msgid "Active window"
+msgstr "Fenster im Vordergrund"
+
+#: widgetcanvas.cpp:177 widgetcanvas.cpp:178
+#, fuzzy
+msgid "Selected text"
+msgstr "Aktiver Text"
+
+#, fuzzy
+#~ msgid "&New scheme ..."
+#~ msgstr "Palette speichern"
+
+#~ msgid "You have chosen a name used by a supplied color scheme"
+#~ msgstr "Der gew‰hlte Name existiert schon"
+
+#~ msgid "Display Setup"
+#~ msgstr "Farbpaletten"
+
+#~ msgid ""
+#~ "No desktop color schemes were found.\n"
+#~ "Do you want to install the default color schemes now ?"
+#~ msgstr ""
+#~ "Es wurden keine Farbpaletten gefunden.\n"
+#~ "Wollen Sie jetzt Standardfarbpaletten installieren?"
 
 #~ msgid "Disabled"
 #~ msgstr "Abgeschaltet"

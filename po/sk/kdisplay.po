@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-03-22 20:16+0100\n"
+"POT-Creation-Date: 1998-03-22 22:46+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -26,7 +26,7 @@ msgstr "Pracovná plocha"
 msgid "&Rename ..."
 msgstr "Premenova»..."
 
-#: backgnd.cpp:182
+#: backgnd.cpp:182 colorscm.cpp:90
 #, fuzzy
 msgid "Colors"
 msgstr "&Farby"
@@ -131,123 +131,138 @@ msgstr ""
 msgid "Cobbled Pavement"
 msgstr ""
 
-#: colorscm.cpp:167 colorscm.cpp:168
-msgid "Inactive window"
-msgstr "Neaktívne okno"
-
-#: colorscm.cpp:187 colorscm.cpp:188
-msgid "Active window"
-msgstr "Aktívne okno"
-
-#: colorscm.cpp:223 colorscm.cpp:224 colorscm.cpp:382
-msgid "Window text"
-msgstr "Text v okne"
-
-#: colorscm.cpp:236 colorscm.cpp:237
-#, fuzzy
-msgid "Selected text"
-msgstr "Vyber text"
-
-#: colorscm.cpp:301 colorscm.cpp:335
+#: colorscm.cpp:120
 msgid "Color Scheme"
 msgstr "Farebná schéma"
 
-#: colorscm.cpp:349
+#: colorscm.cpp:131
 #, fuzzy
-msgid "&New scheme ..."
+msgid "Current scheme"
+msgstr "Farebná schéma"
+
+#: colorscm.cpp:133
+#, fuzzy
+msgid "KDE default"
+msgstr "KDE implicitné"
+
+#: colorscm.cpp:146
+msgid "&Add ..."
+msgstr ""
+
+#: colorscm.cpp:152
+#, fuzzy
+msgid "&Remove"
 msgstr "Ulo¾ schému"
 
-#: colorscm.cpp:356
-#, fuzzy
-msgid "&Remove scheme"
-msgstr "Ulo¾ schému"
+#: colorscm.cpp:159
+msgid "&Save changes"
+msgstr ""
 
-#: colorscm.cpp:366
+#: colorscm.cpp:170
 msgid "Widget color"
 msgstr "Farba kontrolky"
 
-#: colorscm.cpp:373
+#: colorscm.cpp:177
 msgid "Inactive title bar"
 msgstr "Neaktívny titulok"
 
-#: colorscm.cpp:374
+#: colorscm.cpp:178
 msgid "Inactive title text"
 msgstr "Text neaktívneho titulku"
 
-#: colorscm.cpp:375
+#: colorscm.cpp:179
+#, fuzzy
+msgid "Inactive title blend"
+msgstr "Neaktívny titulok"
+
+#: colorscm.cpp:180
 msgid "Active title bar"
 msgstr "Aktívny titulok"
 
-#: colorscm.cpp:376
+#: colorscm.cpp:181
 msgid "Active title text"
 msgstr "Text aktívneho titulku"
 
-#: colorscm.cpp:377
+#: colorscm.cpp:182
+#, fuzzy
+msgid "Active title blend"
+msgstr "Aktívny titulok"
+
+#: colorscm.cpp:183
 msgid "Background"
 msgstr "Pozadie"
 
-#: colorscm.cpp:378
+#: colorscm.cpp:184
 msgid "Text"
 msgstr "Text"
 
-#: colorscm.cpp:379
+#: colorscm.cpp:185
 msgid "Select background"
 msgstr "Vyber pozadie"
 
-#: colorscm.cpp:380
+#: colorscm.cpp:186
 msgid "Select text"
 msgstr "Vyber text"
 
-#: colorscm.cpp:381
+#: colorscm.cpp:187
 msgid "Window background"
 msgstr "Pozadie okna"
 
-#: colorscm.cpp:402
+#: colorscm.cpp:188 widgetcanvas.cpp:164 widgetcanvas.cpp:165
+msgid "Window text"
+msgstr "Text v okne"
+
+#: colorscm.cpp:208
 msgid "Contrast"
 msgstr "Kontrast"
 
-#: colorscm.cpp:415
+#: colorscm.cpp:221
 #, fuzzy
 msgid "&Low"
 msgstr "Malá"
 
-#: colorscm.cpp:423
+#: colorscm.cpp:229
 msgid "High"
 msgstr "Veµká"
 
-#: colorscm.cpp:449
-#, fuzzy
-msgid "New color scheme"
-msgstr "Farebná schéma"
-
-#: colorscm.cpp:480 colorscm.cpp:488
-msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Vybrali ste meno u¾ pou¾ité u dodanej farebnej schémy"
-
-#: colorscm.cpp:552
-msgid "KDE Default"
-msgstr "KDE implicitné"
-
-#: colorscm.cpp:814
-msgid "Display Setup"
-msgstr "Nastavenie obrazovky"
-
-#: colorscm.cpp:815
-msgid ""
-"No desktop color schemes were found.\n"
-"Do you want to install the default color schemes now ?"
+#: colorscm.cpp:295
+msgid "Error removing"
 msgstr ""
-"Nena¹iel som ¾iadne farebné schémy.\n"
-"Chcete nain¹talova» implicitné farebné schemy?"
+
+#: colorscm.cpp:296
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+
+#: colorscm.cpp:355
+msgid "Naming error"
+msgstr ""
+
+#: colorscm.cpp:356
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: komunikace s kwm prebehla neúspe¹ne\n"
 
-#: savescm.cpp:30
+#: savescm.cpp:18
+#, fuzzy
+msgid "Add a color scheme"
+msgstr "Farebná schéma"
+
+#: savescm.cpp:32
 msgid ""
-"&Enter the name of a new\n"
-"color scheme to be added to the list."
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
 msgstr ""
 
 #: scrnsave.cpp:48
@@ -276,31 +291,31 @@ msgstr "Test"
 msgid "Settings"
 msgstr "Nastavenie"
 
-#: scrnsave.cpp:236
+#: scrnsave.cpp:237
 msgid "&Wait for"
 msgstr ""
 
-#: scrnsave.cpp:245
+#: scrnsave.cpp:246
 #, fuzzy
 msgid "min."
 msgstr "min"
 
-#: scrnsave.cpp:251
+#: scrnsave.cpp:252
 #, fuzzy
 msgid "&Require password"
 msgstr "Po¾aduje heslo"
 
-#: scrnsave.cpp:258
+#: scrnsave.cpp:259
 #, fuzzy
 msgid "Priority"
 msgstr "Priorita:"
 
-#: scrnsave.cpp:271
+#: scrnsave.cpp:272
 #, fuzzy
 msgid "&High"
 msgstr "Veµká"
 
-#: scrnsave.cpp:280
+#: scrnsave.cpp:281
 msgid "Low"
 msgstr "Malá"
 
@@ -312,46 +327,46 @@ msgstr ""
 msgid "&Italic"
 msgstr ""
 
-#: general.cpp:196
+#: general.cpp:225
 msgid "default"
 msgstr "¹tandardné"
 
-#: general.cpp:199
+#: general.cpp:228
 msgid "any"
 msgstr "µubovoµné"
 
-#: general.cpp:291
+#: general.cpp:320
 msgid "General"
 msgstr "V¹eobecné"
 
-#: general.cpp:298
+#: general.cpp:327
 msgid "&Draw widgets in the style of Windows 95"
 msgstr ""
 
-#: general.cpp:322
+#: general.cpp:351
 #, fuzzy
 msgid "Desktop fonts"
 msgstr "Pracovná plocha"
 
-#: general.cpp:345
+#: general.cpp:374
 msgid "General font"
 msgstr "V¹eobecná znaková sada"
 
-#: general.cpp:346
+#: general.cpp:375
 msgid "Fixed font"
 msgstr ""
 
-#: general.cpp:347
+#: general.cpp:376
 #, fuzzy
 msgid "Window title font"
 msgstr "Text v okne"
 
-#: general.cpp:348
+#: general.cpp:377
 #, fuzzy
-msgid "Panel font"
+msgid "Panel button font"
 msgstr "V¹eobecná znaková sada"
 
-#: general.cpp:349
+#: general.cpp:378
 msgid "Panel clock font"
 msgstr ""
 
@@ -365,20 +380,50 @@ msgid "&Background"
 msgstr "&Pozadie"
 
 #: main.cpp:67
-msgid "&Colors"
-msgstr "&Farby"
-
-#: main.cpp:70
 msgid "&Screensaver"
 msgstr "©etøiè &obrazovky"
 
-#: main.cpp:77
+#: main.cpp:71
+msgid "&Colors"
+msgstr "&Farby"
+
+#: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 msgstr "Pou¾itie: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
-#: main.cpp:117
+#: main.cpp:118
 msgid "Display settings"
 msgstr "Vlastnosti obrazovky"
+
+#: widgetcanvas.cpp:108 widgetcanvas.cpp:109
+msgid "Inactive window"
+msgstr "Neaktívne okno"
+
+#: widgetcanvas.cpp:128 widgetcanvas.cpp:129
+msgid "Active window"
+msgstr "Aktívne okno"
+
+#: widgetcanvas.cpp:177 widgetcanvas.cpp:178
+#, fuzzy
+msgid "Selected text"
+msgstr "Vyber text"
+
+#, fuzzy
+#~ msgid "&New scheme ..."
+#~ msgstr "Ulo¾ schému"
+
+#~ msgid "You have chosen a name used by a supplied color scheme"
+#~ msgstr "Vybrali ste meno u¾ pou¾ité u dodanej farebnej schémy"
+
+#~ msgid "Display Setup"
+#~ msgstr "Nastavenie obrazovky"
+
+#~ msgid ""
+#~ "No desktop color schemes were found.\n"
+#~ "Do you want to install the default color schemes now ?"
+#~ msgstr ""
+#~ "Nena¹iel som ¾iadne farebné schémy.\n"
+#~ "Chcete nain¹talova» implicitné farebné schemy?"
 
 #~ msgid "Disabled"
 #~ msgstr "Vypnuté"

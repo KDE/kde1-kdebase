@@ -192,7 +192,8 @@ msgstr "Sallitut komentorivioptiot ovat:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <komento> <arg> ...    suorita komento argumenteilla - pit‰‰ olla viimeinen\n" 
+"-e <komento> <arg> ...    suorita komento argumenteilla - pit‰‰ olla "
+"viimeinen\n"
 
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
@@ -277,8 +278,8 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               K‰sittele Meta ESCAPE etumerkill‰, 8THBIT asetettu, "
-"tai ohita\n"
+"-meta <arg>               K‰sittele Meta ESCAPE etumerkill‰, 8THBIT "
+"asetettu, tai ohita\n"
 
 #: main.C:1177
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
@@ -301,4 +302,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (oletus)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-
