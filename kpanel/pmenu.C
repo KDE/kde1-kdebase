@@ -60,7 +60,7 @@ static void getPaths(){
     config->setGroup("KDE Desktop Entries");
     QString temp = QDir::homeDirPath()+"/.kde/share/applnk";
     personal = config->readEntry("PersonalPath", temp.data() );
-    temp = KApplication::kdedir()+"/share/applnk";
+    temp = KApplication::kde_appsdir();
     kde_apps = config->readEntry("Path", temp.data() );
   }
 }

@@ -75,8 +75,7 @@ void KWmSound::loadSetup()
    if (!strcmp(helper, "(none)")) {
      helper = "";
    } else if ('/' != helper[0]) {
-     tmp = (const char*)KApplication::kdedir(); // CC: to force a deep copy
-     tmp += "/share/sounds/";
+     tmp = KApplication::kde_sounddir().copy(); 
      tmp += helper;
      helper = tmp;
    }  
