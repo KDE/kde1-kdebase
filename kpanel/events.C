@@ -119,6 +119,7 @@ void kPanel::windowAdd(Window w){
   if (bi<nbuttons){
     for (i=0; i<nbuttons && entries[i].swallowed != w;i++);
     if (i == nbuttons){
+      entries[bi].button->setText("");
       entries[bi].swallowed = w;
       KWM::prepareForSwallowing(w);
       XSetWindowBackground(qt_xdisplay(),
@@ -126,8 +127,6 @@ void kPanel::windowAdd(Window w){
 			   entries[bi].button->backgroundColor().pixel());
       XReparentWindow(qt_xdisplay(), w, 
  		      entries[bi].button->winId(), 3, 3);
-//       XReparentWindow(qt_xdisplay(), w, 
-// 		      winId(), 150+ 3, 3);
       XSelectInput(qt_xdisplay(), w, EnterWindowMask | LeaveWindowMask);
       XResizeWindow(qt_xdisplay(), w,
 		    entries[bi].button->width()-6,
