@@ -687,19 +687,25 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
       count = 1;
       break;
     case XK_Delete :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Delete :
+#endif
       strcpy(kbuf,"\033[3~");
       count = 4;
       break;
 
       
     case XK_Up :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Up :
+#endif
       strcpy(kbuf,(app_cur_keys ? "\033OA" : "\033[A"));
       count = strlen(kbuf);
       break;
     case XK_Down :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Down :
+#endif
       strcpy(kbuf,app_cur_keys ? "\033OB" : "\033[B");
       count = strlen(kbuf);
       break;
@@ -785,12 +791,16 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
       break;
       /* changed home and end to more modern values (Matthias) */ 
     case XK_Home :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Home :
+#endif
       strcpy(kbuf,"\033[H");
       count = 3;
       break;
     case XK_End :
+#if XlibSpecificationRelease >= 6
     case XK_KP_End :
+#endif
       strcpy(kbuf,"\033[F");
       count = 3;
       break;
@@ -881,7 +891,9 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
       count = 4;
       break;
     case XK_Insert :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Insert :
+#endif
       strcpy(kbuf,"\033[2~");
       count = 4;
       break;
@@ -894,12 +906,16 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount, unsigned char qt_c)
       count = 4;
       break;
     case XK_Prior :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Prior :
+#endif
       strcpy(kbuf,"\033[5~");
       count = 4;
       break;
     case XK_Next :
+#if XlibSpecificationRelease >= 6
     case XK_KP_Next :
+#endif
       strcpy(kbuf,"\033[6~");
       count = 4;
       break;

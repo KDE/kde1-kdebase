@@ -4,6 +4,7 @@ since kvt-0.18:
   - mouse selection more xterm-like	
   - alpha patches (Uwe Thiem)
   - patchlevel 1 to clearify upload confusions due to demeter.
+  - compiles under X11R5 again (Juergen Schumacher)
 
 
 since kvt-0.17:
