@@ -6,7 +6,7 @@
  * Requires the Qt widget libraries, available at no cost at
  * http://www.troll.no/
  *
- * Licensing issues to solve, fast (will be GPL or - more likely - Artistic) 
+ * Licensing issues to solve, fast (will be GPL or - more likely - Artistic)
  *
  */
 
@@ -117,7 +117,7 @@ KAdvancedConfig::KAdvancedConfig(QWidget * parent, const char *name)
   ifLabel->adjustSize();
   ifLabel->setMinimumSize(ifLabel->size());
   chkLay->addMultiCellWidget(ifLabel,3,3,1,4);
-  
+
   tList = new myListBrowser(klocale->translate("Titles"),filterBox,"tList");
   tList->adjustSize();
   tList->setMinimumSize(tList->size());
@@ -135,7 +135,7 @@ KAdvancedConfig::KAdvancedConfig(QWidget * parent, const char *name)
   lay->activate();
 
   loadSettings();
-  
+
 }
 
 void KAdvancedConfig::filterSelected(int item) {
@@ -198,9 +198,9 @@ void KAdvancedConfig::loadSettings() {
   key = config->readEntry(B3GRAB, "on");
   setB3Grab( key == "on" );
 
-  key = config->readEntry(AT_MODE, "kde");
+  key = config->readEntry(AT_MODE, "KDE");
 
-  if (key == "cde") setATMode( ATM_CDE );
+  if (key == "CDE") setATMode( ATM_CDE );
   else setATMode( ATM_KDE );
 
   config->setGroup( "Decoration" );
@@ -235,10 +235,10 @@ void KAdvancedConfig::saveSettings() {
   config->writeEntry(CTRLTAB,getCtrlTab()?"on":"off");
   config->writeEntry(TRALL,getTrAll()?"on":"off");
   config->writeEntry(B3GRAB,getB3Grab()?"on":"off");
-  config->writeEntry(AT_MODE,(getATMode() == ATM_KDE)?"kde":"cde");
+  config->writeEntry(AT_MODE,(getATMode() == ATM_KDE)?"KDE":"CDE");
 
   config->setGroup( "Decoration" );
-  
+
   config->writeEntry(TDECORTTL,lists[L_TDECTTL]);
   config->writeEntry(TDECORCLS,lists[L_TDECCLS]);
   config->writeEntry(NDECORTTL,lists[L_NDECTTL]);
@@ -288,13 +288,13 @@ myListBrowser::myListBrowser(const char *title, QWidget *parent, const char *nam
   lay->setColStretch(0,1);
   lay->setColStretch(1,0);
   lay->setColStretch(2,0);
-  
+
   bEdit = new QLineEdit(browserBox, "tEdit");//?
   bEdit->adjustSize();
   bEdit->setMinimumSize(bEdit->size());
   lay->addWidget(bEdit,1,0);
 
-  connect(bEdit, SIGNAL(textChanged(const char *)), 
+  connect(bEdit, SIGNAL(textChanged(const char *)),
 	  this, SLOT(bEditChanged(const char *)));
 
   bAdd = new QPushButton("+",browserBox);
@@ -320,7 +320,7 @@ myListBrowser::myListBrowser(const char *title, QWidget *parent, const char *nam
   bList->adjustSize();
   bList->setMinimumSize(bList->size());
   lay->addMultiCellWidget(bList,3,3,0,2);
-  
+
   bList->setMultiSelection(FALSE);
   bList->clearSelection();
   connect(bList, SIGNAL(selected(int)), this, SLOT(itemSelected()));
@@ -333,7 +333,7 @@ myListBrowser::myListBrowser(const char *title, QWidget *parent, const char *nam
   genLay->activate();
 
 }
-  
+
 void myListBrowser::setEnabled(bool a) {
   /* bAdd->setEnabled(a);
      bDel->setEnabled(a);
@@ -349,14 +349,14 @@ void myListBrowser::setEnabled(bool a) {
 }
 
 void myListBrowser::feedList(const QStrList *thisList) {
-  
+
   bList->clear();
-  
+
   bList->insertStrList(thisList);
 }
 
 void myListBrowser::bEditChanged(const char *a) {
-  bool not_empty = strcmp(a, ""); 
+  bool not_empty = strcmp(a, "");
   bAdd->setEnabled(not_empty);
   bDel->setEnabled(not_empty);
 }
@@ -374,7 +374,7 @@ void myListBrowser::deleteIt() {
   bList->removeItem(bList->currentItem());
   bList->clearSelection();
 }
-  
+
 void myListBrowser::itemSelected() {
   bAdd->setEnabled(TRUE);
   bDel->setEnabled(TRUE);
