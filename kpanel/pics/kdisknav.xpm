@@ -4,8 +4,8 @@
 static char*kdisknav[]={
 "32 32 15 1",
 "e c #ffa858",
-"j c #a0a0a0",
-"l c #c3c3c3",
+"j c #a0a0a4",
+"l c #c0c0c0",
 "d c #c0c000",
 "m c #808000",
 "a c #404000",

@@ -7,7 +7,7 @@ static char *desktop2[] = {
 "# c #c0c0c0",
 "a c #ffffff",
 "b c #808080",
-"c c #a0a0a0",
+"c c #a0a0a4",
 "d c #000080",
 "e c #008080",
 "f c #0000be",

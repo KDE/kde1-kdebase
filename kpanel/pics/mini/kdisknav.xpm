@@ -2,8 +2,8 @@
 static char*kdisknavb[]={
 "16 16 12 1",
 "f c #ffa858",
-"j c #a0a0a0",
-"i c #c3c3c3",
+"j c #a0a0a4",
+"i c #c0c0c0",
 "c c #808000",
 "# c #404000",
 "d c #000000",

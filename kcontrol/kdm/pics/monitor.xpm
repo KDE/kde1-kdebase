@@ -2,7 +2,7 @@
 static char*monitor[]={
 "200 160 7 1",
 "d c #808080",
-"b c #c3c3c3",
+"b c #c0c0c0",
 "e c #00ff00",
 ". c None",
 "c c #585858",
