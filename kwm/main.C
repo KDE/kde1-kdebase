@@ -205,7 +205,7 @@ bool focus_grabbed(){
   return minicli?minicli->isVisible():False;
 }
 
-void show_minicli(){
+void showMinicli(){
   if (!minicli){
     minicli = new Minicli(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
   }
@@ -246,7 +246,7 @@ static void showLogout(){
   while (!klogout->do_grabbing());
 }
 
-static void showTask(){
+void showTask(){
   if (!ktask){
     ktask = new Ktask(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     // next is a dirty hack to fix a qt-1.2 bug 
@@ -1033,7 +1033,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
   
   if( (kc == XK_F2)  && (km == Mod1Mask) ){
     freeKeyboard(False);
-    show_minicli();
+    showMinicli();
     return False;
   }    
 

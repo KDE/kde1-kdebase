@@ -42,7 +42,8 @@ extern bool ignore_badwindow; // for the X error handler
 extern bool initting;
 
 extern bool focus_grabbed();
-extern void show_minicli();
+extern void showMinicli();
+extern void showTask();
 
 Manager::Manager(): QObject(){
   manager = this;
@@ -366,37 +367,99 @@ void Manager::clientMessage(XEvent*  ev){
       darkenScreen();
     else if (com == "logout")
       logout();
-    else if (com == "execute")
-      show_minicli();
+    else if (com == "commandLine")
+      showMinicli();
+    else if (com == "taskManager")
+      showTask ();
     else if (com == "configure"){
       emit reConfigure();
       Client* t;
       for (t = clients_sorted.first(); t; t=clients_sorted.next())
 	t->reconfigure();
     }
+    else if (com == "winMove") {
+      if (current())
+	current()->handleOperationsPopup(OP_MOVE);
+    }
+    else if (com == "winResize") {
+      if (current())
+	current()->handleOperationsPopup(OP_RESIZE);
+    }
+    else if (com == "winRestore") {
+      if (current())
+	current()->handleOperationsPopup(OP_RESTORE);
+    }
+    else if (com == "winIconify") {
+      if (current())
+	current()->handleOperationsPopup(OP_ICONIFY);
+    }
+    else if (com == "winClose") {
+      if (current())
+	current()->handleOperationsPopup(OP_CLOSE);
+    }
+    else if (com == "winSticky") {
+      if (current())
+	current()->handleOperationsPopup(OP_STICKY);
+    }
+    else if (com == "desktop1") {
+      switchDesktop(1);
+    }
+    else if (com == "desktop1") {
+      switchDesktop(1);
+    }
+    else if (com == "desktop2") {
+      switchDesktop(2);
+    }
+    else if (com == "desktop3") {
+      switchDesktop(3);
+    }
+    else if (com == "desktop4") {
+      switchDesktop(4);
+    }
+    else if (com == "desktop5") {
+      switchDesktop(5);
+    }
+    else if (com == "desktop6") {
+      switchDesktop(6);
+    }
+    else if (com == "desktop7") {
+      switchDesktop(7);
+    }
+    else if (com == "desktop8") {
+      switchDesktop(8);
+    }
+    else if (com == "desktop+1") {
+      int d = current_desktop + 1;
+      if (d > number_of_desktops)
+	d -= number_of_desktops;
+      switchDesktop(d);
+    }
+    else if (com == "desktop+2") {
+      int d = current_desktop + 2;
+      if (d > number_of_desktops)
+	d -= number_of_desktops;
+      switchDesktop(d);
+    }
+    else if (com == "desktop-1") {
+      int d = current_desktop - 1;
+      if (d < 1)
+	d += number_of_desktops;
+      switchDesktop(d);
+    }
+    else if (com == "desktop+2") {
+      int d = current_desktop - 2;
+      if (d < 1)
+	d += number_of_desktops;
+      switchDesktop(d);
+    }
+    else if (com == "desktop%%2") {
+      if (current_desktop % 2 == 1)
+	switchDesktop(current_desktop + 1);
+      else
+	switchDesktop(current_desktop - 1);
+    }
     else {
-      // send unknown command to the modules
-//       XEvent ev;
-//       int status;
-//       long mask;
-//       memset(&ev, 0, sizeof(ev));
-//       ev.xclient.type = ClientMessage;
-//       ev.xclient.message_type = kwm_command;
-//       ev.xclient.format = 8;
-//       int i;
-//       const char* s = com.data();
-//       for (i=0;i<19 && s[i];i++)
-// 	ev.xclient.data.b[i]=s[i];
-//       mask = 0L;
-//       Window* mw;
-//       for (mw=modules.first(); mw; mw=modules.next()){
-// 	ev.xclient.window = *mw;
-// 	if (ev.xclient.window == qt_xrootwin())
-// 	  mask = SubstructureRedirectMask;
-// 	status = XSendEvent(qt_xdisplay(), ev.xclient.window, 
-// 			    False, mask, &ev);
-//       }
-
+      // forward unknown command to the modules
       long mask = 0L;
       Window* mw;
       for (mw=modules.first(); mw; mw=modules.next()){

@@ -3,7 +3,7 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
-Version 0.10 patchlevel 18
+Version 0.10 patchlevel 24
 
 Please see the CHANGES file for detailed informations about the actual
 development and the history of kwm.
@@ -17,6 +17,8 @@ This document contains
   4) MOUSE CONTROL
   5) LOW LEVEL CONFIGURATION (kwmrc)
   6) COMMAND LINE OPTIONS
+  7) COMMANDS
+  8) SOUND EVENTS
 
 
 1) PREFACE
@@ -28,10 +30,9 @@ developers....)  please have a look into the generated kwmrc and the
 source code.
 
 For all programmers: check out kwm.h in libkdecore for lots of
-informations how to use kwm for your purposes. For modules the class
-KWMModuleApplication (maybe some day in libkdecore, at present used
-and defined by krootwm) is also a good example on how to write
-modules.
+informations about how to use kwm for your purposes. For modules the
+class KWMModuleApplication from libkdeui is also a good example on how
+to write modules.
 
 
 2) FAQ
@@ -171,10 +172,25 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     Button3Grab=on, off
     RstartProtocol=.... [default is "rstart -v"]
 
+    ShapeMode=off, on
+    ShapePixmapTop=<pixmap>
+    ShapePixmapBottom=<pixmap>
+    ShapePixmapLeft=<pixmap>
+    ShapePixmapRight=<pixmap>
+    ShapePixmapTopLeft=<pixmap>
+    ShapePixmapTopRight=<pixmap>
+    ShapePixmapBottomLeft=<pixmap>
+    ShapePixmapBottomRight=<pixmap>
+
+
     [session]
     proxyignore=xemacs,xterm,..., 
        List of WM_COMMANDS that should be ignore for session 
        management. Only for hackers!
+
+
+  The kwm sources include a subfolder "images", which contains
+  an example for the the shape extensions.
 
 
 6) COMMAND LINE OPTIONS
@@ -184,3 +200,55 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
 
  -nosession   (disables the restoration of the previous session.)
 
+
+
+7) COMMANDS
+===========
+
+You can send commands to kwm with either 
+
+    KWM::sendKWMCommand(QString) (in KDE applications)
+
+or
+
+    kwmcom <command>   (from the shell)
+
+
+This is especially of interest for kglobalshortcut developers.
+At present kwm understands the following commands:
+
+refreshScreen, darkenScreen, logout, commandLine, taskManager,
+configure, winMove, winResize, winRestore, winIconify, winClose,
+winSticky, desktop1, desktop2, desktop3, desktop4, desktop5,
+desktop6, desktop7, desktop8, desktop+1, desktop+2, 
+desktop-1, desktop-2, desktop%2
+
+The semantics of these commands should be obvious. Please note that
+the win* commands refer to the current (= active) window.  "desktop%2"
+toggles between an odd desktop and the next higher even number. That
+means between 1 and 2 or between 3 and 4.  This is useful to emulate
+"Up" and "Down" in a virtual n*2 matrix, which is used by the kde pager.
+"desktop+2" means "Right" then, "desktop-1" means "Left", respectively.
+
+
+		
+8) SOUND EVENTS
+===============
+
+kwm raises a couple of sound events, which can be used in a system
+sound module. 
+
+At present the following sound events are implemented:
+
+                  "Window Iconify"
+                  "Window DeIconify"
+                  "Window Maximize"
+                  "Window UnMaximize"
+                  "Window Sticky"
+                  "Window UnSticky"
+                  "Window New"
+                  "Window Delete"
+                  "Window New Trans"
+                  "Window Delete Trans"
+                  "Logout"
+                  "Logout Message"
