@@ -66,6 +66,15 @@ install:
 	$(INSTALL_DATA) pics/stop.xpm $(PICSDIR)
 	$(INSTALL_DATA) pics/stop_gray.xpm $(PICSDIR)
 
+uninstall:
+	rm -f $(BINDIR)/$(TARGET)
+	(cd doc && $(MAKE) uninstall)
+	rm -f $(CGIDIR)/helpsearch
+	rm -f $(CGIDIR)/helpindex
+	rm -f $(PICSDIR)/khtmlw_dnd.xpm
+	rm -f $(PICSDIR)/stop.xpm
+	rm -f $(PICSDIR)/stop_gray.xpm
+
 clean:
 	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS) $(TARGET)
 	cd index ; $(MAKE) clean; cd ..

@@ -72,7 +72,6 @@ clean: cleanroot
 
 install:
 	$(INSTALL_DIR) $(BINDIR)
-	$(INSTALL_DIR) $(LIBDIR)
 	(cd apps && $(MAKE) install)
 	(cd filetypes && $(MAKE) install)
 	$(INSTALL) $(TARGET) $(BINDIR)
@@ -80,11 +79,7 @@ install:
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
 	$(INSTALL_DATA) ./unpack $(BINDIR)
-	$(INSTALL_DATA) ./libkfm/libkfm.a $(LIBDIR)
-	$(INSTALL_DIR) $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/kfm.h $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/kfmclient_ipc.h $(KDEINC)
-	$(INSTALL_DATA) ./libkfm/ipc.h $(KDEINC)
+	(cd libkfm && $(MAKE) install)
 	(cd doc && $(MAKE) install)
 	(cd pics && $(MAKE) install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
@@ -92,6 +87,20 @@ install:
 	$(INSTALL_DIR) $(LIBDIR)/kfm/Desktop
 	$(INSTALL_DIR) $(LIBDIR)/kfm/Desktop/Templates
 	(cd Desktop && $(MAKE) install)
+
+uninstall:
+	(cd apps && $(MAKE) uninstall)
+	(cd filetypes && $(MAKE) uninstall)
+	rm -f $(BINDIR)/$(TARGET)
+	rm -f $(BINDIR)/setupKFM
+	rm -f $(BINDIR)/kioslave
+	rm -f $(BINDIR)/kfmclient
+	rm -f $(BINDIR)/unpack
+	(cd libkfm && $(MAKE) uninstall)
+	(cd doc && $(MAKE) uninstall)
+	(cd pics && $(MAKE) uninstall)
+	rm -f $(LIBDIR)/kfm/config/kfmrc
+	(cd Desktop && $(MAKE) uninstall)
 
 IPC:    clientIPC kioIPC
 

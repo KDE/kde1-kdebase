@@ -51,7 +51,7 @@ x_libraries = @x_libraries@
 all_includes = @all_includes@
 all_libraries = @all_libraries@
 
-SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kview kwm kwmclient kpaint kcalc @KSCREEN@ pics apps
+SUBDIRS =  kacli kfm kdehelp kdisplay kedit kfind kghostview kmines kpanel kpat ktetris kview kwm kwmclient kpaint kcalc @KSCREEN@ pics 
 
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 CONFIG_HEADER_IN = config.h.in
@@ -115,14 +115,7 @@ kdebase: libraries apps install
 
 all: apps
 
-allold: 
-	@echo ""
-	@echo "Type 'make kdebase' to build and install everything"
-	@echo "It is not needed to 'make install', since everything"
-	@echo "is installed right in the build process"
-	@echo ""
-
-.PHONY: default libraries apps default
+.PHONY: default libraries apps 
 
 libraries: 
 	@INSTALL@ -d -m 0755 $(incdir)
@@ -146,7 +139,6 @@ install:
 	$(mkinstalldirs) $(incdir)
 	@INSTALL_DATA@ config.h $(incdir)
 	@for subdir in $(SUBDIRS); do \
-	target=`echo $@ | sed s/-recursive//`; \
 	echo "Making app in $$subdir"; \
 	(cd $$subdir && $(MAKE) install) \
 	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
@@ -154,7 +146,7 @@ install:
 		@echo ""
 	@echo ""
 	@echo ""
-	@echo "*************** Important *******************"
+	@echo "*************** Important *************************"
 	@echo ""
 	@echo " set KDEDIR to "$(prefix)
 	@echo " add "$(libdir)" to your LD_LIBRARY_PATH"
@@ -163,8 +155,16 @@ install:
 	@echo ""
 	@echo "Please report bugs to the mailing list kde@kde.org"
 	@echo ""
-	@echo "**********************************************"
+	@echo "****************************************************"
 	@echo ""
+
+uninstall:
+	@for subdir in $(SUBDIRS); do \
+	echo "Making app in $$subdir"; \
+	(cd $$subdir && $(MAKE) uninstall) \
+	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
+	done && test -z "$$fail"
+		@echo ""
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

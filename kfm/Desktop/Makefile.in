@@ -25,5 +25,10 @@ install:
 	$(INSTALL_DIR) $(TEMPLATEDIR)
 	@for i in $(DESKTOPLNKS); do \
 	 echo "$(INSTALL_DATA) $$i $(TEMPLATEDIR)"; \
-	 $(INSTALL_DATA) "$$i" $(TEMPLATEDIR); \
+	 $(INSTALL_DATA) "$$i" $(TEMPLATEDIR)/"$$i"; \
+	done
+
+uninstall:
+	for i in $(DESKTOPLNKS); do \
+	 rm -f $(TEMPLATEDIR)/"$$i"; \
 	done

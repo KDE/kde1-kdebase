@@ -109,6 +109,11 @@ install-shadow:
 	[ -d $(BINDIR) ] || $(INSTALL_DIR) $(BINDIR)
 	$(INSTALL_STICKY) $(TARGETS) $(BINDIR)
 
+uninstall:
+	for i in $(TARGETS); do \
+	 rm -f $(BINDIR)/$$i; \
+	done
+
 clean:
 	-rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS) $(TARGETS)
 

@@ -5,9 +5,9 @@ prefix = @prefix@
 libdir = $(prefix)/lib
 
 all:
-	
+
 clean:
-	
+
 install:
 	$(INSTALL_DIR) $(libdir)/pics
 	@for i in $(PICS); do \
@@ -15,3 +15,7 @@ install:
 	 $(INSTALL_DATA) "$$i" $(libdir)/pics/$$i; \
 	done
 
+uninstall:
+	for i in $(PICS); do \
+	 rm -f $(libdir)/pics/"$$i" ; \
+	done
