@@ -1,23 +1,3 @@
-/*
-   Copyright (C) 1998, 1999 Jochen Wilhelmy
-                            digisnap@cs.tu-berlin.de
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
-    License as published by the Free Software Foundation; either
-    version 2 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
-
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to
-    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-    Boston, MA 02111-1307, USA.
-*/
-
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -26,17 +6,16 @@
 #include <qwidget.h>
 #include <qfont.h>
 #include <qpainter.h>
-#include <qmessagebox.h>
+#include <qkeycode.h>
+#include <qmsgbox.h>
 #include <qpixmap.h>
-#include <qfileinfo.h>
+#include <qfileinf.h>
 #include <qfile.h>
 #include <qdir.h>
-#include <qprinter.h>
-#include <qprintdialog.h>
-#include <qpaintdevicemetrics.h>
-#include <kapp.h>
 
+#include <kapp.h>
 #include <kfiledialog.h>
+
 #include <kdir.h>
 
 #include <X11/Xlib.h> //used to have XSetTransientForHint()
@@ -51,12 +30,8 @@
 #ifndef _PATH_TMP
 #define _PATH_TMP "/tmp/"
 #endif
-/*
-int keys[] = {Qt::Key_1,Qt::Key_2,Qt::Key_3,Qt::Key_4,Qt::Key_5,
-	      Qt::Key_6,Qt::Key_7,Qt::Key_8,Qt::Key_9};
-*/
-//int keys[] = {Key_1,Key_2,Key_3,Key_4,Key_5,
-//	      Key_6,Key_7,Key_8,Key_9};
+
+int keys[] = {Key_1,Key_2,Key_3,Key_4,Key_5,Key_6,Key_7,Key_8,Key_9};
 
 struct BufferInfo {
   void *user;
@@ -138,158 +113,21 @@ KWriteView::KWriteView(KWrite *write, KWriteDoc *doc) : QWidget(write) {
   cursorTimer = 0;
   cXPos = 0;
   cOldXPos = 0;
+  exposeCursor = false;
 
   startLine = 0;
-  endLine = -1;
-
-  exposeCursor = false;
+  endLine = 0;
   updateState = 0;
-  numLines = 0;
-  lineRanges = 0L;
-  newXPos = -1;
-  newYPos = -1;
 
   drawBuffer = getBuffer(this);
-
-  bm.sXPos = 0;
-  bm.eXPos = -1;
 
   doc->registerView(this);
 }
 
 KWriteView::~KWriteView() {
   kWriteDoc->removeView(this);
-  delete [] lineRanges;
   releaseBuffer(this);
 }
-
-
-void KWriteView::doCursorCommand(VConfig &c, int cmdNum) {
-
-  switch (cmdNum) {
-    case cmLeft:
-      cursorLeft(c);
-      break;
-    case cmRight:
-      cursorRight(c);
-      break;
-    case cmWordLeft:
-      wordLeft(c);
-      break;
-    case cmWordRight:
-      wordRight(c);
-      break;
-    case cmHome:
-      home(c);
-      break;
-    case cmEnd:
-      end(c);
-      break;
-    case cmUp:
-      cursorUp(c);
-      break;
-    case cmDown:
-      cursorDown(c);
-      break;
-    case cmScrollUp:
-      scrollUp(c);
-      break;
-    case cmScrollDown:
-      scrollDown(c);
-      break;
-    case cmTopOfView:
-      topOfView(c);
-      break;
-    case cmBottomOfView:
-      bottomOfView(c);
-      break;
-    case cmPageUp:
-      pageUp(c);
-      break;
-    case cmPageDown:
-      pageDown(c);
-      break;
-    case cmCursorPageUp:
-      cursorPageUp(c);
-      break;
-    case cmCursorPageDown:
-      cursorPageDown(c);
-      break;
-    case cmTop:
-      top(c);
-      break;
-    case cmBottom:
-      bottom(c);
-      break;
-  }
-}
-
-void KWriteView::doEditCommand(VConfig &c, int cmdNum) {
-
-  switch (cmdNum) {
-    case cmReturn:
-      if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
-        kWriteDoc->delMarkedText(c);
-      kWriteDoc->newLine(c);
-      //emit returnPressed();
-      //e->ignore();
-      break;
-    case cmDelete:
-      if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
-        kWriteDoc->delMarkedText(c);
-      else kWriteDoc->del(c);
-      break;
-    case cmBackspace:
-      if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
-        kWriteDoc->delMarkedText(c);
-      else kWriteDoc->backspace(c);
-      break;
-    case cmKillLine:
-      kWriteDoc->killLine(c);
-      break;
-    case cmCut:
-      kWriteDoc->cut(c);
-      break;
-    case cmCopy:
-      kWriteDoc->copy(c.flags);
-      break;
-    case cmPaste:
-      if (c.flags & cfDelOnInput) kWriteDoc->delMarkedText(c);
-      kWriteDoc->paste(c);
-      break;
-/*    case cmFind:
-      break;
-    case cmReplace:
-      break;
-    case cmFindAgain:
-      break;
-    case cmGotoLine:
-      break;     */
-    case cmUndo:
-      kWriteDoc->undo(c);
-      break;
-    case cmRedo:
-      kWriteDoc->redo(c);
-      break;
-    case cmIndent:
-      kWriteDoc->indent(c);
-      break;
-    case cmUnindent:
-      kWriteDoc->unIndent(c);
-      break;
-    case cmSelectAll:
-      kWriteDoc->selectAll();
-      break;
-    case cmDeselectAll:
-      kWriteDoc->deselectAll();
-      break;
-    case cmInvertSelection:
-      kWriteDoc->invertSelection();
-      break;
-  }
-}
-
-
 
 void KWriteView::cursorLeft(VConfig &c) {
 
@@ -316,17 +154,26 @@ void KWriteView::cursorRight(VConfig &c) {
   update(c);
 }
 
-void KWriteView::wordLeft(VConfig &c) {
 
-  kWriteDoc->wordLeft(cursor);
-  cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
+void KWriteView::cursorUp(VConfig &c) {
+
+  cursor.y--;
+  cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
   update(c);
 }
 
-void KWriteView::wordRight(VConfig &c) {
-
-  kWriteDoc->wordRight(cursor);
-  cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
+void KWriteView::cursorDown(VConfig &c) {
+  int x;
+  
+  if (cursor.y == kWriteDoc->lastLine()) {
+    x = kWriteDoc->textLength(cursor.y);
+    if (cursor.x >= x) return;
+    cursor.x = x;
+    cXPos = kWriteDoc->textWidth(cursor);
+  } else {
+    cursor.y++;
+    cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
+  }  
   update(c);
 }
 
@@ -344,92 +191,15 @@ void KWriteView::end(VConfig &c) {
   update(c);
 }
 
-void KWriteView::cursorUp(VConfig &c) {
-
-  cursor.y--;
-  cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
-  update(c);
-}
-
-void KWriteView::cursorDown(VConfig &c) {
-  int x;
-
-  if (cursor.y == kWriteDoc->lastLine()) {
-    x = kWriteDoc->textLength(cursor.y);
-    if (cursor.x >= x) return;
-    cursor.x = x;
-    cXPos = kWriteDoc->textWidth(cursor);
-  } else {
-    cursor.y++;
-    cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
-  }
-  update(c);
-}
-
-void KWriteView::scrollUp(VConfig &c) {
-
-  newYPos = yPos - kWriteDoc->fontHeight;
-  if (newYPos < 0) newYPos = 0;
-  if (cursor.y == (yPos + height())/kWriteDoc->fontHeight -1) {
-    cursor.y--;
-    cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
-  }
-  update(c);
-}
-
-void KWriteView::scrollDown(VConfig &c) {
-
-  newYPos = yPos + kWriteDoc->fontHeight;
-  if (cursor.y == (yPos + kWriteDoc->fontHeight -1)/kWriteDoc->fontHeight) {
-    cursor.y++;
-    cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
-  }
-  update(c);
-}
-
-void KWriteView::topOfView(VConfig &c) {
-
-  cursor.y = (yPos + kWriteDoc->fontHeight -1)/kWriteDoc->fontHeight;
-  cursor.x = 0;
-  cOldXPos = cXPos = 0;
-  update(c);
-}
-
-void KWriteView::bottomOfView(VConfig &c) {
-
-  cursor.y = (yPos + height())/kWriteDoc->fontHeight -1;
-  if (cursor.y < 0) cursor.y = 0;
-  cursor.x = 0;
-  cOldXPos = cXPos = 0;
-  update(c);
-}
-
 void KWriteView::pageUp(VConfig &c) {
-
-  if (yPos > 0) {
-    newYPos = yPos - (endLine - startLine)*kWriteDoc->fontHeight;
-    if (newYPos < 0) newYPos = 0;
-  }
-  cursorPageUp(c);
-}
-
-void KWriteView::pageDown(VConfig &c) {
-
-  if (endLine < kWriteDoc->lastLine()) {
-    newYPos = yPos + (endLine - startLine)*kWriteDoc->fontHeight;
-  }
-  cursorPageDown(c);
-}
-
-void KWriteView::cursorPageUp(VConfig &c) {
 
   cursor.y -= endLine - startLine;
   cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
   update(c);
 }
 
-void KWriteView::cursorPageDown(VConfig &c) {
-
+void KWriteView::pageDown(VConfig &c) {
+  
   cursor.y += endLine - startLine;
   cXPos = kWriteDoc->textWidth(c.flags & cfWrapCursor,cursor,cOldXPos);
   update(c);
@@ -457,7 +227,7 @@ void KWriteView::changeXPos(int p) {
 
   dx = xPos - p;
   xPos = p;
-  if (QABS(dx) < width()) scroll(dx, 0); else QWidget::update();
+  if (QABS(dx) < width()) scroll(dx,0); else QWidget::update();
 }
 
 void KWriteView::changeYPos(int p) {
@@ -465,16 +235,15 @@ void KWriteView::changeYPos(int p) {
 
   dy = yPos - p;
   yPos = p;
-  lineValues(height());
-  if (QABS(dy) < height()) scroll(0, dy); else QWidget::update();
+  startLine = yPos / kWriteDoc->fontHeight;
+  endLine = (yPos + height() -1) / kWriteDoc->fontHeight;
+  if (QABS(dy) < height()) scroll(0,dy); else QWidget::update();
 }
 
 
 void KWriteView::getVConfig(VConfig &c) {
 
-  c.view = this;
   c.cursor = cursor;
-  c.cXPos = cXPos;
   c.flags = kWrite->configFlags;
   c.wrapAt = kWrite->wrapAt;
 }
@@ -483,33 +252,72 @@ void KWriteView::getVConfig(VConfig &c) {
 
 void KWriteView::update(VConfig &c) {
 
-  if (cursor.x == c.cursor.x && cursor.y == c.cursor.y) return;
-  kWriteDoc->unmarkFound();
-  
-  exposeCursor = true;
-  if (cursorOn) {
-//    tagLines(c.cursor.y, c.cursor.y, c.cXPos -2, c.cXPos +3);
-    tagLines(c.cursor.y, c.cursor.y, 0, 0xffffff);
-    cursorOn = false;
-  }
+// still exposeCursor and deselectAll(), even if no net cursor movement
+//  if (cursor.x == c.cursor.x && cursor.y == c.cursor.y) return;
+  bool moot = (cursor.x == c.cursor.x && cursor.y == c.cursor.y);
 
-  if (bm.sXPos < bm.eXPos) {
-    tagLines(bm.cursor.y, bm.cursor.y, bm.sXPos, bm.eXPos);
+  if (! moot) {
+    exposeCursor = true;
+    kWriteDoc->unmarkFound();
+    if (cursorOn) {
+      tagLines(c.cursor.y,c.cursor.y);
+      cursorOn = false;
+    }
   }
-  kWriteDoc->newBracketMark(cursor, bm);
 
   if (c.flags & cfMark) {
-    kWriteDoc->selectTo(c, cursor, cXPos);
+    if (! moot)
+      kWriteDoc->selectTo(c.cursor,cursor,c.flags);
   } else {
     if (!(c.flags & cfPersistent)) kWriteDoc->deselectAll();
   }
 }
 
+/*
+void KWriteView::updateCursor(PointStruc &start, PointStruc &end, bool insert) {
+  int dy;
+  PointStruc oldCursor;
+
+  oldCursor = cursor;
+  dy = end.y - start.y;
+
+  if (cursor.y > start.y) {
+    cursor.y += dy;
+  } else if (cursor.y == start.y && cursor.x >= start.x) {
+    cursor.y += dy;
+    cursor.x += end.x - start.x;
+  } else if (cursor.y > end.y || (cursor.y == end.y && cursor.x > end.x)) {
+    cursor.y = end.y;
+    cursor.x = end.x;
+  }
+
+  if (cursor.x != oldCursor.x || cursor.y != oldCursor.y) {
+    exposeCursor = true;
+    cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
+  }
+
+  if (insert) {
+    if (start.y < startLine && end.y < startLine) {
+      startLine += dy;
+      endLine += dy;
+      yPos += dy*kWriteDoc->fontHeight;
+    } else if (start.y <= endLine || end.y <= endLine) {
+      if (dy == 0) {
+        if (start.y == cursor.y) cursorOn = false;
+        tagLines(start.y,start.y);
+      } else tagAll();
+    }
+  } else {
+    if (dy >= 0) tagLines(start.y,end.y); else tagLines(end.y,start.y);
+  }
+}
+*/
 void KWriteView::insLine(int line) {
 
   if (line <= cursor.y) {
     cursor.y++;
-  }
+//    cursorMoved = true;
+  }  
   if (line < startLine) {
     startLine++;
     endLine++;
@@ -560,113 +368,14 @@ void KWriteView::updateCursor(PointStruc &newCursor) {
 
   exposeCursor = true;
   if (cursorOn) {
-    tagLines(cursor.y, cursor.y, cXPos -2, cXPos +3);
+    tagLines(cursor.y,cursor.y);
     cursorOn = false;
   }
-
-  if (bm.sXPos < bm.eXPos) {
-    tagLines(bm.cursor.y, bm.cursor.y, bm.sXPos, bm.eXPos);
-  }
-  kWriteDoc->newBracketMark(newCursor, bm);
-
   cursor = newCursor;
   cOldXPos = cXPos = kWriteDoc->textWidth(cursor);
 }
 
-
-void KWriteView::lineValues(int h) {
-  int lines, z;
-
-  startLine = yPos/kWriteDoc->fontHeight;
-  endLine = (yPos + h -1)/kWriteDoc->fontHeight;
-
-  updateState = 0;
-
-  lines = endLine - startLine +1;
-  if (lines > numLines) {
-    numLines = lines*2;
-    delete [] lineRanges;
-    lineRanges = new LineRange[numLines];
-  }
-
-  for (z = 0; z < lines; z++) {
-    lineRanges[z].start = 0xffffff;
-    lineRanges[z].end = -2;
-  }
-  newXPos = newYPos = -1;
-}
-
-void KWriteView::tagLines(int start, int end, int x1, int x2) {
-  LineRange *r;
-  int z;
-
-  start -= startLine;
-  if (start < 0) start = 0;
-  end -= startLine;
-  if (end > endLine - startLine) end = endLine - startLine;
-
-  if (x1 == 0) x1 = -2;
-  if (x1 < xPos-2) x1 = xPos-2;
-  if (x2 > width() + xPos-2) x2 = width() + xPos-2;
-  if (x1 >= x2) return;
-
-  r = &lineRanges[start];
-  for (z = start; z <= end; z++) {
-    if (x1 < r->start) r->start = x1;
-    if (x2 > r->end) r->end = x2;
-    r++;
-    updateState |= 1;
-  }
-}
-
-/*
-void KWriteView::tagLines(int start, int end) {
-  int line, z;
-
-  if (updateState < 3) {
-    if (start < startLine) start = startLine;
-    if (end > endLine) end = endLine;
-
-    if (end - start > 1) {
-      updateState = 3;
-    } else {
-      for (line = start; line <= end; line++) {
-        for (z = 0; z < updateState && updateLines[z] != line; z++);
-        if (z == updateState) {
-          updateState++;
-          if (updateState > 2) break;
-          updateLines[z] = line;
-        }
-      }
-    }
-  }
-}
-*/
-void KWriteView::tagAll() {
-  updateState = 3;
-}
-/*
-void KWriteView::clearTags() {
-  int z;
-
-  for (z = 0; z < numLines; z++) {
-    lineRanges[z].start = 0xffffff;
-    lineRanges[z].end = 0;
-  }
-}
-*/
-void KWriteView::setPos(int x, int y) {
-  newXPos = x;
-  newYPos = y;
-}
-
-void KWriteView::center() {
-  newXPos = 0;
-  newYPos = cursor.y*kWriteDoc->fontHeight - height()/2;
-  if (newYPos < 0) newYPos = 0;
-}
-
-void KWriteView::updateView(int flags) {
+void KWriteView::updateView(int flags, int newXPos, int newYPos) {
   int fontHeight;
   int oldXPos, oldYPos;
   int w, h;
@@ -677,12 +386,9 @@ void KWriteView::updateView(int flags) {
   int cXPosMin, cXPosMax, cYPosMin, cYPosMax;
   int dx, dy;
 
-//printf("upView %d %d %d %d %d\n", exposeCursor, updateState, flags, newXPos, newYPos);
   if (exposeCursor || flags & ufDocGeometry) {
     emit kWrite->newCurPos();
-  } else {
-    if (updateState == 0 && newXPos < 0 && newYPos < 0) return;
-  }
+  } else if (updateState == 0) return;
 
   if (cursorTimer) {
     killTimer(cursorTimer);
@@ -692,13 +398,11 @@ void KWriteView::updateView(int flags) {
 
   oldXPos = xPos;
   oldYPos = yPos;
-/*  if (flags & ufPos) {
+  if (flags & ufPos) {
     xPos = newXPos;
     yPos = newYPos;
-    exposeCursor = true;
-  }*/
-  if (newXPos >= 0) xPos = newXPos;
-  if (newYPos >= 0) yPos = newYPos;
+    exposeCursor = true;//false;
+  }
 
   fontHeight = kWriteDoc->fontHeight;
   cYPos = cursor.y*fontHeight;
@@ -794,11 +498,10 @@ void KWriteView::updateView(int flags) {
     yScroll->show();
   } else yScroll->hide();
 
-  //startLine = yPos / fontHeight;
-  //endLine = (yPos + h -1) / fontHeight;
+  startLine = yPos / fontHeight;
+  endLine = (yPos + h -1) / fontHeight;
 
   if (w != width() || h != height()) {
-    lineValues(h);
     resize(w,h);
   } else {
     dx = oldXPos - xPos;
@@ -812,24 +515,19 @@ void KWriteView::updateView(int flags) {
     }
 
     if (b) {
-      lineValues(h);
       QWidget::update();
     } else {
-      if (updateState > 0) paintTextLines(oldXPos, oldYPos);
-      lineValues(h);
+      if (updateState > 0) paintTextLines(oldXPos,oldYPos);
 
       if (dx || dy) {
         scroll(dx,dy);
 //        kapp->syncX();
 //        scroll2(dx - dx/2,dy - dy/2);
-      } else {
-        if (cursorOn) paintCursor();
-        if (bm.eXPos > bm.sXPos) paintBracketMark();
-      }
+      } else if (cursorOn) paintCursor();
     }
   }
   exposeCursor = false;
-//  updateState = 0;
+  updateState = 0;
 }
 
 /*
@@ -863,29 +561,40 @@ usleep(100000);
 //}
 
 
+void KWriteView::tagLines(int start, int end) {
+  int line, z;
 
+  if (updateState < 3) {
+    if (start < startLine) start = startLine;
+    if (end > endLine) end = endLine;
+
+    if (end - start > 1) {
+      updateState = 3;
+    } else {
+      for (line = start; line <= end; line++) {
+        for (z = 0; z < updateState && updateLines[z] != line; z++);
+        if (z == updateState) {
+          updateState++;
+          if (updateState > 2) break;
+          updateLines[z] = line;
+        }
+      }
+    }
+  }
+}
+
+void KWriteView::tagAll() {
+  updateState = 3;
+}
 
 void KWriteView::paintTextLines(int xPos, int yPos) {
-//  int xStart, xEnd;
-  int line;//, z;
+  int xStart, xEnd;
+  int line, z;
   int h;
-  LineRange *r;
 
   QPainter paint;
   paint.begin(drawBuffer);
 
-  h = kWriteDoc->fontHeight;
-  r = lineRanges;
-  for (line = startLine; line <= endLine; line++) {
-    if (r->start < r->end) {
-//printf("painttextline %d %d %d\n", line, r->start, r->end);
-      kWriteDoc->paintTextLine(paint, line, r->start, r->end);
-      bitBlt(this, r->start - (xPos-2), line*h - yPos, drawBuffer, 0, 0,
-        r->end - r->start, h);
-    }
-    r++;
-  }
-/*
   xStart = xPos-2;
   xEnd = xStart + width();
   h = kWriteDoc->fontHeight;
@@ -893,7 +602,7 @@ void KWriteView::paintTextLines(int xPos, int yPos) {
     line = updateLines[z];
     kWriteDoc->paintTextLine(paint,line,xStart,xEnd);
     bitBlt(this,0,line*h - yPos,drawBuffer,0,0,width(),h);
-  }*/
+  }
   paint.end();
 }
 
@@ -921,19 +630,6 @@ void KWriteView::paintCursor() {
   paint.end();
 }
 
-void KWriteView::paintBracketMark() {
-  int y;
-
-  y = kWriteDoc->fontHeight*(bm.cursor.y +1) - yPos -1;
-
-  QPainter paint;
-  paint.begin(this);
-  paint.setPen(kWriteDoc->cursorCol(bm.cursor.x, bm.cursor.y));
-
-  paint.drawLine(bm.sXPos - (xPos-2), y, bm.eXPos - (xPos-2) -1, y);
-  paint.end();
-}
-
 void KWriteView::placeCursor(int x, int y, int flags) {
   VConfig c;
 
@@ -955,7 +651,7 @@ void KWriteView::focusInEvent(QFocusEvent *) {
 }
 
 void KWriteView::focusOutEvent(QFocusEvent *) {
-//  printf("lost focus %d\n", cursorTimer);
+//  printf("lost focus\n");
 
   if (cursorTimer) {
     killTimer(cursorTimer);
@@ -970,13 +666,12 @@ void KWriteView::focusOutEvent(QFocusEvent *) {
 
 void KWriteView::keyPressEvent(QKeyEvent *e) {
   VConfig c;
-//  int keyCode;
-  int ascii;
+  bool t;
 
-/*  if (e->state() & AltButton) {
+  if (e->state() & AltButton) {
     e->ignore();
     return;
-  }*/
+  }
 //  printf("ascii %i, key %i, state %i\n",e->ascii(), e->key(), e->state());
 
 /*
@@ -996,41 +691,144 @@ X      : cut
 */
 
   getVConfig(c);
-/*
-  keyCode = e->key();
-  if (e->state() & ShiftButton) keyCode |= SHIFT;
-  if (e->state() & ControlButton) keyCode |= CTRL;*/
-  ascii = e->ascii();
-/*
-  if (keyCode == Key_Enter || keyCode == Key_Return) {
-    doEditCommand(c, cmReturn);
-  } else if (keyCode == Key_Delete) {
-    doEditCommand(c, cmDelete);
-  } else if (keyCode == Key_Backspace) {
-    doEditCommand(c, cmBackspace);*/
-  if ((ascii >= 32 || ascii == '\t') && ascii != 127) {
+
+  if ((e->ascii() >= 32 || e->ascii() == '\t')
+    && e->key() != Key_Delete && e->key() != Key_Backspace) {
+//    printf("input %d\n",e->ascii());
     if (c.flags & cfDelOnInput) {
-      kWriteDoc->delMarkedText(c);
+      kWriteDoc->delMarkedText(this,c);
       getVConfig(c);
     }
-    kWriteDoc->insertChar(c, ascii);
-    kWriteDoc->updateViews();
-    e->accept();
+    kWriteDoc->insertChar(this,c,e->ascii());
   } else {
-    e->ignore();
-    //when not used with KGuiCommand
-    //command constants cmXxx are equal to default keycodes
-/*    doEditCommand(c, keyCode);
-    if (e->state() & ShiftButton) {
-      keyCode &= ~(SHIFT | CTRL);
-      c.flags |= cfMark;
-      if (e->state() & ControlButton) c.flags |= cfKeepSelection;
+    if (e->state() & ShiftButton) c.flags |= cfMark;
+
+    t = false;
+    if ( e->state() & ControlButton ) {
+      t = true;
+      switch ( e->key() ) {
+/*
+        case Key_A:
+        case Key_Left:
+            home(c);
+            break;
+        case Key_B:
+            cursorLeft(c);
+            break; */
+        case Key_Insert:
+//        case Key_C:
+            kWriteDoc->copy(c.flags);
+            break;
+/*        case Key_D:
+            kWriteDoc->del(c);
+            break;
+        case Key_E:
+        case Key_Right:
+            end(c);
+            break;
+        case Key_F:
+            cursorRight(c);
+            break;
+        case Key_H:
+            kWriteDoc->backspace(c);
+            break;   */
+        case Key_K:
+            kWriteDoc->killLine(this,c);
+            break;
+/*        case Key_N:
+            cursorDown(c);
+            break;
+        case Key_P:
+            cursorUp(c);
+            break;
+        case Key_V:
+            kWriteDoc->paste(c);
+            break;   */
+        case Key_Home:
+            top(c);
+            home(c);
+            break;
+        case Key_End:
+            bottom(c);
+            end(c);
+            break;
+        case Key_Delete:
+//        case Key_X:
+            kWriteDoc->cut(this,c);
+            break;
+//      case Key_Left:
+//          cursorLeft(c);
+//          break;
+//      case Key_Right:
+//          cursorRight(c);
+//          break;
+        case Key_Next:
+            bottom(c);
+            break;
+        case Key_Prior:
+            top(c);
+            break;
+        default:
+            t = false;
+      }
     }
-    doCursorCommand(c, keyCode);*/
+    if (!t) {
+      if (e->state() & ControlButton) c.flags |= cfMark | cfKeepSelection;
+      switch ( e->key() ) {
+        case Key_Left:
+            cursorLeft(c);
+            break;
+        case Key_Right:
+            cursorRight(c);
+            break;
+        case Key_Up:
+            cursorUp(c);
+            break;
+        case Key_Down:
+            cursorDown(c);
+            break;
+        case Key_Backspace:
+            kWriteDoc->backspace(this,c);
+            break;
+        case Key_Home:
+            home(c);
+            break;
+        case Key_End:
+            end(c);
+            break;
+        case Key_Delete:
+            if (e->state() & ShiftButton) kWriteDoc->cut(this,c);
+            else if ((c.flags & cfDelOnInput) && kWriteDoc->hasMarkedText())
+              kWriteDoc->delMarkedText(this,c);
+            else kWriteDoc->del(this,c);
+            break;
+        case Key_Next:
+            pageDown(c);
+            break;
+        case Key_Prior:
+            pageUp(c);
+            break;
+        case Key_Enter:
+        case Key_Return:
+            kWriteDoc->newLine(this,c);
+            //emit returnPressed();
+            //e->ignore();
+            break;
+        case Key_Insert:
+            if (e->state() & ShiftButton) kWriteDoc->paste(this,c);
+              else kWrite->toggleOverwrite();
+/*        case Key_F9:
+            printf("text() %s\n", kWrite->text().data());
+            break;
+        case Key_F10:
+            printf("currentWord() %s\n", kWrite->currentWord().data());
+            break;*/
+      }
+    }
   }
+  kWriteDoc->updateViews();
+  e->accept();
 }
-
-
 
 void KWriteView::mousePressEvent(QMouseEvent *e) {
 
@@ -1052,18 +850,9 @@ void KWriteView::mousePressEvent(QMouseEvent *e) {
     placeCursor(e->x(),e->y(),0);
     kWrite->paste();
   }
+//if (e->button() == RightButton) printf("word %s\n", kWrite->word(e->x(), e->y()).data());
   if (kWrite->popup && e->button() == RightButton) {
     kWrite->popup->popup(mapToGlobal(e->pos()));
-  }
-  kWrite->mousePressEvent(e);
-}
-
-void KWriteView::mouseDoubleClickEvent(QMouseEvent *e) {
-  if (e->button() == LeftButton) {
-    VConfig c;
-    getVConfig(c);
-    kWriteDoc->selectWord(c.cursor, c.flags);
-    kWriteDoc->updateViews();
   }
 }
 
@@ -1103,7 +892,7 @@ void KWriteView::mouseMoveEvent(QMouseEvent *e) {
       mouseY = height();
       scrollY = d;
     }
-//printf("modifiers %d\n", ((KGuiCmdApp *) kapp)->getModifiers());
+
     flags = cfMark;
     if (e->state() & ControlButton) flags |= cfKeepSelection;
     placeCursor(mouseX,mouseY,flags);
@@ -1141,14 +930,12 @@ void KWriteView::paintEvent(QPaintEvent *e) {
   }
   paint.end();
   if (cursorOn) paintCursor();
-  if (bm.eXPos > bm.sXPos) paintBracketMark();
 }
 
 void KWriteView::resizeEvent(QResizeEvent *) {
 //  printf("KWriteView::resize\n");
-  resizeBuffer(this, width(), kWriteDoc->fontHeight);
-//  QWidget::update();
-
+  resizeBuffer(this,width(),kWriteDoc->fontHeight);
+  QWidget::update();
 }
 
 void KWriteView::timerEvent(QTimerEvent *e) {
@@ -1175,7 +962,7 @@ KWrite::KWrite(KWriteDoc *doc, QWidget *parent, const char *name)
   kWriteView = new KWriteView(this,doc);
 
   configFlags = 0;
-  wrapAt = 79;
+  wrapAt = 78;
   searchFlags = 0;
   replacePrompt = 0L;
   kfm = 0L;
@@ -1183,95 +970,11 @@ KWrite::KWrite(KWriteDoc *doc, QWidget *parent, const char *name)
   bookmarks.setAutoDelete(true);
 
   kWriteView->setFocus();
-  resize(parent->width() -4, parent->height() -4);
 }
 
 KWrite::~KWrite() {
   delete kWriteView;
   delete popup; //right mouse button popup
-}
-
-
-void KWrite::addCursorCommands(KGuiCmdManager &cmdMngr) {
-  cmdMngr.addCategory(ctCursorCommands, "Cursor Movement");
-  cmdMngr.setSelectModifiers(SHIFT, selectFlag, ALT, multiSelectFlag);
-  cmdMngr.addCommand(cmLeft,            "Left"            , Key_Left, CTRL+Key_B);
-  cmdMngr.addCommand(cmRight,           "Right"           , Key_Right, CTRL+Key_F);
-  cmdMngr.addCommand(cmWordLeft,        "Word Left"       , CTRL+Key_Left);
-  cmdMngr.addCommand(cmWordRight,       "Word Right"      , CTRL+Key_Right);
-  cmdMngr.addCommand(cmHome,            "Home"            , Key_Home, CTRL+Key_A);
-  cmdMngr.addCommand(cmEnd,             "End"             , Key_End, CTRL+Key_E);
-  cmdMngr.addCommand(cmUp,              "Up"              , Key_Up, CTRL+Key_P);
-  cmdMngr.addCommand(cmDown,            "Down"            , Key_Down, CTRL+Key_N);
-  cmdMngr.addCommand(cmScrollUp,        "Scroll Up"       , CTRL+Key_Up);
-  cmdMngr.addCommand(cmScrollDown,      "Scroll Down"     , CTRL+Key_Down);
-  cmdMngr.addCommand(cmTopOfView,       "Top Of View"     , CTRL+Key_PageUp);
-  cmdMngr.addCommand(cmBottomOfView,    "Bottom Of View"  , CTRL+Key_PageDown);
-  cmdMngr.addCommand(cmPageUp,          "Page Up"         , Key_PageUp);
-  cmdMngr.addCommand(cmPageDown,        "Page Down"       , Key_PageDown);
-  cmdMngr.addCommand(cmCursorPageUp,    "Cursor Page Up"  );
-  cmdMngr.addCommand(cmCursorPageDown,  "Cursor Page Down");
-  cmdMngr.addCommand(cmTop,             "Top"             , CTRL+Key_Home);
-  cmdMngr.addCommand(cmBottom,          "Bottom"          , CTRL+Key_End);
-}
-
-void KWrite::addEditCommands(KGuiCmdManager &cmdMngr) {
-  cmdMngr.addCategory(ctEditCommands, "Edit Commands");
-  cmdMngr.addCommand(cmReturn,          "Return"           , Key_Return, Key_Enter);
-  cmdMngr.addCommand(cmDelete,          "Delete"           , Key_Delete, CTRL+Key_D);
-  cmdMngr.addCommand(cmBackspace,       "Backspace"        , Key_Backspace, CTRL+Key_H);
-  cmdMngr.addCommand(cmKillLine,        "Kill Line"        , CTRL+Key_K);
-  cmdMngr.addCommand(cmUndo,            "U&ndo"            , CTRL+Key_Z);
-  cmdMngr.addCommand(cmRedo,            "R&edo"            , CTRL+Key_Y);
-  cmdMngr.addCommand(cmCut,             "C&ut"             , CTRL+Key_X, SHIFT+Key_Delete);
-  cmdMngr.addCommand(cmCopy,            "&Copy"            , CTRL+Key_C, CTRL+Key_Insert);
-  cmdMngr.addCommand(cmPaste,           "&Paste"           , CTRL+Key_V, SHIFT+Key_Insert);
-  cmdMngr.addCommand(cmIndent,          "&Indent"          , CTRL+Key_I);
-  cmdMngr.addCommand(cmUnindent,        "Uninden&t"        , CTRL+Key_U);
-  cmdMngr.addCommand(cmSelectAll,       "&Select All"      );
-  cmdMngr.addCommand(cmDeselectAll,     "&Deselect All"    );
-  cmdMngr.addCommand(cmInvertSelection, "In&vert Selection");
-}
-
-void KWrite::addFindCommands(KGuiCmdManager &cmdMngr) {
-  cmdMngr.addCategory(ctFindCommands, "Find Commands");
-  cmdMngr.addCommand(cmFind,            "&Find..."         , CTRL+Key_F);
-  cmdMngr.addCommand(cmReplace,         "&Replace..."      , CTRL+Key_R);
-  cmdMngr.addCommand(cmFindAgain,       "Find &Again"      , Key_F3);
-  cmdMngr.addCommand(cmGotoLine,        "&Goto Line..."    , CTRL+Key_G);
-}
-
-void KWrite::addBookmarkCommands(KGuiCmdManager &cmdMngr) {
-  cmdMngr.addCategory(ctBookmarkCommands, "Bookmark Commands");
-  cmdMngr.addCommand(cmSetBookmark,       "&Set Bookmark...", ALT+Key_S);
-  cmdMngr.addCommand(cmAddBookmark,       "&Add Bookmark"   , ALT+Key_A);
-  cmdMngr.addCommand(cmClearBookmarks,    "&ClearBookmarks" , ALT+Key_C);
-  cmdMngr.addCommand(cmSetBookmarks +0,   "Set Bookmark 1"  );
-  cmdMngr.addCommand(cmSetBookmarks +1,   "Set Bookmark 2"  );
-  cmdMngr.addCommand(cmSetBookmarks +2,   "Set Bookmark 3"  );
-  cmdMngr.addCommand(cmSetBookmarks +3,   "Set Bookmark 4"  );
-  cmdMngr.addCommand(cmSetBookmarks +4,   "Set Bookmark 5"  );
-  cmdMngr.addCommand(cmSetBookmarks +5,   "Set Bookmark 6"  );
-  cmdMngr.addCommand(cmSetBookmarks +6,   "Set Bookmark 7"  );
-  cmdMngr.addCommand(cmSetBookmarks +7,   "Set Bookmark 8"  );
-  cmdMngr.addCommand(cmSetBookmarks +8,   "Set Bookmark 9"  );
-  cmdMngr.addCommand(cmSetBookmarks +9,   "Set Bookmark 10" );
-  cmdMngr.addCommand(cmGotoBookmarks +0,  "Goto Bookmark 1" , ALT+Key_1);
-  cmdMngr.addCommand(cmGotoBookmarks +1,  "Goto Bookmark 2" , ALT+Key_2);
-  cmdMngr.addCommand(cmGotoBookmarks +2,  "Goto Bookmark 3" , ALT+Key_3);
-  cmdMngr.addCommand(cmGotoBookmarks +3,  "Goto Bookmark 4" , ALT+Key_4);
-  cmdMngr.addCommand(cmGotoBookmarks +4,  "Goto Bookmark 5" , ALT+Key_5);
-  cmdMngr.addCommand(cmGotoBookmarks +5,  "Goto Bookmark 6" , ALT+Key_6);
-  cmdMngr.addCommand(cmGotoBookmarks +6,  "Goto Bookmark 7" , ALT+Key_7);
-  cmdMngr.addCommand(cmGotoBookmarks +7,  "Goto Bookmark 8" , ALT+Key_8);
-  cmdMngr.addCommand(cmGotoBookmarks +8,  "Goto Bookmark 9" , ALT+Key_9);
-  cmdMngr.addCommand(cmGotoBookmarks +9,  "Goto Bookmark 10", ALT+Key_0);
-}
-
-void KWrite::addStateCommands(KGuiCmdManager &cmdMngr) {
-  cmdMngr.addCategory(ctStateCommands, "State Commands");
-  cmdMngr.addCommand(cmToggleInsert,    "Insert Mode"         , Key_Insert);
-  cmdMngr.addCommand(cmToggleVertical,  "&Vertical Selections", Key_F5);
 }
 
 
@@ -1283,20 +986,13 @@ int KWrite::currentColumn() {
   return kWriteDoc->currentColumn(kWriteView->cursor);
 }
 
-int KWrite::currentCharNum() {
-  return kWriteView->cursor.x;
-}
-
 void KWrite::setCursorPosition(int line, int col) {
   PointStruc cursor;
 
   cursor.x = col;
   cursor.y = line;
   kWriteView->updateCursor(cursor);
-  kWriteView->center();
   kWriteDoc->unmarkFound();
-//  kWriteView->updateView(ufPos, 0, line*kWriteDoc->fontHeight - height()/2);
-//  kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
   kWriteDoc->updateViews();
 }
 
@@ -1368,49 +1064,25 @@ void KWrite::colDlg() {
   delete dlg;
 }
 
-void KWrite::doStateCommand(int cmdNum) {
-  switch (cmdNum) {
-    case cmToggleInsert:
-      toggleInsert();
-      return;
-    case cmToggleVertical:
-      toggleVertical();
-      return;
-  }
-}
-
-void KWrite::toggleInsert() {
-  setConfig(configFlags ^ cfOvr);
-}
-
 void KWrite::toggleVertical() {
   setConfig(configFlags ^ cfVerticalSelect);
   emit statusMsg(configFlags & cfVerticalSelect ? i18n("Vertical Selections On") : i18n("Vertical Selections Off"));
 }
 
-
-int KWrite::numLines() {
-  return kWriteDoc->numLines();
+void KWrite::toggleOverwrite() {
+  setConfig(configFlags ^ cfOvr);
 }
 
 QString KWrite::text() {
   return kWriteDoc->text();
 }
 
-QString KWrite::currentTextLine() {
-  TextLine *textLine;
-  textLine = kWriteDoc->textLine(kWriteView->cursor.y);
-  return QString(textLine->getText(), textLine->length());
-}
-
-QString KWrite::textLine(int num) {
-  TextLine *textLine;
-  textLine = kWriteDoc->textLine(num);
-  return QString(textLine->getText(), textLine->length());
+QString KWrite::markedText() {
+  return kWriteDoc->markedText(configFlags);
 }
 
 QString KWrite::currentWord() {
-  return kWriteDoc->getWord(kWriteView->cursor);
+  return kWriteDoc->currentWord(kWriteView->cursor);
 }
 
 QString KWrite::word(int x, int y) {
@@ -1418,31 +1090,12 @@ QString KWrite::word(int x, int y) {
   cursor.y = (kWriteView->yPos + y)/kWriteDoc->fontHeight;
   if (cursor.y < 0 || cursor.y > kWriteDoc->lastLine()) return QString();
   cursor.x = kWriteDoc->textPos(kWriteDoc->textLine(cursor.y), kWriteView->xPos-2 + x);
-  return kWriteDoc->getWord(cursor);
+  return kWriteDoc->currentWord(cursor);
 }
 
 void KWrite::setText(const char *s) {
   kWriteDoc->setText(s);
   kWriteDoc->updateViews();
-}
-
-void KWrite::insertText(const char *s, int len) {
-  VConfig c;
-  kWriteView->getVConfig(c);
-  kWriteDoc->insert(c, s, len);
-  kWriteDoc->updateViews();
-}
-
-bool KWrite::hasMarkedText() {
-  return kWriteDoc->hasMarkedText();
-}
-
-QString KWrite::markedText() {
-  return kWriteDoc->markedText(configFlags);
-}
-
-int KWrite::tabWidth() {
-  return kWriteDoc->tabWidth;
 }
 
 
@@ -1453,7 +1106,7 @@ void KWrite::loadFile(QIODevice &dev, bool insert) {
     kWriteDoc->loadFile(dev);
   } else {
     kWriteView->getVConfig(c);
-    kWriteDoc->insertFile(c, dev);
+    kWriteDoc->insertFile(kWriteView,c,dev);
 kWriteDoc->updateViews();
   }
 //  kWriteDoc->updateViews();
@@ -1562,7 +1215,7 @@ void KWrite::loadURL(const char *url, int flags) {
       u.parse(s);
     }
     if (u.isMalformed()) {
-	s.sprintf(i18n("Malformed URL\n%s"),url);
+      s.sprintf("%s\n%s",i18n("Malformed URL"),url);
       QMessageBox::warning(this,
         i18n("Sorry"),
         s,
@@ -1597,10 +1250,8 @@ void KWrite::loadURL(const char *url, int flags) {
     if (kfm != 0L) {
       QMessageBox::information(this,
         i18n("Sorry"),
-        i18n("KWrite is already waiting\n"
-	     "for an internet job to finish\n"\
-             "Please wait until it has finished\n"
-	     "Alternatively stop the running one."),
+        i18n("KWrite is already waiting\nfor an internet job to finish\n"\
+             "Please wait until it has finished\nAlternatively stop the running one."),
         i18n("OK"),
         "",
         "",
@@ -1624,7 +1275,7 @@ void KWrite::loadURL(const char *url, int flags) {
     }
 
     kfmURL = u.url();
-    kfmFile.sprintf(_PATH_TMP"/kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"/kwrite%li",time(0L));
     kfmAction = KWrite::GET;
     kfmFlags = flags;
 
@@ -1668,7 +1319,7 @@ void KWrite::writeURL(const char *url, int flags) {
     emit statusMsg(i18n("Waiting for KFM..."));
 
     kfmURL = url;
-    kfmFile.sprintf(_PATH_TMP"/kwrite%i",time(0L));
+    kfmFile.sprintf(_PATH_TMP"kwrite%li",time(0L));
     kfmAction = KWrite::PUT;
     kfmFlags = flags;
     if (!writeFile(kfmFile)) return;
@@ -1696,7 +1347,7 @@ void KWrite::writeURL(const char *url, int flags) {
 
 void KWrite::kfmFinished() {
 //  QString string;
-//  string.sprintf(i18n("Finished '%s'"),tmpFile.data());
+//  string.sprintf(klocale->translate("Finished '%s'"),tmpFile.data());
 //  setGeneralStatusField(string);
 
   if (kfmAction == GET ) {
@@ -1740,10 +1391,6 @@ void KWrite::kfmError(int e, const char *s) {
 }
 
 
-bool KWrite::hasFileName() {
-  return kWriteDoc->hasFileName();
-}
-
 const char *KWrite::fileName() {
   return kWriteDoc->fileName();
 }
@@ -1765,11 +1412,11 @@ bool KWrite::canDiscard() {
       0,2);
     switch (query) {
       case 0: //yes
-        if (save() == CANCEL) return false;
+        save();
         if (isModified()) {
             query = QMessageBox::warning(this,
             i18n("Sorry"),
-            i18n("Could not save the document.\nDiscard it and continue?"),
+            i18n("Could not save the document.\nOpen a new document anyways?"),
             i18n("Yes"),
             i18n("No"),
             "",
@@ -1796,7 +1443,7 @@ void KWrite::open() {
 //  if (kWriteDoc->hasFileName()) s = QFileInfo(kWriteDoc->fileName()).dirPath();
 //    else s = QDir::currentDirPath();
 
-  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",this);
+  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",topLevelWidget());
   if (url.isEmpty()) return;
 //  kapp->processEvents();
   loadURL(url);
@@ -1805,29 +1452,28 @@ void KWrite::open() {
 void KWrite::insertFile() {
   QString url;
 
-  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",this);
+  url = KFileDialog::getOpenFileURL(kWriteDoc->fileName(),"*",topLevelWidget());
   if (url.isEmpty()) return;
 //  kapp->processEvents();
   loadURL(url,lfInsert);
 }
 
-KWrite::fileResult KWrite::save() {
+void KWrite::save() {
   if (isModified()) {
     if (kWriteDoc->hasFileName()) {
       writeURL(kWriteDoc->fileName(),lfNoAutoHl);
-    } else return saveAs();
+    } else saveAs();
   } else emit statusMsg(i18n("No changes need to be saved"));
-  return OK;
 }
 
-KWrite::fileResult KWrite::saveAs() {
+void KWrite::saveAs() {
   QString url;
   int query;
 
   do {
     query = 0;
     url = KFileDialog::getSaveFileURL(kWriteDoc->fileName(),"*",this);
-    if (url.isEmpty()) return CANCEL;
+    if (url.isEmpty()) return;
 
     KURL u(url);
     if (u.isLocalFile()) {
@@ -1848,33 +1494,16 @@ KWrite::fileResult KWrite::saveAs() {
 
 //  kapp->processEvents();
   writeURL(url);
-  return OK;
 }
 
-void KWrite::doCursorCommand(int cmdNum) {
-  VConfig c;
-  kWriteView->getVConfig(c);
-  if (cmdNum & selectFlag) c.flags |= cfMark;
-  if (cmdNum & multiSelectFlag) c.flags |= cfMark | cfKeepSelection;
-  cmdNum &= ~(selectFlag | multiSelectFlag);
-  kWriteView->doCursorCommand(c, cmdNum);
-  kWriteDoc->updateViews();
-}
-
-void KWrite::doEditCommand(int cmdNum) {
-  VConfig c;
-  kWriteView->getVConfig(c);
-  kWriteView->doEditCommand(c, cmdNum);
-  kWriteDoc->updateViews();
-}
 
 
 void KWrite::clear() {
   kWriteDoc->clear();
-  kWriteDoc->clearFileName();
+  kWriteDoc->setFileName(0);
   kWriteDoc->updateViews();
 }
-/*
+
 void KWrite::cut() {
   VConfig c;
   kWriteView->getVConfig(c);
@@ -1889,7 +1518,7 @@ void KWrite::copy() {
 void KWrite::paste() {
   VConfig c;
   kWriteView->getVConfig(c);
-  kWriteDoc->paste(kWriteView, c);
+  kWriteDoc->paste(kWriteView,c);
   kWriteDoc->updateViews();
 }
 
@@ -1931,25 +1560,20 @@ void KWrite::invertSelection() {
   kWriteDoc->invertSelection();
   kWriteDoc->updateViews();
 }
-*/
 
-void addToStrList(QStrList &list, const char *str) {
-  if (list.find(str) != -1) list.remove();
-  if (list.count() >= 16) list.removeLast();
-  list.insert(0, str);
-}
 
-void KWrite::find() {
+
+void KWrite::search() {
   SearchDialog *searchDialog;
 
-  searchDialog = new SearchDialog(&searchForList, 0L,
+  searchDialog = new SearchDialog(searchFor,0L,
     searchFlags & ~sfReplace,topLevelWidget());
 
   kWriteView->focusOutEvent(0L);// QT bug ?
   if (searchDialog->exec() == QDialog::Accepted) {
-    addToStrList(searchForList, searchDialog->getSearchFor());
+    searchFor = searchDialog->getSearchFor();
     searchFlags = searchDialog->getFlags() | (searchFlags & sfPrompt);
-    initSearch(s, searchFlags);
+    initSearch(s,searchFlags);
     searchAgain(s);
   }
   delete searchDialog;
@@ -1958,15 +1582,15 @@ void KWrite::find() {
 void KWrite::replace() {
   SearchDialog *searchDialog;
 
-  searchDialog = new SearchDialog(&searchForList, &replaceWithList,
+  searchDialog = new SearchDialog(searchFor,replaceWith,
     searchFlags | sfReplace,topLevelWidget());
 
   kWriteView->focusOutEvent(0L);// QT bug ?
   if (searchDialog->exec() == QDialog::Accepted) {
-    addToStrList(searchForList, searchDialog->getSearchFor());
-    addToStrList(replaceWithList, searchDialog->getReplaceWith());
+    searchFor = searchDialog->getSearchFor();
+    replaceWith = searchDialog->getReplaceWith();
     searchFlags = searchDialog->getFlags();
-    initSearch(s, searchFlags);
+    initSearch(s,searchFlags);
     replaceAgain();
   }
   delete searchDialog;
@@ -1980,7 +1604,7 @@ void KWrite::replace() {
 //    kWriteView->tagAll();
 //    searchAgain();
 
-void KWrite::findAgain() {
+void KWrite::searchAgain() {
 
   initSearch(s,searchFlags | sfFromCursor | sfPrompt | sfAgain);
   if (s.flags & sfReplace) replaceAgain(); else searchAgain(s);
@@ -1995,17 +1619,13 @@ void KWrite::gotoLine() {
     cursor.x = 0;
     cursor.y = dlg->getLine() - 1;
     kWriteView->updateCursor(cursor);
-    kWriteView->center();
-    kWriteDoc->unmarkFound();
     kWriteView->updateView(ufUpdateOnScroll);
-    kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
   }
   delete dlg;
 }
 
 
 void KWrite::initSearch(SConfig &s, int flags) {
-  const char *searchFor = searchForList.getFirst();
 
   s.flags = flags;
   if (s.flags & sfFromCursor) {
@@ -2023,7 +1643,7 @@ void KWrite::initSearch(SConfig &s, int flags) {
   if (!(s.flags & sfBackward)) {
     if (!(s.cursor.x || s.cursor.y)) s.flags |= sfFinished;
   } else {
-    s.startCursor.x -= strlen(searchFor);//.length();
+    s.startCursor.x -= searchFor.length();
   }
   s.startCursor = s.cursor;
 }
@@ -2047,24 +1667,29 @@ void KWrite::searchAgain(SConfig &s) {
   int slen;
   QString str;
 
- const char *searchFor = searchForList.getFirst();
+//  cursor = kWriteView->cursor;//getVConfig(c);
+//  if (!(cursor.x || cursor.y || flags & sfBackward)) flags &= ~sfFromCursor;
 
-  slen = strlen(searchFor);//.length();
+  slen = searchFor.length();
   do {
     query = 1;
     if (kWriteDoc->doSearch(s,searchFor)) {
+//    if (kWriteDoc->doSearch(cursor,searchFor,flags)) {
+      //kWriteDoc->markFound(cursor,slen);
       cursor = s.cursor;
       if (!(s.flags & sfBackward)) s.cursor.x += slen;
       kWriteView->updateCursor(s.cursor);
+      //kWriteDoc->updateViews(((flags & sfAgain) ? 0 : ufUpdateOnScroll) | ufCenter);
       exposeFound(cursor,slen,(s.flags & sfAgain) ? 0 : ufUpdateOnScroll,false);
     } else {
       if (!(s.flags & sfFinished)) {
         // ask for continue
         if (!(s.flags & sfBackward)) {
           // forward search
-          str = i18n("End of document reached.\n"
-		     "Continue from the beginning?");
-	  query = QMessageBox::information(this,
+          str.sprintf("%s.\n%s?",
+            i18n("End of document reached"),
+            i18n("Continue from the beginning"));
+          query = QMessageBox::information(this,
             i18n("Find"),
             str,
             i18n("Yes"),
@@ -2072,9 +1697,9 @@ void KWrite::searchAgain(SConfig &s) {
             "",0,1);
         } else {
           // backward search
-          str = 
-            i18n("Beginning of document reached.\n"
-		 "Continue from the end");
+          str.sprintf("%s.\n%s?",
+            i18n("Beginning of document reached"),
+            i18n("Continue from the end"));
           query = QMessageBox::information(this,
             i18n("Find"),
             str,
@@ -2114,10 +1739,8 @@ void KWrite::doReplaceAction(int result, bool found) {
   PointStruc cursor;
   bool started;
 
-  const char *searchFor = searchForList.getFirst();
-  const char *replaceWith = replaceWithList.getFirst();
-  slen = strlen(searchFor);//.length();
-  rlen = strlen(replaceWith);//replaceWith.length();
+  slen = searchFor.length();
+  rlen = replaceWith.length();
 
   switch (result) {
     case srYes: //yes
@@ -2127,7 +1750,7 @@ void KWrite::doReplaceAction(int result, bool found) {
       if (s.cursor.y == s.startCursor.y && s.cursor.x < s.startCursor.x)
         s.startCursor.x += rlen - slen;
       if (!(s.flags & sfBackward)) s.cursor.x += rlen;
-      kWriteDoc->recordEnd(kWriteView, s.cursor, configFlags | cfPersistent);
+      kWriteDoc->recordEnd(kWriteView,s.cursor,configFlags);
       break;
     case srNo: //no
       if (!(s.flags & sfBackward)) s.cursor.x += slen;
@@ -2183,6 +1806,8 @@ void KWrite::exposeFound(PointStruc &cursor, int slen, int flags, bool replace) 
 
   kWriteDoc->markFound(cursor,slen);
 
+//  kWriteDoc->updateViews();
+
   textLine = kWriteDoc->textLine(cursor.y);
   x1 = kWriteDoc->textWidth(textLine,cursor.x)        -10;
   x2 = kWriteDoc->textWidth(textLine,cursor.x + slen) +20;
@@ -2192,20 +1817,23 @@ void KWrite::exposeFound(PointStruc &cursor, int slen, int flags, bool replace) 
   xPos = kWriteView->xPos;
   yPos = kWriteView->yPos;
 
+//  w = kWriteView->width();
+//  h = kWriteView->
+
   if (x1 < 0) x1 = 0;
   if (replace) y2 += 90;
 
   if (x1 < xPos || x2 > xPos + kWriteView->width()) {
     xPos = x2 - kWriteView->width();
+//    xPos = e - 3*width()/4;
+//    if (xPos > s) xPos = s;
   }
   if (y1 < yPos || y2 > yPos + kWriteView->height()) {
     xPos = x2 - kWriteView->width();
     yPos = kWriteDoc->fontHeight*cursor.y - height()/3;
   }
-  kWriteView->setPos(xPos, yPos);
-  kWriteView->updateView(flags);// | ufPos,xPos,yPos);
+  kWriteView->updateView(flags | ufPos,xPos,yPos);
   kWriteDoc->updateViews(kWriteView);
-//  kWriteDoc->updateViews();
 }
 
 void KWrite::deleteReplacePrompt() {
@@ -2231,7 +1859,8 @@ bool KWrite::askReplaceEnd() {
   kWriteDoc->updateViews();
   if (s.flags & sfFinished) {
     // replace finished
-    str.sprintf(i18n("%d replace(s) made"), replaces);
+    str.sprintf("%d %s.",
+      replaces,i18n("replace(s) made"));
     QMessageBox::information(this,
       i18n("Replace"),
       str,
@@ -2244,10 +1873,11 @@ bool KWrite::askReplaceEnd() {
   // ask for continue
   if (!(s.flags & sfBackward)) {
     // forward search
-    str.sprintf(i18n("%d replace(s) made.\n"
-	       "End of document reached.\n"
-	       "Continue from the beginning?"), replaces);
-  query = QMessageBox::information(this,
+    str.sprintf("%d %s.\n%s.\n%s?",
+      replaces,i18n("replace(s) made"),
+      i18n("End of document reached"),
+      i18n("Continue from the beginning"));
+    query = QMessageBox::information(this,
       i18n("Replace"),
       str,
       i18n("Yes"),
@@ -2255,9 +1885,10 @@ bool KWrite::askReplaceEnd() {
       "",0,1);
   } else {
     // backward search
-    str.sprintf(i18n("%d replace(s) made.\n"
-		"Beginning of document reached.\n"
-		"Continue from the end?"),replaces);
+    str.sprintf("%d %s.\n%s.\n%s?",
+      replaces,i18n("replace(s) made"),
+      i18n("Beginning of document reached"),
+      i18n("Continue from the end"));
     query = QMessageBox::information(this,
       i18n("Replace"),
       str,
@@ -2287,11 +1918,21 @@ void KWrite::installRBPopup(QPopupMenu *p) {
   popup = p;
 }
 
-void KWrite::installBMPopup(KGuiCmdPopup *p) {
+void KWrite::installBMPopup(QPopupMenu *p/*KWBookPopup *p*/) {
+//  bookPopup = p;
+  connect(p,SIGNAL(aboutToShow()),SLOT(updateBMPopup()));
+  connect(p,SIGNAL(activated(int)),SLOT(gotoBookmark(int)));
+  bmEntries = p->count();
+}
 
-  connect(p, SIGNAL(aboutToShow()), SLOT(updateBMPopup()));
-//  connect(p,SIGNAL(activated(int)),SLOT(gotoBookmark(int)));
-//  bmEntries = p->count();
+void KWrite::setBookmark(int n) {
+  KWBookmark *b;
+
+  while ((int) bookmarks.count() <= n) bookmarks.append(new KWBookmark());
+  b = bookmarks.at(n);
+  b->xPos = kWriteView->xPos;
+  b->yPos = kWriteView->yPos;
+  b->cursor = kWriteView->cursor;
 }
 
 void KWrite::setBookmark() {
@@ -2301,7 +1942,7 @@ void KWrite::setBookmark() {
 
   popup = new QPopupMenu(0L);
 
-  for (z = 1; z <= 10; z++) {
+  for (z = 1; z <= 9; z++) {
     sprintf(s,"&%d",z);
     popup->insertItem(s,z);
   }
@@ -2326,73 +1967,31 @@ void KWrite::addBookmark() {
   setBookmark(z);
 }
 
-void KWrite::clearBookmarks() {
-  bookmarks.clear();
-}
-
-void KWrite::setBookmark(int n) {
-  KWBookmark *b;
-
- if (n >= 10) return;
-  while ((int) bookmarks.count() <= n) bookmarks.append(new KWBookmark());
-  b = bookmarks.at(n);
-  b->xPos = kWriteView->xPos;
-  b->yPos = kWriteView->yPos;
-  b->cursor = kWriteView->cursor;
-}
-
 void KWrite::gotoBookmark(int n) {
   KWBookmark *b;
+//  printf("KWrite::gotoBookmark %d\n",n);
 
   if (n < 0 || n >= (int) bookmarks.count()) return;
   b = bookmarks.at(n);
   if (b->cursor.y == -1) return;
   kWriteView->updateCursor(b->cursor);
-  kWriteView->setPos(b->xPos, b->yPos);
   kWriteDoc->unmarkFound();
-//  kWriteView->updateView(ufPos, b->xPos, b->yPos);
-//  kWriteDoc->updateViews(kWriteView); //uptade all other views except this one
-  kWriteDoc->updateViews();
+  kWriteView->updateView(ufPos,b->xPos,b->yPos);
+  kWriteDoc->updateViews(kWriteView);
 }
 
-void KWrite::doBookmarkCommand(int cmdNum) {
-  if (cmdNum == cmSetBookmark) {
-    setBookmark();
-  } else if (cmdNum == cmAddBookmark) {
-    addBookmark();
-  } else if (cmdNum == cmClearBookmarks) {
-    clearBookmarks();
-  } else if (cmdNum >= cmSetBookmarks && cmdNum < cmSetBookmarks +10) {
-    setBookmark(cmdNum - cmSetBookmarks);
-  } else if (cmdNum >= cmGotoBookmarks && cmdNum < cmGotoBookmarks +10) {
-    gotoBookmark(cmdNum - cmGotoBookmarks);
-  }
+void KWrite::clearBookmarks() {
+  bookmarks.clear();
 }
 
 void KWrite::updateBMPopup() {
-  KGuiCmdPopup *p;
+  QPopupMenu *p;
   KWBookmark *b;
   char buf[64];
-  int z, id;
+  int z;
 
-  p = (KGuiCmdPopup *) sender();
-  p->clear();
-  p->addCommand(ctBookmarkCommands, cmSetBookmark);
-  p->addCommand(ctBookmarkCommands, cmAddBookmark);
-  p->addCommand(ctBookmarkCommands, cmClearBookmarks);
-//  p->insertSeparator();
-  for (z = 0; z < (int) bookmarks.count(); z++) {
-    b = bookmarks.at(z);
-    if (b->cursor.y >= 0) {
-      if (p->count() == 3) p->insertSeparator();
-      id = p->addCommand(ctBookmarkCommands, cmGotoBookmarks + z);
-      sprintf(buf,i18n("Line %d"), b->cursor.y +1);
-      p->setText(buf, id);
-//      p->insertItem(buf,z);
-//      if (z < 9) p->setAccel(ALT+keys[z],z);
-    }
-  }
-/*
+  p = (QPopupMenu *) sender();
+
   while ((int) p->count() > bmEntries) {
     p->removeItemAt(p->count() - 1);
   }
@@ -2402,20 +2001,20 @@ void KWrite::updateBMPopup() {
 //  for (b = bookmarks.first(); b != 0L; b = bookmarks.next()) {
     if (b->cursor.y >= 0) {
       if ((int) p->count() == bmEntries) p->insertSeparator();
-      sprintf(buf,i18n("Line %d"),b->cursor.y +1);
+      sprintf(buf,"%s %d",i18n("Line"),b->cursor.y +1);
       p->insertItem(buf,z);
       if (z < 9) p->setAccel(ALT+keys[z],z);
     }
-  }*/
+  }
 }
 
 
 void KWrite::readConfig(KConfig *config) {
 
   searchFlags = config->readNumEntry("SearchFlags",sfPrompt);
-  configFlags = config->readNumEntry("ConfigFlags", cfAutoIndent
-    | cfBackspaceIndent | cfRemoveSpaces | cfDelOnInput) & ~cfMark;
-  wrapAt = config->readNumEntry("WrapAt",79);
+  configFlags = config->readNumEntry("ConfigFlags",
+    cfPersistent | cfRemoveSpaces) & ~cfMark;
+  wrapAt = config->readNumEntry("WrapAt",78);
 /*
   int flags;
 
@@ -2445,7 +2044,7 @@ void KWrite::readConfig(KConfig *config) {
   if (config->readNumEntry("ToggleOld")) flags |= cfXorSelect;
   configFlags = flags;
 
-  wrapAt = config->readNumEntry("WrapAt",79);
+  wrapAt = config->readNumEntry("WrapAt",78);
   kWriteDoc->setTabWidth(config->readNumEntry("TabWidth",8));
   kWriteDoc->setUndoSteps(config->readNumEntry("UndoSteps",50));
 */
@@ -2500,7 +2099,7 @@ void KWrite::readSessionConfig(KConfig *config) {
 /*
   searchFlags = config->readNumEntry("SearchFlags",sfPrompt);
   configFlags = config->readNumEntry("ConfigFlags");
-  wrapAt = config->readNumEntry("WrapAt",79);
+  wrapAt = config->readNumEntry("WrapAt",78);
 */
   readConfig(config);
 
@@ -2593,23 +2192,17 @@ void KWrite::hlDlg() {
   HighlightDialog *dlg;
   HlManager *hlManager;
   HlDataList hlDataList;
-
+//  int count, z;
 
   hlManager = kWriteDoc->hlManager;
   hlDataList.setAutoDelete(true);
-  //this gets the data from the KConfig object
   hlManager->getHlDataList(hlDataList);
   dlg = new HighlightDialog(hlManager,&hlDataList,kWriteDoc->getHighlight(),this);
 //  dlg->hlChanged(kWriteDoc->getHighlight());
   if (dlg->exec() == QDialog::Accepted) {
-    //this stores the data into the KConfig object
     hlManager->setHlDataList(hlDataList);
   }
   delete dlg;
-}
-
-int KWrite::getHl() {
-  return kWriteDoc->getHighlight();
 }
 
 void KWrite::setHl(int n) {
@@ -2617,49 +2210,6 @@ void KWrite::setHl(int n) {
   kWriteDoc->updateViews();
 }
 
-int KWrite::getEol() {
-  return kWriteDoc->eolMode;
-}
-
-void KWrite::setEol(int eol) {
-  kWriteDoc->eolMode = eol;
-  kWriteDoc->setModified(true);
-}
-
-void KWrite::print() {
-  int fontHeight;
-  int lines, pages;
-  int line, c, p, l, y;
-  QPrinter prt;
-
-  if (prt.setup()) {
-    QPaintDeviceMetrics pdm(&prt);
-    QPainter paint;
-
-    paint.begin(&prt);
-    fontHeight = kWriteDoc->fontHeight;
-    lines = pdm.height()/fontHeight;
-    pages = kWriteDoc->numLines()/lines;
-    for (c = 1; c <= prt.numCopies(); c++) {
-      line = 0;
-      for (p = 0; p <= pages; p++) {
-        y = 0;
-        if (prt.pageOrder() == QPrinter::LastPageFirst) line = (pages - p)*lines;
-        for (l = 0; l < lines; l++) {
-          kWriteDoc->printTextLine(paint, line, pdm.width(), y);
-          line++;
-          y += fontHeight;
-        }
-        if (p < pages || c < prt.numCopies()) {
-          if (!prt.newPage()) goto abort;
-        }
-      }
-    }
-    abort:
-    paint.end();
-  }
-}
-/*
 void KWrite::keyPressEvent(QKeyEvent *e) {
   int z;
 
@@ -2669,7 +2219,7 @@ void KWrite::keyPressEvent(QKeyEvent *e) {
     }
   }
 }
-*/
+
 void KWrite::paintEvent(QPaintEvent *e) {
   int x, y;
 
@@ -2716,8 +2266,8 @@ void KWrite::paintEvent(QPaintEvent *e) {
 void KWrite::resizeEvent(QResizeEvent *) {
 
 //  printf("Resize %d, %d\n",e->size().width(),e->size().height());
-//kWriteView->resize(width() -20, height() -20);
-  kWriteView->tagAll();
+
+  kWriteView->tagAll();//updateState = 3;
   kWriteView->updateView(0/*ufNoScroll*/);
 }
 

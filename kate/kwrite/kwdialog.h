@@ -4,9 +4,9 @@
 #define _KWDIALOG_H_
 
 #include <qdialog.h>
-#include <qlineedit.h>
-#include <qcheckbox.h>
-#include <qradiobutton.h>
+#include <qlined.h>
+#include <qchkbox.h>
+#include <qradiobt.h>
 #include <qlistbox.h>
 
 #include <kcolorbtn.h>
@@ -16,17 +16,20 @@
 class SearchDialog : public QDialog {
     Q_OBJECT
   public:
-    SearchDialog(QStrList *searchFor, QStrList *replaceWith,
-      int flags, QWidget *parent, const char *name = 0L);
+    SearchDialog(const char *searchFor, const char *replaceWith,
+      int flags, QWidget *parent, const char *name = 0);
     const char *getSearchFor();
     const char *getReplaceWith();
     int getFlags();
+//  signals:
+//    void search();
+//    void doneSearch();
   protected slots:
     void okSlot();
 
   protected:
-    QComboBox *search;
-    QComboBox *replace;
+    QLineEdit *search;
+    QLineEdit *replace;
 
     QCheckBox *opt1;
     QCheckBox *opt2;

@@ -1,30 +1,10 @@
-/*
-   Copyright (C) 1998, 1999 Jochen Wilhelmy
-                            digisnap@cs.tu-berlin.de
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
-    License as published by the Free Software Foundation; either
-    version 2 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
-
-    You should have received a copy of the GNU Library General Public License
-    along with this library; see the file COPYING.LIB.  If not, write to
-    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-    Boston, MA 02111-1307, USA.
-*/
-
 #ifndef _HIGHLIGHT_H_
 #define _HIGHLIGHT_H_
 
 #include <qlist.h>
 //#include <qlistbox.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
+#include <qchkbox.h>
+#include <qcombo.h>
 #include <qdialog.h>
 
 #include <kcolorbtn.h>
@@ -100,7 +80,7 @@ class HlKeyword : public HlItemWw {
     HlKeyword(int attribute, int context);
     virtual ~HlKeyword();
     void addWord(const char *);
-    void addList(const char **);
+    void addList(char **);
     virtual const char *checkHgl(const char *);
   protected:
     QList<KeywordData> words;
@@ -224,69 +204,6 @@ class HlAdaChar : public HlItemWw {
     virtual const char *checkHgl(const char *);
 };
 
-class HlSatherClassname : public HlItemWw {
-  public:
-    HlSatherClassname(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherIdent : public HlItemWw {
-  public:
-    HlSatherIdent(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherDec : public HlItemWw {
-  public:
-    HlSatherDec(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherBaseN : public HlItemWw {
-  public:
-    HlSatherBaseN(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherFloat : public HlItemWw {
-  public:
-    HlSatherFloat(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherChar : public HlItemWw {
-  public:
-    HlSatherChar(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlSatherString : public HlItemWw {
-  public:
-    HlSatherString(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlLatexTag : public HlItem {
-  public:
-    HlLatexTag(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlLatexChar : public HlItem {
-  public:
-    HlLatexChar(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-};
-
-class HlLatexParam : public HlItem {
-  public:
-    HlLatexParam(int attribute, int context);
-    virtual const char *checkHgl(const char *);
-    virtual bool endEnable(char c) {return testWw(c);}
-};
-
-//--------
-
 
 //Item Style: color, selected color, bold italic
 class ItemStyle {
@@ -362,7 +279,7 @@ class Highlight {
     void use();
     void release();
     virtual bool isInWord(char c) {return !testWw(c);}
-    virtual int doHighlight(int ctxNum, TextLine *textLine);
+    virtual void doHighlight(int ctxNum, TextLine *textLine);
   protected:
     virtual void createItemData(ItemDataList &);
     virtual void init();
@@ -389,13 +306,12 @@ class GenHighlight : public Highlight {
   public:
     GenHighlight(const char *name);
 
-    virtual int doHighlight(int ctxNum, TextLine *);
+    virtual void doHighlight(int ctxNum, TextLine *);
   protected:
     virtual void makeContextList() = 0;
     virtual void init();
     virtual void done();
-    static const int nContexts = 32;
-    HlContext *contextList[nContexts];
+    HlContext *contextList[32];
 };
 
 
@@ -414,14 +330,6 @@ class CppHighlight : public CHighlight {
   public:
     CppHighlight(const char *name);
     virtual ~CppHighlight();
-  protected:
-    virtual void setKeywords(HlKeyword *keyword, HlKeyword *dataType);
-};
-
-class IdlHighlight : public CHighlight {
-  public:
-    IdlHighlight(const char *name);
-    virtual ~IdlHighlight();
   protected:
     virtual void setKeywords(HlKeyword *keyword, HlKeyword *dataType);
 };
@@ -483,7 +391,7 @@ class PerlHighlight : public Highlight {
   public:
     PerlHighlight(const char *name);
 
-    virtual int doHighlight(int ctxNum, TextLine *);
+    virtual void doHighlight(int ctxNum, TextLine *);
   protected:
     virtual void createItemData(ItemDataList &);
     virtual void init();
@@ -491,25 +399,8 @@ class PerlHighlight : public Highlight {
     HlKeyword *keyword;
 };
 
-class SatherHighlight : public GenHighlight {
-  public:
-    SatherHighlight(const char *name);
-    virtual ~SatherHighlight();
-  protected:
-    virtual void createItemData(ItemDataList &);
-    virtual void makeContextList();
-};
 
-class LatexHighlight : public GenHighlight {
-  public:
-    LatexHighlight(const char *name);
-    virtual ~LatexHighlight();
-  protected:
-    virtual void createItemData(ItemDataList &);
-    virtual void makeContextList();
-};
-
-//class KWriteDoc;
+class KWriteDoc;
 
 class HlManager : public QObject {
     Q_OBJECT
@@ -521,8 +412,9 @@ class HlManager : public QObject {
     int defaultHl();
     int nameFind(const char *name);
     
+    int highlightFind(KWriteDoc *doc);
     int wildcardFind(const char *fileName);
-    int mimeFind(const char *contents, int len, const char *fname);
+    int mimeFind(KWriteDoc *doc);
     int findHl(Highlight *h) {return hlList.find(h);}
     
     void makeAttribs(Highlight *, Attribute *, int n);

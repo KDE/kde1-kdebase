@@ -3,9 +3,9 @@
 
 #include <qlist.h>
 #include <qstring.h>
-#include <qpopupmenu.h>
+#include <qpopmenu.h>
 #include <qmenubar.h>
-#include <qapplication.h>
+#include <qapp.h>
 
 #include <kapp.h>
 #include <kconfig.h>
@@ -16,13 +16,21 @@
 
 #include "kwview.h"
 #include "kwdoc.h"
-#include "kguicommand.h"
+/*
+class DocSaver : public QObject {
+    Q_OBJECT
+  public:
+    DocSaver() : QObject() {};
+  public slots:
+    void saveYourself();
+};
+*/
 
 class TopLevel : public KTMainWindow {
     Q_OBJECT
   public:
 
-    TopLevel(KWriteDoc * = 0L, const char *path = 0L);
+    TopLevel(KWriteDoc * = 0);
     ~TopLevel();
     void init(); //initialize caption, status and show
 
@@ -38,19 +46,18 @@ class TopLevel : public KTMainWindow {
 
     KWrite *kWrite;
     int menuUndo, menuRedo;
-    int menuVertical, menuShowTB, menuShowSB, menuShowPath;
+    int menuVertical, menuShowTB, menuShowSB;
 //    int statusID, toolID, verticalID, indentID;
-//    QPopupMenu *file, *help;
-    KGuiCmdPopup *edit, *options;
-    QPopupMenu *recentPopup, *hlPopup, *eolPopup;//, *popup;
+//    QPopupMenu *file, *edit, *options, *help;
+    QPopupMenu *edit, *options, *recentPopup, *hlPopup, *popup;
     QStrList recentFiles;
 
     bool hideToolBar;
     bool hideStatusBar;
-    bool showPath;
 
     QTimer *statusbarTimer;
 
+//    void add_recent_file(const char*);
   public slots:
     void openRecent(int);
     void newWindow();
@@ -58,10 +65,8 @@ class TopLevel : public KTMainWindow {
     void closeWindow();
     void quitEditor();
 
-   void keyDlg();
     void toggleStatusBar();
     void toggleToolBar();
-    void togglePath();
 
     void helpSelected();
 
@@ -75,7 +80,6 @@ class TopLevel : public KTMainWindow {
     void dropAction(KDNDDropZone *);
 
     void showHighlight();
-    void showEol();
 
     //config file functions
   public:
