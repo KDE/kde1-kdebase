@@ -810,7 +810,7 @@ void KfmView::checkLocalProperties (const char *_url)
     
   if (!isADir)
   {
-    if (access(&_url[5], W_OK)==0)
+    if (access(&_url[5], R_OK)==0) // we need if we can read (sven)
     {
       QString configname(&_url[5]);
       configname.append("/.directory");
