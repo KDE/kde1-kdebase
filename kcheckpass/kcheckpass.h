@@ -67,7 +67,7 @@
 #endif
 
 /* Default back to HAVE_ETCPASSWD */
-#if !defined(HAVE_PAM) && !defined(HAVE_SHADOW)
+#if !defined(HAVE_PAM) && !defined(HAVE_SHADOW) && !defined(HAVE_OSF_C2_PASSWD)
 #define HAVE_ETCPASSWD
 #endif
 

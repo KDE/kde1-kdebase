@@ -140,6 +140,9 @@ main(int argc, char **argv)
 
   openlog("kcheckpass", LOG_PID, LOG_AUTH);
 
+#ifdef HAVE_OSF_C2_PASSWD
+  initialize_osf_security(argc, argv);
+#endif
 
   /* Make sure stdout/stderr are open */
   for (c = 1; c <= 2; c++) {
