@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<TITLE>An invitation to KDE: Folder Windows - managing your files</TITLE>
+</HEAD>
+<BODY>
+<A HREF="quickstart-2.html">Previous</A>
+<A HREF="quickstart-4.html">Next</A>
+<A HREF="quickstart.html#toc3">Table of Contents</A>
+<HR>
+<H2><A NAME="s3">3. Folder Windows - managing your files</A></H2>
+
+
+
+<P>If you are accustomed to usual Unix file managers, forget
+everything you learned about them. File managers in the UNIX area are
+little programs which are started on demand, providing an overview
+over the file system and allowing to copy, move and rename files,
+creating directories etc. Sometimes they are able to run applications
+or start an application to open some document. These were the old UNIX
+days. Today the user expects more. The computer industry is moving
+towards a network computer interface where it does not matter, where on
+the world a file is located. The file manager should act the same on all
+resources no matter where they are located. We will come back to this
+interesting topic in the next section.</P>
+
+
+<P>A very important improvement of today's desktops is the folder metaphor.
+Every directory on your hard disk is represented as a folder to you.
+A folder is displayed in a window, showing you an icon for every file
+in the folder. Well, if you ever used Mac, Win95 or OS/2 you will know
+what I mean. If you started KDE for your first time you will notice
+that there is a window with lots of icons in it. This is the folder
+representing your home directory (this is your current directory after
+logging into your computer). Since KDE supports session management, it
+saves the position and several other attributes of every open
+application at logout time. This means that you see the same windows
+that were opened while you logged out when you log back in.</P>
+
+
+<P>Let's return to the folder window. It contains a set of icons and it is
+a good idea to click with the right mouse button on such an icon. You
+will see a popup menu that allows you to copy, move and delete the
+file, move it to the trash, open its properties dialogs or start some
+application to open the document and much more. KDE has a set of so
+called MIME-types. (MIME is an acronym for "Multimedia Internet Mail
+Extension", but if you did not know that by know you probably do not
+need to know it at all.) They tell KDE which icon it should use for
+which kind of file. Please notice that there is no need to edit long
+configuration files to get all these pretty icons. Every KDE
+application which needs new MIME types and other stuff should come with 
+preconfigured config files and icons (since this is a beta, and not a
+final version, this might not be the case everywhere; please send a
+bug report if you notice any omissions). What I wanted to express:
+Everything should work out of the box. If you have installed e.g.
+the KDE postscript viewer, then KDE knows which icon to use for postscript
+files and which application can handle them. As a result, you can just
+press the left mouse button over an icon, and KDE tries to find an
+appropriate application. If that is not the case, KDE will ask you for
+one. It may happen that you have installed several apps for the same kind
+of data. In this case, they are all listed in the popup menu discussed
+above. In another part of KDE documentation, you will learn how to set
+a default application if several apps installed for images for
+example.</P>
+<P> </P>
+
+<P>Now you know that KDE can deal with files and directories, copy,
+move and delete them and many other nifty things. KDE can open
+documents for you. On a properly installed KDE, you don't need to know
+which app is needed to do so.</P>
+<P> </P>
+
+<P>KDE supports drag and drop in many places. We will talk more about this
+later. Right now you should notice that every icon in KDE's folder windows
+can be dragged out of the folder window and be deposited on the desktop.</P>
+
+
+<H2><A NAME="ss3.1">3.1 Archives and Networks</A></H2>
+
+
+
+<P>As mentioned in the previous chapter, networks are becoming more
+and more important. In the near past, you needed a couple of
+applications to deal with files which are distributed all over the
+world. KDE supports a technology that is called "Network Transparent
+Access" (NTA) which means that the user does not have to worry about
+the location of some file. KDE will do the same no matter whether the 
+file is on the other side of the earth or on your local hard disk.</P>
+
+
+<P>The KDE folder window can not only show you the content of usual
+directories. The directory content on an ftp server is displayed in
+such a window as well. Perhaps you are used to the WinZip(tm) utility
+on MS-Windows(tm), then you will be happy to hear that KDE can look
+into tar archives, too. The content of such an archive is displayed in
+a folder window as well. You won't notice a difference between them
+(well, since the internet is slow, you will notice that ftp
+directories will show up much slower than local ones, but that is
+not KDE's fault :-)</P>
+
+
+<P>Clicking for example on an image on some ftp server will start your
+favourite image viewer. KDE retrieves the file from the web for you
+and starts your image viewer afterwards. For example "oldies" like XV
+become internet aware this way! Until there is not yet a KDE
+application for your purposes (though there are already KDE
+applications for many tasks, and many more a currently written), you
+can let old applications make use of NTA simply by providing some
+configuration. We'll tell you how to do this later on the
+documentation.</P>
+<P> </P>
+
+
+<H2><A NAME="ss3.2">3.2 Icons - drag and drop</A></H2>
+
+
+
+<P>We already talked about icons a lot. Right now we had a look at
+them if they appeared in folder windows. But icons may as well appear
+on the background of the desktop, too. This feature is well known from
+most modern desktops like OS/2(tm) and Macintosh(tm). I think you are
+not surprised if I tell you that icons on the background of your
+desktop behave like the ones in the folder. Clicking on them forces
+the same actions to happen, the context sensitive popup menu is the
+same and so on. There is only a little difference: You can position
+them at will. Icons in a folder window are sorted by name, you can not
+save their positions which is why KDE does not allow you user specific
+placement of icons in folder windows yet.</P>
+
+
+<P>You can do many nice things with drag'n'drop. For example, let's
+say you have an icon representing an application (this icon may be in
+the folder window, on the panel or on the background of your
+desktop). When you drop another icon which represents a file on it,
+the application starts up and opens the files you dropped on
+it. Similarly, you can drop icons over a folder icon. This will copy,
+move or link (KDE will ask you what you want) these files in the
+folder. Please remember that files can be represented by any URL, not
+just local filenames. /home/weis/docu.txt is as valid as
+<CODE>http://www.kde.org.</CODE></P>
+
+
+<P>Many people don't know that they are also allowed to drag icons
+which represent applications, printers etc. on the panel. This
+results in a new button on the panel. This button will of course
+reappear after logging out and logging in again. In addition to
+application and printers, the KDE link files (sometimes referred to as
+kdelnk files or "desktop entries") can represent almost everything
+from WWW sites, over applications to printers; you have many many
+possibilities to explore. If you link an URL on your desktop, KDE
+creates such a kdelnk file for you on the fly. The extension "kdelnk"
+is hidden, since it does not look very nice. Therefore, kdelnk files
+look like usual icons. Prominent kdelnk files are for example the
+floppy and cdrom icon that we will discuss now.</P>
+
+
+
+<H2><A NAME="ss3.3">3.3 Mounting your devices</A></H2>
+
+
+
+<P>"To mount a device" means that you e.g. add the content of your cdrom
+to your directory tree. Unlike MS-Windows, UNIX has one big directory tree
+that contains every device. If you click on such a device icon,
+KDE will try to mount the device and opens the directory this 
+device is mounted on. For example after mounting the cdrom on my system
+the directory "/cd" shows up. With a right click on a device button
+you get the option to unmount the device again. Unless you unmount it,
+you are not allowed to remove the disk or cdrom. To get this automatic
+mount feature to work, your /etc/fstab must allow users to mount/unmount
+this device. Later chapters will show you what has to be done; you
+could also consult the documentation of your OS vendor.</P>
+
+
+
+
+<HR>
+<A HREF="quickstart-2.html">Previous</A>
+<A HREF="quickstart-4.html">Next</A>
+<A HREF="quickstart.html#toc3">Table of Contents</A>
+</BODY>
+</HTML>
