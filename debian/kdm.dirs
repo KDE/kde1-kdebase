@@ -1,6 +1,6 @@
 etc/init.d
 etc/X11/kdm
 usr/bin
-usr/X11R6/lib/X11/xdm
+usr/X11R6/lib/X11/kdm
 usr/man/man5
 usr/doc/kdm
