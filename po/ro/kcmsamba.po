@@ -1,0 +1,23 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-1.0pre\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "folosire: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
+msgid "Samba"
+msgstr ""

@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-1.0pre\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
+"PO-Revision-Date: 1998-07-04 12:00+0200\n"
+"Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
+"Language-Team: ??? <ro@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:59
+msgid "&Windows"
+msgstr "&Ferestre"
+
+#: main.cpp:62
+msgid "&Buttons"
+msgstr "&Butoane"
+
+#: main.cpp:65
+msgid "&Titlebar"
+msgstr "Zona de &titlu"
+
+#: main.cpp:68
+msgid "&Desktop"
+msgstr "&Ecran"
+
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr "folosire: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+
+#: main.cpp:105
+msgid "Window manager style"
+msgstr "Stil WM"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "Minimizeazã"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "Maximizeazã"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "Þintuieºte"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "Meniu"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
+"'maximizare'\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr ""
+"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
+"'maximizare'\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Partea stângã a zonei de titlu este plinã... dezactivez butonul de "
+"'minimizare'\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
+"'minimizare'\n"
+
+#: titlebar.cpp:926
+msgid "Titlebar appearance"
+msgstr "Aparenþa zonei de titlu"
+
+#: titlebar.cpp:928
+msgid "Shaded Vertically"
+msgstr "Umbritã vertical"
+
+#: titlebar.cpp:930
+msgid "Shaded Horizontally"
+msgstr "Umbritã orizontal"
+
+#: titlebar.cpp:934
+msgid "Plain"
+msgstr "Planã"
+
+#: titlebar.cpp:937 titlebar.cpp:958
+msgid "Pixmap"
+msgstr ""
+
+#: titlebar.cpp:944
+msgid "Title Animation"
+msgstr "Animaþia titlului"
+
+#: desktop.cpp:91 titlebar.cpp:947
+msgid "ms"
+msgstr ""
+
+#: titlebar.cpp:969
+msgid "&Active pixmap"
+msgstr "Pixmap pentru &Activã"
+
+#: titlebar.cpp:971
+msgid "&Inactive pixmap"
+msgstr "Pixmap pentru &Inactivã"
+
+#: titlebar.cpp:987
+msgid "Mouse action"
+msgstr "Acþiune ºoarec"
+
+#: titlebar.cpp:989
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+"Dublu clic cu butonul din stânga\n"
+"    pe zona de titlu face:"
+
+#: titlebar.cpp:993
+msgid "(Un)Maximize"
+msgstr "(De)Maximizeazã"
+
+#: titlebar.cpp:995
+msgid "(Un)Shade"
+msgstr "(De)Umbreºte"
+
+#: titlebar.cpp:996
+msgid "Iconify"
+msgstr "Iconificã"
+
+#: titlebar.cpp:997
+msgid "(Un)Sticky"
+msgstr "(De)Þintuieºte"
+
+#: titlebar.cpp:998
+msgid "Resize"
+msgstr "Rescaleazã"
+
+#: titlebar.cpp:1000
+msgid "Operations Menu"
+msgstr "Meniu de operaþii"
+
+#: windows.cpp:84
+msgid "Window movement"
+msgstr "Miºcarea ferestrelor"
+
+#: windows.cpp:85
+msgid "Transparent"
+msgstr "Transparentã"
+
+#: windows.cpp:86 windows.cpp:95
+msgid "Opaque"
+msgstr "Opacã"
+
+#: windows.cpp:89
+msgid "Window resize"
+msgstr "Rescalarea ferestrelor"
+
+#: windows.cpp:90
+msgid "Animation:"
+msgstr "Animaþie:"
+
+#: windows.cpp:92
+msgid "Fast"
+msgstr "Rapidã"
+
+#: windows.cpp:98
+msgid "Placement policy"
+msgstr "Politicã de amplasare"
+
+#: windows.cpp:100
+msgid "Smart"
+msgstr "Isteaþã"
+
+#: windows.cpp:102
+msgid "Cascade"
+msgstr "Cascadatã"
+
+#: windows.cpp:104
+msgid "Interactive"
+msgstr "Interactivã"
+
+#: windows.cpp:106
+msgid "Random"
+msgstr "Aleatoare"
+
+#: windows.cpp:108
+msgid "Manual"
+msgstr "Manualã"
+
+#: windows.cpp:115
+msgid "Allowed Overlap:"
+msgstr "Suprapunere permisã:"
+
+#: windows.cpp:122
+msgid "Maximize Style"
+msgstr "Stil de maximizare"
+
+#: windows.cpp:123
+msgid "Maximize fully"
+msgstr "Maximizare completã"
+
+#: windows.cpp:124
+msgid "Maximize vertically"
+msgstr "Maximizare verticalã"
+
+#: windows.cpp:127
+msgid "Focus Policy"
+msgstr "Polica de focus"
+
+#: windows.cpp:129
+msgid "Click to focus"
+msgstr "Clic pentru focus"
+
+#: windows.cpp:131
+msgid "Focus follows mouse"
+msgstr "Focusul urmãreºte ºoarecul"
+
+#: windows.cpp:133
+msgid "Classic focus follows mouse"
+msgstr "Focusul urmãreºte ºoarecul (clasic)"
+
+#: windows.cpp:135
+msgid "Classic sloppy focus"
+msgstr "Sloppy focus (clasic)"
+
+#: windows.cpp:144
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"Timpul de auto raise\n"
+"(<100 dezactiveazã)"
+
+#: windows.cpp:147
+msgid "miliseconds"
+msgstr "milisecunde"
+
+#: desktop.cpp:77
+msgid "Active desktop borders"
+msgstr "Marginile active ale ecranului"
+
+#: desktop.cpp:79
+msgid "Enable active desktop borders"
+msgstr "Activeazã marginile active ale ecranului"
+
+#: desktop.cpp:81
+msgid "Move pointer towards center after switch"
+msgstr "Mutã cursorul în centru dupã schimbare"
+
+#: desktop.cpp:87
+msgid "Dekstop switch delay:"
+msgstr "Intârzierea schimbãrii ecranului:"
+
+#: desktop.cpp:100
+msgid "Magic Borders"
+msgstr "Margini magice"
+
+#: desktop.cpp:102
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Zona snap pentru margini:\n"
+"       (pixeli)"
+
+#: desktop.cpp:116
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+"Zona snap pentru ferestre:\n"
+"       (pixeli)"
