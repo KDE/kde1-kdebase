@@ -161,10 +161,15 @@ void execute ( const char* cmd )
 
       // Strip off "file:/" in order to expand local
       // URLs if necessary.
-      if ( uri.find ("file:/") == 0 )
+      if ( uri.find ("file:") == 0 )
       {
-         uri.remove (0, 6);
-         cmd = uri.isEmpty() ? "/" : uri.data();
+         uri.remove ( 0, 5 );
+         // Home directory preceeded by "file:/" or "file://"
+         if ( uri.find("/~") == 0 || uri.find("//~") == 0 )
+            uri.remove( 0, uri.find('~') );
+         else
+            uri = QDir:: cleanDirPath (uri.data());
+         cmd = uri.data();
       }
       // HOME directory ?
       if ( uri[0] == '~' )
