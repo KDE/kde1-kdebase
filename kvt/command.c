@@ -1792,7 +1792,7 @@ void process_csi_sequence()
 void process_xterm_sequence()
 {
   int c,n,i,arg;
-  unsigned char string[STRING_MAX];
+  unsigned char string[STRING_MAX+1];
 
   c = get_com_char(0);
   n = 0;
@@ -1805,7 +1805,7 @@ void process_xterm_sequence()
 
   c = get_com_char(0);
   i = 0;
-  while ( c != 7 && i < STRING_MAX)
+  while ( c != 7 && c != GCC_NULL && i < STRING_MAX)
     {
       if (c >= ' ')
 	string[i++] = c;
