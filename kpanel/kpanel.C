@@ -691,7 +691,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       set_button_text(desktopbar->find(i),
 		      KWM::getDesktopName(i+1));
     }
-
+    
 }
 
 void kPanel::restart(){

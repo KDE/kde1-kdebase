@@ -679,6 +679,7 @@ void kPanel::tipSleepTimerDone(){
 
 void kPanel::showMiniPanel ()
 {
+
   if (!miniPanelHidden) // if allready here do nothing
     return;
   
@@ -734,15 +735,13 @@ void kPanel::showMiniPanel ()
   
   int sx=0; int sx1 =0;
   if (position == top_left)
-    sx = panel_button->mapToGlobal(QPoint(0,0)).x()
-      + panel_button->width();
+    sx = x() + panel_button->x() + panel_button->width();
   if (position == bottom_right && orientation == horizontal)
-    sx1 = panel_button->mapToGlobal(QPoint(0,0)).x()
-      + panel_button->width();
+    sx1 = x() + panel_button->x() + panel_button->width();
   
   if (taskbar_position == taskbar_top_left)
     miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
-  if (taskbar_position == hidden)
+  else if (taskbar_position == hidden)
     miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
   else if (taskbar_position == bottom)
     miniPanelFrame->setGeometry(sx1, h-mh, 2*mh, mh);

@@ -375,7 +375,6 @@ void kPanel::slotPropsApply(){
   for (i=0; i<8; i++){
     KWM::setDesktopName(i+1, led[i]->text());
   }
-  printf("set number of desktops to %d\n", sl_nr_db->value()*2);
   KWM::setNumberOfDesktops(sl_nr_db->value()*2);
   QApplication::flushX();
   dbhs = sl_dbhs->value();

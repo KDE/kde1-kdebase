@@ -5,8 +5,8 @@ In kpanel-0.17:
          This is default now. You can disable it with
              FoldersFirst=off
          in the kpanelrc
-
        - cosmectic problem with my pushbuttons fixed
+       - small bugfix for minipanel which refused to appear sometimes...
 
     Patchlevel 6:
        - menu sorting fixed (thanks to Michael Bialas)
