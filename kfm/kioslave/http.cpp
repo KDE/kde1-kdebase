@@ -715,6 +715,7 @@ int KProtocolHTTP::ProcessHeader()
 		KURL u2( u, buffer + 10 );
 		emit redirection( u2.url() );
 //		return Open( &u2, currentMode );
+		bytesleft = 0;
 		return (SUCCESS);
 	    }
 	    
