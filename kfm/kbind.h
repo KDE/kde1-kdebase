@@ -214,6 +214,8 @@ public:
      */
     KMimeType( const char *_mime_type, const char *_pixmap );
 
+  virtual ~KMimeType() {};
+
     /**
      * Add a binding to this type.
      */
@@ -568,6 +570,8 @@ public:
     KFolderType( const char *_mime_type, const char *_pixmap ) :
 	KMimeType( _mime_type, _pixmap ) { }
 
+  virtual ~KFolderType() {};
+
     /**
      * Get the pixmap files full name.
      * WARNING: This function is NOT reentrant. Copy the returned
@@ -616,6 +620,8 @@ public:
      */
     KDELnkMimeType( const char *_mime_type, const char *_pixmap ) :
 	KMimeType( _mime_type, _pixmap ) { }
+
+  virtual ~KDELnkMimeType() {};
 
     virtual bool run( const char *_url );
     
@@ -668,6 +674,8 @@ public:
      */
     ExecutableMimeType( const char *_mime_type, const char *_pixmap ) :
 	KMimeType( _mime_type, _pixmap ) { }
+
+  virtual ~ExecutableMimeType() {};
 
     virtual bool run( const char *_url );
     
