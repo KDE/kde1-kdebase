@@ -24,6 +24,7 @@
 #include <stdlib.h>
 #include <qfontmet.h> 
 #include <qtooltip.h>
+#include <qcursor.h>
 
 Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
   QFrame(parent)
@@ -221,6 +222,8 @@ void Desktop::mousePressEvent( QMouseEvent *e )
 
     win->mrect = win->prect;
     dragWindow = win;
+    startTime.start();
+    cursor_set = false;
     if (dragWindow)
 	dragStart = e->pos();
 }
@@ -229,7 +232,6 @@ void Desktop::mouseReleaseEvent( QMouseEvent * )
 {
     if (!dragWindow)
 	return;
-
     
     int x = dragWindow->prect.x() * root_size.width()  / pixmap_size.width();
     int y = dragWindow->prect.y() * root_size.height() / pixmap_size.height();
@@ -238,6 +240,8 @@ void Desktop::mouseReleaseEvent( QMouseEvent * )
     dragWindow->rect = QRect(x,y, rect.width(), rect.height());
     KWM::setGeometry(dragWindow->id, dragWindow->rect);
     dragWindow = 0;
+    if (cursor_set)
+	kapp->restoreOverrideCursor();
 }
 
 void Desktop::mouseDoubleClickEvent ( QMouseEvent *)
@@ -250,12 +254,25 @@ void Desktop::mouseMoveEvent( QMouseEvent *e)
     if (e->state() != LeftButton || !dragWindow)
 	return;
 
+    if (startTime.elapsed() < 30)
+	return;
+
+    if (!cursor_set) {
+	kapp->setOverrideCursor(sizeAllCursor);
+	cursor_set = true;
+    }
     QPoint tmp = e->pos() - dragStart;
+    QRect backup = dragWindow->prect;
     dragWindow->prect = dragWindow->mrect;
     dragWindow->prect.moveBy(tmp.x(), tmp.y());
+    QRect inter = dragWindow->prect.intersect(QRect(0,0,
+						    pixmap_size.width(), 
+						    pixmap_size.height()));
+    if (inter.width() < 3 || inter.height() < 3)
+	dragWindow->prect = backup;
+    
     fillPixmap();
     repaint(false);
-
 }
 
 void Desktop::calculate(PagerWindow *win) {

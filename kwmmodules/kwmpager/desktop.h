@@ -27,6 +27,7 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#include <qdatetm.h>
 
 class Pager;
 
@@ -77,6 +78,8 @@ private:
     QSize pixmap_size;
     QPoint dragStart;
     PagerWindow *dragWindow;
+    QTime startTime;
+    bool cursor_set;
 
 signals:
     void activated(int);
