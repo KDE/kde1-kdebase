@@ -20,6 +20,7 @@ $(BUILDDIR)/build-stamp:
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	../configure --with-shadow --without-pam=kde \
+	--with-install-root=`pwd`/debian/tmp \
 	--disable-rpath --with-xdmdir=/usr/X11R6/lib/X11/kdm ; \
 	fi
 	make -C $(BUILDDIR)
@@ -49,7 +50,7 @@ binary-arch: checkroot build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	make -C $(BUILDDIR) RUN_KAPPFINDER="no" DESTDIR=`pwd`/debian/tmp install 
+	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install 
 	cp debian/README.kde debian/tmp/usr/doc/kde
 
 ## Install KDM
