@@ -1884,7 +1884,16 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	    // overflow
 	    if (ev->xproperty.atom == kwm_win_frame_geometry)
 	      return TRUE;
+	    // ignore WM_NORMAL_HINTS
+	    if (ev->xproperty.atom == XA_WM_NORMAL_HINTS)
+	      return TRUE;
+	    if (ev->xproperty.atom == XA_WM_HINTS)
+	      return TRUE;
 	  }
+	    /*
+	    debug("PropertyNotify... %s",
+		XGetAtomName(qt_xdisplay(),ev->xproperty.atom));
+	    */
 	case ButtonPress:
 	case ButtonRelease:
 	case KeyPress:
