@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Windows
+Name[da]=Vinduer
 Name[pl]=Okna
 Name[cs]=Okna
 Name[fi]=Ikkunat

@@ -3,6 +3,7 @@
 Name=Fontmanager
 Icon=kfontmanager.xpm
 Name[de]=Schriftenmanager
+Name[da]=Font indstillinger
 Name[pl]=Mened¿er czcionek
 Name[cs]=Správce znakových sad
 Name[sv]=Typsnittshanterare
@@ -12,6 +13,7 @@ Name[fr]=Gestionnaire de polices
 Exec=kfontmanager
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
+Comment[da]=KDE's Fontmanager.
 Comment[de]=Sucht die Schriften für KDE zusammen
 Comment[nl]=KDE-lettertypebeheer.
 Comment[pl]=Program zarz±dzaj±cy czcionkami KDE.

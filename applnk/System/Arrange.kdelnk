@@ -1,5 +1,6 @@
 [KDE Desktop Entry]
 Name=Arrange Icons
+Name[da]=Arranger Ikoner
 Name[nl]=Pictogrammen schikken
 Name[pl]=Uporz±dkuj ikony
 Name[cs]=Uspoøádej ikony
@@ -10,6 +11,7 @@ Name[fr]=Rangement des icônes
 BinaryPattern=
 Protocols=
 Comment=Arrange Desktop Icons
+Comment[da]=Arranger ikonerne på Arbejdspladsen
 Comment[nl]=Schik de buroblad-pictogrammen
 Comment[pl]=Uporz±dkuj ikony na deskopie
 Comment[cs]=Uspoøádá ikony na pracovní plo¹e

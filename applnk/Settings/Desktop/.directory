@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Desktop
+Name[da]=Arbejdsplads
 Name[pl]=Desktop
 Name[cs]=Pracovní plocha
 Name[fi]=Työpöytä

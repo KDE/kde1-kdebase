@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Input Devices
+Name[de]=Inputenheder
 Name[pl]=Urz±dzenia wej¶ciowe
 Name[cs]=Vstupní zaøízení
 Name[fi]=Syöttölaitteet
