@@ -5,6 +5,8 @@
 // (c) Martin R. Jones 1996
 //
 
+#include <qfileinf.h>
+
 #include "helpwin.h"
 #include <signal.h>
 #include <sys/stat.h>
