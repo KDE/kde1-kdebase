@@ -52,8 +52,8 @@ msgstr "Venstrehendt"
 
 #: keyboard.cpp:67
 msgid "Keyboard repeat"
-msgstr "Tastatur repitisjon"
+msgstr "Tastaturrepitisjon"
 
 #: keyboard.cpp:75
 msgid "Key click volume"
-msgstr "Tast klikk volum"
+msgstr "Lydstyrke på tastetrykk"

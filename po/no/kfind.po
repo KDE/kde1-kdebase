@@ -153,11 +153,11 @@ msgstr "&Alle filer"
 
 #: kftabdlg.cpp:144
 msgid "Find all files created or &modified:"
-msgstr "Finn alle filer opprettet eller &modifisert:"
+msgstr "Finn alle filer opprettet eller e&ndret:"
 
 #: kftabdlg.cpp:145
 msgid "&between"
-msgstr "mellom"
+msgstr "&mellom"
 
 #: kftabdlg.cpp:146
 msgid "during the previou&s "
@@ -169,7 +169,7 @@ msgstr "&iløpet av foregående"
 
 #: kftabdlg.cpp:195
 msgid " Date Modified "
-msgstr "Dato endret "
+msgstr " Dato endret "
 
 #: kftabdlg.cpp:202
 msgid "Of &type:"
@@ -245,7 +245,7 @@ msgstr "Preferanser"
 
 #: kfoptions.cpp:73
 msgid "File format:"
-msgstr "Fil format:"
+msgstr "Filformat:"
 
 #: kfoptions.cpp:75
 msgid "Save results to file:"
@@ -257,7 +257,7 @@ msgstr "Lagre resultater til fil ~/.kfind-results.html"
 
 #: kfoptions.cpp:80
 msgid "Browse"
-msgstr "Browse"
+msgstr "Bla igjennom"
 
 #: kfoptions.cpp:93
 msgid "Plain Text"
@@ -298,7 +298,7 @@ msgstr "Det var ikke mulig å lagre resultatet!"
 
 #: kfwin.cpp:252 kfwin.cpp:254 kfwin.cpp:256
 msgid "KFind Results File"
-msgstr "KFind resultat fil"
+msgstr "KFind-resultatfil"
 
 #: kfwin.cpp:281
 msgid "Results were saved to file\n"

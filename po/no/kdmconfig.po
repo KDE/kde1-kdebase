@@ -50,7 +50,7 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Beklager, men du har ikke lese/skrive\n"
+"Beklager, men du har ikke lese/skrive-\n"
 "tilgang til KDM-oppsettsfil."
 
 #: main.cpp:157
@@ -89,7 +89,8 @@ msgstr "Windows"
 msgid ""
 "There was an error loading the image:\n"
 ">"
-msgstr "Det var en feil ved innlasting av bildet:\n"
+msgstr ""
+"Det var en feil ved innlasting av bildet:\n"
 ">"
 
 #: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
@@ -105,7 +106,8 @@ msgstr "FEIL"
 msgid ""
 "There was an error saving the image:\n"
 ">"
-msgstr "Det var en feil ved lagring av bildet:\n"
+msgstr ""
+"Det var en feil ved lagring av bildet:\n"
 ">"
 
 #: kdm-appear.cpp:195 kdm-users.cpp:226
@@ -116,14 +118,16 @@ msgstr "Beklager, men \n"
 msgid ""
 "\n"
 "does not seem to be an image file"
-msgstr "\n"
+msgstr ""
+"\n"
 "ser ikke ut til å være en bildefil"
 
 #: kdm-appear.cpp:198 kdm-users.cpp:229
 msgid ""
 "\n"
 "Please use files with these extensions\n"
-msgstr "\n"
+msgstr ""
+"\n"
 "Vennligst bruk filer med disse etternavn\n"
 
 #: kdm-appear.cpp:200 kdm-users.cpp:231
@@ -134,7 +138,8 @@ msgstr "Feil fil-etternavn"
 msgid ""
 "<\n"
 "It will not be saved..."
-msgstr "<\n"
+msgstr ""
+"<\n"
 "Det vil ikke bli lagret..."
 
 #: kdm-font.cpp:48
@@ -191,13 +196,14 @@ msgstr "Utvalgte brukere"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "No-show brukere"
+msgstr "Ikke-vis-brukere"
 
 #: kdm-users.cpp:79
 msgid ""
 "Show only\n"
 "selected users"
-msgstr "Vis bare\n"
+msgstr ""
+"Vis bare\n"
 "utvalgte brukere"
 
 #: kdm-users.cpp:86
@@ -206,7 +212,7 @@ msgid ""
 " but no-show users"
 msgstr ""
 "Vis alle brukere\n"
-" untatt no-show brukere"
+" untatt ikke-vis-brukere"
 
 #: kdm-users.cpp:97
 msgid "Show users"
@@ -238,11 +244,11 @@ msgstr "Alle"
 
 #: kdm-sess.cpp:58
 msgid "Root Only"
-msgstr "Bare Rot"
+msgstr "Bare root"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "Bare konsol"
+msgstr "Bare konsoll"
 
 #: kdm-sess.cpp:63
 msgid "Commands"

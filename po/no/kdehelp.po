@@ -16,7 +16,7 @@ msgstr ""
 
 #: helpwin.cpp:58
 msgid "KDE Help: Open URL"
-msgstr "KDE hjelp: +pen URL"
+msgstr "KDE hjelp: Åpen URL"
 
 #: helpwin.cpp:60
 msgid "Open URL"
@@ -136,7 +136,7 @@ msgstr "Seksjon %s"
 #: man.cpp:106
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Online håndbok - Seksjon %s"
+msgstr "Online-håndbok - Seksjon %s"
 
 #: man.cpp:455
 msgid "User Commands"
@@ -180,7 +180,7 @@ msgstr "Online-håndbok - Seksjon"
 
 #: man.cpp:835
 msgid "\"man\" system call failed"
-msgstr "\"man\" systemanrop feilet"
+msgstr "\"man\"-systemanrop feilet"
 
 #: man.cpp:853
 msgid "Opening temporary file failed"
@@ -193,7 +193,7 @@ msgstr "CGI: Feil med bestemmelsesteds URL: %s\n"
 
 #: mainwidget.cpp:132
 msgid "&New Help Window"
-msgstr "&Nytt hjelpe vindu"
+msgstr "&Nytt hjelpevindu"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
@@ -261,7 +261,7 @@ msgstr "KDE hjelpesystem\n"
 
 #: mainwidget.cpp:183
 msgid "Version "
-msgstr "Versjon"
+msgstr "Versjon "
 
 #: mainwidget.cpp:185
 msgid ""
@@ -273,6 +273,13 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Dette programmet er lisensiert under  GNU General Public License (GPL).\n"
+"KDEHelp kommer med ABSOLUTT INGEN GARANTIER i det omfang tillatt ved "
+"gjeldende lov."
 
 #: mainwidget.cpp:201
 msgid "&Goto"
@@ -327,7 +334,7 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"KDE hjelpe system\n"
+"KDE hjelpesystem\n"
 "Versjon"
 
 #: mainwidget.cpp:584

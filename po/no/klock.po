@@ -20,7 +20,7 @@ msgstr "Banner"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "KBanner oppsett"
+msgstr "KBanner-oppsett"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: banner.cpp:461
 msgid "KDE is great"
-msgstr "KDE is great"
+msgstr "KDE er bra"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -63,7 +63,7 @@ msgstr "Bat"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "KBat oppsett"
+msgstr "KBat-oppsett"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -93,7 +93,7 @@ msgstr "Blank skjerm"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "KBlankscrn oppsett"
+msgstr "KBlankscrn-oppsett"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -121,7 +121,7 @@ msgstr "Beklager. Denne skjermspareren trenger en fargeskjerm"
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Blob Saver oppsett"
+msgstr "Blob Saver-oppsett"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
@@ -158,7 +158,7 @@ msgstr ""
 #: bouboule.cpp:1005
 #, fuzzy
 msgid "Setup KBouboule"
-msgstr "KFlame oppsett"
+msgstr "KFlame-oppsett"
 
 #: bouboule.cpp:1032
 #, fuzzy
@@ -166,22 +166,20 @@ msgid "Number of points:"
 msgstr "Antall flaggermus"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Antall punkter:"
+msgstr "Punktstørrelse:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Hyppighet for å endre farger:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D-modus"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Om Blob"
+msgstr "Om Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -191,6 +189,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- en liten klass av kuler som vrir seg og endrer størrelse\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Portet til kscreensave av Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -198,7 +201,7 @@ msgstr "Flame"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "KFlame oppsett"
+msgstr "KFlame-oppsett"
 
 #: flame.cpp:423
 msgid "Max Levels:"
@@ -224,7 +227,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Ported to kscreensave by Martin Jones."
+"Portet til kscreensave av Martin Jones."
 
 #: forest.cpp:206
 msgid "Forest"
@@ -232,7 +235,7 @@ msgstr "Forest"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "KForest oppsett"
+msgstr "KForest-oppsett"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -254,7 +257,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."
 
 #: hop.cpp:226
 msgid "Hop"
@@ -262,11 +265,11 @@ msgstr "Hop"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "KHop oppsett"
+msgstr "KHop-oppsett"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
-msgstr "Samme farge pixels:"
+msgstr "Samme farge-pixels:"
 
 #: hop.cpp:351 lissie.cpp:367
 msgid "Cycles:"
@@ -288,7 +291,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."
 
 #: laser.cpp:333
 msgid "Laser"
@@ -296,7 +299,7 @@ msgstr "Laser"
 
 #: laser.cpp:393
 msgid "Setup KLaser"
-msgstr "KLaser oppsett"
+msgstr "KLaser-oppsett"
 
 #: laser.cpp:482
 msgid "About Laser"
@@ -314,7 +317,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Ported to kscreensave by Martin Jones."
+"Portet til kscreensave av Martin Jones."
 
 #: lines.cpp:116
 msgid "Lines"
@@ -322,7 +325,7 @@ msgstr "Lines"
 
 #: lines.cpp:134
 msgid "Setup klines"
-msgstr "KLines oppsett"
+msgstr "KLines-oppsett"
 
 #: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
@@ -351,9 +354,9 @@ msgid ""
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
-"Lines Version 0.1.1\n"
+"Lines versjon 0.1.1\n"
 "\n"
-"written by Dirk Staneker 1997\n"
+"skrevet av Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
 #: lissie.cpp:241
@@ -362,7 +365,7 @@ msgstr "Lissie"
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
-msgstr "KLissie oppsett"
+msgstr "KLissie-oppsett"
 
 #: lissie.cpp:353
 msgid "Num of Lissies:"
@@ -384,7 +387,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 by Alexander Jolk\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."
 
 #: main.cpp:280
 #, c-format
@@ -398,14 +401,14 @@ msgid ""
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"Ditt system bruker skygge passord!\n"
-"Vennligst kontakt din system administrator.\n"
+"Ditt system bruker skyggepassord!\n"
+"Vennligst kontakt din systemadministrator.\n"
 "\n"
 "Fortell ham at du trenger suid for skjermsparerne!"
 
 #: main.cpp:312
 msgid "Shadow Passwords"
-msgstr "Skygge passord"
+msgstr "Skyggepassord"
 
 #: main.cpp:470
 #, c-format
@@ -463,11 +466,11 @@ msgstr "Morf3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "KMorph3d oppsett"
+msgstr "KMorph3d-oppsett"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
-msgstr "Objekt type:"
+msgstr "Objekt-type:"
 
 #: morph3d.cpp:1120
 msgid "About Morph3D"
@@ -485,7 +488,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -493,7 +496,7 @@ msgstr "Polygoner"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "KPolygon oppsett"
+msgstr "KPolygon-oppsett"
 
 #: polygon.cpp:107
 msgid "Vertices:"
@@ -510,7 +513,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Polygon Version 0.1\n"
+"Polygon Versjon 0.1\n"
 "\n"
 "skrevet av Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -521,7 +524,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "Pyro oppsett"
+msgstr "Pyro-oppsett"
 
 #: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
@@ -547,7 +550,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Ported to kscreensave by Martin Jones."
+"Portet til kscreensave av Martin Jones."
 
 #: rock.cpp:441
 msgid "Rock"
@@ -555,7 +558,7 @@ msgstr "Rock"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "KRock oppsett"
+msgstr "KRock-oppsett"
 
 #: rock.cpp:589
 msgid "Move"
@@ -581,7 +584,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 by Jamie Zawinski\n"
 "\n"
-"Ported to kscreensave by Martin Jones."
+"Portet til kscreensave av Martin Jones."
 
 #: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
@@ -596,44 +599,40 @@ msgid "Science"
 msgstr ""
 
 #: science.cpp:562
-#, fuzzy
 msgid "Setup Science"
-msgstr "KLines oppsett"
+msgstr "Science-oppsett"
 
 #: science.cpp:580
-#, fuzzy
 msgid "Mode:"
-msgstr "Midten:"
+msgstr "Modus:"
 
 #: science.cpp:585
 msgid "Whirl"
 msgstr ""
 
 #: science.cpp:586
-#, fuzzy
 msgid "Sphere"
-msgstr "Hastighet"
+msgstr "Kule"
 
 #: science.cpp:598
 msgid "Inverse"
-msgstr ""
+msgstr "Omvendt"
 
 #: science.cpp:607
 msgid "Gravity"
-msgstr ""
+msgstr "Gravitasjon"
 
 #: science.cpp:632
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensitet:"
 
 #: science.cpp:660
 msgid "Motion:"
-msgstr ""
+msgstr "Bevegelse:"
 
 #: science.cpp:845
-#, fuzzy
 msgid "About Science"
-msgstr "Om Lines"
+msgstr "Om Science"
 
 #: science.cpp:846
 msgid ""
@@ -642,6 +641,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science versjon 0.24.2 beta\n"
+"\n"
+"skrevet av Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -649,7 +652,7 @@ msgstr "Slip"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "KSlip oppsett"
+msgstr "KSlip-oppsett"
 
 #: slip.cpp:392
 msgid "Batchcount:"
@@ -671,25 +674,23 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Scott Draves\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Rom (GL)"
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "KSlip oppsett"
+msgstr "KSpace-oppsett"
 
 #: space.cpp:597
 msgid "Warp Interval:"
 msgstr ""
 
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "Om Slip"
+msgstr "Om kSpace"
 
 #: space.cpp:687
 msgid ""
@@ -697,6 +698,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
 msgid "Swarm"
@@ -704,7 +708,7 @@ msgstr "Swarm"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr "KSwarm oppsett"
+msgstr "KSwarm-oppsett"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"
@@ -726,4 +730,4 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Ported to kscreensave by Emanuel Pirker."
+"Portet til kscreensave av Emanuel Pirker."

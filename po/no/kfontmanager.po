@@ -16,7 +16,7 @@ msgstr ""
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE skrifttype manager"
+msgstr "KDE skrifttypebehandler"
 
 #: main.cpp:71
 msgid "KDE Fonts"
@@ -24,15 +24,15 @@ msgstr "KDE skrifttyper"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Skrifttype utforsker"
+msgstr "Skrifttypeutforsker"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Rå X11 skrifttype liste"
+msgstr "Rå-X11-skrifttypeliste"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tilgjengelige X11 skrifttyper"
+msgstr "Tilgjengelige X11-skrifttyper"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -40,7 +40,7 @@ msgstr "Skrifttyper tilgjengelig for KDE"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "KDE skrifttype manager eksempel streng"
+msgstr "Eksempeltekst for KDE-skrifttypebehandler"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:109
 msgid "About kfontmanager"
@@ -63,7 +63,7 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"Variabelen HOME\n"
+"Miljøvariabelen HOME\n"
 "er ikke fastsatt\n"
 
 #: kfontmanager.cpp:289
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts eksisterer, men\n"
 "kan ikke skrives til\n"
-"Kan ikke lagre KDE skrifttypeliste."
+"Kan ikke lagre KDE-skrifttypeliste."
 
 #: kfontlist.cpp:62
 msgid ""

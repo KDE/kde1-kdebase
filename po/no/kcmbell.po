@@ -25,7 +25,7 @@ msgstr "bruk: kcmbell [-init | bell]\n"
 
 #: main.cpp:89
 msgid "Bell settings"
-msgstr "Klokke instillinger"
+msgstr "Klokkeinstillinger"
 
 #: bell.cpp:85
 msgid "Volume"

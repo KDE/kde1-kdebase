@@ -80,27 +80,27 @@ msgstr ""
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr ""
+msgstr "Ikoniser vindu"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Gjør om minimer"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr ""
+msgstr "Maksimere vindu"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Avmaksimere vindu"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr ""
+msgstr "Setter fast vindu"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Fjerner fastsetting av vindu"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -112,27 +112,27 @@ msgstr ""
 
 #: syssound.cpp:171
 msgid "Logout"
-msgstr ""
+msgstr "Logg ut"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr ""
+msgstr "Utloggingsmelding"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
-msgstr ""
+msgstr "Begynnelsen av flytt vindu"
 
 #: syssound.cpp:174
 msgid "Window Move End"
-msgstr ""
+msgstr "Slutten av flytt vindu"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Begynnelsen av endre vindusstørrelse"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr ""
+msgstr "Slutten av endre vindusstørrelse"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -152,7 +152,7 @@ msgstr "&Lyder:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Flere WAV filer kan slippes i lydlisten."
+msgstr "Flere WAV-filer kan slippes i lydlisten."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
@@ -165,7 +165,7 @@ msgid ""
 msgstr "Beklager, denne type URL er for tiden ikke støttet av KDE systemlyder "
 
 #: syssound.cpp:468
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
@@ -173,11 +173,11 @@ msgid ""
 msgstr ""
 "Beklager, men \n"
 "%s\n"
-"ser ikke ut til å være en WAV--fil!\n"
+"ser ikke ut til å være en WAV--fil.\n"
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "Feil fil etternavn"
+msgstr "Feil etternavn på feilen"
 
 #: syssound.cpp:482
 #, c-format

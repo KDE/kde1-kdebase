@@ -43,12 +43,3 @@ msgstr ""
 "\n"
 "Takk til:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-
-#~ msgid "&About KControl..."
-#~ msgstr "&Om KControll..."
-
-#~ msgid "&Using KControl"
-#~ msgstr "&Bruke KControl"
-
-#~ msgid "About KControl"
-#~ msgstr "Om KControl"

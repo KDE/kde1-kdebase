@@ -28,7 +28,7 @@ msgstr "bruk: KCminfo [-init | {processor,memory}]\n"
 
 #: main.cpp:74
 msgid "System Information"
-msgstr "System informasjon"
+msgstr "Systeminformasjon"
 
 #: memory.cpp:11
 msgid "Total memory"
@@ -36,7 +36,7 @@ msgstr "Totalt minne"
 
 #: memory.cpp:21
 msgid "Free memory"
-msgstr "Fritt minne"
+msgstr "Ledig minne"
 
 #: memory.cpp:29
 msgid "Shared memory"
@@ -44,20 +44,20 @@ msgstr "Delt minne"
 
 #: memory.cpp:37
 msgid "Buffer memory"
-msgstr "Buffer minne"
+msgstr "Bufferminne"
 
 #: memory.cpp:45
 msgid "Swap memory"
-msgstr "Vekslefil minne"
+msgstr "Vekslefilminne"
 
 #: memory.cpp:53
 msgid "Free swap memory"
-msgstr "Fri vekslefil minne"
+msgstr "Ledig vekslefilminne"
 
 #: memory.cpp:74
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bytes  = %8.2f MB"
+msgstr "%10ld byter  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101

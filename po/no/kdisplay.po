@@ -48,19 +48,19 @@ msgstr "Tapet"
 
 #: backgnd.cpp:274
 msgid "Ti&led"
-msgstr "Fliselagt"
+msgstr "Fli&selagt"
 
 #: backgnd.cpp:282
 msgid "&Centred"
-msgstr "&Sentrert"
+msgstr "S&entrert"
 
 #: backgnd.cpp:290
 msgid "&Scaled"
-msgstr "S&kalert"
+msgstr "&Skalert"
 
 #: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
 msgid "No wallpaper"
-msgstr "Ingen tapet"
+msgstr "Intet tapet"
 
 #: backgnd.cpp:334
 msgid "&Browse..."

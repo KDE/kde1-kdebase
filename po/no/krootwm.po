@@ -41,7 +41,7 @@ msgstr "Forny skrivebord"
 
 #: krootwm.C:189
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Legg vinduer utover"
 
 #: krootwm.C:190
 msgid "Cascade windows"

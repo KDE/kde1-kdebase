@@ -74,7 +74,9 @@ msgstr ""
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
-msgstr "Velg Ok for å gå ut av KMenuedit"
+msgstr ""
+"Umulig å opprette katalog for personlig meny.\n"
+" Velg Ok for å gå ut av KMenuedit"
 
 #: confmenu.cpp:90 entrydialog.cpp:52
 msgid "Separator"
@@ -163,11 +165,11 @@ msgstr "Enhet"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Fil navn:"
+msgstr "Filnavn:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"
-msgstr "Mini ikon:"
+msgstr "Miniikon:"
 
 #: entrydialog.cpp:127
 msgid "Icon:"
@@ -187,7 +189,7 @@ msgstr "Utfør:"
 
 #: entrydialog.cpp:192
 msgid "Working Directory:"
-msgstr "Arbeids mappe:"
+msgstr "Arbeidsmappe:"
 
 #: entrydialog.cpp:205
 msgid "Run in terminal"
@@ -195,11 +197,11 @@ msgstr "Kjør i terminal"
 
 #: entrydialog.cpp:211
 msgid "Terminal Options:"
-msgstr "Terminal valg:"
+msgstr "Terminalvalg:"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr "Binært mønster:"
+msgstr "Binærmønster:"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
@@ -207,7 +209,7 @@ msgstr "Applikasjon som skal svelges:"
 
 #: entrydialog.cpp:306
 msgid "Title of application:"
-msgstr "Applikasjons tittel:"
+msgstr "Applikasjonstittel:"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
@@ -227,15 +229,15 @@ msgstr "Enhet:"
 
 #: entrydialog.cpp:403
 msgid "Mount Point:"
-msgstr "Mount Point:"
+msgstr "Monteringssted:"
 
 #: entrydialog.cpp:409
 msgid "FS Type:"
-msgstr "FS type:"
+msgstr "FS-type:"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "Unmount ikon:"
+msgstr "Umonter-ikon:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -252,9 +254,3 @@ msgstr "Personlig:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Standardverdi:"
-
-#~ msgid "Type:"
-#~ msgstr "Type:"
-
-#~ msgid "Name:"
-#~ msgstr "Navn:"

@@ -68,7 +68,7 @@ msgstr "Flytt til Papirkurv"
 # kfmgui.cpp:331
 #: kfmgui.cpp:331
 msgid "&Select"
-msgstr "Merk"
+msgstr "Mer&k"
 
 # kfmgui.cpp:335
 #: kfmgui.cpp:335
@@ -198,17 +198,17 @@ msgstr "Vis &verktøylinje"
 # kfmgui.cpp:416
 #: kfmgui.cpp:416
 msgid "Show &Location bar"
-msgstr "Vis stedslinje"
+msgstr "Vis s&tedslinje"
 
 # kfmgui.cpp:419
 #: kfmgui.cpp:419
 msgid "Sa&ve Settings"
-msgstr "Lagre innstillinger"
+msgstr "Lagre &innstillinger"
 
 # kfmgui.cpp:421
 #: kfmgui.cpp:421
 msgid "Configure Browser..."
-msgstr "Konfigurer nettlos..."
+msgstr "Konfigurer &nettlos..."
 
 # kfmgui.cpp:464
 #: kfmgui.cpp:464
@@ -312,7 +312,7 @@ msgstr "Ny"
 #: kfmtree.cpp:318 kfmview.cpp:371 kfmview.cpp:440 kfmview.cpp:571
 #: kiojob.cpp:82 root.cpp:1117
 msgid "ERROR: Malformed URL"
-msgstr "FEIL: misdannet URL"
+msgstr "FEIL: Misdannet URL"
 
 # kfmgui.cpp:1139 kfmserver.cpp:178
 #: kfmgui.cpp:1144 kfmserver.cpp:178
@@ -515,7 +515,7 @@ msgid ""
 "Not an application"
 msgstr ""
 "Dette er et dokument!\n"
-"ikke et program"
+"Ikke et program"
 
 # kbind.cpp:1556 kbind.cpp:1573
 #: kbind.cpp:1556 kbind.cpp:1573
@@ -544,12 +544,12 @@ msgstr ""
 # kbind.cpp:1670
 #: kbind.cpp:1670
 msgid "The \"Link=....\" entry is empty"
-msgstr "\"Link=....\" innslaget er tomt"
+msgstr "\"Link=....\"-innslaget er tomt"
 
 # kbind.cpp:1685
 #: kbind.cpp:1685
 msgid "The config file has no \"Type=...\" line"
-msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\" linje"
+msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 
 # kbind.cpp:1715 kbind.cpp:1866
 #: kbind.cpp:1715 kbind.cpp:1866
@@ -566,18 +566,18 @@ msgid ""
 msgstr ""
 "Denne filen inneholder ikke noe\n"
 "Exec=....\n"
-"innslag. Rediger Egenskaper\n"
+"innslag. Rediger egenskaper\n"
 "for å løse problemet"
 
 # kbind.cpp:1822
 #: kbind.cpp:1822
 msgid "ERROR: No Terminal Setting"
-msgstr "FEIL: Ingen Terminalinstillinger"
+msgstr "FEIL: Ingen terminalinstillinger"
 
 # kbind.cpp:1913
 #: kbind.cpp:1913
 msgid "No mount point in *.kdelnk file"
-msgstr "Ingen monteringsplass i *.kdelnk-fil"
+msgstr "Ingen monteringssted i *.kdelnk-fil"
 
 # kbind.cpp:1953
 #: kbind.cpp:1953
@@ -627,7 +627,7 @@ msgstr "Flytt"
 # kfmman.cpp:1172 kfmtree.cpp:233 main.cpp:244
 #: kfmman.cpp:1149 kfmtree.cpp:233 main.cpp:244
 msgid "Properties"
-msgstr "egenskaper"
+msgstr "Egenskaper"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
 #: kfmman.cpp:1210 kfmtree.cpp:159 main.cpp:245
@@ -642,7 +642,7 @@ msgstr "Tøm Papirkurv"
 # main.cpp:247
 #: main.cpp:247
 msgid "Add to Bookmarks"
-msgstr "Legg til Bokmerker"
+msgstr "Legg til bokmerker"
 
 # htmlopts.cpp:35
 #: htmlopts.cpp:35
@@ -711,7 +711,7 @@ msgstr "Avstand mellom vertikale bunngitter:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Gjennomsiktig tekst for bunnikoner"
 
 # bookmark.cpp:259
 #: bookmark.cpp:259
@@ -721,7 +721,7 @@ msgstr "Kunne ikke lagre bokmerke"
 # kfmprops.cpp:237
 #: kfmprops.cpp:241
 msgid "Full Name"
-msgstr "Fullt Navn"
+msgstr "Fullt navn"
 
 # kfmprops.cpp:255
 #: kfmprops.cpp:259
@@ -752,7 +752,7 @@ msgstr "Sist brukt"
 # kfmprops.cpp:314
 #: kfmprops.cpp:318
 msgid "Last Modified"
-msgstr "Sist Modifisert"
+msgstr "Sist endret"
 
 # kfmprops.cpp:359
 #: kfmprops.cpp:367
@@ -858,13 +858,13 @@ msgstr ""
 #: kfmprops.cpp:633
 #, c-format
 msgid " ERROR: No user %s"
-msgstr "FEIL: Ingen bruker %s"
+msgstr " FEIL: Ingen bruker %s"
 
 # kfmprops.cpp:630
 #: kfmprops.cpp:638
 #, c-format
 msgid " ERROR: No group %s"
-msgstr "FEIL: Ingen gruppe %s"
+msgstr " FEIL: Ingen gruppe %s"
 
 # kfmprops.cpp:636
 #: kfmprops.cpp:644
@@ -898,7 +898,7 @@ msgstr "Stående Katalog"
 # kfmprops.cpp:703
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "Vindustittel"
 
 # kfmprops.cpp:707
 #: kfmprops.cpp:715
@@ -949,7 +949,7 @@ msgstr "(Ingen)"
 # kfmprops.cpp:1224
 #: kfmprops.cpp:1232
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr ""
+msgstr "Binærmønster (netscape;Netscape;)"
 
 # kfmprops.cpp:1231 kfmprops.cpp:1483
 #: kfmprops.cpp:1239 kfmprops.cpp:1491
@@ -979,12 +979,12 @@ msgstr "Standard applikasjon"
 # kfmprops.cpp:1638
 #: kfmprops.cpp:1646
 msgid "Device ( /dev/fd0 )"
-msgstr ""
+msgstr "Enhet ( /dev/fd0 )"
 
 # kfmprops.cpp:1646
 #: kfmprops.cpp:1654
 msgid "Mount Point ( /floppy )"
-msgstr ""
+msgstr "Monteringssted ( /floppy )"
 
 # kfmprops.cpp:1656
 #: kfmprops.cpp:1664
@@ -999,12 +999,12 @@ msgstr "Filsystem ( iso9660,msdos,minix,default )"
 # kfmprops.cpp:1672
 #: kfmprops.cpp:1680
 msgid "Mounted Icon"
-msgstr "Montert ikon"
+msgstr "Montertikon"
 
 # kfmprops.cpp:1676
 #: kfmprops.cpp:1684
 msgid "Unmounted Icon"
-msgstr "Umontert ikon"
+msgstr "Umontertikon"
 
 # kfmserver.cpp:40
 #: kfmserver.cpp:40
@@ -1061,6 +1061,8 @@ msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
 msgstr ""
+"En eller annen prøvde å autorisere seg selv\n"
+"ved å bruke feil passord"
 
 # root.cpp:661
 #: root.cpp:672
@@ -1251,6 +1253,8 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
+"Kunne ikke opprette socket for\n"
+"%s"
 
 # kiojob.cpp:1223 kiojob.cpp:1354
 #: kiojob.cpp:1234 kiojob.cpp:1365
@@ -1514,7 +1518,7 @@ msgstr "Passord"
 # kfmexec.cpp:136
 #: kfmexec.cpp:136
 msgid "Trying to open"
-msgstr "prøver å åpne"
+msgstr "Prøver å åpne"
 
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:20
@@ -1529,7 +1533,7 @@ msgstr "logg inn som:"
 # useragentdlg.cpp:52
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
-msgstr ""
+msgstr "Kjente tilordninger:"
 
 # kproxydlg.cpp:14
 #: kproxydlg.cpp:13
@@ -1554,17 +1558,17 @@ msgstr "&Proxy"
 # kkfmoptdlg.cpp:21
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
-msgstr ""
+msgstr "Bruker&agent"
 
 # kkfmoptdlg.cpp:24
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
-msgstr "Skrifttyper"
+msgstr "Skri&fttyper"
 
 # kkfmoptdlg.cpp:27
 #: kkfmoptdlg.cpp:27
 msgid "&Colors"
-msgstr "Farger"
+msgstr "Fa&rger"
 
 # kkfmoptdlg.cpp:30
 #: kkfmoptdlg.cpp:30
@@ -1609,12 +1613,12 @@ msgstr "&Applikasjon"
 # kfmprops.h:355
 #: kfmprops.h:355
 msgid "&Binding"
-msgstr ""
+msgstr "&Tilordninger"
 
 # kfmprops.h:385
 #: kfmprops.h:385
 msgid "De&vice"
-msgstr "Enhet"
+msgstr "&Enhet"
 
 # kfmexec/main.cpp:46
 #: kfmexec/main.cpp:46
@@ -1653,36 +1657,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-#~ msgid "Run normally"
-#~ msgstr "Kjør normalt"
-
-#~ msgid "Run in Panel (drag onto Panel to execute)"
-#~ msgstr "Kjør i Panelet (dra til Panelet for å utføre)"
-
-#~ msgid ""
-#~ "You can run this program either\n"
-#~ "in the Panel or in a Terminal, \n"
-#~ "but not both!"
-#~ msgstr ""
-#~ "Du kan kjøre dette programmet enten\n"
-#~ "i Panelet eller i en Terminal,\n"
-#~ "men ikke begge deler!"
-
-#~ msgid "&Tool"
-#~ msgstr "Verktøy"
-
-#~ msgid "Home"
-#~ msgstr "Hjem"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Legg til Bokmerke"
-
-#~ msgid "Name"
-#~ msgstr "Navn"
-
-#~ msgid "Group"
-#~ msgstr "Gruppe"
-
-#~ msgid "Owner"
-#~ msgstr "Eier"
