@@ -741,17 +741,18 @@ void KFMDirTreeItem::setOpen( bool _open )
 	fname += s;
 	 
 	if (stat( fname, &buff )) { warning("Could not stat %s",fname.data()); }
+        else {
+          // For symlinks, follow them to stat the real file or directory
+          if ( S_ISLNK( buff.st_mode ) ) { lstat( fname, &buff ); }
 
-	// For symlinks, follow them to stat the real file or directory
-	if ( S_ISLNK( buff.st_mode ) ) { lstat( fname, &buff ); }
-
-	if ( S_ISDIR( buff.st_mode ) )
-	{
+          if ( S_ISDIR( buff.st_mode ) )
+          {
 	    // create item, using encoded path
 	    KFMDirTreeItem *item = new KFMDirTreeItem( dirTree, fname, FALSE );
 	    item->setLevel( getLevel() + 1 );
 	    finderNode->append( item );
-	}
+          }
+        }
     }
     
     bFilled = TRUE;    
