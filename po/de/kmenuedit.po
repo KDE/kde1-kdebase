@@ -77,7 +77,7 @@ msgstr "Öffnen / Schliessen"
 
 #: confmenu.cpp:110
 msgid "! PROTECTED Button !"
-msgstr ""
+msgstr "! GESCHÜTZTER Button !"
 
 #: confmenu.cpp:171 confmenu.cpp:292
 msgid "Warning !"
@@ -201,7 +201,7 @@ msgstr "Terminal-Einstellungen"
 
 #: entrydialog.cpp:292
 msgid "Binary Pattern:"
-msgstr ""
+msgstr "Binär-Muster:"
 
 #: entrydialog.cpp:300
 msgid "Fvwm Command:"
@@ -221,15 +221,15 @@ msgstr "Gerät:"
 
 #: entrydialog.cpp:376
 msgid "Mount Point:"
-msgstr ""
+msgstr "Einhäng-Punkt"
 
 #: entrydialog.cpp:382
 msgid "FS Type:"
-msgstr ""
+msgstr "DS Typ:"
 
 #: entrydialog.cpp:388
 msgid "Unmount Icon:"
-msgstr ""
+msgstr "Aushäng-Icon:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"

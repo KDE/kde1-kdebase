@@ -154,15 +154,15 @@ msgstr "Suche alle erstellten oder veränderten Dateien:"
 
 #: kftabdlg.cpp:118
 msgid "&between"
-msgstr "&zwischen  "
+msgstr "&zwischen"
 
 #: kftabdlg.cpp:119
 msgid "during the previou&s "
-msgstr "in den &letzten"
+msgstr "in den &letzten "
 
 #: kftabdlg.cpp:120
 msgid "&during the previous "
-msgstr "&in den letzten"
+msgstr "&in den letzten "
 
 #: kftabdlg.cpp:168
 msgid " Date Modified "
@@ -279,7 +279,7 @@ msgstr "KFind Ergebnisdatei"
 
 #: kfwin.cpp:179
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"

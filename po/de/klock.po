@@ -540,7 +540,7 @@ msgstr "KSlip einstellen"
 
 #: slip.cpp:376
 msgid "Batchcount:"
-msgstr ""
+msgstr "Nr. der Fledermäuse:"
 
 #: slip.cpp:464
 msgid "About Slip"

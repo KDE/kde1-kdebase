@@ -23,11 +23,11 @@ msgstr "Eigenschaften"
 
 #: kpanel.C:243
 msgid "Go!"
-msgstr ""
+msgstr "Start!"
 
 #: kpanel.C:245 tools.C:818
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Where do you want to go tomorrow?"
 
 #: kpanel.C:318
 msgid "No info available"

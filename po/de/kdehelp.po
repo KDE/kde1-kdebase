@@ -206,7 +206,7 @@ msgstr "UR&L öffnen..."
 
 #: mainwidget.cpp:138
 msgid "&Reload"
-msgstr ""
+msgstr "&Neu laden"
 
 #: mainwidget.cpp:140
 msgid "&Search"
@@ -268,7 +268,7 @@ msgstr "KDE-Hilfe-System\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
-msgstr ""
+msgstr "Version "
 
 #: mainwidget.cpp:186
 msgid ""
@@ -280,6 +280,9 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n\nCopyright (C) 1997 Martin Jones <mjones@kde.org>\n\n"
+"Dieses Programm wurde unter der GNU General Public License (GPL) veröffentlichet.\n"
+"KDEHelp kommt mit ABSOLUT KEINER GARANTIE"
 
 #: mainwidget.cpp:202
 msgid "&Goto"
@@ -322,7 +325,7 @@ msgstr "Inhalt der Hilfe "
 
 #: mainwidget.cpp:260
 msgid "Reload current document"
-msgstr ""
+msgstr "Lade aktuelles Dokument neu"
 
 #: mainwidget.cpp:265
 msgid "Stop"

@@ -172,7 +172,7 @@ msgstr "&Werkzeug"
 
 #: kfmgui.cpp:477
 msgid "&Cache"
-msgstr ""
+msgstr "&Cache"
 
 #: kfmgui.cpp:514
 msgid "Home"

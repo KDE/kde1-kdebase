@@ -19,7 +19,7 @@ msgstr "&Titelzeile"
 
 #: main.cpp:91
 msgid "Window manager style"
-msgstr ""
+msgstr "Eigenschaften der Fenster-Anzeige"
 
 #: titlebar.cpp:113
 msgid "Minimize"
@@ -77,7 +77,7 @@ msgstr "Schlicht"
 
 #: titlebar.cpp:924 titlebar.cpp:944
 msgid "Pixmap"
-msgstr ""
+msgstr "Pixmap"
 
 #: titlebar.cpp:931
 msgid "Title Animation"
@@ -97,7 +97,7 @@ msgstr "&Inaktive Pixmap"
 
 #: windows.cpp:66
 msgid "Window movement"
-msgstr ""
+msgstr "Fenster-Bewegung"
 
 #: windows.cpp:67
 msgid "Transparent"
@@ -105,42 +105,44 @@ msgstr "Transparent"
 
 #: windows.cpp:68
 msgid "Opaque"
-msgstr ""
+msgstr "Ausgefüllt"
 
 #: windows.cpp:71
 msgid "Resize Animation"
-msgstr ""
+msgstr "Animation beim Ändern der Größe"
 
 #: windows.cpp:76
 msgid "Focus Policy"
-msgstr ""
+msgstr "Behandlung des Fokus"
 
 #: windows.cpp:77
 msgid "Click to focus"
-msgstr ""
+msgstr "Fokuswechsel durch Klicken"
 
 #: windows.cpp:78
 msgid "Focus follows mouse"
-msgstr ""
+msgstr "Fokus folgt der Maus"
 
 #: windows.cpp:81
 msgid "Maximize Style"
-msgstr ""
+msgstr "Art der Maximierung"
 
 #: windows.cpp:82
 msgid "Maximize fully"
-msgstr ""
+msgstr "Voll maximieren"
 
 #: windows.cpp:83
 msgid "Maximize vertically"
-msgstr ""
+msgstr "Nur vertikal maxim."
 
 #: windows.cpp:88
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
+"Dauer für autom. Vor-\n"
+"dergrund (<100 keine)"
 
 #: windows.cpp:91
 msgid "miliseconds"
-msgstr ""
+msgstr "Millisekunden"
