@@ -294,6 +294,11 @@ processor. Currently only Linux 2.2 kernels provide this
 information. Linux 2.0 or earlier kernels do not provide the required
 information.
 
+<sect> Known Bugs and Problems<p>
+
+Some Linux users have reported a mystirous raise of the load averagde when KTop is running. This seems to happen periodically and lasts about 1 to 2 minutes. Since no CPU time is used the system performance is not affected. The more serious affect is that the system clock drift increases (up to a second a day). We have not had time to analyse this further but it seems to be a kernel issue, triggered by frequent reads of /proc/status. We will continue to inverstigate this.
+
+The session management of KTop is rather crude. Exiting from KDE when KTop is still running will not case KTop to save the current settings. If you like to have KTop at a certain position, start it, move it to the desired position, quit it and start it again.
 
 <p>
 </article>
