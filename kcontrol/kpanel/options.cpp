@@ -35,13 +35,13 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
 {
     layout = new QVBoxLayout(this, 3);
     
-    tooltips_group = new QGroupBox(klocale->translate("Menu Tooltips"), this);
-    tips = new QCheckBox(i18n("Show Menu Tooltips"), tooltips_group);
+    tooltips_group = new QGroupBox(i18n("Menu Tooltips"), this);
+    tips = new QCheckBox(i18n("Show &Menu Tooltips"), tooltips_group);
     connect(tips, SIGNAL(toggled(bool)), SLOT(tooltips_clicked(bool)));
 
     slider = new KSlider(0, 2000, 10, 0,
 			 KSlider::Horizontal, tooltips_group);
-    tips_label = new QLabel(slider, i18n("&Delay:"), tooltips_group);
+    tips_label = new QLabel(slider, i18n("De&lay:"), tooltips_group);
     slider->setSteps ( 125, 125 );
     slider->setTickmarks ( static_cast<QSlider::TickSetting>(QSlider::Below) );
     slider->setTickInterval ( 250 );
@@ -66,7 +66,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     layout->addWidget(tooltips_group, 3);
     
     others_group = new QGroupBox(i18n("Others"), this);
-    personal_first = new QCheckBox( i18n("&Personal First"), 
+    personal_first = new QCheckBox( i18n("Personal &First"), 
 				    others_group);
     hide_panel = new QCheckBox( i18n("Auto &Hide Panel"), 
 				others_group);

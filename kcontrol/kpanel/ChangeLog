@@ -1,3 +1,9 @@
+Thu Feb 12 00:12:11 1998  Stephan Kulow  <coolo@kde.org>
+
+	* Makefile.am: changed from klocale->translate to i18n
+
+	* options.cpp: made use of the dialog possible without mouse
+
 Wed Feb 11 22:00:22 1998  Stephan Kulow  <coolo@kde.org>
 
 	* options.cpp: some fixes

@@ -56,10 +56,10 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     layout = new QVBoxLayout(this, 10);
     int i, w = 0;
 
-    loc_group = new QButtonGroup(klocale->translate("Location"), this);
-    loc_buttons[0] = new QRadioButton( klocale->translate("Top"), loc_group );
-    loc_buttons[1] = new QRadioButton( klocale->translate("Left"), loc_group );
-    loc_buttons[2] = new QRadioButton( klocale->translate("Bottom"), loc_group);    
+    loc_group = new QButtonGroup(i18n("Location"), this);
+    loc_buttons[0] = new QRadioButton( i18n("&Top"), loc_group );
+    loc_buttons[1] = new QRadioButton( i18n("&Left"), loc_group );
+    loc_buttons[2] = new QRadioButton( i18n("&Bottom"), loc_group);    
  
     for (i = 0; i < 3; i++) {
 	loc_buttons[i]->adjustSize();
@@ -71,14 +71,14 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     connect(loc_group, SIGNAL(clicked(int)), SLOT(location_clicked(int)));
     layout->addWidget(loc_group, 1);
 
-    task_group = new QButtonGroup(klocale->translate("Taskbar"), this);
-    task_buttons[0] = new QRadioButton( klocale->translate("Hidden"), 
+    task_group = new QButtonGroup(i18n("Taskbar"), this);
+    task_buttons[0] = new QRadioButton( i18n("&Hidden"), 
 					task_group );
-    task_buttons[1] = new QRadioButton( klocale->translate("Top"), 
+    task_buttons[1] = new QRadioButton( i18n("T&op"), 
 					task_group );
-    task_buttons[2] = new QRadioButton( klocale->translate("Bottom"), 
+    task_buttons[2] = new QRadioButton( i18n("Botto&m"), 
 					task_group);
-    task_buttons[3] = new QRadioButton( klocale->translate("Top/Left"), 
+    task_buttons[3] = new QRadioButton( i18n("Top/Le&ft"), 
 					task_group);
     task_buttons[taskbar]->setChecked(true);
     for (i = 0; i < 4; i++) {
@@ -91,13 +91,13 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     layout->addWidget(task_group, 1);
 
 
-    style_group = new QButtonGroup(klocale->translate("Style"), this);
+    style_group = new QButtonGroup(i18n("Style"), this);
     
-    style_buttons[0] = new QRadioButton( klocale->translate("Tiny"), 
+    style_buttons[0] = new QRadioButton( i18n("T&iny"), 
 					 style_group );
-    style_buttons[1] = new QRadioButton( klocale->translate("Normal"), 
+    style_buttons[1] = new QRadioButton( i18n("&Normal"), 
 					 style_group );
-    style_buttons[2] = new QRadioButton( klocale->translate("Large"), 
+    style_buttons[2] = new QRadioButton( i18n("L&arge"), 
 					 style_group);
     
     for (i = 0; i < 4; i++) {

@@ -8,7 +8,7 @@ BUILT_SOURCED = panel.moc desktops.moc options.moc
 noinst_HEADERS = panel.h desktops.h options.h
 
 messages:
-	$(XGETTEXT) -C -ktranslate -x ../../../kdelibs/po/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
+	$(XGETTEXT) -C -ki18n -x ../../../kdelibs/po/kde.pot $(kcmkpanel_SOURCES) && mv messages.po ../../po/kcmkpanel.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
