@@ -15,12 +15,14 @@ In 0.10:
 patchlevel 31: 
 	-- Bernd: minor fixes (typos in the sound events)
        - small fix for alt-tab
+       - changed "ElectricBorderMovePointer" values to on/off to be 
+         consitent with the rest of kwm.
 
 patchlevel 30:
 	-- Bernd: 
 	
-	Further improved Electric Borders. They can now be graphically configured
-	using a kcontrol module and also completely turned off.
+	Further improved Electric Borders. They can now be graphically
+        configured using a kcontrol module and also completely turned off.
 	
 patchlevel 29:
   

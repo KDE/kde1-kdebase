@@ -765,14 +765,16 @@ void MyApp::readConfiguration(){
   }
 
 
-  if (config->hasKey("ElectricBorderMovePointer")){
-    options.ElectricBorderMovePointer = 
-      (bool)config->readNumEntry("ElectricBorderMovePointer");
-  }
-  else{
+  key = config->readEntry("ElectricBorderMovePointer");
+  if( key == "on")
     options.ElectricBorderMovePointer = true;
-    config->writeEntry("ElectricBorderMovePointer", (int)options.ElectricBorderMovePointer);
+  else if( key == "off")
+    options.ElectricBorderMovePointer = false;
+  else{
+    config->writeEntry("ElectricBorderMovePointer", "off");
+    options.ElectricBorderMovePointer = false;
   }
+
 
   if(options.ElectricBorder > -1){
     if( manager)
