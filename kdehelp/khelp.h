@@ -12,11 +12,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
-#ifdef __FreeBSD__
-#define msgbuf mymsg
-#endif
-
-#ifdef __NetBSD__
+#ifdef BSD
 #define msgbuf mymsg
 #endif
 
