@@ -673,7 +673,7 @@ msgid "Last Modified"
 msgstr "Ultima Modifica"
 
 #: kfmprops.cpp:379
-#,  c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
@@ -1403,8 +1403,8 @@ msgstr "Tutti i &cookie"
 msgid "&Accept"
 msgstr "&Accetta"
 
-#: kcookiewin.cpp:166
 #
+#: kcookiewin.cpp:166
 msgid "&Reject"
 msgstr "&Rifiuta"
 

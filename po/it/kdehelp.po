@@ -38,7 +38,6 @@ msgid "Continue search from the top of the page?"
 msgstr "Continuo la ricerca dall'inizio della pagina ?"
 
 #: helpwin.cpp:1325
-#,
 msgid "Forward"
 msgstr "Avanti"
 

@@ -219,9 +219,9 @@ msgstr "%10ld bytes  = %8.2f MB"
 msgid "Not available"
 msgstr "Non disponibile"
 
+#
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#
 msgid "Not Available"
 msgstr "Non Disponibile"
 
