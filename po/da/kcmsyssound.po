@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Lyd"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "System lyde"
+
+#: syssound.cpp:69
+msgid "Change to Desktop 1"
+msgstr "Skift til Arbejdsplads 1"
+
+#: syssound.cpp:70
+msgid "Change to Desktop 2"
+msgstr "Skift til Arbejdsplads 2"
+
+#: syssound.cpp:71
+msgid "Change to Desktop 3"
+msgstr "Skift til Arbejdsplads 3"
+
+#: syssound.cpp:72
+msgid "Change to Desktop 4"
+msgstr "Skift til Arbejdsplads 4"
+
+#: syssound.cpp:73
+msgid "Change to Desktop 5"
+msgstr "Skift til Arbejdsplads 5"
+
+#: syssound.cpp:74
+msgid "Change to Desktop 6"
+msgstr "Skift til Arbejdsplads 6"
+
+#: syssound.cpp:75
+msgid "Change to Desktop 7"
+msgstr "Skift til Arbejdsplads 7"
+
+#: syssound.cpp:76
+msgid "Change to Desktop 8"
+msgstr "Skift til Arbejdsplads 8"
+
+#: syssound.cpp:78
+msgid "Activate Window"
+msgstr "Aktiver vindue"
+
+#: syssound.cpp:79
+msgid "Open new window"
+msgstr "Åben nyt vindue"
+
+#: syssound.cpp:80
+msgid "Close Window"
+msgstr "Luk vindue"
+
+#: syssound.cpp:81
+msgid "Startup"
+msgstr "Opstart"
+
+#: syssound.cpp:102
+msgid "e&nable system sounds"
+msgstr "&Iværksæt system lyde"
+
+#: syssound.cpp:107
+msgid "&Test"
+msgstr ""
+
+#: syssound.cpp:111
+msgid "&Events:"
+msgstr "&Hændelser"
+
+#: syssound.cpp:115
+msgid "&Sounds:"
+msgstr "&Lyde:"
+
+#: syssound.cpp:119
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Yderligere WAV filer kan droppes på lyd listen."
+
+#: syssound.cpp:321
+msgid "Unsupported URL"
+msgstr "Uunderstøttet URL"
+
+#: syssound.cpp:322
+msgid ""
+"Sorry, this type of URL is currently unsupported by the KDE System Sound "
+"Module"
+msgstr "Desværre - denne type URL er endnu ikke understøttet af KDE System Lyde"
+
+#: syssound.cpp:326
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file!"
+msgstr "Desværre ser\n%s\nikke ud til at være en WAV-fil!"
+
+#: syssound.cpp:327
+msgid "Improper File Extension"
+msgstr "Ugyldigt filefternavn"
+
+#: syssound.cpp:333
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr "Filen\n%s\ner allerede i listen"
+
+#: syssound.cpp:334
+msgid "File Already in List"
+msgstr "Filen er allerede i listen"
