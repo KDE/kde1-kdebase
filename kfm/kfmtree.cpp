@@ -22,6 +22,7 @@
 #include "utils.h"
 #include "kfmdlg.h"
 #include "kintlist.h"
+#include "root.h"
 
 
 KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
@@ -31,7 +32,6 @@ KFMDirTree::KFMDirTree( QWidget *_parent, KfmGui *_gui ) : KFinder( _parent )
 
     gui = _gui;
     popupMenu = new QPopupMenu();
-
     menuNew = new KNewMenu();
    
     lastSelectedItem = 0L;
@@ -313,6 +313,35 @@ void KFMDirTree::update()
 
 void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint &_p )
 {
+
+  // --------- Copied code from kfmview.cpp to fix nasty bug ( Dawit A. ) ----------------- //
+
+    // Check whether we drop a directory on itself or one of its children
+    int nested = 0;
+    char *s;
+    for ( s = _urls.first(); s != 0L; s = _urls.next() )
+    {
+	int j;
+	if ( ( j = testNestedURLs( s, _dest ) ) )
+	    if ( j == -1 || ( j > nested && nested != -1 ) )
+		nested = j;
+    }
+
+    if ( nested == -1 )
+    {
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate("ERROR: Malformed URL") );
+	return;
+    }
+    if ( nested == 2 )
+    {
+        // Commented out useless warning. David.  <-- Uncommented! It is important feedback! (Dawit A.)
+	 QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+	 		      klocale->translate("ERROR: You dropped some URL over itself") );
+	return;
+    }
+  // -----------------  Copied code ends (Dawit A.) ---------------------//
+
     dropDestination = _dest;
     dropDestination.detach();
     dropSource.copy( _urls );
@@ -323,16 +352,16 @@ void KFMDirTree::openDropMenu( const char *_dest, QStrList &_urls, const QPoint 
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _urls, KIO_Read ) &&
 	 KIOServer::supports( _dest, KIO_Write ) )
-	id = popupMenu->insertItem(  klocale->translate("Copy"), 
+	id = popupMenu->insertItem(  klocale->getAlias (ID_STRING_COPY),
 				     this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _urls, KIO_Move ) &&
 	 KIOServer::supports( _dest, KIO_Write ) )
-	id = popupMenu->insertItem(  klocale->translate("Move"),
+	id = popupMenu->insertItem(  klocale->getAlias ( ID_STRING_MOVE ),
 				     this, SLOT( slotDropMove() ) );
     // Ask wether we can link the URL 
     if ( KIOServer::supports( _dest, KIO_Link ) )
-	id = popupMenu->insertItem(  klocale->translate("Link"), 
+	id = popupMenu->insertItem(  klocale->getAlias (ID_STRING_LINK ),
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
@@ -349,18 +378,24 @@ void KFMDirTree::slotDropCopy()
 {
     KIOJob * job = new KIOJob;
     job->copy( dropSource, dropDestination.data() );
+    if( KRootWidget::getKRootWidget() )
+      KRootWidget::getKRootWidget()->unselectAllIcons();
 }
 
 void KFMDirTree::slotDropMove()
 {
     KIOJob * job = new KIOJob;
     job->move( dropSource, dropDestination.data() );
+    if( KRootWidget::getKRootWidget() )
+      KRootWidget::getKRootWidget()->unselectAllIcons();
 }
 
 void KFMDirTree::slotDropLink()
 {
     KIOJob * job = new KIOJob;
     job->link( dropSource, dropDestination.data() );
+    if( KRootWidget::getKRootWidget() )
+      KRootWidget::getKRootWidget()->unselectAllIcons();
 }
 
 void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
@@ -369,11 +404,12 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
 
     // Store for later use
     popupDir = _url;
+    bool isTrash = KIOServer::isTrash( _url );
 
-    if ( KIOServer::isTrash( _url ) )
+    if ( isTrash )
     {
 	int id;
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD), 
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN),
 				    this, SLOT( slotPopupCd() ) );
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
 				    this, SLOT( slotPopupNewView() ) );
@@ -387,29 +423,29 @@ void KFMDirTree::openPopupMenu( const char *_url, const QPoint &_point )
         id = popupMenu->insertItem( klocale->translate("&New"), menuNew );
         popupMenu->insertSeparator();
 
-	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_CD),
+	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_OPEN),
 				    this, SLOT( slotPopupCd() ) );
 	id = popupMenu->insertItem( klocale->getAlias(ID_STRING_NEW_VIEW), 
 				    this, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();    
 	if ( KIOServer::supports( _url, KIO_Read ) )
-	    id = popupMenu->insertItem( klocale->translate("Copy"), 
+	    id = popupMenu->insertItem( klocale->getAlias (ID_STRING_COPY),
 					this, SLOT( slotPopupCopy() ) );
 	if ( KIOServer::supports( _url, KIO_Write ) && KfmView::clipboard->count() != 0 )
-	    id = popupMenu->insertItem( klocale->translate("Paste"), 
+	    id = popupMenu->insertItem( klocale->getAlias ( ID_STRING_PASTE ),
 					this, SLOT( slotPopupPaste() ) );
-	if ( KIOServer::supports( _url, KIO_Move ) )
-	    id = popupMenu->insertItem( klocale->translate("Move to Trash"),  
+	if ( KIOServer::supports( _url, KIO_Move ) && !isTrash )
+	    id = popupMenu->insertItem( klocale->getAlias ( ID_STRING_MOVE_TO_TRASH ),
 					this, SLOT( slotPopupTrash() ) );
 	if ( KIOServer::supports( _url, KIO_Delete ) )
-	    id = popupMenu->insertItem( klocale->translate("Delete"),  
+	    id = popupMenu->insertItem( klocale->getAlias ( ID_STRING_DELETE ),
 					this, SLOT( slotPopupDelete() ) );
     }
 
-    popupMenu->insertItem( klocale->translate("Add To Bookmarks"), 
+    popupMenu->insertItem( klocale->getAlias ( ID_STRING_ADD_TO_BOOMARKS ),
 			   this, SLOT( slotPopupBookmarks() ) );
     popupMenu->insertSeparator();    
-    popupMenu->insertItem( klocale->translate("Properties"),
+    popupMenu->insertItem( klocale->getAlias ( ID_STRING_PROP ),
 			   this, SLOT( slotPopupProperties() ) );
     popupMenu->popup( _point );
     menuNew->setPopupFiles ( _url );
