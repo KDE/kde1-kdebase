@@ -8,11 +8,13 @@ Authors=Petter Reinholdtsen <pere@td.org.uit.no>,
 
 Comment=Normal layout
 Comment[da]=Normal udlФgning
+Comment[no]=Normalt utseende
 Comment[pt_BR]=DisposiГЦo normal
 Comment[ru]=Нормальная раскладка
 
 Language=Norwegian
 Language[da]=k
+Language[no]=Norsk
 Language[pt_BR]=NorueguЙs
 Language[ru]=Норвежский
 Language[sv]=kt
