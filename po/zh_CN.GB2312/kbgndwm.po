@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kbgndwm\n"
 "POT-Creation-Date: 1998-11-28 01:10+0100\n"
-"PO-Revision-Date: 1999-03-15 20:00+0800\n"
+"PO-Revision-Date: 1999-03-29 20:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN.GB2312\n"
 "MIME-Version: 1.0\n"

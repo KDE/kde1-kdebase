@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1999-03-28 20:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"

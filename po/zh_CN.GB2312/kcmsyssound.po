@@ -4,18 +4,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdesyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"PO-Revision-Date: 1999-03-29 18:40+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=gb2312-80\n"
 "Content-Transfer-Encoding: iso-8859-2\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:53
 msgid "&Sound"
-msgstr "声效[&S]"
+msgstr "声效(&S)"
 
 #: main.cpp:80
 msgid "System Sounds"
@@ -23,7 +24,7 @@ msgstr "系统声效"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(无)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
@@ -139,23 +140,23 @@ msgstr "窗口改变大小结束"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "打开系统声效[&N]"
+msgstr "打开系统声效(&N)"
 
 #: syssound.cpp:203
 msgid "&Test"
-msgstr "测试[&T]"
+msgstr "测试(&T)"
 
 #: syssound.cpp:207
 msgid "&Events:"
-msgstr "事件[&E]:"
+msgstr "事件(&E):"
 
 #: syssound.cpp:211
 msgid "&Sounds:"
-msgstr "声效[&S]:"
+msgstr "声效(&S):"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "附加的WAV文件可以拖放到声效列表中."
+msgstr "附加的 WAV 文件可以拖放到声效列表中."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
@@ -165,7 +166,8 @@ msgstr "不支持的 URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
-msgstr "抱歉,现在KDE声效系统模块还不支持这种 URL"
+msgstr ""
+"抱歉,现在KDE声效系统模块还不支持这种 URL"
 
 #: syssound.cpp:468
 #, c-format

@@ -1,12 +1,13 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"PO-Revision-Date: 1999-03-29 19:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Content-Type: text/plain; charset=gb2312-80\n"
 "Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
+"Last-Translator: Wang Jian <larkw@263.net>\n"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
@@ -14,7 +15,7 @@ msgstr "关闭或重新启动?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(输入root口令)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -26,7 +27,7 @@ msgstr "关闭后重新启动"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "重新起动X服务器"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -54,24 +55,24 @@ msgstr "关闭..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr ""
+msgstr "现在不能登录."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() failed."
 
 #: kgreeter.cpp:665 kgreeter.cpp:692
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "对不起 -- 你的帐号已经过期."
 
 #: kgreeter.cpp:670 kgreeter.cpp:697
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "警告: 你的帐号将在 %s 过期"
 
 #: kgreeter.cpp:724
 msgid "Home directory not available"
-msgstr ""
+msgstr "没有设置你的主目录"
 
 #~ msgid "Exit kdm"
 #~ msgstr "退出 kdm"

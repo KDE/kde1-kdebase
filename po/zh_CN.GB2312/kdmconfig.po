@@ -1,26 +1,27 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-29 19:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:84
 msgid "&Appearance"
-msgstr "外观[&A]"
+msgstr "外观(&A)"
 
 #: main.cpp:92
 msgid "&Background"
-msgstr "背景[&B]"
+msgstr "背景(&B)"
 
 #: main.cpp:95
 msgid "&Users"
-msgstr "使用者[&U]"
+msgstr "使用者(&U)"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "会话[&S]"
+msgstr "会话(&S)"
 
 #: main.cpp:103
 msgid ""
@@ -36,11 +37,13 @@ msgstr "KDM 配置"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "抱歉, 你没有权限 读/写 KDM 设置文件"
+msgstr ""
+"抱歉, 你没有权限 \n"
+"读/写 KDM 设置文件"
 
 #: main.cpp:154
 msgid "Missing privileges"
-msgstr ""
+msgstr "没有优先级"
 
 #: kdm-appear.cpp:70
 msgid "Greeting string:"
@@ -60,20 +63,19 @@ msgstr "图形用户界面风格"
 
 #: kdm-appear.cpp:116
 msgid "Motif"
-msgstr ""
+msgstr "Motif"
 
 #: kdm-appear.cpp:117
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
 msgstr "语言"
 
 #: kdm-appear.cpp:131
-#, fuzzy
 msgid "Language:"
-msgstr "语言"
+msgstr "语言:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -137,14 +139,12 @@ msgid "Select fonts"
 msgstr "选择字体"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "例子:"
+msgstr "例子"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "改变字体"
+msgstr "改变字体..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -159,40 +159,36 @@ msgid "Standard"
 msgstr "标准"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "问候"
+msgstr "问候字体"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "失败"
+msgstr "失败字体"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
 msgstr "标准"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "颜色"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "颜色"
+msgstr "纯色"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "水平混色"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "垂直混色"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -203,51 +199,48 @@ msgid "None"
 msgstr "无"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "平铺"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
-msgstr "放在中间"
+msgstr "正中"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "放大至全屏幕"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "左上角"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "右上角"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "左下角"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "右下角"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "奇特的"
 
 #: kdm-users.cpp:48
 msgid "All users"
-msgstr "全部使用者"
+msgstr "全部用户"
 
 #: kdm-users.cpp:50
 msgid "Selected users"
-msgstr "已选中的使用者"
+msgstr "已选中的用户"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "不显示的使用者"
+msgstr "不显示的用户"
 
 #: kdm-users.cpp:79
 msgid ""
@@ -255,36 +248,35 @@ msgid ""
 "selected users"
 msgstr ""
 "只显示\n"
-"选中的使用者"
+"选中的用户"
 
 #: kdm-users.cpp:86
 msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"除了不显示的使用者\n"
-"显示全部使用者"
+"除了隐藏用户外,\n"
+"显示全部用户"
 
 #: kdm-users.cpp:97
 msgid "Show users"
-msgstr "显示使用者"
+msgstr "显示用户"
 
 #: kdm-users.cpp:103
 msgid "Sort users"
-msgstr "使用者排序"
+msgstr "用户排序"
 
 #: kdm-users.cpp:182 kdm-users.cpp:251
 msgid "No user selected"
-msgstr "没有选择使用者"
+msgstr "没有选择用户"
 
 #: kdm-users.cpp:183 kdm-users.cpp:252
 msgid "Save image as default image?"
 msgstr "保存为默认图形?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
-msgstr "允许关机:"
+msgstr "允许关机"
 
 #: kdm-sess.cpp:57
 msgid "All"
@@ -296,7 +288,7 @@ msgstr "只允许超级用户"
 
 #: kdm-sess.cpp:59
 msgid "Console Only"
-msgstr "只允许控制台"
+msgstr "只允许控制台上"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
