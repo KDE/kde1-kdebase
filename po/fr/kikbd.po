@@ -6,9 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
-"PO-Revision-Date: 1999-01-29 22:00+0100\n"
+"PO-Revision-Date: 1999-03-12 10:00+0100\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
+"Next-Translator: Alain Gibaud "
+"<Alain.Gibaud@univ-valenciennes.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -16,7 +18,7 @@ msgstr ""
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
-msgstr "Clavier International KDE en cours d'exécution sur cet affichage."
+msgstr "Clavier International KDE est déjà démarré sur ce périphérique d'affichage."
 
 #: kikbd.cpp:288
 #, c-format
@@ -43,7 +45,7 @@ msgstr "Configuration"
 #: kikbd.cpp:345 kikbd.cpp:358
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
-msgstr "Impossible de supprimer %s des Modifieurs.\n"
+msgstr "Impossible de retirer %s des Modifieurs.\n"
 
 #: kikbd.cpp:348
 #, c-format
@@ -56,6 +58,8 @@ msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr ""
+"On ne peut pas choisir le mode %s pour le clavier %s.\n"
+"Les symboles avec Alt. sont désactivés"
 
 #: kikbd.cpp:392
 msgid ""
@@ -102,7 +106,7 @@ msgstr "KeyMap : impossible de trouver le symbole \"%s\"."
 #: keymap.cpp:241
 #, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
-msgstr "KeyMap : impossible de comprendre le code de touche \"%s\"."
+msgstr "KeyMap : Code de touche \"%s\" non reconnu."
 
 #: keymap.cpp:247
 #, c-format
@@ -336,11 +340,11 @@ msgstr "&Info"
 
 #: widgets.cpp:136
 msgid "Display information for selected keyboard map"
-msgstr "Affiche des informations sur la disposition de clavier sélectionnée"
+msgstr "Affiche les informations sur la disposition de clavier sélectionnée"
 
 #: widgets.cpp:145
 msgid "Use &hot list"
-msgstr ""
+msgstr "Utiliser la \"&hot list\""
 
 #: widgets.cpp:146
 msgid ""
@@ -348,7 +352,7 @@ msgid ""
 msgstr ""
 "Utiliser seulement la dernière disposition de clavier active et celle par "
 "défaut\n"
-" pourbasculer le clavier"
+" pour basculer le clavier"
 
 #: widgets.cpp:215
 msgid "Adding Keyboard"
@@ -376,7 +380,7 @@ msgstr "Dispositions de clavier"
 
 #: widgets.cpp:405
 msgid "Switch and Alt Switch"
-msgstr ""
+msgstr "Modifieurs Alt et Ctrl"
 
 #: widgets.cpp:410
 msgid "Key(s) to switch between keyboard maps"
@@ -413,27 +417,30 @@ msgstr "&Emuler verrouillage Majuscule"
 
 #: widgets.cpp:467
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr ""
+msgstr "Emuler le verrouillage Majuscule X. Nécessaire dans certaines langues."
 
 #: widgets.cpp:473
 msgid "&World Menu"
-msgstr ""
+msgstr "Menu &Mondial"
 
 #: widgets.cpp:474
+# ++Gib: ???
 msgid "Show menu in any window by holding Switch keys"
-msgstr ""
+msgstr "Montrer le menu dans n'importe quelle fenetre "
+"en enfonçant les touches de commutation"
 
 #: widgets.cpp:481
 msgid "&Save Classes"
-msgstr ""
+msgstr "&Sauver les Classes"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr ""
+msgstr "Sauver les relations entre les classes de fenetre "
+"et les dispositions de claviers en sortant"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Définir les codes X"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -466,36 +473,36 @@ msgstr "Couleur du texte"
 
 #: widgets.cpp:562
 msgid "Color of the text label"
-msgstr "Couleur de l'étiquette texte"
+msgstr "Couleur des textes"
 
 #: widgets.cpp:566
 msgid "With Caps Lock"
-msgstr ""
+msgstr "Avec Verrouillage Majuscules"
 
 #: widgets.cpp:567
 msgid "Background when Emulated Caps Lock active"
-msgstr ""
+msgstr "Fond lorsque Verrouillage Majuscules émulé est actif"
 
 #: widgets.cpp:573
 msgid "With Alternate"
-msgstr ""
+msgstr "Avec Alt."
 
 #: widgets.cpp:574
 msgid "Background when Alternate switch is pressed"
-msgstr ""
+msgstr "Fond lorsque Alt. est enfoncé"
 
 #: widgets.cpp:583
 msgid "Button Font"
-msgstr "Police"
+msgstr "Police des boutons"
 
 #: widgets.cpp:591
 msgid "&Customize Font"
-msgstr "&Polise personnalisée"
+msgstr "&Police personnalisée"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
 msgstr ""
-"Personnalisez la Police pour le texte ou utilisez les paramètres globaux"
+"Personnalisez la Police pour le texte ou utilisez le paramètrage global"
 
 #: widgets.cpp:596
 msgid "C&hange Font"
@@ -507,7 +514,7 @@ msgstr "Démarrage &automatique"
 
 #: widgets.cpp:642
 msgid "Start up automatically"
-msgstr "Lancement automatiqe"
+msgstr "Lancement automatique"
 
 #: widgets.cpp:648
 msgid "&Docked"
@@ -519,7 +526,7 @@ msgstr "Insérer dans la zone spéciale du panneau"
 
 #: widgets.cpp:658
 msgid "Place"
-msgstr "Placement"
+msgstr "Emplacement"
 
 #: widgets.cpp:665
 msgid "Place in selected corner"
