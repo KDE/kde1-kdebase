@@ -1,0 +1,8 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm mouse
+Icon=buttons.xpm
+Type=Application
+DocPath=kcontrol/kcmkwm/kwm-1.html
+Comment=Configure mouse bindings
+Name=Mouse
