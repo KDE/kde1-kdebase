@@ -7,7 +7,7 @@ folder.xpm folder_blue.xpm folder_cyan.xpm folder_green.xpm \
 folder_locked.xpm folder_red.xpm folder_yellow.xpm font.xpm ftp.xpm \
 games_package.xpm gf.xpm graphics_package.xpm h_src.xpm html.xpm \
 image.xpm info.xpm java_src.xpm kfm.xpm kfm_fulltrash.xpm \
-kfm_home.xpm kfm_refresh.xpm kfm_trash.xpm l_src.xpm  \
+kfm_home.xpm kfm_trash.xpm l_src.xpm  \
 library.xpm link.xpm lockedfolder.xpm log.xpm make.xpm man.xpm \
 metafont.xpm midi.xpm moc_src.xpm multimedia_package.xpm \
 network_package.xpm o_src.xpm p_src.xpm package.xpm pdf.xpm pipe.xpm \
