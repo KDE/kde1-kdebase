@@ -56,8 +56,8 @@ AudioDev::AudioDev(int devnum)
     // Yields "/dev/dspX", with X in [0..9].
     devname = new char[lenDevDSP+2];
     strcpy(devname,textDevDSP);
-    textDevDSP[lenDevDSP] = char('0'+(unsigned char)devnum);
-    textDevDSP[lenDevDSP] = 0; // 0-termination of string
+    devname[lenDevDSP] = char('0'+(unsigned char)devnum -1);
+    devname[lenDevDSP+1] = 0; // 0-termination of string
   }
 
  
