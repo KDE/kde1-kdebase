@@ -393,6 +393,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Impossible d'enregister les propriétés car ce répertoire\n"
+"n'est pas dans les signets et n'est pas accessible en écriture.\n"
+"\n"
+" Ajoutez cet emplacement aux signets ou créez-en un kdelnk sur le bureau."
 
 #: kfmview.cpp:700
 msgid ""
@@ -401,6 +405,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Impossible d'enregister les propriétés\n"
+"car cette URL est ni dans les signets ni sur le bureau.\n"
+"\n"
+" Ajoutez cet emplacement aux signets ou créez-en un kdelnk sur le bureau."
 
 #: kfmtree.cpp:469 kfmview.cpp:739 root.cpp:1336
 msgid "Could not access Trash Bin"
@@ -667,7 +675,9 @@ msgstr "Permissions d'accès"
 msgid ""
 "Show\n"
 "Entries"
-msgstr "Lire"
+msgstr ""
+"Afficher\n"
+"Entrées"
 
 #: kfmprops.cpp:437
 msgid "Read"
@@ -677,7 +687,9 @@ msgstr "Lire"
 msgid ""
 "Write\n"
 "Entries"
-msgstr "Ecrire"
+msgstr ""
+"Ecrire\n"
+"Entrées"
 
 #: kfmprops.cpp:444
 msgid "Write"
@@ -1033,10 +1045,12 @@ msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Copie récursive du fichier avec sous-protocole\n"
+"(par exemple fichiers tar)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Copie récursive de/vers les emplacements distants"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1185,7 +1199,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Opération techniquement impossible"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format

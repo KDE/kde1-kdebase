@@ -64,7 +64,7 @@ msgstr "Signets"
 
 #: krootwm.C:280
 msgid "Arrange Window Maker icons"
-msgstr ""
+msgstr "Ranger les icônes de Window Maker"
 
 #: krootwm.C:281
 msgid "Show all"
@@ -72,15 +72,15 @@ msgstr "Afficher tout"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Cacher les autres"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Afficher le panneau d'infos"
 
 #: krootwm.C:285
 msgid "Show legal panel"
-msgstr ""
+msgstr "Afficher le panneau légal"
 
 #: krootwm.C:286
 msgid "Restart"
@@ -92,7 +92,7 @@ msgstr "Quitter"
 
 #: krootwm.C:289
 msgid "Window Maker"
-msgstr ""
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

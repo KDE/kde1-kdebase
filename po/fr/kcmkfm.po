@@ -205,7 +205,7 @@ msgstr "Paramètres du domaine :"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Modification de la politique d'acceptation de domaine"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"

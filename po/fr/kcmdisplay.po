@@ -85,7 +85,7 @@ msgstr "Centré sur un mur de briques"
 
 #: backgnd.cpp:380
 msgid "Centred Warp"
-msgstr ""
+msgstr "Centré dans une perspective"
 
 #: backgnd.cpp:381
 msgid "Centred Maxpect"
