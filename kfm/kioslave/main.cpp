@@ -459,7 +459,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 			}
 			printf("progress\n");
 			c += l;
-			if ( ( c * 100 / size ) != last )
+			if ( size != 0 && ( c * 100 / size ) != last )
 			{
 			    last = ( c * 100 / size );
 			    ipc->progress( last );

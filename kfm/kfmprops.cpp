@@ -469,9 +469,11 @@ void FilePermissionsPropsPage::applyChanges()
 	stat( path, &buff );
 	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
 	// mask |= p;
-	chmod( path, p );
+	if ( chmod( path, p ) != 0 )
+	    QMessageBox::message( klocale->translate( "KFM Error" ),
+				  klocale->translate( "Could not change permissions\n\rPerhaps access denied." ) );	    
     }
-    
+
     if ( strcmp( owner->text(), strOwner.data() ) != 0 || strcmp( grp->text(), strGroup.data() ) != 0 )
     {
 	struct passwd* pw = getpwnam( owner->text() );
@@ -486,8 +488,10 @@ void FilePermissionsPropsPage::applyChanges()
 	    warning(klocale->translate(" ERROR: No group %s"),grp->text() );
 	    return;
 	}
-	chown( path, pw->pw_uid, g->gr_gid );
-    }
+	if ( chown( path, pw->pw_uid, g->gr_gid ) != 0 )
+	    QMessageBox::message( klocale->translate( "KFM Error" ),
+				  klocale->translate( "Could not change owner/group\n\rPerhaps access denied." ) );
+    }    
 }
 
 ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )

@@ -1753,8 +1753,6 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ) 
 		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
 		return KMimeType::findType( _url );
-	    
-	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
 
 	    // Can we trust the result ?
 	    if ( result->getAccuracy() >= 50 )

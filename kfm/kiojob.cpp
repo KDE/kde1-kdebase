@@ -52,6 +52,11 @@ KIOJob::~KIOJob()
     jobList.removeRef( this );
 }
 
+void KIOJob::setOverWriteExistingFiles( bool _o )
+{
+    overwriteExistingFiles = _o;
+}
+
 void KIOJob::mkdir( const char *_url )
 {
     debugT("Making '%s'\n",_url);
@@ -464,17 +469,15 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
     for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
     {
 	QString tmp = p;
-	if ( tmp.right(1) != '/' )
-	    tmp += "/";
-	KURL su( p );
+	// Is there a trailing '/' ? Delete is, so that KURL::filename works
+	if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
+	    tmp.truncate( tmp.length() - 1 );
+	KURL su( tmp.data() );
 	
 	QString d = _dest_dir_url;
 	d.detach();
-	if ( d.right(1) != '/' )
+	if ( d.right(1) != "/" )
 	    d += "/";
-	/* if ( strcmp( su.protocol(), "tar" ) == 0 )
-	    d += su.filename( true );
-	else */
 	d += su.filename();
 	
 	cmDestURLList.append( d.data() );
@@ -500,10 +503,14 @@ void KIOJob::move()
 	KURL su( p );
 	KURL du( p2 );
 
+	debugT("Moving from '%s' to '%s\n",p,p2);
+	
 	int i = 1;
+	// Moving on the local hard disk ?
 	if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
 	{
 	    // Does the file already exist ?
+	    // If yes, care about renaming.
 	    struct stat buff;
 	    if ( stat( du.path(), &buff ) == 0 && !overwriteExistingFiles )
 	    {
@@ -531,18 +538,23 @@ void KIOJob::move()
 		delete r;
 	    }
 	    
+	    // Try to move the files with the help of UNIX.
+	    // 'i' will indicate wether we succeeded.
+	    // Now i is either 0 or -1.
 	    i = rename( su.path(), du.path() );
 	}
 	
-	// If we tried to move across devices, we have to copy and delete, otherwise
-	// the task is already done. Try this only, if src and dest are in the local
-	// file system.
-	if ( i == -1 && errno == EXDEV )
+	// Did we succeed with our call to 'rename'
+	if ( i == -1 )
 	{
+	    // We tried to move across devices ?
+	    // Ok, that is not a real error.
 	    if ( errno == EXDEV )
 	    {
 		struct stat buff;
 		stat( su.path(), &buff );
+		// We want to move a directory ?
+		// Then we must know each file in the tree ....
 		if ( S_ISDIR( buff.st_mode ) )
 		{
 		    debugT("Making diretory '%s'\n",du.path());
@@ -621,7 +633,7 @@ void KIOJob::move()
     // to notify "file:/home/weis/" and "file:/tmp/trash/" about changes.
     // Usually no directories appear in cmDestURLList and cmSrcURLList, but if one says
     // move( "ftp://www.ftp.org/contrib/", "file:/GreatStuff/" ), we can not change the
-    // directory path "/contrib/ in the source into lost of pathes for files like
+    // directory path "/contrib/ in the source into lots of pathes for files like
     // "/contrib/kfm.tgz" and "/contrib/kwm.tgz" and so on. In this case we might get
     // directories in here.
     char *s;
@@ -640,6 +652,11 @@ void KIOJob::move()
     
     cmCount = cmSrcURLList.count();
 
+    // Perhaps we already moved the whole stuff in this function ?
+    if ( cmCount == 0 )
+	// Ok, we are already done
+	return;
+    
     // Delete subdirectories first => inverse the order of the list
     mvDelURLList.clear();
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
@@ -1330,14 +1347,17 @@ void KIOJob::slaveIsReady()
 
     case KIOJob::JOB_MOVE:
 	{
+	    debugT("**********1\n");
 	    if ( !started )
 	    {
+		debugT("**********2\n");
 		connect( slave, SIGNAL( progress( int ) ), this, SLOT( slaveProgress( int ) ) );
 		moveDelMode = false;
 	    }
 	    
 	    if ( cmSrcURLList.count() == 0 )
 	    {
+		debugT("**********3\n");
 		char *p;
 		for( p = mvDelURLList.first(); p != 0L; p = mvDelURLList.next() )
 		{
@@ -1363,6 +1383,7 @@ void KIOJob::slaveIsReady()
 	 
 	    if ( dlg )
 	    {
+		debugT("**********4\n");
 		char buffer[ 1024 ];
 		sprintf( buffer, klocale->translate("File %i/%i"), 
 			 cmCount - cmSrcURLList.count() + 1, cmCount );	    
@@ -1370,24 +1391,29 @@ void KIOJob::slaveIsReady()
 		line2->setText( cmSrcURLList.first() );
 		sprintf( buffer, klocale->translate("to %s"), cmDestURLList.first() );
 		line3->setText( buffer );
+		debugT("**********5\n");
 	    }
 	    
 	    // In this turn delete the file we copied last turn
 	    if ( moveDelMode )
 	    {
+		debugT("**********6\n");
 		QString src = completeURL( cmSrcURLList.first() ).data();
 		slave->del( src.data() );
 		cmSrcURLList.removeRef( cmSrcURLList.first() );
 		cmDestURLList.removeRef( cmDestURLList.first() );
+		debugT("**********7\n");
 	    }
 	    else
 	    {
+		debugT("**********8\n");
 		lastSource = cmSrcURLList.first();
 		lastDest = cmDestURLList.first();
 
 		QString dest = completeURL( cmDestURLList.first() ).data();
 		QString src = completeURL( cmSrcURLList.first() ).data();
 		slave->copy( src.data(), dest.data(), overwriteExistingFiles );
+		debugT("**********9\n");
 	    }
 	    
 	    moveDelMode = !moveDelMode;
@@ -1547,6 +1573,7 @@ void KIOJob::slotInfo( const char *_text )
 
 void KIOJob::cancel()
 {
+    debugT("**********A\n");
     pid_t p = (pid_t)slave->pid;
     
     debugT("Cancel\n");

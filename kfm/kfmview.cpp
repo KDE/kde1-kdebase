@@ -424,7 +424,6 @@ void KfmView::slotPopupEmptyTrashBin()
 
 void KfmView::slotPopupCopy()
 {
-    debugT("!!!!!!!!!!!!!!!! COPY !!!!!!!!!!!!!!!!!!\n");
     clipboard.clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
@@ -440,17 +439,8 @@ void KfmView::slotPopupPaste()
 	return;
     }
     
-    debugT("Pasting into '%s'\n",popupFiles.first() );
-    
-    char *s;
-    for ( s = clipboard.first(); s != 0L; s = clipboard.next() )
-	debugT("Pasting: %s\n", s );
- 
-    debugT("1\n");
     KIOJob * job = new KIOJob;
-    debugT("2\n");
     job->copy( clipboard, popupFiles.first() );
-    debugT("3\n");
 }
 
 void KfmView::slotPopupTrash()
@@ -458,12 +448,10 @@ void KfmView::slotPopupTrash()
     // This function will emit a signal that causes us to redisplay the
     // contents of our directory if neccessary.
     KIOJob * job = new KIOJob;
-    char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-      debugT("&&> '%s'\n",s);
     
-    // job->del( popupFiles );
     QString dest = "file:" + KFMPaths::TrashPath();
+ 
+    job->setOverWriteExistingFiles( TRUE );
     job->move( popupFiles, dest );
 }
 

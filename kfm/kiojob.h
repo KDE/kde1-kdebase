@@ -74,23 +74,39 @@ public:
     void list( const char *_url, bool _reload = FALSE, bool _bHTML = FALSE );
     void mkdir( const char *_url );    
 
-    /// Turns of the global notify signals.
     /**
-      If a client wants to handle the notifies by himself, he should call this
-      function and wait for notify signals of the job. Usually the server emits a
-      notify signal so that every client gets informed about every change.
-      To avoid for example, that the KRootWidget gets informed, you must turn of
-      the servers notify signals ( global notify ).
-      */
+     * Turns of the global notify signals.
+     * If a client wants to handle the notifies by himself, he should call this
+     * function and wait for notify signals of the job. Usually the server emits a
+     * notify signal so that every client gets informed about every change.
+     * To avoid for example, that the KRootWidget gets informed, you must turn of
+     * the servers notify signals ( global notify ).
+     */
     void noGlobalNotify() { globalNotify = FALSE; }
 
-    /// Deletes all running jobs and their slaves.
     /**
-      Do this only if you want to quit the application.
-      */
+     * Deletes all running jobs and their slaves.
+     * Do this only if you want to quit the application.
+     */
     static void deleteAllJobs();
 
+    /**
+     * Allows the job to overwrite existing files during move and
+     * copy commands.
+     *
+     * @see #overwriteExistingFiles
+     */
+    void KIOJob::setOverWriteExistingFiles( bool _o );
+
+    /**
+     * If this flag is set to TRUE, the instance deletes itself after
+     * its job is finished. So you can start a KIOJob and dont have to care
+     * about it any more. This flag is turned ON by default.
+     */
     void setAutoDelete( bool _b ) { bAutoDelete = _b; }
+    /**
+     * @see #isAutoDelete
+     */
     bool isAutoDelete() { return bAutoDelete; }
     
 public slots:
