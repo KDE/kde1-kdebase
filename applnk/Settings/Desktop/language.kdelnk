@@ -25,6 +25,7 @@ Comment[hr]=Postava jezika
 Comment[zh_CN.GB2312]=сОятиХжц
 Comment[ro]=Configurarea limbajului de afi╨are
 Comment[ru]=Установки языка
+Comment[ca]=Arranjaments de l'idioma
 Name=Language
 Name[is_IS]=TungumАl o.Ч.h.
 Name[no]=SprЕk
@@ -46,6 +47,7 @@ Name[hr]=Jezik
 Name[zh_CN.GB2312]=сОят
 Name[ro]=Limbaj
 Name[ru]=Язык
+Name[ca]=Idioma
 SwallowTitle=Language
 SwallowTitle[no]=SprЕk
 SwallowTitle[de]=Sprache
@@ -65,3 +67,6 @@ SwallowTitle[hr]=Jezik
 SwallowTitle[zh_CN.GB2312]=сОят
 SwallowTitle[ro]=Limbaj
 SwallowTitle[ru]=Язык
+SwallowTitle[ca]=Idioma
+
+

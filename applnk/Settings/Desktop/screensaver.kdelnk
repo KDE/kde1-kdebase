@@ -25,6 +25,7 @@ Comment[hr]=Postava za za¹titu zaslona (screensaver)
 Comment[zh_CN.GB2312]=ÆÁÄ»±£»¤³ÌĞòÉèÖÃ
 Comment[ro]=Configurarea de scriinseivãr :) (nu am ºtiut ce traducere sã fac !)
 Comment[ru]=õÓÔÁÎÏ×ËÉ ÈÒÁÎÉÔÅÌÑ ÜËÒÁÎÁ
+Comment[ca]=Arranjament del salvapantalles
 Name=Screensaver
 Name[is_IS]=Læsing og skjávari
 Name[no]=Skjermsparer
@@ -47,6 +48,7 @@ SwallowTitle[no]=Skrivebordsskjermsparer
 Name[hr]=Za¹tita zaslona (screensaver)
 Name[zh_CN.GB2312]=ÆÁÄ»±£»¤³ÌĞò
 Name[ro]=ScriinSeivãr
+Name[ca]=Salvapantalles
 SwallowTitle=Desktop screensaver
 SwallowTitle[es]=Salvapantalla del escritorio
 SwallowTitle[fr]=Economiseur d'écran du bureau
@@ -62,4 +64,10 @@ SwallowTitle[sv]=Skärmsläckare
 SwallowTitle[ro]=Configurare ScriinSeivãr
 SwallowTitle[ru]=şÒÁÎÉÔÅÌØ ÜËÒÁÎÁ ÒÁÂÏŞÅÇÏ ÓÔÏÌÁ
 SwallowTitle[fi]=Työpöydän ruudunsäästäjä
+SwallowTitle[ca]=Salvapantalles
 Init=kcmdisplay -init
+
+
+
+
+

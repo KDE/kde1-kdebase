@@ -22,6 +22,7 @@ Name[ro]=Panou
 Name[ru]=Панель
 Name[sk]=Panel
 Name[sv]=Panel
+Name[ca]=Panell
 Name[zh_CN.GB2312]=цФ╟Е
 Comment[no]=Her kan du konfigurrere hvordan panelet skal se ut
 Comment=You can configure here, how the panel should look like
@@ -40,6 +41,7 @@ Comment[zh_CN.GB2312]=й╧сц╢кеДжцю╢©ьжфцФ╟Е╣дмБ╧ш
 Comment[sv]=HДr kan du stДlla in hur panelen ska se ut
 Comment[ru]=Вы можете сконфигурировать, как будет выглядеть панель
 Comment[fi]=Voit asettaa paneelin ulkonДkЖД
+Comment[ca]=AquМ podeu configurar quin aspecte ha de tenir el panell
 SwallowTitle=Panel Options
 SwallowTitle[cs]=NastavenМ panelu
 SwallowTitle[de]=Panel-Optionen
@@ -55,6 +57,11 @@ SwallowTitle[ro]=OpЧiunile Panoului
 SwallowTitle[sv]=PanelinstДllningar
 SwallowTitle[ru]=Опции панели
 SwallowTitle[fi]=Paneelin asetukset
+SwallowTitle[ca]=Opcions del panell
 Icon=panel_settings.xpm
 Exec=kcmkpanel
+
+
+
+
 

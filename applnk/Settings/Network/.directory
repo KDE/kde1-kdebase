@@ -19,5 +19,6 @@ Name[pt]=Rede
 Name[pt_BR]=Rede
 Name[ro]=ReЧea
 Name[ru]=Сеть
+Name[ca]=Xarxa
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network_settings.xpm

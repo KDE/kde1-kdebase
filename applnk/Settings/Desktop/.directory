@@ -18,5 +18,6 @@ Name[pt]=Ambiente de Trabalho
 Name[pt_BR]=Ambiente de Trabalho
 Name[ro]=Ecran
 Name[ru]=Рабочий стол
+Name[ca]=Escriptori
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop_settings.xpm

@@ -25,6 +25,7 @@ Comment[hr]=Postava za pozadinu
 Comment[zh_CN.GB2312]=╠Ё╬╟иХжц
 Comment[ro]=SetЦrile fundalului.
 Comment[ru]=Установки фона
+Comment[ca]=Arranjament del fons
 Name=Background
 Name[is_IS]=Bakgrunnir
 Name[no]=Bakgrunn
@@ -47,6 +48,7 @@ SwallowTitle[no]=Skrivebordsbakgrunn
 Name[hr]=Pozadina
 Name[zh_CN.GB2312]=╠Ё╬╟
 Name[ro]=Fundal
+Name[ca]=Fons
 SwallowTitle=Desktop background
 SwallowTitle[es]=Fondo de la pantalla
 SwallowTitle[fr]=Fond d'Иcran du bureau
@@ -61,4 +63,10 @@ SwallowTitle[ro]=Fundalul Ecranului
 SwallowTitle[ru]=Фон рабочего стола
 SwallowTitle[fi]=TyЖpЖydДn tausta
 SwallowTitle[cs]=PozadМ pracovnМ plochy
+SwallowTitle[ca]=Fons de l'escriptori
 Init=kcmdisplay -init
+
+
+
+
+

@@ -26,6 +26,7 @@ Comment[hr]=Postava za boje
 Comment[zh_CN.GB2312]=яуи╚иХжц
 Comment[ro]=SetЦrile de Culoare
 Comment[ru]=Установки цветов
+Comment[ca]=Arranjament dels colors
 Name=Colors
 Name[is_IS]=Litir
 Name[no]=Farger
@@ -48,6 +49,7 @@ Name[hr]=Boje
 Name[zh_CN.GB2312]=яуи╚
 Name[ro]=Culori
 Name[ru]=Цвета
+Name[ca]=Colors
 SwallowTitle=Desktop colors
 SwallowTitle[es]=Colores del escritorio
 SwallowTitle[fr]=Couleurs du bureau
@@ -63,4 +65,9 @@ SwallowTitle[sv]=SkrivbordsfДrger
 SwallowTitle[ro]=Culorile Ecranului
 SwallowTitle[ru]=Цвета рабочего стола
 SwallowTitle[fi]=TyЖpЖydДn vДrit
+SwallowTitle[ca]=Colors de l'escriptori
 Init=kcmdisplay -init
+
+
+
+

@@ -15,6 +15,7 @@ Name[pt_BR]=Editores
 Name[cs]=Editory
 Name[sk]=Editory
 Name[ru]=Редакторы
+Name[ca]=Editors
 MiniIcon=
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk
 Icon=kedit.xpm
