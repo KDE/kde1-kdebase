@@ -862,11 +862,29 @@ void KIOJob::move()
                 lstat( supath, &buff );
                 if ( S_ISLNK( buff.st_mode ) )
                 {
+                    // It's a link, we can move it ourselves
+                    // First generate the notifies (this should be a function call!)
+                    {
+                        QString tmp = p;
+                        if ( tmp.right(1) == "/" )
+                            tmp.truncate( tmp.length() - 1 );
+                        KURL u( tmp );
+                        if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+                            notifyList.append( u.directoryURL( false ) );
+                        tmp = p2;
+                        if ( tmp.right(1) == "/" )
+                            tmp.truncate( tmp.length() - 1 );
+                        u = tmp.data();
+                        if ( notifyList.find( u.directoryURL( false ) ) == -1 )
+                            notifyList.append( u.directoryURL( false ) );
+                    }
+
                     char buffer [1024];
                     int linkLength = readlink( supath.data(), buffer, 1022 );
                     if (linkLength > 0)
                     {
                       buffer[linkLength] = 0;
+                      if (overwriteExistingFiles) unlink(dupath.data()); // remove dest
                       if (symlink( buffer, dupath.data()) == -1)
                       {
                         QString tmp;
@@ -877,8 +895,17 @@ void KIOJob::move()
                       }
                     }
                    
-                    // Dont forget to delete this link at the end
-                    tmpDelURLList.append( supath );
+                    // tmpDelURLList.append( supath ); // delete this link at the end
+                    // Commented out by David. rmdir on it will fail.
+                    // Instead we want to remove it now (the symlink() call succeeded anyway)
+                    if (unlink(supath.data()) == -1)
+                    {
+                        QString tmp;
+                        ksprintf(&tmp, i18n( "Could not remove symbolic link\n%s"), supath.data());
+                        QMessageBox::warning( 0, i18n( "KFM Error" ), tmp.data() );
+                        done();
+                        return;
+                    }
                 }
 
                 // We want to move a directory ?
