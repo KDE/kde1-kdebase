@@ -26,9 +26,8 @@ msgid "&Rename ..."
 msgstr "&Gi nytt navn..."
 
 #: backgnd.cpp:183
-#, fuzzy
 msgid "&Common Background"
-msgstr "&Bakgrunn"
+msgstr "&Felles bakgrunn"
 
 #: backgnd.cpp:212 colorscm.cpp:94
 msgid "Colors"
@@ -60,86 +59,78 @@ msgid "&Browse..."
 msgstr "&Bla igjennom..."
 
 #: backgnd.cpp:329
-#, fuzzy
 msgid "Tiled"
-msgstr "F&liselagt"
+msgstr "Fliselagt"
 
 #: backgnd.cpp:330
 msgid "Mirrored"
-msgstr ""
+msgstr "Speilet"
 
 #: backgnd.cpp:331
-#, fuzzy
 msgid "Center Tiled"
-msgstr "S&entrert"
+msgstr ""
 
 #: backgnd.cpp:332
-#, fuzzy
 msgid "Centred"
-msgstr "S&entrert"
+msgstr "Sentrert"
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Centred Brick"
-msgstr "S&entrert"
+msgstr "Sentrert mursten"
 
 #: backgnd.cpp:334
-#, fuzzy
 msgid "Centred Warp"
-msgstr "S&entrert"
+msgstr ""
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "S&entrert"
+msgstr ""
 
 #: backgnd.cpp:336
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Symetrisk flislagt"
 
 #: backgnd.cpp:337
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symetrisk speilet"
 
 #: backgnd.cpp:338
-#, fuzzy
 msgid "Scaled"
-msgstr "&Skalert"
+msgstr "Skalert"
 
 #: backgnd.cpp:349
 msgid "Ra&ndom"
-msgstr ""
+msgstr "&Tilfeldig"
 
 #: backgnd.cpp:358
-#, fuzzy
 msgid "Setu&p..."
 msgstr "&Oppsett..."
 
 #: backgnd.cpp:366
 msgid "&Dock into kpanel"
-msgstr ""
+msgstr "&Dokk inn i kpanel"
 
 #: backgnd.cpp:1226
 msgid "Desktop names"
 msgstr "Skrivebordsnavn"
 
 #: backgnd.cpp:1271
-#, fuzzy
 msgid "File error"
-msgstr "Navnefeil"
+msgstr "Filfeil"
 
 #: backgnd.cpp:1272
 msgid "Can't load image file"
-msgstr ""
+msgstr "Kan ikke laste bildefil"
 
 #: backgnd.cpp:1295 backgnd.cpp:1765
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Ustøttet URL"
 
 #: backgnd.cpp:1296 backgnd.cpp:1766
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Beklager, denen type URL er foreløpig ustøttet av KDE Skjermmodul"
 
 #: backgnd.cpp:1327
 msgid "Two color backgrounds"
@@ -195,44 +186,39 @@ msgstr "Brusten"
 
 #: backgnd.cpp:1594
 msgid "Random mode setup"
-msgstr ""
+msgstr "Filfeldig modus-oppsett"
 
 #: backgnd.cpp:1600
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Velg filer fra &katalog"
 
 #: backgnd.cpp:1614
-#, fuzzy
 msgid "&Browse ..."
-msgstr "&Bla igjennom..."
+msgstr "&Bla igjennom ..."
 
 #: backgnd.cpp:1635
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Tidsforsinkelse i sekunder :"
 
 #: backgnd.cpp:1647
-#, fuzzy
 msgid "In &order"
-msgstr "Ignorer"
+msgstr "I &rekkefølge"
 
 #: backgnd.cpp:1664
-#, fuzzy
 msgid "Desktops :"
-msgstr "Skrivebord"
+msgstr "Skrivebord :"
 
 #: backgnd.cpp:1702
-#, fuzzy
 msgid "&Add"
-msgstr "L&egg til ..."
+msgstr "L&egg til"
 
 #: backgnd.cpp:1872
-#, fuzzy
 msgid "Directory error"
-msgstr "Navnefeil"
+msgstr "Katalogfeil"
 
 #: backgnd.cpp:1873
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Valgt katalog finnes ikke"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
@@ -544,7 +530,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Skrivebord"

@@ -666,7 +666,7 @@ msgstr "Endre markør over lenke."
 
 #: htmlopts.cpp:253
 msgid "Underline links"
-msgstr ""
+msgstr "Understrek lenker"
 
 # htmlopts.cpp:321
 #: htmlopts.cpp:353
@@ -682,17 +682,13 @@ msgstr "Avstand mellom vertikale bunngitter:"
 msgid "Transparent Text for Root Icons."
 msgstr "Gjennomsiktig tekst for bunnikoner"
 
-# htmlopts.cpp:214
 #: htmlopts.cpp:413
-#, fuzzy
 msgid "Icon foreground color:"
-msgstr "Bakgrunnsfarge:"
+msgstr "Forgrunnsfarge for ikon:"
 
-# htmlopts.cpp:214
 #: htmlopts.cpp:425
-#, fuzzy
 msgid "Icon background color:"
-msgstr "Bakgrunnsfarge:"
+msgstr "Bakgrunnsfarge for ikon:"
 
 # kfmprops.cpp:676
 #: kfmdlg.cpp:114
@@ -880,11 +876,9 @@ msgstr ""
 msgid "Execute"
 msgstr "Utfør"
 
-# kfmprops.cpp:676
 #: kfmprops.cpp:685
-#, fuzzy
 msgid "&Browse..."
-msgstr "&Gjennomblaer"
+msgstr "&Bla gjennom..."
 
 # kfmprops.cpp:680
 #: kfmprops.cpp:697
@@ -922,18 +916,14 @@ msgstr ""
 "Kunne ikke lagre egenskaper\n"
 "Kanskje adgang nektet."
 
-# kfmprops.cpp:864
 #: kfmprops.cpp:938
 msgid "URL"
 msgstr "URL"
 
-# htmlopts.cpp:214
 #: kfmprops.cpp:1035
-#, fuzzy
 msgid "Background"
-msgstr "Bakgrunnsfarge:"
+msgstr "Bakgrunn"
 
-# kfmprops.cpp:965
 #: kfmprops.cpp:1045
 msgid "Apply global"
 msgstr "Bruk globalt"

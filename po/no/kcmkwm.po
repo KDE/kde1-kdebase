@@ -31,13 +31,13 @@ msgstr "&Mus"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Avansert"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "bruk: kcmkwm [-init | {optinos,buttons,titlebar,borders,mouse}]\n"
+msgstr ""
+"bruk: kcmkwm [-init | {optinos,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -391,114 +391,68 @@ msgstr "Ny størrelse"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Tastatur og mus"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab går gjennom skrivebord"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab er begrenset til gjeldende skrivebord"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Alt-Tab-modus:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Høyre knapp"
+msgstr "Ta høyre musknapp"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filter"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "Vinduer"
+msgstr "Vinduer vil:"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "har tynn dekorasjon"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "har ingen dekorasjon"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "aldri oppnå fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "start som fastsatt"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "bli unntatt fra sesjonsbehandling"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "hvis de passer følgende:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Tittellinje"
+msgstr "Tittler"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Tittellinjeutseende"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Operasjonsmeny"
-
-#~ msgid "Window movement"
-#~ msgstr "Vindubevegelse"
-
-#~ msgid "Transparent"
-#~ msgstr "Gjennomsiktig"
-
-#~ msgid "Opaque"
-#~ msgstr "Ugjennomskinnelig"
-
-#~ msgid "Window resize"
-#~ msgstr "Endre vindustørrelse"
-
-#~ msgid "Animation:"
-#~ msgstr "Animasjon:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Godta overlappinger:"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Maksimeringsstil"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Maksimer fullt"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maksimer vertikalt"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Autoreisforsinkelse\n"
-#~ "(<100 kobler fra)"
-
-#~ msgid "miliseconds"
-#~ msgstr "millisekunder"
+msgstr "Klasser"

@@ -130,9 +130,9 @@ msgid "Sessions"
 msgstr "Sesjoner"
 
 #: main.C:497
-#, fuzzy, c-format
+#, c-format
 msgid "About %s"
-msgstr "&Om ..."
+msgstr "Om %s"
 
 #: main.C:499
 #, c-format
@@ -145,6 +145,14 @@ msgid ""
 "terms of the Artistic License and comes\n"
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
+"%s versjon %s - en X-terminal\n"
+"\n"
+"Copyright (c) 1998 ved Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Dette programmet er gratis programvare under\n"
+"betingelsene i Artistic-lisensen og kommer\n"
+"UTEN NOEN GARANTIER.\n"
+"Se `LICENSE.readme´ for detaljer."
 msgstr ""
 
 #: main.C:797
