@@ -19,11 +19,9 @@ Samba connections, and is part of the
 suite of Samba tools, which implements the <bf> SMB</bf>
 (<em>Session Message Block</em>) protocol, also called
 the <bf>NetBIOS</bf> or <bf>LanManager</bf> protocol.
-This protocol can be  used to
-provide  printer-sharing 
-or drive-sharing services on a network including
-machines running the various  flavors of 
-Microsoft  Windows.
+This protocol can be used to provide printer sharing 
+or drive sharing services on a network including
+machines running the various flavors of Microsoft Windows.
 
 
 <p>
