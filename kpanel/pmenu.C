@@ -72,13 +72,13 @@ bool isKdelnkFile(const char* filename){
 
   QFile file(filename);
   if (file.open(IO_ReadOnly)){
-    char s[64];
+    char s[65];
     int r = file.readBlock(s, 64);
     file.close();
 
     if(r == -1)
       return false;
-    
+
     // terminate string
     s[r] = '\0';
 
@@ -91,7 +91,7 @@ bool isKdelnkFile(const char* filename){
 PMenuItem::PMenuItem()
 {
   initMetaObject();
-  entry_type = empty; 
+  entry_type = empty;
   sub_menu = 0;
   cmenu = 0;
   recv = 0;
@@ -99,7 +99,7 @@ PMenuItem::PMenuItem()
   id = global_id++;
 }
 
-PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, 
+PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
 		      PMenu *menu, QObject *receiver, char *member,
 		      QPopupMenu *cm, bool /* ro */, QString d, QString co )
 {
@@ -135,7 +135,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
   pixmap_name     = item.pixmap_name;
   big_pixmap_name = item.big_pixmap_name;
   pixmap          = item.pixmap;
-  entry_type      = item.entry_type; 
+  entry_type      = item.entry_type;
   command_name    = item.command_name;
   comment         = item.comment;
   dir_path        = item.dir_path;
@@ -163,7 +163,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
 
 PMenuItem::~PMenuItem()
 {
-  if( cmenu ) 
+  if( cmenu )
     delete cmenu;
   if( sub_menu )
     {
@@ -188,7 +188,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
       dir_path = fi->dirPath();
       file += "/.directory";
       QFile config(file);
-      if( config.exists() ) 
+      if( config.exists() )
 	{
 	  KSimpleConfig kconfig(file, true);
 	  kconfig.setGroup("KDE Desktop Entry");
@@ -199,7 +199,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
 	}
       entry_type  = submenu;
       sub_menu    = menu;
-      cmenu       = new myPopupMenu;      
+      cmenu       = new myPopupMenu;
     }
   else
     {
@@ -229,10 +229,10 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
     tmp.append(".xpm");
     pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(tmp, 16, 16);
   }
-  
+
   if (pixmap.isNull())
     pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
-  
+
   if (comment.isEmpty())
     comment = text_name;
   if (big_pixmap_name.isEmpty()){
@@ -348,7 +348,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	    item->cmenu->setFont(menu->font());
 	    item->cmenu->insertItem(item->pixmap, item->text_name, item->getId());
 	    item->cmenu->connectItem(item->getId(), item, SLOT(execAddButton()) );
-	    connect( item, SIGNAL(addButton(PMenuItem*)), 
+	    connect( item, SIGNAL(addButton(PMenuItem*)),
 	    	     (QObject *) panel, SLOT(addButton(PMenuItem*)) );
 	    connect( item->cmenu, SIGNAL(highlighted(int)), this, SLOT(highlighted(int)) );
 	    item->cmenu->insertSeparator();
@@ -404,7 +404,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	if( add_button )
 	  {
 	    menu->connectItem( item->getId(), item, SLOT(execAddButton()) );
-	    connect( item, SIGNAL(addButton(PMenuItem *)), (QObject *) panel, 
+	    connect( item, SIGNAL(addButton(PMenuItem *)), (QObject *) panel,
 		     SLOT(addButton(PMenuItem*)) );
 	  }
 	else
@@ -412,7 +412,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	    if( !item->command_name.isEmpty() )
 	      menu->connectItem( item->getId(), item, SLOT(exec()) );
 	  }
-	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel, 
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 	continue;
       case prog_com:
@@ -425,7 +425,7 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	  }
 	else
 	  menu->connectItem(item->getId(), item->recv, item->memb);
-	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel, 
+	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
 	continue;
       case add_but:
@@ -543,16 +543,16 @@ short PMenu::parse( QDir d )
       {
 
         PMenuItem *tmp = item_list.first();
- 
+
         if ( altSort == true && int(new_item->getType() ) > submenu)
           for (;
             tmp && int(tmp->getType()) <= submenu;
             tmp = item_list.next());
- 
+
         for (;
           tmp && stricmp( tmp->text_name, new_item->text_name.data() ) <= 0;
           tmp = item_list.next());
- 
+
         if ( !tmp )
           item_list.append( new_item );
         else
@@ -589,7 +589,7 @@ short PMenu::parse( QDir d )
       new_item = new PMenuItem;
       new_item->entry_type = separator;
       insert(new_item, pos);
-    }   
+    }
   return 0;
 }
 
@@ -621,11 +621,11 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
   QFontMetrics fm = menu->fontMetrics();   // size of font set for this widget
 
   w  = 2 + item->pixmap.width() + 4 + fm.width( item->text_name ) + 2;
-  h = ( item->pixmap.height() > fm.height() ? item->pixmap.height() : fm.height() ) + 4; 
-  
+  h = ( item->pixmap.height() > fm.height() ? item->pixmap.height() : fm.height() ) + 4;
+
   buf.resize( w, h );                    // resize pixmap
   buf.fill( menu->backgroundColor() );   // clear it
-  
+
   p.begin( &buf );
   p.drawPixmap( 2, 2, item->pixmap );              // use 2x2 border
   p.setFont( menu->font() );
@@ -668,7 +668,7 @@ PMenuItem * PMenu::searchItem(QString name)
       name.prepend(kde_apps);
     }
   path = name.left( name.findRev('/') );
-  
+
   if( list.first() && list.first()->dir_path != path )
     {
       // can't be inside of this menu, so search only for submenus
@@ -691,7 +691,7 @@ PMenuItem * PMenu::searchItem(QString name)
 	  if( item->fullPathName() == name )
 	    return item;
 	}
-    }  
+    }
 
   if (hack == this)
     hack = 0;
@@ -705,7 +705,7 @@ PMenuItem * PMenu::searchItem(QString name)
       pmi->parse(name);
     } else {
       QFileInfo i(name);
-      if (i.isDir()) { 
+      if (i.isDir()) {
 	PMenu *dir = new PMenu();
 	dir->parse(QDir(name));
 	pmi = new PMenuItem(submenu);
@@ -719,7 +719,7 @@ PMenuItem * PMenu::searchItem(QString name)
 PMenuItem * PMenu::searchItem(int id)
 {
   PMenuItem *item;
-  for( item = list.first(); item != 0 && item->getId() != id; 
+  for( item = list.first(); item != 0 && item->getId() != id;
        item = list.next() );
 
   return item;
@@ -730,7 +730,7 @@ PMenuItem * PMenu::searchItem(int id)
 PMenuItem * PMenu::searchItem(PMenu* _item)
 {
   PMenuItem *item;
-  for( item = list.first(); item != 0 && item->sub_menu != _item; 
+  for( item = list.first(); item != 0 && item->sub_menu != _item;
        item = list.next() );
 
   return item;
@@ -740,7 +740,7 @@ PMenuItem * PMenu::searchItem(PMenu* _item)
 void PMenu::highlighted( int id )
 {
   PMenuItem *item;
-  for( item = list.first(); item != 0 && item->getId() != id; 
+  for( item = list.first(); item != 0 && item->getId() != id;
        item = list.next() );
   if (item && item->getId() == id)
     item->highlighted();
