@@ -1143,15 +1143,15 @@ int main(int argc, char **argv)
   // this ensures that we have correct charset for all fonts
   // TODO: make default font and font sizes configurable
   KConfig *cfg = kapp->getConfig();
+  cfg->setGroup("kvt");
   QFont fntDef("fixed", 13);
-  //QFont fntDef = kapp->fixedFont;
-  QFont fnt = cfg->readFontEntry("defaultFont", &fntDef);
+  fntDef = cfg->readFontEntry("defaultFont", &fntDef);
   kvt_fnt2.setPointSize(cfg->readNumEntry("fontSize2", 7));
   kvt_fnt3.setPointSize(cfg->readNumEntry("fontSize3", 10));
   kvt_fnt4.setPointSize(cfg->readNumEntry("fontSize4", 14));
   kvt_fnt5.setPointSize(cfg->readNumEntry("fontSize5", 15));
   kvt_fnt6.setPointSize(cfg->readNumEntry("fontSize6", 20));
-  kvt_reinit_fonts(fnt);
+  kvt_reinit_fonts(fntDef);
 
   // this is for the original rxvt-code
   display = qt_xdisplay();
