@@ -32,21 +32,19 @@ msgstr "Sélectionner &tout"
 
 #: kfmgui.cpp:235
 msgid "&Find in page..."
-msgstr ""
+msgstr "Trouver dans la &page..."
 
 #: kfmgui.cpp:237
 msgid "Find &next"
-msgstr ""
+msgstr "Trouver le sui&vant"
 
 #: kfmgui.cpp:240
-#, fuzzy
 msgid "Mime &Types"
-msgstr "Types MIME"
+msgstr "&Types MIME"
 
 #: kfmgui.cpp:242
-#, fuzzy
 msgid "App&lications"
-msgstr "Applications"
+msgstr "App&lications"
 
 #: kfmgui.cpp:248
 msgid "Global Mime Types"
@@ -57,9 +55,8 @@ msgid "Global Applications"
 msgstr "Applications globales"
 
 #: kfmgui.cpp:257
-#, fuzzy
 msgid "Show Hi&dden Files"
-msgstr "&Fichiers cachés"
+msgstr "&Montrer les fichiers cachés"
 
 #: kfmgui.cpp:259
 msgid "Show Tr&ee"
@@ -67,7 +64,7 @@ msgstr "&Arborescence"
 
 #: kfmgui.cpp:261
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "Montrer les petites &images"
 
 #: kfmgui.cpp:263
 msgid "&HTML View"
@@ -98,7 +95,6 @@ msgid "&Reload Document"
 msgstr "&Recharger le document"
 
 #: kfmgui.cpp:282
-#, fuzzy
 msgid "Rescan &Bindings"
 msgstr "Relire les &liaisons"
 
@@ -112,7 +108,7 @@ msgstr "Voir le &source du document"
 
 #: kfmgui.cpp:295
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:303
 #, fuzzy
@@ -168,22 +164,19 @@ msgid "Sa&ve Settings"
 msgstr "&Enregistrer les options"
 
 #: kfmgui.cpp:353
-#, fuzzy
 msgid "Save Settings for this &URL"
-msgstr "&Enregistrer les options"
+msgstr "Enregistrer les options pour cette &URL"
 
 #: kfmgui.cpp:360
 #, fuzzy
 msgid "&Configure File Manager..."
-msgstr "Configurer le navigateur..."
+msgstr "&Configurer le gestionnaire de fichiers..."
 
 #: kfmgui.cpp:362
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "Configurer le navigateur..."
+msgstr "Configurer le &navigateur..."
 
 #: kfmgui.cpp:398
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -206,12 +199,12 @@ msgstr ""
 "Gestionnaire de proxy par Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de\n"
 "\n"
-"Reports d'erreurs et patchs à envoyer à David Faure\n"
+"Responsable actuel: David Faure\n"
 "faure@kde.org"
 
 #: kfmgui.cpp:411
 msgid "&Go"
-msgstr ""
+msgstr "A&ller"
 
 #: kfmgui.cpp:412
 msgid "&Bookmarks"
@@ -227,7 +220,7 @@ msgstr "Répertoire parent"
 
 #: kfmgui.cpp:450 main.cpp:280
 msgid "Forward"
-msgstr ""
+msgstr "Avant"
 
 #: kfmgui.cpp:455
 msgid "Home"
@@ -261,9 +254,8 @@ msgid "KFM Error"
 msgstr "Erreur de KFM"
 
 #: kfmgui.cpp:526
-#, fuzzy
 msgid "Location:"
-msgstr "Ouvrir l'URL :"
+msgstr "URL :"
 
 #: kfmexec.cpp:59 kfmgui.cpp:682 kfmman.cpp:1374
 msgid "Malformed URL\n"
@@ -294,7 +286,6 @@ msgid "&New"
 msgstr "&Nouveau "
 
 #: kfmgui.cpp:1003
-#, fuzzy
 msgid "New &Window"
 msgstr "Nouvelle &fenêtre"
 
@@ -315,22 +306,20 @@ msgid "&Find"
 msgstr "Re&chercher"
 
 #: kfmgui.cpp:1038
-#, fuzzy
 msgid "&Up"
-msgstr "Répertoire parent"
+msgstr "Répertoire &parent"
 
 #: kfmgui.cpp:1040
 msgid "&Back"
-msgstr ""
+msgstr "&Retour"
 
 #: kfmgui.cpp:1042
 msgid "&Forward"
-msgstr ""
+msgstr "&Avant"
 
 #: kfmgui.cpp:1044
-#, fuzzy
 msgid "&Home"
-msgstr "A la maison ;-)"
+msgstr "&Ma maison"
 
 #: kfmgui.cpp:1101 kfmgui.cpp:1273 kfmjob.cpp:37 kfmman.cpp:240
 #: kfmtree.cpp:433 kfmview.cpp:438 kfmview.cpp:507 kfmview.cpp:715
@@ -579,6 +568,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Une nouvelle version de KDE a été installée.\n"
+"Les modèles ont pu changer.\n"
+"\n"
+"Voulez-vous installer les nouveaux modèles ?"
 
 #: main.cpp:263
 msgid "Cd"
@@ -614,12 +607,11 @@ msgstr "Ajouter un signet"
 
 #: main.cpp:276
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Enregistrer les options pour cette URL"
 
 #: main.cpp:277
-#, fuzzy
 msgid "Show Menubar"
-msgstr "Afficher le &menu"
+msgstr "Afficher le menu"
 
 #: htmlopts.cpp:69
 msgid "Small"
@@ -671,7 +663,7 @@ msgstr "Changer le curseur au-dessus d'un lien."
 
 #: htmlopts.cpp:431
 msgid "Underline links"
-msgstr ""
+msgstr "Souligner les liens"
 
 #: htmlopts.cpp:549
 msgid "Horizontal Root Grid Spacing:"
@@ -690,9 +682,8 @@ msgid "Tree &view follows navigation"
 msgstr ""
 
 #: htmlopts.cpp:610
-#, fuzzy
 msgid "&Transparent Text for Root Icons."
-msgstr "Texte transparent pour les icônes du bureau"
+msgstr "&Texte transparent pour les icônes du bureau."
 
 #: htmlopts.cpp:623
 #, fuzzy
@@ -713,9 +704,8 @@ msgid "Could not write bookmark"
 msgstr "Impossible d'enregistrer le signet"
 
 #: kfmprops.cpp:238
-#, fuzzy
 msgid "File Name"
-msgstr "Nom complet"
+msgstr "Nom du fichier"
 
 #: kfmprops.cpp:253
 msgid "Full Name"
@@ -857,9 +847,8 @@ msgid "Execute"
 msgstr "Exécuter"
 
 #: kfmprops.cpp:683
-#, fuzzy
 msgid "&Browse..."
-msgstr "&Parcourir"
+msgstr "&Parcourir..."
 
 #: kfmprops.cpp:695
 msgid "Working Directory"
@@ -895,9 +884,8 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1097
-#, fuzzy
 msgid "Background"
-msgstr "Couleur de fond :"
+msgstr "Couleur de fond"
 
 #: kfmprops.cpp:1107
 msgid "Apply global"
@@ -1420,9 +1408,8 @@ msgid "This group is empty!"
 msgstr ""
 
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "Re&chercher"
+msgstr "Rechercher :"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
@@ -1441,9 +1428,8 @@ msgid "Do you want to accept or reject this cookie?"
 msgstr ""
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Appliquer globalement"
+msgstr "Appliquer à "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
