@@ -1,5 +1,13 @@
 // $Id$
 
+/*
+ * If this file is compiled with -DHAVE_ASYNC_PIPES,
+ * select is used to handle the writing out of data,
+ * but since ::write and KSlave::write will block anyways
+ * nothing much is gained.  Perhaps later something more
+ * useful will be done with this code.
+ */
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -14,11 +22,14 @@
 #include <sys/signal.h>
 #include <sys/time.h>
 
+#ifdef HAVE_ASYNC_PIPES
+#include <errno.h>
+#endif
 #include <fcntl.h>
-#include <signal.h>
-#include <string.h>
 #include <stdio.h> 
 #include <stdlib.h>
+#include <signal.h>
+#include <string.h>
 #include <unistd.h>
 
 #include "slave.h"
@@ -77,7 +88,7 @@ int KSlave::Start( const char *command )
     if( !BuildPipe(&out,&s_out) ) return 0;
     if( !BuildPipe(&err,&s_err) ) return 0;
 
-#ifdef SPECIAL_PIPE_TRICK
+#ifdef HAVE_ASYNC_PIPES
 	fcntl(in, F_SETFL, O_NDELAY);
 #endif
 
@@ -152,18 +163,21 @@ int KSlave::Stop()
 
 long KSlave::Write(void *buffer, long len)
 {
-#ifdef SPECIAL_PIPE_TRICK
+#ifdef HAVE_ASYNC_PIPES
 	fd_set writefds;
 	timeval tv;
 	tv.tv_sec = tv.tv_usec = 0;
 	FD_ZERO(&writefds);
-	FD_SET(in,&writefds);
-	if(select(in+1,NULL,&writefds,NULL,&tv) == -1) sleep(1);
+	FD_SET(in, &writefds);
+
+	if( select(in+1, NULL, &writefds, NULL, &tv) == -1)
+		sleep(1);
 #endif
-	long rc = write(in,buffer,len);
-#ifdef SPECIAL_PIPE_TRICK
+	long rc = write(in, buffer, len);
+
+#ifdef HAVE_ASYNC_PIPES
 	if(rc == -1) printf("SPECIAL_PIPE_TRICK: AMOK write!\n");
-	while(rc == -1 && errno == EAGAIN) rc = write(in,buffer,len);
+	while(rc == -1 && errno == EAGAIN) rc = write(in, buffer, len);
 #endif
 	return(rc);
 }
