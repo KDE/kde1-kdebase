@@ -4,6 +4,7 @@ MiniIcon=folder_blue.xpm
 Comment=KDE Installation Folder
 Comment[no]=KDE Installasjonsmappe
 Comment[pt_BR]=Pasta de Instalação do KDE
+Comment[ru]=ðÁÐËÁ Ó KDE
 URL=file:$KDEDIR
 Icon=folder_blue.xpm
 Type=Link

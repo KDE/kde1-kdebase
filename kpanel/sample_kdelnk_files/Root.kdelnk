@@ -4,6 +4,7 @@ MiniIcon=folder_red.xpm
 Comment=Root Folder
 Comment[no]=Rot-mappe
 Comment[pt_BR]=Pasta Raiz
+Comment[ru]=Корневой каталог
 URL=file:/
 Icon=folder_red.xpm
 Type=Link
