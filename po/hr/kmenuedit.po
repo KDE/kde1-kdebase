@@ -82,11 +82,11 @@ msgstr "Otvori/ Zatvori"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "Oznaèi stavku za premje¹tanje"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "Oznaèi izbornik za premje¹tanje"
 
 #: confmenu.cpp:120
 msgid "New"
@@ -219,7 +219,7 @@ msgstr "Aplikacije koje treba progutati:"
 
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "Naziv aplikacijeK"
+msgstr "Naziv aplikacije"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
