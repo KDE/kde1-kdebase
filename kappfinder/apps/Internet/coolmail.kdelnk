@@ -3,9 +3,11 @@
 SwallowExec=coolmail
 SwallowTitle=coolmail
 SwallowTitle[pl]=coolmail
+SwallowTitle[sk]=coolmail
 Name=Coolmail
 Name[es]=Coolmail
 Name[pl]=Coolmail
+Name[sk]=Coolmail
 Comment=Coolmail
 Comment[es]=Coolmail
 Comment[pl]=Coolmail

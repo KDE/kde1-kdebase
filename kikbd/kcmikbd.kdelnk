@@ -1,6 +1,5 @@
 # KDE Config File
 [KDE Desktop Entry]
-Comment=International Keyboard
 Name=International Keyboard
 Name[es]=Teclado internacional
 Name[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ëÌÁ×ÉÁÔÕÒÁ
@@ -8,22 +7,26 @@ Name[pt]=Configurações do Teclado Internacional
 Name[pt_BR]=Configurações do Teclado Internacional
 Name[pl]=Miêdzynarodowe Ustawienia Klawiatury
 Name[fr]=Clavier international
-Comment[es]=Configuración de teclado internacional
 Name[fi]=Kansainvälinen näppäimistö
+Name[sk]=Medzinárodná klávesnica
+Comment=International Keyboard
+Comment[es]=Configuración de teclado internacional
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ëÌÁ×ÉÁÔÕÒÁ
 Comment[pt]=Configurações do Teclado Internacional
 Comment[pt_BR]=Configurações do Teclado Internacional
 Comment[pl]=Miêdzynarodowe Ustawienia Klawiatury
 Comment[fr]=Configuration du clavier international
-SwallowTitle[es]=Configuración de teclado internacional
 Comment[fi]=Kansainvälinen näppäimistö
+Comment[sk]=Medzinárodná klávesnica
 SwallowTitle=International Keyboard
+SwallowTitle[es]=Configuración de teclado internacional
 SwallowTitle[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ëÌÁ×ÉÁÔÕÒÁ
 SwallowTitle[pt]=Configurações do Teclado Internacional
 SwallowTitle[pt_BR]=Configurações do Teclado Internacional
 SwallowTitle[pl]=Miêdzynarodowe Ustawienia Klawiatury
 SwallowTitle[fr]=Configuration du clavier international
 SwallowTitle[fi]=Kansainvälinen näppäimistö
+SwallowTitle[sk]=Medzinárodná klávesnica
 Exec=kcmikbd
 Icon=kikbd.xpm
 Type=Application

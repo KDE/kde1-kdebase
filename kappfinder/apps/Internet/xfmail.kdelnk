@@ -6,6 +6,7 @@ Type=Application
 Name=XFMail
 Name[es]=XFMail
 Name[pl]=XFMail
+Name[sk]=XFMail
 Comment=XFMail Mailer
 Comment[is_IS]=Póstforritið XFMail
 Comment[es]=Cliente de correo para X

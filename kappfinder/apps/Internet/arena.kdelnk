@@ -6,6 +6,7 @@ Type=Application
 Name=Arena
 Name[es]=Arena
 Name[pl]=Arena
+Name[sk]=Arena
 Comment=Arena WWW Browser
 Comment[is_IS]=Arena vafrinn
 Comment[es]=Navegador WWW Arena
