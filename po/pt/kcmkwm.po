@@ -179,20 +179,19 @@ msgstr "Cascata"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interactivo"
 
 #: windows.cpp:92
 msgid "Random"
 msgstr "Aleatória"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Menu"
+msgstr "Manual"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Sobreposição:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -243,22 +242,28 @@ msgid "Move pointer towards center after switch"
 msgstr "Move ponteiro para o centro depois de mudança"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Dekstop switch delay:"
-msgstr "Demora de mudança em ms:"
+msgstr "Demora de mudança:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "Bordas mágicas"
 
 #: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zona de Snap da Borda:\n"
+"       (pixels)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Zona de Snap da Janela:\n"
+"       (pixels)"
+
+#~ msgid "Edge Resistance:"
+#~ msgstr "Resistência:"

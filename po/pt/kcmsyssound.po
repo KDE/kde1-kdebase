@@ -63,67 +63,67 @@ msgstr "Inicio"
 
 #: syssound.cpp:158
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Shade Up da Janela"
 
 #: syssound.cpp:159
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Shade Down da Janela"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr ""
+msgstr "Iconificar Janela"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr ""
+msgstr "DesIconificar Janela"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
-msgstr ""
+msgstr "Maximizar Janela"
 
 #: syssound.cpp:163
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "DesMaximizar Janela"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr ""
+msgstr "Pregar Janela"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr ""
+msgstr "DesPregar Janela"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
-msgstr ""
+msgstr "Novo Trans de Janela"
 
 #: syssound.cpp:167
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Apagar Trans de Janela"
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Sair"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Mensagem de Saida"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Início de Movimentação de Janela"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Fim de Movimentação de Janela"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Início da Mudança de Tamanho da Janela"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Fim da Mudança de Tamanho da Janela"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -150,16 +150,15 @@ msgid "Unsupported URL"
 msgstr "UTL não suportada"
 
 #: syssound.cpp:455
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Desculpe, este tipo de URL não é suportada actualmente pelo Módulo KDE "
-"System Sound"
+"Desculpe, este tipo de URL não é actualmente suportada pelo Módulo de Sons "
+"de Sistema do KDE"
 
 #: syssound.cpp:465
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Sorry, but \n"
 "%s\n"
@@ -167,7 +166,7 @@ msgid ""
 msgstr ""
 "Desculpe, mas \n"
 "%s\n"
-"não parece ser um ficheiro WAV!"
+"não parece ser um ficheiro WAV."
 
 #: syssound.cpp:468
 msgid "Improper File Extension"

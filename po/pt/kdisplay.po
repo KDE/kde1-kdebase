@@ -7,36 +7,31 @@ msgstr ""
 
 #: backgnd.cpp:57
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Insira o nome do novo ambiente de trabalho"
 
 #: backgnd.cpp:113 backgnd.cpp:148
 msgid "Desktop"
 msgstr "Ambiente de trabalho"
 
 #: backgnd.cpp:165
-#, fuzzy
 msgid "&Rename ..."
-msgstr "Mudar nome..."
+msgstr "&Mudar nome..."
 
 #: backgnd.cpp:191 colorscm.cpp:93
-#, fuzzy
 msgid "Colors"
-msgstr "&Cor"
+msgstr "Cores"
 
 #: backgnd.cpp:218
-#, fuzzy
 msgid "&One Color"
-msgstr "&Cor"
+msgstr "&Uma Cor"
 
 #: backgnd.cpp:235
-#, fuzzy
 msgid "&Two Color"
-msgstr "&Cor"
+msgstr "&Duas Cores"
 
 #: backgnd.cpp:254
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Configurar..."
+msgstr "Config&urar..."
 
 #: backgnd.cpp:263
 msgid "Wallpaper"
@@ -68,90 +63,89 @@ msgid "Default"
 msgstr "Por defeito"
 
 #: backgnd.cpp:861
-#, fuzzy
 msgid "Desktop names"
-msgstr "Ambiente de trabalho"
+msgstr "Nomes dos ambiente de trabalho"
 
 #: backgnd.cpp:907
 #, fuzzy
 msgid "Two color backgrounds"
-msgstr "Fundo seleccionado"
+msgstr "Configuração de fundo de duas cores"
 
 #: backgnd.cpp:944
+#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "&Misturar cores da direita para a esquerda"
 
 #: backgnd.cpp:950
+#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "&Misturar cores da direita para a esquerda"
 
 #: backgnd.cpp:956
+#, fuzzy
 msgid "Use &pattern"
-msgstr ""
+msgstr "&Padrão"
 
 #: backgnd.cpp:983
 msgid "Preview"
-msgstr ""
+msgstr "Previsão"
 
 #: backgnd.cpp:994
+#, fuzzy
 msgid "Pattern &name"
-msgstr ""
+msgstr "Nome do padrão"
 
 #: backgnd.cpp:1033
 msgid "Current"
-msgstr ""
+msgstr "Actual"
 
 #: backgnd.cpp:1093
-#, fuzzy
 msgid "Filled"
-msgstr "&Mosaico"
+msgstr "Sólido"
 
 #: backgnd.cpp:1096
 msgid "Fish net"
-msgstr ""
+msgstr "Rede de pesca"
 
 #: backgnd.cpp:1099
 msgid "Triangles"
-msgstr ""
+msgstr "Triângulos"
 
 #: backgnd.cpp:1102
 msgid "Flowers"
-msgstr ""
+msgstr "Flores"
 
 #: backgnd.cpp:1105
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
 #: backgnd.cpp:1108
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Pavimento"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "Esquema de cor"
 
 #: colorscm.cpp:130
-#, fuzzy
 msgid "Current scheme"
-msgstr "Gravar esquema"
+msgstr "Esquema actual"
 
 #: colorscm.cpp:132
-#, fuzzy
 msgid "KDE default"
-msgstr "KDE por Defeito"
+msgstr "KDE por omissão"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "&Adicionar ..."
 
 #: colorscm.cpp:153
 msgid "&Remove"
-msgstr ""
+msgstr "&Remover"
 
 #: colorscm.cpp:162
-#, fuzzy
 msgid "&Save changes"
-msgstr "Gravar esquema"
+msgstr "&Gravar alterações"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -166,9 +160,8 @@ msgid "Inactive title text"
 msgstr "Texto de título inactivo"
 
 #: colorscm.cpp:185
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "Barra de título inactiva"
+msgstr "Mistura do título inactivo"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
@@ -179,9 +172,8 @@ msgid "Active title text"
 msgstr "Texto de título activo"
 
 #: colorscm.cpp:188
-#, fuzzy
 msgid "Active title blend"
-msgstr "Barra de título inactiva"
+msgstr "Mistura do título activo"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -212,17 +204,16 @@ msgid "Contrast"
 msgstr "Contraste"
 
 #: colorscm.cpp:238
-#, fuzzy
 msgid "&Low"
-msgstr "Baixa"
+msgstr "&Baixo"
 
 #: colorscm.cpp:246
 msgid "High"
-msgstr "Alta"
+msgstr "Alto"
 
 #: colorscm.cpp:318
 msgid "Error removing"
-msgstr ""
+msgstr "Erro ao remover"
 
 #: colorscm.cpp:319
 msgid ""
@@ -230,10 +221,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Este padrão de cores não pode ser removido.\n"
+"Talvez não tenha permissão para alterar o sistema de\n"
+"ficheiros onde o padrão de cores está armazenado."
 
 #: colorscm.cpp:376
 msgid "Naming error"
-msgstr ""
+msgstr "Erro de nome"
 
 #: colorscm.cpp:377
 msgid ""
@@ -241,11 +235,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Por favor escolha um nome único para o novo\n"
+"padrão de cores. O que inseriu já faz parte\n"
+"da lista de padrões de cores."
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Esquema de cor"
+msgstr "Adicionar padrão de cores"
 
 #: savescm.cpp:32
 msgid ""
@@ -255,6 +251,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Insira um nome para o novo padrão de cores\n"
+"a ser adicionado à sua lista pessoal.\n"
+"\n"
+"As cores usadas na previsão serão copiadas\n"
+"para este padrão."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -278,14 +279,12 @@ msgid "No screensaver"
 msgstr "&Protecção do Écran"
 
 #: scrnsave.cpp:207
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Configurar..."
+msgstr "&Configurar..."
 
 #: scrnsave.cpp:215
-#, fuzzy
 msgid "&Test"
-msgstr "Testar"
+msgstr "&Testar"
 
 #: scrnsave.cpp:228
 msgid "Settings"
@@ -293,27 +292,23 @@ msgstr "Definições"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr ""
+msgstr "&Esperar"
 
 #: scrnsave.cpp:258
-#, fuzzy
 msgid "min."
-msgstr "min"
+msgstr "min."
 
 #: scrnsave.cpp:264
-#, fuzzy
 msgid "&Require password"
-msgstr "Requer Password"
+msgstr "&Requer Password"
 
 #: scrnsave.cpp:272
-#, fuzzy
 msgid "Priority"
-msgstr "Prioridade:"
+msgstr "Prioridade"
 
 #: scrnsave.cpp:285
-#, fuzzy
 msgid "&High"
-msgstr "Alta"
+msgstr "&Alta"
 
 #: scrnsave.cpp:294
 msgid "Low"
@@ -322,16 +317,15 @@ msgstr "Baixa"
 #: general.cpp:147
 #, fuzzy
 msgid "Fonts etc."
-msgstr "Fontes"
+msgstr "&Fontes etc."
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Desenhar widgets ao estilo do Windows 95"
 
 #: general.cpp:167
-#, fuzzy
 msgid "Desktop fonts"
-msgstr "Ambiente de trabalho"
+msgstr "Fontes do ambiente de trabalho"
 
 #: general.cpp:179
 msgid "General font"
@@ -339,25 +333,23 @@ msgstr "Fonte geral"
 
 #: general.cpp:184
 msgid "Fixed font"
-msgstr ""
+msgstr "Fonte fixa"
 
 #: general.cpp:189
-#, fuzzy
 msgid "Window title font"
-msgstr "Texto da janela"
+msgstr "Fonte do título das janelas"
 
 #: general.cpp:194
 msgid "Panel button font"
-msgstr ""
+msgstr "Fonte dos butões do painel"
 
 #: general.cpp:199
 msgid "Panel clock font"
-msgstr ""
+msgstr "Fonte do relógio do painel"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Fontes"
+msgstr "&Fontes etc."
 
 #: main.cpp:64
 msgid "&Background"
@@ -389,17 +381,16 @@ msgid "Active window"
 msgstr "Janela activa"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
 msgid "Selected text"
 msgstr "Texto seleccionado"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "&Negrito"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "&Itálico"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -409,6 +400,9 @@ msgstr "por defeito"
 msgid "any"
 msgstr "qualquer"
 
+#~ msgid "Blen&d"
+#~ msgstr "&Mistura"
+
 #~ msgid "kwmcom: communication with kwm failed\n"
 #~ msgstr "kwmcom: falha na comunicação com o kwm\n"
 
@@ -417,71 +411,3 @@ msgstr "qualquer"
 
 #~ msgid "General"
 #~ msgstr "Geral"
-
-#~ msgid "Color"
-#~ msgstr "Cor"
-
-#~ msgid "&Flat"
-#~ msgstr "&Uniforme"
-
-#~ msgid "&Gradient"
-#~ msgstr "&Gradiente"
-
-#~ msgid "&Portrait"
-#~ msgstr "&Retrato"
-
-#~ msgid "&Landscape"
-#~ msgstr "&Paisagem"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Título do Ambiente de Trabalho"
-
-#~ msgid "Disabled"
-#~ msgstr "Desactivado"
-
-#~ msgid "Selected"
-#~ msgstr "Escolhido"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Escolheu um nome já  utilizado por um esquema de cor existente"
-
-#~ msgid "Display Setup"
-#~ msgstr "Configuração do Écran"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Não foram encontrados esquemas de cores\n"
-#~ "para o ambiente de trabalho.\n"
-#~ "Quer instalar os esquemas de cor por defeito agora ?"
-
-#~ msgid "Name"
-#~ msgstr "Nome"
-
-#~ msgid "Wait:"
-#~ msgstr "Esperar:"
-
-#~ msgid "Widget style"
-#~ msgstr "Estilo dos widgets"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Amostra"
-
-#~ msgid "Small"
-#~ msgstr "Pequena"
-
-#~ msgid "Medium"
-#~ msgstr "Média"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "&Style"
-#~ msgstr "E&stilo"
