@@ -775,26 +775,15 @@ void MyApp::readConfiguration(){
       options.TitlebarLook = PLAIN;
   }
 
-  
-  key = config->readEntry("ResizeAnimation");
-  if( key == "on")
-    options.ResizeAnimation = true;
-  else if( key == "off")
-    options.ResizeAnimation = false;
-  else{
-    config->writeEntry("ResizeAnimation", "on");
-    options.ResizeAnimation = true;
-  }
-    
   //CT 12Jun1998 - variable animation speed from 0 (none!!) to 10 (max)
-  if (config->hasKey("ResizeAnimationSpeed")) {
-    options.ResizeAnimationSpeed = config->readNumEntry("ResizeAnimationSpeed");
-    if( options.ResizeAnimationSpeed < 1 ) options.ResizeAnimationSpeed = 0;
-    if( options.ResizeAnimationSpeed > 10 ) options.ResizeAnimationSpeed = 10;
+  if (config->hasKey("ResizeAnimation")) {
+    options.ResizeAnimation = config->readNumEntry("ResizeAnimation");
+    if( options.ResizeAnimation < 1 ) options.ResizeAnimation = 0;
+    if( options.ResizeAnimation > 10 ) options.ResizeAnimation = 10;
   }
   else{
-    options.ResizeAnimationSpeed = 1;
-    config->writeEntry("ResizeAnimationSpeed", options.ResizeAnimationSpeed);
+    options.ResizeAnimation = 1;
+    config->writeEntry("ResizeAnimation", options.ResizeAnimation);
   }
 
   key = config->readEntry("ControlTab");

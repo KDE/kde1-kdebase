@@ -15,6 +15,10 @@ patchlevel 12:
         - new property "ResizeAnimationSpeed". Default value is 1 
            (former behaviour), possible values range from 1 to 10
            (maximum speed). Kudos to Christian Tibirna for this.
+	- Erratum (CT): "ResizeAnimation" config key now gets values
+	   from 0 (no anim) to 10 (fastest) with 1 being the current
+	   behaviour. ResizeAnimationSpeed is disabled (and deleted)
+	   for redundancy reasons. Support is offered in kcontrol too.
         - electric borders dissabled per default
 
 patchlevel 11:

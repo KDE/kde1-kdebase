@@ -205,7 +205,7 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
   //  smaller the step is, faster the anim should be
   //  so 11 is (max possible value of the ResizeAnimation  + 1)
   //  step goes form 40 (faster animation) to 400 (Matthias' hardcoded)
-  step = 40. * (11 - options.ResizeAnimationSpeed);
+  step = 40. * (11 - options.ResizeAnimation);
 
   bool transparent = (options.WindowResizeType == TRANSPARENT);
   if (!transparent && !c->isVisible())

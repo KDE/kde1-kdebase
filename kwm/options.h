@@ -68,8 +68,7 @@ struct kwmOptions {
   WINDOW_MOVE_TYPE WindowResizeType;
   FOCUS_POLICY FocusPolicy;
   TITLEBAR_LOOK TitlebarLook;
-  bool ResizeAnimation;
-  int ResizeAnimationSpeed;
+  int ResizeAnimation;
   bool MaximizeOnlyVertically;
   int TitleAnimation;
   int AutoRaise;
