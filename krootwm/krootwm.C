@@ -303,13 +303,26 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   int cx, cy, rx, ry;
   int ox, oy;
   XEvent ev;
+  int ok;
+  // Only grab pointer, not the display
+  ok= XGrabPointer(qt_xdisplay(), QApplication::desktop()->winId(),
+		False, ButtonPressMask | ButtonReleaseMask |
+                PointerMotionMask |
+                EnterWindowMask | LeaveWindowMask,
+		GrabModeAsync, GrabModeAsync, None,
+		arrowCursor.handle(), CurrentTime);
+  if (ok != GrabSuccess)
+    return False;
+
   
-  XChangeActivePointerGrab( qt_xdisplay(), 
+// Braindead: The Pointer was not grabbed, so its senseless to call this one
+/*  XChangeActivePointerGrab( qt_xdisplay(), 
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
-			    arrowCursor.handle(), 0);
-  XGrabServer(qt_xdisplay());
+			    arrowCursor.handle(), 0); */
+// Never do this, except for VERY good reasons (security, ...)
+//  XGrabServer(qt_xdisplay());
   
   draw_selection_rectangle(x, y, dx, dy);
   
@@ -360,7 +373,9 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
   
-  XUngrabServer(qt_xdisplay());
+  // Ungrab the pointer: !!! Please look into eventFilter, as it is done
+  // there, too.
+  XUngrabPointer(qt_xdisplay(),CurrentTime);
   
   return True;
 }
