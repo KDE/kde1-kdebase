@@ -190,10 +190,17 @@ int AudioSample::setFilename(char* fname)
     return  WR_BADFORMATDATA ;
   }
 
+  // Make the buffer/fragment size small, so that latency is low.
+  // But not too small that low-end equipment is able to transport
+  // data to the buffer.
   if (bit_p_spl==8)
     BUFFSIZE = 256;
   else
     BUFFSIZE = 512;
+  // Stereo samples need doubled buffer size
+  if (stereo)
+    BUFFSIZE *= 2;
+
   Duration    = MediaLength/bytes_per_s;
 
   BuferValidLength = 0;
