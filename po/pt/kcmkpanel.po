@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-22 00:00+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+
+#: panel.cpp:58
+msgid "Location"
+msgstr "Localização"
+
+#: panel.cpp:66
+msgid "Taskbar"
+msgstr "Barra de Tarefas"
+
+#: panel.cpp:67
+msgid "Hidden"
+msgstr "Escondido"
+
+#: panel.cpp:70
+msgid "Top/Left"
+msgstr "Topo/Esquerda"
+
+#: panel.cpp:91
+msgid "Tiny Style"
+msgstr "Estilo Pequeno"
+
+#: panel.cpp:92
+msgid "Normal Style"
+msgstr "Estilo Normal"
+
+#: panel.cpp:93
+msgid "Large Style"
+msgstr "Estilo Grande"
+
+#: panel.cpp:101
+msgid "Menu Tooltips"
+msgstr "Tooltips nos Menus"
+
+#: panel.cpp:103
+msgid "Personal First"
+msgstr "Pessoal Primeiro"
+
+#: panel.cpp:105
+msgid "Auto Hide Panel"
+msgstr "Esconder Painel Automaticamente"
+
+#: panel.cpp:107
+msgid "Auto Hide Taskbar"
+msgstr "Esconder Barra de Tarefas Automaticamente"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Visível"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Largura"
+
+#~ msgid "&Panel"
+#~ msgstr "&Painel"
+
+#~ msgid "&Desktops"
+#~ msgstr "Ambientes &de trabalho"
+
+#~ msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
+#~ msgstr "utilização: kcmkpanel [-init | {panel,desktops}]\n"
+
+#~ msgid "KPanel Configuration"
+#~ msgstr "Configuração do KPanel"

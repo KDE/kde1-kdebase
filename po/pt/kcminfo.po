@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminfo\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-01-22 00:00+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Memória"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&Processador"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "utilização: kcminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "Informações sobre o Sistema"
+
+#: memory.cpp:10
+msgid "Total memory"
+msgstr "Memória total"
+
+#: memory.cpp:18
+msgid "Free memory"
+msgstr "Memória livre"
+
+#: memory.cpp:26
+msgid "Shared memory"
+msgstr "Memória partilhada"
+
+#: memory.cpp:34
+msgid "Buffer memory"
+msgstr "Memória de buffers"
+
+#: memory.cpp:42
+msgid "Swap memory"
+msgstr "Memória virtual"
+
+#: memory.cpp:50
+msgid "Free swap memory"
+msgstr "Memória virtual livre"
+
+#: memory.cpp:71
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
+
+#: memory.cpp:93 memory.cpp:94 memory.cpp:95 memory.cpp:96 memory.cpp:97
+#: memory.cpp:98
+msgid "not available"
+msgstr "não disponível"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Este sistema ainda não é suportado :-("

@@ -1,0 +1,14 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsamba\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-01-22 00:00+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
+
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "utilização: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
+msgid "Samba"
+msgstr "Samba"
