@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1998-11-27 18:11+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-30 07:19:56+0000\n"
 "From: antonio <antonio@jupiter.arrakis.es>\n"
@@ -7,35 +8,50 @@ msgstr ""
 "Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp "
 "kpagerclient.cpp kpager.cpp main.cpp\n"
 
-#: kpager.cpp:77 kpager.cpp:156
+#: kpager.cpp:72
+#, fuzzy
+msgid "Toggle Global Desktop"
+msgstr "Skry» &globálnu plochu"
+
+#: kpager.cpp:74
+#, fuzzy
+msgid "Toggle Menubar"
+msgstr "Skry» &menu"
+
+#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
 msgstr "Skry» &globálnu plochu"
 
-#: kpager.cpp:79 kpager.cpp:149
+#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
 msgid "Show &Global Desktop"
 msgstr "Ukáza» &globálnu plochu"
 
-#: kpager.cpp:81
+#: kpager.cpp:91 kpager.cpp:331
 msgid "Hide &Menubar"
 msgstr "Skry» &menu"
 
-#: kpager.cpp:85
+#: kpager.cpp:95 kpager.cpp:337
+msgid "&2 Rows"
+msgstr ""
+
+#: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
 msgstr "Jednoduché"
 
-#: kpager.cpp:88
+#: kpager.cpp:104 kpager.cpp:346
 msgid "Icon"
 msgstr "Ikonka"
 
-#: kpager.cpp:91
+#: kpager.cpp:107 kpager.cpp:348
 msgid "Pixmap"
 msgstr "Pixmapa"
 
-#: kpager.cpp:95
+#: kpager.cpp:111 kpager.cpp:354
 msgid "Draw Mode"
 msgstr "Mód kreslenia"
 
-#: kpager.cpp:99
+#: kpager.cpp:115
+#, c-format
 msgid ""
 "%s\n"
 "\n"
@@ -60,3 +76,30 @@ msgstr ""
 "KPager prichádza BEZ AKEJKO¥VEK ZÁRUKY; pre podrobnosti pozrite súbor\n"
 "COPYING. Toto je voµne ¹íriteµný softvér a budeme radi, ak ho budete\n"
 "redistribuova» za urèitých podmienok\n"
+
+#: kpager.cpp:333
+#, fuzzy
+msgid "Show &Menubar"
+msgstr "Skry» &menu"
+
+#: kpager.cpp:388
+msgid "&Maximize"
+msgstr ""
+
+#: kpager.cpp:389
+#, fuzzy
+msgid "&Iconify"
+msgstr "Ikonka"
+
+#: kpager.cpp:391
+msgid "&UnSticky"
+msgstr ""
+
+#: kpager.cpp:393
+msgid "&Sticky"
+msgstr ""
+
+#: kpager.cpp:395
+#, fuzzy
+msgid "&To Desktop"
+msgstr "Skry» &globálnu plochu"

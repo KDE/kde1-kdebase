@@ -5,6 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-11-27 18:11+0100\n"
 "PO-Revision-Date: 1998-10-24 20:30 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
@@ -12,35 +13,50 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpager.cpp:77 kpager.cpp:156
+#: kpager.cpp:72
+#, fuzzy
+msgid "Toggle Global Desktop"
+msgstr "Skrýt &globální pracovní plochu"
+
+#: kpager.cpp:74
+#, fuzzy
+msgid "Toggle Menubar"
+msgstr "Skrýt &menu"
+
+#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
 msgstr "Skrýt &globální pracovní plochu"
 
-#: kpager.cpp:79 kpager.cpp:149
+#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
 msgid "Show &Global Desktop"
 msgstr "Zobrazit &globální pracovní plochu"
 
-#: kpager.cpp:81
+#: kpager.cpp:91 kpager.cpp:331
 msgid "Hide &Menubar"
 msgstr "Skrýt &menu"
 
-#: kpager.cpp:85
+#: kpager.cpp:95 kpager.cpp:337
+msgid "&2 Rows"
+msgstr ""
+
+#: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
 msgstr "Prostý"
 
-#: kpager.cpp:88
+#: kpager.cpp:104 kpager.cpp:346
 msgid "Icon"
 msgstr "Ikona"
 
-#: kpager.cpp:91
+#: kpager.cpp:107 kpager.cpp:348
 msgid "Pixmap"
 msgstr "Pixmapa"
 
-#: kpager.cpp:95
+#: kpager.cpp:111 kpager.cpp:354
 msgid "Draw Mode"
 msgstr "Mód vykreslování"
 
-#: kpager.cpp:99
+#: kpager.cpp:115
+#, c-format
 msgid ""
 "%s\n"
 "\n"
@@ -65,3 +81,30 @@ msgstr ""
 "KPager je poskytován BEZ JAKEKOLIV ZÁRUKY; pro detaily nahlednìte do\n"
 "souboru COPYING. Toto je volný software a mù¾ete jej podle urèitých\n"
 "pravidel redistribuovat.\n"
+
+#: kpager.cpp:333
+#, fuzzy
+msgid "Show &Menubar"
+msgstr "Skrýt &menu"
+
+#: kpager.cpp:388
+msgid "&Maximize"
+msgstr ""
+
+#: kpager.cpp:389
+#, fuzzy
+msgid "&Iconify"
+msgstr "Ikona"
+
+#: kpager.cpp:391
+msgid "&UnSticky"
+msgstr ""
+
+#: kpager.cpp:393
+msgid "&Sticky"
+msgstr ""
+
+#: kpager.cpp:395
+#, fuzzy
+msgid "&To Desktop"
+msgstr "Skrýt &globální pracovní plochu"

@@ -1,5 +1,6 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1998-11-27 18:11+0100\n"
 "PO-Revision-Date: 1998-10-23 23:00+0100\n"
 "Last-Translator: Karl Backström <backstrom@kde.org>\n"
 "Language-Team: Sv <LL@li.org>\n"
@@ -10,35 +11,50 @@ msgstr ""
 "Files: jpeg.cpp windowdrag.cpp ktrianglebutton.cpp desktop.cpp "
 "kpagerclient.cpp kpager.cpp main.cpp\n"
 
-#: kpager.cpp:77 kpager.cpp:156
+#: kpager.cpp:72
+#, fuzzy
+msgid "Toggle Global Desktop"
+msgstr "Göm &globala skrivbordet"
+
+#: kpager.cpp:74
+#, fuzzy
+msgid "Toggle Menubar"
+msgstr "Göm &menyraden"
+
+#: kpager.cpp:84 kpager.cpp:188 kpager.cpp:323
 msgid "Hide &Global Desktop"
 msgstr "Göm &globala skrivbordet"
 
-#: kpager.cpp:79 kpager.cpp:149
+#: kpager.cpp:86 kpager.cpp:182 kpager.cpp:325
 msgid "Show &Global Desktop"
 msgstr "Visa &globala skrivbordet"
 
-#: kpager.cpp:81
+#: kpager.cpp:91 kpager.cpp:331
 msgid "Hide &Menubar"
 msgstr "Göm &menyraden"
 
-#: kpager.cpp:85
+#: kpager.cpp:95 kpager.cpp:337
+msgid "&2 Rows"
+msgstr ""
+
+#: kpager.cpp:101 kpager.cpp:344
 msgid "Plain"
 msgstr "Vanlig"
 
-#: kpager.cpp:88
+#: kpager.cpp:104 kpager.cpp:346
 msgid "Icon"
 msgstr "Ikon"
 
-#: kpager.cpp:91
+#: kpager.cpp:107 kpager.cpp:348
 msgid "Pixmap"
 msgstr "Bild"
 
-#: kpager.cpp:95
+#: kpager.cpp:111 kpager.cpp:354
 msgid "Draw Mode"
 msgstr "Ritningsläge"
 
-#: kpager.cpp:99
+#: kpager.cpp:115
+#, c-format
 msgid ""
 "%s\n"
 "\n"
@@ -63,3 +79,30 @@ msgstr ""
 "KPager kommer UTAN NÅGON SOM HELST GARANTI; läs filen COPYING för detaljer\n"
 "Detta är en fri mjukvara, och du är välkommen att skicka den vidare\n"
 "under vissa förutsättningar\n"
+
+#: kpager.cpp:333
+#, fuzzy
+msgid "Show &Menubar"
+msgstr "Göm &menyraden"
+
+#: kpager.cpp:388
+msgid "&Maximize"
+msgstr ""
+
+#: kpager.cpp:389
+#, fuzzy
+msgid "&Iconify"
+msgstr "Ikon"
+
+#: kpager.cpp:391
+msgid "&UnSticky"
+msgstr ""
+
+#: kpager.cpp:393
+msgid "&Sticky"
+msgstr ""
+
+#: kpager.cpp:395
+#, fuzzy
+msgid "&To Desktop"
+msgstr "Göm &globala skrivbordet"

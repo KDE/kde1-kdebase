@@ -162,4 +162,3 @@ msgstr "Vordergrundfarbe der Icons:"
 #: rootopts.cpp:115
 msgid "Icon background color:"
 msgstr "Hintergrundfarbe der Icons:"
-
