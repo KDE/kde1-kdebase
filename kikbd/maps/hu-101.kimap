@@ -30,9 +30,12 @@ Locale=hu
 Charset=ISO-8859-2
 Comment=Hungarian keyboard layout for keyboards with 101 keys.
 Comment[cs]=Rozvr¾ení maïarské klávesnice se 101 klávesami
+Comment[da]=Ungarsk tastaturudlægning for tastatur med 101 taster.
 Comment[de]=Ungarische Tastaturbelegung für 101 Tasten.
 Comment[fr]=Disposition de clavier hongrois pour clavier 101 touches.
+Comment[no]=Ungarsk tastaturutseende for tastaturer med 101 taster.
 Comment[pl]=Wêgierski uk³ad dla klawiatury ze 101 klawiszami.
+Comment[ru]=÷ÅÎÇÅÒÓËÁÑ ÒÁÓËÌÁÄËÁ ÄÌÑ ËÌÁ×ÉÁÔÕÒ ÓÏ 101 ËÌÁ×ÉÛÅÊ
 
 [KeyboardMap]
 keysym0=grave,iacute,Iacute,0

@@ -4,9 +4,12 @@
 Authors=Dimitrios P. Bouras <dbouras@hol.gr>,
 Comment=Hellenic Keyboard (standard ISO8859-7 keysyms)
 Comment[cs]=Øecká klávesnice (standardní ISO8859-7 klávesové symboly)
+Comment[da]=Hellensk tastatur (standard ISO8859-7 keysyms)
 Comment[fr]=Clavier grec (touches-symboles ISO8859-7 standard)
+Comment[no]=Hellenisk tastatur (standard ISO8859-7 keysyms)
 Comment[pl]=Grecka Klawiatura (standardowe symbole ISO8859-7)
 Comment[pt_BR]=Teclado Helênico (teclas padrão ISO8859-7)
+Comment[ru]=üÌÉÎÓËÁÑ ËÌÁ×ÉÁÔÕÒÁ (ÓÔÁÎÄÁÒÔ ISO8859-7)
 
 Language=Greek
 Language[br]=Gresianeg

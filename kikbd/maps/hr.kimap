@@ -8,8 +8,10 @@ Comment[cs]=Rozvr¾ení chorvatské klávesnice
 Comment[da]=Kroatisk tastaturudlægning
 Comment[fr]=Disposition de clavier croate
 Comment[it]=Layout Tastiera Croata
+Comment[no]=Kroatsisk tastaturutseende
 Comment[pl]=Chorwacki uk³ad klawiatury
 Comment[pt_BR]=Disposição de teclado croata
+Comment[ru]=èÏÒ×ÁÔÓËÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Chorvátske rozlo¾enie klávesnice
 
 Language=Croatian
@@ -18,8 +20,10 @@ Language[da]=Kroatisk
 Language[de]=Kroatisch
 Language[fr]=Croate
 Language[it]=Croato
+Language[no]=Kroatsisk
 Language[pl]=Chorwacki
 Language[pt_BR]=Croata
+Language[ru]=èÏÒ×ÁÔÓËÉÊ
 Language[sk]=Chorvátsky
 
 Label=Hr 

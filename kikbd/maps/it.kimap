@@ -9,8 +9,10 @@ Comment[da]=Italiensk tastatur (Italien)
 Comment[de]=Italienische Tastatur (Italien)
 Comment[fr]=Clavier italien (Italie)
 Comment[it]=Tastiera Italiana (Italia)
+Comment[no]=Italiensk tastatur (Italia)
 Comment[pl]=Klawiatura w³oska
 Comment[pt_BR]=Teclado Italiano (Itália)
+Comment[ru]=éÔÁÌØÑÎÓËÁÑ ËÌÁ×ÉÁÔÕÒÁ (éÔÁÌÉÑ)
 Comment[sk]=Talianska klávesnica (Taliansko)
 
 Language=Italian
@@ -19,8 +21,10 @@ Language[da]=Italiensk
 Language[de]=Italienisch
 Language[fr]=Italien
 Language[it]=Italiano
+Language[no]=Italiensk
 Language[pl]=W³oski
 Language[pt_BR]=Italiano
+Language[ru]=éÔÁÌØÑÎÓËÉÊ
 Language[sk]=Taliansky
 
 Charset=iso-8859-1
