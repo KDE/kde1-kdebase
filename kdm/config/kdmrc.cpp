@@ -2,11 +2,8 @@
 [KDMDESKTOP]
 BackgroundColor=#00a5c6
 FancyBackGround=false
-#BackgroundPicture=KDEDIR/share/wallpapers/water01.jpg
-#BackgroundPicture=KDEDIR/share/wallpapers/ocean01.jpg
-#BackgroundPicture=KDEDIR/share/wallpapers/paper01.jpg
-# you can manually install this logo from kdebase/kdm/pics/kdm_bg.jpg:
-#BackgroundPicture=KDEDIR/share/wallpapers/kdm_bg.jpg
+BackgroundPicture=KDEDIR/share/wallpapers/bluegrnt.jpg
+BackGroundPictureTile=1
 [KDM]
 SortUsers=true
 #Users=root;johndoe
