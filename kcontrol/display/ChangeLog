@@ -1,3 +1,7 @@
+1998-12-07  Alex Zepeda  <garbanzo@hooked.net>
+
+	* general.cpp: Initialized a variable to NULL.
+
 1998-11-30  Alex Zepeda  <garbanzo@hooked.net>
 
 	* Makefile.am: Moved icons into pics/ && pics/mini/

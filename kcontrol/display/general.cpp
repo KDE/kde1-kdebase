@@ -140,7 +140,8 @@ void FontUseItem::setDefault()
 
 void FontUseItem::readFont()
 {
-	KConfigBase *config;
+	KConfigBase *config=NULL;
+
 	if ( _rcfile.isEmpty() ) {
 		config  = kapp->getConfig();
 	} else {
@@ -149,7 +150,7 @@ void FontUseItem::readFont()
 		s += _rcfile;
 		config = new KSimpleConfig( s.data(), true );
 	}
-	
+
 	config->setGroup( _rcgroup.data() );
 	
 	QFont tmpFnt( _font );
