@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-20 03:02+0600\n"
-"PO-Revision-Date: 1998-12-18 09:59+01:00\n"
+"PO-Revision-Date: 1998-12-23 14:08 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -154,12 +154,10 @@ msgid "Others"
 msgstr "Ostatní"
 
 #: options.cpp:408
-#, fuzzy
 msgid "Personal Menu Entries &First"
 msgstr "&Osobní polo¾ky první"
 
 #: options.cpp:416
-#, fuzzy
 msgid "Menu F&olders First"
 msgstr "&Adresáøe první"
 
@@ -168,9 +166,8 @@ msgid "&Clock shows time in AM/PM format"
 msgstr "&Hodiny ukazují èas ve formátu AM/PM"
 
 #: options.cpp:432
-#, fuzzy
 msgid "Clock shows time in &Internet beats"
-msgstr "&Hodiny ukazují èas v taktu Internetu"
+msgstr "Ho&diny ukazují èas v taktu Internetu"
 
 #: disknav.cpp:38
 msgid "History"
@@ -227,6 +224,3 @@ msgstr "Zobrazoval polo¾ku mo¾nosti"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminálová aplikace:"
-
-#~ msgid "Speed"
-#~ msgstr "Rychlost"

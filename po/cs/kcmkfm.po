@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-18 09:59+01:00\n"
+"PO-Revision-Date: 1998-12-23 14:17 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,17 +39,17 @@ msgstr "U¾ivatelský &agent"
 
 #: main.cpp:76
 msgid "Coo&kies"
-msgstr ""
+msgstr "Coo&kies"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "&Ikony pracovní plochy"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "Pou¾ití: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr "Pou¾ití: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -173,36 +173,35 @@ msgstr "Známé vazby:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
-msgstr ""
+msgstr "Povolit &Cookie"
 
 #: kcookiesdlg.cpp:56
-#, fuzzy
 msgid "Default accept policy"
-msgstr "Implicitní znaková sada"
+msgstr "Implicitní chování pøi pøijímání"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
-msgstr ""
+msgstr "Akceptovat"
 
 #: kcookiesdlg.cpp:70 kcookiesdlg.cpp:120
 msgid "Ask"
-msgstr ""
+msgstr "Dotázat se"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr ""
+msgstr "Odmítnout"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Specifická nastavení domén:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Zmìnit chování pøi pøijímání pro doménu"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Je nutné nejprve vlo¾it doménu"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -226,4 +225,4 @@ msgstr "Barva pozadí ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "&Zobrazovat skryté soubory na pracovní plo¹e"

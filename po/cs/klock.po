@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-12-18 09:51+01:00\n"
+"PO-Revision-Date: 1998-12-23 13:58 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -462,7 +462,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Parametr %s není podporován na této platformì!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -474,7 +473,7 @@ msgstr ""
 "\n"
 "Vá¹ systém pou¾ívá stínová hesla!\n"
 "Prosím kontaktujte svého systémového správce.\n"
-"Øeknìte mu, ¾e potøebujete SUID pro ¹etøièe obrazovky!"
+"Øeknìte mu, ¾e potøebujete SUID pro program kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

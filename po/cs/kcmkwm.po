@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-12-19 01:20+0100\n"
-"PO-Revision-Date: 1998-12-18 09:58+01:00\n"
+"PO-Revision-Date: 1998-12-23 14:05 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -263,9 +263,8 @@ msgid "Auto Raise"
 msgstr "Automaticky dávat do popøedí"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Dát do popøedí"
+msgstr "Kliknutí pøesouvá do popøedí"
 
 #: windows.cpp:216
 msgid "Delay (ms)"

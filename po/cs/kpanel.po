@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-12-18 10:30+01:00\n"
+"PO-Revision-Date: 1998-12-23 14:08 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,7 +66,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Rychlé procházení souborovým systémem"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Pøidat aplikaci"
 
@@ -75,17 +74,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Pøidat aplikaci nebo menu na panel"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Diskový navigátor"
+msgstr "Pøidat diskový navigátor"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Pøidat seznam oken na panel"
+msgstr "Pøidat menu diskového navigátoru na panel"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Pøidat seznam oken"
 
@@ -95,7 +91,7 @@ msgstr "Pøidat seznam oken na panel"
 
 #: events.C:800 props.C:182
 msgid "Configure"
-msgstr "Konfiguruj"
+msgstr "Konfigurovat"
 
 #: props.C:184
 msgid "Configure panel"
@@ -146,7 +142,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:905
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Diskový navigátor"
 
