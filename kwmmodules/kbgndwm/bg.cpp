@@ -347,8 +347,8 @@ void KBackground::apply()
        (wpMode == CentredWarp) || ( wpMode == CentredMaxpect) ) {
     if (bgPixmap)
       bgPixmap->resize(w, h);
-      QPixmap pmDesktop;
 
+    QPixmap pmDesktop;
     switch (gfMode) {
 
     case Gradient:
@@ -720,6 +720,7 @@ void KBackground::timerEvent( QTimerEvent * )
   if ( !bgPixmap )
     return;
 
+  QPixmap pmDesktop;
   qApp->desktop()->setBackgroundPixmap( *bgPixmap );
   setPixmapProperty( &pmDesktop );
   delete bgPixmap;
