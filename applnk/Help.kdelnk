@@ -1,0 +1,9 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=Application
+Exec=kdehelp %u
+DocPath=kdehelp.html
+Comment=KDE Help is the KDE on-line help browser.
+Comment[de]=KDE Help ist der OnLine Hilfebetrachter von KDE.
+Name[de]=KDE Hilfe
+Name=KDE Help

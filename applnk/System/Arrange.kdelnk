@@ -1,0 +1,12 @@
+[KDE Desktop Entry]
+Name=Arrange Icons
+BinaryPattern=
+Protocols=
+Comment=Arrange Desktop Icons
+Exec=kfmclient sortDesktop
+Icon=kfm_refresh.xpm
+TerminalOptions=
+Path=
+Extensions=
+Type=Application
+Terminal=0

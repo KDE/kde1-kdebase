@@ -1,0 +1,12 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=Application
+Exec=kfmclient folder %u file:$HOME
+Icon=kfm_home.xpm
+TerminalOptions=
+Path=
+Terminal=0
+Name=Home Directory
+Name[de]=Heimatverzeichnis
+Comment=This folder contains all your personal files.
+Comment[de]=Dieses Verzeichnis enthält alle Ihre persönlichen Dateien.

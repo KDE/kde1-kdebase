@@ -1,0 +1,5 @@
+[KDE Desktop Entry]
+Exec=kfontmanager
+DocPath=kfontmanager/kfontmanager.html
+Info=KDE's Fontmanager.
+Type=Application

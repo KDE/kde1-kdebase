@@ -1,0 +1,11 @@
+[KDE Desktop Entry]
+BinaryPattern=
+Protocols=
+Comment=Update desktop icons
+Exec=kfmclient refreshDesktop
+Icon=kfm_refresh.xpm
+TerminalOptions=
+Path=
+Extensions=
+Type=Application
+Terminal=0

@@ -1,0 +1,6 @@
+[KDE Desktop Entry]
+Type=Application
+Exec=kpanel
+DocPath=kpanel.html
+Info=The KDE Desktop Panel.
+

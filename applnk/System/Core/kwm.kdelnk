@@ -1,0 +1,6 @@
+[KDE Desktop Entry]
+Type=Application
+execute=kwm
+docPath=kwm/kwm.html
+comment=kwm is the KDE window manager
+

@@ -1,0 +1,7 @@
+[KDE Desktop Entry]
+Exec=kdehelp $KDEDIR/doc/HTML/kdm/kdm.html
+Section=Applications
+DocPath=kdm.html
+Title=Kdm
+Info=Info on the KDE Display Manager (Xdm replacement).
+
