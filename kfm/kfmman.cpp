@@ -145,7 +145,7 @@ void KFMManager::writeWrapped( char *_str, int _maxlen )
 	    }
 	    if (j<8 && j>0)
 	    {
-q		pos = sepPos;
+		pos = sepPos;
 		//width = width - XTextWidth (fs, pos, j); */
 		if (ispunct(*sepPos) || isdigit(*sepPos))
                 {
@@ -302,9 +302,6 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 	    file.close();
 	}
     }
-
-    // A HACK
-    HTMLBuffer = "";
 
     bHTML = FALSE;
     bFinished = FALSE;
@@ -725,9 +722,12 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     }
 }
 
-void KFMManager::slotData( const char *_text, int )
+void KFMManager::slotData( const char *_text, int _len)
 {
-    QString tmp;
+    QString     tmp;
+    const char *char_p;
+    int         len;
+
     // HACK
     // Special tag that is only created by kioslave and may only
     // appear at the beginning of some data block.
@@ -742,32 +742,27 @@ void KFMManager::slotData( const char *_text, int )
 	_text = tmp;
     }
     
-    pageBuffer += _text;
-    if ( bBufferPage )
-	return;
-    
-    HTMLBuffer += _text;
+    // HACK
+    // Data may contain ASCII NUL, copy all data but NUL
+    char_p = _text;
+   
     do
     {
-	int i = HTMLBuffer.find( '\n' );
-	int j = HTMLBuffer.find( '\r' );
-	if ( j > i ) i = j;
-	if ( i == -1 )
-	    return;
-	int l = HTMLBuffer.length();
-	if ( i + 1 == l )
-	{
-	    view->write( HTMLBuffer );
-	    HTMLBuffer = "";
-	    return;
-	}
-    
-	char c = HTMLBuffer[i + 1];
-	HTMLBuffer[i + 1] = 0;
-	view->write( HTMLBuffer );
-	HTMLBuffer[i + 1] = c;
-	memmove( HTMLBuffer.data(), HTMLBuffer.data() + i + 1, l - i );
-    } while( 1 );
+       len = strlen(char_p);
+       if (len > _len)
+       {
+          len = _len;
+          printf("KFMManager::slotData(char *data, int _len): strlen(data) > _len\n");
+       }
+       _len -= len;
+       pageBuffer += char_p;
+       if (!bBufferPage)
+       {
+          view->write(char_p);
+       }
+       char_p += len+1;
+    } 
+    while ( _len > 1);
 }
 
 void KFMManager::stop()
@@ -964,9 +959,6 @@ void KFMManager::slotFinished()
 	    view->write( pageBuffer );
 	    view->parse();
 	}
-	// Empty the line buffer
-	else if ( !HTMLBuffer.isEmpty() )
-	    slotData( "\n", 1 );
 	view->end();
 	// Checkin this page in the cache
 	if ( !u.hasSubProtocol() && ( strcmp( u.protocol(), "http" ) == 0 ||
