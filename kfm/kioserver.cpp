@@ -259,18 +259,17 @@ QString KIOServer::getDestNameForLink( const char *_url )
 	kurl = s.data();
     }
     
-    if ( strcmp( kurl.protocol(), "file" ) == 0 )
+    if ( kurl.isLocalFile() )
     {
 	name = kurl.filename();
 	name.detach();
     }
-    else if ( strcmp( kurl.protocol(), "tar" ) == 0 )
+    /* else if ( strcmp( kurl.protocol(), "tar" ) == 0 )
     {		
 	name = "tar:";
 	name += kurl.filename();
 	name += ".kdelnk";
-	name.detach();
-    }
+    } */
     else if ( strcmp( kurl.protocol(), "http" ) == 0 )
     {
 	name = "http:";
@@ -315,7 +314,7 @@ QString KIOServer::getDestNameForLink( const char *_url )
 	tmp.detach();
 	int i = 0;
 	while ( ( i = tmp.find( "/", i ) ) != -1 )
-	    tmp.replace( i++, 1, "_" );
+	    tmp.replace( i++, 1, "%2F" );
 		
 	name += tmp.data();
     }

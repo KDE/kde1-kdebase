@@ -539,6 +539,10 @@ void KfmView::slotPopupCopy()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
 	clipboard->append( s );
+
+    // DEBUG
+    for( s = clipboard->first(); s != 0L; s = clipboard->next() )
+      printf("CLIPBOARD: %s\n",s);
 }
 
 void KfmView::slotPopupPaste()
@@ -553,7 +557,7 @@ void KfmView::slotPopupPaste()
     // Check wether we drop a directory on itself or one of its children
     int nested = 0;
     char *s;
-    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    for ( s = clipboard->first(); s != 0L; s = clipboard->next() )
     {
 	int j;
 	if ( ( j = testNestedURLs( s, manager->getURL() ) ) )

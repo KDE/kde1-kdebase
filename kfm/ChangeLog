@@ -1,3 +1,25 @@
+Thu Apr 16 04:10:25 1998  Torben Weis  <weis@localhost>
+
+	* kbind.cpp (getPixmapFile): Some fixes ( encode/decode ).
+	  Uses KSimpleConfig in read only mode. This is hopefully faster.
+
+	* bookmark.cpp (scanIntern): Fixed bug that added some ugly
+	  lines to every file in the bookmarks tree.
+
+	* kioslave/file.cpp (OpenDir): kioslave just reports file names.
+	  filenames are no URLs => no encoding.
+
+	* kfmman.cpp (writeEntry): KURL encode/decode fixed.
+	  Bookmark files look nicer now.
+
+	* utils.cpp (testNestedURLs): Does no longer assume that
+	  a file contains a directory :-) => No longer: "You dropped
+	  a file over itself" error messages.
+
+	* kiojob.cpp (link): KURL encode/decode bug fixed.
+	             (move): dito
+		     (copy): dito
+	
 Wed Apr 15 19:29:21 1998    <weis@snoopy.rz.uni-frankfurt.de>
 
 	* root.cpp (initFilename): Filenames containing %2f are

@@ -539,7 +539,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
     if ( s->getName()[0] == '.' && !view->getGUI()->isShowDot() )
 	return;
     
-    QString decoded = s->getName();
+    /* QString decoded = s->getName();
     decoded.detach();
     KURL::decodeURL( decoded );   // decoded to pass to writeWrapped()
 
@@ -549,14 +549,26 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 
     QString encodedURL ( url );  
     encodedURL.detach();            // encodedURL, URL,  encoded for <a href ..> (Hen)
-    encodedURL += s->getName();
+    encodedURL += s->getName(); */
 
+    QString n( s->getName() );
+    KURL::encodeURL( n );
+    QString encodedURL = url.data();
+    encodedURL += n;
+    
+    QString decoded( s->getName() );
+    decodeFileName( decoded );
+    
+    // Hack
+    QString filename = encodedURL;
+    
     bool readonly = false;
 
 #ifdef OVERLAY_READONLY
-    KURL u( filename );
-
-    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    //KURL u( filename );
+    KURL u( encodedURL )
+    // if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    if ( u.isLocalFile() )
     {
 	if ( access( u.path(), W_OK ) < 0 )
 	    readonly = true;
@@ -1198,7 +1210,7 @@ QString KFMManager::getVisualSchnauzerIconTag( const char *_url )
     KURL u2( _url );
     
     // Look for .xvpics directory on local hard disk only.
-    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    if ( u.isLocalFile() )
     {
 	struct stat buff;
 	lstat( u2.path(), &buff );

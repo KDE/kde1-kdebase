@@ -797,16 +797,18 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
      * designed to be as fast as possible.
      */
 
+  /*
     QString decoded( _url );
     // Add the protocol if its is missing
     if ( decoded[0] == '/' )
 	decoded.prepend( "file:" );
     KURL::decodeURL( decoded );
+    */
 
     // Is this a file located in a tar archive ?
     // This is a preliminary and dirty check, but it
     // is fast!
-    if ( strstr( decoded, "tar:/" ) != 0L )
+    if ( strstr( _url, "#tar:/" ) != 0L )
     {
 	// Now we check wether the preliminary test was right ...
 	KURL u( _url );
@@ -827,20 +829,31 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
 	}
     }
     
-    if ( strncmp( decoded, "file:", 5 ) != 0 )
+    // Not a pure local file ? ( this is a quick hack, KURL is too slow )
+    if ( *_url != '/' && ( strncmp( _url, "file:", 5 ) != 0 || strchr( _url, '#' ) != 0L ) )
 	return KMimeType::getPixmapFile( _url, _mini );
 
-    QString path = decoded;
-    if ( path.right(1) != "/" )
-       path += "/";
-    QString path2 = QString("file:") + KFMPaths::TrashPath();
+    // Is trash 
+    bool is_trash = false;
     
-    if ( path == path2 )
+    if ( *_url != '/' )
+    {
+      QString path = _url + 5;
+      KURL::decodeURL( path );
+      if ( path[ path.length() - 1 ] != '/' )
+	path += "/";
+      if ( path == KFMPaths::TrashPath() )
+	is_trash = true;
+    }
+    else if ( strcmp( _url, KFMPaths::TrashPath() ) == 0 )
+      is_trash = true;
+    
+    if ( is_trash )
     {
         DIR *dp;
         struct dirent *ep;
 	// "+5" to skip "file:", this is fast :-)
-        dp = opendir( decoded.data() + 5 );
+        dp = opendir( KFMPaths::TrashPath() );
 	// Stephan: Congratulation Torben for this trick :-)
 	// Torben: Thanks!
         ep=readdir( dp );
@@ -865,7 +878,15 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
     }
     
     // Skip "file:" =>  "+5"
-    QString n = decoded.data() + 5;
+    QString n;
+    if ( *_url != '/' )
+    {
+      n = _url + 5;
+      KURL::decodeURL( n );
+    }
+    else 
+      n = _url;
+    
     if ( n[ n.length() - 1 ] != '/' )
 	n += "/";
     n += ".directory";
@@ -875,10 +896,14 @@ const char* KFolderType::getPixmapFile( const char *_url, bool _mini )
 	return KMimeType::getPixmapFile( _url, _mini );
     f.close();
 
-    KConfig config( n );
+    KSimpleConfig config( n, true );
     config.setGroup( "KDE Desktop Entry" );
 
-    QString icon = config.readEntry( "Icon" );
+    QString icon;
+    if ( _mini )
+      icon = config.readEntry( "MiniIcon" );
+    else
+      icon = config.readEntry( "Icon" );
     
     if ( icon.isEmpty() )
 	return KMimeType::getPixmapFile( _url, _mini );

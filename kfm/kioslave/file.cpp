@@ -189,8 +189,8 @@ int KProtocolFILE::OpenDir( KURL *url )
 
     while ( ( ep = readdir( dp ) ) != 0L )
     {
-    	QString name(ep->d_name);
-	KURL::encodeURL(name);
+        // QString name(ep->d_name);
+	// KURL::encodeURL(name);
 
 	QString fname = path.data();
 	fname += ep->d_name;
@@ -264,7 +264,7 @@ int KProtocolFILE::OpenDir( KURL *url )
             _de->size = buff.st_size;
    	
 	_de->access = buffer;
-	_de->name = name.data();
+	_de->name = (const char*)ep->d_name;
 	_de->owner = (( user != 0L ) ? user->pw_name : "???" );
 	_de->group = (( grp != 0L ) ? grp->gr_name : "???" );
 	QString d;

@@ -107,7 +107,7 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
   {
     if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
     {
-      QString name = ep->d_name;	
+      // QString name = ep->d_name;	
 
       QString file = _path;
       file += "/";
@@ -116,22 +116,21 @@ void KBookmarkManager::scanIntern( KBookmark *_bm, const char * _path )
       stat( file.data(), &buff );
       if ( S_ISDIR( buff.st_mode ) )
       {
-	KBookmark* bm = new KBookmark( this, _bm, KBookmark::decode( name ) );
+	KBookmark* bm = new KBookmark( this, _bm, KBookmark::decode( ep->d_name ) );
 	scanIntern( bm, file );
       }
-      else 
-      {
-	if ( name.length() > 7 && name.right( 7 ) == ".kdelnk" )
-	  name.truncate( name.length() - 7 );
-	
-	KSimpleConfig cfg( file );
+      else
+      {    
+	KSimpleConfig cfg( file, true );
 	cfg.setGroup( "KDE Desktop Entry" );
-	QString url = cfg.readEntry( "URL" );
-	QString icon = cfg.readEntry( "Icon" );
-	QString miniicon = cfg.readEntry( "MiniIcon", icon );
-	if ( !url.isEmpty() && !icon.isEmpty() && !miniicon.isEmpty() )
+	QString type = cfg.readEntry( "Type" );	
+	// QString url = cfg.readEntry( "URL" );
+	// QString icon = cfg.readEntry( "Icon" );
+	// QString miniicon = cfg.readEntry( "MiniIcon", icon );
+	// if ( !url.isEmpty() && !icon.isEmpty() && !miniicon.isEmpty() )
+	if ( type == "Link" )
 	{
-	  new KBookmark( this, _bm, KBookmark::decode( name ), cfg );
+	  new KBookmark( this, _bm, ep->d_name, cfg );
 	}
       }
     }
@@ -157,13 +156,16 @@ KBookmark::KBookmark( KBookmarkManager *_bm, KBookmark *_parent, const char *_te
   m_id = g_id++;
   m_pManager = _bm;
   m_lstChildren.setAutoDelete( true );
-  m_text = _text;
+
+  m_text = KBookmark::decode( _text );
+  if ( m_text.length() > 7 && m_text.right( 7 ) == ".kdelnk" )
+    m_text.truncate( m_text.length() - 7 );
+  
   m_type = URL;
   
-  m_file = _parent->file();;
+  m_file = _parent->file();
   m_file += "/";
-  m_file += encode( _text );
-  m_file += ".kdelnk";
+  m_file += _text;
 
   _parent->append( this );
   
@@ -348,6 +350,8 @@ QString KBookmark::decode( const char *_str )
   
   while ( ( i = str.find( "%2f" ) ) != -1 )
       str.replace( i, 3, "/");
+  while ( ( i = str.find( "%2F" ) ) != -1 )
+      str.replace( i, 3, "/");
 
   return QString( str.data() );
 }
@@ -356,12 +360,12 @@ QPixmap* KBookmark::pixmap()
 {
   if ( m_pPixmap == 0L )
   {
-    QString f( m_file.data() );
-    KURL::encodeURL( f );
+    // QString f( m_file.data() );
+    // KURL::encodeURL( f );
     if ( m_type == Folder )
-      m_pPixmap = folderType->getPixmap( f, false );
+      m_pPixmap = folderType->getPixmap( m_file, false );
     else
-      m_pPixmap = kdelnkType->getPixmap( f, false );
+      m_pPixmap = kdelnkType->getPixmap( m_file, false );
   }
 
   ASSERT( m_pPixmap );
@@ -373,12 +377,12 @@ QPixmap* KBookmark::miniPixmap()
 {
   if ( m_pMiniPixmap == 0L )
   {
-    QString f( m_file.data() );
-    KURL::encodeURL( f );
+    // QString f( m_file.data() );
+    // KURL::encodeURL( f );
     if ( m_type == Folder )
-      m_pMiniPixmap = folderType->getPixmap( f, true );
+      m_pMiniPixmap = folderType->getPixmap( m_file, true );
     else
-      m_pMiniPixmap = kdelnkType->getPixmap( f, true );
+      m_pMiniPixmap = kdelnkType->getPixmap( m_file, true );
   }
 
   ASSERT( m_pMiniPixmap );

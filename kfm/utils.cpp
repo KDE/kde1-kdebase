@@ -76,6 +76,8 @@ QString displayName()
 
 int testNestedURLs( const char *_src, const char *_dest )
 {
+  printf("int testNestedURLs( _src=%s, _dest=%s )\n",_src,_dest);
+  
     // The quick check
     if ( strcmp( _src, _dest ) == 0 )
 	return 2;
@@ -84,12 +86,9 @@ int testNestedURLs( const char *_src, const char *_dest )
     KURL u2( _dest );
     if ( u1.isMalformed() || u2.isMalformed() )
 	return -1;
-    if ( strcmp( u1.protocol(), "file" ) != 0 || u1.hasSubProtocol() ||
-	 strcmp( u2.protocol(), "file" ) != 0 || u2.hasSubProtocol() )
+    if ( !u1.isLocalFile() || !u2.isLocalFile() )
     {
 	// Inclusion ?
-	if ( strcmp( _src, _dest ) == 0 )
-	    return 2;
 	if ( strncmp( _src, _dest, strlen( _src ) ) == 0 )
 	    return 1;
 
@@ -120,8 +119,21 @@ int testNestedURLs( const char *_src, const char *_dest )
     
     // both files
     if ( i == 0 )
-	return ( strcmp( canonical1, canonical2 ) == 0L ? 2 : 0 );
+    {
+      printf("BOTH files\n");
+      return ( strcmp( canonical1, canonical2 ) == 0L ? 2 : 0 );
+    }
     
+    // One directory and one file ?
+    if ( i == 1 )
+    {
+      printf("One File\n");
+      return 0;
+    }
+    
+    printf("Two directories\n");
+    
+    // Both directories
     if ( canonical1.right(1) != "/" )
 	canonical1 += "/";
     if ( canonical2.right(1) != "/" )
@@ -150,6 +162,12 @@ void decodeFileName( QString& fn )
 {
   int i = 0;
   while( ( i = fn.find( "%2F", i ) ) != -1 )
+  {
+    fn.replace( i, 3, "/" );
+  }
+
+  i = 0;
+  while( ( i = fn.find( "%2f", i ) ) != -1 )
   {
     fn.replace( i, 3, "/" );
   }

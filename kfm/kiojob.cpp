@@ -168,13 +168,13 @@ void KIOJob::link( QStrList & _src_url_list, const char *_dest_dir_url )
     char *p;
     for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
     {
-	KURL su( p );
-	
+	QString s = KIOServer::getDestNameForLink( p );
+	KURL::encodeURL( s );
+
 	QString d = _dest_dir_url;
 	d.detach();
 	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
 	    d += "/";
-	QString s = KIOServer::getDestNameForLink( p );
 	d += s.data();
 
 	cmDestURLList.append( d.data() );
@@ -402,12 +402,14 @@ void KIOJob::copy( QStrList & _src_url_list, const char *_dest_dir_url )
 	if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
 	    tmp.truncate( tmp.length() - 1 );
 	KURL su( tmp.data() );
+	QString enc( su.filename() );
+	KURL::encodeURL( enc );
 	
 	QString d = _dest_dir_url;
 	d.detach();
 	if ( d.right(1) != "/" )
 	    d += "/";
-	d += su.filename();
+	d += enc;
 
 	printf("############# COPY '%s' to '%s'\n", tmp.data(), d.data());
     
@@ -643,12 +645,14 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 	if ( tmp.right(1) == "/" && tmp.right(2) != ":/" )
 	    tmp.truncate( tmp.length() - 1 );
 	KURL su( tmp.data() );
+	QString enc( su.filename() );
+	KURL::encodeURL( enc );
 	
 	QString d = _dest_dir_url;
 	d.detach();
 	if ( d.right(1) != "/" )
 	    d += "/";
-	d += su.filename();
+	d += enc;
 	
 	tmpSrcURLList.append( tmp.data() );
 	tmpDestURLList.append( d.data() );
