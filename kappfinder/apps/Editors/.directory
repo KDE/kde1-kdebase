@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Editors
+Name[de]=Editoren
 Name[pl]=Edytory
 MiniIcon=
 SortOrder=emacs.kdelnk,xedit.kdelnk,xemacs.kdelnk

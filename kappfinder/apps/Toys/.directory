@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Toys
+Name[de]=Spielzeuge
 Name[pl]=Zabawa
 MiniIcon=sample.xpm
 SortOrder=xeyes.kdelnk,xpinguin.kdelnk

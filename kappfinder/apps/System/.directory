@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=System
+Name[de]=System
 Name[pl]=System
 MiniIcon=
 SortOrder=xosview.kdelnk
