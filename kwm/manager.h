@@ -471,6 +471,7 @@ private:
   Atom module_desktop_name_change;
   Atom module_desktop_number_change;
   Atom module_win_add;
+  Atom module_dialog_win_add;
   Atom module_win_remove;
   Atom module_win_change;
   Atom module_win_raise;

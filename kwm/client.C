@@ -367,6 +367,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     wmcmaps = 0;
     is_active = false;
     trans = None;
+    leader = None;
     decoration = 1;
     wants_focus = true;
     is_menubar = false;
@@ -489,14 +490,23 @@ void Client::generateButtons(){
 
   for (i=0;i<6;i++){
     buttons[i] = getNewButton( options.buttons[i]);
-    if (getDecoration() == KWM::normalDecoration && !trans){
-      if (buttons[i])
-	buttons[i]->show();
+    if (getDecoration() == KWM::normalDecoration ) {
+	if (!trans){
+	    if (buttons[i])
+		buttons[i]->show();
+	}
+	else { // transient windows, only menu and close on the first resp. last position possible
+	    if ( i == 0 && buttons[i] == buttonMenu )
+		continue;
+	    if ( i == 3 && options.buttons[3] == CLOSE )
+		continue;
+	    buttons[i]->hide();
+	}
     }
     else {
-      if (buttons[i] && (getDecoration() != KWM::normalDecoration
-			 || i>0 || buttons[i] != buttonMenu))
-	buttons[i]->hide();
+	if (buttons[i] ){
+	    buttons[i]->hide();
+	}
     }
   }
   if (!buttonMaximize){
@@ -549,6 +559,7 @@ void Client::layoutButtons(){
       trX += BUTTON_SIZE;
       trW -= BUTTON_SIZE;
     }
+    
     if (!trans){
       if( buttons[1] ){
 	buttons[1]->setGeometry(trX,
@@ -564,12 +575,15 @@ void Client::layoutButtons(){
 	trX += BUTTON_SIZE;
 	trW -= BUTTON_SIZE;
       }
-      if( buttons[3] ){
+    }
+    if( buttons[3] && (!trans || options.buttons[3] == CLOSE)){
 	trW -= BUTTON_SIZE;
 	buttons[3]->setGeometry(trX + trW,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
-      }
+    }
+      
+    if (!trans) {
       if( buttons[4] ){
 	trW -= BUTTON_SIZE;
 	if (options.buttons[3] == CLOSE)
@@ -1818,9 +1832,17 @@ void Client::iconifySlot(){
 void Client::iconify(bool animation){
   if (isIconified())
     return;
+  
+  if (animation == TRUE ) { 
+      if ( isDialog() ) { // transient windows or dialogs cannot be iconified, iconify everything
+	  mainClient()->iconify();
+	  return;
+      }
+  }
+  
   if (manager->current() &&
       this != manager->current()
-      && manager->current()->trans == window)
+      && (manager->current()->trans == window || manager->current()->leader == window) )
     manager->activateClient(this);
   manager->iconifyTransientOf(this);
   iconified = True;
@@ -1890,11 +1912,10 @@ void Client::ontoDesktop(int new_desktop){
   if (new_desktop < 1 || new_desktop > manager->number_of_desktops)
     return;
 
-  if (trans != None && trans != window && trans != qt_xrootwin()){
-    // it is forbidden to move transient windows onto other
-    // desktops than their parents
-    Client* c = manager->getClient(trans);
-    if (c && c->desktop != new_desktop)
+  if ( isDialog() && mainClient()->desktop != new_desktop) {
+      // it is forbidden to move transient windows or dialogs onto other
+      // desktops than their parents. Move everthing instead.
+      mainClient()->ontoDesktop( new_desktop );
       return;
   }
 
@@ -2049,6 +2070,14 @@ void Client::stickyToggled(bool depressed){
 
   if (depressed == isSticky())
     return;
+  
+  if ( isDialog() && mainClient()->isSticky() != depressed) {
+       // transient windows or dialogs cannot be made sticky alone, sticky everything instead
+      buttonSticky->toggle();
+      mainClient()->buttonSticky->toggle();
+      return;
+  }
+  
 
   KWM::setSticky(window, depressed);
   sticky = depressed;
@@ -2313,6 +2342,10 @@ Client* Client::mainClient(){
     Client* c = manager->getClient(trans);
     if (c)
       return c->mainClient();
+  } else if (leader != None && leader != window) {
+      Client* c = manager->getClient(leader);
+      if (c)
+	  return c->mainClient();
   }
   return this;
 }

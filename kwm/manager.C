@@ -118,6 +118,7 @@ Manager::Manager(): QObject(){
   module_desktop_number_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NUMBER_CHANGE", False);
 
   module_win_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_ADD", False);
+  module_dialog_win_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_DIALOG_WIN_ADD", False);
   module_win_remove = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_REMOVE", False);
   module_win_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_CHANGE", False);
   module_win_raise = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_RAISE", False);
@@ -796,8 +797,10 @@ void Manager::propertyNotify(XPropertyEvent *e){
       int i;
       if (c->buttons[0] && c->buttons[0] != c->buttonMenu)
 	c->buttons[0]->hide();
+      if (c->buttons[3] && options.buttons[3] != CLOSE)
+	c->buttons[3]->hide();
       for (i=1; i<6; i++){
-	if (c->buttons[i])
+	if ( i != 3 && c->buttons[i])
 	  c->buttons[i]->hide();
       }
     }
@@ -887,6 +890,8 @@ void Manager::propertyNotify(XPropertyEvent *e){
       if (c->hidden_for_modules){
 	clients_traversing.insert(0,c);
 	c->hidden_for_modules = false;
+	if ( c->isDialog() )
+	    sendToModules(module_dialog_win_add, c);
 	sendToModules(module_win_add, c);
       }
       c->wants_focus = true;
@@ -1578,7 +1583,8 @@ void Manager::deskUnclutter() {
     bm = clients.current();
     if((!cl->isOnDesktop(currentDesktop())) ||
        (cl->isIconified())                  ||
-       (cl->isSticky()))
+       (cl->isSticky())	||
+       (cl->isMenuBar()) )
       continue;
     smartPlacement(cl);
     sendConfig(cl, false); //ask Matthias if this is the best way
@@ -1602,7 +1608,8 @@ void Manager::deskCascade() {
   for(cl = clients.next(); cl; cl = clients.next()) {
     if((!cl->isOnDesktop(currentDesktop())) ||
        (cl->isIconified())                  ||
-       (cl->isSticky()))
+       (cl->isSticky())	||
+       (cl->isMenuBar()))
       continue;
     cascadePlacement(cl,False);
     sendConfig(cl, false);
@@ -1858,6 +1865,16 @@ void Manager::manage(Window w, bool mapped){
     state = NormalState;
   dohide = (state == IconicState);
   setWindowState(c, state);
+  if (hints && (hints->flags & WindowGroupHint) ) {
+      c->leader = hints->window_group;
+  }
+  else {
+      long result = None;
+      getSimpleProperty(c->window, wm_client_leader, result, XA_WINDOW);
+      c->leader = result;
+  }
+  if (c->leader == c->window)
+      c->leader = None;
   if (hints)
     XFree(hints);
 
@@ -1895,8 +1912,13 @@ void Manager::manage(Window w, bool mapped){
 	(c->buttons[0] != c->buttonMenu ||
 	 c->getDecoration()!=KWM::normalDecoration))
       c->buttons[0]->hide();
+    if (c->buttons[3] && 
+	(options.buttons[3] != CLOSE ||
+	 c->getDecoration()!=KWM::normalDecoration)) {
+	c->buttons[3]->hide();
+    }
     for (i=1; i<6; i++){
-      if (c->buttons[i])
+      if (i != 3 && c->buttons[i])
 	c->buttons[i]->hide();
     }
   }
@@ -2033,6 +2055,8 @@ void Manager::manage(Window w, bool mapped){
 
 
   addClient(c);
+  if ( c->isDialog() )
+      sendToModules( module_dialog_win_add, c );
   sendToModules(module_win_add, c);
 
   if (dohide){
@@ -2266,7 +2290,7 @@ void Manager::raiseClient(Client* c){
     tmp2.clear();
     for (cc = sorted_tmp.first(); cc; cc = sorted_tmp.next()){
       for (ccc = tmp.first(); ccc; ccc = tmp.next()){
-	if (cc->trans == ccc->window)
+	if (cc->trans == ccc->window || cc->leader == ccc->window )
 	  tmp2.append(cc);
       }
     }
@@ -3293,9 +3317,7 @@ void Manager::processSaveYourself(){
       // poor man's "session" management a la xterm :-(
       c->command = xgetprop(c->window, XA_WM_COMMAND);
       if (c->command.isNull()){
-	long result = None;
-	getSimpleProperty(c->window, wm_client_leader, result);
-	Window clw = (Window) result;
+	Window clw = c->leader;
 	if (clw != None && clw != c->window && getClient(clw))
 	    c->command = ""; // will be stored anyway
 	  else
@@ -3508,7 +3530,7 @@ Client* Manager::clientAtPosition(int x, int y){
  void Manager::iconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window){
+    if (it.current() != c && (it.current()->trans == c->window || it.current()->leader == c->window)){
       it.current()->iconify(False);
       if (!it.current()->hidden_for_modules) {
 	  sendToModules(module_win_remove, it.current());
@@ -3527,9 +3549,11 @@ Client* Manager::clientAtPosition(int x, int y){
 void Manager::unIconifyTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window){
+    if (it.current() != c && (it.current()->trans == c->window || it.current()->leader == c->window)){
       if (it.current()->hidden_for_modules && !it.current()->isMenuBar()){
 	it.current()->hidden_for_modules = false;
+	if ( it.current()->isDialog() )
+	    sendToModules(module_dialog_win_add, it.current());
 	sendToModules(module_win_add, it.current());
 	clients_traversing.insert(0,it.current());
       }
@@ -3545,7 +3569,7 @@ void Manager::unIconifyTransientOf(Client* c){
 void Manager::ontoDesktopTransientOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window){
+    if (it.current() != c && (it.current()->trans == c->window || it.current()->leader == c->window)){
       it.current()->ontoDesktop(c->desktop);
     }
   }
@@ -3559,7 +3583,7 @@ void Manager::ontoDesktopTransientOf(Client* c){
 void Manager::stickyTransientOf(Client* c, bool sticky){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
-    if (it.current() != c && it.current()->trans == c->window){
+    if (it.current() != c && (it.current()->trans == c->window || it.current()->leader == c->window)){
       if (it.current()->isSticky() != sticky)
 	it.current()->buttonSticky->toggle();
     }
@@ -3676,8 +3700,11 @@ void Manager::addModule(Window w){
   // for example)
   Client* c;
   for (c=clients.first(); c; c=clients.next()){
-    if (!c->hidden_for_modules)
-      sendClientMessage(w, module_win_add, c->window);
+      if (!c->hidden_for_modules){
+	  if ( c->isDialog() )
+	      sendClientMessage(w, module_win_add, c->window);
+	  sendClientMessage(w, module_win_add, c->window);
+      }
   }
   for (c=clients_sorted.first(); c; c=clients_sorted.next()){
     if (!c->hidden_for_modules)

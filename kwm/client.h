@@ -95,6 +95,7 @@ public:
 
   // TODO decoration property handling must be cleaned-up!!
   Window      trans;
+  Window      leader;
   long      decoration;
   bool wants_focus;
   bool is_menubar;
@@ -293,8 +294,8 @@ public:
   // move the client onto a new desktop. Will take floating and
   // transient windows with it.
   void ontoDesktop(int new_desktop);
-    
-    
+
+
   enum {horizontal = 1, vertical = 2, fullscreen = 3};
   // maximize this client. Mode can be horizontal, vertical or fullscreen.
   // Store the current geometry in geometry_restore
@@ -320,6 +321,11 @@ public:
   // returns the client itself it is not transient. If it is transient
   // it will return the main window recursively.
   Client* mainClient();
+    
+    // returns whether the client is only a dialog window
+  bool isDialog() {
+      return mainClient() != this;
+  }
 
 
  public slots:
