@@ -13,6 +13,12 @@
 #include "kpanel_version.h"
 #include <X11/keysym.h>
 
+//special keys
+#define PINGUIN_LEFT 115
+#define PINGUIN_RIGHT 116
+#define PINGUIN_LIST 117
+
+
 kPanel *the_panel;
 int o_argc;
 char ** o_argv;
@@ -49,7 +55,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
     XKeyEvent* e = &ev->xkey;
     int kc = XKeycodeToKeysym(qt_xdisplay(), e->keycode, 0);
     int km = e->state & (ControlMask | Mod1Mask | ShiftMask);
-    if( (kc == XK_F1)  && (km == Mod1Mask) ){
+    if( ((kc == XK_F1)  && (km == Mod1Mask) )){
+      //	|| e->keycode == PINGUIN_LEFT){
       the_panel->showSystem();
       XAllowEvents(qt_xdisplay(), AsyncKeyboard, CurrentTime);
       return true;
@@ -58,9 +65,12 @@ bool MyApp::x11EventFilter( XEvent * ev){
   return KWMModuleApplication::x11EventFilter(ev);
 }
 
-static void grabKey(KeySym keysym, unsigned int mod){
+static void grabKey(KeySym keysym, unsigned int mod, unsigned int keycode=0){
   static int NumLockMask = 0;
-  if (!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
+  if (!keycode)
+    keycode=XKeysymToKeycode(qt_xdisplay(), keysym);
+  if (!keycode)
+    return; 
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
@@ -69,26 +79,29 @@ static void grabKey(KeySym keysym, unsigned int mod){
 	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
 	NumLockMask = (1<<i); 
     }
+    XFreeModifiermap(xmk);
   }
-  XGrabKey(qt_xdisplay(),
-	   XKeysymToKeycode(qt_xdisplay(), keysym), mod,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  XGrabKey(qt_xdisplay(),
-	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  XGrabKey(qt_xdisplay(),
-	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | NumLockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
-  XGrabKey(qt_xdisplay(),
-	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask | NumLockMask,
-	   qt_xrootwin(), True,
-	   GrabModeAsync, GrabModeSync);
 
-  
+  XGrabKey(qt_xdisplay(),
+	   keycode, mod,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  if (mod == AnyModifier)
+    return;
+  XGrabKey(qt_xdisplay(),
+	   keycode, mod | LockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   keycode, mod | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   keycode, mod | LockMask | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
 }
+
 
 int main( int argc, char ** argv ){
  
@@ -178,6 +191,7 @@ int main( int argc, char ** argv ){
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);
   grabKey(XK_F1, Mod1Mask);
+  //  grabKey(0, AnyModifier, PINGUIN_LEFT);
   while (1)
     myapp.exec(); 
   return 0;

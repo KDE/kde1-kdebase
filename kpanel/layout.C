@@ -128,6 +128,11 @@ void kPanel::reposition(int l){
 
   if (orientation == vertical){
     for (i=0; i<nbuttons-1; i++){
+      if (entries[i].button->y()<panel_button->y()+panel_button->height())
+	entries[i].button->move(entries[i].button->x(),
+				panel_button->y()+panel_button->height());
+    }
+    for (i=0; i<nbuttons-1; i++){
       d = entries[i].button->y() + entries[i].button->height() - entries[i+1].button->y();
       if (d>0){
 	for (i2=i+1; 
@@ -174,6 +179,11 @@ void kPanel::reposition(int l){
   }
   else { // orientation == horizontal
  
+    for (i=0; i<nbuttons-1; i++){
+      if (entries[i].button->x()<panel_button->x()+panel_button->width())
+	entries[i].button->move(panel_button->x()+panel_button->width(),
+				entries[i].button->y());
+    }
     for (i=0; i<nbuttons-1; i++){
       d = entries[i].button->x() + entries[i].button->width() - entries[i+1].button->x();
       if (d>0){
