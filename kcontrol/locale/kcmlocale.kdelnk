@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,et,fi,fr,he,hr,hu,is,it,ja,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sv,tr,zh_CN.GB2312,zh_TW.Big5
+Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,et,fi,fr,he,hr,hu,is,it,ja,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sl,sv,tr,zh_CN.GB2312,zh_TW.Big5
 
 [br]
 Name=Breton
@@ -768,4 +768,11 @@ Name[ru]=¸”‘œŒ”À… 
 Name[sk]=EstÛnsky
 Name[sl]=estonπËina
 Name[sv]=Estoniska
+
+[sl]
+Name=Slovenian
+Name[de]=Slowenisch
+Name[fr]=Slovene
+
+
 
