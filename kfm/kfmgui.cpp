@@ -1114,7 +1114,9 @@ void KfmGui::slotUpdateHistoryMenu( )
     char * s;
     int id;
     for (id = 0, s = hlist->last(); (id<10) && (s != 0L); id++, s = hlist->prev()) {
-        QString url (s);
+        KURL u(s);
+        u.setPassword(""); // hide password
+        QString url(u.url().copy());
         KURL::decodeURL(url); // we don't want encoded URLs in the menu
         mgo->insertItem ( url, id );
     }
