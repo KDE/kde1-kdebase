@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-12-10 02:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -402,7 +402,7 @@ msgstr "Хранитель экрана"
 
 #
 #
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:368 scrnsave.cpp:607 scrnsave.cpp:728
 msgid "No screensaver"
 msgstr "Нет хранителя экрана"
 
@@ -438,21 +438,21 @@ msgstr "&Требуется пароль"
 msgid "&Accept root password to unlock"
 msgstr "Допускать пароль root'а для разблокирования."
 
-#: scrnsave.cpp:278
+#: scrnsave.cpp:280
 msgid "Show &password as stars"
 msgstr "Показывать звездочки вместо пароля"
 
 #
-#: scrnsave.cpp:286
+#: scrnsave.cpp:288
 msgid "Priority"
 msgstr "Приоритет"
 
 #
-#: scrnsave.cpp:299
+#: scrnsave.cpp:301
 msgid "&High"
 msgstr "&Высокий"
 
-#: scrnsave.cpp:308
+#: scrnsave.cpp:310
 msgid "Low"
 msgstr "Низкий"
 

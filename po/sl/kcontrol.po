@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-09-24  18:22+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
@@ -22,11 +22,11 @@ msgstr "Neznan modul:"
 msgid "KDE Control Center"
 msgstr "KDE nadzorni center"
 
-#: toplevel.cpp:78
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "&Zajemi module"
 
-#: toplevel.cpp:81
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

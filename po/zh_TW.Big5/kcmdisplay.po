@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -400,7 +400,7 @@ msgstr "鎖住螢幕"
 msgid "Screen Saver"
 msgstr "螢幕保護程式"
 
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:368 scrnsave.cpp:607 scrnsave.cpp:728
 #, fuzzy
 msgid "No screensaver"
 msgstr "螢幕保護程式[&S]"
@@ -437,21 +437,21 @@ msgstr "需要密碼"
 msgid "&Accept root password to unlock"
 msgstr ""
 
-#: scrnsave.cpp:278
+#: scrnsave.cpp:280
 msgid "Show &password as stars"
 msgstr ""
 
-#: scrnsave.cpp:286
+#: scrnsave.cpp:288
 #, fuzzy
 msgid "Priority"
 msgstr "優先權:"
 
-#: scrnsave.cpp:299
+#: scrnsave.cpp:301
 #, fuzzy
 msgid "&High"
 msgstr "高[&H]"
 
-#: scrnsave.cpp:308
+#: scrnsave.cpp:310
 msgid "Low"
 msgstr "低"
 

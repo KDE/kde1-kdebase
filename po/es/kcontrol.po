@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-10-23 17:13+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -14,11 +14,11 @@ msgstr "Módulo desconocido: "
 msgid "KDE Control Center"
 msgstr "Centro de control KDE"
 
-#: toplevel.cpp:78
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "&Módulos empotrados"
 
-#: toplevel.cpp:81
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1997-12-29 15:59+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -13,11 +13,11 @@ msgstr "Unbekanntes Modul: "
 msgid "KDE Control Center"
 msgstr "KDE Kontroll-Zentrum"
 
-#: toplevel.cpp:78
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "Module &einbetten"
 
-#: toplevel.cpp:81
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

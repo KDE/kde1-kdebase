@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -22,11 +22,11 @@ msgstr "רכומ אל לודומ "
 msgid "KDE Control Center"
 msgstr "KDE לש הרקבה חול"
 
-#: toplevel.cpp:78
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "םילודומ לכה"
 
-#: toplevel.cpp:81
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"

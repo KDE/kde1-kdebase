@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-12-13 15:43+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -375,7 +375,7 @@ msgstr "Lås skärmen"
 msgid "Screen Saver"
 msgstr "Skärmsläckare"
 
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:368 scrnsave.cpp:607 scrnsave.cpp:728
 msgid "No screensaver"
 msgstr "Ingen skärmsläckare"
 
@@ -407,19 +407,19 @@ msgstr "&Kräv lösenord"
 msgid "&Accept root password to unlock"
 msgstr "&Tillåt upplåsning med rotlösenordet"
 
-#: scrnsave.cpp:278
+#: scrnsave.cpp:280
 msgid "Show &password as stars"
 msgstr "Visa &lösenord som stjärnor"
 
-#: scrnsave.cpp:286
+#: scrnsave.cpp:288
 msgid "Priority"
 msgstr "Prioritet"
 
-#: scrnsave.cpp:299
+#: scrnsave.cpp:301
 msgid "&High"
 msgstr "&Hög"
 
-#: scrnsave.cpp:308
+#: scrnsave.cpp:310
 msgid "Low"
 msgstr "Låg"
 

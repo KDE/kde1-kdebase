@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -375,7 +375,7 @@ msgstr "Zamknú» obrazovku"
 msgid "Screen Saver"
 msgstr "©etriè obrazovky"
 
-#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
+#: scrnsave.cpp:188 scrnsave.cpp:368 scrnsave.cpp:607 scrnsave.cpp:728
 msgid "No screensaver"
 msgstr "Bez ¹etrièa obrazovky"
 
@@ -407,19 +407,19 @@ msgstr "&Po¾aduje heslo"
 msgid "&Accept root password to unlock"
 msgstr "&Akceptova» rootovské heslo na odhlásenie"
 
-#: scrnsave.cpp:278
+#: scrnsave.cpp:280
 msgid "Show &password as stars"
 msgstr "Zo&brazova» heslá ako hviezdièky"
 
-#: scrnsave.cpp:286
+#: scrnsave.cpp:288
 msgid "Priority"
 msgstr "Priorita:"
 
-#: scrnsave.cpp:299
+#: scrnsave.cpp:301
 msgid "&High"
 msgstr "Vysoká"
 
-#: scrnsave.cpp:308
+#: scrnsave.cpp:310
 msgid "Low"
 msgstr "Nízka"
 
