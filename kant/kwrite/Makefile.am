@@ -2,7 +2,6 @@
 INCLUDES = $(all_includes)
 LDFLAGS = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 \
 	$(all_libraries) $(KDE_RPATH)
-XGETTEXT=xgettext
 
 bin_PROGRAMS = kwrite
 
