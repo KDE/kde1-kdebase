@@ -5,7 +5,7 @@
 bin_PROGRAMS 	= kwm
 INCLUDES	=  $(all_includes)
 LDFLAGS 	= $(all_libraries) $(KDE_RPATH)
-kwm_LDADD 	= -lkfm -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) 
+kwm_LDADD 	= $(LIB_KFM) 
 DISTCLEANFILES	= $(BUILT_SOURCES)
 SUBDIRS 	= pics
 
