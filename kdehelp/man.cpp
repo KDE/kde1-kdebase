@@ -492,7 +492,12 @@ cManSection::cManSection(const char *theName)
 	}
 	else
 	{
+#ifndef __FreeBSD__
 		searchPath[numPaths++] = StrDup("/usr/man");
+#else
+		searchPath[numPaths++] = StrDup("/usr/share/man");
+		searchPath[numPaths++] = StrDup("/usr/X11R6/man");
+#endif
 		searchPath[numPaths++] = StrDup("/usr/local/man");
 	}
 }
