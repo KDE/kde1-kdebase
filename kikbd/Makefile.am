@@ -21,18 +21,16 @@ SUBDIRS = doc maps
 ####### This part is very kless specific
 # you can add here more. This one gets installed 
 bin_PROGRAMS = 	kikbd kcmikbd
-BUILT_SOURCES = kconfobjs.moc.cpp kobjconf.moc.cpp \
-	widgets.moc.cpp keymap.moc.cpp kikbd.moc.cpp kikbdconf.moc.cpp
+BUILT_SOURCES = kconfobjs.moc.h  kconfobjsw.moc.h kobjconf.moc.h \
+	widgets.moc.h keymap.moc.h kikbd.moc.h kikbdconf.moc.h
 
-kikbd_SOURCES = kikbd.cpp keytrans.cpp \
-	keymap.cpp kikbdconf.cpp kobjconf.cpp \
-	kconfobjs.moc.cpp kobjconf.moc.cpp keymap.moc.cpp kikbd.moc.cpp kikbdconf.moc.cpp
+kikbd_SOURCES = kikbd.cpp keytrans.cpp keymap.cpp kikbdconf.cpp \
+	kobjconf.cpp kconfobjs.cpp
 kikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
-kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp \
-	kikbdconf.cpp kobjconf.cpp \
-	kconfobjs.moc.cpp kobjconf.moc.cpp widgets.moc.cpp kikbdconf.moc.cpp
+kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp kikbdconf.cpp \
+	kobjconf.cpp kconfobjs.cpp
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kcmikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
@@ -67,15 +65,17 @@ uninstall-local:
 	-rm -f $(kde_icondir)/kikbd.xpm
 	-rm -f $(kde_minidir)/kikbd.xpm
 
-kconfobjs.moc.cpp: kconfobjs.h
+kconfobjsw.moc.h: kconfobjsw.h
 	$(MOC) -o $@ $<
-kobjconf.moc.cpp: kobjconf.h
+kconfobjs.moc.h: kconfobjs.h
 	$(MOC) -o $@ $<
-widgets.moc.cpp: widgets.h
+kobjconf.moc.h: kobjconf.h
 	$(MOC) -o $@ $<
-keymap.moc.cpp: keymap.h
+widgets.moc.h: widgets.h
 	$(MOC) -o $@ $<
-kikbd.moc.cpp: kikbd.h
+keymap.moc.h: keymap.h
 	$(MOC) -o $@ $<
-kikbdconf.moc.cpp: kikbdconf.h
+kikbd.moc.h: kikbd.h
+	$(MOC) -o $@ $<
+kikbdconf.moc.h: kikbdconf.h
 	$(MOC) -o $@ $<

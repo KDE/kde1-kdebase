@@ -1,0 +1,22 @@
+# KDE Config File
+# Warning: almost untested !
+
+[International Keyboard]
+Authors=Tomas Furmonavièius <f1926@kaunas.aiva.lt>
+
+Language=Lithuanian
+
+Label=Lt
+Locale=lt
+
+[KeyboardMap]
+CapsSymbols=1,2,3,4,5,6,7,8,9,0,-,=
+keysym0=,,,agrave,Agrave,
+keysym1=,,,egrave,Egrave,
+keysym2=,,,ae,AE,
+keysym3=,,,ediaeresis,Ediaeresis,
+keysym4=,,,aacute,Aacute,
+keysym5=,,,eth,ETH,
+keysym6=,,,oslash,Ooblique,
+keysym7=,,,ucircumflex,Ucircumflex,
+keysym12=,,,thorn,THORN,

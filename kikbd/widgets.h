@@ -45,6 +45,38 @@ class KiKbdMapInfoWidget: public QLabel {
   void changeMap(const char*);
 };
 
+class KiKbdMapsWidget: public KConfigObjectWidget {
+  Q_OBJECT
+ protected:
+  QListBox  *mapsList;
+  QStrList  &mapsStr;  
+ protected:
+  void   addMap(const char*);
+  void   chkActivate();
+  void   changeMap(int);
+ public:
+  KiKbdMapsWidget(QWidget* parent=0L);
+  virtual void dataChanged();
+ public slots:
+  void addMap   ();
+  void upMap    (){changeMap(-1);}
+  void downMap  (){changeMap(+1);}
+  void infoMap  ();
+  void deleteMap();
+  void selected   (int){emit infoClick();}
+  void highlighted(int){chkActivate();}
+  void selectionUp  ();
+  void selectionDown();
+ signals:
+  void activateDelete(bool);
+  void activateUp(bool);
+  void activateDown(bool);
+  void activateInfo(bool);
+  void activateHot(bool);
+  void infoClick();
+  void listChanged();
+};
+
 class KiKbdAddDialog: public QDialog {
   Q_OBJECT
  protected:
@@ -60,40 +92,18 @@ class KiKbdAddDialog: public QDialog {
   void setInfo(int);
 };
 
-class KiKbdGeneralWidget: public KConfigWidget {
+class KiKbdGeneralWidget: public QWidget {
   Q_OBJECT
  protected:
-  QListBox *mapsList;
-  QStrList &mapsStr;
-  void   addMap(const char*);
-  void   chkActivate();
-  void   changeMap(int);
   friend class KiKbdAdvancedDialog;
-  friend class KiKbdAddMapDialog;
  public:
   KiKbdGeneralWidget(QWidget*);
-  void loadSettings();
-  void applySettings(){}
  public slots:
-  void addMap();
-  void upMap  (){changeMap(-1);}
-  void downMap(){changeMap(+1);}
-  void infoMap();
-  void deleteMap();
-  void highlighted(int){chkActivate();}
-  void selected(int){emit infoClick();}
   void advanced();
   void newSwitch(const char*);
-  void selectionUp();
-  void selectionDown();
+  void listChanged() {newSwitch(0L);}
  signals:
-  void activateDelete(bool);
-  void activateUp(bool);
-  void activateDown(bool);
-  void activateInfo(bool);
-  void activateHot(bool);
   void activateAltSwitch(bool);
-  void infoClick();
 };
 
 class KiKbdStyleWidget: public QWidget {

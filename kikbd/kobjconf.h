@@ -55,30 +55,29 @@ class KConfigObject: public QObject {
   virtual void writeObject(KObjectConfig*){}
   friend class KObjectConfig;
  public:
-  /**
-     Constructor of abstract object
-     @param pData data reference
-     @param pDeleteData If is TRUE the data referenced by pData will be
-     deleted by delete at destruction time.
-     @param key if not NULL used as key for this object
+  /** Constructor of abstract object
+      @param pData data reference
+      @param pDeleteData If is TRUE the data referenced by pData will be
+      deleted by delete at destruction time.
+      @param key if not NULL used as key for this object
   */
   KConfigObject(void* pData=0L, bool pDeleteData=FALSE, const char* key=0L);
   virtual ~KConfigObject();
-  /**
-     Return active key for this object.
+  /** Return active key for this object.
   */
   const QString   getKey () const {return keys.current();}
-  /**
-     Return all keys for this object. Usually object contains only one key.
+  /** Return all keys for this object. Usually object contains only one key.
   */
   const QStrList& getKeys() const {return keys;}
+  /** Return data reference
+   */
+  void* getData() const {return data;}
   /**
      Set DeleteData parameter.
   */
   void  setDeleteData(bool f){deleteData = f;}
-  /**
-     Configure writing parameters.
-     @see KConfigBase::writeEntry KConfigBase class
+  /** Configure writing parameters.
+      @see KConfigBase::writeEntry KConfigBase class
   */
   void  configure(bool bPersistent = TRUE, bool bGlobal = FALSE,
 		  bool bNLS = FALSE) {
@@ -86,16 +85,35 @@ class KConfigObject: public QObject {
     global = bGlobal;
     NLS = bNLS;
   }
-  /**
-     Create widget to interactivaly change value. Sutable for writing
-     configuration programs. Each call to function return new widget.
+  /** Create widget to interactivaly change value. Sutable for writing
+      configuration programs. Each call to function return new widget.
   */
-  virtual QWidget* createWidget(QWidget* parent, const char* label=0L) const {
+  virtual QWidget* createWidget(QWidget* parent, const char* label=0L) {
     return 0L;
   }
+ signals:
+  /** Usualy this emited to update widget created by createWidget.
+  */
+  void updateWidgets();
 };
 
 
+/**
+   This is abstract base class for creating widget for any KConfigObject.
+*/
+class KConfigObjectWidget: public QWidget {
+  Q_OBJECT
+ protected:
+  QWidget       *widget;
+  KConfigObject *object;
+ protected:
+  KConfigObjectWidget(QWidget* parent, KConfigObject* obj);
+ public:
+  QWidget* getWidget() const {return widget;}
+ public slots:
+  virtual void dataChanged() {}
+  virtual void changeData () {}
+};
 
 /**
    This is hi level user interface to KConfig class.
@@ -205,7 +223,7 @@ class KObjectConfig: public QObject {
      @param tip if not NULL locale translated QToolTip will be set
   */
   QWidget* createWidget(const void* data, QWidget* parent=0L, 
-			const char* label=0L, const char* tip=0L) const;
+			const char* label=0L, const char* tip=0L);
   /**
      This set config file version and enables version control 
      (disabled by default). Version number follow the standart convension:
@@ -219,7 +237,11 @@ class KObjectConfig: public QObject {
   friend KObjectConfig& operator<<(KObjectConfig& config, int) {
     return config;
   }
-  static QStrList separate(const char* string, char sep=',');
+  static QStrList separate(const QString&, char sep=',');
+ public slots:
+  /** Usualy this called to update widgets of all objects.
+  */
+  virtual void dataChanged();
  signals:
   /** This signal emited when new user rc file created by using UserFromSystemRc
   */

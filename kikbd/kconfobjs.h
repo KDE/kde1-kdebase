@@ -94,7 +94,7 @@ class KConfigNumberedKeysObject: public KConfigObject {
   */
 class KConfigBoolObject: public KConfigObject {
   Q_OBJECT
-protected:
+ protected:
   /**
      KConfigObject reimplemented read data method
   */
@@ -103,14 +103,12 @@ protected:
      KConfigObject reimplemented write data method
   */
   void writeObject(KObjectConfig*);
-public:
+ public:
   KConfigBoolObject(const char* key, bool& val)
     :KConfigObject(&val, FALSE, key){}
   /** Create QCheckBox with locale translated label
    */
-  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L) const;
-public slots:
-  void toggled(bool);
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L);
 };
 
 /**
@@ -222,19 +220,13 @@ public:
      translated labels.
      @param name optional name of button group.
   */
-  virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L) const;
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* name=0L);
   int getIndex() const {return pindex?*pindex:getIndex(*pstring);}
+  void setIndex(int i) {if(pstring) *pstring = list[i]; else *pindex = i;}
   QString getString() const {
     return QString(pindex?list[*pindex]:(const char*)*pstring);
   }
- public slots:
-    /**
-       Slot used to connect widgets.
-    */
-  void activated(int i) {
-   if(pstring) *pstring = list[i];
-   if(pindex)  *pindex = i;
- }
+  friend class KConfigComboWidget;
 };
 
 
@@ -264,7 +256,7 @@ public:
      Create colored button connected to KColorDialog.
      Parameter label ignored.
   */
-  virtual QWidget* createWidget(QWidget* parent=0L, const char*label=0L) const;
+  virtual QWidget* createWidget(QWidget* parent=0L, const char*label=0L);
 public slots:
   void changed(const QColor&);
 };
@@ -295,9 +287,7 @@ public:
   /**
      Create labeled QPushButton connected to KFontDialog.
   */
-  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L) const;
-public slots:
-  void activated();
+  virtual QWidget* createWidget(QWidget* parent=0L, const char* label=0L);
 };
 
 #endif

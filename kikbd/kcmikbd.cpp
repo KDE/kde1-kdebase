@@ -38,6 +38,7 @@ public:
   void init();
   void apply();
   void help();
+  void defaultValues();
   KiKbdGeneralWidget *general;
   KiKbdStartupWidget *startup;
   KiKbdStyleWidget   *style;
@@ -47,12 +48,12 @@ KiKbdConfig *kikbdConfig;
 KiKbdApplication::KiKbdApplication(int &argc, char **argv)
   : KControlApplication(argc, argv, "kikbd")
 {
-  //--- read configuration
-  kikbdConfig = new KiKbdConfig();
-  kikbdConfig->loadConfig();
-
   if (runGUI())
     {
+      //--- read configuration
+      kikbdConfig = new KiKbdConfig();
+      kikbdConfig->loadConfig();
+
       startKikbd = (QString("-startkikbd")==argv[1])?TRUE:FALSE;
       mainWidget()->setIcon(getIconLoader()->loadMiniIcon("kikbd.xpm"));
       
@@ -60,7 +61,6 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 	 General
       */
 	general = new KiKbdGeneralWidget(dialog);
-	general->loadSettings();
 	addPage(general, i18n("&General"), "");
 
       /**
@@ -83,11 +83,10 @@ KiKbdApplication::KiKbdApplication(int &argc, char **argv)
 }
 void KiKbdApplication::init()
 {
-  if(kikbdConfig->getAutoStart()) system("kikbd &");
+  if(KiKbdConfig::readAutoStart()) system("kikbd &");
 }
 void KiKbdApplication::apply()
 {
-  general->applySettings();
   kikbdConfig->saveConfig();
   if(startKikbd) {
     system("kikbd&");
@@ -95,6 +94,12 @@ void KiKbdApplication::apply()
   }
   else
     system("kikbd -reconfig");
+}
+void KiKbdApplication::defaultValues()
+{
+  kikbdConfig->setDefaults();
+  kikbdConfig->dataChanged();
+  style->aboutToShow(0L);
 }
 void KiKbdApplication::help()
 {

@@ -36,7 +36,9 @@
 #include <kiconloader.h>
 #include <kmsgbox.h>
 #include <kcolordlg.h>
+
 #include "widgets.h"
+#include "widgets.moc.h"
 
 //====================================================
 // helper functions
@@ -46,6 +48,16 @@
 //
 void addToolTip(QWidget* w, const char* tip) {
   QToolTip::add(w, klocale->translate(tip));
+}
+QWidget* mkButton(QWidget* parent, QBoxLayout* box, const char* slot,
+		      QObject* obj, const char* label, const char* tip)
+{
+  QPushButton* but = new QPushButton(i18n(label), parent);
+  but->setMinimumSize(but->sizeHint());
+  box->addWidget(but);
+  addToolTip(but, tip);
+  QObject::connect(but, SIGNAL(clicked()), obj, slot);
+  return but;
 }
 //
 // This function draw presentation of the given keyboard map
@@ -76,6 +88,180 @@ QPixmap mapLine(KiKbdMapConfig* map) {
   
   return pm.setMask(bm), pm;
 }
+//=====================================================
+// widgets for configure list of maps
+//=====================================================
+KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
+  :KConfigObjectWidget(parent, new KConfigObject()),
+   mapsStr(kikbdConfig->getMaps())
+{
+  *kikbdConfig << object;
+
+  QVBoxLayout *mbox  = new QVBoxLayout(parent, 20);
+  QAccel      *accel = new QAccel(parent);
+  QBoxLayout  *hbox, *vbox;
+  QWidget     *wid;
+  
+  //--- keyboards group
+  hbox = new QHBoxLayout();
+  mbox->addLayout(hbox, 20);
+
+  addToolTip(mapsList=new QListBox(parent), 
+	     gettext("List of active keyboard maps"));
+  hbox->addWidget(mapsList, 20);
+
+  vbox = new QVBoxLayout(5);
+  hbox->addLayout(vbox);
+
+  // add
+  wid = mkButton(parent, vbox, SLOT(addMap()), this, gettext("&Add"),
+		 gettext("Adding new keyboard map"));
+  accel->connectItem(accel->insertItem(Key_Insert), wid, SLOT(animateClick()));
+  // delete
+  wid = mkButton(parent, vbox, SLOT(deleteMap()), this,
+		 gettext("&Delete"), gettext("Remove selected keyboard map"));
+  connect(this, SIGNAL(activateDelete(bool)), wid, SLOT(setEnabled(bool)));
+  accel->connectItem(accel->insertItem(Key_Delete), wid, SLOT(animateClick()));
+  // up
+  wid = mkButton(parent, vbox, SLOT(upMap()), this,
+		 gettext("&Up"), gettext("Up selected keyboard map"));
+  connect(this, SIGNAL(activateUp(bool)), wid, SLOT(setEnabled(bool)));
+  // down
+  wid = mkButton(parent, vbox, SLOT(downMap()), this,
+		 gettext("Do&wn"), gettext("Down selected keyboard map"));
+  connect(this, SIGNAL(activateDown(bool)), wid, SLOT(setEnabled(bool)));
+  // info
+  wid = mkButton(parent, vbox, SLOT(infoMap()), this,
+		 gettext("&Info"), 
+		 gettext("Display information for selected keyboard map"));
+  connect(this, SIGNAL(infoClick()), wid, SLOT(animateClick())); 
+  connect(this, SIGNAL(activateInfo(bool)), wid, SLOT(setEnabled(bool)));
+
+  vbox->addStretch(5);
+  mbox->
+    addWidget(wid=kikbdConfig->
+	      createWidget(&kikbdConfig->getHotList(), parent,
+			   gettext("Use \"&hotlist\""),
+			   gettext("Use only default and last active "
+				   "keyboard maps to switching from keyboard")));
+  connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
+  dataChanged();
+}
+void KiKbdMapsWidget::dataChanged()
+{
+  QStrList list = mapsStr;
+  mapsStr.clear();
+  mapsList->clear();
+  unsigned i;for(i=0; i<list.count(); addMap(list.at(i++)));
+  if(list.count() > 0) mapsList->setCurrentItem(0);
+  chkActivate();
+  emit listChanged();
+}
+void KiKbdMapsWidget::selectionUp()
+{
+  int current = mapsList->currentItem();
+  if(current > 0) mapsList->setCurrentItem(current-1);
+}
+void KiKbdMapsWidget::selectionDown()
+{
+  int current = mapsList->currentItem();
+  if(current < (int)mapsList->count()-1) mapsList->setCurrentItem(current+1);
+}
+void KiKbdMapsWidget::chkActivate()
+{
+  int current = mapsList->currentItem(), count = mapsList->count();
+  emit activateDelete(current >= 0);
+  emit activateUp    (current > 0);
+  emit activateDown  (current < count-1);
+  emit activateInfo  (current >= 0);
+  emit activateHot   (count > 2);
+}
+void KiKbdMapsWidget::addMap(const char* name)
+{
+  int current = mapsList->currentItem();
+  mapsList->insertItem(mapLine(kikbdConfig->getMap(name)),
+		       current==-1?-1:current+1);
+  mapsStr.insert(current==-1?0:current+1, name);
+  mapsList->setCurrentItem(current==-1?0:current+1);
+
+  chkActivate();
+  emit listChanged();
+}
+void KiKbdMapsWidget::addMap()
+{
+  //--- create list of map to add
+  QStrList list = kikbdConfig->availableMaps();
+  QStrList mapsToAdd;
+  unsigned i;for(i=0; i<list.count(); i++)
+    if(mapsStr.find(list.at(i)) == -1) {
+      mapsToAdd.inSort(list.at(i));
+    }
+  if(mapsToAdd.count() == 0) {
+    KMsgBox::message(0, i18n("Adding Keyboard"),
+		     i18n("There is no more keyboard maps"));
+    return;
+  }
+
+  KiKbdAddDialog addDialog(this);
+  if(addDialog.exec(mapsToAdd))
+    addMap(mapsToAdd.at(addDialog.selectedMap()));
+}
+void KiKbdMapsWidget::deleteMap()
+{
+  int current = mapsList->currentItem();
+  mapsStr.remove(current);
+  mapsList->removeItem(current);
+  if(mapsList->count() > 0)
+    mapsList->setCurrentItem(current==0?current:current-1);
+  chkActivate();
+  emit listChanged();
+}
+void KiKbdMapsWidget::changeMap(int dif)
+{
+  int i2 = mapsList->currentItem();
+  int i1 = i2 + dif;
+  QString name  = mapsStr.at(i1);
+  mapsStr.remove(i1);
+  mapsStr.insert(i2, name);
+
+  const QPixmap pixmap = *mapsList->pixmap(i1);
+  mapsList->changeItem(*mapsList->pixmap(i2), i1);
+  mapsList->changeItem(pixmap, i2);
+  mapsList->setCurrentItem(i1);
+  chkActivate();
+}
+void KiKbdMapsWidget::infoMap()
+{
+  QDialog dialog(this, "", TRUE);
+  dialog.setCaption(i18n("Keyboard map information"));
+
+  QBoxLayout *box;
+  QBoxLayout *topLayout = new QVBoxLayout(&dialog, 5);
+  QGroupBox  *group = new QGroupBox("", &dialog);
+  topLayout->addWidget(group, 20);
+  // label
+  KiKbdMapInfoWidget *label = new KiKbdMapInfoWidget(group);
+  label->changeMap(mapsStr.at(mapsList->currentItem()));
+  box = new QVBoxLayout(group, 10);
+  box->addWidget(label, 10);
+  box->addStretch(1);
+  box->activate();
+  // ok button
+  QPushButton *ok = new QPushButton(i18n("OK"), &dialog);
+  ok->setFixedSize(ok->sizeHint());
+  ok->setFocus();
+  ok->setDefault(TRUE);
+  connect(ok, SIGNAL(clicked()), &dialog, SLOT(accept()));
+  topLayout->addLayout(box=new QHBoxLayout(5));
+  box->addStretch(10);
+  box->addWidget(ok);
+  box->addStretch(10);
+
+  topLayout->activate();
+  dialog.resize(0, 0);
+  dialog.exec();
+}
+
 //=====================================================
 // custom dialogs
 //=====================================================
@@ -170,70 +356,21 @@ void KiKbdMapInfoWidget::changeMap(const char* map)
 //=====================================================
 // configurations widgets
 //=====================================================
-QWidget* mkButton(QWidget* parent, QBoxLayout* box, const char* slot,
-		      QObject* obj, const char* label, const char* tip)
-{
-  QPushButton* but = new QPushButton(i18n(label), parent);
-  but->setMinimumSize(but->sizeHint());
-  box->addWidget(but);
-  addToolTip(but, tip);
-  QObject::connect(but, SIGNAL(clicked()), obj, slot);
-  return but;
-}
 KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
-  :KConfigWidget(parent, "general"), mapsStr(kikbdConfig->getMaps())
+  :QWidget(parent)
 {
   QBoxLayout  *topLayout = new QVBoxLayout(this, 20);
   QGroupBox   *group = new QGroupBox(i18n("Keyboard maps"), this);
   QVBoxLayout *mbox  = new QVBoxLayout(group, 20);
   QAccel      *accel = new QAccel(parent);
-  QBoxLayout  *hbox, *vbox;
+  QBoxLayout  *hbox;
   QWidget     *wid;
   
   //--- keyboards group
   topLayout->addWidget(group, 10);
-  hbox = new QHBoxLayout();
-  mbox->addLayout(hbox, 20);
-
-  addToolTip(mapsList=new QListBox(group), 
-	     gettext("List of active keyboard maps"));
-  hbox->addWidget(mapsList, 20);
-
-  vbox = new QVBoxLayout(5);
-  hbox->addLayout(vbox);
-
-  // add
-  wid = mkButton(group, vbox, SLOT(addMap()), this, gettext("&Add"),
-		 gettext("Adding new keyboard map"));
-  accel->connectItem(accel->insertItem(Key_Insert), wid, SLOT(animateClick()));
-  // delete
-  wid = mkButton(group, vbox, SLOT(deleteMap()), this,
-		 gettext("&Delete"), gettext("Remove selected keyboard map"));
-  connect(this, SIGNAL(activateDelete(bool)), wid, SLOT(setEnabled(bool)));
-  accel->connectItem(accel->insertItem(Key_Delete), wid, SLOT(animateClick()));
-  // up
-  wid = mkButton(group, vbox, SLOT(upMap()), this,
-		 gettext("&Up"), gettext("Up selected keyboard map"));
-  connect(this, SIGNAL(activateUp(bool)), wid, SLOT(setEnabled(bool)));
-  // down
-  wid = mkButton(group, vbox, SLOT(downMap()), this,
-		 gettext("Do&wn"), gettext("Down selected keyboard map"));
-  connect(this, SIGNAL(activateDown(bool)), wid, SLOT(setEnabled(bool)));
-  // info
-  wid = mkButton(group, vbox, SLOT(infoMap()), this,
-		 gettext("&Info"), 
-		 gettext("Display information for selected keyboard map"));
-  connect(this, SIGNAL(infoClick()), wid, SLOT(animateClick())); 
-  connect(this, SIGNAL(activateInfo(bool)), wid, SLOT(setEnabled(bool)));
-
-  vbox->addStretch(5);
-  mbox->
-    addWidget(wid=kikbdConfig->
-	      createWidget(&kikbdConfig->getHotList(), group,
-			   gettext("Use \"&hotlist\""),
-			   gettext("Use only default and last active "
-				   "keyboard maps to switching from keyboard")));
-  connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
+  KiKbdMapsWidget *maps = new KiKbdMapsWidget(group);
+  mbox->addWidget(maps);
+  connect(maps, SIGNAL(listChanged()), SLOT(listChanged()));
 
   //--- switches group
   group = new QGroupBox(i18n("Switch and Alt Switch"), this);
@@ -269,130 +406,17 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   topLayout->addWidget(group);
 
   // connections
-  connect(mapsList, SIGNAL(highlighted(int)), SLOT(highlighted(int)));
-  connect(mapsList, SIGNAL(selected(int)), SLOT(selected(int)));
   accel->connectItem(accel->insertItem(Key_Up), this, SLOT(selectionUp()));
   accel->connectItem(accel->insertItem(Key_Down), this, 
 		     SLOT(selectionDown()));
-
-}
-void KiKbdGeneralWidget::selectionUp()
-{
-  int current = mapsList->currentItem();
-  if(current > 0) mapsList->setCurrentItem(current-1);
-}
-void KiKbdGeneralWidget::selectionDown()
-{
-  int current = mapsList->currentItem();
-  if(current < (int)mapsList->count()-1) mapsList->setCurrentItem(current+1);
+  newSwitch(0L);
 }
 void KiKbdGeneralWidget::newSwitch(const char*)
 {
   emit activateAltSwitch((!kikbdConfig->oneKeySwitch())
 			 && kikbdConfig->hasAltKeys());
 }
-void KiKbdGeneralWidget::loadSettings()
-{
-  QStrList list = mapsStr;
-  mapsStr.clear();
-  unsigned i;for(i=0; i<list.count(); addMap(list.at(i++)));
-  if(list.count() > 0) mapsList->setCurrentItem(0);
-  else chkActivate();
-}
-void KiKbdGeneralWidget::chkActivate()
-{
-  int current = mapsList->currentItem(), count = mapsList->count();
-  emit activateDelete(current >= 0);
-  emit activateUp    (current > 0);
-  emit activateDown  (current < count-1);
-  emit activateInfo  (current >= 0);
-  emit activateHot   (count > 2);
-}
-void KiKbdGeneralWidget::addMap(const char* name)
-{
-  int current = mapsList->currentItem();
-  mapsList->insertItem(mapLine(kikbdConfig->getMap(name)),
-		       current==-1?-1:current+1);
-  mapsStr.insert(current==-1?0:current+1, name);
-  mapsList->setCurrentItem(current==-1?0:current+1);
 
-  newSwitch(0L);
-  chkActivate();
-}
-void KiKbdGeneralWidget::deleteMap()
-{
-  int current = mapsList->currentItem();
-  mapsStr.remove(current);
-  newSwitch(0L);
-  mapsList->removeItem(current);
-  if(mapsList->count() > 0)
-    mapsList->setCurrentItem(current==0?current:current-1);
-  chkActivate();
-}
-void KiKbdGeneralWidget::changeMap(int dif)
-{
-  int i2 = mapsList->currentItem();
-  int i1 = i2 + dif;
-  QString name  = mapsStr.at(i1);
-  mapsStr.remove(i1);
-  mapsStr.insert(i2, name);
-
-  const QPixmap pixmap = *mapsList->pixmap(i1);
-  mapsList->changeItem(*mapsList->pixmap(i2), i1);
-  mapsList->changeItem(pixmap, i2);
-  mapsList->setCurrentItem(i1);
-  chkActivate();
-}
-void KiKbdGeneralWidget::infoMap()
-{
-  QDialog dialog(this, "", TRUE);
-  dialog.setCaption(i18n("Keyboard map information"));
-
-  QBoxLayout *box;
-  QBoxLayout *topLayout = new QVBoxLayout(&dialog, 5);
-  QGroupBox  *group = new QGroupBox("", &dialog);
-  topLayout->addWidget(group, 20);
-  // label
-  KiKbdMapInfoWidget *label = new KiKbdMapInfoWidget(group);
-  label->changeMap(mapsStr.at(mapsList->currentItem()));
-  box = new QVBoxLayout(group, 10);
-  box->addWidget(label, 10);
-  box->addStretch(1);
-  box->activate();
-  // ok button
-  QPushButton *ok = new QPushButton(i18n("OK"), &dialog);
-  ok->setFixedSize(ok->sizeHint());
-  ok->setFocus();
-  ok->setDefault(TRUE);
-  connect(ok, SIGNAL(clicked()), &dialog, SLOT(accept()));
-  topLayout->addLayout(box=new QHBoxLayout(5));
-  box->addStretch(10);
-  box->addWidget(ok);
-  box->addStretch(10);
-
-  topLayout->activate();
-  dialog.resize(0, 0);
-  dialog.exec();
-}
-void KiKbdGeneralWidget::addMap()
-{
-  //--- create list of map to add
-  QStrList list = kikbdConfig->availableMaps();
-  QStrList mapsToAdd;
-  unsigned i;for(i=0; i<list.count(); i++)
-    if(mapsStr.find(list.at(i)) == -1) {
-      mapsToAdd.inSort(list.at(i));
-    }
-  if(mapsToAdd.count() == 0) {
-    KMsgBox::message(0, i18n("Adding Keyboard"),
-		     i18n("There is no more keyboard maps"));
-    return;
-  }
-
-  KiKbdAddDialog addDialog(this);
-  if(addDialog.exec(mapsToAdd))
-    addMap(mapsToAdd.at(addDialog.selectedMap()));
-}
 void KiKbdGeneralWidget::advanced()
 {
   QDialog dialog(this, "", TRUE);
@@ -410,7 +434,7 @@ void KiKbdGeneralWidget::advanced()
   hbox = new QHBoxLayout();
   groupLayout->addLayout(hbox);
   // emulate capslock
-  hbox->addWidget(kikbdConfig->
+  hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getEmuCapsLock(), group,
 			       gettext("Emulate &CapsLock"), 
 			       gettext("Emulate XServer "
@@ -548,12 +572,10 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
 }
 void KiKbdStyleWidget::aboutToShow(const char* page)
 {
-  if(QString(page) == i18n("&Style")) {
-    emit enableCaps(kikbdConfig->getEmuCapsLock());
-    emit enableAlternate(!kikbdConfig->oneKeySwitch() 
-			 && kikbdConfig->hasAltKeys()
-			 && strcmp(kikbdConfig->getAltSwitch().at(0), "None"));
-  }
+  emit enableCaps(kikbdConfig->getEmuCapsLock());
+  emit enableAlternate(!kikbdConfig->oneKeySwitch() 
+		       && kikbdConfig->hasAltKeys()
+		       && strcmp(kikbdConfig->getAltSwitch().at(0), "None"));
 }
 
 //=========================================================

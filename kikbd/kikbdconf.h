@@ -70,39 +70,42 @@ class KiKbdConfig: public KObjectConfig {
   Q_OBJECT
  public:
   enum {Input_Global, Input_Window, Input_Class};
+  enum {Place_TopLeft, Place_TopRight, Place_BottomLeft, Place_Bottom_Right};
  protected:
   QList<KiKbdMapConfig> allMaps;
   QStrList        maps;
-  bool            keyboardBeep, hotList;
-  bool            autoMenu, emuCapsLock;
-  bool            custFont, saveClasses;
-  bool            autoStart, docking;
-  int             input;
+  bool            keyboardBeep, hotList, autoStart, docking;
+  bool            autoMenu, emuCapsLock, custFont, saveClasses;
+  int             input, autoStartPlace;
   QString         switchComb, altSwitchComb;
-  QString         autoStartPlace;
   QColor          capsColor, altColor, forColor;
   QFont           font;
  public:
   KiKbdConfig();
   ~KiKbdConfig(){}
   /*--- bool values ---*/
-  const bool& getKeyboardBeep() const {return keyboardBeep; }
-  const bool& getAutoMenu    () const {return autoMenu;     }
-  const bool& getEmuCapsLock () const {return emuCapsLock;  }
-  const bool& getCustFont    () const {return custFont;     }
-  const bool& getSaveClasses () const {return saveClasses;  }
-  const bool& getAutoStart   () const {return autoStart;    }
-  const bool& getDocking     () const {return docking;      }
-  const bool& getHotList     () const {return hotList;      }
-  const int&  getInput       () const {return input;        }
-  const QColor&  getCapsColor  () const {return capsColor;}
-  const QColor&  getAltColor   () const {return altColor; }
-  const QColor&  getForColor   () const {return forColor; }
-  const QFont&   getFont       () const {return font;     }
-  const QString& getAutoStartPlace () const {return autoStartPlace;}
+  const bool&    getKeyboardBeep() const {return keyboardBeep; }
+  const bool&    getAutoMenu    () const {return autoMenu;     }
+  const bool&    getEmuCapsLock () const {return emuCapsLock;  }
+  const bool&    getCustFont    () const {return custFont;     }
+  const bool&    getSaveClasses () const {return saveClasses;  }
+  const bool&    getAutoStart   () const {return autoStart;    }
+  const bool&    getDocking     () const {return docking;      }
+  const bool&    getHotList     () const {return hotList;      }
+  const int&     getInput       () const {return input;        }
+  const QColor&  getCapsColor   () const {return capsColor;    }
+  const QColor&  getAltColor    () const {return altColor;     }
+  const QColor&  getForColor    () const {return forColor;     }
+  const QFont&   getFont        () const {return font;         }
+  const int& getAutoStartPlace  () const {return autoStartPlace;}
+  QStrList& getMaps() {return maps;}
   /*--- switches ---*/
-  QStrList getSwitch()    {return KObjectConfig::separate(switchComb, '+');}
-  QStrList getAltSwitch() {return KObjectConfig::separate(altSwitchComb, '+');}
+  QStrList getSwitch()    const {
+    return KObjectConfig::separate(switchComb, '+');
+  }
+  QStrList getAltSwitch() const {
+    return KObjectConfig::separate(altSwitchComb, '+');
+  }
   /*--- combo values ---*/
   QWidget* switchWidget(QWidget* parent, const char* tip) {
     return createWidget(&switchComb, parent, 0L, tip);
@@ -110,20 +113,25 @@ class KiKbdConfig: public KObjectConfig {
   QWidget* altSwitchWidget(QWidget* parent, const char* tip) {
     return createWidget(&altSwitchComb, parent, 0L, tip);
   }
- public:
-  static void error(const char*, const char* str=0, const char* str2=0);
-  static void message(const char*, const char* str=0);
-  /*--- global maps ---*/
-  QStrList availableMaps();
-  QStrList& getMaps() {return maps;}
   KiKbdMapConfig* getMap(const char* name);
-  bool hasAltKeys();
-  bool oneKeySwitch();
+  bool            hasAltKeys();
+  bool            oneKeySwitch() const;
+  void            setDefaults();
   virtual void loadConfig();
+ public:
+  static bool     readAutoStart();
+  static QStrList availableMaps();
  public slots:
   void newUserRc();
   void olderVersion(float);
   void newerVersion(float);
+};
+
+class KiKbdMsgBox {
+ public:
+  static void error(const char* form, const char* s1=0L, const char *s2=0L);
+  static void warning(const char* form, const char* s1=0L, const char *s2=0L);
+  static int  yesNo(const char* form, const char* s1=0L, const char *s2=0L);
 };
 
 #define gettext(text) text

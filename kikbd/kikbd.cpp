@@ -35,11 +35,13 @@
 #include <kmsgbox.h>
 #include <kwm.h>
 
-#include "kikbd.h"
 #include "keytrans.h"
 #include "kconfobjs.h"
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
+
+#include "kikbd.h"
+#include "kikbd.moc.h"
 
 //=========================================================
 // constant definitions
@@ -106,7 +108,8 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   */
   Window win = findKiKbdWindow();
   if(win)
-    error(i18n("KDE International Keyboard already started on this display."));
+    KiKbdMsgBox::error(gettext("KDE International Keyboard already "
+			       "started on this display."));
 
   /**
      construct main widget
@@ -323,11 +326,11 @@ void KiKbdApplication::loadConfig()
     secondKey = KeyTranslate::stringToSym(switchKeys.at(1));
   if(kikbdConfig.oneKeySwitch()) {
     if(!removeModifier(firstKey))
-      warning(i18n("Can not remove %s from Modifiers.\n"),
-	      switchKeys.at(0));
+      KiKbdMsgBox::warning(gettext("Can not remove %s from Modifiers.\n"),
+			   switchKeys.at(0));
     if(!addModifier(firstKey, 5))
-      warning(i18n("Can not add %s to Modifier number 3.\n"),
-	      switchKeys.at(0));    
+      KiKbdMsgBox::warning(gettext("Can not add %s to Modifier number 3.\n"),
+			   switchKeys.at(0));    
   }
   if((!kikbdConfig.oneKeySwitch()) && kikbdConfig.hasAltKeys()) {
     QStrList altSwitchKeys = kikbdConfig.getAltSwitch();
@@ -336,8 +339,8 @@ void KiKbdApplication::loadConfig()
 	 try to remove this key from modifier
       */
       if(!removeModifier(KeyTranslate::stringToSym(altSwitchKeys.at(0))))
-	warning(i18n("Can not remove %s from Modifiers.\n"),
-		altSwitchKeys.at(0));
+	KiKbdMsgBox::warning(gettext("Can not remove %s from Modifiers.\n"),
+			       altSwitchKeys.at(0));
       /**
 	 try to add this key to mod3
       */
@@ -348,8 +351,9 @@ void KiKbdApplication::loadConfig()
 					  "Mode_switch", 1);
 	  if(!keyMaps.current()->changeKeySym(altSwitchKeys.at(0),
 					      "Mode_switch", 0)) {
-	    warning(i18n("Can not set Mode Switch as %s"
-			      " for keyboard %s.\nAlt symbols disabled"),
+	    KiKbdMsgBox::warning(gettext("Can not set Mode Switch as %s"
+					 " for keyboard %s.\nAlt symbols "
+					 "disabled"),
 		    altSwitchKeys.at(0), keyMaps.current()->getLabel());
 	    altKey = NoSymbol;
 	    break;
@@ -369,8 +373,8 @@ void KiKbdApplication::loadConfig()
   if(kikbdConfig.getEmuCapsLock()) {
     capsKey = KeyTranslate::stringToSym("Caps_Lock");
     if(!removeModifier(capsKey)) {
-      warning(i18n("Can not remove Caps Lock from Modifiers.\n"
-			"Caps Lock Emulation disabled"));
+      KiKbdMsgBox::warning(gettext("Can not remove Caps Lock from Modifiers.\n"
+				   "Caps Lock Emulation disabled"));
       capsKey = NoSymbol;
     }
   }
@@ -485,13 +489,19 @@ void KiKbdApplication::loadConfig()
   if(!docked) {
     if(isInit && !KWM::isKWMInitialized()) sleep(1);
     if(KWM::isKWMInitialized()) {
-      QString geom = kikbdConfig.getAutoStartPlace();
+      int geom = kikbdConfig.getAutoStartPlace();
       QRect rec = KWM::getWindowRegion(KWM::currentDesktop());
       int x = rec.x(), y = rec.y();
-      if(geom == "topright" || geom == "botright")
+      switch(geom) {
+      case KiKbdConfig::Place_TopRight    :
+      case KiKbdConfig::Place_Bottom_Right:
 	x = rec.x() + rec.width() - mainWidget()->width(); y = rec.y();
-      if(geom == "botleft" || geom == "botright")
+      }
+      switch(geom) {
+      case KiKbdConfig::Place_Bottom_Right:
+      case KiKbdConfig::Place_BottomLeft  :
 	y = rec.y() + rec.height() - mainWidget()->height();
+      }
       mainWidget()->move(x, y);
     }
   }
@@ -912,26 +922,6 @@ void KiKbdApplication::toggleAlt(bool on)
   if((isToggleAlt=on)) button->setPalette(altPalette);
   else if(isToggleCaps) button->setPalette(capsPalette);
   else button->setPalette(normalPalette);
-}
-/**
-   we use this to show dialog with error
-*/
-void KiKbdApplication::error(const char* form, const char* s1, const char *s2)
-{
-  QString msg(128);
-  msg.sprintf(form, s1, s2);
-  KMsgBox::message(0, i18n("kikbd error"), msg, KMsgBox::STOP);
-  ::exit(1);
-}
-/**
-   we use this to show dialog with error
-*/
-void KiKbdApplication::warning(const char* form, const char* s1, 
-			       const char *s2)
-{
-  QString msg(128);
-  msg.sprintf(form, s1, s2);
-  KMsgBox::message(0, i18n("kikbd warning"), msg);
 }
 /**
    when we use global popup menu (by holding switch keys

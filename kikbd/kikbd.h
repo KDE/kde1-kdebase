@@ -29,6 +29,7 @@
 #include <qpopmenu.h>
 #include <kapp.h>
 #include <X11/Xlib.h>
+
 #include "keymap.h"
 #include "kikbdconf.h"
 
@@ -88,9 +89,6 @@ class WindowClassList: public QListT<WindowClassEntry> {
 */
 class KiKbdApplication: public KApplication {
   Q_OBJECT
- public:
-  static void error(const char*, const char* s1=0, const char* s2=0);
-  static void warning(const char*, const char* s1=0, const char* s2=0);
  protected:
   /**
      internal variables

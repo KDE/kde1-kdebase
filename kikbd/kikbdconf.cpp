@@ -30,8 +30,9 @@
 #include <kmsgbox.h>
 #include <kiconloader.h> 
 
-#include "kikbdconf.h"
 #include "kconfobjs.h"
+#include "kikbdconf.h"
+#include "kikbdconf.moc.h"
 
 //=========================================================
 //    data
@@ -163,28 +164,18 @@ KiKbdConfig::KiKbdConfig():KObjectConfig(UserFromSystemRc)
 }
 void KiKbdConfig::loadConfig()
 {
-  // default values
-  keyboardBeep = hotList = autoStart = docking = TRUE;
-  autoMenu = emuCapsLock = custFont = saveClasses = FALSE;
-  switchComb = altSwitchComb = autoStartPlace = "";
-  input = 0;
-  capsColor = QColor(0, 128, 128);
-  altColor  = QColor(255, 255, 0);
-  forColor  = black;
-
+  setDefaults();
   KObjectConfig::loadConfig();
 }
 void ask(const char* msg)
 {
-  KiKbdConfig::message(i18n(msg));
   if(QString(kapp->argv()[0]).find("kikbd") != -1) {
-    if(KMsgBox::yesNo(0L, "kikbd",
-		      i18n("Do you want to start Configuration?"))
-       == 1) {
+    if(KiKbdMsgBox::yesNo(gettext("%s\nDo you want to start "
+				  "Configuration?"), msg)) {
       system("kcmikbd -startkikbd&");
       ::exit(0);
     }
-  }
+  } else KiKbdMsgBox::warning(msg);
 }
 void KiKbdConfig::newUserRc()
 {
@@ -207,27 +198,6 @@ void KiKbdConfig::newerVersion(float)
     doneCheck = TRUE;
   }
 }
-QStrList KiKbdConfig::availableMaps()
-{
-  QStrList list, dirs;
-  dirs.append(kapp->kde_datadir() + "/kikbd");
-  dirs.append(kapp->localkdedir() + "/share/apps/kikbd");
-  unsigned i;for(i=0; i<dirs.count(); i++)
-    {
-      QDir dir(dirs.at(i));  
-      if(!dir.exists()) continue;
-      QStrList entry = *dir.entryList("*.kimap",
-				     QDir::Files | QDir::Readable,
-				     QDir::Name | QDir::IgnoreCase);
-      unsigned j;for(j=0; j<entry.count(); j++)
-	{
-	  QString name = entry.at(j);
-	  name.resize(name.find(".")+1);
-	  if(list.find(name) == -1) list.inSort(name);
-	}
-    }
-  return list;
-}
 KiKbdMapConfig* KiKbdConfig::getMap(const char* name)
 {
   unsigned i;for(i=0; i<allMaps.count(); i++)
@@ -241,23 +211,57 @@ bool KiKbdConfig::hasAltKeys()
     if(getMap(maps.at(i))->getHasAltKeys()) return TRUE;
   return FALSE;
 }
-bool KiKbdConfig::oneKeySwitch()
+void KiKbdConfig::setDefaults()
+{
+  keyboardBeep = hotList     = autoStart = docking     = TRUE;
+  autoMenu     = emuCapsLock = custFont  = saveClasses = FALSE;
+  switchComb     = "Control_R+Shift_R";
+  altSwitchComb  = "Alt_R";
+  autoStartPlace = input = 0;
+  capsColor = QColor(0, 128, 128);
+  altColor  = QColor(255, 255, 0);
+  forColor  = black;
+  font      = QFont("Helvetica");
+  maps.clear(); maps.append("en");
+}
+bool KiKbdConfig::oneKeySwitch() const
 {
   return (!switchComb.contains('+')) && (switchComb != "None");
 }
-void KiKbdConfig::error(const char* form, const char* str,
-			const char* str2)
+QStrList KiKbdConfig::availableMaps()
 {
-  QString msg(128);
-  msg.sprintf(form, str, str2);
-  if(KMsgBox::yesNo(0, i18n("kikbd configuration error"), msg) == 2) 
-    ::exit(1);
+  static QStrList *list = 0L;
+
+  if(list) return *list;
+
+  list = new QStrList();
+  QStrList dirs;
+  dirs.append(kapp->kde_datadir() + "/kikbd");
+  dirs.append(kapp->localkdedir() + "/share/apps/kikbd");
+  unsigned i;for(i=0; i<dirs.count(); i++)
+    {
+      QDir dir(dirs.at(i));  
+      if(!dir.exists()) continue;
+      QStrList entry = *dir.entryList("*.kimap",
+				     QDir::Files | QDir::Readable,
+				     QDir::Name | QDir::IgnoreCase);
+      unsigned j;for(j=0; j<entry.count(); j++)
+	{
+	  QString name = entry.at(j);
+	  name.resize(name.find(".")+1);
+	  if(list->find(name) == -1) list->inSort(name);
+	}
+    }
+  return *list;
 }
-void KiKbdConfig::message(const char* form, const char* str)
+bool KiKbdConfig::readAutoStart()
 {
-  QString msg(128);
-  msg.sprintf(form, str);
-  KMsgBox::message(0L, i18n("kikbd configuration message"), msg);
+  KObjectConfig config(AppRc);
+  bool autoStart = FALSE;
+  config << config.setGroup(confStartupGroup)
+	 << new KConfigBoolObject(confStringAutoStart, autoStart);
+  config.loadConfig();
+  return autoStart;
 }
 
 //=========================================================
@@ -355,14 +359,9 @@ const QString KiKbdMapConfig::getInfo() const
 const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString label;
-  label += language + " ";
-  label += i18n("language");
-  if(!charset.isEmpty()) {
-    label += ", " + charset + " ";
-    label += i18n("charset");
-  }
-  label += ".";
-  return label;
+  label = language + " " + i18n("language");
+  if(!charset.isEmpty()) label += ", " + charset + " " + i18n("charset");
+  return label + ".";
 }
 const QColor KiKbdMapConfig::getColor() const
 {
@@ -370,21 +369,53 @@ const QColor KiKbdMapConfig::getColor() const
 }
 const QPixmap KiKbdMapConfig::getIcon() const
 {
-  KIconLoader loader;
-  QPixmap pm(21, 14);
-  QPainter p;
+  static KIconLoader *loader = 0L;
+  if(!loader) {
+    loader = kapp->getIconLoader();
+    loader->insertDirectory(0, kapp->kde_datadir()+"/kcmlocale/pics/");
+  }
 
-  loader.insertDirectory(0, kapp->kde_datadir()+"/kcmlocale/pics/");
-  QPixmap flag(loader.loadIcon(QString("flag_")+locale+".gif", 21, 14));
+  QPainter p;
+  QPixmap  pm(21, 14);
+  QPixmap  flag(loader->loadIcon(QString("flag_")+locale+".gif", 21, 14));
 
   pm.fill(white);
   p.begin(&pm);
   p.fillRect(0, 0, 20, 13, gray);
-  if(!flag.isNull())
-    p.drawPixmap(0, 0, flag);
-  p.setPen(black);
-  p.drawText(0, 0, 20, 13, AlignCenter, label);
+  if(!flag.isNull()) p.drawPixmap(0, 0, flag);
+  p.setPen(black), p.drawText(0, 0, 20, 13, AlignCenter, label);
   p.end();
 
   return pm;
+}
+//=========================================================
+// message box
+//=========================================================
+/**
+   we use this to show dialog with error
+*/
+void KiKbdMsgBox::error(const char* form, const char* s1, const char *s2)
+{
+  QString msg(128);
+  msg.sprintf(form, i18n(s1), i18n(s2));
+  KMsgBox::message(0, i18n("International keyboard ERROR"), msg,
+		   KMsgBox::STOP);
+  ::exit(1);
+}
+/**
+   we use this to show dialog with error
+*/
+void KiKbdMsgBox::warning(const char* form, const char* s1, 
+			  const char *s2)
+{
+  QString msg(128);
+  msg.sprintf(form, i18n(s1), i18n(s2));
+  KMsgBox::message(0, i18n("International keyboard warning"), msg);
+}
+
+int KiKbdMsgBox::yesNo(const char* form, const char* s1, const char *s2)
+{
+  QString msg(128);
+  msg.sprintf(form, i18n(s1), i18n(s2));
+  return KMsgBox::yesNo(0, i18n("International keyboard question"), msg) == 1;
 }
