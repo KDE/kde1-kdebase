@@ -1698,8 +1698,17 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 {
 
     Client *c = manager->getClient(ev->xbutton.window);
-    if (c)
+    if (c) {
 	c->stopAutoraise();
+    
+	if (c->isMenuBar()) {
+	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	    XUngrabPointer(qt_xdisplay(), CurrentTime);
+	    XSync(qt_xdisplay(), false);
+	    return true;
+	}
+    }
+	
 
     if (c && ev->xbutton.window == c->window){
 	bool no_replay = false;
