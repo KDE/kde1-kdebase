@@ -1,13 +1,16 @@
+# KTranslator Generated File
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-28 09:54+0100\n"
 "POT-Creation-Date: 1998-12-06 01:14+0100\n"
-"PO-Revision-Date: 1998-02-03 15:00+0100\n"
-"Last-Translator: Rizzi Andrea <Bilibao@Ouverture.it>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: Mon Dec 7 1998 19:10:56+0200\n"
+"Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
+"Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -22,9 +25,9 @@ msgid "&Rename ..."
 msgstr "&Rinomina ..."
 
 #: backgnd.cpp:195
-#, fuzzy
+#
 msgid "&Common Background"
-msgstr "&Sfondo"
+msgstr "&Sfondo comune"
 
 #: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
@@ -57,97 +60,98 @@ msgstr "&Sfoglia"
 
 #: backgnd.cpp:366
 msgid "Arrangement:"
-msgstr ""
+msgstr "Arrangiamento:"
 
 #: backgnd.cpp:373
-#, fuzzy
+#
 msgid "Tiled"
-msgstr "Ri&petuto"
+msgstr "Afficanato"
 
 #: backgnd.cpp:374
 msgid "Mirrored"
-msgstr ""
+msgstr "Specchiato"
 
 #: backgnd.cpp:375
-#, fuzzy
+#,      
 msgid "Center Tiled"
-msgstr "&Centrato"
+msgstr "Affiancato e centrato"
 
 #: backgnd.cpp:376
-#, fuzzy
+#,      
 msgid "Centred"
-msgstr "&Centrato"
+msgstr "Centrato"
 
 #: backgnd.cpp:377
-#, fuzzy
+#,      
 msgid "Centred Brick"
-msgstr "&Centrato"
+msgstr "Muro centrato"
 
 #: backgnd.cpp:378
-#, fuzzy
+#,      
 msgid "Centred Warp"
-msgstr "&Centrato"
+msgstr "Centrato deformato"
 
 #: backgnd.cpp:379
-#, fuzzy
+#,      
 msgid "Centred Maxpect"
-msgstr "&Centrato"
+msgstr "Centrato Maxpect"
 
 #: backgnd.cpp:380
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Affiancato simmetrico"
 
 #: backgnd.cpp:381
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Specchiato simmetrico"
 
 #: backgnd.cpp:382
-#, fuzzy
+#,      
 msgid "Scaled"
-msgstr "&In scala"
+msgstr "In scala"     
 
 #: backgnd.cpp:397
 msgid "Ra&ndom"
-msgstr ""
+msgstr "C&asuale"
 
 #: backgnd.cpp:406
-#, fuzzy
+#,      
 msgid "Setu&p..."
-msgstr "&Impostazioni ..."
+msgstr "&Impostazioni..."
 
 #: backgnd.cpp:416
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Aggiungi al pannello"
 
 #: backgnd.cpp:441
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Dimensione cache (kB):"
 
 #: backgnd.cpp:1338
 msgid "Desktop names"
 msgstr "Nomi dei Desktop"
 
 #: backgnd.cpp:1383
-#, fuzzy
+#,      
 msgid "File error"
-msgstr "Errore nel nome"
+msgstr "Errore file"
 
 #: backgnd.cpp:1384
 msgid "Can't load image file"
-msgstr ""
+msgstr "Impossibile caricare l'immagine"
 
 #: backgnd.cpp:1407 backgnd.cpp:1879
 msgid "Unsupported URL"
-msgstr ""
+msgstr "URL non supportata"
 
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Spicanete, questo tipo di URL non è attualmente supportata dal KDE Display Module"
 
 #: backgnd.cpp:1439
 msgid "Two color backgrounds"
-msgstr "Impostazioni sfondi bicolore"
+msgstr "Sfondi bicolore"
 
 #: backgnd.cpp:1476
 msgid "Blend colors from &top to bottom"
@@ -199,44 +203,44 @@ msgstr "Lastricato"
 
 #: backgnd.cpp:1706
 msgid "Random mode setup"
-msgstr ""
+msgstr "Impostazioni modo casuale"
 
 #: backgnd.cpp:1712
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Prendi file dalla &directory"
 
 #: backgnd.cpp:1726
-#, fuzzy
+#,      
 msgid "&Browse ..."
-msgstr "&Sfoglia"
+msgstr "&Sfoglia ..."
 
 #: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Tempo di attesa in secondi:"
 
 #: backgnd.cpp:1759
-#, fuzzy
+#,      
 msgid "In &order"
-msgstr "Ignora"
+msgstr "In &ordine"
 
 #: backgnd.cpp:1776
-#, fuzzy
+#,      
 msgid "Desktops :"
-msgstr "Desktop"
+msgstr "Desktop :"
 
 #: backgnd.cpp:1815
-#, fuzzy
+#,      
 msgid "&Add"
-msgstr "&Aggiungi ..."
+msgstr "&Aggiungi"
 
 #: backgnd.cpp:1986
-#, fuzzy
+#,      
 msgid "Directory error"
-msgstr "Errore nel nome"
+msgstr "Errore directory"
 
 #: backgnd.cpp:1987
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "La directory selezionata non esiste"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
@@ -414,7 +418,7 @@ msgstr "&Richiedi Password"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Accetta la password di root per sbloccare"
 
 #: scrnsave.cpp:278
 msgid "Show &password as stars"
@@ -442,7 +446,7 @@ msgstr "&Disegna gli oggetti con lo stile di Windows 95"
 
 #: general.cpp:242
 msgid "&Apply style to non-KDE apps"
-msgstr ""
+msgstr "&Applica lo stile alla applicazioni non KDE"
 
 #: general.cpp:255
 msgid "Desktop fonts"
@@ -457,9 +461,9 @@ msgid "Fixed font"
 msgstr "Caratteri a spaziatura fissa"
 
 #: general.cpp:278
-#, fuzzy
+#,     y
 msgid "Window title font"
-msgstr "Testo finestra"
+msgstr "Caratteri titolo finestra"
 
 #: general.cpp:283
 msgid "Panel button font"
@@ -521,7 +525,7 @@ msgstr "Testo selezionato"
 
 #: widgetcanvas.cpp:212
 msgid "New"
-msgstr ""
+msgstr "Nuovo"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
@@ -533,7 +537,7 @@ msgstr "&Grassetto"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "&Italico"
+msgstr "&Corsivo"
 
 #: fontchooser.cpp:125
 msgid "&Size"
@@ -545,12 +549,10 @@ msgstr "&Set Caratteri"
 
 #: fontchooser.cpp:262
 msgid "default"
-msgstr "default"
+msgstr "predefinito"
 
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "qualsiasi"
 
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Desktop"
+      
