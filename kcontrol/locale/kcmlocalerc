@@ -3,6 +3,7 @@ Languages=C,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sk,sv,zh_GB
 
 [ro]
 Name=Romanian
+Name[no]=Rumensk
 Name[fi]=Romania
 Name[pl]=Rumuñski
 Name[hu]=Román
@@ -11,6 +12,7 @@ Name[zh]=Ã¹°¨¥§¨È¤å
 [C]
 Name=Default language
 Name[de]=Default Sprache
+Name[no]=Standardspråk
 Name[fi]=Oletuskieli
 Name[pl]=Domy¶lny jêzyk
 Name[fr]=Langue par défaut
@@ -20,6 +22,7 @@ Name[zh]=¹w³]»y¨¥
 [de]
 Name=German
 Name[de]=Deutsch
+Name[no]=Tysk
 Name[fi]=Saksa
 Name[pl]=Niemiecki
 Name[fr]=Allemand
@@ -29,6 +32,7 @@ Name[zh]=¼w¤å
 [en_UK]
 Name=English - UK
 Name[de]=English - UK
+Name[no]=Engelsk - UK
 Name[fi]=Englanti - UK
 Name[pl]=Angielski - UK
 Name[fr]=Anglais - UK
@@ -38,6 +42,7 @@ Name[zh]=­^¤å - UK
 [en]
 Name=English - US
 Name[de]=English - US
+Name[no]=Engelsk - US
 Name[fi]=Englanti - US
 Name[pl]=Angielski - US
 Name[fr]=Anglais - US
@@ -47,6 +52,7 @@ Name[zh]=­^¤å - US
 [fr]
 Name=French
 Name[de]=Französisch
+Name[no]=Fransk
 Name[fi]=Ranska
 Name[pl]=Francuski
 Name[fr]=Français
@@ -56,6 +62,7 @@ Name[zh]=ªk¤å
 [cs]
 Name=Czech
 Name[de]=Tschechisch
+Name[no]=Tjekkisk
 Name[fi]=Tshekki
 Name[pl]=Czeski
 Name[fr]=Tchèque
@@ -65,6 +72,7 @@ Name[zh]=±¶§J¤å
 [sv]
 Name=Swedish
 Name[de]=Schwedisch
+Name[no]=Svensk
 Name[fi]=Ruotsi
 Name[pl]=Szwedzki
 Name[fr]=Suédois
@@ -74,6 +82,7 @@ Name[zh]=·ç¨å¤å
 [es]
 Name=Spanish
 Name[de]=Spanisch
+Name[no]=Spansk
 Name[fi]=Espanja
 Name[pl]=Hiszpañski
 Name[fr]=Espagnol
@@ -83,6 +92,7 @@ Name[zh]=¦è¯Z¤ú¤å
 [ru]
 Name=Russian
 Name[de]=Russisch
+Name[no]=Russisk
 Name[fi]=Venäjä
 Name[pl]=Rosyjski
 Name[fr]=Russe
@@ -92,6 +102,7 @@ Name[zh]=«X¤å
 [nl]
 Name=Dutch
 Name[de]=Niederländisch
+Name[no]=Nederlandsk
 Name[fi]=Hollanti
 Name[pl]=Holenderski
 Name[fr]=Hollandais
@@ -101,6 +112,7 @@ Name[zh]=²üÄõ¤å
 [hu]
 Name=Hungarian
 Name[de]=Ungarisch
+Name[no]=Ungarsk
 Name[fi]=Unkari
 Name[pl]=Wêgierski
 Name[fr]=Hongrois
@@ -110,6 +122,7 @@ Name[zh]=¦I¤ú§Q¤å
 [da]
 Name=Danish
 Name[de]=Dänisch
+Name[no]=Dansk
 Name[fi]=Tanska
 Name[pl]=Duñski
 Name[fr]=Danois
@@ -119,6 +132,7 @@ Name[zh]=¤¦³Á¤å
 [fi]
 Name=Finnish
 Name[de]=Finnisch
+Name[no]=Finnsk
 Name[fi]=Suomi
 Name[pl]=Fiñski
 Name[fr]=Finlandais
@@ -128,6 +142,7 @@ Name[zh]=ªâÄõ¤å
 [it]
 Name=Italian
 Name[de]=Italienisch
+Name[no]=Italiensk
 Name[fi]=Italia
 Name[pl]=W³oski
 Name[fr]=Italien
@@ -137,6 +152,7 @@ Name[zh]=¸q¤j§Q¤å
 [pt]
 Name=Portuguese
 Name[de]=Portugiesisch
+Name[no]=Portogisisk
 Name[fi]=Portugali
 Name[pl]=Portugalski
 Name[fr]=Portugais
@@ -146,6 +162,7 @@ Name[zh]=¸²µå¤ú¤å
 [pl]
 Name=Polish
 Name[de]=Polnisch
+Name[no]=Polsk
 Name[fi]=Puola
 Name[pl]=Polski
 Name[fr]=Polonais
@@ -155,6 +172,7 @@ Name[zh]=ªiÄõ¤å
 [no]
 Name=Norwegian
 Name[de]=Norwegisch
+Name[no]=Norsk
 Name[fi]=Norja
 Name[pl]=Norweski
 Name[fr]=Norvégien
@@ -164,6 +182,7 @@ Name[zh]=®¿«Â¤å
 [el]
 Name=Greek
 Name[de]=Griechisch
+Name[no]=Gresk
 Name[fi]=Kreikka
 Name[pl]=Grecki
 Name[fr]=Grec
@@ -173,6 +192,7 @@ Name[zh]=§ÆÃ¾¤å
 [hr]
 Name=Croatian
 Name[de]=Kroatisch
+Name[no]=Kroatsisk
 Name[fi]=Kroatia
 Name[pl]=Chorwacki
 Name[fr]=Croatien
@@ -182,13 +202,16 @@ Name[zh]=§JÃ¹®J¦è¨È¤å
 [sk]
 Name=Slovak
 Name[de]=Slovakisch
+Name[no]=Slovakisk
 
 [zh_TW_Big5]
 Name=Traditional Chinese
 Name[de]=Chinesisch
+Name[no]=Kinetisk
 Name[zh]=BIG5 ¤¤¤å
 
 [zh_GB2312]
 Name=Simplified Chinese
 Name[de]=Vereinfachtes Chinesisch
+Name[no]=Forenklet kinesisk
 
