@@ -828,7 +828,7 @@ void KfmView::checkLocalProperties (const char *_url)
       configname.append("/.directory");
       if (access(configname.data(), F_OK)==0)
       {
-        KSimpleConfig cfg(configname.data());
+        KSimpleConfig cfg(configname.data(), true); // be read only
         gui->loadProperties((KConfig *) &cfg);
         return;
       }
