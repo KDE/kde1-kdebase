@@ -115,6 +115,16 @@ public:
     ~KCookieJar();
 
     /**
+     * Store all the cookies in a safe(?) place
+     */
+    bool saveCookies(const char *_filename);
+
+    /**
+     * Load all the cookies from file and add them to the cookie jar.
+     */
+    bool loadCookies(const char *_filename);
+
+    /**
      * Looks for cookies in the cookie jar which are appropriate for _url.
      * Returned is a string containing all appropriate cookies in a format 
      * which can be added to a HTTP-header without any additional processing.

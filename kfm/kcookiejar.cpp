@@ -30,6 +30,10 @@
 // RFC2109 as much as we can.
 //
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -47,6 +51,7 @@
 
 KCookieJar *cookiejar=0;
 
+#define READ_BUFFER_SIZE 8192
 
 // KCookie
 ///////////////////////////////////////////////////////////////////////////
@@ -819,4 +824,187 @@ void KCookieJar::eatCookie(KCookiePtr cookiePtr)
         }
     }
 }    
+
+//
+// Saves all cookies to the file '_filename'.
+// On succes 'true' is returned.
+// On failure 'false' is returned.
+bool KCookieJar::saveCookies(const char *_filename)
+{
+    QString backupFile(_filename);
+    backupFile += ".bak";
+    // We try to make a backup first. 
+    (void) rename(_filename, backupFile.data());
+    // We don't care if it fails
+    
+    // We try to exclusively create our cookie file.
+    // If an existing cookie-file (or link to /etc/passwd) could not 
+    // be renamed into a backup file the rename command above then 
+    // this call will fail.
+    int fd = open(_filename, O_WRONLY| O_CREAT | O_EXCL, S_IRUSR | S_IWUSR);
+
+    if (fd == -1)
+    	return false;
+
+    FILE *fStream = fdopen( fd, "w");
+    if (fStream == 0)
+    {
+        close(fd);
+        return false;
+    }
+    
+    time_t curTime = time(0);
+    
+    fprintf(fStream, "# KDE Cookie File\n#\n");
+    
+    fprintf(fStream, "%-20s %-20s %-12s %-9s %-4s %-10s %s\n", 
+    	"# Host", "Domain", "Path", "Exp.date", "Prot", "Name", "Value");
+
+    for(const char *domain = domainList.first();
+    	domain != 0;
+    	domain = domainList.next())
+    {
+        fprintf(fStream, "[%s]\n", domain);
+
+	KCookieList *cookieList = cookieDomains[domain];
+	for ( KCookiePtr cookie=cookieList->first(); cookie != 0;)
+        {
+            if (cookie->isExpired(curTime))
+	    {
+	    	// Delete expired cookies
+                KCookiePtr old_cookie = cookie;
+                cookie = cookieList->next(); 
+                cookieList->removeRef( old_cookie );
+	    }
+	    else if (cookie->expireDate != 0)
+            {
+                // Store persistent cookies
+                QString path("\"");
+                path += cookie->path.data();
+                path += "\"";  
+                fprintf(fStream, "%-20s %-20s %-12s %9lu   %2d %-10s \"%s\"\n", 
+		    cookie->host.data(), cookie->domain.data(), 
+		    path.data(), 
+		    (unsigned long) cookie->expireDate, 
+		    cookie->protocolVersion, 
+		    cookie->name.data(), cookie->value.data());
+		cookie = cookieList->next();
+	    }
+	    else
+	    {
+	    	// Skip session-only cookies 
+		cookie = cookieList->next();
+	    }
+	}
+    }    
+    
+    if (fclose( fStream) == -1)
+    {
+    	// Error
+        return false;
+    }
+    // Succes!
+    return true;
+}
+
+typedef char *charPtr;
+
+static const char *parseField(charPtr &buffer)
+{
+    char *result;
+    if (*buffer == '\"')
+    {
+    	// Find terminating "
+    	buffer++;
+    	result = buffer;
+        while((*buffer != '\"') && (*buffer))
+    	    buffer++;
+    }
+    else 
+    {
+        // Find first white space
+        result = buffer;
+        while((*buffer != ' ') && (*buffer != '\t') && (*buffer != '\n') && (*buffer))
+    	    buffer++;
+    }	    	
+    if (!*buffer)
+    	return result; // 
+    *buffer++ = '\0';
+    
+    // Skip white-space
+    while((*buffer == ' ') || (*buffer == '\t') || (*buffer == '\n'))
+    	buffer++;
+
+    return result;
+}
+
+
+//
+// Reloads all cookies from the file '_filename'.
+// On succes 'true' is returned.
+// On failure 'false' is returned.
+bool KCookieJar::loadCookies(const char *_filename)
+{
+    FILE *fStream = fopen( _filename, "r");
+    if (fStream == 0)
+    {
+        return false;
+    }
+    
+    time_t curTime = time(0);
+    
+    char *buffer = new char[READ_BUFFER_SIZE];
+
+    bool err = false;    
+    err = (fgets(buffer, READ_BUFFER_SIZE, fStream) == 0);
+    
+    err = err || (strcmp(buffer, "# KDE Cookie File\n") != 0);
+    
+    if (!err)
+    {
+    	while(fgets(buffer, READ_BUFFER_SIZE, fStream) != 0)
+    	{
+            char *line = buffer;
+    	    // Skip lines which begin with '#' or '['
+    	    if ((line[0] == '#') || (line[0] == '['))
+    	    	continue;
+	    
+	    const char *host( parseField(line) );
+	    const char *domain( parseField(line) );
+	    const char *path( parseField(line) );
+	    const char *expStr( parseField(line) );
+	    if (!expStr) continue;
+	    int expDate  = (time_t) strtoul(expStr, 0, 10);
+	    const char *verStr( parseField(line) );
+	    if (!verStr) continue;
+	    int protVer  = (time_t) strtoul(verStr, 0, 10);
+	    const char *name( parseField(line) );
+	    const char *value( parseField(line) );
+
+	    // Parse error
+	    if (!value) continue;
+
+	    // Expired or parse error
+	    if ((expDate == 0) || (expDate < curTime))
+	    	continue;
+	    	
+            // Domain must be either hostname or domain of hostname
+	    if (strcmp(host,domain) != 0)
+	    {
+                QString checkDomain;
+                stripDomain( host, checkDomain);
+                if (checkDomain != domain)
+                    continue;
+            }
+
+	    KCookie *cookie = new KCookie(host, domain, path, 
+	    	name, value, expDate, protVer);
+	    addCookie(cookie);	                                      
+    	}
+    }
+    delete [] buffer;
+
+    fclose( fStream);
+    return err;
+}
 
