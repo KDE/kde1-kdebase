@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-01-18 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -34,131 +34,168 @@ msgstr "использование: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Вид главного форточника"
 
-#: titlebar.cpp:114
+#: titlebar.cpp:117
 msgid "Minimize"
 msgstr "Минимизировать"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:121
 msgid "Maximize"
 msgstr "Максимизировать"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:125
 msgid "Sticky"
 msgstr "Приколоть"
 
-#: titlebar.cpp:130
+#: titlebar.cpp:133
 msgid "Menu"
 msgstr "Меню"
 
-#: titlebar.cpp:460
+#: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Левая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
 
-#: titlebar.cpp:493
+#: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
 
-#: titlebar.cpp:533
+#: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Левая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
-#: titlebar.cpp:566
+#: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
-#: titlebar.cpp:917
+#: titlebar.cpp:925
 msgid "Titlebar appearance"
 msgstr "Вид заголовка"
 
-#: titlebar.cpp:919
+#: titlebar.cpp:927
 msgid "Shaded"
 msgstr "Градиент"
 
-#: titlebar.cpp:922
+#: titlebar.cpp:930
 msgid "Plain"
 msgstr "Обычный"
 
-#: titlebar.cpp:925 titlebar.cpp:945
+#: titlebar.cpp:933 titlebar.cpp:953
 msgid "Pixmap"
 msgstr "Картинка"
 
-#: titlebar.cpp:932
+#: titlebar.cpp:940
 msgid "Title Animation"
 msgstr "Анимация заголовка"
 
-#: titlebar.cpp:935
+#: titlebar.cpp:943
 msgid "ms"
 msgstr "мс"
 
-#: titlebar.cpp:956
+#: titlebar.cpp:964
 msgid "&Active pixmap"
 msgstr "&Активная пиктограмма"
 
-#: titlebar.cpp:958
+#: titlebar.cpp:966
 msgid "&Inactive pixmap"
 msgstr "&Неактивная пиктограмма"
 
-#: windows.cpp:70
+#: titlebar.cpp:981
+msgid "Mouse action"
+msgstr ""
+
+#: titlebar.cpp:983
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+
+#: titlebar.cpp:987
+#, fuzzy
+msgid "(Un)Maximize"
+msgstr "Максимизировать"
+
+#: titlebar.cpp:988
+msgid "Move"
+msgstr ""
+
+#: titlebar.cpp:989
+#, fuzzy
+msgid "(Un)Shade"
+msgstr "Градиент"
+
+#: titlebar.cpp:990
+msgid "Iconify"
+msgstr ""
+
+#: titlebar.cpp:991
+#, fuzzy
+msgid "(Un)Sticky"
+msgstr "Приколоть"
+
+#: titlebar.cpp:992
+msgid "Resize"
+msgstr ""
+
+#: titlebar.cpp:993
+msgid "Restore"
+msgstr ""
+
+#: titlebar.cpp:994
+msgid "Operations Menu"
+msgstr ""
+
+#: windows.cpp:77
 msgid "Window movement"
 msgstr "Перемещение окна"
 
-#: windows.cpp:71
+#: windows.cpp:78
 msgid "Transparent"
 msgstr "Прозрачно"
 
-#: windows.cpp:72
+#: windows.cpp:79
 msgid "Opaque"
 msgstr "Непрозрачно"
 
-#: windows.cpp:75
+#: windows.cpp:82
 msgid "Resize Animation"
 msgstr "Анимация изменения размера"
 
-#: windows.cpp:80
+#: windows.cpp:87
 msgid "Placement policy"
 msgstr ""
 
-#: windows.cpp:81
-msgid "Random placement"
-msgstr ""
-
-#: windows.cpp:82
-msgid "Smart placement"
-msgstr ""
-
-#: windows.cpp:85
+#: windows.cpp:98
 msgid "Maximize Style"
 msgstr "Тип максимизации"
 
-#: windows.cpp:86
+#: windows.cpp:99
 msgid "Maximize fully"
 msgstr "Полностью"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Maximize vertically"
 msgstr "Вертикально"
 
-#: windows.cpp:90
+#: windows.cpp:103
 msgid "Focus Policy"
 msgstr "Вид фокуса"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Click to focus"
 msgstr "Щелчоком"
 
-#: windows.cpp:92
+#: windows.cpp:105
 msgid "Focus follows mouse"
 msgstr "За мышкой"
 
-#: windows.cpp:97
+#: windows.cpp:110
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -166,6 +203,6 @@ msgstr ""
 "Задержка авто-уменьшения\n"
 "(<100 отключается)"
 
-#: windows.cpp:100
+#: windows.cpp:113
 msgid "miliseconds"
 msgstr "миллисекунд"

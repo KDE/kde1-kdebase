@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,23 +22,11 @@ msgstr "Onbekende module: "
 msgid "KDE Control Center"
 msgstr "KDE Controle Centrum"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Modules opnemen"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&Informatie over KControl"
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Gebruik van KControl"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "Informatie over KControl"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -56,3 +44,11 @@ msgstr ""
 "Met dank aan:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
+#~ msgid "&About KControl..."
+#~ msgstr "&Informatie over KControl"
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Gebruik van KControl"
+
+#~ msgid "About KControl"
+#~ msgstr "Informatie over KControl"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-01-18 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -22,23 +22,11 @@ msgstr "Неизвестный модуль"
 msgid "KDE Control Center"
 msgstr "Центр управления KDE"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Проглоченные модуля"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&Об KControl"
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Использование KControl"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "Об KControl"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -55,3 +43,12 @@ msgstr ""
 "\n"
 "Спасибо:\n"
 "С. Кулову, П. Доулеру, М. Вуббену & М. Джонсу."
+
+#~ msgid "&About KControl..."
+#~ msgstr "&Об KControl"
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Использование KControl"
+
+#~ msgid "About KControl"
+#~ msgstr "Об KControl"

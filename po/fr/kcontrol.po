@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-01-25 18:15 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -21,23 +21,11 @@ msgstr "Module inconnu : "
 msgid "KDE Control Center"
 msgstr "Centre de contrôle KDE"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Avaler les modules"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&A propos..."
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Utilisation"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "A propos"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -54,3 +42,12 @@ msgstr ""
 "\n"
 "Merci à :\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#~ msgid "&About KControl..."
+#~ msgstr "&A propos..."
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Utilisation"
+
+#~ msgid "About KControl"
+#~ msgstr "A propos"

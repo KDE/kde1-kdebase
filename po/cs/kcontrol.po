@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol 0.3\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-01-20 10:18 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -21,23 +21,11 @@ msgstr "Neznámý modul: "
 msgid "KDE Control Center"
 msgstr "Ovládací centrum KDE"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Pohltit moduly"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&Informace o KControlu ..."
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Pou¾ití KControlu"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "Informace o KControlu"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -54,3 +42,12 @@ msgstr ""
 "\n"
 "Podìkování pro:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#~ msgid "&About KControl..."
+#~ msgstr "&Informace o KControlu ..."
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Pou¾ití KControlu"
+
+#~ msgid "About KControl"
+#~ msgstr "Informace o KControlu"

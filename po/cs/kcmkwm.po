@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: 1998-01-27 13:48 MET\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -33,127 +33,164 @@ msgstr "Pou¾ití: kcmkwm [-init | {windows,buttons,titlebar}]\n"
 msgid "Window manager style"
 msgstr "Vlastnosti správce oken"
 
-#: titlebar.cpp:114
+#: titlebar.cpp:117
 msgid "Minimize"
 msgstr "Ikonifikace"
 
-#: titlebar.cpp:118
+#: titlebar.cpp:121
 msgid "Maximize"
 msgstr "Maximalizace"
 
-#: titlebar.cpp:122
+#: titlebar.cpp:125
 msgid "Sticky"
 msgstr "Pøilepení"
 
-#: titlebar.cpp:130
+#: titlebar.cpp:133
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:460
+#: titlebar.cpp:463
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Levá strana titulku je plná ... vyøazuji 'maximalizaèní' tlaèítko\n"
 
-#: titlebar.cpp:493
+#: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Pravá strana titulku je plná ... vyøazuji 'maximalizaèní' tlaèítko\n"
 
-#: titlebar.cpp:533
+#: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Levá strana titulku je plná ... vyøazuji 'minimalizaèní' tlaèítko\n"
 
-#: titlebar.cpp:566
+#: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Pravá strana titulku je plná ... vyøazuji 'minimalizaèní' tlaèítko\n"
 
-#: titlebar.cpp:917
+#: titlebar.cpp:925
 msgid "Titlebar appearance"
 msgstr "Vzhled titulku"
 
-#: titlebar.cpp:919
+#: titlebar.cpp:927
 msgid "Shaded"
 msgstr "Stínovaný"
 
-#: titlebar.cpp:922
+#: titlebar.cpp:930
 msgid "Plain"
 msgstr "Jednoduchý"
 
-#: titlebar.cpp:925 titlebar.cpp:945
+#: titlebar.cpp:933 titlebar.cpp:953
 msgid "Pixmap"
 msgstr "Obrázek"
 
-#: titlebar.cpp:932
+#: titlebar.cpp:940
 msgid "Title Animation"
 msgstr "Animace titulku"
 
-#: titlebar.cpp:935
+#: titlebar.cpp:943
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:956
+#: titlebar.cpp:964
 msgid "&Active pixmap"
 msgstr "Obrázek pro titulek &aktivního okna"
 
-#: titlebar.cpp:958
+#: titlebar.cpp:966
 msgid "&Inactive pixmap"
 msgstr "Obrázek pro titulek &neaktivního okna"
 
-#: windows.cpp:70
+#: titlebar.cpp:981
+msgid "Mouse action"
+msgstr ""
+
+#: titlebar.cpp:983
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+
+#: titlebar.cpp:987
+#, fuzzy
+msgid "(Un)Maximize"
+msgstr "Maximalizace"
+
+#: titlebar.cpp:988
+msgid "Move"
+msgstr ""
+
+#: titlebar.cpp:989
+#, fuzzy
+msgid "(Un)Shade"
+msgstr "Stínovaný"
+
+#: titlebar.cpp:990
+msgid "Iconify"
+msgstr ""
+
+#: titlebar.cpp:991
+#, fuzzy
+msgid "(Un)Sticky"
+msgstr "Pøilepení"
+
+#: titlebar.cpp:992
+msgid "Resize"
+msgstr ""
+
+#: titlebar.cpp:993
+msgid "Restore"
+msgstr ""
+
+#: titlebar.cpp:994
+msgid "Operations Menu"
+msgstr ""
+
+#: windows.cpp:77
 msgid "Window movement"
 msgstr "Pohyb okna"
 
-#: windows.cpp:71
+#: windows.cpp:78
 msgid "Transparent"
 msgstr "Transparentní"
 
-#: windows.cpp:72
+#: windows.cpp:79
 msgid "Opaque"
 msgstr "Neprùhledný"
 
-#: windows.cpp:75
+#: windows.cpp:82
 msgid "Resize Animation"
 msgstr "Animace pøi zmìnì velikosti"
 
-#: windows.cpp:80
+#: windows.cpp:87
 msgid "Placement policy"
 msgstr "Zpùsob umís»ování"
 
-#: windows.cpp:81
-msgid "Random placement"
-msgstr "Náhodné umís»ování"
-
-#: windows.cpp:82
-msgid "Smart placement"
-msgstr "Inteligentní umís»ování"
-
-#: windows.cpp:85
+#: windows.cpp:98
 msgid "Maximize Style"
 msgstr "Styl maximalizace"
 
-#: windows.cpp:86
+#: windows.cpp:99
 msgid "Maximize fully"
 msgstr "Plnì maximalizuj"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Maximize vertically"
 msgstr "Maximalizuj vertikálnì"
 
-#: windows.cpp:90
+#: windows.cpp:103
 msgid "Focus Policy"
 msgstr "Zpùsob zaktivnìní okna"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Click to focus"
 msgstr "Kliknout k aktivaci"
 
-#: windows.cpp:92
+#: windows.cpp:105
 msgid "Focus follows mouse"
 msgstr "Okno pod my¹í je aktivní"
 
-#: windows.cpp:97
+#: windows.cpp:110
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -161,6 +198,12 @@ msgstr ""
 "Prodleva pøed pøesunutím\n"
 "okna navrch (<100 vypíná)"
 
-#: windows.cpp:100
+#: windows.cpp:113
 msgid "miliseconds"
 msgstr "milisekund"
+
+#~ msgid "Random placement"
+#~ msgstr "Náhodné umís»ování"
+
+#~ msgid "Smart placement"
+#~ msgstr "Inteligentní umís»ování"

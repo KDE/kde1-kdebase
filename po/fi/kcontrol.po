@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCONTROL\n"
-"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,23 +22,11 @@ msgstr "Tuntematon moduli: "
 msgid "KDE Control Center"
 msgstr "KDE:n ohjauskeskus"
 
-#: toplevel.cpp:79
+#: toplevel.cpp:78
 msgid "&Swallow modules"
 msgstr "&Imase moduli"
 
-#: toplevel.cpp:82
-msgid "&About KControl..."
-msgstr "&Tietoja ohjauskeskuksesta..."
-
-#: toplevel.cpp:85
-msgid "&Using KControl"
-msgstr "&Ohjauskeskuksen käytöstä"
-
-#: toplevel.cpp:100
-msgid "About KControl"
-msgstr "Tietoja ohjauskeskuksesta"
-
-#: toplevel.cpp:101
+#: toplevel.cpp:81
 msgid ""
 "KDE Control Center - Version 0.3\n"
 "\n"
@@ -55,3 +43,12 @@ msgstr ""
 "\n"
 "Kiitokset:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#~ msgid "&About KControl..."
+#~ msgstr "&Tietoja ohjauskeskuksesta..."
+
+#~ msgid "&Using KControl"
+#~ msgstr "&Ohjauskeskuksen käytöstä"
+
+#~ msgid "About KControl"
+#~ msgstr "Tietoja ohjauskeskuksesta"

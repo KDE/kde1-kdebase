@@ -132,16 +132,17 @@ msgid "Path for KDE Desktop Entries is not set."
 msgstr "Het pad voor de menus is niet ingesteld."
 
 #: DesktopPathDialogData.cpp:49
-msgid "Ik stel de volgende instellingen voor:"
+msgid "I suggest the following entries:"
 msgstr ""
 
 #: DesktopPathDialogData.cpp:55
-msgid "Pad systeemmenu:"
+msgid "Path:"
 msgstr ""
 
 #: DesktopPathDialogData.cpp:68
-msgid "Pad eigen menu:"
-msgstr ""
+#, fuzzy
+msgid "PersonalPath:"
+msgstr "Persoonlijk:"
 
 #: entrydialog.cpp:53
 msgid "Submenu"
