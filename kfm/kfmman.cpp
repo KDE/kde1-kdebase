@@ -808,7 +808,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 	// Dont display the file "."
         if ( sfn !=  "."  )
 	{
-	  if ( sfn[1] == '.' && !view->getGUI()->isShowDot() && sfn != ".." )
+	  if ( sfn[0] == '.' && !view->getGUI()->isShowDot() && sfn != ".." )
 	      continue;
 	    if ( sfn == ".."  )
 	    {
