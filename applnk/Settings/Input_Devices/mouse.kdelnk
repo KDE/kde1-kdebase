@@ -46,6 +46,7 @@ Name[ru]=íÙÛØ
 SwallowTitle[no]=Innstillinger for mus
 Init=kcminput -init
 SwallowTitle=Mouse settings
+SwallowTitle[cs]=Nastavení my¹i
 SwallowTitle[es]=Configuración del ratón
 SwallowTitle[pl]=Ustawienia myszy
 SwallowTitle[eo]=Musopcioj

@@ -46,6 +46,7 @@ Name[zh_CN.GB2312]=¼üÅÌ
 Name[ro]=Tastaturã
 Init=kcminput -init
 SwallowTitle=Keyboard properties
+SwallowTitle[cs]=Nastavení klávesnice
 SwallowTitle[no]=Innstillinger for tastatur
 SwallowTitle[es]=Configuración del teclado
 SwallowTitle[pl]=Ustawienia klawiatury

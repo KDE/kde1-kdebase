@@ -47,6 +47,7 @@ Name[ru]=ú×ÏÎÏË
 SwallowTitle[no]=Innstillinger av klokken
 Init=kcmbell -init
 SwallowTitle=Bell settings
+SwallowTitle[cs]=Nastavení zvonku
 SwallowTitle[es]=Configuración de la campana
 SwallowTitle[pl]=Ustawienia brzêczyka
 SwallowTitle[sv]=Inställningar av klockan
