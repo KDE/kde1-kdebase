@@ -26,12 +26,12 @@ case "$1" in
     sed "`cat /etc/kde/kdmrc.tmp`" < /etc/kde/kdmrc.in > /etc/kde/kdmrc
     rm /etc/kde/kdmrc.tmp
     echo -n "Starting kde display manager: kdm"    
-    start-stop-daemon --start --quiet --exec /opt/kde/bin/kdm
+    start-stop-daemon --start --quiet --exec /usr/bin/X11/kdm
     echo "."
     ;;
   stop)
       echo -n "Stopping kde display manager: kdm"    
-      start-stop-daemon --stop --quiet --exec /opt/kde/bin/kdm \
+      start-stop-daemon --stop --quiet --exec /usr/bin/X11/kdm \
 		--pidfile /var/run/xdm-pid
       echo "."
     ;;
