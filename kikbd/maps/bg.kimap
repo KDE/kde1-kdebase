@@ -6,14 +6,12 @@
 [International Keyboard]
 Authors=Jordan Ostreff <http://www.biscom.net/~jostreff/>
 
-Comment=Bulgarian Keyboard (Phonetic)
-Comment[bg]=йХПХКХЖЮ тнмерхвмю (cp1251)
-Comment[pl]=Klawiatura bulgarska
-Comment[ru]=Болгарская клавиатура
-Long Comment=Keyboard for Bulgarian language (cp1251). Has English characters as alternate symbols.  
-Long Comment[bg]=йНДНБЮ РЮАКХЖЮ ГЮ ХГОНКГБЮМЕ МЮ ТНМЕРХЙЮ ЯЮЯ wincp-1251 
-Long Comment[ru]=Болгарская клавиатура в кодировке wincp-1251 
+Comment=Phonetic layout. Has English characters as alternate symbols.
 
+Language=Bulgarian
+Language[ru]=Болгарский
+
+Charset=cp1251
 Label=Bg 
 Locale=bg
 

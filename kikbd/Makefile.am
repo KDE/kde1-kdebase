@@ -30,7 +30,7 @@ kikbd_SOURCES = kikbd.cpp keytrans.cpp \
 kikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kikbd_LDADD   = -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
-kcmikbd_SOURCES = widgets.cpp main.cpp \
+kcmikbd_SOURCES = widgets.cpp kcmikbd.cpp \
 	kikbdconf.cpp kobjconf.cpp \
 	kconfobjs.moc.cpp kobjconf.moc.cpp widgets.moc.cpp kikbdconf.moc.cpp
 kcmikbd_LDFLAGS = $(all_libraries) $(KDE_RPATH)

@@ -1,3 +1,23 @@
+/*
+   - 
+
+  written 1998 by Alexander Budnik <budnik@linserv.jinr.ru>
+  
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   
+  */
 #ifndef KIKBDCONF_H
 #define KIKBDCONF_H
 
@@ -9,31 +29,41 @@ class KiKbdMapConfig: public QObject {
  protected:
   QList<QStrList> keysyms, keycodes;
   QStrList  capssyms;
-  QString   name, label, comment, longcomment, locale, authors;
+  QString   name;     // the name of the layout, alwais defined
+  QString   label;    // layout label, must be set
+  QString   locale;   // layout locale, must be set
+  QStrList  authors;  // authors of the layout, must be set. How create this?
+  QString   language; // language of layout, must be set (or "unknown")
+  QString   comment;  // layout comment, may be unset (will be "No comment")
+  QString   charset;  // layout charset, may be unset (will be "unknown")
   bool      hasAltKeys;
-  bool      userData;
+  bool      userData, noFile;
   int       numberOfSyms;
  public:
   KiKbdMapConfig(const char*);
   friend class KiKbdConfig;
   /*--- public information ---*/
   const QString getName     () const {return name;}
-  const QString getAuthors  () const {return authors;}
+  const QStrList getAuthors () const {return authors;}
   const QString getLabel    () const {return label;}
   const QString getLocale   () const {return locale;}
   const QString getComment  () const {return comment;}
-  const QString getLongComment() const {
-    return (longcomment.isNull())?comment:longcomment;
-  }
+  const QString getLanguage () const {return language;}
+  const QString getCharset  () const {return charset;}
   const QString getGoodLabel() const;
+  const QString getInfo     ();
   const bool getHasAltKeys  () const {return hasAltKeys;}
   const bool getUserData    () const {return userData;}
+  const bool getNoFile      () const {return noFile;}
   const unsigned getNumberOfSyms() const {return numberOfSyms;}
+  const QColor  getColor() const;
+  const QPixmap getIcon () const;
   QList<QStrList>& getKeysyms() {return keysyms;}
   QList<QStrList>& getKeycodes(){return keycodes;}
   QStrList&        getCapssyms(){return capssyms;}
  public slots:
-  void noUserDataFile(const char*){userData = false;}
+  void noUserDataFile(const char*){userData = FALSE;}
+  void noSystemDataFile(const char*){noFile = TRUE;}
 };
 
 class KiKbdConfig: public KObjectConfig {

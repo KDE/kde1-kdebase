@@ -1,11 +1,13 @@
 # KDE Config File
-# created by god
 
 [International Keyboard]
-Comment=English American Keyboard
-Comment[ru]=Английская клавиатура
-Comment[pl]=Klawiatura amerykaЯska
+Authors=Alexander Budnik <budnik@linserv.jinr.ru>
+Authors[ru]=Александр Будник <budnik@linserv.jinr.ru>
 
+Language=English
+Language[ru]=Английский
+
+Charset=latin
 Label=En
 Locale=us
 

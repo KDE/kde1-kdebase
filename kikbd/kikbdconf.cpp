@@ -1,10 +1,34 @@
+/*
+   - 
+
+  written 1998 by Alexander Budnik <budnik@linserv.jinr.ru>
+  
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   
+  */
 #include <stream.h>
 #include <stdlib.h>
 #include <qfileinf.h>
 #include <qdir.h>
+#include <qcolor.h>
+
 #include <kconfig.h>
 #include <kapp.h>
 #include <kmsgbox.h>
+#include <kiconloader.h> 
+
 #include "kikbdconf.h"
 #include "kconfobjs.h"
 
@@ -25,8 +49,9 @@ static const char* confStringInput      = "Input";
 static const char* confStringMap        = "Map";
 static const char* confStringLabel      = "Label";
 static const char* confStringComment    = "Comment";
-static const char* confStringLongComment= "Long Comment";
+static const char* confStringLanguage   = "Language";
 static const char* confStringLocale     = "Locale";
+static const char* confStringCharset    = "Charset";
 static const char* confStringAuthors    = "Authors";
 static const char* confStringCaps       = "CapsSymbols";
 static const char* confStringCapsColor  = "CapsLockColor";
@@ -66,6 +91,10 @@ static const char* autoStartPlaceLabels[] = {
   "botleft",
   "botright"
 };
+const QColor mapNormalColor = black;
+const QColor mapUserColor   = darkBlue;
+const QColor mapNoFileColor = darkRed;
+
 //=========================================================
 //   config class
 //=========================================================
@@ -192,11 +221,12 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   QString file = name + ".kimap";
   KObjectConfig config(KObjectConfig::AppData, file);
   config.setGroup(confMainGroup);
-  config.registerString(confStringLabel, label);
-  config.registerString(confStringComment, comment);
-  config.registerString(confStringLongComment, longcomment);
-  config.registerString(confStringLocale, locale);
-  config.registerString(confStringAuthors, authors);
+  config.registerString(confStringLabel   , label   );
+  config.registerString(confStringComment , comment );
+  config.registerString(confStringLanguage, language);
+  config.registerString(confStringCharset , charset );
+  config.registerString(confStringLocale  , locale  );
+  config.registerStrList(confStringAuthors , authors);
   config.setGroup(confMapsGroup);
   QStrList symList, codeList;
   config.registerObject(new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"),
@@ -204,16 +234,21 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   config.registerObject(new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"),
 						   codeList));
   config.registerStrList(confStringCaps, capssyms);
-  userData = true;
+  userData = TRUE;
+  noFile   = FALSE;
   connect(&config, SIGNAL(noUserDataFile(const char*)),
-		   SLOT(noUserDataFile(const char*)));
+	  SLOT(noUserDataFile(const char*)));
+  connect(&config, SIGNAL(noSystemDataFile(const char*)),
+	  SLOT(noSystemDataFile(const char*)));
   config.loadConfig();
   /*--- check information ---*/
-  if(authors.isNull()) authors = klocale->translate("Not specified");
-  if(comment.isNull()) comment = klocale->translate("No comment");
-  if(longcomment.isNull() || longcomment == "") longcomment = comment;
-  if(locale.isNull() || locale == "") locale = "C";
-  if(label.isNull() || label == "") label = locale;
+  if(comment.isNull() ) comment  = "";
+  if(language.isNull()) language = "unknown";
+  if(charset.isEmpty()) charset  = "unknown";
+  if(label.isNull() || label == "")
+    if(!locale.isNull()) label = locale; else label = name;
+  if(locale.isNull() || locale == "")
+    locale = klocale->translate("default");
   /*--- parsing ---*/
   keysyms.setAutoDelete(TRUE);
   keycodes.setAutoDelete(TRUE);
@@ -234,6 +269,48 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
     if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
   }
 }
+const QString KiKbdMapConfig::getInfo()
+{
+  QString com;
+  // authors
+  com = klocale->translate(authors.count()<2?"Author":"Authors");
+  com += ":  ";
+  com += authors.count()>0?authors.at(0):"Not specified";
+  for(unsigned i = 1; i < authors.count(); i++) {
+    com += ",  ";
+    com += authors.at(i);
+  }
+  com += "\n\n";
+  // description
+  com += klocale->translate("Description:  Keyboard map for language \"");
+  com += language + klocale->translate("\" with ");
+  com += charset + " ";
+  com += klocale->translate("charset");
+  com += ".";
+  if(!comment.isEmpty()) com += " " + comment;
+  com += "\n\n";
+  // source
+  com += klocale->translate("Source:  ");
+  com += noFile?klocale->translate("no file")
+    :(userData?klocale->translate("user file")
+    :klocale->translate("system file"));
+  com += " \"" + name + ".kimap\"";
+  com += "\n";
+  // statistic
+  QString num;
+  com += klocale->translate("Statistic:  ");
+  num.setNum(keysyms.count());
+  com += num + " ";
+  com += klocale->translate("symbols");
+  num.setNum(keycodes.count());
+  com += ", " + num + " ";
+  com += klocale->translate("codes");
+  if(hasAltKeys) {
+    com += ", ";
+    com += klocale->translate("alternative keys");
+  }
+  return com;
+}
 const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString item(128);
@@ -244,4 +321,15 @@ const QString KiKbdMapConfig::getGoodLabel() const
     item += klocale->translate("(User)");
   }
   return item;
+}
+const QColor KiKbdMapConfig::getColor() const
+{
+  return noFile?mapNoFileColor:(userData?mapUserColor:mapNormalColor);
+}
+const QPixmap KiKbdMapConfig::getIcon() const
+{
+  KIconLoader loader;
+  QString file = kapp->kde_datadir()+"/kcmlocale/pics/flag_"
+			 +locale+".gif";
+  return loader.loadIcon(file);
 }
