@@ -246,6 +246,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/samba/Makefile \
 	kcontrol/sample/Makefile \
 	kcontrol/keys/Makefile \
+	kcontrol/syssound/Makefile \
 	kdehelp/Makefile \
 	kdehelp/index/Makefile \
 	kdehelp/search/Makefile \
