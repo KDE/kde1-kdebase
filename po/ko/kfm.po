@@ -224,7 +224,7 @@ msgstr "홈 디렉토리"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
-msgstr "Icon을 불러 올 수 없음"
+msgstr "Icon을 불러 올 수 없음\n"
 
 #: bookmark.cpp:296 kbind.cpp:304 kbind.cpp:376 kbind.cpp:428 kbind.cpp:1546
 #: kbind.cpp:1554 kbind.cpp:1572 kbind.cpp:1589 kbind.cpp:1647 kbind.cpp:1659
@@ -1145,7 +1145,6 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"\n"
 "오류 기록:\n"
 "\n"
 "%s"

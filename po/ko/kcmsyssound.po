@@ -175,7 +175,6 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"\n"
 "%s은 \n"
 "WAV 파일 같지 않습니다."
 
