@@ -1,5 +1,15 @@
+Sun Feb  8 15:41:13 CET 1998 Christian Esken <esken@kde.org>
+
+* maudio.cpp : Moved from device name to device number. Added command
+    line option "-devnum <devnum>", to attach to another device than the
+    default device
+* io_oss.cpp : Added mapping from device number to device name. You can
+    now attach to any device called /dev/dspX , with X in [0..9] . This
+    is useful if you have multiple audio devices or the SoftOSS extensions.
+
+
 Sat Jan 10 06:19:50 1998  Bernd Johannes Wuebben  <wuebben@math.cornell.edu>
 
-	* kaudioserver.cpp (main): fixed segfault on startup. return value
-	  of fopen on line 123 was ignored which led to a sefault of fclose.
+* kaudioserver.cpp (main): fixed segfault on startup. return value
+  of fopen on line 123 was ignored which led to a sefault of fclose.
 
