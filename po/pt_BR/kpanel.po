@@ -83,7 +83,7 @@ msgstr "Reinicializar painel"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Navegador de Disco"
 
 #: props.C:168
 msgid "Panel"
@@ -107,31 +107,31 @@ msgstr "Não é possivel adicionar isto ao painel como botão!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "Informações KFM"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Criando diretório:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(pasta vazia)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Arquivos demais)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Acesso negado)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Ilegível)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Abrir Pasta"
 
 #~ msgid "Move"
 #~ msgstr "Mover"

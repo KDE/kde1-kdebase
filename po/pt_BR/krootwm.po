@@ -16,7 +16,7 @@ msgstr "ERRO: Não existe o modelo '%s'"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Favoritos"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -56,7 +56,7 @@ msgstr "Sair"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Editar Favoritos"
 
 #: krootwm.C:607
 msgid "Could not create folder"

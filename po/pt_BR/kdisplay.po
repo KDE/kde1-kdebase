@@ -289,7 +289,7 @@ msgstr "&Requer Senha"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Aceitar senha de superusuário para destrancar"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"
