@@ -771,7 +771,7 @@ void MyApp::readConfiguration(){
   }
   else{
     options.ElectricBorderMovePointer = true;
-    config->writeEntry("ElectricBorderMovePointer", (int)options.ElectricBorder);
+    config->writeEntry("ElectricBorderMovePointer", (int)options.ElectricBorderMovePointer);
   }
 
   if(options.ElectricBorder > -1){

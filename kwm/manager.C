@@ -1553,8 +1553,9 @@ void Manager::manage(Window w, bool mapped){
   if (!initting)
     XUngrabServer(qt_xdisplay()); 
 
-  if(options.Placement == MANUAL_PLACEMENT)
-    c->handleOperation(Client::operationFromCommand("winMove"));
+  if(options.Placement == MANUAL_PLACEMENT && !mapped
+     && c->isOnDesktop(manager->currentDesktop()))
+    c->handleOperation(OP_MOVE);
   
 }
 
