@@ -15,6 +15,7 @@
 #define Inherited QDialog
 
 #include <qlabel.h>
+#include <kapp.h>
 
 IconPathDialogData::IconPathDialogData
 (
