@@ -19,6 +19,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
+#include <dirent.h>
 
 #include <qmsgbox.h>
 #include <kfm.h>
@@ -74,6 +75,10 @@ void DlgLineEntry::slotClear()
 
 KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
   :QObject(){
+
+    // Torben
+    bookmarkId = 10;
+    bookmarkDict.setAutoDelete( true );
     
     kwmmapp = kwmmapp_arg;
 
@@ -160,10 +165,21 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
 	}
     }
 
+    // Bookmark code ( Torben )
+    bookmarks = new QPopupMenu();
+    connect( bookmarks, SIGNAL( activated( int ) ),
+	     SLOT( slotBookmarkSelected( int ) ) );
+    bookmarks->insertItem( i18n( "Edit Bookmarks" ), 1 );
+    bookmarks->insertSeparator();
+    QString bdir( kapp->localkdedir().data() );
+    bdir += "/share/apps/kfm/bookmarks";
+    scanBookmarks( bookmarks, bdir );
+    
     rmb = new QPopupMenu;
     rmb->setMouseTracking(TRUE);
     rmb->installEventFilter(this);
     rmb->insertItem(klocale->translate("New"), menuNew );
+    rmb->insertItem(klocale->translate("Bookmarks"), bookmarks );
     rmb->insertSeparator();
     rmb->insertItem(klocale->translate("Help on desktop"), RMB_HELP);
     rmb->insertItem(klocale->translate("Execute command"), RMB_EXECUTE);
@@ -187,6 +203,109 @@ KRootWm::KRootWm(KWMModuleApplication* kwmmapp_arg)
     QApplication::desktop()->installEventFilter(this);  
 
     kwmmapp->connectToKWM();
+}
+
+//----------------------------------------------
+//
+// Bookmark code taken from KFM
+// (c) Torben Weis, weis@kde.org
+//
+//----------------------------------------------
+
+void KRootWm::scanBookmarks( QPopupMenu *_popup, const char * _path )
+{
+  struct stat buff;
+  DIR *dp;
+  struct dirent *ep;
+  dp = opendir( _path );
+  if ( dp == 0L )
+    return;
+  
+  // Loop thru all directory entries
+  while ( ( ep = readdir( dp ) ) != 0L )
+  {
+    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
+    {
+      // QString name = ep->d_name;	
+
+      QString file = _path;
+      file += "/";
+      file += ep->d_name;
+      stat( file.data(), &buff );
+      if ( S_ISDIR( buff.st_mode ) )
+      {
+	QPixmap pix;
+	QString f = kapp->kde_icondir().data();
+	f += "/mini/folder.xpm";
+	pix.load( f );
+
+	QPopupMenu *pop = new QPopupMenu;
+	connect( pop, SIGNAL( activated( int ) ),
+	     SLOT( slotBookmarkSelected( int ) ) );
+
+	_popup->insertItem( pix, ep->d_name, pop );
+	scanBookmarks( pop, file );
+      }
+      else
+      {    
+	KSimpleConfig cfg( file, true );
+	cfg.setGroup( "KDE Desktop Entry" );
+	QString type = cfg.readEntry( "Type" );	
+	if ( type == "Link" )
+	{
+	  QString url = cfg.readEntry( "URL" );
+	  QString icon = cfg.readEntry( "Icon", "unknown.xpm" );
+	  QString miniicon = cfg.readEntry( "MiniIcon", icon );
+	  if ( !url.isEmpty() && !miniicon.isEmpty() )
+	  {
+	    QPixmap pix;
+	    QString name = cfg.readEntry( "Name" );
+	    if ( name.isEmpty() )
+	    {
+	      name = ep->d_name;
+  
+	      int i = 0;
+	      while ( ( i = name.find( "%%", i ) ) != -1 )
+	      {
+		name.replace( i, 2, "%");
+		i++;
+	      }
+  
+	      while ( ( i = name.find( "%2f" ) ) != -1 )
+		name.replace( i, 3, "/");
+	      while ( ( i = name.find( "%2F" ) ) != -1 )
+		name.replace( i, 3, "/");
+	      
+	      if ( name.length() > 7 && name.right( 7 ) == ".kdelnk" )
+		name.truncate( name.length() - 7 );
+	    }
+
+	    QString f( kapp->localkdedir().data() );
+	    f += "/share/icons/mini/";
+	    f += miniicon;
+	    if ( access( f, R_OK ) >= 0 )
+	      pix.load( f );
+	    else
+	    {
+	      f = kapp->kde_icondir().data();
+	      f += "/mini/";
+	      f += miniicon;
+	      if ( access( f, R_OK ) >= 0 )
+		pix.load( f );
+	      else
+	      {
+		f = kapp->kde_icondir().data();
+		f += "/mini/unknown.xpm";
+		pix.load( f );
+	      }
+	    }
+	    _popup->insertItem( pix, name, bookmarkId );
+	    bookmarkDict.insert( bookmarkId++, new QString( url ) );
+	  }
+	}
+      }
+    }
+  }
 }
 
 bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
@@ -490,6 +609,32 @@ void KRootWm::slotNewFile( int _id )
 	    execute( cmd );
 	}
     }
+}
+
+void KRootWm::slotBookmarkSelected( int _id )
+{
+  if ( _id == 1 )
+  {    
+    QString bdir( kapp->localkdedir().data() );
+    bdir += "/share/apps/kfm/bookmarks";
+    QString cmd( "kfmclient openURL \"" );
+    cmd += bdir;
+    cmd += "\"";
+    execute( cmd );
+    return;
+  }
+  
+  QString* s = bookmarkDict[ _id ];
+  if ( s == 0L )
+  {
+    warning( "Bug in KRootWm Bookmark code. Tell weis@kde.org" );
+    return;
+  }
+  
+  QString cmd( "kfmclient openURL \"" );
+  cmd += s->data();
+  cmd += "\"";
+  execute( cmd );
 }
 
 int main( int argc, char *argv[] )

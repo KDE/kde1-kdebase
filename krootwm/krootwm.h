@@ -11,6 +11,7 @@
 #include <qcursor.h>
 #include <qlist.h>
 #include <qstring.h>
+#include <qintdict.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -59,15 +60,22 @@ private:
   QPopupMenu* mmb;
   QPopupMenu* rmb;
   QPopupMenu* menuNew;
-    
+  QPopupMenu *bookmarks;
+  
   QStrList templatesList;
   QString desktopPath;
   QString templatePath;
 
   bool kpanel_menu_on_left_button;
-      
+
+  void scanBookmarks( QPopupMenu*, const char *_dir );
+  int bookmarkId;
+  QIntDict<QString> bookmarkDict;
+  
 private slots:
   void slotNewFile( int _id );
+  void slotBookmarkSelected( int _id );
+  
   void rmb_menu_activated(int);
   void mmb_menu_activated(int);
 };
