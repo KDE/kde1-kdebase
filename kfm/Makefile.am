@@ -76,7 +76,6 @@ install-data-local:
 	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) magic $(KDEDIR)/share
 	(cd Desktop && $(MAKE) install)
-	(cd mimetypes && $(MAKE) install)
 
 IPC:    clientIPC kioIPC
 

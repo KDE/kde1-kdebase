@@ -1,7 +1,5 @@
 ## Makefile.am for kfontmanager
 
-APPSDIR = $(prefix)/apps/System
-
 ###################################################################
 
 LDADD   =	@all_libraries@ -lkdecore -lqt -lm -lXext -lX11
@@ -20,12 +18,9 @@ kfontexplorer.cpp: kfontexplorer.moc
 
 install-local-data:
 	(cd docs && $(MAKE) install)
-	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) kfontmanager.kdelnk $(APPSDIR)/kfontmanager.kdelnk
 
 uninstall-local:
 	(cd docs && $(MAKE) uninstall)
-	rm -f $(APPSDIR)/kfontmanager.kdelnk
 
 ####### Meta objects
 

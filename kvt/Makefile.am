@@ -27,11 +27,8 @@ install-data-local:
 	$(INSTALL_DATA) ./lib/pics/UNIX.xpm $(PICSDIR)
 	$(mkinstalldirs) $(DOCSDIR)
 	$(INSTALL_DATA) ./doc/HTML/kvt.html $(DOCSDIR)
-	$(mkinstalldirs) $(UTILSDIR)
-	$(INSTALL_DATA) ./apps/Utilities/UNIX.kdelnk $(UTILSDIR)
 
 uninstall-local:
 	rm -f $(PICSDIR)/UNIX.xpm
 	rm -f $(DOCSDIR)/kvt.html
-	rm -f $(UTILSDIR)/UNIX.kdelnk
 

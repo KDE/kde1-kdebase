@@ -1144,7 +1144,7 @@ KMimeMagic::resultBufPrintf(char *str,...)
 
 	/* assemble the string into the buffer */
 	va_start(ap, str);
-	vsnprintf(buf, sizeof(buf), str, ap);
+	vsprintf(buf, str, ap);
 	va_end(ap);
 
 	/* add the buffer to the list */
