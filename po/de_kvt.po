@@ -16,75 +16,75 @@ msgstr "Modus der Farbdarstellung"
 
 #: main.C:227
 msgid "Ok"
-msgstr "Übernehmen"
+msgstr "&Übernehmen"
 
 #: main.C:229
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "&Abbrechen"
 
 #: main.C:357
 msgid "&New Terminal"
-msgstr "Neues Terminal"
+msgstr "&Neues Terminal"
 
 #: main.C:359
 msgid "E&xit"
-msgstr "Beenden"
+msgstr "&Beenden"
 
 #: main.C:364 main.C:669
 msgid "&Hide"
-msgstr "Unsichtbar"
+msgstr "&Unsichtbar"
 
 #: main.C:365
 msgid "&Left"
-msgstr "Links"
+msgstr "&Links"
 
 #: main.C:366
 msgid "&Right"
-msgstr "Rechts"
+msgstr "&Rechts"
 
 #: main.C:371
 msgid "&Normal"
-msgstr "Normal"
+msgstr "&Normal"
 
 #: main.C:372
 msgid "&Tiny"
-msgstr "Winzig"
+msgstr "&Winzig"
 
 #: main.C:373
 msgid "&Small"
-msgstr "Klein"
+msgstr "&Klein"
 
 #: main.C:374
 msgid "&Medium"
-msgstr "Mittel"
+msgstr "&Mittel"
 
 #: main.C:375
 msgid "&Large"
-msgstr "Groß"
+msgstr "&Groß"
 
 #: main.C:376
 msgid "&Huge"
-msgstr "Riesig"
+msgstr "&Riesig"
 
 #: main.C:388
 msgid "&black/white"
-msgstr "schwarz/weiß"
+msgstr "&schwarz/weiß"
 
 #: main.C:389
 msgid "&white/black"
-msgstr "weiß/schwarz"
+msgstr "&weiß/schwarz"
 
 #: main.C:390
 msgid "&green/black"
-msgstr "grün/schwarz"
+msgstr "&grün/schwarz"
 
 #: main.C:391
 msgid "black/light&yellow"
-msgstr "schwarz/hellgelb"
+msgstr "&schwarz/hellgelb"
 
 #: main.C:392
 msgid "Linu&x Console"
-msgstr "Linux Konsole"
+msgstr "Linu&x Konsole"
 
 #: main.C:399 main.C:594
 msgid "Hide &Menubar"
@@ -96,59 +96,60 @@ msgstr "Menüleiste anzeigen"
 
 #: main.C:402 main.C:604
 msgid "Secure &keyboard"
-msgstr "Tastatur sperren"
+msgstr "&Tastatur sperren"
 
 #: main.C:404
 msgid "Scroll&bar"
-msgstr "Schiebebalken"
+msgstr "Schiebe&balken"
 
 #: main.C:405
 msgid "&Font size"
-msgstr "Schriftgröße"
+msgstr "&Schriftgröße"
 
 #: main.C:406
 msgid "&Color"
-msgstr "Farben"
+msgstr "&Farben"
 
 #: main.C:407
 msgid "&Size"
-msgstr "Fenstergröße"
+msgstr "Fenster&größe"
 
 #: main.C:408
+#, fuzzy
 msgid "Terminal..."
-msgstr "Terminal..."
+msgstr "&Terminal..."
 
 #: main.C:410
 msgid "Save &Options"
-msgstr "Einstellungen sichern"
+msgstr "&Einstellungen sichern"
 
 #: main.C:419
 msgid "&About..."
-msgstr "Über..."
+msgstr "&Über..."
 
 #: main.C:420 main.C:430
 msgid "&Help"
-msgstr "Hilfe"
+msgstr "&Hilfe"
 
 #: main.C:427
 msgid "&File"
-msgstr "Datei"
+msgstr "&Datei"
 
 #: main.C:428
 msgid "&Options"
-msgstr "Einstellungen"
+msgstr "&Einstellungen"
 
 #: main.C:469 main.C:662
 msgid "&Show"
-msgstr "Sichtbar"
+msgstr "&Sichtbar"
 
 #: main.C:600
 msgid "Unsecure &keyboard"
-msgstr "Tastatur entsperren"
+msgstr "&Tastatur entsperren"
 
 #: main.C:739
 msgid "Hint"
-msgstr "Hinweis"
+msgstr "&Hinweis"
 
 #: main.C:740
 msgid ""

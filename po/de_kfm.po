@@ -313,7 +313,8 @@ msgstr "FEHLER: Keine Terminal Einstellungen"
 
 #: kbind.cpp:1373
 msgid "ERROR: You must first mount the device. Use the right mouse button"
-msgstr "FEHLER: Zuerst muß das Gerät gemountet werden. Rechte Maus-Taste drücken."
+msgstr ""
+"FEHLER: Zuerst muß das Gerät gemountet werden. Rechte Maus-Taste drücken."
 
 #: kbind.cpp:1379
 #, c-format
@@ -633,7 +634,8 @@ msgstr "Verküpfung"
 
 #: kiojob.cpp:110
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "INTERNER FEHLER: Wenigstens das zu mountende Gerät muß angegeben werden."
+msgstr ""
+"INTERNER FEHLER: Wenigstens das zu mountende Gerät muß angegeben werden."
 
 #: kiojob.cpp:237 kiojob.cpp:241
 #, c-format
@@ -642,7 +644,8 @@ msgstr "FEHLER: Fehlerhaft URL '%s'"
 
 #: kiojob.cpp:246
 msgid "ERROR: Can only make links on local file system"
-msgstr "FEHLER: Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
+msgstr ""
+"FEHLER: Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
 
 #: kiojob.cpp:254
 #, c-format

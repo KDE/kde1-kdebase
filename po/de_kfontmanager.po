@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-08-31 16:27+0200\n"
+"POT-Creation-Date: 1997-08-31 17:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,50 +14,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfontexplorer.cpp:85
-msgid "Requested Font"
-msgstr "Gewünschte Schriftart"
+#: main.cpp:53
+msgid "KDE Font Manager"
+msgstr "KDE Schriftartmanager"
 
-#: kfontexplorer.cpp:90
-msgid "Actual Font"
-msgstr "Tatsächliche Schriftart"
+#: main.cpp:61
+msgid "KDE Fonts"
+msgstr "KDE Schriftarten"
 
-#: kfontexplorer.cpp:94 kfontexplorer.cpp:98
-msgid "Family:"
-msgstr "Familie:"
+#: main.cpp:62
+msgid "Font Explorer"
+msgstr "Schriftartentest"
 
-#: kfontexplorer.cpp:105 kfontexplorer.cpp:110
-msgid "Size:"
-msgstr "Größe:"
-
-#: kfontexplorer.cpp:119 kfontexplorer.cpp:124
-msgid "Weight:"
-msgstr "Stärke:"
-
-#: kfontexplorer.cpp:133 kfontexplorer.cpp:141
-msgid "Style:"
-msgstr "Schnitt:"
-
-#: kfontlist.cpp:65 kfontmanager.cpp:105
-msgid "About kfontmanager"
-msgstr "Über kfontmanager"
-
-#: kfontlist.cpp:65
-msgid ""
-"kfontmanager Version 0.1\n"
-"Copyright 1997\n"
-"Bernd Johannes Wuebben\n"
-"wuebben@math.cornell.edu\n"
-msgstr ""
-"kfontmanager Version 0.1\n"
-"Copyright 1997\n"
-"Bernd Johannes Wuebben\n"
-"wuebben@math.cornell.edu\n"
-
-#: kfontlist.cpp:67 kfontmanager.cpp:107 kfontmanager.cpp:213
-#: kfontmanager.cpp:283 kfontmanager.cpp:290
-msgid "Ok"
-msgstr "Ok"
+#: main.cpp:63
+msgid "Raw X11 Font List"
+msgstr "Unbearbeitete X11 Schriftarten"
 
 #: kfontmanager.cpp:61
 msgid "Available X11 Fonts"
@@ -75,13 +46,13 @@ msgstr "Hinzufügen"
 msgid "Remove"
 msgstr "Entfernen"
 
-#: kfontmanager.cpp:80
-msgid "Help"
-msgstr "Hilfe"
-
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
 msgstr "Der KDE Schriftartenmanager Beispieltext"
+
+#: kfontlist.cpp:65 kfontmanager.cpp:105
+msgid "About kfontmanager"
+msgstr "Über kfontmanager"
 
 #: kfontmanager.cpp:105
 msgid ""
@@ -127,25 +98,45 @@ msgstr ""
 "Die KDE Schriftartenliste kann daher nicht\n"
 "gesichert werden."
 
-#: main.cpp:53
-msgid "KDE Font Manager"
-msgstr "KDE Schriftartmanager"
+#: kfontlist.cpp:65
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
 
-#: main.cpp:61
-msgid "KDE Fonts"
-msgstr "KDE Schriftarten"
+#~ msgid "Requested Font"
+#~ msgstr "Gewünschte Schriftart"
 
-#: main.cpp:62
-msgid "Font Explorer"
-msgstr "Schriftartentest"
+#~ msgid "Actual Font"
+#~ msgstr "Tatsächliche Schriftart"
 
-#: main.cpp:63
-msgid "Raw X11 Font List"
-msgstr "Unbearbeitete X11 Schriftarten"
+#~ msgid "Family:"
+#~ msgstr "Familie:"
+
+#~ msgid "Size:"
+#~ msgstr "Größe:"
+
+#~ msgid "Weight:"
+#~ msgstr "Stärke:"
+
+#~ msgid "Style:"
+#~ msgstr "Schnitt:"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Help"
+#~ msgstr "Hilfe"
 
 # Manually added
-msgid "Cancel"
-msgstr "Abbrechen"
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
 
-msgid "Apply"
-msgstr "Übernehmen"
+#~ msgid "Apply"
+#~ msgstr "Übernehmen"

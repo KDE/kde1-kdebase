@@ -1,7 +1,7 @@
 
 # This has to be set. The rest should be reusable
-DE_POFILES = de_kfind.po  de_kdehelp.po  de_kdisplay.po  de_kvt.po de_kfontmanager.po de_kfm.po de_klogout.po
-DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo de_kfontmanager.gmo de_kfm.gmo de_klogout.po
+DE_POFILES = de_kfind.po  de_kdehelp.po  de_kdisplay.po  de_kvt.po  de_kfm.po  de_kwm.po  de_kfontmanager.po
+DE_GMFILES = de_kfind.gmo de_kdehelp.gmo de_kdisplay.gmo de_kvt.gmo de_kfm.gmo de_kwm.gmo de_kfontmanager.gmo
 
 CZ_POFILES = cz_kfind.po
 CZ_GMFILES = cz_kfind.gmo
