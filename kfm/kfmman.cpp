@@ -1633,7 +1633,27 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
     }
     
     popupMenu->clear();
-    
+    // -- sven: only copy from "file:/tmp/kmail*" start ---
+    {
+      char *s;
+      bool attachment = false;
+      for ( s = _zone->getURLList().first(); s != 0L; s = _zone->getURLList().next() )
+	if (strstr (s, "file:/tmp/kmail") != 0 )
+	  attachment = true;
+      if (attachment)
+      {
+	if (KIOServer::supports( _dest, KIO_Write ) && !_nestedURLs )
+	{
+	  popupMenu->insertItem( klocale->getAlias( ID_STRING_COPY ),
+				 this, SLOT( slotDropCopy() ) );
+	  popupMenu->popup(*_p);
+	}
+	else
+	  warning(klocale->translate("ERROR: Can not accept drop"));
+	return;
+      }
+    }
+    // -- sven: only copy from "file:/tmp/kmail*" end ---
     int id = -1;
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
