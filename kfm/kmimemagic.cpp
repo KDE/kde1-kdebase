@@ -1279,7 +1279,6 @@ KMimeMagic::process(const char * fn)
 {
 	int fd = 0;
 	unsigned char buf[HOWMANY + 1];	/* one extra for terminating '\0' */
-	struct utimbuf utbuf;
 	struct stat sb;
 	int nbytes = 0;         /* number of bytes read from a datafile */
 
@@ -1316,12 +1315,6 @@ KMimeMagic::process(const char * fn)
 		tryit(buf, nbytes);
 	}
 
-	/*
-	 * Try to restore access, modification times if read it.
-	 */
-	utbuf.actime = sb.st_atime;
-	utbuf.modtime = sb.st_mtime;
-	(void) utime(fn, &utbuf);	/* don't care if loses */
 	(void) close(fd);
 	resultBuf += "\n";
 }
