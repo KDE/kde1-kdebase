@@ -1,2 +1,0 @@
-msgid "putuz magnuz"
-msgstr "ee"
