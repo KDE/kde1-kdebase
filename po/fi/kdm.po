@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Date: 1997-09-09 17:23:06+0200\n"
+"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
+"Content-Type: text/plain; charset=\n"
+"Xgettext-Options: -s -C -ktranslate\n"
+"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+
+#: kdmshutdown.cpp:229 kgreeter.cpp:207
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Poistu kdm:stä"
+
+#: kgreeter.cpp:201
+msgid "Go!"
+msgstr "Aloita!"
+
+#: kgreeter.cpp:179
+msgid "Login failed!"
+msgstr "Kirjautuminen epäonnistui!"
+
+#: kgreeter.cpp:145
+msgid "Login:"
+msgstr "Käyttäjätunnus"
+
+#: kdmshutdown.cpp:226
+msgid "Ok"
+msgstr ""
+
+#: kgreeter.cpp:150
+msgid "Password:"
+msgstr "Salasana"
+
+#: kgreeter.cpp:185
+msgid "Session Type:"
+msgstr "Istunnon tyyppi:"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Aja alas"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Aja alas ja käynnistä uudelleen"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Aja alas vai käynnistä uudelleen"
+
+#: kgreeter.cpp:217
+msgid "Shutdown..."
+msgstr "Alasajo ..."

@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-09-05 12:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:172
+msgid "Personal menu"
+msgstr "Käyttäjän valikko"
+
+#: kpanel.C:180
+msgid "Add application"
+msgstr "Lisää sovellus"
+
+#: kpanel.C:182
+msgid "Add special"
+msgstr ""
+
+#: kpanel.C:183
+msgid "Configure"
+msgstr "Konfiguroi"
+
+#: kpanel.C:185
+msgid "Configure panel"
+msgstr "Konfiguroi paneeli"
+
+#: kpanel.C:186
+msgid "Restart"
+msgstr "Käynnistä uudelleen"
+
+#: kpanel.C:188
+msgid "Panel"
+msgstr "Paneeli"
+
+#: kpanel.C:190
+msgid "Lock Screen"
+msgstr "Lukitse näyttö"
+
+#: kpanel.C:192
+msgid "Logout"
+msgstr "Poistu"
+
+#: kpanel.C:201
+msgid "Move"
+msgstr "Siirrä"
+
+#: kpanel.C:202
+msgid "Remove"
+msgstr "Poista"
+
+#: kpanel.C:204
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: kpanel.C:239
+msgid "System"
+msgstr "Järjestelmä"
+
+#: kpanel.C:316
+msgid "Desktop"
+msgstr "Työpöytä"
+
+#: kpanel.C:348
+msgid "No info available"
+msgstr "Tietoa ei ole saatavilla"
+
+#: kpanel.C:435 kpanel.C:451
+msgid "Destroy"
+msgstr "Tuhoa"
+
+#: kpanel.C:438 kpanel.C:448
+msgid "(Un) Sticky"
+msgstr "Naulaa/Poista naulaus"
+
+#: kpanel.C:439 kpanel.C:447
+msgid "(Un) Iconify"
+msgstr "Ikoniksi"
+
+#: kpanel.C:440 kpanel.C:446
+msgid "(Un) Maximize"
+msgstr "Suurenna/Pienennä"
+
+#: kpanel.C:441 kpanel.C:445
+msgid "On this desktop"
+msgstr "Tällä työpöydällä"
+
+#: props.C:263
+msgid "Location"
+msgstr "Sijainti"
+
+#: props.C:283
+msgid "Taskbar"
+msgstr "Tehtäväpaneeli"
+
+#: props.C:284
+msgid "Hidden"
+msgstr "Piiloitettu"
+
+#: props.C:296
+msgid "Top/Left"
+msgstr "Ylhäällä/Vasemmalla"
+
+#: props.C:307
+msgid "Tiny Style"
+msgstr "Pieni tyyli"
+
+#: props.C:308
+msgid "Small Style"
+msgstr "Normaali tyyli"
+
+#: props.C:309
+msgid "Large Style"
+msgstr "Suuri tyyli"
+
+#: props.C:321
+msgid "Menu Tooltips"
+msgstr "Valikon vinkit"
+
+#: props.C:397
+msgid "Visible"
+msgstr "Näkyvä"
+
+#: props.C:404
+msgid "Width"
+msgstr "Leveys"
+
+#: props.C:415
+msgid "KPanel Configuration"
+msgstr "KPanel asetukset"

@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-31 17:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: error.C:28
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"Kwm: Näyttäisi että toinen ikkunamanageri on jo käytössä. Kwm:ää ei "
+"käynnistetä.\n"
+
+#: error.C:42
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "Kwm: Virhe alkurutiineissa; lopetetaan\n"
+
+#: kwm.C:73
+msgid ""
+"kwm: version 0.9 Copyright (c) 1996, 1997 Matthias Ettrich\n"
+"     based on version 0.2 - 0.5 Copyright (c) 1996, 1997 Brian Cooper \n"
+"     based on version 0.1 Copyright (c) 1996 Matthias Ettrich \n"
+"     Parts derived from 9wm 1.1 Copyright (c) 1994 David Hogan\n"
+"     No warranty. Please see the README's\n"
+msgstr ""
+
+
+
+#: kwm.C:79
+#, c-format
+msgid "patch level %d"
+msgstr "patch taso %d"
+
+#: kwm.C:154
+msgid "usage: kwm [-version] [-exec prog] \n"
+msgstr "syntaksi: kwm [-version] [-exec ohjelma] \n"
+
+#: kwm.C:566
+msgid "Desktop"
+msgstr "Työpöytä"
+
+#: kwm.C:731
+msgid "kwm: exiting on signal\n"
+msgstr "Kwm: Lopetetaan signaalilla\n"
+
+#: main.C:371
+msgid "&Help on desktop"
+msgstr "&Ohje työpöydästä"
+
+#: main.C:372
+msgid "&Execute command"
+msgstr "Suo%rita komento"
+
+#: main.C:373
+msgid "&Display properties"
+msgstr "Näytön ominaisuudet"
+
+#: main.C:374
+msgid "&Refresh desktop"
+msgstr "Päivitä työpöytä"
+
+#: main.C:375
+msgid "&Arrange icons"
+msgstr "Järjestele ikonit"
+
+#: main.C:377
+msgid "&Lock screen"
+msgstr "Lukitse näyttö"
+
+#: main.C:378
+msgid "Lo&gout"
+msgstr "Lopeta"
+
+#: main.C:1093
+msgid "One"
+msgstr "Yksi"
+
+#: main.C:1095
+msgid "Two"
+msgstr "Kaksi"
+
+#: main.C:1097
+msgid "Three"
+msgstr "Kolme"
+
+#: main.C:1099
+msgid "Four"
+msgstr "Neljä"
+
+#: main.C:1101
+msgid "Five"
+msgstr "Viisi"
+
+#: main.C:1103
+msgid "Six"
+msgstr "Kuusi"
+
+#: main.C:1105
+msgid "Seven"
+msgstr "Seitsemän"
+
+#: main.C:1107
+msgid "Eight"
+msgstr "Kahdeksan"
+
+#: main.C:1141
+msgid "(Un) Ma&ximize"
+msgstr "Suurenna/Pienennä"
+
+#: main.C:1142
+msgid "&Iconify"
+msgstr "Ikoniksi"
+
+#: main.C:1143
+msgid "&Move"
+msgstr "Siirrä"
+
+#: main.C:1144
+msgid "&Resize"
+msgstr "Muuta kokoa"
+
+#: main.C:1145
+msgid "(Un) &Sticky"
+msgstr "Naulaa/Poista naulaus"
+
+#: main.C:1146
+msgid "&To Desktop"
+msgstr "Työpöydälle"
+
+#: main.C:1148
+msgid "&Close"
+msgstr "Sulje"
+
+#: main.C:1149
+msgid "&Destroy"
+msgstr "Tuhoa"
+
+#: minicli.C:65
+msgid "Command:"
+msgstr "Komento:"
