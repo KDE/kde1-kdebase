@@ -160,18 +160,16 @@ msgid "Device"
 msgstr "Laite"
 
 #: entrydialog.cpp:63
-#, fuzzy
 msgid "Type:"
-msgstr "Tiedostojärjestelmä:"
+msgstr "Tyyppi:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Tiedoston nimi:"
 
 #: entrydialog.cpp:82
-#, fuzzy
 msgid "Name:"
-msgstr "Tiedoston nimi:"
+msgstr "Nimi:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"

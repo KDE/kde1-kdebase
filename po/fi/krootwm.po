@@ -25,7 +25,7 @@ msgstr "VIRHE: Pohjaa ei ole olemassa '%s'"
 
 #: krootwm.C:181
 msgid "Bookmarks"
-msgstr ""
+msgstr "Kirjanmerkit"
 
 #: krootwm.C:183
 msgid "Help on desktop"
@@ -65,7 +65,7 @@ msgstr "Lopeta"
 
 #: krootwm.C:219
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Muokkaa kirjanmerkkejä"
 
 #: krootwm.C:607
 msgid "Could not create folder"

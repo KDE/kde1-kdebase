@@ -91,7 +91,7 @@ msgstr "Käynnistä paneeli uudelleen"
 
 #: props.C:160
 msgid "Disk Navigator"
-msgstr ""
+msgstr "Levyselain"
 
 #: props.C:168
 msgid "Panel"
@@ -115,28 +115,28 @@ msgstr "En voi laittaa tätä nappina paneeliin!"
 
 #: pfilemenu.C:111
 msgid "KFM Information"
-msgstr ""
+msgstr "KFM Tietoja"
 
 #: pfilemenu.C:112
 msgid "Creating directory:\n"
-msgstr ""
+msgstr "Luon hakemistoa:\n"
 
 #: pfilemenu.C:340
 msgid "(empty folder)"
-msgstr ""
+msgstr "(tyhjä kansio)"
 
 #: pfilemenu.C:397
 msgid "(Too Many Files)"
-msgstr ""
+msgstr "(Liian monta tiedostoa)"
 
 #: pfilemenu.C:406
 msgid "(Access Denied)"
-msgstr ""
+msgstr "(Käsittely estetty)"
 
 #: pfilemenu.C:409
 msgid "(Unreadable)"
-msgstr ""
+msgstr "(Lukukelvoton)"
 
 #: pfilemenu.C:416
 msgid "Open Folder"
-msgstr ""
+msgstr "Avaa kansio"

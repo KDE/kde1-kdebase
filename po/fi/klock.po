@@ -23,13 +23,12 @@ msgid "Setup kbanner"
 msgstr "Aseta viesti"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Väärä"
+msgstr "Perhe:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
-msgstr ""
+msgstr "Koko:"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -37,7 +36,7 @@ msgstr "Väri:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Paksunnettu"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -406,7 +405,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Toimintoa %s ei tueta tällä alustalla!"
 
 #: main.cpp:378
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -414,9 +412,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Varoitus: Et voi lukita näyttöä!\n"
+"\n"
 "Järjestelmäsi käyttää shadow-salasanoja!\n"
 "Ota yhteyttä järjestelmän ylläpitäjään.\n"
-"\n"
 "Ja kerro tarvitsevasi suid:n näytönsäästäjiin!"
 
 #: main.cpp:383
@@ -430,18 +429,21 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
+"älä käytä -test optiota yhdessä -lock option kanssa.\n"
+"Käytä mielummin klock:a.\n"
+"\n"
 
 #: main.cpp:536
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Käyttö: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
 #: main.cpp:539
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -471,6 +473,7 @@ msgstr ""
 "  -desc             Tulosta näytönsäästäjän kuvaus stdout:n\n"
 "  -install          Asenna näytönsäästäjä\n"
 "  -lock             Vaadi salasana näytönsäästäjän lopettamiseksi\n"
+"  -allow-root       Hyväksy root-salasana avaamiseen\n"
 "  -nice num         Ajaa halutulla nice arvolla\n"
 "\n"
 "  -preview wid      Aja määritellyssä X-Ikkunassa\n"
@@ -513,24 +516,20 @@ msgstr ""
 "Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Avaruus (GL)"
+msgstr "Putket (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Aseta liutusta"
+msgstr "Aseta KPutkia"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Mehiläisiä:"
+msgstr "Putkien määrä"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "Tietoa viivoista"
+msgstr "Tietoa KPutkista"
 
 #: pipes.cpp:745
 msgid ""
@@ -538,6 +537,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KPutket\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
 
 #: polygon.cpp:64
 msgid "Polygons"

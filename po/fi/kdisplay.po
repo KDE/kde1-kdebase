@@ -297,7 +297,7 @@ msgstr "&Vaatii salasanan"
 
 #: scrnsave.cpp:273
 msgid "&Accept root password to unlock"
-msgstr ""
+msgstr "&Hyväksy root salasana avaamiseen"
 
 #: scrnsave.cpp:279
 msgid "Show &password as stars"

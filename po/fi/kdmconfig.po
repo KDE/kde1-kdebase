@@ -34,6 +34,7 @@ msgstr "&Istunnot"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"käyttö: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
@@ -77,11 +78,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Kieli"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Kieli:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -230,9 +231,8 @@ msgid "Save image as default image?"
 msgstr "Tallenna kuva vakiokuvaksi?"
 
 #: kdm-sess.cpp:50
-#, fuzzy
 msgid "Allow to shutdown"
-msgstr "Salli sammuttaminen:"
+msgstr "Salli sammuttaminen"
 
 #: kdm-sess.cpp:55
 msgid "All"
@@ -272,16 +272,5 @@ msgstr "Olemassaolevat tyypit"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "ilman nimeä!"
 
-#~ msgid "&Fonts"
-#~ msgstr "&Kirjasin"
-
-#~ msgid "Appearance"
-#~ msgstr "Ulkonäkö"
-
-#~ msgid "Browse..."
-#~ msgstr "Selaa..."
-
-#~ msgid "None"
-#~ msgstr "Ei kukaan"

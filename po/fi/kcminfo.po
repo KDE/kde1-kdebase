@@ -70,24 +70,23 @@ msgstr "J‰rjestelm‰‰ ei viel‰ tueta :-("
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
 msgstr "Ei saatavilla"
 
 #: processor_linux.cpp:19
 msgid "File Error!"
-msgstr ""
+msgstr "Tiedostovirhe!"
 
 #: processor_linux.cpp:20
 msgid "Cannot read /proc/cpuinfo"
-msgstr ""
+msgstr "En voi lukea /proc/cpuinfo"
 
 #: processor_fbsd.cpp:47
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, tuntematon nopeus"
 
 #: processor_fbsd.cpp:49
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s k‰ytt‰‰ %s MHz"

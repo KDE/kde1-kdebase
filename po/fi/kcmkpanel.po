@@ -24,12 +24,11 @@ msgstr "&Työpöydät"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Levyselain"
 
 #: main.cpp:109
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "käyttö: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "käyttö: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:142
 msgid "KPanel Configuration"
@@ -53,7 +52,7 @@ msgstr "&Alhaalla"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Oikealla"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -77,7 +76,7 @@ msgstr "Ylhäällä/Vase&mmalla"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Tyyli"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -145,8 +144,8 @@ msgstr "&12h AM/PM"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Aseta &Yleisiä..."
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Aseta &Paikallisia..."

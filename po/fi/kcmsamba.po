@@ -16,7 +16,7 @@ msgstr ""
 
 #: main.cpp:48
 msgid "&Status"
-msgstr ""
+msgstr "&Tila"
 
 #: main.cpp:57
 msgid "usage: kcmsamba [-init | status]\n"
@@ -28,32 +28,32 @@ msgstr "Samba"
 
 #: ksmbstatus.cpp:114
 msgid "Error launching smbstatus !"
-msgstr ""
+msgstr "Virhe käynnistettäessä smbstatusta !"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr ""
+msgstr "Virhe ! smbstatusta ei löydy tai se ei toimi !"
 
 #: ksmbstatus.cpp:158
 msgid "Service"
-msgstr ""
+msgstr "Palvelu"
 
 #: ksmbstatus.cpp:160
 msgid "UID"
-msgstr ""
+msgstr "UID"
 
 #: ksmbstatus.cpp:161
 msgid "GID"
-msgstr ""
+msgstr "GID"
 
 #: ksmbstatus.cpp:162
 msgid "PID"
-msgstr ""
+msgstr "PID"
 
 #: ksmbstatus.cpp:163
 msgid "Machine"
-msgstr ""
+msgstr "Kone"
 
 #: ksmbstatus.cpp:164
 msgid "Open Files"
-msgstr ""
+msgstr "Avoimia tiedostoja"

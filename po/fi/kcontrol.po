@@ -46,28 +46,28 @@ msgstr ""
 
 #: mainwidget.cpp:44
 msgid "System:"
-msgstr ""
+msgstr "Systeemi:"
 
 #: mainwidget.cpp:47
 msgid "User: "
-msgstr ""
+msgstr "Käyttäjä:"
 
 #: mainwidget.cpp:53
 msgid "Hostname: "
-msgstr ""
+msgstr "Isäntänimi:"
 
 #: mainwidget.cpp:61
 msgid "System: "
-msgstr ""
+msgstr "Systeemi: "
 
 #: mainwidget.cpp:68
 msgid "Release: "
-msgstr ""
+msgstr "Systeemiversio: "
 
 #: mainwidget.cpp:76
 msgid "Version: "
-msgstr ""
+msgstr "Versio: "
 
 #: mainwidget.cpp:83
 msgid "Machine: "
-msgstr ""
+msgstr "Tietokone: "

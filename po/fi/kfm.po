@@ -52,9 +52,8 @@ msgid "&Select"
 msgstr "&Valitse"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "&Valitse"
+msgstr "Valitse &kaikki"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -208,7 +207,6 @@ msgid "Up"
 msgstr "Ylös"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
 msgstr "Koti"
 
@@ -236,7 +234,7 @@ msgstr "Kuvakkeen lataus epäonnistui\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM Virhe"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -285,9 +283,8 @@ msgid "Document: Done"
 msgstr "Dokumentti: Valmis"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "VIRHE: Pudotit URL:n itsensä päälle"
+msgstr "VIRHE: Voit pudottaa vain URL:a"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -552,18 +549,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Läpinäkyvä teksti pääkuvakkeille"
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Selaa"
+msgstr "&Selain"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Kirjanmerkin kirjoittaminen ei onnistu"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Koko nimi"
+msgstr "Nimi"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -652,7 +647,7 @@ msgstr "Käyttäjä"
 
 #: kfmprops.cpp:460 kfmprops.cpp:559
 msgid "Group"
-msgstr ""
+msgstr "Ryhmä"
 
 #: kfmprops.cpp:465
 msgid "Others"
@@ -675,9 +670,8 @@ msgid "Ownership"
 msgstr "Omistajuus"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Omistajuus"
+msgstr "Omistaja"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1309,7 +1303,7 @@ msgstr "Oleta HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Tämä ryhmä on tyhjä!"
 
 #: kfmprops.h:73
 msgid "&General"
