@@ -86,10 +86,16 @@ pointer positioned at the border before the desktop changes.
 A <EM>value</EM> of -1 disables this feature.
 <P>
 </LI>
-<LI><B>ElectricBorderMovePointer=<CODE>off|on</CODE></B> <BR>
+<LI><B>ElectricBorderPointerWarp=<CODE>NoWarp|MiddleWarp|FullWarp</CODE></B> <BR>
 If the <CODE>ElectricBorder</CODE> option is <CODE>on</CODE>, turn this
-<CODE>on</CODE> to have the mouse is moved to the middle of the screen when the
+<CODE>on</CODE> to have the mouse moved to the corresponding position when the
 desktop changes.
+<P>
+</LI>
+<LI><B>ElectricBorderNumberOfPushes=<EM>value</EM></B> (default is
+"<B><EM>5 pushes</EM></B>") <BR>
+The number of pushes within the time frame given by the <CODE>ElectricBorder</CODE> property
+to switch to another virtual desktop without dragging a window.
 <P>
 </LI>
 <LI><B>FocusPolicy=<CODE>ClickToFocus|FocusFollowMouse</CODE></B> <BR>
