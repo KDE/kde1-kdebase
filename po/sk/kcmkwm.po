@@ -179,7 +179,7 @@ msgstr "Elegantne"
 
 #: windows.cpp:102
 msgid "Cascade"
-msgstr "Kaskáda"
+msgstr "Kaskádovite"
 
 #: windows.cpp:104
 msgid "Interactive"
@@ -251,7 +251,7 @@ msgstr "Povoli» aktívne okraje plochy"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Presun ukazateµa do stredu po prepnutí"
+msgstr "Presun ukazateµ do stredu po prepnutí"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
