@@ -131,7 +131,7 @@ static void flapbat(batstruct * bat, int dir, int *vel);
 static int  collide(int a_bat);
 static void XEraseImage(Display * display, Window win, GC gc, int x, int y, int xlast, int ylast, int xsize, int ysize);
 
-static      first = 1;
+static      unsigned int first = 1;
 
 static unsigned char *bits[] =
 {
