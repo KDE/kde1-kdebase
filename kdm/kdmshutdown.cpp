@@ -24,7 +24,7 @@ extern "C" {
 # ifdef USESHADOW
 #  include <shadow.h>
 # endif
-#endif USE_PAM
+#endif /* USE_PAM */
 #include <sys/types.h>
 #include <kapp.h>
 
@@ -108,7 +108,7 @@ verify_root_pw( const char* pw)
 #ifdef USE_PAM
      pam_handle_t *pamh;
      int pam_error;
-#endif USE_PAM
+#endif /* USE_PAM */
      struct passwd *pws = getpwnam( superuser);
      CHECK_PTR( pws);
 #ifndef USE_PAM
