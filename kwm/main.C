@@ -138,7 +138,7 @@ static void setInfoBoxText(QString text, Window w){
     infoLabel->setAlignment(AlignHCenter|AlignVCenter);
   }
   if (infoLabel->fontMetrics().boundingRect(text).width() > 
-      QApplication::desktop()->width()/3-12-d){
+      QApplication::desktop()->width()*2/3-12-d){
     infoFrame->setGeometry(0,
 			   QApplication::desktop()->height()/2-30,
 			   QApplication::desktop()->width(),
@@ -148,11 +148,23 @@ static void setInfoBoxText(QString text, Window w){
       infoLabel->setAlignment(AlignVCenter);
   }
   else
-    infoFrame->setGeometry(QApplication::desktop()->width()/3,
-			   QApplication::desktop()->height()/2-30,
-			   QApplication::desktop()->width()/3,
-			   60);
+    if (infoLabel->fontMetrics().boundingRect(text).width() > 
+	QApplication::desktop()->width()/3-12-d){
+      infoFrame->setGeometry(QApplication::desktop()->width()/6,
+			     QApplication::desktop()->height()/2-30,
+			     QApplication::desktop()->width()*2/3,
+			     60);
+      if (infoLabel->fontMetrics().boundingRect(text).width() > 
+	  QApplication::desktop()->width()-12-d)
+	infoLabel->setAlignment(AlignVCenter);
+    }
+    else
+      infoFrame->setGeometry(QApplication::desktop()->width()/3,
+			     QApplication::desktop()->height()/2-30,
+			     QApplication::desktop()->width()/3,
+			     60);
   infoFrameInner->setGeometry(3, 3, infoFrame->width()-6, infoFrame->height()-6);
+  
   if (w != None){
     infoIcon->setGeometry(6, 6, 48, 48);
     infoIcon->show();
@@ -208,12 +220,12 @@ static void showLogout(){
     own_toplevel_windows.append(wp);
     // next is a dirty hack to fix a qt-1.2 bug 
     // (should be unnecessary with 1.3)
-    unsigned long data[2];
-    data[0] = (unsigned long) NormalState;
-    data[1] = (unsigned long) None;
-    Atom wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
-    XChangeProperty(qt_xdisplay(), klogout->winId(), wm_state, wm_state, 32,
-		    PropModeReplace, (unsigned char *)data, 2);
+     unsigned long data[2];
+     data[0] = (unsigned long) NormalState;
+     data[1] = (unsigned long) None;
+     Atom wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
+     XChangeProperty(qt_xdisplay(), klogout->winId(), wm_state, wm_state, 32,
+ 		    PropModeReplace, (unsigned char *)data, 2);
     myapp->connect(klogout, SIGNAL(doLogout()), myapp, SLOT(doLogout()));
     myapp->connect(klogout, SIGNAL(changeToClient(QString)), 
 		   myapp, SLOT(changeToClient(QString)));
@@ -235,12 +247,12 @@ static void showTask(){
     own_toplevel_windows.append(wp);
     // next is a dirty hack to fix a qt-1.2 bug 
     // (should be unnecessary with 1.3)
-    unsigned long data[2];
-    data[0] = (unsigned long) NormalState;
-    data[1] = (unsigned long) None;
-    Atom wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
-    XChangeProperty(qt_xdisplay(), ktask->winId(), wm_state, wm_state, 32,
-		    PropModeReplace, (unsigned char *)data, 2);
+     unsigned long data[2];
+     data[0] = (unsigned long) NormalState;
+     data[1] = (unsigned long) None;
+     Atom wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
+     XChangeProperty(qt_xdisplay(), ktask->winId(), wm_state, wm_state, 32,
+ 		    PropModeReplace, (unsigned char *)data, 2);
     myapp->connect(ktask, SIGNAL(changeToClient(QString)), 
  		   myapp, SLOT(changeToTaskClient(QString)));
   }

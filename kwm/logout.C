@@ -30,6 +30,7 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     setMouseTracking(True);
     frame = new QFrame( this );
     frame->installEventFilter( this );
+    frame->setMouseTracking(True);
     frame->setFrameStyle(QFrame::WinPanel | QFrame:: Raised);
     button = new QPushButton(klocale->translate("Logout"), this);
     button_cancel = new QPushButton(klocale->translate("Cancel"), this);
@@ -43,33 +44,40 @@ Klogout::Klogout( QWidget *parent, const char *name, WFlags f)
     connect(button_cancel, SIGNAL(clicked()), SLOT(cleanup()));
     label = new QLabel(klocale->translate("Session prepared for logout"), this);
     label->installEventFilter( this );
+    label->setMouseTracking(True);
     label->setAlignment(AlignCenter);
 
     listboxlabel1 = 
       new QLabel(klocale->translate("The following applications contain unsaved data which\nwill be lost in your next session."), this);
     listboxlabel1->installEventFilter( this );
+    listboxlabel1->setMouseTracking(True);
     listboxlabel1->setAlignment(AlignLeft);
 
     listbox1 = new QListBox(this);
     listbox1->installEventFilter( this );
+    listbox1->setMouseTracking(True);
     connect(listbox1, SIGNAL(selected(int)), SLOT(listbox1Select(int)));
 
     listboxlabel2 = 
       new QLabel(klocale->translate("The following applications cannot be restored in your next session,\nonly restarted. Make sure they do not contain important unsaved data."), this);
     listboxlabel2->installEventFilter( this );
+    listboxlabel2->setMouseTracking(True);
     listboxlabel2->setAlignment(AlignLeft);
 
     listbox2 = new QListBox(this);
     listbox2->installEventFilter( this );
+    listbox2->setMouseTracking(True);
     connect(listbox2, SIGNAL(selected(int)), SLOT(listbox2Select(int)));
     
     listboxlabel3 = 
       new QLabel(klocale->translate("The following applications are not X11-aware and though cannot be restored\nin your next session. Make sure they do not contain important unsaved data."), this);
     listboxlabel3->installEventFilter( this );
+    listboxlabel3->setMouseTracking(True);
     listboxlabel3->setAlignment(AlignLeft);
 
     listbox3 = new QListBox(this);
     listbox3->installEventFilter( this );
+    listbox3->setMouseTracking(True);
     connect(listbox3, SIGNAL(selected(int)), SLOT(listbox3Select(int)));
 
 }
@@ -225,8 +233,9 @@ bool Klogout::eventFilter( QObject *ob, QEvent * e){
 	&& !(mev->state() & LeftButton)
 	&& !(mev->state() & MidButton)
 	&& !(mev->state() & RightButton)
-	)
+	){
       SetPointerGrab(((QWidget*)ob)->mapToGlobal(mev->pos()));
+    }
   }
   return False;
 }

@@ -12,6 +12,13 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 5
+       - should work under qt-1.3 AND qt-1.2 now. Qt-1.2 support needs
+         some dirty lowlevel X-Hacks and will probably be removed as
+         soon as qt-1.3 will be KDE's offical qt-version.
+       - Tab-Box uses three different horizontal sizes now.
+
+
   patchlevel 4
        - small bug with buttons remaining raised fixed. Was introduced
          in the previous patchlevel with the avoid-flickering patch:(

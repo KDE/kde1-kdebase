@@ -30,6 +30,7 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     setMouseTracking(True);
     frame = new QFrame( this );
     frame->installEventFilter( this );
+    frame->setMouseTracking(TRUE);
     frame->setFrameStyle(QFrame::WinPanel | QFrame:: Raised);
     button = new QPushButton(klocale->translate("Switch to"), this);
     button_logout = new QPushButton(klocale->translate("Logout"), this);
@@ -47,10 +48,12 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
     connect(button_cancel, SIGNAL(clicked()), SLOT(cleanup()));
     label = new QLabel(klocale->translate("Current session"), this);
     label->installEventFilter( this );
+    label->setMouseTracking(TRUE);
     label->setAlignment(AlignCenter);
 
     listbox = new QListBox(this);
     listbox->installEventFilter( this );
+    listbox->setMouseTracking(TRUE);
     connect(listbox, SIGNAL(selected(int)), SLOT(listboxSelect(int)));
 
 }
@@ -136,8 +139,9 @@ bool Ktask::eventFilter( QObject *ob, QEvent * e){
 	&& !(mev->state() & LeftButton)
 	&& !(mev->state() & MidButton)
 	&& !(mev->state() & RightButton)
-	)
+	){
       SetPointerGrab(((QWidget*)ob)->mapToGlobal(mev->pos()));
+    }
   }
   return False;
 }
