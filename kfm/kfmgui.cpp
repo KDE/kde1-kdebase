@@ -1665,21 +1665,26 @@ void KfmGui::slotViewDocumentSource()
 
 void KfmGui::showSource ( const char * url )
 {
-    QString tmp = view->getHTMLCache()->isCached( url );
+    KURL u(url);
+    u.setReference(""); // remove reference part.
+    QString tmp = view->getHTMLCache()->isCached( u.url() );
     // if cache is enabled and it contains the requested URL
     // use it.  ( Dawit A. )
     if ( view->getHTMLCache()->isEnabled() && tmp != 0L )
-        url = tmp;
+        u = QString("file:") + tmp;
 
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "KFM Misc Defaults" );
     QString term = config->readEntry( "Editor", DEFAULT_EDITOR );
 
-    if (!strncmp(url,"file:",5)) // file URL, remove protocol part, just in 
-      // case the application doesn't support URLs.
-      url+=5;
     QString cmd;
-    cmd << term << " \"" << url << "\"";
+    cmd << term << " \"";
+    if (u.isLocalFile())
+      // remove protocol part, just in case the application doesn't support URLs
+      cmd << u.path();
+    else
+      cmd << u.url();
+    cmd << "\"";
     KMimeBind::runCmd( cmd );
 }
 
