@@ -8,12 +8,14 @@ Name[fr]=IcТnes du bureau
 Name[no]=Skrivebordsikoner
 Name[pt_BR]=мcones do Ambiente
 Name[ru]=Пиктограммы рабочего стола
+Name[sv]=Skrivbordsikoner
 Comment=You can customize here the desktop icons
 Comment[cs]=Zde je mo╬nИ upravit ikony pracovnМ plochy
 Comment[fr]=Vous pouvez personnaliser ici les icТnes du bureau
 Comment[no]=Her kan du selv definere ikonene pЕ skrivebordet
 Comment[pt_BR]=VocЙ pode personalizar aqui os Мcones do Ambiente
 Comment[ru]=Здесь вы можете настроить пиктограммы рабочего стола
+Comment[sv]=HДr kan du stДlla in skrivbordets ikoner
 # Needs another icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
