@@ -28,17 +28,16 @@ klipper_LDADD   =        $(LIB_KFM) $(LIB_KDEUI)
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(klipper_SOURCES) && mv messages.po ../po/klipper.pot
 
+kde_icon_DATA = klipper.xpm
+
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
-	$(INSTALL_DATA) klipper.kdelnk $(APPSDIR)
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) klipper.xpm $(kde_icondir)
+	$(INSTALL_DATA) $(srcdir)/klipper.kdelnk $(APPSDIR)
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) klipper_mini.xpm $(kde_minidir)/klipper.xpm
+	$(INSTALL_DATA) $(srcdir)/klipper_mini.xpm $(kde_minidir)/klipper.xpm
 
 uninstall-local:
 	-rm -f $(APPSDIR)/klipper.kdelnk
-	-rm -f $(kde_icondir)/klipper.xpm
 	-rm -f $(kde_minidir)/klipper.xpm
         
 

@@ -23,7 +23,7 @@ EXTRA_DIST = $(lnk_DATA) $(icon_DATA) mini-kwrite.xpm
 
 install-data-local: mini-kwrite.xpm
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kwrite.xpm $(kde_minidir)/kwrite.xpm
+	$(INSTALL_DATA) $(srcdir)/mini-kwrite.xpm $(kde_minidir)/kwrite.xpm
 
 uninstall-local:
 	-rm -f $(kde_minidir)/kwrite.xpm
