@@ -4,71 +4,89 @@ Languages=de,en,fr,C,cs,sv,es,ru,nl,hu,da,fi,it,pt,pl,no,el,hr,
 [C]
 Name=Default language
 Name[de]=Defaule Sprache
+Name[fi]=Oletuskieli
 
 [de]
 Name=German
 Name[de]=Deutsch
+Name[fi]=Saksa
 
 [en]
 Name=English
 Name[de]=English
+Name[fi]=Englanti
 
 [fr]
 Name=French
 Name[de]=Französisch
+Name[fi]=Ranska
 
 [cs]
 Name=Czech
 Name[de]=Tschechisch
+Name[fi]=Tshekki
 
 [sv]
 Name=Swedish
 Name[de]=Schwedisch
+Name[fi]=Ruotsi
 
 [es]
 Name=Spanish
 Name[de]=Spanisch
+Name[fi]=Espanja
 
 [ru]
 Name=Russian
 Name[de]=Russisch
+Name[fi]=Venäjä
 
 [nl]
 Name=Dutch
 Name[de]=Niederländisch
+Name[fi]=Hollanti
 
 [hu]
 Name=Hungarian
 Name[de]=Ungarisch
+Name[fi]=Unkari
 
 [da]
 Name=Danish
 Name[de]=Dänisch
+Name[fi]=Tanska
 
 [fi]
 Name=Finnish
 Name[de]=Finnisch
+Name[fi]=Suomi
 
 [it]
 Name=Italian
 Name[de]=Italienisch
+Name[fi]=Italia
 
 [pt]
 Name=Portuguese
 Name[de]=Portugiesisch
+Name[fi]=Portugali
 
 [pl]
 Name=Polish
 Name[de]=Polnisch
+Name[fi]=Puola
 
 [no]
 Name=Norwegian
 Name[de]=Norwegisch
+Name[fi]=Norja
 
 [el]
 Name=Greek
 Name[de]=Griechisch
+Name[fi]=Kreikka
 
 [hr]
 Name=Croation
 Name[de]=Kroatisch
+Name[fi]=Kroatia
