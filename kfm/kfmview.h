@@ -358,6 +358,8 @@ public slots:
 			       const QColor& vlink);
 
     void setDefaultBGColor( const QColor& bgcolor );
+	 void setUnderlineLinks( const bool uline );
+
     void setHTMLWidgetOptions();
 
 protected slots:

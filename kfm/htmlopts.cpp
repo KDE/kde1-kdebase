@@ -248,6 +248,12 @@ KColorOptions::KColorOptions( QWidget *parent, const char *name )
 
 	cursorbox->setGeometry(35,180,250,28);
 	cursorbox->setChecked(changeCursor);
+
+	underlinebox = new QCheckBox(klocale->translate("Underline links"),
+				  this);
+
+	underlinebox->setGeometry(35,210,250,28);
+	underlinebox->setChecked(underlineLinks);
 }
 
 void KColorOptions::readOptions()
@@ -259,6 +265,7 @@ void KColorOptions::readOptions()
 	linkColor = config->readColorEntry( "LinkColor", &HTML_DEFAULT_LNK_COLOR );
 	vLinkColor = config->readColorEntry( "VLinkColor", &HTML_DEFAULT_VLNK_COLOR);
 	changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
+	underlineLinks = (bool) config->readNumEntry("UnderlineLinks",1);
 	changed = false;
 }
 
@@ -299,10 +306,12 @@ void KColorOptions::getColorOpts(struct coloroptions& coloropts){
   coloropts.link    = linkColor;
   coloropts.vlink   = vLinkColor;
 
-  if(changeCursor != cursorbox->isChecked())
+  if((changeCursor != cursorbox->isChecked()) ||
+     (underlineLinks != underlinebox->isChecked()))
     changed = true;
 
   coloropts.changeCursoroverLink = cursorbox->isChecked();
+  coloropts.underlineLinks = underlinebox->isChecked();
   coloropts.changed = changed;
 }
 

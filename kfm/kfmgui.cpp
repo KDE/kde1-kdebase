@@ -1633,6 +1633,7 @@ void KfmGui::slotConfigureBrowser()
 	    config->writeEntry( "LinkColor", coloropts.link);
 	    config->writeEntry( "VLinkColor", coloropts.vlink);
 	    config->writeEntry( "ChangeCursor", coloropts.changeCursoroverLink);
+	    config->writeEntry( "UnderlineLinks", coloropts.underlineLinks);
 
 	  }
 
@@ -1668,6 +1669,7 @@ void KfmGui::slotConfigureBrowser()
 					     );
 
 	      w->view->setDefaultBGColor( coloropts.bg );
+			w->view->setUnderlineLinks( coloropts.underlineLinks );
 	      if(coloropts.changeCursoroverLink)
 		htmlview->setURLCursor( upArrowCursor);
 	      else

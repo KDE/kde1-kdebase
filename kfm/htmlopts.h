@@ -43,6 +43,7 @@ struct coloroptions{
   QColor vlink;
   bool   changed;
   bool   changeCursoroverLink;
+  bool   underlineLinks;
 };
 
 //-----------------------------------------------------------------------------
@@ -98,11 +99,13 @@ private:
 
 private:
 	QCheckBox *cursorbox;
+	QCheckBox *underlinebox;
 	QColor bgColor;
 	QColor textColor;
 	QColor linkColor;
 	QColor vLinkColor;
 	bool   changeCursor;
+	bool   underlineLinks;
 	bool   changed;
 	struct coloroptions coloropts;
 };

@@ -162,12 +162,14 @@ void KfmView::setHTMLWidgetOptions(){
     fixedName = DEFAULT_VIEW_FIXED_FONT;
 
   bool changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
+  bool underlineLinks = (bool) config->readNumEntry("UnderlineLinks",1);
 
   KHTMLWidget* htmlview;
   htmlview=getKHTMLWidget();
   htmlview->setFixedFont( fixedName);
   htmlview->setStandardFont( stdName );
   htmlview->setDefaultFontBase( fSize );
+  htmlview->setUnderlineLinks(underlineLinks);
   if(changeCursor)
     htmlview->setURLCursor( upArrowCursor);
   else
@@ -201,6 +203,10 @@ void KfmView::setDefaultTextColors( const QColor& textc,const QColor& linkc,
 			     );
 
 
+}
+
+void KfmView::setUnderlineLinks( const bool uline ){
+  view->setUnderlineLinks( uline );
 }
 
 void KfmView::setDefaultBGColor( const QColor& bgcolor ){
