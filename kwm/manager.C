@@ -1053,39 +1053,42 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
 
   int d = currentDesktop() - 1;
 
-  //initialize if needed
-  if (re_init) {
-    x[d]   = y[d]   = 0;
-    col[d] = row[d] = 0;
-  }
-
-  // get the maximum allowed windows space
+  // get the maximum allowed windows space and desk's origin
   QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
 
   // initialize often used vars: width and height of c; we gain speed
   int ch = c->geometry.height();
   int cw = c->geometry.width();
-  int H = maxRect.height();
-  int W = maxRect.width();
+  int H = maxRect.bottom();
+  int W = maxRect.right();
+  int X = maxRect.left();
+  int Y = maxRect.top();
+
+  //initialize if needed
+  if (re_init) {
+    x[d] = X;
+    y[d] = Y;
+    col[d] = row[d] = 0;
+  }
+
 
   xp = x[d];
   yp = y[d];
 
   //here to touch in case people vote for resize on placement
-  if ((yp + ch ) > H) yp = 0;
+  if ((yp + ch ) > H) yp = Y;
 
   if ((xp + cw ) > W) 
     if (!yp) {
       smartPlacement(c);
       return;
     }
-    else xp = 0;
+    else xp = X;
   
   //if this isn't the first window 
   if ((!x[d]) && (!y[d])) {
     if (xp) 
       if (!yp) xp = delta_x * (++col[d]);
-    
     
     if (yp) 
       if (!xp) yp = delta_y * (++row[d]);
@@ -1096,6 +1099,9 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
       return;
     }
   }
+
+  if (xp == 0) xp = X;
+  if (yp == 0) yp = Y;
   // place the window
   c->geometry.moveTopLeft(QPoint(xp,yp));
 
@@ -1127,9 +1133,7 @@ void Manager::smartPlacement(Client* c) {
 
   // get the maximum allowed windows space
   QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
-  
-  // initialize with null the current overlap
-  x = maxRect.x(); y = maxRect.y();
+  x = maxRect.left(); y = maxRect.top();
 
   //initialize and do a loop over possible positions
   overlap = -1;
@@ -1142,7 +1146,7 @@ void Manager::smartPlacement(Client* c) {
     // test if windows overlap ...
     if (overlap > 0) {
 
-      other = maxRect.width();
+      other = maxRect.right();
       temp = other - cw;
       
       if(temp > x) other = temp;
@@ -1171,9 +1175,9 @@ void Manager::smartPlacement(Client* c) {
     
     // ... else => not enough x dimension (overlap was -2)
     else {
-      x = maxRect.x();
+      x = maxRect.left();
       
-      other = maxRect.height();
+      other = maxRect.bottom();
       temp = other - ch;
       
       if(temp > y) other = temp;
@@ -1234,13 +1238,13 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
   QRect maxRect = KWM::getWindowRegion(currentDesktop());
 
   //test if enough room in y direction
-  if (y + ch > maxRect.height()) {
+  if (y + ch > maxRect.bottom()) {
     *overlap = -1;
     return ;
   }
   
   //test if enough room in x direction
-  if(x + cw > maxRect.width()) {
+  if(x + cw > maxRect.right()) {
     *overlap = -2;
     return;
   }
@@ -1252,7 +1256,9 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
   cyt = y;
   cyb = y + ch;
   for(l = clients.first(); l ; l = clients.next()) {
-    if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+    if(!l->isOnDesktop(currentDesktop()) ||
+       l->isIconified() ||
+       (l == c) ) 
       continue;
     xl = l->geometry.x();
     yt = l->geometry.y();
@@ -1331,8 +1337,10 @@ void Manager::deskCascade() {
 void Manager::snapToBorder(Client *c) {
   int snap = options.BorderSnapZone;        //snap trigger
   QRect maxRect = KWM::getWindowRegion(manager->currentDesktop());
-  int xmax = maxRect.width();               //desk size
-  int ymax = maxRect.height();
+  int xmin = maxRect.left();
+  int xmax = maxRect.right();               //desk size
+  int ymin = maxRect.top();
+  int ymax = maxRect.bottom();
   int cx, cy, rx, ry;
   
   cx = c->geometry.x();
@@ -1341,17 +1349,17 @@ void Manager::snapToBorder(Client *c) {
   if(c->isShaded()) ry = cy + TITLEBAR_HEIGHT + 2*BORDER;
   else ry = cy + c->geometry.height();
   
-  if ( abs(cx) < snap ){
+  if ( abs(cx-xmin) < snap ){
     if (abs(xmax-rx) < snap) 
-      cx = (abs(cx) < abs(xmax-rx))?0:(xmax - c->geometry.width());
-    else cx = 0;
+      cx = (abs(cx-xmin) < abs(xmax-rx))?xmin:(xmax - c->geometry.width());
+    else cx = xmin;
   }
   else if (abs(xmax-rx) < snap) cx = xmax - c->geometry.width();
   
-  if ( abs(cy) < snap ){
+  if ( abs(cy-ymin) < snap ){
     if (abs(ymax-ry) < snap) 
-      cy = (abs(cy) < abs(ymax-ry))?0:(ymax - c->geometry.height());
-    else cy = 0;
+      cy = (abs(cy-ymin) < abs(ymax-ry))?ymin:(ymax - c->geometry.height());
+    else cy = ymin;
   }
   else if (abs(ymax-ry) < snap) cy = ymax - c->geometry.height();
   
@@ -1424,7 +1432,9 @@ void Manager::snapToWindow(Client *c) {
       //this isn't anymore possible. And inversely
       if ( (abs(ry-ly) < snap) &&  (abs(ry - ly) < abs(deltaY)) ) {
 	deltaY = ry - ly;
-	ny = ly - c->geometry.height();
+	ny = ly - (c->isShaded()?
+		   (TITLEBAR_HEIGHT + 2*BORDER):
+		   c->geometry.height());
 	/* this is to be uncommented if anytimes we decide we don't want our
 	 * windows go out of the desktop
 	 if (cy < 0) cy = 0;

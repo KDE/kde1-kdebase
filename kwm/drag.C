@@ -386,9 +386,9 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	c->buttonMaximize->toggle();
     }
 
-    //CT 17mar98 magics
-    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
+    //CT 17mar98 - magics; 22mar98 - snap to border last
     if (options.WindowSnapZone > 0) manager->snapToWindow(c);
+    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
     //send config to clients once for both
     if ((options.BorderSnapZone > 0) ||
 	(options.WindowSnapZone > 0))
