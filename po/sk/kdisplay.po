@@ -58,9 +58,8 @@ msgid "&Scaled"
 msgstr "©kálovaná"
 
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Tapeta"
+msgstr "Bez tapety"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -75,22 +74,18 @@ msgid "Desktop names"
 msgstr "Názvy plôch"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Nastavenie dvojfarebného pozadia"
+msgstr "Dvojfarebné pozadia"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "&Vytieòuj farby zµava do prava"
+msgstr "Vy&tieòuj farby zhora do nadol"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "&Vytieòuj farby zµava do prava"
+msgstr "Vytieòuj fa&rby zprava doµava"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
 msgstr "&Vzor"
 
@@ -99,7 +94,6 @@ msgid "Preview"
 msgstr "Náhµad"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
 msgstr "Názov vzoru"
 
@@ -271,20 +265,19 @@ msgstr "Ignoruj"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "©etri» obrazovku"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Zamknú» obrazovku"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "©etøiè obrazovky"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "©etøiè &obrazovky"
+msgstr "Bez ¹etøièa &obrazovky"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -323,7 +316,6 @@ msgid "Low"
 msgstr "Nízka"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
 msgstr "&Znakové sady"
 

@@ -580,7 +580,7 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Vesmír (GL)"
 
 #: space.cpp:581
 msgid "Setup KSpace"
