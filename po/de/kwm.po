@@ -11,55 +11,48 @@ msgstr "kwm: Probleme beim Initialisieren; gebe auf \n"
 
 #: main.C:352
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:356
 msgid "Usage: "
-msgstr ""
+msgstr "Verwendung: "
 
 #: main.C:367
-#, fuzzy
 msgid "Maximize"
-msgstr "Ma&ximieren/Minimieren"
+msgstr "Maximieren"
 
 #: main.C:368
 msgid "Restore"
-msgstr ""
+msgstr "Wiederherstellen"
 
 #: main.C:369
-#, fuzzy
 msgid "Iconify"
-msgstr "Mi&nimieren"
+msgstr "Minimieren"
 
 #: main.C:370
-#, fuzzy
 msgid "DeIconify"
-msgstr "Mi&nimieren"
+msgstr "Wiederherstellen"
 
 #: main.C:371
-#, fuzzy
 msgid "Sticky"
-msgstr "An&heften an/aus"
+msgstr "Anheften an"
 
 #: main.C:372
 #, fuzzy
 msgid "UnSticky"
-msgstr "An&heften an/aus"
+msgstr "Anheften aus"
 
 #: main.C:373
-#, fuzzy
 msgid "Move"
-msgstr "&Verschieben"
+msgstr "Verschieben"
 
 #: main.C:374
-#, fuzzy
 msgid "Resize"
-msgstr "&Größe ändern"
+msgstr "Größe ändern"
 
 #: main.C:376
-#, fuzzy
 msgid "To desktop"
-msgstr "Auf &Arbeitsplatz"
+msgstr "Auf Arbeitsplatz"
 
 #: main.C:378
 msgid "Onto current desktop"
@@ -99,42 +92,47 @@ msgstr "Acht"
 
 #: main.C:878
 msgid "*** No Tasks ***"
-msgstr ""
+msgstr "*** Keine Programme ***"
 
 #: logout.C:34 task.C:35
-#, fuzzy
 msgid "Logout"
-msgstr "KDE be&enden"
+msgstr "KDE beenden"
 
 #: logout.C:44
 msgid "Session prepared for logout"
-msgstr ""
+msgstr "Sitzung vorbereitet zum Ausloggen"
 
 #: logout.C:49
 msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
+"Die folgenden Programme enthalten ungespeicherte Daten,\n"
+"die nicht wiederhergestellt werden können."
 
 #: logout.C:58
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
+"Die folgenden Programme können in der nächsten Sitzung nicht voll-\n"
+"kommen wiederhergestellt werden. Sie sollten keine wichtigen Daten enthalten."
 
 #: logout.C:67
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
+"Die folgenden Programme sind nicht X11-konform und können in der nächsten\n"
+"Sitzung nicht wiederhergestellt werden. Sie sollten keine wichtigen Daten enthalten."
 
 #: task.C:34
 msgid "Switch to"
-msgstr ""
+msgstr "Wechseln zu"
 
 #: task.C:48
 msgid "Current session"
-msgstr ""
+msgstr "Aktuelle Sitzung"
 
 #: kwm.C:73
 msgid ""

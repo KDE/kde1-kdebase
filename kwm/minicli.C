@@ -64,7 +64,7 @@ Minicli::Minicli( QWidget *parent, const char *name, WFlags f)
     lineedit = new QLineEdit(this);
     lineedit->installEventFilter( this );
     connect(lineedit, SIGNAL(returnPressed()), SLOT(return_pressed()));
-    label = new QLabel("Command:", this);
+    label = new QLabel(klocale->translate("Command:"), this);
     label->adjustSize();
     setGeometry(QApplication::desktop()->width()/2 - 200,
 		QApplication::desktop()->height()/2 - 20,
