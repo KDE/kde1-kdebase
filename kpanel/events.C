@@ -12,6 +12,7 @@
 #include <qkeycode.h>
 #include <kfm.h>
 #include <ksimpleconfig.h>
+#include <qregexp.h>
 
 
 myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
@@ -116,10 +117,16 @@ void kPanel::windowAdd(Window w){
 
   // swallowing?
   int i,bi;
-  for (bi=0; bi<nbuttons && (entries[bi].swallow.isEmpty() || 
-			     entries[bi].swallowed != 0 ||
-			     entries[bi].swallow != t);bi++);
-  if (bi<nbuttons){
+  bool found = false;
+  QRegExp r;
+  for (bi=0; bi<nbuttons && !found; bi++){
+    if (!entries[bi].swallow.isEmpty()  && !entries[bi].swallowed){
+      r = entries[bi].swallow;
+      found = r.match(t) != -1;
+    }
+  }
+  if (found){
+    bi--;
     for (i=0; i<nbuttons && entries[i].swallowed != w;i++);
     if (i == nbuttons){
       entries[bi].button->setText("");
