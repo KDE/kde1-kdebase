@@ -192,7 +192,7 @@ QString KFMExec::shellQuote( const char *_data )
 
 int main( int argc, char **argv )
 {
-    QApplication app( argc, argv );
+    KApplication app( argc, argv );
 
     if ( argc < 2 )
     {
