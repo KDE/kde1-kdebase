@@ -1,4 +1,4 @@
-
+  - added a "Linux Console" color-entry.
 
   - Now kvt searches a list of TERM-entries and takes the first
     (`best') available.  This should minimize problems with

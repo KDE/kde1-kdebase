@@ -388,6 +388,7 @@ kVt::kVt( QWidget *parent, const char *name )
     m_color->insertItem( "&white/black");
     m_color->insertItem( "&green/black");
     m_color->insertItem( "black/light&yellow");
+    m_color->insertItem( "Linu&x Console");
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
@@ -403,7 +404,7 @@ kVt::kVt( QWidget *parent, const char *name )
     m_options->insertItem( "&Font size", m_size);
     m_options->insertItem( "&Color", m_color);
     m_options->insertItem( "&Size", m_dimen);
-    m_options->insertItem( "Terminal" );
+    m_options->insertItem( "Terminal..." );
     m_options->insertSeparator();
     m_options->insertItem( "Save &Options");
 
@@ -720,8 +721,11 @@ void kVt::color_menu_activated( int item){
     break;
   case 3: 
     fg_string = "black";
-//     bg_string = "lightyellow";
     bg_string = "#FFFFDD";
+    break;
+  case 4:
+    fg_string = "#b2b2b2";
+    bg_string = "#000000";
     break;
   }
   if (!keyboard_secured){
