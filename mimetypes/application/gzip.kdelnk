@@ -26,4 +26,4 @@ Comment[sv]=Fil som är komprimerad med gzip
 DefaultApp=ark
 Icon=tgz.xpm
 Type=MimeType
-Patterns=*.gz;*.tgz;
+Patterns=*.gz;*.tgz;*.z;*.Z;
