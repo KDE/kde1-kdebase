@@ -23,7 +23,7 @@ Comment[pt_BR]=Teclado de programador
 Comment[ro]=Configurarea tastaturii
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Medzinárodná klávesnica
-Comment[sv]=Inställningar för tangentbord
+Comment[sv]=Programmeringstangentbord
 Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Slovak
@@ -33,8 +33,10 @@ Language[fi]=Slovakki
 Language[it]=Slovacco
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
+Language[ro]=Slovacã
 Language[ru]=ÁÃËÉÊ
 Language[sk]=Slovenskı
+Language[sv]=Slovakiskt
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Skp

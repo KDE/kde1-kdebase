@@ -21,6 +21,7 @@ Comment[pt_BR]=Notificagco de mail
 Comment[ro]=Urmãritor de poºtã
 Comment[ru]=ğÏŞÔÏ×ÏÅ ÏĞÏ×ÅİÅÎÉÅ
 Comment[sk]=Upozoròuje na novú po¹tu
+Comment[sv]=Uppmärksammar dig när du får ny post
 Exec=kmail
 Icon=mail.xpm
 TerminalOptions=

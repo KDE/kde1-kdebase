@@ -21,7 +21,7 @@ Comment[pt_BR]=Teclado de programador
 Comment[ro]=Configurarea tastaturii
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Medzinárodná klávesnica
-Comment[sv]=Inställningar för tangentbord
+Comment[sv]=Programmeringstangentbord
 Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Czech
@@ -30,8 +30,10 @@ Language[es]=Checo
 Language[fi]=Tsekki
 Language[no]=Tjekkisk
 Language[pt_BR]=heco
+Language[ro]=Cehã
 Language[ru]=şÅÛÓËÉÊ
 Language[sk]=Èeskı
+Language[sv]=Tjeckiskt
 
 Label=Csp
 Locale=cs

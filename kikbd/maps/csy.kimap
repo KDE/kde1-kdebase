@@ -11,8 +11,10 @@ Comment[no]=Skrivemaskintastatur (QWERTY)
 Comment[pl]=Klawiatura Miêdzynarodowa
 Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilógrafo (QWERTY)
+Comment[ro]=Tastaturã (QWERTY)
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Medzinárodná klávesnica
+Comment[sv]=Maskinskrivningstangentbord (QWERTY)
 
 Language=Czech
 Language[cs]=Èeskı
@@ -20,8 +22,10 @@ Language[es]=Checo
 Language[fi]=Tsekki
 Language[no]=Tjekkisk
 Language[pt_BR]=heco
+Language[ro]=Cehã
 Language[ru]=şÅÛÓËÉÊ
 Language[sk]=Èeskı
+Language[sv]=Tjeckiskt
 
 Label=Csy
 Locale=cs

@@ -11,6 +11,7 @@ Name[fi]=X-kello
 Name[is]=X klukka
 Name[it]=Orologio X
 Name[no]=X-klokke
+Name[ro]=X clock
 Name[ru]=XClock
 Exec=xclock
 Icon=kclock.xpm

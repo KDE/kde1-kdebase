@@ -15,6 +15,7 @@ Comment[pt]=Teclado Internacional
 Comment[pt_BR]=Teclado de datilógrafo (QWERTZ)
 Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
 Comment[sk]=Medzinárodná klávesnica
+Comment[sv]=Maskinskrivningstangentbord (QWERTZ)
 
 Language=Slovak
 Language[cs]=Slovenskı
@@ -23,8 +24,10 @@ Language[fi]=Slovakki
 Language[it]=Slovacco
 Language[no]=Slovakisk
 Language[pt_BR]=lovaco
+Language[ro]=Slovacã
 Language[ru]=ÁÃËÉÊ
 Language[sk]=Slovenskı
+Language[sv]=Slovakiskt
 #Language[ru]=şÅÛÓËÉÊ
 
 Label=Skz

@@ -7,8 +7,10 @@ Comment[es]=Teclado Alemán (Alemania)
 Comment[fi]=Saksalainen näppäimistö
 Comment[no]=Tysk tastatus (Tyskland)
 Comment[pt_BR]=Teclado Alemão (Alemanha)
+Comment[ro]=Tastaturã germanã
 Comment[ru]=îÅÍÅÃËÁÑ ËÌÁ×ÉÁÔÕÒÁ (çÅÒÍÁÎÉÑ)
 Comment[sk]=Nemecká klávesnica (Nemecko)
+Comment[sv]=Tyskt tangentbord (Tyskland)
 
 Language=German
 Language[cs]=Nìmeckı
@@ -17,8 +19,10 @@ Language[fi]=Saksa
 Language[it]=Tedesco
 Language[no]=Tysk
 Language[pt_BR]=emão
+Language[ro]=Germanã
 Language[ru]=îÅÍÅÃËÉÊ
 Language[sk]=Nemeckı
+Language[sv]=Tyskt
 
 Label=De
 Locale=de
