@@ -52,13 +52,13 @@ NewThemeDlg::NewThemeDlg():
   KButtonBox *bbox = new KButtonBox( this);
   bbox->addStretch( 10 );
 
-  btn = bbox->addButton("&OK");
+  btn = bbox->addButton(i18n("&OK"));
   btn->setDefault(true);
   connect(btn, SIGNAL(clicked()), SLOT(accept()));
 
   bbox->addStretch( 10 );
 
-  btn = bbox->addButton("&Cancel");
+  btn = bbox->addButton(i18n("&Cancel"));
   connect(btn, SIGNAL(clicked()), SLOT(reject()));
 
   bbox->addStretch( 10 );
