@@ -503,10 +503,13 @@ short PMenu::parse( QDir d )
 	  }
 	}
       if (new_item){
-	PMenuItem *tmp;
+ 	PMenuItem *tmp;
+// 	for (tmp=item_list.first();
+// 	     tmp && tmp->text_name <= new_item->text_name.data();
+// 	     tmp=item_list.next());
 	for (tmp=item_list.first();
-	     tmp && tmp->text_name <= new_item->text_name.data();
-	     tmp=item_list.next());
+	     tmp && stricmp(tmp->text_name, new_item->text_name.data()) <= 0;
+	     tmp = item_list.next());
 	if (!tmp)
 	  item_list.append(new_item);
 	else 

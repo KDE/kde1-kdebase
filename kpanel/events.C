@@ -21,6 +21,16 @@ void kPanel::kwmInit(){
 
 void kPanel::windowAdd(Window w){
   static QPixmap* defaultpm = NULL;
+
+  { 
+    // ignore transient windows
+    Window trans = None;
+    if (XGetTransientForHint(qt_xdisplay(), w, &trans)){
+      if (trans != None && trans != qt_xrootwin())
+	return;
+    }
+  }
+
   myTaskButton* b = new myTaskButton(taskbar);
   b->win = w;
   taskbar_buttons.append(b);
@@ -59,7 +69,10 @@ void kPanel::windowAdd(Window w){
 			   w,
 			   entries[bi].button->backgroundColor().pixel());
       XReparentWindow(qt_xdisplay(), w, 
-		      entries[bi].button->winId(), 3, 3);
+ 		      entries[bi].button->winId(), 3, 3);
+//       XReparentWindow(qt_xdisplay(), w, 
+// 		      winId(), 150+ 3, 3);
+      XSelectInput(qt_xdisplay(), w, ColormapChangeMask | EnterWindowMask | LeaveWindowMask | PropertyChangeMask);
       XResizeWindow(qt_xdisplay(), w,
 		    entries[bi].button->width()-6,
 		    entries[bi].button->height()-6);
@@ -121,6 +134,9 @@ myTaskButton* kPanel::taskButtonFromWindow(Window w){
 void kPanel::kwmDesktopChange(int nd){
   int i;
 
+  if ( edit_button != NULL)
+    restore_editbutton( False );
+  
   currentDesktop = nd;
   QPushButton* b;
   for (i=0; (b=(QPushButton*)desktopbar->find(i))!=0; i++){

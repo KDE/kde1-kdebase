@@ -67,14 +67,18 @@ void myPushButton::enterEvent( QEvent * ){
   if (!flat)
     return;
   flat = False;
+  if (check_rect_for_leave)
+    XUnmapSubwindows(qt_xdisplay(), winId());
   if (!never_flat)
     repaint();
 }
 
 void myPushButton::leaveEvent( QEvent * ){
-  if (check_rect_for_leave
-      && rect().contains(mapFromGlobal(QCursor::pos()), TRUE))
-    return;
+//    if (check_rect_for_leave
+//        && rect().contains(mapFromGlobal(QCursor::pos()), TRUE))
+//      return;
+  if (check_rect_for_leave)
+    XMapSubwindows(qt_xdisplay(), winId());
   if (flat)
     return;
   flat = True;
@@ -123,7 +127,6 @@ void myPushButton::drawButtonLabel(QPainter *painter){
 
 
 void myPushButton::mousePressEvent( QMouseEvent *e){
-  
   if ( isDown())
     return;
 

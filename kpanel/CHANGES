@@ -1,5 +1,17 @@
 In kpanel-0.17:
  
+    Patchlevel 6:
+       - menu sorting fixed (thanks to Michael Bialas)
+         Please note that the sort order can individually changed
+         for each menu with kmenuedit.
+       - a workaround for swallowed windows on buttons.
+         Unfortunatly there is a severe problem with qt-1.3. I am
+         no longer able to offer working swallowed windows :-(
+         So docking will need some more time (and probably qt-1.5)
+         as does the swallwed pager. Sorry.
+       - transient windows do no longer appear on the taskbar
+       - tiny bug with editing desktop-labels fixed 
+
     Patchlevel 5:
        - Changed pmenu to sort the items in the order of the text_names
          instead of the filenames as default.

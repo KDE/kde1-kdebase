@@ -108,6 +108,7 @@ int main( int argc, char ** argv ){
   if (!KWM::isKWMInitialized()){
     printf("kpanel: waiting for windowmanager\n");
     while (!KWM::isKWMInitialized()) sleep(1);
+    sleep(1);
   }
   
   the_panel = new kPanel(&myapp);

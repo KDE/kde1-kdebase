@@ -32,7 +32,7 @@ DesktopEntry::DesktopEntry(){
 kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		QWidget *parent, const char *name )
   : QFrame( parent, name,WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
-    //    : QFrame( parent, name){
+    //: QFrame( parent, name){
 
     kwmmapp = kwmapp_arg;
     int i;
@@ -203,7 +203,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     }
 
     
-    entries[nbuttons++].button = new myPushButton( this, klocale->translate("Go!"));
+    entries[nbuttons++].button = (myPushButton*) new myPushButton( this, klocale->translate("Go!"));
     entries[nbuttons-1].button->installEventFilter( this );
     QToolTip::add(entries[nbuttons-1].button, "Where do you want to go tomorrow?");
 
@@ -979,6 +979,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	  entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
 	   if (pConfig.hasKey("SwallowExec")){
 	     aString = QString(pConfig.readEntry("SwallowExec")).copy();
+// 	     printf("execute %s\n", aString.data());
 	     execute(aString.data());
 	   }
 	   if (pConfig.hasKey("PanelIdentity")){
