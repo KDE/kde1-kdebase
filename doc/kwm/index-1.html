@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>The K Window Manager Handbook: Introduction</TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="KDE, window manager">
+<META NAME="description" CONTENT="KDE Window manager">
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
+<FONT FACE="Helvetica">
+<A HREF="http://www.kde.org/"><IMG SRC="logotp3.gif" BORDER="0" ALT="The K Desktop Environment"></A>
+<HR WIDTH="100%" SIZE=2 ALIGN="CENTER" NOSHADE>
+
+ 
+<P ALIGN="RIGHT">
+
+<A HREF="index-2.html">Next</A>
+Previous<A HREF="index.html#toc1">Table of Contents</A>
+</P>
+<H3><A NAME="s1">1. Introduction</A></H3>
+
+<P>This document contains general information
+about <EM>kwm</EM>, a feature reference,
+and technical information useful for the developers of the
+<EM>kwm control module</EM> and the <EM>system sound module</EM>.
+<P>For further information how
+to customize kwm at the low level (only interesting for the
+kwinconfig developers)  please have a look at the generated
+<A HREF="index-3.html#kwmrc">kwmrc</A> and the source code.
+<P> 
+For all programmers: check out <CODE>kwm.h</CODE> in
+libkdecore for information how to use kwm for your
+purposes. For modules, the class <CODE>KWMModuleApplication</CODE>
+is a good example on how to write modules.  
+<P>
+<H3><A NAME="Features"></A> <A NAME="ss1.1">1.1 Features</A>
+</H3>
+
+<P><EM>kwm</EM> is the window manager of choice for KDE. Among other things, it
+offers:
+<P>
+<UL>
+<LI>Complete integration into KDE.
+<P>
+</LI>
+<LI>Complete 
+<A HREF="index-2.html#shortcuts">keyboard control</A>.
+<P>
+</LI>
+<LI>Modern look and feel with unique window
+titles and icons which do not need to be defined in cryptic
+resource files.
+<P>
+</LI>
+<LI>A convenient 
+<A HREF="index-2.html#mini-cli">mini command-line window</A> with history for quick access to a shell prompt.
+<P>
+</LI>
+<LI>Ability to be reconfigured at runtime without restarting.
+<P>
+</LI>
+<LI>Second generation window manager. KWM uses a modern GUI
+toolkit for its widgets (buttons, menus, listboxes, etc.) instead
+of bloating the code with a proprietary or plain Xlib
+implementation.
+<P>
+</LI>
+<LI>Excellent focus handling even if you work on different virtual
+desktops (no longer desktop-switching-and-losing-focus like it is
+standard with other window managers).
+<P>
+</LI>
+<LI>Includes session management and a working session
+management proxy for legacy applications. This proxy is able to
+restore your applications to their previous state, including 
+window properties (maximized, sticky, iconified, etc.) and on the
+correct virtual desktop.
+<P>
+</LI>
+<LI>Modern module concept that uses the X Server where it is
+possible.  KWM modules are also very independent: they can be
+started before or after kwm. KWM can be restarted while
+the modules are still running and will reconnect them
+automatically.
+<P>
+</LI>
+<LI>Offers some extensions to the X Server in <CODE>kwm.h</CODE>: Now
+applications can
+even maximize themselves (or sticky, or decorate/undecorate or
+whatever) and define mini icons. This works also for mapped
+(visible) windows.</LI>
+</UL>
+<P>
+<P ALIGN="RIGHT">
+
+<A HREF="index-2.html">Next</A>
+Previous<A HREF="index.html#toc1">Table of Contents</A>
+</P>
+<CENTER>
+<HR WIDTH="100%" SIZE=3 ALIGN=CENTER NOSHADE>
+</CENTER>    
+</FONT>
+
+ 
+</BODY>
+</HTML>
