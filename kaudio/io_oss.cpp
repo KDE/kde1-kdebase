@@ -102,12 +102,13 @@ bool AudioDev::grab(bool probeOnly)
       audiodev=-1; // fail!
 #endif 
      if (audiodev == -1 ) {
-       if ( errno != EBUSY )
+       if ( errno != EBUSY ) {
 	 // Tell the user something has gone wrong.
 	 // But don't tell him the device is busy, he already
 	 // should know this.
          cerr << "maudio: Cannot open audio device.\n";
-       return false;
+         return false;
+       }
      }
      else {
        if (!probeOnly) {
@@ -145,9 +146,9 @@ bool AudioDev::grab(bool probeOnly)
        Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
 #endif
        }
-       opened = true;
        ParamsChanged=false;
      }
+     opened = true;
   }
   return opened;
 }
