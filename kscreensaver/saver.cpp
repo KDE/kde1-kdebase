@@ -1,5 +1,3 @@
-
-
 #include <pwd.h>
 #include <qapp.h>
 #include <X11/Xlib.h>
@@ -23,6 +21,7 @@ extern KLocale *glocale;
 extern ssApp *globalKapp;
 
 int checkPasswd(char *);
+
 
 kScreenSaver::kScreenSaver( Drawable drawable ) : QObject()
 {
@@ -97,6 +96,8 @@ void KPasswordDlg::showStars()
 
 void KPasswordDlg::keyPressed( QKeyEvent *e )
 {
+  static bool waitForAuthentication = false;
+  if (!waitForAuthentication) {
 	switch ( e->key() )
 	{
 		case Key_Backspace:
@@ -111,6 +112,7 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 			break;
 
 		case Key_Return:
+			waitForAuthentication = true;
 			if ( tryPassword() )
 				emit passOk();
 			else
@@ -120,6 +122,7 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 				timerMode = 1;
 				timer.start( 1500, TRUE );
 			}
+			waitForAuthentication = false;
 			break;
 
 		case Key_Escape:
@@ -135,12 +138,15 @@ void KPasswordDlg::keyPressed( QKeyEvent *e )
 				timer.changeInterval( 10000 );
 			}
 	}
+  }
 }
 
 
 int KPasswordDlg::tryPassword()
 {
 #if defined HAVE_ETCPASSWD || defined HAVE_SHADOW || defined HAVE_PAM
+	if( stars )
+	  blinkTimer->stop();
 	KProcess chkpass;
 	QString kcp_binName = "";
 	kcp_binName += KApplication::kde_bindir();
@@ -148,8 +154,11 @@ int KPasswordDlg::tryPassword()
 	chkpass.clearArguments();
 	chkpass << kcp_binName;
 	bool ret = chkpass.start(KProcess::DontCare, KProcess::Stdin);
-	if (ret == false)
+	if (ret == false) {
+	  if( stars )
+	    blinkTimer->start( 300 );
 	  return 2;
+	}
         chkpass.writeStdin(password.data(),password.length()); // write Password to stdin
 	chkpass.closeStdin();                // eof
 
@@ -163,10 +172,11 @@ int KPasswordDlg::tryPassword()
 	    sleep(1);
 	  }
 	}
-	if ( chkpass.normalExit() && (chkpass.exitStatus() == 0) )
-	  return 1;
-	else
-	  return 0;
+	
+	int rc = ( chkpass.normalExit() && (chkpass.exitStatus() == 0) );
+	if( stars )
+	  blinkTimer->start( 300 ); 
+	return rc;
 #else
 	int e = checkPasswd(password.data());
 	return e;
