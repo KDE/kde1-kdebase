@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-18 09:16 MET DST\n"
+"PO-Revision-Date: 1998-06-19 08:53 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -151,24 +151,23 @@ msgstr "Pohyb okna"
 
 #: windows.cpp:85
 msgid "Transparent"
-msgstr "Transparentní"
+msgstr "Transparentnì"
 
 #: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
-msgstr "Neprùhledný"
+msgstr "Neprùhlednì"
 
 #: windows.cpp:89
 msgid "Window resize"
 msgstr "Zmìna velikosti okna"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Animace titulku"
+msgstr "Animace:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Rychlá"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -277,6 +276,3 @@ msgid ""
 msgstr ""
 "Zóna zarovnání\n"
 "okna (v bodech)"
-
-#~ msgid "With animation"
-#~ msgstr "S animací"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-01-20 10:04 MET\n"
+"PO-Revision-Date: 1998-06-19 08:45 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,9 +60,8 @@ msgstr "%10ld bytù  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "není pøístupná"
+msgstr "Není pøístupná"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
-"PO-Revision-Date: 1998-06-18 09:18 MET DST\n"
+"PO-Revision-Date: 1998-06-19 08:43 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -340,9 +340,8 @@ msgid "Panel clock font"
 msgstr "Znaková sada hodin Panelu"
 
 #: general.cpp:298
-#, fuzzy
 msgid "Sample text"
-msgstr "Vyber text"
+msgstr "Vzorový text"
 
 #: general.cpp:306
 msgid ""
@@ -389,7 +388,7 @@ msgstr "Vybraný text"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "T&yp písma"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -401,11 +400,11 @@ msgstr "Po&lo¾ené"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr ""
+msgstr "Veliko&st"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr ""
+msgstr "&Kódování"
 
 #: fontchooser.cpp:262
 msgid "default"
