@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -345,6 +345,18 @@ msgstr "Ãæ°å°´Å¥×ÖÌå"
 msgid "Panel clock font"
 msgstr "Ãæ°åÊ±ÖÓ×ÖÌå"
 
+#: general.cpp:298
+#, fuzzy
+msgid "Sample text"
+msgstr "Ñ¡ÔñÎÄ×Ö"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+
 #: main.cpp:62
 msgid "&Fonts etc."
 msgstr "×ÖÌå¼°ÆäËû[&F]"
@@ -382,6 +394,10 @@ msgstr "»î¶¯´°¿Ú"
 msgid "Selected text"
 msgstr "Ñ¡ÖÐµÄÎÄ×Ö"
 
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr ""
+
 #: fontchooser.cpp:89
 msgid "&Bold"
 msgstr "´ÖÌå[&B]"
@@ -389,6 +405,14 @@ msgstr "´ÖÌå[&B]"
 #: fontchooser.cpp:96
 msgid "&Italic"
 msgstr "Ð±Ìå[&I]"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr ""
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr ""
 
 #: fontchooser.cpp:262
 msgid "default"

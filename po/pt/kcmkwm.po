@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -145,87 +145,92 @@ msgstr "Mudar Tamanho"
 msgid "Operations Menu"
 msgstr "Menu de Operações"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Movimentação das Janelas"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Transparente"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Opaca"
 
-#: windows.cpp:79
+#: windows.cpp:89
 msgid "Window resize"
 msgstr "Mudança de tamanho das janelas"
 
-#: windows.cpp:80
-msgid "With animation"
-msgstr "Com animação"
+#: windows.cpp:90
+#, fuzzy
+msgid "Animation:"
+msgstr "Animação do título"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Política de Posicionamento"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr "Inteligente"
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "Cascata"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "Interactivo"
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr "Aleatória"
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr "Manual"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "Sobreposição:"
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Estilo de Maximização"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Maximizar totalmente"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximizar verticalmente"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Política de Foco"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Clicar para obter foco"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Foco segue o rato"
 
-#: windows.cpp:120
+#: windows.cpp:133
 msgid "Classic focus follows mouse"
 msgstr "Foco segue o rato clássico"
 
-#: windows.cpp:122
+#: windows.cpp:135
 msgid "Classic sloppy focus"
 msgstr "Foco escorregadio clássico"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -233,7 +238,7 @@ msgstr ""
 "Demora do levantamento automático\n"
 "(<100 desactiva)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "milisegundos"
 
@@ -272,6 +277,9 @@ msgid ""
 msgstr ""
 "Zona de Snap da Janela:\n"
 "       (pixels)"
+
+#~ msgid "With animation"
+#~ msgstr "Com animação"
 
 #~ msgid "Move"
 #~ msgstr "Mover"

@@ -1328,4 +1328,3 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URL ....]\n"
-

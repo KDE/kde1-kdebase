@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,31 +14,31 @@ msgstr "KDE 帮助: 打开 URL"
 msgid "Open URL"
 msgstr "打开 URL"
 
-#: helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
 msgstr "无法打开: "
 
-#: helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
 msgstr "错误!"
 
-#: helpwin.cpp:463
+#: helpwin.cpp:462
 msgid "Unknown format: "
 msgstr "未知的格式: "
 
-#: helpwin.cpp:833
+#: helpwin.cpp:832
 msgid "Could not start or find KFM"
 msgstr "无法运行或找不到 KFM"
 
-#: helpwin.cpp:1322
+#: helpwin.cpp:1320
 msgid "Open this Link"
 msgstr "打开这个链接"
 
-#: helpwin.cpp:1323
+#: helpwin.cpp:1321
 msgid "Add Bookmark"
 msgstr "加入书签"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1322
 msgid "Open in new Window"
 msgstr "在新窗口中打开"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,92 +153,96 @@ msgstr "Αλλαγή Μεγέθους"
 msgid "Operations Menu"
 msgstr "Μενού Λειτουργιών"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Μετακίνηση παραθύρου"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Διάφανο"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Αδιαφανές"
 
-#: windows.cpp:79
+#: windows.cpp:89
 #, fuzzy
 msgid "Window resize"
 msgstr "Παράθυρα"
 
-#: windows.cpp:80
+#: windows.cpp:90
 #, fuzzy
-msgid "With animation"
+msgid "Animation:"
 msgstr "Κίνηση τίτλου"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Πολιτική τοποθέτησης"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr ""
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr ""
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr ""
 
-#: windows.cpp:95
+#: windows.cpp:108
 #, fuzzy
 msgid "Manual"
 msgstr "Μενού"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr ""
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Μορφή μεγιστοποίησης"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Πλήρης μεγιστοποίηση"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Κατακόρυφη μεγιστοποίηση"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Πολιτική ενεργοποίησης"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:120
+#: windows.cpp:133
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Η ενεργοποίηση ακολουθεί τον δείκτη του ποντικιού"
 
-#: windows.cpp:122
+#: windows.cpp:135
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Ενεργοποίηση με κλικ"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -246,7 +250,7 @@ msgstr ""
 "Καθυστέρηση αυτόματης ανάδυσης\n"
 "(<100 απενεργοποιεί)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "χιλιοστά του δευτερολέπτου"
 
@@ -281,6 +285,10 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+
+#, fuzzy
+#~ msgid "With animation"
+#~ msgstr "Κίνηση τίτλου"
 
 #~ msgid "Move"
 #~ msgstr "Μετακίνηση"

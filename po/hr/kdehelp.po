@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -21,31 +21,31 @@ msgstr "KDE pomoæ: OtvoriURL"
 msgid "Open URL"
 msgstr "Otvori URL"
 
-#: helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
 msgstr "Ne mogu otvoriti: "
 
-#: helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
 msgstr "Ups!"
 
-#: helpwin.cpp:463
+#: helpwin.cpp:462
 msgid "Unknown format: "
 msgstr "Nepoznat format: "
 
-#: helpwin.cpp:833
+#: helpwin.cpp:832
 msgid "Could not start or find KFM"
 msgstr "Ne mogu pokrenuti ili naæi KFM"
 
-#: helpwin.cpp:1322
+#: helpwin.cpp:1320
 msgid "Open this Link"
 msgstr "Otvori tu vezu"
 
-#: helpwin.cpp:1323
+#: helpwin.cpp:1321
 msgid "Add Bookmark"
 msgstr "Dodaj u bookmark"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1322
 msgid "Open in new Window"
 msgstr "Otvori u novom prozoru"
 

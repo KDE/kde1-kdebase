@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-05-21 00:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -150,91 +150,95 @@ msgstr "Dimensionar"
 msgid "Operations Menu"
 msgstr "Menú d'operacions"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Moviment de finestra"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Transparent"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Opac"
 
-#: windows.cpp:79
+#: windows.cpp:89
 #, fuzzy
 msgid "Window resize"
 msgstr "&Finestres"
 
-#: windows.cpp:80
+#: windows.cpp:90
 #, fuzzy
-msgid "With animation"
+msgid "Animation:"
 msgstr "Animació de títol"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Política de col·locació"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr "Astuta"
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "Cascada"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "Interactiva"
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr "Aleatòria"
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr "Manual"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "Encavallament:"
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Estil al maximitzar"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Maximitzar del tot"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximitzar verticalment"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Política de focus"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Focus al clic"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Focus al ratolí"
 
-#: windows.cpp:120
+#: windows.cpp:133
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Focus al ratolí"
 
-#: windows.cpp:122
+#: windows.cpp:135
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Focus al clic"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -242,7 +246,7 @@ msgstr ""
 "Retard d'auto elevació\n"
 "(<100 desactiva)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "milisegons"
 
@@ -281,6 +285,10 @@ msgid ""
 msgstr ""
 "Zona de salt a les finestres:\n"
 "       (pixels)"
+
+#, fuzzy
+#~ msgid "With animation"
+#~ msgstr "Animació de títol"
 
 #~ msgid "Move"
 #~ msgstr "Moure"

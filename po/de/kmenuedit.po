@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1997-12-29 16:29+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -45,11 +45,11 @@ msgstr ""
 "Das Neu-Laden der Menüs wird alle Änderungen\n"
 "rückgängig machen. Neu-Laden?"
 
-#: button.cpp:209 main.cpp:77 main.cpp:90
+#: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -57,7 +57,7 @@ msgstr ""
 "Das Verzeichnis für das persönliche Menü existiert nicht.\n"
 "Soll es erstellt werden?"
 
-#: main.cpp:91
+#: main.cpp:92
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

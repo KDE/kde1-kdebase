@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-06-18 09:16 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -145,87 +145,92 @@ msgstr "Zmìnit velikost"
 msgid "Operations Menu"
 msgstr "Menu s operacemi"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Pohyb okna"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Transparentní"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Neprùhledný"
 
-#: windows.cpp:79
+#: windows.cpp:89
 msgid "Window resize"
 msgstr "Zmìna velikosti okna"
 
-#: windows.cpp:80
-msgid "With animation"
-msgstr "S animací"
+#: windows.cpp:90
+#, fuzzy
+msgid "Animation:"
+msgstr "Animace titulku"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Zpùsob umís»ování"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr "Inteligentní"
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "Kaskáda"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "Interaktivní"
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr "Náhodné"
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr "Ruèní"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "Pøípustné pøekrytí:"
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Styl maximalizace"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Plnì maximalizuj"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximalizuj vertikálnì"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Zpùsob zaktivnìní okna"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Kliknout k aktivaci"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Okno pod my¹í je aktivní"
 
-#: windows.cpp:120
+#: windows.cpp:133
 msgid "Classic focus follows mouse"
 msgstr "Okno pod my¹í je aktivní (klasické)"
 
-#: windows.cpp:122
+#: windows.cpp:135
 msgid "Classic sloppy focus"
 msgstr "Aktivace kliknutím (klasická)"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -233,7 +238,7 @@ msgstr ""
 "Prodleva pøed pøesunutím\n"
 "okna navrch (<100 vypíná)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "milisekund"
 
@@ -272,3 +277,6 @@ msgid ""
 msgstr ""
 "Zóna zarovnání\n"
 "okna (v bodech)"
+
+#~ msgid "With animation"
+#~ msgstr "S animací"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
 "PO-Revision-Date: 1998-03-25 21:06+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -14,31 +14,31 @@ msgstr "KDE Pomoc: Otwórz URL"
 msgid "Open URL"
 msgstr "Otwórz URL"
 
-#: helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
 msgstr "Nie mo¿na otworzyæ: "
 
-#: helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
 msgstr "Ojej!"
 
-#: helpwin.cpp:463
+#: helpwin.cpp:462
 msgid "Unknown format: "
 msgstr "Nieznany format: "
 
-#: helpwin.cpp:833
+#: helpwin.cpp:832
 msgid "Could not start or find KFM"
 msgstr "Nie mo¿na uruchomiæ lub znale¼æ KFM"
 
-#: helpwin.cpp:1322
+#: helpwin.cpp:1320
 msgid "Open this Link"
 msgstr "Otwórz odno¶nik"
 
-#: helpwin.cpp:1323
+#: helpwin.cpp:1321
 msgid "Add Bookmark"
 msgstr "Dodaj zak³adkê"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1322
 msgid "Open in new Window"
 msgstr "Otwórz w nowym oknie"
 

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-01-05 20:56+0200\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -48,11 +48,11 @@ msgstr ""
 "Η επαναφόρτωση των καταλόγων θα απορρίψειόλες τις αλλαγές.\n"
 "Είστε σίγουροι ότι θέλετε να επαναφορτώσετε ?"
 
-#: button.cpp:209 main.cpp:77 main.cpp:90
+#: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -60,7 +60,7 @@ msgstr ""
 "Ο φάκελλος για τον προσωπικό σας κατάλογο δεν υπάρχει.\n"
 "Θέλετε να δημιουργηθεί τώρα ?"
 
-#: main.cpp:91
+#: main.cpp:92
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ionescu Paul <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -22,31 +22,31 @@ msgstr "Informaþii KDE: Deschide URL"
 msgid "Open URL"
 msgstr "Deschide URL"
 
-#: helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
 msgstr "Nu pot deschide: "
 
-#: helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
 msgstr "Hopa ! "
 
-#: helpwin.cpp:463
+#: helpwin.cpp:462
 msgid "Unknown format: "
 msgstr "Format necunoscut: "
 
-#: helpwin.cpp:833
+#: helpwin.cpp:832
 msgid "Could not start or find KFM"
 msgstr "Nu pot gãsi sau porni KFM"
 
-#: helpwin.cpp:1322
+#: helpwin.cpp:1320
 msgid "Open this Link"
 msgstr "Deschide aceastã locaþie"
 
-#: helpwin.cpp:1323
+#: helpwin.cpp:1321
 msgid "Add Bookmark"
 msgstr "Adaugã semn de carte"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1322
 msgid "Open in new Window"
 msgstr "Deschide în fereastrã nouã"
 

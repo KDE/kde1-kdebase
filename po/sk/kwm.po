@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,123 +25,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: zlyhanie behom inicializácie; ukonèujem\n"
 
-#: main.C:474
-msgid ""
-"You want to switch to another window. Unfortunately you have selected \n"
-"one of the classic focus policies which do not allow this.  These policies "
-"are \n"
-"included not because they make sense, but for compatibility reasons. Well, \n"
-"even old hand unix users should feel comfortable with the K Desktop "
-"Environment ;-)\n"
-"\n"
-"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-msgstr ""
-"Chcete sa prepnú» do iného okna. Bohu¾iaµ ste zvolili jednu z klasických\n"
-"metód zobrazovania, ktorá toto nepovoµuje. Tieto metódy tu nie sú preto,\n"
-"aby dávali zmysel, ale preto, aby sa aj pou¾ívatelia star¹ích UNIXov cítili\n"
-"dobre.\n"
-"\n"
-"Ak si teda prajete modernej¹iu správu okien, zvoµte si jednu z odporúèaných\n"
-"metód ako napr. kliknú» pre aktiváciu alebo okno pod my¹kou je aktívne."
-
-#: main.C:492
+#: main.C:470
 msgid "Preparing session ... "
 msgstr "Pripravujem sedenie ... "
 
-#: main.C:511
+#: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:518
+#: main.C:496
 msgid "Usage: "
 msgstr "Pou¾itie:"
 
-#: main.C:529
+#: main.C:507
 msgid "&Maximize"
 msgstr "&Maximalizova»"
 
-#: main.C:530
+#: main.C:508
 msgid "&Restore"
 msgstr "&Obnovi»"
 
-#: main.C:531
+#: main.C:509
 msgid "&Iconify"
 msgstr "&Ikonizova»"
 
-#: main.C:532
+#: main.C:510
 msgid "&DeIconify"
 msgstr "O&dikonizova»"
 
-#: main.C:533
+#: main.C:511
 msgid "&Sticky"
 msgstr "&Prilepi»"
 
-#: main.C:534
+#: main.C:512
 msgid "&UnSticky"
 msgstr "Od&lepi»"
 
-#: main.C:535
+#: main.C:513
 msgid "Mo&ve"
 msgstr "Pre&sunú»"
 
-#: main.C:536
+#: main.C:514
 msgid "Resi&ze"
 msgstr "Zmeni» &veµkos»"
 
-#: main.C:538
+#: main.C:516
 msgid "&To desktop"
 msgstr "&Na pracovnú plochu"
 
-#: main.C:540
+#: main.C:518
 msgid "&Onto current desktop"
 msgstr "Na &súèasnú pracovnú plochu"
 
-#: main.C:593
+#: main.C:571
 msgid "One"
 msgstr "Prvá"
 
-#: main.C:596
+#: main.C:574
 msgid "Two"
 msgstr "Druhá"
 
-#: main.C:599
+#: main.C:577
 msgid "Three"
 msgstr "Tretia"
 
-#: main.C:602
+#: main.C:580
 msgid "Four"
 msgstr "©tvrtá"
 
-#: main.C:605
+#: main.C:583
 msgid "Five"
 msgstr "Piata"
 
-#: main.C:608
+#: main.C:586
 msgid "Six"
 msgstr "©iesta"
 
-#: main.C:611
+#: main.C:589
 msgid "Seven"
 msgstr "Siedma"
 
-#: main.C:614
+#: main.C:592
 msgid "Eight"
 msgstr "Ôsma"
 
-#: main.C:628
+#: main.C:606
 msgid "Unnamed Desktop"
 msgstr "Nepomenovaná plocha"
 
-#: main.C:962
+#: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
-#: main.C:1074
+#: main.C:1054
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
-#: main.C:1307
+#: main.C:1311
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 
@@ -193,3 +173,22 @@ msgstr "Prepnú» do"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Súèasné sedenie"
+
+#~ msgid ""
+#~ "You want to switch to another window. Unfortunately you have selected \n"
+#~ "one of the classic focus policies which do not allow this.  These policies "
+#~ "are \n"
+#~ "included not because they make sense, but for compatibility reasons. Well, \n"
+#~ "even old hand unix users should feel comfortable with the K Desktop "
+#~ "Environment ;-)\n"
+#~ "\n"
+#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+#~ msgstr ""
+#~ "Chcete sa prepnú» do iného okna. Bohu¾iaµ ste zvolili jednu z klasických\n"
+#~ "metód zobrazovania, ktorá toto nepovoµuje. Tieto metódy tu nie sú preto,\n"
+#~ "aby dávali zmysel, ale preto, aby sa aj pou¾ívatelia star¹ích UNIXov cítili\n"
+#~ "dobre.\n"
+#~ "\n"
+#~ "Ak si teda prajete modernej¹iu správu okien, zvoµte si jednu z odporúèaných\n"
+#~ "metód ako napr. kliknú» pre aktiváciu alebo okno pod my¹kou je aktívne."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,91 +159,95 @@ msgstr "Verander grootte"
 msgid "Operations Menu"
 msgstr "Operaties menu"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "Verplaatsing vensters"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "Transparant"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "Ondoorzichtig"
 
-#: windows.cpp:79
+#: windows.cpp:89
 #, fuzzy
 msgid "Window resize"
 msgstr "&Vensters"
 
-#: windows.cpp:80
+#: windows.cpp:90
 #, fuzzy
-msgid "With animation"
+msgid "Animation:"
 msgstr "Titel bewegen"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "Plaatsing nieuwe vensters"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr "Intelligent"
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "Gedeeltelijk overlappend"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "Interactief"
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr "Willekeurig"
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr "Handmatig"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "Toegestane overlapping:"
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Maximalizatie Stijl"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Schermvullend venster"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximale verticale grootte"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "Gedrag focus"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "Focus volgt de muis"
 
-#: windows.cpp:120
+#: windows.cpp:133
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "Focus volgt de muis"
 
-#: windows.cpp:122
+#: windows.cpp:135
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "Klikken voor focus"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -251,7 +255,7 @@ msgstr ""
 "Vertraging voor automatisch\n"
 "naar voren brengen (<100 afzetten)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "milliseconden"
 
@@ -291,6 +295,10 @@ msgid ""
 msgstr ""
 "Venster Verspring Zone:\n"
 "       (pixels)"
+
+#, fuzzy
+#~ msgid "With animation"
+#~ msgstr "Titel bewegen"
 
 #~ msgid "Move"
 #~ msgstr "Verplaats"

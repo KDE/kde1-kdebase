@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.4\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:20+0200\n"
 "PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,31 +21,31 @@ msgstr "KDE Segítség: URL megnyitása"
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: helpwin.cpp:454 info.cpp:274
+#: helpwin.cpp:453 info.cpp:274
 msgid "Cannot open: "
 msgstr "Nem lehet megnyitni: "
 
-#: helpwin.cpp:455 helpwin.cpp:464
+#: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
 msgstr "Hiba!"
 
-#: helpwin.cpp:463
+#: helpwin.cpp:462
 msgid "Unknown format: "
 msgstr "Ismeretlen formátum: "
 
-#: helpwin.cpp:833
+#: helpwin.cpp:832
 msgid "Could not start or find KFM"
 msgstr "Nincs meg a KFM, vagy nem lehet elindítani"
 
-#: helpwin.cpp:1322
+#: helpwin.cpp:1320
 msgid "Open this Link"
 msgstr "Hivatkozás megnyitása"
 
-#: helpwin.cpp:1323
+#: helpwin.cpp:1321
 msgid "Add Bookmark"
 msgstr "Hozzáadás a kedvencekhez"
 
-#: helpwin.cpp:1324
+#: helpwin.cpp:1322
 msgid "Open in new Window"
 msgstr "Megnyitás új ablakban"
 

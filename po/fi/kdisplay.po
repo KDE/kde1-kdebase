@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDISPLAY\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -339,6 +339,18 @@ msgstr "Paneelin napin kirjasin"
 msgid "Panel clock font"
 msgstr "Paneelin kellon kirjasin"
 
+#: general.cpp:298
+#, fuzzy
+msgid "Sample text"
+msgstr "Valinnan teksti"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+
 #: main.cpp:62
 msgid "&Fonts etc."
 msgstr "&Kirjasimet"
@@ -375,6 +387,10 @@ msgstr "Aktiivinen ikkuna"
 msgid "Selected text"
 msgstr "Valittu teksti"
 
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr ""
+
 #: fontchooser.cpp:89
 msgid "&Bold"
 msgstr "&Paksunnettu"
@@ -382,6 +398,14 @@ msgstr "&Paksunnettu"
 #: fontchooser.cpp:96
 msgid "&Italic"
 msgstr "&Italic"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr ""
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr ""
 
 #: fontchooser.cpp:262
 msgid "default"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,17 +50,17 @@ msgid ""
 "Are you sure you want to reload ?"
 msgstr ""
 
-#: button.cpp:209 main.cpp:77 main.cpp:90
+#: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
 msgstr ""
 
-#: main.cpp:78
+#: main.cpp:79
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
 
-#: main.cpp:91
+#: main.cpp:92
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

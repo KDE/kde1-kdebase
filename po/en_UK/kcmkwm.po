@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -141,93 +141,97 @@ msgstr ""
 msgid "Operations Menu"
 msgstr ""
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr ""
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr ""
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr ""
 
-#: windows.cpp:79
+#: windows.cpp:89
 msgid "Window resize"
 msgstr ""
 
-#: windows.cpp:80
-msgid "With animation"
+#: windows.cpp:90
+msgid "Animation:"
 msgstr ""
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr ""
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr ""
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr ""
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr ""
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr ""
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr ""
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "Maximise Style"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "Maximise fully"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "Maximise vertically"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr ""
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr ""
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr ""
 
-#: windows.cpp:120
+#: windows.cpp:133
 msgid "Classic focus follows mouse"
 msgstr ""
 
-#: windows.cpp:122
+#: windows.cpp:135
 msgid "Classic sloppy focus"
 msgstr ""
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
 msgstr ""
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr ""
 

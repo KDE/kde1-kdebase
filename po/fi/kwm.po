@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KWM\n"
-"POT-Creation-Date: 1998-06-16 13:56+0200\n"
+"POT-Creation-Date: 1998-06-18 22:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,123 +19,103 @@ msgstr "Kwm: toinen ikkunamanageri on jo käynnissä. Kwm:ää ei käynnistetä.\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "Kwm: Virhe alkurutiineissa; lopetetaan\n"
 
-#: main.C:474
-msgid ""
-"You want to switch to another window. Unfortunately you have selected \n"
-"one of the classic focus policies which do not allow this.  These policies "
-"are \n"
-"included not because they make sense, but for compatibility reasons. Well, \n"
-"even old hand unix users should feel comfortable with the K Desktop "
-"Environment ;-)\n"
-"\n"
-"Anyway, if you prefer modern windowmanagement, please choose one of the \n"
-"recommended focus policies like ClickToFocus or FocusFollowMouse instead."
-msgstr ""
-"Haluat vaihtaa toiseen ikkunaan. Valutettavasti olet valinnut yhden \n"
-"perinteisistä kohdistustavoista jotka eivät salli tätä.  Nämä "
-"kohdistustavat\n"
-"eivät ole mukana koska ne ovat järkeviä vaan yhteensopivuussyistä. \n"
-"\n"
-"Jos haluat modernia ikkunoidenhallintaa, valitse joku suositelluista \n"
-"kohdistustavoista kuten Kohdista hiiren napilla tai Kohdistus seuraa hiirtä."
-
-#: main.C:492
+#: main.C:470
 msgid "Preparing session ... "
 msgstr "Valmistelen sessiota ... "
 
-#: main.C:511
+#: main.C:489
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:518
+#: main.C:496
 msgid "Usage: "
 msgstr "Käyttö: "
 
-#: main.C:529
+#: main.C:507
 msgid "&Maximize"
 msgstr "&Suurenna"
 
-#: main.C:530
+#: main.C:508
 msgid "&Restore"
 msgstr "&Palauta"
 
-#: main.C:531
+#: main.C:509
 msgid "&Iconify"
 msgstr "&Ikoniksi"
 
-#: main.C:532
+#: main.C:510
 msgid "&DeIconify"
 msgstr "P&oista ikonisointi"
 
-#: main.C:533
+#: main.C:511
 msgid "&Sticky"
 msgstr "&Naulaa"
 
-#: main.C:534
+#: main.C:512
 msgid "&UnSticky"
 msgstr "&Poista naulaus"
 
-#: main.C:535
+#: main.C:513
 msgid "Mo&ve"
 msgstr "S&iirrä"
 
-#: main.C:536
+#: main.C:514
 msgid "Resi&ze"
 msgstr "&Muuta kokoa"
 
-#: main.C:538
+#: main.C:516
 msgid "&To desktop"
 msgstr "&Työpöydälle"
 
-#: main.C:540
+#: main.C:518
 msgid "&Onto current desktop"
 msgstr "&Nykyiselle työpöydälle"
 
-#: main.C:593
+#: main.C:571
 msgid "One"
 msgstr "Yksi"
 
-#: main.C:596
+#: main.C:574
 msgid "Two"
 msgstr "Kaksi"
 
-#: main.C:599
+#: main.C:577
 msgid "Three"
 msgstr "Kolme"
 
-#: main.C:602
+#: main.C:580
 msgid "Four"
 msgstr "Neljä"
 
-#: main.C:605
+#: main.C:583
 msgid "Five"
 msgstr "Viisi"
 
-#: main.C:608
+#: main.C:586
 msgid "Six"
 msgstr "Kuusi"
 
-#: main.C:611
+#: main.C:589
 msgid "Seven"
 msgstr "Seitsemän"
 
-#: main.C:614
+#: main.C:592
 msgid "Eight"
 msgstr "Kahdeksan"
 
-#: main.C:628
+#: main.C:606
 msgid "Unnamed Desktop"
 msgstr "Nimeämätön työpöytä"
 
-#: main.C:962
+#: main.C:942
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
 
-#: main.C:1074
+#: main.C:1054
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kunnossa: GimmickMode poistettu\n"
 
-#: main.C:1307
+#: main.C:1311
 msgid "*** No Tasks ***"
 msgstr "*** Ei töitä ***"
 
@@ -188,3 +168,22 @@ msgstr "Siirry"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Nykyinen istunto"
+
+#~ msgid ""
+#~ "You want to switch to another window. Unfortunately you have selected \n"
+#~ "one of the classic focus policies which do not allow this.  These policies "
+#~ "are \n"
+#~ "included not because they make sense, but for compatibility reasons. Well, \n"
+#~ "even old hand unix users should feel comfortable with the K Desktop "
+#~ "Environment ;-)\n"
+#~ "\n"
+#~ "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
+#~ "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
+#~ msgstr ""
+#~ "Haluat vaihtaa toiseen ikkunaan. Valutettavasti olet valinnut yhden \n"
+#~ "perinteisistä kohdistustavoista jotka eivät salli tätä.  Nämä "
+#~ "kohdistustavat\n"
+#~ "eivät ole mukana koska ne ovat järkeviä vaan yhteensopivuussyistä. \n"
+#~ "\n"
+#~ "Jos haluat modernia ikkunoidenhallintaa, valitse joku suositelluista \n"
+#~ "kohdistustavoista kuten Kohdista hiiren napilla tai Kohdistus seuraa hiirtä."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KMENUEDIT\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,11 +54,11 @@ msgstr ""
 "Valikoiden lataaminen kumoaa muutokset.\n"
 "Oletko varma että haluat ladata valikot ?"
 
-#: button.cpp:209 main.cpp:77 main.cpp:90
+#: button.cpp:209 main.cpp:78 main.cpp:91
 msgid "KMenuedit"
 msgstr "KMenueditori"
 
-#: main.cpp:78
+#: main.cpp:79
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -66,7 +66,7 @@ msgstr ""
 "Hakemistoa henkilökohtaisille valikoille ei ole olemassa.\n"
 " Haluatko luoda sen nyt ?"
 
-#: main.cpp:91
+#: main.cpp:92
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-06-16 13:54+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -140,91 +140,95 @@ msgstr "改变大小"
 msgid "Operations Menu"
 msgstr "操作菜单"
 
-#: windows.cpp:74
+#: windows.cpp:84
 msgid "Window movement"
 msgstr "窗口移动"
 
-#: windows.cpp:75
+#: windows.cpp:85
 msgid "Transparent"
 msgstr "透明的"
 
-#: windows.cpp:76 windows.cpp:82
+#: windows.cpp:86 windows.cpp:95
 msgid "Opaque"
 msgstr "不透明的"
 
-#: windows.cpp:79
+#: windows.cpp:89
 #, fuzzy
 msgid "Window resize"
 msgstr "窗口[&W]"
 
-#: windows.cpp:80
+#: windows.cpp:90
 #, fuzzy
-msgid "With animation"
+msgid "Animation:"
 msgstr "标题动画"
 
-#: windows.cpp:85
+#: windows.cpp:92
+msgid "Fast"
+msgstr ""
+
+#: windows.cpp:98
 msgid "Placement policy"
 msgstr "窗口放置策略"
 
-#: windows.cpp:87
+#: windows.cpp:100
 msgid "Smart"
 msgstr "智能"
 
-#: windows.cpp:89
+#: windows.cpp:102
 msgid "Cascade"
 msgstr "层叠"
 
-#: windows.cpp:91
+#: windows.cpp:104
 msgid "Interactive"
 msgstr "交互式"
 
-#: windows.cpp:93
+#: windows.cpp:106
 msgid "Random"
 msgstr "随机"
 
-#: windows.cpp:95
+#: windows.cpp:108
 msgid "Manual"
 msgstr "手工"
 
-#: windows.cpp:102
+#: windows.cpp:115
 msgid "Allowed Overlap:"
 msgstr "允许重叠"
 
-#: windows.cpp:109
+#: windows.cpp:122
 msgid "Maximize Style"
 msgstr "最大化风格"
 
-#: windows.cpp:110
+#: windows.cpp:123
 msgid "Maximize fully"
 msgstr "完全最大化"
 
-#: windows.cpp:111
+#: windows.cpp:124
 msgid "Maximize vertically"
 msgstr "垂直最大化"
 
-#: windows.cpp:114
+#: windows.cpp:127
 msgid "Focus Policy"
 msgstr "焦点策略"
 
-#: windows.cpp:116
+#: windows.cpp:129
 msgid "Click to focus"
 msgstr "点击取得焦点"
 
-#: windows.cpp:118
+#: windows.cpp:131
 msgid "Focus follows mouse"
 msgstr "焦点随鼠标移动"
 
-#: windows.cpp:120
+#: windows.cpp:133
 #, fuzzy
 msgid "Classic focus follows mouse"
 msgstr "焦点随鼠标移动"
 
-#: windows.cpp:122
+#: windows.cpp:135
 #, fuzzy
 msgid "Classic sloppy focus"
 msgstr "点击取得焦点"
 
-#: windows.cpp:131
+#: windows.cpp:144
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -232,7 +236,7 @@ msgstr ""
 "窗口自动弹起的\n"
 "延迟时间(<100 取消此功能)"
 
-#: windows.cpp:134
+#: windows.cpp:147
 msgid "miliseconds"
 msgstr "毫秒"
 
@@ -271,6 +275,10 @@ msgid ""
 msgstr ""
 "Window Snap Zone:\n"
 "       (像素)"
+
+#, fuzzy
+#~ msgid "With animation"
+#~ msgstr "标题动画"
 
 #~ msgid "Move"
 #~ msgstr "移动"

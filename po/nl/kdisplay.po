@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-16 15:37+0200\n"
+"POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,6 +372,18 @@ msgstr "Paneel knop lettertype"
 msgid "Panel clock font"
 msgstr "Panel klok lettertype"
 
+#: general.cpp:298
+#, fuzzy
+msgid "Sample text"
+msgstr "Selecteer tekst"
+
+#: general.cpp:306
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+
 #: main.cpp:62
 #, fuzzy
 msgid "&Fonts etc."
@@ -414,6 +426,10 @@ msgstr "Actief venster"
 msgid "Selected text"
 msgstr "Selecteer tekst"
 
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr ""
+
 #: fontchooser.cpp:89
 #, fuzzy
 msgid "&Bold"
@@ -423,6 +439,14 @@ msgstr "&Vet"
 #, fuzzy
 msgid "&Italic"
 msgstr "&Cursief"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr ""
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr ""
 
 #: fontchooser.cpp:262
 #, fuzzy

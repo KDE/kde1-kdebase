@@ -225,7 +225,8 @@ msgstr "-vt_font <skrifttype>     vanlig skrifttype\n"
 
 #: main.C:1334
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             skru av koden som gåt utenom Qt-skrifttypefeilen\n"
+msgstr ""
+"-no_font_hack             skru av koden som gåt utenom Qt-skrifttypefeilen\n"
 
 #: main.C:1335
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -233,7 +234,8 @@ msgstr "-vt_size <størrelse>      tiny, small, normal, large, huge\n"
 
 #: main.C:1336
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr "-linux                    sett opp kvt til å etterligne linux-konsolet\n"
+msgstr ""
+"-linux                    sett opp kvt til å etterligne linux-konsolet\n"
 
 #: main.C:1337
 msgid "-no_menubar               hide the menubar\n"
