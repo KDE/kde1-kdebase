@@ -43,7 +43,7 @@ msgstr "Adgangskode:"
 
 #: kgreeter.cpp:259
 msgid "Login failed!"
-msgstr "Log på mislykkedes!"
+msgstr "Log-på mislykkedes!"
 
 #: kgreeter.cpp:265
 msgid "Session Type:"

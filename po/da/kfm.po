@@ -997,7 +997,7 @@ msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Kunne ikke oprette symbolsk link til\n"
+"Kunne ikke oprette symbolsk link\n"
 "%s"
 
 #: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
@@ -1207,7 +1207,7 @@ msgstr ""
 "eksisterer ikke"
 
 #: kiojob.cpp:1398
-#,  c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1215,7 +1215,7 @@ msgid ""
 msgstr ""
 "Kunne ikke skrive\n"
 "%s\n"
-"Måske er der ikke mere plads"
+"Måske er disken fuld"
 
 #: kiojob.cpp:1449
 #, c-format

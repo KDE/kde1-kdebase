@@ -45,7 +45,7 @@ msgstr ""
 
 #: mainwidget.cpp:44
 msgid "KDE Version: "
-msgstr "KDE Version: "
+msgstr "KDE version: "
 
 #: mainwidget.cpp:52
 msgid "User: "

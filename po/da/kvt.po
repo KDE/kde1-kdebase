@@ -154,8 +154,9 @@ msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
 "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
-"Terminal emulering for KDE Desktop Environment\n"
+"Terminal emulering for KDE Desktop Miljøet\n"
 "baseret på Robert Nation's rxvt-2.08"
 
 #: main.C:897 main.C:1036

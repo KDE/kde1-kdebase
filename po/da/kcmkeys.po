@@ -1,4 +1,4 @@
-# Danish Norwegian translations for KDE Base, kcmkeys
+# Danish translations for KDE Base, kcmkeys
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Erik Kjær Pedersen <erik@binghamton.edu>, 1998.
 #
