@@ -11,6 +11,8 @@
 #include "kfmprops.h"
 #include "kiojob.h"
 
+#include <qmsgbox.h>
+
 KFMServer::KFMServer() : KfmIpcServer()
 {
     connect( this, SIGNAL( newClient( KfmIpc * ) ), this, SLOT( slotNewClient( KfmIpc * ) ) );
@@ -108,11 +110,22 @@ void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
 
 void KFMServer::slotOpenURL( const char* _url )
 {
-    printf("Opening URL '%s'\n", _url );
+    printf("KFMServer::Opening URL '%s'\n", _url );
 
     if ( _url[0] != 0 )
     {
+	printf("There is an URL\n");
+	
 	QString url = _url;
+	KURL u( _url );
+	if ( u.isMalformed() )
+	{
+	    QMessageBox::message( "KFM Error", "Malformed URL\n" + url );
+	    return;
+	}
+	printf("OK\n");
+	
+	url = u.url().copy();
 	
 	if ( url == "trash:/" )
 	{
@@ -121,13 +134,16 @@ void KFMServer::slotOpenURL( const char* _url )
 	    url += "/Desktop/Trash/";
 	}
 	
+	printf("Seaerching window\n");
 	KFileWindow *w = KFileWindow::findWindow( url.data() );
 	if ( w != 0L )
 	{
+	    printf("Window found\n");
 	    w->show();
 	    return;
 	}
 	
+	printf("Opening new window\n");
 	KFileWindow *f = new KFileWindow( 0L, 0L, url.data() );
 	f->show();
 	return;
@@ -170,6 +186,8 @@ void KFMServer::slotOpenURL( const char* _url )
 
 void KFMServer::slotRefreshDirectory( const char* _url )
 {
+    printf("CMD: refeshDirectory '%s'\n",_url );
+    
     QString tmp = _url;
     
     KURL u( _url );
@@ -191,10 +209,7 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
 {
     // Attention this is a little hack by me (Matthias)
     QStrList sl;
-    if (_binding != 0L && QString(_binding).contains("/")){
-      sl.append(_binding);
-      _binding = "Open";
-    }
+    sl.append(_binding);   
 
     if ( _binding == 0L )
 	KFileType::runBinding( _url );

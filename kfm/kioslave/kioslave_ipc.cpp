@@ -32,10 +32,13 @@ bool KIOSlaveIPC::isConnected()
 void KIOSlaveIPC::closeEvent( KSocket * _sock )
 {
     connected = FALSE;
+    printf("##### KIOSLAVE close\n");
+    exit(1);
 }
 
 void KIOSlaveIPC::readEvent( KSocket *_sock )
 {
+    printf("##### KIOSLAVE read\n");
     if ( bHeader )
     {
 	int n;

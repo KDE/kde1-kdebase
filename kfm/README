@@ -1,4 +1,4 @@
-Alpha Version 0.6.3
+Alpha Version 0.6.4
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
 
@@ -34,17 +34,10 @@ TODO
 
 Lots of work...
 
-- FTP support.
+- better FTP support ( delete, chown, proxy ).
+- passwords for HTTP
 - Fixing bugs.
-- Use .xvpics/ to display previews of images.
 - Implement better DND. 
-
-
-Drag and Drop
--------------
-
-If you are interested in using Drag and Drop with Qt you may want to look at
-the sources in drag.XXX or contact me.
 
 
 Needed Packages
@@ -53,26 +46,19 @@ Needed Packages
 khtmlw-0.5.0.tgz or greater
 ktoolicons.tgz
 kdehelp-0.4 or greater
-libkde-0.7.tgz or greater
-kview-0.8.tgz or greater
-kedit-0.3.tgz or greater
-
+libkde-0.8.tgz or greater
+kfind-0.2.9.tgz or greater
+Qt-1.2 or greater
 
 Installation
 ------------
 Just untar the sources and type the following:
 
+./configure
 make
 make install
 
 ( this is done best at root, but it is not a must ).
-
-Every user must call the program "setupKFM". It creates a directory ~/Desktop.
-The program will create a file called ~/.desktop in your home directory.
-
-If you want to create your own icons, you must use XPaint and convert them to
-XPM. Using XV for example crashes the kfm, since the loading code in kpixmap.cpp is not
-perfect yet.
 
 I hope that I did not forget to include a file in the distribution.
 
@@ -435,6 +421,21 @@ Version 0.6.3
 
 - Changes in the makefile and the distribution
 
+Version 0.6.4
+
+- Fixed the bug with kfmslave ( now Matthias is perhaps a little bit less
+  disappointed :-)
+
+- Deleted kfmfind. Using kfind instead
+
+- Changed some Makefile stuff
+
+- Install only apps that kfm really needs ( GnuZIP etc. ). No KEdit and so on!
+
+- No more setupKFM. All done on startup if the files are not available
+
+- Config file placed in ~/.kde/config/.kfmrc
+
 Authors
 -------
 
@@ -453,4 +454,4 @@ And thanks to all the others who contributed.
 
 Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
 http://www.uni-frankfurt.de/~weis/kde.html
-Last change: 8.4.97
+Last change: 29.4.97

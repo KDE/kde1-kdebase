@@ -25,7 +25,6 @@
 #include <kapp.h>
 
 #include "kfmwin.h"
-#include "kfmfind.h"
 #include "kfmdlg.h"
 #include "kfmprops.h"
 #include "kbutton.h"
@@ -370,49 +369,49 @@ void KFileWindow::initToolBar()
     toolbar = new QButtonGroup( this );
     toolbar->setGeometry( 0, menu->frameGeometry().height(), width(), buttonHeight + 8 );
     
-    pb = new KButton( toolbar, "Back" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotBack() ) );
     pos += buttonWidth;
     QToolTip::add( pb, "Back" );
 
-    pb = new KButton( toolbar, "Forward" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotForward() ) );
     pos += buttonWidth;
     QToolTip::add( pb, "Forward" );
 
-    pb = new KButton( toolbar, "Home" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotHome() ) );
     pos += buttonWidth + BUTTON_SEPARATION;
     QToolTip::add( pb, "Home" );
 
-    pb = new KButton( toolbar, "Reload" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotViewUpdate() ) );
     pos += buttonWidth + BUTTON_SEPARATION;
     QToolTip::add( pb, "Reload" );
 
-    pb = new KButton( toolbar, "Copy" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotCopy() ) );
     pos += buttonWidth;
     QToolTip::add( pb, "Copy" );
 
-    pb = new KButton( toolbar, "Paste" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotPaste() ) );
     pos += buttonWidth + BUTTON_SEPARATION;
     QToolTip::add( pb, "Paste" );
 
-    pb = new KButton( toolbar, "Help" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotHelp() ) );
     pos += buttonWidth + BUTTON_SEPARATION;
     QToolTip::add( pb, "Help" );
 
-    pb = new KButton( toolbar, "Stop" );
+    pb = new KButton( toolbar );
     pb->setGeometry( pos, 3, buttonWidth, buttonHeight );
     connect( pb, SIGNAL( clicked() ), SLOT( slotStop() ) );
     pos += buttonWidth + BUTTON_SEPARATION;
@@ -795,10 +794,8 @@ void KFileWindow::slotBookmarkSelected( int id )
 
 void KFileWindow::slotToolFind( )
 {
-    printf("ActualManager %x\n",actualManager);
-    printf("URL '%s'\n",actualManager->getURL().data());
-    KFindWindow *find = new KFindWindow( 0L, 0L, actualManager->getURL() );
-    find->show();
+    QString cmd = "kfind &";
+    system( cmd.data() );
 }
 
 void KFileWindow::slotNewWindow( )
@@ -1030,7 +1027,7 @@ void KFileWindow::slotPaste()
 
 void KFileWindow::slotAbout()
 {
-    QMessageBox::message( "About", "KFM 0.6.3\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
+    QMessageBox::message( "About", "KFM 0.6.4\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
 }
 
 void KFileWindow::slotHelp()

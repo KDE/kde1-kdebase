@@ -27,13 +27,68 @@ void testDir( const char *_name )
   if ( dp == NULL )
   {
     QString m = _name;
-    QMessageBox::message( "KFM Error", "Missing directory:\n" + m );
-    exit(1);
+    QMessageBox::message( "KFM Information", "Creating directory:\n" + m );
+    ::mkdir( _name, S_IRWXU );
   }
+  closedir( dp );
 }
 
 int main( int argc, char ** argv )
 {
+    // Test for config file
+    QString c = getenv( "HOME" );
+    c += "/.kde";
+    DIR *dp;
+    struct dirent *ep;
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+	printf("Exist '%s'\n", c.data() );
+    closedir( dp );
+
+    c = getenv( "HOME" );
+    c += "/.kde/config";
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+	printf("Exist '%s'\n", c.data() );
+    closedir( dp );
+
+    c = getenv( "HOME" );
+    c += "/.kde/config/.kfm";
+    FILE *f2 = fopen( c.data(), "rb" );
+    if ( f2 == 0L )
+    {
+	QString cmd;
+	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	system( cmd.data() );
+    }
+    else
+	fclose( f2 );
+
+    c = getenv( "HOME" );
+    c += "/.desktop";
+    f2 = fopen( c.data(), "rb" );
+    if ( f2 == 0L )
+    {
+	QString cmd;
+	cmd.sprintf( "cp %s/lib/kfm/config/desktop %s/.desktop", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	system( cmd.data() );
+    }
+    else
+	fclose( f2 );
+
+    // Test for existing Templates
+    bool bTemplates = TRUE;
+        c = getenv( "HOME" );
+    c += "/Desktop/Templates";
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	bTemplates = FALSE;
+    closedir( dp );
+
     KApplication a( argc, argv, "kfm" );
 
     // Test for directories
@@ -68,6 +123,14 @@ int main( int argc, char ** argv )
     d += "/lib/pics/wallpapers";
     testDir( d );
 
+    if ( !bTemplates )
+    {
+	QMessageBox::message( "KFM Information", "Installing Templates" );
+	QString cmd;
+	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s/Desktop/Templates", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	system( cmd.data() );
+    }
+    
     KHTMLWidget::registerFormats();
     QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
     

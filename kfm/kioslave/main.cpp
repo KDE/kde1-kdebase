@@ -975,7 +975,9 @@ bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const 
     if ( !ftpLogin( lockedFTPLogin.data(), lockedFTPPasswd.data() ) )
     {
 	printf("ERROR: Could not login\n");
-	ipc->fatalError( KIO_ERROR_CouldNotLogin, _host, 0 );
+	QString err;
+	err.sprintf( "ftp://%s:%s@%s", _login, _passwd, _host );
+	ipc->fatalError( KIO_ERROR_CouldNotLogin, err.data(), 0 );
 	return FALSE;
     }
 

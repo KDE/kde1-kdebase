@@ -58,6 +58,7 @@ int doIt( int argc, char **argv )
     {
 	if ( flag == 0 )
 	{
+	    printf("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
 	    system( "kfm &" );
 	    flag = 1;
 	    sleep( 5 );
@@ -83,6 +84,7 @@ int doIt( int argc, char **argv )
 	if ( flag == 0 )
 	{
 	    flag = 1;
+	    printf("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
 	    system( "kfm &" );
 	    sleep( 5 );
 	    return doIt( argc, argv );

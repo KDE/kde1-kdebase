@@ -1,7 +1,7 @@
 
 INCDIR  =       @all_includes@ -I../..
-CXXFLAGS+=      $(INCDIR) 
-LDFLAGS =       @all_libraries@ -lkdecore -lkdeui -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
+CXXFLAGS=      @CXXFLAGS@ $(INCDIR) 
+LDFLGAS	= 	@LDFLAGS@ @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
 CXX     =       @CXX@
 MOC     =       @MOC@
 
