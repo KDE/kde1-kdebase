@@ -4,7 +4,8 @@
 
 #include <stdio.h>
 #include <iostream.h>
-
+#include <stdlib.h>
+#include <string.h>
 
 extern "C" {
 #include <mediatool.h>

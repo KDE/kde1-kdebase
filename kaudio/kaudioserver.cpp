@@ -23,8 +23,10 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include <signal.h>
 #include <X11/Xlib.h>
+#include <config.h>
 extern "C" {
 #include <mediatool.h>
 }

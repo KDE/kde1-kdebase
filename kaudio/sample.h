@@ -5,7 +5,9 @@
 
 #include <stdio.h>
 #include <mediatool.h>
-
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
 #define MAUDIO_MAX_FRAGS 32
 #define BUFFER_MAX       4096

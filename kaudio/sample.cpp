@@ -2,7 +2,7 @@
 #include <sys/stat.h>
 #include "sample.h"
 #include "maudio.h"
-
+#include <string.h>
 
 // Wavplay compatibility function
 #ifdef DEBUG
@@ -55,7 +55,7 @@ AudioSample::AudioSample()
 
 int AudioSample::setFilename(char* fname)
 {
-  int BUFFERSIZE = 1024;
+  const int BUFFERSIZE = 1024;
 
   uint32	bytes_read;
   struct	stat statBuf;
