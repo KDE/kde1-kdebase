@@ -37,7 +37,7 @@
 #endif
 
 #ifndef _PATH_TMP
-#define _PATH_TMP "/tmp/"
+#define _PATH_TMP "/tmp"
 #endif
 
 // for selection
@@ -815,7 +815,8 @@ int KHelpWindow::runCGI( const char *_url )
 
 	connect( CGIServer, SIGNAL( finished() ), this, SLOT( slotCGIDone() ) );
 
-	char filename[20] = _PATH_TMP"kdehelpXXXXXX";
+	char filename[256];
+	sprintf( filename, "%s/kdehelpXXXXXX", _PATH_TMP );
 	mktemp( filename );
 	localFile.sprintf( "file:%s", filename );
 
@@ -850,7 +851,7 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 		if ( strstr( fileName, ".gz" ) )
 		{
 			char sysCmd[256];
-			sprintf( fname, _PATH_TMP"khelpXXXXXX" );
+			sprintf( fname, "%s/khelpXXXXXX", _PATH_TMP );
 			mktemp( fname );
 			sprintf(sysCmd, "gzip -cd %s > %s", (const char *)fileName, fname);
 			system( sysCmd );

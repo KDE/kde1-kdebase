@@ -30,7 +30,7 @@
 #endif
 
 #ifndef _PATH_TMP
-#define _PATH_TMP "/tmp/"
+#define _PATH_TMP "/tmp"
 #endif
 
 #define MAXSECTIONLEN	4
@@ -810,10 +810,10 @@ int cMan::ReadLocation(const char *name)
 		char sysCmd[256];
 		char *ptr;
 
-		sprintf(stdFile, _PATH_TMP"khelpXXXXXX");	// temp file
+		sprintf(stdFile, "%s/khelpXXXXXX", _PATH_TMP);	// temp file
 		mktemp(stdFile);
 
-		sprintf(errFile, _PATH_TMP"khelpXXXXXX");	// temp file
+		sprintf(errFile, "%s/khelpXXXXXX", _PATH_TMP);	// temp file
 		mktemp(errFile);
 
 		// create the system cmd to read the man page

@@ -32,7 +32,7 @@
 #endif
 
 #ifndef _PATH_TMP
-#define _PATH_TMP "/tmp/"
+#define _PATH_TMP "/tmp"
 #endif
 
 #define EATSPACE(ptr)	while ((*ptr == ' ')||(*ptr == '\t')) ptr++;
@@ -1442,7 +1442,7 @@ void cInfo::Decompress(const char *theFilename, char *workFile)
 	char tmpFile[256];
 	char sysCmd[512];
 
-	sprintf(tmpFile, _PATH_TMP"khelpXXXXXX");
+	sprintf(tmpFile, "%s/khelpXXXXXX", _PATH_TMP );
 	mktemp(tmpFile);
 	sprintf(sysCmd, "%s < %s > %s", decompressCmd, theFilename, tmpFile);
 	system(sysCmd);
