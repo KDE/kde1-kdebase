@@ -25,7 +25,7 @@ install-data-local:
 	@echo ""
 
 acinclude.m4: admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in
-	cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4
+	@cat admin/acinclude.m4.in kdminclude.m4 admin/libtool.m4.in > acinclude.m4
 
 EXTRA_DIST = kdminclude.m4 README.pam
 
