@@ -287,7 +287,6 @@ msgstr ""
 "HTML työkalu Martin Jones\n"
 "mjones@kde.org"
 
-
 #: kfmgui.cpp:1303
 msgid "Document: Done"
 msgstr "Dokumentti: Valmis"
@@ -719,7 +718,6 @@ msgstr ""
 "Voit ajaa tämän ohjelman joko\n"
 "Paneelissa tai Terminaalissa\n"
 "mutta et molemmissa"
-
 
 #: kfmprops.cpp:862 kfmprops.cpp:985 kfmprops.cpp:1423 kfmprops.cpp:1641
 #: kfmprops.cpp:1812
@@ -1321,7 +1319,6 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
-
 
 #~ msgid "The URL"
 #~ msgstr "URL"

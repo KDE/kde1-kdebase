@@ -144,7 +144,8 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla,\n"
-"ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole tallentamatonta tietoa."
+"ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole "
+"tallentamatonta tietoa."
 
 #: logout.C:73
 msgid ""
