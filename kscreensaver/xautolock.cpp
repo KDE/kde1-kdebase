@@ -47,6 +47,10 @@
  *  with vroot.h, because it needs to know the real root window.
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #if defined(hpux) || defined (__hpux)
 #ifndef _HPUX_SOURCE
 #define _HPUX_SOURCE
@@ -82,7 +86,7 @@
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
 #endif
-
+#include <stdlib.h>
 #undef TrueColor
 
 #include <qapp.h>
