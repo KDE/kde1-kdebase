@@ -1,0 +1,1 @@
+#define KFONTMANAGERVERSION "0.3"
