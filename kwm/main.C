@@ -357,7 +357,7 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KApplication(argc, argv, rAppName ){
   int i;
-  bool restore_session = True;
+  bool restore_session = true;
   for (i=1; i<argc; i++){
     if (QString("-version") == argv[i]){
       printf(KWM_VERSION);
@@ -366,7 +366,7 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
       ::exit(0);
     }
     else if (QString("-nosession") == argv[i]){
-      restore_session = False;
+      restore_session = false;
     }
     else {
       printf(klocale->translate("Usage: "));

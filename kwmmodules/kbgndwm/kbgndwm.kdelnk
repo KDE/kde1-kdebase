@@ -2,9 +2,11 @@
 [KDE Desktop Entry]
 BinaryPattern=
 Name=Background module
+Name[pl]=KWM T³o
 Protocols=
 MimeType=
 Comment=Manages the background texture
+Comment[pl]=Zarz±dza wy¶wietlaniem t³a
 Exec=kbgndwm
 Icon=unknown.xpm
 TerminalOptions=

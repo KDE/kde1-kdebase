@@ -7,3 +7,4 @@ Icon=unknown.xpm
 Type=MimeType
 Patterns=
 Comment[de]=Mime Type
+Comment[pl]=Typ mime

@@ -13,4 +13,5 @@ TerminalOptions=
 Path=
 Type=Application
 Comment[de]=Zeigt die Positionen der Fenster
+Comment[pl]=Pokazuje pozycje okien
 Terminal=0
