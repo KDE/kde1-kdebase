@@ -1,0 +1,13 @@
+Begin2
+Title        = kvt
+Version      = 0.12 (18.04.1997)
+Desc1        = An xterm substitute. Performs vt100 emulation for X windows
+Desc2        = Supports ANSI color, scroll back buffer
+Desc3        = based on Robert Nation's rxvt-2.08
+Author       = Matthias Ettrich 
+AuthorEmail  = ettrich@informatik.uni-tuebingen.de
+Required1    = Qt, X11, gcc, libkde
+CopyPolicy1  = GPL
+CopyPolicy2  = 
+Keywords     = KDE, Qt, kvt, rxvt, xterm, vt100, X11, terminal-emulator
+End

@@ -1,0 +1,78 @@
+CFLAGS	= @CFLAGS@ 
+INCDIR	= @all_includes@ -I..
+CXXFLAGS= @CXXFLAGS@ -fno-strength-reduce 
+LDFLAGS	= @LDFLAGS@ @all_libraries@ -lkdecore -lqt -lXext -lX11 
+CXX	= @CXX@
+MOC	= @MOC@
+CC	= @CC@
+
+############# Install ##############
+
+INSTALL = @INSTALL@ -m 0755
+INSTALL_SHELL = @INSTALL@ -m 0755
+INSTALL_DATA = @INSTALL@ -m 0644
+INSTALL_DIR = @INSTALL@ -d -m 0755
+INSTALL_DIR_PRIVATE = @INSTALL@ -d -m 0700
+
+prefix = @prefix@
+KDEINC = $(prefix)/include
+BINDIR = $(prefix)/bin
+LIBDIR = $(prefix)/lib
+ETCDIR = $(prefix)/etc
+PICSDIR = $(LIBDIR)/pics
+DOCSDIR = $(prefix)/doc/HTML
+APPSDIR = $(prefix)/apps
+UTILSDIR = $(APPSDIR)/Utilities
+
+#ifdef  GREEK_SUPPORT
+GREEK_EXTRA=-DGREEK_KBD
+GREEK_SRC=grkelot.c
+GREEK_OBJ=grkelot.o
+#else
+GREEK_EXTRA=    #-DGREEK_KBD
+GREEK_SRC=      #grkelot.c
+GREEK_OBJ=      #grkelot.o
+#endif
+
+EXTRA_DEFINES = -DBSD -DTTYTAB=\"/etc/ttytab\" -DPRINT_PIPE $(GREEK_EXTRA) -DMAX_REFRESH_PERIOD=10 -DFAKE_RESOURCES -DUSE_XCOPYAREA -DCOLOR 
+
+SRCS = rxvt.c command.c  screen.c utmp.c xsetup.c debug.c resources.c main.C\
+	$(GREEK_SRC)
+
+OBJS = rxvt.o command.o  screen.o utmp.o xsetup.o debug.o resources.o main.o\
+	 $(GREEK_OBJ)
+
+TARGET = kvt
+
+.SUFFIXES: .C
+
+.C.o:
+	$(CXX) $(CXXFLAGS) $(INCDIR) -c $<
+
+.c.o:
+	$(CC) $(CFLAGS) $(INCDIR) $(EXTRA_DEFINES) -c $<
+
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) -o kvt $(OBJS) $(LDFLAGS)
+
+install:
+	$(INSTALL_DIR) $(BINDIR)
+	$(INSTALL) $(TARGET) $(BINDIR)
+	$(INSTALL_DIR) $(PICSDIR)
+	$(INSTALL_DATA) ./lib/pics/UNIX.xpm $(PICSDIR)
+	$(INSTALL_DIR) $(DOCSDIR)
+	$(INSTALL_DATA) ./doc/HTML/kvt.html $(DOCSDIR)
+	$(INSTALL_DIR) $(UTILSDIR)
+	$(INSTALL_DATA) ./apps/Utilities/UNIX.kdelnk $(UTILSDIR)
+
+uninstall:
+	rm -f $(BINDIR)/kvt
+	rm -f $(PICSDIR)/UNIX.xpm
+	rm -f $(DOCSDIR)/kvt.html
+	rm -f $(UTILSDIR)/UNIX.kdelnk
+
+clean:
+	rm -f kvt $(OBJS) *~ *#

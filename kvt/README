@@ -1,0 +1,37 @@
+This is the new test-release of kvt, the KDE xterm replacement.
+
+Version kvt-0.12 (based on rxvt-2.08)
+
+
+There are a lot of improvements in this kvt compared to kvt-0.11.
+Mainly improvements of the core terminal emulation, not of the GUI.
+kvt should be a quite reasonabl xterm-color now :)
+
+If you have problems with the default "TERM=xterm-color" setting on
+your system, have a look at ./etc/README
+
+
+Also new is the command line option "-no_scrollbar".
+See ChangeLog for details concerning the changes.
+
+This version needs a libkde >= 0.6
+The environment variables $QTDIR and
+$KDEDIR should be set before invoking
+    xmkmf -a; make
+
+For installation type:
+    make -f Makefile.install
+
+Probably you will have to be root to do this.
+
+
+Please note the popmenu on the right mouse button!
+(when you miss the menubar ;-) 
+
+
+Please see also TODO.kvt.
+
+Greets,
+
+ Matthias 
+ (ettrich@informatik.uni-tuebingen.de)
