@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Nov 23 06:22:53 1997
-// Update Count     : 104
+// Last Modified On : Sun Dec 28 11:58:39 1997
+// Update Count     : 106
 // Status           : Unknown, Use with caution!
 // 
 
@@ -74,9 +74,11 @@ MyApp::x11EventFilter( XEvent * ev){
      }
      // Hack to tell dialogs to take focus
      if( ev->type == ConfigureNotify) {
-	  QEvent e( Event_Show);	  
 	  QWidget* target = QWidget::find( (( XConfigureEvent *) ev)->window);
-	  target->setActiveWindow();
+	  target = target->topLevelWidget();
+	  if( target->isVisible() && !target->isPopup())
+	    XSetInputFocus( qt_xdisplay(), target->winId(), 
+			    RevertToParent, CurrentTime);
      }
      return FALSE;
 }
