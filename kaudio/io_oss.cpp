@@ -44,7 +44,7 @@ void AudioDev::setBugs(int bugs)
 
 bool AudioDev::grab()
 {
-  int	Param[2]={0,0};		/* For calling ioctl() */
+  int	Param; 	/* For calling ioctl() */
 
   if (ParamsChanged) {
     // When playback parameters are changed with setParams(), we have to re-open the
@@ -76,9 +76,9 @@ bool AudioDev::grab()
 	 release();
 	 return false;
        }
-       Param[0]= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , Param);
-       Param[0]= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , Param);
-       Param[0]= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , Param);
+       Param= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , &Param);
+       Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);
+       Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
 #endif
        opened = true;
        ParamsChanged=false;

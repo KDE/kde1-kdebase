@@ -154,7 +154,7 @@ int AudioSample::setFilename(char* fname)
 
 
   // ------------ OK, back from Wavplay code to sample.cpp again ----------------------
-  MediaLength = databytes / waveformat.wBlockAlign;
+  MediaLength = databytes; //   databytes/waveformat.wBlockAlign;
   // OLD: statBuf.st_size - sizeof(headerLen); // !!! Must subtract crap at end */
 
   /* determine basic wave characteristics */
