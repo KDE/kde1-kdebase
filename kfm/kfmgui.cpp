@@ -142,8 +142,10 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	toolbarPos = KToolBar::Bottom;    
     else if ( entry == "floating" )
 	toolbarPos = KToolBar::Floating;    
-    else
+    else {
 	showToolbar = false;
+	toolbarPos = KToolBar::Top;
+    }
 
     entry = config->readEntry("LocationBar", "top");
     showLocationBar = true;
@@ -153,8 +155,10 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	locationBarPos = KToolBar::Bottom;    
     else if ( entry == "floating" )
 	locationBarPos = KToolBar::Floating;    
-    else
+    else {
 	showLocationBar = false;
+     	locationBarPos = KToolBar::Top;
+    }
 
     entry = config->readEntry("Menubar", "top");
     showMenubar = true;
@@ -164,8 +168,10 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	menubarPos = KMenuBar::Bottom;    
     else if ( entry == "floating" )
 	menubarPos = KMenuBar::Floating;    
-    else
+    else {
 	showMenubar = false;
+	menubarPos = KMenuBar::Top;
+    }
 
     entry = config->readEntry("Statusbar", "top");
     showStatusbar = true;
@@ -175,8 +181,10 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
 	statusbarPos = KStatusBar::Bottom;    
     else if ( entry == "floating" )
 	statusbarPos = KStatusBar::Floating;    
-    else
+    else {
 	showStatusbar = false;
+	statusbarPos = KStatusBar::Top;
+    }
 
     config->setGroup( "Cache" );
     bool on;
@@ -258,7 +266,7 @@ void KfmGui::initStatusBar()
  
     statusBar->insertItem( (char*)klocale->translate("KFM"), 1 );
     
-    statusBar->show();
+    //statusBar->show();
     setStatusBar( statusBar );
     if ( !showStatusbar )
 	statusBar->enable( KStatusBar::Hide );
@@ -505,7 +513,7 @@ klocale->translate("Author: Torben Weis\nweis@kde.org\n\nHTML widget by Martin J
     menu->insertItem( klocale->translate("&Options"), moptions );
     menu->insertSeparator();
     menu->insertItem( klocale->translate("&Help"), help );
-    menu->show();
+    //menu->show();
     
     setMenu( menu );
 }
@@ -609,7 +617,7 @@ void KfmGui::initToolBar()
 	    
     addToolBar( toolbarButtons );
     toolbarButtons->setBarPos( toolbarPos );
-    toolbarButtons->show();                
+    //toolbarButtons->show();                
     if ( !showToolbar )
 	toolbarButtons->enable( KToolBar::Hide );
 
@@ -630,7 +638,7 @@ void KfmGui::initToolBar()
     toolbarURL->setFullWidth( TRUE );
     toolbarURL->setItemAutoSized( TOOLBAR_URL_ID, TRUE );
     toolbarURL->setBarPos( locationBarPos );
-    toolbarURL->show();                
+    //toolbarURL->show();                
     if ( !showLocationBar )
 	toolbarURL->enable( KToolBar::Hide );
 }
@@ -1718,7 +1726,83 @@ void KfmGui::setCharset(const char *_c){
 
    view->setCharset(_c);
 }
+
+// session management
+void KfmGui::readProperties(int number)
+{
+  KTopLevelWidget::readPropertiesInternal(kapp->getConfig(), number);
+
+  //adjusting internal state of the *bars to match the actual state
+  if( ( menu->isVisible() && !showMenubar )
+      || ( !menu->isVisible() && showMenubar ) )
+    slotShowMenubar();
+
+  if( ( toolbarButtons->isVisible() && !showToolbar )
+      || ( !toolbarButtons->isVisible() && showToolbar ) )
+    slotShowToolbar();
+
+  if( ( toolbarURL->isVisible() && !showLocationBar )
+      || ( !toolbarURL->isVisible() && showLocationBar ) )
+    slotShowLocationBar();
+
+  if( ( statusBar->isVisible() && !showStatusbar )
+      || ( !statusBar->isVisible() && showStatusbar ) )
+    slotShowStatusbar();
+}
+
+void KfmGui::saveProperties(int number)
+{
+  KTopLevelWidget::savePropertiesInternal(kapp->getConfig(), number);
+} 
+
+void KfmGui::readProperties( KConfig* config )
+{
+  //adjusting internal state of tree to match the actual state
+  bool bEntry = config->readBoolEntry("TreeView", false);
+  if( ( bEntry  && !bTreeView )
+      || ( !bEntry && bTreeView ) )
+    slotShowTreeView();
     
+  //adjusting internal state of view mode to match the actual state
+  QString entry = config->readEntry("ViewMode", "IconView");
+  if (entry == "LongView")
+    slotLongView();
+  else if (entry == "TextView")
+    slotTextView();
+  else if (entry == "ShortView")
+    slotShortView();
+  else 
+    slotIconView();
+
+}
+
+void KfmGui::saveProperties( KConfig* config )
+{
+  QString entry;
+
+  config->writeEntry("TreeView", bTreeView);
+  
+  switch (viewMode)
+    {
+    case ICON_VIEW:
+      entry = "IconView";
+      break;
+    case LONG_VIEW:
+      entry = "LongView";
+      break;
+    case TEXT_VIEW:
+      entry = "TextView";
+      break;
+    case SHORT_VIEW:
+      entry = "ShortView";
+      break;
+    }
+
+  config->writeEntry("ViewMode", entry);
+
+  config->sync();
+}
+
 KfmGui::~KfmGui()
 {
     if ( animatedLogoTimer )

@@ -103,16 +103,15 @@ public:
     void addBookmark( const char *_title, const char *_url );
 
 
-    // session management
-    void readProperties(int number)
-    {
-	KTopLevelWidget::readPropertiesInternal(kapp->getConfig(), number);
-    }
+    /**
+     * Read general session management data.
+     */
+    void readProperties(int number);
 
-    void saveProperties(int number)
-    {
-	KTopLevelWidget::savePropertiesInternal(kapp->getConfig(), number);
-    }
+    /**
+     * Save general session management data.
+     */
+    void saveProperties(int number);
     
     /**
      * Changes the URL displayed in the toolbar. This function is called
@@ -445,6 +444,16 @@ protected:
     virtual void initPanner();
     virtual void initTreeView();
    
+    /**
+     * Read Kfm specific session management data.
+     */
+    virtual void readProperties( KConfig* config );
+
+    /**
+     * Save Kfm specific session management data.
+     */
+    virtual void saveProperties( KConfig* config );
+
     /**
      * Fill the 'menu' with all boomarks in 'parent'.
      */
