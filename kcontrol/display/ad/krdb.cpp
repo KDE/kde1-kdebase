@@ -27,9 +27,6 @@ enum FontStyle { Normal, Bold, Italic, Fixed, Title };
 
 QString fontString( QFont rFont, FontStyle style )
 {
-        rFont.setBold( false );
-	rFont.setItalic( false );
-
         if( style == Bold )
           rFont.setBold( true );
 
