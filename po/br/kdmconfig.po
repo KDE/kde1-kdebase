@@ -41,7 +41,7 @@ msgstr "&Dalc'hoù"
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
-"arveriadur : kdmconfig [-init | {appearance,font,background,sessions,users}]"
+"arveriadur : kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -134,7 +134,7 @@ msgid ""
 "Please use files with these extensions\n"
 msgstr ""
 "\n"
-"Arverit mar plij restroù gant an astennadur-mañ"
+"Arverit mar plij restroù gant an astennadur-mañ\n"
 
 #: kdm-appear.cpp:224 kdm-users.cpp:232
 msgid "Improper File Extension"

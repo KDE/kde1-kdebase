@@ -664,7 +664,7 @@ msgid ""
 "%s\n"
 msgstr ""
 "Ne m'eus ket gallet adenvel ar restr pe renkell\n"
-"%s"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -1309,7 +1309,7 @@ msgid ""
 "Please check it.\n"
 msgstr ""
 " n'eo ket ur renkell ! Kemenn surentez !\n"
-"Gwiriit se ma plij."
+"Gwiriit se ma plij.\n"
 
 #: htmlcache.cpp:368
 msgid ""
@@ -1317,7 +1317,7 @@ msgid ""
 "Check it before clearing the cache.\n"
 msgstr ""
 " n'eo ket ur renkell ! Kemenn surentez !\n"
-"Gwiriit se a-raok skarzhañ ar grubuilh."
+"Gwiriit se a-raok skarzhañ ar grubuilh.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1515,5 +1515,5 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Fazi yezhadur :\n"
-"kfmexec urzhiad [URLoù ....]"
+"kfmexec urzhiad [URLoù ....]\n"
 

@@ -516,7 +516,7 @@ msgid ""
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 "Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
-"       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]"
+"       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
 
 #: main.cpp:583
 msgid ""
@@ -554,7 +554,7 @@ msgstr ""
 "  -preview wid      seveniñ er prenestr XWindow resisaet\n"
 "  -inroot           seveniñ er prenestr gwrizienn\n"
 "  -setup            kefluniañ an damanter skramm\n"
-"  -test              loc'h an damanter skramm diouzhtu"
+"  -test              loc'h an damanter skramm diouzhtu\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"

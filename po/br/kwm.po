@@ -22,7 +22,7 @@ msgid ""
 "started\n"
 msgstr ""
 "kwm : bez' ez eus dija ur merour prenester hervez doare.\n"
-"kwm n'eo ket loc'het"
+"kwm n'eo ket loc'het\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"

@@ -190,8 +190,8 @@ msgid ""
 "erver}]\n"
 msgstr ""
 "arveriadur : kcminfo [-init | \n"
-"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs\n"
-"erver}]"
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"

@@ -65,7 +65,7 @@ msgstr "A&raokaet"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"arveriadur : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]"
+"arveriadur : kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -99,25 +99,25 @@ msgstr "A-zehoù"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'"
+"Leun eo tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'uhelañ'\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'"
+"Leun ro tu kleiz ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'"
+"Leun eo tu dehou ar varrenn-ditl... o tizoberiañ an nozelenn 'izelaat'\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
