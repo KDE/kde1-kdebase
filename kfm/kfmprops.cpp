@@ -642,19 +642,16 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     execEdit = new QLineEdit( this, "LineEdit_1" );
     pathEdit = new QLineEdit( this, "LineEdit_2" );
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
-<<<<<<< kfmprops.cpp
+
     normalCheck = new QRadioButton( this, "RadioButton_1" );
     swallowTitleEdit = new QLineEdit( this, "LineEdit_5" );
     swallowCheck = new QRadioButton( this, "RadioButton_2");
     terminalCheck = new QRadioButton( this, "RadioButton_3" );
     terminalEdit = new QLineEdit( this, "LineEdit_4" );
     bg = new QButtonGroup();
-=======
->>>>>>> 1.28
     execBrowse = new QPushButton( this, "Button_1" );
     
     QGroupBox* tmpQGroupBox;
-<<<<<<< kfmprops.cpp
     tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
     tmpQGroupBox->setGeometry( 10, 141, 320, 178 );
     tmpQGroupBox->setFrameStyle( 49 );
@@ -674,62 +671,21 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 0, 100, 30 );
     tmpQLabel->setText( klocale->translate("Execute") );
-=======
-    QLabel* tmpQLabel;
 
-    layout = new QBoxLayout(this, QBoxLayout::TopToBottom, SEPARATION);
-
-    tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->setText( klocale->translate("Execute") );
-    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
-    layout->addWidget(tmpQLabel, 0, AlignLeft);
-
-    layoutH1 = new QBoxLayout(QBoxLayout::LeftToRight);
-    layout->addLayout(layoutH1);
-
-    execEdit->raise();
-    execEdit->setMinimumSize(150, fontHeight);
-    execEdit->setMaximumSize(QLayout::unlimited, fontHeight);
-    execEdit->setText( "" );
-    execEdit->setMaxLength( 256 );
-    layoutH1->addWidget(execEdit, 10);
->>>>>>> 1.28
-
-<<<<<<< kfmprops.cpp
     execBrowse->raise();
     execBrowse->setGeometry( 230, 30, 100, 30 );
     execBrowse->setText( klocale->translate("Browse") );
-=======
-    execBrowse->raise();
-    execBrowse->setText( klocale->translate("Browse") );
-    execBrowse->setFixedSize(2*fontMetrics().width(klocale->translate("Browse")), fontHeight);
-    layoutH1->addWidget(execBrowse, 0);
->>>>>>> 1.28
 
     tmpQLabel = new QLabel( this, "Label_3" );
-<<<<<<< kfmprops.cpp
     tmpQLabel->setGeometry( 10, 60, 120, 30 );
-=======
->>>>>>> 1.28
     tmpQLabel->setText( klocale->translate("Working Directory") );
-<<<<<<< kfmprops.cpp
     
     iconBox->raise();
     iconBox->setGeometry( 280, 80, 50, 50 );
-=======
-    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
-    layout->addWidget(tmpQLabel, 0, AlignLeft);
->>>>>>> 1.28
 
     pathEdit->raise();
-<<<<<<< kfmprops.cpp
     pathEdit->setGeometry( 10, 90, 210, 30 );
-=======
-    pathEdit->setMinimumSize(200, fontHeight);
-    pathEdit->setMaximumSize(QLayout::unlimited, fontHeight);
->>>>>>> 1.28
     pathEdit->setMaxLength( 256 );
-<<<<<<< kfmprops.cpp
     
     bg->insert(normalCheck);
     bg->insert(swallowCheck);
@@ -752,36 +708,9 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     swallowTitleEdit->setGeometry( 140, 210, 180, 30 );
     swallowTitleEdit->setText( "" );
     QToolTip::add( swallowTitleEdit, klocale->translate( "enter the exact title, as normally shown in the window titlebar" ) );
-=======
-    layout->addWidget(pathEdit, 10, AlignLeft);
-
-    tmpQLabel = new QLabel( this, "Label_4" );
-    tmpQLabel->setText( klocale->translate("Icon") );
-    tmpQLabel->setFixedSize(tmpQLabel->sizeHint());
-    layout->addWidget(tmpQLabel, 0, AlignLeft);
-
-    iconBox->raise();
-    iconBox->setFixedSize(50, 50);
-    layout->addWidget(iconBox, 0, AlignLeft);
-
-    tmpQGroupBox = new QGroupBox( this, "GroupBox_1" );
-    tmpQGroupBox->setFrameStyle( 49 );
-    tmpQGroupBox->setAlignment( 1 );
-
-    terminalCheck = new QCheckBox(tmpQGroupBox, "CheckBox_1" );
-    terminalEdit = new QLineEdit(tmpQGroupBox, "LineEdit_4" );
-
-    layout->addWidget(tmpQGroupBox, 0);
-
-    layoutV1 = new QBoxLayout(tmpQGroupBox, 
-			      QBoxLayout::TopToBottom, SEPARATION);
->>>>>>> 1.28
 
     terminalCheck->raise();
-<<<<<<< kfmprops.cpp
     terminalCheck->setGeometry( 20, 250, 150, 30 );
-=======
->>>>>>> 1.28
     terminalCheck->setText( klocale->translate("Run in terminal") );
     terminalCheck->setFixedSize(terminalCheck->sizeHint());
     layoutV1->addWidget(terminalCheck, 0, AlignLeft);
@@ -792,28 +721,14 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     layoutV1->addWidget(tmpQLabel, 0, AlignLeft);
 
     terminalEdit->raise();
-<<<<<<< kfmprops.cpp
     terminalEdit->setGeometry( 140, 280, 180, 30 );
-=======
-    terminalEdit->setMinimumSize(180, fontHeight);
-    terminalEdit->setMaximumSize(QLayout::unlimited, fontHeight);
->>>>>>> 1.28
     terminalEdit->setText( "" );
     layoutV1->addWidget(terminalEdit, 0, AlignLeft);
     layoutV1->activate();
 
-<<<<<<< kfmprops.cpp
     tmpQLabel = new QLabel( this, "Label_5" );
     tmpQLabel->setGeometry( 20, 280, 110, 30 );
     tmpQLabel->setText( klocale->translate("Terminal Options") );
-=======
->>>>>>> 1.28
-
-<<<<<<< kfmprops.cpp
-=======
-    layout->addStretch(10);
-    layout->activate();
->>>>>>> 1.28
 
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
