@@ -28,6 +28,7 @@ public slots:
 
 
      void slotClose();
+	 void slotQuit();
      void slotOptionsGeneral();
      void slotOptionsToolbar();
      void slotOptionsStatusbar();

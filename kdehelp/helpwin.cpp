@@ -27,6 +27,11 @@
 
 #include "helpwin.moc"
 
+// for selection
+#include <X11/X.h>
+#include <X11/Xlib.h>
+#include <X11/Xatom.h>
+
 
 static QString QUOTE( "\"" );
 static QString PIXDIR;
@@ -187,10 +192,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotFormSubmitted( const char *, const char * ) ) );
 	connect( view, SIGNAL( resized( const QSize & ) ),
 			SLOT( slotViewResized( const QSize & ) ) );
-#if KHTMLW_VERSION >= 840
 	connect( view, SIGNAL( textSelected( bool ) ), 
 			SLOT( slotTextSelected( bool ) ) );
-#endif
 //	connect( view, SIGNAL( imageRequest( const char * ) ), 
 //			SLOT( slotImageRequest( const char * ) ) );
 
@@ -978,11 +981,7 @@ bool KHelpWindow::canCurrentlyDo(AllowedActions action)
 {
     switch (action)
 	{
-#if KHTMLW_VERSION >= 840
 	case Copy:        return view->isTextSelected();
-#else
-	case Copy:        return false;
-#endif
 	case GoBack:      return history.IsBack();
 	case GoForward:   return history.IsForward();
 	case GoPrevious:  return format->PrevNode();
@@ -1067,6 +1066,12 @@ void KHelpWindow::slotSearch()
 }
 
 
+void KHelpWindow::slotPrint()
+{
+	view->print();
+}
+
+
 void KHelpWindow::slotCopy()
 {
 	QString text;
@@ -1140,6 +1145,8 @@ void KHelpWindow::slotNext()
 void KHelpWindow::slotTextSelected( bool )
 {
 	emit enableMenuItems();
+
+	XSetSelectionOwner( qt_xdisplay(), XA_PRIMARY, handle(), CurrentTime );
 }
 
 void KHelpWindow::slotAddBookmark()
@@ -1503,6 +1510,47 @@ bool KHelpWindow::eventFilter( QObject *obj, QEvent *ev )
 	return false;
 }
 
+bool KHelpWindow::x11Event( XEvent *xevent )
+{
+	switch ( xevent->type )
+	{
+		case SelectionRequest:
+			{
+				if ( view->isTextSelected() )
+				{
+					QString text;
+					view->getSelectedText( text );
+					XSelectionRequestEvent *req = &xevent->xselectionrequest;
+					XEvent evt;
+					evt.xselection.type = SelectionNotify;
+					evt.xselection.display  = req->display;
+					evt.xselection.requestor = req->requestor;
+					evt.xselection.selection = req->selection;
+					evt.xselection.target = req->target;
+					evt.xselection.property = None;
+					evt.xselection.time = req->time;
+					if ( req->target == XA_STRING )
+					{
+						XChangeProperty ( dpy, req->requestor, req->property,
+							XA_STRING, 8, PropModeReplace,
+							(uchar *)text.data(), text.length() );
+						evt.xselection.property = req->property;
+					}
+					XSendEvent( dpy, req->requestor, False, 0, &evt );
+				}
+
+				return true;
+			}
+			break;
+
+		case SelectionClear:
+			// Do we want to clear the selection???
+			view->selectText( 0, 0, 0, 0, 0 );
+			break;
+	}
+
+	return false;
+}
 
 // called as html is parsed
 void KHelpWindow::slotDocumentChanged()

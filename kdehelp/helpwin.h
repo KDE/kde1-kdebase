@@ -34,7 +34,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.4.16"
+#define KDEHELP_VERSION		"0.4.17"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -138,6 +138,7 @@ public slots:
 	void	slotOpenFile();
 	void	slotOpenURL();
 	void	slotSearch();
+	void	slotPrint();
 
 	void	slotCopy();
 	void	slotBack();
@@ -178,6 +179,7 @@ public slots:
 protected:
 	virtual void resizeEvent( QResizeEvent * );
 	virtual bool eventFilter( QObject *, QEvent * );
+	virtual bool x11Event( XEvent * );
 
 private:
 	enum FileType { UnknownFile, HTMLFile, InfoFile, ManFile, CannotOpenFile };

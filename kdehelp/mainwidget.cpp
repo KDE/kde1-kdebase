@@ -112,6 +112,7 @@ KHelpMain::~KHelpMain()
 {
 	helpWindowList.removeRef( this );
 	delete toolbar;
+	delete menu;
 }
 
 
@@ -127,8 +128,10 @@ void KHelpMain::createMenu()
 	fileMenu->insertSeparator();
 	fileMenu->insertItem( "&Search", helpwin, SLOT(slotSearch()) );
 	fileMenu->insertSeparator();
+	fileMenu->insertItem( "&Print...", helpwin, SLOT(slotPrint()), CTRL+Key_P );
+	fileMenu->insertSeparator();
 	idClose = fileMenu->insertItem("&Close",this,SLOT(slotClose()),CTRL+Key_W); // CC :!!!!!
-	fileMenu->insertItem( "&Quit", qApp, SLOT(quit()), CTRL+Key_Q );
+	fileMenu->insertItem( "&Quit", this, SLOT(slotQuit()), CTRL+Key_Q );
 
 	editMenu = new QPopupMenu;
 	CHECK_PTR( editMenu );
@@ -374,7 +377,7 @@ void KHelpMain::closeEvent (QCloseEvent *)
     {
         qApp->quit();
     }
-
+    else
     for (win = helpWindowList.first(); win != NULL; win = helpWindowList.next())
     	win->enableMenuItems();    
 }
@@ -405,6 +408,12 @@ void KHelpMain::fillBookmarkMenu(KBookmark *parent, QPopupMenu *menu, int &id)
 void KHelpMain::slotClose()
 {
 	close();
+}
+
+void KHelpMain::slotQuit()
+{
+	while ( helpWindowList.getFirst() )
+		helpWindowList.getFirst()->close();
 }
 
 
@@ -578,8 +587,12 @@ void KHelpMain::slotOptionsSave()
 
 
 
-void KHelpMain::slotSetTitle(const char * _title)
+void KHelpMain::slotSetTitle( const char * _title )
 {
-	setCaption( QString( "KDE Help - " ) + _title );
+	QString appCaption = kapp->getCaption();
+	appCaption += " - ";
+	appCaption += _title;
+
+	setCaption( appCaption );
 }
 

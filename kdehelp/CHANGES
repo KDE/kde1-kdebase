@@ -1,6 +1,15 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.4.17
+--------------
+
+Added printing.
+X Selections.
+explicitly close() all toplevel windows before quitting so that 
+ delete toolbar and delete menu are called.
+use getCaption()
+
 Version 0.4.16
 --------------
 
