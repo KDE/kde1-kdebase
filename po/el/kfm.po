@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-03-26 01:17+0100\n"
+"POT-Creation-Date: 1999-03-27 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -268,7 +268,7 @@ msgstr ""
 "Δεν μπόρεσα να δημιουργήσω τον κατάλογο\n"
 "%s"
 
-#: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
+#: bookmark.cpp:304 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1606 kbind.cpp:1614 kbind.cpp:1632
 #: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
@@ -636,7 +636,7 @@ msgstr "Κοίταξε"
 msgid "Run in terminal"
 msgstr "Τρέξιμο σε τερματικό"
 
-#: bookmark.cpp:296
+#: bookmark.cpp:304
 #, fuzzy
 msgid "Could not write bookmark"
 msgstr "Δεν μπορώ να γράψω στο\n"
