@@ -1137,6 +1137,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case ButtonRelease:
     break;
   case CreateNotify:
+    return TRUE;
     break;
   case MapRequest:
     manager->mapRequest(&ev->xmaprequest);
@@ -1149,9 +1150,15 @@ bool MyApp::x11EventFilter( XEvent * ev){
     break;
   case UnmapNotify:
     manager->unmapNotify(&ev->xunmap);
+    if (ev->xunmap.window != ev->xunmap.event){
+      return TRUE;
+    }
     break;
   case DestroyNotify:
     manager->destroyNotify(&ev->xdestroywindow);
+    if (ev->xdestroywindow.window != ev->xdestroywindow.event){
+      return TRUE;
+    }
     break;
   case ClientMessage:
     manager->clientMessage(&ev->xclient);
@@ -1185,6 +1192,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
     }
     break;
   case MapNotify:
+    if (ev->xmap.window != ev->xmap.event){
+      return TRUE;
+    }
     break;
   case Expose:
     break;

@@ -463,17 +463,17 @@ void Client::layoutButtons(){
 }
 
 void Client::reconfigure(){
-  int i;
-  for (i=0;i<6;i++){
-    if (buttons[i]){
-      delete buttons[i];
-      buttons[i] = NULL;
-    }
-  }
-  generateButtons();
-  layoutButtons();
-  if (isVisible())
-    repaint();
+   int i;
+   for (i=0;i<6;i++){
+     if (buttons[i]){
+       buttons[i]->hide();
+       delete buttons[i];
+       buttons[i] = NULL;
+     }
+   }
+   generateButtons();
+   layoutButtons();
+   repaint();
 }
 
 void Client::animateTitlebar(){
@@ -1138,6 +1138,7 @@ void Client::unIconify(bool animation){
 			  width()-title_rect.right());
     
     show();                       // unhide the window
+    XMapWindow(qt_xdisplay(), winId());
     XRaiseWindow(qt_xdisplay(), winId());
     XMapWindow(qt_xdisplay(), window);
     manager->setWindowState(this, NormalState);
