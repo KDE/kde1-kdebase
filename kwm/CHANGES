@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 26:
+     - fixed double click problem with java/motif on some X-Servers
+
   patchlevel 25:
      - smart placement (Cristian Tibirna)
      - "Window Activate" sound event (I simply forgot this one...)

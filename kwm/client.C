@@ -241,6 +241,42 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
   XUngrabServer(qt_xdisplay());
 }
 
+static void grabButton(int button, Window window, unsigned int mod){
+  static int NumLockMask = 0;
+  if (!NumLockMask){
+    XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
+    int i;
+    for (i=0; i<8; i++){
+      if (xmk->modifiermap[xmk->max_keypermod * i] == 
+	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
+	NumLockMask = (1<<i); 
+    }
+  }
+
+  XGrabButton(qt_xdisplay(), button, 
+	      mod, 
+	      window, True, 
+	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+	      None, normal_cursor );
+
+  XGrabButton(qt_xdisplay(), button, 
+	      mod | LockMask, 
+	      window, True, 
+	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+	      None, normal_cursor );
+
+  XGrabButton(qt_xdisplay(), button, 
+	      mod | NumLockMask, 
+	      window, True, 
+	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+	      None, normal_cursor );
+
+  XGrabButton(qt_xdisplay(), button, mod | NumLockMask | LockMask, 
+	      window, True, 
+	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+	      None, normal_cursor );
+}
+
 
 Client::Client(Window w, QWidget *parent, const char *name_for_qt)
   : QLabel( parent, name_for_qt){
@@ -309,11 +345,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     hidden_for_modules = FALSE;
     autoraised_stopped = FALSE;
     
-    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, 
-		ButtonPressMask, GrabModeSync, GrabModeAsync, 
-		None, normal_cursor );
-    if (!options.Button3Grab)
-      XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
+    doButtonGrab();
     unmap_events = 0;
 }  
 
@@ -485,12 +517,7 @@ void Client::reconfigure(){
    generateButtons();
    layoutButtons();
    repaint();
-   if (options.Button3Grab)
-     XGrabButton(qt_xdisplay(), Button3, AnyModifier, window, True, 
-		 ButtonPressMask, GrabModeSync, GrabModeAsync, 
-		 None, normal_cursor );
-   else
-     XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
+   doButtonGrab();
 }
 
 void Client::animateTitlebar(){
@@ -1241,16 +1268,6 @@ bool Client::fixedSize(){
 
 
 void Client::setactive(bool on){
-  static int NumLockMask = 0;
-  if (!NumLockMask){
-    XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
-    int i;
-    for (i=0; i<8; i++){
-      if (xmk->modifiermap[xmk->max_keypermod * i] == 
-	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
-	NumLockMask = (1<<i); 
-    }
-  }
   if (is_active && !on && myapp->operations->isVisible())
     myapp->operations->hide();
 
@@ -1263,6 +1280,12 @@ void Client::setactive(bool on){
       QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
       autoraised_stopped = FALSE;
     }
+    else {
+      doButtonGrab();
+    }
+  }
+  else {
+    doButtonGrab();
   }
 }  
 
@@ -1821,6 +1844,7 @@ void Client::stopAutoraise(){
       && options.FocusPolicy == FOCUS_FOLLOW_MOUSE
       && options.AutoRaise > 0){
     manager->raiseClient( this );
+    doButtonGrab();
   }
   autoraised_stopped = TRUE;
 }
@@ -1906,4 +1930,19 @@ void Client::adjustSize(){
   geometry.setWidth(dx);
   geometry.setHeight(dy);
 
+}
+
+
+void Client::doButtonGrab(){
+  if (isActive()){
+    XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window); 
+    grabButton(AnyButton, window, Mod1Mask);
+  }
+  else {
+    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, 
+		ButtonPressMask, GrabModeSync, GrabModeAsync, 
+		None, normal_cursor );
+  }
+  if (!options.Button3Grab)
+    XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
 }

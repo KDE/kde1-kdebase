@@ -1258,10 +1258,11 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  manager->raiseSoundEvent("Window Activate");
 	}
  	// unfreeze the passive grab which is active currently
-	if (replay)
-	  XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
+	if (replay){
+	  XAllowEvents(qt_xdisplay(), ReplayPointer, ev->xbutton.time);
+	}
 	else
-	  XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	  XAllowEvents(qt_xdisplay(), SyncPointer, ev->xbutton.time);
       }
     }
   break;

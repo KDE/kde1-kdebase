@@ -249,6 +249,8 @@ private:
   
   bool autoraised_stopped;
 
+  void doButtonGrab();
+
 private slots:
   void autoRaise();
     
