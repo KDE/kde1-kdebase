@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-17 01:19+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-01-10 23:12+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -219,7 +219,7 @@ msgstr ""
 "Mantenidor actual: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1123
+#: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
 msgstr "&Ves-hi"
 
@@ -299,41 +299,41 @@ msgstr "&Edita punts..."
 msgid "&Add Bookmark"
 msgstr "&Afegeix punt"
 
-#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Nou"
 
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1101
 msgid "&Up"
 msgstr "&Amunt"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1103
 msgid "&Back"
 msgstr "E&nrera"
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1105
 msgid "&Forward"
 msgstr "En&davant"
 
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1107
 msgid "&Home"
 msgstr "&Inici"
 
-#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "ERROR: URL erroni"
 
-#: kfmgui.cpp:1296 kfmserver.cpp:245
+#: kfmgui.cpp:1298 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Obre localització:"
 
-#: kfmgui.cpp:1353
+#: kfmgui.cpp:1355
 msgid "KFM Confirm"
 msgstr "Confirmació KFM"
 
-#: kfmgui.cpp:1354
+#: kfmgui.cpp:1356
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -341,7 +341,7 @@ msgstr ""
 "De veres voleu sortir?\n"
 "Es perdrà funcionalitat important de l'escriptori"
 
-#: kfmgui.cpp:1481
+#: kfmgui.cpp:1483
 msgid "Document: Done"
 msgstr "Document: Fet"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-05-08 23:54+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -169,6 +169,10 @@ msgstr "&Enthält Text:"
 #: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "&Größe ist:"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr ""
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

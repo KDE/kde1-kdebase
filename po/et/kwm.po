@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,107 +23,107 @@ msgstr "kwm: näib, et aknahaldur on juba käivitatud. kwm ei käivitunud\n"
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: viga initsialiseerimisel; katkestamine\n"
 
-#: main.C:485
+#: main.C:527
 msgid "Preparing session ... "
 msgstr "Seansi ette valmistamine ... "
 
-#: main.C:509
+#: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:516
+#: main.C:558
 msgid "Usage: "
 msgstr "Kasutusviis: "
 
-#: main.C:527
+#: main.C:569
 msgid "&Maximize"
 msgstr "&Maksimeeri"
 
-#: main.C:528
+#: main.C:570
 msgid "&Restore"
 msgstr "&Taasta"
 
-#: main.C:529
+#: main.C:571
 msgid "&Iconify"
 msgstr "&Ikooni"
 
-#: main.C:530
+#: main.C:572
 msgid "&DeIconify"
 msgstr "&Desikooni"
 
-#: main.C:531
+#: main.C:573
 msgid "&Sticky"
 msgstr "&Kleepuv"
 
-#: main.C:532
+#: main.C:574
 msgid "&UnSticky"
 msgstr "&Mittekleepuv"
 
-#: main.C:533
+#: main.C:575
 msgid "Mo&ve"
 msgstr "&Liiguta"
 
-#: main.C:534
+#: main.C:576
 msgid "Resi&ze"
 msgstr "Muuda &suurust"
 
-#: main.C:536
+#: main.C:578
 msgid "&To desktop"
 msgstr "&Töölauale"
 
-#: main.C:538
+#: main.C:580
 msgid "&Onto current desktop"
 msgstr "&Käesolevale töölauale"
 
-#: main.C:578
+#: main.C:620
 msgid "One"
 msgstr "Üks"
 
-#: main.C:581
+#: main.C:623
 msgid "Two"
 msgstr "Kaks"
 
-#: main.C:584
+#: main.C:626
 msgid "Three"
 msgstr "Kolm"
 
-#: main.C:587
+#: main.C:629
 msgid "Four"
 msgstr "Neli"
 
-#: main.C:590
+#: main.C:632
 msgid "Five"
 msgstr "Viis"
 
-#: main.C:593
+#: main.C:635
 msgid "Six"
 msgstr "Kuus"
 
-#: main.C:596
+#: main.C:638
 msgid "Seven"
 msgstr "Seitse"
 
-#: main.C:599
+#: main.C:641
 msgid "Eight"
 msgstr "Kaheksa"
 
-#: main.C:613
+#: main.C:655
 msgid "Unnamed Desktop"
 msgstr "Nimetu töölaud"
 
-#: main.C:1040
+#: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Mõned pikselrastrid ei ole kehtivad: ShapeMode keelatud\n"
 
-#: main.C:1152
+#: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Mõned pikselrastrid ei ole kehtivad: GimmickMode keelatud\n"
 
-#: main.C:1477
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr "*** Tegumeid pole ***"
 
-#: minicli.C:122
+#: minicli.C:124
 msgid "Command:"
 msgstr "Käsk:"
 

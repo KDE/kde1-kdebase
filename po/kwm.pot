@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,107 +24,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr ""
 
-#: main.C:485
+#: main.C:527
 msgid "Preparing session ... "
 msgstr ""
 
-#: main.C:509
+#: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:516
+#: main.C:558
 msgid "Usage: "
 msgstr ""
 
-#: main.C:527
+#: main.C:569
 msgid "&Maximize"
 msgstr ""
 
-#: main.C:528
+#: main.C:570
 msgid "&Restore"
 msgstr ""
 
-#: main.C:529
+#: main.C:571
 msgid "&Iconify"
 msgstr ""
 
-#: main.C:530
+#: main.C:572
 msgid "&DeIconify"
 msgstr ""
 
-#: main.C:531
+#: main.C:573
 msgid "&Sticky"
 msgstr ""
 
-#: main.C:532
+#: main.C:574
 msgid "&UnSticky"
 msgstr ""
 
-#: main.C:533
+#: main.C:575
 msgid "Mo&ve"
 msgstr ""
 
-#: main.C:534
+#: main.C:576
 msgid "Resi&ze"
 msgstr ""
 
-#: main.C:536
+#: main.C:578
 msgid "&To desktop"
 msgstr ""
 
-#: main.C:538
+#: main.C:580
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:578
+#: main.C:620
 msgid "One"
 msgstr ""
 
-#: main.C:581
+#: main.C:623
 msgid "Two"
 msgstr ""
 
-#: main.C:584
+#: main.C:626
 msgid "Three"
 msgstr ""
 
-#: main.C:587
+#: main.C:629
 msgid "Four"
 msgstr ""
 
-#: main.C:590
+#: main.C:632
 msgid "Five"
 msgstr ""
 
-#: main.C:593
+#: main.C:635
 msgid "Six"
 msgstr ""
 
-#: main.C:596
+#: main.C:638
 msgid "Seven"
 msgstr ""
 
-#: main.C:599
+#: main.C:641
 msgid "Eight"
 msgstr ""
 
-#: main.C:613
+#: main.C:655
 msgid "Unnamed Desktop"
 msgstr ""
 
-#: main.C:1040
+#: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr ""
 
-#: main.C:1152
+#: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr ""
 
-#: main.C:1477
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr ""
 
-#: minicli.C:122
+#: minicli.C:124
 msgid "Command:"
 msgstr ""
 

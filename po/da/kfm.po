@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-17 01:19+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-02-25 13:40+CET-1\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: da <LL@li.org>\n"
@@ -225,7 +225,7 @@ msgstr ""
 "Proxy Manager af Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1123
+#: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
 msgstr ""
 
@@ -306,44 +306,44 @@ msgstr "&Rediger Bogmærke..."
 msgid "&Add Bookmark"
 msgstr "&Tilføj Bogmærke"
 
-#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 #, fuzzy
 msgid "&New"
 msgstr "Ny "
 
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1101
 #, fuzzy
 msgid "&Up"
 msgstr "Op"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1103
 msgid "&Back"
 msgstr ""
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1105
 msgid "&Forward"
 msgstr ""
 
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1107
 #, fuzzy
 msgid "&Home"
 msgstr "Hjem"
 
-#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "FEJL: Fejlagtig"
 
-#: kfmgui.cpp:1296 kfmserver.cpp:245
+#: kfmgui.cpp:1298 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Åben URL"
 
-#: kfmgui.cpp:1353
+#: kfmgui.cpp:1355
 msgid "KFM Confirm"
 msgstr "KFM bekræftigelse"
 
-#: kfmgui.cpp:1354
+#: kfmgui.cpp:1356
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -351,7 +351,7 @@ msgstr ""
 "Vil du virkelig afslutte?\n"
 "Arbejdspladsen vil miste vigtig funktionalitet."
 
-#: kfmgui.cpp:1481
+#: kfmgui.cpp:1483
 msgid "Document: Done"
 msgstr "Dokument: Klart"
 

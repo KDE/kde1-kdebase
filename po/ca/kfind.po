@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-12-05 18:57+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -173,6 +173,10 @@ msgstr "que &contenen:"
 #: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "&Mida:"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr ""
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

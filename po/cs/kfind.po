@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-10-24 16:55 CEST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -173,6 +173,10 @@ msgstr "Obsahuje te&xt:"
 #: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "Veli&kost:"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr ""
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

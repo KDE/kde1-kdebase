@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-05-17 20:00-0500-\n"
 "Last-Translator: Vlatko Cingoski <vlatko@eml.hiroshima-u.ac.jp>\n"
 "Language-Team: Macedonian\n"
@@ -170,6 +170,10 @@ msgstr "&Shto go sodrzzi sledniot tekst:"
 #: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "&Golemina:"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr ""
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

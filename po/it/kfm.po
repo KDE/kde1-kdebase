@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1999-01-17 01:19+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: Sat Dec 5 1998 21:52:54+0200\n"
 "Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -225,7 +225,7 @@ msgstr ""
 "Responsabile: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1123
+#: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
 msgstr "&Vai"
 
@@ -308,43 +308,43 @@ msgid "&Add Bookmark"
 msgstr "&Aggiungi Segnalibro"
 
 #
-#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Nuovo"
 
 #
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1101
 msgid "&Up"
 msgstr "&Su"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1103
 msgid "&Back"
 msgstr "&Indietro"
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1105
 msgid "&Forward"
 msgstr "&Avanti"
 
 #
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1107
 msgid "&Home"
 msgstr "&Home"
 
-#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "ERRORE: URL Maldefinita"
 
-#: kfmgui.cpp:1296 kfmserver.cpp:245
+#: kfmgui.cpp:1298 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Apri locazione:"
 
-#: kfmgui.cpp:1353
+#: kfmgui.cpp:1355
 msgid "KFM Confirm"
 msgstr "Conferma KFM"
 
-#: kfmgui.cpp:1354
+#: kfmgui.cpp:1356
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -352,7 +352,7 @@ msgstr ""
 "Sicuro di voler uscire ?\n"
 "Verranno perse importanti funzionalità del Desktop."
 
-#: kfmgui.cpp:1481
+#: kfmgui.cpp:1483
 msgid "Document: Done"
 msgstr "Documento: Ok"
 

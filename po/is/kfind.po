@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-31 01:12+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -168,6 +168,10 @@ msgstr "Sem &Inniheldur:"
 #: kftabdlg.cpp:213
 msgid "&Size is:"
 msgstr "&Stærð:"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr ""
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"

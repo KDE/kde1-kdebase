@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-01-17 01:19+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-12-23 13:59 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -215,7 +215,7 @@ msgstr ""
 "V souèasné dobì program udr¾uje: \n"
 "David Farem faure@kde.org"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1123
+#: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
 msgstr "Pøe&jít"
 
@@ -295,41 +295,41 @@ msgstr "&Upravit zálo¾ky"
 msgid "&Add Bookmark"
 msgstr "&Pøidej zálo¾ku"
 
-#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Nový "
 
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1101
 msgid "&Up"
 msgstr "&Nahoru"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1103
 msgid "&Back"
 msgstr "&Zpìt"
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1105
 msgid "&Forward"
 msgstr "&Vpøed"
 
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1107
 msgid "&Home"
 msgstr "&Domù"
 
-#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "Chyba: Chybný formát URL"
 
-#: kfmgui.cpp:1296 kfmserver.cpp:245
+#: kfmgui.cpp:1298 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Otevøít URL:"
 
-#: kfmgui.cpp:1353
+#: kfmgui.cpp:1355
 msgid "KFM Confirm"
 msgstr "Potvrzení KFM"
 
-#: kfmgui.cpp:1354
+#: kfmgui.cpp:1356
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -338,7 +338,7 @@ msgstr ""
 "Bubou ztraceny dùle¾ité vlastnosti \n"
 "pracovní plochy."
 
-#: kfmgui.cpp:1481
+#: kfmgui.cpp:1483
 msgid "Document: Done"
 msgstr "Dokument: Hotov"
 

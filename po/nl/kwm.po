@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,117 +28,117 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: probleem tijdens het initialiseren; stoppen\n"
 
-#: main.C:485
+#: main.C:527
 msgid "Preparing session ... "
 msgstr ""
 
-#: main.C:509
+#: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:516
+#: main.C:558
 msgid "Usage: "
 msgstr "Gebruik: "
 
-#: main.C:527
+#: main.C:569
 #, fuzzy
 msgid "&Maximize"
 msgstr "Ma&ximaliseren aan/uit"
 
-#: main.C:528
+#: main.C:570
 #, fuzzy
 msgid "&Restore"
 msgstr "&Herstel"
 
-#: main.C:529
+#: main.C:571
 msgid "&Iconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:530
+#: main.C:572
 #, fuzzy
 msgid "&DeIconify"
 msgstr "Mi&nimaliseren"
 
-#: main.C:531
+#: main.C:573
 #, fuzzy
 msgid "&Sticky"
 msgstr "&Vastplakken"
 
-#: main.C:532
+#: main.C:574
 #, fuzzy
 msgid "&UnSticky"
 msgstr "&Losweken"
 
-#: main.C:533
+#: main.C:575
 #, fuzzy
 msgid "Mo&ve"
 msgstr "&Verplaatsen"
 
-#: main.C:534
+#: main.C:576
 #, fuzzy
 msgid "Resi&ze"
 msgstr "&Grootte veranderen"
 
-#: main.C:536
+#: main.C:578
 #, fuzzy
 msgid "&To desktop"
 msgstr "Naar &buroblad"
 
-#: main.C:538
+#: main.C:580
 msgid "&Onto current desktop"
 msgstr ""
 
-#: main.C:578
+#: main.C:620
 msgid "One"
 msgstr "Een"
 
-#: main.C:581
+#: main.C:623
 msgid "Two"
 msgstr "Twee"
 
-#: main.C:584
+#: main.C:626
 msgid "Three"
 msgstr "Drie"
 
-#: main.C:587
+#: main.C:629
 msgid "Four"
 msgstr "Vier"
 
-#: main.C:590
+#: main.C:632
 msgid "Five"
 msgstr "Vijf"
 
-#: main.C:593
+#: main.C:635
 msgid "Six"
 msgstr "Zes"
 
-#: main.C:596
+#: main.C:638
 msgid "Seven"
 msgstr "Zeven"
 
-#: main.C:599
+#: main.C:641
 msgid "Eight"
 msgstr "Acht"
 
-#: main.C:613
+#: main.C:655
 #, fuzzy
 msgid "Unnamed Desktop"
 msgstr "Buroblad"
 
-#: main.C:1040
+#: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
-#: main.C:1152
+#: main.C:1199
 #, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Sommige pixmaps zijn niet geldig: VormModus uitgezet\n"
 
-#: main.C:1477
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr "*** Geen Taken ***"
 
-#: minicli.C:122
+#: minicli.C:124
 msgid "Command:"
 msgstr "Uitvoeren:"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1999-01-17 01:19+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,7 +220,7 @@ msgstr ""
 "Nykyinen ylläpitäjä: David Faure\n"
 "faure@kde.org"
 
-#: kfmgui.cpp:443 kfmgui.cpp:1123
+#: kfmgui.cpp:443 kfmgui.cpp:1125
 msgid "&Go"
 msgstr "&Siirry"
 
@@ -300,41 +300,41 @@ msgstr "&Muokkaa osoitekirjaa..."
 msgid "&Add Bookmark"
 msgstr "&Lisää osoitekirjaan"
 
-#: kfmgui.cpp:1074 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1076 kfmman.cpp:1439 kfmtree.cpp:389 root.cpp:285
 msgid "&New"
 msgstr "&Uusi "
 
-#: kfmgui.cpp:1099
+#: kfmgui.cpp:1101
 msgid "&Up"
 msgstr "&Ylös"
 
-#: kfmgui.cpp:1101
+#: kfmgui.cpp:1103
 msgid "&Back"
 msgstr "&Takaisin"
 
-#: kfmgui.cpp:1103
+#: kfmgui.cpp:1105
 msgid "&Forward"
 msgstr "&Eteen"
 
-#: kfmgui.cpp:1105
+#: kfmgui.cpp:1107
 msgid "&Home"
 msgstr "&Koti"
 
-#: kfmgui.cpp:1174 kfmgui.cpp:1342 kfmjob.cpp:36 kfmman.cpp:250
+#: kfmgui.cpp:1176 kfmgui.cpp:1344 kfmjob.cpp:36 kfmman.cpp:250
 #: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:785
 #: kiojob.cpp:87 root.cpp:1243
 msgid "ERROR: Malformed URL"
 msgstr "VIRHE: Virheellinen URL."
 
-#: kfmgui.cpp:1296 kfmserver.cpp:245
+#: kfmgui.cpp:1298 kfmserver.cpp:245
 msgid "Open Location:"
 msgstr "Avaa sijainti:"
 
-#: kfmgui.cpp:1353
+#: kfmgui.cpp:1355
 msgid "KFM Confirm"
 msgstr "KFM Varmista"
 
-#: kfmgui.cpp:1354
+#: kfmgui.cpp:1356
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -342,7 +342,7 @@ msgstr ""
 "Haluatko todella lopettaa?\n"
 "Tärkeitä työpöydän toimintoja menetetään!"
 
-#: kfmgui.cpp:1481
+#: kfmgui.cpp:1483
 msgid "Document: Done"
 msgstr "Dokumentti: Valmis"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-11-20 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -20,107 +20,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ocorreu uma falha durante a inicialização; a abortar\n"
 
-#: main.C:485
+#: main.C:527
 msgid "Preparing session ... "
 msgstr "A preparar sessao ... "
 
-#: main.C:509
+#: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:516
+#: main.C:558
 msgid "Usage: "
 msgstr "Utilização: "
 
-#: main.C:527
+#: main.C:569
 msgid "&Maximize"
 msgstr "&Maximizar"
 
-#: main.C:528
+#: main.C:570
 msgid "&Restore"
 msgstr "&Restaurar"
 
-#: main.C:529
+#: main.C:571
 msgid "&Iconify"
 msgstr "&Iconificar"
 
-#: main.C:530
+#: main.C:572
 msgid "&DeIconify"
 msgstr "Des&Iconificar"
 
-#: main.C:531
+#: main.C:573
 msgid "&Sticky"
 msgstr "&Pregar"
 
-#: main.C:532
+#: main.C:574
 msgid "&UnSticky"
 msgstr "Des&Pregar"
 
-#: main.C:533
+#: main.C:575
 msgid "Mo&ve"
 msgstr "Mo&ver"
 
-#: main.C:534
+#: main.C:576
 msgid "Resi&ze"
 msgstr "Alterar &Tamanho"
 
-#: main.C:536
+#: main.C:578
 msgid "&To desktop"
 msgstr "Para o &ambiente de trabalho"
 
-#: main.C:538
+#: main.C:580
 msgid "&Onto current desktop"
 msgstr "Para &o ambiente de trabalho actual"
 
-#: main.C:578
+#: main.C:620
 msgid "One"
 msgstr "Um"
 
-#: main.C:581
+#: main.C:623
 msgid "Two"
 msgstr "Dois"
 
-#: main.C:584
+#: main.C:626
 msgid "Three"
 msgstr "Três"
 
-#: main.C:587
+#: main.C:629
 msgid "Four"
 msgstr "Quatro"
 
-#: main.C:590
+#: main.C:632
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:593
+#: main.C:635
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:596
+#: main.C:638
 msgid "Seven"
 msgstr "Sete"
 
-#: main.C:599
+#: main.C:641
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:613
+#: main.C:655
 msgid "Unnamed Desktop"
 msgstr "Sem Nome"
 
-#: main.C:1040
+#: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
-#: main.C:1152
+#: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Algumas imagens não são válidas: GimmickMode desactivado\n"
 
-#: main.C:1477
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
-#: minicli.C:122
+#: minicli.C:124
 msgid "Command:"
 msgstr "Comando:"
 

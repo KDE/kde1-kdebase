@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-12-27 22:45+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -26,107 +26,107 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: initieringsfel; avbryter\n"
 
-#: main.C:485
+#: main.C:527
 msgid "Preparing session ... "
 msgstr "Förbereder session ... "
 
-#: main.C:509
+#: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:516
+#: main.C:558
 msgid "Usage: "
 msgstr "Användning: "
 
-#: main.C:527
+#: main.C:569
 msgid "&Maximize"
 msgstr "&Maximera"
 
-#: main.C:528
+#: main.C:570
 msgid "&Restore"
 msgstr "Å&terställ"
 
-#: main.C:529
+#: main.C:571
 msgid "&Iconify"
 msgstr "&Ikonifiera"
 
-#: main.C:530
+#: main.C:572
 msgid "&DeIconify"
 msgstr "&Av-ikonifiera"
 
-#: main.C:531
+#: main.C:573
 msgid "&Sticky"
 msgstr "&Klistrig"
 
-#: main.C:532
+#: main.C:574
 msgid "&UnSticky"
 msgstr "&Ej Klistrig"
 
-#: main.C:533
+#: main.C:575
 msgid "Mo&ve"
 msgstr "&Flytta"
 
-#: main.C:534
+#: main.C:576
 msgid "Resi&ze"
 msgstr "Ändra &storlek"
 
-#: main.C:536
+#: main.C:578
 msgid "&To desktop"
 msgstr "&Till skrivbord"
 
-#: main.C:538
+#: main.C:580
 msgid "&Onto current desktop"
 msgstr "&Till det här skrivbordet"
 
-#: main.C:578
+#: main.C:620
 msgid "One"
 msgstr "Ett"
 
-#: main.C:581
+#: main.C:623
 msgid "Two"
 msgstr "Två"
 
-#: main.C:584
+#: main.C:626
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:587
+#: main.C:629
 msgid "Four"
 msgstr "Fyra"
 
-#: main.C:590
+#: main.C:632
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:593
+#: main.C:635
 msgid "Six"
 msgstr "Sex"
 
-#: main.C:596
+#: main.C:638
 msgid "Seven"
 msgstr "Sju"
 
-#: main.C:599
+#: main.C:641
 msgid "Eight"
 msgstr "Åtta"
 
-#: main.C:613
+#: main.C:655
 msgid "Unnamed Desktop"
 msgstr "Odöpt skrivbord"
 
-#: main.C:1040
+#: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Några pixmapar är ogiltiga: ShapeMode avstängt\n"
 
-#: main.C:1152
+#: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Några pixmapar är ogiltiga: GimmickMode avstängt\n"
 
-#: main.C:1477
+#: main.C:1524
 msgid "*** No Tasks ***"
 msgstr "*** Inga uppdrag ***"
 
-#: minicli.C:122
+#: minicli.C:124
 msgid "Command:"
 msgstr "Kommando:"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-04-20 23:05+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,83 +14,116 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:220 krootwm.C:267
+#: krootwm.C:223 krootwm.C:270
 msgid "Execute command"
 msgstr "執行命令"
 
-#: krootwm.C:222 krootwm.C:275
+#: krootwm.C:225 krootwm.C:294
 msgid "Lock screen"
 msgstr "鎖住螢幕"
 
-#: krootwm.C:223 krootwm.C:276
+#: krootwm.C:226 krootwm.C:295
 msgid "Logout"
 msgstr "離線"
 
-#: krootwm.C:231 krootwm.C:269
+#: krootwm.C:234 krootwm.C:272
 msgid "Refresh desktop"
 msgstr "重繪桌面"
 
-#: krootwm.C:232 krootwm.C:271
+#: krootwm.C:235 krootwm.C:274
 msgid "Unclutter windows"
 msgstr "排列視窗"
 
-#: krootwm.C:233 krootwm.C:272
+#: krootwm.C:236 krootwm.C:275
 msgid "Cascade windows"
 msgstr "重疊視窗"
 
-#: krootwm.C:234 krootwm.C:273
+#: krootwm.C:237 krootwm.C:276
 msgid "Arrange icons"
 msgstr "安排圖示"
 
-#: krootwm.C:235 krootwm.C:268
+#: krootwm.C:238 krootwm.C:271
 msgid "Display properties"
 msgstr "顯示器內容"
 
-#: krootwm.C:243 krootwm.C:266
+#: krootwm.C:246 krootwm.C:269
 msgid "Help on desktop"
 msgstr "桌面的求助"
 
-#: krootwm.C:244
+#: krootwm.C:247
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:262 krootwm.C:285 krootwm.C:763 krootwm.C:771
+#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
 msgid "New"
 msgstr ""
 
-#: krootwm.C:263 krootwm.C:286
+#: krootwm.C:266 krootwm.C:305
 msgid "Bookmarks"
 msgstr ""
 
-#: krootwm.C:287
-msgid "Desk"
+#: krootwm.C:280
+#, fuzzy
+msgid "Arrange Window Maker icons"
+msgstr "安排圖示"
+
+#: krootwm.C:281
+msgid "Show all"
+msgstr ""
+
+#: krootwm.C:282
+msgid "Hide other"
+msgstr ""
+
+#: krootwm.C:284
+msgid "Show info panel"
+msgstr ""
+
+#: krootwm.C:285
+msgid "Show legal panel"
+msgstr ""
+
+#: krootwm.C:286
+msgid "Restart"
 msgstr ""
 
 #: krootwm.C:288
+msgid "Exit"
+msgstr ""
+
+#: krootwm.C:289
+msgid "Window Maker"
+msgstr ""
+
+#: krootwm.C:306
+msgid "Desk"
+msgstr ""
+
+#: krootwm.C:307
 msgid "Windows"
 msgstr ""
 
-#: krootwm.C:343
+#: krootwm.C:370
 msgid "Edit Bookmarks"
 msgstr ""
 
-#: krootwm.C:357 krootwm.C:773
+#: krootwm.C:384 krootwm.C:822
 msgid "Folder"
 msgstr "資料夾"
 
-#: krootwm.C:361
+#: krootwm.C:388
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "錯誤: 樣板不存在 '%s'"
 
-#: krootwm.C:794
+#: krootwm.C:843
 msgid "Could not create folder"
 msgstr "無法建立資料夾"
 
-#: krootwm.C:862
+#: krootwm.C:911
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: krootwm.C:866
+#: krootwm.C:915
 msgid "Usage:"
 msgstr "用法:"

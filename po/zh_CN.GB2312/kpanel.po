@@ -1,62 +1,62 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: kpanel.C:283
+#: kpanel.C:292
 #, fuzzy
 msgid "&Move"
 msgstr "移动"
 
-#: kpanel.C:286
+#: kpanel.C:295
 #, fuzzy
 msgid "&Properties"
 msgstr "特性"
 
-#: kpanel.C:329
+#: kpanel.C:338
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:332 tools.C:901
+#: kpanel.C:341 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "主菜单"
 
-#: kpanel.C:407
+#: kpanel.C:416
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:446 props.C:207 props.C:208
+#: kpanel.C:455 props.C:207 props.C:208
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:454 props.C:206
+#: kpanel.C:463 props.C:206
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:463 kpanel.C:472
+#: kpanel.C:472 kpanel.C:481
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:482 kpanel.C:494
+#: kpanel.C:491 kpanel.C:503
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1099
+#: kpanel.C:1108
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1236
+#: kpanel.C:1245
 msgid "No comment available"
 msgstr "没有说明"
 
-#: kpanel.C:1245 tools.C:910
+#: kpanel.C:1254 tools.C:910
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: kpanel.C:1253 props.C:197
+#: kpanel.C:1262 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
