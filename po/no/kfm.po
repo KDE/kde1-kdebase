@@ -39,7 +39,7 @@ msgstr "&Finn"
 
 #: kfmgui.cpp:251
 msgid "&Move to Trash"
-msgstr "Flytt til Papirkurv"
+msgstr "F&lytt til Papirkurv"
 
 #: kfmgui.cpp:258
 msgid "&Select"
@@ -287,9 +287,8 @@ msgstr "KFM Feil"
 
 # kfmgui.cpp:1139 kfmserver.cpp:178
 #: kfmgui.cpp:556
-#, fuzzy
 msgid "Location:"
-msgstr "Åpne ...:"
+msgstr "Sted:"
 
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
 #: kfmexec.cpp:59 kfmgui.cpp:739 kfmman.cpp:1375
@@ -640,6 +639,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"En ny KDE-versjon har blitt installert.\n"
+"Malfilene kan være endret.\n"
+"\n"
+"Vil du installere de nye?"
 
 # main.cpp:235
 #: main.cpp:263
@@ -1543,32 +1546,31 @@ msgstr "&Avhengig av bokstavstørrelse"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Cookie-varsel!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Du mottok en cookie fra vert:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Vil du akseptere eller forkaste denne cookien?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
 msgid "Apply to "
-msgstr "Bruk globalt"
+msgstr "Bruk til "
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Kun denne cookien"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Alle cookier fra dette &domenet"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "Alle &cookier"
 
 #: popup.cpp:69
 #, c-format

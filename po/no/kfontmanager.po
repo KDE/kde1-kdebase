@@ -42,6 +42,8 @@ msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
+"Den Raske Brune Reven Hoppet Over Den Late Hunden\n"
+"AaBbCcÆæØøÅå123
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"

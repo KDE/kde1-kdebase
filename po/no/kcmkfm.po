@@ -195,9 +195,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Avstand mellom vertikale bunngitter:"
 
 #: rootopts.cpp:92
-#, fuzzy
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Gjennomsiktig tekst for bunnikoner"
+msgstr "&Gjennomsiktig tekst for skrivebordikoner."
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"

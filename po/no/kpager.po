@@ -23,11 +23,11 @@ msgstr "Skru av/på menylinje"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Flytt til høyre"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Flytt til venstre"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -47,17 +47,15 @@ msgstr "&2 rader"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "&Ett klikk for å bytt skrivebord"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Skul &globalt skrivebord"
+msgstr "Skul skrivebord&navn"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Vis &globalt skrivebord"
+msgstr "Vis skrivebord&navn"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -108,7 +106,7 @@ msgstr "Vis &menylinje"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Ett klikk for å bytte skrivebord"
 
 #: kpager.cpp:446
 msgid "&Maximize"
