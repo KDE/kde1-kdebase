@@ -357,10 +357,39 @@ KGreeter::shutdown_button_clicked()
      SetTimer();
 }
 
+// Switch uid/gids to user described by pwd. Return old gid set
+// or 0 if an error occurs
+#if defined( HAVE_INITGROUPS) && defined( HAVE_GETGROUPS) && defined( HAVE_SETGROUPS)
+
+#include <grp.h>
+
+static inline gid_t* switch_to_user( int *gidset_size, 
+				     const struct passwd *pwd)
+{
+     *gidset_size = getgroups(0,0);
+     gid_t *gidset = new gid_t[*gidset_size];
+     if( getgroups( *gidset_size, gidset) == -1 ||
+	 initgroups(pwd->pw_name, pwd->pw_gid) != 0 ||
+	 seteuid(pwd->pw_uid) != 0) {
+	  // Error, back out
+	  seteuid(0);
+	  setgroups( *gidset_size, gidset);
+	  delete gidset;
+	  return 0;
+     }
+     return gidset;
+}
+
+// Switch uid back to root, and gids to gidset
+static inline void switch_to_root( int gidset_size, gid_t *gidset)
+{
+     seteuid(0);
+     setgroups( gidset_size, gidset);
+}
+
 void
 KGreeter::save_wm()
 {
-#ifdef HAVE_INITGROUPS
      // read passwd
      struct passwd *pwd = getpwnam(greet->name);
      endpwent();
@@ -372,29 +401,25 @@ KGreeter::save_wm()
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
      QString sesstype (sessiontags.at( sessionargBox->currentItem()));
 
-     switch ( fork() ) {
-     case -1 :
-	     LogError("fork: %m");
-	     break;
-     case 0 :
-	     // open file as user which is loging in
-	     initgroups(pwd->pw_name, pwd->pw_gid);
-	     setuid(pwd->pw_uid);
+     // open file as user which is loging in
+     int gidset_size;
+     // Go user
+     gid_t *gidset = switch_to_user( &gidset_size, pwd);
+     if( gidset == 0) return;
 
-	     FILE *f = fopen(file.data(), "w");
-	     if (f) {
-        	  fprintf(f, "%s\n", sesstype.data());
-	          fclose(f);
-	     }
-	     _exit(0);
+     FILE *f = fopen(file.data(), "w");
+     if (f) {
+	  fprintf(f, "%s\n", sesstype.data());
+	  fclose(f);
      }
-#endif /* HAVE_INITGROUPS */
+
+     // Go root
+     switch_to_root( gidset_size, gidset);
 }
 
 void
 KGreeter::load_wm()
 {
-#ifdef HAVE_INITGROUPS
      // read passwd
      passwd *pwd = getpwnam(loginEdit->text());
      endpwent();
@@ -404,48 +429,39 @@ KGreeter::load_wm()
 
      QString file;
      ksprintf(&file, "%s/"WMRC, pwd->pw_dir);
+     
+     int wm = -1;
+     int gidset_size;
+     // Go user
+     gid_t *gidset = switch_to_user( &gidset_size, pwd);
+     if( gidset == 0) return;
 
-     int pipefd[2];
-     pipe(pipefd);
-
-     switch ( fork() ) {
-     case -1 :
-	     LogError("fork: %m");
-     	     return;
-     case 0 :
-     	     ::close(pipefd[0]);
-
-	     // open file as user which is loging in
-	     initgroups(pwd->pw_name, pwd->pw_gid);
-	     setuid(pwd->pw_uid);
-
-	     FILE *f = fopen(file.data(), "r");
-	     if (f) {
-	          char s[255];
-
-	          fgets(s, sizeof s, f);
-	          fclose(f);
-
-		  if (char *p = strchr(s, '\n')) *p = 0;
-	          write(pipefd[1], s, strlen(s) + 1);
-	     }
-	     ::close(pipefd[1]);
-	     _exit(0);
+     // open file as user which is loging in
+     FILE *f = fopen(file.data(), "r");
+     if (f) {
+	  char s[255];
+	  
+	  fgets(s, sizeof s, f);
+	  fclose(f);
+	 
+	  if (char *p = strchr(s, '\n')) *p = 0;     
+	  wm = sessiontags.find( s);
      }
-     ::close(pipefd[1]);
 
-     char s[255];
-     int j = read(pipefd[0], &s, sizeof s);
-     ::close(pipefd[0]);
-
-     int wm = 0;
-     if (j) {
-	  wm = sessiontags.find(s);
-	  if (wm == -1) wm = 0;
-     }
-     sessionargBox->setCurrentItem(wm);
-#endif /* HAVE_INITGROUPS */
+     //Go root
+     switch_to_root( gidset_size, gidset);
+     if( wm != -1) sessionargBox->setCurrentItem(wm);
 }
+#else
+void
+KGreeter::load_wm()
+{
+}
+void
+KGreeter::save_wm()
+{
+}
+#endif /* HAVE_INITGROUPS && HAVE_SETGROUPS && HAVE_GETGROUPS */
 
 /* This stuff should doesn't really belong to the kgreeter, but verify.c is
  * just C, not C++.
