@@ -1639,10 +1639,26 @@ void KfmGui::slotConfigure()
     // Nothing to do. Next jobs launched will read the setting and use it.
 
     // -- Group Browser Settings/HTTP -- (Cookies)
-    // Let the cookiejar reread its settings
+    config->setGroup( "Browser Settings/HTTP" );
+    bool cookiesEnabled = config->readBoolEntry( "Cookies", true );
+
     if (cookiejar)
     {
+        QString cookieFile = kapp->localkdedir().data();
+        cookieFile += "/share/apps/kfm/cookies";
+        cookiejar->saveCookies( cookieFile.data() );
+        delete cookiejar;
+        cookiejar = 0;
+    }
+
+    if (cookiesEnabled)
+    {
+        cookiejar = new KCookieJar();
         cookiejar->loadConfig(config);
+
+	QString cookieFile = kapp->localkdedir().data();
+        cookieFile += "/share/apps/kfm/cookies";
+        cookiejar->loadCookies( cookieFile.data() );
     }
 }
 
