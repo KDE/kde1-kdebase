@@ -14,6 +14,7 @@
 #include <qmsgbox.h>
 #include <qtooltip.h>
 #include <qlayout.h>
+#include <qclipbrd.h>
 #include <kapp.h>
 #include <Kconfig.h>
 #include <kurl.h>
@@ -186,6 +187,10 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotFormSubmitted( const char *, const char * ) ) );
 	connect( view, SIGNAL( resized( const QSize & ) ),
 			SLOT( slotViewResized( const QSize & ) ) );
+#if KHTMLW_VERSION >= 840
+	connect( view, SIGNAL( textSelected( bool ) ), 
+			SLOT( slotTextSelected( bool ) ) );
+#endif
 //	connect( view, SIGNAL( imageRequest( const char * ) ), 
 //			SLOT( slotImageRequest( const char * ) ) );
 
@@ -288,7 +293,7 @@ int KHelpWindow::openURL( const char *URL, bool withHistory )
 				history.Add( new KPageInfo( currentURL, 0 ) );
 			}
 			emit enableMenuItems();
-                        emit setURL( currentURL );
+            emit setURL( currentURL );
 			locationBar->setLocation( currentURL );
 			return 0;
 		}
@@ -971,8 +976,13 @@ QString KHelpWindow::getLocation()
 
 bool KHelpWindow::canCurrentlyDo(AllowedActions action)
 {
-        switch (action)
+    switch (action)
 	{
+#if KHTMLW_VERSION >= 840
+	case Copy:        return view->isTextSelected();
+#else
+	case Copy:        return false;
+#endif
 	case GoBack:      return history.IsBack();
 	case GoForward:   return history.IsForward();
 	case GoPrevious:  return format->PrevNode();
@@ -1059,7 +1069,11 @@ void KHelpWindow::slotSearch()
 
 void KHelpWindow::slotCopy()
 {
-	cout << "copy selected" << endl;
+	QString text;
+
+	view->getSelectedText( text );
+	QClipboard *cb = kapp->clipboard();
+	cb->setText( text );
 }
 
 
@@ -1121,6 +1135,11 @@ void KHelpWindow::slotPrev()
 void KHelpWindow::slotNext()
 {
 	openURL( QUOTE + getPrefix() + format->NextNode() + QUOTE );
+}
+
+void KHelpWindow::slotTextSelected( bool )
+{
+	emit enableMenuItems();
 }
 
 void KHelpWindow::slotAddBookmark()

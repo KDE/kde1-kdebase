@@ -59,6 +59,7 @@ private:
 	KToolBar *toolbar;
 	KStatusBar *statusbar;
 	QPopupMenu *fileMenu;
+	QPopupMenu *editMenu;
 	QPopupMenu *gotoMenu;
 	QPopupMenu *bookmarkMenu;
 	QPopupMenu *optionsMenu;

@@ -130,10 +130,9 @@ void KHelpMain::createMenu()
 	idClose = fileMenu->insertItem("&Close",this,SLOT(slotClose()),CTRL+Key_W); // CC :!!!!!
 	fileMenu->insertItem( "&Quit", qApp, SLOT(quit()), CTRL+Key_Q );
 
-	QPopupMenu *editMenu = new QPopupMenu;
+	editMenu = new QPopupMenu;
 	CHECK_PTR( editMenu );
 	idCopy = editMenu->insertItem("&Copy", helpwin, SLOT(slotCopy()), CTRL+Key_C );
-	editMenu->setItemEnabled( idCopy, FALSE );
 
 	gotoMenu = new QPopupMenu;
 	CHECK_PTR( gotoMenu );
@@ -307,6 +306,9 @@ void KHelpMain::enableMenuItems()
 {
     bool val;
 //	fileMenu->setItemEnabled( idClose, helpWindowList.count() != 1 );
+
+    val = helpwin->canCurrentlyDo(KHelpWindow::Copy);
+	editMenu->setItemEnabled( idCopy, val );
 
     val = helpwin->canCurrentlyDo(KHelpWindow::GoBack); // history.isback
     gotoMenu->setItemEnabled( idBack, val );

@@ -34,7 +34,7 @@
 #define QUIT			102
 #define COPY			200
 
-#define KDEHELP_VERSION		"0.4.13"
+#define KDEHELP_VERSION		"0.4.16"
 
 #define STATUSBAR_HEIGHT	20
 #define SCROLLBAR_WIDTH		16
@@ -111,7 +111,7 @@ class KHelpWindow : public QWidget
 public:
 	// List of all for the HelpWindow that can currently be 
 	// triggered off externally
-	enum AllowedActions { GoBack, GoForward, GoPrevious,  GoNext,
+	enum AllowedActions { Copy, GoBack, GoForward, GoPrevious,  GoNext,
 			      GoUp, GoTop, Stop };
 
 	KHelpWindow(QWidget *parent=NULL, const char *name=NULL);
@@ -147,6 +147,7 @@ public slots:
 	void	slotUp();
 	void	slotPrev();
 	void	slotNext();
+	void	slotTextSelected( bool sel );
 	void	slotAddBookmark();
 	void	slotBookmarkSelected( int id );
 	void	slotBookmarkHighlighted( int id );
