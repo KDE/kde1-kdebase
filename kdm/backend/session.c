@@ -107,6 +107,9 @@ extern	struct passwd	*getpwnam();
 extern	char	*crypt();
 */
 
+#ifdef __Lynx__
+char *crypt(char *key, char *salt);
+#endif
 
 #ifdef CSRG_BASED
 #include <sys/param.h>

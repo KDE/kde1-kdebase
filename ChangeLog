@@ -1,5 +1,12 @@
 Tue Feb 10 16:46:32 1998  Stephan Kulow  <coolo@kde.org>
 
+	* configure.in: added test for nice to find out, if the option
+	-nice works for the screensavers
+
+	* acinclude.m4.in: port to LynxOS. For this I moved all library
+	search routines in KDE_MISC_TESTS, so I don't need to write this
+	in every package
+
 	* README: some grammar fixes
 
 	* acinclude.m4.in: search for the libs in the exec_prefix, when

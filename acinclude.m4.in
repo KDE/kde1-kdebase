@@ -199,6 +199,33 @@ AC_SUBST(kde_bindir)
 AC_SUBST(kde_partsdir)
 ])
 
+AC_DEFUN(KDE_MISC_TESTS,
+[
+   AC_LANG_C
+   dnl Checks for libraries. 
+   AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
+   AC_SUBST(LIBCOMPAT)
+   AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
+   AC_SUBST(LIBCRYPT)
+   AC_CHECK_KSIZE_T
+   dnl I need to check for libsocket before testing X
+   AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
+   AC_CHECK_LIB(ucb, killpg, [LIBUCB="-lucb"]) dnl for Solaris2.4
+   AC_SUBST(LIBUCB)
+
+   case $host in  dnl this *is* LynxOS specific
+   *-*-lynxos* )
+        AC_MSG_CHECKING([LynxOS header file wrappers])
+        [CFLAGS="$CFLAGS -D__NO_INCLUDE_WARN__"]
+        AC_MSG_RESULT(disabled)
+        AC_CHECK_LIB(bsd, gethostbyname, [LIBSOCKET="-lbsd"]) dnl for LynxOS
+         ;;
+    esac
+
+    AC_SUBST(LIBSOCKET)
+
+])
+
 ## ------------------------------------------------------------------------
 ## Find the header files and libraries for X-Windows. Extended the 
 ## macro AC_PATH_X
@@ -457,6 +484,7 @@ AC_PATH_QT_1_3
 ##
 AC_DEFUN(AC_BASE_PATH_KDE,
 [
+AC_REQUIRE([KDE_MISC_TESTS])
 AC_REQUIRE([AC_PATH_QT])dnl
 AC_MSG_CHECKING([for KDE])
 

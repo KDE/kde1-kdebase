@@ -40,13 +40,6 @@ KDE_PROG_LIBTOOL
 
 dnl WITH_NLS is for the po files
 AM_KDE_WITH_NLS
-
-dnl I need to check for libsocket before testing X
-AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
-AC_SUBST(LIBSOCKET)
-AC_CHECK_LIB(ucb, killpg, [LIBUCB="-lucb"]) dnl for Solaris2.4
-AC_SUBST(LIBUCB)
-
 AC_PATH_KDE
 
 AC_CHECK_KDM dnl in kdminclude.m4
@@ -75,13 +68,6 @@ else
 fi
 AC_SUBST(SETUIDFLAGS)
 
-AC_LANG_C
-dnl Checks for libraries. 
-AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
-AC_SUBST(LIBCOMPAT)
-AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
-AC_SUBST(LIBCRYPT)
-
 AC_FIND_GIF
 AC_FIND_JPEG
 AC_HAVE_GL(GL_SAVERS="kmorph3d.kss",GL_SAVERS="")
@@ -107,8 +93,7 @@ AC_C_LONG_DOUBLE
 AC_TYPE_GETGROUPS
 
 dnl Checks for library functions. MISCOBJS is for kdecore
-AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid)
-AC_CHECK_KSIZE_T
+AC_CHECK_FUNCS(socket powl sqrtl strdup getdtablesize vsnprintf setpgid nice)
 AC_CHECK_SETENV
 AC_CHECK_GETDOMAINNAME
 AC_CHECK_GETHOSTNAME

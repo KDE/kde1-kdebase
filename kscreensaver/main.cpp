@@ -272,7 +272,14 @@ int main( int argc, char *argv[] )
 		    printf( "%s\n", getScreenSaverName() );
 		    exit( 0 );
 		case arg_nice:
+#ifdef HAVE_NICE
 		    nice( atoi( argv[++i] ) );
+#else
+		    warning(glocale->translate(
+					       "Option %s is not support on "
+					       "this plattform!"), 
+			    strings[arg_nice]);
+#endif
 		    break;
 		case allow_root:
 		    allowroot = 1;
