@@ -57,6 +57,7 @@ enum PLACEMENT_POLICY {
 struct kwmOptions {
 
   WINDOW_MOVE_TYPE WindowMoveType;
+  WINDOW_MOVE_TYPE WindowResizeType;
   FOCUS_POLICY FocusPolicy;
   TITLEBAR_LOOK TitlebarLook;
   bool ResizeAnimation;

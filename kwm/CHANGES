@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 4:
+        - new option: WindowResizeType={Opaque, Transparent}
+
 patchlevel 3:
         - "snap to border" and "snap to window" modified: they are
            working in "real time", now. The default is 10 pixel for

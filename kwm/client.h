@@ -60,7 +60,7 @@ protected:
 
 class Client;
 
-class Client : public QLabel {
+class Client : public QFrame {
 
   Q_OBJECT
   

@@ -257,6 +257,12 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     QRect other;
 
     bool do_not_clear_rectangle = false;
+    
+    bool transparent = false;
+    if (recalc == dragcalc)
+      transparent = (options.WindowMoveType == TRANSPARENT);
+    else
+      transparent = (options.WindowResizeType == TRANSPARENT);
 
     cx = rx = c->geometry.x() + c->old_cursor_pos.x();
     cy = ry = c->geometry.y() + c->old_cursor_pos.y();
@@ -273,7 +279,7 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     FOCUS_POLICY oldFocusPolicy = options.FocusPolicy;
     options.FocusPolicy = CLICK_TO_FOCUS;
     
-    if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc){
+    if (transparent){
       XGrabServer(qt_xdisplay());
       drawbound(c);
     }
@@ -321,12 +327,11 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       if ( other == c->geometry)
 	continue;
       c->geometry = other;
-      if ((options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
-	  && !do_not_clear_rectangle)
+      if (transparent && !do_not_clear_rectangle)
 	drawbound(c);
       do_not_clear_rectangle = false;
       recalc(c, rx, ry);
-      if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
+      if (transparent)
 	drawbound(c);
       else {
 	manager->sendConfig(c);
@@ -342,7 +347,7 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       continue;
     }
 
-    if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
+    if (transparent)
       drawbound(c);
     
     if (c->geometry.width() < 0) {
@@ -359,7 +364,7 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 
     manager->sendConfig(c);
     
-    if (options.WindowMoveType == TRANSPARENT || recalc != dragcalc)
+    if (transparent)
       XUngrabServer(qt_xdisplay());
 
     while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));

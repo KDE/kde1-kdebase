@@ -652,6 +652,16 @@ void MyApp::readConfiguration(){
     options.WindowMoveType = TRANSPARENT;
   }
 
+  key = config->readEntry("WindowResizeType");
+  if( key == "Transparent")
+    options.WindowResizeType = TRANSPARENT;
+  else if( key == "Opaque")
+    options.WindowResizeType = OPAQUE;
+  else{
+    config->writeEntry("WindowResizeType","Transparent");
+    options.WindowResizeType = TRANSPARENT;
+  }
+
   key = config->readEntry("FocusPolicy");
   if( key == "ClickToFocus")
     options.FocusPolicy = CLICK_TO_FOCUS;

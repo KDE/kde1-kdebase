@@ -182,12 +182,17 @@ static QColor shaded_pm_inactive_color;
 
 
 
-void animate_size_change(QRect before, QRect after, bool decorated, int o1, int o2){
+bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, int o1, int o2){
 
   float lf,rf,tf,bf;
+  XEvent ev;
 
   if (!options.ResizeAnimation)
-    return;
+    return false;
+  
+  bool transparent = (options.WindowResizeType == TRANSPARENT);
+  if (!transparent && !c->isVisible())
+    transparent = true;
 
   lf = (after.left() - before.left())/400.0;
   rf = (after.right() - before.right())/400.0;
@@ -198,19 +203,38 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
   QRect area = before;
   QRect area2;
 
+  QRect saved_geometry = c->geometry;
+
   Time ts = manager->timeStamp();
   Time tt = ts;
   float diff;
 
-  XGrabServer(qt_xdisplay());
+  if (transparent)
+    XGrabServer(qt_xdisplay());
   
   do {
     if (area2 != area){
-      draw_animation_rectangle(area.left(), 
-			       area.top(), 
-			       area.width(), 
-			       area.height(), 
-			       decorated, o1, o2);
+      if (transparent){
+	draw_animation_rectangle(area.left(), 
+				 area.top(), 
+				 area.width(), 
+				 area.height(), 
+				 decorated, o1, o2);
+      }
+      else {
+	c->geometry = area;
+	c->adjustSize();
+	manager->sendConfig(c);
+	XSync(qt_xdisplay(), False);
+	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
+	Window w = c->window;
+	myapp->processEvents(); 
+	c = manager->getClient(w);
+	if (!c)
+	  return true;
+      }
+
+
       area2 = area;
     }
     XFlush(qt_xdisplay());
@@ -223,7 +247,7 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
     area.setRight(before.right() + int(diff*rf));
     area.setTop(before.top() + int(diff*tf));
     area.setBottom(before.bottom() + int(diff*bf));
-    if (area2 != area){
+    if (area2 != area && transparent){
       draw_animation_rectangle(area2.left(), 
 			       area2.top(), 
 			       area2.width(), 
@@ -231,14 +255,29 @@ void animate_size_change(QRect before, QRect after, bool decorated, int o1, int 
 			       decorated, o1, o2);
     }
   } while (tt - ts < 400);
-  if (area2 == area){
+  if (area2 == area && transparent){
     draw_animation_rectangle(area2.left(), 
 			     area2.top(), 
 			     area2.width(), 
 			     area2.height(), 
 			     decorated, o1, o2);
   }
-  XUngrabServer(qt_xdisplay());
+  if (transparent)
+    XUngrabServer(qt_xdisplay());
+  else {
+    c->geometry = after;
+    c->adjustSize();
+    manager->sendConfig(c);
+    XSync(qt_xdisplay(), False);
+    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
+    Window w = c->window;
+    myapp->processEvents(); 
+    c = manager->getClient(w);
+    if (!c)
+      return true;
+    c->geometry = saved_geometry;
+  }
+  return false;
 }
 
 static void grabButton(int button, Window window, unsigned int mod){
@@ -279,7 +318,7 @@ static void grabButton(int button, Window window, unsigned int mod){
 
 
 Client::Client(Window w, QWidget *parent, const char *name_for_qt)
-  : QLabel( parent, name_for_qt){
+  : QFrame( parent, name_for_qt){
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     window = w;
 
@@ -750,7 +789,7 @@ void Client::leaveEvent( QEvent * ){
 }
 
 void Client::paintEvent( QPaintEvent* ev ){
-  QLabel::paintEvent(ev);
+  QFrame::paintEvent(ev);
   QPainter p;
   p.begin(this);
   if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
@@ -1465,13 +1504,14 @@ void Client::iconify(bool animation){
     hideClient();
     if (animation){
       KWM::raiseSoundEvent("Window Iconify");
-      animate_size_change(geometry, 
-			  QRect(geometry.x()+geometry.width()/2,
-				geometry.y()+geometry.height()/2,
-				0,0),
-			  getDecoration()==KWM::normalDecoration,
-			  title_rect.x(), 
-			  width()-title_rect.right());
+      if (animate_size_change(this, geometry, 
+			      QRect(geometry.x()+geometry.width()/2,
+				    geometry.y()+geometry.height()/2,
+				    0,0),
+			      getDecoration()==KWM::normalDecoration,
+			      title_rect.x(), 
+			      width()-title_rect.right()))
+	return; //client has been destroyed
     }
     if (isActive())
       manager->noFocus();
@@ -1493,12 +1533,13 @@ void Client::unIconify(bool animation){
   if (isOnDesktop(manager->currentDesktop())){
     if (animation){
       KWM::raiseSoundEvent("Window DeIconify");
-      animate_size_change(QRect(geometry.x()+geometry.width()/2,
-				geometry.y()+geometry.height()/2,
-				0,0), geometry,
-			  getDecoration()==KWM::normalDecoration,
-			  title_rect.x(), 
-			  width()-title_rect.right());
+      if (animate_size_change(this, QRect(geometry.x()+geometry.width()/2,
+				    geometry.y()+geometry.height()/2,
+				    0,0), geometry,
+			      getDecoration()==KWM::normalDecoration,
+			      title_rect.x(), 
+			      width()-title_rect.right()))
+	return; //client has been destroyed
     } 
     showClient();
     manager->setWindowState(this, NormalState);
@@ -1579,10 +1620,11 @@ void Client::maximize(int mode){
   adjustSize();
   if (state == NormalState)
     manager->raiseSoundEvent("Window Maximize");
-    animate_size_change(geometry_restore, geometry,
-			getDecoration()==KWM::normalDecoration,
-			title_rect.x(), 
-			width()-title_rect.right());
+  if (animate_size_change(this, geometry_restore, geometry,
+			  getDecoration()==KWM::normalDecoration,
+			  title_rect.x(), 
+			  width()-title_rect.right()))
+    return; //client has been destroyed
   KWM::setMaximize(window, maximized);
   if (!buttonMaximize->isOn())
     buttonMaximize->toggle();
@@ -1597,10 +1639,11 @@ void Client::unMaximize(){
   maximized = FALSE;
   if (geometry != geometry_restore && state == NormalState)
     manager->raiseSoundEvent("Window UnMaximize");
-    animate_size_change(geometry, geometry_restore,
-			getDecoration()==KWM::normalDecoration,
-			title_rect.x(), 
-			width()-title_rect.right());
+  if (animate_size_change(this, geometry, geometry_restore,
+			  getDecoration()==KWM::normalDecoration,
+			  title_rect.x(), 
+			  width()-title_rect.right()))
+    return; //client has been destroyed
   geometry = geometry_restore;
   KWM::setMaximize(window, maximized);
   if (buttonMaximize->isOn())
@@ -1755,8 +1798,12 @@ void Client::  handleOperation(int i){
     }
     grabKeyboard();
     dragging_state = dragging_runs;
-    resizedrag(this, 1);
-    dragging_state = dragging_nope;
+    // the drags return true if the client crashed. This can only happend
+    // in opaque drag since we have to process all events in the normal
+    // fashion.
+    // Do not change any variables then to avoid a segfault.
+    if (!resizedrag(this, 1))
+      dragging_state = dragging_nope;
     releaseKeyboard();
     releaseMouse();
     break;
