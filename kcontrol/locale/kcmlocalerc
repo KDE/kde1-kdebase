@@ -1,8 +1,16 @@
 [KCM Locale]
-Languages=C,ca,cs,da,de,el,en_UK,en,es,fi,fr,hr,hu,is,it,nl,no,pl,pt,ro,ru,sk,sv,zh_CN.GB2312,zh_TW.Big5,pt_BR,eo,mk,ko,tr
+Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,hr,hu,is,it,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sv,tr,zh_CN.GB2312,zh_TW.Big5
+
+[br]
+Name=Breton
+Name[en]=Breton
+Name[en_US]=Breton
+Name[de]=Bretonisch
 
 [ca]
 Name=Catalan
+Name[de]=Katalanisch
+Name[br]=Katalaneg
 Name[no]=Katalansk
 Name[ca]=CatalЮ
 Name[es]=CatalАn
@@ -15,6 +23,8 @@ Name[ro]=Catalan
 
 [ro]
 Name=Romanian
+Name[br]=Roumaneg
+Name[de]=RumДnisch
 Name[no]=Rumensk
 Name[fi]=Romania
 Name[pl]=RumuЯski
@@ -27,6 +37,7 @@ Name[ru]=Румынский
 
 [C]
 Name=Default language
+Name[br]=Yezh dre ziouer
 Name[de]=Default Sprache
 Name[no]=StandardsprЕk
 Name[fi]=Oletuskieli
@@ -42,6 +53,7 @@ Name[ru]=Язык по умолчанию
 [de]
 Name=German
 Name[de]=Deutsch
+Name[br]=Alamaneg
 Name[no]=Tysk
 Name[fi]=Saksa
 Name[pl]=Niemiecki
@@ -55,6 +67,7 @@ Name[ru]=Немецкий
 
 [en_UK]
 Name=English - UK
+Name[br]=Saozneg - RU
 Name[de]=English - UK
 Name[no]=Engelsk - UK
 Name[fi]=Englanti - UK
@@ -69,7 +82,8 @@ Name[ru]=Английский
 
 [en]
 Name=English - US
-Name[de]=English - US
+Name[br]=Saozneg - SUA
+Name[de]=Englisch - USA
 Name[no]=Engelsk - US
 Name[fi]=Englanti - US
 Name[pl]=Angielski - US
@@ -83,6 +97,7 @@ Name[ru]=Англо-Американский
 
 [fr]
 Name=French
+Name[br]=Galleg
 Name[de]=FranzЖsisch
 Name[no]=Fransk
 Name[fi]=Ranska
@@ -97,6 +112,7 @@ Name[ru]=Французкий
 
 [cs]
 Name=Czech
+Name[br]=Tchekeg
 Name[de]=Tschechisch
 Name[no]=Tjekkisk
 Name[fi]=Tshekki
@@ -120,6 +136,7 @@ Name[fr]=Islandois
 [sv]
 Name=Swedish
 Name[de]=Schwedisch
+Name[br]=Svedeg
 Name[no]=Svensk
 Name[fi]=Ruotsi
 Name[pl]=Szwedzki
@@ -133,6 +150,7 @@ Name[ru]=Шведский
 
 [es]
 Name=Spanish
+Name[br]=Spagnoleg
 Name[de]=Spanisch
 Name[no]=Spansk
 Name[fi]=Espanja
@@ -148,6 +166,7 @@ Name[ru]=Испанский
 [ru]
 Name=Russian
 Name[de]=Russisch
+Name[br]=Rusianeg
 Name[no]=Russisk
 Name[fi]=VenДjД
 Name[pl]=Rosyjski
@@ -162,6 +181,7 @@ Name[ru]=Русский
 [nl]
 Name=Dutch
 Name[de]=NiederlДndisch
+Name[br]=Nederlandeg
 Name[no]=Nederlandsk
 Name[fi]=Hollanti
 Name[pl]=Holenderski
@@ -175,6 +195,7 @@ Name[ru]=Нидерландский
 
 [hu]
 Name=Hungarian
+Name[br]=Hungareg
 Name[de]=Ungarisch
 Name[no]=Ungarsk
 Name[fi]=Unkari
@@ -189,6 +210,7 @@ Name[ru]=Венгерский
 
 [da]
 Name=Danish
+Name[br]=Daneg
 Name[de]=DДnisch
 Name[no]=Dansk
 Name[fi]=Tanska
@@ -203,6 +225,7 @@ Name[ru]=Датский
 
 [fi]
 Name=Finnish
+Name[br]=Finneg
 Name[de]=Finnisch
 Name[no]=Finnsk
 Name[fi]=Suomi
@@ -218,6 +241,7 @@ Name[ru]=Финский
 
 [it]
 Name=Italian
+Name[br]=Italianeg
 Name[de]=Italienisch
 Name[no]=Italiensk
 Name[fi]=Italia
@@ -232,6 +256,7 @@ Name[ru]=Итальянский
 
 [pt]
 Name=Portuguese
+Name[br]=Portugaleg
 Name[de]=Portugiesisch
 Name[no]=Portogisisk
 Name[fi]=Portugali
@@ -246,6 +271,7 @@ Name[ru]=Португальский
 
 [pl]
 Name=Polish
+Name[br]=Poloneg
 Name[de]=Polnisch
 Name[no]=Polsk
 Name[fi]=Puola
@@ -261,6 +287,7 @@ Name[ru]=Польский
 [no]
 Name=Norwegian
 Name[de]=Norwegisch
+Name[br]=Norvegeg
 Name[no]=Norsk
 Name[fi]=Norja
 Name[pl]=Norweski
@@ -274,6 +301,7 @@ Name[ru]=Норвежский
 
 [el]
 Name=Greek
+Name[br]=Gresianeg
 Name[de]=Griechisch
 Name[no]=Gresk
 Name[fi]=Kreikka
@@ -288,6 +316,7 @@ Name[ru]=Греческий
 
 [hr]
 Name=Croatian
+Name[br]=Kroateg
 Name[de]=Kroatisch
 Name[no]=Kroatsisk
 Name[fi]=Kroatia
@@ -301,6 +330,7 @@ Name[ro]=Croat
 
 [sk]
 Name=Slovak
+Name[br]=Sloveg
 Name[de]=Slovakisch
 Name[no]=Slovakisk
 Name[pl]=SЁowacki
@@ -310,6 +340,7 @@ Name[ru]=Словатский
 
 [zh_TW.Big5]
 Name=Chinese
+Name[br]=Sinaeg
 Name[de]=Chinesisch
 Name[no]=Kinesisk
 Name[zh]=BIG5 ╓╓╓Е
@@ -321,6 +352,7 @@ Name[ru]=Китайский
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
+Name[br]=Sinaeg eeunaet
 Name[de]=Vereinfachtes Chinesisch
 Name[no]=Forenklet kinesisk
 Name[pl]=Chi╠ski uproszczony
@@ -331,6 +363,7 @@ Name[ru]=Упрошенный Китайский
 
 [pt_BR]
 Name=Brazil portuguese
+Name[br]=Portugaleg Brazil
 Name[de]=Brasilianisches Portugiesisch
 Name[no]=Brasiliansk portogisisk
 Name[pt]=PortuguЙs do Brasil
