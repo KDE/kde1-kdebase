@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-01-22 23:31+0100\n"
+"POT-Creation-Date: 1998-01-23 23:19+0100\n"
 "PO-Revision-Date: 1998-01-20 10:29 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -205,10 +205,10 @@ msgstr "Stop"
 msgid "Could not load icon\n"
 msgstr "Není mo¾né nahrát ikonu\n"
 
-#: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1509 kbind.cpp:1517
-#: kbind.cpp:1535 kbind.cpp:1552 kbind.cpp:1613 kbind.cpp:1625 kbind.cpp:1652
-#: kbind.cpp:1667 kbind.cpp:1687 kbind.cpp:1699 kbind.cpp:1715 kbind.cpp:1838
-#: kbind.cpp:1850 kbind.cpp:1895 kbind.cpp:1937 kfmexec.cpp:59 kfmexec.cpp:93
+#: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1510 kbind.cpp:1518
+#: kbind.cpp:1536 kbind.cpp:1553 kbind.cpp:1614 kbind.cpp:1626 kbind.cpp:1653
+#: kbind.cpp:1668 kbind.cpp:1688 kbind.cpp:1700 kbind.cpp:1716 kbind.cpp:1839
+#: kbind.cpp:1851 kbind.cpp:1896 kbind.cpp:1938 kfmexec.cpp:59 kfmexec.cpp:93
 #: kfmexec/main.cpp:47 kfmgui.cpp:579 kfmgui.cpp:705 kfmjob.cpp:181
 #: kfmman.cpp:268 kfmman.cpp:871 kfmman.cpp:1038 kfmman.cpp:1064
 #: kfmprops.cpp:370 kfmprops.cpp:625 kfmprops.cpp:651 kfmprops.cpp:766
@@ -220,8 +220,8 @@ msgstr "Není mo¾né nahrát ikonu\n"
 #: kfmview.cpp:338 kfmview.cpp:344 kfmview.cpp:350 kfmview.cpp:421
 #: kfmview.cpp:443 kfmview.cpp:461 kfmview.cpp:467 kfmview.cpp:473
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
-#: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
-#: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1482 krenamewin.cpp:104
+#: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:523 kiojob.cpp:750
+#: kiojob.cpp:781 kiojob.cpp:818 kiojob.cpp:1619 krenamewin.cpp:120
 #: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
 #: root.cpp:1497 root.cpp:1522
 msgid "KFM Error"
@@ -297,7 +297,7 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "CHYBA: Upustil jste nìkteré URL nad sebou samým"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
-#: kfmview.cpp:497 krenamewin.cpp:18 root.cpp:1026
+#: kfmview.cpp:497 krenamewin.cpp:20 root.cpp:1026
 msgid "KFM Warning"
 msgstr "Varování KFM"
 
@@ -380,12 +380,12 @@ msgstr "Nejsou nainstalovány ¾ádné Mime typy!"
 msgid "Could not find mime type\n"
 msgstr "Nemohu nalézt mime typ\n"
 
-#: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1873 kbind.cpp:1874 kbind.cpp:1886
-#: kbind.cpp:1888
+#: kbind.cpp:703 kbind.cpp:713 kbind.cpp:1874 kbind.cpp:1875 kbind.cpp:1887
+#: kbind.cpp:1889
 msgid "Mount"
 msgstr "Pøipojit"
 
-#: kbind.cpp:719 kbind.cpp:1864
+#: kbind.cpp:719 kbind.cpp:1865
 msgid "Unmount"
 msgstr "Odpojit"
 
@@ -397,15 +397,15 @@ msgstr "Chyba"
 msgid "in "
 msgstr "v "
 
-#: kbind.cpp:1311 kbind.cpp:1397
+#: kbind.cpp:1312 kbind.cpp:1398
 msgid "Could not execute program\n"
 msgstr "Nemohu vykonat pøíkaz\n"
 
-#: kbind.cpp:1508
+#: kbind.cpp:1509
 msgid "Could not find binding"
 msgstr "Nemohu nalézt spojení"
 
-#: kbind.cpp:1518
+#: kbind.cpp:1519
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -413,11 +413,11 @@ msgstr ""
 "Toto je dokument!\n"
 "Ne aplikace"
 
-#: kbind.cpp:1536 kbind.cpp:1553
+#: kbind.cpp:1537 kbind.cpp:1554
 msgid "Can only start executables on local disks\n"
 msgstr "Mohu vykonat spustitelné programy pouze na lokalních discích\n"
 
-#: kbind.cpp:1614 kbind.cpp:1688 kbind.cpp:1839
+#: kbind.cpp:1615 kbind.cpp:1689 kbind.cpp:1840
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -425,7 +425,7 @@ msgstr ""
 "Mohu pracovat s *.kdelnk soubory\n"
 "pouze na lokálním disku"
 
-#: kbind.cpp:1624
+#: kbind.cpp:1625
 #, c-format
 msgid ""
 "Could not access\n"
@@ -434,19 +434,19 @@ msgstr ""
 "Nemohu pøistoupit k\n"
 "%s"
 
-#: kbind.cpp:1653
+#: kbind.cpp:1654
 msgid "The \"Link=....\" entry is empty"
 msgstr "Polo¾ka \"Link=...\" je prázdná"
 
-#: kbind.cpp:1668
+#: kbind.cpp:1669
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfiguraèní soubor neobsahuje polo¾ku \"Type=...\""
 
-#: kbind.cpp:1698 kbind.cpp:1849
+#: kbind.cpp:1699 kbind.cpp:1850
 msgid "Could not access"
 msgstr "Nemohu pøistoupit k"
 
-#: kbind.cpp:1716
+#: kbind.cpp:1717
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -458,15 +458,15 @@ msgstr ""
 "Kvùli vyøe¹ení problémù \n"
 "uprav vlastnosti."
 
-#: kbind.cpp:1805
+#: kbind.cpp:1806
 msgid "ERROR: No Terminal Setting"
 msgstr "Chyba: ®ádné nastavení terminálu"
 
-#: kbind.cpp:1896
+#: kbind.cpp:1897
 msgid "No mount point in *.kdelnk file"
 msgstr "V *.kdelnk souboru není místo pøipojení"
 
-#: kbind.cpp:1936
+#: kbind.cpp:1937
 msgid "Unknown binding"
 msgstr "Chyba: Neznámá vazba"
 
@@ -482,39 +482,39 @@ msgstr "Vytváøím adresáø:\n"
 msgid "Installing Templates"
 msgstr "Instaluji ¹ablony"
 
-#: main.cpp:211
+#: main.cpp:215
 msgid "Cd"
 msgstr "Cd"
 
-#: main.cpp:212
+#: main.cpp:216
 msgid "New View"
 msgstr "Nový pohled"
 
-#: kfmtree.cpp:223 main.cpp:215
+#: kfmtree.cpp:223 main.cpp:219
 msgid "Move to Trash"
 msgstr "Pøesunout do ko¹e"
 
-#: main.cpp:217
+#: main.cpp:221
 msgid "Open with"
 msgstr "Otevøi pomocí"
 
-#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:219
+#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:223
 msgid "Move"
 msgstr "Pøesunout"
 
-#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:220
+#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:224
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:221
+#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:225
 msgid "Link"
 msgstr "Link"
 
-#: main.cpp:222
+#: main.cpp:226
 msgid "Empty Trash Bin"
 msgstr "Vyprázdnit Ko¹"
 
-#: main.cpp:223
+#: main.cpp:227
 msgid "Add to Bookmarks"
 msgstr "Pøidej k zálo¾kám"
 
@@ -880,7 +880,7 @@ msgstr "Pøidej k zálo¾kám"
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNÍ CHYBA: Je nutné specifikovat pøinejmen¹ím zaøízení k pøipojení"
 
-#: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
+#: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:1137 kiojob.cpp:1277
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -916,7 +916,7 @@ msgstr ""
 msgid " ERROR: Could not write to %s"
 msgstr "CHYBA: Nemohu zapsat do %s"
 
-#: kiojob.cpp:454 kiojob.cpp:642 kiojob.cpp:1056
+#: kiojob.cpp:522 kiojob.cpp:749 kiojob.cpp:1194
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -925,12 +925,12 @@ msgstr ""
 "Není mo¾né vytvoøit adresáø\n"
 "%s"
 
-#: kiojob.cpp:464 kiojob.cpp:828
+#: kiojob.cpp:535 kiojob.cpp:965
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "CHYBA: Není mo¾né vstoupit do adresáøe '%s'"
 
-#: kiojob.cpp:658
+#: kiojob.cpp:780
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -939,7 +939,7 @@ msgstr ""
 "Není mo¾né vstoupit do adresáøe\n"
 "%s "
 
-#: kiojob.cpp:688
+#: kiojob.cpp:817
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -952,16 +952,16 @@ msgstr ""
 "do %s\n"
 "Pravdìpodobnì nemáte pøístup."
 
-#: kiojob.cpp:1003 kiojob.cpp:1011 kiojob.cpp:1020 kiojob.cpp:1028
-#: kiojob.cpp:1036 kiojob.cpp:1044 kiojob.cpp:1052 kiojob.cpp:1060
-#: kiojob.cpp:1068 kiojob.cpp:1076 kiojob.cpp:1094 kiojob.cpp:1102
-#: kiojob.cpp:1109 kiojob.cpp:1120 kiojob.cpp:1135 kiojob.cpp:1143
-#: kiojob.cpp:1151 kiojob.cpp:1159 kiojob.cpp:1167 kiojob.cpp:1175
-#: kiojob.cpp:1183 kiojob.cpp:1201 kiojob.cpp:1209 kiojob.cpp:1217
+#: kiojob.cpp:1141 kiojob.cpp:1149 kiojob.cpp:1158 kiojob.cpp:1166
+#: kiojob.cpp:1174 kiojob.cpp:1182 kiojob.cpp:1190 kiojob.cpp:1198
+#: kiojob.cpp:1206 kiojob.cpp:1214 kiojob.cpp:1232 kiojob.cpp:1240
+#: kiojob.cpp:1247 kiojob.cpp:1258 kiojob.cpp:1273 kiojob.cpp:1281
+#: kiojob.cpp:1289 kiojob.cpp:1297 kiojob.cpp:1305 kiojob.cpp:1313
+#: kiojob.cpp:1321 kiojob.cpp:1339 kiojob.cpp:1347 kiojob.cpp:1355
 msgid "Continue"
 msgstr "Pokraèuj"
 
-#: kiojob.cpp:1007 kiojob.cpp:1147
+#: kiojob.cpp:1145 kiojob.cpp:1285
 #, c-format
 msgid ""
 "Could not read\n"
@@ -972,7 +972,7 @@ msgstr ""
 "%s\n"
 "Pravdìpodobnì soubor neexistuje nebo nemáte pøístupová práva."
 
-#: kiojob.cpp:1015
+#: kiojob.cpp:1153
 #, c-format
 msgid ""
 "Could not write\n"
@@ -983,7 +983,7 @@ msgstr ""
 "%s\n"
 "Pravdìpodobnì nemáte pøístupová práva."
 
-#: kiojob.cpp:1024 kiojob.cpp:1155
+#: kiojob.cpp:1162 kiojob.cpp:1293
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -992,7 +992,7 @@ msgstr ""
 "Není mo¾né vytvoøít Socket pro\n"
 "%s"
 
-#: kiojob.cpp:1032 kiojob.cpp:1163
+#: kiojob.cpp:1170 kiojob.cpp:1301
 #, c-format
 msgid ""
 "Unknwon host in\n"
@@ -1001,7 +1001,7 @@ msgstr ""
 "Neznámý hostitel v\n"
 "%s"
 
-#: kiojob.cpp:1040 kiojob.cpp:1171
+#: kiojob.cpp:1178 kiojob.cpp:1309
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1010,7 +1010,7 @@ msgstr ""
 "Není mo¾né se pøipojit k\n"
 "%s"
 
-#: kiojob.cpp:1048 kiojob.cpp:1179
+#: kiojob.cpp:1186 kiojob.cpp:1317
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1021,7 +1021,7 @@ msgstr ""
 "%s\n"
 "je¹tì není implementována!"
 
-#: kiojob.cpp:1064
+#: kiojob.cpp:1202
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1030,7 +1030,7 @@ msgstr ""
 "Není mo¾né vypsat obsah adresáøe\n"
 "%s "
 
-#: kiojob.cpp:1072
+#: kiojob.cpp:1210
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1041,7 +1041,7 @@ msgstr ""
 "%s\n"
 "URL neexistuje nebo nemáte pøístupová práva."
 
-#: kiojob.cpp:1082 kiojob.cpp:1189
+#: kiojob.cpp:1220 kiojob.cpp:1327
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1052,7 +1052,7 @@ msgstr ""
 "%s\n"
 "Pravdìpodobné chybné heslo"
 
-#: kiojob.cpp:1098 kiojob.cpp:1205
+#: kiojob.cpp:1236 kiojob.cpp:1343
 #, c-format
 msgid ""
 "Tar reproted an error\n"
@@ -1061,7 +1061,7 @@ msgstr ""
 "Tar ohlásil chybu\n"
 "%s"
 
-#: kiojob.cpp:1106
+#: kiojob.cpp:1244
 #, c-format
 msgid ""
 "Gzip reproted an error for\n"
@@ -1070,7 +1070,7 @@ msgstr ""
 "Gzip ohlásil chybu pro\n"
 "%s"
 
-#: kiojob.cpp:1116 kiojob.cpp:1131
+#: kiojob.cpp:1254 kiojob.cpp:1269
 #, c-format
 msgid ""
 "File %s\n"
@@ -1079,7 +1079,7 @@ msgstr ""
 "Soubor %s\n"
 "neexistuje "
 
-#: kiojob.cpp:1213
+#: kiojob.cpp:1351
 #, c-format
 msgid ""
 "Gzip reproted an error\n"
@@ -1088,7 +1088,7 @@ msgstr ""
 "Gzip ohlásil chybu\n"
 "%s"
 
-#: kiojob.cpp:1221
+#: kiojob.cpp:1359
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1101,7 +1101,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1227
+#: kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1114,21 +1114,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1365
+#: kiojob.cpp:1502
 msgid "Making directory"
 msgstr "Vytváøení adresáøe"
 
-#: kiojob.cpp:1447 kiojob.cpp:1501 kiojob.cpp:1543
+#: kiojob.cpp:1584 kiojob.cpp:1638 kiojob.cpp:1680
 #, c-format
 msgid "File %i/%i"
 msgstr "Soubor %i/%i"
 
-#: kiojob.cpp:1450 kiojob.cpp:1505
+#: kiojob.cpp:1587 kiojob.cpp:1642
 #, c-format
 msgid "to %s"
 msgstr "do %s"
 
-#: kiojob.cpp:1481
+#: kiojob.cpp:1618
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1137,22 +1137,22 @@ msgstr ""
 "Není mo¾né smazat adresáø\n"
 "%s"
 
-#: kiojob.cpp:1571
+#: kiojob.cpp:1708
 #, c-format
 msgid "Mounting %s ..."
 msgstr "Pøipojuji %s..."
 
-#: kiojob.cpp:1573
+#: kiojob.cpp:1710
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "Odpojuji %s ..."
 
-#: kiojob.cpp:1601
+#: kiojob.cpp:1738
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Obnovení výpisu %s"
 
-#: kiojob.cpp:1826
+#: kiojob.cpp:1963
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmentaèní chyba ve vstupnì/výstupním podprocesu"
 
@@ -1180,31 +1180,38 @@ msgstr "Pracovní plocha"
 msgid "Root"
 msgstr "Koøen"
 
-#: kbookmarkdlg.cpp:35 krenamewin.cpp:24
+#: kbookmarkdlg.cpp:35 krenamewin.cpp:26
 msgid "Rename"
 msgstr "Pøejmenovat"
 
-#: krenamewin.cpp:29
+#: krenamewin.cpp:31
 msgid "Skip"
 msgstr "Pøeskoèit"
 
-#: krenamewin.cpp:34
+#: krenamewin.cpp:36
 msgid "Overwrite"
 msgstr "Pøepsat"
 
-#: krenamewin.cpp:39
+#: krenamewin.cpp:41
 msgid "Overwrite All"
 msgstr "Pøepsat v¹e"
 
-#: krenamewin.cpp:47
+#: krenamewin.cpp:52
+#, fuzzy
+msgid "You try to overwrite"
+msgstr ""
+"Nemohu pøepsat\n"
+"%s"
+
+#: krenamewin.cpp:63
 msgid "already exists. Overwrite with"
 msgstr "ji¾ existuje. Pøepi¹ souborem"
 
-#: krenamewin.cpp:56
+#: krenamewin.cpp:71
 msgid "Or rename to"
 msgstr "Nebo jej pøejmenuj na"
 
-#: krenamewin.cpp:105
+#: krenamewin.cpp:121
 msgid "You did not change the name!\n"
 msgstr "Nezmìnil jste jméno!\n"
 
