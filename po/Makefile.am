@@ -1,6 +1,6 @@
  
 SUBDIRS = cs da de es fi fr it nl ru is sv hu pt pl el hr ro no \
-	zh_TW.Big5 zh_CN.GB2312 sk ca sl en_UK mk pt_BR eo ko tr
+	zh_TW.Big5 zh_CN.GB2312 sk ca sl en_UK mk pt_BR eo ko tr he
 
 # this is a general list for merging!
 APPS = kcmbell kcminfo kcminput kcmkeys kcmkfm kcmkpanel kcmkwm \
