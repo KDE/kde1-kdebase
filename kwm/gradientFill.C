@@ -2,11 +2,6 @@
 #include <dither.h>
 #include <qimage.h>
 #include <stdio.h>
-#ifdef __osf__
-#include <machine/endian.h>
-#else
-#include <endian.h>
-#endif
 
 void kwm_gradientFill(KPixmap &pm, QColor ca, QColor cb, bool upDown) {
   if(upDown == FALSE && QColor::numBitPlanes() >= 15) {    
@@ -29,23 +24,29 @@ void kwm_gradientFill(KPixmap &pm, QColor ca, QColor cb, bool upDown) {
     uchar *p = img.scanLine(0);
 
     int r = c_red_a, g = c_green_a, b = c_blue_a;
-    for(int x = 0; x < w; x++) {
-#if BYTE_ORDER == BIG_ENDIAN
-      *p++ = 0;
-      *p++ = b >> 16;
-      *p++ = g >> 16;
-      *p++ = r >> 16;
-#endif
-#if BYTE_ORDER == LITTLE_ENDIAN
-      *p++ = r >> 16;
-      *p++ = g >> 16;
-      *p++ = b >> 16;
-      *p++ = 0;
-#endif
 
-      r += d_red;
-      g += d_green;
-      b += d_blue;
+    if (QImage::systemByteOrder() == QImage::BigEndian) {
+      for(int x = 0; x < w; x++) {
+	*p++ = 0;
+	*p++ = b >> 16;
+	*p++ = g >> 16;
+	*p++ = r >> 16;
+
+	r += d_red;
+	g += d_green;
+	b += d_blue;
+      }
+    } else {
+      for(int x = 0; x < w; x++) {
+	*p++ = r >> 16;
+	*p++ = g >> 16;
+	*p++ = b >> 16;
+	*p++ = 0;
+
+	r += d_red;
+	g += d_green;
+	b += d_blue;
+      }
     }
 
     uchar *src = img.scanLine(0);
