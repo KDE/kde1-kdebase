@@ -23,11 +23,14 @@
 */
        
 
-#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
+#include <fstab.h>
+#include <stdlib.h>
+
 #include <qfile.h>
+#include <qfontmetrics.h>
 
 /* stdio.h has NULL, but also a lot of extra cruft */
 #ifndef NULL
@@ -136,13 +139,65 @@ bool GetInfo_SCSI (KTabListBox *)
 	return FALSE;
 }
 
-bool GetInfo_Partitions (KTabListBox *)
+bool GetInfo_Partitions (KTabListBox *lbox)
 {
-	return FALSE;
+	int maxwidth[4]={0,0,0,0};
+
+	struct fstab *fstab_ent;
+	QFontMetrics fm(lbox->tableFont());
+	QString s;
+
+	if (setfsent() != 1) /* Try to open fstab */ {
+		kdebug(KDEBUG_ERROR, 0, i18n("Ahh couldn't open fstab!"));
+		return false;
+	}
+
+	lbox->setNumCols(4);
+	lbox->setSeparator(';');
+
+	maxwidth[0]=fm.width(i18n("Device"));
+	lbox->setColumn(0, i18n("Device"), maxwidth[0]+2);
+
+	maxwidth[1]=fm.width(i18n("Mount Point"));
+	lbox->setColumn(1, i18n("Mount Point"), maxwidth[1]+2);
+
+	maxwidth[2]=fm.width(i18n("FS Type"));
+	lbox->setColumn(2, i18n("FS Type"), maxwidth[2]+2);
+
+	maxwidth[3]=fm.width(i18n("Mount Options"));
+	lbox->setColumn(3, i18n("Mount Options"), maxwidth[3]+2);
+
+
+	while ((fstab_ent=getfsent())!=NULL) {
+		if (fm.width(fstab_ent->fs_spec) > maxwidth[0]) {
+			maxwidth[0]=fm.width(fstab_ent->fs_spec);
+			lbox->setColumnWidth(0, maxwidth[0]+10);
+		}
+
+		if (fm.width(fstab_ent->fs_file) > maxwidth[1]) {
+			maxwidth[1]=fm.width(fstab_ent->fs_file);
+			lbox->setColumnWidth(1, maxwidth[1]+10);
+		}
+
+		if (fm.width(fstab_ent->fs_vfstype) > maxwidth[2]) {
+			maxwidth[2]=fm.width(fstab_ent->fs_vfstype);
+			lbox->setColumnWidth(2, maxwidth[2]+10);
+		}
+
+		if (fm.width(fstab_ent->fs_mntops) > maxwidth[3]) {
+			maxwidth[3]=fm.width(fstab_ent->fs_mntops);
+			lbox->setColumnWidth(3, maxwidth[3]+10);
+		}
+
+		s.sprintf("%s;%s;%s;%s", fstab_ent->fs_spec, fstab_ent->fs_file, fstab_ent->fs_vfstype, fstab_ent->fs_mntops);
+		lbox->insertItem(s);
+	}
+
+	endfsent(); /* Close fstab */
+	return true;
 }
 
 bool GetInfo_XServer_and_Video (KTabListBox *lBox)
 {
 	return GetInfo_XServer_Generic( lBox );
 }
-
