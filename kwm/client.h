@@ -354,6 +354,7 @@ private:
     int do_resize;
 
     bool recently_resized; //hack
+    int mouse_release_command; //hack
 
     // set the mouse pointer shape to the specified cursor. Also
     // stores the defined shaped in current_cursor.

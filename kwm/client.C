@@ -350,6 +350,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     sizegrip = _sizegrip;
 
     recently_resized = true;
+    mouse_release_command = MyApp::MouseNothing;
 
     backing_store = false;
     state = WithdrawnState;
@@ -620,9 +621,10 @@ void Client::animateTitlebar(){
 
 
 void Client::mousePressEvent( QMouseEvent *ev ){
-
+    
   old_cursor_pos = ev->pos();
   int com = MyApp::MouseNothing;
+  mouse_release_command = MyApp::MouseNothing;
 
   if ((ev->state() & AltButton) == AltButton){
     // one of these "all" events with Alt on the titlebar or frame. Do
@@ -650,11 +652,10 @@ void Client::mousePressEvent( QMouseEvent *ev ){
     else { // incactive
       if (ev->button() == LeftButton)
 	com = options.CommandInactiveTitlebar1;
-      if (ev->button() == MidButton)
+       if (ev->button() == MidButton)
 	com = options.CommandInactiveTitlebar2;
       if (ev->button() == RightButton)
 	com = options.CommandInactiveTitlebar3;
-      myapp->executeMouseBinding(this, com);
     }
     if (com == MyApp::MouseOperationsMenu){
 	generateOperations();
@@ -662,6 +663,24 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 	myapp->operations->popup(QCursor::pos());
 	return;
     }
+    
+    if (ev->button() == MidButton) {
+	// special hack for the middle mouse button to allow
+	// movement without raise or lower
+	if (com == MyApp::MouseActivateAndRaise) {
+	    mouse_release_command = MyApp::MouseRaise;
+	    com = MyApp::MouseActivate;
+	}
+	else if (com == MyApp::MouseActivateAndLower) {
+	    mouse_release_command = MyApp::MouseLower;
+	    com = MyApp::MouseActivate;
+	}
+	else if (com == MyApp::MouseRaise || com == MyApp::MouseLower) {
+	    mouse_release_command = com;
+	    com = MyApp::MouseNothing;
+	}
+    }
+    
     myapp->executeMouseBinding(this, com);
   }
 
@@ -728,8 +747,17 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 }
 
 void Client::mouseReleaseEvent( QMouseEvent* /* ev */){
+  if (dragging_state == dragging_runs) {
+      dragging_state = dragging_nope;
+      releaseMouse();
+      return;
+  }
   dragging_state = dragging_nope;
   releaseMouse();
+  if (mouse_release_command != MyApp::MouseNothing) {
+      myapp->executeMouseBinding(this, mouse_release_command);
+      mouse_release_command = MyApp::MouseNothing;
+  }
 }
 
 

@@ -1624,7 +1624,7 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 
 bool MyApp::buttonPressEventFilter( XEvent * ev)
 {
-    
+
     Client *c = manager->getClient(ev->xbutton.window);
     if (c)
 	c->stopAutoraise();

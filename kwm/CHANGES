@@ -12,6 +12,10 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 2:
+        - some additions to the middle mouse handling to emulate
+           the former behaviour with MMB-movement.
+
 patchlevel 1:
         - simplified outline drawing since the previous nifty stippled
            rectangle relied on some graphic hardware support (which
