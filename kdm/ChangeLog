@@ -1,3 +1,24 @@
+1998-12-17  Steffen Hansen  <stefh@localhost>
+
+	* kdmshutdown.cpp :
+	Changed char[] to QString. We want unicode ;)
+
+1998-12-16 Duncan Haldane <f.d.m.haldane@cwix.com>
+
+	* kdmshutdown.cpp : 
+	(1) made the PAM service name configurable
+	if KDE_PAM_SERVICE is defined (if not, it is "xdm"). (This
+	should have been done when I did this to verify.c a while
+	back).
+	
+	(2) Added a extra line to the shutdown dialog box
+	"(Enter Root password") if it is in "RootOnly" mode.
+
+	(3) Changed the confusing description of the "exit xdm" button
+	to "Restart X server", which is the actual function of the
+	third button.
+
+
 1998-12-04  Steffen Hansen  <stefh@localhost>
 
 	* genauth.c (len;): Read random data from "randomFile" (usually

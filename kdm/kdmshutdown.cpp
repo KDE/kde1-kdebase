@@ -34,6 +34,11 @@
 extern "C" {
 # include <security/pam_appl.h>
 }
+#ifdef KDE_PAM_SERVICE
+#define KDE_PAM KDE_PAM_SERVICE
+#else  
+#define KDE_PAM "xdm"  /* default PAM service called by kdm */
+#endif 
 #else /* ! USE_PAM */
 # ifdef USESHADOW
 #  include <shadow.h>
@@ -146,7 +151,7 @@ verify_root_pw( const char* pw)
         return false; \
       }
      PAM_password = pw;
-     pam_error = pam_start("xdm", superuser, &PAM_conversation, &pamh);
+     pam_error = pam_start(KDE_PAM, superuser, &PAM_conversation, &pamh);
      PAM_BAIL;
      pam_error = pam_authenticate( pamh, 0);
      PAM_BAIL;
@@ -168,7 +173,12 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
      winFrame->setFrameStyle( QFrame::WinPanel | QFrame::Raised);
      QBoxLayout* box = new QBoxLayout( winFrame, QBoxLayout::TopToBottom, 
 				       10, 10);
-     label = new QLabel( klocale->translate("Shutdown or restart?"), winFrame);
+     QString shutdownmsg =  klocale->translate( "Shutdown or restart?");
+     if( mode == KDMConfig::RootOnly) {
+	  shutdownmsg += '\n';
+	  shutdownmsg += klocale->translate( "(Enter Root Password)");
+     }
+     label = new QLabel( shutdownmsg, winFrame);
      set_fixed( label);
      h += label->height() + 10;
      w = label->width();
@@ -207,7 +217,7 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
      box->addWidget( rb);
      btGroup->insert( rb);
      rb = new QRadioButton( winFrame /*btGroup*/);
-     rb->setText( klocale->translate("Exit kdm"));
+     rb->setText( klocale->translate("Restart X Server"));//better description
      set_min( rb);
      rb->setFocusPolicy( StrongFocus);
      h += rb->height() + 10;
@@ -320,3 +330,10 @@ int main(int argc, char **argv)
 }
 
 #endif /* TEST_KDM */
+
+/*  
+ * Local variables:  
+ * mode: c++  
+ * c-file-style: "k&r"  
+ * End:  
+*/

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-16 03:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,20 +14,24 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kdmshutdown.cpp:171
+#: kdmshutdown.cpp:177
 msgid "Shutdown or restart?"
 msgstr ""
 
-#: kdmshutdown.cpp:187
+#: kdmshutdown.cpp:180
+msgid "(Enter Root Password)"
+msgstr ""
+
+#: kdmshutdown.cpp:198
 msgid "Shutdown"
 msgstr ""
 
-#: kdmshutdown.cpp:201
+#: kdmshutdown.cpp:212
 msgid "Shutdown and restart"
 msgstr ""
 
-#: kdmshutdown.cpp:210
-msgid "Exit kdm"
+#: kdmshutdown.cpp:221
+msgid "Restart X Server"
 msgstr ""
 
 #: kgreeter.cpp:222
@@ -54,23 +58,8 @@ msgstr ""
 msgid "Shutdown..."
 msgstr ""
 
-#: kgreeter.cpp:570
-msgid "Logins not available right now."
-msgstr ""
 
-#: kgreeter.cpp:611
-msgid "login_getcapstr() failed."
-msgstr ""
 
-#: kgreeter.cpp:665 kgreeter.cpp:692
-msgid "Sorry -- your account has expired."
-msgstr ""
 
-#: kgreeter.cpp:670 kgreeter.cpp:697
-#, c-format
-msgid "Warning: your account expires on %s"
-msgstr ""
 
-#: kgreeter.cpp:724
-msgid "Home directory not available"
-msgstr ""
+
