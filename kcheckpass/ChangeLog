@@ -1,3 +1,7 @@
+1998-11-26  Alex Zepeda  <garbanzo@hooked.net>
+
+	* kcheckpass.cpp: Don't include malloc.h on FreeBSD boxen.
+
 1998-11-25  Duncan Haldane <f.d.m.haldane@cwix.com>
 	* kcheckpass.cpp  void message() instead of static void message()
 	* kcheckpass.h    void message()
