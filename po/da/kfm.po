@@ -36,7 +36,7 @@ msgstr "Åben &Terminal"
 
 #: kfmgui.cpp:314
 msgid "&Open Location..."
-msgstr "&Åben URL"
+msgstr "&Åben URL..."
 
 #: kfmgui.cpp:316
 msgid "&Find"
@@ -48,12 +48,12 @@ msgstr "Flyt til &Skraldespand"
 
 #: kfmgui.cpp:339
 msgid "&Select"
-msgstr "&Vælg"
+msgstr "&Markér"
 
 #: kfmgui.cpp:341
 #, fuzzy
 msgid "Select &all"
-msgstr "&Vælg"
+msgstr "Markér &alt"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -85,7 +85,7 @@ msgstr "&Visuel Schnauzer"
 
 #: kfmgui.cpp:367
 msgid "&HTML View"
-msgstr "&HTML oversigt"
+msgstr "&HTML fremvisning"
 
 #: kfmgui.cpp:370
 msgid "&Icon View"
@@ -102,7 +102,7 @@ msgstr "&Lang oversigt"
 #: kfmgui.cpp:376
 #, fuzzy
 msgid "&Short View"
-msgstr "&Ikon oversigt"
+msgstr "&Kort oversigt"
 
 #: kfmgui.cpp:382
 msgid "Rel&oad Tree"
