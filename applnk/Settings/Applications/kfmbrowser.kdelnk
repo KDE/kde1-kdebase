@@ -3,9 +3,11 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-1.html
 Name=Web browser
+Name[pt_BR]=Navegador Web
 Name[fr]=Navigateur Web
 Name[no]=Nettlos
 Comment=You can configure here the web browser
+Comment[pt_BR]=Você pode configurar aqui o navegador Web
 Comment[fr]=Vous pouvez configurer ici le navigateur Web
 Comment[no]=Her kan du konfigurere nettlosen
 # This needs a new icon !

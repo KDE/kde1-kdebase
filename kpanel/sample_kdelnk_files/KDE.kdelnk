@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 MiniIcon=folder_blue.xpm
 Comment=KDE Installation Folder
+Comment[pt_BR]=Pasta de Instalação do KDE
 Comment[es]=Carpeta de Intalación de KDE
 Comment[no]=KDEs installasjonsmappe
 URL=file:$KDEDIR
