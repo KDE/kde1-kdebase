@@ -13,6 +13,7 @@
 #define _TOPLEVEL_H_
 
 #include <kapp.h>
+#include <kglobalaccel.h>
 #include <ktmainwindow.h>
 #include <qpopmenu.h>
 #include <qclipboard.h>
@@ -23,16 +24,20 @@
 class TopLevel : public KTMainWindow
 {
   Q_OBJECT
-  
+
 public:
     TopLevel();
     ~TopLevel();
-    
+
+    KGlobalAccel *globalKeys;
 
 protected:
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *);
 
+protected slots:
+    void globalKeyEvent() { mousePressEvent( 0L ); }
+  
 private slots:
     void newClipData();
     void clickedMenu(int);

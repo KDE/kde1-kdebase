@@ -9,7 +9,7 @@
  ------------------------------------------------------------- */
 
 
-#include <kapp.h>
+#include <mykapp.h>
 #include <ktopwidget.h>
 #include <kwm.h>
 
@@ -18,7 +18,7 @@
 
 int main(int argc, char *argv[])
 {
-  KApplication app(argc, argv);
+  MyKApplication app(argc, argv, "klipper");
 
   TopLevel *toplevel=0;
 
@@ -29,9 +29,12 @@ int main(int argc, char *argv[])
       toplevel = new TopLevel();
   }
 
+  // the widget handling the global keys
+  app.setGlobalKeyWidget( toplevel );
+  
   KWM::setDockWindow(toplevel->winId());
   toplevel->show();
- 
+
 
   return app.exec();
 }

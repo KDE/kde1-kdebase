@@ -2,7 +2,7 @@
 
    toplevel.cpp (part of Klipper - Cut & paste history for KDE)
 
-   (C)  by 
+   (C)  by
 
    Generated with the KDE Application Generator
 
@@ -10,14 +10,16 @@
 
 
 #include "toplevel.h"
-#include <kapp.h>
+#include <mykapp.h>
 #include <kwm.h>
 #include <qintdict.h>
 #include <qpainter.h>
 #include "qmessagebox.h"
 #include "kiconloader.h"
+#include <kkeydialog.h>
 
-#define QUIT_ITEM 50
+#define QUIT_ITEM   50
+#define CONFIG_ITEM 60
 
 /* XPM */
 /* Drawn  by Andreas Thienemann for the K Desktop Environment */
@@ -65,7 +67,9 @@ TopLevel::TopLevel() /*FOLD00*/
     pQPMmenu = new QPopupMenu(0x0, "main_menu");
     connect(pQPMmenu, SIGNAL(activated(int)),
             this, SLOT(clickedMenu(int)));
-    pQPMmenu->insertItem("Clipboard History", QUIT_ITEM);
+    pQPMmenu->insertItem(i18n("Quit Clipboard History"), QUIT_ITEM);
+    pQPMmenu->insertSeparator();
+    pQPMmenu->insertItem(i18n("Configure Shortcut"), CONFIG_ITEM);
     pQPMmenu->insertSeparator();
     pQIDclipData = new QIntDict<QString>();
     pQIDclipData->setAutoDelete(TRUE);
@@ -75,6 +79,12 @@ TopLevel::TopLevel() /*FOLD00*/
     connect(pQTcheck, SIGNAL(timeout()),
             this, SLOT(newClipData()));
     pQPpic = new QPixmap(mouse);
+
+    globalKeys = new KGlobalAccel();
+    globalKeys->insertItem(i18n("Select clipboard contents"),
+				"select-clipboard", "CTRL+ALT+V");
+    globalKeys->connectItem("select-clipboard", this, SLOT(globalKeyEvent()));
+    globalKeys->readSettings();
 }
 
 TopLevel::~TopLevel()
@@ -96,7 +106,7 @@ void TopLevel::mousePressEvent(QMouseEvent *) /*FOLD00*/
       pQPMmenu->popup(QPoint( g.x(), g.y() - pQPMmenu->height()));
   else
       pQPMmenu->popup(QPoint( g.x() + g.width(), g.y() + g.height()));
-}   
+}
 
 void TopLevel::paintEvent(QPaintEvent *pe) /*FOLD00*/
 {
@@ -105,7 +115,7 @@ void TopLevel::paintEvent(QPaintEvent *pe) /*FOLD00*/
   int y = 1 + (12 - pQPpic->height()/2);
   p.drawPixmap(x , y, *pQPpic);
   p.end();
-} 
+}
 
 void TopLevel::newClipData()
 {
@@ -136,12 +146,17 @@ void TopLevel::clickedMenu(int id)
 {
     if(id == QUIT_ITEM)
         kapp->quit();
-    pQTcheck->stop();
+    else if (id == CONFIG_ITEM) {
+      KKeyDialog::configureKeys( globalKeys );
+    }
+      
+      pQTcheck->stop();
     QString *data = pQIDclipData->find(id);
     if(data != 0x0){
         kapp->clipboard()->setText(data->data());
         QSlast = data->copy();
     }
+    
     else
         warning("Unable to find item: %d", id);
     pQTcheck->start(1000);
