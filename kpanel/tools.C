@@ -647,6 +647,7 @@ void kPanel::set_label_date(){
 
   strftime(dateline,256,i18n("\n%b %d"),loctime);
 
+  QToolTip::remove(label_date);
   QToolTip::add(label_date, QString(dayline)+QString(timeline)+QString(dateline));
 
   if (label_date->fontMetrics().lineSpacing() * 3 <= label_date->height())
