@@ -1,0 +1,56 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-01 11:27+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Avslutte eller starte på nytt?"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Avslutt"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Avslutte og starte på nytt"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Gå ut av kdm"
+
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Logg inn:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Passord:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Feil ved innlogging!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Sesjons type:"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Sett igang!"
+
+#: kgreeter.cpp:214
+msgid "Shutdown..."
+msgstr "Avslutte..."

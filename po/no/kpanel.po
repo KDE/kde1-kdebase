@@ -1,0 +1,176 @@
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-02-27 12:35+0100\n"
+"Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:211
+msgid "Move"
+msgstr "Flytt"
+
+#: kpanel.C:214
+msgid "Properties"
+msgstr "Egenskaper"
+
+#: kpanel.C:246
+msgid "Go!"
+msgstr "Sett igang!"
+
+#: kpanel.C:248 tools.C:816
+msgid "Where do you want to go tomorrow?"
+msgstr "Hvor vil du dra i morgen?"
+
+#: kpanel.C:321
+msgid "No info available"
+msgstr "Ingen informasjon tilgjengelig"
+
+#: kpanel.C:360 props.C:217 props.C:218
+msgid "Logout"
+msgstr "Logg ut"
+
+#: kpanel.C:368 props.C:216
+msgid "Lock screen"
+msgstr "Lås skjerm"
+
+#: kpanel.C:377
+msgid "Hide the panel"
+msgstr "Skjul panelet"
+
+#: kpanel.C:387
+msgid "Show the panel"
+msgstr "Vis panelet"
+
+#: kpanel.C:1078 tools.C:632
+msgid "No comment available"
+msgstr "Ingen kommentar tilgjengelig"
+
+#: kpanel.C:1087 tools.C:825
+msgid "Windowlist"
+msgstr "Vindusliste"
+
+#: props.C:200
+msgid "Add application"
+msgstr "Tilføy applikasjon"
+
+#: props.C:202
+msgid "Add an application or a submenu onto the panel"
+msgstr "Tilføy en applikasjon eller en undermeny til panelet"
+
+#: props.C:203
+msgid "Add windowlist"
+msgstr "Tilføy vindusliste"
+
+#: props.C:205
+msgid "Add a windowlist menu onto the panel"
+msgstr "Tilføy en vindusliste meny til panelet"
+
+#: props.C:206
+msgid "Configure"
+msgstr "Konfigurer"
+
+#: props.C:208
+msgid "Configure panel"
+msgstr "Konfigurer panel"
+
+#: props.C:209
+msgid "Restart"
+msgstr "Omstart"
+
+#: props.C:211
+msgid "Restart panel"
+msgstr "Omstart av panel"
+
+#: props.C:212 props.C:467
+msgid "Panel"
+msgstr "Panel"
+
+#: props.C:214
+msgid "Lock Screen"
+msgstr "Lås skjerm"
+
+#: props.C:398
+msgid "Location"
+msgstr "Plassering"
+
+#: props.C:411
+msgid "Taskbar"
+msgstr "Oppgavelinje"
+
+#: props.C:412
+msgid "Hidden"
+msgstr "Skjult"
+
+#: props.C:421
+msgid "Top/Left"
+msgstr "Topp/venstre"
+
+#: props.C:451
+msgid "Tiny Style"
+msgstr "Bitteliten stil"
+
+#: props.C:452
+msgid "Normal Style"
+msgstr "Normal stil"
+
+#: props.C:453
+msgid "Large Style"
+msgstr "Stor stil"
+
+#: props.C:472
+msgid "Menu Tooltips"
+msgstr "Meny verktøytips"
+
+#: props.C:518
+msgid "Others"
+msgstr "Andre"
+
+#: props.C:520
+msgid "Personal First"
+msgstr "Personlig først"
+
+#: props.C:523
+msgid "Auto Hide Panel"
+msgstr "Auto skjul panel"
+
+#: props.C:526
+msgid "Auto Hide Taskbar"
+msgstr "Auto skjul oppgavelinjen"
+
+#: props.C:544
+msgid "Clock"
+msgstr "Ur"
+
+#: props.C:546
+msgid "24h"
+msgstr "24 timer"
+
+#: props.C:550
+msgid "12h AM/PM"
+msgstr "12 timer"
+
+#: props.C:611
+msgid "Visible"
+msgstr "Synlig"
+
+#: props.C:618
+msgid "Width"
+msgstr "Bredde"
+
+#: props.C:623
+msgid "Desktops"
+msgstr "Skrivebord"
+
+#: props.C:629
+msgid "KPanel Configuration"
+msgstr "KPanel konfigurasjon"
