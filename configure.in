@@ -25,7 +25,7 @@ AC_CHECK_FLAGS
 dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_CPP
-test "$CCC" = "" && CCC="xlc DCC"
+test "$CCC" = "" && CCC="c++ xlC DCC"
 AC_PROG_CXX
 AC_PROG_LN_S
 AC_CHECK_LIB(dl, main, [LIBDL="-ldl"])
