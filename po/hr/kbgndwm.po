@@ -1,45 +1,44 @@
-# KDEBASE translation to Slovenian language.
-# Copyright (C) 1999 Free Software Foundation, Inc.
-# Marko Samastur <markos@elite.org>, 1999.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kbgndwm\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-28 01:10+0100\n"
-"PO-Revision-Date: 1999-01-23 12:40+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
-"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"PO-Revision-Date: 1999-01-28 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: kbgndwm.cpp:45
 msgid "Display Settings"
-msgstr "Zaslonske nastavitve"
+msgstr "Pode¹avanje prikaza"
 
 #: kbgndwm.cpp:46
 msgid "Background Settings"
-msgstr "Nastavitve ozadja"
+msgstr "Postavke pozadine"
 
 #: kbgndwm.cpp:48
 msgid "Common Background"
-msgstr "Skupno ozadje"
+msgstr "Zajednièka pozadina"
 
 #: kbgndwm.cpp:50
 msgid "Undock"
-msgstr "Odsidraj"
+msgstr ""
 
 #: kbgndwm.cpp:58
 msgid "Tiled"
-msgstr "Tlakovano"
+msgstr "Poploèano"
 
 #: kbgndwm.cpp:59
 msgid "Mirrored"
-msgstr "Prezrcaljeno"
+msgstr "Zrcaljeno"
 
 #: kbgndwm.cpp:60
 msgid "CenterTiled"
-msgstr "Centrirano tlakovano"
+msgstr "CentriranoPoploèano"
 
 #: kbgndwm.cpp:61
 msgid "Centred"
@@ -47,28 +46,28 @@ msgstr "Centrirano"
 
 #: kbgndwm.cpp:62
 msgid "CentredBrick"
-msgstr "Centrirana opeka"
+msgstr ""
 
 #: kbgndwm.cpp:63
 msgid "CentredWarp"
-msgstr "Centrirano zvit"
+msgstr ""
 
 #: kbgndwm.cpp:64
 msgid "CentredMaxpect"
-msgstr "Centriran maks. razteg v merilu"
+msgstr ""
 
 #: kbgndwm.cpp:65
 msgid "SymmetricalTiled"
-msgstr "Simetrièno tlakovano"
+msgstr "SimetrièkiPoploèano"
 
 #: kbgndwm.cpp:66
 msgid "SymmetricalMirrored"
-msgstr "Simetrièno prezrcaljeno"
+msgstr "SimetrièkiZrcaljeno"
 
 #: kbgndwm.cpp:67
 msgid "Scaled"
-msgstr "V merilu"
+msgstr "U mjerilu"
 
 #: bg.cpp:235 bg.cpp:238
 msgid "No wallpaper"
-msgstr "Brez tapet"
+msgstr "Nema pozadinske slike"

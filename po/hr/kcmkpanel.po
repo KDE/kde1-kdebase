@@ -1,274 +1,226 @@
-# KCMKPANEL translation to Slovene language
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# luka steger, <luka_steger@hotmail.com>, 1998
-# 
+# Vladimir Vuksan <vuksan@veus.hr>, 1998
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmpanel\n"
-"POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1998-09-24  18:04+0100\n"
-"Last-Translator: Borut Mrak <borutm@bigfoot.com>\n"
-"Language-Team: Slovenian <sl@li.org>\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
+"PO-Revision-Date: 1998-11-23 15:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso8859-2\n"
-"Content-Transfer-Encoding: text/plain\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:71
+#: main.cpp:64
 msgid "&Panel"
-msgstr "&Pult"
+msgstr "&Ploèa"
 
-#: main.cpp:77
+#: main.cpp:70
 msgid "&Desktops"
-msgstr "Na&mizja"
+msgstr "&Radne povr¹ine"
 
-#: main.cpp:80
+#: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "Disk &Navigator"
+msgstr "&Navigator diska"
 
-#: main.cpp:83
-msgid "&Theme"
-msgstr "&Tema"
+#: main.cpp:79
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine,disknav}]\n"
 
-#: main.cpp:89
-msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav,theme}]\n"
-msgstr "Uporaba: kcmkpanel [-init | {pult,opcije,namizja,disknav,tema}]\n"
-
-#: main.cpp:124
+#: main.cpp:113
 msgid "KPanel Configuration"
-msgstr "Nastavitve KPulta"
+msgstr "Postavke za KPanel"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Polo¾aj"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "Na &vrhu"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Lijevo"
 
 #: panel.cpp:62
-msgid "Location"
-msgstr "Lega"
-
-#: panel.cpp:67
-msgid "&Top"
-msgstr "&Zgoraj"
-
-#: panel.cpp:68
-msgid "&Left"
-msgstr "&Levo"
-
-#: panel.cpp:69
 msgid "&Bottom"
-msgstr "&Spodaj"
+msgstr "Na &dnu"
 
-#: panel.cpp:70
+#: panel.cpp:63
 msgid "&Right"
 msgstr "&Desno"
 
-#: panel.cpp:80 paneltheme.cpp:187
+#: panel.cpp:75
 msgid "Taskbar"
-msgstr "Opravilna vrstica"
+msgstr "Traka sa zadacima"
 
-#: panel.cpp:85
+#: panel.cpp:76
 msgid "&Hidden"
-msgstr "S&krita"
+msgstr "&Skrivena"
 
-#: panel.cpp:86
+#: panel.cpp:78
 msgid "T&op"
-msgstr "Z&goraj"
+msgstr "Na v&rh"
 
-#: panel.cpp:87
+#: panel.cpp:80
 msgid "Botto&m"
-msgstr "S&podaj"
+msgstr "Na d&no"
 
-#: panel.cpp:88
+#: panel.cpp:82
 msgid "Top/Le&ft"
-msgstr "L&evo-zgoraj"
+msgstr "Vrh/l&ijevo"
 
-#: panel.cpp:98
+#: panel.cpp:95
 msgid "Style"
-msgstr "Stil"
+msgstr "Stil prikaza"
 
-#: panel.cpp:103
+#: panel.cpp:97
 msgid "T&iny"
-msgstr "D&robcen"
+msgstr "Ma&leno"
 
-#: panel.cpp:104
+#: panel.cpp:99
 msgid "&Normal"
-msgstr "&Normalen"
+msgstr "&Normalno"
 
-#: panel.cpp:105
+#: panel.cpp:101
 msgid "L&arge"
-msgstr "&Velik"
+msgstr "Veli&ko"
 
-#: desktops.cpp:74
+#: desktops.cpp:73
 msgid "&Visible"
-msgstr "&Vidna"
+msgstr "&Vidljive povr¹ine"
 
-#: desktops.cpp:83
+#: desktops.cpp:82
 msgid "&Width"
-msgstr "©i&rina"
+msgstr "©&irina"
 
-#: options.cpp:39
+#: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Namigi"
+msgstr "Savjet u izborniku"
 
-#: options.cpp:63
+#: options.cpp:62
 msgid "Show &Menu Tooltips"
-msgstr "Po&ka¾i namige"
+msgstr "Savjet u &izborniku"
 
-#: options.cpp:85
+#: options.cpp:84
 msgid "De&lay:"
-msgstr "&Zakasnitev"
+msgstr "&Ka¹njenje:"
 
-#: options.cpp:92 options.cpp:161 options.cpp:263
+#: options.cpp:91 options.cpp:160 options.cpp:262
 msgid "Small"
-msgstr "Majhen"
+msgstr "Malo"
 
-#: options.cpp:99 options.cpp:168 options.cpp:270
+#: options.cpp:98 options.cpp:167 options.cpp:269
 msgid "Large"
-msgstr "&Velik"
+msgstr "Veliko"
 
-#: options.cpp:111
+#: options.cpp:110
 msgid "Visuals"
-msgstr "Vidni"
+msgstr ""
 
-#: options.cpp:145
+#: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Samodejno skrij &pult"
+msgstr "&Automatski sakrij ploèu"
 
-#: options.cpp:154 options.cpp:256
+#: options.cpp:153 options.cpp:255
 msgid "Delay:"
-msgstr "Zakasnitev:"
+msgstr "Ka¹njenje:"
 
-#: options.cpp:185 options.cpp:287 options.cpp:350
+#: options.cpp:184 options.cpp:286 options.cpp:349
 msgid "Speed:"
-msgstr "Hitrost:"
+msgstr "Brzina:"
 
-#: options.cpp:192 options.cpp:294 options.cpp:357
+#: options.cpp:191 options.cpp:293 options.cpp:356
 msgid "Slow"
-msgstr "Poèasi"
+msgstr "Sporo"
 
-#: options.cpp:199 options.cpp:301 options.cpp:364
+#: options.cpp:198 options.cpp:300 options.cpp:363
 msgid "Fast"
-msgstr "Hitro"
+msgstr "Brzo"
 
-#: options.cpp:247
+#: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Samodejno skrij &opravilno vrstico"
+msgstr "Auto. Sakrij Traku Sa &Zadacima"
 
-#: options.cpp:342
+#: options.cpp:341
 msgid "Animate Show/Hide"
-msgstr "Animiraj prika¾i/skrij"
+msgstr ""
 
-#: options.cpp:396
+#: options.cpp:395
 msgid "Others"
-msgstr "Ostalo"
+msgstr "Druge opcije"
 
-#: options.cpp:409
+#: options.cpp:408
 msgid "Personal Menu Entries &First"
-msgstr "&Najprej osebni menujski vnosi"
+msgstr "Osobne &Prvo"
 
-#: options.cpp:417
+#: options.cpp:416
+#, fuzzy
 msgid "Menu F&olders First"
-msgstr "Najprej &mape"
+msgstr "&Prvo direktoriji"
 
-#: options.cpp:425
+#: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
-msgstr "&Ura ka¾e èas v AM/PM formatu"
+msgstr "Sa&t pokazuje vrijeme u AM/PM formatu"
 
-#: options.cpp:433
+#: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "Ura ka¾e èas v &Internetnih udarcih"
+msgstr "Sat pokazuje vrijeme u &Internet otkucajima"
 
-#: disknav.cpp:39
+#: disknav.cpp:38
 msgid "History"
-msgstr "Zgodovina"
+msgstr "Povijest"
 
-#: disknav.cpp:63
+#: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr "Uredi vnose: (potegni mapo in ustvari povezavo)"
+msgstr "Promijeni "
 
-#: disknav.cpp:65
+#: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "Uresi &osebne..."
+msgstr "Promijeni &osobne..."
 
-#: disknav.cpp:75
+#: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Uredi &deljene..."
+msgstr "Promijeni &djeljene"
 
-#: disknav.cpp:113
+#: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr "Najveè sve¾ih vnosov map:"
+msgstr ""
 
-#: disknav.cpp:122
+#: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr "Najveè sve¾ih vnosov datotek:"
+msgstr ""
 
-#: disknav.cpp:131
+#: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr "Najveè datotek v eni mapi:"
+msgstr ""
 
-#: disknav.cpp:160
+#: disknav.cpp:159
 msgid "Show dot files"
-msgstr "Prika¾i pikèaste datoteke"
+msgstr "Prika¾i datoteke s toèkom"
 
-#: disknav.cpp:167
+#: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr "Ignoriraj velikost èrk pri razvr¹èanju"
+msgstr ""
 
-#: disknav.cpp:174
+#: disknav.cpp:173
 msgid "Show Shared section"
-msgstr "Prika¾i deljen del"
+msgstr ""
 
-#: disknav.cpp:181
+#: disknav.cpp:180
 msgid "Show Personal section"
-msgstr "Prika¾i osebni del"
+msgstr ""
 
-#: disknav.cpp:188
+#: disknav.cpp:187
 msgid "Show Recent section"
-msgstr "Prika¾i del z novimi"
+msgstr ""
 
-#: disknav.cpp:195
+#: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Prika¾i vnos z opcijami"
+msgstr ""
 
-#: disknav.cpp:211
+#: disknav.cpp:210
 msgid "Terminal application:"
-msgstr "Terminalski program:"
-
-#: widgetcanvas.cpp:107 widgetcanvas.cpp:118
-msgid "Cool KDE App"
-msgstr "Kul program KDE"
-
-#: paneltheme.cpp:185
-msgid "Panel"
-msgstr "Pult"
-
-#: paneltheme.cpp:186
-msgid "Icon Background"
-msgstr "Ozadje ikon"
-
-#: paneltheme.cpp:188
-msgid "Taskbar Button"
-msgstr "Gumb opravilne vrstice"
-
-#: paneltheme.cpp:189
-msgid "Taskbar Text"
-msgstr "Besedilo opravilne vrstice"
-
-#: paneltheme.cpp:191
-msgid "Reset this item"
-msgstr "Ponastavi ta element"
-
-#: paneltheme.cpp:193
-msgid "Reset all items"
-msgstr "Ponastavi vse elemente"
-
-#: paneltheme.cpp:194
-msgid "Pixmap:"
-msgstr "Rastrska slika:"
-
-#: paneltheme.cpp:195
-msgid "Color:"
-msgstr "Barva:"
-
-#: paneltheme.cpp:196
-msgid "KPanel Item:"
-msgstr "Element KPulta:"
-
-#: paneltheme.cpp:213
-msgid "KPanel Preview"
-msgstr "Predogled KPulta"
+msgstr "Terminalska aplikacija:"

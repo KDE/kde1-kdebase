@@ -1,154 +1,151 @@
-# KDEBASE translation to Slovenian language.
-# Copyright (C) 1999 Free Software Foundation, Inc.
-# Marko Samastur <markos@elite.org>, 1999
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1999-05-26 01:13+0200\n"
-"PO-Revision-Date: 1999-03-27 11:47+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
-"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1999-04-06 01:17+0200\n"
+"PO-Revision-Date: 1999-01-28 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.C:326
+#: main.C:304
 msgid "&Normal"
-msgstr "Obièaj&no"
+msgstr "&Normalan"
 
-#: main.C:329
+#: main.C:307
 msgid "&Small"
-msgstr "&Majhno"
+msgstr "Ma&li"
 
-#: main.C:330
+#: main.C:308
 msgid "&Medium"
-msgstr "&Srednje"
+msgstr "&Srednji"
 
-#: main.C:331
+#: main.C:309
 msgid "&Large"
-msgstr "&Veliko"
+msgstr "&Veliki"
 
-#: main.C:332
+#: main.C:310
 msgid "&Huge"
-msgstr "&Ogromno"
+msgstr "&Ogromni"
 
-#: main.C:334
+#: main.C:312
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:335
+#: main.C:313
 msgid "Linux (small)"
-msgstr "Linux (majhno)"
+msgstr "Linux (mali)"
 
-#: main.C:338
+#: main.C:316
 msgid "&More ..."
-msgstr "&Veè ..."
+msgstr "&Jo¹ ..."
 
-#: main.C:344
+#: main.C:322
 msgid "&Hide"
-msgstr "S&krij"
+msgstr "&Sakrij"
 
-#: main.C:345
+#: main.C:323
 msgid "&Left"
-msgstr "&Levo"
+msgstr "&Lijevo"
 
-#: main.C:346
+#: main.C:324
 msgid "&Right"
 msgstr "&Desno"
 
-#: main.C:352
+#: main.C:329
 msgid "40x15 (&small)"
-msgstr "40x15 (majhno)"
+msgstr "40x15 (&small)"
 
-#: main.C:353
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:354
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:355
+#: main.C:332
 msgid "80x40 (&xterm)"
-msgstr "80x40 (&xterm)"
+msgstr "80x40 (&xterm"
 
-#: main.C:356
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:365
+#: main.C:342
 msgid "&Menubar"
-msgstr "&Meni vrstica"
+msgstr "Traka sa &izbornicima"
 
-#: main.C:367
+#: main.C:343
 msgid "&Frame"
 msgstr "&Okvir"
 
-#: main.C:369
+#: main.C:344
 msgid "Scroll&bar"
-msgstr "D&rsnik"
+msgstr "&Kliznik"
 
-#: main.C:371
+#: main.C:346
 msgid "BS sends &DEL"
-msgstr "BS po¹lje &DEL"
+msgstr "BS ¹alje &DEL"
 
-#: main.C:373
-msgid "&Insert pastes"
-msgstr "Vnes&i odrezke"
-
-#: main.C:376
+#: main.C:348
 msgid "&Font"
-msgstr "&Pisava"
+msgstr "&Pismo"
 
-#: main.C:377
+#: main.C:349
 msgid "&Size"
-msgstr "Veliko&st"
+msgstr "&Velièina"
 
-#: main.C:378
+#: main.C:350
 msgid "&Schema"
-msgstr "&Shema"
+msgstr "&Raspored"
 
-#: main.C:380
+#: main.C:352
 msgid "&Save options"
-msgstr "&Shrani opcije"
+msgstr " &Spremi opcije"
 
-#: main.C:384
+#: main.C:356
 msgid "&About ..."
 msgstr "&O ..."
 
-#: main.C:385
+#: main.C:357
 msgid "&User's Manual ..."
-msgstr "&Uporabni¹ki priroènik ..."
+msgstr "&Upute ..."
 
-#: main.C:386
+#: main.C:358
 msgid "&Technical Reference ..."
-msgstr "&Tehnièna referenca ..."
+msgstr "&Tehnièke upute "
 
-#: main.C:390
+#: main.C:362
 msgid "cd"
 msgstr "cd"
 
-#: main.C:403
+#: main.C:375
 msgid "Sessions"
-msgstr "Seje"
+msgstr "Sesije"
 
-#: main.C:588
+#: main.C:527
+#, c-format
 msgid ""
-"Font `%1' not found.\n"
+"Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
-"Pisave ,%1` ni mo¾no najti.\n"
-"Preberite README.linux.console za pomoè."
+"Pismo `%s' nije pronaðeno.\n"
+"Pogledaj README.linux.console za pomoæ."
 
-#: main.C:694
+#: main.C:647
 #, c-format
-msgid "About %1"
-msgstr "O %1"
+msgid "About %s"
+msgstr "O %s"
 
-#: main.C:696
+#: main.C:649
+#, c-format
 msgid ""
-"%1 version %2 - an X terminal\n"
+"%s version %s - an X terminal\n"
 "\n"
 "Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
@@ -157,27 +154,28 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
-"%1 verzija %2 - X terminal\n"
+"%s inaèica %s - X terminal\n"
 "\n"
-"Avtorske pravice (c) 1998 Lars Doelle <lars.doelle@on-line.de>\n"
+"Copyright (c) 1998 od Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
-"Ta program je prosto programje pod\n"
-"pogoji Artistic License in pride\n"
-"BREZ VSAKR©NIH JAMSTEV.\n"
-"Preberite `LICENSE.readme´ za podrobnosti."
+"Ovaj program je slobodni program po\n"
+"uvjetima Artistic Licence i dolazi\n"
+"BEZ IKAKVE GARANCIJE.\n"
+"Pogledajte `License.readme´ za detalje"
 
-#: main.C:822
-msgid "`%1' terminated abnormally."
-msgstr ",%1` se je konèal nenormalno."
+#: main.C:779
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr "`%s´ zavr¹en nenormalno."
 
-#: main.C:825
+#: main.C:782
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
 "\n"
-"Izhodna koda = "
+"Povratni kod = "
 
-#: main.C:1019
+#: main.C:979
 msgid "Welcome to the console"
-msgstr "Dobrodo¹li na konzoli"
+msgstr "Dobro do¹li u konzolu"

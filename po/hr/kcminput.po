@@ -1,62 +1,61 @@
-# KCMINPUT translation to Slovene language.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# luka steger <luka_steger@hotmail.com>, 1998.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1999-01-23 14:01+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
-"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"PO-Revision-Date: 1998-10-15 15:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:56
+#: main.cpp:54
 msgid "&Mouse"
-msgstr "&Mi¹ka"
+msgstr "&Mi¹"
 
-#: main.cpp:59
+#: main.cpp:57
 msgid "&Keyboard"
-msgstr "Tip&kovnica"
+msgstr "&Tipkovnica"
 
-#: main.cpp:65
+#: main.cpp:63
 msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
-msgstr "Uporaba: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "uporaba: kcminput [-init | {mi¹,tipkovnica}]\n"
 
-#: main.cpp:106
+#: main.cpp:104
 msgid "Input Devices Properties"
-msgstr "Lastnosti vhodnih naprav"
+msgstr "Postavke ulaznih ureðaja"
 
 #: mouse.cpp:68
 msgid "Acceleration"
-msgstr "Pospe¹itev"
+msgstr "Ubrzanje"
 
 #: mouse.cpp:71
 msgid "Threshold"
-msgstr "Meja pospe¹itve"
+msgstr "Prag"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr "toèke"
+msgstr "toèki"
 
 #: mouse.cpp:81
 msgid "Button mapping"
-msgstr "Nastavitev gumbov"
+msgstr "Mapiranje gumbi"
 
 #: mouse.cpp:83
 msgid "Right handed"
-msgstr "Za desnièarje"
+msgstr "De¹njak"
 
 #: mouse.cpp:85
 msgid "Left handed"
-msgstr "Za levièarje"
+msgstr "Ljevak"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"
-msgstr "Ponavljanje znakov"
+msgstr "Ispisuj dok god tipka pritisnuta"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Glasnost zvoka ob tipkanju"
+msgstr "Volumen kod pritiska tipke"

@@ -1,18 +1,17 @@
-# KDEBASE translation to Slovenian language.
-# Copyright (C) 1999 Free Software Foundation, Inc.
-# Marko Samastur <markos@elite.org>, 1999
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmsample\n"
-"POT-Creation-Date: 1999-07-05 01:32+0200\n"
-"PO-Revision-Date: 199-03-26 21:11+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
-"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1997-12-29 17:43+0100\n"
+"PO-Revision-Date: 1998-10-15 15:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:30
+#: main.cpp:29
 msgid "KDE Control Application Sample"
-msgstr "Primer krmilnega namenskega programa KDE"
+msgstr "Ogled KDE kontrolne aplikacije"
