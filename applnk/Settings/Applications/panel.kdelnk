@@ -34,6 +34,7 @@ Comment[pl]=Konfiguracja panelu
 Comment[zh_CN.GB2312]=й╧сц╢кеДжцю╢©ьжфцФ╟Е╣дмБ╧ш
 Comment[sv]=HДr kan du stДlla in hur panelen ska se ut
 Comment[ru]=Вы можете сконфигурировать, как будет выглядеть панель
+Comment[fi]=Voit asettaa paneelin ulkonДkЖД
 SwallowTitle=Panel Options
 SwallowTitle[de]=Panel-Optionen
 SwallowTitle[pt]=OpГУes do Painel
@@ -47,6 +48,7 @@ SwallowTitle[zh_CN.GB2312]=цФ╟ЕиХжц
 SwallowTitle[ro]=OpЧiunile Panoului
 SwallowTitle[sv]=PanelinstДllningar
 SwallowTitle[ru]=Опции панели
+SwallowTitle[fi]=Paneelin asetukset
 Icon=panel_settings.xpm
 Exec=kcmkpanel
 

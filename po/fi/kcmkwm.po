@@ -120,7 +120,7 @@ msgstr "&Aktiivinen kuva"
 
 #: titlebar.cpp:967
 msgid "&Inactive pixmap"
-msgstr "&Poissaoleva kuva"
+msgstr "&Ei-aktiivinen kuva"
 
 #: titlebar.cpp:983
 msgid "Mouse action"
@@ -140,7 +140,7 @@ msgstr "Suurenna/Pienennä"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
 msgid "Move"
-msgstr ""
+msgstr "Siirrä"
 
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -184,7 +184,7 @@ msgstr "Animaatio:"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "Ei ollenkaan"
 
 #: windows.cpp:92
 msgid "Fast"

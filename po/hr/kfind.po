@@ -5,11 +5,14 @@ msgstr ""
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-10-01 16:40:07+0200\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"        
 "From: root <flidr@CyberGate.zcu.cz>\n"
 "Xgettext-Options: -s -C -ktranslate\n"
 "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
 "mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -61,7 +64,7 @@ msgstr "&Inverzija oznaèenog"
 
 #: kfindtop.cpp:171
 msgid "&Preferences ..."
-msgstr "Po&de¹avanja"
+msgstr "Pos&tavke ..."
 
 #: kfindtop.cpp:176
 #, c-format
@@ -118,7 +121,7 @@ msgstr "Po&tra¾i..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
-msgstr "Ukljuèi &poddirektorije"
+msgstr "Tra¾i kroz &poddirektorije"
 
 #: kftabdlg.cpp:114
 msgid " Name& Location "
@@ -198,7 +201,7 @@ msgstr "SUID izvr¹ne datoteke"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(nikakva)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

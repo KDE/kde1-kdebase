@@ -6,14 +6,17 @@ Name=File Manager
 Name[no]=Filbehandler
 Name[pt_BR]=Gerenciador de Arquivos
 Name[ru]=Менеджер Файлов
+Name[fi]=Tiedostonhallinta
 Comment=You can configure here the filemanagers look and feel
 Comment[no]=Her kan du konfigurere hvordan skal filbehandleren skal se ut og fЬles
 Comment[pt_BR]=VocЙ pode configurar aqui o funcionamento do gerenciador de arquivos
 Comment[ru]=Вы можете сконфигурировать как будет выглядеть менеджер файлов
+Comment[fi]=Voit asettaa tiedostonhallinnan ulkonДkЖД
 SwallowTitle=File Manager Options
 SwallowTitle[no]=Filbehandlervalg
 SwallowTitle[pt_BR]=OpГУes do Gerenciador de Arquivos
 SwallowTitle[ru]=Опции Менеджера Файлов
+SwallowTitle[fi]=Tiedostonhallinnan asetukset
 Icon=kfm.xpm
 Exec=kcmkfm
 

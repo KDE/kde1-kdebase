@@ -57,4 +57,5 @@ SwallowTitle[zh_CN.GB2312]=вюцФ╠Ё╬╟
 SwallowTitle[sv]=Skrivbordsbakgrund
 SwallowTitle[ro]=Fundalul Ecranului
 SwallowTitle[ru]=Фон рабочего стола
+SwallowTitle[fi]=TyЖpЖydДn tausta
 Init=kcmdisplay -init

@@ -146,14 +146,12 @@ msgid "Select fonts"
 msgstr "Valitse kirjasin"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Esimerkki:"
+msgstr "Esimerkki"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "vaihda kirjasinta"
+msgstr "vaihda kirjasin..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -169,24 +167,23 @@ msgstr "Vakio"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Esikatselu"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "V‰ri"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "V‰ri"
+msgstr "Yksiv‰rinen"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Vaakasekoitus"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Pystysekoitus"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -194,42 +191,39 @@ msgstr "Taustakuva"
 
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr ""
+msgstr "Ei mik‰‰n"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
-msgstr "Lomitettu"
+msgstr "Lomita"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
-msgstr "Keskitetty"
+msgstr "Keskit‰"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Venytetty"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Yl‰vasen"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Yl‰oikea"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Alavasen"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Alaoikea"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Hieno"
 
 #: kdm-users.cpp:48
 msgid "All users"

@@ -27,9 +27,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak '%s' ne postoji"
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Novi"
+msgstr "&Novi"
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -56,9 +55,8 @@ msgid "&Select"
 msgstr "&Oznaèi"
 
 #: kfmgui.cpp:341
-#, fuzzy
 msgid "Select &all"
-msgstr "&Oznaèi"
+msgstr "Oznaèi &sve"
 
 #: kfmgui.cpp:344
 msgid "Mime Types"
@@ -213,12 +211,11 @@ msgstr "Gore"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Naprijed"
 
 #: kfmgui.cpp:538
-#, fuzzy
 msgid "Home"
-msgstr "&Moj Dom"
+msgstr "Poèetak"
 
 #: kfmgui.cpp:595
 msgid "Could not load icon\n"
@@ -244,7 +241,7 @@ msgstr "Nisam mogao naæi ikonu\n"
 #: root.cpp:874 root.cpp:1135 root.cpp:1153 root.cpp:1159 root.cpp:1165
 #: root.cpp:1246 root.cpp:1757 root.cpp:1782
 msgid "KFM Error"
-msgstr ""
+msgstr "KFM Gre¹ka"
 
 #: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
@@ -293,9 +290,8 @@ msgid "Document: Done"
 msgstr "Dokument: Gotov"
 
 #: kfmview.cpp:350 root.cpp:875
-#, fuzzy
 msgid "ERROR: You may only drop URLs"
-msgstr "GRE©KA: Ispustili ste URL na njega samog"
+msgstr "GRE©KA: Mo¾ete samo ispustiti URLove"
 
 #: kfmview.cpp:366
 msgid "ERROR: Drop over malformed URL"
@@ -509,7 +505,7 @@ msgstr "Otvori s"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Premjesti"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -525,15 +521,15 @@ msgstr "Dodaj Oznakama"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Mali"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Srednji"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Veliki"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -576,18 +572,16 @@ msgid "Transparent Text for Root Icons."
 msgstr "Prozirni tekst za korijenske ikone."
 
 #: kfmdlg.cpp:114
-#, fuzzy
 msgid "&Browser"
-msgstr "Potra¾i"
+msgstr "&Preglednik"
 
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
 msgstr "Ne mogu zapisati oznaku"
 
 #: kfmprops.cpp:234
-#, fuzzy
 msgid "Name"
-msgstr "Puno ime"
+msgstr "Ime"
 
 #: kfmprops.cpp:251
 msgid "Full Name"
@@ -699,9 +693,8 @@ msgid "Ownership"
 msgstr "Vlasni¹tvo"
 
 #: kfmprops.cpp:504
-#, fuzzy
 msgid "Owner"
-msgstr "Vlasni¹tvo"
+msgstr "Vlasnik"
 
 #: kfmprops.cpp:628
 msgid ""
@@ -1269,11 +1262,11 @@ msgstr "Poku¹avam otvoriti"
 
 #: useragentdlg.cpp:20
 msgid "On server:"
-msgstr "Na poslu¾itelju:"
+msgstr "Poslu¾itelj"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "prijavi se kao:"
+msgstr "prijavi kao"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
@@ -1289,7 +1282,7 @@ msgstr "Koristi proxy"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
-msgstr "Nema Proxya za:"
+msgstr "Direktno za:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
@@ -1329,7 +1322,7 @@ msgstr "Pretpostavi da je HTML"
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Ova grupa je prazna!"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1396,12 +1389,3 @@ msgid ""
 msgstr ""
 "Sintaktièka pogre¹ka:\n"
 "kfmexec naredba [URLovi ....]\n"
-
-#~ msgid "&Quit..."
-#~ msgstr "&Zavr¹i"
-
-#~ msgid "&About..."
-#~ msgstr "&O..."
-
-#~ msgid "About KFM"
-#~ msgstr "&O KFMu"

@@ -28,9 +28,8 @@ msgid "ERROR: Template does not exist '%s'"
 msgstr "VIRHE: Pohjaa '%s' ei löydetty."
 
 #: kfmgui.cpp:304
-#, fuzzy
 msgid "&New"
-msgstr "Uusi "
+msgstr "&Uusi "
 
 #: kfmgui.cpp:309
 msgid "&Run..."
@@ -213,7 +212,7 @@ msgstr "Ylös"
 
 #: kfmgui.cpp:533 kfmman.cpp:1079
 msgid "Forward"
-msgstr ""
+msgstr "Eteen"
 
 #: kfmgui.cpp:538
 msgid "Home"
@@ -507,7 +506,7 @@ msgstr "Avaa sovelluksessa"
 
 #: kfmman.cpp:1245 kfmtree.cpp:155 main.cpp:237
 msgid "Move"
-msgstr ""
+msgstr "Siirrä"
 
 #: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
@@ -523,15 +522,15 @@ msgstr "Lisää osoitekirjaan"
 
 #: htmlopts.cpp:39
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: htmlopts.cpp:43
 msgid "Medium"
-msgstr ""
+msgstr "Keskikokoinen"
 
 #: htmlopts.cpp:47
 msgid "Large"
-msgstr ""
+msgstr "Suuri"
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -1396,11 +1395,3 @@ msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URL ....]\n"
 
-#~ msgid "&Quit..."
-#~ msgstr "&Lopeta"
-
-#~ msgid "&About..."
-#~ msgstr "&Tietoja"
-
-#~ msgid "About KFM"
-#~ msgstr "Tietoja KFM:tä"

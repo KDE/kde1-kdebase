@@ -4,6 +4,7 @@ Authors=Lars Knoll <knoll@mpi-hd.mpg.de>,
 
 Language=Hebrew
 Language[ru]=Еврейский
+Language[fi]=Heprea
 
 Label=He
 Locale=he

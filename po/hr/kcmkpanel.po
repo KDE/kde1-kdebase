@@ -1,17 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Vladimir Vuksan <vuksan@veus.hr>, 1998.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"        
 
 #: main.cpp:64
 msgid "&Panel"
@@ -23,16 +22,15 @@ msgstr "&Radne povr¹ine"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "&Navigator diska"
 
 #: main.cpp:79
-#, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine}]\n"
+msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
-msgstr "KPanel Postava"
+msgstr "Postavke KPanel"
 
 #: panel.cpp:59
 msgid "Location"
@@ -52,7 +50,7 @@ msgstr "&Dno"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Desno"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -76,7 +74,7 @@ msgstr "Vrh/L&ijevo"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -108,7 +106,7 @@ msgstr "Savjet u &izborniku"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr "&ka¹njenje "
+msgstr "&Ka¹njenje:"
 
 #: options.cpp:56
 msgid "ms"
@@ -144,8 +142,8 @@ msgstr "&12satni AM/PM"
 
 #: disknav.cpp:43
 msgid "Edit &Global..."
-msgstr ""
+msgstr "Promijeni &Globalno..."
 
 #: disknav.cpp:46
 msgid "Edit &Local..."
-msgstr ""
+msgstr "Promijeni &Lokalno"

@@ -59,4 +59,5 @@ SwallowTitle[zh_CN.GB2312]=вюцФяуи╚
 SwallowTitle[sv]=SkrivbordsfДrger
 SwallowTitle[ro]=Culorile Ecranului
 SwallowTitle[ru]=Цвета рабочего стола
+SwallowTitle[fi]=TyЖpЖydДn vДrit
 Init=kcmdisplay -init

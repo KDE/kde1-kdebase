@@ -24,39 +24,39 @@ msgstr "&Prosessori"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Keskeytykset"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "&DMA-kanavat"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO-portit"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&Väylä"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Ääni"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Laitteet"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "&SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&artitiot"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-palvelin"
 
 #: main.cpp:120
 msgid ""
@@ -64,6 +64,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"käyttö: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -102,24 +105,3 @@ msgstr "%10ld tavua  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Ei saatavilla"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "käyttö: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Järjestelmää ei vielä tueta :-("
-
-#~ msgid "Not Available"
-#~ msgstr "Ei saatavilla"
-
-#~ msgid "File Error!"
-#~ msgstr "Tiedostovirhe!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "En voi lukea /proc/cpuinfo"
-
-#~ msgid "%s, unknown speed"
-#~ msgstr "%s, tuntematon nopeus"
-
-#~ msgid "%s running at %s MHz"
-#~ msgstr "%s käyttää %s MHz"

@@ -169,7 +169,7 @@ msgstr "Tyyppi:"
 
 #: entrydialog.cpp:69
 msgid "File Name:"
-msgstr "Tiedoston nimi:"
+msgstr "Tiedosto:"
 
 #: entrydialog.cpp:82
 msgid "Name:"

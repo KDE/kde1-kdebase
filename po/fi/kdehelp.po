@@ -43,9 +43,8 @@ msgid "Continue search from the top of the page?"
 msgstr "Jatka etsimistä sivun alusta?"
 
 #: helpwin.cpp:1309
-#, fuzzy
 msgid "Forward"
-msgstr "&Eteenpäin"
+msgstr "Eteenpäin"
 
 #: helpwin.cpp:1330
 msgid "Open this Link"
@@ -85,15 +84,15 @@ msgstr "Varoitus: "
 
 #: options.cpp:40
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: options.cpp:44
 msgid "Medium"
-msgstr ""
+msgstr "Keskikoko"
 
 #: options.cpp:48
 msgid "Large"
-msgstr ""
+msgstr "Suuri"
 
 #: options.cpp:52
 msgid "Standard Font"
@@ -173,7 +172,7 @@ msgstr "Järjestelmän ylläpito"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -242,13 +241,12 @@ msgid "&Up"
 msgstr "&Ylös"
 
 #: mainwidget.cpp:160
-#, fuzzy
 msgid "&Previous"
-msgstr "Edellinen solmu"
+msgstr "&Edellinen"
 
 #: mainwidget.cpp:161
 msgid "&Next"
-msgstr ""
+msgstr "&Seuraava"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."
@@ -360,6 +358,3 @@ msgstr "Eroittele isot ja pienet"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "&Etsi"
-
-#~ msgid "&Contents"
-#~ msgstr "&Sisältö"

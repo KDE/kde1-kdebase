@@ -55,7 +55,7 @@ msgstr "Sis‰‰nkirjoittautuminen ei ole mahdollista nyt."
 
 #: kgreeter.cpp:494
 msgid "bah"
-msgstr ""
+msgstr "hah"
 
 #: kgreeter.cpp:547 kgreeter.cpp:574
 msgid "Sorry -- your account has expired."

@@ -58,4 +58,5 @@ SwallowTitle[zh_CN.GB2312]=вюцФфад╩╠ё╩╓ЁлпР
 SwallowTitle[sv]=SkДrmslДckare
 SwallowTitle[ro]=Configurare ScriinSeivЦr
 SwallowTitle[ru]=Чранитель экрана рабочего стола
+SwallowTitle[fi]=TyЖpЖydДn ruudunsДДstДjД
 Init=kcmdisplay -init

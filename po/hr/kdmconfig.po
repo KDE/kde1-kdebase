@@ -1,17 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Vladimir Vuksan <vuksan@veus.hr>, 1998
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Project-Id-Version: kdebase\n"
+"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"        
 
 #: main.cpp:87
 msgid "&Appearance"
@@ -37,7 +36,7 @@ msgstr ""
 
 #: main.cpp:145
 msgid "KDM Configuration"
-msgstr "KDM Postava"
+msgstr "KDM Postavke"
 
 #: main.cpp:155
 msgid ""
@@ -77,11 +76,11 @@ msgstr "Windows"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Jezik"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Jezik:"
 
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
 msgid ""
@@ -145,14 +144,12 @@ msgid "Select fonts"
 msgstr "Izaberi pisma"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
-msgstr "Primjer:"
+msgstr "Primjer"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
-msgstr "Promijeni pismo"
+msgstr "Promijeni pismo..."
 
 #: kdm-font.cpp:57
 msgid "Greeting"
@@ -168,24 +165,23 @@ msgstr "Standardni"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Pregled"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Boja"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Boja"
+msgstr "Puna Boja"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Mije¹aj vodoravno"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Mije¹aj okomito"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -196,39 +192,36 @@ msgid "None"
 msgstr "Nikakva"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
-msgstr "Poploèan"
+msgstr "Poploèaj"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
-msgstr "Centriran"
+msgstr "Centriraj"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "U mjerilu"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "VrhLijevo"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "VrhDesno"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "DnoLijevo"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "DnoDesno"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "©areno"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -275,7 +268,6 @@ msgid "Save image as default image?"
 msgstr "Pospremi "
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
 msgstr "Dozvoli ga¹enje"
 
@@ -293,7 +285,7 @@ msgstr "Samo konzola"
 
 #: kdm-sess.cpp:63
 msgid "Commands"
-msgstr "Komande"
+msgstr "Naredbe"
 
 #: kdm-sess.cpp:64
 msgid "Shutdown"
@@ -317,10 +309,4 @@ msgstr "Dostupni tipovi"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
-
-#~ msgid "&Fonts"
-#~ msgstr "&Pisma"
-
-#~ msgid "Appearance"
-#~ msgstr "Izgled"
+msgstr "bezimeno!"

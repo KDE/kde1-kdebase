@@ -24,7 +24,7 @@ msgstr "J‰rjestelm‰n ‰‰net"
 
 #: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
 msgid "(none)"
-msgstr ""
+msgstr "(ei mik‰‰n)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"

@@ -22,39 +22,39 @@ msgstr "&Procesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "&Interupti"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-ka&nali"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "&IO-Portovi"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&sabirnica"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "&Zvuk"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "&Ureðaji"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&articije"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-poslu¾itelj"
 
 #: main.cpp:120
 msgid ""
@@ -62,6 +62,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"uporaba: kcminfo [-init | "
+"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureðaji,scsi,particije,x"
+"poslu¾itelj}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -100,13 +103,3 @@ msgstr "%10ld bajtova  = %8.2f MB"
 #: memory.cpp:105
 msgid "Not available"
 msgstr "Nije dostupno"
-
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "kor¹tenje: kcminfo [-init | {procesor,memorija}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Ovaj sustav nije podr¾an :-("
-
-#, fuzzy
-#~ msgid "Not Available"
-#~ msgstr "Nije dostupno"

@@ -4,10 +4,12 @@
 Comment=Programmers Keyboard
 Comment[cs]=ProgramАtorskА klАvesnice
 Comment[ru]=Клавиатура програмиста
+Comment[fi]=Ohjelmoijan nДppДimistЖ
 
 Language=Czech
 Language[no]=Tjekkisk
 Language[ru]=Чешский
+Language[fi]=Tsekki
 
 Label=Csp
 Locale=cs

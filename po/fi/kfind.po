@@ -199,7 +199,7 @@ msgstr "SUID suoritettava tiedosto"
 
 #: kftabdlg.cpp:246
 msgid "(none)"
-msgstr ""
+msgstr "(ei mik‰‰n)"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

@@ -8,6 +8,7 @@ Comment=This is the same as EN and should be deprecated.
 Language=English
 Language[no]=Engelsk
 Language[ru]=Английский
+Language[fi]=Englanti
 
 Label=En
 Locale=en

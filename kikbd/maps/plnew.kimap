@@ -6,10 +6,12 @@ Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 Comment=New "programmer's" keyboard
 Comment[ru]=Новая клавиатура програмиста
 Comment[pl]=Klawiatura programisty
+Comment[fi]=Ohjelmoijan nДppДimistЖ
 
 Language=Polish
 Language[no]=Polsk
 Language[ru]=Польский
+Language[fi]=Puola
 
 Label=nPl
 Locale=pl

@@ -23,9 +23,8 @@ msgid "&Global shortcuts"
 msgstr "&Yleiset lyhytvalinnat"
 
 #: main.cpp:76
-#, fuzzy
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
-msgstr "käyttö: kcmdisplay [-init | {standard,global}]\n"
+msgstr "käyttö: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
@@ -33,27 +32,27 @@ msgstr "Näppäinsidosten asetukset"
 
 #: standard.cpp:53
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 #: standard.cpp:57
 msgid "Next"
-msgstr ""
+msgstr "Seuraava"
 
 #: standard.cpp:58
 msgid "Prior"
-msgstr ""
+msgstr "Edellinen"
 
 #: standard.cpp:63
 msgid "Find"
-msgstr ""
+msgstr "Etsi"
 
 #: standard.cpp:66
 msgid "Home"
-msgstr "Home"
+msgstr "Alku"
 
 #: standard.cpp:67
 msgid "End"
-msgstr "End"
+msgstr "Loppu"
 
 #: global.cpp:81 standard.cpp:83
 msgid "Current scheme"

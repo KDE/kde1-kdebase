@@ -21,9 +21,8 @@ msgid "Setup kbanner"
 msgstr "Namjesti kbanner"
 
 #: banner.cpp:95
-#, fuzzy
 msgid "Family:"
-msgstr "Gre¹ka"
+msgstr "Obitelj:"
 
 #: banner.cpp:114 science.cpp:1036
 msgid "Size:"
@@ -35,7 +34,7 @@ msgstr "Boja:"
 
 #: banner.cpp:147
 msgid "Bold"
-msgstr ""
+msgstr "Masno"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -404,7 +403,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opcija %s nije podr¾ana na ovoj platformi!"
 
 #: main.cpp:378
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -412,10 +410,10 @@ msgid ""
 "Please contact your system administrator,\n"
 "tell him, that you need suid for the screensavers!"
 msgstr ""
+"Upozorenje: Ne mo¾ete zakljuèati zaslon!\n" 
+"\n"
 "Va¹ sistem koristi skrivene (shadow) lozinke!\n"
 "Molim kontaktirajte svojeg administratora.\n"
-"\n"
-"Recite mu/joj da trebate suid za¹titu zaslona (screensaver)!"
 
 #: main.cpp:383
 msgid "Shadow Passwords"
@@ -428,9 +426,11 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"molim nemojte koristiti -test zajedno s -lock.\n"
+"umjesto toga koristite klock.\n"
 
 #: main.cpp:536
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
@@ -439,7 +439,6 @@ msgstr ""
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:539
-#, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -469,6 +468,7 @@ msgstr ""
 "  -desc             Print the screen saver's description to stdout\n"
 "  -install          Install screen saver\n"
 "  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
 "  -nice num         Run with specified nice value\n"
 "\n"
 "  -preview wid      Run in the specified XWindow\n"
@@ -511,24 +511,20 @@ msgstr ""
 "Prilagodio za kscreensave Emanuel Pirker."
 
 #: pipes.cpp:299
-#, fuzzy
 msgid "Pipes (GL)"
-msgstr "Svemir (GL)"
+msgstr "Cijevi (GL)"
 
 #: pipes.cpp:672
-#, fuzzy
 msgid "Setup KPipes"
-msgstr "Podesi KSlip"
+msgstr "Podesi KCijevi"
 
 #: pipes.cpp:678
-#, fuzzy
 msgid "Number of Pipes"
-msgstr "Broj Pèela:"
+msgstr "Broj cijevi"
 
 #: pipes.cpp:743
-#, fuzzy
 msgid "About KPipes"
-msgstr "O Linijama"
+msgstr "O KCijevi"
 
 #: pipes.cpp:745
 msgid ""
@@ -536,6 +532,10 @@ msgid ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
+"KCijevi\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -547,7 +547,7 @@ msgstr "Podesi Poligon"
 
 #: polygon.cpp:107
 msgid "Vertices:"
-msgstr "Vrhovi:"
+msgstr "Vrhovi"
 
 #: polygon.cpp:238
 msgid "About Polygon"
@@ -608,9 +608,8 @@ msgid "Setup krock"
 msgstr "Podesi Stijenu"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Naèin:"
+msgstr "Premjesti"
 
 #: rock.cpp:595
 msgid "Rotate"

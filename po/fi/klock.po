@@ -612,9 +612,8 @@ msgid "Setup krock"
 msgstr "Aseta tähtiä"
 
 #: rock.cpp:589
-#, fuzzy
 msgid "Move"
-msgstr "Tyyli:"
+msgstr "Siirrä"
 
 #: rock.cpp:595
 msgid "Rotate"

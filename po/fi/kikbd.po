@@ -225,23 +225,23 @@ msgstr "Tilastot:  "
 
 #: kikbdconf.cpp:350
 msgid "symbols"
-msgstr "symbolit"
+msgstr "symbolia"
 
 #: kikbdconf.cpp:353
 msgid "codes"
-msgstr "koodit"
+msgstr "koodia"
 
 #: kikbdconf.cpp:356
 msgid "alternative symbols"
-msgstr "vaihtoehtoiset symbolit"
+msgstr "vaihtoehtoista symbolia"
 
 #: kikbdconf.cpp:363
 msgid "language"
-msgstr "kieli"
+msgstr " "
 
 #: kikbdconf.cpp:364
 msgid "charset"
-msgstr "kirjsainperhe"
+msgstr "kirjasinperhe"
 
 #: kikbdconf.cpp:402
 msgid "International keyboard ERROR"

@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpanel.C:232
 msgid "Move"
-msgstr ""
+msgstr "Siirrä"
 
 #: kpanel.C:272
 msgid "Go!"
@@ -136,9 +136,3 @@ msgstr "(Lukukelvoton)"
 #: pfilemenu.C:427
 msgid "Open Folder"
 msgstr "Avaa kansio"
-
-#~ msgid "KFM Information"
-#~ msgstr "KFM Tietoja"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Luon hakemistoa:\n"
