@@ -1,0 +1,174 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - KFM 
+<author>David Faure 
+<htmlurl url="mailto:faure@kde.org"
+name="faure@kde.org">
+<date>v0.1. 18 December 1998
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect> KFM Configuration: Fonts
+<p>
+In this screen, you can customize the Fonts
+used by the File Manager and other KDE applications.
+
+<itemize>
+<item>The "<bf>Font Size</bf> button selects between
+Small/Medium/Large Font sizes.
+
+<item>The pull-down "<bf>Standard Font</bf>" list allows the
+standard (proportional spacing) font to be chosen.
+
+<item>The pull-down "<bf>Fixed Font</bf>" list allows the
+font for displaying text with fixed spacing  to be chosen.
+
+<item>The pull-down "<bf>Default Charset</bf>" list allows the
+default character set  for displaying text to be chosen.
+If "<bf>Use Language Charset</bf>" is chosen, no default character
+set will be selected, and the character set appropriate
+for your Language setting will be used.
+</itemize>
+
+
+
+<sect> KFM Configuration: Color
+<p>
+In this screen you can customize the File Manager
+color settings.  When you click on a color box, the "Select
+Color"screen allows you to select a color for the corresponding
+item.
+
+<itemize>
+<item> "<bf>Background Color</bf>" 
+is the color of the background
+in a File Manager window.
+
+<item> "<bf>Normal Text Color</bf>
+is the color used for displaying normal clickable hypertext
+links for moving around within a hypertext document.
+
+<item> "<bf>URL Link Color</bf>" is the color
+in which clickable URL links (to local files, or
+Internet addresses) are shown, <it>before</it> the
+link is followed.
+
+<item> "<bf>Followed  Link Color</bf>" is the color
+in which clickable  links (both URL links, and
+Normal Text links) are shown, <it>after</it> the
+link has been followed.
+</itemize>
+
+Two further buttons control how links are displayed:
+
+<itemize>
+<item>If "<bf>Change cursor over link</bf>" is selected, the cursor
+changes from an arrow to a pointing hand when it is
+over a clickable link.
+
+<item>If "<bf>Underline links</bf>" is selected, clickable
+links are underlined.
+
+</itemize>
+
+<sect> KFM File Manager Configuration: Other
+<p>
+<itemize>
+<item> "<bf>Allow per-URL settings</bf>"
+means allow to save settings (whether menubar, toolbar, statusbar, and URL are
+shown or hidden, the window size, all the options from the 'View' menu, ...)
+as settings for a given URL. This can be, for example, any directory on your
+disk where you have write access, or any URL (directory or even Web URL) which
+has a shortcut on your desktop or which you have bookmarked.
+
+<item> If "<bf>Tree view follows navigation</bf>" is selected, the tree view
+(the one on the left when it is enabled) will open the directories you enter in 
+the right view. However, it will never close them by itself, so that you can go 
+in a previous directory easily, by finding it in the tree.
+
+</itemize>  
+In the "<bf>terminal</bf>" box, you can type the command that
+will be  executed to provide a terminal whenever you select
+"Open Terminal" in the File Manager "File" menu, and when an application is
+about to be run in a terminal by the file manager.
+The default terminal application is <tt>konsole</tt>.
+
+
+<sect> KFM Web Browser Configuration: Proxy
+<p>
+FIXME: documentation needed
+
+<sect> KFM Web Browser Configuration: HTTP
+<p>
+FIXME: documentation needed
+
+<sect> KFM Web Browser Configuration: User Agent
+<p>
+What is the "UserAgent" string ?
+Here is what Kalle Dalheimer said about it :
+
+Some web servers send you different pages depending on which browser you
+use. Every browser sends a so-called "UserAgent" string (e.g. for
+Netscape, this string is "Mozilla" plus some version information), and
+servers can evaluate this. For example, there was a time when the web
+server serving www.microsoft.com returned pages with error messages on
+purpose when you browsed the site with Netscape Navigator. Another
+example: some webmasters tend to think that only Navigator and Internet
+Exploder can handle frames, thus, they automatically send non-frame
+versions to all other browsers, whether they can handle frames or not.
+ 
+I have written this dialog (and Torben has integrated it into kfm) so
+that you can determine yourself which UserAgent string kfm sends (the
+default, as you can see, is "Konqueror" plus version information, a
+conqueror of course being the next one in the row navigator-explorer-).
+Unlike with other browsers, this dialog even allows you to set a certain
+UserAgent string for a specific web site. Thus, you can tell the web
+server at www.microsoft.com that you are an Internet Exploder, the web
+server at www.netscape.com that you are a Navigator and all others that
+you are a honest web browser :-)
+
+<sect> KFM Configuration: Desktop Icons
+<p>
+In this screen, you can control the default spacing of the icons
+on your KDE desktop, and how their names are displayed.
+
+<itemize>
+<item> Specify the "<bf>Horizontal Root Grid Spacing</bf>" and
+the  "<bf>Vertical Root Grid Spacing</bf>" to chose the hidden
+grid on which the desktop icons will, by default,  be placed.
+
+<item> The icon names appear as text below the icon. 
+By default, the text appears on a small opaque rectangular
+background that hides the Desktop wallpaper below. 
+To remove this background, press the 
+"<bf>Transparent Text for Desktop Icons</bf>"
+button.
+
+<item> Click on the "<bf>Icon foreground color</bf>" box to 
+chose the color of the text giving the icon name.
+
+<item> Click on the box "<bf>Icon background color</bf>" to 
+chose the color of the background on  which the icon name is written.
+(Inactive if "Transparent Text for Desktop Icons" is selected.)
+
+</itemize>
+
+Click on "<bf>Apply</bf>" to apply configuration changes to
+your current desktop.   "<bf>OK</bf>" applies the changes and  exits,
+while "<bf>Cancel</bf>" exits without applying the changes.
+
+</article>
+
+
+
+
+
+
+
