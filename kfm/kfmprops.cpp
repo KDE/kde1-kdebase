@@ -997,22 +997,25 @@ void ExecPropsPage::slotBrowseExec()
 
 URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 {
+    QVBoxLayout * layout = new QVBoxLayout(this, SEPARATION);
     URLEdit = new QLineEdit( this, "LineEdit_1" );
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
 
-    URLEdit->raise();
-    URLEdit->setGeometry( 10, 40, 210, 30 );
-    URLEdit->setText( "" );
-    URLEdit->setMaxLength( 256 );
-
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->move( 10, 10 );
     tmpQLabel->setText( klocale->translate("URL") );
     tmpQLabel->adjustSize();
+    tmpQLabel->setFixedHeight( fontHeight );
+    layout->addWidget(tmpQLabel);
+
+    URLEdit->setText( "" );
+    URLEdit->setMaxLength( 256 );
+    URLEdit->setMinimumSize( URLEdit->sizeHint() );
+    URLEdit->setFixedHeight( fontHeight );
+    layout->addWidget(URLEdit);
     
-    iconBox->raise();
-    iconBox->setGeometry( 10, 90, 50, 50 );
+    iconBox->setFixedSize( 50, 50 );
+    layout->addWidget(iconBox, 0, AlignLeft);
 
     QString path = _props->getKURL()->path();
 
@@ -1032,6 +1035,10 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
 	iconStr = KMimeType::getDefaultPixmap();
 
     iconBox->setIcon( iconStr );
+
+    layout->addStretch (10);
+    layout->activate();
+
 }
 
 bool URLPropsPage::supports( KURL *_kurl )
