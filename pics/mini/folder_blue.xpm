@@ -1,0 +1,33 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*folder_blue[]={
+"18 18 9 1",
+"# c #000000",
+"g c #808080",
+"d c #585858",
+"c c #ffffff",
+"e c #c0c0c0",
+"b c #0000c0",
+"f c #a0a0a4",
+"a c #585858",
+". c None",
+"..................",
+"..###.............",
+".#abb##...........",
+".#cadbb#####......",
+".#cccadbbbbb#.....",
+".#ccceeabbbba.....",
+".#cceeeeaaaab#....",
+".#ceeeeeeeff#b....",
+".#eeeeeeefff#b....",
+".#eeeeeeffff#b....",
+".#eeeeefffff#b....",
+".##geeffffff#b....",
+"...##gffffff#b....",
+".....##fffff#b....",
+".......##fff#b##..",
+".........##f#b##..",
+"...........####...",
+".................."};
+

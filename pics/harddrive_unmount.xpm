@@ -1,0 +1,30 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*harddrive_unmount[]={
+"16 16 8 1",
+"a c #000000",
+"d c #ffffff",
+"e c #808080",
+"b c #c0c0c0",
+"c c #a0a0a4",
+"# c #585858",
+"f c #ff0000",
+". c None",
+"............#a..",
+"............aa..",
+".......aaaaaa...",
+"......abbaaca...",
+".....abbbbbaa...",
+"....acbbbbbbda..",
+"...accccbbbdba..",
+"..accccbbbdbba..",
+".accccbbbdbba...",
+"abbccbbbdbba....",
+"accbbbbdbba.....",
+"acce#ddbba......",
+".aae#fdba.......",
+"...aabda........",
+".....aa.........",
+"................"};
+

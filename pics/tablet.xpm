@@ -1,0 +1,29 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*tablet[]={
+"16 16 7 1",
+"# c #000000",
+"b c #ffffff",
+"c c #c0c0c0",
+"e c #a0a0a4",
+"d c #585858",
+"a c #c0c0ff",
+". c None",
+"................",
+"..............#.",
+"..#..........#a#",
+"..#....##...#b#.",
+".#...##bb#.#b#..",
+"..###bbacc#b#...",
+".##bbaccc#b#....",
+"#bbdcccccb#c#...",
+"e#bbccccccccc#..",
+".e#bbccccccccb#.",
+"..e#bbcccccbb##.",
+"...e#bbccbb##ee.",
+"....e#bbb##ee...",
+".....e###ee.....",
+"......eee.......",
+"................"};
+

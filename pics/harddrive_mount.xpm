@@ -1,0 +1,32 @@
+/* XPM */
+/* Drawn  by Mark Donohoe for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*harddrive_mount[]={
+"16 16 10 1",
+"a c #000000",
+"g c #008000",
+"e c #808080",
+"b c #c0c0c0",
+"f c #ff0000",
+"# c #585858",
+"h c #00c000",
+"c c #a0a0a4",
+"d c #ffffff",
+". c None",
+"............#a..",
+"............aa..",
+".......aaaaaa...",
+"......abbaaca...",
+".....abbbbbaa...",
+"....acbbbbbbda..",
+"...accccbbbdba..",
+"..accccbbbdbba..",
+".accccbbbdbba...",
+"abbccbbbdbba....",
+"accbbbbdbba.....",
+"acce#ddbba......",
+".aae#fdba..aaaaa",
+"...aabda...aggha",
+".....aa....ahhha",
+"...........aaaaa"};
+
