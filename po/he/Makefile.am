@@ -1,8 +1,8 @@
 
 # This has to be set. The rest should be reusable
-GMOFILES = kcmbell.po kcminfo.po kcmkfm.po kcmkpanel.po kcmlocale.po \
-	   kcontrol.po kdehelp.po kdisplay.po kdm.po kfm.po kpanel.po \
-	   krootwm.po kwm.po 
+GMOFILES = kcmbell.gmo kcminfo.gmo kcmkfm.gmo kcmkpanel.gmo kcmlocale.gmo \
+	   kcontrol.gmo kdehelp.gmo kdisplay.gmo kdm.gmo kfm.gmo kpanel.gmo \
+	   krootwm.gmo kwm.gmo kfind.gmo
 
 POFILES = $(GMOFILES:.gmo=.po)
 
