@@ -71,7 +71,7 @@ KDMConfig::getUsers( QString s, bool sorted)
           for( ps = getpwent(); ps ; ) {
                if( CHECK_STRING(ps->pw_dir) &&
                    CHECK_STRING(ps->pw_shell) &&
-                   CHECK_STRING(ps->pw_gecos) &&
+                   //CHECK_STRING(ps->pw_gecos) && // many users didn't want this check (tanghus)
                    ( no_users.contains( ps->pw_name) == 0)){
                     // we might have a real user, insert him/her
                     QPixmap p( user_pix_dir + QString(ps->pw_name) + ".xpm");
