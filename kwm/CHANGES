@@ -21,6 +21,8 @@ In 0.10:
        - fixed the autoraise-over-operations-menu bug 
        - Uwe's fix for the timing problem of the resize animation
        - history command completion with Tab in minicli
+       - KProcess for execution
+       - Fix for unsavedDataHint handling
 
   patchlevel 13:
        - new decoration style (tiny decoration). Useful for floating

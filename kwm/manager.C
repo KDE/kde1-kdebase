@@ -1776,7 +1776,8 @@ QStrList* Manager::getNoSessionClients(){
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
     if (!c->Psaveyourself && c->command.isNull()
-	&& (c->trans == None || c->trans == qt_xrootwin()))
+	&& (c->trans == None || c->trans == qt_xrootwin())
+	&& !KWM::unsavedDataHintDefined(c->window))
       result->append(c->label);
   }
   return result;
@@ -1786,7 +1787,7 @@ QStrList* Manager::getUnsavedDataClients(){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (c->Psaveyourself && KWM::containsUnsavedData(c->window))
+    if (KWM::containsUnsavedData(c->window))
       result->append(c->label);
   }
   return result;
