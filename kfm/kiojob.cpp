@@ -24,7 +24,6 @@
 
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 QList<KIOJob> KIOJob::jobList;
 QDict<QString> KIOJob::passwordDict;

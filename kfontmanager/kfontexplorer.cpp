@@ -22,6 +22,9 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
+    Revision 1.8  1997/11/09 05:31:19  wuebben
+    Bernd: some changees and fixes. It is amazing how much time it takes to simply
+    maintain one's applications let alone to add new feature -- just to make
     sure they are still ok.
 
     Revision 1.7  1997/11/09 04:04:59  wuebben
@@ -72,7 +75,6 @@
 #include <X11/Xlib.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 #include <kapp.h>
 #include "kfontexplorer.h"
 

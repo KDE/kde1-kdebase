@@ -30,8 +30,6 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#include <string.h>
-#define klocale KLocale::klocale()
 
 char* kfm_getrev();
 
@@ -81,7 +79,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     QString entry;
 
     entry = "Off"; // default
-    if ( config->readEntry("TreeView", &entry) == entry)
+    if ( config->readEntry("TreeView", entry) == entry)
       bTreeView = false;
     else
       bTreeView = true;
@@ -89,26 +87,26 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     
     entry = "IconView"; // default
     viewMode = ICON_VIEW;
-    entry = config->readEntry("ViewMode", &entry);
+    entry = config->readEntry("ViewMode", entry);
     if (entry == "LongView")
       viewMode = LONG_VIEW;
     if (entry == "TextView")
       viewMode = TEXT_VIEW;
 
     entry = "no";
-    if ( config->readEntry("ShowDotFiles",&entry) == "yes")
+    if ( config->readEntry("ShowDotFiles",entry) == "yes")
       showDot = true;
     else
       showDot = false;
     
     entry = "Off";
-    if ( config->readEntry("VisualSchnauzer", &entry) == "Off")
+    if ( config->readEntry("VisualSchnauzer", entry) == "Off")
       visualSchnauzer = false;
     else
       visualSchnauzer = true;
     
     entry = "Yes";
-    if ( config->readEntry("HTMLView", &entry) == entry)
+    if ( config->readEntry("HTMLView", entry) == entry)
       bViewHTML = true;
     else
       bViewHTML = false;

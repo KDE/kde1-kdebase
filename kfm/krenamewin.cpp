@@ -3,7 +3,7 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
+#include <kapp.h>
 
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
     QDialog ( parent, "" , _modal )

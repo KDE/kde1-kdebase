@@ -11,7 +11,6 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 // Executes all apps/documents in the $HOME/Desktop/Autostart directory
 

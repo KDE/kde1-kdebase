@@ -11,7 +11,7 @@
 #include "bookmark.moc"
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
+#include <kapp.h>
 
 //-----------------------------------------------------------------------------
 

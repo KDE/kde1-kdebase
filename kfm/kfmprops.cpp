@@ -24,7 +24,6 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 Properties::Properties( const char *_url ) : QObject()
 {

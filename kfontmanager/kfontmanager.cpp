@@ -50,7 +50,6 @@ extern char PICS_PATH[256];
 #define WIDTH 400
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 #define i18n(X) klocale->translate(X)
 
 KFontManager::KFontManager (QWidget * parent, const char *name)

@@ -21,9 +21,7 @@
 #include "dbnew.h"
 
 #include <klocale.h>
-// this is just a hack, 'til someone find a better solution
-extern KLocale locale;
-static KLocale* klocale = &locale;
+#include <kapp.h>
 
 #define TMPDIR			"/tmp"
 #define EATSPACE(ptr)	while ((*ptr == ' ')||(*ptr == '\t')) ptr++;

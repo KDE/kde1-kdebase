@@ -4,7 +4,7 @@
 #endif
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
+#include <kapp.h>
 
 #include "kfmdlg.h"
 #include "fileentry.h"

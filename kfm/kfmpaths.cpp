@@ -15,25 +15,25 @@ void KFMPaths::initPaths()
 
   // Desktop Path
   desktopPath = QDir::homeDirPath() + "/Desktop/";
-  desktopPath = config->readEntry( "Desktop", &desktopPath);
+  desktopPath = config->readEntry( "Desktop", desktopPath);
   if ( desktopPath.right(1) != "/")
     desktopPath += "/";
   
   // Templates Path
   templatePath = desktopPath + "Templates/";
-  templatePath = config->readEntry( "Templates" , &templatePath);
+  templatePath = config->readEntry( "Templates" , templatePath);
   if ( templatePath.right(1) != "/")
     templatePath += "/";
 
   // Autostart Path
   autostartPath = desktopPath + "Autostart/";
-  autostartPath = config->readEntry( "Autostart" , &autostartPath);
+  autostartPath = config->readEntry( "Autostart" , autostartPath);
   if ( autostartPath.right(1) != "/")
     autostartPath += "/";
 
   // Trash Path
   trashPath = desktopPath + "Trash/";
-  trashPath = config->readEntry( "Trash" , &trashPath);
+  trashPath = config->readEntry( "Trash" , trashPath);
   if ( autostartPath.right(1) != "/")
     autostartPath += "/";
 

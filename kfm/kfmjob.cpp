@@ -15,8 +15,6 @@
 
 #include <klocale.h>
 
-#define klocale KLocale::klocale()
-
 int tmpFileCounter = 0;
 
 KFMJob::KFMJob( )

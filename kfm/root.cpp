@@ -26,7 +26,6 @@
 #include <string.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 #define root KRootWidget::getKRootWidget()
 

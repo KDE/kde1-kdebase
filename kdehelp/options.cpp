@@ -22,10 +22,6 @@
 #include "options.moc"
 
 #include <klocale.h>
-#include <klocale.h>
-// this is just a hack, 'til someone find a better solution
-extern KLocale locale;
-static KLocale* klocale = &locale;
 
 //-----------------------------------------------------------------------------
 

@@ -33,11 +33,6 @@
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
-
-// this is just a hack, 'til someone find a better solution
-extern KLocale locale;
-static KLocale* klocale = &locale;
-
 static QString QUOTE( "\"" );
 static QString DOCS_PATH;
 
@@ -263,9 +258,9 @@ void KHelpWindow::readOptions()
 		fontBase = qs.toInt();
 
 	qs = "times";
-	standardFont = config->readEntry( "StandardFont", &qs );
+	standardFont = config->readEntry( "StandardFont", qs );
 	qs = "courier";
-	fixedFont = config->readEntry( "FixedFont", &qs );
+	fixedFont = config->readEntry( "FixedFont", qs );
 
 	bgColor = config->readColorEntry( "BgColor", &white );
 	textColor = config->readColorEntry( "TextColor", &black );

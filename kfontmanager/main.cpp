@@ -37,7 +37,6 @@
 #include "kfontexplorer.h"
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 #define i18n(X) klocale->translate(X)
 
 char DOCS_PATH[256];

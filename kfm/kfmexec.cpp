@@ -11,7 +11,6 @@
 #include "kfmdlg.h"
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 /***************************************************************************
  *

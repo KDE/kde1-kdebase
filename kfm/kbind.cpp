@@ -16,7 +16,6 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 KMimeMagic* KMimeType::magic = 0L;
 
@@ -1296,7 +1295,7 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding, QStrList * _
 		KConfig *config = KApplication::getKApplication()->getConfig();
 		config->setGroup( "Terminal" );
 		QString cmd = "kvt";
-		cmd = config->readEntry( "Terminal", &cmd );
+		cmd = config->readEntry( "Terminal", cmd );
 		cmd.detach();
 		if ( cmd.isNull() )
 		{

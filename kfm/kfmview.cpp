@@ -33,7 +33,6 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
 
 QStrList KfmView::clipboard;
 
@@ -141,7 +140,7 @@ void KfmView::slotTerminal()
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup( "Terminal" );
     QString term = "kvt";
-    term = config->readEntry( "Terminal", &term );
+    term = config->readEntry( "Terminal", term );
 
     QString dir = getenv( "HOME" );
     

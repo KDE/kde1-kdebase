@@ -15,7 +15,7 @@
 #include <config-kfm.h>
 
 #include <klocale.h>
-#define klocale KLocale::klocale()
+#include <kapp.h>
 
 PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* name, bool modal, WFlags f)
    : QDialog(parent, name, modal, f)
