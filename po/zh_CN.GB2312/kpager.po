@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
+"PO-Revision-Date: 1999-03-31 21:40+0800\n"
+"Last-Translator: Wang Jian <larkw@263.net>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=GB2312-80\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "切换全局桌面"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "切换菜单条"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "右移"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "左移"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "隐藏全局桌面(&G)"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "显示全局桌面(&G)"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "隐藏菜单条(&M)"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2行"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "单击改变桌面(&O)"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "隐藏桌面名字(&N)"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "显示桌面名字(&N)"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "普通"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "图标"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "位图"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "绘制模式"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "显示菜单条(&M)"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "单击改变桌面"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "最大化(&M)"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "图标化(&I)"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "解除粘附(&U)"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "粘附(&S)"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "到桌面(&T)"

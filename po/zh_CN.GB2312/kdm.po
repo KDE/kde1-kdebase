@@ -34,7 +34,7 @@ msgstr "µÇÂ¼:"
 
 #: kgreeter.cpp:234
 msgid "Password:"
-msgstr "ÃÜÂë:"
+msgstr "¿ÚÁî:"
 
 #: kgreeter.cpp:259
 msgid "Login failed!"

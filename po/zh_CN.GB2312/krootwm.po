@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1999-03-26 01:17+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-31 22:10+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: krootwm.C:234 krootwm.C:281
 msgid "Execute command"
@@ -16,7 +17,7 @@ msgstr "锁住屏幕"
 
 #: krootwm.C:237 krootwm.C:306
 msgid "Logout"
-msgstr "离线"
+msgstr "注销"
 
 #: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"
@@ -44,60 +45,59 @@ msgstr "关于桌面的帮助"
 
 #: krootwm.C:258
 msgid "About KDE..."
-msgstr ""
+msgstr "关于KDE..."
 
 #: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
 msgid "New"
-msgstr ""
+msgstr "新建"
 
 #: krootwm.C:277 krootwm.C:316
 msgid "Bookmarks"
-msgstr ""
+msgstr "书签"
 
 #: krootwm.C:291
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "布置图标"
+msgstr "布置Window Maker图标"
 
 #: krootwm.C:292
 msgid "Show all"
-msgstr ""
+msgstr "全部显示"
 
 #: krootwm.C:293
 msgid "Hide other"
-msgstr ""
+msgstr "隐藏其他"
 
 #: krootwm.C:295
 msgid "Show info panel"
-msgstr ""
+msgstr "显示信息面板"
 
 #: krootwm.C:296
 msgid "Show legal panel"
-msgstr ""
+msgstr "显示法律面板"
 
 #: krootwm.C:297
 msgid "Restart"
-msgstr ""
+msgstr "重新起动"
 
 #: krootwm.C:299
 msgid "Exit"
-msgstr ""
+msgstr "退出"
 
 #: krootwm.C:300
 msgid "Window Maker"
-msgstr ""
+msgstr "Window Maker"
 
 #: krootwm.C:317
 msgid "Desk"
-msgstr ""
+msgstr "桌面"
 
 #: krootwm.C:318
 msgid "Windows"
-msgstr ""
+msgstr "窗口"
 
 #: krootwm.C:381
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "编辑书签"
 
 #: krootwm.C:395 krootwm.C:833
 msgid "Folder"

@@ -4,63 +4,63 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: konsole\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1998-06-10 00:50+0200\n"
+"PO-Revision-Date: 1999-03-31 21:30+0200\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN (gb2312)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=gb2312-80\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.C:304
 msgid "&Normal"
-msgstr "ÆÕÍ¨[&N]"
+msgstr "ÆÕÍ¨(&N)"
 
 #: main.C:307
 msgid "&Small"
-msgstr "Ð¡ÐÍ[&S]"
+msgstr "Ð¡(&S)"
 
 #: main.C:308
 msgid "&Medium"
-msgstr "ÖÐÐÍ[&M]"
+msgstr "ÖÐ(&M)"
 
 #: main.C:309
 msgid "&Large"
-msgstr "´óÐÍ[&L]"
+msgstr "´ó(&L)"
 
 #: main.C:310
 msgid "&Huge"
-msgstr "¾ÞÐÍ[&H]"
+msgstr "¾Þ´ó(&H)"
 
 #: main.C:312
 msgid "&Linux"
-msgstr ""
+msgstr "&Linux"
 
 #: main.C:313
-#, fuzzy
 msgid "Linux (small)"
-msgstr "40x15 (Ð¡)[&S]"
+msgstr "Linux(Ð¡)"
 
 #: main.C:316
 msgid "&More ..."
-msgstr "¸ü¶à[&M] ..."
+msgstr "¸ü¶à(&M) ..."
 
 #: main.C:322
 msgid "&Hide"
-msgstr "Òþ²Ø[&H]"
+msgstr "Òþ²Ø(&H)"
 
 #: main.C:323
 msgid "&Left"
-msgstr "×ó[&L]"
+msgstr "×ó(&L)"
 
 #: main.C:324
 msgid "&Right"
-msgstr "ÓÒ[&R]"
+msgstr "ÓÒ(&R)"
 
 #: main.C:329
 msgid "40x15 (&small)"
-msgstr "40x15 (Ð¡)[&S]"
+msgstr "40x15 (Ð¡)(&S)"
 
 #: main.C:330
 msgid "80x24 (&vt100)"
@@ -71,67 +71,64 @@ msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
 #: main.C:332
-#, fuzzy
 msgid "80x40 (&xterm)"
-msgstr "80x24 (&vt100)"
+msgstr "80x24 (&xterm)"
 
 #: main.C:333
-#, fuzzy
 msgid "80x52 (ibmv&ga)"
-msgstr "80x25 (&ibmpc)"
+msgstr "80x25 (ibmv&ga)"
 
 #: main.C:342
 msgid "&Menubar"
-msgstr "²Ëµ¥Ìõ[&M]"
+msgstr "²Ëµ¥Ìõ(&M)"
 
 #: main.C:343
 msgid "&Frame"
-msgstr "Íâ¿ò[&F]"
+msgstr "Íâ¿ò(&F)"
 
 #: main.C:344
 msgid "Scroll&bar"
-msgstr "¹ö¶¯Ìõ[&B]"
+msgstr "¹ö¶¯Ìõ(&B)"
 
 #: main.C:346
 msgid "BS sends &DEL"
-msgstr "BS ËÍ³ö &DEL"
+msgstr "BSËÍ³ö&DEL"
 
 #: main.C:348
 msgid "&Font"
-msgstr "×ÖÌå[&F]"
+msgstr "×ÖÌå(&F)"
 
 #: main.C:349
 msgid "&Size"
-msgstr "´óÐ¡[&S]"
+msgstr "´óÐ¡(&S)"
 
 #: main.C:350
-#, fuzzy
 msgid "&Schema"
-msgstr "Ð¡ÐÍ[&S]"
+msgstr "²¼¾Ö(&S)"
 
 #: main.C:352
 msgid "&Save options"
-msgstr "±£´æÑ¡Ïî[&S]"
+msgstr "±£´æÑ¡Ïî(&S)"
 
 #: main.C:356
 msgid "&About ..."
-msgstr "¹ØÓÚ[&A] ..."
+msgstr "¹ØÓÚ(&A) ..."
 
 #: main.C:357
 msgid "&User's Manual ..."
-msgstr "Ê¹ÓÃÊÖ²á[&U] ..."
+msgstr "Ê¹ÓÃÊÖ²á(&U) ..."
 
 #: main.C:358
 msgid "&Technical Reference ..."
-msgstr "¼¼Êõ²Î¿¼[&T] ..."
+msgstr "¼¼Êõ²Î¿¼(&T) ..."
 
 #: main.C:362
 msgid "cd"
-msgstr ""
+msgstr "cd"
 
 #: main.C:375
 msgid "Sessions"
-msgstr ""
+msgstr "»á»°"
 
 #: main.C:527
 #, c-format
@@ -139,11 +136,13 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
+"Ã»ÓÐÕÒµ½×ÖÌå `%s'.\n"
+"Çë²é¿´README.linux.console»ñµÃ°ïÖú."
 
 #: main.C:647
-#, fuzzy, c-format
+#, c-format
 msgid "About %s"
-msgstr "¹ØÓÚ[&A] ..."
+msgstr "¹ØÓÚ %s"
 
 #: main.C:649
 #, c-format
@@ -157,21 +156,31 @@ msgid ""
 "WITHOUT ANY WARRANTY.\n"
 "See `LICENSE.readme´ for details."
 msgstr ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
 
 #: main.C:776
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr ""
+msgstr "`%s'Òì³£ÖÐÖ¹"
 
 #: main.C:779
 msgid ""
 "\n"
 "Return code = "
 msgstr ""
+"\n"
+"Return code = "
 
 #: main.C:976
 msgid "Welcome to the console"
-msgstr "»¶Ó­Ê¹ÓÃ console"
+msgstr "»¶Ó­Ê¹ÓÃconsole"
 
 #~ msgid "&VGA"
 #~ msgstr "&VGA"

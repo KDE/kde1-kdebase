@@ -1,24 +1,24 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kmenuedit\n"
 "POT-Creation-Date: 1999-01-14 01:18+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-31 21:20+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
-#
 #: kmenuedit.cpp:69
 msgid "Change &Menuname"
-msgstr "改变菜单名[&M]"
+msgstr "改变菜单名(&M)"
 
 #
 #: kmenuedit.cpp:70
 msgid "Reload &Filetypes"
-msgstr "重新载入文件类型[&F]"
+msgstr "重新载入文件类型(&F)"
 
 #: kmenuedit.cpp:77
 msgid "by"
-msgstr ""
+msgstr "作者是"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"
@@ -78,15 +78,15 @@ msgstr "打开/关闭"
 
 #: confmenu.cpp:117
 msgid "Select item for moving"
-msgstr ""
+msgstr "选择要移动的项"
 
 #: confmenu.cpp:118
 msgid "Select menu for moving"
-msgstr ""
+msgstr "选择要移动的菜单"
 
 #: confmenu.cpp:120
 msgid "New"
-msgstr ""
+msgstr "新建"
 
 #: confmenu.cpp:177 confmenu.cpp:318
 msgid "Warning !"
@@ -94,7 +94,7 @@ msgstr "警告 !"
 
 #: confmenu.cpp:178
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "如果你删除这个按钮, 将会失去所有的子菜单"
+msgstr "如果你删除这个按钮,将会失去它的所有的子菜单"
 
 #: confmenu.cpp:297
 msgid "Wrong filename"
@@ -126,11 +126,11 @@ msgstr ""
 
 #: DesktopPathDialogData.cpp:37
 msgid "Path for KDE Desktop Entries is not set."
-msgstr "KDE 桌面的路径尚未设定."
+msgstr "KDE桌面入口的路径尚未设定."
 
 #: DesktopPathDialogData.cpp:49
 msgid "I suggest the following entries:"
-msgstr "建议下列的项:"
+msgstr "建议下列的入口:"
 
 #: DesktopPathDialogData.cpp:55
 msgid "Path:"
@@ -151,7 +151,7 @@ msgstr "应用程序"
 
 #: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
 msgid "Swallow"
-msgstr "Swallow"
+msgstr "嵌入"
 
 #: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
 msgid "Link"
@@ -162,18 +162,16 @@ msgid "Device"
 msgstr "设备"
 
 #: entrydialog.cpp:72
-#, fuzzy
 msgid "Type:"
-msgstr "文件系统类型:"
+msgstr "类型:"
 
 #: entrydialog.cpp:79
 msgid "File Name:"
 msgstr "文件名:"
 
 #: entrydialog.cpp:94
-#, fuzzy
 msgid "Name:"
-msgstr "文件名:"
+msgstr "名字:"
 
 #: entrydialog.cpp:109
 msgid "Icon:"
@@ -211,15 +209,14 @@ msgstr "终端选项:"
 msgid "Binary Pattern:"
 msgstr "二进制模式:"
 
-#
 #: entrydialog.cpp:325
 msgid "Application to swallow:"
-msgstr "要 swallow 的应用程序"
+msgstr "要嵌入的的应用程序:"
 
 #
 #: entrydialog.cpp:331
 msgid "Title of application:"
-msgstr "应用程序标题"
+msgstr "应用程序标题:"
 
 #: entrydialog.cpp:337
 msgid "Application to execute on button press:"
@@ -247,7 +244,7 @@ msgstr "文件系统类型:"
 
 #: entrydialog.cpp:435
 msgid "Unmount Icon:"
-msgstr "Unmount 图标:"
+msgstr "Unmount图标:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"
@@ -255,7 +252,7 @@ msgstr "改变菜单名"
 
 #: MenuNameDialogData.cpp:31
 msgid "Change the name of the menus as displayed in kpanel"
-msgstr "改变在 kpanel 中显示的菜单名"
+msgstr "改变在kpanel中显示的菜单名"
 
 #: MenuNameDialogData.cpp:36
 msgid "Personal:"

@@ -1,44 +1,47 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kfontmanager\n"
 "POT-Creation-Date: 1998-12-14 01:17+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-31 20:20+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE 字体管理器"
+msgstr "KDE字体管理器"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDE 字体"
+msgstr "KDE字体"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "字体总管"
+msgstr "字体浏览器"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "原始 X11 字体列表"
+msgstr "原始X11字体列表"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "可用的 X11 字体"
+msgstr "可用的X11字体"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
-msgstr "KDE 可用的字体"
+msgstr "KDE可用的字体"
 
 #: kfontmanager.cpp:89
 msgid ""
 "The Quick Brown Fox Jumps Over The Lazy Dog\n"
 "AaBbCc123"
 msgstr ""
+"一二三四五六七八九十\n"
+"AaBbCc123"
 
 #: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
-msgstr "关于 kfontmanager"
+msgstr "关于KDE字体管理器"
 
 #: kfontmanager.cpp:112
 msgid ""
@@ -56,7 +59,9 @@ msgstr ""
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
-msgstr "环境变量 HOME 没有设定\n"
+msgstr ""
+"环境变量 HOME\n"
+"没有设定\n"
 
 #: kfontmanager.cpp:292
 msgid ""
@@ -72,9 +77,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/share/config/kdefonts 文件已经存在\n"
+"文件~/.kde/share/config/kdefonts已经存在\n"
 "但是不可写\n"
-"无法保存 KDE  字体列表."
+"无法保存KDE字体列表."
 
 #: kfontlist.cpp:62
 msgid ""
@@ -90,75 +95,75 @@ msgstr ""
 
 #: kfontexplorer.cpp:126
 msgid "Select Font"
-msgstr ""
+msgstr "选择字体"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr ""
+msgstr "要求的字体"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr ""
+msgstr "实际字体"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
-msgstr ""
+msgstr "族:"
 
 #: kfontexplorer.cpp:163 kfontexplorer.cpp:168
 msgid "Size:"
-msgstr ""
+msgstr "大小:"
 
 #: kfontexplorer.cpp:177 kfontexplorer.cpp:182
 msgid "Weight:"
-msgstr ""
+msgstr "重量:"
 
 #: kfontexplorer.cpp:191 kfontexplorer.cpp:199
 msgid "Style:"
-msgstr ""
+msgstr "风格:"
 
 #: kfontexplorer.cpp:234
 msgid "Charset"
-msgstr ""
+msgstr "字符集"
 
 #: kfontexplorer.cpp:246
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: kfontexplorer.cpp:285
 msgid "Weight"
-msgstr ""
+msgstr "重量"
 
 #: kfontexplorer.cpp:286 kfontexplorer.cpp:394
 msgid "normal"
-msgstr ""
+msgstr "普通"
 
 #: kfontexplorer.cpp:287 kfontexplorer.cpp:396
 msgid "bold"
-msgstr ""
+msgstr "粗体"
 
 #: kfontexplorer.cpp:296
 msgid "Style"
-msgstr ""
+msgstr "风格"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr ""
+msgstr "正体"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
-msgstr ""
+msgstr "斜体"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr ""
+msgstr "Dolor Ipse"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"
-msgstr ""
+msgstr "粗体"
 
 #: kfontexplorer.cpp:432
 msgid "Normal"
-msgstr ""
+msgstr "普通"
 
 #~ msgid "The KDE Font Manager Example String"
 #~ msgstr "The KDE Font Manager 示例字符串"

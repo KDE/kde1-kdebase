@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmkpanel\n"
+"Project-Id-Version: kstart\n"
 "POT-Creation-Date: 1999-01-23 01:15+0100\n"
-"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"PO-Revision-Date: 1999-03-31 22:10+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+"Translator: Wang Jian <larkw@263.net>\n"
 
 #: kstart.C:116
 #, c-format
@@ -42,11 +43,12 @@ msgid ""
 msgstr ""
 
 #: kstart.C:158
-#, fuzzy
 msgid ""
 "\n"
 " Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
 
 #~ msgid "Usage:"
 #~ msgstr "ÓÃ·¨:"
