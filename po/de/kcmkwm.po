@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-03-19 22:18+0100\n"
-"PO-Revision-Date: 1997-12-29 16:29+01\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"POT-Creation-Date: 1998-03-30 13:43+0200\n"
+"PO-Revision-Date: 1998-03-30 16:29+01\n"
+"Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
 #: main.cpp:59
 msgid "&Windows"
@@ -15,7 +15,7 @@ msgstr "&Buttons"
 
 #: main.cpp:65
 msgid "&Titlebar"
-msgstr "&Titelzeile"
+msgstr "&Titelleiste"
 
 #: main.cpp:68
 msgid "&Desktop"
@@ -49,31 +49,33 @@ msgstr "Menü"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Die linke Seite der Titelzeile ist voll... Entferne den 'maximieren' Button\n"
+"Die linke Seite der Titelleiste ist voll... Entferne den 'maximieren' "
+"Button\n"
 
 #: titlebar.cpp:496
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Die rechte Seite der Titelzeile ist voll... Entferne den 'maximieren' "
+"Die rechte Seite der Titelleiste ist voll... Entferne den 'maximieren' "
 "Button\n"
 
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Die linke Seite der Titelzeile ist voll... Entferne den 'minimieren' Button\n"
+"Die linke Seite der Titelleiste ist voll... Entferne den 'minimieren' "
+"Button\n"
 
 #: titlebar.cpp:569
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Die rechte Seite der Titelzeile ist voll... Entferne den 'minimieren' "
+"Die rechte Seite der Titelleiste ist voll... Entferne den 'minimieren' "
 "Button\n"
 
 #: titlebar.cpp:925
 msgid "Titlebar appearance"
-msgstr "Titelzeilen-Erscheinung"
+msgstr "Titelleisten-Erscheinung"
 
 #: titlebar.cpp:927
 msgid "Shaded"
@@ -189,7 +191,7 @@ msgstr "Manuell"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr "Überlappen erlaubt:"
+msgstr "Erlaubte Überlappung:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -256,9 +258,13 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Rand-Einrastzone:\n"
+"       (Pixel)"
 
 #: desktop.cpp:132
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Fenster-Einrastzone:\n"
+"       (Pixel)"
