@@ -93,12 +93,11 @@ msgstr ""
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Titteljustering"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Midterste knapp"
+msgstr "Midterst"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"

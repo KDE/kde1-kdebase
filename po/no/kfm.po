@@ -13,121 +13,99 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# kfmgui.cpp:250
 #: kfmgui.cpp:267
 msgid "KFM"
 msgstr "KFM"
 
-# kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:262 kfmgui.cpp:934
 #: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:279 kfmgui.cpp:1055
 msgid "Folder"
 msgstr "Mappe"
 
-# kfmgui.cpp:273
 #: kfmgui.cpp:290
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEIL: Mal finnes ikke '%s'"
 
-# kfmgui.cpp:926 kfmgui.cpp:933
 #: kfmgui.cpp:314
 msgid "&New"
 msgstr "&Ny"
 
-# kfmgui.cpp:302
 #: kfmgui.cpp:319
 msgid "&Run..."
 msgstr "&Kjør.."
 
-# kfmgui.cpp:304
 #: kfmgui.cpp:321
 msgid "Open &Terminal"
 msgstr "Åpne &terminal"
 
-# kfmgui.cpp:307
 #: kfmgui.cpp:324
 msgid "&Open Location..."
 msgstr "Å&pne ..."
 
-# kfmgui.cpp:309
 #: finddlg.cpp:66 kfmgui.cpp:326
 msgid "&Find"
 msgstr "&Finn"
 
-# kfmgui.cpp:326
 #: kfmgui.cpp:344
 msgid "&Move to Trash"
 msgstr "Flytt til Papirkurv"
 
-# kfmgui.cpp:331
 #: kfmgui.cpp:349
 msgid "&Select"
 msgstr "Mer&k"
 
-# kfmgui.cpp:331
 #: kfmgui.cpp:351
 msgid "Select &all"
 msgstr "Mer&k alle"
 
 #: kfmgui.cpp:354
 msgid "&Find in page..."
-msgstr ""
+msgstr "&Finn i side..."
 
 #: kfmgui.cpp:356
 msgid "Find &next"
-msgstr ""
+msgstr "Finn &neste"
 
-# kfmgui.cpp:335
 #: kfmgui.cpp:359
 msgid "Mime Types"
 msgstr "Mimetyper"
 
-# kfmgui.cpp:337
 #: kfmgui.cpp:361
 msgid "Applications"
 msgstr "Applikasjoner"
 
-# kfmgui.cpp:343
 #: kfmgui.cpp:367
 msgid "Global Mime Types"
 msgstr "Globale mimetyper"
 
-# kfmgui.cpp:345
 #: kfmgui.cpp:369
 msgid "Global Applications"
 msgstr "Globale applikasjoner"
 
-# kfmgui.cpp:352
 #: kfmgui.cpp:376
 msgid "Show &Dot Files"
 msgstr "Vis dotfiler"
 
-# kfmgui.cpp:354
 #: kfmgui.cpp:378
 msgid "Show Tr&ee"
 msgstr "Vis tre"
 
-# kfmgui.cpp:356
 #: kfmgui.cpp:380
 msgid "&Visual Schnauzer"
 msgstr "&Bilder som ikoner"
 
-# kfmgui.cpp:358
 #: kfmgui.cpp:382
 msgid "&HTML View"
 msgstr "&HTML-visning"
 
-# kfmgui.cpp:361
 #: kfmgui.cpp:385
 msgid "&Icon View"
 msgstr "&Ikonvisning"
 
-# kfmgui.cpp:363
 #: kfmgui.cpp:387
 msgid "&Text View"
 msgstr "&Tekstvisning"
 
-# kfmgui.cpp:365
 #: kfmgui.cpp:389
 msgid "&Long View"
 msgstr "&Lang visning"
@@ -197,39 +175,31 @@ msgstr "Alltid lagre mellomlager"
 msgid "Never save cache"
 msgstr "Aldri lagre mellomlager"
 
-# kfmgui.cpp:410
 #: kfmgui.cpp:441
 msgid "Show &Menubar"
 msgstr "Vis &menylinje"
 
-# kfmgui.cpp:412
 #: kfmgui.cpp:443
 msgid "Show &Statusbar"
 msgstr "Vis &statuslinje"
 
-# kfmgui.cpp:414
 #: kfmgui.cpp:445
 msgid "Show &Toolbar"
 msgstr "Vis &verktøylinje"
 
-# kfmgui.cpp:416
 #: kfmgui.cpp:447
 msgid "Show &Location bar"
 msgstr "Vis s&tedslinje"
 
-# kfmgui.cpp:419
 #: kfmgui.cpp:450
 msgid "Sa&ve Settings"
 msgstr "Lagre &innstillinger"
 
-# kfmgui.cpp:421
 #: kfmgui.cpp:452
 msgid "Configure Browser..."
 msgstr "Konfigurer &nettlos..."
 
-# kfmgui.cpp:1227
 #: kfmgui.cpp:492
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -251,13 +221,14 @@ msgstr ""
 "\n"
 "Proxy-behandler ved Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
+"\n"
+"Feilrapporter og programfikser sendes til David Faure\n"
+"faure@kde.org"
 
-# kfmgui.cpp:474
 #: kfmgui.cpp:511
 msgid "&Bookmarks"
 msgstr "&Bokmerker"
 
-# kfmgui.cpp:475
 #: kfmgui.cpp:512
 msgid "&Cache"
 msgstr "&Mellomlager"
@@ -314,11 +285,11 @@ msgstr "Velg filer:"
 
 #: kfmgui.cpp:988
 msgid "Find Complete"
-msgstr ""
+msgstr "Finn fullført"
 
 #: kfmgui.cpp:989
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Fortsett søk fra toppen av siden?"
 
 # kfmgui.cpp:886
 #: kfmgui.cpp:1007
@@ -1003,7 +974,7 @@ msgstr "Standard applikasjon"
 
 #: kfmprops.cpp:1635
 msgid "<none>"
-msgstr ""
+msgstr "<ingen>"
 
 # kfmprops.cpp:1638
 #: kfmprops.cpp:1757
@@ -1609,15 +1580,13 @@ msgstr "Anta HTML"
 msgid "This group is empty!"
 msgstr "Denne gruppen er tom!"
 
-# kfmgui.cpp:309
 #: finddlg.cpp:41
-#, fuzzy
 msgid "Find:"
-msgstr "&Finn"
+msgstr "Finn:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "&Avhengig av bokstavstørrelse"
 
 # kfmprops.h:73
 #: kfmprops.h:73
