@@ -592,11 +592,11 @@ msgstr "Siirrä roskakoriin"
 msgid "Open with"
 msgstr "Avaa sovelluksessa"
 
-#: kfmtree.cpp:333 main.cpp:275
+#: kfmtree.cpp:333 main.cpp:275 kfmman.cpp:1636
 msgid "Move"
 msgstr "Siirrä"
 
-#: kfmtree.cpp:337 main.cpp:277
+#: kfmtree.cpp:337 main.cpp:277 kfmman.cpp:1640
 msgid "Link"
 msgstr "Linkitä"
 
@@ -967,14 +967,6 @@ msgstr "Työskentelen ..."
 #: kfmman.cpp:1631
 msgid "Copy"
 msgstr "Kopioi"
-
-#: kfmman.cpp:1636
-msgid "Move"
-msgstr "Siirrä"
-
-#: kfmman.cpp:1640
-msgid "Link"
-msgstr "Linkitä"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
