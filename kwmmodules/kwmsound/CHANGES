@@ -1,0 +1,31 @@
+Version 0.0.5 (Jan. 9th, 1997)
+
+- Fixed a bug that caused "KApplication::kdedir" to be
+  overwritten. (Cast it to "const char *" before assignment
+  since this forces QString to make a deep copy).
+
+Version 0.0.4 (Nov. 24th, 1997)
+
+No changes in kwmsound, only to syssound
+
+Version 0.0.3 (Nov. 22nd, 1997)
+
+- Added support for Enabling/Disabling system sounds by the setting
+  GlobaSettings/EnableSounds.
+
+- kwmsound uses the "KApplication::getConfig" now. In order to assure
+  that kwmsound actually re-reads its config-file when syssound
+  changes it, a call to "reparseConfiguration" has been added
+
+Version 0.0.2 (Oct. 21st, 1997)
+
+- Made the placement of the configuration file compliant
+  with the new KDE convention. The sound configuration
+  is now stored in $HOME/.kde/share/config/kwmsoundrc    
+
+- The startup sound is now played back at program startup
+  and not based on the reception of a "init" signal from the WM.
+  So you're now guaranteed to ge the "Startup" sound to 
+  hear... ;-) 
+
+Version 0.0.1 (initial release)
