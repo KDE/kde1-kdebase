@@ -170,7 +170,7 @@ void MenuButton::delete_item()
     {
       if( !msg_box.query( klocale->translate("Warning !"),
 			  klocale->translate("If you delete this button you will lose all of its submenus"),
-			  klocale->translate("Ok"),
+			  klocale->translate("OK"),
 			  klocale->translate("Cancel") ) )
 	{ return; }
     }
@@ -280,7 +280,7 @@ void MenuButton::change_accept()
 	    QMessageBox::information(dialog, 
 				     klocale->translate("Wrong filename"), 
 				     klocale->translate("A kdelnk-file with this name does already exist. \nPlease choose another filename."), 
-				     klocale->translate("Ok") );
+				     klocale->translate("OK") );
 	    return;
 	  }
       if( ((QString) dialog->i_fname->text()).isEmpty() )
@@ -299,7 +299,7 @@ void MenuButton::change_accept()
 	      QMessageBox msg_box;
 	      if( msg_box.query( klocale->translate("Warning !"),
 				 klocale->translate("Changing the type of this button will delete all of its submenus"),
-				 klocale->translate("Ok"), 
+				 klocale->translate("OK"), 
 				 klocale->translate("Cancel") ) )
 		{
 		  popmenu.removeItemAt(0);

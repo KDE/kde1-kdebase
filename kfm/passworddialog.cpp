@@ -63,10 +63,10 @@ PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* na
    f->setGeometry( 10, 80, 180, 2 );
    
    //
-   // Die Buttons "Ok" & "Cancel" erzeugen
+   // Die Buttons "OK" & "Cancel" erzeugen
    //
    QPushButton *b1, *b2;
-   b1 = new QPushButton(klocale->translate("Ok"), this);
+   b1 = new QPushButton(klocale->translate("OK"), this);
    b1->setGeometry( 10, 90, 80, 30 );
    
    b2 = new QPushButton(klocale->translate("Cancel"), this);

@@ -1122,7 +1122,7 @@ KScienceSetup::KScienceSetup(  QWidget *parent, const char *name ) :
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 	bbox->addStretch( 1 );
 
-	button = bbox->addButton( i18n("Ok") );
+	button = bbox->addButton( i18n("OK") );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton( i18n("Cancel") );
@@ -1305,5 +1305,5 @@ void KScienceSetup::slotAbout()
 	               i18n( "written by" ) );
 	QMessageBox::message( i18n("About Science"), 
 	                      (const char *) about,
-	                      i18n("Ok") );
+	                      i18n("OK") );
 }

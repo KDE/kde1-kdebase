@@ -695,7 +695,7 @@ kPipesSetup::kPipesSetup( QWidget *parent, const char *name )
   button->setGeometry( 130, 210, 50, 25 );
   connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-  button = new QPushButton( glocale->translate("Ok"), this );
+  button = new QPushButton( glocale->translate("OK"), this );
   button->setGeometry( 235, 210, 50, 25 );
   connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
@@ -743,7 +743,7 @@ void kPipesSetup::slotAbout()
   QMessageBox::message(glocale->translate("About KPipes"), 
            glocale->translate(
         "KPipes\nCopyright (c) 1998\nLars Doelle <lars.doelle@on-line.de>"),
-           glocale->translate("Ok"));
+           glocale->translate("OK"));
 }
 
 

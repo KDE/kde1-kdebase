@@ -374,7 +374,7 @@ kHopSetup::kHopSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -463,7 +463,7 @@ void kHopSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Hop"), 
 			     glocale->translate("Hop Version 3.3\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Emanuel Pirker."),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 

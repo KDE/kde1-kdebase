@@ -108,7 +108,7 @@ void KFontManager::about(){
 
   QMessageBox::message (i18n("About kfontmanager"), i18n("kfontmanager Version 0.2\n"\
 			"Copyright 1997\nBernd Johannes Wuebben\n"\
-			"wuebben@math.cornell.edu\n"),i18n("Ok"));
+			"wuebben@math.cornell.edu\n"),i18n("OK"));
 
 }
 
@@ -210,7 +210,7 @@ bool KFontManager::loadKDEInstalledFonts(){
   fontfilename =  getenv("HOME");
   if(fontfilename.isEmpty()){
     QMessageBox::message(i18n("Sorry"),i18n("The environment variable HOME\n"\
-			 "is not set\n"),i18n("Ok"));
+			 "is not set\n"),i18n("OK"));
     QApplication::exit(1);
 
   }
@@ -286,14 +286,14 @@ bool KFontManager::writeKDEInstalledFonts(){
   QFile fontfile(fontfilename);
 
   if (!fontfile.open(IO_WriteOnly | IO_Truncate)){
-    QMessageBox::message(i18n("Sorry"),i18n("Can not create:\n ~/.kde/share/config/kdefonts\n"),i18n("Ok"));
+    QMessageBox::message(i18n("Sorry"),i18n("Can not create:\n ~/.kde/share/config/kdefonts\n"),i18n("OK"));
     return false;
   }
 
   if (!fontfile.isWritable()){
     QMessageBox::message(i18n("Sorry"),i18n("~/.kde/share/config/kdefonts exists but\n"\
 			 "is not writeable\n"\
-			 "Can't save KDE Fontlist."),i18n("Ok"));
+			 "Can't save KDE Fontlist."),i18n("OK"));
     return false;
   }
 

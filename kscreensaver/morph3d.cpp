@@ -1048,7 +1048,7 @@ kMorph3dSetup::kMorph3dSetup( QWidget *parent, const char *name )
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( glocale->translate("Ok"), this );
+	button = new QPushButton( glocale->translate("OK"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
@@ -1119,7 +1119,7 @@ void kMorph3dSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Morph3D"), 
 			     glocale->translate("Morph3D\n\nCopyright (c) 1997 by Marcelo F. Vianna\n\nPorted to kscreensave by Emanuel Pirker."),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 

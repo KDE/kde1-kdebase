@@ -202,7 +202,7 @@ KBannerSetup::KBannerSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -356,7 +356,7 @@ void KBannerSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Banner"), 
 			     glocale->translate("Banner Version 0.1\n\nwritten by Martin R. Jones 1996\nmjones@kde.org"), 
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 //-----------------------------------------------------------------------------

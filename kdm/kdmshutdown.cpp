@@ -245,7 +245,7 @@ KDMShutdown::KDMShutdown( int mode, QWidget* _parent, const char* _name,
      QBoxLayout* box3 = new QBoxLayout( QBoxLayout::LeftToRight, 10);
      box->addLayout( box3);
 
-     okButton = new QPushButton( klocale->translate("Ok"), winFrame);
+     okButton = new QPushButton( klocale->translate("OK"), winFrame);
      set_min( okButton);
      okButton->setFocusPolicy( StrongFocus);
      cancelButton = new QPushButton( klocale->translate("Cancel"), winFrame);

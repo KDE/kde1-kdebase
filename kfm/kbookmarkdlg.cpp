@@ -62,7 +62,7 @@ KBookmarkDlg::KBookmarkDlg(KBookmarkManager *manager,
   frameLayout->activate();
 
   // Create the ok/cancel push buttons
-  okButton= new QPushButton(klocale->translate("Ok"), this);
+  okButton= new QPushButton(klocale->translate("OK"), this);
   cancelButton= new QPushButton(klocale->translate("Cancel"), this);
 
   okButton->setFixedSize(okButton->sizeHint());
@@ -188,7 +188,7 @@ KBookmarkDlgRenameDlg::KBookmarkDlgRenameDlg(const char *oldName,
   ed->setFixedHeight(ed->sizeHint().height());
 
   // Create the ok/cancel push buttons
-  okButton= new QPushButton(klocale->translate("Ok"), this);
+  okButton= new QPushButton(klocale->translate("OK"), this);
   cancelButton= new QPushButton(klocale->translate("Cancel"), this);
 
   okButton->setFixedSize(okButton->sizeHint());

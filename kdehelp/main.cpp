@@ -90,7 +90,7 @@ void errorHandler( int type, char *msg )
 
 	QMessageBox::message( klocale->translate("Error"), 
 			      msg, 
-			      klocale->translate("Ok") );
+			      klocale->translate("OK") );
 
 	QApplication::restoreOverrideCursor();
 

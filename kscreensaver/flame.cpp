@@ -461,7 +461,7 @@ kFlameSetup::kFlameSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -550,7 +550,7 @@ void kFlameSetup::slotAbout()
 {
   QMessageBox::message(glocale->translate("About Flame"),
 		       glocale->translate("Flame Version 3.3\n\nCopyright (c) 1991 by Patrick J. Naughton\n\nPorted to kscreensave by Martin Jones."), 
-		       glocale->translate("Ok"));
+		       glocale->translate("OK"));
 }
 
 

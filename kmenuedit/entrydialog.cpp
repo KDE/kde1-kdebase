@@ -146,7 +146,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 
   b_ok = new QPushButton( this, "PushButton_1" );
   b_ok->setGeometry( 56, 432, 80, 24 );
-  b_ok->setText( klocale->translate("Ok") );
+  b_ok->setText( klocale->translate("OK") );
   b_ok->setAutoRepeat( FALSE );
   b_ok->setAutoResize( FALSE );
   

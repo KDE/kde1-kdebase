@@ -145,7 +145,7 @@ kPolygonSetup::kPolygonSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -239,7 +239,7 @@ void kPolygonSetup::slotAbout()
 			     glocale->translate("Polygon Version 0.1\n\n"\
 					       "written by Martin R. Jones 1996\n"\
 					       "mjones@kde.org"), 
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 //-----------------------------------------------------------------------------

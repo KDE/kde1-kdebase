@@ -813,7 +813,7 @@ int KHelpWindow::openRemote( const char *_url )
 	{
 		QMessageBox::message( klocale->translate("Error"), 
 				      klocale->translate("Malformed URL"), 
-				      klocale->translate("Ok") );
+				      klocale->translate("OK") );
 		return 1;
 	}
 
@@ -830,7 +830,7 @@ int KHelpWindow::openRemote( const char *_url )
 	{
 		QMessageBox::message (klocale->translate("Error"), 
 				      klocale->translate("Could not start or find KFM"), 
-				      klocale->translate("Ok"));
+				      klocale->translate("OK"));
 		delete remotePage;
 		remotePage = NULL;
 		return 1;
@@ -1353,7 +1353,7 @@ void KHelpWindow::slotImageRequest( const char * _url )
 	KURL u( remoteFile.data() );
 	if ( u.isMalformed() )
 	{
-		QMessageBox::message( "Error", "Malformed URL", "Ok" );
+		QMessageBox::message( "Error", "Malformed URL", "OK" );
 		return 1;
 	}
 

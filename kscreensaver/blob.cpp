@@ -513,7 +513,7 @@ KBlobSetup::KBlobSetup
 	bbox->addStretch(1);
 
 	// means attempt to register settings with kde registry
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	// ignore changes

@@ -59,7 +59,7 @@ IconPathDialogData::IconPathDialogData
 
 	b_ok = new QPushButton( this, "PushButton_1" );
 	b_ok->setGeometry( 144, 128, 96, 24 );
-	b_ok->setText( "Ok" );
+	b_ok->setText( "OK" );
 	b_ok->setAutoRepeat( FALSE );
 	b_ok->setAutoResize( FALSE );
 

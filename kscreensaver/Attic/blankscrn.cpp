@@ -97,7 +97,7 @@ KBlankSetup::KBlankSetup( QWidget *parent, const char *name )
 	KButtonBox *bbox = new KButtonBox(this);	
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));

@@ -217,7 +217,7 @@ kLinesSetup::kLinesSetup(QWidget *parent, const char *name):QDialog(parent, name
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -293,7 +293,7 @@ void kLinesSetup::slotColend(){
 void kLinesSetup::slotAbout(){
 	QMessageBox::message(glocale->translate("About Lines"),
 			     glocale->translate("Lines Version 0.1.1\n\nwritten by Dirk Staneker 1997\ndirk.stanerker@student.uni-tuebingen.de"),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 // Ok pressed - save settings and exit

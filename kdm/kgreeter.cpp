@@ -428,7 +428,7 @@ KGreeter::restrict_nologin()
        while ( !t.eof() )
          s += t.readLine() + "\n";  
        f.close();
-       QMessageBox::critical(NULL, i18n("No login"),s, i18n("&Ok"));
+       QMessageBox::critical(NULL, i18n("No login"),s, i18n("&OK"));
 #ifdef HAVE_SETUSERCONTEXT
        login_close(lc);
 #endif
@@ -467,13 +467,13 @@ KGreeter::restrict_expired(){
 	  if (pwd->pw_expire <= time(NULL)) {
 	       QMessageBox::critical(NULL, i18n("Expired"), 
 				     i18n("Sorry -- your account has expired."), 
-				     i18n("&Ok"));
+				     i18n("&OK"));
 	       return true;
 	  } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
 	       QString str;
 	       str.sprintf(i18n("Warning: your account expires on %s"), 
 			   ctime(&pwd->pw_expire));  // use locales
-	       QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
+	       QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&OK"));
 	  }
 
      return false;
@@ -500,13 +500,13 @@ KGreeter::restrict_expired(){
 	 if (expiresec <= time(NULL)) {
 	     QMessageBox::critical(NULL, i18n("Expired"),
 				   i18n("Sorry -- your account has expired."),
-				   i18n("&Ok"));
+				   i18n("&OK"));
 	     return true;
 	 } else if (expiresec - time(NULL) < warntime) {
              QString str;
 	     str.sprintf(i18n("Warning: your account expires on %s"),
 			 ctime(&expiresec));  // use locales
-	     QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
+	     QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&OK"));
 	 }
 
      return false;
@@ -540,7 +540,7 @@ KGreeter::restrict_nohome(){
 	  if (login_getcapbool(lc, "requirehome", 0)) {
 	       QMessageBox::critical(NULL, i18n("No home"), 
 				     i18n("Home directory not available"), 
-				     i18n("&Ok"));
+				     i18n("&OK"));
 	       login_close(lc);
 	       return true;
 	  }

@@ -428,7 +428,7 @@ kLaserSetup::kLaserSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -481,6 +481,6 @@ void kLaserSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Laser"),
 			     glocale->translate("Laser Version 3.3\n\nCopyright (c) 1995 by Pascal Pensa\n\nPorted to kscreensave by Martin Jones."),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 

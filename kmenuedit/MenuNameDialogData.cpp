@@ -52,13 +52,13 @@ MenuNameDialogData::MenuNameDialogData
 	i_default->setMinimumSize(fontMetrics().width("----------"), h);
 	i_default->setMaximumSize(QLayout::unlimited, h);
 
-	int w = (int)(1.8 * QMAX(fontMetrics().width(klocale->translate("Ok")),
+	int w = (int)(1.8 * QMAX(fontMetrics().width(klocale->translate("OK")),
 			   fontMetrics().width(klocale->translate("Cancel"))));
 	
 	b_ok = new QPushButton( this, "PushButton_1" );
 	b_ok->setFixedSize(w,h);
 	connect( b_ok, SIGNAL(pressed()), SLOT(accept()) );
-	b_ok->setText( klocale->translate("Ok") );
+	b_ok->setText( klocale->translate("OK") );
 	b_ok->setAutoRepeat( FALSE );
 	b_ok->setAutoResize( FALSE );
 

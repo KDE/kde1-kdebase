@@ -415,7 +415,7 @@ kSlipSetup::kSlipSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -487,7 +487,7 @@ void kSlipSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Slip"), 
 			     glocale->translate("Slip\n\nCopyright (c) 1991 by Scott Draves\n\nPorted to kscreensave by Emanuel Pirker."),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 

@@ -1093,7 +1093,7 @@ kBoubouleSetup::kBoubouleSetup( QWidget *parent, const char *name )
 	connect( button, SIGNAL( clicked() ), SLOT(slotAbout() ) );
 	bbox->addStretch(1);
 
-	button = bbox->addButton( glocale->translate("Ok"));	
+	button = bbox->addButton( glocale->translate("OK"));	
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
 	button = bbox->addButton(glocale->translate("Cancel"));
@@ -1222,7 +1222,7 @@ void kBoubouleSetup::slotAbout()
 {
 	QMessageBox::message(glocale->translate("About Bouboule"),
 			     glocale->translate("Bouboule v0.1 -- a glob of spheres twisting and changing size\n\nCopyright (c) 1996 by Jeremie PETIT\n\nPorted to kscreensave by Cedric Tefft"), 
-			     glocale->translate("Ok")); 
+			     glocale->translate("OK")); 
 }
 
 

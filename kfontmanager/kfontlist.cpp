@@ -61,7 +61,7 @@ void KFontList::about(){
 
   QMessageBox::message (i18n("About kfontmanager"), i18n("kfontmanager Version 0.1\n"\
 			"Copyright 1997\nBernd Johannes Wuebben\n"\
-			"wuebben@math.cornell.edu\n"),i18n("Ok"));
+			"wuebben@math.cornell.edu\n"),i18n("OK"));
 
 }
 

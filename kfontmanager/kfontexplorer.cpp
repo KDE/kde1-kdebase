@@ -22,6 +22,9 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   
     $Log$
+    Revision 1.9  1997/11/09 22:31:41  wuebben
+    Bernd: colorscheme related fixes
+
     Revision 1.8  1997/11/09 05:31:19  wuebben
     Bernd: some changees and fixes. It is amazing how much time it takes to simply
     maintain one's applications let alone to add new feature -- just to make
@@ -304,7 +307,7 @@ KFontExplorer::KFontExplorer( QWidget *parent, const char *name,
   cancel_button->setGeometry( 3*XOFFSET +100, OKBUTTONY +40, 80, BUTTONHEIGHT );
   connect( cancel_button, SIGNAL( clicked() ), SLOT( reject() ) );
 
-  ok_button = new QPushButton( klocale->translate("Ok"), this );
+  ok_button = new QPushButton( klocale->translate("OK"), this );
   ok_button->setGeometry( 3*XOFFSET, OKBUTTONY +40,80, BUTTONHEIGHT );
   connect( ok_button, SIGNAL( clicked() ), SLOT( accept() ) );	
   */

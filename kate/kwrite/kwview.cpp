@@ -1134,7 +1134,7 @@ void KWrite::loadURL(const char *url, bool insert) {
         i18n("Sorry"),
         i18n("KWrite is already waiting\nfor an internet job to finish\n"\
              "Please wait until it has finished\nAlternatively stop the running one."),
-        i18n("Ok"),
+        i18n("OK"),
         "",
         "",
         0,0);
@@ -1147,7 +1147,7 @@ void KWrite::loadURL(const char *url, bool insert) {
       QMessageBox::warning(this,
         i18n("Sorry"),
         i18n("Could not start or find KFM"),
-        i18n("Ok"),
+        i18n("OK"),
         "",
         "",
         0,0);
@@ -1192,7 +1192,7 @@ void KWrite::writeURL(const char *url) {
         i18n("Sorry"),
         i18n("KWrite is already waiting\nfor an internet job to finish\n"\
              "Please wait until it has finished\nAlternatively stop the running one."),
-        i18n("Ok"),
+        i18n("OK"),
         "",
         "",
         0,0);
@@ -1211,7 +1211,7 @@ void KWrite::writeURL(const char *url) {
       QMessageBox::warning(this,
         i18n("Sorry"),
         i18n("Could not start or find KFM"),
-        i18n("Ok"),
+        i18n("OK"),
         "",
         "",
         0,0);

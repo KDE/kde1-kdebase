@@ -614,7 +614,7 @@ kSpaceSetup::kSpaceSetup( QWidget *parent, const char *name )
 	button->setGeometry( 130, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotAbout() ) );
 
-	button = new QPushButton( glocale->translate("Ok"), this );
+	button = new QPushButton( glocale->translate("OK"), this );
 	button->setGeometry( 235, 210, 50, 25 );
 	connect( button, SIGNAL( clicked() ), SLOT( slotOkPressed() ) );
 
@@ -685,7 +685,7 @@ void kSpaceSetup::slotAbout()
 	QMessageBox::message(glocale->translate("About KSpace"), 
 			     glocale->translate(
         "KSpace\nCopyright (c) 1998\nBernd Johannes Wuebben <wuebben@kde.org>"),
-			     glocale->translate("Ok"));
+			     glocale->translate("OK"));
 }
 
 

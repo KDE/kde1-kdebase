@@ -445,7 +445,7 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
 
   QPushButton *ok, *cancel;
 
-  ok = new QPushButton( i18n("Ok"), this );
+  ok = new QPushButton( i18n("OK"), this );
   ok->setMinimumSize(ok->sizeHint());
   ok->setFixedHeight(ok->sizeHint().height());
   ok->setDefault(true);
