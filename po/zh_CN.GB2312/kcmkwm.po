@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-03-28 20:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -53,115 +53,115 @@ msgstr "粘附"
 msgid "Menu"
 msgstr "菜单"
 
-#: titlebar.cpp:178 titlebar.cpp:934
+#: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
 msgstr "左"
 
-#: titlebar.cpp:182 titlebar.cpp:944
+#: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
 msgstr "右"
 
-#: titlebar.cpp:471
+#: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "标题行左边空间已满...请移去 '最大化' 按钮\n"
 
-#: titlebar.cpp:504
+#: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "标题行右边空间已满...请移去 '最大化' 按钮\n"
 
-#: titlebar.cpp:544
+#: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "标题行左边空间已满...请移去 '最小化' 按钮\n"
 
-#: titlebar.cpp:577
+#: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "标题行右边空间已满...请移去 '最小化' 按钮\n"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:932
 msgid "Title Alignment"
 msgstr "标题对齐"
 
-#: titlebar.cpp:939
+#: titlebar.cpp:941
 msgid "Middle"
 msgstr "中间"
 
 #
-#: titlebar.cpp:967
+#: titlebar.cpp:969
 msgid "Shaded Vertically"
 msgstr "垂直渐变色"
 
-#: titlebar.cpp:973
+#: titlebar.cpp:975
 msgid "Shaded Horizontally"
 msgstr "水平渐变色"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:984
 msgid "Plain"
 msgstr "普通"
 
-#: titlebar.cpp:990 titlebar.cpp:1015
+#: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
 msgstr "位图"
 
-#: titlebar.cpp:1003
+#: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr "活动窗口标题使用渐变色框"
 
-#: titlebar.cpp:1044
+#: titlebar.cpp:1046
 msgid "Active pixmap:"
 msgstr "活动标题位图:"
 
-#: titlebar.cpp:1049
+#: titlebar.cpp:1051
 msgid "Inactive pixmap:"
 msgstr "非活动标题位图"
 
-#: titlebar.cpp:1055
+#: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr "文本后无位图"
 
-#: titlebar.cpp:1066
+#: titlebar.cpp:1068
 msgid "Mouse action"
 msgstr "鼠标动作"
 
-#: titlebar.cpp:1074
+#: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr "鼠标左键双击执行:"
 
 #
-#: titlebar.cpp:1084
+#: titlebar.cpp:1086
 msgid "(Un)Maximize"
 msgstr "最大化/恢复"
 
 #
-#: titlebar.cpp:1085
+#: titlebar.cpp:1087
 msgid "(Un)Shade"
 msgstr "渐变色/普通"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1088
 msgid "Iconify"
 msgstr "图标化"
 
 #
-#: titlebar.cpp:1087
+#: titlebar.cpp:1089
 msgid "(Un)Sticky"
 msgstr "粘附/恢复"
 
-#: titlebar.cpp:1107
+#: titlebar.cpp:1109
 msgid "Title animation"
 msgstr "标题动画"
 
-#: titlebar.cpp:1123
+#: titlebar.cpp:1125
 msgid "ms"
 msgstr "毫秒"
 
-#: titlebar.cpp:1366
+#: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
 msgstr "窗口管理器设置 - 错误"
 
-#: titlebar.cpp:1367
+#: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

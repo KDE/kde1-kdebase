@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1998-12-22 00:28+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -59,115 +59,115 @@ msgstr "Apegalós"
 msgid "Menu"
 msgstr "Menú"
 
-#: titlebar.cpp:178 titlebar.cpp:934
+#: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
 msgstr "Esquerra"
 
-#: titlebar.cpp:182 titlebar.cpp:944
+#: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
 msgstr "Dreta"
 
-#: titlebar.cpp:471
+#: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La banda esquerra de la barra és plena... desactivem el botó 'maximitza'\n"
 
-#: titlebar.cpp:504
+#: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
 "La banda dreta de la barra és plena... desactivem el botó 'maximitza'\n"
 
-#: titlebar.cpp:544
+#: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La banda esquerra de la barra és plena... desactivem el botó 'minimitza'\n"
 
-#: titlebar.cpp:577
+#: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
 "La banda dreta de la barra és plena... desactivem el botó 'minimitza'\n"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:932
 msgid "Title Alignment"
 msgstr "Alineació de títol"
 
-#: titlebar.cpp:939
+#: titlebar.cpp:941
 msgid "Middle"
 msgstr "Mitjà"
 
-#: titlebar.cpp:967
+#: titlebar.cpp:969
 msgid "Shaded Vertically"
 msgstr "Degradat verticalment"
 
-#: titlebar.cpp:973
+#: titlebar.cpp:975
 msgid "Shaded Horizontally"
 msgstr "Degradat horitzontalment"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:984
 msgid "Plain"
 msgstr "Llisa"
 
-#: titlebar.cpp:990 titlebar.cpp:1015
+#: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:1003
+#: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr "El títol actiu té el marc ombrejat"
 
-#: titlebar.cpp:1044
+#: titlebar.cpp:1046
 msgid "Active pixmap:"
 msgstr "Pixmap actiu"
 
-#: titlebar.cpp:1049
+#: titlebar.cpp:1051
 msgid "Inactive pixmap:"
 msgstr "Pixmap inactiu"
 
-#: titlebar.cpp:1055
+#: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr "No hi ha pixmap sota el text"
 
-#: titlebar.cpp:1066
+#: titlebar.cpp:1068
 msgid "Mouse action"
 msgstr "Acció del ratolí"
 
-#: titlebar.cpp:1074
+#: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr "El doble clic del botó esquerre provoca:"
 
-#: titlebar.cpp:1084
+#: titlebar.cpp:1086
 msgid "(Un)Maximize"
 msgstr "(Des)Maximitza"
 
-#: titlebar.cpp:1085
+#: titlebar.cpp:1087
 msgid "(Un)Shade"
 msgstr "(Des)Arronsa"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1088
 msgid "Iconify"
 msgstr "Iconitza"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1089
 msgid "(Un)Sticky"
 msgstr "(Des)Apegalós"
 
-#: titlebar.cpp:1107
+#: titlebar.cpp:1109
 msgid "Title animation"
 msgstr "Animació de títol"
 
-#: titlebar.cpp:1123
+#: titlebar.cpp:1125
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1366
+#: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
 msgstr "Configuració del gestor de finestres - ERROR"
 
-#: titlebar.cpp:1367
+#: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

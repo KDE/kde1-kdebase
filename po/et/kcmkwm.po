@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-01-18 01:07:46+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -61,111 +61,111 @@ msgstr "Kleepuv"
 msgid "Menu"
 msgstr "Menüü"
 
-#: titlebar.cpp:178 titlebar.cpp:934
+#: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
 msgstr "Vasak"
 
-#: titlebar.cpp:182 titlebar.cpp:944
+#: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
 msgstr "Parem"
 
-#: titlebar.cpp:471
+#: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Vasak pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
 
-#: titlebar.cpp:504
+#: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Parem pool tiitliribast on täis... keelatakse nupp 'maksimeeri'\n"
 
-#: titlebar.cpp:544
+#: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Vasak pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
 
-#: titlebar.cpp:577
+#: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Parem pool tiitliribast on täis... keelatakse nupp 'minimeeri'\n"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:932
 msgid "Title Alignment"
 msgstr "Tiitli joondus"
 
-#: titlebar.cpp:939
+#: titlebar.cpp:941
 msgid "Middle"
 msgstr "Keskel"
 
-#: titlebar.cpp:967
+#: titlebar.cpp:969
 msgid "Shaded Vertically"
 msgstr "Üleminek vertikaalselt"
 
-#: titlebar.cpp:973
+#: titlebar.cpp:975
 msgid "Shaded Horizontally"
 msgstr "Üleminek horisontaalselt"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:984
 msgid "Plain"
 msgstr "Puhas"
 
-#: titlebar.cpp:990 titlebar.cpp:1015
+#: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
 msgstr "Pikselraster"
 
-#: titlebar.cpp:1003
+#: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr "Aktiivsel tiitlil on varjutatud raam"
 
-#: titlebar.cpp:1044
+#: titlebar.cpp:1046
 msgid "Active pixmap:"
 msgstr "Aktiivse pixelraster:"
 
-#: titlebar.cpp:1049
+#: titlebar.cpp:1051
 msgid "Inactive pixmap:"
 msgstr "Mitteaktiivse pikselraster:"
 
-#: titlebar.cpp:1055
+#: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr "Teksti all pole pikselrastrit"
 
-#: titlebar.cpp:1066
+#: titlebar.cpp:1068
 msgid "Mouse action"
 msgstr "Hiire tegevus"
 
-#: titlebar.cpp:1074
+#: titlebar.cpp:1076
 msgid "Left Button double click does:"
 msgstr "Vasaku nupu topeltklõps teeb:"
 
-#: titlebar.cpp:1084
+#: titlebar.cpp:1086
 msgid "(Un)Maximize"
 msgstr "(De)maksimeeri"
 
-#: titlebar.cpp:1085
+#: titlebar.cpp:1087
 msgid "(Un)Shade"
 msgstr "(Ära) varja"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1088
 msgid "Iconify"
 msgstr "Ikooni"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1089
 msgid "(Un)Sticky"
 msgstr "(Mitte)kleepuv"
 
-#: titlebar.cpp:1107
+#: titlebar.cpp:1109
 msgid "Title animation"
 msgstr "Tiitli animatsioon"
 
-#: titlebar.cpp:1123
+#: titlebar.cpp:1125
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1366
+#: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
 msgstr "Aknahalduri häälestus - VIGA"
 
-#: titlebar.cpp:1367
+#: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

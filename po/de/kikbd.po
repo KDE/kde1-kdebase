@@ -3,13 +3,12 @@ msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-04-08 21:55+MET\n"
-"Translator: Harri Porten <porten@kde.org>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
+"Translator: Harri Porten <porten@kde.org>\n"
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -390,7 +389,8 @@ msgstr "Taste(n) zum Wechseln der Tastaturtabellen"
 
 #: widgets.cpp:425
 msgid "Key for activating Alternate symbols in current keyboard map"
-msgstr "Taste zum Aktivieren alternativer Symbole in der aktuellen Tastaturtabelle"
+msgstr ""
+"Taste zum Aktivieren alternativer Symbole in der aktuellen Tastaturtabelle"
 
 #: widgets.cpp:438
 msgid "&Beep"
@@ -455,12 +455,15 @@ msgstr "Standardverhalten: Tastaturtabelle in allen Fenstern aktiv"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Zusatzoption: Status der Tastaturtabelle für jedes Fenster einzeln sichern"
+msgstr ""
+"Zusatzoption: Status der Tastaturtabelle für jedes Fenster einzeln sichern"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Extraoption: Status der Tastaturtabelle für jede Klasse von Fenstern einzeln sichern"
+msgstr ""
+"Extraoption: Status der Tastaturtabelle für jede Klasse von Fenstern einzeln "
+"sichern"
 
 #: widgets.cpp:561
 msgid "Button Colors"

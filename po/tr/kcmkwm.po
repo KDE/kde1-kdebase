@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-12-19 01:20+0100\n"
+"POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -60,119 +60,119 @@ msgstr "Sabit"
 msgid "Menu"
 msgstr "Menü"
 
-#: titlebar.cpp:178 titlebar.cpp:934
+#: titlebar.cpp:178 titlebar.cpp:936
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:182 titlebar.cpp:944
+#: titlebar.cpp:182 titlebar.cpp:946
 msgid "Right"
 msgstr ""
 
-#: titlebar.cpp:471
+#: titlebar.cpp:473
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Baþlýk çubuðunun sol tarafý dolu... Büyült tuþu geçersiz\n"
 
-#: titlebar.cpp:504
+#: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr "Baþlýk çubuðunun sað tarafý dolu... Büyült tuþu geçersiz\n"
 
-#: titlebar.cpp:544
+#: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Baþlýk çubuðunun sol tarafý dolu... Küçült tuþu geçersiz\n"
 
-#: titlebar.cpp:577
+#: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Baþlýk çubuðunun sað tarafý dolu... Küçült tuþu geçersiz\n"
 
-#: titlebar.cpp:930
+#: titlebar.cpp:932
 #, fuzzy
 msgid "Title Alignment"
 msgstr "Baþlýk Animasyonu"
 
-#: titlebar.cpp:939
+#: titlebar.cpp:941
 msgid "Middle"
 msgstr ""
 
-#: titlebar.cpp:967
+#: titlebar.cpp:969
 msgid "Shaded Vertically"
 msgstr "Dikey gölgeli"
 
-#: titlebar.cpp:973
+#: titlebar.cpp:975
 msgid "Shaded Horizontally"
 msgstr "Yatay gölgeli"
 
-#: titlebar.cpp:982
+#: titlebar.cpp:984
 msgid "Plain"
 msgstr "Düz"
 
-#: titlebar.cpp:990 titlebar.cpp:1015
+#: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
 msgstr "SÝmge"
 
-#: titlebar.cpp:1003
+#: titlebar.cpp:1005
 msgid "Active title has shaded frame"
 msgstr ""
 
-#: titlebar.cpp:1044
+#: titlebar.cpp:1046
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "&Aktif Simge"
 
-#: titlebar.cpp:1049
+#: titlebar.cpp:1051
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "&Etkisiz Simge"
 
-#: titlebar.cpp:1055
+#: titlebar.cpp:1057
 msgid "No pixmap under text"
 msgstr ""
 
-#: titlebar.cpp:1066
+#: titlebar.cpp:1068
 msgid "Mouse action"
 msgstr "Fare Hareketi"
 
-#: titlebar.cpp:1074
+#: titlebar.cpp:1076
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "SolFareTuþu ile baþlýk çubuðunda\n"
 "çift týklama þunu yapar:"
 
-#: titlebar.cpp:1084
+#: titlebar.cpp:1086
 msgid "(Un)Maximize"
 msgstr "Büyült(Küçült)"
 
-#: titlebar.cpp:1085
+#: titlebar.cpp:1087
 msgid "(Un)Shade"
 msgstr "Gölgelendir(Kaldýr)"
 
-#: titlebar.cpp:1086
+#: titlebar.cpp:1088
 msgid "Iconify"
 msgstr "Simgele"
 
-#: titlebar.cpp:1087
+#: titlebar.cpp:1089
 msgid "(Un)Sticky"
 msgstr "Sabit(Serbest)"
 
-#: titlebar.cpp:1107
+#: titlebar.cpp:1109
 #, fuzzy
 msgid "Title animation"
 msgstr "Baþlýk Animasyonu"
 
-#: titlebar.cpp:1123
+#: titlebar.cpp:1125
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1366
+#: titlebar.cpp:1368
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "Pencere yöneticisi türü"
 
-#: titlebar.cpp:1367
+#: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

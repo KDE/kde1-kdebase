@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1999-04-08 01:20+0200\n"
 "PO-Revision-Date: 1999-04-08 8:45+MET\n"
-"Translator: Claudia Sorg <claudia@kde.org>\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Claudia Sorg <claudia@kde.org>\n"
 
 #: kfmgui.cpp:204
 msgid "KFM"
@@ -226,7 +226,8 @@ msgid ""
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 "\n"
-"Bitte verfahren Sie mit Berichten über Programmfehler und Wünschen, wie unter http://bugs.kde.org erklärt."
+"Bitte verfahren Sie mit Berichten über Programmfehler und Wünschen, wie "
+"unter http://bugs.kde.org erklärt."
 
 #: kfmgui.cpp:450
 msgid "&Go"
