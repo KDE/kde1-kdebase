@@ -64,7 +64,7 @@ fi
 
 if ! grep -q "^# Start kdebase added code v2DEB" /etc/X11/xdm/Xsetup_0; then
 echo -n "Patching away another old kdm bug... "
-sed "s|/ kdmdesktop|/usr/bin/kdmdesktop|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
+sed "s|kdmdesktop|/usr/bin/kdmdesktop|" </etc/X11/xdm/Xsetup_0 >/etc/X11/xdm/Xsetup_0-new
 cat /etc/X11/xdm/Xsetup_0-new >/etc/X11/xdm/Xsetup_0
 rm -f /etc/X11/xdm/Xsetup_0-new
 
