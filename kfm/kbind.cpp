@@ -1749,19 +1749,10 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
 	{
 	    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
 
-<<<<<<< kbind.cpp
-	    printf("Content=%s Accuracy=%d '%s'\n", (const char *)result->getContent(), result->getAccuracy(),_url);
-	    
 	    // Is it a directory or dont we know anything about it ?
 	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ) 
 		/* strcmp( "application/x-kdelnk", result->getContent() ) == 0 ) */
 		return KMimeType::findType( _url );
-=======
-	    // Is it a directory or dont we know anything about it, or ist it a *.kdelnk file ?
-	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ||
-		 strcmp( "application/x-kdelnk", result->getContent() ) == 0 )
-		return KMimeType::findType( _filename );
->>>>>>> 1.19
 	    
 	    printf("Content=%s Accuracy=%d\n", (const char *)result->getContent(), result->getAccuracy());
 
