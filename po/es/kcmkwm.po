@@ -127,7 +127,7 @@ msgstr "Mover"
 
 #: titlebar.cpp:990
 msgid "(Un)Shade"
-msgstr "(De)Sombrear"
+msgstr "Cerrar/Abrir persiana"
 
 #: titlebar.cpp:991
 msgid "Iconify"

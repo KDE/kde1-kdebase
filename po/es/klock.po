@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-04-17 23:46+0200\n"
+"PO-Revision-Date: 1998-05-09 09:59+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: banner.cpp:62
 msgid "Banner"
-msgstr "Cartel"
+msgstr "Cartél"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
@@ -116,7 +116,7 @@ msgstr "Configurar Blob"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
-msgstr ""
+msgstr "Mostrar Cuadros seg."
 
 #: blob.cpp:480
 msgid "Algorithm"
@@ -144,35 +144,31 @@ msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Configurar Llama"
+msgstr "Configurar Bouboule"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Número de murciélagos:"
+msgstr "Número de puntos:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Número de puntos:"
+msgstr "Tamaño de puntos:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "Frecuencia de cambio de color:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "Modo 3D"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Acerca de Blob"
+msgstr "Acerca de Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -182,6 +178,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- esferas torciéndose y cambiando tamaño\n"
+"\n"
+"Copyright (c) 1996 por Jeremie PETIT\n"
+"\n"
+"Adaptado a kscreensave por Cedric Tefft"
 
 #: flame.cpp:310
 msgid "Flame"
@@ -582,21 +583,19 @@ msgstr "Error"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Ciencia"
 
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "Configurar Líneas"
+msgstr "Configurar Ciencia"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "Intensidad:"
 
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "Acerca de Líneas"
+msgstr "Acerca de Ciencia"
 
 #: science.cpp:545
 msgid ""
@@ -605,6 +604,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science Version 0.2beta\n"
+"\n"
+"escrito por Rene Beutler 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"

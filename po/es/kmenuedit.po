@@ -2,20 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-04-18 00:18+0200\n"
+"PO-Revision-Date: 1998-05-09 10:47+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kmenuedit.cpp:62
 msgid "&Reload"
-msgstr "Recargar menús"
+msgstr "&Recargar menús"
 
 #: kmenuedit.cpp:68
 msgid "Change &Menuname"
-msgstr "Cambiar nombre del menú"
+msgstr "Cambiar nombre del &menú"
 
 #: kmenuedit.cpp:69
 msgid "Reload &Filetypes"
-msgstr "Recargar tipos de archivos"
+msgstr "Recargar tipos de &ficheros"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -23,7 +23,7 @@ msgstr "por"
 
 #: kmenuedit.cpp:175 kmenuedit.cpp:200
 msgid "Changes not saved !"
-msgstr "Atención: Hay cambios pendientes de almacenar"
+msgstr "Hay cambios pendientes de almacenar !"
 
 #: kmenuedit.cpp:176 kmenuedit.cpp:201
 msgid ""
@@ -144,7 +144,7 @@ msgstr "Aplicación"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr "Tragar"
+msgstr "Empotrar"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -196,7 +196,7 @@ msgstr "Patrón binario:"
 
 #: entrydialog.cpp:300
 msgid "Application to swallow:"
-msgstr "Aplicación a tragar:"
+msgstr "Aplicación a empotrar:"
 
 #: entrydialog.cpp:306
 msgid "Title of application:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-06 20:58+0200\n"
-"PO-Revision-Date: 1998-04-17 22:31+0200\n"
+"PO-Revision-Date: 1998-05-09 09:39+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -19,7 +19,7 @@ msgstr "&Abrir"
 
 #: kfindtop.cpp:124
 msgid "&Add to archive"
-msgstr "Agregar al archivo"
+msgstr "A&gregar al archivo"
 
 #: kfindtop.cpp:129
 msgid "&Properties"
@@ -31,20 +31,19 @@ msgstr "Abrir carpeta que lo contiene"
 
 #: kfindtop.cpp:135
 msgid "&Save Search"
-msgstr "Guardar búsqueda"
+msgstr "&Guardar búsqueda"
 
 #: kfindtop.cpp:147
 msgid "&Cut"
-msgstr "&Cortar"
+msgstr "&Recortar"
 
 #: kfindtop.cpp:152
 msgid "&Select All"
 msgstr "&Seleccionar todo"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Seleccionar todo"
+msgstr "&Deseleccionar todo"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -93,7 +92,7 @@ msgstr "Propiedades"
 
 #: kfindtop.cpp:231
 msgid "Open Containing Folder"
-msgstr "Abrir carpeta que lo contiene"
+msgstr "Abrir &carpeta que lo contiene"
 
 #: kfindtop.cpp:236
 msgid "Save Search Results"
@@ -105,11 +104,11 @@ msgstr "&Nombre:"
 
 #: kftabdlg.cpp:74
 msgid "&Look in:"
-msgstr "Buscar en:"
+msgstr "&Buscar en:"
 
 #: kftabdlg.cpp:77
 msgid "&Browse ..."
-msgstr "Examinar ..."
+msgstr "&Examinar ..."
 
 #: kftabdlg.cpp:83
 msgid "Include &subfolders"
@@ -125,15 +124,15 @@ msgstr "y"
 
 #: kftabdlg.cpp:127
 msgid "month(s)"
-msgstr "Mes(es)"
+msgstr "mes(es)"
 
 #: kftabdlg.cpp:128
 msgid "day(s)"
-msgstr "Día(s)"
+msgstr "día(s)"
 
 #: kftabdlg.cpp:143
 msgid "&All files"
-msgstr "Todos los archivos"
+msgstr "&Todos los archivos"
 
 #: kftabdlg.cpp:144
 msgid "Find all files created or &modified:"
@@ -141,15 +140,15 @@ msgstr "Encontrar todos los archivos creados o &modificados:"
 
 #: kftabdlg.cpp:145
 msgid "&between"
-msgstr "entre"
+msgstr "&entre"
 
 #: kftabdlg.cpp:146
 msgid "during the previou&s "
-msgstr "en los últimos "
+msgstr "en &los últimos "
 
 #: kftabdlg.cpp:147
 msgid "&during the previous "
-msgstr "en los últimos"
+msgstr "en l&os últimos"
 
 #: kftabdlg.cpp:195
 msgid " Date Modified "
@@ -161,11 +160,11 @@ msgstr "De &tipo:"
 
 #: kftabdlg.cpp:204
 msgid "&Containing Text:"
-msgstr "&Conteniendo el texto:"
+msgstr "&Conteniendo:"
 
 #: kftabdlg.cpp:209
 msgid "&Size is:"
-msgstr "De Tamaño:"
+msgstr "De T&amaño:"
 
 #: kftabdlg.cpp:232
 msgid "All Files and Folders"
@@ -173,27 +172,27 @@ msgstr "Todos los archivos y directorios"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Ficheros"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Carpetas"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Ligas"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Ficheros especiales (dispositivos, ...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Ficheros ejecutables"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "Ejecutables SUID"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -270,12 +269,12 @@ msgstr "Agregar nuevo:"
 
 #: kfoptions.cpp:179
 msgid "Archivers"
-msgstr "Archivadores:"
+msgstr "Archivadores"
 
 #: kfwin.cpp:110 kfwin.cpp:117 kfwin.cpp:133 kfwin.cpp:160
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d archivo(s) no encontrado(s)"
+msgstr "%d archivo(s) encontrado(s)"
 
 #: kfwin.cpp:244
 msgid "It wasn't possible to save results!"
@@ -315,7 +314,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"No es posible borrar\n"
+"No es posible suprimir\n"
 "el archivo elegido"
 
 #: kfwin.cpp:334
@@ -339,7 +338,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"No es posible borrar\n"
+"No es posible suprimir\n"
 "el directorio elegido"
 
 #: kfwin.cpp:436
