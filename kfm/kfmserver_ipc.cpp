@@ -2,6 +2,8 @@
 // (c) Torben Weis
 //     weis@stud.uni-frankfurt.de
 
+#include <errno.h>
+
 #include "kfmserver_ipc.h"
 #include <errno.h>
 

@@ -5,7 +5,7 @@
 #endif
 
 // #define TORBENSDEBUG
-#define COOLOSDEBUG
+// #define COOLOSDEBUG
 void debugT( const char *msg , ...);
 void debugC( const char *msg , ...);
 

@@ -616,6 +616,7 @@ void KRootWidget::update()
 	    {
 		KRootIcon *icon = 0L;
 		icon = new KRootIcon( file, -200, -200 );
+		
 		// Do we have some information about where to locate the new icon ?
 		KRootLayout *lay = findLayout( file );
 		if ( lay )
@@ -1093,10 +1094,8 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
 
     KMimeType *typ = KMimeType::getMagicMimeType( url );
     pixmap = typ->getPixmap( url );
-    
     init();
     initToolTip();
-    
     dropZone = new KDNDDropZone( this , DndURL);
     connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ), this, SLOT( slotDropEvent( KDNDDropZone *) ) );
 
@@ -1144,16 +1143,18 @@ void KRootIcon::initFilename()
 
     QDir dir(n); // no static method available
     if (dir.exists()) // a directoy
-	n += "/.directory";
+    {	
+      n += "/.directory";
     
-    QFile f( n );
-    if ( !f.open( IO_ReadOnly ) )
+      QFile f( n );
+      if ( !f.open( IO_ReadOnly ) )
 	return;
-    f.close();
-    
-    KConfig sc(n);
-    sc.setGroup("KDE Desktop Entry");
-    file = sc.readEntry("Name", file);
+      f.close();
+      
+      KConfig sc(n);
+      sc.setGroup("KDE Desktop Entry");
+      file = sc.readEntry("Name", file);
+    }
 }
 
 void KRootIcon::init()
@@ -1190,7 +1191,7 @@ void KRootIcon::init()
     QPainter p2;
     p2.begin( &mask );
     p2.setFont( font() );
-    
+
     if ( root->iconStyle() == 1 && !bSelected ) {
 	p2.drawText( textXOffset, textYOffset, file );
 }     else

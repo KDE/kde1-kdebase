@@ -431,10 +431,10 @@ void KfmGui::initMenu()
       case ICON_VIEW:
 	mview->setItemChecked( mview->idAt( 5 ), true );
 	break;
-      case LONG_VIEW:
+      case TEXT_VIEW:
 	mview->setItemChecked( mview->idAt( 6 ), true );
 	break;
-      case TEXT_VIEW:
+      case LONG_VIEW:
 	mview->setItemChecked( mview->idAt( 7 ), true );
 	break;
       }
