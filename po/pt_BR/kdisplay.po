@@ -130,7 +130,7 @@ msgstr "&Adicionar ..."
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr "&Gravar alterações"
+msgstr "&Salvar alterações"
 
 #: colorscm.cpp:176
 msgid "Widget color"

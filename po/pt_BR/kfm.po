@@ -159,7 +159,7 @@ msgstr "Mostrar Barra de &Localização"
 
 #: kfmgui.cpp:433
 msgid "Sa&ve Settings"
-msgstr "Gravar &Configuração"
+msgstr "Sal&var Configuração"
 
 #: kfmgui.cpp:435
 msgid "Configure Browser..."

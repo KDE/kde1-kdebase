@@ -208,7 +208,7 @@ msgstr "Mostrar &Barra de Status "
 
 #: mainwidget.cpp:180
 msgid "&Save Options"
-msgstr "Gravar Opções"
+msgstr "&Salvar Opções"
 
 #: mainwidget.cpp:182
 msgid "KDE Help System\n"

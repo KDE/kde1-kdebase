@@ -38,7 +38,7 @@ msgstr "Ab&rir a Pasta que Contém"
 
 #: kfindtop.cpp:138
 msgid "&Save Search"
-msgstr "&Gravar Pesquisa"
+msgstr "&Salvar Pesquisa"
 
 #: kfindtop.cpp:155
 msgid "&Select All"
