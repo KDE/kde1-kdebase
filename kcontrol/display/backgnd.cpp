@@ -103,6 +103,8 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 			  0, read_jpeg_jfif, NULL);
 #endif
 
+	debug("KBackground::KBackground");
+
     KIconLoader iconLoader;
 
     changed = false;
@@ -184,20 +186,23 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	
 	QGridLayout *grid = new QGridLayout( group, 8, 5, 5 );
 	
-	grid->setRowStretch(0,10);
+	grid->setRowStretch(0,50);
 	grid->setRowStretch(1,10);
 	grid->setRowStretch(2,10);
 	grid->setRowStretch(3,10);
 	grid->setRowStretch(4,10);
 	grid->setRowStretch(5,10);
 	grid->setRowStretch(6,10);
-	grid->setRowStretch(7,0);
+	grid->setRowStretch(7,10);
 
 	grid->setColStretch(0,0);
 	grid->setColStretch(1,10);
-	grid->setColStretch(2,100);
-	grid->setColStretch(3,100);
+	grid->setColStretch(2,90);
+	grid->setColStretch(3,90);
 	grid->setColStretch(4,0);
+	
+	grid->addRowSpacing(0,15);
+	grid->addRowSpacing(5,1);
 	
 	//grid->setRowSpacing(0,15);
 	
@@ -230,24 +235,6 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	    SLOT( slotSelectColor2( const QColor & ) ) );
 			
 	grid->addMultiCellWidget( colButton2, 4, 4, 2, 3 );
-	
-    stGroup = new QButtonGroup( this );
-    stGroup->hide();
-    stGroup->setExclusive( true );
-
-    rbGradient = new QRadioButton( i18n( "Blen&d" ), group );
-	rbGradient->setFixedHeight( rb->sizeHint().height() );
-    stGroup->insert( rbGradient, Gradient );
-	
-	grid->addWidget( rbGradient, 5, 2 );
-	
-    rbPattern = new QRadioButton( i18n( "&Pattern" ), group );
-	rbPattern->setFixedHeight( rb->sizeHint().height() );
-    stGroup->insert( rbPattern, Pattern );
-
-	grid->addWidget( rbPattern, 5, 3 );
-	
-    connect( stGroup, SIGNAL( clicked( int ) ), SLOT( slotStyleMode( int ) ) );
 
     changeButton = new QPushButton( i18n("Set&up ..."), group );
 	changeButton->setFixedHeight( changeButton->sizeHint().height() );
@@ -261,9 +248,9 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
     group = new QGroupBox( i18n("Wallpaper"), this );
 
-	groupLayout = new QVBoxLayout( group, 10 ); 
+	groupLayout = new QVBoxLayout( group, 10, 5 ); 
     groupLayout->addSpacing( 10 );
-	groupLayout->addStretch( 5 );
+	groupLayout->addStretch( 50 );
 
     wpGroup = new QButtonGroup( this );
     wpGroup->hide();
@@ -293,13 +280,15 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     QDir d( path, "*", QDir::Name, QDir::Readable | QDir::Files );
     const QStrList *list = d.entryList();
 
-    wpCombo = new QComboBox( group );
+    wpCombo = new QComboBox( false, group );
     wpCombo->insertItem( NO_WALLPAPER, 0 );
     wpCombo->setCurrentItem( 0 );
 	wpCombo->setFixedHeight( wpCombo->sizeHint().height() );
 	
-	groupLayout->addStretch( 5 );
+	//groupLayout->addStretch( 5 );
+	groupLayout->addSpacing( 5 );
 	groupLayout->addWidget( wpCombo, 10 );
+	groupLayout->addSpacing( 5 );
 	
     QStrListIterator it( *list );
     for ( int i = 1; it.current(); ++it, i++ )
@@ -327,7 +316,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	topLayout->activate();
 	
 	resize(600,600);
-    
+   
     showSettings();
 }
 
@@ -444,7 +433,7 @@ void KBackground::writeSettings( int num )
 		config->writeEntry( "ColorMode", "Gradient" );		
 	} else if ( ncMode == TwoColor && stMode == Pattern ) {
 		config->writeEntry( "ColorMode", "Pattern" );
-	} else printf("ColorMode not changed\n");
+	}
 	
 	QStrList strl( true ); // deep copies
 	for (uint i = 0; i < 8 ; i++) {
@@ -519,9 +508,6 @@ void KBackground::showSettings()
     ((QRadioButton *)ncGroup->find( TwoColor ))->setChecked( ncMode == TwoColor);
 
     slotColorMode( ncMode );
-
-    ((QRadioButton *)stGroup->find( Gradient ))->setChecked( stMode==Gradient );
-    ((QRadioButton *)stGroup->find( Pattern ))->setChecked( stMode==Pattern );
 
     wpCombo->setCurrentItem( 0 );
     for ( int i = 1; i < wpCombo->count(); i++ )
@@ -767,17 +753,13 @@ void KBackground::slotColorMode( int m )
 	switch ( ncMode ) {
 
 	case OneColor:
-	    
-	    rbPattern->setEnabled( False );
-	    rbGradient->setEnabled( False );
+	   
 	    colButton2->setEnabled( False );
 	    changeButton->setEnabled( False );
 	    break;
 	
 	default:
 	    
-	    rbPattern->setEnabled( True );
-	    rbGradient->setEnabled( True );
 	    colButton2->setEnabled( True );
 	    changeButton->setEnabled( True );
 	    break;
@@ -789,10 +771,10 @@ void KBackground::slotColorMode( int m )
 
 void KBackground::slotSetup2Color()
 {
-    KBPatternDlg dlg(color1, color2, pattern, &orMode, this);
+    KBPatternDlg dlg(color1, color2, pattern, &orMode, &stMode, this);
     if (dlg.exec()) {
-	setMonitor();
-	changed = true;
+		setMonitor();
+		changed = true;
     } 
 }
 
@@ -839,17 +821,26 @@ void KBackground::applySettings()
 }
 
 
-KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *mode,
-			    QWidget *parent, char *name)
+KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *orient,
+			    int *type, QWidget *parent, char *name)
     : QDialog( parent, name, true)
 {
     int i;
     pattern = p;
-	orMode = mode;
+	orMode = orient;
+	tpMode = type;
     color1 = col1; 
     color2 = col2;
 	
-	setCaption( i18n( "Two color background setup" ) );
+	if ( 	*tpMode == KBackground::Gradient &&
+			*orMode == KBackground::Portrait ) {
+		mode = Portrait;
+	} else if ( *tpMode == KBackground::Gradient &&
+				*orMode == KBackground::Landscape ) {
+		mode = Landscape;
+	} else mode = Pattern;
+	
+	setCaption( i18n( "Two color backgrounds" ) );
 
     KConfig *config = kapp->getConfig();
     QString group = config->group();
@@ -879,39 +870,67 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *mode,
 	list.append(entry);
     }
 
-    QVBoxLayout *toplevelHL = new QVBoxLayout(this, 10);
-    QGridLayout *grid = new QGridLayout( 4, 4, 5);
+    QVBoxLayout *toplevelHL = new QVBoxLayout(this, 10, 5);
+	
+	suGroup = new QButtonGroup( this );
+	suGroup->hide();
+    suGroup->setExclusive( true );
+	
+	QRadioButton *rb =
+	new QRadioButton( i18n("Blend colors from &top to bottom"), this );
+	rb->setFixedHeight( rb->sizeHint().height() );
+	suGroup->insert( rb, Portrait );
+	
+	toplevelHL->addWidget( rb );
+	
+	rb = new QRadioButton( i18n("Blend colors from &right to left"), this );
+	rb->setFixedHeight( rb->sizeHint().height() );
+	suGroup->insert( rb, Landscape );
+	
+	toplevelHL->addWidget( rb );
+	
+	rb = new QRadioButton( i18n("Use &pattern"), this );
+	rb->setFixedHeight( rb->sizeHint().height() );
+	suGroup->insert( rb, Pattern ); 
+	
+	toplevelHL->addWidget( rb );
+	
+	connect( suGroup, SIGNAL( clicked( int ) ), SLOT( slotMode( int ) ) );
+	((QRadioButton *)suGroup->find( Portrait ))->setChecked( mode == Portrait );
+	((QRadioButton *)suGroup->find( Landscape ))->setChecked( mode ==Landscape );
+	((QRadioButton *)suGroup->find( Pattern ))->setChecked( mode == Pattern );
+	
+    QGridLayout *grid = new QGridLayout( 3, 4, 4);
     
     toplevelHL->addLayout( grid );
 	
-	grid->setRowStretch(0,0);
+	grid->setRowStretch(0,10);
 	grid->setRowStretch(1,10);
 	grid->setRowStretch(2,10);
-	grid->setRowStretch(3,0);
 	
 	grid->setColStretch(0,0);
 	grid->setColStretch(1,10);
 	grid->setColStretch(2,10);
 	grid->setColStretch(3,0);
+	
+	grid->addColSpacing(0,15);
     
-	QLabel *label = new QLabel( this );
-	label->setText( i18n( "Pattern name" ) );
-	label->setMinimumSize( label->sizeHint() );
+	lName = new QLabel( this );
+	lName->setText( i18n( "Preview" ) );
+	lName->setMinimumSize( lName->sizeHint() );
 	
-	grid->addWidget( label, 1, 1 );
-	
-	
-	label = new QLabel( this );
-	label->setText( i18n( "Preview" ) );
-	label->setMinimumSize( label->sizeHint() );
-	
-	grid->addWidget( label, 1, 2 );
+	grid->addWidget( lName, 0, 2 );
 	
     listBox = new QListBox( this );
     connect(listBox, SIGNAL(highlighted(const char*)), 
 	    SLOT(selected(const char*)));
     
-	grid->addWidget( listBox, 2, 1);
+	grid->addWidget( listBox, 1, 1);
+	
+	lPreview = new QLabel( listBox, i18n( "Pattern &name" ), this );
+	lPreview->setMinimumSize( lPreview->sizeHint() );
+	
+	grid->addWidget( lPreview, 0, 1 );
     
     preview = new QLabel( this );
     preview->adjustSize();
@@ -920,36 +939,28 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *mode,
 	preview->setMargin( 0 );
     preview->setFixedSize( 120, 120 );
     
-	grid->addWidget( preview, 2, 2 );
+	grid->addWidget( preview, 1, 2 );
     
 	listBox->setMaximumHeight( preview->height() );
-	
-	orientCB = new QCheckBox( i18n("&Blend colors from right to left"), this );
-	orientCB->setFixedHeight( orientCB->sizeHint().height() );
-	if( *orMode == KBackground::Landscape ) {
-		orientCB->setChecked( True );
-	} else {
-		orientCB->setChecked( False );
-	}
-	
-	toplevelHL->addWidget( orientCB );
    
    	QFrame* tmpQFrame;
 	tmpQFrame = new QFrame( this );
 	tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
 	tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
 	
+	toplevelHL->addSpacing( 5 );
 	toplevelHL->addWidget( tmpQFrame );
+	toplevelHL->addSpacing( 5 );
    
 	KButtonBox *bbox = new KButtonBox( this );
 	bbox->addStretch( 10 );
 	
 	QPushButton* okPB;
-	okPB = bbox->addButton( i18n("OK") );
+	okPB = bbox->addButton( i18n("&OK") );
 	connect( okPB, SIGNAL(clicked()), SLOT( accept()) );
 	
 	QPushButton* cancelPB;
-	cancelPB = bbox->addButton( i18n("Cancel") );
+	cancelPB = bbox->addButton( i18n("&Cancel") );
 	connect( cancelPB, SIGNAL(clicked()), SLOT( reject()) );
 	
 	bbox->layout();
@@ -957,30 +968,59 @@ KBPatternDlg::KBPatternDlg( QColor col1, QColor col2, uint *p, int *mode,
 
     current = new PatternEntry( i18n("Current"), p);
     bool predefined = false;
-    for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
-	if (*current == item->pattern ) {
-	    delete current;
-	    current = item;
-	    predefined = true;
-	    break;
+	int index = 0;
+    for ( PatternEntry *item=list.first(); item != 0; item=list.next() ) {
+		if (*current == item->pattern ) {
+	    	delete current;
+	    	current = item;
+	    	predefined = true;
+	    	break;
+		}
+		index++;
 	}
     
     if (!predefined) {
-	listBox->insertItem( current->name );
-	listBox->setCurrentItem(0);
+		listBox->insertItem( current->name );
     }
 
     for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
-	listBox->insertItem(item->name);
-
+		listBox->insertItem(item->name);
+	
+	listBox->setCurrentItem( index );
+	
     // we do this here to let all items fit in
     listBox->adjustSize();
     listBox->setMinimumSize(listBox->size());
+	
+	slotMode( mode );
+	selected( current->name );
 
     toplevelHL->activate();
-    resize(10, 10);
+	
+	resize(250,0);
 
-    selected( current->name );
+    
+}
+
+void KBPatternDlg::slotMode( int m )
+{
+	mode = m;
+	switch ( m ) {
+
+	case Landscape:
+	case Portrait:
+	    listBox->setEnabled( False );
+		lName->setEnabled( False );
+		lPreview->setEnabled( False );
+	    break;
+	
+	default:
+	    listBox->setEnabled( true );
+		lName->setEnabled( true );
+		lPreview->setEnabled( true );
+	    break;
+	}
+	selected( listBox->text( listBox->currentItem() ) );
 }
 
 int KBPatternDlg::savePatterns() {
@@ -1010,13 +1050,19 @@ int KBPatternDlg::savePatterns() {
     return 6;
 }
 
-void KBPatternDlg::selected( const char *selected)
+void KBPatternDlg::selected( const char *selected )
 {
-    for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
+	for ( PatternEntry *item=list.first(); item != 0; item=list.next() )
 	if (*item == selected) {
+		
 	    KPixmap tmp;
 	    tmp.resize(preview->width() + 2, preview->height() + 2);
-	    tmp.patternFill( color1, color2, item->pattern);
+		if( listBox->isEnabled() )
+	    	tmp.patternFill( color1, color2, item->pattern);
+		else {
+			QColorGroup cg = colorGroup();
+			tmp.patternFill( cg.mid(), cg.background(), item->pattern);
+		}
 	    preview->setPixmap(tmp);
 	    current = item;
 	    break;
@@ -1027,20 +1073,25 @@ void KBPatternDlg::done( int r )
 {
     hide();
 	
-	int orient;
+	int orient = KBackground::Portrait;
+	int type = KBackground::Gradient;
 	
-	if( orientCB->isChecked() ) {
+	if( mode == Landscape ) {
+		type = KBackground::Gradient;
 		orient = KBackground::Landscape;
-	} else {
-		orient = KBackground::Portrait;
+	} 
+	if( mode == Pattern ) {
+		type = KBackground::Pattern;
 	}
 	    
-    if ( r == Rejected || ( *current == pattern && *orMode == orient ) ) {
+    if ( r == Rejected || 
+		( *current == pattern && *orMode == orient && *tpMode == type ) ) {
 		setResult(Rejected);
 		return;
     }
 	
 	*orMode = orient;
+	*tpMode = type;
     
 	for (uint i = 0; i < 8; i++)
 		pattern[i] = current->pattern[i];

@@ -3,15 +3,17 @@ LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOC
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
-SUBDIRS = kcs
+SUBDIRS = kcs ad
 
 bin_PROGRAMS = kcmdisplay
 
 kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
-                        colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
-			general.cpp main.cpp kpixmap.cpp widgetcanvas.cpp
+            colorscm.cpp kwmcom.cpp savescm.cpp scrnsave.cpp \
+			general.cpp main.cpp kpixmap.cpp widgetcanvas.cpp \
+			fontchooser.cpp kresourceman.cpp
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc kwmcom.moc \
-                scrnsave.moc general.moc widgetcanvas.moc
+                scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc \
+				kresourceman.moc
 
 backgnd.cpp:backgnd.moc
 backgnd.moc: backgnd.h
@@ -44,6 +46,14 @@ general.moc: general.h
 widgetcanvas.cpp:widgetcanvas.moc
 widgetcanvas.moc: widgetcanvas.h
 	$(MOC) widgetcanvas.h -o widgetcanvas.moc
+	
+fontchooser.cpp:fontchooser.moc
+fontchooser.moc: fontchooser.h
+	$(MOC) fontchooser.h -o fontchooser.moc
+	
+kresourceman.cpp:kresourceman.moc
+kresourceman.moc: kresourceman.h
+	$(MOC) kresourceman.h -o kresourceman.moc
 
 
 install-data-local: 

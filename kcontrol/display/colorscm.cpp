@@ -44,6 +44,7 @@
 #include "kwmcom.h"
 
 #include "widgetcanvas.h"
+#include "kresourceman.h"
 
 #include "colorscm.h"
 #include "colorscm.moc"
@@ -81,6 +82,8 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
 		return;
+	
+	debug("KColorScheme::KColorScheme");
 	
 	kde_display = x11Display();
 	KDEChangePalette = XInternAtom( kde_display, "KDEChangePalette", False);
@@ -173,7 +176,7 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	
 	groupLayout = new QVBoxLayout( group, 10 );
 
-	wcCombo = new QComboBox( group );
+	wcCombo = new QComboBox( false, group );
 	wcCombo->insertItem(  i18n("Inactive title bar") );
 	wcCombo->insertItem(  i18n("Inactive title text") );
 	wcCombo->insertItem(  i18n("Inactive title blend") );
@@ -254,24 +257,21 @@ void KColorScheme::slotSave( )
 {
 	KSimpleConfig *config = 
 			new KSimpleConfig( sFileList->at( sList->currentItem() ) );
-	
-	debug("Attempting to save %s",
-		sFileList->at( sList->currentItem() ) );
-			
+				
 	config->setGroup( "Color Scheme" );
-	config->writeEntry( "BackgroundColor", cs->back );
-	config->writeEntry( "SelectColor", cs->select );
-	config->writeEntry( "TextColor", cs->txt );
-	config->writeEntry( "ActiveTitleTextColor", cs->aTxt );
-	config->writeEntry( "InactiveTitleBarColor", cs->iaTitle );
-	config->writeEntry( "InactiveTitleBlendColor", cs->iaBlend );
-	config->writeEntry( "ActiveTitleBarColor", cs->aTitle );
-	config->writeEntry( "ActiveTitleBlendColor", cs->aBlend );
-	config->writeEntry( "InactiveTitleTextColor", cs->iaTxt );
-	config->writeEntry( "WindowTextColor", cs->windowTxt );
-	config->writeEntry( "WindowColor", cs->window );
-	config->writeEntry( "SelectTextColor", cs->selectTxt );
-	config->writeEntry( "Contrast", cs->contrast );
+	config->writeEntry( "background", cs->back );
+	config->writeEntry( "selectBackground", cs->select );
+	config->writeEntry( "foreground", cs->txt );
+	config->writeEntry( "activeForeground", cs->aTxt );
+	config->writeEntry( "inactiveBackground", cs->iaTitle );
+	config->writeEntry( "inactiveBlend", cs->iaBlend );
+	config->writeEntry( "activeBackground", cs->aTitle );
+	config->writeEntry( "activeBlend", cs->aBlend );
+	config->writeEntry( "inactiveForeground", cs->iaTxt );
+	config->writeEntry( "windowForeground", cs->windowTxt );
+	config->writeEntry( "windowBackground", cs->window );
+	config->writeEntry( "selectForeground", cs->selectTxt );
+	config->writeEntry( "contrast", cs->contrast );
 	
 	config->sync();
 	
@@ -281,7 +281,7 @@ void KColorScheme::slotSave( )
 void KColorScheme::slotRemove()
 {
 	QString kcsPath( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay/";
+	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
 	
 	QDir d;
 	d.setPath( kcsPath );
@@ -325,7 +325,7 @@ void KColorScheme::slotAdd()
 		sFile.sprintf(sName);
 		
 		int ind = 0;
-		while ( ind < sFile.length() ) {
+		while ( ind < (int) sFile.length() ) {
 			
 			// parse the string for first white space
 			
@@ -347,9 +347,7 @@ void KColorScheme::slotAdd()
 			
 		}
 		
-		debug("Made filename %s", sFile.data() );
-		
-		for ( int i = 0; i<sList->count(); i++ ) {
+		for ( int i = 0; i < (int) sList->count(); i++ ) {
 			if ( sName == sList->text( i ) ) {
 				nameValid = FALSE;
 				QMessageBox::critical( 0, i18n( "Naming error" ),
@@ -358,7 +356,7 @@ void KColorScheme::slotAdd()
 							"in the color scheme list." ) );
 			}
 		}
-	}
+	} else return;
 	
 	} while ( nameValid == FALSE );
 	
@@ -370,7 +368,7 @@ void KColorScheme::slotAdd()
 	sList->setCurrentItem( sList->count()-1 );
 	
 	QString kcsPath( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay/";
+	kcsPath += "/.kde/share/apps/kdisplay/color-schemes/";
 	
 	QDir d( kcsPath.data() );
 	if ( !d.exists() )
@@ -384,7 +382,7 @@ void KColorScheme::slotAdd()
 			new KSimpleConfig( sFile.data() );
 			
 	config->setGroup( "Color Scheme" );
-	config->writeEntry( "Name", sName );
+	config->writeEntry( "name", sName );
 	delete config;
 	
 	slotSave();
@@ -393,31 +391,6 @@ void KColorScheme::slotAdd()
 			SLOT( slotPreviewScheme( int ) ) );
 			
 	slotPreviewScheme( sList->currentItem() );
-}
-
-void KColorScheme::writeScheme()
-{
-	QString str;
-
-	KConfig *config = kapp->getConfig();
-	config->setGroup( schemeFile.data() );
-
-
-	config->writeEntry("BackgroundColor", cs->back);
-	config->writeEntry("SelectColor", cs->select);
-	config->writeEntry("TextColor", cs->txt);
-	config->writeEntry("ActiveTitleTextColor", cs->aTxt);
-	config->writeEntry("InactiveTitleBarColor", cs->iaTitle);
-	config->writeEntry("ActiveTitleBarColor", cs->aTitle);
-	config->writeEntry("ActiveTitleBlendColor", cs->aBlend);
-	config->writeEntry("InactiveTitleTextColor", cs->iaTxt);
-	config->writeEntry("InactiveTitleBlendColor", cs->iaBlend);
-	config->writeEntry("WindowTextColor", cs->windowTxt);
-	config->writeEntry("WindowColor", cs->window);
-	config->writeEntry("SelectTextColor", cs->selectTxt);
-	config->writeEntry("Contrast", cs->contrast);
-	
-	config->sync();
 }
 
 void KColorScheme::slotSelectColor( const QColor &col )
@@ -543,52 +516,59 @@ void KColorScheme::readScheme( int index )
 			new KSimpleConfig( sFileList->at( index ), true );
 	}
 	
-	config->setGroup( "Color Scheme" );
-		
-	cs->iaTitle = 
-	config->readColorEntry( "InactiveTitleBarColor", &darkGray);
-
-	cs->iaTxt = 
-	config->readColorEntry( "InactiveTitleTextColor", &lightGray );
-
-	cs->iaBlend = 
-	config->readColorEntry( "InactiveTitleBlendColor", &lightGray );
-
-	cs->aTitle =
-	config->readColorEntry( "ActiveTitleBarColor", &darkBlue );
-
-	cs->aTxt = 
-	config->readColorEntry( "ActiveTitleTextColor", &white );
-
-	cs->aBlend = 
-	config->readColorEntry( "ActiveTitleBlendColor", &black );
+	if ( index == 0 )
+		config->setGroup( "General" );
+	else
+		config->setGroup( "Color Scheme" );
 
 	cs->txt = 
-	config->readColorEntry( "TextColor", &black );
+	config->readColorEntry( "foreground", &black );
 
 	cs->back = 
-	config->readColorEntry( "BackgroundColor", &lightGray );
+	config->readColorEntry( "background", &lightGray );
 
 	cs->select =
-	config->readColorEntry( "SelectColor", &darkBlue);
+	config->readColorEntry( "selectBackground", &darkBlue);
 
 	cs->selectTxt =
-	config->readColorEntry( "SelectTextColor", &white );
+	config->readColorEntry( "selectForeground", &white );
 
 	cs->window =
-	config->readColorEntry( "WindowColor", &white );
+	config->readColorEntry( "windowBackground", &white );
 
 	cs->windowTxt =
-	config->readColorEntry( "WindowTextColor", &black );
+	config->readColorEntry( "windowForeground", &black );
+	
+	if ( index == 0 ) config->setGroup( "WM" );
+	
+	cs->iaTitle = 
+	config->readColorEntry( "inactiveBackground", &darkGray);
+
+	cs->iaTxt = 
+	config->readColorEntry( "inactiveForeground", &lightGray );
+
+	cs->iaBlend = 
+	config->readColorEntry( "inactiveBlend", &lightGray );
+
+	cs->aTitle =
+	config->readColorEntry( "activeBackground", &darkBlue );
+
+	cs->aTxt = 
+	config->readColorEntry( "activeForeground", &white );
+
+	cs->aBlend = 
+	config->readColorEntry( "activeBlend", &black );
+
+	if ( index == 0 ) config->setGroup( "KDE" );
 
 	cs->contrast = 
-	config->readNumEntry( "Contrast", 7 );
+	config->readNumEntry( "contrast", 7 );
 }
 
 void KColorScheme::readSchemeNames( )
 {
 	QString kcsPath( kapp->kde_datadir() );
-	kcsPath += "/kdisplay";
+	kcsPath += "/kdisplay/color-schemes";
 	
 	QDir d;
 	d.setPath( kcsPath );
@@ -606,13 +586,11 @@ void KColorScheme::readSchemeNames( )
 		QString str;
 
 		// This for system files
-		debug("System supplied schemes");
 		while ( ( fi = sysIt.current() ) ) {           // for each file...
 
 			KSimpleConfig *config = new KSimpleConfig( fi->filePath(), true );
 			config->setGroup( "Color Scheme" );
-			str = config->readEntry( "Name" );
-			debug("%s", str.data() );
+			str = config->readEntry( "name" );
 
 			sList->insertItem( str.data() );
 			sFileList->append( fi->filePath() );
@@ -625,7 +603,7 @@ void KColorScheme::readSchemeNames( )
 	}
 	
 	kcsPath.sprintf( getenv( "HOME" ) );
-	kcsPath += "/.kde/share/apps/kdisplay";
+	kcsPath += "/.kde/share/apps/kdisplay/color-schemes";
 	
 	d.setPath( kcsPath );
 	d.setFilter( QDir::Files );
@@ -638,13 +616,11 @@ void KColorScheme::readSchemeNames( )
 		QString str;
 
 		// This for users files
-		debug("User schemes");
 		while ( ( fi = userIt.current() ) ) {
 
 			KSimpleConfig config( fi->filePath(), true );
 			config.setGroup( "Color Scheme" );
-			str = config.readEntry( "Name" );
-			debug("%s", str.data() );
+			str = config.readEntry( "name" );
 
 			sList->insertItem( str.data() );
 			sFileList->append( fi->filePath() );
@@ -659,33 +635,60 @@ void KColorScheme::writeSettings()
 {
 	if ( !changed )
 		return;
-	
-	QString str;
-	
+		
 	KConfig* sys = kapp->getConfig();
-	sys->setGroup( "Desktop Colors" );
-
-	sys->writeEntry("BackgroundColor", cs->back, true, true);
-	sys->writeEntry("SelectColor", cs->select, true, true);
-	sys->writeEntry("TextColor", cs->txt, true, true);
-	sys->writeEntry("ActiveTitleTextColor", cs->aTxt, true, true);
-	sys->writeEntry("InactiveTitleBarColor", cs->iaTitle, true, true);
-	sys->writeEntry("InactiveTitleBlendColor", cs->iaBlend, true, true);
-	sys->writeEntry("ActiveTitleBarColor", cs->aTitle, true, true);
-	sys->writeEntry("ActiveTitleBlendColor", cs->aBlend, true, true);
-	sys->writeEntry("InactiveTitleTextColor", cs->iaTxt, true, true);
-	sys->writeEntry("WindowTextColor", cs->windowTxt, true, true);
-	sys->writeEntry("WindowColor", cs->window, true, true);
-	sys->writeEntry("SelectTextColor", cs->selectTxt, true, true);
-	sys->writeEntry("Contrast", cs->contrast, true, true);
+	
+	sys->setGroup( "General" );
+	sys->writeEntry("background", cs->back, true, true);
+	sys->writeEntry("selectBackground", cs->select, true, true);
+	sys->writeEntry("foreground", cs->txt, true, true);
+	sys->writeEntry("windowForeground", cs->windowTxt, true, true);
+	sys->writeEntry("windowBackground", cs->window, true, true);
+	sys->writeEntry("selectForeground", cs->selectTxt, true, true);
+	
+	sys->setGroup( "WM" );
+	sys->writeEntry("activeForeground", cs->aTxt, true, true);
+	sys->writeEntry("inactiveBackground", cs->iaTitle, true, true);
+	sys->writeEntry("inactiveBlend", cs->iaBlend, true, true);
+	sys->writeEntry("activeBackground", cs->aTitle, true, true);
+	sys->writeEntry("activeBlend", cs->aBlend, true, true);
+	sys->writeEntry("inactiveForeground", cs->iaTxt, true, true);
+	
+	sys->setGroup( "KDE" );
+	sys->writeEntry("contrast", cs->contrast, true, true);
     sys->sync();
+	
+	QApplication::setOverrideCursor( waitCursor );
+	
+	KResourceMan *krdb = new KResourceMan();
+	
+	krdb->setGroup( "General" );
+	krdb->writeEntry("background", cs->back );
+	krdb->writeEntry("selectBackground", cs->select );
+	krdb->writeEntry("foreground", cs->txt );
+	krdb->writeEntry("windowForeground", cs->windowTxt );
+	krdb->writeEntry("windowBackground", cs->window );
+	krdb->writeEntry("selectForeground", cs->selectTxt );
+	
+	krdb->setGroup( "WM" );
+	krdb->writeEntry("activeForeground", cs->aTxt );
+	krdb->writeEntry("inactiveBackground", cs->iaTitle );
+	krdb->writeEntry("inactiveBlend", cs->iaBlend );
+	krdb->writeEntry("activeBackground", cs->aTitle );
+	krdb->writeEntry("activeBlend", cs->aBlend );
+	krdb->writeEntry("inactiveForeground", cs->iaTxt );
+	
+	krdb->setGroup( "KDE" );
+	krdb->writeEntry("contrast", cs->contrast );
+    krdb->sync();
+	
+	QApplication::restoreOverrideCursor();
 }
 
 void KColorScheme::slotApply()
 {
 	writeSettings();
 	apply();
-	
 }
 
 //Matthias

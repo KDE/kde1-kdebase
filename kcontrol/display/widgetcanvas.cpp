@@ -181,9 +181,9 @@ void WidgetCanvas::drawSampleWidgets()
 	HotSpot( QRect( 200, 113-20, textLen, 14 ), 11 ); // window text
    
     
-	brush.setColor( select );paint.setPen( select );
+	paint.setBrush( select );paint.setPen( select );
     paint.drawRect ( 120, 115, width()-175, 
-		      height());
+		      height() );
     
     fnt.setPointSize(12);
     paint.setFont( fnt );

@@ -75,8 +75,8 @@ class KBPatternDlg : public QDialog
     Q_OBJECT
 
 public:
-    KBPatternDlg( QColor color1, QColor color2, uint p[], int *mode,
-		  QWidget *parent = 0, char *name = 0 );
+    KBPatternDlg( QColor color1, QColor color2, uint p[], int *orient,
+	int *type, QWidget *parent = 0, char *name = 0 );
     
 protected:
     int savePatterns();
@@ -84,17 +84,29 @@ protected:
 protected slots:
     void selected(const char *item);
     virtual void done ( int r );
+	void slotMode( int );
     
 private:
     QLabel *preview;
+	QLabel *lPreview;
+	QLabel *lName;
     QListBox *listBox;
     QList<PatternEntry> list;
 	QCheckBox *orientCB;
+	QRadioButton *rbVert;
+	QRadioButton *rbHoriz;
+	QRadioButton *rbPattern;
+	QButtonGroup *suGroup;
+	
+	enum { Portrait =1, Landscape, Pattern };
+	
 
     bool changed;
     PatternEntry *current;
     uint *pattern;
 	int *orMode;
+	int *tpMode;
+	int mode;
     
     QColor color1, color2;
 };
@@ -105,6 +117,7 @@ class KBackground : public KDisplayModule
 public:
 	
 	enum { Portrait = 1, Landscape };
+	enum { Gradient = 1, Pattern };
 
 	KBackground( QWidget *parent, int mode, int desktop = 0 );
 
@@ -141,7 +154,7 @@ protected:
 protected:
 	enum { Tiled = 1, Centred, Scaled };
 	enum { OneColor = 1, TwoColor };
-	enum { Gradient = 1, Pattern };
+	
 	
 
 	QListBox     *deskListBox;

@@ -1,16 +1,16 @@
 # KDE Config File
 [Color Scheme]
-Name=Digital CDE
-BackgroundColor=#4b7b82
-SelectColor=#41525c
-TextColor=#ffffff
-ActiveTitleTextColor=#ffffff
-InactiveTitleBarColor=#4b7b82
-InactiveTitleBlendColor=#4b7b82
-ActiveTitleBarColor=#a47591
-ActiveTitleBlendColor=#4b7b82
-Contrast=7
-InactiveTitleTextColor=#ffffff
-WindowTextColor=#ffffff
-WindowColor=#374d4e
-SelectTextColor=#ffffff
+name=Digital CDE
+background=#4b7b82
+selectBackground=#41525c
+foreground=#ffffff
+activeForeground=#ffffff
+inactiveBackground=#4b7b82
+inactiveBlend=#4b7b82
+activeBackground=#a47591
+activeBlend=#4b7b82
+contrast=7
+inactiveForeground=#ffffff
+windowForeground=#ffffff
+windowBackground=#374d4e
+selectForeground=#ffffff

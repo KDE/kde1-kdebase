@@ -104,6 +104,8 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	KIconLoader iconLoader;
 
 	readSettings();
+	
+	debug("KScreenSaver::KScreenSaver");
 
 	setName(  i18n("Screen Saver") );
 
@@ -218,7 +220,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 
 	group = new QGroupBox(  i18n("Settings"), this );
 	
-	stackLayout->addWidget( group, 10 );
+	stackLayout->addWidget( group, 15 );
 	
 	groupLayout = new QVBoxLayout( group, 10 );
 	
@@ -260,7 +262,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	
 	stackLayout->addWidget( group, 10 );
 	
-	groupLayout = new QHBoxLayout( group, 20 );
+	groupLayout = new QHBoxLayout( group, 10 );
 
 	prioritySlider = new QSlider( QSlider::Horizontal, group );
 	prioritySlider->setRange( 0, 20 );
@@ -289,6 +291,8 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	// I have to call show() here, otherwise the screensaver
 	// does not get the correct size information.
 	topLayout->activate();
+	
+	resize(600,600);
 	show();
 
 	setMonitor();
@@ -571,7 +575,6 @@ void KScreenSaver::slotTest()
 	/* CC: now eliminate all events that have got accumulated while
 	    we were sleeping... */
 	kapp->processEvents();
-	debug("ENABLING BUTTON!!!");
 	testBt->setEnabled(TRUE);
 }
 
@@ -603,7 +606,6 @@ void KScreenSaver::slotPriorityChanged( int val )
 
 void KScreenSaver::slotSetupDone(KProcess *)
 {
-	debug("SETUP DONE!!!");
 	setMonitor();
 	setupBt->setEnabled( TRUE );
 }

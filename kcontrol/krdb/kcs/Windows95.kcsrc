@@ -1,16 +1,16 @@
 #KDE Config File
 [Color Scheme]
-Name=Windows 95
-BackgroundColor=#c3c3c3
-SelectColor=#000080
-TextColor=#000000
-ActiveTitleTextColor=#ffffff
-ActiveTitleBlendColor=#5a0a65
-InactiveTitleBarColor=#9c9c9c
-ActiveTitleBarColor=#000080
-InactiveTitleBlendColor=#c3c3c3
-Contrast=7
-InactiveTitleTextColor=#d6d6d6
-WindowTextColor=#000000
-WindowColor=#ffffff
-SelectTextColor=#ffffff
+name=Windows 95
+background=#c3c3c3
+selectBackground=#000080
+foreground=#000000
+activeForeground=#ffffff
+activeBlend=#5a0a65
+inactiveBackground=#9c9c9c
+activeBackground=#000080
+inactiveBlend=#c3c3c3
+contrast=7
+inactiveForeground=#d6d6d6
+windowForeground=#000000
+windowBackground=#ffffff
+selectForeground=#ffffff
