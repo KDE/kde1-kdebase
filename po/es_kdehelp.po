@@ -179,7 +179,7 @@ msgstr "Uso de la Ayuda KDE"
 
 #: mainwidget.cpp:174
 msgid "&About"
-msgstr "Sobre"
+msgstr "Acerca de"
 
 #: mainwidget.cpp:178
 msgid "&File"
