@@ -3,7 +3,7 @@
 DUMMY=${KDEDIR:?"KDEDIR is not set!"}
 
 kaudioserver &
-kfm -d &
+kfm &
 kcc -init &
 
 kbgndwm &

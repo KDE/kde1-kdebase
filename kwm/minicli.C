@@ -28,7 +28,7 @@ QListIterator <char> *it;
 void execute(const char* cmd){
   char* shell = NULL;
   if (!shell){
-    if (getenv("SHELL"))
+    if ( ( shell = getenv("SHELL") ) && *shell ) // make sure SHELL is not empty
       shell = qstrdup(getenv("SHELL"));
     else
       shell = "/bin/sh";
