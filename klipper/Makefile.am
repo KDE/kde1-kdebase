@@ -14,7 +14,7 @@
 APPSDIR = $(kde_appsdir)/Utilities
 INCLUDES= $(all_includes)
 
-# SUBDIRS = 
+# SUBDIRS =
 
 bin_PROGRAMS = klipper
 
@@ -33,7 +33,14 @@ messages:
 install-data-local: 
 	$(mkinstalldirs) $(APPSDIR)
 	$(INSTALL_DATA) klipper.kdelnk $(APPSDIR)
+	$(mkinstalldirs) $(kde_icondir)
+	$(INSTALL_DATA) klipper.xpm $(kde_icondir)
+	$(mkinstalldirs) $(kde_minidir)
+	$(INSTALL_DATA) klipper_mini.xpm $(kde_minidir)/klipper.xpm
 
 uninstall-local:
 	-rm -f $(APPSDIR)/klipper.kdelnk
+	-rm -f $(kde_icondir)/klipper.xpm
+	-rm -f $(kde_minidir)/klipper.xpm
+        
 
