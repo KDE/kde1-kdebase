@@ -1,3 +1,8 @@
+1998-03-03  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: add a rpath for every shared library, that is 
+	linked too (especially X11 libraries)
+	
 Tue Feb 24 22:04:59 1998  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: added kde_sounddir and set kde_minidir to
