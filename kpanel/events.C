@@ -44,7 +44,7 @@ myFrame::myFrame(bool _autoHide, unsigned int delay,
   autoHidden = false;
   hide_delay = delay;//CT
   if (autoHide)
-    hideTimer->start(delay+2000, true);
+    hideTimer->start(delay, true);
 }
 
 void myFrame::enterEvent(QEvent *){
@@ -705,9 +705,9 @@ void kPanel::enterEvent( QEvent *){
   if (taskbar_frame->isVisible()){
     taskbar_frame->raise();
   }
+  autoHidden = false;
   doGeometry();
   layoutTaskbar();
-  autoHidden = false;
   KWM::sendKWMCommand("moduleRaised");
 }
 void kPanel::leaveEvent( QEvent * ){
@@ -758,9 +758,9 @@ void kPanel::hideTimerDone(){
 	    animateMove (this, x()+width()-4, y(), autoHideSpeed);
 	
     }
+    autoHidden = true;
     doGeometry();
     layoutTaskbar();
-    autoHidden = true;
   }
 }
 

@@ -1,5 +1,9 @@
 In kpanel-0.19:
 
+    Patchlevel 11:
+	- fixed setting of window region in combination with autohide
+	- some bugfixes in autohide delay stuff
+
     Patchlevel 10:
 	-  fixed crashes when KDiskNavigator is not initialized but accessed.
                 -  fixed geometry of the control group in tiny style
