@@ -278,17 +278,16 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     else
 	sprintf( buffer, "mount -t %s %s %s 2>"_PATH_TMP"mnt%i",_fstype, _dev, _point, t );
 		
-    system( buffer );
+    int retvalue = system( buffer );
 
-    sprintf( buffer, _PATH_TMP"mnt%i", t );
-
-    QString err = testLogFile( buffer );
-    if ( err.isEmpty() )
+    if (retvalue == 0)
     {
 	ipc->done();
 	return;
     }
 
+    sprintf( buffer, _PATH_TMP"mnt%i", t );
+    QString err = testLogFile( buffer );
     ipc->fatalError( KIO_ERROR_CouldNotMount, err.data(), 0 );
     return;
 }
@@ -300,17 +299,17 @@ void KIOSlave::unmount( const char *_point )
     int t = (int)time( 0L );
     
     sprintf( buffer, "umount %s 2>"_PATH_TMP"mnt%i",_point, t );
-    system( buffer );
 
-    sprintf( buffer, _PATH_TMP"mnt%i", t );
+    int retvalue = system( buffer );
 
-    QString err = testLogFile( buffer );
-    if ( err.isNull() )
+    if (retvalue == 0)
     {
 	ipc->done();
 	return;
     }
 
+    sprintf( buffer, _PATH_TMP"mnt%i", t );
+    QString err = testLogFile( buffer );
     ipc->fatalError( KIO_ERROR_CouldNotUnmount, err.data(), 0 );
     return;
 }
