@@ -231,7 +231,7 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
   if ( pixmap() ) {
     int dx = ( 32 - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
-    if ( isDown() && style() == WindowsStyle ) {
+    if ( draw_down && style() == WindowsStyle ) {
       dx++;
       dy++;
     }

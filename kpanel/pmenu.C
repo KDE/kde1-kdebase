@@ -90,7 +90,7 @@ PMenuItem::PMenuItem( EntryType e, QString t=NULL, QString c=NULL, QString n=NUL
   pixmap_name = n;
   if( !pixmap_name.isEmpty() )
     {
-      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon( pixmap_name , 14, 14);
+      pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon( pixmap_name , 16, 16);
     }
   else
     {
@@ -206,10 +206,10 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
   QPixmap tmppix;
   pixmap = tmppix;
   if( !pixmap_name.isEmpty() ){
-    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(pixmap_name, 14, 14);
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(pixmap_name, 16, 16);
   }
   if (pixmap.isNull() && !big_pixmap_name.isEmpty()){
-    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(big_pixmap_name, 14, 14);
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(big_pixmap_name, 16, 16);
   }
   if (pixmap.isNull() && getType() == unix_com){
     QString tmp = real_name.copy();
@@ -217,11 +217,11 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
     if( pos >= 0 )
       tmp = tmp.left(pos);
     tmp.append(".xpm");
-    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(tmp, 14, 14);
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon(tmp, 16, 16);
   }
   
   if (pixmap.isNull())
-    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 14, 14);
+    pixmap = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
   
   if (comment.isEmpty())
     comment = text_name;

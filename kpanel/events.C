@@ -33,10 +33,10 @@ void kPanel::windowAdd(Window w){
   
   if (!defaultpm){
     defaultpm = new QPixmap;
-    *defaultpm = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 14, 14);
+    *defaultpm = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
   }
   
-  QPixmap pm = KWM::miniIcon(w, 14, 14);
+  QPixmap pm = KWM::miniIcon(w, 16, 16);
   if (!pm.isNull())
     b->setPixmap(pm);
   else
@@ -103,7 +103,7 @@ void kPanel::windowIconChanged(Window w){
   myTaskButton* b = taskButtonFromWindow(w);
   if (!b)
     return;
-  QPixmap pm = KWM::miniIcon(w, 14, 14);
+  QPixmap pm = KWM::miniIcon(w, 16, 16);
   if (!pm.isNull())
     b->setPixmap(pm);
 }
