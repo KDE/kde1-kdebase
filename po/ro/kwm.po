@@ -539,7 +539,7 @@ msgstr "Tipure de Mime neinstalate "
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
-msgstr "Nu pot gãsi tipuri de mime"
+msgstr "Nu pot gãsi tipuri de mime\n"
 
 #: kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1905
