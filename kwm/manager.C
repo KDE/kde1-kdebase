@@ -119,6 +119,7 @@ Manager::Manager(): QObject(){
 void Manager::createNotify(XCreateWindowEvent *e){
   if (e->parent== qt_xrootwin()){ 
     ignore_badwindow = TRUE;
+    XSync(qt_xdisplay(), False);
     if (KWM::isKWMModule(e->window))
       addModule(e->window);
     if (!getClient(e->window)){
@@ -126,8 +127,10 @@ void Manager::createNotify(XCreateWindowEvent *e){
       for (wp = own_toplevel_windows.first(); 
 	   wp && *wp != e->window; 
 	   wp = own_toplevel_windows.next());
-      if (!wp)
+      if (!wp){
 	XSelectInput(qt_xdisplay(), e->window, PropertyChangeMask);
+      }
+      
     }
     /* flush any errors */
     XSync(qt_xdisplay(), False);
