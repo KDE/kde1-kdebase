@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1997-12-29 15:28+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 

@@ -6,13 +6,78 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-07-09 15:37+02:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8BIT\n"
+
+#: attraction.cpp:716
+#, fuzzy
+msgid "Attraction"
+msgstr "Sammandragning"
+
+#: attraction.cpp:803
+#, fuzzy
+msgid "Setup KAttraction"
+msgstr "Ställ in Fladdermus"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "Antal:"
+
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "Läge:"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr ""
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "Linjer"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "Polygoner"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr ""
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr ""
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr ""
+
+#: attraction.cpp:951
+#, fuzzy
+msgid "About Attraction"
+msgstr "Sammandragning"
+
+#: attraction.cpp:952
+#, fuzzy
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Bumling version 3.3\n"
+"\n"
+"Copyright (c) 1992 av Jamie Zawinski\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
 
 #: banner.cpp:62
 msgid "Banner"
@@ -330,10 +395,6 @@ msgstr ""
 "\n"
 "Portad till kscreensave av Martin Jones."
 
-#: lines.cpp:116
-msgid "Lines"
-msgstr "Linjer"
-
 #: lines.cpp:134
 msgid "Setup klines"
 msgstr "Ställ in Linjer"
@@ -539,10 +600,6 @@ msgid ""
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
 
-#: polygon.cpp:64
-msgid "Polygons"
-msgstr "Polygoner"
-
 #: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Ställ in Polygoner"
@@ -574,10 +631,6 @@ msgstr "Pyro"
 #: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Ställ in Pyro"
-
-#: pyro.cpp:529 rock.cpp:575
-msgid "Number:"
-msgstr "Antal:"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -684,10 +737,6 @@ msgstr "kopierar skärmen..."
 msgid "Setup Science"
 msgstr "Ställ in Vetenskap"
 
-#: science.cpp:993
-msgid "Mode:"
-msgstr "Läge:"
-
 #: science.cpp:1008
 msgid "Inverse"
 msgstr "Omvänt"
@@ -719,6 +768,38 @@ msgstr "skriven av"
 #: science.cpp:1306
 msgid "About Science"
 msgstr "Om Vetenskap"
+
+#: slidescreen.cpp:419
+#, fuzzy
+msgid "SlideScreen"
+msgstr "Tom skärm"
+
+#: slidescreen.cpp:465
+#, fuzzy
+msgid "Setup KSlideScreen"
+msgstr "Ställ in Vetenskap"
+
+#: slidescreen.cpp:558
+#, fuzzy
+msgid "About SlideScreen"
+msgstr "Om Vetenskap"
+
+#: slidescreen.cpp:559
+#, fuzzy
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Bumling version 3.3\n"
+"\n"
+"Copyright (c) 1992 av Jamie Zawinski\n"
+"\n"
+"Portad till kscreensave av Martin Jones."
 
 #: slip.cpp:293
 msgid "Slip"

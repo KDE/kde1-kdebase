@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-11-17 10:15+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-04-20 22:26+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -29,47 +29,47 @@ msgstr "關機及重新開始"
 msgid "Exit kdm"
 msgstr "離開 kdm"
 
-#: kgreeter.cpp:172
+#: kgreeter.cpp:176
 msgid "Login:"
 msgstr "登入:"
 
-#: kgreeter.cpp:184
+#: kgreeter.cpp:188
 msgid "Password:"
 msgstr "密碼:"
 
-#: kgreeter.cpp:209
+#: kgreeter.cpp:213
 msgid "Login failed!"
 msgstr "登入失敗!"
 
-#: kgreeter.cpp:215
+#: kgreeter.cpp:219
 msgid "Session Type:"
 msgstr "環境格式:"
 
-#: kgreeter.cpp:258
+#: kgreeter.cpp:262
 msgid "Go!"
 msgstr "Go!"
 
-#: kgreeter.cpp:274
+#: kgreeter.cpp:278
 msgid "Shutdown..."
 msgstr "關機..."
 
-#: kgreeter.cpp:517
+#: kgreeter.cpp:520
 msgid "Logins not available right now."
 msgstr ""
 
-#: kgreeter.cpp:558
+#: kgreeter.cpp:561
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:612 kgreeter.cpp:639
+#: kgreeter.cpp:615 kgreeter.cpp:642
 msgid "Sorry -- your account has expired."
 msgstr ""
 
-#: kgreeter.cpp:617 kgreeter.cpp:644
+#: kgreeter.cpp:620 kgreeter.cpp:647
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr ""
 
-#: kgreeter.cpp:671
+#: kgreeter.cpp:674
 msgid "Home directory not available"
 msgstr ""

@@ -1,10 +1,76 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
+
+#: attraction.cpp:716
+#, fuzzy
+msgid "Attraction"
+msgstr "收缩"
+
+#: attraction.cpp:803
+#, fuzzy
+msgid "Setup KAttraction"
+msgstr "设置 KBat"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "数目:"
+
+#
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "方式:"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr ""
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "线条"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "多边形"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr ""
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr ""
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr ""
+
+#: attraction.cpp:951
+#, fuzzy
+msgid "About Attraction"
+msgstr "收缩"
+
+#: attraction.cpp:952
+#, fuzzy
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Rock 版本 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: banner.cpp:62
 msgid "Banner"
@@ -327,10 +393,6 @@ msgstr ""
 "\n"
 "由 Martin Jones 移植到 kscreensave."
 
-#: lines.cpp:116
-msgid "Lines"
-msgstr "线条"
-
 #: lines.cpp:134
 msgid "Setup klines"
 msgstr "设置 klines"
@@ -537,10 +599,6 @@ msgid ""
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
 
-#: polygon.cpp:64
-msgid "Polygons"
-msgstr "多边形"
-
 #: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "设置 kpolygon"
@@ -572,10 +630,6 @@ msgstr "Pyro"
 #: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "设置 KPyro"
-
-#: pyro.cpp:529 rock.cpp:575
-msgid "Number:"
-msgstr "数目:"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -683,11 +737,6 @@ msgstr "截取屏幕..."
 msgid "Setup Science"
 msgstr "设置 Science"
 
-#
-#: science.cpp:993
-msgid "Mode:"
-msgstr "方式:"
-
 #: science.cpp:1008
 msgid "Inverse"
 msgstr "反转"
@@ -721,6 +770,40 @@ msgstr "written by"
 #: science.cpp:1306
 msgid "About Science"
 msgstr "关于 Science"
+
+#: slidescreen.cpp:419
+#, fuzzy
+msgid "SlideScreen"
+msgstr "空白屏幕"
+
+#
+#: slidescreen.cpp:465
+#, fuzzy
+msgid "Setup KSlideScreen"
+msgstr "设置 Science"
+
+#
+#: slidescreen.cpp:558
+#, fuzzy
+msgid "About SlideScreen"
+msgstr "关于 Science"
+
+#: slidescreen.cpp:559
+#, fuzzy
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Rock 版本 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: slip.cpp:293
 msgid "Slip"

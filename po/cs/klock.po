@@ -5,13 +5,78 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-11-03 13:41+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: attraction.cpp:716
+#, fuzzy
+msgid "Attraction"
+msgstr "Kontrakce"
+
+#: attraction.cpp:803
+#, fuzzy
+msgid "Setup KAttraction"
+msgstr "Nastavení KBatu"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "Poèet:"
+
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "Mód:"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr ""
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "Linie"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "Polygony"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr ""
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr ""
+
+#: attraction.cpp:869 attraction.cpp:956 slidescreen.cpp:534
+#: slidescreen.cpp:563
+msgid "Ok"
+msgstr ""
+
+#: attraction.cpp:951
+#, fuzzy
+msgid "About Attraction"
+msgstr "Kontrakce"
+
+#: attraction.cpp:952
+#, fuzzy
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Skála verze 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Pøevedeno pro kscreensaver Martinem Jonesem"
 
 #: banner.cpp:62
 msgid "Banner"
@@ -328,10 +393,6 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Martinem Jonesem"
 
-#: lines.cpp:116
-msgid "Lines"
-msgstr "Linie"
-
 #: lines.cpp:134
 msgid "Setup klines"
 msgstr "Nastavení linií"
@@ -541,10 +602,6 @@ msgstr ""
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
-#: polygon.cpp:64
-msgid "Polygons"
-msgstr "Polygony"
-
 #: polygon.cpp:85
 msgid "Setup kpolygon"
 msgstr "Nastavení Polygonù"
@@ -576,10 +633,6 @@ msgstr "Pyro"
 #: pyro.cpp:517
 msgid "Setup KPyro"
 msgstr "Nastavení KPyra"
-
-#: pyro.cpp:529 rock.cpp:575
-msgid "Number:"
-msgstr "Poèet:"
 
 #: pyro.cpp:543
 msgid "Cloud"
@@ -685,10 +738,6 @@ msgstr "sejmutí obrazovky ..."
 msgid "Setup Science"
 msgstr "Nastavení Science"
 
-#: science.cpp:993
-msgid "Mode:"
-msgstr "Mód:"
-
 #: science.cpp:1008
 msgid "Inverse"
 msgstr "Inverze"
@@ -720,6 +769,38 @@ msgstr "napsal"
 #: science.cpp:1306
 msgid "About Science"
 msgstr "Informace o Science"
+
+#: slidescreen.cpp:419
+#, fuzzy
+msgid "SlideScreen"
+msgstr "Prázdná obrazovka"
+
+#: slidescreen.cpp:465
+#, fuzzy
+msgid "Setup KSlideScreen"
+msgstr "Nastavení Science"
+
+#: slidescreen.cpp:558
+#, fuzzy
+msgid "About SlideScreen"
+msgstr "Informace o Science"
+
+#: slidescreen.cpp:559
+#, fuzzy
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Skála verze 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Pøevedeno pro kscreensaver Martinem Jonesem"
 
 #: slip.cpp:293
 msgid "Slip"
