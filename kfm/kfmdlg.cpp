@@ -9,7 +9,6 @@
 #include <klined.h>
 
 #include "kfmdlg.h"
-#include "fileentry.h"
 #include "kURLcompletion.h"
 #include "open-with.h"
 
