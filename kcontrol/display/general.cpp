@@ -490,6 +490,8 @@ void KGeneral::slotHelp()
 
 void KGeneral::loadSettings()
 {
+  int i = 0;
+
   readSettings();
 
 	if(applicationStyle==WindowsStyle)
@@ -500,7 +502,7 @@ void KGeneral::loadSettings()
 	fontTypeList->setCurrentItem( 0 );
 
 	QStrListIterator it( fontList );
-	for ( int i = 0; it.current(); ++it, i++ )
+	for (i = 0; it.current(); ++it, i++ )
 	{
 		if ( !strcmp( generalFont.family(), it.current() ) )
 			fontCombo->setCurrentItem( i );
@@ -520,7 +522,7 @@ void KGeneral::loadSettings()
 
 	QFont::CharSet charset=generalFont.charSet();
 
-	for(int i = 0; i<CHARSETS_COUNT; i++){
+	for(i = 0; i<CHARSETS_COUNT; i++){
 	  if (charset==charsetsIds[i]){
 	    charset_combo->setCurrentItem(i);
 	    break;
