@@ -92,7 +92,6 @@ initflame(Window win)
 	XSetForeground(dsp, Scr[screen].gc, WhitePixel(dsp, screen));
 
     fs->variation = LRAND() % MAXKINDS;
-
 }
 
 static      Bool
@@ -327,6 +326,9 @@ void exposeScreenSaver( int x, int y, int width, int height )
 kFlameSaver::kFlameSaver( Drawable drawable ) : kScreenSaver( drawable )
 {
 	readSettings();
+ 
+  XSetWindowBackground(qt_xdisplay(), drawable,
+                       BlackPixel(qt_xdisplay(), qt_xscreen()));
 
 	colorContext = QColor::enterAllocContext();
 
