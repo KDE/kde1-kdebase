@@ -287,13 +287,13 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	l->setFixedSize(l->sizeHint());
 	layout->addWidget(l, 0, AlignLeft);
     
-	lname = new QLineEdit( this );
-	// BL: layout mngt
-	lname->setMinimumSize(200, fontHeight);
-	lname->setMaximumSize(QLayout::unlimited, fontHeight);
-	layout->addWidget(lname, 0, AlignLeft);
-	lname->setText( path );
-	lname->setEnabled( false );
+        QLabel *lname = new QLabel( this );
+        lname->setText( path );
+        lname->setMinimumSize(200, fontHeight);
+        lname->setMaximumSize(QLayout::unlimited, fontHeight);
+        lname->setLineWidth(1);
+        lname->setFrameStyle(QFrame::Box | QFrame::Raised);
+        layout->addWidget(lname, 0, AlignLeft);
 
 	char buffer[1024];
 	int n = readlink( path.data(), buffer, 1022 );
@@ -394,13 +394,14 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
 	path = path.left ( path.length() - 1 );          
 
     struct stat buff;
-    stat( path.data(), &buff );
+    lstat( path.data(), &buff ); // display uid/gid of the link, if it's a link
     struct passwd * user = getpwuid( buff.st_uid );
     struct group * ge = getgrgid( buff.st_gid );
 
     bool IamRoot = (geteuid() == 0);
     bool IsMyFile  = (geteuid() == buff.st_uid);
     bool IsDir =  S_ISDIR (buff.st_mode);
+    bool IsLink =  S_ISLNK( buff.st_mode );
 
     permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO |
 				   S_ISUID | S_ISGID | S_ISVTX );
@@ -488,7 +489,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
 		    cb = new QCheckBox (desc, gb);
 		    cb->setChecked ((buff.st_mode & fperm[row][col]) 
 				    == fperm[row][col]);
-		    cb->setEnabled (IsMyFile || IamRoot);
+		    cb->setEnabled ((IsMyFile || IamRoot) && (!IsLink));
 		    cb->setMinimumSize (cb->sizeHint());
 		    permBox[row][col] = cb;
 		    gl->addWidget (permBox[row][col], row+1, col+1);
@@ -651,10 +652,6 @@ void FilePermissionsPropsPage::applyChanges()
 
     if ( p != permissions )
     {
-	struct stat buff;
-	stat( path.data(), &buff );
-	// int mask = ~( S_IRWXU | S_IRWXG | S_IRWXO );
-	// mask |= p;
 	if ( chmod( path, p ) != 0 )
 	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
 				  klocale->translate( "Could not change permissions\nPerhaps access denied." ) );	    

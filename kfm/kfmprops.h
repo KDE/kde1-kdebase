@@ -84,7 +84,6 @@ public:
     
 protected:
     QLineEdit *name;
-    QLineEdit *lname;
 
     QBoxLayout *layout;		// BL: layout mngt
 
