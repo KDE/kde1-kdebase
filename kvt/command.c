@@ -31,6 +31,10 @@
 #include <ctype.h>
 #include "debug.h"
 
+#ifdef _HPUX_SOURCE
+#define _TERMIOS_INCLUDED
+#include <bsdtty.h>
+#endif
 /* sgis have /dev/ptmx [bmg] */
 #ifdef __sgi__
 #define SVR4
@@ -369,7 +373,7 @@ static void catch_sig(int sig)
 	    fprintf(stderr, "kvt: cannot open console\n");
 	}
 #endif  /* TIOCCONS */
-#ifdef HPUX
+#ifdef _HPUX_SOURCE
       for (i = 0; i < sysconf(_SC_OPEN_MAX); i++)
 	if (i != ttyfd)
 	  close(i);
@@ -403,14 +407,14 @@ static void catch_sig(int sig)
 #ifdef __FreeBSD__
       ioctl(0,TIOCGETA,(char *)&ttmode);
 #else
-#   ifdef HPUX
+#   ifdef _HPUX_SOURCE
       tcgetattr(0, &ttmode);
 #   else
       ioctl(0,TCGETS,(char *)&ttmode);
 #   endif        
 #endif
  
-#ifdef HPUX
+#ifdef _HPUX_SOURCE
       ttmode.c_iflag = BRKINT | IGNPAR | ICRNL| IXON;
       ttmode.c_lflag = ISIG|IEXTEN|ICANON|ECHO|ECHOE|ECHOK;
 #else
@@ -430,7 +434,7 @@ static void catch_sig(int sig)
       ttmode.c_cc[VQUIT] = CQUIT;
       ttmode.c_cc[VERASE] = CERASE;
       ttmode.c_cc[VKILL] = CKILL;
-#ifdef HPUX
+#ifdef _HPUX_SOURCE
       ttmode.c_cc[VSUSP] = CSWTCH;
 #else
       ttmode.c_cc[VSUSP] = CSUSP;
@@ -471,7 +475,7 @@ static void catch_sig(int sig)
 #ifdef __FreeBSD__
       ioctl(0,TIOCSETA,(char *)&ttmode);
 #else
-#   ifdef HPUX
+#   ifdef _HPUX_SOURCE
       tcsetattr(0, TCSANOW, &ttmode);
 #   else
       ioctl(0,TCSETS,(char *)&ttmode);
@@ -576,7 +580,7 @@ void init_command(unsigned char *command,unsigned char **argv)
     }
 
   x_fd = XConnectionNumber(display);
-#ifdef HPUX
+#ifdef _HPUX_SOURCE
   fd_width = sysconf(_SC_OPEN_MAX);
 #else
   fd_width = getdtablesize();
