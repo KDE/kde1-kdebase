@@ -2030,11 +2030,12 @@ void KHttpManager::slotProgress( const char *_url, const char *_filename,
 	    int m = bytes - bytesRead + 1;
 	    if ( m > 4095 )
 		m = 4095;
-	    char buffer[ m + 1 ];
+	    char *buffer = new char[ m + 1 ];
 	    int n = fread( buffer, 1, m, f );
 	    buffer[n] = 0;
 	    view->write( buffer );
 	    bytesRead += n;
+	    delete [] buffer;
 	}
 	debugT("Done1\n");
     }

@@ -1,3 +1,8 @@
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "fileentry.h"
 #include <qapp.h>
 #include <qkeycode.h>

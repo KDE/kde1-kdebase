@@ -459,7 +459,7 @@ void KMimeType::initMimeTypes( const char* _path )
 		if ( t == 0L && !icon.isNull() )
 		    types->append( t = new KMimeType( ext.data(), icon.data() ) );
 		// If we have this type already we perhaps only change the pixmap ?
-		else if ( !icon.isNull )
+		else if ( !icon.isNull() )
 		    t->setPixmap( icon.data() );
 		// Set the default binding
 		if ( !defapp.isNull() && t != 0L )
@@ -917,7 +917,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     {
 	QDir d( u.path() );
 	QString x = d.canonicalPath();
-	if ( !x.isNull )
+	if ( !x.isNull() )
 	{
 	    tmp = x.data();
 	    tmp.detach();
@@ -1380,7 +1380,7 @@ void KMimeType::runBinding( const char *_url, const char *_binding, QStrList * _
 
 void KMimeType::runCmd( const char *_cmd )
 {
-    char cmd[ strlen( _cmd + 1 ) ];
+    char *cmd = new char[ strlen( _cmd + 1 ) ];
     strcpy( cmd, _cmd );
     
     QString exec;
@@ -1433,7 +1433,7 @@ void KMimeType::runCmd( const char *_cmd )
 	    args.append( p );
     }
     
-    char* argv[ args.count() + 2 ];
+    char **argv = new char*[ args.count() + 2 ];
     char* s;
     argv[ 0 ] = (char*)exec.data();
     int i = 1;
@@ -1458,6 +1458,8 @@ void KMimeType::runCmd( const char *_cmd )
 
 	exit( 1 );
     }
+    delete [] argv;
+    delete [] cmd;
     debugT("PID of started process is '%i'\n",pid);
 }
 
