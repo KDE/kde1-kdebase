@@ -9,7 +9,7 @@ msgstr ""
 
 #: error.C:42
 msgid "kwm: failure during initialisation; aborting\n"
-msgstr "kwm: initieringsfel; avbryter\n""
+msgstr "kwm: initieringsfel; avbryter\n"
 
 #: kwm.C:73
 msgid ""

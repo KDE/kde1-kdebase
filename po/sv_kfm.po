@@ -238,7 +238,7 @@ msgid ""
 "\n"
 "There is no way to restore them"
 msgstr ""
-"Vill du verkligen radera filerna?
+"Vill du verkligen radera filerna?"
 "\n"
 "Det går inte att återskapa dem"
 
@@ -277,7 +277,7 @@ msgstr "byte"
 
 #: kbind.cpp:395
 msgid "Too many protocols in file\n"
-msgstr "För många protokoll i fil\n""
+msgstr "För många protokoll i fil\n"
 
 #: kbind.cpp:441
 msgid "ERROR"
@@ -285,7 +285,7 @@ msgstr "FEL"
 
 #: kbind.cpp:442
 msgid "Could not find mime type\n"
-msgstr "Kunde inte hitta mime-typen"
+msgstr "Kunde inte hitta mime-typen\n"
 
 #: kbind.cpp:442
 msgid "in "
@@ -306,7 +306,7 @@ msgstr "FEL: Okänd bindning '%s'"
 
 #: kbind.cpp:1581
 msgid "Could not execute program\n"
-msgstr "Kunde inte köra progarmmet\n""
+msgstr "Kunde inte köra progarmmet\n"
 
 #: main.cpp:42 main.cpp:179
 msgid "KFM Information"
@@ -314,7 +314,7 @@ msgstr "KFM-information"
 
 #: main.cpp:43
 msgid "Creating directory:\n"
-msgstr "Skapart katalog:\n""
+msgstr "Skapart katalog:\n"
 
 #: main.cpp:180
 msgid "Installing Templates"
@@ -674,7 +674,7 @@ msgid ""
 msgstr ""
 "Kunde inte läsa\n"
 "%s\n"
-"Antingen finnns inte filen, eller så nekades åtkomsten
+"Antingen finnns inte filen, eller så nekades åtkomsten"
 
 #: kiojob.cpp:899
 #, c-format
