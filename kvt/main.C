@@ -46,7 +46,7 @@
 extern "C" {
 extern void *safemalloc(int, const char *identifier);
 extern void get_token();
-extern void handle_X_event(XEvent event, unsigned char);
+extern int handle_X_event(XEvent event, unsigned char);
 extern void screen_refresh();
 extern void extract_colors( char *fg_string, char *bg_string);
 extern void clean_exit(int);
@@ -78,6 +78,8 @@ extern char *icon_name;
 extern unsigned long	foreground;	/* foreground pixel value */
 extern unsigned long	background;	/* background pixel value */
 extern int rstyle;
+
+extern int mouse_block;			/* block mouse input while popup */
 
 extern int BackspaceSendsControlH;
 
@@ -254,8 +256,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
   if (ev->xany.type == FocusIn || ev->xany.type == FocusOut){
     if (ev->xany.window == kvt->winId())
       {
-	handle_X_event(*ev, 0);
+	int res = handle_X_event(*ev, 0);
 	screen_refresh();
+	if (res) return TRUE;
       }
     return FALSE;
   }
@@ -267,8 +270,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
        ev->xany.window == vt_win){
 
     if (ev->xany.type != MotionNotify || motion_allowed){
-      handle_X_event(*ev, 0);
+      int res = handle_X_event(*ev, 0);
       screen_refresh();
+      if (res) return TRUE;
     }
     if (ev->xany.type == ButtonPress
 	&& ev->xbutton.button == Button1)
@@ -282,6 +286,25 @@ bool MyApp::x11EventFilter( XEvent * ev){
   }
 
   return FALSE;
+}
+
+class KVT_QPopupMenu : public QPopupMenu {
+
+public:
+	virtual void show();
+	virtual void hide();
+};
+
+void KVT_QPopupMenu::show()
+{
+	mouse_block = 1;
+	QPopupMenu::show();
+}
+
+void KVT_QPopupMenu::hide()
+{
+	mouse_block = 0;
+	QPopupMenu::hide();
 }
 
 OptionDialog::OptionDialog(QWidget *parent, const char *name)
@@ -504,7 +527,7 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
-    m_options = new QPopupMenu;
+    m_options = new KVT_QPopupMenu;
     CHECK_PTR( m_options );
     if (menubar_visible)
       m_options->insertItem( i18n("Hide &Menubar") );
@@ -990,7 +1013,8 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
     case Event_KeyPress: case Event_KeyRelease:
       {
 	// well... aehh... but this works ;-)
-	handle_X_event(stored_xevent_for_keys, ((QKeyEvent*)ev)->ascii());
+	if (handle_X_event(stored_xevent_for_keys, ((QKeyEvent*)ev)->ascii()))
+		return TRUE;
       }
     }
   }

@@ -181,5 +181,6 @@ int  screen_scroll(int row1,int row2,int count);
 void scr_set_tab(int value);
 void scr_E(void);
 void scr_rev_vid(int mode);
+void mouse_report(XButtonEvent *ev, int release);
 
 #endif /* SCREEN_H */

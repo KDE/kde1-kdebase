@@ -241,7 +241,7 @@ void screen_init(void)
 void set_charclass(const char *s)
 {
   int j;
-  const char *i = s;
+  const unsigned char *i = (const unsigned char *) s;
 
   for (j=0; j<256; j++) {
     if (isalnum(j)) {
@@ -252,7 +252,7 @@ void set_charclass(const char *s)
   }
 
   while(*i) {
-    charclass[*i] = 1;
+    charclass[(int) *i] = 1;
     ++i;
   }
 }
@@ -1295,9 +1295,9 @@ void scr_erase_line(int mode)
 /* Matthias */
 void scr_erase_char(int n){
   unsigned char *starttext;
-  int back_color, fore_color;
+  // int back_color, fore_color;
   RENDITION *startrend;
-  int end,i;
+  // int end,i;
   if (n < 1)
     return;
   MyWinInfo.offset = 0;
@@ -1748,7 +1748,7 @@ void scr_clear_selection(void)
 static void scr_set_clr_sel(int op_flg,int start_row,int start_col,
 			    int end_row,int end_col)
 {
-  int j,tx,a,b,i,c,d;
+  int j,tx,a,b,i; //,c,d;
   for(j=start_row; j <= end_row ;j++)
     {
       a=0;
@@ -1775,8 +1775,8 @@ static void scr_set_clr_sel(int op_flg,int start_row,int start_col,
  ****************************************************************************/
 void scr_extend_selection(int x,int y)
 {
-  int clr_start_row, clr_start_col,clr_end_row,clr_end_col;
-  int set_start_row, set_start_col,set_end_row,set_end_col;
+  // int clr_start_row, clr_start_col,clr_end_row,clr_end_col;
+  // int set_start_row, set_start_col,set_end_row,set_end_col;
   int old_selend_row, old_selend_col;
   int old_direction,direction;
   
@@ -2034,9 +2034,9 @@ void scr_refresh(int x,int y,int width,int height)
  **************************************************************************/
 void screen_refresh()
 {
-  extern int font_num;
+  // extern int font_num;
   char force_next,fn;
-  int j,k,l,x1,y1,x,n,k0,xrow,x2,xrow2,k1,trow,trow2,count,j0;
+  int j,k,x1,y1,x,n,k0,xrow,x2,xrow2,k1,l,trow,trow2,count,j0;
   int rval, fore, back;
   unsigned long newgcm = 0;
   XGCValues newgcv;
@@ -2551,3 +2551,21 @@ void scr_back_color(int color)
     alloc_color(color+10);
   }
 }
+
+/***************************************************************************
+ * Report mouse event to application
+ **************************************************************************/
+#define ButtonNumber(x) ((x) == AnyButton ? 3 : ((x) - Button1))
+#define KeyState(x) ((((x)&(ShiftMask|ControlMask))+(((x)&Mod1Mask)?2:0))<<2)
+
+void mouse_report (XButtonEvent * ev, int release)
+{
+   int y = (ev->y - MARGIN)/MyWinInfo.fheight;
+   int x = (ev->x - MARGIN)/MyWinInfo.fwidth;
+   cprintf ("\033[M%c%c%c",
+              ((release > 0) ? '#' : (040 + ButtonNumber (ev->button) +
+			KeyState (ev->state))),
+              (041 + x),
+              (041 + y));
+}
+

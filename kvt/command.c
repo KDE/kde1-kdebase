@@ -107,6 +107,9 @@ static greek_mode_ON = False;
 
 int size_set = 0;      /* flag set once the window size has been set */
 
+int mouse_block = 0;	/* block mouse while in popup */
+int mouse_rep = 0;	/* allow mouse reporting */
+
 #define KBUFSIZE	256	/* size of keyboard mapping buffer */
 #define COM_BUF_SIZE   2048	/* size of buffer used to read from command */
 #define STRING_MAX      512
@@ -232,7 +235,7 @@ int run_command(unsigned char *,unsigned char **);
 static unsigned char *lookup_key(XEvent *,int *, unsigned char);
 static unsigned int get_com_char(int);
 /* get to handle.   Matthias */ 
-void handle_X_event(XEvent event, unsigned char);
+int handle_X_event(XEvent event, unsigned char);
 void process_string(int);
 #ifdef PRINT_PIPE
 void process_print_pipe(void);
@@ -1103,7 +1106,7 @@ static unsigned int get_com_char(int flags)
  **************************************************************************/
 
 /* get to handle.   Matthias */ 
-void handle_X_event(XEvent event, unsigned char qt_c)
+int handle_X_event(XEvent event, unsigned char qt_c)
 {
   /* no longer needed. Matthias */ 
 /*   XEvent event; */
@@ -1118,7 +1121,6 @@ void handle_X_event(XEvent event, unsigned char qt_c)
   /* this was set in get_com_char originally. Matthias */ 
   refreshed = 0;
 
-
   /* no longer needed. Matthias */ 
 /*   XNextEvent(display,&event); */
   switch(event.type)
@@ -1126,14 +1128,14 @@ void handle_X_event(XEvent event, unsigned char qt_c)
     case KeyPress:
       s = lookup_key(&event,&count, qt_c);
       send_string(s,count);
-      return;
+      return 0;
     case ClientMessage:
       if (event.xclient.format == 32 && event.xclient.data.l[0] == wm_del_win)
 	clean_exit(0);
-      return;
+      return 0;
     case MappingNotify:
       XRefreshKeyboardMapping(&event.xmapping);
-      return;
+      return 0;
     case GraphicsExpose:
     case Expose:
       if (!size_set) 
@@ -1148,7 +1150,7 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 	{
 	  scr_refresh(event.xexpose.x,event.xexpose.y,
 		      event.xexpose.width,event.xexpose.height);
-	  return;
+	  return 0;
 	}
       /* no longer needed */
 /*       else  */
@@ -1159,7 +1161,7 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 /* 					GraphicsExpose, &dummy)); */
 
 /* 	} */
-      return;
+      return 0;
     case VisibilityNotify:
       /* Here's my conclusiion:
        * If the window is completely onobscured, use bitblt's
@@ -1188,18 +1190,22 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 
     case FocusIn:
       scr_focus(1);
-      return;
+      return 0;
     case FocusOut:
       scr_focus(0);
-      return;
+      return 0;
     case ConfigureNotify:
       resize_window(0,0);
       size_set = 1;
-      return;
+      return 0;
     case ButtonPress:
       if (event.xany.window == vt_win)
 	{
-	    {
+	    if (mouse_rep && ((event.xbutton.state & ShiftMask) == 0)
+		&& !mouse_block) {
+		mouse_report (&(event.xbutton), 0);
+		return 1;
+	    } else {
 	      switch (event.xbutton.button)
 		{
 		case Button1 :
@@ -1217,20 +1223,24 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 		  buttonpress_time = event.xbutton.time;
 
 		  scr_start_selection(clicks, event.xbutton.x,event.xbutton.y);
-		  return;
+		  return 0;
 		  /* deactivated since Button3 is for popupmenu. Matthias */ 
 		  /* case Button3 : */
 		  /* scr_extend_selection(event.xbutton.x,event.xbutton.y); */
 		default:
-		  return;
+		  return 0;
 		}
 	    }
 	}
-      return;
+      return 0;
     case ButtonRelease:
       if (event.xany.window == vt_win)
 	{
-	    {
+	    if (mouse_rep && ((event.xbutton.state & ShiftMask) == 0)
+		&& !mouse_block) {
+		mouse_report (&(event.xbutton), 1);
+		return 1;
+	    } else {
 	      switch (event.xbutton.button)
 		{
 		case Button1:
@@ -1238,14 +1248,14 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 		  /* case Button3: */
 
 		  scr_make_selection(event.xbutton.time);
-		  return;
+		  return 0;
 		case Button2:
 		  scr_paste_selection();
-		  return;
+		  return 0;
 		}
 	    }
 	}
-      return;
+      return 0;
     case MotionNotify:
 
       if (event.xany.window == vt_win && 
@@ -1256,12 +1266,14 @@ void handle_X_event(XEvent event, unsigned char qt_c)
 	  XQueryPointer(display,vt_win,&root,&child,
 			&root_x,&root_y,&x,&y,&mods);
 	  scr_extend_selection(x,y);
-	  return;
+	  return 0;
 	}
-      return;
+      return 0;
     default:
-      return;
+      return 0;
     }
+
+    return 0;
 }
 
 
@@ -1761,6 +1773,9 @@ void process_terminal_mode(int c,int private,int nargs,int *arg)
 	   break;
 	case 47 :		/* switch to main screen */
 	  scr_change_screen(mode);
+	  break;
+	case 1000:		/* X11 mouse reporting */
+	  mouse_rep = mode;
 	  break;
 	}
     }
