@@ -6,5 +6,26 @@ msgstr ""
 "Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
+#: kstartondesk.C:70
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: kstartondesk.C:74
 msgid "Usage:"
 msgstr "ÓÃ·¨:"
+
+#: kstartondesk.C:76
+msgid "command "
+msgstr ""
+
+#: kstartondesk.C:77
+msgid "title "
+msgstr ""
+
+#: kstartondesk.C:78
+msgid "desktop"
+msgstr ""
+
+#: kstartondesk.C:80
+msgid "Example"
+msgstr ""
