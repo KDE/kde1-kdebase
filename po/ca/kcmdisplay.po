@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
 "POT-Creation-Date: 1998-12-28 01:13+0100\n"
-"PO-Revision-Date: 1998-12-15 22:44+0100\n"
+"PO-Revision-Date: 1998-12-29 22:36+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "&Fulleja..."
 
 #: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Disposició:"
 
 #: backgnd.cpp:374
 msgid "Tiled"
@@ -115,9 +115,8 @@ msgid "&Dock into the panel"
 msgstr "&Encastat al panell"
 
 #: backgnd.cpp:442
-#, fuzzy
 msgid "Cache size (kB):"
-msgstr "Mida de cau:"
+msgstr "Mida de cau (kB):"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -436,7 +435,7 @@ msgstr "&Aplica estil a les aplicacions no KDE"
 
 #: general.cpp:258
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "Barra de &menú dalt de la pantalla a l'estil MacOS"
 
 #: general.cpp:273
 msgid "Desktop fonts"
