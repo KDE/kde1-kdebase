@@ -93,7 +93,7 @@ void kPanel::parseMenus(){
     KConfig *config = KApplication::getKApplication()->getConfig();
 
     config->setGroup("KDE Desktop Entries");
-    QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
+    QString temp = KApplication::localkdedir() +"/share/applnk";
     QString personal = config->readEntry("PersonalPath", temp.data() );
     temp = KApplication::kde_appsdir();
     QString kde_apps = config->readEntry("Path", temp.data() );
