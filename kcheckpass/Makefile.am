@@ -1,6 +1,6 @@
 
 INCLUDES= $(all_includes)
-LDADD   = $(LIBCRYPT) $(LIBCOMPAT)
+LDADD   = $(PAMLIBS) $(LIBCRYPT) $(LIBCOMPAT)
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # for shadow passwords override the value

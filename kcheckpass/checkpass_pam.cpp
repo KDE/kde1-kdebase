@@ -20,16 +20,26 @@
  * This is the authentication code if you use PAM
  * Ugly, but proven to work.
  *****************************************************************/
+#include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+
+extern "C" {
 #include <security/pam_appl.h>
 #include <security/pam_misc.h>
+}
 
 static const char *PAM_username;
 static const char *PAM_password;
 
+#ifdef PAM_MESSAGE_NONCONST
+typedef struct pam_message pam_message_type;
+#else
+typedef const struct pam_message pam_message_type;
+#endif
+
 static int
-PAM_conv (int num_msg, const struct pam_message **msg,
+PAM_conv (int num_msg, pam_message_type **msg,
 	  struct pam_response **resp,
 	  void *appdata_ptr)
 {
@@ -38,7 +48,7 @@ PAM_conv (int num_msg, const struct pam_message **msg,
   int             size = sizeof(struct pam_response);
 
 #define GET_MEM \
-	if (!(repl = realloc(repl, size))) \
+	if (!(repl = static_cast<pam_response*>(realloc(repl, size)))) \
   		return PAM_CONV_ERR; \
 	size += sizeof(struct pam_response)
 #define COPY_STRING(s) (s) ? strdup(s) : NULL
@@ -65,7 +75,7 @@ PAM_conv (int num_msg, const struct pam_message **msg,
     default:
       /* Must be an error of some sort... */
       message("unexpected error from PAM: %s\n",
-	      msg[count]->msg);
+	     msg[count]->msg);
       free(repl);
       return PAM_CONV_ERR;
     }
