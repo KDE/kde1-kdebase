@@ -1,0 +1,273 @@
+# Hungarian messages for kdmconfig
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Székely Krisztián <szekelyk@edasz.hu>, 1998.
+#
+#, (személynevek magyar sorrendben)
+#, (in Hungarian family name comes first)
+msgid ""
+msgstr ""
+"Project-Id-Version: kdmconfig VERSION\n"
+"POT-Creation-Date: 1997-01-23 21:00+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Székely Krisztián <szekelyk@edasz.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:99
+msgid "&Appearance"
+msgstr "&Megjelenés"
+
+#: main.cpp:103
+msgid "&Fonts"
+msgstr "&Fontok"
+
+#: main.cpp:107
+msgid "&Background"
+msgstr "&Háttér"
+
+#: main.cpp:110
+msgid "&Users"
+msgstr "&Felhasználók"
+
+#: main.cpp:113
+msgid "&Sessions"
+msgstr "&Kapcsolat"
+
+#: main.cpp:119
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Sajnálom, de nincs olvasás/írás\n"
+"jogod a KDM beállító fájlra."
+
+#: main.cpp:121
+msgid "Missing privileges"
+msgstr "Hiányzó jogosultság"
+
+#: main.cpp:158
+msgid "KDM Configuration"
+msgstr "KDM beállítás"
+
+#: kdm-appear.cpp:66
+msgid "Appearance"
+msgstr "Megjelenés"
+
+#: kdm-appear.cpp:69
+msgid "Greeting string:"
+msgstr "Üdvözlõ szöveg:"
+
+#: kdm-appear.cpp:77
+msgid "KDM logo:"
+msgstr "KDM embléma:"
+
+#: kdm-appear.cpp:104 kdm-users.cpp:139
+msgid "Click or drop an image here"
+msgstr "Klikkelj vagy dobj egy képet ide"
+
+#: kdm-appear.cpp:109
+msgid "GUI Style:"
+msgstr "Felület Stílusa:"
+
+#: kdm-appear.cpp:115
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:116
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Hiba történt a kép betöltése közben:\n"
+">"
+
+#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
+#: kdm-users.cpp:247
+msgid "ERROR"
+msgstr "HIBA"
+
+#: kdm-appear.cpp:154 kdm-users.cpp:162
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Hiba történt a kép mentése közben:\n"
+">"
+
+#: kdm-appear.cpp:187 kdm-users.cpp:195
+msgid "Sorry, but \n"
+msgstr "Sajnos, \n"
+
+#: kdm-appear.cpp:189 kdm-users.cpp:197
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"ez úgy tûnik nem képfájl"
+
+#: kdm-appear.cpp:190 kdm-users.cpp:198
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\nKérlek a következõ kiterjesztésû fájlokat használd\n"
+
+#: kdm-appear.cpp:192 kdm-users.cpp:200
+msgid "Improper File Extension"
+msgstr "Téves fájl kiterjesztés"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:246
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Nem lesz mentve..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Font választás"
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr "Font változtatás"
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr "Üdvözlet"
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr "Hiba"
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr "Szabvány"
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr "Példa:"
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "Szín"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr "Tapéta"
+
+#: kdm-bgnd.cpp:110
+msgid "Tiled"
+msgstr "Mozaik"
+
+#: kdm-bgnd.cpp:114
+msgid "Centred"
+msgstr "Középen"
+
+#: kdm-bgnd.cpp:118
+msgid "Scaled"
+msgstr "Igazítva"
+
+#: kdm-bgnd.cpp:124
+msgid "Browse..."
+msgstr "Böngész ..."
+
+#: kdm-users.cpp:49
+msgid "All users"
+msgstr "Minden felhasználó"
+
+#: kdm-users.cpp:51
+msgid "Selected users"
+msgstr "Kiválasztott felhasználók"
+
+#: kdm-users.cpp:53
+msgid "No-show users"
+msgstr "Rejtett felhasználók"
+
+#: kdm-users.cpp:80
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Csak a kiválasztott\n"
+"felhasználókat mutasd"
+
+#: kdm-users.cpp:87
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Mutass minden felhasználót\n"
+" kivéve a rejtetteket"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Felhasználók megjelenítése"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Felhasználók rendezése"
+
+#: kdm-users.cpp:150 kdm-users.cpp:219
+msgid "No user selected"
+msgstr "Nincs felhasználó választva"
+
+#: kdm-users.cpp:151 kdm-users.cpp:220
+msgid "Save image as default image?"
+msgstr "Kép mentése alapértelmezett képként?"
+
+#: kdm-sess.cpp:51
+msgid "Allow to shutdown:"
+msgstr "Leállitás engedélyezése:"
+
+#: kdm-sess.cpp:58
+msgid "None"
+msgstr "Semmi"
+
+#: kdm-sess.cpp:59
+msgid "All"
+msgstr "Minden"
+
+#: kdm-sess.cpp:60
+msgid "Root Only"
+msgstr "Csak root"
+
+#: kdm-sess.cpp:61
+msgid "Console Only"
+msgstr "Csak konzol"
+
+#: kdm-sess.cpp:65
+msgid "Commands"
+msgstr "Parancsok"
+
+#: kdm-sess.cpp:67
+msgid "Shutdown"
+msgstr "Leállítás"
+
+#: kdm-sess.cpp:75
+msgid "Restart"
+msgstr "Újraindítás"
+
+#: kdm-sess.cpp:86
+msgid "Session types"
+msgstr "Kapcsolat típusok"
+
+#: kdm-sess.cpp:89
+msgid "New type"
+msgstr "Új típus"
+
+#: kdm-sess.cpp:99
+msgid "Available types"
+msgstr "Elérhetõ típusok"
+ 
