@@ -1215,7 +1215,7 @@ void kVt::onDrop( KDNDDropZone* _zone )
 
 void kVt::menubarMoved(){
   int new_pos = menubar->menuBarPos();
-  if (new_pos == KMenuBar::Top){
+  if (new_pos == KMenuBar::Top || new_pos == KMenuBar::Flat){
     if (frame->height() == height())
       resize(width(), height()+menubar->height());
     else
@@ -1235,7 +1235,11 @@ void kVt::menubarMoved(){
 
 void kVt::doGeometry(){
   if (menubar_visible && menubar->menuBarPos() == KMenuBar::Top){
-    menubar->setGeometry(0,0,width(), menubar->height());
+    menubar->setGeometry(0,0,width(), menubar->heightForWidth(width()));
+    frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
+  }
+  else if (menubar_visible && menubar->menuBarPos() == KMenuBar::Flat){
+    menubar->move (0,0);
     frame->setGeometry(0, menubar->height(), width(), height()-menubar->height());
   }
   else if (menubar_visible && menubar->menuBarPos() == KMenuBar::Bottom){
