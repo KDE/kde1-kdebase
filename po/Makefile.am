@@ -15,6 +15,9 @@ DA_GMFILES = da_kdm.gmo
 FI_POFILES = fi_kfind.po
 FI_GMFILES = fi_kfind.gmo
 
+IT_POFILES = it_kfm.po
+IT_GMFILES = it_kfm.gmo
+
 ES_POFILES = es_kfind.po  es_kdehelp.po  es_kdisplay.po  es_kvt.po  es_kfm.po  es_kwm.po  es_kfontmanager.po  es_klogout.po 
 ES_GMFILES = es_kfind.gmo es_kdehelp.gmo es_kdisplay.gmo es_kvt.gmo es_kfm.gmo es_kwm.gmo es_kfontmanager.gmo es_klogout.gmo 
 
@@ -27,8 +30,8 @@ FR_GMFILES = fr_kfind.gmo fr_kdehelp.gmo fr_kdisplay.gmo
 RU_POFILES = ru_kfind.po  ru_kdehelp.po  ru_kdisplay.po  ru_kvt.po  ru_kwm.po  ru_kfontmanager.po ru_klogout.po
 RU_GMFILES = ru_kfind.gmo ru_kdehelp.gmo ru_kdisplay.gmo ru_kvt.gmo ru_kwm.gmo ru_kfontmanager.gmo ru_klogout.gmo
 
-POFILES = $(DE_POFILES) $(CZ_POFILES) $(DA_POFILES) $(ES_POFILES) $(SV_POFILES) $(FR_POFILES) $(RU_POFILES) $(NL_POFILES) $(FI_POFILES)
-GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(DA_GMFILES) $(ES_GMFILES) $(SV_GMFILES) $(FR_GMFILES) $(RU_GMFILES) $(NL_GMFILES) $(FI_GMFILES)
+POFILES = $(DE_POFILES) $(CZ_POFILES) $(DA_POFILES) $(ES_POFILES) $(SV_POFILES) $(FR_POFILES) $(RU_POFILES) $(NL_POFILES) $(FI_POFILES) $(IT_POFILES)
+GMOFILES= $(DE_GMFILES) $(CZ_GMFILES) $(DA_GMFILES) $(ES_GMFILES) $(SV_GMFILES) $(FR_GMFILES) $(RU_GMFILES) $(NL_GMFILES) $(FI_GMFILES) $(IT_GMFILES)
 
 localedir = $(prefix)/share/locale
 

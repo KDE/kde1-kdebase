@@ -162,12 +162,3 @@ msgstr ""
 "Keine Kommunikation mit KFM und\n"
 "kein (Neu)Starten von KFM möglich."
 
-
-
--- 
-Christian Kirsch
-ck@held.mind.de       ck@ix.heise.de
-Tel +49-30-78702288   +49-511-5352-590   
-Fax +49-30-78702289     
-     
-
