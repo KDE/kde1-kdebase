@@ -1,0 +1,12 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm windows
+Icon=windows.xpm
+Type=Application
+DocPath=kcontrol/kdisplay/windows.html
+Comment=Window properties
+Comment[de]=Fenstereigenschaften
+Comment[pl]=W³a¶ciwo¶ci okna
+Name=Properties
+Name[de]=Eigenschaften
+Name[pl]=Okna¶ciwo¶ci

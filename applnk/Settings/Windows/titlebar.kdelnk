@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm titlebar
+Icon=titlebar.xpm
+Type=Application
+Comment=Titlebar appearance
+Comment[de]=Erscheinungsbild der Titelleiste
+Comment[pl]=Wygl±d paska tytu³owego
+Name=Titlebar
+Name[de]=Titelleiste
+Name[pl]=Pasek tytu³owy

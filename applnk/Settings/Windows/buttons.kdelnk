@@ -1,0 +1,12 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkwm buttons
+Icon=buttons.xpm
+Type=Application
+DocPath=kcontrol/kwm/titlebar.html
+Comment=Arrangement of window buttons
+Comment[de]=Anordung der Fenster-Symbole
+Comment[pl]=Przyciski na pasku tytu³owym
+Name=Buttons
+Name[de]=Fenster-Symbole
+Name[pl]=Przyciski

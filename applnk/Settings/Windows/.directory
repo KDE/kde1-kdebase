@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Windows
+Name[pl]=Okna
+MiniIcon=windows.xpm
+SortOrder=buttons.kdelnk,titlebar.kdelnk,properties.kdelnk
+Icon=kcmkwm.xpm
