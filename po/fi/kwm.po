@@ -13,9 +13,7 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"Kwm: toinen ikkunamanageri on jo k‰ynniss‰. Kwm:‰‰ ei "
-"k‰ynnistet‰.\n"
+msgstr "Kwm: toinen ikkunamanageri on jo k‰ynniss‰. Kwm:‰‰ ei k‰ynnistet‰.\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -135,14 +133,16 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla,\n"
-"Ne voidaan vain k‰ynnist‰‰ uudellen. Varmista ettei niiss‰ ole tallentamatonta tietoa."
+"Ne voidaan vain k‰ynnist‰‰ uudellen. Varmista ettei niiss‰ ole "
+"tallentamatonta tietoa."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Seuraavat sovellukset eiv‰t ole X11-yhteensopivia eik‰ niit‰ voida palauttaa\n"
+"Seuraavat sovellukset eiv‰t ole X11-yhteensopivia eik‰ niit‰ voida "
+"palauttaa\n"
 "seuraavalla istunnolla. Varmista ettei niiss‰ ole tallentamatonta tietoa."
 
 #: taskmgr.C:105

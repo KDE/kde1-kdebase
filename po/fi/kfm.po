@@ -193,9 +193,7 @@ msgstr "Pysäytä"
 
 #: kfmgui.cpp:572
 msgid "Could not load icon\n"
-msgstr ""
-"Ikonin lataus epäonnistui\n"
-"%s"
+msgstr "Ikonin lataus epäonnistui\n"
 
 #: kbind.cpp:306 kbind.cpp:379 kbind.cpp:432 kbind.cpp:1504 kbind.cpp:1512
 #: kbind.cpp:1530 kbind.cpp:1547 kbind.cpp:1608 kbind.cpp:1620 kbind.cpp:1647
@@ -221,9 +219,7 @@ msgstr "KFM VIRHE"
 
 #: kfmexec.cpp:58 kfmgui.cpp:698 kfmman.cpp:870
 msgid "Malformed URL\n"
-msgstr ""
-"Virheellinen URL\n"
-"%s"
+msgstr "Virheellinen URL\n"
 
 #: kfmgui.cpp:867
 msgid "Select files:"
@@ -276,7 +272,6 @@ msgstr ""
 "\n"
 "HTML työkalu Martin Jones\n"
 "mjones@kde.org"
-
 
 #: kfmgui.cpp:1303
 msgid "Document: Done"
@@ -420,6 +415,7 @@ msgstr ""
 "paikallisella levyllä"
 
 #: kbind.cpp:1619
+#, c-format
 msgid ""
 "Could not access\n"
 "%s"
@@ -702,7 +698,6 @@ msgstr ""
 "Paneelissa tai Terminaalissa\n"
 "mutta et molemmissa"
 
-
 #: kfmprops.cpp:862 kfmprops.cpp:985 kfmprops.cpp:1423 kfmprops.cpp:1641
 #: kfmprops.cpp:1812
 msgid ""
@@ -797,6 +792,7 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Haluatko todella uudelleenjärjestää ikonit?"
 
 #: kfmserver.cpp:234
+#, c-format
 msgid ""
 "The URL\n"
 "%s\n"
@@ -872,6 +868,7 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "SISÄINEN VIRHE: Sinun täytyy ainakin määrittää laite jota liitetään."
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
+#, c-format
 msgid ""
 "Malformed URL\n"
 "%s"
@@ -884,6 +881,7 @@ msgid "Can only make links on local file system"
 msgstr "Linkin tekeminen on mahdollista vain samalla tiedostojärjestelmällä."
 
 #: kiojob.cpp:256 kiojob.cpp:275
+#, c-format
 msgid ""
 "Could not overwrite\n"
 "%s"
@@ -892,6 +890,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
+#, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
@@ -905,6 +904,7 @@ msgid " ERROR: Could not write to %s"
 msgstr "VIRHE: Kirjoittaminen kohteeseen %s epäonnistui."
 
 #: kiojob.cpp:454 kiojob.cpp:642 kiojob.cpp:1056
+#, c-format
 msgid ""
 "Could not make directory\n"
 "%s"
@@ -919,6 +919,7 @@ msgid "ERROR: Could not access directory '%s'"
 msgstr "VIRHE: Hakemiston %s käsittely epäonnistui."
 
 #: kiojob.cpp:658
+#, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
@@ -928,6 +929,7 @@ msgstr ""
 "käsittely epäonnistui."
 
 #: kiojob.cpp:688
+#, c-format
 msgid ""
 "Could not move directory\n"
 "%s\n"
@@ -959,6 +961,7 @@ msgstr ""
 "Tiedostoa ei ole olemassa, tai sen käsittely on estetty."
 
 #: kiojob.cpp:1015
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -997,6 +1000,7 @@ msgstr ""
 "epäonnistui."
 
 #: kiojob.cpp:1048 kiojob.cpp:1179
+#, c-format
 msgid ""
 "The requested action\n"
 "%s\n"
@@ -1048,6 +1052,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1106
+#, c-format
 msgid ""
 "Gzip reproted an error for\n"
 "%s"
@@ -1056,6 +1061,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1116 kiojob.cpp:1131
+#, c-format
 msgid ""
 "File %s\n"
 "does not exist"
@@ -1106,6 +1112,7 @@ msgid "File %i/%i"
 msgstr "Tiedosto %i/%i"
 
 #: kiojob.cpp:1450 kiojob.cpp:1505
+#, c-format
 msgid "to %s"
 msgstr "kohteeseen %s"
 
@@ -1120,14 +1127,17 @@ msgstr ""
 "ei voi tuhota"
 
 #: kiojob.cpp:1571
+#, c-format
 msgid "Mounting %s ..."
 msgstr "Liitän %s ..."
 
 #: kiojob.cpp:1573
+#, c-format
 msgid "Unmounting %s ..."
 msgstr "Liitosta %s puretaan ..."
 
 #: kiojob.cpp:1601
+#, c-format
 msgid "Retrieving listing of %s"
 msgstr "Listausta %s:stä vastaanotetaan ..."
 
@@ -1252,6 +1262,7 @@ msgid "De&vice"
 msgstr "&Laite"
 
 #: kfmexec/main.cpp:46
+#, c-format
 msgid ""
 "The URL %s\n"
 "is malformed"
@@ -1283,7 +1294,6 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
-
 
 #~ msgid "The URL"
 #~ msgstr "URL"
