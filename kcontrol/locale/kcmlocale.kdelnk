@@ -1,5 +1,5 @@
 [KCM Locale]
-Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,hr,hu,is,it,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sv,tr,zh_CN.GB2312,zh_TW.Big5
+Languages=C,br,ca,cs,da,de,el,en,en_UK,eo,es,fi,fr,he,hr,hu,is,it,ko,mk,nl,no,pl,pt,pt_BR,ro,ru,sk,sv,tr,zh_CN.GB2312,zh_TW.Big5
 
 [br]
 Name=Breton
@@ -9,7 +9,6 @@ Name[de]=Bretonisch
 Name[br]=Brezhoneg
 Name[es]=Bretón
 Name[pt]=Bretõens
-
 
 [ca]
 Name=Catalan
@@ -38,6 +37,7 @@ Name[pt]=Roménio
 Name[sv]=rumänska
 Name[ro]=Român
 Name[ru]=òÕÍÙÎÓËÉÊ
+Name[he]=úéğîåø
 
 [C]
 Name=Default language
@@ -68,6 +68,7 @@ Name[pt]=Alemão
 Name[sv]=tyska
 Name[ro]=German
 Name[ru]=îÅÍÅÃËÉÊ
+Name[he]=úéğîøâ
 
 [en_UK]
 Name=English - UK
@@ -83,6 +84,8 @@ Name[pt]=Inglês - UK
 Name[sv]=engelska - br.
 Name[ro]=Englez
 Name[ru]=áÎÇÌÉÊÓËÉÊ
+Name[he]=UK - úéìâğà
+
 
 [en]
 Name=English - US
@@ -98,6 +101,7 @@ Name[pt]=Inglês - EUA
 Name[sv]=engelska - am.
 Name[ro]=Englez-American
 Name[ru]=áÎÇÌÏ-áÍÅÒÉËÁÎÓËÉÊ
+Name[he]=ú''øà - úéìâğà
 
 [fr]
 Name=French
@@ -113,6 +117,7 @@ Name[pt]=Francês
 Name[sv]=franska
 Name[ro]=Francez
 Name[ru]=æÒÁÎÃÕÚËÉÊ
+Name[he]=úéúôøö
 
 [cs]
 Name=Czech
@@ -128,6 +133,7 @@ Name[pt]=Checo
 Name[sv]=tjeckiska
 Name[ro]=Ceh
 Name[ru]=şÅÛÓËÉÊ
+Name[he]=úéë'ö
 
 [is]
 Name=Icelandic
@@ -167,6 +173,8 @@ Name[pt]=Espanhol
 Name[sv]=spanska
 Name[ro]=Spaniol
 Name[ru]=éÓĞÁÎÓËÉÊ
+Name[he]=úéãøôñ
+
 
 [ru]
 Name=Russian
@@ -182,6 +190,7 @@ Name[pt]=Russo
 Name[sv]=ryska
 Name[ro]=Rus
 Name[ru]=òÕÓÓËÉÊ
+Name[he]=úéñåø
 
 [nl]
 Name=Dutch
@@ -197,6 +206,7 @@ Name[pt]=Holandes
 Name[sv]=holländska
 Name[ro]=Olandez
 Name[ru]=îÉÄÅÒÌÁÎÄÓËÉÊ
+Name[he]=úéãğìåä
 
 [hu]
 Name=Hungarian
@@ -212,6 +222,7 @@ Name[pt]=Hungaro
 Name[sv]=ungerska
 Name[ro]=Unguresc
 Name[ru]=÷ÅÎÇÅÒÓËÉÊ
+Name[he]=úéøâğåä
 
 [da]
 Name=Danish
@@ -318,6 +329,7 @@ Name[pt]=Grego
 Name[sv]=grekiska
 Name[ro]=Grecesc
 Name[ru]=çÒÅŞÅÓËÉÊ
+Name[he]=úéğååé
 
 [hr]
 Name=Croatian
@@ -354,6 +366,7 @@ Name[pt]=Chinês tradicional
 Name[sv]=kinesiska
 Name[ro]=Chinezesc
 Name[ru]=ëÉÔÁÊÓËÉÊ
+Name[he]=úéğéñ
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
@@ -397,3 +410,8 @@ Name[br]=Koreeg
 Name=Turkish
 Name[de]=Türkisch
 Name[br]=Turkeg
+
+[he]
+Name=Hebrew
+Name[de]=Hebräisch
+Name[he]=úéøáò
