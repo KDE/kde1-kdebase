@@ -18,6 +18,7 @@ Comment[pt_BR]=Monitor de performance e gerenciador de tarefas
 Comment[ro]=Program de gestiune de procese ºi monitorizare de performanşã
 Comment[sk]=Správca úloh a monitorovanie vıkonu
 Comment[sv]=Hanterar aktiviteter och visar prestanda
+Comment[ca]=Gestor de tasques i monitor de rendiment
 Name=Task Manager
 Name[cs]=Správce úloh
 Name[da]=Brugermanager
@@ -37,6 +38,7 @@ Name[ro]=Gestionar de procese
 Name[ru]=íÅÎÅÄÖÅÒ ÚÁÄÁŞ
 Name[sk]=Správca úloh
 Name[sv]=Aktivitetshanterare
+Name[ca]=Gestor de tasques
 Exec=ktop
 Icon=ktop.xpm
 MiniIcon=ktop.xpm
@@ -47,3 +49,5 @@ Terminal=0
 Path=
 SwallowTitle=xload
 SwallowExec=xload -jumpscroll 1 -fg green3 -bg black -nolabel -geometry 50x50+10000+10000
+
+
