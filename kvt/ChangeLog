@@ -1,5 +1,9 @@
 since kvt-0.18.5
- - changed the layouting of the terminal-dialog. 
+  - Now kvt searches again a list of TERM-entries and takes the first
+    (`best') available.  This should minimize problems with
+    unincomplete or antiquated terminfo/termcap databases. (This is
+    based on curses.)
+ - changed the layouting of the terminal-dialog. (bmg)
 
 since kvt-0.18.4
  - added a hack for stupid clients like pine who cannot handle "\n"

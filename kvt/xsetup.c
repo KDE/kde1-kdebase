@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <curses.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
@@ -125,6 +126,17 @@ extern KeySym PageDownKeysym;
 extern KeySym GreekSwitchKeysym; 
 extern int GreekMode;
 #endif
+
+static char *termlist[] = {
+    "kvt-color",
+    "xterm-color",
+    "kvt",
+    "xterm",
+    "vt100",
+    "ansi",
+    "dump",
+    0
+};
 
 XSizeHints sizehints = {
 	PMinSize | PResizeInc | PBaseSize | PWinGravity,
@@ -274,8 +286,17 @@ int init_display(int argc,char **argv)
   
   /* if no terminal has been set by -tn option, set one */ 
   if (!terminal) {
-    terminal = safemalloc(strlen("xterm-color")+6, "terminal");
-    sprintf(terminal, "TERM=%s", "xterm");
+    char **ptr = termlist;
+    int i;
+    while(*ptr) {
+    	printf("Test: %s\n", *ptr);
+    	if (setupterm(*ptr, 1, &i) != ERR) {
+	    terminal = safemalloc(strlen(*ptr)+6, "terminal");
+	    sprintf(terminal, "TERM=%s", *ptr);
+	    break;
+	}
+	ptr++;
+    }
     putenv(terminal);
   }
 
