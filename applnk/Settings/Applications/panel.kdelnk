@@ -11,7 +11,9 @@ Name[pt]=Painel
 Name[sk]=Panel
 Name[hr]=Ploèa
 Comment=You can configure here, how the panel should look like
+Comment[pt]=Configuração do painel
 SwallowTitle=Panel Options
+SwallowTitle[pt]=Opções do Painel
 Icon=panel_settings.xpm
 Exec=kcmkpanel
 

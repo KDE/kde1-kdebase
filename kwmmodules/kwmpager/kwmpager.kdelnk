@@ -4,6 +4,7 @@ SwallowExec=kwmpager -geometry 50x50+10000+10000
 SwallowTitle=kwmpager
 BinaryPattern=
 Name=Desktop Pager
+Name[pt]=Mapa da Área de Trabalho
 Protocols=
 MimeType=
 Comment=Shows the positions of the windows

@@ -4,5 +4,6 @@ Name=Applications
 Name[de]=Anwendungen
 Name[cs]=Aplikace
 Name[fi]=Sovellukset
+Name[pt]=Aplicações
 SortOrder=panel.kdelnk,kdm.kdelnk
 Icon=application_settings.xpm
