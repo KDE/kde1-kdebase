@@ -32,6 +32,7 @@
 #include <X11/Xutil.h>
 
 #include "blob.moc"
+#include "blob.h"
 
 // this refers to klock.po. If you want an extra dictionary, 
 // create an extra KLocale instance here.
