@@ -64,10 +64,10 @@ void KBackground::readSettings( const char *group )
 
     QString str;
 
-    str = config.readEntry( "Color1", "#CCCCCC" );
+    str = config.readEntry( "Color1", "#4682B4" );
     color1.setNamedColor( str );
 
-    str = config.readEntry( "Color2", "#CCCCCC" );
+    str = config.readEntry( "Color2", "#4682B4" );
     color2.setNamedColor( str );
 
     gfMode=Flat;
