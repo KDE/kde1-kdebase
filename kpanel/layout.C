@@ -38,7 +38,7 @@ void kPanel::layoutTaskbar(){
      int r = 0;
      if (n>0) {
        w = (taskbar_frame->width()-((number_of_desktops-1)*4)) / 
-	 ((n+((nr>1)?1:0))/nr);
+	 int((n/nr)+1);
        w--;
        if (w > tbhs*taskbar_height*3/2) w = tbhs*taskbar_height*3/2;
        x = 0;
@@ -83,7 +83,7 @@ int kPanel::numberOfTaskbarRows(){
   int res = 0;
   do {
     res ++;
-    w = (taskbar_frame->width()-(number_of_desktops*4)) / ((n+1)/res);
+    w = (taskbar_frame->width()-(number_of_desktops*4)) / int((n/res)+1);
   } while (w < tbmhs*taskbar_height);
   return res;
 }

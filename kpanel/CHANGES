@@ -5,6 +5,7 @@ In kpanel-0.19:
        - menu editor in panel menu (needs an installed kmenuedit with
           KMenuEdit.kdelnk)
        - swallowing window titles can be regular expressions
+       - bugfix in taskbar layout 
 
 In kpanel-0.18:
 
