@@ -1,3 +1,9 @@
+1998-07-27  Stephan Kulow  <coolo@Acrion.kulow.hl.eunet.de>
+
+	* acinclude.m4.in: fixed some things in the MOC test
+
+	* acinclude.m4.in: fixed this damn msgfmt test
+
 1998-06-02  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: ignore msgfmt, if not GNU gettext
