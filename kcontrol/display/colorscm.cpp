@@ -271,6 +271,7 @@ void KColorScheme::sliderValueChanged( int val )
 {
 	cs->contrast = val;
 	cs->drawSampleWidgets();
+	changed = TRUE;
 }
 
 void KColorScheme::slotSave( )
