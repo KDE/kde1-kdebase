@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kmenuedit 0.2.3\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-24 16:20 CEST\n"
+"POT-Creation-Date: 1998-10-26 10:18+0100\n"
+"PO-Revision-Date: 1998-10-28 18:25 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,15 +37,15 @@ msgstr ""
 "\n"
 "Pøejete si ulo¾it va¹e zmìny?"
 
-#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:259
+#: confmenu.cpp:320 confmenu.cpp:908 kmenuedit.cpp:260
 msgid "EMPTY"
 msgstr "PRÁZDNÉ"
 
-#: kmenuedit.cpp:335
+#: kmenuedit.cpp:339
 msgid "Reload Menus"
 msgstr "Znovu naèíst menu"
 
-#: kmenuedit.cpp:336
+#: kmenuedit.cpp:340
 msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
@@ -53,11 +53,11 @@ msgstr ""
 "Nové naètení nemu zru¹í v¹echny zmìny.\n"
 "Jste si jist, ¾e si pøejete nové naètení?"
 
-#: button.cpp:209 main.cpp:78 main.cpp:91
+#: button.cpp:209 main.cpp:79 main.cpp:92
 msgid "KMenuedit"
 msgstr "KMenuedit"
 
-#: main.cpp:79
+#: main.cpp:80
 msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
@@ -65,7 +65,7 @@ msgstr ""
 "Adresáø pro va¹e osobní menu neexistuje.\n"
 " Pøejete si jej nyní vytvoøit ?"
 
-#: main.cpp:92
+#: main.cpp:93
 msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
@@ -84,10 +84,6 @@ msgstr "Otevøít/ Zavøít"
 #: confmenu.cpp:110
 msgid "! PROTECTED Button !"
 msgstr "! CHRÁNÌNÉ tlaèítko !"
-
-#: confmenu.cpp:115
-msgid "New"
-msgstr "Nový"
 
 #: confmenu.cpp:171 confmenu.cpp:299
 msgid "Warning !"
@@ -162,17 +158,9 @@ msgstr "Odkaz"
 msgid "Device"
 msgstr "Zaøízení"
 
-#: entrydialog.cpp:63
-msgid "Type:"
-msgstr "Typ:"
-
 #: entrydialog.cpp:69
 msgid "File Name:"
 msgstr "Jméno souboru:"
-
-#: entrydialog.cpp:82
-msgid "Name:"
-msgstr "Jméno:"
 
 #: entrydialog.cpp:95
 msgid "Mini Icon:"

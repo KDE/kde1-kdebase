@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-24 17:49 CEST\n"
+"POT-Creation-Date: 1998-10-26 10:19+0100\n"
+"PO-Revision-Date: 1998-10-28 18:57 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,10 +73,6 @@ msgstr "D&ole"
 msgid "Top/Le&ft"
 msgstr "Nahoøe/Vle&vo"
 
-#: panel.cpp:95
-msgid "Style"
-msgstr "Styl"
-
 #: panel.cpp:97
 msgid "T&iny"
 msgstr "D&robný"
@@ -109,42 +105,81 @@ msgstr "Zobrazovat nápovìdy v &menu"
 msgid "De&lay:"
 msgstr "&Zpo¾dìní"
 
-#: options.cpp:56
-msgid "ms"
-msgstr "ms"
+#: options.cpp:62
+msgid "Visuals"
+msgstr "Chování panelu"
 
-#: options.cpp:68
-msgid "Others"
-msgstr "Ostatní"
-
-#: options.cpp:69
-msgid "Personal &First"
-msgstr "&Osobní polo¾ky první"
-
-#: options.cpp:71
+#: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "&Skrývat panel"
 
-#: options.cpp:73
+#: options.cpp:67 options.cpp:85
+msgid "Delay:"
+msgstr "Zpo¾dìní:"
+
+#: options.cpp:74 options.cpp:93
+msgid "Speed:"
+msgstr "Rychlost:"
+
+#: options.cpp:75 options.cpp:94 options.cpp:103
+msgid "Slow"
+msgstr "Malá"
+
+#: options.cpp:76 options.cpp:95 options.cpp:104
+msgid "Fast"
+msgstr "Velká"
+
+#: options.cpp:82
 msgid "Auto Hide &Taskbar"
 msgstr "S&krývat pruh úloh"
 
-#: options.cpp:81
-msgid "Clock"
-msgstr "Hodiny"
+#: options.cpp:100
+msgid "Animate Show/Hide"
+msgstr "Animace zobrazení/skrytí"
 
-#: options.cpp:83
-msgid "&24h"
-msgstr "&24h"
+#: options.cpp:102
+msgid "Speed"
+msgstr "Rychlost"
 
-#: options.cpp:85
-msgid "&12h AM/PM"
-msgstr "&12h AM/PM"
+#: options.cpp:117
+msgid "Others"
+msgstr "Ostatní"
 
-#: disknav.cpp:43
+#: options.cpp:118
+msgid "Personal &First"
+msgstr "&Osobní polo¾ky první"
+
+#: options.cpp:120
+msgid "F&olders First"
+msgstr "&Adresáøe první"
+
+#: options.cpp:122
+msgid "&Clock shows time in AM/PM format"
+msgstr "&Hodiny ukazují èas ve formátu AM/PM"
+
+#: disknav.cpp:38
+msgid "History"
+msgstr "Historie"
+
+#: disknav.cpp:64
+msgid "Edit &Local..."
+msgstr "Upravit &lokální"
+
+#: disknav.cpp:74
 msgid "Edit &Global..."
 msgstr "Upravit &globální"
 
-#: disknav.cpp:46
-msgid "Edit &Local..."
-msgstr "Upravit &lokální"
+#~ msgid "Style"
+#~ msgstr "Styl"
+
+#~ msgid "ms"
+#~ msgstr "ms"
+
+#~ msgid "Clock"
+#~ msgstr "Hodiny"
+
+#~ msgid "&24h"
+#~ msgstr "&24h"
+
+#~ msgid "&12h AM/PM"
+#~ msgstr "&12h AM/PM"

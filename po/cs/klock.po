@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-10-24 16:26 CEST\n"
+"POT-Creation-Date: 1998-10-26 10:18+0100\n"
+"PO-Revision-Date: 1998-10-28 18:26 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,21 +21,9 @@ msgstr "Bì¾ící text"
 msgid "Setup kbanner"
 msgstr "Nastavení kbanneru"
 
-#: banner.cpp:95
-msgid "Family:"
-msgstr "Rodina:"
-
-#: banner.cpp:114 science.cpp:1036
-msgid "Size:"
-msgstr "Velikost:"
-
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
 msgstr "Barva:"
-
-#: banner.cpp:147
-msgid "Bold"
-msgstr "Tuèný"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
@@ -398,12 +386,12 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
 
-#: main.cpp:349
+#: main.cpp:351
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Parametr %s není podporován na této platformì!"
 
-#: main.cpp:378
+#: main.cpp:380
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -417,11 +405,11 @@ msgstr ""
 "Prosím kontaktujte svého systémového správce.\n"
 "Øeknìte mu, ¾e potøebujete SUID pro ¹etøièe obrazovky!"
 
-#: main.cpp:383
+#: main.cpp:385
 msgid "Shadow Passwords"
 msgstr "Stínové heslo"
 
-#: main.cpp:428
+#: main.cpp:430
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -433,7 +421,7 @@ msgstr ""
 "pou¾ijte místo toho klock.\n"
 "\n"
 
-#: main.cpp:536
+#: main.cpp:538
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -442,7 +430,7 @@ msgstr ""
 "Pou¾ití: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "         [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 
-#: main.cpp:539
+#: main.cpp:541
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -610,10 +598,6 @@ msgstr "Skála"
 #: rock.cpp:549
 msgid "Setup krock"
 msgstr "Nastavení Skály"
-
-#: rock.cpp:589
-msgid "Move"
-msgstr "Pøesouvat"
 
 #: rock.cpp:595
 msgid "Rotate"
