@@ -1,57 +1,56 @@
+## kdebase/Makefile.am
+## (C) 1997 Stephan Kulow
 
-# This has to be set. The rest should be reusable
-GMOFILES = kfind.gmo kdehelp.gmo kdm.gmo kfm.gmo kpanel.gmo \
- 	kwm.gmo kpanel.gmo kvt.gmo kdisplay.gmo \
-	kmenuedit.gmo krootwm.gmo klock.gmo kdmconfig.gmo \
-	kfontmanager.gmo kcontrol.gmo kcmbell.gmo kcminfo.gmo \
-	kcminput.gmo kcmkpanel.gmo kcmkwm.gmo kcmsamba.gmo \
-	kcmsample.gmo kcmlocale.gmo kcmsyssound.gmo \
-	kstartondesk.gmo kcmkeys.gmo kcmkfm.gmo kikbd.gmo \
-	kpager.gmo
+SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
+	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
+	kmenuedit kaudio kcontrol kappfinder pics applnk doc po  \
+	config kstartondesk kikbd
 
-POFILES = $(GMOFILES:.gmo=.po)
+AUTOMAKE_OPTIONS = foreign
 
-LANG = fi
+install-data-local:
+	@echo ""
+	@echo ""
+	@echo ""
+	@echo "*************** Important *************************"
+	@echo ""
+	@echo " Add "$(bindir)" to your PATH"
+	@echo ""
+	@echo " Please report bugs with our web form at"
+	@echo " http://buglist.kde.org."
+	@echo ""
+	@echo " Stephan Kulow <coolo@kde.org> and all the KDE"
+	@echo " developers wish you fun with the KDE."
+	@echo "****************************************************"
+	@echo ""
 
-localedir = $(kde_locale)
+acinclude.m4: acinclude.m4.in libtool.m4.in kdminclude.m4
+	cat acinclude.m4.in libtool.m4.in kdminclude.m4 > acinclude.m4
 
-DISTFILES = Makefile.am Makefile.in $(POFILES) $(GMOFILES)
+EXTRA_DIST = acinclude.m4.in libtool.m4.in kdminclude.m4 README.pam
 
-all: all-@USE_NLS@
-install-data-local: install-@USE_NLS@
-
-SUFFIXES = .po .gmo
-
-.po.mo:
-	$(MSGFMT) -o $@ $<
-
-.po.gmo:
-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
-	&& rm -f $$file && $(GMSGFMT) -o $$file $< 
-
-all-yes: $(GMOFILES)
-all-no:
-
-install-yes: all
-	@catalogs='$(GMOFILES)'; \
-	for cat in $$catalogs; do \
-	destdir=$(localedir); \
-	name=`echo $$cat | sed -e 's/\.gmo/\.mo/'` \
-	dir=$$destdir/$(LANG)/LC_MESSAGES; \
-	$(mkinstalldirs) $$dir; \
-	$(INSTALL_DATA) $$cat $$dir/$$name; \
-	  echo "installing $$cat as $$dir/$$name"; \
+messages:
+	rm -rf po.backup
+	mkdir po.backup
+	for i in `ls -1 po/*.pot | sed -e "s#po/##"`; do \
+	  grep -v "\"POT-Creation" po/$$i > po.backup/$$i ; \
+	  cp po/$$i po.backup/backup_$$i ;  \
+	 touch -r po/$$i po.backup/backup_$$i; \
 	done
-
-install-no:
-
-uninstall-local:
-	@catalogs='$(GMOFILES)'; \
-	for cat in $$catalogs; do \
-	destdir=$(localedir); \
-	name=`echo $$cat | sed -e 's/\.gmo/\.mo/'` \
-	dir=$$destdir/$(LANG)/LC_MESSAGES; \
-	rm -f $$cat $$dir/$$name; \
-	echo "removing $$dir/$$name" ; \
+	@for subdir in $(SUBDIRS); do \
+	echo "Making messages in $$subdir"; \
+	  (cd $$subdir && $(MAKE) messages) \
+	done 
+	for  i in `ls -1 po/*.pot | sed -e "s#po/##"`; do \
+	  grep -v "POT-Creation-Date:" po/$$i > temp.pot ;\
+	  if diff -q temp.pot po.backup/$$i; then \
+	     echo "I'm restoring $$i" ;\
+	     mv po.backup/backup_$$i po/$$i; \
+	   else \
+	     echo "will leave $$i"; \
+	fi ;\
 	done
+	rm -f temp.pot
+	rm -rf po.backup
+	(cd po && $(MAKE) merge)
 
