@@ -4,18 +4,30 @@
 Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Programmers Keyboard
-Comment[sk]=Programátorská klávesnica
-Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
-Comment[no]=Programmeringstastatur
-Comment[sv]=Programmeringstangentbord
+Comment[ca]=Arranjament del teclat
+Comment[cs]=Nastavení klávesnice
+Comment[da]=Indstil tastaturet
+Comment[de]=Internationale Tastatur
+Comment[eo]=Klavarokonfigura¼o
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
+Comment[fr]=Moniteur de performances système
+Comment[hr]=Postava tipkovnice
+Comment[hu]=Billentyûzet beállításai
+Comment[is]=Stillingar lyklaborğsins
+Comment[it]=Configurazione tastiera
+Comment[no]=Internationalt tastatur
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
+Comment[pt_BR]=Teclado Internacional
+Comment[ro]=Configurarea tastaturii
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
+Comment[sv]=Inställningar för tangentbord
+Comment[zh_CN.GB2312]=¼üÅÌÉèÖÃ
 
 Language=Slovak
-Language[de]=Slowakische
-Language[no]=Slovakisk
 #Language[ru]=şÅÛÓËÉÊ
-Language[sk]=Slovenskı
-Language[cs]=Slovenskı
-Language[sv]=Slovakiskt
 
 Label=Skp
 Locale=sk

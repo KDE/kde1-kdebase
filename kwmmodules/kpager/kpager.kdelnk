@@ -18,6 +18,7 @@ MimeType=
 Comment=Manage your windows
 Comment[es]=Administra tus ventanas
 Comment[no]=Styr dine vinduer
+Comment[pt_BR]=Gerencie suas janelas
 Exec=kpager
 Icon=kwm.xpm
 TerminalOptions=

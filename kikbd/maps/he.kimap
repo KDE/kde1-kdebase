@@ -3,13 +3,6 @@
 Authors=Lars Knoll <knoll@mpi-hd.mpg.de>,
 
 Language=Hebrew
-Language[de]=Hebräische
-Language[ru]=å×ÒÅÊÓËÉÊ
-Language[fi]=Heprea
-Language[pl]=Hebrajski
-Language[no]=Hebraisk
-Language[sv]=Hebreiskt
-Language[sk]=Hebrejskı
 
 Label=He
 Locale=he

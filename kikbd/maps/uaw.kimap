@@ -4,22 +4,8 @@
 Authors=Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has English characters as alternate symbols.
-Comment[de]=Englische Zeichen als Alternativ-Belegung.
-Comment[ru]=ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÅ ĞÅÒÅËÌÀŞÁÔÅÌØ.
-Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
-Comment[pl]=Znaki alfabetu ³aciñskiego jako symbole alternatywne.
-Comment[no]=Har engelske tegn som alternative symboler.
-Comment[sv]=Har engelska bokstäver som alternativa symboler.
-Comment[sk]=Má anglické znaky ako alternatívne symboly
 
 Language=Ukrainian
-Language[de]=Ukrainische
-Language[no]=Ukrainsk
-Language[ru]=õËÒÁÉÎÓËÉÊ
-Language[fi]=Ukraina
-Language[pl]=Ukraiñski
-Language[sv]=Ukrainskt
-Language[sk]=Ukrajinskı
 
 Charset=cp1251
 Label=UW

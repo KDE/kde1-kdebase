@@ -2,22 +2,17 @@
 
 [International Keyboard]
 Comment=Typewriter Keyboard (QWERTY)
-Comment[cs]=Klávesnice psacího stroje (QWERTY)
-Comment[sk]=Klávesnica písacieho stroja (QWERTY)
-Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTY)
-Comment[fi]=Kirjoituskonenäppäimistö (QWERTY)
-Comment[no]=Skrivemaskinstastatur (QWERTY)
-Comment[sv]=Skrivmaskinstangentbord (QWERTY)
-Comment[sk]=Klávesnica písacieho stroja (QWERTY)
+Comment[de]=Internationale Tastatur
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
+Comment[no]=Internationalt tastatur
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
+Comment[pt_BR]=Teclado Internacional
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
 
 Language=Czech
-Language[de]=Tschechische
-Language[no]=Tjekkisk
-Language[ru]=şÅÛÓËÉÊ
-Language[fi]=Tsekki
-Language[pl]=Czeski
-Language[sk]=Èeskı
-Language[sv]=Tjeckiskt
 
 Label=Csy
 Locale=cs

@@ -4,18 +4,18 @@
 Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
 
 Comment=Typewriter Keyboard (QWERTZ)
-Comment[sk]=Klávesnica písacieho stroja (QWERTZ)
-Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ (QWERTZ)
-Comment[no]=Skrivmaskstastatur (QWERTY)
-Comment[sv]=Skrivmaskinstangentbord (QWERTY)
+Comment[de]=Internationale Tastatur
+Comment[es]=Teclado internacional
+Comment[fi]=Kansainvälinen näppäimistö
+Comment[no]=Internationalt tastatur
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Teclado Internacional
+Comment[pt_BR]=Teclado Internacional
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
 
 Language=Slovak
-Language[de]=Slowakische
-Language[sk]=Slovenskı
-Language[no]=Slovakisk
 #Language[ru]=şÅÛÓËÉÊ
-Language[cs]=Slovenskı
-Language[sv]=Slovakiskt
 
 Label=Skz
 Locale=sk

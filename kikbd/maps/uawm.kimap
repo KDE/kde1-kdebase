@@ -4,21 +4,8 @@
 Authors=Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Microsoft layout. Has English characters as alternate symbols.
-Comment[de]=Microsoft-Layout. Englische Zeichen als Alternativ-Belegung.
-Comment[ru]=òÁÓËÌÁÄËÏÊ Microsoft. ğÏÚ×ÏÌÑÅÔ ÎÁÂÉÒÁÔØ ÌÁÔÉÎÓËÉÅ ÓÉÍ×ÏÌÙ ÉÓĞÏÌØÚÕÑ áÌÔÅÒÎÁÔÉ×ÎÙÅ ĞÅÒÅËÌÀŞÁÔÅÌØ.
-Comment[fi]=Microsoft järjestys. Sisältää englantilaiset kirjaimet vaihtoehtoisina symboleina.
-Comment[pl]=U³o¿enie Microsoftu. Znaki alfabetu ³aciñskiego jako symbole alternatywne.
-Comment[no]=Microsofts utseende. Har engelske tegn som alternative symboler.
-Comment[sv]=Microsofts teckenuppsättning. Har engelska bokstäver som alternativa symboler.
 
 Language=Ukrainian
-Language[de]=Ukrainische
-Language[no]=Ukrainsk
-Language[ru]=õËÒÁÉÎÓËÉÊ
-Language[fi]=Ukraina
-Language[pl]=Ukraiñski
-Language[sv]=Ukrainskt
-Language[sk]=Ukrajinskı
 
 Charset=cp1251
 Label=UW

@@ -4,21 +4,18 @@
 Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=New "programmer's" keyboard
-Comment[ru]=îÏ×ÁÑ ËÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
-Comment[pl]=Klawiatura programisty
-Comment[fi]=Ohjelmoijan näppäimistö
-Comment[no]=Nytt programmeringstastatur
-Comment[sv]=Nytt 'programmerings' tangentbord
-Comment[sk]=Nová programátorská klávesnica
+Comment[de]=Programme debuggen
+Comment[es]=Depurador de programas
+Comment[fi]=Kansainvälinen näppäimistö
+Comment[fr]=Déboguer un programme
+Comment[no]=Avluse programmer
+Comment[pl]=Klawiatura Miêdzynarodowa
+Comment[pt]=Depurador de programas
+Comment[pt_BR]=Depurador de programas
+Comment[ru]=éÎÔÅÒÎÁÃÉÏÎÁÌØÎÁÑ ËÌÁ×ÉÁÔÕÒÁ
+Comment[sk]=Medzinárodná klávesnica
 
 Language=Polish
-Language[de]=Polnische
-Language[no]=Polsk
-Language[ru]=ğÏÌØÓËÉÊ
-Language[fi]=Puola
-Language[pl]=Polski
-Language[sv]=Polskt
-Language[sk]=Poµskı
 
 Label=nPl
 Locale=pl

@@ -4,21 +4,8 @@
 Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=Polish 'programmers' Keyboard
-Comment[ru]=ëÌÁ×ÉÁÔÕÒÁ ĞÒÏÇÒÁÍÉÓÔÁ
-Comment[pl]=Klawiatura programisty
-Comment[fi]=Puolalainen ohjelmoijan näppäimistö
-Comment[no]=Polsk programmeringstastatur
-Comment[sv]=Polskt 'programmerings' tangentbord
-Comment[sk]=Poµská programátorská klávesnica
 
 Language=Polish
-Language[de]=Polnische
-Language[no]=Polsk
-Language[ru]=ğÏÌØÓËÉÊ
-Language[fi]=Puola
-Language[pl]=Polski
-Language[sv]=Polskt
-Language[sk]=Poµskı
 
 Label=Pl
 Locale=pl

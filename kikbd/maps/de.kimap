@@ -2,17 +2,8 @@
 
 [International Keyboard]
 Comment=Deutsches (BRD) Tastatur-Layout
-Comment[no]=Tysk (BRD) tastaturutseende
-Comment[sv]= Tysk (BRD) tangentbordslayout
 
 Language=German
-Language[de]=Deutsche
-Language[no]=Tysk
-Language[ru]=Ó≈Õ≈√À… 
-Language[fi]=Saksa
-Language[pl]=Niemiecki
-Language[sv]=Tyskt
-Language[sk]=Nemeck˝
 
 Label=De
 Locale=de
