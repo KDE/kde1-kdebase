@@ -98,8 +98,6 @@ void Desktop::activateWindow(Window w)
     for (win = windows.first(); win && win->id != w; win = windows.next()) 
 	continue;
     
-    windows.remove(); // raise it
-    windows.append(win);
     activeWindow = win; // maybe NULL !
     fillPixmap();
     repaint( false );
