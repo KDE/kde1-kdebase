@@ -49,8 +49,8 @@ KDE's paths can mainly be organized independently. For Debian's sake,
 I chose the below paths - following Andreas's settings.
 
 /usr			prefix
-/usr/X11R6/bin		kde binaries (was KDE/bin)
-/usr/X11R6/lib		kde shared libraries (was KDE/lib)
+/usr/bin		kde binaries (was KDE/bin)
+/usr/lib		kde shared libraries (was KDE/lib)
 /usr/include/kde	kde include files (was KDE/include)
 /usr/lib/cgi-bin	kde cgi binaries (was KDE/cgi-bin)
 /usr/doc/kde		kde online documentation (was KDE/share/doc)
@@ -60,7 +60,7 @@ I chose the below paths - following Andreas's settings.
 /usr/share/mimelnk	kde mimelink files
 /usr/share/icons	kde icons (and mini icons in .../icons/mini)
 /usr/share/toolbar	kde toolbar icons (can also be used by other apps)
-/usr/share/wallpaper	kde wallpaper icons (can also be used by other apps)
+/usr/share/wallpapers	kde wallpaper icons (can also be used by other apps)
 /usr/share/apps/APP	kde per application directory
 /usr/share/locale	locales
 

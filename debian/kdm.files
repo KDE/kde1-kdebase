@@ -3,5 +3,11 @@ etc/X11
 etc/kde/kdm*
 usr/bin/kdm
 usr/bin/switchdm
+usr/bin/kdmconfig
 usr/man/man1/kdm.1.gz
 usr/man/man1/switchdm.1.gz
+usr/man/man1/kdmconfig.1.gz
+usr/share/pixmaps/kdmconfig.xpm
+usr/share/icons/kdmconfig.xpm 
+usr/share/apps/kdm
+usr/share/apps/kdmconfig
