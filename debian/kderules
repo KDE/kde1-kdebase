@@ -75,6 +75,8 @@ if (-e "debian/menu.in") {
 	close MENUIN;
 }
 
+xpmtoppm /usr/X11R6/include/X11/pixmaps/cmap.xpm > /tmp/cmp.ppm
+
 open MENU, ">debian/menu" or die "can't open debian/menu : $!\n";
 
 foreach $file (@lnkfiles) {
@@ -115,7 +117,9 @@ foreach $file (@lnkfiles) {
 		next ;
 	}
 	if (defined $kdelnk{"Icon"}) {
-		$icon="/usr/share/icons/" . $kdelnk{"Icon"} ;
+   	        $icon=$kdelnk{"Icon"} ;
+	        system("xpmtoppm debian/tmp/usr/share/icons/$icon | ppmquant -map /tmp/cmap.ppm | ppmtoxpm > menu_$icon");
+		$icon="/usr/share/icons/menu_" . $icon ;
 	}
 	($kdelnk=$file) =~ s/^.*tmp// ;
 	print MENU "?package($package):\\\n" ;
@@ -140,34 +144,4 @@ close MENU;
 if (-z "debian/menu") {
 	rm("debian/menu");
 }
-
-# add missing files to conffiles
-
-if (-f "debian/conffiles") {
-	open CONFFILES, "debian/conffiles" ;
-	while (<CONFFILES>) {
-		chop ;
-		$conffiles{$_}=1 ;
-	}
-	close CONFFILES ;
-}
-
-sub findconffiles {
-	if (-f $_) {
-		$path = $File::Find::dir . "/" . $_;
-		$path =~ s/^debian\/tmp// ;
-		$conffiles{$path}=1 ;
-	}
-}
-
-if ( -d "debian/tmp/etc" ) {
-	find(\&findconffiles,"debian/tmp/etc");
-}
-
-open CONFFILES, ">debian/conffiles" ;
-foreach $conffile (keys %conffiles) {
-	print CONFFILES $conffile . "\n"; 
-}
-close CONFFILES ;
-
 
