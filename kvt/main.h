@@ -41,6 +41,8 @@ public slots:
     void file_menu_activated(int);
     void help_menu_activated(int);
     void scrolling(int);
+    void onDrop( KDNDDropZone* _zone );
+
 
 protected:
     void    resizeEvent( QResizeEvent * );
@@ -70,6 +72,7 @@ private:
   KvtScrollbar kvt_scrollbar;
   KvtSize kvt_size;
 
+  KDNDDropZone    *dropZone;
 };
 
 #endif // MAIN_H

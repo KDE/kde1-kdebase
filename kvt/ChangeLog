@@ -1,3 +1,6 @@
+  
+  - drag'n'drop (Christian Esken)
+
   - small fixes for FreeBSD (Marc van Kempen)
 	
   - new option "-tn" for terminal type

@@ -23,6 +23,7 @@
 // KDE includes
 #include <Kconfig.h>
 #include <kapp.h>
+#include <kurl.h>
 
 #include "kvt_version.h"
 
@@ -177,6 +178,12 @@ kVt::kVt( QWidget *parent, const char *name )
     // get the configutation
     kvtconfig = KApplication::getKApplication()->getConfig();
     kvtconfig->setGroup("kvt");
+
+    // Init DnD: Set up drop zone and drop handler
+    dropZone = new KDNDDropZone( this, DndURL );
+    connect( dropZone, SIGNAL( dropAction( KDNDDropZone* )), 
+	     SLOT( onDrop( KDNDDropZone*)));
+    
 
     QString entry;
     entry = kvtconfig->readEntry("menubar");
@@ -704,3 +711,16 @@ void kVt::scrolling( int value){
   refresh();
 }
 
+void kVt::onDrop( KDNDDropZone* _zone )
+{
+  QStrList strlist;
+  KURL *url;
+  char *str;
+
+  strlist = _zone->getURLList();
+  url = new KURL( strlist.first() );
+  str = url->path();
+  send_string(str,strlen(str));
+  delete url;
+  return;
+}
