@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-23 01:14+0100\n"
 "PO-Revision-Date: 1998-10-23 18:00+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -681,7 +681,7 @@ msgstr ""
 "\n"
 "Adaptado a kscreensave por Martin Jones."
 
-#: saver.cpp:60 saver.cpp:178
+#: saver.cpp:60 saver.cpp:180
 msgid "Enter Password"
 msgstr "Contraseña"
 

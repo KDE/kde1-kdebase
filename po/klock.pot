@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-23 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -584,7 +584,7 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:60 saver.cpp:178
+#: saver.cpp:60 saver.cpp:180
 msgid "Enter Password"
 msgstr ""
 
