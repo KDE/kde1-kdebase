@@ -863,6 +863,7 @@ void MyApp::changeToClient(QString label){
     else {
       manager->raiseClient(c);
       manager->activateClient(c);
+      KWM::raiseSoundEvent("Window Activate");
     }
   }
 }
@@ -1144,6 +1145,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	  if (infoBoxClient->state == NormalState){
 	    manager->raiseClient(infoBoxClient);
 	    manager->activateClient(infoBoxClient);
+	    KWM::raiseSoundEvent("Window Activate");
 	  }
 	  else{ // IconicState
 	    infoBoxClient->unIconify();
@@ -1253,6 +1255,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  if  (ev->xbutton.button == Button1)
 	    manager->raiseClient(c);
 	  manager->activateClient(c);
+	  KWM::raiseSoundEvent("Window Activate");
 	}
  	// unfreeze the passive grab which is active currently
 	if (replay)

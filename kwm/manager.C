@@ -479,8 +479,10 @@ void Manager::clientMessage(XEvent*  ev){
   if (e->message_type == kwm_activate_window){
     Window w = (Window) e->data.l[0];
     c = getClient(w);
-    if (c && c->state == NormalState)
+    if (c && c->state == NormalState){
       activateClient(c);
+      KWM::raiseSoundEvent("Window Activate");
+    }
   }
   if (e->message_type == kwm_module){
     Window w = (Window) e->data.l[0];
@@ -720,8 +722,10 @@ void Manager::motionNotify(XMotionEvent* e){
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
     c = getClient(e->window);
     if (c && c == delayed_focus_follow_mouse_client && c != current()
-	&& c->state != WithdrawnState)
+	&& c->state != WithdrawnState){
       activateClient(c);
+      KWM::raiseSoundEvent("Window Activate");
+    }
     delayed_focus_follow_mouse_client = NULL;
   }
 }
@@ -735,17 +739,23 @@ void Manager::enterNotify(XCrossingEvent *e){
       XSync(qt_xdisplay(), False);
       timeStamp(); 
       XSync(qt_xdisplay(), False);
-      if (enable_focus_follow_mouse_activation)
+      if (enable_focus_follow_mouse_activation){
 	activateClient(c);
+	KWM::raiseSoundEvent("Window Activate");
+      }
       else {
 	if (e->x_root != QCursor::pos().x()
-	    || e->y_root != QCursor::pos().y())
+	    || e->y_root != QCursor::pos().y()){
 	  activateClient(c);
+	  KWM::raiseSoundEvent("Window Activate");
+	}
 	else{
 	  usleep(100);
 	  if (e->x_root != QCursor::pos().x()
-	      || e->y_root != QCursor::pos().y())
+	      || e->y_root != QCursor::pos().y()){
 	    activateClient(c);
+	    KWM::raiseSoundEvent("Window Activate");
+	  }
 	  else
 	    delayed_focus_follow_mouse_client = c;
 	}
@@ -1304,7 +1314,6 @@ void Manager::activateClient(Client* c, bool set_revert){
       iconifyFloatingOf(cc->mainClient());
   }
 
-  KWM::raiseSoundEvent("Window Activate");
   c->setactive( TRUE );
   unIconifyTransientOf(c->mainClient());
   
