@@ -6,6 +6,7 @@ activeBlend=255,215,0
 selectBackground=205,133,63
 inactiveBackground=160,160,160
 name=Pumpkin
+name[no]=Gresskar
 name[de]=Kürbis
 name[pl]=Dynia
 contrast=3

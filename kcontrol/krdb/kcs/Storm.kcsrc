@@ -6,6 +6,7 @@ activeBlend=139,0,139
 selectBackground=139,0,139
 inactiveBackground=120,120,120
 name=Storm
+name[no]=Storm
 name[pl]=Sztorm
 contrast=7
 background=192,192,192

@@ -1,6 +1,7 @@
 # KDE Config File
 [Color Scheme]
 name=Digital CDE
+name[no]=Digital CDE
 name[pl]=Digital CDE
 background=#4b7b82
 selectBackground=#41525c
