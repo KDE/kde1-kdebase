@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>KDE Systemlydhjelp</title>
+  </head>
+
+  <body>
+      <h1>KDE Systemlydhjelp</h1>
+
+<CENTER>
+<I>Dette hjelpedokumentet ble oppdatert 22. november 1997 for KDE Systemlyd 0.0.3</I>
+</CENTER>
+
+<H2>Innhold</H2>
+<UL>
+<LI>Introduksjon</LI>
+
+<LI>Endringer</LI>
+
+<LI>Redaktør</LI>
+</UL>
+<hr>
+
+<H2 ALIGN=CENTER>Introduksjon</H2>
+
+<P><TT>KDE Systemlyd </TT>gir deg mulighet til å angi lyder til
+forskjellige systemhendelser. Når slike hendeler (som "Åpne vindu")
+inntreffer, så blir den tilknyttede lydfilen spillt.
+</p>
+
+<p>
+Til nå er bare WAV-filer støtter av KDE Systemlydmodulen. Vanligvis må
+disse filene være lokalisert i katalogen $(KDEDIR)/share/sounds. Bare
+dra lydfiler fra et <tt>kfm</tt>-vindu til lydlisten for å tilknytte
+andre lydfiler til systemhendelser.
+</p>
+
+<H2 ALIGN=CENTER>Endringer</H2>
+<P>Versjon 0.0.3 (Christian Czezatke)</P>
+<pre>
+Versjon 0.0.3 (22. nov. 1997)
+
+- bruker KApplication::localconfigdir()
+
+- retten en feil som rotet til tilknytningen av systemlyder til
+  hendelser i noen tilfeller når WAV-filer ble sluppet på lydlisten
+
+- skrevet innledende hjelpeside
+
+- la til tysk nasjonalisering. (epost meg hvis du ønsker å legge til et
+  annet språk til syssound).
+
+- syssounds er nå basert på kexample-0.5.1. Det og forflytningen til
+  kcontrol-grensesnittet fjernet endelig kompilasjonsproblemene.
+
+- tilrettela syssound.cpp for internasjonalisering (takk til Matthias
+  Hoelzer)
+
+- Tilpasset sysound for det nye kcontrol-grensesnittet som erstatter
+  kcc så syssound fungerer med gjeldende kde-snapshots. (takk til
+  Matthias Hoelzer)
+
+Versjon 0.0.2 (21. okt. 1997)
+
+- Flyttet README fra "syssound/syssound" til "syssound"
+  og oppdaterte den litt.
+
+- Flyttet "COMPILING.TXT"-filen fra "syssound/syssound"
+  til "syssound".
+
+- Gjorde erstatningen av konfigurasjonsfilen i tråd med
+  de nye KDE-konvesjonene. Lydkonfigurasjonen er nå
+  lagret i $HOME/.kde/share/config/kwmsoundrc
+
+- Pusset opp utseende til konfigurasjonsdialogen litt.
+  Den støtter nå tastaturakseleratorer og har etiketter
+  for listeboksene.
+
+- La til støtte for å slippe WAV-filer på WAV-fillisten
+  (nå, bare file:/-URLer er støttet, .WAV-filer er 
+  gjenkjennt ved etternavnet ".wav" (i små bokstaver)).
+
+- Lydkonfigurasjon fungerer nå også med KDE Beta1
+  (ikke mer "pure virtual function called"- eller
+  "only root can run this module"-feilmeldinger.
+
+Version 0.0.1 (innledende utgave)
+
+</pre>
+
+
+<H2 ALIGN=CENTER>Forfatter</H2>
+<P>KDE Systemlydmodulen er skrevet av <A
+HREF="mailto:e9025461@student.tuwien.ac.at">Christian
+Czezatke</A>. KDE Systemlyd bruker KDE-lydstøttenen skrevet av
+<a href="mailto:chris@wallace.free.de">Christian Esken</a>.</P>
+  </body>
+</html>
+
+
