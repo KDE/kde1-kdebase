@@ -87,4 +87,6 @@
 /* Define, if you have setupterm in -l(n)curses */
 #undef HAVE_SETUPTERM
 
+/* Define if compiled symbols have a leading underscore */
 #undef WITH_SYMBOL_UNDERSCORE
+
