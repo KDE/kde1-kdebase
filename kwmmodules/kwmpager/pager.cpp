@@ -99,6 +99,7 @@ void Pager::receiveCommand(QString command)
 void Pager::readSettings()
 {
     KConfig *config = kapp->getConfig();
+    config->reparseConfiguration();
     config->setGroup("GUI Settings");
 
     // Size
