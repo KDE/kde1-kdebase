@@ -1328,14 +1328,13 @@ bool KMimeBind::runBinding( const char *_url )
     {
       QStrList list;
       list.append( _url );
-      printf("openWithOldApplication(%s,...,%s)\n",
-      	cmd.data(),workdir.data());
+      // debug("openWithOldApplication(%s,...,%s)\n", cmd.data(),workdir.data());
       openWithOldApplication( cmd, list, workdir.data() );      
       return TRUE;
     }
 
-    printf("KDELnkMimeType::runAsApplication starts runCmd(%s,%s)\n",
-	cmd.data(),workdir.data());
+    // debug("KDELnkMimeType::runAsApplication starts runCmd(%s,%s)\n",
+	// cmd.data(),workdir.data());
     runCmd( cmd.data(), workdir.data() );
     return TRUE;
 }
@@ -1360,22 +1359,29 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args, const char *_workdir
         // change to the working directory if set
 	if (_workdir) {
             rc=chdir(_workdir);
-            if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
+            // if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
         }
-        // --- The following detaches the program's output from kfm
-        // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
-        // if one runs a ncurses program (e.g. less), it makes X hang
+
+	// Close kfm file descriptors
         struct rlimit rlp;
         getrlimit(RLIMIT_NOFILE, &rlp); // getdtablesize() equivalent.
         int fd = rlp.rlim_cur;
-        while( fd >= 0 ) {
+        while( fd > 2 ) {
             close( fd );
             fd--;
         }
-        open( "/dev/null", O_RDWR );
-        dup( 0 );
-        dup( 0 );
-        // --- End of detach patch. David Faure.
+
+        // --- SECURITY WORKAROUND
+        // Make sure that child will never accidently get 0,1,2 as fd
+        // when it uses open/fopen, otherwise (debug) output written
+        // to stdout/stderr might trash the opened file if child
+        // process has enough rights (i.e. suid root).
+        // Dirk A. Mueller <dmuell@gmx.net>, 99/02/20
+
+        for(fd = 0; fd < 3; fd++) {
+          if(fcntl(fd, F_GETFL) == -1)
+            (void)open("/dev/null", fd ? O_WRONLY : O_RDONLY);
+        }
 
 	execvp( argv[0], argv );
 	QString txt = i18n("Could not execute program\n");
@@ -1395,8 +1401,6 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args, const char *_workdir
 
 void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
 {
-    int rc;
-
   // printf("CMD='%s'\n",_cmd );
     
     char *cmd = new char[ strlen( _cmd ) + 1 ];
@@ -1445,60 +1449,10 @@ void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
 	args.append( tmp );
     }
         
-    char **argv = new char*[ args.count() + 3 ];
-    char* s;
-    int i = 0;
-    for ( s = args.first(); s != 0L; s = args.next() )
-	argv[ i++ ] = (char*)s;
-    argv[ i ] = 0L;
+    strcpy(cmd, args.getFirst());
+    args.removeFirst();
+    runCmd(cmd, args, _workdir);
     
-    if ( i == 0 )
-    {
-	warning("0 sized command, '%s'\n", _cmd );
-	return;
-    }
-    
-    /* printf("Running '%s'\n",argv[0] );
-    for ( int j = 0; j < i; j++ )
-	printf("ARG: '%s'\n",argv[j]); */
-    
-    int pid;
-    if ( ( pid = fork() ) == 0 )
-    {    
-        // change to the working directory if set
-	if (_workdir) {
-            rc=chdir(_workdir);
-            if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
-        }
-        // --- The following detaches the program's output from kfm
-        // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
-        // if one runs a ncurses program (e.g. less), it makes X hang
-        struct rlimit rlp;
-        getrlimit(RLIMIT_NOFILE, &rlp); // getdtablesize() equivalent.
-        int fd = rlp.rlim_cur;
-        while( fd >= 0 ) {
-            close( fd );
-            fd--;
-        }
-        open( "/dev/null", O_RDWR );
-        dup( 0 );
-        dup( 0 );
-        // --- End of detach patch. David Faure.
-
-	execvp( argv[0], argv );
-	QString txt = i18n("Could not execute program\n");
-	txt += argv[0];
-
-	// Run this program if something went wrong
-	char* a[ 3 ];
-	a[ 0 ] = "kfmwarn";
-	a[ 1 ] = txt.data();
-	a[ 2 ] = 0L;
-	execvp( "kfmwarn", a );
-
-	exit( 1 );
-    }
-    delete [] argv;
     delete [] cmd;
 }
 
@@ -1637,7 +1591,7 @@ bool ExecutableMimeType::run( const char *_url )
     QString cmd;
     cmd << "\"" << KIOServer::shellQuote( u.path() ) << "\"";
 
-    printf("ExecutableMimeType starts runCmd(%s)\n",cmd.data());
+    // debug("ExecutableMimeType starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
 
     return TRUE;
@@ -1685,7 +1639,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 	}
     }
     
-    printf("runAsApplication starts runCmd(%s)\n",cmd.data());
+    // debug("runAsApplication starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
     // system( cmd.data() );
     return TRUE;
@@ -1925,15 +1879,15 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
 	cmd += "-e ";
 	cmd += exec.data();
-	printf("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
-		cmd.data());
+	// debug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+	// 	cmd.data());
 	KMimeBind::runCmd( cmd );
     }
     else
     {
 	QString cmd = exec.data();
-	printf("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
-		cmd.data());
+	// debug("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+	// 	cmd.data());
 	KMimeBind::runCmd( cmd );
     }
 
