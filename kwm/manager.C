@@ -174,13 +174,13 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
       y = e->y;
 
     switch (c->getDecoration()){
-    case 0:
+    case KWM::noDecoration:
       if (e->value_mask & CWWidth)
 	dx = e->width;
       if (e->value_mask & CWHeight)
 	dy = e->height;
       break;
-    case 2:
+    case KWM::tinyDecoration:
       if (e->value_mask & CWWidth)
 	dx = e->width + 2 * BORDER_THIN;
       if (e->value_mask & CWHeight)
@@ -212,11 +212,11 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     // e->parent can have a wrong (obsolete) meaning here!
     XConfigureWindow(qt_xdisplay(), c->winId(), e->value_mask, &wc);
     switch (c->getDecoration()){
-    case 0:
+    case KWM::noDecoration:
       wc.x = 0;
       wc.y = 0;
       break;
-    case 2:
+    case KWM::tinyDecoration:
       wc.x = BORDER_THIN;
       wc.y = BORDER_THIN;
       break;
@@ -333,6 +333,7 @@ void Manager::destroyNotify(XDestroyWindowEvent *e){
     removeClient(c);
 }
 
+
 void Manager::clientMessage(XEvent*  ev){
   Client *c;
   XClientMessageEvent* e = &ev->xclient;
@@ -379,33 +380,9 @@ void Manager::clientMessage(XEvent*  ev){
       for (t = clients_sorted.first(); t; t=clients_sorted.next())
 	t->reconfigure();
     }
-    else if (com == "winMove") {
+    else if (Client::operationFromCommand(com) > -1){
       if (current())
-	current()->handleOperationsPopup(OP_MOVE);
-    }
-    else if (com == "winResize") {
-      if (current())
-	current()->handleOperationsPopup(OP_RESIZE);
-    }
-    else if (com == "winRestore") {
-      if (current())
-	current()->handleOperationsPopup(OP_RESTORE);
-    }
-    else if (com == "winIconify") {
-      if (current())
-	current()->handleOperationsPopup(OP_ICONIFY);
-    }
-    else if (com == "winClose") {
-      if (current())
-	current()->handleOperationsPopup(OP_CLOSE);
-    }
-    else if (com == "winSticky") {
-      if (current())
-	current()->handleOperationsPopup(OP_STICKY);
-    }
-    else if (com == "winOperations") {
-      if (current())
-	current()->showOperations();
+	current()->handleOperation(Client::operationFromCommand(com));
     }
     else if (com == "desktop1") {
       switchDesktop(1);
@@ -803,6 +780,72 @@ void Manager::randomPlacement(Client* c){
   c->geometry.moveTopLeft(QPoint(tx, ty));
 }
 
+/* cascadePlacement by Cristian Tibirna (ctibirna@gch.ulaval.ca). 
+ * Attempts to place the windows in cascade on each desktop, according
+ * with their height and weight (30jan98)
+ */
+void Manager::cascadePlacement (Client* c) {
+
+  // buffers: will keep x-es and y-es on each desktop
+  static int x[] = {0,0,0,0,0,0,0,0};
+  static int y[] = {0,0,0,0,0,0,0,0}; 
+  static unsigned short int col[] = {0,0,0,0,0,0,0,0};
+  static unsigned short int row[] = {0,0,0,0,0,0,0,0};
+  
+  // work coords
+  int xp, yp;
+  
+  int delta_x = 2 * TITLEBAR_HEIGHT + BORDER;
+  int delta_y = TITLEBAR_HEIGHT + BORDER;
+
+  int d = currentDesktop() - 1;
+
+  // get the maximum allowed windows space
+  QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
+
+  // initialize often used vars: width and height of c; we gain speed
+  int ch = c->geometry.height();
+  int cw = c->geometry.width();
+  int H = maxRect.height();
+  int W = maxRect.width();
+
+  xp = x[d];
+  yp = y[d];
+
+  //here to touch in case people vote for resize on placement
+  if ((yp + ch ) > H) yp = 0;
+
+  if ((xp + cw ) > W) 
+    if (!yp) {
+      smartPlacement(c);
+      return;
+    }
+    else xp = 0;
+  
+  //if this isn't the first window 
+  if ((!x[d]) && (!y[d])) {
+    if (xp) 
+      if (!yp) xp = delta_x * (++col[d]);
+    
+    
+    if (yp) 
+      if (!xp) yp = delta_y * (++row[d]);
+    
+    // last resort: if still doesn't fit, smart place it
+    if ( ((xp + cw) > W) || ((yp + ch) > H) ) {
+      smartPlacement(c);
+      return;
+    }
+  }
+  // place the window
+  c->geometry.moveTopLeft(QPoint(xp,yp));
+
+  // new position
+  x[d] = xp + delta_x;
+  y[d] = yp + delta_y;
+
+}
+
 /* SmartPlacement by Cristian Tibirna (ctibirna@gch.ulaval.ca)
  * adapted for kwm (16-19jan98) after an implementation for fvwm by
  * Anthony Martin (amartin@engr.csulb.edu).
@@ -1052,7 +1095,7 @@ void Manager::manage(Window w, bool mapped){
   }
 
   // get KDE specific decoration hint
-  if (c->getDecoration() == 1){
+  if (c->getDecoration() == KWM::normalDecoration){
     long dec = KWM::getDecoration(c->window);
     c->decoration = dec & 255;
     c->wants_focus = (dec & KWM::noFocus) == 0;
@@ -1094,10 +1137,11 @@ void Manager::manage(Window w, bool mapped){
   getWindowTrans(c);
   getMwmHints(c);
 
-  if(c->trans != None || c->getDecoration()!=1){
+  if(c->trans != None || c->getDecoration()!=KWM::normalDecoration){
     int i;
     if (c->buttons[0] && 
-	(c->buttons[0] != c->buttonMenu || c->getDecoration()!=1))
+	(c->buttons[0] != c->buttonMenu || 
+	 c->getDecoration()!=KWM::normalDecoration))
       c->buttons[0]->hide();
     for (i=1; i<6; i++){
       if (c->buttons[i])
@@ -1110,9 +1154,9 @@ void Manager::manage(Window w, bool mapped){
     gravitate(c,0);
   else{
     switch (c->getDecoration()){
-    case 0:
+    case KWM::noDecoration:
       break;
-    case 2:
+    case KWM::tinyDecoration:
       c->geometry.setWidth(c->geometry.width() + 2*BORDER);
       c->geometry.setHeight(c->geometry.height()+ 2*BORDER);
       break;
@@ -1133,6 +1177,8 @@ void Manager::manage(Window w, bool mapped){
   else {
     if(options.Placement == SMART_PLACEMENT)
       smartPlacement(c);
+    else if(options.Placement == CASCADE_PLACEMENT)
+      cascadePlacement(c);
     else
       randomPlacement(c);
   }
@@ -1141,10 +1187,10 @@ void Manager::manage(Window w, bool mapped){
     c->reparenting = TRUE;
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
   switch (c->getDecoration()){
-  case 0:
+  case KWM::noDecoration:
     XReparentWindow(qt_xdisplay(), c->window, c->winId(), 0, 0);
     break;
-  case 2:
+  case KWM::tinyDecoration:
     XReparentWindow(qt_xdisplay(), c->window, c->winId(), (BORDER_THIN), (BORDER_THIN));
     break;
   default:
@@ -1252,7 +1298,7 @@ void Manager::manage(Window w, bool mapped){
     raiseSoundEvent("Window New");
 
 
-  if (!dohide && c->getDecoration())
+  if (!dohide && c->getDecoration() != KWM::noDecoration)
     activateClient(c);
   else
     c->setactive(FALSE);
@@ -1318,11 +1364,9 @@ void Manager::activateClient(Client* c, bool set_revert){
 
   c->setactive( TRUE );
   unIconifyTransientOf(c->mainClient());
-  
-  XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
-  
-  if (c->Ptakefocus)
-    sendClientMessage(c->window, wm_protocols, wm_take_focus);
+
+  focusToClient(c);
+
   colormapFocus(c);
   if (clients_traversing.removeRef(c))
     clients_traversing.append(c);
@@ -1462,9 +1506,6 @@ void Manager::changedClient(Client* c){
 }
 
 void Manager::noFocus(){
-  static Window w = 0;
-  int mask;
-  XSetWindowAttributes attr;
   Client* c;
   for (c = clients_traversing.last();
        c && (c->isActive() || c->state != NormalState); 
@@ -1479,7 +1520,15 @@ void Manager::noFocus(){
     c->setactive(False);
     iconifyFloatingOf(c->mainClient());
   }
+  focusToNull();
+  sendToModules(module_win_activate, 0);
   
+}
+
+void Manager::focusToNull(){
+  static Window w = 0;
+  int mask;
+  XSetWindowAttributes attr;
   if (w == 0) {
     mask = CWOverrideRedirect;
     attr.override_redirect = 1;
@@ -1493,9 +1542,19 @@ void Manager::noFocus(){
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window, 
 		  kwm_active_window, 32,
 		  PropModeReplace, (unsigned char *)&tmp, 1);
-  sendToModules(module_win_activate, 0);
-  
 }
+
+
+void Manager::focusToClient(Client* c){
+  if (c->isShaded())
+    focusToNull();
+  else {
+    XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
+    if (c->Ptakefocus)
+      sendClientMessage(c->window, wm_protocols, wm_take_focus);
+  }
+}
+
 
 void Manager::setWindowState(Client *c, int state){
   unsigned long data[2];
@@ -1508,7 +1567,6 @@ void Manager::setWindowState(Client *c, int state){
   XChangeProperty(qt_xdisplay(), c->window, wm_state, wm_state, 32,
 		  PropModeReplace, (unsigned char *)data, 2);
 }
-
 
 
 void Manager::getWindowTrans(Client* c){
@@ -1567,7 +1625,14 @@ void Manager::switchDesktop(int new_desktop){
 void Manager::sendConfig(Client* c, bool emit_changed){
   XConfigureEvent ce;
 
-  c->setGeometry(c->geometry);
+
+  if (c->isShaded()){
+    c->setGeometry(c->geometry.x(), c->geometry.y(),
+		   c->geometry.width(), 2*BORDER+TITLEBAR_HEIGHT);
+  }
+  else {
+    c->setGeometry(c->geometry);
+  }
   
   setQRectProperty(c->window, kwm_win_frame_geometry, c->geometry);
 
@@ -1576,13 +1641,13 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   ce.window = c->window;
   
   switch (c->getDecoration()){
-  case 0:
+  case KWM::noDecoration:
     ce.x = c->geometry.x();
     ce.y = c->geometry.y();
     ce.width = c->geometry.width();
     ce.height = c->geometry.height();
     break;
-  case 2:
+  case KWM::tinyDecoration:
     ce.x = c->geometry.x() + BORDER_THIN;
     ce.y = c->geometry.y() + BORDER_THIN;
     ce.width = c->geometry.width() - 2*BORDER_THIN;
@@ -1748,12 +1813,12 @@ void Manager::setShape(Client* c){
   rect = XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
   if (n > 1){
     switch (c->getDecoration()){
-    case 0:
+    case KWM::noDecoration:
       XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
 			 0, 0,
 			 c->window, ShapeBounding, ShapeSet);
       break;
-    case 2:
+    case KWM::tinyDecoration:
       XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
 			 (BORDER_THIN), (BORDER_THIN),
 			 c->window, ShapeBounding, ShapeSet);
@@ -1853,7 +1918,7 @@ void Manager::getMwmHints(Client  *c){
       if(nitems >= 4)
 	{
 	  // only interested in decorations
-  	  if (c->getDecoration() == 1){
+  	  if (c->getDecoration() == KWM::normalDecoration){
   	    if (!mwm_hints->decorations)
 	      c->decoration = 0;
 	    KWM::setDecoration(c->window, c->getDecoration());
@@ -1867,12 +1932,13 @@ void Manager::getMwmHints(Client  *c){
 
 void Manager::gravitate(Client* c, bool invert){
   int gravity, dx, dy, delta;
-  if (!c->getDecoration())
+  if (c->getDecoration() == KWM::noDecoration)
     return;
   
-  int titlebar_height = (c->getDecoration() != 1)?0:TITLEBAR_HEIGHT;
+  int titlebar_height = (c->getDecoration() != KWM::normalDecoration)?
+    0:TITLEBAR_HEIGHT;
 
-  int border = (c->getDecoration()==1)?BORDER:BORDER_THIN;
+  int border = (c->getDecoration()==KWM::normalDecoration)?BORDER:BORDER_THIN;
 
   dx = dy = 0;
 
@@ -2418,7 +2484,7 @@ void Manager::iconifyFloatingOf(Client* c){
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
-      if (it.current()->getDecoration() == 2){
+      if (it.current()->getDecoration() == KWM::tinyDecoration){
 	it.current()->iconify(False);
 	sendToModules(module_win_remove, it.current());
 	it.current()->hidden_for_modules = true; 

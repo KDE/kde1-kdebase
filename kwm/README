@@ -3,7 +3,7 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
-Version 0.10 patchlevel 24
+Version 0.11 patchlevel 0
 
 Please see the CHANGES file for detailed informations about the actual
 development and the history of kwm.
@@ -218,10 +218,10 @@ This is especially of interest for kglobalshortcut developers.
 At present kwm understands the following commands:
 
 refreshScreen, darkenScreen, logout, commandLine, taskManager,
-configure, winMove, winResize, winRestore, winIconify, winClose,
-winSticky, winOperations, desktop1, desktop2, desktop3, desktop4, 
-desktop5, desktop6, desktop7, desktop8, desktop+1, desktop+2, 
-desktop-1, desktop-2, desktop%2
+configure, winMove, winMaximize, winResize, winRestore, winIconify,
+winClose, winSticky, winOperations, desktop1, desktop2, desktop3,
+desktop4, desktop5, desktop6, desktop7, desktop8, desktop+1,
+desktop+2, desktop-1, desktop-2, desktop%2
 
 The semantics of these commands should be obvious. Please note that
 the win* commands refer to the current (= active) window.  "desktop%2"
@@ -230,7 +230,15 @@ means between 1 and 2 or between 3 and 4.  This is useful to emulate
 "Up" and "Down" in a virtual n*2 matrix, which is used by the kde pager.
 "desktop+2" means "Right" then, "desktop-1" means "Left", respectively.
 
+There is also an option
 
+     TitlebarDoubleClickCommand=<wincom>
+
+where <wincom> can be winMaximize, winShade, winMove, winResize,
+winRestore, winIconify, winClose, winSticky or winOperations.
+
+Default is winMaximize, but winShade (a la OpenStep) may also be
+useful.
 		
 8) SOUND EVENTS
 ===============
@@ -250,5 +258,9 @@ At present the following sound events are implemented:
                   "Window Delete"
                   "Window Trans New"
                   "Window Trans Delete"
+                  "Window Trans New"
+                  "Window Trans Delete"
+                  "Window Shade Up"
+                  "Window Shade Down"
                   "Logout"
                   "Logout Message"

@@ -59,7 +59,9 @@ public:
   void randomPlacement(Client* c);
   //CT 18jan98
   void smartPlacement(Client* c);
-  
+  //CT 30jan98
+  void cascadePlacement(Client* c);
+
   void manage(Window w, bool mapped = False);
 
   void withdraw(Client* c);
@@ -76,7 +78,8 @@ public:
   void changedClient(Client* c);
 
   void noFocus();
-
+  void focusToNull();
+  void focusToClient(Client* c);
 
   void setWindowState(Client *c, int state);
   void getWindowTrans(Client *c);

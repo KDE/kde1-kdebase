@@ -411,7 +411,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   operations->installEventFilter(this);
   operations->setMouseTracking(True);
   
-  QObject::connect(operations, SIGNAL(activated(int)), this, SLOT(handleOperationsPopup(int)));
+  QObject::connect(operations, SIGNAL(activated(int)), this, SLOT(handleOperation(int)));
 
   
   grabKey(XK_Escape,ControlMask);
@@ -759,6 +759,9 @@ void MyApp::readConfiguration(){
   key = config->readEntry("WindowsPlacement");
   if( key == "smart")
     options.Placement = SMART_PLACEMENT;
+  else if( key == "cascade")
+    options.Placement = CASCADE_PLACEMENT;
+  //CT 30jan98
   else if( key == "random")
     options.Placement = RANDOM_PLACEMENT;
   else{
@@ -768,6 +771,12 @@ void MyApp::readConfiguration(){
 
   options.rstart = config->readEntry("RstartProtocol", "rstart -v");
   config->writeEntry("RstartProtocol", options.rstart);
+
+  QString s  = config->readEntry("TitlebarDoubleClickCommand", "winMaximize");
+  if (Client::operationFromCommand(s) < 0)
+    s = "winMaximize";
+  options.titlebar_doubleclick_command = Client::operationFromCommand(s);
+  config->writeEntry("TitlebarDoubleClickCommand", s);
 
   config->setGroup( "Buttons");
 
@@ -1349,9 +1358,9 @@ bool MyApp::x11EventFilter( XEvent * ev){
 }
 
 
-void MyApp::handleOperationsPopup(int itemId){
+void MyApp::handleOperation(int itemId){
   if (Client::operation_client)
-    Client::operation_client->handleOperationsPopup(itemId);
+    Client::operation_client->handleOperation(itemId);
 }
 
 void MyApp::handleDesktopPopup(int itemId){

@@ -47,6 +47,7 @@ enum BUTTON_FUNCTIONS {
 //CT 18jan98
 enum PLACEMENT_POLICY {
   SMART_PLACEMENT,
+  CASCADE_PLACEMENT,
   RANDOM_PLACEMENT
 };
    
@@ -66,6 +67,7 @@ struct kwmOptions {
   PLACEMENT_POLICY Placement;
 
   const char* rstart;
+  int titlebar_doubleclick_command;
 
   BUTTON_FUNCTIONS buttons[6];
 

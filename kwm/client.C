@@ -289,6 +289,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     maximized = False;
     iconified = False;
     sticky = False;
+    shaded = False;
     cmap = None;
     border = 0;
     ncmapwins = 0;
@@ -344,7 +345,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     animation_is_active = FALSE;
     hidden_for_modules = FALSE;
     autoraised_stopped = FALSE;
-    
+
     doButtonGrab();
     unmap_events = 0;
 }  
@@ -363,14 +364,17 @@ Client::~Client(){
 
 
 void Client::showClient(){
-  XMapWindow(qt_xdisplay(),window);
+  if (!isShaded())
+    XMapWindow(qt_xdisplay(),window);
   show();
 }
 
 void Client::hideClient(){
   hide();
-  XUnmapWindow(qt_xdisplay(), window);
-  unmap_events++;
+  if (!isShaded()){
+    XUnmapWindow(qt_xdisplay(), window);
+    unmap_events++;
+  }
 }
 
 
@@ -403,12 +407,13 @@ void Client::generateButtons(){
   
   for (i=0;i<6;i++){
     buttons[i] = getNewButton( options.buttons[i]);
-    if (getDecoration() == 1 && !trans){
+    if (getDecoration() == KWM::normalDecoration && !trans){
       if (buttons[i])
 	buttons[i]->show();
     }
     else {
-      if (buttons[i] && (getDecoration() != 1 || i>0 || buttons[i] != buttonMenu))
+      if (buttons[i] && (getDecoration() != KWM::normalDecoration 
+			 || i>0 || buttons[i] != buttonMenu))
 	buttons[i]->hide();
     }
   }
@@ -432,7 +437,7 @@ void Client::layoutButtons(){
   int trW = 0;
   int trH = 0;
   
-  if (getDecoration() != 1){
+  if (getDecoration() != KWM::normalDecoration){
     // nothing
   } else {
     trX = BORDER;
@@ -500,6 +505,9 @@ void Client::layoutButtons(){
     if (trW < width() - trX - BORDER) {
       trW -= TITLEWINDOW_SEPARATION;
     }
+
+    if (buttonMenu)
+      buttonMenu->raise();
   }   
   
   title_rect.setRect(trX,trY,trW,trH);
@@ -632,10 +640,7 @@ void Client::mouseDoubleClickEvent( QMouseEvent* ev){
     return; 
   if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
       ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
-    if (!isMaximized())
-      maximize( options.MaximizeOnlyVertically?1:0);
-    else
-      unMaximize();
+    handleOperation(options.titlebar_doubleclick_command);
   }
 }
 
@@ -733,7 +738,7 @@ void Client::enterEvent( QEvent * ){
 }
 
 void Client::leaveEvent( QEvent * ){
-  if (getDecoration())
+  if (getDecoration() != KWM::noDecoration)
     set_x_cursor(normal_cursor);
 }
 
@@ -741,7 +746,7 @@ void Client::paintEvent( QPaintEvent* ev ){
   QLabel::paintEvent(ev);
   QPainter p;
   p.begin(this);
-  if (!options.ShapeMode || getDecoration() != 1){
+  if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
     qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
   }
   else {
@@ -905,7 +910,7 @@ void Client::resizeEvent( QResizeEvent * ){
     break;
   }
     
-  if (options.ShapeMode && getDecoration() == 1){	
+  if (options.ShapeMode && getDecoration() == KWM::normalDecoration){	
 
     QBitmap shapemask(width(), height());
     shapemask.fill(color0);
@@ -1292,7 +1297,8 @@ void Client::setactive(bool on){
 void Client::paintState(bool only_label){
   QRect r = title_rect;
 
-  if (r.width() <= 0 || r.height() <= 0 || getDecoration()!=1)
+  if (r.width() <= 0 || r.height() <= 0 
+      || getDecoration()!=KWM::normalDecoration)
     return;
   int x;
 
@@ -1454,7 +1460,7 @@ void Client::iconify(bool animation){
 			  QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
 				0,0),
-			  getDecoration()==1,
+			  getDecoration()==KWM::normalDecoration,
 			  title_rect.x(), 
 			  width()-title_rect.right());
     }
@@ -1481,7 +1487,7 @@ void Client::unIconify(bool animation){
       animate_size_change(QRect(geometry.x()+geometry.width()/2,
 				geometry.y()+geometry.height()/2,
 				0,0), geometry,
-			  getDecoration()==1,
+			  getDecoration()==KWM::normalDecoration,
 			  title_rect.x(), 
 			  width()-title_rect.right());
     } 
@@ -1565,7 +1571,7 @@ void Client::maximize(int mode){
   if (state == NormalState)
     manager->raiseSoundEvent("Window Maximize");
     animate_size_change(geometry_restore, geometry,
-			getDecoration()==1,
+			getDecoration()==KWM::normalDecoration,
 			title_rect.x(), 
 			width()-title_rect.right());
   KWM::setMaximize(window, maximized);
@@ -1583,7 +1589,7 @@ void Client::unMaximize(){
   if (geometry != geometry_restore && state == NormalState)
     manager->raiseSoundEvent("Window UnMaximize");
     animate_size_change(geometry, geometry_restore,
-			getDecoration()==1,
+			getDecoration()==KWM::normalDecoration,
 			title_rect.x(), 
 			width()-title_rect.right());
   geometry = geometry_restore;
@@ -1690,7 +1696,7 @@ void Client::menuPressed(){
 };
 
 
-void Client::  handleOperationsPopup(int i){
+void Client::  handleOperation(int i){
   switch (i){
   case OP_MOVE:
     manager->raiseClient(this);
@@ -1738,7 +1744,10 @@ void Client::  handleOperationsPopup(int i){
     releaseMouse();
     break;
   case OP_MAXIMIZE:
-    maximize();
+    if (!isMaximized())
+      maximize( options.MaximizeOnlyVertically?1:0);
+    else
+      unMaximize();
     break;
   case OP_RESTORE:
     unMaximize();
@@ -1751,6 +1760,12 @@ void Client::  handleOperationsPopup(int i){
     break;
   case OP_STICKY: 
     buttonSticky->toggle();
+    break;
+  case OP_OPERATIONS: 
+    showOperations();
+    break;
+  case OP_SHADE:
+    toggleShade();
     break;
   default:
     break;
@@ -1874,9 +1889,9 @@ void Client::adjustSize(){
   }
   
   switch(getDecoration()){
-  case 0:
+  case KWM::noDecoration:
     break;
-  case 2:
+  case KWM::tinyDecoration:
     if (dx < 2*BORDER_THIN+BUTTON_SIZE)
       dx = 2*BORDER_THIN+BUTTON_SIZE+1;
     if (dy < 2*BORDER_THIN+20+1)
@@ -1915,9 +1930,9 @@ void Client::adjustSize(){
     }
 
   switch(getDecoration()){
-  case 0:
+  case KWM::noDecoration:
     break;
-  case 2:
+  case KWM::tinyDecoration:
     dx += 2*BORDER_THIN;
     dy += 2*BORDER_THIN;
     break;
@@ -1945,4 +1960,49 @@ void Client::doButtonGrab(){
   }
   if (!options.Button3Grab)
     XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
+}
+
+
+int Client::operationFromCommand(const QString &com){
+  if (com == "winMove")
+    return OP_MOVE;
+  else if (com == "winResize")
+    return OP_RESIZE;
+  else if (com == "winMaximize") 
+    return OP_MAXIMIZE;
+  else if (com == "winRestore") 
+    return OP_RESTORE;
+  else if (com == "winIconify")
+    return OP_ICONIFY;
+  else if (com == "winClose") 
+    return OP_CLOSE;
+  else if (com == "winSticky")
+    return OP_STICKY;
+  else if (com == "winShade")
+    return OP_SHADE;
+  else if (com == "winOperations")
+    return OP_OPERATIONS;
+  return -1;
+}
+
+
+void Client::toggleShade(){
+  if (getDecoration() != KWM::normalDecoration)
+    return;
+
+  shaded = !shaded;
+  if (isShaded()){
+    manager->raiseSoundEvent("Window Shape Up");
+    if (isActive())
+      manager->focusToNull();
+    XUnmapWindow(qt_xdisplay(), window);
+    unmap_events++;
+  }
+  else {
+    manager->raiseSoundEvent("Window Shape Down");
+    XMapWindow(qt_xdisplay(),window);
+    if (isActive())
+      manager->focusToClient(this);
+  }
+  manager->sendConfig(this);
 }

@@ -178,7 +178,8 @@ void drawbound(Client* c){
         y += dy;
         dy = -dy;
     }
-    draw_animation_rectangle(x,y,dx,dy, c->getDecoration()==1,
+    draw_animation_rectangle(x,y,dx,dy, 
+			     c->getDecoration()==KWM::normalDecoration,
 			     c->title_rect.x(), 
 			     c->width()-c->title_rect.right());
     

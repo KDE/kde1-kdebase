@@ -38,7 +38,7 @@ class MyApp:public KApplication {
     void  timerEvent( QTimerEvent * );
     
   private slots:
-    void handleOperationsPopup(int itemId);
+    void handleOperation(int itemId);
     void handleDesktopPopup(int itemId);
 
   private:   

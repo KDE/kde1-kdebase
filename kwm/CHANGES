@@ -11,6 +11,29 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 27:
+     - support for shaded windows a la openstep.
+     - new option:
+             TitlebarDoubleClickCommand=winMaximize/winShade/winMove/
+                 winResize, winRestore/winIconify/winClose/winSticky/
+                 winOperations
+
+       Please notice the "winShade" function :)
+
+       Shading raises two new sounds:
+                  "Window Shade Up"
+                  "Window Shade Down"
+
+       [ I do not know how OpenStep handles this, but I think it is 
+         a feature that the bounding box (when dragging a shaded window
+         in transparent mode) shows the original size! ]
+
+       Hopefully kcmkwm will soon support this feature, too.
+
+     - new windowPlacement=cascade (Cristian Tibirna)
+     - small bugfix for FreeBSD (Marc van Kempen)
+     - menuButton (if defined) on the top
+
   patchlevel 26:
      - fixed double click problem with java/motif on some X-Servers
 
@@ -23,10 +46,10 @@ In 0.10:
        - supports the following commands in addition:
 
      refreshScreen, darkenScreen, logout, commandLine, taskManager,
-     configure, winMove, winResize, winRestore, winIconify, winClose,
-     winSticky, winOperations, desktop1, desktop2, desktop3, desktop4, 
-     desktop5, desktop6, desktop7, desktop8, desktop+1, desktop+2, 
-     desktop-1, desktop-2, desktop%2
+     configure, winMove, winResize, winMaximize, winRestore,
+     winIconify, winClose, winSticky, winOperations, desktop1,
+     desktop2, desktop3, desktop4, desktop5, desktop6, desktop7,
+     desktop8, desktop+1, desktop+2, desktop-1, desktop-2, desktop%2
 
 
   patchlevel 23:

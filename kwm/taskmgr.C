@@ -154,7 +154,8 @@ void Ktask::prepareToShow(QStrList* strlist, int active){
       listbox->insertItem(new KListBoxItem_Program(pm, p));
     }
   }
-  fclose(f);
+  if (f)
+    fclose(f);
 
   listbox->setCurrentItem(active);
   listbox->show();

@@ -31,7 +31,9 @@ enum {
   OP_MOVE,
   OP_RESIZE,
   OP_CLOSE,
-  OP_STICKY
+  OP_STICKY,
+  OP_SHADE,
+  OP_OPERATIONS
 };
 
 
@@ -159,6 +161,9 @@ public:
   bool isIconified(){
     return iconified;
   }
+  bool isShaded(){
+    return shaded;
+  }
 
   bool fixedSize();
    
@@ -174,7 +179,9 @@ public:
   void showOperations();
   void setCursor();
 
-  void handleOperationsPopup(int);
+  // -1 if no such command
+  static int operationFromCommand(const QString &com);
+  void handleOperation(int);
   void simple_move();
   void simple_resize();
 
@@ -184,12 +191,15 @@ public:
   bool maximized;
   bool sticky;
   bool iconified;
+  bool shaded;
   
   void unIconify(bool animation = True);
   void iconify(bool animation = True);
   void ontoDesktop(int new_desktop);
   void maximize(int mode = 0);
   void unMaximize();
+
+  void toggleShade();
 
   bool hidden_for_modules;
 
