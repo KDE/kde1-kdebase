@@ -22,7 +22,7 @@
 //
 
 /*
- * Several modifications by Matthias Ettrich <ettrich@kde.org>
+ * Several modifications and extensions by Matthias Ettrich <ettrich@kde.org>
  */
 
 #ifndef PMENU_H
@@ -83,11 +83,9 @@ public:
   QPixmap   getBigIcon();
   QString   bigIconName(){ return big_pixmap_name;};
   QString   text() { return text_name; }
-  QString   fullPathName();
+  QString   fullPathName(){return dir_path + "/" + real_name;}
   QString   getComment(){ return comment;}
   QString   getDirPath(){ return dir_path;}
-
-  static void setUseKfm( bool b ) { use_kfm = b; }
 
   int getId(){return id;}
 
@@ -106,6 +104,7 @@ protected:
   static bool  use_kfm;
   static bool  in_kwm_mode;
   QString      text_name;
+  QString      real_name;
   QString      pixmap_name;
   QString      big_pixmap_name;
   QPixmap      pixmap;

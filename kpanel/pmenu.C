@@ -22,7 +22,7 @@
 //
 
 /*
- * Several modifications by Matthias Ettrich <ettrich@kde.org>
+ * Several modifications and extensions by Matthias Ettrich <ettrich@kde.org>
  */
 
 #include <qdstream.h>
@@ -49,7 +49,21 @@ extern "C" {
 static int global_id = 1;
 
 
-bool PMenuItem::use_kfm = TRUE;
+static bool isKdelnkFile(const char* name){
+  QFile file(name);
+  if (file.open(IO_ReadOnly)){
+    char s[19];
+    int r = file.readLine(s, 18);
+    if(r > -1){
+      s[r] = '\0';
+      file.close();
+      return (QString(s).left(17) == "# KDE Config File");
+    }
+    file.close();
+  }
+  return FALSE;
+}
+
 
 PMenuItem::PMenuItem()
 {
@@ -106,6 +120,7 @@ PMenuItem::PMenuItem( PMenuItem &item )
   command_name    = item.command_name;
   comment         = item.comment;
   dir_path        = item.dir_path;
+  real_name = item.real_name;
   if( entry_type == submenu )
     {
       sub_menu = new PMenu( *(item.sub_menu) );
@@ -140,6 +155,7 @@ PMenuItem::~PMenuItem()
 
 short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 {
+  real_name = fi->fileName().copy();
   int pos = fi->fileName().find(".kdelnk");
   if( pos >= 0 )
     text_name = fi->fileName().left(pos);
@@ -207,9 +223,8 @@ void PMenuItem::writeConfig( QDir dir )
 {
   if( read_only || entry_type == separator )
     return;
-  QString file = dir.absPath();
-  file += ( (QString) "/" + text_name + ".kdelnk" );
-  QFile config(file);
+  QString name = dir.absPath() + "/"+ real_name;
+  QFile config(name);
   if( !config.open(IO_ReadWrite) ) 
     return;
   QTextStream st( (QIODevice *) &config);
@@ -222,49 +237,14 @@ void PMenuItem::writeConfig( QDir dir )
 }
 
 
-QString PMenuItem::fullPathName(){
-  QString result = dir_path.copy();
-  result.append("/");
-  result.append(text_name);
-  if (getType() != submenu){
-    result.append(".kdelnk");
-  }
-  return result;
-}
+
 
 void PMenuItem::exec()
 {
-  QFileInfo fi( (QString) (dir_path + '/' + text_name) );
-  parse(&fi);
-  if( command_name.isNull() )
-    return;
-  QString name;
-  if( use_kfm )
-    {
-      KFM* kfm;
-      kfm = new KFM();
-      if(!kfm){
-	KMsgBox::message(NULL, klocale->translate("Sorry"),
-			 klocale->translate("Could not communicate with nor\n"\
-					    "start a new instance of KFM"));
-	return;
-      }
-      name = "file:";
-      name.append(dir_path+"/");
-      name.append(text_name);
-      name.append(".kdelnk");
-      debug("name = %s", (const char *) name );	  
-      kfm->exec(name.data(),0L);
-      delete kfm;
-    }
-  else
-    {
-      if( command_name.right(1) != "&" )
-	name = command_name + " &";
-      else
-	name = command_name;
-      system( (const char *) name );
-    }
+  KFM kfm;
+  QString com = "file:";
+  com.append(fullPathName());
+  kfm.exec(com.data(),0L);
 }
 
 QString PMenuItem::getSaveName()
@@ -276,50 +256,30 @@ QString PMenuItem::getSaveName()
   QString personal = config.readEntry("PersonalPath", temp.data() );
   temp = KApplication::kdedir()+"/share/applnk";
   QString kde_apps = config.readEntry("Path", temp.data() );
-  QString temp_dir = dir_path.copy();
-  if( (temp_dir+'/'+text_name) == personal )
+  temp = fullPathName();
+  if( temp == personal || temp == personal + "/" )
     {
-      name = "$$PERSONAL";
-      return name;
+      temp = "$$PERSONAL";
     }
-  else if( temp_dir.left(personal.length()) ==  personal )
+  else if( temp.left(personal.length()) ==  personal )
     {
       // kdelnk file is in $HOME/Personal
-      name = "$$PERSONAL";
-      name += temp_dir.right(temp_dir.length()-personal.length());
-      name += '/';
-      name += text_name;
-      if (getType() == unix_com)
-	name += ".kdelnk";
-      return name;
+      temp = temp.right(temp.length()-personal.length());
+      temp.prepend("$$PERSONAL");
     }
-  else if( temp_dir.left(kde_apps.length()) == kde_apps )
+  else if( temp.left(kde_apps.length()) == kde_apps )
     {
       // kdelnk file is in $KDEDIR/apps
-      name = "$$KDEAPPS";
-      name += temp_dir.right(temp_dir.length()-kde_apps.length());
-      name += '/';
-      name += text_name;
-      if (getType() == unix_com)
-	name += ".kdelnk";
-      return name;
+      temp = temp.right(temp.length()-kde_apps.length());
+      temp.prepend("$$KDEAPPS");
     }
-  else
-    {
-      // return abs file path
-      name = temp_dir;
-      name += '/';
-      name += text_name;
-      if (getType() == unix_com)
-	name += ".kdelnk";
-      return name;
-    }
-  return (void *) 0L;
+
+  return temp;
 }
 
 QPixmap PMenuItem::getBigIcon()
 {
-  QFileInfo fi( (QString) (dir_path + '/' + text_name) );
+  QFileInfo fi( fullPathName());
   parse(&fi);
   return KApplication::getKApplication()->getIconLoader()->loadApplicationIcon(big_pixmap_name);
 }
@@ -526,7 +486,7 @@ short PMenu::parse( QDir d )
 	}
       else
 	{
-	  if( !fi->extension().contains("kdelnk") )
+	  if( !isKdelnkFile(fi->absFilePath()))
 	    { ++it; continue; }
 	  new_item = new PMenuItem;
 	  new_item->read_only = read_only;
@@ -719,7 +679,8 @@ void PMenu::create_pixmap( QPixmap &buf, PMenuItem *item, QPopupMenu *menu)
 PMenuItem * PMenu::searchItem(QString name)
 {
   // search for kdelnk-file as a PMenuItem inside this PMenu hierarchy
-  // if it can't find the file it will return 0L
+  // if it can't find the file it will return a new created PMenuItem
+  
   KConfig config;
   config.setGroup("KDE Desktop Entries");
   QString temp = QDir::homeDirPath()+"/Personal";
@@ -729,8 +690,9 @@ PMenuItem * PMenu::searchItem(QString name)
   PMenuItem *found_item = 0L;
   PMenuItem *item;
   QString path;
-  QString origname = name.copy();
-  bool isKdelnkFile = FALSE;
+  static PMenu* hack = NULL;
+  if (!hack)
+    hack = this;
   //debug("searchName = %s", (const char *) name );
   name = name.stripWhiteSpace();
   if( name.left(9) == "$PERSONAL" )
@@ -745,25 +707,18 @@ PMenuItem * PMenu::searchItem(QString name)
       name.remove(0, 8);
       name.prepend(kde_apps);
     }
-  if( name.right(7) == ".kdelnk" ){
-    isKdelnkFile = TRUE;
-    name.truncate(name.length()-7);
-  }
   path = name.left( name.findRev('/') );
-  name.remove( 0, path.length()+1 );
-//   debug("name = '%s' / path = '%s'", name.data(), path.data() );
-//   debug("name = '%s' / path = '%s'", (const char *) name, (const char *) path );
-  if( list.first()->dir_path != path )
+  
+  if( list.first() && list.first()->dir_path != path )
     {
-//       debug("list.first()->dir_path = '%s'", (const char *) list.first()->dir_path );
       // can't be inside of this menu, so search only for submenus
       for( item = list.first(); item != 0L; item = list.next() )
 	{
-	  if( item->text_name == name && item->dir_path == path )
+	  if( item->fullPathName() == name)
 	    return item;
 	  if( item->cmenu != 0L )
 	    {
-	     if( ( found_item = item->sub_menu->searchItem( (QString) (path + '/' + name)) ) )
+	     if( ( found_item = item->sub_menu->searchItem(name) ) )
 	       return found_item;
 	    }
 	}
@@ -773,17 +728,20 @@ PMenuItem * PMenu::searchItem(QString name)
       // should be inside of this menu
       for( item = list.first(); item != 0L; item = list.next() )
 	{
-// 	  debug("item->text_name = '%s'", (const char *) item->text_name );
-	  if( item->text_name == name )
+	  if( item->fullPathName() == name )
 	    return item;
 	}
     }  
 
-  if (isKdelnkFile){
-    // generate a free entry
-    PMenuItem* pmi = new PMenuItem(unix_com);
-    pmi->parse(origname);
-    return pmi; 
+  if (hack == this)
+    hack = NULL;
+  if (!hack){
+    if (isKdelnkFile(name)){
+      // generate a free entry
+      PMenuItem* pmi = new PMenuItem(unix_com);
+      pmi->parse(name);
+      return pmi; 
+    }
   }
   return 0L;
 }

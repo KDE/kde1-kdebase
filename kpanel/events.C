@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <X11/Xatom.h>
 #include <qkeycode.h>
+#include <kfm.h>
 
 
 void kPanel::kwmInit(){
@@ -430,23 +431,22 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       }
     }
     
-    QMessageBox::message( "Oops!", "Cannot put this onto the panel.", "Oops!");
+    QMessageBox::warning( 0, "Panel", 
+			  "Cannot put this as button onto the panel!",
+			  "Oops!");
     return;
   }
 
 
-//   int i;
-//   for (i=0;i<nbuttons&&entries[i].drop_zone != _zone;i++);
-//   if (i<nbuttons){
-//     QString a = "kfmclient exec \"file:";
-//     a.append(apps.at(entries[i].app_id-1000)->path);
-//     a.append("\" \"");
-//     a.append(_zone->getData());
-//     a.append("\" &");
-//     system (a.data());
-//     return;
-//   }
-//   QMessageBox::message( "Oops!", "Cannot put this onto the panel.", "Oops!");
+  int i;
+  for (i=0;i<nbuttons&&entries[i].drop_zone != _zone;i++);
+  if (i<nbuttons && entries[i].pmi){
+    KFM kfm;
+    QString com = entries[i].pmi->fullPathName();
+    com.prepend("file:");
+    kfm.exec(com.data(),_zone->getData());
+    return;
+  }
 }
 
 void  kPanel::timerEvent( QTimerEvent * ){

@@ -733,25 +733,6 @@ void kPanel::restore_editbutton( bool takeit ) {
 };
 
 
-// void kPanel::add_free_app(const char*  filename){
-//   if (QString(filename).right(7)==".kdelnk"){
-//     ListItem* li = new ListItem;
-//     li->path = filename;
-//     li->is_free = TRUE;
-
-//     QString tooltip="";
-//     tooltip =  li->path.copy();
-//     int a = tooltip.findRev("/");
-//     if (a>-1)
-//       tooltip = tooltip.right(tooltip.length()-1-a);
-//     if (tooltip.right(7)==".kdelnk")
-//       tooltip = tooltip.left(tooltip.length()-7);
-
-//     li->name = tooltip.copy();
-//     apps.append(li);
-//   }
-// }
-
 
 void kPanel::button_clicked(){
   int i;
@@ -1012,6 +993,14 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   }
 	 }
        }
+       
+       entries[nbuttons-1].drop_zone = new KDNDDropZone(entries[nbuttons-1].button, 
+							DndURL);
+       connect(entries[nbuttons-1].drop_zone, 
+	       SIGNAL( dropAction( KDNDDropZone *) ), 
+	       this, 
+	       SLOT( slotDropEvent( KDNDDropZone *) ) );
+       
      }
      if (pmi->getComment().isEmpty())
        QToolTip::add(entries[nbuttons-1].button,
