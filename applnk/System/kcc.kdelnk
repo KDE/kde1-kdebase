@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Exec=kcc
+Icon=kcontrol.xpm
 Type=Application
 DocPath=kcc/index.html
 Comment=System Control Center

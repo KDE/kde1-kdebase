@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Fontmanager
+Icon=kfontmanager.xpm
 Name[de]=Schriftenmanager
 Name[pl]=Mened¿er czcionek
 Exec=kfontmanager
