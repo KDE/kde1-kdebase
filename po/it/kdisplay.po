@@ -1,4 +1,3 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -61,7 +60,7 @@ msgstr "&In scala"
 #: backgnd.cpp:305 backgnd.cpp:425 backgnd.cpp:438 backgnd.cpp:783
 #, fuzzy
 msgid "No wallpaper"
-msgstr "Sfondo"
+msgstr "Nessuno Sfondo"
 
 #: backgnd.cpp:333
 msgid "&Browse..."
@@ -76,33 +75,28 @@ msgid "Desktop names"
 msgstr "Nomi dei Desktop"
 
 #: backgnd.cpp:907
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Impostazioni sfondo bicolore"
+msgstr "Impostazioni sfondi bicolore"
 
 #: backgnd.cpp:944
-#, fuzzy
 msgid "Blend colors from &top to bottom"
-msgstr "&Sfuma i colori da destra a sinistra"
+msgstr "Sfuma i colori dal'&alto al basso"
 
 #: backgnd.cpp:950
-#, fuzzy
 msgid "Blend colors from &right to left"
-msgstr "&Sfuma i colori da destra a sinistra"
+msgstr "Sfuma i colori da &destra a sinistra"
 
 #: backgnd.cpp:956
-#, fuzzy
 msgid "Use &pattern"
-msgstr "&Motivo"
+msgstr "Usa &Motivo"
 
 #: backgnd.cpp:983
 msgid "Preview"
 msgstr "Anteprima"
 
 #: backgnd.cpp:994
-#, fuzzy
 msgid "Pattern &name"
-msgstr "Nome Motivo"
+msgstr "&Nome motivo"
 
 #: backgnd.cpp:1033
 msgid "Current"
@@ -283,9 +277,8 @@ msgid "Screen Saver"
 msgstr "Salva Schermo"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:548 scrnsave.cpp:657
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Salvaschermo"
+msgstr "Nessun salvaschermo"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
@@ -324,9 +317,8 @@ msgid "Low"
 msgstr "Min"
 
 #: general.cpp:147
-#, fuzzy
 msgid "Fonts etc."
-msgstr "&Caratteri ecc."
+msgstr "Caratteri ecc."
 
 #: general.cpp:153
 msgid "&Draw widgets in the style of Windows 95"
