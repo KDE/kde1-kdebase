@@ -98,9 +98,9 @@ void KDisplayApplication::init()
   if (kapp->getConfig()->readBoolEntry( "useResourceManager", true )){
       KProcess proc;
       proc.setExecutable("krdb");
-//       proc.start( KProcess::DontCare );
+      proc.start( KProcess::Block );
   }
-  
+
 
 }
 
