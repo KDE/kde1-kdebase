@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmlocale language
+Type=Application
+DocPath=kdisplay/locale/language.html
+Comment=Language settings
+Comment[de]=Einstellung der Landessprachen
+Name=Language
+Name[de]=Sprache
+SwallowTitle=Language
