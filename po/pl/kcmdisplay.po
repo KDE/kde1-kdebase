@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdedisplay \n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-12-28 23:16+0200\n"
+"PO-Revision-Date: 1999-01-27 23:04+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -416,7 +416,7 @@ msgstr "Niski"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -427,9 +427,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "Pasek &menu na górze ekranu tak jak w MacOS"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "Z&astosuj styl dla aplikacji nie-KDE"
+msgstr "Z&astosuj czcionki i kolory dla aplikacji spoza KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -479,13 +478,13 @@ msgstr "Ko&lory"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Styl"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "u¿ycie: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr 
+"u¿ycie: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -534,12 +533,3 @@ msgstr "domy¶lnie"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "ka¿de"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Czcionki"
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Czcionka biurka"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Czcionki"

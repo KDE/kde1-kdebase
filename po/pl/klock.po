@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-12-29 20:25+0200\n"
+"PO-Revision-Date: 1999-01-27 23:27+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -454,7 +454,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opcja %s jest nieobs³ugiwana w tym systemie!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"

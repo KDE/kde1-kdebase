@@ -995,7 +995,7 @@ msgid " ERROR: Could not write to %s"
 msgstr " B£¡D: Nie mo¿na zapisaæ %s"
 
 #: kiojob.cpp:567 kiojob.cpp:872
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1023,21 +1023,25 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Plik specjalny nie mo¿e zostaæ skopiowany\n"
+"%s"
 
 #: kiojob.cpp:663
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d plików specjalnych nie mo¿e zostaæ skopiowanych."
 
 #: kiojob.cpp:668
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Ponawiaj kopiowanie z pliku korzystaj±cego z innych\n"
+"protoko³ów (np. plików tar)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Ponawiaj kopiowanie z/do odleg³ej lokacji"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1067,11 +1071,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"Plik specjalny nie mo¿e zostaæ przeniesiony\n"
+"%s"
 
 #: kiojob.cpp:1046
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d plików specjalnych nie mo¿e zostaæ przeniesionych."
 
 #: kiojob.cpp:1310 kiojob.cpp:1381
 #, c-format
@@ -1165,7 +1171,7 @@ msgstr ""
 "Prawdopodobnie z³e has³o"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1174,7 +1180,7 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1184,7 +1190,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operacja jest technicznie niemo¿liwa"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
