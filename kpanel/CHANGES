@@ -1,5 +1,12 @@
 In kpanel-0.17:
+
+    Patchlevel 9:
+       - small visual changes: 
+          * tiny style is a bit smaller now
+          * less frames around the control group if margin==0
+       - standalone panel button always on top
  
+
     Patchlevel 8:
        - logout while editing desktop buttons fixed.
        - new option: PersonalFirst=on/off

@@ -124,8 +124,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       box_height = config->readNumEntry("BoxHeight");
     if (config->hasKey("Margin"))
       margin = config->readNumEntry("Margin");
-    if (margin == 0)
-      margin = 1;
       
     if (config->hasKey("IconScale")){
       pm_scale_factor = QString(config->readEntry("IconScale")).toFloat();
@@ -362,14 +360,13 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( panel_button_standalone, SIGNAL(clicked()), 
 	     SLOT(showPanel()) );
 
-
     if (orientation == horizontal){
-
+      
 
       if (dbrows == 2){
 	exit_button->setGeometry(0,0,
-				 box_width/2 - margin/4,
-				 box_height/2 - margin/4
+				 box_width/2,
+				 box_height/2
 				 );
 	
 	lock_button->setGeometry(0,
@@ -439,31 +436,31 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       }
       else {
 	// dbrows == 1 
-	exit_button->setGeometry(0, 2,
-				 box_width-4,
-				 box_height-4
-				 );
+ 	exit_button->setGeometry(0, 0,
+ 				 box_width,
+ 				 box_height
+ 				 );
 	
-	lock_button->setGeometry(exit_button->width(), 
-				2,
-				 box_width-4, 
-				 box_height-4);
+ 	lock_button->setGeometry(exit_button->width(), 
+ 				0,
+ 				 box_width, 
+ 				 box_height);
 	
 	for (i=0; (tmp_button = desktopbar->find(i)); i++){
 	  tmp_button->setGeometry(i*box_width/2 * dbhs, 
 				  0,
 				  box_width/2 * dbhs, 
-				  box_height-4);
+				  box_height);
 	}
 	
 	desktopbar->setGeometry(lock_button->x() + lock_button->width() + margin*2/3,
-				2, 
+				0, 
 				box_width /2 * dbhs * number_of_desktops + margin/3, 
-				box_height-4);
+				box_height);
 	
-	control_group->setGeometry(w/2 - (box_width-4 + margin*2/3 + desktopbar->width())/2,
+	control_group->setGeometry(w/2 - (box_width + margin*2/3 + desktopbar->width())/2,
 				   margin,
-				   2*box_width-8 + margin*2/3 + desktopbar->width(),
+				   2*box_width + margin*2/3 + desktopbar->width(),
 				   box_height);
 
 	// we also may have to rescale the pixmaps
@@ -482,9 +479,10 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				(box_width-(margin/2))/2,
 				box_height);
 
-      kde_button->setGeometry(panel_button->x()+panel_button->width(),
-				  margin,
-				  box_width, box_height);
+      kde_button->setGeometry(panel_button->x()+panel_button->width()
+			      + box_width,
+			      margin?margin:1,
+ 			      box_width-(margin?0:2), box_height-(margin?0:2));
       
       bound_top_left = control_group->x();
       bound_bottom_right = control_group->x() + control_group->width();
@@ -496,23 +494,6 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       label_date->setAlignment( AlignRight|AlignVCenter );
       
       
-      ty = margin;
-	
-      tx = 5+24+12;
-      for (i=0; i < nbuttons; i++){
-	switch (i){
-	case 3:
-	  tx = w - 2*box_width - box_width/2;
-	  break;
-	case 6:
-	  tx = w - box_width-3;
-	  break;
-	}
-	entries[i].button->setGeometry(tx, ty, box_width, box_height);
-	tx += box_width;
-	
-      }
-
 
       if (position == top_left) {
 	setGeometry(0,
@@ -560,9 +541,10 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 				box_width,
 				(box_height-(margin/2))/2);
 
-      kde_button->setGeometry(margin,
-				  panel_button->y()+panel_button->height(),
-				  box_width, box_height);
+      kde_button->setGeometry(margin?margin:1,
+ 			      panel_button->y()+panel_button->height()
+			      + box_height,
+ 			      box_width-(margin?0:2), box_height-(margin?0:2));
      
 
       bound_top_left = control_group->y();
@@ -607,6 +589,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		    box_width+2*margin, 
 		    h);
       }
+    }
+
+    if (margin == 0){
+      margin++;
+      box_width-=2;
+      box_height-=2;
     }
 
     panel_button_frame_standalone->setGeometry(x() + panel_button->x(),

@@ -151,6 +151,7 @@ public:
   void windowChange(Window);
   void windowActivate(Window);
   void windowIconChanged(Window);
+  void windowRaise(Window);
   void kwmDesktopChange(int);
   void kwmDesktopNameChange(int, QString);
   void kwmDesktopNumberChange(int);

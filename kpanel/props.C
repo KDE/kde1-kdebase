@@ -178,7 +178,8 @@ void kPanel::read_in_configuration(){
 
      if (num >= control && controldelta>=0){
        if (orientation == horizontal){
- 	control_group->move((int)(x + controldelta * real_space / 10000), (int)y);
+ 	control_group->move((int)(x + controldelta * real_space / 10000), 
+			    control_group->y());
  	if (control_group->x() + control_group->width() > width())
  	  control_group->move(width() - control_group->width(), (int)y);
  	bound_top_left = control_group->x();
@@ -186,7 +187,8 @@ void kPanel::read_in_configuration(){
  	x = bound_bottom_right;
        }
        else {
- 	control_group->move((int)x, (int)(y  + controldelta * real_space / 10000));
+ 	control_group->move(control_group->x(), 
+			    (int)(y  + controldelta * real_space / 10000));
  	if (control_group->y() + control_group->height() > height())
  	  control_group->move((int)x, height() - control_group->height());
  	bound_top_left = control_group->y();
@@ -419,8 +421,8 @@ void kPanel::slotPropsApply(){
     switch (costy->currentItem()){
     case 0: // tiny style
       config->writeEntry("Style", "tiny");
-      config->writeEntry("BoxWidth",32);
-      config->writeEntry("BoxHeight",32);
+      config->writeEntry("BoxWidth",26);
+      config->writeEntry("BoxHeight",26);
       config->writeEntry("Margin",0);
       config->writeEntry("TaskbarButtonHorizontalSize",4);
       config->writeEntry("IconScale","0.5");

@@ -125,6 +125,8 @@ int main( int argc, char ** argv ){
 		     SLOT(windowActivate(Window)));
   the_panel->connect(&myapp, SIGNAL(windowIconChanged(Window)), 
 		     SLOT(windowIconChanged(Window)));
+  the_panel->connect(&myapp, SIGNAL(windowRaise(Window)), 
+		     SLOT(windowRaise(Window)));
   the_panel->connect(&myapp, SIGNAL(desktopChange(int)), 
 		     SLOT(kwmDesktopChange(int)));
   the_panel->connect(&myapp, SIGNAL(desktopNameChange(int, QString)), 

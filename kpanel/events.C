@@ -121,6 +121,11 @@ void kPanel::windowIconChanged(Window w){
     b->setPixmap(pm);
 }
 
+void kPanel::windowRaise(Window /* w */){
+  if (panel_button_frame_standalone->isVisible())
+    panel_button_frame_standalone->raise();
+}
+
 myTaskButton* kPanel::taskButtonFromWindow(Window w){
   myTaskButton* b;
   for (b=taskbar_buttons.first(); b; b = taskbar_buttons.next()){
