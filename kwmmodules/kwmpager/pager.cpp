@@ -36,6 +36,7 @@ const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
 Pager::Pager(KWMModuleApplication *a, char *name) : QWidget(NULL,  "kwmpager")
 {
     kwmmapp = a;
+    a->setMainWidget(this);
     kwmmapp -> connectToKWM();
     KWM::setSticky(winId(), true);
     KWM::setDecoration(winId(), KWM::tinyDecoration | KWM::noFocus);
@@ -240,8 +241,7 @@ void Pager::moveEvent ( QMoveEvent *e) {
 
 void Pager::closeEvent( QCloseEvent *e)
 {
-    close();
-    e->accept();
+    kapp->quit();
 }
 
 void Pager::addWindow(Window w)
