@@ -1,4 +1,4 @@
 
 data_DATA = .directory
 
-datadir = $(prefix)/share/applnk/Internet
+datadir = $(prefix)/share/applnk/Multimedia
