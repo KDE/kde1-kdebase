@@ -569,7 +569,7 @@ void kPanel::set_label_date(){
     s.sprintf(" %.2d:%.2d",
 	      d.time().hour()%12,
 	      d.time().minute());
-    //    s.append(d.time().hour()<13?"am":"pm");
+    s.append(d.time().hour()<13?"am":"pm");
   }
   
   s2.sprintf("\n %s %d ",

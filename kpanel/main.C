@@ -91,7 +91,7 @@ static void grabKey(KeySym keysym, unsigned int mod){
 }
 
 int main( int argc, char ** argv ){
-  
+ 
   o_argc = argc;
   o_argv = new char*[o_argc + 2];
   int v;
@@ -100,7 +100,6 @@ int main( int argc, char ** argv ){
   o_argv[v] = NULL;
 
   MyApp myapp( argc, argv, "kpanel" );
-
   bool use_kwm = true;
   
   for (v=1; v<argc; v++){
@@ -133,7 +132,9 @@ int main( int argc, char ** argv ){
     }
   }
     
+debug("before %ld", time(NULL));
   the_panel = new kPanel(&myapp);
+debug("after %ld", time(NULL));
   the_panel->connect(&myapp, SIGNAL(init()), 
 		     SLOT(kwmInit()));
   the_panel->connect(&myapp, SIGNAL(windowAdd(Window)), 
@@ -176,6 +177,6 @@ int main( int argc, char ** argv ){
   XSelectInput(qt_xdisplay(), qt_xrootwin(), 
 	       KeyPressMask);
   grabKey(XK_F1, Mod1Mask);
-  while (1)  myapp.exec();
+  myapp.exec(); 
   return 0;
 }

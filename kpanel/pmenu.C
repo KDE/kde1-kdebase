@@ -39,6 +39,8 @@
 #include <kfm.h>
 #include <kmsgbox.h>
 
+#include <ksimpleconfig.h>
+
 #include "pmenu.h"
 #include "pmenu.moc"
 
@@ -47,6 +49,22 @@ extern "C" {
 }
 
 static int global_id = 1;
+
+
+QString personal;
+QString kde_apps;
+
+static void getPaths(){
+  if (!personal) {
+    KConfig* config = kapp->getConfig();
+    config->setGroup("KDE Desktop Entries");
+    QString temp = QDir::homeDirPath()+"/.kde/share/applnk";
+    personal = config->readEntry("PersonalPath", temp.data() );
+    temp = KApplication::kdedir()+"/share/applnk";
+    kde_apps = config->readEntry("Path", temp.data() );
+  }
+}
+
 
 bool isKdelnkFile(const char* filename){
 
@@ -172,17 +190,14 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
       dir_path = fi->dirPath();
       file += "/.directory";
       QFile config(file);
-      if( config.open(IO_ReadOnly) ) 
+      if( config.exists() ) 
 	{
-	  config.close(); // kalle;
-	  // kalle;	  QTextStream st( (QIODevice *) &config);
-	  KConfig kconfig(file);
+	  KSimpleConfig kconfig(file, true);
 	  kconfig.setGroup("KDE Desktop Entry");
 	  pixmap_name = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
 	  comment = kconfig.readEntry("Comment");
 	  text_name = kconfig.readEntry("Name", text_name);
-	  config.close();
 	}
       entry_type  = submenu;
       sub_menu    = menu;
@@ -190,12 +205,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
     }
   else
     {
-      QFile config(fi->absFilePath());
-      if( !config.open(IO_ReadOnly) ) 
-	return -1;
-	  config.close(); // kalle
-	  // kalle      QTextStream st( (QIODevice *) &config);
-      KConfig kconfig(fi->absFilePath());
+      KSimpleConfig kconfig(fi->absFilePath(), true);
       kconfig.setGroup("KDE Desktop Entry");
       command_name = kconfig.readEntry("Exec");
       entry_type = unix_com;
@@ -204,7 +214,6 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
       comment         = kconfig.readEntry("Comment");
       text_name = kconfig.readEntry("Name", text_name);
       dir_path        = fi->dirPath(TRUE);
-      config.close();
     }
   QPixmap tmppix;
   pixmap = tmppix;
@@ -259,14 +268,8 @@ void PMenuItem::exec()
 
 QString PMenuItem::getSaveName()
 {
-  QString name;
-  KConfig config;
-  config.setGroup("KDE Desktop Entries");
-  QString temp = QDir::homeDirPath() +"/.kde/share/applnk";
-  QString personal = config.readEntry("PersonalPath", temp.data() );
-  temp = KApplication::kdedir()+"/share/applnk";
-  QString kde_apps = config.readEntry("Path", temp.data() );
-  temp = fullPathName();
+  getPaths();
+  QString temp = fullPathName();
   if( temp == personal || temp == personal + "/" )
     {
       temp = "$$PERSONAL";
@@ -446,11 +449,9 @@ short PMenu::parse( QDir d )
     read_only = TRUE;
   file += "/.directory";
   QFile config(file);
-  if( config.open(IO_ReadOnly) ) 
+  if( config.exists())
     {
-	  config.close(); // kalle
-	  // kalle      QTextStream st( (QIODevice *) &config);
-      KConfig kconfig(file); // kalle
+      KSimpleConfig kconfig(file, true); // kalle
       kconfig.setGroup("KDE Desktop Entry");
       QString order = kconfig.readEntry("SortOrder");
       int len = order.length();
@@ -466,7 +467,6 @@ short PMenu::parse( QDir d )
 	  sort_order.append(temp);
 	  i = j+1;
 	}
-      config.close();
     }
 
   const QFileInfoList *list = d.entryInfoList();
@@ -613,13 +613,8 @@ PMenuItem * PMenu::searchItem(QString name)
 {
   // search for kdelnk-file as a PMenuItem inside this PMenu hierarchy
   // if it can't find the file it will return a new created PMenuItem
-  
-  KConfig config;
-  config.setGroup("KDE Desktop Entries");
-  QString temp = QDir::homeDirPath()+"/.kde/share/applnk";
-  QString personal = config.readEntry("PersonalPath", temp.data() );
-  temp = KApplication::kdedir()+"/share/applnk";
-  QString kde_apps = config.readEntry("Path", temp.data() );
+
+  getPaths();
   PMenuItem *found_item = 0L;
   PMenuItem *item;
   QString path;

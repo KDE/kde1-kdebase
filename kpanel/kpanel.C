@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <kfm.h>
 #include <qbitmap.h>
+#include <ksimpleconfig.h>
 
 extern void execute(const char*);
 
@@ -32,7 +33,7 @@ DesktopEntry::DesktopEntry(){
 
 kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 		QWidget *parent, const char *name )
-  : QFrame( parent, name,WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
+  : QFrame( parent, name ){
     //: QFrame( parent, name){
 
     initing = true;
@@ -1094,7 +1095,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	   // kalle	   QTextStream mystream(&myfile);
 
 	   myfile.close(); // kalle
-	   KConfig pConfig(pmi->fullPathName() );
+	   KSimpleConfig pConfig(pmi->fullPathName() );
 	   pConfig.setGroup("KDE Desktop Entry");
 	   QString aString;
 	   if (pConfig.hasKey("SwallowTitle")){

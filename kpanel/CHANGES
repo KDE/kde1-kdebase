@@ -1,6 +1,8 @@
 In kpanel-0.18:
 
     Patchlevel 7:
+       - optimization in loading of kdelnkfiles with readonly 
+           ksimpleconfigs. Great speedups :)
        - cleanups reverted (too many sideeffects). Nicer
          configuration dialog still included.
 
