@@ -4,7 +4,6 @@ SUBDIRS = cs da de es fi fr it nl ru sv hu pt pl el
 # this is a general list for merging!
 APPS = kdehelp kdisplay kdm kfind kfm kfontmanager kpanel kvt kwm klock krootwm
 
-# TODO: This does not any longer work
 merge:
 	@apps='$(APPS)'; \
 	langs='$(SUBDIRS)'; \
