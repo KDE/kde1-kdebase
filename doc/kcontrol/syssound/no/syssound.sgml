@@ -16,7 +16,7 @@
 <sect>Introduksjon
 
 <p>
-KDE <bf>Systemlyd </bf>>gir deg mulighet til å angi lyder til
+KDE <bf>Systemlyd </bf>gir deg mulighet til å angi lyder til
 forskjellige systemhendelser. Når slike hendeler (som "Åpne vindu")
 inntreffer, så blir den tilknyttede lydfilen spillt.
 
@@ -35,7 +35,7 @@ Versjon 0.0.3 (22. nov. 1997)
 
 - bruker KApplication::localconfigdir()
 
-- retten en feil som rotet til tilknytningen av systemlyder til
+- rettet en feil som rotet til tilknytningen av systemlyder til
   hendelser i noen tilfeller når WAV-filer ble sluppet på lydlisten
 
 - skrevet innledende hjelpeside
