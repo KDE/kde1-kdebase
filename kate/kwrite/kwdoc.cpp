@@ -1991,7 +1991,8 @@ void KWriteDoc::doWordWrap(KWAction *a) {
   TextLine *textLine;
 
   textLine = contents.at(a->cursor.y - 1);
-  textLine->wrap(contents.next(),textLine->length() - a->cursor.x);
+  a->len = textLine->length() - a->cursor.x;
+  textLine->wrap(contents.next(),a->len);
 
   tagLine(a->cursor.y - 1);
   tagLine(a->cursor.y);
@@ -2004,6 +2005,7 @@ void KWriteDoc::doWordUnWrap(KWAction *a) {
   TextLine *textLine;
 
   textLine = contents.at(a->cursor.y - 1);
+  textLine->setLength(a->len);
   textLine->unWrap(contents.next(),a->cursor.x);
 
   tagLine(a->cursor.y - 1);
