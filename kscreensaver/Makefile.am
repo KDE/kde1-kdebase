@@ -1,4 +1,4 @@
-#
+# $Id$
 # Makefile.am for kscreensave.   
 #
 
@@ -13,7 +13,7 @@ INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock kblob.kss kbouboule.kss kscience.kss
+	kforest.kss klock kblob.kss kbouboule.kss kscience.kss bsod.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss kpipes.kss
 
@@ -28,6 +28,10 @@ main.cpp: main.moc
 saver.cpp: saver.moc
 
 kgroupbox.cpp: kgroupbox.moc
+
+kbsod_kss_SOURCES = $(BASE_SRCS) bsod.cpp
+kbsod_kss_LDADD= $(LDADD) $(XPMLIB)
+bsod.cpp: bsod.moc
 
 kpolygon_kss_SOURCES = $(BASE_SRCS) polygon.cpp
 polygon.cpp: polygon.moc
@@ -128,6 +132,9 @@ banner.moc: banner.h
 
 blankscrn.moc: blankscrn.h
 	$(MOC) blankscrn.h -o blankscrn.moc
+
+bsod.moc: bsod.h
+	$(MOC) bsod.h -o bsod.moc
 
 rock.moc: rock.h
 	$(MOC) rock.h -o rock.moc
