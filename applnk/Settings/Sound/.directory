@@ -10,6 +10,5 @@ Name[hu]=Hang
 Name[sv]=Ljud
 Name[it]=Suono
 Name[pt]=Som
-MiniIcon=sound.xpm
 SortOrder=bell.kdelnk
-Icon=Sound.xpm
+Icon=sound_settings.xpm

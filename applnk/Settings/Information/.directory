@@ -9,6 +9,5 @@ Name[sv]=Information
 Name[it]=Informazioni
 Name[hu]=Információ
 Name[pt]=Informações
-MiniIcon=readme.xpm
 SortOrder=memory.kdelnk,processor.kdelnk
-Icon=information.xpm
+Icon=information_settings.xpm
