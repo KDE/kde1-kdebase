@@ -490,26 +490,28 @@ void Client::generateButtons(){
   buttonMenu = 0;
 
   for (i=0;i<6;i++){
-    buttons[i] = getNewButton( options.buttons[i]);
-    if (getDecoration() == KWM::normalDecoration ) {
-	if (!trans){
-	    if (buttons[i])
-		buttons[i]->show();
-	}
-	else { // transient windows, only menu and close on the first resp. last position possible
-	    if ( i == 0 && buttons[i] == buttonMenu )
-		continue;
-	    if ( i == 3 && options.buttons[3] == CLOSE )
-		continue;
-	    if (buttons[i] )
-		buttons[i]->hide();
-	}
-    }
-    else {
-	if (buttons[i] )
-	    buttons[i]->hide();
-    }
+
+      if (!(buttons[i] = getNewButton( options.buttons[i])))
+	  continue;
+       
+      if (getDecoration() != KWM::normalDecoration ) {
+	  buttons[i]->hide();
+	  continue;
+      }
+    
+      if (!trans){
+	  buttons[i]->show();
+	  continue;
+      }
+        
+      // transient windows, only menu and close on the first resp. last position possible
+      if ( (i == 0) && (buttons[i] == buttonMenu) )
+	  continue;
+      if ( (i == 3) && (options.buttons[3] == CLOSE) )
+	  continue;
+      buttons[i]->hide();
   }
+  
   if (!buttonMaximize){
     buttonMaximize = new myPushButton(this);
     buttonMaximize->setToggleButton(true);
