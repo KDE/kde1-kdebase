@@ -785,7 +785,7 @@ msgstr "&Durchsuchen..."
 
 #: kfmprops.cpp:724
 msgid "Swallowing on panel"
-msgstr "In Kontroll-Leiste einbetten"
+msgstr "In Kontrolleiste einbetten"
 
 #: kfmprops.cpp:751
 msgid "Window Title"

@@ -108,7 +108,7 @@ msgstr "&Einrichtung..."
 
 #: backgnd.cpp:419
 msgid "&Dock into the panel"
-msgstr "In Kontroll-Leiste einbinden"
+msgstr "In Kontrolleiste einbinden"
 
 #: backgnd.cpp:444
 msgid "Cache size (kB):"
@@ -448,11 +448,11 @@ msgstr "Schriftart für Fenstertext"
 
 #: general.cpp:545
 msgid "Panel button font"
-msgstr "Schrift auf Kontroll-Leiste"
+msgstr "Schrift auf Kontrolleiste"
 
 #: general.cpp:550
 msgid "Panel clock font"
-msgstr "Schrift für Uhr auf Kontroll-Leiste"
+msgstr "Schrift für Uhr auf Kontrolleiste"
 
 #: general.cpp:580
 msgid "Sample text"

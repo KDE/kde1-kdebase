@@ -12,7 +12,7 @@ msgstr ""
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "&Kontroll-Leiste"
+msgstr "&Kontrolleiste"
 
 #: main.cpp:70
 msgid "&Desktops"
@@ -120,7 +120,7 @@ msgstr "Automatisches Verstecken"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Kontroll-Leiste &autom. ausblenden"
+msgstr "Kontrolleiste &autom. ausblenden"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"
