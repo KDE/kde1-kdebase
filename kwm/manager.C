@@ -2075,10 +2075,14 @@ void Manager::addModule(Window w){
   }
   sendClientMessage(w, module_init, 0);
   Client* c;
-  for (c=clients.first(); c; c=clients.next())
-    sendClientMessage(w, module_win_add, c->window);
-  for (c=clients_sorted.first(); c; c=clients_sorted.next())
-    sendClientMessage(w, module_win_raise, (long) c->window);
+  for (c=clients.first(); c; c=clients.next()){
+    if (!c->hidden_for_modules)
+      sendClientMessage(w, module_win_add, c->window);
+  }
+  for (c=clients_sorted.first(); c; c=clients_sorted.next()){
+    if (!c->hidden_for_modules)
+      sendClientMessage(w, module_win_raise, (long) c->window);
+  }
   if (current())
     sendClientMessage(w, module_win_activate, (long) current()->window);
 }
