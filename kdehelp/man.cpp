@@ -25,8 +25,15 @@
 
 #include <klocale.h>
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 #define MAXSECTIONLEN	4
-#define TMPDIR	"/tmp"
 
 // ============================================================================
 // this is an array of sections available
@@ -495,7 +502,7 @@ cManSection::cManSection(const char *theName)
 #ifndef __FreeBSD__
 		searchPath[numPaths++] = StrDup("/usr/man");
 #else
-		searchPath[numPaths++] = StrDup("/usr/share/man");
+		searchPath[numPaths++] = StrDup(_PATH_MAN);
 		searchPath[numPaths++] = StrDup("/usr/X11R6/man");
 #endif
 		searchPath[numPaths++] = StrDup("/usr/local/man");
@@ -803,10 +810,10 @@ int cMan::ReadLocation(const char *name)
 		char sysCmd[256];
 		char *ptr;
 
-		sprintf(stdFile, "%s/khelpXXXXXX", TMPDIR);	// temp file
+		snprintf(stdFile, 256, _PATH_TMP"khelpXXXXXX");	// temp file
 		mktemp(stdFile);
 
-		sprintf(errFile, "%s/khelpXXXXXX", TMPDIR);	// temp file
+		snprintf(errFile, 256, _PATH_TMP"khelpXXXXXX");	// temp file
 		mktemp(errFile);
 
 		// create the system cmd to read the man page

@@ -30,6 +30,14 @@
 
 #include "helpwin.moc"
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 // for selection
 #include <X11/X.h>
 #include <X11/Xlib.h>
@@ -836,7 +844,7 @@ int KHelpWindow::openRemote( const char *_url )
 		return 1;
 	}
 
-	char filename[20] = "/tmp/kdehelpXXXXXX";
+	char filename[20] = _PATH_TMP"kdehelpXXXXXX";
 	mktemp( filename );
 	localFile.sprintf( "file:%s", filename );
 
@@ -860,7 +868,7 @@ int KHelpWindow::runCGI( const char *_url )
 
 	connect( CGIServer, SIGNAL( finished() ), this, SLOT( slotCGIDone() ) );
 
-	char filename[20] = "/tmp/kdehelpXXXXXX";
+	char filename[20] = _PATH_TMP"kdehelpXXXXXX";
 	mktemp( filename );
 	localFile.sprintf( "file:%s", filename );
 
@@ -895,7 +903,7 @@ KHelpWindow::FileType KHelpWindow::detectFileType( const QString &fileName )
 		if ( strstr( fileName, ".gz" ) )
 		{
 			char sysCmd[256];
-			sprintf( fname, "/tmp/khelpXXXXXX" );
+			sprintf( fname, _PATH_TMP"khelpXXXXXX" );
 			mktemp( fname );
 			sprintf(sysCmd, "gzip -cd %s > %s", (const char *)fileName, fname);
 			system( sysCmd );
@@ -1358,7 +1366,7 @@ void KHelpWindow::slotImageRequest( const char * _url )
 	}
 
 	QString file;
-	file.sprintf( "file:/tmp/kdehelpXXXXXX" );
+	file.sprintf( "file:"_PATH_TMP"kdehelpXXXXXX" );
 	mktemp( file.data() );
 
 	RemoteImage *img = new RemoteImage( _url, file );

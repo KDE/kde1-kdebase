@@ -27,7 +27,14 @@
 #include <klocale.h>
 #include <kapp.h>
 
-#define TMPDIR			"/tmp"
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 #define EATSPACE(ptr)	while ((*ptr == ' ')||(*ptr == '\t')) ptr++;
 
 // ============================================================================
@@ -1435,7 +1442,7 @@ void cInfo::Decompress(const char *theFilename, char *workFile)
 	char tmpFile[256];
 	char sysCmd[512];
 
-	sprintf(tmpFile, "%s/khelpXXXXXX", TMPDIR);
+	snprintf(tmpFile, 256, _PATH_TMP"khelpXXXXXX");
 	mktemp(tmpFile);
 	sprintf(sysCmd, "%s < %s > %s", decompressCmd, theFilename, tmpFile);
 	system(sysCmd);
