@@ -34,7 +34,7 @@ class Pager: public QWidget {
     Q_OBJECT
     
 public:
-    Pager(KWMModuleApplication*);
+    Pager(KWMModuleApplication*, char* name);
     ~Pager();
     
 private:

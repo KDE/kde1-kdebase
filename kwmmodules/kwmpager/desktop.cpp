@@ -211,23 +211,25 @@ void Desktop::activate(bool flag)
 
 void Desktop::mousePressEvent( QMouseEvent *e )
 {
-    KWM::switchToDesktop(Id);
-    PagerWindow *win;
-    for (win = windows.last(); win; win = windows.prev()) {
-	if (!win->icony && win->prect.contains(e->pos())) {
-	    KWM::activate(win->id);
-	    break;
+    if (e->button() == LeftButton) {
+	KWM::switchToDesktop(Id);
+	PagerWindow *win;
+	for (win = windows.last(); win; win = windows.prev()) {
+	    if (!win->icony && win->prect.contains(e->pos())) {
+		KWM::activate(win->id);
+		break;
+	    }
 	}
+	if (!win)
+	    return;
+	
+	win->mrect = win->prect;
+	dragWindow = win;
+	startTime.start();
+	cursor_set = false;
+	if (dragWindow)
+	    dragStart = e->pos();
     }
-    if (!win)
-	return;
-
-    win->mrect = win->prect;
-    dragWindow = win;
-    startTime.start();
-    cursor_set = false;
-    if (dragWindow)
-	dragStart = e->pos();
 }
 
 void Desktop::mouseReleaseEvent( QMouseEvent * )

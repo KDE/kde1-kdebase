@@ -33,12 +33,14 @@
 const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
 				   "BottomLeft" };
 
-Pager::Pager(KWMModuleApplication *a) : QWidget(NULL,  "kwmpager")
+Pager::Pager(KWMModuleApplication *a, char *name) : QWidget(NULL,  "kwmpager")
 {
     kwmmapp = a;
     kwmmapp -> connectToKWM();
     KWM::setSticky(winId(), true);
     KWM::setDecoration(winId(), KWM::tinyDecoration | KWM::noFocus);
+    KWM::setWmCommand(winId(), name);
+    KWM::setUnsavedDataHint(winId(), false);
 
     int count = KWM::numberOfDesktops();
     desktops.setAutoDelete(true);
@@ -342,6 +344,6 @@ int main( int argc, char *argv[] )
 	}
 	::exit(1); 
     }
-    Pager p(&a);
+    Pager p(&a, argv[0]);
     return a.exec();
 }
