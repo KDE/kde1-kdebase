@@ -152,9 +152,8 @@ void UserAgentOptions::loadSettings()
           else
             strlist.append( entry );
         }
-  // if there was no entry at all, we set at least a default
   if( entries == 0 )
-        strlist.append( QString("*:"+DEFAULT_USERAGENT_STRING) );
+    defaultSettings();
   bindingsLB->clear();
   bindingsLB->insertStrList( &strlist );
 }
@@ -174,21 +173,15 @@ void UserAgentOptions::saveSettings()
 {
     // write back the entries from UserAgent
     g_pConfig->setGroup("Browser Settings/UserAgent");
-    if( bindingsLB->count() )
-    {
-        g_pConfig->writeEntry( "EntriesCount", bindingsLB->count() );
-        for( uint i = 0; i < bindingsLB->count(); i++ )
-        {
-            QString key;
-            key.sprintf( "Entry%d", i );
-            g_pConfig->writeEntry( key, bindingsLB->text( i ) );
-        }
-    }
-    else
-    {
-        // everything deleted -> write at least the Konqueror entry
-        g_pConfig->writeEntry( "EntriesCount", 1 );
-        g_pConfig->writeEntry( "Entry1", DEFAULT_USERAGENT_STRING );
+
+    if(!bindingsLB->count())
+      defaultSettings();
+
+    g_pConfig->writeEntry( "EntriesCount", bindingsLB->count() );
+    for( uint i = 0; i < bindingsLB->count(); i++ ) {
+      QString key;
+      key.sprintf( "Entry%d", i );
+      g_pConfig->writeEntry( key, bindingsLB->text( i ) );
     }
     g_pConfig->sync();
 }
@@ -214,18 +207,19 @@ void UserAgentOptions::addClicked()
   QString text = onserverED->text();
   text += ':';
   text += loginasED->text();
-  bindingsLB->insertItem( new QListBoxText( text.data() ) );
+  bindingsLB->insertItem( new QListBoxText( text.data() ), 0);
   onserverED->setText( "" );
   loginasED->setText( "" );
+  onserverED->setFocus();
 }
 
 
 void UserAgentOptions::deleteClicked()
 {
-  if( bindingsLB->count() )
+  if( bindingsLB->count() ) 
 	bindingsLB->removeItem( highlighted_item );
   if( !bindingsLB->count() ) // no more items
-      listboxHighlighted( "" );
+    listboxHighlighted("");  
 }
 
 
