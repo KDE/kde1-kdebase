@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Bell"
+msgstr "Προειδοποιητικός ήχος"
+
+#: main.cpp:57
+msgid "usage: kcmbell [-init | bell]\n"
+msgstr "Σύνταξη: kcmbell [-init | bell]\n"
+
+#: main.cpp:81
+msgid "Bell settings"
+msgstr "Ρυθμίσεις"
+
+#: bell.cpp:85
+msgid "Volume"
+msgstr "Ένταση"
+
+#: bell.cpp:86
+msgid "Pitch"
+msgstr "Συχνότητα"
+
+#: bell.cpp:87
+msgid "Duration"
+msgstr "Διάρκεια"
+
+#: bell.cpp:89
+msgid "Hz"
+msgstr "Χιλιόκυκλοι"
+
+#: bell.cpp:90
+msgid "ms"
+msgstr "χιλιοστά του δευτερολέπτου"
+
+#: bell.cpp:92
+msgid "Test"
+msgstr "Δοκιμή"

@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Κλείσιμο ή επανεκκίνηση;"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "Κλείσιμο"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Κλείσιμο και επανεκκίνηση"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Έξοδος από το kdm"
+
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Όνομα:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Λέξη κλειδί"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Η σύνδεση απέτυχε!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Τύπος σύνδεσης:"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Συνέχεια"
+
+#: kgreeter.cpp:214
+msgid "Shutdown..."
+msgstr "Κλείσιμο..."

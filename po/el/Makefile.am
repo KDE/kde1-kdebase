@@ -4,7 +4,7 @@ GMFILES = kdisplay.gmo kfm.gmo kfind.gmo kpanel.gmo kwm.gmo \
 	kmenuedit.gmo kcmsyssound.gmo kcminput.gmo kcminfo.gmo \
 	kcmkpanel.gmo kcmkwm.gmo kcmlocale.gmo kcmsamba.gmo \
 	kcontrol.gmo kdehelp.gmo kdmconfig.gmo kfontmanager.gmo \
-	klock.gmo krootwm.gmo kvt.gmo
+	klock.gmo krootwm.gmo kvt.gmo kdm.gmo kcmbell.gmo 
 POFILES = $(GMFILES:.gmo=.po)
 
 LANG = el
