@@ -38,9 +38,10 @@ protected:
 public slots:
   void expanded(int index);
   void selected(int index);
-
+  void highlighted(int index);
 signals:
   void selected( const char *_name, const char *_exec );
+  void highlighted( const char *_name, const char *_exec );
 };
 
 #endif

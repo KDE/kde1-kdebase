@@ -80,10 +80,11 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
 {
   m_pTree = 0L;
   m_pBind = 0L;
+  haveApp = false;
   
   setGeometry( x(), y(), 370, 100 );
   
-  QLabel *label = new QLabel( _text , this );
+  label = new QLabel( _text , this );
   label->setGeometry( 10, 10, 350, 15 );
   
   edit = new KLined( this, 0L );
@@ -108,7 +109,7 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   
   ok = new QPushButton( klocale->translate("Ok"), this );
   ok->setGeometry( 10,70, 80,25 );
-  connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+  connect( ok, SIGNAL(clicked()), SLOT(slotOK()) );
   
   browse = new QPushButton( klocale->translate("&Browser"), this );
   browse->setGeometry( 100, 70, 80, 25 );
@@ -124,6 +125,7 @@ OpenWithDlg::OpenWithDlg( const char *_text, const char* _value, QWidget *parent
   
   edit->setText( _value );
   edit->setFocus();
+  haveApp = false;
 }
 
 OpenWithDlg::~OpenWithDlg()
@@ -150,11 +152,48 @@ void OpenWithDlg::slotBrowse()
 
   m_pTree = new KApplicationTree( this );
   connect( m_pTree, SIGNAL( selected( const char*, const char* ) ), this, SLOT( slotSelected( const char*, const char* ) ) );
+
+  connect( m_pTree, SIGNAL( highlighted( const char*, const char* ) ), this, SLOT( slotHighlighted( const char*, const char* ) ) );
+
   m_pTree->setGeometry( 10, 70, 350, 200 );
   m_pTree->show();
   m_pTree->setFocus();
   
   resize( width(), height() + 210 );
+}
+
+void OpenWithDlg::resizeEvent(QResizeEvent *){
+
+  // someone will have to write proper geometry management 
+  // but for now this will have to do ....
+
+  if(m_pTree){
+
+    label->setGeometry( 10, 10, width() - 20, 15 );
+    edit->setGeometry( 10, 35, width() - 20, 25 );
+    ok->setGeometry( 10,height() - 30, (width()-20-30)/4,25 );
+    browse->setGeometry( 10 + (width()-20-30)/4 + 10
+			 ,height() - 30, (width()-20-30)/4, 25 );
+    clear->setGeometry(10 + 2*((width()-20-30)/4) + 2*10 
+		       ,height() - 30, (width()-20-30)/4, 25 );
+    cancel->setGeometry( 10 + 3*((width()-20-30)/4) + 3*10 ,
+			 height() - 30, (width()-20-30)/4, 25 );
+    m_pTree->setGeometry( 10, 70, width() - 20, height() - 110 );
+
+  }
+  else{
+
+    label->setGeometry( 10, 10, width() - 20, 15 );
+    edit->setGeometry( 10, 35, width() - 20, 25 );
+    ok->setGeometry( 10,height() - 30, (width()-20-30)/4,25);
+    browse->setGeometry( 10 + (width()-20-30)/4 + 10,
+			 height() - 30, (width()-20-30)/4, 25 );
+    clear->setGeometry( 10 + 2*((width()-20-30)/4) + 2*10,
+			height() - 30, (width()-20-30)/4, 25 );
+    cancel->setGeometry( 10 + 3*((width()-20-30)/4) + 3*10,
+			 height() - 30, (width()-20-30)/4, 25 );
+
+  }
 }
 
 void OpenWithDlg::slotSelected( const char* _name, const char* _exec )
@@ -165,6 +204,27 @@ void OpenWithDlg::slotSelected( const char* _name, const char* _exec )
   else
     edit->setText( "" );
 
+  accept();
+}
+
+void OpenWithDlg::slotHighlighted( const char* _name, const char* _exec )
+{
+  qName = _name;
+  qName.detach();
+  qExec = _exec;
+  qExec.detach();
+  haveApp = true;
+
+}
+
+
+void OpenWithDlg::slotOK(){
+
+  if(haveApp){
+    m_pBind = KMimeBind::findByName( qName.data() );
+  }
+
+  haveApp = false;
   accept();
 }
 

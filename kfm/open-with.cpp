@@ -52,7 +52,7 @@ KApplicationTree::KApplicationTree( QWidget *parent ) : QWidget( parent )
   
   tree->show();
   connect( tree, SIGNAL( expanded(int) ), SLOT( expanded(int) ) );
-  // connect( tree, SIGNAL( highlighted(int) ), SLOT( highlighted(int) ) );
+  connect( tree, SIGNAL( highlighted(int) ), SLOT( highlighted(int) ) );
   connect( tree, SIGNAL( selected(int) ), SLOT( selected(int) ) );
 }
 
@@ -188,15 +188,20 @@ void KApplicationTree::expanded(int index)
   }
 }
 
-/*
+
 void KApplicationTree::highlighted(int index)
 {
+
   KAppTreeListItem *item = (KAppTreeListItem *)tree->itemAt( index );
 
-  if( !item->directory && !(item->exec.isEmpty()) )
-     emit highlighted( (const char *) item->exec );
+  if( ( !item->directory ) && 
+      !( item->exec.isEmpty() ) && 
+      !( item->appname.isEmpty() ) )
+
+    emit highlighted( item->appname.data(), item->exec.data() ); 
+
 }
-*/
+
 
 void KApplicationTree::selected(int index)
 {

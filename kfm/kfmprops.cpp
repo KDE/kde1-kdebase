@@ -294,10 +294,10 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     }
     else if ( S_ISREG( buff.st_mode ) )
     {
-	char buffer[1024];
+        QString tempstr;
 	int size = buff.st_size;
-	sprintf( buffer, klocale->translate("Size: %i"), size );
-	l = new QLabel( buffer, this );
+	tempstr.sprintf(klocale->translate("Size: %i"), size );
+	l = new QLabel( tempstr.data(), this );
 	// BL: layout mngt
 	l->setFixedSize(l->sizeHint());
 	layout->addWidget(l, 0, AlignLeft);
@@ -489,12 +489,12 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     gb = new QGroupBox ( klocale->translate("Ownership"), this );
     box->addWidget (gb);
 
-    gl = new QGridLayout (gb, 2, 3, 15);
+    gl = new QGridLayout (gb, 4, 3, 15);
 
     /*** Set Owner ***/
     l = new QLabel( klocale->translate("Owner"), gb );
     l->setMinimumSize( l->sizeHint() );
-    gl->addWidget (l, 0, 0);
+    gl->addWidget (l, 1, 0);
     
     /* maybe this should be a combo-box, but this isn't handy
      * if there are 2000 Users (tiny scrollbar!)
@@ -502,7 +502,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
      */
     owner = new QLineEdit( gb );
     owner->setMinimumSize( owner->sizeHint().width(), fontHeight );
-    gl->addWidget (owner, 0, 1);
+    gl->addWidget (owner, 1, 1);
     owner->setText( strOwner );
     owner->setEnabled ( IamRoot ); // we can just change the user if we're root
 
@@ -549,7 +549,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     
     l = new QLabel( klocale->translate("Group"), gb );
     l->setMinimumSize( l->sizeHint() );
-    gl->addWidget (l, 1, 0);
+    gl->addWidget (l, 2, 0);
 
     if (groupList->count() > 1 && 
 	(IamRoot || IsMyFile)) { 
@@ -563,7 +563,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
       grp->insertStrList ( groupList );
       grp->setCurrentItem (groupList->find ( strGroup ));
       grp->setMinimumSize( grp->sizeHint().width(), fontHeight );
-      gl->addWidget (grp, 1, 1);
+      gl->addWidget (grp, 2, 1);
       grp->setEnabled (IamRoot || IsMyFile);
     }
     else {
@@ -572,7 +572,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
       e->setMinimumSize (e->sizeHint().width(), fontHeight);
       e->setText ( strGroup );
       e->setEnabled (false);
-      gl->addWidget (e, 1, 1);
+      gl->addWidget (e, 2, 1);
       grp = 0L;
     }
     

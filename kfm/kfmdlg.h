@@ -81,6 +81,12 @@ public slots:
   void slotClear();
   void slotBrowse();
   void slotSelected( const char* _name, const char* _exec );
+  void slotHighlighted( const char* _name, const char* _exec );
+  void slotOK();
+
+protected:
+
+  void resizeEvent(QResizeEvent *);   
   
 protected:
   /**
@@ -94,6 +100,11 @@ protected:
   KURLCompletion * completion;
 
   KApplicationTree* m_pTree;
+  QLabel *label;
+
+  QString qExec;
+  QString qName;
+  bool  haveApp;
   QPushButton *ok;
   QPushButton *clear;
   QPushButton *cancel;
