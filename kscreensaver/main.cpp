@@ -291,20 +291,20 @@ int main( int argc, char *argv[] )
 
 	if ( mode == MODE_INSTALL )
 	{
-	 if (!canGetPasswd) {
-
-	     QString tmp = glocale->translate("Your system uses shadow passwords!\n"
-			     "Please contact your system administrator.\n\n"
+	    if (!canGetPasswd) {
+		
+		QString tmp = glocale->translate("Your system uses shadow passwords!\n"
+						 "Please contact your system administrator.\n\n"
 			     "Tell him, that you need suid for the screensavers!");
-	     
-	     KMsgBox::message(NULL, 
-			      glocale->translate("Shadow Passwords"), 
-			      tmp);
-	 }
-	 pidFile = getenv( "HOME" );
-		pidFile += "/.kss.pid";
-		FILE *fp;
-		if ( (fp = fopen( pidFile, "r" ) ) != NULL )
+		
+		KMsgBox::message(NULL, 
+				 glocale->translate("Shadow Passwords"), 
+				 tmp);
+	    }
+	    pidFile = getenv( "HOME" );
+	    pidFile += "/.kss.pid";
+	    FILE *fp;
+	    if ( (fp = fopen( pidFile, "r" ) ) != NULL )
 		{
 			int pid;
 			fscanf( fp, "%d", &pid );
@@ -317,7 +317,7 @@ int main( int argc, char *argv[] )
 		}
 		if ( (fp = fopen( pidFile, "w" ) ) != NULL )
 		{
-			fprintf( fp, "%d\n", getpid() );
+			fprintf( fp, "%ld\n", getpid() );
 			fclose( fp );
 		}
 
@@ -440,13 +440,14 @@ static void lockNow( int )
 	signal(SIGUSR1, lockNow);
 }
 
-static void cleanup( int )
+static void cleanup( int id )
 {
-	if ( mode == MODE_INSTALL )
+    if ( mode == MODE_INSTALL )
 	{
-		remove( pidFile );
+	    remove( pidFile );
+	    if (id != SIGPIPE)
 		XSetScreenSaver( qt_xdisplay(), xs_timeout, xs_interval,
-				xs_prefer_blanking, xs_allow_exposures );
+				 xs_prefer_blanking, xs_allow_exposures );
 	}
     exit(1);
 }
