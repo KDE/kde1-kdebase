@@ -399,6 +399,7 @@ void kPanel::generateWindowlist(QPopupMenu* p){
       }
     }
   }
+  delete [] callbacklist;
 }
 
 
