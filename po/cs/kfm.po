@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
-"PO-Revision-Date: 1999-04-13 11:22+02:00\n"
+"PO-Revision-Date: 1999-07-03 14:09+02:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -103,7 +103,7 @@ msgstr "&Textový pohled"
 
 #: kfmgui.cpp:305
 msgid "&Long View"
-msgstr "&Podrobný podled"
+msgstr "&Podrobný pohled"
 
 #: kfmgui.cpp:307
 msgid "&Short View"
