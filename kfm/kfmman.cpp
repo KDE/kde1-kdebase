@@ -658,24 +658,19 @@ void KFMManager::setUpURL()
 {
     KURL u( url.data() );
     
-    if (!u.isLocalFile()) // if this is not a local file
-        view->setUpURL( "" );
-    else
+    if ( strcmp( u.path(), "/" ) != 0 )
     {
-        if ( strcmp( u.path(), "/" ) != 0 )
-        {
-            KURL u2( url.data() );
-            u2.cd("..");
+        KURL u2( url.data() );
+        u2.cd("..");
 	
-            QString s = u2.url();
-            if ( s.right( 1 ) != "/" )
-                s += "/";
+        QString s = u2.url();
+        if ( s.right( 1 ) != "/" )
+            s += "/";
 
-            view->setUpURL( s );	
-        }
-        else
-            view->setUpURL( "/" );
+        view->setUpURL( s );	
     }
+    else
+        view->setUpURL( "/" );
 }
 
 void KFMManager::writeBeginning()
