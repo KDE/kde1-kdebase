@@ -45,7 +45,7 @@ done
 AC_DEFUN(AC_PATH_QT_MOC,
 [
 AC_PATH_PROG(MOC, moc, /usr/bin/moc,
- $ac_qt_bindir:$QTDIR/bin:$PATH:/usr/bin:/usr/X11R6/bin:/usr/lib/qt/bin:/usr/local/qt/bin)
+ $ac_qt_bindir $QTDIR/bin $PATH /usr/bin /usr/X11R6/bin /usr/lib/qt/bin /usr/local/qt/bin)
 ])
 
 AC_DEFUN(KDE_REPLACE_ROOT,
@@ -364,6 +364,7 @@ AC_LANG_CPLUSPLUS
 cat > conftest.$ac_ext <<EOF
 #include "confdefs.h"
 #include <qmovie.h>
+#include <qapplication.h>
 int main() {
   QMovie m;
   m.setSpeed(20);
@@ -479,7 +480,7 @@ for dir in $qt_libdirs; do
   if test=`eval $try 2> /dev/null`; then qt_libdir=$dir; break; else echo "tried $dir" >&AC_FD_CC ; fi
 done
 
-dnl AC_FIND_FILE(libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1 libqt.a libqt.sl, $qt_libdirs, qt_libdir)
+dnl AC_FIND_FILE(libqt.so libqt.so.1.40 libqt.so.1.41 libqt.so.1 libqt.a libqt.sl, $qt_libdirs, qt_libdir)
 ac_qt_libraries="$qt_libdir"
 
 ac_cxxflags_safe="$CXXFLAGS"
@@ -517,7 +518,7 @@ if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
     ac_qt_notfound="(libraries)";
   fi
 
-  AC_MSG_ERROR([QT-1.3 $ac_qt_notfound not found. Please check your installation! ]);
+  AC_MSG_ERROR([QT-1.4 $ac_qt_notfound not found. Please check your installation! ]);
 else
   have_qt="yes"
 fi
@@ -1084,6 +1085,10 @@ dnl this was AC_PROG_CC. I had to include it manualy, since I had to patch it
 
   fi
 
+  case "$host" in 
+  *-*-sysv4.2uw*) CFLAGS="$CFLAGS -D_UNIXWARE";;
+  esac
+
   if test -z "$LDFLAGS" && test "$ac_use_debug_code" = "no" && test "$GCC" = "yes"; then
      LDFLAGS="-s"
   fi
@@ -1178,14 +1183,18 @@ EOF
        CXXFLAGS="$CXXFLAGS -Wall"
  
        if test "$ac_use_strict_options" = "yes"; then
-	CXXFLAGS="$CXXFLAGS -W -ansi -pedantic -Wtraditional  -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion  -Woverloaded-virtual -Wundef -Wbad-function-cast  -Wsynth"
+	CXXFLAGS="$CXXFLAGS -W -ansi -Wtraditional  -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Woverloaded-virtual -Wbad-function-cast  -Wsynth"
        fi
 
        if test "$kde_very_strict" = "yes"; then
-         CXXFLAGS="$CXXFLAGS -Wold-style-cast -Wshadow -Wredundant-decls"
+         CXXFLAGS="$CXXFLAGS -Wold-style-cast -Wshadow -Wredundant-decls -Wconversion"
        fi
     fi
   fi  
+
+    case "$host" in
+      *-*-sysv4.2uw*) CXXFLAGS="$CXXFLAGS -D_UNIXWARE";;
+    esac    
 
 ])
 
@@ -2052,7 +2061,7 @@ AC_DEFUN(KDE_CHECK_STL_SGI,
 #include <string>
 ],[
   string astring="Hallo Welt.";
-  astring.erase(, 6); // now astring is "Welt"
+  astring.erase(0, 6); // now astring is "Welt"
   return 0;
 ], kde_cv_stl_type_sgi=yes,
    kde_cv_stl_type_sgi=no)
