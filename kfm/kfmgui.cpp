@@ -321,8 +321,9 @@ void KfmGui::initMenu()
     file->insertSeparator();        
     file->insertItem( klocale->translate("&Close"), 
 		      this, SLOT(slotClose()), CTRL+Key_W );
-    file->insertItem( klocale->translate("&Quit..."),  
-		      this, SLOT(slotQuit()), CTRL+Key_Q );
+// This was meant for testing only. (hoelzer)
+//    file->insertItem( klocale->translate("&Quit..."),  
+//		      this, SLOT(slotQuit()), CTRL+Key_Q );
 
     QPopupMenu *edit = new QPopupMenu;
     CHECK_PTR( edit );
