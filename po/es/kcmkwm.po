@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-10-23 17:09+0200\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
+"PO-Revision-Date: 1998-11-24 20:23+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -15,7 +15,6 @@ msgid "&Titlebar"
 msgstr "Barra de &Títulos"
 
 #: main.cpp:73
-#, fuzzy
 msgid "Bo&rders"
 msgstr "&Bórdes"
 
@@ -25,14 +24,13 @@ msgstr "&Ratón"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Avanzado"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"modo de uso: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"
+"modo de uso: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -92,12 +90,11 @@ msgstr ""
 
 #: titlebar.cpp:924
 msgid "Title Alignment"
-msgstr ""
+msgstr "Alineación del título"
 
 #: titlebar.cpp:933
-#, fuzzy
 msgid "Middle"
-msgstr "Botón central"
+msgstr "Centrado"
 
 #: titlebar.cpp:954
 msgid "Shaded Vertically"
@@ -116,25 +113,20 @@ msgid "Pixmap"
 msgstr "Pixmap"
 
 #: titlebar.cpp:1017
-#, fuzzy
 msgid "Active pixmap:"
-msgstr "Pixmap &Activo"
+msgstr "Pixmap activo"
 
 #: titlebar.cpp:1022
-#, fuzzy
 msgid "Inactive pixmap:"
-msgstr "Pixmap &Inactivo"
+msgstr "Pixmap inactivo"
 
 #: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Acción del ratón"
 
 #: titlebar.cpp:1040
-#, fuzzy
 msgid "Left Button double click does:"
-msgstr ""
-"Click doble del botón izquierdo\n"
-"del raton en barra de título provoca:"
+msgstr "Click del botón izquierdo del raton provoca:"
 
 #: titlebar.cpp:1050
 msgid "(Un)Maximize"
@@ -153,7 +145,6 @@ msgid "(Un)Sticky"
 msgstr "(Des)Pegar"
 
 #: titlebar.cpp:1073
-#, fuzzy
 msgid "Title animation"
 msgstr "Animación del título"
 
@@ -162,106 +153,105 @@ msgid "ms"
 msgstr "ms"
 
 #: titlebar.cpp:1304
-#, fuzzy
 msgid "Window manager setup - ERROR"
-msgstr "Estilo del gestor de ventanas"
+msgstr "Configuración del gestor de ventanas - ERROR"
 
 #: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
+"Hubo un error al guardar los pixmaps del título.\n"
+"Compruebe los derechos por favor."
 
-#: windows.cpp:67
-#, fuzzy
+#: windows.cpp:66
 msgid "Windows"
-msgstr "&Ventanas"
+msgstr "Ventanas"
 
-#: windows.cpp:81
+#: windows.cpp:80
 msgid "Vertical maximization only by default"
-msgstr ""
+msgstr "Maximizado vertical sólo por defecto"
 
-#: windows.cpp:86
+#: windows.cpp:85
 msgid "Display content in moving windows"
-msgstr ""
+msgstr "Mostrar contenido en ventanas en movimiento"
 
-#: windows.cpp:91
+#: windows.cpp:90
 msgid "Display content in resizing windows"
-msgstr ""
+msgstr "Mostrar contenido en ventanas al redimensionar"
 
-#: windows.cpp:97
-#, fuzzy
+#: windows.cpp:96
 msgid "Resize animation:"
-msgstr "Animación del título"
+msgstr "Redimensionar animación:"
 
-#: windows.cpp:110
+#: windows.cpp:109
 msgid "None"
 msgstr "Ninguno"
 
-#: windows.cpp:116
+#: windows.cpp:115
 msgid "Fast"
 msgstr "Rápido"
 
-#: windows.cpp:127
+#: windows.cpp:126
 msgid "Placement policy"
 msgstr "Política de colocación"
 
-#: windows.cpp:133
+#: windows.cpp:132
 msgid "Smart"
 msgstr "Inteligente"
 
-#: windows.cpp:135
+#: windows.cpp:134
 msgid "Cascade"
 msgstr "Cascadeado"
 
-#: windows.cpp:137
+#: windows.cpp:136
 msgid "Interactive"
 msgstr "Interactivo"
 
-#: windows.cpp:139
+#: windows.cpp:138
 msgid "Random"
 msgstr "Al azar"
 
-#: windows.cpp:141
+#: windows.cpp:140
 msgid "Manual"
 msgstr "Manual"
 
-#: windows.cpp:152
+#: windows.cpp:151
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
+"  Permitir tapar:\n"
+"(% del espacio del escritorio)"
 
-#: windows.cpp:171
-#, fuzzy
+#: windows.cpp:170
 msgid "Focus policy"
 msgstr "Tipo de focalización"
 
-#: windows.cpp:181
+#: windows.cpp:180
 msgid "Click to focus"
 msgstr "Click para focalizar"
 
-#: windows.cpp:183
+#: windows.cpp:182
 msgid "Focus follows mouse"
 msgstr "El foco sigue el ratón"
 
-#: windows.cpp:185
+#: windows.cpp:184
 msgid "Classic focus follows mouse"
 msgstr "El foco sigue el ratón clásico"
 
-#: windows.cpp:187
+#: windows.cpp:186
 msgid "Classic sloppy focus"
 msgstr "Foco descuidado clásico"
 
-#: windows.cpp:198
-#, fuzzy
+#: windows.cpp:197
 msgid "Auto Raise"
-msgstr "Hacia el frente"
+msgstr "Pasar al frente automático"
 
-#: windows.cpp:205
+#: windows.cpp:204
 msgid "Delay (ms)"
-msgstr ""
+msgstr "Retardo (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
@@ -398,115 +388,68 @@ msgstr "Redimensionar"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Teclado y ratón"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab cambia de escritorio"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab esta limitado al escritorio actual"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Modo Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "Alt + botón derecho"
+msgstr "Cachar el botón derecho del ratón"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filtros"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "&Ventanas"
+msgstr "Las ventanas..."
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "tendrán decoraciones pequeñas"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "no tendrán decoraciones"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "nunca obtendrán el foco"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "iniciarán pegadas"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "serán excluidas del control de la sesión"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "si coinciden con:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "Barra de &Títulos"
+msgstr "Títulos"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
-
-#~ msgid "Titlebar appearance"
-#~ msgstr "Aspecto barra de título"
-
-#~ msgid "Operations Menu"
-#~ msgstr "Menú de operaciones"
-
-#~ msgid "Window movement"
-#~ msgstr "Movimiento de ventanas"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparente"
-
-#~ msgid "Opaque"
-#~ msgstr "Opaco"
-
-#~ msgid "Window resize"
-#~ msgstr "Redimensión de ventanas"
-
-#~ msgid "Animation:"
-#~ msgstr "Movimiento:"
-
-#~ msgid "Allowed Overlap:"
-#~ msgstr "Cubrimiento permitido"
-
-#~ msgid "Maximize Style"
-#~ msgstr "Tipo de maximizado"
-
-#~ msgid "Maximize fully"
-#~ msgstr "Maximizado completo"
-
-#~ msgid "Maximize vertically"
-#~ msgstr "Maximizado vertical"
-
-#~ msgid ""
-#~ "Auto raise delay\n"
-#~ "(<100 disables)"
-#~ msgstr ""
-#~ "Espera para pasar\n"
-#~ "a primer plano\n"
-#~ "(<100 lo deshabilita)"
-
-#~ msgid "miliseconds"
-#~ msgstr "milisegundos"
+msgstr "Clases"

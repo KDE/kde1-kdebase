@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-11-16 01:20+0100\n"
-"PO-Revision-Date: 1998-10-23 17:33+0200\n"
+"PO-Revision-Date: 1998-11-24 20:54+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 
@@ -16,6 +16,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"Archivo de códigos X \"%s\" no existe.\n"
+"Usando códigos de X por defecto."
 
 #: kikbd.cpp:313
 #, c-format
@@ -23,6 +25,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
+"Mapa de teclado \"%s\" no existe.\n"
+"Ignorando este mapa."
 
 #: kikbd.cpp:330
 msgid "Setup"
@@ -67,27 +71,25 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Imposible encontrar símbolo \"%s\".\n"
+"Tal vez sus códigos de X por defcto no coinciden.\n"
+"Puede definir códigos X en la sección \"Avanzado\"\n"
+"del programa de configuración."
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"KeyMap: no de puede encontrar el símbolo \"%s\".\n"
-"Quiere continuar?"
+msgstr "KeyMap: no se pudo encontrar el símbolo \"%s\"."
 
 #: keymap.cpp:241
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: do not understand key code \"%s\"."
-msgstr ""
-"KeyMap: no se puede entender el código \"%s\".\n"
-"Quiere continuar?"
+msgstr "KeyMap: no se pudo entender el código \"%s\"."
 
 #: keymap.cpp:247
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: key code \"%s\" go out of range."
-msgstr ""
-"KeyMap: código \"%s\" fuera de rango.\n"
-"Quiere continuar?"
+msgstr "KeyMap: código \"%s\" fuera de rango."
 
 # ######################################################
 #: kikbdconf.cpp:95
@@ -167,9 +169,8 @@ msgid "Bottom Right"
 msgstr "Abajo derecha"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "por defecto"
+msgstr "códigos que usa X por defecto"
 
 #: kikbdconf.cpp:204
 #, c-format
@@ -274,16 +275,15 @@ msgstr "Pregunta del teclado internacional"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Configurar"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"%s\n"
-"Quiere iniciar la configuración?"
+"\n"
+"Quiere continuar?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -326,9 +326,8 @@ msgid "Display information for selected keyboard map"
 msgstr "Mostrar información del mapa seleccionado"
 
 #: widgets.cpp:145
-#, fuzzy
 msgid "Use &hot list"
-msgstr "Usar \"&hotlist\""
+msgstr "Usar &hotlist"
 
 #: widgets.cpp:146
 msgid ""
@@ -364,7 +363,6 @@ msgid "Switch and Alt Switch"
 msgstr "Cambiar y Alt Cambiar"
 
 #: widgets.cpp:410
-#, fuzzy
 msgid "Key(s) to switch between keyboard maps"
 msgstr "Tecla(s) para cambiar entre mapas de teclado"
 
@@ -393,14 +391,12 @@ msgid "Advanced"
 msgstr "Avanzadas"
 
 #: widgets.cpp:466
-#, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Emular BloqMayús"
 
 #: widgets.cpp:467
-#, fuzzy
 msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
-msgstr "Emular BloqMayús del Servidos X. Necesario para ciertos idiomas"
+msgstr "Emular BloqMayús del Servidor X. Necesario para ciertos idiomas"
 
 #: widgets.cpp:473
 msgid "&World Menu"
@@ -420,7 +416,7 @@ msgstr "Guardar relaciones entre ventanas y mapas de teclado al salir"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definir códigos X"
 
 #: widgets.cpp:491
 msgid "Input"
@@ -447,17 +443,14 @@ msgid "Foreground"
 msgstr "Primer plano"
 
 #: widgets.cpp:562
-#, fuzzy
 msgid "Color of the text label"
-msgstr "Color del Texto"
+msgstr "Color del texto"
 
 #: widgets.cpp:566
-#, fuzzy
 msgid "With Caps Lock"
 msgstr "Con BloqMayús"
 
 #: widgets.cpp:567
-#, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Fondo cuando BloqMayús emulado esta activado"
 
@@ -490,7 +483,6 @@ msgid "&Autostart"
 msgstr "&Autoinicio"
 
 #: widgets.cpp:642
-#, fuzzy
 msgid "Start up automatically"
 msgstr "Iniciar automáticamente"
 
