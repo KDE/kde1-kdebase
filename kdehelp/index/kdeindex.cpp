@@ -191,7 +191,7 @@ int main( int argc, char **argv )
 	processDir( appPath, stream );
 
 	// User applications
-	appPath = home + "/.kde/share/applnk";
+	appPath = KApplication::localkdedir() + "/share/applnk";
 
 	// first read entries in this directories
 	if ( readEntries( appPath, list ) > 0 )

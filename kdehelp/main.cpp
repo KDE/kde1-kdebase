@@ -20,6 +20,7 @@
 #include "khelp.h"
 #include "mainwidget.h"
 
+#include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
 #ifdef __FreeBSD__
@@ -102,6 +103,18 @@ void errorHandler( int type, char *msg )
 	}
 }
 
+QString displayName()
+{
+    QString d( getenv( "DISPLAY" ) );
+    int i = d.find( ':' );
+    if ( i != -1 )
+	d[i] = '_';
+    if ( d.find( '.' ) == -1 )
+	d += ".0";
+
+    return d;
+}
+
 //-----------------------------------------------------------------------------
 
 int main(int argc, char *argv[])
@@ -149,8 +162,8 @@ int main(int argc, char *argv[])
 	}
 
 	// create data directory if necessary
-	QString p = getenv( "HOME" );
-	QString rcDir = p + "/.kde/share/apps";
+	QString p = KApplication::localkdedir();
+	QString rcDir = p + "/share/apps";
 	if ( access( rcDir, F_OK ) )
 		mkdir( rcDir, 0740 );
 
@@ -158,7 +171,7 @@ int main(int argc, char *argv[])
 	if ( access( rcDir, F_OK ) )
 		mkdir( rcDir, 0740 );
 
-	pidFile = rcDir + "/kdehelp.pid";
+	pidFile.sprintf("%s/kdehelp%s.pid", rcDir.data(), displayName().data());
 
 	// if there is a pidFile then this is not the first instance of kdehelp
 	if ( ( fp = fopen( pidFile, "r" ) ) != NULL )

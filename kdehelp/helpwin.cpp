@@ -87,8 +87,7 @@ KHistory *KHelpView::urlHistory = 0;
 KHelpView::KHelpView( QWidget *parent, const char *name )
     : KHTMLWidget( parent, name )
 {
-    QString histFile = getenv( "HOME" );
-    histFile += "/.kde/share/apps/kdehelp/history";
+    QString histFile = KApplication::localkdedir() + "/share/apps/kdehelp/history";
 
     if ( !urlHistory )
 	urlHistory = new KHistory( histFile );
@@ -202,11 +201,11 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 			SLOT( slotDocumentDone() ) );
 
 	// load bookmarks
-	QString p = getenv( "HOME" );
-	QString bmFile = p + "/.kde/share/apps/kdehelp/bookmarks.html";
+	QString p = KApplication::localkdedir();
+	QString bmFile = p + "/share/apps/kdehelp/bookmarks.html";
 	bookmarkManager.read( bmFile );
 
-	QString histFile = p + "/.kde/share/apps/kdehelp/history";
+	QString histFile = p + "/share/apps/kdehelp/history";
 
 	layout();
 }
@@ -1017,8 +1016,7 @@ const char *KHelpWindow::getCurrentURL()
 
 void KHelpWindow::addBookmark( const char *_title, const char *url )
 {
-	QString p = getenv( "HOME" );
-	QString bmFile = p + "/.kde/share/apps/kdehelp/bookmarks.html";
+	QString bmFile = KApplication::localkdedir() + "/share/apps/kdehelp/bookmarks.html";
 	bookmarkManager.add( _title, url );
 	bookmarkManager.write( bmFile );
 }
