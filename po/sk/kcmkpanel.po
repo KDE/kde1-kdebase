@@ -175,7 +175,7 @@ msgstr "História"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Editova» polo¾ky: (pustite prieèinok a vytvorte odkaz)"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
@@ -187,41 +187,40 @@ msgstr "Editova» &globálne..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Max. nedávnych prieèinkov:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Max. poèet nedávnych polo¾iek:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Max. poèet súborov v prieèinku:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Ukazova» .* súbory"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignorova» veµkos» písmen pri triedení"
 
 #: disknav.cpp:173
 msgid "Show Global section"
-msgstr ""
+msgstr "Ukazova» sekciu Globálne"
 
 #: disknav.cpp:180
-#, fuzzy
 msgid "Show Local section"
-msgstr "Umiestnenie"
+msgstr "Ukazova» sekciu Lokálne"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Ukazova» sekciu Nedávne"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Ukazova» polo¾ku Nastavenie"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
+msgstr "Terminálová aplikácia:"
