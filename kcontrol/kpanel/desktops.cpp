@@ -30,10 +30,10 @@ extern KConfigBase *config;
 KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name ) 
     : KConfigWidget(parent, name)
 {
-    layout = new QVBoxLayout(this, 8);
+    layout = new QVBoxLayout(this, 5);
     layout->addStretch(2);
     fields_layout = new QGridLayout(4, 4);
-    layout->addLayout(fields_layout, 6);
+    layout->addLayout(fields_layout);
     
     layout->addStretch(2);
 
@@ -50,6 +50,7 @@ KDesktopsConfig::KDesktopsConfig( QWidget *parent, const char* name )
 	fields[i]->setText(KWM::getDesktopName(i+1));
 	fields[i]->setEnabled(i<number_of_desktops);
 	fields[i]->setMaximumSize(300, fields[i]->sizeHint().height());
+	fields[i]->setMinimumSize(60, fields[i]->sizeHint().height());
 	tmp.setNum(i+1);
 	labels[i] = new QLabel(this);
 	labels[i]->setText(tmp.data());

@@ -55,12 +55,13 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     
     slider_label = new QLabel(i18n("ms"), tooltips_group);
     slider->adjustSize();
+    slider_value->adjustSize();
     tips->adjustSize();
     tooltips_group->adjustSize();
-    tooltips_group->setMinimumSize(100, slider->sizeHint().height() + 
+    tooltips_group->setMinimumSize(100, slider->sizeHint().height() * 2+ 
 				   tips->sizeHint().height() + 
 				   slider_value->sizeHint().height() +
-				   30);
+				   38);
 
     layout->addWidget(tooltips_group, 3);
     
@@ -71,11 +72,12 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
 				others_group);
     hide_taskbar = new QCheckBox( i18n("Auto Hide &Taskbar"), 
 				  others_group);
-    layout->addWidget(others_group, 3);
     personal_first->adjustSize();
+    layout->addWidget(others_group, 2);
+    
     others_group->setMinimumSize(100, 
-				 personal_first->sizeHint().height() * 3);
-   
+				 personal_first->sizeHint().height() * 3 + 30);
+    
     clock_group = new QButtonGroup(i18n("Clock"), this);
     clock_group->setExclusive(true);
     clock[0] = new QRadioButton(i18n("&24h"), 
@@ -83,7 +85,7 @@ KOptionsConfig::KOptionsConfig( QWidget *parent, const char* name )
     clock[1] = new QRadioButton(i18n("&12h AM/PM"), 
 				clock_group);
     clock[0]->adjustSize();
-    clock_group->setMinimumSize(100, clock[0]->sizeHint().height() * 2 + 10);
+    clock_group->setMinimumSize(100, clock[0]->sizeHint().height() * 2 + 30);
     
     layout->addWidget(clock_group, 2);
 
@@ -105,9 +107,9 @@ void KOptionsConfig::resizeEvent(QResizeEvent *e) {
 
     QRect rect = others_group->contentsRect();
     int h = personal_first->height();
-    int o = (rect.height() - 5 - 3*h) / 6;
+    int o = (rect.height() - 10 - 3*h) / 6;
 
-    rect.setTop(rect.top() + 5);
+    rect.setTop(rect.top() + 10);
 
     personal_first->move(10,rect.top() + o);
     hide_panel->adjustSize();
@@ -124,6 +126,7 @@ void KOptionsConfig::resizeEvent(QResizeEvent *e) {
     
     slider->setGeometry(o + 10, 2 * h + 10 + tips->height(), 
 			rect.width() - 20 - o, h);
+
     int r = (rect.width() - o - slider_value->width() - 
 	     slider_label->width() -20) / 2;
     slider_value->setGeometry(r + o + 10, h + 10 + tips->height() ,

@@ -45,6 +45,9 @@ private:
     KOptionsConfig *options;
 };
 
+void sd(const QSize& r) {
+    debug("size %d %d",r.width(), r.height());
+}
 
 KKPanelApplication::KKPanelApplication(int &argc, char **argv, 
 				       const char *name)
@@ -64,8 +67,32 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 		addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
 			i18n("&Desktops"), "desktops.html");
 	    
-	    if (panel || desktops || options)
+	    if (panel || desktops || options) {
+		QSize t;
+		int w = 0, h = 0;
+		
+		if (panel) {
+		    t = panel->minimumSize();
+		    w = t.width();
+		    h = t.height();
+		}
+		if (desktops) {
+		    t = desktops->minimumSize();
+		    if (w < t.width())
+			w = t.width();
+		    if (h < t.height())
+			h = t.height();
+		}
+		if (options) {
+		    t = options->minimumSize();
+		    if (w < t.width())
+			w = t.width();
+		    if (h < t.height())
+			h = t.height();
+		}
+		dialog->resize(w,h);
 		dialog->show();
+	    }
 	    else {
 		fprintf(stderr, i18n("usage: kcmkpanel [-init | {panel,options,desktops}]\n"));
 		justInit = true;

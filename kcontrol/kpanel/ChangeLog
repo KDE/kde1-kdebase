@@ -1,5 +1,7 @@
 Wed Feb 11 22:00:22 1998  Stephan Kulow  <coolo@kde.org>
 
+	* options.cpp: some fixes
+
 	* options.cpp: several improvments in the layout
 
 Sun Feb  8 22:56:17 1998  Stephan Kulow  <coolo@kde.org>

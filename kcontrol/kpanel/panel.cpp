@@ -54,14 +54,18 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     : KConfigWidget (parent, name), location(LTop), taskbar(TTop)
 {
     layout = new QVBoxLayout(this, 10);
-    
+    int i, w = 0;
+
     loc_group = new QButtonGroup(klocale->translate("Location"), this);
     loc_buttons[0] = new QRadioButton( klocale->translate("Top"), loc_group );
     loc_buttons[1] = new QRadioButton( klocale->translate("Left"), loc_group );
     loc_buttons[2] = new QRadioButton( klocale->translate("Bottom"), loc_group);    
-    loc_buttons[0]->adjustSize();
-    loc_group->setMinimumSize(50, loc_buttons[0]->sizeHint().height() * 3);
-    loc_group->setMaximumSize(1000, loc_buttons[0]->sizeHint().height() * 5);
+ 
+    for (i = 0; i < 3; i++) {
+	loc_buttons[i]->adjustSize();
+	if (w < loc_buttons[i]->width())
+	    w = loc_buttons[i]->width();
+    }
 
     loc_buttons[location]->setChecked(true);
     connect(loc_group, SIGNAL(clicked(int)), SLOT(location_clicked(int)));
@@ -77,9 +81,12 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
     task_buttons[3] = new QRadioButton( klocale->translate("Top/Left"), 
 					task_group);
     task_buttons[taskbar]->setChecked(true);
-    task_buttons[0]->adjustSize();
-    task_group->setMinimumSize(50, task_buttons[0]->sizeHint().height() * 3);
-    task_group->setMaximumSize(1000, task_buttons[0]->sizeHint().height() * 5);
+    for (i = 0; i < 4; i++) {
+	task_buttons[i]->adjustSize();
+	if (w < task_buttons[i]->width())
+	    w = task_buttons[i]->width();
+    }
+
     connect(task_group, SIGNAL(clicked(int)), SLOT(taskbar_clicked(int)));
     layout->addWidget(task_group, 1);
 
@@ -92,12 +99,23 @@ KPanelConfig::KPanelConfig( QWidget *parent, const char* name )
 					 style_group );
     style_buttons[2] = new QRadioButton( klocale->translate("Large"), 
 					 style_group);
-
-    style_buttons[0]->adjustSize();
-    style_group->setMinimumSize(50, style_buttons[0]->sizeHint().height() * 3);
-    style_group->setMaximumSize(1000, style_buttons[0]->sizeHint().height() * 5);
-
+    
+    for (i = 0; i < 4; i++) {
+	style_buttons[i]->adjustSize();
+	if (w < style_buttons[i]->width())
+	    w = style_buttons[i]->width();
+    }
+    
     layout->addWidget(style_group, 1);
+
+    w = 4*w + 10;
+
+    loc_group->setMinimumSize(w, loc_buttons[0]->sizeHint().height() * 3);
+    loc_group->setMaximumSize(1000, loc_buttons[0]->sizeHint().height() * 5);
+    task_group->setMinimumSize(w, task_buttons[0]->sizeHint().height() * 3);
+    task_group->setMaximumSize(1000, task_buttons[0]->sizeHint().height() * 5);
+    style_group->setMinimumSize(w, style_buttons[0]->sizeHint().height() * 3);
+    style_group->setMaximumSize(1000, style_buttons[0]->sizeHint().height() * 5);
 
     layout->addStretch(2);
     layout->activate();
