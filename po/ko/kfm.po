@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-26 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -253,7 +253,7 @@ msgstr "Icon을 불러 올 수 없음\n"
 #: kbind.cpp:1731 kbind.cpp:1743 kbind.cpp:1759 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1948 kbind.cpp:1990 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:719 kfmman.cpp:341
-#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
+#: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
@@ -270,7 +270,7 @@ msgstr "Icon을 불러 올 수 없음\n"
 msgid "KFM Error"
 msgstr ""
 
-#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1057
 msgid "Malformed URL\n"
 msgstr "형식에 맞지 않는 URL\n"
 
@@ -360,7 +360,7 @@ msgstr "오류: 대상 URL과 원본 URL이 같습니다"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "오류: 하나 이상의 하부 디렉토리 아래에 떨어뜨릴 수 없습니다"
 
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:497
+#: kfmexec.cpp:265 kfmman.cpp:911 kfmview.cpp:497
 msgid "Open With:"
 msgstr "열기:"
 
@@ -555,11 +555,11 @@ msgstr "휴지통에 버리기"
 msgid "Open with"
 msgstr "열기"
 
-#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:232
+#: kfmman.cpp:1288 kfmtree.cpp:156 main.cpp:232
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:234
+#: kfmman.cpp:1292 kfmtree.cpp:160 main.cpp:234
 msgid "Link"
 msgstr "연결"
 
@@ -1001,11 +1001,11 @@ msgstr "오류: '%s' 데스크탑 디렉토리를 읽을 수 없습니다"
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1267 root.cpp:1775
+#: kfmman.cpp:1271 root.cpp:1775
 msgid "Dont know what to do."
 msgstr "무엇을 해야할 지 모르겠음"
 
-#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1800
+#: kfmman.cpp:1297 kfmtree.cpp:165 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "무엇을 해야할 지 모르겠음"
 

@@ -36,7 +36,8 @@ msgstr "&Napredne"
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr ""
-"uporaba: kcmkwm [-init | {prozori,gumbi,naslovna traka,rubovi,mi¹,napredno}]\n"
+"uporaba: kcmkwm [-init | {prozori,gumbi,naslovna "
+"traka,rubovi,mi¹,napredno}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"

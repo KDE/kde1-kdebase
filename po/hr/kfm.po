@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-26 01:13+0100\n"
 "PO-Revision-Date: 1998-11-23 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -247,7 +247,7 @@ msgstr "Nisam mogao naæi ikonu\n"
 #: kbind.cpp:1731 kbind.cpp:1743 kbind.cpp:1759 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1948 kbind.cpp:1990 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:719 kfmman.cpp:341
-#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
+#: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
@@ -264,7 +264,7 @@ msgstr "Nisam mogao naæi ikonu\n"
 msgid "KFM Error"
 msgstr "KFM Gre¹ka"
 
-#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1057
 msgid "Malformed URL\n"
 msgstr "Neispravan URL\n"
 
@@ -353,7 +353,7 @@ msgstr "GRE©KA: Ispustili ste URL na njega samog"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "GRE©KA: Ispustili ste direktorij na jedan od njegovih podirektorija"
 
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:497
+#: kfmexec.cpp:265 kfmman.cpp:911 kfmview.cpp:497
 msgid "Open With:"
 msgstr "Otvori s:"
 
@@ -548,11 +548,11 @@ msgstr "Baci u smeæe"
 msgid "Open with"
 msgstr "Otvori s"
 
-#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:232
+#: kfmman.cpp:1288 kfmtree.cpp:156 main.cpp:232
 msgid "Move"
 msgstr "Premjesti"
 
-#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:234
+#: kfmman.cpp:1292 kfmtree.cpp:160 main.cpp:234
 msgid "Link"
 msgstr "Veza"
 
@@ -987,11 +987,11 @@ msgstr "GRE©KA: Ne mogu èitati direktorij radnog stola '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "GRE©KA: Ne mogu prihvatiti ispu¹tanje"
 
-#: kfmman.cpp:1267 root.cpp:1775
+#: kfmman.cpp:1271 root.cpp:1775
 msgid "Dont know what to do."
 msgstr "Ne znam ¹to da radim."
 
-#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1800
+#: kfmman.cpp:1297 kfmtree.cpp:165 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "Ne znam ¹to da radim"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1998-11-22 01:13+0100\n"
+"POT-Creation-Date: 1998-11-26 01:13+0100\n"
 "PO-Revision-Date: 1998-06-10 00:10+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -251,7 +251,7 @@ msgstr "No s'ha pogut carregar l'icona\n"
 #: kbind.cpp:1731 kbind.cpp:1743 kbind.cpp:1759 kbind.cpp:1891 kbind.cpp:1903
 #: kbind.cpp:1948 kbind.cpp:1990 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:719 kfmman.cpp:341
-#: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
+#: kfmman.cpp:1058 kfmman.cpp:1270 kfmman.cpp:1296 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1473 kfmprops.cpp:1705 kfmprops.cpp:1890
 #: kfmserver.cpp:40 kfmserver.cpp:167 kfmserver.cpp:247 kfmserver.cpp:294
@@ -268,7 +268,7 @@ msgstr "No s'ha pogut carregar l'icona\n"
 msgid "KFM Error"
 msgstr "Error KFM"
 
-#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1053
+#: kfmexec.cpp:59 kfmgui.cpp:718 kfmman.cpp:1057
 msgid "Malformed URL\n"
 msgstr "URL erroni\n"
 
@@ -358,7 +358,7 @@ msgstr "ERROR: Heu amollat un URL sobre ell mateix"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERROR: Heu amollat un directori sobre un dels seus fills"
 
-#: kfmexec.cpp:265 kfmman.cpp:907 kfmview.cpp:497
+#: kfmexec.cpp:265 kfmman.cpp:911 kfmview.cpp:497
 msgid "Open With:"
 msgstr "Obrir amb:"
 
@@ -553,11 +553,11 @@ msgstr "A la Paperera"
 msgid "Open with"
 msgstr "Obrir amb"
 
-#: kfmman.cpp:1284 kfmtree.cpp:156 main.cpp:232
+#: kfmman.cpp:1288 kfmtree.cpp:156 main.cpp:232
 msgid "Move"
 msgstr "Moure"
 
-#: kfmman.cpp:1288 kfmtree.cpp:160 main.cpp:234
+#: kfmman.cpp:1292 kfmtree.cpp:160 main.cpp:234
 msgid "Link"
 msgstr "Enllaç"
 
@@ -999,11 +999,11 @@ msgstr "ERROR: No s'ha pogut llegir el directori '%s' de l'escriptori"
 msgid "ERROR: Can not accept drop"
 msgstr "ERROR: No puc acceptar amollar"
 
-#: kfmman.cpp:1267 root.cpp:1775
+#: kfmman.cpp:1271 root.cpp:1775
 msgid "Dont know what to do."
 msgstr "No se que fer."
 
-#: kfmman.cpp:1293 kfmtree.cpp:165 root.cpp:1800
+#: kfmman.cpp:1297 kfmtree.cpp:165 root.cpp:1800
 msgid "Dont know what to do"
 msgstr "No se que fer"
 
