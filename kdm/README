@@ -1,0 +1,124 @@
+This is version v0.5 of the KDE Display Manager (kdm). 
+
+Kdm is intended as a "drop-in" replacement of xdm. It reads the xdm
+specific files (usually in /usr/X11R6/lib/X11/xdm), so it should not be
+necessary to change them. The KDE configuration is in the file
+$(KDEDIR)/config/kdmrc. Please look at the HTML and the example kdmrc.
+
+CHANGES/NEW FEATURES:
+
+* Autoconf
+* Bugfixes
+* -kdedir option
+
+HOW TO COMPILE KDM:
+
+  setenv QTDIR /where/you/have/qt
+  setenv KDEDIR /usr/local/kde
+  [check options with "./configure --help"]
+  ./configure --with-some-options
+  make
+  make install
+  [read html docs]
+  [Then be sure to run kdmdesktop from the xdm setup script -- on most
+  systems called /usr/X11/lib/X11/xdm/Xsetup_0 or similar]
+
+configure will look for your xdm configuration files and use them. If
+the files aren't found, you can give the explicit path with the
+--with-xdmdir option. If this is still not good, new xdm config files
+are installed. Theese require handediting before use. You might want to
+look at the files in the "samples" directory. They show how to make
+Xsession scripts for different window managers and setups.
+  
+TODO:
+
+See the file TODO
+
+Version 0.1 of kdm is copyright Matthias Ettrich
+	(ettrich@informatik.uni-tuebingen.de)
+All later versions:
+License/Copyright: (C) 1997 Steffen Hansen.
+
+Thanks to:
+Michael Bach for drawing icons. The icons are copyleft M. Bach
+Stephan Kulow for helping me with the autoconf stuff.
+Martin Baehr for intensive testing and writing the sample Xsession scripts.
+
+Kdm is free software. I'm not sure exactly how it's license is, because it
+has a lot of code from xdm in it. Anyway, i have to state:
+
+[Your package] requires the Qt library, which is copyright Troll Tech AS. 
+Freely distributable programs may generally use Qt for free, 
+see the file README.QT for details. Anyone is allowed to change kdm and 
+redistribute the result as long as my name is mentioned.
+
+And by the way: Kdm is provided as is with no warranty of any kind, 
+including the warranty of design, merchantability and fitness for a particular
+purpose.
+
+Have fun with it (and feel free to comment),
+
+	Steffen (stefh@dit.ou.dk)
+
+------------------------------------------------------------------------
+The original README from Matthias (i removed a few lines /stefh):
+
+Hello,
+
+this is the very first alpha-release of kdm-0.1, the
+KDE-replacement for the X Display Manager "xdm".
+
+In fact it's just a new greeter for the xdm, which was programmed
+in a way that a replacement of the greeter modul is possible.
+
+It should also be possible to replace the greeter with a dynamic library,
+but for some reason I wasn't able to do that on my Linux machine.
+But since the standard xdm on Linux doesn't use this dynamic library
+anyway and recompilation of xdm doesn't take a minute at all, I don't
+see a problem with that.
+
+
+CHANGES TO THE ORIGINAL XDM
+
+- added this README.kdm
+- renamed Imakefile to Imakefile.original
+- added a new Imakefile and a subdirectory "kgreeter"
+- renamed all occurencies of "->class" to "->class2" since
+  "class" is a keyword in C++
+
+
+DIFFERENCES TO XDM
+
+- a nice window with qt-widgets to enter your login and password
+
+REQUIREMENTS
+  
+  - qt-1.2, libkde >= 0.8, libgif and libjpeg from kdesupport
+    You should also define $QTDIR and $KDEDIR
+
+  - the background needs the "utopia" type-1 font.
+    IMO everybody should have these free type-1 fonts. Using
+    programms like "LyX" or the "KDE Help System" is much more
+    comfortable with them, since suddenly even larger fonts
+    remain readable :-)
+
+    Anyway kdm works without "utopia", too, but the background doesn't
+    look too pretty since the font will be a bit pixelized.
+
+
+KNOWN BUGS 
+
+in kdm-0.[1-5]: 
+  - the "BackSpace"-key had the wrong meaning on my XServer.
+    So I hardcoded a   
+           KeySym mysym = XK_BackSpace;
+           XChangeKeyboardMapping(*dpy, 22, 1, &mysym, 1);
+    Is this ok? Is there a better solution?
+
+Best regards and I hope you enjoy the hopefully nice-looking 
+brand new graphically login to your workstation,
+
+   Matthias
+   (ettrich@informatik.uni-tuebingen.de)
+
+Fri Jul 11 14:27:02 1997 -- Steffen Hansen

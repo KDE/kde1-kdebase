@@ -1,0 +1,20 @@
+
+KDEDIR=@prefix@
+mkinstalldirs = $(SHELL) @top_srcdir@/mkinstalldirs
+INSTALL		= @INSTALL@ -m 0755 -s
+INSTALL_SHELL	= @INSTALL@ -m 0755
+INSTALL_DATA	= @INSTALL@ -m 0644
+CONFIGDIR	= @prefix@/config
+CPP		= @CPP@ -traditional
+
+default: kdmrc
+
+kdmrc:
+	$(CPP) -DKDEDIR=$(KDEDIR) kdmrc.cpp > kdmrc
+
+clean:
+	$(RM) kdmrc core *~
+
+install: kdmrc
+	$(mkinstalldirs) $(CONFIGDIR)
+	$(INSTALL_DATA) kdmrc $(CONFIGDIR)
