@@ -12,7 +12,13 @@ influences from my experiences with the former kwm.
 
 In 0.13:
 --------
-        - nothing so far, equals 0.12 pl 4 :-)
+patchlevel 1:
+        - simplified outline drawing since the previous nifty stippled
+           rectangle relied on some graphic hardware support (which
+           was not available with all cards). Result: kwm's outline
+           drawing (transparent movement of windows) should speed up
+           with these cards a lot.
+
 
 In 0.12:
 --------

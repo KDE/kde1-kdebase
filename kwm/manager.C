@@ -38,7 +38,6 @@ KGreyerWidget *greyer_widget = 0;
 Window root;
 GC rootgc;
 GC rootfillgc;
-GC rootfillsolidgc;
 static char stipple_bits[] = {
   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
@@ -141,15 +140,11 @@ Manager::Manager(): QObject(){
   rootgc = gc;
 
   rootfillgc = XCreateGC(qt_xdisplay(), qt_xrootwin(), mask, &gv);
-  gv.function = GXcopy;
-  gv.foreground = BlackPixel(qt_xdisplay(), qt_xscreen());
-  rootfillsolidgc = XCreateGC(qt_xdisplay(), qt_xrootwin(), mask, &gv);
-
-  Pixmap stipple = XCreateBitmapFromData(qt_xdisplay(), qt_xrootwin(), stipple_bits, 16, 16);
-  XSetStipple(qt_xdisplay(), rootfillgc, stipple);
-  XSetFillStyle(qt_xdisplay(), rootfillgc, FillStippled);
-  XSetStipple(qt_xdisplay(), rootfillsolidgc, stipple);
-  XSetFillStyle(qt_xdisplay(), rootfillsolidgc, FillStippled);
+  // the following looks nicer (IMO), but needs some hardware graphics support:
+  
+  // Pixmap stipple = XCreateBitmapFromData(qt_xdisplay(), qt_xrootwin(), stipple_bits, 16, 16);
+  //  XSetStipple(qt_xdisplay(), rootfillgc, stipple);
+  //   XSetFillStyle(qt_xdisplay(), rootfillgc, FillStippled);
 
   shape = XShapeQueryExtension(qt_xdisplay(), &shape_event, &dummy);
 
