@@ -617,8 +617,7 @@ void KBackground::setMonitor()
 	QApplication::desktop()->height();
     QWMatrix matrix;
     matrix.scale( sx, sy );
-
-    
+	
     if ( wpPixmap.isNull() || wpMode == Centred || !bUseWallpaper ) {
 
 	KPixmap preview;
@@ -647,8 +646,8 @@ void KBackground::setMonitor()
 	
 	monitor->setBackgroundPixmap( preview );
 
-    } else if ( !wpPixmap.isNull() ) 
-	monitor->setBackgroundPixmap( wpPixmap.xForm( matrix ) );
+    } else if ( !wpPixmap.isNull() )
+		monitor->setBackgroundPixmap( wpPixmap.xForm( matrix ) );
     
 }
 
@@ -682,6 +681,7 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 	else
 	    filename = name;
 	
+	
 	if ( tmp.load( filename, 0, KPixmap::LowColor ) == true )
 	{
 		int w = QApplication::desktop()->width();
@@ -696,14 +696,20 @@ int KBackground::loadWallpaper( const char *name, bool useContext )
 		case Scaled: {
 		    float sx = (float)w / tmp.width();
 		    float sy = (float)h / tmp.height();
+			
+			wpPixmap.resize( w, h );
+			wpPixmap.fill( color1 );
+			
 		    QWMatrix matrix;
 		    matrix.scale( sx, sy );
-		    wpPixmap = tmp.xForm( matrix );
+		    bitBlt( &wpPixmap, 0, 0, &tmp.xForm( matrix ) ); 
 		}
 		break;
 		
 		default:
-		    wpPixmap = tmp;
+			wpPixmap.resize( tmp.width(), tmp.height() );
+			wpPixmap.fill( color1 );
+			bitBlt( &wpPixmap, 0, 0, &tmp ); 
 		}
 		rv = true;
 	}
