@@ -381,7 +381,7 @@ private:
   // property.
   QString xgetprop(Window w, Atom a);
   // kwm internally sometimes uses simple property (long values)
-  bool getSimpleProperty(Window w, Atom a, long &result);
+  bool getSimpleProperty(Window w, Atom a, long &result, Atom type = 0);
   // kwm internally sometimes uses rectangle properties
   void setQRectProperty(Window w, Atom a, const QRect &rect);
   // sends a client message a x to the window w

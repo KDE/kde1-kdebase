@@ -60,6 +60,7 @@ Cursor normal_cursor = 0;
 extern MyApp* myapp;
 extern QPushButton* ignore_release_on_this;
 #define TITLE_ANIMATION_STEP 2
+#define TITLE_ANIMATION_DELAY 30
 
 bool do_not_draw = false;
 myPushButton::myPushButton(QWidget *parent, const char* name)
@@ -413,6 +414,8 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
     titlestring_offset = 0;
     titlestring_offset_delta = TITLE_ANIMATION_STEP;
     titlestring_too_large = false;
+    titlestring_delay = 0;
+
     hidden_for_modules = false;
     autoraised_stopped = false;
 
@@ -1571,7 +1574,10 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   if (only_label && animate){
     double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
-    titlestring_offset += titlestring_offset_delta;
+    if(titlestring_delay)
+      titlestring_delay--;
+    else
+      titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
       if (titlestring_offset_delta > 0)
 	bitBlt(this,
@@ -1667,16 +1673,24 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
 
   titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
   if (titlestring_offset_delta > 0){
-    if (titlestring_offset > 0
-	&& titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
-      titlestring_offset_delta *= -1;
+    if (!titlestring_delay){
+      if (titlestring_offset > 0
+      && titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
+        // delay animation before reversing direction
+        titlestring_delay = TITLE_ANIMATION_DELAY;
+        titlestring_offset_delta *= -1;
+      }
     }
   }
   else {
-    if (titlestring_offset < 0
-	&& titlestring_offset +
-	p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
-      titlestring_offset_delta *= -1;
+    if(!titlestring_delay){
+      if (titlestring_offset < 0
+      && titlestring_offset + p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
+        if(titlestring_offset_delta != 0)
+          // delay animation before reversing direction
+          titlestring_delay = TITLE_ANIMATION_DELAY;
+        titlestring_offset_delta *= -1;
+      }
     }
   }
 

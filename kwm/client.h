@@ -377,6 +377,7 @@ private:
   int titlestring_offset_delta;
   int titlestring_offset;
   bool titlestring_too_large;
+  int titlestring_delay;
 
   // used to store the activation state (do we have the focus?)
   // internally

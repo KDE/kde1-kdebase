@@ -3041,10 +3041,10 @@ QString Manager::xgetprop(Window w, Atom a){
 }
 
 // kwm internally sometimes uses simple property (long values)
-bool Manager::getSimpleProperty(Window w, Atom a, long &result){
+bool Manager::getSimpleProperty(Window w, Atom a, long &result, Atom type){
   long *p = 0;
 
-  if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
+  if (_getprop(w, a, type?type:a, 1L, (unsigned char**)&p) <= 0){
     return false;
   }
 

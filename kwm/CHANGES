@@ -16,6 +16,7 @@ In 0.13:
 patchlevel 6:
         - dock window handling improved for restart
         - new CheckRaise option for focus follows mouse policies 
+        - slightly improved the titlebar animation (Thorsten Scheuermann)
 
 
 patchlevel 5:
