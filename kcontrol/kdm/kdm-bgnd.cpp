@@ -228,7 +228,7 @@ int KDMBackgroundWidget::loadWallpaper( const char *name, bool useContext )
 
   if ( name[0] != '/' )
   {
-	filename = kapp->kdedir();
+	filename = kapp->kdedir().copy();
 	filename += "/share/wallpapers/";
 	filename += name;
   }
