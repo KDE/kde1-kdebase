@@ -68,10 +68,11 @@ void initXLock( GC gc );
 /*#define VMS_PLAY*/
 #include <unixlib.h>
 #endif
+#endif
+
 #define M_E    2.7182818284590452354
 #define M_PI   3.14159265358979323846
 #define M_PI_2 1.57079632679489661923
-#endif
 
 #if !defined (news1800) && !defined (sun386)
 #include <stdlib.h>

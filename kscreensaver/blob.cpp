@@ -30,6 +30,7 @@
 #include <math.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include "xlock.h"
 
 #include "blob.moc"
 #include "blob.h"
