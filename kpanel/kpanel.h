@@ -101,10 +101,11 @@ class myFrame: public QFrame
 {
   Q_OBJECT
 public:
-  myFrame( bool _autoHide, QWidget *parent=0, const char* name=0, WFlags f=0);
+  myFrame( bool _autoHide, unsigned int delay, QWidget *parent=0, const char* name=0, WFlags f=0);
   ~myFrame(){};
   bool autoHidden;
   bool autoHide;
+  int hide_delay;
 
 signals:
   void showMe();
@@ -247,7 +248,7 @@ public:
 
 protected:
     void    resizeEvent( QResizeEvent * );
-    void enterEvent( QEvent * );
+    void enterEvent( QEvent *);
     void leaveEvent( QEvent * );
 
     bool eventFilter(QObject *, QEvent *);
@@ -342,8 +343,13 @@ private:
   bool personalFirst;
   bool autoHide;
   bool autoHidden;
+  unsigned int autoHideDelay;
+  int autoHideSpeed;
+
   bool autoHideTaskbar;
-  bool autoHideSpeed;
+  unsigned int autoHideTaskbarDelay;
+  int autoHideTaskbarSpeed;
+
   bool clockAmPm;
 
   int hide_show_animation;

@@ -1,5 +1,10 @@
 In kpanel-0.19:
 
+    Patchlevel 9:
+	- AutoHideDelay, AutoHideTaskbarDelay, AutoHideTaskbarSpeed,
+	 	made HideShowAnimation optional (also fixed
+		the breaking negative values bug) (CT)
+
     Patchlevel 8:
                 - second hide button (Kalle)
                 - geometry for second hide button fixed ;-) (Matthias)

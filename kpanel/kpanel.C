@@ -175,26 +175,58 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     else
       config->writeEntry("PersonalFirst", "off");
 
+    //panel: autoHide, speed, delay
     autoHide = false;
-    if (config->hasKey("AutoHide"))
+    if (config->hasKey("AutoHide")) 
       autoHide = (config->readEntry("AutoHide") == "on");
     else
       config->writeEntry("AutoHide", "off");
+
+    //CT 16Oct1998 delay
+    if (config->hasKey("AutoHideDelay")) {
+      autoHideDelay = config->readNumEntry("AutoHideDelay");
+      if (autoHideDelay > 1000) autoHideDelay =  1000;
+      if (autoHideDelay <10000) autoHideDelay = 10000;
+    }
+    else
+      config->writeEntry ("AutoHideDelay", autoHideDelay=6000);
+    //CT
+
     autoHidden = False;
     if (autoHide)
-      hideTimer->start(6000, true);
+      hideTimer->start(autoHideDelay+2000, true);
 
+    if (config->hasKey("AutoHideSpeed")) {
+      autoHideSpeed = config->readNumEntry("AutoHideSpeed");
+      if (autoHideSpeed < 1) autoHideSpeed = 1;//CT
+    }
+    else
+      config->writeEntry("AutoHideSpeed", autoHideSpeed=4);
+
+    //taskbar: autoHide, speed, delay
     autoHideTaskbar = false;
     if (config->hasKey("AutoHideTaskbar"))
       autoHideTaskbar = (config->readEntry("AutoHideTaskbar") == "on");
     else
       config->writeEntry("AutoHideTaskbar", "off");
 
-    autoHideSpeed = 4;
-    if (config->hasKey("AutoHideSpeed"))
-      autoHideSpeed = config->readNumEntry("AutoHideSpeed");
+    //CT 16Oct1998 delay
+    if (config->hasKey("AutoHideTaskbarDelay")) {
+      autoHideTaskbarDelay = config->readNumEntry("AutoHideTaskbarDelay");
+      if (autoHideTaskbarDelay < 1000) autoHideDelay =  1000;
+      if (autoHideTaskbarDelay >10000) autoHideDelay = 10000;
+    }
     else
-      config->writeEntry("AutoHideSpeed", 4);
+      config->writeEntry ("AutoHideTaskbarDelay", autoHideTaskbarDelay=6000);
+    //CT
+
+    if (config->hasKey("AutoHideTaskbarSpeed")) {
+      autoHideTaskbarSpeed = config->readNumEntry("AutoHideTaskbarSpeed");
+      if (autoHideTaskbarSpeed < 1) autoHideTaskbarSpeed = 1;//CT
+    }
+    else
+      config->writeEntry("AutoHideTaskbarSpeed", autoHideTaskbarSpeed=4);
+
 
     clockAmPm = false;
     if (config->hasKey("ClockAmPm"))
@@ -219,8 +251,17 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     panelCurrentlyLeft = panelHiddenLeft[currentDesktop];
     miniPanelHidden = True;
 
-    /* Let's read the top speed here: */
-    hide_show_animation = config->readNumEntry("HideShowAnimation", 50);
+    /* Let's read the top speed here:  */
+    /*CT verify a bit ( negative values were allowed rendering edge
+      buttons unuseful */
+    if (config->hasKey("HideShowAnimation")) {
+      hide_show_animation = config->readNumEntry("HideShowAnimation");
+      if (hide_show_animation <  0) hide_show_animation =   0;
+      if (hide_show_animation >200) hide_show_animation = 200;
+    }
+    else
+      config->writeEntry("HideShowAnimation",hide_show_animation=50);
+    //CT
 
     nbuttons = 0;
     moving_button = 0;
@@ -325,7 +366,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       tmp_push_button->toggle();
     connect(desktopbar, SIGNAL(clicked(int)), SLOT(desktop_change(int)));
 
-    taskbar_frame = new myFrame(autoHideTaskbar, 0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
+    taskbar_frame = new myFrame(autoHideTaskbar, autoHideTaskbarDelay, 0, 0, 
+			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
 
     connect(taskbar_frame, SIGNAL(showMe()), SLOT(showTaskbar()));
     connect(taskbar_frame, SIGNAL(hideMe()), SLOT(hideTaskbar()));
@@ -1268,26 +1310,28 @@ void kPanel::hidePanelLeft(){
     panelCurrentlyLeft = True;
 
     QRect geom = geometry();
-    in_animation = true;
-
-    if (orientation == vertical) {
-      for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
-	    move(geom.x(), geom.y()-i);
-	    qApp->syncX();
-	    qApp->processEvents();
+    
+    if(hide_show_animation) {
+      in_animation = true;
+      if (orientation == vertical) {
+	for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
+	  move(geom.x(), geom.y()-i);
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
-    } else {
-		for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
-			move(geom.x()-i, geom.y());
-			qApp->syncX();
-			qApp->processEvents();
-		}
+      } else {
+	for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+	  move(geom.x()-i, geom.y());
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
+      }
+    }
     QFrame::hide();
     move(geom.x(), geom.y());
     in_animation = false;
-
-
+    
+    
     showMiniPanel();
     panel_button_frame_standalone->show();
     panel_button_frame_standalone->raise();
@@ -1357,20 +1401,23 @@ void kPanel::hidePanelRight(){
     panelCurrentlyLeft = False;
 
     QRect geom = geometry();
-    in_animation = true;
-
-    if (orientation == vertical) {
-      for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
-	    move(geom.x(), geom.y()+i);
-	    qApp->syncX();
-	    qApp->processEvents();
+    
+    if(hide_show_animation) {
+      in_animation = true;
+      
+      if (orientation == vertical) {
+	for (int i = 0; i<geom.height(); i+=PANEL_SPEED(i,geom.height())){
+	  move(geom.x(), geom.y()+i);
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
-    } else {
-      for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
-	    move(geom.x()+i, geom.y());
-	    qApp->syncX();
-	    qApp->processEvents();
+      } else {
+	for (int i = 0; i<geom.width(); i+=PANEL_SPEED(i,geom.width())){
+	  move(geom.x()+i, geom.y());
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
+      }
     }
     QFrame::hide();
     move(geom.x(), geom.y());
@@ -1425,18 +1472,20 @@ void kPanel::showPanelFromLeft( bool smooth){
     in_animation = true;
     move(-10000, -10000);
     QFrame::show();
-    if (orientation == vertical) {
-      for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
-	    move(geom.x(), geom.y()-i);
-	    qApp->syncX();
-	    qApp->processEvents();
+    if(hide_show_animation) {
+      if (orientation == vertical) {
+	for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
+	  move(geom.x(), geom.y()-i);
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
-    } else {
-      for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
-	    move(geom.x()-i, geom.y());
-	    qApp->syncX();
-	    qApp->processEvents();
+      } else {
+	for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
+	  move(geom.x()-i, geom.y());
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
+      }
     }
     move(geom.x(), geom.y());
     in_animation = false;
@@ -1484,18 +1533,20 @@ void kPanel::showPanelFromRight(bool smooth){
     in_animation = true;
     move(-10000, -10000);
     QFrame::show();
-    if (orientation == vertical) {
-      for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
-	    move(geom.x(), geom.y()+i);
-	    qApp->syncX();
-	    qApp->processEvents();
+    if(hide_show_animation) {
+      if (orientation == vertical) {
+	for (int i = geom.height(); i>12;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
+	  move(geom.x(), geom.y()+i);
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
-    } else {
-      for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
-	    move(geom.x()+i, geom.y());
-	    qApp->syncX();
-	    qApp->processEvents();
+      } else {
+	for (int i = geom.width(); i>12;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
+	  move(geom.x()+i, geom.y());
+	  qApp->syncX();
+	  qApp->processEvents();
 	}
+      }
     }
     move(geom.x(), geom.y());
     in_animation = false;

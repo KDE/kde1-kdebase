@@ -1,3 +1,8 @@
+1998-10-17  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* options.cpp: added control over the new animation configurations
+		(see the Options tab).
+
 Thu Feb 12 00:12:11 1998  Stephan Kulow  <coolo@kde.org>
 
 	* panel.cpp: fixed a little bug

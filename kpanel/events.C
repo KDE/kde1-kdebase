@@ -33,18 +33,22 @@ void animateMove(QWidget*w, int xn, int yn, int step ){
     in_animation = false;
 }
 
-myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
+myFrame::myFrame(bool _autoHide, unsigned int delay, 
+		 QWidget *parent, const char* name, WFlags f)
+  :QFrame(parent, name, f){
+  
   hideTimer = new QTimer(this);
   connect( hideTimer, SIGNAL(timeout()),
 	   this, SLOT(hideTimerDone()) );
   autoHide = _autoHide;
   autoHidden = false;
+  hide_delay = delay;//CT
   if (autoHide)
-    hideTimer->start(6000, true);
+    hideTimer->start(delay+2000, true);
 }
 
 void myFrame::enterEvent(QEvent *){
-  hideTimer->start(4000, true);
+  hideTimer->start(hide_delay, true);
   if (!autoHidden)
     return;
   raise();
@@ -70,7 +74,7 @@ void myFrame::hideTimerDone(){
   else
     do_hide = false;
   if (!do_hide || geometry().contains(QCursor::pos()))
-    hideTimer->start(4000, true);
+    hideTimer->start(hide_delay, true);
   else {
     autoHidden = true;
     emit hideMe();
@@ -82,8 +86,11 @@ void kPanel::showTaskbar(){
   if (in_animation)
       return;
   doGeometry(TRUE);
-  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
-	      taskbar_position == bottom?-autoHideSpeed*2:autoHideSpeed*2);
+  animateMove(taskbar_frame, 
+	      taskbar_frame_geometry.x(), 
+	      taskbar_frame_geometry.y(),
+	      taskbar_position == bottom?-autoHideTaskbarSpeed*2:
+	                          autoHideTaskbarSpeed*2);
   doGeometry();
 }
 
@@ -92,8 +99,11 @@ void kPanel::hideTaskbar(){
       return;
   raise();
   doGeometry(TRUE);
-  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(),
-	      taskbar_position == bottom?autoHideSpeed:-autoHideSpeed);
+  animateMove(taskbar_frame, 
+	      taskbar_frame_geometry.x(), 
+	      taskbar_frame_geometry.y(),
+	      taskbar_position == bottom?autoHideTaskbarSpeed:
+	                          -autoHideTaskbarSpeed);
   doGeometry();
   KWM::sendKWMCommand("moduleRaised");
 }
@@ -661,10 +671,10 @@ void kPanel::resizeEvent( QResizeEvent * ){
 
 }
 
-void kPanel::enterEvent( QEvent * ){
+void kPanel::enterEvent( QEvent *){
   if (in_animation)
       return;
-  hideTimer->start(4000, true);
+  hideTimer->start(autoHideDelay, true);
 
   if (
       (orientation == horizontal && position == top_left &&
@@ -732,7 +742,7 @@ void kPanel::hideTimerDone(){
   }
   do_hide = do_hide && !geometry().contains(QCursor::pos());
   if (!do_hide){
-    hideTimer->start(4000, true);
+    hideTimer->start(autoHideDelay, true);
   }
   else {
     if (orientation == horizontal){
