@@ -39,7 +39,7 @@ msgstr "&Finn"
 
 #: kfmgui.cpp:252
 msgid "&Move to Trash"
-msgstr "F&lytt til Papirkurv"
+msgstr "F&lytt til papirkurven"
 
 #: kfmgui.cpp:261
 msgid "&Select"
@@ -443,7 +443,7 @@ msgstr ""
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
 #: kfmtree.cpp:469 kfmview.cpp:838 root.cpp:1316
 msgid "Could not access Trash Bin"
-msgstr "Kunne ikke få adgang til Papirkurv"
+msgstr "Kunne ikke få adgang til papirkurven"
 
 # kfmview.cpp:553 root.cpp:1088
 #: kfmview.cpp:864 root.cpp:1205
@@ -652,7 +652,7 @@ msgstr "Ny visning"
 # kfmtree.cpp:223 main.cpp:239
 #: kfmtree.cpp:404 main.cpp:271
 msgid "Move to Trash"
-msgstr "Flytt til Papirkurv"
+msgstr "Flytt til papirkurven"
 
 # main.cpp:241
 #: main.cpp:273
@@ -671,7 +671,7 @@ msgstr "Lenk"
 # main.cpp:246
 #: main.cpp:278
 msgid "Empty Trash Bin"
-msgstr "Tøm Papirkurv"
+msgstr "Tøm papirkurven"
 
 # main.cpp:247
 #: main.cpp:279
@@ -708,7 +708,7 @@ msgstr "Fullt navn"
 # kfmprops.cpp:255
 #: kfmprops.cpp:271
 msgid "Is the Trash Bin"
-msgstr "Er Papirkurven"
+msgstr "Er papirkurven"
 
 # kfmprops.cpp:262
 #: kfmprops.cpp:278
