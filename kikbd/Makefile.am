@@ -24,8 +24,8 @@ SUBDIRS = kcmikbd doc
 bin_PROGRAMS = 	kikbd
 
 # Which sources should be compiled for kless.
-kikbd_SOURCES = kikbd.C mkikbd.C keytrans.C \
-    keymap.C mkeymap.C kikbdconf.C kobjconf.C
+kikbd_SOURCES = kikbd.cpp keytrans.cpp \
+    keymap.cpp kikbdconf.cpp kobjconf.cpp
 
 kikbd_METASOURCES = USE_AUTOMOC
 

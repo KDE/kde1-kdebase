@@ -13,9 +13,6 @@
 #include <kfontdialog.h>
 #include <kcolorbtn.h>
 
-#include "mkobjconf.h"
-#include "mkconfobjs.h"
-
 /********************************************************************
  * Configuration objects
  */

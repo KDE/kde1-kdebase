@@ -1,8 +1,5 @@
 Makefile
 Makefile.in
 kikbd
-mkconfobjs.h
-mkeymap.h
-mkobjconf.h
-mkeymap.C
-mkikbd.C
+*.moc.cpp
+

@@ -2,7 +2,8 @@
 #define K_OBJ_CONF
 
 #include <qwidget.h>
-#include "ksimpleconfig.h"
+#include <ksimpleconfig.h>
+#include <kconfig.h>
 
 //@Include: kconfobjs.h
 class KObjectConfig;
