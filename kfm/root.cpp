@@ -1390,7 +1390,7 @@ KRootIcon::KRootIcon( const char *_url, int _x, int _y ) :
 void KRootIcon::initToolTip()
 {
     // Does not work due to a Qt bug.
-    KMimeType *typ = KMimeType::findType( url.data() );
+    KMimeType *typ = KMimeType::getMagicMimeType( url.data() );
     QString com = typ->getComment( url.data() );
     com.detach();
 
@@ -1894,7 +1894,7 @@ void KRootIcon::slotDropLink()
 
 void KRootIcon::slotFontChanged()
 {
-    init();
+    update();
 }
 
 KRootIcon::~KRootIcon()

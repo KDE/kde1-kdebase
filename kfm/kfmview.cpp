@@ -1184,7 +1184,7 @@ void KfmView::slotOnURL( const char *_url )
         if ( surl.right(1) == "/" )
             surl.truncate( surl.length() - 1 );
                    
-	KMimeType *typ = KMimeType::findType( _url );
+	KMimeType *typ = KMimeType::getMagicMimeType( _url );
 	if ( typ )
 	    com = typ->getComment( _url );
 
@@ -1618,8 +1618,6 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
     if ( l.count() == 1 )
     {
 	pixmap.load( KMimeType::getPixmapFileStatic( l.first() ) );
-	/* KMimeType *typ = KMimeType::findType( l.first() );
-	pixmap = typ->getPixmap( l.first() ); */
     }
     else
     {
@@ -1628,8 +1626,6 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
 	dir += "/kfm/pics/kmultiple.xpm";
 	pixmap.load( dir );
 	// TODO  Nice icon for multiple files
-	/* KMimeType *typ = KMimeType::findType( l.first() );
-	pixmap = typ->getPixmap( l.first() ); */
     }
 
     // Put all selected files in one line separated with newlines

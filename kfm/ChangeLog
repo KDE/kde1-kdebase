@@ -1,6 +1,9 @@
 1999-01-11  David Faure  <faure@kde.org>
 
-	* kbind.cpp: Store and use terminal settings (set in applnks) in KMimeBind.
+	* kbind.cpp: Store and use terminal settings (set in applnks) in
+	KMimeBind.
+	* kbind.h: Made findType private and called getMagicMimeType
+	instead. Fixes the text in the status bar, and the hint for root icons.
 
 1999-01-07  David Faure  <faure@kde.org>
 

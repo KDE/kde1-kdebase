@@ -380,14 +380,6 @@ public:
      *         to assume the default mime type.
      */
     virtual bool isDefault();
-    
-    /**
-     * Tries to find a MimeType for the file _url. If no special
-     * MimeType is found, the default MimeType is returned.
-     * This function only looks at the filename not at the content
-     * of the file.
-     */
-    static KMimeType* findType( const char *_url );
 
     /**
      * Find type by pattern.
@@ -514,6 +506,16 @@ public:
     static void InitStatic();
 
 protected:    
+    /**
+     * Tries to find a MimeType for the file _url. If no special
+     * MimeType is found, the default MimeType is returned.
+     * This function only looks at the filename not at the content
+     * of the file.
+     * I made it private since getMagicMimeType should always
+     * be called from the other classes (David).
+     */
+    static KMimeType* findType( const char *_url );
+
     /**
      * List of all bindings for this type.
      */
