@@ -212,7 +212,7 @@ int main( int argc, char ** argv )
     }
     // Keep in sync with the same in kfmserver.cpp!
     QString idir;
-    idir.sprintf("/tmp/kfm_%i%s\n",(int)getpid(),displayName().data());
+    idir.sprintf("/tmp/kfm_%i_%i%s\n",(int)getuid(),(int)getpid(),displayName().data());
     fprintf( f, "%i\n%s\n", (int)getpid(),idir.data() );
     fclose( f );
 

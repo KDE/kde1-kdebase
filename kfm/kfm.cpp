@@ -83,9 +83,9 @@ void Kfm::slotTouch()
 {
   // Prevent the sockets from being removed by the cleanup daemon of some systems.
   QString tmp;
-  tmp.sprintf("touch /tmp/kfm_%i%s",(int)getpid(),displayName().data() );
+  tmp.sprintf("touch /tmp/kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
   system( tmp.data() );
-  tmp.sprintf("touch /tmp/kio_%i%s",(int)getpid(),displayName().data() );
+  tmp.sprintf("touch /tmp/kio_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data() );
   system( tmp.data() );
 }
 
@@ -118,10 +118,10 @@ void Kfm::slotSave()
 
   // Delete the sockets
   QString sock;
-  sock.sprintf("/tmp/kio_%i%s",(int)getpid(),displayName().data());
+  sock.sprintf("/tmp/kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
   unlink( sock );
 
-  sock.sprintf("/tmp/kfm_%i%s",(int)getpid(),displayName().data());
+  sock.sprintf("/tmp/kfm_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
   unlink( sock );
 
   s_bGoingDown = true;

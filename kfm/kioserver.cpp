@@ -721,7 +721,7 @@ void KIOServer::runNewSlave()
 
     // Keep in sync with the same in kioserver_ipc.cpp!
     QString idir;
-    idir.sprintf("/tmp/kio_%i%s",(int)getpid(),displayName().data());
+    idir.sprintf("/tmp/kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
     
     if ( fork() == 0 )
     {

@@ -1,4 +1,4 @@
-#include <qapp.h>
+#include <kapp.h>
 
 #include "kioslave_ipc.h"
 #include "main.h"
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     signal(SIGTERM,sig_handler);
     signal(SIGCHLD,sig_handler2);
     
-    QApplication a( argc, argv );
+    KApplication a( argc, argv );
 
     KIOSlave slave( argv[1] );
     

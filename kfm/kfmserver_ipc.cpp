@@ -3,6 +3,7 @@
 //     weis@stud.uni-frankfurt.de
 
 #include <errno.h>
+#include <unistd.h>
 
 #include "kfmserver_ipc.h"
 #include "utils.h"
@@ -11,7 +12,7 @@ KfmIpcServer::KfmIpcServer()
 {
     // Keep in sync with the same in main.cpp!
     QString idir;
-    idir.sprintf("/tmp/kfm_%i%s",(int)getpid(),displayName().data());
+    idir.sprintf("/tmp/kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data());
     
     serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )
