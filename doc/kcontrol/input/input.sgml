@@ -13,29 +13,29 @@
 
 <!-- Begin the document -->
 
-<sect>Configuring the keyboard
+<sect>Configuring the Keyboard
 <p>
-The keyboard settings are features of the X server,
-which attempts to make good use of the available hardware. However,
+Keyboard settings are features of the X server
+which attempt to make good use of the available hardware. However,
 it isn't always possible for the X server to actually supply all
 the functions. For example, on some systems the key click is enabled
-or disabled in the CMOS setup and the X server does not supply an
-alternative. Thus, if a setting doesn't seem to do anything, this 
-is because the X server and/or the hardware don't support anything 
+or disabled in the CMOS setup and the X server cannot supply an
+alternative. Thus, if a setting doesn't seem to do anything, it is 
+is because the X server and/or the hardware do not support anything 
 better.
 
 <p>
-User's are able to set the following parameters for the keyboard:
+Users can adjust the following settings for the keyboard:
 
 <itemize>
 <item>enable/disable autorepeat
 <item>key click volume
 </itemize>
 
-<sect>Configuring the mouse
+<sect>Configuring the Mouse
 
 <p>
-User's are able to set the following parameters for the bell:
+Users can adjust the following settings for the bell:
 
 <itemize>
 <item>accelerated movement rate
@@ -44,7 +44,7 @@ User's are able to set the following parameters for the bell:
 </itemize>
 
 <p>
-For threshold gives the distance the pointer must move (in a small
+The threshold gives the distance the pointer must move (in a small
 amount of time) before accelerated movement occurs. In this mode,
 the pointer moves some factor faster than normal, relative to the
 amount the user actually moves the pointing device. The factor
