@@ -1521,46 +1521,65 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     iconBox = new KIconLoaderButton( pkfm->iconLoader(), this );
     appBox = new QComboBox( false, this, "ComboBox_2" );
 
-    patternEdit->raise();
+    QBoxLayout * mainlayout = new QVBoxLayout(this, SEPARATION);
+    QLabel* tmpQLabel;
+
+    tmpQLabel = new QLabel( this, "Label_1" );
+    tmpQLabel->setText(  klocale->translate("Pattern ( example: *.html;*.HTML; )") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    mainlayout->addWidget(tmpQLabel, 1);
+
     patternEdit->setGeometry( 10, 40, 210, 30 );
     patternEdit->setText( "" );
     patternEdit->setMaxLength( 512 );
+    patternEdit->setMinimumSize( patternEdit->sizeHint() );
+    patternEdit->setFixedHeight( fontHeight );
+    mainlayout->addWidget(patternEdit, 1);
 
-    commentEdit->raise();
-    commentEdit->setGeometry( 10, 100, 210, 30 );
-    commentEdit->setMaxLength( 256 );
+    tmpQLabel = new QLabel( this, "Label_2" );
+    tmpQLabel->setText(  klocale->translate("Mime Type") );
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    mainlayout->addWidget(tmpQLabel, 1);
 
-    mimeEdit->raise();
     mimeEdit->setGeometry( 10, 160, 210, 30 );
     mimeEdit->setMaxLength( 256 );
-
-    QLabel* tmpQLabel;
-    tmpQLabel = new QLabel( this, "Label_1" );
-    tmpQLabel->move( 10, 10 );
-    tmpQLabel->setText(  klocale->translate("Pattern ( example: *.html;*.HTML; )") );
-    tmpQLabel->adjustSize();
-
-    tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->move( 10, 130 );
-    tmpQLabel->setText(  klocale->translate("Mime Type") );
-    tmpQLabel->adjustSize();
+    mimeEdit->setMinimumSize( mimeEdit->sizeHint() );
+    mimeEdit->setFixedHeight( fontHeight );
+    mainlayout->addWidget(mimeEdit, 1);
 
     tmpQLabel = new QLabel( this, "Label_3" );
-    tmpQLabel->move( 10, 70 );
     tmpQLabel->setText(  klocale->translate("Comment") );
-    tmpQLabel->adjustSize();
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    mainlayout->addWidget(tmpQLabel, 1);
 
-    iconBox->raise();
-    iconBox->setGeometry( 180, 210, 50, 50 );
+    commentEdit->setGeometry( 10, 100, 210, 30 );
+    commentEdit->setMaxLength( 256 );
+    commentEdit->setMinimumSize( commentEdit->sizeHint() );
+    commentEdit->setFixedHeight( fontHeight );
+    mainlayout->addWidget(commentEdit, 1);
+
+    QHBoxLayout * hlayout = new QHBoxLayout(SEPARATION);
+    mainlayout->addLayout(hlayout, 2); // double stretch, because two items
+
+    QVBoxLayout * vlayout; // a vertical layout for the two following items
+    vlayout = new QVBoxLayout(SEPARATION);
+    hlayout->addLayout(vlayout, 1);
 
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->move( 10, 210 );
     tmpQLabel->setText(  klocale->translate("Default Application") );
-    tmpQLabel->adjustSize();
+    tmpQLabel->setMinimumSize(tmpQLabel->sizeHint());
+    vlayout->addWidget(tmpQLabel, 1);
 
-    appBox->raise();
-    appBox->setGeometry( 10, 240, 120, 30 );
-    
+    appBox->setMinimumSize( appBox->sizeHint() );
+    appBox->setFixedHeight( fontHeight );
+    vlayout->addWidget(appBox, 1);
+
+    iconBox->setFixedSize( 50, 50 );
+    hlayout->addWidget(iconBox, 0);
+
+    mainlayout->addSpacing(fontMetrics().height());
+    mainlayout->activate();
+
     QFile f( _props->getKURL()->path() );
     if ( !f.open( IO_ReadOnly ) )
 	return;
