@@ -998,12 +998,11 @@ msgid " ERROR: Could not write to %s"
 msgstr " ERROR: Não foi possível escrever para %s"
 
 #: kiojob.cpp:565 kiojob.cpp:851
-#, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Não foi possível criar um link simbólico para\n"
+"Não foi possível criar ligação simbólica\n"
 "%s"
 
 #: kiojob.cpp:583 kiojob.cpp:872 kiojob.cpp:1308
@@ -1025,12 +1024,12 @@ msgstr "ERRO: Não foi possível acessar diretório '%s'"
 msgid ""
 "Special file will not be copied\n"
 "%s"
-msgstr ""
+msgstr "Arquivo especial não será copiado\n%s"
 
 #: kiojob.cpp:652
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d arquivos especiais não serão copiados."
 
 #: kiojob.cpp:903
 #, c-format
@@ -1059,12 +1058,12 @@ msgstr ""
 msgid ""
 "Special file will not be moved\n"
 "%s"
-msgstr ""
+msgstr "Arquivo especial não será movido\n%s"
 
 #: kiojob.cpp:1025
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d arquivos especiais não serão movidos."
 
 #: kiojob.cpp:1289 kiojob.cpp:1356
 #, c-format

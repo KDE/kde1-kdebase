@@ -146,9 +146,8 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Ambos os Shifts (Shift+Shift)"
 
 #: kikbdconf.cpp:115
-#, fuzzy
 msgid "Right Meta"
-msgstr "Alt Direito"
+msgstr "Meta Direito"
 
 #: kikbdconf.cpp:116
 msgid "Left  Alt"
@@ -159,9 +158,8 @@ msgid "Left  Control"
 msgstr "Control Esquerdo"
 
 #: kikbdconf.cpp:118
-#, fuzzy
 msgid "Left  Meta"
-msgstr "Alt Esquerdo"
+msgstr "Meta Esquerdo"
 
 #: kikbdconf.cpp:121
 msgid "Top Left"
