@@ -270,7 +270,7 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
-"-meta <arg>               omoguæi Meta sa ESCAPE prefiskom, 8THBITom, ili
+"-meta <arg>               omoguæi Meta sa ESCAPE prefiskom, 8THBITom, ili "
 "ignore\n"
 
 #: main.C:1177

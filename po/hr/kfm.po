@@ -1101,7 +1101,7 @@ msgid ""
 "does not exist"
 msgstr ""
 "Datoteka %s\n"
-" ne postoji\n"
+"ne postoji"
 
 #: kiojob.cpp:1404
 #, c-format
