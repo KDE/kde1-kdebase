@@ -241,7 +241,7 @@ void setInfoBoxWindows(Client* c, bool traverse_all = false){
     delete l;
   infoBoxWindowsLabel->clear();
   int x = 7;
-  if (c){
+  if (c) {
     Client* o = c;
     Window* w = 0;
     QPixmap pm;
@@ -1276,7 +1276,10 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 		      GrabModeAsync, GrabModeAsync,
 		      CurrentTime);
 	tab_grab = True;
-	setInfoBoxWindows(manager->current(), options.TraverseAll);
+	if (manager->current())
+	  setInfoBoxWindows(manager->current(), options.TraverseAll);
+	else
+	  setInfoBoxWindows(manager->nextClient(0), options.TraverseAll);
 	infoBoxClient = manager->current();
       }
       Client* sign = infoBoxClient;
