@@ -118,6 +118,8 @@ int main(int argc, char *argv[])
 	if ( i == argc )
 	{
 		char *kdedir = getenv( "KDEDIR" );
+		if (!kdedir)
+			kdedir = "/usr/local/kde"; 
 		initDoc = "file:";
 		initDoc += kdedir;
 		initDoc += "/doc/HTML/index.html";

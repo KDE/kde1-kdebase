@@ -29,7 +29,7 @@ KHelpMain::KHelpMain(const char *name)
 	if (NULL != env_var) 
 		kdedir = env_var;
 	else 
-		kdedir = "";
+		kdedir = "/usr/local/kde";
 	PIXDIR    = kdedir + "/lib/pics/";
 	DOCS_PATH = kdedir + "/doc/HTML/";
 

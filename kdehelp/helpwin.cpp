@@ -120,6 +120,8 @@ KHelpWindow::KHelpWindow( QWidget *parent, const char *name )
 	rmbPopup = NULL;
 
 	char *kdedir = getenv( "KDEDIR" );
+	if (!kdedir)
+		kdedir = "/usr/local/kde";
 	if ( kdedir )
 	{
 		PIXDIR = kdedir;
