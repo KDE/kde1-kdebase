@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-01-10 23:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -98,97 +98,87 @@ msgstr "KeyMap: no entenc el codi de tecla \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: el codi de tecla \"%s\" cau fora de rang."
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Global"
 msgstr "Global"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Window"
 msgstr "Finestra"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:95
 msgid "Class"
 msgstr "Classe"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:98 kikbdconf.cpp:110
 msgid "(None)"
 msgstr "(cap)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:99 kikbdconf.cpp:111
 msgid "Right Alt"
 msgstr "Alt dreta"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "Right Control"
 msgstr "Control dreta"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:101
 msgid "Rights (Alt+Shift)"
 msgstr "Dreta (Alt+Majús)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:102
 msgid "Rights (Ctrl+Alt)"
 msgstr "Dreta (Ctrl+Alt)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:103
 msgid "Rights (Ctrl+Shift)"
 msgstr "Dreta (Ctrl+Majús)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:104
 msgid "Lefts  (Alt+Shift)"
 msgstr "Esquerra (Alt+Majús)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:105
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Esquerra (Ctrl+Alt)"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:106
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Esquerra (Ctrl+Majús)"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:107
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Ambdues Majús (Majús+Majús)"
 
-#: kikbdconf.cpp:115
-#, fuzzy
-msgid "Right Meta"
-msgstr "Alt dreta"
-
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:113
 msgid "Left  Alt"
 msgstr "Alt esquerra"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:114
 msgid "Left  Control"
 msgstr "Control esquerra"
 
-#: kikbdconf.cpp:118
-#, fuzzy
-msgid "Left  Meta"
-msgstr "Alt esquerra"
-
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:117
 msgid "Top Left"
 msgstr "Dalt esquerra"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:118
 msgid "Top Right"
 msgstr "Dalt dreta"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:119
 msgid "Bottom Left"
 msgstr "Baix esquerra"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:120
 msgid "Bottom Right"
 msgstr "Baix dreta"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:147
 msgid "X default codes"
 msgstr "Codis X per omissió"
 
-#: kikbdconf.cpp:208
+#: kikbdconf.cpp:204
 #, c-format
 msgid ""
 "%s\n"
@@ -197,11 +187,11 @@ msgstr ""
 "%s\n"
 "Voleu engegar la configuració?"
 
-#: kikbdconf.cpp:216
+#: kikbdconf.cpp:212
 msgid "Your configuration is empty. Install system default."
 msgstr "La vostra configuració es buida. S'instal·la la del sistema."
 
-#: kikbdconf.cpp:222
+#: kikbdconf.cpp:218
 msgid ""
 "Configuration file you have has older format than expected.\n"
 "Some settings may be incorrect."
@@ -209,7 +199,7 @@ msgstr ""
 "El vostre fitxer de configuració té un format més antic de l'esperat.\n"
 "Diversos valors poden ser incorrectes."
 
-#: kikbdconf.cpp:230
+#: kikbdconf.cpp:226
 msgid ""
 "Configuration file you have has newer format than expected.\n"
 "Some settings may be incorrect."
@@ -217,83 +207,83 @@ msgstr ""
 "El vostre fitxer de configuració té un format més nou de l'esperat.\n"
 "Diversos valors poden ser incorrectes."
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:353
 msgid "unknown"
 msgstr "desconegut"
 
-#: kikbdconf.cpp:361
+#: kikbdconf.cpp:357
 msgid "default"
 msgstr "omissió"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:383
 msgid "Author:  Not specified"
 msgstr "Autor: no especificat"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:385
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:391
 msgid "Description:  "
 msgstr "Descripció:   "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:394
 msgid "Source:  "
 msgstr "Font:    "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:395
 msgid "no file"
 msgstr "cap fitxer"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:396
 msgid "user file"
 msgstr "fitxer d'usuari"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:397
 msgid "system file"
 msgstr "fitxer del sistema"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:402
 msgid "Statistic:  "
 msgstr "Estadístic: "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:405
 msgid "symbols"
 msgstr "símbols"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:408
 msgid "codes"
 msgstr "codis"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:411
 msgid "alternative symbols"
 msgstr "símbols alternatius"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:418
 msgid "language"
 msgstr "idioma"
 
-#: kikbdconf.cpp:423
+#: kikbdconf.cpp:419
 msgid "charset"
 msgstr "joc de caràcters"
 
-#: kikbdconf.cpp:461
+#: kikbdconf.cpp:457
 msgid "International keyboard ERROR"
 msgstr "ERROR del teclat internacional"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:473
 msgid "International keyboard warning"
 msgstr "Avís del teclat internacional"
 
-#: kikbdconf.cpp:484 kikbdconf.cpp:489 kikbdconf.cpp:502
+#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
 msgid "International keyboard question"
 msgstr "Pregunta del teclat internacional"
 
-#: kikbdconf.cpp:491
+#: kikbdconf.cpp:487
 msgid "Configure"
 msgstr "Configura"
 
-#: kikbdconf.cpp:501
+#: kikbdconf.cpp:497
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -512,7 +502,7 @@ msgstr "&Encastat"
 
 #: widgets.cpp:649
 msgid "Dock into special area in kpanel"
-msgstr "Encasta a l'àrea especial del panell"
+msgstr "Encasta a l'àrea especial del plafó"
 
 #: widgets.cpp:658
 msgid "Place"

@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.cpp:64
 msgid "&Panel"
-msgstr "&Panell"
+msgstr "&Plafó"
 
 #: main.cpp:70
 msgid "&Desktops"
@@ -123,7 +123,7 @@ msgstr "Visuals"
 
 #: options.cpp:144
 msgid "Auto &Hide Panel"
-msgstr "Auto &Oculta Panell"
+msgstr "Auto &oculta plafó"
 
 #: options.cpp:153 options.cpp:255
 msgid "Delay:"

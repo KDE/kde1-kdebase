@@ -1,156 +1,151 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translations for KDE Base, kpanel
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Thomas Tanghus <tanghus@earthling.net>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
-"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: KDE BASE/kpanel\n"
+"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"PO-Revision-Date: 1999-01-12 12:35+0100\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:292
-#, fuzzy
+#: kpanel.C:284
 msgid "&Move"
-msgstr "Flyt"
+msgstr "&Flyt"
 
-#: kpanel.C:295
-#, fuzzy
+#: kpanel.C:287
 msgid "&Properties"
-msgstr "Indstillinger"
+msgstr "&Indstillinger"
 
-#: kpanel.C:338
+#: kpanel.C:330
 msgid "Go!"
-msgstr ""
+msgstr "Gå!"
 
-#: kpanel.C:341 tools.C:901
+#: kpanel.C:333 tools.C:890
 msgid "Where do you want to go tomorrow?"
-msgstr ""
+msgstr "Hvor vil du gerne hen imorgen"
 
-#: kpanel.C:416
+#: kpanel.C:408
 msgid "No info available"
 msgstr "Ingen tilgængelig information"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:447 props.C:206 props.C:207
 msgid "Logout"
 msgstr "Log ud"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:455 props.C:205
 msgid "Lock screen"
 msgstr "Lås skærm"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:464 kpanel.C:473
 msgid "Hide the panel"
 msgstr "Gem Panel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:483 kpanel.C:495
 msgid "Show the panel"
 msgstr "Vis Panel"
 
-#: kpanel.C:1108
+#: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Minimer andre &vinduer"
 
-#: kpanel.C:1245
+#: kpanel.C:1237
 msgid "No comment available"
 msgstr "Ingen tilgængelig kommentar"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1246 tools.C:899
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1254 props.C:196
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Naviger hurtigt gennem systemet"
 
-#: props.C:167
-#, fuzzy
+#: props.C:166
 msgid "Add Application"
-msgstr "Tilføj applikation"
+msgstr "Tilføj anvendelse"
 
-#: props.C:169
+#: props.C:168
 msgid "Add an application or a submenu onto the panel"
-msgstr "Tilføj applikation eller undermenu"
+msgstr "Tilføj anvendelse eller undermenu til panelet"
 
-#: props.C:175
-#, fuzzy
+#: props.C:174
 msgid "Add Disk Navigator"
-msgstr "Disk Navigator"
+msgstr "Tilføj Disk Navigator"
 
-#: props.C:177
-#, fuzzy
+#: props.C:176
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: props.C:180
-#, fuzzy
+#: props.C:179
 msgid "Add Windowlist"
 msgstr "Tilføj vindues oversigt"
 
-#: props.C:182
+#: props.C:181
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføj vindues oversigt på panelet"
 
-#: events.C:832 props.C:183
+#: events.C:800 props.C:182
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: props.C:185
+#: props.C:184
 msgid "Configure panel"
 msgstr "Konfigurer panel"
 
-#: props.C:186
+#: props.C:185
 msgid "Edit Menus"
 msgstr "Redigér menuer"
 
-#: props.C:188
+#: props.C:187
 msgid "Add or remove applications in the menu structure "
-msgstr "Tilføj eller fjern applikationer fra menustrukturen"
+msgstr "Tilføj eller fjern anvendelser fra menustrukturen"
 
-#: events.C:834 props.C:189
+#: events.C:802 props.C:188
 msgid "Restart"
 msgstr "Genstart"
 
-#: props.C:191
+#: props.C:190
 msgid "Restart panel"
 msgstr "Genstart panel"
 
-#: props.C:194
+#: props.C:193
 msgid "Disk Navigator"
 msgstr "Disk Navigator"
 
-#: props.C:202
+#: props.C:201
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:204
+#: props.C:203
 msgid "Lock Screen"
 msgstr "Lås skærm"
 
-#: props.C:451
+#: props.C:450
 msgid "The menu editor is not installed."
-msgstr "Menu redigéringsprogrammet er ikke installéret"
+msgstr "Menu editoren er ikke installéret"
 
-#: events.C:888 props.C:452
+#: events.C:856 props.C:451
 msgid "Oops!"
 msgstr "Ups!"
 
-#: tools.C:648
+#: tools.C:647
 msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
-#: tools.C:919
-#, fuzzy
+#: tools.C:908
 msgid "KDiskNavigator"
 msgstr "Disk Navigator"
 
-#: events.C:887
+#: events.C:855
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke placere dette som en trykknap på panelet!"
 
@@ -161,10 +156,6 @@ msgstr "(tom folder)"
 #: pfilemenu.C:480
 msgid "Open Folder"
 msgstr "Åben folder"
-
-#: pfilemenu.C:483
-msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr ""
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
@@ -180,92 +171,32 @@ msgstr "(Ulæselig)"
 
 #: pfilemenu.C:752
 msgid "Shared:"
-msgstr ""
+msgstr "Delt:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr ""
+msgstr "Indgange deles blandt brugere"
 
 #: pfilemenu.C:773
-#, fuzzy
 msgid "Personal:"
-msgstr "Personlige først"
+msgstr "Personlige"
 
 #: pfilemenu.C:775
-#, fuzzy
 msgid "Personal entries"
-msgstr "Personlige først"
+msgstr "Personlige indgange"
 
 #: pfilemenu.C:793
 msgid "Recent:"
-msgstr ""
+msgstr "Nyligt:"
 
 #: pfilemenu.C:795
 msgid "Recent entries"
-msgstr ""
+msgstr "Nylige indgange"
 
 #: pfilemenu.C:841
 msgid "Options..."
-msgstr ""
+msgstr "Indstillinger..."
 
 #: pfilemenu.C:843
-#, fuzzy
 msgid "Customize Disk Navigator"
-msgstr "Disk Navigator"
-
-#~ msgid "KFM Information"
-#~ msgstr "KFM information"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Opretter folder:\n"
-
-#~ msgid "Location"
-#~ msgstr "Placering"
-
-#~ msgid "Taskbar"
-#~ msgstr "Procesbjælke"
-
-#~ msgid "Hidden"
-#~ msgstr "Gemt"
-
-#~ msgid "Top/Left"
-#~ msgstr "Top/Venstre"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Mini stil"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normal stil"
-
-#~ msgid "Large Style"
-#~ msgstr "Stor stil"
-
-#~ msgid "Others"
-#~ msgstr "Andre"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Auto gem Panel"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Auto gem procesbjælke"
-
-#~ msgid "Clock"
-#~ msgstr "Ur"
-
-#~ msgid "24h"
-#~ msgstr "24-timer"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12-timer"
-
-#~ msgid "Visible"
-#~ msgstr "Synlig"
-
-#~ msgid "Width"
-#~ msgstr "Bredde"
-
-#~ msgid "Desktops"
-#~ msgstr "Arbejdspladser"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "KPanel indstillinger"
+msgstr "Indstil Disk Navigator"

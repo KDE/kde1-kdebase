@@ -1,12 +1,17 @@
+# Danish translations for KDE Base, kdmconfig
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Thomas Tanghus <tanghus@earthling.net>, 1998.
+#
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1998-01-27 13:29:16+0100\n"
-"From: Thomas Tanghus <tanghus@tang1>\n"
-"Xgettext-Options: -C -ktranslate -x ../../../kdelibs/po/kde.pot\n"
-"Files: main.cpp jpeg.cpp utils.cpp kdm-appear.cpp kdm-font.cpp kdm-bgnd.cpp "
-"kdm-users.cpp kdm-sess.cpp\n"
+"Project-Id-Version: KDE BASE/kdmconfig\n"
+"POT-Creation-Date: 1998-10-29 14:31+0100\n"
+"PO-Revision-Date: 1999-01-12 18:19+0100\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:84
 msgid "&Appearance"
@@ -38,7 +43,8 @@ msgstr "KDM opsætning"
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Desværre, du har ikke læse/skrive adgang til KDM opsætningsfilen"
+msgstr "Desværre, du har ikke læse/skrive\n"
+" adgang til KDM opsætningsfilen"
 
 #: main.cpp:154
 msgid "Missing privileges"
@@ -129,19 +135,19 @@ msgstr "Forkert fil-efternavn"
 msgid ""
 "<\n"
 "It will not be saved..."
-msgstr "Det vil ikke blive gemt..."
+msgstr ""
+"<\n"
+"Det vil ikke blive gemt..."
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
 msgstr "Vælg skriftsnit"
 
 #: kdm-font.cpp:50
-#, fuzzy
 msgid "Example"
 msgstr "Eksempel:"
 
 #: kdm-font.cpp:52
-#, fuzzy
 msgid "Change font..."
 msgstr "Skift skriftsnit"
 
@@ -157,41 +163,25 @@ msgstr "Fejl"
 msgid "Standard"
 msgstr "Standard"
 
-#: kdm-font.cpp:157
-#, fuzzy
-msgid "Greeting font"
-msgstr "Velkomst"
-
-#: kdm-font.cpp:161
-#, fuzzy
-msgid "Fail font"
-msgstr "Fejl"
-
-#: kdm-font.cpp:165
-#, fuzzy
-msgid "Standard font"
-msgstr "Standard"
-
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Vis forud"
 
 #: kdm-bgnd.cpp:95
 msgid "Color"
 msgstr "Farve"
 
 #: kdm-bgnd.cpp:101
-#, fuzzy
 msgid "Solid Color"
-msgstr "Farve"
+msgstr "Ugennemsigtig farve"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Vandret blandet"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Lodret blandet"
 
 #: kdm-bgnd.cpp:130
 msgid "Wallpaper"
@@ -202,39 +192,36 @@ msgid "None"
 msgstr "Ingen"
 
 #: kdm-bgnd.cpp:176
-#, fuzzy
 msgid "Tile"
 msgstr "Fliselagt"
 
 #: kdm-bgnd.cpp:181
-#, fuzzy
 msgid "Center"
-msgstr "Centreret"
+msgstr "Centrer"
 
 #: kdm-bgnd.cpp:186
-#, fuzzy
 msgid "Scale"
 msgstr "Skaleret"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "For oven til enstre"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "For oven til højre"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "For neden til venstre"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "For neden til højre"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Flot"
 
 #: kdm-users.cpp:48
 msgid "All users"
@@ -246,7 +233,7 @@ msgstr "Udvalgte brugere"
 
 #: kdm-users.cpp:52
 msgid "No-show users"
-msgstr "Uønskede brugere"
+msgstr "Brugere der ikke skal ses"
 
 #: kdm-users.cpp:79
 msgid ""
@@ -262,7 +249,7 @@ msgid ""
 " but no-show users"
 msgstr ""
 "Vis alle pånær\n"
-"uønskede brugere"
+"brugere der ikke skal ses"
 
 #: kdm-users.cpp:97
 msgid "Show users"
@@ -281,7 +268,6 @@ msgid "Save image as default image?"
 msgstr "Gem billede som standard billede?"
 
 #: kdm-sess.cpp:52
-#, fuzzy
 msgid "Allow to shutdown"
 msgstr "Tilladelse til at lukke ned:"
 
@@ -324,9 +310,3 @@ msgstr "Tilgængelige typer"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "uden navn!"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Skriftsnit"
-
-#~ msgid "Appearance"
-#~ msgstr "Udseende"

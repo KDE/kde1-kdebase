@@ -1,256 +1,238 @@
-# SOME DESCRIPTIVE TITLE.
+# Danish translation for KDE Base, kcmdisplay
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Thomas Tanghus <tanghus@earthling.net>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
-"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: KDE BASE/kcmdisplay\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
+"PO-Revision-Date: 1999-01-03 17:00+CET-1\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
-msgstr "Skriv nyt Arbejdsplads navn"
+msgstr "Skriv ny Arbejdsplads navn"
 
-#: backgnd.cpp:110 backgnd.cpp:163
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Arbejdsplads"
 
-#: backgnd.cpp:185
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Omdøb..."
 
-#: backgnd.cpp:196
-#, fuzzy
+#: backgnd.cpp:195
 msgid "&Common Background"
 msgstr "&Baggrund"
 
-#: backgnd.cpp:224 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Farver"
 
-#: backgnd.cpp:251
-#, fuzzy
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&En farve"
 
-#: backgnd.cpp:268
-#, fuzzy
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&To farver"
 
-#: backgnd.cpp:287
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Indstillinger..."
 
-#: backgnd.cpp:296
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1222
+#: backgnd.cpp:1379 backgnd.cpp:1917
 msgid "No wallpaper"
 msgstr "Intet tapet"
 
-#: backgnd.cpp:360
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "&Gennemsøg..."
 
-#: backgnd.cpp:368
+#: backgnd.cpp:367
 msgid "Arrangement:"
-msgstr ""
+msgstr "Arrangement"
 
-#: backgnd.cpp:375
-#, fuzzy
+#: backgnd.cpp:374
 msgid "Tiled"
 msgstr "F&liselagt"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:375
 msgid "Mirrored"
-msgstr ""
+msgstr "Spejlet"
+
+#: backgnd.cpp:376
+msgid "Center Tiled"
+msgstr "Centreret fliselagt"
 
 #: backgnd.cpp:377
-#, fuzzy
-msgid "Center Tiled"
-msgstr "&Centreret"
+msgid "Centred"
+msgstr "Centreret"
 
 #: backgnd.cpp:378
-#, fuzzy
-msgid "Centred"
-msgstr "&Centreret"
+msgid "Centred Brick"
+msgstr "Centreret mursten"
 
 #: backgnd.cpp:379
-#, fuzzy
-msgid "Centred Brick"
-msgstr "&Centreret"
+msgid "Centred Warp"
+msgstr "Centreret forvrængt"
 
 #: backgnd.cpp:380
-#, fuzzy
-msgid "Centred Warp"
-msgstr "&Centreret"
+msgid "Centred Maxpect"
+msgstr "Centreret Stort"
 
 #: backgnd.cpp:381
-#, fuzzy
-msgid "Centred Maxpect"
-msgstr "&Centreret"
+msgid "Symmetrical Tiled"
+msgstr "Symmetrisk fliselagt"
 
 #: backgnd.cpp:382
-msgid "Symmetrical Tiled"
-msgstr ""
+msgid "Symmetrical Mirrored"
+msgstr "Symmetrisk spejlet"
 
 #: backgnd.cpp:383
-msgid "Symmetrical Mirrored"
-msgstr ""
-
-#: backgnd.cpp:384
-#, fuzzy
 msgid "Scaled"
-msgstr "&Skaleret"
+msgstr "Skaleret"
 
-#: backgnd.cpp:399
+#: backgnd.cpp:398
 msgid "Ra&ndom"
-msgstr ""
+msgstr "Tilfældigt"
 
-#: backgnd.cpp:408
-#, fuzzy
+#: backgnd.cpp:407
 msgid "Setu&p..."
 msgstr "&Indstillinger..."
 
-#: backgnd.cpp:418
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
-msgstr ""
+msgstr "&Dyk ned i panelet"
 
-#: backgnd.cpp:443
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
-msgstr ""
+msgstr "Cache størrelse (kB)"
 
-#: backgnd.cpp:1339
+#: backgnd.cpp:1346
 msgid "Desktop names"
 msgstr "Arbejdsplads navne"
 
-#: backgnd.cpp:1384
-#, fuzzy
+#: backgnd.cpp:1391
 msgid "File error"
 msgstr "Navngivelses fejl"
 
-#: backgnd.cpp:1385
+#: backgnd.cpp:1392
 msgid "Can't load image file"
-msgstr ""
+msgstr "Kan ikke åbne billedfil"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1415 backgnd.cpp:1887
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Ikke understøttet URL"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1416 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
+"Undskyld, denne slags URL er ikke understøttet af KDE fremviseren"
 
-#: backgnd.cpp:1440
-#, fuzzy
+#: backgnd.cpp:1447
 msgid "Two color backgrounds"
 msgstr "To farve baggrund"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
 msgstr "Bland farver fra &top til bund"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
 msgstr "Bland farver fra &højre til venstre"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1496
 msgid "Use &pattern"
 msgstr "Brug &mønster"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1523
 msgid "Preview"
-msgstr ""
+msgstr "Vis den"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1534
 msgid "Pattern &name"
 msgstr "Mønster &navn"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1573
 msgid "Current"
-msgstr "Aktuelle"
+msgstr "Aktuel"
 
-#: backgnd.cpp:1626
-#, fuzzy
+#: backgnd.cpp:1633
 msgid "Filled"
 msgstr "Udfyldt"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1636
 msgid "Fish net"
 msgstr "Fiskenet"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1639
 msgid "Triangles"
-msgstr "Triangler"
+msgstr "Trekanter"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1642
 msgid "Flowers"
 msgstr "Blomster"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1645
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1648
 msgid "Cobbled Pavement"
 msgstr "Toppede brosten"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1714
 msgid "Random mode setup"
-msgstr ""
+msgstr "Opsætning i tilfældig modus"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1720
 msgid "Pick files from &directory"
-msgstr ""
+msgstr "Tag fil fra &folder"
 
-#: backgnd.cpp:1727
-#, fuzzy
+#: backgnd.cpp:1734
 msgid "&Browse ..."
 msgstr "&Gennemsøg..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Tids tøven i sekunder"
 
-#: backgnd.cpp:1760
-#, fuzzy
+#: backgnd.cpp:1767
 msgid "In &order"
-msgstr "Ignorer"
+msgstr "I &rækkefølge"
 
-#: backgnd.cpp:1777
-#, fuzzy
+#: backgnd.cpp:1784
 msgid "Desktops :"
-msgstr "Arbejdsplads"
+msgstr "Arbejdspladser:"
 
-#: backgnd.cpp:1816
-#, fuzzy
+#: backgnd.cpp:1823
 msgid "&Add"
-msgstr "&Tilføj..."
+msgstr "&Tilføj"
 
-#: backgnd.cpp:1988
-#, fuzzy
+#: backgnd.cpp:1994
 msgid "Directory error"
 msgstr "Navngivelses fejl"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1995
 msgid "Selected directory doesn't exists"
-msgstr ""
+msgstr "Den valgte folder eksisterer ike"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
 msgstr "Farve skema"
 
 #: colorscm.cpp:115
-#, fuzzy
 msgid "Current scheme"
 msgstr "Aktuelle skema"
 
@@ -279,7 +261,6 @@ msgid "Inactive title text"
 msgstr "Inaktiv titeltekst"
 
 #: colorscm.cpp:170
-#, fuzzy
 msgid "Inactive title blend"
 msgstr "Inaktiv titel blanding"
 
@@ -292,7 +273,6 @@ msgid "Active title text"
 msgstr "Aktiv titeltekst"
 
 #: colorscm.cpp:173
-#, fuzzy
 msgid "Active title blend"
 msgstr "Aktiv titelblanding"
 
@@ -310,7 +290,7 @@ msgstr "Vælg baggrund"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Vælg tekst"
+msgstr "Udvælg tekst"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -356,11 +336,10 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Vælg venligst et unikt navn for det nye farveskema.\n"
+"Vælg venligst et entydigt navn for det nye farveskema.\n"
 "Navnet du skrev findes allerede i farveskema listen."
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
 msgstr "Tilføj et farve skema"
 
@@ -372,6 +351,12 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"Indføj et navn for det nye farveskema\n"
+"der kan blive tilføjet din personlige liste.\n"
+"\n"
+"De farver der for øjeblikket bruges i 'Vis' vilblive kopieret ind i dette "
+"skema som en\n"
+"begyndelse."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -390,7 +375,6 @@ msgid "Screen Saver"
 msgstr "Skærmskåner"
 
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
-#, fuzzy
 msgid "No screensaver"
 msgstr "Ingen skærmskåner"
 
@@ -408,7 +392,7 @@ msgstr "Indstillinger"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "&Vent på"
+msgstr "&Vent i"
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -420,7 +404,7 @@ msgstr "K&ræver kodeord"
 
 #: scrnsave.cpp:272
 msgid "&Accept root password to unlock"
-msgstr "Accepter at root kodeord låser op"
+msgstr "&Accepter at root kodeord låser op"
 
 #: scrnsave.cpp:280
 msgid "Show &password as stars"
@@ -438,55 +422,54 @@ msgstr "&Høj"
 msgid "Low"
 msgstr "Lav"
 
-#: general.cpp:221
+#: general.cpp:222
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
-#: general.cpp:229
+#: general.cpp:230
 msgid "&Draw widgets in the style of Windows 95"
 msgstr "&Tegn Widgets i Windows 95 stil"
 
-#: general.cpp:245
+#: general.cpp:246
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Menuen i toppen af skærmen i Macintosh stil"
 
-#: general.cpp:259
+#: general.cpp:260
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr ""
+msgstr "&Anvend skrift på ikke-KDE programmer"
 
-#: general.cpp:530
+#: general.cpp:531
 msgid "General font"
-msgstr "Generelt skriftsnit"
+msgstr "Generelt skrift"
 
-#: general.cpp:535
+#: general.cpp:536
 msgid "Fixed font"
-msgstr "Fast skriftsnit"
+msgstr "Fast skrift"
 
-#: general.cpp:541
-#, fuzzy
+#: general.cpp:542
 msgid "Window title font"
-msgstr "Vindues tekst"
+msgstr "Vindues titel skrift"
 
-#: general.cpp:546
-#, fuzzy
+#: general.cpp:547
 msgid "Panel button font"
-msgstr "Panelknap skriftsnit"
+msgstr "Panelknap skrift"
 
-#: general.cpp:551
+#: general.cpp:552
 msgid "Panel clock font"
-msgstr "Panel ur skriftsnit"
+msgstr "Panel ur skrift"
 
-#: general.cpp:581
-#, fuzzy
+#: general.cpp:582
 msgid "Sample text"
 msgstr "Tekst eksempel"
 
-#: general.cpp:589
+#: general.cpp:590
 msgid ""
 "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
 "the quick brown fox jumps over the lazy dog\n"
 "0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
 msgstr ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG ÆØÅ\n"
+"0 1 2 3 4 5 6 7 8 9 !@#$%^&*()_+|"
 
 #: main.cpp:64
 msgid "&Background"
@@ -502,13 +485,13 @@ msgstr "&Farver"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "brug: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"brug: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -523,7 +506,6 @@ msgid "Active window"
 msgstr "Aktivt vindue"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
 msgid "Selected text"
 msgstr "Markeret tekst"
 
@@ -533,7 +515,7 @@ msgstr "Ny"
 
 #: fontchooser.cpp:82
 msgid "&Typeface"
-msgstr ""
+msgstr "Skrif&t type"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
@@ -549,7 +531,7 @@ msgstr "&Størrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "&Karaktér sæt"
+msgstr "&Tegnsæt"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -558,17 +540,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "enhver"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Skriftsnit etc."
-
-#, fuzzy
-#~ msgid "Desktop fonts"
-#~ msgstr "Arbejdsplads skriftsnit"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "Skri&ftsnit etc."
-
-#, fuzzy
-#~ msgid "One Des&ktop"
-#~ msgstr "Arbejdsplads"

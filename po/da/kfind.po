@@ -1,17 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
+# Danish translations for KDE Base, kfind
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Thomas Tanghus <tanghus@earthling.net>,1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: KDE BASE/kfind\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"PO-Revision-Date: 1999-01-03 23:10-0500\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -31,7 +31,7 @@ msgstr "S&top søgning"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "&Åben"
+msgstr "&Åbn"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
@@ -43,7 +43,7 @@ msgstr "&Indstillinger"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Åben &Folder"
+msgstr "Åbn &Folder"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
@@ -54,9 +54,8 @@ msgid "&Select All"
 msgstr "&Vælg alle"
 
 #: kfindtop.cpp:160
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Vælg alle"
+msgstr "Af&vælg alle"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"
@@ -64,7 +63,7 @@ msgstr "&Omvend valg"
 
 #: kfindtop.cpp:174
 msgid "&Preferences ..."
-msgstr "&Indstillinger"
+msgstr "&Indstillinger..."
 
 #: kfindtop.cpp:179
 #, c-format
@@ -80,7 +79,7 @@ msgstr ""
 "Frontend for find værktøjet\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
-"Specielt tak til Stephan Kulow\n"
+"Særlig tak til Stephan Kulow\n"
 "<coolo@kde.org>"
 
 #: kfindtop.cpp:199
@@ -101,7 +100,7 @@ msgstr "Tilføj til arkiv"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Åben folder"
+msgstr "Åbn folder"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
@@ -153,11 +152,11 @@ msgstr "&mellem"
 
 #: kftabdlg.cpp:150
 msgid "during the previou&s "
-msgstr "de &sidste"
+msgstr "blandt de &tidliger"
 
 #: kftabdlg.cpp:151
 msgid "&during the previous "
-msgstr "&de sidste"
+msgstr "blandt &de sidste"
 
 #: kftabdlg.cpp:199
 msgid " Date Modified "
@@ -169,15 +168,11 @@ msgstr "Af &type:"
 
 #: kftabdlg.cpp:208
 msgid "&Containing Text:"
-msgstr "&Indeholdene text:"
+msgstr "&Indeholdene tekst:"
 
 #: kftabdlg.cpp:213
 msgid "&Size is:"
-msgstr "Størrelse:"
-
-#: kftabdlg.cpp:217
-msgid "KB"
-msgstr ""
+msgstr "Størrelse er:"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -185,27 +180,27 @@ msgstr "Alle filer og foldere"
 
 #: kftabdlg.cpp:238
 msgid "Folders"
-msgstr ""
+msgstr "Foldere"
 
 #: kftabdlg.cpp:239
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symbolske links"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Særlige filer (sockets, enheds filer...)"
 
 #: kftabdlg.cpp:241
 msgid "Executable files"
-msgstr ""
+msgstr "Program filer"
 
 #: kftabdlg.cpp:242
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID program filer"
 
 #: kftabdlg.cpp:250
 msgid "(none)"
-msgstr ""
+msgstr "(ingen)"
 
 #: kftabdlg.cpp:251
 msgid "At Least"
@@ -318,7 +313,7 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Du har ikke adgang\n"
+"Du har ikke tilladelse\n"
 "til at slette denne fil"
 
 #: kfwin.cpp:318
@@ -334,7 +329,7 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Du har ikke adgang\n"
+"Du har ikke tilladelse\n"
 "til at slette denne folder"
 
 #: kfwin.cpp:341
@@ -361,14 +356,3 @@ msgstr "Kunne ikke genkende arkivtype!"
 msgid "Error while creating child process!"
 msgstr "Fejl ved oprettelse af underproces!"
 
-#~ msgid "&Cut"
-#~ msgstr "&Klip"
-
-#~ msgid "Properties"
-#~ msgstr "Indstillinger"
-
-#~ msgid "Kfind &help"
-#~ msgstr "Kfind &hjælp"
-
-#~ msgid "About &Qt"
-#~ msgstr "Om &Qt"

@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translations for KDE Base, kcmlocale
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Thomas Tanghus <tanghus@earthling.net>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: KDE BASE/kcmlocale\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-01-25 13:23\n"
-"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 1998-03-21 13:48+0100\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 
 #: main.cpp:52
 msgid "&Locale"
-msgstr ""
+msgstr "&Lokalisering"
 
 #: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
@@ -23,7 +24,7 @@ msgstr "brug: kcmlocale [-init | language]\n"
 
 #: main.cpp:86
 msgid "Locale settings"
-msgstr "Locale indstillinger"
+msgstr "Lokale indstillinger"
 
 #: locale.cpp:45
 msgid "Language"
@@ -47,7 +48,7 @@ msgstr "uden navn!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Udfører nye sprogindstillinger"
+msgstr "Uinfører de nye sprogindstillinger"
 
 #: locale.cpp:182
 msgid ""

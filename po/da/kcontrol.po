@@ -1,19 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translations for KDE Base, kcontrol
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Thomas Tanghus <tanghus@earthling.net>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
-"PO-Revision-Date: 1998-01-28 13:00+CET-1\n"
-"Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: KDE BASE/kcontrol\n"
+"POT-Creation-Date: 1998-12-28 01:13+0100\n"
+"PO-Revision-Date:1999-01-12 10:13+0100\n"
+"Last-Translator: Erik Kjær Pedersen\n"
+"Language-Team: da<LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: configlist.cpp:121
+#: configlist.cpp:120
 msgid "Unknown module: "
 msgstr "Ukendt modul: "
 
@@ -21,11 +21,11 @@ msgstr "Ukendt modul: "
 msgid "KDE Control Center"
 msgstr "KDE Kontrol Center"
 
-#: toplevel.cpp:86
+#: toplevel.cpp:87
 msgid "&Swallow modules"
 msgstr "&Slug moduler"
 
-#: toplevel.cpp:89
+#: toplevel.cpp:90
 msgid ""
 "KDE Control Center - Version 1.0\n"
 "\n"
@@ -70,12 +70,3 @@ msgstr "Version: "
 #: mainwidget.cpp:84
 msgid "Machine: "
 msgstr "Maskine: "
-
-#~ msgid "&About KControl..."
-#~ msgstr "&Om KControl"
-
-#~ msgid "&Using KControl"
-#~ msgstr "Br&ug af KControl"
-
-#~ msgid "About KControl"
-#~ msgstr "Om KControl"
