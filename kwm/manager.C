@@ -1615,7 +1615,9 @@ void Manager::manage(Window w, bool mapped){
     XUngrabServer(qt_xdisplay()); 
 
   if(options.Placement == MANUAL_PLACEMENT && !mapped
-     && c->isOnDesktop(manager->currentDesktop()))
+     && c->isOnDesktop(manager->currentDesktop())
+     //hoping this places transients without interaction
+     && (c->trans == None)) 
     c->handleOperation(OP_MOVE);
   
 }
