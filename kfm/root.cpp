@@ -1377,7 +1377,7 @@ void KRootIcon::init()
     else
 	p2.drawPixmap( pixmapXOffset, pixmapYOffset, *pixmap->mask() );
 
-    if ( bIsLink && link_pixmap->mask() != 0 )
+    if ( bIsLink && link_pixmap && link_pixmap->mask() != 0 )
     {
 	p2.setRasterOp( OrROP );
 	p2.drawPixmap( pixmapXOffset, pixmapYOffset, *link_pixmap->mask() );
@@ -1435,7 +1435,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
 {
     bitBlt( this, pixmapXOffset, pixmapYOffset, pixmap );
 
-    if ( bIsLink )
+    if ( bIsLink && link_pixmap )
 	bitBlt( this, pixmapXOffset, pixmapYOffset, link_pixmap );
   
     QPainter p;
