@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.2  1997/04/23 20:00:17  kulow
+ * updated to kvt-0.14
+ *
  * Revision 1.4  1993/08/09  11:54:15  lipka
  * now works both on Linux and SunOs 4.1.3.
  * Brians clean-ups incorporated
@@ -46,7 +49,7 @@
 #include <utmp.h>
 #include <unistd.h>
 #ifdef BSD
-#ifndef FREEBSD
+#ifndef __FreeBSD__
 #include <lastlog.h>
 #endif
 #include <strings.h>

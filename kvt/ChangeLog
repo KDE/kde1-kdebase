@@ -1,4 +1,6 @@
- - new option "-tn" for terminal type
+  - small fixes for FreeBSD (Marc van Kempen)
+	
+  - new option "-tn" for terminal type
 
   - background white leads to lightgrey for applications.
     This allows dialog-programms to look nice (e.g. LISA)

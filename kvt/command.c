@@ -38,6 +38,13 @@
 #ifdef ALPHA
 #define FREEBSD
 #endif
+#ifdef __FreeBSD__
+/*
+ * This is a klutch really, the alpha stuff misuses the FREEBSD
+ * define, but I don't know whatfor, so I can't change it
+ */
+#define FREEBSD
+#endif
 #ifdef AIXV3
 #include <sys/select.h>
 #endif   
@@ -376,9 +383,9 @@ static void catch_sig(int sig)
       {
 	int pgrp = getpid();
 	ioctl(0, TIOCSPGRP, (char *)&pgrp);
-	setpgrp();
+	setpgid(0,0);
 	close(open(ttynam, O_WRONLY, 0));
-	setpgrp ();
+	setpgid(0,0);
       }
 
       /* init of termios structure		*/
