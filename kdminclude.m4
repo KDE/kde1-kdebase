@@ -105,5 +105,7 @@ fi
 AC_SUBST(PASSWDLIB)
 AC_CHECK_LIB(util, main, [LIBUTIL="-lutil"]) dnl for FreeBSD
 AC_SUBST(LIBUTIL)
+AC_CHECK_LIB(s, main, [LIB_LIBS="-ls"]) dnl for AIX
+AC_SUBST(LIB_LIBS)
 ])
 
