@@ -374,6 +374,10 @@ void FilePropsPage::applyChanges()
 	s.truncate( i );
 	s += "/";
 	s += n.data();
+	if ( path.right(1) == "/") 
+	  // It's a directory, so strip the trailing slash (in case it's a
+          // symlink)
+	  path.truncate( path.length() - 1);
 	if ( rename( path, s ) != 0 ) {
             QString tmp;
             tmp.sprintf(i18n("Could not rename the file or directory\n%s\n"), strerror(errno));
