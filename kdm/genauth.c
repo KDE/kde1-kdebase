@@ -176,7 +176,7 @@ int	len;
     	int	    seed;
     	int	    value;
     	int	    i;
-	int         sum[2];
+	long        sum[2];
 
 	/* Read random data from file /stefh */
 	if( !sumFile( randomFile, sum)) {
