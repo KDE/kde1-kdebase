@@ -230,8 +230,19 @@ protected:
       */
     KStrList mvDelURLList;
     
-    /// The contents of this list is inverted inserted in 'mvDelURLList'
+    /**
+     * The contents of this list is inverted inserted in @ref #mvDelURLList.
+     *
+     * @see #move
+     * @see #del
+     */
     KStrList tmpDelURLList;
+    /**
+     * Tells which source files should not be worked on.
+     *
+     * @see move
+     */
+    KStrList skipURLList;
     
     /// Used to store infos for MOUNT / UNMOUNT command
     QString mntFSType;

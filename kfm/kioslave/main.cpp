@@ -659,12 +659,326 @@ void sig_handler(int _sig)
 
 #include "main.moc"
 
+#ifdef TORBEN_TEST
 
+/********************************************************************************************
+ * 
+ * Experimental code to fix bugs in recursive move/copy/delete
+ *
+ ********************************************************************************************/
 
+void KIOSlave::move( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
+{
+    destURLList.clear();
+    srcURLList.clear();
+    
+    /**
+     * Test every URL. We wont test them later on.
+     */
+    KURL u( _src_url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_src_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
+	return;
+    }
 
+    KURL su( u.nestedURL() );
+    if ( su.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_src_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
+	return;
+    }
 
+    KURL u2( _dest_url );
+    if ( u2.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_dest_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
+	return;
+    }
+    KURL du( u2.nestedURL() );
+    if ( du.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_dest_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
+	return;
+    }
 
+    // Perhaps we can move on one device ?
+    // That is very fast!
+    // HACK
+    // Perhaps other protocols have fast move functions, too ?
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() &&
+	 strcmp( u2.protocol(), "file" ) == 0 && !u2.hasSubProtocol() )
+    {
+	// Everything ok ? => We are done
+	if ( rename( su.path(), du.path() ) == 0 )
+	{
+	    ipc->done();
+	    return;
+	}
+    }
 
+    recursionLevel = 0;
+    moveRecursive( _src_url, _dest_url, _overwriteExistingFiles );
+}
 
+void KIOSlave::moveRecursive( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
+{
+    /**
+     * We can assume that these URLs are already tested.
+     */
+    KURL u( _src_url );
+    KURL su( u.nestedURL() );
+    KURL u2( _dest_url );
+    KURL du( u2.nestedURL() );
+    
+    /**
+     * Lets test wether we have to move a directory
+     */
+    KProtocolDirEntry *de;
+    KProtocol *prot = CreateProtocol(_url);
+    
+    // We want KProtocolDirEntries!!
+    prot->AllowHTML( FALSE );
+    // No error? => It is a directory
+    if ( prot->OpenDir(&su) != KProtocol::FAIL )
+    {
+	// Loop over all entries
+	while( ( de = prot->ReadDir() ) )
+	{
+	    // Caculate destination
+	    QString tmp = _dest_url;
+	    if ( tmp.right(1) != "/" )
+		tmp += "/";
+	    tmp += de->name.data();
+	    // Calculate src
+	    QString tmp2 = _dest_url;
+	    if ( tmp2.right(1) != "/" )
+		tmp2 += "/";
+	    tmp2 += de->name.data();
+	    
+	    // Directory ? => Recursion
+	    if ( de->isdir )
+	    {
+		// Append this directory to the list
+		// of directories we have to create.
+		mkdirURLList.append( tmp );
+		// Append this directory to the list
+		// of directories we have to delete afterwards.
+		rmdirURLList.append( tmp );
+		
+		// Recursion
+		recursionLevel++;
+		moveRecursive( tmp2, tmp, _overwriteExistingFiles );
+		recursionLevel--;
+	    }
+	    // HACK!!!
+	    /* else if ( de->islink )
+	       {
+	       } */
+	    // It is a usual file
+	    else
+	    {
+		destURLList.append( tmp.data() );
+		srcURLList.append( tmp2.data() );
+	    }
+	}
+	prot->CloseDir();
+	delete prot;
 
+	// Did we traverse the complete tree ?
+	if ( recursionLevel == 0 )
+	{
+	    moveList( _overwriteExistingFiles );
+	    ipc->done();
+	    return;
+	}
+    }
+    // It is just a simple file
+    else
+    {
+	moveSimple( _src_url, _dest_url, _overwriteExistingFiles );
+	ipc->done();
+	return;
+    }
+}
+    
+void KIOSlave::moveList( bool _overwriteExistingFiles )
+{
+    char *dir;
+    for ( mkdir = dirURLList.first(); dir != 0L; mkdir = dirURLList.next() )
+	mkdirSimple( dir );
+    
+    char *s;
+    char *d;
+    for ( s = srcURLList.first(), d = destURLList.first();
+	  s != 0L && d != 0L;
+	  s = srcURLList.next(), d = destURLList.next() )
+    {
+	moveSimple( s, d, _overwriteExistingFiles );
+    }
 
+    // Remove directories in reverse order
+    for ( dir = rmdirURLList.last(); dir != 0L; dir = rmdirURLList.prev() )
+	rmdirSimple( dir );
+}
+
+bool KIOSlave::moveSimple( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
+{
+    /**
+     * We can assume that these URLs are already tested.
+     */
+    KURL u( _src_url );
+    KURL su( u.nestedURL() );
+    KURL u2( _dest_url );
+    KURL du( u2.nestedURL() );
+
+    if ( !copySimple( src_url, _dest_url, _overwriteExistingFiles ) )
+	return FALSE;
+    
+    // Delete the file we just copied
+    if ( !delSimple( src_url ) )
+	return FALSE;
+
+    return TRUE;
+}
+
+bool KIOSlave::mkdirSimple( const char *_url )
+{
+    // We can assume that this URL is correct
+    KURL u( _url );
+    KURL su( u.nestedURL() );
+
+    if( ProtocolSupported(_url) )
+    {
+	KProtocol *prot = CreateProtocol( _url );
+	if( prot->MkDir( &su ) != KProtocol::SUCCESS )
+	{
+	    ProcessError(prot, _url);
+	    return;
+	}
+	delete prot;
+    }
+    else
+    {
+	printf("ERROR: Not implemented\n");
+	QString err = "Mkdir ";
+	err += _url;
+	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+	return FALSE;
+    }
+
+    return TRUE;
+}
+
+bool KIOSlave::delSimple( const char *_url )
+{
+    // We can assume that this URL is correct
+    KURL u( _url );
+    KURL su( u.nestedURL() );
+
+    if( ProtocolSupported(_url) )
+    {
+	KProtocol *prot = CreateProtocol( _url );
+	if( prot->Del( &su ) != KProtocol::SUCCESS )
+	{
+	    ProcessError(prot, _url);
+	    return;
+	}
+	delete prot;
+    }
+    else
+    {
+	printf("ERROR: Not implemented\n");
+	QString err = "Delete ";
+	err += _url;
+	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+	return FALSE;
+    }
+
+    return TRUE;
+}
+
+bool KIOSlave::copySimple( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
+{
+    if( ProtocolSupported( _src_url ) && ProtocolSupported( _dest_url ) )
+    {
+	KProtocol *src_prot = CreateProtocol(_src_url);
+	KProtocol *dest_prot = CreateProtocol(_dest_url);
+
+	int destmode = KProtocol::WRITE;
+	if( _overwriteExistingFiles )
+	    destmode |= KProtocol::OVERWRITE;
+	
+	if( dest_prot->Open( &du, destmode ) != KProtocol::SUCCESS )
+	{
+	    ProcessError(dest_prot, _dest_url);
+	    return;
+	}
+
+	printf("Open src\n");
+	if(src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS)
+	{
+	    ProcessError(src_prot, _src_url);
+	    return;
+	}
+
+	long c = 0, last = 0, l = 1;
+	long size = src_prot->Size();
+	char buffer[4096];
+
+	printf("Copyloop starting\n");
+	while ( !src_prot->atEOF() )
+	{
+	    printf("read\n");
+	    if ((l = src_prot->Read( buffer, 4096 ) ) < 0)
+	    {
+		printf("read error (%ld)\n",l);
+		ProcessError(src_prot, _src_url);
+		return;
+	    }
+	    printf("write\n");
+	    if (dest_prot->Write(buffer, l) < l )
+	    {
+		ProcessError(dest_prot, _dest_url);
+		return;
+	    }
+	    printf("progress\n");
+	    c += l;
+	    if ( size != 0 && ( c * 100 / size ) != last )
+	    {
+		last = ( c * 100 / size );
+		ipc->progress( last );
+	    }
+	}
+	printf("ready: Close\n"); 
+	src_prot->Close();
+	dest_prot->Close();
+	
+	int permissions = src_prot->GetPermissions( su );
+	printf("Got Permissions '%i'\n",permissions);
+	dest_prot->SetPermissions( du, permissions );         
+	
+	printf("delete\n");
+	delete src_prot;
+	delete dest_prot;
+    }
+    else
+    {
+	printf("ERROR: Not implemented\n");
+	QString err = "Copy ";
+	err += _src_url;
+	err += " to ";
+	err += _dest_url;
+	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+
+	return FALSE;
+    }
+
+    return TRUE;
+}
+
+#endif

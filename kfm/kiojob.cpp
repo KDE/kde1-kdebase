@@ -3,6 +3,7 @@
 #include <qpainter.h>
 #include <qdict.h>
 #include <kurl.h>
+#include <qmsgbox.h>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,7 +22,6 @@
 #include "krenamewin.h"
 #include "passworddialog.h"
 #include <config-kfm.h>
-
 
 #include <klocale.h>
 
@@ -489,6 +489,7 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
 void KIOJob::move()
 {
     tmpDelURLList.clear();
+    skipURLList.clear();
     
     // Recursive directory
     QListIterator<char> itSrc( cmSrcURLList );
@@ -507,7 +508,8 @@ void KIOJob::move()
 	
 	int i = 1;
 	// Moving on the local hard disk ?
-	if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
+	if ( strcmp( su.protocol(), "file" ) == 0 && !su.hasSubProtocol() &&
+	     strcmp( du.protocol(), "file" ) == 0 && !du.hasSubProtocol() )
 	{
 	    // Does the file already exist ?
 	    // If yes, care about renaming.
@@ -551,6 +553,7 @@ void KIOJob::move()
 	    // Ok, that is not a real error.
 	    if ( errno == EXDEV )
 	    {
+		debugT("Testing for dir '%s'\n",su.path());
 		struct stat buff;
 		stat( su.path(), &buff );
 		// We want to move a directory ?
@@ -562,16 +565,25 @@ void KIOJob::move()
 		    if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
 			if ( errno != EEXIST )
 			{
-			    warning(klocale->translate("ERROR: Could not make directory"));
+			    QString tmp;
+			    tmp.sprintf( klocale->translate( "Could not make directory\n\r%s" ), du.path() );
+			    QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			    return;
 			}
+
+		    // Dont forget to delete this directory at the end
+		    tmpDelURLList.append( su.path() );
+		    // ... and dont try to copy it
+		    skipURLList.append( p );
 
 		    DIR *dp;
 		    struct dirent *ep;
 		    dp = opendir( su.path() );
 		    if ( dp == NULL )
 		    {
-  		        warning(klocale->translate("ERROR: Could not access directory '%s'"), p );
+			QString tmp;
+			tmp.sprintf( klocale->translate( "Could not access directory\n\r%s" ), du.path() );
+			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			return;
 		    }
 		    
@@ -581,13 +593,13 @@ void KIOJob::move()
 			{
 			    QString s = p;
 			    s.detach();
-			    if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
+			    if ( s.right(1) != "/" )
 				s += "/";
 			    s += ep->d_name;
 			    
 			    QString d = du.url();
 			    d.detach();
-			    if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
+			    if ( d.right(1) != "/" )
 				d += "/";
 			    d += ep->d_name;
 			    
@@ -595,25 +607,19 @@ void KIOJob::move()
 			    cmDestURLList.append( d.data() );
 			}
 		    }
-
-		    // Remove the directory from the copy list
-		    // ... but delete it at the end
-		    tmpDelURLList.append( p );
-		    cmSrcURLList.removeRef( p );
-		    cmDestURLList.removeRef( p2 );
 		}
 	    }
 	    else
 	    {
-		warning(klocale->translate("ERROR: Could not move '%s'"),p );
+		QString tmp;
+		tmp.sprintf( klocale->translate( "Could not move directory\n\r%s\n\rto '%s'\n\rPerhaps access denied" ), du.path(), su.path() );
+		QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 		return;
 	    }
 	}
 	// We moved the files already, so take them from the list
 	else if ( i == 0 )
 	{
-	    debugT("?????????????????? Already moved '%s' '%s'\n",p,p2 );
-	    
 	    cmSrcURLList.removeRef( p );
 	    cmDestURLList.removeRef( p2 );
 	    // ... but send some notifies afterwards
@@ -1347,23 +1353,33 @@ void KIOJob::slaveIsReady()
 
     case KIOJob::JOB_MOVE:
 	{
-	    debugT("**********1\n");
 	    if ( !started )
 	    {
-		debugT("**********2\n");
 		connect( slave, SIGNAL( progress( int ) ), this, SLOT( slaveProgress( int ) ) );
 		moveDelMode = false;
+	    }
+
+	    /**
+	     * Skip directories.
+	     * 
+	     * @see move
+	     */
+	    while ( skipURLList.find( cmSrcURLList.first() ) != -1 )
+	    {
+		cmSrcURLList.removeRef( cmSrcURLList.first() );
+		cmDestURLList.removeRef( cmDestURLList.first() );
 	    }
 	    
 	    if ( cmSrcURLList.count() == 0 )
 	    {
-		debugT("**********3\n");
 		char *p;
 		for( p = mvDelURLList.first(); p != 0L; p = mvDelURLList.next() )
 		{
 		    if ( rmdir( p ) == -1 )
 		    {
-			warning(klocale->translate("ERROR: Could not delete dir '%s'"),p );
+			QString tmp;
+			tmp.sprintf( klocale->translate( "Could not delete directory\n\r%s" ), p );
+			QMessageBox::message( klocale->translate( "KFM Error" ), tmp.data() );
 			slave->cleanUp();
 			cleanedUp = true;
 			delete dlg;
@@ -1374,8 +1390,6 @@ void KIOJob::slaveIsReady()
 		}
 		mvDelURLList.clear();
 		
-		debugT("Removing dialog\n");
-
 		slave->cleanUp();
 		cleanedUp = true;
 		return;
@@ -1383,7 +1397,6 @@ void KIOJob::slaveIsReady()
 	 
 	    if ( dlg )
 	    {
-		debugT("**********4\n");
 		char buffer[ 1024 ];
 		sprintf( buffer, klocale->translate("File %i/%i"), 
 			 cmCount - cmSrcURLList.count() + 1, cmCount );	    
@@ -1391,29 +1404,24 @@ void KIOJob::slaveIsReady()
 		line2->setText( cmSrcURLList.first() );
 		sprintf( buffer, klocale->translate("to %s"), cmDestURLList.first() );
 		line3->setText( buffer );
-		debugT("**********5\n");
 	    }
-	    
+	    	    
 	    // In this turn delete the file we copied last turn
 	    if ( moveDelMode )
 	    {
-		debugT("**********6\n");
 		QString src = completeURL( cmSrcURLList.first() ).data();
 		slave->del( src.data() );
 		cmSrcURLList.removeRef( cmSrcURLList.first() );
 		cmDestURLList.removeRef( cmDestURLList.first() );
-		debugT("**********7\n");
 	    }
 	    else
 	    {
-		debugT("**********8\n");
 		lastSource = cmSrcURLList.first();
 		lastDest = cmDestURLList.first();
 
 		QString dest = completeURL( cmDestURLList.first() ).data();
 		QString src = completeURL( cmSrcURLList.first() ).data();
 		slave->copy( src.data(), dest.data(), overwriteExistingFiles );
-		debugT("**********9\n");
 	    }
 	    
 	    moveDelMode = !moveDelMode;
@@ -1424,7 +1432,6 @@ void KIOJob::slaveIsReady()
 	{
 	    if ( mvDelURLList.count() == 0 )
 	    {
-		debugT("Removing dialog\n");
 		slave->cleanUp();
 		cleanedUp = true;
 		return;
@@ -1451,7 +1458,7 @@ void KIOJob::slaveIsReady()
 	    // mount already called ?
 	    if ( started )
 	    {
-		debugT("Removing dialog\n");
+
 		slave->cleanUp();
 		cleanedUp = true;
 		return;

@@ -840,7 +840,7 @@ void KRootWidget::slotPopupDelete()
     KIOJob * job = new KIOJob;
  
     bool ok = QMessageBox::query( klocale->translate("KFM Warning"), 
-				  klocale->translate("Dou you really want to delete the files?\n\nThere is no way to restore them"), 
+				  klocale->translate("Do you really want to delete the files?\n\nThere is no way to restore them"), 
 				  klocale->translate("Yes"), 
 				  klocale->translate("No") );
     
