@@ -31,7 +31,8 @@ enum FOCUS_POLICY {
 
 enum TITLEBAR_LOOK{
   PLAIN,
-  SHADED,
+  H_SHADED,
+  V_SHADED,
   PIXMAP
 };
 

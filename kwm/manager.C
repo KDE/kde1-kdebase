@@ -1481,117 +1481,97 @@ void Manager::deskCascade() {
   }
 }
 
-//CT 16mar98 - magics: BorderSnapZone 
-void Manager::snapToBorder(Client *c) {
-  int snap = options.BorderSnapZone;        //snap trigger
+//CT 16mar98, 27May98 - magics: BorderSnapZone, WindowSnapZone
+void Manager::snapIt(Client *c) {
+
+  int snap;        //snap trigger
+
   QRect maxRect = KWM::getWindowRegion(manager->currentDesktop());
   int xmin = maxRect.left();
   int xmax = maxRect.right();               //desk size
   int ymin = maxRect.top();
   int ymax = maxRect.bottom();
-  int cx, cy, rx, ry;
+  int cx, cy, rx, ry;                 //these hopefully do not change
   
-  cx = c->geometry.x();
-  cy = c->geometry.y();
-  rx = cx + c->geometry.width();
-  if(c->isShaded()) ry = cy + TITLEBAR_HEIGHT + 2*BORDER;
-  else ry = cy + c->geometry.height();
-  
-  if ( abs(cx-xmin) < snap ){
-    if (abs(xmax-rx) < snap) 
-      cx = (abs(cx-xmin) < abs(xmax-rx))?xmin:(xmax - c->geometry.width());
-    else cx = xmin;
-  }
-  else if (abs(xmax-rx) < snap) cx = xmax - c->geometry.width();
-  
-  if ( abs(cy-ymin) < snap ){
-    if (abs(ymax-ry) < snap) 
-      cy = (abs(cy-ymin) < abs(ymax-ry))?ymin:(ymax - c->geometry.height());
-    else cy = ymin;
-  }
-  else if (abs(ymax-ry) < snap) cy = ymax - c->geometry.height();
-  
-  //then snap 
-  c->geometry.moveTopLeft(QPoint(cx, cy));
-}
-
-//CT 17mar98 - magics: WindowSnapZone
-void Manager::snapToWindow(Client *c) {
-  int snap = options.WindowSnapZone;
-  QRect maxRect = KWM::getWindowRegion(manager->currentDesktop());
-  int xmax = maxRect.width(); //desk sizes
-  int ymax = maxRect.height();
-  int cx, cy, rx, ry;
-
-  int nx, ny;                         //new coords (where to go)
+  int nx, ny;                         //buffers
   int deltaX = xmax, deltaY = ymax;   //minimum distance to other clients
-
-  Client * l;
+  
+  Client *l;
   int lx, ly, lrx, lry; //coords and size for the comparison client
   
   nx = cx = c->geometry.x();
   ny = cy = c->geometry.y();
   rx = cx + c->geometry.width();
-  if(c->isShaded()) ry = cy + TITLEBAR_HEIGHT + 2*BORDER;
-  else ry = cy + c->geometry.height();
+  ry = c->isShaded()? cy + TITLEBAR_HEIGHT + 2*BORDER:
+                      cy + c->geometry.height();
 
+  // border snap
+  snap = options.BorderSnapZone;
+  if (snap) {
+    if ( abs(cx-xmin) < snap ){
+      deltaX = abs(cx - xmin);
+      nx = xmin;
+    }
+    if ((abs(xmax-rx) < snap) && (abs(xmax-rx) < deltaX)) {
+      deltaX = abs(xmax-rx);
+      nx = xmax - c->geometry.width();
+    }
+    
+    if ( abs(cy-ymin) < snap ){
+      deltaY = abs(cy-ymin);
+      ny = ymin;
+    }
+    if ((abs(ymax-ry) < snap)  && (abs(ymax-ry) < deltaY)) {
+      deltaY = abs(ymax-ry);
+      ny = ymax - c->geometry.height();
+    }
+  }
+
+  // windows snap
+  snap = options.WindowSnapZone;
   for (l = clients.first();l;l = clients.next()) {
     if(!l->isOnDesktop(manager->currentDesktop()) ||
        l->isIconified() ||
        l->trans != None) 
       continue;
+    
     lx = l->geometry.x();
     ly = l->geometry.y();
     lrx = lx + l->geometry.width();
-    if(l->isShaded()) lry = ly + TITLEBAR_HEIGHT + 2*BORDER;
-    else lry = ly + l->geometry.height();
+    lry = l->isShaded()? ly + TITLEBAR_HEIGHT + 2*BORDER:
+      ly + l->geometry.height();
     
     if( ((cy <= lry) && (cy >= ly))  ||
 	((ry >= ly)  && (ry <= lry)) ||
 	((ly >= cy)  && (lry <= ry)) )  {
-      //if this happens
-      if ( (abs(lrx - cx) < snap) && (abs(lrx -cx) < abs(deltaX)) ) {
-	deltaX = lrx - cx;
+      if ( (abs(lrx - cx) < snap) && (abs(lrx -cx) < deltaX) ) {
+	deltaX = abs(lrx - cx);
 	nx = lrx;
       }
-      //this isn't anymore possible. And inversely
-      if ( (abs(rx - lx) < snap) &&  (abs(rx - lx) < abs(deltaX)) ) {
-	deltaX = rx - lx;
+      if ( (abs(rx - lx) < snap) &&  (abs(rx - lx) < deltaX) ) {
+	deltaX = abs(rx - lx);
 	nx = lx - c->geometry.width();
-	/* this is to be uncommented if anytimes we decide we don't want our
-	 * windows go out of the desktop
-	 if (cx < 0) cx = 0;
-	 if(cx + c->geometry.width() > xmax) cx = xmax - c->geometry.width();
-	*/
       }
     }
     
     if( ((cx <= lrx) && (cx >= lx))  ||
 	((rx >= lx)  && (rx <= lrx)) ||
 	((lx >= cx)  && (lrx <= rx)) ){
-      //if this happens
-      if ( (abs(lry - cy) < snap) && (abs(lry -cy) < abs(deltaY)) ) {
-	deltaY = lry - cy;
+      if ( (abs(lry - cy) < snap) && (abs(lry -cy) < deltaY) ) {
+	deltaY = abs(lry - cy);
 	ny = lry;
       }
-      //this isn't anymore possible. And inversely
-      if ( (abs(ry-ly) < snap) &&  (abs(ry - ly) < abs(deltaY)) ) {
-	deltaY = ry - ly;
-	ny = ly - (c->isShaded()?
-		   (TITLEBAR_HEIGHT + 2*BORDER):
-		   c->geometry.height());
-	/* this is to be uncommented if anytimes we decide we don't want our
-	 * windows go out of the desktop
-	 if (cy < 0) cy = 0;
-	 if(cy + c->geometry.height() > ymax) cy = ymax - c->geometry.height();
-	*/
+      if ( (abs(ry-ly) < snap) &&  (abs(ry - ly) < deltaY) ) {
+	deltaY = abs(ry - ly);
+	ny = ly - (c->isShaded()? (TITLEBAR_HEIGHT + 2*BORDER):
+		                   c->geometry.height());
       }
     }
   }
-
-  //now snap it  
+  
   c->geometry.moveTopLeft(QPoint(nx, ny));
 }
+
 
 // one of the central functions within kwm: manage a new window. If
 // mapped is true, then the window is already mapped. This happens

@@ -116,8 +116,8 @@ void resizecalc_b(Client *c, int /* x */, int y){
 
 void dragcalc(Client* c, int x, int y) {
   c->geometry.moveTopLeft(QPoint(QPoint(x,y)- c->old_cursor_pos));
-  if (options.WindowSnapZone > 0) manager->snapToWindow(c);
-  if (options.BorderSnapZone > 0) manager->snapToBorder(c);
+  if (options.WindowSnapZone || options.BorderSnapZone) 
+    manager->snapIt(c);
 }
 
 void draw_selection_rectangle(int x, int y, int dx, int dy){
@@ -364,8 +364,8 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
       c->geometry.setHeight(-c->geometry.height());
     }
 
-    if (options.WindowSnapZone > 0) manager->snapToWindow(c);
-    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
+    if (options.WindowSnapZone || options.BorderSnapZone) 
+      manager->snapIt(c);
 
     manager->sendConfig(c);
     

@@ -726,15 +726,17 @@ void MyApp::readConfiguration(){
   }
 
   key = config->readEntry("TitlebarLook");
-  if( key == "shaded")
-    options.TitlebarLook = SHADED;
+  if( key == "shadedHorizontal")
+    options.TitlebarLook = H_SHADED;
+  else if( key == "shadedVertical")
+    options.TitlebarLook = V_SHADED;
   else if( key == "plain")
     options.TitlebarLook = PLAIN;
   else if( key == "pixmap")
     options.TitlebarLook = PIXMAP;
   else{
-    config->writeEntry("TitlebarLook", "shaded");
-    options.TitlebarLook = SHADED;
+    config->writeEntry("TitlebarLook", "shadedHorizontal");
+    options.TitlebarLook = H_SHADED;
   }
 
   if (config->hasKey("TitlebarPixmapActive")){
@@ -945,6 +947,7 @@ void MyApp::readConfiguration(){
 
   // Windows Placement config --- CT 18jan98 ---
   key = config->readEntry("WindowsPlacement");
+  //CT isn't this completely dangerous? what if there are white spaces?
   if( key.left(11) == "interactive") {
     options.Placement = INTERACTIVE_PLACEMENT;
     int comma_pos = key.find(',');

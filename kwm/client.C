@@ -1415,8 +1415,8 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 
   TITLEBAR_LOOK look = options.TitlebarLook;
 
-  if (look == SHADED){
-    // the new horizontal shading code
+  if (look == H_SHADED || look == V_SHADED){
+    // the new horizontal (and vertical) shading code
     if (colors_have_changed){
       aShadepm.resize(0,0);
       iaShadepm.resize(0,0);
@@ -1479,7 +1479,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   QPainter p;
 
   if (only_label){
-    double_buffering = (look == SHADED || look == PIXMAP);
+    double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
     titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
       if (titlestring_offset_delta > 0)
@@ -1525,20 +1525,20 @@ void Client::paintState(bool only_label, bool colors_have_changed){
       for (x = r.x(); x < r.x() + r.width(); x+=pm->width())
 	p.drawPixmap(x, r.y(), *pm);
   }
-  else if (look == SHADED){
+  else if (look == H_SHADED || look == V_SHADED ){
     // the new horizontal shading code
     QPixmap* pm = 0;
     if (is_active){
       if (aShadepm.size() != r.size()){
 	aShadepm.resize(r.width(), r.height());
-	aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, FALSE );
+	aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, look == V_SHADED );
       }
       pm = &aShadepm;
     }
     else {
       if (iaShadepm.size() != r.size()){
 	iaShadepm.resize(r.width(), r.height());
-	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, FALSE );
+	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, look == V_SHADED );
       }
       pm = &iaShadepm;
     }
