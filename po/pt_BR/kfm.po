@@ -576,7 +576,7 @@ msgstr "Cd"
 
 #: main.cpp:268
 msgid "New View"
-msgstr "Nova Vista"
+msgstr "Abrir em Nova Janela"
 
 #: kfmtree.cpp:404 main.cpp:271
 msgid "Move to Trash"
