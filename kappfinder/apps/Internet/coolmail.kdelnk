@@ -4,6 +4,7 @@ SwallowExec=coolmail
 SwallowTitle=coolmail
 Name=Coolmail
 Comment=Coolmail
+Comment[pl]=Coolmail
 Exec=coolmail
 Icon=mail.xpm
 TerminalOptions=

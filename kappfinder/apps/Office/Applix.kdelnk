@@ -14,4 +14,5 @@ Path=
 DocPath=
 Type=Application
 Terminal=0
-Info=ApplixWare Office Suite
+Comment=ApplixWare Office Suite
+Comment[pl]=Pakiet biurowy ApplixWare

@@ -14,4 +14,6 @@ Path=
 DocPath=
 Type=Application
 Terminal=0
-Info=Spread Sheet
+Comment=Spread Sheet
+Comment[pl]=Arkusz kalkulacyjny
+
