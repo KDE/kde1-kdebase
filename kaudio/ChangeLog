@@ -1,0 +1,5 @@
+Sat Jan 10 06:19:50 1998  Bernd Johannes Wuebben  <wuebben@math.cornell.edu>
+
+	* kaudioserver.cpp (main): fixed segfault on startup. return value
+	  of fopen on line 123 was ignored which led to a sefault of fclose.
+
