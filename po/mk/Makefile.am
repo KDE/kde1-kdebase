@@ -15,12 +15,10 @@ install-data-local: install-$(USE_NLS)
 
 SUFFIXES = .po .gmo
 
-.po.mo:
-	$(MSGFMT) -o $@ $<
-
 .po.gmo:
-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
-	&& rm -f $$file && $(GMSGFMT) -o $$file $< 
+	@file=`echo $* | sed 's,.*/,,'`.gmo; \
+	echo $(GMSGFMT) -o $$file $< ;\
+	rm -f $$file && $(GMSGFMT) -o $$file $< 
 
 all-yes: $(GMOFILES)
 all-no:
