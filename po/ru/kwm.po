@@ -147,7 +147,7 @@ msgstr "Выйти"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Сеансы подготовленные к выходу"
+msgstr "Сеанс подготовлен к выходу"
 
 #: logout.C:52
 msgid ""
