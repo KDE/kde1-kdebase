@@ -53,7 +53,7 @@ int main( int argc, char **argv )
       if( config->hasKey("Path") )
 	  temp1 = config->readEntry("Path");
       else
-	  temp1 = KApplication::kde_appsdirdir().copy();
+	  temp1 = KApplication::kde_appsdir().copy();
       if( config->hasKey("PersonalPath") )
 	temp2 = config->readEntry("PersonalPath");
       else
