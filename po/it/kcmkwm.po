@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
@@ -226,12 +226,11 @@ msgstr "Attiva al passaggio del mouse"
 
 #: windows.cpp:133
 msgid "Classic focus follows mouse"
-msgstr "Attivazione classica: segue il mouse"
+msgstr "Attivazione classica seguendo il mouse"
 
 #: windows.cpp:135
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Click per attivare"
+msgstr "Attivazione classica semplice"
 
 #: windows.cpp:144
 msgid ""
