@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-07 23:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,106 +14,110 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:65
+#: main.C:67
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr "kwm: ao que parece já está a correr. kwm não arrancou\n"
 
-#: main.C:79
+#: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: ocorreu uma falha durante a initialização; a desistir\n"
 
-#: main.C:367
+#: main.C:369
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr ""
 
-#: main.C:374
+#: main.C:376
 msgid "Usage: "
 msgstr "Utilização"
 
-#: main.C:385
+#: main.C:387
 #, fuzzy
 msgid "&Maximize"
 msgstr "Maximizar"
 
-#: main.C:386
+#: main.C:388
 #, fuzzy
 msgid "&Restore"
 msgstr "Restaurar"
 
-#: main.C:387
+#: main.C:389
 msgid "&Iconify"
 msgstr "&Iconificar"
 
-#: main.C:388
+#: main.C:390
 #, fuzzy
 msgid "&DeIconify"
 msgstr "DesIconificar"
 
-#: main.C:389
+#: main.C:391
 #, fuzzy
 msgid "&Sticky"
 msgstr "Pregar"
 
-#: main.C:390
+#: main.C:392
 #, fuzzy
 msgid "&UnSticky"
 msgstr "DesPregar"
 
-#: main.C:391
+#: main.C:393
 #, fuzzy
 msgid "Mo&ve"
 msgstr "Mover"
 
-#: main.C:392
+#: main.C:394
 #, fuzzy
 msgid "Resi&ze"
 msgstr "Alterar Tamanho"
 
-#: main.C:394
+#: main.C:396
 #, fuzzy
 msgid "&To desktop"
 msgstr "Para o desktop"
 
-#: main.C:396
+#: main.C:398
 #, fuzzy
 msgid "&Onto current desktop"
 msgstr "Para o desktop corrente"
 
-#: main.C:446
+#: main.C:448
 msgid "One"
 msgstr "Um"
 
-#: main.C:449
+#: main.C:451
 msgid "Two"
 msgstr "Dois"
 
-#: main.C:452
+#: main.C:454
 msgid "Three"
 msgstr "Tres"
 
-#: main.C:455
+#: main.C:457
 msgid "Four"
 msgstr "Quatro"
 
-#: main.C:458
+#: main.C:460
 msgid "Five"
 msgstr "Cinco"
 
-#: main.C:461
+#: main.C:463
 msgid "Six"
 msgstr "Seis"
 
-#: main.C:464
+#: main.C:466
 msgid "Seven"
 msgstr "Sete"
 
-#: main.C:467
+#: main.C:469
 msgid "Eight"
 msgstr "Oito"
 
-#: main.C:885
+#: main.C:742
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr ""
+
+#: main.C:973
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 
@@ -121,7 +125,7 @@ msgstr "*** Nenhuma Tarefa ***"
 msgid "Command:"
 msgstr "Comando:"
 
-#: logout.C:35 taskmgr.C:36
+#: logout.C:35 taskmgr.C:106
 msgid "Logout"
 msgstr "Sair"
 
@@ -156,11 +160,11 @@ msgstr ""
 "na sua proxima sessão. Certifique-se de que não conteem dados importantes "
 "porgravar."
 
-#: taskmgr.C:35
+#: taskmgr.C:105
 msgid "Switch to"
 msgstr "Mudar para"
 
-#: taskmgr.C:49
+#: taskmgr.C:119
 msgid "Current session"
 msgstr "Sessão actual"
 
