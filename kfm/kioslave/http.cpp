@@ -303,7 +303,7 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 	if ( _url->path()[0] != '/' ) command += "/";
 	command += _url->path();
 	command += " HTTP/1.0\n"; /* start header */
-	command += "UserAgent: Konqueror/1.0"; /* User agent */
+	command += "UserAgent: Konqueror/1.0\n"; /* User agent */
 
 	command += "Host: "; /* support for virtual hosts */
 	command += _url->host();
