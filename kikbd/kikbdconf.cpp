@@ -215,7 +215,7 @@ int doneCheck = FALSE;
 void KiKbdConfig::olderVersion(float)
 {
   if(!doneCheck) {
-    ask(gettext("Configuration file you have has older format when expected.\n"
+    ask(gettext("Configuration file you have has older format than expected.\n"
 		"Some settings may be incorrect."));
     doneCheck = TRUE;
   }
@@ -223,7 +223,7 @@ void KiKbdConfig::olderVersion(float)
 void KiKbdConfig::newerVersion(float)
 {
   if(!doneCheck) {
-    ask(gettext("Configuration file you have has newer format when expected.\n"
+    ask(gettext("Configuration file you have has newer format than expected.\n"
 		"Some settings may be incorrect."));
     doneCheck = TRUE;
   }

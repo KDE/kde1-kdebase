@@ -1,0 +1,18 @@
+As of 07Jan1998:
+FIXED - incorrect fr.kimap (reported and fixed by 
+	binois stephane <binois@normandnet.fr>
+
+- illisible/ugly flag icons + wrong highlighting colors in the keyboard 
+	selection widget (reported by Torsten Rahn)
+
+- fscked up startup (segfaults and all)
+
+- conflict with vnc (???) (reported by Alex Zepeda)
+
+- segfault on FreeBSD (because of API diffs in execlp) (reported by 
+	Hans Petter Bieker <zerium@webindex.no>)
+
+- Alt+Ctrl eats the next key (if window has menus) while Ctrl+Alt doesn't
+
+WORKED AROUND - windows newer than kikbd insensitive to map switching
+	keyboard accelerator (e.g. Alt+Ctrl)  

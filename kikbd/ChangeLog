@@ -1,3 +1,16 @@
+1999-01-07  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* Fixed (in the lamest way possible) the bug of non-responsive
+		windows to KiKbd keyboard switch accelerator (the windows
+		newer than kikbd didn't get added to the list of
+		treated windows)
+	* Spellcheck errors (in messages)
+
+1999-01-04  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* New French keyboard (contributed by Binois Stephane 
+		<binois@normandnet.fr> through David Fauré <faure@kde.org>)
+
 04 November 1998
 	* Change help page from kcmikbd to kikbd-4.html
 	* Remove support for multiple keys from AltSwitch

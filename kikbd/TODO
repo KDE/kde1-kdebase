@@ -1,0 +1,7 @@
+As of 07Jan1999:
+
+- make kcmikbd start a kikbd process if "AutoStart" selected and no
+	process exists
+
+- cleanup and simplification of the loadConfig() routines
+

@@ -90,7 +90,7 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
   KiKbdIdentity = XInternAtom(display, "KDEiKbdIdentity", False );
 
   /**
-     pars command line options
+     parse command line options
   */
   int i;for(i=1; i<argc(); i++) {
     if(QString("-rotate") == argv()[i]) {
@@ -301,7 +301,7 @@ void KiKbdApplication::loadConfig()
   else initSyms.expandCodes(2);
   /**
      here we are loading all used symbols in all maps
-     also we are create popup menu and necasary connections
+     also we create popup menu and necessary connections
   */
   keyMaps.clear();
   menu->clear();
@@ -318,7 +318,7 @@ void KiKbdApplication::loadConfig()
     menu->insertItem(map->getIcon(), map->getGoodLabel());
     /**
        we want to automaticaly adjust kikbd button size
-       may be we need this optional in the future
+       maybe we need this option in the future
     */
     int tlen = map->getLabel().length();
     if(len < tlen) len = tlen;
@@ -383,13 +383,13 @@ void KiKbdApplication::loadConfig()
   /**
      we can emulate CAPSLOCK
      we need to remove CAPSLOCK key from modifiers
-     can we emulate without delete CAPSLOCK from modifiers?
+     can we emulate without deleting CAPSLOCK from modifiers?
   */
   isToggleCaps = FALSE;
   if(kikbdConfig.getEmuCapsLock()) {
     capsKey = KeyTranslate::stringToSym("Caps_Lock");
     if(!removeModifier(capsKey)) {
-      KiKbdMsgBox::warning(gettext("Can not remove Caps Lock from Modifiers.\n"
+      KiKbdMsgBox::warning(gettext("Cannot remove Caps Lock from Modifiers.\n"
 				   "Caps Lock Emulation disabled"));
       capsKey = NoSymbol;
     }
@@ -467,7 +467,7 @@ void KiKbdApplication::loadConfig()
 		 SubstructureNotifyMask | FocusChangeMask);
     selectRecursivelyInput(desktop()->winId());
     /**
-       Store default map. This for session menagment in Global
+       Store default map. This is for session managment in Global
        and Window modes
     */
     keyMaps.at(0);
@@ -615,12 +615,16 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
 	 someone open the new window
 	 we want keyboard events from it
       */
-      //cout << form("new window %x", e->xcreatewindow.window) << endl;
-      selectRecursivelyInput(e->xcreatewindow.window);
+      //CT 07Jan1998 - temporary fix. The important winId of the newly
+      //          created window is never passed to kikbd. So we reparse
+      //          the whole shitty X tree.
+      //
+      //selectRecursivelyInput(e->xcreatewindow.window);
+      selectRecursivelyInput(desktop()->winId());
       break;
     case(DestroyNotify):
       /**
-	 the window destroed
+	 the window was destroyed
 	 we have to forget about it
       */
       if(windowList.findWindow(e->xany.window))
@@ -637,7 +641,7 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
       }
       if(key == firstKey || key == secondKey) {
 	/**
-	   may be we need to change map
+	   maybe we need to change map
 	*/
 	if((isFirstKey && key == secondKey) 
 	   || (isSecondKey && key == firstKey)) {
@@ -727,7 +731,7 @@ int KiKbdApplication::isTopLevelWindow(Window win)
   return(type_ret!=None);
 }
 /** 
-    is this window are the frame of window manager
+    is this window the frame of window manager?
 */
 int KiKbdApplication::isWmWindow(Window win)
 {
@@ -747,8 +751,8 @@ int KiKbdApplication::isWmWindow(Window win)
   return is;
 }
 /**
-   we adding this window to window cache
-   and we whant some events from it
+   we're adding this window to window cache
+   and we want some events from it
 */
 void KiKbdApplication::selectWindowInput(Window win)
 {
@@ -797,11 +801,11 @@ void KiKbdApplication::selectWindowInput(Window win)
   //&& (win==wa.root || topLevel || wm)) wa.your_event_mask |= needMask;
 
   /**
-     init class list
+     init class list item
   */
-  WindowClassEntry entry(wclass);
-  if(classList.find(&entry) == -1)
-    classList.append(new WindowClassEntry(wclass));
+  WindowClassEntry *entry = new WindowClassEntry(wclass);
+  if(classList.find(entry) == -1)
+    classList.append(entry);
   /**
      insert window into window list with class Id
   */
@@ -819,7 +823,7 @@ void KiKbdApplication::selectRecursivelyInput(Window win)
 {
   Window   root, parent, *children;
   unsigned nchildren;
-  
+
   if(!XQueryTree(display, win, &root, &parent, &children, &nchildren))
     return;
 
@@ -925,7 +929,10 @@ void KiKbdApplication::rotateKeyMap()
 {
   unsigned next;
   if(hotList) next = keyMaps.at()==hotmap?0:hotmap;
-  else next = (keyMaps.at()+1>=(int)keyMaps.count())?0:keyMaps.at()+1;
+  else 
+    //next = (keyMaps.at()+1>=(int)keyMaps.count())?0:keyMaps.at()+1;
+    //CT 05Jan1999 - arguably faster than above
+    next = (keyMaps.at()+1) % (int)keyMaps.count(); 
   setKeyMapTo(next);
 }
 void KiKbdApplication::toggleCaps(bool on)
