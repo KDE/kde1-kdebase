@@ -2,7 +2,8 @@
 
 ###################################################################
 
-LDADD   =	$(all_libraries) -lkdecore -lqt -lm -lXext -lX11 $(KDE_RPATH) $(LIBSOCKET)
+LDADD   =	-lkdecore -lqt -lm -lXext -lX11 $(LIBSOCKET)
+LDFLAGS = 	$(all_libraries) $(KDE_RPATH)
 INCLUDES=	$(all_includes)
 
 ####### Files
@@ -41,3 +42,4 @@ uninstall-local:
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../kdelibs/po/kde.pot $(kfontmanager_SOURCES) && mv messages.po ../po/kfontmanager.pot
+
