@@ -1,0 +1,33 @@
+/* XPM */
+/* Drawn  by Nico Schirwing for the K Desktop Environment */
+/* See http://www.kde.org */
+static char*desktop_settings[]={
+"16 16 11 1",
+"# c #000000",
+"e c #c0c0c0",
+"f c #ffffff",
+"d c #585858",
+"c c #0000c0",
+"i c #0000ff",
+"b c #c0c0ff",
+"h c #c05800",
+"a c #ffa858",
+"g c #ffdca8",
+". c None",
+"...###......###.",
+"..#aaa##...#bc..",
+".#aaaded##..##..",
+"#aaadfffaa##....",
+"#gadef#aaaaa##..",
+"#hggadahaaa##a##",
+"#ahhgga#aaaiiah#",
+"#hgahhggaaaaah#.",
+"#ghhhhhhggaahh#.",
+"#haghh##hhghhh#.",
+"##ahh#.#gahhhh#.",
+"..###..#haghhh#.",
+".......#hghhhh#.",
+".......#ahhhh#..",
+"........##ah#...",
+"..........##...."};
+
