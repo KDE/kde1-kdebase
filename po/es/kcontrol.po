@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Ismael Ripoll <iripoll@disca.upv.es>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Módulo desconocido:"
+
+#: main.cpp:46 mainwidget.cpp:18
+msgid "KDE Control Center"
+msgstr "Centro de Control del KDE"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "Modulos empotrados"
+
+#: toplevel.cpp:81
+msgid "&About KControl..."
+msgstr "&Acerca de KControl..."
+
+#: toplevel.cpp:84
+msgid "&Using KControl"
+msgstr "&Utilizando KControl"
+
+#: toplevel.cpp:101
+msgid "About KControl"
+msgstr "Acerda de KControl"
+
+#: toplevel.cpp:102
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"Centro de Control del KDE - Version 0.3\n"
+"\n"
+"Escrito por  Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Gracias a:\n"
+"S. Kulow, P. Dowler, M. Wuebben y M. Jones."
