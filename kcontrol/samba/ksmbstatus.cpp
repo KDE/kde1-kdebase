@@ -111,9 +111,9 @@ void NetMon::update()
     *process << "smbstatus"; // the command line
     debug("update");
     if (!process->start(KProcess::Block,KProcess::Stdout)) // run smbstatus
-        version->setText("Error launching smbstatus !");
+        version->setText(i18n("Error launching smbstatus !"));
     else if (rownumber==0) // empty result
-        version->setText("Error ! smbstatus not found or non working !");
+        version->setText(i18n("Error ! smbstatus not found or non working !"));
     else { // ok -> count the number of locked files for each pid
         int m;
         char tmp[255];
@@ -155,13 +155,13 @@ NetMon::NetMon( QWidget * parent, const char * name )
     list->clearTableFlags(Tbl_autoHScrollBar);
     list->setTableFlags(Tbl_autoVScrollBar);
     list->setSeparator('\n');
-    list->setColumn(0, "Service", 80);
+    list->setColumn(0, i18n("Service"), 80);
 
-    list->setColumn(1, "UID", 70);
-    list->setColumn(2, "GID", 70);     
-    list->setColumn(3, "PID", 50);
-    list->setColumn(4, "Machine",80);
-    list->setColumn(5, "Open Files",60);
+    list->setColumn(1, i18n("UID"), 70);
+    list->setColumn(2, i18n("GID"), 70);     
+    list->setColumn(3, i18n("PID"), 50);
+    list->setColumn(4, i18n("Machine"),80);
+    list->setColumn(5, i18n("Open Files"),60);
  
     timer = new QTimer(this);
     timer->start(5000);

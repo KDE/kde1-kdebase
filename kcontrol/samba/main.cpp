@@ -45,7 +45,7 @@ KSambaApplication::KSambaApplication(int &argc, char **argv,
   if (runGUI())
     {
       if (!pages || pages->contains("status"))
-	addPage(status = new NetMon(dialog, "status"), "&Status", "smbstatus-1.html");
+	addPage(status = new NetMon(dialog, "status"), i18n("&Status"), "smbstatus-1.html");
       
       dialog->setApplyButton(0);
       dialog->setCancelButton(0);
