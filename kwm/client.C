@@ -639,7 +639,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
   }
   else  {
     // titlebar and frame event
-    if (isActive()){
+    if (isActive() || !wantsFocus() ){
       if (ev->button() == LeftButton)
 	com = options.CommandActiveTitlebar1;
       if (ev->button() == MidButton)
@@ -647,13 +647,6 @@ void Client::mousePressEvent( QMouseEvent *ev ){
       if (ev->button() == RightButton)
 	com = options.CommandActiveTitlebar3;
 
-      if (com == MyApp::MouseOperationsMenu){
-      generateOperations();
-      stopAutoraise();
-      myapp->operations->popup(QCursor::pos());
-      return;
-      }
-      myapp->executeMouseBinding(this, com);
     }
     else { // incactive
       if (ev->button() == LeftButton)
@@ -664,6 +657,13 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 	com = options.CommandInactiveTitlebar3;
       myapp->executeMouseBinding(this, com);
     }
+    if (com == MyApp::MouseOperationsMenu){
+	generateOperations();
+	stopAutoraise();
+	myapp->operations->popup(QCursor::pos());
+	return;
+    }
+    myapp->executeMouseBinding(this, com);
   }
 
   dragging_state = dragging_nope;
@@ -1845,7 +1845,7 @@ void Client::maximize(int mode){
 	  maxRect.setTop(c->geometry.bottom());
       }
   }
-  
+
   switch (mode) {
   case 1:
     geometry.moveTopLeft(QPoint(geometry.x(), maxRect.y()));
