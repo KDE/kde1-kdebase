@@ -6,11 +6,13 @@ Authors=Denis V. Dmitrienko <denis@null.net>,
 Comment=Has English characters as alternate symbols.
 Comment[ru]=Позволяет набирать латинские символы используя Алтернативные переключатель.
 Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[pl]=Znaki alfabetu ЁaciЯskiego jako symbole alternatywne.
 
 Language=Ukrainian
 Language[no]=Ukrainsk
 Language[ru]=Украинский
 Language[fi]=Ukraina
+Language[pl]=UkraiЯski
 
 Charset=cp1251
 Label=UW

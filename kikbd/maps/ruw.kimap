@@ -7,11 +7,13 @@ Authors[ru]=Александр Будник <budnik@linserv.jinr.ru>,Денис Дмитриенко <denis@nu
 Comment=Has English characters as alternate symbols.
 Comment[ru]=Содержит латинские символы в качестве алтернативных.
 Comment[fi]=Englantilaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[pl]=Znaki alfabetu ЁaciЯskiego jako symbole alternatywne.
 
 Language=Russian
 Language[no]=Russisk
 Language[ru]=Русский
 Language[fi]=VenДjД
+Language[pl]=Rosyjski
 
 Charset=cp1251
 Label=RW
