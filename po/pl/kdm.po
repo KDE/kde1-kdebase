@@ -1,0 +1,48 @@
+
+#: kdmshutdown.cpp:229 kgreeter.cpp:207
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Zako±cz kdm"
+
+#: kgreeter.cpp:201
+msgid "Go!"
+msgstr "Id­!"
+
+#: kgreeter.cpp:179
+msgid "Login failed!"
+msgstr "Brak dostŠpu!"
+
+#: kgreeter.cpp:145
+msgid "Login:"
+msgstr "Login:"
+
+#: kdmshutdown.cpp:226
+msgid "Ok"
+msgstr "Ok"
+
+#: kgreeter.cpp:150
+msgid "Password:"
+msgstr "Hasþo:"
+
+#: kgreeter.cpp:185
+msgid "Session Type:"
+msgstr "Rodzaj sesji:"
+
+#: kdmshutdown.cpp:169
+msgid "Shutdown"
+msgstr "ZamkniŠcie systemu"
+
+#: kdmshutdown.cpp:183
+msgid "Shutdown and restart"
+msgstr "Ponowne uruchomienie systemu"
+
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Zamkn˜† czy zrestartowa†?"
+
+#: kgreeter.cpp:217
+msgid "Shutdown..."
+msgstr "ZamkniŠcie..."
