@@ -22,6 +22,7 @@ Name[sk]=Vstupné zariadenia
 Name[sv]=Inmatningsenheter
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=input_devices_settings.xpm
+MiniIcon=input_devices_settings.xpm
 
 
 

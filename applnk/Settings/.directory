@@ -22,3 +22,4 @@ Name[sk]=Nastavenie
 Name[sv]=Inställningar
 SortOrder=Desktop,Input_Devices,KWM,Network,Information,Sound
 Icon=settings_package.xpm
+MiniIcon=settings_package.xpm

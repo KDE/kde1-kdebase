@@ -19,3 +19,4 @@ Name[sk]=Pracovná plocha
 Name[sv]=Skrivbord
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop_settings.xpm
+MiniIcon=desktop_settings.xpm
