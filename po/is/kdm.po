@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-10-28 19:00-0500\n"
 "Last-Translator: Thorarinn Einarsson <thori@mindspring.com>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
@@ -30,47 +30,47 @@ msgstr "Sl=F6kkva og endurr=E6sa"
 msgid "Exit kdm"
 msgstr "H=E6tta =ED KDM"
 
-#: kgreeter.cpp:176
+#: kgreeter.cpp:246
 msgid "Login:"
 msgstr "Notandanafn:"
 
-#: kgreeter.cpp:188
+#: kgreeter.cpp:258
 msgid "Password:"
 msgstr "Lykilor=F0:"
 
-#: kgreeter.cpp:213
+#: kgreeter.cpp:283
 msgid "Login failed!"
 msgstr "A=F0gangur br=E1st!"
 
-#: kgreeter.cpp:219
+#: kgreeter.cpp:289
 msgid "Session Type:"
 msgstr "Tegund setu:"
 
-#: kgreeter.cpp:266
+#: kgreeter.cpp:336
 msgid "Go!"
 msgstr "=C1fram!"
 
-#: kgreeter.cpp:282
+#: kgreeter.cpp:352
 msgid "Shutdown..."
 msgstr "Sl=F6kkva..."
 
-#: kgreeter.cpp:524
+#: kgreeter.cpp:594
 msgid "Logins not available right now."
 msgstr "A=F0gangur banna=F0ur =FEessa stundina."
 
-#: kgreeter.cpp:565
+#: kgreeter.cpp:635
 msgid "login_getcapstr() failed."
 msgstr ""
 
-#: kgreeter.cpp:619 kgreeter.cpp:646
+#: kgreeter.cpp:689 kgreeter.cpp:716
 msgid "Sorry -- your account has expired."
 msgstr "Fyrirgefi=F0, a=F0gangsleyfi =FEitt er =FAtrunni=F0."
 
-#: kgreeter.cpp:624 kgreeter.cpp:651
+#: kgreeter.cpp:694 kgreeter.cpp:721
 #, c-format
 msgid "Warning: your account expires on %s"
 msgstr "A=F0v=F6run: A=F0gangsleyfi =FEitt rennur =FAt %s"
 
-#: kgreeter.cpp:678
+#: kgreeter.cpp:748
 msgid "Home directory not available"
 msgstr "Heimamappan =FE=EDn finnst ekki"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -27,7 +27,7 @@ msgstr "Propriétés"
 msgid "Go!"
 msgstr "En avant !"
 
-#: kpanel.C:316 tools.C:831
+#: kpanel.C:316 tools.C:832
 msgid "Where do you want to go tomorrow?"
 msgstr "Où voulez-vous aller demain ?"
 
@@ -51,11 +51,11 @@ msgstr "Cacher le panneau"
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:1201
+#: kpanel.C:1200
 msgid "No comment available"
 msgstr "Commentaire non disponible"
 
-#: kpanel.C:1210 tools.C:840
+#: kpanel.C:1209 tools.C:841
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 

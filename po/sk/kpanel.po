@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -25,7 +25,7 @@ msgstr "&Nastavenie"
 msgid "Go!"
 msgstr "Ís»!"
 
-#: kpanel.C:316 tools.C:831
+#: kpanel.C:316 tools.C:832
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
@@ -49,11 +49,11 @@ msgstr "Schova» panel"
 msgid "Show the panel"
 msgstr "Ukáza» panel"
 
-#: kpanel.C:1201
+#: kpanel.C:1200
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1210 tools.C:840
+#: kpanel.C:1209 tools.C:841
 msgid "Windowlist"
 msgstr "Zoznam okien"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,17 +130,17 @@ msgstr ""
 msgid "Sessions"
 msgstr ""
 
-#: main.C:471
+#: main.C:470
 #, c-format
 msgid "(%d columns x %d lines)"
 msgstr ""
 
-#: main.C:501
+#: main.C:500
 #, c-format
 msgid "About %s"
 msgstr ""
 
-#: main.C:503
+#: main.C:502
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -153,6 +153,6 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:819
+#: main.C:818
 msgid "Welcome to the console"
 msgstr ""

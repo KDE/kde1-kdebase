@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
-"POT-Creation-Date: 1998-11-24 01:15+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-11-07 18:53+01:00\n"
 "Last-Translator: Anders Widell <d95-awi@nada.kth.se>\n"
 "Language-Team: Swedish\n"
@@ -129,17 +129,17 @@ msgstr "Ny"
 msgid "Sessions"
 msgstr "Sessioner"
 
-#: main.C:471
+#: main.C:470
 #, c-format
 msgid "(%d columns x %d lines)"
 msgstr ""
 
-#: main.C:501
+#: main.C:500
 #, fuzzy, c-format
 msgid "About %s"
 msgstr "&Om ..."
 
-#: main.C:503
+#: main.C:502
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -152,6 +152,6 @@ msgid ""
 "See `LICENSE.readme´ for details."
 msgstr ""
 
-#: main.C:819
+#: main.C:818
 msgid "Welcome to the console"
 msgstr "Välkommen till konsolen"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-25 01:11+0100\n"
+"POT-Creation-Date: 1998-11-28 01:12+0100\n"
 "PO-Revision-Date: 1998-01-27 HO:MI+ZONE\n"
 "Last-Translator: Thomas Tanghus <tanghus@earthling.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Indstillinger"
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:316 tools.C:831
+#: kpanel.C:316 tools.C:832
 msgid "Where do you want to go tomorrow?"
 msgstr ""
 
@@ -51,11 +51,11 @@ msgstr "Gem Panel"
 msgid "Show the panel"
 msgstr "Vis Panel"
 
-#: kpanel.C:1201
+#: kpanel.C:1200
 msgid "No comment available"
 msgstr "Ingen tilgængelig kommentar"
 
-#: kpanel.C:1210 tools.C:840
+#: kpanel.C:1209 tools.C:841
 msgid "Windowlist"
 msgstr "Vindues oversigt"
 
