@@ -111,7 +111,28 @@ FIXME: documentation needed
 
 <sect> KFM Web Browser Configuration: User Agent
 <p>
-FIXME: documentation needed
+What is the "UserAgent" string ?
+Here is what Kalle Dalheimer said about it :
+
+Some web servers send you different pages depending on which browser you
+use. Every browser sends a so-called "UserAgent" string (e.g. for
+Netscape, this string is "Mozilla" plus some version information), and
+servers can evaluate this. For example, there was a time when the web
+server serving www.microsoft.com returned pages with error messages on
+purpose when you browsed the site with Netscape Navigator. Another
+example: some webmasters tend to think that only Navigator and Internet
+Exploder can handle frames, thus, they automatically send non-frame
+versions to all other browsers, whether they can handle frames or not.
+ 
+I have written this dialog (and Torben has integrated it into kfm) so
+that you can determine yourself which UserAgent string kfm sends (the
+default, as you can see, is "Konqueror" plus version information, a
+conqueror of course being the next one in the row navigator-explorer-).
+Unlike with other browsers, this dialog even allows you to set a certain
+UserAgent string for a specific web site. Thus, you can tell the web
+server at www.microsoft.com that you are an Internet Exploder, the web
+server at www.netscape.com that you are a Navigator and all others that
+you are a honest web browser :-)
 
 <sect> KFM Configuration: Desktop Icons
 <p>
