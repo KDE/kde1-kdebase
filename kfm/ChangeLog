@@ -1,5 +1,10 @@
 1998-12-09  David Faure  <faure@kde.org>
 
+	* Removed all the files containing the old 'configure browser'
+	dialog box. Everything is now in kcmkfm.
+	There are now two menu entries : Configure File Manager... and
+	Configure Browser... which call kcmkfm with different options.
+	
 	* kfmgui.cpp, kfmman.*, kfmtree.*:
 	Patch from Michael Reiher <michael.reiher@gmx.de> to use i18n'ed comments
         instead of filenames in the 'New' menu. Looks a lot better :)
