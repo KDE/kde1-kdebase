@@ -15,7 +15,7 @@ msgid " Date Modified "
 msgstr ""
 
 #: kftabdlg.cpp:94
-msgid " Name&Location "
+msgid " Name& Location "
 msgstr ""
 
 #: kfwin.cpp:104
