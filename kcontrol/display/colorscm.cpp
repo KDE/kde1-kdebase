@@ -24,6 +24,9 @@
 #include <qdrawutl.h>
 #include <qchkbox.h>
 #include <qcombo.h>
+#include <qlayout.h>
+#include <qcursor.h>
+#include <qbitmap.h>
 #include <kapp.h>
 #include <kcharsets.h>
 #include <kmsgbox.h>
@@ -39,6 +42,7 @@
 
 #include "kwmcom.h"
 #include "colorscm.h"
+#include "kpixmap.h"
 #include "colorscm.moc"
 
 #define SUPPLIED_SCHEMES 5
@@ -47,6 +51,18 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+
+#define hand_width 16
+#define hand_height 16
+
+static unsigned char hand_bits[] = {
+	0x00,0x00,0xfe,0x01,0x01,0x02,0x7e,0x04,0x08,0x08,0x70,0x08,0x08,0x08,0x70,
+	0x14,0x08,0x22,0x30,0x41,0xc0,0x20,0x40,0x12,0x80,0x08,0x00,0x05,0x00,0x02,
+	0x00,0x00};
+static unsigned char hand_mask_bits[] = {
+	0xfe,0x01,0xff,0x03,0xff,0x07,0xff,0x0f,0xfe,0x1f,0xf8,0x1f,0xfc,0x1f,0xf8,
+	0x3f,0xfc,0x7f,0xf8,0xff,0xf0,0x7f,0xe0,0x3f,0xc0,0x1f,0x80,0x0f,0x00,0x07,
+	0x00,0x02};
 
 
 int dropError(Display *, XErrorEvent *)
@@ -123,7 +139,8 @@ void WidgetCanvas::drawSampleWidgets()
 	// Initialize the pixmap which we draw sample widgets into.
 
 	smplw.resize(width(), height());
-	smplw.fill( parentWidget()->backgroundColor() );
+	//smplw.fill( parentWidget()->backgroundColor() );
+	smplw.fill( parentWidget()->colorGroup().mid() );
 	
 	// Actually start painting in 
 	
@@ -131,78 +148,97 @@ void WidgetCanvas::drawSampleWidgets()
 	
 	// Inactive window
 	                          
-    qDrawWinPanel ( &paint, 0, 0, width()-18, height(), cg, FALSE,
+    qDrawWinPanel ( &paint, 15, 5, width()-48, height(), cg, FALSE,
 	&brush);
     
     paint.setBrush( inactiveTitleColor );
     paint.setPen( inactiveTitleColor );
-    paint.drawRect( 5, 5, width()-30, 20 );
+    //paint.drawRect( 20, 10, width()-60, 20 );
+	
+	KPixmap pmTitle;
+	pmTitle.resize( width()-60, 20 );
+	pmTitle.gradientFill( inactiveTitleColor, backgroundColor, FALSE );
+	paint.drawPixmap( 20, 10, pmTitle ); 
    
     QFont fnt("Helvetica", 12, QFont::Bold);
     KApplication::getKApplication()->getCharsets()->setQFont(fnt);
     paint.setFont( fnt );
     paint.setPen( inactiveTextColor );
-    paint.drawText( (width()-25)/2-40, 20, klocale->translate("Inactive window") );
-	textLen = paint.fontMetrics().width(  klocale->translate("Inactive window") );
+    paint.drawText( 25, 25, i18n("Inactive window") );
+	textLen = paint.fontMetrics().width(  i18n("Inactive window") );
     
 	hotspots[0] = HotSpot( QRect( (width()-25)/2-40, 8, textLen, 14 ), 1 ); // inactive text
 	hotspots[1] = HotSpot( QRect( 5, 5, width()-30, 20 ), 0 ); // inactive title
 
     // Active window
     
-    qDrawWinPanel ( &paint, 20, 25+5, width()-20, height(), cg, FALSE,
+    qDrawWinPanel ( &paint, 20, 25+5, width()-40, height(), cg, FALSE,
     &brush);
     
     paint.setBrush( activeTitleColor );paint.setPen( activeTitleColor );
-    paint.drawRect( 25, 30+5, width()-32, 20 ); 
+    paint.drawRect( 25, 30+5, width()-52, 20 );
+	
+	pmTitle.resize( width()-52, 20 );
+	pmTitle.gradientFill( activeTitleColor, black, FALSE );
+	paint.drawPixmap( 25, 35, pmTitle ); 
     
     paint.setFont( fnt );
     paint.setPen( activeTextColor );
-    paint.drawText( 30+5+width()-32-(width()-32)/2-50, 45+5,  klocale->translate("Active window") );
-	textLen = paint.fontMetrics().width(  klocale->translate("Active window" ));
+    paint.drawText( 30+5+5, 45+5,  i18n("Active window") );
+	textLen = paint.fontMetrics().width(  i18n("Active window" ));
     
 	hotspots[2] = HotSpot( QRect( 30+5+width()-32-(width()-32)/2-50, 38, textLen, 14 ), 3 ); // Active text
 	hotspots[3] = HotSpot( QRect( 25, 35, width()-32, 20 ), 2 ); // Active title
 
     // Menu bar
   
-    qDrawShadePanel ( &paint, 25, 55, width()-32, 28, cg, FALSE, 2, &brush);
+    qDrawShadePanel ( &paint, 25, 55, width()-52, 28, cg, FALSE, 2, &brush);
    
     fnt.setBold(FALSE);
     paint.setFont( fnt );
     paint.setPen(textColor );
-    textLen = paint.fontMetrics().width( klocale->translate("File") );
+    textLen = paint.fontMetrics().width( i18n("File") );
     qDrawShadePanel ( &paint, 30, 52+5+2, textLen + 10, 21, cg, FALSE, 2, &brush);
-    paint.drawText( 35, 69+5, klocale->translate("File") );
+    paint.drawText( 35, 69+5, i18n("File") );
 
     hotspots[4] = HotSpot( QRect( 35, 62, textLen, 14 ), 5 ); 
     hotspots[5] = HotSpot( QRect( 27, 52+5, 33, 21 ), 4 ); 
     
     paint.setFont( fnt );
     paint.setPen( textColor );
-    paint.drawText( 35 + textLen + 20, 69+5, klocale->translate("Edit") );
-    textLen = paint.fontMetrics().width( klocale->translate("Edit") );
+    paint.drawText( 35 + textLen + 20, 69+5, i18n("Edit") );
+    textLen = paint.fontMetrics().width( i18n("Edit") );
 
     hotspots[6] = HotSpot( QRect( 65, 62, textLen, 14 ), 5 ); // text
 
     // Frame and window contents
     
     brush.setColor( windowColor );
-    qDrawShadePanel ( &paint, 25, 80+5-4, width()-7-25-2, 
+    qDrawShadePanel ( &paint, 25, 80+5-4, width()-7-45-2, 
 		      height(), cg, TRUE, 2, &brush);
     
-    fnt.setPointSize(14);
+    fnt.setPointSize(12);
     paint.setFont( fnt );
     paint.setPen( windowTextColor );
-    paint.drawText( 200, 127-10, klocale->translate( "Window text") );
-    textLen = paint.fontMetrics().width( klocale->translate("Window text") );
+    paint.drawText( 200, 127-20, i18n( "Window text") );
+    textLen = paint.fontMetrics().width( i18n("Window text") );
 
-    hotspots[7] = HotSpot( QRect( 200, 113-10, textLen, 14 ), 9 ); // window text
+    hotspots[7] = HotSpot( QRect( 200, 113-20, textLen, 14 ), 9 ); // window text
     hotspots[8] = HotSpot( QRect( 116, 87, width()-138, height()-82-5 ), 8 ); // window bg
     
+	brush.setColor( selectColor );paint.setPen( selectColor );
+    paint.drawRect ( 120, 115, width()-175, 
+		      height());
+    
+    fnt.setPointSize(12);
+    paint.setFont( fnt );
+    paint.setPen( selectTextColor );
+    paint.drawText( 200, 135, i18n( "Selected text") );
+    textLen = paint.fontMetrics().width( i18n("Selected text") );
+	
     // Scrollbar
     
-	paint.drawPixmap(width()-35+27-16-2,80+5-2,pm);
+	paint.drawPixmap(width()-55+27-16-2,80+5-2,pm);
     
     // Menu
   
@@ -211,26 +247,33 @@ void WidgetCanvas::drawSampleWidgets()
 
     fnt.setPointSize(12);
     paint.setFont( fnt );
-    paint.setPen( lightGray.dark() );
-    paint.drawText( 38, 97, klocale->translate("Disabled") );
+    paint.setPen( textColor );
+    paint.drawText( 38, 97, i18n("New") );
     
-    qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
-    &brush);
+    //qDrawShadePanel ( &paint, 32, 101, 80, 25, cg, FALSE, 2,
+    //&brush);
    
     paint.setFont( fnt );
-    paint.setPen( textColor );
-    paint.drawText( 38, 119, klocale->translate("Selected") );
-    textLen = paint.fontMetrics().width( klocale->translate("Selected") );
+    paint.drawText( 38, 119, i18n("Open") );
+    textLen = paint.fontMetrics().width( i18n("Open") );
+	
+	paint.setFont( fnt );
+    paint.setPen( lightGray.dark() );
+    paint.drawText( 38, 141, i18n("Save") );
+    textLen = paint.fontMetrics().width( i18n("Save") );
 
     hotspots[10] = HotSpot( QRect( 38, 105, textLen, 14 ), 5 ); 
     hotspots[11] = HotSpot( QRect( 28, 101, 78, 21 ), 4 ); 
     
     // Valance
 
-    qDrawShadePanel ( &paint, 0, height()-17,width(), 17, cg, FALSE, 2,
-    &brush);
-    paint.setPen( col.light() );paint.setBrush( col.light() );
-    paint.drawRect( 1, height()-17, width()-3, 15);
+	qDrawWinPanel ( &paint, 0, 0, width(), height(),
+	parentWidget()->colorGroup(), TRUE, 0);
+
+    //qDrawShadePanel ( &paint, 0, height()-17,width(), 17, cg, FALSE, 2,
+    //&brush);
+    //paint.setPen( col.light() );paint.setBrush( col.light() );
+    //paint.drawRect( 1, height()-17, width()-3, 15);
 	
 	// Stop the painting
 	
@@ -255,85 +298,142 @@ KColorScheme::KColorScheme( QWidget *parent, int mode, int desktop )
 	screen = DefaultScreen(kde_display);
 	root = RootWindow(kde_display, screen);
 	
-	setName( klocale->translate("Color Scheme") );
+	setName( i18n("Color Scheme") );
+	
+	QBitmap cb( hand_width, hand_height, hand_bits, TRUE );
+	QBitmap cm( hand_width, hand_height, hand_mask_bits, TRUE );
+	QCursor handCursor( cb, cm, 0, 0 );
 	
 	sampleWidgets = new WidgetCanvas( this );
+	sampleWidgets->setCursor( handCursor );
 
 	schemeList = new QStrList(); 
 	
 	readSettings();
-	sampleWidgets->setGeometry( 20, 15, 400, 145 );
-	sampleWidgets->drawSampleWidgets();
+	
+	// LAYOUT
+	
+	QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+	
+	topLayout->setRowStretch(0,0);
+	topLayout->setRowStretch(1,10);
+	topLayout->setRowStretch(2,10);
+	topLayout->setRowStretch(3,0);
+	
+	topLayout->setColStretch(0,0);
+	topLayout->setColStretch(1,10);
+	topLayout->setColStretch(2,10);
+	topLayout->setColStretch(3,0);
+	
+	//sampleWidgets->drawSampleWidgets();
+	sampleWidgets->setFixedHeight( 150 );
 	connect( sampleWidgets, SIGNAL( widgetSelected( int ) ), 
 			SLOT( slotWidgetColor( int ) ) );
+			
+	topLayout->addMultiCellWidget( sampleWidgets, 1, 1, 1, 2 );
 
-	QGroupBox *group = new QGroupBox( klocale->translate("Color Scheme"), this );
-	group->setGeometry( 210, 170, 245, 150 );
-
+	QGroupBox *group = new QGroupBox( i18n("Color Scheme"), this );
+	
+	topLayout->addWidget( group, 2, 1 );
+	
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	
 	sList = new QListBox( group );
-	sList->setGeometry( 10, 20, 120, 120 );
 	initSchemeList();
 	connect( sList, SIGNAL( highlighted( int ) ),
 			SLOT( slotPreviewScheme( int ) ) );
+			
+	groupLayout->addSpacing( 20 );
+	groupLayout->addWidget( sList, 10 );
 
-	saveBt = new QPushButton(  klocale->translate("Save"), group );
-	saveBt->setGeometry( 140, 35, 95, 25 );
+	saveBt = new QPushButton(  i18n("&New scheme ..."), group );
+	saveBt->setFixedHeight( saveBt->sizeHint().height() );
 	connect( saveBt, SIGNAL( clicked() ), SLOT( slotSave() ) );
 	ss = new SaveScm( 0,  "save scheme" );
+	
+	groupLayout->addWidget( saveBt, 10 );
 		
-	removeBt = new QPushButton(  klocale->translate("Remove"), group );
-	removeBt->setGeometry( 140, 70, 95, 25 );
+	removeBt = new QPushButton(  i18n("&Remove scheme"), group );
+	removeBt->setFixedHeight( removeBt->sizeHint().height() );
 	removeBt->setEnabled(FALSE);
+	
+	groupLayout->addWidget( removeBt, 10 );
+	
+	QBoxLayout *stackLayout = new QVBoxLayout( 10 );
+	
+	topLayout->addLayout( stackLayout, 2, 2 );
 
-	QPushButton *button = new QPushButton(  klocale->translate("Help"), group );
-	button->setGeometry( 140, 105, 95, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
-
-	group = new QGroupBox(  klocale->translate("Widget color"), this );
-	group->setGeometry( 15, 170, 180, 95 );
+	group = new QGroupBox(  i18n("Widget color"), this );
+	
+	stackLayout->addWidget( group, 10 );
+	
+	groupLayout = new QVBoxLayout( group, 10 );
 
 	wcCombo = new QComboBox( group );
-	wcCombo->setGeometry( 10, 20, 160, 25 );
-	wcCombo->insertItem(  klocale->translate("Inactive title bar") );
-	wcCombo->insertItem(  klocale->translate("Inactive title text") );
-	wcCombo->insertItem(  klocale->translate("Active title bar") );
-	wcCombo->insertItem(  klocale->translate("Active title text") );
-	wcCombo->insertItem(  klocale->translate("Background") );
-	wcCombo->insertItem(  klocale->translate("Text") );
-	wcCombo->insertItem(  klocale->translate("Select background") );
-	wcCombo->insertItem(  klocale->translate("Select text") );
-	wcCombo->insertItem(  klocale->translate("Window background") );
-	wcCombo->insertItem(  klocale->translate("Window text") );
+	wcCombo->insertItem(  i18n("Inactive title bar") );
+	wcCombo->insertItem(  i18n("Inactive title text") );
+	wcCombo->insertItem(  i18n("Active title bar") );
+	wcCombo->insertItem(  i18n("Active title text") );
+	wcCombo->insertItem(  i18n("Background") );
+	wcCombo->insertItem(  i18n("Text") );
+	wcCombo->insertItem(  i18n("Select background") );
+	wcCombo->insertItem(  i18n("Select text") );
+	wcCombo->insertItem(  i18n("Window background") );
+	wcCombo->insertItem(  i18n("Window text") );
+	wcCombo->setMinimumSize( wcCombo->sizeHint() );
+	wcCombo->setFixedHeight( wcCombo->sizeHint().height() );
 	connect( wcCombo, SIGNAL( activated(int) ),
 			SLOT( slotWidgetColor(int)  )  );
 	
+	groupLayout->addSpacing( 20 );		
+	groupLayout->addWidget( wcCombo );
+	
 	colorButton = new KColorButton( group );
-	colorButton->setGeometry( 70, 55, 100, 30 );
+	colorButton->setFixedHeight( wcCombo->sizeHint().height() );
 	colorButton->setColor( sampleWidgets->inactiveTitleColor );
 	colorPushColor = sampleWidgets->inactiveTitleColor;
 	connect( colorButton, SIGNAL( changed(const QColor &) ),
 		SLOT( slotSelectColor(const QColor &) ) );
+		
+	group->setMinimumHeight( 3*wcCombo->sizeHint().height()+20 );
+		
+	groupLayout->addWidget( colorButton );
 	
-	group = new QGroupBox(  klocale->translate("Contrast"), this );
-	group->setGeometry( 15, 270, 180, 50 );
+	group = new QGroupBox(  i18n("Contrast"), this );
+	
+	stackLayout->addWidget( group, 50 );
+	
+	groupLayout = new QHBoxLayout( group, 20 );
 	
 	sb = new QSlider( QSlider::Horizontal,group,"Slider" );
-    sb->setGeometry( 60, 20, 60, 20 );
     sb->setRange( 0, 10 );
     sb->setValue(sampleWidgets->contrast);
     sb->setFocusPolicy( QWidget::StrongFocus ); 
+	sb->setFixedHeight( sb->sizeHint().height() );
     connect( sb, SIGNAL(valueChanged(int)), SLOT(sliderValueChanged(int)) );
+	
+	QLabel *label = new QLabel( sb, i18n("&Low"), group );
+	label->setFixedHeight( sb->sizeHint().height() );
+	label->setFixedWidth( label->sizeHint().width() );
+	
+	groupLayout->addWidget( label );
+	groupLayout->addWidget( sb, 10 );
 
-    
-    QLabel *label = new QLabel( group );
-    label->setGeometry( 10, 20, 45, 20 );
-    label->setText( klocale->translate("Low"));
-    
 	label = new QLabel( group );
-    label->setGeometry( 130, 20, 40, 20 );
-    label->setText(  klocale->translate("High"));    
+    label->setText(  i18n("High"));
+	label->setFixedHeight( sb->sizeHint().height() );
+	label->setFixedWidth( label->sizeHint().width() );
+	
+	groupLayout->addWidget( label ); 
+	
+	topLayout->activate();
 	
 	kwmcom_init( qt_xdisplay(), 0 );
+}
+
+void KColorScheme::resizeEvent( QResizeEvent * )
+{
+	sampleWidgets->drawSampleWidgets();
 }
 
 void KColorScheme::sliderValueChanged( int val )
@@ -346,7 +446,7 @@ void KColorScheme::slotSave()
 {
 	// Prepare the ss dialog.
 	
-	ss->setCaption( klocale->translate("Save scheme"));
+	ss->setCaption( i18n("New color scheme"));
 	ss->nameLine->setFocus();
 	
 	int ind = sList->currentItem();
@@ -376,16 +476,16 @@ void KColorScheme::slotSave()
 		// against dereferencing null pointers
 		
 		if ( str == "KDE Default" ) {
-			KMsgBox::message(0,  klocale->translate("Error"), 
-					 klocale->translate( "You have chosen a name used by a supplied color scheme"), 2 );
+			KMsgBox::message(0,  i18n("Error"), 
+					 i18n( "You have chosen a name used by a supplied color scheme"), 2 );
 			return;
 		}
 		
 		int i;
 		for ( i = 1; it.current(); ++it ) {
 			if ( str == it.current() && i <= SUPPLIED_SCHEMES) {
-				KMsgBox::message(0, klocale->translate("Error"), 
-						 klocale->translate( "You have chosen a name used by a supplied color scheme"), 2 );
+				KMsgBox::message(0, i18n("Error"), 
+						 i18n( "You have chosen a name used by a supplied color scheme"), 2 );
 				return;
 			}
 			i++;
@@ -449,7 +549,7 @@ void KColorScheme::initSchemeList()
 {
         sList->clear();
 
-	sList->insertItem( klocale->translate("KDE Default"), 0 );
+	sList->insertItem( i18n("KDE Default"), 0 );
 	
 	QStrListIterator it( *schemeList );
 	int i;
@@ -711,10 +811,10 @@ void KColorScheme::readSettings( int )
 	else {
 		schemes = 0;
 		if(
-		QMessageBox::query(klocale->translate("Display Setup"),
-                         klocale->translate("No desktop color schemes were found.\nDo you want to install the default color schemes now ?"), 
-				   klocale->translate("Yes"), 
-				   klocale->translate("No") )
+		QMessageBox::query(i18n("Display Setup"),
+                         i18n("No desktop color schemes were found.\nDo you want to install the default color schemes now ?"), 
+				   i18n("Yes"), 
+				   i18n("No") )
 		) {
 			installSchemes();
 			config = KApplication::getKApplication()->getConfig();

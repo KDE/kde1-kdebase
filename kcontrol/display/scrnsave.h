@@ -77,6 +77,7 @@ protected slots:
 	void slotSetupDone(KProcess*);
 	void slotHelp();
 	void slotCornerAction( int, char );
+	void resizeEvent( QResizeEvent * );
 
 protected:
 	void writeSettings();
@@ -93,6 +94,7 @@ protected:
 	QLineEdit *waitEdit;
 	QSlider *prioritySlider;
 	QCheckBox *cb;
+	QLabel *monitorLabel;
 	const QStrList *saverList;
 	QStrList saverNames;
 	QString saverLocation;

@@ -98,6 +98,7 @@ protected slots:
 	void slotSelectColor( const QColor &col );
 	void slotSave();
 	void sliderValueChanged(int val);
+	void resizeEvent( QResizeEvent * );
 
 protected:
 	void writeSettings();

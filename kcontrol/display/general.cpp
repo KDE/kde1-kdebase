@@ -25,6 +25,7 @@
 #include <qradiobt.h>
 #include <qchkbox.h>
 #include <qcombo.h>
+#include <qlayout.h>
 #include <kapp.h>
 #include <kcharsets.h>
 #include <X11/Xlib.h>
@@ -43,230 +44,111 @@
 
 extern int dropError(Display *, XErrorEvent *);
 
-KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
-	: KDisplayModule( parent, mode, desktop )
-{	
-        int i;
-	changed = FALSE;
-	
-	// if we are just initialising we don't need to create setup widget
-	if ( mode == Init )
-		return;
-	
-	kde_display = x11Display();
-	KDEChangeGeneral = XInternAtom( kde_display, "KDEChangeGeneral", False);
-	screen = DefaultScreen(kde_display);
-	root = RootWindow(kde_display, screen);
-
-	setName( klocale->translate("General") );
-
-	readSettings();
-	
-	QGroupBox *group = new QGroupBox( klocale->translate("Widget style"), this );
-	group->setGeometry( 15, 85, 155, 80 );
-
-	stCombo = new QComboBox( group );
-	stCombo->setGeometry( 15, 35, 120, 25 );
-	stCombo->insertItem( klocale->translate("Motif") );
-	stCombo->insertItem( klocale->translate("Windows 95") );
-	connect( stCombo, SIGNAL( activated(int) ),
-			SLOT( slotChangeStyle(int)  )  );
-			
-	if(applicationStyle==WindowsStyle)
-		stCombo->setCurrentItem(1);
-	else
-		stCombo->setCurrentItem(0);
-
-	group = new QGroupBox( klocale->translate("Fonts"), this );
-	group->setGeometry( 15, 190, 440, 170 );
-	
-	fontTypeList = new QListBox( group );
-	fontTypeList->setGeometry( 15, 20, 140, 135 );
-	fontTypeList->insertItem( klocale->translate("General font") );
-	fontTypeList->setCurrentItem( 0 );
-	connect( fontTypeList, SIGNAL( highlighted( int ) ),
-			SLOT( slotPreviewFont( int ) ) );
-
-	fontCombo = new QComboBox( false, group );
-	fontCombo->setGeometry( 175, 20, 150, 30 );
-	getFontList( fontList, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
-	fontCombo->insertStrList( &fontList );
-	QStrListIterator it( fontList );
-	for ( i = 0; it.current(); ++it, i++ )
-	{
-		if ( !strcmp( generalFont.family(), it.current() ) )
-			fontCombo->setCurrentItem( i );
-	}
-	connect( fontCombo, SIGNAL( activated( const char * ) ),
-		SLOT( slotSelectFont( const char * ) ) );
-			
-	example_label = new QLabel( group );
-	example_label->setFont(generalFont);
-	example_label->setGeometry( 345, 20, 85, 30 );
-	example_label->setAlignment(AlignCenter);
-	//	example_label->setBackgroundColor(white);
-	example_label->setFrameStyle( QFrame::WinPanel | QFrame::Sunken );
-	example_label->setLineWidth( 1 );
-	example_label->setText(klocale->translate("Sample"));
-
-	btnGrp = new QButtonGroup( group );
-	btnGrp->hide();
-	btnGrp->setExclusive( true );
-
-	QRadioButton *rb = new QRadioButton( klocale->translate("Small"), group );
-	rb->setGeometry( 175, 60, 90, 25 );
-	btnGrp->insert( rb );
-
-	rb = new QRadioButton( klocale->translate("Medium"), group );
-	rb->setGeometry( 260, 60, 90, 25 );
-	btnGrp->insert( rb );
-
-	rb = new QRadioButton( klocale->translate("Large"), group );
-	rb->setGeometry( 350, 60, 85, 25 );
-	btnGrp->insert( rb );
-
-	if ( generalFont.pointSize() <= 10 )
-		((QRadioButton *)btnGrp->find( 0 ))->setChecked( TRUE );
-	else if ( generalFont.pointSize() <= 12 )
-		((QRadioButton *)btnGrp->find( 1 ))->setChecked( TRUE );
-	else
-		((QRadioButton *)btnGrp->find( 2 ))->setChecked( TRUE );
-	connect( btnGrp, SIGNAL( clicked( int ) ), SLOT( slotFontSize( int ) ) );
-
-	cb1 = new QCheckBox(  klocale->translate("Bold"), group );
-	cb1->setGeometry( 175, 90, 90, 25 );
-	cb1->setChecked( generalFont.bold() );
-	connect( cb1, SIGNAL( toggled( bool ) ), SLOT( slotFontBold( bool ) ) );
-	
-	cb2 = new QCheckBox(  klocale->translate("Italic"), group );
-	cb2->setGeometry( 260, 90, 90, 25 );
-	cb2->setChecked( generalFont.italic() );
-	connect( cb2, SIGNAL( toggled( bool ) ), SLOT( slotFontItalic( bool ) ) );
-	
-	QPushButton *button = new QPushButton(  klocale->translate("Help"), group );
-	button->setGeometry( 360, 90, 70, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
-
-	charset_label = new QLabel(group,"charset");
-	charset_label->setText(klocale->translate("Charset:"));
-	charset_label->setGeometry(180,125, 70, 25);
-
-	charset_combo = new QComboBox( false, group );
-	charset_combo->setGeometry(250,125, 180, 30);
-
-        fillCharsetCombo();
-
-	charset_combo->setInsertionPolicy(QComboBox::NoInsertion);
-	connect( charset_combo, SIGNAL(activated(const char *)),
-		 SLOT(slotCharset(const char *)) );
-
-	
-	connectColor();
-	setColors();
-}
-
-void KGeneral::fillCharsetCombo(){
-int i;
-	charset_combo->clear();
-	KCharsets *charsets=kapp->getCharsets();
-        QStrList sets=charsets->displayable(generalFont.family());
-	charset_combo->insertItem( klocale->translate("default") );
-	for(QString set=sets.first();set;set=sets.next())
-	  charset_combo->insertItem( set );
-	charset_combo->insertItem( klocale->translate("any") );
-
-	QString charset=charsets->name(generalFont);
-	for(i = 0;i<charset_combo->count();i++){
-	  if (charset==charset_combo->text(i)){
-	    charset_combo->setCurrentItem(i);
-	    break;
-	  }
-	}
-}
-
-void KGeneral::slotCharset(const char *name)
+KFontChooser::KFontChooser( QWidget *parent, const char *name )
+	: QWidget( parent, name )
 {
-
-  KCharsets *charsets=kapp->getCharsets();
-  if (strcmp(name,"default")==0){
-     charsets->setQFont(generalFont,klocale->charset());
-     defaultCharset=TRUE;
-  }   
-  else{   
-     charsets->setQFont(generalFont,name);
-     defaultCharset=FALSE;
-  }   
-
-  changed=TRUE;
-}
-
-void KGeneral::slotSelectFont( const char *fname )
-{
-	if( fontTypeList->currentItem() == 0 )
-		generalFont.setFamily( fname );
+	int i;
+	
+	fnt = QFont( "helvetica", 12 );
+	changed = False;
+	
+	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
+	topLayout->addStretch( 5 );
+	
+	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
+	
+	topLayout->addLayout( stackLayout );
 		
-	fillCharsetCombo();	
-	slotPreviewFont(0);
-
-	changed=TRUE;
-}
-
-void KGeneral::slotFontSize( int s )
-{
-	const int sizes[] = { 10, 12, 14 };
-
-	if( fontTypeList->currentItem() == 0 )
-		generalFont.setPointSize( sizes[s] );
+	cmbFont = new QComboBox( false, this );
+	cmbFont->setFixedHeight( cmbFont->sizeHint().height() );
 	
-	slotPreviewFont(0);
-
-	changed=TRUE;
-}
-
-void KGeneral::slotFontBold( bool b )
-{
-	if( fontTypeList->currentItem() == 0 )
-		generalFont.setBold( b );
+	//getFontList( fontList, "-*-*-*-*-*-*-*-*-*-*-p-*-*-*" );
+	getFontList( fontList, "-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
+	cmbFont->insertStrList( &fontList );
 	
-	slotPreviewFont(0);
-
-	changed=TRUE;
-}
-
-void KGeneral::slotFontItalic( bool i )
-{
-	if( fontTypeList->currentItem() == 0 )
-		generalFont.setItalic( i );
-	
-	slotPreviewFont(0);
-
-	changed=TRUE;
-}
-
-void KGeneral::slotChangeStyle(int)
-{
-	int selection;
-	
-	selection = stCombo->currentItem()+1;
-	switch(selection) {
-		case 1:	applicationStyle=MotifStyle;
-				break;
-		case 2:	applicationStyle=WindowsStyle;
-				break;
+	QStrListIterator it( fontList );
+	for ( i = 0; it.current(); ++it, i++ ) {
+		if ( !strcmp( fnt.family(), it.current() ) )
+			cmbFont->setCurrentItem( i );
 	}
 	
-	changed=TRUE;
+	connect( cmbFont, SIGNAL( activated( const char * ) ),
+		SLOT( slotSelectFont( const char * ) ) );
+		
+	QLabel *label = new QLabel( cmbFont, "&Typeface", this );
+	label->setFixedHeight( label->sizeHint().height() );
+	
+	stackLayout->addWidget( label );
+	stackLayout->addWidget( cmbFont );
+
+	cbBold = new QCheckBox(  i18n("&Bold"), this );
+	cbBold->setMinimumSize( cbBold->sizeHint() );
+	cbBold->setChecked( fnt.bold() );
+	connect( cbBold, SIGNAL( toggled( bool ) ), SLOT( slotFontBold( bool ) ) );
+	
+	topLayout->addWidget( cbBold );
+	
+	cbItalic = new QCheckBox(  i18n("&Italic"), this );
+	cbItalic->setMinimumSize( cbItalic->sizeHint() );
+	cbItalic->setChecked( fnt.italic() );
+	connect( cbItalic, SIGNAL( toggled( bool ) ), SLOT( slotFontItalic( bool ) ) );
+	
+	topLayout->addWidget( cbItalic );
+	
+	QBoxLayout *pushLayout = new QHBoxLayout(  2 );
+	
+	topLayout->addLayout( pushLayout );
+	
+	stackLayout = new QVBoxLayout( 4 );
+	
+	pushLayout->addLayout( stackLayout, 10 );
+	pushLayout->addSpacing( 10 );
+	
+	sbSize = new KNumericSpinBox( this );
+	
+	sbSize->setStep( 2 );
+	sbSize->setRange( 8, 20 );
+	sbSize->setValue( 12 );
+	
+	connect( sbSize, SIGNAL( valueDecreased() ),
+		 SLOT( slotFontSize() ) );
+		 
+	connect( sbSize, SIGNAL( valueIncreased() ),
+		 SLOT( slotFontSize() ) );
+	
+	label = new QLabel( sbSize, "&Size", this );
+	label->setFixedHeight( label->sizeHint().height() );
+
+	cmbCharset = new QComboBox( false, this );
+	
+	fillCharsetCombo();
+	cmbCharset->setInsertionPolicy( QComboBox::NoInsertion );
+	connect( cmbCharset, SIGNAL( activated( const char * ) ),
+		 SLOT( slotCharset( const char * ) ) );
+		 
+	sbSize->setFixedHeight( cmbCharset->sizeHint().height() );
+	cmbCharset->setFixedHeight( cmbCharset->sizeHint().height() );
+	
+	stackLayout->addWidget( label );
+	stackLayout->addWidget( sbSize );
+	
+	stackLayout = new QVBoxLayout( 4 );
+	
+	pushLayout->addLayout( stackLayout, 30 );
+	
+	label = new QLabel( cmbCharset, "&Character set", this );
+	label->setFixedHeight( label->sizeHint().height() );
+	
+	stackLayout->addWidget( label );
+	stackLayout->addWidget( cmbCharset );
+
+	topLayout->activate();
 }
 
-KGeneral::~KGeneral()
-{
-}
-
-void KGeneral::getFontList( QStrList &list, const char *pattern )
+void KFontChooser::getFontList( QStrList &list, const char *pattern )
 {
 	int num;
-
-	char **xFonts = XListFonts( qt_xdisplay(), pattern, 200, &num );
+	char **xFonts = XListFonts( qt_xdisplay(), pattern, 1000, &num );
 
 	for ( int i = 0; i < num; i++ )
 	{
@@ -276,7 +158,7 @@ void KGeneral::getFontList( QStrList &list, const char *pattern )
 	XFreeFontNames( xFonts );
 }
 
-void KGeneral::addFont( QStrList &list, const char *xfont )
+void KFontChooser::addFont( QStrList &list, const char *xfont )
 {
 	const char *ptr = strchr( xfont, '-' );
 	if ( !ptr )
@@ -302,9 +184,227 @@ void KGeneral::addFont( QStrList &list, const char *xfont )
 			if ( it.current() == font )
 				return;
 
-		list.append( font );
+		list.inSort( font );
 	}
 }
+
+void KFontChooser::fillCharsetCombo(){
+int i;
+	cmbCharset->clear();
+	KCharsets *charsets=kapp->getCharsets();
+        QStrList sets=charsets->displayable(fnt.family());
+	cmbCharset->insertItem( i18n("default") );
+	for(QString set=sets.first();set;set=sets.next())
+	  cmbCharset->insertItem( set );
+	cmbCharset->insertItem( i18n("any") );
+
+	QString charset=charsets->name(fnt);
+	for(i = 0;i<cmbCharset->count();i++){
+	  if (charset==cmbCharset->text(i)){
+	    cmbCharset->setCurrentItem(i);
+	    break;
+	  }
+	}
+}
+
+void KFontChooser::slotCharset(const char *name)
+{
+
+  KCharsets *charsets=kapp->getCharsets();
+  if (strcmp(name,"default")==0){
+     charsets->setQFont(fnt,klocale->charset());
+     defaultCharset=TRUE;
+  }   
+  else{   
+     charsets->setQFont(fnt,name);
+     defaultCharset=FALSE;
+  }   
+
+  changed=TRUE;
+}
+
+void KFontChooser::slotSelectFont( const char *fname )
+{
+//	if( fontTypeList->currentItem() == 0 )
+	fnt.setFamily( fname );
+		
+	//fillCharsetCombo();	
+	//slotPreviewFont(0);
+	emit fontChanged( fnt );
+	changed=TRUE;
+}
+
+void KFontChooser::slotFontSize( )
+{
+	//const int sizes[] = { 10, 12, 14 };
+
+//	if( fontTypeList->currentItem() == 0 )
+	int s = sbSize->getValue();
+		fnt.setPointSize( s );
+	
+	//slotPreviewFont(0);
+	emit fontChanged( fnt );
+
+	changed=TRUE;
+}
+
+void KFontChooser::slotFontBold( bool b )
+{
+//	if( fontTypeList->currentItem() == 0 )
+		fnt.setBold( b );
+	
+	//slotPreviewFont(0);
+	emit fontChanged( fnt );
+
+	changed=TRUE;
+}
+
+void KFontChooser::slotFontItalic( bool i )
+{
+//	if( fontTypeList->currentItem() == 0 )
+		fnt.setItalic( i );
+	
+	//slotPreviewFont(0);
+	emit fontChanged( fnt );
+
+	changed=TRUE;
+}
+
+
+//------------------------------------------------------------------
+
+KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
+	: KDisplayModule( parent, mode, desktop )
+{	
+        int i;
+	changed = FALSE;
+	
+	// if we are just initialising we don't need to create setup widget
+	if ( mode == Init )
+		return;
+	
+	kde_display = x11Display();
+	KDEChangeGeneral = XInternAtom( kde_display, "KDEChangeGeneral", False);
+	screen = DefaultScreen(kde_display);
+	root = RootWindow(kde_display, screen);
+
+	setName( i18n("General") );
+
+	readSettings();
+	
+	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
+	
+	cbStyle = new QCheckBox( 
+	i18n( "&Draw widgets in the style of Windows 95" ), this );
+	
+	if( applicationStyle == WindowsStyle )
+		cbStyle->setChecked( True );
+	else
+		cbStyle->setChecked( False);
+	
+	connect( cbStyle, SIGNAL( clicked() ), SLOT( slotChangeStyle( 0 )  )  );
+	
+	topLayout->addWidget( cbStyle, 10 );
+	
+	stCombo = new QComboBox( this );
+	stCombo->hide();
+	//stCombo->setGeometry( 15, 35, 120, 25 );
+	//stCombo->insertItem( i18n("Motif") );
+	//stCombo->insertItem( i18n("Windows 95") );
+	//connect( stCombo, SIGNAL( activated(int) ),
+	//		SLOT( slotChangeStyle(int)  )  );
+			
+	//if(applicationStyle==WindowsStyle)
+	//	stCombo->setCurrentItem(1);
+	//else
+	//	stCombo->setCurrentItem(0);
+
+	QGroupBox *group = new QGroupBox( i18n( "Desktop fonts" ), this );
+	
+	topLayout->addWidget( group, 50 );
+	
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
+	
+	groupLayout->addSpacing( 20 );
+	
+	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
+	
+	groupLayout->addLayout( pushLayout );
+	
+	/*groupLayout->setRowStretch(0,0);
+	groupLayout->setRowStretch(1,10);
+	groupLayout->setRowStretch(2,10);
+	groupLayout->setRowStretch(3,0);
+	
+	groupLayout->setColStretch(0,0);
+	groupLayout->setColStretch(1,10);
+	groupLayout->setColStretch(2,10);
+	groupLayout->setColStretch(3,0);*/
+	
+	fontTypeList = new QListBox( group );
+	fontTypeList->insertItem( i18n("General font") );
+	fontTypeList->insertItem( i18n("Fixed font") );
+	fontTypeList->insertItem( i18n("Window title font") );
+	fontTypeList->insertItem( i18n("Panel font") );
+	fontTypeList->insertItem( i18n("Panel clock font") );
+	fontTypeList->setCurrentItem( 0 );
+	connect( fontTypeList, SIGNAL( highlighted( int ) ),
+			SLOT( slotPreviewFont( int ) ) );
+			
+	pushLayout->addWidget( fontTypeList );
+	
+	fntChooser = new KFontChooser( group );
+	
+	connect( fntChooser, SIGNAL( fontChanged( QFont ) ), this,
+		SLOT( slotPreviewFont( QFont ) ) );
+	
+	pushLayout->addWidget( fntChooser );
+	
+	QBoxLayout *stackLayout = new QVBoxLayout( 4 );
+	
+	groupLayout->addLayout( stackLayout );
+	
+	QLabel *label = new QLabel( "Sample text", group );
+	label->setFixedHeight( label->sizeHint().height() );
+	
+	stackLayout->addWidget( label );
+	
+	lSample = new QLabel( group );
+	lSample->setText( "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"\
+						"the quick brown fox jumps over the lazy dog\n"\
+						"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )" );
+	lSample->setAlignment( AlignLeft | AlignVCenter );
+	lSample->setFixedHeight( 2*lSample->sizeHint().height() );
+	lSample->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+	
+	stackLayout->addWidget( lSample );
+
+	topLayout->activate();
+	//connectColor();
+	//setColors();
+}
+
+
+void KGeneral::slotChangeStyle(int)
+{
+	int selection;
+	
+	selection = stCombo->currentItem()+1;
+	switch(selection) {
+		case 1:	applicationStyle=MotifStyle;
+				break;
+		case 2:	applicationStyle=WindowsStyle;
+				break;
+	}
+	
+	changed=TRUE;
+}
+
+KGeneral::~KGeneral()
+{
+}
+
+
 
 void KGeneral::readSettings( int )
 {
@@ -411,7 +511,6 @@ void KGeneral::writeSettings()
 
 void KGeneral::slotApply()
 {
-	
 	writeSettings();
 	apply();
 }
@@ -430,6 +529,7 @@ static int _getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
     XFree((void*) *p);
   return n;
 }
+
 //Matthias
 static bool getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
@@ -483,10 +583,11 @@ void KGeneral::apply( bool  )
 }
 
 
-void KGeneral::slotPreviewFont( int indx )
+void KGeneral::slotPreviewFont( QFont fnt )
 {
-	if ( indx == 0 )
-		example_label->setFont( generalFont );
+	//if ( indx == 0 )
+	//	example_label->setFont( generalFont );
+	lSample->setFont( fnt );
 }
 
 void KGeneral::slotHelp()
@@ -508,11 +609,11 @@ void KGeneral::loadSettings()
 
 	fontTypeList->setCurrentItem( 0 );
 
-	QStrListIterator it( fontList );
+	/*QStrListIterator it( fontList );
 	for (i = 0; it.current(); ++it, i++ )
 	{
 		if ( !strcmp( generalFont.family(), it.current() ) )
-			fontCombo->setCurrentItem( i );
+			cmbFont->setCurrentItem( i );
 	}
 	example_label->setFont(generalFont);
 
@@ -523,17 +624,17 @@ void KGeneral::loadSettings()
 	else
 		((QRadioButton *)btnGrp->find( 2 ))->setChecked( TRUE );
 
-	cb1->setChecked( generalFont.bold() );
+	cbBold->setChecked( generalFont.bold() );
 	
-	cb2->setChecked( generalFont.italic() );
+	cbItalic->setChecked( generalFont.italic() );
 
-	fillCharsetCombo();
+	fillCharsetCombo();*/
 }
 
 void KGeneral::applySettings()
 {
   writeSettings();
-  apply(TRUE);
+  apply( TRUE );
 }
 
 

@@ -22,6 +22,7 @@
 #include <qradiobt.h>
 #include <qchkbox.h>
 #include <qslider.h>
+#include <qlayout.h>
 #include <kapp.h>
 #include <stdlib.h>
 #include <X11/Xlib.h>
@@ -37,16 +38,16 @@
 #include "scrnsave.h"
 #include "scrnsave.moc"
 
-#define NO_SCREENSAVER klocale->translate("(none)")
+#define NO_SCREENSAVER i18n("(none)")
 #define SCREENSAVER_DIR	"/usr/local/kde/bin"
 #define CORNER_SIZE		15
 
 CornerButton::CornerButton( QWidget *parent, int num, char _action )
 	: QLabel( parent )
 {
-	popupMenu.insertItem(  klocale->translate("Ignore"), 'i' );
-	popupMenu.insertItem(  klocale->translate("Save"), 's' );
-	popupMenu.insertItem(  klocale->translate("Lock"), 'l' );
+	popupMenu.insertItem(  i18n("Ignore"), 'i' );
+	popupMenu.insertItem(  i18n("Save"), 's' );
+	popupMenu.insertItem(  i18n("Lock"), 'l' );
 
 	connect( &popupMenu, SIGNAL( activated( int ) ),
 		SLOT( slotActionSelected( int ) ) );
@@ -100,11 +101,11 @@ int discardError(Display *, XErrorEvent *)
 KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
-KIconLoader iconLoader;
+	KIconLoader iconLoader;
 
 	readSettings();
 
-	setName(  klocale->translate("Screen Saver") );
+	setName(  i18n("Screen Saver") );
 
 	// if we are just initialising we don't need to create setup widget
 	if ( mode == Init )
@@ -128,17 +129,30 @@ KIconLoader iconLoader;
 	findSavers();
 
 	QPixmap p = iconLoader.loadIcon("monitor.xpm");
+	
+	QGridLayout *topLayout = new QGridLayout( this, 4, 4, 10 );
+	
+	topLayout->setRowStretch(0,0);
+	topLayout->setRowStretch(1,10);
+	topLayout->setRowStretch(2,100);
+	topLayout->setRowStretch(3,0);
+	
+	topLayout->setColStretch(0,0);
+	topLayout->setColStretch(1,10);
+	topLayout->setColStretch(2,10);
+	topLayout->setColStretch(3,0);
 
-	QLabel *label;
+	monitorLabel = new QLabel( this );
+	monitorLabel->setAlignment( AlignCenter );
+	monitorLabel->setPixmap( p );
+	monitorLabel->setMinimumSize( 220, 160 );
+					 
+	topLayout->addMultiCellWidget( monitorLabel, 1, 1, 1, 2 );
 
-	label = new QLabel( this );
-	label->setPixmap( p );
-	label->setGeometry( 135, 15, label->sizeHint().width(),
-					 label->sizeHint().height() );
-
-	monitor = new KSSMonitor( label );
-	monitor->setGeometry( 20, 10, 157, 111 );
+	monitor = new KSSMonitor( monitorLabel );
 	monitor->setBackgroundColor( black );
+	monitor->setGeometry( (monitorLabel->width()-200)/2+20,
+		(monitorLabel->height()-160)/2+10, 157, 111 );
 
 	CornerButton *corner = new CornerButton( monitor, 0, cornerAction[0] );
 	corner->setGeometry( 0, 0, CORNER_SIZE, CORNER_SIZE );
@@ -160,13 +174,15 @@ KIconLoader iconLoader;
 	connect( corner, SIGNAL( cornerAction( int, char ) ),
 			SLOT( slotCornerAction( int, char ) ) );
 
-	QGroupBox *group = new QGroupBox(  klocale->translate("Screen Saver"), this );
-	group->setGeometry( 195, 190, 260, 130 );
+	QGroupBox *group = new QGroupBox(  i18n("Screen Saver"), this );
+	
+	topLayout->addWidget( group, 2, 1 );
+	
+	QBoxLayout *groupLayout = new QVBoxLayout( group, 10 );
 
 	ssList = new QListBox( group );
 	ssList->insertItem( NO_SCREENSAVER, 0 );
 	ssList->setCurrentItem( 0 );
-	ssList->setGeometry( 15, 20, 135, 90 );
 	getSaverNames();
 //	ssList->insertStrList( &saverNames );
 	QStrListIterator it( *saverList );
@@ -180,65 +196,107 @@ KIconLoader iconLoader;
 	ssList->setTopItem( ssList->currentItem() );
 	connect( ssList, SIGNAL( highlighted( int ) ),
 			SLOT( slotScreenSaver( int ) ) );
+	
+	groupLayout->addSpacing(  20 );		
+	groupLayout->addWidget( ssList, 20 );
 
-	setupBt = new QPushButton(  klocale->translate("Setup..."), group );
-	setupBt->setGeometry( 160, 20, 90, 25 );
+	setupBt = new QPushButton(  i18n("&Setup ..."), group );
+	setupBt->setFixedHeight( setupBt->sizeHint().height() );
 	connect( setupBt, SIGNAL( clicked() ), SLOT( slotSetup() ) );
+	
+	groupLayout->addWidget( setupBt );
 
-	testBt = new QPushButton(  klocale->translate("Test"), group );
-	testBt->setGeometry( 160, 55, 90, 25 );
+	testBt = new QPushButton(  i18n("&Test"), group );
+	testBt->setFixedHeight( testBt->sizeHint().height() );
 	connect( testBt, SIGNAL( clicked() ), SLOT( slotTest() ) );
+	
+	groupLayout->addWidget( testBt );
+	
+	QBoxLayout *stackLayout = new QVBoxLayout( 10 );
+	
+	topLayout->addLayout( stackLayout, 2, 2 );
 
-	QPushButton *button = new QPushButton(  klocale->translate("Help"), group );
-	button->setGeometry( 160, 90, 90, 25 );
-	connect( button, SIGNAL( clicked() ), SLOT( slotHelp() ) );
-
-	group = new QGroupBox(  klocale->translate("Settings"), this );
-	group->setGeometry( 15, 190, 165, 130 );
-
-	label = new QLabel(  klocale->translate("Wait:"), group );
-	label->setGeometry( 15, 20, 40, 20 );
-
+	group = new QGroupBox(  i18n("Settings"), this );
+	
+	stackLayout->addWidget( group, 10 );
+	
+	groupLayout = new QVBoxLayout( group, 10 );
+	
+	QBoxLayout *pushLayout = new QHBoxLayout( 5 );
+	
+	groupLayout->addLayout( pushLayout );
+	
 	waitEdit = new QLineEdit( group );
-	waitEdit->setGeometry( 55, 20, 45, 20 );
 	QString str;
 	str.setNum( xtimeout/60 );
 	waitEdit->setText( str );
 	connect( waitEdit, SIGNAL( textChanged( const char * ) ),
 			SLOT( slotTimeoutChanged( const char * ) ) );
+			
+	QLabel *label = new QLabel( waitEdit, i18n("&Wait for"), group );
+	
+	label->setFixedHeight( waitEdit->sizeHint().height() );
+	label->setMinimumWidth( label->sizeHint().width() );
+	waitEdit->setFixedHeight( waitEdit->sizeHint().height() );
+	
+	pushLayout->addWidget( label );		
+	pushLayout->addWidget( waitEdit, 10 );
+	
+	label = new QLabel(  i18n("min."), group );
+	label->setFixedHeight( waitEdit->sizeHint().height() );
+	label->setMinimumWidth( label->sizeHint().width() );
+	
+	pushLayout->addWidget( label );
 
-	label = new QLabel(  klocale->translate("min"), group );
-	label->setGeometry( 105, 20, 40, 20 );
-
-	cb = new QCheckBox(  klocale->translate("Requires Password"), group );
-	cb->setGeometry( 15, 50, 145, 20 );
+	cb = new QCheckBox(  i18n("&Require password"), group );
+	cb->setFixedHeight( cb->sizeHint().height() );
 	cb->setChecked( lock );
 	connect( cb, SIGNAL( toggled( bool ) ), SLOT( slotLock( bool ) ) );
+	
+	groupLayout->addWidget( cb );
 
-	label = new QLabel(  klocale->translate("Priority:"), group );
-	label->setGeometry( 15, 75, 80, 20 );
-
-	label = new QLabel(  klocale->translate("High"), group );
-	label->setGeometry( 15, 100, 40, 20 );
-
-	label = new QLabel(  klocale->translate("Low"), group );
-	label->setGeometry( 115, 100, 45, 20 );
+	group = new QGroupBox(  i18n("Priority"), this );
+	
+	stackLayout->addWidget( group, 10 );
+	
+	groupLayout = new QHBoxLayout( group, 20 );
 
 	prioritySlider = new QSlider( QSlider::Horizontal, group );
-	prioritySlider->setGeometry( 50, 100, 60, 20 );
 	prioritySlider->setRange( 0, 20 );
 	prioritySlider->setSteps( 5, 10 );
 	prioritySlider->setValue( priority );
 	connect( prioritySlider, SIGNAL( valueChanged(int) ),
 		SLOT( slotPriorityChanged(int) ) );
-
+		
+	label = new QLabel( prioritySlider, i18n("&High"), group );
+	
+	prioritySlider->setFixedHeight( prioritySlider->sizeHint().height() );
+	label->setFixedHeight( prioritySlider->sizeHint().height() );
+	label->setMinimumWidth( label->sizeHint().width() );
+	
+	groupLayout->addWidget( label );
+	groupLayout->addWidget( prioritySlider, 10 );
+		
+	label = new QLabel(  i18n("Low"), group );
+	label->setFixedHeight( prioritySlider->sizeHint().height() );
+	label->setMinimumWidth( label->sizeHint().width() );
+	
+	groupLayout->addWidget( label );
+	
 //	connect( &timer, SIGNAL( timeout() ), SLOT( slotSetupTimeout() ) );
 
 	// I have to call show() here, otherwise the screensaver
 	// does not get the correct size information.
+	topLayout->activate();
 	show();
 
 	setMonitor();
+}
+
+void KScreenSaver::resizeEvent( QResizeEvent * )
+{
+	monitor->setGeometry( (monitorLabel->width()-200)/2+20,
+		(monitorLabel->height()-160)/2+10, 157, 111 );
 }
 
 KScreenSaver::~KScreenSaver()

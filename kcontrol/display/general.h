@@ -16,6 +16,7 @@
 #include <qtimer.h>
 #include <qpainter.h>
 #include <qchkbox.h>
+#include <kspinbox.h>
 #include <kcontrol.h>
 #include <X11/X.h>
 #include <X11/Xlib.h>
@@ -26,6 +27,45 @@
 
 #include "display.h"
 
+
+class KFontChooser : public QWidget
+{
+	Q_OBJECT
+public:
+	KFontChooser::KFontChooser( QWidget *parent=0, const char *name=0 );
+	~KFontChooser() {};
+
+signals:
+	void fontChanged( QFont font );
+
+protected slots:
+	void slotSelectFont( const char *fname );
+	void slotFontSize( );
+	void slotCharset( const char * );
+	void slotFontBold( bool );
+	void slotFontItalic( bool );
+
+protected:
+	void fillCharsetCombo();
+	void getFontList( QStrList &list, const char *pattern );
+	void addFont( QStrList &list, const char *xfont );
+	
+protected:
+	QFont fnt;
+	bool changed;
+	
+	KNumericSpinBox *sbSize;
+	QComboBox *cmbFont;
+	QComboBox *cmbCharset;
+	QCheckBox *cbBold, *cbItalic;
+	QButtonGroup *btnGrp;
+	QPushButton *changeBt;
+	
+	QLabel *example_label;
+	QLabel *charset_label;
+	QStrList fontList;
+	Bool defaultCharset;
+};
 
 class KGeneral : public KDisplayModule
 {
@@ -45,41 +85,34 @@ public:
 	
 	Display *kde_display;
 	Atom 	KDEChangeGeneral;
+	
+
 
 protected slots:
-	void slotSelectFont( const char *fname );
-	void slotFontSize( int );
-	void slotCharset( const char * );
-	void slotFontBold( bool );
-	void slotFontItalic( bool );
+	
 	void slotChangeStyle(int );
 	void slotApply();
-	void slotPreviewFont(int);
+	void slotPreviewFont( QFont fnt );
 	void slotHelp();
 	void setColors();
 	void connectColor();
 
 protected:
-	void fillCharsetCombo();
+
 	void writeSettings();
-	void getFontList( QStrList &list, const char *pattern );
-	void addFont( QStrList &list, const char *xfont );
+
 	
 protected:
 	QComboBox *stCombo;
-	QComboBox *fontCombo;
-	QComboBox *charset_combo;
-	QCheckBox *cb1, *cb2;
-	QButtonGroup *btnGrp;
-	QPushButton *changeBt;
-	QListBox *fontTypeList;
+	KFontChooser *fntChooser;
+	QLabel *lSample;
 	QLabel *example_label;
-	QLabel *charset_label;
-	QStrList fontList;
+	QCheckBox *cbStyle;
 	
+	QListBox *fontTypeList;
 	Bool changed;
-	Bool defaultCharset;
 	
+	Bool defaultCharset;
 	Window root;
 	int screen;
 };

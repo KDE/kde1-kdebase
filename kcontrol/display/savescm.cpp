@@ -6,6 +6,8 @@
 
 #include <qaccel.h>
 #include <kapp.h>
+#include <kbuttonbox.h>
+#include <qlayout.h>
 #include <qframe.h>
 #include <qlabel.h>
 
@@ -14,35 +16,47 @@ SaveScm::SaveScm( QWidget *parent, const char *name )
 {
 	setFocusPolicy(QWidget::StrongFocus);
 	
-	QFrame* tmpQFrame;
-	tmpQFrame = new QFrame( this );
-	tmpQFrame->setGeometry( 5, 5, 250, 65 );
-	tmpQFrame->setFrameStyle( 35 );
-	tmpQFrame->setLineWidth( 2 );
+	QBoxLayout *topLayout = new QVBoxLayout( this, 10 );
 
-	QLabel* tmpQLabel;
-	tmpQLabel = new QLabel( this );
-	tmpQLabel->setGeometry( 15, 25, 35, 25 );
-	tmpQLabel->setText( klocale->translate("Name") );
-	tmpQLabel->setAlignment( 290 );
+	QBoxLayout *stackLayout = new QVBoxLayout( 3 );
+	topLayout->addLayout( stackLayout );
 
 	nameLine = new QLineEdit( this );
-	nameLine->setGeometry( 60, 25, 170, 25 );
 	nameLine->setMaxLength(18);
+	nameLine->setFixedHeight( nameLine->sizeHint().height() );
 	
-	ok = new QPushButton( this );
-	ok->setGeometry( 115, 80, 65, 30 );
-	ok->setText( klocale->translate("OK") );
-	ok->setAutoDefault(TRUE);
-	connect( ok, SIGNAL(clicked()), SLOT(accept()) );
+	QLabel* tmpQLabel;
+	tmpQLabel = new QLabel( nameLine, 
+			i18n( "&Enter the name of a new\n"\
+					"color scheme to be added to the list." ), this );
+	tmpQLabel->setAlignment( AlignLeft | AlignBottom | ShowPrefix );
+	tmpQLabel->setFixedHeight( tmpQLabel->sizeHint().height() );
+	tmpQLabel->setMinimumWidth( tmpQLabel->sizeHint().width() );
+	
+	stackLayout->addStretch( 10 );
+	stackLayout->addWidget( tmpQLabel );
+	stackLayout->addWidget( nameLine );
+	
+	QFrame* tmpQFrame;
+	tmpQFrame = new QFrame( this );
+	tmpQFrame->setFrameStyle( QFrame::HLine | QFrame::Sunken );
+	tmpQFrame->setMinimumHeight( tmpQFrame->sizeHint().height() );
+	
+	topLayout->addWidget( tmpQFrame );
+	
+	KButtonBox *bbox = new KButtonBox( this );
+	bbox->addStretch( 10 );
+	
+	QPushButton *ok = bbox->addButton( i18n( "&OK" ) );
+	connect( ok, SIGNAL( clicked() ), SLOT( accept() ) );
+	
+	QPushButton *cancel = bbox->addButton( i18n( "&Cancel" ) );
+	connect( cancel, SIGNAL( clicked() ), SLOT( reject() ) );
+	
+	bbox->layout();
+	topLayout->addWidget( bbox );
 
-	cancel = new QPushButton( this );
-	cancel->setGeometry( 190, 80, 60, 30 );
-	cancel->setText( klocale->translate("Cancel") );
-	cancel->setAutoDefault(TRUE);
-	connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
-
-	resize( 260, 115 );
-	setMaximumSize( 260, 115 );
-	setMinimumSize( 260, 115 );
+    topLayout->activate();
+	
+	resize( 250, 0 );
 }
