@@ -1,0 +1,331 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: helpwin.cpp:58
+msgid "KDE Help: Open URL"
+msgstr "KDE 帮助: 打开 URL"
+
+#: helpwin.cpp:60
+msgid "Open URL"
+msgstr "打开 URL"
+
+#: helpwin.cpp:454 info.cpp:274
+msgid "Cannot open: "
+msgstr "无法打开: "
+
+#: helpwin.cpp:455 helpwin.cpp:464
+msgid "Oops!"
+msgstr "糟糕"
+
+#: helpwin.cpp:463
+msgid "Unknown format: "
+msgstr "未知的格式: "
+
+#: helpwin.cpp:833
+msgid "Could not start or find KFM"
+msgstr "无法运行或找不到 KFM"
+
+#: helpwin.cpp:1322
+msgid "Open this Link"
+msgstr "打开这项链接"
+
+#: helpwin.cpp:1323
+msgid "Add Bookmark"
+msgstr "加入书签"
+
+#: helpwin.cpp:1324
+msgid "Open in new Window"
+msgstr "在新窗口中打开"
+
+#: info.cpp:86 info.cpp:601
+msgid "Error in info file"
+msgstr "info 文件有错误"
+
+#: info.cpp:1230
+#, c-format
+msgid "Node not found: %s"
+msgstr "找不到节点: %s"
+
+#: info.cpp:1375
+#, c-format
+msgid "Cannot open info file: %s"
+msgstr "无法打开 info 文件: %s"
+
+#: error.cpp:23
+msgid "Fatal Error: "
+msgstr "致命错误: "
+
+#: error.cpp:28
+msgid "Warning: "
+msgstr "警告: "
+
+#: options.cpp:36
+msgid "Font Size"
+msgstr "字体大小"
+
+#: options.cpp:40
+msgid "Small"
+msgstr "小型"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "中型"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "大型"
+
+#: options.cpp:52
+msgid "Standard Font"
+msgstr "标准字体"
+
+#: options.cpp:69
+msgid "Fixed Font"
+msgstr "固定字体"
+
+#: options.cpp:208
+msgid "Background Color:"
+msgstr "背景颜色:"
+
+#: options.cpp:216
+msgid "Normal Text Color:"
+msgstr "一般本文颜色:"
+
+#: options.cpp:224
+msgid "URL Link Color:"
+msgstr "URL 链接颜色:"
+
+#: options.cpp:232
+msgid "Followed Link Color:"
+msgstr "访问过的链接颜色:"
+
+#: options.cpp:303
+msgid "KDE Help Options"
+msgstr "KDE 帮助选项"
+
+#: options.cpp:311 options.cpp:312
+msgid "Fonts"
+msgstr "字体"
+
+#: options.cpp:316 options.cpp:317
+msgid "Colors"
+msgstr "颜色"
+
+#: man.cpp:84 man.cpp:788
+msgid "Online Manuals"
+msgstr "在线手册"
+
+#: man.cpp:90
+#, c-format
+msgid "Section %s"
+msgstr "第 %s 节"
+
+#: man.cpp:106
+#, c-format
+msgid "Online manual - Section %s"
+msgstr "在线手册 - 第 %s 节"
+
+#: man.cpp:455
+msgid "User Commands"
+msgstr "使用者命令"
+
+#: man.cpp:457
+msgid "System Calls"
+msgstr "系统调用"
+
+#: man.cpp:459
+msgid "Subroutines"
+msgstr "例行程序"
+
+#: man.cpp:461
+msgid "Devices"
+msgstr "设备"
+
+#: man.cpp:463
+msgid "File Formats"
+msgstr "文件格式"
+
+#: man.cpp:465
+msgid "Games"
+msgstr "游戏"
+
+#: man.cpp:467
+msgid "Miscellaneous"
+msgstr "其他"
+
+#: man.cpp:469
+msgid "System Administration"
+msgstr "系统管理"
+
+#: man.cpp:580
+msgid "Reading Dir: "
+msgstr "读取目录: "
+
+#: man.cpp:777
+msgid "Online Manual - Section"
+msgstr "在线手册 - 节"
+
+#: man.cpp:835
+msgid "\"man\" system call failed"
+msgstr "\"man\" 系统调用失败"
+
+#: man.cpp:853
+msgid "Opening temporary file failed"
+msgstr "不能打开临时文件"
+
+#: cgi.cpp:80
+#, c-format
+msgid "CGI: Destination URL malformed: %s\n"
+msgstr "CGI: 不正确的目的 URL: %s\n"
+
+#: mainwidget.cpp:132
+msgid "&New Help Window"
+msgstr "新帮助窗口[&N]"
+
+#: mainwidget.cpp:135
+msgid "&Open File..."
+msgstr "打开文件[&O]..."
+
+#: mainwidget.cpp:136
+msgid "Open UR&L..."
+msgstr "打开 UR&L..."
+
+#: mainwidget.cpp:137
+msgid "&Reload"
+msgstr "重新载入[&R]"
+
+#: mainwidget.cpp:139
+msgid "&Search"
+msgstr "搜寻[&S]"
+
+#: mainwidget.cpp:152
+msgid "&Back"
+msgstr "退后[&B]"
+
+#: mainwidget.cpp:153
+msgid "&Forward"
+msgstr "向前[&F]"
+
+#: mainwidget.cpp:156
+msgid "&Top"
+msgstr "顶端[&T]"
+
+#: mainwidget.cpp:157
+msgid "&Up"
+msgstr "上层[&U]"
+
+#: mainwidget.cpp:158
+msgid "&Previous"
+msgstr "前一页[&P]"
+
+#: mainwidget.cpp:159
+msgid "&Next"
+msgstr "下一页[&N]"
+
+#: mainwidget.cpp:171
+msgid "&General Preferences..."
+msgstr "一般偏好设定[&G]..."
+
+#: mainwidget.cpp:174
+msgid "Show &Toolbar"
+msgstr "显示工具条[&T]"
+
+#: mainwidget.cpp:176
+msgid "Show &Location"
+msgstr "显示位置[&L]"
+
+#: mainwidget.cpp:177
+msgid "Show Status&bar"
+msgstr "显示状态行[&B]"
+
+#: mainwidget.cpp:180
+msgid "&Save Options"
+msgstr "保存选项[&S]"
+
+#: mainwidget.cpp:182
+msgid "KDE Help System\n"
+msgstr "KDE 帮助系统\n"
+
+#: mainwidget.cpp:183
+msgid "Version "
+msgstr "版本 "
+
+#: mainwidget.cpp:185
+msgid ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"This program is licensed under the GNU General Public License (GPL).\n"
+"KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
+"applicable law."
+msgstr ""
+
+#: mainwidget.cpp:201
+msgid "&Goto"
+msgstr "跳至[&G]"
+
+#: mainwidget.cpp:202
+msgid "&Bookmarks"
+msgstr "书签[&B]"
+
+#: mainwidget.cpp:220
+msgid "Previous Document"
+msgstr "前一篇文件"
+
+#: mainwidget.cpp:225
+msgid "Next Document"
+msgstr "下一个文件"
+
+#: mainwidget.cpp:232
+msgid "Previous Node"
+msgstr "前一个节点"
+
+#: mainwidget.cpp:237
+msgid "Next Node"
+msgstr "下一个节点"
+
+#: mainwidget.cpp:242
+msgid "Up one Node"
+msgstr "上一个节点"
+
+#: mainwidget.cpp:247
+msgid "Top Node"
+msgstr "顶端节点"
+
+#: mainwidget.cpp:254
+msgid "Help Contents"
+msgstr "帮助内容"
+
+#: mainwidget.cpp:259
+msgid "Reload current document"
+msgstr "重新载入当前的文件"
+
+#: mainwidget.cpp:264
+msgid "Stop"
+msgstr "停止"
+
+#: mainwidget.cpp:288
+msgid "In the Constructor!"
+msgstr "正在建造中!"
+
+#: mainwidget.cpp:582
+msgid ""
+"KDE Help System\n"
+"Version "
+msgstr ""
+"KDE 帮助系统\n"
+"版本 "
+
+#: mainwidget.cpp:584
+msgid "About KDE Help"
+msgstr "关于 KDE 帮助"
+
+#: mainwidget.cpp:617
+msgid "&Add Bookmark"
+msgstr "加入书签[&A]"

@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "未知的模块: "
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "KDE 控制中心"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "模块集成显示[&S]"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias H鰈zer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""

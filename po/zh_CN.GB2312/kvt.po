@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.C:249
+msgid "choose type of color-mode"
+msgstr "选择彩色模式"
+
+#: main.C:252
+msgid "Add characters to word class"
+msgstr ""
+
+#: main.C:255
+msgid "The backspace key will send a"
+msgstr "Backspace 键将送出 "
+
+#: main.C:399
+msgid "&New Terminal"
+msgstr "新终端[&N]"
+
+#: main.C:406 main.C:812
+msgid "&Hide"
+msgstr "隐藏[&H]"
+
+#: main.C:407
+msgid "&Left"
+msgstr "左边[&L]"
+
+#: main.C:408
+msgid "&Right"
+msgstr "右边[&R]"
+
+#: main.C:413
+msgid "&Normal"
+msgstr "正常[&N]"
+
+#: main.C:414
+msgid "&Tiny"
+msgstr "最小[&T]"
+
+#: main.C:415
+msgid "&Small"
+msgstr "小型[&S]"
+
+#: main.C:416
+msgid "&Medium"
+msgstr "中等[&M]"
+
+#: main.C:417
+msgid "&Large"
+msgstr "大型[&L]"
+
+#: main.C:418
+msgid "&Huge"
+msgstr "超大[&H]"
+
+#: main.C:430
+msgid "&black/white"
+msgstr "黑/白[&B]"
+
+#: main.C:431
+msgid "&white/black"
+msgstr "白/黑[&W]"
+
+#: main.C:432
+msgid "&green/black"
+msgstr "绿/黑[&G]"
+
+#: main.C:433
+msgid "black/light&yellow"
+msgstr "黑/亮黄[&Y]"
+
+#: main.C:434
+msgid "Linu&x Console"
+msgstr "Linu&x 主控台"
+
+#: main.C:443
+msgid "&Custom Colors"
+msgstr "自定义颜色[&C]"
+
+#: main.C:450 main.C:758
+msgid "Hide &Menubar"
+msgstr "隐藏菜单条[&M]"
+
+#: main.C:452 main.C:622 main.C:750
+msgid "Show &Menubar"
+msgstr "显示菜单条[&M]"
+
+#: main.C:453 main.C:768
+msgid "Secure &keyboard"
+msgstr ""
+
+#: main.C:455
+msgid "Scroll&bar"
+msgstr "滚动条[&B]"
+
+#: main.C:456
+msgid "&Font size"
+msgstr "字体大小[&F]"
+
+#: main.C:457
+msgid "&Color"
+msgstr "颜色[&C]"
+
+#: main.C:458
+msgid "&Size"
+msgstr "大小[&S]"
+
+#: main.C:459
+msgid "Terminal..."
+msgstr "终端..."
+
+#: main.C:461
+msgid "Save &Options"
+msgstr "保存选项"
+
+#: main.C:470
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+
+#: main.C:631 main.C:805
+msgid "&Show"
+msgstr "显示[&S]"
+
+#: main.C:764
+msgid "Unsecure &keyboard"
+msgstr ""
+
+#: main.C:775
+msgid "Terminal Options"
+msgstr "终端选项"
+
+#: main.C:917
+msgid "Hint"
+msgstr "提示"
+
+#: main.C:918
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+
+#: main.C:1151
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+msgstr ""
+
+#: main.C:1155
+msgid "Permitted arguments are:\n"
+msgstr ""
+
+#: main.C:1156
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+
+#: main.C:1157
+msgid "-display <name>           specify the display (server)\n"
+msgstr ""
+
+#: main.C:1158
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr ""
+
+#: main.C:1159
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr ""
+
+#: main.C:1160
+msgid "-vt_bg <colour>           background color\n"
+msgstr ""
+
+#: main.C:1161
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr ""
+
+#: main.C:1162
+msgid "-vt_font <fontname>       normal font\n"
+msgstr ""
+
+#: main.C:1163
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr ""
+
+#: main.C:1164
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr ""
+
+#: main.C:1165
+msgid "-no_menubar               hide the menubar\n"
+msgstr ""
+
+#: main.C:1166
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr ""
+
+#: main.C:1167
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+
+#: main.C:1169
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr ""
+
+#: main.C:1170
+msgid "-C                        Capture system console message\n"
+msgstr ""
+
+#: main.C:1171
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr ""
+
+#: main.C:1172
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+
+#: main.C:1174
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+
+#: main.C:1176
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+
+#: main.C:1177
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr ""
+
+#: main.C:1178
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+
+#: main.C:1182
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""

@@ -1,0 +1,258 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.cpp:59
+msgid "&Windows"
+msgstr "窗口[&W]"
+
+#: main.cpp:62
+msgid "&Buttons"
+msgstr "按钮[&B]"
+
+#: main.cpp:65
+msgid "&Titlebar"
+msgstr "标题行[&T]"
+
+#: main.cpp:68
+msgid "&Desktop"
+msgstr ""
+
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr ""
+
+#: main.cpp:105
+msgid "Window manager style"
+msgstr "窗口管理器风格"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "最小化"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "最大化"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "粘附"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "菜单"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "标题行左边空间已满...请移去 '最大化' 按钮\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "标题行右边空间已满...请移去 '最大化' 按钮\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr ""
+"标题行左边空间已满...\n"
+"请移去 '最小化' 按钮\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr "标题行右边空间已满...请移去 '最小化' 按钮\n"
+
+#: titlebar.cpp:925
+msgid "Titlebar appearance"
+msgstr "标题行外观"
+
+#: titlebar.cpp:927
+msgid "Shaded"
+msgstr "渐变色"
+
+#: titlebar.cpp:930
+msgid "Plain"
+msgstr "普通"
+
+#: titlebar.cpp:933 titlebar.cpp:953
+msgid "Pixmap"
+msgstr "位图"
+
+#: titlebar.cpp:940
+msgid "Title Animation"
+msgstr "标题动画"
+
+#: desktop.cpp:91 titlebar.cpp:943
+msgid "ms"
+msgstr "毫秒"
+
+#: titlebar.cpp:964
+msgid "&Active pixmap"
+msgstr "活动标题位图[&A]"
+
+#: titlebar.cpp:966
+msgid "&Inactive pixmap"
+msgstr "非活动标题位图[&I]"
+
+#: titlebar.cpp:982
+msgid "Mouse action"
+msgstr ""
+
+#: titlebar.cpp:984
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+
+#: titlebar.cpp:988
+#, fuzzy
+msgid "(Un)Maximize"
+msgstr "最大化"
+
+#: titlebar.cpp:989
+msgid "Move"
+msgstr "移动"
+
+#: titlebar.cpp:990
+#, fuzzy
+msgid "(Un)Shade"
+msgstr "渐变色"
+
+#: titlebar.cpp:991
+msgid "Iconify"
+msgstr ""
+
+#: titlebar.cpp:992
+#, fuzzy
+msgid "(Un)Sticky"
+msgstr "粘附"
+
+#: titlebar.cpp:993
+msgid "Resize"
+msgstr ""
+
+#: titlebar.cpp:994
+msgid "Restore"
+msgstr ""
+
+#: titlebar.cpp:995
+msgid "Operations Menu"
+msgstr ""
+
+#: windows.cpp:74
+msgid "Window movement"
+msgstr "窗口移动"
+
+#: windows.cpp:75
+msgid "Transparent"
+msgstr "透明的"
+
+#: windows.cpp:76
+msgid "Opaque"
+msgstr "不透明的"
+
+#: windows.cpp:79
+msgid "Resize Animation"
+msgstr "大小改变时的动画效果"
+
+#: windows.cpp:84
+msgid "Placement policy"
+msgstr "窗口放置策略"
+
+#: windows.cpp:86
+msgid "Smart"
+msgstr ""
+
+#: windows.cpp:88
+msgid "Cascade"
+msgstr ""
+
+#: windows.cpp:90
+msgid "Interactive"
+msgstr ""
+
+#: windows.cpp:92
+msgid "Random"
+msgstr "随机"
+
+#: windows.cpp:94
+msgid "Manual"
+msgstr ""
+
+#: windows.cpp:101
+msgid "Allowed Overlap:"
+msgstr ""
+
+#: windows.cpp:108
+msgid "Maximize Style"
+msgstr "最大化风格"
+
+#: windows.cpp:109
+msgid "Maximize fully"
+msgstr "完全最大化"
+
+#: windows.cpp:110
+msgid "Maximize vertically"
+msgstr "垂直最大化"
+
+#: windows.cpp:113
+msgid "Focus Policy"
+msgstr "焦点策略"
+
+#: windows.cpp:114
+msgid "Click to focus"
+msgstr "点击取得焦点"
+
+#: windows.cpp:115
+msgid "Focus follows mouse"
+msgstr "焦点随鼠标移动"
+
+#: windows.cpp:120
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr ""
+"窗口自动弹起的\n"
+"延迟时间(<100 取消此功能)"
+
+#: windows.cpp:123
+msgid "miliseconds"
+msgstr "毫秒"
+
+#: desktop.cpp:77
+msgid "Active desktop borders"
+msgstr ""
+
+#: desktop.cpp:79
+msgid "Enable active desktop borders"
+msgstr ""
+
+#: desktop.cpp:81
+msgid "Move pointer towards center after switch"
+msgstr ""
+
+#: desktop.cpp:87
+msgid "Dekstop switch delay:"
+msgstr ""
+
+#: desktop.cpp:100
+msgid "Magic Borders"
+msgstr ""
+
+#: desktop.cpp:102
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+
+#: desktop.cpp:116
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
