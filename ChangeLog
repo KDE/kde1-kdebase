@@ -1,3 +1,11 @@
+1998-05-28  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: embraced every variable with "" to make 
+	it consistent
+
+	* acinclude.m4.in: various fixes for the koffice checks 
+	(mico, ministl and python)
+
 1998-05-16  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: don't use KDE_CHECK_QT_DIRECT, when 
