@@ -28,8 +28,3 @@ extern "C"
 int gethostname (char *Name, int Namelen);
 #endif  
 
-#ifdef NULL
-#undef NULL
-#endif
-#define NULL 0
-
