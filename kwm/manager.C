@@ -2246,7 +2246,7 @@ void Manager::lowerClient(Client* c){
 
   for (i = 0; i < nwins; i++) {
     if (!getClient(wins[i])){
-      if (KWM::getDecoration(wins[i]) == 1024){
+      if (KWM::getDecoration(wins[i]) == KWM::desktopIcon){
 	QRect r = KWM::geometry(wins[i]);
 	if (c->geometry.contains(r) || c->geometry.intersects(r)){
 	  XUnmapWindow(qt_xdisplay(), wins[i]);
