@@ -1628,18 +1628,20 @@ void Manager::logout(){
 	 long result = 0;
 	 getSimpleProperty(wins[i], kwm_save_yourself, result);
 	 if (result){
-	   sendClientMessage(wins[i], wm_protocols, wm_save_yourself);
-	   // wait for clients response
-	   do {
-	     XWindowEvent(qt_xdisplay(), wins[i], PropertyChangeMask, &ev);
-	     propertyNotify(&ev.xproperty);
-	   } while (ev.xproperty.atom != XA_WM_COMMAND);
-	   command = getprop(wins[i], XA_WM_COMMAND);
-	   if (!command.isEmpty()){
-	     machine = getprop(wins[i], wm_client_machine);
-	     additional_commands.append(command);
-	     additional_machines.append(machine);
-	   }
+	     XSelectInput(qt_xdisplay(), wins[i], PropertyChangeMask);
+	     sendClientMessage(wins[i], wm_protocols, wm_save_yourself);
+	     // wait for clients response
+	     do {
+		 XWindowEvent(qt_xdisplay(), wins[i], PropertyChangeMask, &ev);
+		 propertyNotify(&ev.xproperty);
+	     } while (ev.xproperty.atom != XA_WM_COMMAND);
+	     XSelectInput(qt_xdisplay(), wins[i], NoEventMask);
+	     command = getprop(wins[i], XA_WM_COMMAND);
+	     if (!command.isEmpty()){
+		 machine = getprop(wins[i], wm_client_machine);
+		 additional_commands.append(command);
+		 additional_machines.append(machine);
+	     }
 	 }
        }
      }
