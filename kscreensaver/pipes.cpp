@@ -110,6 +110,8 @@ FIXME: this could be clearer done by a calculation on the position.
 
 -- ------------------------------------------------------------------------ */
 
+#ifdef HAVE_GL
+
 #define QT_CLEAN_NAMESPACE
 
 #include "xlock.h"
@@ -741,3 +743,6 @@ void kPipesSetup::slotAbout()
         "KPipes\nCopyright (c) 1998\nLars Doelle <lars.doelle@on-line.de>"),
            glocale->translate("Ok"));
 }
+
+
+#endif

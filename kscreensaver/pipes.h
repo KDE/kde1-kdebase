@@ -1,6 +1,8 @@
 #ifndef __PIPES_H__
 #define __PIPES_H__
 
+#ifdef HAVE_GL
+
 #include <qtimer.h>
 #include <qlist.h>
 #include <qdialog.h>
@@ -128,6 +130,8 @@ private:
 	kPipesSaver *saver;
 	int			pipes;
 };
+
+#endif
 
 #endif
 
