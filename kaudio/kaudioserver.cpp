@@ -23,18 +23,21 @@
 #include <stdlib.h>
 #include <string.h>
 #include <signal.h>
+#include <X11/Xlib.h>
+#include <X11/X.h>
 #include <config.h>
 extern "C" {
 #include <mediatool.h>
 	   }
 
-char		KMServerPidFile[256];
+#define maxFnameLen 256
+char		KMServerPidFile[maxFnameLen];
 
 
 MdCh_IHDR	*IhdrChunk;
 MdCh_STAT	*StatChunk;
 MediaCon	m;
-
+Display		*globalDisplay;
 
 
 void MYexit(int retcode)
@@ -42,12 +45,17 @@ void MYexit(int retcode)
   exit (retcode);
 }
 
+void disconnectChild()
+{
+  MdDisconnect(&m);
+}
+
 // Signal handler for dying child. Remove communication id file and exit right now.
 void mysigchild(int signum)
 {
   unlink (KMServerPidFile);
   if ( (signum != SIGSEGV) && (signum != SIGBUS) )
-    MdDisconnect(&m);  // don't try to clean this up in case of real trouble
+    disconnectChild();  // don't try to clean this up in case of real trouble
   MYexit(1);  
 }
 
@@ -64,6 +72,30 @@ void baseinitMediatool(void)
 {
   MdConnectInit();
 }
+
+
+int myXerrorHandler(Display *dsp)
+{
+  disconnectChild();
+  fatalexit("kaudioserver: Catching fatal X IO Error. Cleaning up.\n");
+  // We should never reach this line
+  return 1;
+}
+
+void initXconnection()
+{
+  globalDisplay = XOpenDisplay(NULL);
+  Display *dpy = globalDisplay;
+  if ( globalDisplay != 0 ) {
+    XSetIOErrorHandler(myXerrorHandler);
+    Window w = XCreateSimpleWindow(dpy, DefaultRootWindow(dpy), 0,0,1,1, \
+	0,
+        BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)),
+        BlackPixelOfScreen(DefaultScreenOfDisplay(dpy)) );
+  }
+}
+
+
 
 
 // call this for every new connection
@@ -101,7 +133,8 @@ int main ( int argc , char **argv )
 {
   char		NotStarted[]="Player not started\n";
   char		*tmpadr;
-  
+  const char    kasFileName[]="/.kaudioserver";
+
   FILE		*KMServerPidHandle;
   char		ServerId[256];
 
@@ -121,8 +154,20 @@ int main ( int argc , char **argv )
   // Create full path of ~/.kaudioserver, then delete the communication id
   // file
   tmpadr= getenv("HOME");
+  int homePathLen = strlen(tmpadr);
+
+  if ( (homePathLen+strlen(kasFileName)+1 ) >= maxFnameLen )
+    fatalexit("HOME path too long");
+
   strcpy(KMServerPidFile,tmpadr);
-  strcpy(KMServerPidFile+strlen(KMServerPidFile),"/.kaudioserver");
+  strcpy(KMServerPidFile+homePathLen,kasFileName);
+
+  initXconnection();
+  if ( globalDisplay == 0 ) {
+    fprintf(stderr, "kaudioserver: Can't connect to the X Server.\n" \
+	" Audio system might not terminate at end of session.\n");
+  }
+
 
   baseinitMediatool();
 
@@ -189,8 +234,15 @@ int main ( int argc , char **argv )
     signal(SIGSEGV,mysigchild);
     signal(SIGTERM,mysigchild);
  
-    while(1)
-      sleep(100);
+    while(1) {
+      XEvent *event_return;
+      if (globalDisplay != 0) {
+        //XCheckMaskEvent(globalDisplay, (long)(-1l) , event_return);
+        //XFlush(globalDisplay);
+        XNextEvent(globalDisplay, event_return);
+      }
+      sleep(1);
+    }
   }
 
   fprintf(stderr,"Failed starting audio server!\n");
