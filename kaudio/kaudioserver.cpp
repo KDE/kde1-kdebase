@@ -95,12 +95,10 @@ void disconnectChild()
   if (maudioPID != 0) {
     // Disconnect for cleanup
     MdDisconnect(&m);
-    // Kill the child process (maudio)
+    // Stop capturing SIGCHLD, after that kill the child process (maudio)
+    signal(SIGCHLD, SIG_DFL);
     kill(maudioPID, SIGKILL);
   }
-  else
-    fprintf(stderr, "kaudioserver: disconnectChild() with maudioPID == 0\n");
-
 }
 
 
