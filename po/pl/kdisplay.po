@@ -1,6 +1,10 @@
 # Polish translation of KDE kdisplay
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+msgid "Desktop Title"
+msgstr "Tytu³ desktopu"
+
 
 #: main.cpp:53
 msgid "KDE Display Configuration"
@@ -52,11 +56,11 @@ msgstr "Tapeta"
 
 #: backgnd.cpp:257
 msgid "Tiled"
-msgstr "Kafelkowana"
+msgstr "Kafelkowa"
 
 #: backgnd.cpp:261
 msgid "Centred"
-msgstr "Wy¶rodkowana"
+msgstr "Na ¶rodku"
 
 #: backgnd.cpp:265
 msgid "Scaled"
@@ -148,7 +152,7 @@ msgstr "Kolor elementu"
 
 #: colorscm.cpp:289
 msgid "Inactive title bar"
-msgstr "Nieaktywny pasek tytu³owy"
+msgstr "Nieaktywny pasek tytu³u"
 
 #: colorscm.cpp:290
 msgid "Inactive title text"
@@ -156,7 +160,7 @@ msgstr "Nieaktywny tytu³ okna"
 
 #: colorscm.cpp:291
 msgid "Active title bar"
-msgstr "Aktywny pasek tytu³owy"
+msgstr "Aktywny pasek tytu³u"
 
 #: colorscm.cpp:292
 msgid "Active title text"

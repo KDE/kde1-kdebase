@@ -1,5 +1,5 @@
 # Polish translation of KDE kdehelp
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: bookmark.cpp:227
@@ -90,7 +90,7 @@ msgstr "B³±d w pliku informacyjnym"
 #: info.cpp:1228
 #, c-format
 msgid "Node not found: %s"
-msgstr "Wêze³ nie znaleziony: %s"
+msgstr "Poziom nie znaleziony: %s"
 
 #: info.cpp:1373
 #, c-format
@@ -183,7 +183,7 @@ msgstr "&U¿ycie KDE Pomoc"
 
 #: mainwidget.cpp:179
 msgid "&About"
-msgstr "&Informacje"
+msgstr "KDE Pomoc - &Informacje"
 
 #: mainwidget.cpp:183
 msgid "&File"
@@ -195,7 +195,7 @@ msgstr "&Edycja"
 
 #: mainwidget.cpp:185
 msgid "&Goto"
-msgstr "&Id¼ do"
+msgstr "&Id¼"
 
 #: mainwidget.cpp:186
 msgid "&Bookmarks"
@@ -219,19 +219,19 @@ msgstr "Nastêpny dokument"
 
 #: mainwidget.cpp:219
 msgid "Previous Node"
-msgstr "Poprzedni wêze³"
+msgstr "Poprzedni poziom"
 
 #: mainwidget.cpp:225
 msgid "Next Node"
-msgstr "Nastêpny wêze³"
+msgstr "Nastêpny poziom"
 
 #: mainwidget.cpp:231
 msgid "Up one Node"
-msgstr "Wêze³ wy¿ej"
+msgstr "Poziom wy¿ej"
 
 #: mainwidget.cpp:237
 msgid "Top Node"
-msgstr "Pierwszy wêze³"
+msgstr "Pierwszy poziom"
 
 #: mainwidget.cpp:245
 msgid "Help Contents"

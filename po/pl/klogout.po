@@ -1,5 +1,5 @@
 # Polish translation of KDE klogout
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl> 
 
 #: klogout.cpp:76
@@ -8,4 +8,4 @@ msgstr "Wyloguj siê"
 
 #: klogout.cpp:86
 msgid "Really exit the KDE?"
-msgstr "Czy na pewno chcesz zakoñczyæ KDE?"
+msgstr "Chcesz zamkn±æ KDE?"

@@ -1,5 +1,5 @@
 # Polish translation of KDE kwm
-# Version 0.1.1
+# Version 0.1.2
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 #: error.C:28
@@ -128,7 +128,7 @@ msgstr "(Od) Przyk&lej"
 
 #: main.C:1146
 msgid "&To Desktop"
-msgstr "&Przywróæ"
+msgstr "&Wy¶lij na desktop"
 
 #: main.C:1148
 msgid "&Close"
