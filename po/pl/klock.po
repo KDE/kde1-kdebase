@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-06-16 13:53+0200\n"
+"POT-Creation-Date: 1998-06-17 09:43+0200\n"
 "PO-Revision-Date: 1998-03-25 21:38+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -20,7 +20,7 @@ msgstr "Kolor:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1026 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Prêdko¶æ:"
@@ -580,58 +580,83 @@ msgstr "Wprowad¼ has³o"
 msgid "Failed"
 msgstr "B³êdne"
 
+#: science.cpp:65
+msgid "Whirl"
+msgstr ""
+
+#: science.cpp:68
+#, fuzzy
+msgid "Sphere"
+msgstr "Prêdko¶æ:"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr ""
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr ""
+
+#: science.cpp:77
+msgid "Wave"
+msgstr ""
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr ""
+
 #: science.cpp:112
 #, fuzzy
 msgid "Science"
 msgstr "Ustawienia wygaszacza Linie"
 
-#: science.cpp:448
+#: science.cpp:447
 msgid "rendering lens..."
 msgstr ""
 
-#: science.cpp:770
+#: science.cpp:769
 msgid "grabbing screen..."
 msgstr ""
 
-#: science.cpp:932
+#: science.cpp:931
 #, fuzzy
 msgid "Setup Science"
 msgstr "Ustawienia wygaszacza Linie"
 
-#: science.cpp:950
+#: science.cpp:949
 #, fuzzy
 msgid "Mode:"
 msgstr "¦rodkowe:"
 
-#: science.cpp:965
+#: science.cpp:964
 msgid "Inverse"
 msgstr ""
 
-#: science.cpp:975
+#: science.cpp:974
 msgid "Gravity"
 msgstr ""
 
-#: science.cpp:984
+#: science.cpp:983
 msgid "Hide Background"
 msgstr ""
 
-#: science.cpp:1010
+#: science.cpp:1009
 msgid "Intensity:"
 msgstr ""
 
-#: science.cpp:1040
+#: science.cpp:1039
 msgid "Motion:"
 msgstr ""
 
-#: science.cpp:1261
+#: science.cpp:1260
 msgid "Science Version"
 msgstr ""
 
-#: science.cpp:1262
+#: science.cpp:1261
 msgid "written by"
 msgstr ""
 
-#: science.cpp:1263
+#: science.cpp:1262
 #, fuzzy
 msgid "About Science"
 msgstr "Informacje"
@@ -724,7 +749,3 @@ msgstr ""
 
 #~ msgid "Move"
 #~ msgstr "Ruch"
-
-#, fuzzy
-#~ msgid "Sphere"
-#~ msgstr "Prêdko¶æ:"

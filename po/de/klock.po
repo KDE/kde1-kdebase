@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-06-16 13:53+0200\n"
+"POT-Creation-Date: 1998-06-17 09:43+0200\n"
 "PO-Revision-Date: 1998-05-09 00:03+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -24,7 +24,7 @@ msgstr "Farbe:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1026 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Geschwindigkeit:"
@@ -584,55 +584,79 @@ msgstr "Paﬂwort eingeben"
 msgid "Failed"
 msgstr "Gescheitert"
 
+#: science.cpp:65
+msgid "Whirl"
+msgstr "Kreisel"
+
+#: science.cpp:68
+msgid "Sphere"
+msgstr "Kugel"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr ""
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr ""
+
+#: science.cpp:77
+msgid "Wave"
+msgstr ""
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr ""
+
 #: science.cpp:112
 msgid "Science"
 msgstr "Wissenschaft"
 
-#: science.cpp:448
+#: science.cpp:447
 msgid "rendering lens..."
 msgstr "Bereite Linsen vor..."
 
-#: science.cpp:770
+#: science.cpp:769
 msgid "grabbing screen..."
 msgstr "verbinde mit dem Desktop..."
 
-#: science.cpp:932
+#: science.cpp:931
 msgid "Setup Science"
 msgstr "Wissenschaft einstellen"
 
-#: science.cpp:950
+#: science.cpp:949
 msgid "Mode:"
 msgstr "Modus:"
 
-#: science.cpp:965
+#: science.cpp:964
 msgid "Inverse"
 msgstr "Invertiert"
 
-#: science.cpp:975
+#: science.cpp:974
 msgid "Gravity"
 msgstr "Erdanziehung"
 
-#: science.cpp:984
+#: science.cpp:983
 msgid "Hide Background"
 msgstr "Hintergrund verstecken"
 
-#: science.cpp:1010
+#: science.cpp:1009
 msgid "Intensity:"
 msgstr "Intensit‰t:"
 
-#: science.cpp:1040
+#: science.cpp:1039
 msgid "Motion:"
 msgstr "Bewegung:"
 
-#: science.cpp:1261
+#: science.cpp:1260
 msgid "Science Version"
 msgstr "Wissenschaft - Version"
 
-#: science.cpp:1262
+#: science.cpp:1261
 msgid "written by"
 msgstr "geschrieben von"
 
-#: science.cpp:1263
+#: science.cpp:1262
 msgid "About Science"
 msgstr "‹ber Wissenschaft"
 
@@ -724,12 +748,6 @@ msgstr ""
 
 #~ msgid "Move"
 #~ msgstr "Bewegen"
-
-#~ msgid "Whirl"
-#~ msgstr "Kreisel"
-
-#~ msgid "Sphere"
-#~ msgstr "Kugel"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"

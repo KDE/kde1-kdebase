@@ -54,7 +54,7 @@ extern KLocale *glocale;
 #define PIXDIR   KApplication::getKApplication()->kde_datadir() + "/kscreensaver/"
 
 struct {
-	char name[64];
+	char name[32];
 	bool inverseEnable;
 	} modeInfo[MAX_MODES];
 
@@ -62,22 +62,22 @@ enum { MODE_WHIRL=0, MODE_CURVATURE, MODE_SPHERE, MODE_WAVE, MODE_EXPONENTIAL, M
 
 void initModeInfo()
 {
-	strcpy( modeInfo[MODE_WHIRL].name, "Whirl" );
+	strncpy( modeInfo[MODE_WHIRL].name, i18n( "Whirl" ), 32 );
 	modeInfo[MODE_WHIRL].inverseEnable = true;
 
-	strcpy( modeInfo[MODE_SPHERE].name, "Sphere" );
+	strncpy( modeInfo[MODE_SPHERE].name, i18n( "Sphere" ), 32 );
 	modeInfo[MODE_SPHERE].inverseEnable = true;
 
-	strcpy( modeInfo[MODE_EXPONENTIAL].name, "Exponential" );
+	strncpy( modeInfo[MODE_EXPONENTIAL].name, i18n( "Exponential" ), 32 );
 	modeInfo[MODE_EXPONENTIAL].inverseEnable = false;
 
-	strcpy( modeInfo[MODE_CONTRACTION].name, "Contraction" );
+	strncpy( modeInfo[MODE_CONTRACTION].name, i18n( "Contraction" ), 32 );
 	modeInfo[MODE_CONTRACTION].inverseEnable = false;
 
-	strcpy( modeInfo[MODE_WAVE].name, "Wave" );
+	strncpy( modeInfo[MODE_WAVE].name, i18n( "Wave" ), 32 );
 	modeInfo[MODE_WAVE].inverseEnable = false;
 
-	strcpy( modeInfo[MODE_CURVATURE].name, "Curvature" );
+	strncpy( modeInfo[MODE_CURVATURE].name, i18n( "Curvature" ), 32 );
 	modeInfo[MODE_CURVATURE].inverseEnable = true;
 }
 
@@ -111,7 +111,6 @@ const char *getScreenSaverName()
 {
 	return i18n( "Science" );
 }
-
 
 //-----------------------------------------------------------------------------
 // Prepare Dialog
@@ -953,7 +952,7 @@ KScienceSetup::KScienceSetup(  QWidget *parent, const char *name ) :
 
 	QListBox *c = new QListBox( this );
 	for(int i = 0; i<MAX_MODES; i++)
-		c->insertItem( i18n( modeInfo[i].name ) );
+		c->insertItem( modeInfo[i].name );
 	c->setCurrentItem( mode );
 	c->adjustSize();
 	c->setFixedHeight( 5 * c->fontMetrics().height() );
@@ -1257,7 +1256,7 @@ void KScienceSetup::slotAbout()
 {
 	QString about;
 
-	about.sprintf( "%s 0.26.4 beta\n\n%s Rene Beutler (1998)\nrbeutler@g26.ethz.ch",
+	about.sprintf( "%s 0.26.5 beta\n\n%s Rene Beutler (1998)\nrbeutler@g26.ethz.ch",
 	               i18n( "Science Version"),
 	               i18n( "written by" ) );
 	QMessageBox::message( i18n("About Science"), 

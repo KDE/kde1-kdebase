@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-06-16 13:53+0200\n"
+"POT-Creation-Date: 1998-06-17 09:43+0200\n"
 "PO-Revision-Date: 1998-06-01 09:01 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Barva:"
 
 #: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
 #: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
-#: polygon.cpp:122 rock.cpp:561 science.cpp:1026 slip.cpp:378 space.cpp:587
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
 #: swarm.cpp:341
 msgid "Speed:"
 msgstr "Rychlost:"
@@ -587,56 +587,80 @@ msgstr "Napi¹ heslo"
 msgid "Failed"
 msgstr "Neúspìsné"
 
+#: science.cpp:65
+msgid "Whirl"
+msgstr "Otáèení"
+
+#: science.cpp:68
+msgid "Sphere"
+msgstr "Sféra"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr ""
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr ""
+
+#: science.cpp:77
+msgid "Wave"
+msgstr ""
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr ""
+
 #: science.cpp:112
 msgid "Science"
 msgstr "Science"
 
-#: science.cpp:448
+#: science.cpp:447
 msgid "rendering lens..."
 msgstr ""
 
-#: science.cpp:770
+#: science.cpp:769
 msgid "grabbing screen..."
 msgstr ""
 
-#: science.cpp:932
+#: science.cpp:931
 msgid "Setup Science"
 msgstr "Nastavení Science"
 
-#: science.cpp:950
+#: science.cpp:949
 msgid "Mode:"
 msgstr "Mód::"
 
-#: science.cpp:965
+#: science.cpp:964
 msgid "Inverse"
 msgstr "Inverze"
 
-#: science.cpp:975
+#: science.cpp:974
 msgid "Gravity"
 msgstr "Tí¾e"
 
-#: science.cpp:984
+#: science.cpp:983
 msgid "Hide Background"
 msgstr ""
 
-#: science.cpp:1010
+#: science.cpp:1009
 msgid "Intensity:"
 msgstr "Intenzita:"
 
-#: science.cpp:1040
+#: science.cpp:1039
 msgid "Motion:"
 msgstr "Pohyb:"
 
-#: science.cpp:1261
+#: science.cpp:1260
 #, fuzzy
 msgid "Science Version"
 msgstr "Science"
 
-#: science.cpp:1262
+#: science.cpp:1261
 msgid "written by"
 msgstr ""
 
-#: science.cpp:1263
+#: science.cpp:1262
 msgid "About Science"
 msgstr "Informace o Science"
 
@@ -728,12 +752,6 @@ msgstr ""
 
 #~ msgid "Move"
 #~ msgstr "Pohybovat"
-
-#~ msgid "Whirl"
-#~ msgstr "Otáèení"
-
-#~ msgid "Sphere"
-#~ msgstr "Sféra"
 
 #~ msgid ""
 #~ "Science Version 0.24.2 beta\n"
