@@ -1,0 +1,95 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Panel Settings
+<author>The KDE Team
+<date>v0.1, 19 June 1998.
+
+<!-- Table of contents -->
+<toc>
+
+<!-- Begin the document -->
+
+<sect>Location and Style of the  Panel and Taskbar.
+
+<p>
+The <em>Panel</em> contains the <em>Application
+Starter</em> button, buttons for selecting between virtual
+desktops, a clock, and various other swallowed icons
+placed there by default or by the user.
+<itemize>
+<item>
+The <bf>Location</bf> buttons select which
+side of the screen the Panel is attached to. Choices
+are: <bf> top</bf>,
+<bf> left side</bf>, or <bf> bottom</bf>.
+<item>
+The <bf>Taskbar</bf> displays a list of running applications.
+It can be 
+<bf>hidden</bf>,
+displayed horizontally along the <bf>top</bf> or <bf>bottom</bf> 
+of the screen,
+or vertically downwards from the  <bf>top/left</bf> corner.
+<item>
+The <bf>Style</bf> buttons choose  between three sizes of the panel:
+<bf>Tiny</bf>, <bf>Normal</bf>, or <bf>Large</bf>.  This choice 
+affects the size of icons used in the panel, and the placement of
+virtual desktop buttons, etc.
+</itemize>
+
+<sect> Panel Options.
+<p>
+<itemize>
+<item>
+<bf>Menu Tooltips</bf>
+are a boxes containing a short descriptive text that appear
+(after a short delay) when the mouse pointer is placed over
+a button on the Panel or an entry in the Application Starter
+list.    If you enable Tooltips, you can use the slider
+to  set the delay
+before they appear.
+<item>
+<bf>Personal First</bf>:  
+Choosing this makes your custom entries in the user
+section of the Application Starter the
+<em>primary  entries </em> on the menu.
+(The default makes the KDE application entries primary).
+<item> <bf>Auto Hide Panel</bf>: With this choice
+the Panel is normally hidden, but reappears when you
+touch the side of the screen where the Panel is hidden
+with the mouse pointer.
+<item> <bf>Auto Hide Taskbar</bf>: 
+This choice similarly auto-hides the Taskbar. It also
+reappears when the side of the screen where it is hidden is 
+touched
+by the mouse pointer.
+<item>
+The <bf> Clock</bf> may be configured for either
+<bf>24 hour</bf> or <bf>12 hour (AM/PM) </bf> styles.
+</itemize>
+
+<sect>Configuring Virtual Desktops
+<p>
+Up to eight <em>Virtual Desktops </em> may be configured.
+The number chosen is shown by the  number of 
+open boxes that are displayed.   
+There will be a button on
+the Panel corresponding to each Virtual Desktop.  
+Text entered in an open  box appears as a label
+on the corresponding button.
+
+The <bf>Visible</bf> slider choses  the number of
+Virtual Desktops to be configured.
+(Possible choices are 2,4,6, or 8).  
+
+<p>
+The <bf> Width </bf> slider adjusts the width of the
+Virtual Desktop buttons on the Panel.  (Choose them
+wide enough to accomodate the text with which
+you labeled them.)
+</article>
+
+
