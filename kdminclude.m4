@@ -103,7 +103,7 @@ if test -z "$PASSWDLIB" && test "$shadow_support" = "yes"; then
     ])
 fi
 AC_SUBST(PASSWDLIB)
-])
-
 AC_CHECK_LIB(util, main, [LIBUTIL="-lutil"]) dnl for FreeBSD
 AC_SUBST(LIBUTIL)
+])
+
