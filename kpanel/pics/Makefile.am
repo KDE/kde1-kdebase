@@ -1,6 +1,6 @@
 
 data_DATA = exit.xpm go.xpm key.xpm window_list.xpm shared.xpm personal.xpm \
-	pers_applnk.xpm kfm_home.xpm
+	pers_applnk.xpm kfm_home.xpm kdisknav.xpm
 
 datadir = $(kde_datadir)/kpanel/pics
 
