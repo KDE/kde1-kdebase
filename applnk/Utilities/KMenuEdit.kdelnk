@@ -9,6 +9,7 @@ Exec=kmenuedit
 Icon=exec.xpm
 TerminalOptions=
 Path=
+DocPath=kmenuedit/index.html
 Terminal=0
 Comment=Program to change the menues of kpanel and ktaskbar
 Comment[de]=Programm zur Veränderung der Menüs von kpanel und ktaskbar
