@@ -134,7 +134,7 @@ Manager::Manager(): QObject(){
   
   {
     long data = 1;
-    XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_running, kwm_running, 8,
+    XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_running, kwm_running, 32,
 		    PropModeAppend, (unsigned char*) &data, 1);
   }
 

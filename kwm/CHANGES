@@ -22,6 +22,7 @@ In 0.10:
        - small fix for resize/move with the mouse 
        - works together with newest kfm to keep the root icons 
          lowered
+       - small fix for setting the kwm_running property
 
   patchlevel 16:
        - fix for "move" via keyboard (pointer warp)
