@@ -99,6 +99,7 @@ binary-arch: checkroot build
 	fi; done
 	-rm -f debian/tmp/usr/share/apps/kdisknav/KDE.kdelnk
 	dh_movefiles
+	ln -s en debian/kdebase-doc/usr/doc/kde/HTML/default
 	install -d debian/kdm/var/state/kdm
 #	cp debian/kde.pamd debian/tmp/etc/pam.d/kde
 	dh_installdocs
