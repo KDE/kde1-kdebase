@@ -128,7 +128,6 @@ char	*auth;
 int	len;
 {
     long	    ldata[2];
-/*
 #ifdef ITIMER_REAL
     {
 	struct timeval  now;
@@ -138,16 +137,16 @@ int	len;
 	ldata[1] = now.tv_usec;
     }
 #else
-*/
+
     {
       /*	long    time ();*/
 
 	ldata[0] = time ((long *) 0);
 	ldata[1] = getpid ();
     }
-/*
+
 #endif
-*/
+
 #ifdef HASXDMAUTH
     {
     	int		    bit;
@@ -178,13 +177,16 @@ int	len;
     	int	    seed;
     	int	    value;
     	int	    i;
-    
-    	seed = (ldata[0]) + (ldata[1] << 16);
+	
+	/* Add random data from X events to seed /stefh */
+    	seed = (ldata[0]) + (ldata[1] << 16) + greeter_event_sum();
+	/*printf("Seed = %d\n", seed);*/
     	srand (seed);
     	for (i = 0; i < len; i++)
     	{
 	    value = rand ();
-	    auth[i] = value & 0xff;
+	    /* Done use the lower 8 bits /stefh */
+	    auth[i] = (value >> 8) & 0xff;
     	}
 	value = len;
 	if (value > sizeof (key))

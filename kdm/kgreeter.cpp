@@ -90,18 +90,64 @@ Display                 ** dpy;
 struct verify_info      *verify;
 struct greet_info       *greet;
 
+// Here we store a number for the seed:
+static int event_sum;
+
+// GenerateAuthData calls this to get the seed:
+extern "C" {
+     int greeter_event_sum()
+	  { return event_sum;}
+}
 
 class MyApp:public KApplication {
 public:
-  MyApp( int &argc, char **argv );
-  virtual bool x11EventFilter( XEvent * );
+     MyApp( int &argc, char **argv );
+     virtual ~MyApp();
+     virtual bool x11EventFilter( XEvent * );
+
+     /* Calculate a "sum" of the recorded events
+      * The "sum" is caclulated in a somewhat ad hoc
+      * way by starting with the value of a pointer
+      * and shifting and xor'ing events to it. See
+      * the implementation.
+      * 
+      * If someone has a more "proven" way to do this,
+      * please contact me /stefh
+      */
+     int sum();
+private:
+     // Add one timestamp to recorded events
+     void addEvent( int);
+
+     // max number of stored timestamps:
+     // We dont really need to store the numbers,
+     // so if the method used here is good, i will
+     // change it to just store one number.
+     static const int N_EVENTS = 14;
+
+     int  buf_end;
+     bool buf_full;
+     int *event_buf;
 };
 
-MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv){
+MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv), 
+     buf_end(0)
+{
+     event_buf = new int[N_EVENTS];
+}
+
+MyApp::~MyApp()
+{
+     delete[] event_buf;
 }
 
 bool 
 MyApp::x11EventFilter( XEvent * ev){
+     if( ev->type == KeyPress ||
+	 ev->type == KeyRelease ) addEvent( ((XKeyEvent*)ev)->time);
+     if( ev->type == ButtonPress ||
+	 ev->type == ButtonRelease ) addEvent( ((XButtonEvent*)ev)->time);
+     //if( ev->type == MotionNotify) addEvent( ((XMotionEvent*)ev)->time);
      if( ev->type == KeyPress && kgreeter){
 	  // This should go away
 	  if (XLookupKeysym(&(ev->xkey),0) == XK_Return)
@@ -116,6 +162,29 @@ MyApp::x11EventFilter( XEvent * ev){
 			    RevertToParent, CurrentTime);
      }
      return FALSE;
+}
+
+void
+MyApp::addEvent( int t)
+{
+     event_buf[buf_end++] = t;
+     if( buf_end >= N_EVENTS) {
+	  buf_end  = 0;
+	  buf_full = true;
+     }
+}
+
+int
+MyApp::sum()
+{
+     int s = (int)event_buf; // init with "random" pointer value
+     if( buf_full) {
+	  for( int i = 0; i < N_EVENTS; i++) s = (s << 3) ^ event_buf[i];
+     } else {
+	  for( int i = 0; i < buf_end; i++)  s = (s << 3) ^ event_buf[i];
+     }
+     event_sum = s;
+     return s;
 }
 
 static void
@@ -135,6 +204,7 @@ set_fixed( QWidget* w)
 KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0) 
   : QWidget( parent, t, WStyle_Customize | WStyle_NoBorder | WStyle_Tool)
 {
+     //setMouseTracking( true);
      QFrame* winFrame = new QFrame( this);
      winFrame->setFrameStyle(QFrame::WinPanel| QFrame::Raised);
      QBoxLayout* vbox = new QBoxLayout(  winFrame, 
@@ -855,6 +925,8 @@ GreetUser(
      //qApp->desktop()->setCursor( arrowCursor);
      qApp->restoreOverrideCursor();
      delete kdmcfg;
+     // Sum up events for seed:
+     myapp->sum();
      delete myapp;
      return Greet_Success;
 }

@@ -567,7 +567,7 @@ void doneAddrs ()
 	}
 }
 
-static checkEntry ();
+static int checkEntry();
 
 static void
 saveEntry (auth)

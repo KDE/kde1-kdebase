@@ -57,13 +57,13 @@ from the X Consortium.
 #include <net/gen/tcp_io.h>
 #endif
 
-static receivedUsr1;
+static int receivedUsr1;
 
 #ifdef X_NOT_STDC_ENV
 extern int errno;
 #endif
 
-static serverPause ();
+static int serverPause ();
 
 static Display	*dpy;
 

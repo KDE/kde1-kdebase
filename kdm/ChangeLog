@@ -1,0 +1,5 @@
+1998-11-27  Steffen Hansen  <stefh@localhost>
+
+	* Make the authentication cookie more unpredictable by adding
+	times from X events to seed
+
