@@ -1096,7 +1096,7 @@ void KfmGui::slotFile()
     url.append(KFMPaths::TrashPath());
     if( view->getURL() == url ) 
         mfile->insertItem( klocale->getAlias(ID_STRING_TRASH), 
-		       view, SLOT( slotPopupEmptyTrashBin() ), 0, FIRSTFILEMENUITEM, 0 );
+		       view, SLOT( slotEmptyTrashBin() ), 0, FIRSTFILEMENUITEM, 0 );
     else 
     {
       mfile->insertItem( klocale->translate("&New"), menuNew, FIRSTFILEMENUITEM, 0 );
