@@ -140,7 +140,7 @@ msgstr "Maximalizácia/Spä»"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215 titlebar.cpp:990
 msgid "Move"
-msgstr ""
+msgstr "Presunú»"
 
 #: titlebar.cpp:991
 msgid "(Un)Shade"
@@ -184,7 +184,7 @@ msgstr "Animácia:"
 
 #: windows.cpp:91
 msgid "None"
-msgstr ""
+msgstr "®iadna"
 
 #: windows.cpp:92
 msgid "Fast"

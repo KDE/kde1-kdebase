@@ -82,23 +82,23 @@ msgstr "Pozor: "
 
 #: options.cpp:40
 msgid "Small"
-msgstr ""
+msgstr "Malé"
 
 #: options.cpp:44
 msgid "Medium"
-msgstr ""
+msgstr "Stredné"
 
 #: options.cpp:48
 msgid "Large"
-msgstr ""
+msgstr "Veµké"
 
 #: options.cpp:52
 msgid "Standard Font"
-msgstr "©tandardný font"
+msgstr "©tandardné písmo"
 
 #: options.cpp:69
 msgid "Fixed Font"
-msgstr "Fixovaný font"
+msgstr "Fixované písmo"
 
 #: options.cpp:208
 msgid "Background Color:"
@@ -168,7 +168,7 @@ msgstr "Administrácia systému"
 
 #: man.cpp:478
 msgid "New"
-msgstr ""
+msgstr "Nová"
 
 #: man.cpp:592
 msgid "Reading Dir: "
@@ -242,7 +242,7 @@ msgstr "Predchádzajúci uzol"
 
 #: mainwidget.cpp:161
 msgid "&Next"
-msgstr ""
+msgstr "Ï&alej"
 
 #: mainwidget.cpp:173
 msgid "&General Preferences..."

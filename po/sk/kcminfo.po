@@ -23,39 +23,39 @@ msgstr "&Procesor"
 
 #: main.cpp:85
 msgid "&Interrupts"
-msgstr ""
+msgstr "Preru¹en&ia"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr ""
+msgstr "DMA-Kaná&ly"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr ""
+msgstr "I&O-Porty"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
-msgstr ""
+msgstr "PCI-&Bus"
 
 #: main.cpp:97
 msgid "S&ound"
-msgstr ""
+msgstr "Zvu&k"
 
 #: main.cpp:100
 msgid "&Devices"
-msgstr ""
+msgstr "Za&riadenia"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr ""
+msgstr "S&CSI"
 
 #: main.cpp:106
 msgid "P&artitions"
-msgstr ""
+msgstr "P&artície"
 
 #: main.cpp:109
 msgid "&X-Server"
-msgstr ""
+msgstr "&X-Server"
 
 #: main.cpp:120
 msgid ""
@@ -63,6 +63,9 @@ msgid ""
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
+"pou¾itie: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"
@@ -102,23 +105,3 @@ msgstr "%10ld bajtov  = %8.2f MB"
 msgid "Not available"
 msgstr "nie je prístupná"
 
-#~ msgid "usage: kcminfo [-init | {processor,memory}]\n"
-#~ msgstr "Pou¾itie: kcminfo [-init | {processor,memory}]\n"
-
-#~ msgid "This system is not yet supported :-("
-#~ msgstr "Tento systém e¹te nie je podporovaný :-("
-
-#~ msgid "Not Available"
-#~ msgstr "Neprístupná"
-
-#~ msgid "File Error!"
-#~ msgstr "Chyba súboru!"
-
-#~ msgid "Cannot read /proc/cpuinfo"
-#~ msgstr "Nemô¾em èíta» /proc/cpuinfo"
-
-#~ msgid "%s, unknown speed"
-#~ msgstr "%s, neznáma rýchlos»"
-
-#~ msgid "%s running at %s MHz"
-#~ msgstr "%s be¾í na %s MHz"
