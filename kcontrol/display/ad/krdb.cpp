@@ -26,7 +26,7 @@
 
 QString fontString( QFont rFont )
 {
-    
+
 	QString aValue;
 #if QT_VERSION >= 140
 	aValue = rFont.rawName();
@@ -118,11 +118,13 @@ main( int argc, char ** argv )
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
 	s.prepend( "#define FOREGROUND " );
 	preproc += s;
+	preproc += "*foreground: FOREGROUND\n";
 	
 	backCol = config->readColorEntry( "background", &lightGray );
 	s.sprintf("#%02x%02x%02x\n", backCol.red(), backCol.green(), backCol.blue());
 	s.prepend( "#define BACKGROUND " );
 	preproc += s;
+	preproc += "*background: BACKGROUND\n";
 
 	col = config->readColorEntry( "selectBackground", &darkBlue);
 	s.sprintf("#%02x%02x%02x\n", col.red(), col.green(), col.blue());
@@ -149,6 +151,7 @@ main( int argc, char ** argv )
 	s += "\n";
 	s.prepend( "#define FONT " );
 	preproc += s;
+	preproc += "*font: FONT\n";
 	
 	fnt = config->readFontEntry( "fixedFont", new QFont( fnt ) );
 	s = fontString( fnt );
