@@ -25,4 +25,5 @@
 #define KIO_ERROR_NotPossible 18
 #define KIO_ERROR_SlaveDied 19
 #define KIO_ERROR_FileDoesNotExist 20
+#define KIO_ERROR_NotADirectory 21
 #endif

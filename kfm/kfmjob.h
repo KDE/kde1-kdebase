@@ -46,7 +46,7 @@ public slots:
      * is called once for every file in the directory.
      */
     void slotNewDirEntry( int _id, KIODirectoryEntry * _entry );
-    void slotError( int _kioerror, const char *_text );
+    void slotError( int _kioerror, const char *_text, int _errno );
     void slotFinished( int _id );
     void slotDirHTMLData( const char *_data, int _len );
     void slotData( const char* _data, int _len );

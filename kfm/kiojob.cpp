@@ -1134,10 +1134,27 @@ void KIOJob::msgResult( QWidget * _win, int _button )
     }
 }
 
-void KIOJob::fatalError( int _kioerror, const char* _error, int )
+void KIOJob::fatalError( int _kioerror, const char* _error, int _errno )
 {
+  // Assume we want to process this error
+  bProcessError = true;
+  
+  // Allow others to see and process the error
+  emit errorFilter( _kioerror, _error, _errno );
+  
+  // Is the error already process ?
+  if ( bProcessError )
+    // We process the error.
+    processError( _kioerror, _error, _errno );
+}
+
+void KIOJob::processError( int _kioerror, const char* _error, int )
+{
+    bProcessError = false;
+  
     kioError = _kioerror;
     
+    // TODO: Remove before final release
     printf("################################# fatalError called '%s'\n",_error);
     
     // We have to delete the password!!! ( if there is one )
@@ -1917,21 +1934,15 @@ void KIOJob::deleteAllJobs()
 
 QString KIOJob::completeURL( const char *_url )
 {
-    // debugT("Is '%s' complete ? \n",_url );
-    
     KURL u( _url );
     if ( u.isMalformed() )
 	return QString( _url );
     
-    // debugT("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
-    
+    // We got a user, but no password ?
     if ( u.user() != 0L && u.user()[0] != 0 && ( u.passwd() == 0L || u.passwd()[0] == 0 ) )
     {
-	// debugT("Looking for password\n");
-	   
 	QString head;
 	ksprintf(&head, "Password for %s@%s", u.user(), u.host());
-	// head << i18n( "Password for ") << u.user() << "@" << u.passwd();
 	
 	QString passwd;
 	QString tmp2;
@@ -1939,24 +1950,20 @@ QString KIOJob::completeURL( const char *_url )
 	
 	if ( (*passwordDict)[ tmp2.data() ] == 0L )
 	{
-	    // debugT("A\n");
-	    
 	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", true );
 	    if ( !dlg->exec() )
 	    {
-		// debugT("Cancled\n");
 		return QString( _url );
 	    }
-	    // debugT("B\n");
 	    passwd = dlg->password();
 	    delete dlg;
+
+	    // If the password is wrong, the error function will remove it from
+	    // the dict again.
+	    passwordDict->insert( tmp2.data(), new QString( passwd.data() ) );
 	}
 	else
 	    passwd = (*passwordDict)[ tmp2.data() ]->data();
-
-	// If the password is wrong, the error function will remove it from
-	// the dict again.
-	passwordDict->insert( tmp2.data(), new QString( passwd.data() ) );
 	
 	QString tmp;
 	tmp << u.user() << ":" << passwd.data();
@@ -1967,6 +1974,16 @@ QString KIOJob::completeURL( const char *_url )
 
 	return QString( url );
     }
+    // We have a user and a password => we want to remember that.
+    else if ( u.user() != 0L && u.user()[0] != 0 && u.passwd() != 0L && u.passwd()[0] != 0 )
+    {
+	QString tmp2;
+	ksprintf(&tmp2, "%s@%s", u.user(), u.host());
+
+	// We dont know this passwort ?
+	if ( (*passwordDict)[ tmp2.data() ] == 0L )
+	    passwordDict->insert( tmp2.data(), new QString( u.passwd() ) );
+    }
     
     return QString( _url );
 }
@@ -1976,8 +1993,6 @@ void KIOJob::slotSlaveClosed( KIOSlaveIPC* )
     // We assumed that the slave is going to die.
     if ( slave == 0L )
 	return;
-    
-    printf( "The segmentation faul thing\n");
     
     slave = 0L;
     

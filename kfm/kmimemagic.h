@@ -77,6 +77,11 @@ public:
 	 * Tries to find a MimeType for the given file. If no special
 	 * MimeType is found, the default MimeType is returned.
 	 * This function looks at the content of the file.
+	 *
+	 * @return a pointer to the result object. Do NOT delete the
+	 *         result object. After another call to KMimeMagic
+	 *         the returned result object changes its value
+	 *         since it is resued by KMimeMagic.
 	 */
 	KMimeMagicResult * findFileType( const char * );
 
@@ -85,6 +90,10 @@ public:
 	 * read from a file. Instead a buffer can be supplied which
 	 * is examined. The integer parameter supplies the lenght of
 	 * the buffer.
+	 *
+	 * @return a pointer to the result. Do NOT delete the
+	 *         result object. After another call to KMimeMagic
+	 *         the returned result object changes its value.
 	 */
 	KMimeMagicResult * findBufferType( const char *, int );
 
@@ -92,6 +101,11 @@ public:
 	 * Same functionality as @ref findBufferType but with
 	 * additional capability of distinguishing between
          * C-headers and C-Source.
+	 *
+	 * @return a pointer to the result object. Do NOT delete the
+	 *         result object. After another call to KMimeMagic
+	 *         the returned result object changes its value
+	 *         since it is resued by KMimeMagic.
 	 */
 	KMimeMagicResult * findBufferFileType( const char *, int , const char *);
 

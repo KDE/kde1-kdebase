@@ -1,4 +1,15 @@
-Fri Mar 27 13:46:56 1998    <weis@snoopy.rz.uni-frankfurt.de>
+Fri Mar 27 02:50:54 1998  Torben Weis  <weis@localhost>
+
+	* kfmjob.cpp (slotError): Adaptions for new error
+	  handling in kiojob.
+
+	* kiojob.cpp (fatalError): Changed error handling to fix
+	  ftp bug. kiojob allows now error filtering before
+	  errors are processed by kiojob.
+
+	* kioslave/ftp.cpp (OpenConnection): Special hack for 'list'
+	  command. KFM does now no longer assume that a ftp file
+	  is a directory.
 
 	* kioslave/ftp_proxy.cpp (Open): Fixed bug in UserAgent tag.
 
@@ -10,6 +21,10 @@ Fri Mar 27 13:46:56 1998    <weis@snoopy.rz.uni-frankfurt.de>
 	  "Content-Type: text/html; charset=..."
 
 Thu Mar 26 02:40:24 1998  Torben Weis  <weis@localhost>
+
+	* kiojob.cpp (completeURL): If the user enters a URL
+	  like this one: ftp://user:pass@host. then KFM
+	  remebers the password, but does not show it any more.
 
 	* kioslave: Fixed bug that appeard while copying very
 	  large files ( >40MB ). Now the progress indicator

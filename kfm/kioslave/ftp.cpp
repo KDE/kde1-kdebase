@@ -1,5 +1,6 @@
 #include "ftp.h"
 #include <errno.h>
+#include <kstring.h>
 
 #define SUCCESS 0
 #define FAIL -1
@@ -442,25 +443,41 @@ KProtocolFTP::~KProtocolFTP()
     Close();
 }
 
-int KProtocolFTP::OpenConnection(const char *command, const char *path, char mode)
+int KProtocolFTP::OpenConnection( const char *command, const char *path, char mode )
 {
     char buf[256];
 
     ftplib_lastresp[0] = '\0';
 	sprintf(buf,"type %c",mode);
-    if (!ftpSendCmd(buf,'2')) return Error(KIO_ERROR_CouldNotConnect,
+    if ( !ftpSendCmd( buf, '2' ) ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not set ftp to correct mode for transmission");
-    if (!ftpPort()) return Error(KIO_ERROR_CouldNotConnect,
+    if ( !ftpPort() ) return Error(KIO_ERROR_CouldNotConnect,
 				"Could not setup ftp data port", errno);
+    
+    QString tmp;
+    
+    // Special hack for the list command. We try to change to this
+    // directory first to see wether it really is a directory.
+    if ( strcmp( command, "list" ) == 0 )
+    {
+      if ( path != NULL )
+	ksprintf( &tmp, "cwd %s", path );
+      else
+    	tmp = command;
+      
+      if ( !ftpSendCmd( tmp.data(), '2' ) )
+	return Error(KIO_ERROR_NotADirectory, "Error requested URL is not a directory");
+    }
 
-    if (path != NULL)
-	sprintf(buf,"%s %s",command,path);
+    if ( path != NULL )
+      ksprintf( &tmp, "%s %s", command, path );
     else
-    	strcpy(buf,command);
+      tmp = command;
+    
+    if ( !ftpSendCmd( tmp.data(), '1' ) )
+      return Error(KIO_ERROR_CouldNotConnect, "Error requesting file/dir from server");
 
-    if (!ftpSendCmd(buf,'1')) return Error(KIO_ERROR_CouldNotConnect,
-					   "Error requesting file/dir from server");
-    if ((sData = accept_connect()) < 0)
+    if ( ( sData = accept_connect() ) < 0 )
     {
 	if (sData == -2) perror("accept");
 	else fprintf( stderr, "ERROR!: %s",rspbuf);
@@ -521,6 +538,8 @@ KProtocolDirEntry *KProtocolFTP::ReadDir()
     static KProtocolDirEntry de;
     
     while(fgets(buffer,1024,dirfile) != 0) {
+      printf(">%s",buffer);
+      
 	char *p_access, *p_junk, *p_owner, *p_group;
 	char *p_size, *p_date_1, *p_date_2, *p_date_3, *p_name;
 	if ((p_access = strtok(buffer," ")) != 0)

@@ -10,14 +10,23 @@ TODO List
 - Are tar directories really cached ? Does not look so yet.
 - Downloading files from ftp.troll.no does not work
   ( perhaps why they dont want to see a password )
+  ( seems to be fixed now )
 - http://www.rhein-main.net looks broken
 - Bug in recursive copying of directories
-- Root Icons need italic font style if they are links
+  ( seems to be fixed )
 - KFM crashes if HTTP server closes connection unexpected.
 - Support for netscape. Switch that allows netscape to handle
   HTML files
 - index.html files of 0 bytes crash KFM ? ( not tested )
 - kioslave crashes on dangling links if compiled with -O2 ( not tested )
+  ( seems to be fixed now )
 - Kopieren von FTP server ?
+  ( seems to be fixed now )
 - Links on FTP Servers do not seem to work
+  ( seems to be fixed now )
+- tar files on ftp serves make problems.
+- Some systems use gtar instead of tar ( we need the GNU version ).
+- Nice ftp dialog for users who do not know how to put their
+  use name in a URL.
 - Implement 'Delete' on ftp.
+
