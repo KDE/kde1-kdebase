@@ -878,12 +878,28 @@ void kPanel::showMiniPanel ()
   miniDesk->setMouseTracking( true );
   miniDesk->installEventFilter (this);
 
-  miniPanel->setGeometry (0, 0, 2*mh, mh);
+  // -- pietro: kdisknav button start --
+  miniDiskNav = new myPushButton(miniPanel);
+  QToolTip::add(miniDiskNav, klocale->translate("KDiskNavigator"));
+  miniDiskNav->setFocusPolicy(NoFocus);
+  miniDiskNav->setPixmap(kapp->getIconLoader()
+			->loadMiniIcon("kdisknav.xpm", mh,mh)); 
+  miniDiskNav->setMouseTracking( true );
+  miniDiskNav->installEventFilter (this);
+  // -- pietro: kdisknav button end --
+
+  miniPanel->setGeometry (0, 0, 3*mh, mh);
   miniPanel->insert(miniSystem, 1);
   miniPanel->insert(miniDesk, 2);
+  // -- pietro: kdisknav button start --
+  miniPanel->insert(miniDiskNav, 3);
+  // -- pietro: kdisknav button end --
 
   miniSystem->setGeometry(1, 1, mh-1, mh-2);
   miniDesk->setGeometry(mh, 1, mh-1, mh-2);
+  // -- pietro: kdisknav button start --
+  miniDiskNav->setGeometry(mh*2, 1, mh-1, mh-2);
+  // -- pietro: kdisknav button end --
  }
   int sx=0; int sx1 =0;
   if (position == top_left && panelCurrentlyLeft)
@@ -894,13 +910,13 @@ void kPanel::showMiniPanel ()
     sx1 = x() + panel_button->x() + panel_button->width()+1;
 
   if (taskbar_position == taskbar_top_left)
-    miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
+    miniPanelFrame->setGeometry(sx, 0, 3*mh, mh);
   else if (taskbar_position == hidden)
-    miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
+    miniPanelFrame->setGeometry(sx, 0, 3*mh, mh);
   else if (taskbar_position == bottom)
-    miniPanelFrame->setGeometry(sx1, h-mh, 2*mh, mh);
+    miniPanelFrame->setGeometry(sx1, h-mh, 3*mh, mh);
   else if (taskbar_position == top)
-    miniPanelFrame->setGeometry(sx, 0, 2*mh, mh);
+    miniPanelFrame->setGeometry(sx, 0, 3*mh, mh);
 
   miniPanelFrame->show();
   miniPanelFrame->raise();
@@ -951,7 +967,26 @@ void kPanel::miniButtons(int i){
 
       windowlist->exec();
       break;
+    // -- pietro: kdisknav button start --
+    case 3:
+      if (!kdisknav) // might be uninitialized...
+	break;
 
+      if (taskbar_position == bottom){
+	kdisknav->move(-1000,-1000);
+	kdisknav->show();
+	kdisknav->move(QPoint(miniPanelFrame->x()+miniDesk->x(),
+			      miniPanelFrame->y()-
+			      kdisknav->height()));
+      }
+      else
+	kdisknav->move(QPoint(miniPanelFrame->x()+miniDesk->x(),
+				miniDesk->y()+
+				miniPanelFrame->height()));
+
+      kdisknav->exec();
+      break;
+      // -- pietro: kdisknav button end --
     }
 
   QButton* button = miniPanel->find(i);

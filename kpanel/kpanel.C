@@ -1679,7 +1679,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
      sw = panel_button_frame_standalone->width()+1;
      sh = panel_button_frame_standalone->height()+1;
      {
-       mw = 2*taskbar_height+1; // miniPanelFrame
+       mw = 3*taskbar_height+1; // miniPanelFrame
        mh = taskbar_height+1; // miniPanelFrame
      }
 

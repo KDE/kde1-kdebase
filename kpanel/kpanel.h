@@ -471,6 +471,7 @@ private:
   QButtonGroup *miniPanel;
   QPushButton *miniSystem;
   QPushButton *miniDesk;
+  QPushButton *miniDiskNav;
 
   int clock_timer_id;
 
