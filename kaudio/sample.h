@@ -12,6 +12,8 @@
 #define MAUDIO_MAX_FRAGS 32
 #define BUFFER_MAX       4096
 
+const         int NUM_BUF=16;
+ 
 class AudioSample
 {
 public:
@@ -23,6 +25,9 @@ public:
   uint32 duration();
   void seek(uint32 secs, uint32 msecs);
   int  setFilename(char* fname);
+  /** Read data from file into one of the buffers. This function
+      implements the multi-buffering technique and calls readDataI()
+      for the actual reading */
   int  readData();
 
   char		*Data[MAUDIO_MAX_FRAGS];
@@ -37,10 +42,21 @@ public:
   uint32	bytes;
 
   uint32	BuferValidLength;
-  char		Buffer[BUFFER_MAX];    // !!! Will never user bigger buffers
+  /// [RW]Buffer is a pointer to Buffers[n] , where n is in 0...BUFFER_MAX-1
+  char		*RBuffer,*WBuffer;
+  /// Buffers for the multi buffering technique
+  char		Buffers[NUM_BUF][BUFFER_MAX]; // !!! Will never user bigger buffers
+  /// num of validit (= written) buffers
+  int		buffersValid;
+  int		RBufId,WBufId;
+  void nextWBuf();
 
 private:
-
+  /// Internal readData function. This reads into current Buffer
+  int  readDataI();
+  void setRBuf(int id);
+  void setWBuf(int id);
+  
   FILE		*audiofile;
   int8		num_frags;
   int8		cur_write_frag;

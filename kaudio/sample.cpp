@@ -51,8 +51,37 @@ AudioSample::AudioSample()
 {
   opened = false;
   BuferValidLength = 0;
-
+  setRBuf(0);
+  setWBuf(0);
+  buffersValid=0;
 }
+
+void AudioSample::setRBuf(int id)
+{
+  if (id>=NUM_BUF)
+    id=0;
+  RBufId = id;
+  RBuffer= Buffers[id];
+  cerr << "RBuf = " << id << "\n";
+}
+
+void AudioSample::setWBuf(int id)
+{
+  if (id>=NUM_BUF)
+    id=0;
+  WBufId = id;
+  WBuffer= Buffers[id];
+  cerr << "WBuf = " << id << "\n";
+}
+
+void AudioSample::nextWBuf()
+{
+  if(buffersValid) {
+    setWBuf(WBufId+1);
+    buffersValid--;
+  }
+}
+
 
 int AudioSample::setFilename(char* fname)
 {
@@ -242,17 +271,33 @@ uint32 AudioSample::playpos()
 void AudioSample::seek(uint32 secs, uint32 msecs)
 {
   uint32 bytepos;
-  if (opened)
-    {
-      bytepos = secs * bytes_per_s;
-      if (msecs != 0)
-	bytepos = (bytepos * 1000) / msecs; // !!! falsch, TODO
-      fseek( audiofile, bytepos+headerLen, SEEK_SET);
-    }
+  if (opened) {
+    bytepos = secs * bytes_per_s;
+    if (msecs != 0)
+      bytepos = (bytepos * 1000) / msecs; // !!! falsch, TODO
+    fseek( audiofile, bytepos+headerLen, SEEK_SET);
+  }
   BuferValidLength = 0;
 }
 
+// This is a wrapper around readDataI() , made for implementing a simple buffering mechanism
 int AudioSample::readData()
+{
+  if ( buffersValid == NUM_BUF) {
+    // We definitely read enough. Return a key to indicate this
+    cerr << "Ouch: Read too many buffers\n";
+    return -1;
+  }
+  int num = readDataI();
+  if (num != 0) {
+    // set read buffer to next buffer
+    setRBuf(RBufId+1);
+    buffersValid++;
+  }
+  return num;
+}
+
+int AudioSample::readDataI()
 {
   int len, len_toRead;
   uint32 tmpReadPos, cur_read_pos;
@@ -272,24 +317,21 @@ int AudioSample::readData()
 #ifdef DEBUG
   cerr << "Trying to read " << len_toRead << " bytes from " << cur_read_pos << ". Read: ";
 #endif
-  len = fread(Buffer, 1, len_toRead, audiofile);
+  len = fread(RBuffer, 1, len_toRead, audiofile);
 
-  if (len==0)
-    {
-      BuferValidLength = 0;
-      return 0;
-    }
+  if (len==0) {
+    BuferValidLength = 0;
+    return 0;
+  }
 
   // Always pad with ZeroData!!!
   if (bit_p_spl == 8)
-    for (int i=len; i<BUFFSIZE; i++)
-    {
-	Buffer[i]=0x80;
+    for (int i=len; i<BUFFSIZE; i++) {
+      RBuffer[i]=0x80;
     }
   else
-    for (int i=len; i<BUFFSIZE; i++)
-    {
-	Buffer[i]=0x00;
+    for (int i=len; i<BUFFSIZE; i++) {
+      RBuffer[i]=0x00;
     }
         
 

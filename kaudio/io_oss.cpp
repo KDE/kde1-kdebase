@@ -201,14 +201,14 @@ void AudioDev::setParams(int8 Bit_p_spl, bool Stereo, uint32 Freq, int8 Channels
   channels  = Channels;
 }
 
-int AudioDev::Write(AudioSample *a)
+int AudioDev::Write(char *data, uint32 num)
 {
 #ifdef OSS_AUDIO
-  return ( write(audiodev, a->Buffer, a->BuferValidLength) );
+  return ( write(audiodev, data, num) );
 #else
-  AudioSample *dummy = a;  // remove warnings on unsupported systems
-  a = dummy;               // remove warnings on unsupported systems
-  return true;
+  char *dummy = data;  // remove warnings on unsupported systems
+  data = dummy;        // remove warnings on unsupported systems
+  return 1;
 #endif
 }
 

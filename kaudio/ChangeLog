@@ -1,3 +1,11 @@
+Wed Apr 15 02:10:34 CEST 1998 Christian Esken <esken@kde.org>
+* Implementing real multi buffering. Audioserver is now prepared
+  for V1.0
+Thu Apr  9 19:16:11 CEST 1998 Christian Esken <esken@kde.org>
+* Implementing multi buffering (actual here: double buffering)
+    This should fix playing trailing garbage and is a neccesity
+    on "slow" computers.
+
 Sun Feb  8 15:41:13 CET 1998 Christian Esken <esken@kde.org>
 
 * maudio.cpp : Moved from device name to device number. Added command

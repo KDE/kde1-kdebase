@@ -17,7 +17,7 @@ public:
   bool sync();
   bool pause();
   void setBugs(int bugs);
-  int  Write(AudioSample *a);
+  int  Write(char *data, uint32 num);
   int emitSilence();
 private:
   int   audiodev;	/* Should be private, cannot be for now :- */

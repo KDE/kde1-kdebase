@@ -200,8 +200,14 @@ int main(char argc, char **argv)
 	  PlayerStatus = STOP_MEDIA;
 	  cerr << "Failed to grab\n";
 	}
-	else
+	else {
 	  PlayerStatus = PLAYING;
+	  // prefetch some data
+	  ASample->readData();
+	  ASample->readData();
+	  ASample->readData();
+	  ASample->readData();	  
+	}
       }
       break;
 
@@ -214,13 +220,7 @@ int main(char argc, char **argv)
        * chunk of audio data from the file.
        */
       bytes_read = ASample->readData();
-
-      if (bytes_read == 0) {
-	SoftStop = 1;
-	PlayerStatus = STOP_MEDIA;
-      }
-      else
-	PlayerStatus = PLAY_IT;
+      PlayerStatus = PLAY_IT;
       break;
 
 
@@ -231,12 +231,11 @@ int main(char argc, char **argv)
        * this is called one time. But if the audio device is busy (EAGAIN),
        * I have to retry.
        */
-      if (KeysChunk->pause)
-	{
-	  PlayerStatus = PAUSE;
-	  goto break_pos;
-	}
-      ret = ADev->Write(ASample);
+      if (KeysChunk->pause) {
+	PlayerStatus = PAUSE;
+	goto break_pos;
+      }
+      ret = ADev->Write(ASample->WBuffer,BUFFSIZE);
 
       if (ret == -1 ) {
 	if (errno== EAGAIN) {
@@ -244,9 +243,15 @@ int main(char argc, char **argv)
 	  usleep(USLEEP_DELAY);
 	}
       }
-      else
+      else {
 	PlayerStatus = PLAYING;
-
+	ASample->nextWBuf();
+      }
+      if ( (ASample->buffersValid == 0) && (bytes_read == 0)) {
+	// Nothing to read and to write. OK,then finish
+	SoftStop = 1;
+	PlayerStatus = STOP_MEDIA;
+      }
     break_pos:
       break;
 
