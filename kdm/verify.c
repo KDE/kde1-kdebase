@@ -46,6 +46,11 @@ from the X Consortium.
 # endif
 #ifdef USE_PAM
 #include <security/pam_appl.h>
+#ifdef KDE_PAM_SERVICE
+#define KDE_PAM KDE_PAM_SERVICE
+#else  
+#define KDE_PAM "xdm"  /* default PAM service called by kdm */
+#endif 
 #else /* ! USE_PAM */
 #ifdef USESHADOW
 # include	<shadow.h>
@@ -264,7 +269,7 @@ struct verify_info	*verify;
         }
        pamh = NULL;
        PAM_password = greet->password;
-       pam_error = pam_start("xdm", p->pw_name, &PAM_conversation, &pamh);
+       pam_error = pam_start(KDE_PAM, p->pw_name, &PAM_conversation, &pamh);
        PAM_BAIL;
        pam_error = pam_authenticate(pamh, 0);
        PAM_BAIL;
@@ -308,3 +313,6 @@ struct verify_info	*verify;
 	Debug ("end of environments\n");
 	return 1;
 }
+
+
+

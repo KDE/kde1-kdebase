@@ -46,6 +46,11 @@ static const char sccsid[] = "@(#)passwd.c	4.02 97/04/01 xlockmore";
 extern "C" {
 #include <security/pam_appl.h>
 }
+#ifdef KDE_PAM_SERVICE
+#define KDE_PAM KDE_PAM_SERVICE
+#else  
+#define KDE_PAM "xdm"  /* default PAM service called by kscreensaver */
+#endif 
 #else /* !USE_PAM */
 #ifdef HAVE_SHADOW
 #define USE_SHADOW 1
@@ -652,7 +657,7 @@ checkPasswd(char *buffer)
     pam_end(pamh, 0); return 0; \
 }
 	PAM_password = buffer;
-	pam_error = pam_start("kscreensaver", user, &PAM_conversation, &pamh);
+	pam_error = pam_start(KDE_PAM, user, &PAM_conversation, &pamh);
 	PAM_BAIL;
 	pam_error = pam_authenticate(pamh, 0);
 	if (pam_error != PAM_SUCCESS) {
