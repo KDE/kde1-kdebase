@@ -58,6 +58,8 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     
     readBackgroundSettings();
 
+    setMouseTracking(TRUE);
+        
 }
 
 Desktop::~Desktop()
@@ -65,6 +67,7 @@ Desktop::~Desktop()
 #ifdef DESKTOPDEBUG
     printf("~Desktop\n");
 #endif
+    setMouseTracking(FALSE);
     delete window_list;
 
     delete tmpScreen;
@@ -467,6 +470,18 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
     return wp;
 }
 
+void Desktop::mouseMoveEvent (QMouseEvent *e)
+{
+    QPoint dragpos;
+    bool ok;
+    WindowProperties *wp=windowAtPosition(&e->pos(),&ok,&dragpos);
+    if (wp==0L) return;
+    
+//    if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
+//        KWM::activateInternal(wp->id);
+
+    printf("%s\n",wp->name.data());
+}
 
 void Desktop::mousePressEvent (QMouseEvent *e)
 {
@@ -474,7 +489,11 @@ void Desktop::mousePressEvent (QMouseEvent *e)
     QPoint dragpos;
     bool ok;
     WindowProperties *wp=windowAtPosition(&e->pos(),&ok,&dragpos);
-    if (wp==0L) return;
+    if (wp==0L)
+    {
+        emit switchToDesktop(id);
+        return;
+    };
 
     QPixmap *qxpm=new QPixmap(wp->minigeometry.width(),wp->minigeometry.height());
     QPainter *painter=new QPainter(qxpm);
@@ -482,18 +501,6 @@ void Desktop::mousePressEvent (QMouseEvent *e)
 
     paintWindow(painter,wp,tmp);
 
-
-    /*
-    if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
-    else painter->fillRect(tmp,QColor(200,200,200));
-
-    if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
-    {
-        QRect tmp2(tmp.x()+2,tmp.y()+6,tmp.width()-4,tmp.height()-8);
-        painter->fillRect(tmp2,QColor(145,145,145));
-    }
-    painter->drawRect(tmp);
-*/
     delete painter;
 
     int deltax=dragpos.x();
@@ -547,7 +554,6 @@ void Desktop::mouseDoubleClickEvent( QMouseEvent *)
 {
     emit switchToDesktop(id);
 }
-
 
 void Desktop::readBackgroundSettings(void)
 {

@@ -100,6 +100,7 @@ private:
 
 protected:
     
+    virtual void mouseMoveEvent (QMouseEvent *e);
     virtual void paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp);
 
 public:

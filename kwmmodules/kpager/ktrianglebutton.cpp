@@ -94,17 +94,6 @@ void KTriangleButton::paint( QPainter *painter )
   
   if (dir==Right)
   {
-/*      int x=width()/4;
-      int y=height()/4;
-      int l=y*2;
-      while (l>0)
-      {
-          painter->drawLine(x,y,x,y+l);
-          x++;
-          y++;
-          l-=2;
-          };
- */
       int x=width()/4;
       int y=height()*2/6;
       int l=height()-y*2;
@@ -120,17 +109,6 @@ void KTriangleButton::paint( QPainter *painter )
   }
   else if (dir==Left)
   {
-/*      int x=width()*3/4;
-      int y=height()/4;
-      int l=y*2;
-      while (l>0)
-      {
-          painter->drawLine(x,y,x,y+l);
-          x--;
-          y++;
-          l-=2;
-      };
-*/
       int x=width()/4;
       int y=height()*2/6;
       int l=height()-y*2;
@@ -154,16 +132,26 @@ void KTriangleButton::mousePressEvent(QMouseEvent *e)
     QButton::mousePressEvent(e);
 //    tresholdTimer=true;
     usingTimer=true;
-    startTimer(500);
+    startTimer(350);
     timeCount=0;
 
 }
 
+/*
+void KTriangleButton::mouseMoveEvent(QMouseEvent *e)
+{
+}
+*/
+
 void KTriangleButton::mouseReleaseEvent(QMouseEvent *e)
 {
+    if ((usingTimer)&&(timeCount==0))       // It has been a single click
+    {
+	emit singleClick();
+    };
     usingTimer=false;
     QButton::mouseReleaseEvent(e);
-};
+}
 
 void KTriangleButton::timerEvent(QTimerEvent *)
 {
@@ -172,15 +160,8 @@ void KTriangleButton::timerEvent(QTimerEvent *)
     {
         timeCount++;
         killTimers();
-        startTimer(50);
-    } /*else
-        if (timeCount==30)
-        {
-            timeCount=-1;
-            killTimers();
-            startTimer(20);
-        }*/
-//    else if (timeCount>0) timeCount++;
+        startTimer(25);
+    }
     emit clickedQuickly();
     
 }

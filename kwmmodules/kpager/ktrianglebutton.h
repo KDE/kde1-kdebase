@@ -58,6 +58,7 @@ public:
 
 signals:
     void clickedQuickly();
+    void singleClick();
 
 protected:
     bool raised;

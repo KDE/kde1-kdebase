@@ -58,6 +58,8 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     connect(left,SIGNAL(clickedQuickly()),this,SLOT(moveLeft()));
     connect(right,SIGNAL(pressed()),this,SLOT(pressedButtonLR()));
     connect(left,SIGNAL(pressed()),this,SLOT(pressedButtonLR()));
+    connect(right,SIGNAL(singleClick()),this,SLOT(singleClickR()));
+    connect(left,SIGNAL(singleClick()),this,SLOT(singleClickL()));
     
     desktopContainer=new QWidget(this,"desktopContainer");
     desktopContainer->setBackgroundColor(QColor(96,129,137));
@@ -374,6 +376,52 @@ void KPagerClient::pressedButtonLR()
     velocity=2;
 }
 
+void KPagerClient::singleClickR()
+{
+    int i=1;
+    int desktoseefirst=0;
+
+    while ((desktoseefirst==0)&&(i<numberofDesktops))
+    {
+        if (desktop[i]->x()>2) desktoseefirst=i;
+        i++;
+    };
+    // Lets align the desktoptoseefirst to the left
+    printf("deltax : %d\n",deltax);
+    deltax+=desktop[desktoseefirst]->x()-2;
+    if (deltax>=maxdeltax)
+    {
+        deltax=maxdeltax;
+        updateRects(true);
+    }
+    else
+    desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
+    printf("deltax*: %d\n",deltax);
+
+}
+
+void KPagerClient::singleClickL()
+{
+    int i=1;
+    int desktoseefirst=1;
+
+    while ((i<numberofDesktops)&&(desktop[i]->x()<2))
+    {
+        if (desktop[i]->x()<2) desktoseefirst=i;
+        i++;
+    };
+    // Lets align the desktoptoseefirst to the left
+    printf("-deltax : %d\n",deltax);
+    deltax+=desktop[desktoseefirst]->x()-2;
+    if (deltax<0)
+    {
+        deltax=0;
+        updateRects(true);
+    }
+    else
+    desktopContainer->scroll(-desktop[desktoseefirst]->x()+2,0);
+    printf("-deltax*: %d\n",deltax);
+}
 
 void KPagerClient::updateRects(bool onlydesktops)
 {
@@ -469,18 +517,10 @@ void KPagerClient::updateRects(bool onlydesktops)
         {
             right->setGeometry(width()-20,0,20,height()/2);
             left->setGeometry(width()-20,height()/2,20,height()-height()/2);
-            /* Note that computationally, height()/2 != height()-height()/2 !!! */
+        /* Note that computationally, height()/2 != height()-height()/2 !!! */
         }
     }
 
-/*    int sizeofScroll=0;
-    if (desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width()<desktopContainer->width()-2)
-        sizeofScroll=desktopContainer->width()-2-(desktop[numberofDesktops]->x()+desktop[numberofDesktops]->width());
-
-    if (desktop[1]->x()+sizeofScroll>2) sizeofScroll=2-desktop[1]->x();
-
-    desktopContainer->scroll(sizeofScroll,0);
-*/
 }
 
 void KPagerClient::resizeEvent(QResizeEvent *)

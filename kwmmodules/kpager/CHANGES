@@ -1,3 +1,12 @@
+* Mon Nov 13 00:05:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
+
+The arrow buttons now move whole desktop view when clicked and
+still scrolls the view when pressed for a while (but faster than before)
+as suggested by David Faure
+Now a single click on a free area activates the desktop and also a double
+click anywhere (just in case you don't have a free area)
+
+
 * Mon Nov 8 7:20:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 Restore latest complete configuration and window position on start (not

@@ -94,6 +94,9 @@ public slots:
     void moveRight();
     void moveLeft();
     void pressedButtonLR();
+    void singleClickR();
+    void singleClickL();
+
 
     void desktopChanged(int);
     void windowAdded(Window);
