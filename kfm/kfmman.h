@@ -78,6 +78,11 @@ public slots:
     void slotInfo( const char *_text );
     
 protected:
+    /**
+     * Writes the <body ...> tag for @ef #writeBeginning .
+     * It has a look at .diretory files if available.
+     */
+    void writeBodyTag();
     void writeBeginning();
     void writeEntry( KIODirectoryEntry *_e );
     

@@ -4,6 +4,7 @@
 #include "main.h"
 #include "kio_errors.h"
 #include "manage.h"
+#include "protocol.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -155,7 +156,13 @@ void KIOSlave::list( const char *_url, bool _bHTML )
 	
 	printf("MAIN:Direntries starting...\n");
 	prot->AllowHTML( _bHTML );
-	prot->OpenDir(&su);
+	if ( prot->OpenDir(&su) == KProtocol::FAIL )
+	{
+	    printf("ERROR: No permission to enter '%s'\n",_url );
+	    ipc->fatalError( KIO_ERROR_CouldNotList, _url, 0 );
+	    return;
+	}
+	    
 	ipc->flushDir(old_url);
 	// Do we get some HTML as response
 	if ( prot->isHTML() )

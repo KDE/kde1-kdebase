@@ -242,7 +242,7 @@ const char* KDELnkMimeType::getPixmapFile( const char *_url )
 	{
 	    QString icon = config->readEntry( "Icon" );
 	    delete config;
-	    
+	    fprintf(stderr,"ICON=#%s'\n",icon.data());
 	    if ( !icon.isNull() )
 	    {
 		pixmap_file = getIconPath();
@@ -1611,12 +1611,12 @@ KFMConfig* KMimeBind::openKFMConfig( const char *_url )
     if ( f == 0L )
 	return 0L;
     
-    char buff[ 4096 ];
+    char buff[ 100 ];
     buff[ 0 ] = 0;
-    fgets( buff, 4095, f );
+    fgets( buff, 100, f );
     fclose( f );
 
-    if ( strstr( buff, "[KDE Desktop Entry]" ) == 0L )
+    if ( strncmp( buff, "# KDE Config File", 17 ) != 0L )
 	return 0L; 
        
     QFile *file = new QFile( decoded );
@@ -1704,10 +1704,10 @@ KMimeBind::KMimeBind( const char *_prg, const char *_cmd, bool _allowdefault, co
 	protocol5 = "";
 }
 
-const char* KMimeType::getPixmapFileStatic( const char *_filename )
+KMimeType* KMimeType::getMagicMimeType( const char *_filename )
 {
     // Just for speedup, because KURL is slow
-    if ( strncmp( _filename, "file:/", 6 ) == 0 )
+    if ( strncmp( _filename, "file:/", 6 ) == 0 || _filename[0] == '/' )
     {
 	KURL u( _filename );
 	// Not a tar file ?
@@ -1720,7 +1720,7 @@ const char* KMimeType::getPixmapFileStatic( const char *_filename )
 	    // Is it a directory or dont we know anything about it, or ist it a *.kdelnk file ?
 	    if ( result->getContent() == 0L || strcmp( "application/x-directory", result->getContent() ) == 0 ||
 		 strcmp( "application/x-kdelnk", result->getContent() ) == 0 )
-		return KMimeType::findType( _filename )->getPixmapFile( _filename );
+		return KMimeType::findType( _filename );
 	    
 	    // Can we trust the result ?
 	    if ( result->getAccuracy() >= 50 )
@@ -1728,7 +1728,7 @@ const char* KMimeType::getPixmapFileStatic( const char *_filename )
 		KMimeType *type = KMimeType::findByName( result->getContent() );
 		// Do we know this mime type ?
 		if ( type )
-		    return type->getPixmapFile( _filename );
+		    return type;
 	    }
 	    KMimeType *type = KMimeType::findType( _filename );
 	    // Perhaps we should better listen to the magic :-)
@@ -1737,14 +1737,17 @@ const char* KMimeType::getPixmapFileStatic( const char *_filename )
 		KMimeType *type = KMimeType::findByName( result->getContent() );
 		// Do we know this mime type ?
 		if ( type )
-		    return type->getPixmapFile( _filename );
-		
+		    return type;
 	    }
-	    
 	}
     }
     
-    return KMimeType::findType( _filename )->getPixmapFile( _filename );
+    return KMimeType::findType( _filename );
+}
+
+const char* KMimeType::getPixmapFileStatic( const char *_filename )
+{
+    return KMimeType::getMagicMimeType( _filename )->getPixmapFile( _filename );
 }
 
 void KMimeType::initKMimeMagic()

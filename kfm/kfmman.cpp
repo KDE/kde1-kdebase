@@ -236,24 +236,38 @@ bool KFMManager::openURL( const char *_url, bool _reload )
     bHistoryStackLock = view->isHistoryStackLocked();
     
     // Do we know that it is !really! a file ?
-    // This gives us some speedup on local hard disks.
-    if ( KIOServer::isDir( _url ) == 0 )
+    // Then we can determine the mime type for shure and run
+    // the best matching binding
+    if ( KIOServer::isDir( _url ) == 0 && strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
     {    
 	debugT("It is for shure a FILE\n");
 	// A HACK
 	// We must support plugin protocols here!
 	// Do we try to open a tar file? We try to figure this
 	// out by looking at the extension only.
-	KMimeType *typ = KMimeType::findType( _url );
-	printf("Type: '%s'\n",typ->getMimeType());
-	
-	if ( strcmp( typ->getMimeType(), "application/x-tar" ) == 0L )
+	KMimeType *typ = KMimeType::getMagicMimeType( u.path() );
+	printf("URL='%s' Type: '%s'\n",u.path(),typ->getMimeType());
+	// A HACK
+	// tar files ( zipped ones ) can only be recognized by file extension.
+	QString tmp = _url;
+	if ( tmp.right(4) == ".tgz" || tmp.right(4) == ".tar" || tmp.right(7) == ".tar.gz" )
+	{
+	    // We change the destination on the fly
+	    tryURL = _url;
+	    tryURL += "#tar:/";
+	}	
+	// This is the smarter way to find out about tar files
+	// HACK: This just looks at the extension, too
+	//       Use KMimeMagic
+	else if ( strcmp( typ->getMimeType(), "application/x-tar" ) == 0L )
 	{
 	    // We change the destination on the fly
 	    tryURL = _url;
 	    tryURL += "#tar:/";
 	}
 	// HTML stuff is handled by us
+	// HACK: This just looks at the extension, too
+	//       Use KMimeMagic
 	else if ( strcmp( typ->getMimeType(), "text/html" ) == 0L )
 	{
 	    tryURL = _url;
@@ -261,11 +275,14 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 	else
 	{
 	    printf("EXEC MIMETYPE\n");
+	    // Execute the best matching binding for this URL.
+	    typ->run( _url );
+	    return false;
 	    // Can we run some default binding ?
-	    if ( KMimeBind::runBinding( _url ) )
-		return false;
-	    else // Ok, lets find out wether it is a directory or HTML
-		tryURL = _url;
+	    // if ( KMimeBind::runBinding( _url ) )
+	    // return false;
+	    //	    else // Ok, lets find out wether it is a directory or HTML
+	    //tryURL = _url;
 	}
     }
     else
@@ -297,6 +314,7 @@ bool KFMManager::openURL( const char *_url, bool _reload )
 
 void KFMManager::slotError( const char * )
 {
+    view->getGUI()->slotRemoveWaitingWidget( view );
 }
 
 void KFMManager::slotNewDirEntry( KIODirectoryEntry * _entry )
@@ -314,6 +332,107 @@ void KFMManager::slotNewDirEntry( KIODirectoryEntry * _entry )
     }
 }
 
+void KFMManager::writeBodyTag()
+{
+    // Open ".directory"
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup( "KFM HTML Defaults" );
+    QString text_color = config->readEntry( "TextColor" );
+    QString link_color = config->readEntry( "LinkColor" );
+    QString bg_color = config->readEntry( "BgColor" );
+    QString tmp2 = config->readEntry( "BgImage" );
+    QString bg_image;
+    if ( !tmp2.isNull() )
+	if ( tmp2.data()[0] != 0 )
+	{
+	    bg_image = getenv( "KDEDIR" );
+	    bg_image += "/lib/pics/wallpapers/";
+	    bg_image += tmp2.data();
+	}
+
+    KURL u( url );
+    // if we are on the local hard disk, we can look at .directory files    
+    if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    {
+	QString d = u.path();
+	if ( d.right( 1 ) != "/" )
+	    d += "/.directory";
+	else
+	    d += ".directory";
+    
+	printf("Trying .directory\n");
+    
+	QFile f( d.data() );
+	if ( f.open( IO_ReadOnly ) )
+	{
+	    printf("Opened .directory\n");
+	    
+	    QTextStream pstream( &f );
+	    KConfig config( &pstream );
+	    config.setGroup( "KDE Desktop Entry" );
+	    
+	    QString tmp = config.readEntry( "TextColor" );
+	    if ( !tmp.isNull() )
+		if ( tmp.data()[0] != 0 )
+		    text_color = tmp.data();
+	    tmp = config.readEntry( "LinkColor" );
+	    if ( !tmp.isNull() )
+		if ( tmp.data()[0] != 0 )
+		    link_color = tmp.data();
+	    tmp = config.readEntry( "BgColor" );
+	    if ( !tmp.isNull() )
+		if ( tmp.data()[0] != 0 )
+		    bg_color = tmp.data();
+	    tmp = config.readEntry( "BgImage" );
+	    if ( !tmp.isNull() )
+		if ( tmp.data()[0] != 0 )
+		{
+		    bg_image = getenv( "KDEDIR" );
+		    bg_image += "/lib/pics/wallpapers/";
+		    bg_image += tmp.data();
+		}
+	}
+	
+	printf("Back again\n");
+    }
+
+    view->write( "<body" );
+
+    printf("2\n");
+
+    if ( !text_color.isNull() )
+    {
+	printf("3\n");
+	view->write(" text=" );
+	view->write( text_color.data() );
+    }
+    printf("4\n");
+    if ( !link_color.isNull() )
+    {
+	printf("5\n");
+	view->write(" link=" );
+	view->write( link_color.data() );
+    }
+    printf("6\n");
+    if ( !bg_image.isNull() )
+    {
+	printf("7\n");
+	KURL u2( u, bg_image.data() );
+	view->write(" background=\"" );
+	QString t = u2.url();
+	view->write( t.data() );
+	view->write( "\"" );
+    }
+    else if ( !bg_color.isNull() )
+    {
+	printf("8\n");
+	view->write(" bgcolor=" );
+	view->write( bg_color.data() );
+    }
+    printf("9\n");
+    view->write( ">" );
+}
+
 void KFMManager::writeBeginning()
 {
     // Push the old URL on the stack if we are allowed to
@@ -329,7 +448,9 @@ void KFMManager::writeBeginning()
     view->parse();
     view->write( "<html><head><title>" );
     view->write( url.data() );
-    view->write( "</title></head><body bgcolor=#FFFFFF>" );
+    view->write( "</title></head>" );
+    
+    writeBodyTag();
     
     KURL u( url.data() );
     
@@ -732,7 +853,7 @@ void KFMManager::openPopupMenu( QStrList &_urls, const QPoint & _point )
     }
 
     popupMenu->insertItem( klocale->translate("Add To Bookmarks"), 
-			   view, SLOT( slotPopupBookmark() ) );
+			   view, SLOT( slotPopupBookmarks() ) );
 
     view->setPopupFiles( _urls );
     popupFiles.copy( _urls );

@@ -30,7 +30,6 @@ void testDir();
 void sig_handler( int signum );
 
 #include <klocale.h>
-static KLocale locale("kfm");
 
 void testDir( const char *_name )
 {
@@ -39,8 +38,8 @@ void testDir( const char *_name )
   if ( dp == NULL )
   {
     QString m = _name;
-    QMessageBox::message( locale.translate("KFM Information"), 
-			  locale.translate("Creating directory:\n") + m );
+    QMessageBox::message( klocale->translate("KFM Information"), 
+			  klocale->translate("Creating directory:\n") + m );
     ::mkdir( _name, S_IRWXU );
   }
   else
@@ -176,8 +175,8 @@ int main( int argc, char ** argv )
 
     if ( !bTemplates )
     {
-	QMessageBox::message( locale.translate("KFM Information"),
-			      locale.translate("Installing Templates") );
+	QMessageBox::message( klocale->translate("KFM Information"),
+			      klocale->translate("Installing Templates") );
 	QString cmd;
 	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s", 
 		    kapp->kdedir().data(), KFMPaths::TemplatesPath().data() );
@@ -207,19 +206,19 @@ int main( int argc, char ** argv )
     fclose( f );
 
     // Stephan: alias some translated string to find them faster
-    locale.aliasLocale("Open", ID_STRING_OPEN);
-    locale.aliasLocale("Cd", ID_STRING_CD);
-    locale.aliasLocale("New View", ID_STRING_NEW_VIEW);
-    locale.aliasLocale("Copy", ID_STRING_COPY);
-    locale.aliasLocale("Delete", ID_STRING_DELETE);
-    locale.aliasLocale("Move to Trash", ID_STRING_MOVE_TO_TRASH);
-    locale.aliasLocale("Paste", ID_STRING_PASTE);
-    locale.aliasLocale("Open with", ID_STRING_OPEN_WITH);
-    locale.aliasLocale("Cut", ID_STRING_CUT);
-    locale.aliasLocale("Move", ID_STRING_MOVE);
-    locale.aliasLocale("Properties", ID_STRING_PROP);
-    locale.aliasLocale("Link", ID_STRING_LINK);
-    locale.aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
+    klocale->aliasLocale("Open", ID_STRING_OPEN);
+    klocale->aliasLocale("Cd", ID_STRING_CD);
+    klocale->aliasLocale("New View", ID_STRING_NEW_VIEW);
+    klocale->aliasLocale("Copy", ID_STRING_COPY);
+    klocale->aliasLocale("Delete", ID_STRING_DELETE);
+    klocale->aliasLocale("Move to Trash", ID_STRING_MOVE_TO_TRASH);
+    klocale->aliasLocale("Paste", ID_STRING_PASTE);
+    klocale->aliasLocale("Open with", ID_STRING_OPEN_WITH);
+    klocale->aliasLocale("Cut", ID_STRING_CUT);
+    klocale->aliasLocale("Move", ID_STRING_MOVE);
+    klocale->aliasLocale("Properties", ID_STRING_PROP);
+    klocale->aliasLocale("Link", ID_STRING_LINK);
+    klocale->aliasLocale("Empty Trash Bin", ID_STRING_TRASH);
 
     debugT("1. Init KIOManager\n");
 

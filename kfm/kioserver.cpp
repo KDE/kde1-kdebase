@@ -299,7 +299,7 @@ bool KIOServer::supports( const char *_url, int _mode )
     }
     else if ( strcmp( u.protocol(), "file" ) == 0 )
     {
-        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_Link | KIO_List ) & _mode ) == _mode )
+        if ( ( ( KIO_Delete | KIO_Read | KIO_Write | KIO_MakeDir | KIO_Link | KIO_List | KIO_Move ) & _mode ) == _mode )
 	    return true;
 	return false;
     }

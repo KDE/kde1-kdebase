@@ -155,6 +155,8 @@ void KFMJob::slotError( const char *_text )
 {
     QMessageBox::message( klocale->translate("KFM Error"),
 			  _text );
+    emit error( _text );
+    
     /*
     KMsgWin *m = new KMsgWin( 0L, klocale->translate("Error"), 
 			      _text, KMsgWin::EXCLAMATION, 
@@ -191,14 +193,14 @@ void KFMJob::testMimeType( const char *_text)
 {
     bCheckedMimeType = TRUE;
     
-    printf("SAMPLE:\n%s\n",_text);
+    debugT("SAMPLE:\n%s\n",_text);
     
     KMimeMagicResult *result = KMimeType::findBufferType( _text, strlen( _text ) );
-    fprintf(stderr,"RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
+    debugT("RETURN '%s' '%i'\n",result->getContent().data(),result->getAccuracy() );
     
     if ( strcmp( "text/html", result->getContent() ) == 0 ) 
     {
-	fprintf(stderr,"IS HTML\n");
+	debugT("IS HTML\n");
 	isHTML = TRUE;
 	emit mimeType( "text/html" );
 	emit data( _text );
@@ -209,7 +211,7 @@ void KFMJob::testMimeType( const char *_text)
     }
     else
     {
-	fprintf(stderr,"UNKNOWN TYPE\n");
+	debugT("UNKNOWN TYPE\n");
 	// Dont know the mime type
 	emit mimeType( 0L );
     }

@@ -400,9 +400,17 @@ public:
     /**
      * Used to determine the pixmap for a certain file.
      * Uses @ref KMimeMagic for this.
+     *
+     * @see #getMagicMimeType
      */
     static const char* getPixmapFileStatic( const char *_filename );
-    
+
+    /**
+     * Used to determine the mime type of a given file on the local
+     * hard disk.
+     */
+    static KMimeType* getMagicMimeType( const char *_filename );
+
     /**
      * Fills _list with all bindings for _url. Each binding is 
      * represented by a string. You may use such a string as text

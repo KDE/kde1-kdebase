@@ -40,8 +40,9 @@ Properties::Properties( const char *_url ) : QObject()
     tab->setGeometry( tab->x(), tab->y(), 400, 400 );
 
     insertPages();
-    
-    tab->setCancelButton();
+
+    tab->setOKButton(klocale->translate("OK")); 
+    tab->setCancelButton(klocale->translate("Cancel"));
 
     connect( tab, SIGNAL( applyButtonPressed() ), this, SLOT( slotApply() ) );
     

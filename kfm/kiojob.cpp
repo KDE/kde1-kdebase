@@ -463,16 +463,19 @@ void KIOJob::move( QStrList & _src_url_list, const char *_dest_dir_url )
     char *p;
     for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
     {
+	QString tmp = p;
+	if ( tmp.right(1) != '/' )
+	    tmp += "/";
 	KURL su( p );
 	
 	QString d = _dest_dir_url;
 	d.detach();
-	if ( d.length() > 0 && d.data()[ d.length() - 1 ] != '/' )
+	if ( d.right(1) != '/' )
 	    d += "/";
-	if ( strcmp( su.protocol(), "tar" ) == 0 )
+	/* if ( strcmp( su.protocol(), "tar" ) == 0 )
 	    d += su.filename( true );
-	else
-	    d += su.filename();
+	else */
+	d += su.filename();
 	
 	cmDestURLList.append( d.data() );
     }
