@@ -160,6 +160,20 @@ msgstr ""
 msgid "Unsupported URL"
 msgstr "URL non supportata"
 
+#: syssound.cpp:455
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+
+#: syssound.cpp:465
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seemto be a WAV--file."
+msgstr ""
+
 #: syssound.cpp:468
 msgid "Improper File Extension"
 msgstr "Estensione file Impropria"

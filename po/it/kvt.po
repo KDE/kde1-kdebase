@@ -79,6 +79,11 @@ msgstr "nero su giallo chiaro"
 msgid "Linu&x Console"
 msgstr "Console Linu&x"
 
+#: main.C:443
+#, fuzzy
+msgid "&Custom Colors"
+msgstr "&Colore"
+
 #: main.C:450 main.C:758
 msgid "Hide &Menubar"
 msgstr "Nascondi Barra &Menu"
@@ -157,6 +162,22 @@ msgstr ""
 "I colori impostati saranno effettivi\n"
 "quando la tastiera sara resa insicura."
 
+#: main.C:1151
+#, fuzzy
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulazione Terminale  per il K Desktop Environment\n"
+"basato su rxvt-2.08 di Robert Nation"
 
 #: main.C:1155
 msgid "Permitted arguments are:\n"
@@ -166,18 +187,21 @@ msgstr "Gli argomenti consentiti sono:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <comando> <arg>  ... esegue  il comando con arg - deve essere l'ultimo argomento\n"
+"-e <comando> <arg>  ... esegue  il comando con arg - deve essere l'ultimo "
+"argomento\n"
+
 #: main.C:1157
 msgid "-display <name>           specify the display (server)\n"
 msgstr "-display <nome>          specifica il nome del display (server)\n"
 
 #: main.C:1158
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr "-vt_geometry <spec>      le dimensioni iniziali della finestra "
+msgstr "-vt_geometry <spec>      le dimensioni iniziali della finestra\n"
 
 #: main.C:1159
+#, fuzzy
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-display <nome>          specifica il nome del display (server)\n"
 
 #: main.C:1160
 msgid "-vt_bg <colour>           background color\n"
@@ -263,4 +287,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-

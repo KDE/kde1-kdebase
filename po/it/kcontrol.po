@@ -38,5 +38,3 @@ msgstr ""
 "\n"
 "Ringraziamenti a:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
-
- 

@@ -38,6 +38,9 @@ msgstr "Indirizzo"
 msgid "&Top"
 msgstr "&In alto"
 
+#: panel.cpp:61
+msgid "&Left"
+msgstr ""
 
 #: panel.cpp:62
 msgid "&Bottom"
@@ -47,6 +50,9 @@ msgstr "I&n Basso"
 msgid "Taskbar"
 msgstr "Barra Task"
 
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr ""
 
 #: panel.cpp:77
 msgid "T&op"
@@ -56,22 +62,38 @@ msgstr "In &alto"
 msgid "Botto&m"
 msgstr "In B&asso"
 
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr ""
 
 #: panel.cpp:96
 msgid "T&iny"
 msgstr "P&iccola"
 
+#: panel.cpp:98
+msgid "&Normal"
+msgstr ""
 
 #: panel.cpp:100
 msgid "L&arge"
 msgstr "&Grande"
 
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr ""
 
+#: desktops.cpp:82
+msgid "&Width"
+msgstr ""
 
 #: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Menu di aiuto"
 
+#: options.cpp:39
+#, fuzzy
+msgid "Show &Menu Tooltips"
+msgstr "Menu di aiuto"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -85,6 +107,17 @@ msgstr "ms"
 msgid "Others"
 msgstr "Altri"
 
+#: options.cpp:69
+msgid "Personal &First"
+msgstr ""
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr ""
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr ""
 
 #: options.cpp:81
 msgid "Clock"
@@ -97,5 +130,3 @@ msgstr "&24H"
 #: options.cpp:85
 msgid "&12h AM/PM"
 msgstr "&12H AM/PM"
-
-

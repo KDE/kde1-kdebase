@@ -30,6 +30,9 @@ msgstr "&Barra Titolo"
 msgid "&Desktop"
 msgstr "&Desktop"
 
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr ""
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -121,13 +124,29 @@ msgid ""
 msgstr ""
 "Un doppio click con il pulsante sinistro del Mouse\n"
 "  sulla barra titolo provoca:"
+
+#: titlebar.cpp:988
+#, fuzzy
+msgid "(Un)Maximize"
+msgstr "Ingrandisci"
+
 #: titlebar.cpp:989
 msgid "Move"
 msgstr "Muovi"
 
+#: titlebar.cpp:990
+#, fuzzy
+msgid "(Un)Shade"
+msgstr "Sfumata"
+
 #: titlebar.cpp:991
 msgid "Iconify"
 msgstr "Iconifica"
+
+#: titlebar.cpp:992
+#, fuzzy
+msgid "(Un)Sticky"
+msgstr "Appiccicato"
 
 #: titlebar.cpp:993
 msgid "Resize"
@@ -177,6 +196,10 @@ msgstr "Interattivo"
 msgid "Random"
 msgstr "Casuale"
 
+#: windows.cpp:94
+#, fuzzy
+msgid "Manual"
+msgstr "Menu"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
@@ -249,4 +272,3 @@ msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-

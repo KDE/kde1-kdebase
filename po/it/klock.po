@@ -63,6 +63,20 @@ msgstr "Numero di pipistrelli:"
 msgid "About Bat"
 msgstr "Info su Bat(Boing)"
 
+#: bat.cpp:637
+#, fuzzy
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 Scott Draves\n"
+"\n"
+"Porting su KDE di Emanuel Pirker."
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
@@ -563,11 +577,19 @@ msgstr ""
 msgid "Space (GL)"
 msgstr "Spazio (GL)"
 
+#: space.cpp:581
+#, fuzzy
+msgid "Setup KSpace"
+msgstr "Configurazione salvaschermo \"KSlip\""
 
 #: space.cpp:597
 msgid "Warp Interval:"
 msgstr "Intervallo:"
 
+#: space.cpp:685
+#, fuzzy
+msgid "About KSpace"
+msgstr "Info su Slip"
 
 #: space.cpp:687
 msgid ""

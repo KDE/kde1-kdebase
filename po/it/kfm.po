@@ -559,6 +559,10 @@ msgstr "Spaziatura Orizontale griglia:"
 msgid "Vertical Root Grid Spacing:"
 msgstr "Spaziatura Verticale griglia:"
 
+#: bookmark.cpp:257
+#, fuzzy
+msgid "Could not write bookmark"
+msgstr "Impossibile scrivere su\n"
 
 #: kfmprops.cpp:237
 msgid "Full Name"
@@ -1028,6 +1032,13 @@ msgid ""
 msgstr ""
 "Impossibile creare il Socket per\n"
 "%s"
+
+#: kiojob.cpp:1218 kiojob.cpp:1349
+#, fuzzy, c-format
+msgid ""
+"Unknown host in\n"
+"%s"
+msgstr "Collegamento sconosciuto"
 
 #: kiojob.cpp:1226 kiojob.cpp:1357
 #, c-format

@@ -14,6 +14,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
+#: kmenuedit.cpp:62
+#, fuzzy
+msgid "&Reload"
+msgstr "Ricarica Menu"
+
+#: kmenuedit.cpp:68
+#, fuzzy
+msgid "Change &Menuname"
+msgstr "Cambia nomi menu"
+
+#: kmenuedit.cpp:69
+#, fuzzy
+msgid "Reload &Filetypes"
+msgstr "Ricarica Menu"
+
 #: kmenuedit.cpp:76
 msgid "by"
 msgstr "da"
@@ -22,6 +37,11 @@ msgstr "da"
 msgid "Changes not saved !"
 msgstr "Cambiamenti non salvati"
 
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
@@ -185,6 +205,15 @@ msgstr "Opzioni Terminale:"
 msgid "Binary Pattern:"
 msgstr "Schema Binario:"
 
+#: entrydialog.cpp:300
+#, fuzzy
+msgid "Application to swallow:"
+msgstr "Applicazione"
+
+#: entrydialog.cpp:306
+#, fuzzy
+msgid "Title of application:"
+msgstr "Applicazione"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
@@ -229,4 +258,3 @@ msgstr "Personale:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Default:"
-
