@@ -38,6 +38,8 @@
 #include "debug.h"
 #include "kvt_version.h"
 
+#include <config.h>
+
 #ifdef GREEK_KBD	
 #include "grkelot.h"
 #endif
@@ -286,10 +288,10 @@ int init_display(int argc,char **argv)
   
   /* if no terminal has been set by -tn option, set one */ 
   if (!terminal) {
+# ifdef HAVE_SETUPTERM
     char **ptr = termlist;
     int i;
     while(*ptr) {
-    	printf("Test: %s\n", *ptr);
     	if (setupterm(*ptr, 1, &i) != ERR) {
 	    terminal = safemalloc(strlen(*ptr)+6, "terminal");
 	    sprintf(terminal, "TERM=%s", *ptr);
@@ -297,6 +299,10 @@ int init_display(int argc,char **argv)
 	}
 	ptr++;
     }
+# else
+    terminal = safemalloc(11, "terminal");
+    sprintf(terminal, "TERM=xterm");
+# endif
     putenv(terminal);
   }
 

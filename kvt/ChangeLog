@@ -1,4 +1,5 @@
 since kvt-0.18.5
+  - HAVE_SETUPTERM used 
   - Now kvt searches again a list of TERM-entries and takes the first
     (`best') available.  This should minimize problems with
     unincomplete or antiquated terminfo/termcap databases. (This is
