@@ -1,0 +1,4 @@
+xhost +local:root
+su -c "kfm -sw"
+xhost -local:root
+
