@@ -665,7 +665,6 @@ PMenuItem * PMenu::searchItem(QString name)
       if (i.isDir()) { 
 	PMenu *dir = new PMenu();
 	dir->parse(QDir(name));
-	debug("create %s",name.data());
 	pmi = new PMenuItem(submenu);
 	pmi->parse(&i, dir);
       }
