@@ -53,8 +53,10 @@ KWindowConfig::~KWindowConfig ()
   delete transparent;
   delete opaque;
   delete clickTo;
-  delete placementCombo; //CT 11feb98 - leaking memory
-  delete placementBox;//CT 31jan98 - leaking memory bug squash :-)
+  delete placementCombo;    //CT 11feb98 - leaking memory
+  delete iTLabel;                       
+  delete interactiveTrigger;
+  delete placementBox;      //CT 31jan98 - leaking memory bug squash :-)
   delete followMouse;
   delete animOn;
   delete animOff;
@@ -78,16 +80,29 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   animOn = new QRadioButton(klocale->translate("On"), resizeBox);
   animOff = new QRadioButton(klocale->translate("Off"), resizeBox);
 
-  // placement policy --- CT 19jan98 ---
+  // placement policy --- CT 19jan98, 13mar98 ---
   placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
   placementCombo = new QComboBox(FALSE, placementBox);
   placementCombo->insertItem(klocale->translate(i18n("Smart")),
 			     SMART_PLACEMENT);
   placementCombo->insertItem(klocale->translate(i18n("Cascade")),
 			     CASCADE_PLACEMENT);
+  placementCombo->insertItem(klocale->translate(i18n("Interactive")),
+			     INTERACTIVE_PLACEMENT);
   placementCombo->insertItem(klocale->translate(i18n("Random")),
 			     RANDOM_PLACEMENT);
-  placementCombo->setCurrentItem(RANDOM_PLACEMENT);
+  placementCombo->insertItem(klocale->translate(i18n("Manual")),
+			     MANUAL_PLACEMENT);
+  placementCombo->setCurrentItem(SMART_PLACEMENT);
+  //CT 13mar98 interactive trigger config
+
+  connect(placementCombo, SIGNAL(activated(int)),this,
+	  SLOT(ifPlacementIsInteractive()) );
+  iTLabel = new QLabel(klocale->translate(i18n("Allowed Overlap:")), 
+		       placementBox);
+  interactiveTrigger = new KNumericSpinBox(placementBox);
+  interactiveTrigger->setRange(0,500);
+  
   
   // maximize behaviour
   maximizeBox = new QButtonGroup(klocale->translate("Maximize Style"), this);
@@ -161,13 +176,20 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
 
   // placement policy --- CT 31jan98 ---
   placementCombo->adjustSize();
+  iTLabel->adjustSize();
   if (placementCombo->width() < (boxW - 2*SPACE_XI)) 
     placementCombo->setGeometry(SPACE_XI,
-				SPACE_YI + titleH + buttonH/2,
+				SPACE_YI + titleH,
 				boxW - 2*SPACE_XI,
 				placementCombo->height());
   else
-    placementCombo->move(SPACE_XI, SPACE_YI + titleH + buttonH/2);
+    placementCombo->move(SPACE_XI, SPACE_YI + titleH);
+  //CT 13mar98
+  iTLabel->move(SPACE_XI, 2*SPACE_YI+placementCombo->height() + titleH/2);
+  interactiveTrigger->setGeometry(3/2*SPACE_XI+iTLabel->width(),
+				  2*SPACE_YI+placementCombo->height() 
+				  + titleH/2,
+				  40,20);
   int h3 = h;
 
   titleW = fm.width(placementBox->title());
@@ -355,6 +377,20 @@ void KWindowConfig::setAutoRaiseEnabled( )
     }
 }
 
+// CT 13mar98 interactiveTrigger configured by this slot
+void KWindowConfig::ifPlacementIsInteractive( )
+{
+  if( placementCombo->currentItem() == INTERACTIVE_PLACEMENT) {
+    iTLabel->setEnabled(TRUE);
+    interactiveTrigger->show();
+  }
+  else {
+    iTLabel->setEnabled(FALSE);
+    interactiveTrigger->hide();
+  }
+}
+
+
 void KWindowConfig::GetSettings( void )
 {
   QString key;
@@ -375,14 +411,34 @@ void KWindowConfig::GetSettings( void )
 
   // placement policy --- CT 19jan98 ---
   key = config->readEntry(KWM_PLACEMENT);
-  if( key == "smart")
-    setPlacement(SMART_PLACEMENT);
-  else if( key == "cascade")
-    setPlacement(CASCADE_PLACEMENT); //CT 31jan98
-  else
-    setPlacement(RANDOM_PLACEMENT);
-
-
+  //CT 13mar98 interactive placement
+  if( key.left(11) == "interactive") {
+    setPlacement(INTERACTIVE_PLACEMENT);
+    int comma_pos = key.find(',');
+    if (comma_pos < 0)
+      interactiveTrigger->setValue(0);
+    else
+      interactiveTrigger->setValue (key.right(key.length()
+					      - comma_pos).toUInt(0));
+    iTLabel->setEnabled(TRUE);
+    interactiveTrigger->show();
+  }
+  else {
+    interactiveTrigger->setValue(0);
+    iTLabel->setEnabled(FALSE);
+    interactiveTrigger->hide();
+    if( key == "random")
+      setPlacement(RANDOM_PLACEMENT);
+    else if( key == "cascade")
+      setPlacement(CASCADE_PLACEMENT); //CT 31jan98
+    //CT 31mar98 manual placement
+    else if( key == "manual")
+      setPlacement(MANUAL_PLACEMENT);
+    
+    else
+      setPlacement(SMART_PLACEMENT);
+  }
+  
   key = config->readEntry(KWM_FOCUS);
   if( key == "ClickToFocus")
     setFocus(CLICK_TO_FOCUS);
@@ -416,12 +472,20 @@ void KWindowConfig::SaveSettings( void )
 
   // placement policy --- CT 31jan98 ---
   v =getPlacement();
-  if (v == SMART_PLACEMENT)
-    config->writeEntry(KWM_PLACEMENT, "smart");
+  if (v == RANDOM_PLACEMENT)
+    config->writeEntry(KWM_PLACEMENT, "random");
   else if (v == CASCADE_PLACEMENT)
     config->writeEntry(KWM_PLACEMENT, "cascade");
+  //CT 13mar98 manual and interactive placement
+  else if (v == MANUAL_PLACEMENT)
+    config->writeEntry(KWM_PLACEMENT, "manual");
+  else if (v == INTERACTIVE_PLACEMENT) {
+    char tmpstr[20];
+    sprintf(tmpstr,"interactive,%d",interactiveTrigger->getValue());
+    config->writeEntry(KWM_PLACEMENT, tmpstr);
+  }
   else
-    config->writeEntry(KWM_PLACEMENT, "random");
+    config->writeEntry(KWM_PLACEMENT, "smart");
 
 
   v = getFocus();

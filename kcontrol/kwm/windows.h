@@ -32,8 +32,8 @@
 #include <qbttngrp.h>
 #include <qpushbt.h>
 #include <kslider.h>
-#include <qcombo.h> //CT 31jan98
-
+#include <qcombo.h>   //CT 31jan98
+#include <kspinbox.h> //CT 13mar98
 #include <kcontrol.h>
 
 #include <kwm.h>
@@ -54,9 +54,11 @@
 #define MAXIMIZE_VERT 1
 
 // CT 19jan98
-#define SMART_PLACEMENT   0
-#define CASCADE_PLACEMENT 1 //CT 31jan98
-#define RANDOM_PLACEMENT  2
+#define SMART_PLACEMENT       0
+#define CASCADE_PLACEMENT     1 //CT 31jan98
+#define INTERACTIVE_PLACEMENT 2 //CT 13mar98
+#define RANDOM_PLACEMENT      3
+#define MANUAL_PLACEMENT      4 //CT 13mar98
 
 
 class KWindowConfig : public KConfigWidget
@@ -73,6 +75,7 @@ public:
   
 private slots:
   void setAutoRaiseEnabled();
+  void ifPlacementIsInteractive();
 
 private:
 
@@ -98,6 +101,9 @@ private:
   // CT 19jan98
   QButtonGroup *placementBox;
   QComboBox *placementCombo;
+  // CT 13mar98
+  KNumericSpinBox *interactiveTrigger;
+  QLabel *iTLabel;
 
 
   QButtonGroup *focusBox;
