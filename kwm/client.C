@@ -822,6 +822,7 @@ void Client::paintEvent( QPaintEvent* ev ){
     qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
   }
   else {
+    // the users wants shaped windows! A lot of code but more or less trivial....
     int x,y;
     // first the corners
     int w1 = options.shapePixmapTopLeft->width();
@@ -963,6 +964,8 @@ void Client::paintEvent( QPaintEvent* ev ){
 }
 
 void Client::resizeEvent( QResizeEvent * ){
+  // we have been resized => we have to layout the window decoration
+  // again and adapt our swallowed application window
   layoutButtons();
 
   switch (getDecoration()){
@@ -983,6 +986,8 @@ void Client::resizeEvent( QResizeEvent * ){
   }
     
   if (options.ShapeMode && getDecoration() == KWM::normalDecoration){	
+    // the users wants shaped windows! After a resize we have to
+    // recalculate the pixmaps and create a new shape combine mask.
 
     QBitmap shapemask(width(), height());
     shapemask.fill(color0);
@@ -1743,6 +1748,7 @@ void Client::maximizeToggled(bool depressed){
 
 
 void Client::closeClicked(){
+  // closing of clients if handled by the manager itself.
   manager->closeClient(this);
 } 
 
@@ -1783,6 +1789,8 @@ void Client::stickyToggled(bool depressed){
 }
 
 void Client::menuPressed(){
+  // the menu button is somewhat special since it does not only show a
+  // popup menu but also reacts on doubleclicks. 
   static QTime *clicktime = 0;
   if (!isActive()){
     myapp->operations->hide();
@@ -1790,8 +1798,8 @@ void Client::menuPressed(){
     manager->activateClient(this);
   }
   if (clicktime && clicktime->msecsTo(QTime::currentTime())<700){
-    // some kind of doubleclick => close
-    //closeClicked();
+    // some kind of doubleclick => close. Will be checked in the
+    // menuReleased handler.
     do_close = TRUE;
   }
   else {

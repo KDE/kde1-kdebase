@@ -401,15 +401,26 @@ void Manager::unmapNotify(XUnmapEvent *e){
     c = getClient(e->window);
     if (c && c->window == e->window) {
       if(c->reparenting){
+	// if we are reparenting then X will send us a synethic unmap
+	// notify. Just unset reparenting and return in this case.
 	c->reparenting = FALSE;
 	return;
       }
       if (c->unmap_events > 0){
+	// kwm is so clever that windows on other than the current
+	// virutal desktop are unmapped, not just iconified. This
+	// saves a lot of CPU time if the window is for example an
+	// animation application (video et. al.). Drawback: we can
+	// recieve a lot of unmap notifies after a desktop switch which
+	// have to be ignored. For that reason each client counts self
+	// generated unmap events.
 	c->unmap_events--;
 	return;
       }
       switch (c->state) {
       case IconicState:
+	// if we are in iconic state we will only withdraw if it큦 a
+	// true send_event request.
   	if (e->send_event) {
 	  withdraw(c);
  	}
@@ -428,6 +439,9 @@ void Manager::unmapNotify(XUnmapEvent *e){
 // data structures.
 void Manager::destroyNotify(XDestroyWindowEvent *e){
     Client *c;
+    // the window is maybe a module communication or docking window?
+    // In this case removeModule and removeDockWindow will remove all
+    // references. Otherwise they do nothing.
     removeModule(e->window);
     removeDockWindow(e->window);
     c = getClient(e->window);
@@ -682,15 +696,20 @@ void Manager::propertyNotify(XPropertyEvent *e){
   del = (e->state == PropertyDelete);
 
   if (e->window == qt_xrootwin()){
+    // kwm observes a few properties of the root window for an easy
+    // communication with all kind of clients.
     if (a == kwm_current_desktop){
+      // current desktop changed => switch to the new current desktop
       switchDesktop(KWM::currentDesktop());
     }
     if (a == kwm_number_of_desktops){
+      // the number of desktops changed.
       number_of_desktops = KWM::numberOfDesktops();
       sendToModules(module_desktop_number_change, 0, (Window) number_of_desktops);
     }
     for (i=0;i<8;i++){
       if (a == da[i]){
+	// a desktop got a new name
 	sendToModules(module_desktop_name_change, 0, (Window) i+1);
       }
     }
@@ -698,9 +717,12 @@ void Manager::propertyNotify(XPropertyEvent *e){
   }
   
   c = getClient(e->window);
+
+  // if the window is none of our clients then just return
   if (c == 0 || c->window != e->window)
     return;
   
+  // check for a couple of standard X11 and additional KDE window properties
   switch (a) {
   case XA_WM_ICON_NAME:
   case XA_WM_NAME:
@@ -1773,14 +1795,6 @@ void Manager::manage(Window w, bool mapped){
     c->maximized = TRUE;
     c->buttonMaximize->toggle();
     
-//     if (mapped || pseudo_session_management){
-//       // avoid flickering
-//       c->maximized = TRUE;
-//       c->buttonMaximize->toggle();
-//     }
-//     else {
-//       c->maximize();
-//     }
     c->geometry_restore = tmprec;
   }
  
@@ -1819,7 +1833,7 @@ void Manager::manage(Window w, bool mapped){
   
 }
 
-// put the client in withdraw state (which means it is not managed an
+// put the client in withdraw state (which means it is not managed any
 // longer)
 void Manager::withdraw(Client* c){
   KWM::moveToDesktop(c->window, 0);
@@ -2445,7 +2459,7 @@ void Manager::getWindowProtocols(Client *c){
   }
 }
 
-// Motif support (Matthias)
+// basic Motif support 
 struct PropMotifWmHints
 {
   int      flags;
@@ -2462,7 +2476,7 @@ struct PropMotifWmHints
 #define MWM_DECOR_MINIMIZE            (1L << 5)
 #define MWM_DECOR_MAXIMIZE            (1L << 6)
 
-// this is for MWM hints (Motif).
+// this is for MWM hints (Motif window manager).
 void Manager::getMwmHints(Client  *c){
   int actual_format;
   Atom actual_type;
@@ -2476,7 +2490,10 @@ void Manager::getMwmHints(Client  *c){
     {
       if(nitems >= 4)
 	{
-	  // only interested in decorations
+	  // Motif defines a lot of more or less useful properties. We
+	  // are only interested in suppressing decorations. This is
+	  // important for StarOffice-3.1큦 floating toolbars which
+	  // would be shown within a strange floatwinshell otherwise.
   	  if (c->getDecoration() == KWM::normalDecoration){
   	    if (!mwm_hints->decorations)
 	      c->decoration = 0;
@@ -2723,6 +2740,9 @@ void Manager::darkenScreen(){
 void Manager::logout(){
   Client* c;
   XEvent ev;
+
+  // no user interactiong during session management. Therefore we grab
+  // the mouse and the keyboard.
   XGrabKeyboard(qt_xdisplay(),
 		qt_xrootwin(), False,
 		GrabModeAsync, GrabModeAsync,
@@ -2735,8 +2755,10 @@ void Manager::logout(){
   QString machine;
   QString properties;
   {
-    // this is maybe a KDE speciality: session management for 
-    // unmanaged root windows
+    // this is maybe a KDE speciality: session management for
+    // unmanaged toplevel windows. This is extremly useful for clients
+    // like kfm who do session management on their own but needs to
+    // recieve the saveYourself message for that purpose.
     unsigned int i, nwins;
     Window dw1, dw2, *wins;
 
@@ -2773,6 +2795,9 @@ void Manager::logout(){
   }
   
 
+
+  // ususal session management: send a saveYourself to all clients
+  // which requested the protocol.
 
   for (c = clients.first(); c; c = clients.next()){
     long result = 0;
@@ -2822,7 +2847,10 @@ void Manager::logout(){
 		   EnterWindowMask | PropertyChangeMask | PointerMotionMask);
     }
   }
-  // do this afterwards because some clients may have set XA_WM_COMMAND for
+
+  // Finally do poor man큦 session management with the help of kwm큦
+  // session management proxy.  This is done after the ususal
+  // saveYourself because some clients may have set XA_WM_COMMAND for
   // other windows, too
   for (c = clients.first(); c; c = clients.next()){
     if (!c->Psaveyourself){
@@ -2839,8 +2867,12 @@ void Manager::logout(){
       }
     }
   }
+
+  // release the mouse and the keyboard which we grabbed before
   XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
   XAllowEvents(qt_xdisplay(), ReplayKeyboard, CurrentTime);
+
+  // emit the showLogout signal to indicate that the session manager has finished.
   emit showLogout();
 }
 
@@ -3152,8 +3184,13 @@ void Manager::addModule(Window w){
   sendClientMessage(w, module_init, 0);
 
   if (KWM::isKWMDockModule(w)){
-    if (dock_module != None) //we have already a dock module
+    // the module wants to be even more: a module that handles the
+    // docking area
+    if (dock_module != None){
+      // we have already a dock module. That means the module can only
+      // become a normal kwm module
       KWM::setKWMModule(w);
+    }
     else{
       dock_module = w;
       Window *dw;
@@ -3162,6 +3199,10 @@ void Manager::addModule(Window w){
     }
   }
 
+  // inform the new module about the current state of the
+  // desktop. This means the managed windows (which are not hidden for
+  // modules) and its current stacking order (important for a pager,
+  // for example)
   Client* c;
   for (c=clients.first(); c; c=clients.next()){
     if (!c->hidden_for_modules)
@@ -3174,6 +3215,8 @@ void Manager::addModule(Window w){
   if (current())
     sendClientMessage(w, module_win_activate, (long) current()->window);
 
+  // last not least inform the new module about all soundevents that
+  // have been registered so far.
   const char* s;
   for (s=sound_events.first(); s; s=sound_events.next()){
     XEvent ev;
@@ -3198,6 +3241,9 @@ void Manager::addModule(Window w){
   }
   raiseElectricBorders();
 }
+
+// removes a module from the list. If w is not a module
+// communication window then it does nothing.
 void Manager::removeModule(Window w){
   Window *mw;
   for (mw=modules.first(); mw; mw=modules.next()){
@@ -3254,8 +3300,9 @@ void Manager::addDockWindow(Window w){
   }
 }
 
-// removes a new dock window to the docking area. Informs the
-// dock_module about the change.
+// removes a new dock window from the docking area. Informs the
+// dock_module about the change. If w is no dock window it does
+// nothing.
 void Manager::removeDockWindow(Window w){
   Window *dw;
   for (dw=dock_windows.first(); dw; dw=dock_windows.next()){

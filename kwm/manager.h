@@ -95,8 +95,8 @@ public:
   // if kwm is started after some windows already appeard.
   void manage(Window w, bool mapped = False);
 
-  // put the client in withdraw state (which means it is not managed an
-  // longer)
+  // put the client in withdraw state (which means it is not managed
+  // any longer)
   void withdraw(Client* c);
 
   // get a pointer to the Client object from an X11 window. The window
@@ -332,7 +332,7 @@ private:
   // will be stored in attributes of the passed client object.
   void getWMNormalHints(Client *c);
   void getWindowProtocols(Client *c);
-  // this is for MWM hints (Motif).
+  // this is for MWM hints (Motif window manager).
   void getMwmHints(Client  *c);
 
   // handles gravitation according to the gravity of the window.
@@ -401,9 +401,10 @@ private:
 
   // a list of all modules 
   QList <Window> modules;
-  // adds a new module to the list
+  // adds a new module to the list.
   void addModule(Window w);
-  // removes a module from  the list
+  // removes a module from the list. If w is not a module
+  // communication window then it does nothing.
   void removeModule(Window w);
   // send a messages to all modules. Usually these messages (stored in
   // the atom a) are about a certain client. This client is passed as
@@ -423,8 +424,9 @@ private:
   // adds a new dock window to the docking area. Informs the
   // dock_module about the change.
   void addDockWindow(Window w);
-  // removes a new dock window to the docking area. Informs the
-  // dock_module about the change.
+  // removes a new dock window from the docking area. Informs the
+  // dock_module about the change. If w is no dock window it does
+  // nothing.
   void removeDockWindow(Window w);
   Atom kwm_module;
   Atom module_init;
