@@ -6,7 +6,7 @@ LDADD   = $(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET
 #######	Files
 
 bin_PROGRAMS	= krootwm
-krootwm_SOURCES	= krootwm.C pmenu.C tools.C
+krootwm_SOURCES	= krootwm.C
 BUILTSOURCES =	krootwm.moc 
 DISTCLEANFILES = $(BUILTSOURCES)
 
