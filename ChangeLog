@@ -54,3 +54,5 @@
 	added kfontmanager 0.2.1
 0.9.1: changed kpaint's make style
 	bugfixing
+	updated kmines to 0.6.5
+	updated ktetris to 0.2.4

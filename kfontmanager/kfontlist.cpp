@@ -31,6 +31,7 @@
 #include <kapp.h>
 #include <qtabdlg.h>
 #include "kfontlist.h"
+#include <X11/Xlib.h>
 
 extern char DOCS_PATH[256];
 extern char PICS_PATH[256];

@@ -5,8 +5,8 @@ kwmclient: 0.2
 kdisplay: 0.5.3
 kdehelp: 0.4.11
 kghostview: 0.4
-ktetris: 0.2.3
-kmines: 0.6.4
+ktetris: 0.2.4
+kmines: 0.6.5
 kpat: 0.3 (patched a lot)
 kview: 0.10
 kpaint: 0.1
