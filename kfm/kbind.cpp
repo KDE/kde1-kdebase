@@ -131,10 +131,9 @@ const char* KMimeType::getIconPath( const char *_icon, bool _mini )
 	return res->data();
     else if ( !_mini && ( res = (*iconDict)[_icon] ) != 0L )
 	return res->data();
-    
-    static QString *s = 0;
-    if ( !s )
-        s = new QString;
+
+    QString *s = new QString; // We must create a new one each time, because its
+                              // address is stored in the QDict instances
     
     *s = localIconPath->data();
 
@@ -172,7 +171,9 @@ const char* KMimeType::getIconPath( const char *_icon, bool _mini )
 	    iconDict->insert( _icon, s );
 	return s->data();
     }
-    
+
+    delete s;
+
     if ( _mini )
 	return defaultMiniIcon->data();
     else
