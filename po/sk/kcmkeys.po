@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KCMKEYS\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1998-10-20 20:00+0001\n"
+"Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: plain\n"
+
+#: main.cpp:64
+msgid "&Standard shortcuts"
+msgstr "©tandardné &skratky"
+
+#: main.cpp:69
+msgid "&Global shortcuts"
+msgstr "&Globálne skratky"
+
+#: main.cpp:76
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "pou¾itie: kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:118
+msgid "Key binding settings"
+msgstr "Nastavenie kláves"
+
+#: standard.cpp:53
+msgid "New"
+msgstr "Nová"
+
+#: standard.cpp:57
+msgid "Next"
+msgstr "Ïalej"
+
+#: standard.cpp:58
+msgid "Prior"
+msgstr "Prior"
+
+#: standard.cpp:63
+msgid "Find"
+msgstr "Hµada»"
+
+#: standard.cpp:66
+msgid "Home"
+msgstr "Domov"
+
+#: standard.cpp:67
+msgid "End"
+msgstr "Koniec"
+
+#: global.cpp:81 standard.cpp:83
+msgid "Current scheme"
+msgstr "Súèasná schéma"
+
+#: global.cpp:83 standard.cpp:84
+msgid "KDE default"
+msgstr "KDE ¹tandardná"
+
+#: standard.cpp:85
+msgid "KDE lite"
+msgstr "KDE lite"
+
+#: global.cpp:90 standard.cpp:90
+msgid "&Key scheme"
+msgstr "Schéma &kláves"
+
+#: global.cpp:101
+msgid "&Add ..."
+msgstr "Prid&a»..."
+
+#: global.cpp:123
+msgid "&Save changes"
+msgstr "&Ulo¾i» zmeny"
+
+#: global.cpp:182
+msgid "Error removing scheme"
+msgstr "Chyba pri ru¹ení schémy"
+
+#: global.cpp:183
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Táto schéma kláves nemô¾e by» zru¹ená.\n"
+"Pravdepodobne nemô¾ete pristupova» k súboru, kde je\n"
+"schéma ulo¾ená."
+
+#: global.cpp:314
+msgid "Naming conflict"
+msgstr "Konflikt mien"
+
+#: global.cpp:315
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Prosím zvoµte si unikátne meno pre novú\n"
+"schému kláves. To, èo ste zadali u¾ je na\n"
+"zozname schém."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Pridávam schému"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Zadajte meno pre novú schému, ktorá má\n"
+"by» pridaná do vá¹ho osobného zoznamu.\n"
+"\n"
+"Klávesy pou¾ité v náhµade budú skopírované\n"
+"do tejto schémy."
