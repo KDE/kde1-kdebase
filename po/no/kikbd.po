@@ -194,7 +194,7 @@ msgid ""
 "Do you want to start Configuration?"
 msgstr ""
 "%s\n"
-"Ønsker du å starte Konfigurasjon?"
+"Ønsker du å starte konfigurasjon?"
 
 #: kikbdconf.cpp:216
 msgid "Your configuration is empty. Install system default."
