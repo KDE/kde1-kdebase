@@ -1,2 +1,2 @@
 #!/bin/sh
-konsole -e kfmsu2
+konsole  -vt_sz 80x12 -e kfmsu2
