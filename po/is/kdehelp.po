@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-10-05 01:30+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -193,83 +193,83 @@ msgstr "<!-- Ekki breyta þesari skrá handvirkt -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Vefslóðin (URL) \"%s\" er ölluð\n"
 
-#: mainwidget.cpp:130
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Nýr hjálpargluggi"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Opna skrá..."
 
-#: mainwidget.cpp:134
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "Opna &slóð (URL)"
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Leita"
 
-#: mainwidget.cpp:147
+#: mainwidget.cpp:157
 msgid "&Find..."
 msgstr "&Finna..."
 
-#: mainwidget.cpp:148
+#: mainwidget.cpp:159
 msgid "Find &next"
 msgstr "Finna &næsta..."
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:164
 msgid "&Back"
 msgstr "&Aftur"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:166
 msgid "&Forward"
 msgstr "Á&fram"
 
-#: mainwidget.cpp:156
+#: mainwidget.cpp:171
 msgid "&Top"
 msgstr "&Efst"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:173
 msgid "&Up"
 msgstr "&Upp"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:175
 msgid "&Previous"
 msgstr "&Fyrri"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:177
 msgid "&Next"
 msgstr "&Næsti"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:190
 msgid "&General Preferences..."
 msgstr "A&lmennar stillingar..."
 
-#: mainwidget.cpp:174
+#: mainwidget.cpp:193
 msgid "Show &Toolbar"
 msgstr "Sýna &tækjastiku"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:196
 msgid "Show &Location"
 msgstr "Sýna &staðsetningu"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:198
 msgid "Show Status&bar"
 msgstr "Sýna Ást&andsstiku"
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:201
 msgid "&Save Options"
 msgstr "&Vista valkosti"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:204
 msgid "KDE Help System\n"
 msgstr "KDE hjálparkerfi\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:205
 msgid "Version "
 msgstr "Útgáfa"
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:207
 msgid ""
 "\n"
 "\n"
@@ -286,51 +286,51 @@ msgstr ""
 "Þetta forrit fellur undir \"GNU General Public License\" (GPL).\n"
 "Enginn tekur neina ábyrgð á gæðum KDEHelp svo fremi lög leyfa."
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:224
 msgid "&Goto"
 msgstr "&Fara"
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:225
 msgid "&Bookmarks"
 msgstr "&Bókamerki"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:243
 msgid "Previous Document"
 msgstr "Fyrra skal"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:248
 msgid "Next Document"
 msgstr "Næsta skjal"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:255
 msgid "Previous Node"
 msgstr "Fyrri hlekkur"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:260
 msgid "Next Node"
 msgstr "Næsti hlekkur"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:265
 msgid "Up one Node"
 msgstr "Upp um hlekk"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:270
 msgid "Top Node"
 msgstr "Efsta hlekk"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:277
 msgid "Help Contents"
 msgstr "Innihald hjálparkerfis"
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:282
 msgid "Reload current document"
 msgstr "Endurlesa þetta skjal"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:311
 msgid "In the Constructor!"
 msgstr "Í smiðnum!"
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:605
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -338,11 +338,11 @@ msgstr ""
 "KDE Hjálparkerfi\n"
 "Útgáfa "
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:607
 msgid "About KDE Help"
 msgstr "Um KDE Hjálparkerfið"
 
-#: mainwidget.cpp:617
+#: mainwidget.cpp:640
 msgid "&Add Bookmark"
 msgstr "&Setja Bókamerki"
 

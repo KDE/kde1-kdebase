@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
@@ -454,12 +454,13 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Opção %s não é suportada neste plataforma!"
 
 #: main.cpp:422
+#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
 "Please contact your system administrator,\n"
-"tell him, that you need suid for the screensavers!"
+"tell him, that you need suid for the kcheckpass!"
 msgstr ""
 "Este sistema utiliza shadow passwords!\n"
 "Por favor contacte o seu administrador de sistema.\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMBELL\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,51 +21,51 @@ msgstr "Hakemistot:"
 msgid "Cannot open or read directory."
 msgstr "Tiedostoa tai hakemistoa ei voitu avata."
 
-#: kfindtop.cpp:118
+#: kfindtop.cpp:121
 msgid "&Start search"
 msgstr "&Aloita etsint‰"
 
-#: kfindtop.cpp:120
+#: kfindtop.cpp:123
 msgid "S&top search"
 msgstr "&Lopeta etsint‰"
 
-#: kfindtop.cpp:125
+#: kfindtop.cpp:128
 msgid "&Open"
 msgstr "&Avaa"
 
-#: kfindtop.cpp:127
+#: kfindtop.cpp:130
 msgid "&Add to archive"
 msgstr "&Lis‰‰ arkistoon"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "&Properties"
 msgstr "&Ominaisuudet"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "Open Containing &Folder"
 msgstr "Avaa kohteen &kansio"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:141
 msgid "&Save Search"
 msgstr "Ta&llenna etsint‰"
 
-#: kfindtop.cpp:155
+#: kfindtop.cpp:158
 msgid "&Select All"
 msgstr "&Valitse kaikki"
 
-#: kfindtop.cpp:157
+#: kfindtop.cpp:160
 msgid "Unse&lect All"
 msgstr "&Poista valinnat"
 
-#: kfindtop.cpp:159
+#: kfindtop.cpp:162
 msgid "&Invert Selection"
 msgstr "K‰‰nn‰ v&alinta"
 
-#: kfindtop.cpp:171
+#: kfindtop.cpp:174
 msgid "&Preferences ..."
 msgstr "&Ominaisuudet ..."
 
-#: kfindtop.cpp:176
+#: kfindtop.cpp:179
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -81,27 +81,27 @@ msgstr ""
 "Erityiset kiitokset Stephan Kulow:lle\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:196
+#: kfindtop.cpp:199
 msgid "Start Search"
 msgstr "Aloita etsint‰"
 
-#: kfindtop.cpp:201
+#: kfindtop.cpp:204
 msgid "New Search"
 msgstr "Uusi etsint‰"
 
-#: kfindtop.cpp:206
+#: kfindtop.cpp:209
 msgid "Stop Search"
 msgstr "Lopeta etsint‰"
 
-#: kfindtop.cpp:219
+#: kfindtop.cpp:222
 msgid "Add to archive"
 msgstr "Lis‰‰ arkistoon"
 
-#: kfindtop.cpp:234
+#: kfindtop.cpp:237
 msgid "Open Containing Folder"
 msgstr "Avaa kohteen kansio"
 
-#: kfindtop.cpp:239
+#: kfindtop.cpp:242
 msgid "Save Search Results"
 msgstr "Tallenna etsinn‰n tulokset"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -196,85 +196,85 @@ msgstr "<!-- Diese Datei bitte nicht ändern -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Ziel-URL hat falsches Format: %s\n"
 
-#: mainwidget.cpp:130
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Neues Hilfefenster"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Datei öffnen ..."
 
-#: mainwidget.cpp:134
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "UR&L öffnen..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Suchen"
 
-#: mainwidget.cpp:147
+#: mainwidget.cpp:157
 msgid "&Find..."
 msgstr "&Suchen"
 
-#: mainwidget.cpp:148
+#: mainwidget.cpp:159
 msgid "Find &next"
 msgstr "Wei&tersuchen"
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:164
 msgid "&Back"
 msgstr "&Zurück"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:166
 msgid "&Forward"
 msgstr "&Weiter"
 
-#: mainwidget.cpp:156
+#: mainwidget.cpp:171
 msgid "&Top"
 msgstr "&Startseite"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:173
 msgid "&Up"
 msgstr "&Hoch"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:175
 msgid "&Previous"
 msgstr "&Letztes"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:177
 msgid "&Next"
 msgstr "&Nächstes"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:190
 msgid "&General Preferences..."
 msgstr "&Einstellungen..."
 
 # "anzeigen" ist schlechter als "zeigen", weil länger.
 # Dann muß man aber auch die &'s ändern.
-#: mainwidget.cpp:174
+#: mainwidget.cpp:193
 msgid "Show &Toolbar"
 msgstr "Werkzeugleiste &anzeigen"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:196
 msgid "Show &Location"
 msgstr "A&dresse anzeigen"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:198
 msgid "Show Status&bar"
 msgstr "&Statuszeile anzeigen"
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:201
 msgid "&Save Options"
 msgstr "&Einstellungen sichern"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:204
 msgid "KDE Help System\n"
 msgstr "KDE-Hilfe-System\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:205
 msgid "Version "
 msgstr "Version "
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:207
 msgid ""
 "\n"
 "\n"
@@ -293,54 +293,54 @@ msgstr ""
 "Für KDEHelp gibt es ÜBERHAUPT KEINE GARANTIE, es sei denn, dies wird \n"
 "durch lokale Gesetze ausgeschlossen oder eingeschränkt."
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:224
 msgid "&Goto"
 msgstr "&Seite"
 
 # Hier heißt es "Favoriten", weiter oben hieß es 
 # Bookmark -- was ist gemeint?
 # Entweder Favorit oder Notiz.
-#: mainwidget.cpp:202
+#: mainwidget.cpp:225
 msgid "&Bookmarks"
 msgstr "&Lesezeichen"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:243
 msgid "Previous Document"
 msgstr "Letztes Dokument"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:248
 msgid "Next Document"
 msgstr "Nächstes Dokument"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:255
 msgid "Previous Node"
 msgstr "Letztes Thema"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:260
 msgid "Next Node"
 msgstr "Nächstes Thema"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:265
 msgid "Up one Node"
 msgstr "Eine Hierarchieebene nach oben"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:270
 msgid "Top Node"
 msgstr "Höchste Hierarchieebene"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:277
 msgid "Help Contents"
 msgstr "Inhalt der Hilfe "
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:282
 msgid "Reload current document"
 msgstr "Lade aktuelles Dokument neu"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:311
 msgid "In the Constructor!"
 msgstr "Im Konstruktor!"
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:605
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -348,12 +348,12 @@ msgstr ""
 "KDE-Hilfe-System\n"
 "Version"
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:607
 msgid "About KDE Help"
 msgstr "Information über KDE-Hilfe"
 
 # ??? Hier wieder: Notiz oder Favorit?
-#: mainwidget.cpp:617
+#: mainwidget.cpp:640
 msgid "&Add Bookmark"
 msgstr "&Lesezeichen hinzufügen"
 

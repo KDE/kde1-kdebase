@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind 0.3.5\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -21,51 +21,51 @@ msgstr "Prieèinky:"
 msgid "Cannot open or read directory."
 msgstr "Nemô¾em otvori» alebo èíta» prieèinok."
 
-#: kfindtop.cpp:118
+#: kfindtop.cpp:121
 msgid "&Start search"
 msgstr "&Spusti» hµadanie"
 
-#: kfindtop.cpp:120
+#: kfindtop.cpp:123
 msgid "S&top search"
 msgstr "Zas&tavi» hµadanie"
 
-#: kfindtop.cpp:125
+#: kfindtop.cpp:128
 msgid "&Open"
 msgstr "&Otvori»"
 
-#: kfindtop.cpp:127
+#: kfindtop.cpp:130
 msgid "&Add to archive"
 msgstr "Prida» do &archívu"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "&Properties"
 msgstr "&Vlastnosti"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "Open Containing &Folder"
 msgstr "Otvori» zo&dpovedajúci prieèinok"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:141
 msgid "&Save Search"
 msgstr "U&lo¾i» výsledky"
 
-#: kfindtop.cpp:155
+#: kfindtop.cpp:158
 msgid "&Select All"
 msgstr "Vybr&a» v¹etky"
 
-#: kfindtop.cpp:157
+#: kfindtop.cpp:160
 msgid "Unse&lect All"
 msgstr "&Odobra» v¹etky"
 
-#: kfindtop.cpp:159
+#: kfindtop.cpp:162
 msgid "&Invert Selection"
 msgstr "Obrát&i» výber"
 
-#: kfindtop.cpp:171
+#: kfindtop.cpp:174
 msgid "&Preferences ..."
 msgstr "&Nastavenie..."
 
-#: kfindtop.cpp:176
+#: kfindtop.cpp:179
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -82,27 +82,27 @@ msgstr ""
 "Zvlá¹tne poïakovanie Stephanu Kulowovi\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:196
+#: kfindtop.cpp:199
 msgid "Start Search"
 msgstr "Spusti» hµadanie"
 
-#: kfindtop.cpp:201
+#: kfindtop.cpp:204
 msgid "New Search"
 msgstr "Nové hµadanie"
 
-#: kfindtop.cpp:206
+#: kfindtop.cpp:209
 msgid "Stop Search"
 msgstr "Zastavi» hµadanie"
 
-#: kfindtop.cpp:219
+#: kfindtop.cpp:222
 msgid "Add to archive"
 msgstr "Prida» do archívu"
 
-#: kfindtop.cpp:234
+#: kfindtop.cpp:237
 msgid "Open Containing Folder"
 msgstr "Otvori» odpovedajúci prieèinok"
 
-#: kfindtop.cpp:239
+#: kfindtop.cpp:242
 msgid "Save Search Results"
 msgstr "Ulo¾i» výsledky"
 

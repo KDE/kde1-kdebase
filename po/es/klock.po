@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-11-27 19:47+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -455,12 +455,13 @@ msgid "Option %s is not support on this plattform!"
 msgstr "La opción %s no está disponible en esta arquitectura."
 
 #: main.cpp:422
+#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
 "Your system uses shadow passwords.\n"
 "Please contact your system administrator,\n"
-"tell him, that you need suid for the screensavers!"
+"tell him, that you need suid for the kcheckpass!"
 msgstr ""
 "Advertencia: ¡No podrá desbloquear la pantalla!\n"
 "\n"

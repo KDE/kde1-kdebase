@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/krootwm\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-02-26 21:10+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "Hjelp om skrivebord"
 msgid "About KDE..."
 msgstr "Om KDE..."
 
-#: krootwm.C:263 krootwm.C:286 krootwm.C:760 krootwm.C:768
+#: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
 msgstr "Ny"
 
@@ -73,7 +73,7 @@ msgstr "Vinduer"
 msgid "Edit Bookmarks"
 msgstr "Rediger bokmerker"
 
-#: krootwm.C:358 krootwm.C:770
+#: krootwm.C:358 krootwm.C:771
 msgid "Folder"
 msgstr "Mappe"
 
@@ -82,14 +82,14 @@ msgstr "Mappe"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "FEIL: Mal eksisterer ikke '%s'"
 
-#: krootwm.C:791
+#: krootwm.C:792
 msgid "Could not create folder"
 msgstr "Kunne ikke opprette mappe"
 
-#: krootwm.C:859
+#: krootwm.C:860
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:863
+#: krootwm.C:864
 msgid "Usage:"
 msgstr "Bruk:"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-12-01 HO:MI+ZONE\n"
 "Last-Translator: Erez Nir <erez-n@actcom.co.il>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -200,83 +200,83 @@ msgstr ""
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "%s :ןיקת וניא דעיה רושיק :CGI תינכת\n"
 
-#: mainwidget.cpp:130
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "שד&ח הרזע ןולח"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "ץבוק חת&פ"
 
-#: mainwidget.cpp:134
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "רושי&ק חתפ"
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:142
 msgid "&Search"
 msgstr "שופי&ח"
 
-#: mainwidget.cpp:147
+#: mainwidget.cpp:157
 msgid "&Find..."
 msgstr ""
 
-#: mainwidget.cpp:148
+#: mainwidget.cpp:159
 msgid "Find &next"
 msgstr ""
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:164
 msgid "&Back"
 msgstr "רו&זח"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:166
 msgid "&Forward"
 msgstr "המי&דק"
 
-#: mainwidget.cpp:156
+#: mainwidget.cpp:171
 msgid "&Top"
 msgstr "הנויל&ע המר"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:173
 msgid "&Up"
 msgstr "הלע&מל"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:175
 msgid "&Previous"
 msgstr "םדוקה"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:177
 msgid "&Next"
 msgstr "אבה"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:190
 msgid "&General Preferences..."
 msgstr "...תויללכ תורדגה"
 
-#: mainwidget.cpp:174
+#: mainwidget.cpp:193
 msgid "Show &Toolbar"
 msgstr "םילכ לגרס גצה"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:196
 msgid "Show &Location"
 msgstr "תבותכ גצה"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:198
 msgid "Show Status&bar"
 msgstr "בצמ תרוש גצה"
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:201
 msgid "&Save Options"
 msgstr "תורדגה רומש"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:204
 msgid "KDE Help System\n"
 msgstr "KDE לש הרזעה תכרעמ\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:205
 msgid "Version "
 msgstr "הסריג "
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:207
 msgid ""
 "\n"
 "\n"
@@ -291,61 +291,61 @@ msgstr ""
 "GNU לש חותפה ןוישרה אוה וז הנכותל ןוישרה\n"
 "קוח יפ לע רתומה תדימב - תוירחא לכ אלל העיגמ KDE תרזע"
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:224
 msgid "&Goto"
 msgstr "ל רובע"
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:225
 msgid "&Bookmarks"
 msgstr "תויינמיס"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:243
 msgid "Previous Document"
 msgstr "םדוק ךמסמ"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:248
 msgid "Next Document"
 msgstr "אבה ךמסמ"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:255
 msgid "Previous Node"
 msgstr "תמדוק תמוצ"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:260
 msgid "Next Node"
 msgstr "האבה תמוצ"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:265
 msgid "Up one Node"
 msgstr "הלעמ תחא תמוצ"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:270
 msgid "Top Node"
 msgstr "הנוילעה תמוצה"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:277
 msgid "Help Contents"
 msgstr "הרזע תלוכת"
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:282
 msgid "Reload current document"
 msgstr "יחכונה ךמסמה תא שדחמ ןעט"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:311
 msgid "In the Constructor!"
 msgstr "??הנובה ךותב אצמנ"
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:605
 msgid ""
 "KDE Help System\n"
 "Version "
 msgstr "KDE לש הרזעה תכרעמהסריג "
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:607
 msgid "About KDE Help"
 msgstr "הרזעה תכרעמ תודוא"
 
-#: mainwidget.cpp:617
+#: mainwidget.cpp:640
 msgid "&Add Bookmark"
 msgstr "היינמיס ףסוה"
 

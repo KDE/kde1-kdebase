@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-04-20 22:28+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -21,54 +21,54 @@ msgstr "目錄:"
 msgid "Cannot open or read directory."
 msgstr "不能開啟或讀取目錄."
 
-#: kfindtop.cpp:118
+#: kfindtop.cpp:121
 #, fuzzy
 msgid "&Start search"
 msgstr "開始搜尋"
 
-#: kfindtop.cpp:120
+#: kfindtop.cpp:123
 #, fuzzy
 msgid "S&top search"
 msgstr "停止搜尋"
 
-#: kfindtop.cpp:125
+#: kfindtop.cpp:128
 msgid "&Open"
 msgstr "開啟[&O]"
 
-#: kfindtop.cpp:127
+#: kfindtop.cpp:130
 msgid "&Add to archive"
 msgstr "加至壓縮檔[&A]"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "&Properties"
 msgstr "內容[&P]"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "Open Containing &Folder"
 msgstr "開啟包含檔案的資料夾[&F]"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:141
 msgid "&Save Search"
 msgstr "儲存搜尋結果[&S]"
 
-#: kfindtop.cpp:155
+#: kfindtop.cpp:158
 msgid "&Select All"
 msgstr "選擇全部[&S]"
 
-#: kfindtop.cpp:157
+#: kfindtop.cpp:160
 #, fuzzy
 msgid "Unse&lect All"
 msgstr "選擇全部[&S]"
 
-#: kfindtop.cpp:159
+#: kfindtop.cpp:162
 msgid "&Invert Selection"
 msgstr "反轉選擇[&I]"
 
-#: kfindtop.cpp:171
+#: kfindtop.cpp:174
 msgid "&Preferences ..."
 msgstr "功\能設定[&P] ..."
 
-#: kfindtop.cpp:176
+#: kfindtop.cpp:179
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -79,27 +79,27 @@ msgid ""
 "<coolo@kde.org>"
 msgstr ""
 
-#: kfindtop.cpp:196
+#: kfindtop.cpp:199
 msgid "Start Search"
 msgstr "開始搜尋"
 
-#: kfindtop.cpp:201
+#: kfindtop.cpp:204
 msgid "New Search"
 msgstr "新搜尋"
 
-#: kfindtop.cpp:206
+#: kfindtop.cpp:209
 msgid "Stop Search"
 msgstr "停止搜尋"
 
-#: kfindtop.cpp:219
+#: kfindtop.cpp:222
 msgid "Add to archive"
 msgstr "加至壓縮檔"
 
-#: kfindtop.cpp:234
+#: kfindtop.cpp:237
 msgid "Open Containing Folder"
 msgstr "開啟包含檔案的資料夾"
 
-#: kfindtop.cpp:239
+#: kfindtop.cpp:242
 msgid "Save Search Results"
 msgstr "儲存搜尋結果"
 

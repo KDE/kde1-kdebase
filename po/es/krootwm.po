@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-11-27 19:55+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -46,7 +46,7 @@ msgstr "Ayuda del escritorio"
 msgid "About KDE..."
 msgstr "Acerca del KDE..."
 
-#: krootwm.C:263 krootwm.C:286 krootwm.C:760 krootwm.C:768
+#: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
 msgstr "Nuevo"
 
@@ -66,7 +66,7 @@ msgstr "Ventanas"
 msgid "Edit Bookmarks"
 msgstr "Editar marcadores"
 
-#: krootwm.C:358 krootwm.C:770
+#: krootwm.C:358 krootwm.C:771
 msgid "Folder"
 msgstr "Carpeta"
 
@@ -75,14 +75,14 @@ msgstr "Carpeta"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "ERROR: La plantilla no existe '%s'"
 
-#: krootwm.C:791
+#: krootwm.C:792
 msgid "Could not create folder"
 msgstr "Imposible crear carpeta"
 
-#: krootwm.C:859
+#: krootwm.C:860
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:863
+#: krootwm.C:864
 msgid "Usage:"
 msgstr "Modo de uso:"

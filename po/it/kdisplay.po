@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-28 09:54+0100\n"
-"POT-Creation-Date: 1998-12-08 01:17+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: Mon Dec 7 1998 19:10:56+0200\n"
 "Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -48,184 +48,184 @@ msgstr "&Impostazioni ..."
 msgid "Wallpaper"
 msgstr "Sfondo"
 
-#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
-#: backgnd.cpp:1371 backgnd.cpp:1909
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Nessuno Sfondo"
 
-#: backgnd.cpp:358
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "&Sfoglia"
 
-#: backgnd.cpp:366
+#: backgnd.cpp:367
 msgid "Arrangement:"
 msgstr "Arrangiamento:"
 
 #
-#: backgnd.cpp:373
+#: backgnd.cpp:374
 msgid "Tiled"
 msgstr "Afficanato"
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr "Specchiato"
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Center Tiled"
 msgstr "Affiancato e centrato"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Centred"
 msgstr "Centrato"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 msgid "Centred Brick"
 msgstr "Muro centrato"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 msgid "Centred Warp"
 msgstr "Centrato deformato"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 msgid "Centred Maxpect"
 msgstr "Centrato Maxpect"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr "Affiancato simmetrico"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
 msgstr "Specchiato simmetrico"
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Scaled"
 msgstr "In scala"
 
-#: backgnd.cpp:397
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr "C&asuale"
 
-#: backgnd.cpp:406
+#: backgnd.cpp:407
 msgid "Setu&p..."
 msgstr "&Impostazioni..."
 
-#: backgnd.cpp:416
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr "&Aggiungi al pannello"
 
-#: backgnd.cpp:441
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
 msgstr "Dimensione cache (kB):"
 
-#: backgnd.cpp:1338
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Nomi dei Desktop"
 
-#: backgnd.cpp:1383
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Errore file"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr "Impossibile caricare l'immagine"
 
-#: backgnd.cpp:1407 backgnd.cpp:1879
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr "URL non supportata"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Spicanete, questo tipo di URL non è attualmente supportata dal KDE Display "
 "Module"
 
-#: backgnd.cpp:1439
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "Sfondi bicolore"
 
-#: backgnd.cpp:1476
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "Sfuma i colori dal'&alto al basso"
 
-#: backgnd.cpp:1482
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "Sfuma i colori da &destra a sinistra"
 
-#: backgnd.cpp:1488
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "Usa &Motivo"
 
-#: backgnd.cpp:1515
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Anteprima"
 
-#: backgnd.cpp:1526
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "&Nome motivo"
 
-#: backgnd.cpp:1565
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Attuale"
 
-#: backgnd.cpp:1625
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Pieno"
 
-#: backgnd.cpp:1628
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Spina di pesce"
 
-#: backgnd.cpp:1631
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Triangoli"
 
-#: backgnd.cpp:1634
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Fiori"
 
-#: backgnd.cpp:1637
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1640
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "Lastricato"
 
-#: backgnd.cpp:1706
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr "Impostazioni modo casuale"
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "Prendi file dalla &directory"
 
-#: backgnd.cpp:1726
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "&Sfoglia ..."
 
-#: backgnd.cpp:1747
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr "Tempo di attesa in secondi:"
 
-#: backgnd.cpp:1759
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "In &ordine"
 
-#: backgnd.cpp:1776
+#: backgnd.cpp:1777
 msgid "Desktops :"
 msgstr "Desktop :"
 
-#: backgnd.cpp:1815
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Aggiungi"
 
-#: backgnd.cpp:1986
+#: backgnd.cpp:1987
 msgid "Directory error"
 msgstr "Errore directory"
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr "La directory selezionata non esiste"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-12-08 01:17+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-12-10 02:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -56,195 +56,195 @@ msgid "Wallpaper"
 msgstr "Обои"
 
 #
-#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
-#: backgnd.cpp:1371 backgnd.cpp:1909
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "Без обоев"
 
 #
-#: backgnd.cpp:358
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "&Просмотреть..."
 
-#: backgnd.cpp:366
+#: backgnd.cpp:367
 msgid "Arrangement:"
 msgstr "Расположение:"
 
 #
-#: backgnd.cpp:373
+#: backgnd.cpp:374
 msgid "Tiled"
 msgstr "Черепицей"
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr "Зеркально"
 
 #
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 msgid "Center Tiled"
 msgstr "Черепицей в центре"
 
 #
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 msgid "Centred"
 msgstr "В центре"
 
 #
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 msgid "Centred Brick"
 msgstr "В центре кирпичей"
 
 #
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 msgid "Centred Warp"
 msgstr "В центре волны"
 
 #
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 msgid "Centred Maxpect"
 msgstr "В центре Maxpect"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr "Симметричная черепица"
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
 msgstr "Симметричное отражение"
 
 #
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 msgid "Scaled"
 msgstr "С измененным размером"
 
-#: backgnd.cpp:397
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr "Случайно"
 
 #
-#: backgnd.cpp:406
+#: backgnd.cpp:407
 msgid "Setu&p..."
 msgstr "&Настроить..."
 
-#: backgnd.cpp:416
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr "Разместить в специальной области panel"
 
-#: backgnd.cpp:441
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
 msgstr "Размер буфера (кБ):"
 
 #
-#: backgnd.cpp:1338
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "Названия рабочих столов"
 
-#: backgnd.cpp:1383
+#: backgnd.cpp:1384
 msgid "File error"
 msgstr "Ошибка файла"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr "Ошибка загрузки файла с изображением"
 
-#: backgnd.cpp:1407 backgnd.cpp:1879
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr "Неподдерживаемый URL"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Извините, но данный тип URL не поддерживается Модулем дисплея KDE"
 
 #
-#: backgnd.cpp:1439
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "Двухцветный фон"
 
-#: backgnd.cpp:1476
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "Изменять цвет с&верху вниз"
 
-#: backgnd.cpp:1482
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "Изменять цвет с&права налево"
 
-#: backgnd.cpp:1488
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "Использовать &шаблон"
 
-#: backgnd.cpp:1515
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: backgnd.cpp:1526
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "&Имя шаблона"
 
-#: backgnd.cpp:1565
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "Текущий"
 
 #
 #
-#: backgnd.cpp:1625
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "Закрашенный"
 
-#: backgnd.cpp:1628
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "Рыбацкая сеть"
 
-#: backgnd.cpp:1631
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "Треугольники"
 
-#: backgnd.cpp:1634
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "Цветы"
 
-#: backgnd.cpp:1637
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "Плетение"
 
-#: backgnd.cpp:1640
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "Мостовая"
 
-#: backgnd.cpp:1706
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr "Настройка случайного режима"
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr "Брать файлы из каталога"
 
 #
-#: backgnd.cpp:1726
+#: backgnd.cpp:1727
 msgid "&Browse ..."
 msgstr "&Просмотреть..."
 
-#: backgnd.cpp:1747
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr "Задержка в секундах :"
 
-#: backgnd.cpp:1759
+#: backgnd.cpp:1760
 msgid "In &order"
 msgstr "В порядке"
 
-#: backgnd.cpp:1776
+#: backgnd.cpp:1777
 msgid "Desktops :"
 msgstr "Рабочие столы :"
 
-#: backgnd.cpp:1815
+#: backgnd.cpp:1816
 msgid "&Add"
 msgstr "&Добавить"
 
-#: backgnd.cpp:1986
+#: backgnd.cpp:1987
 msgid "Directory error"
 msgstr "Ошибка каталога"
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr "Выбранный каталог не существует"
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 01:16+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -52,7 +52,7 @@ msgstr "Pomoæ na radnoj povr¹ini"
 msgid "About KDE..."
 msgstr ""
 
-#: krootwm.C:263 krootwm.C:286 krootwm.C:760 krootwm.C:768
+#: krootwm.C:263 krootwm.C:286 krootwm.C:761 krootwm.C:769
 msgid "New"
 msgstr "Novi"
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Edit Bookmarks"
 msgstr "Uredi oznake"
 
-#: krootwm.C:358 krootwm.C:770
+#: krootwm.C:358 krootwm.C:771
 msgid "Folder"
 msgstr "Direktorij"
 
@@ -81,14 +81,14 @@ msgstr "Direktorij"
 msgid "ERROR: Template does not exist '%s'"
 msgstr "GRE©KA: Predlo¾ak ne postoji '%s'"
 
-#: krootwm.C:791
+#: krootwm.C:792
 msgid "Could not create folder"
 msgstr "Nisam mogao naèiniti direktorij"
 
-#: krootwm.C:859
+#: krootwm.C:860
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:863
+#: krootwm.C:864
 msgid "Usage:"
 msgstr "Uporaba:"

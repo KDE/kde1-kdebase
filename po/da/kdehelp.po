@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-01-29 17:00+CET-1\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,83 +199,83 @@ msgstr "<!-- Rediger ikke denne fil -->"
 msgid "CGI: Destination URL malformed: %s\n"
 msgstr "CGI: Destinations URL fejlagtigt: %s\n"
 
-#: mainwidget.cpp:130
+#: mainwidget.cpp:132
 msgid "&New Help Window"
 msgstr "&Nyt Hjælpevindue"
 
-#: mainwidget.cpp:133
+#: mainwidget.cpp:135
 msgid "&Open File..."
 msgstr "&Åben fil..."
 
-#: mainwidget.cpp:134
+#: mainwidget.cpp:137
 msgid "Open UR&L..."
 msgstr "Åben UR&L..."
 
-#: mainwidget.cpp:137
+#: mainwidget.cpp:142
 msgid "&Search"
 msgstr "&Søg"
 
-#: mainwidget.cpp:147
+#: mainwidget.cpp:157
 msgid "&Find..."
 msgstr "&Find..."
 
-#: mainwidget.cpp:148
+#: mainwidget.cpp:159
 msgid "Find &next"
 msgstr "Find &næste"
 
-#: mainwidget.cpp:152
+#: mainwidget.cpp:164
 msgid "&Back"
 msgstr "&Tilbage"
 
-#: mainwidget.cpp:153
+#: mainwidget.cpp:166
 msgid "&Forward"
 msgstr "&Frem"
 
-#: mainwidget.cpp:156
+#: mainwidget.cpp:171
 msgid "&Top"
 msgstr "&Top"
 
-#: mainwidget.cpp:157
+#: mainwidget.cpp:173
 msgid "&Up"
 msgstr "&Op"
 
-#: mainwidget.cpp:158
+#: mainwidget.cpp:175
 msgid "&Previous"
 msgstr "&Forrige"
 
-#: mainwidget.cpp:159
+#: mainwidget.cpp:177
 msgid "&Next"
 msgstr "&Næste"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:190
 msgid "&General Preferences..."
 msgstr "&Generelle indstillinger"
 
-#: mainwidget.cpp:174
+#: mainwidget.cpp:193
 msgid "Show &Toolbar"
 msgstr "Vis &Værktøjsbjælke"
 
-#: mainwidget.cpp:176
+#: mainwidget.cpp:196
 msgid "Show &Location"
 msgstr "Vis &Lokation"
 
-#: mainwidget.cpp:177
+#: mainwidget.cpp:198
 msgid "Show Status&bar"
 msgstr "Vis Status&bjælke"
 
-#: mainwidget.cpp:180
+#: mainwidget.cpp:201
 msgid "&Save Options"
 msgstr "&Gem indstillinger"
 
-#: mainwidget.cpp:182
+#: mainwidget.cpp:204
 msgid "KDE Help System\n"
 msgstr "KDE Hjælpe System\n"
 
-#: mainwidget.cpp:183
+#: mainwidget.cpp:205
 msgid "Version "
 msgstr "Version "
 
-#: mainwidget.cpp:185
+#: mainwidget.cpp:207
 msgid ""
 "\n"
 "\n"
@@ -293,51 +293,51 @@ msgstr ""
 "KDEHelp kommer uden NOGEN FORM FOR GARANTI under de forhold den gældende lov "
 "tillader."
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:224
 msgid "&Goto"
 msgstr "&Gå til"
 
-#: mainwidget.cpp:202
+#: mainwidget.cpp:225
 msgid "&Bookmarks"
 msgstr "&Bogmærker"
 
-#: mainwidget.cpp:220
+#: mainwidget.cpp:243
 msgid "Previous Document"
 msgstr "Forrige dokument"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:248
 msgid "Next Document"
 msgstr "Næste dokument"
 
-#: mainwidget.cpp:232
+#: mainwidget.cpp:255
 msgid "Previous Node"
 msgstr "Forrige node"
 
-#: mainwidget.cpp:237
+#: mainwidget.cpp:260
 msgid "Next Node"
 msgstr "Næste node"
 
-#: mainwidget.cpp:242
+#: mainwidget.cpp:265
 msgid "Up one Node"
 msgstr "En node op"
 
-#: mainwidget.cpp:247
+#: mainwidget.cpp:270
 msgid "Top Node"
 msgstr "Top Node"
 
-#: mainwidget.cpp:254
+#: mainwidget.cpp:277
 msgid "Help Contents"
 msgstr "Hjælp indhold"
 
-#: mainwidget.cpp:259
+#: mainwidget.cpp:282
 msgid "Reload current document"
 msgstr "Genindlæs dette dokument"
 
-#: mainwidget.cpp:288
+#: mainwidget.cpp:311
 msgid "In the Constructor!"
 msgstr ""
 
-#: mainwidget.cpp:582
+#: mainwidget.cpp:605
 msgid ""
 "KDE Help System\n"
 "Version "
@@ -345,11 +345,11 @@ msgstr ""
 "KDE Hjælpe System\n"
 "Version "
 
-#: mainwidget.cpp:584
+#: mainwidget.cpp:607
 msgid "About KDE Help"
 msgstr "Om KDE Hjælp"
 
-#: mainwidget.cpp:617
+#: mainwidget.cpp:640
 msgid "&Add Bookmark"
 msgstr "&Tilføj bogmærke"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-08 01:17+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -45,197 +45,197 @@ msgid "Wallpaper"
 msgstr "墙纸"
 
 #
-#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
-#: backgnd.cpp:1371 backgnd.cpp:1909
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
 msgstr "没有墙纸"
 
-#: backgnd.cpp:358
+#: backgnd.cpp:359
 msgid "&Browse..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:366
+#: backgnd.cpp:367
 msgid "Arrangement:"
 msgstr ""
 
-#: backgnd.cpp:373
+#: backgnd.cpp:374
 #, fuzzy
 msgid "Tiled"
 msgstr "并列[&L]"
 
-#: backgnd.cpp:374
+#: backgnd.cpp:375
 msgid "Mirrored"
 msgstr ""
 
-#: backgnd.cpp:375
+#: backgnd.cpp:376
 #, fuzzy
 msgid "Center Tiled"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:376
+#: backgnd.cpp:377
 #, fuzzy
 msgid "Centred"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:377
+#: backgnd.cpp:378
 #, fuzzy
 msgid "Centred Brick"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:378
+#: backgnd.cpp:379
 #, fuzzy
 msgid "Centred Warp"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:379
+#: backgnd.cpp:380
 #, fuzzy
 msgid "Centred Maxpect"
 msgstr "放置在中间[&C]"
 
-#: backgnd.cpp:380
+#: backgnd.cpp:381
 msgid "Symmetrical Tiled"
 msgstr ""
 
-#: backgnd.cpp:381
+#: backgnd.cpp:382
 msgid "Symmetrical Mirrored"
 msgstr ""
 
-#: backgnd.cpp:382
+#: backgnd.cpp:383
 #, fuzzy
 msgid "Scaled"
 msgstr "比例缩放[&S]"
 
-#: backgnd.cpp:397
+#: backgnd.cpp:398
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:406
+#: backgnd.cpp:407
 #, fuzzy
 msgid "Setu&p..."
 msgstr "设置[&U] ..."
 
-#: backgnd.cpp:416
+#: backgnd.cpp:417
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:441
+#: backgnd.cpp:442
 msgid "Cache size (kB):"
 msgstr ""
 
 #
-#: backgnd.cpp:1338
+#: backgnd.cpp:1339
 msgid "Desktop names"
 msgstr "桌面名称"
 
-#: backgnd.cpp:1383
+#: backgnd.cpp:1384
 #, fuzzy
 msgid "File error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1384
+#: backgnd.cpp:1385
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1407 backgnd.cpp:1879
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1409 backgnd.cpp:1881
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1439
+#: backgnd.cpp:1440
 msgid "Two color backgrounds"
 msgstr "两个彩色背景"
 
-#: backgnd.cpp:1476
+#: backgnd.cpp:1477
 msgid "Blend colors from &top to bottom"
 msgstr "从上到下使用混和色"
 
-#: backgnd.cpp:1482
+#: backgnd.cpp:1483
 msgid "Blend colors from &right to left"
 msgstr "从右到左使用混和色"
 
-#: backgnd.cpp:1488
+#: backgnd.cpp:1489
 msgid "Use &pattern"
 msgstr "使用花样[&P]"
 
-#: backgnd.cpp:1515
+#: backgnd.cpp:1516
 msgid "Preview"
 msgstr "预览"
 
-#: backgnd.cpp:1526
+#: backgnd.cpp:1527
 msgid "Pattern &name"
 msgstr "花样名[&N]"
 
-#: backgnd.cpp:1565
+#: backgnd.cpp:1566
 msgid "Current"
 msgstr "当前的"
 
-#: backgnd.cpp:1625
+#: backgnd.cpp:1626
 msgid "Filled"
 msgstr "填充的"
 
-#: backgnd.cpp:1628
+#: backgnd.cpp:1629
 msgid "Fish net"
 msgstr "鱼网"
 
-#: backgnd.cpp:1631
+#: backgnd.cpp:1632
 msgid "Triangles"
 msgstr "三角形"
 
 #
-#: backgnd.cpp:1634
+#: backgnd.cpp:1635
 msgid "Flowers"
 msgstr "花朵"
 
-#: backgnd.cpp:1637
+#: backgnd.cpp:1638
 msgid "Rattan"
 msgstr "藤茎"
 
-#: backgnd.cpp:1640
+#: backgnd.cpp:1641
 msgid "Cobbled Pavement"
 msgstr "卵石路"
 
-#: backgnd.cpp:1706
+#: backgnd.cpp:1707
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1712
+#: backgnd.cpp:1713
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1726
+#: backgnd.cpp:1727
 #, fuzzy
 msgid "&Browse ..."
 msgstr "浏览[&B]..."
 
-#: backgnd.cpp:1747
+#: backgnd.cpp:1748
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1759
+#: backgnd.cpp:1760
 #, fuzzy
 msgid "In &order"
 msgstr "忽略"
 
-#: backgnd.cpp:1776
+#: backgnd.cpp:1777
 #, fuzzy
 msgid "Desktops :"
 msgstr "桌面"
 
-#: backgnd.cpp:1815
+#: backgnd.cpp:1816
 #, fuzzy
 msgid "&Add"
 msgstr "添加[&A] ..."
 
-#: backgnd.cpp:1986
+#: backgnd.cpp:1987
 #, fuzzy
 msgid "Directory error"
 msgstr "命名错误"
 
-#: backgnd.cpp:1987
+#: backgnd.cpp:1988
 msgid "Selected directory doesn't exists"
 msgstr ""
 

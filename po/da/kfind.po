@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-01 01:14+0100\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,52 +21,52 @@ msgstr "Foldere:"
 msgid "Cannot open or read directory."
 msgstr "Kan ikke åbne eller læse folder."
 
-#: kfindtop.cpp:118
+#: kfindtop.cpp:121
 msgid "&Start search"
 msgstr "&Start søgning"
 
-#: kfindtop.cpp:120
+#: kfindtop.cpp:123
 msgid "S&top search"
 msgstr "S&top søgning"
 
-#: kfindtop.cpp:125
+#: kfindtop.cpp:128
 msgid "&Open"
 msgstr "&Åben"
 
-#: kfindtop.cpp:127
+#: kfindtop.cpp:130
 msgid "&Add to archive"
 msgstr "&Tilføj til arkiv"
 
-#: kfindtop.cpp:132
+#: kfindtop.cpp:135
 msgid "&Properties"
 msgstr "&Indstillinger"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:138
 msgid "Open Containing &Folder"
 msgstr "Åben &Folder"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:141
 msgid "&Save Search"
 msgstr "&Gem resultat"
 
-#: kfindtop.cpp:155
+#: kfindtop.cpp:158
 msgid "&Select All"
 msgstr "&Vælg alle"
 
-#: kfindtop.cpp:157
+#: kfindtop.cpp:160
 #, fuzzy
 msgid "Unse&lect All"
 msgstr "&Vælg alle"
 
-#: kfindtop.cpp:159
+#: kfindtop.cpp:162
 msgid "&Invert Selection"
 msgstr "&Omvend valg"
 
-#: kfindtop.cpp:171
+#: kfindtop.cpp:174
 msgid "&Preferences ..."
 msgstr "&Indstillinger"
 
-#: kfindtop.cpp:176
+#: kfindtop.cpp:179
 #, c-format
 msgid ""
 "KFind %s\n"
@@ -83,27 +83,27 @@ msgstr ""
 "Specielt tak til Stephan Kulow\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:196
+#: kfindtop.cpp:199
 msgid "Start Search"
 msgstr "Start søgning"
 
-#: kfindtop.cpp:201
+#: kfindtop.cpp:204
 msgid "New Search"
 msgstr "Ny søgning"
 
-#: kfindtop.cpp:206
+#: kfindtop.cpp:209
 msgid "Stop Search"
 msgstr "Stop søgning"
 
-#: kfindtop.cpp:219
+#: kfindtop.cpp:222
 msgid "Add to archive"
 msgstr "Tilføj til arkiv"
 
-#: kfindtop.cpp:234
+#: kfindtop.cpp:237
 msgid "Open Containing Folder"
 msgstr "Åben folder"
 
-#: kfindtop.cpp:239
+#: kfindtop.cpp:242
 msgid "Save Search Results"
 msgstr "Gem søge resultater"
 
