@@ -9,6 +9,7 @@ Name[de]=Bretonisch
 Name[br]=Brezhoneg
 Name[es]=Bretón
 Name[pt]=Bretõens
+Name[no]=Bretagnsk
 
 [ca]
 Name=Catalan
@@ -400,18 +401,22 @@ Name[br]=Esperanteg
 Name=Macedonian
 Name[de]=Mazedonisch
 Name[br]=Makedonieg
+Name[no]=Makedonsk
 
 [ko]
 Name=Korean
 Name[de]=Koreanisch
 Name[br]=Koreeg
+Name[no]=Koreansk
 
 [tr]
 Name=Turkish
 Name[de]=Türkisch
 Name[br]=Turkeg
+Name[no]=Tyrkisk
 
 [he]
 Name=Hebrew
 Name[de]=Hebräisch
 Name[he]=úéøáò
+Name[no]=Hebraisk

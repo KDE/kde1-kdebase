@@ -1,10 +1,10 @@
-# Norwegian translations for KDE Base, kcmfm
+# Norwegian translations for KDE Base, kfm
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Hans Petter Bieker <zerium@webindex.no>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: KDE BASE/kcmfm\n"
+"Project-Id-Version: KDE BASE/kfm\n"
 "POT-Creation-Date: 1998-12-10 01:15+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
@@ -19,153 +19,172 @@ msgstr "&Skrifttype"
 
 #: main.cpp:60
 msgid "&Color"
-msgstr "&Farge"
+msgstr "F&arger"
 
 #: main.cpp:62
 msgid "&Other"
-msgstr ""
+msgstr "&Andre"
 
+# kkfmoptdlg.cpp:19
 #: main.cpp:65
 msgid "&Proxy"
-msgstr ""
+msgstr "&Proxy"
 
 #: main.cpp:67
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
+# kkfmoptdlg.cpp:21
 #: main.cpp:70
 msgid "User &Agent"
-msgstr ""
+msgstr "Bruker&agent"
 
+# kfmtree.cpp:398
 #: main.cpp:74
 msgid "&Desktop Icons"
-msgstr ""
+msgstr "&Skrivebordikoner"
 
 #: main.cpp:144
-#, fuzzy, c-format
+#, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
-msgstr "bruk: kcmkfm [-init | {font,color}]\n"
+msgstr "bruk: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"
 
+# main.cpp:65 main.cpp:199
 #: main.cpp:227
 msgid "KFM Configuration"
-msgstr "KFM-konfigurasjon"
+msgstr "KFM Konfigurasjon"
 
 #: htmlopts.cpp:64
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: htmlopts.cpp:69
 msgid "Medium"
-msgstr ""
+msgstr "Middels"
 
 #: htmlopts.cpp:74
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
+# htmlopts.cpp:51
 #: htmlopts.cpp:83
 msgid "Standard Font"
-msgstr ""
+msgstr "Standard skrifttype"
 
+# htmlopts.cpp:68
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr ""
+msgstr "Fast skrifttype"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
-msgstr ""
+msgstr "Standard tegnsett"
 
 #: htmlopts.cpp:122 htmlopts.cpp:276
 msgid "Use language charset"
-msgstr ""
+msgstr "Bruk språktegnsett"
 
+# htmlopts.cpp:214
 #: htmlopts.cpp:329
 msgid "Background Color:"
-msgstr ""
+msgstr "Bakgrunnsfarge:"
 
+# htmlopts.cpp:222
 #: htmlopts.cpp:341
 msgid "Normal Text Color:"
-msgstr ""
+msgstr "Normal tekstfarge:"
 
+# htmlopts.cpp:230
 #: htmlopts.cpp:353
 msgid "URL Link Color:"
-msgstr ""
+msgstr "URL-lenkefarge:"
 
+# htmlopts.cpp:238
 #: htmlopts.cpp:365
 msgid "Followed Link Color:"
-msgstr ""
+msgstr "Farge på brukte lenker:"
 
+# htmlopts.cpp:246
 #: htmlopts.cpp:377
 msgid "Change cursor over link."
-msgstr ""
+msgstr "Endre markør over lenke."
 
 #: htmlopts.cpp:383
 msgid "Underline links"
-msgstr ""
+msgstr "Understrek lenker"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr ""
+msgstr "&Godta pr-URL-innstillinger"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr ""
+msgstr "Tre&visning følger navigasjon"
 
+# kproxydlg.cpp:14
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr ""
+msgstr "Ikke glem å lagre innstillingene!"
 
+# kfmprops.cpp:437
 #: kproxydlg.cpp:58
 msgid "Use proxy"
-msgstr ""
+msgstr "Bruk proxy"
 
+# kproxydlg.cpp:43
 #: kproxydlg.cpp:128
 msgid "No Proxy for:"
-msgstr ""
+msgstr "Ingen proxy for:"
 
 #: khttpoptdlg.cpp:38
 msgid "Accept languages:"
-msgstr ""
+msgstr "Aksepter språk:"
 
 #: khttpoptdlg.cpp:52
 msgid "Accept character sets:"
-msgstr ""
+msgstr "aksepter tegnsett:"
 
 #: khttpoptdlg.cpp:65
 msgid "Assume HTML"
-msgstr ""
+msgstr "Anta HTML"
 
+# useragentdlg.cpp:20
 #: useragentdlg.cpp:43
 msgid "On server:"
-msgstr ""
+msgstr "På tjener:"
 
+# useragentdlg.cpp:31
 #: useragentdlg.cpp:65
 msgid "login as:"
-msgstr ""
+msgstr "logg inn som:"
 
 #: useragentdlg.cpp:85
 msgid "&Add"
-msgstr ""
+msgstr "&Legg til"
 
+# useragentdlg.cpp:52
 #: useragentdlg.cpp:105
 msgid "Known bindings:"
-msgstr ""
+msgstr "Kjente tilordninger:"
 
+# htmlopts.cpp:321
 #: rootopts.cpp:70
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Avstand mellom horisontale bunngitter:"
 
+# htmlopts.cpp:335
 #: rootopts.cpp:81
 msgid "Vertical Root Grid Spacing:"
-msgstr ""
+msgstr "Avstand mellom vertikale bunngitter:"
 
 #: rootopts.cpp:92
 msgid "&Transparent Text for Root Icons."
-msgstr ""
+msgstr "&Gjennomsiktig tekst for bunnikoner"
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"
-msgstr ""
+msgstr "Forgrunnsfarge for ikon:"
 
 #: rootopts.cpp:115
 msgid "Icon background color:"
-msgstr ""
+msgstr "Bakgrunnsfarge for ikon:"

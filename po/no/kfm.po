@@ -189,14 +189,12 @@ msgid "Save Settings for this &URL"
 msgstr "Lagre innstillinger for denne &URL"
 
 #: kfmgui.cpp:394
-#, fuzzy
 msgid "&Configure File Manager..."
-msgstr "&Konfigurer nettlos..."
+msgstr "&Konfigurer filbehandler..."
 
 #: kfmgui.cpp:396
-#, fuzzy
 msgid "Configure &Browser..."
-msgstr "&Konfigurer nettlos..."
+msgstr "Konfigurer &nettlos..."
 
 #: kfmgui.cpp:432
 msgid ""
@@ -1696,59 +1694,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# useragentdlg.cpp:20
-#~ msgid "On server:"
-#~ msgstr "På tjener:"
-
-# useragentdlg.cpp:31
-#~ msgid "login as:"
-#~ msgstr "logg inn som:"
-
-# useragentdlg.cpp:52
-#~ msgid "Known bindings:"
-#~ msgstr "Kjente tilordninger:"
-
-# kproxydlg.cpp:14
-#~ msgid "Don't forget to save your settings!"
-#~ msgstr "Ikke glem å lagre innstillingene!"
-
-# kfmprops.cpp:437
-#~ msgid "Use proxy"
-#~ msgstr "Bruk proxy"
-
-# kproxydlg.cpp:43
-#~ msgid "No Proxy for:"
-#~ msgstr "Ingen proxy for:"
-
-# kkfmoptdlg.cpp:19
-#~ msgid "&Proxy"
-#~ msgstr "&Proxy"
-
-#~ msgid "&HTTP"
-#~ msgstr "&HTTP"
-
-# kkfmoptdlg.cpp:21
-#~ msgid "User &Agent"
-#~ msgstr "Bruker&agent"
-
-#~ msgid "&Colors"
-#~ msgstr "Fa&rger"
-
-#~ msgid "&Other"
-#~ msgstr "&Andre"
-
-#~ msgid "KFM Preferences Settings"
-#~ msgstr "KFM-preferanseinnstillinger"
-
-#~ msgid "Accept languages:"
-#~ msgstr "Aksepter språk:"
-
-#~ msgid "Accept character sets:"
-#~ msgstr "aksepter tegnsett:"
-
-#~ msgid "Assume HTML"
-#~ msgstr "Anta HTML"
-
-#~ msgid "Set Preferen&ces..."
-#~ msgstr "Sett &preferanser..."
