@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -26,43 +26,35 @@ msgstr ""
 msgid "Go!"
 msgstr "Engheigi :) "
 
-#: kpanel.C:341 tools.C:901
-msgid "Where do you want to go tomorrow?"
-msgstr "Ia ghici, ce poate fi ãsta ???"
-
-#: kpanel.C:416
+#: kpanel.C:415
 msgid "No info available"
 msgstr "Nici o informaþie disponibilã"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:454 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Ieºire"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:462 props.C:206
 msgid "Lock screen"
 msgstr "Blocheazã ecranul"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
 msgstr "Ascunde panoul"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
 msgstr "Afiºeazã panoul"
 
-#: kpanel.C:1067
+#: kpanel.C:1066
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1204
-msgid "No comment available"
-msgstr "Nici un comentariu disponibil"
-
-#: kpanel.C:1213 tools.C:910
+#: kpanel.C:1214 tools.C:909
 msgid "Windowlist"
 msgstr "Lista de ferestre"
 
-#: kpanel.C:1221 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -93,7 +85,7 @@ msgstr "Adaugã listã de ferestre"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adaugã un meniu de liste de ferestre la panou"
 
-#: events.C:851 props.C:183
+#: events.C:855 props.C:183
 msgid "Configure"
 msgstr "Configurare"
 
@@ -109,7 +101,7 @@ msgstr "Editare Meniuri"
 msgid "Add or remove applications in the menu structure "
 msgstr "Adaugã sau ºterge o aplicaþie din structura meniului "
 
-#: events.C:853 props.C:189
+#: events.C:857 props.C:189
 msgid "Restart"
 msgstr "Restartare"
 
@@ -133,7 +125,7 @@ msgstr "Blocheazã ecranul"
 msgid "The menu editor is not installed."
 msgstr "Editorul de meniuri nu este instalat. "
 
-#: events.C:908 props.C:452
+#: events.C:912 props.C:452
 msgid "Oops!"
 msgstr "Hopa !"
 
@@ -143,11 +135,11 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:919
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:907
+#: events.C:911
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nu pot aºeza asta ca un buton în panou !"
 
@@ -206,3 +198,9 @@ msgstr ""
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr ""
+
+#~ msgid "Where do you want to go tomorrow?"
+#~ msgstr "Ia ghici, ce poate fi ãsta ???"
+
+#~ msgid "No comment available"
+#~ msgstr "Nici un comentariu disponibil"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -9,39 +9,39 @@ msgstr ""
 "kconfobjs.moc.cpp kobjconf.moc.cpp keymap.moc.cpp kikbd.moc.cpp "
 "kikbdconf.moc.cpp widgets.cpp kcmikbd.cpp widgets.moc.cpp\n"
 
-#: kikbd.cpp:116
+#: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE Интернациональная Клавиатура уже запушена на этом Дисплее"
 
-#: kikbd.cpp:288
+#: kikbd.cpp:295
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:313
+#: kikbd.cpp:321
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
 
-#: kikbd.cpp:330
+#: kikbd.cpp:337
 msgid "Setup"
 msgstr "Конфигурация"
 
-#: kikbd.cpp:345 kikbd.cpp:358
+#: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Не возможно удалить %s из таблицы модификаторов.\n"
 
-#: kikbd.cpp:348
+#: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr ""
 
-#: kikbd.cpp:370
+#: kikbd.cpp:384
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -50,152 +50,153 @@ msgstr ""
 "Не возможно выставить Mode Switch %s для %s.\n"
 "Альтернативные символы отключены."
 
-#: kikbd.cpp:392
+#: kikbd.cpp:406
 #, fuzzy
 msgid ""
-"Cannot remove Caps Lock from Modifiers.\n"
+"Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Не возможно удалить CapsLock из таблицы модификаторов.\n"
 "Эмуляция CapsLock выключена."
 
-#: kikbd.cpp:1003
+#: kikbd.cpp:1097
 #, fuzzy
 msgid "Exiting International Keyboard"
 msgstr "Интернациональная Клавиатура"
 
-#: kikbd.cpp:1004
+#: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 
-#: keymap.cpp:181
-msgid "KeyMap: cannot allocate memory"
+#: keymap.cpp:186
+#, fuzzy
+msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: не возможно выделить память"
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, c-format
 msgid ""
-"Can not find symbol \"%s\".\n"
-"May be your default X codes does not match.\n"
-"You can preset X codes in \"Advanced\" section\n"
-"of configuration program."
+"Can't find symbol \"%s\".\n"
+"Maybe your default X codes do not match.\n"
+"You can preset X codes from section \"Advanced\"\n"
+"in the configuration program."
 msgstr ""
 
-#: keymap.cpp:233
+#: keymap.cpp:238
 #, fuzzy, c-format
-msgid "KeyMap: can not find symbol \"%s\"."
+msgid "KeyMap: can't find symbol \"%s\"."
 msgstr ""
 "KeyMap: невозможно найти символ \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:241
+#: keymap.cpp:246
 #, fuzzy, c-format
-msgid "KeyMap: do not understand key code \"%s\"."
+msgid "KeyMap: can't read keycode \"%s\"."
 msgstr ""
 "KeyMap: не понятен код символа \"%s\".\n"
 "Вы хотите продолжить?"
 
-#: keymap.cpp:247
+#: keymap.cpp:252
 #, fuzzy, c-format
-msgid "KeyMap: key code \"%s\" go out of range."
+msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr ""
 "KeyMap: код сивола \"%s\" выходит за допустимые пределы.\n"
 "Вы хотите продолжить?"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Global"
 msgstr "Глобально"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Window"
 msgstr "Окно"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Class"
 msgstr "Класс"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
 msgstr "(Нет)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
 msgstr "Правый Alt"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
 msgstr "Правый Control"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
 msgstr "Правые (Alt+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
 msgstr "Правые (Ctrl+Alt)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
 msgstr "Правые (Ctrl+Shift)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
 msgstr "Левые (Alt+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Левые (Ctrl+Alt)"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Левые (Ctrl+Shift)"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Оба Shift'а (Shift+Shift)"
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:120
 #, fuzzy
 msgid "Right Meta"
 msgstr "Правый Alt"
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:121
 msgid "Left  Alt"
 msgstr "Левый Alt"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:122
 msgid "Left  Control"
 msgstr "Левый Control"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:123
 #, fuzzy
 msgid "Left  Meta"
 msgstr "Левый Alt"
 
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:126
 msgid "Top Left"
 msgstr "Вверху слева"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:127
 msgid "Top Right"
 msgstr "Вверху справа"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:128
 msgid "Bottom Left"
 msgstr "Внизу слева"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:129
 msgid "Bottom Right"
 msgstr "Внизу справа"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:156
 #, fuzzy
 msgid "X default codes"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:209
+#: kikbdconf.cpp:215
 #, fuzzy, c-format
 msgid ""
 "%s\n"
@@ -204,91 +205,91 @@ msgstr ""
 "%s\n"
 "Вы хотите запустить программу конфигурации?"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:374
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:378 kikbdconf.cpp:471
 msgid "default"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:414
 msgid "Author:  Not specified"
 msgstr "Автор:  Не определен"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:416
 msgid "Author"
 msgstr "Автор"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:422
 msgid "Description:  "
 msgstr "Описание:  "
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:425
 msgid "Source:  "
 msgstr "Источник:  "
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:426
 msgid "no file"
 msgstr "нет файла"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:427
 msgid "user file"
 msgstr "файл пользователя"
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:428
 msgid "system file"
 msgstr "системный файл"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:433
 msgid "Statistic:  "
 msgstr "Статистика:  "
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:441
 msgid "symbols"
 msgstr "символов"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:449
 msgid "codes"
 msgstr "кодов"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:452
 msgid "alternative symbols"
 msgstr "алтернативные символы"
 
-#: kikbdconf.cpp:429
+#: kikbdconf.cpp:464
 #, fuzzy
 msgid "Language"
 msgstr "язык"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:468
 #, fuzzy
 msgid "Charset"
 msgstr "кодировка"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:514
 msgid "International keyboard ERROR"
 msgstr "ОШИБКА национальной клавиатуры"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:530
 msgid "International keyboard warning"
 msgstr "Предупреждение национальной клавиатуры"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
 msgid "International keyboard question"
 msgstr "Вопрос национальной клавиатуры"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:544
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:554
 #, fuzzy
 msgid ""
 "\n"
@@ -297,233 +298,257 @@ msgstr ""
 "%s\n"
 "Вы хотите запустить программу конфигурации?"
 
-#: widgets.cpp:107
+#: widgets.cpp:116
 msgid "List of active keyboard maps"
 msgstr "Список активных раскладок"
 
-#: widgets.cpp:117
+#: widgets.cpp:126
 msgid "&Add"
 msgstr "&Добавить"
 
-#: widgets.cpp:118
-msgid "Adding new keyboard map"
+#: widgets.cpp:127
+#, fuzzy
+msgid "Add new keyboard map"
 msgstr "Добавить новую раскладку"
 
-#: widgets.cpp:122
+#: widgets.cpp:131
 msgid "Remove selected keyboard map"
 msgstr "Удалить выделенную раскладку"
 
-#: widgets.cpp:127
+#: widgets.cpp:136
 msgid "U&p"
 msgstr "&Вверх"
 
-#: widgets.cpp:127
-msgid "Up selected keyboard map"
-msgstr "Переместить вверх выделенную раскладку"
+#: widgets.cpp:136
+#, fuzzy
+msgid "Move up selected keyboard map"
+msgstr "Удалить выделенную раскладку"
 
-#: widgets.cpp:131
+#: widgets.cpp:140
 msgid "D&own"
 msgstr "В&низ"
 
-#: widgets.cpp:131
-msgid "Down selected keyboard map"
+#: widgets.cpp:140
+#, fuzzy
+msgid "Move down selected keyboard map"
 msgstr "Переместить вниз выделенную раскладку"
 
-#: widgets.cpp:135
+#: widgets.cpp:144
 msgid "&Info"
 msgstr "&Информация"
 
-#: widgets.cpp:136
+#: widgets.cpp:145
 msgid "Display information for selected keyboard map"
 msgstr "Показать информацию по выбранной раскладке"
 
-#: widgets.cpp:145
+#: widgets.cpp:154
 #, fuzzy
 msgid "Use &hot list"
 msgstr "И&спользовать \"горячий\" список"
 
-#: widgets.cpp:146
+#: widgets.cpp:155
+#, fuzzy
 msgid ""
-"Use only default and last active keyboard maps to switching from keyboard"
+"Use only default and last active keyboard maps when switch key sequence is "
+"used"
 msgstr ""
 "Использовать для переключения с клавиатуры только основную и последнюю "
 "активную раскладки"
 
-#: widgets.cpp:215
+#: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Добавление Раскладки"
 
-#: widgets.cpp:216
-msgid "There is no more keyboard maps"
+#: widgets.cpp:225
+#, fuzzy
+msgid "There are no keyboard maps left to add"
 msgstr "Больше нет раскладок"
 
-#: widgets.cpp:249
+#: widgets.cpp:258
 msgid "Keyboard map information"
 msgstr "Информация по раскладке"
 
-#: widgets.cpp:283
+#: widgets.cpp:292
 msgid "Add Keyboard"
 msgstr "Дабавить Раскладку"
 
-#: widgets.cpp:287
+#: widgets.cpp:296
 msgid "Available keyboard maps"
 msgstr "Доступные Раскладки"
 
-#: widgets.cpp:394
+#: widgets.cpp:403
 msgid "Keyboard maps"
 msgstr "Раскладки"
 
-#: widgets.cpp:405
+#: widgets.cpp:414
 msgid "Switch and Alt Switch"
 msgstr "Переключатель и Альтернативеый переключатель"
 
-#: widgets.cpp:410
+#: widgets.cpp:419
 #, fuzzy
-msgid "Key(s) to switch between keyboard maps"
+msgid "Key(s) for switching between keyboard maps"
 msgstr "Клавиша(ы) для переключения между раскладками"
 
-#: widgets.cpp:416
-msgid "Key to activate Alternate symbols in current keyboard map"
+#: widgets.cpp:425
+#, fuzzy
+msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Клавиша для ввода алтернативных символов текущей раскладки"
 
-#: widgets.cpp:429
+#: widgets.cpp:438
 msgid "&Beep"
 msgstr "Сигн&ал"
 
-#: widgets.cpp:430
-msgid "Beep when ever keyboard mapping changed"
+#: widgets.cpp:439
+#, fuzzy
+msgid "Beep when keyboard map is changed"
 msgstr "Подавать сигнал всегда когда меняется раскладка"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Ad&vanced"
 msgstr "С&пециальное"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Advanced options"
 msgstr "Специальные параметры"
 
-#: widgets.cpp:450
+#: widgets.cpp:459
 msgid "Advanced"
 msgstr "Специальное"
 
-#: widgets.cpp:466
+#: widgets.cpp:475
 #, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "&Эмулировать CapsLock"
 
-#: widgets.cpp:467
+#: widgets.cpp:476
 #, fuzzy
-msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+msgid ""
+"Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
+"languages"
 msgstr ""
 "Эмулировать CapsLock. Необходимо для правильной работы CapsLock в некоторых "
 "языках"
 
-#: widgets.cpp:473
+#: widgets.cpp:482
 msgid "&World Menu"
 msgstr "&Глобальное Меню"
 
-#: widgets.cpp:474
-msgid "Show menu in any window by holding Switch keys"
+#: widgets.cpp:483
+#, fuzzy
+msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Показать меню в любом окне при удерживаемых клавишах Переключателя"
 
-#: widgets.cpp:481
+#: widgets.cpp:491
 msgid "&Save Classes"
 msgstr "&Сохранять Классы"
 
-#: widgets.cpp:482
+#: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr "Сохранять при выходе соответсвие между раскладками и оконными классами"
 
-#: widgets.cpp:488
+#: widgets.cpp:498
 msgid "Define X codes"
 msgstr ""
 
-#: widgets.cpp:491
+#: widgets.cpp:501
 msgid "Input"
 msgstr "Ввод"
 
-#: widgets.cpp:495
-msgid "Standard behavior. Keyboard map active for all windows"
+#: widgets.cpp:505
+#, fuzzy
+msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Обычное поведение. Раскладка действует во всех окнах"
 
-#: widgets.cpp:499
-msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "Расширенной поведение. Каждое окно помнит свою раскладку"
+#: widgets.cpp:509
+#, fuzzy
+msgid ""
+"Extended behavior. Keyboard map state is saved for each window independently"
+msgstr "Обычное поведение. Раскладка действует во всех окнах"
 
-#: widgets.cpp:503
-msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Специальное поведение. Каждый оконный класс помнит свою раскладку"
+#: widgets.cpp:513
+#, fuzzy
+msgid ""
+"Special behavior. Keyboard state is saved for each window class independently"
+msgstr "Обычное поведение. Раскладка действует во всех окнах"
 
-#: widgets.cpp:551
+#: widgets.cpp:561
 msgid "Button Colors"
 msgstr "Цвета кнопки"
 
-#: widgets.cpp:561
+#: widgets.cpp:571
 msgid "Foreground"
 msgstr "Передний план"
 
-#: widgets.cpp:562
-#, fuzzy
-msgid "Color of the text label"
-msgstr "Цвет текста"
+#: widgets.cpp:572
+msgid "Text label foreground color"
+msgstr ""
 
-#: widgets.cpp:566
+#: widgets.cpp:576
+msgid "Background"
+msgstr ""
+
+#: widgets.cpp:577
+msgid "Text label background color"
+msgstr ""
+
+#: widgets.cpp:581
 #, fuzzy
 msgid "With Caps Lock"
 msgstr "Вместе с CapsLock"
 
-#: widgets.cpp:567
+#: widgets.cpp:582
 #, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "Цвет фона при включенном CapsLock"
 
-#: widgets.cpp:573
+#: widgets.cpp:588
 msgid "With Alternate"
 msgstr "Вместе с Алтернативным"
 
-#: widgets.cpp:574
-msgid "Background when Alternate switch is pressed"
+#: widgets.cpp:589
+#, fuzzy
+msgid "Background when Alternate switch key is pressed"
 msgstr "Цвет фона при нажатом Алтернативном Переключателе"
 
-#: widgets.cpp:583
+#: widgets.cpp:598
 msgid "Button Font"
 msgstr "Фонт кнопки"
 
-#: widgets.cpp:591
+#: widgets.cpp:606
 msgid "&Customize Font"
 msgstr "&Выбрать свой Фонт"
 
-#: widgets.cpp:592
+#: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
 msgstr "Подобрать фонт для текста или использовать глобальные установки KDE"
 
-#: widgets.cpp:596
+#: widgets.cpp:611
 msgid "C&hange Font"
 msgstr "В&ыбрать Фонт"
 
-#: widgets.cpp:641
+#: widgets.cpp:656
 msgid "&Autostart"
 msgstr "&Автостарт"
 
-#: widgets.cpp:642
+#: widgets.cpp:657
 #, fuzzy
 msgid "Start up automatically"
 msgstr "Запускать автоматически"
 
-#: widgets.cpp:648
+#: widgets.cpp:663
 msgid "&Docked"
 msgstr "&Docked"
 
-#: widgets.cpp:649
+#: widgets.cpp:664
 #, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "Разместиться в специальной области kpanel"
 
-#: widgets.cpp:658
+#: widgets.cpp:673
 msgid "Place"
 msgstr "Место"
 
-#: widgets.cpp:665
+#: widgets.cpp:680
 msgid "Place in selected corner"
 msgstr "Разместиться в указанном углу"
 
@@ -542,6 +567,19 @@ msgstr "&Запуск"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Интернациональная Клавиатура"
+
+#~ msgid "Up selected keyboard map"
+#~ msgstr "Переместить вверх выделенную раскладку"
+
+#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
+#~ msgstr "Расширенной поведение. Каждое окно помнит свою раскладку"
+
+#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
+#~ msgstr "Специальное поведение. Каждый оконный класс помнит свою раскладку"
+
+#, fuzzy
+#~ msgid "Color of the text label"
+#~ msgstr "Цвет текста"
 
 #~ msgid ""
 #~ "%s\n"

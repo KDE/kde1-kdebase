@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -224,27 +224,27 @@ msgid ""
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
 
-#: kfmgui.cpp:447
+#: kfmgui.cpp:450
 msgid "&Go"
 msgstr "&Ir"
 
-#: kfmgui.cpp:448
+#: kfmgui.cpp:451
 msgid "&Bookmarks"
 msgstr "F&avoritos"
 
-#: kfmgui.cpp:478 main.cpp:296
+#: kfmgui.cpp:486 main.cpp:296
 msgid "Up"
 msgstr "Cima"
 
-#: kfmgui.cpp:488 main.cpp:298
+#: kfmgui.cpp:496 main.cpp:298
 msgid "Forward"
 msgstr "Avançar"
 
-#: kfmgui.cpp:493
+#: kfmgui.cpp:501
 msgid "Home"
 msgstr "Pessoal"
 
-#: kfmgui.cpp:550
+#: kfmgui.cpp:558
 msgid "Could not load icon\n"
 msgstr "Não foi possível carregar o ícone\n"
 
@@ -253,7 +253,7 @@ msgstr "Não foi possível carregar o ícone\n"
 #: kbind.cpp:1651 kbind.cpp:1710 kbind.cpp:1722 kbind.cpp:1749 kbind.cpp:1770
 #: kbind.cpp:1790 kbind.cpp:1802 kbind.cpp:1818 kbind.cpp:1953 kbind.cpp:1965
 #: kbind.cpp:2010 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
-#: kfmgui.cpp:551 kfmgui.cpp:792 kfmman.cpp:370 kfmman.cpp:1429
+#: kfmgui.cpp:559 kfmgui.cpp:800 kfmman.cpp:370 kfmman.cpp:1429
 #: kfmman.cpp:1656 kfmman.cpp:1702 kfmprops.cpp:384 kfmprops.cpp:653
 #: kfmprops.cpp:660 kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1222
 #: kfmprops.cpp:1726 kfmprops.cpp:2087 kfmprops.cpp:2269 kfmserver.cpp:46
@@ -272,69 +272,69 @@ msgstr "Não foi possível carregar o ícone\n"
 msgid "KFM Error"
 msgstr "Erro do KFM"
 
-#: kfmgui.cpp:564
+#: kfmgui.cpp:572
 msgid "Location:"
 msgstr "Localização:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:791 kfmman.cpp:1428
+#: kfmexec.cpp:62 kfmgui.cpp:799 kfmman.cpp:1428
 msgid "Malformed URL\n"
 msgstr "URL Incorrecto\n"
 
-#: kfmgui.cpp:977
+#: kfmgui.cpp:985
 msgid "Select files:"
 msgstr "Seleccionar ficheiros:"
 
-#: kfmgui.cpp:1044
+#: kfmgui.cpp:1052
 msgid "Find Complete"
 msgstr "Procura Concluída"
 
-#: kfmgui.cpp:1045
+#: kfmgui.cpp:1053
 msgid "Continue search from the top of the page?"
 msgstr "Continuar busca do inicio da página?"
 
-#: kfmgui.cpp:1063
+#: kfmgui.cpp:1071
 msgid "&Edit Bookmarks..."
 msgstr "&Editar Favoritos..."
 
-#: kfmgui.cpp:1075
+#: kfmgui.cpp:1083
 msgid "&Add Bookmark"
 msgstr "&Adicionar Favorito"
 
-#: kfmgui.cpp:1111 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
+#: kfmgui.cpp:1119 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
 msgid "&New"
 msgstr "&Novo"
 
-#: kfmgui.cpp:1184
+#: kfmgui.cpp:1192
 msgid "&Up"
 msgstr "S&ubir"
 
-#: kfmgui.cpp:1186
+#: kfmgui.cpp:1194
 msgid "&Back"
 msgstr "&Voltar"
 
-#: kfmgui.cpp:1188
+#: kfmgui.cpp:1196
 msgid "&Forward"
 msgstr "&Avançar"
 
-#: kfmgui.cpp:1190
+#: kfmgui.cpp:1198
 msgid "&Home"
 msgstr "&Pessoal"
 
-#: kfmgui.cpp:1259 kfmgui.cpp:1425 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
 #: kiojob.cpp:88 root.cpp:1247
 msgid "ERROR: Malformed URL"
 msgstr "ERRO: URL Mal Formado"
 
-#: kfmgui.cpp:1379 kfmserver.cpp:241
+#: kfmgui.cpp:1387 kfmserver.cpp:241
 msgid "Open Location:"
 msgstr "Abrir URL:"
 
-#: kfmgui.cpp:1436
+#: kfmgui.cpp:1444
 msgid "KFM Confirm"
 msgstr "Confirmação do KFM"
 
-#: kfmgui.cpp:1437
+#: kfmgui.cpp:1445
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -342,7 +342,7 @@ msgstr ""
 "Quer realmente sair?\n"
 "Vai perder funcionalidades importantes na área de trabalho"
 
-#: kfmgui.cpp:1570
+#: kfmgui.cpp:1578
 msgid "Document: Done"
 msgstr "Documento: Concluído"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdenonebeta\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1998-02-03 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -13,18 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kikbd.cpp:116
+#: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE internacionalna tipkovnica veæ zapoèeta na ovom zaslonu."
 
-#: kikbd.cpp:288
+#: kikbd.cpp:295
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:313
+#: kikbd.cpp:321
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
@@ -33,21 +33,21 @@ msgstr ""
 "Mapa tipkovnice \"%s\" ne postoji.\n"
 "Preskaèem ovu mapu."
 
-#: kikbd.cpp:330
+#: kikbd.cpp:337
 msgid "Setup"
 msgstr "Postava"
 
-#: kikbd.cpp:345 kikbd.cpp:358
+#: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "Ne mogu ukloniti %s iz Modifiers.\n"
 
-#: kikbd.cpp:348
+#: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "Ne mogu dodati %s u Modifiers broj 3.\n"
 
-#: kikbd.cpp:370
+#: kikbd.cpp:384
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -56,141 +56,143 @@ msgstr ""
 "Ne mogu namjestiti sklopku za promjenu kao %s za tipkovnicu %s\n"
 "Alt znakovi iskljuèeni"
 
-#: kikbd.cpp:392
+#: kikbd.cpp:406
+#, fuzzy
 msgid ""
-"Cannot remove Caps Lock from Modifiers.\n"
+"Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Ne mogu ukloniti Caps Lock iz Modifiers.\n"
 "Caps Lock opona¹anje iskljuèeno"
 
-#: kikbd.cpp:1003
+#: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
 msgstr "Izlazim iz internacionalne tipkovnice"
 
-#: kikbd.cpp:1004
+#: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 
-#: keymap.cpp:181
-msgid "KeyMap: cannot allocate memory"
+#: keymap.cpp:186
+#, fuzzy
+msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: ne mogu alocirati memoriju"
-
-#: keymap.cpp:228
-#, c-format
-msgid ""
-"Can not find symbol \"%s\".\n"
-"May be your default X codes does not match.\n"
-"You can preset X codes in \"Advanced\" section\n"
-"of configuration program."
-msgstr ""
 
 #: keymap.cpp:233
 #, c-format
-msgid "KeyMap: can not find symbol \"%s\"."
+msgid ""
+"Can't find symbol \"%s\".\n"
+"Maybe your default X codes do not match.\n"
+"You can preset X codes from section \"Advanced\"\n"
+"in the configuration program."
+msgstr ""
+
+#: keymap.cpp:238
+#, fuzzy, c-format
+msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: ne mogu naæi znak \"%s\"."
 
-#: keymap.cpp:241
-#, c-format
-msgid "KeyMap: do not understand key code \"%s\"."
+#: keymap.cpp:246
+#, fuzzy, c-format
+msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: ne razumijem tipkovni kod \"%s\"."
 
-#: keymap.cpp:247
-#, c-format
-msgid "KeyMap: key code \"%s\" go out of range."
+#: keymap.cpp:252
+#, fuzzy, c-format
+msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: tipkovni kod \"%s\" je izvan raspona."
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Global"
 msgstr "Globalno"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Window"
 msgstr "Prozor"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Class"
 msgstr "Razred"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
 msgstr "(nijedan)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
 msgstr "Desni Alt"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
 msgstr "Desni Control"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
 msgstr "Desni (Alt+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
 msgstr "Desni (Ctrl+Alt)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
 msgstr "Desni (Ctrl+Shift)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
 msgstr "Lijevi (Alt+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Lijevi (Ctrl+Alt)"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Lijevi (Ctrl+Shif)"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Oba Shifta (Shift+Shift)"
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:120
 msgid "Right Meta"
 msgstr "Desni Meta"
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:121
 msgid "Left  Alt"
 msgstr "Lijevi Alt"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:122
 msgid "Left  Control"
 msgstr "Lijevi Control"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:123
 msgid "Left  Meta"
 msgstr "Lijevi Meta"
 
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:126
 msgid "Top Left"
 msgstr "Na vrhu lijevo"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:127
 msgid "Top Right"
 msgstr "Na vrhu desno"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:128
 msgid "Bottom Left"
 msgstr "Na dnu lijevo"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:129
 msgid "Bottom Right"
 msgstr "Na dnu desno"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:156
 msgid "X default codes"
 msgstr "X uobièajeni kodovi"
 
-#: kikbdconf.cpp:209
+#: kikbdconf.cpp:215
 #, c-format
 msgid ""
 "%s\n"
@@ -199,7 +201,7 @@ msgstr ""
 "%s\n"
 "Da li ¾elite poèeti sa postavom?"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
@@ -207,83 +209,83 @@ msgstr ""
 "Koristite \"Internacionalnu tipkovnicu\" po prvi put.\n"
 "Instalirao sam uobièajene postavke."
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:374
 msgid "unknown"
 msgstr "nepoznat"
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:378 kikbdconf.cpp:471
 msgid "default"
 msgstr "podrazumijevano"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:414
 msgid "Author:  Not specified"
 msgstr "Autor: Nije naveden"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:416
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:422
 msgid "Description:  "
 msgstr "Opis:  "
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:425
 msgid "Source:  "
 msgstr "Izvor:  "
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:426
 msgid "no file"
 msgstr "nema datoteke"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:427
 msgid "user file"
 msgstr ""
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:428
 msgid "system file"
 msgstr "sistemska datoteka"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:433
 msgid "Statistic:  "
 msgstr "Statistika: "
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:441
 msgid "symbols"
 msgstr "znakovi"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:449
 msgid "codes"
 msgstr "kodovi"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:452
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:429
+#: kikbdconf.cpp:464
 msgid "Language"
 msgstr "Jezik"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:468
 msgid "Charset"
 msgstr "skup znakova"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:514
 msgid "International keyboard ERROR"
 msgstr "Internacionalna tipkovnica - GRE©KA"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:530
 msgid "International keyboard warning"
 msgstr "Internacionalna tipkovnica - upozorenje"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
 msgid "International keyboard question"
 msgstr "Internacionalna tipkovnica - pitanje"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:544
 msgid "Configure"
 msgstr "Postavi"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:554
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -291,220 +293,243 @@ msgstr ""
 "\n"
 "Da li ¾elite nastaviti?"
 
-#: widgets.cpp:107
+#: widgets.cpp:116
 msgid "List of active keyboard maps"
 msgstr "Popis aktivnih mapa tipkovnica"
 
-#: widgets.cpp:117
+#: widgets.cpp:126
 msgid "&Add"
 msgstr "&Dodaj"
 
-#: widgets.cpp:118
-msgid "Adding new keyboard map"
+#: widgets.cpp:127
+#, fuzzy
+msgid "Add new keyboard map"
 msgstr "Dodajem novu mapu tipkovnice"
 
-#: widgets.cpp:122
+#: widgets.cpp:131
 msgid "Remove selected keyboard map"
 msgstr "Ukloni izabranu mapu tipkovnice"
 
-#: widgets.cpp:127
+#: widgets.cpp:136
 msgid "U&p"
 msgstr "&Gore"
 
-#: widgets.cpp:127
-msgid "Up selected keyboard map"
-msgstr "Premjesti mapu prema gore"
+#: widgets.cpp:136
+#, fuzzy
+msgid "Move up selected keyboard map"
+msgstr "Ukloni izabranu mapu tipkovnice"
 
-#: widgets.cpp:131
+#: widgets.cpp:140
 msgid "D&own"
 msgstr "&Dolje"
 
-#: widgets.cpp:131
-msgid "Down selected keyboard map"
+#: widgets.cpp:140
+#, fuzzy
+msgid "Move down selected keyboard map"
 msgstr "Premjesti mapu prema dolje"
 
-#: widgets.cpp:135
+#: widgets.cpp:144
 msgid "&Info"
 msgstr "&Info"
 
-#: widgets.cpp:136
+#: widgets.cpp:145
 msgid "Display information for selected keyboard map"
 msgstr "Prika¾i informacije za izabranu mapu tipkovnice"
 
-#: widgets.cpp:145
+#: widgets.cpp:154
 msgid "Use &hot list"
 msgstr "Koristi &hotlist"
 
-#: widgets.cpp:146
+#: widgets.cpp:155
 msgid ""
-"Use only default and last active keyboard maps to switching from keyboard"
+"Use only default and last active keyboard maps when switch key sequence is "
+"used"
 msgstr ""
 
-#: widgets.cpp:215
+#: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Dodajem tipkovnicu"
 
-#: widgets.cpp:216
-msgid "There is no more keyboard maps"
+#: widgets.cpp:225
+#, fuzzy
+msgid "There are no keyboard maps left to add"
 msgstr "Nema vi¹e mapa za tipkovnice"
 
-#: widgets.cpp:249
+#: widgets.cpp:258
 msgid "Keyboard map information"
 msgstr "Informacije o mapi tipkovnice"
 
-#: widgets.cpp:283
+#: widgets.cpp:292
 msgid "Add Keyboard"
 msgstr "Dodaj tipkovnicu"
 
-#: widgets.cpp:287
+#: widgets.cpp:296
 msgid "Available keyboard maps"
 msgstr "Dostupne mape za tipkovnice"
 
-#: widgets.cpp:394
+#: widgets.cpp:403
 msgid "Keyboard maps"
 msgstr "Mape tipkovnica"
 
-#: widgets.cpp:405
+#: widgets.cpp:414
 msgid "Switch and Alt Switch"
 msgstr ""
 
-#: widgets.cpp:410
-msgid "Key(s) to switch between keyboard maps"
+#: widgets.cpp:419
+#, fuzzy
+msgid "Key(s) for switching between keyboard maps"
 msgstr "Tipka(e) za promjenu izmeðu mapa tipkovnica"
 
-#: widgets.cpp:416
-msgid "Key to activate Alternate symbols in current keyboard map"
+#: widgets.cpp:425
+msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr ""
 
-#: widgets.cpp:429
+#: widgets.cpp:438
 msgid "&Beep"
 msgstr "&Pip"
 
-#: widgets.cpp:430
-msgid "Beep when ever keyboard mapping changed"
+#: widgets.cpp:439
+#, fuzzy
+msgid "Beep when keyboard map is changed"
 msgstr "Pipni kod svake promjene mapiranja tipkovnice"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Ad&vanced"
 msgstr "Na&predno"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Advanced options"
 msgstr "Napredne opcije"
 
-#: widgets.cpp:450
+#: widgets.cpp:459
 msgid "Advanced"
 msgstr "Napredno"
 
-#: widgets.cpp:466
+#: widgets.cpp:475
 msgid "&Emulate Caps Lock"
 msgstr "&Opona¹aj CapsLock"
 
-#: widgets.cpp:467
-msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+#: widgets.cpp:476
+#, fuzzy
+msgid ""
+"Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
+"languages"
 msgstr "Opona¹aj XServer CapsLock. Neki jezici zahtjevaju ovu opciju"
 
-#: widgets.cpp:473
+#: widgets.cpp:482
 msgid "&World Menu"
 msgstr "Izbornik S&vijeta"
 
-#: widgets.cpp:474
-msgid "Show menu in any window by holding Switch keys"
+#: widgets.cpp:483
+msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr ""
 
-#: widgets.cpp:481
+#: widgets.cpp:491
 msgid "&Save Classes"
 msgstr "&Spremi razrede"
 
-#: widgets.cpp:482
+#: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr ""
 
-#: widgets.cpp:488
+#: widgets.cpp:498
 msgid "Define X codes"
 msgstr "Odredi X kodove"
 
-#: widgets.cpp:491
+#: widgets.cpp:501
 msgid "Input"
 msgstr "Ulaz"
 
-#: widgets.cpp:495
-msgid "Standard behavior. Keyboard map active for all windows"
+#: widgets.cpp:505
+#, fuzzy
+msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
 
-#: widgets.cpp:499
-msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "Pro¹ireno pona¹anje. Svaki prozor pamti svoju mapu tipkovnice"
+#: widgets.cpp:509
+#, fuzzy
+msgid ""
+"Extended behavior. Keyboard map state is saved for each window independently"
+msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
 
-#: widgets.cpp:503
-msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Posebno pona¹anje. Svaki razred prozora pamti svoju mapu tipkovnice"
+#: widgets.cpp:513
+#, fuzzy
+msgid ""
+"Special behavior. Keyboard state is saved for each window class independently"
+msgstr "Standardno pona¹anje. Mapa tipkovnice aktivna za sve prozore"
 
-#: widgets.cpp:551
+#: widgets.cpp:561
 msgid "Button Colors"
 msgstr "Boje gumbi"
 
-#: widgets.cpp:561
+#: widgets.cpp:571
 msgid "Foreground"
 msgstr "Prvi plan"
 
-#: widgets.cpp:562
-msgid "Color of the text label"
-msgstr "Boja tekstualne oznake"
+#: widgets.cpp:572
+msgid "Text label foreground color"
+msgstr ""
 
-#: widgets.cpp:566
+#: widgets.cpp:576
+msgid "Background"
+msgstr ""
+
+#: widgets.cpp:577
+msgid "Text label background color"
+msgstr ""
+
+#: widgets.cpp:581
 msgid "With Caps Lock"
 msgstr "S CapsLockom"
 
-#: widgets.cpp:567
+#: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
 msgstr ""
 
-#: widgets.cpp:573
+#: widgets.cpp:588
 msgid "With Alternate"
 msgstr "Sa Alternate"
 
-#: widgets.cpp:574
-msgid "Background when Alternate switch is pressed"
+#: widgets.cpp:589
+msgid "Background when Alternate switch key is pressed"
 msgstr ""
 
-#: widgets.cpp:583
+#: widgets.cpp:598
 msgid "Button Font"
 msgstr "Pismo na gumbima"
 
-#: widgets.cpp:591
+#: widgets.cpp:606
 msgid "&Customize Font"
 msgstr "Po&desi pismo"
 
-#: widgets.cpp:592
+#: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
 msgstr ""
 
-#: widgets.cpp:596
+#: widgets.cpp:611
 msgid "C&hange Font"
 msgstr "P&romijeni pismo"
 
-#: widgets.cpp:641
+#: widgets.cpp:656
 msgid "&Autostart"
 msgstr "&Automatsko pokretanje"
 
-#: widgets.cpp:642
+#: widgets.cpp:657
 msgid "Start up automatically"
 msgstr "Pokreni automatski"
 
-#: widgets.cpp:648
+#: widgets.cpp:663
 msgid "&Docked"
 msgstr "&Pristani na ploèu"
 
-#: widgets.cpp:649
+#: widgets.cpp:664
 msgid "Dock into special area in the panel"
 msgstr "Pristani na ploèu"
 
-#: widgets.cpp:658
+#: widgets.cpp:673
 msgid "Place"
 msgstr "Polo¾i"
 
-#: widgets.cpp:665
+#: widgets.cpp:680
 msgid "Place in selected corner"
 msgstr "Polo¾i u izabrani kut"
 
@@ -523,3 +548,15 @@ msgstr "P&oèni"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Internacionalna tipkovnica"
+
+#~ msgid "Up selected keyboard map"
+#~ msgstr "Premjesti mapu prema gore"
+
+#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
+#~ msgstr "Pro¹ireno pona¹anje. Svaki prozor pamti svoju mapu tipkovnice"
+
+#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
+#~ msgstr "Posebno pona¹anje. Svaki razred prozora pamti svoju mapu tipkovnice"
+
+#~ msgid "Color of the text label"
+#~ msgstr "Boja tekstualne oznake"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-01-06 17:59+0100\n"
 "Last-Translator: Antonio Larrosa <larrosa@kde.org>\n"
 "Language-Team: Spanish <kde-es@kyb.uni-stuttgart.de>\n"
@@ -22,43 +22,35 @@ msgstr "&Propiedades"
 msgid "Go!"
 msgstr "Inicio"
 
-#: kpanel.C:341 tools.C:901
-msgid "Where do you want to go tomorrow?"
-msgstr "¿Hasta dónde quiere llegar mañana?"
-
-#: kpanel.C:416
+#: kpanel.C:415
 msgid "No info available"
 msgstr "No hay información disponible"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:454 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Terminar"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:462 props.C:206
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
 msgstr "Esconder el panel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
 msgstr "Mostrar el panel"
 
-#: kpanel.C:1067
+#: kpanel.C:1066
 msgid "Iconify other &windows"
 msgstr "Iconizar otras &ventanas"
 
-#: kpanel.C:1204
-msgid "No comment available"
-msgstr "No hay comentario disponible"
-
-#: kpanel.C:1213 tools.C:910
+#: kpanel.C:1214 tools.C:909
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 
-#: kpanel.C:1221 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Navegar rápidamente a través del sistema de archivos"
 
@@ -86,7 +78,7 @@ msgstr "Añadir Lista de Ventanas"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Añadir una lista de ventanas al panel"
 
-#: events.C:851 props.C:183
+#: events.C:855 props.C:183
 msgid "Configure"
 msgstr "Configurar"
 
@@ -102,7 +94,7 @@ msgstr "Editar Menús"
 msgid "Add or remove applications in the menu structure "
 msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
 
-#: events.C:853 props.C:189
+#: events.C:857 props.C:189
 msgid "Restart"
 msgstr "Reiniciar"
 
@@ -126,7 +118,7 @@ msgstr "Bloquear pantalla"
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:908 props.C:452
+#: events.C:912 props.C:452
 msgid "Oops!"
 msgstr "¡Ups!"
 
@@ -138,11 +130,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:919
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "Navegador de disco"
 
-#: events.C:907
+#: events.C:911
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
 
@@ -201,3 +193,9 @@ msgstr "Opciones..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Personalizar Navegador de disco"
+
+#~ msgid "Where do you want to go tomorrow?"
+#~ msgstr "¿Hasta dónde quiere llegar mañana?"
+
+#~ msgid "No comment available"
+#~ msgstr "No hay comentario disponible"

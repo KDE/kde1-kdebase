@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd-1.1\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-02-04 09:12+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=iso8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kikbd.cpp:116
+#: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
 msgstr "Stokellaoueg etrevraodel KDE loc'het war an diskouez-mañ endeo."
 
-#: kikbd.cpp:288
+#: kikbd.cpp:295
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Restr kodoù X \"%s\"n'eus ket anezhañ.\n"
 "Oc'h implij kodoù X dre ziouer."
 
-#: kikbd.cpp:313
+#: kikbd.cpp:321
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
@@ -37,21 +37,21 @@ msgstr ""
 "Tres stokellaoueg \"%s\" n'eus ket anezhañ.\n"
 "O tremen e biou dezhañ."
 
-#: kikbd.cpp:330
+#: kikbd.cpp:337
 msgid "Setup"
 msgstr "Kefluniadur"
 
-#: kikbd.cpp:345 kikbd.cpp:358
+#: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "N'hallan ket lemel %s a-ziwar ar gemmerien.\n"
 
-#: kikbd.cpp:348
+#: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "N'hallan ket ouzhpennañ % d'ar c'hemmer niverenn 3.\n"
 
-#: kikbd.cpp:370
+#: kikbd.cpp:384
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
@@ -60,19 +60,20 @@ msgstr ""
 "N'hallan ket termeniñ Mod Gwintañ da %s evit ar stokellaoueg %s.\n"
 "Arouezenn Alt dizoberiet."
 
-#: kikbd.cpp:392
+#: kikbd.cpp:406
+#, fuzzy
 msgid ""
-"Cannot remove Caps Lock from Modifiers.\n"
+"Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "N'hallan ket lemel Krouilh Pennlizh diwar ar gemmerien.\n"
 "Kendarvanerezh Krouilh Pennlizh dizoberiet"
 
-#: kikbd.cpp:1003
+#: kikbd.cpp:1097
 msgid "Exiting International Keyboard"
 msgstr "O kuitaat ar Stokellaoueg Etrevroadel"
 
-#: kikbd.cpp:1004
+#: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
@@ -80,127 +81,128 @@ msgstr ""
 "War bouez kuitaat an ostilh \"Stokellaoueg Etrevroadel\" emaoc'h.\n"
 "Ha fellout a ra deoc'h e emloc'hfe pa ereit an tro kentañ ?"
 
-#: keymap.cpp:181
-msgid "KeyMap: cannot allocate memory"
+#: keymap.cpp:186
+#, fuzzy
+msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap : n'hallañ ket derannañ memor"
 
-#: keymap.cpp:228
-#, c-format
+#: keymap.cpp:233
+#, fuzzy, c-format
 msgid ""
-"Can not find symbol \"%s\".\n"
-"May be your default X codes does not match.\n"
-"You can preset X codes in \"Advanced\" section\n"
-"of configuration program."
+"Can't find symbol \"%s\".\n"
+"Maybe your default X codes do not match.\n"
+"You can preset X codes from section \"Advanced\"\n"
+"in the configuration program."
 msgstr ""
 "N'hallan ket kavout an arouezenn \"%s\".\n"
 "Ho kodoù X dre ziouer ne glot ket marteze.\n"
 "O raktermeniñ e c'hellit er rann \"Araokaet\"\n"
 "ar goulev kefluniañ."
 
-#: keymap.cpp:233
-#, c-format
-msgid "KeyMap: can not find symbol \"%s\"."
+#: keymap.cpp:238
+#, fuzzy, c-format
+msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap : n'hallan ket kavout an arouezenn \"%s\"."
 
-#: keymap.cpp:241
-#, c-format
-msgid "KeyMap: do not understand key code \"%s\"."
+#: keymap.cpp:246
+#, fuzzy, c-format
+msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap : ne veizan ket ar voneg stokell \"%s\"."
 
-#: keymap.cpp:247
-#, c-format
-msgid "KeyMap: key code \"%s\" go out of range."
+#: keymap.cpp:252
+#, fuzzy, c-format
+msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap : boneg stokell \"%s\" a ya er-maez ar rummad."
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Global"
 msgstr "Hollek"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Window"
 msgstr "Prenestr"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Class"
 msgstr "Renkad"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
 msgstr "(Hini ebet)"
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
 msgstr "Alt a-zehou"
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
 msgstr "Control a-zehou"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
 msgstr "(Alt+Shift) a-zehou"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
 msgstr "(Ctrl+Alt) a-zehou"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
 msgstr "(Ctrl+Shift) a-zehou"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
 msgstr "(Alt+Shift) a-gleiz"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "(Ctrl+Alt) a-gleiz"
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "(Ctrl+Shift) a-gleiz"
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
 msgstr "An daou Pennlizh"
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:120
 msgid "Right Meta"
 msgstr "Meta a-zehou"
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:121
 msgid "Left  Alt"
 msgstr "Alt a-gleiz"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:122
 msgid "Left  Control"
 msgstr "Control a-gleiz"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:123
 msgid "Left  Meta"
 msgstr "Meta a-gleiz"
 
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:126
 msgid "Top Left"
 msgstr "Laez a-gleiz"
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:127
 msgid "Top Right"
 msgstr "Laez a-zehou"
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:128
 msgid "Bottom Left"
 msgstr "Traoñ a-gleiz"
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:129
 msgid "Bottom Right"
 msgstr "Traoñ a-zehou"
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:156
 msgid "X default codes"
 msgstr "Kodoù X dre ziouer"
 
-#: kikbdconf.cpp:209
+#: kikbdconf.cpp:215
 #, c-format
 msgid ""
 "%s\n"
@@ -209,7 +211,7 @@ msgstr ""
 "%s\n"
 "Ha fellout a ra deoc'h kefluniañ bremañ ?"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
@@ -217,83 +219,83 @@ msgstr ""
 "Ar wech kentañ eo deoc'h implij ar \"Stokellaoueg Etrevroadel\".\n"
 "Staliaet am eus kefluniadurioù zo dre ziouer."
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:374
 msgid "unknown"
 msgstr "dianav"
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:378 kikbdconf.cpp:471
 msgid "default"
 msgstr "dre ziouer"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:414
 msgid "Author:  Not specified"
 msgstr "Aozer : antermenet"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:416
 msgid "Author"
 msgstr "Aozer"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:422
 msgid "Description:  "
 msgstr "Deskrivadur :"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:425
 msgid "Source:  "
 msgstr "Tarzh :"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:426
 msgid "no file"
 msgstr "restr ebet"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:427
 msgid "user file"
 msgstr "restr un arveriad"
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:428
 msgid "system file"
 msgstr "restr ar reizhiad"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:433
 msgid "Statistic:  "
 msgstr "Stadegoù :"
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:441
 msgid "symbols"
 msgstr "arouezenn"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:449
 msgid "codes"
 msgstr "boneg"
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:452
 msgid "alternative symbols"
 msgstr "arouezenn divoutin"
 
-#: kikbdconf.cpp:429
+#: kikbdconf.cpp:464
 msgid "Language"
 msgstr "Yezh"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:468
 msgid "Charset"
 msgstr "Arouezenneg"
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:514
 msgid "International keyboard ERROR"
 msgstr "FAZI ar Stokellaoueg Etrevroadel"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:530
 msgid "International keyboard warning"
 msgstr "Kemenn ar Stokellaoueg Etrevroadel"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
 msgid "International keyboard question"
 msgstr "Goulenn ar Stokellaoueg Etrevroadel"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:544
 msgid "Configure"
 msgstr "Kefluniañ"
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:554
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -301,227 +303,253 @@ msgstr ""
 "\n"
 "Ha fellout a ra deoc'h kenderc'hel ?"
 
-#: widgets.cpp:107
+#: widgets.cpp:116
 msgid "List of active keyboard maps"
 msgstr "Roll an tresoù stokellaoueg bev"
 
-#: widgets.cpp:117
+#: widgets.cpp:126
 msgid "&Add"
 msgstr "&Ouzhpennañ"
 
-#: widgets.cpp:118
-msgid "Adding new keyboard map"
+#: widgets.cpp:127
+#, fuzzy
+msgid "Add new keyboard map"
 msgstr "Oc'h ouzhpennañ un tres stokellaoueg nevez"
 
-#: widgets.cpp:122
+#: widgets.cpp:131
 msgid "Remove selected keyboard map"
 msgstr "Lemel an tres stokellaoueg diuzet"
 
-#: widgets.cpp:127
+#: widgets.cpp:136
 msgid "U&p"
 msgstr "&Uheloc'h"
 
-#: widgets.cpp:127
-msgid "Up selected keyboard map"
-msgstr "Diuz an tres stokellaoueg a-is"
+#: widgets.cpp:136
+#, fuzzy
+msgid "Move up selected keyboard map"
+msgstr "Lemel an tres stokellaoueg diuzet"
 
-#: widgets.cpp:131
+#: widgets.cpp:140
 msgid "D&own"
 msgstr "&Izeloc'h"
 
-#: widgets.cpp:131
-msgid "Down selected keyboard map"
+#: widgets.cpp:140
+#, fuzzy
+msgid "Move down selected keyboard map"
 msgstr "Diuz an tres stokellaoueg dindan"
 
-#: widgets.cpp:135
+#: widgets.cpp:144
 msgid "&Info"
 msgstr "&Titouroù"
 
-#: widgets.cpp:136
+#: widgets.cpp:145
 msgid "Display information for selected keyboard map"
 msgstr "Diskouez titouroù evit an tres stokellaoueg diuzet"
 
-#: widgets.cpp:145
+#: widgets.cpp:154
 msgid "Use &hot list"
 msgstr "Implij &roll tomm"
 
-#: widgets.cpp:146
+#: widgets.cpp:155
+#, fuzzy
 msgid ""
-"Use only default and last active keyboard maps to switching from keyboard"
+"Use only default and last active keyboard maps when switch key sequence is "
+"used"
 msgstr ""
 "Implij an tres stokellaoueg dre ziouer hag hini bev diwezhañ evit gwintañ"
 
-#: widgets.cpp:215
+#: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Oc'h ouzhpennañ ur stokellaoueg"
 
-#: widgets.cpp:216
-msgid "There is no more keyboard maps"
+#: widgets.cpp:225
+#, fuzzy
+msgid "There are no keyboard maps left to add"
 msgstr "N'eus ket mui a tres stokellaoueg"
 
-#: widgets.cpp:249
+#: widgets.cpp:258
 msgid "Keyboard map information"
 msgstr "Titouroù war an tres stokellaoueg"
 
-#: widgets.cpp:283
+#: widgets.cpp:292
 msgid "Add Keyboard"
 msgstr "Ouzhpenn stokellaoueg"
 
-#: widgets.cpp:287
+#: widgets.cpp:296
 msgid "Available keyboard maps"
 msgstr "Tresoù stokellaoueg hegerz"
 
-#: widgets.cpp:394
+#: widgets.cpp:403
 msgid "Keyboard maps"
 msgstr "Tresoù stokellaoueg"
 
-#: widgets.cpp:405
+#: widgets.cpp:414
 msgid "Switch and Alt Switch"
 msgstr "Gwintañ ha gwintañ divoutin"
 
-#: widgets.cpp:410
-msgid "Key(s) to switch between keyboard maps"
+#: widgets.cpp:419
+#, fuzzy
+msgid "Key(s) for switching between keyboard maps"
 msgstr "Stokell(où) evit gwintañ etre tresoù stokellaoueg"
 
-#: widgets.cpp:416
-msgid "Key to activate Alternate symbols in current keyboard map"
+#: widgets.cpp:425
+#, fuzzy
+msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Stokell evit bevaat arouezennoù divoutin en tres stokellaoueg o ren"
 
-#: widgets.cpp:429
+#: widgets.cpp:438
 msgid "&Beep"
 msgstr "&Trouzal"
 
-#: widgets.cpp:430
-msgid "Beep when ever keyboard mapping changed"
+#: widgets.cpp:439
+#, fuzzy
+msgid "Beep when keyboard map is changed"
 msgstr "Trouzal bep ma vez kemmet tres ar stokellaoueg"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Ad&vanced"
 msgstr "&Araokaet"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Advanced options"
 msgstr "Dibaboù araokaet"
 
-#: widgets.cpp:450
+#: widgets.cpp:459
 msgid "Advanced"
 msgstr "Araokaet"
 
-#: widgets.cpp:466
+#: widgets.cpp:475
 msgid "&Emulate Caps Lock"
 msgstr "&Kendarvanañ Krouilh Pennlizh"
 
-#: widgets.cpp:467
-msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+#: widgets.cpp:476
+#, fuzzy
+msgid ""
+"Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
+"languages"
 msgstr ""
 "Kendarvanañ Krouilh Pennlizh ar servijer X. Ret evit ma vo reizh yezhoù zo"
 
-#: widgets.cpp:473
+#: widgets.cpp:482
 msgid "&World Menu"
 msgstr "&Lañser bedel"
 
-#: widgets.cpp:474
-msgid "Show menu in any window by holding Switch keys"
+#: widgets.cpp:483
+#, fuzzy
+msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr ""
 "Diskouez al lañser e n'eus forzh pe brenestr dre waskañ ar stokelloù gwintañ"
 
-#: widgets.cpp:481
+#: widgets.cpp:491
 msgid "&Save Classes"
 msgstr "&Enrollañ renkadoù"
 
-#: widgets.cpp:482
+#: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr ""
 "Enrollañ darempredoù etre renkadoù prenestr ha tres stokellaoueg en ur "
 "guitaat"
 
-#: widgets.cpp:488
+#: widgets.cpp:498
 msgid "Define X codes"
 msgstr "Termeniñ bonegoù X"
 
-#: widgets.cpp:491
+#: widgets.cpp:501
 msgid "Input"
 msgstr "Enmont"
 
-#: widgets.cpp:495
-msgid "Standard behavior. Keyboard map active for all windows"
+#: widgets.cpp:505
+#, fuzzy
+msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
 
-#: widgets.cpp:499
-msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "Emzalc'h astennet. Pep prenestr a zalc'h e tres stokellaoueg"
+#: widgets.cpp:509
+#, fuzzy
+msgid ""
+"Extended behavior. Keyboard map state is saved for each window independently"
+msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
 
-#: widgets.cpp:503
-msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr ""
-"Emzalc'h dibar. Pep renkad prenestr a zalc'h e tres stokellaoueg dezhañ"
+#: widgets.cpp:513
+#, fuzzy
+msgid ""
+"Special behavior. Keyboard state is saved for each window class independently"
+msgstr "Emzalc'h standard. Tres stokellaoueg bev evit an holl prenester"
 
-#: widgets.cpp:551
+#: widgets.cpp:561
 msgid "Button Colors"
 msgstr "Livioù an nozelennoù"
 
-#: widgets.cpp:561
+#: widgets.cpp:571
 msgid "Foreground"
 msgstr "Rakleur"
 
-#: widgets.cpp:562
-msgid "Color of the text label"
-msgstr "Liv skridennad an destenn"
+#: widgets.cpp:572
+msgid "Text label foreground color"
+msgstr ""
 
-#: widgets.cpp:566
+#: widgets.cpp:576
+msgid "Background"
+msgstr ""
+
+#: widgets.cpp:577
+msgid "Text label background color"
+msgstr ""
+
+#: widgets.cpp:581
 msgid "With Caps Lock"
 msgstr "Gant Krouilh Pennlizh"
 
-#: widgets.cpp:567
+#: widgets.cpp:582
 msgid "Background when Emulated Caps Lock active"
 msgstr "Drekleur pa vez bev Kendarvanerezh Krouilh Pennlizh"
 
-#: widgets.cpp:573
+#: widgets.cpp:588
 msgid "With Alternate"
 msgstr "Gant hini divoutin"
 
-#: widgets.cpp:574
-msgid "Background when Alternate switch is pressed"
+#: widgets.cpp:589
+#, fuzzy
+msgid "Background when Alternate switch key is pressed"
 msgstr "Drekleur pa vez gwasket ar gwintañ divoutin"
 
-#: widgets.cpp:583
+#: widgets.cpp:598
 msgid "Button Font"
 msgstr "Nodrezh an nozelenn"
 
-#: widgets.cpp:591
+#: widgets.cpp:606
 msgid "&Customize Font"
 msgstr "&Neuziañ an nodrezh"
 
-#: widgets.cpp:592
+#: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
 msgstr ""
 "Neuziañ nodrezh testenn ar skridennad pe implij ar c'hefluniadur hollek"
 
-#: widgets.cpp:596
+#: widgets.cpp:611
 msgid "C&hange Font"
 msgstr "&Kemmañ nodrezh"
 
-#: widgets.cpp:641
+#: widgets.cpp:656
 msgid "&Autostart"
 msgstr "&Emloc'h"
 
-#: widgets.cpp:642
+#: widgets.cpp:657
 msgid "Start up automatically"
 msgstr "Loc'hañ ent emgefreek"
 
-#: widgets.cpp:648
+#: widgets.cpp:663
 msgid "&Docked"
 msgstr "En&soc'het"
 
-#: widgets.cpp:649
+#: widgets.cpp:664
 msgid "Dock into special area in the panel"
 msgstr "Ensoc'hañ en ur vaezienn dibar ar banell"
 
-#: widgets.cpp:658
+#: widgets.cpp:673
 msgid "Place"
 msgstr "Lec'hiañ"
 
-#: widgets.cpp:665
+#: widgets.cpp:680
 msgid "Place in selected corner"
 msgstr "Lec'hiañ er c'horn diuzet"
 
@@ -540,3 +568,16 @@ msgstr "&Loc'hañ"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Stokellaoueg Etrevroadel"
+
+#~ msgid "Up selected keyboard map"
+#~ msgstr "Diuz an tres stokellaoueg a-is"
+
+#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
+#~ msgstr "Emzalc'h astennet. Pep prenestr a zalc'h e tres stokellaoueg"
+
+#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
+#~ msgstr ""
+#~ "Emzalc'h dibar. Pep renkad prenestr a zalc'h e tres stokellaoueg dezhañ"
+
+#~ msgid "Color of the text label"
+#~ msgstr "Liv skridennad an destenn"

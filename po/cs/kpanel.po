@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1999-01-18 08:18+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -25,43 +25,35 @@ msgstr "&Vlastnosti"
 msgid "Go!"
 msgstr "Start"
 
-#: kpanel.C:341 tools.C:901
-msgid "Where do you want to go tomorrow?"
-msgstr "Kam si pøejete jít zítra?"
-
-#: kpanel.C:416
+#: kpanel.C:415
 msgid "No info available"
 msgstr "Informace není k dispozici"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:454 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Odhlásit"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:462 props.C:206
 msgid "Lock screen"
 msgstr "Zablokovat obrazovku"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
 msgstr "Schovat panel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
 msgstr "Ukázat panel"
 
-#: kpanel.C:1067
+#: kpanel.C:1066
 msgid "Iconify other &windows"
 msgstr "Ikonifikovat ostatní okna"
 
-#: kpanel.C:1204
-msgid "No comment available"
-msgstr "Komentáø není k dispozici"
-
-#: kpanel.C:1213 tools.C:910
+#: kpanel.C:1214 tools.C:909
 msgid "Windowlist"
 msgstr "Seznam oken"
 
-#: kpanel.C:1221 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Rychlé procházení souborovým systémem"
 
@@ -89,7 +81,7 @@ msgstr "Pøidat seznam oken"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Pøidat seznam oken na panel"
 
-#: events.C:851 props.C:183
+#: events.C:855 props.C:183
 msgid "Configure"
 msgstr "Konfigurovat"
 
@@ -105,7 +97,7 @@ msgstr "Upravit menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Pøidání nebo ubrání aplikací ve struktuøe menu"
 
-#: events.C:853 props.C:189
+#: events.C:857 props.C:189
 msgid "Restart"
 msgstr "Spustit znova"
 
@@ -129,7 +121,7 @@ msgstr "Blokovat obrazovku"
 msgid "The menu editor is not installed."
 msgstr "Editor menu není nainstalován."
 
-#: events.C:908 props.C:452
+#: events.C:912 props.C:452
 msgid "Oops!"
 msgstr "Ouha!"
 
@@ -141,11 +133,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:919
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "Diskový navigátor"
 
-#: events.C:907
+#: events.C:911
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
@@ -204,3 +196,9 @@ msgstr "Mo¾nosti..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Nastavení diskového navigátoru"
+
+#~ msgid "Where do you want to go tomorrow?"
+#~ msgstr "Kam si pøejete jít zítra?"
+
+#~ msgid "No comment available"
+#~ msgstr "Komentáø není k dispozici"

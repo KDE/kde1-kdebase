@@ -1,522 +1,547 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 
-#: kikbd.cpp:116
+#: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
 msgstr "KDE 国际键盘已经起动了."
 
-#: kikbd.cpp:288
+#: kikbd.cpp:295
 #, c-format
 msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
 
-#: kikbd.cpp:313
+#: kikbd.cpp:321
 #, c-format
 msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skipping this map."
 msgstr ""
 
-#: kikbd.cpp:330
+#: kikbd.cpp:337
 msgid "Setup"
 msgstr "设置"
 
-#: kikbd.cpp:345 kikbd.cpp:358
+#: kikbd.cpp:359 kikbd.cpp:372
 #, c-format
 msgid "Can not remove %s from Modifiers.\n"
 msgstr "无法从修饰键中去掉 %s.\n"
 
-#: kikbd.cpp:348
+#: kikbd.cpp:362
 #, c-format
 msgid "Can not add %s to Modifier number 3.\n"
 msgstr "无法把 %s 添加到修饰键 3.\n"
 
-#: kikbd.cpp:370
+#: kikbd.cpp:384
 #, c-format
 msgid ""
 "Can not set Mode Switch as %s for keyboard %s.\n"
 "Alt symbols disabled"
 msgstr "不能把模式开关设到 %s , 键盘 %s."
 
-#: kikbd.cpp:392
+#: kikbd.cpp:406
 #, fuzzy
 msgid ""
-"Cannot remove Caps Lock from Modifiers.\n"
+"Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "不能把大写锁定键从修饰键中去掉.\n"
 "禁止大写锁定模拟"
 
-#: kikbd.cpp:1003
+#: kikbd.cpp:1097
 #, fuzzy
 msgid "Exiting International Keyboard"
 msgstr "国际键盘"
 
-#: kikbd.cpp:1004
+#: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 
-#: keymap.cpp:181
-msgid "KeyMap: cannot allocate memory"
+#: keymap.cpp:186
+#, fuzzy
+msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: 无法申请内存"
 
-#: keymap.cpp:228
+#: keymap.cpp:233
 #, c-format
 msgid ""
-"Can not find symbol \"%s\".\n"
-"May be your default X codes does not match.\n"
-"You can preset X codes in \"Advanced\" section\n"
-"of configuration program."
+"Can't find symbol \"%s\".\n"
+"Maybe your default X codes do not match.\n"
+"You can preset X codes from section \"Advanced\"\n"
+"in the configuration program."
 msgstr ""
 
-#: keymap.cpp:233
+#: keymap.cpp:238
 #, fuzzy, c-format
-msgid "KeyMap: can not find symbol \"%s\"."
+msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: 无法找到符号 %s"
 
-#: keymap.cpp:241
+#: keymap.cpp:246
 #, fuzzy, c-format
-msgid "KeyMap: do not understand key code \"%s\"."
+msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: 不能理解键码 %s"
 
-#: keymap.cpp:247
+#: keymap.cpp:252
 #, fuzzy, c-format
-msgid "KeyMap: key code \"%s\" go out of range."
+msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: 键码 %s 越界"
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Global"
 msgstr ""
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Window"
 msgstr ""
 
-#: kikbdconf.cpp:97
+#: kikbdconf.cpp:102
 msgid "Class"
 msgstr ""
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:105 kikbdconf.cpp:117
 msgid "(None)"
 msgstr ""
 
-#: kikbdconf.cpp:101 kikbdconf.cpp:113
+#: kikbdconf.cpp:106 kikbdconf.cpp:118
 msgid "Right Alt"
 msgstr ""
 
-#: kikbdconf.cpp:102 kikbdconf.cpp:114
+#: kikbdconf.cpp:107 kikbdconf.cpp:119
 msgid "Right Control"
 msgstr ""
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:108
 msgid "Rights (Alt+Shift)"
 msgstr ""
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:109
 msgid "Rights (Ctrl+Alt)"
 msgstr ""
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:110
 msgid "Rights (Ctrl+Shift)"
 msgstr ""
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:111
 msgid "Lefts  (Alt+Shift)"
 msgstr ""
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:112
 msgid "Lefts  (Ctrl+Alt)"
 msgstr ""
 
-#: kikbdconf.cpp:108
+#: kikbdconf.cpp:113
 msgid "Lefts  (Ctrl+Shift)"
 msgstr ""
 
-#: kikbdconf.cpp:109
+#: kikbdconf.cpp:114
 msgid "Both Shift's (Shift+Shift)"
 msgstr ""
 
-#: kikbdconf.cpp:115
+#: kikbdconf.cpp:120
 msgid "Right Meta"
 msgstr ""
 
-#: kikbdconf.cpp:116
+#: kikbdconf.cpp:121
 msgid "Left  Alt"
 msgstr ""
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:122
 msgid "Left  Control"
 msgstr ""
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:123
 msgid "Left  Meta"
 msgstr ""
 
-#: kikbdconf.cpp:121
+#: kikbdconf.cpp:126
 msgid "Top Left"
 msgstr ""
 
-#: kikbdconf.cpp:122
+#: kikbdconf.cpp:127
 msgid "Top Right"
 msgstr ""
 
-#: kikbdconf.cpp:123
+#: kikbdconf.cpp:128
 msgid "Bottom Left"
 msgstr ""
 
-#: kikbdconf.cpp:124
+#: kikbdconf.cpp:129
 msgid "Bottom Right"
 msgstr ""
 
-#: kikbdconf.cpp:151
+#: kikbdconf.cpp:156
 msgid "X default codes"
 msgstr ""
 
-#: kikbdconf.cpp:209
+#: kikbdconf.cpp:215
 #, fuzzy, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr "你想要起动配置吗 ?"
 
-#: kikbdconf.cpp:217
+#: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:359
+#: kikbdconf.cpp:374
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:363 kikbdconf.cpp:436
+#: kikbdconf.cpp:378 kikbdconf.cpp:471
 msgid "default"
 msgstr ""
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:414
 msgid "Author:  Not specified"
 msgstr ""
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:416
 #, fuzzy
 msgid "Author"
 msgstr "自动启动"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:422
 #, fuzzy
 msgid "Description:  "
 msgstr "描述"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:425
 msgid "Source:  "
 msgstr ""
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:426
 msgid "no file"
 msgstr ""
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:427
 msgid "user file"
 msgstr ""
 
-#: kikbdconf.cpp:403
+#: kikbdconf.cpp:428
 msgid "system file"
 msgstr ""
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:433
 msgid "Statistic:  "
 msgstr ""
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:441
 msgid "symbols"
 msgstr ""
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:449
 msgid "codes"
 msgstr ""
 
-#: kikbdconf.cpp:417
+#: kikbdconf.cpp:452
 msgid "alternative symbols"
 msgstr ""
 
-#: kikbdconf.cpp:429
+#: kikbdconf.cpp:464
 msgid "Language"
 msgstr ""
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:468
 msgid "Charset"
 msgstr ""
 
-#: kikbdconf.cpp:479
+#: kikbdconf.cpp:514
 #, fuzzy
 msgid "International keyboard ERROR"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:495
+#: kikbdconf.cpp:530
 #, fuzzy
 msgid "International keyboard warning"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
+#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
 #, fuzzy
 msgid "International keyboard question"
 msgstr "国际键盘"
 
-#: kikbdconf.cpp:509
+#: kikbdconf.cpp:544
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:519
+#: kikbdconf.cpp:554
 #, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
 msgstr "你想要起动配置吗 ?"
 
-#: widgets.cpp:107
+#: widgets.cpp:116
 msgid "List of active keyboard maps"
 msgstr "活动键盘映射列表"
 
-#: widgets.cpp:117
+#: widgets.cpp:126
 #, fuzzy
 msgid "&Add"
 msgstr "添加"
 
-#: widgets.cpp:118
-msgid "Adding new keyboard map"
+#: widgets.cpp:127
+#, fuzzy
+msgid "Add new keyboard map"
 msgstr "添加新的键盘映射"
 
-#: widgets.cpp:122
+#: widgets.cpp:131
 msgid "Remove selected keyboard map"
 msgstr "去掉选中的键盘映射"
 
-#: widgets.cpp:127
+#: widgets.cpp:136
 #, fuzzy
 msgid "U&p"
 msgstr "上"
 
-#: widgets.cpp:127
-msgid "Up selected keyboard map"
-msgstr "向上调整选中的键盘映射"
+#: widgets.cpp:136
+#, fuzzy
+msgid "Move up selected keyboard map"
+msgstr "去掉选中的键盘映射"
 
-#: widgets.cpp:131
+#: widgets.cpp:140
 #, fuzzy
 msgid "D&own"
 msgstr "下"
 
-#: widgets.cpp:131
-msgid "Down selected keyboard map"
+#: widgets.cpp:140
+#, fuzzy
+msgid "Move down selected keyboard map"
 msgstr "向下调整选中的键盘映射"
 
-#: widgets.cpp:135
+#: widgets.cpp:144
 msgid "&Info"
 msgstr ""
 
-#: widgets.cpp:136
+#: widgets.cpp:145
 #, fuzzy
 msgid "Display information for selected keyboard map"
 msgstr "向下调整选中的键盘映射"
 
-#: widgets.cpp:145
+#: widgets.cpp:154
 #, fuzzy
 msgid "Use &hot list"
 msgstr "使用 \"hoslist\""
 
-#: widgets.cpp:146
+#: widgets.cpp:155
+#, fuzzy
 msgid ""
-"Use only default and last active keyboard maps to switching from keyboard"
+"Use only default and last active keyboard maps when switch key sequence is "
+"used"
 msgstr "只使用默认的和上次使用的键盘映射来切换键盘"
 
-#: widgets.cpp:215
+#: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "正在添加键盘"
 
-#: widgets.cpp:216
-msgid "There is no more keyboard maps"
+#: widgets.cpp:225
+#, fuzzy
+msgid "There are no keyboard maps left to add"
 msgstr "没有别的键盘映射了"
 
-#: widgets.cpp:249
+#: widgets.cpp:258
 msgid "Keyboard map information"
 msgstr ""
 
-#: widgets.cpp:283
+#: widgets.cpp:292
 msgid "Add Keyboard"
 msgstr "添加键盘"
 
-#: widgets.cpp:287
+#: widgets.cpp:296
 msgid "Available keyboard maps"
 msgstr "可用的键盘映射"
 
-#: widgets.cpp:394
+#: widgets.cpp:403
 #, fuzzy
 msgid "Keyboard maps"
 msgstr "键盘"
 
-#: widgets.cpp:405
+#: widgets.cpp:414
 msgid "Switch and Alt Switch"
 msgstr "开关和 Alt 开关"
 
-#: widgets.cpp:410
+#: widgets.cpp:419
 #, fuzzy
-msgid "Key(s) to switch between keyboard maps"
+msgid "Key(s) for switching between keyboard maps"
 msgstr "切换键盘映射所使用的快捷键"
 
-#: widgets.cpp:416
-msgid "Key to activate Alternate symbols in current keyboard map"
+#: widgets.cpp:425
+#, fuzzy
+msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "在当前键盘映射中用来激活 Alt 符号的键"
 
-#: widgets.cpp:429
+#: widgets.cpp:438
 #, fuzzy
 msgid "&Beep"
 msgstr "蜂鸣"
 
-#: widgets.cpp:430
-msgid "Beep when ever keyboard mapping changed"
+#: widgets.cpp:439
+#, fuzzy
+msgid "Beep when keyboard map is changed"
 msgstr "在任何键盘映射改变时发出蜂鸣"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 #, fuzzy
 msgid "Ad&vanced"
 msgstr "高级"
 
-#: widgets.cpp:433
+#: widgets.cpp:442
 msgid "Advanced options"
 msgstr "高级选项"
 
-#: widgets.cpp:450
+#: widgets.cpp:459
 msgid "Advanced"
 msgstr "高级"
 
-#: widgets.cpp:466
+#: widgets.cpp:475
 #, fuzzy
 msgid "&Emulate Caps Lock"
 msgstr "模拟大写锁定"
 
-#: widgets.cpp:467
+#: widgets.cpp:476
 #, fuzzy
-msgid "Emulate XServer Caps Lock. Needed for some languagesto be correct"
+msgid ""
+"Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
+"languages"
 msgstr "模拟 X 服务器大写锁定.某些语言需要"
 
-#: widgets.cpp:473
+#: widgets.cpp:482
 #, fuzzy
 msgid "&World Menu"
 msgstr "世界"
 
-#: widgets.cpp:474
-msgid "Show menu in any window by holding Switch keys"
+#: widgets.cpp:483
+#, fuzzy
+msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "在任何窗口中按下切换键显示菜单"
 
-#: widgets.cpp:481
+#: widgets.cpp:491
 #, fuzzy
 msgid "&Save Classes"
 msgstr "保存类别"
 
-#: widgets.cpp:482
+#: widgets.cpp:492
 msgid "Save relations between window classes and keyboard maps on exit"
 msgstr "在退出时保存窗口类和键盘映射的关系"
 
-#: widgets.cpp:488
+#: widgets.cpp:498
 msgid "Define X codes"
 msgstr ""
 
-#: widgets.cpp:491
+#: widgets.cpp:501
 msgid "Input"
 msgstr "输入"
 
-#: widgets.cpp:495
-msgid "Standard behavior. Keyboard map active for all windows"
+#: widgets.cpp:505
+#, fuzzy
+msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "标准行为.键盘映射在所有窗口中起作用"
 
-#: widgets.cpp:499
-msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "扩展行为.每个窗口记住各自使用的键盘映射"
+#: widgets.cpp:509
+#, fuzzy
+msgid ""
+"Extended behavior. Keyboard map state is saved for each window independently"
+msgstr "标准行为.键盘映射在所有窗口中起作用"
 
-#: widgets.cpp:503
-msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "特殊行为.每个窗口类记住各自使用的键盘映射"
+#: widgets.cpp:513
+#, fuzzy
+msgid ""
+"Special behavior. Keyboard state is saved for each window class independently"
+msgstr "标准行为.键盘映射在所有窗口中起作用"
 
-#: widgets.cpp:551
+#: widgets.cpp:561
 msgid "Button Colors"
 msgstr "按钮颜色"
 
-#: widgets.cpp:561
+#: widgets.cpp:571
 msgid "Foreground"
 msgstr "前景"
 
-#: widgets.cpp:562
-#, fuzzy
-msgid "Color of the text label"
-msgstr "文本标签的颜色"
+#: widgets.cpp:572
+msgid "Text label foreground color"
+msgstr ""
 
-#: widgets.cpp:566
+#: widgets.cpp:576
+msgid "Background"
+msgstr ""
+
+#: widgets.cpp:577
+msgid "Text label background color"
+msgstr ""
+
+#: widgets.cpp:581
 #, fuzzy
 msgid "With Caps Lock"
 msgstr "带大写锁定"
 
-#: widgets.cpp:567
+#: widgets.cpp:582
 #, fuzzy
 msgid "Background when Emulated Caps Lock active"
 msgstr "在模拟的大写锁定起作用时在后台"
 
-#: widgets.cpp:573
+#: widgets.cpp:588
 msgid "With Alternate"
 msgstr "带 Alt"
 
-#: widgets.cpp:574
-msgid "Background when Alternate switch is pressed"
+#: widgets.cpp:589
+#, fuzzy
+msgid "Background when Alternate switch key is pressed"
 msgstr "在 Alt 开关按下时在后台"
 
-#: widgets.cpp:583
+#: widgets.cpp:598
 msgid "Button Font"
 msgstr "按钮字体"
 
-#: widgets.cpp:591
+#: widgets.cpp:606
 #, fuzzy
 msgid "&Customize Font"
 msgstr "自定义字体"
 
-#: widgets.cpp:592
+#: widgets.cpp:607
 msgid "Customize Font for text label or use global settings"
 msgstr "自定义文本标签字体或使用全局设定"
 
-#: widgets.cpp:596
+#: widgets.cpp:611
 #, fuzzy
 msgid "C&hange Font"
 msgstr "改变字体"
 
-#: widgets.cpp:641
+#: widgets.cpp:656
 #, fuzzy
 msgid "&Autostart"
 msgstr "自动启动"
 
-#: widgets.cpp:642
+#: widgets.cpp:657
 #, fuzzy
 msgid "Start up automatically"
 msgstr "自动起动"
 
-#: widgets.cpp:648
+#: widgets.cpp:663
 msgid "&Docked"
 msgstr ""
 
-#: widgets.cpp:649
+#: widgets.cpp:664
 #, fuzzy
 msgid "Dock into special area in the panel"
 msgstr "嵌入到 kpanel 的特别区域"
 
-#: widgets.cpp:658
+#: widgets.cpp:673
 msgid "Place"
 msgstr "放置"
 
-#: widgets.cpp:665
+#: widgets.cpp:680
 msgid "Place in selected corner"
 msgstr "放在选中的角落"
 
@@ -535,6 +560,19 @@ msgstr "启动[&U]"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "国际键盘"
+
+#~ msgid "Up selected keyboard map"
+#~ msgstr "向上调整选中的键盘映射"
+
+#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
+#~ msgstr "扩展行为.每个窗口记住各自使用的键盘映射"
+
+#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
+#~ msgstr "特殊行为.每个窗口类记住各自使用的键盘映射"
+
+#, fuzzy
+#~ msgid "Color of the text label"
+#~ msgstr "文本标签的颜色"
 
 #, fuzzy
 #~ msgid ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: 1998-04-20 23:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,43 +28,35 @@ msgstr "內容"
 msgid "Go!"
 msgstr ""
 
-#: kpanel.C:341 tools.C:901
-msgid "Where do you want to go tomorrow?"
-msgstr "主選單"
-
-#: kpanel.C:416
+#: kpanel.C:415
 msgid "No info available"
 msgstr "沒有可獲得的資訊"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:454 props.C:207 props.C:208
 msgid "Logout"
 msgstr "離線"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:462 props.C:206
 msgid "Lock screen"
 msgstr "鎖住螢幕"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
 msgstr "隱藏 panel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
 msgstr "顯示 panel"
 
-#: kpanel.C:1067
+#: kpanel.C:1066
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1204
-msgid "No comment available"
-msgstr "沒有任何說明"
-
-#: kpanel.C:1213 tools.C:910
+#: kpanel.C:1214 tools.C:909
 msgid "Windowlist"
 msgstr "視窗列表"
 
-#: kpanel.C:1221 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -95,7 +87,7 @@ msgstr "加入視窗列表"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在 panel 上新增一個視窗列表"
 
-#: events.C:851 props.C:183
+#: events.C:855 props.C:183
 msgid "Configure"
 msgstr "設定"
 
@@ -111,7 +103,7 @@ msgstr "編輯功\能表"
 msgid "Add or remove applications in the menu structure "
 msgstr "新增或移除功\能表結構中的應用程式 "
 
-#: events.C:853 props.C:189
+#: events.C:857 props.C:189
 msgid "Restart"
 msgstr "重新啟動"
 
@@ -135,7 +127,7 @@ msgstr "鎖住螢幕"
 msgid "The menu editor is not installed."
 msgstr "沒有安裝功\能表編輯程式."
 
-#: events.C:908 props.C:452
+#: events.C:912 props.C:452
 msgid "Oops!"
 msgstr "糟糕"
 
@@ -145,11 +137,11 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: tools.C:919
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:907
+#: events.C:911
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 
@@ -208,3 +200,9 @@ msgstr ""
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr ""
+
+#~ msgid "Where do you want to go tomorrow?"
+#~ msgstr "主選單"
+
+#~ msgid "No comment available"
+#~ msgstr "沒有任何說明"

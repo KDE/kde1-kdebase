@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"POT-Creation-Date: 1999-04-02 01:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,43 +25,35 @@ msgstr "&Omadused"
 msgid "Go!"
 msgstr "Mine!"
 
-#: kpanel.C:341 tools.C:901
-msgid "Where do you want to go tomorrow?"
-msgstr "Kuhu sa soovid homme suunduda?"
-
-#: kpanel.C:416
+#: kpanel.C:415
 msgid "No info available"
 msgstr "Info puudub"
 
-#: kpanel.C:455 props.C:207 props.C:208
+#: kpanel.C:454 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Logi välja"
 
-#: kpanel.C:463 props.C:206
+#: kpanel.C:462 props.C:206
 msgid "Lock screen"
 msgstr "Lukusta ekraan"
 
-#: kpanel.C:472 kpanel.C:481
+#: kpanel.C:471 kpanel.C:480
 msgid "Hide the panel"
 msgstr "Peida paneel"
 
-#: kpanel.C:491 kpanel.C:503
+#: kpanel.C:490 kpanel.C:502
 msgid "Show the panel"
 msgstr "Näita paneeli"
 
-#: kpanel.C:1067
+#: kpanel.C:1066
 msgid "Iconify other &windows"
 msgstr "Ikooni &teised aknad"
 
-#: kpanel.C:1204
-msgid "No comment available"
-msgstr "Kommentaar puudub"
-
-#: kpanel.C:1213 tools.C:910
+#: kpanel.C:1214 tools.C:909
 msgid "Windowlist"
 msgstr "Akende nimekiri"
 
-#: kpanel.C:1221 props.C:197
+#: kpanel.C:1222 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Kiire navigeerimine failisüsteemis"
 
@@ -89,7 +81,7 @@ msgstr "Lisa akende nimekiri"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Lisa akende nimekirja menüü paneelile"
 
-#: events.C:851 props.C:183
+#: events.C:855 props.C:183
 msgid "Configure"
 msgstr "Konfigureeri"
 
@@ -105,7 +97,7 @@ msgstr "Redigeeri menüüsid"
 msgid "Add or remove applications in the menu structure "
 msgstr "Lisa või eemalda rakendusi menüü struktuuris"
 
-#: events.C:853 props.C:189
+#: events.C:857 props.C:189
 msgid "Restart"
 msgstr "Käivita uuesti"
 
@@ -129,7 +121,7 @@ msgstr "Lukusta ekraan"
 msgid "The menu editor is not installed."
 msgstr "Menüü redaktor pole installeritud."
 
-#: events.C:908 props.C:452
+#: events.C:912 props.C:452
 msgid "Oops!"
 msgstr "Uups!"
 
@@ -141,11 +133,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:919
+#: tools.C:918
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:907
+#: events.C:911
 msgid "Cannot put this as button onto the panel!"
 msgstr "Seda nupu pole võimalik asetada paneelile!"
 
@@ -204,3 +196,9 @@ msgstr "Valikud..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Kohanda ketta navigaatorit"
+
+#~ msgid "Where do you want to go tomorrow?"
+#~ msgstr "Kuhu sa soovid homme suunduda?"
+
+#~ msgid "No comment available"
+#~ msgstr "Kommentaar puudub"
