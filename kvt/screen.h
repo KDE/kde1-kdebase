@@ -10,7 +10,7 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#ifndef __GNUC__
+#if defined(__GNUC__) || defined(__STRICT_ANSI__)
 #define  inline  /*nothing*/
 #endif /*__GNUC__*/
 
