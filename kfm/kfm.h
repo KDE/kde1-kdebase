@@ -42,8 +42,8 @@ public:
    * This function checks if destination is global mime/apps path and
    * if so, makes a local variant of it. It vreates all needed
    * directories and .directory files. It modifies dest so it can be
-   * used with kojob or any other functions. If user has
-   * access to given path nothing is done.
+   * used with kojob or any other functions. If user is a root or has
+   * write access to given path nothing is done.
    * This function is here to reduce duplication of code. It is
    * verbatim copy of code from kfmview's slotDropEvent.
    */
