@@ -21,7 +21,7 @@ msgstr "Il tasto backspace manda un"
 
 #: main.C:442
 msgid "Cursor key set"
-msgstr ""
+msgstr "Set tasti cursore"
 
 #: main.C:611
 msgid "&New Terminal"
@@ -61,7 +61,7 @@ msgstr "&Grande"
 
 #: main.C:630
 msgid "&Huge"
-msgstr "&Immenso"
+msgstr "&Enorme"
 
 #: main.C:642
 msgid "&black/white"
@@ -125,14 +125,14 @@ msgstr "Caratteri..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Abilita &hotkeys"
 
 #: main.C:677
 msgid "Save &Options"
 msgstr "Salva &Opzioni"
 
 #: main.C:686
-#, fuzzy
+#
 msgid ""
 "\n"
 "\n"
@@ -147,6 +147,7 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
 "\n"
 "Emulazione Terminale  per il K Desktop Environment\n"
 "basato su rxvt-2.08 di Robert Nation"
@@ -226,7 +227,7 @@ msgstr "-vt_font <nome font>\t caratteri normali\n"
 
 #: main.C:1447
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             disabilita Qt font bug workaround\n"
 
 #: main.C:1448
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -287,6 +288,8 @@ msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               gestisce Meta con prefisso ESCAPE , 8THBIT set, o "
+"ignora\n"
 
 #: main.C:1462
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
