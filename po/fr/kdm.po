@@ -1,20 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"Project-Id-Version: kdm\n"
+"PO-Revision-Date: 1998-01-09 00:00 CET\n"
+"Last-Translator: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
+"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain;\n"
+"Content-Transfer-Encoding: 8bits\n"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Arreter ou réinitialiser?"
+msgstr "Arréter ou réinitialiser ?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
-msgstr "Arreter le Système"
+msgstr "Arréter le Système"
 
 #: kdmshutdown.cpp:183
 msgid "Shutdown and restart"
@@ -26,30 +31,24 @@ msgstr "Quitter kdm"
 
 #: kgreeter.cpp:137
 msgid "Login:"
-msgstr "Utilisateur:"
+msgstr "Utilisateur :"
 
 #: kgreeter.cpp:142
 msgid "Password:"
-msgstr "Mot de passe:"
+msgstr "Mot de passe :"
 
 #: kgreeter.cpp:176
 msgid "Login failed!"
-msgstr "Authentification échouée!"
+msgstr "Authentification échouée !"
 
 #: kgreeter.cpp:182
 msgid "Session Type:"
-msgstr "Type de session:"
+msgstr "Type de session :"
 
 #: kgreeter.cpp:198
 msgid "Go!"
-msgstr "Entrer!"
+msgstr "Entrer !"
 
 #: kgreeter.cpp:214
 msgid "Shutdown..."
-msgstr "Arreter..."
-
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
+msgstr "Arréter..."
