@@ -866,7 +866,9 @@ void KfmGui::slotOpenLocation( )
 void KfmGui::slotQuit()
 {
     if ( !QMessageBox::query( klocale->translate("KFM"), 
-			      klocale->translate("Do you really want to quit") ) )
+			      klocale->translate("Do you really want to quit"),
+			      klocale->translate("Yes"),
+			      klocale->translate("No") ) )
 	return;
     
     QString file = QDir::homeDirPath();
