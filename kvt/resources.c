@@ -14,6 +14,11 @@
 #include "sbar.h"
 #include "debug.h"
 
+// Stephan: a little bit hardcoded :)
+#if !defined PRINT_PIPE
+#define PRINT_PIPE
+#endif
+
 extern Display		*display;
 extern char		*xvt_name;	/* the name the program is run under */
 extern char *print_pipe, *geom_string, *fg_string, *bg_string;

@@ -10,7 +10,7 @@
  **************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
-#ifndef __FreeBSD__
+#ifdef HAVE_MALLOC_H
 #include <malloc.h>
 #endif
 
@@ -31,7 +31,7 @@ static int first_try = 1;
  * DEBUG_MALLOC is set 
  *
  ***************************************************************************/
-void *safemalloc(int size, char *identifier)
+void *safemalloc(int size, const char *identifier)
 {
   void *s;
 #ifdef DEBUG_MALLOC  

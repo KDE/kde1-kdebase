@@ -11,6 +11,10 @@
 #define  inline  /*nothing*/
 #endif /*__GNUC__*/
 
+#ifndef COLOR
+#define COLOR
+#endif
+
 typedef struct _win_info
 {
   /* window width and height in pixels */
@@ -152,6 +156,7 @@ void scr_send_selection (XSelectionRequestEvent *); /* argument changed. Matthia
 void scr_request_selection(int,int,int);
 void scr_paste_primary(int,int,int);
 void scr_clear_selection(void);
+void scr_delete_selection(void);
 void scr_extend_selection(int,int);
 void scr_start_selection(unsigned int, int, int); /* arguments changed. bmg */
 void scr_report_position(void);

@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.3  1997/05/27 12:25:09  ettrich
+ * Matthias: Small fixes for FreeBSD (Marc van Kempten)
+ *
  * Revision 1.2  1997/04/23 20:00:17  kulow
  * updated to kvt-0.14
  *
@@ -40,20 +43,29 @@
  *
  */
 /* There must be a more elegant way than this HUGE ifdef to do this */
-#ifdef ALPHA
-#define SVR4
+#ifdef HAVE_CONFIG_H
+#include <config.h>
 #endif
+
+/* Stephan: I didn't know another solution, since this
+   code looks that damn OS depend */
+
+#define BSD
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <utmp.h>
 #include <unistd.h>
-#ifdef BSD
-#ifndef __FreeBSD__
+
+#ifdef HAVE_LASTLOG_H
 #include <lastlog.h>
 #endif
+
+#ifdef HAVE_STRINGS_H
 #include <strings.h>
 #endif
+
 #include <pwd.h>
 #include <string.h>
 #include <stdio.h>

@@ -1,3 +1,5 @@
+#ifdef GREEK_KBD
+
 /*
  * File:	grkelot.c
  *
@@ -353,3 +355,4 @@ main(void)
 	kstate_end_all();
 }
 #endif
+#endif /* GREEK_KBD */

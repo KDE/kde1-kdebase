@@ -60,6 +60,11 @@ int screenNum = 0, rstyle=0, save_rstyle = 0, focus = 0;
 int drow,dcol, save_row, save_col, save_charset_num;
 char save_charset = 'B';
 
+//Stephan: a little bit hardcoded :)
+#ifndef COLOR
+#define COLOR
+#endif
+
 #ifdef COLOR
 #define RENDITION unsigned int
 #else
@@ -569,8 +574,6 @@ void scr_focus(int is_in)
 void scr_secure(void)
 {
   static int state = 0;
-  GC tgc;
-  unsigned long temp;
 
 #ifdef DEBUG
   check_text("secure");

@@ -34,6 +34,12 @@
 #include "grkelot.h"
 #endif
 
+// Stephan: a little bit hardcoded :)
+#if !defined PRINT_PIPE
+#define PRINT_PIPE
+#endif
+
+
 extern WindowInfo MyWinInfo;
 
 /* some functions for further options. Matthias */ 

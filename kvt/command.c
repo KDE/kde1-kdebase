@@ -29,36 +29,31 @@
 #include <time.h>
 #include <sys/time.h>
 #include <ctype.h>
+#include "debug.h"
 
-#if defined __GNU_LIBRARY__
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#ifdef HAVE_SYS_IOCTL_H
 #include <sys/ioctl.h>
-#include "debug.h" // CC: for missing "safemalloc" prototype
 #endif
-#ifdef ALPHA
-#define FREEBSD
-#endif
-#ifdef __FreeBSD__
-/*
- * This is a klutch really, the alpha stuff misuses the FREEBSD
- * define, but I don't know whatfor, so I can't change it
- */
-#define FREEBSD
-#endif
-#ifdef AIXV3
+
+#ifdef HAVE_SYS_SELECT_H
 #include <sys/select.h>
 #endif   
-#ifdef SVR4
+
+#ifdef HAVE_SYS_STROPTS_H
 #include <sys/stropts.h>
 #define _NEW_TTY_CTRL
 #endif
-#ifdef AIXV3
-#include <termio.h>
-#else
-#include <termios.h>
-#endif /* AIXV3 */
 
-#ifdef FREEBSD
-#include <sys/ioctl.h>
+#ifdef HAVE_TERMIO_H
+#include <termio.h>
+#endif
+
+#ifdef HAVE_TERMIOS_H
+#include <termios.h>
 #endif
 
 #include <sys/wait.h>
@@ -79,6 +74,13 @@
 #if defined(VWERSE) && !defined(VWERASE)
 #define	VWERASE		VWERSE
 #endif
+
+// Stephan: a little bit hardcoded :)
+#if !defined PRINT_PIPE
+#define PRINT_PIPE
+#endif
+
+#define MAX_REFRESH_PERIOD 10
 
 /* for greek keyboard mapping */
 #ifdef GREEK_KBD	
@@ -220,7 +222,7 @@ void process_sgr_mode(int,int,int,int *);
 struct stat ttyfd_stat;
 int ttyfd;
 
-#ifdef SVR4
+#ifndef HAVE_GETDTABLESIZE
 #define _NEW_TTY_CTRL
 #include <sys/resource.h>
 int static getdtablesize() 
@@ -265,7 +267,7 @@ static void catch_sig(int sig)
  int run_command(unsigned char *command,unsigned char **argv)
 {
   int ptyfd;
-  int uid, gid,shpgrp;
+  int uid, gid;
   unsigned char *s3, *s4;
   int i;
   int width, height;
@@ -1048,9 +1050,8 @@ void handle_X_event(XEvent event)
   unsigned char *s;
   int count;
   Window root, child;
-  int root_x, root_y, x, y,tl,lk;
+  int root_x, root_y, x, y;
   unsigned int mods;
-  XEvent dummy;
   static Time buttonpress_time;
   static unsigned int clicks;
 

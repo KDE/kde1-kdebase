@@ -10,24 +10,12 @@ PICSDIR = $(libdir)/pics
 DOCSDIR = $(prefix)/doc/HTML
 UTILSDIR = $(prefix)/apps/Utilities
 
-#ifdef  GREEK_SUPPORT
-GREEK_EXTRA=-DGREEK_KBD
-GREEK_SRC=grkelot.c
-GREEK_OBJ=grkelot.o
-#else
-GREEK_EXTRA=    #-DGREEK_KBD
-GREEK_SRC=      #grkelot.c
-GREEK_OBJ=      #grkelot.o
-#endif
-
-CFLAGS += -DBSD -DTTYTAB=\"/etc/ttytab\" -DPRINT_PIPE $(GREEK_EXTRA) -DMAX_REFRESH_PERIOD=10 -DFAKE_RESOURCES -DUSE_XCOPYAREA -DCOLOR 
-
 bin_PROGRAMS = kvt
 
 kvt_SOURCES = \
 	rxvt.c command.c screen.c utmp.c \
 	xsetup.c debug.c resources.c main.C\
-	$(GREEK_SRC)
+	grkelot.c
 
 main.C: main.moc
 
