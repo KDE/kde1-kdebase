@@ -1,5 +1,5 @@
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkfm -ljpeg -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
+LDADD = $(all_libraries) -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBJPEG) $(LIBSOCKET) $(KDE_RPATH)
 SUBDIRS = doc pics applnk
 
 bin_PROGRAMS = kdmconfig
