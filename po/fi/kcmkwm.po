@@ -79,13 +79,12 @@ msgid "Titlebar appearance"
 msgstr "Otsikon ulkonäkö"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Suurenna pystysuunnassa"
+msgstr "Varjostettu pystysuunnassa"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Varjostettu vaakasuunnassa"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -168,14 +167,12 @@ msgid "Opaque"
 msgstr "Kuultava"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Ikkunat"
+msgstr "Ikkunan koonmuutos"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Otsikon animaatio"
+msgstr "Animaation kanssa"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -230,14 +227,12 @@ msgid "Focus follows mouse"
 msgstr "Kohdistus seuraa hiirtä"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Kohdistus seuraa hiirtä"
+msgstr "Klassinen kohdistus seuraa hiirtä"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Kohdista hiiren napilla"
+msgstr "Klassinen kohdista hiiren napilla"
 
 #: windows.cpp:131
 msgid ""

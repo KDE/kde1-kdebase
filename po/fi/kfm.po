@@ -148,14 +148,12 @@ msgid "Never look in cache"
 msgstr "Älä etsi välimuistista"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "Etsi aina välimuistista"
+msgstr "Tallenna aina välimuistiin"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "Älä etsi välimuistista"
+msgstr "Älä tallenna välimuistiin"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -195,7 +193,7 @@ msgstr "&Välimuisti"
 
 #: kfmgui.cpp:516
 msgid "Up"
-msgstr ""
+msgstr "Ylös"
 
 #: kfmgui.cpp:564
 msgid "Stop"
@@ -580,7 +578,7 @@ msgstr "Pystysuuntainen hilavälistys:"
 
 #: htmlopts.cpp:349
 msgid "Transparent Text for Root Icons."
-msgstr ""
+msgstr "Läpinäkyvä teksti pääikoneille"
 
 #: bookmark.cpp:259
 msgid "Could not write bookmark"
@@ -1285,9 +1283,8 @@ msgid "Don't forget to save your settings!"
 msgstr "Älä unohda tallentaa asetuksiasi!"
 
 #: kproxydlg.cpp:16
-#, fuzzy
 msgid "Use proxy"
-msgstr "Käyttäjä"
+msgstr "Käytä proxyä"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"

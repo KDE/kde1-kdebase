@@ -22,14 +22,12 @@ msgid "Cannot open or read directory."
 msgstr "Tiedostoa tai hakemistoa ei voitu avata."
 
 #: kfindtop.cpp:115
-#, fuzzy
 msgid "&Start search"
-msgstr "Aloita etsintä"
+msgstr "&Aloita etsintä"
 
 #: kfindtop.cpp:117
-#, fuzzy
 msgid "S&top search"
-msgstr "Lopeta etsintä"
+msgstr "&Lopeta etsintä"
 
 #: kfindtop.cpp:122
 msgid "&Open"
@@ -60,9 +58,8 @@ msgid "&Select All"
 msgstr "&Valitse kaikki"
 
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "&Valitse kaikki"
+msgstr "&Poista valinnat"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -190,27 +187,27 @@ msgstr "Kaikki tiedostot ja kansiot"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Tiedostot"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Kansiot"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Symboliset linkit"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Erikoistiedostot (laitetiedostot...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Suoritettavat tiedostot"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID suoritettava tiedosto"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

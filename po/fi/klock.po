@@ -152,35 +152,31 @@ msgstr "Kuplat"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "Aseta liekki‰"
+msgstr "Aseta Bouboulea"
 
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "Lepakoiden m‰‰r‰:"
+msgstr "Pisteiden m‰‰r‰:"
 
 #: bouboule.cpp:1046
-#, fuzzy
 msgid "Point size:"
-msgstr "Pisteiden m‰‰r‰:"
+msgstr "Pisteiden koko:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "V‰rinvaihtotaajuus:"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D tila"
 
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "Tietoja Kuplista"
+msgstr "Tietoja Bouboulesta"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -190,6 +186,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- joukko palloja kiemurtelee ja muuttaa kokoaan\n"
+"\n"
+"Copyright (c) 1996 Jeremie PETIT\n"
+"\n"
+"Siirt‰nyt kscreensaveen Cedric Tefft" 
 
 #: flame.cpp:310
 msgid "Flame"
@@ -675,18 +676,3 @@ msgstr ""
 "\n"
 "Siirt‰nyt kscreensave ohjelmaan Emanuel Pirker."
 
-#, fuzzy
-#~ msgid "Setup Science"
-#~ msgstr "Aseta viivoja"
-
-#, fuzzy
-#~ msgid "Mode:"
-#~ msgstr "Keskell‰:"
-
-#, fuzzy
-#~ msgid "Sphere"
-#~ msgstr "Nopeus:"
-
-#, fuzzy
-#~ msgid "About Science"
-#~ msgstr "Tietoa viivoista"

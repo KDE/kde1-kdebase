@@ -31,10 +31,16 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Haluat vaihtaa toiseen ikkunaan. Valutettavasti olet valinnut yhden \n"
+"perinteisistä kohdistustavoista jotka eivät salli tätä.  Nämä kohdistustavat\n"
+"eivät ole mukana koska ne ovat järkeviä vaan yhteensopivuussyistä. \n"
+"\n"
+"Jos haluat modernia ikkunoidenhallintaa, valitse joku suositelluista \n"
+"kohdistustavoista kuten Kohdista hiiren napilla tai Kohdistus seuraa hiirtä."
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Valmistelen sessiota ... "
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -118,16 +124,15 @@ msgstr "Kahdeksan"
 
 #: main.C:628
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Nimeämätön työpöytä"
 
 #: main.C:950
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
 
 #: main.C:1062
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Jotkut kuvat eivät ole kunnossa: ShapeMode poistettu\n"
+msgstr "Jotkut kuvat eivät ole kunnossa: GimmickMode poistettu\n"
 
 #: main.C:1295
 msgid "*** No Tasks ***"
@@ -139,7 +144,7 @@ msgstr "Komento:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Hupsista!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
