@@ -159,7 +159,6 @@ void UserAgentOptions::defaultSettings()
 {
   bindingsLB->clear();
   bindingsLB->insertItem( QString("*:"+DEFAULT_USERAGENT_STRING) );
-  bindingsLB->update();
 }
 
 void UserAgentOptions::applySettings()
@@ -221,6 +220,8 @@ void UserAgentOptions::deleteClicked()
 {
   if( bindingsLB->count() )
 	bindingsLB->removeItem( highlighted_item );
+  if( !bindingsLB->count() ) // no more items
+      listboxHighlighted( "" );
 }
 
 
