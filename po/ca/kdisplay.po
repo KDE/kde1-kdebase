@@ -1,0 +1,287 @@
+# KDISPLAY CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfm\n"
+"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"PO-Revision-Date: 1998-03-09 23:05+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: backgnd.cpp:204 backgnd.cpp:239
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: backgnd.cpp:249
+msgid "Rename..."
+msgstr "Renombrar..."
+
+#: backgnd.cpp:255
+msgid "Color"
+msgstr "Color"
+
+#: backgnd.cpp:273
+msgid "Flat"
+msgstr "Llis"
+
+#: backgnd.cpp:277
+msgid "Gradient"
+msgstr "Gradient"
+
+#: backgnd.cpp:287
+msgid "Portrait"
+msgstr "Vertical"
+
+#: backgnd.cpp:291
+msgid "Landscape"
+msgstr "Apaïsat"
+
+#: backgnd.cpp:298
+msgid "Wallpaper"
+msgstr "Paper pintat"
+
+#: backgnd.cpp:331
+msgid "Tiled"
+msgstr "Mosaic"
+
+#: backgnd.cpp:335
+msgid "Centred"
+msgstr "Centrat"
+
+#: backgnd.cpp:339
+msgid "Scaled"
+msgstr "Escalat"
+
+#: backgnd.cpp:489
+msgid "Default"
+msgstr "Omissió"
+
+#: backgnd.cpp:821
+msgid "Desktop Title"
+msgstr "Nom d'escriptori"
+
+#: colorscm.cpp:142 colorscm.cpp:143
+msgid "Inactive window"
+msgstr "Finestra inactiva"
+
+#: colorscm.cpp:158 colorscm.cpp:159
+msgid "Active window"
+msgstr "Finestra activa"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+msgid "Window text"
+msgstr "Text de la finestra"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Desactivat"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Seleccionat"
+
+#: colorscm.cpp:252 colorscm.cpp:264
+msgid "Color Scheme"
+msgstr "Esquema de color"
+
+#: colorscm.cpp:286
+msgid "Widget color"
+msgstr "Color de l'estri"
+
+#: colorscm.cpp:291
+msgid "Inactive title bar"
+msgstr "Barra de títol inactiva"
+
+#: colorscm.cpp:292
+msgid "Inactive title text"
+msgstr "Text del títol inactiu"
+
+#: colorscm.cpp:293
+msgid "Active title bar"
+msgstr "Barra de títol activa"
+
+#: colorscm.cpp:294
+msgid "Active title text"
+msgstr "Text de títol actiu"
+
+#: colorscm.cpp:295
+msgid "Background"
+msgstr "Fons"
+
+#: colorscm.cpp:296
+msgid "Text"
+msgstr "Text"
+
+#: colorscm.cpp:297
+msgid "Select background"
+msgstr "Fons de selecció"
+
+#: colorscm.cpp:298
+msgid "Select text"
+msgstr "Text de selecció"
+
+#: colorscm.cpp:299
+msgid "Window background"
+msgstr "Fons de finestra"
+
+#: colorscm.cpp:311
+msgid "Contrast"
+msgstr "Contrast"
+
+#: colorscm.cpp:324 scrnsave.cpp:224
+msgid "Low"
+msgstr "Baix"
+
+#: colorscm.cpp:328 scrnsave.cpp:221
+msgid "High"
+msgstr "Alt"
+
+#: colorscm.cpp:343
+msgid "Save scheme"
+msgstr "Desar esquema"
+
+#: colorscm.cpp:374 colorscm.cpp:382
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Heu triat un nom en ús per un esquema de color"
+
+#: colorscm.cpp:467
+msgid "KDE Default"
+msgstr "KDE per omissió"
+
+#: colorscm.cpp:693
+msgid "Display Setup"
+msgstr "Inicialització del monitor"
+
+#: colorscm.cpp:694
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"No s'han trobat esquemes de color.\n"
+"Voleu instal·lar els esquemes de color per omissió ?"
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: error en la comunicació amb kwm\n"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Nom"
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: scrnsave.cpp:49
+msgid "Lock"
+msgstr "Bloquejar"
+
+#: scrnsave.cpp:107 scrnsave.cpp:163
+msgid "Screen Saver"
+msgstr "Salva Pantalles"
+
+#: scrnsave.cpp:184
+msgid "Setup..."
+msgstr "Valors..."
+
+#: scrnsave.cpp:188
+msgid "Test"
+msgstr "Prova"
+
+#: scrnsave.cpp:196
+msgid "Settings"
+msgstr "Arranjament"
+
+#: scrnsave.cpp:199
+msgid "Wait:"
+msgstr "Esperar:"
+
+#: scrnsave.cpp:210
+msgid "min"
+msgstr "min"
+
+#: scrnsave.cpp:213
+msgid "Requires Password"
+msgstr "Cal paraula de pas"
+
+#: scrnsave.cpp:218
+msgid "Priority:"
+msgstr "Prioritat:"
+
+#: general.cpp:61
+msgid "General"
+msgstr "General"
+
+#: general.cpp:65
+msgid "Widget style"
+msgstr "Estil d'estris"
+
+#: general.cpp:70
+msgid "Motif"
+msgstr "Motif"
+
+#: general.cpp:71
+msgid "Windows 95"
+msgstr "Windows 95"
+
+#: general.cpp:80
+msgid "Fonts"
+msgstr "Fonts"
+
+#: general.cpp:85
+msgid "General font"
+msgstr "Font general"
+
+#: general.cpp:110
+msgid "Sample"
+msgstr "Mostra"
+
+#: general.cpp:116
+msgid "Small"
+msgstr "Xicoteta"
+
+#: general.cpp:120
+msgid "Medium"
+msgstr "Mitjana"
+
+#: general.cpp:124
+msgid "Large"
+msgstr "Gran"
+
+#: general.cpp:173
+msgid "default"
+msgstr "omissió"
+
+#: general.cpp:176
+msgid "any"
+msgstr "qualsevol"
+
+#: main.cpp:61
+msgid "&Background"
+msgstr "&Fons"
+
+#: main.cpp:64
+msgid "&Colors"
+msgstr "&Colors"
+
+#: main.cpp:67
+msgid "&Screensaver"
+msgstr "&Salvapantalles"
+
+#: main.cpp:70
+msgid "&Style"
+msgstr "&Estil"
+
+#: main.cpp:76
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "us: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+
+#: main.cpp:112
+msgid "Display settings"
+msgstr "Arranjament del monitor"

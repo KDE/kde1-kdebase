@@ -1,0 +1,339 @@
+# KFIND CATALAN TRANSLATION
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Sebastià Pla <sastia@redestb.es>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfind\n"
+"POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"PO-Revision-Date: 1998-03-02 23:38+0100\n"
+"Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
+"Language-Team: CATALAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Directoris:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "No es pot obrir o llegir el directori"
+
+#: kfindtop.cpp:118
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Frontal de la utilitat de cerca\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Moltes mercés a Stephan Kulow\n"
+"<coolo@kde.org>"
+
+#: kfindtop.cpp:136
+msgid "&Open"
+msgstr "&Obrir"
+
+#: kfindtop.cpp:138
+msgid "&Add to archive"
+msgstr "&Afegir al fitxer"
+
+#: kfindtop.cpp:143
+msgid "&Properties"
+msgstr "&Propietats"
+
+#: kfindtop.cpp:146
+msgid "Open Containing &Folder"
+msgstr "Obrir &Carpeta contenidora"
+
+#: kfindtop.cpp:149
+msgid "&Save Search"
+msgstr "&Desar cerca"
+
+#: kfindtop.cpp:161
+msgid "&Cut"
+msgstr "&Tallar"
+
+#: kfindtop.cpp:166
+msgid "&Select All"
+msgstr "&Seleccionar tot"
+
+#: kfindtop.cpp:168
+msgid "&Invert Selection"
+msgstr "&Invertir la selecció"
+
+#: kfindtop.cpp:179
+msgid "&Preferences ..."
+msgstr "&Preferències..."
+
+#: kfindtop.cpp:183
+msgid "Kfind &help"
+msgstr "&Ajut KFind"
+
+#: kfindtop.cpp:186
+msgid "About &Qt"
+msgstr "Quant a Q&t"
+
+#: kfindtop.cpp:206
+msgid "Start Search"
+msgstr "Engegar cerca"
+
+#: kfindtop.cpp:211
+msgid "New Search"
+msgstr "Nova cerca"
+
+#: kfindtop.cpp:216
+msgid "Stop Search"
+msgstr "Aturar cerca"
+
+#: kfindtop.cpp:229
+msgid "Add to archive"
+msgstr "Afegir al fitxer"
+
+#: kfindtop.cpp:239
+msgid "Properties"
+msgstr "Propietats"
+
+#: kfindtop.cpp:244
+msgid "Open Containing Folder"
+msgstr "Obrir Carpeta contenidora"
+
+#: kfindtop.cpp:249
+msgid "Save Search Results"
+msgstr "Desar resultats cerca"
+
+#: kftabdlg.cpp:48
+msgid "&Named:"
+msgstr "A&nomenat:"
+
+#: kftabdlg.cpp:51
+msgid "&Look in:"
+msgstr "&Buscar a:"
+
+#: kftabdlg.cpp:54
+msgid "&Browse ..."
+msgstr "&Fullejar"
+
+#: kftabdlg.cpp:66
+msgid "Include &subfolders"
+msgstr "Incloure &Subcarpetes"
+
+#: kftabdlg.cpp:96
+msgid " Name& Location "
+msgstr "Nom &Localització "
+
+#: kftabdlg.cpp:108
+msgid "and"
+msgstr "i"
+
+#: kftabdlg.cpp:109
+msgid "month(s)"
+msgstr "mes(os)"
+
+#: kftabdlg.cpp:110
+msgid "day(s)"
+msgstr "dia(es)"
+
+#: kftabdlg.cpp:116
+msgid "&All files"
+msgstr "&Tots els fitxers"
+
+#: kftabdlg.cpp:117
+msgid "Find all files created or &modified:"
+msgstr "Trobar tots els fitxers creats o &Modificats:"
+
+#: kftabdlg.cpp:118
+msgid "&between"
+msgstr "e&ntre"
+
+#: kftabdlg.cpp:119
+msgid "during the previou&s "
+msgstr "durant el(s) previ(&s) "
+
+#: kftabdlg.cpp:120
+msgid "&during the previous "
+msgstr "&durant el(s) previ(s) " 
+
+#: kftabdlg.cpp:168
+msgid " Date Modified "
+msgstr " Data &Modificació "
+
+#: kftabdlg.cpp:174
+msgid "Of &type:"
+msgstr "Del &tipus"
+
+#: kftabdlg.cpp:176
+msgid "&Containing Text:"
+msgstr "&Contenint text:"
+
+#: kftabdlg.cpp:179
+msgid "&Size is:"
+msgstr "&Grandària:"
+
+#: kftabdlg.cpp:202
+msgid "All Files and Folders"
+msgstr "Tots els fitxers i carpetes"
+
+#: kftabdlg.cpp:210
+msgid "At Least"
+msgstr "Com a mínim"
+
+#: kftabdlg.cpp:211
+msgid "At Most"
+msgstr "Com a màxim"
+
+#: kftabdlg.cpp:218
+msgid " Advanced "
+msgstr " A&vançat "
+
+#: kftabdlg.cpp:389
+msgid "The date is not valid!!"
+msgstr "La data no és vàlida||"
+
+#: kftabdlg.cpp:401
+msgid "The month(s) value isn't valid!!"
+msgstr "El valor del mes no és vàlid!!"
+
+#: kftabdlg.cpp:412
+msgid "The day(s) value isn't valid!!"
+msgstr "El valor del dia no és vàlid!!"
+
+#: kftabdlg.cpp:429
+msgid "The value in size isn't valid number!!"
+msgstr "El valor de la grandària no és un número vàlid!!"
+
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Preferències"
+
+#: kfoptions.cpp:76
+msgid "File format:"
+msgstr "Format de fitxer:"
+
+#: kfoptions.cpp:78
+msgid "Save results to file:"
+msgstr "Desar resultats en el fitxer:"
+
+#: kfoptions.cpp:81
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Desar resultats en el fitxer ~/.kfind-results.html"
+
+#: kfoptions.cpp:83
+msgid "Browse"
+msgstr "Fullejar"
+
+#: kfoptions.cpp:96
+msgid "Plain Text"
+msgstr "Text planer"
+
+#: kfoptions.cpp:125
+msgid "Saving"
+msgstr "&Desar"
+
+#: kfoptions.cpp:132
+msgid "Create Archive:"
+msgstr "Crear fitxer:   "
+
+#: kfoptions.cpp:134
+msgid "Add to Archive:"
+msgstr "Afegir a fitxer:"
+
+#: kfoptions.cpp:138
+msgid "Patterns:"
+msgstr "Patrons:"
+
+#: kfoptions.cpp:141
+msgid "Add New"
+msgstr "Afegir nou"
+
+#: kfoptions.cpp:182
+msgid "Archivers"
+msgstr "Arxivadors"
+
+#: kfwin.cpp:78 kfwin.cpp:105
+#, c-format
+msgid "%d file(s) found"
+msgstr "trobats %d fitxer(s)"
+
+#: kfwin.cpp:143
+msgid "It wasn't possible to save results!"
+msgstr "No ha estat possible desar els resultats!"
+
+#: kfwin.cpp:151 kfwin.cpp:153 kfwin.cpp:155
+msgid "KFind Results File"
+msgstr "Fitxer de resultats de KFind"
+
+#: kfwin.cpp:180
+msgid "Results were saved to file\n"
+msgstr "Els resultats s'han desat al fitxer\n"
+
+#: kfwin.cpp:195
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"De veres voleu esborrar el fitxer:\n"
+"%s"
+
+#: kfwin.cpp:197
+msgid "Delete File"
+msgstr "Esborrar fitxer"
+
+#: kfwin.cpp:210
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"No teniu permís\n"
+" per esborrar el fitxer"
+
+#: kfwin.cpp:216
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"No es possible esborrar\n"
+"el fitxer seleccionat"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"No teniu permís\n"
+" per esborrar el directori"
+
+#: kfwin.cpp:239
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"El directori especificat\n"
+"no està buit!"
+
+#: kfwin.cpp:244
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"No es possible esborrar\n"
+"el directori seleccionat"
+
+#: kfwin.cpp:336
+msgid "Couldn't recognize archive type!"
+msgstr "No reconec el tipus d'arxiu!"
+
+#: kfwin.cpp:395
+msgid "Error while creating child process!"
+msgstr "Error al crear el procés fill!"
+
