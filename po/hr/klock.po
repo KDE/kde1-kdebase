@@ -413,7 +413,7 @@ msgstr ""
 "Upozorenje: Ne mo¾ete zakljuèati zaslon!\n" 
 "\n"
 "Va¹ sistem koristi skrivene (shadow) lozinke!\n"
-"Molim kontaktirajte svojeg administratora.\n"
+"Molim kontaktirajte svojeg administratora."
 
 #: main.cpp:383
 msgid "Shadow Passwords"
@@ -426,6 +426,7 @@ msgid ""
 "use klock instead.\n"
 "\n"
 msgstr ""
+"\n"
 "molim nemojte koristiti -test zajedno s -lock.\n"
 "umjesto toga koristite klock.\n"
 
