@@ -1938,8 +1938,9 @@ void Manager::withdraw(Client* c){
   XQueryTree(qt_xdisplay(), c->winId(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
     if (wins[i] == c->window){
-      // we still manage it => do reparenting
+      // we still manage it => do reparenting 
       gravitate(c, true);
+      XUnmapWindow(qt_xdisplay(), c->window);
       XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
 		      c->geometry.x() , c->geometry.y());
       XRemoveFromSaveSet(qt_xdisplay(), c->window);
@@ -2662,22 +2663,6 @@ void Manager::getMwmHints(Client  *c){
 	}
       XFree((char *)mwm_hints);
     }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
