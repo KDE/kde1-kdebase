@@ -677,6 +677,11 @@ void KColorScheme::setDefaults()
 	slotPreviewScheme( 1 );
 }
 
+void KColorScheme::defaultSettings()
+{
+	setDefaults();
+}
+
 void KColorScheme::writeSettings()
 {
 	if ( !changed )

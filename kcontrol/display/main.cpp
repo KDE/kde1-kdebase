@@ -39,6 +39,7 @@ public:
 
   void init();
   void apply();
+  void defaultValues();
 
 private:
 
@@ -105,6 +106,18 @@ void KDisplayApplication::apply()
     screensaver->applySettings();
   if (general)
     general->applySettings();
+}
+
+void KDisplayApplication::defaultValues()
+{
+  if (colors)
+    colors->defaultSettings();
+  if (background)
+    background->defaultSettings();
+  if (screensaver)
+    screensaver->defaultSettings();
+  if (general)
+    general->defaultSettings();
 }
 
 int main(int argc, char **argv)

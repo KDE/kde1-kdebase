@@ -8,7 +8,6 @@
 #ifndef __COLORSCM_H__
 #define __COLORSCM_H__
 
-
 #include "kcolorbtn.h"
 #include "savescm.h"
 #include "widgetcanvas.h"
@@ -31,6 +30,7 @@ public:
 	virtual void apply( bool Force = FALSE);
 	virtual void applySettings();
 	virtual void loadSettings();
+	virtual void defaultSettings();
 	
 	QColor colorPushColor;
 	

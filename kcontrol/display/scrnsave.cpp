@@ -394,6 +394,11 @@ void KScreenSaver::setDefaults()
 	slotCornerAction( 3, 'i' );
 }
 
+void KScreenSaver::defaultSettings()
+{
+	setDefaults();
+}
+
 void KScreenSaver::writeSettings()
 {
 	if ( !changed )

@@ -62,9 +62,9 @@ public:
 
 	virtual void readSettings( int deskNum = 0 );
 	virtual void apply( bool force = FALSE );
-
-        virtual void loadSettings();
-        virtual void applySettings();
+	virtual void loadSettings();
+	virtual void applySettings();
+	virtual void defaultSettings();
 
 protected slots:
 	void slotApply();

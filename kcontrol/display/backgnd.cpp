@@ -33,10 +33,11 @@
 #include <kiconloader.h>
 #include <ksimpleconfig.h>
 #include <kbuttonbox.h>
+#include <kpixmap.h>
 
 #include <X11/Xlib.h>
 
-#include "kpixmap.h"
+
 
 #ifdef HAVE_LIBJPEG
 #include "jpeg.h"
@@ -441,6 +442,11 @@ void KBackground::setDefaults()
 	}
 	showSettings();
 	changed = false;
+}
+
+void KBackground::defaultSettings()
+{
+	setDefaults();
 }
 
 void KBackground::writeSettings( int num )

@@ -298,6 +298,11 @@ void KGeneral::setDefaults()
 	slotChangeStyle();
 }
 
+void KGeneral::defaultSettings()
+{
+	setDefaults();
+}
+
 void KGeneral::writeSettings()
 {
 	if ( !changed )

@@ -9,7 +9,7 @@ bin_PROGRAMS = kcmdisplay
 
 kcmdisplay_SOURCES = backgnd.cpp jpeg.cpp display.cpp \
 		colorscm.cpp savescm.cpp scrnsave.cpp \
-		general.cpp main.cpp kpixmap.cpp widgetcanvas.cpp \
+		general.cpp main.cpp widgetcanvas.cpp \
 		fontchooser.cpp kresourceman.cpp
 BUILT_SOURCES = backgnd.moc display.moc colorscm.moc savescm.moc \
 		scrnsave.moc general.moc widgetcanvas.moc fontchooser.moc \

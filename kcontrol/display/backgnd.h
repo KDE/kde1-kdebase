@@ -15,8 +15,8 @@
 #include <qradiobt.h>
 #include <qlined.h>
 #include <qbttngrp.h>
-#include "kcolordlg.h"
-#include "kcolorbtn.h"
+#include <kcolordlg.h>
+#include <kcolorbtn.h>
 #include <kcontrol.h>
 #include "display.h"
 
@@ -123,9 +123,9 @@ public:
 
 	virtual void readSettings( int deskNum = 0 );
 	virtual void apply( bool force = FALSE );
-
-        virtual void loadSettings();
-        virtual void applySettings();
+	virtual void loadSettings();
+	virtual void applySettings();
+	virtual void defaultSettings();
 
 protected slots:
 	void slotApply();

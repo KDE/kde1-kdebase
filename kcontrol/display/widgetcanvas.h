@@ -17,8 +17,7 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kcharsets.h>
-
-#include "kpixmap.h"
+#include <kpixmap.h>
 
 #define MAX_HOTSPOTS   19
 #define SCROLLBAR_SIZE 16

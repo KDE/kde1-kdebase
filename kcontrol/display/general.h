@@ -83,9 +83,9 @@ public:
 
 	virtual void readSettings( int deskNum = 0 );
 	virtual void apply( bool Force = FALSE);
-
 	virtual void loadSettings() {};
 	virtual void applySettings();
+	virtual void defaultSettings();
 	
 	QFont generalFont;
 	GUIStyle applicationStyle;
