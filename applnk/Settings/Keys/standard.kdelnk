@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+Icon=keyboard.xpm
 Exec=kcmkeys standard
 Type=Application
 Comment=Configuration of standard keys

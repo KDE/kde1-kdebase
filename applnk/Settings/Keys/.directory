@@ -1,5 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
+Icon=keyboard.xpm
 Name=Keys
 Name[no]=Taster
 Name[ru]=Клавиши
