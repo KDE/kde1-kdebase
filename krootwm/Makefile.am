@@ -15,5 +15,5 @@ krootwm.moc: krootwm.h
 	$(MOC) krootwm.h -o krootwm.moc
 
 messages:
-	$(XGETTEXT) -C -ktranslate $(krootwm_SOURCES) && mv messages.po ../po/krootwm.pot
+	$(XGETTEXT) -C -ktranslate -x../../kdelibs/po/kde.pot $(krootwm_SOURCES) && mv messages.po ../po/krootwm.pot
 
