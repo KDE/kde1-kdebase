@@ -1,3 +1,11 @@
+* Mon Nov 16 10:30:00 CEST 1998 
+
+KPager now has a one-click way to work
+It also highlights the window the cursor is over (not very useful right
+now but will become useful next week :) )
+It has some big bug fixes (they caused a core dump when setting the sticky bits
+in some cases and a bug in the handling of stacking order )
+
 * Sun Nov 15 15:00:00 CEST 1998 
 
 Updated kpager to the new kbgndwm configure style

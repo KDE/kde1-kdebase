@@ -111,6 +111,7 @@ public slots:
 
     void moveWindow(Window w,int dsk,int x,int y, int origdesk);
     void switchToDesktop(int i);
+    void updateDesk(int i);
     void toggle2Rows();
 
     

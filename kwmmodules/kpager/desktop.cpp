@@ -36,9 +36,10 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     screen_width=swidth;
     screen_height=sheight;
     desktopActived=false;
-    //    setBackgroundColor(QColor(192,192,192));
+   //    setBackgroundColor(QColor(192,192,192));
     //    setBackgroundColor(QColor(0,0,195));
     setBackgroundMode(NoBackground);
+    mousepressed=false;
 
     QPainter *qp=new QPainter(this);
     tmpScreen=new QPixmap;
@@ -112,7 +113,6 @@ void Desktop::addWindow(Window w,int pos)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
-    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -121,9 +121,24 @@ void Desktop::addWindow(Window w,int pos)
     wp->pixmap=0L;
     wp->bigPixmap=0L;
     if (drawWinMode==pixmap) grabWindowContents(wp);
-    if (pos==-1) window_list->append(wp);
+//    if (pos==-1) window_list->append(wp);
+    if (pos==-1) insertWindow(wp);
      else window_list->insert(pos,wp);
     update();
+}
+
+void Desktop::insertWindow( WindowProperties *wp )
+{
+    int i=0;
+    QList <Window> *windowlist=new QList<Window>(kwmmapp->windows_sorted);
+    Window *win=windowlist->first();
+    while ((win!=0L)&&(*win!=wp->id))
+    {
+        if (contains(*win)) i++;
+        win=windowlist->next();
+    }
+    delete windowlist;
+    window_list->insert(i,wp);
 }
 
 WindowProperties *Desktop::getWindowProperties(Window w)
@@ -175,7 +190,6 @@ void Desktop::changeWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
-    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -195,6 +209,11 @@ void Desktop::raiseWindow(Window w)
 #endif
     uint wid=getIndexOfWindow(w);
     WindowProperties *wpback=getWindowProperties(w);
+/*    if (wpback==0L)
+    {
+        return;
+    };
+*/
     if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
     if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
     if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
@@ -203,7 +222,6 @@ void Desktop::raiseWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
-    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -214,6 +232,10 @@ void Desktop::raiseWindow(Window w)
     if (drawWinMode==pixmap) grabWindowContents(wp);
     window_list->append(wp);
     update();
+#ifdef DESKTOPDEBUG
+    printf("[%d]Raise2 window %ld\n",id,w);
+#endif
+
 }
 
 void Desktop::lowerWindow(Window w)
@@ -233,7 +255,6 @@ void Desktop::lowerWindow(Window w)
     wp->id=w;
     wp->name=KWM::title(w);
     wp->active=(KWM::activeWindow()==w)? true: false;
-    wp->highlighted=false;
     wp->iconified=KWM::isIconified(w);
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
@@ -329,8 +350,11 @@ void Desktop::paintWindow(QPainter *painter,WindowProperties *wp, QRect &tmp)
     double rx,ry;
 
     if (wp->iconified) return;
-    if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
-    else painter->fillRect(tmp,QColor(200,200,200));
+    if (wp->id==hilitwin) painter->fillRect(tmp,QColor(255,255,255));
+    else
+        if ((wp->active)&&(desktopActived)) painter->fillRect(tmp,QColor(255,255,0));
+    else 
+	painter->fillRect(tmp,QColor(200,200,200));
     
     // The next line causes oclock to behave very strange, I better don't call KWM::getDecoration
     //        if (KWM::getDecoration(wp->id)==KWM::normalDecoration)
@@ -476,25 +500,85 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
 
 void Desktop::mouseMoveEvent (QMouseEvent *e)
 {
+    if (mousepressed) 
+    {
+#ifdef DESKTOPDEBUG
+	printf("[%d]Init Dnd\n",id);
+#endif
+	mousepressed=false;
+        startDrag(e);
+	return;
+    };
+
+#ifdef DESKTOPDEBUG
+	printf("[%d]Highlight window\n",id);
+#endif
+
+    mousepressed=false;
+
     QPoint dragpos;
     bool ok;
-    WindowProperties *wp=windowAtPosition(&e->pos(),&ok,&dragpos);
-    if (wp==0L) return;
+    WindowProperties *wp;
+    int i=0;
+    
+    if (hilitwin!=0) 
+    {
+//        if ((i=KWM::desktop(hilitwin))!=id)
+//	{
+	    if (KWM::isSticky(KWM::desktop(hilitwin))) i=0;
+	    hilitwin=0;
+	    emit updateDesk(i);
+//	};
+    };
+    
+    wp=windowAtPosition(&e->pos(),&ok,&dragpos);
+    if (wp==0L) 
+    {
+        update();
+        return;
+    };
 
-    wp->highlighted=true;    
+    hilitwin=wp->id;
+    if (KWM::isSticky(wp->id)) emit updateDesk(0);
+    update();
 //    if ((desktopActived)&&(!wp->iconified)&&(!wp->active))
 //        KWM::activateInternal(wp->id);
 
 //    printf("%s\n",wp->name.data());
+
 }
-/*
-void Desktop::mouseReleaseEvent (QMouseEvent *e)
+
+void Desktop::mouseReleaseEvent ( QMouseEvent *e )
 {
-    printf("release\n");
+#ifdef DESKTOPDEBUG
+    printf("[%d]releaseMouse\n",id);
+#endif
+    if (mousepressed) 
+    {
+#ifdef DESKTOPDEBUG
+	printf("switch to %d\n",id);
+#endif
+	emit switchToDesktop(id);
+	mousepressed=false;
+    };
+
 }
-*/
-void Desktop::mousePressEvent (QMouseEvent *e)
+
+void Desktop::mousePressEvent ( QMouseEvent *e )
 {
+#ifdef DESKTOPDEBUG
+    printf("[%d]pressMouse\n",id);
+#endif
+    mousepressed=true;
+
+//startDrag(e);
+}
+
+void Desktop::startDrag( QMouseEvent *e )
+{
+#ifdef DESKTOPDEBUG
+printf("StartDrag\n");
+#endif
 #if QT_VERSION >= 141
     QPoint dragpos;
     bool ok;
@@ -539,6 +623,9 @@ void Desktop::dragMoveEvent(QDragMoveEvent *)
 
 void Desktop::dropEvent(QDropEvent *e)
 {
+#ifdef DESKTOPDEBUG
+    printf("dropEvent\n");
+#endif
     Window w=0;
     int deltax,deltay;
     int origdesk;
@@ -898,3 +985,4 @@ void Desktop::setDrawMode(int mode)
 }
 
 KWMModuleApplication *Desktop::kwmmapp=NULL;
+Window Desktop::hilitwin=0;

@@ -57,6 +57,9 @@ private:
     
     QList <WindowProperties> *window_list;
 
+    static Window hilitwin;
+    bool mousepressed;
+
     int screen_width, screen_height;
     int ratio;
 
@@ -115,12 +118,12 @@ public:
     void setRatio(int _ratio);
     void clearWindowList(void);
     void addWindow(Window w, int pos=-1);
+    void insertWindow(WindowProperties *wp);
     void removeWindow(Window w);
     void changeWindow(Window w);
     void raiseWindow(Window w);
     void lowerWindow(Window w);
     void activateWindow(Window w);
-
 
 
     void reconfigure(void); // Reads again the kbgndwm settings
@@ -131,6 +134,8 @@ public:
     virtual void paintEvent(QPaintEvent *);
 
     virtual void mousePressEvent (QMouseEvent *e);
+    virtual void mouseReleaseEvent (QMouseEvent *e);
+    void startDrag( QMouseEvent *e );
 #if QT_VERSION >= 141
     virtual void dragEnterEvent(QDragEnterEvent *e);
     virtual void dragMoveEvent   (QDragMoveEvent *e);
@@ -143,5 +148,6 @@ public:
 signals:
     void moveWindow(Window w,int desktop,int x,int y, int origdesk);
     void switchToDesktop(int id);
+    void updateDesk(int id);
 };
     
