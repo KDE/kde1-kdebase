@@ -1,4 +1,4 @@
-SUBDIRS = sample samba bell display input kwm info kdm kcontrol kpanel
+SUBDIRS = samba bell display input kwm info kdm kcontrol kpanel
 
 messages:
 	@set fnord $(MAKEFLAGS); amf=$$2; \
