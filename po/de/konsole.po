@@ -30,7 +30,7 @@ msgstr "&Riesig"
 
 #: main.C:209
 msgid "&Linux"
-msgstr ""
+msgstr "&Linux"
 
 #: main.C:210
 #, fuzzy
@@ -97,7 +97,7 @@ msgstr "Zeichensatz"
 
 #: main.C:250
 msgid "&Size"
-msgstr "&Groesse"
+msgstr "&Größe"
 
 #: main.C:251
 #, fuzzy
@@ -110,7 +110,7 @@ msgstr "&Einstellungen sichern"
 
 #: main.C:257
 msgid "&About ..."
-msgstr "&Ueber ..."
+msgstr "&Über ..."
 
 #: main.C:258
 msgid "&User's Manual ..."
@@ -122,11 +122,11 @@ msgstr "&Technische Referenz ..."
 
 #: main.C:270
 msgid "New"
-msgstr ""
+msgstr "Neu"
 
 #: main.C:271
 msgid "Sessions"
-msgstr ""
+msgstr "Sitzungen"
 
 #: main.C:795
 msgid "Welcome to the console"
