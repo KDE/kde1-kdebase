@@ -263,11 +263,12 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom3->addStretch();
   geom3->addWidget(cancel);
   setGeometry(x(), y(), 400, 120);
-  
-  for (int i=0; color_mode_name[i]; i++) {
+
+  int i;
+  for (i=0; color_mode_name[i]; i++) {
     colormode->insertItem(color_mode_name[i], i);
   }
-  for (int i=0; backspace_name[i]; i++) {
+  for (i=0; backspace_name[i]; i++) {
     backspace->insertItem(backspace_name[i], i);
   }
 }

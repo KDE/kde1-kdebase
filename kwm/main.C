@@ -358,7 +358,7 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 
 
-MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KApplication(argc, argv, rAppName ){
+MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc, argv, rAppName ){
   int i;
   bool restore_session = true;
   for (i=1; i<argc; i++){

@@ -30,6 +30,7 @@
 #include <X11/Xatom.h>
 #include <X11/extensions/shape.h>
 
+#include <config.h>
 
 class Manager : public QObject {
 Q_OBJECT

@@ -26,7 +26,7 @@ public:
   bool eventFilter( QObject *, QEvent * );
   void prepareToShow(const QStrList* strlist1, 
 		     const QStrList* strlist2,
-		     const QStrList* strlist2);
+		     const QStrList* strlist3);
 
 public slots:
   void cleanup();

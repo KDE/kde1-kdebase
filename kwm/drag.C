@@ -281,7 +281,7 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
     if (c->isMaximized()){
       c->maximized = FALSE;
       c->geometry_restore = c->geometry;
-      if (c->buttonMaximize->isOn)
+      if (c->buttonMaximize->isOn())
 	c->buttonMaximize->toggle();
     }
     

@@ -20,18 +20,7 @@
 #include <sysent.h>
 #endif
 
-/* this is needed for Solaris and others */
-#ifndef HAVE_GETDOMAINNAME
-extern "C" {
-int getdomainname (char *Name, int Namelen);
-}
-#endif  
-
-#ifndef HAVE_GETHOSTNAME
-extern "C" {
-int gethostname (char *Name, int Namelen);
-}
-#endif  
+#include <kmisc.h>
 
 extern bool kwm_error;
 

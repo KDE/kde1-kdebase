@@ -347,13 +347,14 @@ void KFontExplorer::display_example(const QFont& font){
  QFont::CharSet charset=info.charSet();
   for(i = 0;i<CHARSETS_COUNT;i++)
     if (charset==charsetsIds[i]){
+      actual_charset_label_data->setText(charsetsStr[i]);
       break;
  int number_of_entries; 
   
  int i;
 }
 
- for (int i = 0;i < number_of_entries ; i++){
+void KFontExplorer::setCombos(){
 
  QString string;
  QComboBox* combo;
@@ -369,7 +370,7 @@ void KFontExplorer::display_example(const QFont& font){
    //   printf("%s with %s\n",string.data(), ((QString) combo->text(i)).data());
    if ( string.lower() == ((QString) combo->text(i)).lower()){
      combo->setCurrentItem(i);
- for (int i = 0;i < number_of_entries - 1; i++){
+     //printf("Found Font %s\n",string.data());
      found = true;
      break;
    }
