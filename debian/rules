@@ -47,7 +47,7 @@ binary-arch:	checkroot build
 
 binary-arch2:
 	dh_installdirs
-	make prefix=`pwd`/debian/tmp/usr install
+	make prefix=`pwd`/debian/tmp/usr RUN_KAPPFINDER="no" install
 	dh_movefiles
 	perl -w debian/kderules
 	cp debian/README.kde debian/tmp/usr/doc/kde
@@ -80,6 +80,7 @@ binary-arch2:
 	dh_shlibdeps
 	dh_gencontrol	
 	dh_md5sums
+	perl -w debian/kderules update
 	dh_builddeb
 	$(MAKE) -f debian/rules debian-clean
 

@@ -15,4 +15,6 @@ purge)
     ;;
 
 esac   
+
 #DEBHELPER#
+#KDEHELPER#

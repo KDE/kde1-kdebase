@@ -67,6 +67,7 @@ if test -L /var/spool/kdeapplnk; then
 fi
 
 #DEBHELPER#
+#KDEHELPER#
 
 # Starting kdm
 /etc/init.d/kdm start
