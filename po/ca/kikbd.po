@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
-"PO-Revision-Date: 1999-01-21 23:18+0100\n"
+"PO-Revision-Date: 1999-08-18 23:04+02:00\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,6 @@ msgstr ""
 "Es desactiven els símbols Alt"
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -68,23 +67,23 @@ msgstr ""
 "Es desactiva l'emulació Bloq Majús"
 
 #: kikbd.cpp:1097
-#, fuzzy
 msgid "Exiting International Keyboard"
-msgstr "Teclat internacional"
+msgstr "S'està sortint del teclat internacional"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Esteu a punt d'abandonar l'eina \"Teclat Internacional\".\n"
+"Voleu que s'autoengegui a la propera sessió?"
 
 #: keymap.cpp:186
-#, fuzzy
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: no es pot assignar memòria"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -92,22 +91,22 @@ msgid ""
 "in the configuration program."
 msgstr ""
 "No es pot trobar el símbol \"%s\".\n"
-"Potser els vostres codis X per omissió no el tenen.\n"
+"Potser els vostres codis X per omissió no casen.\n"
 "Podeu prefixar els codis X a la secció \"Avançat\"\n"
 "del programa de configuració."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: no es pot trobar el símbol \"%s\"."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
-msgstr "KeyMap: no entenc el codi de tecla \"%s\"."
+msgstr "KeyMap: no puc llegir el codi de tecla \"%s\"."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: el codi de tecla \"%s\" cau fora de rang."
 
@@ -309,7 +308,6 @@ msgid "&Add"
 msgstr "&Afegeix"
 
 #: widgets.cpp:127
-#, fuzzy
 msgid "Add new keyboard map"
 msgstr "Afegeix un nou mapa de teclat"
 
@@ -322,16 +320,14 @@ msgid "U&p"
 msgstr "A&munt"
 
 #: widgets.cpp:136
-#, fuzzy
 msgid "Move up selected keyboard map"
-msgstr "Elimina el mapa de teclat seleccionat"
+msgstr "Puja el mapa de teclat seleccionat"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "A&baix"
 
 #: widgets.cpp:140
-#, fuzzy
 msgid "Move down selected keyboard map"
 msgstr "Baixa el mapa de teclat seleccionat"
 
@@ -348,22 +344,18 @@ msgid "Use &hot list"
 msgstr "Usa la llista dels &bons"
 
 #: widgets.cpp:155
-#, fuzzy
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
-msgstr ""
-"Usa només els mapes de teclat per omissió i darrer actiu per canviar de "
-"teclat"
+msgstr "Usa només els mapes de teclat per omissió i darrer actiu quan s'usa la seqüència de tecles de canvi"
 
 #: widgets.cpp:224
 msgid "Adding Keyboard"
 msgstr "Afegint teclat"
 
 #: widgets.cpp:225
-#, fuzzy
 msgid "There are no keyboard maps left to add"
-msgstr "No hi ha més mapes de teclat"
+msgstr "No hi ha més mapes de teclat per afegir"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -386,12 +378,10 @@ msgid "Switch and Alt Switch"
 msgstr "Canviar i Alt Canviar"
 
 #: widgets.cpp:419
-#, fuzzy
 msgid "Key(s) for switching between keyboard maps"
-msgstr "Tecles per canviar entre mapes de teclat"
+msgstr "Tecla/es per canviar entre mapes de teclat"
 
 #: widgets.cpp:425
-#, fuzzy
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr "Tecla per activar símbols alternatius al mapa de teclat actual"
 
@@ -400,7 +390,6 @@ msgid "&Beep"
 msgstr "&Bip"
 
 #: widgets.cpp:439
-#, fuzzy
 msgid "Beep when keyboard map is changed"
 msgstr "Bip sempre que canvii el mapa de teclat"
 
@@ -421,18 +410,18 @@ msgid "&Emulate Caps Lock"
 msgstr "&Emula Bloq Majús"
 
 #: widgets.cpp:476
-#, fuzzy
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emula Bloq Majús del servidor X. Cal per alguns idiomes"
+msgstr ""
+"Emula Bloq Majús del servidor X. És necessària per l'operació correcta del "
+"teclat per alguns idiomes"
 
 #: widgets.cpp:482
 msgid "&World Menu"
 msgstr "Menú &mundial"
 
 #: widgets.cpp:483
-#, fuzzy
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Mostra el menú en qualsevol finestra prement les tecles Canviar"
 
@@ -453,21 +442,18 @@ msgid "Input"
 msgstr "Entrada"
 
 #: widgets.cpp:505
-#, fuzzy
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Comportament estàndard. Mapa de teclat actiu per totes les finestres"
 
 #: widgets.cpp:509
-#, fuzzy
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Comportament estàndard. Mapa de teclat actiu per totes les finestres"
+msgstr "Comportament ampliat. L'estat del mapa de teclat es desa per cada finestra"
 
 #: widgets.cpp:513
-#, fuzzy
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Comportament estàndard. Mapa de teclat actiu per totes les finestres"
+msgstr "Comportament especial. L'estat del teclat es desa per cada classe de finestres"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -479,15 +465,15 @@ msgstr "Primer pla"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Color de primer pla del text de l'etiqueta"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Fons"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Color de fons del text de l'etiqueta"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -502,9 +488,8 @@ msgid "With Alternate"
 msgstr "Amb alternatiu"
 
 #: widgets.cpp:589
-#, fuzzy
 msgid "Background when Alternate switch key is pressed"
-msgstr "Fons en prèmer el canvi alternatiu"
+msgstr "Fons en prèmer la tecla del canvi alternatiu"
 
 #: widgets.cpp:598
 msgid "Button Font"
@@ -562,17 +547,3 @@ msgstr "E&ngega"
 msgid "International Keyboard"
 msgstr "Teclat internacional"
 
-#~ msgid "Up selected keyboard map"
-#~ msgstr "Puja el mapa de teclat seleccionat"
-
-#~ msgid "Extended behavior. Each windows remember it's own keyboard map"
-#~ msgstr ""
-#~ "Comportament ampliat. Cada finestra recorda son propi mapa de teclat"
-
-#~ msgid "Special behavior. Each windows class remember it's own keyboard map"
-#~ msgstr ""
-#~ "Comportament ampliat. Cada classe de finestra recorda son propi mapa de "
-#~ "teclat"
-
-#~ msgid "Color of the text label"
-#~ msgstr "Color del text de l'etiqueta"

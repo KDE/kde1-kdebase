@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
-"PO-Revision-Date: 1999-02-03 23:49+0100\n"
+"PO-Revision-Date: 1999-08-18 22:50+02:00\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -228,6 +228,8 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"Si us plau, comuniqueu els errors i desitjos a http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"
@@ -1050,12 +1052,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Còpia recursiva de/a localitzacions distants"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"No s'ha pogut fer un enllaç simbòlic a\n"
+"No s'ha pogut esborrar l'enllaç simbòlic\n"
 "%s"
 
 #: kiojob.cpp:957
@@ -1217,7 +1219,7 @@ msgstr ""
 "no existeix"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1225,7 +1227,7 @@ msgid ""
 msgstr ""
 "No s'ha pogut escriure\n"
 "%s\n"
-"Potser s'ha denegat l'accés"
+"Potser el disc és ple"
 
 #: kiojob.cpp:1456
 #, c-format
@@ -1528,5 +1530,3 @@ msgstr ""
 "Error de sintàxi:\n"
 "comanda kfmexec [URLs....]\n"
 
-#~ msgid "Unknown binding"
-#~ msgstr "Lligam desconegut"
