@@ -11,11 +11,11 @@ icondir = $(kde_icondir)
 data_DATA = directory.trash directory.autostart directory.templates
 datadir = $(kde_datadir)/kfm
 
-EXTRA_DIST = kfm.xpm link.xpm directory.trash directory.autostart directory.templates kfmsu kfmsu2 startkde unpack magic
+EXTRA_DIST = kfm.xpm link.xpm directory.trash directory.autostart directory.templates kfmsu kfmsu2 startkde kde unpack magic
 
 ####### Files
 
-bin_SCRIPTS = kfmsu kfmsu2 startkde unpack
+bin_SCRIPTS = kfmsu kfmsu2 startkde kde unpack
 
 bin_PROGRAMS = kfm
 
