@@ -351,6 +351,10 @@ void FilePropsPage::applyChanges()
     {
 	QString s = path.data();
 	s.detach();
+	if ( s.right(1) == "/") 
+	  // It's a directory, so strip the trailing slash first
+	  s.truncate( s.length() - 1);
+
 	int i = s.findRev( "/" );
 	// Should never happen
 	if ( i == -1 )
