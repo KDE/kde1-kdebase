@@ -661,6 +661,13 @@ void kPanel::add_windowlist(){
   writeOutConfiguration();
 }
 
+// --sven: kdisknav button start --
+void kPanel::add_kdisknav(){
+    addButtonInternal(0, -1, -1, "kdisknav");
+    writeOutConfiguration();
+}
+// --sven: kdisknav button end --
+
 void kPanel::ask_logout(){
   KWM::logout();
 }

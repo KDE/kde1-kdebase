@@ -38,6 +38,10 @@ void kPanel::writeOutConfiguration(){
    for (i=0; i<nbuttons;i++){
      if (entries[i].popup == windowlist)
        s="windowlist";
+     // --sven: kdisknav button start --
+     if (entries[i].popup == kdisknav)
+       s="kdisknav";
+     // --sven: kdisknav button end --
      else if (entries[i].pmi){
        s=entries[i].pmi->getSaveName();
      }
@@ -162,6 +166,11 @@ void kPanel::parseMenus(){
     panel_menu->add( new PMenuItem(add_but, klocale->translate("Add application"), 0, 0, pmenu_add,
 				   0, 0, new myPopupMenu, false, 0,
 				   klocale->translate("Add an application or a submenu onto the panel")));
+    // --sven: kdisknav button start --
+    panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add Disk Navigator"), 0, 0, 0,
+				   this, SLOT(add_kdisknav()), 0, false, 0,
+				   klocale->translate("Add a Disk Navigator menu onto the panel")) );
+    // --sven: kdisknav button end --
     panel_menu->add( new PMenuItem(prog_com, klocale->translate("Add windowlist"), 0, 0, 0,
 				   this, SLOT(add_windowlist()), 0, false, 0,
 				   klocale->translate("Add a windowlist menu onto the panel")) );
@@ -178,9 +187,8 @@ void kPanel::parseMenus(){
     PMenuItem* fileBrowser = 
       new PMenuItem(submenu, klocale->translate("Disk Navigator"),
                     0, "kdisknav.xpm", new PFileMenu(true), 0, 0,
-                    new myPopupMenu, false, 0,
+                    kdisknav /* instead of new myPopupMenu */ , false, 0, //sven changed
 		    klocale->translate("Quickly navigate through the filesystem"));
-    
 
     pmenu->add( fileBrowser );
 
@@ -280,6 +288,12 @@ void kPanel::readInConfiguration(){
 	     addButtonInternal(0, (int)x, (int)y, "windowlist");
 	     buttonAdded = true;
 	 }
+	 // --sven: kdisknav button start --
+	 else if (button_entry_value == "kdisknav"){
+	     addButtonInternal(0, (int)x, (int)y, "kdisknav");
+	     buttonAdded = true;
+	 }
+         // --sven: kdisknav button end -- 
 	 else {
 	   pmi = pmenu->searchItem( button_entry_value);
 	   if (pmi){

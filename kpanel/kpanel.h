@@ -203,6 +203,9 @@ public:
   void button_pressed();
 
   void add_windowlist();
+  // --sven: kdisknav button start --
+  void add_kdisknav();
+  // --sven: kdisknav button end --
   void ask_logout();
   void call_help();
   void call_klock();
@@ -442,6 +445,9 @@ private:
 
   QPopupMenu* windows;
   QPopupMenu* windowlist;
+  // --sven: kdisknav button start --
+  myPopupMenu *kdisknav;
+  // --sven: kdisknav button end --
   void generateWindowlist(QPopupMenu*);
 
   QPixmap load_pixmap(const char* name, bool is_folder = false);

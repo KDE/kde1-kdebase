@@ -419,7 +419,27 @@ void kPanel::kwmCommandReceived(QString com){
 
 
 bool kPanel::eventFilter(QObject *ob, QEvent *ev){
-
+  // --sven: kdisknav button start --
+  if (ob == kdisknav && ev->type() == Event_MouseButtonRelease)
+  {
+    //debug ("Got release"); Ok, I trust you...
+    int i;
+    for (i=0; i<nbuttons;i++)
+    {
+      if (entries[i].popup == kdisknav) // is this our button?
+      {
+	// This a KToolBarButton-lke stuff
+	if (QApplication::widgetAt(((QMouseEvent *) ev)->globalPos(), true)
+	    == entries[i].button)
+	{
+	  kdisknav->setActiveItem(0 /*myPopup->idAt(1)*/); // set first active
+	  return true;  // ignore release
+	}
+      }
+    }
+  }
+  // --sven: kdisknav button end --
+  
   switch (ev->type()){
 
   case Event_KeyPress:

@@ -294,6 +294,12 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     connect( windowlist, SIGNAL(activated( int )),
 	     SLOT(windowlistActivated(int)) );
     init_popup(windowlist);
+// --sven: kdisknav button start --
+    kdisknav = new myPopupMenu;
+    CHECK_PTR( kdisknav );
+    windowlist->setCheckable(true);
+    //init_popup(kdisknav); Not needed? Guess so...
+// --sven: kdisknav button end --
 
     QPushButton* tmp_push_button = 0;
     QButton* tmp_button = 0;
@@ -1236,6 +1242,15 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
        entries[nbuttons-1].button->setPixmap(create_arrow_pixmap(load_pixmap("window_list.xpm")));
        QToolTip::add(entries[nbuttons-1].button, klocale->translate("Windowlist"));
      }
+     // --sven: kdisknav button start --
+     else if (name == "kdisknav"){
+       entries[nbuttons-1].popup = kdisknav;
+       // store this buttonand check if release is over this button!!!
+       entries[nbuttons-1].button->setPixmap(create_arrow_pixmap(load_pixmap("kdisknav.xpm")));
+       QToolTip::add(entries[nbuttons-1].button,
+		     klocale->translate("Quickly navigate through the filesystem"));
+     }
+     // --sven: kdisknav button end --
    }
 
 
