@@ -163,13 +163,12 @@ msgid "Window resize"
 msgstr "Ikkunan koonmuutos"
 
 #: windows.cpp:90
-#, fuzzy
 msgid "Animation:"
-msgstr "Otsikon animaatio"
+msgstr "Animaatio:"
 
 #: windows.cpp:92
 msgid "Fast"
-msgstr ""
+msgstr "Nopea"
 
 #: windows.cpp:98
 msgid "Placement policy"
@@ -279,17 +278,3 @@ msgstr ""
 "Ikkunan vaihtoalue:\n"
 "       (pisteitä)"
 
-#~ msgid "With animation"
-#~ msgstr "Animaation kanssa"
-
-#~ msgid "Move"
-#~ msgstr "Siirrä"
-
-#~ msgid "Restore"
-#~ msgstr "Palauta"
-
-#~ msgid "Shaded"
-#~ msgstr "Varjostettu"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Muuta animaation kokoa"
