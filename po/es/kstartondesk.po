@@ -1,0 +1,39 @@
+# Kstartondesk.pot translate file to SPANISH.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-Apr-23 22:20+0100\n"
+"PO-Revision-Date: YEAR-MONTH-DAY HO:MI+ZONE\n"
+"Last-Translator: Jorge Valencia Alvarez <jorgev@est.unileon.es>\n"
+"Language-Team: Spanish <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kstartondesk.C:70
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: kstartondesk.C:74
+msgid "Usage:"
+msgstr "Uso:"
+
+#: kstartondesk.C:76
+msgid "command "
+msgstr "comando "
+
+#: kstartondesk.C:77
+msgid "title "
+msgstr "título "
+
+#: kstartondesk.C:78
+msgid "desktop"
+msgstr "escritorio"
+
+#: kstartondesk.C:80
+msgid "Example"
+msgstr "Ejemplo"
