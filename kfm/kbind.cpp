@@ -917,7 +917,7 @@ void KMimeType::getBindings( QStrList &_list, const char *_url, bool _isdir )
     {
 	QDir d( u.path() );
 	QString x = d.canonicalPath();
-	if ( !x.isNull() )
+	if ( !x.isEmpty() )
 	{
 	    tmp = x.data();
 	    tmp.detach();
