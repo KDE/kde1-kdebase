@@ -706,7 +706,7 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
 			}
 			
 			// This if clause is a hack for backward copatibility
-			if ( strcmp( start, "Default" ) != 0 )
+			if ( stricmp( start, "Default" ) != 0 )
 			{
 			    QString s( i18n( "Mount" ) );
 			    s.detach();
@@ -2021,7 +2021,7 @@ bool KDELnkMimeType::runBinding( const char *_url, const char *_binding )
 		// The binding is named 'Mount FSType' => length >=5
 		QString tmp;
 		tmp.sprintf( "%s Default", i18n( "Mount" ) );
-		if ( strcmp( _binding, tmp.data() ) == 0 ||
+		if ( stricmp( _binding, tmp.data() ) == 0 ||
 		     strcmp( _binding, i18n( "Mount" ) ) == 0 )
 		    job->mount( false, 0L, dev, 0L );
 		else
