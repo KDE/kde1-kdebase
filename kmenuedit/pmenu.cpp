@@ -348,7 +348,7 @@ void PMenuItem::writeConfig( QDir dir )
   if( read_only || entry_type == separator )
     return;
   QString file = dir.absPath();
-  file += ( (QString) "/" + text_name + ".kdelnk" );
+  file += ( (QString) "/" + text_name ); //+ ".kdelnk" );
   QFile config(file);
   if( !config.open(IO_ReadWrite) ) 
     return;
@@ -708,7 +708,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
       return;
     }
   QString name;
-  const QStrList *temp_list = base_dir.entryList("*.kdelnk");
+  const QStrList *temp_list = base_dir.entryList("*");
   QStrList file_list;
   file_list.setAutoDelete(TRUE);
   QStrListIterator temp_it( *temp_list );
@@ -755,7 +755,7 @@ void PMenu::writeConfig( QDir base_dir, PMenuItem *parent_item = NULL )
       else
 	{
 	  item->writeConfig(base_dir);
-	  file_list.remove(item->text_name + ".kdelnk");
+	  file_list.remove(item->text_name); // + ".kdelnk");
 	}
     }
   // remove files not in pmenu

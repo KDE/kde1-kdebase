@@ -37,6 +37,7 @@
 
 KIconLoader *global_pix_loader;
 KIconLoaderDialog *global_pix_sel;
+KIconLoaderDialog *global_pix_sel2;
 
 int main( int argc, char **argv )
 {
@@ -93,8 +94,17 @@ int main( int argc, char **argv )
 	}
     }
   global_pix_loader = KApplication::getKApplication()->getIconLoader();
-  //global_pix_loader->insertDirectory(0, KApplication::kdedir()+"/share/icons" );
   global_pix_sel = new KIconLoaderDialog;
+  global_pix_sel2 = new KIconLoaderDialog;
+  QStrList icon_sel_list;
+  QStrList icon_sel_list2;
+  icon_sel_list.append(KApplication::kdedir()+"/share/icons");
+  icon_sel_list.append(QDir::homeDirPath()+"/.kde/share/icons");
+  icon_sel_list2.append(KApplication::kdedir()+"/share/icons/mini");
+  icon_sel_list2.append(QDir::homeDirPath()+"/.kde/share/icons/mini");
+  global_pix_sel->setDir(&icon_sel_list);
+  global_pix_sel2->setDir(&icon_sel_list2);
+
   KMenuEdit edit;
   a.setMainWidget( (QWidget *) &edit );
   a.setRootDropZone( new KDNDDropZone( (QWidget *) &edit, DndNotDnd ) );

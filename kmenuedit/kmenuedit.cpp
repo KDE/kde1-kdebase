@@ -43,6 +43,7 @@
 extern KIconLoader *global_pix_loader;
 KStatusBar *global_status_bar;
 QStrList *global_file_types;
+bool changes_to_save;
 
 KMenuEdit::KMenuEdit( const char *name = NULL )
   : KTopLevelWidget( name )
@@ -63,14 +64,15 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   QPopupMenu *options = new QPopupMenu;
   options->insertItem("Reload Filetypes", this, SLOT(reloadFileTypes()) );
   QPopupMenu *help = new QPopupMenu;
-  help->insertItem("Help", this, SLOT(startHelp()), CTRL+Key_H );
+  //help->insertItem("Help", this, SLOT(startHelp()), CTRL+Key_H );
   help->insertItem("About", this, SLOT(about()) );
 
   menubar->insertItem( "&File", file );
-  //menubar->insertItem( "&Edit", edit_menu, ALT+Key_E );
-  menubar->insertItem( "&Options", options, ALT+Key_O );
+  //menubar->insertItem( "&Edit", edit_menu);
+  menubar->insertItem( "&Options", options);
   menubar->insertSeparator();
-  menubar->insertItem( "&Help", help, ALT+Key_H );
+  menubar->insertItem( "&Help", KApplication::getKApplication()->getHelpMenu(TRUE) );
+  //menubar->insertItem( "&Help", help, ALT+Key_H );
 
   // create toolbar
   toolbar = new KToolBar(this);
@@ -82,9 +84,9 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   toolbar->insertButton(temp_pix, 1, SIGNAL(clicked()), this,
                       SLOT(save()), TRUE, "Save");
   toolbar->insertSeparator();
-  temp_pix = global_pix_loader->loadIcon("exit.xpm");
-  toolbar->insertButton(temp_pix, 2, SIGNAL(clicked()), qApp,
-                      SLOT(quit()), TRUE, "Exit");
+  //temp_pix = global_pix_loader->loadIcon("exit.xpm");
+  //toolbar->insertButton(temp_pix, 2, SIGNAL(clicked()), qApp,
+  //                    SLOT(quit()), TRUE, "Exit");
   toolbar->setBarPos( (KToolBar::BarPosition) config->readNumEntry("ToolBarPos") );
   setMenu(menubar);
   addToolBar(toolbar);
@@ -154,10 +156,19 @@ KMenuEdit::KMenuEdit( const char *name = NULL )
   if( height < minimumSize().height() )
     height = minimumSize().height();
   resize(width, height);
+  changes_to_save = FALSE;
 }
 
 KMenuEdit::~KMenuEdit()
 {
+  if( changes_to_save )
+    {
+      if( QMessageBox::information ( this, "Changes not saved !", 
+				     "Do you want to save your changes", "Yes", "No" )  == 0 )
+	{
+	  saveMenus();
+	}
+    }
   KConfig *config = KApplication::getKApplication()->getConfig();
   config->setGroup("kmenuedit");
   config->writeEntry("PersPosX", pers_menu_data->configPos().x());
@@ -197,7 +208,7 @@ void KMenuEdit::startHelp()
 void KMenuEdit::about()
 {
   QMessageBox::message( "About", \
-                        "Kmenuedit 0.2.0\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@mail.bonn.netsurf.de", "Ok" );
+                        "Kmenuedit 0.2.1\n\r(c) by Christoph Neerfeld\n\rChristoph.Neerfeld@bonn.netsurf.de", "Ok" );
 }
 
 void KMenuEdit::loadMenus()
@@ -244,13 +255,17 @@ void KMenuEdit::saveMenus()
   dir.setPath(dir_name);
   glob_menu_data->writeConfig(dir);
   QApplication::restoreOverrideCursor();
+  changes_to_save = FALSE;
 }
 
 void KMenuEdit::reload()
 {
-  int code;
-  code = KMsgBox::yesNo(this, "Reload Menus", "Reloading the menus will discard all changes.\n
+  int code = 1;
+  if( changes_to_save )
+    {
+      code = KMsgBox::yesNo(this, "Reload Menus", "Reloading the menus will discard all changes.\n
 Are you sure you want to reload ?" );
+    }
   if( code == 1 )
     {
       loadMenus();
@@ -312,26 +327,6 @@ void KMenuEdit::reloadFileTypes()
       sub_dir.cdUp();
       ++d_it;
     }
-
-  /*  // kfm I method of filetypes
-  QString dir_name = KApplication::kdedir();
-  dir_name += "/filetypes";
-  QDir dir(dir_name);
-  if( !dir.exists() )
-    return;
-  global_file_types->clear();
-  dir.setNameFilter("*.kdelnk");
-
-  const QFileInfoList *list = dir.entryInfoList();
-  QFileInfoListIterator it( *list );
-  QFileInfo *fi;
-
-  while ( (fi = it.current()) ) 
-    {
-      global_file_types->inSort( fi->baseName() );
-      ++it;
-    }
-    */
 }
 
 

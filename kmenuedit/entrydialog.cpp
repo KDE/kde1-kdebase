@@ -38,6 +38,7 @@
 
 extern KIconLoader *global_pix_loader;
 extern KIconLoaderDialog *global_pix_sel;
+extern KIconLoaderDialog *global_pix_sel2;
 extern QStrList *global_file_types;
 
 EntryDialog::EntryDialog (QWidget* parent, const char* name)
@@ -426,7 +427,7 @@ EntryDialog::EntryDialog (QWidget* parent, const char* name)
 void EntryDialog::pixnameChanged()
 {
   QString new_name = i_pixmap->text();
-  b_pixmap->setPixmap( global_pix_loader->loadApplicationIcon(new_name, 70, 70 ));
+  b_pixmap->setPixmap( global_pix_loader->loadApplicationMiniIcon(new_name, 70, 70 ));
 }
 
 void EntryDialog::bigPixnameChanged()
@@ -445,7 +446,7 @@ void EntryDialog::pixButPressed()
 {
   QString name;
   QPixmap temp;
-  temp = global_pix_sel->selectIcon(name, "mini*" );
+  temp = global_pix_sel2->selectIcon(name, "*" );
   if( name.isNull() )
     return;
   i_pixmap->setText(name);

@@ -2,7 +2,7 @@
 //  ktaskbar
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -53,6 +53,22 @@ const short glob_but_height = 24;
 PMenuItem *global_pmenu_buffer = NULL;
 PMenuItem *global_drop_buffer = NULL;
 extern KStatusBar *global_status_bar;
+extern bool changes_to_save;
+
+static bool isKdelnkFile(const char* name){
+  QFile file(name);
+  if (file.open(IO_ReadOnly)){
+    char s[19];
+    int r = file.readLine(s, 18);
+    if(r > -1){
+      s[r] = '\0';
+      file.close();
+      return (QString(s).left(17) == "# KDE Config File");
+    }
+    file.close();
+  }
+  return FALSE;
+}
 
 //----------------------------------------------------------------------
 //---------------  MENUBUTTON  -----------------------------------------
@@ -237,6 +253,7 @@ void MenuButton::change_item()
 
 void MenuButton::change_accept()
 {
+  changes_to_save = TRUE;
   QString prot = "";
   QString str_list = "";
   int i, nr;
@@ -279,8 +296,8 @@ void MenuButton::change_accept()
       pmenu_item->setPixmapName(dialog->i_pixmap->text());
       pmenu_item->setBigPixmapName(dialog->i_big_pixmap->text());
       pmenu_item->setComment(dialog->i_comment->text());
-      pmenu_item->setPixmap( global_pix_loader->loadApplicationIcon( dialog->i_pixmap->text(),
-								     70, 70 ) );
+      pmenu_item->setPixmap( global_pix_loader->loadApplicationMiniIcon( dialog->i_pixmap->text(),
+									 70, 70 ) );
       setPixmap( pmenu_item->getPixmap() );
       switch( (int) new_type ) {
       case (int) unix_com:
@@ -900,7 +917,8 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
       if( name.left(5) != "file:" )
 	continue;
       fi.setFile( name.mid(5, name.length()) );
-      if( !fi.extension().contains("kdelnk") )
+      //if( !fi.extension().contains("kdelnk") )
+      if( !isKdelnkFile(fi.absFilePath()) )
 	continue;
       new_item = new PMenuItem;
       if( new_item->parse(&fi) < 0 )
