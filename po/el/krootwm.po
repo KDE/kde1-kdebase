@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: krootwm.C:118 krootwm.C:500
+msgid "Folder"
+msgstr "Φάκελος"
+
+#: krootwm.C:145
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "ΣΦΑΛΜΑ: Το υπόδειγμα δεν υπάρχει '%s'"
+
+#: krootwm.C:171
+msgid "Help on desktop"
+msgstr "Βοήθεια για το Γραφείο"
+
+#: krootwm.C:172
+msgid "Execute command"
+msgstr "Εκτέλεση εντολής"
+
+#: krootwm.C:173
+msgid "Display properties"
+msgstr "Ιδιότητες οθόνης"
+
+#: krootwm.C:174
+msgid "Refresh desktop"
+msgstr "Ανανέωση γραφείου"
+
+#: krootwm.C:175
+msgid "Arrange icons"
+msgstr "Τακτοποίηση εικονιδίων"
+
+#: krootwm.C:177
+msgid "Lock screen"
+msgstr "Κλείδωμα οθόνης"
+
+#: krootwm.C:178
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+#: krootwm.C:520
+msgid "Could not create folder"
+msgstr "Αδύνατη η δημιουργία φακέλου"
+
+#: krootwm.C:553
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Πνευματικά δικαιώματα (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:557
+msgid "Usage:"
+msgstr "Σύνταξη:"

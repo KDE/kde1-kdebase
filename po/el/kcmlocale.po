@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "Επιλογή χώρας"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "Σύνταξη: kcmlocale [-init | language]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Τοπικές Ρυθμίσεις"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Πρώτη"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Δεύτερη"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Τρίτη"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "χωρίς όνομα!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Εφαρμογή ρυθμίσεων γλώσσας"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Οι επιλογές γλώσσας που μόλις αλλάξατε θα εφαρμοστούν μόνο σε εφαρμογές που θα ξεκινήσετε από δω και πέρα.\n"
+"Για να αλλάξετε την γλώσσα σε όλα το προγράμματα, θα πρέπει πρώτα να αποσυνδεθείτε."

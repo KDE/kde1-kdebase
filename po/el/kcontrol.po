@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-03-02 00:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "’γνωστο στοιχείο:"
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "Κέντρο Ελέγχου KDE"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "Ενσωμάτωση στοιχείων"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hφlzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"Κέντρο Ελέγχου KDE - Έκδοση 0.3\n"
+"\n"
+"Προγραμματισμός από τον Matthias Hφlzer\n"   
+"\n"
+"Ευχαριστήρια στους:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."

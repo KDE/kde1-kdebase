@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:87
+msgid "&Appearance"
+msgstr "Μορφή"
+
+#: main.cpp:91
+msgid "&Fonts"
+msgstr "Γραμματοσειρές"
+
+#: main.cpp:95
+msgid "&Background"
+msgstr "Φόντο"
+
+#: main.cpp:98
+msgid "&Users"
+msgstr "Χρήστες"
+
+#: main.cpp:101
+msgid "&Sessions"
+msgstr "Συνδέσεις"
+
+#: main.cpp:106
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"Σύνταξη: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+#: main.cpp:145
+
+msgid "KDM Configuration"
+msgstr "Ρυθμίσεις KDM"
+
+#: main.cpp:155
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Συγγνώμη, αλλά δεν έχετε πρόσβαση στο αρχείο ρυθμίσεων του KDM."
+
+#: main.cpp:157
+msgid "Missing privileges"
+msgstr "Ελλιπή δικαιώματα πρόσβασης"
+
+#: kdm-appear.cpp:66
+msgid "Appearance"
+msgstr "Μορφή"
+
+#: kdm-appear.cpp:69
+msgid "Greeting string:"
+msgstr "Χαιρετισμός:"
+
+#: kdm-appear.cpp:77
+msgid "KDM logo:"
+msgstr "Σήμα του KDM:"
+
+#: kdm-appear.cpp:104 kdm-users.cpp:135
+msgid "Click or drop an image here"
+msgstr "Κάντε κλικ ή τοποθετήστε μια εικόνα εδώ"
+
+#: kdm-appear.cpp:109
+msgid "GUI Style:"
+msgstr "Τύπος γραφικού περιβάλλοντος:"
+
+#: kdm-appear.cpp:115
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:116
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:143 kdm-appear.cpp:227 kdm-users.cpp:275
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr "Προκλήθηκε σφάλμα κατά την φόρτωση της εικόνας:\n"
+">"
+
+#: kdm-appear.cpp:145 kdm-appear.cpp:164 kdm-users.cpp:195
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:146 kdm-appear.cpp:165 kdm-appear.cpp:230 kdm-users.cpp:196
+#: kdm-users.cpp:278
+msgid "ERROR"
+msgstr "ΣΦΑΛΜΑ"
+
+#: kdm-appear.cpp:162 kdm-users.cpp:193
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr "Προκλήθηκε σφάλμα κατά την αποθήκευση της εικόνας:\n"
+">"
+
+#: kdm-appear.cpp:195 kdm-users.cpp:226
+msgid "Sorry, but \n"
+msgstr "Συγγνώμη, αλλά το αρχείο \n"
+
+#: kdm-appear.cpp:197 kdm-users.cpp:228
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"δεν φαίνεται να είναι αρχείο εικόνας"
+
+#: kdm-appear.cpp:198 kdm-users.cpp:229
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Παρακαλώ χρησιμοποιήστε αρχεία με τις παρακάτω επεκτάσεις\n"
+
+#: kdm-appear.cpp:200 kdm-users.cpp:231
+msgid "Improper File Extension"
+msgstr "Λανθασμένη επέκταση αρχείου"
+
+#: kdm-appear.cpp:229 kdm-users.cpp:277
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Δεν θα αποθηκευτεί..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Επιλογή γραμματοσειρών"
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr "Αλλαγή γραμματοσειράς"
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr "Χαιρετισμός"
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr "Αποτυχία"
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr "Κανονικό"
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr "Παράδειγμα:"
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "Χρώμα"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr "Ταπετσαρία"
+
+#: kdm-bgnd.cpp:109
+msgid "Tiled"
+msgstr "Σε παράταξη"
+
+#: kdm-bgnd.cpp:113
+msgid "Centred"
+msgstr "Κεντραρισμένο"
+
+#: kdm-bgnd.cpp:117
+msgid "Scaled"
+msgstr "Προσαρμογή μεγέθους"
+
+#: kdm-users.cpp:48
+msgid "All users"
+msgstr "Όλοι οι χρήστες"
+
+#: kdm-users.cpp:50
+msgid "Selected users"
+msgstr "Επιλεγμένοι χρήστες"
+
+#: kdm-users.cpp:52
+msgid "No-show users"
+msgstr "Αόρατοι χρήστες"
+
+#: kdm-users.cpp:79
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Να εμφανιστουν μόνο\n"
+"οι επιλεγμένοι χρήστες"
+
+#: kdm-users.cpp:86
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Να εμφανιστούν όλοι οι χρήστες\n"
+" εκτός από τους αόρατους χρήστες"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Εμφάνιση χρηστών"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Ταξινόμηση χρηστών"
+
+#: kdm-users.cpp:181 kdm-users.cpp:250
+msgid "No user selected"
+msgstr "Δεν έχει επιλεγεί χρήστης"
+
+#: kdm-users.cpp:182 kdm-users.cpp:251
+msgid "Save image as default image?"
+msgstr "Να σωθεί η εικόνα για εξ ορισμού χρήση;"
+
+#: kdm-sess.cpp:50
+msgid "Allow to shutdown:"
+msgstr "Κλείσιμο συστήματος επιτρέπεται:"
+
+#: kdm-sess.cpp:56
+msgid "None"
+msgstr "σε κανέναν"
+
+#: kdm-sess.cpp:57
+msgid "All"
+msgstr "σε όλους"
+
+#: kdm-sess.cpp:58
+msgid "Root Only"
+msgstr "μόνο στον root"
+
+#: kdm-sess.cpp:59
+msgid "Console Only"
+msgstr "μόνο από κονσόλα"
+
+#: kdm-sess.cpp:63
+msgid "Commands"
+msgstr "Εντολές"
+
+#: kdm-sess.cpp:65
+msgid "Shutdown"
+msgstr "Κλείσιμο"
+
+#: kdm-sess.cpp:73
+msgid "Restart"
+msgstr "Επανεκκίνηση"
+
+#: kdm-sess.cpp:85
+msgid "Session types"
+msgstr "Τύποι σύνδεσης"
+
+#: kdm-sess.cpp:88
+msgid "New type"
+msgstr "Νέος τύπος"
+
+#: kdm-sess.cpp:98
+msgid "Available types"
+msgstr "Διαθέσιμοι τύποι"

@@ -1,0 +1,606 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Πανώ"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "Ρύθμιση πανώ"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Χρώμα:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Ταχύτητα:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Μήνυμα:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "Για το πανώ"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Πανώ Έκδοση 0.1\n"
+"\n"
+"προγραμματισμός από τον Martin R. Jones 1996\n"
+"mjones@kde.org"
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "Το KDE είναι καταπληκτικό"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Νυχτερίδα"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Ρυθμίσεις Νυχτερίδας"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Αριθμός νυχτερίδων"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "Για την Νυχτερίδα"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Νυχτερίδα\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1986 Sun Microsystems\n"
+"\n"
+"Προσαρμογή στο KDE από τον Emanuel Pirker."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Κενή οθόνη"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Ρυθμίσεις κενής οθόνης"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Τυχαίο γραμμικό"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Οριζόντιο Ημίτονο"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Κυκλικό Κουτούλημα"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Πολικές Συντεταγμένες"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Τυχαίο"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Συγγνώμη. Αυτή η επιλογή χρειάζεται έγχρωμη οθόνη"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Ρυθμίσεις Μάζας"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "Εμφάνιση καρέ δευτ."
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Αλγόριθμος"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Για την Μάζα"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Μάζα Έκδοση 0.1\n"
+"\n"
+"Προγραμματισμός από τον Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Μάζα"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Φλόγα"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Ρυθμίσεις Φλόγας"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Μέγιστος αριθμός επιπέδων:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Αριθμός σημείων:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Για την Φλόγα"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Φλόγα Έκδοση 3.3\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Προσαρμογή για το KDE από τον Martin Jones."
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Δάσος"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Ρυθμίσεις Δάσους"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Αριθμός δέντρων:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Για το δάσος"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Δάσος\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1995 Pascal Pensa\n"
+"\n"
+"Προσαρμογή για το KDE από τον Emanuel Pirker."
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:306
+msgid "Ρυθμίσεις KHop"
+msgstr ""
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Εικονοστοιχεία του ίδιου χρώματος:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Επαναλήψεις:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Για το Hop"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop Έκδοση 3.3\n"
+"\n"
+"Πνευματικά Δικαιώματα (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Προσαρμογή στο KDE από τον Emanuel Pirker."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Λέιζερ"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Ρυθμίσεις Λέιζερ"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Για το Λέιζερ"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Λέιζερ Έκδοση 3.3\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1995 Pascal Pensa\n"
+"\n"
+"Προσαρμογή στο KDE από τον Martin Jones."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Γραμμές"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Ρυθμίσεις Γραμμών"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Μήκος:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Αρχή:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Μέσο:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Τέλος:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Για τις Γραμμές"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Γραμμές Έκδοση 0.1.1\n"
+"\n"
+"Προγραμματισμός από τον Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Ρυθμίσεις Lissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Αριθμός Lissies"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Για το Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1996 Alexander Jolk\n"
+"\n"
+"Προσαρμογή στο KDE από τον Emanuel Pirker."
+
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Η επιλογή %s δεν υποστηρίζεται σε αυτό το σύστημα!" 
+
+#: main.cpp:306
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Το σύστημά σας χρησιμοποιεί σκιώδεις κωδικούς πρόσβασης (shadow passwords)!\n"
+"Παρακαλώ επικοινωνήστε με τον υπεύθυνο συστήματος.\n"
+"\n"
+"Πείτε του ότι χρειάζεστε suid για τους screensavers!"
+
+#: main.cpp:311
+msgid "Shadow Passwords"
+msgstr "Σκιώδεις κωδικοί πρόσβασης"
+
+#: main.cpp:469
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Σύνταξη: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:472
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Η τοποθέτηση του δείκτη στις γωνίες προκαλεί:\n"
+"                     x = i  Τίποτα (το αγνοεί)\n"
+"                     x = s  Ενεργοποίηση προφύλαξης οθόνης\n"
+"                     x = l  Κλείδωμα οθόνης\n"
+"                    Σειρά: πάνω-αριστερά, πάνω-δεξιά, κάτω-αριστερά, κάτω-δεξιά\n"
+"  -delay num        Χρόνος αναμονής για ενεργοποίηση προφύλαξης \n"
+"                     οθόνης  (αρχική τιμή 10 λεπτά)\n"
+"  -desc             Εκτύπωση περιγραφής προφύλαξης οθόνης\n"
+"  -install          Εγκατάσταση προφύλαξης οθόνης\n"
+"  -lock             Προφύλαξη οθόνης με κλείδωμα\n"
+"  -nice num         Εκτέλεση με συγκεκριμένη τιμή προτεραιότητας\n"
+"\n"
+"  -preview wid      Εκτέλεση στο συγκεκριμένο παράθυρο\n"
+"  -inroot           Εκτέλεση στο φόντο\n"
+"  -setup            Ρύθμιση προφύλαξης οθόνης\n"
+"  -test             ’μεση ενεργοποίηση προφύλαξης οθόνης\n"
+
+#: morph3d.cpp:839
+msgid "GL can not render with root visual\n"
+msgstr ""
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morph3D"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "Ρυθμίσεις Morph3D"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Τύπος Αντικειμένου"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Για το Morph3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Πνευματικά Δικαιώματα (c) 1997 Marcelo F. Vianna\n"
+"\n"
+"Προσαρμογή στο KDE από τον Emanuel Pirker."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Πολύγωνα"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Ρυθμίσεις Πολυγώνων"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr ""
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Για τα πολύγωνα"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Πολύγωνα Έκδοση 0.1\n"
+"\n"
+"Προγραμματισμός από τον Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Πυροτεχνήματα"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Ρυθμίσεις Πυροτεχνημάτων"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "Αριθμός:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Σύννεφο"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Για τα πυροτεχνήματα"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Πυροτεχνήματα Έκδοση 3.4\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Προσαρμογή στο KDE από τον Martin Jones."
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "Βράχια"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "Ρυθμίσεις για τα Βράχια"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Κίνηση"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Περιστροφή"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "Για τα Βράχια"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Βράχια Έκδοση 3.3\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1992 Jamie Zawinski\n"
+"\n"
+"Προσαρμογή στο KDE από τον Martin Jones."
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Εισάγετε κωδικό"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Αποτυχία"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Γλύστρημα"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Ρυθμίσεις Γλυστρήματος"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Αριθμός δεσμών:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Για το Γλύστρημα"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Γλύστρημα\n"
+"\n"
+"Πνευματικά δικαιώματα (c) 1991 Scott Draves\n"
+"\n"
+"Μεταφορά στο KDE από τον Emanuel Pirker."
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Σμάρι"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Ρυθμίσεις για το Σμάρι"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Αριθμός Μελισσών:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Για το Σμάρι"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Σμάρι\n"
+"\n"
+"Πνευματικά Δικαιώματα (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Προσαρμογή στο KDE από τον Emanuel Pirker."

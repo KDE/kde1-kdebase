@@ -1,0 +1,237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-03-05 15:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:237
+msgid "choose type of color-mode"
+msgstr "Τρόπος λειτουργίας χρωμάτων"
+
+#: main.C:240
+msgid "Add characters to word class"
+msgstr ""
+
+#: main.C:243
+msgid "The backspace key will send a"
+msgstr "Το backspace στέλνει "
+
+#: main.C:384
+msgid "&New Terminal"
+msgstr "Νέο τερματικό"
+
+#: main.C:391 main.C:791
+msgid "&Hide"
+msgstr "Απόκρυψη"
+
+#: main.C:392
+msgid "&Left"
+msgstr "Αριστερά"
+
+#: main.C:393
+msgid "&Right"
+msgstr "Δεξιά"
+
+#: main.C:398
+msgid "&Normal"
+msgstr "Κανονικό"
+
+#: main.C:399
+msgid "&Tiny"
+msgstr "Πολύ μικρό"
+
+#: main.C:400
+msgid "&Small"
+msgstr "Μικρό"
+
+#: main.C:401
+msgid "&Medium"
+msgstr "Μεσαίο"
+
+#: main.C:402
+msgid "&Large"
+msgstr "Μεγάλο"
+
+#: main.C:403
+msgid "&Huge"
+msgstr "Τεράστιο"
+
+#: main.C:415
+msgid "&black/white"
+msgstr "Μαύρο/’σπρο"
+
+#: main.C:416
+msgid "&white/black"
+msgstr "’σπρο/Μαύρο"
+
+#: main.C:417
+msgid "&green/black"
+msgstr "Πράσινο/Μαύρο"
+
+#: main.C:418
+msgid "black/light&yellow"
+msgstr "Μαύρο/Ανοιχτό Κίτρινο"
+
+#: main.C:419
+msgid "Linu&x Console"
+msgstr "Χρώματα κονσόλας"
+
+#: main.C:428
+msgid "&Custom Colors"
+msgstr "Προσαρμοσμένα χρώματα"
+
+#: main.C:435 main.C:737
+msgid "Hide &Menubar"
+msgstr "Απόκρυψη Γραμμής Επιλογών"
+
+#: main.C:437 main.C:601 main.C:729
+msgid "Show &Menubar"
+msgstr "Επανεμφάνιση Γραμμής Επιλογών"
+
+#: main.C:438 main.C:747
+msgid "Secure &keyboard"
+msgstr "Ασφάλιση Πληκτρολογίου"
+
+#: main.C:440
+msgid "Scroll&bar"
+msgstr "Γραμμή Κύλισης"
+
+#: main.C:441
+msgid "&Font size"
+msgstr "Μέγεθος χαρακτήρων"
+
+#: main.C:442
+msgid "&Color"
+msgstr "Χρώμα"
+
+#: main.C:443
+msgid "&Size"
+msgstr "Μέγεθος"
+
+#: main.C:444
+msgid "Terminal..."
+msgstr "Τερματικό..."
+
+#: main.C:446
+msgid "Save &Options"
+msgstr "Αποθήκευση Επιλογών"
+
+#: main.C:455
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Εξομοίωση τερματικού για το Περιβάλλον Γραφείου KDE\n"
+"βασισμένο στο rxvt-2.08 του Robert Nation"
+
+#: main.C:610 main.C:784
+msgid "&Show"
+msgstr "Εμφάνιση"
+
+#: main.C:743
+msgid "Unsecure &keyboard"
+msgstr "Απασφάλιση πληκτρολογίου"
+
+#: main.C:754
+msgid "Terminal Options"
+msgstr "Επιλογές τερματικού"
+
+#: main.C:896
+msgid "Hint"
+msgstr "Συμβουλή"
+
+#: main.C:897
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr "Οι νέες χρωματικές επιλογές θα εμφανιστούν\n"
+"μόλις απασφαλιστεί το πληκτρολόγιο."
+
+#: main.C:1213
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar \n"
+"                   (Obsolete. Use -caption instead)\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Εξομοίωση τερματικού για το Περιβάλλον Γραφείου KDE\n"
+"βασισμένο στο rxvt-2.08 του Robert Nation"
+"\n"
+"Επιτρεπόμενα ορίσματα:\n"
+"-e <command> <arg> ...\tΕκτέλεση εντολής με ορίσματα - πρέπει να είναι τελευταίο όρισμα\n"
+"-display <name>\tΟρισμός οθόνης (X server)\n"
+"-vt_geometry <spec>\tΑρχική γεωμετρία παραθύρου\n"
+"-print-pipe <name>\tΟρισμός εκτυπωτή του vt100\n"
+"-vt_bg <colour>\t\tΧρώμα φόντου\n"
+"-vt_fg <colour>\t\tΧρώμα χαρακτήρων\n"
+"-vt_font <fontname>\tΧαρακτήρες κανονικού μεγέθους\n"
+"-vt_size <size>     \tΜεγέθη χαρακτήρων (tiny, small, normal, large, huge)\n"
+"-linux\t\t\tΚάνει το kvt να μιμείται την κονσόλα του Linux\n"
+"-no_menubar\t\tΑπόκρυψη γραμμής εντολών\n"
+"-no_scrollbar\t\tΑπόκρυψη γραμμής κύλισης\n"
+"-T <text>\t\tΤίτλος παραθύρου \n"
+"                   (Σε αχρηστία. Χρησιμοποιήστε -caption στη θέση του)\n"
+"-tn <TERM>\t\tΤύπος τερματικού. Εξ ορισμού xterm.\n"
+"-C\t\t\tΠαγίδευση μηνυμάτων κονσόλας συστήματος\n"
+"-n <text>\t\tΌνομα εικονιδίου\n"
+"-7\t\t        Τρόπος λειτουργίας 7 bit\n"
+"-8\t\t\tΤρόπος λειτουργίας 8 bit\n"
+"-ls\t\t\tΑρχικοποίηση κελύφους kvt ως κέλυφος σύνδεσης (login shell)\n"
+"-ls-\t\t\tΑρχικοποίηση κελύφους kvt ως απλό κέλυφος (non-login shell) (Εξ ορισμού)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tΑριθμός γραμμών προς αποθήκευση\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+
+#: main.C:1244
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
