@@ -1,3 +1,8 @@
+1998-12-22  Alex Zepeda  <garbanzo@hooked.net>
+
+	* ftp_proxy.cpp: Add proper line termination to user agent string,
+	so reloading should work?
+
 1998-12-21  David Faure  <faure@kde.org>
 
 	* passworddialog.cpp : Added layout management
