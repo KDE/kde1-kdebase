@@ -1,6 +1,12 @@
 KDE Help System CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Version 0.5.3
+-------------
+
+Apply patch from Marco Zuehlke to put kdehelp's files in ~/.kde/kdehelp
+instead of ~/.kdehelp
+
 Version 0.5.2
 -------------
 

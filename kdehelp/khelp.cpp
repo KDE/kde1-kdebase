@@ -15,9 +15,8 @@ static int msgqid = -1;
 
 void kHelp::openWindow( const char *url )
 {
-	QString p = getenv( "HOME" );
-	QString rcDir = p + "/.kdehelp";
-	Qstring pidFile = rcDir + "/kdehelp.pid";
+	QString pidFile = getenv( "HOME" );
+	pidFile += "/.kde/kdehelp/kdehelp.pid";
 
 	// if there is a pidFile then there is an instance of kdehelp running
 	if ( ( fp = fopen( pidFile, "r" ) ) != NULL )

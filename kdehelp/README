@@ -43,7 +43,7 @@ Torben's kfm file manager.
 
 Bookmarks support folders, but there is no graphical way to create them at
 the moment.  Folders may be created manually - use netscape's bookmarks file
-as a guide.  Bookmarks file: $HOME/.kdehelp/bookmarks.html
+as a guide.  Bookmarks file: $HOME/.kde/kdehelp/bookmarks.html
 
 
 LAUNCHING FROM YOUR PROGRAM:

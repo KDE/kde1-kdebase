@@ -142,7 +142,11 @@ int main(int argc, char *argv[])
 
 	// create data directory if necessary
 	QString p = getenv( "HOME" );
-	QString rcDir = p + "/.kdehelp";
+	QString rcDir = p + "/.kde";
+	if ( access( rcDir, F_OK ) )
+		mkdir( rcDir, 0740 );
+
+	rcDir += "/kdehelp";
 	if ( access( rcDir, F_OK ) )
 		mkdir( rcDir, 0740 );
 

@@ -200,8 +200,11 @@ void cTagTable::Reset()
 void cTagTable::Read(const char *filename)
 {
 	char buffer[256];
-	char *token, haveTable = 0;
-	char *file, *node, *offsetPtr;
+	char *token;
+        char haveTable = 0;
+	char *file;
+        char *node = NULL;
+        char *offsetPtr = NULL;
 	ifstream stream(filename);
 
 	while (FindMarker(stream))
@@ -262,7 +265,8 @@ void cTagTable::CreateTable(const char *filename)
 	int offset;
 	char *buffer = new char [256];
 	char *token;
-	char *file, *node;
+	char *file;
+        char *node = NULL;
 	ifstream stream(filename);
 
 	if (stream.fail())
