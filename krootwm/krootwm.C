@@ -456,22 +456,18 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  x = e->pos().x();
 	  y = e->pos().y();
 	  dx = dy = 0;
-	  if (select_rectangle(x,y,dx,dy)){
-	    KFM* kfm = new KFM;
-	    kfm->selectRootIcons(x, y, dx, dy,
-				 (e->state() & ControlButton) == ControlButton);
-	    delete kfm;
-          }
+	  bool selected = select_rectangle(x,y,dx,dy);
+	  KFM* kfm = new KFM;
+	  kfm->selectRootIcons(x, y, dx, dy,
+			       (e->state() & ControlButton) == ControlButton);
+	  delete kfm;
           // --------- Sven's changes for macmode begin
-          else
-          {
             // Can I take focus from everybody here?
-            if (macMode && myMenuBar)
+            if (!selected && macMode && myMenuBar)
             {
 	KWM::activateInternal(None);
               myMenuBar->raise();
             }
-          }
           // --------- Sven's changes for macmode else
 	}
 	return TRUE;
