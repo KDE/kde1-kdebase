@@ -26,7 +26,7 @@ msgstr "&Promijeni ime ..."
 
 #: backgnd.cpp:197
 msgid "&Common Background"
-msgstr ""
+msgstr "&Ista pozadina svugdje"
 
 #: backgnd.cpp:225 colorscm.cpp:82
 msgid "Colors"
@@ -62,7 +62,7 @@ msgstr "Raspored:"
 
 #: backgnd.cpp:376
 msgid "Tiled"
-msgstr "Pop&loèano"
+msgstr "Poploèano"
 
 #: backgnd.cpp:377
 msgid "Mirrored"
@@ -70,31 +70,31 @@ msgstr "Zrcaljeno"
 
 #: backgnd.cpp:378
 msgid "Center Tiled"
-msgstr ""
+msgstr "Poploèano od centra"
 
 #: backgnd.cpp:379
 msgid "Centred"
-msgstr "Centrirano"
+msgstr "Slika se nalazi u centru"
 
 #: backgnd.cpp:380
 msgid "Centred Brick"
-msgstr ""
+msgstr "Slika u centru sa ciglama uokolo"
 
 #: backgnd.cpp:381
 msgid "Centred Warp"
-msgstr ""
+msgstr "Centrirano / Warp"
 
 #: backgnd.cpp:382
 msgid "Centred Maxpect"
-msgstr ""
+msgstr "Centrirano uveæano"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Simetrièki poploèano"
 
 #: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Simetrièki zrcaljeno"
 
 #: backgnd.cpp:385
 msgid "Scaled"
@@ -390,7 +390,7 @@ msgstr "Postavke"
 
 #: scrnsave.cpp:250
 msgid "&Wait for"
-msgstr "Èe&kaj na"
+msgstr "Èe&kaj "
 
 #: scrnsave.cpp:260
 msgid "min."
@@ -422,20 +422,19 @@ msgstr "Nizak"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Crtaj widgete u stilu Windows 95"
+msgstr "&Crtaj widgete u stilu Windowsa 95"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr ""
+msgstr "&Traka izbornika nalazi se na vrhu u stilu MacOSa"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Primjeni stil na sve aplikacije"
+msgstr "&Primjeni pisma i boje i na ne-KDE programe"
 
 #: general.cpp:529
 msgid "General font"
@@ -485,13 +484,13 @@ msgstr "&Boje"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stil"
 
 #: main.cpp:83
-#, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,stil}]\n"
+msgstr ""
+"uporaba: kcmdisplay [-init | {pozadina,za¹tita zaslona,boje,pisma,stil}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
@@ -540,12 +539,3 @@ msgstr "uobièajeno"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "bilo koji"
-
-#~ msgid "Fonts etc."
-#~ msgstr "Pisma itd."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Pisma radne povr¹ine"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "P&isma itd."

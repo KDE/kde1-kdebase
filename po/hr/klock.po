@@ -1,58 +1,59 @@
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Stjepan Zlodi <szlodi@public.srce.hr>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-04-18 01:18+0200\n"
-"PO-Revision-Date: 1998-03-15 20:00-0500\n"
-"Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
-"Language-Team: Croatian\n"
+"Project-Id-Version: klock\n"
+"POT-Creation-Date: 1999-05-28 01:19+0200\n"
+"PO-Revision-Date: 1999-03-27 10:18+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: attraction.cpp:718
+#: attraction.cpp:720
 msgid "Attraction"
-msgstr ""
+msgstr "Attraction"
 
-#: attraction.cpp:813
+#: attraction.cpp:807
 msgid "Setup KAttraction"
-msgstr ""
+msgstr "Nastavitve KAttraction"
 
-#: attraction.cpp:825 pyro.cpp:537 rock.cpp:583 slidescreen.cpp:510
+#: attraction.cpp:819 pyro.cpp:531 rock.cpp:577 slidescreen.cpp:481
 msgid "Number:"
-msgstr "Broj:"
+msgstr "©tevilo:"
 
-#: attraction.cpp:839 science.cpp:1006 slidescreen.cpp:524
+#: attraction.cpp:833 science.cpp:996 slidescreen.cpp:495
 msgid "Mode:"
 msgstr "Naèin:"
 
-#: attraction.cpp:844 slidescreen.cpp:529
+#: attraction.cpp:838 slidescreen.cpp:500
 msgid "Balls"
-msgstr "Lopte"
+msgstr "Krogle"
 
-#: attraction.cpp:845 lines.cpp:116 slidescreen.cpp:530
+#: attraction.cpp:839 lines.cpp:118 slidescreen.cpp:501
 msgid "Lines"
 msgstr "Linije"
 
-#: attraction.cpp:846 polygon.cpp:64 slidescreen.cpp:531
+#: attraction.cpp:840 polygon.cpp:66 slidescreen.cpp:502
 msgid "Polygons"
 msgstr "Poligoni"
 
-#: attraction.cpp:847 slidescreen.cpp:532
+#: attraction.cpp:841 slidescreen.cpp:503
 msgid "Tails"
-msgstr ""
+msgstr "Repi"
 
-#: attraction.cpp:860 slidescreen.cpp:545
+#: attraction.cpp:854 slidescreen.cpp:516
 msgid "Glow"
-msgstr ""
+msgstr "Sijaj"
 
-#: attraction.cpp:961
+#: attraction.cpp:955
 msgid "About Attraction"
-msgstr ""
+msgstr "O Attraction"
 
-#: attraction.cpp:962
+#: attraction.cpp:956
 msgid ""
 "Attraction Version 1.0\n"
 "\n"
@@ -62,85 +63,86 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"Attraction inaèica 1.0\n"
+"Attraction verzija 1.0\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Avtorske pravice (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Prilagodio za kscreensave:\n"
+"Prene¹en na kscreensave:\n"
+"\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
-#: banner.cpp:62
+#: banner.cpp:64
 msgid "Banner"
-msgstr "Barjak"
+msgstr "Banner"
 
-#: banner.cpp:92
+#: banner.cpp:86
 msgid "Setup kbanner"
-msgstr "Namjesti kbanner"
+msgstr "Nastavitve knaslova"
 
-#: banner.cpp:103
+#: banner.cpp:97
 msgid "Family:"
-msgstr "Obitelj:"
+msgstr "Dru¾ina:"
 
-#: banner.cpp:122 science.cpp:1049
+#: banner.cpp:116 science.cpp:1039
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
-#: banner.cpp:142 blankscrn.cpp:84
+#: banner.cpp:136 blankscrn.cpp:78
 msgid "Color:"
-msgstr "Boja:"
+msgstr "Barva:"
 
-#: banner.cpp:155
+#: banner.cpp:149
 msgid "Bold"
-msgstr "Masno"
+msgstr "Krepko"
 
-#: banner.cpp:179 bat.cpp:557 bouboule.cpp:1026 flame.cpp:417 forest.cpp:298
-#: hop.cpp:331 laser.cpp:413 lines.cpp:163 lissie.cpp:347 morph3d.cpp:1029
-#: polygon.cpp:130 rock.cpp:569 science.cpp:1082 slip.cpp:386 space.cpp:595
-#: swarm.cpp:349
+#: banner.cpp:173 bat.cpp:551 bouboule.cpp:1020 flame.cpp:411 forest.cpp:292
+#: hop.cpp:325 laser.cpp:407 lines.cpp:157 lissie.cpp:341 morph3d.cpp:1022
+#: polygon.cpp:124 rock.cpp:563 science.cpp:1072 slip.cpp:380 space.cpp:587
+#: swarm.cpp:343
 msgid "Speed:"
-msgstr "Brzina:"
+msgstr "Hitrost:"
 
-#: banner.cpp:196
+#: banner.cpp:190
 msgid "Message:"
-msgstr "Poruka:"
+msgstr "Sporoèilo:"
 
-#: banner.cpp:365
+#: banner.cpp:359
 msgid "About Banner"
-msgstr "O Barjaku"
+msgstr "O Banner-ju"
 
-#: banner.cpp:366
+#: banner.cpp:360
 msgid ""
 "Banner Version 0.1\n"
 "\n"
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Barjak inaèica 0.1\n"
+"Banner verzija 0.1\n"
 "\n"
-"napisao Martin R. Jones 1996\n"
+"napisal Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: banner.cpp:469
+#: banner.cpp:463
 msgid "KDE is great"
-msgstr "KDE je super"
+msgstr "KDE je odlièen"
 
-#: bat.cpp:462
+#: bat.cpp:464
 msgid "Bat"
-msgstr "©i¹mi¹"
+msgstr "Netopir"
 
-#: bat.cpp:545
+#: bat.cpp:539
 msgid "Setup KBat"
-msgstr "Postava za KBat"
+msgstr "Nastavi KNetopir"
 
-#: bat.cpp:572
+#: bat.cpp:566
 msgid "Number of bats:"
-msgstr "Broj ¹i¹mi¹a:"
+msgstr "©tevilo netopirjev:"
 
-#: bat.cpp:669
+#: bat.cpp:663
 msgid "About Bat"
-msgstr "O ©i¹mi¹u"
+msgstr "O Netopirju"
 
-#: bat.cpp:670
+#: bat.cpp:664
 msgid ""
 "Bat\n"
 "\n"
@@ -148,105 +150,105 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"©i¹mi¹\n"
+"Netopir\n"
 "\n"
-"Copyright (c) 1986 by Sun Microsystems\n"
+"Avtorske pravice (c) 1986 Sun Microsystems\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
-#: blankscrn.cpp:53
+#: blankscrn.cpp:55
 msgid "Blank Screen"
-msgstr "Prazan zaslon"
+msgstr "Prazen zaslon"
 
-#: blankscrn.cpp:75
+#: blankscrn.cpp:69
 msgid "Setup kblankscrn"
-msgstr "Postavi kblankscrn"
+msgstr "Nastavi kprazenzaslon"
+
+#: blob.cpp:55
+msgid "Random Linear"
+msgstr "Nakljuèno linearen"
+
+#: blob.cpp:56
+msgid "Horizonal Sine"
+msgstr "Horizontalni sinus"
 
 #: blob.cpp:57
-msgid "Random Linear"
-msgstr "Sluèajne Linije"
+msgid "Circular Bounce"
+msgstr "Kro¾no poskakovanje"
 
 #: blob.cpp:58
-msgid "Horizonal Sine"
-msgstr "Vodoravne sinusoide"
+msgid "Polar Coordinates"
+msgstr "Polarne koordinate"
 
 #: blob.cpp:59
-msgid "Circular Bounce"
-msgstr "Kru¾no odbijanje"
-
-#: blob.cpp:60
-msgid "Polar Coordinates"
-msgstr "Polarne Koordinate"
-
-#: blob.cpp:61
 msgid "Random"
-msgstr "Sluèajno"
+msgstr "Nakljuèno"
 
-#: blob.cpp:77
+#: blob.cpp:75
 msgid "Sorry. This screensaver needs a color display"
-msgstr "®alim. Potreban vam je zaslon u boji"
+msgstr "Oprostite. Ta osve¾evalec zaslona potrebuje barvni zaslon"
 
-#: blob.cpp:461
+#: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "Podesi Blob Saver"
+msgstr "Nastavitve Blob Saverja"
 
-#: blob.cpp:471
+#: blob.cpp:468
 msgid "Frame Show sec."
-msgstr "Broj slièica u sek."
+msgstr "Slik prikazanih na sek."
 
-#: blob.cpp:483
+#: blob.cpp:480
 msgid "Algorithm"
-msgstr "Algoritam"
+msgstr "Algoritem"
 
-#: blob.cpp:573
+#: blob.cpp:570
 msgid "About Blob"
 msgstr "O Blobu"
 
-#: blob.cpp:574
+#: blob.cpp:571
 msgid ""
 "Blobsaver Version 0.1\n"
 "\n"
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
-"Blobsaver Inaèica 0.1\n"
+"Blobsaver verzija 0.1\n"
 "\n"
-"Napisao Tiaan Wessels 1997\n"
+"napisal Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 
-#: blob.cpp:609
+#: blob.cpp:606
 msgid "Blobs"
-msgstr "Blobs"
+msgstr "Mehurèki"
 
-#: bouboule.cpp:863
+#: bouboule.cpp:865
 msgid "Bouboule"
 msgstr "Bouboule"
 
-#: bouboule.cpp:1013
+#: bouboule.cpp:1007
 msgid "Setup KBouboule"
-msgstr "Postavi KBouboule"
+msgstr "Nastavi KBouboule"
 
-#: bouboule.cpp:1040
+#: bouboule.cpp:1034
 msgid "Number of points:"
-msgstr "Broj toèaka:"
+msgstr "©tevilo toèk:"
 
-#: bouboule.cpp:1054
+#: bouboule.cpp:1048
 msgid "Point size:"
-msgstr "Velièina toèke:"
+msgstr "Velikost toèke:"
 
-#: bouboule.cpp:1068
+#: bouboule.cpp:1062
 msgid "Color-change frequency:"
-msgstr "Frekvencija promjena boja:"
+msgstr "Frekvenca spreminjanja barv:"
 
-#: bouboule.cpp:1085
+#: bouboule.cpp:1079
 msgid "3D mode"
 msgstr "3D naèin"
 
-#: bouboule.cpp:1231
+#: bouboule.cpp:1225
 msgid "About Bouboule"
 msgstr "O Bouboule"
 
-#: bouboule.cpp:1232
+#: bouboule.cpp:1226
 msgid ""
 "Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
 "\n"
@@ -254,67 +256,67 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Bouboule v0.1 -- rotirajuæe kugle koje mijenjaju velièinu\n"
+"Bouboule v0.1 -- krogla sfer, ki se paèijo in spreminjajo velikost\n"
 "\n"
-"Copyright (c) 1996 Jeremie PETIT\n"
+"Avtorske pravice (c) 1996 Jeremie PETIT\n"
 "\n"
-"Prilagodio za kscreensave Cedric Tefft"
+"Na kscreensave prenesel Cedric Tefft"
 
-#: bsod.cpp:1192
+#: bsod.cpp:1193
 msgid "Black Screen of Death"
-msgstr "Crni zaslon smrti"
+msgstr "Èrn zaslon smrti"
 
-#: flame.cpp:310
+#: flame.cpp:312
 msgid "Flame"
 msgstr "Plamen"
 
-#: flame.cpp:405
+#: flame.cpp:399
 msgid "Setup KFlame"
-msgstr "Postavi KFlame"
+msgstr "Nastavi KPlamen"
 
-#: flame.cpp:431
+#: flame.cpp:425
 msgid "Max Levels:"
-msgstr "Najvi¹e razine:"
+msgstr "Max stopenj:"
 
-#: flame.cpp:446
+#: flame.cpp:440
 msgid "Num Points:"
-msgstr "Broj toèaka:"
+msgstr "©tevilo toèk:"
 
-#: flame.cpp:559
+#: flame.cpp:553
 msgid "About Flame"
-msgstr "O Flame"
+msgstr "O Plamnu"
 
-#: flame.cpp:560
+#: flame.cpp:554
 msgid ""
 "Flame Version 3.3\n"
 "\n"
-"Copyright (c) 1991 by Patrick J. Naughton\n"
+"Copyright (c) 1991 by Scott Draves <spot@draves.org>\n"
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Plamen inaèica 3.3\n"
+"Plamen verzija 3.3\n"
 "\n"
-"Copyright (c) 1991 Patrick J. Naughton\n"
+"Avtorske pravice (c) 1991 Scott Draves <spot@draves.org>\n"
 "\n"
-"Prilagodio za kscreensave Martin Jones."
+"Na kscreensaver prenesel Martin Jones."
 
-#: forest.cpp:206
+#: forest.cpp:208
 msgid "Forest"
-msgstr "©uma"
+msgstr "Gozd"
 
-#: forest.cpp:286
+#: forest.cpp:280
 msgid "Setup KForest"
-msgstr "Podesi KForest"
+msgstr "Nastavi KGozd"
 
-#: forest.cpp:312
+#: forest.cpp:306
 msgid "Num of Trees:"
-msgstr "Broj drveæa:"
+msgstr "©tevilo dreves:"
 
-#: forest.cpp:407
+#: forest.cpp:401
 msgid "About Forest"
-msgstr "O ©umi"
+msgstr "O Gozdu"
 
-#: forest.cpp:408
+#: forest.cpp:402
 msgid ""
 "Forest\n"
 "\n"
@@ -322,33 +324,33 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"©uma\n"
+"Gozd\n"
 "\n"
-"Copyright (c) 1995 Pascal Pensa\n"
+"Avtorske pravice (c) 1995 Pascal Pensa\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
-#: hop.cpp:226
+#: hop.cpp:228
 msgid "Hop"
-msgstr "Skok"
+msgstr "Hop"
 
-#: hop.cpp:319
+#: hop.cpp:313
 msgid "Setup KHop"
-msgstr "Podesi Skoku"
+msgstr "Nastavi KHop"
 
-#: hop.cpp:345
+#: hop.cpp:339
 msgid "Samecolor Pixels:"
-msgstr "Broj istobojnih toèki:"
+msgstr "Istobarvnih toèk:"
 
-#: hop.cpp:359 lissie.cpp:375
+#: hop.cpp:353 lissie.cpp:369
 msgid "Cycles:"
-msgstr "Krugovi:"
+msgstr "Ciklov:"
 
-#: hop.cpp:472
+#: hop.cpp:466
 msgid "About Hop"
-msgstr "O Skoku"
+msgstr "O Hopu"
 
-#: hop.cpp:473
+#: hop.cpp:467
 msgid ""
 "Hop Version 3.3\n"
 "\n"
@@ -356,25 +358,25 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Hop Inaèica 3.3\n"
+"Hop verzija 3.3\n"
 "\n"
-"Copyright (c) 1991 by Patrick J. Naughton\n"
+"Avtorske pravice (c) 1991 Patrick J. Naughton\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
-#: laser.cpp:333
+#: laser.cpp:335
 msgid "Laser"
 msgstr "Laser"
 
-#: laser.cpp:401
+#: laser.cpp:395
 msgid "Setup KLaser"
-msgstr "Podesi KLaser"
+msgstr "Nastavi KLaser"
 
-#: laser.cpp:490
+#: laser.cpp:484
 msgid "About Laser"
-msgstr "O Laseru"
+msgstr "O Laserju"
 
-#: laser.cpp:491
+#: laser.cpp:485
 msgid ""
 "Laser Version 3.3\n"
 "\n"
@@ -382,65 +384,65 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Laser Inaèica 3.3\n"
+"Laser verzija 3.3\n"
 "\n"
-"Copyright (c) 1995 by Pascal Pensa\n"
+"Avtorske pravice (c) 1995 Pascal Pensa\n"
 "\n"
-"Prilagodio za kscreensave - Martin Jones."
+"Na kscreensave prenesel Martin Jones."
 
-#: lines.cpp:142
+#: lines.cpp:136
 msgid "Setup klines"
-msgstr "Podesi klines"
+msgstr "Nastavi klinije"
 
-#: lines.cpp:150 polygon.cpp:101
+#: lines.cpp:144 polygon.cpp:95
 msgid "Length:"
-msgstr "Duljina:"
+msgstr "Dol¾ina:"
 
-#: lines.cpp:176
+#: lines.cpp:170
 msgid "Beginning:"
-msgstr "Poèetak:"
+msgstr "Zaèetek:"
 
-#: lines.cpp:190
+#: lines.cpp:184
 msgid "Middle:"
 msgstr "Sredina:"
 
-#: lines.cpp:203
+#: lines.cpp:197
 msgid "End:"
-msgstr "Kraj:"
+msgstr "Konec:"
 
-#: lines.cpp:302
+#: lines.cpp:296
 msgid "About Lines"
-msgstr "O Linijama"
+msgstr "O Linijah"
 
-#: lines.cpp:303
+#: lines.cpp:297
 msgid ""
 "Lines Version 0.1.1\n"
 "\n"
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
-"Linije inaèica 0.1.1\n"
+"Linije verzija 0.1.1\n"
 "\n"
-"Napisao Dirk Staneker 1997\n"
+"napisal Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 
-#: lissie.cpp:241
+#: lissie.cpp:243
 msgid "Lissie"
 msgstr "Lissie"
 
-#: lissie.cpp:335
+#: lissie.cpp:329
 msgid "Setup KLissie"
-msgstr "Podesi Lissie"
+msgstr "Nastavi KLissie"
 
-#: lissie.cpp:361
+#: lissie.cpp:355
 msgid "Num of Lissies:"
-msgstr "Broj Lissiea:"
+msgstr "©tevilo Lissie:"
 
-#: lissie.cpp:488
+#: lissie.cpp:482
 msgid "About Lissie"
 msgstr "O Lissie"
 
-#: lissie.cpp:489
+#: lissie.cpp:483
 msgid ""
 "Lissie\n"
 "\n"
@@ -450,16 +452,15 @@ msgid ""
 msgstr ""
 "Lissie\n"
 "\n"
-"Copyright (c) 1996 Alexander Jolk\n"
+"Avtorske pravice (c) 1996 Alexander Jolk\n"
 "\n"
-"Prilagodio za kscreensaver Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
-#: main.cpp:436
-#, c-format
-msgid "Option %s is not support on this plattform!"
-msgstr "Opcija %s nije podr¾ana na ovoj platformi!"
+#: main.cpp:384
+msgid "Option %1 is not support on this plattform!"
+msgstr "Izbira %1 ni podprta v tem strojnem okolju!"
 
-#: main.cpp:491
+#: main.cpp:414
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -467,17 +468,17 @@ msgid ""
 "Please contact your system administrator.\n"
 "Tell him that you need suid for the kcheckpass program!"
 msgstr ""
-"Upozorenje: Ne mo¾ete zakljuèati zaslon!\n"
+"Opozorilo: Ne boste mogli zakleniti zaslona!\n"
 "\n"
-"Va¹ sistem koristi skrivene (shadow) lozinke!\n"
-"Molim kontaktirajte svojeg administratora,\n"
-"i recite mu/joj da trebate suid za screensavers!"
+"Va¹ sistem uporablja zasenèena gesla.\n"
+"Prosim kontaktirajte va¹ega sistemskega administratorja.\n"
+"Povejte ji, da potrebujete suid za program kcheckpass!"
 
-#: main.cpp:496
+#: main.cpp:419
 msgid "Shadow Passwords"
-msgstr "Skrivene (Shadow) Lozinke"
+msgstr "Zasenèena gesla"
 
-#: main.cpp:546
+#: main.cpp:464
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -485,19 +486,19 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"nmolim nemojte koristiti -test zajedno s -lock.\n"
-"umjesto toga koristite klock.\n"
+"prosim ne uporabljajte -test skupaj z -lock.\n"
+"raje uporabite klock.\n"
+"\n"
 
-#: main.cpp:664
-#, c-format
+#: main.cpp:572
 msgid ""
-"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"Usage: %1 -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
-"Uporaba: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
-"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+"Uporaba: %1 -install|-setup|-test|-desc|-preview okno|-inroot\n"
+"         [-corners xxxx] [-delay ¹tev] [-lock] [-allow-root] [-nice ¹tev]\n"
 
-#: main.cpp:667
+#: main.cpp:575
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -517,45 +518,46 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Placing cursor in corner performs action:\n"
-"                     x = i  no action (ignore)\n"
-"                     x = s  save screen\n"
-"                     x = l  lock screen\n"
-"                    order: top-left, top-right, bottom-left, bottom-right\n"
-"  -delay num        Amount of idle time before screen saver\n"
-"                     starts  (default 10min)\n"
-"  -desc             Print the screen saver's description to stdout\n"
-"  -install          Install screen saver\n"
-"  -lock             Require password to stop screen saver\n"
-"  -allow-root       Accept root password to unlock\n"
-"  -nice num         Run with specified nice value\n"
+"  -corners xxxx     Postavitev kazalca v kot izvede dejanje:\n"
+"                     x = i  ni dejanja (ignoriraj)\n"
+"                     x = s  shrani zaslon\n"
+"                     x = l  zakleni zaslon\n"
+"                    vrstni red: zgoraj-levo, zgoraj-desno, spodaj-levo,\n"
+"                                 spodaj-desno\n"
+"  -delay ¹tev       Èas mirovanja preden se vklopi osve¾evalec zaslona\n"
+"                     (privzeeto 10min)\n"
+"  -desc             Izpi¹i opis osve¾evalca zaslona na standardni izhod\n"
+"  -install          Namesti osve¾evalec zaslona\n"
+"  -lock             Zahtevaj geslo za zaustavitev osve¾evalca zaslona\n"
+"  -allow-root       Sprejmi geslo uporabnika root za odklenitev\n"
+"  -nice num         Teèi z doloèeno nice vrednostjo\n"
 "\n"
-"  -preview wid      Run in the specified XWindow\n"
-"  -inroot           Run in the root window\n"
-"  -setup            Setup screen saver\n"
-"  -test             Invoke the screen saver immediately\n"
+"  -preview okno     Teèi v doloèenem XOknu\n"
+"  -inroot           Teèi v korenskem oknu\n"
+"  -setup            Nastavi osve¾evalec zaslona\n"
+"  -test             Takoj za¾eni osve¾evalec zaslona\n"
 
-#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
+#: morph3d.cpp:839 pipes.cpp:240 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL ne renderirati sa root visualom\n"
+msgstr "GL ne more upodobiti s korenskim vizualnim\n"
 
-#: morph3d.cpp:940
+#: morph3d.cpp:941
 msgid "Morph3D (GL)"
 msgstr "Morph3D (GL)"
 
-#: morph3d.cpp:1023
+#: morph3d.cpp:1016
 msgid "Setup KMorph3d"
-msgstr "Podesi KMorph3d"
+msgstr "Nastavi KMorph3d"
 
-#: morph3d.cpp:1039
+#: morph3d.cpp:1032
 msgid "Object Type:"
-msgstr "Vrsta Objekta:"
+msgstr "Tip objekta:"
 
-#: morph3d.cpp:1128
+#: morph3d.cpp:1121
 msgid "About Morph3D"
 msgstr "O Morph3D"
 
-#: morph3d.cpp:1129
+#: morph3d.cpp:1122
 msgid ""
 "Morph3D\n"
 "\n"
@@ -565,77 +567,77 @@ msgid ""
 msgstr ""
 "Morph3D\n"
 "\n"
-"Copyright (c) 1997 Marcelo F. Vianna\n"
+"Avtorske pravice (c) 1997 Marcelo F. Vianna\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
-#: pipes.cpp:299
+#: pipes.cpp:300
 msgid "Pipes (GL)"
-msgstr "Cijevi (GL)"
+msgstr "Cevi (GL)"
 
-#: pipes.cpp:680
+#: pipes.cpp:727
 msgid "Setup KPipes"
-msgstr "Podesi KCijevi"
+msgstr "Nastavi KCevi"
 
-#: pipes.cpp:686
+#: pipes.cpp:733
 msgid "Number of Pipes"
-msgstr "Broj cijevi"
+msgstr "©tevilo cevi"
 
-#: pipes.cpp:751
+#: pipes.cpp:798
 msgid "About KPipes"
-msgstr "O KCijevi"
+msgstr "O KCeveh"
 
-#: pipes.cpp:753
+#: pipes.cpp:800
 msgid ""
 "KPipes\n"
 "Copyright (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 msgstr ""
-"KCijevi\n"
-"Copyright (c) 1998\n"
+"KCevi\n"
+"Avtorske pravice (c) 1998\n"
 "Lars Doelle <lars.doelle@on-line.de>"
 
-#: polygon.cpp:93
+#: polygon.cpp:87
 msgid "Setup kpolygon"
-msgstr "Podesi Poligon"
+msgstr "Nastavi kpoligon"
 
-#: polygon.cpp:115
+#: polygon.cpp:109
 msgid "Vertices:"
-msgstr "Vrhovi"
+msgstr "Ogli¹èa:"
 
-#: polygon.cpp:246
+#: polygon.cpp:240
 msgid "About Polygon"
 msgstr "O Poligonu"
 
-#: polygon.cpp:247
+#: polygon.cpp:241
 msgid ""
 "Polygon Version 0.1\n"
 "\n"
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Poligon inaèica 0.1\n"
+"Poligon verzija 0.1\n"
 "\n"
-"written by Martin R. Jones 1996\n"
+"napisal Martin R. Jones 1996\n"
 "mjones@kde.org"
 
-#: pyro.cpp:439
+#: pyro.cpp:441
 msgid "Pyro"
-msgstr "Vatromet"
+msgstr "Piro"
 
-#: pyro.cpp:525
+#: pyro.cpp:519
 msgid "Setup KPyro"
-msgstr "Podesi KPyro"
+msgstr "Nastavi KPiro"
 
-#: pyro.cpp:551
+#: pyro.cpp:545
 msgid "Cloud"
 msgstr "Oblak"
 
-#: pyro.cpp:637
+#: pyro.cpp:631
 msgid "About Pyro"
-msgstr "O Vatrometu"
+msgstr "O Piru"
 
-#: pyro.cpp:638
+#: pyro.cpp:632
 msgid ""
 "Pyro Version 3.4\n"
 "\n"
@@ -643,33 +645,33 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Vatromet inaèica 3.4\n"
+"Piro verzija 3.4\n"
 "\n"
-"Copyright (c) 1991 Patrick J. Naughton\n"
+"Avtorske pravice (c) 1991 Patrick J. Naughton\n"
 "\n"
-"Prilagodio za kscreensave Martin Jones."
+"Na kscreensave prenesel Martin Jones."
 
-#: rock.cpp:441
+#: rock.cpp:443
 msgid "Rock"
-msgstr ""
+msgstr "Skala"
 
-#: rock.cpp:557
+#: rock.cpp:551
 msgid "Setup krock"
-msgstr ""
+msgstr "Nastavi kskalo"
+
+#: rock.cpp:591
+msgid "Move"
+msgstr "Premakni"
 
 #: rock.cpp:597
-msgid "Move"
-msgstr "Premjesti"
-
-#: rock.cpp:603
 msgid "Rotate"
 msgstr "Rotiraj"
 
-#: rock.cpp:727
+#: rock.cpp:721
 msgid "About Rock"
-msgstr "O Stijeni"
+msgstr "O Skali"
 
-#: rock.cpp:728
+#: rock.cpp:722
 msgid ""
 "Rock Version 3.3\n"
 "\n"
@@ -677,105 +679,109 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Stijena inaèica 3.3\n"
+"Skala verzija 3.3\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Avtorske pravice (c) 1992 Jamie Zawinski\n"
 "\n"
-"Prilagodio za kscreensave Martin Jones."
+"Na kscreensave prenesel Martin Jones."
 
-#: saver.cpp:66 saver.cpp:197
+#: saver.cpp:58 saver.cpp:184
 msgid "Enter Password"
-msgstr "Unesi Lozinku"
+msgstr "Vnesi geslo"
 
-#: saver.cpp:127
+#: saver.cpp:119
 msgid "Failed"
-msgstr "Gre¹ka"
-
-#: science.cpp:65
-msgid "Whirl"
-msgstr "Kovitlanje"
+msgstr "Neuspe¹no"
 
 #: science.cpp:68
-msgid "Sphere"
-msgstr "Kugla"
+msgid "Whirl"
+msgstr "Vrti"
 
 #: science.cpp:71
-msgid "Exponential"
-msgstr "Eksponencijalno"
+msgid "Sphere"
+msgstr "Sfera"
 
 #: science.cpp:74
-msgid "Contraction"
-msgstr "Skupljanje"
+msgid "Exponential"
+msgstr "Eksponentno"
 
 #: science.cpp:77
-msgid "Wave"
-msgstr "Val"
+msgid "Contraction"
+msgstr "Krèenje"
 
 #: science.cpp:80
+msgid "Wave"
+msgstr "Valovanje"
+
+#: science.cpp:83
 msgid "Curvature"
-msgstr "Zakrivljenje"
+msgstr "Krivina"
 
-#: science.cpp:112
+#: science.cpp:115
 msgid "Science"
-msgstr ""
+msgstr "Znanost"
 
-#: science.cpp:504
+#: science.cpp:494
 msgid "rendering lens..."
-msgstr "izraðujem leæu..."
+msgstr "upodobi leèe..."
 
-#: science.cpp:826
+#: science.cpp:816
 msgid "grabbing screen..."
-msgstr "grabim zaslon..."
+msgstr "zgrabi zaslon..."
 
-#: science.cpp:988
+#: science.cpp:978
 msgid "Setup Science"
-msgstr ""
+msgstr "Nastavi Znanost"
+
+#: science.cpp:1011
+msgid "Inverse"
+msgstr "Inverzen"
 
 #: science.cpp:1021
-msgid "Inverse"
-msgstr "Obrnut"
-
-#: science.cpp:1031
 msgid "Gravity"
 msgstr "Gravitacija"
 
-#: science.cpp:1040
+#: science.cpp:1030
 msgid "Hide Background"
-msgstr "Sakrij pozadinu"
+msgstr "Skrij ozadje"
 
-#: science.cpp:1066
+#: science.cpp:1056
 msgid "Intensity:"
-msgstr "Jaèina:"
+msgstr "Intenzivnost:"
 
-#: science.cpp:1096
+#: science.cpp:1086
 msgid "Motion:"
-msgstr "Pokret:"
+msgstr "Gibanje:"
 
-#: science.cpp:1317
-msgid "Science Version"
-msgstr "Znanost Inaèica"
+#: science.cpp:1306
+msgid ""
+"Science Version 0.26.5\n"
+"\n"
+"written by Rene Beutler (1998)\n"
+"rbeutler@g26.ethz.ch"
+msgstr ""
+"Znanost, izdaja 0.26.5\n"
+"\n"
+"Napisal (1998) Rene Beutler\n"
+"rbeutler@g26.ethz.ch"
 
-#: science.cpp:1318
-msgid "written by"
-msgstr "napisao"
-
-#: science.cpp:1319
+#: science.cpp:1307
 msgid "About Science"
 msgstr "O Znanosti"
 
-#: slidescreen.cpp:427
+#: slidescreen.cpp:421
 msgid "SlideScreen"
-msgstr ""
+msgstr "SlideScreen"
 
-#: slidescreen.cpp:496
+#: slidescreen.cpp:467
 msgid "Setup KSlideScreen"
-msgstr ""
+msgstr "Nastavi KSlideScreen"
 
-#: slidescreen.cpp:589
+#: slidescreen.cpp:560
 msgid "About SlideScreen"
-msgstr ""
+msgstr "O SlideScreenu"
 
-#: slidescreen.cpp:590
+#: slidescreen.cpp:561
 msgid ""
 "SlideScreen Version 1.1\n"
 "\n"
@@ -785,30 +791,31 @@ msgid ""
 "\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 msgstr ""
-"SlideScreen inaèica 1.1\n"
+"SlideScreen verzija 1.1\n"
 "\n"
-"Copyright (c) 1992 Jamie Zawinski\n"
+"Avtorske pravice (c) 1992-1997 Jamie Zawinski <jwz@jwz.org>\n"
 "\n"
-"Prilagodio za kscreensave:\n"
+"Na kscreensaver prenesel:\n"
+"\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
-#: slip.cpp:293
+#: slip.cpp:295
 msgid "Slip"
 msgstr "Slip"
 
-#: slip.cpp:374
+#: slip.cpp:368
 msgid "Setup KSlip"
-msgstr "Podesi KSlip"
+msgstr "Nastavi KSlip"
 
-#: slip.cpp:400
+#: slip.cpp:394
 msgid "Batchcount:"
-msgstr "Batchcount:"
+msgstr "©tevilo serij:"
 
-#: slip.cpp:496
+#: slip.cpp:490
 msgid "About Slip"
 msgstr "O Slipu"
 
-#: slip.cpp:497
+#: slip.cpp:491
 msgid ""
 "Slip\n"
 "\n"
@@ -818,53 +825,53 @@ msgid ""
 msgstr ""
 "Slip\n"
 "\n"
-"Copyright (c) 1991 Scott Draves\n"
+"Avtorske pravice (c) 1991 Scott Draves\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr "Svemir (GL)"
+msgstr "Vesolje (GL)"
 
-#: space.cpp:589
+#: space.cpp:581
 msgid "Setup KSpace"
-msgstr "Podesi KSpace"
+msgstr "Nastavi KVesolje"
 
-#: space.cpp:605
+#: space.cpp:597
 msgid "Warp Interval:"
-msgstr "Warp Razmak:"
+msgstr "Warp interval"
 
-#: space.cpp:693
+#: space.cpp:685
 msgid "About KSpace"
-msgstr "O KSpace"
+msgstr "O KVesolju"
 
-#: space.cpp:695
+#: space.cpp:687
 msgid ""
 "KSpace\n"
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
-"KSpace\n"
-"Copyright (c) 1998\n"
+"KVesolje\n"
+"Avtorske pravice (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 
-#: swarm.cpp:257
+#: swarm.cpp:259
 msgid "Swarm"
 msgstr "Roj"
 
-#: swarm.cpp:337
+#: swarm.cpp:331
 msgid "Setup KSwarm"
-msgstr "Podesi Roj"
+msgstr "Nastavi KRoj"
 
-#: swarm.cpp:363
+#: swarm.cpp:357
 msgid "Number of Bees:"
-msgstr "Broj Pèela:"
+msgstr "©tevilo èebel:"
 
-#: swarm.cpp:458
+#: swarm.cpp:452
 msgid "About Swarm"
 msgstr "O Roju"
 
-#: swarm.cpp:459
+#: swarm.cpp:453
 msgid ""
 "Swarm\n"
 "\n"
@@ -874,6 +881,6 @@ msgid ""
 msgstr ""
 "Roj\n"
 "\n"
-"Copyright (c) 1991 Patrick J. Naughton\n"
+"Avtorske pravice (c) 1991 Patrick J. Naughton\n"
 "\n"
-"Prilagodio za kscreensave Emanuel Pirker."
+"Na kscreensave prenesel Emanuel Pirker."

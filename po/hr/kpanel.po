@@ -1,130 +1,67 @@
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Radoslav Dejanovic <rdejanov@public.srce.hr>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-04-24 01:28+0200\n"
-"PO-Revision-Date: 1998-10-15 15:00-0500\n"
-"Last-Translator: Radoslav Dejanovic <rdejanov@public.srce.hr>\n"
-"Language-Team: Croatian\n"
+"Project-Id-Version: kpanel\n"
+"POT-Creation-Date: 1999-05-28 01:19+0200\n"
+"PO-Revision-Date: 1999-03-27 12:00+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kpanel.C:296
-msgid "&Move"
-msgstr "Pre&mjesti"
+#: kpanel.C:242 kpanel.C:251
+msgid "Hide the panel"
+msgstr "Skrij pult"
 
-#: kpanel.C:299
-msgid "&Properties"
-msgstr "&Postavke"
+#: kpanel.C:261 kpanel.C:273
+msgid "Show the panel"
+msgstr "Prika¾i pult"
 
-#: kpanel.C:342
-msgid "Go!"
-msgstr "Idi!"
-
-#: kpanel.C:419
-msgid "No info available"
-msgstr "Nema raspolo¾ivih informacija"
-
-#: kpanel.C:458 props.C:207 props.C:208
+#: kpanel-menu.C:169 kpanel-menu.C:172 kpanel.C:472
 msgid "Logout"
 msgstr "Odjava"
 
-#: kpanel.C:466 props.C:206
+#: kpanel-menu.C:168 kpanel.C:482
 msgid "Lock screen"
-msgstr "Zakljuèaj ekran"
+msgstr "Zakleni zaslon"
 
-#: kpanel.C:475 kpanel.C:484
-msgid "Hide the panel"
-msgstr "Sakrij Ploèu"
+#: kpanel.C:529 pdndinfo.C:40
+msgid "&Move"
+msgstr "Pre&makni"
 
-#: kpanel.C:494 kpanel.C:506
-msgid "Show the panel"
-msgstr "Prika¾i ploèu"
+#: kpanel.C:532
+msgid "&Properties"
+msgstr "&Nastavitve"
 
-#: kpanel.C:1070
+#: kpanel.C:567
+msgid "Go!"
+msgstr "Pojdi!"
+
+#: kpanel.C:570 kpanel.C:3130
+msgid "Where do you want to go tomorrow?"
+msgstr "Kam bi radi ¹li jutri?"
+
+#: kpanel.C:608
+msgid "No info available"
+msgstr "Ni dostopnih informacij"
+
+#: kpanel.C:1508
 msgid "Iconify other &windows"
-msgstr "Ikonifiraj ostale &prozore"
+msgstr "Skrèi v okno ostala o&kna"
 
-#: kpanel.C:1218 tools.C:910
+#: kpanel.C:1597 kpanel.C:3139
 msgid "Windowlist"
-msgstr "Lista prozora"
+msgstr "Seznam oken"
 
-#: kpanel.C:1226 props.C:197
+#: kpanel-menu.C:154 kpanel.C:1604
 msgid "Quickly navigate through the filesystem"
-msgstr ""
+msgstr "Hitra navigacija skozi datoteèni sistem"
 
-#: props.C:167
-msgid "Add Application"
-msgstr "Dodaj aplikaciju"
-
-#: props.C:169
-msgid "Add an application or a submenu onto the panel"
-msgstr "Dodaj aplikaciju ili podizbornik na ploèu"
-
-#: props.C:175
-msgid "Add Disk Navigator"
-msgstr "Dodaj Navigator diska"
-
-#: props.C:177
-msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Dodaj navigator diska na ploèu"
-
-#: props.C:180
-msgid "Add Windowlist"
-msgstr "Dodaj listu prozora"
-
-#: props.C:182
-msgid "Add a windowlist menu onto the panel"
-msgstr "Dodaj izbornik liste prozora na ploèu"
-
-#: events.C:860 props.C:183
-msgid "Configure"
-msgstr "Promijeni postavu"
-
-#: props.C:185
-msgid "Configure panel"
-msgstr "Promijeni postavu ploèe"
-
-#: props.C:186
-msgid "Edit Menus"
-msgstr "Uredi menije"
-
-#: props.C:188
-msgid "Add or remove applications in the menu structure "
-msgstr "Dodaj ili ukloni aplikacije u strukturi menija "
-
-#: events.C:862 props.C:189
-msgid "Restart"
-msgstr "Pokreni ponovo"
-
-#: props.C:191
-msgid "Restart panel"
-msgstr "Obnovi ploèu"
-
-#: props.C:194
-msgid "Disk Navigator"
-msgstr "Navigator diska"
-
-#: props.C:202
-msgid "Panel"
-msgstr "Ploèa"
-
-#: props.C:204
-msgid "Lock Screen"
-msgstr "Zakljuèaj Ekran"
-
-#: props.C:451
-msgid "The menu editor is not installed."
-msgstr "Ureðivaè menija nije instaliran."
-
-#: events.C:917 props.C:452
-msgid "Oops!"
-msgstr "Oops!"
-
-#: tools.C:648
+#: kpanel.C:2837
 msgid ""
 "\n"
 "%b %d"
@@ -132,72 +69,165 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:919
-msgid "KDiskNavigator"
-msgstr "Navigator diska"
-
-#: events.C:916
-msgid "Cannot put this as button onto the panel!"
-msgstr "Ne mogu staviti ovaj gumb na ploèu!"
-
-#: pfilemenu.C:425
-msgid "(empty folder)"
-msgstr "(prazni direktorij)"
-
-#: pfilemenu.C:480
-msgid "Open Folder"
-msgstr "Otvori direktorij"
-
-#: pfilemenu.C:483
-msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr "Otvori ovaj direktorij (+Shift: Pokreni terminal ovdje)"
-
-#: pfilemenu.C:491
-msgid "(Too Many Files)"
-msgstr "(Previ¹e Datoteka)"
-
-#: pfilemenu.C:500
-msgid "(Access Denied)"
-msgstr "(Pristup odbijen)"
-
-#: pfilemenu.C:503
-msgid "(Unreadable)"
-msgstr "(Ne mogu èitati)"
-
-#: pfilemenu.C:752
-msgid "Shared:"
-msgstr "Dijeljen:"
-
-#: pfilemenu.C:754
-msgid "Entries shared among all users"
+#: kpanel.C:2911
+msgid ""
+"KPanel\n"
+"\n"
+"KPanel v. %1\n"
 msgstr ""
+"KPult\n"
+"\n"
+"KPult v. %1\n"
 
-#: pfilemenu.C:773
+#: kpanel.C:2912
+msgid "Part of the KDE project"
+msgstr "Del projekta KDE"
+
+#: kpanel.C:3147
+msgid "KDiskNavigator"
+msgstr "KDiskNavigator"
+
+#: kpanel.C:3307
+msgid "The menu editor is not installed."
+msgstr "Urejevalnik menijev ni name¹èen."
+
+#: kpanel-events.C:956 kpanel.C:3308
+msgid "Oops!"
+msgstr "Ups!"
+
+#: kpanel-events.C:898 kpanel-menu.C:40 pspecialmenuitem.C:39
+#: pspecialmenuitem.C:44 pspecialmenuitem.C:57
+msgid "Configure"
+msgstr "Prikroji"
+
+#: kpanel-events.C:900 kpanel-menu.C:49
+msgid "Restart"
+msgstr "Ponovno za¾eni"
+
+#: kpanel-events.C:955
+msgid "Cannot put this as button onto the panel!"
+msgstr "Tega ne morem postaviti kot gumb na pultu!"
+
+#: kpanel-menu.C:30
+msgid "Add Disk Navigator"
+msgstr "Dodaj Disk Navigator"
+
+#: kpanel-menu.C:33
+msgid "Add a Disk Navigator menu onto the panel"
+msgstr "Dodaj Disk Navigator meni na pult"
+
+#: kpanel-menu.C:35
+msgid "Add Windowlist"
+msgstr "Dodaj seznam oken"
+
+#: kpanel-menu.C:39
+msgid "Add a windowlist menu onto the panel"
+msgstr "Dodaj meni seznama oken na pult"
+
+#: kpanel-menu.C:43
+msgid "Configure panel"
+msgstr "Prikroji pult"
+
+#: kpanel-menu.C:44
+msgid "Edit Menus"
+msgstr "Uredi menije"
+
+#: kpanel-menu.C:47
+msgid "Add or remove applications in the menu structure "
+msgstr "Dodaj ali odstrani program iz strukture menijev "
+
+#: kpanel-menu.C:52
+msgid "Restart panel"
+msgstr "Ponovno za¾eni pult"
+
+#: kpanel-menu.C:57
+msgid "About..."
+msgstr "O ..."
+
+#: kpanel-menu.C:151
+msgid "Disk Navigator"
+msgstr "Disk Navigator"
+
+#: kpanel-menu.C:162
+msgid "Panel"
+msgstr "Pult"
+
+#: kpanel-menu.C:165
+msgid "Lock Screen"
+msgstr "Zakleni zaslon"
+
+#: kpanel-menu.C:214
+msgid "Shared:"
+msgstr "Skupen"
+
+#: kpanel-menu.C:217
+msgid "Entries shared among all users"
+msgstr "Vnosi skupni vsem uporabnikom"
+
+#: kpanel-menu.C:241
 msgid "Personal:"
-msgstr "Osobni:"
+msgstr "Osebni:"
 
-#: pfilemenu.C:775
-msgid "Personal entries"
-msgstr "Osobni zapisi:"
+#: kpanel-menu.C:243
+msgid "Personal items"
+msgstr "Osebni vnosi"
 
-#: pfilemenu.C:793
+#: kpanel-menu.C:264
 msgid "Recent:"
 msgstr "Nedavni:"
 
-#: pfilemenu.C:795
-msgid "Recent entries"
-msgstr "Skora¹nji zapisi"
+#: kpanel-menu.C:266
+msgid "Recent items"
+msgstr "Nedavni vnosi"
 
-#: pfilemenu.C:841
+#: kpanel-menu.C:314
 msgid "Options..."
-msgstr "Postavke..."
+msgstr "Izbire ..."
 
-#: pfilemenu.C:843
+#: kpanel-menu.C:318
 msgid "Customize Disk Navigator"
-msgstr "Podesi navigator diska"
+msgstr "Prikroji Disk Navigator"
 
-#~ msgid "Where do you want to go tomorrow?"
-#~ msgstr "Gdje ¾elite iæi sutra?"
+#: pfilemenu.C:390
+msgid "Open Folder"
+msgstr "Odpri mapo"
 
-#~ msgid "No comment available"
-#~ msgstr "Nema raspolo¾ivih komentara"
+#: pfilemenu.C:394
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr "Odpri to mapo  (+Shift: za¾eni terminal)"
+
+#: pfilemenu.C:405
+msgid "(Too Many Files)"
+msgstr "(Preveè datotek)"
+
+#: pfilemenu.C:414
+msgid "(Access Denied)"
+msgstr "(Zavrnjen dostop)"
+
+#: pfilemenu.C:417
+msgid "(Unreadable)"
+msgstr "(Neèitljiv)"
+
+#: pfilemenu.C:442
+msgid "(empty folder)"
+msgstr "(prazna mapa)"
+
+#: pfilemenu.C:504
+msgid "More..."
+msgstr "Veè ..."
+
+#: pmenuitem.C:332 pspecialmenuitem.C:55
+msgid "Add to panel"
+msgstr "Dodaj na pult"
+
+#: pspecialmenuitem.C:40
+msgid "Update"
+msgstr "Osve¾i"
+
+#: pspecialmenuitem.C:43 pspecialmenuitem.C:52
+msgid "Empty"
+msgstr "Prazno"
+
+#: pdndinfo.C:41
+msgid "&Link"
+msgstr "&Povezava"

@@ -7,7 +7,7 @@ msgstr ""
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian\n"
+"Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,9 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr "kwm: veæ postoji jedan window manager. kwm nije pokrenut\n"
+msgstr ""
+"veæ postoji jedan window manager. nova instanca nije pokrenuta\n"
+"\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -64,15 +66,15 @@ msgstr "Po&makni"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "Promjeni velièinu"
+msgstr "Pro&mjeni velièinu"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "&Na radnu povr¹inu"
+msgstr "Premjesti &na povr¹inu"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "Na &tekuæu radnu povr¹inu"
+msgstr "Premjesti na &tekuæu povr¹inu"
 
 #: main.C:620
 msgid "One"
@@ -108,11 +110,11 @@ msgstr "Osam"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Neimenovana radna povr¹ina"
+msgstr "Neimenovana povr¹ina"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
+msgstr "Neke pixmape nisu va¾eæe: ShapeMode je uga¹en\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
@@ -136,7 +138,7 @@ msgstr "Odjavi"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Sesija spremna za odjavu"
+msgstr "Sesija je spremna za odjavu"
 
 #: logout.C:52
 msgid ""
@@ -144,23 +146,23 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "Slijedeæi programi nisu spremili podatke ¹to mo¾e\n"
-"rezultirati gubitkom podataka u slijedeæoj sesiji."
+"rezultirati gubitkom podataka."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Slijedeæi programi ne mogu se vratiti u va¹oj slijedeæoj sesiji,\n"
-"oni se mogu samo ponovo pokrenuti. Spremite sve va¾ne podatke."
+"KDE nije u stanju obavijestiti slijedeæ programe o zavr¹etku sesije.\n"
+"Spremite sve va¾ne podatke te ih ponovo pokrenite u slijedeæoj sesiji."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Slijedeæi programi nisu X11-svjesni te se ne mogu vratiti u va¹oj\n"
-"slijedeæoj sesiji. Spremite sve va¾ne podatke."
+"KDE nije u stanju komunicirati sa slijedeæim programima (nisu X11-svjesni)\n"
+"te ih neæe moæi vratiti u slijedeæoj sesiji. Molim spremite sve va¾ne podatke."
 
 #: taskmgr.C:107
 msgid "Switch to"

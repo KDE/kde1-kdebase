@@ -14,7 +14,7 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr ""
+msgstr "Uklj./isklj. zajednièku radnu povr¹inu"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -30,11 +30,11 @@ msgstr "Pomakni se ulijevo"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Sakrij &zajednièki radnu povr¹inu"
+msgstr "Sakrij &zajednièku radnu povr¹inu"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Prika¾i &zajednièki radnu povr¹inu"
+msgstr "Prika¾i &zajednièku radnu povr¹inu"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -58,19 +58,19 @@ msgstr "&Prika¾i imena radnih povr¹ina"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
-msgstr "Èisto"
+msgstr "Prazne prozore"
 
 #: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
-msgstr "Ikona"
+msgstr "Ikone"
 
 #: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
-msgstr "Pixmapa"
+msgstr "Umanjene prozore"
 
 #: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
-msgstr "Vrsta iscrtavanja"
+msgstr "Prika¾i prozore kao "
 
 #: kpager.cpp:129
 #, c-format

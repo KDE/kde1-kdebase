@@ -1,279 +1,272 @@
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Vladimir Vuksan <vuksan@veus.hr>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-03-31 01:21+0200\n"
-"PO-Revision-Date: 1998-10-15 15:00-0500\n"
-"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian\n"
+"Project-Id-Version: kdehelp\n"
+"POT-Creation-Date: 1999-05-31 01:16+0200\n"
+"PO-Revision-Date: 1999-03-26 22:10+0100\n"
+"Last-Translator: Marko Samastur <markos@Aelite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: helpwin.cpp:55
+#: helpwin.cpp:46
 msgid "KDE Help: Open URL"
-msgstr "KDE pomoæ: OtvoriURL"
+msgstr "KDE-Pomoè: Odpri URL"
 
-#: helpwin.cpp:57
+#: helpwin.cpp:48
 msgid "Open URL"
-msgstr "Otvori URL"
+msgstr "Odpri URL"
 
-#: helpwin.cpp:459 info.cpp:321
+#: helpwin.cpp:472 info.cpp:290
 msgid "Cannot open: "
-msgstr "Ne mogu otvoriti: "
+msgstr "Ne morem odpreti: "
 
-#: helpwin.cpp:460 helpwin.cpp:469
+#: helpwin.cpp:473 helpwin.cpp:482
 msgid "Oops!"
 msgstr "Ups!"
 
-#: helpwin.cpp:468
+#: helpwin.cpp:481
 msgid "Unknown format: "
-msgstr "Nepoznat format: "
+msgstr "Neznan format: "
 
-#: helpwin.cpp:1110
+#: helpwin.cpp:1123
 msgid "Find Complete"
-msgstr "Pretraga zavr¹ena"
+msgstr "Iskanje zakljuèeno"
 
-#: helpwin.cpp:1111
+#: helpwin.cpp:1124
 msgid "Continue search from the top of the page?"
-msgstr "Nastavi pretragu s vrha stranice?"
+msgstr "Nadaljuj iskanje na vrhu strani?"
 
-#: helpwin.cpp:1325
+#: helpwin.cpp:1338
 msgid "Forward"
-msgstr "Naprijed"
+msgstr "Naprej"
 
-#: helpwin.cpp:1346
+#: helpwin.cpp:1359
 msgid "Open this Link"
-msgstr "Otvori ovu vezu"
+msgstr "Odpri to povezavo"
 
-#: helpwin.cpp:1347
+#: helpwin.cpp:1360
 msgid "Add Bookmark"
-msgstr "Dodaj oznaku"
+msgstr "Dodaj zaznamek"
 
-#: helpwin.cpp:1348
+#: helpwin.cpp:1361
 msgid "Open in new Window"
-msgstr "Otvori u novom prozoru"
+msgstr "Odpri v novem oknu"
 
-#: info.cpp:113 info.cpp:641
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
-msgstr "Gre¹ka u info datoteci"
+msgstr "Napaka v info datoteki"
 
-#: info.cpp:1289
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
-msgstr "Èvor nije pronaðen: %s"
+msgstr "Nisem na¹el vozli¹èa: %s"
 
-#: info.cpp:1434
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
-msgstr "Ne mogu otvoriti info datoteku: %s"
+msgstr "Ne morem odpreti info datoteke: %s"
 
 #: error.cpp:23
 msgid "Fatal Error: "
-msgstr "Nepovratna gre¹ka: "
+msgstr "Fatalna napaka: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "Upozorenje: "
+msgstr "Opozorilo: "
 
 #: options.cpp:38
 msgid "Small"
-msgstr "Malo"
+msgstr "Majhen"
 
 #: options.cpp:42
 msgid "Medium"
-msgstr "Srednje"
+msgstr "Srednji"
 
 #: options.cpp:46
 msgid "Large"
-msgstr "Veliko"
+msgstr "Velik"
 
 #: options.cpp:50
 msgid "Standard Font"
-msgstr "Standardno pismo"
+msgstr "Standardna pisava"
 
 #: options.cpp:67
 msgid "Fixed Font"
-msgstr "Jednoliko pismo"
+msgstr "Pisava fiksne ¹irine"
 
 #: options.cpp:206
 msgid "Background Color:"
-msgstr "Boja pozadine:"
+msgstr "Barva ozadja:"
 
 #: options.cpp:214
 msgid "Normal Text Color:"
-msgstr "Boja normalnog teksta:"
+msgstr "Obièajna barva besedila:"
 
 #: options.cpp:222
 msgid "URL Link Color:"
-msgstr "Boja URL veze:"
+msgstr "Barva URL povezave:"
 
 #: options.cpp:230
 msgid "Followed Link Color:"
-msgstr "Boja posjeæene veze:"
+msgstr "Barva obiskane povezave:"
 
 #: options.cpp:238
 msgid "Underline links"
-msgstr ""
+msgstr "Podèrtaj povezave"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Vedno uporabi moje barve"
 
 #: options.cpp:334
 msgid "KDE Help Options"
-msgstr "KDE pomoæ opcije"
+msgstr "Nastavitve KDE Pomoèi"
 
 #: options.cpp:347 options.cpp:348
 msgid "Colors"
-msgstr "Boje"
+msgstr "Barve"
 
-#: man.cpp:55 man.cpp:453
+#: man.cpp:59 man.cpp:449
 msgid "Online Manuals"
-msgstr "Upute"
+msgstr "Spletni priroèniki"
 
-#: man.cpp:62
+#: man.cpp:66
 #, c-format
 msgid "Section %s"
-msgstr "Sekcija %s"
+msgstr "Razdelek %s"
 
-#: man.cpp:84
+#: man.cpp:88
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Upute, sekcija %s"
-
-#: man.cpp:132
-msgid "User Commands"
-msgstr "Korisnièke naredbe"
-
-#: man.cpp:134
-msgid "System Calls"
-msgstr "Sistemski pozivi"
+msgstr "Spletni priroènik - razdelek %s"
 
 #: man.cpp:136
+msgid "User Commands"
+msgstr "Uporabni¹ki ukazi"
+
+#: man.cpp:138
+msgid "System Calls"
+msgstr "Sistemski klici"
+
+#: man.cpp:140
 msgid "Subroutines"
 msgstr "Podprogrami"
 
-#: man.cpp:138
-msgid "Devices"
-msgstr "Ureðaji"
-
-#: man.cpp:140
-msgid "File Formats"
-msgstr "Formati datoteka"
-
 #: man.cpp:142
+msgid "Devices"
+msgstr "Naprave"
+
+#: man.cpp:144
+msgid "File Formats"
+msgstr "Datoteèni formati"
+
+#: man.cpp:146
 msgid "Games"
 msgstr "Igre"
 
-#: man.cpp:146
+#: man.cpp:150
 msgid "System Administration"
-msgstr "Administracija sustava"
+msgstr "Sistemska administracija"
 
-#: man.cpp:148
+#: man.cpp:152
 msgid "New"
 msgstr "Novo"
 
-#: man.cpp:279
+#: man.cpp:275
 msgid "Reading Dir: "
-msgstr "Èitam direktorij: "
+msgstr "Berem imenik: "
 
-#: man.cpp:443
+#: man.cpp:439
 msgid "Online Manual - Section"
-msgstr "Upute - sekcija"
+msgstr "Spletni priroènik - razdelek"
 
-#: man.cpp:509 man.cpp:518
+#: man.cpp:505 man.cpp:514
 msgid "\"man\" system call failed"
-msgstr "\"man\" sistemski poziv nije uspio"
+msgstr "\"man\" sistemski klic neuspe¹en"
 
-#: man.cpp:536
+#: man.cpp:532
 msgid "Opening temporary file failed"
-msgstr "Ne mogu otvoriti privremenu datoteku"
+msgstr "Neuspe¹no odpiranje zaèasne datoteke"
 
 #: bookmark.cpp:245
 msgid "<!-- Do not edit this file -->"
-msgstr "<!-- Ne mijenjajte ovu datoteku -->"
+msgstr "<!-- Ne popravljajte te datoteke -->"
 
-#: cgi.cpp:79
+#: cgi.cpp:81
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: Neispravan ciljni URL: %s \n"
+msgstr "CGI: Ciljni URL je zmalièen: %s\n"
 
-#: mainwidget.cpp:132
+#: mainwidget.cpp:130
 msgid "&New Help Window"
-msgstr "&Novi prozor pomoæi"
+msgstr "&Novo okno Pomoè"
 
-#: mainwidget.cpp:135
+#: mainwidget.cpp:133
 msgid "&Open File..."
-msgstr "&Otvori datoteku..."
+msgstr "&Odpri datoteko..."
 
-#: mainwidget.cpp:142
+#: mainwidget.cpp:140
 msgid "&Search"
-msgstr "&Tra¾i"
+msgstr "&I¹èi"
+
+#: mainwidget.cpp:155
+msgid "&Find..."
+msgstr "&Najdi..."
 
 #: mainwidget.cpp:157
-msgid "&Find..."
-msgstr "&Pronaði..."
-
-#: mainwidget.cpp:159
 msgid "Find &next"
-msgstr "&Naði slijedeæi"
+msgstr "&Najdi naslednjega"
+
+#: mainwidget.cpp:162
+msgid "&Back"
+msgstr "N&azaj"
 
 #: mainwidget.cpp:164
-msgid "&Back"
-msgstr "Naza&d"
-
-#: mainwidget.cpp:166
 msgid "&Forward"
-msgstr "Nap&rijed"
+msgstr "&Naprej"
 
-#: mainwidget.cpp:171
+#: mainwidget.cpp:169
 msgid "&Top"
 msgstr "&Vrh"
 
-#: mainwidget.cpp:173
+#: mainwidget.cpp:171
 msgid "&Up"
-msgstr "&Gore"
+msgstr "&Gor"
 
-#: mainwidget.cpp:175
-msgid "&Previous"
-msgstr "&Prethodno"
-
-#: mainwidget.cpp:177
-msgid "&Next"
-msgstr "&Slijedeæe"
-
-#: mainwidget.cpp:190
+#: mainwidget.cpp:188
 msgid "&General Preferences..."
-msgstr "Osnovne odredni&ce..."
+msgstr "&Splo¹ne nastavitve..."
 
-#: mainwidget.cpp:193
+#: mainwidget.cpp:191
 msgid "Show &Toolbar"
-msgstr "Poka¾i &Alate"
+msgstr "Prika¾i &orodjarno"
+
+#: mainwidget.cpp:194
+msgid "Show &Location"
+msgstr "Prika¾i &lokacijo"
 
 #: mainwidget.cpp:196
-msgid "Show &Location"
-msgstr "Poka¾i &Mjesto"
-
-#: mainwidget.cpp:198
 msgid "Show Status&bar"
-msgstr "Poka¾i S&tatus"
+msgstr "Prika¾i s&tatusno vrstico"
 
-#: mainwidget.cpp:201
+#: mainwidget.cpp:199
 msgid "&Save Options"
-msgstr "&Spremi opcije"
+msgstr "&Shrani nastavitve"
 
-#: mainwidget.cpp:204
+#: mainwidget.cpp:202
 msgid "KDE Help System\n"
-msgstr "KDE sustav pomoæi\n"
+msgstr "KDE Sistem Pomoèi\n"
+
+#: mainwidget.cpp:203
+msgid "Version "
+msgstr "Razlièica "
 
 #: mainwidget.cpp:205
-msgid "Version "
-msgstr "Inaèica "
-
-#: mainwidget.cpp:207
 msgid ""
 "\n"
 "\n"
@@ -285,82 +278,79 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"Avtorske pravice (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
-"Ovaj program licenciran je pod GNU General Public License (GPL).\n"
-"KDEHelp dolazi BEZ IKAKVOG JAMSTVA."
+" Tale program je pod licenco GNU General Public License (GPL).\n"
+"KDEPomoè pride BREZ VSAKR©NIH JAMSTEV do mere dovoljene z zakonom."
 
-#: mainwidget.cpp:224
+#: mainwidget.cpp:222
 msgid "&Goto"
-msgstr "&Idi na"
+msgstr "Po&jdi"
 
-#: mainwidget.cpp:225
+#: mainwidget.cpp:223
 msgid "&Bookmarks"
-msgstr "&Knji¹ke oznake"
+msgstr "&Zaznamki"
 
-#: mainwidget.cpp:243
+#: mainwidget.cpp:241
 msgid "Previous Document"
-msgstr "Prethodni dokument"
+msgstr "Prej¹nji dokument"
 
-#: mainwidget.cpp:248
+#: mainwidget.cpp:246
 msgid "Next Document"
-msgstr "Slijedeæi dokument"
+msgstr "Naslednji dokument"
 
-#: mainwidget.cpp:255
+#: mainwidget.cpp:253
 msgid "Previous Node"
-msgstr "Prethodni èvor"
+msgstr "Prej¹nje vozli¹èe"
 
-#: mainwidget.cpp:260
+#: mainwidget.cpp:258
 msgid "Next Node"
-msgstr "Slijedeæi èvor"
+msgstr "Naslednje vozli¹èe"
 
-#: mainwidget.cpp:265
+#: mainwidget.cpp:263
 msgid "Up one Node"
-msgstr "Gore jedan èvor"
+msgstr "Gor za eno vozli¹èe"
 
-#: mainwidget.cpp:270
+#: mainwidget.cpp:268
 msgid "Top Node"
-msgstr "Najvi¹i èvor"
+msgstr "Vrhnje vozli¹èe"
 
-#: mainwidget.cpp:277
+#: mainwidget.cpp:275
 msgid "Help Contents"
-msgstr "Sadr¾aj pomoæi"
+msgstr "Vsebina pomoèi"
 
-#: mainwidget.cpp:282
+#: mainwidget.cpp:280
 msgid "Reload current document"
-msgstr "Ponovo uèitaj tekuæi dokument"
+msgstr "Ponovno nalo¾i trenutni dokument"
 
-#: mainwidget.cpp:311
+#: mainwidget.cpp:309
 msgid "In the Constructor!"
-msgstr "U konstruktor!"
+msgstr "V konstruktorju!"
 
-#: mainwidget.cpp:612
+#: mainwidget.cpp:609
 msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"KDE sustav pomoæi\n"
-"Inaèica "
+"KDE Sistem Pomoèi\n"
+"Razlièica"
 
-#: mainwidget.cpp:614
+#: mainwidget.cpp:611
 msgid "About KDE Help"
-msgstr "O KDE pomoæi"
+msgstr "O KDE Pomoèi"
 
-#: mainwidget.cpp:647
+#: mainwidget.cpp:644
 msgid "&Add Bookmark"
-msgstr "&Dodaj bookmark"
+msgstr "&Dodaj zaznamek"
 
-#: finddlg.cpp:39
+#: finddlg.cpp:40
 msgid "Find:"
-msgstr "Pronaði:"
+msgstr "Najdi:"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
-msgstr "&Razlikuj velika/mala slova"
+msgstr "O&bèutljiv na velikost èrk"
 
 #: finddlg.cpp:64
 msgid "&Find"
-msgstr "&Pronaði"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Otvori UR&L..."
+msgstr "&Najdi"

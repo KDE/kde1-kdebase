@@ -70,7 +70,7 @@ msgstr "Zatvaranje prozora"
 
 #: syssound.cpp:159
 msgid "Startup"
-msgstr "Podizanje"
+msgstr "Podizanje sustava"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
@@ -142,7 +142,7 @@ msgstr "&Omoguæi sistemske zvuke"
 
 #: syssound.cpp:203
 msgid "&Test"
-msgstr "&Proba"
+msgstr "&Isprobaj"
 
 #: syssound.cpp:207
 msgid "&Events:"
@@ -192,8 +192,8 @@ msgid ""
 msgstr ""
 "Datoteka\n"
 "%s\n"
-"je veæ na listi"
+"je veæ na popisu"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "Datoteka je veæ na listi"
+msgstr "Datoteka je veæ na popisu"

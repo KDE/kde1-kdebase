@@ -1,82 +1,127 @@
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Vladimir Vuksan <vuksan@veus.hr>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-04-08 01:20+0200\n"
-"PO-Revision-Date: 1998-02-01 15:00-0500\n"
-"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian\n"
+"Project-Id-Version: kdm\n"
+"POT-Creation-Date: 1999-07-05 01:32+0200\n"
+"PO-Revision-Date: 1999-03-26 23:25+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:176
-msgid "Shutdown or restart?"
-msgstr "Ugasi ili pokreni ponovo?"
+#: kdmshutdown.cpp:187
+msgid "Shutdown and restart?"
+msgstr "Zaustavitev sistema in ponoven zagon?"
 
-#: kdmshutdown.cpp:179
+#: kdmshutdown.cpp:190
 msgid "(Enter Root Password)"
-msgstr "(Unesi lozinku korijenskog korisnika)"
+msgstr "(Vpi¹ite geslo uporabnika root)"
 
-#: kdmshutdown.cpp:197
+#: kdmshutdown.cpp:209
 msgid "Shutdown"
-msgstr "Ugasi"
+msgstr "Zaustavitev sistema"
 
-#: kdmshutdown.cpp:211
-msgid "Shutdown and restart"
-msgstr "Ugasi i pokreni ponovo"
+#: kdmshutdown.cpp:226
+msgid "Restart"
+msgstr "Ponoven zagon"
 
-#: kdmshutdown.cpp:220
+#: kdmshutdown.cpp:254
 msgid "Restart X Server"
-msgstr "Pokreni ponovo X poslu¾itelj"
+msgstr "Ponoven zagon stre¾nika X"
 
-#: kgreeter.cpp:234
+#: kdmshutdown.cpp:264
+msgid "Console Mode"
+msgstr "Naèin konzole"
+
+#: kgreeter.cpp:201
 msgid "Login:"
 msgstr "Prijava:"
 
-#: kgreeter.cpp:246
+#: kgreeter.cpp:213
 msgid "Password:"
-msgstr "Lozinka:"
+msgstr "Geslo:"
 
-#: kgreeter.cpp:271
+#: kgreeter.cpp:238
 msgid "Login failed!"
-msgstr "Prijava netoèna!"
+msgstr "Prijava je bila neuspe¹na!"
 
-#: kgreeter.cpp:277
+#: kgreeter.cpp:243
 msgid "Session Type:"
-msgstr "Vrsta sesije:"
+msgstr "Tip seje:"
 
-#: kgreeter.cpp:324
+#: kgreeter.cpp:255
 msgid "Go!"
-msgstr "Idi!"
+msgstr "Pojdi!"
 
-#: kgreeter.cpp:340
+#: kgreeter.cpp:272
 msgid "Shutdown..."
-msgstr "Ga¹enje..."
+msgstr "Zaustavitev sistema..."
 
-#: kgreeter.cpp:585
+#: kgreeter.cpp:508
 msgid "Logins not available right now."
-msgstr "®alim, prijava trenutno nije moguæa."
+msgstr "Prijave trenutno niso mogoèe."
 
-#: kgreeter.cpp:626
+#: kgreeter.cpp:549
 msgid "login_getcapstr() failed."
-msgstr "login_getcapstr() nije uspio."
+msgstr "login_getcapstr() neusp¹na."
 
-#: kgreeter.cpp:680 kgreeter.cpp:707
+#: kgreeter.cpp:603 kgreeter.cpp:631
 msgid "Sorry -- your account has expired."
-msgstr "®alim - va¹ raèun je istekao"
+msgstr "Oprostite -- va¹ raèun je potekel."
 
-#: kgreeter.cpp:685 kgreeter.cpp:712
+#: kgreeter.cpp:609 kgreeter.cpp:637
 #, c-format
-msgid "Warning: your account expires on %s"
-msgstr "Upozorenje: Va¹ raèun istièe %s"
+msgid "Warning: your account expires on %1."
+msgstr "Opozorilo: va¹ raèun poteèe %1"
 
-#: kgreeter.cpp:739
+#: kgreeter.cpp:664
 msgid "Home directory not available"
-msgstr "Poèetni direktorij nije dostupan"
+msgstr "Domaè imenik ni dostopen"
+
+#: kgreeter.cpp:827
+msgid ""
+"Startup program %1 exited with non-zero status.\n"
+"Please contact your system administrator.\n"
+msgstr ""
+"Zagonski program %1 se je konèal z nenièelnim statusom.\n"
+"Prosimo, obrnite se na upravnika sistema.\n"
+
+#: kgreeter.cpp:830
+msgid "Login aborted"
+msgstr "Prijava opu¹èena!"
+
+#: kgreeter.cpp:830
+msgid "Retry"
+msgstr "Ponovno"
+
+#: liloinfo.cpp:336
+msgid "No next option found!"
+msgstr "Nobene naslednje izbire ni najti!"
+
+#: liloinfo.cpp:339
+msgid "Next option not found in option list!"
+msgstr "Naslednje izbire ni najti na seznamu izbir!"
+
+#: liloinfo.cpp:342
+msgid "Lilo hack is not enabled!"
+msgstr "Popravek za LILO ni omogoèen."
+
+#: liloinfo.cpp:345
+msgid "Attempted to write invalid next boot option!"
+msgstr "Posku¹ali smo zapisati neveljavno naslednjo zagonsko izbiro!"
+
+#: liloinfo.cpp:348
+msgid "Lilo location is a non-existing file."
+msgstr "Lokacija LILO je neobstojeèa datoteka."
+
+#: liloinfo.cpp:351
+msgid "Boot map location is a non-existing file."
+msgstr "Lokacija zagonske karte je neobstojeèa datoteka."
+
+#: liloinfo.cpp:354
+msgid "Unkown error!"
+msgstr "Neznana napaka!"

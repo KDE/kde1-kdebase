@@ -1,58 +1,78 @@
-# Copyright (C) 1998 Free Software Foundation, Inc.
-# Vladimir Vuksan <vuksan@veus.hr>, 1998
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-10-15 15:00-0500\n"
-"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian\n"
+"Project-Id-Version: kcmlocale\n"
+"POT-Creation-Date: 1999-07-05 01:31+0200\n"
+"PO-Revision-Date: 1999-04-21 13:00+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:52
+#: main.cpp:54
 msgid "&Locale"
-msgstr "&Lokal"
+msgstr "&Locale"
 
-#: main.cpp:58
+#: main.cpp:60
 msgid "usage: kcmlocale [-init | language]\n"
 msgstr "uporaba: kcmlocale [-init | jezik]\n"
 
-#: main.cpp:86
+#: main.cpp:88
 msgid "Locale settings"
-msgstr "Postavi odrednice lokala"
+msgstr "Nastavitve locale"
 
-#: locale.cpp:45
+#: locale.cpp:47
 msgid "Language"
 msgstr "Jezik"
 
-#: locale.cpp:55
+#: locale.cpp:59
 msgid "First"
 msgstr "Prvi"
 
-#: locale.cpp:65
+#: locale.cpp:69
 msgid "Second"
 msgstr "Drugi"
 
-#: locale.cpp:75
+#: locale.cpp:79
 msgid "Third"
-msgstr "Treæi"
+msgstr "Tretji"
 
-#: locale.cpp:115
+#: locale.cpp:91
+msgid "Examples"
+msgstr "Primeri"
+
+#: locale.cpp:101
+msgid "Numbers:"
+msgstr "©tevla:"
+
+#: locale.cpp:111
+msgid "Money:"
+msgstr "Valuta:"
+
+#: locale.cpp:121
+msgid "Date:"
+msgstr "Datum:"
+
+#: locale.cpp:129
+msgid "Time:"
+msgstr "Èas:"
+
+#: locale.cpp:168
 msgid "without name!"
-msgstr "bez imena!"
+msgstr "brez imena!"
 
-#: locale.cpp:181
+#: locale.cpp:236
 msgid "Applying language settings"
-msgstr "Primjeni jeziène postavke"
+msgstr "Privzemam jezikovne nastavitve"
 
-#: locale.cpp:182
+#: locale.cpp:237
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
 msgstr ""
-"Promjenjene jeziène odrednice primjenjuju se samo na novo pokrenute "
-"aplikacije.\n"
-"Ako ¾elite promijeniti jezik u svim programima morate se prvo odjaviti."
+"Spremenjene jezikovne nastavitve bodo uporabili le novo pognane aplikacije.\n"
+"Za spremembo jezikovnih nastavitev vseh programov se morate najprej odjaviti."

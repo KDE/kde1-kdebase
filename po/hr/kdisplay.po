@@ -1,0 +1,545 @@
+# KDEBASE translation to Slovenian language.
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Marko Samastur <markos@elite.org>, 1999
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdisplay\n"
+"POT-Creation-Date: 1998-12-21 01:17+0100\n"
+"PO-Revision-Date: 1999-03-26 22:35+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: backgnd.cpp:54
+msgid "Enter new desktop name"
+msgstr "Vnesi novo ime namizja"
+
+#: backgnd.cpp:110 backgnd.cpp:162
+msgid "Desktop"
+msgstr "Namizje"
+
+#: backgnd.cpp:184
+msgid "&Rename ..."
+msgstr "P&reimenuj ..."
+
+#: backgnd.cpp:195
+msgid "&Common Background"
+msgstr "&Skupno ozadje"
+
+#: backgnd.cpp:223 colorscm.cpp:82
+msgid "Colors"
+msgstr "Barve"
+
+#: backgnd.cpp:250
+msgid "&One Color"
+msgstr "&Ena barva"
+
+#: backgnd.cpp:267
+msgid "&Two Color"
+msgstr "&Dve barvi"
+
+#: backgnd.cpp:286
+msgid "Set&up ..."
+msgstr "Na&stavitve ..."
+
+#: backgnd.cpp:295
+msgid "Wallpaper"
+msgstr "Tapeta"
+
+#: backgnd.cpp:326 backgnd.cpp:594 backgnd.cpp:608 backgnd.cpp:1218
+#: backgnd.cpp:1372 backgnd.cpp:1910
+msgid "No wallpaper"
+msgstr "Brez tapet"
+
+#: backgnd.cpp:359
+msgid "&Browse..."
+msgstr "Pre&brskaj..."
+
+#: backgnd.cpp:367
+msgid "Arrangement:"
+msgstr "Razvrstitev:"
+
+#: backgnd.cpp:374
+msgid "Tiled"
+msgstr "Tlakovano"
+
+#: backgnd.cpp:375
+msgid "Mirrored"
+msgstr "Prezrcaljeno"
+
+#: backgnd.cpp:376
+msgid "Center Tiled"
+msgstr "Centrirano tlakovano"
+
+#: backgnd.cpp:377
+msgid "Centred"
+msgstr "Centrirano"
+
+#: backgnd.cpp:378
+msgid "Centred Brick"
+msgstr "Sredi¹èna opeka"
+
+#: backgnd.cpp:379
+msgid "Centred Warp"
+msgstr "Centrirano zvit"
+
+#: backgnd.cpp:380
+msgid "Centred Maxpect"
+msgstr "Centriran maks. razteg v merilu"
+
+#: backgnd.cpp:381
+msgid "Symmetrical Tiled"
+msgstr "Simetrièno tlakovano"
+
+#: backgnd.cpp:382
+msgid "Symmetrical Mirrored"
+msgstr "Simetrièno prezrcaljeno"
+
+#: backgnd.cpp:383
+msgid "Scaled"
+msgstr "V merilu"
+
+#: backgnd.cpp:398
+msgid "Ra&ndom"
+msgstr "&Nakljuèno"
+
+#: backgnd.cpp:407
+msgid "Setu&p..."
+msgstr "Na&stavitve..."
+
+#: backgnd.cpp:417
+msgid "&Dock into the panel"
+msgstr "&Zasidraj v plo¹èo"
+
+#: backgnd.cpp:442
+msgid "Cache size (kB):"
+msgstr "Velikost predpomnilnika (kB)"
+
+#: backgnd.cpp:1339
+msgid "Desktop names"
+msgstr "Imena namizij"
+
+#: backgnd.cpp:1384
+msgid "File error"
+msgstr "Datoteèna napaka"
+
+#: backgnd.cpp:1385
+msgid "Can't load image file"
+msgstr "Ne morem nalo¾iti slike"
+
+#: backgnd.cpp:1408 backgnd.cpp:1880
+msgid "Unsupported URL"
+msgstr "Nepodprt URL"
+
+#: backgnd.cpp:1409 backgnd.cpp:1881
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+"Oprostite, ta tip URL je trenutno nepodprt v prikazovalnem modulu KDE"
+
+#: backgnd.cpp:1440
+msgid "Two color backgrounds"
+msgstr "Dvobarvno ozadje"
+
+#: backgnd.cpp:1477
+msgid "Blend colors from &top to bottom"
+msgstr "Prelij barve od &vrha proti dnu"
+
+#: backgnd.cpp:1483
+msgid "Blend colors from &right to left"
+msgstr "P&relij barve z desne proti levi"
+
+#: backgnd.cpp:1489
+msgid "Use &pattern"
+msgstr "Uporabi v&zorec"
+
+#: backgnd.cpp:1516
+msgid "Preview"
+msgstr "Predogled"
+
+#: backgnd.cpp:1527
+msgid "Pattern &name"
+msgstr "&Ime vzorca"
+
+#: backgnd.cpp:1566
+msgid "Current"
+msgstr "Trenuten"
+
+#: backgnd.cpp:1626
+msgid "Filled"
+msgstr "Napolnjen"
+
+#: backgnd.cpp:1629
+msgid "Fish net"
+msgstr "Ribja mre¾a"
+
+#: backgnd.cpp:1632
+msgid "Triangles"
+msgstr "Trikotniki"
+
+#: backgnd.cpp:1635
+msgid "Flowers"
+msgstr "Ro¾e"
+
+#: backgnd.cpp:1638
+msgid "Rattan"
+msgstr "Trstovec"
+
+#: backgnd.cpp:1641
+msgid "Cobbled Pavement"
+msgstr "Tlakovan ploènik"
+
+#: backgnd.cpp:1707
+msgid "Random mode setup"
+msgstr "Nastavitve nakljuènega naèina"
+
+#: backgnd.cpp:1713
+msgid "Pick files from &directory"
+msgstr "Izberi &datoteke iz imenika"
+
+#: backgnd.cpp:1727
+msgid "&Browse ..."
+msgstr "Pre&brskaj ..."
+
+#: backgnd.cpp:1748
+msgid "Timer Delay in seconds :"
+msgstr "Èasovni zamik v sekundah :"
+
+#: backgnd.cpp:1760
+msgid "In &order"
+msgstr "V red&u"
+
+#: backgnd.cpp:1777
+msgid "Desktops :"
+msgstr "Namizja :"
+
+#: backgnd.cpp:1816
+msgid "&Add"
+msgstr "Dod&aj"
+
+#: backgnd.cpp:1987
+msgid "Directory error"
+msgstr "Napaka v imeniku"
+
+#: backgnd.cpp:1988
+msgid "Selected directory doesn't exists"
+msgstr "Izbrani imenik ne obstaja"
+
+#: colorscm.cpp:104
+msgid "Color Scheme"
+msgstr "Barvna paleta"
+
+#: colorscm.cpp:115
+msgid "Current scheme"
+msgstr "Trenutna paleta"
+
+#: colorscm.cpp:117
+msgid "KDE default"
+msgstr "KDE privzet"
+
+#: colorscm.cpp:130
+msgid "&Add ..."
+msgstr "Dod&aj"
+
+#: colorscm.cpp:147
+msgid "&Save changes"
+msgstr "Po&snami spremembe"
+
+#: colorscm.cpp:161
+msgid "Widget color"
+msgstr "Barva orodja"
+
+#: colorscm.cpp:168
+msgid "Inactive title bar"
+msgstr "Neaktivna naslovna vrstica"
+
+#: colorscm.cpp:169
+msgid "Inactive title text"
+msgstr "Neaktivno naslovno besedilo"
+
+#: colorscm.cpp:170
+msgid "Inactive title blend"
+msgstr "Neaktivno naslovno zlitje"
+
+#: colorscm.cpp:171
+msgid "Active title bar"
+msgstr "Aktivna naslovna vrstica"
+
+#: colorscm.cpp:172
+msgid "Active title text"
+msgstr "Aktivno naslovno besedilo"
+
+#: colorscm.cpp:173
+msgid "Active title blend"
+msgstr "Aktivno naslovno zlitje"
+
+#: colorscm.cpp:174
+msgid "Background"
+msgstr "Ozadje"
+
+#: colorscm.cpp:175
+msgid "Text"
+msgstr "Besedilo"
+
+#: colorscm.cpp:176
+msgid "Select background"
+msgstr "Izberite ozadje"
+
+#: colorscm.cpp:177
+msgid "Select text"
+msgstr "Izberite besedilo"
+
+#: colorscm.cpp:178
+msgid "Window background"
+msgstr "Okensko ozadje"
+
+#: colorscm.cpp:179 widgetcanvas.cpp:175 widgetcanvas.cpp:176
+msgid "Window text"
+msgstr "Okensko besedilo"
+
+#: colorscm.cpp:207
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: colorscm.cpp:223
+msgid "&Low"
+msgstr "&Nizek"
+
+#: colorscm.cpp:231
+msgid "High"
+msgstr "Visok"
+
+#: colorscm.cpp:304
+msgid "Error removing"
+msgstr "Napaka pri odstranitvi"
+
+#: colorscm.cpp:305
+msgid ""
+"This color scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the color scheme is stored."
+msgstr ""
+"Tele barvne palete se ni dalo odstraniti.\n"
+"Mogoèe nimate potrebnih dovoljenj za spreminjanje datoteke,\n"
+"kjer je shranjena barvna paleta."
+
+#: colorscm.cpp:362
+msgid "Naming error"
+msgstr "Napaka pri poimenovanju"
+
+#: colorscm.cpp:363
+msgid ""
+"Please choose a unique name for the new color\n"
+"scheme. The one you entered already appears\n"
+"in the color scheme list."
+msgstr ""
+"Prosim izberite neobstojeèe ime za novo barvno\n"
+"paleto. To, ki ste ga vpisali, je ¾e na seznamu\n"
+"obstojeèih imen barvnih palet."
+
+#: savescm.cpp:18
+msgid "Add a color scheme"
+msgstr "Dodaj barvno paleto"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new color scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The colors currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Vpi¹i ime nove barvne palete, ki bo\n"
+"dodana va¹emu osebnemu seznamu.\n"
+"\n"
+"Barve, trenutno uporabljene v predogledu, bodo\n"
+"prekopirane v to paleto."
+
+#: scrnsave.cpp:47
+msgid "Ignore"
+msgstr "Zanemari"
+
+#: scrnsave.cpp:48
+msgid "Save Screen"
+msgstr "Shrani zaslon"
+
+#: scrnsave.cpp:49
+msgid "Lock Screen"
+msgstr "Zakleni zaslon"
+
+#: scrnsave.cpp:112 scrnsave.cpp:181
+msgid "Screen Saver"
+msgstr "Osve¾evalec zaslona"
+
+#: scrnsave.cpp:188 scrnsave.cpp:366 scrnsave.cpp:605 scrnsave.cpp:726
+msgid "No screensaver"
+msgstr "Brez osve¾evalca"
+
+#: scrnsave.cpp:209
+msgid "&Setup ..."
+msgstr "Na&stavitve ..."
+
+#: scrnsave.cpp:217
+msgid "&Test"
+msgstr "&Test"
+
+#: scrnsave.cpp:230
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: scrnsave.cpp:250
+msgid "&Wait for"
+msgstr "&Poèakaj na"
+
+#: scrnsave.cpp:260
+msgid "min."
+msgstr "min."
+
+#: scrnsave.cpp:266
+msgid "&Require password"
+msgstr "&Zahtevaj geslo"
+
+#: scrnsave.cpp:272
+msgid "&Accept root password to unlock"
+msgstr "&Sprejmi geslo uporabnika root za odklenitev"
+
+#: scrnsave.cpp:278
+msgid "Show &password as stars"
+msgstr "Poka¾i &geslo kot zvezde"
+
+#: scrnsave.cpp:286
+msgid "Priority"
+msgstr "Prednost"
+
+#: scrnsave.cpp:299
+msgid "&High"
+msgstr "&Visok"
+
+#: scrnsave.cpp:308
+msgid "Low"
+msgstr "Nizek"
+
+#: general.cpp:222
+msgid "Fonts etc."
+msgstr "Pisave itd."
+
+#: general.cpp:230
+msgid "&Draw widgets in the style of Windows 95"
+msgstr "&Izri¹i okvirje v slogu Windows 95"
+
+#: general.cpp:244
+msgid "&Apply style to non-KDE apps"
+msgstr "Upor&abi slogu pri ne-KDE aplikacijah"
+
+#: general.cpp:258
+msgid "&Menubar on top of the screen in the style of MacOS"
+msgstr "&Menu vrstica na vrhu zaslona v slogu MacOS"
+
+#: general.cpp:273
+msgid "Desktop fonts"
+msgstr "Pisava namizja"
+
+#: general.cpp:285
+msgid "General font"
+msgstr "Splo¹na pisava"
+
+#: general.cpp:290
+msgid "Fixed font"
+msgstr "Pisava fiksne ¹irine"
+
+#: general.cpp:296
+msgid "Window title font"
+msgstr "Pisava v imenu okna"
+
+#: general.cpp:301
+msgid "Panel button font"
+msgstr "Pisava na stikalu plo¹èe"
+
+#: general.cpp:306
+msgid "Panel clock font"
+msgstr "Pisava na uri v plo¹èi"
+
+#: general.cpp:336
+msgid "Sample text"
+msgstr "Primer besedila"
+
+#: general.cpp:344
+msgid ""
+"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n"
+"the quick brown fox jumps over the lazy dog\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+msgstr ""
+"PI©KUR MOLÈE GRABI FI®OL IZ DNA CEZIJEVE HOSTE\n"
+"pi¹kur molèe grabi fi¾ol iz dna cezijeve hoste\n"
+"0 1 2 3 4 5 6 7 8 9   ! \" £ $ % ^ & * ( )"
+
+#: main.cpp:63
+msgid "&Background"
+msgstr "&Ozadje"
+
+#: main.cpp:66
+msgid "&Screensaver"
+msgstr "O&sve¾evalec zaslona"
+
+#: main.cpp:70
+msgid "&Colors"
+msgstr "B&arve"
+
+#: main.cpp:73
+msgid "&Fonts etc."
+msgstr "P&isave itd."
+
+#: main.cpp:79
+msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr "Uporaba: kcmdisplay [-init | {background,screensave,colors,style}]\n"
+
+#: main.cpp:140
+msgid "Display settings"
+msgstr "Zaslonske nastavitve"
+
+#: widgetcanvas.cpp:104 widgetcanvas.cpp:105
+msgid "Inactive window"
+msgstr "Neaktivno okno"
+
+#: widgetcanvas.cpp:132 widgetcanvas.cpp:133
+msgid "Active window"
+msgstr "Aktivno okno"
+
+#: widgetcanvas.cpp:189 widgetcanvas.cpp:190
+msgid "Selected text"
+msgstr "Izbrano besedilo"
+
+#: widgetcanvas.cpp:212
+msgid "New"
+msgstr "Novo"
+
+#: fontchooser.cpp:82
+msgid "&Typeface"
+msgstr "&Oblika pisave"
+
+#: fontchooser.cpp:89
+msgid "&Bold"
+msgstr "&Krepko"
+
+#: fontchooser.cpp:96
+msgid "&Italic"
+msgstr "L&e¾eèe"
+
+#: fontchooser.cpp:125
+msgid "&Size"
+msgstr "&Velikost"
+
+#: fontchooser.cpp:147
+msgid "&Character set"
+msgstr "&Znakovni nabor"
+
+#: fontchooser.cpp:262
+msgid "default"
+msgstr "privzet"
+
+#: fontchooser.cpp:265
+msgid "any"
+msgstr "katerikoli"

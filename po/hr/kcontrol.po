@@ -36,16 +36,15 @@ msgid ""
 msgstr ""
 "KDE Control Center - inaèica 1.0\n"
 "\n"
-"Napisana od strane Matthias Hölzer\n"
+"Napisan od strane Matthias Hölzer-a\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"
 "\n"
 "Zahvale:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Inaèica: "
+msgstr "KDE Inaèica: "
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -70,6 +69,3 @@ msgstr "Inaèica: "
 #: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Stroj: "
-
-#~ msgid "System:"
-#~ msgstr "Sistem:"

@@ -1,228 +1,470 @@
-# Copyright (C) YEAR Free Software Foundation, Inc.
-#  Vladimir Vuksan <vuksan@veus.hr>, 1998.
+# KCMINFO translation to Slovene language.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# luka steger <luka_steger@hotmail.com>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
-"PO-Revision-Date: 1998-03-15 20:00-0500\n"
-"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian <hr@li.org>\n"
+"Project-Id-Version: kcminfo\n"
+"POT-Creation-Date: 1999-07-05 01:31+0200\n"
+"PO-Revision-Date: 1998-01-23 13:46+0100\n"
+"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: info.cpp:50
-#, c-format
-msgid "screen #%d"
-msgstr "zaslon #%"
-
-#: info.cpp:52
-#, c-format
-msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr "  velièina            : %dx%d piksela (%dx%d mm)\n"
-
-#: info.cpp:56
-#, c-format
-msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rezolucija\t      : %dx%d toèaka po inèu\n"
-
-#: info.cpp:61
-#, c-format
-msgid "  depths (%d)          : "
-msgstr "  dubine (%d)          :"
-
-#: info.cpp:85
-#, c-format
-msgid "name of display       : %s"
-msgstr "ime prikaza\t      : %s"
-
-#: info.cpp:87
-#, c-format
-msgid "version number        : %i.%i"
-msgstr "inaèica               : %i.%i"
-
 #: info.cpp:89
 #, c-format
-msgid "vendor string         : %s"
-msgstr "proizvoðaèev niz      : %s"
+msgid "Screen # %1"
+msgstr "zaslon # %1"
 
 #: info.cpp:91
-#, c-format
-msgid "vendor release number : %i"
-msgstr "proizvoðaèevo izdanje : %i"
+msgid "Dimensions"
+msgstr "Mere"
 
-#: info.cpp:93
-#, c-format
-msgid "default screen number : %i"
-msgstr "uobièajeni broj zaslona: %i"
+#: info.cpp:92
+msgid "%1 x %2 Pixel (%3 x %4 mm)"
+msgstr "%1 x %2 toèk (%3 x %4 mm)"
 
-#: info.cpp:95
-#, c-format
-msgid "number of screens     : %i"
-msgstr "broj zaslona          : %i"
+#: info.cpp:99
+msgid "Resolution"
+msgstr "Loèljivost"
 
-#: info.cpp:181
-msgid ""
-"No Information available\n"
-" or\n"
-"this system is not yet supported :-("
-msgstr ""
-"Nema dostupnih informacija\n"
-" ili\n"
-"ovaj sistem za sada nije podr¾an :-("
+#: info.cpp:100
+msgid "%1 x %2 Dots per Inch (dpi)"
+msgstr "%1 x %2 toèk na palec (dpi)"
 
-#: info_fbsd.cpp:73
-#, c-format
-msgid "%s, unknown speed"
-msgstr "%s, nepoznata brzina"
+#: info.cpp:107
+msgid "Depths"
+msgstr "Globine"
 
-#: info_fbsd.cpp:75
-#, c-format
-msgid "%s running at %s MHz"
-msgstr "%s radi na %s MHz"
-
-#: info_fbsd.cpp:213
-msgid "Ahh couldn't open fstab!"
-msgstr "Ahh ne mogu otvoriti fstab!"
-
-#: info_fbsd.cpp:220 info_fbsd.cpp:221
-msgid "Device"
-msgstr "Ureðaj"
-
-#: info_fbsd.cpp:223 info_fbsd.cpp:224
-msgid "Mount Point"
-msgstr "Mjesto montiranja"
-
-#: info_fbsd.cpp:226 info_fbsd.cpp:227
-msgid "FS Type"
-msgstr "Vrsta DS(FS)"
-
-#: info_fbsd.cpp:229 info_fbsd.cpp:230
-msgid "Mount Options"
-msgstr "Opcije za montiranje"
-
-#: info_hpux.cpp:54
-msgid "unknown CPU type"
-msgstr "Nepoznata vrsta CPUa"
-
-#: info_hpux.cpp:62
-msgid "unavailable"
-msgstr "nije dostupno"
-
-#: info_hpux.cpp:67
-msgid "Number of active processor(s)= "
-msgstr "Broj aktivnih procesora= "
-
-#: info_linux.cpp:99
+#: info.cpp:139 info_hpux.cpp:375 info_hpux.cpp:737 info_linux.cpp:106
 msgid "Value"
-msgstr "Vrijednost"
+msgstr "Vrednost"
 
-#: info_linux.cpp:114
+#: info.cpp:143
+msgid "Name of the Display"
+msgstr "Ime zaslona"
+
+#: info.cpp:147
+msgid "Version Number"
+msgstr "Verzija"
+
+#: info.cpp:152
+msgid "Vendor String"
+msgstr "Proizvajalec"
+
+#: info.cpp:156
+msgid "Vendor Release Number"
+msgstr "©tevilka izdaje proizvajalca"
+
+#: info.cpp:160
+msgid "Default Screen Number"
+msgstr "Privzeta ¹tevilka zaslona"
+
+#: info.cpp:164
+msgid "Number of Screens"
+msgstr "©tevilo zaslonov"
+
+#: info_fbsd.cpp:66
+msgid "%1, unknown speed"
+msgstr "%1, neznana hitrost"
+
+#: info_fbsd.cpp:68
+msgid "%1 running at %2 MHz"
+msgstr "%1 teèe pri %2 MHz"
+
+#: info_fbsd.cpp:214 info_fbsd.cpp:215 info_hpux.cpp:628 info_linux.cpp:210
+msgid "Device"
+msgstr "Naprava"
+
+#: info_fbsd.cpp:217 info_fbsd.cpp:218 info_hpux.cpp:629 info_linux.cpp:211
+msgid "Mount Point"
+msgstr "Priklopna toèka"
+
+#: info_fbsd.cpp:220 info_fbsd.cpp:221 info_hpux.cpp:630 info_linux.cpp:212
+msgid "FS Type"
+msgstr "tip datoteènega sistema"
+
+#: info_fbsd.cpp:223 info_fbsd.cpp:224 info_linux.cpp:215
+msgid "Mount Options"
+msgstr "Priklopne opcije"
+
+#: info_hpux.cpp:328
+msgid "PA-RISC Processor"
+msgstr "Procesor PA-RISC"
+
+#: info_hpux.cpp:331
+msgid "PA-RISC Revision"
+msgstr "Razlièica PA-RISC"
+
+#: info_hpux.cpp:367
+msgid "Could not get Information !"
+msgstr "Informacije o sistemu niso na voljo."
+
+#: info_hpux.cpp:379
+msgid "Machine"
+msgstr "Stroj"
+
+#: info_hpux.cpp:389
+msgid "Model"
+msgstr "Model"
+
+#: info_hpux.cpp:397
+msgid "Machine Identification Number"
+msgstr "Strojna identifikacijska ¹tevilka"
+
+#: info_hpux.cpp:399
+msgid "(none)"
+msgstr "(neznano)"
+
+#: info_hpux.cpp:403
+msgid "Number of active Processors"
+msgstr "©tevilo aktivnih procesorjev"
+
+#: info_hpux.cpp:409
+msgid "CPU Clock"
+msgstr "Takt procesorja"
+
+#: info_hpux.cpp:411
+msgid "MHz"
+msgstr "MHz"
+
+#: info_hpux.cpp:431
+msgid "(unknown)"
+msgstr "(neznano)"
+
+#: info_hpux.cpp:433
+msgid "CPU Architecture"
+msgstr "Arhitektura procesorja"
+
+#: info_hpux.cpp:440
+msgid "Numerical Coprocessor (FPU)"
+msgstr "Numerièni koprocesor (FPU)"
+
+#: info_hpux.cpp:446
+msgid "enabled"
+msgstr "omogoèen"
+
+#: info_hpux.cpp:446
+msgid "disabled"
+msgstr "onemogoèen"
+
+#: info_hpux.cpp:453
+msgid "Total Physical Memory"
+msgstr "Celotni fizièni pomnilnik"
+
+#: info_hpux.cpp:457 info_hpux.cpp:622 info_linux.cpp:187
+msgid "MB"
+msgstr "MB"
+
+#: info_hpux.cpp:460
+msgid "Size of one Page"
+msgstr "Velikost strani"
+
+#: info_hpux.cpp:461
+msgid "Bytes"
+msgstr "bajtov"
+
+#: info_hpux.cpp:631 info_linux.cpp:213
+msgid "Total Size"
+msgstr "Skupno"
+
+#: info_hpux.cpp:632 info_linux.cpp:214
+msgid "Free Size"
+msgstr "Prosto"
+
+#: info_hpux.cpp:666
+msgid "n/a"
+msgstr "n/a"
+
+#: info_hpux.cpp:695
+msgid ""
+"Sorry, Audio-Support (Alib) was disabled during configuration and "
+"compile-time !"
+msgstr "Podpora za zvok (Alib) ¾al pri nastavitvi in med prevajanjem ni bila vklopljena."
+
+#: info_hpux.cpp:729
+msgid "Unable to open Audio-Server (Alib) !"
+msgstr "Stre¾nika za zvok (Alib) ni mo¾no odpreti!"
+
+#: info_hpux.cpp:740
+msgid "Audio Name"
+msgstr "Zvok"
+
+#: info_hpux.cpp:743
+msgid "Vendor"
+msgstr "Proizvajalec"
+
+#: info_hpux.cpp:746
+msgid "Alib Version"
+msgstr "Razlièica Alib"
+
+#: info_hpux.cpp:750
+msgid "Protocol Revision"
+msgstr "Razlièica protokola"
+
+#: info_hpux.cpp:757
+msgid "Vendor Number"
+msgstr "©tevilka proizvalajca"
+
+#: info_hpux.cpp:760
+msgid "Release"
+msgstr "Izdaja"
+
+#: info_hpux.cpp:764
+msgid "Byte Order"
+msgstr "Vrstni red bajtov"
+
+#: info_hpux.cpp:766
+msgid "ALSBFirst (LSB)"
+msgstr "ALSBFirst (LSB)"
+
+#: info_hpux.cpp:767
+msgid "AMSBFirst (MSB)"
+msgstr "AMSBFirst (MSB)"
+
+#: info_hpux.cpp:768
+msgid "Invalid Byteorder !"
+msgstr "Neveljaven vrstni red bajtov!"
+
+#: info_hpux.cpp:771
+msgid "Bit Order"
+msgstr "Vrstni red bitov"
+
+#: info_hpux.cpp:774
+msgid "ALeastSignificant (LSB)"
+msgstr "ALeastSignificant (LSB)"
+
+#: info_hpux.cpp:776
+msgid "AMostSignificant (MSB)"
+msgstr "AMostSignificant (MSB)"
+
+#: info_hpux.cpp:776
+msgid "Invalid Bitorder !"
+msgstr "Neveljaven vrstni red bitov!"
+
+#: info_hpux.cpp:780
+msgid "Data Formats"
+msgstr "Formati podatkov"
+
+#: info_hpux.cpp:789
+msgid "Sampling Rates"
+msgstr "Hitrost zajema"
+
+#: info_hpux.cpp:796
+msgid "Input Sources"
+msgstr "Vhodni viri"
+
+#: info_hpux.cpp:799
+msgid "Mono-Microphone"
+msgstr "Mono mikrofon"
+
+#: info_hpux.cpp:801
+msgid "Mono-Auxiliary"
+msgstr "Mono pomo¾ni"
+
+#: info_hpux.cpp:803
+msgid "Left-Microphone"
+msgstr "Mikrofon, levi kanal"
+
+#: info_hpux.cpp:805
+msgid "Right-Microphone"
+msgstr "Mikrofon, desni kanal"
+
+#: info_hpux.cpp:807
+msgid "Left-Auxiliary"
+msgstr "Pomo¾ni, levi kanal"
+
+#: info_hpux.cpp:809
+msgid "Right-Auxiliary"
+msgstr "Pomo¾ni, desni kanal"
+
+#: info_hpux.cpp:812
+msgid "Input Channels"
+msgstr "Vhodni kanali"
+
+#: info_hpux.cpp:815 info_hpux.cpp:841
+msgid "Mono-Channel"
+msgstr "Mono kanal"
+
+#: info_hpux.cpp:817 info_hpux.cpp:843
+msgid "Left-Channel"
+msgstr "Levi kanal"
+
+#: info_hpux.cpp:819 info_hpux.cpp:845
+msgid "Right-Channel"
+msgstr "Desni kanal"
+
+#: info_hpux.cpp:822
+msgid "Output Destinations"
+msgstr "Izhod"
+
+#: info_hpux.cpp:825
+msgid "Mono-InternalSpeaker"
+msgstr "Mono notranji zvoènik"
+
+#: info_hpux.cpp:827
+msgid "Mono-Jack"
+msgstr "Mono konektor"
+
+#: info_hpux.cpp:829
+msgid "Left-InternalSpeaker"
+msgstr "Notranji zvoènik, levi"
+
+#: info_hpux.cpp:831
+msgid "Right-InternalSpeaker"
+msgstr "Notranji zvoènik, desni"
+
+#: info_hpux.cpp:833
+msgid "Left-Jack"
+msgstr "Konektor, levi"
+
+#: info_hpux.cpp:835
+msgid "Right-Jack"
+msgstr "Konektor, desni"
+
+#: info_hpux.cpp:838
+msgid "Output Channels"
+msgstr "Izhodni kanali"
+
+#: info_hpux.cpp:849
+msgid "Input Gain Limits"
+msgstr "Omejitve ojaèenja na vhodu"
+
+#: info_hpux.cpp:852
+msgid "Output Gain Limits"
+msgstr "Omejitve ojaèenja na izhodu"
+
+#: info_hpux.cpp:855
+msgid "Monitor Gain Limits"
+msgstr "Omejitve ojaèenja monitorja"
+
+#: info_hpux.cpp:858
+msgid "Gain Restricted"
+msgstr "Omejeno ojaèenje"
+
+#: info_hpux.cpp:862
+msgid "Lock"
+msgstr "Zaklenjeno"
+
+#: info_hpux.cpp:864
+msgid "Queue Length"
+msgstr "Dol¾ina vrste"
+
+#: info_hpux.cpp:866
+msgid "Block Size"
+msgstr "Velikost bloka"
+
+#: info_hpux.cpp:868
+msgid "Stream Port (decimal)"
+msgstr "Vrata (deseti¹ko)"
+
+#: info_hpux.cpp:870
+msgid "Ev Buffer Size"
+msgstr "Velikost medpomnilnika Ev"
+
+#: info_hpux.cpp:872
+msgid "Ext Number"
+msgstr "©tevilo Ext"
+
+#: info_linux.cpp:119
 msgid "DMA-Channel"
 msgstr "DMA-kanal"
 
-#: info_linux.cpp:115 info_linux.cpp:128
+#: info_linux.cpp:120 info_linux.cpp:133
 msgid "used by"
-msgstr "kori¹ten od "
+msgstr "uporablja"
 
-#: info_linux.cpp:127
+#: info_linux.cpp:132
 msgid "I/O-Range"
-msgstr "I/O-Raspon"
+msgstr "V/I-Doseg"
 
-#: main.cpp:79
+#: main.cpp:84
 msgid "&Memory"
-msgstr "&Memorija"
+msgstr "Spo&min"
 
-#: main.cpp:82
+#: main.cpp:87
 msgid "&Processor"
 msgstr "&Procesor"
 
-#: main.cpp:85
+#: main.cpp:90
 msgid "&Interrupts"
-msgstr "&Interupti"
+msgstr "&Prekinitve"
 
-#: main.cpp:88
+#: main.cpp:93
 msgid "DMA-C&hannels"
-msgstr "DMA-ka&nali"
+msgstr "DMA-&kanali"
 
-#: main.cpp:91
-msgid "&IO-Ports"
-msgstr "&IO-Portovi"
+#: main.cpp:96
+msgid "IO-Por&ts"
+msgstr "V/&I-Vrata"
 
-#: main.cpp:94
+#: main.cpp:99
 msgid "PCI-&Bus"
-msgstr "PCI-&sabirnica"
+msgstr "PCI-&Vodilo"
 
-#: main.cpp:97
+#: main.cpp:102
 msgid "S&ound"
-msgstr "&Zvuk"
+msgstr "Zv&ok"
 
-#: main.cpp:100
+#: main.cpp:105
 msgid "&Devices"
-msgstr "&Ureðaji"
+msgstr "&Naprave"
 
-#: main.cpp:103
+#: main.cpp:108
 msgid "S&CSI"
 msgstr "S&CSI"
 
-#: main.cpp:106
+#: main.cpp:111
 msgid "P&artitions"
 msgstr "P&articije"
 
-#: main.cpp:109
+#: main.cpp:114
 msgid "&X-Server"
-msgstr "&X-poslu¾itelj"
+msgstr "&X-Stre¾nik"
 
-#: main.cpp:120
+#: main.cpp:125
 msgid ""
 "usage: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
 msgstr ""
-"uporaba: kcminfo [-init | "
-"{memorija,procesor,interupti,dma,ioportovi,pci,zvuk,ureðaji,scsi,particije,xp"
-"oslu¾itelj}]\n"
+"Uporaba: kcminfo [-init | {spomin, "
+"procesor,prekinitve,dma,vivrata,pci,zvok,naprave,scsi,particije,xstre¾nik}]\n"
 
-#: main.cpp:148
+#: main.cpp:153
 msgid "System Information"
-msgstr "Informacije o sustavu"
+msgstr "Informacije o sistemu"
 
-#: memory.cpp:15
-msgid "Total memory"
-msgstr "Ukupna memorija"
+#: memory.cpp:48
+msgid "%1 bytes = %2 MB"
+msgstr "%1 bajtov = %2 MB"
 
-#: memory.cpp:25
-msgid "Free memory"
-msgstr "Slobodna memorija"
+#: memory.cpp:66
+msgid "Total physical memory"
+msgstr "Celotni fizièni pomnilnik"
 
-#: memory.cpp:33
+#: memory.cpp:67
+msgid "Free physical memory"
+msgstr "Prosti fizièni pomnilnik"
+
+#: memory.cpp:68
 msgid "Shared memory"
-msgstr "Zajednièka memorija"
+msgstr "Skupni spomin"
 
-#: memory.cpp:41
+#: memory.cpp:69
 msgid "Buffer memory"
-msgstr "Meðumemorija (buffer)"
+msgstr "Vmesni pomnilnik"
 
-#: memory.cpp:49
-msgid "Swap memory"
-msgstr "Zamjenska memorija (swap)"
+#: memory.cpp:70
+msgid "Total swap memory"
+msgstr "Skupno izmenjevalno podroèje"
 
-#: memory.cpp:57
+#: memory.cpp:71
 msgid "Free swap memory"
-msgstr "Slobodna zamjenska memorija"
+msgstr "Prosto izmenjevalno podroèje"
 
-#: memory.cpp:78
-#, c-format
-msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld bajtova  = %8.2f MB"
-
-#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
-#: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
-msgid "Not available"
-msgstr "Nije dostupno"
-
-#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
-#: memory_sgi.cpp:30
-msgid "Not Available"
-msgstr "Nije dostupno"
+#: memory.cpp:93
+msgid "No information available."
+msgstr "Informacija ni na voljo."
