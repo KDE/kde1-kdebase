@@ -242,7 +242,8 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 	label_date->hide();
       }
     }
-    label_date->setText("KDE 88");
+
+    set_label_date();
     label_date->adjustSize();
 
     dock_area = new QFrame(this);
