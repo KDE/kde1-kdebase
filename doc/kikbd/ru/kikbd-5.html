@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>ïÐÉÓÁÎÉÅ ÎÁÃÉÏÎÁÌØÎÏÊ ËÌÁ×ÉÁÔÕÒÙ: Creating new National Keyboard</TITLE>
+<TITLE>ïÐÉÓÁÎÉÅ ÎÁÃÉÏÎÁÌØÎÏÊ ËÌÁ×ÉÁÔÕÒÙ: óÏÚÄÁÎÉÅ ÎÏ×ÏÊ ÒÁÓËÌÁÄËÉ</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE multilanguage X11">
 <META NAME="description" CONTENT="KDE International Keyboard">
@@ -18,65 +18,67 @@
 <A HREF="kikbd-4.html">Previous</A>
 <A HREF="kikbd.html#toc5">Table of Contents</A>
 </P>
-<H3><A NAME="create"></A> <A NAME="s5">5. Creating new National Keyboard</A></H3>
+<H3><A NAME="create"></A> <A NAME="s5">5. óÏÚÄÁÎÉÅ ÎÏ×ÏÊ ÒÁÓËÌÁÄËÉ</A></H3>
 
 <P>
-<P>All system keyboard files stores in <I>$KDEDIR/share/apps/kikbd</I>
-and personal
-in <I>$HOME/.kde/share/apps/kikbd</I>.
-Keyboard identified by it file name without
-<I>.kimap</I> extension. File in personal directory hide system one
-with same file name (not label).
-<P>To creating new keyboard you should get one of the existing <I>.kimap</I>
-file as an template. Keyboard file has two major sections.
+<P>÷ÓÅ ÓÉÓÔÅÍÎÙÅ ÒÁÓËÌÁÄËÉ ÎÁÈÏÄÑÔÓÑ × ÄÉÒÅËÔÏÒÉÉ
+<I>$KDEDIR/share/apps/kikbd</I>
+É ÐÅÒÓÏÎÁÌØÎÙÅ ×
+<I>$HOME/.kde/share/apps/kikbd</I>.
+éÎÄÉ×ÉÄÕÁÌØÎÏÓÔØ ÒÁÓËÌÁÄËÉ ÏÐÒÅÄÅÌÑÅÔÓÑ ÉÍÅÎÅÍ ÆÁÊÌÁ ÂÅÚ ÒÁÓÛÉÒÅÎÉÑ
+<I>.kimap</I>. æÁÊÌ × ÐÅÒÓÏÎÁÌØÎÏÊ ÄÉÒÅËÔÏÒÉÉ ÓËÒÙ×ÁÅÔ ÆÁÊÌ Ó
+ÔÁËÉÍ ÖÅ ÉÍÅÎÅÍ × ÓÉÓÔÅÍÎÏÊ ÄÉÒÅËÔÏÒÉÉ.
+<P>äÌÑ ÓÏÚÄÁÎÉÑ ÎÏ×ÏÊ ÒÁÓËÌÁÄËÉ ÓÔÏÉÔ ×ÚÑÔØ ÚÁ ÏÓÎÏ×Õ ÏÄÎÕ ÉÚ ÓÕÝÅÓÔ×ÕÀÝÉÈ
+ÒÁÓËÌÁÄÏË. æÁÊÌ ÒÁÓËÌÁÄËÉ ÓÏÄÅÒÖÉÔ Ä×Á ÒÁÚÄÅÌÁ:
 <P>
 <OL>
 <LI><B>International Keyboard</B><BR>
-In this section the following items can be defined:
+÷ ÜÔÏÊ ÓÅËÃÉÉ ÍÏÖÎÏ ÏÐÒÅÄÅÌÉÔØ ÓÌÅÄÕÀÝÅÅ:
 <UL>
-<LI>Authors - list of authors 
-in the format "name last_name &lt; email address&gt;"
-separated by comma;</LI>
-<LI>Comment** - comment for this keyboard;</LI>
-<LI>Language** - language this keyboard for;</LI>
-<LI>Charset - charset this keyboard for;</LI>
-<LI>Locale - locale this keyboard for;</LI>
-<LI>Label* - label used by KiKbd to identify this keyboard.</LI>
+<LI>Authors - ÓÐÉÓÏË Á×ÔÏÒÏ×
+× ÆÏÒÍÁÔÅ "ÉÍÑ ÆÁÍÉÌÉÑ &lt; email ÁÄÒÅÓ&gt;",
+Á×ÔÏÒÙ × ÓÐÉÓËÅ ÒÁÚÄÅÌÑÀÔÓÑ ÚÁÐÑÔÙÍÉ;</LI>
+<LI>Comment** - ÄÏÐÏÌÎÉÔÅÌØÎÙÊ ËÏÍÍÅÎÔÁÒÉÊ;</LI>
+<LI>Language** - ÑÚÙË ÄÌÑ ËÏÔÏÒÏÇÏ ÐÒÅÄÎÁÚÎÁÞÅÎÁ ÜÔÁ ÒÁÓËÌÁÄËÁ;</LI>
+<LI>Charset - charset;</LI>
+<LI>Locale - ÌÏËÁÌÉÚÁÃÉÑ ÄÌÑ ËÏÔÏÒÏÊ ÐÒÅÄÎÁÚÎÁÞÅÎÁ ÜÔÁ ÒÁÓËÌÁÄËÁ;</LI>
+<LI>Label* - ÍÅÔËÁ ÜÔÏÊ ÒÁÓËÌÁÄËÉ.</LI>
 </UL>
 
-* - required<BR>
-** - can be translated to other languages
+* - ÎÅÏÂÈÏÄÉÍÏ<BR>
+** - ÍÏÖÅÔ ÂÙÔØ ÐÒÅÄÓÔÁ×ÌÅÎÏ × ÐÅÒÅ×ÏÄÅ ÎÁ ÄÒÕÇÉÅ ÑÚÙËÉ
 <P>
 </LI>
 <LI><B>KeyboardMap</B><BR>
-This section contains mapping from default symbols to two, three or four
-new symbols in the form:
+üÔÁ ÓÅËÃÉÑ ÏÐÉÓÙ×ÁÅÔ ÓÏÏÔ×ÅÔÓÔ×ÉÅ ÍÅÖÄÕ ÏÓÎÏ×ÎÙÍÉ ÓÉÍ×ÏÌÁÍÉ ËÌÁ×ÉÁÔÕÒÙ É
+Ä×ÕÍÑ, ÔÒÅÍÑ ÉÌÉ ÞÅÔÙÒØÍÑ ÎÏ×ÙÍÉ ÓÉÍ×ÏÌÁÍÉ ÐÏ ÆÏÒÍÅ:
 <PRE>
     keysym&lt;num> = &lt;default sym>,&lt;sym1>,&lt;sym2>,&lt;sym3>,&lt;sym4>,
   
 </PRE>
 
-and mapping from key codes to symbols:
+É ÓÏÏÔ×ÅÔÓ×ÉÅ ËÏÄÏ× ÓÉÍ×ÏÌÁÍ:
 <PRE>
     keycode&lt;num> = &lt;key code>,&lt;sym1>,&lt;sym2>,&lt;sym3>,&lt;sym4>,
   
 </PRE>
 
 
-Where <I>num</I> means any unique number, <I>sym</I> means symbol
-in the form of hex decimal number or form interpreted by X,
-<I>key code</I> means decimal code, <I>default sym</I> means
-default symbol for this key (before starting KiKbd).
-First two symbols <I>sym1, sym2</I> defines <I>national</I> symbols
-and <I>sym3, sym4</I> defines <I>alternate</I> symbols.
-It is preferred to use only <I>keysym</I> definitions. 
-<P>As addition you
-can specify <I>CapsSymbols</I> in this section as a list of Latin
-symbols separated by comma which KiKbd use for CapsLock emulation.
+çÄÅ <I>num</I> ÏÚÎÁÞÁÅÔ ÌÀÂÏÅ ÕÎÉËÁÌØÎÏÅ ÞÉÓÌÏ, <I>sym</I> ÏÚÎÁÞÁÅÔ
+ÓÉÍ×ÏÌ × ÆÏÒÍÅ ÛÅÓÔÎÁÄÃÁÔÉÒÉÞÎÏÇÏ ÞÉÓÌÁ ÉÌÉ ÆÏÒÍÅ ËÏÔÏÒÕÀ ÐÏÎÉÍÁÅÔ X,
+<I>key code</I> ÏÚÎÁÞÁÅÔ ÄÅÓÑÔÉÞÎÏÅ ÞÉÓÌÏ, <I>default sym</I>
+ÏÚÎÁÞÁÅÔ ÏÓÎÏ×ÎÏÊ ÓÉÍ×ÏÌ ÉÌÉ ÓÉÍ×ÏÌ ÄÏ ÚÁÐÕÓËÁ KiKbd.
+óÉÍ×ÏÌÁ <I>sym1, sym2</I> ÏÐÒÅÄÅÌÑÀÔ <I>ÎÁÃÉÏÎÁÌØÎÙÅ</I> 
+ÓÉÍ×ÏÌÙ
+É <I>sym3, sym4</I> ÏÐÒÅÄÅÌÑÀÔ <I>ÁÌØÔÅÒÎÁÔÉ×ÎÙÅ</I> ÓÉÍ×ÏÌÙ.
+ðÒÉ ÏÐÉÓÁÎÉÉ ÒÁÓËÌÁÄËÉ ÐÒÅÄÐÏÞÔÉÔÅÌØÎÏ ÉÓÐÏÌØÚÏ×ÁÔØ ÏÐÉÓÁÎÉÅ 
+<I>keysym</I>. 
+<P>÷ ÄÏÐÏÌÎÅÎÉÅ × ÜÔÏÊ ÓÅËÃÉÉ ÍÏÖÎÏ ÏÐÉÓÁÔØ <I>CapsSymbols</I>
+ËÁË ÓÐÉÓÏË ÓÉÍ×ÏÌÏ× ÒÁÚÄÅÌÅÎÎÙÈ ÚÁÐÑÔÏÊ ÉÓÐÏÌØÚÕÅÍÙÈ ÐÒÉ ÜÍÕÌÑÃÉÉ Caps Lock.
 </LI>
 </OL>
-<P>Then you create and test new keyboard map you can submit it to KDE
-developers team or directly to author.
+<P>ðÏÓÌÅ ÓÏÚÄÁÎÉÑ É ÔÅÓÔÉÒÏ×ÁÎÉÑ ÎÏ×ÏÊ ÒÁÓËÌÁÄËÉ ÍÏÖÎÏ ÏÔÐÒÁ×ÉÔØ ÅÅ
+ËÏÍÁÎÄÅ ÒÁÚÒÁÂÏÔÞÉËÏ× KDE ÉÌÉ ÎÁÐÒÑÍÕÀ Á×ÔÏÒÕ.
 <P>
 <P ALIGN="RIGHT">
 

@@ -10,7 +10,7 @@
 <title>Описание национальной клавиатуры
 <author>Александр Будник, <tt/budnik@linserv.jinr.ru/
 <date>v1.0b1, Oct 23 1998
-<abstract>Данное описание соответсвует версии 1.0b1
+<abstract>Данное описание соответствует версии 1.0b1
 
 <!-- Table of contents -->
 <toc>
@@ -21,11 +21,11 @@
 
   KiKbd предназначено для национализации клавиатуры в среде KDE/Xwindow.
 
-  KiKbd не использует XKB, она использует динамически меняемый xmodmap.
+  KiKbd не использует XKB, она использует динамически сменяемый xmodmap.
   Это значит что в одно и тоже время можно иметь под рукой множество разных
   раскладок.
 
-  В доплнение KiKbd может делать полезную работу - например назначать
+  В дополнение KiKbd может делать полезную работу - например назначать
   для каждого окошка или приложения свою раскладку
   (используя стиль ввода <it>Окно</it> или <it>Класс</it>).
 
@@ -48,251 +48,269 @@
 
 <sect>Национальная клавиатура<p>
 
-  Для каждой национальной клавиатуры KiKbd запоминает соответсвие
-  клавишы клавиатуры двум, трем или четырем сумволам.
-  Например в русском клавише 'Q' соответсвует символы 'й', 'Й', 'q', 'Q'.
-  Первые два символа называются национальными, последнии два - алтернативными.
-  Для набора алтернативных символов в конфигурации надо назначить
-  специальный <it>Алтернативный переключатель</it>. Смотрите
+  Для каждой национальной клавиатуры KiKbd запоминает соответствие
+  клавиши клавиатуры двум, трем или четырем символам.
+  Например в русском клавише 'Q' соответствует символы 'й', 'Й', 'q', 'Q'.
+  Первые два символа называются национальными, последние два - альтернативными.
+  Для набора альтернативных символов в конфигурации надо назначить
+  специальный <it>Альтернативный переключатель</it>. Смотрите
   <ref id="config" name="Персональная конфигурация">.
 
   Первый символ 'й' вы получите при обычном нажатии, второй 'Й' при нажатом
-  Shift, третий 'q' при нажатом  <it>Алтернативном переключателе</it> и
-  четвертый 'Q' при нажатых Shift и <it>Алтернативном переключателе</it>.
+  Shift, третий 'q' при нажатом  <it>Альтернативном переключателе</it> и
+  четвертый 'Q' при нажатых Shift и <it>Альтернативном переключателе</it>.
 
   Во время написания этого документа в дистрибутиве KiKbd уже находилось
   более двадцати готовых клавиатур.
   
-  Если нужная вам клавиатура отсутвует, смотрите 
+  Если нужная вам клавиатура отсутствует, смотрите 
   <ref id="create" name="Создание новой клавиатуры">.
 
 <sect>Персональная конфигурация<label id="config"><p>
 
-  Personal configuration include all you runtime settings for KiKbd. You 
-  should use kcmikbd program to create and modify you personal configuration. 
-  Then you start KiKbd or kcmikbd for the first time it will copy system 
-  default configuration to you personal.
+  Персональная конфигурация включает все необходимые установки KiKbd.
+  Для изменения конфигурации необходимо пользоваться программой kcmikbd.
+  Когда вы запускаете KiKbd в первый раз, вы получите копию системной
+  конфигурации.
 
-  <sect1>General settings<p>
+  <sect1>Главное<p>
 
   <p><img SRC=general.gif>
 
-  <sect2>Keyboards<p>
+  <sect2>Раскладки<p>
 
-    Using <it>Add</it> and <it>Delete</it> buttons you can create you favorite
-    list of national keyboards. The top keyboard (En as on the picture) 
-    become default keyboard when you start KiKbd.
+    Используя кнопки <it>Добавить</it> и <it>Удалить</it> вы можете
+    создать список необходимых вам раскладок. Верхняя раскладка в
+    списке станет основной при старте KiKbd.
 
-    If you use more then two keyboards it is very help-fool to check
-    <it>Use hotlist</it> box. In this case you can switch between
-    <it>hot</it> keyboard and default keyboard using Switch keys 
-    and you can change <it>hot</it> keyboard from KiKbd pop up menu.
-
-  </sect2>
-  <sect2>Switch and Alt Switch<p>
-
-    For switching between keyboards you can use this two key combination
-    (by holding Right Control and Right Shift at the same time as on the 
-    picture). You can type alternate symbols from current national keyboard 
-    if any by holding them with this Alt Switch (Right Alt as on the picture).
+    Если вы используете более двух раскладок (например английскую,
+    русскую КОИ8 и русскую 1251), очень удобно включить
+    <it>Использование горячего списка</it>.
+    В этом случае с клавиатуры будут переключаться только две раскладки -
+    основная и дополнительная активная. Поменять дополнительную активную
+    можно из меню KiKbd. Если же еще включить стиль ввода <it>Окно</it>
+    или <it>Класс</it> то вы с успехом можете набирать КОИ8 в одном
+    окне и 1251 в другом.
 
   </sect2>
-  <sect2>Beep<p>
+  <sect2>Переключатель и Альтернативный переключатель<p>
 
-    You can listen beep when ever keyboard changed.
+    Для переключения раскладок с клавиатуры вы можете назначить
+    комбинации клавиш из списка. Так же можно назначить альтернативный
+    переключатель для набора альтернативных символов.
+
+  </sect2>
+  <sect2>Сигнал<p>
+
+    Если включить режим сигнала вы будете информированы о любом переключении
+    раскладок.
 
   </sect2>
   </sect1>
 
-  <sect1>Advanced Options<label id="advanced"><p>
+  <sect1>Специальное<label id="advanced"><p>
 
     <img SRC=advanced.gif>
-    <sect2>World Menu<p>
+    <sect2>Глобальное меню<p>
 
-      You can have pop up menu in any active window by pressing Switch 
-      keys for
-      a long time (hold Right Control and Right Shift as on the picture 
-      and wait
-      for pop up menu).
+      Если включить эту опцию, вы легко можете активировать меню KiKbd
+      в любом месте экрана удерживая какое-то время клавиши
+      выбранного переключателя.
 
     </sect2>
-    <sect2>Emulate Caps Lock<p>
+    <sect2>Эмулировать Caps Lock<p>
 
-      For some keyboards (for example Russian) there is some problems with
-      default Xserver Caps Lock behavior. You can set <bf>KiKbd</bf> to emulate 
-      Caps Lock and fix this problem. With emulated Caps Lock you can control 
-      Caps state by the color of the <bf>KiKbd</bf> button instead of the 
-      keyboard Led.
+      Для некоторых раскладок (как например для русской) есть проблемы
+      с Caps Lock. KiKbd может решить эту проблему эмулируя Caps Lock.
+      В этом случае статус Сaps Lock будет отображаться не лампочками
+      клавиатуры а цветом фона кнопки KiKbd.
 
     </sect2>
-    <sect2>Input<p>
+    <sect2>Ввод<p>
  
-      You can select one of the:
+      Вы можете выбрать:
 
       <itemize>
       <item>
-        Global - "standard" behavior, your keyboard applies to all windows.
+        Глобально - "обычное" поведение, раскладка активируется для всех
+        окошек.
       </item>
       <item>
-        Window - "extended" behavior, each top level window remember it's own
-        keyboard
+        Окно - "расширенное" поведение, каждое окошко помнит свою активную
+        раскладку
       </item>
       <item>
-        Class - "special" behavior", each window manager class remember 
-        it's own keyboard. For example, if you switch to Russian in one 
-        of the Kedit, you will get Russian in any other Kedit automatically.
+        Класс - "специальное" поведение, каждому классу окошек назначается
+        своя активная раскладка. Вы можете печатать по русски в окошке
+        редактора и набирать команды shell не заботясь о переключении
+        раскладок. Причем в каждом вновь открытом окне редактора русский
+        будет включен автоматически.
       </item>
       </itemize>
 
     </sect2>
-    <sect2>Save Classes<p>
+    <sect2>Сохранять Классы<p>
 
-      If you select Input for Classes you can save the keyboard to WM Class
-      association on the end of the each KDE Session and restore it at the
-      beginning of the KDE Session. For example, if you leave Russian keyboard
-      in the Kedit window today, you will get it automatically when you login
-      tomorrow.
+      Если вы выбрали стиль ввода <it>Окно</it> то вы можете сохранять
+      текущее соответствие раскладок оконным классам при окончании работы
+      и восстанавливать это соответствие в следующей сессии.
 
     </sect2>
 
   </sect1>
 
-  <sect1>Style<p>
+  <sect1>Стиль<p>
 
-    You can customize KiKbd button Font and all of the three colors:
+    Вы можете назначить фонт и установить три цвета:
     <p><img SRC=style.gif>
 
-    <sect2>Foreground<p>
-      Use this color for the text label.
+    <sect2>Передний план<p>
+      Это текст надписи на кнопке KiKbd.
     </sect2>
 
-    <sect2>With CapsLock<p>
-      Use this background color when CapsLock emulation used and 
-      it's current state is on.
+    <sect2>Вместе с Caps Lock<p>
+      Этот цвет фона будет обозначать включенный Caps Lock если
+      включен режим эмуляции Caps Lock.
     </sect2>
 
-    <sect2>With Alternate<p>
-      Use this background color while Alt Switch pressed.
+    <sect2>Вместе с Альтернативным<p>
+      Этот цвет фона будет обозначать нажатый Альтернативный переключатель.
     </sect2>
 
-    <sect2>Customize Font<p>
-      Use custom or KDE wide fonts.
+    <sect2>Выбрать свой Фонт<p>
+      Можно выбрать специальный фонт для KiKbd или использовать основные
+      установки KDE.
     </sect2>
 
   </sect1>
 
-  <sect1>Startup<p>
+  <sect1>Запуск<p>
 
   <img SRC=startup.gif>
-  <sect2>Autostart<p>
-    if this checked KiKbd will be started automatically at the
-    beginning of KDE session.
+  <sect2>Автостарт<p>
+    При включенной этой опции KiKbd будет запускаться автоматически
+    в начале каждой сессии KDE.
   </sect2>
 
   <sect2>Docked<p>
-    If this checked KiKbd will be docked into kpanel.
+    При включенной этой опции KiKbd будет "упрятан" в специальной области
+    kpanel.
   </sect2>
 
-  <sect2>Place<p>
-    If you don't like docking, you can choose one of 
-    the four corners of your display
+  <sect2>Место<p>
+    Если вам не нравиться "docked" KiKbd или вы не пользуетесь kpanel,
+    KiKbd может разместиться в одном из четырех углов экрана.
   </sect2>
 
   </sect1>
 
-<sect>Creating new National Keyboard<label id="create"><p>
+<sect>Создание новой раскладки<label id="create"><p>
 
-  All system keyboard files stores in <it>$KDEDIR/share/apps/kikbd</it>
-  and personal
-  in <it>$HOME/.kde/share/apps/kikbd</it>.
-  Keyboard identified by it file name without
-  <it>.kimap</it> extension. File in personal directory hide system one
-  with same file name (not label).
+  Все системные раскладки находятся в директории
+  <it>$KDEDIR/share/apps/kikbd</it>
+  и персональные в
+  <it>$HOME/.kde/share/apps/kikbd</it>.
+  Индивидуальность раскладки определяется именем файла без расширения
+  <it>.kimap</it>. Файл в персональной директории скрывает файл с
+  таким же именем в системной директории.
 
-  To creating new keyboard you should get one of the existing <it>.kimap</it>
-  file as an template. Keyboard file has two major sections.
+  Для создания новой раскладки стоит взять за основу одну из существующих
+  раскладок. Файл раскладки содержит два раздела:
 
   <enum>
   <item><bf>International Keyboard</bf><newline>
-  In this section the following items can be defined:
+  В этой секции можно определить следующее:
     <itemize>
-      <item>Authors - list of authors 
-        in the format "name last_name &lt email address&gt"
-        separated by comma;
+      <item>Authors - список авторов
+        в формате "имя фамилия &lt email адрес&gt",
+        авторы в списке разделяются запятыми;
       </item>
-      <item>Comment** - comment for this keyboard;</item>
-      <item>Language** - language this keyboard for;</item>
-      <item>Charset - charset this keyboard for;</item>
-      <item>Locale - locale this keyboard for;</item>
-      <item>Label* - label used by KiKbd to identify this keyboard.</item>
+      <item>Comment** - дополнительный комментарий;</item>
+      <item>Language** - язык для которого предназначена эта раскладка;</item>
+      <item>Charset - charset;</item>
+      <item>Locale - локализация для которой предназначена эта раскладка;
+      </item>
+      <item>Label* - метка этой раскладки.</item>
     </itemize>
-    * - required<newline>
-    ** - can be translated to other languages
+    * - необходимо<newline>
+    ** - может быть представлено в переводе на другие языки
     <p>
   </item>
   <item><bf>KeyboardMap</bf><newline>
-  This section contains mapping from default symbols to two, three or four
-  new symbols in the form:
+  Эта секция описывает соответствие между основными символами клавиатуры и
+  двумя, тремя или четырьмя новыми символами по форме:
   <verb>
     keysym<num> = <default sym>,<sym1>,<sym2>,<sym3>,<sym4>,
   </verb>
-  and mapping from key codes to symbols:
+  и соответсвие кодов символам:
   <verb>
     keycode<num> = <key code>,<sym1>,<sym2>,<sym3>,<sym4>,
   </verb>
 
-  Where <it>num</it> means any unique number, <it>sym</it> means symbol
-  in the form of hex decimal number or form interpreted by X,
-  <it>key code</it> means decimal code, <it>default sym</it> means
-  default symbol for this key (before starting KiKbd).
-  First two symbols <it>sym1, sym2</it> defines <it>national</it> symbols
-  and <it>sym3, sym4</it> defines <it>alternate</it> symbols.
-  It is preferred to use only <it>keysym</it> definitions. 
+  Где <it>num</it> означает любое уникальное число, <it>sym</it> означает
+  символ в форме шестнадцатиричного числа или форме которую понимает X,
+  <it>key code</it> означает десятичное число, <it>default sym</it>
+  означает основной символ или символ до запуска KiKbd.
+  Символа <it>sym1, sym2</it> определяют <it>национальные</it> 
+  символы
+  и <it>sym3, sym4</it> определяют <it>альтернативные</it> символы.
+  При описании раскладки предпочтительно использовать описание 
+  <it>keysym</it>. 
   <p>
-  As addition you
-  can specify <it>CapsSymbols</it> in this section as a list of Latin
-  symbols separated by comma which KiKbd use for CapsLock emulation.
+  В дополнение в этой секции можно описать <it>CapsSymbols</it>
+  как список символов разделенных запятой используемых при эмуляции Caps Lock.
   </item>
   </enum>
 
-  Then you create and test new keyboard map you can submit it to KDE
-  developers team or directly to author.
+  После создания и тестирования новой раскладки можно отправить ее
+  команде разработчиков KDE или напрямую автору.
 
 </sect>
 
-<sect>Troubleshooting<p>
+<sect>Проблемы<p>
 
-  <sect1>Can not find symbol<p>
-    This can happen if you Xserver has non Latin or unusual symbols on the
-    time of starting KiKbd. Starting from version 1.0b1 you can predefine
-    symbols in <ref id="advanced" name="Advanced section of Configuration">
-    and fix this.
+  <sect1>Не найден символ<p>
+    Такое может случиться если ваш Xserver имеет не латинский или 
+    какой необычный набор символов.
+    Начиная с версии 1.0b1 вы можете пред определить символы при старте
+    KiKbd в <ref id="advanced" name="секции Специальное конфигурации">,
+    это исправит проблему.
   </sect1>
 
-  <sect1>Screen saver<p>
-    This may be a problem to come back when you favorite screen saver started
-    with some national keyboard active. The solution is to use KDE screen-savers
-    with default (first in the list) English keyboard. KiKbd automatically
-    switch keyboard to default when ever one of KDE screen-savers open
-    password dialog.
+  <sect1>Хранители экрана<p>
+    Может возникнуть проблема набрать пароль латинскими буквами в приглашении
+    хранителя экрана (screen saver) если перед его запуском была включена
+    не латинская раскладка.
 
-    The other solution is to use of Alternate Latin symbols in all 
-    your keyboards.
-    When you can type password using <it>Alternate Switch</it>.
+    Первое решение состоит в использовании хранителей экрана из поставки KDE
+    и установки английской раскладки в качестве основной. В этом случае
+    KiKbd распознает появление окна хранителя экрана и автоматически
+    переключиться на основную раскладку.
+
+    Если вы используете стиль ввода <it>Окно</it> или <it>Класс</it>
+    KiKbd назначит основную раскладку любому новому окну в том числе
+    и окну хранителей экрана не из поставки KDE.
+
+    Другое решение - это использование раскладок с латинскими символами
+    в качестве альтернативных (русские раскладки из поставки KiKbd содержат
+    латинские символы в качестве альтернативных). Пароль можно набрать
+    при нажатом альтернативном переключателе.
+
   </sect1>
 
-  <sect1>Bugs reporting<p>
-  Please report bugs at <htmlurl url="http://buglist.kde.org" 
+  <sect1>Bugs<p>
+  Рапорты по обнаруженным bugs принимаются на
+  <htmlurl url="http://buglist.kde.org" 
 	name="http://buglist.kde.org">
   </sect1>
 
 </sect>
 
-<sect>Author<p>
+<sect>Автор<p>
 
-International Keyboard is written by 
+Интернациональная клавиатура написана 
 <htmlurl url="mailto:budnik@linserv.jinr.ru" 
-	name="Alexander Budnik">
+	name="Александром Будник">
 <p>
 </sect>
 

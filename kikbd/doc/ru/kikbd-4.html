@@ -21,12 +21,12 @@
 <H3><A NAME="config"></A> <A NAME="s4">4. Персональная конфигурация</A></H3>
 
 <P>
-<P>Personal configuration include all you runtime settings for KiKbd. You 
-should use kcmikbd program to create and modify you personal configuration. 
-Then you start KiKbd or kcmikbd for the first time it will copy system 
-default configuration to you personal.
+<P>Персональная конфигурация включает все необходимые установки KiKbd.
+Для изменения конфигурации необходимо пользоваться программой kcmikbd.
+Когда вы запускаете KiKbd в первый раз, вы получите копию системной
+конфигурации.
 <P>
-<H3><A NAME="ss4.1">4.1 General settings</A>
+<H3><A NAME="ss4.1">4.1 Главное</A>
 </H3>
 
 <P>
@@ -34,115 +34,119 @@ default configuration to you personal.
 <P>
 <IMG SRC="general.gif">
 <P>
-<H4>Keyboards</H4>
+<H4>Раскладки</H4>
 
 <P>
-<P>Using <I>Add</I> and <I>Delete</I> buttons you can create you favorite
-list of national keyboards. The top keyboard (En as on the picture) 
-become default keyboard when you start KiKbd.
-<P>If you use more then two keyboards it is very help-fool to check
-<I>Use hotlist</I> box. In this case you can switch between
-<I>hot</I> keyboard and default keyboard using Switch keys 
-and you can change <I>hot</I> keyboard from KiKbd pop up menu.
+<P>Используя кнопки <I>Добавить</I> и <I>Удалить</I> вы можете
+создать список необходимых вам раскладок. Верхняя раскладка в
+списке станет основной при старте KiKbd.
+<P>Если вы используете более двух раскладок (например английскую,
+русскую КОИ8 и русскую 1251), очень удобно включить
+<I>Использование горячего списка</I>.
+В этом случае с клавиатуры будут переключаться только две раскладки -
+основная и дополнительная активная. Поменять дополнительную активную
+можно из меню KiKbd. Если же еще включить стиль ввода <I>Окно</I>
+или <I>Класс</I> то вы с успехом можете набирать КОИ8 в одном
+окне и 1251 в другом.
 <P>
-<H4>Switch and Alt Switch</H4>
+<H4>Переключатель и Альтернативный переключатель</H4>
 
 <P>
-<P>For switching between keyboards you can use this two key combination
-(by holding Right Control and Right Shift at the same time as on the 
-picture). You can type alternate symbols from current national keyboard 
-if any by holding them with this Alt Switch (Right Alt as on the picture).
+<P>Для переключения раскладок с клавиатуры вы можете назначить
+комбинации клавиш из списка. Так же можно назначить альтернативный
+переключатель для набора альтернативных символов.
 <P>
-<H4>Beep</H4>
+<H4>Сигнал</H4>
 
 <P>
-<P>You can listen beep when ever keyboard changed.
+<P>Если включить режим сигнала вы будете информированы о любом переключении
+раскладок.
 <P>
-<H3><A NAME="advanced"></A> <A NAME="ss4.2">4.2 Advanced Options</A>
+<H3><A NAME="advanced"></A> <A NAME="ss4.2">4.2 Специальное</A>
 </H3>
 
 <P>
 <P>
 <IMG SRC="advanced.gif">
-<H4>World Menu</H4>
+<H4>Глобальное меню</H4>
 
 <P>
-<P>You can have pop up menu in any active window by pressing Switch 
-keys for
-a long time (hold Right Control and Right Shift as on the picture 
-and wait
-for pop up menu).
+<P>Если включить эту опцию, вы легко можете активировать меню KiKbd
+в любом месте экрана удерживая какое-то время клавиши
+выбранного переключателя.
 <P>
-<H4>Emulate Caps Lock</H4>
+<H4>Эмулировать Caps Lock</H4>
 
 <P>
-<P>For some keyboards (for example Russian) there is some problems with
-default Xserver Caps Lock behavior. You can set <B>KiKbd</B> to emulate 
-Caps Lock and fix this problem. With emulated Caps Lock you can control 
-Caps state by the color of the <B>KiKbd</B> button instead of the 
-keyboard Led.
+<P>Для некоторых раскладок (как например для русской) есть проблемы
+с Caps Lock. KiKbd может решить эту проблему эмулируя Caps Lock.
+В этом случае статус Сaps Lock будет отображаться не лампочками
+клавиатуры а цветом фона кнопки KiKbd.
 <P>
-<H4>Input</H4>
+<H4>Ввод</H4>
 
 <P>
-<P>You can select one of the:
+<P>Вы можете выбрать:
 <P>
 <UL>
-<LI>Global - "standard" behavior, your keyboard applies to all windows.</LI>
-<LI>Window - "extended" behavior, each top level window remember it's own
-keyboard</LI>
-<LI>Class - "special" behavior", each window manager class remember 
-it's own keyboard. For example, if you switch to Russian in one 
-of the Kedit, you will get Russian in any other Kedit automatically.</LI>
+<LI>Глобально - "обычное" поведение, раскладка активируется для всех
+окошек.</LI>
+<LI>Окно - "расширенное" поведение, каждое окошко помнит свою активную
+раскладку</LI>
+<LI>Класс - "специальное" поведение, каждому классу окошек назначается
+своя активная раскладка. Вы можете печатать по русски в окошке
+редактора и набирать команды shell не заботясь о переключении
+раскладок. Причем в каждом вновь открытом окне редактора русский
+будет включен автоматически.</LI>
 </UL>
 <P>
-<H4>Save Classes</H4>
+<H4>Сохранять Классы</H4>
 
 <P>
-<P>If you select Input for Classes you can save the keyboard to WM Class
-association on the end of the each KDE Session and restore it at the
-beginning of the KDE Session. For example, if you leave Russian keyboard
-in the Kedit window today, you will get it automatically when you login
-tomorrow.
+<P>Если вы выбрали стиль ввода <I>Окно</I> то вы можете сохранять
+текущее соответствие раскладок оконным классам при окончании работы
+и восстанавливать это соответствие в следующей сессии.
 <P>
-<H3><A NAME="ss4.3">4.3 Style</A>
+<H3><A NAME="ss4.3">4.3 Стиль</A>
 </H3>
 
 <P>
-<P>You can customize KiKbd button Font and all of the three colors:
+<P>Вы можете назначить фонт и установить три цвета:
 <P>
 <IMG SRC="style.gif">
 <P>
-<H4>Foreground</H4>
+<H4>Передний план</H4>
 
-<P>Use this color for the text label.
-<H4>With CapsLock</H4>
+<P>Это текст надписи на кнопке KiKbd.
+<H4>Вместе с Caps Lock</H4>
 
-<P>Use this background color when CapsLock emulation used and 
-it's current state is on.
-<H4>With Alternate</H4>
+<P>Этот цвет фона будет обозначать включенный Caps Lock если
+включен режим эмуляции Caps Lock.
+<H4>Вместе с Альтернативным</H4>
 
-<P>Use this background color while Alt Switch pressed.
-<H4>Customize Font</H4>
+<P>Этот цвет фона будет обозначать нажатый Альтернативный переключатель.
+<H4>Выбрать свой Фонт</H4>
 
-<P>Use custom or KDE wide fonts.
-<H3><A NAME="ss4.4">4.4 Startup</A>
+<P>Можно выбрать специальный фонт для KiKbd или использовать основные
+установки KDE.
+<H3><A NAME="ss4.4">4.4 Запуск</A>
 </H3>
 
 <P>
 <P>
 <IMG SRC="startup.gif">
-<H4>Autostart</H4>
+<H4>Автостарт</H4>
 
-<P>if this checked KiKbd will be started automatically at the
-beginning of KDE session.
+<P>При включенной этой опции KiKbd будет запускаться автоматически
+в начале каждой сессии KDE.
 <H4>Docked</H4>
 
-<P>If this checked KiKbd will be docked into kpanel.
-<H4>Place</H4>
+<P>При включенной этой опции KiKbd будет "упрятан" в специальной области
+kpanel.
+<H4>Место</H4>
 
-<P>If you don't like docking, you can choose one of 
-the four corners of your display
+<P>Если вам не нравиться "docked" KiKbd или вы не пользуетесь kpanel,
+KiKbd может разместиться в одном из четырех углов экрана.
 <P ALIGN="RIGHT">
 
 <A HREF="kikbd-5.html">Next</A>
