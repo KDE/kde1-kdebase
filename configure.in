@@ -185,6 +185,7 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/bell/Makefile \
 	doc/kcontrol/kwm/Makefile \
 	doc/kcontrol/info/Makefile \
+        doc/kcontrol/locale/Makefile \
 	applnk/Applications/Makefile \
 	applnk/Games/Makefile \
 	applnk/Graphics/Makefile \

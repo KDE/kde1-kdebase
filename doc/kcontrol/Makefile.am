@@ -1,1 +1,1 @@
-SUBDIRS = input kwm bell info
+SUBDIRS = input kwm bell info locale
