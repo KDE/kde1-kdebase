@@ -5,6 +5,14 @@
 
 #include <unistd.h>
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 QString* KFMPaths::desktopPath = 0L;
 QString* KFMPaths::templatePath = 0L;
 QString* KFMPaths::autostartPath = 0L;
@@ -51,7 +59,7 @@ void KFMPaths::initPaths()
   if ( autostartPath->right(1) != "/")
     *autostartPath += "/";
   
-  cachePath->sprintf("/tmp/kfm-cache-%i", (int)getuid() );
+  cachePath->sprintf(_PATH_TMP"kfm-cache-%i", (int)getuid() );
 }
 
 QString KFMPaths::DesktopPath()

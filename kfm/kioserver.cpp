@@ -27,6 +27,14 @@
 #include "utils.h"
 #include "config-kfm.h"
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 KIOServer* KIOServer::pKIOServer;
 
 KIODirectoryEntry::KIODirectoryEntry( const char *_name, bool _isDir, int _size, const char * _creationDate,
@@ -721,7 +729,7 @@ void KIOServer::runNewSlave()
 
     // Keep in sync with the same in kioserver_ipc.cpp!
     QString idir;
-    idir.sprintf("/tmp/kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
+    idir.sprintf(_PATH_TMP"kio_%i_%i%s",(int)getuid(), (int)getpid(),displayName().data());
     
     if ( fork() == 0 )
     {

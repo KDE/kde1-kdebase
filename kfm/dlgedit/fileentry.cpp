@@ -7,6 +7,14 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 KFileEntry::KFileEntry( QWidget *_parent, const char *_dir ) : QLineEdit( _parent )
 {
     directory = _dir;
@@ -174,6 +182,8 @@ void main( int argc, char **argv )
     QApplication a( argc, argv );
     
     KFileEntry ked( 0L, "/tmp" );
+    // Not sure if that's the same.
+    // KFileEntry ked( 0L, _PATH_TMP );
     ked.show();
     
     a.exec();

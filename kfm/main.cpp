@@ -35,6 +35,14 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 void autostart();
 void testDir( const char* );
 void testDir2( const char* );
@@ -212,7 +220,7 @@ int main( int argc, char ** argv )
     }
     // Keep in sync with the same in kfmserver.cpp!
     QString idir;
-    idir.sprintf("/tmp/kfm_%i_%i%s\n",(int)getuid(),(int)getpid(),displayName().data());
+    idir.sprintf(_PATH_TMP"kfm_%i_%i%s\n",(int)getuid(),(int)getpid(),displayName().data());
     fprintf( f, "%i\n%s\n", (int)getpid(),idir.data() );
     fclose( f );
 

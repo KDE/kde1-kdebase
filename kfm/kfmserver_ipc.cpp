@@ -8,11 +8,19 @@
 #include "kfmserver_ipc.h"
 #include "utils.h"
 
+#ifdef HAVE_PATHS_H
+#include <paths.h>
+#endif
+
+#ifndef _PATH_TMP
+#define _PATH_TMP "/tmp/"
+#endif
+
 KfmIpcServer::KfmIpcServer()
 {
     // Keep in sync with the same in main.cpp!
     QString idir;
-    idir.sprintf("/tmp/kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data());
+    idir.sprintf(_PATH_TMP"kfm_%i_%i%s",(int)getuid(),(int)getpid(),displayName().data());
     
     serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )

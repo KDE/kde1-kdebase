@@ -27,6 +27,10 @@
 #include <klocale.h>
 #include <kstring.h>
 
+#ifndef _PATH_FSTAB
+#define _PATH_FSTAB "/etc/fstab"
+#endif
+
 QList<KIOJob> *KIOJob::jobList;
 QDict<QString> *KIOJob::passwordDict;
 
@@ -142,7 +146,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
     mntPoint.detach();
 
     // Find the mount point an notify us about the changes
-    QString n = KIOServer::findDeviceMountPoint( _dev, "/etc/fstab" );
+    QString n = KIOServer::findDeviceMountPoint( _dev, _PATH_FSTAB );
     if ( !n.isNull() )
     {
 	QString n2 = "file:";
