@@ -18,7 +18,7 @@ kioslave_ipc.cpp: kioslave_ipc.moc
 main.cpp: main.moc
 
 debug.o: ../debug.cpp ../config-kfm.h
-	$(CXXCOMPILE) -c $<
+	$(CXXCOMPILE) -c ../debug.cpp
 
 ####### Meta objects
 

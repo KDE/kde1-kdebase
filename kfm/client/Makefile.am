@@ -14,7 +14,7 @@ BUILTSOURCES =	kfmclient_ipc.moc
 kfmclient_ipc.cpp: kfmclient_ipc.moc
 
 debug.o: ../debug.cpp ../config-kfm.h
-	$(CXXCOMPILE) -c $<
+	$(CXXCOMPILE) -c ../debug.cpp
 
 ####### Meta objects
 
