@@ -90,6 +90,7 @@ public:
   void      setReadOnly( bool b )         { read_only = b; }
   void      setExecDir( QString dir )     { exec_path = dir; }
   QString   getExecDir()                  { return exec_path; }
+  QString   getDirPath()                  { return dir_path; }
   QPixmap   getBigPixmap();
   void      setBigPixmapName( QString n ) { big_pixmap_name = n; }
   QString   getBigPixmapName()            { return big_pixmap_name; }

@@ -270,7 +270,7 @@ void MenuButton::change_accept()
 	    QMessageBox::information(dialog, "Wrong filename", "A kdelnk-file with this name does already exist. \nPlease choose another filename.", "Ok" );
 	    return;
 	  }
-      if( pmenu_item->getName().isEmpty() )
+      if( ((QString) dialog->i_fname->text()).isEmpty() )
 	{
 	  QMessageBox::information(dialog, "Empty filename", "The name for this kdelnk-file is missing. \nPlease choose a filename.", "Ok" );
 	  return;

@@ -2,7 +2,7 @@
 //  kmenuedit
 //
 //  Copyright (C) 1997 Christoph Neerfeld
-//  email:  Christoph.Neerfeld@mail.bonn.netsurf.de
+//  email:  Christoph.Neerfeld@bonn.netsurf.de
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 #include <qpixmap.h>
 #include <qpainter.h>
 #include <qscrbar.h>   // for qDrawArrow
+#include <qmsgbox.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -37,8 +38,11 @@
 
 #include "button.h"
 #include "button.moc"
+#include "pmenu.h"
 
 Window debugWin = 0;
+
+extern PMenuItem *global_drop_buffer;
 
 //----------------------------------------------------------------------
 //---------------  EditButton  -----------------------------------------
@@ -188,11 +192,41 @@ void EditButton::mouseReleaseEvent( QMouseEvent * _mouse )
   //printf("************************************************************\n");
   
   drag = false;
-
-  //printf("Ungarbbed\n");
   
+  QPoint p2(0,0);
+  QPoint p3 = mapToGlobal(p2);
+  if( win != findRootWindow(p3) )
+    {
+      //debug("dropping on another window");
+      QString data;
+      if( !global_drop_buffer )
+	debug("KMenuedit::Program error. global_drop_buffer is not initialised!");
+      data += global_drop_buffer->getDirPath() + '/';
+      data += global_drop_buffer->getName();
+      QFileInfo fi(data);
+      if( !fi.exists() || data == "/" )
+	{
+	  QMessageBox::warning( 0, "KMenuedit", "Sorry ! You have to save your changes\n
+before you can drop this item on another window." );
+	  delete dndIcon;
+	  dndIcon = 0L;
+	  dragEndEvent();
+	  return;
+	}
+      data = (QString) "file://" + data;
+      if( dndData != 0 )
+	delete dndData;
+      dndData = new char[ data.length() + 1 ];
+      memcpy( dndData, (const char *) data, data.length() );
+      dndData[ data.length() ] = 0;
+      dndSize = data.length() + 1;
+      dndType = DndURL;
+      XChangeProperty( kapp->getDisplay(), root, kapp->getDndSelectionAtom(), 
+		       XA_STRING, 8,
+		       PropModeReplace, (const unsigned char*)dndData, dndSize);
+    }
   // If we found a destination for the drop
-   if ( win != 0 )
+  if ( win != 0 )
   // if ( dndLastWindow != 0 )
     {	
       //printf("Sending event\n");
