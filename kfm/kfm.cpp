@@ -226,7 +226,6 @@ void Kfm::setUpDest (QString *url)
   QString tryPath;
   tryPath = url->data(); // copy (hope deep)
   bool specialCase = false;
-  bool err;
 
   // Some users CAN write to GLOBAL*.
   if (tryPath.contains(GLOBALMIME) && // if global mime..
