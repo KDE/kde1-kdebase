@@ -5,6 +5,7 @@ In kpanel-0.17:
        - new option: PersonalFirst=on/off
          Also setable from the Go!->Panel->Configure dialog
          (which will nevertheless dissappear soon)
+       - no longer menu-tooltips if you use the keyboard
 
     Patchlevel 7:
        - alternate sorting order: folders first (Michael Bialas)

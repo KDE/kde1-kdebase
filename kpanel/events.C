@@ -203,9 +203,15 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
   switch (ev->type()){
     
   case Event_KeyPress: 
-    if (info_label->isVisible())
-      info_label->hide();
-    tipTimer->stop();
+
+    // people requested for this. I do not understand why (Matthias)
+    tipSleepTimerDone();
+    menu_tool_tips_disabled = true;
+
+    // my preferred way:
+//     if (info_label->isVisible())
+//       info_label->hide();
+//     tipTimer->stop();
 
     if ( edit_button != NULL && ((QKeyEvent*)ev)->key() == Key_Escape ) {
       restore_editbutton( false );
@@ -369,8 +375,9 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     }
   }
   break;
-  
+
   case Event_MouseMove:{
+    menu_tool_tips_disabled = false;
     QMouseEvent* mev = (QMouseEvent*)ev;
 
     if (info_label->isVisible()){

@@ -312,6 +312,7 @@ private:
   QSlider *sl_dbhs, *sl_nr_db;
 
   int menu_tool_tips;
+  bool menu_tool_tips_disabled;
 
   // development
 

@@ -64,6 +64,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     dbrows = 2;
 
     menu_tool_tips = 1000;
+    menu_tool_tips_disabled = false;
     
     tbhs = 4;
     number_of_desktops = KWM::numberOfDesktops();
