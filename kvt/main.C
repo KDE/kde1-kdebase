@@ -1371,7 +1371,9 @@ int main(int argc, char **argv)
   char **com_argv = 0;
   for (i=0; i<argc; i++){
     if (strcmp(argv[i],"-e") == 0){
-      com_argv = argv+i+1;
+      if (*(argv+i+1)){
+	com_argv = argv+i+1;
+      }
       argc = i;
       argv[i] = 0;
     }
@@ -1429,7 +1431,9 @@ int main(int argc, char **argv)
     com_argv = 0;
     for (i=0; i<argc; i++){
       if (strcmp(argv[i],"-e") == 0){
-	com_argv = argv+i+1;
+	if (*(argv+i+1)){
+	  com_argv = argv+i+1;
+	}
 	argc = i;
 	argv[i] = 0;
       }

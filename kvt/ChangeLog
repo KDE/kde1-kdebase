@@ -1,3 +1,7 @@
+Harri Porten - 12/07/99
+
+  - fixed segfault resulting from `kvt -e' without a trailing command
+
 Matthias Hoelzer-Kluepfel - 08/06/99
  
   - fixed root privilege handling 
