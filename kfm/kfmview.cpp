@@ -57,6 +57,8 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     
     stackLock = false;
 
+    ignoreMouseRelease = false; // Stephan: Just guessed. It was undefined
+
     backStack.setAutoDelete( false );
     forwardStack.setAutoDelete( false );
 

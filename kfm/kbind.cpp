@@ -295,6 +295,7 @@ void KMimeType::initMimeTypes( const char* _path )
 	    }
 	}
     }
+    closedir(dp);
 }
 
 void KMimeType::init()

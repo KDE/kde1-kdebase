@@ -21,6 +21,7 @@ int tmpFileCounter = 0;
 KFMJob::KFMJob( )
 {
     job = 0L;    
+    bRunning = FALSE; 
 }
 
 bool KFMJob::browse( const char *_url, bool _reload, bool _bHTML, const char *_currentURL, QList<KIODirectoryEntry> *_list )

@@ -15,6 +15,7 @@ class KFMServer : public KfmIpcServer
     Q_OBJECT
 public:
     KFMServer();
+    ~KFMServer() {}; // Stephan: the base class has an important destructor!
 
 public slots:
     virtual void slotAccept( KSocket *_sock );

@@ -45,6 +45,7 @@ KProtocolFILE::KProtocolFILE()
 KProtocolFILE::~KProtocolFILE()
 {
 	Close();
+        delete dlist;
 }
 
 int KProtocolFILE::Open(KURL *url, int mode)
@@ -185,6 +186,7 @@ int KProtocolFILE::OpenDir( KURL *url )
 	path += "/";
 
     dlist = new SortedKProtocolDirEntry();
+    dlist->setAutoDelete( true );
     dlist->sortMode = sortMode;
 
     while ( ( ep = readdir( dp ) ) != 0L )

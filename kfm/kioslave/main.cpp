@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     
     QApplication a( argc, argv );
 
-    slave = new KIOSlave( atoi( argv[1] ) );
+    KIOSlave slave( atoi( argv[1] ) );
     
     a.exec();
 	return(0);

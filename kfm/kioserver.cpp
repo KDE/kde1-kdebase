@@ -145,7 +145,8 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 	dir = new QList<KIODirectoryEntry>;
 	dir->setAutoDelete( true );
 	dirList.insert( url.data(), dir );
-    }
+    } else
+      dir->setAutoDelete( true );
     
     KIODirectoryEntry *e = new KIODirectoryEntry( _name, _isDir, _size, _creationDate, _access, _owner, _group );
     dir->append( e );

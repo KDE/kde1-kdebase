@@ -109,6 +109,7 @@ void KIOSlaveIPC::parse( char *_data, int _len )
 	if ( strcmp( name, "getPID" ) == 0 ) { parse_getPID( _data, _len ); } else
 	if ( strcmp( name, "cleanUp" ) == 0 ) { parse_cleanUp( _data, _len ); } else
     { printf("Unknown command '%s'\n",name); }
+   free(name);
 }
 
 
