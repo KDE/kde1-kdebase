@@ -339,4 +339,3 @@ msgstr "Tunnistamaton arkistotyyppi!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "Virhe luodessa lapsiprosessia!"
-

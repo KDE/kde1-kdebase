@@ -1185,9 +1185,8 @@ msgid "Overwrite All"
 msgstr "Skasuj wszystkie"
 
 #: krenamewin.cpp:52
-#, fuzzy
 msgid "You try to overwrite"
-msgstr "Nie mo¿na skasowaæ%s"
+msgstr "Próbujesz skasowaæ"
 
 #: krenamewin.cpp:63
 msgid "already exists. Overwrite with"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm \n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
-"PO-Revision-Date: 1998-01-18 12:21+0100\n"
+"POT-Creation-Date: 1998-01-24 23:08+0100\n"
+"PO-Revision-Date: 1998-01-24 20:08+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -102,47 +102,59 @@ msgstr "&Aktywuj pixmapê"
 msgid "&Inactive pixmap"
 msgstr "&Dezaktywuj pixmapê"
 
-#: windows.cpp:66
+#: windows.cpp:69
 msgid "Window movement"
-msgstr "Ruch okna"
+msgstr "Przesuwanie okna"
 
-#: windows.cpp:67
+#: windows.cpp:70
 msgid "Transparent"
-msgstr "Prze¼roczysty"
-
-#: windows.cpp:68
-msgid "Opaque"
-msgstr "Wype³niony"
+msgstr "Przezroczyste"
 
 #: windows.cpp:71
+msgid "Opaque"
+msgstr "Wype³nione"
+
+#: windows.cpp:74
 msgid "Resize Animation"
 msgstr "Animacja zmiany rozmiaru"
 
-#: windows.cpp:76
-msgid "Focus Policy"
-msgstr "Ustawienie focus"
+#: windows.cpp:79
+msgid "Placement policy"
+msgstr "Sposób umiejscawiania"
 
-#: windows.cpp:77
-msgid "Click to focus"
-msgstr "Kliknij na focus"
-
-#: windows.cpp:78
-msgid "Focus follows mouse"
-msgstr "Focus zmienia siê z mysz±"
+#: windows.cpp:80
+msgid "Random placement"
+msgstr "Przypadkowe umiejscawianie"
 
 #: windows.cpp:81
-msgid "Maximize Style"
-msgstr "Styl maksymalizowania"
+msgid "Smart placement"
+msgstr "Inteligentne umiejscawianie"
 
-#: windows.cpp:82
+#: windows.cpp:84
+msgid "Maximize Style"
+msgstr "Sposób maksymalizowania"
+
+#: windows.cpp:85
 msgid "Maximize fully"
 msgstr "Maksymalizuj w pe³ni"
 
-#: windows.cpp:83
+#: windows.cpp:86
 msgid "Maximize vertically"
 msgstr "Maksymalizuj pionowo"
 
-#: windows.cpp:88
+#: windows.cpp:89
+msgid "Focus Policy"
+msgstr "Sposób uaktywnienia"
+
+#: windows.cpp:90
+msgid "Click to focus"
+msgstr "Kliknij by uaktywniæ"
+
+#: windows.cpp:91
+msgid "Focus follows mouse"
+msgstr "Myszka uaktywnia okno"
+
+#: windows.cpp:96
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -150,6 +162,6 @@ msgstr ""
 "Czas auto przywo³ania\n"
 "(<100 wy³±cza)"
 
-#: windows.cpp:91
+#: windows.cpp:99
 msgid "miliseconds"
 msgstr "milisekundy"

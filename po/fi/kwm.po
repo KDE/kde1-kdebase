@@ -152,4 +152,3 @@ msgstr "Siirry"
 #: taskmgr.C:119
 msgid "Current session"
 msgstr "Nykyinen istunto"
-

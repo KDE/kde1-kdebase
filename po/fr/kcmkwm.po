@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-24 23:08+0100\n"
 "PO-Revision-Date: 1998-01-17 21:22 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
@@ -109,47 +109,59 @@ msgstr "Image \"&active\""
 msgid "&Inactive pixmap"
 msgstr "Image \"&inactive\""
 
-#: windows.cpp:66
+#: windows.cpp:69
 msgid "Window movement"
 msgstr "Déplacement des fenêtres"
 
-#: windows.cpp:67
+#: windows.cpp:70
 msgid "Transparent"
 msgstr "Transparent"
 
-#: windows.cpp:68
+#: windows.cpp:71
 msgid "Opaque"
 msgstr "Opaque"
 
-#: windows.cpp:71
+#: windows.cpp:74
 msgid "Resize Animation"
 msgstr "Animation des fenêtres"
 
-#: windows.cpp:76
-msgid "Focus Policy"
-msgstr "Gestion du focus"
+#: windows.cpp:79
+msgid "Placement policy"
+msgstr ""
 
-#: windows.cpp:77
-msgid "Click to focus"
-msgstr "Cliquer pour avoir le focus"
-
-#: windows.cpp:78
-msgid "Focus follows mouse"
-msgstr "Le focus suit la souris"
+#: windows.cpp:80
+msgid "Random placement"
+msgstr ""
 
 #: windows.cpp:81
+msgid "Smart placement"
+msgstr ""
+
+#: windows.cpp:84
 msgid "Maximize Style"
 msgstr "Type de maximisation"
 
-#: windows.cpp:82
+#: windows.cpp:85
 msgid "Maximize fully"
 msgstr "Maximisation complète"
 
-#: windows.cpp:83
+#: windows.cpp:86
 msgid "Maximize vertically"
 msgstr "Maximisation verticale"
 
-#: windows.cpp:88
+#: windows.cpp:89
+msgid "Focus Policy"
+msgstr "Gestion du focus"
+
+#: windows.cpp:90
+msgid "Click to focus"
+msgstr "Cliquer pour avoir le focus"
+
+#: windows.cpp:91
+msgid "Focus follows mouse"
+msgstr "Le focus suit la souris"
+
+#: windows.cpp:96
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -157,6 +169,6 @@ msgstr ""
 "Delai pour l'auto-élévation\n"
 "(déactivé si <100ms)"
 
-#: windows.cpp:91
+#: windows.cpp:99
 msgid "miliseconds"
 msgstr "millisecondes"

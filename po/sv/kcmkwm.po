@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"POT-Creation-Date: 1998-01-24 23:08+0100\n"
 "PO-Revision-Date: 1998-01-20 15:35 +0100\n"
 "Last-Translator: Magnus Reftel <d96reftl@dtek.chalmers.se>\n"
 "Language-Team: Swedish <LL@li.org>\n"
@@ -104,47 +104,59 @@ msgstr "&Aktiv pixmap"
 msgid "&Inactive pixmap"
 msgstr "&Inaktiv pixmap"
 
-#: windows.cpp:66
+#: windows.cpp:69
 msgid "Window movement"
 msgstr "Fönsterflyttning"
 
-#: windows.cpp:67
+#: windows.cpp:70
 msgid "Transparent"
 msgstr "Transparent"
 
-#: windows.cpp:68
+#: windows.cpp:71
 msgid "Opaque"
 msgstr "Solid"
 
-#: windows.cpp:71
+#: windows.cpp:74
 msgid "Resize Animation"
 msgstr "Animerad storleksändring"
 
-#: windows.cpp:76
-msgid "Focus Policy"
-msgstr "Fokus-policy"
+#: windows.cpp:79
+msgid "Placement policy"
+msgstr ""
 
-#: windows.cpp:77
-msgid "Click to focus"
-msgstr "Klicka för att fokusera"
-
-#: windows.cpp:78
-msgid "Focus follows mouse"
-msgstr "Fokus följer musen"
+#: windows.cpp:80
+msgid "Random placement"
+msgstr ""
 
 #: windows.cpp:81
+msgid "Smart placement"
+msgstr ""
+
+#: windows.cpp:84
 msgid "Maximize Style"
 msgstr "Maximeringsstil"
 
-#: windows.cpp:82
+#: windows.cpp:85
 msgid "Maximize fully"
 msgstr "Maximera helt"
 
-#: windows.cpp:83
+#: windows.cpp:86
 msgid "Maximize vertically"
 msgstr "Maximera vertikalt"
 
-#: windows.cpp:88
+#: windows.cpp:89
+msgid "Focus Policy"
+msgstr "Fokus-policy"
+
+#: windows.cpp:90
+msgid "Click to focus"
+msgstr "Klicka för att fokusera"
+
+#: windows.cpp:91
+msgid "Focus follows mouse"
+msgstr "Fokus följer musen"
+
+#: windows.cpp:96
 msgid ""
 "Auto raise delay\n"
 "(<100 disables)"
@@ -152,6 +164,6 @@ msgstr ""
 "Fördröjning på automatisk\n"
 "höjning (<100 stänger av)"
 
-#: windows.cpp:91
+#: windows.cpp:99
 msgid "miliseconds"
 msgstr "millisekunder"

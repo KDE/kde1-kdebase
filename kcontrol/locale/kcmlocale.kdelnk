@@ -4,12 +4,13 @@ Languages=C,cs,da,de,el,en,es,fi,fr,hr,hu,it,nl,no,pl,pt,ro,ru,sv,
 [ro]
 Name=Romanian
 Name[fi]=Romania
+Name[pl]=Rumuñski
 
 [C]
 Name=Default language
 Name[de]=Default Sprache
 Name[fi]=Oletuskieli
-Name[pl]=Domy¶lny jêzy
+Name[pl]=Domy¶lny jêzyk
 Name[fr]=Langue par défaut
 
 [de]
