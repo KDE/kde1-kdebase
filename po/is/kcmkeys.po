@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-10-01 12:22+0200\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -17,29 +17,12 @@ msgid "&Global shortcuts"
 msgstr "&Víðværir flýtihnappar"
 
 #: main.cpp:76
-#, fuzzy
-msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgid "usage: kcmdisplay [-init | {standard,global}]\n"
 msgstr "usage: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:118
 msgid "Key binding settings"
 msgstr "Stillingar takkatenginga"
-
-#: standard.cpp:53
-msgid "New"
-msgstr ""
-
-#: standard.cpp:57
-msgid "Next"
-msgstr ""
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr ""
-
-#: standard.cpp:63
-msgid "Find"
-msgstr ""
 
 #: standard.cpp:66
 msgid "Home"
@@ -55,7 +38,7 @@ msgstr "Núverandi stilliskrá"
 
 #: global.cpp:83 standard.cpp:84
 msgid "KDE default"
-msgstr "KDE sjálfgefið"
+msgstr "Sjálfgefið í KDE"
 
 #: standard.cpp:85
 msgid "KDE lite"
@@ -114,5 +97,6 @@ msgid ""
 msgstr ""
 "&Sláðu inn nafn fyrir takkastilliskrána\n"
 "sem á að bæta við listann þin.\n"
+""
 "Til að byrja með verða stillingarnar á\n"
 "skjánum færðar þar inn."

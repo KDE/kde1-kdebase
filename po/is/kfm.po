@@ -3,187 +3,174 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-09 01:22+0100\n"
+"POT-Creation-Date: 1998-10-01 12:21+0200\n"
 "PO-Revision-Date: 1998-10-21-21:12+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
-#: kfmgui.cpp:259
+#: kfmgui.cpp:257
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:271 kfmgui.cpp:1047
+#: kbind.cpp:933 kbind.cpp:945 kbind.cpp:955 kfmgui.cpp:269 kfmgui.cpp:988
 msgid "Folder"
 msgstr "Mappa"
 
-#: kfmgui.cpp:282
+#: kfmgui.cpp:280
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "Villa: Sniðið '%s' er ekki til"
 
-#: kfmgui.cpp:306
-#, fuzzy
-msgid "&New"
-msgstr "Nýtt"
-
-#: kfmgui.cpp:311
+#: kfmgui.cpp:309
 msgid "&Run..."
 msgstr "&Keyra..."
 
-#: kfmgui.cpp:313
+#: kfmgui.cpp:311
 msgid "Open &Terminal"
 msgstr "Opna &skjáhermi"
 
-#: kfmgui.cpp:316
+#: kfmgui.cpp:314
 msgid "&Open Location..."
 msgstr "&Opna stað..."
 
-#: finddlg.cpp:66 kfmgui.cpp:318
+#: kfmgui.cpp:316
 msgid "&Find"
 msgstr "&Finna"
 
-#: kfmgui.cpp:336
+#: kfmgui.cpp:334
 msgid "&Move to Trash"
 msgstr "&Henda í ruslið"
 
-#: kfmgui.cpp:341
+#: kfmgui.cpp:339
 msgid "&Select"
 msgstr "&Velja"
 
-#: kfmgui.cpp:343
+#: kfmgui.cpp:341
 msgid "Select &all"
 msgstr "Velja &allt"
 
-#: kfmgui.cpp:346
-msgid "&Find in page..."
-msgstr ""
-
-#: kfmgui.cpp:348
-msgid "Find &next"
-msgstr ""
-
-#: kfmgui.cpp:351
+#: kfmgui.cpp:344
 msgid "Mime Types"
 msgstr "MIME tög"
 
-#: kfmgui.cpp:353
+#: kfmgui.cpp:346
 msgid "Applications"
 msgstr "Forrit"
 
-#: kfmgui.cpp:359
+#: kfmgui.cpp:352
 msgid "Global Mime Types"
 msgstr "Víðvær MIME tög"
 
-#: kfmgui.cpp:361
+#: kfmgui.cpp:354
 msgid "Global Applications"
 msgstr "Víðvær forrit"
 
-#: kfmgui.cpp:368
+#: kfmgui.cpp:361
 msgid "Show &Dot Files"
 msgstr "Sýna &punktskrár"
 
-#: kfmgui.cpp:370
+#: kfmgui.cpp:363
 msgid "Show Tr&ee"
 msgstr "Sýna &tré"
 
+#: kfmgui.cpp:365
 # FIXME
-#: kfmgui.cpp:372
 msgid "&Visual Schnauzer"
-msgstr "Sýna &þumalmyndir"
+msgstr "Sýna þumal&myndir"
 
-#: kfmgui.cpp:374
+#: kfmgui.cpp:367
 msgid "&HTML View"
 msgstr "&HTML sýn"
 
-#: kfmgui.cpp:377
+#: kfmgui.cpp:370
 msgid "&Icon View"
 msgstr "&Táknmyndasýn"
 
-#: kfmgui.cpp:379
+#: kfmgui.cpp:372
 msgid "&Text View"
 msgstr "Te&xtasýn"
 
-#: kfmgui.cpp:381
+#: kfmgui.cpp:374
 msgid "&Long View"
 msgstr "&Löng sýn"
 
-#: kfmgui.cpp:383
+#: kfmgui.cpp:376
 msgid "&Short View"
 msgstr "&Stutt sýn"
 
-#: kfmgui.cpp:389
+#: kfmgui.cpp:382
 msgid "Rel&oad Tree"
 msgstr "&Endurlesa tré"
 
-#: kfmgui.cpp:391
+#: kfmgui.cpp:384
 msgid "&Reload Document"
 msgstr "Endurlesa &skjal"
 
-#: kfmgui.cpp:393
+#: kfmgui.cpp:386
 msgid "Rescan &bindings"
 msgstr "Endurlesa l&yklabindingar"
 
-#: kfmgui.cpp:396
+#: kfmgui.cpp:389
 msgid "&View Frame Source"
 msgstr "Skoða HTML texta &ramma"
 
-#: kfmgui.cpp:398
+#: kfmgui.cpp:391
 msgid "View Docu&ment Source"
 msgstr "Skoða HTML texta &skjals"
 
-#: kfmgui.cpp:409
+#: kfmgui.cpp:402
 msgid "Show History"
 msgstr "Sýna sögu"
 
-#: kfmgui.cpp:411
+#: kfmgui.cpp:404
 msgid "Show Cache"
 msgstr "Sýna biðminni"
 
-#: kfmgui.cpp:413
+#: kfmgui.cpp:406
 msgid "Clear Cache"
 msgstr "Tæma biðminni"
 
-#: kfmgui.cpp:416
+#: kfmgui.cpp:409
 msgid "Always look in cache"
 msgstr "Alltaf að líta í biðminni"
 
-#: kfmgui.cpp:418
+#: kfmgui.cpp:411
 msgid "Never look in cache"
 msgstr "Aldrei að líta i biðminni"
 
-#: kfmgui.cpp:420
+#: kfmgui.cpp:413
 msgid "Always save cache"
 msgstr "Alltaf að vista biðminni"
 
-#: kfmgui.cpp:422
+#: kfmgui.cpp:415
 msgid "Never save cache"
 msgstr "Aldrei að vista biðminni"
 
-#: kfmgui.cpp:433
+#: kfmgui.cpp:426
 msgid "Show &Menubar"
 msgstr "Sýna &valslá"
 
-#: kfmgui.cpp:435
+#: kfmgui.cpp:428
 msgid "Show &Statusbar"
 msgstr "Sýna &stöðuslá"
 
-#: kfmgui.cpp:437
+#: kfmgui.cpp:430
 msgid "Show &Toolbar"
 msgstr "Sýna &tækjaslá"
 
-#: kfmgui.cpp:439
+#: kfmgui.cpp:432
 msgid "Show &Location bar"
 msgstr "Sýna s&taðslá"
 
-#: kfmgui.cpp:442
+#: kfmgui.cpp:435
 msgid "Sa&ve Settings"
 msgstr "&Vista stillingar"
 
-#: kfmgui.cpp:444
+#: kfmgui.cpp:437
 msgid "Configure Browser..."
 msgstr "Stilla flakkara..."
 
-#: kfmgui.cpp:483
+#: kfmgui.cpp:476
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -203,27 +190,23 @@ msgstr ""
 "Selhluti eftir  Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 
-#: kfmgui.cpp:502
+#: kfmgui.cpp:495
 msgid "&Bookmarks"
 msgstr "&Bókamerki"
 
-#: kfmgui.cpp:503
+#: kfmgui.cpp:496
 msgid "&Cache"
 msgstr "Bið&minni"
 
-#: kfmgui.cpp:530 kfmman.cpp:1070
+#: kfmgui.cpp:523 kfmman.cpp:1071
 msgid "Up"
 msgstr "Upp"
 
-#: kfmgui.cpp:540 kfmman.cpp:1078
-msgid "Forward"
-msgstr ""
-
-#: kfmgui.cpp:545
+#: kfmgui.cpp:538
 msgid "Home"
 msgstr "Heim"
 
-#: kfmgui.cpp:602
+#: kfmgui.cpp:595
 msgid "Could not load icon\n"
 msgstr "Ekki tókst að lesa táknmynd\n"
 
@@ -231,11 +214,11 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 #: kbind.cpp:1554 kbind.cpp:1572 kbind.cpp:1589 kbind.cpp:1647 kbind.cpp:1659
 #: kbind.cpp:1686 kbind.cpp:1701 kbind.cpp:1721 kbind.cpp:1733 kbind.cpp:1749
 #: kbind.cpp:1881 kbind.cpp:1893 kbind.cpp:1938 kbind.cpp:1980 kfmexec.cpp:60
-#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:603 kfmgui.cpp:759
-#: kfmman.cpp:331 kfmman.cpp:1041 kfmman.cpp:1226 kfmman.cpp:1252
-#: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:834
-#: kfmprops.cpp:956 kfmprops.cpp:1083 kfmprops.cpp:1399 kfmprops.cpp:1611
-#: kfmprops.cpp:1787 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
+#: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:596 kfmgui.cpp:752
+#: kfmman.cpp:332 kfmman.cpp:1042 kfmman.cpp:1227 kfmman.cpp:1253
+#: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:833
+#: kfmprops.cpp:955 kfmprops.cpp:1082 kfmprops.cpp:1398 kfmprops.cpp:1610
+#: kfmprops.cpp:1786 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
 #: kfmserver.cpp:285 kfmserver.cpp:294 kfmserver.cpp:302 kfmtree.cpp:163
 #: kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
 #: kfmview.cpp:349 kfmview.cpp:365 kfmview.cpp:384 kfmview.cpp:390
@@ -249,49 +232,41 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 msgid "KFM Error"
 msgstr "KFM Villa"
 
-#: kfmexec.cpp:59 kfmgui.cpp:758 kfmman.cpp:1040
+#: kfmexec.cpp:59 kfmgui.cpp:751 kfmman.cpp:1041
 msgid "Malformed URL\n"
 msgstr "G-lluð slóð\n"
 
-#: kfmgui.cpp:924
+#: kfmgui.cpp:917
 msgid "Select files:"
 msgstr "Veldu skrár:"
 
-#: kfmgui.cpp:980
-msgid "Find Complete"
-msgstr ""
-
-#: kfmgui.cpp:981
-msgid "Continue search from the top of the page?"
-msgstr ""
-
-#: kfmgui.cpp:999
+#: kfmgui.cpp:940
 msgid "&Edit Bookmarks..."
 msgstr "Sýs&la með bókamerki..."
 
-#: kfmgui.cpp:1009
+#: kfmgui.cpp:950
 msgid "&Add Bookmark"
 msgstr "&Setja bókamerki"
 
-#: kfmgui.cpp:1039 kfmgui.cpp:1046
+#: kfmgui.cpp:980 kfmgui.cpp:987
 msgid "New "
 msgstr "Nýtt"
 
-#: kfmgui.cpp:1136 kfmgui.cpp:1298 kfmjob.cpp:35 kfmman.cpp:214
+#: kfmgui.cpp:1077 kfmgui.cpp:1239 kfmjob.cpp:35 kfmman.cpp:215
 #: kfmtree.cpp:318 kfmview.cpp:385 kfmview.cpp:453 kfmview.cpp:596
 #: kiojob.cpp:87 root.cpp:1154
 msgid "ERROR: Malformed URL"
 msgstr "VILLA: Gölluð slóð"
 
-#: kfmgui.cpp:1252 kfmserver.cpp:179
+#: kfmgui.cpp:1193 kfmserver.cpp:179
 msgid "Open Location:"
 msgstr "Opna stað:"
 
-#: kfmgui.cpp:1308
+#: kfmgui.cpp:1249
 msgid "KFM Confirm"
 msgstr "KFM Staðfesting"
 
-#: kfmgui.cpp:1309
+#: kfmgui.cpp:1250
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -299,7 +274,7 @@ msgstr ""
 "Viltu örugglega hætta?\n"
 "Mikilvægur hluti eiginleika skjáborðsins hverfur"
 
-#: kfmgui.cpp:1416
+#: kfmgui.cpp:1357
 msgid "Document: Done"
 msgstr "Skjal: Komið"
 
@@ -338,7 +313,7 @@ msgstr "VILLA: Þú slepptir slóð á sjálfa sig"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VILLA: Þú slepptir möppu á einhverja undurmöppu hennar"
 
-#: kfmexec.cpp:255 kfmman.cpp:897 kfmview.cpp:481
+#: kfmexec.cpp:255 kfmman.cpp:898 kfmview.cpp:481
 msgid "Open With:"
 msgstr "Opna með:"
 
@@ -420,8 +395,8 @@ msgstr "í"
 msgid "Could not execute program\n"
 msgstr "Ekki tókst að keyra forrit\n"
 
-# FIXME
 #: kbind.cpp:1545
+# FIXME
 msgid "Could not find binding"
 msgstr "Fann ekki bindingu"
 
@@ -429,7 +404,8 @@ msgstr "Fann ekki bindingu"
 msgid ""
 "This is a document!\n"
 "Not an application"
-msgstr "Þetta er skjal en ekki forrit"
+msgstr ""
+"Þetta er skjal en ekki forrit"
 
 #: kbind.cpp:1573 kbind.cpp:1590
 msgid "Can only start executables on local disks\n"
@@ -482,66 +458,50 @@ msgstr "VILLA: Engar skjáhermistillingar"
 msgid "No mount point in *.kdelnk file"
 msgstr "Í *.kdelnk skránni er enginn tengipunktu gefinn."
 
-# FIXME
 #: kbind.cpp:1979
+# FIXME
 msgid "Unknown binding"
 msgstr "Óþekkt binding"
 
-#: main.cpp:87 main.cpp:194
+#: main.cpp:88 main.cpp:195
 msgid "KFM Information"
 msgstr "KFM Upplýsingar"
 
-#: main.cpp:88
+#: main.cpp:89
 msgid "Creating directory:\n"
 msgstr "Bý til möppu:\n"
 
-#: main.cpp:195
+#: main.cpp:196
 msgid "Installing Templates"
 msgstr "Set inn snið"
 
-#: main.cpp:227
+#: main.cpp:229
 msgid "Cd"
 msgstr "Skipta í"
 
-#: main.cpp:228
+#: main.cpp:230
 msgid "New View"
 msgstr "Í nýjan glugga"
 
-#: kfmtree.cpp:223 main.cpp:231
+#: kfmtree.cpp:223 main.cpp:233
 msgid "Move to Trash"
 msgstr "Henda í ruslið"
 
-#: main.cpp:233
+#: main.cpp:235
 msgid "Open with"
 msgstr "Opna með"
 
-#: kfmman.cpp:1244 kfmtree.cpp:155 main.cpp:235
-msgid "Move"
-msgstr ""
-
-#: kfmman.cpp:1248 kfmtree.cpp:159 main.cpp:237
+#: kfmman.cpp:1249 kfmtree.cpp:159 main.cpp:239
 msgid "Link"
 msgstr "Tengi"
 
-#: main.cpp:238
+#: main.cpp:240
 msgid "Empty Trash Bin"
 msgstr "Tæma ruslakörfu"
 
-#: main.cpp:239
+#: main.cpp:241
 msgid "Add to Bookmarks"
 msgstr "Setja bókamerki"
-
-#: htmlopts.cpp:39
-msgid "Small"
-msgstr ""
-
-#: htmlopts.cpp:43
-msgid "Medium"
-msgstr ""
-
-#: htmlopts.cpp:47
-msgid "Large"
-msgstr ""
 
 #: htmlopts.cpp:51
 msgid "Standard Font"
@@ -762,8 +722,8 @@ msgstr "Keyra í skjáhermi"
 msgid "Terminal Options"
 msgstr "Stillingar skjáhermis"
 
-#: kfmprops.cpp:835 kfmprops.cpp:957 kfmprops.cpp:1400 kfmprops.cpp:1612
-#: kfmprops.cpp:1788
+#: kfmprops.cpp:834 kfmprops.cpp:956 kfmprops.cpp:1399 kfmprops.cpp:1611
+#: kfmprops.cpp:1787
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -771,71 +731,71 @@ msgstr ""
 "Ekki tókst að vista eiginleika\n"
 "Hugsanlega hefur þú ekki heimild til þess."
 
-#: kfmprops.cpp:883
+#: kfmprops.cpp:882
 msgid "URL"
 msgstr "Slóð"
 
-#: kfmprops.cpp:984
+#: kfmprops.cpp:983
 msgid "Apply global"
 msgstr "Virkja víðvært"
 
-#: kfmprops.cpp:1023 kfmprops.cpp:1095 kfmprops.cpp:1152
+#: kfmprops.cpp:1022 kfmprops.cpp:1094 kfmprops.cpp:1151
 msgid "(Default)"
 msgstr "(Sjálfgefið)"
 
-#: kfmprops.cpp:1084
+#: kfmprops.cpp:1083
 msgid "Could not write to\n"
 msgstr "Ekki tókst að skrifa í\n"
 
-#: kfmprops.cpp:1197
+#: kfmprops.cpp:1196
 msgid "(None)"
 msgstr "(Ekkert)"
 
-#: kfmprops.cpp:1243
+#: kfmprops.cpp:1242
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr ""
 
-#: kfmprops.cpp:1250 kfmprops.cpp:1502
+#: kfmprops.cpp:1249 kfmprops.cpp:1501
 msgid "Comment"
 msgstr "Athugasemd"
 
-#: kfmprops.cpp:1261
+#: kfmprops.cpp:1260
 msgid "Name ( in your language )"
 msgstr "Nafn (á íslensku)"
 
-#: kfmprops.cpp:1490
+#: kfmprops.cpp:1489
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Skráasía"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1497
 msgid "Mime Type"
 msgstr "MIME tag"
 
-#: kfmprops.cpp:1509
+#: kfmprops.cpp:1508
 msgid "Default Application"
 msgstr "Sjálfgefið forrit"
 
-#: kfmprops.cpp:1657
+#: kfmprops.cpp:1656
 msgid "Device ( /dev/fd0 )"
 msgstr "Tæki ( /dev/fd0 )"
 
-#: kfmprops.cpp:1665
+#: kfmprops.cpp:1664
 msgid "Mount Point ( /floppy )"
 msgstr "Tengipunktur ( /floppy )"
 
-#: kfmprops.cpp:1675
+#: kfmprops.cpp:1674
 msgid "Readonly"
 msgstr "Lestæki"
 
-#: kfmprops.cpp:1681
+#: kfmprops.cpp:1680
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Skráakerfi ( iso9660,msdos,minix,default )"
 
-#: kfmprops.cpp:1691
+#: kfmprops.cpp:1690
 msgid "Mounted Icon"
 msgstr "Tengd táknmynd"
 
-#: kfmprops.cpp:1695
+#: kfmprops.cpp:1694
 msgid "Unmounted Icon"
 msgstr "Ótengd táknmynd"
 
@@ -885,7 +845,8 @@ msgstr ""
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
-msgstr "Einhver reyndi að auðkenna sig með röngu lykilorði"
+msgstr ""
+"Einhver reyndi að auðkenna sig með röngu lykilorði"
 
 #: root.cpp:678
 msgid ""
@@ -909,27 +870,27 @@ msgstr "VILLA: Ekki tókst að lesa skjáborðsmöppu '%s'"
 msgid "ERROR: Can not accept drop"
 msgstr "ERROR: Get ekki tekið við því sem var sleppt."
 
-#: kfmman.cpp:1227 root.cpp:1758
+#: kfmman.cpp:1228 root.cpp:1758
 msgid "Dont know what to do."
 msgstr "Ég veit ekki hvað ég á að gera."
 
-#: kfmman.cpp:1253 kfmtree.cpp:164 root.cpp:1783
+#: kfmman.cpp:1254 kfmtree.cpp:164 root.cpp:1783
 msgid "Dont know what to do"
 msgstr "Ég veit ekki hvað ég á að gera."
 
-#: kfmexec.cpp:93 kfmman.cpp:332
+#: kfmexec.cpp:93 kfmman.cpp:333
 msgid "The file does not contain a URL"
 msgstr "Skráin inniheldur ekki slóð"
 
-#: kfmman.cpp:381
+#: kfmman.cpp:382
 msgid "Contacting host "
 msgstr "Tengist vél "
 
-#: kfmman.cpp:385
+#: kfmman.cpp:386
 msgid "Working ..."
-msgstr "Í vinslu... "
+msgstr "Í vinnslu... "
 
-#: kfmman.cpp:1120 kfmtree.cpp:230
+#: kfmman.cpp:1121 kfmtree.cpp:230
 msgid "Add To Bookmarks"
 msgstr "Setja bókamerki"
 
@@ -959,9 +920,9 @@ msgstr ""
 "Ekki tókst að skrifa yfir\n"
 "%s"
 
-# FIXME
 #: kiojob.cpp:306 kiojob.cpp:329 kiojob.cpp:348
 #, c-format
+#FIXME
 msgid ""
 "Could not make symlink to\n"
 "%s"
@@ -1009,6 +970,7 @@ msgstr ""
 "%s\n"
 "í %s\n"
 "Hugsanlega hefur þú ekki heimild til þess."
+
 
 #: kiojob.cpp:1217 kiojob.cpp:1357
 #, c-format
@@ -1277,8 +1239,8 @@ msgstr "Á þjóni:"
 msgid "login as:"
 msgstr "Notendanafn:"
 
-# FIXME
 #: useragentdlg.cpp:52
+# FIXME
 msgid "Known bindings:"
 msgstr "Þekktar bindingar:"
 
@@ -1286,8 +1248,8 @@ msgstr "Þekktar bindingar:"
 msgid "Don't forget to save your settings!"
 msgstr "Ekki gleyma að vista stillingarnar!"
 
-# FIXME
 #: kproxydlg.cpp:16
+# FIXME
 msgid "Use proxy"
 msgstr "Nota sel"
 
@@ -1335,15 +1297,6 @@ msgstr "Gera ráð fyrir HTML"
 msgid "This group is empty!"
 msgstr "Þessi flokkur er tómur!"
 
-#: finddlg.cpp:41
-#, fuzzy
-msgid "Find:"
-msgstr "&Finna"
-
-#: finddlg.cpp:56
-msgid "Case &sensitive"
-msgstr ""
-
 #: kfmprops.h:73
 msgid "&General"
 msgstr "&Almennt"
@@ -1368,8 +1321,8 @@ msgstr "&Mappa"
 msgid "&Application"
 msgstr "&Forrit"
 
-# FIXME
 #: kfmprops.h:357
+# FIXME
 msgid "&Binding"
 msgstr "&Binding"
 
