@@ -24,7 +24,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
-
+#include <X11/Xlib.h>
 extern "C" {
 #include <mediatool.h>
 }
@@ -36,18 +36,51 @@ MdCh_IHDR	*IhdrChunk;
 MediaCon	m;
 
 
+// Dummy funciton to connect to X server. Do not ask why this function
+// has to be in here 8-/
+void XDisConn(char command)
+{
+  static Display *dpy=NULL;
+  switch (command) {
+  case 0:
+    if ( dpy )
+      // disconnect from X server (if connected)
+      XCloseDisplay(dpy);
+    break;
+  case 1:
+    // connect to X server
+    dpy = XOpenDisplay(NULL);
+    if (!dpy)
+      fprintf(stderr, "Display is NULL. Audio System will not be shut down on X11 exit!!!\n" );
+    break;
+  case 2:
+    if (dpy)
+      XFlush( dpy );
+    break;
+  }
+}
+
+
+
+
+void MYexit(int retcode)
+{
+  XDisConn(0);    // Unconnect from X-Server
+  exit (retcode);
+}
+
 // Signal handler for dying child. Remove communication id file and exit right now.
 void mysigchild(int /*signum*/)
 {
   unlink (KMServerPidFile);
-  exit(1);  
+  MYexit(1);  
 }
 
 
-char *fatalexit(char *s)
+void fatalexit(char *s)
 {
   fprintf(stderr, s);
-  exit(-1);
+  MYexit(-1);
 }
 
 
@@ -85,6 +118,9 @@ int main ( int, char** )
   char MaudioText[]="maudio";
   char MediaText[]="-media";
   //  int forkret;
+
+
+  XDisConn(1);    // Connect to X-Server
 
   // Create full path of ~/.kaudioserver, then delete the communication id
   // file
@@ -127,11 +163,15 @@ int main ( int, char** )
      * to die :´-)
      */
     signal(SIGCHLD,mysigchild);
-    while(1)
-      sleep(6000);
+    while(1) {
+      // emit "XSync()". If X server has gone down, this will terminate
+      // kaudioserver.
+      XDisConn(2);
+      sleep(1);
+    }
   }
 
   fprintf(stderr,"Failed starting audio server!\n");
   unlink (KMServerPidFile);
-  exit(1);
+  MYexit(1);
 }
