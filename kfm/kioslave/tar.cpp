@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 KProtocolTAR::KProtocolTAR()
 {
@@ -165,22 +166,19 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 	    moredata = HandleRefill();
 	if( iomask & KSlave::OUT || !moredata )
 	{
-            char *p_access = 0L, *p_owner = 0L, *p_group = 0L;
-            char *p_size = 0L, *p_date_1 = 0L, *p_date_2 = 0L, *p_name = 0L;
-            // char *p_date_3 = 0L, *p_date_4 = 0L;
+            char p_access[80], p_owner[80], p_group[80];
+            char p_size[80], p_date[80], p_name[250];
 	    
 	    readstr = fgets(buffer,1024,dirfile);
-	    
-	    if( readstr && (p_access = strtok(buffer," ")) != 0 && (p_owner = strtok(NULL,"/")) != 0 &&
-		(p_group = strtok(NULL," ")) != 0 && (p_size = strtok(NULL," ")) != 0 &&
-		(p_date_1 = strtok(NULL," ")) != 0 && (p_date_2 = strtok(NULL," ")) != 0 &&
-//		(p_date_3 = strtok(NULL," ")) != 0 && (p_date_4 = strtok(NULL," ")) != 0 &&
-// removed by David. Looks like tar output has changed. Here it looks like :
-// -rw-r--r-- user/group  2858 1998-12-27 22:13 dir/file
-// so there are only two items for the date & time, not 4.
-// This is with GNU tar 1.12. Which tar has 4 items ? Old GNU tar or 
-// non-GNU tars ? Testing the tar version might be necessary...
-		(p_name = strtok(NULL,"\r\n")) != 0 &&
+
+            // strtok calls removed. sscanf allows to deal with GNU tar and
+            // non-GNU tar :
+            // GNU tar returns the date in the form 1998-12-27 22:13
+            // non-GNU tar returns it   in the form Nov 19 19:33 1997
+            if (readstr && (sscanf(buffer,
+             " %[-drwxst] %[0-9.a-zA-Z_]/%[0-9.a-zA-Z_] %[0-9] %17[a-zA-Z0-9:- ] %[^\n]",
+                                  // is \r necessary, together with \n ? Not here...
+                        p_access, p_owner, p_group, p_size, p_date, p_name) == 6) &&
 		( !strlen( dirpath ) || strncmp( p_name, dirpath, strlen( dirpath ) ) == 0 ) )
 		{
 		    if( p_name[ strlen( p_name ) - 1 ] == '/' )
@@ -196,40 +194,38 @@ KProtocolDirEntry *KProtocolTAR::ReadDir()
 		    
 		    if ( strlen( dirpath ) < strlen( p_name ) )
 		    {
-			p_name += strlen( dirpath );
-			if( !strchr( p_name, '/' ) )
+                        // make p_relname (relative file name) point to
+                        // the relative file path within p_name
+			char * p_relname = p_name + strlen( dirpath );
+			if( !strchr( p_relname, '/' ) )
 			{
-			    subdir = p_name;
+			    subdir = p_relname;
 			    de.access	= p_access;
 			    de.owner	= p_owner;
 			    de.group	= p_group;
 			    de.size	= atoi(p_size);
 			    de.isdir	= ( p_access[0] == 'd' );
-			    de.name	= p_name;
+			    de.name	= p_relname;
 			    if( de.isdir )
 				de.name += "/";
-			    //de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
-                            de.date = p_date_1;
-			    /* doesn't understand time */
+                            de.date = p_date;
 			    return( &de );
 			}
-			else if ( p_access[0] == 'd' );
+			else if ( p_access[0] == 'd' )
 			{
-			    char *p = strchr( p_name, '/' );
+			    char *p = strchr( p_relname, '/' );
 			    *p = 0;
-			    if ( subdir != p_name )
+			    if ( subdir != p_relname )
 			    {
-				subdir = p_name;
+				subdir = p_relname;
 				de.access	= p_access;
 				de.owner	= p_owner;
 				de.group	= p_group;
 				de.size	        = 0;
 				de.isdir	= true;
-				de.name	        = p_name;
+				de.name	        = p_relname;
 				de.name += "/";
-				//de.date.sprintf("%s %s %s",p_date_1,p_date_2,p_date_4);
-                                de.date = p_date_1;
-				/* doesn't understand time */
+                                de.date = p_date;
 				return( &de );
 			    }
 			}
