@@ -152,9 +152,8 @@ msgstr ""
 "\n"
 "Dette programmet er gratis programvare under\n"
 "betingelsene i Artistic-lisensen og kommer\n"
-"terms of the Artistic License and comes\n"
 "UTEN NOEN GARANTIER.\n"
-"Se `LICENSE.readme´ for detaljer."
+"Se `LICENSE.readme' for detaljer."
 
 #: main.C:819
 msgid "Welcome to the console"
