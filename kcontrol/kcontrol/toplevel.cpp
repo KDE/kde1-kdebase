@@ -55,7 +55,7 @@ TopLevel::TopLevel (ConfigList *cl)
 
   setMinimumSize(450,200);
 
-  resize(680,550);
+  resize(700,600);
   show();
   resizeEvent(NULL);
 
