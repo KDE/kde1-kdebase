@@ -1,3 +1,9 @@
+Wen Apr 1 14:08:00 1998  Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
+
+	* kkioslave/http.cpp (ProcessHeader): Reverted changes by Torben Weis,
+	  which caused KFM ignore charset setting in Content-Type field of
+	  HTTP header.
+
 Sun Mar 29 21:05:16 1998  Martin Jones  <mjones@kde.org>
 
 	* It seemed kfmView::openURL(...) had gained some more parameters.
@@ -13,6 +19,12 @@ Sat Mar 28 20:11:50 1998  Torben Weis  <weis@localhost>
 	* kfmserver.cpp (slotOpenURL): kfmclient openURL trash:/
 	  should work now.
 
+Sat Mar 28 11:11:21 1998  Martin Jones  <mjones@kde.org>
+
+	* Added kbooktoken.* so that further changes to the HTML
+	  Tokeniser in khtmlw do not break binary compatability in
+	  kfm.
+	  
 Fri Mar 27 02:50:54 1998  Torben Weis  <weis@localhost>
 
 	* kfmjob.cpp (slotError): Adaptions for new error
