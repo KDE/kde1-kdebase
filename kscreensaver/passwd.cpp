@@ -1050,7 +1050,7 @@ int
 krb_check_password(struct passwd *pwd, char *pass)
 {
 	char        realm[REALM_SZ];
-	char        tkfile[MAXPATHLEN];
+	char        tkfile[KDEMAXPATHLEN];
 
 	/* find local realm */
 	if (krb_get_lrealm(realm, 1) != KSUCCESS)
