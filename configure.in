@@ -25,14 +25,38 @@ AC_CHECK_FLAGS
 dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_CPP
+test "$CCC" = "" && CCC="xlc DCC"
 AC_PROG_CXX
 AC_PROG_LN_S
 AC_PROG_RANLIB dnl for libkfm
 
 case $host in 
 *-*-linux* )
-   AC_CHECK_HEADER(elf.h, AC_DEFINE(HAVE_SHADOW))
+   AC_CHECK_HEADER(elf.h, 
+     [ 
+     	AC_DEFINE(HAVE_SHADOW) 
+	ac_have_shadow="yes"
+     ])
 esac
+
+AC_ARG_ENABLE(setuid,[  --enable-setuid         enable setuid for kscreensavers [default=no]],
+[ if test $enableval = "no"; 
+    then ac_enable_setuid="no"
+    else ac_enable_setuid="yes"
+  fi
+],
+ac_enable_setuid="no"
+)
+
+if test "$ac_enable_setuid" = "no"; then
+  if test "$ac_have_shadow" = "yes"; then
+    AC_WARN("You have shadow password! You should use --enable-setuid!")
+  fi
+  SETUIDFLAGS=""
+else
+  SETUIDFLAGS="-m 4755"
+fi
+AC_SUBST(SETUIDFLAGS)
 
 AC_LANG_CPLUSPLUS
 dnl Checks for libraries.
@@ -40,10 +64,14 @@ AC_PATH_KDE
 
 dnl Checks for libraries. 
 AC_CHECK_LIB(socket, socket, [LIBSOCKET="-lsocket -lnsl"]) dnl for Solaris
+AC_SUBST(LIBSOCKET)
 AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
+AC_SUBST(LIBCOMPAT)
 AC_CHECK_LIB(crypt, main, [LIBCRYPT="-lcrypt"]) dnl for BSD
+AC_SUBST(LIBCRYPT)
 LIBKHTMLW="-lkhtmlw -ljscript" dnl this is somewhat historical, since jscript is ways needed
 AC_SUBST(LIBKHTMLW)
+
 AC_FIND_GIF
 AC_FIND_JPEG
 
@@ -70,11 +98,6 @@ AC_CHECK_SETENV
 
 dnl Perform program name transformation
 AC_ARG_PROGRAM
-
-dnl output files
-AC_SUBST(LIBSOCKET)
-AC_SUBST(LIBCOMPAT)
-AC_SUBST(LIBCRYPT)
 
 AC_OUTPUT(Makefile \
 	kpanel/Makefile \
