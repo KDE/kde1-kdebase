@@ -3,8 +3,7 @@
 
 SUBDIRS = kfm mimetypes kdehelp kfontmanager kfind kvt \
 	kwm kpanel kwmcom kwmmodules krootwm kdm kscreensaver \
-	kmenuedit kaudio kcontrol \
-	pics applnk doc po 
+	kmenuedit kaudio kcontrol pics applnk doc po 
 
 # AUTOMAKE_OPTIONS = no-dependencies
 
@@ -24,6 +23,9 @@ install-data-local:
 	@echo " developers, wish you fun with the KDE."
 	@echo "****************************************************"
 	@echo ""
+
+#acinclude.m4: acinclude.m4.in libtool.m4.in kdminclude.m4
+#	cat acinclude.m4.in libtool.m4.in kdminclude.m4 > acinclude.m4
 
 messages:
 	@for subdir in $(SUBDIRS); do \
