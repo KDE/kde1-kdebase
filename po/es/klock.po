@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-11 18:35+0200\n"
-"PO-Revision-Date: 1998-06-03 18:51+0200\n"
+"PO-Revision-Date: 1998-06-13 15:25+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: banner.cpp:62
@@ -380,7 +380,7 @@ msgstr ""
 #: main.cpp:280
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "La opción %s no está disponoble en esta arquitectura."
+msgstr "La opción %s no está disponible en esta arquitectura."
 
 #: main.cpp:307
 msgid ""
@@ -389,10 +389,10 @@ msgid ""
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"Este sistema utiliza contraseñas ocultas\n"
-"por favor consulte al administrador de su sistema.\n"
+"¡Este sistema utiliza contraseñas ocultas!\n"
+"Por favor consulte al administrador de su sistema.\n"
 "\n"
-"Dígale que necesita cambiar los derechos de los salvapantallas"
+"¡Dígale que necesita cambiar los derechos de los salvapantallas!"
 
 #: main.cpp:312
 msgid "Shadow Passwords"
@@ -665,44 +665,3 @@ msgstr ""
 "Copyright (c) 1991 por Patrick J. Naughton\n"
 "\n"
 "Adaptado a kscreensave por Emanuel Pirker."
-
-#~ msgid "Science"
-#~ msgstr "Ciencia"
-
-#~ msgid "Setup Science"
-#~ msgstr "Configurar Ciencia"
-
-#~ msgid "Mode:"
-#~ msgstr "Modo:"
-
-#~ msgid "Whirl"
-#~ msgstr "Remolino"
-
-#~ msgid "Sphere"
-#~ msgstr "Esfera"
-
-#~ msgid "Inverse"
-#~ msgstr "Inverso"
-
-#~ msgid "Gravity"
-#~ msgstr "Gravedad"
-
-#~ msgid "Intensity:"
-#~ msgstr "Intensidad:"
-
-#~ msgid "Motion:"
-#~ msgstr "Movimiento:"
-
-#~ msgid "About Science"
-#~ msgstr "Acerca de Ciencia"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "escrito por Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"

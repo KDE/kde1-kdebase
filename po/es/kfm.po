@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-05-30 07:56+0200\n"
+"PO-Revision-Date: 1998-06-13 14:56+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfmgui.cpp:257
@@ -139,14 +139,12 @@ msgid "Never look in cache"
 msgstr "&Nunca mirar en el cache"
 
 #: kfmgui.cpp:411
-#, fuzzy
 msgid "Always save cache"
-msgstr "&Siempre mirar en el cache"
+msgstr "Siempre &guardar cache"
 
 #: kfmgui.cpp:413
-#, fuzzy
 msgid "Never save cache"
-msgstr "&Nunca mirar en el cache"
+msgstr "Nunca g&uardar cache"
 
 #: kfmgui.cpp:424
 msgid "Show &Menubar"
@@ -374,7 +372,7 @@ msgstr "no contiene una linea MimeType=..."
 
 #: kbind.cpp:377
 msgid "No mime types installed!"
-msgstr "No hay tipos mime instalados"
+msgstr "¡No hay tipos mime instalados!"
 
 #: kbind.cpp:425 kbind.cpp:1188
 msgid "Could not find mime type\n"
@@ -1244,7 +1242,7 @@ msgstr "O cambiar nombre a"
 
 #: krenamewin.cpp:121
 msgid "You did not change the name!\n"
-msgstr "No cambió el nombre!\n"
+msgstr "¡No cambió el nombre!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
@@ -1268,7 +1266,7 @@ msgstr "Uniónes conocidas:"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
-msgstr "No olvide guardar sus cambios!"
+msgstr "¡No olvide guardar sus cambios!"
 
 #: kproxydlg.cpp:16
 msgid "Use proxy"

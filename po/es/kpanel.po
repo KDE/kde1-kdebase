@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-05-21 11:28+0200\n"
+"PO-Revision-Date: 1998-06-13 14:53+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kpanel.C:213
@@ -19,7 +19,7 @@ msgstr "Inicio"
 
 #: kpanel.C:256 tools.C:787
 msgid "Where do you want to go tomorrow?"
-msgstr "¿Hasta dónde quiere llegar mañana?"
+msgstr "¿Hasta donde quiere llegar mañana?"
 
 #: kpanel.C:330
 msgid "No info available"
@@ -103,7 +103,7 @@ msgstr "El editor de menús no está instalado."
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr "Ups!"
+msgstr "¡Ups!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"

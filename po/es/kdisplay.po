@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-05-16 20:16+0200\n"
+"PO-Revision-Date: 1998-06-13 15:29+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: backgnd.cpp:58
@@ -383,6 +383,3 @@ msgstr "KDE por defecto"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "cualquiera"
-
-#~ msgid "Default"
-#~ msgstr "KDE por defecto"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-24 00:14+0200\n"
-"PO-Revision-Date: 1998-05-30 07:49+0200\n"
+"PO-Revision-Date: 1998-06-13 15:23+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: kfdird.cpp:46
@@ -340,7 +340,7 @@ msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr ""
-"El directorio especificado\n"
+"¡El directorio especificado\n"
 "no está vacío!"
 
 #: kfwin.cpp:344
@@ -353,8 +353,8 @@ msgstr ""
 
 #: kfwin.cpp:436
 msgid "Couldn't recognize archive type!"
-msgstr "No se pudo reconocer el tipo de archivo!"
+msgstr "¡No se pudo reconocer el tipo de archivo!"
 
 #: kfwin.cpp:495
 msgid "Error while creating child process!"
-msgstr "Error creando proceso hijo!"
+msgstr "¡Error creando proceso hijo!"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-11 00:07+0200\n"
-"PO-Revision-Date: 1998-06-03 18:54+0200\n"
+"PO-Revision-Date: 1998-06-13 14:58+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.C:68
@@ -29,10 +29,19 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Esta intentando cambiar a otra ventana. Desafortunadamente seleccionó \n"
+"uno de los modos clásicos de focalización que no permiten esto. Estos modos "
+"están \n"
+"incluidos no porque tengan sentido, sino para mantener compatibilidad. Bueno, \n"
+"también usuarios con las viejas costumbres de unix deben poder sentirse "
+"comfortables con el K Desktop Environment ;-)\n"
+"\n"
+"Si prefiere una administración de ventanas moderna, por favor elija uno de los \n"
+"modos recomendados de focalización como click para focalizar o el foco sigue el ratón."
 
 #: main.C:492
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Preparando sesión ... "
 
 #: main.C:511
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

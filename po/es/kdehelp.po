@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:51+0200\n"
-"PO-Revision-Date: 1998-05-16 21:01+0200\n"
+"PO-Revision-Date: 1998-06-13 15:20+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: helpwin.cpp:58
@@ -319,7 +319,7 @@ msgstr "Alto"
 
 #: mainwidget.cpp:288
 msgid "In the Constructor!"
-msgstr "En el constructor!"
+msgstr "¡En el constructor!"
 
 # er... translating debug messages, isn't it too much?
 #: mainwidget.cpp:582

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-06-03 18:49+0200\n"
+"PO-Revision-Date: 1998-06-13 15:16+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:59
@@ -155,7 +155,7 @@ msgstr "Menú de operaciones"
 
 #: windows.cpp:74
 msgid "Window movement"
-msgstr "Movimiento ventana"
+msgstr "Movimiento de ventanas"
 
 #: windows.cpp:75
 msgid "Transparent"
@@ -175,7 +175,7 @@ msgstr "Con animación"
 
 #: windows.cpp:85
 msgid "Placement policy"
-msgstr "Póliza de colocación"
+msgstr "Política de colocación"
 
 #: windows.cpp:87
 msgid "Smart"
@@ -203,7 +203,7 @@ msgstr "Cubrimiento permitido"
 
 #: windows.cpp:109
 msgid "Maximize Style"
-msgstr "Estilo de maximizado"
+msgstr "Tipo de maximizado"
 
 #: windows.cpp:110
 msgid "Maximize fully"
@@ -231,7 +231,7 @@ msgstr "El foco sigue el ratón clásico"
 
 #: windows.cpp:122
 msgid "Classic sloppy focus"
-msgstr "Focalizar clásico"
+msgstr "Foco descuidado clásico"
 
 #: windows.cpp:131
 msgid ""
@@ -239,7 +239,7 @@ msgid ""
 "(<100 disables)"
 msgstr ""
 "Espera para pasar\n"
-"primer plano\n"
+"a primer plano\n"
 "(<100 lo deshabilita)"
 
 #: windows.cpp:134
