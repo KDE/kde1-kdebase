@@ -496,7 +496,7 @@ void KBackground::readSettings( int num )
   QFileInfo fi( KApplication::localconfigdir() + group );
   if ( ! fi.exists() ){
     first_time = true;
-    group = "/kdisplayrc";
+    group = "/kcmdisplayrc";
   }
 
   KConfig config(KApplication::kde_configdir() + group,
@@ -805,6 +805,10 @@ void KBackground::showSettings()
   wpCombo->setEnabled(!randomMode);
   browseButton->setEnabled(!randomMode);
   //CT
+  
+  //AL 31Dic1998 - wpModeCombo should be disabled when in randomMode
+  wpModeCombo->setEnabled(!randomMode);
+  //AL
 
   setMonitor();
 }
@@ -1295,6 +1299,9 @@ void KBackground::slotToggleRandom()
   randomSetupButton->setEnabled(randomButton->isChecked());
   wpCombo->setEnabled(!randomButton->isChecked());
   browseButton->setEnabled(!randomButton->isChecked());
+  //AL 31Dic1998 - wpModeCombo should be disabled when in randomMode
+  wpModeCombo->setEnabled(!randomButton->isChecked());
+  //AL
 }
 
 
