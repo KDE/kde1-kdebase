@@ -8,6 +8,7 @@ Name[cs]=Bretoòský
 Name[da]=Bretagnsk
 Name[de]=Bretonisch
 Name[es]=Bretón
+Name[fi]=Breton
 Name[hr]=Bretonski
 Name[is]=Bretónska
 Name[it]=Bretone
@@ -237,6 +238,7 @@ Name[sv]=Isländska
 
 [ja]
 Name=Japanese
+Name[fi]=Japani
 Name[ja]=ÆüËÜ¸ì
 
 [sv]
@@ -644,6 +646,7 @@ Name[sv]=Brasiliansk portugisiska
 
 [eo]
 Name=Esperanto
+Name[fi]=Esperanto
 Name[fr]=Espéranto
 Name[hu]=Eszperantó
 Name[is]=Esperantó
@@ -774,6 +777,7 @@ Name=Slovenian
 Name[de]=Slowenisch  
 Name[da]=Slovensk
 Name[es]=Esloveno
+Name[fi]=Slovenia
 Name[fr]=Slovène
 Name[it]=Sloveno
 Name[nl]=Sloveens
