@@ -5,6 +5,7 @@
 
 #include <qlayout.h> //CT
 #include <qradiobt.h>
+#include <qmsgbox.h>
 
 #include <klocale.h>
 #include <kapp.h>
@@ -234,7 +235,8 @@ void KCookiesOptions::changePressed()
 
     if (strlen(domain) == 0)
     {
-    	// Warning box
+    	QMessageBox::warning( 0, i18n("Error"),
+                              i18n("You must enter a domain first !") );
         return;
     }
 
@@ -362,7 +364,7 @@ void KCookiesOptions::updateDomainList()
 void KCookiesOptions::loadSettings()
 {
   QString tmp;
-  g_pConfig->setGroup( "Browser Settings/HTTP" );	
+  g_pConfig->setGroup( "Browser Settings/HTTP" );
 
   tmp = g_pConfig->readEntry("CookieGlobalAdvice", "Ask");
   KCookieAdvice globalAdvice = strToAdvice(tmp.data());
@@ -382,7 +384,7 @@ void KCookiesOptions::loadSettings()
 void KCookiesOptions::saveSettings()
 {
   const char *advice;
- 
+  g_pConfig->setGroup( "Browser Settings/HTTP" );
   g_pConfig->writeEntry( "Cookies", cb_enableCookies->isChecked() );
 
   if (rb_gbPolicyAccept->isChecked())
