@@ -69,8 +69,6 @@ from the X Consortium.
 # include <security/pam_appl.h>
 #endif
 #ifdef USESHADOW
-/*extern	struct spwd	*getspnam();
-extern	void	endspent();*/
 # include <shadow.h>
 #endif
 
@@ -100,33 +98,18 @@ extern	char	**parseArgs();
 extern	int	printEnv();
 extern	char	**systemEnv();
 extern	int	LogOutOfMem(char *, ...);
-/*extern	void	setgrent();
-extern	struct group	*getgrent();
-extern	void	endgrent();
-*/
-/*
-extern	struct passwd	*getpwnam();
-extern	char	*crypt();
-*/
 
 #ifdef __Lynx__
 char *crypt(char *key, char *salt);
 #endif
 
-/* #ifdef CSRG_BASED */
-#include <sys/param.h>
-#if defined(__FreeBSD__) && __FreeBSD__ >= 2
-#include <osreldate.h>
-#if __FreeBSD_version >= 222000
-#define HAVE_SETUSERCONTEXT
-#endif
-#endif
-/* #endif */
-
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
 #include <login_cap.h>		/* BSDI-like login classes */
-#include <pwd.h>
+#define HAVE_SETUSERCONTEXT	/* assume we have setusercontext if we have
+				 * the header file
+				 */
 #endif
+
 /* XmuPrintDefaultErrorMessage is taken from DefErrMsg.c from X11R6 */
 /* /stefh */
 #include <stdio.h>
@@ -715,12 +698,12 @@ StartClient (verify, d, pidp, name, passwd)
 	/* Do system-dependent login setup here */
 
 #ifdef HAVE_SETUSERCONTEXT
-      /*
-       * Destroy environment unless user has requested its preservation.
-       * We need to do this before setusercontext() because that may
-       * set or reset some environment variables.
-       */
-      environ = envinit;
+        /*
+         * Destroy environment unless user has requested its preservation.
+         * We need to do this before setusercontext() because that may
+         * set or reset some environment variables.
+         */
+        environ = envinit;
 
 	/*
 	 * Set the user's credentials: uid, gid, groups,

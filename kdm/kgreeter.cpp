@@ -32,9 +32,6 @@
 #include <signal.h>
 #include <sys/types.h>
 #include <pwd.h>
-#ifdef USESHADOW
-#include<shadow.h>
-#endif
 
 // Make the C++ compiler shut the f... up:
 extern "C" {
@@ -55,19 +52,23 @@ void SessionExit(void*,void*,void*);
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 
-#if defined(__FreeBSD__) && __FreeBSD__ >= 2
-#include <osreldate.h>
-#if __FreeBSD_version >= 222000
-#define HAVE_SETUSERCONTEXT
-#endif
+#ifdef USESHADOW
+#include<shadow.h>
 #endif
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
 #include <login_cap.h>		/* BSDI-like login classes */
-#include <pwd.h>
+#endif
+
+static struct passwd *pwd = NULL;
+
+#ifdef HAVE_LOGIN_CAP_H
 static login_cap_t *lc = NULL;
 #endif
-static struct passwd *pwd = NULL;
+
+#if USESHADOW
+static struct spwd *swd = NULL;
+#endif
 
 #ifdef TEST_KDM
 
@@ -407,7 +408,7 @@ KGreeter::restrict()
      endpwent();
      if (!pwd) return false;
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
      lc = login_getpwclass(pwd);
 #endif
 #if USESHADOW
@@ -422,7 +423,7 @@ KGreeter::restrict()
 	 restrict_time())
        rval = true;
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
      login_close(lc);
      lc = NULL;
 #endif
@@ -430,7 +431,7 @@ KGreeter::restrict()
      return rval;
 }
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
 bool
 KGreeter::restrict_time()
 {
@@ -468,7 +469,7 @@ KGreeter::restrict_nologin()
      // don't deny root to log in
      if (pwd && !pwd->pw_uid) return false;
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
      char *file = login_getcapstr(lc, "nologin", "", NULL);
      if (login_getcapbool(lc, "ignorenologin", 0)) return false;
 #else
@@ -500,7 +501,7 @@ KGreeter::restrict_expired(){
      // don't deny root to log in
      if (!pwd->pw_uid) return false;
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
      bool quietlog = login_getcapbool(lc, "hushlogin", 0);
      time_t warntime = login_getcaptime(lc, "warnexpire",
 				 DEFAULT_WARN, DEFAULT_WARN);
@@ -560,7 +561,7 @@ KGreeter::restrict_expired()
 }
 #endif
 
-#ifdef HAVE_SETUSERCONTEXT
+#ifdef HAVE_LOGIN_CAP_H
 bool
 KGreeter::restrict_nohome(){
      // don't deny root to log in
