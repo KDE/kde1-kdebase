@@ -44,7 +44,7 @@ extern KConfig *config;
 // config file keywords used by kwm
 #define KWM_TITLEBARLOOK   "TitlebarLook"
 #define KWM_TITLEANIMATION "TitleAnimation"
-
+#define KWM_TITLEALIGN     "TitleAlignment"
 //  buttons 1 2 3 are on left, 4 5 6 on right
 #define KWM_B1 "ButtonA"
 #define KWM_B2 "ButtonB"
@@ -911,14 +911,40 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 {
   // titlebar shading style
 
-  QGridLayout *lay = new QGridLayout(this,3,2,10,5);
-  lay->setRowStretch(0,1);
-  lay->setRowStretch(1,0);
+  QGridLayout *lay = new QGridLayout(this,4,2,5);
+  lay->setRowStretch(0,0);
+  lay->setRowStretch(1,1);
   lay->setRowStretch(2,0);
+  lay->setRowStretch(3,0);
 
   lay->setColStretch(0,1);
   lay->setColStretch(1,1);
+
+  //CT 06Nov1998 - title alignment GUI config  
+  alignBox = new QButtonGroup (klocale->translate("Title Alignment"), this);
+
+  QGridLayout *pixLay = new QGridLayout(alignBox,2,3,10,5);
   
+  leftAlign = new QRadioButton(klocale->translate("Left"),alignBox);
+  leftAlign->adjustSize();
+  leftAlign->setMinimumSize(leftAlign->size());
+  pixLay->addWidget(leftAlign,1,0);
+
+  midAlign = new QRadioButton(klocale->translate("Middle"),alignBox);
+  midAlign->adjustSize();
+  midAlign->setMinimumSize(midAlign->size());
+  pixLay->addWidget(midAlign,1,1);
+
+  rightAlign = new QRadioButton(klocale->translate("Right"),alignBox);
+  rightAlign->adjustSize();
+  rightAlign->setMinimumSize(rightAlign->size());
+  pixLay->addWidget(rightAlign,1,2);
+
+  pixLay->activate();
+
+  lay->addMultiCellWidget(alignBox,0,0,0,1);
+  //CT
+
   titlebarBox = new QButtonGroup(klocale->translate("Appearance"), 
 				 this);
 
@@ -958,11 +984,11 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   pushLay->activate();
 
-  lay->addWidget(titlebarBox,0,0);
+  lay->addWidget(titlebarBox,1,0);
 
   pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this); 
  
-  QGridLayout *pixLay = new QGridLayout(pixmapBox,6,2,10,5);
+  pixLay = new QGridLayout(pixmapBox,6,2,10,5);
   pixLay->addRowSpacing(0,10);
   pixLay->addRowSpacing(3,10);
   pixLay->addColSpacing(0,20);
@@ -1000,7 +1026,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   pixLay->activate();
 
-  lay->addWidget(pixmapBox,0,1);
+  lay->addWidget(pixmapBox,1,1);
 
   //CT 11feb98 - Title double click
   titlebarDblClickBox = new QGroupBox(klocale->translate("Mouse action"),
@@ -1039,7 +1065,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   pixLay->activate();
 
-  lay->addMultiCellWidget(titlebarDblClickBox,1,1,0,1);
+  lay->addMultiCellWidget(titlebarDblClickBox,2,2,0,1);
 
   //CT ---
 
@@ -1073,7 +1099,7 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
 
   pixLay->activate();
 
-  lay->addMultiCellWidget(animBox,2,2,0,1);
+  lay->addMultiCellWidget(animBox,3,3,0,1);
 
   lay->activate();
 
@@ -1094,6 +1120,23 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   GetSettings();
 }
 
+
+//CT 06Nov1998
+int KTitlebarAppearance::getAlign() {
+  if (midAlign->isChecked()) return AT_MIDDLE;
+  else if (rightAlign->isChecked()) return AT_RIGHT;
+  else return AT_LEFT;
+}
+
+void KTitlebarAppearance::setAlign(int a) {
+  if (a == AT_LEFT) 
+    leftAlign->setChecked(TRUE);
+  if (a == AT_MIDDLE)
+    midAlign->setChecked(TRUE);
+  if (a == AT_RIGHT)
+    rightAlign->setChecked(TRUE);
+}
+//CT
 
 int KTitlebarAppearance::getTitlebar()
 {
@@ -1187,8 +1230,17 @@ void KTitlebarAppearance::setDCTBAction(int action)
 
 void KTitlebarAppearance::SaveSettings( void )
 {
+
   config->setGroup( "General" );
-  int t = getTitlebar();
+
+  //CT 06Nov1998
+  int t = getAlign();
+  if (t == AT_MIDDLE) config->writeEntry(KWM_TITLEALIGN, "middle");
+  else if (t == AT_RIGHT) config->writeEntry(KWM_TITLEALIGN, "right");
+  else config->writeEntry(KWM_TITLEALIGN, "left");
+  //CT
+
+  t = getTitlebar();
   if (t == TITLEBAR_SHADED_VERT)
     config->writeEntry(KWM_TITLEBARLOOK, "shadedVertical");
   else if (t == TITLEBAR_SHADED_HORIZ)
@@ -1305,7 +1357,14 @@ void KTitlebarAppearance::GetSettings( void )
 
   config->setGroup( "General" );
 
-  key = config->readEntry("TitlebarLook");
+  //CT 06Nov1998
+  key = config->readEntry(KWM_TITLEALIGN);
+  if( key == "middle" ) setAlign(AT_MIDDLE);
+  else if ( key == "right" ) setAlign(AT_RIGHT);
+  else setAlign(AT_LEFT);
+  //CT
+
+  key = config->readEntry(KWM_TITLEBARLOOK);
   if( key == "shadedVertical")
     setTitlebar(TITLEBAR_SHADED_VERT);
   else if( key == "shadedHorizontal")

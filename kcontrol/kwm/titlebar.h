@@ -53,6 +53,11 @@
 
 #define NUM_BUTTONS 6
 
+//CT 06Nov1998
+#define AT_LEFT                 0
+#define AT_MIDDLE               1
+#define AT_RIGHT                2
+
 #define TITLEBAR_PLAIN                0
 #define TITLEBAR_SHADED_VERT          1
 #define TITLEBAR_SHADED_HORIZ         2
@@ -157,12 +162,21 @@ private slots:
 private:
  void GetSettings( void );
 
+ //CT 06Nov1998
+ int getAlign(void);
+ void setAlign(int);
+ //CT
+
  int getTitlebar( void );
  void setTitlebar(int);
 
  int getTitleAnim( void );
  void setTitleAnim(int);
 
+ //CT 06Nov1998
+ QButtonGroup *alignBox;
+ QRadioButton *leftAlign, *midAlign, *rightAlign;
+ //CT
  QButtonGroup *titlebarBox;
  QRadioButton *vShaded, *hShaded, *plain, *pixmap;
 

@@ -1,8 +1,12 @@
+1998-11-06  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* titlebar.[cpp,h] : added title alignment config
+
 1998-10-23  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* titlebar.cpp: completed what Matthias started (took out
 		useless checks)
-	* widows.cpp: make autoRaise toggling much clearer
+	* widows.cpp: make autoRaise toggling clearer
 
 1998-10-22  Matthias Ettrich  <ettrich@kde.org>
 
