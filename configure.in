@@ -73,6 +73,34 @@ else
 fi
 AC_MSG_RESULT($dynamic_loading)
 
+  for i in $files; do
+    echo $ac_n "#include \".."$ac_c >> all_modules.new
+    filename=`echo $i | sed -e "s#kcontrolcenter##"`
+    echo "$filename\"" >> all_modules.new
+  done
+ 
+  echo "" >> all_modules.new
+  echo "#define ADD_MODULES \\" >> all_modules.new
+
+  for i in $files; do
+    
+    echo "#include \"$i\"" > conftest.c
+    echo "ModuleList" >> conftest.c
+    classname=`$CPP conftest.c 2> /dev/null | tail -1`
+    echo "appendModuleList(new $classname()); \\" >> all_modules.new
+    
+    filename=`echo $i | sed -e "s#module.h#Makefile.am#"`
+    libname=`grep lib_LTLIBRARIES $filename|sed -e "s#lib_LTLIBRARIES##"|sed -e "s#.*= *##"`
+    filename=`echo "$i$libname" | sed -e "s#kcontrolcenter#\.\.#; s#module.h##"`
+    KCC_MODULES="$KCC_MODULES $filename"
+  done
+  echo "// last line" >> all_modules.new
+  if diff all_modules.new kcontrolcenter/kcc/all_modules.h 2> /dev/null > /dev/null; then
+	   rm all_modules.new
+  else
+    mv all_modules.new kcontrolcenter/kcc/all_modules.h	
+  fi 
+
 if test "$dynamic_loading" = "no"; then
 KCC_MODULES=\
 "-dlpreopen ../sample/libsample.la "\
@@ -236,12 +264,6 @@ AC_OUTPUT(Makefile \
 	kcontrolcenter/kcc/pics/Makefile \
 	kcontrolcenter/sample/Makefile \
 	kcontrolcenter/sample/pics/Makefile \
-	kcontrolcenter/screensaver/Makefile \
-	kcontrolcenter/screensaver/pics/Makefile \
-	kcontrolcenter/colors/Makefile \
-	kcontrolcenter/colors/pics/Makefile \
-	kcontrolcenter/style/Makefile \
-	kcontrolcenter/style/pics/Makefile \
 	kcontrolcenter/memory/Makefile \
 	kcontrolcenter/memory/pics/Makefile \
 	kcontrolcenter/processor/Makefile \
@@ -263,8 +285,8 @@ AC_OUTPUT(Makefile \
 	kcontrolcenter/windows/Makefile \
 	kcontrolcenter/windows/doc/Makefile \
 	kcontrolcenter/windows/pics/Makefile \
-	kcontrolcenter/background/Makefile \
-	kcontrolcenter/background/pics/Makefile \
+	kcontrolcenter/display/pics/Makefile \
+	kcontrolcenter/display/Makefile \
 	po/Makefile \
 	po/cs/Makefile \
 	po/da/Makefile \
