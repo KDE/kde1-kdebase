@@ -3,6 +3,7 @@
 Icon=keyboard.xpm
 MiniIcon=keyboard.xpm
 Name=Keys
+Name[br]=Stokelloù
 Name[ca]=Tecles
 Name[cs]=Klávesy
 Name[da]=Taster
@@ -11,6 +12,7 @@ Name[es]=Teclas
 Name[fi]=Näppäimet
 Name[fr]=Touches
 Name[hr]=Tipke
+Name[hu]=Billentyûk
 Name[is]=Hnappar
 Name[it]=Tasti
 Name[no]=Taster

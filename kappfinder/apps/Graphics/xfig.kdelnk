@@ -6,6 +6,7 @@ Type=Application
 Name=Xfig
 Name[no]=X-figur
 Comment=Xfig drawing application
+Comment[br]=Arload tresañ Xfig
 Comment[ca]=Aplicació de dibuix Xfig
 Comment[cs]=Aplikace pro kreslení vektorových obrázkù
 Comment[da]=Xfig tegneprogram

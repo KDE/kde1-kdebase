@@ -1,10 +1,15 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Development
+Name[br]=Diorren
 Name[cs]=Vývojové nástroje
+Name[da]=Udvikling
 Name[de]=Entwicklung
 Name[fi]=Kehitystyökalut
 Name[hr]=Razvoj
+Name[is]=Þróun
+Name[it]=Sviluppo
+Name[no]=Utvikling
 Name[pl]=Narzêdzia programistów
 Name[pt]=Desenvolvimento
 Name[pt_BR]=Desenvolvimento

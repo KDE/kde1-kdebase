@@ -1,10 +1,15 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Desktop
+Name[br]=Gorretaol
 Name[cs]=Pracovní plocha
+Name[da]=Arbejdsplads
 Name[fi]=Työpöytä
 Name[fr]=Bureau
 Name[hr]=Radna povr¹ina
+Name[hu]=Munkaasztal
+Name[is]=Skjáborðið
+Name[no]=Skrivebord
 Name[pt]=Ambiente de Trabalho
 Name[pt_BR]=Ambiente de Trabalho
 Name[ro]=Ecran

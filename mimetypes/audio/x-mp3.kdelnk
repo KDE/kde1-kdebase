@@ -2,10 +2,11 @@
 [KDE Desktop Entry]
 MimeType=audio/x-mp3
 Comment=MPEG Sound file
+Comment[br]=Restr son furmad MPEG gwelead 3
 Comment[ca]=Fitxer de so MPEG
 Comment[cs]=Zvukový soubor koprimovaný v MPEG Layer3
 Comment[da]=MPEG lydfil
-Comment[de]=MPEG komprimierte Musik Datei
+Comment[de]=MPEG-komprimierte Musikdatei
 Comment[es]=Audio MPEG Layer 3
 Comment[fi]=MPEG -musiikki
 Comment[fr]=Fichier son au format MPEG3

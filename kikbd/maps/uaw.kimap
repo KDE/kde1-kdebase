@@ -4,6 +4,7 @@
 Authors=Denis V. Dmitrienko <denis@null.net>,
 
 Comment=Has English characters as alternate symbols.
+Comment[br]=Nodoù saoz dezhañ evel arouezennoù divoutin.
 Comment[ca]=Te caràcters anglesos com símbols alternatius.
 Comment[cs]=Obsahuje anglické znaky ja alternativní symboly.
 Comment[da]=Har engelske tegn som alternative symboler
@@ -23,6 +24,7 @@ Comment[sl]=Angle¹ki znaki kot alternativni.
 Comment[sv]=Har engelska bokstäver som alternativa symboler.
 
 Language=Ukrainian
+Language[br]=Ukraineg
 Language[ca]=Ucranià
 Language[cs]=Ukrajinský
 Language[da]=Ukrainsk

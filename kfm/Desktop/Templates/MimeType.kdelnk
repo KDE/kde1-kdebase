@@ -6,6 +6,7 @@ Icon=unknown.xpm
 Type=MimeType
 Patterns=
 Name=Mime Type
+Name[br]=Rizh Mime
 Name[ca]=Tipus Mime
 Name[cs]=Mime typ
 Name[da]=Mimetype

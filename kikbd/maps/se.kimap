@@ -10,6 +10,7 @@
 Authors=Lars Hamrén <hamren@sdu.se>
 
 Language=Swedish
+Language[br]=Svedeg
 Language[ca]=Suec
 Language[cs]=©védský
 Language[da]=Svensk
@@ -18,6 +19,7 @@ Language[fi]=Ruotsi
 Language[fr]=Suédois
 Language[hr]=¹vedski
 Language[is]=Sænskt
+Language[it]=Svedese
 Language[no]=Svensk
 Language[pl]=Szwedzki
 Language[pt_BR]=Sueco

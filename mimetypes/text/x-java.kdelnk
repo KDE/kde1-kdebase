@@ -1,10 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Java sources
+Comment[br]=Restr tarzh Java
 Comment[ca]=Fonts Java
 Comment[cs]=Zdrojový kód v jazyku Java
 Comment[da]=Java kilder
-Comment[de]=Java Quelldatei
+Comment[de]=Java Quellcode
 Comment[es]=Código java
 Comment[fi]=Java -lähdekoodi
 Comment[fr]=Fichier source Java

@@ -1,10 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Pascal sources
+Comment[br]=Restr tarzh Pascal
 Comment[ca]=Fonts Pascal
 Comment[cs]=Zdrojový kód v jazyku Pascal
 Comment[da]=Pascal kilder
-Comment[de]=Pascal Quelldatei
+Comment[de]=Pascal Quellcode
 Comment[es]=Código pascal
 Comment[fi]=Pascal -lähdekoodi
 Comment[fr]=Fichier source Pascal

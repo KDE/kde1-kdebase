@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=Fontmanager
+Name[br]=Merour nodrezhoù
 Name[ca]=Gestor de fonts
 Name[cs]=Správce znakových sad
 Name[da]=Skriftmanager
@@ -10,7 +11,7 @@ Name[es]=Gestor de Fuentes
 Name[fi]=Kirjasinhallinta
 Name[fr]=Gestionnaire de polices
 Name[hr]=Upravitelj pisama
-Name[hu]=Fontkezelo
+Name[hu]=Betûtípus Kezelõ
 Name[is]=Leturstjóri
 Name[it]=Caratteri
 Name[no]=Skrifttypeinnstillinger
@@ -28,6 +29,7 @@ MiniIcon=kfontmanager.xpm
 Exec=kfontmanager -caption "%c" %i %m
 DocPath=kfontmanager/index.html
 Comment=KDE's Fontmanager.
+Comment[br]=Merour nodrezhoù KDE
 Comment[ca]=Gestor de fonts KDE.
 Comment[cs]=Umo¾òuje výbìr znakových sad pou¾ívaných KDE
 Comment[da]=KDE's skriftmanager
@@ -37,7 +39,7 @@ Comment[es]=Gestiona las fuentes de KDE.
 Comment[fi]=KDE:n kirjasinten hallintaohjelma
 Comment[fr]=Gestionnaire de polices de KDE
 Comment[hr]=KDE upravitelj pisama
-Comment[hu]=KDE Font beállító
+Comment[hu]=KDE betûtípus- beállító
 Comment[is]=kfontmanager:  Meðhöndlun leturs í KDE
 Comment[it]=Centro Controllo Caratteri del KDE
 Comment[nl]=KDE-lettertypebeheer.

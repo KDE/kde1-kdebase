@@ -1,11 +1,17 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Games
+Name[br]=C'hoarioù
 Name[cs]=Hry
+Name[da]=Spil
 Name[de]=Spiele
 Name[fi]=Pelit
 Name[fr]=Jeux
 Name[hr]=Igre
+Name[hu]=Játékok
+Name[is]=Leikir
+Name[it]=Giochi
+Name[no]=Spill
 Name[pl]=Gry
 Name[pt]=Jogos
 Name[pt_BR]=Jogos

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Refresh Desktop
+Name[br]=Adfreskaat ar burev
 Name[ca]=Actualitza l'escriptori
 Name[cs]=Obnovit pracovní plochu
 Name[da]=Genopfrisk Arbejdsplads
@@ -27,10 +28,11 @@ Name[zh_CN.GB2312]=Ë¢ÐÂ×ÀÃæ
 BinaryPattern=
 Protocols=
 Comment=Update desktop icons
+Comment[br]=Hizivaat arliunoù ar burev
 Comment[ca]=Actualitza les icones de l'escriptori
 Comment[cs]=Vykreslí znovu v¹echny elementy pracovní plochy
 Comment[da]=Opdater ikonerne på Arbejdspladsen
-Comment[de]=Aktualisiert alle Elemente auf der Arbeitsfläche
+Comment[de]=Aktualisiert alle Elemente der Arbeitsfläche
 Comment[es]=Actualiza los iconos del escritorio
 Comment[fi]=Päivitä työpöydän ikonit
 Comment[fr]=Mettre à jour les icônes du bureau

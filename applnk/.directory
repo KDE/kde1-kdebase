@@ -1,11 +1,17 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Default
+Name[br]=Dre ziouer
 Name[cs]=Implicitní
+Name[da]=Standard
 Name[de]=Standard
 Name[fi]=Oletus
 Name[fr]=Défaut
 Name[hr]=Uobièajeno
+Name[hu]=Alapértelmezett
+Name[is]=Sjálfgefið
+Name[it]=Predefinito
+Name[no]=Standardspråk
 Name[pl]=Domy¶lnie
 Name[pt_BR]=Padrão
 Name[ro]=Implicit

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Socket
+Comment[br]=Lugell gehentiñ (socket)
 Comment[cs]=Socket (komunikaèní kanál)
 Comment[fi]=Pistoke
 Comment[fr]=Socket (canal de communication)

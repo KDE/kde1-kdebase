@@ -1,11 +1,16 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Graphica
+Name[br]=Kevregañ
 Name[cs]=Grafika
+Name[da]=Grafika
 Name[de]=Grafik
 Name[fi]=Grafiikka
 Name[fr]=Graphiques
 Name[hr]=Grafika
+Name[is]=Myndvinnsla
+Name[it]=Grafica
+Name[no]=Grafikk
 Name[pl]=Grafika
 Name[pt]=Gráficos
 Name[pt_BR]=Gráficos

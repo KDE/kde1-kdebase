@@ -3,6 +3,7 @@
 Type=Application
 DocPath=kcontrol/kcmkfm/kfm-1.html
 Name=File Manager
+Name[br]=Merour restroù
 Name[ca]=Gestor de fitxers
 Name[cs]=Spávce souborù
 Name[da]=Filmanager
@@ -11,6 +12,7 @@ Name[es]=Gestor de archivos
 Name[fi]=Tiedostonhallinta
 Name[fr]=Gestionnaire de fichiers
 Name[hr]=Upravitelj datoteka
+Name[hu]=Fájlkezelõ
 Name[is]=Skráarstjórinn
 Name[no]=Filbehandler
 Name[pl]=Mened¿er plików

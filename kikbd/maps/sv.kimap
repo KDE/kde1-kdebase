@@ -7,6 +7,7 @@
 Authors=Karl Backström <backstrom@kde.org>,
 
 Comment=Normal layout
+Comment[br]=Reizhadur boas
 Comment[ca]=Disposició normal
 Comment[cs]=Nornální rozvr¾ení
 Comment[da]=Normal udlægning
@@ -15,6 +16,7 @@ Comment[fi]=Normaali järjestys
 Comment[fr]=Disposition normale
 Comment[hr]=Normalni raspored
 Comment[is]=Venjuleg uppsetning
+Comment[it]=Aspetto normale 
 Comment[no]=Normalt utseende
 Comment[pl]=Normalny uk³ad
 Comment[pt_BR]=Disposição normal
@@ -23,6 +25,7 @@ Comment[sk]=Normálne rozlo¾enie
 Comment[sl]=Normalni razpored
 
 Language=Swedish
+Language[br]=Svedeg
 Language[ca]=Suec
 Language[cs]=©védský
 Language[da]=Svensk
@@ -31,6 +34,7 @@ Language[fi]=Ruotsi
 Language[fr]=Suédois
 Language[hr]=¹vedski
 Language[is]=Sænskt
+Language[it]=Svedese
 Language[no]=Svensk
 Language[pl]=Szwedzki
 Language[pt_BR]=Sueco

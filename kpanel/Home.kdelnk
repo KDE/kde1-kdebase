@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 MiniIcon=kfm_home.xpm
 Comment=Personal Files
+Comment[br]=Restroù deoc'h
 Comment[ca]=Fitxers personals
 Comment[cs]=Obobní soubory
 Comment[da]=Personlige filer
@@ -10,6 +11,7 @@ Comment[fi]=Omat tiedostot
 Comment[fr]=Fichiers personnels
 Comment[hr]=Osobne datoteke
 Comment[is]=Skrárnar þínar
+Comment[it]=File Personali
 Comment[no]=Personlig filer
 Comment[pl]=Pliki osobiste
 Comment[pt]=Ficheiros pessoais

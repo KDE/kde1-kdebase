@@ -1,6 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=File manager ( Super User Mode )
+Name[br]=Merour restroù (mod gourarveriad)
 Name[ca]=Gestor de fitxers ( Mode super usuari )
 Name[cs]=Správce souborù ( Super u¾ivatelský mod )
 Name[da]=Filmanager (Superbruger modus )
@@ -10,7 +11,7 @@ Name[es]=Gestor de archivos (modo administrador)
 Name[fi]=Tiedostonhallinta (pääkäyttäjätila)
 Name[fr]=Gestionnaire de fichiers (mode super-utilisateur)
 Name[hr]=Upravitelj datoteka ( Samo za korjenskog korisnika )
-Name[hu]=File szervezo (Superuser módban)
+Name[hu]=Fájlkezelõ (Superuser módban)
 Name[is]=Skráastjóri ( sem ofurpaur )
 Name[it]=File manager ( Modalità Super User)
 Name[no]=Filstyring ( Superbrukermodus )
@@ -27,16 +28,17 @@ Type=Application
 Exec=kfmsu -caption "%c" %i %m
 DocPath=kfm/index.html
 Comment=The KDE file manager
+Comment[br]=Merour restroù KDE
 Comment[ca]=El gestor de fitxers KDE
 Comment[cs]=KDE Správce souborù
 Comment[da]=KDE's filmanager
-Comment[de]=Der KDE Dateimanager
+Comment[de]=Der KDE-Dateimanager
 Comment[eo]=Lanæas la dosieradministrilon Kfm kun radiko-rajtoj
 Comment[es]=El gestor de archivos de KDE
 Comment[fi]=KDE Tiedostohallinta
 Comment[fr]=Le gestionnaire de fichiers de KDE
 Comment[hr]=KDE Upravitelj Datoteka
-Comment[hu]=A KDE file-szervezõ
+Comment[hu]=A KDE filekezelõ
 Comment[is]=kfmsu:  KDE skráastjórinn, með réttindum kerfisstjóra
 Comment[it]=Il file manager di KDE
 Comment[no]=KDE filstyring og browser logget inn som superbruker

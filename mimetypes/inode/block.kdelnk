@@ -1,10 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 Comment=Block Device
+Comment[br]=Trobarzhell a rizh bloc'h
 Comment[ca]=Dispositiu de bloc
 Comment[cs]=Blokové zaøízení
 Comment[da]=blokenhed
-Comment[de]=Block-Orientiertes Gerät
+Comment[de]=Blockorientiertes Gerät
 Comment[es]=Dispositivo de Bloques
 Comment[fi]=Blokkilaite
 Comment[fr]=Périphérique de type Bloc

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Sound
+Name[br]=Son
 Name[ca]=So
 Name[cs]=Zvuk
 Name[da]=Lyd
@@ -8,6 +9,7 @@ Name[es]=Sonido
 Name[fi]=Ääni
 Name[fr]=Son
 Name[hr]=Zvuk
+Name[hu]=Hang
 Name[is]=Hljóð
 Name[it]=Suono
 Name[no]=Lyd

@@ -4,6 +4,7 @@ URL=
 Icon=unknown.xpm
 Type=Link
 Name=Internet Address (URL)
+Name[br]=Chomlec'h kenrouedad (URL)
 Name[ca]=Adreça Internet (URL)
 Name[cs]=Internetová adresa (URL)
 Name[da]=Internet adresse (URL)

@@ -4,6 +4,7 @@
 Authors=Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>,
 
 Comment=New "programmer's" keyboard
+Comment[br]=Stokellaoueg ar "goulever" nevez
 Comment[ca]=Nou teclat del "programador"
 Comment[cs]=Nová "programátorská" klávesnice
 Comment[da]=Nyt "programmør" tastatur
@@ -25,6 +26,7 @@ Comment[sl]=Nova ,,programerska`` tipkovnica
 Comment[sv]=Nytt programmeingstangentbord
 
 Language=Polish
+Language[br]=Poloneg
 Language[ca]=Polonès
 Language[cs]=Polský
 Language[da]=Polsk

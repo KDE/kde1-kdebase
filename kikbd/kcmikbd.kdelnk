@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=International Keyboard
+Name[br]=Stokellaoueg etrevroadel
 Name[ca]=Teclat internacional
 Name[cs]=Mezinárodní klávesnice
 Name[da]=Internationalt tastatur
@@ -21,6 +22,7 @@ Name[sk]=Medzinárodná klávesnica
 Name[sl]=Mednarodna tipkovnica
 Name[sv]=Internationellt tangentbord
 Comment=International Keyboard
+Comment[br]=Stokellaoueg etrevroadel
 Comment[ca]=Teclat internacional
 Comment[cs]=Mezinárodní klávesnice
 Comment[da]=Internationalt tastatur

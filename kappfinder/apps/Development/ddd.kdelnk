@@ -3,6 +3,7 @@
 Exec=ddd
 Type=Application
 Comment=Data Display Debugger
+Comment[br]=Dizraener diskwel roadennoù
 Comment[da]=Problemløser for datavisning
 Comment[de]=DD Debugger
 Comment[fi]=DDD -debuggeri

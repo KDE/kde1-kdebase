@@ -4,6 +4,7 @@
 Authors=Denis V. Dmitrienko <denus@null.net>,
 
 Comment=Microsoft layout. Has English characters as alternate symbols.
+Comment[br]=Tres Microsoft. Nodoù saoz dezhañ evel arouezennoù divoutin.
 Comment[ca]=Disposició Microsoft. Caràcters anglesos com símbols alternatius.
 Comment[cs]=Rozvr¾ení podle Microsoftu. Obsahuje anglické znaky jako alternativní symboly.
 Comment[da]=Microsoft udlægning. Har engelske tegn som alternative symboler.
@@ -23,6 +24,7 @@ Comment[sl]=Microsoftov razpored. Angle¹ki znaki kot alternativni.
 Comment[sv]=Microsofts layout. Har engelska bokstäver som alternativa symboler.
 
 Language=Russian
+Language[br]=Rusianeg
 Language[ca]=Rus
 Language[cs]=Ruský
 Language[da]=Russisk

@@ -4,6 +4,7 @@ URL=ftp://ftp.kde.org/pub/kde
 Icon=ftp.xpm
 Type=Link
 Name=FTP URL
+Name[br]=URL FTP
 Name[ca]=URL d'FTP
 Name[es]=URL de FTP
 Name[fi]=FTP -linkki

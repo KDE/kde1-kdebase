@@ -5,6 +5,7 @@ Icon=xfmail.xpm
 Type=Application
 Name=XFMail
 Comment=XFMail Mailer
+Comment[br]=Posteler XFMail
 Comment[ca]=Carter XFMail
 Comment[cs]=Po¹tovní program XFMail
 Comment[da]=XFMail e-postprogram

@@ -1,11 +1,17 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Applications
+Name[br]=Arloadoù
 Name[cs]=Aplikace
+Name[da]=Anvendelser
 Name[de]=Anwendungen
 Name[fi]=Sovellukset
 Name[hr]=Programi
+Name[hu]=Alkalmazások
+Name[is]=Forrit
+Name[it]=Applicazioni
 Name[nl]=Toepassingen
+Name[no]=Applikasjoner
 Name[pl]=Aplikacje
 Name[pt]=Aplicações
 Name[pt_BR]=Aplicativos
