@@ -144,7 +144,7 @@ void Pager::windowChange(Window w)
   current->init();
   for (Window *win = kwmmapp->windows_sorted.first(); win != 0L; 
        win = kwmmapp->windows_sorted.next()) {
-    if (KWM::desktop(*win) == desktop && kwmmapp->hasWindow(*win))
+    if (KWM::desktop(*win) == desktop && !KWM::isIconified(*win))
       current->addWindow(*win);
   }
   current->repaint(false);
