@@ -153,7 +153,7 @@ msgid ""
 "Do you want to install the default color schemes now ?"
 msgstr ""
 "Es wurden keine Farbpaletten gefunden.\n"
-"Sollen jetzt ein Standardfarbpaletten installiert werden ?"
+"Sollen jetzt Standardfarbpaletten installiert werden ?"
 
 #: general.cpp:57
 msgid "General"
