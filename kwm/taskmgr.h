@@ -17,14 +17,40 @@
 
 #include "client.h"
 
+class KListBoxItem_Desktop : public QListBoxItem {
+public:
+  KListBoxItem_Desktop(const char *text);
+  virtual void paint(QPainter *);
+  virtual int height(const QListBox *) const;
+  virtual int width(const QListBox *) const;
 
-class Ktask : public QDialog{
+  virtual const char *text() const;
+
+private:
+  QString _text;
+};
+
+class KListBoxItem_Program : public QListBoxItem {
+public:
+  KListBoxItem_Program(QPixmap &, const char *text);
+  virtual void paint(QPainter *);
+  virtual int height(const QListBox *) const;
+  virtual int width(const QListBox *) const;
+
+  virtual const char *text() const;
+
+private:
+  QString _text;
+  QPixmap _pm;
+};
+
+class Ktask : public QDialog {
   Q_OBJECT
 public:
   Ktask( QWidget *parent=0, const char *name=0, WFlags f=0);
   bool do_grabbing();
   bool eventFilter( QObject *, QEvent * );
-  void prepareToShow(const QStrList* strlist, int active);
+  void prepareToShow(QStrList* strlist, int active);
 
 public slots:
   void cleanup();

@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+  patchlevel 22:
+       - made the taskwindow look a little bit nicer, including their
+	 mini icons (Mario Weilguni)
   patchlevel 21:
        - fix for motif applications: program-defined positioning will
          be ignored while user-defined positiong still works.

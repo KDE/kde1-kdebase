@@ -17,12 +17,82 @@
 #include <signal.h>
 
 #include <kapp.h>
+#include <kwm.h>
 
 #include "manager.h"
 
 extern Manager* manager;
 
 extern bool do_not_draw;
+
+KListBoxItem_Desktop::KListBoxItem_Desktop(const char *text) :
+  QListBoxItem()
+{
+  _text = text;
+}
+
+void KListBoxItem_Desktop::paint(QPainter *p) {
+  p->save();
+  QFont f=p->font();
+  f.setBold(TRUE);
+  p->setFont(f);
+  QFontMetrics fm = p->fontMetrics();
+  p->drawText( 3,  fm.ascent() + fm.leading()/2, _text.data() );
+  p->restore();
+}
+
+const char *KListBoxItem_Desktop::text() const {
+  return _text.data();
+}
+
+int KListBoxItem_Desktop::height(const QListBox *lb) const {
+  QFont f = lb->font();
+  f.setBold(TRUE);  
+  QFontMetrics fm(f);
+  return fm.lineSpacing();
+}
+
+int KListBoxItem_Desktop::width(const QListBox *lb) const {
+  QFont f = lb->font();
+  f.setBold(TRUE);  
+  QFontMetrics fm(f);
+  return fm.boundingRect(_text.data()).width();
+}
+
+
+KListBoxItem_Program::KListBoxItem_Program(QPixmap &pm, const char *text) :
+  QListBoxItem()
+{
+  _pm = pm;
+  _text = text;
+}
+
+void KListBoxItem_Program::paint(QPainter *p) {
+  p->save();
+  QFontMetrics fm = p->fontMetrics();
+  p->drawPixmap(fm.boundingRect("XXXX").width(), 2, _pm);
+  p->drawText( fm.boundingRect("XXXX").width() + 4 + 14 + 4,  
+	       fm.ascent() + fm.leading()/2 + 2, _text.data()+3 );
+  p->restore();
+}
+
+const char *KListBoxItem_Program::text() const {
+  return _text.data();
+}
+
+int KListBoxItem_Program::height(const QListBox *lb) const {
+  QFontMetrics fm(lb->font());
+  if(fm.lineSpacing() > _pm.height() + 4)
+    return fm.lineSpacing();
+  else
+    return _pm.height() + 4;
+}
+
+int KListBoxItem_Program::width(const QListBox *lb) const {
+  QFontMetrics fm(lb->font());
+  return fm.boundingRect("XXXX").width() + 4 + 14 + 
+    4 + fm.boundingRect(_text.data()).width() ;
+}
 
 
 Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
@@ -58,7 +128,8 @@ Ktask::Ktask( QWidget *parent, const char *name, WFlags f)
 
 }
 
-void Ktask::prepareToShow(const QStrList* strlist, int active){ 
+
+void Ktask::prepareToShow(QStrList* strlist, int active){ 
   int w = 360;
   int h = 0;
 
@@ -66,7 +137,25 @@ void Ktask::prepareToShow(const QStrList* strlist, int active){
   label->adjustSize();
   
   listbox->clear();
-  listbox->insertStrList(strlist);
+
+  FILE *f = fopen("/dev/console", "w");
+
+  char *p;
+  for(p = strlist->first(); p != 0; p = strlist->next()) {
+    Client *c = 0;
+
+    // check if this is a desktop item or a window
+    if(strlen(p) < 4 || (c = manager->findClientByLabel(QString(p+3))) == 0) {
+      // a desktop
+      listbox->insertItem(new KListBoxItem_Desktop(p));
+    } else {
+      // a window, get miniicon
+      QPixmap pm = KWM::miniIcon(c->window, 14, 14);
+      listbox->insertItem(new KListBoxItem_Program(pm, p));
+    }
+  }
+  fclose(f);
+
   listbox->setCurrentItem(active);
   listbox->show();
   listbox->setFocusPolicy( StrongFocus );
@@ -177,12 +266,12 @@ void Ktask::logout(){
 }
 
 void Ktask::listboxSelect(int index){
-  cleanup();
   QString label = listbox->text(index);
+  cleanup();
   emit changeToClient(label);
 }
 
-void Ktask::cleanup(){
+void Ktask::cleanup() {
   XUngrabServer(qt_xdisplay());
   if (mouseGrabber())
     mouseGrabber()->releaseMouse();
@@ -195,5 +284,3 @@ void Ktask::cleanup(){
   }
   XSync(qt_xdisplay(), FALSE);
 }
-
-
