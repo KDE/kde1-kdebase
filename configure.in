@@ -70,7 +70,6 @@ else
 fi
 
 KDE_PROG_LIBTOOL
-AC_CHECK_RPATH
 
 AC_MSG_CHECKING([dynamic loading])
 eval "`egrep '^build_libtool_libs=' libtool`"
@@ -112,6 +111,7 @@ AC_SUBST(LIBSOCKET)
 AC_CHECK_LIB(ucb, killpg, [LIBUCB="-lucb"]) dnl for Solaris2.4
 AC_SUBST(LIBUCB)
 AC_PATH_KDE
+AC_CHECK_RPATH
 
 AC_CHECK_KDM dnl in kdminclude.m4
 
