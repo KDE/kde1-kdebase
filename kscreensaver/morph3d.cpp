@@ -35,6 +35,9 @@
    Please contact me in case of problems, not the original author!
 */
 
+#define LONG64
+#define QT_CLEAN_NAMESPACE
+
 #include "xlock.h"
 #ifdef HAVE_CONFIG_H
 #include "../config.h"
