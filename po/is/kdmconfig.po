@@ -158,19 +158,16 @@ msgid "Standard"
 msgstr "Venjulegt"
 
 #: kdm-font.cpp:157
-#, fuzzy
 msgid "Greeting font"
-msgstr "Kveðja"
+msgstr "Letur kveðju"
 
 #: kdm-font.cpp:161
-#, fuzzy
 msgid "Fail font"
-msgstr "Mistök"
+msgstr "Letur neitunar"
 
 #: kdm-font.cpp:165
-#, fuzzy
 msgid "Standard font"
-msgstr "Venjulegt"
+msgstr "Venjulegt letur"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"

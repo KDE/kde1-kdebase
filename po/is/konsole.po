@@ -118,7 +118,7 @@ msgstr "&Tæknilegar uplýsingar ..."
 
 #: main.C:346
 msgid "cd"
-msgstr ""
+msgstr "cd"
 
 #: main.C:359
 msgid "Sessions"

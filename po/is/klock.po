@@ -458,7 +458,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Þetta kerfi styður ekki valmöguleika %s !"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -469,8 +468,8 @@ msgstr ""
 "Aðvörun: Þú getur ekki læst skjánum!\n"
 "\n"
 "Kerfið notar skuggalykilorð. Hafðu samband við\n"
-"kerfisstjórann of segðust þurfa \"suid\" fyrir\n"
-"skjaskreytingarnar!"
+"kerfisstjórann og segðust þurfa \"suid\" fyrir\n"
+"kcheckpass forritið!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

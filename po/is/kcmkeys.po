@@ -14,7 +14,7 @@ msgstr "&Staðlaðir flýtitakkar"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Víðværir flýtihnappar"
+msgstr "&Altækir flýtihnappar"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"

@@ -57,21 +57,20 @@ msgid "Bookmarks"
 msgstr "Bókamerki"
 
 #: krootwm.C:280
-#, fuzzy
 msgid "Arrange Window Maker icons"
-msgstr "Raða táknmyndum"
+msgstr "Raða Window Maker táknmyndum"
 
 #: krootwm.C:281
 msgid "Show all"
-msgstr ""
+msgstr "Sýna allt"
 
 #: krootwm.C:282
 msgid "Hide other"
-msgstr ""
+msgstr "Fela annað"
 
 #: krootwm.C:284
 msgid "Show info panel"
-msgstr ""
+msgstr "Sýna upplýsingaspjald"
 
 #: krootwm.C:285
 msgid "Show legal panel"
@@ -79,16 +78,15 @@ msgstr ""
 
 #: krootwm.C:286
 msgid "Restart"
-msgstr ""
+msgstr "Endurræsa"
 
 #: krootwm.C:288
 msgid "Exit"
-msgstr ""
+msgstr "Hætta"
 
 #: krootwm.C:289
-#, fuzzy
 msgid "Window Maker"
-msgstr "Glugga"
+msgstr "Window Maker"
 
 #: krootwm.C:306
 msgid "Desk"

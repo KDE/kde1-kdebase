@@ -116,7 +116,7 @@ msgstr "Undirstrika tengla"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Nota alltaf mína liti"
 
 #: options.cpp:334
 msgid "KDE Help Options"

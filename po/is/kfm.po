@@ -989,12 +989,11 @@ msgstr "VILLA: Ekki tókst að skrifa í %s"
 
 # FIXME
 #: kiojob.cpp:567 kiojob.cpp:872
-#, fuzzy, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Ekki tókst að búa til tákntengi í\n"
+"Ekki tókst að búa til tákntengi\n"
 "%s"
 
 #: kiojob.cpp:585 kiojob.cpp:893 kiojob.cpp:1330
@@ -1017,21 +1016,25 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"Þessi sérstaka skrá verður ekki afrituð\n"
+"%s"
 
 #: kiojob.cpp:663
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d sérstakar skrár verða ekki afritaðar."
 
 #: kiojob.cpp:668
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Afrita endurkvæmt úr skrám með skilgreinda aðferð\n"
+"(til dæmis tar skrár)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Afrita endurkvæmt til/frá fjarlægum stöðum"
 
 #: kiojob.cpp:924
 #, c-format
@@ -1060,12 +1063,12 @@ msgstr ""
 msgid ""
 "Special file will not be moved\n"
 "%s"
-msgstr ""
+msgstr "Sérstök skrá verður ekki færð\n%s"
 
 #: kiojob.cpp:1046
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d sérstakar skrár verða ekki færðar."
 
 #: kiojob.cpp:1310 kiojob.cpp:1381
 #, c-format
@@ -1159,16 +1162,14 @@ msgstr ""
 "Hugsanlega var gefið upp rangt lykilorð"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
-"Tar sendi þessi villuboð:\n"
+"Tar sendi villuboð\n"
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1178,7 +1179,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Aðgerð er ekki tæknilega möguleg"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
@@ -1490,12 +1491,3 @@ msgid ""
 msgstr ""
 "Notkun:\n"
 "kfmexec skipun [slóðir ....]\n"
-
-#~ msgid "Dont know what to do"
-#~ msgstr "Ég veit ekki hvað ég á að gera."
-
-#~ msgid "Move here"
-#~ msgstr "Færa hingað"
-
-#~ msgid "Link here"
-#~ msgstr "Tengja hingað"

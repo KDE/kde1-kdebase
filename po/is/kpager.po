@@ -10,7 +10,7 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr "Víðvært skjáborð af/á"
+msgstr "Altækt skjáborð af/á"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -26,11 +26,11 @@ msgstr "Færast til vinstri"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Fela &víðvært skjáborð"
+msgstr "Fela &altækt skjáborð"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Sýna víðvært skjáborð"
+msgstr "Sýna altækt skjáborð"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"

@@ -18,7 +18,7 @@ msgstr "Endurlesa skráar&tög"
 
 #: kmenuedit.cpp:77
 msgid "by"
-msgstr ""
+msgstr "eftir"
 
 #: kmenuedit.cpp:179 kmenuedit.cpp:204
 msgid "Changes not saved !"

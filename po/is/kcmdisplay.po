@@ -416,7 +416,7 @@ msgstr "Lágur"
 
 #: general.cpp:221
 msgid "Style"
-msgstr ""
+msgstr "Stíll"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
@@ -427,9 +427,8 @@ msgid "&Menubar on top of the screen in the style of MacOS"
 msgstr "&Valslá efst á skjá svipað og á Makkanum`"
 
 #: general.cpp:259
-#, fuzzy
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Virkja í forritum óskyldum KDE"
+msgstr "&Virkja letur og liti í forritum óskyldum KDE"
 
 #: general.cpp:530
 msgid "General font"
@@ -479,13 +478,14 @@ msgstr "&Litir"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr ""
+msgstr "&Stíll"
 
 #: main.cpp:83
 #, fuzzy
 msgid ""
 "usage: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
-msgstr "notkun: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
+msgstr ""
+"notkun: kcmdisplay [-init | {background,screensaver,colors,fonts,style}]\n"
 
 #: main.cpp:150
 msgid "Display settings"
