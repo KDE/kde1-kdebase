@@ -41,10 +41,6 @@ int main( int argc, char *argv[] )
 	::exit(1); 
     }
 
-#ifdef HAVE_LIBJPEG
-    QImageIO::defineIOHandler("JFIF","^\377\330\377\340", 0, read_jpeg_jfif, NULL);
-#endif
-
     KBGndManager kbgnd( &a );
 
     kbgnd.connect(&a, SIGNAL(desktopChange(int)), SLOT(desktopChange(int)));
