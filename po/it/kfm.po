@@ -1318,36 +1318,3 @@ msgid ""
 msgstr ""
 "Errorore di sintassi:\n"
 "kfmexec comando [URL ....]\n"
-
-#~ msgid "&New Window"
-#~ msgstr "&Nuova Finestra"
-
-#~ msgid "Stop"
-#~ msgstr "Ferma"
-
-#~ msgid "KFM Error"
-#~ msgstr "Errore KFM"
-
-#~ msgid "Move"
-#~ msgstr "Sposta"
-
-#~ msgid "Properties"
-#~ msgstr "Proprietà"
-
-#~ msgid "Font Size"
-#~ msgstr "Dimensioni Carattere"
-
-#~ msgid "Small"
-#~ msgstr "Piccolo"
-
-#~ msgid "Medium"
-#~ msgstr "Medio"
-
-#~ msgid "Large"
-#~ msgstr "Grande"
-
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Caratteri"

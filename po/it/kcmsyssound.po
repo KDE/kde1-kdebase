@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -99,11 +101,11 @@ msgstr "Finestra Staccata"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
-msgstr ""
+msgstr "Nuova finestra di dialogo"
 
 #: syssound.cpp:170
 msgid "Window Trans Delete"
-msgstr ""
+msgstr "Chiusura finestra di dialogo"
 
 #: syssound.cpp:171
 msgid "Logout"
