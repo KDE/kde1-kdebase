@@ -1,0 +1,17 @@
+gcksum crc   length name
+----------   ------ ----
+2234800229    82753 rman.c
+2435527268     1654 getopt.c
+1480364202       71 macish.c
+1604910322     6150 README-rman
+3784005816     4077 Makefile
+1680357597     3157 Makefile.mac
+2742691442    10856 rman.1
+ 474739931    11302 rman.html
+2195986796     1202 Copyright
+ 314330963     2252 contrib/README-contrib
+1116697472     4986 contrib/http-rman.c
+1693965707      660 contrib/http-rman.html
+2860919314     2049 contrib/man2html
+2032677288      150 contrib/sco-wrapper.sh
+ 884546947     3806 contrib/sutter.txt
