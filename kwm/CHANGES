@@ -19,6 +19,8 @@ patchlevel 9 (CT - 27May98):
 	   For the moment it seems vertical shading is much more rapid (of
 	   course, much less gradient steps to calculate in KPixmap).
                 - small bugfix to allow runtime switching between vertical and horizontal (Matthias)
+                - small fix to avoid a double calling of Manager::sendConfig after a 
+                   drag/resize in opaque mode(Matthias)
   
 patchlevel 8:
         - WindowResizeType=Opaque improved. No more flickering and a 

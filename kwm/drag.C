@@ -332,6 +332,14 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
       if ( other == c->geometry)
 	continue;
       c->geometry = other;
+      if (c->geometry.width() < 0) {
+	c->geometry.moveBy(c->geometry.width(),0);
+	c->geometry.setWidth(  -c->geometry.width());
+      }
+      if (c->geometry.height() < 0) {
+	c->geometry.moveBy(0, c->geometry.height());
+	c->geometry.setHeight(-c->geometry.height());
+      }
       if (transparent && !do_not_clear_rectangle)
 	drawbound(c);
       do_not_clear_rectangle = false;
@@ -352,27 +360,11 @@ bool sweepdrag(Client* c,void (*recalc)( Client *, int, int) ){
       continue;
     }
 
-    if (transparent)
+    if (transparent){
       drawbound(c);
-    
-    if (c->geometry.width() < 0) {
-      c->geometry.moveBy(c->geometry.width(),0);
-      c->geometry.setWidth(  -c->geometry.width());
-    }
-    if (c->geometry.height() < 0) {
-      c->geometry.moveBy(0, c->geometry.height());
-      c->geometry.setHeight(-c->geometry.height());
-    }
-
-    if (options.WindowSnapZone || options.BorderSnapZone) 
-      manager->snapIt(c);
-
-    manager->sendConfig(c);
-    
-    if (transparent)
+      manager->sendConfig(c);
       XUngrabServer(qt_xdisplay());
-
-    while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
+    }
 
     if (c->isMaximized()){
       c->maximized = false;
