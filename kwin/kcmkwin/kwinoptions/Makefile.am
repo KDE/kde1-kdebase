@@ -19,11 +19,13 @@ install-data-local:
 	$(INSTALL_DATA) mini-windows.xpm $(kde_minidir)/windows.xpm
 	$(INSTALL_DATA) mini-titlebar.xpm $(kde_minidir)/titlebar.xpm
 	$(INSTALL_DATA) mini-buttons.xpm $(kde_minidir)/buttons.xpm
+	$(INSTALL_DATA) kcmkwm.xpm $(kde_icondir)/kcmkwm.xpm
 
 uninstall-local:
 	rm -f $(kde_minidir)/windows.xpm
 	rm -f $(kde_minidir)/titlebar.xpm
 	rm -f $(kde_minidir)/buttons.xpm
+	rm -f $(kde_icondir)/kcmkwm.xpm
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 
