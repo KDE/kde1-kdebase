@@ -11,6 +11,9 @@ influences from my experiences with the former kwm.
 
 In 0.12:
 --------
+patchlevel 3:
+        - honours KWM_WIN_ICON_GEOMETRY for iconify/deiconify animation
+
 patchlevel 2:
         - improved shaped window handling
 	- CT: "pinned down" the pixmaps names for titlebar texture 

@@ -1730,9 +1730,7 @@ void Client::iconify(bool animation){
     if (animation){
       KWM::raiseSoundEvent("Window Iconify");
       if (animate_size_change(this, geometry,
-			      QRect(geometry.x()+geometry.width()/2,
-				    geometry.y()+geometry.height()/2,
-				    0,0),
+			      KWM::iconGeometry(window),
 			      getDecoration()==KWM::normalDecoration,
 			      title_rect.x(),
 			      width()-title_rect.right()))
@@ -1761,9 +1759,9 @@ void Client::unIconify(bool animation){
   if (isOnDesktop(manager->currentDesktop())){
     if (animation){
       KWM::raiseSoundEvent("Window DeIconify");
-      if (animate_size_change(this, QRect(geometry.x()+geometry.width()/2,
-				    geometry.y()+geometry.height()/2,
-				    0,0), geometry,
+      if (animate_size_change(this, 
+			      KWM::iconGeometry(window),
+			      geometry,
 			      getDecoration()==KWM::normalDecoration,
 			      title_rect.x(),
 			      width()-title_rect.right()))

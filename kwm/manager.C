@@ -98,6 +98,7 @@ Manager::Manager(): QObject(){
   kwm_win_icon = XInternAtom(qt_xdisplay(),"KWM_WIN_ICON",False);
   kwm_win_desktop = XInternAtom(qt_xdisplay(),"KWM_WIN_DESKTOP",False);
   kwm_win_frame_geometry = XInternAtom(qt_xdisplay(),"KWM_WIN_FRAME_GEOMETRY",False);
+  kwm_win_icon_geometry = XInternAtom(qt_xdisplay(),"KWM_WIN_ICON_GEOMETRY",False);
 
   kwm_command = XInternAtom(qt_xdisplay(), "KWM_COMMAND", False);
   kwm_do_not_manage = XInternAtom(qt_xdisplay(), "KWM_DO_NOT_MANAGE", False);

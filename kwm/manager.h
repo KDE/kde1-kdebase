@@ -406,6 +406,7 @@ private:
   Atom   kwm_win_icon;
   Atom   kwm_win_desktop;
   Atom   kwm_win_frame_geometry;
+  Atom   kwm_win_icon_geometry;
 
   Atom kwm_command;
   Atom kwm_do_not_manage;
