@@ -2,8 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay \n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1998-03-30 14:57+01\n"
-"Last-Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 14:10+MET\n"
+"Translator: Carsten Pfeiffer <pfeiffer@kde.org>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: backgnd.cpp:54
 msgid "Enter new desktop name"
@@ -39,11 +44,11 @@ msgstr "&Einstellungen..."
 
 #: backgnd.cpp:296
 msgid "Wallpaper"
-msgstr "Hintergrundgrafik"
+msgstr "Hintergrundbild"
 
 #: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
 msgid "No wallpaper"
-msgstr "Keine Hintergrundgrafik"
+msgstr "Kein Hintergrundbild"
 
 #: backgnd.cpp:360
 msgid "&Browse..."
@@ -55,7 +60,7 @@ msgstr "Anordnung:"
 
 #: backgnd.cpp:375
 msgid "Tiled"
-msgstr "Fliesen"
+msgstr "Gekachelt"
 
 #: backgnd.cpp:376
 msgid "Mirrored"
@@ -63,7 +68,7 @@ msgstr "Gespiegelt"
 
 #: backgnd.cpp:377
 msgid "Center Tiled"
-msgstr "Zentrierte Fliesen"
+msgstr "Zentrierte Kacheln"
 
 #: backgnd.cpp:378
 msgid "Centred"
@@ -75,7 +80,7 @@ msgstr "Zentrierte Backsteine"
 
 #: backgnd.cpp:380
 msgid "Centred Warp"
-msgstr "Zentrierte Verzerrung"
+msgstr "Zentrierte Kette"
 
 #: backgnd.cpp:381
 msgid "Centred Maxpect"
@@ -103,11 +108,11 @@ msgstr "&Einstellungen..."
 
 #: backgnd.cpp:418
 msgid "&Dock into the panel"
-msgstr "In Panel einbinden"
+msgstr "In Kontrollfeld einbinden"
 
 #: backgnd.cpp:443
 msgid "Cache size (kB):"
-msgstr "Cache-Größe (kB)"
+msgstr "Cache-Größe (KB)"
 
 #: backgnd.cpp:1339
 msgid "Desktop names"
@@ -129,8 +134,8 @@ msgstr "Nicht unterstützte URL"
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
-"Entschuldigung, diese Art URL wird zur Zeit nicht vom KDE-Anzeigen-Modul "
-"untertützt"
+"Sorry, dieser URL-Typ wird zur Zeit nicht vom KDE-Anzeigen-Modul "
+"unterstützt"
 
 #: backgnd.cpp:1440
 msgid "Two color backgrounds"
@@ -158,7 +163,7 @@ msgstr "Muster&name"
 
 #: backgnd.cpp:1566
 msgid "Current"
-msgstr "Derzeitig"
+msgstr "Aktuell"
 
 #: backgnd.cpp:1626
 msgid "Filled"
@@ -186,7 +191,7 @@ msgstr "Kopfsteinpflaster"
 
 #: backgnd.cpp:1707
 msgid "Random mode setup"
-msgstr "Einstellung für den Zufalls-Modus"
+msgstr "Einstellung für Zufalls-Modus"
 
 #: backgnd.cpp:1713
 msgid "Pick files from &directory"
@@ -202,7 +207,7 @@ msgstr "Verzögerung des Zeitschalters in Sekunden:"
 
 #: backgnd.cpp:1760
 msgid "In &order"
-msgstr "In der Reihenfolge"
+msgstr "In der &Reihenfolge"
 
 #: backgnd.cpp:1777
 msgid "Desktops :"
@@ -242,7 +247,7 @@ msgstr "&Änderungen speichern"
 
 #: colorscm.cpp:161
 msgid "Widget color"
-msgstr "Widgetfarbe"
+msgstr "Elementfarbe"
 
 #: colorscm.cpp:168
 msgid "Inactive title bar"
@@ -266,7 +271,7 @@ msgstr "Aktiver Titeltext"
 
 #: colorscm.cpp:173
 msgid "Active title blend"
-msgstr "Aktive Titelleiste-Verlauf"
+msgstr "Verlauf für aktive Titelleiste"
 
 #: colorscm.cpp:174
 msgid "Background"
@@ -278,11 +283,11 @@ msgstr "Text"
 
 #: colorscm.cpp:176
 msgid "Select background"
-msgstr "Auswahl-Hintergrund"
+msgstr "Hintergrund-Auswahl"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Auswahl-Text"
+msgstr "Text-Auswahl"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -533,15 +538,3 @@ msgstr "Standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "irgendein"
-
-#~ msgid "Fonts etc."
-#~ msgstr "&Schriften usw."
-
-#~ msgid "Desktop fonts"
-#~ msgstr "Desktop-Schriften"
-
-#~ msgid "&Fonts etc."
-#~ msgstr "&Schriften usw."
-
-#~ msgid "kb"
-#~ msgstr "KB"

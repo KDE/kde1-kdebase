@@ -2,17 +2,17 @@
 # Copyright (C) The KDE Team
 # Gregor Zumstein <zumstein@ssd.ethz.ch>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys VERSION\n"
 "POT-Creation-Date: 1999-01-08 01:16+0100\n"
-"PO-Revision-Date: 1999-01-22 23:00+0100\n"
-"Last-Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
-"Language-Team: German \n"
+"PO-Revision-Date: 1999-02-03 14:50+MET\n"
+"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: main.cpp:72
 msgid "&Standard shortcuts"
@@ -28,7 +28,7 @@ msgstr "Gebrauch: kcmkeys [-init | {standard,global}]\n"
 
 #: main.cpp:132
 msgid "Key binding settings"
-msgstr "Einstellung der Tastenkürzel"
+msgstr "Zuordnung der Tastenkürzel"
 
 #: keyconfig.cpp:106
 msgid "Current scheme"
@@ -36,7 +36,7 @@ msgstr "Aktuelle Einstellungen"
 
 #: keyconfig.cpp:108
 msgid "KDE default"
-msgstr "KDE default"
+msgstr "KDE-Voreinstellung"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
@@ -44,7 +44,7 @@ msgstr "&Tastaturbelegung"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
-msgstr "&Hinzufügen ..."
+msgstr "&Hinzufügen..."
 
 #: keyconfig.cpp:148
 msgid "&Save changes"
@@ -61,7 +61,7 @@ msgid ""
 "system where the key scheme is stored."
 msgstr ""
 "Die Belegung konnte nicht entfernt werden.\n"
-"Vielleicht haben Sie keine Berechtigung\n"
+"Vielleicht haben Sie keine Berechtigung,\n"
 "die Datei zu ändern."
 
 #: keyconfig.cpp:343
@@ -126,7 +126,7 @@ msgstr "Fenster nach hinten"
 
 #: ../../kwm/kwmbindings.cpp:9
 msgid "Window close"
-msgstr "Fenster schliessen"
+msgstr "Fenster schließen"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
@@ -134,7 +134,7 @@ msgstr "Fenster minimieren"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"
-msgstr "Fenstergrösse ändern"
+msgstr "Fenstergröße ändern"
 
 #: ../../kwm/kwmbindings.cpp:12
 msgid "Window move"
@@ -142,7 +142,7 @@ msgstr "Fenster verschieben"
 
 #: ../../kwm/kwmbindings.cpp:13
 msgid "Window toggle sticky"
-msgstr "Sticky-Modus umschalten"
+msgstr "Haft-Modus einschalten"
 
 #: ../../kwm/kwmbindings.cpp:15
 msgid "Switch to desktop 1"
@@ -198,11 +198,11 @@ msgstr "Neu"
 
 #: stdbindings.cpp:8
 msgid "Next"
-msgstr "Nächste"
+msgstr "Nächster"
 
 #: stdbindings.cpp:9
 msgid "Prior"
-msgstr "Vorherige"
+msgstr "Vorheriger"
 
 #: stdbindings.cpp:14
 msgid "Find"

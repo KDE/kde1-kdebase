@@ -2,58 +2,63 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1998-12-12 15:11+0100\n"
-"PO-Revision-Date: 1997-12-29 15:28+01\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 14:30+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: info.cpp:50
 #, c-format
 msgid "screen #%d"
-msgstr ""
+msgstr "Bildschirm #%d"
 
 #: info.cpp:52
 #, c-format
 msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
-msgstr ""
+msgstr "  Abmessungen          : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr ""
+msgstr "  Auflösung          : %dx%d dots per inch\n"
 
 #: info.cpp:61
 #, c-format
 msgid "  depths (%d)          : "
-msgstr ""
+msgstr "  Tiefe (%d)          : "
 
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr ""
+msgstr "Name der Anzeige       : %s"
 
 #: info.cpp:87
 #, c-format
 msgid "version number        : %i.%i"
-msgstr ""
+msgstr "Versionsnummer        : %i.%i"
 
 #: info.cpp:89
 #, c-format
 msgid "vendor string         : %s"
-msgstr ""
+msgstr "Hersteller-Firma         : %s"
 
 #: info.cpp:91
 #, c-format
 msgid "vendor release number : %i"
-msgstr ""
+msgstr "Hersteller-Nummer: %i"
 
 #: info.cpp:93
 #, c-format
 msgid "default screen number : %i"
-msgstr ""
+msgstr "Standard-Bildschirm-Nummer : %i"
 
 #: info.cpp:95
 #, c-format
 msgid "number of screens     : %i"
-msgstr ""
+msgstr "Anzahl der Bildschirmanzeigen     : %i"
 
 #: info.cpp:179
 msgid ""
@@ -61,67 +66,67 @@ msgid ""
 " or\n"
 "this system is not yet supported :-("
 msgstr ""
+"Keine Information verfügbar\n"
+"oder\n"
+"das System wird noch nicht unterstützt :-("
 
 #: info_fbsd.cpp:73
 #, c-format
 msgid "%s, unknown speed"
-msgstr ""
+msgstr "%s, unbekannte Geschwindigkeit"
 
 #: info_fbsd.cpp:75
 #, c-format
 msgid "%s running at %s MHz"
-msgstr ""
+msgstr "%s läuft auf %s MHz"
 
 #: info_fbsd.cpp:213
 msgid "Ahh couldn't open fstab!"
-msgstr ""
+msgstr "Hmm -- konnte die fstab nicht öffnen!"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221
-#, fuzzy
 msgid "Device"
-msgstr "&Geräte"
+msgstr "Gerät"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224
 msgid "Mount Point"
-msgstr ""
+msgstr "Mount Point"
 
 #: info_fbsd.cpp:226 info_fbsd.cpp:227
 msgid "FS Type"
-msgstr ""
+msgstr "Filesystem-Typ"
 
 #: info_fbsd.cpp:229 info_fbsd.cpp:230
 msgid "Mount Options"
-msgstr ""
+msgstr "Mount-Optionen"
 
 #: info_hpux.cpp:54
 msgid "unknown CPU type"
-msgstr ""
+msgstr "Unbekannter CPU-Typ"
 
 #: info_hpux.cpp:62
-#, fuzzy
 msgid "unavailable"
-msgstr "Nicht errechenbar"
+msgstr "Nicht verfügbar"
 
 #: info_hpux.cpp:67
 msgid "Number of active processor(s)= "
-msgstr ""
+msgstr "Anzahl aktiver Prozessoren = "
 
 #: info_linux.cpp:99
 msgid "Value"
-msgstr ""
+msgstr "Wert"
 
 #: info_linux.cpp:114
-#, fuzzy
 msgid "DMA-Channel"
-msgstr "DMA-C&annels"
+msgstr "DMA-Kanäle"
 
 #: info_linux.cpp:115 info_linux.cpp:128
 msgid "used by"
-msgstr ""
+msgstr "verwendet von"
 
 #: info_linux.cpp:127
 msgid "I/O-Range"
-msgstr ""
+msgstr "I/O-Bereich"
 
 #: main.cpp:79
 msgid "&Memory"
@@ -137,7 +142,7 @@ msgstr "&Interrupts"
 
 #: main.cpp:88
 msgid "DMA-C&hannels"
-msgstr "DMA-C&annels"
+msgstr "DMA-K&anäle"
 
 #: main.cpp:91
 msgid "&IO-Ports"
@@ -179,7 +184,7 @@ msgstr ""
 
 #: main.cpp:148
 msgid "System Information"
-msgstr "Informationen über das System "
+msgstr "System-Informationen"
 
 #: memory.cpp:15
 msgid "Total memory"
@@ -191,7 +196,7 @@ msgstr "Freier Speicher"
 
 #: memory.cpp:33
 msgid "Shared memory"
-msgstr "Geteilter Speicher"
+msgstr "Aufgeteilter Speicher"
 
 #: memory.cpp:41
 msgid "Buffer memory"
@@ -213,10 +218,9 @@ msgstr "%10ld Bytes  = %8.2f MB"
 #: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
 #: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
 msgid "Not available"
-msgstr "Nicht errechenbar"
+msgstr "Nicht verfügbar"
 
 #: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
 #: memory_sgi.cpp:30
-#, fuzzy
 msgid "Not Available"
-msgstr "Nicht errechenbar"
+msgstr "Nicht verfügbar"

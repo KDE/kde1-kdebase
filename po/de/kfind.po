@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-05-08 23:54+0100\n"
-"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
-"Language-Team: German <kde-i18n@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 16:35+MET\n"
+"Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
-"Content-Transfer-Encoding: iso-8859-1\n"
-"Translator: Miroslav Flidr <flidr@kky.zcu.cz>\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -60,7 +60,7 @@ msgstr "Auswahl &umkehren"
 
 #: kfindtop.cpp:174
 msgid "&Preferences ..."
-msgstr "&Präferenzen ..."
+msgstr "&Einstellungen..."
 
 #: kfindtop.cpp:179
 #, c-format
@@ -172,7 +172,7 @@ msgstr "&Größe ist:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -188,7 +188,7 @@ msgstr "Symbolische Links"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
-msgstr "Besondere Dateien (Sockets, Gerätedatein...)"
+msgstr "Besondere Dateien (Sockets, Gerätedateien...)"
 
 #: kftabdlg.cpp:241
 msgid "Executable files"
@@ -228,11 +228,11 @@ msgstr "Der Tag existiert nicht!"
 
 #: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
-msgstr "\"Größe\" ist keine Zahl!"
+msgstr "Der Wert in \"Größe\" ist keine gültige Zahl!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
-msgstr "Präferenzen"
+msgstr "Einstellungen"
 
 #: kfoptions.cpp:74
 msgid "File format:"
@@ -256,7 +256,7 @@ msgstr "Textdatei"
 
 #: kfoptions.cpp:123
 msgid "Saving"
-msgstr "Speichern"
+msgstr "Speichere"
 
 #: kfoptions.cpp:130
 msgid "Create Archive:"
@@ -285,7 +285,7 @@ msgstr "%d Datei(en) gefunden"
 
 #: kfwin.cpp:246
 msgid "It wasn't possible to save results!"
-msgstr "Es konnte nicht gesichert werden!"
+msgstr "Ergebnis konnte nicht gesichert werden!"
 
 #: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
 msgid "KFind Results File"
@@ -301,7 +301,7 @@ msgid ""
 "Do you really want to delete file:\n"
 "%s"
 msgstr ""
-"Wollen Sie wirklich diese Datei löschen:\n"
+"Wollen Sie diese Datei wirklich löschen:\n"
 "%s"
 
 #: kfwin.cpp:300
@@ -355,12 +355,3 @@ msgstr "Typ des Archivs konnte nicht ermittelt werden!"
 #: kfwin.cpp:497
 msgid "Error while creating child process!"
 msgstr "Fehler beim Erzeugen des Unterprozesses!"
-
-#~ msgid "&Cut"
-#~ msgstr "Aus&schneiden"
-
-#~ msgid "Properties"
-#~ msgstr "Eigenschaften"
-
-#~ msgid "Files"
-#~ msgstr "Dateien"

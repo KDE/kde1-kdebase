@@ -2,13 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
-"PO-Revision-Date: 1998-05-09 00:03+0100\n"
-"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
-"Language-Team: German <kde-i18n@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 18:15+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
-"Content-Transfer-Encoding: iso-8859-1\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: attraction.cpp:716
 msgid "Attraction"
@@ -183,7 +183,7 @@ msgstr "Zufall"
 
 #: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Dieser Bildschirmschoner läuft nur auf Farbbildschirmen."
+msgstr "Sorry. Dieser Bildschirmschoner läuft nur auf Farbbildschirmen."
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
@@ -460,7 +460,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Die Option %s wird auf dieser Plattform nicht unterstützt!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -471,9 +470,9 @@ msgstr ""
 "Warnung: Sie werden den Bildschirm nicht sperren können!\n"
 "\n"
 "Dieses System benutzt versteckte Paßwörter (shadow passwords)!\n"
-"Sie brauchen die Hilfe des System-Verwalters.\n"
+"Sie brauchen die Hilfe der Systemverwaltung.\n"
 "\n"
-"Sagen Sie ihm, daß Sie setuid auf den Bildschirmschonern brauchen!"
+"Sagen Sie, daß Sie \"suid\" für das kcheckpass-Programm brauchen!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"
@@ -527,14 +526,14 @@ msgstr ""
 "                    Reihenfolge: links-oben, rechts-oben, links-unten, "
 "rechts-unten\n"
 "  -delay zahl       Zeit, bis der Bildschirmschoner startet\n"
-"                     (Normalerweise 10 Minuten)\n"
+"                    (Normalerweise 10 Minuten)\n"
 "  -desc             Gibt Beschreibung des Bildschirmschoners aus\n"
 "  -install          Bildschirmschoner einrichten\n"
 "  -lock             Paßwort zum Beenden des Bildschirmschoners\n"
 "  -allow-root       Akzeptiert Root-Passwort zum Aufheben der Sperre\n"
 "  -nice zahl        Starten mit angegebener Priorität (nice level)\n"
 "\n"
-"  -preview wid      Läuft im angegeben Fenster\n"
+"  -preview wid      Läuft im angegebenen Fenster\n"
 "  -setup            Bildschirmschoner einstellen\n"
 "  -test             Bildschirmschoner sofort starten\n"
 
@@ -548,7 +547,7 @@ msgstr "3D-Körper (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "KMorph3D eisntellen"
+msgstr "KMorph3D einstellen"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
@@ -600,7 +599,7 @@ msgstr ""
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "Einstellungen"
+msgstr "kpolygon Einstellungen"
 
 #: polygon.cpp:107
 msgid "Vertices:"
@@ -661,7 +660,7 @@ msgid "Setup krock"
 msgstr "Asteroiden einstellen"
 
 #: rock.cpp:589
-msgid "Move"
+msgid "Verschieben"
 msgstr "Bewegen"
 
 #: rock.cpp:595
@@ -728,7 +727,7 @@ msgstr "Bereite Linsen vor..."
 
 #: science.cpp:813
 msgid "grabbing screen..."
-msgstr "verbinde mit dem Desktop..."
+msgstr "Bildschirmaufnahme..."
 
 #: science.cpp:975
 msgid "Setup Science"
@@ -881,17 +880,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid ""
-#~ "Science Version 0.24.2 beta\n"
-#~ "\n"
-#~ "written by Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"
-#~ msgstr ""
-#~ "Wissenschaft - Version 0.24.2 beta\n"
-#~ "\n"
-#~ "geschrieben von Rene Beutler 1998\n"
-#~ "rbeutler@g26.ethz.ch"

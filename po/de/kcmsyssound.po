@@ -2,12 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1998-05-08 23:54+0100\n"
-"Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
-"Language-Team: German <kde-i18n@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 16:20+MET\n"
+"Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
-"Content-Transfer-Encoding: iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
 "Date: 1998-05-09 00:15+0100\n"
 "From: Christian Czezatke <ceci@klapauzius>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -99,11 +101,11 @@ msgstr "Maximiertes Fenster wiederherstellen"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Fenster angeheften - ein"
+msgstr "Fenster anheften - ein"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Fenster angeheften - aus"
+msgstr "Fenster anheften - aus"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -182,7 +184,7 @@ msgstr ""
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "ungültige Dateiendung"
+msgstr "Ungültige Dateierweiterung"
 
 #: syssound.cpp:482
 #, c-format

@@ -2,8 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
 "POT-Creation-Date: 1999-01-15 01:15+0100\n"
-"PO-Revision-Date: 1997-12-28 14:57+01\n"
-"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+"PO-Revision-Date: 1999-02-03 16:25+MET\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
+"Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
+"Language-Team: de (de@li.org)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
 
 #: helpwin.cpp:55
 msgid "KDE Help: Open URL"
@@ -15,11 +20,11 @@ msgstr "URL öffnen"
 
 #: helpwin.cpp:459 info.cpp:288
 msgid "Cannot open: "
-msgstr "Kann nicht geöffnet werden: "
+msgstr "Kann nicht öffnen: "
 
 #: helpwin.cpp:460 helpwin.cpp:469
 msgid "Oops!"
-msgstr "Oops!"
+msgstr "Hoppla!"
 
 #: helpwin.cpp:468
 msgid "Unknown format: "
@@ -115,7 +120,7 @@ msgstr "Links unterstrichen darstellen"
 
 #: options.cpp:246
 msgid "Always use my colors"
-msgstr ""
+msgstr "Immer eigene Farben verwenden"
 
 #: options.cpp:334
 msgid "KDE Help Options"
@@ -132,13 +137,13 @@ msgstr "Online-Handbuch"
 #: man.cpp:62
 #, c-format
 msgid "Section %s"
-msgstr "Kapitel %s"
+msgstr "Abschnitt %s"
 
 # Ist "Online" wirklich nötig? 
 #: man.cpp:84
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Online-Handbuch - Kapitel %s"
+msgstr "Online-Handbuch - Abschnitt %s"
 
 #: man.cpp:132
 msgid "User Commands"
@@ -181,7 +186,7 @@ msgstr "Verzeichnis wird gelesen: "
 
 #: man.cpp:435
 msgid "Online Manual - Section"
-msgstr "Online-Handbuch - Kapitel"
+msgstr "Online-Handbuch - Abschnitt"
 
 #: man.cpp:501 man.cpp:510
 msgid "\"man\" system call failed"
@@ -206,7 +211,7 @@ msgstr "&Neues Hilfefenster"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
-msgstr "&Datei öffnen ..."
+msgstr "&Datei öffnen..."
 
 #: mainwidget.cpp:142
 msgid "&Search"
@@ -214,7 +219,7 @@ msgstr "&Suchen"
 
 #: mainwidget.cpp:157
 msgid "&Find..."
-msgstr "&Suchen"
+msgstr "&Suchen..."
 
 #: mainwidget.cpp:159
 msgid "Find &next"
@@ -238,11 +243,11 @@ msgstr "&Hoch"
 
 #: mainwidget.cpp:175
 msgid "&Previous"
-msgstr "&Letztes"
+msgstr "&Letzte"
 
 #: mainwidget.cpp:177
 msgid "&Next"
-msgstr "&Nächstes"
+msgstr "&Nächste"
 
 #: mainwidget.cpp:190
 msgid "&General Preferences..."
@@ -289,17 +294,14 @@ msgstr ""
 "Copyright (C) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
 "Dieses Programm wurde unter der GNU General Public License (GPL) "
-"veröffentlichet.\n"
-"Für KDEHelp gibt es ÜBERHAUPT KEINE GARANTIE, es sei denn, dies wird \n"
+"veröffentlicht.\n"
+"Für KDEHelp gibt es KEINERLEI GARANTIE, es sei denn, dies wird \n"
 "durch lokale Gesetze ausgeschlossen oder eingeschränkt."
 
 #: mainwidget.cpp:224
 msgid "&Goto"
 msgstr "&Seite"
 
-# Hier heißt es "Favoriten", weiter oben hieß es 
-# Bookmark -- was ist gemeint?
-# Entweder Favorit oder Notiz.
 #: mainwidget.cpp:225
 msgid "&Bookmarks"
 msgstr "&Lesezeichen"
@@ -314,19 +316,19 @@ msgstr "Nächstes Dokument"
 
 #: mainwidget.cpp:255
 msgid "Previous Node"
-msgstr "Letztes Thema"
+msgstr "Letzte Ebene"
 
 #: mainwidget.cpp:260
 msgid "Next Node"
-msgstr "Nächstes Thema"
+msgstr "Nächste Ebene"
 
 #: mainwidget.cpp:265
 msgid "Up one Node"
-msgstr "Eine Hierarchieebene nach oben"
+msgstr "Eine Ebene nach oben"
 
 #: mainwidget.cpp:270
 msgid "Top Node"
-msgstr "Höchste Hierarchieebene"
+msgstr "Höchste Ebene"
 
 #: mainwidget.cpp:277
 msgid "Help Contents"
@@ -368,27 +370,3 @@ msgstr "&Groß-/Kleinschreibung"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Suchen"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "UR&L öffnen..."
-
-#~ msgid "&Contents"
-#~ msgstr "&Inhalt"
-
-#~ msgid "Could not start or find KFM"
-#~ msgstr "KFM konnte nicht gefunden oder gestartet werden"
-
-#~ msgid "Font Size"
-#~ msgstr "Schriftgröße"
-
-#~ msgid "Fonts"
-#~ msgstr "Zeichensatz"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Diverses"
-
-#~ msgid "&Reload"
-#~ msgstr "&Neu laden"
-
-#~ msgid "Stop"
-#~ msgstr "Halt"
