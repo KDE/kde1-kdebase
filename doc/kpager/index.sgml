@@ -22,10 +22,9 @@
 <sect>Introduction
 <p>
 
-KPager is KDE's pager application. It's intended to maximize productivity
-by giving the user some very interesting features, such as a quick view of
-all your windows and control over them without even having them in your
-current desktop. 
+KPager gives you a thumbnail sketch of all your desktops. It is a handy
+tool to let you see, resize or close windows on any desktop and move
+windows around within or between desktops.
 	
 <p>
 I hope you get as much use and fun out of KPager as I did developing it.
