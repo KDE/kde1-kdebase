@@ -1,53 +1,53 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-22 01:24+0200\n"
+"POT-Creation-Date: 1999-04-24 01:28+0200\n"
 "PO-Revision-Date: 1999-03-31 21:50+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
 "Translator: Wang Jian <larkw@263.net>\n"
 
-#: kpanel.C:295
+#: kpanel.C:296
 msgid "&Move"
 msgstr "移动(&M)"
 
-#: kpanel.C:298
+#: kpanel.C:299
 msgid "&Properties"
 msgstr "特性(&P)"
 
-#: kpanel.C:341
+#: kpanel.C:342
 msgid "Go!"
 msgstr "开始!"
 
-#: kpanel.C:418
+#: kpanel.C:419
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:457 props.C:207 props.C:208
+#: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
 msgstr "退出"
 
-#: kpanel.C:465 props.C:206
+#: kpanel.C:466 props.C:206
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
-#: kpanel.C:474 kpanel.C:483
+#: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
 msgstr "隐藏面板"
 
-#: kpanel.C:493 kpanel.C:505
+#: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
 msgstr "显示面板"
 
-#: kpanel.C:1069
+#: kpanel.C:1070
 msgid "Iconify other &windows"
 msgstr "图标化其他窗口(&W)"
 
-#: kpanel.C:1217 tools.C:910
+#: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: kpanel.C:1225 props.C:197
+#: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "快速操纵文件系统"
 

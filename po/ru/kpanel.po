@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-04-22 01:24+0200\n"
+"POT-Creation-Date: 1999-04-24 01:28+0200\n"
 "PO-Revision-Date: 1998-12-21 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -13,47 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=koi8-r\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: kpanel.C:295
+#: kpanel.C:296
 msgid "&Move"
 msgstr "Переместить"
 
-#: kpanel.C:298
+#: kpanel.C:299
 msgid "&Properties"
 msgstr "Настройки"
 
-#: kpanel.C:341
+#: kpanel.C:342
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kpanel.C:418
+#: kpanel.C:419
 msgid "No info available"
 msgstr "Нет информации"
 
-#: kpanel.C:457 props.C:207 props.C:208
+#: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Выйти"
 
-#: kpanel.C:465 props.C:206
+#: kpanel.C:466 props.C:206
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
-#: kpanel.C:474 kpanel.C:483
+#: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
 msgstr "Спрятать панель"
 
-#: kpanel.C:493 kpanel.C:505
+#: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
 msgstr "Показать панель"
 
-#: kpanel.C:1069
+#: kpanel.C:1070
 msgid "Iconify other &windows"
 msgstr "Свернуть другие окна"
 
-#: kpanel.C:1217 tools.C:910
+#: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
 msgstr "Список окон"
 
-#: kpanel.C:1225 props.C:197
+#: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Быстро перемещаться по файловой системе"
 

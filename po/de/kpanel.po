@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1999-04-22 01:24+0200\n"
+"POT-Creation-Date: 1999-04-24 01:28+0200\n"
 "PO-Revision-Date: 1999-02-03 19:30+MET\n"
 "Last-Translator: Thomas Diehl <th.diehl@gmx.net>\n"
 "Language-Team: de (de@li.org)\n"
@@ -14,47 +14,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Translator: Christian Kirsch <ck@held.mind.de>\n"
 
-#: kpanel.C:295
+#: kpanel.C:296
 msgid "&Move"
 msgstr "&Verschieben"
 
-#: kpanel.C:298
+#: kpanel.C:299
 msgid "&Properties"
 msgstr "&Eigenschaften"
 
-#: kpanel.C:341
+#: kpanel.C:342
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:418
+#: kpanel.C:419
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:457 props.C:207 props.C:208
+#: kpanel.C:458 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:465 props.C:206
+#: kpanel.C:466 props.C:206
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
-#: kpanel.C:474 kpanel.C:483
+#: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
 msgstr "Kontrolleiste ausblenden"
 
-#: kpanel.C:493 kpanel.C:505
+#: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
 msgstr "Kontrolleiste anzeigen"
 
-#: kpanel.C:1069
+#: kpanel.C:1070
 msgid "Iconify other &windows"
 msgstr "Andere Fenster ver&kleinern"
 
-#: kpanel.C:1217 tools.C:910
+#: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
 msgstr "Fensterliste"
 
-#: kpanel.C:1225 props.C:197
+#: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Schnell durch das Dateisystem navigieren"
 
