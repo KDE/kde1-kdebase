@@ -102,11 +102,11 @@ void Desktop::setDesktopActived(bool status)
     if (status==true)
     {
         WindowProperties *wp=window_list->first();
-        while ((wp!=NULL)&&(wp->active==false))
+        while ((wp!=0L)&&(wp->active==false))
         {
             wp=window_list->next();
         }
-        if ((wp!=NULL)&&(wp->active==true)) wp->active=false;
+        if ((wp!=0L)&&(wp->active==true)) wp->active=false;
         if (drawWinMode==pixmap) grabDesktop();
     }
     
@@ -158,7 +158,7 @@ void Desktop::insertWindow( WindowProperties *wp )
 WindowProperties *Desktop::getWindowProperties(Window w)
 {
     WindowProperties *wp=window_list->first();
-    while ((wp!=NULL)&&(wp->id!=w))
+    while ((wp!=0L)&&(wp->id!=w))
     {
         wp=window_list->next();
     }
@@ -168,11 +168,11 @@ WindowProperties *Desktop::getWindowProperties(Window w)
 int Desktop::getIndexOfWindow(Window w)
 {
     WindowProperties *wp=window_list->first();
-    while ((wp!=NULL)&&(wp->id!=w))
+    while ((wp!=0L)&&(wp->id!=w))
     {
         wp=window_list->next();
     }
-    if (wp==NULL) return -1;
+    if (wp==0L) return -1;
     return window_list->at();
 }
 
@@ -182,6 +182,12 @@ void Desktop::removeWindow(Window w)
 #ifdef DESKTOPDEBUG
     printf("[%d]Remove window %ld\n",id,w);
 #endif
+    WindowProperties *wpback=getWindowProperties(w);
+    if (wpback==0L) return;
+ 
+    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=0L;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=0L;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=0L;};
     window_list->remove(getIndexOfWindow(w));
     update();
 }
@@ -197,8 +203,8 @@ void Desktop::changeWindow(Window w)
     
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) {tmpbigPixmap=wpback->bigPixmap;wpback->bigPixmap=0L;};
-    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
-    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=0L;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=0L;};
     uint wid=getIndexOfWindow(w);
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
@@ -229,9 +235,9 @@ void Desktop::raiseWindow(Window w)
     uint wid=getIndexOfWindow(w);
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==0L) return;
-    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
-    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
-    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
+    if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=0L;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=0L;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=0L;};
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
@@ -263,8 +269,8 @@ void Desktop::lowerWindow(Window w)
     if (wpback==0L) return;
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) {tmpbigPixmap=wpback->bigPixmap;wpback->bigPixmap=0L;};
-    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
-    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
+    if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=0L;};
+    if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=0L;};
     window_list->remove(wid);
     WindowProperties *wp=new WindowProperties;
     wp->id=w;
@@ -289,7 +295,7 @@ void Desktop::activateWindow(Window w)
     
     WindowProperties *wp=window_list->first();
     int end=0;
-    while ((wp!=NULL)&&(end<2))
+    while ((wp!=0L)&&(end<2))
     {
         if (wp->active==true)
         {
@@ -450,7 +456,7 @@ void Desktop::paintEvent(QPaintEvent *)
     double ratiox=(double)width()/(double)screen_width;
     double ratioy=(double)(height()-y)/(double)screen_height;
     
-    while (wp!=NULL)
+    while (wp!=0L)
     {
         tmp.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
         
@@ -519,9 +525,9 @@ WindowProperties *Desktop::windowAtPosition(const QPoint *p,bool *ok,QPoint *pos
         printf("minigeom : x %d   y %d    w %d   h %d\n",wp->minigeometry.x(),wp->minigeometry.y(),wp->minigeometry.width(),wp->minigeometry.height());
 #endif
         wp=window_list->prev();
-        if (wp!=NULL) wp->minigeometry.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
+        if (wp!=0L) wp->minigeometry.setRect((int)(wp->framegeometry.x()*ratiox),(int)(y+wp->framegeometry.y()*ratioy),(int)(wp->framegeometry.width()*ratiox),(int)(wp->framegeometry.height()*ratioy));
     }
-    if ((kwmmapp!=NULL)&&(wp!=0L))
+    if ((kwmmapp!=0L)&&(wp!=0L))
     {
         if (!kwmmapp->hasWindow(wp->id))
         {
@@ -959,7 +965,7 @@ void Desktop::loadWallpaperBackground(QString wallpaper)
     
     QPixmap *wpPixmap2=(QPixmap *)wpPixmap;
     
-    if (wpPixmap2==NULL) return;
+    if (wpPixmap2==0L) return;
     
     backPixmapWidth=wpPixmap2->width();
     backPixmapHeight=wpPixmap2->height();
@@ -1271,7 +1277,7 @@ void Desktop::grabDesktop(void)
     printf("[%d] grabDesk\n",id);
 #endif
     WindowProperties *wp=window_list->first();
-    while (wp!=NULL)
+    while (wp!=0L)
     {
         grabWindowContents(wp);
         wp=window_list->next();
@@ -1345,7 +1351,7 @@ void Desktop::toggleShowName(void)
     }
 }
 
-KWMModuleApplication *Desktop::kwmmapp=NULL;
+KWMModuleApplication *Desktop::kwmmapp=0L;
 int Desktop::headerHeight=25;
 Window Desktop::hilitwin=0;
 bool Desktop::use1ClickMode=true;
