@@ -127,15 +127,16 @@ public:
      *
      * @param _cmd is a command like "kedit ftp://weis@localhost/index.html" or
      *             something like that.
+     * @param _workdir is the optionnal working directory
      *
      * @see #runBinding
      */
-    static void runCmd( const char *_cmd );
+    static void runCmd( const char *_cmd, const char *_workdir = 0L );
 
     /**
      * Another interface to the 'exec' clib functions.
      */
-    static void runCmd( const char *_exec, QStrList &_args );
+    static void runCmd( const char *_exec, QStrList &_args, const char *_workdir = 0L );
 
     /**
      * Open a config file

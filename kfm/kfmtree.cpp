@@ -43,6 +43,76 @@ void KFMDirTree::fill()
     changeTree( &node );
 }
 
+// new slot for updating tree view Sep 5 rjakob
+void KFMDirTree::slotshowDirectory(const char *_url )
+{
+    char *p;
+    char tmp[PATH_MAX],tmp2[PATH_MAX];
+    bool found;
+    int loops;
+
+    int ypos, xpos, myindex, newypos;
+    int comparelength;
+    finderWin->offsets( xpos, ypos );
+
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return;
+    
+    printf("slotshowDirectory(%s)\n",_url);
+
+    KFinderItem *item;
+    KFMDirTreeItem *kfmitem;
+
+    strcpy(tmp,u.path());
+    p=tmp+strlen(tmp)-1;
+    if (*p=='/') *p=0;
+    loops=0;
+
+    comparelength=strlen(tmp);
+    while(1) {
+
+        myindex=0;
+
+        found=false;
+        for ( item = first(); item != 0L; item = next() ) {
+            kfmitem = (KFMDirTreeItem*)item;
+            myindex++;
+
+            strcpy(tmp2,kfmitem->getURL());
+
+            if (!strncmp(tmp,tmp2,comparelength)) {
+	        kfmitem->setOpen(true);
+    	        updateTree(false);
+	        found=true;
+	        if (comparelength<(int)strlen(tmp)) {
+		    comparelength=strlen(tmp);
+		    break;  // break the for() loop
+		    }
+    	        finderWin->repaint();
+	        newypos=myindex*CELL_HEIGHT;
+	        if (newypos<ypos || newypos>(ypos+finderWin->height())) {
+		    if (myindex>=3) newypos=(myindex-3)*CELL_HEIGHT;
+    	    	    finderWin->setOffsets( xpos, newypos);
+		    }
+	        return;
+	    }
+        }
+        if (found) continue;
+        if (comparelength==1) {
+	    printf("should never happen!\n");
+	    break;
+	    }
+        comparelength--;
+        while( (comparelength>0) && (tmp[comparelength-1]!='/') )
+    	    comparelength--;
+        comparelength--;
+        if (comparelength<=0) comparelength=1;
+        if (++loops>128) break;     // race condition ?
+        }
+    printf("\"%s\" not opened\n",tmp);
+}
+
 void KFMDirTree::slotDirectoryChanged( const char *_url )
 {
     KURL u( _url );

@@ -43,6 +43,7 @@ public slots:
     void slotDropLink();
 
     void slotDirectoryChanged( const char *_url );
+    void slotshowDirectory( const char *_url );
     
 protected:
     void emitUrlSelected( const char *_url, int _button );

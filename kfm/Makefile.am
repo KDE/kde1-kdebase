@@ -38,7 +38,7 @@ noinst_HEADERS =  \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
 	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h \
-	kstrlist.h cgi.h kbookmarkdlg.h fileentry.h finddlg.h
+	kstrlist.h cgi.h kbookmarkdlg.h finddlg.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \

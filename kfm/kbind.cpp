@@ -1236,6 +1236,8 @@ bool KMimeBind::runBinding( const char *_url, const char *_binding )
 
 bool KMimeBind::runBinding( const char *_url )
 {
+    char getwd_buffer[PATH_MAX];
+
     KURL u( _url );
     if ( u.isMalformed() )
 	return FALSE;
@@ -1247,6 +1249,11 @@ bool KMimeBind::runBinding( const char *_url )
     QString ur;
     QString n = "";
     QString d = "";
+
+// preset working directory to current working directory
+    getcwd(getwd_buffer,PATH_MAX);
+    QString workdir(getwd_buffer);
+
     f << "\"" << quote1 << "\"";
     ur << "\"" << quote2 << "\"";
     QString tmp = quote1.data();
@@ -1262,6 +1269,10 @@ bool KMimeBind::runBinding( const char *_url )
 	d += "\"";
 	d += tmp.left( i + 1 );
 	d += "\"";
+        // set working directory to path of file
+        // only for local files
+	if (!strcmp(u.protocol(),"file"))
+            workdir = tmp.left( i + 1 );
     }
     
     QString cmd = getCmd();
@@ -1324,18 +1335,24 @@ bool KMimeBind::runBinding( const char *_url )
     {
       QStrList list;
       list.append( _url );
-      openWithOldApplication( cmd, list );      
+      printf("openWithOldApplication(%s,...,%s)\n",
+      	cmd.data(),workdir.data());
+      openWithOldApplication( cmd, list, workdir.data() );      
       return TRUE;
     }
 
-    runCmd( cmd.data() );
+    printf("KDELnkMimeType::runAsApplication starts runCmd(%s,%s)\n",
+	cmd.data(),workdir.data());
+    runCmd( cmd.data(), workdir.data() );
     return TRUE;
 }
 
-void KMimeBind::runCmd( const char *_exec, QStrList &_args )
+// new function with the working directory
+void KMimeBind::runCmd( const char *_exec, QStrList &_args, const char *_workdir )
 {
     char **argv = new char*[ _args.count() + 3 ];
     char* s;
+    int rc;
 
     argv[0] = (char*)_exec;
     
@@ -1347,6 +1364,11 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args )
     int pid;
     if ( ( pid = fork() ) == 0 )
     {    
+        // change to the working directory if set
+	if (_workdir) {
+            rc=chdir(_workdir);
+            if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
+        }
 	execvp( argv[0], argv );
 	QString txt = i18n("Could not execute program\n");
 	txt += argv[0];
@@ -1363,8 +1385,10 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args )
     delete [] argv;
 }
 
-void KMimeBind::runCmd( const char *_cmd )
+void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
 {
+    int rc;
+
   // printf("CMD='%s'\n",_cmd );
     
     char *cmd = new char[ strlen( _cmd ) + 1 ];
@@ -1433,6 +1457,11 @@ void KMimeBind::runCmd( const char *_cmd )
     int pid;
     if ( ( pid = fork() ) == 0 )
     {    
+        // change to the working directory if set
+	if (_workdir) {
+            rc=chdir(_workdir);
+            if (rc) printf("chdir(%s) failed : %d\n",_workdir,rc);
+        }
 	execvp( argv[0], argv );
 	QString txt = i18n("Could not execute program\n");
 	txt += argv[0];
@@ -1541,15 +1570,13 @@ bool KMimeType::runBinding( const char *_url, const char *_binding )
 	if ( strcmp( bind->getProgram(), _binding ) == 0 )
 	    return bind->runBinding( _url );
     }
-//   repeat the loop for default bindings before we say we have none
-//   Sep 5 rjakob
+    // Repeat the loop for default bindings before we say we have none. rjakob
     for ( bind = defaultType->firstBinding(); bind != 0L; bind = defaultType->nextBinding() )
     {
 	// Is it the one we want ?
 	if ( strcmp( bind->getProgram(), _binding ) == 0 )
 	    return bind->runBinding( _url );
     }
-
 
     QString tmp;
     tmp.sprintf( "%s\n%s", i18n( "Could not find binding" ), _binding );
@@ -1586,6 +1613,8 @@ bool ExecutableMimeType::run( const char *_url )
 			     
     QString cmd;
     cmd << "\"" << KIOServer::shellQuote( u.path() ) << "\"";
+
+    printf("ExecutableMimeType starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
 
     return TRUE;
@@ -1633,6 +1662,7 @@ bool ExecutableMimeType::runAsApplication( const char *_url, QStrList *_argument
 	}
     }
     
+    printf("runAsApplication starts runCmd(%s)\n",cmd.data());
     KMimeBind::runCmd( cmd );
     // system( cmd.data() );
     return TRUE;
@@ -1867,11 +1897,15 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	}
 	cmd += "-e ";
 	cmd += exec.data();
+	printf("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+		cmd.data());
 	KMimeBind::runCmd( cmd );
     }
     else
     {
 	QString cmd = exec.data();
+	printf("KDELnkMimeType::runAsApplication starts runCmd(%s)\n",
+		cmd.data());
 	KMimeBind::runCmd( cmd );
     }
 

@@ -5,10 +5,11 @@
 
 #include <kurl.h>
 
-void openWithOldApplication( const char *_cmd, QStrList& _urlList )
+void openWithOldApplication( const char *_cmd, QStrList& _urlList, const char *_workdir )
 {
     // Find out wether there are some URL with a
     // protocol != "file"
+    printf("openWithOldApplication : _workdir=%s\n",_workdir);
     bool prot = FALSE;
     char *s;
     for ( s = _urlList.first(); s != 0L; s = _urlList.next() )
@@ -36,7 +37,7 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 	    list.append( s );
 	}
 	
-	KMimeBind::runCmd( "kfmexec", list );
+	KMimeBind::runCmd( "kfmexec", list, _workdir );
     }
     // Only local files
     else
@@ -56,9 +57,9 @@ void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 	while ( ( pos = cmd.find( "%f" )) != -1 )
 	    cmd.replace( pos, 2, tmp );
 	
-	// printf("Executuing '%s'\n",cmd.data());
+	// printf("Executing '%s'\n",cmd.data());
 
-	KMimeBind::runCmd( cmd.data() );
+	KMimeBind::runCmd( cmd.data(), _workdir );
     }
 }
 

@@ -1,6 +1,46 @@
+1998-11-28  David Faure  <faure@kde.org>
+
+	* Applied and adapted patches from <rjakob@duffy1.franken.de>:
+	- KFM sets working directory when launching an application.
+	- Default mimetype (not tested)
+	- KFM tree view follow mode (add kfm_tree_follow=On in [Settings] in 
+	  your kfmrc to enable it - at the moment). Some repaint problems, 
+	  but works.
+	* Removed fileentry.cpp / fileentry.h, not used (in this directory)
+
+1998-11-26  David Faure  <faure@kde.org>
+
+	* kioslave/file.cpp : Sort links to dirs with dirs. Fixed sorting of dirs themselves.
+
+1998-11-25  David Faure  <faure@kde.org>
+
+	* kfmman.cpp : Added key navigation (mostly in khtmlw, but also a bit in kfm)
+
 1998-11-21 Lars Knoll <knoll@mpi-hd.mpg.de>
 	* added support for url redirections
 	  (<meta http-equiv="refresh" ...>) command
+
+1998-11-19  David Faure  <faure@kde.org>
+
+	* Deleted the Properties instance when finished with it (in slotApply/Cancel)
+	Thanks to Pietro Iglio <iglio@fub.it> for reporting this memory leak. 
+	* Commit Lars Knoll's change to add document encoding selection.
+	
+1998-11-18  David Faure  <faure@kde.org>
+
+	* Moved global option allowURLProps to kfm class
+ 	  (fixes a bug with session management windows)
+	* Enable/disable menu entry in all windows if option is changed in the dialog box.
+
+1998-11-16  David Faure  <faure@kde.org>
+
+	* Improved first page of properties dialogs.
+	
+1998-11-14  David Faure  <faure@kde.org>
+
+	* Patch from Sven Radej 
+	  - Per-URL kfm settings. Saved in .directory if possible, otherwise in kdelnk.
+	* Added check before trying to clear the cache. Fixes a security problem.
 	
 1998-11-14  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
@@ -12,6 +52,19 @@
 
 	* color selection GUI for the root icons (in htmlopts.cpp, root.cpp,
  		kfmgui.cpp and so on :-)
+
+1998-11-10  David Faure  <faure@kde.org>
+
+	* Applied, improved and tested patch from Michael Reiher <michael.reiher@gmx.de>
+	   - Fixes bugs with *bars and adds them to session management data.
+	   - Also adds TreeView to SM.
+	* Added layout management for Exec, Binding & Directories properties pages.
+	
+1998-11-09  David Faure  <faure@kde.org>
+
+	* Applied patches from Rene Beutler <rbeutler@g26.ethz.ch>
+	   - Fixes bindings for multiple selection in root window
+	   - Speeds up a little "Select all"
 
 Fri Jul  3 02:21:39 1998  Torben Weis  <weis@localhost>
 

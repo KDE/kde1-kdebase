@@ -611,6 +611,7 @@ protected:
 
     KFMDirTree *treeView;
     bool bTreeViewInitialized;
+    bool bTreeViewFollowMode; // tree should follow directory changes
     bool bTreeView;
 
     /**

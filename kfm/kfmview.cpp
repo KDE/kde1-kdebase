@@ -536,7 +536,12 @@ void KfmView::slotPopupOpenWith()
     else
       return;
     
-    openWithOldApplication( l.getText(), popupFiles );
+    printf("KfmView::slotPopupOpenWith starts openWithOldApplication(%s)\n",
+       l.getText());
+    KURL u(popupFiles.first());
+    if (!strcmp(u.protocol(),"file"))
+          openWithOldApplication( l.getText(), popupFiles, u.directory() );
+    else  openWithOldApplication( l.getText(), popupFiles );
 }              
 
 void KfmView::slotPopupProperties()

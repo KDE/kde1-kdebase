@@ -95,6 +95,7 @@ KfmGui::KfmGui( QWidget *, const char *name, const char * _url)
     kfmgui_height = KFMGUI_HEIGHT;
 
     bTreeView = false;
+    bTreeViewFollowMode = false;
     viewMode = ICON_VIEW;
     showDot = false;
     visualSchnauzer = false;
@@ -622,6 +623,9 @@ void KfmGui::closeEvent( QCloseEvent *e )
 void KfmGui::updateView()
 {
     view->slotUpdateView();
+    //  update tree view   Sep 5 rjakob
+    if (bTreeViewInitialized && bTreeViewFollowMode)
+        treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 }
 
 void KfmGui::slotReloadTree()
@@ -722,6 +726,10 @@ void KfmGui::slotURLEntered()
 	}
 	
 	view->openURL( url.data() );             
+        //  update tree view Sep 5 rjakob
+        if (url.left(5)=="file:")
+    	    if (bTreeViewInitialized && bTreeViewFollowMode)
+		treeView->slotshowDirectory(url.data()+5);
     }
     // view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
 }
@@ -729,12 +737,24 @@ void KfmGui::slotURLEntered()
 void KfmGui::setToolbarURL( const char *_url )
 {
     toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
+    //  update tree view Sep 5 rjakob
+    QString url(_url);
+    if (url.left(5)=="file:")
+      if (bTreeViewInitialized && bTreeViewFollowMode)
+         treeView->slotshowDirectory(url.data()+5);
+
 }
 
 void KfmGui::slotNewURL( const char *_url )
 {
     toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
     
+    //  update tree view Sep 5 rjakob
+    QString url(_url);
+    if (url.left(5)=="file:")
+      if (bTreeViewInitialized && bTreeViewFollowMode)
+         treeView->slotshowDirectory(url.data()+5);
+
     if ( historyList.find( _url ) == -1 )
 	return;
     
@@ -1196,16 +1216,20 @@ void KfmGui::slotShowSchnauzer()
 void KfmGui::slotShowTreeView()
 {
     bTreeView = !bTreeView;
-    if ( !bTreeViewInitialized )
-    {
-	bTreeViewInitialized = true;
-	treeView->fill();  
-    }
-    
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
 
     if ( bTreeView )
+    {
+        if ( !bTreeViewInitialized )
+        {
+            bTreeViewInitialized = true;
+            treeView->fill();  
+        }
+        //  update tree view   Sep 5 rjakob
+        if (bTreeViewFollowMode)
+            treeView->slotshowDirectory(toolbarURL->getLinedText(TOOLBAR_URL_ID));
 	panner->setSeparator( 30 );
+    }
     else
     	panner->setSeparator( 0 );
 }
@@ -1643,9 +1667,9 @@ void KfmGui::setCharset(const char *_c){
 }
 
 //-------------------------------------------------------------------------
-// session management readProperties - cannot be used for othe stuff (sven)
-// Because thy apply settings, so they cannot be called from constructor.
-// Rearanging constructor and would be too heavy.
+// session management readProperties - cannot be used for other stuff (sven)
+// Because they apply settings, so they cannot be called from constructor.
+// Rearranging constructor would be too heavy.
 
 void KfmGui::readProperties(int number)
 {
@@ -1789,6 +1813,12 @@ void KfmGui::readProperties( KConfig* config )
 
       kfmgui_width = config->readNumEntry("kfmgui_width",  kfmgui_width);
       kfmgui_height = config->readNumEntry("kfmgui_height",kfmgui_height);
+
+      entry = config->readEntry("kfm_tree_follow","unset");
+      if (entry == "Off")
+        bTreeViewFollowMode = false;
+      else if (entry == "On")
+        bTreeViewFollowMode = true;
 
       entry = config->readEntry("TreeView", "unset");
       if (entry == "Off")

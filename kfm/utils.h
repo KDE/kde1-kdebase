@@ -26,7 +26,7 @@
  * The filenames are just appended to '_cmd' if '_cmd' does not
  * conatin "%f" somewhere.
  */
-void openWithOldApplication( const char *_cmd, QStrList& _urlList );
+void openWithOldApplication( const char *_cmd, QStrList& _urlList, const char *_workdir=0L );
 
 QString displayName();
 
