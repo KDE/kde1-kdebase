@@ -72,10 +72,10 @@ Manager::Manager(): QObject(){
   XGCValues gv;
   GC gc;
   unsigned long mask;
-  
+
   root = qt_xrootwin();
   default_colormap = DefaultColormap(qt_xdisplay(), qt_xscreen());
-  
+
   wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
   wm_change_state = XInternAtom(qt_xdisplay(), "WM_CHANGE_STATE", False);
   wm_protocols = XInternAtom(qt_xdisplay(), "WM_PROTOCOLS", False);
@@ -111,7 +111,7 @@ Manager::Manager(): QObject(){
   module_desktop_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_CHANGE", False);
   module_desktop_name_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NAME_CHANGE", False);
   module_desktop_number_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_NUMBER_CHANGE", False);
-  
+
   module_win_add = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_ADD", False);
   module_win_remove = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_REMOVE", False);
   module_win_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_WIN_CHANGE", False);
@@ -141,20 +141,20 @@ Manager::Manager(): QObject(){
   gv.function = GXcopy;
   gv.foreground = BlackPixel(qt_xdisplay(), qt_xscreen());
   rootfillsolidgc = XCreateGC(qt_xdisplay(), qt_xrootwin(), mask, &gv);
-  
+
   Pixmap stipple = XCreateBitmapFromData(qt_xdisplay(), qt_xrootwin(), stipple_bits, 16, 16);
   XSetStipple(qt_xdisplay(), rootfillgc, stipple);
   XSetFillStyle(qt_xdisplay(), rootfillgc, FillStippled);
   XSetStipple(qt_xdisplay(), rootfillsolidgc, stipple);
   XSetFillStyle(qt_xdisplay(), rootfillsolidgc, FillStippled);
-  
+
   shape = XShapeQueryExtension(qt_xdisplay(), &shape_event, &dummy);
 
   scanWins();
   if (!current()){
     noFocus();
   }
-  
+
   {
     long data = 1;
     XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_running, kwm_running, 32,
@@ -183,13 +183,13 @@ void Manager::createBorderWindows(){
     current_border = None;
 
     QRect r = QApplication::desktop()->rect();
-    
+
     XSetWindowAttributes attributes;
     unsigned long valuemask;
     attributes.event_mask =  (EnterWindowMask | LeaveWindowMask |
 			      VisibilityChangeMask);
     valuemask=  (CWEventMask | CWCursor );
-    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(),
 					  XC_sb_up_arrow);
     top_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				0,0,
@@ -197,10 +197,10 @@ void Manager::createBorderWindows(){
 				0,
 				CopyFromParent, InputOnly,
 				CopyFromParent,
-				valuemask, &attributes);             
+				valuemask, &attributes);
     XMapWindow(qt_xdisplay(), top_border);
 
-    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(),
 					  XC_sb_down_arrow);
     bottom_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				   0,r.height()-1,
@@ -208,10 +208,10 @@ void Manager::createBorderWindows(){
 				   0,
 				   CopyFromParent, InputOnly,
 				   CopyFromParent,
-				   valuemask, &attributes);             
+				   valuemask, &attributes);
     XMapWindow(qt_xdisplay(), bottom_border);
 
-    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(),
 					  XC_sb_left_arrow);
     left_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				 0,0,
@@ -219,10 +219,10 @@ void Manager::createBorderWindows(){
 				 0,
 				 CopyFromParent, InputOnly,
 				 CopyFromParent,
-				 valuemask, &attributes);             
+				 valuemask, &attributes);
     XMapWindow(qt_xdisplay(), left_border);
 
-    attributes.cursor = XCreateFontCursor(qt_xdisplay(), 
+    attributes.cursor = XCreateFontCursor(qt_xdisplay(),
 					  XC_sb_right_arrow);
     right_border = XCreateWindow (qt_xdisplay(), qt_xrootwin(),
 				  r.width()-1,0,
@@ -230,7 +230,7 @@ void Manager::createBorderWindows(){
 				  0,
 				  CopyFromParent, InputOnly,
 				  CopyFromParent,
-				  valuemask, &attributes);             
+				  valuemask, &attributes);
     XMapWindow(qt_xdisplay(), right_border);
 
     have_border_windows = true;
@@ -260,7 +260,7 @@ void Manager::destroyBorderWindows(){
   bottom_border = 0;
   left_border   = 0;
   right_border  = 0;
-  
+
   have_border_windows = false;
 
 }
@@ -274,7 +274,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
   c = getClient(e->window);
 
   if (c && c->window == e->window) { // client already exists for this window
-    
+
     int x = c->geometry.x();
     int y = c->geometry.y();
     int dx = c->geometry.width();
@@ -308,7 +308,7 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     }
 
     c->geometry.setRect(x, y, dx, dy);
-	 
+	
     if (e->value_mask & CWBorderWidth)
       c->border = e->border_width;
 
@@ -341,23 +341,23 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
 
     wc.width = e->width;
     wc.height = e->height;
-    
+
     XConfigureWindow(qt_xdisplay(), e->window, e->value_mask, &wc);
-    sendConfig(c); 
+    sendConfig(c);
 
     // take care about transient windows
     if (e->value_mask & CWStackMode){
       switch (e->detail){
-      case Above: 
-      case TopIf: 
+      case Above:
+      case TopIf:
  	raiseClient(c);
 	break;
-      case Below: 
-      case BottomIf: 
+      case Below:
+      case BottomIf:
  	lowerClient(c);
  	break;
-      case Opposite: 
-      default: 
+      case Opposite:
+      default:
  	break;
       }
     }
@@ -367,14 +367,14 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     wc.y = e->y;
     wc.width = e->width;
     wc.height = e->height;
-    wc.border_width = 0; 
-    
+    wc.border_width = 0;
+
     wc.sibling = None;
     wc.stack_mode = Above;
     wc.sibling = e->above;
     wc.stack_mode = e->detail;
     e->value_mask |= CWBorderWidth;
-    
+
     XConfigureWindow(qt_xdisplay(), e->window, e->value_mask, &wc);
   }
 }
@@ -393,7 +393,7 @@ void Manager::mapRequest(XMapRequestEvent *e){
       case IconicState:
 	c->unIconify();
 	break;
-      case WithdrawnState: 
+      case WithdrawnState:
 	manage(c->window);
 	break;
       case NormalState:
@@ -418,15 +418,15 @@ void Manager::unmapNotify(XUnmapEvent *e){
       Bool reparented;
       XSync(qt_xdisplay(), False);
       reparented = XCheckTypedWindowEvent (qt_xdisplay(), c->winId(),
-                                           ReparentNotify, &ev);        
+                                           ReparentNotify, &ev);
       if(reparented){
 	// if we are reparenting then X will send us a synthetic unmap
 	// notify.
-	reparentNotify(&(ev.xreparent)); 
+	reparentNotify(&(ev.xreparent));
 	XUngrabServer(qt_xdisplay());
 	return;
       }
-     
+
       if (c->unmap_events > 0){
 	// kwm is so clever that windows on other than the current
 	// virutal desktop are truely unmapped, not just hidden. This
@@ -447,7 +447,7 @@ void Manager::unmapNotify(XUnmapEvent *e){
 	  withdraw(c);
  	}
 	break;
-      case WithdrawnState: 
+      case WithdrawnState:
 	withdraw(c);
 	break;
       case NormalState:
@@ -479,7 +479,7 @@ void Manager::destroyNotify(XDestroyWindowEvent *e){
 void Manager::clientMessage(XEvent*  ev){
   Client *c;
   XClientMessageEvent* e = &ev->xclient;
-  
+
   if (e->message_type == wm_change_state) {
     c = getClient(e->window);
     if (c && e->format == 32 && e->data.l[0] == IconicState) {
@@ -566,7 +566,7 @@ void Manager::clientMessage(XEvent*  ev){
     else if (com == "moduleRaised") {
       raiseElectricBorders();
     }
-    
+
     //CT 12mar98 commands to rearrange the windows
     else if (com == "deskUnclutter") {
       deskUnclutter();
@@ -583,10 +583,10 @@ void Manager::clientMessage(XEvent*  ev){
 	ev->xclient.window = *mw;
  	if (ev->xclient.window == qt_xrootwin())
  	  mask = SubstructureRedirectMask;
- 	XSendEvent(qt_xdisplay(), *mw, 
+ 	XSendEvent(qt_xdisplay(), *mw,
 		   False, mask, ev);
       }
-      
+
     }
   }
   if (e->message_type == kwm_activate_window){
@@ -598,7 +598,7 @@ void Manager::clientMessage(XEvent*  ev){
   }
   if (e->message_type == kwm_module){
     Window w = (Window) e->data.l[0];
-    if (KWM::isKWMModule(w)) 
+    if (KWM::isKWMModule(w))
       addModule(w);
     else
       removeModule(w);
@@ -611,7 +611,7 @@ void Manager::clientMessage(XEvent*  ev){
 	ev->xclient.window = *mw;
  	if (ev->xclient.window == qt_xrootwin())
  	  mask = SubstructureRedirectMask;
- 	XSendEvent(qt_xdisplay(), *mw, 
+ 	XSendEvent(qt_xdisplay(), *mw,
 		   False, mask, ev);
       }
   }
@@ -629,7 +629,7 @@ void Manager::clientMessage(XEvent*  ev){
       ev->xclient.window = *mw;
       if (ev->xclient.window == qt_xrootwin())
 	mask = SubstructureRedirectMask;
-      XSendEvent(qt_xdisplay(), *mw, 
+      XSendEvent(qt_xdisplay(), *mw,
 		 False, mask, ev);
     }
   }
@@ -648,7 +648,7 @@ void Manager::clientMessage(XEvent*  ev){
       ev->xclient.window = *mw;
       if (ev->xclient.window == qt_xrootwin())
 	mask = SubstructureRedirectMask;
-      XSendEvent(qt_xdisplay(), *mw, 
+      XSendEvent(qt_xdisplay(), *mw,
 		 False, mask, ev);
     }
   }
@@ -658,7 +658,7 @@ void Manager::clientMessage(XEvent*  ev){
 void Manager::colormapNotify(XColormapEvent *e){
   Client *c;
   int i;
-  
+
   if (e->c_new){
     c = getClient(e->window);
     if (c) {
@@ -696,7 +696,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
       da[i] = XInternAtom(qt_xdisplay(), n.data(), False);
     }
   }
-  
+
   a = e->atom;
   del = (e->state == PropertyDelete);
 
@@ -720,13 +720,13 @@ void Manager::propertyNotify(XPropertyEvent *e){
     }
     return;
   }
-  
+
   c = getClient(e->window);
 
   // if the window is none of our clients then just return
   if (c == 0 || c->window != e->window)
     return;
-  
+
   // check for a couple of standard X11 and additional KDE window properties
   switch (a) {
   case XA_WM_ICON_NAME:
@@ -808,11 +808,13 @@ void Manager::propertyNotify(XPropertyEvent *e){
 	c->decoration = dec;
 	gravitate(c, false);
 	sendConfig(c);
+	c->reconfigure();
       }
       else {
 	gravitate(c, true);
 	c->decoration = dec;
 	sendConfig(c);
+	c->reconfigure();
       }
     }
 
@@ -836,9 +838,21 @@ void Manager::propertyNotify(XPropertyEvent *e){
 // a window may be a shaped window
 void Manager::shapeNotify(XShapeEvent *e){
   Client *c;
-    c = getClient(e->window);
-    if (c)
-      setShape(c);
+  c = getClient(e->window);
+  if (c){
+      if (hasShape(c)){
+	  setShape(c);
+      }
+      else {	
+	  XShapeCombineMask( qt_xdisplay(), c->winId(), ShapeBounding, 0, 0,
+			       None, ShapeSet);
+	  c->decoration = KWM::normalDecoration;
+	  KWM::setDecoration(c->window, c->getDecoration());
+	  gravitate(c, false);
+	  sendConfig(c);
+	  c->reconfigure();
+      }
+  }
 }
 
 // notification of reparenting events
@@ -860,7 +874,7 @@ void Manager::motionNotify(XMotionEvent* e){
   // questioned in the enterNotify handler to determine, wether the
   // focus should be set (if in FocusFollowMouse policy)
   enable_focus_follow_mouse_activation = true;
-  if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){ 
+  if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){
     c = getClient(e->window);
     if (c && c == delayed_focus_follow_mouse_client && c != current()
 	&& c->state != WithdrawnState){
@@ -888,7 +902,7 @@ void Manager::enterNotify(XCrossingEvent *e){
       raiseSoundEvent("Window Activate");
     }
   }
-  else if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){ 
+  else if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE){
     // focus follows mouse is somewhat tricky. kwm does not do it so
     // simple that the focus is always under the mouse. Instead the
     // focus is only moved around if the user explitely moves the mouse
@@ -899,7 +913,7 @@ void Manager::enterNotify(XCrossingEvent *e){
     c = getClient(e->window);
     if (c != 0 && c != current() && c->state != WithdrawnState){
       XSync(qt_xdisplay(), False);
-      timeStamp(); 
+      timeStamp();
       XSync(qt_xdisplay(), False);
       if (enable_focus_follow_mouse_activation){
 	// the user really moved the mouse around => activate
@@ -932,7 +946,7 @@ void Manager::enterNotify(XCrossingEvent *e){
       }
     }
   }
-  
+
   if (have_border_windows &&
       (e->window == top_border ||
        e->window == left_border ||
@@ -1108,7 +1122,7 @@ void Manager::electricBorder(Window border){
     current_border_push_count = 1;
     electric_time = QTime::currentTime();
   }
-  
+
   // reset the pointer to find out wether the user is really pushing
   QPoint pos =QCursor::pos();
   if (current_border == top_border){
@@ -1153,7 +1167,7 @@ void Manager::readConfiguration(){
   config->readListEntry("noDecorationClasses", no_decoration_classes);
   config->readListEntry("tinyDecorationClasses", tiny_decoration_classes);
 
-  // same for supressing focus 
+  // same for supressing focus
   no_focus_titles.clear();
   no_focus_classes.clear();
   config->setGroup( "Focus" );
@@ -1186,13 +1200,13 @@ void Manager::randomPlacement(Client* c){
     px = maxRect.x();
   if (py < maxRect.y())
     py = maxRect.y();
-  
+
   px += TITLEBAR_HEIGHT + BORDER;
   py += 2*TITLEBAR_HEIGHT + BORDER;
 
-  if (px > maxRect.width()/2) 
+  if (px > maxRect.width()/2)
     px =  maxRect.x() + TITLEBAR_HEIGHT + BORDER;
-  if (py > maxRect.height()/2) 
+  if (py > maxRect.height()/2)
     py =  maxRect.y() + TITLEBAR_HEIGHT + BORDER;
   tx = px;
   ty = py;
@@ -1211,7 +1225,7 @@ void Manager::randomPlacement(Client* c){
   c->geometry.moveTopLeft(QPoint(tx, ty));
 }
 
-/* cascadePlacement by Cristian Tibirna (ctibirna@gch.ulaval.ca). 
+/* cascadePlacement by Cristian Tibirna (ctibirna@gch.ulaval.ca).
  * Attempts to place the windows in cascade on each desktop, according
  * with their height and weight (30jan98)
  */
@@ -1219,20 +1233,20 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
 
   // buffers: will keep x-es and y-es on each desktop
   static int x[] = {0,0,0,0,0,0,0,0};
-  static int y[] = {0,0,0,0,0,0,0,0}; 
+  static int y[] = {0,0,0,0,0,0,0,0};
   static unsigned short int col[] = {0,0,0,0,0,0,0,0};
   static unsigned short int row[] = {0,0,0,0,0,0,0,0};
-  
+
   // work coords
   int xp, yp;
-  
+
   int delta_x = 2 * TITLEBAR_HEIGHT + BORDER;
   int delta_y = TITLEBAR_HEIGHT + BORDER;
 
   int d = currentDesktop() - 1;
 
   // get the maximum allowed windows space and desk's origin
-  QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
+  QRect maxRect = KWM::getWindowRegion(currentDesktop());
 
   // initialize often used vars: width and height of c; we gain speed
   int ch = c->geometry.height();
@@ -1256,21 +1270,21 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
   //here to touch in case people vote for resize on placement
   if ((yp + ch ) > H) yp = Y;
 
-  if ((xp + cw ) > W) 
+  if ((xp + cw ) > W)
     if (!yp) {
       smartPlacement(c);
       return;
     }
     else xp = X;
-  
-  //if this isn't the first window 
+
+  //if this isn't the first window
   if ((!x[d]) && (!y[d])) {
-    if (xp) 
+    if (xp)
       if (!yp) xp = delta_x * (++col[d]);
-    
-    if (yp) 
+
+    if (yp)
       if (!xp) yp = delta_y * (++row[d]);
-    
+
     // last resort: if still doesn't fit, smart place it
     if ( ((xp + cw) > W) || ((yp + ch) > H) ) {
       smartPlacement(c);
@@ -1293,7 +1307,7 @@ void Manager::cascadePlacement (Client* c, bool re_init) {
  * adapted for kwm (16-19jan98) after an implementation for fvwm by
  * Anthony Martin (amartin@engr.csulb.edu).
  *
- * This function will place the window of a new client such that there is 
+ * This function will place the window of a new client such that there is
  * a minimum overlap with already existant windows on the current desktop.
  */
 
@@ -1303,44 +1317,44 @@ void Manager::smartPlacement(Client* c) {
   int xopt, yopt, over_min;
   int other, temp;
   Client* l;
-  
+
   // initialize often used vars: width and height of c; we gain speed
   int ch = (c->isShaded()?
 	    (TITLEBAR_HEIGHT+2*BORDER):c->geometry.height());
   int cw = c->geometry.width();
 
   // get the maximum allowed windows space
-  QRect maxRect = KWM::getWindowRegion(currentDesktop()); 
+  QRect maxRect = KWM::getWindowRegion(currentDesktop());
   x = maxRect.left(); y = maxRect.top();
 
   //initialize and do a loop over possible positions
   overlap = -1;
-  spGetOverlap(c, x, y, &overlap); 
+  spGetOverlap(c, x, y, &overlap);
   over_min = overlap;
   xopt = x;
   yopt = y;
-  
+
   while((overlap != 0) && (overlap != -1)) {
     // test if windows overlap ...
     if (overlap > 0) {
 
       other = maxRect.right();
       temp = other - cw;
-      
+
       if(temp > x) other = temp;
-      
+
       // compare to the position of each client on the current desk
       for(l = clients.first(); l ; l = clients.next()) {
 	if(!l->isOnDesktop(currentDesktop()) ||
 	   //12mar98 kill bug about avoiding iconified windows
-	   (l->isIconified()) || 
-	   (l == c)) 
+	   (l->isIconified()) ||
+	   (l == c))
 	  continue;
 	// if not enough room above or under the current tested client
 	// determine the first non-overlapped x position
 	if((y < (l->isShaded()?
 		 (TITLEBAR_HEIGHT+2*BORDER):
-		 l->geometry.height()) + l->geometry.y() ) && 
+		 l->geometry.height()) + l->geometry.y() ) &&
 	   (l->geometry.y() < ch + y)) {
 	  temp = l->geometry.width() + l->geometry.x();
 	  if(temp > x) other = (other < temp)? other : temp;
@@ -1350,20 +1364,20 @@ void Manager::smartPlacement(Client* c) {
       }
       x = other;
     }
-    
+
     // ... else => not enough x dimension (overlap was -2)
     else {
       x = maxRect.left();
-      
+
       other = maxRect.bottom();
       temp = other - ch;
-      
+
       if(temp > y) other = temp;
-      
+
       //test the position of each window on current desk
       //07mar98. fixed bug which made iconified windows avoided as if visible
       for(l = clients.first(); l ; l = clients.next()) {
-	if(!l->isOnDesktop(currentDesktop()) || (l == c) || c->isIconified()) 
+	if(!l->isOnDesktop(currentDesktop()) || (l == c) || c->isIconified())
 	  continue;
 	
 	temp = (l->isShaded()?
@@ -1389,18 +1403,18 @@ void Manager::smartPlacement(Client* c) {
 
   //CT 07mar98 verify whether to place interactively or not
   if(options.interactive_trigger >= 0) {
-    if(options.interactive_trigger < 
+    if(options.interactive_trigger <
        (over_min*100/(maxRect.height() * maxRect.width())))
       options.Placement = MANUAL_PLACEMENT;
     else options.Placement = SMART_PLACEMENT;
   }
-  
+
   // place the window
   c->geometry.moveTopLeft(QPoint(xopt, yopt));	
-  
+
 }
 
-// help function for SmartPlacement --- CT 18jan98 --- 
+// help function for SmartPlacement --- CT 18jan98 ---
 void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
 
   int cxl, cxr, cyt, cyb;     //temp coords
@@ -1420,13 +1434,13 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
     *overlap = -1;
     return ;
   }
-  
+
   //test if enough room in x direction
   if(x + cw > maxRect.right()) {
     *overlap = -2;
     return;
   }
-  
+
   over_temp = 0;
 
   cxl = x;
@@ -1436,7 +1450,7 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
   for(l = clients.first(); l ; l = clients.next()) {
     if(!l->isOnDesktop(currentDesktop()) ||
        l->isIconified() ||
-       (l == c) ) 
+       (l == c) )
       continue;
     xl = l->geometry.x();
     yt = l->geometry.y();
@@ -1469,7 +1483,7 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
 //CT 12mar98 - function to place clients on the current desk in order
 //   to minimize the overlap
 void Manager::deskUnclutter() {
- 
+
   Client *cl, *bm; //a client and a bookmark
 
   // save interactive_trigger value and then get rid of it
@@ -1483,7 +1497,7 @@ void Manager::deskUnclutter() {
   //  the last placed ones. Have to trigger discussion about. Anybody else?
   for(cl = clients.last(); cl; cl = clients.prev()) {
     //save the current position in the clients list
-    bm = clients.current(); 
+    bm = clients.current();
     if((!cl->isOnDesktop(currentDesktop())) ||
        (cl->isIconified())                  ||
        (cl->isSticky()))
@@ -1491,8 +1505,8 @@ void Manager::deskUnclutter() {
     smartPlacement(cl);
     sendConfig(cl, false); //ask Matthias if this is the best way
     //restore the pos in clients list (munged by smartPlacement
-    // Matthias: yes, Christian, I think so :-) 
-    clients.findRef(bm); 
+    // Matthias: yes, Christian, I think so :-)
+    clients.findRef(bm);
   }
   options.interactive_trigger = save_interactive_trigger;
 }
@@ -1500,7 +1514,7 @@ void Manager::deskUnclutter() {
 //CT 12mar98 - function to place clients on the current desk in order
 //   to organize them in cascade
 void Manager::deskCascade() {
- 
+
   Client *cl;
   cl = clients.first();
   if (!cl)
@@ -1508,7 +1522,7 @@ void Manager::deskCascade() {
   cascadePlacement(cl,True);
   sendConfig(cl, false);
   for(cl = clients.next(); cl; cl = clients.next()) {
-    if((!cl->isOnDesktop(currentDesktop())) || 
+    if((!cl->isOnDesktop(currentDesktop())) ||
        (cl->isIconified())                  ||
        (cl->isSticky()))
       continue;
@@ -1528,13 +1542,13 @@ void Manager::snapIt(Client *c) {
   int ymin = maxRect.top();
   int ymax = maxRect.bottom();
   int cx, cy, rx, ry;                 //these hopefully do not change
-  
+
   int nx, ny;                         //buffers
   int deltaX = xmax, deltaY = ymax;   //minimum distance to other clients
-  
+
   Client *l;
   int lx, ly, lrx, lry; //coords and size for the comparison client
-  
+
   nx = cx = c->geometry.x();
   ny = cy = c->geometry.y();
   rx = cx + c->geometry.width();
@@ -1552,7 +1566,7 @@ void Manager::snapIt(Client *c) {
       deltaX = abs(xmax-rx);
       nx = xmax - c->geometry.width();
     }
-    
+
     if ( abs(cy-ymin) < snap ){
       deltaY = abs(cy-ymin);
       ny = ymin;
@@ -1568,15 +1582,15 @@ void Manager::snapIt(Client *c) {
   for (l = clients.first();l;l = clients.next()) {
     if(!l->isOnDesktop(manager->currentDesktop()) ||
        l->isIconified() ||
-       l->trans != None) 
+       l->trans != None)
       continue;
-    
+
     lx = l->geometry.x();
     ly = l->geometry.y();
     lrx = lx + l->geometry.width();
     lry = l->isShaded()? ly + TITLEBAR_HEIGHT + 2*BORDER:
       ly + l->geometry.height();
-    
+
     if( ((cy <= lry) && (cy >= ly))  ||
 	((ry >= ly)  && (ry <= lry)) ||
 	((ly >= cy)  && (lry <= ry)) )  {
@@ -1589,7 +1603,7 @@ void Manager::snapIt(Client *c) {
 	nx = lx - c->geometry.width();
       }
     }
-    
+
     if( ((cx <= lrx) && (cx >= lx))  ||
 	((rx >= lx)  && (rx <= lrx)) ||
 	((lx >= cx)  && (lrx <= rx)) ){
@@ -1604,7 +1618,7 @@ void Manager::snapIt(Client *c) {
       }
     }
   }
-  
+
   c->geometry.moveTopLeft(QPoint(nx, ny));
 }
 
@@ -1620,7 +1634,7 @@ void Manager::manage(Window w, bool mapped){
   XClassHint klass;
   XWMHints *hints;
   XWindowAttributes attr;
-  
+
   if (KWM::isDockWindow(w)){
     addDockWindow(w);
     return;
@@ -1632,7 +1646,7 @@ void Manager::manage(Window w, bool mapped){
   if (!mapped) {
     QString t = getprop(w, XA_WM_NAME);
     if (!t.isEmpty()){
-      for (s = do_not_manage_titles.first(); s ; 
+      for (s = do_not_manage_titles.first(); s ;
 	   s = do_not_manage_titles.next()){
 	r = s;
 	if (r.match(t) != -1){
@@ -1640,11 +1654,11 @@ void Manager::manage(Window w, bool mapped){
 	  sendToModules(module_win_add, 0, w);
 	  sendToModules(module_win_remove, 0, w);
 	  return;
-	} 
+	}
       }
     }
   }
-  
+
   // create a client
   if (!initting)
     XGrabServer(qt_xdisplay()); // we want to be alone...
@@ -1653,20 +1667,20 @@ void Manager::manage(Window w, bool mapped){
   if (!c){
     // create a very new client
     c = new Client(w);
-    
-    // overwrite Qt-defaults because we need SubstructureNotifyMask 
-    XSelectInput(qt_xdisplay(), c->winId(), 
+
+    // overwrite Qt-defaults because we need SubstructureNotifyMask
+    XSelectInput(qt_xdisplay(), c->winId(),
   		 KeyPressMask | KeyReleaseMask |
   		 ButtonPressMask | ButtonReleaseMask |
   		 KeymapStateMask |
    		 ButtonMotionMask |
-   		 PointerMotionMask | // need this, too! 
+   		 PointerMotionMask | // need this, too!
   		 EnterWindowMask | LeaveWindowMask |
   		 FocusChangeMask |
   		 ExposureMask |
-		 StructureNotifyMask | 
+		 StructureNotifyMask |
 		 SubstructureRedirectMask |
-		 SubstructureNotifyMask 
+		 SubstructureNotifyMask
   		 );
 
     getWindowProtocols(c);
@@ -1688,7 +1702,7 @@ void Manager::manage(Window w, bool mapped){
 	}
       }
     }
-    
+
     if (XGetWindowAttributes(qt_xdisplay(), w, &attr)){
       c->geometry.setRect(attr.x,
 			  attr.y,
@@ -1698,17 +1712,8 @@ void Manager::manage(Window w, bool mapped){
     }
   }
   DEBUG_EVENTS2("manage..... Client", c,c->window)
-  {
-    int n, order;
-    // don't show any visible decoration, if the window is shaped
-    XRectangle *rects;
-    rects = XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
-    if (rects != 0)
-      XFree(rects);
-    if ( n > 1 ) {
-      c->decoration = KWM::noDecoration;
-    }
-  }
+  if ( hasShape(c) ) 
+	c->decoration = KWM::noDecoration;
 
   // get KDE specific decoration hint
   if (c->getDecoration() == KWM::normalDecoration){
@@ -1717,9 +1722,9 @@ void Manager::manage(Window w, bool mapped){
     c->wants_focus = (dec & KWM::noFocus) == 0;
   }
 
-  XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
+  XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask |
 	       EnterWindowMask | PropertyChangeMask | PointerMotionMask);
-  
+
   if (XGetClassHint(qt_xdisplay(), c->window, &klass) != 0) {   // Success
     c->instance = klass.res_name;
     c->klass = klass.res_class;
@@ -1731,7 +1736,7 @@ void Manager::manage(Window w, bool mapped){
     c->klass = "";
   }
   c->iconname = getprop(c->window, XA_WM_ICON_NAME);
-  c->name = getprop(c->window, XA_WM_NAME); 
+  c->name = getprop(c->window, XA_WM_NAME);
   c->setLabel();
 
 #ifdef DEBUG_EVENTS_ENABLED
@@ -1742,12 +1747,12 @@ void Manager::manage(Window w, bool mapped){
 
   if (!c->wantsFocus())
     c->hidden_for_modules = true;
-  
+
 
   // find out the initial state. Several possibilities exist
   hints = XGetWMHints(qt_xdisplay(), c->window);
   state = WithdrawnState;
-  if (hints && (hints->flags & StateHint)) 
+  if (hints && (hints->flags & StateHint))
     state = hints->initial_state;
   if (state == WithdrawnState)
     state = KWM::getWindowState(c->window);
@@ -1765,8 +1770,8 @@ void Manager::manage(Window w, bool mapped){
 
   if(c->trans != None || c->getDecoration()!=KWM::normalDecoration){
     int i;
-    if (c->buttons[0] && 
-	(c->buttons[0] != c->buttonMenu || 
+    if (c->buttons[0] &&
+	(c->buttons[0] != c->buttonMenu ||
 	 c->getDecoration()!=KWM::normalDecoration))
       c->buttons[0]->hide();
     for (i=1; i<6; i++){
@@ -1792,10 +1797,10 @@ void Manager::manage(Window w, bool mapped){
       break;
     }
   }
-  
-  if (mapped || c->trans != None 
+
+  if (mapped || c->trans != None
       // ||c->size.flags & PPosition
-      ||c->size.flags & USPosition 
+      ||c->size.flags & USPosition
       || pseudo_session_management
       ){
       // nothing
@@ -1806,7 +1811,7 @@ void Manager::manage(Window w, bool mapped){
 
   XSetWindowBorderWidth(qt_xdisplay(), c->window, 0);
 
-  // it is important to reparent with the correct position! Otherwise the application window may 
+  // it is important to reparent with the correct position! Otherwise the application window may
   // do a little jump after beeing fully mapped.
   switch (c->getDecoration()){
   case 0:
@@ -1817,18 +1822,18 @@ void Manager::manage(Window w, bool mapped){
 		    (BORDER_THIN), (BORDER_THIN) );
     break;
   default:
-    XReparentWindow(qt_xdisplay(), c->window, c->winId(),  
+    XReparentWindow(qt_xdisplay(), c->window, c->winId(),
 		    (BORDER), (BORDER) + TITLEBAR_HEIGHT);
     break;
   }
 
-  if (shape) {
-    XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
-    ignore_badwindow = true;       /* magic */
-    setShape(c);
-    ignore_badwindow = false;
+  if (shape){
+      XShapeSelectInput(qt_xdisplay(), c->window, ShapeNotifyMask);
+      if (hasShape(c)) {
+	  setShape(c);
+      }
   }
-  
+
   XAddToSaveSet(qt_xdisplay(), c->window);
   XSync(qt_xdisplay(), False);
   sendConfig(c, false);
@@ -1855,7 +1860,7 @@ void Manager::manage(Window w, bool mapped){
       KWM::moveToDesktop(c->window, c->desktop);
     }
   }
-  
+
   c->iconified = KWM::isIconified(c->window);
   if (kwm_error){
     if (dohide){
@@ -1876,14 +1881,14 @@ void Manager::manage(Window w, bool mapped){
     c->hide();
     XUnmapWindow(qt_xdisplay(), c->window);
     //c->hideClient();
-    setWindowState(c, IconicState); 
+    setWindowState(c, IconicState);
   }
   else {
     c->showClient();
     setWindowState(c, NormalState);
-    
+
     raiseClient(c);
-    
+
     if (current() != c)
       colormapFocus(current());
   }
@@ -1892,7 +1897,7 @@ void Manager::manage(Window w, bool mapped){
     QRect tmprec = KWM::geometryRestore(c->window);
 
     /* Rethink this TODO. I cannot do maximize since this would
-     * break the tree different maximize levels 
+     * break the tree different maximize levels
      * (full, horizontal, vertical). I do not want to introduce
      * a integer flag for maximize. Let us try is this way.
      * The only drawback: a application that wants to start up
@@ -1903,17 +1908,17 @@ void Manager::manage(Window w, bool mapped){
     // avoid flickering
     c->maximized = true;
     c->buttonMaximize->toggle();
-    
+
     c->geometry_restore = tmprec;
   }
- 
+
   if (c->trans)
     raiseSoundEvent("Window Trans New");
   else
     raiseSoundEvent("Window New");
 
 
-  if (!dohide && c->getDecoration() != KWM::noDecoration 
+  if (!dohide && c->getDecoration() != KWM::noDecoration
       && !CLASSIC_FOCUS) {
     activateClient(c);
   }
@@ -1924,7 +1929,7 @@ void Manager::manage(Window w, bool mapped){
     iconifyTransientOf(c);
 
   if (!initting)
-    XUngrabServer(qt_xdisplay()); 
+    XUngrabServer(qt_xdisplay());
 
   if(options.Placement == MANUAL_PLACEMENT && !mapped
      && c->isOnDesktop(manager->currentDesktop())
@@ -1970,18 +1975,18 @@ void Manager::withdraw(Client* c){
   XQueryTree(qt_xdisplay(), c->winId(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
     if (wins[i] == c->window){
-      // we still manage it => do reparenting 
+      // we still manage it => do reparenting
       DEBUG_EVENTS2("widthdraw we still manage => do reparenting", c,c->window)
       gravitate(c, true);
       XUnmapWindow(qt_xdisplay(), c->window);
-      XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), 
+      XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(),
 		      c->geometry.x() , c->geometry.y());
       XRemoveFromSaveSet(qt_xdisplay(), c->window);
       setWindowState(c, WithdrawnState);
       break;
     }
   }
-  XFree((void *) wins);   
+  XFree((void *) wins);
   XSelectInput(qt_xdisplay(), c->window, NoEventMask);
   XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, c->window);
   removeClient(c);
@@ -2046,7 +2051,7 @@ void Manager::activateClient(Client* c, bool set_revert){
     if (clients_traversing.removeRef(cc))
       clients_traversing.insert(0,cc);
   }
-  XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window, 
+  XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
 		  kwm_active_window, 32,
 		  PropModeReplace, (unsigned char *)&(c->window), 1);
   sendToModules(module_win_activate, c);
@@ -2123,7 +2128,7 @@ void Manager::raiseClient(Client* c){
   XRaiseWindow(qt_xdisplay(), new_stack[0]);
   XRestackWindows(qt_xdisplay(), new_stack, i);
   delete [] new_stack;
-  
+
   raiseElectricBorders();
 }
 
@@ -2168,7 +2173,7 @@ void Manager::lowerClient(Client* c){
   for (i=0; i<nh; i++)
     XMapWindow(qt_xdisplay(), hide_stack[i]);
   delete [] new_stack;
-  XFree((void *) wins);   
+  XFree((void *) wins);
 }
 
 // close a client. clients with WM_DELETE_WINDOW protocol set
@@ -2203,20 +2208,20 @@ void Manager::noFocus(){
 
   if (!CLASSIC_FOCUS){
     for (c = clients_traversing.last();
-	 c && (c->isActive() || c->state != NormalState); 
+	 c && (c->isActive() || c->state != NormalState);
 	 c = clients_traversing.prev());
     if (c && c->state == NormalState) {
       activateClient(c, false);
       return;
     }
   }
-   
+
   c = current();
   if (c){
     c->setactive(False);
     iconifyFloatingOf(c->mainClient());
   }
-  
+
   Client::hideGimmick();
   focusToNull();
   sendToModules(module_win_activate, 0);
@@ -2238,7 +2243,7 @@ void Manager::focusToNull(){
   XSetInputFocus(qt_xdisplay(), w, RevertToPointerRoot, timeStamp());
   colormapFocus(0);
   long tmp = 0;
-  XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window, 
+  XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
 		  kwm_active_window, 32,
 		  PropModeReplace, (unsigned char *)&tmp, 1);
 }
@@ -2259,12 +2264,12 @@ void Manager::focusToClient(Client* c){
 // sets the state of a window (IconicState, NormalState, WithdrawnState)
 void Manager::setWindowState(Client *c, int state){
   unsigned long data[2];
-  
+
   data[0] = (unsigned long) state;
   data[1] = (unsigned long) None;
-  
+
   c->state = state;
-  
+
   XChangeProperty(qt_xdisplay(), c->window, wm_state, wm_state, 32,
 		  PropModeReplace, (unsigned char *)data, 2);
 }
@@ -2281,14 +2286,14 @@ void Manager::getWindowTrans(Client* c){
 
 // switch to the specified virtual desktop
 void Manager::switchDesktop(int new_desktop){
-  if (new_desktop == current_desktop 
+  if (new_desktop == current_desktop
       || new_desktop < 1 || new_desktop > number_of_desktops)
     return;
-  
+
   if (current() && !current()->isSticky())
     current()->setactive(False); // no more current()!
 
-  // optimized Desktop switching 
+  // optimized Desktop switching
   //   unmapping done from back to front
   //   mapping done from front to back
   //   => less exposure events
@@ -2298,7 +2303,7 @@ void Manager::switchDesktop(int new_desktop){
       // protection for electric borders
       if (QWidget::mouseGrabber() != c){
 	c->hideClient();
-	setWindowState(c, IconicState); 
+	setWindowState(c, IconicState);
       }
     }
   }
@@ -2344,7 +2349,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
   ce.type = ConfigureNotify;
   ce.event = c->window;
   ce.window = c->window;
-  
+
   switch (c->getDecoration()){
   case KWM::noDecoration:
     ce.x = c->geometry.x();
@@ -2365,7 +2370,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
     ce.height = c->geometry.height() - 2*BORDER - TITLEBAR_HEIGHT;
     break;
   }
-  
+
   ce.border_width = c->border;
   ce.above = None;
   ce.override_redirect = 0;
@@ -2383,12 +2388,12 @@ void Manager::sendConfig(Client* c, bool emit_changed){
 void Manager::cleanup(bool kill){
   Client *c;
   XWindowChanges wc;
-  
+
   for (c = clients.first(); c; c = clients.next()) {
     gravitate(c, true);
-    
+
     XReparentWindow(qt_xdisplay(), c->window, qt_xrootwin(), c->geometry.x() , c->geometry.y());
-    
+
     wc.border_width = c->border;
     XConfigureWindow(qt_xdisplay(), c->window, CWBorderWidth, &wc);
     if (kill)
@@ -2419,7 +2424,7 @@ Time Manager::timeStamp(){
     attr.override_redirect = 1;
     w = XCreateWindow(qt_xdisplay(), qt_xrootwin(), 0, 0, 1, 1, 0, CopyFromParent,
 		      InputOnly, CopyFromParent, mask, &attr);
-    XSelectInput(qt_xdisplay(), w, 
+    XSelectInput(qt_xdisplay(), w,
 	       PropertyChangeMask);
     XMapWindow(qt_xdisplay(), w);
   }
@@ -2438,7 +2443,7 @@ void Manager::scanWins(){
   unsigned int i, nwins;
   Window dw1, dw2, *wins;
   XWindowAttributes attr;
-  
+
   XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
   for (i = 0; i < nwins; i++) {
     if (KWM::isKWMModule(wins[i])){
@@ -2450,7 +2455,7 @@ void Manager::scanWins(){
     if (attr.map_state != IsUnmapped)
       manage(wins[i], true);
   }
-  XFree((void *) wins);   
+  XFree((void *) wins);
 }
 
 
@@ -2460,7 +2465,7 @@ void Manager::installColormap(Colormap cmap){
 void Manager::colormapFocus(Client *c){
   int i, found;
   Client *cc;
-  
+
   if (c == 0)
     installColormap(None);
   else if (c->ncmapwins != 0) {
@@ -2494,10 +2499,10 @@ void Manager::getColormaps(Client *c){
   int n, i;
   Window *cw;
   XWindowAttributes attr;
-  
+
   XGetWindowAttributes(qt_xdisplay(), c->window, &attr);
   c->cmap = attr.colormap;
-  
+
   n = _getprop(c->window, wm_colormap_windows, XA_WINDOW, 100L, (unsigned char **)&cw);
   if (c->ncmapwins != 0) {
     XFree((char *)c->cmapwins);
@@ -2507,10 +2512,10 @@ void Manager::getColormaps(Client *c){
     c->ncmapwins = 0;
     return;
   }
-  
+
   c->ncmapwins = n;
   c->cmapwins = cw;
-  
+
   c->wmcmaps = (Colormap*)malloc(n*sizeof(Colormap));
   for (i = 0; i < n; i++) {
     if (cw[i] == c->window)
@@ -2523,34 +2528,46 @@ void Manager::getColormaps(Client *c){
   }
 }
 
+// does the client need a shape combine mask around it?
+bool Manager::hasShape(Client* c){
+  int xws, yws, xbs, ybs;
+  unsigned wws, hws, wbs, hbs;
+  int boundingShaped, clipShaped;
+
+  if (!shape)
+      return false;
+  
+  /* cheat: don't try to add a border if the window is non-rectangular */
+  XShapeQueryExtents(qt_xdisplay(), c->window,
+		     &boundingShaped, &xws, &yws, &wws, &hws,
+		     &clipShaped, &xbs, &ybs, &wbs, &hbs);
+
+  return boundingShaped != 0;
+}
+
 
 // put an appropriate  shape combine mask around the client
 void Manager::setShape(Client* c){
-  int n, order;
-  XRectangle *rect;
-  
-  /* cheat: don't try to add a border if the window is non-rectangular */
-  rect = XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
-  if (n > 1){
+  if (hasShape(c)){
+      
     switch (c->getDecoration()){
     case KWM::noDecoration:
-      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
+      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding,
 			 0, 0,
 			 c->window, ShapeBounding, ShapeSet);
       break;
     case KWM::tinyDecoration:
-      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
+      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding,
 			 (BORDER_THIN), (BORDER_THIN),
 			 c->window, ShapeBounding, ShapeSet);
       break;
     default:
-      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding, 
+      XShapeCombineShape(qt_xdisplay(), c->winId(), ShapeBounding,
 			 (BORDER), (BORDER) + TITLEBAR_HEIGHT,
 			 c->window, ShapeBounding, ShapeSet);
       break;
     }
   }
-  XFree((void*)rect);
 }
 
 // auxiliary functions to travers all clients according the focus
@@ -2559,7 +2576,7 @@ Client* Manager::nextClient(Client* c){
   Client* result;
   if (!c)
     return clients_traversing.first();
-  for (result = clients_traversing.first(); result && result != c; 
+  for (result = clients_traversing.first(); result && result != c;
        result = clients_traversing.next());
   if (result)
     result = clients_traversing.next();
@@ -2574,7 +2591,7 @@ Client* Manager::previousClient(Client* c){
   Client* result;
   if (!c)
     return clients_traversing.last();
-  for (result = clients_traversing.last(); result && result != c; 
+  for (result = clients_traversing.last(); result && result != c;
        result = clients_traversing.prev());
   if (result)
     result = clients_traversing.prev();
@@ -2589,7 +2606,7 @@ Client* Manager::nextStaticClient(Client* c){
  Client* result;
   if (!c)
     return clients.first();
-  for (result = clients.first(); result && result != c; 
+  for (result = clients.first(); result && result != c;
        result = clients.next());
   if (result)
     result = clients.next();
@@ -2604,7 +2621,7 @@ Client* Manager::previousStaticClient(Client* c){
  Client* result;
   if (!c)
     return clients.last();
-  for (result = clients.last(); result && result != c; 
+  for (result = clients.last(); result && result != c;
        result = clients.prev());
   if (result)
     result = clients.prev();
@@ -2642,7 +2659,7 @@ bool Manager::hasLabel(QString label_arg){
 void Manager::getWindowProtocols(Client *c){
   Atom *p;
   int i,n;
-  
+
   if (XGetWMProtocols(qt_xdisplay(), c->window, &p, &n)){
     for (i = 0; i < n; i++)
       if (p[i] == wm_delete_window)
@@ -2657,7 +2674,7 @@ void Manager::getWindowProtocols(Client *c){
   }
 }
 
-// basic Motif support 
+// basic Motif support
 struct PropMotifWmHints
 {
   int      flags;
@@ -2680,9 +2697,9 @@ void Manager::getMwmHints(Client  *c){
   Atom actual_type;
   unsigned long nitems, bytesafter;
   PropMotifWmHints *mwm_hints;
-  
-  if(XGetWindowProperty (qt_xdisplay(), c->window, _motif_wm_hints, 0L, 20L, 
-			 False,_motif_wm_hints, &actual_type, 
+
+  if(XGetWindowProperty (qt_xdisplay(), c->window, _motif_wm_hints, 0L, 20L,
+			 False,_motif_wm_hints, &actual_type,
 			 &actual_format, &nitems,
 			 &bytesafter,(unsigned char **)&mwm_hints)==Success)
     {
@@ -2705,7 +2722,7 @@ void Manager::gravitate(Client* c, bool invert){
   int gravity, dx, dy, delta;
   if (c->getDecoration() == KWM::noDecoration)
     return;
-  
+
   int titlebar_height = (c->getDecoration() != KWM::normalDecoration)?
     0:TITLEBAR_HEIGHT;
 
@@ -2716,7 +2733,7 @@ void Manager::gravitate(Client* c, bool invert){
   gravity = NorthWestGravity;
   if (c->size.flags & PWinGravity)
     gravity = c->size.win_gravity;
-  
+
   delta = border - 1;
 
   switch (gravity) {
@@ -2778,7 +2795,7 @@ int Manager::_getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   int format;
   unsigned long n, extra;
   int status;
-  
+
   status = XGetWindowProperty(qt_xdisplay(), w, a, 0L, len, False, type, &real_type, &format, &n, &extra, p);
   if (status != Success || *p == 0)
     return -1;
@@ -2815,20 +2832,20 @@ QString Manager::xgetprop(Window w, Atom a){
   return result;
 }
 
-// kwm internally sometimes uses simple property (long values) 
+// kwm internally sometimes uses simple property (long values)
 bool Manager::getSimpleProperty(Window w, Atom a, long &result){
   long *p = 0;
-  
+
   if (_getprop(w, a, a, 1L, (unsigned char**)&p) <= 0){
     return false;
   }
-  
+
   result = p[0];
   XFree((char *) p);
   return true;
 }
 
-// kwm internally sometimes uses rectangle properties 
+// kwm internally sometimes uses rectangle properties
 void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
   long data[4];
   data[0] = rect.x();
@@ -2845,7 +2862,7 @@ void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
 void Manager::sendClientMessage(Window w, Atom a, long x){
   XEvent ev;
   long mask;
-  
+
   memset(&ev, 0, sizeof(ev));
   ev.xclient.type = ClientMessage;
   ev.xclient.window = w;
@@ -2888,8 +2905,8 @@ void Manager::refreshScreen(){
     }
     XSync (qt_xdisplay(), False);
     timeStamp();
-    
-    
+
+
     valuemask = (CWBackPixel | CWBackingStore);
     attributes.background_pixel = 0;
     Window w = XCreateWindow (qt_xdisplay(), qt_xrootwin(), 0, 0,
@@ -2905,7 +2922,7 @@ void Manager::refreshScreen(){
     XDestroyWindow (qt_xdisplay(), w);
     XSync (qt_xdisplay(), False);
     timeStamp();
-    
+
     valuemask = CWBackingStore;
     for (c = clients.first();c;c=clients.next()){
       if (c->backing_store != NotUseful){
@@ -2941,9 +2958,9 @@ void Manager::processSaveYourself(){
 		qt_xrootwin(), False,
 		GrabModeAsync, GrabModeAsync,
 		CurrentTime);
-  XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+  XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 	       Button1Mask|Button2Mask|Button3Mask,
-	       GrabModeAsync, GrabModeAsync, None, None, CurrentTime);  
+	       GrabModeAsync, GrabModeAsync, None, None, CurrentTime);
 
   QString command;
   QString machine;
@@ -2985,9 +3002,9 @@ void Manager::processSaveYourself(){
        }
      }
      if (nwins>0)
-       XFree((void *) wins);   
+       XFree((void *) wins);
   }
-  
+
 
 
   // ususal session management: send a saveYourself to all clients
@@ -3004,7 +3021,7 @@ void Manager::processSaveYourself(){
       command = xgetprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
       properties = KWM::getProperties(c->window);
-      XSelectInput(qt_xdisplay(), c->window, 
+      XSelectInput(qt_xdisplay(), c->window,
 		   PropertyChangeMask| StructureNotifyMask );
       command = xgetprop(c->window, XA_WM_COMMAND);
       machine = getprop(c->window, wm_client_machine);
@@ -3037,7 +3054,7 @@ void Manager::processSaveYourself(){
 	  }
 	}
       } while (1);
-      XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
+      XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask |
 		   EnterWindowMask | PropertyChangeMask | PointerMotionMask);
     }
   }
@@ -3079,7 +3096,7 @@ QStrList* Manager::getSessionCommands(){
     domain = buf;
   if (!thismachine.isEmpty())
     all = thismachine + "." + domain;
-  
+
   QStrList *result = new QStrList();
   Client* c;
   QString command;
@@ -3101,7 +3118,7 @@ QStrList* Manager::getSessionCommands(){
   }
 
   // check additional commands
-  
+
   command = additional_commands.first();
   machine = additional_machines.first();
   while (!command.isEmpty()){
@@ -3125,7 +3142,7 @@ QStrList* Manager::getPseudoSessionClients(){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (!c->Psaveyourself && !c->command.isEmpty() 
+    if (!c->Psaveyourself && !c->command.isEmpty()
 	&& !proxy_ignore->contains(c->command)
 	&& !KWM::unsavedDataHintDefined(c->window))
       result->append(c->label);
@@ -3163,8 +3180,8 @@ QStrList* Manager::getClientsOfDesktop(int desk){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (c->isOnDesktop(desk) && 
-	!c->hidden_for_modules && 
+    if (c->isOnDesktop(desk) &&
+	!c->hidden_for_modules &&
 	(!c->isSticky() || desk == currentDesktop())){
       if (c->isIconified())
 	result->append(QString("(") + c->label + ")");
@@ -3185,7 +3202,7 @@ QStrList* Manager::getProxyHints(){
       result->append(c->command + " @ " + c->machine);
   }
   QString add;
-  for (add = additional_proxy_hints.first(); !add.isEmpty(); 
+  for (add = additional_proxy_hints.first(); !add.isEmpty();
        add = additional_proxy_hints.next())
     result->append(add);
   return result;
@@ -3201,7 +3218,7 @@ QStrList* Manager::getProxyProps(){
       result->append(KWM::getProperties(c->window));
   }
   QString add;
-  for (add = additional_proxy_props.first(); !add.isEmpty(); 
+  for (add = additional_proxy_props.first(); !add.isEmpty();
        add = additional_proxy_props.next())
     result->append(add);
   return result;
@@ -3211,7 +3228,7 @@ QStrList* Manager::getProxyProps(){
 // sets all necessary properties for the session management
 // proxy. This function is called from main after reading the data
 // from the configuration file.
-void Manager::setProxyData(QStrList* proxy_hints_arg, 
+void Manager::setProxyData(QStrList* proxy_hints_arg,
 			   QStrList* proxy_props_arg,
 			   QStrList* proxy_ignore_arg){
   proxy_hints = proxy_hints_arg;
@@ -3257,7 +3274,7 @@ void Manager::killWindowAtPosition(int x, int y){
     if (it.current() != c && it.current()->trans == c->window){
       it.current()->iconify(False);
       sendToModules(module_win_remove, it.current());
-      it.current()->hidden_for_modules = true; 
+      it.current()->hidden_for_modules = true;
       clients_traversing.removeRef(it.current());
     }
   }
@@ -3321,14 +3338,14 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
   // to get control over them back! (Marcin Dalecki)
   if (options.FocusPolicy == FOCUS_FOLLOWS_MOUSE)
     return;
-    
+
   QListIterator<Client> it(clients);
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
       if (it.current()->getDecoration() == KWM::tinyDecoration){
 	it.current()->iconify(False);
 	sendToModules(module_win_remove, it.current());
-	it.current()->hidden_for_modules = true; 
+	it.current()->hidden_for_modules = true;
 	clients_traversing.removeRef(it.current());
       }
       iconifyFloatingOf(it.current());
@@ -3352,13 +3369,13 @@ void Manager::stickyTransientOf(Client* c, bool sticky){
   const char* s = event.data();
   for (i=0;i<19 && s[i];i++)
     ev.xclient.data.b[i]=s[i];
-  
+
   Window* mw;
   for (mw=modules.first(); mw; mw=modules.next()){
     ev.xclient.window = *mw;
     if (ev.xclient.window == qt_xrootwin())
       mask = SubstructureRedirectMask;
-    XSendEvent(qt_xdisplay(), *mw, 
+    XSendEvent(qt_xdisplay(), *mw,
 	       False, mask, &ev);
   }
   XFlush(qt_xdisplay());
@@ -3426,7 +3443,7 @@ void Manager::addModule(Window w){
       ev.xclient.window = *mw;
       if (ev.xclient.window == qt_xrootwin())
 	mask = SubstructureRedirectMask;
-      status = XSendEvent(qt_xdisplay(), ev.xclient.window, 
+      status = XSendEvent(qt_xdisplay(), ev.xclient.window,
 			  False, mask, &ev);
     }
   }
@@ -3463,7 +3480,7 @@ void Manager::sendToModules(Atom a, Client* c, Window w){
   Window* mw;
   for (mw=modules.first(); mw; mw=modules.next())
     sendClientMessage(*mw, a, (long) w);
-  
+
 }
 
 // adds a new dock window to the docking area. Informs the
@@ -3479,12 +3496,12 @@ void Manager::addDockWindow(Window w){
     Window *wp = new Window;
     *wp = w;
     dock_windows.append(wp);
-    
-    XSelectInput(qt_xdisplay(), w, 
+
+    XSelectInput(qt_xdisplay(), w,
 		 StructureNotifyMask
 		 );
-    
-    
+
+
     if (dock_module != None)
       sendClientMessage(dock_module, module_dockwin_add, (long) w);
 
@@ -3517,58 +3534,58 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
   if (!c->label.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_titles.first(); s ; s = no_decoration_titles.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->label) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_titles.first(); s ; s = tiny_decoration_titles.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->label) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->wantsFocus()){
       for (s = no_focus_titles.first(); s ; s = no_focus_titles.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->label) != -1){
 	  c->wants_focus = false;
 	  break;
-	} 
+	}
       }
     }
   }
   if (!c->instance.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->instance) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->instance) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->wantsFocus()){
       for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->instance) != -1){
 	  c->wants_focus = false;
 	  break;
-	} 
+	}
       }
     }
 
@@ -3576,29 +3593,29 @@ void Manager::doGlobalDecorationAndFocusHints(Client* c){
   if (!c->klass.isEmpty()){
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = no_decoration_classes.first(); s ; s = no_decoration_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->klass) != -1){
 	  c->decoration = KWM::noDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->getDecoration() == KWM::normalDecoration){
       for (s = tiny_decoration_classes.first(); s ; s = tiny_decoration_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->klass) != -1){
 	  c->decoration = KWM::tinyDecoration;
 	  break;
-	} 
+	}
       }
     }
     if (c->wantsFocus()){
       for (s = no_focus_classes.first(); s ; s = no_focus_classes.next()){
-	r = s; 
+	r = s;
 	if (r.match(c->klass) != -1){
 	  c->wants_focus = false;
 	  break;
-	} 
+	}
       }
     }
   }

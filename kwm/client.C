@@ -84,10 +84,10 @@ void myPushButton::leaveEvent( QEvent * ){
 void myPushButton::paint(QPainter *painter){
   if ( isDown() || (isOn() && !flat)) {
     if ( style() == WindowsStyle )
-      qDrawWinButton( painter, 0, 0, width(), 
+      qDrawWinButton( painter, 0, 0, width(),
 		      height(), colorGroup(), true );
     else
-      qDrawShadePanel( painter, 0, 0, width(), 
+      qDrawShadePanel( painter, 0, 0, width(),
 		       height(), colorGroup(), true, 2, 0L );
   }
   else if (!flat ) {
@@ -95,13 +95,13 @@ void myPushButton::paint(QPainter *painter){
       qDrawWinButton( painter, 0, 0, width(), height(),
 		      colorGroup(), false );
     else {
-      qDrawShadePanel( painter, 0, 0, width(), height(), 
+      qDrawShadePanel( painter, 0, 0, width(), height(),
 		       colorGroup(), false, 2, 0L );
 //       painter->setPen(black);
-//       painter->drawRect(0,0,width(),height()); 
+//       painter->drawRect(0,0,width(),height());
     }
   }
-  
+
   if ( pixmap() ) {
     int dx = ( width() - pixmap()->width() ) / 2;
     int dy = ( height() - pixmap()->height() ) / 2;
@@ -114,7 +114,7 @@ void myPushButton::paint(QPainter *painter){
 }
 
 void myPushButton::mousePressEvent( QMouseEvent *e){
-  
+
   if ( isDown())
     return;
 
@@ -141,7 +141,7 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     if ( isToggleButton() )
       emit toggled( isOn() );
     emit released();
-    emit clicked(); 
+    emit clicked();
   }
   else {
     repaint();
@@ -160,7 +160,7 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
        !(e->state() & RightButton))
     return;
 
-  
+
   bool hit = hitButton( e->pos() );
   if ( hit ) {
     if ( !isDown() ) {
@@ -202,7 +202,7 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
 
   if (!options.ResizeAnimation)
     return false;
-  
+
   //CT 12Jun1998 set animation steps hence speed;
   //  smaller the step is, faster the anim should be
   //  so 11 is (max possible value of the ResizeAnimation  + 1)
@@ -230,14 +230,14 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
 
   if (transparent)
     XGrabServer(qt_xdisplay());
-  
+
   do {
     if (area2 != area){
       if (transparent){
-	draw_animation_rectangle(area.left(), 
-				 area.top(), 
-				 area.width(), 
-				 area.height(), 
+	draw_animation_rectangle(area.left(),
+				 area.top(),
+				 area.width(),
+				 area.height(),
 				 decorated, o1, o2);
       }
       else {
@@ -247,7 +247,7 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
 	XSync(qt_xdisplay(), False);
 	while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
 	Window w = c->window;
-	myapp->processEvents(); 
+	myapp->processEvents();
 	c = manager->getClient(w);
 	if (!c)
 	  return true;
@@ -267,18 +267,18 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
     area.setTop(before.top() + int(diff*tf));
     area.setBottom(before.bottom() + int(diff*bf));
     if (area2 != area && transparent){
-      draw_animation_rectangle(area2.left(), 
-			       area2.top(), 
-			       area2.width(), 
-			       area2.height(), 
+      draw_animation_rectangle(area2.left(),
+			       area2.top(),
+			       area2.width(),
+			       area2.height(),
 			       decorated, o1, o2);
     }
   } while (tt - ts < step); //CT 400);
   if (area2 == area && transparent){
-    draw_animation_rectangle(area2.left(), 
-			     area2.top(), 
-			     area2.width(), 
-			     area2.height(), 
+    draw_animation_rectangle(area2.left(),
+			     area2.top(),
+			     area2.width(),
+			     area2.height(),
 			     decorated, o1, o2);
   }
   if (transparent)
@@ -290,7 +290,7 @@ bool  animate_size_change(Client* c, QRect before, QRect after, bool decorated, 
     XSync(qt_xdisplay(), False);
     while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
     Window w = c->window;
-    myapp->processEvents(); 
+    myapp->processEvents();
     c = manager->getClient(w);
     if (!c)
       return true;
@@ -311,34 +311,34 @@ static void grabButton(int button, Window window, unsigned int mod){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
     for (i=0; i<8; i++){
-      if (xmk->modifiermap[xmk->max_keypermod * i] == 
+      if (xmk->modifiermap[xmk->max_keypermod * i] ==
 	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
-	NumLockMask = (1<<i); 
+	NumLockMask = (1<<i);
     }
     XFreeModifiermap(xmk);
   }
 
-  XGrabButton(qt_xdisplay(), button, 
-	      mod, 
-	      window, True, 
-	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+  XGrabButton(qt_xdisplay(), button,
+	      mod,
+	      window, True,
+	      ButtonPressMask, GrabModeSync, GrabModeAsync,
 	      None, normal_cursor );
 
-  XGrabButton(qt_xdisplay(), button, 
-	      mod | LockMask, 
-	      window, True, 
-	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+  XGrabButton(qt_xdisplay(), button,
+	      mod | LockMask,
+	      window, True,
+	      ButtonPressMask, GrabModeSync, GrabModeAsync,
 	      None, normal_cursor );
 
-  XGrabButton(qt_xdisplay(), button, 
-	      mod | NumLockMask, 
-	      window, True, 
-	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+  XGrabButton(qt_xdisplay(), button,
+	      mod | NumLockMask,
+	      window, True,
+	      ButtonPressMask, GrabModeSync, GrabModeAsync,
 	      None, normal_cursor );
 
-  XGrabButton(qt_xdisplay(), button, mod | NumLockMask | LockMask, 
-	      window, True, 
-	      ButtonPressMask, GrabModeSync, GrabModeAsync, 
+  XGrabButton(qt_xdisplay(), button, mod | NumLockMask | LockMask,
+	      window, True,
+	      ButtonPressMask, GrabModeSync, GrabModeAsync,
 	      None, normal_cursor );
 }
 
@@ -367,7 +367,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     decoration = 1;
     wants_focus = true;
     do_close = false;
-    
+
     // standard window manager protocols
     Pdeletewindow = false;
     Ptakefocus = false;
@@ -379,7 +379,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     desktop = manager->currentDesktop();
 
     setMouseTracking(True);
-    
+
     size.flags = 0;
     generateButtons();
 
@@ -402,11 +402,11 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     if (!right_side_cursor)
       right_side_cursor = XCreateFontCursor(qt_xdisplay(), XC_right_side);
     if (!normal_cursor)
-      normal_cursor = arrowCursor.handle(); 
+      normal_cursor = arrowCursor.handle();
     current_cursor = normal_cursor;
-      
+
     installEventFilter(myapp);
- 
+
     titlestring_offset = 0;
     titlestring_offset_delta = TITLE_ANIMATION_STEP;
     titlestring_too_large = false;
@@ -415,7 +415,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
 
     doButtonGrab();
     unmap_events = 0;
-}  
+}
 
 Client::~Client(){
   DEBUG_EVENTS2("Destroy Client", this,window)
@@ -474,7 +474,7 @@ void Client::generateButtons(){
   buttonMaximize = 0;
   buttonSticky = 0;
   buttonMenu = 0;
-  
+
   for (i=0;i<6;i++){
     buttons[i] = getNewButton( options.buttons[i]);
     if (getDecoration() == KWM::normalDecoration && !trans){
@@ -482,7 +482,7 @@ void Client::generateButtons(){
 	buttons[i]->show();
     }
     else {
-      if (buttons[i] && (getDecoration() != KWM::normalDecoration 
+      if (buttons[i] && (getDecoration() != KWM::normalDecoration
 			 || i>0 || buttons[i] != buttonMenu))
 	buttons[i]->hide();
     }
@@ -508,7 +508,7 @@ void Client::layoutButtons(){
   int trY = 0;
   int trW = 0;
   int trH = 0;
-  
+
   if (getDecoration() != KWM::normalDecoration){
     // nothing
   } else {
@@ -516,9 +516,9 @@ void Client::layoutButtons(){
     trY = BORDER;
     trW = width() - 2 * BORDER;
     trH = TITLEBAR_HEIGHT - TITLEWINDOW_SEPARATION;
-    
-    int button_y = BORDER + (TITLEBAR_HEIGHT 
-			     - TITLEWINDOW_SEPARATION 
+
+    int button_y = BORDER + (TITLEBAR_HEIGHT
+			     - TITLEWINDOW_SEPARATION
 			     - BUTTON_SIZE)/ 2;
     if (button_y < 2)
       button_y = 2;
@@ -527,7 +527,7 @@ void Client::layoutButtons(){
     if( buttons[0] && (!trans || buttons[0] == buttonMenu)){
       trX += BUTTON_SIZE;
       trW -= BUTTON_SIZE;
-      buttons[0]->setGeometry(BORDER, 
+      buttons[0]->setGeometry(BORDER,
 			      button_y,
 			      BUTTON_SIZE, BUTTON_SIZE);
     }
@@ -535,18 +535,18 @@ void Client::layoutButtons(){
       if( buttons[1] ){
 	trX += BUTTON_SIZE;
 	trW -= BUTTON_SIZE;
-	buttons[1]->setGeometry(BORDER + BUTTON_SIZE, 
+	buttons[1]->setGeometry(BORDER + BUTTON_SIZE,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
       if( buttons[2] ){
 	trX += BUTTON_SIZE;
 	trW -= BUTTON_SIZE;
-	buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE, 
+	buttons[2]->setGeometry(BORDER + 2*BUTTON_SIZE,
 				button_y,
 				BUTTON_SIZE, BUTTON_SIZE);
       }
-      
+
       if( buttons[3] ){
 	trW -= BUTTON_SIZE;
 	buttons[3]->setGeometry(trX + trW,
@@ -582,8 +582,8 @@ void Client::layoutButtons(){
       // a menu button is always on top to allow the user to perfrom
       // all actions even if the window became too small
       buttonMenu->raise();
-  }   
-  
+  }
+
   title_rect.setRect(trX,trY,trW,trH);
 }
 
@@ -639,7 +639,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 	com = options.CommandActiveTitlebar2;
       if (ev->button() == RightButton)
 	com = options.CommandActiveTitlebar3;
-      
+
       if (com == MyApp::MouseOperationsMenu){
       generateOperations();
       stopAutoraise();
@@ -658,10 +658,10 @@ void Client::mousePressEvent( QMouseEvent *ev ){
       myapp->executeMouseBinding(this, com);
     }
   }
-  
+
   dragging_state = dragging_nope;
 
-  // resize on all corners 
+  // resize on all corners
   do_resize = 0;
   if (current_cursor == bottom_right_cursor){
     old_cursor_pos = QPoint(width()-1, height()-1);
@@ -706,20 +706,20 @@ void Client::mousePressEvent( QMouseEvent *ev ){
   else if (ev->pos().x() >= title_rect.x() && ev->pos().x() <= title_rect.x()+title_rect.width() &&
 	ev->pos().y() >= title_rect.y() && ev->pos().y() <= title_rect.y()+title_rect.height()){
       dragging_state = dragging_smooth_wait;
-    }  
+    }
 
 
   if (do_resize > 0){
     dragging_state = dragging_smooth_wait;
     // set the current cursor
-    XChangeActivePointerGrab( qt_xdisplay(), 
+    XChangeActivePointerGrab( qt_xdisplay(),
 			      ButtonPressMask | ButtonReleaseMask |
 			      PointerMotionMask |
 			      EnterWindowMask | LeaveWindowMask,
 			      current_cursor, 0);
   }
 
-}  
+}
 
 void Client::mouseReleaseEvent( QMouseEvent* /* ev */){
   dragging_state = dragging_nope;
@@ -747,9 +747,9 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
     if (!getDecoration())
       return;
     // maybe we have to change the look of the cursor according
-    // to the exact position 
+    // to the exact position
     if (ev->pos().x() >= BORDER && ev->pos().x() <= width()-1 - BORDER &&
-	ev->pos().y() >= BORDER  && 
+	ev->pos().y() >= BORDER  &&
 	ev->pos().y() <= height()-1 - BORDER){
       set_x_cursor(normal_cursor);
       return; // mouse over application window
@@ -769,20 +769,20 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
     else if (ev->pos().x() <= width() && ev->pos().x() >= width()-corner
 	     && ev->pos().y() >= 0  && ev->pos().y() <= corner)
       set_x_cursor(top_right_cursor);
-    else if (ev->pos().x() <= BORDER) 
+    else if (ev->pos().x() <= BORDER)
       set_x_cursor(left_side_cursor);
-    else if (ev->pos().x() >= width() - BORDER) 
+    else if (ev->pos().x() >= width() - BORDER)
       set_x_cursor(right_side_cursor);
-    else if (ev->pos().y() <= BORDER) 
+    else if (ev->pos().y() <= BORDER)
       set_x_cursor(top_side_cursor);
-    else if (ev->pos().y() >= height() - BORDER) 
+    else if (ev->pos().y() >= height() - BORDER)
       set_x_cursor(bottom_side_cursor);
-    else 
+    else
       set_x_cursor(normal_cursor);
-      
+
     return;
   }
-  
+
 
   // this is for a smoother start of the  drag
   if (dragging_state == dragging_smooth_wait){
@@ -802,7 +802,7 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
 	 if (do_resize == 0){
 	   grabMouse();
 	   ensurePointerGrab();
-	   XChangeActivePointerGrab( qt_xdisplay(), 
+	   XChangeActivePointerGrab( qt_xdisplay(),
 				     ButtonPressMask | ButtonReleaseMask |
 				     PointerMotionMask |
 				     EnterWindowMask | LeaveWindowMask,
@@ -810,8 +810,8 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
 	 }
     }
   }
-  
-  // dragging_state is dragging_enabled here 
+
+  // dragging_state is dragging_enabled here
 
   dragging_state = dragging_runs;
   grabKeyboard();
@@ -834,7 +834,7 @@ void Client::enterEvent( QEvent * ){
 		  mapFromGlobal(QCursor::pos()),
 		  0, 0);
   mouseMoveEvent(&me);
-  
+
 }
 
 void Client::leaveEvent( QEvent * ){
@@ -846,10 +846,10 @@ void Client::paintEvent( QPaintEvent*){
   QPainter p;
   p.begin(this);
    p.eraseRect(2,2,title_rect.x()-2, TITLEBAR_HEIGHT+BORDER-2);
-   p.eraseRect(title_rect.right(),2, width()-title_rect.right()-2, 
+   p.eraseRect(title_rect.right(),2, width()-title_rect.right()-2,
  	      TITLEBAR_HEIGHT+BORDER-2-TITLEWINDOW_SEPARATION);
    p.eraseRect(2,2,width()-4, BORDER-2);
-   p.eraseRect(2, TITLEBAR_HEIGHT+BORDER-TITLEWINDOW_SEPARATION, width()-4, 
+   p.eraseRect(2, TITLEBAR_HEIGHT+BORDER-TITLEWINDOW_SEPARATION, width()-4,
  	      height()-TITLEBAR_HEIGHT-BORDER+TITLEWINDOW_SEPARATION-2);
   qDrawWinPanel(&p, rect(), colorGroup());
   if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
@@ -879,7 +879,7 @@ void Client::paintEvent( QPaintEvent*){
     if (h3 > height()/2) h3 = height()/2;
     p.drawPixmap(0,height()-h3,*(options.shapePixmapBottomLeft),
 		 0,options.shapePixmapBottomLeft->height()-h3,w3, h3);
-    
+
     int w4 = options.shapePixmapBottomRight->width();
     int h4 = options.shapePixmapBottomRight->height();
     if (w4 > width()/2) w4 = width()/2;
@@ -991,7 +991,7 @@ void Client::paintEvent( QPaintEvent*){
 	break;
       }
     }
-    
+
     p.eraseRect(BORDER-1, BORDER-1, width()-2*BORDER+2, height()-2*BORDER+2);
   }
   p.end();
@@ -1023,16 +1023,16 @@ void Client::resizeEvent( QResizeEvent * ){
     break;
   case 2:
     XMoveResizeWindow(qt_xdisplay(), window, (BORDER_THIN), (BORDER_THIN),
-		      geometry.width() - 2*BORDER_THIN, 
+		      geometry.width() - 2*BORDER_THIN,
 		      geometry.height() - 2*BORDER_THIN);
     break;
   default:
     XMoveResizeWindow(qt_xdisplay(), window, (BORDER), (BORDER) + TITLEBAR_HEIGHT,
-		      geometry.width() - 2*BORDER, 
+		      geometry.width() - 2*BORDER,
 		      geometry.height() - 2*BORDER - TITLEBAR_HEIGHT);
     break;
   }
-    
+
   if (options.ShapeMode && getDecoration() == KWM::normalDecoration){	
     // the users wants shaped windows! After a resize we have to
     // recalculate the pixmaps and create a new shape combine mask.
@@ -1067,7 +1067,7 @@ void Client::resizeEvent( QResizeEvent * ){
     if (h3 > height()/2) h3 = height()/2;
     p.drawPixmap(0,height()-h3,*(options.shapePixmapBottomLeft->mask()),
 		 0,options.shapePixmapBottomLeft->height()-h3,w3, h3);
-    
+
     int w4 = options.shapePixmapBottomRight->width();
     int h4 = options.shapePixmapBottomRight->height();
     if (w4 > width()/2) w4 = width()/2;
@@ -1180,17 +1180,17 @@ void Client::resizeEvent( QResizeEvent * ){
 	break;
       }
     }
-    
+
     p.fillRect(BORDER-1, BORDER-1, width()-2*BORDER+2, height()-2*BORDER+2, color1);
-    
+
     p.end();
 
-    // finally set the shape :-) 
-    XShapeCombineMask( qt_xdisplay(), winId(), 
-		       ShapeBounding, 0, 0, shapemask.handle(), 
+    // finally set the shape :-)
+    XShapeCombineMask( qt_xdisplay(), winId(),
+		       ShapeBounding, 0, 0, shapemask.handle(),
 		       ShapeSet );
   }
-}  
+}
 
 // create a new pushbutton associated with the specified button
 // functions.
@@ -1207,19 +1207,19 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   if (!pm_pin_down){
     pm_pin_down = loadIcon("pindown.xpm");
   }
-  
+
   if(buttonFunction == NOFUNC)
     return 0;
-  
+
   if (buttonFunction == MAXIMIZE){
     if (fixedSize())
       return 0;
   }
-  
+
 
   myPushButton *button = new myPushButton(this);
   switch(buttonFunction){
-  case MAXIMIZE: 
+  case MAXIMIZE:
     button->setPixmap(*pm_max);
     button->setToggleButton(true);
     buttonMaximize = button;
@@ -1251,9 +1251,9 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
     {
       QPixmap pm = KWM::miniIcon(window, 16, 16);
       if (!pm.isNull())
-	button->setPixmap(pm);  
+	button->setPixmap(pm);
       else
-	button->setPixmap(*pm_menu);  
+	button->setPixmap(*pm_menu);
     }
     buttonMenu = button;
     connect( button, SIGNAL(pressed()), SLOT(menuPressed()));
@@ -1262,11 +1262,11 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   default:
     fprintf(stderr,"Bad Button Function %d\n", buttonFunction);
     break;
-  } 
-    
+  }
+
   return button;
-  
-}  
+
+}
 
 // generates a sensefull label property from the name, icon, klass
 // and instance. Also ensures that the label is unique by adding a
@@ -1308,9 +1308,9 @@ void Client::setLabel(){
     if (isVisible())
       repaint();
     XChangeProperty(qt_xdisplay(), window, a, XA_STRING, 8,
-		    PropModeReplace, (unsigned char *)(label.data()), 
+		    PropModeReplace, (unsigned char *)(label.data()),
 		    label.length()+1);
-    
+
   }
 
 }
@@ -1327,37 +1327,37 @@ void Client::generateOperations(){
   operation_client = this;
   myapp->operations->clear();
   if (isMaximized() && !fixedSize()){
-    myapp->operations->insertItem(KWM::getUnMaximizeString(), 
+    myapp->operations->insertItem(KWM::getUnMaximizeString(),
 				  OP_RESTORE);
   }
   else {
-    myapp->operations->insertItem(KWM::getMaximizeString(), 
+    myapp->operations->insertItem(KWM::getMaximizeString(),
 				  OP_MAXIMIZE);
   }
-  
+
   if (fixedSize())
     myapp->operations->setItemEnabled(OP_MAXIMIZE, false);
 
 
 
-  myapp->operations->insertItem(KWM::getIconifyString(), 
+  myapp->operations->insertItem(KWM::getIconifyString(),
 				OP_ICONIFY);
   if (!wantsFocus() || (trans != None && trans != qt_xrootwin()))
     myapp->operations->setItemEnabled(OP_ICONIFY, false);
 
-  myapp->operations->insertItem(KWM::getMoveString(), 
+  myapp->operations->insertItem(KWM::getMoveString(),
 				OP_MOVE);
-  myapp->operations->insertItem(KWM::getResizeString(), 
+  myapp->operations->insertItem(KWM::getResizeString(),
 				OP_RESIZE);
 
   if (fixedSize())
     myapp->operations->setItemEnabled(OP_RESIZE, false);
 
   if (isSticky())
-    myapp->operations->insertItem(KWM::getUnStickyString(), 
+    myapp->operations->insertItem(KWM::getUnStickyString(),
 				  OP_STICKY);
   else
-    myapp->operations->insertItem(KWM::getStickyString(), 
+    myapp->operations->insertItem(KWM::getStickyString(),
 				  OP_STICKY);
   if (trans != None && trans != qt_xrootwin() && trans != window)
     myapp->operations->setItemEnabled(OP_STICKY, false);
@@ -1371,12 +1371,12 @@ void Client::generateOperations(){
   }
   myapp->desktopMenu->setItemChecked(manager->currentDesktop(), true);
 
-  int dm = myapp->operations->insertItem(KWM::getToDesktopString(), 
+  int dm = myapp->operations->insertItem(KWM::getToDesktopString(),
 					 myapp->desktopMenu);
   if (trans != None && trans != qt_xrootwin() && trans != window)
     myapp->operations->setItemEnabled(dm, false);
   myapp->operations->insertSeparator();
-  myapp->operations->insertItem(KWM::getCloseString(), 
+  myapp->operations->insertItem(KWM::getCloseString(),
 				OP_CLOSE);
 }
 
@@ -1389,11 +1389,11 @@ void Client::showOperations(){
     myapp->operations->popup(geometry.topLeft());
     break;
   case 2:
-    myapp->operations->popup(QPoint(geometry.x() + BORDER_THIN, 
+    myapp->operations->popup(QPoint(geometry.x() + BORDER_THIN,
 			     geometry.y() + BORDER_THIN));
     break;
   default:
-    myapp->operations->popup(QPoint(geometry.x() + BORDER, 
+    myapp->operations->popup(QPoint(geometry.x() + BORDER,
 			     geometry.y() + BORDER + TITLEBAR_HEIGHT));
     break;
   }
@@ -1434,7 +1434,7 @@ void Client::setactive(bool on){
     doButtonGrab();
   }
   placeGimmick();
-}  
+}
 
 // Repaint the state of a window. Active or inactive windows differ
 // only in the look of the titlebar. If only_label is true then only
@@ -1445,7 +1445,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   bool double_buffering = false;
   QPixmap* buffer = 0;
 
-  if (r.width() <= 0 || r.height() <= 0 
+  if (r.width() <= 0 || r.height() <= 0
       || getDecoration()!=KWM::normalDecoration)
     return;
   int x;
@@ -1487,11 +1487,11 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 //   }
 
 //   if (options.TitlebarLook == SHADED
-//       && 
+//       &&
 //       (is_active && (!shaded_pm_active)
 //        || (!is_active && !shaded_pm_inactive))
 //       ){
-//     int i,y; 
+//     int i,y;
 //     QImage image (50, TITLEBAR_HEIGHT, 8, TITLEBAR_HEIGHT);
 //     QColor col = is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor;
 //     for ( i=0; i<TITLEBAR_HEIGHT; i++ ){
@@ -1513,7 +1513,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 //       shaded_pm_inactive_color = myapp->inactiveTitleColor;
 //     }
 //   }
-    
+
   QPainter p;
 
   if (only_label){
@@ -1521,20 +1521,20 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
       if (titlestring_offset_delta > 0)
-	bitBlt(this, 
-	       r.x()+titlestring_offset_delta, r.y(), 
-	       this, 
-	       r.x(), r.y(), 
+	bitBlt(this,
+	       r.x()+titlestring_offset_delta, r.y(),
+	       this,
+	       r.x(), r.y(),
 	       r.width()-titlestring_offset_delta, r.height());
       else
-	bitBlt(this, 
-	       r.x(), r.y(), 
-	       this, 
-	       r.x()-titlestring_offset_delta, r.y(), 
+	bitBlt(this,
+	       r.x(), r.y(),
+	       this,
+	       r.x()-titlestring_offset_delta, r.y(),
 	       r.width()+titlestring_offset_delta, r.height());
     }
   }
-  
+
   if (!double_buffering)
     p.begin( this );
   else {
@@ -1543,7 +1543,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     p.begin(buffer);
     r.setRect(0,0,r.width(),r.height());
   }
-    
+
   QPixmap *pm;
   p.setClipRect(r);
   p.setClipping(True);
@@ -1551,7 +1551,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   // old handmade vertical shading code
 
 //   if (options.TitlebarLook == SHADED || options.TitlebarLook == PIXMAP){
-    
+
 //     if (options.TitlebarLook == SHADED)
 //       pm = is_active ? shaded_pm_active : shaded_pm_inactive;
 //     else
@@ -1559,7 +1559,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 
 
   if (look == PIXMAP){
-      pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;    
+      pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;
       for (x = r.x(); x < r.x() + r.width(); x+=pm->width())
 	p.drawPixmap(x, r.y(), *pm);
   }
@@ -1583,13 +1583,13 @@ void Client::paintState(bool only_label, bool colors_have_changed){
       pm = &iaShadepm;
     }
 
-    p.drawPixmap( r.x(), r.y(), *pm ); 
+    p.drawPixmap( r.x(), r.y(), *pm );
   }
   else { // TitlebarLook == TITLEBAR_PLAIN
     p.setBackgroundColor( is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor);
     if (only_label && !double_buffering){
        p.eraseRect(QRect(r.x(), r.y(), TITLE_ANIMATION_STEP+1, r.height()));
-       p.eraseRect(QRect(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(), 
+       p.eraseRect(QRect(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(),
  			TITLE_ANIMATION_STEP+1, r.height()));
     }
     else {
@@ -1597,7 +1597,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     }
   }
   p.setClipping(False);
-  
+
   if (is_active)
     qDrawShadePanel( &p, r, colorGroup(), true );
 
@@ -1616,24 +1616,24 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   }
   else {
     if (titlestring_offset < 0
-	&& titlestring_offset + 
+	&& titlestring_offset +
 	p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
       titlestring_offset_delta *= -1;
     }
   }
-  
+
   if (!titlestring_too_large)
     titlestring_offset = 0;
   p.setClipRect(r);
   p.setClipping(True);
-  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:0), 
-	     r.y()+p.fontMetrics().ascent(), 
+  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:0),
+	     r.y()+p.fontMetrics().ascent(),
 	     QString(" ")+label+" ");
   p.setClipping(False);
   p.end();
   if (double_buffering){
-    bitBlt(this, 
-	   title_rect.x(), title_rect.y(), 
+    bitBlt(this,
+	   title_rect.x(), title_rect.y(),
 	   buffer,
 	   0,0,
 	   buffer->width(), buffer->height());
@@ -1650,8 +1650,8 @@ void Client::createGimmick(){
     gimmick->resize(options.gimmickPixmap->size());
     gimmick->setPixmap(*(options.gimmickPixmap));
     if (options.gimmickPixmap->mask()){
-      XShapeCombineMask( qt_xdisplay(), gimmick->winId(), 
-			 ShapeBounding, 0, 0, 
+      XShapeCombineMask( qt_xdisplay(), gimmick->winId(),
+			 ShapeBounding, 0, 0,
 			 options.gimmickPixmap->mask()->handle(),
 			 ShapeSet);
     }
@@ -1674,7 +1674,7 @@ void Client::placeGimmick(){
 		  options.GimmickOffsetX,
 		  geometry.y()+geometry.height()*options.GimmickPositionY/100+
 		  options.GimmickOffsetY-gimmick->height());
-    
+
       // put the gimmick right above the window itself in the stacking order
     if (gimmick_client != this){
       gimmick_client = this;
@@ -1711,7 +1711,7 @@ void Client::iconifySlot(){
 void Client::iconify(bool animation){
   if (isIconified())
     return;
-  if (manager->current() && 
+  if (manager->current() &&
       this != manager->current()
       && manager->current()->trans == window)
     manager->activateClient(this);
@@ -1722,12 +1722,12 @@ void Client::iconify(bool animation){
     hideClient();
     if (animation){
       KWM::raiseSoundEvent("Window Iconify");
-      if (animate_size_change(this, geometry, 
+      if (animate_size_change(this, geometry,
 			      QRect(geometry.x()+geometry.width()/2,
 				    geometry.y()+geometry.height()/2,
 				    0,0),
 			      getDecoration()==KWM::normalDecoration,
-			      title_rect.x(), 
+			      title_rect.x(),
 			      width()-title_rect.right()))
 	return; //client has been destroyed
     }
@@ -1736,7 +1736,7 @@ void Client::iconify(bool animation){
   }
   KWM::setIconify(window, True);
   manager->changedClient(this);
-  manager->setWindowState(this, IconicState); 
+  manager->setWindowState(this, IconicState);
 }
 
 // unIconify this client. Takes care about floating or transient
@@ -1758,10 +1758,10 @@ void Client::unIconify(bool animation){
 				    geometry.y()+geometry.height()/2,
 				    0,0), geometry,
 			      getDecoration()==KWM::normalDecoration,
-			      title_rect.x(), 
+			      title_rect.x(),
 			      width()-title_rect.right()))
 	return; //client has been destroyed
-    } 
+    }
     showClient();
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );
@@ -1796,20 +1796,20 @@ void Client::ontoDesktop(int new_desktop){
 
   KWM::moveToDesktop(window, desktop);
   manager->changedClient(this);
-  
+
   if (state == NormalState){
     hideClient();
-    manager->setWindowState(this, IconicState); 
+    manager->setWindowState(this, IconicState);
 
     if (isActive())
       manager->noFocus();
   }
 
-  
+
   manager->ontoDesktopTransientOf(this);
 
   if (desktop == manager->currentDesktop() && !isIconified()){
-    showClient();  
+    showClient();
     manager->setWindowState(this, NormalState);
     manager->raiseClient( this );
     if (!CLASSIC_FOCUS)
@@ -1837,7 +1837,7 @@ void Client::maximize(int mode){
     geometry.moveTopLeft(QPoint(maxRect.x(),geometry.y()));
     geometry.setWidth(maxRect.width());
     break;
-  default: //  
+  default: //
     geometry = maxRect;
     break;
   }
@@ -1847,13 +1847,13 @@ void Client::maximize(int mode){
     manager->raiseSoundEvent("Window Maximize");
   if (animate_size_change(this, geometry_restore, geometry,
 			  getDecoration()==KWM::normalDecoration,
-			  title_rect.x(), 
+			  title_rect.x(),
 			  width()-title_rect.right()))
     return; //client has been destroyed
   KWM::setMaximize(window, maximized);
   if (!buttonMaximize->isOn())
     buttonMaximize->toggle();
-  
+
   manager->sendConfig(this);
   layoutButtons();
 }
@@ -1868,7 +1868,7 @@ void Client::unMaximize(){
     manager->raiseSoundEvent("Window UnMaximize");
   if (animate_size_change(this, geometry, geometry_restore,
 			  getDecoration()==KWM::normalDecoration,
-			  title_rect.x(), 
+			  title_rect.x(),
 			  width()-title_rect.right()))
     return; //client has been destroyed
   geometry = geometry_restore;
@@ -1882,7 +1882,7 @@ void Client::unMaximize(){
 
 void Client::maximizeToggled(bool depressed){
   bool do_not_activate = depressed == isMaximized();
-  
+
   buttonMaximize->setPixmap(buttonMaximize->isOn() ? *pm_max_down : *pm_max);
   buttonMaximize->update();
 
@@ -1895,14 +1895,14 @@ void Client::maximizeToggled(bool depressed){
       case RightButton:
 	maximize(2);
 	break;
-      default: //Leftbutton 
+      default: //Leftbutton
 	maximize(options.MaximizeOnlyVertically?1:0);
 	break;
       }
     }
     else
       unMaximize();
-    
+
     if (state == NormalState){
       manager->raiseClient( this );
       if (!CLASSIC_FOCUS)
@@ -1915,7 +1915,7 @@ void Client::maximizeToggled(bool depressed){
 void Client::closeClicked(){
   // closing of clients if handled by the manager itself.
   manager->closeClient(this);
-} 
+}
 
 void Client::stickyToggled(bool depressed){
   QPixmap* pm;
@@ -1929,7 +1929,7 @@ void Client::stickyToggled(bool depressed){
   if (depressed){
     pm = pm_pin_down;
     if (state != NormalState && !isIconified()){
-      showClient();  
+      showClient();
       manager->setWindowState(this, NormalState);
       manager->raiseClient( this );
       if (!CLASSIC_FOCUS)
@@ -1956,7 +1956,7 @@ void Client::stickyToggled(bool depressed){
 
 void Client::menuPressed(){
   // the menu button is somewhat special since it does not only show a
-  // popup menu but also reacts on doubleclicks. 
+  // popup menu but also reacts on doubleclicks.
   static QTime click_time;
   if (!isActive()){
     myapp->operations->hide();
@@ -1973,7 +1973,7 @@ void Client::menuPressed(){
     ignore_release_on_this = buttonMenu;
     showOperations();
   }
-  
+
   click_time = QTime::currentTime();
 }
 
@@ -1984,7 +1984,7 @@ void Client::menuReleased(){
 }
 
 
-// handles a window operation 
+// handles a window operation
 void Client::handleOperation(int i){
   switch (i){
   case OP_MOVE:
@@ -1992,7 +1992,7 @@ void Client::handleOperation(int i){
     grabMouse();
     ensurePointerGrab();
     // use the PointerMotionMask, too
-    XChangeActivePointerGrab( qt_xdisplay(), 
+    XChangeActivePointerGrab( qt_xdisplay(),
 			      ButtonPressMask | ButtonReleaseMask |
 			      PointerMotionMask |
 			      EnterWindowMask | LeaveWindowMask,
@@ -2012,7 +2012,7 @@ void Client::handleOperation(int i){
     grabMouse();
     ensurePointerGrab();
     // use the PointerMotionMask, too
-    XChangeActivePointerGrab( qt_xdisplay(), 
+    XChangeActivePointerGrab( qt_xdisplay(),
 			      ButtonPressMask | ButtonReleaseMask |
 			      PointerMotionMask |
 			      EnterWindowMask | LeaveWindowMask,
@@ -2053,10 +2053,10 @@ void Client::handleOperation(int i){
   case OP_CLOSE:
     closeClicked();
     break;
-  case OP_STICKY: 
+  case OP_STICKY:
     buttonSticky->toggle();
     break;
-  case OP_OPERATIONS: 
+  case OP_OPERATIONS:
     showOperations();
     break;
   case OP_SHADE:
@@ -2075,7 +2075,7 @@ void Client::simple_move(){
   old_cursor_pos = mapFromGlobal(QCursor::pos());
   dragging_state = dragging_enabled;
   do_resize = 0;
-  XChangeActivePointerGrab( qt_xdisplay(), 
+  XChangeActivePointerGrab( qt_xdisplay(),
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
@@ -2111,7 +2111,7 @@ void Client::simple_resize(){
       cursor = bottom_right_cursor;
     }
   }
-  XChangeActivePointerGrab( qt_xdisplay(), 
+  XChangeActivePointerGrab( qt_xdisplay(),
 			    ButtonPressMask | ButtonReleaseMask |
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
@@ -2136,12 +2136,12 @@ void Client::autoRaise(){
   }
 
   if (isActive()){
-     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
  		     ButtonPressMask | ButtonReleaseMask |
  		     PointerMotionMask |
  		     EnterWindowMask | LeaveWindowMask,
-		      GrabModeAsync, GrabModeAsync, None, 
-		      None , CurrentTime) == GrabSuccess){ 
+		      GrabModeAsync, GrabModeAsync, None,
+		      None , CurrentTime) == GrabSuccess){
        XUngrabPointer(qt_xdisplay(), CurrentTime);
        XSync(qt_xdisplay(), false);
        manager->raiseClient( this );
@@ -2188,18 +2188,18 @@ Client* Client::mainClient(){
 void Client::adjustSize(){
   int dx = geometry.width();
   int dy = geometry.height();
-  
+
   if (dx<1) dx = 1;
   if (dy<1) dy = 1;
-  
-  
+
+
   if (size.flags & PResizeInc) {
-    dx = geometry_restore.width() - 
+    dx = geometry_restore.width() -
       ((geometry_restore.width()-dx)/size.width_inc)*size.width_inc;
-    dy = geometry_restore.height() - 
+    dy = geometry_restore.height() -
       ((geometry_restore.height()-dy)/size.height_inc)*size.height_inc;
   }
-  
+
   switch(getDecoration()){
   case KWM::noDecoration:
     break;
@@ -2220,14 +2220,14 @@ void Client::adjustSize(){
     dy -= 2*BORDER+TITLEBAR_HEIGHT;
   break;
   }
-  
+
   if (size.flags & PMaxSize) {
     if (dx > size.max_width)
       dx = size.max_width;
     if (dy > size.max_height)
       dy = size.max_height;
     }
-  
+
   if (size.flags & PMinSize) {
     if (dx < size.min_width)
       dx = size.min_width;
@@ -2253,7 +2253,7 @@ void Client::adjustSize(){
     dy += 2*BORDER + TITLEBAR_HEIGHT;
     break;
   }
-  
+
   geometry.setWidth(dx);
   geometry.setHeight(dy);
 
@@ -2263,16 +2263,16 @@ void Client::adjustSize(){
 // put a passive grab above the window for some button/modifier combinations.
 void Client::doButtonGrab(){
   if (isActive()){
-    XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window); 
+    XUngrabButton(qt_xdisplay(), AnyButton, AnyModifier, window);
     grabButton(AnyButton, window, Mod1Mask);
   }
   else {
-    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True, 
-		ButtonPressMask, GrabModeSync, GrabModeAsync, 
+    XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, window, True,
+		ButtonPressMask, GrabModeSync, GrabModeAsync,
 		None, normal_cursor );
   }
   if (!options.Button3Grab)
-    XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window); 
+    XUngrabButton(qt_xdisplay(), Button3, AnyModifier, window);
 }
 
 
@@ -2280,11 +2280,11 @@ void Client::doButtonGrab(){
 // grab! IMO this is a qt problem. Anyway this function solves it:
 // it will wait until we _really_ have the pointer grab.
 void Client::ensurePointerGrab(){
-  while (XGrabPointer(qt_xdisplay(), winId(), False, 
+  while (XGrabPointer(qt_xdisplay(), winId(), False,
 		      ButtonPressMask | ButtonReleaseMask |
 		      PointerMotionMask |
 		      EnterWindowMask | LeaveWindowMask,
-		      GrabModeAsync, GrabModeAsync, None, 
+		      GrabModeAsync, GrabModeAsync, None,
 		      None , CurrentTime) != GrabSuccess)
     sleep(1);
 }
@@ -2297,13 +2297,13 @@ int Client::operationFromCommand(const QString &com){
     return OP_MOVE;
   else if (com == "winResize")
     return OP_RESIZE;
-  else if (com == "winMaximize") 
+  else if (com == "winMaximize")
     return OP_MAXIMIZE;
-  else if (com == "winRestore") 
+  else if (com == "winRestore")
     return OP_RESTORE;
   else if (com == "winIconify")
     return OP_ICONIFY;
-  else if (com == "winClose") 
+  else if (com == "winClose")
     return OP_CLOSE;
   else if (com == "winSticky")
     return OP_STICKY;

@@ -59,11 +59,11 @@ int handler(Display *d, XErrorEvent *e){
     char msg[80], req[80], number[80];
     bool ignore_badwindow = true; //maybe temporary
 
-    if (initting && 
+    if (initting &&
 	(
 	 e->request_code == X_ChangeWindowAttributes
 	 || e->request_code == X_GrabKey
-	 ) 
+	 )
 	&& (e->error_code == BadAccess)) {
       fprintf(stderr, klocale->translate("kwm: it looks like there's already a window manager running.  kwm not started\n"));
       exit(1);
@@ -109,7 +109,7 @@ static void hideInfoBox(){
 }
 static void createInfoBox(){
   if (!infoFrame){
-    infoFrame = new QFrame(0, 0, 
+    infoFrame = new QFrame(0, 0,
 			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
     infoFrame->setFrameStyle( QFrame::WinPanel | QFrame::Raised );
     infoFrameInner = new QFrame(infoFrame);
@@ -158,7 +158,7 @@ static void setInfoBoxText(QString text, Window w){
     nw = 10+infoBoxWindowsLabel->count() * 22;
   if (nw < infoLabel->fontMetrics().boundingRect(text).width())
     nw = infoLabel->fontMetrics().boundingRect(text).width();
-  
+
   if (nw > QApplication::desktop()->width()*2/3-12-d){
     infoFrame->setGeometry(0,
 			   QApplication::desktop()->height()/2-30,
@@ -173,7 +173,7 @@ static void setInfoBoxText(QString text, Window w){
 			     QApplication::desktop()->height()/2-30,
 			     QApplication::desktop()->width()*2/3,
 			     w!=None?83:60);
-      if (infoLabel->fontMetrics().boundingRect(text).width() > 
+      if (infoLabel->fontMetrics().boundingRect(text).width() >
 	  QApplication::desktop()->width()-12-d)
 	infoLabel->setAlignment(AlignVCenter);
     }
@@ -183,11 +183,11 @@ static void setInfoBoxText(QString text, Window w){
 			     QApplication::desktop()->width()/3,
 			     w!=None?83:60);
   infoFrameInner->setGeometry(3, 3, infoFrame->width()-6, infoFrame->height()-6);
-  
+
   if (w != None){
     infoIcon->setGeometry(6, 6, 48, 48);
     infoIcon->show();
-    infoLabel->setGeometry(6+d, 6, infoFrame->width()-d-12, 
+    infoLabel->setGeometry(6+d, 6, infoFrame->width()-d-12,
 			   infoFrame->height()-12-20);
     infoFrameSeparator->setGeometry(6, 55, infoFrame->width()-12, 2);
     infoFrameSeparator->show();
@@ -207,7 +207,7 @@ static void setInfoBoxText(QString text, Window w){
   }
   else {
     infoIcon->hide();
-    infoLabel->setGeometry(6, 6, infoFrame->width()-12, 
+    infoLabel->setGeometry(6, 6, infoFrame->width()-12,
 			   infoFrame->height()-12);
     infoFrameSeparator->hide();
   }
@@ -246,9 +246,9 @@ void setInfoBoxWindows(Client* c, bool traverse_all = false){
     Window* w = 0;
     QPixmap pm;
     do {
-      if (traverse_all || 
+      if (traverse_all ||
 	  o->isOnDesktop(manager->currentDesktop())){
-	l = new QLabel(infoFrame); 
+	l = new QLabel(infoFrame);
 	l->setGeometry(x, 58, 20, 20);
 	l->show();
 	infoBoxWindowsLabel->append(l);
@@ -309,7 +309,7 @@ void showWarning(const char* text, bool with_button = true){
   kwarning->setText(text, with_button);
   manager->timeStamp();
   while (XCheckMaskEvent(qt_xdisplay(), EnterWindowMask, &ev));
-  myapp->processEvents(); 
+  myapp->processEvents();
   while (!kwarning->do_grabbing());
 }
 
@@ -317,7 +317,7 @@ static void setStringProperty(const char* atomname, const char* value){
   Atom a = XInternAtom(qt_xdisplay(), atomname, False);
   QString str = value;
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), a, XA_STRING, 8,
-		  PropModeReplace, (unsigned char *)(str.data()), 
+		  PropModeReplace, (unsigned char *)(str.data()),
 		  str.length()+1);
 }
 
@@ -327,7 +327,7 @@ static void showLogout(){
   manager->raiseSoundEvent("Logout Message");
   if (!klogout){
     klogout = new Klogout(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
-    // next is a dirty hack to fix a qt-1.2 bug 
+    // next is a dirty hack to fix a qt-1.2 bug
     // (should be unnecessary with 1.3)
      unsigned long data[2];
      data[0] = (unsigned long) NormalState;
@@ -336,7 +336,7 @@ static void showLogout(){
      XChangeProperty(qt_xdisplay(), klogout->winId(), wm_state, wm_state, 32,
  		    PropModeReplace, (unsigned char *)data, 2);
     myapp->connect(klogout, SIGNAL(doLogout()), myapp, SLOT(doLogout()));
-    myapp->connect(klogout, SIGNAL(changeToClient(QString)), 
+    myapp->connect(klogout, SIGNAL(changeToClient(QString)),
 		   myapp, SLOT(changeToClient(QString)));
   }
   QStrList* no_session = manager->getNoSessionClients();
@@ -351,7 +351,7 @@ static void showLogout(){
 void showTask(){
   if (!ktask){
     ktask = new Ktask(0, 0, WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
-    // next is a dirty hack to fix a qt-1.2 bug 
+    // next is a dirty hack to fix a qt-1.2 bug
     // (should be unnecessary with 1.3)
      unsigned long data[2];
      data[0] = (unsigned long) NormalState;
@@ -359,7 +359,7 @@ void showTask(){
      Atom wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
      XChangeProperty(qt_xdisplay(), ktask->winId(), wm_state, wm_state, 32,
  		    PropModeReplace, (unsigned char *)data, 2);
-    myapp->connect(ktask, SIGNAL(changeToClient(QString)), 
+    myapp->connect(ktask, SIGNAL(changeToClient(QString)),
  		   myapp, SLOT(changeToTaskClient(QString)));
   }
   QStrList* liste = new QStrList;
@@ -372,7 +372,7 @@ void showTask(){
     liste->append(KWM::getDesktopName(i));
     QStrList* clients = manager->getClientsOfDesktop(i);
     for (a=clients->first();!a.isNull();a=clients->next()){
-      if (manager->current() && 
+      if (manager->current() &&
 	  manager->current()->label == a)
 	active = liste->count();
       liste->append(QString("   ")+a);
@@ -389,7 +389,7 @@ QRect &stringToRect(QString s, QRect *q){
   int y = 0;
   int w = 0;
   int h = 0;
-  
+
   int a;
   a = s.find('+', 0);
   if (a>0){
@@ -407,7 +407,7 @@ QRect &stringToRect(QString s, QRect *q){
     s = s.remove(0, a+1);
   }
   h = s.toInt();
-  q->setRect(x, y, w, h); 
+  q->setRect(x, y, w, h);
   return *q;
 }
 
@@ -429,14 +429,14 @@ static QString rectToString(QRect r){
 
 static void grabKey(KeySym keysym, unsigned int mod){
   static int NumLockMask = 0;
-  if (!keysym||!XKeysymToKeycode(qt_xdisplay(), keysym)) return; 
+  if (!keysym||!XKeysymToKeycode(qt_xdisplay(), keysym)) return;
   if (!NumLockMask){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     int i;
     for (i=0; i<8; i++){
-      if (xmk->modifiermap[xmk->max_keypermod * i] == 
+      if (xmk->modifiermap[xmk->max_keypermod * i] ==
 	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
-	NumLockMask = (1<<i); 
+	NumLockMask = (1<<i);
     }
   }
   XGrabKey(qt_xdisplay(),
@@ -456,12 +456,12 @@ static void grabKey(KeySym keysym, unsigned int mod){
 	   qt_xrootwin(), True,
 	   GrabModeAsync, GrabModeSync);
 
-  
+
 }
 
 
 // Like manager->activateClient but also raises the window and sends a
-// sound event. 
+// sound event.
 void switchActivateClient(Client* c, bool do_not_raise){
   if (!c->geometry.intersects(QApplication::desktop()->rect())){
     // window not visible => place it again.
@@ -478,7 +478,7 @@ void switchActivateClient(Client* c, bool do_not_raise){
 
 
 void logout(){
-  showWarning(klocale->translate("Preparing session ... "), false); 
+  showWarning(klocale->translate("Preparing session ... "), false);
   XUngrabServer(qt_xdisplay());
   XSync(qt_xdisplay(), false);
   kapp->processEvents();
@@ -508,7 +508,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
     else {
       printf(klocale->translate("Usage: "));
       printf("%s [-version] [-nosession]\n", argv[0]);
-      ::exit(1); 
+      ::exit(1);
     }
   }
 
@@ -527,25 +527,25 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   setStringProperty("KWM_STRING_RESIZE",     klocale->translate("Resi&ze"));
   setStringProperty("KWM_STRING_CLOSE",      klocale->translate("&Close"));
   setStringProperty("KWM_STRING_TODESKTOP",  klocale->translate("&To desktop"));
-  setStringProperty("KWM_STRING_ONTOCURRENTDESKTOP", 
+  setStringProperty("KWM_STRING_ONTOCURRENTDESKTOP",
 		    klocale->translate("&Onto current desktop"));
 
-  desktopMenu = new QPopupMenu; 
+  desktopMenu = new QPopupMenu;
   desktopMenu->installEventFilter(this);
   desktopMenu->setMouseTracking(True);
   desktopMenu->setCheckable(true);
-  
+
   QObject::connect(desktopMenu, SIGNAL(activated(int)), this, SLOT(handleDesktopPopup(int)));
 
-  
+
   operations = new QPopupMenu ();
   CHECK_PTR( operations );
   operations->installEventFilter(this);
   operations->setMouseTracking(True);
-  
+
   QObject::connect(operations, SIGNAL(activated(int)), this, SLOT(handleOperation(int)));
 
-  
+
   grabKey(XK_Tab, Mod1Mask);
   grabKey(XK_Tab, Mod1Mask | ShiftMask);
   grabKey(XK_Tab, ControlMask);
@@ -558,7 +558,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
 
   //CT 07mar98 prepare the placement stuff
   options.interactive_trigger = -1;
-  
+
   readConfiguration();
 
   KConfig* config = getKApplication()->getConfig();
@@ -568,7 +568,7 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
     config->writeEntry("NumberOfDesktops", 4);
   int number_of_desktops = config->readNumEntry("NumberOfDesktops");
   if (!config->hasKey("Desktop1"))
-    config->writeEntry("Desktop1", klocale->translate("One"), 
+    config->writeEntry("Desktop1", klocale->translate("One"),
 		       true, false, true);
   if (!config->hasKey("Desktop2"))
     config->writeEntry("Desktop2", klocale->translate("Two"),
@@ -591,25 +591,25 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   if (!config->hasKey("Desktop8"))
     config->writeEntry("Desktop8", klocale->translate("Eight"),
 		       true, false, true);
-  
+
   number_of_desktops = (number_of_desktops/2) * 2;
   if (number_of_desktops < 2)
     number_of_desktops = 2;
   if (number_of_desktops > 32)
     number_of_desktops = 32;
-  
+
   KWM::setNumberOfDesktops(number_of_desktops);
   for (i=1; i <= 32; i++){
     QString a = "";
     a.setNum(i);
-    a.prepend("Desktop"); 
+    a.prepend("Desktop");
     QString b = config->readEntry(a,klocale->translate("Unnamed Desktop"));
     b.stripWhiteSpace();
     KWM::setDesktopName(i, b);
     a.append("Region");
     b = config->readEntry(a);
     if (!b.isEmpty()){
-      QRect g;  
+      QRect g;
       QRect r = stringToRect(b, &g);
       if (r.isEmpty())
 	r = QApplication::desktop()->geometry();
@@ -619,28 +619,28 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
       KWM::setWindowRegion(i, QApplication::desktop()->geometry());
     }
   }
-  
+
   KWM::switchToDesktop(1);
 
   config->sync();
 
   XSync(qt_xdisplay(), False);
 
-  XGrabServer(qt_xdisplay()); 
-  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
+  XGrabServer(qt_xdisplay());
+  XSelectInput(qt_xdisplay(), qt_xrootwin(),
 	       KeyPressMask |
 	       // 		 ButtonPressMask | ButtonReleaseMask |
 	       PropertyChangeMask |
 	       ColormapChangeMask |
 	       SubstructureRedirectMask |
-	       SubstructureNotifyMask 
+	       SubstructureNotifyMask
 	       );
-  
+
   XSync(qt_xdisplay(), False);
 
   manager = new Manager;
   connect(manager, SIGNAL(reConfigure()), this, SLOT(reConfigure()));
-  XUngrabServer(qt_xdisplay()); 
+  XUngrabServer(qt_xdisplay());
   initting = false;
   if (restore_session)
     restoreSession();
@@ -665,7 +665,7 @@ BUTTON_FUNCTIONS getFunctionFromKey(const char* key_arg){
     return UNDEFINED;
 }
 
-const char* default_buttons[6] = 
+const char* default_buttons[6] =
 {"Menu", "Sticky", "Off", "Close", "Maximize", "Iconify"};
 
 
@@ -674,7 +674,7 @@ void MyApp::readConfiguration(){
   KConfig* config;
   QString key;
   int i;
-  
+
   killTimers();
 
   config = getKApplication()->getConfig();
@@ -870,7 +870,7 @@ void MyApp::readConfiguration(){
   else{
     if( manager)
       manager->destroyBorderWindows();
-  }    
+  }
 
   key = config->readEntry("ShapeMode");
   if( key == "on")
@@ -929,7 +929,7 @@ void MyApp::readConfiguration(){
     }
 
 
-    
+
     if (
 	options.shapePixmapTop->isNull() ||
 	options.shapePixmapLeft->isNull() ||
@@ -953,7 +953,7 @@ void MyApp::readConfiguration(){
 	BORDER = options.shapePixmapRight->width();
     }
   }
-  
+
 
 
   // Windows Placement config --- CT 18jan98 ---
@@ -965,7 +965,7 @@ void MyApp::readConfiguration(){
     if (comma_pos < 0)
       options.interactive_trigger = 0;
     else
-      options.interactive_trigger = 
+      options.interactive_trigger =
 	key.right(key.length()-comma_pos).toUInt(0);
   }
   else {
@@ -996,7 +996,7 @@ void MyApp::readConfiguration(){
     options.BorderSnapZone = 10;
     config->writeEntry("BorderSnapZone", options.BorderSnapZone);
   }
-  
+
   if (config->hasKey("WindowSnapZone")) {
     options.WindowSnapZone = config->readNumEntry("WindowSnapZone");
     if (options.WindowSnapZone < 0) options.WindowSnapZone = 0;
@@ -1006,7 +1006,7 @@ void MyApp::readConfiguration(){
     options.WindowSnapZone = 10;
     config->writeEntry("WindowSnapZone", options.WindowSnapZone);
   }
-  //CT ---  
+  //CT ---
 
 
   options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
@@ -1070,7 +1070,7 @@ void MyApp::readConfiguration(){
   options.CommandAll1 = mouseBinding(config->readEntry("CommandAll1","Move"));
   options.CommandAll2 = mouseBinding(config->readEntry("CommandAll2","Toggle raise and lower"));
   options.CommandAll3 = mouseBinding(config->readEntry("CommandAll3","Resize"));
-							    
+							
 
   config->setGroup( "Buttons");
 
@@ -1083,7 +1083,7 @@ void MyApp::readConfiguration(){
       options.buttons[i] = getFunctionFromKey(default_buttons[i]);
     }
   }
- 
+
   config->sync();
 }
 
@@ -1209,7 +1209,7 @@ void MyApp::restoreSession(){
   KConfig* config = getKApplication()->getConfig();
   config->setGroup( "Session" );
   QString command;
-  
+
   QStrList* com = new QStrList;
   QStrList* ph = new QStrList;
   QStrList* pp = new QStrList;
@@ -1353,7 +1353,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	  infoBoxClient = manager->nextClient(infoBoxClient);
 	else
 	  infoBoxClient = manager->previousClient(infoBoxClient);
-      } while (infoBoxClient != sign && infoBoxClient && 
+      } while (infoBoxClient != sign && infoBoxClient &&
 	       !options.TraverseAll &&
 	       !infoBoxClient->isOnDesktop(manager->currentDesktop()));
 
@@ -1367,7 +1367,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	  s.append(": ");
 	}
 	if (infoBoxClient->isIconified())
-	  setInfoBoxText(s + QString("(")+infoBoxClient->label+")", 
+	  setInfoBoxText(s + QString("(")+infoBoxClient->label+")",
 			 infoBoxClient->window);
 	else
 	  setInfoBoxText(s + infoBoxClient->label,
@@ -1424,7 +1424,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     }
     return False;
   }
-  
+
   freeKeyboard(False);
   return False;
 }
@@ -1434,7 +1434,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
   if (tab_grab){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     for (i=0; i<xmk->max_keypermod; i++)
-      if (xmk->modifiermap[xmk->max_keypermod * Mod1MapIndex + i] 
+      if (xmk->modifiermap[xmk->max_keypermod * Mod1MapIndex + i]
 	  == key.keycode){
 	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
 	hideInfoBox();
@@ -1442,7 +1442,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
 	if (infoBoxClient){
 	  if (!infoBoxClient->isOnDesktop(manager->currentDesktop()))
 	    manager->switchDesktop(infoBoxClient->desktop);
-	  
+	
 	  if (infoBoxClient->state == NormalState){
 	    switchActivateClient(infoBoxClient);
 	  }
@@ -1455,7 +1455,7 @@ void MyApp::handleKeyRelease(XKeyEvent key){
   if (control_grab){
     XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
     for (i=0; i<xmk->max_keypermod; i++)
-      if (xmk->modifiermap[xmk->max_keypermod * ControlMapIndex + i] 
+      if (xmk->modifiermap[xmk->max_keypermod * ControlMapIndex + i]
 	  == key.keycode){
 	XUngrabKeyboard(qt_xdisplay(), CurrentTime);
 	hideInfoBox();
@@ -1494,7 +1494,7 @@ void  MyApp::timerEvent( QTimerEvent * ){
   keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
   keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
 
-  
+
   keys->connectItem( "Switch to desktop 1", this, SLOT( slotSwitchDesktop1() ));
   keys->connectItem( "Switch to desktop 2", this, SLOT( slotSwitchDesktop2() ));
   keys->connectItem( "Switch to desktop 3", this, SLOT( slotSwitchDesktop3() ));
@@ -1516,12 +1516,12 @@ void MyApp::slotKillWindowMode(){
   static Cursor kill_cursor = 0;
   if (!kill_cursor)
        kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
-     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		      ButtonPressMask | ButtonReleaseMask |
 		      PointerMotionMask |
 		      EnterWindowMask | LeaveWindowMask,
-		      GrabModeAsync, GrabModeAsync, None, 
-		      kill_cursor, CurrentTime) == GrabSuccess){ 
+		      GrabModeAsync, GrabModeAsync, None,
+		      kill_cursor, CurrentTime) == GrabSuccess){
        XGrabKeyboard(qt_xdisplay(),
 		     qt_xrootwin(), False,
 		     GrabModeAsync, GrabModeAsync,
@@ -1549,7 +1549,7 @@ void MyApp::slotWindowLower(){
 }
 void MyApp::slotWindowClose(){
   if (minicli && minicli->isVisible()){
-    minicli->cleanup(); 
+    minicli->cleanup();
     return;
   }
   if (klogout && klogout->isVisible()){
@@ -1626,7 +1626,7 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 	// ignore the popup-close in some cases
 	if (ignore_release_on_this){
 	  QEvent ev(Event_Leave);
-	  QMouseEvent mev (Event_MouseButtonRelease, 
+	  QMouseEvent mev (Event_MouseButtonRelease,
 			   QCursor::pos(), LeftButton, LeftButton);
 	  QApplication::sendEvent(ignore_release_on_this, &ev);
 	  QApplication::sendEvent(ignore_release_on_this, &mev);
@@ -1663,7 +1663,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
       return true;
     }
   }
-  
+
   switch (ev->type) {
   case KeyPress:
     DEBUG_EVENTS("KeyPress", ev->xkey.window)
@@ -1684,20 +1684,33 @@ bool MyApp::x11EventFilter( XEvent * ev){
       if (c && ev->xbutton.window == c->window){
 	bool no_replay = false;
 	if ((ev->xbutton.state & Mod1Mask) == Mod1Mask){
-	  if  (ev->xbutton.button == Button1)
-	    no_replay = executeMouseBinding(c, options.CommandAll1);
-	  if  (ev->xbutton.button == Button2)
-	    no_replay = executeMouseBinding(c, options.CommandAll2);
-	  if  (ev->xbutton.button == Button3)
-	    no_replay = executeMouseBinding(c, options.CommandAll3);
+	    switch (ev->xbutton.button) {
+	    case Button1:
+		no_replay = executeMouseBinding(c, options.CommandAll1);
+		break;	
+	    case Button2: 	
+		no_replay = executeMouseBinding(c, options.CommandAll2);
+		break;
+	    case Button3: 
+		no_replay = executeMouseBinding(c, options.CommandAll3);
+		break;
+	    }
 	}
 	else if (!c->isActive()){
-	  if  (ev->xbutton.button == Button1)
-	    no_replay = executeMouseBinding(c, options.CommandWindow1);
-	  if  (ev->xbutton.button == Button2)
-	    no_replay = executeMouseBinding(c, options.CommandWindow2);
-	  if  (ev->xbutton.button == Button3)
-	    no_replay = executeMouseBinding(c, options.CommandWindow3);
+	    switch (ev->xbutton.button) {
+	    case Button1:
+		no_replay = executeMouseBinding(c, options.CommandWindow1);
+		break;
+	    case Button2:
+		no_replay = executeMouseBinding(c, options.CommandWindow2);
+		break;
+	    case Button3:
+		no_replay = executeMouseBinding(c, options.CommandWindow3);
+		break;
+	    default:
+		switchActivateClient(c,true);
+		break;
+	    }
 	}
  	// unfreeze the passive grab which is active currently
 	if (no_replay)
@@ -1783,7 +1796,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   case ConfigureNotify:
     DEBUG_EVENTS("ConfigureNotify", ev->xconfigure.window)
     // this is because Qt cannot handle (usually does not need to)
-    // SubstructureNotify events. 
+    // SubstructureNotify events.
     if (ev->xconfigure.window != ev->xconfigure.event){
       return true;
     }

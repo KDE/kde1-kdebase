@@ -58,7 +58,7 @@ public:
   void destroyNotify(XDestroyWindowEvent *e);
   // client messages
   void clientMessage(XEvent *e);
-  
+
   // color map issues
   void colormapNotify(XColormapEvent *e);
   // a property of one of the windows changed
@@ -76,7 +76,7 @@ public:
   // autoraise process.The brain-dead classic focus follows mouse policy
   // will also take the focus away from it.
   void leaveNotify(XCrossingEvent *e);
-    
+
 
   // kwm supports different kinds of window placement. doPlacement
   // will select the appropriate method.
@@ -165,7 +165,7 @@ public:
   int currentDesktop(){
     return current_desktop;
   }
-  
+
   // defines the number of virtual desktop. Can be from 1 up to 8
   int number_of_desktops;
 
@@ -185,11 +185,13 @@ public:
   // support for shaped windows
 
   // used to store the return values of
-  // XShapeQueryExtension. 
+  // XShapeQueryExtension.
   // Necessary since shaped window are an extension to X
   int shape;
   int shape_event;
 
+  // does the client need a shape combine mask around it?
+  bool hasShape(Client* c);
   // put an appropriate  shape combine mask around the client
   void setShape(Client* c);
 
@@ -257,7 +259,7 @@ public:
   // returns the client with the specified label or 0 if there is no
   // such client.
   Client* findClientByLabel(QString label);
-  
+
   // kwm usually iconifies all transient windows of a client if the
   // client itself is iconified. Same applies for desktop switching:
   // transient windows are supposed to be always on the desktop as the
@@ -308,7 +310,7 @@ private:
   QList <Client> clients; // creation order
   QList <Client> clients_sorted; // stack order
   QList <Client> clients_traversing; // focus order
-					  
+					
   // these string lists are used for the session management proxy
   QStrList* proxy_hints;
   QStrList* proxy_props;
@@ -330,7 +332,7 @@ private:
   // kwm keeps a list of sound events which have been registered by
   // modules. This list will be passed to a sound module then.
   QStrList sound_events;
-   
+
 
   // help functions in the init process of the manager: scans the
   // desktop to detect already mapped windows. Necessary if kwm
@@ -365,9 +367,9 @@ private:
   // lists. Will replace \0 with a blank then. Necessary for the XA_WM_COMMAND
   // property.
   QString xgetprop(Window w, Atom a);
-  // kwm internally sometimes uses simple property (long values) 
+  // kwm internally sometimes uses simple property (long values)
   bool getSimpleProperty(Window w, Atom a, long &result);
-  // kwm internally sometimes uses rectangle properties 
+  // kwm internally sometimes uses rectangle properties
   void setQRectProperty(Window w, Atom a, const QRect &rect);
   // sends a client message a x to the window w
   void sendClientMessage(Window w, Atom a, long x);
@@ -414,7 +416,7 @@ private:
 
   // Modules
 
-  // a list of all modules 
+  // a list of all modules
   QList <Window> modules;
   // adds a new module to the list.
   void addModule(Window w);
@@ -488,7 +490,7 @@ private:
   QStrList tiny_decoration_titles;
   QStrList no_decoration_classes;
   QStrList tiny_decoration_classes;
-  // same for supressing focus 
+  // same for supressing focus
   QStrList no_focus_titles;
   QStrList no_focus_classes;
 

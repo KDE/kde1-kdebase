@@ -71,7 +71,7 @@ class Client;
 class Client : public QWidget {
 
   Q_OBJECT
-  
+
 public:
   Client( Window w, QWidget *parent=0, const char *name=0 );
   ~Client();
@@ -86,15 +86,15 @@ public:
 
   //  the number of unmap events produced by us in hideClient.
   // These will be ignored in Manager::unmapNotify
-  int unmap_events; 
+  int unmap_events;
 
-  
+
 
   // TODO decoration property handling must be cleaned-up!!
   Window      trans;
   long      decoration;
   bool wants_focus;
-  
+
   // returns the decoration hint. Can be KWM::noDecoration,
   // KWM::tinyDecoration or KWM::normalDecoration
   long getDecoration(){
@@ -108,7 +108,7 @@ public:
 
   // the virtual desktop on which this client is located
   int         desktop;
-  
+
   // the should-be geometry of this client. Will be applied to the
   // client itself in Manager::sendConfig.
   QRect geometry;
@@ -124,19 +124,19 @@ public:
   // XWindows can specifiy window specific borders. More or less
   // ignored in kwm, but stored anyway.
   int         border;
-  
+
   // The geometry of this client before a call of maximize. The
   // unmaximize function will restore the window to that geometry.
   QRect geometry_restore;
 
   // a help variable for window movement and resizing
   QPoint old_cursor_pos;
-  
-  
+
+
 
   // the window state( IconicState, NormalState, WithdrawnState)
   int         state;
-  
+
   // stores the backing_store hint for the X Server.
   bool   backing_store;
 
@@ -144,12 +144,12 @@ public:
   bool Pdeletewindow; // does the window understands the DeleteWindow protocol?
   bool Ptakefocus;// does the window understands the TakeFocus protocol?
   bool Psaveyourself;// does the window understands the SaveYourself protocol?
-  
+
   // returns wether the window has the focus
   bool isActive(){
     return is_active;
   }
-  
+
 
   // a couple of string properties
 
@@ -161,7 +161,7 @@ public:
   QString command; // XA_WM_COMMAND property (session management)
   QString machine; // WM_CLIENT_MACHINE property (session management)
 
-  
+
   // some stuff for colormap handling
   Colormap    cmap;
   int         ncmapwins;
@@ -176,10 +176,10 @@ public:
   myPushButton   *buttonMaximize;
   myPushButton   *buttonSticky;
   myPushButton   *buttonMenu;
-  
+
   // create a new pushbutton associated with the specified button
   // functions.
-  myPushButton * getNewButton( BUTTON_FUNCTIONS ); 
+  myPushButton * getNewButton( BUTTON_FUNCTIONS );
 
   // the rectangle which represents the titelbar (where the window
   // label is drawn)
@@ -212,11 +212,11 @@ public:
   bool isShaded(){
     return shaded;
   }
-
+    
   // windows can have a fixed size, that means the window manager must
   // not resize them in any way.
   bool fixedSize();
-   
+
   // indicates wether the user is currently dragging a window around.
   bool dragging_is_running();
 
@@ -249,9 +249,9 @@ public:
   // there is no such command)
   static int operationFromCommand(const QString &com);
 
-  // handles a window operation 
+  // handles a window operation
   void handleOperation(int);
-  
+
   // set up everything to handle a move (used from Alt-LMB)
   void simple_move();
   // set up everything to handle a resize (used from Alt-RMB)
@@ -270,7 +270,8 @@ public:
   bool sticky;
   bool iconified;
   bool shaded;
-  
+  bool shaped;
+
   // unIconify this client. Takes care about floating or transient
   // windows. If animation is true, kwm may show some kind of
   // animation (if set by the options)
@@ -304,7 +305,7 @@ public:
   // returns the client itself it is not transient. If it is transient
   // it will return the main window recursively.
   Client* mainClient();
-  
+
 
  public slots:
  // these slots are connected to the buttons from the window
@@ -327,10 +328,10 @@ protected:
   void paintEvent( QPaintEvent * );
   void resizeEvent( QResizeEvent * );
 
-  
+
 
 private:
- 
+
   // generate the window decoration buttons according to the settings in the options
   void generateButtons();
   // layout the window decoration buttons. Necessary after the window
@@ -354,7 +355,7 @@ private:
     void set_x_cursor(Cursor cur);
     // current mouse pointer shape
     Cursor current_cursor;
-    
+
 
   // if the titlestring is too large (titlestring_too_large == true)
   // kwm can do a nifty animation.
@@ -369,13 +370,13 @@ private:
   // do_close is used to fake some kind of doubleclick event with the
   // menu button.
   bool do_close;
-  
+
   // used to indicate that somebody stopped auto raising via stopAutoraise().
   bool autoraised_stopped;
 
   // put a passive grab above the window for some button/modifier combinations.
   void doButtonGrab();
-  
+
   // we called grabMouse() but cannot be sure that we really got the
   // grab! IMO this is a qt problem. Anyway this function solves it:
   // it will wait until we _really_ have the pointer grab.
@@ -402,7 +403,7 @@ private slots:
   // check wether raising would cover a popup menu and avoid it in
   // such a case.
   void autoRaise();
-    
+
 };
 
 
