@@ -338,8 +338,9 @@ void KfmGui::initMenu()
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
 		      SLOT(slotSelect()), CTRL+Key_S );
-
-	edit->insertSeparator();
+    edit->insertItem( klocale->translate("Select &all"), this,
+                      SLOT(slotSelectAll()), CTRL+Key_A );
+    edit->insertSeparator();
     edit->insertItem( klocale->translate("Mime Types"), this, 
 		      SLOT(slotEditMimeTypes()) );
     edit->insertItem( klocale->translate("Applications"), this, 
@@ -924,6 +925,12 @@ void KfmGui::slotSelect()
 	
 	view->getActiveView()->select( re, true );
     }
+}
+
+void KfmGui::slotSelectAll()
+{
+	QRegExp re( "*", true, true );
+	view->getActiveView()->select( re, true );
 }
 
 void KfmGui::slotBookmarksChanged()

@@ -179,6 +179,10 @@ public slots:
      */
     void slotSelect();
     /**
+    * Menu "Edit->SelectAll"
+    */
+    void slotSelectAll();
+    /**
      * Menu "Edit->Copy"
      */
     void slotCopy();
