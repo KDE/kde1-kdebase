@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) 
-LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD =       $(LIB_KDEUI) 
+LDFLAGS =  $(all_libraries) $(KDE_RPATH)
+LDADD =    $(LIB_KDEUI) 
 
 bin_PROGRAMS = kcmkfm
 BUILT_SOURCES = htmlopts.moc miscopts.moc  kproxydlg.moc khttpoptdlg.moc \
@@ -19,29 +19,29 @@ DISTCLEANFILES = $(BUILT_SOURCES)
 
 htmlopts.cpp:htmlopts.moc
 htmlopts.moc: htmlopts.h
-	$(MOC) htmlopts.h -o htmlopts.moc
+	$(MOC) $(srcdir)/htmlopts.h -o htmlopts.moc
 
 miscopts.cpp:miscopts.moc
 miscopts.moc: miscopts.h
-	$(MOC) miscopts.h -o miscopts.moc
+	$(MOC) $(srcdir)/miscopts.h -o miscopts.moc
 
 
 kproxydlg.cpp:kproxydlg.moc
 kproxydlg.moc: kproxydlg.h
-	$(MOC) kproxydlg.h -o kproxydlg.moc
+	$(MOC) $(srcdir)/kproxydlg.h -o kproxydlg.moc
 
 khttpoptdlg.cpp:khttpoptdlg.moc
 khttpoptdlg.moc: khttpoptdlg.h
-	$(MOC) khttpoptdlg.h -o khttpoptdlg.moc
+	$(MOC) $(srcdir)/khttpoptdlg.h -o khttpoptdlg.moc
 
 useragentdlg.cpp:useragentdlg.moc
 useragentdlg.moc: useragentdlg.h
-	$(MOC) useragentdlg.h -o useragentdlg.moc
+	$(MOC) $(srcdir)/useragentdlg.h -o useragentdlg.moc
 
 kcookiesdlg.cpp:kcookiesdlg.moc
 kcookiesdlg.moc: kcookiesdlg.h
-	$(MOC) kcookiesdlg.h -o kcookiesdlg.moc
+	$(MOC) $(srcdir)/kcookiesdlg.h -o kcookiesdlg.moc
 
 rootopts.cpp:rootopts.moc
 rootopts.moc: rootopts.h
-	$(MOC) rootopts.h -o rootopts.moc
+	$(MOC) $(srcdir)/rootopts.h -o rootopts.moc

@@ -127,98 +127,94 @@ messages:
 ########## Meta objects ##########
 
 main.moc: main.h
-	$(MOC) main.h -o main.moc
+	$(MOC) $(srcdir)/main.h -o main.moc
 
 saver.moc: saver.h
-	$(MOC) saver.h -o saver.moc
+	$(MOC) $(srcdir)/saver.h -o saver.moc
 
 polygon.moc: polygon.h
-	$(MOC) polygon.h -o polygon.moc
+	$(MOC) $(srcdir)/polygon.h -o polygon.moc
 
 banner.moc: banner.h
-	$(MOC) banner.h -o banner.moc
+	$(MOC) $(srcdir)/banner.h -o banner.moc
 
 blankscrn.moc: blankscrn.h
-	$(MOC) blankscrn.h -o blankscrn.moc
+	$(MOC) $(srcdir)/blankscrn.h -o blankscrn.moc
 
 bsod.moc: bsod.h
-	$(MOC) bsod.h -o bsod.moc
+	$(MOC) $(srcdir)/bsod.h -o bsod.moc
 
 rock.moc: rock.h
-	$(MOC) rock.h -o rock.moc
+	$(MOC) $(srcdir)/rock.h -o rock.moc
 
 flame.moc: flame.h
-	$(MOC) flame.h -o flame.moc
+	$(MOC) $(srcdir)/flame.h -o flame.moc
 
 lines.moc: lines.h
-	$(MOC) lines.h -o lines.moc
+	$(MOC) $(srcdir)/lines.h -o lines.moc
 
 laser.moc: laser.h
-	$(MOC) laser.h -o laser.moc
+	$(MOC) $(srcdir)/laser.h -o laser.moc
 
 pyro.moc: pyro.h
-	$(MOC) pyro.h -o pyro.moc
+	$(MOC) $(srcdir)/pyro.h -o pyro.moc
 
 hop.moc: hop.h
-	$(MOC) hop.h -o hop.moc
+	$(MOC) $(srcdir)/hop.h -o hop.moc
 
 forest.moc: forest.h
-	$(MOC) forest.h -o forest.moc
+	$(MOC) $(srcdir)/forest.h -o forest.moc
 
 swarm.moc: swarm.h
-	$(MOC) swarm.h -o swarm.moc
+	$(MOC) $(srcdir)/swarm.h -o swarm.moc
 
 space.moc: space.h
-	$(MOC) space.h -o space.moc
+	$(MOC) $(srcdir)/space.h -o space.moc
 
 bat.moc: bat.h
-	$(MOC) bat.h -o bat.moc
+	$(MOC) $(srcdir)/bat.h -o bat.moc
 
 slip.moc: slip.h
-	$(MOC) slip.h -o slip.moc
+	$(MOC) $(srcdir)/slip.h -o slip.moc
 
 lissie.moc: lissie.h
-	$(MOC) lissie.h -o lissie.moc
+	$(MOC) $(srcdir)/lissie.h -o lissie.moc
 
 blob.moc: blob.h
-	$(MOC) blob.h -o blob.moc
+	$(MOC) $(srcdir)/blob.h -o blob.moc
 
 bouboule.moc: bouboule.h
-	$(MOC) bouboule.h -o bouboule.moc
+	$(MOC) $(srcdir)/bouboule.h -o bouboule.moc
 
 morph3d.moc: morph3d.h
-	$(MOC) morph3d.h -o morph3d.moc
+	$(MOC) $(srcdir)/morph3d.h -o morph3d.moc
 
 pipes.cpp: pipes.h pipes.moc
 
 pipes.moc: pipes.h
-	$(MOC) pipes.h -o pipes.moc
+	$(MOC) $(srcdir)/pipes.h -o pipes.moc
 
 science.moc: science.h
-	$(MOC) science.h -o science.moc
+	$(MOC) $(srcdir)/science.h -o science.moc
 
 attraction.moc: attraction.h
-	$(MOC) attraction.h -o attraction.moc
+	$(MOC) $(srcdir)/attraction.h -o attraction.moc
 
 slidescreen.moc: slidescreen.h
-	$(MOC) slidescreen.h -o slidescreen.moc
+	$(MOC) $(srcdir)/slidescreen.h -o slidescreen.moc
 
 kgroupbox.moc: kgroupbox.h
-	$(MOC) kgroupbox.h -o kgroupbox.moc
+	$(MOC) $(srcdir)/kgroupbox.h -o kgroupbox.moc
+
+kde_icon_DATA = kscreensaver.xpm 
+
+data_DATA = kscience.gif kscience-small.gif
+datadir = $(kde_datadir)/kscreensaver
 
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) kscreensaver.xpm $(kde_icondir)/kscreensaver.xpm
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
-	$(mkinstalldirs) $(kde_datadir)/kscreensaver
-	$(INSTALL_DATA) kscience.gif $(kde_datadir)/kscreensaver/kscience.gif
-	$(mkinstalldirs) $(kde_datadir)/kscreensaver
-	$(INSTALL_DATA) kscience-small.gif $(kde_datadir)/kscreensaver/kscience-small.gif
+	$(INSTALL_DATA) $(srcdir)/mini-kscreensaver.xpm $(kde_minidir)/kscreensaver.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/kscreensaver.xpm
 	rm -f $(kde_minidir)/kscreensaver.xpm
-	rm -f $(kde_datadir)/kscreensaver/kscience.gif
-	rm -f $(kde_datadir)/kscreensaver/kscience-small.gif
 

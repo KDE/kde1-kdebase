@@ -24,39 +24,39 @@ noinst_HEADERS = backgnd.h display.h colorscm.h savescm.h scrnsave.h general.h w
 
 backgnd.cpp:backgnd.moc
 backgnd.moc: backgnd.h
-	$(MOC) backgnd.h -o backgnd.moc
+	$(MOC) $(srcdir)/backgnd.h -o backgnd.moc
 
 display.cpp:display.moc
 display.moc: display.h
-	$(MOC) display.h -o display.moc
+	$(MOC) $(srcdir)/display.h -o display.moc
 
 colorscm.cpp:colorscm.moc
 colorscm.moc: colorscm.h
-	$(MOC) colorscm.h -o colorscm.moc
+	$(MOC) $(srcdir)/colorscm.h -o colorscm.moc
 
 savescm.cpp:savescm.moc
 savescm.moc: savescm.h
-	$(MOC) savescm.h -o savescm.moc
+	$(MOC) $(srcdir)/savescm.h -o savescm.moc
 
 scrnsave.cpp:scrnsave.moc
 scrnsave.moc: scrnsave.h
-	$(MOC) scrnsave.h -o scrnsave.moc
+	$(MOC) $(srcdir)/scrnsave.h -o scrnsave.moc
 
 general.cpp:general.moc
 general.moc: general.h
-	$(MOC) general.h -o general.moc
+	$(MOC) $(srcdir)/general.h -o general.moc
 
 widgetcanvas.cpp:widgetcanvas.moc
 widgetcanvas.moc: widgetcanvas.h
-	$(MOC) widgetcanvas.h -o widgetcanvas.moc
+	$(MOC) $(srcdir)/widgetcanvas.h -o widgetcanvas.moc
 
 fontchooser.cpp:fontchooser.moc
 fontchooser.moc: fontchooser.h
-	$(MOC) fontchooser.h -o fontchooser.moc
+	$(MOC) $(srcdir)/fontchooser.h -o fontchooser.moc
 
 kresourceman.cpp:kresourceman.moc
 kresourceman.moc: kresourceman.h
-	$(MOC) kresourceman.h -o kresourceman.moc
+	$(MOC) $(srcdir)/kresourceman.h -o kresourceman.moc
 
 EXTRA_DIST = README
 

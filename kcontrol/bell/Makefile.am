@@ -1,7 +1,7 @@
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
-LDADD =       $(LIB_KDEUI) 
+LDADD =    $(LIB_KDEUI) 
 
 bin_PROGRAMS = kcmbell
 
@@ -13,19 +13,19 @@ EXTRA_DIST = bell.xpm mini-bell.xpm
 
 bell.cpp: bell.moc
 bell.moc: bell.h
-	$(MOC) bell.h -o bell.moc
+	$(MOC) $(srcdir)/bell.h -o bell.moc
+
 kslidercontrol.cpp: kslidercontrol.moc
 kslidercontrol.moc: kslidercontrol.h
-	$(MOC) kslidercontrol.h -o kslidercontrol.moc
+	$(MOC) $(srcdir)/kslidercontrol.h -o kslidercontrol.moc
+
+kde_icon_DATA = bell.xpm
 
 install-data-local: 
-	$(mkinstalldirs) $(kde_icondir)
-	$(INSTALL_DATA) bell.xpm $(kde_icondir)
 	$(mkinstalldirs) $(kde_minidir)
 	$(INSTALL_DATA) mini-bell.xpm $(kde_minidir)/bell.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/bell.xpm
 	rm -f $(kde_minidir)/bell.xpm
 
 messages:

@@ -13,15 +13,11 @@ noinst_HEADERS = kbgndwm.h bg.h version.h config-kbgndwm.h
 
 kbgndwm.cpp: kbgndwm.moc
 kbgndwm.moc: kbgndwm.h
-	$(MOC) kbgndwm.h -o kbgndwm.moc
+	$(MOC) $(srcdir)/kbgndwm.h -o kbgndwm.moc
 
 bg.cpp: bg.moc
 bg.moc: bg.h
-	$(MOC) bg.h -o bg.moc
-
-install-data-local:
-
-uninstall-local:
+	$(MOC) $(srcdir)/bg.h -o bg.moc
 
 EXTRA_DIST = README
 

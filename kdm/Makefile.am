@@ -64,19 +64,19 @@ DISTCLEANFILES = $(MOCSRC)
 
 kfdialog.cpp: kfdialog.moc
 kfdialog.moc: kfdialog.h
-	$(MOC) kfdialog.h -o kfdialog.moc
+	$(MOC) $(srcdir)/kfdialog.h -o kfdialog.moc
 
 kdmview.cpp: kdmview.moc
 kdmview.moc: kdmview.h
-	$(MOC) kdmview.h -o kdmview.moc
+	$(MOC) $(srcdir)/kdmview.h -o kdmview.moc
 
 kdmshutdown.cpp: kdmshutdown.moc
 kdmshutdown.moc: kdmshutdown.h
-	$(MOC) kdmshutdown.h -o kdmshutdown.moc
+	$(MOC) $(srcdir)/kdmshutdown.h -o kdmshutdown.moc
 
 kgreeter.cpp: kgreeter.moc
 kgreeter.moc: kgreeter.h
-	$(MOC) kgreeter.h -o kgreeter.moc
+	$(MOC) $(srcdir)/kgreeter.h -o kgreeter.moc
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kdm_SOURCES) $(kdmdesktop_SOURCES) && mv messages.po ../po/kdm.pot

@@ -17,26 +17,24 @@ EXTRA_DIST = mouse.xpm mini-mouse.xpm keyboard.xpm mini-keyboard.xpm
 
 mouse.cpp: mouse.moc geom.h
 mouse.moc: mouse.h
-	$(MOC) mouse.h -o mouse.moc
+	$(MOC) $(srcdir)/mouse.h -o mouse.moc
 
 keyboard.cpp: keyboard.moc geom.h
 keyboard.moc: keyboard.h
-	$(MOC) keyboard.h -o keyboard.moc
+	$(MOC) $(srcdir)/keyboard.h -o keyboard.moc
 
 kslidercontrol.cpp: kslidercontrol.moc
 kslidercontrol.moc: kslidercontrol.h
-	$(MOC) kslidercontrol.h -o kslidercontrol.moc
+	$(MOC) $(srcdir)/kslidercontrol.h -o kslidercontrol.moc
+
+kde_icon_DATA = mouse.xpm keyboard.xpm
 
 install-data-local: 
 	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mouse.xpm $(kde_icondir)/mouse.xpm
-	$(INSTALL_DATA) keyboard.xpm $(kde_icondir)/keyboard.xpm
 	$(INSTALL_DATA) mini-mouse.xpm $(kde_minidir)/mouse.xpm
 	$(INSTALL_DATA) mini-keyboard.xpm $(kde_minidir)/keyboard.xpm
 
 uninstall-local:
-	rm -f $(kde_icondir)/mouse.xpm
-	rm -f $(kde_icondir)/keyboard.xpm
 	rm -f $(kde_minidir)/mouse.xpm
 	rm -f $(kde_minidir)/keyboard.xpm
 
