@@ -8,6 +8,8 @@
 #include <kwmmapp.h>
 #include <qdir.h>
 #include <qmsgbox.h>
+#include <qfile.h>
+#include <qfileinfo.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -65,6 +67,27 @@ void testDir( const char *_name )
     closedir( dp );
 }
 
+void copyFiles( QString source, QString dest )
+{
+  char data[1024];
+  QFile in(source);
+  QFile out(dest);
+  if( !in.open(IO_ReadOnly) || !out.open(IO_WriteOnly) )
+    return;
+  int len;
+  while( (len = in.readBlock(data, 1024)) > 0 ) {
+    if( out.writeBlock(data,len) < len ) {
+      len = -1;
+      break;
+    }
+  }
+  out.close();
+  in.close();
+  if( len == -1 ) { // abort and remove destination file
+    QFileInfo fi(dest);
+    fi.dir().remove(dest);
+  }
+}
 
 int main( int argc, char ** argv ){
  
@@ -115,7 +138,18 @@ int main( int argc, char ** argv ){
   testDir( "/share/apps" );
   testDir( "/share/apps/kpanel" );
   testDir( "/share/apps/kpanel/applnk" );
-    
+  // create $HOME/.kde/share/applnk
+  testDir( "/share/applnk" );
+  // create default $HOME/.kde/share/applnk/.directory file if there is none
+  QString src_path = KApplication::kde_datadir();
+  src_path += "/kpanel/default/personal_directory";
+  QString dest_path = KApplication::localkdedir();  
+  dest_path += "/share/applnk/.directory";
+  QFileInfo fi(dest_path);
+  if( !fi.exists() ) {
+    copyFiles(src_path, dest_path);
+  }
+  
   the_panel = new kPanel(&myapp);
   the_panel->connect(&myapp, SIGNAL(init()), 
 		     SLOT(kwmInit()));
