@@ -1,0 +1,7 @@
+#: main.cpp:57
+msgid "usage: kcmsamba [-init | status]\n"
+msgstr "modo de uso: kcmsamba [-init | status]\n"
+
+#: main.cpp:68
+msgid "Samba"
+msgstr "Samba"

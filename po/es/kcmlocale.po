@@ -1,0 +1,45 @@
+#: main.cpp:51
+msgid "&Locale"
+msgstr "Configuraciones &Locales"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "modo de uso: kcmlocale [-init | idioma]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Configuraciones Locales"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Idioma"
+
+#: locale.cpp:43
+msgid "First"
+msgstr "Primero"
+
+#: locale.cpp:49
+msgid "Second"
+msgstr "Segundo"
+
+#: locale.cpp:55
+msgid "Third"
+msgstr "Tercero"
+
+#: locale.cpp:89
+msgid "without name!"
+msgstr "¡sin nombre!"
+
+#: locale.cpp:154
+msgid "Applying language settings"
+msgstr "Aplicando configuración del Idioma"
+
+#: locale.cpp:155
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Los cambios en la configuración del Idioma serán aplicados únicamente\n"
+"a las aplicaciones ejecutadas a partir de este momento. Para que tengan\n"
+"efecto sobre todos los programas deberá de reiniciar el entorno."
+
