@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-11-11 01:17+0100\n"
-"PO-Revision-Date: 1998-11-09 08:43+01:00\n"
+"PO-Revision-Date: 1998-11-11 09:02+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -194,7 +194,6 @@ msgid "Configure Browser..."
 msgstr "Konfigurovat prohlí¾eè ..."
 
 #: kfmgui.cpp:484
-#, fuzzy
 msgid ""
 "Author: Torben Weis\n"
 "weis@kde.org\n"
@@ -215,7 +214,10 @@ msgstr ""
 "mjones@kde.org\n"
 "\n"
 "Správce proxy od Larse Hosse\n"
-"Lars.Hoss@munich.netsurf.de"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Hlá¹ení chyb a opravy zasílejte Davidu Faremu\n"
+"faure@kde.org"
 
 #: kfmgui.cpp:503
 msgid "&Bookmarks"
@@ -756,9 +758,8 @@ msgid "Execute"
 msgstr "Vykonej"
 
 #: kfmprops.cpp:685
-#, fuzzy
 msgid "&Browse..."
-msgstr "&Prohlí¾eè"
+msgstr "&Listovat..."
 
 #: kfmprops.cpp:697
 msgid "Working Directory"
@@ -794,9 +795,8 @@ msgid "URL"
 msgstr "URL"
 
 #: kfmprops.cpp:1035
-#, fuzzy
 msgid "Background"
-msgstr "Barva pozadí:"
+msgstr "Pozadí"
 
 #: kfmprops.cpp:1045
 msgid "Apply global"
@@ -840,7 +840,7 @@ msgstr "Implicitní aplikace"
 
 #: kfmprops.cpp:1637
 msgid "<none>"
-msgstr ""
+msgstr "<¾ádná>"
 
 #: kfmprops.cpp:1759
 msgid "Device ( /dev/fd0 )"
@@ -1436,6 +1436,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "Browse"
-#~ msgstr "Listuj"

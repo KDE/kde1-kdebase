@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
 "POT-Creation-Date: 1998-11-11 01:18+0100\n"
-"PO-Revision-Date: 1998-11-09 08:36+01:00\n"
+"PO-Revision-Date: 1998-11-11 11:46+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,13 +31,12 @@ msgstr "M&y¹"
 
 #: main.cpp:80
 msgid "&Advanced"
-msgstr ""
+msgstr "&Pokroèilé"
 
 #: main.cpp:86
-#, fuzzy
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "Pou¾ití: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+msgstr "Pou¾ití: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -393,71 +392,68 @@ msgstr "Zmìnit velikost"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Klávesnice a my¹"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab prochází pracovní plochy"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab je omezen na souèasnou pracovní plochu"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Alt-Tab mód:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
-#, fuzzy
 msgid "Grab the Right Mouse Button"
-msgstr "ALT + Pravé tlaèítko"
+msgstr "Odchytit pravé tlaèítko my¹i"
 
 #: advanced.cpp:78
 msgid "Filters"
-msgstr ""
+msgstr "Filtry"
 
 #: advanced.cpp:98
-#, fuzzy
 msgid "Windows will:"
-msgstr "Okna"
+msgstr "Okna :"
 
 #: advanced.cpp:104
 msgid "have tiny decorations"
-msgstr ""
+msgstr "budou mít malé dekorace"
 
 #: advanced.cpp:105
 msgid "have no decorations"
-msgstr ""
+msgstr "nebudou mít ¾ádné dekorace"
 
 #: advanced.cpp:106
 msgid "never gain focus"
-msgstr ""
+msgstr "nedostanou nikdy fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr ""
+msgstr "budou startovány jako pøilepené"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr ""
+msgstr "budou vypu¹»eny ze správy sezení"
 
 #: advanced.cpp:116
 msgid "if they match the following:"
-msgstr ""
+msgstr "jestli¾e budou splòovat následující:"
 
 #: advanced.cpp:121
-#, fuzzy
 msgid "Titles"
-msgstr "&Titulek"
+msgstr "Titulky"
 
 #: advanced.cpp:126
 msgid "Classes"
-msgstr ""
+msgstr "Tøídy"

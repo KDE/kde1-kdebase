@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-11-11 01:18+0100\n"
-"PO-Revision-Date: 1998-11-05 07:51+01:00\n"
+"PO-Revision-Date: 1998-11-11 08:59+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,8 @@ msgid "&Rename ..."
 msgstr "Pø&ejmenovat ..."
 
 #: backgnd.cpp:184
-#, fuzzy
 msgid "One Des&ktop"
-msgstr "Pracovní plocha"
+msgstr "Jedna p&racovní plocha"
 
 #: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
@@ -60,86 +59,77 @@ msgid "&Browse..."
 msgstr "&Listovat..."
 
 #: backgnd.cpp:330
-#, fuzzy
 msgid "Tiled"
-msgstr "Vy&dlá¾dit"
+msgstr "Vydlá¾dìná"
 
 #: backgnd.cpp:331
 msgid "Mirrored"
-msgstr ""
+msgstr "Zrcadlená"
 
 #: backgnd.cpp:332
-#, fuzzy
 msgid "Center Tiled"
-msgstr "&Centrovanì"
+msgstr "Vydlá¾dìná centrovanì"
 
 #: backgnd.cpp:333
-#, fuzzy
 msgid "Centred"
-msgstr "&Centrovanì"
+msgstr "Centrovaná"
 
 #: backgnd.cpp:334
-#, fuzzy
 msgid "Centred Brick"
-msgstr "&Centrovanì"
+msgstr "Centrovaná s cihlami"
 
 #: backgnd.cpp:335
-#, fuzzy
 msgid "Centred Warp"
-msgstr "&Centrovanì"
+msgstr "Centrovaná se zborcením"
 
 #: backgnd.cpp:336
-#, fuzzy
 msgid "Centred Maxpect"
-msgstr "&Centrovanì"
+msgstr "Centrovaná Maxpect"
 
 #: backgnd.cpp:337
 msgid "Symmetrical Tiled"
-msgstr ""
+msgstr "Symetricky vydlá¾dìná"
 
 #: backgnd.cpp:338
 msgid "Symmetrical Mirrored"
-msgstr ""
+msgstr "Symetricky zrcadlená"
 
 #: backgnd.cpp:339
-#, fuzzy
 msgid "Scaled"
-msgstr "Zvì&t¹enì"
+msgstr "Zvìt¹ená"
 
 #: backgnd.cpp:350
 msgid "Ra&ndom"
-msgstr ""
+msgstr "&Náhodná"
 
 #: backgnd.cpp:359
-#, fuzzy
 msgid "Setu&p..."
-msgstr "Na&stavit.."
+msgstr "Nas&tavit..."
 
 #: backgnd.cpp:367
 msgid "&Dock into kpanel"
-msgstr ""
+msgstr "&Dokovat v panelu"
 
 #: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "Jméno pracovní plochy"
 
 #: backgnd.cpp:1272
-#, fuzzy
 msgid "File error"
-msgstr "Chyba pojmenování"
+msgstr "Souborová chyba"
 
 #: backgnd.cpp:1273
 msgid "Can't load image file"
-msgstr ""
+msgstr "Není mo¾né nahrát soubor s obrázkem"
 
 #: backgnd.cpp:1296 backgnd.cpp:1714
 msgid "Unsupported URL"
-msgstr ""
+msgstr "Nepodporované URL"
 
 #: backgnd.cpp:1297 backgnd.cpp:1715
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr ""
+msgstr "Lituji, tento typ URL není v souèasné dobì podporovám obrazovkovým modulem KDE."
 
 #: backgnd.cpp:1328
 msgid "Two color backgrounds"
@@ -195,26 +185,23 @@ msgstr "Dla¾ba"
 
 #: backgnd.cpp:1595
 msgid "Random mode setup"
-msgstr ""
+msgstr "Nastavení náhodného módu"
 
 #: backgnd.cpp:1605
 msgid "Timer Delay in seconds :"
-msgstr ""
+msgstr "Èasové zpo¾dìní v sekundách :"
 
 #: backgnd.cpp:1617
-#, fuzzy
 msgid "In &order"
-msgstr "Ignoruj"
+msgstr "V &poøadí"
 
 #: backgnd.cpp:1635
-#, fuzzy
 msgid "Desktops :"
-msgstr "Pracovní plocha"
+msgstr "Pracovní plochy :"
 
 #: backgnd.cpp:1673
-#, fuzzy
 msgid "&Add"
-msgstr "Pøid&at ..."
+msgstr "Pøid&at"
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
