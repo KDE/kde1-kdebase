@@ -28,7 +28,7 @@
 #include <qpainter.h>
 #include <unistd.h>
 
-#define KPAGERCLIENTDEBUG
+//#define KPAGERCLIENTDEBUG
 
 
 KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const char *name)

@@ -1,3 +1,8 @@
+* Sat Dic 19 14:40:00 CEST 1998
+
+Added some pedantic (though needed) comparisons . This made kpager
+core dumps (reported by W.L. IJzerman)
+
 * Fri Dic 18 7:50:00 CEST 1998
 
 Fixed a bug that displayed junk in some circunstances in the 

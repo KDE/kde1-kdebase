@@ -192,17 +192,7 @@ void Desktop::changeWindow(Window w)
 #endif
     WindowProperties *wpback=getWindowProperties(w);
     if (wpback==0L) return;
-    /*
-     QRect tempgeom;
-     QRect tempframegeom;
-     bool isresizing=false;
-     if ((resizing)&&(w==resizingWin))
-     {
-     tempgeom=wpback->geometry;
-     tempframegeom=wpback->framegeometry;
-     isresizing=true;
-     };
-     */
+
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     uint wid=getIndexOfWindow(w);
@@ -237,7 +227,7 @@ void Desktop::raiseWindow(Window w)
 #endif
     uint wid=getIndexOfWindow(w);
     WindowProperties *wpback=getWindowProperties(w);
-    //    if (wpback==0L) return;
+    if (wpback==0L) return;
     if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
     if (wpback->pixmap!=0L) {delete wpback->pixmap;wpback->pixmap=NULL;};
     if (wpback->icon!=0L) {delete wpback->icon;wpback->icon=NULL;};
@@ -269,6 +259,7 @@ void Desktop::lowerWindow(Window w)
 #endif
     uint wid=getIndexOfWindow(w);
     WindowProperties *wpback=getWindowProperties(w);
+    if (wpback==0L) return;
     QPixmap *tmpbigPixmap=0L;
     if (wpback->bigPixmap!=0L) tmpbigPixmap=new QPixmap(*wpback->bigPixmap);
     if (wpback->bigPixmap!=0L) {delete wpback->bigPixmap;wpback->bigPixmap=NULL;};
