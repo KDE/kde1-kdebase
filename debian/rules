@@ -20,8 +20,7 @@ $(BUILDDIR)/build-stamp:
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
 	../configure --with-shadow --without-pam=kde \
-	--with-install-root=`pwd`/../debian/tmp \
-	--disable-rpath ; \
+	--disable-rpath --with-xdmdir=/usr/X11R6/lib/X11/kdm ; \
 	fi
 	make -C $(BUILDDIR)
 	
@@ -29,18 +28,14 @@ $(BUILDDIR)/build-stamp:
 
 clean: debian-clean
 	-rm -rf $(BUILDDIR)
-	-rm -f debian/files
-	-rm -f debian/*substvars
-	-rm -f debian/menu
-	-rm -f configure
 	dh_clean -k
 
 debian-clean:
 	dh_testdir
 	-rm -f $(BUILDDIR)/build-stamp
 	-rm -f debian/files
+	-rm -f debian/*substvars
 	-rm -f debian/menu
-	-rm -f debian/substvars
 	-rm -f configure
 
 binary-indep:	checkroot build
@@ -54,14 +49,14 @@ binary-arch: checkroot build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install 
+	make -C $(BUILDDIR) RUN_KAPPFINDER="no" DESTDIR=`pwd`/debian/tmp install 
 	cp debian/README.kde debian/tmp/usr/doc/kde
 
 ## Install KDM
 	install -d debian/tmp/etc/init.d
 	install -d debian/tmp/etc/X11/kdm
 	install -d debian/tmp/usr/doc/kdm
-	install -d debian/tmp/usr/X11R6/lib/X11/xdm
+	install -d debian/tmp/usr/X11R6/lib/X11/kdm
 	install -d debian/tmp/usr/man/man5
 	install -d debian/tmp/usr/man/man1
 	install -d debian/tmp/var/state/kdm
@@ -70,7 +65,9 @@ binary-arch: checkroot build
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	chmod +x debian/tmp/etc/init.d/kdm
 	cp debian/xdm/* debian/tmp/etc/X11/kdm
-	ln -s /etc/X11/kdm/kdm-config debian/tmp/usr/X11R6/lib/X11/xdm/xdm-config
+	rm -f debian/tmp/usr/X11R6/lib/X11/kdm/*
+	ln -s /etc/X11/kdm/* debian/tmp/usr/X11R6/lib/X11/kdm/
+	ln -s /etc/X11/kdm/kdm-config debian/tmp/usr/X11R6/lib/X11/kdm/xdm-config
 	cp debian/README.xdm debian/tmp/usr/doc/kdm/README.Debian
 	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
 	cp debian/kdmrc debian/tmp/etc/kde

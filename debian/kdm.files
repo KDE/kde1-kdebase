@@ -4,7 +4,7 @@ etc/kde/kdm*
 usr/bin/kdm
 usr/bin/kdmdesktop
 usr/bin/kdmconfig
-usr/X11R6/lib/X11/xdm
+usr/X11R6/lib/X11/kdm
 usr/doc/kdm
 usr/man/man1/kdm.1.gz
 usr/man/man1/kdmconfig.1.gz
