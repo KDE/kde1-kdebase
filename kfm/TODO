@@ -1,12 +1,8 @@
 TODO List
 =========
 
-- KFM seg faults on too large URLs. This might be a security bug
-  ( hopefully fixed but not tested )
 - HTTP PUT command / CGI POST command
 - FTP does not always close every socket
-  ( not seen in the last time )
-- Too many kioslaves on pages with many pictures
   ( not seen in the last time )
 - Downloading files from ftp.troll.no does not work
   ( perhaps why they dont want to see a password )
@@ -15,7 +11,6 @@ TODO List
 - Support for netscape. Switch that allows netscape to handle
   HTML files
 - tar files on ftp serves make problems.
-- Some systems use gtar instead of tar ( we need the GNU version ).
 - Nice ftp dialog for users who do not know how to put their
   use name in a URL.
-
+- Sorting by date, ...

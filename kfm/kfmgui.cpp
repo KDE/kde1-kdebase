@@ -253,7 +253,7 @@ void KfmGui::initMenu()
 		      this, SLOT(slotTrash()), stdAccel.cut() );
     edit->insertItem( klocale->translate("&Delete"), this, 
 		      SLOT(slotDelete()), CTRL+Key_Delete);
-    // This can't be Key_Delete only. See slotDelete().
+    // This can't be Key_Delete only, it breaks deleting in LineEdits
 
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
@@ -279,6 +279,7 @@ void KfmGui::initMenu()
 	edit->insertItem( klocale->translate("Global Applications"), this, 
 		      SLOT(slotEditSUApplications()) );
     }
+    connect ( edit, SIGNAL (aboutToShow()), this, SLOT (slotUpdateEditMenu()));
 
     mview = new QPopupMenu;
     CHECK_PTR( mview );
@@ -891,7 +892,7 @@ void KfmGui::slotViewHTML( )
     bViewHTML = !mview->isItemChecked( mview->idAt(3) );
     mview->setItemChecked( mview->idAt( 3 ), bViewHTML);
     bViewHTMLLocal = bViewHTML; //force local mode too (sven)
-    view->openURL( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+    view->slotReload();
     // slotUpdateView isn't enough when switching off "HTML View"
 }
 
@@ -956,20 +957,19 @@ void KfmGui::slotSelect()
 
 void KfmGui::slotSelectAll()
 {
-  KLined *lined = toolbarURL->getLined(TOOLBAR_URL_ID);
-  // if the URL editor is focused, the user really intends to go to
-  // the beginning of the line when they press CTRL-A (a la sh, emacs).  
-  if ((focusWidget() == lined) || bHtmlMode)
-  {
-      // Simulate a key event to the widget focused
-      // We use Key_Home because Ctrl+A calls this function !
-      // Using QLineEdit members methods don't work, since we don't 
-      // whether focusWidget() is a QLineEdit.
-      QKeyEvent e( Event_KeyPress, Key_Home, 0, 0);
-      QApplication::sendEvent( focusWidget(), &e);
-  }
-  else
-    view->getActiveView()->select( 0L, true );
+    // if a QLineEdit is focused, the user really intends to go to
+    // the beginning of the line when they press CTRL-A (a la sh, emacs).  
+    if (focusWidget()->inherits("QLineEdit"))
+    {
+        KfmView::clipboard->clear();
+        KfmView::clipboard->append(((QLineEdit*)focusWidget())->text());
+        // Simulate a key event to the widget focused
+        // We use Key_Home because Ctrl+A calls this function !
+        QKeyEvent e( Event_KeyPress, Key_Home, 0, 0);
+        QApplication::sendEvent( focusWidget(), &e);
+    }
+    else
+        view->getActiveView()->select( 0L, true );
 }
 
 void KfmGui::slotFind()
@@ -1084,6 +1084,57 @@ void KfmGui::slotStop()
 {
     view->slotStop();
 }
+
+void KfmGui::slotUpdateEditMenu ()
+{
+    // Get current selection (either URLs or text in a web page)
+    QStrList ulist;
+    QString txt;
+    view->getActiveView()->getSelected( ulist );
+    view->getActiveView()->getSelectedText ( txt );
+    bool enable;
+
+    edit->setItemEnabled ( edit->idAt (0), false );
+    edit->setItemEnabled ( edit->idAt (2), false );
+    edit->setItemEnabled ( edit->idAt (3), false );
+    
+    //debug(focusWidget()->className());
+    // If user has selected text in a web page,
+    // or if a qlineedit has focus, enable only the Copy method.
+    if ( !txt.isEmpty() || 
+         (focusWidget()->inherits("QLineEdit") &&
+          ((QLineEdit*)focusWidget())->text()[0] != '\0') )
+    {
+        edit->setItemEnabled ( edit->idAt (0), true ); // copy
+        edit->setItemEnabled ( edit->idAt (2), false ); // trash
+        edit->setItemEnabled ( edit->idAt (3), false ); // delete
+    }
+
+    // no 'else' here, because if URLs are selected, txt is not empty
+    // If user has selected URLs
+    if ( ulist.count() != 0 )
+    {
+        // Copy Item : if read possible
+        enable = KIOServer::supports ( ulist, KIO_Read );
+        edit->setItemEnabled ( edit->idAt (0), enable );
+        // MoveToTrash Item - 
+        // Not Enabled if current directory is the Trash folder itself, 
+        // if the selected item is the Trash, (bugs if trash + other folder!)
+        // or if KIO_Move is not supported.
+        KURL u ( view->getActiveView()->getURL() );
+        enable = ( KIOServer::supports ( ulist, KIO_Move ) &&
+            !KIOServer::isTrash ( u.directory() ) &&
+            !KIOServer::isTrash ( ulist ) );
+        edit->setItemEnabled ( edit->idAt (2), enable );
+        // Delete Item : if delete possible
+        enable = KIOServer::supports ( ulist, KIO_Delete );
+        edit->setItemEnabled ( edit->idAt (3), enable );
+    }
+
+    // Update for the paste menu based on the state of the clipboard.
+    enable = ( KfmView::clipboard->count() != 0 );
+    edit->setItemEnabled ( edit->idAt (1), enable );
+} 
 
 void KfmGui::slotUpdateHistoryMenu( )
 {
@@ -1411,30 +1462,33 @@ void KfmGui::slotSetStatusBar( const char *_url )
 
 void KfmGui::slotCopy()
 {
-    view->getActiveView()->slotCopy();
+    // We have to deal with two clipboards : 
+    // the system one (QClipboard) and the kfm one (KfmView::clipboard)
+    if (focusWidget()->inherits("QLineEdit"))
+    {
+        KfmView::clipboard->clear();
+        const char * txt = ((QLineEdit*)focusWidget())->text();
+        KfmView::clipboard->append(txt); // into kfm's clipboard (might be a URL)
+        ((QLineEdit*)focusWidget())->copy(); // copy the text
+    }
+    else
+    {
+        view->getActiveView()->slotCopy(); // copy the URLs
+        QApplication::clipboard()->setText(KfmView::clipboard->first()); //
+        // first URL in the system clipboard
+    }
 }
 
 void KfmGui::slotPaste()
 {
-    view->getActiveView()->slotPaste();
+    if (focusWidget()->inherits("QLineEdit"))
+        ((QLineEdit*)focusWidget())->paste();
+    else 
+        view->getActiveView()->slotPaste();
 }
 
 void KfmGui::slotDelete()
 {
-  KLined *lined = toolbarURL->getLined(TOOLBAR_URL_ID);
-  // if the URL editor is focused, or if in html mode 
-  // (there might be a lineedit in the window itself)
-  // the user really intends to delete a char when he/she presses Delete.
-  if ((focusWidget() == lined) || bHtmlMode)
-  {
-      // QLineEdit::del() is private. This why we need to simulate an
-      // event. Might be different with Qt 2.0
-      // Well, no. Using QLineEdit members methods don't work, since we don't 
-      // whether focusWidget() is a QLineEdit.
-      QKeyEvent e( Event_KeyPress, Key_Delete, 0, 0);
-      QApplication::sendEvent( focusWidget(), &e);
-  }
-  else
     view->getActiveView()->slotDelete();
 }
 

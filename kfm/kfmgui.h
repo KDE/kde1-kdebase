@@ -181,6 +181,11 @@ public:
      */
     void handleViewMenu(bool _bHtmlMode);//CT 16Dec1998
 
+    /**
+     * Returns true if in HTML mode
+     */
+    bool isHtmlMode () { return bHtmlMode; }
+        
 public slots:
     /**
      * Menu "File->*"
@@ -441,6 +446,10 @@ public slots:
       */
     void slotUpdateHistoryMenu();
 
+    /* This method is called when the Edit menu has to be updated.
+     */
+    void slotUpdateEditMenu();
+    
     /**
      * This slot is called whenever a new URL is opened. This URL is
      * then appended to the history list.

@@ -13,6 +13,7 @@
 #include <qtooltip.h>
 #include <qrect.h>
 #include <qmsgbox.h>
+#include <qclipbrd.h>
 
 #include <kapp.h>
 #include <kwm.h>
@@ -1222,9 +1223,9 @@ void KRootWidget::slotPopupPaste()
 {
     if ( popupFiles.count() != 1 )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate("KFM Error"),
-			      klocale->translate("Can not paste into multiple directories") );
-	return;
+        QMessageBox::warning( (QWidget*)0, klocale->translate("KFM Error"),
+                              klocale->translate("Can not paste into multiple directories") );
+        return;
     }
 
     // Check wether we drop a directory on itself or one of its children
@@ -1232,29 +1233,29 @@ void KRootWidget::slotPopupPaste()
     char *s;
     for ( s = KfmView::clipboard->first(); s != 0L; s = KfmView::clipboard->next() )
     {
-	int j;
-	if ( ( j = testNestedURLs( s, popupFiles.first() ) ) )
-	    if ( j == -1 || ( j > nested && nested != -1 ) )
-		nested = j;
-	}
+        int j;
+        if ( ( j = testNestedURLs( s, popupFiles.first() ) ) )
+            if ( j == -1 || ( j > nested && nested != -1 ) )
+                nested = j;
+    }
 
     if ( nested == -1 )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: Malformed URL") );
-	return;
+        QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+                              klocale->translate("ERROR: Malformed URL") );
+        return;
     }
     if ( nested == 2 )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: You dropped a URL over itself") );
-	return;
+        QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+                              klocale->translate("ERROR: You dropped a URL over itself") );
+        return;
     }
     if ( nested == 1 )
     {
-	QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
-			      klocale->translate("ERROR: You dropped a directory over one of its children") );
-	return;
+        QMessageBox::warning( (QWidget*)0, klocale->translate( "KFM Error" ),
+                              klocale->translate("ERROR: You dropped a directory over one of its children") );
+        return;
     }
 
     KIOJob * job = new KIOJob;
@@ -1267,7 +1268,7 @@ void KRootWidget::slotPopupCopy()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
 	KfmView::clipboard->append( s );
-
+    QApplication::clipboard()->setText(popupFiles.first()); // first URL in the system clipboard 
 }
 
 void KRootWidget::slotPopupTrash()

@@ -1,3 +1,9 @@
+1999-02-01  David Faure  <faure@kde.org>
+
+	* kfm*: Copy/Paste for text (browser mode) as well as URLs (file
+	manager mode). Enabled/Disabled menu items as one would expect.
+	(Initial patch from Dawit A.)
+
 1999-01-19  David Faure  <faure@kde.org>
 
 	* kiojob.cpp: Show 'not implemented' when trying to download a remote 
