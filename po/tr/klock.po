@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-12-13 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -460,12 +460,12 @@ msgstr ""
 "\n"
 "kscreensave'e Emanuel Pirker çevirmiþtir."
 
-#: main.cpp:353
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "%s seçeneði bu mimari tarafýndan desteklenmemektedir."
 
-#: main.cpp:382
+#: main.cpp:422
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -479,11 +479,11 @@ msgstr ""
 "\n"
 "Ona ekran koruyucu için suid'e ihtiyacýnýz olduðunu söyleyiniz"
 
-#: main.cpp:387
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr "Gölge Parolalar"
 
-#: main.cpp:432
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -491,7 +491,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:540
+#: main.cpp:580
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -500,7 +500,7 @@ msgstr ""
 "Kullaným: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:543
+#: main.cpp:583
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
@@ -688,11 +688,11 @@ msgstr ""
 "\n"
 "kscreensave'e Martin Jones çevirmiþtir."
 
-#: saver.cpp:59 saver.cpp:190
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Parolayý giriniz"
 
-#: saver.cpp:120
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Baþarýsýz"
 

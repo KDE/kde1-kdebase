@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1998-12-03 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-09-30 17:28+0200\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -25,103 +25,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: feil ved oppstart; avbryter\n"
 
-#: main.C:483
+#: main.C:485
 msgid "Preparing session ... "
 msgstr "Forbereder sesjon ... "
 
-#: main.C:507
+#: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:514
+#: main.C:516
 msgid "Usage: "
 msgstr "Bruk: "
 
-#: main.C:525
+#: main.C:527
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:526
+#: main.C:528
 msgid "&Restore"
 msgstr "&Opprett på nytt"
 
-#: main.C:527
+#: main.C:529
 msgid "&Iconify"
 msgstr "M&inimer"
 
-#: main.C:528
+#: main.C:530
 msgid "&DeIconify"
 msgstr "&Gjør om minimer"
 
-#: main.C:529
+#: main.C:531
 msgid "&Sticky"
 msgstr "&Sett fast"
 
-#: main.C:530
+#: main.C:532
 msgid "&UnSticky"
 msgstr "Ikke fastsatt"
 
-#: main.C:531
+#: main.C:533
 msgid "Mo&ve"
 msgstr "&Flytt"
 
-#: main.C:532
+#: main.C:534
 msgid "Resi&ze"
 msgstr "&Endre størrelse"
 
-#: main.C:534
+#: main.C:536
 msgid "&To desktop"
 msgstr "&Til skrivebord"
 
-#: main.C:536
+#: main.C:538
 msgid "&Onto current desktop"
 msgstr "Til skrivebord i bruk"
 
-#: main.C:576
+#: main.C:578
 msgid "One"
 msgstr "En"
 
-#: main.C:579
+#: main.C:581
 msgid "Two"
 msgstr "To"
 
-#: main.C:582
+#: main.C:584
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:585
+#: main.C:587
 msgid "Four"
 msgstr "Fire"
 
-#: main.C:588
+#: main.C:590
 msgid "Five"
 msgstr "Fem"
 
-#: main.C:591
+#: main.C:593
 msgid "Six"
 msgstr "Seks"
 
-#: main.C:594
+#: main.C:596
 msgid "Seven"
 msgstr "Syv"
 
-#: main.C:597
+#: main.C:599
 msgid "Eight"
 msgstr "Åtte"
 
-#: main.C:611
+#: main.C:613
 msgid "Unnamed Desktop"
 msgstr "Skrivebord uten navn"
 
-#: main.C:1016
+#: main.C:1018
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1128
+#: main.C:1130
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-13 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Case Roole <cjr@xs4all.nl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -460,12 +460,12 @@ msgstr ""
 "\n"
 "Herschreven voor kscreensave door Emanuel Pirker."
 
-#: main.cpp:353
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Optie %s is niet ondersteund op dit platvorm !"
 
-#: main.cpp:382
+#: main.cpp:422
 #, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
@@ -479,11 +479,11 @@ msgstr ""
 "\n"
 "Vertel hem/haar, dat u 'suid' nodig hebt voor de screensavers !"
 
-#: main.cpp:387
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr "Schaduw Wachtwoorden"
 
-#: main.cpp:432
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -491,7 +491,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:540
+#: main.cpp:580
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -500,7 +500,7 @@ msgstr ""
 "Gebruik: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:543
+#: main.cpp:583
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
@@ -687,11 +687,11 @@ msgstr ""
 "\n"
 "Herschreven voor kscreensave door Martin Jones."
 
-#: saver.cpp:59 saver.cpp:190
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Voer Wachtwoord in"
 
-#: saver.cpp:120
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Faalde"
 

@@ -138,7 +138,8 @@ msgstr "URL:en stöds ej"
 #: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr "Tyvärr, den här typen av URL:er stöds för närvarande inte av KDE:s skärmmodul"
+msgstr ""
+"Tyvärr, den här typen av URL:er stöds för närvarande inte av KDE:s skärmmodul"
 
 #: backgnd.cpp:1439
 msgid "Two color backgrounds"

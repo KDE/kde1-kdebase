@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-12-03 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -24,103 +24,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: baþlama aþamasýnda hata; vazgeçiliyor\n"
 
-#: main.C:483
+#: main.C:485
 msgid "Preparing session ... "
 msgstr "Oturum hazýrlanýyor... "
 
-#: main.C:507
+#: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:514
+#: main.C:516
 msgid "Usage: "
 msgstr "Kullaným:"
 
-#: main.C:525
+#: main.C:527
 msgid "&Maximize"
 msgstr "&Büyült"
 
-#: main.C:526
+#: main.C:528
 msgid "&Restore"
 msgstr "&Kurtar"
 
-#: main.C:527
+#: main.C:529
 msgid "&Iconify"
 msgstr "&Simgele"
 
-#: main.C:528
+#: main.C:530
 msgid "&DeIconify"
 msgstr "&Normal"
 
-#: main.C:529
+#: main.C:531
 msgid "&Sticky"
 msgstr "&Sabit"
 
-#: main.C:530
+#: main.C:532
 msgid "&UnSticky"
 msgstr "&Serbest"
 
-#: main.C:531
+#: main.C:533
 msgid "Mo&ve"
 msgstr "&Yürüt"
 
-#: main.C:532
+#: main.C:534
 msgid "Resi&ze"
 msgstr "&Yeniden boyutlandýr"
 
-#: main.C:534
+#: main.C:536
 msgid "&To desktop"
 msgstr "&Masa üstüne"
 
-#: main.C:536
+#: main.C:538
 msgid "&Onto current desktop"
 msgstr "&Þu anki masa üstüne"
 
-#: main.C:576
+#: main.C:578
 msgid "One"
 msgstr "Bir"
 
-#: main.C:579
+#: main.C:581
 msgid "Two"
 msgstr "Ýki"
 
-#: main.C:582
+#: main.C:584
 msgid "Three"
 msgstr "Üç"
 
-#: main.C:585
+#: main.C:587
 msgid "Four"
 msgstr "Dört"
 
-#: main.C:588
+#: main.C:590
 msgid "Five"
 msgstr "Beþ"
 
-#: main.C:591
+#: main.C:593
 msgid "Six"
 msgstr "Altý"
 
-#: main.C:594
+#: main.C:596
 msgid "Seven"
 msgstr "Yedi"
 
-#: main.C:597
+#: main.C:599
 msgid "Eight"
 msgstr "Sekiz"
 
-#: main.C:611
+#: main.C:613
 msgid "Unnamed Desktop"
 msgstr "Ýsimsiz Masa üstü"
 
-#: main.C:1016
+#: main.C:1018
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Bazi simgeler geçersiz: ShapeMode kullanýlmýyor\n"
 
-#: main.C:1128
+#: main.C:1130
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Bazý simgeler geçersiz: GimmickMode kullanýlmýyor\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid "*** No Tasks ***"
 msgstr "*** Görev Yok ***"
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,15 +41,17 @@ msgstr "Beschikbare X11 lettertypes"
 msgid "Fonts made available to KDE"
 msgstr "Lettertypes beschikbaar voor KDE"
 
-#: kfontmanager.cpp:87
-msgid "The KDE Font Manager Example String"
-msgstr "De KDE-lettertypebeheer voorbeeldtekst"
+#: kfontmanager.cpp:89
+msgid ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+msgstr ""
 
-#: kfontlist.cpp:62 kfontmanager.cpp:109
+#: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
 msgstr "Info"
 
-#: kfontmanager.cpp:109
+#: kfontmanager.cpp:112
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -61,7 +63,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:212
+#: kfontmanager.cpp:215
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -69,14 +71,14 @@ msgstr ""
 "De omgevingsvariabele HOME\n"
 "is niet gezet\n"
 
-#: kfontmanager.cpp:289
+#: kfontmanager.cpp:292
 #, fuzzy
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr "Kan ~/.kde/config/kdefonts niet maken\n"
 
-#: kfontmanager.cpp:294
+#: kfontmanager.cpp:297
 #, fuzzy
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
@@ -170,6 +172,9 @@ msgstr ""
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr ""
+
+#~ msgid "The KDE Font Manager Example String"
+#~ msgstr "De KDE-lettertypebeheer voorbeeldtekst"
 
 #~ msgid "Add"
 #~ msgstr "Voeg toe"

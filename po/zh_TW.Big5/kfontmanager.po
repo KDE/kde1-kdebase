@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfontmanager\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-04-20 22:55+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -37,15 +37,17 @@ msgstr "可用的 X11 字型"
 msgid "Fonts made available to KDE"
 msgstr "KDE 可用的字型"
 
-#: kfontmanager.cpp:87
-msgid "The KDE Font Manager Example String"
-msgstr "The KDE Font Manager 範例字串"
+#: kfontmanager.cpp:89
+msgid ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+msgstr ""
 
-#: kfontlist.cpp:62 kfontmanager.cpp:109
+#: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
 msgstr "有關 kfontmanager"
 
-#: kfontmanager.cpp:109
+#: kfontmanager.cpp:112
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -53,13 +55,13 @@ msgid ""
 "wuebben@math.cornell.edu\n"
 msgstr ""
 
-#: kfontmanager.cpp:212
+#: kfontmanager.cpp:215
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr "環境變數 HOME 沒有設定\n"
 
-#: kfontmanager.cpp:289
+#: kfontmanager.cpp:292
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -67,7 +69,7 @@ msgstr ""
 "無法建立:\n"
 " ~/.kde/share/config/kdefonts\n"
 
-#: kfontmanager.cpp:294
+#: kfontmanager.cpp:297
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -156,3 +158,6 @@ msgstr ""
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr ""
+
+#~ msgid "The KDE Font Manager Example String"
+#~ msgstr "The KDE Font Manager 範例字串"

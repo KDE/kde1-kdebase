@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-13 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -246,16 +246,16 @@ msgstr "Kunne ikke laste ikon\n"
 #: kbind.cpp:1644 kbind.cpp:1703 kbind.cpp:1715 kbind.cpp:1742 kbind.cpp:1757
 #: kbind.cpp:1777 kbind.cpp:1789 kbind.cpp:1805 kbind.cpp:1941 kbind.cpp:1953
 #: kbind.cpp:1998 kbind.cpp:2040 kfmexec.cpp:60 kfmexec.cpp:92
-#: kfmexec/main.cpp:47 kfmgui.cpp:512 kfmgui.cpp:671 kfmman.cpp:347
-#: kfmman.cpp:1099 kfmman.cpp:1321 kfmman.cpp:1347 kfmprops.cpp:377
+#: kfmexec/main.cpp:47 kfmgui.cpp:512 kfmgui.cpp:671 kfmman.cpp:352
+#: kfmman.cpp:1118 kfmman.cpp:1340 kfmman.cpp:1366 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
 #: kfmprops.cpp:1141 kfmprops.cpp:1484 kfmprops.cpp:1716 kfmprops.cpp:1901
 #: kfmserver.cpp:40 kfmserver.cpp:163 kfmserver.cpp:243 kfmserver.cpp:290
 #: kfmserver.cpp:299 kfmserver.cpp:307 kfmtree.cpp:246 kfmtree.cpp:373
-#: kfmtree.cpp:404 kfmtree.cpp:410 kfmtree.cpp:416 kfmview.cpp:390
-#: kfmview.cpp:406 kfmview.cpp:425 kfmview.cpp:494 kfmview.cpp:500
-#: kfmview.cpp:506 kfmview.cpp:612 kfmview.cpp:616 kfmview.cpp:655
-#: kfmview.cpp:681 kfmview.cpp:702 kfmview.cpp:710 kfmview.cpp:718
+#: kfmtree.cpp:404 kfmtree.cpp:410 kfmtree.cpp:416 kfmview.cpp:402
+#: kfmview.cpp:418 kfmview.cpp:437 kfmview.cpp:506 kfmview.cpp:512
+#: kfmview.cpp:518 kfmview.cpp:624 kfmview.cpp:628 kfmview.cpp:667
+#: kfmview.cpp:693 kfmview.cpp:714 kfmview.cpp:722 kfmview.cpp:730
 #: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278 kiojob.cpp:297
 #: kiojob.cpp:308 kiojob.cpp:330 kiojob.cpp:349 kiojob.cpp:557 kiojob.cpp:797
 #: kiojob.cpp:828 kiojob.cpp:869 kiojob.cpp:1679 krenamewin.cpp:120
@@ -265,7 +265,7 @@ msgid "KFM Error"
 msgstr "KFM Feil"
 
 # kfmexec.cpp:59 kfmgui.cpp:709 kfmman.cpp:1043
-#: kfmexec.cpp:59 kfmgui.cpp:670 kfmman.cpp:1098
+#: kfmexec.cpp:59 kfmgui.cpp:670 kfmman.cpp:1117
 msgid "Malformed URL\n"
 msgstr "URL på feil form\n"
 
@@ -291,7 +291,7 @@ msgstr "&Endre bokmerker..."
 msgid "&Add Bookmark"
 msgstr "&Legg til bokmerke"
 
-#: kfmgui.cpp:978 kfmman.cpp:1137 kfmtree.cpp:280 root.cpp:263
+#: kfmgui.cpp:978 kfmman.cpp:1156 kfmtree.cpp:280 root.cpp:263
 msgid "&New"
 msgstr "&Ny"
 
@@ -331,8 +331,8 @@ msgstr "&Forover"
 msgid "&Home"
 msgstr "&Hjem"
 
-#: kfmgui.cpp:1082 kfmgui.cpp:1254 kfmjob.cpp:37 kfmman.cpp:230
-#: kfmtree.cpp:405 kfmview.cpp:426 kfmview.cpp:495 kfmview.cpp:703
+#: kfmgui.cpp:1082 kfmgui.cpp:1254 kfmjob.cpp:37 kfmman.cpp:235
+#: kfmtree.cpp:405 kfmview.cpp:438 kfmview.cpp:507 kfmview.cpp:715
 #: kiojob.cpp:87 root.cpp:1188
 msgid "ERROR: Malformed URL"
 msgstr "FEIL: Misdannet URL"
@@ -362,24 +362,24 @@ msgid "Document: Done"
 msgstr "Dokument: Ferdig"
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmview.cpp:391 root.cpp:909
+#: kfmview.cpp:403 root.cpp:909
 msgid "ERROR: You may only drop URLs"
 msgstr "FEIL: Du kan bare droppe URLer"
 
 # kfmview.cpp:352
-#: kfmview.cpp:407
+#: kfmview.cpp:419
 msgid "ERROR: Drop over malformed URL"
 msgstr "FEIL: Dropp over en misdannet URL"
 
 # kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:356 kfmview.cpp:412
 # kfmview.cpp:606 krenamewin.cpp:20 root.cpp:1147
-#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:443 kfmview.cpp:466
-#: kfmview.cpp:746 krenamewin.cpp:20 root.cpp:1231
+#: kfmserver.cpp:50 kfmserver.cpp:78 kfmtree.cpp:443 kfmview.cpp:478
+#: kfmview.cpp:758 krenamewin.cpp:20 root.cpp:1231
 msgid "KFM Warning"
 msgstr "KFM Advarsel"
 
 # kfmtree.cpp:357 kfmview.cpp:413 kfmview.cpp:607 root.cpp:1148
-#: kfmtree.cpp:444 kfmview.cpp:467 kfmview.cpp:747 root.cpp:1232
+#: kfmtree.cpp:444 kfmview.cpp:479 kfmview.cpp:759 root.cpp:1232
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -389,26 +389,26 @@ msgstr ""
 "Det er ikke mulig å få dem tilbake."
 
 # kfmtree.cpp:324 kfmview.cpp:446 kfmview.cpp:577 root.cpp:1112
-#: kfmtree.cpp:411 kfmview.cpp:501 kfmview.cpp:711 root.cpp:1194
+#: kfmtree.cpp:411 kfmview.cpp:513 kfmview.cpp:723 root.cpp:1194
 msgid "ERROR: You dropped a URL over itself"
 msgstr "FEIL: Du droppet en URL over seg selv"
 
 # kfmtree.cpp:330 kfmview.cpp:452 kfmview.cpp:583 root.cpp:1118
-#: kfmtree.cpp:417 kfmview.cpp:507 kfmview.cpp:719 root.cpp:1200
+#: kfmtree.cpp:417 kfmview.cpp:519 kfmview.cpp:731 root.cpp:1200
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "FEIL: Du droppet en katalog over et av sine barn"
 
 # kfmexec.cpp:254 kfmman.cpp:880 kfmview.cpp:468
-#: kfmexec.cpp:265 kfmman.cpp:952 kfmview.cpp:523
+#: kfmexec.cpp:265 kfmman.cpp:971 kfmview.cpp:535
 msgid "Open With:"
 msgstr "Åpne Med:"
 
 # kfmview.cpp:485 root.cpp:1057
-#: kfmview.cpp:554 root.cpp:1131
+#: kfmview.cpp:566 root.cpp:1131
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "FEIL: Kan ikke åpne egenskaper for flere filer samtidig"
 
-#: kfmview.cpp:613
+#: kfmview.cpp:625
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -421,7 +421,7 @@ msgstr ""
 " Legg først dette stedet som et bokmerke, eller lag en kdelnk til det på\n"
 "skrivebordet."
 
-#: kfmview.cpp:617
+#: kfmview.cpp:629
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -435,27 +435,27 @@ msgstr ""
 "skrivebordet."
 
 # kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
-#: kfmtree.cpp:374 kfmview.cpp:656 root.cpp:1281
+#: kfmtree.cpp:374 kfmview.cpp:668 root.cpp:1281
 msgid "Could not access Trash Bin"
 msgstr "Kunne ikke få adgang til Papirkurv"
 
 # kfmview.cpp:553 root.cpp:1088
-#: kfmview.cpp:682 root.cpp:1170
+#: kfmview.cpp:694 root.cpp:1170
 msgid "Can not paste into multiple directories"
 msgstr "Kan ikke lime inn i flere kataloger"
 
 # kfmview.cpp:639
-#: kfmview.cpp:779
+#: kfmview.cpp:791
 msgid "ERROR: Can not change to multiple directories"
 msgstr "FEIL: Kan ikke endre til flere kataloger"
 
 # kfmview.cpp:737
-#: kfmview.cpp:1043
+#: kfmview.cpp:1055
 msgid "KFM Security Alert"
 msgstr "KFM Sikkerhetsadvarsel"
 
 # kfmview.cpp:738
-#: kfmview.cpp:1044
+#: kfmview.cpp:1056
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -464,18 +464,18 @@ msgstr ""
 "men den inneholder en lenke til ditt lokale filsystem."
 
 # kfmview.cpp:824
-#: kfmview.cpp:1148
+#: kfmview.cpp:1160
 msgid "Symbolic Link"
 msgstr "Symbolsk Lenke"
 
 # kfmview.cpp:826
-#: kfmview.cpp:1150
+#: kfmview.cpp:1162
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Lenke)"
 
 # kfmview.cpp:846
-#: kfmview.cpp:1170
+#: kfmview.cpp:1182
 msgid "bytes"
 msgstr "byte"
 
@@ -646,12 +646,12 @@ msgstr "Flytt til Papirkurv"
 msgid "Open with"
 msgstr "Åpne med"
 
-#: kfmman.cpp:1339 kfmtree.cpp:238 main.cpp:232
+#: kfmman.cpp:1358 kfmtree.cpp:238 main.cpp:232
 msgid "Move"
 msgstr "Flytt"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
-#: kfmman.cpp:1343 kfmtree.cpp:242 main.cpp:234
+#: kfmman.cpp:1362 kfmtree.cpp:242 main.cpp:234
 msgid "Link"
 msgstr "Lenk"
 
@@ -1164,27 +1164,27 @@ msgid "ERROR: Can not accept drop"
 msgstr "FEIL: Kunne ikke akseptere slipp"
 
 # kfmman.cpp:1212 root.cpp:1695
-#: kfmman.cpp:1322 root.cpp:1794
+#: kfmman.cpp:1341 root.cpp:1794
 msgid "Dont know what to do."
 msgstr "Jeg vet ikke hva jeg skal gjøre."
 
 # kfmman.cpp:1238 kfmtree.cpp:164 root.cpp:1720
-#: kfmman.cpp:1348 kfmtree.cpp:247 root.cpp:1819
+#: kfmman.cpp:1367 kfmtree.cpp:247 root.cpp:1819
 msgid "Dont know what to do"
 msgstr "Jeg vet ikke hva jeg skal gjøre"
 
 # kfmexec.cpp:93 kfmman.cpp:297
-#: kfmexec.cpp:93 kfmman.cpp:348
+#: kfmexec.cpp:93 kfmman.cpp:353
 msgid "The file does not contain a URL"
 msgstr "Filen inneholder ingen URL"
 
 # kfmman.cpp:348
-#: kfmman.cpp:398
+#: kfmman.cpp:403
 msgid "Contacting host "
 msgstr "Kontakter vert "
 
 # kfmman.cpp:352
-#: kfmman.cpp:402
+#: kfmman.cpp:407
 msgid "Working ..."
 msgstr "Jobber ..."
 
@@ -1604,6 +1604,35 @@ msgstr "Finn:"
 #: finddlg.cpp:56
 msgid "Case &sensitive"
 msgstr "&Avhengig av bokstavstørrelse"
+
+#: kcookiewin.cpp:58
+msgid "Cookie Alert!"
+msgstr ""
+
+#: kcookiewin.cpp:76
+msgid "You received a cookie from host:"
+msgstr ""
+
+#: kcookiewin.cpp:89
+msgid "Do you want to accept or reject this cookie?"
+msgstr ""
+
+#: kcookiewin.cpp:120
+#, fuzzy
+msgid "Apply to "
+msgstr "Bruk globalt"
+
+#: kcookiewin.cpp:125
+msgid "&This cookie only"
+msgstr ""
+
+#: kcookiewin.cpp:133
+msgid "All cookies from this &domain"
+msgstr ""
+
+#: kcookiewin.cpp:140
+msgid "All &cookies"
+msgstr ""
 
 #: popup.cpp:69
 #, c-format

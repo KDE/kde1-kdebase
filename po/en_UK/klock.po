@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
-"POT-Creation-Date: 1998-12-13 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-04-26 21:22+1000\n"
 "Last-Translator: Martin Jones <mjones@kde.org>\n"
 
@@ -399,12 +399,12 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:353
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr ""
 
-#: main.cpp:382
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -413,11 +413,11 @@ msgid ""
 "tell him, that you need suid for the screensavers!"
 msgstr ""
 
-#: main.cpp:387
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:432
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -425,14 +425,14 @@ msgid ""
 "\n"
 msgstr ""
 
-#: main.cpp:540
+#: main.cpp:580
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
 msgstr ""
 
-#: main.cpp:543
+#: main.cpp:583
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -579,11 +579,11 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:59 saver.cpp:190
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr ""
 
-#: saver.cpp:120
+#: saver.cpp:121
 msgid "Failed"
 msgstr ""
 

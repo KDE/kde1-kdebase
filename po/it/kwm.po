@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-03 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -21,103 +21,103 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: fallimento dell'inizializzazione; annullamento\n"
 
-#: main.C:483
+#: main.C:485
 msgid "Preparing session ... "
 msgstr "Preparazione sessione ..."
 
-#: main.C:507
+#: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:514
+#: main.C:516
 msgid "Usage: "
 msgstr "Utilizzo:"
 
-#: main.C:525
+#: main.C:527
 msgid "&Maximize"
 msgstr "In&grandisci"
 
-#: main.C:526
+#: main.C:528
 msgid "&Restore"
 msgstr "&Ripristina"
 
-#: main.C:527
+#: main.C:529
 msgid "&Iconify"
 msgstr "&Iconifica"
 
-#: main.C:528
+#: main.C:530
 msgid "&DeIconify"
 msgstr "&DeIconifica"
 
-#: main.C:529
+#: main.C:531
 msgid "&Sticky"
 msgstr "&Appiccicato"
 
-#: main.C:530
+#: main.C:532
 msgid "&UnSticky"
 msgstr "&Staccato"
 
-#: main.C:531
+#: main.C:533
 msgid "Mo&ve"
 msgstr "&Sposta"
 
-#: main.C:532
+#: main.C:534
 msgid "Resi&ze"
 msgstr "&Ridimensiona"
 
-#: main.C:534
+#: main.C:536
 msgid "&To desktop"
 msgstr "&Al Desktop"
 
-#: main.C:536
+#: main.C:538
 msgid "&Onto current desktop"
 msgstr "&Sul desktop attivo"
 
-#: main.C:576
+#: main.C:578
 msgid "One"
 msgstr "Uno"
 
-#: main.C:579
+#: main.C:581
 msgid "Two"
 msgstr "Due"
 
-#: main.C:582
+#: main.C:584
 msgid "Three"
 msgstr "Tre"
 
-#: main.C:585
+#: main.C:587
 msgid "Four"
 msgstr "Quattro"
 
-#: main.C:588
+#: main.C:590
 msgid "Five"
 msgstr "Cinque"
 
-#: main.C:591
+#: main.C:593
 msgid "Six"
 msgstr "Sei"
 
-#: main.C:594
+#: main.C:596
 msgid "Seven"
 msgstr "Sette"
 
-#: main.C:597
+#: main.C:599
 msgid "Eight"
 msgstr "Otto"
 
-#: main.C:611
+#: main.C:613
 msgid "Unnamed Desktop"
 msgstr "Desktop SenzaNome"
 
-#: main.C:1016
+#: main.C:1018
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
 
-#: main.C:1128
+#: main.C:1130
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Gimmick viene disabilitato\n"
 
-#: main.C:1453
+#: main.C:1455
 msgid "*** No Tasks ***"
 msgstr "*** Nessun Task ***"
 

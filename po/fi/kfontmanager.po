@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFONTMANAGER\n"
-"POT-Creation-Date: 1998-10-01 12:21+0200\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,17 @@ msgstr "Saatavillaolevat X11-kirjasimet"
 msgid "Fonts made available to KDE"
 msgstr "KDE:n käytössä olevat kirjasimet"
 
-#: kfontmanager.cpp:87
-msgid "The KDE Font Manager Example String"
-msgstr "KDE:n Kirjasinselaimen esimerkkiteksti"
+#: kfontmanager.cpp:89
+msgid ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+msgstr ""
 
-#: kfontlist.cpp:62 kfontmanager.cpp:109
+#: kfontlist.cpp:62 kfontmanager.cpp:112
 msgid "About kfontmanager"
 msgstr "Tietoja kirjasinselaimesta"
 
-#: kfontmanager.cpp:109
+#: kfontmanager.cpp:112
 msgid ""
 "kfontmanager Version 0.2\n"
 "Copyright 1997\n"
@@ -58,7 +60,7 @@ msgstr ""
 "Bernd Johannes Wuebben\n"
 "wuebben@math.cornell.edu\n"
 
-#: kfontmanager.cpp:212
+#: kfontmanager.cpp:215
 msgid ""
 "The environment variable HOME\n"
 "is not set\n"
@@ -66,7 +68,7 @@ msgstr ""
 "Ympäristömuuttujaa HOME\n"
 "ei ole asetettu\n"
 
-#: kfontmanager.cpp:289
+#: kfontmanager.cpp:292
 msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
@@ -74,7 +76,7 @@ msgstr ""
 "En saanut luotua:\n"
 " ~/.kde/share/config/kdefonts -tiedostoa\n"
 
-#: kfontmanager.cpp:294
+#: kfontmanager.cpp:297
 msgid ""
 "~/.kde/share/config/kdefonts exists but\n"
 "is not writeable\n"
@@ -167,3 +169,6 @@ msgstr "Paksunnettu"
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr "Normaali"
+
+#~ msgid "The KDE Font Manager Example String"
+#~ msgstr "KDE:n Kirjasinselaimen esimerkkiteksti"

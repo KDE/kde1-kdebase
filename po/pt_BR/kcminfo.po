@@ -12,17 +12,17 @@ msgstr "tela #%d"
 
 #: info.cpp:52
 #, c-format
-msgid  "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
 msgstr "  dimensões           : %dx%d pixels (%dx%d mm)\n"
 
 #: info.cpp:56
 #, c-format
-msgid  "  resolution          : %dx%d dots per inch\n"
+msgid "  resolution          : %dx%d dots per inch\n"
 msgstr "  resolução           : %dx%d pontos por polegada\n"
 
 #: info.cpp:61
 #, c-format
-msgid  "  depths (%d)          : "
+msgid "  depths (%d)          : "
 msgstr "  profundidades (%d)   : "
 
 #: info.cpp:85
@@ -60,7 +60,10 @@ msgid ""
 "No Information available\n"
 " or\n"
 "this system is not yet supported :-("
-msgstr "Nenhuma informação disponível\n ou\neste sistema ainda não é suportado :-("
+msgstr ""
+"Nenhuma informação disponível\n"
+" ou\n"
+"este sistema ainda não é suportado :-("
 
 #: info_fbsd.cpp:73
 #, c-format

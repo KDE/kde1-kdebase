@@ -37,7 +37,9 @@ msgstr "&Avancerat"
 #: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr "användning: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
+msgstr ""
+"användning: kcmkwm [-init | "
+"{options,buttons,titlebar,borders,mouse,advanced}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"

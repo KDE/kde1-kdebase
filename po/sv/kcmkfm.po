@@ -45,7 +45,8 @@ msgstr "&Skrivbordsikoner"
 #: main.cpp:83
 #, c-format
 msgid "usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
-msgstr "användning: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr ""
+"användning: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
 
 #: main.cpp:166
 msgid "KFM Configuration"

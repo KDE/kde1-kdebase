@@ -181,7 +181,10 @@ msgid ""
 "usage: kcminfo [-init | "
 "{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
 "erver}]\n"
-msgstr "användning: kcminfo [-init | {memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xserver}]\n"
+msgstr ""
+"användning: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
 
 #: main.cpp:148
 msgid "System Information"

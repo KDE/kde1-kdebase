@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
-"POT-Creation-Date: 1998-12-13 01:16+0100\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
 "PO-Revision-Date: 1998-05-09 00:03+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -456,12 +456,12 @@ msgstr ""
 "\n"
 "Portiert für KDE von Emanuel Pirker."
 
-#: main.cpp:353
+#: main.cpp:384
 #, c-format
 msgid "Option %s is not support on this plattform!"
 msgstr "Die Option %s wird auf dieser Plattform nicht unterstützt!"
 
-#: main.cpp:382
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -476,11 +476,11 @@ msgstr ""
 "\n"
 "Sagen Sie ihm, daß Sie setuid auf den Bildschirmschonern brauchen!"
 
-#: main.cpp:387
+#: main.cpp:427
 msgid "Shadow Passwords"
 msgstr "Versteckte Paßwörter"
 
-#: main.cpp:432
+#: main.cpp:472
 msgid ""
 "\n"
 "please don't use -test together with -lock.\n"
@@ -492,7 +492,7 @@ msgstr ""
 "zusammen. Benutzen Sie klock anstatt.\n"
 "\n"
 
-#: main.cpp:540
+#: main.cpp:580
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -501,7 +501,7 @@ msgstr ""
 "Benutzung: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay zahl] [-lock] [-allow-root] [-nice zahl]\n"
 
-#: main.cpp:543
+#: main.cpp:583
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -687,11 +687,11 @@ msgstr ""
 "\n"
 "Portiert für KDE von  Martin Jones."
 
-#: saver.cpp:59 saver.cpp:190
+#: saver.cpp:60 saver.cpp:191
 msgid "Enter Password"
 msgstr "Paßwort eingeben"
 
-#: saver.cpp:120
+#: saver.cpp:121
 msgid "Failed"
 msgstr "Gescheitert"
 
