@@ -1,18 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdehelp \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1997-12-30 23:50+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
@@ -28,7 +20,7 @@ msgstr "Nie mo¿na otworzyæ: "
 
 #: helpwin.cpp:454 helpwin.cpp:463
 msgid "Oops!"
-msgstr "&Ojej!"
+msgstr "Ojej!"
 
 #: helpwin.cpp:462
 msgid "Unknown format: "
@@ -118,11 +110,11 @@ msgstr "Opcje KDE Pomoc"
 
 #: options.cpp:310 options.cpp:311
 msgid "Fonts"
-msgstr "&Czcionki"
+msgstr "Czcionki"
 
 #: options.cpp:315 options.cpp:316
 msgid "Colors"
-msgstr "&Kolory"
+msgstr "Kolory"
 
 #: man.cpp:84 man.cpp:788
 msgid "Online Manuals"
@@ -217,15 +209,15 @@ msgstr "&Szukaj"
 
 #: mainwidget.cpp:153
 msgid "&Back"
-msgstr "&Wstecz"
+msgstr "W &ty³"
 
 #: mainwidget.cpp:154
 msgid "&Forward"
-msgstr "&Dalej"
+msgstr "W &przód"
 
 #: mainwidget.cpp:156
 msgid "&Contents"
-msgstr "&Tematy pomocy"
+msgstr "Spis &tre¶ci"
 
 #: mainwidget.cpp:157
 msgid "&Top"
@@ -353,48 +345,3 @@ msgstr "Informacje o KDE Pomoc"
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
 msgstr "&Dodaj zak³adkê"
-
-#~ msgid "New"
-#~ msgstr "Nowe"
-
-#~ msgid "Back"
-#~ msgstr "Wstecz"
-
-#~ msgid "Forward"
-#~ msgstr "Dalej"
-
-#~ msgid "&Print..."
-#~ msgstr "&Drukuj..."
-
-#~ msgid "&Close"
-#~ msgstr "&Zamknij"
-
-#~ msgid "&Quit"
-#~ msgstr "Za&koñcz"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopiuj"
-
-#~ msgid "&File"
-#~ msgstr "&Plik"
-
-#~ msgid "&Edit"
-#~ msgstr "&Edycja"
-
-#~ msgid "&Options"
-#~ msgstr "&Opcje"
-
-#~ msgid "&Help"
-#~ msgstr "Pomo&c"
-
-# Polish translation of KDE kdehelp
-# Version 0.3.0
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "Open"
-#~ msgstr "&Otwórz"
-
-#~ msgid "Cancel"
-#~ msgstr "A&nuluj"
-
-#~ msgid "Ok"
-#~ msgstr "O&k"

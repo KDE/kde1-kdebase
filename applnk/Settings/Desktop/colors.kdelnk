@@ -14,4 +14,5 @@ Name[de]=Farben
 Name[pl]=Kolory
 Name[cs]=Barvy
 SwallowTitle=Desktop colors
+SwallowTitle[pl]=Kolory desktopu
 Init=kcmdisplay -init

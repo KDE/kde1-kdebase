@@ -1,25 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: krootwm \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1997-12-30 23:10+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
-# Polish translation of KDE krootwm
-# Version 0.2.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: krootwm.C:61
 msgid "Clear"
-msgstr "&Czy¶æ"
+msgstr "Czy¶æ"
 
 #: krootwm.C:109 krootwm.C:406
 msgid "Folder"
@@ -69,6 +58,3 @@ msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 #: krootwm.C:463
 msgid "Usage:"
 msgstr "U¿ycie:"
-
-#~ msgid "New"
-#~ msgstr "Nowy"

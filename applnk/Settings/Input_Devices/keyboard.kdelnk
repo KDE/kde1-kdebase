@@ -14,3 +14,4 @@ Name[pl]=Klawiatura
 Name[cs]=Klávesnice
 Init=kcminput -init
 SwallowTitle=Keyboard properties
+SwallowTitle[pl]=Ustawienia klawiatury

@@ -1,13 +1,10 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kfind \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-10-01 16:40:07+0200\n"
-"From: root <flidr@CyberGate.zcu.cz>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
-"kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp "
-"mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"PO-Revision-Date: 1997-12-30 23:45+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -83,7 +80,7 @@ msgstr "&Ustawienia..."
 
 #: kfindtop.cpp:183
 msgid "Kfind &help"
-msgstr "&Pomoc"
+msgstr "Pomo&c"
 
 #: kfindtop.cpp:186
 msgid "About &Qt"
@@ -210,7 +207,7 @@ msgstr "Najwy¿ej"
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: kftabdlg.cpp:218
 msgid " Advanced "
-msgstr " &Zaawansowane "
+msgstr " Zaawansowane "
 
 #: kftabdlg.cpp:389
 msgid "The date is not valid!!"
@@ -222,7 +219,7 @@ msgstr "Miesi±c nie jest poprawny"
 
 #: kftabdlg.cpp:412
 msgid "The day(s) value isn't valid!!"
-msgstr "Dzieñ nie jest poprawna!!"
+msgstr "Dzieñ nie jest poprawny!!"
 
 #: kftabdlg.cpp:429
 msgid "The value in size isn't valid number!!"
@@ -254,7 +251,7 @@ msgstr "Czysty tekst"
 
 #: kfoptions.cpp:125
 msgid "Saving"
-msgstr "&Zachowanie"
+msgstr "Zachowanie"
 
 #: kfoptions.cpp:132
 msgid "Create Archive:"
@@ -270,11 +267,11 @@ msgstr "Wzorce:"
 
 #: kfoptions.cpp:141
 msgid "Add New"
-msgstr "&Dodaj nowe"
+msgstr "Dodaj nowe"
 
 #: kfoptions.cpp:182
 msgid "Archivers"
-msgstr "&Archiwizatory"
+msgstr "Archiwizatory"
 
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
@@ -291,7 +288,7 @@ msgstr "Plik z rezultatami KFind"
 
 #: kfwin.cpp:179
 msgid "Information"
-msgstr ""
+msgstr "Informacja"
 
 #: kfwin.cpp:180
 msgid "Results were saved to file\n"
@@ -357,48 +354,3 @@ msgstr "Nie mo¿na rozpoznaæ typu arhiwum!"
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
 msgstr "B³±d podczas tworzenia procesu potomnego!"
-
-#~ msgid "Delete"
-#~ msgstr "Kasuj"
-
-#~ msgid "Remove"
-#~ msgstr "&Usuñ"
-
-#~ msgid "Sorry"
-#~ msgstr "Przykro mi"
-
-#~ msgid "&Quit"
-#~ msgstr "Wy&j¶cie"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopiuj"
-
-#~ msgid "&Edit"
-#~ msgstr "&Edycja"
-
-#~ msgid "&File"
-#~ msgstr "&Plik"
-
-#~ msgid "&Help"
-#~ msgstr "&Pomoc"
-
-#~ msgid "&Options"
-#~ msgstr "&Opcje"
-
-#~ msgid "Cancel"
-#~ msgstr "A&nuluj"
-
-#~ msgid "Error"
-#~ msgstr "B³±d"
-
-#~ msgid "Help"
-#~ msgstr "Pomoc"
-
-#~ msgid "OK"
-#~ msgstr "O&K"
-
-#~ msgid "Open"
-#~ msgstr "Otwórz"
-
-#~ msgid "Quit"
-#~ msgstr "Wyj¶cie"

@@ -1,11 +1,10 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kvt \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-08-26 14:27:08+0200\n"
-"From: M G Berberich <berberic@thingol>\n"
-"Xgettext-Options: --keyword=translate\n"
-"Files: main.C\n"
+"PO-Revision-Date: 1997-12-30 23:06+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: main.C:236
 msgid "Add characters to word class"
@@ -15,9 +14,6 @@ msgstr "Dodaj znaki do klasy s³ów"
 msgid "choose type of color-mode"
 msgstr "Wybierz typ kolorowego trybu"
 
-# Polish translation of KDE kvt
-# Version 0.2.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: main.C:242
 msgid "The backspace key will send a"
 msgstr "Klawisz backspace <- wysy³a"
@@ -166,7 +162,6 @@ msgstr ""
 "gdy klawiatura zostanie odbezpieczona."
 
 #: main.C:1084
-#, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -204,6 +199,7 @@ msgstr ""
 "Polskie t³umaczenie (C) 1997 Piotr Roszatycki (dexter@fnet.com.pl)\n"
 "Emulacja terminala dla ¦rodowiska Graficznego KDE\n"
 "oparta o rxvt-2.08 Roberta Nation'a\n"
+"\n"
 "Dozwolone argumenty:\n"
 "-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim "
 "arg.\n"
@@ -218,6 +214,7 @@ msgstr ""
 "-no_menubar               ukryj pasek menu\n"
 "-no_scrollbar             ukryj pasek przewijania\n"
 "-T <tekst>                tekst w pasku tytu³owym\n"
+"                          (wycofane, u¿yj w zamian -caption)\n"
 "-tn <TERM>                typ terminala. standardowo xterm.\n"
 "-C                        przychwytuj komunikaty z konsoli\n"
 "-n <tekst>                tytu³ ikony\n"
@@ -226,7 +223,7 @@ msgstr ""
 "-ls                       uruchom kvt jako zalogowan± sesjê\n"
 "-ls-                      uruchom kvt jako niezalogowan± sesjê (domyslnie)\n"
 "-meta                     przechwytuj Meta z prefiksem ESCAPE,\n"
-"                            ustawionym 8THBIT lub ignoruj\n"
+"                          ustawionym 8THBIT lub ignoruj\n"
 "-sl <numer>               ilo¶æ linii przechowywana w buforze\n"
 "-pageup <klawisz>         kombinacja Alt-klawisz przesuwa bufor w górê\n"
 "-pagedown <klawisz>       kombinacja Alt-klawisz przesuwa buforu w dó³\n"
@@ -238,33 +235,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (domy¶lnie)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
-
-#~ msgid "E&xit"
-#~ msgstr "&Wyj¶cie"
-
-#~ msgid "&Foreground Color"
-#~ msgstr "Kolor &czcionki"
-
-#~ msgid "&Background Color"
-#~ msgstr "Kolor &t³a"
-
-#~ msgid "Ok"
-#~ msgstr "O&k"
-
-#~ msgid "Cancel"
-#~ msgstr "A&nuluj"
-
-#~ msgid "&About..."
-#~ msgstr "&Informacje..."
-
-#~ msgid "&Help"
-#~ msgstr "Pomo&c"
-
-#~ msgid "&File"
-#~ msgstr "&Plik"
-
-#~ msgid "&Options"
-#~ msgstr "&Opcje"
-
-#~ msgid "About kvt"
-#~ msgstr "kvt - informacje"

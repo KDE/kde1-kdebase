@@ -1,12 +1,10 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: kdm \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"Content-Type: text/plain; charset=\n"
-"Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"PO-Revision-Date: 1997-12-30 23:48+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
@@ -47,12 +45,3 @@ msgstr "Uruchom!"
 #: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Zamkniêcie..."
-
-# Polish translation of KDE kdm
-# Version 0.2.1
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "Cancel"
-#~ msgstr "Anuluj"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"

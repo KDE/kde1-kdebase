@@ -13,4 +13,5 @@ Name[de]=Bildschirmschoner
 Name[pl]=Wygaszacz ekranu
 Name[cs]=©etøiè obrazovky
 SwallowTitle=Desktop screensaver
+SwallowTitle[pl]=Wygaszacz desktopu
 Init=kcmdisplay -init

@@ -14,3 +14,4 @@ Name[pl]=Brzêczyk
 Name[cs]=Zvonek
 Init=kcmbell -init
 SwallowTitle=Bell settings
+SwallowTitle[pl]=Ustawienia brzêczyka

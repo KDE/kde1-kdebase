@@ -1,18 +1,10 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: klock \n"
 "POT-Creation-Date: 1997-12-29 17:43+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"PO-Revision-Date: 1997-12-30 23:18+0100\n"
+"Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
 
 #: banner.cpp:56
 msgid "Banner"
@@ -406,6 +398,7 @@ msgstr ""
 "  -setup            Ustawienia wygaszacza ekranu\n"
 "  -test             Uruchamia wygaszacz ekranu natychmiast\n"
 
+# ##
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
 msgstr "GL nie mo¿e renderowaæ z wy¶wietlonym root'em\n"
@@ -603,15 +596,3 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Wersja dla kscreensave od Emanuel Pirker."
-
-#~ msgid "Font"
-#~ msgstr "Czcionka"
-
-# Polish translation of KDE klock
-# Version 0.1.2
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
-#~ msgid "(none)"
-#~ msgstr "(brak)"
-
-#~ msgid "About"
-#~ msgstr "Info"
