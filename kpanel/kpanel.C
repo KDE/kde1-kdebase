@@ -137,8 +137,17 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       {
 	mBackTexture = kapp->getIconLoader()
 	  ->loadIcon(config->readEntry( "BackgroundTexture" ) );
-	if (!mBackTexture.isNull())
+	if (!mBackTexture.isNull()) {
+	  //CT 15Jan1998 - little trick (rotate pixmap) to make vertical kpanel
+	  // beautier -  thanks to Stefan Taferner for the idea
+	  if (orientation == vertical) {
+	    QWMatrix tmp_mtx;
+	    tmp_mtx.rotate(90);
+	    mBackTexture = mBackTexture.xForm(tmp_mtx);
+	  }
+	  //CT
 	  setBackgroundPixmap( mBackTexture );
+	}
       }
 
     if (config->hasKey("BoxWidth"))
