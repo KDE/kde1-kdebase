@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Aug 16 19:17:17 1998
-// Update Count     : 140
+// Last Modified On : Tue Aug 18 05:02:19 1998
+// Update Count     : 151
 // Status           : Unknown, Use with caution!
 // 
 
@@ -78,7 +78,7 @@ public:
   virtual bool x11EventFilter( XEvent * );
 };
 
-MyApp::MyApp(int &argc, char **argv ):KApplication(argc, argv){
+MyApp::MyApp(int &argc, char **argv ) : KApplication(argc, argv){
 }
 
 bool 
@@ -172,21 +172,6 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      passwdEdit->setFixedHeight( pweheight);
 
      passwdEdit->setEchoMode( QLineEdit::NoEcho);
-     /* This is a way to get a passwd edit
-      * with a moving cursor, but it's
-      * not so great in windows style
-      */
-     /*QColorGroup   passwdColGroup( 
-	  QApplication::palette()->normal().foreground(), 
-	  QApplication::palette()->normal().background(),
-	  QApplication::palette()->normal().light(), 
-	  QApplication::palette()->normal().dark(), 
-	  QApplication::palette()->normal().mid(),
-	  QApplication::palette()->normal().base(),
-	  QApplication::palette()->normal().base());
-     QPalette passwdPalette( passwdColGroup, passwdColGroup, passwdColGroup);
-     passwdEdit->setPalette( passwdPalette);
-     */
      vbox->addLayout( hbox1);
      vbox->addLayout( hbox2);
      hbox1->addWidget( pixLabel, 0, AlignTop);
@@ -227,7 +212,7 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 
      goButton = new QPushButton( klocale->translate("Go!"), this);
      connect( goButton, SIGNAL( clicked()), SLOT(go_button_clicked()));
-     //goButton->setDefault( true);
+
      set_fixed( goButton);
      hbox2->addWidget( goButton, AlignBottom);
 
@@ -247,16 +232,15 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
 		   SLOT(shutdown_button_clicked()));
 	  set_fixed( shutdownButton);
 	  hbox2->addWidget( shutdownButton, AlignBottom);
-	  sbw = shutdownButton->width() /*+ 100*/;
+	  sbw = shutdownButton->width();
      } else
 #endif
-	  sbw = /*80*/ 0;
+	  sbw = 0;
      vbox->activate();
      int w = QMAX( 
 	  QMAX( 
 	       QMAX( loginLabel->width(), passwdLabel->width()) + 
-	       /*2*QMAX( loginEdit->width(), passwdEdit->width()) + */
-	       pixLabel->width() /*+ 60*/, welcomeLabel->width() /*+ 40*/), 
+	       pixLabel->width(), welcomeLabel->width()), 
 	  failedLabel->width() + sessionargLabel->width() 
 	  + sessionargBox->width() + goButton->width() + 
 	  cancelButton->width() + sbw);
@@ -267,7 +251,6 @@ KGreeter::KGreeter(QWidget *parent = 0, const char *t = 0)
      }
      vbox->activate();
      setMinimumSize( winFrame->minimumSize());
-     //startTimer(500);
      timer = new QTimer( this );
      // Signals/Slots
      connect( timer, SIGNAL(timeout()),
@@ -290,14 +273,8 @@ KGreeter::slot_user_name( int i)
 }
 
 void 
-KGreeter::SetTimer(){
-#if 0
-     if (!isVisible()){
-	  show();
-	  qApp->desktop()->releaseKeyboard();
-     }
-#endif     
-
+KGreeter::SetTimer()
+{
      if (!failedLabel->isVisible())
 	  timer->start( 40000, TRUE );
 }
@@ -316,14 +293,16 @@ KGreeter::timerDone()
 }
 
 void 
-KGreeter::cancel_button_clicked(){
+KGreeter::cancel_button_clicked()
+{
      loginEdit->setText("");
      passwdEdit->setText("");
      loginEdit->setFocus();
 }
 
 void 
-KGreeter::shutdown_button_clicked(){
+KGreeter::shutdown_button_clicked()
+{
      timer->stop();
      KDMShutdown k( kdmcfg->shutdownButton(),
 		    this, "Shutdown",
@@ -334,62 +313,76 @@ KGreeter::shutdown_button_clicked(){
 }
 
 void
-KGreeter::save_wm(){
-  // read passwd
-  struct passwd *pwd = getpwnam(qstrdup(greet->name));
-  endpwent();
-
-  QString file;
-  file.sprintf("%s/"WMRC, pwd->pw_dir);
-  QFile f(file);
-
-  // open file as user which is loging in
-  uid_t euid = geteuid();
-  seteuid(pwd->pw_uid);
-  int i = f.open(IO_WriteOnly);
-  seteuid(euid);
-
-  if ( i ) {
-    QTextStream t;
-    t.setDevice( &f );
-    t << sessionargBox->text( sessionargBox->currentItem()) << endl;
-    f.close();
-  }
+KGreeter::save_wm()
+{
+     // read passwd
+     struct passwd *pwd = getpwnam(/*qstrdup*/(greet->name));
+     endpwent();
+     
+     QString file;
+     file.sprintf("%s/"WMRC, pwd->pw_dir);
+     QFile f(file);
+     
+     // open file as user which is loging in
+     uid_t euid = geteuid();
+     seteuid(pwd->pw_uid);
+     int i = f.open(IO_WriteOnly);
+     seteuid(euid);
+     
+     if ( i ) {
+	  QTextStream t;
+	  t.setDevice( &f );
+	  t << sessionargBox->text( sessionargBox->currentItem()) << endl;
+	  f.close();
+     }
 }
 
 void
-KGreeter::load_wm(){
-  // read passwd
-  passwd *pwd = getpwnam(qstrdup(loginEdit->text()));
-  endpwent();
-
-  QString file;
-  file.sprintf("%s/"WMRC, pwd->pw_dir);
-  QFile f(file);
-
-  // open file as user which is loging in
-  uid_t euid = geteuid();
-  seteuid(pwd->pw_uid);
-  int err = f.open(IO_ReadOnly);
-  seteuid(euid);
-
-  // set default wm
-  int wm = 0;
-  if ( err ) {
-    QTextStream t( &f );
-    QString s;
-    if ( !t.eof() ) s = t.readLine();
-    f.close();
-
-    for (int i = 0; i < sessionargBox->count(); i++)
-      if (strcmp(sessionargBox->text(i), s) == 0)
-        wm = i;
-  }
-  sessionargBox->setCurrentItem(wm);
+KGreeter::load_wm()
+{
+     // read passwd
+     passwd *pwd = getpwnam(qstrdup(loginEdit->text()));
+     endpwent();
+     
+     // Take care of bogus user name:
+     if( !pwd) return;
+     
+     QString file;
+     file.sprintf("%s/"WMRC, pwd->pw_dir);
+     QFile f(file);
+     
+     // open file as user which is loging in
+     uid_t euid = geteuid();
+     seteuid(pwd->pw_uid);
+     int err = f.open(IO_ReadOnly);
+     seteuid(euid);
+     
+     // set default wm
+     int wm = 0;
+     if ( err ) {
+	  QTextStream t( &f );
+	  QString s;
+	  if ( !t.eof() ) s = t.readLine();
+	  f.close();
+	  
+	  for (int i = 0; i < sessionargBox->count(); i++)
+	       if (strcmp(sessionargBox->text(i), s) == 0)
+		    wm = i;
+     }
+     sessionargBox->setCurrentItem(wm);
 }
 
+#ifdef USE_PAM
 bool
-KGreeter::restrict_nologin(){
+KGreeter::restrict_nologin()
+{
+     // PAM handles /etc/nologin itself.
+     return false;
+}
+#else /* !USE_PAM */
+bool
+KGreeter::restrict_nologin()
+{
      struct passwd *pwd;
      char * file;
 
@@ -430,6 +423,7 @@ KGreeter::restrict_nologin(){
 #endif
      return false;
 }
+#endif /* !USE_PAM */
 
 #ifdef BSD
 /* don't know if other systems than BSD support this.. I know the
@@ -465,14 +459,17 @@ KGreeter::restrict_expired(){
 #endif
 
      if (pwd->pw_expire)
-       if (pwd->pw_expire <= time(NULL)) {
-         QMessageBox::critical(NULL, i18n("Expired"), i18n("Sorry -- your account has expired."), i18n("&Ok"));
-         return true;
-       } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
-         QString str;
-         str.sprintf(i18n("Warning: your account expires on %s"), ctime(&pwd->pw_expire));  // use locales
-         QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
-       }
+	  if (pwd->pw_expire <= time(NULL)) {
+	       QMessageBox::critical(NULL, i18n("Expired"), 
+				     i18n("Sorry -- your account has expired."), 
+				     i18n("&Ok"));
+	       return true;
+	  } else if (pwd->pw_expire - time(NULL) < warntime && !quietlog) {
+	       QString str;
+	       str.sprintf(i18n("Warning: your account expires on %s"), 
+			   ctime(&pwd->pw_expire));  // use locales
+	       QMessageBox::critical(NULL, i18n("Expired"), str, i18n("&Ok"));
+	  }
 
      return false;
 }
@@ -488,7 +485,7 @@ KGreeter::restrict_expired()
 bool
 KGreeter::restrict_nohome(){
      struct passwd *pwd;
-
+     
      pwd = getpwnam(greet->name);
      if (!pwd) return false;
      endpwent();
@@ -501,11 +498,13 @@ KGreeter::restrict_nohome(){
      lc = login_getpwclass(pwd);
      (void)seteuid(pwd->pw_uid);
      if (!*pwd->pw_dir || chdir(pwd->pw_dir) < 0) {
-       if (login_getcapbool(lc, "requirehome", 0)) {
-         QMessageBox::critical(NULL, i18n("No home"), i18n("Home directory not available"), i18n("&Ok"));
-         login_close(lc);
-         return true;
-       }
+	  if (login_getcapbool(lc, "requirehome", 0)) {
+	       QMessageBox::critical(NULL, i18n("No home"), 
+				     i18n("Home directory not available"), 
+				     i18n("&Ok"));
+	       login_close(lc);
+	       return true;
+	  }
      }
      (void)seteuid(0);
      login_close(lc);
@@ -522,7 +521,8 @@ KGreeter::restrict_nohome()
 
 
 void 
-KGreeter::go_button_clicked(){
+KGreeter::go_button_clicked()
+{
      greet->name = qstrdup(loginEdit->text());
      greet->password = qstrdup(passwdEdit->text());
      
@@ -534,15 +534,16 @@ KGreeter::go_button_clicked(){
 	  return;
      }
      // Set session argument:
-     verify->argv = parseArgs( verify->argv, sessionargBox->text( sessionargBox->currentItem()));
+     verify->argv = parseArgs( verify->argv, 
+			       sessionargBox->text( 
+				    sessionargBox->currentItem()));
      if (restrict_nologin() || restrict_expired() || restrict_nohome())
        SessionExit (d, OBEYSESS_DISPLAY, FALSE);
      save_wm();
-     qApp->desktop()->setCursor( waitCursor);
-     qApp->desktop()->grabMouse();
+     //qApp->desktop()->setCursor( waitCursor);
+     qApp->setOverrideCursor( waitCursor);
      hide();
      DeleteXloginResources( d, dpy);
-     qApp->desktop()->setCursor( arrowCursor);
      qApp->exit();
 }
 
@@ -665,11 +666,14 @@ GreetUser(
 	  sprintf(buf, "Startup program %s exited with non-zero status.\n"
 		  "Please contact your system administrator.\n",
 		 d->startup);
+	  qApp->restoreOverrideCursor();
 	  QMessageBox::critical( 0, "Login aborted", buf, "Retry");
 	  SessionExit (d, OBEYSESS_DISPLAY, FALSE);
      }              
      // Clean up and log user in:
      XKillClient( qt_xdisplay(), AllTemporary);
+     //qApp->desktop()->setCursor( arrowCursor);
+     qApp->restoreOverrideCursor();
      delete kdmcfg;
      delete myapp;
      return Greet_Success;
