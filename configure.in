@@ -128,6 +128,7 @@ AC_OUTPUT(Makefile \
 	kdisplay/doc/Makefile \
 	kfind/Makefile \
 	kfind/doc/Makefile \
+	kfind/pics/Makefile \
 	kfontmanager/Makefile \
 	kfontmanager/docs/Makefile \
 	klogout/Makefile \

@@ -74,4 +74,6 @@
 	updated kfm to kfm-0.8.1
 	re-introduced automake to kdebase
 	bugfixes for the configure.in
-
+	added XPM, GL and PAM tests to configure
+	added morph3d to kscreensavers
+	updated kfind to 0.3.2
