@@ -176,7 +176,10 @@ public:
      */
     inline bool isMenuBarHidden() {return !showMenubar;}
 
-    void handleViewMenu(bool);//CT 16Dec1998
+    /**
+     * Sets/unsets the HTML Mode
+     */
+    void handleViewMenu(bool _bHtmlMode);//CT 16Dec1998
 
 public slots:
     /**
@@ -715,13 +718,17 @@ protected:
     int kfmgui_width;
 
     /**
-     * Flag: false intill whole GUI is initianilized (sven)
+     * Flag: false untill whole GUI is initialized (sven)
      */
     bool GUI_ready;
     /**
      * Flag: true if current URL has local settings. (sven)
      */
     bool hasLocal;
+    /*
+     * Flag: true when viewing a HTML page.
+     */
+    bool bHtmlMode;
 };
 
 #endif

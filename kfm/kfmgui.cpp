@@ -253,10 +253,8 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("&Move to Trash"), 
 		      this, SLOT(slotTrash()), stdAccel.cut() );
     edit->insertItem( klocale->translate("&Delete"), this, 
-		      SLOT(slotDelete()) /*, CTRL+Key_Delete */);
-    // adding Key_Delete here prevents deleting chars in the QLineEdit
-    // When QLineEdit::del() is public, this will be fixed by something
-    // like the current slotSelectAll, testing the focus first.
+		      SLOT(slotDelete()), CTRL+Key_Delete);
+    // This can't be Key_Delete only. See slotDelete().
 
     edit->insertSeparator();
     edit->insertItem( klocale->translate("&Select"), this, 
@@ -622,21 +620,22 @@ void KfmGui::updateView()
 
 
 //CT 16Dec1998 -- handle the View menu according with the type of view
-void KfmGui::handleViewMenu(bool has_upURL) 
+void KfmGui::handleViewMenu(bool _bHtmlMode) 
 {
-  edit->setItemEnabled(edit->idAt( 2 ), has_upURL);
-  edit->setItemEnabled(edit->idAt( 3 ), has_upURL);
+  bHtmlMode = _bHtmlMode;
+  edit->setItemEnabled(edit->idAt( 2 ), !bHtmlMode);
+  edit->setItemEnabled(edit->idAt( 3 ), !bHtmlMode);
 
-  mview->setItemEnabled(mview->idAt( 0 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 2 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 5 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 6 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 7 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 8 ), has_upURL );
-  mview->setItemEnabled(mview->idAt( 11  ), !has_upURL );
-  mview->setItemEnabled(mview->idAt( 14 ), !has_upURL );
-  mview->setItemEnabled(mview->idAt( 15 ), !has_upURL );
-  mview->setItemEnabled(mview->idAt( 17 ), !has_upURL );
+  mview->setItemEnabled(mview->idAt( 0 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 2 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 5 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 6 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 7 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 8 ), !bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 10 ), !bHtmlMode ); // reload tree
+  mview->setItemEnabled(mview->idAt( 14 ), bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 15 ), bHtmlMode );
+  mview->setItemEnabled(mview->idAt( 17 ), bHtmlMode );
 }
 //CT
 
@@ -958,12 +957,14 @@ void KfmGui::slotSelectAll()
   KLined *lined = toolbarURL->getLined(TOOLBAR_URL_ID);
   // if the URL editor is focused, the user really intends to go to
   // the beginning of the line when they press CTRL-A (a la sh, emacs).  
-  if (focusWidget() == lined)
+  if ((focusWidget() == lined) || bHtmlMode)
   {
-      lined->setCursorPosition(0); 
-      // WORKAROUND FOR QT 1.41, which doesn't move the cursor
-      lined->deselect(); // this redraws it correctly but is a hack.
-      // this has been fixed in QT 1.42 (d->pmDirty = TRUE; was missing)
+      // Simulate a key event to the widget focused
+      // We use Key_Home because Ctrl+A calls this function !
+      // Using QLineEdit members methods don't work, since we don't 
+      // whether focusWidget() is a QLineEdit.
+      QKeyEvent e( Event_KeyPress, Key_Home, 0, 0);
+      QApplication::sendEvent( focusWidget(), &e);
   }
   else
     view->getActiveView()->select( 0L, true );
@@ -1410,6 +1411,20 @@ void KfmGui::slotPaste()
 
 void KfmGui::slotDelete()
 {
+  KLined *lined = toolbarURL->getLined(TOOLBAR_URL_ID);
+  // if the URL editor is focused, or if in html mode 
+  // (there might be a lineedit in the window itself)
+  // the user really intends to delete a char when he/she presses Delete.
+  if ((focusWidget() == lined) || bHtmlMode)
+  {
+      // QLineEdit::del() is private. This why we need to simulate an
+      // event. Might be different with Qt 2.0
+      // Well, no. Using QLineEdit members methods don't work, since we don't 
+      // whether focusWidget() is a QLineEdit.
+      QKeyEvent e( Event_KeyPress, Key_Delete, 0, 0);
+      QApplication::sendEvent( focusWidget(), &e);
+  }
+  else
     view->getActiveView()->slotDelete();
 }
 

@@ -1,3 +1,8 @@
+1999-01-14  David Faure  <faure@kde.org>
+
+	* kfmgui.*: Store bHtmlMode, useful to know which mode we're in.
+	Allow Ctrl+Delete for deleting files, improved Ctrl+A handling.
+
 1999-01-13  David Faure  <faure@kde.org>
 
 	* kiojob.cpp: Patch from Waldo Bastian. Now kfm copies/moves
