@@ -35,5 +35,7 @@ then
 	rm /usr/bin/kioslave
 fi
 
+#DEBHELPER#
+
 # Starting kdm
 /etc/init.d/kdm start
