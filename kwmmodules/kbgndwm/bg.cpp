@@ -273,7 +273,11 @@ void KBackground::doRandomize(bool fromTimer)
 	apply();
 
 	QString command;
-	command << "kbgwm_change_" << desk;
+	if ( oneDesktopMode )
+	  command = "kbgwm_change";
+	else
+	  command << "kbgwm_change_" << desk;
+
 	KWM::sendKWMCommand( command.data() );
 	return;
       }

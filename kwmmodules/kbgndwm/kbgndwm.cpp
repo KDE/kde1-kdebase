@@ -80,7 +80,10 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   applyDesktop( current );
 
   QString command;
-  command << "kbgwm_change_" << current;
+  if ( oneDesktopMode )
+    command = "kbgwm_change";
+  else
+    command << "kbgwm_change_" << current;
   KWM::sendKWMCommand( command.data() );
 }
 
@@ -177,7 +180,10 @@ void KBGndManager::commandReceived( QString com )
       applyDesktop( current );
 
       QString command;
-      command << "kbgwm_change_" << current;
+      if ( oneDesktopMode )
+	command = "kbgwm_change";
+      else
+	command << "kbgwm_change_" << current;
       KWM::sendKWMCommand( command.data() );
     }
 }
@@ -270,6 +276,13 @@ void KBGndManager::toggleOneDesktop()
     current = KWM::currentDesktop() - 1;
 
   applyDesktop( current );
+
+  QString command;
+  if ( oneDesktopMode )
+    command = "kbgwm_change";
+  else
+    command << "kbgwm_change_all";
+  KWM::sendKWMCommand( command.data() );
 }
 
 
