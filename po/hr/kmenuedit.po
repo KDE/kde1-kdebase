@@ -249,6 +249,3 @@ msgstr "Osobni:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Uobièajeni:"
-
-#~ msgid "&Reload"
-#~ msgstr "&Obnovi"

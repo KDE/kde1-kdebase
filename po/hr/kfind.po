@@ -347,12 +347,3 @@ msgstr "Ne prepoznajem vrstu arhive!"
 #: kfwin.cpp:496
 msgid "Error while creating child process!"
 msgstr "Gre¹ka prilikom stvaranja nasljednog (child) procesa!"
-
-#~ msgid "&Cut"
-#~ msgstr "&Izre¾i"
-
-#~ msgid "Properties"
-#~ msgstr "Svojstva"
-
-#~ msgid "Files"
-#~ msgstr "Datoteke"

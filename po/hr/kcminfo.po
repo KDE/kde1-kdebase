@@ -1,17 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#  Vladimir Vuksan <vuksan@veus.hr>, 1998.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-06-18 22:22+0200\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
-"Language-Team: Croatian\n"
+"Language-Team: Croatian <hr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: iso-8859-2\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:50
 msgid "&Memory"
@@ -43,11 +42,11 @@ msgstr "Zajednièka memorija"
 
 #: memory.cpp:37
 msgid "Buffer memory"
-msgstr "Meðumemorija"
+msgstr "Meðumemorija (buffer)"
 
 #: memory.cpp:45
 msgid "Swap memory"
-msgstr "Zamjenska memorija"
+msgstr "Zamjenska memorija (swap)"
 
 #: memory.cpp:53
 msgid "Free swap memory"
@@ -60,9 +59,8 @@ msgstr "%10ld bajtova  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
-#, fuzzy
 msgid "Not available"
-msgstr "nije dostupno"
+msgstr "Nije dostupno"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

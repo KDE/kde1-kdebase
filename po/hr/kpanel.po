@@ -108,9 +108,3 @@ msgstr "Oops!"
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne mogu staviti ovaj gumb na ploèu!"
-
-#~ msgid "Move"
-#~ msgstr "Premjesti"
-
-#~ msgid "Properties"
-#~ msgstr "Postavke"

@@ -302,33 +302,3 @@ msgstr "O KDE pomoæi"
 #: mainwidget.cpp:617
 msgid "&Add Bookmark"
 msgstr "&Dodaj bookmark"
-
-#~ msgid "Font Size"
-#~ msgstr "Velièina fonta"
-
-#~ msgid "Small"
-#~ msgstr "Mali"
-
-#~ msgid "Medium"
-#~ msgstr "Srednji"
-
-#~ msgid "Large"
-#~ msgstr "Veliki"
-
-#~ msgid "Fonts"
-#~ msgstr "Fontovi"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Razno"
-
-#~ msgid "&Reload"
-#~ msgstr "&Uèitaj Ponovo"
-
-#~ msgid "&Previous"
-#~ msgstr "&Prethodni"
-
-#~ msgid "&Next"
-#~ msgstr "Slj&edeæi"
-
-#~ msgid "Stop"
-#~ msgstr "Stani"
