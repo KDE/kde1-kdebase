@@ -1,0 +1,44 @@
+# KDE International Keyboard Config File for Estonian layout
+#
+# 08-06-1999
+
+[International Keyboard]
+Authors=Hasso Tepper <hasso@ewsound.estnet.ee>, Ville Hallik <Ville.Hallik@mail.ee>
+
+Comment=Estonian layout
+Comment[et]=Eesti klaviatuur
+
+Language=Estonian
+Language[et]=Eesti
+
+# There are no ISO-8859-* charset that works perfectly for estonian keymap,
+# so it seems to be better to not specify one at all.
+# Charset=ISO-8859-1
+
+Label=Et
+Locale=et
+
+[KeyboardMap]
+
+keysym0=grave,dead_caron,dead_tilde
+keysym1=2,2,quotedbl,at
+keysym2=3,3,numbersign,sterling
+keysym3=4,4,currency,dollar
+keysym4=6,6,ampersand
+keysym5=7,7,slash,braceleft
+keysym6=8,8,parenleft,bracketleft
+keysym7=9,9,parenright,bracketright
+keysym8=0,0,equal,braceright
+keysym9=minus,plus,question,backslash
+keysym10=equal,dead_acute,dead_grave
+keysym11=bracketleft,udiaeresis,Udiaeresis
+keysym12=bracketright,otilde,Otilde,section
+keysym13=semicolon,odiaeresis,Odiaeresis
+keysym14=apostrophe,adiaeresis,Adiaeresis,asciicircum
+keysym15=backslash,apostrophe,asterisk,onehalf
+keysym16=less,less,greater,bar,brokenbar
+keysym17=comma,comma,semicolon
+keysym18=period,period,colon
+keysym19=slash,minus,underscore
+keysym20=KP_Delete,KP_Delete,KP_Separator
+keysym21=e,e,E,EuroSign
