@@ -20,11 +20,11 @@ msgstr "标题行[&T]"
 
 #: main.cpp:68
 msgid "&Desktop"
-msgstr ""
+msgstr "桌面[&D]"
 
 #: main.cpp:74
 msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
-msgstr ""
+msgstr "用法: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:105
 msgid "Window manager style"
@@ -59,9 +59,7 @@ msgstr "标题行右边空间已满...请移去 '最大化' 按钮\n"
 #: titlebar.cpp:536
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr ""
-"标题行左边空间已满...\n"
-"请移去 '最小化' 按钮\n"
+msgstr "标题行左边空间已满...请移去 '最小化' 按钮\n"
 
 #: titlebar.cpp:569
 msgid ""
@@ -102,48 +100,42 @@ msgstr "非活动标题位图[&I]"
 
 #: titlebar.cpp:982
 msgid "Mouse action"
-msgstr ""
+msgstr "鼠标动作"
 
-#: titlebar.cpp:984
-msgid ""
-"LeftMouseButton double click\n"
-"    on titlebar does:"
-msgstr ""
-
+#
 #: titlebar.cpp:988
-#, fuzzy
 msgid "(Un)Maximize"
-msgstr "最大化"
+msgstr "最大化/恢复"
 
 #: titlebar.cpp:989
 msgid "Move"
 msgstr "移动"
 
+#
 #: titlebar.cpp:990
-#, fuzzy
 msgid "(Un)Shade"
-msgstr "渐变色"
+msgstr "渐变色/恢复"
 
 #: titlebar.cpp:991
 msgid "Iconify"
 msgstr ""
 
+#
 #: titlebar.cpp:992
-#, fuzzy
 msgid "(Un)Sticky"
-msgstr "粘附"
+msgstr "粘附/恢复"
 
 #: titlebar.cpp:993
 msgid "Resize"
-msgstr ""
+msgstr "改变大小"
 
 #: titlebar.cpp:994
 msgid "Restore"
-msgstr ""
+msgstr "恢复"
 
 #: titlebar.cpp:995
 msgid "Operations Menu"
-msgstr ""
+msgstr "操作菜单"
 
 #: windows.cpp:74
 msgid "Window movement"
@@ -167,15 +159,15 @@ msgstr "窗口放置策略"
 
 #: windows.cpp:86
 msgid "Smart"
-msgstr ""
+msgstr "智能"
 
 #: windows.cpp:88
 msgid "Cascade"
-msgstr ""
+msgstr "层叠"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "交互式"
 
 #: windows.cpp:92
 msgid "Random"
@@ -183,11 +175,11 @@ msgstr "随机"
 
 #: windows.cpp:94
 msgid "Manual"
-msgstr ""
+msgstr "手工"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "允许重叠"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -227,32 +219,36 @@ msgstr "毫秒"
 
 #: desktop.cpp:77
 msgid "Active desktop borders"
-msgstr ""
+msgstr "活动桌面边界"
 
 #: desktop.cpp:79
 msgid "Enable active desktop borders"
-msgstr ""
+msgstr "激活活动桌面边界"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr ""
+msgstr "在转换桌面后把鼠标移到桌面中心"
 
 #: desktop.cpp:87
 msgid "Dekstop switch delay:"
-msgstr ""
+msgstr "桌面转换的延迟时间:"
 
 #: desktop.cpp:100
 msgid "Magic Borders"
-msgstr ""
+msgstr "神奇边界"
 
 #: desktop.cpp:102
 msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Border Snap Zone:\n"
+"       (像素)"
 
 #: desktop.cpp:116
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
+"Window Snap Zone:\n"
+"       (像素)"

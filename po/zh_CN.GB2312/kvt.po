@@ -92,7 +92,7 @@ msgstr "显示菜单条[&M]"
 
 #: main.C:453 main.C:710
 msgid "Secure &keyboard"
-msgstr ""
+msgstr "安全键盘[&K]"
 
 #: main.C:455
 msgid "Scroll&bar"
@@ -128,6 +128,13 @@ msgid ""
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08"
 msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"KDE 桌面环境的终端模拟器\n"
+"基于 Robert Nation 编写的 rxvt-2.08"
 
 #: main.C:631 main.C:747
 msgid "&Show"
@@ -135,7 +142,7 @@ msgstr "显示[&S]"
 
 #: main.C:706
 msgid "Unsecure &keyboard"
-msgstr ""
+msgstr "取消安全键盘[&K]"
 
 #: main.C:717
 msgid "Terminal Options"
@@ -150,6 +157,8 @@ msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
 msgstr ""
+"新的颜色设置在取消安全键盘后会\n"
+"显示."
 
 #: main.C:1139
 msgid ""
@@ -159,79 +168,88 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"KDE 桌面环境的终端模拟器\n"
+"基于 Robert Nation 编写的 rxvt-2.08\n"
 
 #: main.C:1143
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "允许的参数是:\n"
 
 #: main.C:1144
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
 
 #: main.C:1145
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <name>           specify the display (server)\n"
 
 #: main.C:1146
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <spec>       the initial vt window geometry\n"
 
 #: main.C:1147
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <name>        specify pipe for vt100 printer\n"
 
 #: main.C:1148
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <colour>           background color\n"
 
 #: main.C:1149
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <colour>           foreground color\n"
 
 #: main.C:1150
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <fontname>       normal font\n"
 
 #: main.C:1151
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <size>           tiny, small, normal, large, huge\n"
 
 #: main.C:1152
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    set up kvt to mimic linux-console\n"
 
 #: main.C:1153
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               hide the menubar\n"
 
 #: main.C:1154
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             hide the scrollbar\n"
 
 #: main.C:1155
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
 
 #: main.C:1157
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Terminal type. Default is xterm.\n"
 
 #: main.C:1158
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Capture system console message\n"
 
 #: main.C:1159
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <text>                 name in icon or icon window\n"
 
 #: main.C:1160
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
 
 #: main.C:1162
 msgid ""
@@ -239,16 +257,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
 
 #: main.C:1164
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
 
 #: main.C:1165
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <number>              save number lines in scroll-back buffer\n"
 
 #: main.C:1166
 msgid ""
@@ -257,9 +280,15 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
 
 #: main.C:1170
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"

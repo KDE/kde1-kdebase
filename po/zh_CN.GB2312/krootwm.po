@@ -17,7 +17,7 @@ msgstr "错误: 模板不存在 '%s'"
 
 #: krootwm.C:184
 msgid "Help on desktop"
-msgstr "桌面的帮助"
+msgstr "关于桌面的帮助"
 
 #: krootwm.C:185
 msgid "Execute command"
@@ -29,15 +29,15 @@ msgstr "显示特性"
 
 #: krootwm.C:187
 msgid "Refresh desktop"
-msgstr "重绘桌面"
+msgstr "刷新桌面"
 
 #: krootwm.C:189
 msgid "Unclutter windows"
-msgstr ""
+msgstr "整理窗口"
 
 #: krootwm.C:190
 msgid "Cascade windows"
-msgstr ""
+msgstr "层叠放置窗口"
 
 #: krootwm.C:191
 msgid "Arrange icons"
@@ -57,7 +57,7 @@ msgstr "无法建立文件夹"
 
 #: krootwm.C:647
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:651
 msgid "Usage:"

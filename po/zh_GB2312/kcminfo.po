@@ -39,9 +39,8 @@ msgid "Buffer memory"
 msgstr "缓冲区内存"
 
 #: memory.cpp:45
-#, fuzzy
 msgid "Swap memory"
-msgstr "共享的内存"
+msgstr "交换区"
 
 #: memory.cpp:53
 msgid "Free swap memory"
@@ -55,7 +54,7 @@ msgstr "%10ld Bytes  = %8.2f MB"
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
 msgid "not available"
-msgstr ""
+msgstr "N/A"
 
 #: processor.cpp:29
 msgid "This system is not yet supported :-("

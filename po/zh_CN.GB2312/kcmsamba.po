@@ -12,4 +12,4 @@ msgstr "ÓÃ·¨: kcmsamba [-init | status]\n"
 
 #: main.cpp:68
 msgid "Samba"
-msgstr ""
+msgstr "Samba"

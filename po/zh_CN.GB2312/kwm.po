@@ -18,7 +18,7 @@ msgstr "kwm: 初始化发生错误; 中止\n"
 
 #: main.C:449
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:456
 msgid "Usage: "
@@ -98,15 +98,15 @@ msgstr "八"
 
 #: main.C:566
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "无名桌面"
 
 #: main.C:875
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "一些位图是不对的: ShapMode 取消\n"
 
 #: main.C:1193
 msgid "*** No Tasks ***"
-msgstr "*** 没有任何任务 ***"
+msgstr "*** 没有任务 ***"
 
 #: minicli.C:115
 msgid "Command:"
@@ -126,7 +126,7 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "下面列出的应用程序包含了未保存的数据,\n"
-"这些数据在下次进入时可能会丢失."
+"这些数据可能会丢失."
 
 #: logout.C:63
 msgid ""

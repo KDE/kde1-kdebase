@@ -8,7 +8,7 @@ msgstr ""
 
 #: backgnd.cpp:58
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "键入新的桌面的名称"
 
 #: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
@@ -16,25 +16,24 @@ msgstr "桌面"
 
 #: backgnd.cpp:166
 msgid "&Rename ..."
-msgstr ""
+msgstr "重命名[&R] ..."
 
 #: backgnd.cpp:192 colorscm.cpp:93
 msgid "Colors"
 msgstr "颜色"
 
 #: backgnd.cpp:219
-#, fuzzy
 msgid "&One Color"
-msgstr "颜色[&C]"
+msgstr "单色[&C]"
 
+#
 #: backgnd.cpp:236
-#, fuzzy
 msgid "&Two Color"
-msgstr "颜色[&C]"
+msgstr "双色[&C]"
 
 #: backgnd.cpp:255
 msgid "Set&up ..."
-msgstr ""
+msgstr "设置[&U] ..."
 
 #: backgnd.cpp:264
 msgid "Wallpaper"
@@ -42,20 +41,20 @@ msgstr "墙纸"
 
 #: backgnd.cpp:274
 msgid "Ti&led"
-msgstr ""
+msgstr "并列[&L]"
 
 #: backgnd.cpp:282
 msgid "&Centred"
-msgstr ""
+msgstr "放置在中间[&C]"
 
 #: backgnd.cpp:290
 msgid "&Scaled"
-msgstr ""
+msgstr "比例缩放[&S]"
 
+#
 #: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
-#, fuzzy
 msgid "No wallpaper"
-msgstr "墙纸"
+msgstr "没有墙纸"
 
 #: backgnd.cpp:334
 msgid "&Browse..."
@@ -65,90 +64,89 @@ msgstr ""
 msgid "Default"
 msgstr "缺省"
 
+#
 #: backgnd.cpp:863
-#, fuzzy
 msgid "Desktop names"
-msgstr "桌面"
+msgstr "桌面名称"
 
 #: backgnd.cpp:909
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "选择背景"
+msgstr "两个彩色背景"
 
 #: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "从上到下使用渐变色"
 
 #: backgnd.cpp:952
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "从右到左使用渐变色"
 
 #: backgnd.cpp:958
 msgid "Use &pattern"
-msgstr ""
+msgstr "使用花样[&P]"
 
 #: backgnd.cpp:985
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
 #: backgnd.cpp:996
 msgid "Pattern &name"
-msgstr ""
+msgstr "花样名[&N]"
 
 #: backgnd.cpp:1035
 msgid "Current"
-msgstr ""
+msgstr "当前的"
 
 #: backgnd.cpp:1095
 msgid "Filled"
-msgstr ""
+msgstr "填充的"
 
 #: backgnd.cpp:1098
 msgid "Fish net"
-msgstr ""
+msgstr "鱼网"
 
 #: backgnd.cpp:1101
 msgid "Triangles"
-msgstr ""
+msgstr "三角形"
 
+#
 #: backgnd.cpp:1104
-#, fuzzy
 msgid "Flowers"
-msgstr "颜色"
+msgstr "花朵"
 
 #: backgnd.cpp:1107
 msgid "Rattan"
-msgstr ""
+msgstr "Rattan"
 
 #: backgnd.cpp:1110
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Cobbled Pavement"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "色彩主题"
 
+#
 #: colorscm.cpp:130
-#, fuzzy
 msgid "Current scheme"
-msgstr "色彩主题"
+msgstr "当前的色彩主题"
 
+#
 #: colorscm.cpp:132
-#, fuzzy
 msgid "KDE default"
-msgstr "缺省"
+msgstr "KDE 缺省"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "添加[&A] ..."
 
 #: colorscm.cpp:153
 msgid "&Remove"
-msgstr ""
+msgstr "去掉[&R]"
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr ""
+msgstr "保存[&S]"
 
 #: colorscm.cpp:176
 msgid "Widget color"
@@ -160,12 +158,12 @@ msgstr "非活动窗口标题行"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "非活动窗口标题行文字"
+msgstr "非活动窗口标题文字"
 
+#
 #: colorscm.cpp:185
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "非活动窗口标题行"
+msgstr "非活动窗口标题行混色"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
@@ -175,10 +173,10 @@ msgstr "活动窗口标题行"
 msgid "Active title text"
 msgstr "活动窗口标题文字"
 
+#
 #: colorscm.cpp:188
-#, fuzzy
 msgid "Active title blend"
-msgstr "活动窗口标题行"
+msgstr "活动窗口标题行混色"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -208,10 +206,10 @@ msgstr "窗口文字"
 msgid "Contrast"
 msgstr "对比"
 
+#
 #: colorscm.cpp:238
-#, fuzzy
 msgid "&Low"
-msgstr "低"
+msgstr "低[&L]"
 
 #: colorscm.cpp:246
 msgid "High"
@@ -219,7 +217,7 @@ msgstr "高"
 
 #: colorscm.cpp:318
 msgid "Error removing"
-msgstr ""
+msgstr "Error removing"
 
 #: colorscm.cpp:319
 msgid ""
@@ -227,10 +225,12 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"这个色彩主题不能删除.\n"
+"也许你不能改变存放色彩主题的文件系统(没有权限)"
 
 #: colorscm.cpp:376
 msgid "Naming error"
-msgstr ""
+msgstr "命名错误"
 
 #: colorscm.cpp:377
 msgid ""
@@ -238,11 +238,13 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"请给新的色彩主题选择一个唯一的名字 . 你所键入\n"
+"的名字在色彩主题列表里以及有了 ."
 
+#
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "色彩主题"
+msgstr "添加一个色彩主题"
 
 #: savescm.cpp:32
 msgid ""
@@ -252,15 +254,20 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"请键入一个名字给即将添加到你的个人列表\n"
+"中的色彩主题.\n"
+"\n"
+"正在预览的的颜色将被拷贝到这个色彩主题\n"
+"中."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
 msgstr "忽略"
 
+#
 #: scrnsave.cpp:49
-#, fuzzy
 msgid "Save Screen"
-msgstr "锁住屏幕"
+msgstr "屏幕保护"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
@@ -270,44 +277,44 @@ msgstr "锁住屏幕"
 msgid "Screen Saver"
 msgstr "屏幕保护程序"
 
+#
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
-#, fuzzy
 msgid "No screensaver"
-msgstr "屏幕保护程序[&S]"
+msgstr "没有屏幕保护程序"
 
 #: scrnsave.cpp:207
 msgid "&Setup ..."
-msgstr ""
+msgstr "设置[&S]"
 
+#
 #: scrnsave.cpp:215
-#, fuzzy
 msgid "&Test"
-msgstr "文字"
+msgstr "测试[&T]"
 
 #: scrnsave.cpp:228
 msgid "Settings"
-msgstr "设定"
+msgstr "设置"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr ""
+msgstr "等待[&W]"
 
 #: scrnsave.cpp:258
 msgid "min."
-msgstr ""
+msgstr "分钟"
 
 #: scrnsave.cpp:264
 msgid "&Require password"
-msgstr ""
+msgstr "需要密码[&R]"
 
 #: scrnsave.cpp:272
 msgid "Priority"
-msgstr ""
+msgstr "优先级"
 
+#
 #: scrnsave.cpp:285
-#, fuzzy
 msgid "&High"
-msgstr "高"
+msgstr "高[&H]"
 
 #: scrnsave.cpp:294
 msgid "Low"
@@ -315,16 +322,16 @@ msgstr "低"
 
 #: general.cpp:216
 msgid "Fonts etc."
-msgstr ""
+msgstr "字体及其他"
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "以 Windows 95 的风格来显示控件"
 
+#
 #: general.cpp:236
-#, fuzzy
 msgid "Desktop fonts"
-msgstr "桌面"
+msgstr "桌面字体"
 
 #: general.cpp:248
 msgid "General font"
@@ -332,19 +339,19 @@ msgstr "一般字体"
 
 #: general.cpp:253
 msgid "Fixed font"
-msgstr ""
+msgstr "等宽字体"
 
 #: general.cpp:263
 msgid "Panel button font"
-msgstr ""
+msgstr "面板按钮字体"
 
 #: general.cpp:268
 msgid "Panel clock font"
-msgstr ""
+msgstr "面板时钟字体"
 
 #: main.cpp:62
 msgid "&Fonts etc."
-msgstr ""
+msgstr "字体及其他[&F]"
 
 #: main.cpp:65
 msgid "&Background"
@@ -364,7 +371,7 @@ msgstr "用法: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
 
 #: main.cpp:130
 msgid "Display settings"
-msgstr "显示设定"
+msgstr "显示设置"
 
 #: widgetcanvas.cpp:104 widgetcanvas.cpp:105
 msgid "Inactive window"
@@ -374,18 +381,18 @@ msgstr "非活动窗口"
 msgid "Active window"
 msgstr "活动窗口"
 
+#
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
 msgid "Selected text"
-msgstr "选择文字"
+msgstr "选中的文字"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "粗体[&B]"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "斜体[&I]"
 
 #: fontchooser.cpp:262
 msgid "default"

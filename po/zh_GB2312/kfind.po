@@ -20,7 +20,7 @@ msgstr "打开[&O]"
 
 #: kfindtop.cpp:124
 msgid "&Add to archive"
-msgstr "加至压缩文件[&A]"
+msgstr "添加到压缩文件[&A]"
 
 #: kfindtop.cpp:129
 msgid "&Properties"
@@ -42,10 +42,10 @@ msgstr "剪切[&C]"
 msgid "&Select All"
 msgstr "选择全部[&S]"
 
+#
 #: kfindtop.cpp:154
-#, fuzzy
 msgid "Unse&lect All"
-msgstr "选择全部[&S]"
+msgstr "取消选择[&L]"
 
 #: kfindtop.cpp:156
 msgid "&Invert Selection"
@@ -65,6 +65,12 @@ msgid ""
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
+"KFind %s\n"
+"find 应用程序的前端\n"
+"Miroslav Fl韉r <flidr@kky.zcu.cz>\n"
+"\n"
+"特别感谢 Stephan Kulow\n"
+"<coolo@kde.org>"
 
 #: kfindtop.cpp:193
 msgid "Start Search"
@@ -80,7 +86,7 @@ msgstr "停止搜寻"
 
 #: kfindtop.cpp:216
 msgid "Add to archive"
-msgstr "加在压缩文件中"
+msgstr "添加到压缩文件中"
 
 #: kfindtop.cpp:226
 msgid "Properties"
@@ -116,7 +122,7 @@ msgstr " 名称与位置 "
 
 #: kftabdlg.cpp:126
 msgid "and"
-msgstr "至"
+msgstr "和"
 
 #: kftabdlg.cpp:127
 msgid "month(s)"
@@ -168,27 +174,27 @@ msgstr "所有文件和文件夹"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "文件"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "文件夹"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "符号链接"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "特殊文件(套接字, 设备文件 ...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "可执行文件"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID 可执行文件"
 
 #: kftabdlg.cpp:247
 msgid "At Least"
@@ -200,7 +206,7 @@ msgstr "至多"
 
 #: kftabdlg.cpp:259
 msgid " Advanced "
-msgstr " 高级 "
+msgstr "高级"
 
 #: kftabdlg.cpp:492
 msgid "The date is not valid!!"
@@ -208,11 +214,11 @@ msgstr "无效的日期"
 
 #: kftabdlg.cpp:504
 msgid "The month(s) value isn't valid!!"
-msgstr "无效的月份值"
+msgstr "月数不对"
 
 #: kftabdlg.cpp:515
 msgid "The day(s) value isn't valid!!"
-msgstr "无效的天数值"
+msgstr "天数不对"
 
 #: kftabdlg.cpp:532
 msgid "The value in size isn't valid number!!"
@@ -220,7 +226,7 @@ msgstr "无效的文件大小"
 
 #: kfoptions.cpp:51
 msgid "Preferences"
-msgstr "偏好设定"
+msgstr "偏好设置"
 
 #: kfoptions.cpp:73
 msgid "File format:"
@@ -240,7 +246,7 @@ msgstr "浏览"
 
 #: kfoptions.cpp:93
 msgid "Plain Text"
-msgstr "一般文件"
+msgstr "纯文本文件"
 
 #: kfoptions.cpp:122
 msgid "Saving"
@@ -252,7 +258,7 @@ msgstr "建立压缩文件:"
 
 #: kfoptions.cpp:131
 msgid "Add to Archive:"
-msgstr "加在压缩文件中:"
+msgstr "添加到压缩文件中:"
 
 #: kfoptions.cpp:135
 msgid "Patterns:"
@@ -300,7 +306,7 @@ msgstr "删除文件"
 msgid ""
 "You have no permission\n"
 " to delete this file"
-msgstr "没有权限删除这个文件"
+msgstr "你没有权限删除这个文件"
 
 #: kfwin.cpp:316
 msgid ""
@@ -312,7 +318,7 @@ msgstr "无法删除选定的文件"
 msgid ""
 "You have no permission\n"
 " to delete this directory"
-msgstr "没有权限删除这个目录"
+msgstr "你没有权限删除这个目录"
 
 #: kfwin.cpp:339
 msgid ""

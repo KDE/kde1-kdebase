@@ -20,7 +20,7 @@ msgstr "无法打开: "
 
 #: helpwin.cpp:455 helpwin.cpp:464
 msgid "Oops!"
-msgstr "糟糕"
+msgstr "错误!"
 
 #: helpwin.cpp:463
 msgid "Unknown format: "
@@ -32,7 +32,7 @@ msgstr "无法运行或找不到 KFM"
 
 #: helpwin.cpp:1322
 msgid "Open this Link"
-msgstr "打开这项链接"
+msgstr "打开这个链接"
 
 #: helpwin.cpp:1323
 msgid "Add Bookmark"
@@ -265,6 +265,12 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"本程序以 GNU General Public License (GPL) 方式授权.\n"
+"KDEhelp 在适用的法律许可范围内不提供任何担保."
 
 #: mainwidget.cpp:201
 msgid "&Goto"

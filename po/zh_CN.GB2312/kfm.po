@@ -45,7 +45,7 @@ msgstr "离开[&Q]..."
 
 #: kfmgui.cpp:326
 msgid "&Move to Trash"
-msgstr "移至垃圾桶[&M]"
+msgstr "移至回收站[&M]"
 
 #: kfmgui.cpp:331
 msgid "&Select"
@@ -77,32 +77,32 @@ msgstr "显示树状目录[&E]"
 
 #: kfmgui.cpp:356
 msgid "&Visual Schnauzer"
-msgstr "小图标浏览[&V]"
+msgstr "小图标[&V]"
 
 #: kfmgui.cpp:358
 msgid "&HTML View"
-msgstr "&HTML 形式"
+msgstr "&HTML"
 
 #: kfmgui.cpp:361
 msgid "&Icon View"
-msgstr "图标形式[&I]"
+msgstr "大图标[&I]"
 
 #: kfmgui.cpp:363
 msgid "&Text View"
-msgstr "文字形式[&T]"
+msgstr "文字[&T]"
 
 #: kfmgui.cpp:365
 msgid "&Long View"
-msgstr "详细形式[&L]"
+msgstr "详细[&L]"
 
+#
 #: kfmgui.cpp:367
-#, fuzzy
 msgid "&Short View"
-msgstr "图标形式[&I]"
+msgstr "简单[&I]"
 
 #: kfmgui.cpp:373
 msgid "Rel&oad Tree"
-msgstr "重新载入树状目录[&O]"
+msgstr "重新载入目录树[&O]"
 
 #: kfmgui.cpp:375
 msgid "&Reload Document"
@@ -118,11 +118,11 @@ msgstr "观看页框原内容[&V]"
 
 #: kfmgui.cpp:382
 msgid "View Docu&ment Source"
-msgstr "观看文件原内容[&M]"
+msgstr "观看文件内容[&M]"
 
 #: kfmgui.cpp:393
 msgid "Show History"
-msgstr ""
+msgstr "显示历史列表"
 
 #: kfmgui.cpp:395
 msgid "Show Cache"
@@ -178,7 +178,7 @@ msgstr "缓存[&C]"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "上"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -267,6 +267,14 @@ msgid ""
 "Proxy Manager by Lars Hoss\n"
 "Lars.Hoss@munich.netsurf.de"
 msgstr ""
+"作者: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget 由 Martin Jones 完成\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager 由 Lars Hoss 完成\n"
+"Lars.Hoss@munich.netsurf.de"
 
 #: kfmgui.cpp:1325
 msgid "Document: Done"
@@ -313,7 +321,7 @@ msgstr "错误: 无法同时打开多个文件的特性"
 
 #: kfmtree.cpp:287 kfmview.cpp:527 root.cpp:1193
 msgid "Could not access Trash Bin"
-msgstr "无法读取垃圾桶"
+msgstr "无法读取回收站"
 
 #: kfmview.cpp:553 root.cpp:1088
 msgid "Can not paste into multiple directories"
@@ -332,6 +340,8 @@ msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
 msgstr ""
+"这个页面不可信任\n"
+"但是它包含一个到你的本地文件系统的链接."
 
 #: kfmview.cpp:842
 msgid "Symbolic Link"
@@ -404,7 +414,7 @@ msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
 msgstr ""
-"只能作用地硬盘上的\n"
+"只能用本地硬盘上的\n"
 "*.kdelnk 文件"
 
 #: kbind.cpp:1641
@@ -422,7 +432,7 @@ msgstr "这个 \"Link=....\" 项是空的"
 
 #: kbind.cpp:1685
 msgid "The config file has no \"Type=...\" line"
-msgstr "配置文件并无 \"Type=...\" 这一行"
+msgstr "配置文件中间没有 \"Type=...\" 这一行"
 
 #: kbind.cpp:1715 kbind.cpp:1866
 msgid "Could not access"
@@ -442,7 +452,7 @@ msgstr ""
 
 #: kbind.cpp:1822
 msgid "ERROR: No Terminal Setting"
-msgstr "错误: 没有终端设定"
+msgstr "错误: 没有终端设置"
 
 #: kbind.cpp:1913
 msgid "No mount point in *.kdelnk file"
@@ -474,7 +484,7 @@ msgstr "新窗口"
 
 #: kfmtree.cpp:223 main.cpp:239
 msgid "Move to Trash"
-msgstr "移至垃圾桶"
+msgstr "移至回收站"
 
 #: main.cpp:241
 msgid "Open with"
@@ -494,7 +504,7 @@ msgstr "链接"
 
 #: main.cpp:246
 msgid "Empty Trash Bin"
-msgstr "空垃圾桶"
+msgstr "空回收站"
 
 #: main.cpp:247
 msgid "Add to Bookmarks"
@@ -522,7 +532,7 @@ msgstr "标准字体"
 
 #: htmlopts.cpp:68
 msgid "Fixed Font"
-msgstr "固定字体"
+msgstr "等宽字体"
 
 #: htmlopts.cpp:214
 msgid "Background Color:"
@@ -542,20 +552,22 @@ msgstr "访问过的链接颜色:"
 
 #: htmlopts.cpp:246
 msgid "Change cursor over link."
-msgstr ""
+msgstr "在链接上改变光标."
 
 #: htmlopts.cpp:321
+#, fuzzy
 msgid "Horizontal Root Grid Spacing:"
-msgstr ""
+msgstr "Horizontal Root Grid Spacing:"
 
 #: htmlopts.cpp:335
-msgid "Vertical Root Grid Spacing:"
-msgstr ""
-
-#: bookmark.cpp:259
 #, fuzzy
+msgid "Vertical Root Grid Spacing:"
+msgstr "Vertical Root Grid Spacing:"
+
+#
+#: bookmark.cpp:259
 msgid "Could not write bookmark"
-msgstr "无法写入\n"
+msgstr "无法写书签文件"
 
 #: kfmprops.cpp:241
 msgid "Full Name"
@@ -563,7 +575,7 @@ msgstr "文件全名"
 
 #: kfmprops.cpp:259
 msgid "Is the Trash Bin"
-msgstr "是垃圾桶"
+msgstr "是回收站"
 
 #: kfmprops.cpp:266
 msgid "Is a Directory"
@@ -648,11 +660,11 @@ msgstr "其他"
 
 #: kfmprops.cpp:468
 msgid "Set UID"
-msgstr ""
+msgstr "设定 UID"
 
 #: kfmprops.cpp:469
 msgid "Set GID"
-msgstr ""
+msgstr "设定 GID"
 
 #: kfmprops.cpp:470
 msgid "Sticky"
@@ -706,7 +718,7 @@ msgstr "工作目录"
 
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "窗口标题"
 
 #: kfmprops.cpp:715
 msgid "Run in terminal"
@@ -755,7 +767,7 @@ msgstr "说明"
 
 #: kfmprops.cpp:1250
 msgid "Name ( in your language )"
-msgstr "名称 ( 用您的语言 )"
+msgstr "名称 ( 用你的语言 )"
 
 #: kfmprops.cpp:1479
 msgid "Pattern ( example: *.html;*.HTML; )"
@@ -826,7 +838,7 @@ msgid ""
 "Authorization failed"
 msgstr ""
 "没有 ~/.kde/share/apps/kfm/magic\n"
-"确认失败"
+"授权失败"
 
 #: kfmserver.cpp:294
 msgid ""
@@ -834,7 +846,7 @@ msgid ""
 "Authorization failed"
 msgstr ""
 "~/.kde/share/apps/kfm/magic 损坏\n"
-"确认失败"
+"授权失败"
 
 #: kfmserver.cpp:302
 msgid ""
@@ -842,14 +854,18 @@ msgid ""
 "using a wrong password"
 msgstr ""
 "有人尝试使用错误的密码\n"
-"来确认自己的身份"
+"来认证自己的身份"
 
 #: root.cpp:661
+#, fuzzy
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"不能执行请求.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
 
 #: root.cpp:696
 msgid "Internal Error: desktopDir is malformed"
@@ -901,10 +917,10 @@ msgstr ""
 "不正确的 URL\n"
 "%s"
 
+#
 #: kiojob.cpp:249
-#, fuzzy
 msgid "Can only make links on local file system"
-msgstr "只能执行本地程序\n"
+msgstr "只能在本地文件系统里建立连接"
 
 #: kiojob.cpp:272 kiojob.cpp:291
 #, c-format
@@ -921,7 +937,7 @@ msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr ""
-"无法建立符号链接到\n"
+"无法建立符号连接到\n"
 "%s"
 
 #: kiojob.cpp:377
@@ -983,7 +999,7 @@ msgid ""
 msgstr ""
 "无法读取\n"
 "%s\n"
-"文件不存在或拒绝读取"
+"文件不存在或拒绝存取"
 
 #: kiojob.cpp:1217
 #, c-format
@@ -994,7 +1010,7 @@ msgid ""
 msgstr ""
 "无法写入\n"
 "%s\n"
-"或许是拒绝读取"
+"或许是拒绝存取"
 
 #: kiojob.cpp:1226 kiojob.cpp:1357
 #, c-format
@@ -1003,14 +1019,16 @@ msgid ""
 "%s"
 msgstr ""
 "无法和 %s \n"
-"建立 Socket"
+"建立套接字"
 
 #: kiojob.cpp:1234 kiojob.cpp:1365
 #, fuzzy, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
-msgstr "未知的关联"
+msgstr ""
+"未知的主机在\n"
+"%s"
 
 #: kiojob.cpp:1242 kiojob.cpp:1373
 #, c-format
@@ -1028,9 +1046,9 @@ msgid ""
 "%s\n"
 "is not implemented yet."
 msgstr ""
-"要求的动作\n"
+"请求的动作\n"
 "%s\n"
-"尚未被实现."
+"尚未实现."
 
 #: kiojob.cpp:1266
 #, c-format
@@ -1107,7 +1125,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"无法安装设备\n"
+"无法 mount 设备\n"
 "错误纪录:\n"
 "\n"
 "%s"
@@ -1148,15 +1166,16 @@ msgstr ""
 "无法删除目录\n"
 "%s"
 
+#
 #: kiojob.cpp:1758
-#, fuzzy, c-format
+#, c-format
 msgid "Mounting %s ..."
-msgstr "工作中 ..."
+msgstr "正在 mount %s ..."
 
 #: kiojob.cpp:1760
 #, c-format
 msgid "Unmounting %s ..."
-msgstr ""
+msgstr "正在 unmount %s ..."
 
 #: kiojob.cpp:1788
 #, c-format
@@ -1165,7 +1184,7 @@ msgstr "取回 %s 列表"
 
 #: kiojob.cpp:2021
 msgid "Segmentation fault in io subprocess"
-msgstr "I/O 子进程发生 Segmentation fault"
+msgstr "I/O 子进程 Segmentation fault"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1237,7 +1256,7 @@ msgstr "服务器:"
 
 #: useragentdlg.cpp:31
 msgid "login as:"
-msgstr "登录:"
+msgstr "登录为:"
 
 #: useragentdlg.cpp:52
 msgid "Known bindings:"
@@ -1245,7 +1264,7 @@ msgstr "已知的关联"
 
 #: kproxydlg.cpp:13
 msgid "Don't forget to save your settings!"
-msgstr "别忘了保存设定!"
+msgstr "别忘了保存设置!"
 
 #: kproxydlg.cpp:42
 msgid "No Proxy for:"
@@ -1253,11 +1272,11 @@ msgstr "以下不采用代理:"
 
 #: kkfmoptdlg.cpp:19
 msgid "&Proxy"
-msgstr ""
+msgstr "代理[&P]"
 
 #: kkfmoptdlg.cpp:21
 msgid "User &Agent"
-msgstr ""
+msgstr "用户代理[&A]"
 
 #: kkfmoptdlg.cpp:24
 msgid "&Fonts"
@@ -1270,11 +1289,11 @@ msgstr "颜色[&C]"
 #: kkfmoptdlg.cpp:30
 #, fuzzy
 msgid "&Other"
-msgstr "其他"
+msgstr "其他[&O]"
 
 #: kkfmoptdlg.cpp:50
 msgid "KFM Browser Settings"
-msgstr "KFM 浏览器设定"
+msgstr "KFM 浏览器设置"
 
 #: kfmprops.h:73
 msgid "&General"

@@ -10,15 +10,15 @@ msgstr ""
 msgid "&Reload"
 msgstr "重新载入[&R]"
 
+#
 #: kmenuedit.cpp:68
-#, fuzzy
 msgid "Change &Menuname"
-msgstr "改变菜单名"
+msgstr "改变菜单名[&M]"
 
+#
 #: kmenuedit.cpp:69
-#, fuzzy
 msgid "Reload &Filetypes"
-msgstr "重新载入菜单"
+msgstr "重新载入文件类型[&F]"
 
 #: kmenuedit.cpp:76
 msgid "by"
@@ -33,10 +33,12 @@ msgid ""
 "\n"
 "Do you want to save your changes ?"
 msgstr ""
+"\n"
+"要保存你作的改变吗 ?"
 
 #: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
 msgid "EMPTY"
-msgstr "空的"
+msgstr "空"
 
 #: kmenuedit.cpp:335
 msgid "Reload Menus"
@@ -47,7 +49,7 @@ msgid ""
 "Reloading the menus will discard all changes.\n"
 "Are you sure you want to reload ?"
 msgstr ""
-"重新载入菜单会忽略掉所有变动.\n"
+"重新载入菜单会放弃所有变动.\n"
 "确定要重新载入吗?"
 
 #: button.cpp:209 main.cpp:77 main.cpp:90
@@ -88,7 +90,7 @@ msgstr "警告 !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"
-msgstr "如果你删除这个按钮, 将会失去底下所有的子菜单"
+msgstr "如果你删除这个按钮, 将会失去所有的子菜单"
 
 #: confmenu.cpp:281
 msgid "Wrong filename"
@@ -145,7 +147,7 @@ msgstr "应用程序"
 
 #: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
 msgid "Swallow"
-msgstr ""
+msgstr "Swallow"
 
 #: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
 msgid "Link"
@@ -195,19 +197,19 @@ msgstr "终端选项:"
 msgid "Binary Pattern:"
 msgstr "二进制模式:"
 
+#
 #: entrydialog.cpp:300
-#, fuzzy
 msgid "Application to swallow:"
-msgstr "应用程序"
+msgstr "要 swallow 的应用程序"
 
+#
 #: entrydialog.cpp:306
-#, fuzzy
 msgid "Title of application:"
-msgstr "应用程序"
+msgstr "应用程序标题"
 
 #: entrydialog.cpp:312
 msgid "Application to execute on button press:"
-msgstr ""
+msgstr "在按钮按下后执行的应用程序:"
 
 #: entrydialog.cpp:342
 msgid "URL:"
@@ -231,7 +233,7 @@ msgstr "文件系统类型:"
 
 #: entrydialog.cpp:415
 msgid "Unmount Icon:"
-msgstr "拆卸设备图标:"
+msgstr "Unmount 图标:"
 
 #: MenuNameDialog.cpp:21
 msgid "Change Menunames"

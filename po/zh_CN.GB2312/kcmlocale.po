@@ -16,7 +16,7 @@ msgstr "用法: kcmlocale [-init | language]\n"
 
 #: main.cpp:79
 msgid "Locale settings"
-msgstr "地区设定"
+msgstr "地区设置"
 
 #: locale.cpp:45
 msgid "Language"
@@ -40,12 +40,12 @@ msgstr "没有名称!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "应用语言设定"
+msgstr "应用此语言设置"
 
 #: locale.cpp:182
 msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
 msgstr ""
-"改变语言设定只会影响到新打开的应用程序.\n"
-"要改变所有程序的语言设定 , 必须先 logout."
+"改变语言设置只会影响到新打开的应用程序.\n"
+"要改变所有程序的语言设置 , 必须先退出 KDE ."

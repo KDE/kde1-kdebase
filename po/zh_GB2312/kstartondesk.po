@@ -8,7 +8,7 @@ msgstr ""
 
 #: kstartondesk.C:72
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: kstartondesk.C:76
 msgid "Usage:"
@@ -16,16 +16,16 @@ msgstr "用法:"
 
 #: kstartondesk.C:78
 msgid "command "
-msgstr ""
+msgstr "命令 "
 
 #: kstartondesk.C:79
 msgid "title "
-msgstr ""
+msgstr "标题 "
 
 #: kstartondesk.C:80
 msgid "desktop"
-msgstr ""
+msgstr "桌面"
 
 #: kstartondesk.C:82
 msgid "Example"
-msgstr ""
+msgstr "例子"

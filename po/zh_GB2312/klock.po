@@ -12,7 +12,7 @@ msgstr "Banner"
 
 #: banner.cpp:84
 msgid "Setup kbanner"
-msgstr "设定 kbanner"
+msgstr "设置 kbanner"
 
 #: banner.cpp:134 blankscrn.cpp:76
 msgid "Color:"
@@ -40,6 +40,10 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
+"Banner 版本 0.1\n"
+"\n"
+"由 Martin R. Jones 编写 , 1996\n"
+"mjones@kde.org"
 
 #: banner.cpp:461
 msgid "KDE is great"
@@ -51,7 +55,7 @@ msgstr "Bat"
 
 #: bat.cpp:537
 msgid "Setup KBat"
-msgstr "设定 KBat"
+msgstr "设置 KBat"
 
 #: bat.cpp:564
 msgid "Number of bats:"
@@ -69,6 +73,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 , Sun Microsystems\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave"
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
@@ -76,7 +85,7 @@ msgstr "空白屏幕"
 
 #: blankscrn.cpp:67
 msgid "Setup kblankscrn"
-msgstr "设定 kblankscrn"
+msgstr "设置 kblankscrn"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -104,11 +113,11 @@ msgstr "抱歉. 这个屏幕保护程序需要彩色显示器"
 
 #: blob.cpp:458
 msgid "Setup Blob Saver"
-msgstr "设定 Blob"
+msgstr "设置 Blob"
 
 #: blob.cpp:468
 msgid "Frame Show sec."
-msgstr ""
+msgstr "显示秒数"
 
 #: blob.cpp:480
 msgid "Algorithm"
@@ -125,42 +134,46 @@ msgid ""
 "written by Tiaan Wessels 1997\n"
 "tiaan@netsys.co.za"
 msgstr ""
+"Blobsaver 版本 0.1\n"
+"\n"
+"由 Tiaan Wessels 编写, 1997\n"
+"tiaan@netsys.co.za"
 
 #: blob.cpp:606
 msgid "Blobs"
-msgstr ""
+msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
+#
 #: bouboule.cpp:1005
-#, fuzzy
 msgid "Setup KBouboule"
-msgstr "设定 KFlame"
+msgstr "设置 KBouboule"
 
+#
 #: bouboule.cpp:1032
-#, fuzzy
 msgid "Number of points:"
-msgstr "蝙蝠数目:"
-
-#: bouboule.cpp:1046
-#, fuzzy
-msgid "Point size:"
 msgstr "点数:"
+
+#
+#: bouboule.cpp:1046
+msgid "Point size:"
+msgstr "点大小:"
 
 #: bouboule.cpp:1060
 msgid "Color-change frequency:"
-msgstr ""
+msgstr "彩色改变的频率"
 
 #: bouboule.cpp:1077
 msgid "3D mode"
-msgstr ""
+msgstr "3D 方式"
 
+#
 #: bouboule.cpp:1223
-#, fuzzy
 msgid "About Bouboule"
-msgstr "关于 Blob"
+msgstr "关于 Bouboule"
 
 #: bouboule.cpp:1224
 msgid ""
@@ -170,15 +183,20 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"由 Cedric Tefft 移植到 kscreensave"
 
+#
 #: flame.cpp:310
-#, fuzzy
 msgid "Flame"
-msgstr "关于 Flame"
+msgstr "Flame"
 
 #: flame.cpp:397
 msgid "Setup KFlame"
-msgstr "设定 KFlame"
+msgstr "设置 KFlame"
 
 #: flame.cpp:423
 msgid "Max Levels:"
@@ -200,6 +218,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Flame 版本 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: forest.cpp:206
 msgid "Forest"
@@ -207,7 +230,7 @@ msgstr "Forest"
 
 #: forest.cpp:278
 msgid "Setup KForest"
-msgstr "设定 KForest"
+msgstr "设置 KForest"
 
 #: forest.cpp:304
 msgid "Num of Trees:"
@@ -225,14 +248,19 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave"
 
 #: hop.cpp:226
 msgid "Hop"
-msgstr ""
+msgstr "Hop"
 
 #: hop.cpp:311
 msgid "Setup KHop"
-msgstr "设定 KHop"
+msgstr "设置 KHop"
 
 #: hop.cpp:337
 msgid "Samecolor Pixels:"
@@ -254,6 +282,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Hop 版本 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave"
 
 #: laser.cpp:333
 msgid "Laser"
@@ -261,7 +294,7 @@ msgstr "Laser"
 
 #: laser.cpp:393
 msgid "Setup KLaser"
-msgstr "设定 KLaser"
+msgstr "设置 KLaser"
 
 #: laser.cpp:482
 msgid "About Laser"
@@ -275,6 +308,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Laser 版本 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: lines.cpp:116
 msgid "Lines"
@@ -282,7 +320,7 @@ msgstr "线条"
 
 #: lines.cpp:134
 msgid "Setup klines"
-msgstr "设定 klines"
+msgstr "设置 klines"
 
 #: lines.cpp:142 polygon.cpp:93
 msgid "Length:"
@@ -311,15 +349,19 @@ msgid ""
 "written by Dirk Staneker 1997\n"
 "dirk.stanerker@student.uni-tuebingen.de"
 msgstr ""
+"Lines 版本 0.1.1\n"
+"\n"
+"由 Dirk Staneker 编写 , 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
 
+#
 #: lissie.cpp:241
-#, fuzzy
 msgid "Lissie"
-msgstr "关于 Lissie"
+msgstr "Lissie"
 
 #: lissie.cpp:327
 msgid "Setup KLissie"
-msgstr "设定 KLissie"
+msgstr "设置 KLissie"
 
 #: lissie.cpp:353
 msgid "Num of Lissies:"
@@ -337,6 +379,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave."
 
 #: main.cpp:280
 #, c-format
@@ -357,7 +404,7 @@ msgstr ""
 
 #: main.cpp:312
 msgid "Shadow Passwords"
-msgstr ""
+msgstr "Shadow Passwords"
 
 #: main.cpp:470
 #, c-format
@@ -387,6 +434,22 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
 
 #: morph3d.cpp:839 space.cpp:419
 msgid "GL can not render with root visual\n"
@@ -398,7 +461,7 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1015
 msgid "Setup KMorph3d"
-msgstr "设定 KMorph3d"
+msgstr "设置 KMorph3d"
 
 #: morph3d.cpp:1031
 msgid "Object Type:"
@@ -416,6 +479,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave."
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -423,7 +491,7 @@ msgstr "多边形"
 
 #: polygon.cpp:85
 msgid "Setup kpolygon"
-msgstr "设定 kpolygon"
+msgstr "设置 kpolygon"
 
 #: polygon.cpp:107
 msgid "Vertices:"
@@ -440,6 +508,10 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
+"Polygon 版本 0.1\n"
+"\n"
+"由 Martin R. Jones 编写, 1996\n"
+"mjones@kde.org"
 
 #: pyro.cpp:439
 msgid "Pyro"
@@ -447,7 +519,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
-msgstr "设定 KPyro"
+msgstr "设置 KPyro"
 
 #: pyro.cpp:529 rock.cpp:575
 msgid "Number:"
@@ -469,6 +541,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Pyro 版本 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: rock.cpp:441
 msgid "Rock"
@@ -476,7 +553,7 @@ msgstr "Rock"
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "设定 krock"
+msgstr "设置 krock"
 
 #: rock.cpp:589
 msgid "Move"
@@ -498,6 +575,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Rock 版本 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"由 Martin Jones 移植到 kscreensave."
 
 #: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
@@ -509,21 +591,21 @@ msgstr "失败"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Science"
 
+#
 #: science.cpp:386
-#, fuzzy
 msgid "Setup Science"
-msgstr "设定 klines"
+msgstr "设置 Science"
 
 #: science.cpp:413
 msgid "Intensity:"
-msgstr ""
+msgstr "张力:"
 
+#
 #: science.cpp:544
-#, fuzzy
 msgid "About Science"
-msgstr "关于 Lines"
+msgstr "关于 Science"
 
 #: science.cpp:545
 msgid ""
@@ -532,6 +614,10 @@ msgid ""
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
+"Science 版本 0.2beta\n"
+"\n"
+"由 Rene Beutler 编写, 1998\n"
+"rbeutler@g26.ethz.ch"
 
 #: slip.cpp:293
 msgid "Slip"
@@ -539,7 +625,7 @@ msgstr "滑动(Slip)"
 
 #: slip.cpp:366
 msgid "Setup KSlip"
-msgstr "设定 KSlip"
+msgstr "设置 KSlip"
 
 #: slip.cpp:392
 msgid "Batchcount:"
@@ -557,24 +643,29 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave."
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Space (GL)"
 
+#
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "设定 KSlip"
+msgstr "设置 KSpace"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Warp Interval:"
 
+#
 #: space.cpp:685
-#, fuzzy
 msgid "About KSpace"
-msgstr "关于 Slip"
+msgstr "关于 KSpace"
 
 #: space.cpp:687
 msgid ""
@@ -582,6 +673,9 @@ msgid ""
 "Copyright (c) 1998\n"
 "Bernd Johannes Wuebben <wuebben@kde.org>"
 msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
 
 #: swarm.cpp:257
 msgid "Swarm"
@@ -589,7 +683,7 @@ msgstr "Swarm"
 
 #: swarm.cpp:329
 msgid "Setup KSwarm"
-msgstr "设定 KSwarm"
+msgstr "设置 KSwarm"
 
 #: swarm.cpp:355
 msgid "Number of Bees:"
@@ -607,3 +701,8 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"由 Emanuel Pirker 移植到 kscreensave."

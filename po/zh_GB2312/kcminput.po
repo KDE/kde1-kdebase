@@ -28,11 +28,11 @@ msgstr "加速"
 
 #: mouse.cpp:81
 msgid "Threshold"
-msgstr ""
+msgstr "加速阈值"
 
 #: mouse.cpp:84
 msgid "Button mapping"
-msgstr "按钮对应"
+msgstr "鼠标按钮对应"
 
 #: mouse.cpp:86
 msgid "Right handed"
