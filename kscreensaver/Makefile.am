@@ -12,7 +12,7 @@ bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	kforest.kss klock kblob.kss kbouboule.kss kscience.kss \
 	kattraction.kss kslidescreen.kss kbsod.kss
 
-EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss kpipes.kss
+EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss kpipes.kss kmatrix.kss
 
 EXTRA_DIST = kscreensaver.xpm mini-kscreensaver.xpm kscience.gif kscience-small.gif kscreensave-0.3.3.lsm kscreensaver.pam
 
@@ -20,6 +20,9 @@ BASE_SRCS = main.cpp xautolock.cpp saver.cpp passwd.cpp xlock.cpp \
 	    helpers.cpp xs_colors.c xs_hsv.c xs_visual.c
 
 SUBDIRS = pixmaps bitmaps
+
+kmatrix_kss_SOURCES = $(BASE_SRCS) matrix.cpp
+kmatrix_kss_LDADD= $(LDADD) $(XPMLIB)
 
 kbsod_kss_SOURCES = $(BASE_SRCS) bsod.cpp
 kbsod_kss_LDADD= $(LDADD) $(XPMLIB)
@@ -72,7 +75,7 @@ METASOURCES = main.moc saver.moc polygon.moc banner.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
 		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc \
 		kgroupbox.moc science.moc pipes.moc attraction.moc \
-        slidescreen.moc bsod.moc
+        slidescreen.moc bsod.moc matrix.moc
 
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
@@ -80,7 +83,8 @@ noinst_HEADERS = saver.h polygon.h banner.h\
 		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h main.h \
 		xautolock.h xlockmore.h mode.h helpers.h morph3d.h pipes.h \
 		attraction.h xs_colors.h xs_hsv.h xs_yarandom.h xs_utils.h \
-        slidescreen.h amiga.xpm atari.xbm bsod.h mac.xbm xs_visual.h 
+        slidescreen.h amiga.xpm atari.xbm bsod.h mac.xbm xs_visual.h \
+        matrix.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot *.cpp *.h && mv messages.po ../po/klock.pot
