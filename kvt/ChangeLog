@@ -1,9 +1,11 @@
 since kvt-0.18.5
-  - HAVE_SETUPTERM used 
+  - a Patch for FreeBSD from Kevin Street <street@iName.com>
+    FreeBSD has setupterm in libmytinfo (bmg)
+  - HAVE_SETUPTERM used (bmg)
   - Now kvt searches again a list of TERM-entries and takes the first
     (`best') available.  This should minimize problems with
     unincomplete or antiquated terminfo/termcap databases. (This is
-    based on curses.)
+    based on curses.) (bmg)
  - changed the layouting of the terminal-dialog. (bmg)
 
 since kvt-0.18.4
