@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-04-17 15:25 MET DST\n"
+"PO-Revision-Date: 1998-06-01 09:08 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,13 +78,12 @@ msgid "Titlebar appearance"
 msgstr "Vzhled titulku"
 
 #: titlebar.cpp:928
-#, fuzzy
 msgid "Shaded Vertically"
-msgstr "Maximalizuj vertikálnì"
+msgstr "Stínované vertikálnì"
 
 #: titlebar.cpp:930
 msgid "Shaded Horizontally"
-msgstr ""
+msgstr "Stínované horizontálnì"
 
 #: titlebar.cpp:934
 msgid "Plain"
@@ -167,14 +166,12 @@ msgid "Opaque"
 msgstr "Neprùhledný"
 
 #: windows.cpp:79
-#, fuzzy
 msgid "Window resize"
-msgstr "&Vlastnosti okna"
+msgstr "Zmìna velikosti okna"
 
 #: windows.cpp:80
-#, fuzzy
 msgid "With animation"
-msgstr "Animace titulku"
+msgstr "S animací"
 
 #: windows.cpp:85
 msgid "Placement policy"
@@ -229,14 +226,12 @@ msgid "Focus follows mouse"
 msgstr "Okno pod my¹í je aktivní"
 
 #: windows.cpp:120
-#, fuzzy
 msgid "Classic focus follows mouse"
-msgstr "Okno pod my¹í je aktivní"
+msgstr "Okno pod my¹í je aktivní (klasické)"
 
 #: windows.cpp:122
-#, fuzzy
 msgid "Classic sloppy focus"
-msgstr "Kliknout k aktivaci"
+msgstr "Aktivace kliknutím (klasická)"
 
 #: windows.cpp:131
 msgid ""
@@ -285,9 +280,3 @@ msgid ""
 msgstr ""
 "Zóna zarovnání\n"
 "okna (v bodech)"
-
-#~ msgid "Shaded"
-#~ msgstr "Stínovaný"
-
-#~ msgid "Resize Animation"
-#~ msgstr "Animace pøi zmìnì velikosti"

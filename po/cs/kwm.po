@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
 "POT-Creation-Date: 1998-05-30 13:16+0200\n"
-"PO-Revision-Date: 1998-05-14 17:46 MET DST\n"
+"PO-Revision-Date: 1998-06-01 08:57 MET DST\n"
 "Last-Translator: Miroslav Flídr  <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,13 @@ msgid ""
 "Anyway, if you prefer modern windowmanagement, please choose one of the \n"
 "recommended focus policies like ClickToFocus or FocusFollowMouse instead."
 msgstr ""
+"Chcete se pøepnout do jiného okna. Bohu¾el jste si ale vybral(a) jednu \n"
+"z klasických metod získávání fokusu, která toto nedovoluje. Tyto metody nejsou\n"
+"implementovány, kvùli tomu ¾e dávají smysl, ale kvùli kompatabilitì. Prostì, \n"
+"aby se i staøí u¾ivatelé unixù cítili komfortnì s KDE. ;-)\n"
+"\n"
+"V pøípadì, ¾e dáváte pøednost moderní správì oken, vyberte si prosím místo ní \n"
+"jednu z doporuèených variant získávání fokusu jako ClickToFocus nebo FocusFollowMouse."
 
 #: main.C:491
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -127,9 +134,8 @@ msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
 
 #: main.C:1043
-#, fuzzy
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Nìkteré pixmapy nejsou korektní: ShapeMode vypnut\n"
+msgstr "Nìkteré pixmapy nejsou korektní: GimmickMode vypnut\n"
 
 #: main.C:1281
 msgid "*** No Tasks ***"
@@ -141,7 +147,7 @@ msgstr "Pøíkaz:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Ouha!"
 
 #: logout.C:36 taskmgr.C:107
 msgid "Logout"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1998-05-30 17:26+0200\n"
-"PO-Revision-Date: 1998-05-14 17:58 MET DST\n"
+"PO-Revision-Date: 1998-06-01 09:01 MET DST\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -600,26 +600,24 @@ msgid "Setup Science"
 msgstr "Nastavení Science"
 
 #: science.cpp:580
-#, fuzzy
 msgid "Mode:"
-msgstr "Støední:"
+msgstr "Mód::"
 
 #: science.cpp:585
 msgid "Whirl"
-msgstr ""
+msgstr "Otáèení"
 
 #: science.cpp:586
-#, fuzzy
 msgid "Sphere"
-msgstr "Rychlost:"
+msgstr "Sféra"
 
 #: science.cpp:598
 msgid "Inverse"
-msgstr ""
+msgstr "Inverze"
 
 #: science.cpp:607
 msgid "Gravity"
-msgstr ""
+msgstr "Tí¾e"
 
 #: science.cpp:632
 msgid "Intensity:"
@@ -627,21 +625,20 @@ msgstr "Intenzita:"
 
 #: science.cpp:660
 msgid "Motion:"
-msgstr ""
+msgstr "Pohyb:"
 
 #: science.cpp:845
 msgid "About Science"
 msgstr "Informace o Science"
 
 #: science.cpp:846
-#, fuzzy
 msgid ""
 "Science Version 0.24.2 beta\n"
 "\n"
 "written by Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
 msgstr ""
-"Science - verze 0.2beta\n"
+"Science - verze 0.24.2 beta\n"
 "\n"
 "napsal Rene Beutler 1998\n"
 "rbeutler@g26.ethz.ch"
