@@ -17,6 +17,9 @@
 #include <qcursor.h>
 #include <sys/time.h>  
 
+//CT 17mar98
+#include <stdlib.h>
+
 #include "manager.h"
 #include <kwm.h>
 
@@ -40,7 +43,6 @@ void resizecalc_l(Client *c, int x, int y);
 void resizecalc_r(Client *c, int x, int y); 
 void resizecalc_t(Client *c, int x, int y); 
 void resizecalc_b(Client *c, int x, int y); 
-
 
 
 void resizecalc(Client *c, int x, int y){
@@ -383,7 +385,17 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
       if (c->buttonMaximize->isOn())
 	c->buttonMaximize->toggle();
     }
-    
+
+    //CT 17mar98 magics
+    if (options.BorderSnapZone > 0) manager->snapToBorder(c);
+    if (options.WindowSnapZone > 0) manager->snapToWindow(c);
+    //send config to clients once for both
+    if ((options.BorderSnapZone > 0) ||
+	(options.WindowSnapZone > 0))
+      manager->sendConfig(c,FALSE);
+
+
+
     options.FocusPolicy =  oldFocusPolicy;
 
     if (recalc != dragcalc)
@@ -393,6 +405,8 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 
     return false;
 }
+
+
 
 
 bool resizedrag(Client *c, int mode){

@@ -1320,6 +1320,118 @@ void Manager::deskCascade() {
   }
 }
 
+//CT 16mar98 - magics: BorderSnapZone 
+void Manager::snapToBorder(Client *c) {
+  int snap = options.BorderSnapZone;        //snap trigger
+  QRect maxRect = KWM::getWindowRegion(manager->currentDesktop());
+  int xmax = maxRect.width();               //desk size
+  int ymax = maxRect.height();
+  int cx, cy, rx, ry;
+  
+  cx = c->geometry.x();
+  cy = c->geometry.y();
+  rx = cx + c->geometry.width();
+  if(c->isShaded()) ry = cy + TITLEBAR_HEIGHT + 2*BORDER;
+  else ry = cy + c->geometry.height();
+  
+  if ( abs(cx) < snap ){
+    if (abs(xmax-rx) < snap) 
+      cx = (abs(cx) < abs(xmax-rx))?0:(xmax - c->geometry.width());
+    else cx = 0;
+  }
+  else if (abs(xmax-rx) < snap) cx = xmax - c->geometry.width();
+  
+  if ( abs(cy) < snap ){
+    if (abs(ymax-ry) < snap) 
+      cy = (abs(cy) < abs(ymax-ry))?0:(ymax - c->geometry.height());
+    else cy = 0;
+  }
+  else if (abs(ymax-ry) < snap) cy = ymax - c->geometry.height();
+  
+  //then snap 
+  c->geometry.moveTopLeft(QPoint(cx, cy));
+  /*this is maybe better to be done in sweepdrag once
+    manager->sendConfig(c,FALSE);
+  */
+}
+
+//CT 17mar98 - magics: WindowSnapZone
+void Manager::snapToWindow(Client *c) {
+  int snap = options.WindowSnapZone;
+  QRect maxRect = KWM::getWindowRegion(manager->currentDesktop());
+  int xmax = maxRect.width(); //desk sizes
+  int ymax = maxRect.height();
+  int cx, cy, rx, ry;
+
+  int nx, ny;                         //new coords (where to go)
+  int deltaX = xmax, deltaY = ymax;   //minimum distance to other clients
+
+  Client * l;
+  int lx, ly, lrx, lry; //coords and size for the comparison client
+  
+  nx = cx = c->geometry.x();
+  ny = cy = c->geometry.y();
+  rx = cx + c->geometry.width();
+  if(c->isShaded()) ry = cy + TITLEBAR_HEIGHT + 2*BORDER;
+  else ry = cy + c->geometry.height();
+
+  for (l = clients.first();l;l = clients.next()) {
+    if(!l->isOnDesktop(manager->currentDesktop()) ||
+       l->isIconified() ||
+       l->trans != None) 
+      continue;
+    lx = l->geometry.x();
+    ly = l->geometry.y();
+    lrx = lx + l->geometry.width();
+    if(l->isShaded()) lry = ly + TITLEBAR_HEIGHT + 2*BORDER;
+    else lry = ly + l->geometry.height();
+    
+    if( ((cy <= lry) && (cy >= ly))  ||
+	((ry >= ly)  && (ry <= lry)) ||
+	((ly >= cy)  && (lry <= ry)) )  {
+      //if this happens
+      if ( (abs(lrx - cx) < snap) && (abs(lrx -cx) < abs(deltaX)) ) {
+	deltaX = lrx - cx;
+	nx = lrx;
+      }
+      //this isn't anymore possible. And inversely
+      if ( (abs(rx - lx) < snap) &&  (abs(rx - lx) < abs(deltaX)) ) {
+	deltaX = rx - lx;
+	nx = lx - c->geometry.width();
+	/* this is to be uncommented if anytimes we decide we don't want our
+	 * windows go out of the desktop
+	 if (cx < 0) cx = 0;
+	 if(cx + c->geometry.width() > xmax) cx = xmax - c->geometry.width();
+	*/
+      }
+    }
+    
+    if( ((cx <= lrx) && (cx >= lx))  ||
+	((rx >= lx)  && (rx <= lrx)) ||
+	((lx >= cx)  && (lrx <= rx)) ){
+      //if this happens
+      if ( (abs(lry - cy) < snap) && (abs(lry -cy) < abs(deltaY)) ) {
+	deltaY = lry - cy;
+	ny = lry;
+      }
+      //this isn't anymore possible. And inversely
+      if ( (abs(ry-ly) < snap) &&  (abs(ry - ly) < abs(deltaY)) ) {
+	deltaY = ry - ly;
+	ny = ly - c->geometry.height();
+	/* this is to be uncommented if anytimes we decide we don't want our
+	 * windows go out of the desktop
+	 if (cy < 0) cy = 0;
+	 if(cy + c->geometry.height() > ymax) cy = ymax - c->geometry.height();
+	*/
+      }
+    }
+  }
+
+  //now snap it  
+  c->geometry.moveTopLeft(QPoint(nx, ny));
+  //sendConfig issued in sweepdrag
+}
+
 void Manager::manage(Window w, bool mapped){
 
   bool dohide;

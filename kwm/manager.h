@@ -64,8 +64,11 @@ public:
   void cascadePlacement(Client* c, bool re_init);
 
   //CT 12mar98 - functions to rearrange the windows on the desk
+  //   17mar98 - magics: snap to border or to windows
   void deskUnclutter();
   void deskCascade();
+  void snapToBorder(Client *c);
+  void snapToWindow(Client *c);
 
   void manage(Window w, bool mapped = False);
 

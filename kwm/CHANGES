@@ -9,6 +9,13 @@ and some code went in from David Hogan's 9wm, a smart and small
 windowmanager written in plain C. There are of course also strong
 influences from my experiences with the former kwm.
 
+In 0.11:
+--------
+patchlevel 1:
+	- snap to border and snap to window functions (CT)
+
+patchlevel 0: (Matthias? Bernd?)
+
 In 0.10:
 --------
 patchlevel 33:

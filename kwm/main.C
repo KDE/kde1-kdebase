@@ -906,7 +906,30 @@ void MyApp::readConfiguration(){
       options.Placement = SMART_PLACEMENT;
     }
   }
+
+  //CT 17mar98 - magics
+  if (config->hasKey("BorderSnapZone")) {
+    options.BorderSnapZone = config->readNumEntry("BorderSnapZone");
+    if (options.BorderSnapZone < 0) options.BorderSnapZone = 0;
+    if (options.BorderSnapZone > 50) options.BorderSnapZone = 50;
+  }
+  else{
+    options.BorderSnapZone = 0;
+    config->writeEntry("BorderSnapZone", options.BorderSnapZone);
+  }
   
+  if (config->hasKey("WindowSnapZone")) {
+    options.WindowSnapZone = config->readNumEntry("WindowSnapZone");
+    if (options.WindowSnapZone < 0) options.WindowSnapZone = 0;
+    if (options.WindowSnapZone > 50) options.WindowSnapZone = 50;
+  }
+  else{
+    options.WindowSnapZone = 0;
+    config->writeEntry("WindowSnapZone", options.WindowSnapZone);
+  }
+  //CT ---  
+
+
   options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
   config->writeEntry("RstartProtocol", options.rstart);
 

@@ -68,10 +68,12 @@ struct kwmOptions {
   int EdgeResistance;
   bool ControlTab;
   bool Button3Grab;
-  //CT 18jan98
+  //CT 18jan98, 07mar98, 17mar98
   PLACEMENT_POLICY Placement;
-  //CT 07mar98
   int interactive_trigger;
+  int BorderSnapZone;
+  int WindowSnapZone;
+  //CT ---
 
   const char* rstart;
   int titlebar_doubleclick_command;
