@@ -1922,10 +1922,15 @@ AC_DEFUN(KDE_CHECK_STL_SGI,
     AC_MSG_CHECKING([if STL implementation is SGI like])
     AC_CACHE_VAL(kde_cv_stl_type_sgi,
     [
-      AC_TRY_COMPILE([#include <list.h>],[
-#ifndef __SGI_STL_LIST_H
-#error SGI
-#endif
+      AC_TRY_COMPILE([
+#include <string>
+],[
+int main()
+{
+  string astring="Hallo Welt.";
+  astring.erase(, 6); // now astring is "Welt"
+  return 0;
+};
 ], kde_cv_stl_type_sgi=yes,
    kde_cv_stl_type_sgi=no)
 ])
@@ -1943,11 +1948,14 @@ AC_DEFUN(KDE_CHECK_STL_HP,
     AC_CACHE_VAL(kde_cv_stl_type_hp,
     [
       AC_TRY_COMPILE([
-#include <list.h>
+#include <string>
 ],[
-#ifndef LIST_H
-#error HP
-#endif
+int main()
+{
+  string astring="Hello World";
+  astring.remove(0, 6); // now astring is "World"
+  return 0;
+};
 ], kde_cv_stl_type_hp=yes,
    kde_cv_stl_type_hp=no)
 ])
