@@ -19,7 +19,7 @@ msgstr "&Standard genvejstaster"
 
 #: main.cpp:80
 msgid "&Global shortcuts"
-msgstr "&Globale genvejstaster"
+msgstr "Gl&obale genvejstaster"
 
 #: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
@@ -39,7 +39,7 @@ msgstr "KDE standard"
 
 #: keyconfig.cpp:115
 msgid "&Key scheme"
-msgstr "&Tastevalg"
+msgstr "Tastevalg"
 
 #: keyconfig.cpp:126
 msgid "&Add ..."
@@ -88,7 +88,7 @@ msgid ""
 "The keys currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Ind&tast navn på nyt tastevalg\n"
+"Indtast navn på nyt tastevalg\n"
 "som skal lægges til din personlige liste.\n"
 "\n"
 "Tasterne som nu bruges i forhåndsvisningen vil\n"

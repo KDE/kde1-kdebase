@@ -35,7 +35,7 @@ msgstr "Genstart X Server"
 
 #: kgreeter.cpp:222
 msgid "Login:"
-msgstr "Login:"
+msgstr "Log på:"
 
 #: kgreeter.cpp:234
 msgid "Password:"
@@ -43,7 +43,7 @@ msgstr "Adgangskode:"
 
 #: kgreeter.cpp:259
 msgid "Login failed!"
-msgstr "Login fejlede!"
+msgstr "Log på mislykkedes!"
 
 #: kgreeter.cpp:265
 msgid "Session Type:"
@@ -59,7 +59,7 @@ msgstr "Luk ned..."
 
 #: kgreeter.cpp:570
 msgid "Logins not available right now."
-msgstr "Det var ikke muligt at logge ind lige nu."
+msgstr "Det var ikke muligt at logge på lige nu."
 
 #: kgreeter.cpp:611
 msgid "login_getcapstr() failed."

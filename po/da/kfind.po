@@ -23,7 +23,7 @@ msgstr "Kan ikke åbne eller læse folder."
 
 #: kfindtop.cpp:121
 msgid "&Start search"
-msgstr "&Start søgning"
+msgstr "Sta&rt søgning"
 
 #: kfindtop.cpp:123
 msgid "S&top search"
@@ -31,11 +31,11 @@ msgstr "S&top søgning"
 
 #: kfindtop.cpp:128
 msgid "&Open"
-msgstr "&Åbn"
+msgstr "Å&bn"
 
 #: kfindtop.cpp:130
 msgid "&Add to archive"
-msgstr "&Tilføj til arkiv"
+msgstr "Til&føj til arkiv"
 
 #: kfindtop.cpp:135
 msgid "&Properties"
@@ -43,7 +43,7 @@ msgstr "&Indstillinger"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Åbn &Folder"
+msgstr "Åbn F&older"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
@@ -55,7 +55,7 @@ msgstr "&Vælg alle"
 
 #: kfindtop.cpp:160
 msgid "Unse&lect All"
-msgstr "Af&vælg alle"
+msgstr "Afvæl&g alle"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"

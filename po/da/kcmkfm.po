@@ -19,7 +19,7 @@ msgstr "&Skrift"
 
 #: main.cpp:63
 msgid "&Color"
-msgstr "F&arve"
+msgstr "&Farve"
 
 #: main.cpp:65
 msgid "&Other"
@@ -37,7 +37,7 @@ msgstr "&HTTP"
 # kkfmoptdlg.cpp:21
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "Bruger&agent"
+msgstr "&Brugeragent"
 
 #: main.cpp:76
 msgid "Coo&kies"
@@ -46,7 +46,7 @@ msgstr "Coo&kier"
 # kfmtree.cpp:398
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "&Arbejdspladsikoner"
+msgstr "Arbejdsplads&ikoner"
 
 #: main.cpp:89
 #, c-format
@@ -250,4 +250,4 @@ msgstr "Baggrundsfarve for ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Vis &skjulte filer på arbejdsplads"
+msgstr "Vis skj&ulte filer på arbejdsplads"

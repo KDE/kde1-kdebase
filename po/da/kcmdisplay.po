@@ -1,4 +1,4 @@
-# Danish translation for KDE Base, kcmdisplay
+#Danish translation for KDE Base, kcmdisplay
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Thomas Tanghus <tanghus@earthling.net>, 1998.
 #
@@ -23,11 +23,11 @@ msgstr "Arbejdsplads"
 
 #: backgnd.cpp:185
 msgid "&Rename ..."
-msgstr "&Omdøb..."
+msgstr "O&mdøb..."
 
 #: backgnd.cpp:196
 msgid "&Common Background"
-msgstr "&Fælles baggrund"
+msgstr "Fælles baggr&und"
 
 #: backgnd.cpp:224 colorscm.cpp:82
 msgid "Colors"
@@ -39,11 +39,11 @@ msgstr "&En farve"
 
 #: backgnd.cpp:268
 msgid "&Two Color"
-msgstr "&To farver"
+msgstr "T&o farver"
 
 #: backgnd.cpp:287
 msgid "Set&up ..."
-msgstr "&Indstillinger..."
+msgstr "I&ndstillinger..."
 
 #: backgnd.cpp:296
 msgid "Wallpaper"
@@ -103,7 +103,7 @@ msgstr "Skaleret"
 
 #: backgnd.cpp:399
 msgid "Ra&ndom"
-msgstr "Til&fældigt"
+msgstr "&Tilfældigt"
 
 #: backgnd.cpp:408
 msgid "Setu&p..."
@@ -304,7 +304,7 @@ msgstr "Kontrast"
 
 #: colorscm.cpp:223
 msgid "&Low"
-msgstr "&Lav"
+msgstr "La&v"
 
 #: colorscm.cpp:231
 msgid "High"
@@ -474,7 +474,7 @@ msgstr "&Baggrund"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "&Skærmskåner"
+msgstr "S&kærmskåner"
 
 #: main.cpp:71
 msgid "&Colors"
@@ -482,7 +482,7 @@ msgstr "&Farver"
 
 #: main.cpp:77
 msgid "&Style"
-msgstr "&Stil"
+msgstr "Sti&l"
 
 #: main.cpp:83
 msgid ""
@@ -516,19 +516,19 @@ msgstr "Skrif&ttype"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr "&Fed"
+msgstr "Fe&d"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr "&Kursiv"
+msgstr "Ku&rsiv"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr "&Størrelse"
+msgstr "Størrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
-msgstr "&Tegnsæt"
+msgstr "Te&gnsæt"
 
 #: fontchooser.cpp:262
 msgid "default"

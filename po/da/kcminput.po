@@ -47,11 +47,11 @@ msgstr "Knaptilknytning"
 
 #: mouse.cpp:83
 msgid "Right handed"
-msgstr "Højrehåndet"
+msgstr "&Højrehåndet"
 
 #: mouse.cpp:85
 msgid "Left handed"
-msgstr "Venstrehåndet"
+msgstr "&Venstrehåndet"
 
 #: keyboard.cpp:61
 msgid "Keyboard repeat"

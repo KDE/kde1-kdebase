@@ -23,7 +23,7 @@ msgstr "&Arbejdspladser"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr "Disk &Navigatør"
+msgstr "&Disk Navigatør"
 
 #: main.cpp:79
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
@@ -47,7 +47,7 @@ msgstr "&Venstre"
 
 #: panel.cpp:62
 msgid "&Bottom"
-msgstr "&Bund"
+msgstr "B&und"
 
 #: panel.cpp:63
 msgid "&Right"
@@ -67,7 +67,7 @@ msgstr "T&op"
 
 #: panel.cpp:80
 msgid "Botto&m"
-msgstr "Bu&nd"
+msgstr "&Bund"
 
 #: panel.cpp:82
 msgid "Top/Le&ft"
@@ -79,7 +79,7 @@ msgstr "Stil"
 
 #: panel.cpp:97
 msgid "T&iny"
-msgstr "M&ini"
+msgstr "&Mini"
 
 #: panel.cpp:99
 msgid "&Normal"
@@ -87,7 +87,7 @@ msgstr "&Normal"
 
 #: panel.cpp:101
 msgid "L&arge"
-msgstr "Stor"
+msgstr "&Stor"
 
 #: desktops.cpp:73
 msgid "&Visible"
@@ -143,7 +143,7 @@ msgstr "Hurtig"
 
 #: options.cpp:246
 msgid "Auto Hide &Taskbar"
-msgstr "Autogem &Procesbjælke"
+msgstr "Autogem Pro&cesbjælke"
 
 #: options.cpp:341
 msgid "Animate Show/Hide"
@@ -159,7 +159,7 @@ msgstr "Personlige menuindgange &først"
 
 #: options.cpp:416
 msgid "Menu F&olders First"
-msgstr "Personlige foldere &først"
+msgstr "Personlige f&oldere først"
 
 #: options.cpp:424
 msgid "&Clock shows time in AM/PM format"
@@ -167,7 +167,7 @@ msgstr "&Uret viser tiden i AM/PM format"
 
 #: options.cpp:432
 msgid "Clock shows time in &Internet beats"
-msgstr "Uret viser tiden i &Internet slag"
+msgstr "Uret viser tiden i Internet &slag"
 
 #: disknav.cpp:38
 msgid "History"
@@ -179,11 +179,11 @@ msgstr "Rediger indgange: (skab et link ved at trække en folder)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr "Rediger &personlige..."
+msgstr "Rediger pers&onlige..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr "Rediger &delte..."
+msgstr "Rediger de&lte..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"

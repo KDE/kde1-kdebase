@@ -149,7 +149,7 @@ msgstr "DMA-K&analer"
 
 #: main.cpp:91
 msgid "&IO-Ports"
-msgstr "&ind/ud-porte"
+msgstr "ind/ud-&porte"
 
 #: main.cpp:94
 msgid "PCI-&Bus"
@@ -165,7 +165,7 @@ msgstr "&Enheder"
 
 #: main.cpp:103
 msgid "S&CSI"
-msgstr "S&CSI"
+msgstr "&SCSI"
 
 #: main.cpp:106
 msgid "P&artitions"

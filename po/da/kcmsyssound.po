@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.cpp:53
 msgid "&Sound"
-msgstr "&Lyd"
+msgstr "L&yd"
 
 #: main.cpp:80
 msgid "System Sounds"

@@ -208,7 +208,7 @@ msgstr "&Nyt Hjælpevindue"
 
 #: mainwidget.cpp:135
 msgid "&Open File..."
-msgstr "&Åbn fil..."
+msgstr "Å&bn fil..."
 
 #: mainwidget.cpp:142
 msgid "&Search"
@@ -224,7 +224,7 @@ msgstr "Find &næste"
 
 #: mainwidget.cpp:164
 msgid "&Back"
-msgstr "&Tilbage"
+msgstr "Til&bage"
 
 #: mainwidget.cpp:166
 msgid "&Forward"
@@ -240,7 +240,7 @@ msgstr "&Op"
 
 #: mainwidget.cpp:175
 msgid "&Previous"
-msgstr "&Forrige"
+msgstr "Forri&ge"
 
 #: mainwidget.cpp:177
 msgid "&Next"
@@ -264,7 +264,7 @@ msgstr "Vis Status&bjælke"
 
 #: mainwidget.cpp:201
 msgid "&Save Options"
-msgstr "&Gem indstillinger"
+msgstr "Ge&m indstillinger"
 
 #: mainwidget.cpp:204
 msgid "KDE Help System\n"
