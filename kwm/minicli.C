@@ -196,7 +196,9 @@ void Minicli::return_pressed(){
   QString s = lineedit->text();
   s.stripWhiteSpace();
   history->removeLast();
-  history->append(qstrdup(s.data()));
+  if (s != history->last() && !s.simplifyWhiteSpace().isEmpty()) {
+    history->append(qstrdup(s.data()));
+  }
   history->append("");
   cleanup();
   if (s == "logout")
