@@ -942,10 +942,22 @@ void Manager::activateClient(Client* c, bool set_revert){
     return;
   if (c == cc)
     return;
-  if (cc)
+  if (cc){
     cc->setactive( FALSE );
+    if (c->trans != cc->window && cc->trans != c->window){
+      if (cc->trans != None && cc->trans != qt_xrootwin()){
+	cc = getClient(cc->trans);
+	if (cc)
+	  iconifyTransientOf(cc);
+      }
+      else {
+	iconifyTransientOf(cc);
+      }
+    }
+  }
 
   c->setactive( TRUE );
+  unIconifyTransientOf(c);
   
   XSetInputFocus(qt_xdisplay(), c->window, RevertToPointerRoot, timeStamp());
   
@@ -1097,8 +1109,19 @@ void Manager::noFocus(){
     return;
   }
 
-  if (current())
-    current()->setactive(False);
+  c = current();
+  if (c){
+    c->setactive(False);
+    if (c->trans != None && c->trans != qt_xrootwin()){
+      c = getClient(c->trans);
+      if (c)
+	iconifyTransientOf(c);
+    }
+    else {
+      iconifyTransientOf(c);
+    }
+
+  }
   
   if (w == 0) {
     mask = CWOverrideRedirect;
