@@ -1034,7 +1034,7 @@ msgstr "%d arquivos especiais não serão copiados."
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
-msgstr ""
+msgstr "Cópia recursiva de arquivo com sub-protocolo\n(exemplo: arquivos tar)"
 
 #: kiojob.cpp:673
 msgid "Recurse copying from/to distant locations"
@@ -1168,7 +1168,6 @@ msgstr ""
 "Talvez a senha esteja errada"
 
 #: kiojob.cpp:1352
-#, fuzzy, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
@@ -1177,7 +1176,6 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1355
-#, fuzzy, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
@@ -1187,7 +1185,7 @@ msgstr ""
 
 #: kiojob.cpp:1361
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "Operação tecnicamente impossível"
 
 #: kiojob.cpp:1364 kiojob.cpp:1373
 #, c-format
