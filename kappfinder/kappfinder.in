@@ -25,11 +25,14 @@ if test $# -ne 1 ; then
   kde_appsdir=$INSTPATH/share/applnk
   kde_icondir=$INSTPATH/share/icons
   kde_minidir=$INSTPATH/share/icons/mini
+  if test ! -d $kde_minidir; then
+     mkdir -m 755 -p $kde_minidir
+  fi
 else
   INSTPATH=$1 # ignored the more or the less
-  kde_icondir=@kde_icondir@
-  kde_appsdir=@kde_appsdir@
-  kde_minidir=@kde_minidir@
+  kde_icondir=`echo '@kde_icondir@' | sed -e 's#\$(prefix)#@prefix@#'`
+  kde_appsdir=`echo '@kde_appsdir@' | sed -e 's#\$(prefix)#@prefix@#'`
+  kde_minidir=`echo '@kde_minidir@' | sed -e 's#\$(prefix)#@prefix@#'`
 fi
 
 
@@ -46,7 +49,7 @@ fi
 
 
 OLDDIR=`pwd`
-cd @kde_datadir@/kappfinder
+cd `echo '@kde_datadir@' | sed -e 's#\$(prefix)#@prefix@#'`/kappfinder
 
 echo "Installing to $INSTPATH"
 
