@@ -21,7 +21,8 @@ mainWidget::mainWidget(QWidget *parent , const char *name)
   KApplication::getKApplication()->getCharsets()->setQFont(font);
   pmap = iconLoader.loadIcon("kdekcc.xpm");
   heading->setFont(font);
-  heading->setGeometry(120,10,200,40);
+  heading->adjustSize();
+  heading->move(120,10);
 
   uname(&info);
 }
