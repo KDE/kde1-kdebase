@@ -445,9 +445,8 @@ msgid "The mime type config file "
 msgstr "O arquivo de configuração de tipos MIME "
 
 #: kbind.cpp:304
-#, fuzzy
 msgid "does not contain a MimeType=... entry"
-msgstr "não contém uma entrada MimeType=..."
+msgstr "não contém um registro MimeType=..."
 
 #: kbind.cpp:392
 msgid "No mime types installed!"
