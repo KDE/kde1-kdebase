@@ -33,9 +33,8 @@ msgid "&Linux"
 msgstr "&Linux"
 
 #: main.C:210
-#, fuzzy
 msgid "Linux (small)"
-msgstr "40x15 (&klein)"
+msgstr "Linux (klein)"
 
 #: main.C:213
 msgid "&More ..."
@@ -66,9 +65,8 @@ msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
 #: main.C:230
-#, fuzzy
 msgid "80x40 (&xterm)"
-msgstr "80x24 (&vt100)"
+msgstr "80x40 (&xterm)"
 
 #: main.C:231
 msgid "80x52 (ibmv&ga)"
