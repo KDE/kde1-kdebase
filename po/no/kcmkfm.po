@@ -40,9 +40,8 @@ msgid "User &Agent"
 msgstr "Bruker&agent"
 
 #: main.cpp:76
-#, fuzzy
 msgid "Coo&kies"
-msgstr "Slå av cookier"
+msgstr "Coo&kier"
 
 # kfmtree.cpp:398
 #: main.cpp:80
@@ -50,10 +49,11 @@ msgid "&Desktop Icons"
 msgstr "&Skrivebordikoner"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
-msgstr "bruk: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+msgstr ""
+"bruk: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 # main.cpp:65 main.cpp:199
 #: main.cpp:178
@@ -191,9 +191,8 @@ msgid "Known bindings:"
 msgstr "Kjente tilordninger:"
 
 #: kcookiesdlg.cpp:49
-#, fuzzy
 msgid "&Enable Cookies"
-msgstr "Slå av cookier"
+msgstr "&Slå på cookier"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -221,7 +220,7 @@ msgstr "Endre politikk for godtatte domener"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Du må først oppgi et domene!"
 
 # htmlopts.cpp:321
 #: rootopts.cpp:73
@@ -247,4 +246,4 @@ msgstr "Bakgrunnsfarge for ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Vis &skjulte filer på skrivebord"

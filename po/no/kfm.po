@@ -738,13 +738,13 @@ msgstr "Sist endret"
 
 # kiojob.cpp:1657
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Kunne ikke opprette katalog\n"
-"%s"
+"Kunne ikke endre navn på filen eller katalogen\n"
+"%s\n"
 
 # kfmprops.cpp:407
 #: kfmprops.cpp:429
@@ -1570,12 +1570,11 @@ msgstr "Alle &cookier"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Godta"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "Mer&k"
+msgstr "&Forkast"
 
 #: popup.cpp:69
 #, c-format
@@ -1671,84 +1670,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# kfmprops.cpp:359
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Kan ikke omdøpe filen eller katalogen\n"
-#~ "Bestemmelsesstedet ser ut til å eksistere fra før\n"
-
-# main.cpp:200
-#~ msgid "Installing Templates"
-#~ msgstr "Installerer Maler"
-
-#~ msgid "Small"
-#~ msgstr "Liten"
-
-#~ msgid "Medium"
-#~ msgstr "Middels"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-# htmlopts.cpp:51
-#~ msgid "Standard Font"
-#~ msgstr "Standard skrifttype"
-
-# htmlopts.cpp:68
-#~ msgid "Fixed Font"
-#~ msgstr "Fast skrifttype"
-
-#~ msgid "Default Charset"
-#~ msgstr "Standard tegnsett"
-
-#~ msgid "Use language charset"
-#~ msgstr "Bruk språktegnsett"
-
-# htmlopts.cpp:214
-#~ msgid "Background Color:"
-#~ msgstr "Bakgrunnsfarge:"
-
-# htmlopts.cpp:222
-#~ msgid "Normal Text Color:"
-#~ msgstr "Normal tekstfarge:"
-
-# htmlopts.cpp:230
-#~ msgid "URL Link Color:"
-#~ msgstr "URL-lenkefarge:"
-
-# htmlopts.cpp:238
-#~ msgid "Followed Link Color:"
-#~ msgstr "Farge på brukte lenker:"
-
-# htmlopts.cpp:246
-#~ msgid "Change cursor over link."
-#~ msgstr "Endre markør over lenke."
-
-#~ msgid "Underline links"
-#~ msgstr "Understrek lenker"
-
-# htmlopts.cpp:321
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Avstand mellom horisontale bunngitter:"
-
-# htmlopts.cpp:335
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Avstand mellom vertikale bunngitter:"
-
-#~ msgid "&Allow per-URL settings"
-#~ msgstr "&Godta pr-URL-innstillinger"
-
-#~ msgid "Tree &view follows navigation"
-#~ msgstr "Tre&visning følger navigasjon"
-
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "&Gjennomsiktig tekst for bunnikoner"
-
-#~ msgid "Icon foreground color:"
-#~ msgstr "Forgrunnsfarge for ikon:"
-
-#~ msgid "Icon background color:"
-#~ msgstr "Bakgrunnsfarge for ikon:"
