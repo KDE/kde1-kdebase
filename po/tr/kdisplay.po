@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-12-05 01:14+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -17,231 +17,227 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Yeni masaüstü adýný giriniz"
 
-#: backgnd.cpp:110 backgnd.cpp:151
+#: backgnd.cpp:110 backgnd.cpp:162
 msgid "Desktop"
 msgstr "Masaüstü"
 
-#: backgnd.cpp:173
+#: backgnd.cpp:184
 msgid "&Rename ..."
 msgstr "&Yeniden adlandýr..."
 
-#: backgnd.cpp:184
+#: backgnd.cpp:195
 #, fuzzy
 msgid "&Common Background"
 msgstr "&Arkaplan"
 
-#: backgnd.cpp:212 colorscm.cpp:82
+#: backgnd.cpp:223 colorscm.cpp:82
 msgid "Colors"
 msgstr "Renkler"
 
-#: backgnd.cpp:239
+#: backgnd.cpp:250
 msgid "&One Color"
 msgstr "&Tek Renk"
 
-#: backgnd.cpp:256
+#: backgnd.cpp:267
 msgid "&Two Color"
 msgstr "&Ýki Renk"
 
-#: backgnd.cpp:275
+#: backgnd.cpp:286
 msgid "Set&up ..."
 msgstr "&Ayarla..."
 
-#: backgnd.cpp:284
+#: backgnd.cpp:295
 msgid "Wallpaper"
 msgstr "Duvar Kaðýdý"
 
-#: backgnd.cpp:319 backgnd.cpp:580 backgnd.cpp:594 backgnd.cpp:1204
-#: backgnd.cpp:1358 backgnd.cpp:1896
+#: backgnd.cpp:325 backgnd.cpp:593 backgnd.cpp:607 backgnd.cpp:1217
+#: backgnd.cpp:1371 backgnd.cpp:1909
 msgid "No wallpaper"
 msgstr "Duvar Kaðýdý Yok"
 
-#: backgnd.cpp:351
+#: backgnd.cpp:358
 msgid "&Browse..."
 msgstr "&Gözat..."
 
-#: backgnd.cpp:359
-msgid "Mode:"
+#: backgnd.cpp:366
+msgid "Arrangement:"
 msgstr ""
 
-#: backgnd.cpp:366
+#: backgnd.cpp:373
 #, fuzzy
 msgid "Tiled"
 msgstr "&Döþe"
 
-#: backgnd.cpp:367
-msgid "Mirrored"
-msgstr ""
-
-#: backgnd.cpp:368
-#, fuzzy
-msgid "Center Tiled"
-msgstr "&Ortala"
-
-#: backgnd.cpp:369
-#, fuzzy
-msgid "Centred"
-msgstr "&Ortala"
-
-#: backgnd.cpp:370
-#, fuzzy
-msgid "Centred Brick"
-msgstr "&Ortala"
-
-#: backgnd.cpp:371
-#, fuzzy
-msgid "Centred Warp"
-msgstr "&Ortala"
-
-#: backgnd.cpp:372
-#, fuzzy
-msgid "Centred Maxpect"
-msgstr "&Ortala"
-
-#: backgnd.cpp:373
-msgid "Symmetrical Tiled"
-msgstr ""
-
 #: backgnd.cpp:374
-msgid "Symmetrical Mirrored"
+msgid "Mirrored"
 msgstr ""
 
 #: backgnd.cpp:375
 #, fuzzy
+msgid "Center Tiled"
+msgstr "&Ortala"
+
+#: backgnd.cpp:376
+#, fuzzy
+msgid "Centred"
+msgstr "&Ortala"
+
+#: backgnd.cpp:377
+#, fuzzy
+msgid "Centred Brick"
+msgstr "&Ortala"
+
+#: backgnd.cpp:378
+#, fuzzy
+msgid "Centred Warp"
+msgstr "&Ortala"
+
+#: backgnd.cpp:379
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "&Ortala"
+
+#: backgnd.cpp:380
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:381
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:382
+#, fuzzy
 msgid "Scaled"
 msgstr "&Ölçülü"
 
-#: backgnd.cpp:390
+#: backgnd.cpp:397
 msgid "Ra&ndom"
 msgstr ""
 
-#: backgnd.cpp:399
+#: backgnd.cpp:406
 #, fuzzy
 msgid "Setu&p..."
 msgstr "&Ayarla..."
 
-#: backgnd.cpp:407
+#: backgnd.cpp:416
 msgid "&Dock into the panel"
 msgstr ""
 
-#: backgnd.cpp:431
-msgid "Cache size:"
+#: backgnd.cpp:441
+msgid "Cache size (kB):"
 msgstr ""
 
-#: backgnd.cpp:447
-msgid "kb"
-msgstr ""
-
-#: backgnd.cpp:1325
+#: backgnd.cpp:1338
 msgid "Desktop names"
 msgstr "Masaüstü adlarý"
 
-#: backgnd.cpp:1370
+#: backgnd.cpp:1383
 #, fuzzy
 msgid "File error"
 msgstr "Adlandýrma hatasý"
 
-#: backgnd.cpp:1371
+#: backgnd.cpp:1384
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1394 backgnd.cpp:1866
+#: backgnd.cpp:1407 backgnd.cpp:1879
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1395 backgnd.cpp:1867
+#: backgnd.cpp:1408 backgnd.cpp:1880
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1426
+#: backgnd.cpp:1439
 msgid "Two color backgrounds"
 msgstr "Ýki renkli arkaplanlar"
 
-#: backgnd.cpp:1463
+#: backgnd.cpp:1476
 msgid "Blend colors from &top to bottom"
 msgstr "Yu&karýdan aþaðýya renkleri kaynaþtýr"
 
-#: backgnd.cpp:1469
+#: backgnd.cpp:1482
 msgid "Blend colors from &right to left"
 msgstr "Renkleri saðdan sola kaynaþtýr"
 
-#: backgnd.cpp:1475
+#: backgnd.cpp:1488
 msgid "Use &pattern"
 msgstr "&Desen kullan"
 
-#: backgnd.cpp:1502
+#: backgnd.cpp:1515
 msgid "Preview"
 msgstr "Önbakýþ"
 
-#: backgnd.cpp:1513
+#: backgnd.cpp:1526
 msgid "Pattern &name"
 msgstr "&Desen adý"
 
-#: backgnd.cpp:1552
+#: backgnd.cpp:1565
 msgid "Current"
 msgstr "Þu anki"
 
-#: backgnd.cpp:1612
+#: backgnd.cpp:1625
 msgid "Filled"
 msgstr "Doldurulmuþ"
 
-#: backgnd.cpp:1615
+#: backgnd.cpp:1628
 msgid "Fish net"
 msgstr "Balýk aðý"
 
-#: backgnd.cpp:1618
+#: backgnd.cpp:1631
 msgid "Triangles"
 msgstr "Üçgenler"
 
-#: backgnd.cpp:1621
+#: backgnd.cpp:1634
 msgid "Flowers"
 msgstr "Çiçekler"
 
-#: backgnd.cpp:1624
+#: backgnd.cpp:1637
 msgid "Rattan"
 msgstr "Rattan"
 
-#: backgnd.cpp:1627
+#: backgnd.cpp:1640
 msgid "Cobbled Pavement"
 msgstr "Cobbled Pavement"
 
-#: backgnd.cpp:1693
+#: backgnd.cpp:1706
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1699
+#: backgnd.cpp:1712
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1726
 #, fuzzy
 msgid "&Browse ..."
 msgstr "&Gözat..."
 
-#: backgnd.cpp:1734
+#: backgnd.cpp:1747
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1746
+#: backgnd.cpp:1759
 #, fuzzy
 msgid "In &order"
 msgstr "Atla"
 
-#: backgnd.cpp:1763
+#: backgnd.cpp:1776
 #, fuzzy
 msgid "Desktops :"
 msgstr "Masaüstü"
 
-#: backgnd.cpp:1802
+#: backgnd.cpp:1815
 #, fuzzy
 msgid "&Add"
 msgstr "&Ekle"
 
-#: backgnd.cpp:1973
+#: backgnd.cpp:1986
 msgid "Directory error"
 msgstr ""
 
-#: backgnd.cpp:1974
+#: backgnd.cpp:1987
 msgid "Selected directory doesn't exists"
 msgstr ""
 

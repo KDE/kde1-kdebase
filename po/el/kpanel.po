@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -27,11 +27,11 @@ msgstr "Που θέλετε να πάτε αύριο;"
 msgid "No info available"
 msgstr "Δεν υπάρχουν σχετικές πληροφορίες"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Κλέιδωμα οθόνης"
 
@@ -51,67 +51,67 @@ msgstr "Δεν υπάρχει σχετικό σχόλιο"
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "Προσθήκη εφαρμογής"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Προσθήκη εφαρμογής ή υποκαταλόγου στον πίνακα"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Προσθήκη λίστας παραθύρων"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "Πίνακας διαμόρφωσης"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr ""
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "Επανεκίννηση"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "Επανεκίννηση πίνακα"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "Πίνακας"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Κλέιδωμα οθόνης"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

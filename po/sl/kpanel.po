@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1998-07-18 15:00+0100\n"
 "Last-Translator: luka steger <luka_steger@hotmail.com>\n"
 "Language-Team: slovene <LL@li.org>\n"
@@ -36,11 +36,11 @@ msgstr "Kam ¾elite iti jutri?"
 msgid "No info available"
 msgstr "Podatki niso na voljo"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Izhod"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Zakleni zaslon"
 
@@ -60,67 +60,67 @@ msgstr "Komentar ni na voljo"
 msgid "Windowlist"
 msgstr "Seznam oken"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "Dodaj program"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Dodaj program ali podmeni na pult"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Dodaj seznam oken"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj seznam oken na pult"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Nastavi"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "Nastavi pult"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr "Uredi menije"
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "Dodaj ali odstrani programe z menija"
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "Ponovni zagon"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "Ponovni zagon pulta"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "Pult"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Zakleni zaslon"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "Urejevalnik menijev ni name¹èen."
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "Ups!"
 
@@ -130,7 +130,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "Ne morem narediti gumba na pultu!"
 

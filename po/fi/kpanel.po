@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KPANEL\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr "Mihin haluat t‰n‰‰n menn‰?"
 msgid "No info available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Poistu"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Lukitse n‰yttˆ"
 
@@ -57,67 +57,67 @@ msgstr "Tietoa ei ole saatavilla"
 msgid "Windowlist"
 msgstr "Ikkunalista"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "Lis‰‰ sovellus"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Lis‰‰ sovellus tai valikko paneeliin"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Lis‰‰ ikkunalista"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Lis‰‰ ikkunalista -valikko paneeliin"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Asetukset"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "Paneelin asetukset"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr "Muokkaa valikoita"
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "Lis‰‰ tai poista valikoiden sovelluksia"
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "K‰ynnist‰ uudelleen"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "K‰ynnist‰ paneeli uudelleen"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr "Levyselain"
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr "Selaa nopeasti tiedostopuuta"
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "Paneeli"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Lukitse n‰yttˆ"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "Valikkoeditoria ei ole asennettu."
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "Hups!"
 
@@ -129,7 +129,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "En voi laittaa t‰t‰ nappina paneeliin!"
 

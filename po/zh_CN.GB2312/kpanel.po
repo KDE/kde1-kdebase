@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -28,11 +28,11 @@ msgstr "主菜单"
 msgid "No info available"
 msgstr "没有信息"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "离线"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "锁住屏幕"
 
@@ -52,67 +52,67 @@ msgstr "没有说明"
 msgid "Windowlist"
 msgstr "窗口列表"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "增加应用程序"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "在窗口面板上新增应用程序或是子菜单"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "加在窗口列表中"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "在窗口面板上新增窗口列表菜单"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "配置"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "配置面板"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr "编辑菜单项"
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "在菜单结构中增加或去掉应用程序 "
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "重新开始"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "重新启动面板"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "面板"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "锁住屏幕"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "菜单编辑器没有安装."
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "错误!"
 
@@ -122,7 +122,7 @@ msgid ""
 "%b %d"
 msgstr ""
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "不能把这个对象当作按钮放到面板上!"
 

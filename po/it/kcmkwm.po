@@ -1,5 +1,4 @@
 # KTranslator Generated File
-
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -10,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
-"X-Generator: KTranslator v 0.4.0"
+"X-Generator: KTranslator v 0.4.0\n"
 
 #: main.cpp:67
 msgid "&Buttons"
@@ -20,8 +19,8 @@ msgstr "&Pulsanti"
 msgid "&Titlebar"
 msgstr "&Barra Titolo"
 
-#: main.cpp:73
 #
+#: main.cpp:73
 msgid "Bo&rders"
 msgstr "&Bordi"
 
@@ -33,12 +32,11 @@ msgstr "&Mouse"
 msgid "&Advanced"
 msgstr "&Avanzate"
 
-#: main.cpp:86
 #
+#: main.cpp:86
 msgid ""
 "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
-msgstr ""
-"utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
@@ -72,7 +70,8 @@ msgstr "Destra"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno disabilito il pulsante 'Ingrandisci'"
+"Il lato sinistro della barra Titolo è pieno disabilito il pulsante "
+"'Ingrandisci'"
 
 #: titlebar.cpp:504
 msgid ""
@@ -84,7 +83,8 @@ msgstr ""
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno siabilito il pulsante  'Iconifica'"
+"Il lato sinistro della barra Titolo è pieno siabilito il pulsante  "
+"'Iconifica'"
 
 #: titlebar.cpp:577
 msgid ""
@@ -120,13 +120,13 @@ msgstr "Immagine"
 msgid "Active title has shaded frame"
 msgstr "Il titolo ha frmae sfumato"
 
-#: titlebar.cpp:1044
 #
+#: titlebar.cpp:1044
 msgid "Active pixmap:"
 msgstr "Immagine attiva:"
 
-#: titlebar.cpp:1049
 #
+#: titlebar.cpp:1049
 msgid "Inactive pixmap:"
 msgstr "Immagine inattiva:"
 
@@ -138,8 +138,8 @@ msgstr "Nessuna immagine sotto il teso"
 msgid "Mouse action"
 msgstr "Azione del Mouse"
 
-#: titlebar.cpp:1074
 #
+#: titlebar.cpp:1074
 msgid "Left Button double click does:"
 msgstr "Il doppio click con il pulsante sinistro:"
 
@@ -168,8 +168,8 @@ msgstr "Animazione Titolo"
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1366
 #
+#: titlebar.cpp:1366
 msgid "Window manager setup - ERROR"
 msgstr "ERRORE - Setup Window Manager"
 
@@ -181,8 +181,8 @@ msgstr ""
 "Si è riscontarto un errore nel salvataggio\n"
 "delle immagini della barra titolo! Controllare i permessi."
 
-#: windows.cpp:67
 #
+#: windows.cpp:67
 msgid "Windows"
 msgstr "Finestre"
 
@@ -244,8 +244,8 @@ msgstr ""
 " Sovrapposizione consentita:\n"
 "(% dello spazio del Desktop)"
 
-#: windows.cpp:171
 #
+#: windows.cpp:171
 msgid "Focus policy"
 msgstr "Modalità di attivazione"
 
@@ -313,13 +313,13 @@ msgstr ""
 msgid "Active"
 msgstr "Attiva"
 
-#: mouse.cpp:58
 #
+#: mouse.cpp:58
 msgid "Inactive"
 msgstr "Inattiva"
 
-#: mouse.cpp:62
 #
+#: mouse.cpp:62
 msgid "Titlebar and frame:"
 msgstr "Barra titolo e cornice:"
 
@@ -331,8 +331,8 @@ msgstr "Interno finestra inattiva:"
 msgid "Inner window, titlebar and frame:"
 msgstr "Titolo , Cornice e interno finestra:"
 
-#: mouse.cpp:74 mouse.cpp:86
 #
+#: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
 msgstr "Pulsante Sinistro"
 
@@ -442,8 +442,8 @@ msgstr "Cattura il pulsante destro del mouse"
 msgid "Filters"
 msgstr "Filtri"
 
-#: advanced.cpp:98
 #
+#: advanced.cpp:98
 msgid "Windows will:"
 msgstr "Le finestre.."
 
@@ -471,8 +471,8 @@ msgstr "saranno escluse dal session management"
 msgid "if they match the following:"
 msgstr "se saranno verficate le seguenti condizioni:"
 
-#: advanced.cpp:121
 #
+#: advanced.cpp:121
 msgid "Titles"
 msgstr "Titoli"
 

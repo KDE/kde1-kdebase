@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -33,11 +33,11 @@ msgstr "Where do you want to go tomorrow?"
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
@@ -57,67 +57,67 @@ msgstr "Keine Erklärung verfügbar"
 msgid "Windowlist"
 msgstr "Fensterliste"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "Programm hinzufügen"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Programm oder Untermenü zum Panel hinzufügen"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Fensterliste hinzufügen"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Menü für Fensterliste zum Panel hinzufügen"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Konfigurieren"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "Panel konfigurieren"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr "Menu bearbeiten"
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "Anwendungen in der Menu-Struktur hinzufügen oder löschen "
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "Neu starten"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "Panel neu starten"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr "Platten-Navigator"
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr "Schnell durch das Dateisystem navigieren"
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "Der Menu-Editor ist nicht installiert."
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -129,7 +129,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 

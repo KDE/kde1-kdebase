@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-30 01:10+0100\n"
+"POT-Creation-Date: 1998-12-06 01:14+0100\n"
 "PO-Revision-Date: 1998-11-07 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -34,11 +34,11 @@ msgstr "Где вы хотите быть завтра?"
 msgid "No info available"
 msgstr "Нет информации"
 
-#: kpanel.C:430 props.C:175 props.C:176
+#: kpanel.C:430 props.C:176 props.C:177
 msgid "Logout"
 msgstr "Выйти"
 
-#: kpanel.C:438 props.C:174
+#: kpanel.C:438 props.C:175
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
@@ -58,67 +58,67 @@ msgstr "Нет комментариев"
 msgid "Windowlist"
 msgstr "Список окон"
 
-#: props.C:144
+#: props.C:145
 msgid "Add application"
 msgstr "Добавить приложение"
 
-#: props.C:146
+#: props.C:147
 msgid "Add an application or a submenu onto the panel"
 msgstr "Добавить приложение или подменю на панель"
 
-#: props.C:147
+#: props.C:148
 msgid "Add windowlist"
 msgstr "Добавить список окон"
 
-#: props.C:149
+#: props.C:150
 msgid "Add a windowlist menu onto the panel"
 msgstr "Добавить список окон на панель"
 
-#: events.C:782 props.C:150
+#: events.C:782 props.C:151
 msgid "Configure"
 msgstr "Настройка"
 
-#: props.C:152
+#: props.C:153
 msgid "Configure panel"
 msgstr "Настроить панель"
 
-#: props.C:153
+#: props.C:154
 msgid "Edit Menus"
 msgstr "Редактировать меню"
 
-#: props.C:155
+#: props.C:156
 msgid "Add or remove applications in the menu structure "
 msgstr "Добавить или удалить приложения из структуры меню "
 
-#: events.C:784 props.C:156
+#: events.C:784 props.C:157
 msgid "Restart"
 msgstr "Перезапустить"
 
-#: props.C:158
+#: props.C:159
 msgid "Restart panel"
 msgstr "Перезапустить панель"
 
-#: props.C:161
+#: props.C:162
 msgid "Disk Navigator"
 msgstr "Исследователь диска"
 
-#: props.C:164
+#: props.C:165
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
-#: props.C:170
+#: props.C:171
 msgid "Panel"
 msgstr "Панель"
 
-#: props.C:172
+#: props.C:173
 msgid "Lock Screen"
 msgstr "Закрыть экран"
 
-#: props.C:401
+#: props.C:402
 msgid "The menu editor is not installed."
 msgstr "Редактор меню не установлен."
 
-#: events.C:820 props.C:402
+#: events.C:830 props.C:403
 msgid "Oops!"
 msgstr "Оопс!"
 
@@ -130,7 +130,7 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:819
+#: events.C:829
 msgid "Cannot put this as button onto the panel!"
 msgstr "Невозможно поместить это как кнопку на панель!"
 
