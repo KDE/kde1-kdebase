@@ -9,3 +9,4 @@ fi;
 
 kcmbell -init
 kcminput -init
+kcmdisplay -init
