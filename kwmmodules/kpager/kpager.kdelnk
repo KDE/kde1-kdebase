@@ -1,0 +1,24 @@
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=
+Name=Desktop Pager
+Name[is_IS]=SkjАborП ( yfirlit )
+Name[no]=Skrivebordveksler
+Name[fr]=Gestionnaire de bureaux virtuels
+Name[es]=Gestor de escritorios
+Name[pl]=KPager
+Name[pt]=Mapa da аrea de Trabalho
+Name[pt_BR]=Mapa da аrea de Trabalho
+Name[sk]=Mapa pracovnej plochy
+Name[ro]=Harta ecranului
+Name[ru]=Переключатель рабочих столов
+Protocols=
+MimeType=
+Comment=Manage your windows
+Comment[es]=Administra tus ventanas
+Exec=kpager
+Icon=kwm.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0

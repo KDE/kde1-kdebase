@@ -26,5 +26,8 @@ desktop.cpp:desktop.moc
 
 ktrianglebutton.cpp:ktrianglebutton.moc
 
+applnk_DATA = kpager.kdelnk
+applnkdir = $(kde_appsdir)/System
+
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kpager_SOURCES) && mv messages.po ../../po/kpager.pot

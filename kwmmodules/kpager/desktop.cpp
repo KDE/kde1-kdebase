@@ -25,7 +25,7 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-#define DESKTOPDEBUG
+//#define DESKTOPDEBUG
 //#define ALLOWSELFPICTURE
 
 Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
@@ -50,7 +50,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     useBackgroundInfoFromKbgndwm=false;
     useWallpaper=false;
 
-    drawWinMode=plain;
+    drawWinMode=pixmap;
     KConfig *kcfg=(KApplication::getKApplication())->getConfig();
     QFont *defaultfont=new QFont("helvetica",12);
     desktopfont=new QFont(kcfg->readFontEntry("DesktopFont",defaultfont));

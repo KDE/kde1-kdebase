@@ -30,7 +30,6 @@
 #include <qmessagebox.h>
 #include <kaccel.h>
 #include "version.h"
-//#include <X11/Xlib.h>
     
 //#define KPAGERDEBUG
 
@@ -78,7 +77,7 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
 
     m_file = new QPopupMenu;
     m_file->setCheckable( TRUE );
-    m_file->insertItem( i18n("&Quit"), kapp, SLOT(quit()), CTRL+Key_Q );
+    m_file->insertItem( i18n("&Quit"), this, SLOT(file_quit()), CTRL+Key_Q );
     m_options = new QPopupMenu;
     if (kpagerclient->isVisibleGlobalDesktop())
         m_options->insertItem(i18n("Hide &Global Desktop"), this, SLOT(options_toggleGlobalDesktop()), Key_0 , 1 );
@@ -100,13 +99,13 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     m_drawmode->setCheckable( TRUE );
     m_drawmode->insertItem(i18n("Plain"),this,SLOT(options_drawPlain()));
     m_drawmode->setId(0,1);
-    m_drawmode->setItemChecked(1,TRUE);
+    m_drawmode->setItemChecked(1,FALSE);
     m_drawmode->insertItem(i18n("Icon"),this,SLOT(options_drawIcon()));
     m_drawmode->setId(1,2);
     m_drawmode->setItemChecked(2,FALSE);
     m_drawmode->insertItem(i18n("Pixmap"),this,SLOT(options_drawPixmap()));
     m_drawmode->setId(2,3);
-    m_drawmode->setItemChecked(3,FALSE);
+    m_drawmode->setItemChecked(3,TRUE);
 
     m_options->insertItem(i18n("Draw Mode"),m_drawmode);
     
@@ -131,8 +130,19 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
     menu->show();
     menubar_visible=true;
     setMenu(menu);
-//    setGeometry(x(),y(),380,140);
-};
+
+   // Let's read the configuration
+
+   KConfig *kcfg=kapp->getConfig();
+
+   QRect r=KWM::getWindowRegion(KWM::currentDesktop());
+   r.setTop(r.bottom()-140);
+   r.setRight(r.left()+400);
+   setGeometry(kapp->getConfig()->readRectEntry("Geometry",&r));
+
+   readProperties(kcfg);
+
+}
 
 KPager::~KPager()
 {
@@ -145,11 +155,24 @@ KPager::~KPager()
     delete m_drawmode;
     delete m_help;
     delete menu;
+
 #ifdef KPAGERDEBUG
     printf("KPager:: destructor(end)\n");
 #endif
 
-};
+}
+
+void KPager::closeEvent( QCloseEvent *)
+{
+    kapp->getConfig()->writeEntry("Geometry",geometry());
+    kapp->quit();
+}
+
+void KPager::file_quit()
+{
+    kapp->getConfig()->writeEntry("Geometry",geometry());
+    kapp->quit();
+}
 
 void KPager::options_toggleGlobalDesktop()
 {
@@ -163,6 +186,9 @@ void KPager::options_toggleGlobalDesktop()
         kpagerclient->setVisibleGlobalDesktop(true);
         m_options->changeItem(i18n("Hide &Global Desktop"), 0);
     }
+
+    kapp->getConfig()->writeEntry("visibleGlobalDesktop",kpagerclient->isVisibleGlobalDesktop());
+    kapp->getConfig()->sync();
 }
 
 void KPager::options_toggleMenuBar()
@@ -183,6 +209,9 @@ void KPager::options_toggleMenuBar()
         updateRects();        
     }
 
+    kapp->getConfig()->writeEntry("visibleMenuBar",menubar_visible);
+    kapp->getConfig()->sync();
+
 }
 
 void KPager::options_2Rows()
@@ -190,6 +219,8 @@ void KPager::options_2Rows()
     kpagerclient->toggle2Rows();
     if (kpagerclient->is2Rows()) m_options->setItemChecked(2,TRUE);
         else m_options->setItemChecked(2,FALSE);
+    kapp->getConfig()->writeEntry("use2Rows",kpagerclient->is2Rows());
+    kapp->getConfig()->sync();
 };
 
 
@@ -200,6 +231,9 @@ void KPager::options_drawPlain()
     m_drawmode->setItemChecked(3, FALSE);
     
     kpagerclient->setDrawMode(0);
+
+    kapp->getConfig()->writeEntry("drawMode",kpagerclient->getDrawMode());
+    kapp->getConfig()->sync();
 }
 
 void KPager::options_drawIcon()
@@ -209,6 +243,9 @@ void KPager::options_drawIcon()
     m_drawmode->setItemChecked(3, FALSE);
     
     kpagerclient->setDrawMode(1);
+
+    kapp->getConfig()->writeEntry("drawMode",kpagerclient->getDrawMode());
+    kapp->getConfig()->sync();
 }
 
 void KPager::options_drawPixmap()
@@ -219,6 +256,8 @@ void KPager::options_drawPixmap()
     
     kpagerclient->setDrawMode(2);
 
+    kapp->getConfig()->writeEntry("drawMode",kpagerclient->getDrawMode());
+    kapp->getConfig()->sync();
 }
 
 

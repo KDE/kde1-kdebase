@@ -1,3 +1,9 @@
+* Mon Nov 8 7:20:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
+
+Restore latest complete configuration and window position on start (not
+ only on sm)
+Made pixmap draw mode the default
+
 * Thu Oct 29 7:12:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 
 Now kpager handles changes of number of desktops and desktop names 
@@ -8,8 +14,6 @@ Made kpager more robust
 
 Arrows dissapear when not needed now
 A new 2-row mode for people used to the traditional kpanel arrangement of desktops
-
-
 
 * Fri Oct 16 7:15:00 CEST 1998  Antonio Larrosa <larrosa@kde.org>
 

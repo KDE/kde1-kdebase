@@ -52,6 +52,9 @@ private:
     virtual void saveProperties(KConfig *kcfg);
     virtual void readProperties(KConfig *kcfg);
 
+protected:
+    virtual void closeEvent ( QCloseEvent * );
+
 public:
 
     KPager(KWMModuleApplication *kwmmapp,const char *name=0);
@@ -59,6 +62,7 @@ public:
 
 public slots:
 
+    void file_quit();
     void options_toggleMenuBar();
     void options_toggleGlobalDesktop();
     void options_2Rows();

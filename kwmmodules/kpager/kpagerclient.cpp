@@ -27,9 +27,8 @@
 #include <qstring.h>
 #include <qpainter.h>
 #include <unistd.h>
-//#include <X11/Xlib.h>
 
-#define KPAGERCLIENTDEBUG
+//#define KPAGERCLIENTDEBUG
 
 
 KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const char *name)
@@ -43,7 +42,7 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     deltax=0;
     maxdeltax=0;
     visibleGlobalDesktop=true;
-    drawMode=0;
+    drawMode=2;
     for (int i=0;i<MAXDESKTOPS;i++) desktop[i]=0L;
     numberofDesktops=0;
     screenwidth=KWM::geometry( qt_xrootwin()).width();

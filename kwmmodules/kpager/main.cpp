@@ -53,12 +53,12 @@ int main(int argc, char **argv)
     }
 
     app->setMainWidget ( kpager );
-   
+/*
     {
         QRect r=KWM::getWindowRegion(KWM::currentDesktop());
         kpager->setGeometry(r.left(),r.bottom()-140,400,140);
     }
-
+*/
     if (app->isRestored())
     {
         if (kpager->canBeRestored(1)) kpager->restore(1);
@@ -66,5 +66,8 @@ int main(int argc, char **argv)
     
     kpager->show();
 
-    return app->exec();
+    int r=app->exec();
+
+    delete app;
+    return r;
 };
