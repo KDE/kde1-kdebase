@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krootwm\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-12-13 15:21 CET\n"
+"PO-Revision-Date: 1998-12-26 19:46 CET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,19 +15,19 @@ msgstr ""
 
 #: krootwm.C:221 krootwm.C:268
 msgid "Execute command"
-msgstr "Vykonej pøíkaz"
+msgstr "Vykonat pøíkaz"
 
 #: krootwm.C:223 krootwm.C:276
 msgid "Lock screen"
-msgstr "Zablokuj obrazovku"
+msgstr "Zablokovat obrazovku"
 
 #: krootwm.C:224 krootwm.C:277
 msgid "Logout"
-msgstr "Odhlá¹ení"
+msgstr "Odhlásit"
 
 #: krootwm.C:232 krootwm.C:270
 msgid "Refresh desktop"
-msgstr "Obnov pracovní plochu"
+msgstr "Obnovit pracovní plochu"
 
 #: krootwm.C:233 krootwm.C:272
 msgid "Unclutter windows"
@@ -39,7 +39,7 @@ msgstr "Uspoøádat okna do kaskády"
 
 #: krootwm.C:235 krootwm.C:274
 msgid "Arrange icons"
-msgstr "Uspoøádej ikony"
+msgstr "Uspoøádat ikony"
 
 #: krootwm.C:236 krootwm.C:269
 msgid "Display properties"
