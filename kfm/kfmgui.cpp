@@ -654,8 +654,9 @@ void KfmGui::slotNewFile( int _id )
     if ( menuNew->text( _id ) == 0)
 	return;
     
-    QString p =  menuNew->text( _id );    
-
+    // QString p =  menuNew->text( _id );    
+    QString p = templatesList.at( _id );
+    
     QString text = klocale->translate("New ");
     text += p.data();
     text += ":";

@@ -29,14 +29,14 @@ bool KIOSlaveIPC::isConnected()
     return connected;
 }
 
-void KIOSlaveIPC::closeEvent( KSocket * _sock )
+void KIOSlaveIPC::closeEvent( KSocket * )
 {
     connected = FALSE;
-    printf("*******EXIT********\n");
-    exit(0);
+    printf("***********EXIT************\n");
+    exit(1);
 }
 
-void KIOSlaveIPC::readEvent( KSocket *_sock )
+void KIOSlaveIPC::readEvent( KSocket * )
 {
     if ( bHeader )
     {

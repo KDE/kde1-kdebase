@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 #include <qmsgbox.h>
 #include <qtstream.h>

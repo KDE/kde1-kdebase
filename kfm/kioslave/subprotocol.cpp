@@ -8,13 +8,12 @@ KSubProtocol::KSubProtocol()
 
 void KSubProtocol::InitParent()
 {
-	if(!Parent) Parent = CreateProtocol(ParentName.data());
+	if(!Parent) Parent = CreateProtocol( ParentURL );
 }
 
-void KSubProtocol::InitSubProtocol(char *_ParentName, KURL _ParentURL)
+void KSubProtocol::InitSubProtocol( const char *_ParentURL )
 {
 	ParentURL = _ParentURL;
-	ParentName = _ParentName;
 }
 
 #include "subprotocol.moc"

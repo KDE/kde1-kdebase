@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <stddef.h>
 #include <dirent.h>
+#include <errno.h>
 
 #include <qdir.h>
 #include <qtooltip.h>

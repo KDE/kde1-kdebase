@@ -14,7 +14,8 @@ int KProtocolTAR::AttachTAR(char *commandstr)
 
 	InitParent();
 
-	if(Parent->Open(&ParentURL,READ) == FAIL) return(FAIL);
+	KURL uparent( ParentURL );
+	if(Parent->Open(&uparent,READ) == FAIL) return(FAIL);
 	while(pos != 5)
 	{
 		long count = Parent->Read(&id[pos],5-pos);

@@ -152,6 +152,9 @@ EOT
 #include <ksock.h>
 #include <qobject.h>
 #include "ipc.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
 class $mod : public QObject
 {
@@ -420,6 +423,9 @@ sub printServerBegin
 #include <ksock.h>
 #include <ctype.h>
 #include "ipc.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
 class $mod : public QObject
 {

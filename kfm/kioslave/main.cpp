@@ -13,6 +13,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 #define FTP_LOGIN "anonymous"
 #define FTP_PASSWD "joedoe@nowhere.crg"
@@ -87,34 +88,39 @@ void KIOSlave::getPID()
 
 void KIOSlave::mkdir( const char *_url )
 {
-    // _url = ReformatURL(_url);
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
+    }
 
-    KURL su( TopLevelURL(_url) );
-
+    KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
-		printf("ERROR: Malformed URL '%s'\n",_url );
-		ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
-		return;
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
     }
 
     if(ProtocolSupported(_url))
+    {
+	KProtocol *prot = CreateProtocol(_url);
+	if(prot->MkDir(&su) != KProtocol::SUCCESS)
 	{
-		KProtocol *prot = CreateProtocol(_url);
-		if(prot->MkDir(&su) != KProtocol::SUCCESS)
-		{
-			ProcessError(prot, _url);
-			return;
-		}
-		delete prot;
+	    ProcessError(prot, _url);
+	    return;
 	}
+	delete prot;
+    }
     else
     {
-		printf("ERROR: Not implemented\n");
-		QString err = "Mkdir ";
-		err += _url;
-		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
-		return;
+	printf("ERROR: Not implemented\n");
+	QString err = "Mkdir ";
+	err += _url;
+	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+	return;
     }
     
     ipc->done();
@@ -123,9 +129,16 @@ void KIOSlave::mkdir( const char *_url )
 void KIOSlave::list( const char *_url, bool _bHTML )
 {
     const char *old_url = _url;
-    // _url = ReformatURL(_url);
 
-    KURL su( TopLevelURL(_url) );
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
+    }
+
+    KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
 	printf("ERROR: Malformed URL '%s'\n",_url );
@@ -240,9 +253,15 @@ void KIOSlave::unmount( const char *_point )
 
 void KIOSlave::del( const char *_url )
 {
-    // _url = ReformatURL(_url);
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
+    }
 
-    KURL su( TopLevelURL(_url) );
+    KURL su( u.nestedURL() );
     if ( su.isMalformed() )
 	return;
     
@@ -345,25 +364,35 @@ void KIOSlave::del( const char *_url )
 
 void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
 {
-    printf("******** COPY '%s' to '%s\n",_src_url,_dest_url);
-    // _src_url = ReformatURL(_src_url);
- 
-    KURL su(TopLevelURL(_src_url));
+    KURL u( _src_url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_src_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
+	return;
+    }
+
+    KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
-		printf("ERROR: Malformed URL '%s'\n",_src_url );
-		ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
-		return;
+	printf("ERROR: Malformed URL '%s'\n",_src_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
+	return;
     }
-    
-    // _dest_url = ReformatURL(_dest_url);
 
-    KURL du(TopLevelURL(_dest_url));
+    KURL u2( _dest_url );
+    if ( u2.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_dest_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
+	return;
+    }
+    KURL du( u2.nestedURL() );
     if ( du.isMalformed() )
     {
-		printf("ERROR: Malformed URL '%s'\n",_dest_url );
-		ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
-		return;
+	printf("ERROR: Malformed URL '%s'\n",_dest_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
+	return;
     }
 
     if(ProtocolSupported(_src_url) && ProtocolSupported(_dest_url))
@@ -422,7 +451,6 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 			if ( ( c * 100 / size ) != last )
 			{
 			    last = ( c * 100 / size );
-			    printf("percent %i\n", last );
 			    ipc->progress( last );
 			}
 		}
@@ -461,7 +489,15 @@ void KIOSlave::get( const char *_url )
     printf("******** GET '%s'\n",_url);
     // _url = ReformatURL(_url);
  
-    KURL su(TopLevelURL(_url));
+    KURL u( _url );
+    if ( u.isMalformed() )
+    {
+	printf("ERROR: Malformed URL '%s'\n",_url );
+	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+	return;
+    }
+
+    KURL su( u.nestedURL() );
     if ( su.isMalformed() )
     {
 	printf("ERROR: Malformed URL '%s'\n",_url );
@@ -508,7 +544,6 @@ void KIOSlave::get( const char *_url )
 			if ( ( c * 100 / size ) != last )
 			{
 			    last = ( c * 100 / size );
-			    printf("percent %i\n", last );
 			    ipc->progress( last );
 			}
 		}

@@ -1,4 +1,5 @@
 #include <time.h>
+#include <stdlib.h>
 
 #include "htmlcache.h"
 #include <config-kfm.h>

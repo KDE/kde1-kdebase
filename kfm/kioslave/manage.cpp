@@ -8,7 +8,25 @@
 
 int ProtocolSupported(const char *url)
 {
-	char *urlcp = strdup(url);
+    // Iterate until we saw every subprotocol
+    KURL u( url );
+    do
+    {
+	// Get the right most subprotocol
+	QString sub( u.nestedURL() );
+	if ( !HaveProto( sub ) )
+	    return FALSE;
+	// Is there something left ?
+	if ( u.hasSubProtocol() )
+	{
+	    QString parent( u.parentURL() );
+	    u = parent.data();
+	}
+    } while ( u.hasSubProtocol() );
+    
+    return TRUE;
+
+    /* char *urlcp = strdup(url);
 	char *pptr, *eptr;
 	int supported = 1;
 
@@ -28,7 +46,7 @@ int ProtocolSupported(const char *url)
 
 	free(urlcp);
 	printf("url %s supported = %d\n",url, supported);
-	return(supported);
+	return(supported); */
 }
 
 int HaveProto(const char *url)
@@ -53,28 +71,36 @@ const char *TopLevelURL(const char *url)
 
 KProtocol *CreateProtocol(const char *url)
 {
-	const char *lasturl = TopLevelURL(url);
+    KURL u( url );
+    if ( u.isMalformed() )
+	return NULL;
+    
+    QString lasturl( u.nestedURL() );
 
-	if( lasturl[0] == '/' ) return(new KProtocolFILE);
-	if(strncmp(lasturl,"file:",5) == 0) return(new KProtocolFILE);
-	if(strncmp(lasturl,"http:",5) == 0) return(new KProtocolHTTP);
-	if(strncmp(lasturl,"ftp:",4) == 0) return(new KProtocolFTP);
-	if(strncmp(lasturl,"cgi:",4) == 0) return(new KProtocolCGI);
-	if(strncmp(lasturl,"tar:",4) == 0)
-	{
-		KSubProtocol *sub = new KProtocolTAR;
-		char *urlcp = strdup(url);
-		char *urlstart;
-		if( ( urlstart = strrchr(urlcp,'#') ) ) *urlstart = 0;
-		char *parenturlname = strrchr(urlcp,'#');
-		if(!parenturlname) parenturlname=urlcp;
+    // A Hack. Does allow only one subprotocol.
+    if( lasturl[0] == '/' ) return(new KProtocolFILE);
+    if(strncmp(lasturl,"file:",5) == 0) return(new KProtocolFILE);
+    if(strncmp(lasturl,"http:",5) == 0) return(new KProtocolHTTP);
+    if(strncmp(lasturl,"ftp:",4) == 0) return(new KProtocolFTP);
+    if(strncmp(lasturl,"cgi:",4) == 0) return(new KProtocolCGI);
+    if(strncmp(lasturl,"tar:",4) == 0)
+    {
+	KSubProtocol *sub = new KProtocolTAR;
+	sub->InitSubProtocol( u.parentURL() );
+	
+	/* char *urlcp = strdup(url);
+	char *urlstart;
+	if( ( urlstart = strrchr(urlcp,'#') ) ) *urlstart = 0;
+	char *parenturlname = strrchr(urlcp,'#');
+	if(!parenturlname) parenturlname=urlcp; */
 
-		KURL parenturl(parenturlname);
-		sub->InitSubProtocol(urlcp,parenturlname);
-		free(urlcp);
-		return(sub);
-	}
-	return(NULL);
+	/* QString parenturlname( u.parentURL() );
+	KURL parenturl( parenturlname ); 
+	sub->InitSubProtocol( parenturlname, parenturl ); */
+	
+	return(sub);
+    }
+    return(NULL);
 }
 
 /* char *ReformatURL(const char *url)

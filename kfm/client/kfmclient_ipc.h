@@ -9,6 +9,9 @@
 #include <ksock.h>
 #include <qobject.h>
 #include "ipc.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
 class KfmIpc : public QObject
 {
