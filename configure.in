@@ -221,6 +221,7 @@ AC_OUTPUT(Makefile \
 	kfm/pics/Makefile \
 	kfm/kfmwarn/Makefile \
 	mimetypes/Makefile \
+	mimetypes/applications/Makefile \
 	kdisplay/Makefile \
 	kfind/Makefile \
 	kfind/pics/Makefile \
