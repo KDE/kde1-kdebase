@@ -40,7 +40,7 @@ EOT
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "ipc.h"
+#include "kfmipc.h"
 #include "@ARGV[2].h"
 
 $mod\::$mod( int _port )
@@ -153,7 +153,7 @@ EOT
 #include <ctype.h>
 #include <ksock.h>
 #include <qobject.h>
-#include "ipc.h"
+#include "kfmipc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -442,7 +442,7 @@ sub printServerBegin
 #include <qobject.h>
 #include <ksock.h>
 #include <ctype.h>
-#include "ipc.h"
+#include "kfmipc.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>

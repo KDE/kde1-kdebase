@@ -10,7 +10,8 @@ MOC	=	@MOC@
 bin_PROGRAMS = kfontmanager
 noinst_HEADERS = kfontmanager.h kfontlist.h kfontexplorer.h
 kfontmanager_SOURCES = main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp
-BUILTSOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
+BUILT_SOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
+DISTCLEANFILES = $(BUILT_SOURCES)
 
 kfontmanager.cpp: kfontmanager.moc
 kfontlist.cpp: kfontlist.moc

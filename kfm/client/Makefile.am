@@ -10,7 +10,9 @@ noinst_HEADERS = kfmclient_ipc.h ipc.h
 
 kfmclient_DEPENDENCIES = debug.o
 
-BUILTSOURCES =	kfmclient_ipc.moc
+BUILT_SOURCES =	kfmclient_ipc.moc
+DISTCLEANFILES = $(BUILT_SOURCES)
+
 kfmclient_ipc.cpp: kfmclient_ipc.moc
 
 debug.o: ../debug.cpp ../config-kfm.h

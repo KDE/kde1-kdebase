@@ -5,6 +5,7 @@
 INCLUDES= @all_includes@ 
 LDADD	= @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11
 MOC	= @MOC@
+DISTCLEANFILES = main.moc
 
 bin_PROGRAMS = kvt
 

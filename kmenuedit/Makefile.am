@@ -16,6 +16,7 @@ MOCS =	kmenuedit.moc pmenu.moc cpopmenu.moc confmenu.moc\
 	button.moc IconPathDialog.moc IconPathDialogData.moc\
 	DesktopPathDialog.moc DesktopPathDialogData.moc\
 	entrydialog.moc
+DISTCLEANFILES = $(MOCS)
 
 kmenuedit.cpp:kmenuedit.moc
 kmenuedit.moc: kmenuedit.h

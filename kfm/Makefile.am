@@ -26,14 +26,14 @@ noinst_HEADERS =  \
 	xview.h krenamewin.h passworddialog.h fileentry.h \
 	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h
 
-BUILTSOURCES =	\
+BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc \
 	kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc \
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc fileentry.moc \
-	kfmjob.moc kfmexec.moc
+	kfmjob.moc kfmexec.moc cgi.moc
 
-CLEANFILES = $(BUILTSOURCES)
+CLEANFILES = $(BUILT_SOURCES)
 
 kfmgui.cpp: kfmgui.moc
 kioserver.cpp: kioserver.moc

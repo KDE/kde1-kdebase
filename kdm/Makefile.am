@@ -64,6 +64,7 @@ kdmdesktop_SOURCES = \
 	jpeg.cpp
 
 MOCSRC = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
+DISTCLEANFILES = $(MOCSRC)
 
 kfdialog.cpp: kfdialog.moc
 kfdialog.moc: kfdialog.h

@@ -5,7 +5,7 @@
 MOC = @MOC@
 INCLUDES = @all_includes@
 LDADD = @all_libraries@ -L. -lkdeui -lkdecore -lqt -lXext -lX11 @LIBCRYPT@
-CLEANFILES = $(BUILTSOURCES)
+CLEANFILES = $(BUILT_SOURCES)
 
 # for shadow passwords override the value
 INSTALL = @INSTALL@ $(SETUIDFLAGS)
@@ -73,7 +73,7 @@ klock_SOURCES = klock.cpp kscreensave.cpp
 BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
-		lissie.moc
+		lissie.moc morph3d.moc
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
