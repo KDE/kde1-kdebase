@@ -1,5 +1,7 @@
+
 INCLUDES = $(all_includes) 
-LDADD = $(all_libraries) -lkfile -lkfm -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11  $(LIBSOCKET) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD = -lkfile -lkfm -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11  $(LIBSOCKET) 
 
 DISTCLEANFILES = $(BUILT_SOURCES)
 

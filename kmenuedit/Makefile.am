@@ -1,6 +1,7 @@
 
 INCLUDES = $(all_includes)
-LDADD = $(all_libraries) -lkdeui -lkdecore -lqt -lXext -lX11 $(KDE_RPATH) $(LIBSOCKET)
+LDFLAGS =  $(all_libraries) $(KDE_RPATH)
+LDADD =-lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
 
 SUBDIRS = icons
 

@@ -1,6 +1,6 @@
 
 INCLUDES=       $(all_includes) -I..
-LDFLAGS = $(all_libraries) $(KDE_RPATH
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
 LDADD   =       -lkfm -lkdecore -lqt -lXext -lX11 $(LIBSOCKET) 
 
 ####### Files

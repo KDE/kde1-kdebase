@@ -1,7 +1,8 @@
 ####### Fiddle here
 
 INCLUDES = $(all_includes)
-LDADD   = $(all_libraries) -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11 $(LIBSOCKET) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDADD   = -lkdeui -lkdecore $(LIB_KIMGIO) -lqt -lXext -lX11 $(LIBSOCKET) 
 
 #######	Files
 
