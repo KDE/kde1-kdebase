@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1998-09-26 18:36:45+0400\n"
 "From: Alexander Budnik,LCTA 323,64880, <budnik@linserv.jinr.ru>\n"
@@ -211,85 +211,85 @@ msgid ""
 "I installed a number of default settings."
 msgstr ""
 
-#: kikbdconf.cpp:374
+#: kikbdconf.cpp:379
 msgid "unknown"
 msgstr ""
 
-#: kikbdconf.cpp:378 kikbdconf.cpp:471
+#: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
 msgstr "по умолчанию"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:419
 msgid "Author:  Not specified"
 msgstr "Автор:  Не определен"
 
-#: kikbdconf.cpp:416
+#: kikbdconf.cpp:421
 msgid "Author"
 msgstr "Автор"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:427
 msgid "Description:  "
 msgstr "Описание:  "
 
-#: kikbdconf.cpp:425
+#: kikbdconf.cpp:430
 msgid "Source:  "
 msgstr "Источник:  "
 
-#: kikbdconf.cpp:426
+#: kikbdconf.cpp:431
 msgid "no file"
 msgstr "нет файла"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:432
 msgid "user file"
 msgstr "файл пользователя"
 
-#: kikbdconf.cpp:428
+#: kikbdconf.cpp:433
 msgid "system file"
 msgstr "системный файл"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:438
 msgid "Statistic:  "
 msgstr "Статистика:  "
 
-#: kikbdconf.cpp:441
+#: kikbdconf.cpp:446
 msgid "symbols"
 msgstr "символов"
 
-#: kikbdconf.cpp:449
+#: kikbdconf.cpp:454
 msgid "codes"
 msgstr "кодов"
 
-#: kikbdconf.cpp:452
+#: kikbdconf.cpp:457
 msgid "alternative symbols"
 msgstr "алтернативные символы"
 
-#: kikbdconf.cpp:464
+#: kikbdconf.cpp:469
 #, fuzzy
 msgid "Language"
 msgstr "язык"
 
-#: kikbdconf.cpp:468
+#: kikbdconf.cpp:473
 #, fuzzy
 msgid "Charset"
 msgstr "кодировка"
 
-#: kikbdconf.cpp:514
+#: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
 msgstr "ОШИБКА национальной клавиатуры"
 
-#: kikbdconf.cpp:530
+#: kikbdconf.cpp:535
 msgid "International keyboard warning"
 msgstr "Предупреждение национальной клавиатуры"
 
-#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
+#: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
 msgstr "Вопрос национальной клавиатуры"
 
-#: kikbdconf.cpp:544
+#: kikbdconf.cpp:549
 msgid "Configure"
 msgstr ""
 
-#: kikbdconf.cpp:554
+#: kikbdconf.cpp:559
 #, fuzzy
 msgid ""
 "\n"

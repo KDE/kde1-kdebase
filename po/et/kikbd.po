@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-02-05 20:23+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -221,85 +221,85 @@ msgstr ""
 "Sa kasutad \"Rahvusvahelist klaviatuuri\" esimest korda.\n"
 "Ma installeerisin mitmed vaikeväärtused."
 
-#: kikbdconf.cpp:374
+#: kikbdconf.cpp:379
 msgid "unknown"
 msgstr "tundmatu"
 
-#: kikbdconf.cpp:378 kikbdconf.cpp:471
+#: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
 msgstr "vaikimisi"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:419
 msgid "Author:  Not specified"
 msgstr "Autor:  Ei ole määratud"
 
-#: kikbdconf.cpp:416
+#: kikbdconf.cpp:421
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:427
 msgid "Description:  "
 msgstr "Kirjeldus:  "
 
-#: kikbdconf.cpp:425
+#: kikbdconf.cpp:430
 msgid "Source:  "
 msgstr "Allikas:  "
 
-#: kikbdconf.cpp:426
+#: kikbdconf.cpp:431
 msgid "no file"
 msgstr "faili pole"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:432
 msgid "user file"
 msgstr "kasutaja fail"
 
-#: kikbdconf.cpp:428
+#: kikbdconf.cpp:433
 msgid "system file"
 msgstr "süsteemne fail"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:438
 msgid "Statistic:  "
 msgstr "Statistika:  "
 
-#: kikbdconf.cpp:441
+#: kikbdconf.cpp:446
 msgid "symbols"
 msgstr "sümbolid"
 
-#: kikbdconf.cpp:449
+#: kikbdconf.cpp:454
 msgid "codes"
 msgstr "koodid"
 
-#: kikbdconf.cpp:452
+#: kikbdconf.cpp:457
 msgid "alternative symbols"
 msgstr "alternatiivsed sümbolid"
 
 #
-#: kikbdconf.cpp:464
+#: kikbdconf.cpp:469
 msgid "Language"
 msgstr "Keel"
 
 #
-#: kikbdconf.cpp:468
+#: kikbdconf.cpp:473
 msgid "Charset"
 msgstr "Kooditabel"
 
-#: kikbdconf.cpp:514
+#: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
 msgstr "Rahvusvahelise klaviatuuri VIGA"
 
-#: kikbdconf.cpp:530
+#: kikbdconf.cpp:535
 msgid "International keyboard warning"
 msgstr "Rahvusvahelise klaviatuuri hoiatus"
 
-#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
+#: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
 msgstr "Rahvusvahelise klaviatuuri küsimus"
 
-#: kikbdconf.cpp:544
+#: kikbdconf.cpp:549
 msgid "Configure"
 msgstr "Konfigureeri"
 
-#: kikbdconf.cpp:554
+#: kikbdconf.cpp:559
 msgid ""
 "\n"
 "Do you want to continue?"

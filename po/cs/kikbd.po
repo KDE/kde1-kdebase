@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kibd\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-01-22 23:22+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <flidr@kky.zcu.cz>\n"
@@ -213,83 +213,83 @@ msgstr ""
 "Pou¾íváte nástroj \"Mezinárdní klávesnice\" poprvé.\n"
 "Instaluji nìkolik implicitních nastavení."
 
-#: kikbdconf.cpp:374
+#: kikbdconf.cpp:379
 msgid "unknown"
 msgstr "neznámý"
 
-#: kikbdconf.cpp:378 kikbdconf.cpp:471
+#: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
 msgstr "implicitní"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:419
 msgid "Author:  Not specified"
 msgstr "Autor: neuveden"
 
-#: kikbdconf.cpp:416
+#: kikbdconf.cpp:421
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:427
 msgid "Description:  "
 msgstr "Popis:  "
 
-#: kikbdconf.cpp:425
+#: kikbdconf.cpp:430
 msgid "Source:  "
 msgstr "Zdroj:  "
 
-#: kikbdconf.cpp:426
+#: kikbdconf.cpp:431
 msgid "no file"
 msgstr "¾ádný soubor"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:432
 msgid "user file"
 msgstr "u¾ivatelský soubor"
 
-#: kikbdconf.cpp:428
+#: kikbdconf.cpp:433
 msgid "system file"
 msgstr "systémový soubor"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:438
 msgid "Statistic:  "
 msgstr "Statistika:  "
 
-#: kikbdconf.cpp:441
+#: kikbdconf.cpp:446
 msgid "symbols"
 msgstr "symboly"
 
-#: kikbdconf.cpp:449
+#: kikbdconf.cpp:454
 msgid "codes"
 msgstr "kódy"
 
-#: kikbdconf.cpp:452
+#: kikbdconf.cpp:457
 msgid "alternative symbols"
 msgstr "alternativní symboly"
 
-#: kikbdconf.cpp:464
+#: kikbdconf.cpp:469
 msgid "Language"
 msgstr "jazyk"
 
-#: kikbdconf.cpp:468
+#: kikbdconf.cpp:473
 msgid "Charset"
 msgstr "Znaková sada"
 
-#: kikbdconf.cpp:514
+#: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
 msgstr "Chyba mezinárodní klávesnice"
 
-#: kikbdconf.cpp:530
+#: kikbdconf.cpp:535
 msgid "International keyboard warning"
 msgstr "Warování mezinárodní klávesnice"
 
-#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
+#: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
 msgstr "Dotaz mezinárodní klávesnice"
 
-#: kikbdconf.cpp:544
+#: kikbdconf.cpp:549
 msgid "Configure"
 msgstr "Nastavit"
 
-#: kikbdconf.cpp:554
+#: kikbdconf.cpp:559
 msgid ""
 "\n"
 "Do you want to continue?"

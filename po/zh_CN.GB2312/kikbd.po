@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-04-02 01:15+0200\n"
+"POT-Creation-Date: 1999-04-13 01:26+0200\n"
 "PO-Revision-Date: 1999-04-05 15:00+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -207,83 +207,83 @@ msgstr ""
 "你第一次使用\"国际键盘\".\n"
 "默认设置被安装."
 
-#: kikbdconf.cpp:374
+#: kikbdconf.cpp:379
 msgid "unknown"
 msgstr "未知"
 
-#: kikbdconf.cpp:378 kikbdconf.cpp:471
+#: kikbdconf.cpp:383 kikbdconf.cpp:476
 msgid "default"
 msgstr "默认"
 
-#: kikbdconf.cpp:414
+#: kikbdconf.cpp:419
 msgid "Author:  Not specified"
 msgstr "作者: 没有指定"
 
-#: kikbdconf.cpp:416
+#: kikbdconf.cpp:421
 msgid "Author"
 msgstr "作者"
 
-#: kikbdconf.cpp:422
+#: kikbdconf.cpp:427
 msgid "Description:  "
 msgstr "描述:  "
 
-#: kikbdconf.cpp:425
+#: kikbdconf.cpp:430
 msgid "Source:  "
 msgstr "源:  "
 
-#: kikbdconf.cpp:426
+#: kikbdconf.cpp:431
 msgid "no file"
 msgstr "没有文件"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:432
 msgid "user file"
 msgstr "用户文件"
 
-#: kikbdconf.cpp:428
+#: kikbdconf.cpp:433
 msgid "system file"
 msgstr "系统文件"
 
-#: kikbdconf.cpp:433
+#: kikbdconf.cpp:438
 msgid "Statistic:  "
 msgstr "统计数字:  "
 
-#: kikbdconf.cpp:441
+#: kikbdconf.cpp:446
 msgid "symbols"
 msgstr "符号"
 
-#: kikbdconf.cpp:449
+#: kikbdconf.cpp:454
 msgid "codes"
 msgstr "代码"
 
-#: kikbdconf.cpp:452
+#: kikbdconf.cpp:457
 msgid "alternative symbols"
 msgstr "替代符号"
 
-#: kikbdconf.cpp:464
+#: kikbdconf.cpp:469
 msgid "Language"
 msgstr "语言"
 
-#: kikbdconf.cpp:468
+#: kikbdconf.cpp:473
 msgid "Charset"
 msgstr "字符集"
 
-#: kikbdconf.cpp:514
+#: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
 msgstr "国际键盘-错误"
 
-#: kikbdconf.cpp:530
+#: kikbdconf.cpp:535
 msgid "International keyboard warning"
 msgstr "国际键盘-警告"
 
-#: kikbdconf.cpp:537 kikbdconf.cpp:542 kikbdconf.cpp:555
+#: kikbdconf.cpp:542 kikbdconf.cpp:547 kikbdconf.cpp:560
 msgid "International keyboard question"
 msgstr "国际键盘-问题"
 
-#: kikbdconf.cpp:544
+#: kikbdconf.cpp:549
 msgid "Configure"
 msgstr "配置"
 
-#: kikbdconf.cpp:554
+#: kikbdconf.cpp:559
 msgid ""
 "\n"
 "Do you want to continue?"
