@@ -12,5 +12,6 @@ Name[sv]=Skrivbord
 Name[it]=Desktop
 Name[hu]=Asztal
 Name[pt]=Ambiente de Trabalho
+Name[pt_BR]=Ambiente de Trabalho
 SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
 Icon=desktop_settings.xpm

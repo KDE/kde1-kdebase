@@ -11,5 +11,6 @@ Comment[sv]=DD Debugger
 Comment[fr]=Débogueur afficheur de données
 Comment[cs]=Data Display Debugger
 Comment[pt]=Data Display Debugger
+Comment[pt_BR]=Data Display Debugger
 Comment[sk]=Data Display Debugger
 Name=DDD

@@ -13,5 +13,6 @@ Name[hu]=Hálózat
 Name[sv]=Nätverk
 Name[it]=Rete
 Name[pt]=Rede
+Name[pt_BR]=Rede
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
 Icon=network_settings.xpm

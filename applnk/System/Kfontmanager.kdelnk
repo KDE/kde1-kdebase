@@ -14,6 +14,7 @@ Name[fi]=Kirjasinhallinta
 Name[it]=Caratteri
 Name[fr]=Gestionnaire de polices
 Name[pt]=Gestor de Fontes
+Name[pt_BR]=Gerenciador de Fontes
 Name[hu]=Fontkezelo
 Name[hr]=Upravitelj pisama
 Name[zh_GB2312]=×ÖÌå¹ÜÀíÆ÷
@@ -34,6 +35,7 @@ Comment[it]=Centro Controllo Caratteri del KDE
 Comment[fr]=Gestionnaire de polices de KDE
 Comment[hu]=KDE Font beállító
 Comment[pt]=Gestor de fontes utilizadas no KDE
+Comment[pt_BR]=Gerenciador de fontes do KDE
 Comment[hr]=KDE upravitelj pisama
 Comment[zh_GB2312]=KDE ×ÖÌå¹ÜÀíÆ÷
 

@@ -5,6 +5,7 @@ Icon=www.xpm
 Type=Link
 Comment[de]=World-Wide-Web URL
 Comment[pt]=URL de HTTP
+Comment[pt_BR]=URL de HTTP
 Comment[it]=Indirizzo World Wide Web
 Comment[fi]=WWW URL
 Comment[fr]=Adresse World Wide Web (HTTP)

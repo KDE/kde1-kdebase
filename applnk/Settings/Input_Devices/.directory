@@ -13,5 +13,6 @@ Name[hu]=Beviteli eszközök
 Name[sv]=Inmatningsenheter
 Name[it]=Dispositivi Input
 Name[pt]=Dispositivos de Entrada
+Name[pt_BR]=Dispositivos de Entrada
 SortOrder=keyboard.kdelnk,mouse.kdelnk
 Icon=input_devices_settings.xpm

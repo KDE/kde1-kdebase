@@ -9,6 +9,7 @@ Name[fi]=Työkalut
 Name[sv]=Nyttoprogram
 Name[it]=Applicazioni
 Name[pt]=Utilitários
+Name[pt_BR]=Utilitários
 Name[cs]=Nástroje
 Name[sk]=Nástroje
 SortOrder=xcalc.kdelnk,xclipboard.kdelnk,xconsole.kdelnk,xterm.kdelnk
