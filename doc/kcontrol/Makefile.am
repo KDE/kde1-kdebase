@@ -1,5 +1,5 @@
-SUBDIRS = kcmbell kcminfo kcminput kcmkeys kcmkfm \
-	kpanel kcmkwm kcmlocale kcmsamba kcmsyssound
+SUBDIRS = kcmbell kcmdisplay kcminfo kcminput kcmkeys kcmkfm \
+	kcmkwm kcmlocale kcmsamba kcmsyssound kpanel 
 
 data_DATA = index.html index-1.html index-2.html logotp3.gif
 
