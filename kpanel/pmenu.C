@@ -413,7 +413,6 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 		 SLOT(showToolTip(QString)) );
 
 	menu->connectItem(item->getId(), item, SLOT(exec()) );
-
 	// NOTE: only files accessed through DiskNavigator menus update the
 	// recent folders.
 
@@ -436,8 +435,8 @@ void PMenu::createMenu( QPopupMenu *menu, kPanel *panel, bool add_button)
 	  }
 	else
 	  {
-	    if( !item->command_name.isEmpty() )
-	      menu->connectItem( item->getId(), item, SLOT(exec()) );
+	    //if( !item->command_name.isEmpty() )
+	    menu->connectItem( item->getId(), item, SLOT(exec()) );
 	  }
 	connect( item, SIGNAL(showToolTip(QString)), (QObject *) panel,
 		 SLOT(showToolTip(QString)) );
