@@ -23,7 +23,7 @@ klipper_SOURCES = main.cpp toplevel.cpp
 klipper_METASOURCES = USE_AUTOMOC
 klipper_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-klipper_LDADD   = -lkfm       $(LIB_KDEUI)
+klipper_LDADD   =        $(LIB_KFM) $(LIB_KDEUI)
 
 DISTCLEANFILES = $()
 

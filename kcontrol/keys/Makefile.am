@@ -6,7 +6,7 @@ INCLUDES= $(all_includes)
 bin_PROGRAMS = 	kcmkeys
 kcmkeys_SOURCES = main.cpp standard.cpp global.cpp savescm.cpp 
 noinst_HEADERS =  standard.h global.h savescm.h
-kcmkeys_LDADD = -lkfm       $(LIB_KDEUI)
+kcmkeys_LDADD =        $(LIB_KFM) $(LIB_KDEUI)
 kcmkeys_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 BUILTSOURCES = standard.moc savescm.moc global.moc 

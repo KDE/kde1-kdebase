@@ -1,7 +1,7 @@
 
 INCLUDES=       $(all_includes) -I..
 LDFLAGS = 	$(all_libraries) $(KDE_RPATH)
-LDADD   =       -lkfm      $(LIB_KDECORE) 
+LDADD   =             $(LIB_KFM) 
 
 bin_PROGRAMS = kfmclient
 

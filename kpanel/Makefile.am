@@ -8,7 +8,7 @@ DISTCLEANFILES 	= $(BUILT_SOURCES)
 CXXFLAGS = @NOOPT_CXXFLAGS@
 
 bin_PROGRAMS = kpanel
-kpanel_LDADD =	-lkfm       $(LIB_KDEUI) 
+kpanel_LDADD =	$(LIB_KFM) $(LIB_KDEUI) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kpanel_SOURCES = kpanel.C props.C layout.C tools.C main.C events.C pmenu.C pfilemenu.C
 noinst_HEADERS = kpanel.h pmenu.h kpanel_version.h
