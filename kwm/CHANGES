@@ -16,6 +16,8 @@ patchlevel 2:
 	  unclutter, snap to border and snap to window (bugs given mostly
 	  by the wrong assumption that te client's geometry is defined
 	  relative to free desk space). Thanks Stephan (CT)
+        - fixed a nasty pointer-grab bug for window movement
+
 patchlevel 1:
 	- fixed the avoidance of shaded windows bug in smart placement.
 	  Ugly fix. Ugh! (CT)
