@@ -65,7 +65,16 @@ QWidget* mkButton(QWidget* parent, QBoxLayout* box, const char* slot,
 QPixmap mapLine(KiKbdMapConfig* map) {
   QPainter pp, pb;
   QString  text = map->getGoodLabel()+" "+map->getComment();
+
+  //CT - 01Apr1999 - extremely stupid fix for the problem of the
+  //        fontMetrics() use *before* pp activation, which leads to segfault
+  //        with Qt above 1.42
+  QPixmap tmp(16,16);
+  pp.begin(&tmp);
+  //CT
+
   int      width = pp.fontMetrics().width(text) + 25;
+  /*CT*/  pp.end(); //CT of course, we have to reinitialize it later
   QPixmap  pm(width, 16);
   QBitmap  bm(width, 16);
 
@@ -115,7 +124,7 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
 
   // add
   wid = mkButton(this, vbox, SLOT(addMap()), this, gettext("&Add"),
-		 gettext("Adding new keyboard map"));
+		 gettext("Add new keyboard map"));
   accel->connectItem(accel->insertItem(Key_Insert), wid, SLOT(animateClick()));
   // delete
   wid = mkButton(this, vbox, SLOT(deleteMap()), this,
@@ -124,11 +133,11 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   accel->connectItem(accel->insertItem(Key_Delete), wid, SLOT(animateClick()));
   // up
   wid = mkButton(this, vbox, SLOT(upMap()), this,
-		 gettext("U&p"), gettext("Up selected keyboard map"));
+		 gettext("U&p"), gettext("Move up selected keyboard map"));
   connect(this, SIGNAL(activateUp(bool)), wid, SLOT(setEnabled(bool)));
   // down
   wid = mkButton(this, vbox, SLOT(downMap()), this,
-		 gettext("D&own"), gettext("Down selected keyboard map"));
+		 gettext("D&own"), gettext("Move down selected keyboard map"));
   connect(this, SIGNAL(activateDown(bool)), wid, SLOT(setEnabled(bool)));
   // info
   wid = mkButton(this, vbox, SLOT(infoMap()), this,
@@ -144,7 +153,7 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
 	      createWidget(&kikbdConfig->getHotList(), this,
 			   gettext("Use &hot list"),
 			   gettext("Use only default and last active "
-				   "keyboard maps to switching from keyboard")));
+				   "keyboard maps when switch key sequence is used")));
   connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
 
   accel->connectItem(accel->insertItem(Key_Up), this, SLOT(selectionUp()));
@@ -213,7 +222,7 @@ void KiKbdMapsWidget::addMap()
     }
   if(mapsToAdd.count() == 0) {
     KMsgBox::message(0, i18n("Adding Keyboard"),
-		     i18n("There is no more keyboard maps"));
+		     i18n("There are no keyboard maps left to add"));
     return;
   }
   KiKbdAddDialog addDialog(this);
@@ -407,13 +416,13 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
 
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getSwitchRef(), group, 0L,
-			       gettext("Key(s) to switch between "
+			       gettext("Key(s) for switching between "
 				       "keyboard maps")));
   connect(wid, SIGNAL(activated(const char*)),  SLOT(newSwitch(const char*)));
 
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getAltSwitchRef(), group, 0L,
-			       gettext("Key to activate Alternate "
+			       gettext("Key for activating Alternate "
 				       "symbols in current keyboard map")));
   connect(this, SIGNAL(activateAltSwitch(bool)), wid, SLOT(setEnabled(bool)));
   group->setMinimumHeight(2*wid->height());
@@ -427,8 +436,8 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getKeyboardBeep(), group,
 			       gettext("&Beep"),
-			       gettext("Beep when ever keyboard "
-				       "mapping changed")));
+			       gettext("Beep when keyboard "
+				       "map is changed")));
   wid = mkButton(group, hbox, SLOT(advanced()), this,
 		 gettext("Ad&vanced"), gettext("Advanced options"));
   group->setMinimumHeight(2*wid->height());
@@ -465,14 +474,15 @@ void KiKbdGeneralWidget::advanced()
 		  createWidget(&kikbdConfig->getEmuCapsLock(), group,
 			       gettext("&Emulate Caps Lock"), 
 			       gettext("Emulate XServer "
-				       "Caps Lock. Needed for some languages"
-				       "to be correct")));
+				       "Caps Lock. Needed for correct "
+				       "keyboard operation in some languages")));
   // auto menu
   hbox->addWidget(kikbdConfig->
 		  createWidget(&kikbdConfig->getAutoMenu(), group,
 			       gettext("&World Menu"), 
-			       gettext("Show menu in any window "
-				       "by holding Switch keys")));
+			       gettext("Show menu in any window by "
+				       "holding sown the selected "
+				       "Switch key(s)")));
   // save classes
   hbox = new QHBoxLayout();
   groupLayout->addLayout(hbox);
@@ -492,16 +502,16 @@ void KiKbdGeneralWidget::advanced()
   hbox = new QHBoxLayout(butg, 15);
   // global
   hbox->addWidget(wid=butg->find(0));
-  addToolTip(wid, gettext("Standard behavior. Keyboard map active for "
+  addToolTip(wid, gettext("Standard behavior. Keyboard map effective for "
 			  "all windows"));
   // window
   hbox->addWidget(wid=butg->find(1));
-  addToolTip(wid, gettext("Extended behavior. Each windows remember it's own "
-			  "keyboard map"));
+  addToolTip(wid, gettext("Extended behavior. Keyboard map state is saved for "
+			  "each window independently"));
   // class
   hbox->addWidget(wid=butg->find(2));
-  addToolTip(wid, gettext("Special behavior. Each windows class remember it's "
-			  "own keyboard map"));
+  addToolTip(wid, gettext("Special behavior. Keyboard state is saved for each "
+			  "window class independently"));
 
   groupLayout->addWidget(butg);
   connect(wid, SIGNAL(toggled(bool)), wid2, SLOT(setEnabled(bool)));
@@ -529,7 +539,7 @@ void KiKbdGeneralWidget::advanced()
 
 /**
    Style widget
-   colors for normal, caps, alternate button
+   colors for normal, background, caps, alternate button
    button font
 */
 void makeColorButton (QVBoxLayout* layout, QWidget* but, QLabel*& label,
@@ -559,7 +569,12 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   // foreground button color
   but = kikbdConfig->createWidget(&kikbdConfig->getForColor(), group);
   makeColorButton(vbox, but, label, gettext("Foreground"), 
-		  gettext("Color of the text label"));
+		  gettext("Text label foreground color"));
+
+  // background button color
+  but = kikbdConfig->createWidget(&kikbdConfig->getBakColor(), group);
+  makeColorButton(vbox, but, label, gettext("Background"), 
+		  gettext("Text label background color"));
 
   // caps  color
   but = kikbdConfig->createWidget(&kikbdConfig->getCapsColor(), group);
@@ -571,7 +586,7 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   //  alternate color
   but = kikbdConfig->createWidget(&kikbdConfig->getAltColor(), group);
   makeColorButton(vbox, but, label, gettext("With Alternate"), 
-		  gettext("Background when Alternate switch is pressed"));
+		  gettext("Background when Alternate switch key is pressed"));
   connect(this, SIGNAL(enableAlternate(bool)), but, SLOT(setEnabled(bool)));
   connect(this, SIGNAL(enableAlternate(bool)), label, SLOT(setEnabled(bool)));
 

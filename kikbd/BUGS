@@ -19,7 +19,7 @@ FIXED - segfault on FreeBSD (because of API diffs in execlp) (reported by
 
 - Alt+Ctrl eats the next key (if window has menus) while Ctrl+Alt doesn't
 
-WORKED AROUND - windows newer than kikbd insensitive to map switching
-	keyboard accelerator (e.g. Alt+Ctrl)  
+FIXED (thanks to Dimitrios Bouras) - windows newer than kikbd insensitive 
+	to map switching keyboard accelerator (e.g. Alt+Ctrl)  
 
 FIXED? - segfault on Alpha because of uninitialised KObjConfig::version

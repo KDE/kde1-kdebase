@@ -45,85 +45,90 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
   label   = config.getLabel();
   comment = config.getGoodLabel();
   altKeys = config.getHasAltKeys();
+  compose = config.getHasCompose();
 
-  /**
-     new main symbols
-  */
-  keySyms = initSyms;
-
-  /**
-     load symbols from symbols(k==0) and codes(k==1)
-  */
-  unsigned count = keySyms.kcodes + 1;
-  unsigned i;
-  for(unsigned k=0; k<2; k++) {
-    QList<QStrList> &symmap = k==0?config.getKeysyms():config.getKeycodes();
-
-    for(i=0; i<symmap.count(); i++) {
-      QStrList list = *(symmap.at(i));
-      /**
-	 entry with less then 2 symbols are bad
-      */
-      if(list.count() < 2) continue;
-      /**
-	 change symbols
-      */
-      int index = k==0?initSyms.findSym(list.at(0))
-	:initSyms.findCode(list.at(0));
-      if(index == -1)  continue;
-      
-      unsigned j;for(j=list.count()<=count?list.count():count; j-->1;)
-	keySyms.change(index, list.at(j), j-1);
-    }
-  }
-
-  /**
-     create capslocked symbols
-  */
-  QStrList &capssyms = config.getCapssyms();
-  capsKeySyms = keySyms;
-  if(capssyms.count() > 0) {
+  unsigned g;
+  
+  for(g=0; g<4; g++) {
     /**
-       special capsed symbols
+       new main symbols
     */
-    for(i=0; i<capssyms.count(); i++) {
-      KeySym test = KeyTranslate::stringToSym(capssyms.at(i));
-      if(test == NoSymbol) continue;
+    keySyms[g] = initSyms;
+
+    /**
+       load symbols from symbols(k==0) and codes(k==1)
+    */
+    unsigned count = keySyms[g].kcodes + 1;
+    unsigned i;
+    for(unsigned k=0; k<2; k++) {
+      QList<QStrList> &symmap = k==0?config.getKeysyms(g):config.getKeycodes(g);
+
+      for(i=0; i<symmap.count(); i++) {
+        QStrList list = *(symmap.at(i));
+        /**
+	   entry with less then 2 symbols are bad
+        */
+        if(list.count() < 2) continue;
+        /**
+	   change symbols
+        */
+        int index = k==0?initSyms.findSym(list.at(0))
+	  :initSyms.findCode(list.at(0));
+        if(index == -1)  continue;
+        
+        unsigned j;for(j=list.count()<=count?list.count():count; j-->1;)
+          keySyms[g].change(index, list.at(j), j-1);
+      }
+    }
+
+    /**
+       create capslocked symbols
+    */
+    QStrList &capssyms = config.getCapssyms(g);
+    capsKeySyms[g] = keySyms[g];
+    if(capssyms.count() > 0) {
       /**
-	 look for capsed symbol
+	  special capsed symbols
       */
-      unsigned j;for(j=0; j<(initSyms.maxKeyCode-initSyms.minKeyCode-1)*
-		       initSyms.kcodes; j+=initSyms.kcodes) {
-	if(KeyTranslate::tolower(initSyms.syms[j]) 
-	   == KeyTranslate::tolower(test)) {
-	  capsKeySyms.syms[j]   = keySyms.syms[j+1];
-	  capsKeySyms.syms[j+1] = keySyms.syms[j];
-	}
-	if(capsKeySyms.kcodes >=4) {
-	  if(KeyTranslate::tolower(keySyms.syms[j+2]) 
+      for(i=0; i<capssyms.count(); i++) {
+	KeySym test = KeyTranslate::stringToSym(capssyms.at(i));
+	if(test == NoSymbol) continue;
+	/**
+	   look for capsed symbol
+	*/
+	unsigned j;for(j=0; j<(initSyms.maxKeyCode-initSyms.minKeyCode-1)*
+		         initSyms.kcodes; j+=initSyms.kcodes) {
+	  if(KeyTranslate::tolower(initSyms.syms[j]) 
 	     == KeyTranslate::tolower(test)) {
-	    capsKeySyms.syms[j+2] = keySyms.syms[j+3];
-	    capsKeySyms.syms[j+3] = keySyms.syms[j+2];
+	    capsKeySyms[g].syms[j]   = keySyms[g].syms[j+1];
+	    capsKeySyms[g].syms[j+1] = keySyms[g].syms[j];
+	  }
+	  if(capsKeySyms[g].kcodes >=4) {
+	    if(KeyTranslate::tolower(keySyms[g].syms[j+2]) 
+	       == KeyTranslate::tolower(test)) {
+	      capsKeySyms[g].syms[j+2] = keySyms[g].syms[j+3];
+	      capsKeySyms[g].syms[j+3] = keySyms[g].syms[j+2];
+	    }
 	  }
 	}
       }
-    }
-  } else {
-    /**
-       default capsed symbols
-    */
-    for(i=0; i<(initSyms.maxKeyCode-initSyms.minKeyCode-1)*
-	  initSyms.kcodes; i+=initSyms.kcodes) {
-      if(KeyTranslate::tolower(initSyms.syms[i]) >= 'a' 
-	 && KeyTranslate::tolower(initSyms.syms[i]) <= 'z') {
-	capsKeySyms.syms[i]   = keySyms.syms[i+1];
-	capsKeySyms.syms[i+1] = keySyms.syms[i];
-      }
-      if(capsKeySyms.kcodes >=4) {
-	if(KeyTranslate::tolower(keySyms.syms[i+2]) >= 'a' 
-	   && KeyTranslate::tolower(initSyms.syms[i+2]) <= 'z') {
-	  capsKeySyms.syms[i+2] = keySyms.syms[i+3];
-	  capsKeySyms.syms[i+3] = keySyms.syms[i+2];
+    } else {
+      /**
+	  default capsed symbols
+      */
+      for(i=0; i<(initSyms.maxKeyCode-initSyms.minKeyCode-1)*
+	    initSyms.kcodes; i+=initSyms.kcodes) {
+	if(KeyTranslate::tolower(initSyms.syms[i]) >= 'a' 
+	   && KeyTranslate::tolower(initSyms.syms[i]) <= 'z') {
+	  capsKeySyms[g].syms[i]   = keySyms[g].syms[i+1];
+	  capsKeySyms[g].syms[i+1] = keySyms[g].syms[i];
+	}
+	if(capsKeySyms[g].kcodes >=4) {
+	  if(KeyTranslate::tolower(keySyms[g].syms[i+2]) >= 'a' 
+	     && KeyTranslate::tolower(initSyms.syms[i+2]) <= 'z') {
+	    capsKeySyms[g].syms[i+2] = keySyms[g].syms[i+3];
+	    capsKeySyms[g].syms[i+3] = keySyms[g].syms[i+2];
+	  }
 	}
       }
     }
@@ -133,34 +138,34 @@ KeyMap::KeyMap(KiKbdMapConfig& config, KeySyms& initSyms)
    change symbol by symbol in both normal and caps map
    return true if Ok
 */
-bool KeyMap::changeKeySym(const char* from, const char* to, int index)
+bool KeyMap::changeKeySym(const char* from, const char* to, int index, unsigned g)
 {
-  int i = keySyms.findSym(from);
+  int i = keySyms[g].findSym(from);
   if(i == -1) return FALSE;
-  keySyms.change(i, to, index);
-  capsKeySyms.change(i, to, index);
+  keySyms[g].change(i, to, index);
+  capsKeySyms[g].change(i, to, index);
   return TRUE;
 }
 
 /**
    change X window keyboard mapping to this one
 */
-void KeyMap::toggle()
+void KeyMap::toggle(unsigned g)
 {
-  if(isToggleCaps && !capsKeySyms.isNull()) capsKeySyms.write();
-  else keySyms.write();
+  if(isToggleCaps && !capsKeySyms[g].isNull()) capsKeySyms[g].write();
+  else keySyms[g].write();
 }
 /**
    activate capslocked keys
 */
-void KeyMap::toggleCaps(bool on)
+void KeyMap::toggleCaps(bool on, unsigned g)
 {
   if(isToggleCaps == on) return;
   isToggleCaps = on;
   if(isToggleCaps) {
-    if(!capsKeySyms.isNull()) capsKeySyms.write();
+    if(!capsKeySyms[g].isNull()) capsKeySyms[g].write();
   } else {
-    keySyms.write();
+    keySyms[g].write();
   }
 }
 
@@ -178,7 +183,7 @@ void KeySyms::allocSyms(KeySym min, KeySym max, unsigned codes)
     if(syms) delete syms;
     syms = new KeySym[nsize];
     if(syms == 0) {
-      KiKbdMsgBox::error(gettext("KeyMap: cannot allocate memory"));
+      KiKbdMsgBox::error(gettext("KeyMap: can't allocate memory"));
     }
     memset(syms, 0, sizeof(KeySym)*nsize);
   }
@@ -225,12 +230,12 @@ int KeySyms::findSym(const char* ssym)
 	 == KeyTranslate::tolower(sym)) return i;
     }
   if(kikbdConfig && kikbdConfig->getCodes() == "") {
-    KiKbdMsgBox::ask(gettext("Can not find symbol \"%s\".\n"
-			     "May be your default X codes does not match.\n"
-			     "You can preset X codes in \"Advanced\" section\n"
-			     "of configuration program."), ssym);
+    KiKbdMsgBox::ask(gettext("Can't find symbol \"%s\".\n"
+			     "Maybe your default X codes do not match.\n"
+			     "You can preset X codes from section \"Advanced\"\n"
+			     "in the configuration program."), ssym);
   } else
-    KiKbdMsgBox::askContinue(gettext("KeyMap: can not find symbol \"%s\"."),
+    KiKbdMsgBox::askContinue(gettext("KeyMap: can't find symbol \"%s\"."),
 			     ssym);
   return -1;
 }
@@ -238,13 +243,13 @@ int KeySyms::findCode(const char* scode)
 {
   KeySym code = KeyTranslate::stringOrNumToCode(scode);
   if(code == (KeySym)-1) {
-    KiKbdMsgBox::askContinue(gettext("KeyMap: do not understand key code \"%s\".")
+    KiKbdMsgBox::askContinue(gettext("KeyMap: can't read keycode \"%s\".")
 			     , scode);
     return -1;
   }
   if(code < minKeyCode || code > maxKeyCode) {
     KiKbdMsgBox
-       ::askContinue(gettext("KeyMap: key code \"%s\" go out of range."),
+       ::askContinue(gettext("KeyMap: keycode \"%s\" is out of range."),
 		     scode);
     return -1;
   }
@@ -267,7 +272,7 @@ KeySyms& KeySyms::operator=(KeySyms& s)
 }
 KeySyms& KeySyms::operator=(KiKbdMapConfig* map)
 {
-  QList<QStrList>& codes = map->getKeycodes();
+  QList<QStrList>& codes = map->getKeycodes(0);
   // find symbols per code and min max code
   KeySym min = (unsigned)-1, max = 0;
   unsigned ncodes = 0;

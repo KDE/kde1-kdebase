@@ -1,7 +1,9 @@
 # KDE Config File
 [International Keyboard]
+ForegroundColor=255,255,255
+BackgroundColor=0,128,128
 AltColor=255,255,0
-CapsLockColor=0,128,128
+CapsLockColor=128,0,128
 Beep=true
 Font=helvetica,12,5,iso-8859-1,50,0
 EmulateCapsLock=false

@@ -69,9 +69,10 @@ void exitHandler(int)
 int (*oldXerrorHandler)(Display*, XErrorEvent*);
 int xerrorHandler(Display* d, XErrorEvent* e)
 {
-  cout << "error = " << (int)e->error_code 
-    //<< " for pid = " << getpid()
-       << endl;
+  char errmsg[64] = {0};
+
+  XGetErrorText(d, (int)e->error_code, errmsg, 64);
+  cerr << "KiKbd: X11 error: " << errmsg << endl;
   if((int)e->error_code == BadWindow
      //     || (int)e->error_code == BadDrawable
      || (int)e->error_code == BadAccess)
@@ -107,6 +108,13 @@ KiKbdApplication::KiKbdApplication(int n, char**v)
      construct main widget
   */
   setMainWidget(button = new KiKbdButton());
+
+
+  // Disable global mouse tracking as this interferes with our
+  // event mask for the root window, effectively disabling reception
+  // of CreateNotify events for new windows. DB -- March 1999
+  //
+  QApplication::setGlobalMouseTracking(FALSE);
 
   /**
      look for started kikbd
@@ -218,9 +226,9 @@ QPalette mkPalette(const QColor& fg, const QColor& bg) {
   return QPalette(cg, cg, cg);
 }
 /**
-   In this function kikbd load it configuration from file
-   This operation is dangaraus becouse a lot of delete, new
-   and a big timeout for X events
+   In this function kikbd loads its configuration from file
+   This operation is "dangerous" because it involves a lot of
+   deletions, creations, and big timeouts for X events
 */
 void KiKbdApplication::loadConfig()
 {
@@ -235,7 +243,7 @@ void KiKbdApplication::loadConfig()
   */
   XSetModifierMapping(display, modifs);
   /**
-     this is configurations object
+     this is the configurations object
   */
   KiKbdConfig kikbdConfig(FALSE);
   /**
@@ -249,15 +257,14 @@ void KiKbdApplication::loadConfig()
   ::kikbdConfig = &kikbdConfig;
 
   /**
-     set three palette: normal, with capslock, with alt
+     set four palettes: normal, background, with capslock, with alt
   */
-  normalPalette = button->palette();
-  capsPalette   = mkPalette(normalPalette.normal().foreground(),
+  capsPalette   = mkPalette(kikbdConfig.getForColor(),
 			    kikbdConfig.getCapsColor());
-  altPalette    = mkPalette(normalPalette.normal().foreground(),
+  altPalette    = mkPalette(kikbdConfig.getForColor(),
 			    kikbdConfig.getAltColor());
   normalPalette = mkPalette(kikbdConfig.getForColor(),
-			    normalPalette.normal().background());
+			    kikbdConfig.getBakColor());
   button->setPalette(normalPalette);
 
   /**
@@ -275,8 +282,8 @@ void KiKbdApplication::loadConfig()
   button->setFont(kikbdConfig.getCustFont()?kikbdConfig.getFont():generalFont);
 
   /**
-     configuration take a lot of time
-     we have to care about pending events
+     configuration takes a lot of time, so
+     we have to take care of pending events
   */
   //processEvents();
 
@@ -300,13 +307,14 @@ void KiKbdApplication::loadConfig()
     initSyms.expandCodes(4);
   else initSyms.expandCodes(2);
   /**
-     here we are loading all used symbols in all maps
-     also we create popup menu and necessary connections
+     here we are loading all used symbols in all maps,
+     creating popup menu and necessary connections
   */
   keyMaps.clear();
   menu->clear();
-  int len = 0;
+  QRect flen;
   QStrList maps = kikbdConfig.getMaps();
+  QFontMetrics font = button->fontMetrics();
   unsigned i;for(i=0; i<maps.count(); i++) {
     KiKbdMapConfig *map = kikbdConfig.getMap(maps.at(i));
     if(map->getNoFile()) {
@@ -317,20 +325,26 @@ void KiKbdApplication::loadConfig()
     keyMaps.append(new KeyMap(*map, initSyms));
     menu->insertItem(map->getIcon(), map->getGoodLabel());
     /**
-       we want to automaticaly adjust kikbd button size
-       maybe we need this option in the future
+       we want to automaticaly adjust kikbd button
+       size (we may need this option in the future)
     */
-    int tlen = map->getLabel().length();
-    if(len < tlen) len = tlen;
+    QRect tflen = font.boundingRect(map->getLabel());
+    if(flen.width() < tflen.width()) flen = tflen;
   }
-  QFontMetrics font = button->fontMetrics();
-  button->setMinimumSize(font.maxWidth()*len, 3*font.height()/2);
+  button->setMinimumSize(3*flen.width()/2, 3*font.height()/2);
   mainWidget()->resize(button->minimumSize());
   menu->insertSeparator();
   menu->insertItem(i18n("Setup"));
   menu->insertItem(i18n("Quit"));
   //processEvents();
 
+  // Compose keys support: only implemented for
+  // Hellenic (Greek) keyboard -- DB January 1999
+  // Reset compose keys & state machine vars for key groups
+  //
+  wasComp1Key = wasComp2Key = wasShift = rstGroup = FALSE;
+  comp1Key = comp2Key = shiftL = shiftR = NoSymbol;
+  group = 0;
   /**
      initialise up to two keys for switching from keyboard
   */
@@ -364,9 +378,9 @@ void KiKbdApplication::loadConfig()
       for(i=0; i < keyMaps.count(); i++) {
 	if(keyMaps.at(i)->hasAltKeys()) {
 	  keyMaps.current()->changeKeySym(altSwitchKey,
-					  "Mode_switch", 1);
+					  "Mode_switch", 1, 0);
 	  if(!keyMaps.current()->changeKeySym(altSwitchKey,
-					      "Mode_switch", 0)) {
+					      "Mode_switch", 0, 0)) {
 	    KiKbdMsgBox::warning(gettext("Can not set Mode Switch as %s"
 					 " for keyboard %s.\nAlt symbols "
 					 "disabled"),
@@ -389,10 +403,21 @@ void KiKbdApplication::loadConfig()
   if(kikbdConfig.getEmuCapsLock()) {
     capsKey = KeyTranslate::stringToSym("Caps_Lock");
     if(!removeModifier(capsKey)) {
-      KiKbdMsgBox::warning(gettext("Cannot remove Caps Lock from Modifiers.\n"
+      KiKbdMsgBox::warning(gettext("Can't remove Caps Lock from Modifiers.\n"
 				   "Caps Lock Emulation disabled"));
       capsKey = NoSymbol;
     }
+  }
+
+  // Compose keys support: only implemented for
+  // Hellenic (Greek) keyboard -- DB January 1999
+  // Initialize compose keys & state machine vars for key groups
+  //
+  if(kikbdConfig.hasCompose()) {
+    comp1Key = KeyTranslate::stringToSym("Dacute_accent");
+    comp2Key = KeyTranslate::stringToSym("Ddiaeresis");
+    shiftL = KeyTranslate::stringToSym("Shift_L");
+    shiftR = KeyTranslate::stringToSym("Shift_R");
   }
 
   /**
@@ -452,20 +477,19 @@ void KiKbdApplication::loadConfig()
 
   if(isInit) {
     /**
-       Take care about session management
+       Take care of session management
     */
     topWidget = new QWidget();
     setTopWidget(topWidget);
     enableSessionManagement(TRUE);
     setWmCommand("");
     KWM::setUnsavedDataHint(topWidget->winId(), TRUE);
-    /**
-       Take events from desktop
-    */
-    keyMaps.at(0);
-    XSelectInput(display, desktop()->winId(), 
-		 SubstructureNotifyMask | FocusChangeMask);
-    selectRecursivelyInput(desktop()->winId());
+
+    // Receive events from children of the desktop (root)
+    // window; the desktop itself is excluded at this point
+    //
+    selectRecursivelyInput(qt_xrootwin());
+
     /**
        Store default map. This is for session managment in Global
        and Window modes
@@ -477,7 +501,7 @@ void KiKbdApplication::loadConfig()
   if(defmap) setKeyMapTo(defmap);
 
   /**
-     try to restart according to config
+     try restarting according to config
   */
   if(isInit || (docked != kikbdConfig.getDocking())) {
     docked = kikbdConfig.getDocking();
@@ -498,12 +522,21 @@ void KiKbdApplication::loadConfig()
       KWM::setDockWindow(mainWidget()->winId());
     mainWidget()->show();
   }
-  
+
+  if (isInit) {
+    // Now that out window has been recreated, indicate we
+    // want events from the desktop (root) window as well
+    //
+    XSelectInput(qt_xdisplay(), qt_xrootwin(),
+		 SubstructureNotifyMask | FocusChangeMask);
+    XSync(qt_xdisplay(), False);
+  }
+
   /**
-     find good place
+     find a good place
   */
   if(!docked) {
-    if(isInit && !KWM::isKWMInitialized()) sleep(1);
+    while (isInit && !KWM::isKWMInitialized()) sleep(1);
     if(KWM::isKWMInitialized()) {
       int geom = kikbdConfig.getAutoStartPlace();
       QRect rec = KWM::getWindowRegion(KWM::currentDesktop());
@@ -575,53 +608,57 @@ Window KiKbdApplication::findKiKbdWindow(Window win)
 bool KiKbdApplication::x11EventFilter(XEvent *e)
 {
   /**
-     we chage behavior of Qt
-     we have much more events
-     we look for keyboard events from the world
-     and only for foreign event of other types
+     We change Qt's default behavior:
+     - we look for keyboard events from the world
+     - and only for foreign events of other types
   */
+
   /**
      event is for KApplication filter if:
-     1)(it is not kikbd button OR the type is not key press/release) AND
-     2)it not root window AND
-     3)it can be find in Qt widgets AND
+     1. (it is not kikbd button OR the type is not key press/release) AND
+     2. it is not from the root (desktop) window AND
+     3. it can't be found in Qt widgets
   */
-  bool myWindow =  (e->xany.window != button->winId() 
-		    || (e->type != KeyRelease && e->type != KeyPress))
-    && (e->xany.window != desktop()->winId())
+  bool myWindow =
+    (e->xany.window != button->winId() || (e->type != KeyRelease &&
+					   e->type != KeyPress))
+    && (e->xany.window != qt_xrootwin())
     && QWidget::find(e->xany.window);
   /**
      filter events
   */
-  //if(e->type == ConfigureNotify)
-  //cerr << windowClass(e->xany.window) << endl;
+
   if(!myWindow) {
     KeySym key;
     /**
        during configuration we ignory foreign events
     */
-    if(inConfig) {return TRUE;}
+    if (inConfig) return TRUE;
+
     switch(e->type) {
       //case(UnmapNotify):
     case(MapNotify):
       /**
-	 work around screen savers problem
+	 work around screen savers' problem
       */
       if(windowClass(e->xany.window).contains(".kss") == 1)
 	setKeyMapTo(0);
       break;
+
     case(CreateNotify): 
       /**
-	 someone open the new window
+	 a new window was opened
 	 we want keyboard events from it
       */
       //CT 07Jan1998 - temporary fix. The important winId of the newly
       //          created window is never passed to kikbd. So we reparse
       //          the whole shitty X tree.
-      //
-      //selectRecursivelyInput(e->xcreatewindow.window);
-      selectRecursivelyInput(desktop()->winId());
+      //CT 29Mar1999 - fixed by Dimitrios Bouras - he reported this was a Qt
+      //	  bug
+      selectRecursivelyInput(e->xcreatewindow.window);
+      //selectRecursivelyInput(desktop()->winId());
       break;
+
     case(DestroyNotify):
       /**
 	 the window was destroyed
@@ -630,9 +667,16 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
       if(windowList.findWindow(e->xany.window))
 	windowList.remove();
       break;
+      
+    //CT 29Mar1999 - Dimitrios added this for fixing a Solaris problem
+    case(MappingNotify):
+      if (e->xmapping.request == MappingKeyboard)
+	XRefreshKeyboardMapping(&e->xmapping);
+      break;
+
     case(KeyRelease):
       /**
-	 when key released we have to do somethings
+	 when key released we have to do a few things
       */
       key = XLookupKeysym(&e->xkey, 0);
       if(key == capsKey) {
@@ -653,12 +697,20 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
       if(key == altKey) {
 	QTimer::singleShot(altSwitchDelay, this, SLOT(altSwitchTimer()));
       }
+      if(rstGroup) {
+	rstGroup = FALSE;
+	group = 0;
+	keyMapGroup(group);
+	//cerr << "*group = " << group << endl;
+      }
       break;
+
     case(KeyPress):
       key = XLookupKeysym(&e->xkey, 0);
       if(key == firstKey || key == secondKey) {
 	/**
-	   we are worry about key press
+	   we only worry about key press
+	   for the keymap switching keys
 	*/
 	if(key == firstKey ) isFirstKey = TRUE;
 	if(key == secondKey) isSecondKey = TRUE;
@@ -671,7 +723,34 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
 	toggleAlt(TRUE);
 	altSwitchCount++;
       }
+      if(key == shiftL || key == shiftR)
+	wasShift = TRUE;
+      else
+	wasShift = FALSE;
+      if(((XKeyEvent *)e)->state & ShiftMask)
+	key = XLookupKeysym(&e->xkey, 1);
+      if(key == comp1Key || key == comp2Key) {
+	if(key == comp1Key) {
+	  wasComp1Key = TRUE;
+	  if(wasComp2Key) group = 3;
+	  else group = 1;
+	}
+	if(key == comp2Key) {
+	  wasComp2Key = TRUE;
+	  if(wasComp1Key) group = 3;
+	  else group = 2;
+	}
+	keyMapGroup(group);
+	//cerr << "*group = " << group << endl;
+      }
+      else {
+	if (! wasShift && (wasComp1Key || wasComp2Key)) {
+	  wasComp1Key = wasComp2Key = FALSE;
+	  rstGroup = TRUE;
+	}
+      }
       break;
+
     case(FocusIn):
       /**
 	 if we want to have map per window
@@ -716,7 +795,7 @@ bool KiKbdApplication::x11EventFilter(XEvent *e)
   return KApplication::x11EventFilter(e);
 }
 /**
-   is this window a top level window
+   check if window is a top level window
 */
 int KiKbdApplication::isTopLevelWindow(Window win)
 {
@@ -731,7 +810,7 @@ int KiKbdApplication::isTopLevelWindow(Window win)
   return(type_ret!=None);
 }
 /** 
-    is this window the frame of window manager?
+    is this window or any of its children a window manager frame?
 */
 int KiKbdApplication::isWmWindow(Window win)
 {
@@ -751,54 +830,53 @@ int KiKbdApplication::isWmWindow(Window win)
   return is;
 }
 /**
-   we're adding this window to window cache
-   and we want some events from it
+   add this window to window cache and
+   indicate we want to receive events from it
 */
 void KiKbdApplication::selectWindowInput(Window win)
 {
   //if(windowList.findWindow(win)) return;
-  /**
-     ignore own windows
-  */
-  if(QWidget::find(win)) return;
 
-  /**
-     clean any events for foreign windows
-  */
-  //if(!QWidget::find(win)) 
-  XSelectInput(display, win, 0);
+  // ignore QT widget windows; believe it or not,
+  // this includes the desktop (root) window
+  //
+  if (QWidget::find(win))
+    return;
 
+  // clean any events for foreign windows
+  //
+  XSelectInput(qt_xdisplay(), win, NoEventMask);
+
+  // Retrieve window attributes; we are interested in our
+  // event notification masks with respect to this window
+  //
   XWindowAttributes wa;
-  if(!XGetWindowAttributes(display, win, &wa)) return; // unknown error
-
-  /**
-     we need information on creation/deletion
-  */
-  wa.your_event_mask |= SubstructureNotifyMask;
-
-  /**
-     we request events only if
-     1. the window already requested this kind of events
-     2. the window is blocking the events from propagation
-     3. this window is wm's one or top level one
-     (for the case the application itself doesn't want these events)
-      (... from xrus ...)
-  */ 
-  QString wclass = windowClass(win);
-  int topLevel = isTopLevelWindow(win);
-  //int wm       = isWmWindow(win);
-  bool individ = topLevel && (wclass != "kwm");
-
-  int needMask = (KeyPressMask | KeyReleaseMask);
-  if(individ) {
-    needMask |= FocusChangeMask;
+  if(!XGetWindowAttributes(display, win, &wa)) {
+    cerr << "KiKbd: selectWindowInput: XGetWindowAttributes: "
+	 << "error: window ID: " << hex << win << dec << endl;
+    return;
   }
 
-  wa.your_event_mask |= (wa.all_event_masks|wa.do_not_propagate_mask)
-    & needMask;
-  if(wa.your_event_mask & needMask) wa.your_event_mask |= needMask;
-  //if(((wa.your_event_mask & needMask) != needMask)
-  //&& (win==wa.root || topLevel || wm)) wa.your_event_mask |= needMask;
+  // No matter what, we need info on creation
+  // and deletion of this window's children
+  //
+  wa.your_event_mask |= SubstructureNotifyMask;
+
+  // Collect some window properties
+  //
+  QString wclass = windowClass(win);
+  int topLevel = isTopLevelWindow(win);
+
+  // We request other events only if:
+  // - some other window has already requested these events
+  // - the window is blocking the events from propagation
+  // 
+  bool individ = topLevel && (wclass != "kwm");
+  int needMask = (KeyPressMask | KeyReleaseMask);
+  if (individ) needMask |= FocusChangeMask;
+  wa.your_event_mask |= ((wa.all_event_masks|wa.do_not_propagate_mask)
+			 & needMask);
+  if (wa.your_event_mask & needMask) wa.your_event_mask |= needMask;
 
   /**
      init class list item
@@ -810,24 +888,32 @@ void KiKbdApplication::selectWindowInput(Window win)
      insert window into window list with class Id
   */
   if(!windowList.findWindow(win))
-    windowList.append(new WindowEntry(win, keyMaps.at(), hotmap, classList.at()));
+    windowList.append(new WindowEntry(win, keyMaps.at(), hotmap,
+		      classList.at()));
   else
     *(windowList.current()) = WindowEntry(win, keyMaps.at(), hotmap, 
 					  classList.at());
   XSelectInput(display, win, wa.your_event_mask);
 }
 /**
-   this did add window using window tree
+   add window using window tree
 */
 void KiKbdApplication::selectRecursivelyInput(Window win)
 {
   Window   root, parent, *children;
   unsigned nchildren;
+  QString wclass = windowClass(win);
 
   if(!XQueryTree(display, win, &root, &parent, &children, &nchildren))
     return;
 
-  unsigned i;for(i=0; i < nchildren; i++) {
+  // Ignore kpanel windows as they interfere with
+  // the window creation monitoring mechanism -- DB March 1999
+  //
+  if (wclass == "kpanel")
+    return;
+
+  unsigned i; for (i=0; i<nchildren; i++) {
     selectRecursivelyInput(children[i]);
   }
   XFree((char *)children);
@@ -888,6 +974,13 @@ bool KiKbdApplication::addModifier(KeySym sym, int mod)
   return TRUE;
 }
 /**
+   change keyboard group by number
+*/
+void KiKbdApplication::keyMapGroup(unsigned g)
+{
+  keyMaps.current()->toggle(g);
+}
+/**
    change keyboard map by number
 */
 void KiKbdApplication::setKeyMapTo(unsigned i, bool ch)
@@ -899,7 +992,9 @@ void KiKbdApplication::setKeyMapTo(unsigned i, bool ch)
     QToolTip::remove(button);
     QToolTip::add(button, keyMaps.current()->getComment());
     if(keyboardBeep && !inConfig) beep();
-    keyMaps.current()->toggle();
+    keyMaps.current()->toggle(0);
+    group = 0;
+    wasComp1Key = wasComp2Key = wasShift = rstGroup = FALSE;
   }
 
   if(ch) {
@@ -923,7 +1018,7 @@ void KiKbdApplication::setKeyMapTo(unsigned i, bool ch)
   }
 }
 /**
-   change keyboard map to next in circle
+   change keyboard map to the next one defined, in a circular fashion
 */
 void KiKbdApplication::rotateKeyMap()
 {
@@ -938,7 +1033,7 @@ void KiKbdApplication::rotateKeyMap()
 void KiKbdApplication::toggleCaps(bool on)
 {
   if(isToggleCaps == on) return;
-  keyMaps.current()->toggleCaps(isToggleCaps = on);
+  keyMaps.current()->toggleCaps(isToggleCaps = on, group);
   if(isToggleCaps) button->setPalette(capsPalette);
   else button->setPalette(normalPalette);
 }
@@ -951,8 +1046,7 @@ void KiKbdApplication::toggleAlt(bool on)
 }
 /**
    when we use global popup menu (by holding switch keys
-   for a time)
-   we need to know where mouse pointer is
+   for some time) we need to know where mouse pointer is
 */
 QPoint KiKbdApplication::getPointer()
 {
@@ -982,7 +1076,7 @@ void KiKbdApplication::setPalette()
   else button->setPalette(normalPalette);
 }
 /**
-   show poopum menu
+   show popup menu
 */
 void KiKbdApplication::showMenu()
 {

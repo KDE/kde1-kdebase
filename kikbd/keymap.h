@@ -63,17 +63,18 @@ class KeyMap: public QObject {
  protected:
   static  bool isToggleCaps;
   QString name, label, comment;
-  bool    altKeys;
-  KeySyms keySyms, capsKeySyms;
+  bool    altKeys, compose;
+  KeySyms keySyms[4], capsKeySyms[4];
  public:
   KeyMap(KiKbdMapConfig&, KeySyms& initSyms);
-  bool  changeKeySym(const char*, const char*, int);
+  bool  changeKeySym(const char*, const char*, int, unsigned);
   const QString getName()    const { return name;    }
   const QString getLabel()   const { return label;   }
   const QString getComment() const { return comment; }
   bool  hasAltKeys() const {return altKeys;}
-  void  toggle();
-  void  toggleCaps(bool);
+  bool  hasCompose() const {return compose;}
+  void  toggle(unsigned);
+  void  toggleCaps(bool, unsigned);
  signals:
   void infoChanged(QString, QString);
 };

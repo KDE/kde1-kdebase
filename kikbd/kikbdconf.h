@@ -27,8 +27,8 @@
 class KiKbdMapConfig: public QObject {
   Q_OBJECT
  protected:
-  QList<QStrList> keysyms, keycodes;
-  QStrList  capssyms;
+  QList<QStrList> keysyms[4], keycodes[4];
+  QStrList  capssyms[4];
   QString   name;     // the name of the layout, alwais defined
   QString   label;    // layout label, must be set
   QString   locale;   // layout locale, must be set
@@ -36,7 +36,7 @@ class KiKbdMapConfig: public QObject {
   QString   language; // language of layout, must be set (or "unknown")
   QString   comment;  // layout comment, may be unset (will be "No comment")
   QString   charset;  // layout charset, may be unset
-  bool      hasAltKeys;
+  bool      hasAltKeys, hasCompose;
   bool      userData, noFile;
   int       numberOfSyms;
  public:
@@ -54,14 +54,15 @@ class KiKbdMapConfig: public QObject {
   const QString getGoodLabel() const;
   const QString getInfo     () const;
   const bool getHasAltKeys  () const {return hasAltKeys;}
+  const bool getHasCompose  () const {return hasCompose;}
   const bool getUserData    () const {return userData;}
   const bool getNoFile      () const {return noFile;}
   const unsigned getNumberOfSyms() const {return numberOfSyms;}
   const QColor  getColor() const;
   const QPixmap getIcon () const;
-  QList<QStrList>& getKeysyms() {return keysyms;}
-  QList<QStrList>& getKeycodes(){return keycodes;}
-  QStrList&        getCapssyms(){return capssyms;}
+  QList<QStrList>& getKeysyms(unsigned i) {return keysyms[i];}
+  QList<QStrList>& getKeycodes(unsigned i){return keycodes[i];}
+  QStrList&        getCapssyms(unsigned i){return capssyms[i];}
  public slots:
   void noUserDataFile(const char*){userData = FALSE;}
   void noSystemDataFile(const char*){noFile = TRUE;}
@@ -79,7 +80,7 @@ class KiKbdConfig: public KObjectConfig {
   bool            autoMenu, emuCapsLock, custFont, saveClasses;
   int             input, autoStartPlace;
   QString         switchComb, altSwitchComb, codes;
-  QColor          capsColor, altColor, forColor;
+  QColor          capsColor, altColor, forColor, bakColor;
   QFont           font;
  public:
   KiKbdConfig(bool readOnly = TRUE);
@@ -97,6 +98,7 @@ class KiKbdConfig: public KObjectConfig {
   const QColor&  getCapsColor   () const {return capsColor;    }
   const QColor&  getAltColor    () const {return altColor;     }
   const QColor&  getForColor    () const {return forColor;     }
+  const QColor&  getBakColor    () const {return bakColor;     }
   const QFont&   getFont        () const {return font;         }
   const int& getAutoStartPlace  () const {return autoStartPlace;}
   const QString& getCodes       () const {return codes;}
@@ -108,6 +110,7 @@ class KiKbdConfig: public KObjectConfig {
   QStrList& getMaps() {return maps;}
   KiKbdMapConfig* getMap(const char* name);
   bool            hasAltKeys();
+  bool            hasCompose();
   bool            oneKeySwitch() const;
   void            setDefaults();
   virtual void loadConfig();

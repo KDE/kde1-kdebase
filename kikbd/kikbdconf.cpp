@@ -41,8 +41,12 @@
 //=========================================================
 static const char* confMainGroup        = "International Keyboard";
 static const char* confStartupGroup     = "StartUp";
-static const char* confMapsGroup        = "KeyboardMap";
-
+static const char* confMapGroups[] = {
+  "KeyboardMap",
+  "ComposeMap1",
+  "ComposeMap2",
+  "ComposeMap3"
+};
 static const char* confStringBeep       = "Beep";
 static const char* confStringSwitch     = "Switch";
 static const char* confStringAltSwitch  = "AltSwitch";
@@ -61,6 +65,7 @@ static const char* confStringCaps       = "CapsSymbols";
 static const char* confStringCapsColor  = "CapsLockColor";
 static const char* confStringAltColor   = "AltColor";
 static const char* confStringForColor   = "ForegroundColor";
+static const char* confStringBakColor   = "BackgroundColor";
 static const char* confStringFont       = "Font";
 static const char* confStringCustFont   = "CustomizeFont";
 static const char* confStringAutoStart  = "AutoStart";
@@ -182,6 +187,7 @@ KiKbdConfig::KiKbdConfig(bool readOnly)
 	<< new KConfigColorObject(confStringCapsColor, capsColor)
 	<< new KConfigColorObject(confStringAltColor, altColor)
 	<< new KConfigColorObject(confStringForColor, forColor)
+	<< new KConfigColorObject(confStringBakColor, bakColor)
 	<< new KConfigFontObject(confStringFont,  font)
 	<< new KiKbdCodesObject(this)
 	<< setGroup(confStartupGroup)
@@ -245,6 +251,12 @@ bool KiKbdConfig::hasAltKeys()
     if(getMap(maps.at(i))->getHasAltKeys()) return TRUE;
   return FALSE;
 }
+bool KiKbdConfig::hasCompose()
+{
+  unsigned i;for(i=0; i<maps.count(); i++)
+    if(getMap(maps.at(i))->getHasCompose()) return TRUE;
+  return FALSE;
+}
 void KiKbdConfig::setDefaults()
 {
   //CT setting autoStart to false by default
@@ -255,9 +267,10 @@ void KiKbdConfig::setDefaults()
   altSwitchComb  = "Alt_R";
   codes          = "";
   autoStartPlace = input = 0;
-  capsColor = QColor(0, 128, 128);
-  altColor  = QColor(255, 255, 0);
-  forColor  = black;
+  forColor  = white;
+  bakColor  = QColor(0, 128, 128);
+  capsColor = QColor(128, 0, 128);
+  altColor  = QColor(128, 128, 0);
   font      = QFont("Helvetica");
   maps.clear(); maps.append("en");
   markDataChanged();
@@ -332,18 +345,20 @@ bool KiKbdConfig::isConfigProgram()
 KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
 {
   KObjectConfig config(KObjectConfig::AppData, name + ".kimap");
-  QStrList symList, codeList;
+  QStrList symList[4], codeList[4];
   config << config.setGroup(confMainGroup)
 	 << new KConfigStringObject(confStringLabel, label)
 	 << new KConfigStringObject(confStringComment, comment)
 	 << new KConfigStringObject(confStringLanguage, language)
 	 << new KConfigStringObject(confStringCharset, charset)
 	 << new KConfigStringObject(confStringLocale, locale)
-	 << new KConfigStrListObject(confStringAuthors , authors)
-	 << config.setGroup(confMapsGroup)
-	 << new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"), symList)
-	 << new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"), codeList)
-	 << new KConfigStrListObject(confStringCaps, capssyms);
+	 << new KConfigStrListObject(confStringAuthors , authors);
+  unsigned g;for(g=0; g<4; g++) {
+    config << config.setGroup(confMapGroups[g])
+	   << new KConfigMatchKeysObject(QRegExp("^keysym[0-9]+$"), symList[g])
+	   << new KConfigMatchKeysObject(QRegExp("^keycode[0-9]+$"), codeList[g])
+	   << new KConfigStrListObject(confStringCaps, capssyms[g]);
+  }
   userData = TRUE;
   noFile   = FALSE;
   connect(&config, SIGNAL(noUserDataFile(const char*)),
@@ -361,24 +376,34 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
   if(label.isNull() || label == "")
     if(!locale.isNull()) label = locale; else label = name;
   if(locale.isNull() || locale == "") locale = i18n("default");
-  /*--- parsing ---*/
-  keysyms.setAutoDelete(TRUE);
-  keycodes.setAutoDelete(TRUE);
-  capssyms.setAutoDelete(TRUE);
-  hasAltKeys = FALSE;
-  /*--- pars key symbols ---*/
-  unsigned i;for(i=0; i<symList.count(); i++) {
-    QStrList *map = new QStrList;
-    *map = KObjectConfig::separate(symList.at(i));
-    keysyms.append(map);
-    if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
-  }
-  /*--- pars key codes ---*/
-  for(i=0; i<codeList.count(); i++) {
-    QStrList *map = new QStrList;
-    *map = KObjectConfig::separate(codeList.at(i));
-    keycodes.append(map);
-    if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
+  for(g=0; g<4; g++) {
+    /*--- parsing ---*/
+    keysyms[g].setAutoDelete(TRUE);
+    keycodes[g].setAutoDelete(TRUE);
+    capssyms[g].setAutoDelete(TRUE);
+    if(g < 1) hasAltKeys = FALSE;
+    hasCompose = FALSE;
+    if(g > 0 && (symList[g].count() > 0 || codeList[g].count() > 0))
+      hasCompose = TRUE;
+    if(hasCompose && g > 1 && (symList[g].count() < 1 && codeList[g].count() < 1))
+      hasCompose = FALSE;
+    if(hasCompose && g > 2 && (symList[g].count() < 1 && codeList[g].count() < 1))
+      hasCompose = FALSE;
+    /*--- parse key symbols ---*/
+    unsigned i;for(i=0; i<symList[g].count(); i++) {
+      QStrList *map = new QStrList;
+      *map = KObjectConfig::separate(symList[g].at(i));
+      keysyms[g].append(map);
+      if(g < 1 && !hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
+      if(!hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
+    }
+    /*--- parse key codes ---*/
+    for(i=0; i<codeList[g].count(); i++) {
+      QStrList *map = new QStrList;
+      *map = KObjectConfig::separate(codeList[g].at(i));
+      keycodes[g].append(map);
+      if(g < 1 && !hasAltKeys && map->count() > 3) hasAltKeys = TRUE;
+    }
   }
 }
 const QString KiKbdMapConfig::getInfo() const
@@ -406,10 +431,20 @@ const QString KiKbdMapConfig::getInfo() const
   // statistic
   QString num;
   com += i18n("Statistic:  ");
-  num.setNum(keysyms.count());
+  if(hasCompose) {
+    unsigned g, c;
+    for (g=c=0; g<4; g++) c += keysyms[g].count();
+    num.setNum(c);
+  }
+  else num.setNum(keysyms[0].count());
   com += num + " ";
   com += i18n("symbols");
-  num.setNum(keycodes.count());
+  if(hasCompose) {
+    unsigned g, c;
+    for (g=c=0; g<4; g++) c += keycodes[g].count();
+    num.setNum(c);
+  }
+  else num.setNum(keycodes[0].count());
   com += ", " + num + " ";
   com += i18n("codes");
   if(hasAltKeys) {

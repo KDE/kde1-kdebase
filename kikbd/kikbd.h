@@ -100,20 +100,23 @@ class KiKbdApplication: public KApplication {
   WindowList            windowList;
   WindowClassList       classList;
   QList<KeyMap>         keyMaps;
+  int                   group;
   KeySyms               globalKeySyms;
   bool                  isFirstKey, isSecondKey;
+  bool                  wasComp1Key, wasComp2Key, wasShift, rstGroup;
   bool                  isToggleCaps, isToggleAlt;
   bool                  hotList;
   bool                  inConfig;
   int                   autoMenuRequestCount, altSwitchCount;
   int                   hotmap;
   /**
-     configurations variables
+     configuration variables
   */
   QPalette normalPalette, capsPalette, altPalette;
   bool     keyboardBeep, autoMenu, saveClasses, docked;
   int      input;
   KeySym   firstKey, secondKey, capsKey, altKey;
+  KeySym   comp1Key, comp2Key, shiftL, shiftR;
   Atom     KiKbdReconfig, KiKbdRotate, KiKbdIdentity;
  protected:
   virtual bool x11EventFilter(XEvent *);
@@ -148,6 +151,7 @@ class KiKbdApplication: public KApplication {
      run this at exit
   */
   void atExit();
+  void keyMapGroup(unsigned);
   void setKeyMapTo(unsigned, bool ch=TRUE);
  public slots:
   /**
