@@ -40,7 +40,7 @@
 
 #include "backgnd.h"
 #include "backgnd.moc"
-
+#include "../../kwmmodules/kbgndwm/config-kbgndwm.h"
 
 KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
   : QDialog( parent, 0, true )
@@ -127,11 +127,12 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 
   KConfig *config = kapp->getConfig();
   config->setGroup( "Desktop Common" );
-  oneDesktopMode = config->readBoolEntry( "OneDesktopMode", false );
-  docking = config->readBoolEntry( "Docking", false );
+  oneDesktopMode = config->readBoolEntry( "OneDesktopMode",
+                                         DEFAULT_ENABLE_COMMON_BGND );
+  docking = config->readBoolEntry( "Docking", DEFAULT_ENABLE_DOCKING );
 
   if ( oneDesktopMode )
-    deskNum = config->readNumEntry( "DeskNum", 0);
+    deskNum = config->readNumEntry( "DeskNum", DEFAULT_DESKTOP );
 
   QGroupBox *group;
   QRadioButton *rb;
@@ -437,7 +438,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
   grid->setColStretch(2,1);
   */
 
-  int cacheSize = config->readNumEntry("CacheSize", 1024);
+  int cacheSize = config->readNumEntry("CacheSize", DEFAULT_CACHE_SIZE);
   //CT 30Nov1998
   aLabel = new QLabel(i18n("Cache size (kB):"), this);
   aLabel->adjustSize();
@@ -486,6 +487,7 @@ void KBackground::resizeEvent( QResizeEvent * )
 			(monitorLabel->height()-160)/2+10, 157, 111 );
 }
 
+
 void KBackground::readSettings( int num )
 {
   QString group;
@@ -496,7 +498,7 @@ void KBackground::readSettings( int num )
   QFileInfo fi( KApplication::localconfigdir() + group );
   if ( ! fi.exists() ){
     first_time = true;
-    group = "/kdisplayrc";
+    group = "/kcmdisplayrc";
   }
 
   KConfig config(KApplication::kde_configdir() + group,
@@ -504,12 +506,12 @@ void KBackground::readSettings( int num )
 
   if ( !first_time ) {
     config.setGroup( "Common" );
-    randomMode = config.readBoolEntry( "RandomMode", false );
+    randomMode = config.readBoolEntry( "RandomMode", DEFAULT_ENABLE_RANDOM_MODE);
 
     if ( randomMode || !interactive )
       ksprintf( &group, "Desktop%d", random );
     else
-      group = "Desktop0";
+      ksprintf( &group, "Desktop%d", DEFAULT_DESKTOP);
   }
   else
     ksprintf( &group, "Desktop%d", num + 1);
@@ -517,102 +519,92 @@ void KBackground::readSettings( int num )
   config.setGroup( group );
   
   QString str;
-  
-  str = config.readEntry( "Color1" );
-  if ( !str.isNull() )
-    currentItem.color1.setNamedColor( str );
-  else
-    currentItem.color1 = gray;
-    
-  str = config.readEntry( "Color2" );
-  if ( !str.isNull() )
-    currentItem.color2.setNamedColor( str );
-  else
-    currentItem.color2 = gray;
-    
+ 
+  str = config.readEntry( "Color1", DEFAULT_COLOR_1 );
+  currentItem.color1.setNamedColor( str );
+       
+  str = config.readEntry( "Color2", DEFAULT_COLOR_2);
+  currentItem.color2.setNamedColor( str );
+	     
   currentItem.ncMode=OneColor;
   currentItem.stMode=Gradient;
-  str = config.readEntry( "ColorMode" );
-  if ( !str.isNull() )
-    {
-      if ( str == "Gradient" ) {
-	currentItem.ncMode = TwoColor;
-	currentItem.stMode = Gradient;
-      } else if (str == "Pattern") {
-	currentItem.ncMode = TwoColor;
-	currentItem.stMode = Pattern;
-      }
-    }
-
+  str = config.readEntry( "ColorMode", "unset" );
+  if ( str == "Gradient" ) {
+     currentItem.ncMode = TwoColor;
+     currentItem.stMode = Gradient;
+  } else if (str == "Pattern") {
+     currentItem.ncMode = TwoColor;
+     currentItem.stMode = Pattern;
+  } else {
+     currentItem.ncMode = DEFAULT_NUMBER_OF_COLORS;
+     currentItem.stMode = DEFAULT_COLOR_MODE;
+  }
+		     
   QStrList strl;
   config.readListEntry("Pattern", strl);
   uint size = strl.count();
   if (size > 8) size = 8;
   uint i = 0;
+
   for (i = 0; i < 8; i++)
-    currentItem.pattern[i] = (i < size) ? QString(strl.at(i)).toUInt() : 255;
-    
-  currentItem.orMode=Portrait;
-  str = config.readEntry( "OrientationMode" );
-  if ( !str.isNull() )
-    {
-      if ( str == "Landscape" )
-	currentItem.orMode = Landscape;
-    }
-    
-  currentItem.wpMode = Tiled;
-  str = config.readEntry( "WallpaperMode" );
-  if ( !str.isNull() )
-    {
-      if ( str == "Mirrored" )
-	currentItem.wpMode = Mirrored;
-      else if ( str == "CenterTiled" )
-	currentItem.wpMode = CenterTiled;
-      else if ( str == "Centred" )
-	currentItem.wpMode = Centred;
-      else if ( str == "CentredBrick" )
-	currentItem.wpMode = CentredBrick;
-      else if ( str == "CentredWarp" )
-	currentItem.wpMode = CentredWarp;
-      else if ( str == "CentredMaxpect" )
-	currentItem.wpMode = CentredMaxpect;
-      else if ( str == "SymmetricalTiled" )
-	currentItem.wpMode = SymmetricalTiled;
-      else if ( str == "SymmetricalMirrored" )
-	currentItem.wpMode = SymmetricalMirrored;
-      else if ( str == "Scaled" )
-	currentItem.wpMode = Scaled;
-    }
-    
-  currentItem.bUseWallpaper = config.readBoolEntry( "UseWallpaper", false );
-  
+      currentItem.pattern[i] = (i < size) ? QString(strl.at(i)).toUInt() : 255;
+   
+  str = config.readEntry( "OrientationMode", "unset" );
+  if ( str == "Landscape" )
+     currentItem.orMode = Landscape;
+  else
+     currentItem.orMode = DEFAULT_ORIENTATION_MODE;
+
+  str = config.readEntry( "WallpaperMode", "unset" );
+  if ( str == "Mirrored" )
+     currentItem.wpMode = Mirrored;
+  else if ( str == "CenterTiled" )
+     currentItem.wpMode = CenterTiled;
+  else if ( str == "Centred" )
+     currentItem.wpMode = Centred;
+  else if ( str == "CentredBrick" )
+     currentItem.wpMode = CentredBrick;
+  else if ( str == "CentredWarp" )
+     currentItem.wpMode = CentredWarp;
+  else if ( str == "CentredMaxpect" )
+     currentItem.wpMode = CentredMaxpect;
+  else if ( str == "SymmetricalTiled" )
+     currentItem.wpMode = SymmetricalTiled;
+  else if ( str == "SymmetricalMirrored" )
+     currentItem.wpMode = SymmetricalMirrored;
+  else if ( str == "Scaled" )
+     currentItem.wpMode = Scaled; 
+  else
+     currentItem.wpMode = DEFAULT_WALLPAPER_MODE;
+ 
+  currentItem.bUseWallpaper = config.readBoolEntry( "UseWallpaper", DEFAULT_USE_WALLPAPER ); 
   if ( currentItem.bUseWallpaper ) {
-    currentItem.wallpaper = config.readEntry( "Wallpaper" );
-    if ( !currentItem.wallpaper.isEmpty() && interactive )
-      loadWallpaper( currentItem.wallpaper.data() );
-  } else 
-    currentItem.wallpaper.sprintf( i18n("No wallpaper") );
-  
+     currentItem.wallpaper = config.readEntry( "Wallpaper", DEFAULT_WALLPAPER );
+  if ( !currentItem.wallpaper.isEmpty() && interactive )
+     loadWallpaper( currentItem.wallpaper.data() );
+  } else
+     currentItem.wallpaper = DEFAULT_WALLPAPER;
 }
 
+			 
 void KBackground::setDefaults()
 {
   for ( int i = 0; i < maxDesks; i++ ) {
-    currentItem.wpMode = Tiled;
-    currentItem.ncMode = OneColor;
-    currentItem.stMode = Gradient;
-    currentItem.orMode = Portrait;
-    currentItem.color1 = darkCyan;
-    currentItem.color2 = darkCyan;
-    currentItem.bUseWallpaper = false;
-    currentItem.wallpaper.sprintf( i18n("No wallpaper") );
-    changed = true;
-    writeSettings( i );
+     currentItem.wpMode = DEFAULT_WALLPAPER_MODE;
+     currentItem.ncMode = DEFAULT_NUMBER_OF_COLORS;
+     currentItem.stMode = DEFAULT_COLOR_MODE;
+     currentItem.orMode = DEFAULT_ORIENTATION_MODE;
+     currentItem.color1 = DEFAULT_COLOR_1;
+     currentItem.color2 = DEFAULT_COLOR_2;
+     currentItem.bUseWallpaper = DEFAULT_USE_WALLPAPER;
+     currentItem.wallpaper = DEFAULT_WALLPAPER;
+     changed = true;
+     writeSettings( i );
   }
   showSettings();
   changed = false;
 }
-
+					
 void KBackground::defaultSettings()
 {
   setDefaults();
@@ -1289,6 +1281,7 @@ void KBackground::slotSetupRandom()
   rnddlg = new KRandomDlg( deskNum, this );
   rnddlg->show();
   randomSetupButton->setEnabled( false );
+  wpModeCombo->setEnabled( true );
 }
 
 
@@ -1954,10 +1947,10 @@ void KRandomDlg::readSettings()
 		  KApplication::localconfigdir() + tmpf);
 
   picturesConfig.setGroup( "Common" );
-  count = picturesConfig.readNumEntry( "Count", 1 );
-  delay = picturesConfig.readNumEntry( "Timer", 600 );
-  inorder = picturesConfig.readBoolEntry( "InOrder", false );
-  useDir = picturesConfig.readBoolEntry( "UseDir", false );
+  count = picturesConfig.readNumEntry( "Count", DEFAULT_RANDOM_COUNT );
+  delay = picturesConfig.readNumEntry( "Timer", DEFAULT_RANDOM_TIMER );
+  inorder = picturesConfig.readBoolEntry( "InOrder", DEFAULT_RANDOM_IN_ORDER );
+  useDir = picturesConfig.readBoolEntry( "UseDir", DEFAULT_RANDOM_USE_DIR );
   picDir = picturesConfig.readEntry( "Directory", KApplication::kde_wallpaperdir() );
   
   KItem *newitem = new KItem( kb->currentItem );
@@ -1985,6 +1978,7 @@ void KRandomDlg::done( int r )
     kb->rnddlg = 0L;
     kb->random = 0;
     kb->randomSetupButton->setEnabled( true );
+    kb->wpModeCombo->setEnabled( false );
   
     return;
   }
@@ -2027,4 +2021,5 @@ void KRandomDlg::done( int r )
   kb->rnddlg = 0L;
   kb->random = 0;
   kb->randomSetupButton->setEnabled( true );
+  kb->wpModeCombo->setEnabled( false );
 }
