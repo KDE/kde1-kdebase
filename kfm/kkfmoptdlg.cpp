@@ -6,10 +6,10 @@
 KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   : QDialog(parent, name, true, f)
 {
-  resize(420, 400);
+  resize(480, 400);
   // i do not want to be resized!
-  setMaximumSize(420, 400);
-  setMinimumSize(420, 400);
+  setMaximumSize(480, 400);
+  setMinimumSize(480, 400);
   
   // KTabCtl
   tabDlg = new KTabCtl(this);
