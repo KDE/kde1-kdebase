@@ -141,7 +141,7 @@ KfmApplication::KfmApplication(int &argc, char **argv, const char *name)
     }
     else
     {
-      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent,root}]\n"), argv[0]);
+      fprintf(stderr, i18n("usage: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"), argv[0]);
       justInit = true;
     }  
   }

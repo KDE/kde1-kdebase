@@ -1504,7 +1504,7 @@ void KfmGui::slotConfigureFileManager()
    if (fork() == 0)
    {
        // execute 'kcmkfm' with file manager options pages
-      execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","font","color","misc",0);
+      execl(kapp->kde_bindir()+"/kcmkfm","kcmkfm","font","color","misc","icons",0);
       warning("Error launching kcmkfm !");
       exit(1); 
    }
