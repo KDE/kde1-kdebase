@@ -4,5 +4,6 @@ Makefile.in
 *.lo
 *.moc
 konsole
+kcmkonsole
 .deps
 .libs
