@@ -177,6 +177,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
 	  pixmap_name = kconfig.readEntry("MiniIcon");
 	  big_pixmap_name = kconfig.readEntry("Icon");
 	  comment = kconfig.readEntry("Comment");
+	  text_name = kconfig.readEntry("Name", text_name);
 	  config.close();
 	}
       entry_type  = submenu;
@@ -196,6 +197,7 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu = NULL  )
       pixmap_name     = kconfig.readEntry("MiniIcon");
       big_pixmap_name = kconfig.readEntry("Icon");
       comment         = kconfig.readEntry("Comment");
+      text_name = kconfig.readEntry("Name", text_name);
       dir_path        = fi->dirPath(TRUE);
       config.close();
     }

@@ -3,6 +3,7 @@ In kpanel-0.17:
     Patchlevel 3:
        - fixed the dragging of data onto panel buttons
        - no more need for the kdelnk suffix (but mimetype)
+       - bugfixes 
     Patchlevel 2:
        - context menu improved/fixed
     Patchlevel 1:
