@@ -649,7 +649,6 @@ void Client::mousePressEvent( QMouseEvent *ev ){
     return;
   }
   else  {
-    debug("press on window frame");
     // titlebar and frame event
     if (isActive() || !wantsFocus() ){
       if (ev->button() == LeftButton)
@@ -2008,9 +2007,8 @@ void Client::unMaximize(){
 }
 
 void Client::maximizeToggled(bool depressed){
-  bool do_not_activate = depressed == isMaximized();
 
-  buttonMaximize->setEnabled( FALSE );
+  bool do_not_activate = depressed == isMaximized();
 
   if (!do_not_activate){
     if ( depressed){
@@ -2035,7 +2033,6 @@ void Client::maximizeToggled(bool depressed){
 	manager->activateClient( this );
     }
   }
-  buttonMaximize->setEnabled( TRUE );
   buttonMaximize->setPixmap(buttonMaximize->isOn() ? *pm_max_down : *pm_max);
   buttonMaximize->update();
 }

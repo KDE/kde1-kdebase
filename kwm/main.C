@@ -1823,10 +1823,13 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	    //ignore these if for a client
 	    if (manager->getClient(ev->xcrossing.window))
 		return TRUE;
+	    break;
 	case ButtonPress:
 	case ButtonRelease:
 	case KeyPress:
 	case KeyRelease:
+	case ClientMessage:
+	case PropertyNotify:
 	    // process these later
 	    if (events_count == 49) {
 		events_count--;
@@ -1987,14 +1990,20 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 
 void MyApp::myProcessEvents() {
+    bool inHere = FALSE;
+    if (inHere)
+	return;
+    inHere = TRUE;
     events_count = 0;
     process_events_mode = true;
     processEvents();
     process_events_mode = false;
     int i;
-    for (i = 0; i < events_count; i++) {
+    for (i = events_count - 1; i >= 0; i--) {
 	XPutBackEvent(qt_xdisplay(), &events[i]);
     }
+    events_count = 0;
+    inHere = FALSE;
 }
 
 void MyApp::handleOperation(int itemId){
