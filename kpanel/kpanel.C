@@ -1165,7 +1165,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	       KWM::doNotManage(entries[nbuttons-1].swallow);
 	       aString = QString(pConfig.readEntry("SwallowExec")).copy();
 	       if (!initing)
-		 execute(aString.data());
+		 swallowApplication(aString.data());
 	       else
 		 swallowed_applications.append(aString);
 	     }
@@ -1237,11 +1237,30 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 }
 
 
+void kPanel::swallowApplication(const char *s) {
+  // create new process
+  KShellProcess *proc = new KShellProcess;
+  *proc << s;
+  if(proc->start(KShellProcess::NotifyOnExit))
+    connect(proc, SIGNAL(processExited(KProcess *)),
+	    this, SLOT(slotSwallowedChildDied(KProcess *)));
+  else
+    delete proc;
+}
+
+
+void kPanel::slotSwallowedChildDied(KProcess *proc) {
+  if(proc) {
+      // TODO: update the panel to remove the swallow-button
+    delete proc;      
+  }
+}
+
 void kPanel::launchSwallowedApplications(){
   char* s;
   for (s = swallowed_applications.first(); s;
        s = swallowed_applications.next())
-    execute(s);
+    swallowApplication(s);
 }
 
 

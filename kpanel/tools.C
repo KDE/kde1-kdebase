@@ -807,10 +807,11 @@ void kPanel::cleanup(){
        XReparentWindow(qt_xdisplay(), *w, qt_xrootwin(), 0, 0);
        XFlush(qt_xdisplay());
      }
+
      for (i=0; i<nbuttons; i++)
        if (entries[i].swallowed){
-	 KWM::close(entries[i].swallowed);
-	 XFlush(qt_xdisplay());
+  	 KWM::close(entries[i].swallowed);
+  	 XFlush(qt_xdisplay());
        }
      QApplication::syncX();
 }

@@ -34,6 +34,7 @@
 #include <qchkbox.h>
 #include <qslider.h>
 #include <qdrawutl.h>
+#include <qptrdict.h>
 
 
 // KDE includes
@@ -264,6 +265,7 @@ protected:
 
 private slots:
     void slotUpdateClock();
+    void slotSwallowedChildDied(KProcess *);
 
 signals:
 
@@ -380,6 +382,9 @@ private:
   void restore_editbutton( bool takeit ); // Stephan
 
   void addButtonInternal(PMenuItem* pmi, int x = -1, int y = -1, QString name = "");
+
+  // swallowing stuff
+  void swallowApplication(const char *s);
 
   //layout
   void layoutTaskbar();

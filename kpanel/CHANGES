@@ -10,6 +10,11 @@ Matthias, Tue Dec 8 1998
 
 In kpanel-0.19:
 
+    Patchlevel 12: Mario Weilguni <mweilguni@kde.org>
+        - when restarting, kpanel does no longer leave zombies of
+          swallowed applications lying around. They are now cleanly
+	  processed via KShellProcess::NotifyOnExit
+
     Patchlevel 11:
 	- fixed setting of window region in combination with autohide
 	- some bugfixes in autohide delay stuff
