@@ -181,7 +181,7 @@ void KRootWm::buildMenubars() {
       myMenuBarContainer->setGeometry(0, qApp->desktop()->width()+10,100,40);
       myMenuBarContainer->show();
       myMenuBarContainer->hide();
-      if (myMenuBar->menuBarPos() != KMenuBar::Floating) {
+      if (myMenuBar->menuBarPos() != KMenuBar::FloatingSystem) {
         delete myMenuBarContainer;
         myMenuBarContainer = 0;
         myMenuBar = 0;
