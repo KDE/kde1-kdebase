@@ -250,6 +250,8 @@ void kPanel::windowIconChanged(Window w){
 void kPanel::windowRaise(Window /* w */){
   if (panel_button_frame_standalone->isVisible())
     panel_button_frame_standalone->raise();
+  if (panel_button_frame_standalone2->isVisible())
+    panel_button_frame_standalone2->raise();
 }
 
 
@@ -336,10 +338,14 @@ void kPanel::kwmDesktopChange(int nd){
       b->toggle();
   }
 
-  if (panelHidden[currentDesktop])
-    hidePanelLeft();
+  if (panelHidden[currentDesktop]){
+      if (panelHiddenLeft[currentDesktop])
+	  hidePanelLeft();
+      else
+	  hidePanelRight();
+  }
   else
-    showPanelFromLeft();
+    showPanel();
 
 }
 
@@ -475,6 +481,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	  moving_button = control_group;
 	if (moving_button == panel_button_standalone)
 	  moving_button = panel_button_frame_standalone;
+	if (moving_button == panel_button_standalone2)
+	  moving_button = panel_button_frame_standalone2;
 	
 	position_of_new_item = moving_button->pos();
 	moving_button_offset = moving_button->mapFromGlobal(moving_button_offset);
@@ -486,7 +494,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 
       if (moving_button){
 	if (moving_button != control_group
-	    && moving_button != panel_button_frame_standalone){
+	    && moving_button != panel_button_frame_standalone
+	    && moving_button != panel_button_frame_standalone2){
  	  ((myPushButton*)moving_button)->flat = False;
  	  moving_button->repaint();
 	}
@@ -504,6 +513,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	  tmp = control_group;
 	if (tmp == panel_button_standalone)
 	  tmp = panel_button_frame_standalone;
+	if (tmp == panel_button_standalone2)
+	  tmp = panel_button_frame_standalone2;
 	
 	moving_button_offset = tmp->mapFromGlobal(moving_button_offset);
 	// minipanel cannot be edited!
@@ -547,7 +558,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 
     if (moving_button){
       if (moving_button != control_group
-	  && moving_button != panel_button_frame_standalone){
+	  && moving_button != panel_button_frame_standalone
+	  && moving_button != panel_button_frame_standalone2){
  	((myPushButton*)moving_button)->flat = True;
  	moving_button->repaint();
       }
@@ -556,7 +568,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
       // moving_button->releaseMouse();
 
       if (moving_button != control_group
-	  && moving_button != panel_button_frame_standalone)
+	  && moving_button != panel_button_frame_standalone
+	  && moving_button != panel_button_frame_standalone2)
 	check_button_bounds(moving_button);
       else {
 	if (orientation == horizontal){
@@ -572,7 +585,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	  check_button_bounds(entries[i].button);
 	}
       }
-      if (moving_button != panel_button_frame_standalone){
+      if (moving_button != panel_button_frame_standalone && 
+	  moving_button != panel_button_frame_standalone2){
 	moving_button = 0;
 	reposition();
 	writeOutConfiguration();
@@ -605,7 +619,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
     }
 
     if (moving_button){
-      if (moving_button == panel_button_frame_standalone){
+      if (moving_button == panel_button_frame_standalone
+	  || moving_button == panel_button_frame_standalone2){
 	moving_button->move(QCursor::pos() - moving_button_offset);
       }
       else {

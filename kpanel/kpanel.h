@@ -8,7 +8,7 @@
 #define KPANEL_H
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>   
+#include <config.h>
 #endif
 #include <qwidget.h>
 #include <qmenubar.h>
@@ -108,7 +108,7 @@ public:
 
 signals:
   void showMe();
-  void hideMe();   
+  void hideMe();
 
 protected:
   void enterEvent( QEvent * );
@@ -203,10 +203,12 @@ public:
   void call_help();
   void call_klock();
 
+  void showPanel();
+
   void hidePanelLeft ();
-	void hidePanelRight();
-  void showPanelFromLeft ();
-	void showPanelFromRight();
+  void hidePanelRight();
+  void showPanelFromLeft (bool smooth = TRUE);
+  void showPanelFromRight(bool smooth = TRUE);
 
   void miniButtons (int); // sven
   void desktop_change(int);
@@ -440,7 +442,9 @@ private:
   int currentDesktop;
 
   Bool panelHidden[8+1];
+  Bool panelHiddenLeft[8+1];
   Bool panelCurrentlyHidden;
+  Bool panelCurrentlyLeft;
   Bool miniPanelHidden;
 
   QFrame *miniPanelFrame;

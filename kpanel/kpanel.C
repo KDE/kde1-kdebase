@@ -203,7 +203,14 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
     for (i=1;i<=8;i++)
       panelHidden[i] = (panelHiddenString.mid(i-1,1)=="1");
 
+    QString panelHiddenLeftString = "11111111";
+    panelHiddenLeftString = config->readEntry("PanelHiddenLeft",
+					  panelHiddenLeftString);
+
+    for (i=1;i<=8;i++)
+      panelHiddenLeft[i] = (panelHiddenLeftString.mid(i-1,1)=="1");
     panelCurrentlyHidden = panelHidden[currentDesktop];
+    panelCurrentlyLeft = panelHiddenLeft[currentDesktop];
     miniPanelHidden = True;
 
     /* Let's read the top speed here: */
@@ -756,11 +763,11 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
 					       panel_button->height());
     panel_button_standalone->setGeometry(0,0,panel_button->width(), panel_button->height());
 
-	panel_button_frame_standalone2->setGeometry(width() - panel_button2->width(),
-												y() + panel_button2->y(),
-												panel_button2->width(),
-												panel_button2->height() );
-	panel_button_standalone2->setGeometry(0, 0, panel_button2->width(), panel_button2->height());
+    panel_button_frame_standalone2->setGeometry(x() + width() - panel_button2->width(),
+						y() + panel_button2->y(),
+						panel_button2->width(),
+						panel_button2->height() );
+    panel_button_standalone2->setGeometry(0, 0, panel_button2->width(), panel_button2->height());
 
     taskbar_frame->hide();
 
@@ -784,6 +791,7 @@ kPanel::kPanel( KWMModuleApplication* kwmapp_arg,
       tmpfont.setPointSize(tmpfont.pointSize()-1);
       label_date->setFont(tmpfont);
     }
+    label_date->adjustSize();
 
     QTime cur_time = QTime::currentTime();
     clock_timer_id = 0;
@@ -1182,8 +1190,16 @@ void kPanel::show(){
      QFrame::raise();
     }
   else {
-    panel_button_frame_standalone->show();
-    panel_button_frame_standalone->raise();
+      if (panelCurrentlyLeft) {
+	  panel_button_frame_standalone->show();
+	  panel_button_frame_standalone->raise();
+	  panel_button_frame_standalone2->hide();
+      }
+      else {
+	  panel_button_frame_standalone2->show();
+	  panel_button_frame_standalone2->raise();
+	  panel_button_frame_standalone->hide();
+      }
     showMiniPanel();
   }
 
@@ -1195,15 +1211,32 @@ void kPanel::show(){
   KWM::sendKWMCommand("moduleRaised");
 }
 
+void kPanel::showPanel()
+{
+    if (!panelCurrentlyHidden)
+	return;
+    if (panelCurrentlyLeft)
+	showPanelFromLeft();
+    else
+	showPanelFromRight();
+}
+
 extern bool in_animation;
 
 void kPanel::hidePanelLeft(){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
-  
+  panelHiddenLeft[currentDesktop] = True;
+
   if (in_animation)
       return;
+
+  if (panelCurrentlyHidden && !panelCurrentlyLeft) {
+      showPanelFromRight(False);
+      panelHidden[currentDesktop] = True;
+      panelHiddenLeft[currentDesktop] = True;
+  }
 
   if (!panelCurrentlyHidden){
     QPoint p = pos();
@@ -1226,6 +1259,7 @@ void kPanel::hidePanelLeft(){
 					       panel_button->width(),
 					       panel_button->height());
     panelCurrentlyHidden = True;
+    panelCurrentlyLeft = True;
 
     QRect geom = geometry();
     in_animation = true;
@@ -1256,12 +1290,12 @@ void kPanel::hidePanelLeft(){
     doGeometry();
     layoutTaskbar (); //geometry changed
    }
-  
+
   if (!panelHidden[currentDesktop]){
      showPanelFromLeft();
      return;
   }
-  
+
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup("kpanel");
@@ -1270,6 +1304,10 @@ void kPanel::hidePanelLeft(){
     for (i=1;i<=8;i++)
       a.append(panelHidden[i]?"1":"0");
     config->writeEntry("PanelHidden", a);
+    a = "";
+    for (i=1;i<=8;i++)
+      a.append(panelHiddenLeft[i]?"1":"0");
+    config->writeEntry("PanelHiddenLeft", a);
     config->sync();
   }
 }
@@ -1278,9 +1316,16 @@ void kPanel::hidePanelRight(){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = True;
-  
+  panelHiddenLeft[currentDesktop] = False;
+
   if (in_animation)
       return;
+
+  if (panelCurrentlyHidden && panelCurrentlyLeft){
+      showPanelFromLeft(False);
+      panelHidden[currentDesktop] = True;
+      panelHiddenLeft[currentDesktop] = False;
+  }
 
   if (!panelCurrentlyHidden){
     QPoint p = pos();
@@ -1298,11 +1343,12 @@ void kPanel::hidePanelRight(){
 	  p.setX(x()-width()+4);
       }
     }
-    panel_button_frame_standalone2->setGeometry(width() - panel_button2->width(),
-					       p.y() + panel_button2->y(),
-					       panel_button2->width(),
-					       panel_button2->height());
+    panel_button_frame_standalone2->setGeometry(x() + width() - panel_button2->width(),
+						p.y() + panel_button2->y(),
+						panel_button2->width(),
+						panel_button2->height());
     panelCurrentlyHidden = True;
+    panelCurrentlyLeft = False;
 
     QRect geom = geometry();
     in_animation = true;
@@ -1333,12 +1379,12 @@ void kPanel::hidePanelRight(){
     doGeometry();
     layoutTaskbar (); //geometry changed
    }
-  
+
   if (!panelHidden[currentDesktop]){
      showPanelFromRight();
      return;
   }
-  
+
   if (old != panelHidden[currentDesktop]){
     KConfig *config = KApplication::getKApplication()->getConfig();
     config->setGroup("kpanel");
@@ -1347,11 +1393,15 @@ void kPanel::hidePanelRight(){
     for (i=1;i<=8;i++)
       a.append(panelHidden[i]?"1":"0");
     config->writeEntry("PanelHidden", a);
+    a = "";
+    for (i=1;i<=8;i++)
+      a.append(panelHiddenLeft[i]?"1":"0");
+    config->writeEntry("PanelHiddenLeft", a);
     config->sync();
   }
 }
 
-void kPanel::showPanelFromLeft(){
+void kPanel::showPanelFromLeft( bool smooth){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = False;
@@ -1370,13 +1420,13 @@ void kPanel::showPanelFromLeft(){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-      for (int i = geom.height(); i>0;i-=PANEL_SPEED(i,geom.height())){
+      for (int i = geom.height(); i>0;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
 	    move(geom.x(), geom.y()-i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-      for (int i = geom.width(); i>0;i-=PANEL_SPEED(i,geom.width())){
+      for (int i = geom.width(); i>0;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
 	    move(geom.x()-i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
@@ -1386,6 +1436,8 @@ void kPanel::showPanelFromLeft(){
     in_animation = false;
 
   }
+  if (!smooth)
+      return;
   hideMiniPanel();
   doGeometry();
   layoutTaskbar();
@@ -1408,7 +1460,7 @@ void kPanel::showPanelFromLeft(){
   KWM::sendKWMCommand("moduleRaised");
 }
 
-void kPanel::showPanelFromRight(){
+void kPanel::showPanelFromRight(bool smooth){
   Bool old = panelHidden[currentDesktop];
 
   panelHidden[currentDesktop] = False;
@@ -1427,13 +1479,13 @@ void kPanel::showPanelFromRight(){
     move(-10000, -10000);
     QFrame::show();
     if (orientation == vertical) {
-      for (int i = geom.height(); i>0;i-=PANEL_SPEED(i,geom.height())){
+      for (int i = geom.height(); i>0;i-=smooth?(PANEL_SPEED(i,geom.height())):hide_show_animation){
 	    move(geom.x(), geom.y()+i);
 	    qApp->syncX();
 	    qApp->processEvents();
 	}
     } else {
-      for (int i = geom.width(); i>0;i-=PANEL_SPEED(i,geom.width())){
+      for (int i = geom.width(); i>0;i-=smooth?(PANEL_SPEED(i,geom.width())):hide_show_animation){
 	    move(geom.x()+i, geom.y());
 	    qApp->syncX();
 	    qApp->processEvents();
@@ -1443,6 +1495,8 @@ void kPanel::showPanelFromRight(){
     in_animation = false;
 
   }
+  if (!smooth)
+      return;
   hideMiniPanel();
   doGeometry();
   layoutTaskbar();
@@ -1479,6 +1533,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
    int mh = 0;
    int sw = 0;      // standalone...
    int sh = 0;
+   int sx = 0;
 
    int tfx = 0; //correction values for the taskbar autoHide feature
    int tfy = 0;
@@ -1530,6 +1585,54 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        mw = 2*taskbar_height+1; // miniPanelFrame
        mh = taskbar_height+1; // miniPanelFrame
      }
+     
+     sx = sw; 
+     if (!panelCurrentlyLeft) {
+	 //right panel button, grrrrr it is becoming hacky......
+	 if (orientation == horizontal) {
+	     if (position == top_left) {
+		 if (taskbar_position == top)
+		     sx = 0;
+		 else if (taskbar_position == bottom)
+			  ;
+		 else
+		     sx = 0;
+	     }
+	     else { // position == bottom_right
+		 if (taskbar_position == top)
+		     ;
+		 else if (taskbar_position == bottom)
+		     sx = 0;
+		 else
+		     sx = 0;
+	     }
+	 }
+	 else { // orientation == vertical
+	     if (position == top_left) {
+		 if (taskbar_position == top)
+		     sx = 0;
+		 else if (taskbar_position == bottom)
+			  ;
+		 else
+		     sx = 0;
+	     }
+	     else { // position == bottom_right
+		 if (taskbar_position == top)
+		     { sw = 0; sx = 0; }
+		 else if (taskbar_position == bottom)
+		     ;
+		 else
+		     sx = 0;
+	     }
+	 }
+     }
+     else {
+	 // some corrections....
+	 if (orientation == vertical) {
+	     if (taskbar_position == bottom) 
+		 { sx = 0; sw = 0; }
+	 }
+     }
     }
 
    // panel_button_frame_standalone->setGeometry(px, py, sw, sh);
@@ -1540,7 +1643,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
       {
        if (taskbar_position == top)
 	{
-	 taskbar_frame_geometry.setRect(tfx+px+sw+mw, tfy+py+ph, w-mw-sw, taskbar_height);
+	 taskbar_frame_geometry.setRect(tfx+px+sx+mw, tfy+py+ph, w-mw-sw, taskbar_height);
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, tfy+py+ph+taskbar_height+1,
 				    w, -tfy+h-ph-taskbar_height-1));
@@ -1556,10 +1659,10 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+px+sw, tfy+py+ph+mh,
 // 				    tbhs*th, th);
-	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+sw, tfy+py+ph+mh));
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+sx, tfy+py+ph+mh));
 	 if (taskbar_position == taskbar_top_left)
 	   KWM::setWindowRegion(currentDesktop,
-				QRect(tfx+tbhs*th+1+sw, ph,
+				QRect(tfx+tbhs*th+1+sx, ph,
 				      -tfx+w-tbhs*th-sw-1, h-ph));
 	 else // if (taskbar_position=hidden)
 	   KWM::setWindowRegion(currentDesktop,
@@ -1570,7 +1673,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
       {
        if (taskbar_position == bottom)
 	{
-	 taskbar_frame_geometry.setRect(tfx+px+mw+sw, tfy+h-ph-th,
+	 taskbar_frame_geometry.setRect(tfx+px+mw+sx, tfy+h-ph-th,
 				    w-mw-sw, th);
 	   KWM::setWindowRegion(currentDesktop,
 				QRect(0, 0, w, tfy+h-ph-th-1));
@@ -1602,15 +1705,15 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
       {
        if (taskbar_position == top)
 	{
-	 taskbar_frame_geometry.setRect(tfx+px+pw+mw+sw, tfy+py, w-pw-mw-sw, th);
+	 taskbar_frame_geometry.setRect(tfx+px+pw+mw+sx, tfy+py, w-pw-mw-sw, th);
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(pw, tfy+taskbar_frame->height()+1,
 				    w-pw, -tfy+h-taskbar_frame->height()-1));
 	}
        else if (taskbar_position == bottom)
 	{
-	 taskbar_frame_geometry.setRect(tfx+px+pw+mw, tfy+h-th,
-				    w-pw-mw, th);
+	 taskbar_frame_geometry.setRect(tfx+px+pw+mw+sx, tfy+h-th,
+				    w-pw-mw-sw, th);
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(pw, 0, w-pw, tfy+h - taskbar_frame->height()-1));
 	}
@@ -1618,7 +1721,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
 	{
 // 	 taskbar_frame_geometry.setRect(tfx+px+pw, tfy+py+mh,
 // 				    tbhs*taskbar_height, taskbar_height);
-	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+pw, tfy+py+mh));
+	 taskbar_frame_geometry.moveTopLeft(QPoint(tfx+px+pw+sx, tfy+py+mh));
 	 if (taskbar_position == taskbar_top_left)
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(tfx+pw+tbhs*taskbar_height+1, 0,
@@ -1641,7 +1744,7 @@ void kPanel::doGeometry (bool do_not_change_taskbar) {
        else if (taskbar_position == bottom)
 	{
 	 taskbar_frame_geometry.setRect(tfx+mw, tfy+h-th,
-				    w-pw-mw, th);
+				    w-pw-mw-sw, th);
 	 KWM::setWindowRegion(currentDesktop,
 			      QRect(0, 0,
 				    w-pw, tfy+h-taskbar_frame->height()-1));
@@ -1695,6 +1798,7 @@ void kPanel::load_and_set_some_fonts(){
     //tmpfont.setFamily(config->readEntry("DateFont"));
     QFont tmpfont = config->readFontEntry( "DateFont" );
     label_date->setFont(tmpfont);
+    label_date->adjustSize();
   }
 
   if (config->hasKey("DesktopButtonFont")){

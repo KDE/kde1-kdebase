@@ -37,7 +37,7 @@ void myPopupMenu::mousePressEvent ( QMouseEvent *e )
 }
 
 //////////////////////////////////////////////////
-int myPopupMenu::entryHeight() 
+int myPopupMenu::entryHeight()
 {
   return cellHeight(0);
 }
@@ -47,7 +47,7 @@ int myPopupMenu::maxEntriesOnScreen()
 {
   QWidget *desktop = QApplication::desktop();
   int sh = desktop->height();			// screen height
-  
+
   int entryh = entryHeight();
 
   return sh / entryh;
@@ -804,14 +804,14 @@ void kPanel::tipSleepTimerDone(){
 void kPanel::showMiniPanel ()
 {
 
-  if (!miniPanelHidden) // if allready here do nothing
-    return;
-
-  miniPanelHidden = false;
-
   int mh = taskbar_height;
 
   int h = QApplication::desktop()->height();
+
+  if (miniPanelHidden) {
+
+  miniPanelHidden = false;
+
 
   miniPanelFrame = new QFrame(0, 0,
 			      WStyle_Customize|WStyle_NoBorder|WStyle_Tool);
@@ -847,11 +847,13 @@ void kPanel::showMiniPanel ()
 
   miniSystem->setGeometry(1, 1, mh-1, mh-2);
   miniDesk->setGeometry(mh, 1, mh-1, mh-2);
-
+ }
   int sx=0; int sx1 =0;
-  if (position == top_left)
+  if (position == top_left && panelCurrentlyLeft)
     sx = x() + panel_button->x() + panel_button->width()+1;
-  if (position == bottom_right && orientation == horizontal)
+  if (position == bottom_right && (orientation == horizontal && panelCurrentlyLeft))
+    sx1 = x() + panel_button->x() + panel_button->width()+1;
+  if (position == top_left && (orientation == vertical && !panelCurrentlyLeft))
     sx1 = x() + panel_button->x() + panel_button->width()+1;
 
   if (taskbar_position == taskbar_top_left)
