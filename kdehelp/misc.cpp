@@ -58,7 +58,7 @@ const char *StrUpperStr(const char *haystack, const char *needle)
 
 int safeSystem( const char *cmd )
 {
-    if ( strpbrk( cmd, "`$(;" ) )
+    if ( strpbrk( cmd, "&;`'\\\"|*?~<>^()[]{}$\n\r" ) )
         return -1;
 
     return system( cmd );
