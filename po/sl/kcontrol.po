@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1999-04-21 13:45+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Project-Id-Version: kcontrol\n"
+"POT-Creation-Date: 1999-07-05 01:31+0200\n"
+"PO-Revision-Date: 1999-07-25 10:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -20,7 +19,7 @@ msgstr "Neznan modul: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
-msgstr "KDE krmilni center"
+msgstr "Nadzorni center KDE"
 
 #: toplevel.cpp:86
 msgid "&Swallow modules"
@@ -36,7 +35,7 @@ msgid ""
 "Thanks to:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 msgstr ""
-"KDE krmilni center - verzija 1.0\n"
+"KDE krmilni center - razlièica 1.0\n"
 "\n"
 "Napisal Matthias Hölzer\n"
 "(hoelzer@physik.uni-wuerzburg.de)\n"
@@ -46,7 +45,7 @@ msgstr ""
 
 #: mainwidget.cpp:44
 msgid "KDE Version: "
-msgstr "KDE verzija: "
+msgstr "Razlièica KDE: "
 
 #: mainwidget.cpp:52
 msgid "User: "
@@ -62,11 +61,11 @@ msgstr "Sistem: "
 
 #: mainwidget.cpp:73
 msgid "Release: "
-msgstr "Izdaja: "
+msgstr "Razlièica: "
 
 #: mainwidget.cpp:81
 msgid "Version: "
-msgstr "Verzija: "
+msgstr "Izdaja: "
 
 #: mainwidget.cpp:88
 msgid "Machine: "

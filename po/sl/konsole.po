@@ -2,12 +2,11 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "POT-Creation-Date: 1999-05-26 01:13+0200\n"
-"PO-Revision-Date: 1999-03-27 11:47+0100\n"
+"PO-Revision-Date: 1999-07-17 00:34 MEST\n"
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"

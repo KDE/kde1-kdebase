@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999 
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1999-03-27 08:06+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"PO-Revision-Date: 1999-07-28 16:27 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -37,11 +36,12 @@ msgstr "&LILO"
 #: main.cpp:100
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users,lilo}]\n"
-msgstr "Uporaba: kdmconfig [-init | {appearance,font,background,sessions,users,lilo}]\n"
+msgstr ""
+"Uporaba: kdmconfig [-init | {appearance,font,background,sessions,users,lilo}]\n"
 
 #: main.cpp:140
 msgid "KDM Configuration"
-msgstr "KDM konfiguracija"
+msgstr "Nastavitev KDM"
 
 #: main.cpp:146
 msgid ""
@@ -50,7 +50,7 @@ msgid ""
 "If this isn't your intention, remove it please!"
 msgstr ""
 "Imate lokalno nastavitveno datoteko %1 -\n"
-"Spremembe bomo shranili vanjo.\n"
+"Vanjo bom shranil spremembe.\n"
 "Èe tega ne ¾elite, jo prosim odstranite!"
 
 #: main.cpp:149
@@ -82,15 +82,15 @@ msgstr "Pozdravni niz:"
 
 #: kdm-appear.cpp:87
 msgid "KDM logo:"
-msgstr "KDM logo:"
+msgstr "Logo KDM:"
 
 #: kdm-appear.cpp:114 kdm-users.cpp:141
 msgid "Click or drop an image here"
-msgstr "Klikni ali spusti sliko tule"
+msgstr "Klikni ali spusti sliko tukaj"
 
 #: kdm-appear.cpp:119
 msgid "GUI Style:"
-msgstr "GUI slog:"
+msgstr "Slog GUI:"
 
 #: kdm-appear.cpp:125
 msgid "Motif"
@@ -113,7 +113,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Pri branju slike je prislo do napake:\n"
+"Pri branju slike je pri¹lo do napake:\n"
 ">"
 
 #: kdm-appear.cpp:178 kdm-appear.cpp:198 kdm-users.cpp:203
@@ -130,7 +130,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Pri snemanju slike je prislo do napake:\n"
+"Pri shranjevanju slike je pri¹lo do napake:\n"
 ">"
 
 #: kdm-appear.cpp:229
@@ -147,7 +147,7 @@ msgstr ""
 
 #: kdm-appear.cpp:235 kdm-users.cpp:240
 msgid "KDM Setup - Improper File Extension"
-msgstr "Nastavitev KDM - Neprimerna datoteèna pripona"
+msgstr "Nastavitev KDM - Neprimerna pripona datoteke"
 
 #: kdm-appear.cpp:265 kdm-users.cpp:288
 msgid ""
@@ -183,7 +183,7 @@ msgstr "Standarden"
 
 #: kdm-font.cpp:158
 msgid "Greeting font"
-msgstr "Pozdravna pisava"
+msgstr "Pisava pri pozdravu"
 
 #: kdm-font.cpp:162
 msgid "Fail font"
@@ -207,11 +207,11 @@ msgstr "Enobarven"
 
 #: kdm-bgnd.cpp:109
 msgid "Horizontal Blend"
-msgstr "Horizontalno prelitje"
+msgstr "Vodoravno prelitje"
 
 #: kdm-bgnd.cpp:114
 msgid "Vertical Blend"
-msgstr "Vertikalno prelitje"
+msgstr "Navpièno prelitje"
 
 #: kdm-bgnd.cpp:134
 msgid "Wallpaper"
@@ -219,7 +219,7 @@ msgstr "Tapeta"
 
 #: kdm-bgnd.cpp:173 kdm-sess.cpp:59
 msgid "None"
-msgstr "Niè"
+msgstr "Brez"
 
 #: kdm-bgnd.cpp:178
 msgid "Tile"
@@ -231,7 +231,7 @@ msgstr "Centrirano"
 
 #: kdm-bgnd.cpp:188
 msgid "Scale"
-msgstr "V merilu"
+msgstr "Poveèano"
 
 #: kdm-bgnd.cpp:193
 msgid "TopLeft"
@@ -263,7 +263,7 @@ msgstr "Izbrani uporabniki"
 
 #: kdm-users.cpp:58
 msgid "No-show users"
-msgstr "Neobstojeèi uporabniki"
+msgstr "Nevidni uporabniki"
 
 #: kdm-users.cpp:85
 msgid ""
@@ -279,7 +279,7 @@ msgid ""
 " but no-show users"
 msgstr ""
 "Prika¾i vse uporabnike\n"
-" razen neobstojeèih"
+" razen nevidnih"
 
 #: kdm-users.cpp:103
 msgid "Show users"
@@ -295,7 +295,7 @@ msgstr "Nastavitev KDM - Noben uporabnik ni bil izbran"
 
 #: kdm-users.cpp:189 kdm-users.cpp:261
 msgid "Save image as default image?"
-msgstr "Posnami sliko kot privzeto sliko?"
+msgstr "®elite shraniti sliko kot privzeto?"
 
 #: kdm-users.cpp:190 kdm-users.cpp:262
 msgid "&Yes"
@@ -367,7 +367,7 @@ msgstr "Nov tip"
 
 #: kdm-sess.cpp:99
 msgid "Available types"
-msgstr "Dostopni tipi"
+msgstr "Mo¾ni tipi"
 
 #: klangcombo.cpp:131
 msgid "without name!"

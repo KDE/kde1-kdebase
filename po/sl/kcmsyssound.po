@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
-"PO-Revision-Date: 1999-03-26 21:14+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"Project-Id-Version: kcmsyssound\n"
+"POT-Creation-Date: 1999-07-05 01:32+0200\n"
+"PO-Revision-Date: 1999-07-25 10:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -76,11 +75,11 @@ msgstr "Zagon"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr "Senca okna zgoraj"
+msgstr "Zasenèi okno"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr "Senca okna spodaj"
+msgstr "Osvetli okno"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
@@ -124,19 +123,19 @@ msgstr "Odjavno sporoèilo"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
-msgstr "Prièni premik okna"
+msgstr "Zaèetek premika okna"
 
 #: syssound.cpp:174
 msgid "Window Move End"
-msgstr "Konèaj premik okna"
+msgstr "Konec premika okna"
 
 #: syssound.cpp:175
 msgid "Window Resize Start"
-msgstr "Prièni spreminjanje velikosti okna"
+msgstr "Zaèetek preoblikovanja okna"
 
 #: syssound.cpp:176
 msgid "Window Resize End"
-msgstr "Konèaj spreminjanje velikosti okna"
+msgstr "Konec preoblikovanja okna"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
@@ -144,21 +143,21 @@ msgstr "&vklopi sistemske zvoke"
 
 #: syssound.cpp:203
 msgid "&Test"
-msgstr "&Test"
+msgstr "&Preizkus"
 
 #: syssound.cpp:207
 msgid "&Events:"
-msgstr "&Dogodki"
+msgstr "&Postopki :"
 
 #: syssound.cpp:211
 msgid "&Sounds:"
-msgstr "&Zvoki"
+msgstr "&Zvoki :"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Dodatne datoteke WAV so lahko spu¹èene na seznam zvokov"
+msgstr "Na seznam zvokov lahko spustite dodatne datoteke WAV."
 
-#: syssound.cpp:456
+#: syssound.cpp:495
 msgid "Unsupported URL"
 msgstr "Nepodprt URL"
 
@@ -182,7 +181,7 @@ msgstr ""
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "Neprimerna datoteèna ekstenzija"
+msgstr "Neprimerna konènica datoteke"
 
 #: syssound.cpp:482
 #, c-format
@@ -193,8 +192,8 @@ msgid ""
 msgstr ""
 "Datoteka\n"
 "%s\n"
-"se ¾e nahaja na seznamu"
+"je ¾e na seznamu"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "Datoteka ¾e obstaja v seznamu"
+msgstr "Datoteka je ¾e na seznamu"

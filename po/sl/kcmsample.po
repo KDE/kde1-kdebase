@@ -1,14 +1,13 @@
-# KDEBASE translation to Slovenian language.
+# KCMSAMPLE translation to Slovenian language.
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsample\n"
 "POT-Creation-Date: 1999-07-05 01:32+0200\n"
-"PO-Revision-Date: 199-03-26 21:11+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"PO-Revision-Date: 1999-07-23 00:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -16,4 +15,4 @@ msgstr ""
 
 #: main.cpp:30
 msgid "KDE Control Application Sample"
-msgstr "Primer krmilnega namenskega programa KDE"
+msgstr "Primer nadzornega programa KDE"

@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
 "POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1999-03-26 20:00+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"PO-Revision-Date: 1999-07-23 12:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -20,7 +19,7 @@ msgstr "&Gumbi"
 
 #: main.cpp:73
 msgid "&Titlebar"
-msgstr "&Naslovna vrstica"
+msgstr "&Naslovna letev"
 
 #: main.cpp:76
 msgid "Bo&rders"
@@ -28,7 +27,7 @@ msgstr "&Robovi"
 
 #: main.cpp:79
 msgid "&Mouse"
-msgstr "&Mi¹"
+msgstr "&Mi¹ka"
 
 #: main.cpp:83
 msgid "&Advanced"
@@ -70,13 +69,13 @@ msgstr "Desno"
 
 #: titlebar.cpp:474 titlebar.cpp:506 titlebar.cpp:545 titlebar.cpp:577
 msgid "Window Manager Setup - Warning"
-msgstr "Nastavitev urejevalnika oken - Napaka"
+msgstr "Nastavitev urejevalnika oken - Pozor"
 
 #: titlebar.cpp:475
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximize' button\n"
 msgstr ""
-"Leva stran naslovne vrstice je polna... odstranil bom gumb ,razpri`\n"
+"Leva stran naslovne letve je polna... odstranil bom gumb ,razpri`\n"
 
 #: titlebar.cpp:478 titlebar.cpp:510 titlebar.cpp:549 titlebar.cpp:581
 #: titlebar.cpp:1340
@@ -87,19 +86,19 @@ msgstr "&V redu"
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Desna stran naslovne vrstice je polna... odstranil bom gumb ,razpri`\n"
+"Desna stran naslovne letve je polna... odstranil bom gumb ,razpri`\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimize' button\n"
 msgstr ""
-"Leva stran naslovne vrstice je polna... odstranil bom gumb ,skrèi`\n"
+"Leva stran naslovne letve je polna... odstranil bom gumb ,skrèi`\n"
 
 #: titlebar.cpp:578
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimize' button\n"
 msgstr ""
-"Desna stran naslovne vrstice je polna... odstranil bom gumb ,skrèi`\n"
+"Desna stran naslovne letve je polna... odstranil bom gumb ,skrèi`\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
@@ -107,15 +106,15 @@ msgstr "Poravnanost naslova"
 
 #: titlebar.cpp:939
 msgid "Middle"
-msgstr "Sredina"
+msgstr "Na sredini"
 
 #: titlebar.cpp:967
 msgid "Shaded Vertically"
-msgstr "Senèeno navpièno"
+msgstr "Navpièno senèeno"
 
 #: titlebar.cpp:973
 msgid "Shaded Horizontally"
-msgstr "Senèeno vodoravno"
+msgstr "Vodoravno senèeno"
 
 #: titlebar.cpp:982
 msgid "Plain"
@@ -127,7 +126,7 @@ msgstr "Rastrska slika"
 
 #: titlebar.cpp:1003
 msgid "Active title has shaded frame"
-msgstr "Aktiven naslov ima osenèen okvir"
+msgstr "Aktiven naslov ima senèen okvir"
 
 #: titlebar.cpp:1042
 msgid "Active pixmap:"
@@ -143,15 +142,15 @@ msgstr "Pod besedilom ni rastrske slike"
 
 #: titlebar.cpp:1056
 msgid "Mouse action"
-msgstr "Dejanje mi¹i"
+msgstr "Uporaba mi¹ke"
 
 #: titlebar.cpp:1064
 msgid "Left Button double click does:"
-msgstr "Dvojni klik levega gumba stori:"
+msgstr "Dvojni klik levega gumba :"
 
 #: titlebar.cpp:1074
 msgid "(Un)Maximize"
-msgstr "(Ne)razpri"
+msgstr "(Ne)razpre"
 
 #: titlebar.cpp:1075
 msgid "(Un)Shade"
@@ -167,7 +166,7 @@ msgstr "(Od)lepi"
 
 #: titlebar.cpp:1097
 msgid "Title animation"
-msgstr "Naslovna animacija"
+msgstr "Animacija naslova"
 
 #: titlebar.cpp:1113
 msgid "ms"
@@ -182,8 +181,8 @@ msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Pri snemanju rastrske slike naslovne vrstice\n"
-"je pri¹lo do napake! Prosim preverite datoteène nastavitve."
+"Pri shranjevanju rastrske slike naslovne vrstice\n"
+"je pri¹lo do napake! Prosim preverite dovoljenja."
 
 #: windows.cpp:71
 msgid "Windows"
@@ -191,11 +190,11 @@ msgstr "Okna"
 
 #: windows.cpp:85
 msgid "Vertical maximization only by default"
-msgstr "Le privzeto razpri vertikalno"
+msgstr "Razpri samo navpièno"
 
 #: windows.cpp:90
 msgid "Display content in moving windows"
-msgstr "Prika¾i vsebino v premikajoèih oknih"
+msgstr "Prika¾i vsebino v oknih, ki se premikajo"
 
 #: windows.cpp:95
 msgid "Display content in resizing windows"
@@ -203,19 +202,19 @@ msgstr "Prika¾i vsebino v oknih, ki se jim spreminja velikost"
 
 #: windows.cpp:101
 msgid "Resize animation:"
-msgstr "Spremeni velikost animacije"
+msgstr "Animacija pri preoblikovanju"
 
 #: windows.cpp:114
 msgid "None"
-msgstr "Nobeno"
+msgstr "Brez"
 
 #: windows.cpp:120
 msgid "Fast"
-msgstr "Hitro"
+msgstr "Hitra"
 
 #: windows.cpp:131
 msgid "Placement policy"
-msgstr "Postavitvena taktika"
+msgstr "Postavitev oken"
 
 #: windows.cpp:137
 msgid "Smart"
@@ -223,19 +222,19 @@ msgstr "Pametna"
 
 #: windows.cpp:139
 msgid "Cascade"
-msgstr "Kaskadno"
+msgstr "Kaskadna"
 
 #: windows.cpp:141
 msgid "Interactive"
-msgstr "Pogovorno"
+msgstr "Polavtomatska"
 
 #: windows.cpp:143
 msgid "Random"
-msgstr "Nakljuèno"
+msgstr "Nakljuèna"
 
 #: windows.cpp:145
 msgid "Manual"
-msgstr "Roèno"
+msgstr "Roèna"
 
 #: windows.cpp:157
 #, c-format
@@ -244,12 +243,12 @@ msgid ""
 "(% of desktop space)"
 msgstr ""
 "  Dovoljeno prekrivanje:\n"
-"(% prostora namizja)"
+"(v % prostora namizja)"
 
 #: windows.cpp:175
 msgid "Focus policy"
 msgstr "Taktika fokusiranja"
-
+	
 #: windows.cpp:185
 msgid "Click to focus"
 msgstr "Klikni za fokus"
@@ -268,15 +267,15 @@ msgstr "Klasièno povr¹en fokus"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "Samodejno dvigne"
+msgstr "Samodejno odkrij"
 
 #: windows.cpp:209
 msgid "Click Raise"
-msgstr "Klik dvigne"
+msgstr "Klik odkrije"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
-msgstr "Zamik (ms)"
+msgstr "Zakasnitev (ms)"
 
 #: desktop.cpp:67
 msgid "Active desktop borders"
@@ -292,7 +291,7 @@ msgstr "Po preklopu premakni kazalec proti sredini"
 
 #: desktop.cpp:89
 msgid "Desktop switch delay:"
-msgstr "Zamik preklopa med namizji:"
+msgstr "Zakasnitev preklopa med namizji :"
 
 #: desktop.cpp:119
 msgid "Magic Borders"
@@ -303,28 +302,28 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Cona preskoka robov:\n"
-"       (toèk)"
+"Pas preskoka robov:\n"
+"         (v toèkah)"
 
 #: desktop.cpp:153
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Cona preskoka oken:\n"
-"       (toèk)"
+"Pas preskoka oken:\n"
+"        (v toèkah)"
 
 #: mouse.cpp:56
 msgid "Active"
-msgstr "Aktivno"
+msgstr "Aktivna"
 
 #: mouse.cpp:60
 msgid "Inactive"
-msgstr "Neaktivno"
+msgstr "Neaktivna"
 
 #: mouse.cpp:64
 msgid "Titlebar and frame:"
-msgstr "Naslovna vrstica in okvir:"
+msgstr "Naslovna letev in okvir:"
 
 #: mouse.cpp:68
 msgid "Inactive inner window:"
@@ -340,7 +339,7 @@ msgstr "Levi gumb"
 
 #: mouse.cpp:80 mouse.cpp:92
 msgid "Middle Button"
-msgstr "Sredinski gumb"
+msgstr "Srednji gumb"
 
 #: mouse.cpp:84 mouse.cpp:96
 msgid "Right Button"
@@ -352,7 +351,7 @@ msgstr "ALT + levi gumb"
 
 #: mouse.cpp:104
 msgid "ALT + Middle Button"
-msgstr "ALT + sredinski gumb"
+msgstr "ALT + srednji gumb"
 
 #: mouse.cpp:108
 msgid "ALT + Right Button"
@@ -361,12 +360,12 @@ msgstr "ALT + desni gumb"
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134 mouse.cpp:198 mouse.cpp:209
 #: mouse.cpp:220
 msgid "Raise"
-msgstr "Dvigni"
+msgstr "Odkrij"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:199 mouse.cpp:210
 #: mouse.cpp:221
 msgid "Lower"
-msgstr "Spusti"
+msgstr "Zakrij"
 
 #: mouse.cpp:117 mouse.cpp:126 mouse.cpp:136
 msgid "Operations menu"
@@ -375,7 +374,7 @@ msgstr "Meni operacij"
 #: mouse.cpp:118 mouse.cpp:127 mouse.cpp:137 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Toggle raise and lower"
-msgstr "Preklopi dvignjeno in spu¹èeno"
+msgstr "Odkrij oziroma Zakrij"
 
 #: mouse.cpp:128 mouse.cpp:138 mouse.cpp:200 mouse.cpp:211 mouse.cpp:222
 msgid "Nothing"
@@ -384,11 +383,11 @@ msgstr "Niè"
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:171 mouse.cpp:180
 #: mouse.cpp:189
 msgid "Activate and raise"
-msgstr "Aktiviraj in dvigni"
+msgstr "Aktiviraj in odkrij"
 
 #: mouse.cpp:145 mouse.cpp:153 mouse.cpp:161
 msgid "Activate and lower"
-msgstr "Aktiviraj in spusti"
+msgstr "Aktiviraj in zakrij"
 
 #: mouse.cpp:146 mouse.cpp:154 mouse.cpp:162 mouse.cpp:170 mouse.cpp:179
 #: mouse.cpp:188
@@ -397,11 +396,11 @@ msgstr "Aktiviraj"
 
 #: mouse.cpp:168 mouse.cpp:177 mouse.cpp:186
 msgid "Activate, raise and pass click"
-msgstr "Aktiviraj, dvigni in spusti klik"
+msgstr "Aktiviraj, odkrij in predaj klik"
 
 #: mouse.cpp:169 mouse.cpp:178 mouse.cpp:187
 msgid "Activate and pass click"
-msgstr "Aktiviraj in spusti klik"
+msgstr "Aktiviraj in predaj klik"
 
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Move"
@@ -409,11 +408,11 @@ msgstr "Premakni"
 
 #: mouse.cpp:197 mouse.cpp:208 mouse.cpp:219
 msgid "Resize"
-msgstr "Spremeni velikost"
+msgstr "Preoblikuj"
 
 #: advanced.cpp:38
 msgid "Keyboard and Mouse"
-msgstr "Tipkovnica in mi¹"
+msgstr "Tipkovnica in mi¹ka"
 
 #: advanced.cpp:48
 msgid "Ctrl-Tab walks through desktops"
@@ -425,7 +424,7 @@ msgstr "Alt-Tab je omejen na trenutno namizje"
 
 #: advanced.cpp:58
 msgid "Alt-Tab mode:"
-msgstr "Alt-Tab naèin:"
+msgstr "Alt-Tab naèin :"
 
 #: advanced.cpp:65
 msgid "KDE"
@@ -437,7 +436,7 @@ msgstr "CDE"
 
 #: advanced.cpp:71
 msgid "Grab the Right Mouse Button"
-msgstr "Zgrabi desni gumb mi¹ke"
+msgstr "Nadzoruj desni gumb mi¹ke"
 
 #: advanced.cpp:80
 msgid "Filters"
@@ -461,7 +460,7 @@ msgstr "vedno brez fokusa"
 
 #: advanced.cpp:109
 msgid "start as Sticky"
-msgstr "prièela kot prilepljena"
+msgstr "na zaèetku prilepljena"
 
 #: advanced.cpp:110
 msgid "be excluded from session management"
@@ -469,12 +468,12 @@ msgstr "bila izkljuèena iz upravljanja seje"
 
 #: advanced.cpp:118
 msgid "if they match the following:"
-msgstr "èe se ujemajo z naslednjimi:"
+msgstr "èe se ujemajo z naslednjimi"
 
 #: advanced.cpp:123
 msgid "Titles"
-msgstr "Naslovi"
+msgstr "naslovi"
 
 #: advanced.cpp:128
 msgid "Classes"
-msgstr "Razredi"
+msgstr "razredi"

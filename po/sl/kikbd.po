@@ -2,12 +2,11 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-05-24 01:14+0200\n"
-"PO-Revision-Date: 1999-03-27 09:10+0100\n"
+"PO-Revision-Date: 1999-07-17 00:34 MEST\n"
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
@@ -258,11 +257,11 @@ msgstr "Statistika:  "
 
 #: kikbdconf.cpp:453
 msgid "symbols"
-msgstr "simboli"
+msgstr "simbolov"
 
 #: kikbdconf.cpp:461
 msgid "codes"
-msgstr "kode"
+msgstr "kod"
 
 #: kikbdconf.cpp:464
 msgid "alternative symbols"
@@ -540,7 +539,7 @@ msgstr "&Slog"
 
 #: kcmikbd.cpp:79
 msgid "Start&Up"
-msgstr "Samodejen &zagon"
+msgstr "Samodejni &zagon"
 
 #: kcmikbd.cpp:83
 msgid "International Keyboard"

@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1999-07-05 01:32+0200\n"
-"PO-Revision-Date: 1999-03-26 23:25+0100\n"
-"Last-Translator: Marko Samastur <markos@elite.org>\n"
+"PO-Revision-Date: 1999-07-28 00:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -68,7 +67,7 @@ msgstr "Prijave trenutno niso mogoèe."
 
 #: kgreeter.cpp:549
 msgid "login_getcapstr() failed."
-msgstr "login_getcapstr() neusp¹na."
+msgstr "login_getcapstr() ne dela."
 
 #: kgreeter.cpp:603 kgreeter.cpp:631
 msgid "Sorry -- your account has expired."
@@ -77,7 +76,7 @@ msgstr "Oprostite -- va¹ raèun je potekel."
 #: kgreeter.cpp:609 kgreeter.cpp:637
 #, c-format
 msgid "Warning: your account expires on %1."
-msgstr "Opozorilo: va¹ raèun poteèe %1"
+msgstr "Pozor: va¹ raèun poteèe %1"
 
 #: kgreeter.cpp:664
 msgid "Home directory not available"
@@ -89,15 +88,15 @@ msgid ""
 "Please contact your system administrator.\n"
 msgstr ""
 "Zagonski program %1 se je konèal z nenièelnim statusom.\n"
-"Prosimo, obrnite se na upravnika sistema.\n"
+"Prosim obvestite upravnika sistema.\n"
 
 #: kgreeter.cpp:830
 msgid "Login aborted"
-msgstr "Prijava opu¹èena!"
+msgstr "Prijava je prekinjena"
 
 #: kgreeter.cpp:830
 msgid "Retry"
-msgstr "Ponovno"
+msgstr "Poskusi znova"
 
 #: liloinfo.cpp:336
 msgid "No next option found!"
@@ -113,7 +112,7 @@ msgstr "Popravek za LILO ni omogoèen."
 
 #: liloinfo.cpp:345
 msgid "Attempted to write invalid next boot option!"
-msgstr "Posku¹ali smo zapisati neveljavno naslednjo zagonsko izbiro!"
+msgstr "Poskusili ste zapisati neveljavno naslednjo zagonsko izbiro!"
 
 #: liloinfo.cpp:348
 msgid "Lilo location is a non-existing file."

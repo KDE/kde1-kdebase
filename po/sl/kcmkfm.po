@@ -1,13 +1,12 @@
 # Slovenski katalog sporoèil za kcmkfm.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) 1999 Free Software Foundation, Inc.
 # Borut Mrak <borutm@bigfoot.com>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1999-01-07 12:41+0100\n"
+"PO-Revision-Date: 1999-07-23 00:34 MEST\n"
 "Last-Translator: Borut Mrak <borutm@bigfoot.com>\n"
 "Language-Team: Slovenian\n"
 "MIME-Version: 1.0\n"
@@ -51,8 +50,7 @@ msgstr "&Ikone na namizju"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"uporaba: %s [-init | "
-"{pisava,barva,razno,proxy,http,uporabni¹ki_posrednik,pi¹kotki,ikone\n"
+"uporaba: %s [-init | {pisava,barva,razno,proxy,http,uporabni¹ki_posrednik,pi¹kotki,ikone\n"
 
 #: main.cpp:180
 msgid "Konqueror Configuration"
@@ -60,15 +58,15 @@ msgstr "Nastavitev Konquerorja"
 
 #: htmlopts.cpp:63
 msgid "Small"
-msgstr "Majhen"
+msgstr "Majhna"
 
 #: htmlopts.cpp:66
 msgid "Medium"
-msgstr "Srednji"
+msgstr "Srednja"
 
 #: htmlopts.cpp:69
 msgid "Large"
-msgstr "Velik"
+msgstr "Velika"
 
 #: htmlopts.cpp:76
 msgid "Standard Font"
@@ -92,7 +90,7 @@ msgstr "Barva ozadja:"
 
 #: htmlopts.cpp:315
 msgid "Normal Text Color:"
-msgstr "Barva navadnega teksta:"
+msgstr "Barva navadnega besedila:"
 
 #: htmlopts.cpp:323
 msgid "URL Link Color:"
@@ -100,7 +98,7 @@ msgstr "Barva URL povezave:"
 
 #: htmlopts.cpp:331
 msgid "Followed Link Color:"
-msgstr "Barva sledene povezave:"
+msgstr "Barva obiskane povezave:"
 
 #: htmlopts.cpp:339
 msgid "Change cursor over link."
@@ -148,7 +146,7 @@ msgstr "Ftp proxy:"
 
 #: kproxydlg.cpp:83
 msgid "No Proxy for:"
-msgstr "Brez proxy-ja za:"
+msgstr "Brez proxyja za:"
 
 #: khttpoptdlg.cpp:37
 msgid "Accept languages:"
@@ -176,7 +174,7 @@ msgstr "&Dodaj"
 
 #: useragentdlg.cpp:74
 msgid "Known bindings:"
-msgstr "Znan"
+msgstr "Znane vezave:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
@@ -212,11 +210,11 @@ msgstr "Najprej morate vnesti domeno !"
 
 #: rootopts.cpp:72
 msgid "Horizontal Root Grid Spacing:"
-msgstr "Vodoravni razmak mre¾e v osnovnem oknu:"
+msgstr "Vodoravni razmik mre¾e v osnovnem oknu:"
 
 #: rootopts.cpp:78
 msgid "Vertical Root Grid Spacing:"
-msgstr "Navpièni razmak mre¾e v osnovnem oknu:"
+msgstr "Navpièni razmik mre¾e v osnovnem oknu:"
 
 #: rootopts.cpp:84
 msgid "&Transparent Text for Desktop Icons."
@@ -233,4 +231,3 @@ msgstr "Barva ospredja ikone:"
 #: rootopts.cpp:106
 msgid "Show &Hidden Files on Desktop"
 msgstr "Prika¾i &skrite datoteke na omizju"
-

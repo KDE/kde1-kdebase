@@ -2,12 +2,11 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # luka steger <luka_steger@hotmail.com>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminfo\n"
 "POT-Creation-Date: 1999-07-05 01:31+0200\n"
-"PO-Revision-Date: 1998-01-23 13:46+0100\n"
+"PO-Revision-Date: 1999-07-23 11:34 MEST\n"
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +16,7 @@ msgstr ""
 #: info.cpp:89
 #, c-format
 msgid "Screen # %1"
-msgstr "zaslon # %1"
+msgstr "Zaslon # %1"
 
 #: info.cpp:91
 msgid "Dimensions"
@@ -37,7 +36,7 @@ msgstr "%1 x %2 toèk na palec (dpi)"
 
 #: info.cpp:107
 msgid "Depths"
-msgstr "Globine"
+msgstr "Globina"
 
 #: info.cpp:139 info_hpux.cpp:375 info_hpux.cpp:737 info_linux.cpp:106
 msgid "Value"
@@ -49,7 +48,7 @@ msgstr "Ime zaslona"
 
 #: info.cpp:147
 msgid "Version Number"
-msgstr "Verzija"
+msgstr "Razlièica"
 
 #: info.cpp:152
 msgid "Vendor String"
@@ -85,7 +84,7 @@ msgstr "Priklopna toèka"
 
 #: info_fbsd.cpp:220 info_fbsd.cpp:221 info_hpux.cpp:630 info_linux.cpp:212
 msgid "FS Type"
-msgstr "tip datoteènega sistema"
+msgstr "Tip datoteènega sistema"
 
 #: info_fbsd.cpp:223 info_fbsd.cpp:224 info_linux.cpp:215
 msgid "Mount Options"
@@ -183,7 +182,8 @@ msgstr "n/a"
 msgid ""
 "Sorry, Audio-Support (Alib) was disabled during configuration and "
 "compile-time !"
-msgstr "Podpora za zvok (Alib) ¾al pri nastavitvi in med prevajanjem ni bila vklopljena."
+msgstr ""
+"Podpora za zvok (Alib) ¾al pri nastavitvi in med prevajanjem ni bila vklopljena."
 
 #: info_hpux.cpp:729
 msgid "Unable to open Audio-Server (Alib) !"
@@ -452,7 +452,7 @@ msgstr "Prosti fizièni pomnilnik"
 
 #: memory.cpp:68
 msgid "Shared memory"
-msgstr "Skupni spomin"
+msgstr "Skupni pomnilnik"
 
 #: memory.cpp:69
 msgid "Buffer memory"

@@ -2,13 +2,12 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp\n"
 "POT-Creation-Date: 1999-05-31 01:16+0200\n"
-"PO-Revision-Date: 1999-03-26 22:10+0100\n"
-"Last-Translator: Marko Samastur <markos@Aelite.org>\n"
+"PO-Revision-Date: 1999-07-25 10:34 MEST\n"
+"Last-Translator: Bla¾ Zupanèiè <blaz.zupancic@kiss.uni-lj.si>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -16,7 +15,7 @@ msgstr ""
 
 #: helpwin.cpp:46
 msgid "KDE Help: Open URL"
-msgstr "KDE-Pomoè: Odpri URL"
+msgstr "Pomoè KDE: Odpri URL"
 
 #: helpwin.cpp:48
 msgid "Open URL"
@@ -36,11 +35,11 @@ msgstr "Neznan format: "
 
 #: helpwin.cpp:1123
 msgid "Find Complete"
-msgstr "Iskanje zakljuèeno"
+msgstr "Iskanje konèano"
 
 #: helpwin.cpp:1124
 msgid "Continue search from the top of the page?"
-msgstr "Nadaljuj iskanje na vrhu strani?"
+msgstr "®elite nadaljevati iskanje od zaèetka strani?"
 
 #: helpwin.cpp:1338
 msgid "Forward"
@@ -74,23 +73,23 @@ msgstr "Ne morem odpreti info datoteke: %s"
 
 #: error.cpp:23
 msgid "Fatal Error: "
-msgstr "Fatalna napaka: "
+msgstr "Usodna napaka: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "Opozorilo: "
+msgstr "Pozor: "
 
 #: options.cpp:38
 msgid "Small"
-msgstr "Majhen"
+msgstr "Majhna"
 
 #: options.cpp:42
 msgid "Medium"
-msgstr "Srednji"
+msgstr "Srednja"
 
 #: options.cpp:46
 msgid "Large"
-msgstr "Velik"
+msgstr "Velika"
 
 #: options.cpp:50
 msgid "Standard Font"
@@ -98,7 +97,7 @@ msgstr "Standardna pisava"
 
 #: options.cpp:67
 msgid "Fixed Font"
-msgstr "Pisava fiksne ¹irine"
+msgstr "Pisava stalne ¹irine"
 
 #: options.cpp:206
 msgid "Background Color:"
@@ -106,7 +105,7 @@ msgstr "Barva ozadja:"
 
 #: options.cpp:214
 msgid "Normal Text Color:"
-msgstr "Obièajna barva besedila:"
+msgstr "Barva navadnega besedila:"
 
 #: options.cpp:222
 msgid "URL Link Color:"
@@ -126,7 +125,7 @@ msgstr "Vedno uporabi moje barve"
 
 #: options.cpp:334
 msgid "KDE Help Options"
-msgstr "Nastavitve KDE Pomoèi"
+msgstr "Nastavitve pomoèi KDE"
 
 #: options.cpp:347 options.cpp:348
 msgid "Colors"
@@ -164,7 +163,7 @@ msgstr "Naprave"
 
 #: man.cpp:144
 msgid "File Formats"
-msgstr "Datoteèni formati"
+msgstr "Oblike datotek"
 
 #: man.cpp:146
 msgid "Games"
@@ -172,7 +171,7 @@ msgstr "Igre"
 
 #: man.cpp:150
 msgid "System Administration"
-msgstr "Sistemska administracija"
+msgstr "Upravljanje sistema"
 
 #: man.cpp:152
 msgid "New"
@@ -201,11 +200,11 @@ msgstr "<!-- Ne popravljajte te datoteke -->"
 #: cgi.cpp:81
 #, c-format
 msgid "CGI: Destination URL malformed: %s\n"
-msgstr "CGI: Ciljni URL je zmalièen: %s\n"
+msgstr "CGI: Ciljni URL je narobe oblikovan: %s\n"
 
 #: mainwidget.cpp:130
 msgid "&New Help Window"
-msgstr "&Novo okno Pomoè"
+msgstr "&Novo okno pomoèi"
 
 #: mainwidget.cpp:133
 msgid "&Open File..."
@@ -261,7 +260,7 @@ msgstr "&Shrani nastavitve"
 
 #: mainwidget.cpp:202
 msgid "KDE Help System\n"
-msgstr "KDE Sistem Pomoèi\n"
+msgstr "Sistem pomoèi KDE\n"
 
 #: mainwidget.cpp:203
 msgid "Version "
@@ -281,8 +280,8 @@ msgstr ""
 "\n"
 "Avtorske pravice (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
-" Tale program je pod licenco GNU General Public License (GPL).\n"
-"KDEPomoè pride BREZ VSAKR©NIH JAMSTEV do mere dovoljene z zakonom."
+"Program je pod licenco GNU General Public License (GPL).\n"
+"Pomoè KDE je BREZ VSAKR©NIH JAMSTEV do mere dovoljene z zakonom."
 
 #: mainwidget.cpp:222
 msgid "&Goto"
@@ -333,12 +332,12 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"KDE Sistem Pomoèi\n"
-"Razlièica"
+"Sistem pomoèi KDE\n"
+"Razlièica "
 
 #: mainwidget.cpp:611
 msgid "About KDE Help"
-msgstr "O KDE Pomoèi"
+msgstr "O pomoèi KDE"
 
 #: mainwidget.cpp:644
 msgid "&Add Bookmark"
@@ -350,7 +349,7 @@ msgstr "Najdi:"
 
 #: finddlg.cpp:54
 msgid "Case &sensitive"
-msgstr "O&bèutljiv na velikost èrk"
+msgstr "&Pazi na velikost èrk"
 
 #: finddlg.cpp:64
 msgid "&Find"
