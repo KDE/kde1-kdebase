@@ -1,0 +1,29 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: kstartondesk.C:72
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: kstartondesk.C:76
+msgid "Usage:"
+msgstr "Utilização:"
+
+#: kstartondesk.C:78
+msgid "command "
+msgstr "comando "
+
+#: kstartondesk.C:79
+msgid "title "
+msgstr "título "
+
+#: kstartondesk.C:80
+msgid "desktop"
+msgstr "ambiente de trabalho"
+
+#: kstartondesk.C:82
+msgid "Example"
+msgstr "Exemplo"

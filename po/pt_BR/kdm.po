@@ -1,0 +1,45 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: kdmshutdown.cpp:159
+msgid "Shutdown or restart?"
+msgstr "Desligar ou reinicializar?"
+
+#: kdmshutdown.cpp:175
+msgid "Shutdown"
+msgstr "Desligar"
+
+#: kdmshutdown.cpp:189
+msgid "Shutdown and restart"
+msgstr "Desligar e reinicializar"
+
+#: kdmshutdown.cpp:198
+msgid "Exit kdm"
+msgstr "Abandonar kdm"
+
+#: kgreeter.cpp:139
+msgid "Login:"
+msgstr "Login:"
+
+#: kgreeter.cpp:151
+msgid "Password:"
+msgstr "Password:"
+
+#: kgreeter.cpp:191
+msgid "Login failed!"
+msgstr "Login falhou!"
+
+#: kgreeter.cpp:197
+msgid "Session Type:"
+msgstr "Tipo de Sessão:'"
+
+#: kgreeter.cpp:213
+msgid "Go!"
+msgstr "Ir!"
+
+#: kgreeter.cpp:229
+msgid "Shutdown..."
+msgstr "Desligar..."

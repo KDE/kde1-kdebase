@@ -1,0 +1,336 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: helpwin.cpp:58
+msgid "KDE Help: Open URL"
+msgstr "KDE Help: Abrir URL"
+
+#: helpwin.cpp:60
+msgid "Open URL"
+msgstr "Abrir URL"
+
+#: helpwin.cpp:454 info.cpp:274
+msgid "Cannot open: "
+msgstr "Não é possível abrir: "
+
+#: helpwin.cpp:455 helpwin.cpp:464
+msgid "Oops!"
+msgstr "Ooops!"
+
+#: helpwin.cpp:463
+msgid "Unknown format: "
+msgstr "Formato desconhecido: "
+
+#: helpwin.cpp:833
+msgid "Could not start or find KFM"
+msgstr "Não foi possível iniciar ou encontrar o KFM"
+
+#: helpwin.cpp:1322
+msgid "Open this Link"
+msgstr "Abrir este Link"
+
+#: helpwin.cpp:1323
+msgid "Add Bookmark"
+msgstr "Adicionar Favorito"
+
+#: helpwin.cpp:1324
+msgid "Open in new Window"
+msgstr "Abrir numa nova Janela"
+
+#: info.cpp:86 info.cpp:601
+msgid "Error in info file"
+msgstr "Erro no arquivo info"
+
+#: info.cpp:1230
+#, c-format
+msgid "Node not found: %s"
+msgstr "Nó não encontrado: %s"
+
+#: info.cpp:1375
+#, c-format
+msgid "Cannot open info file: %s"
+msgstr "Não foi possível abrir arquivo info: %s"
+
+#: error.cpp:23
+msgid "Fatal Error: "
+msgstr "Erro Fatal:"
+
+#: error.cpp:28
+msgid "Warning: "
+msgstr "Aviso: "
+
+#: options.cpp:36
+msgid "Font Size"
+msgstr "Tamanho da Fonte"
+
+#: options.cpp:40
+msgid "Small"
+msgstr "Pequeno"
+
+#: options.cpp:44
+msgid "Medium"
+msgstr "Médio"
+
+#: options.cpp:48
+msgid "Large"
+msgstr "Grande"
+
+#: options.cpp:52
+msgid "Standard Font"
+msgstr "Fonte Padrão"
+
+#: options.cpp:69
+msgid "Fixed Font"
+msgstr "Fonte Fixa"
+
+#: options.cpp:208
+msgid "Background Color:"
+msgstr "Cor de Fundo:"
+
+#: options.cpp:216
+msgid "Normal Text Color:"
+msgstr "Cor do Texto Normal:"
+
+#: options.cpp:224
+msgid "URL Link Color:"
+msgstr "Cor de Link URL:"
+
+#: options.cpp:232
+msgid "Followed Link Color:"
+msgstr "Cor do Link Visitado:"
+
+#: options.cpp:303
+msgid "KDE Help Options"
+msgstr "Opções da Ajuda do KDE"
+
+#: options.cpp:311 options.cpp:312
+msgid "Fonts"
+msgstr "Fontes"
+
+#: options.cpp:316 options.cpp:317
+msgid "Colors"
+msgstr "Cores"
+
+#: man.cpp:84 man.cpp:788
+msgid "Online Manuals"
+msgstr "Manuais Online"
+
+#: man.cpp:90
+#, c-format
+msgid "Section %s"
+msgstr "Seção %s"
+
+#: man.cpp:106
+#, c-format
+msgid "Online manual - Section %s"
+msgstr "Manual Online - Seção %s"
+
+#: man.cpp:455
+msgid "User Commands"
+msgstr "Comandos do Usuário"
+
+#: man.cpp:457
+msgid "System Calls"
+msgstr "Chamadas do Sistema"
+
+#: man.cpp:459
+msgid "Subroutines"
+msgstr "Subrotinas"
+
+#: man.cpp:461
+msgid "Devices"
+msgstr "Dispositivos"
+
+#: man.cpp:463
+msgid "File Formats"
+msgstr "Formatos de Arquivo"
+
+#: man.cpp:465
+msgid "Games"
+msgstr "Jogos"
+
+#: man.cpp:467
+msgid "Miscellaneous"
+msgstr "Variados"
+
+#: man.cpp:469
+msgid "System Administration"
+msgstr "Administração do Sistema"
+
+#: man.cpp:580
+msgid "Reading Dir: "
+msgstr "Lendo diretório: "
+
+#: man.cpp:777
+msgid "Online Manual - Section"
+msgstr "Manual Online - Seção"
+
+#: man.cpp:835
+msgid "\"man\" system call failed"
+msgstr "Chamada de sistema \"man\" falhou"
+
+#: man.cpp:853
+msgid "Opening temporary file failed"
+msgstr "Erro ao abrir arquivo temporário"
+
+#: cgi.cpp:80
+#, c-format
+msgid "CGI: Destination URL malformed: %s\n"
+msgstr "CGI: URL de destino incorreto: %s\n"
+
+#: mainwidget.cpp:132
+msgid "&New Help Window"
+msgstr "&Nova Janela de Ajuda"
+
+#: mainwidget.cpp:135
+msgid "&Open File..."
+msgstr "Abrir Arquiv&o..."
+
+#: mainwidget.cpp:136
+msgid "Open UR&L..."
+msgstr "Abrir UR&L..."
+
+#: mainwidget.cpp:137
+msgid "&Reload"
+msgstr "&Recarregar"
+
+#: mainwidget.cpp:139
+msgid "&Search"
+msgstr "&Procurar"
+
+#: mainwidget.cpp:152
+msgid "&Back"
+msgstr "&Retornar"
+
+#: mainwidget.cpp:153
+msgid "&Forward"
+msgstr "&Avançar"
+
+#: mainwidget.cpp:156
+msgid "&Top"
+msgstr "&Topo"
+
+#: mainwidget.cpp:157
+msgid "&Up"
+msgstr "&Cima"
+
+#: mainwidget.cpp:158
+msgid "&Previous"
+msgstr "&Anterior"
+
+#: mainwidget.cpp:159
+msgid "&Next"
+msgstr "&Seguinte"
+
+#: mainwidget.cpp:171
+msgid "&General Preferences..."
+msgstr "Preferências &Gerais..."
+
+#: mainwidget.cpp:174
+msgid "Show &Toolbar"
+msgstr "Mostrar Barra de Ferramen&tas"
+
+#: mainwidget.cpp:176
+msgid "Show &Location"
+msgstr "Mostrar &Localização"
+
+#: mainwidget.cpp:177
+msgid "Show Status&bar"
+msgstr "Mostrar &Barra de Status "
+
+#: mainwidget.cpp:180
+msgid "&Save Options"
+msgstr "Gravar Opções"
+
+#: mainwidget.cpp:182
+msgid "KDE Help System\n"
+msgstr "Sistema de Ajuda do KDE\n"
+
+#: mainwidget.cpp:183
+msgid "Version "
+msgstr "Versão "
+
+#: mainwidget.cpp:185
+msgid ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"This program is licensed under the GNU General Public License (GPL).\n"
+"KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
+"applicable law."
+msgstr "\n"
+       "\n"
+       "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+       "\n"
+       "Este programa está licenciado sob a\n"
+       "Licença Geral Pública GNU (GPL).\n"
+       "KDEHelp não tem\n"
+       "ABSOLUTAMENTE NENHUMA GARANTIA\n"
+       "até o permitido pela lei aplicável."
+
+#: mainwidget.cpp:201
+msgid "&Goto"
+msgstr "&Ir Para"
+
+#: mainwidget.cpp:202
+msgid "&Bookmarks"
+msgstr "&Favoritos"
+
+#: mainwidget.cpp:220
+msgid "Previous Document"
+msgstr "Documento Anterior"
+
+#: mainwidget.cpp:225
+msgid "Next Document"
+msgstr "Próximo Documento"
+
+#: mainwidget.cpp:232
+msgid "Previous Node"
+msgstr "Nó Anterior"
+
+#: mainwidget.cpp:237
+msgid "Next Node"
+msgstr "Próximo Nó"
+
+#: mainwidget.cpp:242
+msgid "Up one Node"
+msgstr "Subir um Nó"
+
+#: mainwidget.cpp:247
+msgid "Top Node"
+msgstr "Nó de Topo"
+
+#: mainwidget.cpp:254
+msgid "Help Contents"
+msgstr "Conteúdo da Ajuda"
+
+#: mainwidget.cpp:259
+msgid "Reload current document"
+msgstr "Recarregar documento atual"
+
+#: mainwidget.cpp:264
+msgid "Stop"
+msgstr "Parar"
+
+#: mainwidget.cpp:288
+msgid "In the Constructor!"
+msgstr "Falta Construtor!"
+
+#: mainwidget.cpp:582
+msgid ""
+"KDE Help System\n"
+"Version "
+msgstr "Sistema de Ajuda do KDE\n"
+       "Versão "
+
+#: mainwidget.cpp:584
+msgid "About KDE Help"
+msgstr "Sobre o KDE Help"
+
+#: mainwidget.cpp:617
+msgid "&Add Bookmark"
+msgstr "&Adicionar Favorito"

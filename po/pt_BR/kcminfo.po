@@ -1,0 +1,59 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "&Memória"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "&Processador"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "utilização: kcminfo [-init | {processor,memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "Informações sobre o Sistema"
+
+#: memory.cpp:11
+msgid "Total memory"
+msgstr "Memória total"
+
+#: memory.cpp:21
+msgid "Free memory"
+msgstr "Memória livre"
+
+#: memory.cpp:29
+msgid "Shared memory"
+msgstr "Memória compartilhada"
+
+#: memory.cpp:37
+msgid "Buffer memory"
+msgstr "Memória dos buffers"
+
+#: memory.cpp:45
+msgid "Swap memory"
+msgstr "Memória virtual"
+
+#: memory.cpp:53
+msgid "Free swap memory"
+msgstr "Memória virtual livre"
+
+#: memory.cpp:74
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
+
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
+msgid "not available"
+msgstr "não disponível"
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "Este sistema ainda não é suportado :-("

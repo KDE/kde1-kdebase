@@ -1,0 +1,260 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: main.cpp:59
+msgid "&Windows"
+msgstr "&Janelas"
+
+#: main.cpp:62
+msgid "&Buttons"
+msgstr "&Botões"
+
+#: main.cpp:65
+msgid "&Titlebar"
+msgstr "&Barra de Título"
+
+#: main.cpp:68
+msgid "&Desktop"
+msgstr "&Ambiente de Trabalho"
+
+#: main.cpp:74
+msgid "usage: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+msgstr "utilização: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
+
+#: main.cpp:105
+msgid "Window manager style"
+msgstr "Estilo do gerenciador de janelas"
+
+#: titlebar.cpp:117
+msgid "Minimize"
+msgstr "Minimizar"
+
+#: titlebar.cpp:121
+msgid "Maximize"
+msgstr "Maximizar"
+
+#: titlebar.cpp:125
+msgid "Sticky"
+msgstr "Pregar"
+
+#: titlebar.cpp:133
+msgid "Menu"
+msgstr "Menu"
+
+#: titlebar.cpp:463
+msgid ""
+"The left side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
+       "botão Maximizar\n"
+
+#: titlebar.cpp:496
+msgid ""
+"The right side of the titlebar is full... disabling the 'maximise' button\n"
+msgstr "O lado direito da barra de título está cheio... desativando o botão "
+       "Maximizar\n"
+
+#: titlebar.cpp:536
+msgid ""
+"The left side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr "O lado esquerdo da barra de titulo está cheio... desativando o "
+       "botão Minimizar\n"
+
+#: titlebar.cpp:569
+msgid ""
+"The right side of the titlebar is full... disabling the 'minimise' button\n"
+msgstr "O lado direito da barra de título está cheio... desativando o botão "
+       "Minimizar\n"
+
+#: titlebar.cpp:925
+msgid "Titlebar appearance"
+msgstr "Aparência da barra de título"
+
+#: titlebar.cpp:927
+msgid "Shaded"
+msgstr "Sombreada"
+
+#: titlebar.cpp:930
+msgid "Plain"
+msgstr "Normal"
+
+#: titlebar.cpp:933 titlebar.cpp:953
+msgid "Pixmap"
+msgstr "Imagem"
+
+#: titlebar.cpp:940
+msgid "Title Animation"
+msgstr "Animação do título"
+
+#: desktop.cpp:91 titlebar.cpp:943
+msgid "ms"
+msgstr "ms"
+
+#: titlebar.cpp:964
+msgid "&Active pixmap"
+msgstr "Imagem &ativa"
+
+#: titlebar.cpp:966
+msgid "&Inactive pixmap"
+msgstr "Imagem &inativa"
+
+#: titlebar.cpp:982
+msgid "Mouse action"
+msgstr "Ação do mouse"
+
+#: titlebar.cpp:984
+msgid ""
+"LeftMouseButton double click\n"
+"    on titlebar does:"
+msgstr ""
+       "Duplo click com botão esquerdo\n"
+       "   na barra de título faz:"
+
+#: titlebar.cpp:988
+msgid "(Un)Maximize"
+msgstr "(Des)Maximizar"
+
+#: titlebar.cpp:989
+msgid "Move"
+msgstr "Mover"
+
+#: titlebar.cpp:990
+msgid "(Un)Shade"
+msgstr "(Des)Sombrear"
+
+#: titlebar.cpp:991
+msgid "Iconify"
+msgstr "Iconificar"
+
+#: titlebar.cpp:992
+msgid "(Un)Sticky"
+msgstr "(Des)Pregar"
+
+#: titlebar.cpp:993
+msgid "Resize"
+msgstr "Mudar Tamanho"
+
+#: titlebar.cpp:994
+msgid "Restore"
+msgstr "Restaurar"
+
+#: titlebar.cpp:995
+msgid "Operations Menu"
+msgstr "Menu de Operações"
+
+#: windows.cpp:74
+msgid "Window movement"
+msgstr "Movimentação das Janelas"
+
+#: windows.cpp:75
+msgid "Transparent"
+msgstr "Transparente"
+
+#: windows.cpp:76
+msgid "Opaque"
+msgstr "Opaca"
+
+#: windows.cpp:79
+msgid "Resize Animation"
+msgstr "Animação de Tamanho"
+
+#: windows.cpp:84
+msgid "Placement policy"
+msgstr "Política de Posicionamento"
+
+#: windows.cpp:86
+msgid "Smart"
+msgstr "Inteligente"
+
+#: windows.cpp:88
+msgid "Cascade"
+msgstr "Cascata"
+
+#: windows.cpp:90
+msgid "Interactive"
+msgstr "Interactivo"
+
+#: windows.cpp:92
+msgid "Random"
+msgstr "Aleatório"
+
+#: windows.cpp:94
+msgid "Manual"
+msgstr "Manual"
+
+#: windows.cpp:101
+msgid "Allowed Overlap:"
+msgstr "Sobreposição:"
+
+#: windows.cpp:108
+msgid "Maximize Style"
+msgstr "Estilo de Maximização"
+
+#: windows.cpp:109
+msgid "Maximize fully"
+msgstr "Maximizar totalmente"
+
+#: windows.cpp:110
+msgid "Maximize vertically"
+msgstr "Maximizar verticalmente"
+
+#: windows.cpp:113
+msgid "Focus Policy"
+msgstr "Política de Foco"
+
+#: windows.cpp:114
+msgid "Click to focus"
+msgstr "Clicar para obter foco"
+
+#: windows.cpp:115
+msgid "Focus follows mouse"
+msgstr "Foco segue o mouse"
+
+#: windows.cpp:120
+msgid ""
+"Auto raise delay\n"
+"(<100 disables)"
+msgstr "Demora do início automático\n"
+       "(<100 desativa)"
+
+#: windows.cpp:123
+msgid "miliseconds"
+msgstr "milissegundos"
+
+#: desktop.cpp:77
+msgid "Active desktop borders"
+msgstr "Margens do ambiente de trabalho ativas"
+
+#: desktop.cpp:79
+msgid "Enable active desktop borders"
+msgstr "Ativar margens do ambiente de trabalho ativas"
+
+#: desktop.cpp:81
+msgid "Move pointer towards center after switch"
+msgstr "Move ponteiro para o centro depois de mudança"
+
+#: desktop.cpp:87
+msgid "Dekstop switch delay:"
+msgstr "Demora de mudança:"
+
+#: desktop.cpp:100
+msgid "Magic Borders"
+msgstr "Bordas mágicas"
+
+#: desktop.cpp:102
+msgid ""
+"Border Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+       "Zona de Snap da Borda:\n"
+       "       (pixels)"
+
+#: desktop.cpp:116
+msgid ""
+"Window Snap Zone:\n"
+"       (pixels)"
+msgstr ""
+       "Zona de Snap da Janela:\n"
+       "       (pixels)"
