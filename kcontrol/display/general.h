@@ -16,6 +16,8 @@
 #include <qtimer.h>
 #include <qpainter.h>
 #include <qchkbox.h>
+#include <qlayout.h>
+#include <qradiobutton.h>
 #include <kspinbox.h>
 #include <kcontrol.h>
 #include <X11/X.h>
@@ -74,6 +76,32 @@ private:
 	QFont _fnt;
 };
 
+// DF 13-Mar-99
+// This class is a part of the "style" tab.
+// It's separated from the KGeneral class, in case it has to be moved
+// somewhere else later.
+class KIconStyle // : public KDisplayModule
+{
+    //Q_OBJECT
+public:
+	KIconStyle( QWidget *parent, QBoxLayout * topLayout );
+	~KIconStyle();
+
+	void apply();
+	void readSettings();
+	
+	void writeSettings();
+	void setDefaults();
+
+protected:
+	static const char *appName [];
+	static const int nApp;
+
+	QDict <char> m_dictSettings; // initial setting for each application
+	QDict <QRadioButton> m_dictCBNormal; // checkbox 'normal' for each application
+	QDict <QRadioButton> m_dictCBLarge;  // checkbox 'large' for each application
+};
+
 class KGeneral : public KDisplayModule
 {
 	Q_OBJECT
@@ -114,6 +142,8 @@ protected:
 	bool macStyle;//CT
 	Window root;
 	int screen;
+
+	KIconStyle * iconStyle;
 };
 
 class KFonts : public KDisplayModule

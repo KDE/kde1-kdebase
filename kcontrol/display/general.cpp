@@ -24,7 +24,9 @@
 #include <qradiobt.h>
 #include <qchkbox.h>
 #include <qcombo.h>
+#include <qbuttongroup.h>
 #include <qlayout.h>
+#include <qmessagebox.h>
 #include <kapp.h>
 #include <kcharsets.h>
 #include <kconfigbase.h>
@@ -200,6 +202,157 @@ void FontPreview::setPreviewFont( const QFont &fnt )
 
 //------------------------------------------------------------------
 
+const char * KIconStyle::appName [] = {"kpanel", "kfm", "KDE"};
+const int KIconStyle::nApp = 3;
+
+KIconStyle::KIconStyle( QWidget *parent, QBoxLayout * topLayout )
+{
+    const char *appTitle [] = { i18n("Panel"),
+                                i18n("File manager and desktop icons"),
+                                i18n("Other") };
+
+    m_dictCBNormal.setAutoDelete(true);
+    m_dictCBLarge.setAutoDelete(true);
+    m_dictSettings.setAutoDelete(true);
+
+    QGroupBox * gb = new QGroupBox ( i18n("Icon style"), parent );
+    topLayout->addWidget( gb );
+
+    // The layout containing the checkboxes
+    QGridLayout * gLayout = new QGridLayout( gb, 1+nApp, 4, 15 /*autoborder*/);
+    gLayout->setColStretch(3, 20); // avoid cb moving when resizing
+
+    // The two labels on row 0
+    QLabel * label = new QLabel( i18n("Normal"), gb );
+    label->setMinimumSize(label->sizeHint());
+    gLayout->addWidget( label, 0, 1, AlignHCenter );
+
+    label = new QLabel( i18n("Large"), gb );
+    label->setMinimumSize(label->sizeHint());
+    gLayout->addWidget( label, 0, 2, AlignHCenter );
+
+    // The label + 2 checkboxes on each row
+    QRadioButton * cb;
+    for (int i = 0 ; i < nApp ; i++)
+    {
+        QButtonGroup * group = new QButtonGroup( );
+        label = new QLabel( appTitle[i], gb );
+        label->setMinimumSize(label->sizeHint());
+        gLayout->addWidget( label, i+1, 0 );
+
+        cb = new QRadioButton( gb, "" );
+        group->insert(cb);
+        cb->setMinimumSize(cb->sizeHint());
+        gLayout->addWidget( cb, i+1, 1, AlignHCenter );
+        m_dictCBNormal.insert( appName[i], cb ); // store the cb in the dict
+
+        cb = new QRadioButton( gb, "" );
+        group->insert(cb);
+        cb->setMinimumSize(cb->sizeHint());
+        gLayout->addWidget( cb, i+1, 2, AlignHCenter );
+        m_dictCBLarge.insert( appName[i], cb ); // store the cb in the dict
+    }
+}
+
+KIconStyle::~KIconStyle()
+{
+}
+
+void KIconStyle::apply()
+{
+    bool changed = false;
+    for (int i = 0 ; i < nApp ; i++)
+    {
+        QString s = m_dictCBNormal[ appName[i] ] -> isChecked() ? "Normal" : "Large";
+        // See if the settings have changed
+        if ( strcmp( (char*) m_dictSettings [ appName[i] ], s) != 0 )
+        {
+            // Store new setting
+            char * setting = new char [s.length()];
+            strcpy( setting, s );
+            m_dictSettings.replace( appName[i], setting );
+            // Apply it
+            if ( strcmp( appName[i], "kpanel" ) == 0 )
+              KWM::sendKWMCommand("kpanel:restart");
+            else
+              changed = true;
+        }
+    }
+    if (changed)
+      QMessageBox::information( 0L, i18n("Icons style"), i18n("The icon style change will not all be applied until you restart KDE."));
+}
+
+void KIconStyle::readSettings()
+{
+    KConfig config; // global config (.kderc)
+    config.setGroup( "KDE" );
+    for (int i = 0 ; i < nApp ; i++)
+    {
+        QString s = config.readEntry( QString(appName[i])+"IconStyle", "Normal" );
+        m_dictCBNormal[ appName[i] ] -> setChecked( s == "Normal");
+        m_dictCBLarge[ appName[i] ] -> setChecked( s == "Large" );
+        char * setting = new char [s.length()];
+        strcpy( setting, s );
+        m_dictSettings.insert( appName[i], setting ); // store initial value
+    }    
+}
+
+void KIconStyle::writeSettings()
+{
+    KConfig * cfg = kapp->getConfig();
+    cfg->setGroup( "KDE" );
+    for (int i = 0 ; i < nApp ; i++)
+    {
+        QString s = m_dictCBNormal[ appName[i] ] -> isChecked() ? "Normal" : "Large";
+        cfg->writeEntry( QString(appName[i])+"IconStyle", s, 
+                            true, true /* global setting (.kderc) */ );
+        if (!strcmp(appName[i], "kpanel"))
+        {
+          KConfig * config = new KConfig(KApplication::kde_configdir() + "/kpanelrc",
+                                         KApplication::localconfigdir() + "/kpanelrc");
+          config->setGroup("kpanel"); 
+          // Special case for kpanel, as asked by Torsten :
+          // Sync kpanel's size with icon size
+          // Awful duplicated code from kcontrol/panel/panel.cpp
+          // I will get killed by others developers...
+          if (s == "Normal")
+          {
+            config->writeEntry("Style", "normal");
+            config->writeEntry("BoxWidth",45);
+            config->writeEntry("BoxHeight",45);
+            config->writeEntry("Margin",0);
+            config->writeEntry("TaskbarButtonHorizontalSize",4);
+            //config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--12-*");
+            config->writeEntry("DesktopButtonRows",2);
+            //config->writeEntry("DateFont","*-times-medium-i-normal--12-*"); 
+          } else {
+            config->writeEntry("Style", "large");
+            config->writeEntry("BoxWidth",52);
+            config->writeEntry("BoxHeight",52);
+            config->writeEntry("Margin",2);
+            config->writeEntry("TaskbarButtonHorizontalSize",4);
+            //config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
+            config->writeEntry("DesktopButtonRows",2);
+            //config->writeEntry("DateFont","*-times-bold-i-normal--12-*"); 
+          }
+          config->sync();
+          delete config;
+        }
+    }
+    cfg->sync();
+}
+
+void KIconStyle::setDefaults()
+{
+    for (int i = 0 ; i < nApp ; i++)
+    {
+        m_dictCBNormal[ appName[i] ] -> setChecked( true );
+        m_dictCBLarge[ appName[i] ] -> setChecked( false );
+    }
+}
+
+//------------------------------------------------------------------
+
 KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
@@ -269,8 +422,12 @@ KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	
 	topLayout->addWidget( cbRes, 10 );//CT
 
+	iconStyle = new KIconStyle( this, topLayout ); // DF
+
 	topLayout->addStretch( 100 );
 	topLayout->activate();
+
+	iconStyle->readSettings(); // DF
 }
 
 
@@ -302,6 +459,7 @@ void KGeneral::slotMacStyle()
 
 KGeneral::~KGeneral()
 {
+	delete iconStyle; // DF
 }
 
 
@@ -342,6 +500,7 @@ void KGeneral::setDefaults()
 	macStyle = false;//CT
 	slotChangeStyle();
 	slotMacStyle();//CT
+	iconStyle->setDefaults(); // DF
 }
 
 void KGeneral::defaultSettings()
@@ -351,6 +510,7 @@ void KGeneral::defaultSettings()
 
 void KGeneral::writeSettings()
 {
+	iconStyle->writeSettings(); // DF
 	if ( !changed )
 		return;
 		
@@ -442,6 +602,7 @@ static bool getSimpleProperty(Window w, Atom a, long &result){
 
 void KGeneral::apply( bool  )
 {
+	iconStyle->apply(); // DF
 	if ( !changed )
 		return;
 	
