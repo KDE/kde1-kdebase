@@ -1,0 +1,36 @@
+# KDE Config File
+
+[International Keyboard]
+Authors=Jan ONDREJ (SAL) <ondrejj@intrak.tuke.sk>
+
+Comment=Typewriter Keyboard (QWERTZ)
+Comment[cs]=Kl·vesnica pÌsacieho stroja (QWERTZ)
+Comment[ru]=ÎÃ¡◊…¡‘’“¡ (QWERTZ)
+
+Language=Slovak
+#Language[no]=Tjekkisk
+#Language[ru]=˛≈€”À… 
+
+Label=Skz
+Locale=sk
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m
+keysym0=1,plus,1,exclam,,
+keysym1=2,lcaron,2,at,,
+keysym2=3,scaron,3,numbersign,,
+keysym3=4,ccaron,4,dollar,, 
+keysym4=5,tcaron,5,percent,,
+keysym5=6,zcaron,6,asciicircum,,
+keysym6=7,yacute,7,ampersand,, 
+keysym7=8,aacute,8,asterisk,,  
+keysym8=9,iacute,9,parenleft,, 
+keysym9=0,eacute,0,parenright,,
+keysym10=minus,equal,percent,minus,underscore,
+keysym11=grave,dead_diaeresis,dead_circumflex,grave,asciitilde,
+keysym12=equal,dead_acute,dead_caron,equal,plus,
+keysym13=bracketleft,uacute,slash,bracketleft,braceleft,
+keysym14=bracketright,adiaeresis,parenleft,bracketright,braceright,
+keysym15=semicolon,ocircumflex,quotedbl,semicolon,colon,
+keysym21=y,z,Z,,,
+keysym22=z,y,Y,,,
