@@ -2600,6 +2600,13 @@ void Manager::cleanup(bool kill){
     if (kill)
       XKillClient(qt_xdisplay(), c->window);
   }
+
+  Window* w;
+  for (w = dock_windows.first(); w; w = dock_windows.next()) {
+      XReparentWindow(qt_xdisplay(), *w, qt_xrootwin(), 0, 0);
+      if (dock_module != None)
+	sendClientMessage(dock_module, module_dockwin_remove, (long) *w);
+  }
   XSetInputFocus(qt_xdisplay(), PointerRoot, RevertToPointerRoot, CurrentTime);
   colormapFocus(0);
   XDeleteProperty(qt_xdisplay(), qt_xrootwin(), kwm_running);

@@ -13,6 +13,11 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 6:
+        - dock window handling improved for restart
+        - new CheckRaise option for focus follows mouse policies 
+
+
 patchlevel 5:
         - animation of shaded windows improved
          - "restart" command in addition to "go:" and "configure"

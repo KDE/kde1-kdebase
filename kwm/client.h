@@ -275,7 +275,7 @@ public:
   void animateTitlebar();
 
   // attributes to store the current state of the client
-  bool maximized; 
+  bool maximized;
   int maximize_mode;
   bool sticky;
   bool iconified;
@@ -309,7 +309,9 @@ public:
   // them about this window.
   bool hidden_for_modules;
 
-  // stops the autoraise timer for this client.
+  // stops the autoraise timer for this client. If do_raise is TRUE then
+  // the client might be raised for focus follows mouse policies *if*
+  // the ClickRaise option is set.
   void stopAutoraise(bool do_raise = true);
 
   // returns the client itself it is not transient. If it is transient

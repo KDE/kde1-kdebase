@@ -2270,7 +2270,9 @@ void Client::autoRaise(){
   }
 }
 
-// stops the autoraise timer for this client.
+// stops the autoraise timer for this client. If do_raise is TRUE then
+// the client might be raised for focus follows mouse policies *if*
+// the ClickRaise option is set.
 void Client::stopAutoraise(bool do_raise){
   if (!autoraised_stopped
       && isActive()
@@ -2282,7 +2284,8 @@ void Client::stopAutoraise(bool do_raise){
        options.CommandWindow1 == MyApp::MouseActivateRaiseAndPassClick ||
        options.CommandWindow1 == MyApp::MouseActivateAndRaise
        )
-      && do_raise){
+      && do_raise
+      && options.ClickRaise){
     manager->raiseClient( this );
     doButtonGrab();
   }

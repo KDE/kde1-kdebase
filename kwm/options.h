@@ -89,6 +89,7 @@ struct kwmOptions {
   int TitleAnimation;
   int AutoRaiseInterval;
   bool AutoRaise;
+  bool ClickRaise;
   int ElectricBorder;
   int ElectricBorderNumberOfPushes;
   ELECTRIC_BORDER_POINTER_WARP ElectricBorderPointerWarp;

@@ -761,7 +761,7 @@ void MyApp::readConfiguration(){
     options.WindowMoveType = OPAQUE;
   else{
     config->writeEntry("WindowMoveType","Opaque");
-    options.WindowMoveType = TRANSPARENT;
+    options.WindowMoveType = OPAQUE;
   }
 
   key = config->readEntry("WindowResizeType");
@@ -771,7 +771,7 @@ void MyApp::readConfiguration(){
     options.WindowResizeType = OPAQUE;
   else{
     config->writeEntry("WindowResizeType","Opaque");
-    options.WindowResizeType = TRANSPARENT;
+    options.WindowResizeType = OPAQUE;
   }
 
   key = config->readEntry("FocusPolicy");
@@ -930,6 +930,16 @@ void MyApp::readConfiguration(){
   else{
     config->writeEntry("AutoRaise", "off");
     options.AutoRaise = false;
+  }
+
+  key = config->readEntry("ClickRaise");
+  if( key == "on")
+    options.ClickRaise = true;
+  else if( key == "off")
+    options.ClickRaise = false;
+  else{
+    config->writeEntry("ClickRaise", "off");
+    options.ClickRaise = true;
   }
 
   if (config->hasKey("AutoRaiseInterval")){
@@ -1739,7 +1749,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
     top_client_before_button_press = manager->topClientOnDesktop();
     Client *c = manager->getClient(ev->xbutton.window);
     if (c) {
-	c->stopAutoraise();
+	c->stopAutoraise( (ev->xbutton.state & Mod1Mask) != Mod1Mask);
 
 	if (c->isMenuBar()) {
 	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
