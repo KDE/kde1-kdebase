@@ -243,7 +243,6 @@ AC_OUTPUT(Makefile \
 	doc/kwm/Makefile \
 	doc/kvt/Makefile \
 	doc/kmenuedit/Makefile \
-	doc/kcc/Makefile \
 	doc/kcontrol/Makefile \
  	doc/kcontrol/kdisplay/Makefile \
 	doc/kcontrol/input/Makefile \
@@ -265,34 +264,6 @@ AC_OUTPUT(Makefile \
  	applnk/Settings/Sound/Makefile \
 	applnk/Settings/Network/Makefile \
 	applnk/Settings/Information/Makefile \
-	kcontrolcenter/Makefile \
-	kcontrolcenter/kcc/Makefile \
-	kcontrolcenter/kcc/pics/Makefile \
-	kcontrolcenter/sample/Makefile \
-	kcontrolcenter/sample/pics/Makefile \
-	kcontrolcenter/memory/Makefile \
-	kcontrolcenter/memory/pics/Makefile \
-	kcontrolcenter/processor/Makefile \
-	kcontrolcenter/processor/pics/Makefile \
-	kcontrolcenter/keyboard/Makefile \
-	kcontrolcenter/keyboard/doc/Makefile \
-	kcontrolcenter/keyboard/pics/Makefile \
-	kcontrolcenter/bell/Makefile \
-	kcontrolcenter/bell/doc/Makefile \
-	kcontrolcenter/bell/pics/Makefile \
-	kcontrolcenter/mouse/Makefile \
-	kcontrolcenter/mouse/doc/Makefile \
-	kcontrolcenter/mouse/pics/Makefile \
-	kcontrolcenter/titlebar/Makefile \
-	kcontrolcenter/titlebar/doc/Makefile \
-	kcontrolcenter/titlebar/pics/Makefile \
-	kcontrolcenter/smbstatus/Makefile \
-	kcontrolcenter/smbstatus/pics/Makefile \
-	kcontrolcenter/windows/Makefile \
-	kcontrolcenter/windows/doc/Makefile \
-	kcontrolcenter/windows/pics/Makefile \
-	kcontrolcenter/display/pics/Makefile \
-	kcontrolcenter/display/Makefile \
 	po/Makefile \
 	po/cs/Makefile \
 	po/da/Makefile \
