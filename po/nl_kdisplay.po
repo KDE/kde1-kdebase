@@ -1,0 +1,304 @@
+# Dutch translation of the kdisplay messages.
+# Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
+#
+# Words I need a better translation for: Widget, Disabled
+#
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "KDE Scherm instellingen"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr ""
+"Gebruik: %s -init|-setup\n"
+"\n"
+
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init               de huidige instellingen activeren\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup              de instellingen veranderen\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Achtergrond"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Kleur"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Plat"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "Verlopend"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Verticaal"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Horizontaal"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Behang"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Naast elkaar"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Gecentreerd"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "Vergroot"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Bladeren..."
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr "Negeren"
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr "Vergrendel"
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Schermbeveiliging"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Instellingen..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Testen"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Instellingen"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Wacht:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr "minuten"
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Om wachtwoord vragen"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Prioriteit"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Hoog"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Laag"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Inactief venster"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Actief venster"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Venster tekst"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr "Niet werkend"
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Geselecteerd"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Kleur palet"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr "Widget kleur"
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Inactive titel balk"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Inactive titeltekst"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Active titelbalk"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Active titeltekst"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Tekst"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Selecteer achtergrond"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Selecteer tekst"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Venster achtergrond"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Contrast"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Palet bewaren"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "De gekozen naam bestaat al"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr "Standaard KDE"
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Scherm instellingen"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Er was geen kleurpalet gevonden.\n"
+"Moeten de standaard kleuren geinstalleerd worden ?"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Naam"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Algemeen"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr "Widget stijl"
+
+#: general.cpp:64
+msgid "Motif"
+msgstr ""
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr ""
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr "Lettertypes"
+
+#: general.cpp:79
+msgid "General font"
+msgstr "Algemeen lettertype"
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Voorbeeld"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Klein"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Middel"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Groot"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Cursief"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: de communicatie met kwm is mislukt\n"
+
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgid "File"
+#~ msgstr "Bestand"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Bold"
+#~ msgstr "Vet"
+
+#~ msgid "Input"
+#~ msgstr "Invoer"
+
+#~ msgid "Keyboard"
+#~ msgstr "Toetsenbord"
+
+#~ msgid "Auto Repeat"
+#~ msgstr "Automatisch herhalen"
+
+#~ msgid "Repeat Delay"
+#~ msgstr "Herhalings vertraging"
+
+#~ msgid "Repeat Rate"
+#~ msgstr "Herhalings snelheid"
+
+#~ msgid "Mouse"
+#~ msgstr "Muis"
+
+#~ msgid "Acceleration"
+#~ msgstr "Versnelling"
+
+#~ msgid "Threshold"
+#~ msgstr "Drempel"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
+
+#~ msgid "Save"
+#~ msgstr "Bewaren"

@@ -1,0 +1,363 @@
+# Dutch translation of the kfind messages.
+# Copyright (C) 1997 Jeroen van der Most <jvdmost@wi.leidenuniv.nl>
+#
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Mappen"
+
+#: kfdird.cpp:167 kfdird.cpp:192 kfdird.cpp:210
+msgid "Sorry"
+msgstr ""
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Kan map niet openen of lezen"
+
+#: kfindtop.cpp:110
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+msgstr ""
+"KFind %s\n"
+"Grafische schil voor het find programma\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>"
+
+#: kfindtop.cpp:123
+msgid "&File"
+msgstr "&Bestand"
+
+#: kfindtop.cpp:124
+msgid "&Edit"
+msgstr "Be&werken"
+
+#: kfindtop.cpp:125
+msgid "&Options"
+msgstr "&Instellingen"
+
+#: kfindtop.cpp:127
+msgid "&Help"
+msgstr "&Help"
+
+#: kfindtop.cpp:132 kfindtop.cpp:216
+msgid "Add to archive"
+msgstr "Voeg aan archief toe"
+
+#: kfindtop.cpp:135 kfindtop.cpp:221
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: kfindtop.cpp:137 kfindtop.cpp:226
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: kfindtop.cpp:140 kfindtop.cpp:231
+msgid "Open Containing Folder"
+msgstr "Open de omvattende map"
+
+#: kfindtop.cpp:143
+msgid "Save Search"
+msgstr "Bewaar zoekresultaten"
+
+#: kfindtop.cpp:152
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: kfindtop.cpp:155
+msgid "Cut"
+msgstr "Knippen"
+
+#: kfindtop.cpp:157
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: kfindtop.cpp:160
+msgid "Select All"
+msgstr "Alles selecteren"
+
+#: kfindtop.cpp:162
+msgid "Invert Selection"
+msgstr "Selectie inverteren"
+
+#: kfindtop.cpp:173
+msgid "Preferences ..."
+msgstr "Voorkeuren ..."
+
+#: kfindtop.cpp:177
+msgid "Kfind help"
+msgstr "Kfind help"
+
+# *********** Tooltips ************
+#: kfindtop.cpp:193
+msgid "Start Search"
+msgstr "Zoeken starten"
+
+#: kfindtop.cpp:198
+msgid "New Search"
+msgstr "Opnieuw zoeken"
+
+#: kfindtop.cpp:203
+msgid "Stop Search"
+msgstr "Zoeken afbreken"
+
+#: kfindtop.cpp:236
+msgid "Save Search Results"
+msgstr "Zoekresultaten bewaren"
+
+# ********* Options *************
+#: kfoptions.cpp:54
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: kfoptions.cpp:70
+msgid "File format:"
+msgstr "Bestandsformaat:"
+
+#: kfoptions.cpp:72
+msgid "Save results to file:"
+msgstr "Bewaar resultaten in bestand:"
+
+#: kfoptions.cpp:75
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Bewaar resultaten in bestand ~/.kfind-results.html"
+
+#: kfoptions.cpp:77
+msgid "Browse"
+msgstr "Bladeren"
+
+#: kfoptions.cpp:90
+msgid "Plain Text"
+msgstr "Platte tekst"
+
+#: kfoptions.cpp:119
+msgid "Saving"
+msgstr "Bewaren"
+
+#: kfoptions.cpp:125
+msgid "Type Description:"
+msgstr "Type omschrijving:"
+
+#: kfoptions.cpp:126
+msgid "Icon:"
+msgstr "Pictogram"
+
+#: kfoptions.cpp:127 kfoptions.cpp:193
+msgid "Patterns:"
+msgstr "Patroon"
+
+#: kfoptions.cpp:128
+msgid "Default Application:"
+msgstr "Standaard toepassing"
+
+#: kfoptions.cpp:134 kfoptions.cpp:196
+msgid "Add New"
+msgstr "Voeg nieuwe toe"
+
+#: kfoptions.cpp:135 kfoptions.cpp:197
+msgid "Remove"
+msgstr "Verwijder"
+
+#: kfoptions.cpp:181
+msgid "Filetypes"
+msgstr "Bestandtypes"
+
+#: kfoptions.cpp:187
+msgid "Create Archive:"
+msgstr "Creëer archief"
+
+#: kfoptions.cpp:189
+msgid "Add to Archive:"
+msgstr "Voeg aan archief toe:"
+
+#FIXME
+#: kfoptions.cpp:235
+msgid "Archivers"
+msgstr ""
+
+#: kftabdlg.cpp:47
+msgid "&Named:"
+msgstr "&Naam:"
+
+#: kftabdlg.cpp:49
+msgid "&Look in:"
+msgstr "&Zoek in:"
+
+#: kftabdlg.cpp:52
+msgid "&Browse ..."
+msgstr "B&laderen..."
+
+#: kftabdlg.cpp:64
+msgid "Include &subfolders"
+msgstr "Inclusief &onderliggende mappen"
+
+#: kftabdlg.cpp:94
+msgid " Name&Location "
+msgstr " Naam&Locatie "
+
+#: kftabdlg.cpp:106
+msgid "and"
+msgstr "en"
+
+#: kftabdlg.cpp:107
+msgid "month(s)"
+msgstr "maand(en)"
+
+#: kftabdlg.cpp:108
+msgid "day(s)"
+msgstr "dag(en)"
+
+#: kftabdlg.cpp:114
+msgid "&All files"
+msgstr "&Alle bestanden"
+
+#: kftabdlg.cpp:115
+msgid "Find all files created or &modified:"
+msgstr "&Vind alle bestanden aangemaakt of gewijzigd:"
+
+#: kftabdlg.cpp:116
+msgid "&between"
+msgstr "&tussen"
+
+#: kftabdlg.cpp:117
+msgid "during the previou&s "
+msgstr "&in de laatste"
+
+#: kftabdlg.cpp:118
+msgid "&during the previous "
+msgstr "i&n de laatste"
+
+#: kftabdlg.cpp:166
+msgid " Date Modified "
+msgstr " Wijzigingsdatum "
+
+#: kftabdlg.cpp:171
+msgid "Of &type:"
+msgstr "&Van type:"
+
+#: kftabdlg.cpp:173
+msgid "&Containing Text:"
+msgstr "&Bevattende de tekst:"
+
+#: kftabdlg.cpp:175
+msgid "&Size is:"
+msgstr "&Grootte is:"
+
+#: kftabdlg.cpp:198
+msgid "All Files and Folders"
+msgstr "Alle bestanden en mappen"
+
+#: kftabdlg.cpp:205
+msgid "(none)"
+msgstr "(geen)"
+
+#: kftabdlg.cpp:206
+msgid "At Least"
+msgstr "minstens"
+
+#: kftabdlg.cpp:207
+msgid "At Most"
+msgstr "hoog uit"
+
+#: kftabdlg.cpp:214
+msgid " Advanced "
+msgstr " Geavanceerd "
+
+#: kftabdlg.cpp:377
+msgid "The date is not valid!!"
+msgstr "De datum is niet geldig!"
+
+#: kftabdlg.cpp:389
+msgid "The month(s) value isn't valid!!"
+msgstr "The maand(en) waarde is niet geldig!"
+
+#: kftabdlg.cpp:400
+msgid "The day(s) value isn't valid!!"
+msgstr "The dag(en) waarde is niet geldig!"
+
+#: kftabdlg.cpp:417
+msgid "The value in size isn't valid number!!"
+msgstr "De waarde in \"grootte\" is niet een geldig nummer!"
+
+#: kfwin.cpp:99
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d bestand(en) gevonden"
+
+#: kfwin.cpp:136
+msgid "It wasn't possible to save results!"
+msgstr "Het was niet mogelijk de resultaten op te slaan!"
+
+#: kfwin.cpp:146 kfwin.cpp:148 kfwin.cpp:150
+msgid "KFind Results File"
+msgstr "KFind resultatenbestand"
+
+#: kfwin.cpp:174
+msgid "Results were saved to file\n"
+msgstr "De resultaten zijn in het bestand bewaard\n"
+
+#: kfwin.cpp:189
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Weet u zeker dat u het bestand\n"
+"%s\n"
+"wilt verwijderen ?"
+
+#: kfwin.cpp:191
+msgid "Delete File"
+msgstr "Verwijder bestand"
+
+#: kfwin.cpp:205
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"U hebt niet de benodigde rechten\n"
+" om dit bestand te verwijderen"
+
+#: kfwin.cpp:212
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Het is niet mogelijk om het\n"
+"geselecteerde bestand te verwijderen"
+
+#: kfwin.cpp:234
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"U hebt niet de benodigde rechten\n"
+" om deze map te verwijderen"
+
+#: kfwin.cpp:241
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"De gespecificeerde map\n"
+"is niet leeg!"
+
+#: kfwin.cpp:247
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Het is niet mogelijk om de\n"
+"geselecteerde map te verwijderen"
+
+#FIXME
+#: kfwin.cpp:340
+msgid "Couldn't recognize archive type!"
+msgstr "Het archieftype kon niet herkend worden"
+
+#: kfwin.cpp:401
+#FIXME
+msgid "Error while creating child process!"
+msgstr "Fout tijdens het creëren van een kindproces!"
+
