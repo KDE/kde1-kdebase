@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso-8859-2\n"  
+
+#: main.C:67
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: veæ postoji jedan window manager. kwm nije "
+"pokrenut\n"
+
+#: main.C:81
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: gre¹ka prilikom inicijalizacije; odustajem\n"
+
+#: main.C:370
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:377
+msgid "Usage: "
+msgstr "Uporaba: "
+
+#: main.C:388
+msgid "&Maximize"
+msgstr "&Poveæaj"
+
+#: main.C:389
+msgid "&Restore"
+msgstr "&Vrati"
+
+#: main.C:390
+msgid "&Iconify"
+msgstr "Napravi ga &ikonom"
+
+#: main.C:391
+msgid "&DeIconify"
+msgstr "&Aktiviraj ikonu"
+
+#: main.C:392
+msgid "&Sticky"
+msgstr "Na&lijepi"
+
+#: main.C:393
+msgid "&UnSticky"
+msgstr "&Odlijepi"
+
+#: main.C:394
+msgid "Mo&ve"
+msgstr "Po&makni"
+
+#: main.C:395
+msgid "Resi&ze"
+msgstr "Promjeni velièinu"
+
+#: main.C:397
+msgid "&To desktop"
+msgstr "&Na radnu povr¹inu"
+
+#: main.C:399
+msgid "&Onto current desktop"
+msgstr "Na &tekuæu radnu povr¹inu"
+
+#: main.C:449
+msgid "One"
+msgstr "Jedan"
+
+#: main.C:452
+msgid "Two"
+msgstr "Dva"
+
+#: main.C:455
+msgid "Three"
+msgstr "Tri"
+
+#: main.C:458
+msgid "Four"
+msgstr "Èetiri"
+
+#: main.C:461
+msgid "Five"
+msgstr "Pet"
+
+#: main.C:464
+msgid "Six"
+msgstr "Sest"
+
+#: main.C:467
+msgid "Seven"
+msgstr "Sedam"
+
+#: main.C:470
+msgid "Eight"
+msgstr "Osam"
+
+#: main.C:743
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Neke pixmape nisu va¾eæe: ShapeMode uga¹en\n"
+
+#: main.C:986
+msgid "*** No Tasks ***"
+msgstr "*** Nema Zadaæa ***"
+
+#: minicli.C:115
+msgid "Command:"
+msgstr "Naredba:"
+
+#: logout.C:35 taskmgr.C:106
+msgid "Logout"
+msgstr "Odjavi"
+
+#: logout.C:45
+msgid "Session prepared for logout"
+msgstr "Sesija spremna za odjavu"
+
+#: logout.C:51
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Slijedeæi programi nisu spremili podatke ¹to mo¾e\n"
+"rezultirati gubitkom podataka u slijedeæoj sesiji."
+
+#: logout.C:62
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Slijedeæi programi ne mogu se vratiti u va¹oj slijedeæoj sesiji,\n"
+"oni se mogu samo ponovo pokrenuti. Spremite sve va¾ne podatke."
+
+#: logout.C:73
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Slijedeæi programi nisu X11-svjesni te se ne mogu vratiti u va¹oj\n"
+"slijedeæoj sesiji. Spremite sve va¾ne podatke."
+
+#: taskmgr.C:105
+msgid "Switch to"
+msgstr "Premjesti na"
+
+#: taskmgr.C:119
+msgid "Current session"
+msgstr "Tekuæa sesija"

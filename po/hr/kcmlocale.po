@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-11-08 23:50+0100\n"
+"PO-Revision-Date: 1998-03-15 20:00-0500\n"
+"Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: iso-8859-2\n"  
+
+#: main.cpp:51
+msgid "&Locale"
+msgstr "&Lokal"
+
+#: main.cpp:57
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "uporaba: kcmlocale [-init | jezik]\n"
+
+#: main.cpp:79
+msgid "Locale settings"
+msgstr "Postavi odrednice lokala"
+
+#: locale.cpp:40
+msgid "Language"
+msgstr "Jezik"
+
+#: locale.cpp:45
+msgid "First"
+msgstr "Prvi"
+
+#: locale.cpp:52
+msgid "Second"
+msgstr "Drugi"
+
+#: locale.cpp:59
+msgid "Third"
+msgstr "Treæi"
+
+#: locale.cpp:94
+msgid "without name!"
+msgstr "bez imena!"
+
+#: locale.cpp:160
+msgid "Applying language settings"
+msgstr "Primjeni jeziène odrednice"
+
+#: locale.cpp:161
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr ""
+"Promjenjene jeziène odrednice primjenjuju se samo na novo pokrenute aplikacije.\n"
+"Ako ¾elite promijeniti jezik u svim programima morate se prvo odjaviti."
