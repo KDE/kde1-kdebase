@@ -21,6 +21,9 @@
     Boston, MA 02111-1307, USA.
 
     $Log$
+    Revision 1.5  1998/03/08 08:01:32  wuebben
+    Bernd: implemented support for all sound events
+
 
 */  
 
@@ -459,7 +462,7 @@ void KSoundWidget::soundDropped(KDNDDropZone *zone){
       // CC: Now check for the ending ".wav"
 
       if (stricmp(".WAV",url.right(4))) {
-        ksprintf(&msg, i18n("Sorry, but \n%s\ndoes not seem"\
+        ksprintf(&msg, i18n("Sorry, but \n%s\ndoes not seem "\
 			    "to be a WAV--file."), url.data());
 
 	QMessageBox::warning(this, klocale->translate("Improper File Extension"), msg);
@@ -473,7 +476,9 @@ void KSoundWidget::soundDropped(KDNDDropZone *zone){
 	if (!addToSoundList(url)) {
 
 	  // CC: did not add file because it is already in the list
-	  ksprintf(&msg, i18n("The file\n%s\nis already in the list"), url.data());
+	  ksprintf(&msg, i18n("The file\n"
+			      "%s\n"
+			      "is already in the list"), url.data());
 
 	  QMessageBox::warning(this, klocale->translate("File Already in List"), msg);
 
