@@ -216,6 +216,7 @@ bool KRootWm::eventFilter( QObject *obj, QEvent * ev){
 	  y = e->pos().y();
 	  dx = dy = 0;
 	  if (select_rectangle(x,y,dx,dy)){
+           XSync(qt_xdisplay(), false);
 	    KFM* kfm = new KFM; 
 	    kfm->selectRootIcons(x, y, dx, dy,
 				 (e->state() & ControlButton) == ControlButton);
@@ -309,8 +310,14 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
 			    arrowCursor.handle(), 0);
-  
-  XGrabServer(qt_xdisplay());
+  if (grab_count < 0) // this shouldn't happen (deffensive programming)
+    grab_count = 0; 
+  // This had been missing from the patch I supplyed last time.
+  // It's to prevent doublegrabs! (Marcin Dalecki)
+  if (!grab_count) {
+    ++grab_count;
+    XGrabServer(qt_xdisplay());
+  }
   
   draw_selection_rectangle(x, y, dx, dy);
   
@@ -360,72 +367,14 @@ bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
   
   draw_selection_rectangle(x, y, dx, dy);
   XFlush(qt_xdisplay());
-  if (grab_count) 
+  
+  if (grab_count) {
     XUngrabServer(qt_xdisplay());
-  --grab_count;
+    --grab_count;
+  }
   
   return True;
 }
-// bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
-//     int cx, cy, rx, ry;
-//     int ox, oy;
-//     XEvent ev;
-//     struct timeval t;
-
-//     XChangeActivePointerGrab( qt_xdisplay(), 
-// 			      ButtonPressMask | ButtonReleaseMask |
-// 			      PointerMotionMask |
-// 			      EnterWindowMask | LeaveWindowMask,
-// 			      arrowCursor.handle(), 0);
-//     ox = x;
-//     oy = y;
-
-//     cx = x;
-//     cy = y;
-    
-//     XGrabServer(qt_xdisplay());
-    
-//     draw_selection_rectangle(x, y, dx, dy);
-
-//     t.tv_sec = 0;
-//     t.tv_usec = 20*1000;
-
-//     while (XCheckMaskEvent(qt_xdisplay(), ButtonPress|ButtonReleaseMask, &ev) == 0) {
-//       rx = QCursor::pos().x();
-//       ry = QCursor::pos().y();
-//       if (rx == cx && ry == cy)
-// 	continue;
-//       cx = rx;
-//       cy = ry;
-//       draw_selection_rectangle(x, y, dx, dy);
-
-//       if (cx > ox){	
-// 	x = ox;
-// 	dx = cx - x;
-//       }
-//       else {
-// 	x = cx;
-// 	dx = ox - x;
-//       }
-//       if (cy > oy){	
-// 	y = oy;
-// 	dy = cy - y;
-//       }
-//       else {
-// 	y = cy;
-// 	dy = oy - y;
-//       }
-	
-//       draw_selection_rectangle(x, y, dx, dy);
-//       XFlush(qt_xdisplay());
-//       select(0, 0, 0, 0, &t);
-//       continue;
-//     }
-
-//     draw_selection_rectangle(x, y, dx, dy);
-//     XUngrabServer(qt_xdisplay());
-//     return True;
-// }
 
 void KRootWm::generateWindowlist(QPopupMenu* p){
   p->clear();
@@ -523,6 +472,7 @@ void KRootWm::slotNewFile( int _id )
 	    }	    
 	    else
 	    {
+               XSync(qt_xdisplay(), false);
 		KFM* kfm = new KFM; 
 		kfm->refreshDesktop(); 
 		delete kfm;

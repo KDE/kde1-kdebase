@@ -1,3 +1,10 @@
+/*
+ * Due to a leak of log, let's start with it...
+ *
+ * Thu Mar  5 22:47:01 MET 1998 Marcin Dalecki:
+ *     Impoved drag and drop handling.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -340,35 +347,11 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
     dx /= gridwidth;
     dy /= gridheight;
     
-    // Check if there are some previously selected icons there.
-    bool selected_icons = false;
-    for (char *s = _urls.first(); s; s = _urls.next()) {
-       KRootIcon* icon = findIcon(s);
-       if (icon && icon->isSelected()) {
-           selected_icons = true;
-           break;
-       }
-    }
-    if (selected_icons) {
-       // Proceed with the dragging operation only if the icon in which
-       // the drag started was selected too.
-       bool klicked = false;
-       for (char* s = _urls.first(); s; s = _urls.next()) {
-           KRootIcon* icon = findIcon(s);
-           if (icon->isSelected() && (icon->x() <= dndStartPos.x()) && (dndStartPos.x() < icon->x() + icon->QWidget::width()) &&
-               (icon->y() <= dndStartPos.y()) && (dndStartPos.y() < icon->y() + icon->QWidget::height())) {
-               klicked = true;
-               break;
-           }
-       }
-       if (!klicked)
-           return;
-    }
-       
+         
     for ( char *s = _urls.first(); s != 0L; s = _urls.next() )
     {
 	KRootIcon* icon = findIcon( s );
-       if (icon)
+        if (icon)
 	{
            int ix = icon->gridX() + dx;
            if (ix < 0)
@@ -1517,6 +1500,19 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
     if ( _mouse->button() != LeftButton || ( _mouse->state() & ControlButton ) == ControlButton )
       return;
 
+    // If there where some selected buttons, don't start the link action.
+    // This prevent's us from a situation, where a snigle user action
+    // (the mouse click) issues two unrelated reactions (which is a BAD thing):
+    // 1. Unselecting the currently selected URLs.
+    // 2. Taking the action associated with the URL the user clicked on.
+    for ( KRootIcon * icon = root->icon_list.first(); 
+         icon != 0L; 
+         icon = root->icon_list.next() )
+      if ( icon->isSelected()) {
+        root->unselectAllIcons();
+        
+               return;
+      }
     root->unselectAllIcons();
 
     // Use the destination of the link. This looks better
@@ -1576,10 +1572,24 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 	int dx = QWidget::x() - p2.x() + pixmapXOffset;
 	int dy = QWidget::y() - p2.y() + pixmapYOffset;
 
-	// Multiple URLs ?
-	if ( !pixmap2.isNull() )
-	    startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
-	else
+       
+       if ( !pixmap2.isNull() ) {
+           // Multiple URLs slected. 
+           // Proceed with the dragging operation only if the icon in which
+            // the drag started was selected too.
+           bool klicked = false;
+           QStrList _urls;
+           root->getSelectedURLs(_urls);
+           for (char* s = _urls.first(); s; s = _urls.next()) {
+               if (root->findIcon(s) == this) {
+                   klicked = true;
+                   break;
+               }
+           }
+           if (!klicked)
+               return;
+           startDrag( new KDNDIcon( pixmap2, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
+       } else
 	    startDrag( new KDNDIcon( *pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
     }
 }
