@@ -32,7 +32,6 @@ msgid "&New Window"
 msgstr "&Uusi ikkuna"
 
 #: kfmgui.cpp:308
-#, fuzzy
 msgid "&Run..."
 msgstr "Suo&rita"
 
@@ -41,12 +40,10 @@ msgid "Open &Terminal"
 msgstr "Avaa p‰‰&te"
 
 #: kfmgui.cpp:313
-#, fuzzy
 msgid "&Open Location..."
 msgstr "&Avaa sijainti"
 
 #: kfmgui.cpp:321
-#, fuzzy
 msgid "&Quit..."
 msgstr "&Lopeta"
 
@@ -123,18 +120,16 @@ msgid "View Docu&ment Source"
 msgstr "N‰yt‰ sivun &l‰hdekoodi"
 
 #: kfmgui.cpp:395
-#, fuzzy
 msgid "Show Cache"
 msgstr "N‰yt‰ p&uu"
 
 #: kfmgui.cpp:397
-#, fuzzy
 msgid "Clear Cache"
-msgstr "Tyhjenn‰"
+msgstr "Tyhjenn‰ v‰limuisti"
 
 #: kfmgui.cpp:400
 msgid "Always look in cache"
-msgstr "Aina etsi v‰limuistista"
+msgstr "Etsi aina v‰limuistista"
 
 #: kfmgui.cpp:402
 msgid "Never look in cache"
@@ -150,7 +145,7 @@ msgstr "N‰yt‰ &tilarivi"
 
 #: kfmgui.cpp:414
 msgid "Show &Toolbar"
-msgstr "N‰yt‰ &painikkeet"
+msgstr "N‰yt‰ &painikepalkki"
 
 #: kfmgui.cpp:416
 msgid "Show &Location bar"
@@ -162,7 +157,7 @@ msgstr "Tallenna &asetukset"
 
 #: kfmgui.cpp:421
 msgid "Configure Browser..."
-msgstr "Aseta selainta ..."
+msgstr "Selaimen asetukset ..."
 
 #: kfmgui.cpp:447
 msgid "&Find"
@@ -173,7 +168,6 @@ msgid "&Add Bookmark"
 msgstr "&Lis‰‰ osoitekirjaan"
 
 #: kfmgui.cpp:466
-#, fuzzy
 msgid "&About..."
 msgstr "&Tietoja"
 
@@ -198,7 +192,6 @@ msgid "Stop"
 msgstr "Pys‰yt‰"
 
 #: kfmgui.cpp:572
-#, fuzzy
 msgid "Could not load icon\n"
 msgstr ""
 "Ikonin lataus ep‰onnistui\n"
@@ -227,7 +220,6 @@ msgid "KFM Error"
 msgstr "KFM VIRHE"
 
 #: kfmexec.cpp:58 kfmgui.cpp:698 kfmman.cpp:870
-#, fuzzy
 msgid "Malformed URL\n"
 msgstr ""
 "Virheellinen URL\n"
@@ -256,7 +248,6 @@ msgid "Open Location:"
 msgstr "Avaa sijainti:"
 
 #: kfmgui.cpp:1182
-#, fuzzy
 msgid "KFM Confirm"
 msgstr "KFM tietoja"
 
@@ -269,9 +260,8 @@ msgstr ""
 "T‰rkeit‰ tyˆpˆyd‰n toimintoja poistuu!"
 
 #: kfmgui.cpp:1210
-#, fuzzy
 msgid "About KFM"
-msgstr "&Tietoja"
+msgstr "&Tietoja KFM:t‰"
 
 #: kfmgui.cpp:1211
 msgid ""
@@ -287,6 +277,7 @@ msgstr ""
 "HTML tyˆkalu Martin Jones\n"
 "mjones@kde.org"
 
+
 #: kfmgui.cpp:1303
 msgid "Document: Done"
 msgstr "Dokumentti: Valmis"
@@ -296,7 +287,6 @@ msgid "ERROR: Drop over malformed URL"
 msgstr "VIRHE: Pudotus virheellisen URL p‰‰lle."
 
 #: kfmview.cpp:279
-#, fuzzy
 msgid "ERROR: You dropped some URL over itself"
 msgstr "Pudotit tiedoston itsens‰ p‰‰lle"
 
@@ -306,7 +296,6 @@ msgid "KFM Warning"
 msgstr "KFM varoitus"
 
 #: kfmtree.cpp:352 kfmview.cpp:312 kfmview.cpp:498 root.cpp:1026
-#, fuzzy
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -317,9 +306,8 @@ msgstr ""
 "Niit‰ ei pysty tuhoamisen j‰lkeen palauttamaan."
 
 #: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:990
-#, fuzzy
 msgid "ERROR: You dropped a URL over itself"
-msgstr "Pudotit tiedoston itsens‰ p‰‰lle"
+msgstr "VIRHE: Pudotit URL:n itsens‰ p‰‰lle"
 
 #: kfmtree.cpp:326 kfmview.cpp:351 kfmview.cpp:474 root.cpp:996
 msgid "ERROR: You dropped a directory over one of its children"
@@ -338,7 +326,6 @@ msgid "Could not access Trash Bin"
 msgstr "Roskakoria ei voitu k‰sitell‰."
 
 #: kfmview.cpp:444 root.cpp:966
-#, fuzzy
 msgid "Can not paste into multiple directories"
 msgstr "Liitt‰minen ei ole mahdollista useaan hakemistoon."
 
@@ -433,11 +420,12 @@ msgstr ""
 "paikallisella levyll‰"
 
 #: kbind.cpp:1619
-#, fuzzy, c-format
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "K‰sittely ep‰onnistui"
+msgstr ""
+"En voinut k‰sitell‰\n"
+"%s"
 
 #: kbind.cpp:1648
 msgid "The \"Link=....\" entry is empty"
@@ -452,7 +440,6 @@ msgid "Could not access"
 msgstr "K‰sittely ep‰onnistui"
 
 #: kbind.cpp:1711
-#, fuzzy
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -521,7 +508,6 @@ msgid "Empty Trash Bin"
 msgstr "Tyhjenn‰ roskakori"
 
 #: main.cpp:223
-#, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Lis‰‰ osoitekirjaan"
 
@@ -637,7 +623,6 @@ msgid "Sticky"
 msgstr "Kiinnitetty"
 
 #: kfmprops.cpp:491
-#, fuzzy
 msgid "Ownership"
 msgstr "Omistaja"
 
@@ -684,18 +669,16 @@ msgid "Working Directory"
 msgstr "Tyˆskentely hakemisto"
 
 #: kfmprops.cpp:710
-#, fuzzy
 msgid "Run normally"
-msgstr "Suorita p‰‰tteess‰"
+msgstr "Suorita normaalisti"
 
 #: kfmprops.cpp:714
 msgid "Run in Panel (drag onto Panel to execute)"
 msgstr "K‰ynnist‰ Paneelissa (ved‰ paneeliin p‰‰lle)"
 
 #: kfmprops.cpp:718
-#, fuzzy
 msgid "Title of Application"
-msgstr "Globaalit sovellukset"
+msgstr "Sovelluksen otsikko"
 
 #: kfmprops.cpp:723
 msgid "enter the exact title, as normally shown in the window titlebar"
@@ -718,6 +701,7 @@ msgstr ""
 "Voit ajaa t‰m‰n ohjelman joko\n"
 "Paneelissa tai Terminaalissa\n"
 "mutta et molemmissa"
+
 
 #: kfmprops.cpp:862 kfmprops.cpp:985 kfmprops.cpp:1423 kfmprops.cpp:1641
 #: kfmprops.cpp:1812
@@ -749,9 +733,8 @@ msgid "(None)"
 msgstr "(Ei mik‰‰n)"
 
 #: kfmprops.cpp:1272
-#, fuzzy
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Bin‰‰ri kuvio ( netscape;Netscape; )"
+msgstr "Ohjelman kuvio ( netscape;Netscape; )"
 
 #: kfmprops.cpp:1279 kfmprops.cpp:1525
 msgid "Comment"
@@ -810,12 +793,10 @@ msgstr ""
 "~/.kde/share/apps/kfm/magic tiedostossa"
 
 #: kfmserver.cpp:78
-#, fuzzy
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Haluatko todella uudelleenj‰rjest‰‰ ikonit?"
 
 #: kfmserver.cpp:234
-#, fuzzy, c-format
 msgid ""
 "The URL\n"
 "%s\n"
@@ -875,14 +856,12 @@ msgid "The file does not contain a URL"
 msgstr "Tiedostossa ei ole URL:‰‰"
 
 #: kfmman.cpp:320
-#, fuzzy
 msgid "Contacting host "
-msgstr "Yhteytt‰ muodostetaan %s koneeseen"
+msgstr "Muodostan yhteytt‰"
 
 #: kfmman.cpp:324
-#, fuzzy
 msgid "Working ..."
-msgstr "Tul&osta ..."
+msgstr "Tyˆskentelen ..."
 
 #: kfmman.cpp:934 kfmtree.cpp:230
 msgid "Add To Bookmarks"
@@ -893,7 +872,6 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "SISƒINEN VIRHE: Sinun t‰ytyy ainakin m‰‰ritt‰‰ laite jota liitet‰‰n."
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
-#, fuzzy, c-format
 msgid ""
 "Malformed URL\n"
 "%s"
@@ -906,18 +884,20 @@ msgid "Can only make links on local file system"
 msgstr "Linkin tekeminen on mahdollista vain samalla tiedostoj‰rjestelm‰ll‰."
 
 #: kiojob.cpp:256 kiojob.cpp:275
-#, fuzzy, c-format
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "P‰‰llekirjoittaminen ep‰onnistui"
+msgstr ""
+"En voi ylikirjoittaa\n"
+"%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
-#, fuzzy, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Symboolisen linkin tekeminen ep‰onnistui kohteseen"
+msgstr ""
+"En voi luoda symbolista linkki‰ kohteeseen\n"
+"%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -925,7 +905,6 @@ msgid " ERROR: Could not write to %s"
 msgstr "VIRHE: Kirjoittaminen kohteeseen %s ep‰onnistui."
 
 #: kiojob.cpp:454 kiojob.cpp:642 kiojob.cpp:1056
-#, fuzzy, c-format
 msgid ""
 "Could not make directory\n"
 "%s"
@@ -940,7 +919,6 @@ msgid "ERROR: Could not access directory '%s'"
 msgstr "VIRHE: Hakemiston %s k‰sittely ep‰onnistui."
 
 #: kiojob.cpp:658
-#, fuzzy, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
@@ -950,7 +928,6 @@ msgstr ""
 "k‰sittely ep‰onnistui."
 
 #: kiojob.cpp:688
-#, fuzzy, c-format
 msgid ""
 "Could not move directory\n"
 "%s\n"
@@ -958,7 +935,7 @@ msgid ""
 "Perhaps access denied"
 msgstr ""
 "Hakemiston %s\n"
-"siirt‰minen '%s' ep‰onnistui\n"
+"siirt‰minen %s:n ep‰onnistui\n"
 "Mahdollisesti k‰sittely estetty."
 
 #: kiojob.cpp:1003 kiojob.cpp:1011 kiojob.cpp:1020 kiojob.cpp:1028
@@ -982,14 +959,14 @@ msgstr ""
 "Tiedostoa ei ole olemassa, tai sen k‰sittely on estetty."
 
 #: kiojob.cpp:1015
-#, fuzzy, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Oikeuksia ei voitu muuttaa\n"
-"K‰sittely on mahdollisesti estetty."
+"En voinut kirjoittaa\n"
+"%s\n"
+"Ehk‰ sinulal ei ole oikeuksia t‰h‰n"
 
 #: kiojob.cpp:1024 kiojob.cpp:1155
 #, c-format
@@ -997,7 +974,7 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
-"VERKKOVIRHE: Tˆpselin (socket) luominen\n"
+"VERKKOVIRHE: Pistokkeen luominen\n"
 "kohteelle %s ep‰onnistui."
 
 #: kiojob.cpp:1032 kiojob.cpp:1163
@@ -1020,7 +997,6 @@ msgstr ""
 "ep‰onnistui."
 
 #: kiojob.cpp:1048 kiojob.cpp:1179
-#, fuzzy, c-format
 msgid ""
 "The requested action\n"
 "%s\n"
@@ -1072,18 +1048,20 @@ msgstr ""
 "%s"
 
 #: kiojob.cpp:1106
-#, fuzzy, c-format
 msgid ""
 "Gzip reproted an error for\n"
 "%s"
-msgstr "Gzip ilmoitti virheest‰"
+msgstr ""
+"Gzip ilmoitti virheen tiedostolle\n"
+"%s"
 
 #: kiojob.cpp:1116 kiojob.cpp:1131
-#, fuzzy, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr " ei ole olemassa\n"
+msgstr ""
+"Tiedostoa %s\n"
+"ei ole olemassa"
 
 #: kiojob.cpp:1213
 #, c-format
@@ -1128,7 +1106,6 @@ msgid "File %i/%i"
 msgstr "Tiedosto %i/%i"
 
 #: kiojob.cpp:1450 kiojob.cpp:1505
-#, fuzzy, c-format
 msgid "to %s"
 msgstr "kohteeseen %s"
 
@@ -1143,17 +1120,14 @@ msgstr ""
 "ei voi tuhota"
 
 #: kiojob.cpp:1571
-#, fuzzy, c-format
 msgid "Mounting %s ..."
-msgstr "Mounttausta %s puretaan ..."
+msgstr "Liit‰n %s ..."
 
 #: kiojob.cpp:1573
-#, c-format
 msgid "Unmounting %s ..."
-msgstr "Mounttausta %s puretaan ..."
+msgstr "Liitosta %s puretaan ..."
 
 #: kiojob.cpp:1601
-#, fuzzy, c-format
 msgid "Retrieving listing of %s"
 msgstr "Listausta %s:st‰ vastaanotetaan ..."
 
@@ -1174,7 +1148,6 @@ msgid " does not exist\n"
 msgstr " ei ole olemassa\n"
 
 #: kfmtree.cpp:391
-#, fuzzy
 msgid "My Home"
 msgstr "Koti"
 
@@ -1231,17 +1204,12 @@ msgid "login as:"
 msgstr "k‰yt‰ nime‰:"
 
 #: useragentdlg.cpp:52
-#, fuzzy
 msgid "Known bindings:"
-msgstr "Tuntematon sidos"
+msgstr "Tunnettuja sidoksia:"
 
 #: kproxydlg.cpp:10
-#, fuzzy
 msgid "Only HTTP-Proxy is implemented yet!"
-msgstr ""
-"Pyydetty‰ toimintoa\n"
-"'%s'\n"
-"ei ole viel‰ toteutettu."
+msgstr "Vain HTTP-Proxy on toteutettu!"
 
 #: kproxydlg.cpp:35
 msgid "No Proxy for:"
@@ -1256,17 +1224,14 @@ msgid "&General"
 msgstr "&Yleist‰"
 
 #: kfmprops.h:108
-#, fuzzy
 msgid "&Permissions"
-msgstr "K‰sittely oikeudet"
+msgstr "&Oikeudet"
 
 #: kfmprops.h:198
-#, fuzzy
 msgid "E&xecute"
 msgstr "Suorita"
 
 #: kfmprops.h:249
-#, fuzzy
 msgid "U&RL"
 msgstr "URL"
 
@@ -1275,25 +1240,24 @@ msgid "&Dir"
 msgstr "&Hakemisto"
 
 #: kfmprops.h:316
-#, fuzzy
 msgid "&Application"
 msgstr "&Sovellukset"
 
 #: kfmprops.h:358
-#, fuzzy
 msgid "&Binding"
-msgstr "&Etsi"
+msgstr "Sidos"
 
 #: kfmprops.h:388
 msgid "De&vice"
 msgstr "&Laite"
 
 #: kfmexec/main.cpp:46
-#, fuzzy, c-format
 msgid ""
 "The URL %s\n"
 "is malformed"
-msgstr "on virheellinen\n"
+msgstr ""
+"URL %s\n"
+"on virheellinen"
 
 #: kfmexec/main.cpp:132
 #, c-format
@@ -1319,6 +1283,7 @@ msgid ""
 msgstr ""
 "Syntaksivirhe\n"
 "kfmexec command [URLs ....]\n"
+
 
 #~ msgid "The URL"
 #~ msgstr "URL"

@@ -20,7 +20,7 @@ msgstr "&Ulkonäkö"
 
 #: main.cpp:103
 msgid "&Fonts"
-msgstr "&Fontit"
+msgstr "&Kirjasin"
 
 #: main.cpp:107
 msgid "&Background"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: kdm-appear.cpp:187 kdm-users.cpp:195
 msgid "Sorry, but \n"
-msgstr "Anteeksi, mutta\n"
+msgstr "Anteeksi, mutta"
 
 #: kdm-appear.cpp:189 kdm-users.cpp:197
 msgid ""
@@ -137,11 +137,11 @@ msgstr ""
 
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Valitse fontit"
+msgstr "Valitse kirjasin"
 
 #: kdm-font.cpp:51
 msgid "Change font"
-msgstr "vaihda fonttia"
+msgstr "vaihda kirjasinta"
 
 #: kdm-font.cpp:59
 msgid "Greeting"

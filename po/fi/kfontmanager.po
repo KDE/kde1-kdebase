@@ -16,35 +16,35 @@ msgstr ""
 
 #: main.cpp:62
 msgid "KDE Font Manager"
-msgstr "KDE Fontinhallinta"
+msgstr "KDE kirjasinhallinta"
 
 #: main.cpp:75
 msgid "KDE Fonts"
-msgstr "KDE Fontit"
+msgstr "KDE Kirjasimet"
 
 #: main.cpp:76
 msgid "Font Explorer"
-msgstr "Fonttiselain"
+msgstr "Kirjasinselain"
 
 #: main.cpp:77
 msgid "Raw X11 Font List"
-msgstr "Puhtaat X11 fontit"
+msgstr "Puhtaat X11 kirjasimet"
 
 #: kfontmanager.cpp:61
 msgid "Available X11 Fonts"
-msgstr "Saatavillaolevat X11 Fontit"
+msgstr "Saatavilla olevat X11 kirjasimet"
 
 #: kfontmanager.cpp:68
 msgid "Fonts made available to KDE"
-msgstr "KDE:n omat fontit"
+msgstr "KDE:n omat kirjasimet"
 
 #: kfontmanager.cpp:87
 msgid "The KDE Font Manager Example String"
-msgstr "KDE Fonttiselaimen esimerkkiteksti"
+msgstr "KDE Kirjasinselaimen esimerkkiteksti"
 
 #: kfontlist.cpp:64 kfontmanager.cpp:109
 msgid "About kfontmanager"
-msgstr "Tietoja fonttiselaimesta"
+msgstr "Tietoja kirjasinselaimesta"
 
 #: kfontmanager.cpp:109
 msgid ""
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "~/.kde/share/config/kdefonts on olemassa mutta\n"
 "siihen ei voida kirjoittaa\n"
-"En saa talletettua KDE fonttilistaa."
+"En saa talletettua KDE kirjasinlistaa."
 
 #: kfontlist.cpp:64
 msgid ""

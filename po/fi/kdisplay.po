@@ -19,7 +19,7 @@ msgstr "Työpöytä"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr "Uudelleen nimeä..."
+msgstr "Uudelleennimeä..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -43,7 +43,7 @@ msgstr "Vaakasuunnassa"
 
 #: backgnd.cpp:298
 msgid "Wallpaper"
-msgstr "Seinäpaperi"
+msgstr "Taustakuva"
 
 #: backgnd.cpp:331
 msgid "Tiled"
@@ -62,9 +62,8 @@ msgid "Browse..."
 msgstr "Selaa..."
 
 #: backgnd.cpp:489
-#, fuzzy
 msgid "Default"
-msgstr "KDE Oletus"
+msgstr "Oletus"
 
 #: backgnd.cpp:821
 msgid "Desktop Title"
@@ -236,11 +235,11 @@ msgstr "Windows 95"
 
 #: general.cpp:80
 msgid "Fonts"
-msgstr "Fontit"
+msgstr "Kirjasimet"
 
 #: general.cpp:85
 msgid "General font"
-msgstr "Yleinen fontti"
+msgstr "Yleinen kirjasin"
 
 #: general.cpp:110
 msgid "Sample"
@@ -259,17 +258,14 @@ msgid "Large"
 msgstr "Suuri"
 
 #: main.cpp:61
-#, fuzzy
 msgid "&Background"
 msgstr "Tausta"
 
 #: main.cpp:64
-#, fuzzy
 msgid "&Colors"
-msgstr "Väri"
+msgstr "Värit"
 
 #: main.cpp:67
-#, fuzzy
 msgid "&Screensaver"
 msgstr "Näytönsäästäjä"
 
@@ -278,7 +274,6 @@ msgid "&Style"
 msgstr "Tyyli"
 
 #: main.cpp:105
-#, fuzzy
 msgid "Display settings"
 msgstr "Näytön asetukset"
 

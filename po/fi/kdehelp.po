@@ -77,7 +77,7 @@ msgstr "Varoitus: "
 
 #: options.cpp:36
 msgid "Font Size"
-msgstr "Fontin koko"
+msgstr "Kirjasimen koko"
 
 #: options.cpp:40
 msgid "Small"
@@ -93,11 +93,11 @@ msgstr "Suuri"
 
 #: options.cpp:52
 msgid "Standard Font"
-msgstr "Vakio fontti"
+msgstr "Vakiokirjasin"
 
 #: options.cpp:69
 msgid "Fixed Font"
-msgstr "Kiinteä fontti"
+msgstr "Kiinteä kirjasin"
 
 #: options.cpp:207
 msgid "Background Color:"
@@ -121,7 +121,7 @@ msgstr "KDE Help asetukset"
 
 #: options.cpp:310 options.cpp:311
 msgid "Fonts"
-msgstr "Fontti"
+msgstr "Kirjasin"
 
 #: options.cpp:315 options.cpp:316
 msgid "Colors"
@@ -252,7 +252,7 @@ msgstr "Yleiset &ominaisuudet..."
 
 #: mainwidget.cpp:175
 msgid "Show &Toolbar"
-msgstr "Näytä työkalupalkki"
+msgstr "Näytä &painikepalkki"
 
 #: mainwidget.cpp:177
 msgid "Show &Location"
@@ -267,11 +267,8 @@ msgid "&Save Options"
 msgstr "&Tallenna asetukset"
 
 #: mainwidget.cpp:183
-#, fuzzy
 msgid "KDE Help System\n"
-msgstr ""
-"Ohjelma: kdehelp\n"
-"Versio: "
+msgstr "KDE Ohje\n"
 
 #: mainwidget.cpp:184
 msgid "Version "

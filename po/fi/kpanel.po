@@ -118,7 +118,6 @@ msgid "Tiny Style"
 msgstr "Pieni tyyli"
 
 #: props.C:281
-#, fuzzy
 msgid "Normal Style"
 msgstr "Normaali tyyli"
 
@@ -131,12 +130,10 @@ msgid "Menu Tooltips"
 msgstr "Valikon vinkit"
 
 #: props.C:298
-#, fuzzy
 msgid "Personal First"
 msgstr "Käyttäjän valikko"
 
 #: props.C:302
-#, fuzzy
 msgid "Auto Hide Panel"
 msgstr "Piiloita paneeli"
 

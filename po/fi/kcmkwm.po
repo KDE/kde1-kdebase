@@ -49,22 +49,26 @@ msgstr "Valikko"
 #: titlebar.cpp:459
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Otsikon vasen puoli on täynnä... poistan 'suurenna' napin\n"
+msgstr ""
+"Otsikon vasen puoli on täynnä... poistan 'suurenna' napin\n"
 
 #: titlebar.cpp:492
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
-msgstr "Otsikon oikea puoli on täynnä... poistan 'suurenna' napin\n"
+msgstr ""
+"Otsikon oikea puoli on täynnä... poistan 'suurenna' napin\n"
 
 #: titlebar.cpp:532
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Otsikon vasen puoli on täynnä... poistan 'pienennä' napin\n"
+msgstr ""
+"Otsikon vasen puoli on täynnä... poistan 'pienennä' napin\n"
 
 #: titlebar.cpp:565
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
-msgstr "Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
+msgstr ""
+"Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
 
 #: titlebar.cpp:916
 msgid "Titlebar appearance"

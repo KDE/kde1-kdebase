@@ -14,7 +14,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"Kwm: Näyttäisi että toinen ikkunamanageri on jo käytössä. Kwm:ää ei "
+"Kwm: toinen ikkunamanageri on jo käynnissä. Kwm:ää ei "
 "käynnistetä.\n"
 
 #: main.C:81
@@ -30,46 +30,38 @@ msgid "Usage: "
 msgstr "Käyttö: "
 
 #: main.C:387
-#, fuzzy
 msgid "&Maximize"
-msgstr "Suurenna/Pienennä"
+msgstr "&Suurenna"
 
 #: main.C:388
-#, fuzzy
 msgid "&Restore"
-msgstr "Muuta kokoa"
+msgstr "&Palauta"
 
 #: main.C:389
 msgid "&Iconify"
-msgstr "Ikoniksi"
+msgstr "&Ikoniksi"
 
 #: main.C:390
-#, fuzzy
 msgid "&DeIconify"
-msgstr "Ikoniksi"
+msgstr "P&oista Ikoni"
 
 #: main.C:391
-#, fuzzy
 msgid "&Sticky"
-msgstr "Naulaa/Poista naulaus"
+msgstr "&Naulaa"
 
 #: main.C:392
-#, fuzzy
 msgid "&UnSticky"
-msgstr "Naulaa/Poista naulaus"
+msgstr "Poista naulaus"
 
 #: main.C:393
-#, fuzzy
 msgid "Mo&ve"
 msgstr "Siirrä"
 
 #: main.C:394
-#, fuzzy
 msgid "Resi&ze"
 msgstr "Muuta kokoa"
 
 #: main.C:396
-#, fuzzy
 msgid "&To desktop"
 msgstr "Työpöydälle"
 
@@ -122,7 +114,6 @@ msgid "Command:"
 msgstr "Komento:"
 
 #: logout.C:35 taskmgr.C:106
-#, fuzzy
 msgid "Logout"
 msgstr "Lopeta"
 
@@ -144,15 +135,14 @@ msgid ""
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
 "Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla,\n"
-"ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole "
-"tallentamatonta tietoa."
+"Ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: logout.C:73
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Seuraavat sovellukset eivät ole X11-tietoisia eikä niitä voida palauttaa\n"
+"Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida palauttaa\n"
 "seuraavalla istunnolla. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: taskmgr.C:105
@@ -182,7 +172,7 @@ msgstr "Nykyinen istunto"
 #~ msgstr "&Ohje työpöydästä"
 
 #~ msgid "&Execute command"
-#~ msgstr "Suo%rita komento"
+#~ msgstr "Suorita komento"
 
 #~ msgid "&Display properties"
 #~ msgstr "Näytön ominaisuudet"

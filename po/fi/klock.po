@@ -20,7 +20,7 @@ msgstr "Viesti"
 
 #: banner.cpp:78
 msgid "Setup kbanner"
-msgstr "Aseta viesti‰"
+msgstr "Aseta viesti"
 
 #: banner.cpp:116 blankscrn.cpp:65
 msgid "Color:"
@@ -70,7 +70,7 @@ msgstr "Mailojen lukum‰‰r‰:"
 
 #: bat.cpp:636
 msgid "About Bat"
-msgstr "Tietoja Batista"
+msgstr "Tietoja mailoista"
 
 #: bat.cpp:637
 msgid ""

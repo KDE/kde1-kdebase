@@ -124,7 +124,7 @@ msgstr "Tallenna etsinnän tulokset"
 
 #: kftabdlg.cpp:48
 msgid "&Named:"
-msgstr "&Nimi / Kuvio:"
+msgstr "&Nimi:"
 
 #: kftabdlg.cpp:51
 msgid "&Look in:"
@@ -224,7 +224,7 @@ msgstr "Päivä ei ole oikein!!"
 
 #: kftabdlg.cpp:429
 msgid "The value in size isn't valid number!!"
-msgstr "Koko arvo ei ole oikein!!"
+msgstr "Koko ei ole oikein!!"
 
 #: kfoptions.cpp:54
 msgid "Preferences"
