@@ -559,8 +559,8 @@ void KfmGui::initToolBar()
     toolbarButtons->insertSeparator();
     
     pixmap.load(path + "help.xpm");
-    toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), this, 
-			  SLOT( slotHelp() ), true, 
+    toolbarButtons->insertButton(pixmap, 7, SIGNAL( clicked() ), kapp, 
+			  SLOT( appHelpActivated() ), true, 
 			  klocale->translate("Help"));
     
     toolbarButtons->insertSeparator();
