@@ -26,7 +26,7 @@ msgstr "uporaba: kcminput [-init | {mi¹,tipkovnica}]\n"
 
 #: main.cpp:104
 msgid "Input Devices Properties"
-msgstr "Svojstva ulaznih ureðaja"
+msgstr "Postavke ulaznih ureðaja"
 
 #: mouse.cpp:75
 msgid "Acceleration"
@@ -46,7 +46,7 @@ msgstr "De¹njak"
 
 #: mouse.cpp:88
 msgid "Left handed"
-msgstr "Lijevak"
+msgstr "Ljevak"
 
 #: keyboard.cpp:67
 msgid "Keyboard repeat"

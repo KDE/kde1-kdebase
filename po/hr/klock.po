@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-23 01:14+0100\n"
+"POT-Creation-Date: 1998-11-18 13:15+0100\n"
 "PO-Revision-Date: 1998-03-15 20:00-0500\n"
 "Last-Translator: Stjepan Zlodi <szlodi@public.srce.hr> \n"
 "Language-Team: Croatian\n"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: flame.cpp:310
 msgid "Flame"
-msgstr "Plamen"
+msgstr ""
 
 #: flame.cpp:397
 msgid "Setup KFlame"
@@ -286,7 +286,7 @@ msgstr "Broj toèaka:"
 
 #: flame.cpp:551
 msgid "About Flame"
-msgstr "O Plamenu"
+msgstr "O Flame"
 
 #: flame.cpp:552
 msgid ""
@@ -625,7 +625,7 @@ msgstr ""
 
 #: pyro.cpp:439
 msgid "Pyro"
-msgstr "Pyro"
+msgstr "Vatromet"
 
 #: pyro.cpp:517
 msgid "Setup KPyro"
@@ -637,7 +637,7 @@ msgstr "Oblak"
 
 #: pyro.cpp:629
 msgid "About Pyro"
-msgstr "O Pyro"
+msgstr "O Vatrometu"
 
 #: pyro.cpp:630
 msgid ""
@@ -647,7 +647,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Pyro inaèica 3.4\n"
+"Vatromet inaèica 3.4\n"
 "\n"
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
@@ -655,11 +655,11 @@ msgstr ""
 
 #: rock.cpp:441
 msgid "Rock"
-msgstr "Stijena"
+msgstr ""
 
 #: rock.cpp:549
 msgid "Setup krock"
-msgstr "Podesi Stijenu"
+msgstr ""
 
 #: rock.cpp:589
 msgid "Move"
@@ -687,7 +687,7 @@ msgstr ""
 "\n"
 "Prilagodio za kscreensave Martin Jones."
 
-#: saver.cpp:60 saver.cpp:180
+#: saver.cpp:60 saver.cpp:178
 msgid "Enter Password"
 msgstr "Unesi Lozinku"
 
@@ -721,7 +721,7 @@ msgstr "Zakrivljenje"
 
 #: science.cpp:112
 msgid "Science"
-msgstr "Znanost"
+msgstr ""
 
 #: science.cpp:491
 msgid "rendering lens..."
@@ -733,7 +733,7 @@ msgstr "grabim zaslon..."
 
 #: science.cpp:975
 msgid "Setup Science"
-msgstr "Podesi Znanost"
+msgstr ""
 
 #: science.cpp:1008
 msgid "Inverse"
