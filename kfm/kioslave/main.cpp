@@ -150,6 +150,7 @@ void KIOSlave::mkdir( const char *_url )
 	if(prot->MkDir(&su) != KProtocol::SUCCESS)
 	{
 	    ProcessError(prot, _url);
+	    delete prot;
 	    return;
 	}
 	delete prot;
