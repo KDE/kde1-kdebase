@@ -227,6 +227,11 @@ int main( int argc, char *argv[] )
 			mode = MODE_PREVIEW;
 			saveWin = atol( argv[++i] );
 		}
+		else if ( !strcmp( argv[i], "-inroot" ) )
+		{
+			mode = MODE_PREVIEW;
+			saveWin = kapp->desktop()->winId();
+		}
 		else if ( !strcmp( argv[i], "-test" ) )
 		{
 			mode = MODE_TEST;
@@ -419,7 +424,7 @@ static void cleanup( int )
 void usage( char *name )
 {
 	printf( glocale->translate(
-	   "Usage: %s -install|-setup|-test|-desc|-preview wid\n"\
+	   "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"\
 	   "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"), name );
 	printf( glocale->translate(
 	"  -corners xxxx     Placing cursor in corner performs action:\n"\
@@ -434,6 +439,7 @@ void usage( char *name )
 	"  -lock             Require password to stop screen saver\n"\
 	"  -nice num         Run with specified nice value\n\n"\
 	"  -preview wid      Run in the specified XWindow\n"\
+	"  -inroot           Run in the root window\n"\
 	"  -setup            Setup screen saver\n"\
 	"  -test             Invoke the screen saver immediately\n"));
 	exit(1);
