@@ -67,6 +67,8 @@ signals:
     void cookie( const char *_url, const char *_cookie_str );
     
 protected:
+    void openFileOrDir(bool _reload, bool _isFile = false);
+    void openDir(bool _reload);
     void openFile(bool _reload);
     void testMimeType( const char *_data, int _len );
     
@@ -74,6 +76,7 @@ protected:
     FILE *f;
     bool isHTML;
     bool isDir;
+    bool bHTML;
     bool bRunning;
     bool bFinished;
     bool bCheckedMimeType;
