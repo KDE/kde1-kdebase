@@ -1,8 +1,8 @@
 Emacs.default.attributeForeground:	WINDOW_FOREGROUND
 Emacs.default.attributeBackground:	WINDOW_BACKGROUND
  
-Emacs*Foreground:		black
-Emacs*Background:		white
+Emacs*Foreground:		WINDOW_FOREGROUND
+Emacs*Background:		WINDOW_BACKGROUND
 Emacs*menubar*foreground:	FOREGROUND
 Emacs*menubar*background:	BACKGROUND
 Emacs*popup*Foreground:		FOREGROUND
