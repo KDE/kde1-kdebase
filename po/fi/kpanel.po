@@ -2,11 +2,10 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-09-05 12:54+0200\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,125 +14,154 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:172
-msgid "Personal menu"
-msgstr "Käyttäjän valikko"
-
-#: kpanel.C:180
-msgid "Add application"
-msgstr "Lisää sovellus"
-
-#: kpanel.C:182
-msgid "Add special"
-msgstr ""
-
-#: kpanel.C:183
-msgid "Configure"
-msgstr "Konfiguroi"
-
-#: kpanel.C:185
-msgid "Configure panel"
-msgstr "Konfiguroi paneeli"
-
-#: kpanel.C:186
-msgid "Restart"
-msgstr "Käynnistä uudelleen"
-
-#: kpanel.C:188
-msgid "Panel"
-msgstr "Paneeli"
-
-#: kpanel.C:190
-msgid "Lock Screen"
-msgstr "Lukitse näyttö"
-
-#: kpanel.C:192
-msgid "Logout"
-msgstr "Poistu"
-
-#: kpanel.C:201
 msgid "Move"
 msgstr "Siirrä"
 
-#: kpanel.C:202
+#: kpanel.C:173
 msgid "Remove"
 msgstr "Poista"
 
-#: kpanel.C:204
+#: kpanel.C:175
 msgid "Properties"
 msgstr "Ominaisuudet"
 
-#: kpanel.C:239
+#: kpanel.C:205 kpanel.C:207 tools.C:678
 msgid "System"
 msgstr "Järjestelmä"
 
-#: kpanel.C:316
-msgid "Desktop"
-msgstr "Työpöytä"
-
-#: kpanel.C:348
+#: kpanel.C:270
 msgid "No info available"
 msgstr "Tietoa ei ole saatavilla"
 
-#: kpanel.C:435 kpanel.C:451
-msgid "Destroy"
-msgstr "Tuhoa"
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Poistu"
 
-#: kpanel.C:438 kpanel.C:448
-msgid "(Un) Sticky"
-msgstr "Naulaa/Poista naulaus"
+#: kpanel.C:315 kpanel.C:663
+msgid "Lock screen"
+msgstr "Lukitse näyttö"
 
-#: kpanel.C:439 kpanel.C:447
-msgid "(Un) Iconify"
-msgstr "Ikoniksi"
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr "Piiloita paneeli"
 
-#: kpanel.C:440 kpanel.C:446
-msgid "(Un) Maximize"
-msgstr "Suurenna/Pienennä"
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr "Näytä paneeli"
 
-#: kpanel.C:441 kpanel.C:445
-msgid "On this desktop"
-msgstr "Tällä työpöydällä"
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Lisää sovellus"
 
-#: props.C:263
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr "Lisää sovellus tai valikko paneeliin"
+
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr "Lisää ikkunalista"
+
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr "Lisää ikkunalista valikko paneeliin"
+
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Asetukset"
+
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Konfiguroi paneeli"
+
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Käynnistä uudelleen"
+
+#: kpanel.C:658
+msgid "Restart panel"
+msgstr "Käynnistä uudelleen"
+
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr "Paneeli"
+
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Lukitse näyttö"
+
+#: kpanel.C:1012 tools.C:503
+msgid "No comment available"
+msgstr "Tietoa ei ole saatavilla"
+
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
+msgstr "Ikkunalista"
+
+#: props.C:239
 msgid "Location"
 msgstr "Sijainti"
 
-#: props.C:283
+#: props.C:254
 msgid "Taskbar"
 msgstr "Tehtäväpaneeli"
 
-#: props.C:284
+#: props.C:255
 msgid "Hidden"
 msgstr "Piiloitettu"
 
-#: props.C:296
+#: props.C:267
 msgid "Top/Left"
 msgstr "Ylhäällä/Vasemmalla"
 
-#: props.C:307
+#: props.C:278
 msgid "Tiny Style"
 msgstr "Pieni tyyli"
 
-#: props.C:308
+#: props.C:279
 msgid "Small Style"
 msgstr "Normaali tyyli"
 
-#: props.C:309
+#: props.C:280
 msgid "Large Style"
 msgstr "Suuri tyyli"
 
-#: props.C:321
+#: props.C:292
 msgid "Menu Tooltips"
 msgstr "Valikon vinkit"
 
-#: props.C:397
+#: props.C:348
 msgid "Visible"
-msgstr "Näkyvä"
+msgstr "Määrä"
 
-#: props.C:404
+#: props.C:355
 msgid "Width"
 msgstr "Leveys"
 
-#: props.C:415
+#: props.C:360
+msgid "Desktops"
+msgstr "Työpöydät"
+
+#: props.C:366
 msgid "KPanel Configuration"
 msgstr "KPanel asetukset"
+
+#~ msgid "Personal menu"
+#~ msgstr "Käyttäjän valikko"
+
+#~ msgid "Add special"
+#~ msgstr "Lisää erityinen"
+
+#~ msgid "Destroy"
+#~ msgstr "Tuhoa"
+
+#~ msgid "(Un) Sticky"
+#~ msgstr "Naulaa/Poista naulaus"
+
+#~ msgid "(Un) Iconify"
+#~ msgstr "Ikoniksi"
+
+#~ msgid "(Un) Maximize"
+#~ msgstr "Suurenna/Pienennä"
+
+#~ msgid "On this desktop"
+#~ msgstr "Tällä työpöydällä"

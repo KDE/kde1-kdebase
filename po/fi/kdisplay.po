@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "KDE Display Configuration"
+msgstr "KDE Näytön asetukset"
+
+#: main.cpp:130
+#, c-format
+msgid ""
+"Usage: %s -init|-setup\n"
+"\n"
+msgstr "Syntaksi: %s -init | -setup\n"
+
+#: main.cpp:131
+msgid "  -init               apply current settings to the display\n"
+msgstr "  -init                 ota nykyiset asetukset käyttöön\n"
+
+#: main.cpp:132
+msgid "  -setup              setup the display\n"
+msgstr "  -setup                muuta asetuksia\n"
+
+#: backgnd.cpp:140 colorscm.cpp:293
+msgid "Background"
+msgstr "Tausta"
+
+#: backgnd.cpp:165
+msgid "Color"
+msgstr "Väri"
+
+#: backgnd.cpp:185
+msgid "Flat"
+msgstr "Tasainen väri"
+
+#: backgnd.cpp:189
+msgid "Gradient"
+msgstr "Väriliuku"
+
+#: backgnd.cpp:202
+msgid "Portrait"
+msgstr "Pystysuunnassa"
+
+#: backgnd.cpp:206
+msgid "Landscape"
+msgstr "Vaakasuunnassa"
+
+#: backgnd.cpp:224
+msgid "Wallpaper"
+msgstr "Seinäpaperi"
+
+#: backgnd.cpp:257
+msgid "Tiled"
+msgstr "Monistettu"
+
+#: backgnd.cpp:261
+msgid "Centred"
+msgstr "Keskitetty"
+
+#: backgnd.cpp:265
+msgid "Scaled"
+msgstr "Skaalattu"
+
+#: backgnd.cpp:272
+msgid "Browse..."
+msgstr "Selaa..."
+
+#: scrnsave.cpp:45
+msgid "Ignore"
+msgstr "Ohita"
+
+#: scrnsave.cpp:47
+msgid "Lock"
+msgstr "Lukitse"
+
+#: scrnsave.cpp:103 scrnsave.cpp:161
+msgid "Screen Saver"
+msgstr "Näytönsäästäjä"
+
+#: scrnsave.cpp:182
+msgid "Setup..."
+msgstr "Asetukset..."
+
+#: scrnsave.cpp:186
+msgid "Test"
+msgstr "Kokeile"
+
+#: scrnsave.cpp:194
+msgid "Settings"
+msgstr "Asetukset"
+
+#: scrnsave.cpp:197
+msgid "Wait:"
+msgstr "Viive:"
+
+#: scrnsave.cpp:208
+msgid "min"
+msgstr ""
+
+#: scrnsave.cpp:211
+msgid "Requires Password"
+msgstr "Vaatii salasanan"
+
+#: scrnsave.cpp:216
+msgid "Priority:"
+msgstr "Prioriteetti:"
+
+#: colorscm.cpp:326 scrnsave.cpp:219
+msgid "High"
+msgstr "Korkea"
+
+#: colorscm.cpp:322 scrnsave.cpp:222
+msgid "Low"
+msgstr "Matala"
+
+#: colorscm.cpp:139 colorscm.cpp:140
+msgid "Inactive window"
+msgstr "Passiivinen ikkuna"
+
+#: colorscm.cpp:155 colorscm.cpp:156
+msgid "Active window"
+msgstr "Aktiivinen ikkuna"
+
+#: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:298
+msgid "Window text"
+msgstr "Ikkunan teksti"
+
+#: colorscm.cpp:209
+msgid "Disabled"
+msgstr ""
+
+#: colorscm.cpp:216 colorscm.cpp:217
+msgid "Selected"
+msgstr "Valittu"
+
+#: colorscm.cpp:252 colorscm.cpp:262
+msgid "Color Scheme"
+msgstr "Väriteema"
+
+#: colorscm.cpp:276
+msgid "Remove"
+msgstr "Poista"
+
+#: colorscm.cpp:284
+msgid "Widget color"
+msgstr ""
+
+#: colorscm.cpp:289
+msgid "Inactive title bar"
+msgstr "Passiivinen otsikkopalkki"
+
+#: colorscm.cpp:290
+msgid "Inactive title text"
+msgstr "Passivinen otsikkoteksti"
+
+#: colorscm.cpp:291
+msgid "Active title bar"
+msgstr "Aktiivinen otsikkopalkki"
+
+#: colorscm.cpp:292
+msgid "Active title text"
+msgstr "Aktiivinen otsikkoteksti"
+
+#: colorscm.cpp:294
+msgid "Text"
+msgstr "Teksti"
+
+#: colorscm.cpp:295
+msgid "Select background"
+msgstr "Valitse tausta"
+
+#: colorscm.cpp:296
+msgid "Select text"
+msgstr "Valitse teksti"
+
+#: colorscm.cpp:297
+msgid "Window background"
+msgstr "Ikkunan tausta"
+
+#: colorscm.cpp:309
+msgid "Contrast"
+msgstr "Kontrasti"
+
+#: colorscm.cpp:341
+msgid "Save scheme"
+msgstr "Tallenna teema"
+
+#: colorscm.cpp:372 colorscm.cpp:380
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "Olet valinnut nimen joka on jo olemassa valmiina"
+
+#: colorscm.cpp:463
+msgid "KDE Default"
+msgstr "KDE Oletus"
+
+#: colorscm.cpp:687
+msgid "Display Setup"
+msgstr "Näytön asetukset"
+
+#: colorscm.cpp:688
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"Työpöydän väriteemoja ei löytynyt.\n"
+"Haluatko asentaa oletusteemat nyt?"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "Nimi"
+
+#: general.cpp:55
+msgid "General"
+msgstr "Yleinen"
+
+#: general.cpp:59
+msgid "Widget style"
+msgstr ""
+
+#: general.cpp:64
+msgid "Motif"
+msgstr ""
+
+#: general.cpp:65
+msgid "Windows 95"
+msgstr ""
+
+#: general.cpp:74
+msgid "Fonts"
+msgstr ""
+
+#: general.cpp:79
+msgid "General font"
+msgstr ""
+
+#: general.cpp:104
+msgid "Sample"
+msgstr "Näyte"
+
+#: general.cpp:110
+msgid "Small"
+msgstr "Pieni"
+
+#: general.cpp:114
+msgid "Medium"
+msgstr "Keskikoko"
+
+#: general.cpp:118
+msgid "Large"
+msgstr "Suuri"
+
+#: general.cpp:135
+msgid "Italic"
+msgstr "Kursiivi"
+
+#: kwmcom.cpp:80 kwmcom.cpp:107
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "Tiedonsiirto kwm kanssa epäonnistui\n"
