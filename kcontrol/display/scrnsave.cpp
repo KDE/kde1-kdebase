@@ -38,7 +38,6 @@
 #include "scrnsave.h"
 #include "scrnsave.moc"
 
-#define NO_SCREENSAVER i18n("(none)")
 #define SCREENSAVER_DIR	"/usr/local/kde/bin"
 #define CORNER_SIZE		15
 
