@@ -589,8 +589,20 @@ void KMimeType::getBindings( QStrList &_list, QList<QPixmap> &_pixlist, const ch
     // Used to store a new value for _url
     QString tmp;
     
-    // Try to read the file as a [KDE Desktop Entry]
-    KSimpleConfig *config = KMimeBind::openKConfig( _url );
+    // Is it a regular file ?
+    QString path( u.path() );
+    struct stat buff;
+    stat( path.data(), &buff );
+
+    KSimpleConfig *config = 0L;
+
+    // Don't try to open a file if not a regular file or a link
+    // (No use for directories, bugs for fifos, sockets, ...)
+    if ( S_ISREG( buff.st_mode ) || S_ISLNK( buff.st_mode ) )
+    {
+      // Yes => try to read the file as a [KDE Desktop Entry]
+      config = KMimeBind::openKConfig( _url );
+    }
     
     if ( config != 0L )
     {
