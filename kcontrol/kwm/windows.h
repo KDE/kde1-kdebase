@@ -48,9 +48,6 @@
 #define TITLEBAR_PLAIN  0
 #define TITLEBAR_SHADED 1
 
-#define RESIZE_ANIM_OFF 0
-#define RESIZE_ANIM_ON  1
-
 #define RESIZE_TRANSPARENT  0
 #define RESIZE_OPAQUE       1
 
@@ -121,7 +118,9 @@ private:
   QComboBox *focusCombo;
 
   QButtonGroup *resizeBox;
-  QCheckBox *resizeAnimOn, *resizeOpaqueOn;
+  QCheckBox *resizeOpaqueOn;
+  KSlider *resizeAnimSlider;
+  QLabel *resizeAnimTitleLabel, *resizeAnimNoneLabel, *resizeAnimFastLabel;
 
   QButtonGroup *maximizeBox;
   QRadioButton *fullScreen, *vertOnly;

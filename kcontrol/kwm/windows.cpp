@@ -53,16 +53,26 @@ KWindowConfig::~KWindowConfig ()
 {
   delete transparent;
   delete opaque;
+  delete moveBox;
+
   delete placementCombo;    
   delete iTLabel;                       
   delete interactiveTrigger;
   delete placementBox;      
+
   delete focusCombo;
-  delete resizeAnimOn;
-  delete resizeOpaqueOn;
-  delete moveBox;
-  delete resizeBox;
+  delete autoRaise;
+  delete alabel;
+  delete s;
+  delete sec;
   delete focusBox;
+
+  delete resizeAnimSlider;
+  delete resizeAnimTitleLabel;
+  delete resizeAnimNoneLabel;
+  delete resizeAnimFastLabel;
+  delete resizeOpaqueOn;
+  delete resizeBox;
 }
 
 extern KSimpleConfig *config;
@@ -77,8 +87,11 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 
   // resize animation - CT 27May98
   resizeBox = new QButtonGroup(klocale->translate("Window resize"), this);
-  resizeAnimOn = new QCheckBox(klocale->translate("With animation"), 
-				  resizeBox);
+  resizeAnimTitleLabel = new QLabel(klocale->translate("Animation:"),resizeBox);
+  resizeAnimNoneLabel= new QLabel(klocale->translate("None"),resizeBox);
+  resizeAnimFastLabel= new QLabel(klocale->translate("Fast"),resizeBox);
+  resizeAnimSlider = new KSlider(0,10,10,0,KSlider::Horizontal, resizeBox);
+  resizeAnimSlider->setSteps(10,1);
   resizeOpaqueOn = new QCheckBox(klocale->translate("Opaque"), resizeBox);
 
   // placement policy --- CT 19jan98, 13mar98 ---
@@ -126,12 +139,12 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 
 
   // autoraise delay
-  autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, this);
+  autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, focusBox);
   autoRaise->setSteps(100,100);
-  alabel = new QLabel(klocale->translate("Auto raise delay\n(<100 disables)"), this);
-  s = new QLCDNumber (5, this);
+  alabel = new QLabel(klocale->translate("Auto raise delay\n(<100 disables)"), focusBox);
+  s = new QLCDNumber (5, focusBox);
   s->setFrameStyle( QFrame::NoFrame );
-  sec = new QLabel(klocale->translate("miliseconds"), this);
+  sec = new QLabel(klocale->translate("miliseconds"), focusBox);
   connect( autoRaise, SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
   s->adjustSize();
   alabel->adjustSize();
@@ -155,7 +168,8 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   opaque->adjustSize();
   
   int buttonH = transparent->height();
-  int boxH = 2*buttonH + 3*SPACE_YI + titleH;
+  int boxH1 = 2*buttonH + 3*SPACE_YI + titleH;
+  int boxH2 = 3*buttonH + 4*SPACE_YI + titleH;
 
   transparent->move(SPACE_XI, SPACE_YI + titleH);
   opaque->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
@@ -169,15 +183,33 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
     boxW = buttonW + 2*SPACE_XI;
 
   // resize animation
-  resizeAnimOn->adjustSize();
-  resizeAnimOn->move(SPACE_XI, SPACE_YI + titleH);
+  int tmpY = SPACE_YI + titleH;
+  int tmpX = SPACE_XI;
   resizeOpaqueOn->adjustSize();
-  resizeOpaqueOn->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
+  resizeOpaqueOn->move(SPACE_XI, tmpY);
+  resizeAnimTitleLabel->adjustSize();
+  resizeAnimNoneLabel->adjustSize();
+  resizeAnimFastLabel->adjustSize();
+
+  tmpY = tmpY + SPACE_YI + buttonH;
+  resizeAnimTitleLabel->move(SPACE_XI, tmpY);
+
+  tmpX = tmpX + resizeAnimNoneLabel->width()/2;
+  tmpY = tmpY + resizeAnimTitleLabel->height();
+  resizeAnimSlider->setGeometry(tmpX,tmpY,150,20);
+
+  tmpX = tmpX + resizeAnimSlider->width()-resizeAnimFastLabel->width()/2;
+  tmpY = tmpY + resizeAnimSlider->height();
+  resizeAnimNoneLabel->move(SPACE_XI,tmpY);
+  resizeAnimFastLabel->move(tmpX,tmpY);
+  
+  tmpX = tmpX + resizeAnimFastLabel->width();
+
   int h2 = h;
-  h += boxH + SPACE_YO;
+  h += boxH2 + SPACE_YO;
 
   titleW = fm.width(resizeBox->title());
-  buttonW = max( resizeAnimOn->width(), resizeOpaqueOn->width() );
+  buttonW = max( tmpX, resizeOpaqueOn->width() );
   if (boxW < titleW + 4*SPACE_XI)
     boxW =  titleW + 4*SPACE_XI;
   if (boxW < buttonW + 2*SPACE_XI)
@@ -214,7 +246,7 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   vertOnly->adjustSize();
   vertOnly->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
   int h4 = h;
-  h += boxH + SPACE_YO;
+  h += boxH1 + SPACE_YO;
 
   titleW = fm.width(maximizeBox->title());
   buttonW = max( fullScreen->width(), vertOnly->width() );
@@ -227,38 +259,37 @@ void KWindowConfig::resizeEvent(QResizeEvent *)
   focusCombo->adjustSize();
   focusCombo->move(SPACE_XI, SPACE_YI + titleH);
   if (focusCombo->width() < (boxW - 2*SPACE_XI)) 
-    focusCombo->setGeometry(SPACE_XI,
+    focusCombo->setGeometry(SPACE_XI + boxW,
 				SPACE_YI + titleH,
 				boxW - 2*SPACE_XI,
 				focusCombo->height());
   else
     focusCombo->move(SPACE_XI, SPACE_YI + titleH);
 
-  int h5 = h;
-  h += boxH + SPACE_YO;
+  tmpY = 2*SPACE_YI + focusCombo->height() + titleH;
+  alabel->move(SPACE_XI, tmpY);
 
-  titleW = fm.width(focusBox->title());
-  buttonW = focusCombo->width();
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-  moveBox->setGeometry(SPACE_XO, h1, boxW, boxH);
-  resizeBox->setGeometry(moveBox->x() + boxW + SPACE_XO, h2, boxW, boxH);
-  placementBox->setGeometry(SPACE_XO, h3, boxW, boxH);
-  maximizeBox->setGeometry(placementBox->x()+ boxW + SPACE_XO, h4, boxW, boxH);
-  focusBox->setGeometry(SPACE_XO + boxW/2, h5, boxW, boxH);
-
-  int w = alabel->width();
-  alabel->move(SPACE_XO, h);
-  autoRaise->setGeometry(w + 2*SPACE_XO, h, 200, alabel->height());
-  h += autoRaise->height() ;
+  autoRaise->setGeometry(alabel->width() + 2*SPACE_XI, tmpY,
+			 200, alabel->height());
+  tmpY = tmpY + autoRaise->height() ;
   int center = autoRaise->x() + ( autoRaise->width() - s->width() )/2;
   int dh = ( s->height() - sec->height() )/2;
-  s->move(center, h);
-  sec->move(s->x() + s->width() + 3, h+dh);
-  h += s->height() + SPACE_YO;
+  s->move(center, tmpY);
+  sec->move(s->x() + s->width() + 3, tmpY+dh);
+  tmpY = tmpY + s->height() + SPACE_YI;
+  tmpX = alabel->width() + SPACE_XI + autoRaise->width();
+
+  titleW = fm.width(focusBox->title());
+  buttonW = max(focusCombo->width(), tmpX);
+
+  int h5 = h;
+  h += boxH2 + SPACE_YO;
+
+  moveBox->setGeometry(SPACE_XO, h1, boxW, boxH2);
+  resizeBox->setGeometry(moveBox->x() + boxW + SPACE_XO, h2, boxW, boxH2);
+  placementBox->setGeometry(SPACE_XO, h3, boxW, boxH1);
+  maximizeBox->setGeometry(placementBox->x()+ boxW + SPACE_XO, h4, boxW, boxH1);
+  focusBox->setGeometry(SPACE_XO , h5, 2*boxW+SPACE_XO, tmpY);
 }
 
 int KWindowConfig::getMove()
@@ -308,18 +339,12 @@ void KWindowConfig::setFocus(int foc)
 
 int KWindowConfig::getResizeAnim()
 {
-  if (resizeAnimOn->isChecked())
-    return RESIZE_ANIM_ON;
-  else
-    return RESIZE_ANIM_OFF;
+  return resizeAnimSlider->value();
 }
 
 void KWindowConfig::setResizeAnim(int anim)
 {
-  if (anim == RESIZE_ANIM_ON)
-    resizeAnimOn->setChecked(TRUE);
-  else
-    resizeAnimOn->setChecked(FALSE);
+  resizeAnimSlider->setValue(anim);
 }
 
 int KWindowConfig::getResizeOpaque()
@@ -376,17 +401,17 @@ void KWindowConfig::setAutoRaiseEnabled( )
   // the auto raise related widgets are: autoRaise, alabel, s, sec
   if ( focusCombo->currentItem() != CLICK_TO_FOCUS )
     {
-      autoRaise->show();
-      alabel->show();
-      s->show();
-      sec->show();
+      autoRaise->setEnabled(TRUE);
+      alabel->setEnabled(TRUE);
+      s->setEnabled(TRUE);
+      sec->setEnabled(TRUE);
     }
   else
     {
-      autoRaise->hide();
-      alabel->hide();
-      s->hide();
-      sec->hide();
+      autoRaise->setEnabled(FALSE);
+      alabel->setEnabled(FALSE);
+      s->setEnabled(FALSE);
+      sec->setEnabled(FALSE);
     }
 }
 
@@ -416,11 +441,18 @@ void KWindowConfig::GetSettings( void )
   else if( key == "Opaque")
     setMove(OPAQUE);
 
-  key = config->readEntry(KWM_RESIZE_ANIM);
-  if( key == "on")
-    setResizeAnim(RESIZE_ANIM_ON);
-  else if( key == "off")
-    setResizeAnim(RESIZE_ANIM_OFF);
+  //CT 17Jun1998 - variable animation speed from 0 (none!!) to 10 (max)
+  int anim = 1;
+  if (config->hasKey(KWM_RESIZE_ANIM)) {
+    anim = config->readNumEntry(KWM_RESIZE_ANIM);
+    if( anim < 1 ) anim = 0;
+    if( anim > 10 ) anim = 10;
+    setResizeAnim(anim);
+  }
+  else{
+    setResizeAnim(1);
+    config->writeEntry(KWM_RESIZE_ANIM, 1);
+  }
 
   key = config->readEntry(KWM_RESIZE_OPAQUE);
   if( key == "Opaque")
@@ -521,11 +553,9 @@ void KWindowConfig::SaveSettings( void )
   else 
     config->writeEntry(KWM_FOCUS,"FocusFollowMouse");
   
-  v = getResizeAnim();
-  if (v == RESIZE_ANIM_ON)
-    config->writeEntry(KWM_RESIZE_ANIM, "on");
-  else
-    config->writeEntry(KWM_RESIZE_ANIM, "off");
+  //CT - 17Jun1998
+  config->writeEntry(KWM_RESIZE_ANIM, getResizeAnim());
+  
 
   v = getResizeOpaque();
   if (v == RESIZE_OPAQUE)
