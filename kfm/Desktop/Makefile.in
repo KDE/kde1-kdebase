@@ -6,6 +6,9 @@ INSTALL_DATA = @INSTALL@ -m 644
 
 all:
 
+Makefile: Makefile.in
+	cd ../.. && CONFIG_FILES=kfm/Desktop/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
 install:
 	$(INSTALL_DIR) $(DESTDIR)
 	@for i in $(DESKTOPLNKS); do \

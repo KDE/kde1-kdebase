@@ -39,6 +39,8 @@ public slots:
 	void ask(int _x, int _y, const char* _src, const char* _dest);
 public slots:
 	void sortDesktop();
+public slots:
+	void auth(const char* _password);
 signals:
 	void finished();
 private:

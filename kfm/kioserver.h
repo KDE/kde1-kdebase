@@ -47,6 +47,10 @@ public:
     const char* getCreationDate() { return creationDate.data(); }
     int getSize() { return size; }
 
+    bool mayRead( const char *_user );
+    bool mayWrite( const char *_user );
+    bool mayExec( const char *_user );
+  
 protected:
     bool bDir;
     QString name;
@@ -78,12 +82,17 @@ public:
     /// A Job does not need a slave any more.
     void freeSlave( KIOSlaveIPC * _slave );
 
-    /// Get a cached directory
     /**
-      May return 0L if the directory is not cached.
-      */
+     * Get information about a cached directory.
+     *
+     * @return 0L if the directory is not cached.
+     */
     KIODirectory* getDirectory( const char *_url );
-
+    /**
+     * @return a pointer to a @ref KIODirectoryEntry for the given URL
+     *         or 0L if no such entry exists.
+     */
+    KIODirectoryEntry* getDirectoryEntry( const char *_url );
     /// Return a pointer to the running KIOServer
     static KIOServer* getKIOServer() { return pKIOServer; }
     /// Get a new name for a link.
@@ -106,6 +115,16 @@ public:
       in their URL.
       */
     static bool isDir( const char *_url );
+    /**
+     * Tests wether the list of URLs are all together the trash bin.
+     * This function does not really make sense. It is just provided for
+     * convenience.
+     */
+    static bool isTrash( QStrList & _urls );
+    /**
+     * Tests wether _url is the trash bin or not
+     */
+    static bool isTrash( const char *_url );
     static QString findDeviceMountPoint( const char *_device, const char *_file = "/etc/mtab" );
     /// Tells wether KIOServer supports an operation on an URL
     /**
@@ -131,6 +150,16 @@ public:
       the mount directory, too.
       */
     static void sendMountNotify();
+
+    /**
+     * Quotes a filename/URL like the shell ( bash ) would expect it.
+     */
+    static QString shellQuote( const char *_data );
+
+    /**
+     * Unquotes a filename/URL that is quoted like the shell ( bash ) would expect it.
+     */
+    static QString shellUnquote( const char *_data );
     
 public slots:
     /// If a new slave is created, this slot is called.

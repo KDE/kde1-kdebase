@@ -1,6 +1,9 @@
 #ifndef kfmserver_h
 #define kfmserver_h
 
+class KFMClient;
+class KFMServer;
+
 #include <qobject.h>
 #include <qpopmenu.h>
 
@@ -14,7 +17,7 @@ public:
     KFMServer();
 
 public slots:
-    void slotNewClient( KfmIpc * _client );
+    void slotAuthorized( KFMClient * _client );
     virtual void slotAccept( KSocket *_sock );
     void slotOpenProperties( const char* _url );
     void slotRefreshDirectory( const char* _url );
@@ -34,13 +37,19 @@ public:
     KFMClient( KSocket *_sock );
     
 public slots:
+    void slotAuth( const char *_password );
     void slotCopy( const char *_src_url, const char * _dest_url );
     void slotMove( const char *_src_urls, const char * _dest_url );
     /// A hack. I dont want to break compatibility yet
     void finished( int _id );
     
+signals:
+    void authorized( KFMClient *_this );
+    
 protected:
     KIOJob *job;
+    bool bAuth;
+    static QString password;
 };
 
 class KFMAsk : public QObject

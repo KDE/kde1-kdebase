@@ -1,4 +1,7 @@
 #include "kmsgwin.moc"
+#include <kapp.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int type,
                  const char *b1text, const char *b2text, const char *b3text,
@@ -12,21 +15,15 @@ KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int 
 
     if( !icons_initialized )
     {
-        QString ipath( getenv("KDEDIR") );
-	if ( ipath.isNull() )
-	{
-	    printf("ERROR: You did not set $KDEDIR\n");
-	    exit(2);
-	}
+	
+        QString ipath = kapp->kdedir();;
 	ipath.detach();
-	ipath += "/lib/pics/";
+	ipath += "/lib/pics/share/";
         icons[0].load(ipath + "info.xpm");
         icons[1].load(ipath + "exclamation.xpm");
         icons[2].load(ipath + "stopsign.xpm");
         icons[3].load(ipath + "question.xpm");
         icons_initialized = 1;
-
-	printf("ICON_PATH=%s\n",ipath.data());
     }
 
     int icon_index = type & 0x0000000f;   // mask the lower 4 bits (icon style)
@@ -111,7 +108,7 @@ KMsgWin::~KMsgWin()
 {
 }
 
-void KMsgWin::resizeEvent( QResizeEvent * _ev )
+void KMsgWin::resizeEvent( QResizeEvent * )
 {
     /*
      * align buttons

@@ -2,6 +2,8 @@
 #include <qmsgbox.h>
 
 #include "kfmtree.h"
+#include <kapp.h>
+#include <config-kfm.h>
 
 /*************************************************
  *
@@ -69,14 +71,14 @@ KFMTreeView::KFMTreeView( QWidget *parent ) : QWidget(parent )
 
   // load the pixmaps we'll be using
 
-  QString d = getenv( "KDEDIR" );
+  QString d = kapp->kdedir();
   d += "/lib/pics/closed.xpm";
   closedPixmap = new QPixmap();
   closedPixmap->load( d.data() );
   if ( closedPixmap->isNull() )
       QMessageBox::message( "KFM Error", "Could not find\n" + d );
   
-  d = getenv( "KDEDIR" );
+  d = kapp->kdedir();
   d += "/lib/pics/open.xpm";
   openPixmap = new QPixmap();
   openPixmap->load( d.data() );
@@ -174,7 +176,7 @@ void KFMTreeView::slotShowPopup( int index, QPoint &_point )
     
     emit popupMenu( d.data(), _point );
     
-    printf("!!!!!!! POPUP %s\n",d.data());
+    debugT("!!!!!!! POPUP %s\n",d.data());
 }
 
 void KFMTreeView::slotDirSelected(int index)
@@ -199,7 +201,7 @@ void KFMTreeView::slotDirSelected(int index)
     
     emit showDir( d.data() );
     
-    printf("!!!!!!! SHOW %s\n",d.data());
+    debugT("!!!!!!! SHOW %s\n",d.data());
 }
 
 // reads directories one level deeper in advance of tree expansion
@@ -293,7 +295,7 @@ void KFMTreeView::initializeTree()
 
 // if the main window is resized, adjust the widget layout
 
-void KFMTreeView::resizeEvent(QResizeEvent *e)
+void KFMTreeView::resizeEvent(QResizeEvent *)
 {
     dirTree->setGeometry( 0, 0, width(), height() );
 }

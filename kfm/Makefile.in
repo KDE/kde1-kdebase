@@ -1,14 +1,14 @@
 ####### KFM Makefile
 
-INCDIR	=	@all_includes@ -I.. 
-CXXFLAGS=	@CXXFLAGS@ $(INCDIR) 
-LDFLAGS	=	@LDFLAGS@ @all_libraries@ @LIBKHTMLW@ -lkdecore -lkdeui -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
+INCDIR	=	@all_includes@  -I.. -I.
+CXXFLAGS=	$(INCDIR) @CXXFLAGS@ -DHAVE_CONFIG_H
+LDFLAGS	=	@all_libraries@ -lqt -lXext -lX11 -lkdeui -lkdecore -lkhtmlw @LIBSOCKET@ -ljpeg -lgif -ljscript
 CXX 	=	@CXX@
 MOC	=	@MOC@
 
 ############# Install ##############
 
-INSTALL = @INSTALL@ -m 0755
+INSTALL = @INSTALL@ -m 0755 
 INSTALL_SHELL = @INSTALL@ -m 0755
 INSTALL_DATA = @INSTALL@ -m 0644
 INSTALL_DIR = @INSTALL@ -d -m 0755
@@ -25,10 +25,10 @@ TEMPLATEDIR = $(DESKTOPDIR)/Templates
 
 ####### Files
 
-SOURCES =	kfmwin.cpp kfmview.cpp kbind.cpp main.cpp kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp krenamewin.cpp passworddialog.cpp
-HEADERS =	kfmwin.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h xview.h krenamewin.h passworddialog.h
-OBJECTS =	kfmwin.o kfmview.o kbind.o root.o main.o kfmdlg.o bookmark.o kfmprops.o kfmserver_ipc.o kfmserver_ipc2.o kfmserver.o kioserver.o kioserver_ipc.o kioserver_ipc2.o ipc.o kfmman.o kiojob.o kmsgwin.o htmlcache.o autostart.o kfmtree.o xview.o krenamewin.o passworddialog.o
-SRCMETA =	kfmwin.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc kfmtree.moc krenamewin.moc passworddialog.moc
+SOURCES =	kfmgui.cpp kfmview.cpp kbind.cpp main.cpp kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp krenamewin.cpp passworddialog.cpp cgi.cpp fileentry.cpp
+HEADERS =	kfmgui.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h xview.h krenamewin.h passworddialog.h cgi.h fileentry.h
+OBJECTS =	kfmgui.o kfmview.o kbind.o root.o main.o kfmdlg.o bookmark.o kfmprops.o kfmserver_ipc.o kfmserver_ipc2.o kfmserver.o kioserver.o kioserver_ipc.o kioserver_ipc2.o ipc.o kfmman.o kiojob.o kmsgwin.o htmlcache.o autostart.o kfmtree.o xview.o krenamewin.o passworddialog.o cgi.o fileentry.o debug.o
+SRCMETA =	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc kfmtree.moc krenamewin.moc passworddialog.moc cgi.moc fileentry.moc
 TARGET	=	kfm
 
 ####### Implicit rules
@@ -36,20 +36,23 @@ TARGET	=	kfm
 .SUFFIXES: .cpp
 
 .cpp.o:
-	$(CXX) -c $(CXXFLAGS) $(FORMATS) -DHAVE_CONFIG_H $<
+	$(CXX) -c $(CXXFLAGS) $<
 
 %.moc: %.h
-	$(MOC) $< -o $@  
+	$(MOC) $< -o $@      
 
 ####### Build rules
 
-all: Makefile kfmlib kfmclient slave $(TARGET)
-
-Makefile: Makefile.in
-	cd .. && CONFIG_FILES=kfm/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+all: kwarn kfmlib kfmclient slave $(TARGET)
 
 kfmlib:
 	( cd libkfm ; $(MAKE) all )
+
+Makefile: Makefile.in
+	cd .. && CONFIG_FILES=kfm/$@ CONFIG_HEADERS= $(SHELL) ./config.status 
+
+kwarn:
+	( cd kfmwarn ; $(MAKE) all )
 
 slave:
 	( cd kioslave && $(MAKE) all )
@@ -60,6 +63,8 @@ kfmclient:
 $(TARGET): $(SRCMETA) $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 
+debug.o: config-kfm.h
+
 depend:
 	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null
 
@@ -67,45 +72,36 @@ showfiles:
 	@echo $(SOURCES) $(HEADERS) Makefile
 
 cleanroot:
-	-rm -f *.o *.bak *~ *% #* 
+	-rm -f *.o *.bak *~ *% #*
 	-rm -f $(SRCMETA) $(TARGET)
 
-clean: cleanroot 
-	(cd libkfm && $(MAKE) clean) \
-	(cd client && $(MAKE) clean) \
-	(cd kioslave && $(MAKE) clean) 
+clean: cleanroot
+
+	(cd libkfm; $(MAKE) clean)
+	(cd client; $(MAKE) clean)
+	(cd kioslave; $(MAKE) clean)
+	(cd kfmwarn && $(MAKE) clean)
 
 install: all
 	$(INSTALL_DIR) $(BINDIR)
-	(cd apps && $(MAKE) install)
-	(cd filetypes && $(MAKE) install)
+	$(INSTALL_DIR) $(LIBDIR)
 	$(INSTALL) $(TARGET) $(BINDIR)
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
+	$(INSTALL) ./kfmwarn/kfmwarn $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
-	$(INSTALL_SHELL) ./unpack $(BINDIR)
-	(cd doc &&  $(MAKE) install)
+	$(INSTALL_DATA) ./unpack $(BINDIR)
+	$(INSTALL_DATA) ./libkfm/libkfm.a $(LIBDIR)
+	$(INSTALL_DIR) $(KDEINC)
+	$(INSTALL_DATA) ./libkfm/kfm.h $(KDEINC)
+	$(INSTALL_DATA) ./libkfm/kfmclient_ipc.h $(KDEINC)
+	$(INSTALL_DATA) ./libkfm/ipc.h $(KDEINC)
+	(cd doc && $(MAKE) install)
 	(cd pics && $(MAKE) install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config
-	$(INSTALL_SHELL) ./unpack $(BINDIR)
-	(cd libkfm && $(MAKE) install)
-	(cd doc && $(MAKE) install)
-	(cd pics && $(MAKE) install)
 	(cd Desktop && $(MAKE) install)
-
-uninstall:
-	(cd apps && $(MAKE) uninstall)
-	(cd filetypes && $(MAKE) uninstall)
-	rm -f $(BINDIR)/$(TARGET)
-	rm -f $(BINDIR)/kioslave
-	rm -f $(BINDIR)/kfmclient
-	rm -f $(BINDIR)/unpack
-	(cd libkfm && $(MAKE) uninstall)
-	(cd doc && $(MAKE) uninstall)
-	(cd pics && $(MAKE) uninstall)
-	rm -f $(LIBDIR)/kfm/config/kfmrc
-	(cd Desktop && $(MAKE) uninstall)
+	(cd mimetypes && $(MAKE) install)
 
 IPC:    clientIPC kioIPC
 
@@ -115,6 +111,5 @@ clientIPC: ./ipcc/kfm.ipc
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
 
+
 # DO NOT DELETE THIS LINE -- make depend depends on it.
-
-

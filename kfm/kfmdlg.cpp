@@ -1,6 +1,7 @@
 #include "kfmdlg.h"
+#include "fileentry.h"
 
-DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent )
+DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *parent, bool _file_mode )
         : QDialog( parent, 0L, TRUE )
 {
     setGeometry( x(), y(), 200, 110 );
@@ -8,7 +9,10 @@ DlgLineEntry::DlgLineEntry( const char *_text, const char* _value, QWidget *pare
     QLabel *label = new QLabel( _text , this );
     label->setGeometry( 10, 10, 180, 15 );
     
-    edit = new QLineEdit( this, 0L );
+    if ( _file_mode )
+	edit = new KFileEntry( this, 0L );
+    else
+	edit = new QLineEdit( this, 0L );
     edit->setGeometry( 10, 40, 180, 20 );
     connect( edit, SIGNAL(returnPressed()), SLOT(accept()) );
 

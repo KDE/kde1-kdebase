@@ -3,6 +3,8 @@
 #include "kioslave_ipc.h"
 #include "main.h"
 #include "kio_errors.h"
+#include "manage.h"
+#include <config-kfm.h>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -10,7 +12,7 @@
 #include <netdb.h>
 #include <time.h>
 
-#include "ftplib.h"
+/*#include "ftplib.h"*/
 
 #define FTP_LOGIN "anonymous"
 #define FTP_PASSWD "joedoe@nowhere.crg"
@@ -23,7 +25,7 @@ void main( int argc, char **argv )
 {
     if ( argc != 2 )
     {
-	printf("Usage: kioslave port\n");
+	debugT("Usage: kioslave port\n");
 	exit(1);
     }
 
@@ -36,13 +38,24 @@ void main( int argc, char **argv )
     a.exec();
 }
 
+void KIOSlave::ProcessError(KProtocol *prot, const char *srcurl)
+{
+    int KError, SysError;
+    QString message;
+
+    prot->GetLastError(KError, message, SysError);
+
+    debugT("KIOSlave-ERROR (%s): %s\n",srcurl,message.data());
+    ipc->fatalError(KError, srcurl, SysError);
+}
+
 KIOSlave::KIOSlave( int _port )
 {
     ipc = new KIOSlaveIPC( _port );
     
     if ( !ipc->isConnected() )
     {
-	printf("Could not connect to KIO om port %i\n", _port );
+	debugT("Could not connect to KIO om port %i\n", _port );
 	exit(1);
     }
 
@@ -70,52 +83,31 @@ void KIOSlave::getPID()
 void KIOSlave::mkdir( const char *_url )
 {
     KURL su( _url );
+
     if ( su.isMalformed() )
     {
-	printf("ERROR: Malformed URL '%s'\n",_url );
-	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
-	return;
+		debugT("ERROR: Malformed URL '%s'\n",_url );
+		ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
+		return;
     }
-    
-    if ( strcmp( su.protocol(), "file" ) == 0 )
-    {
-	if ( ::mkdir( su.path(), S_IXUSR | S_IWUSR | S_IRUSR ) != 0L )
-	{
-	    printf("ERROR: Could not mkdir '%s'\n",_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotMkdir, _url, errno );
-	    return;
-	}
-    }
-    else if ( strcmp( su.protocol(), "ftp" ) == 0 )
-    {
-	// TODO: Port not implemented!!!
-	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
-        QString user = su.user();
-        QString passwd = su.passwd();
-	if ( user.length() <= 0 )
-	  user = FTP_LOGIN;
-	if ( passwd.length() <= 0 )
-	  passwd = FTP_PASSWD;
-	user.detach();
-	passwd.detach();
-	
-	if ( !lockFTP( su.host(), 21, user.data(), passwd.data() ) )
-	    return;
 
-	ftpMkdir( su.path() );
+    if(ProtocolSupported(&su))
 	{
-	    printf("ERROR: Could not mkdir '%s'\n",_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotMkdir, _url, errno );
-	    return;
+		KProtocol *prot = CreateProtocol(&su);
+		if(prot->MkDir(&su) != KProtocol::SUCCESS)
+		{
+			ProcessError(prot, _url);
+			return;
+		}
+		delete prot;
 	}
-    }
     else
     {
-	printf("ERROR: Not implemented\n");
-	QString err = "Mkdir ";
-	err += _url;
-	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
-	return;
+		debugT("ERROR: Not implemented\n");
+		QString err = "Mkdir ";
+		err += _url;
+		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+		return;
     }
     
     ipc->done();
@@ -126,7 +118,7 @@ void KIOSlave::list( const char *_url )
     KURL su( _url );
     if ( su.isMalformed() )
     {
-	printf("ERROR: Malformed URL '%s'\n",_url );
+	debugT("ERROR: Malformed URL '%s'\n",_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _url, 0 );
 	return;
     }
@@ -179,7 +171,7 @@ void KIOSlave::list( const char *_url )
 	}
 	else
 	{
-	    printf("ERROR: Could not read '%s'\n",outFile.data());
+	    debugT("ERROR: Could not read '%s'\n",outFile.data());
 	    ipc->fatalError( KIO_ERROR_CouldNotRead, outFile.data(), errno );
 	    return;
 	}
@@ -218,7 +210,7 @@ void KIOSlave::list( const char *_url )
 	    {
 		*p = 0;
 		access = p2;
-		printf("ACCESS = '%s'\n",access.data());
+		debugT("ACCESS = '%s'\n",access.data());
 		p2 = p + 1;
 		
 		    p = strchr( p2, '/' );
@@ -228,7 +220,7 @@ void KIOSlave::list( const char *_url )
 		    {
 			*p = 0;
 			owner = p2;
-			printf("OWNER = '%s'\n",owner.data());
+			debugT("OWNER = '%s'\n",owner.data());
 			p2 = p + 1;
 			p = strchr( p2, ' ' );
 			if ( p == 0L )
@@ -237,7 +229,7 @@ void KIOSlave::list( const char *_url )
 			{
 			    *p = 0;
 			    group = p2;
-			    printf("GROUP = '%s'\n",group.data());
+			    debugT("GROUP = '%s'\n",group.data());
 			    p2 = p + 1;
 			    while ( *p2 == ' ' ) p2++;
 			    p = strchr( p2, ' ' );
@@ -247,7 +239,7 @@ void KIOSlave::list( const char *_url )
 			    {
 				*p = 0;
 				size = atoi( p2 );
-				printf("SIZE = '%i'\n",size);
+				debugT("SIZE = '%i'\n",size);
 				p2 = p + 1;
 				p = strchr( p2, ' ' );
 				if ( p == 0L )
@@ -271,10 +263,10 @@ void KIOSlave::list( const char *_url )
 					    {
 						*p = 0;
 						creationDate = p2;
-						printf("DATE = '%s'\n",creationDate.data());
+						debugT("DATE = '%s'\n",creationDate.data());
 						p2 = p + 1;
 						name = p2;
-						printf("NAME = '%s'\n",name.data() );
+						debugT("NAME = '%s'\n",name.data() );
 					    }
 					}
 				    }
@@ -308,179 +300,24 @@ void KIOSlave::list( const char *_url )
 	    }
 	}
     }
-    else if ( strcmp( su.protocol(), "ftp" ) == 0 )
+    else if (ProtocolSupported(&su))
     {
-	QString outFile;
-	outFile.sprintf( "/tmp/ftp%i", time( 0L ) );
+		KProtocolDirEntry *de;
+		KProtocol *prot = CreateProtocol(&su);
 
-	// TODO: Port not implemented!!!
-	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
-        QString user = su.user();
-        QString passwd = su.passwd();
-	if ( user.length() <= 0 )
-	  user = FTP_LOGIN;
-	if ( passwd.length() <= 0 )
-	  passwd = FTP_PASSWD;
-	user.detach();
-	passwd.detach();
-
-	printf("Logging in at '%s'as '%s' with '%s'\n",user.data(),passwd.data());
-	
-	if ( !lockFTP( su.host(), 21, user.data(), passwd.data() ) )
-	    return;
-
-	FILE * f = fopen( outFile.data(), "wb" );
-	if ( f == 0L )
-	{
-	    printf("ERROR: Could not write '%s'\n",outFile.data());
-	    ipc->fatalError( KIO_ERROR_CouldNotWrite, outFile.data(), errno );
-	    return;
-	}
-
-	copyDestFile = f;
-	copyDestFileName = outFile.data();
-	copyDestFileName.detach();
-	
-	if ( !ftpDir( f, su.path() ) )
-	{
-	    fclose( f );
-	    unlink( outFile.data() );
-	    printf("ERROR: Could not list '%s'\n",_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotList, _url, 0 );
-	    return;	    
-	}
-
-	fclose( f );
-
-	copyDestFile = 0L;
-	
-	// Open the output file containing the directory listing in long from
-	f = fopen( outFile.data(), "rb" );
-	if ( f != 0L )
-	{
-	    char line[1024];
-	    char* p = "";
-
-	    // Flush the directory
-	    ipc->flushDir( _url );
-	    
-	    // Load all line from the output file
-	    while ( p != 0L )
-	    {
-		if ( ( p = fgets( line, 1023, f ) ) != 0L )
+		prot->OpenDir(&su);
+		ipc->flushDir(_url);
+		while(de = prot->ReadDir())
 		{
-		    QString l = line;
-		    l = l.simplifyWhiteSpace();
-		    if ( l != "." && l !=".." )
-		    {
-			strcpy( line, l.data() );
-			
-			// Dont use the line starting with "total"
-			if ( strncmp( line, "total", 5 ) != 0L )
-			{
-			    // Parse the line
-			    bool err = FALSE;
-			    bool isdir = ( line[0] == 'd' );
-			    QString owner;
-			    QString group;
-			    QString access;
-			    QString creationDate;
-			    QString name;
-			    int size;
-			    
-			    char *p2 = p;
-			    char *p = strchr( line, ' ' );
-			    
-			    if ( p == 0L )
-				err = TRUE;
-			    else
-			    {
-				*p = 0;
-				access = p2;
-				p2 = p + 1;
-
-				p = strchr( p2, ' ' );
-				if ( p == 0L )
-				    err = TRUE;
-				else
-				{
-				    p2 = p + 1;
-				    p = strchr( p2, ' ' );
-				    if ( p == 0L )
-					err = TRUE;
-				    else
-				    {
-					*p = 0;
-					owner = p2;
-					p2 = p + 1;
-					p = strchr( p2, ' ' );
-					if ( p == 0L )
-					    err = TRUE;
-					else
-					{
-					    *p = 0;
-					    group = p2;
-					    p2 = p + 1;
-					    p = strchr( p2, ' ' );
-					    if ( p == 0L )
-						err = TRUE;
-					    else
-					    {
-						*p = 0;
-						size = atoi( p2 );
-						p2 = p + 1;
-						p = strchr( p2, ' ' );
-						if ( p == 0L )
-						    err = TRUE;
-						else
-						{
-						    p = strchr( p + 1, ' ' );
-						    if ( p == 0L )
-							err = TRUE;
-						    else
-						    {
-							p = strchr( p + 1, ' ' );
-							if ( p == 0L )
-							    err = TRUE;
-							else
-							{
-							    *p = 0;
-							    creationDate = p2;
-							    p2 = p + 1;
-							    name = p2;
-							    if ( isdir )
-								name += "/";
-							}
-						    }
-						}
-					    }
-					}
-				    }
-				}
-			    }
-			    if ( !err )
-			    ipc->dirEntry( _url, name.data(), isdir, size, creationDate.data(), access.data(),
-					   owner.data(), group.data() );
-			}
-		    }
+			ipc->dirEntry( _url, de->name.data(), de->isdir, de->size,
+							de->date.data(), de->access.data(),
+						   de->owner.data(), de->group.data() );
 		}
-	    }
-	    fclose( f );
-	}
-	else
-	{
-	    unlink( outFile.data() );
-	    printf("ERROR: Could not read '%s'\n",outFile.data());
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, outFile.data(), errno );
-	    return;
-	}
-
-	// Delete the outpt file
-	unlink( outFile.data() );
+		prot->CloseDir();
     }
     else
     {
-	printf("ERROR: Not implemented\n");
+	debugT("ERROR: Not implemented\n");
 	QString err = "List ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -504,7 +341,7 @@ void KIOSlave::mount( bool _ro, const char *_fstype, const char* _dev, const cha
     else
 	sprintf( buffer, "mount -rt %s %s %s >/tmp/mnt%i\n",_fstype, _dev, _point, t );
 		
-    printf("EXEC: '%s'\n",buffer);
+    debugT("EXEC: '%s'\n",buffer);
     
     system( buffer );
 
@@ -555,14 +392,19 @@ void KIOSlave::del( const char *_url )
 
 	struct stat buff;
 	stat( su.path(), &buff );
-	if ( S_ISDIR( buff.st_mode ) )
+
+	struct stat lbuff;
+	lstat( su.path(), &buff );
+
+	// If it is a directory and not a link
+	if ( S_ISDIR( buff.st_mode ) && !S_ISLNK( lbuff.st_mode ) )
 	    erg = rmdir( su.path() );
 	else
 	    erg = unlink( su.path() );
 	
 	if ( erg != 0 )
 	{
-	    printf("ERROR: Could not delete '%s'\n",_url );
+	    debugT("ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
@@ -603,6 +445,7 @@ void KIOSlave::del( const char *_url )
     }
     else if ( strcmp( su.protocol(), "ftp" ) == 0 )
     {
+#ifdef TODO
 	// TODO: Port not implemented!!!
 	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
         QString user = su.user();
@@ -626,14 +469,15 @@ void KIOSlave::del( const char *_url )
 
 	if ( !erg )
 	{
-	    printf("ERROR: Could not delete '%s'\n",_url );
+	    debugT("ERROR: Could not delete '%s'\n",_url );
 	    ipc->fatalError( KIO_ERROR_CouldNotDelete, _url, errno );
 	    return;
 	}
+#endif
     }
     else
     {
-	printf("ERROR: Not implemented\n");
+	debugT("ERROR: Not implemented\n");
 	QString err = "Delete ";
 	err += _url;
 	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
@@ -646,12 +490,12 @@ void KIOSlave::del( const char *_url )
 
 void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwriteExistingFiles )
 {
-    printf("******** COPY '%s' to '%s\n",_src_url,_dest_url);
+    debugT("******** COPY '%s' to '%s\n",_src_url,_dest_url);
     
     KURL su( _src_url );
     if ( su.isMalformed() )
     {
-	printf("ERROR: Malformed URL '%s'\n",_src_url );
+	debugT("ERROR: Malformed URL '%s'\n",_src_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _src_url, 0 );
 	return;
     }
@@ -659,207 +503,93 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
     KURL du( _dest_url );
     if ( du.isMalformed() )
     {
-	printf("ERROR: Malformed URL '%s'\n",_dest_url );
+	debugT("ERROR: Malformed URL '%s'\n",_dest_url );
 	ipc->fatalError( KIO_ERROR_MalformedURL, _dest_url, 0 );
 	return;
     }
-    
-    /*
-     * Copy from hard disk to hard disk.
-     */
-    if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
+
+    if( ProtocolSupported(&su) && ProtocolSupported(&du) )
     {
-	struct stat buff;
-	if ( stat( du.path(), &buff ) == 0 && !_overwriteExistingFiles )
+	KProtocol *src_prot = CreateProtocol(&su);
+	KProtocol *dest_prot = CreateProtocol(&du);
+	
+	int destmode = KProtocol::WRITE;
+	if( _overwriteExistingFiles ) destmode |= KProtocol::OVERWRITE;
+	
+	if( dest_prot->Open(&du, destmode) != KProtocol::SUCCESS )
 	{
-	    ipc->fatalError( KIO_ERROR_FileExists, _dest_url, errno );	
+	    ProcessError( dest_prot, _dest_url );
 	    return;
 	}
 	
-	stat( su.path(), &buff );
-	int size = buff.st_size;
-
-	FILE *in = fopen( su.path(), "rb" );
-	if ( in != 0L )
+	debugT("Open src\n");
+	if( src_prot->Open(&su, KProtocol::READ) != KProtocol::SUCCESS )
 	{
-	    FILE * out = fopen( du.path(), "wb" );
-	    if ( out != 0L )
-	    {
-		copyDestFile = out;
-		copyDestFileName = du.path();
-		copyDestFileName.detach();
-		
-		int c = 0;
-		int last = 0;
-		int l = 1;
-		char buffer[4096];
-		while ( l > 0 )
-		{
-		    l = fread( buffer, 1, 4096, in );
-		    if ( l > 0 )
-		    {
-			printf(" l = %i\n",l);
-			fwrite( buffer, 1, l, out );
-			c += l;
-			if ( ( c * 100 / size ) != last )
-			{
-			    last = ( c * 100 / size );
-			    printf("percent %i\n", last );
-			    ipc->progress( last );
-			}
-		    }
-		}
-		
-		fclose( in );
-		fclose( out );
-		copyDestFile = 0L;
-	    }
-	    else
-	    {
-		printf(" Error: Could not write to %s\n", _dest_url );
-		ipc->fatalError( KIO_ERROR_CouldNotWrite, _dest_url, errno );
-		return;
-	    }
-	}
-	else
-	{
-	    printf(" Error: Could not read from %s\n",_src_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, _src_url, errno );
-	    return;
-	}
-    }
-    
-    else if( strcmp( su.protocol(), "http" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
-    {
-	struct stat buff;
-	if ( stat( du.path(), &buff ) == 0 && !_overwriteExistingFiles )
-	{
-	    ipc->fatalError( KIO_ERROR_FileExists, _dest_url, errno );	
-	    return;
-	}
-	
-	int sock = ::socket(PF_INET,SOCK_STREAM,0);
-	if (sock < 0)
-	{
-	    printf("ERROR:Could not make socket\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotCreateSocket, _src_url, errno );
+	    ProcessError(src_prot, _src_url);
 	    return;
 	}
 
-	struct sockaddr_in server_name;
-	struct hostent *hostinfo;
-	server_name.sin_family = AF_INET;
-	server_name.sin_port = htons( 80 );
-	hostinfo = gethostbyname( su.host() );
-  
-	if ( hostinfo == 0L )
-	{
-	    printf("ERROR: Unknown host\n");
-	    ipc->fatalError( KIO_ERROR_UnknownHost, _src_url, errno );
-	    return;
-	}
-	server_name.sin_addr = *(struct in_addr*) hostinfo->h_addr;    
-  
-	if ( 0 > ::connect( sock, (struct sockaddr*)(&server_name), sizeof( server_name ) ) )
-	{
-	    printf("ERROR:Could not make socket\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotConnect, _src_url, errno );
-	    return;
-	}
+/************************************** has to be adapted to match protocols *
+	copyDestFile = out;
+	copyDestFileName = du.path();
+	copyDestFileName.detach();
 
-	write( sock, "GET ", 4 );
-	if ( su.path()[0] == 0 )
-	    write( sock, "/", 1 );
-	else
-	    write( sock, su.path(), strlen( su.path() ) );
-	write( sock, " HTTP/1.0\n\n", 11 );
-	
-	FILE* in = fdopen( sock, "r+" );
-	if ( in == 0L )
-	{
-	    printf("ERROR:Could not open for read\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, _src_url, errno );
-	    return;
-	}
-	
-	/// Dont know the size yet
-	int size = 0xFFFFFFF;
+	[...]
 
+	copyDestFile = 0L;
+******************************************************************************/
+
+	int c = 0;
+	int last = 0;
+	int l = 1;
+	long size = src_prot->Size();
 	char buffer[4096];
-	bool header = TRUE;
-	while ( header )
+	
+	debugT("Copyloop starting\n");
+	while ( !src_prot->atEOF() )
 	{
-	    if ( fgets( buffer, 4095, in ) == NULL )
+	    debugT("read\n");
+	    if ( ( l = src_prot->Read( buffer, 4096 ) ) < 0 )
 	    {
-		printf("ERROR:Could not read header from socket\n");
-		ipc->fatalError( KIO_ERROR_CouldNotRead, _src_url, errno );
+		debugT("read error (%ld)\n",l);
+		ProcessError(src_prot, _src_url);
 		return;
 	    }
-	    printf(">> '%s'\n",buffer);
-	    
-	    if ( strncmp( buffer, "Content-length: ", 16 ) == 0 )
-		size = atoi( buffer + 16 );
-	    
-	    /* if ( strncmp( buffer, "Location: ", 10 ) == 0 )
+	    debugT("write\n");
+	    if ( dest_prot->Write(buffer, l) < l )
 	    {
-		close( sock );
-		buffer[ strlen( buffer ) - 1 ] = 0;
-		QString tmp = buffer + 10;
-		tmp = tmp.stripWhiteSpace();
-		printf("######### Trying '%s' instead\n",tmp.data() );
-		copy( tmp.data(), _dest_url );
+		ProcessError(dest_prot, _dest_url);
 		return;
-	    } */
-	    
-	    if ( buffer[0] == 10 || buffer[0] == 13 )
-		header = FALSE;
+	    }
+	    debugT("progress\n");
+	    c += l;
+	    if ( size == 0 )
+		ipc->progress( 100 );
+	    else if ( ( c * 100 / size ) != last )
+	    {
+		last = ( c * 100 / size );
+		debugT("percent %i\n", last );
+		ipc->progress( last );
+	    }
 	}
+	debugT("ready: Close\n"); 
+	src_prot->Close();
+	dest_prot->Close();
 
-	FILE * out = fopen( du.path(), "wb" );
-	if ( out != 0L )
-	{
-	    copyDestFile = out;
-	    copyDestFileName = du.path();
-	    copyDestFileName.detach();
-		    	    
-	    int c = 0;
-	    int last = 0;
-	    int l = 1;
-	    while ( c < size && !feof( in ) )
-	    {
-		if ( ( l = fread( buffer, 1, 4096, in ) ) <= 0 )
-		{
-		    printf("ERROR:Could not read from socket\n");
-		    ipc->fatalError( KIO_ERROR_CouldNotRead, _src_url, errno );
-		    return;
-		}
-		if ( fwrite( buffer, 1, l, out ) <= 0 )
-		{
-		    printf("ERROR:Could not write\n");
-		    ipc->fatalError( KIO_ERROR_CouldNotWrite, _dest_url, errno );
-		    return;
-		}
-		c += l;
-		if ( ( c * 100 / size ) != last )
-		{
-		    last = ( c * 100 / size );
-		    printf("percent %i\n", last );
-		    ipc->progress( last );
-		}
-	    }
-	    
-	    close( sock );
-	    fclose( out );
-	    copyDestFile = 0L;
-	}
-	else
-	{
-	    printf(" Error: Could not write to %s\n", _dest_url );
-	    ipc->fatalError( KIO_ERROR_CouldNotWrite, _dest_url, errno );
-	    return;
-	}
+	int permissions = src_prot->GetPermissions( su );
+	debugT("Got Permissions '%i'\n",permissions);
+	dest_prot->SetPermissions( du, permissions );
+	
+	debugT("delete\n");
+	delete src_prot;
+	delete dest_prot;
+	
+	debugT("******** COPY: Job completed using ProtocolManagement!\n");
+	ipc->done();
+	return;
     }
-    else if( strcmp( su.protocol(), "tar" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
+
+    if( strcmp( su.protocol(), "tar" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
     {
 	struct stat buff;
 	if ( stat( du.path(), &buff ) == 0 && !_overwriteExistingFiles )
@@ -891,101 +621,15 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 	    return;
 	}
     }
-    else if( strcmp( su.protocol(), "ftp" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
-    {
-	struct stat buff;
-	if ( stat( du.path(), &buff ) == 0 && !_overwriteExistingFiles )
-	{
-	    ipc->fatalError( KIO_ERROR_FileExists, _dest_url, errno );	
-	    return;
-	}
-	
-	// TODO: Port not implemented!!!
-	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
-        QString user = su.user();
-        QString passwd = su.passwd();
-	if ( user.length() <= 0 )
-	  user = FTP_LOGIN;
-	if ( passwd.length() <= 0 )
-	  passwd = FTP_PASSWD;
-	user.detach();
-	passwd.detach();
-
-	if ( !lockFTP( su.host(), 21, user.data(), passwd.data() ) )
-	    return;
-	
-	FILE * out = fopen( du.path(), "wb" );
-	if ( out == 0L )
-	{
-	    printf("ERROR: Could not write\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotWrite, du.path(), 0 );
-	    return;
-	}
-
-	copyDestFile = out;
-	copyDestFileName = du.path();
-	copyDestFileName.detach();
-	
-	int erg = ftpGet( out, su.path(), 'I', ipc );
-	
-	copyDestFile = 0L;
-	fclose( out );
-	
-	if ( !erg )
-	{
-	    printf("ERROR: CouldNotRead\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, _src_url, errno );
-	    return;
-	}
-    }
-    else if( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "ftp" ) == 0 )
-    {
-	// TODO: Port not implemented!!!
-	// if ( !lockFTP( su.host(), su.port(), FTP_LOGIN, FTP_PASSWD ) )
-        QString user = du.user();
-        QString passwd = du.passwd();
-	if ( user.length() <= 0 )
-	  user = FTP_LOGIN;
-	if ( passwd.length() <= 0 )
-	  passwd = FTP_PASSWD;
-	user.detach();
-	passwd.detach();
-
-	if ( !lockFTP( du.host(), 21, user.data(), passwd.data() ) )
-	    return;
-
-	FILE * in = fopen( su.path(), "rb" );
-	if ( in == 0L )
-	{
-	    printf("ERROR: CouldNotRead\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotRead, su.path(), errno );
-	    return;
-	}
-
-	struct stat buff;
-	stat( su.path(), &buff );
-	int size = buff.st_size;
-	
-	int erg = ftpPut( in, du.path(), 'I', ipc, size );
-	
-	fclose( in );
-
-	if ( !erg )
-	{
-	    printf("ERROR: CouldNotWrite\n");
-	    ipc->fatalError( KIO_ERROR_CouldNotWrite, _dest_url, errno );
-	    return;
-	}
-    }
     else
     {
-	printf("ERROR: Not implemented\n");
-	QString err = "Copy ";
-	err += _src_url;
-	err += " to ";
-	err += _dest_url;
-	ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
-	return;
+		debugT("ERROR: Not implemented\n");
+		QString err = "Copy ";
+		err += _src_url;
+		err += " to ";
+		err += _dest_url;
+		ipc->fatalError( KIO_ERROR_NotImplemented, err.data(), 0 );
+		return;
     }
 
     ipc->done();
@@ -993,6 +637,7 @@ void KIOSlave::copy( const char *_src_url, const char *_dest_url, bool _overwrit
 
 bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const char *_passwd )
 {
+#ifdef TODO
     if ( strcmp( _host, lockedFTPHost.data() ) == 0 && _port == lockedFTPPort &&
 	 strcmp( _login, lockedFTPLogin.data() ) == 0 && strcmp( _passwd, lockedFTPPasswd.data() ) == 0 )
 	return TRUE;
@@ -1009,16 +654,16 @@ bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const 
 
     if ( !ftpOpen( _host ) )
     {
-	printf("ERROR: Could not connect\n");
+	debugT("ERROR: Could not connect\n");
 	ipc->fatalError( KIO_ERROR_CouldNotConnect, _host, 0 );
 	return FALSE;
     }
     
-    printf("Login\n");
+    debugT("Login\n");
 	
     if ( !ftpLogin( lockedFTPLogin.data(), lockedFTPPasswd.data() ) )
     {
-	printf("ERROR: Could not login\n");
+	debugT("ERROR: Could not login\n");
 	QString err;
 	err.sprintf( "ftp://%s:%s@%s", _login, _passwd, _host );
 	ipc->fatalError( KIO_ERROR_CouldNotLogin, err.data(), 0 );
@@ -1026,10 +671,12 @@ bool KIOSlave::lockFTP( const char *_host, int _port, const char* _login, const 
     }
 
     return TRUE;
+#endif
 }
 
 bool KIOSlave::unlockFTP()
 {
+#ifdef TODO
     if ( lockedFTPHost.data() != 0L )
 	if ( lockedFTPHost.data()[0] != 0 )
 	{
@@ -1038,6 +685,7 @@ bool KIOSlave::unlockFTP()
 	}
 
     return TRUE;
+#endif
 }
 
 bool KIOSlave::lockTgz( const char *_name )
@@ -1169,7 +817,7 @@ QString KIOSlave::testLogFile( const char *_filename )
 
 void sig_handler(int _sig)
 {
-    printf("GOT TERM\n");
+    debugT("GOT TERM\n");
     if ( _sig == SIGTERM )
 	if ( slave != 0L )
 	    slave->terminate();

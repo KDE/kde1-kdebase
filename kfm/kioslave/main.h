@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #include "kioslave_ipc.h"
+#include "protocol.h"
 
 class KIOSlave : public QObject
 {
@@ -50,6 +51,8 @@ public slots:
     void getPID();
     
 protected:
+    void ProcessError(KProtocol *, const char *);
+
     /// Test an error log file
     /**
       When executing for example 'tar' or 'mount', the error output is written

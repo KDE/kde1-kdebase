@@ -14,22 +14,28 @@
 #include "root.h"
 #include "kfmprops.h"
 #include "kfmdlg.h"
+#include <config-kfm.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 
+#include <string.h>
+
 #define root KRootWidget::getKRootWidget()
 
 KRootWidget* KRootWidget::pKRootWidget;
 
-KRootManager::KRootManager( KRootWidget *_root ) : KFileManager( 0L, 0L )
+KRootManager::KRootManager( KRootWidget *_root ) : KFileManager( 0L )
 {
     rootWidget = _root;
 }
 
 void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 {
+    if ( _urls.count() == 0 )
+	return;
+    
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
@@ -47,13 +53,38 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     QStrList bindings2;
     bindings2.setAutoDelete( TRUE );
     
+    // char buffer[ 1024 ];
+    
     bool isdir = KIOServer::isDir( _urls );
+    bool istrash = KIOServer::isTrash( _urls );
+    
+    if ( istrash )
+    {
+	bool isempty = TRUE;
+        DIR *dp;
+        struct dirent *ep;
+        dp = opendir( _urls.first() + 5 );
+	if ( dp )
+	{
+	    ep=readdir( dp );
+	    ep=readdir( dp );      // ignore '.' and '..' dirent
+	    if ( readdir( dp ) == 0L ) // third file is NULL entry -> empty directory
+		isempty = FALSE;
+	    closedir( dp );
+	}
 
-    if ( isdir )
+	int id;
+	id = popupMenu->insertItem( "Open", rootWidget, SLOT( slotPopupNewView() ) );
+	id = popupMenu->insertItem( "Empty Trash Bin", rootWidget, SLOT( slotPopupEmptyTrash() ) );
+	if ( !isempty )
+	    popupMenu->setItemEnabled( id, FALSE );
+    }
+    else if ( isdir )
     {
 	int id;
 	id = popupMenu->insertItem( "New View", rootWidget, SLOT( slotPopupNewView() ) );
 	id = popupMenu->insertItem( "Copy", rootWidget, SLOT( slotPopupCopy() ) );
+	id = popupMenu->insertItem( "Move to Trash",  rootWidget, SLOT( slotPopupTrash() ) );
 	id = popupMenu->insertItem( "Delete",  rootWidget, SLOT( slotPopupDelete() ) );
     }
     else
@@ -62,6 +93,7 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	id = popupMenu->insertItem( "Open With", rootWidget, SLOT( slotPopupOpenWith() ) );
 	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( "Copy", rootWidget, SLOT( slotPopupCopy() ) );
+	id = popupMenu->insertItem( "Move to Trash",  rootWidget, SLOT( slotPopupTrash() ) );
 	id = popupMenu->insertItem( "Delete", rootWidget, SLOT( slotPopupDelete() ) );
     }
     
@@ -74,12 +106,12 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 	// If this is the first file in the list, assume that all bindings are ok
 	if ( s == _urls.getFirst() )
 	{
-	    KFileType::getBindings( bindings, s, isdir );
+	    KMimeType::getBindings( bindings, s, isdir );
 	}
 	// Take only bindings, matching all files.
 	else
 	{
-	    KFileType::getBindings( bindings2, s, isdir );
+	    KMimeType::getBindings( bindings2, s, isdir );
 	    char *b;
 	    // Look thru all bindings we have so far
 	    for ( b = bindings.first(); b != 0L; b = bindings.next() )
@@ -89,7 +121,7 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 		    bindings.removeRef( b );
 	}
     }
-    
+	
     if ( !bindings.isEmpty() )
     {
 	popupMenu->insertSeparator();
@@ -112,8 +144,32 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
 
 KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( parent, name )
 {
+    debugT("1\n");
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    debugT("2\n");
+    if ( config )
+    {
+         debugT("3\n");
+         config->setGroup("KFM Root Icons");
+         debugT("4\n");
+	 iconstyle = config->readNumEntry( "Style", 1 );
+         debugT("5\n");
+	 QString bg = config->readEntry( "Background" );
+	 if ( bg.isNull() )
+	   bg = "black";
+	 debugT("5b '%s'\n",bg.data());
+         iconBgColor.setNamedColor( bg.data() );
+         debugT("6\n");
+	 QString fg = config->readEntry( "Foreground" );
+	 if ( fg.isNull() )
+	   fg = "white";
+         labelColor.setNamedColor( fg.data() );
+	 debugT("7\n");
+    }
+
     rootDropZone = new KDNDDropZone( this , DndURL );
-    connect( rootDropZone, SIGNAL( dropAction( KDNDDropZone *) ), this, SLOT( slotDropEvent( KDNDDropZone *) ) );
+    connect( rootDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
+	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
     KApplication::getKApplication()->setRootDropZone( rootDropZone );
 
     manager = new KRootManager( this );
@@ -139,24 +195,24 @@ KRootWidget::KRootWidget( QWidget *parent=0, const char *name=0 ) : QWidget( par
 
 void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 {
-    printf("1\n");
+    debugT("1\n");
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {
-	printf("2\n");
+	debugT("2\n");
 	KRootIcon *icon = findIcon( s );
 	if ( icon != 0L )
 	{
-	    printf("3\n");
+	    debugT("3\n");
 	    icon->move( icon->x() + p.x() - icon->getDndStartPos().x(),
 			icon->y() + p.y() - icon->getDndStartPos().y() );
 	}
-	printf("4\n");
+	debugT("4\n");
     }
 
-    printf("5\n");
+    debugT("5\n");
     saveLayout();
-    printf("6\n");
+    debugT("6\n");
 }
 
 QString KRootWidget::getSelectedURLs()
@@ -202,12 +258,28 @@ void KRootWidget::loadLayout()
 	    fgets( buffer, 1024, f );
 	    if ( buffer[ 0 ] != 0 )
 	    {
-		QString s = (const char*)buffer;	    
-		StringTokenizer st( s, ";" );
+		debugT("I am here\n");
+		const char *p = buffer;
+		char *p2 = strchr( p, ';' );
+		*p2++ = 0;
+		QString u = p;
+		p = p2;
+		p2 = strchr( p, ';' );
+		*p2++ = 0;
+		QString t = p;
+		p = p2;
+		p2 = strchr( p, ';' );
+		*p2++ = 0;
+		QString x = p;
+		p = p2;
+		p2 = strchr( p, ';' );
+		*p2++ = 0;
+		QString y = p;
+		/* StringTokenizer st( s, ";" );
 		QString u = st.nextToken();
 		QString t = st.nextToken();
 		QString x = st.nextToken();
-		QString y = st.nextToken();
+		QString y = st.nextToken(); */
 		KRootLayout *l = new KRootLayout( u.data(), atoi( t.data() ), atoi( x.data() ), atoi( y.data() ) );
 		layoutList.append( l );
 	    }
@@ -250,7 +322,7 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
 
     KRootIcon *icon;
 
-    printf("Searching free place %i,%i\n",_width,_height);
+    debugT("Searching free place %i,%i\n",_width,_height);
     
     for ( int x = 0; x <= dwidth - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
     {
@@ -260,7 +332,7 @@ QPoint KRootWidget::findFreePlace( int _width, int _height )
 	    
 	    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
 	    {
-		printf("Testing %i|%i against %i|%i '%s'\n",x,y,icon->x(),icon->y(),icon->getURL() );
+		debugT("Testing %i|%i against %i|%i '%s'\n",x,y,icon->x(),icon->y(),icon->getURL() );
 		QRect r1( x, y, _width, _height );
 		QRect r2( icon->x(), icon->y(), icon->QWidget::width(),icon->QWidget::height() );
 		if ( r1.intersects( r2 ) == FALSE )
@@ -293,7 +365,7 @@ void KRootWidget::sortIcons()
     for ( ; it.current(); ++it )
 	if ( it.current()->y() == -200 )
 	{
-	    printf("Moving '%s'\n",it.current()->getURL() );
+	    debugT("Moving '%s'\n",it.current()->getURL() );
 	    QPoint p = findFreePlace( it.current()->QWidget::width(), it.current()->QWidget::height() );
 	    it.current()->move( p );
 	}
@@ -315,7 +387,7 @@ void KRootWidget::update()
     KURL u ( desktopDir.data() );
     if ( u.isMalformed() )
     {
-	printf("Internal Error: desktopDir is malformed\n");
+	debugT("Internal Error: desktopDir is malformed\n");
 	return;
     }
     
@@ -323,12 +395,12 @@ void KRootWidget::update()
     struct dirent *ep;
     
     dp = opendir( u.path() );
-    printf("%i : %i %i %i %i %i %i\n",errno, EACCES,EMFILE,ENFILE,ENOENT,ENOMEM,ENOTDIR);
+    debugT("%i : %i %i %i %i %i %i\n",errno, EACCES,EMFILE,ENFILE,ENOENT,ENOMEM,ENOTDIR);
     
     if ( dp == NULL )
     {
-	printf("'%s'\n",u.path());
-	printf("ERROR: Could not read desktop directory '%s'\nRun 'setupKFM'\n", desktopDir.data());
+	debugT("'%s'\n",u.path());
+	debugT("ERROR: Could not read desktop directory '%s'\nRun 'setupKFM'\n", desktopDir.data());
 	exit(1);
     }
     
@@ -336,12 +408,13 @@ void KRootWidget::update()
     found_icons.setAutoDelete( FALSE );
 
     // go thru all files in ~/Desktop.
-    while ( ( ep = readdir( dp ) ) )
+    while ( ( ep = readdir( dp ) ) != 0L )
     {
 	// We are not interested in '.' and '..'
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{   
 	    KRootIcon *icon;
+	    // bool ok = false;
 
 	    QString file = desktopDir;
 	    file.detach();
@@ -353,7 +426,7 @@ void KRootWidget::update()
 	    if ( icon == 0L )
 	    {
 		KRootIcon *icon;
-		KFileType *typ = KFileType::findType( file.data() );
+		KMimeType *typ = KMimeType::findType( file.data() );
 		QPoint p = findLayout( file );
 		if ( p.x() == 0 && p.y() == 0 )
 		{
@@ -435,7 +508,7 @@ void KRootWidget::slotDropEvent( KDNDDropZone *_zone )
 	id = popupMenu->insertItem( "Link", this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
-	printf("ERROR: Can not accept drop\n");
+	debugT("ERROR: Can not accept drop\n");
 	return;
     }
 
@@ -447,18 +520,18 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
     KURL u ( desktopDir.data() );
     if ( u.isMalformed() )
     {
-	printf("Internal Error: desktopDir is malformed\n");
+	debugT("Internal Error: desktopDir is malformed\n");
 	exit(2);
     }
     
     DIR *dp;
     struct dirent *ep;
-    printf("Opening '%s'\n",u.path());
+    debugT("Opening '%s'\n",u.path());
     
     dp = opendir( u.path() );
     if ( dp == NULL )
     {
-	printf("ERROR: Could not read desktop directory\n");
+	debugT("ERROR: Could not read desktop directory\n");
 	noUpdate = FALSE;
 	return;
     }
@@ -468,12 +541,13 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 
     // go thru all files in ~/Desktop. Search for new files. We assume that they
     // are a result of the drop. This may be wrong, but it is the best method yet.
-    while ( ( ep = readdir( dp ) ) )
+    while ( ( ep = readdir( dp ) ) != 0L )
     {
 	// We are not interested in '.' and '..'
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{   
 	    KRootIcon *icon;
+	    // bool ok = false;
 
 	    QString file = desktopDir;
 	    file.detach();
@@ -484,7 +558,7 @@ void KRootWidget::dropUpdateIcons( int _x, int _y )
 	    // This icon is missing on the screen.
 	    if ( icon == 0L )
 	    {
-		KFileType *typ = KFileType::findType( file.data() );
+		KMimeType *typ = KMimeType::findType( file.data() );
 		QPixmap pix = typ->getPixmap( file.data() );
 		KRootIcon *icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, _x - pix.width() / 2,
 						 _y - pix.height() / 2 );
@@ -509,7 +583,7 @@ KIORootJob::KIORootJob( KRootWidget *_root, int _x, int _y ) : KIOJob()
     dropFileY = _y;
 }
 
-void KIORootJob::slotDropNotify( int, const char *_url )
+void KIORootJob::slotDropNotify( int , const char *_url )
 {
     QString u = _url;
     u.detach();
@@ -570,7 +644,33 @@ void KRootWidget::slotFilesChanged( const char *_url )
 	tmp += "/";
     
     if ( tmp == desktopDir )
+    {
 	update();
+	return;
+    }
+    
+    // Calculate the path of the trash bin
+    QString d = getenv( "HOME" );
+    d += "/Desktop/Trash/";
+
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return;
+    
+    // Update the icon for the trash bin ?
+    if ( strcmp( u.protocol(), "file" ) == 0L && strcmp( u.path(), d.data() ) == 0L )
+    {
+	KRootIcon *icon;
+	// Find the icon representing the trash bin
+	for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+	{
+	    QString t = icon->getURL();
+	    if ( t.right(1) != "/" )
+		t += "/";
+	    if ( t.right( 7 ) == "/Trash/" )
+		icon->updatePixmap();
+	}
+    }
 }
 
 void KRootWidget::setPopupFiles( QStrList &_files )
@@ -580,29 +680,47 @@ void KRootWidget::setPopupFiles( QStrList &_files )
 
 void KRootWidget::slotPopupOpenWith()
 {
-    if ( popupFiles.count() != 1 )
-    {
-	QMessageBox::message( "KFM Error", "Opening multiple files not implemented" );
-       return;
-    }
-    DlgLineEntry l( "Open With:", "", this );
+    DlgLineEntry l( "Open With:", "", this, TRUE );
     if ( l.exec() )
     {
 	QString pattern = l.getText();
 	if ( pattern.length() == 0 )
 	    return;
     }
-    KURL file = popupFiles.first();
+
     QString cmd;
-    cmd.sprintf( "%s %s &", l.getText(), file.path() );
-    system( cmd.data() );
+    cmd = l.getText();
+    cmd += " ";
+
+    QString tmp;
+    
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    {
+	cmd += "\"";
+	KURL file = popupFiles.first();    
+	if ( strcmp( file.protocol(), "file" ) == 0L )
+	{
+	    tmp = KIOServer::shellQuote( file.path() ).copy();
+	    cmd += tmp.data();
+	}
+	else
+	{
+	    tmp = KIOServer::shellQuote( file.url().data() ).copy();
+	    cmd += tmp.data();
+	}
+	cmd += "\" ";
+    }
+    debugT("Executing '%s'\n", cmd.data());
+    
+    KMimeType::runCmd( cmd.data() );
 }              
 
 void KRootWidget::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
     {
-	printf("ERROR: Can not open properties for multiple files\n");
+	debugT("ERROR: Can not open properties for multiple files\n");
 	return;
     }
     
@@ -627,18 +745,35 @@ void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name
 
 void KRootWidget::slotPopupCopy()
 {
-    printf(":::::::::::::::::::: COPY ::::::::::::::::::::\n");
+    debugT(":::::::::::::::::::: COPY ::::::::::::::::::::\n");
     
-    KFileWindow::clipboard.clear();
+    KfmView::clipboard.clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
-	KFileWindow::clipboard.append( s );
+	KfmView::clipboard.append( s );
+}
+
+void KRootWidget::slotPopupTrash()
+{
+    KIOJob * job = new KIOJob;
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+      debugT("&&> '%s'\n",s);
+    
+    QString dest = "file:";
+    dest += QDir::homeDirPath().data();
+    dest += "/Desktop/Trash/";
+    job->move( popupFiles, dest );
 }
 
 void KRootWidget::slotPopupDelete()
 {
     KIOJob * job = new KIOJob;
-    job->del( popupFiles );
+ 
+    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    
+    if ( ok )
+	job->del( popupFiles );
 }
 
 void KRootWidget::slotPopupNewView()
@@ -646,9 +781,44 @@ void KRootWidget::slotPopupNewView()
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
     {
-	KFileWindow *m = new KFileWindow( 0L, 0L, s );
+	KfmGui *m = new KfmGui( 0L, 0L, s );
 	m->show();
     }
+}
+
+void KRootWidget::slotPopupEmptyTrash()
+{
+    QString d = getenv( "HOME" );
+    d += "/Desktop/Trash";
+
+    QStrList trash;
+    
+    DIR *dp;
+    struct dirent *ep;
+    dp = opendir( d );
+    if ( dp )
+    {
+	while ( ( ep = readdir( dp ) ) != 0L )
+	{
+	    if ( strcmp( ep->d_name, "." ) != 0L && strcmp( ep->d_name, ".." ) != 0L )
+	    {
+		QString t = "file:";
+		t += d.data();
+		t += "/";
+		t += ep->d_name;
+		trash.append( t.data() );
+	    }
+	}
+	closedir( dp );
+    }
+    else
+    {
+	QMessageBox::message( "KFM Error", "Could not access Trash Bin" );
+	return;
+    }
+    
+    KIOJob * job = new KIOJob;
+    job->del( trash );
 }
 
 KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) :
@@ -691,7 +861,7 @@ void KRootIcon::init()
     
     int pos = url.findRev( "/" );
     file = url.mid( pos + 1, url.length() );
-    if ( file.find( ".kdelnk" ) == file.length() - 7 )
+    if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
     file.detach();
     
@@ -702,14 +872,14 @@ void KRootIcon::init()
     int w = width;
     if ( pixmap.width() > w )
     {
-	w = pixmap.width() + 4;
+	w = pixmap.width() + 8;
 	textXOffset = ( w - width ) / 2;
-	pixmapXOffset = 2;
+	pixmapXOffset = 4;
     }
     else
     {
-	w += 4;
-	textXOffset = 2;
+	w += 8;
+	textXOffset = 4;
 	pixmapXOffset = ( w - pixmap.width() ) / 2;
     }
 
@@ -723,11 +893,11 @@ void KRootIcon::init()
     QPainter p2;
     p2.begin( &mask );
     p2.setFont( font() );
-
-    // Patch for background in icon text
-    // p2.drawText( textXOffset, textYOffset, file );
-    p2.fillRect( textXOffset-1, textYOffset-ascent-1,
-		 width+2, ascent+descent+2, color1 );   
+    
+    if ( root->iconStyle() == 1 )
+       p2.drawText( textXOffset, textYOffset, file );
+    else
+       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
 
     if ( pixmap.mask() == 0L )
 	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap.width(), pixmap.height(), color1 );
@@ -736,7 +906,7 @@ void KRootIcon::init()
     
     p2.end();
     
-    setBackgroundColor( QColor("blue2") );
+    setBackgroundColor( root->iconBackground() );     
 
     this->width = w;
     this->height = pixmap.height() + 5 + ascent + descent + 4;
@@ -744,19 +914,19 @@ void KRootIcon::init()
 
 void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 {	
-    printf("-1 Drop Event\n");
+    debugT("-1 Drop Event\n");
     
     QPoint p( _zone->getMouseX(), _zone->getMouseY() );
 
-    printf("-2\n");
+    debugT("-2\n");
     
     QStrList & list = _zone->getURLList();
 
-    printf("-3\n");
+    debugT("-3\n");
     // Dont drop icons on themselves.
     if ( list.count() != 0 )
     {
-	printf("-4\n");
+	debugT("-4\n");
 	char *s;
 	for ( s = list.first(); s != 0L; s = list.next() )
 	{
@@ -767,10 +937,21 @@ void KRootIcon::slotDropEvent( KDNDDropZone *_zone )
 	    }
 	}
     }
+
+    if ( KIOServer::isTrash( url.data() ) )
+    {
+	KIOJob * job = new KIOJob;
+
+	QString dest = "file:";
+	dest += QDir::homeDirPath().data();
+	dest += "/Desktop/Trash/";
+	job->move( list, dest );
+	return;
+    }
     
-    printf("-5\n");
+    debugT("-5\n");
     root->getManager()->dropPopupMenu( _zone, url.data(), &p );
-    printf("-6\n");
+    debugT("-6\n");
 }
 
 void KRootIcon::resizeEvent( QResizeEvent * )
@@ -786,7 +967,7 @@ void KRootIcon::paintEvent( QPaintEvent * )
     QPainter p;
     p.begin( this );
 
-    p.setPen( white );
+    p.setPen( root->labelForeground() );   
     p.drawText( textXOffset, textYOffset, file );
 
     p.end();
@@ -814,7 +995,9 @@ void KRootIcon::mousePressEvent( QMouseEvent *_mouse )
 
 void KRootIcon::mouseDoubleClickEvent( QMouseEvent * )
 {
-    root->getManager()->openURL( url.data() );
+    // root->getManager()->openURL( url.data() );
+    pressed = false;
+    debugT ("Doubleclick!\n");     
 }
 
 /*
@@ -829,6 +1012,10 @@ void KRootIcon::dragEndEvent()
 
 void KRootIcon::dndMouseReleaseEvent( QMouseEvent * )
 {
+    if (pressed == false)
+      return;
+    root->getManager()->openURL( url.data() );                          
+
     pressed = false;
 }
 
@@ -870,7 +1057,7 @@ void KRootIcon::dndMouseMoveEvent( QMouseEvent *_mouse )
 
 void KRootIcon::updatePixmap()
 {
-    KFileType *typ = KFileType::findType( url.data() );
+    KMimeType *typ = KMimeType::findType( url.data() );
     QString f = typ->getPixmapFile( url.data() );
     if ( f == pixmapFile )
 	return;
@@ -878,7 +1065,7 @@ void KRootIcon::updatePixmap()
     QToolTip::remove( this );
     initToolTip();
     
-    printf("Changing from '%s' to '%s\n",pixmapFile.data(),f.data());
+    debugT("Changing from '%s' to '%s\n",pixmapFile.data(),f.data());
     
     pixmapFile = f.data();
     pixmapFile.detach();

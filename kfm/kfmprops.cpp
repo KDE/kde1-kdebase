@@ -16,8 +16,9 @@
 #include "kfmprops.h"
 #include "kbind.h"
 #include "kioserver.h"
-#include "kfmwin.h"
+#include "kfmgui.h"
 #include "root.h"
+#include <config-kfm.h>
 
 Properties::Properties( const char *_url ) : QObject()
 {
@@ -128,6 +129,12 @@ void Properties::insertPages()
 	pageList.append( p );
     }
 
+    if ( DevicePropsPage::supports( kurl ) )
+    {
+	PropsPage *p = new DevicePropsPage( this );
+	tab->addTab( p, p->getTabName() );
+	pageList.append( p );
+    }
 }
 
 
@@ -138,6 +145,17 @@ PropsPage::PropsPage( Properties *_props ) : QWidget( _props->getTab(), 0L )
 
 FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 {
+    QString d1 = getenv( "HOME" );
+    d1 += "/Desktop/Trash/";
+    QString d2 = getenv( "HOME" );
+    d2 += "/Desktop/Trash";
+    bool isTrash = FALSE;
+    // is it the trash bin ?
+    if ( strcmp( properties->getKURL()->protocol(), "file" ) == 0L &&
+	 ( strcmp( properties->getKURL()->path(), d1 ) == 0L ||
+	   strcmp( properties->getKURL()->path(), d2 ) == 0L ) )
+	isTrash = TRUE;
+    
     struct stat buff;
     stat( properties->getKURL()->path(), &buff );
 
@@ -154,6 +172,8 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     name = new QLineEdit( this );
     name->setGeometry( 10, y, 200, 30 );
     name->setText( properties->getKURL()->filename() );
+    if ( isTrash )
+	name->setEnabled( FALSE );
     oldName = properties->getKURL()->filename();
     oldName.detach();
     y += 35;
@@ -170,7 +190,13 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     y += 10;
 
-    if ( S_ISDIR( buff.st_mode ) )
+    if ( isTrash )
+    {
+	l = new QLabel( "Is the Trash Bin", this );
+	l->setGeometry( 10, y, 200, 20 );
+	y += 25;
+    }
+    else if ( S_ISDIR( buff.st_mode ) )
     {
 	l = new QLabel( "Is a Directory", this );
 	l->setGeometry( 10, y, 200, 20 );
@@ -208,15 +234,15 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
     
     char buffer[1024];
     struct tm *t = localtime( &lbuff.st_atime );
-    sprintf( buffer, "Last Access: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,t->tm_mday,
-	     t->tm_mon + 1,t->tm_year + 1900 );   
+    sprintf( buffer, "Last Access: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,
+	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );             
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
 
     t = localtime( &lbuff.st_mtime );
     sprintf( buffer, "Last Modified: %02i:%02i %02i.%02i.%04i", t->tm_hour,t->tm_min,
-	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );      
+	     t->tm_mday,t->tm_mon + 1,t->tm_year + 1900 );          
     l = new QLabel( buffer, this );
     l->setGeometry( 10, y, 200, 20 );
     y += 25;
@@ -259,7 +285,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     struct passwd * user = getpwuid( buff.st_uid );
     struct group * g = getgrgid( buff.st_gid );
     
-    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO | S_ISUID | S_ISGID | S_ISVTX );    
+    permissions = buff.st_mode & ( S_IRWXU | S_IRWXG | S_IRWXO );
     strOwner = "";
     strGroup = "";
     if ( user != 0L )
@@ -274,6 +300,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     }    
 
     QLabel *l;
+    // QBoxLayout *bl2;
     int y = 10;
     
     l = new QLabel( "Access permissions", this );
@@ -290,8 +317,9 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permUX->setChecked( ( buff.st_mode & S_IXUSR ) == S_IXUSR );
     permUS = new QCheckBox( "Set UID", this );
     permUS->setGeometry( 310, y, 100, 30 );
-    permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );       
+    permUS->setChecked( ( buff.st_mode & S_ISUID ) == S_ISUID );      
     y += 35;
+
     permGR = new QCheckBox( "Group Read", this );
     permGR->setGeometry( 10, y, 100, 30 );
     permGR->setChecked( ( buff.st_mode & S_IRGRP ) == S_IRGRP );
@@ -303,7 +331,8 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permGX->setChecked( ( buff.st_mode & S_IXGRP ) == S_IXGRP );
     permGS = new QCheckBox( "Set GID ", this );
     permGS->setGeometry( 310, y, 100, 30 );
-    permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );      
+    permGS->setChecked( ( buff.st_mode & S_ISGID ) == S_ISGID );   
+
     y += 35;
     permOR = new QCheckBox( "Others Read", this );
     permOR->setGeometry( 10, y, 100, 30 );
@@ -316,7 +345,7 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props ) : Props
     permOX->setChecked( ( buff.st_mode & S_IXOTH ) == S_IXOTH );
     permOS = new QCheckBox( "Sticky", this );
     permOS->setGeometry( 310, y, 100, 30 );
-    permOS->setChecked( ( buff.st_mode & S_ISVTX ) == S_ISVTX );       
+    permOS->setChecked( ( buff.st_mode & S_ISVTX ) == S_ISVTX );    
     y += 35;
 
     y += 10;
@@ -353,7 +382,7 @@ void FilePermissionsPropsPage::applyChanges()
     if ( permUX->isChecked() )
 	p |= S_IXUSR;
     if ( permUS->isChecked() )
-        p |= S_ISUID;    
+        p |= S_ISUID;      
     if ( permGR->isChecked() )
 	p |= S_IRGRP;
     if ( permGW->isChecked() )
@@ -361,7 +390,7 @@ void FilePermissionsPropsPage::applyChanges()
     if ( permGX->isChecked() )
 	p |= S_IXGRP;
     if ( permGS->isChecked() )
-        p |= S_ISGID;       
+        p |= S_ISGID;                        
     if ( permOR->isChecked() )
 	p |= S_IROTH;
     if ( permOW->isChecked() )
@@ -369,7 +398,7 @@ void FilePermissionsPropsPage::applyChanges()
     if ( permOX->isChecked() )
 	p |= S_IXOTH;
     if ( permOS->isChecked() )
-        p |= S_ISVTX;       
+        p |= S_ISVTX;          
 
     if ( p != permissions )
     {
@@ -386,12 +415,12 @@ void FilePermissionsPropsPage::applyChanges()
 	struct group* g = getgrnam( grp->text() );
 	if ( pw == 0L )
 	{
-	    printf(" ERROR: No user %s \n",owner->text() );
+	    debugT(" ERROR: No user %s \n",owner->text() );
 	    return;
 	}
 	if ( g == 0L )
 	{
-	    printf(" ERROR: No group %s \n",grp->text() );
+	    debugT(" ERROR: No group %s \n",grp->text() );
 	    return;
 	}
 	chown( properties->getKURL()->path(), pw->pw_uid, g->gr_gid );
@@ -480,10 +509,10 @@ ExecPropsPage::ExecPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !termStr.isNull() )
 	terminalCheck->setChecked( termStr == "1" );
     if ( iconStr.isNull() )
-	iconStr = KFileType::getExecutablePixmap();
+	iconStr = KMimeType::getExecutablePixmap();
     
     // Load all pixmaps files in the combobox
-    QDir d( KFileType::getIconPath() );
+    QDir d( KMimeType::getIconPath() );
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );      // create list iterator
     QFileInfo *fi;                          // pointer for traversing
@@ -602,7 +631,7 @@ void ExecPropsPage::drawIcon()
 	return;
     
     const char *text = iconBox->text( i );
-    QString file = KFileType::getIconPath();
+    QString file = KMimeType::getIconPath();
     file += "/";
     file += text;
     
@@ -652,10 +681,10 @@ URLPropsPage::URLPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !URLStr.isNull() )
 	URLEdit->setText( URLStr.data() );
     if ( iconStr.isNull() )
-	iconStr = KFileType::getDefaultPixmap();
+	iconStr = KMimeType::getDefaultPixmap();
     
     // Load all pixmaps files in the combobox
-    QDir d( KFileType::getIconPath() );
+    QDir d( KMimeType::getIconPath() );
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );      // create list iterator
     QFileInfo *fi;                          // pointer for traversing
@@ -756,7 +785,7 @@ void URLPropsPage::drawIcon()
 	return;
     
     const char *text = iconBox->text( i );
-    QString file = KFileType::getIconPath();
+    QString file = KMimeType::getIconPath();
     file += "/";
     file += text;
     
@@ -770,7 +799,7 @@ void URLPropsPage::drawIcon()
     erase( 140, 90, 64, 64 );
     QPainter painter;
     painter.begin( this );
-    painter.setClipRect( 140, 90, 32, 32 );
+    painter.setClipRect( 140, 90, 64, 64 );
     painter.drawPixmap( QPoint( 140, 90 ), pixmap );
     painter.end();
 }
@@ -811,10 +840,10 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     }
     
     if ( iconStr.isNull() )
-	iconStr = KFileType::getFolderPixmap();
+	iconStr = KMimeType::getFolderPixmap();
     
     // Load all pixmaps files in the combobox
-    QDir d( KFileType::getIconPath() );
+    QDir d( KMimeType::getIconPath() );
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );      // create list iterator
     QFileInfo *fi;                          // pointer for traversing
@@ -846,7 +875,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     connect( iconBox, SIGNAL( activated( int ) ), this, SLOT( slotIconChanged( int ) ) );
 
     // Load all wallpapers in the combobox
-    tmp = getenv( "KDEDIR" );
+    tmp = kapp->kdedir();
     tmp += "/lib/pics/wallpapers";
     QDir d2( tmp.data() );
     list = d2.entryInfoList();
@@ -884,6 +913,17 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
 
 bool DirPropsPage::supports( KURL *_kurl )
 {
+    // Is it the trash bin ?
+    QString d1 = getenv( "HOME" );
+    d1 += "/Desktop/Trash/";
+    QString d2 = getenv( "HOME" );
+    d2 += "/Desktop/Trash";
+
+    if ( strcmp( _kurl->protocol(), "file" ) == 0L &&
+	 ( strcmp( _kurl->path(), d1 ) == 0L ||
+	   strcmp( _kurl->path(), d2 ) == 0L ) )
+	return FALSE;
+    
     if ( strcmp( _kurl->protocol(), "file" ) != 0 )
 	return FALSE;
 
@@ -943,7 +983,7 @@ void DirPropsPage::applyChanges()
 	return;
     tmp = tmp.left( i + 1 );
 
-    printf("$$$$$$$$$$$$$ Sending notify to '%s'\n", tmp.data());
+    debugT("$$$$$$$$$$$$$ Sending notify to '%s'\n", tmp.data());
     KIOServer::sendNotify( tmp.data() );
 }
 
@@ -974,7 +1014,7 @@ void DirPropsPage::drawIcon()
     }
     
     const char *text = iconBox->text( i );
-    QString file = KFileType::getIconPath();
+    QString file = KMimeType::getIconPath();
     file += "/";
     file += text;
     
@@ -1009,20 +1049,20 @@ void DirPropsPage::drawWallPaper()
 	return;
     }
 
-    QString file = getenv( "KDEDIR" );
+    QString file = kapp->kdedir();
     file += "/lib/pics/wallpapers/";
     file += text;
     
     if ( file != wallFile )
     {
-	printf("Loading WallPaper '%s'\n",file.data());
+	debugT("Loading WallPaper '%s'\n",file.data());
 	wallFile = file.data();
 	wallFile.detach();	
 	wallPixmap.load( file.data() );
     }
     
     if ( wallPixmap.isNull() )
-	printf("Could not load\n");
+	debugT("Could not load\n");
     
     erase( 140, 90, 128, 128 );
     QPainter painter;
@@ -1064,8 +1104,8 @@ void DirPropsPage::slotApplyGlobal()
 
     // Notify all opened windows
     QStrList strlist;
-    QList<KFileWindow>& list = KFileWindow::getWindowList();
-    KFileWindow *win;
+    QList<KfmGui>& list = KfmGui::getWindowList();
+    KfmGui *win;
     for ( win = list.first(); win != 0L; win = list.next() )
 	strlist.append( win->getURL() );
     
@@ -1157,7 +1197,7 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
     commentStr = config.readEntry( "Comment" );
     binaryPatternStr = config.readEntry( "BinaryPattern" );
     protocolsStr = config.readEntry( "Protocols" );
-    extensionsStr = config.readEntry( "Extensions" );
+    extensionsStr = config.readEntry( "MimeType" );
 
     if ( !commentStr.isNull() )
 	commentEdit->setText( commentStr.data() );
@@ -1189,13 +1229,13 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 	    protocolINFO->setChecked( TRUE );
     }
 
-    KFileType *ft;
-    for ( ft = KFileType::getFirstFileType(); ft != 0L; ft = KFileType::getNextFileType() )
+    KMimeType *ft;
+    for ( ft = KMimeType::getFirstMimeType(); ft != 0L; ft = KMimeType::getNextMimeType() )
     {
-	const char *name = ft->getName();
+	const char *name = ft->getMimeType();
 	bool insert = TRUE;
 	
-	for ( int i = 0; i < extensionsList->count(); i++ )
+	for ( uint i = 0; i < extensionsList->count(); i++ )
 	    if ( strcmp( name, extensionsList->text( i ) ) == 0 )
 		insert = FALSE;
 	
@@ -1271,23 +1311,23 @@ void ApplicationPropsPage::applyChanges()
     config.writeEntry( "Protocols", protocolsStr.data() );
 
     extensionsStr = "";
-    for ( int i = 0; i < extensionsList->count(); i++ )
+    for ( uint i = 0; i < extensionsList->count(); i++ )
     {
 	extensionsStr += extensionsList->text( i );
 	extensionsStr += ";";
     }
-    config.writeEntry( "Extensions", extensionsStr.data() );
+    config.writeEntry( "MimeType", extensionsStr.data() );
     
     config.sync();
     f.close();
 
-    KFileType::clearAll();
-    KFileType::init();
+    KMimeType::clearAll();
+    KMimeType::init();
     KRootWidget::getKRootWidget()->update();
 
-    KFileWindow *win;
-    for ( win = KFileWindow::getWindowList().first(); win != 0L; win = KFileWindow::getWindowList().next() )
-	win->slotViewUpdate();
+    KfmGui *win;
+    for ( win = KfmGui::getWindowList().first(); win != 0L; win = KfmGui::getWindowList().next() )
+	win->updateView();
 }
 
 void ApplicationPropsPage::slotAddExtension()
@@ -1321,9 +1361,10 @@ void ApplicationPropsPage::slotDelExtension()
 BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
 {
     patternEdit = new QLineEdit( this, "LineEdit_1" );
-    commentEdit = new QLineEdit( this, "LineEdit_1" );
+    commentEdit = new QLineEdit( this, "LineEdit_3" );
+    mimeEdit = new QLineEdit( this, "LineEdit_3" );
     iconBox = new QComboBox( FALSE, this, "ComboBox_1" );
-    appBox = new QComboBox( FALSE, this, "ComboBox_1" );
+    appBox = new QComboBox( FALSE, this, "ComboBox_2" );
 
     patternEdit->raise();
     patternEdit->setGeometry( 10, 40, 210, 30 );
@@ -1334,24 +1375,32 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     commentEdit->setGeometry( 10, 100, 210, 30 );
     commentEdit->setMaxLength( 256 );
 
+    mimeEdit->raise();
+    mimeEdit->setGeometry( 10, 160, 210, 30 );
+    mimeEdit->setMaxLength( 256 );
+
     QLabel* tmpQLabel;
     tmpQLabel = new QLabel( this, "Label_1" );
     tmpQLabel->setGeometry( 10, 10, 300, 30 );
     tmpQLabel->setText( "Pattern ( example: *.html;*.HTML; )" );
 
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 130, 100, 30 );
+    tmpQLabel->setGeometry( 180, 210, 100, 30 );
     tmpQLabel->setText( "Icon" );
+
+    tmpQLabel = new QLabel( this, "Label_2" );
+    tmpQLabel->setGeometry( 10, 130, 100, 30 );
+    tmpQLabel->setText( "Mime Type" );
 
     tmpQLabel = new QLabel( this, "Label_3" );
     tmpQLabel->setGeometry( 10, 70, 120, 30 );
     tmpQLabel->setText( "Comment" );
     
     iconBox->raise();
-    iconBox->setGeometry( 10, 160, 120, 30 );
+    iconBox->setGeometry( 180, 240, 120, 30 );
 
     tmpQLabel = new QLabel( this, "Label_2" );
-    tmpQLabel->setGeometry( 10, 210, 200, 30 );
+    tmpQLabel->setGeometry( 10, 210, 170, 30 );
     tmpQLabel->setText( "Default Application" );
 
     appBox->raise();
@@ -1368,6 +1417,7 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     appStr = config.readEntry( "DefaultApp" );
     iconStr = config.readEntry( "Icon" );
     commentStr = config.readEntry( "Comment" );
+    mimeStr = config.readEntry( "MimeType" );
 
     if ( !patternStr.isNull() )
 	patternEdit->setText( patternStr.data() );
@@ -1376,10 +1426,12 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     if ( !commentStr.isNull() )
 	commentEdit->setText( commentStr.data() );
     if ( iconStr.isNull() )
-	iconStr = KFileType::getDefaultPixmap();
+	iconStr = KMimeType::getDefaultPixmap();
+    if ( !mimeStr.isNull() )
+	mimeEdit->setText( mimeStr.data() );
     
     // Load all pixmaps files in the combobox
-    QDir d( KFileType::getIconPath() );
+    QDir d( KMimeType::getIconPath() );
     const QFileInfoList *list = d.entryInfoList();
     QFileInfoListIterator it( *list );      // create list iterator
     QFileInfo *fi;                          // pointer for traversing
@@ -1409,7 +1461,7 @@ BindingPropsPage::BindingPropsPage( Properties *_props ) : PropsPage( _props )
     index = -1;
     i = 0;
     const char *p;
-    for ( p = KFileBind::getFirstApplication(); p != 0L; p = KFileBind::getNextApplication() )
+    for ( p = KMimeBind::getFirstApplication(); p != 0L; p = KMimeBind::getNextApplication() )
     {
 	if ( appStr.data() != 0L )
 	    if ( strcmp( p, appStr.data() ) == 0 )
@@ -1456,7 +1508,7 @@ bool BindingPropsPage::supports( KURL *_kurl )
     QString type = config.readEntry( "Type" );
     if ( type.isNull() )
 	return FALSE;
-    if ( type != "FileType" )
+    if ( type != "MimeType" )
 	return FALSE;
     
     return TRUE;
@@ -1477,9 +1529,9 @@ void BindingPropsPage::applyChanges()
 	if ( tmp.right(1) != ";" )
 	    tmp += ";";
     config.writeEntry( "Patterns", tmp.data() );
-
     config.writeEntry( "Comment", commentEdit->text() );
-
+    config.writeEntry( "MimeType", mimeEdit->text() );
+    
     if ( iconBox->currentItem() != -1 )
 	config.writeEntry( "DefaultApp", appBox->text( appBox->currentItem() ) );
     
@@ -1490,13 +1542,13 @@ void BindingPropsPage::applyChanges()
     config.sync();
     f.close();
 
-    KFileType::clearAll();
-    KFileType::init();
+    KMimeType::clearAll();
+    KMimeType::init();
     KRootWidget::getKRootWidget()->update();
 
-    KFileWindow *win;
-    for ( win = KFileWindow::getWindowList().first(); win != 0L; win = KFileWindow::getWindowList().next() )
-	win->slotViewUpdate();
+    KfmGui *win;
+    for ( win = KfmGui::getWindowList().first(); win != 0L; win = KfmGui::getWindowList().next() )
+	win->updateView();
 }
 
 void BindingPropsPage::slotIconChanged( int )
@@ -1517,7 +1569,7 @@ void BindingPropsPage::drawIcon()
 	return;
     
     const char *text = iconBox->text( i );
-    QString file = KFileType::getIconPath();
+    QString file = KMimeType::getIconPath();
     file += "/";
     file += text;
     
@@ -1528,12 +1580,269 @@ void BindingPropsPage::drawIcon()
 	pixmap.load( file.data() );
     }
     
-    erase( 140, 160, 64, 64 );
+    erase( 310, 240, 64, 64 );
     QPainter painter;
     painter.begin( this );
-    painter.setClipRect( 140, 160, 64, 64 );
-    painter.drawPixmap( QPoint( 140, 160 ), pixmap );
+    painter.setClipRect( 310, 240, 64, 64 );
+    painter.drawPixmap( QPoint( 310, 240 ), pixmap );
+    painter.end();
+}
+
+
+/* ----------------------------------------------------
+ *
+ * DevicePropsPage
+ *
+ * -------------------------------------------------- */
+
+DevicePropsPage::DevicePropsPage( Properties *_props ) : PropsPage( _props )
+{
+    QLabel* tmpQLabel;
+    tmpQLabel = new QLabel( this, "Label_1" );
+    tmpQLabel->setGeometry( 10, 10, 140, 30 );
+    tmpQLabel->setText( "Device ( /dev/fd0 )" );
+    
+    device = new QLineEdit( this, "LineEdit_1" );
+    device->setGeometry( 10, 40, 180, 30 );
+    device->setText( "" );
+    
+    tmpQLabel = new QLabel( this, "Label_2" );
+    tmpQLabel->setGeometry( 10, 80, 170, 30 );
+    tmpQLabel->setText( "Mount Point ( /floppy )" );
+    
+    mountpoint = new QLineEdit( this, "LineEdit_2" );
+    mountpoint->setGeometry( 10, 110, 180, 30 );
+    mountpoint->setText( "" );
+    
+    readonly = new QCheckBox( this, "CheckBox_1" );
+    readonly->setGeometry( 220, 40, 100, 30 );
+    readonly->setText( "Readonly" );
+    
+    tmpQLabel = new QLabel( this, "Label_4" );
+    tmpQLabel->setGeometry( 10, 150, 300, 30 );
+    tmpQLabel->setText( "Filesystems ( iso9660,msdos,minix,default )" );
+    
+    fstype = new QLineEdit( this, "LineEdit_3" );
+    fstype->setGeometry( 10, 180, 280, 30 );
+    fstype->setText( "" );
+    
+    tmpQLabel = new QLabel( this, "Label_5" );
+    tmpQLabel->setGeometry( 10, 220, 100, 30 );
+    tmpQLabel->setText( "Mounted Icon" );
+    
+    tmpQLabel = new QLabel( this, "Label_6" );
+    tmpQLabel->setGeometry( 170, 220, 100, 30 );
+    tmpQLabel->setText( "Unmounted Icon" );
+    
+    mounted = new QComboBox( FALSE, this, "ComboBox_1" );
+    mounted->setGeometry( 10, 250, 150, 30 );
+    mounted->setSizeLimit( 10 );
+    
+    unmounted = new QComboBox( FALSE, this, "ComboBox_2" );
+    unmounted->setGeometry( 170, 250, 150, 30 );
+    unmounted->setSizeLimit( 10 );
+    
+    QFile f( _props->getKURL()->path() );
+    if ( !f.open( IO_ReadOnly ) )
+	return;
+    
+    QTextStream pstream( &f );
+    KConfig config( &pstream );
+    config.setGroup( "KDE Desktop Entry" );
+    deviceStr = config.readEntry( "Dev" );
+    mountPointStr = config.readEntry( "MountPoint" );
+    readonlyStr = config.readEntry( "ReadOnly" );
+    fstypeStr = config.readEntry( "FSType" );
+    mountedStr = config.readEntry( "Icon" );
+    unmountedStr = config.readEntry( "UnmountIcon" );
+
+    if ( !deviceStr.isNull() )
+	device->setText( deviceStr.data() );
+    if ( !mountPointStr.isNull() )
+	mountpoint->setText( mountPointStr.data() );
+    if ( !fstypeStr.isNull() )
+	fstype->setText( fstypeStr.data() );
+    if ( readonlyStr == "0" )
+	readonly->setChecked( FALSE );
+    else
+	readonly->setChecked( TRUE );
+
+    // Load all pixmaps files in the combobox
+    QDir d( KMimeType::getIconPath() );
+    const QFileInfoList *list = d.entryInfoList();
+    QFileInfoListIterator it( *list );      // create list iterator
+    QFileInfo *fi;                          // pointer for traversing
+
+    int index1 = -1;
+    int index2 = -1;
+    int i = 0;  
+    while ( ( fi = it.current() ) )
+    {
+	// Is this the currently selected icon ?
+	if ( strcmp( mountedStr.data(), fi->fileName().data() ) == 0 )
+	    index1 = i;
+	// Is this the currently selected unmounted icon ?
+	if ( strcmp( unmountedStr.data(), fi->fileName().data() ) == 0 )
+	    index2 = i;
+	mounted->insertItem( fi->fileName().data(), i );
+	unmounted->insertItem( fi->fileName().data(), i );
+	i++;
+	++it;                               // goto next list element
+    }
+    // The currently selected icon is not in the list .... strange ... ? Lets add it.
+    if ( index1 == -1 && mountedStr.length() > 0 )
+    {
+	mounted->insertItem( mountedStr.data(), i );
+	index1 = i;
+    }
+    // The currently selected icon is not in the list .... strange ... ? Lets add it.
+    if ( index2 == -1 && unmountedStr.length() > 0 )
+    {
+	unmounted->insertItem( unmountedStr.data(), i );
+	index2 = i;
+    }
+    // Select the current icon
+    mounted->setCurrentItem( index1 );
+    unmounted->setCurrentItem( index2 );
+    drawIcon2();
+    drawIcon1();
+    
+    connect( mounted, SIGNAL( activated( int ) ), this, SLOT( slotIcon1Changed( int ) ) );
+    connect( unmounted, SIGNAL( activated( int ) ), this, SLOT( slotIcon2Changed( int ) ) );
+}
+
+bool DevicePropsPage::supports( KURL *_kurl )
+{
+    if ( strcmp( _kurl->protocol(), "file" ) != 0 )
+	return FALSE;
+
+    FILE *fh = fopen( _kurl->path(), "rb" );
+    if ( fh == 0L )
+	return FALSE;
+    
+    char buffer[ 1024 ];
+    buffer[0] = 0;
+    fgets( buffer, 1023, fh );
+    fclose( fh );
+    
+    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
+	return FALSE;
+
+    QFile f( _kurl->path() );
+    if ( !f.open( IO_ReadOnly ) )
+	return FALSE;
+    
+    QTextStream pstream( &f );
+    KConfig config( &pstream );
+    config.setGroup( "KDE Desktop Entry" );
+
+    QString type = config.readEntry( "Type" );
+    if ( type.isNull() )
+	return FALSE;
+    if ( type != "FSDevice" )
+	return FALSE;
+    
+    return TRUE;
+}
+
+void DevicePropsPage::applyChanges()
+{
+    QFile f( properties->getKURL()->path() );
+    if ( !f.open( IO_ReadWrite ) )
+	return;
+    
+    QTextStream pstream( &f );
+    KConfig config( &pstream );
+    config.setGroup( "KDE Desktop Entry" );
+    
+    config.writeEntry( "Dev", device->text() );
+    config.writeEntry( "MountPoint", mountpoint->text() );
+    config.writeEntry( "FSType", fstype->text() );
+    
+    if ( mounted->currentItem() != -1 )
+	config.writeEntry( "Icon", mounted->text( mounted->currentItem() ) );
+    if ( unmounted->currentItem() != -1 )
+	config.writeEntry( "UnmountIcon", unmounted->text( unmounted->currentItem() ) );
+    
+    if ( readonly->isChecked() )
+	config.writeEntry( "ReadOnly", "1" );
+    else
+	config.writeEntry( "ReadOnly", "0" );
+
+    config.sync();
+    f.close();
+}
+
+void DevicePropsPage::slotIcon1Changed( int )
+{
+    drawIcon1();
+}
+
+void DevicePropsPage::slotIcon2Changed( int )
+{
+    drawIcon2();
+}
+
+void DevicePropsPage::paintEvent( QPaintEvent *_ev )
+{
+    QWidget::paintEvent( _ev );
+    drawIcon1();
+    drawIcon2();
+}
+
+void DevicePropsPage::drawIcon1()
+{
+    int i = mounted->currentItem();
+    if ( i == -1 )
+	return;
+    
+    const char *text = mounted->text( i );
+    QString file = KMimeType::getIconPath();
+    file += "/";
+    file += text;
+    
+    if ( file != pixmapFile )
+    {
+	pixmapFile = file.data();
+	pixmapFile.detach();	
+	pixmap.load( file.data() );
+    }
+    
+    erase( 10, 290, 64, 64 );
+    QPainter painter;
+    painter.begin( this );
+    painter.setClipRect( 10, 290, 64, 64 );
+    painter.drawPixmap( QPoint( 10, 290 ), pixmap );
+    painter.end();
+}
+
+void DevicePropsPage::drawIcon2()
+{
+    int i = unmounted->currentItem();
+    if ( i == -1 )
+	return;
+    
+    const char *text = unmounted->text( i );
+    QString file = KMimeType::getIconPath();
+    file += "/";
+    file += text;
+    
+    if ( file != pixmapFile )
+    {
+	pixmapFile = file.data();
+	pixmapFile.detach();	
+	pixmap.load( file.data() );
+    }
+    
+    erase( 170, 290, 64, 64 );
+    QPainter painter;
+    painter.begin( this );
+    painter.setClipRect( 170, 290, 64, 64 );
+    painter.drawPixmap( QPoint( 170, 290 ), pixmap );
     painter.end();
 }
 
 #include "kfmprops.moc"
+
+
+

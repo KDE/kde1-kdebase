@@ -6,7 +6,8 @@
 #include <sys/stat.h>
 
 #include "kbind.h"
-#include "kfmwin.h"
+#include "kfmgui.h"
+#include <config-kfm.h>
 
 // Executes all apps/documents in the $HOME/Desktop/Autostart directory
 
@@ -28,7 +29,7 @@ void autostart()
     }
     
     // Loop thru all directory entries
-    while ( ( ep = readdir( dp ) ) )
+    while ( ( ep = readdir( dp ) ) != 0L )
     {
 	if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 	{
@@ -43,7 +44,7 @@ void autostart()
 		QString tmp = u2;
 		if ( tmp.length() > 7 && tmp.right(7) == ".kdelnk" )
 		{
-		    KFileType::runBinding( u2 );
+		    KMimeType::runBinding( u2 );
 		}
 		// Are we entering a tar file ?
 		else if ( strstr( u2, ".tar" ) != 0 || strstr( u2, ".tgz") != 0 || strstr( u2, ".tar.gz" ) != 0 )
@@ -51,7 +52,7 @@ void autostart()
 		    QString t( "tar:" );
 		    t += u.path();
 		    
-		    KFileWindow *m = new KFileWindow( 0L, 0L, t.data() );
+		    KfmGui *m = new KfmGui( 0L, 0L, t.data() );
 		    m->show();
 		}
 		else
@@ -59,7 +60,7 @@ void autostart()
 		    struct stat buff;
 		    if ( 0 > stat( u.path(), &buff ) )
 		    {
-			printf("ERROR: Could not access file %s\n",u2.data() );
+			debugT("ERROR: Could not access file %s\n",u2.data() );
 		    }
 		    else
 		    {
@@ -74,14 +75,14 @@ void autostart()
 			// Start the appropriate binding.
 			else
 			{
-			    KFileType::runBinding( u2 );
+			    KMimeType::runBinding( u2 );
 			}   
 		    }
 		}
 	    }
 	    else
 	    {
-		KFileWindow *m = new KFileWindow( 0L, 0L, u2 );
+		KfmGui *m = new KfmGui( 0L, 0L, u2 );
 		m->show();
 	    }
 	}

@@ -1,21 +1,20 @@
-INSTALL_DATA = @INSTALL@ -m 0644
+FILES = `find . -type f \( -name "*.xpm" -o -name "*.jpg" -o -name "*.xbm" -o -name "*.ppm" -o -name "*.gif" \) -print`
+
+DESTDIR = @prefix@/lib/pics
 INSTALL_DIR = @INSTALL@ -d -m 0755
-PICS = `find . -type f \( -name "*.xpm" -o -name "*.jpg" -o -name "*.xbm" -o -name "*.ppm" -o -name "*.gif" \) -print`
-prefix = @prefix@
-libdir = $(prefix)/lib
+INSTALL_DATA = @INSTALL@ -m 644
 
 all:
 
-clean:
-
 install:
-	$(INSTALL_DIR) $(libdir)/pics
-	@for i in $(PICS); do \
-	 echo "$(INSTALL_DATA) $$i $(libdir)/pics/$$i"; \
-	 $(INSTALL_DATA) "$$i" $(libdir)/pics/$$i; \
+	$(INSTALL_DIR) $(DESTDIR)
+	@for i in $(FILES); do \
+	 echo "$(INSTALL_DATA) $$i $(DESTDIR)"; \
+	 $(INSTALL_DATA) "$$i" $(DESTDIR); \
 	done
 
 uninstall:
-	for i in $(PICS); do \
-	 rm -f $(libdir)/pics/"$$i" ; \
+	for i in $(FILES); do \
+	 rm -f $(DESTDIR)/$$i; \
 	done
+

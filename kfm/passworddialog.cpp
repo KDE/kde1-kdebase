@@ -12,11 +12,12 @@
 
 #include "passworddialog.h"
 #include "passworddialog.moc"
+#include <config-kfm.h>
 
 PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* name, bool modal, WFlags f)
    : QDialog(parent, name, modal, f)
 {
-    printf("Here we go!!\n");
+    debugT("Here we go!!\n");
     
    _head = head;
 
@@ -80,7 +81,7 @@ PasswordDialog::PasswordDialog(const char *head, QWidget* parent, const char* na
    
    setGeometry( x(), y(), 200, 130 );
 
-   printf("Hi folks, thats it\n");
+   debugT("Hi folks, thats it\n");
 }
 
 const char * PasswordDialog::password()

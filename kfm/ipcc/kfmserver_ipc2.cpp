@@ -129,6 +129,17 @@ void KfmIpc::parse_sortDesktop( char *_data, int _len )
 	emit sortDesktop(  );
 }
 
+void KfmIpc::parse_auth( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _password;
+	_password = read_string( _data, pos, _len );
+	// Calling function
+	emit auth( _password );
+}
+
 void KfmIpc::finished()
 {
 	int len = 0;

@@ -21,7 +21,6 @@
 #include <qlistbox.h>
 
 #include <kurl.h>
-#include <qpixmap.h>
 
 class Properties;
 
@@ -111,7 +110,7 @@ protected:
     QCheckBox *permOW;
     QCheckBox *permOX;
     QCheckBox *permOS;
-  
+
     QLineEdit *grp;
     QLineEdit *owner;
 
@@ -372,6 +371,7 @@ protected:
     
     QLineEdit *commentEdit;
     QLineEdit *patternEdit;
+    QLineEdit *mimeEdit;
     QComboBox *iconBox;
     QComboBox *appBox;
 
@@ -379,9 +379,51 @@ protected:
     QString patternStr;
     QString iconStr;
     QString appStr;
-
+    QString mimeStr;
+  
     QPixmap pixmap;
     QString pixmapFile;
 };
 
+class DevicePropsPage : public PropsPage
+{
+    Q_OBJECT
+public:
+    DevicePropsPage( Properties *_props );
+    ~DevicePropsPage() { }
+
+    virtual const char* getTabName() { return "Device"; }
+    virtual void applyChanges();
+
+    static bool supports( KURL *_kurl );
+
+public slots:
+    void slotIcon1Changed( int );
+    void slotIcon2Changed( int );
+    
+protected:
+    void drawIcon1();
+    void drawIcon2();
+    virtual void paintEvent ( QPaintEvent *);
+    
+protected:
+    QLineEdit* device;
+    QLineEdit* mountpoint;
+    QCheckBox* readonly;
+    QLineEdit* fstype;
+    QComboBox* mounted;
+    QComboBox* unmounted;
+
+    QPixmap pixmap;
+    QString pixmapFile;
+
+    QString deviceStr;
+    QString mountPointStr;
+    QString mountedStr;
+    QString unmountedStr;
+    QString readonlyStr;
+    QString fstypeStr;
+};
+
 #endif
+

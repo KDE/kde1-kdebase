@@ -12,7 +12,7 @@
 
 #include "kbind.h"
 #include "html.h"
-#include "kfmwin.h"
+#include "kfmgui.h"
 #include "kioserver.h"
 #include "kstrlist.h"
 #include "kiojob.h"
@@ -173,13 +173,13 @@ public:
      */
     void moveIcons( QStrList & _urls, QPoint &p );
       
-    /******************************************************
+    /**
      * Returns a list of selected icons or a null string if
      * no icon was currently selected.
      */
     QString getSelectedURLs();
 
-    /******************************************************
+    /**
      * Since there is only one root widget, this method can be used to
      * get its pointer. This is better than using global variables since this
      * would not be object oriented.
@@ -221,6 +221,23 @@ public:
      */
     void sortIcons();
     
+    /**
+     * color of the icon label text
+     */
+    const QColor& labelForeground( void ) const { return labelColor; }
+
+    /**
+     * color of the icon background
+     */
+    const QColor& iconBackground( void ) const { return iconBgColor; }
+
+    /**
+     * Style of the root icons.
+     *
+     * @return 0=shaped with unshaped label, 1=shaped with shaped label
+     */
+    int iconStyle( void ) const { return iconstyle; }        
+
 public slots:
     /// Updates the icons
     /**
@@ -234,7 +251,7 @@ public slots:
     void slotDropMove();
     void slotDropLink();
     
-    /******************************************************
+    /**
      * If the 'rootDropZone' receives a drop action, this slot is signaled.
      */
     void slotDropEvent( KDNDDropZone *_zone );
@@ -246,10 +263,15 @@ public slots:
     void slotPopupProperties();
     void slotPopupCopy();
     void slotPopupDelete();
+    void slotPopupTrash();
     void slotPopupNewView();
     void slotPopupOpenWith();
+    /**
+     * Called if the user wants to empty the trash bin.
+     */
+    void slotPopupEmptyTrash();
     
-    /******************************************************
+    /**
      * When this slot is signaled then we know that something
      * changed in the directory given by the argument.
      */
@@ -264,28 +286,28 @@ public slots:
     void slotPropertiesChanged( const char *_url, const char *_new_name );
 
 protected:
-    /******************************************************
+    /**
      * The instance of the root widget ( there is only one! ) is
      * stored here. Used by the function 'getKRootWidget'.
      */
     static KRootWidget* pKRootWidget;
     
-    /******************************************************
+    /**
      * Finds a icon searching for its URL.
      */
     KRootIcon* findIcon( const char *_url );
-    /******************************************************
+    /**
      * Updates the 'layoutList' from the file ~/.desktop. This does
      * not cause any icon to movee its place. Use update for doing that.
      */
     void loadLayout();
-    /******************************************************
+    /**
      * Saves all layout information of the root widget in the file
      * .desktop in the users home directory.
      */
     void saveLayout();
 
-    /******************************************************
+    /**
      * Returns a position for displaying the icon with the given URL.
      * If there is no entry for this URL ( the file may be new )
      * a default position is returned.
@@ -298,12 +320,12 @@ protected:
      */
     QPoint findFreePlace( int _width, int _height );
     
-    /******************************************************
+    /**
      * Contains a list of all visible icons on the root window.
      */
     QList<KRootIcon> icon_list;
 
-    /******************************************************
+    /**
      * Contains a layout object for every icon on the root window.
      * This list is created at startup time. It is used to position
      * all icons on the root window for the first time.
@@ -312,36 +334,36 @@ protected:
      */
     QList<KRootLayout> layoutList;
 
-    /******************************************************
+    /**
      * When the user hits the right mouse button over an icon, then
      * this is are the URLs of this icon or all marked icons.
      */
     KStrList popupFiles;
 
-    /******************************************************
+    /**
      * When opening a popup menu, a pointer to it is stored here.
      * Before assigning another value to it delete the old one if
      * it is not already 0L.
      */
     QPopupMenu *popupMenu;
 
-    /******************************************************
+    /**
      * When a drop occured this is the corresponding drop zone
      */
     KDNDDropZone *dropZone;
-    /******************************************************
+    /**
      * When a drop occured this is position of the drop
      */
      int dropFileX, dropFileY;
 
-    /******************************************************
+    /**
      * When you copy lost of files to the desktop, KIOManager will
      * force an update after every operation. You can avoid this by setting
      * this falg.
      */
      bool noUpdate;
 
-    /******************************************************
+    /**
      * This drop zone is used for root drops.
      */
      KDNDDropZone *rootDropZone;
@@ -352,6 +374,20 @@ protected:
       for double clicks on desktop icons and so on.
       */
     KRootManager* manager;
+
+    /**
+     * The color used for the text on the label.
+     */
+    QColor labelColor;
+    /**
+     * The color used for the background of the label.
+     */
+    QColor iconBgColor;
+    /**
+     * If this value is 0, then the label is not shaped. A value of 1 means
+     * that the value is shaped.
+     */
+    int iconstyle;                    
 };
 
 #endif

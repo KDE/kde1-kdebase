@@ -1,7 +1,7 @@
 
 INCDIR  =       @all_includes@ -I../.. -I./
-CXXFLAGS+=      $(INCDIR) 
-LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
+CXXFLAGS=       @CXXFLAGS@ $(INCDIR) 
+LDFLAGS =       @LDFLAGS@ @all_libraries@ -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
 CXX     =       @CXX@
 MOC     =       @MOC@
 
@@ -18,7 +18,7 @@ TARGET	=	kfmwarn
 .SUFFIXES: .cpp
 
 .cpp.o:
-	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $(INCDIR) $<
+	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $<
 
 ####### Build rules
 

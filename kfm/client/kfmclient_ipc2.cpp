@@ -113,10 +113,18 @@ void KfmIpc::sortDesktop()
 	write_string( sock->socket(), "sortDesktop" );
 }
 
-void KfmIpc::parse_finished( char *_data, int _len )
+void KfmIpc::auth(const char* _password)
 {
-	int pos = 0;
+	int len = 0;
+	len += len_string( _password );
+	len += len_string("auth");
+	write_int( sock->socket(), len );
+	write_string( sock->socket(), "auth" );
+	write_string( sock->socket(), _password );
+}
 
+void KfmIpc::parse_finished( char *, int )
+{
 	// Calling function
 	emit finished(  );
 }

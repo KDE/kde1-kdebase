@@ -1,9 +1,11 @@
 #include "krenamewin.moc"
+#include <stdio.h>
+#include <config-kfm.h>
 
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
     QDialog ( parent, "" , _modal )
 {
-    printf("KRenameWindow +++++++++++++++++++++++++++++++++++++++++++++\n");
+    debugT("KRenameWindow +++++++++++++++++++++++++++++++++++++++++++++\n");
 
     modal = _modal;
     

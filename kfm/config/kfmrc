@@ -11,6 +11,7 @@ Terminal=kvt
 TextColor=#000000
 LinkColor=#FF0000
 BgColor=#FFFFFF
-
+[KFM Root Icons]
+Style=0
 
 

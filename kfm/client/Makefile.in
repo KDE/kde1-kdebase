@@ -1,15 +1,15 @@
 
-INCDIR  =      @all_includes@
-CXXFLAGS=      @CXXFLAGS@ $(INCDIR) -DHAVE_CONFIG_H -I../..
-LDFLAGS =      @LDFLAGS@ @all_libraries@  -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
-CXX     =      @CXX@
-MOC     =      @MOC@
+INCDIR  =       @all_includes@ -I..
+CXXFLAGS=	@CXXFLAGS@ $(INCDIR) -DHAVE_CONFIG_H -I../..
+LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
+CXX     =       @CXX@
+MOC     =       @MOC@
 
 ####### Files
 
 SOURCES =	kfmclient.cpp kfmclient_ipc.cpp kfmclient_ipc2.cpp ipc.cpp
 HEADERS =	kfmclient_ipc.h ipc.h
-OBJECTS =	kfmclient.o kfmclient_ipc.o kfmclient_ipc2.o ipc.o
+OBJECTS =	kfmclient.o kfmclient_ipc.o kfmclient_ipc2.o ipc.o debug.o
 SRCMETA =	kfmclient_ipc.moc
 TARGET	=	kfmclient
 
@@ -24,6 +24,9 @@ TARGET	=	kfmclient
 
 all: $(TARGET)
 
+Makefile: Makefile.in
+	cd ../.. && CONFIG_FILES=kfm/client/$@ CONFIG_HEADERS= $(SHELL) ./config.status 
+
 $(TARGET): $(SRCMETA) $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 
@@ -32,6 +35,9 @@ depend:
 
 showfiles:
 	@echo $(SOURCES) $(HEADERS) Makefile
+
+debug.o: ../debug.cpp ../config-kfm.h
+	$(CXX) $(CXXFLAGS) -c $<
 
 clean:
 	-rm -f *.o *.bak *~ *% #*

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
 
@@ -13,6 +14,7 @@
 #include "kioserver_ipc.h"
 #include "kioserver.h"
 #include "kbind.h"
+#include <config-kfm.h>
 
 KIOServer* KIOServer::pKIOServer;
 
@@ -49,6 +51,51 @@ KIODirectoryEntry::KIODirectoryEntry( KIODirectoryEntry & _entry )
     group.detach();
 }
 
+bool KIODirectoryEntry::mayRead( const char *_user )
+{
+  if ( _user == 0L )
+    _user = "anonymous";
+  
+  if ( strcmp( _user, owner.data() ) == 0 && access[1] == 'r' )
+    return TRUE;
+  if ( strcmp( _user, group.data() ) == 0 && access[4] == 'r' )
+    return TRUE;
+  if ( access[7] == 'r' )
+    return TRUE;
+
+  return FALSE;
+}
+
+bool KIODirectoryEntry::mayWrite( const char *_user )
+{
+  if ( _user == 0L )
+    _user = "anonymous";
+  
+  if ( strcmp( _user, owner.data() ) == 0 && access[2] == 'w' )
+    return TRUE;
+  if ( strcmp( _user, group.data() ) == 0 && access[5] == 'w' )
+    return TRUE;
+  if ( access[8] == 'w' )
+    return TRUE;
+
+  return FALSE;
+}
+
+bool KIODirectoryEntry::mayExec( const char *_user )
+{
+  if ( _user == 0L )
+    _user = "anonymous";
+  
+  if ( strcmp( _user, owner.data() ) == 0 && access[3] == 'x' )
+    return TRUE;
+  if ( strcmp( _user, group.data() ) == 0 && access[6] == 'x' )
+    return TRUE;
+  if ( access[9] == 'x' || access[9] == 't' )
+    return TRUE;
+
+  return FALSE;
+}
+
 KIOServer::KIOServer() : KIOSlaveIPCServer()
 {
     pKIOServer = this;
@@ -75,12 +122,22 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 			  const char * _creationDate, const char * _access,
 			  const char * _owner, const char *_group )
 {
-    QList<KIODirectoryEntry> *dir = dirList[ _url ];
+    QString url = _url;
+
+    // Delete the password if it is in the URL
+    KURL u( _url );
+    if ( u.passwd() != 0L && u.passwd()[0] != 0 )
+    {
+        u.setPassword( "" );
+	url = u.url();
+    }
+    
+    QList<KIODirectoryEntry> *dir = dirList[ url.data() ];
     if ( dir == 0L )
     {
 	dir = new QList<KIODirectoryEntry>;
 	dir->setAutoDelete( TRUE );
-	dirList.insert( _url, dir );
+	dirList.insert( url.data(), dir );
     }
     
     KIODirectoryEntry *e = new KIODirectoryEntry( _name, _isDir, _size, _creationDate, _access, _owner, _group );
@@ -89,7 +146,39 @@ void KIOServer::slotDirEntry( const char *_url, const char *_name, bool _isDir, 
 
 KIODirectory* KIOServer::getDirectory( const char *_url )
 {
-    return dirList[ _url ];
+    QString url = _url;
+    // Add a trailing '/'
+    if ( url.right(1) != "/" )
+      url += "/";
+    return dirList[ url.data() ];
+}
+
+KIODirectoryEntry* KIOServer::getDirectoryEntry( const char *_url )
+{
+    QString dir = _url;
+    // Delete a trailing '/'
+    dir.detach();
+    if ( dir.right(1) == "/" )
+      dir = dir.left( dir.length() - 1 );
+ 
+    KURL u( dir );
+    if ( u.isMalformed() )
+      return 0L;
+   
+    QString name = u.filename();
+    QString name2 = u.filename();    
+    name2 += "/";
+    
+    KIODirectory *d = getDirectory( u.directoryURL( FALSE ) );
+    if ( d == 0L )
+      return 0L;
+    
+    KIODirectoryEntry *e;
+    for ( e = d->first(); e != 0L; e = d->next() )
+        if ( name == e->getName() || name2 == e->getName() )
+	  return e;
+    
+    return 0L;
 }
 
 void KIOServer::slotFlushDir( const char *_url )
@@ -287,6 +376,112 @@ QString KIOServer::findDeviceMountPoint( const char *_device, const char *_file 
     return QString();
 }
 
+QString KIOServer::shellQuote( const char *_data )
+{
+    QString cmd = _data;
+   
+    int pos = 0;
+    while ( ( pos = cmd.find( ";", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\;" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\"", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\\"" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "|", pos ) ) != -1 )
+    {
+	cmd.replace( pos, 1, "\\|" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "(", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\(" );
+	pos += 2;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( ")", pos )) != -1 )
+    {
+	cmd.replace( pos, 1, "\\)" );
+	pos += 2;
+    }
+
+    return QString( cmd.data() );
+}
+
+QString KIOServer::shellUnquote( const char *_data )
+{
+    QString cmd = _data;
+   
+    int pos = 0;
+    while ( ( pos = cmd.find( "\\;", pos )) != -1 )
+    {
+	cmd.replace( pos, 2, ";" );
+	pos++;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\\\"", pos )) != -1 )
+    {
+	cmd.replace( pos, 2, "\"" );
+	pos++;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\\|", pos ) ) != -1 )
+    {
+	cmd.replace( pos, 2, "|" );
+	pos++;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\\(", pos )) != -1 )
+    {
+	cmd.replace( pos, 2, "(" );
+	pos++;
+    }
+    pos = 0;
+    while ( ( pos = cmd.find( "\\)", pos )) != -1 )
+    {
+	cmd.replace( pos, 2, ")" );
+	pos++;
+    }
+
+    return QString( cmd.data() );
+}
+
+bool KIOServer::isTrash( QStrList & _urls )
+{
+    char *s;
+    for ( s = _urls.first(); s != 0L; s = _urls.next() )
+	if ( !isTrash( s ) )
+	    return FALSE;
+    
+    return TRUE;
+}
+
+bool KIOServer::isTrash( const char *_url )
+{
+    KURL u( _url );
+    if ( u.isMalformed() )
+	return FALSE;
+    
+    QString d1 = getenv( "HOME" );
+    d1 += "/Desktop/Trash/";
+    QString d2 = getenv( "HOME" );
+    d2 += "/Desktop/Trash";
+    // bool isTrash = FALSE;
+    // is it the trash bin ?
+    if ( strcmp( u.protocol(), "file" ) == 0L &&
+	 ( strcmp( u.path(), d1 ) == 0L ||
+	   strcmp( u.path(), d2 ) == 0L ) )
+	return TRUE;
+    
+    return FALSE;
+}
+
 bool KIOServer::isDir( QStrList & _urls )
 {
     char *s;
@@ -307,6 +502,8 @@ bool KIOServer::isDir( const char *_url )
 	return FALSE;
     else if ( strcmp( u.protocol(), "ftp" ) == 0 )
     {
+	if ( strlen( u.path() ) == 0 || strcmp( u.path(), "/" ) == 0L )
+	    return TRUE;
 	if ( _url[ strlen( _url ) - 1 ] == '/' )
 	    return TRUE;
 	else
@@ -323,8 +520,10 @@ bool KIOServer::isDir( const char *_url )
     }
     else if ( strcmp( u.protocol(), "file" ) == 0 )
     {
+	QString myfn = u.path();
+	KURL::decodeURL(myfn);
 	struct stat buff;
-	stat( u.path(), &buff );
+	stat( myfn.data(), &buff );
 
 	if ( S_ISDIR( buff.st_mode ) )
 	    return TRUE;
@@ -352,16 +551,16 @@ void KIOServer::newSlave( KIOSlaveIPC * _slave )
 
 void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 {
-    printf("New Slave arrived\n");
+    debugT("New Slave arrived\n");
     
     if ( waitingJobs.count() == 0 )
     {
-	printf("No Job waiting\n");
+	debugT("No Job waiting\n");
 	freeSlaves.append( _slave );
 	return;
     }
     
-    printf("Job served with new slave\n");
+    debugT("Job served with new slave\n");
     KIOJob* job = waitingJobs.first();
     waitingJobs.removeRef( job );
     job->doIt( _slave );
@@ -369,16 +568,16 @@ void KIOServer::newSlave2( KIOSlaveIPC * _slave )
 
 void KIOServer::getSlave( KIOJob *_job )
 {
-    printf("Request for slave\n");
+    debugT("Request for slave\n");
     if ( freeSlaves.count() == 0 )
     {
-	printf("No slave avaulable\n");
+	debugT("No slave avaulable\n");
 	waitingJobs.append( _job );
 	runNewSlave();
 	return;
     }
     
-    printf("Job served with waiting slave\n");
+    debugT("Job served with waiting slave\n");
     KIOSlaveIPC *slave = freeSlaves.first();
     freeSlaves.removeRef( slave );
     _job->doIt( slave );
@@ -386,12 +585,7 @@ void KIOServer::getSlave( KIOJob *_job )
 
 void KIOServer::runNewSlave()
 {
-    QString ipath( getenv("KDEDIR") );
-    if ( ipath.isNull() )
-    {
-	printf("ERROR: You did not set $KDEDIR\n");
-	exit(2);
-    }
+    QString ipath = kapp->kdedir();
     ipath.detach();
     ipath += "/bin/kioslave";
 
@@ -406,7 +600,7 @@ void KIOServer::runNewSlave()
 
 void KIOServer::freeSlave( KIOSlaveIPC *_slave )
 {
-    printf("++++++++ Got Slace back\n");
+    debugT("++++++++ Got Slace back\n");
     newSlave2( _slave );
 }
 

@@ -1,15 +1,15 @@
 
-INCDIR  =       @all_includes@ -I../..
-CXXFLAGS=	@CXXFLAGS@ $(INCDIR) 
-LDFLAGS	= 	@LDFLAGS@ @all_libraries@ -lkdecore -lqt -lXext -lX11 @LIBSOCKET@
+INCDIR  =       @all_includes@ -I../.. -I..
+CXXFLAGS=       $(INCDIR) @CXXFLAGS@ -DHAVE_CONFIG_H
+LDFLAGS =       @all_libraries@ -lqt -lXext -lX11 -lkdecore @LIBSOCKET@
 CXX     =       @CXX@
 MOC     =       @MOC@
 
 ####### Files
 
-SOURCES =	kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp ipc.cpp ftlib.cpp
-HEADERS =	kioslave_ipc.h main.h ipc.h ftlib.h
-OBJECTS =	kioslave_ipc.o kioslave_ipc2.o main.o ipc.o ftplib.o
+SOURCES =	kioslave_ipc.cpp kioslave_ipc2.cpp main.cpp ipc.cpp protocol.cpp http.cpp file.cpp ftp.cpp manage.cpp
+HEADERS =	kioslave_ipc.h main.h ipc.h protocol.h http.h file.h ftp.h manage.h
+OBJECTS =	kioslave_ipc.o kioslave_ipc2.o main.o ipc.o protocol.o http.o file.o ftp.o manage.o debug.o
 SRCMETA =	kioslave_ipc.moc main.moc
 TARGET	=	kioslave
 
@@ -18,17 +18,19 @@ TARGET	=	kioslave
 .SUFFIXES: .cpp
 
 .cpp.o:
-	$(CXX) -c $(CXXFLAGS) -DHAVE_CONFIG_H $<
+	$(CXX) -c $(CXXFLAGS) $<
 
 ####### Build rules
 
 all: $(TARGET)
 
 Makefile: Makefile.in
-	cd ../.. && CONFIG_FILES=kfm/kioslave/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-
+	cd ../.. && CONFIG_FILES=kfm/kioslave/$@ CONFIG_HEADERS= $(SHELL) ./config.status 
 $(TARGET): $(SRCMETA) $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+debug.o: ../debug.cpp ../config-kfm.h
+	$(CXX) $(CXXFLAGS) -c $<
 
 depend:
 	@makedepend $(INCDIR) $(SOURCES) 2> /dev/null
@@ -39,6 +41,7 @@ showfiles:
 clean:
 	-rm -f *.o *.bak *~ *% #*
 	-rm -f $(SRCMETA) $(TARGET)
+
 
 ####### Meta objects
 

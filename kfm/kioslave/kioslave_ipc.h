@@ -70,7 +70,6 @@ public slots:
     void closeEvent( KSocket * );
 private:
     void parse( char *_data, int _len );
-
     int port;
     KSocket *sock;
     bool connected;

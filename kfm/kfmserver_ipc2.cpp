@@ -4,9 +4,9 @@
 
 #include "kfmserver_ipc.h"
 
-void KfmIpc::parse_refreshDesktop( char *_data, int _len )
+void KfmIpc::parse_refreshDesktop( char *, int )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit refreshDesktop(  );
@@ -121,12 +121,23 @@ void KfmIpc::parse_ask( char *_data, int _len )
 	emit ask( _x, _y, _src, _dest );
 }
 
-void KfmIpc::parse_sortDesktop( char *_data, int _len )
+void KfmIpc::parse_sortDesktop( char * , int  )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit sortDesktop(  );
+}
+
+void KfmIpc::parse_auth( char *_data, int _len )
+{
+	int pos = 0;
+
+	// Parsing string
+	const char* _password;
+	_password = read_string( _data, pos, _len );
+	// Calling function
+	emit auth( _password );
 }
 
 void KfmIpc::finished()

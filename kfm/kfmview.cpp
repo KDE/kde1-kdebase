@@ -1,173 +1,961 @@
-#include "kfmview.h"
-#include "kbind.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <pwd.h>
+#include <grp.h>
 
+#include <qpopmenu.h>
+#include <qpainter.h>
+#include <qapp.h>
+#include <qkeycode.h>
+#include <qaccel.h>
+#include <qpushbt.h>
+#include <qdir.h>
 #include <qstrlist.h>
+#include <qregexp.h>
+#include <qmsgbox.h>
+#include <qtooltip.h>
 
-KFileView::KFileView( QWidget *parent, const char *name )
-    : KHTMLWidget( parent, name, KFileType::getIconPath() )
+#include <Kconfig.h>
+#include <kapp.h>
+
+#include "kfmview.h"
+#include "kfmdlg.h"
+#include "kfmprops.h"
+#include "kbutton.h"
+#include "root.h"
+#include <config-kfm.h>
+
+QStrList KfmView::clipboard;
+
+KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_parent_view )
+    : KHTMLView( parent, name, 0, _parent_view )
 {
+    rectStart = FALSE;
+    dPainter = 0L;
+    
     htmlCache = new HTMLCache();
+
     connect( htmlCache, SIGNAL( urlLoaded( const char*, const char *) ),
 	     this, SLOT( slotImageLoaded( const char*, const char* ) ) );
     connect( this, SIGNAL( imageRequest( const char * ) ), htmlCache, SLOT( slotURLRequest( const char * ) ) );
     connect( this, SIGNAL( cancelImageRequest( const char * ) ),
 	     htmlCache, SLOT( slotCancelURLRequest( const char * ) ) );    
+
+    gui = _gui;
+ 
+    dropZone = 0L;
+    popupMenu = 0L;
+    
+    stackLock = FALSE;
+
+    backStack.setAutoDelete( FALSE );
+    forwardStack.setAutoDelete( FALSE );
+
+    childViewList.setAutoDelete( FALSE );
+    
+    initFileManagers();
+
+    dropZone = new KDNDDropZone( view , DndURL );
+    connect( dropZone, SIGNAL( dropAction( KDNDDropZone *) ),
+	     this, SLOT( slotDropEvent( KDNDDropZone *) ) );
+    connect( dropZone, SIGNAL( dropEnter( KDNDDropZone *) ),
+	     this, SLOT( slotDropEnterEvent( KDNDDropZone *) ) );
+    connect( dropZone, SIGNAL( dropLeave( KDNDDropZone *) ),
+	     this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
+
+    connect( KIOServer::getKIOServer(), SIGNAL( notify( const char * ) ), this,
+    	     SLOT( slotFilesChanged( const char * ) ) );
+    connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), this, SLOT( slotMountNotify() ) );
 }
 
-KFileView::~KFileView()
+KHTMLView* KfmView::newView( QWidget *_parent, const char *_name, int )
 {
+    KfmView *v = new KfmView( gui, _parent, _name, this );
+    childViewList.append( v );
+    return v;
+}
+
+void KfmView::initFileManagers( )
+{
+    activeManager = 0L;
+    fileManager = new KFileManager( this );
+    tarManager = new KTarManager( this );
+    ftpManager = new KFtpManager( this );
+    httpManager = new KHttpManager( this );
+    cgiManager = new KCgiManager( this );
+}
+
+KfmView::~KfmView()
+{
+    debugT("Deleting KfmView\n");
+    
+    if ( dropZone != 0L )
+	delete dropZone;
+    dropZone = 0L;
+    
+    delete fileManager;
+    delete ftpManager;
+    delete tarManager;
+    delete httpManager;
+    delete cgiManager;
+ 
     delete htmlCache;
+    
+    debugT("Deleted\n");
 }
 
-void KFileView::resizeEvent( QResizeEvent *_ev )
+void KfmView::splitWindow()
 {
-    parse();
-}
-
-void KFileView::dndMouseMoveEvent( QMouseEvent * _mouse )
-{
-    if ( !pressed )
-    {
-	KHTMLWidget::dndMouseMoveEvent( _mouse );
+    if ( !activeManager )
 	return;
+    
+    view->begin( activeManager->getURL() );
+    view->parse();
+    view->write( "<HTML><HEAD><TITLE>" );
+    view->write( activeManager->getURL() );
+    view->write( "</TITLE></HEAD><FRAMESET COLS=\"50%,50%\"><FRAME SRC=\"" );
+    view->write( activeManager->getURL() );
+    view->write( "\"><FRAME SRC=\"" );
+    view->write( activeManager->getURL() );
+    view->write( "\"></FRAMESET></HTML>" );
+    view->end();
+}
+
+void KfmView::slotRun()
+{
+    QString dir = getenv( "HOME" );
+    
+    if ( activeManager == fileManager )
+    {
+	KURL u( fileManager->getURL() );
+	dir = u.path();
     }
     
-    int x = _mouse->pos().x();
-    int y = _mouse->pos().y();
+    QString cmd;
+    cmd.sprintf( "cd %s; acli &", dir.data() );
+    system( cmd.data() );
+}
 
-    if ( abs( x - press_x ) > Dnd_X_Precision || abs( y - press_y ) > Dnd_Y_Precision )
+void KfmView::slotTerminal()
+{
+    KConfig *config = KApplication::getKApplication()->getConfig();
+    config->setGroup( "Terminal" );
+    QString term = config->readEntry( "Terminal" );
+
+    QString dir = getenv( "HOME" );
+    
+    if ( activeManager == fileManager )
     {
-	QStrList l;
-	getSelected( l );
+	KURL u( fileManager->getURL() );
+	dir = u.path();
+    }
+    
+    QString cmd;
+    cmd.sprintf( "cd %s; %s &", dir.data(), term.data() );
+    system( cmd.data() );
+}
 
-	QPixmap pixmap;
 
-	// Do we drag multiple files ?
-	if ( l.count() == 0 )
-	    return;
-	else if ( l.count() == 1 )
+void KfmView::slotStop()
+{
+    if ( activeManager )
+	activeManager->stop();
+}
+
+void KfmView::slotReload()
+{
+    activeManager->openURL( activeManager->getURL(), TRUE );
+}
+
+void KfmView::slotUpdateView()
+{
+    if ( isFrame() )
+    {
+	KfmView *v;
+	for ( v = childViewList.first(); v != 0L; v = childViewList.next() )
+	    v->slotUpdateView();
+    }
+    else
+	activeManager->openURL( activeManager->getURL(), TRUE );
+}
+
+void KfmView::slotMountNotify()
+{
+    QString u = activeManager->getURL().data();
+    
+    if ( strncmp( u, "file:" , 5 ) == 0 )
+	activeManager->openURL( u.data(), TRUE );
+}
+
+void KfmView::slotFilesChanged( const char *_url )
+{
+    debugT("Slot called with '%s'\n", _url);
+    
+    if ( !activeManager )
+	return;
+    
+    QString u1 = _url;
+    if ( u1.right( 1 ) != "/" )
+	u1 += "/";
+    
+    QString u2 = activeManager->getURL().data();
+    u2.detach();
+    if ( u2.right( 1 ) != "/" )
+	u2 += "/";
+
+    debugT("Comparing '%s' to '%s'\n",u1.data(), u2.data() );
+    if ( u1 == u2 )
+	activeManager->openURL( activeManager->getURL().data(), TRUE );
+    debugT("Changed\n");
+}
+
+void KfmView::slotDropEnterEvent( KDNDDropZone * )
+{
+}
+
+void KfmView::slotDropLeaveEvent( KDNDDropZone * )
+{
+}
+
+void KfmView::slotDropEvent( KDNDDropZone *_zone )
+{
+    QPoint p = view->mapFromGlobal( QPoint( _zone->getMouseX(), _zone->getMouseY() ) );
+    const char *url = view->getURL( p );
+ 
+    // Dropped over an object ?
+    if ( url != 0L )
+    {
+	KURL u( url );
+	if ( u.isMalformed() )
 	{
-	    KFileType *typ = KFileType::findType( l.first() );
-	    pixmap = typ->getPixmap( l.first() );
+	    debugT("ERROR: Drop over malformed URL\n");
+	    return;
+	}
+	
+	debugT(" Dropped over object\n");
+		
+	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
+	activeManager->dropPopupMenu( _zone, url, &p );
+    }
+    else // dropped over white ground
+    {
+	debugT("Dropped over white\n");
+	
+	QPoint p( _zone->getMouseX(), _zone->getMouseY() );
+	activeManager->dropPopupMenu( _zone, activeManager->getURL(), &p );
+    }
+}
+
+void KfmView::slotCopy()
+{
+    clipboard.clear();
+    view->getSelected( clipboard );
+}
+
+void KfmView::slotTrash()
+{
+    QStrList marked;
+    
+    view->getSelected( marked );
+
+    KIOJob * job = new KIOJob;
+
+    QString dest = "file:";
+    dest += QDir::homeDirPath().data();
+    dest += "/Desktop/Trash/";
+    job->move( marked, dest );
+}
+
+void KfmView::slotDelete()
+{
+    QStrList marked;
+    
+    view->getSelected( marked );
+
+    KIOJob * job = new KIOJob;
+    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    
+    if ( ok )
+	job->del( marked );
+}
+
+void KfmView::slotPaste()
+{
+    KIOJob * job = new KIOJob;
+    job->copy( clipboard, activeManager->getURL().data() );
+}
+
+void KfmView::slotPopupMenu( QStrList &_urls, const QPoint &_point )
+{
+    debugT("slotPopupMenu %i\n",_urls.count());
+    activeManager->openPopupMenu( _urls, _point );
+}
+
+void KfmView::slotPopupOpenWith()
+{
+    DlgLineEntry l( "Open With:", "", this, TRUE );
+    if ( l.exec() )
+    {
+	QString pattern = l.getText();
+	if ( pattern.length() == 0 )
+	    return;
+    }
+
+    QString cmd;
+    cmd = l.getText();
+    cmd += " ";
+
+    QString tmp;
+    
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    {
+	cmd += "\"";
+	KURL file = popupFiles.first();    
+	if ( strcmp( file.protocol(), "file" ) == 0L )
+	{
+	    tmp = KIOServer::shellQuote( file.path() ).copy();
+	    cmd += tmp.data();
 	}
 	else
 	{
-	    // TODO  Nice icon for multiple files
-	    KFileType *typ = KFileType::findType( l.first() );
-	    pixmap = typ->getPixmap( l.first() );
+	    tmp = KIOServer::shellQuote( file.url().data() ).copy();
+	    cmd += tmp.data();
 	}
+	cmd += "\" ";
+    }
+    debugT("Executing '%s'\n", cmd.data());
+    
+    KMimeType::runCmd( cmd.data() );
+}              
 
-	// Put all selected files in one line separated with spaces
-	char *s;
-	QString tmp = "";
-	for ( s = l.first(); s != 0L; s = l.next() )
-	{
-	    tmp += s;
-	    tmp += "\n";
-	}
-	QString data = tmp.stripWhiteSpace();
-	QPoint p = mapToGlobal( _mouse->pos() );
-	int dx = - pixmap.width() / 2;
-	int dy = - pixmap.height() / 2;
+void KfmView::slotPopupProperties()
+{
+    if ( popupFiles.count() != 1 )
+    {
+	debugT("ERROR: Can not open properties for multiple files\n");
+	return;
+    }
 
-	startDrag( new KDNDIcon( pixmap, p.x() + dx, p.y() + dy ), data.data(), data.length(), DndURL, dx, dy );
+    new Properties( popupFiles.first() );
+}
+
+void KfmView::slotPopupCopy()
+{
+    debugT("!!!!!!!!!!!!!!!! COPY !!!!!!!!!!!!!!!!!!\n");
+    clipboard.clear();
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+	clipboard.append( s );
+}
+
+void KfmView::slotPopupPaste()
+{
+    if ( popupFiles.count() != 1 )
+    {
+	QMessageBox::message( "KFM Error", "Can not paste in multiple directories" );
+	return;
+    }
+    
+    debugT("Pasting into '%s'\n",popupFiles.first() );
+    
+    char *s;
+    for ( s = clipboard.first(); s != 0L; s = clipboard.next() )
+	debugT("Pasting: %s\n", s );
+ 
+    debugT("1\n");
+    KIOJob * job = new KIOJob;
+    debugT("2\n");
+    job->copy( clipboard, popupFiles.first() );
+    debugT("3\n");
+}
+
+void KfmView::slotPopupTrash()
+{
+    // This function will emit a signal that causes us to redisplay the
+    // contents of our directory if neccessary.
+    KIOJob * job = new KIOJob;
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+      debugT("&&> '%s'\n",s);
+    
+    // job->del( popupFiles );
+    QString dest = "file:";
+    dest += QDir::homeDirPath().data();
+    dest += "/Desktop/Trash/";
+    job->move( popupFiles, dest );
+}
+
+void KfmView::slotPopupDelete()
+{
+    // This function will emit a signal that causes us to redisplay the
+    // contents of our directory if neccessary.
+    KIOJob * job = new KIOJob;
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
+      debugT("&&> '%s'\n",s);
+    
+    bool ok = QMessageBox::query( "KFM Warning", "Dou you really want to delete the files?\n\r\n\rThere is no way to restore them", "Yes", "No" );
+    
+    if ( ok )
+	job->del( popupFiles );
+}
+
+void KfmView::slotPopupNewView()
+{
+    char *s;
+    for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )
+    {
+	KfmView *m = new KfmView( 0L, 0L, s );
+	m->show();
     }
 }
 
-void KFileView::dndMouseReleaseEvent( QMouseEvent * _mouse )
+void KfmView::slotPopupCd()
 {
-    // Used to prevent dndMouseMoveEvent from initiating a drag before
-    // the mouse is pressed again.
-    pressed = false;
+    if ( popupFiles.count() != 1 )
+    {
+	debugT("ERROR: Can not change to multiple directories\n");
+	return;
+    }
+    
+    openURL( popupFiles.first() );
 }
 
-void KFileView::mousePressEvent( QMouseEvent *_mouse )
+const char * KfmView::getURL()
 {
-    bool newPainter = FALSE;
+    return activeManager->getURL();
+}
+
+void KfmView::openURL( const char *_url )
+{
+    childViewList.clear();
     
-    if ( clue == 0L )
-	return;
+    QString u;
     
-    HTMLObject *obj;
-    
-    obj = clue->checkPoint( _mouse->pos().x() + x_offset - LEFT_BORDER, _mouse->pos().y() + y_offset );
-    
-    if ( painter == NULL )
+    // Change protocol for local cgi scripts
+    if ( strncmp( _url, "file:/cgi-bin/", 14 ) == 0 )
     {
-	printf("mousePressEvent: New Painter\n");
-	painter = new QPainter();
-	painter->begin( this );
-	newPainter = TRUE;
+	u = "cgi:";
+	u += _url + 5;
+	_url = u.data();
+    }
+    
+    QString url;
+    url = _url;
+    
+    bool erg = FALSE;
+    
+    QString old_url = "";
+    if ( activeManager != 0L )
+	old_url = activeManager->getURL();
+    old_url.detach();
+    
+    if ( strncmp( _url, "tar:", 4 ) == 0 )
+    {
+	erg = tarManager->openURL( url.data() );
+	if ( erg )
+	    setActiveManager( tarManager );
+    }
+    else if ( strncmp( _url, "cgi:", 4 ) == 0 )
+    {
+	erg = cgiManager->openURL( url.data() );
+	if ( erg )
+	    setActiveManager( cgiManager );
+    }
+    else if ( strncmp( _url, "ftp:", 4 ) == 0 )
+    {
+	erg = ftpManager->openURL( url.data() );
+	if ( erg )
+	    setActiveManager( ftpManager );
+    }
+    else if ( strncmp( _url, "file:", 5 ) == 0 )
+    {
+	erg = fileManager->openURL( url.data() ); 
+	if ( erg )
+	    setActiveManager( fileManager );
+    }
+    else if ( strncmp( _url, "http:", 5 ) == 0 )
+    {
+	erg = httpManager->openURL( url.data() );
+	if ( erg )
+	    setActiveManager( httpManager );
     }
     else
-	printf("mousePressEvent: OOps Have Painter\n");
-    
-    // painter->translate( x_offset, -y_offset );
-    
-    if ( obj != 0L)
     {
-	if (obj->getURL()[0] != 0)
+	// Run the default binding on this if we dont know
+	// the protocol
+	KMimeType::runBinding( url.data() );
+	return;
+    }
+    
+    if ( erg && old_url.data()[0] != 0 && !stackLock )
+    {
+	QString *s = new QString( old_url.data() );
+	s->detach();
+	backStack.push( s );
+	forwardStack.setAutoDelete( TRUE );
+	forwardStack.clear();
+	forwardStack.setAutoDelete( FALSE );
+	
+	emit historyUpdate( TRUE, FALSE );
+    }
+}
+
+void KfmView::slotForward()
+{
+    if ( !activeManager )
+	return;
+    
+    if ( forwardStack.isEmpty() )
+	return;
+
+    QString *s2 = new QString( activeManager->getURL() );
+    s2->detach();
+    backStack.push( s2 );
+
+    QString *s = forwardStack.pop();
+    if ( forwardStack.isEmpty() )
+	emit historyUpdate( TRUE, FALSE );
+    else
+	emit historyUpdate( TRUE, TRUE );
+    
+    stackLock = TRUE;
+    openURL( s->data() );
+    stackLock = FALSE;
+
+    delete s;
+}
+
+void KfmView::slotBack()
+{
+    if ( !activeManager )
+	return;
+
+    if ( backStack.isEmpty() )
+	return;
+    
+    QString *s2 = new QString( activeManager->getURL() );
+    s2->detach();
+    forwardStack.push( s2 );
+    
+    QString *s = backStack.pop();
+    if ( backStack.isEmpty() )
+	emit historyUpdate( FALSE, TRUE );
+    else
+	emit historyUpdate( TRUE, TRUE );    
+
+    stackLock = TRUE;
+    openURL( s->data() );
+    stackLock = FALSE;
+
+    delete s;
+}
+
+void KfmView::slotURLSelected( const char *_url, int _button, const char *_target )
+{
+    debugT("######### Click '%s' target='%s'\n",_url,_target);
+ 
+    if ( !_url )
+	return;
+    
+    if ( _target != 0L && _target[0] != 0 && _button == LeftButton )
+    {
+	KHTMLView *v = KHTMLView::findView( _target );
+	if ( v )
 	{
-	    // This might be the start of a drag. So we save
-	    // the position and set a flag.
-	    pressed = true;
-	    press_x = _mouse->pos().x();
-	    press_y = _mouse->pos().y();    
-
-	    if ( _mouse->button() == LeftButton && obj->isSelected() &&
-		 (_mouse->state() & ControlButton) != ControlButton )
-	    {
-		// Just do nothing. Perhaps we will start a drag here soon...
-	    }
-	    else if ( _mouse->button() == LeftButton )
-	    {
-		// Deselect all if the control button is not pressed
-		if ( (_mouse->state() & ControlButton) != ControlButton )
-		    select( painter, false );
-		// Toggle the selected flag
-		selectByURL( painter, obj->getURL(), !obj->isSelected() );
-	    }
-	    else if ( _mouse->button() == RightButton )
-	    {
-		pressed = FALSE;
-		QPoint p = mapToGlobal( _mouse->pos() );
-		
-		// A popupmenu for a list of URLs or just for one ?
-		QStrList list;
-		getSelected( list );
-		if ( list.count() > 1 )
-		{
-		    printf("View: list.count() = %i, url = '%s'\n",list.count(),obj->getURL());
-		    char*s;
-		    for ( s = list.first(); s != 0L; s = list.next() )
-			printf(" Entry '%s'\n",s);
-		    
-		    if ( list.find( obj->getURL() ) != -1 )
-			 emit popupMenu2( list, p );
-		    else
-		    {
-			// The selected URL is not marked, so unmark the marked ones.
-			select( painter, false );
-			emit popupMenu( obj->getURL(), p );
-		    }
-		}
-		else
-		    emit popupMenu( obj->getURL(), p );
-	    }    	    
+	    debugT("Found Frame\n");
+	    v->openURL( _url );
+	    return;
 	}
-	else if ( (_mouse->state() & ControlButton) != ControlButton )
-	    select( painter, false );
+	else
+	{
+	    debugT("New GUI\n");
+	    KfmGui *m = new KfmGui( 0L, 0L, _url );
+	    debugT("New GUI2\n");
+	    m->show();
+	    debugT("New GUI3\n");
+	    return;
+	}
     }
-    else if ( (_mouse->state() & ControlButton) != ControlButton )
-	select( painter, false );
-
-    if ( newPainter )
+    
+    if ( _button == MidButton && KIOServer::isDir( _url ) )
     {
-	printf("mousePressEvent: Delete painter\n");
-	painter->end();
-	delete painter;
-	painter = NULL;
+	KURL base( activeManager->getURL() );
+	KURL u( base, _url );
+	QString url = u.url();
+
+	KfmGui *m = new KfmGui( 0L, 0L, url.data() );
+	m->show();
     }
+    
+    if ( _button == LeftButton )
+	openURL( _url );
+}
+
+void KfmView::setPopupFiles( QStrList &_files )
+{
+    popupFiles.copy( _files );
+}
+
+void KfmView::setActiveManager( KAbstractManager *_man )
+{
+    activeManager = _man;
+}
+
+void KfmView::slotOnURL( const char *_url )
+{
+    if ( _url == 0L )
+    {
+	if ( activeManager )
+	    // gui->slotSetStatusBarURL( activeManager->getURL() );
+	    gui->slotSetStatusBar( "" );
+    }
+    else
+    {
+        QString com;
+
+	KMimeType *typ = KMimeType::findType( _url );      
+	if ( typ )
+	    com = typ->getComment( _url );
+
+        KURL url (_url);
+	if ( url.isMalformed() )
+        {
+	  gui->slotSetStatusBar( _url );
+	  return;
+	}
+	
+        struct stat buff;
+        stat( url.path(), &buff );
+
+        struct stat lbuff;
+        lstat( url.path(), &lbuff );
+        QString text;
+	QString text2;
+	if ( strcmp( url.protocol(), "tar" ) == 0 )
+	  text = url.filename( TRUE );
+	else
+	  text = url.filename();
+	text2 = text;
+	text2.detach();
+	
+        if ( strcmp( url.protocol(), "file") == 0 )
+        {
+          if (S_ISLNK( lbuff.st_mode ) )
+          {
+	    QString tmp;
+	    if ( com.isNull() )
+	      tmp = "Symblic Link";
+	    else
+	      tmp.sprintf("%s (Link)", com.data() );
+            char buff_two[1024];
+            text += "->";
+            int n = readlink (url.path(), buff_two, 1022);
+            if (n == -1)
+            {
+               gui->slotSetStatusBar( text2 + "  " + tmp );
+               return;
+            }
+	    buff_two[n] = 0;
+	    text += buff_two;
+	    text += "  ";
+	    text += tmp.data();
+	  }
+	  else if ( S_ISREG( buff.st_mode ) )
+          {
+	     text += " ";
+	     if (buff.st_size < 1024)
+	       text.sprintf( "%s (%ld bytes)", text2.data(), (long) buff.st_size);
+	     else
+             {
+	       float d = (float) buff.st_size/1024.0;
+	       text.sprintf( "%s (%.2f K)", text2.data(), d);
+	     }
+	     text += "  ";
+	     text += com.data();
+	  }
+	  else
+	  {
+	      text += "  ";
+	      text += com.data();
+	  }	  
+	  gui->slotSetStatusBar( text );
+	}
+        else
+	  gui->slotSetStatusBar( _url );
+    }
+}
+
+void KfmView::slotFormSubmitted( const char *, const char *_url )
+{   
+    debugT("Form Submitted '%s'\n", _url );
+
+    if ( !activeManager )
+	return;
+    
+    KURL u1( activeManager->getURL() );
+    KURL u2( u1, _url );
+    
+    debugT("Complete is '%s'\n", u2.url().data() );
+    
+    openURL( u2.url().data() );    
+}
+
+KfmView* KfmView::getActiveView()
+{
+  KHTMLView *v = getSelectedView();
+  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 1 <<<<<<<<<<<<<<<<<<<<<<<<\n");
+  if ( !v )
+    return this; 
+  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 2 <<<<<<<<<<<<<<<<<<<<<<<<\n");
+  if ( v->isA( "KfmView" ) )
+    return (KfmView*)v;
+  debugT(">>>>>>>>>>>>>>>>>>>>>>>>>>> Get active view 3 <<<<<<<<<<<<<<<<<<<<<<<<\n");
+  return this;
+} 
+
+bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mouse, bool _isselected )
+{
+    // Select by drawing a rectangle
+    if ( _url == 0L && _mouse->button() == LeftButton )
+    {
+	select( 0L, false );
+	rectStart = true;            // Say it is start of drag
+	rectX1 = _mouse->pos().x();   // get start position
+	rectY1 = _mouse->pos().y();
+	rectX2 = rectX1;
+	rectY2 = rectY1;
+	if ( !dPainter )
+	    dPainter = new QPainter;
+	debugT ("KFileView::mousePressEvent: starting a rectangle (w/Painter)\n");   
+	return TRUE;
+    }
+    // Select a URL with Ctrl Button
+    else if ( _url != 0L && _mouse->button() == LeftButton &&
+	      ( _mouse->state() & ControlButton ) == ControlButton )
+    {   
+	selectByURL( 0L, _url, !_isselected );
+	ignoreMouseRelease = TRUE;
+	return TRUE;
+    }
+    else if ( _url != 0L && _mouse->button() == LeftButton )
+    {
+	QStrList list;
+	getSelected( list );
+
+	// The user selected the first icon
+	if ( list.count() == 0 )
+	{
+	    selectByURL( 0L, _url, TRUE );
+	    return FALSE;
+	}
+	// The user selected one of the icons that are already selected
+	if ( list.find( _url ) != -1 )
+	    return FALSE;
+	// The user selected another icon => deselect the selected ones
+	select( 0L, false );
+	selectByURL( 0L, _url, TRUE );
+	return FALSE;
+    }
+    // Context Menu
+    else if ( _url != 0L && _mouse->button() == RightButton )
+    {   
+	QPoint p = mapToGlobal( _mouse->pos() );
+	
+	// A popupmenu for a list of URLs or just for one ?
+	QStrList list;
+	getSelected( list );
+	char* s;
+	for ( s = list.first(); s != 0L; s = list.next() )
+	    debugT(" Entry '%s'\n",s);
+    
+	if ( list.find( _url ) != -1 )
+	    slotPopupMenu( list, p );
+	else
+	{
+	    // The selected URL is not marked, so unmark the marked ones.
+	    select( 0L, false );
+	    selectByURL( 0L, _url, TRUE );
+	    list.clear();
+	    list.append( _url );
+	    slotPopupMenu( list, p );
+	}
+	return TRUE;
+    }
+    // Context menu for background ?
+    else if ( _url == 0L && _mouse->button() == RightButton )
+    {      
+	QPoint p = mapToGlobal( _mouse->pos() );
+	
+	select( 0L, false );
+	QStrList list;
+	list.append( activeManager->getURL() );
+	slotPopupMenu( list, p );
+	return TRUE;
+    }
+    
+    return FALSE;
+}
+
+bool KfmView::mouseMoveHook( QMouseEvent *_mouse )
+{
+    if ( rectStart )
+    {
+	int x = _mouse->pos().x();
+	int y = _mouse->pos().y();
+	
+	if ( !dPainter )
+	{
+	    debugT ("KFileView::mouseMoveEvent: no painter\n");
+	    return TRUE;
+	}
+	dPainter->begin( view );
+	dPainter->setRasterOp (NotROP);
+	dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
+	dPainter->end();
+	
+	int x1 = rectX1;
+	int y1 = rectY1;    
+	if ( x1 > x )
+	{
+	    int tmp = x1;
+	    x1 = x;
+	    x = tmp;
+	}
+	if ( y1 > y )
+	{
+	    int tmp = y1;
+	    y1 = y;
+	    y = tmp;
+	}    
+	
+	debugT ("KFileView::dndMouseMoveEvent: end of draging; x1,y1,x2,y2 = %d,%d,%d,%d\n",
+		x1, y1, x, y);
+	QRect rect( x1, y1, x - x1 + 1, y - y1 + 1 );
+	select( 0L, rect );
+	
+	rectX2 = _mouse->pos().x();
+	rectY2 = _mouse->pos().y();
+	
+	dPainter->begin( view );
+	dPainter->setRasterOp (NotROP);
+	dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
+	dPainter->end();
+	
+	return TRUE;
+    }
+  
+    return FALSE;
+}
+
+bool KfmView::mouseReleaseHook( QMouseEvent *_mouse )
+{
+    if ( ignoreMouseRelease )
+    {
+	ignoreMouseRelease = FALSE;
+	return TRUE;
+    }
+    
+    if ( rectStart )
+    {
+	rectX2 = _mouse->pos().x();
+	rectY2 = _mouse->pos().y();
+	if ( ( rectX2 == rectX1 ) && ( rectY2 == rectY1 ) )
+	{
+	    select( 0L, false );
+	    debugT ("KFileView::mouseReleaseEvent: it was just a dream... just a dream.\n");
+	}
+	else
+	{
+	    /* ...find out which objects are in(tersected with) rectangle and select
+	       them, but remove rectangle first. */
+	    dPainter->begin( view );
+	    dPainter->setRasterOp (NotROP);
+	    dPainter->drawRect (rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);
+	    dPainter->end();
+	    if ( rectX2 < rectX1 )
+	    {
+		int tmp = rectX1;
+		rectX1 = rectX2;
+		rectX2 = tmp;
+	    }
+	    if ( rectY2 < rectY1 )
+	    {
+		int tmp = rectY1;
+		rectY1 = rectY2;
+		rectY2 = tmp;
+	    }
+	    
+	    debugT ("KFileView::dndMouseReleaseEvent: end of draging; x1,y1,x2,y2 = %d,%d,%d,%d\n",
+		    rectX1, rectY1, rectX2, rectY2);
+	    QRect rect( rectX1, rectY1, rectX2 - rectX1 + 1, rectY2 - rectY1 + 1 );
+	    select( 0L, rect );
+	}
+	
+	rectStart = false;
+	delete dPainter;
+	dPainter = 0L;
+	
+	return TRUE;
+	
+    }
+    
+    return FALSE;
+}
+
+bool KfmView::dndHook( const char *_url, QPoint &_p )
+{
+    if ( _url == 0L )
+	return TRUE;
+    
+    QStrList l;
+    getSelected( l );
+    
+    QPixmap pixmap;
+    
+    // Is anything selected at all ?
+    if ( l.count() == 0 )
+	l.append( _url );
+    
+    // Do we drag multiple files ?
+    if ( l.count() == 1 )
+    {
+	KMimeType *typ = KMimeType::findType( l.first() );
+	pixmap = typ->getPixmap( l.first() );
+    }
+    else
+    {
+	// TODO  Nice icon for multiple files
+	KMimeType *typ = KMimeType::findType( l.first() );
+	pixmap = typ->getPixmap( l.first() );
+    }
+    
+    // Put all selected files in one line separated with newlines
+    char *s;
+    QString tmp = "";
+    for ( s = l.first(); s != 0L; s = l.next() )
+    {
+	tmp += s;
+	tmp += "\n";
+    }
+    // Delete the trailing newline
+    QString data = tmp.stripWhiteSpace();
+    
+    // Offset of the mouse pointer relative to the upper left corner of the icon
+    int dx = - pixmap.width() / 2;
+    int dy = - pixmap.height() / 2;
+    
+    view->startDrag( new KDNDIcon( pixmap, _p.x() + dx, _p.y() + dy ), 
+		     data.data(), data.length(), DndURL, dx, dy );
+    
+    return TRUE;
 }
 
 #include "kfmview.moc"

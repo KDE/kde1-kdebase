@@ -5,9 +5,9 @@
 
 #include <qapp.h>
 #include <qdir.h>
-#include <ktreelist.h>
 #include <qlistbox.h>
 #include <qpushbt.h>
+#include <ktreelist.h>
 
 class KFMTree : public KTreeList
 {

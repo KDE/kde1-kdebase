@@ -5,8 +5,10 @@
 
 #include <qapp.h>
 #include <qdir.h>
+#include <qmsgbox.h>
 
 #include "kfmclient_ipc.h"
+#include <config-kfm.h>
 
 char flag = 0;
 
@@ -16,31 +18,31 @@ int main( int argc, char **argv )
 {
     if ( argc == 1 )
     {
-	printf("\nSyntax:\n");
-	printf("./kfmclient openURL                # Opens an dialog to ask you for the URL\n");
-	printf("./kfmclient openURL 'url'          # Opens a window showing 'url'. If such a window\n");
-	printf("                                   # exists, it is showed\n");
-	printf("                                   # 'url' may be \"trash:/\" to open the trash bin.\n");
-	printf("./kfmclient refreshDesktop         # Refreshes the desktop\n");
-	printf("./kfmclient refreshDirectory 'url' # Tells KFM that an URL has changes. If KFM\n");
-	printf("                                   # is displaying that URL, it will be reloaded.\n");
-	printf("./kfmclient openProperties 'url'   # Opens a properties menu\n");
-	printf("./kfmclient exec 'url' ['binding'] # Tries to execute 'url'. 'url' may be a usual URL, this\n");
-	printf("  URL will be opened. You may omit 'binding'. In this case the default binding is tried.\n");
-	printf("  Of course URL may be the URL of a document, or it may be a *.kdelnk file. This way you\n");
-	printf("  could for example mount a device by passing 'Mount default' as binding to 'cdrom.kdelnk'\n");
-	printf("  Examples: ./kfmclient exec file:/usr/local/kde/bin/kdehelp Open              // Starts kdehelp\n");
-	printf("            ./kfmclient exec file:/root/Desktop/cdrom.kdelnk \"Mount default\" // Mounts the CDROM\n");	
-	printf("            ./kfmclient exec file:/home/weis/data/test.html    // Opens the file with default binding\n");
-	printf("            ./kfmclient exec file:/home/weis/data/test.html Netscape  // Opens the file with netscape\n");
-	printf("            ./kfmclient exec ftp://localhost/ Open             // Opens new window with URL\n");
-	printf("            ./kfmclient exec file:/root/Desktop/emacs.kdelnk   // Starts emacs\n");
-	printf("            ./kfmclient exec file:/root/Desktop/cdrom.kdelnk   // Opens the mount directory\n");
-	printf("./kfmclient move 'src' 'dest'  # Copies the URL 'src' to 'dest'. 'src' may be a list of URLs.\n");
-	printf("                               # 'dest' may be \"trash:/\" to move the files in the trash bin.\n");
-	printf("./kfmclient folder 'src' 'dest'  # Like move if 'src' is given, otherwise like openURL dest \n");
-	printf("./kfmclient sortDesktop          # Rearranges all icons on the desktop.\n");
-	printf("\n(c) Torben Weis, 1997\nPart of the KDE Project\n\n");
+	debugT("\nSyntax:\n");
+	debugT("./kfmclient openURL                # Opens an dialog to ask you for the URL\n");
+	debugT("./kfmclient openURL 'url'          # Opens a window showing 'url'. If such a window\n");
+	debugT("                                   # exists, it is showed\n");
+	debugT("                                   # 'url' may be \"trash:/\" to open the trash bin.\n");
+	debugT("./kfmclient refreshDesktop         # Refreshes the desktop\n");
+	debugT("./kfmclient refreshDirectory 'url' # Tells KFM that an URL has changes. If KFM\n");
+	debugT("                                   # is displaying that URL, it will be reloaded.\n");
+	debugT("./kfmclient openProperties 'url'   # Opens a properties menu\n");
+	debugT("./kfmclient exec 'url' ['binding'] # Tries to execute 'url'. 'url' may be a usual URL, this\n");
+	debugT("  URL will be opened. You may omit 'binding'. In this case the default binding is tried.\n");
+	debugT("  Of course URL may be the URL of a document, or it may be a *.kdelnk file. This way you\n");
+	debugT("  could for example mount a device by passing 'Mount default' as binding to 'cdrom.kdelnk'\n");
+	debugT("  Examples: ./kfmclient exec file:/usr/local/kde/bin/kdehelp Open              // Starts kdehelp\n");
+	debugT("            ./kfmclient exec file:/root/Desktop/cdrom.kdelnk \"Mount default\" // Mounts the CDROM\n");	
+	debugT("            ./kfmclient exec file:/home/weis/data/test.html    // Opens the file with default binding\n");
+	debugT("            ./kfmclient exec file:/home/weis/data/test.html Netscape  // Opens the file with netscape\n");
+	debugT("            ./kfmclient exec ftp://localhost/ Open             // Opens new window with URL\n");
+	debugT("            ./kfmclient exec file:/root/Desktop/emacs.kdelnk   // Starts emacs\n");
+	debugT("            ./kfmclient exec file:/root/Desktop/cdrom.kdelnk   // Opens the mount directory\n");
+	debugT("./kfmclient move 'src' 'dest'  # Copies the URL 'src' to 'dest'. 'src' may be a list of URLs.\n");
+	debugT("                               # 'dest' may be \"trash:/\" to move the files in the trash bin.\n");
+	debugT("./kfmclient folder 'src' 'dest'  # Like move if 'src' is given, otherwise like openURL dest \n");
+	debugT("./kfmclient sortDesktop          # Rearranges all icons on the desktop.\n");
+	debugT("\n(c) Torben Weis, 1997\nPart of the KDE Project\n\n");
 	return 0;
     }
     
@@ -59,14 +61,14 @@ int doIt( int argc, char **argv )
     {
 	if ( flag == 0 )
 	{
-	    printf("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
+	    debugT("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
 	    system( "kfm &" );
 	    flag = 1;
 	    sleep( 5 );
 	    return doIt( argc, argv );
 	}
 	
-	printf("ERROR: KFM is not running\n");
+	debugT("ERROR: KFM is not running\n");
 	exit(1);
     }
     
@@ -76,7 +78,7 @@ int doIt( int argc, char **argv )
     int pid = atoi( buffer );
     if ( pid <= 0 )
     {
-	printf("ERROR: Invalid PID\n");
+	debugT("ERROR: Invalid PID\n");
 	exit(1);
     }
 
@@ -85,13 +87,13 @@ int doIt( int argc, char **argv )
 	if ( flag == 0 )
 	{
 	    flag = 1;
-	    printf("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
+	    debugT("!!!!!!! Running new KFM !!!!!!!!!!!!!!\n");
 	    system( "kfm &" );
 	    sleep( 5 );
 	    return doIt( argc, argv );
 	}
 
-	printf("ERROR: KFM crashed\n");
+	debugT("ERROR: KFM crashed\n");
 	exit(1);
     }
 
@@ -100,15 +102,36 @@ int doIt( int argc, char **argv )
     int slot = atoi( buffer );
     if ( slot <= 0 )
     {
-	printf("ERROR: Invalid Slot\n");
+	debugT("ERROR: Invalid Slot\n");
 	exit(1);
     }
     
     KfmIpc kfm( slot );
+
+    // Read the password
+    QString fn = getenv( "HOME" );
+    fn += "/.kfm/magic";
+    f = fopen( fn.data(), "rb" );
+    if ( f == 0L )
+    {
+	QMessageBox::message( "KFM Error",
+			      "You dont have the file ~/.kfm/magic\n\rCould not do Authorization" );
+	exit(1);
+    }
+    char *p = fgets( buffer, 1023, f );
+    fclose( f );
+    if ( p == 0L )
+    {
+	QMessageBox::message( "KFM Error",
+			      "The file ~/.kfm/magic is corrupted\n\rCould not do Authorization" );
+	exit(1);
+    }
+
+    kfm.auth( buffer );
     
     if ( argc < 2 )
     {
-	printf( "Syntax Error: Too few arguments\n" );
+	debugT( "Syntax Error: Too few arguments\n" );
 	exit(1);
     }
     
@@ -116,7 +139,7 @@ int doIt( int argc, char **argv )
     {
 	if ( argc != 2 )
 	{
-	    printf( "Syntax Error: Too many arguments\n" );
+	    debugT( "Syntax Error: Too many arguments\n" );
 	    exit(1);
 	}
 	kfm.refreshDesktop();
@@ -125,7 +148,7 @@ int doIt( int argc, char **argv )
     {
 	if ( argc != 2 )
 	{
-	    printf( "Syntax Error: Too many arguments\n" );
+	    debugT( "Syntax Error: Too many arguments\n" );
 	    exit(1);
 	}
 	kfm.sortDesktop();
@@ -142,7 +165,7 @@ int doIt( int argc, char **argv )
 	}
 	else
 	{
-	    printf( "Syntax Error: Too many arguments\n" );
+	    debugT( "Syntax Error: Too many arguments\n" );
 	    exit(1);
 	}
     }
@@ -158,7 +181,7 @@ int doIt( int argc, char **argv )
 	}
 	else
 	{
-	    printf( "Syntax Error: Too many arguments\n" );
+	    debugT( "Syntax Error: Too many arguments\n" );
 	    exit(1);
 	}
     }
@@ -170,7 +193,7 @@ int doIt( int argc, char **argv )
 	}
 	else
 	{
-	    printf( "Syntax Error: Too many arguments\n" );
+	    debugT( "Syntax Error: Too many arguments\n" );
 	    exit(1);
 	}
     }
@@ -186,7 +209,7 @@ int doIt( int argc, char **argv )
 	}
 	else
 	{
-	    printf( "Syntax Error: Too many/few arguments\n" );
+	    debugT( "Syntax Error: Too many/few arguments\n" );
 	    exit(1);
 	}
     }
@@ -194,7 +217,7 @@ int doIt( int argc, char **argv )
     {
 	if ( argc <= 3 )
 	{
-	    printf( "Syntax Error: Too many/few arguments\n" );
+	    debugT( "Syntax Error: Too many/few arguments\n" );
 	    exit(1);
 	}
 	QString src = "";
@@ -213,7 +236,7 @@ int doIt( int argc, char **argv )
     {
 	if ( argc <=2 )
 	{
-	    printf( "Syntax Error: Too many/few arguments\n" );
+	    debugT( "Syntax Error: Too many/few arguments\n" );
 	    exit(1);
 	}
 
@@ -236,9 +259,10 @@ int doIt( int argc, char **argv )
     }
     else
     {
-	printf("Synatx Error: Unknown command '%s'\n",argv[1] );
+	debugT("Synatx Error: Unknown command '%s'\n",argv[1] );
 	exit(1);
     }
+    return 0; // Stephan: default return
 }
 
 

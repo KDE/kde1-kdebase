@@ -6,47 +6,49 @@ class KFileManager;
 class KTarManager;
 class KFtpManager;
 class KHttpManager;
+class KCgiManager;
 
-#include "kfmwin.h"
+#include "kfmview.h"
 #include "htmlcache.h"
+#include "cgi.h"
 
-/// Abstract manager
+class QFontMetrics;
+
 /**
-  For every protocol there is a manager. The manager is repsponsible
-  for creating HTML code and for actions on the URLs he supports.
-  The user may for example double click on a URL or press
-  the right mouse button.
-  */
+ * For every protocol there is a manager. The manager is repsponsible
+ * for creating HTML code and for actions on the URLs he supports.
+ * The user may for example double click on a URL or press
+ * the right mouse button.
+ */
 class KAbstractManager : public QObject
 {
     Q_OBJECT
 public:
-    /// Constructor
-    KAbstractManager( KFileWindow *_w, KFileView *_v ) 
-    { window = _w; view = _v; url = ""; popupMenu = new QPopupMenu(); popupMenu->installEventFilter( this ); }
+    KAbstractManager( KfmView *_v );
+    virtual ~KAbstractManager();
     
-    /// Destructor
-    virtual ~KAbstractManager() { }    
-    
-    /// Display _url in the window.
     /**
-      If the URL opened causes a repaint of the KViewWindow, then the function
-      returns TRUE. If for example the URL could not be opened or if the URL
-      was an executable ( which means that the executable had been started )
-      or if a new window has been opened, the function will return FALSE.
-      openURL can open a new directory, start an executable or start for example
-      Netscape with '_url' as argument. If _refresh is TRUE, then the same
-      URL is already displayed. In this case some files changed and an update
-      has to be done.
-      */
-    virtual bool openURL( const char *, bool = FALSE ) { return FALSE; }
+     * Display _url in the window.
+     * If the URL opened causes a repaint of the KViewWindow, then the function
+     * returns TRUE. If for example the URL could not be opened or if the URL
+     * was an executable ( which means that the executable had been started )
+     * or if a new window has been opened, the function will return FALSE.
+     * openURL can open a new directory, start an executable or start for example
+     * Netscape with '_url' as argument. If _refresh is TRUE, then the same
+     * URL is already displayed. In this case some files changed and an update
+     * has to be done.
+     */
+    virtual bool openURL( const char *, bool = FALSE ) { 
+    	// Stephan: I'm not that sure, how to handle this
+    	return true;
+    }
   
     /// The user pressed the right mouse button over _url (or some selected URLs ) at point _p.
     /**
       You can not expect that you are the 'actualManager' of KFileWindow
       when this function is called. For example KHttpManager
       */
-    virtual void openPopupMenu( QStrList &, const QPoint & ) { }
+    virtual void openPopupMenu( QStrList & , const QPoint & ) { }
     /// The user dropped the URLs _source over the URL _url at the point _p.
     virtual void dropPopupMenu( KDNDDropZone *, const char *, const QPoint * ) { }
 
@@ -60,11 +62,18 @@ public:
     QString& getURL() { return url; }
 
 protected:
+    /**
+     * This fucntion is used to distinguish hard coded bindings and bindings belonging
+     * to applications. The only thing we know is the bindings name '_txt'.
+     *
+     * @return TRUE if '_txt' is the name of a hard coded binding like "Copy", "Link" etc.
+     *
+     * @see KFileManager::slotPopupActivated
+     */
+    bool isBindingHardcoded( const char *_txt );
 
-    /// The KFileWindow to which this manager belongs.
-    KFileWindow *window;
     /// The KFileWindows view.
-    KFileView *view;
+    KfmView *view;
 
     /// The currently managed URL.
     QString url;
@@ -81,7 +90,15 @@ protected:
     /// and the mouseposition when opening it (Matthias)
     QPoint popupMenuPosition;
     
-    bool eventFilter(QObject *, QEvent *);               
+    bool eventFilter(QObject *, QEvent *);
+
+    /// the font metrics of the default HTML font that is used for icon labels
+    QFontMetrics *labelFontMetrics;
+
+    /// the maximum width of icon labels
+    int maxLabelWidth;
+
+    void writeWrapped(char *);          
 };
 
 /// Manager for the local file system
@@ -99,7 +116,7 @@ public:
      If _view is 0L, then the manager is used by the root widget.
      In this case he has to open a new window every time.
      */
-    KFileManager( KFileWindow *_window, KFileView *_view );
+    KFileManager( KfmView *_view );
     /// Destructor
     virtual ~KFileManager();
     
@@ -176,7 +193,7 @@ class KHttpManager : public KAbstractManager
     Q_OBJECT
 public:
     /// Constructor
-    KHttpManager( KFileWindow *, KFileView * );
+    KHttpManager( KfmView *_view );
     /// Destructor
     virtual ~KHttpManager();
 
@@ -195,6 +212,12 @@ public slots:
     /// Called if the HTML document arrived.
     void slotShowHTML( const char *_url, const char *_filename );
     
+    /**
+     * Called if the job makes any progress.
+     */
+    void slotProgress( const char *_url, const char *_filename,
+		       int _percent, int _bytes, float _rate, bool _stalled );
+    
 protected:
     //@Man: Variables
     //@{
@@ -205,6 +228,15 @@ protected:
     /// The Cache
     HTMLCache *htmlCache;
 
+    /**
+     * Amount of bytes we alread read and wrote into the HTML widget.
+     */
+    int bytesRead;
+    
+    /**
+     * This file handle is used to read the file, kioslave is writing to.
+     */
+    FILE *f;
     //@}
 };
 
@@ -217,7 +249,7 @@ class KTarManager : public KAbstractManager
     Q_OBJECT
 public:
     /// Constructor
-    KTarManager( KFileWindow *, KFileView * );
+    KTarManager( KfmView *_view );
     /// Destructor
     virtual ~KTarManager();
 
@@ -262,7 +294,7 @@ class KFtpManager : public KAbstractManager
     Q_OBJECT
 public:
     /// Constructor
-    KFtpManager( KFileWindow *, KFileView * );
+    KFtpManager( KfmView *_view );
     /// Destructor
     virtual ~KFtpManager();
 
@@ -315,7 +347,21 @@ public slots:
       */
     void slotShowFiles( int _id );
 
+    /** 
+     * Called from @ref #timer every 5 seconds to check wether the transfer
+     * stalled.
+     */
+    void slotProgressTimeout();
+    
+    /**
+     * Called from the @ref KIOJob if the job makes any progress.
+     */
+    void slotProgress( int _percent, int _bytesTransfered );
+    
 protected:
+    void writeBeginning();
+    void writeEntry( KIODirectoryEntry *_e );
+    
     /// List of all files in the directory
     /**
       This list is filled by 'slotNewDirEntry'
@@ -340,6 +386,84 @@ protected:
 
     /// The job that is currently running
     KIOJob *job;
+
+    /**
+     * Time elapsed since job started.
+     */
+    QTime timer1;
+    /**
+     * Time elapsed since last bytes arrived.
+     */
+    QTime timer2;
+    /**
+     * Calls us every 5 seconds to check wether the transfer is stalled.
+     */
+    QTimer *timer;
+
+    /**
+     * The amount of bytes transfered right now.
+     */
+    int bytesTransfered;
+    /**
+     * The percent of the file that is already downloaded.
+     */
+    int percent;
+};
+
+/**
+ * @short Manager for the local CGI protocol
+ */
+class KCgiManager : public KAbstractManager
+{
+    Q_OBJECT
+public:
+    KCgiManager( KfmView *_view );
+    virtual ~KCgiManager();
+
+    /**
+     * Tell the CGI-Server to run the cgi script.
+     *
+     * @sse KCGI
+     */
+    virtual bool openURL( const char *_url, bool _refresh = FALSE );
+    /**
+     * The user pressed the right mouse button over _url at point _p.
+     */
+    virtual void openPopupMenu( QStrList &_url, const QPoint &_p );
+
+    /**
+     * Stop the CGI-Server that runs the script.
+     *
+     * @see KCGI
+     */
+    virtual void stop();
+
+public slots: 
+    /**
+     * A item of the popup menu has been selected.
+     */
+    void slotPopupActivated( int _id );
+
+    /**
+     * Called if the HTML document arrived.
+     */
+    void slotShowHTML();
+    
+protected:
+    /**
+     * Flag that indicates wether we are waiting for a running script right now.
+     */
+    bool running;
+
+    /**
+     * This server is used to run local CGI programs.
+     */
+    KCGI *cgiServer;
+
+    /**
+     * The file used to save the output of the CGI script.
+     */
+    QString tmpFile;
 };
 
 #endif

@@ -1,8 +1,9 @@
 #include "kbind.h"
-#include "kfmwin.h"
+#include "kfmgui.h"
 #include "root.h"
 #include "kfmserver.h"
 #include "xview.h"
+#include <config-kfm.h>
 
 #include <kapp.h>
 #include <unistd.h>
@@ -14,10 +15,14 @@
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 
+#include <sys/types.h>
 #include <dirent.h>
+#include <signal.h>
+#include <sys/wait.h>
 
 void autostart();
 void testDir();
+void sig_handler( int signum );
 
 void testDir( const char *_name )
 {
@@ -30,7 +35,7 @@ void testDir( const char *_name )
     ::mkdir( _name, S_IRWXU );
   }
   else
-      closedir( dp );
+    closedir( dp );
 }
 
 int main( int argc, char ** argv )
@@ -44,10 +49,10 @@ int main( int argc, char ** argv )
 	::mkdir( c.data(), S_IRWXU );
     else
     {
-	printf("Exist '%s'\n", c.data() );
+	debugT("Exist '%s'\n", c.data() );
 	closedir( dp );
     }
-
+    
     c = getenv( "HOME" );
     c += "/.kde/config";
     dp = opendir( c.data() );
@@ -55,7 +60,7 @@ int main( int argc, char ** argv )
 	::mkdir( c.data(), S_IRWXU );
     else
     {
-	printf("Exist '%s'\n", c.data() );
+	debugT("Exist '%s'\n", c.data() );
 	closedir( dp );
     }
     
@@ -65,11 +70,45 @@ int main( int argc, char ** argv )
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/kfmrc", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/lib/kfm/config/kfmrc %s/.kde/config/kfmrc", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
 	fclose( f2 );
+
+    // Test for kfm directories
+    c = getenv( "HOME" );
+    c += "/.kfm";
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+    {
+	debugT("Exist '%s'\n", c.data() );
+	closedir( dp );
+    }
+    
+    c = getenv( "HOME" );
+    c += "/.kfm/cache";
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+    {
+	debugT("Exist '%s'\n", c.data() );
+	closedir( dp );
+    }
+
+    c = getenv( "HOME" );
+    c += "/.kfm/tmp";
+    dp = opendir( c.data() );
+    if ( dp == NULL )
+	::mkdir( c.data(), S_IRWXU );
+    else
+    {
+	debugT("Exist '%s'\n", c.data() );
+	closedir( dp );
+    }
 
     c = getenv( "HOME" );
     c += "/.desktop";
@@ -77,7 +116,7 @@ int main( int argc, char ** argv )
     if ( f2 == 0L )
     {
 	QString cmd;
-	cmd.sprintf( "cp %s/lib/kfm/config/desktop %s/.desktop", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	cmd.sprintf( "cp %s/lib/kfm/config/desktop %s/.desktop", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     else
@@ -91,9 +130,11 @@ int main( int argc, char ** argv )
     if ( dp == NULL )
 	bTemplates = FALSE;
     else
-        closedir( dp );
+      closedir( dp );
 
     KApplication a( argc, argv, "kfm" );
+
+    signal(SIGCHLD,sig_handler);
 
     // Test for directories
     QString d = getenv( "HOME" );
@@ -108,22 +149,20 @@ int main( int argc, char ** argv )
     d = getenv( "HOME" );
     d += "/Desktop/Autostart";
     testDir( d );
-    d = getenv( "KDEDIR" );
+    QString kd = kapp->kdedir();
+    d = kd.copy();
     d += "/apps";
     testDir( d );
-    d = getenv( "KDEDIR" );
-    d += "/filetypes";
+    d = kd.copy();
+    d += "/mimetypes";
     testDir( d );
-    d = getenv( "KDEDIR" );
-    d += "/filetypes";
-    testDir( d );
-    d = getenv( "KDEDIR" );
+    d = kd.copy();
     d += "/lib/pics";
     testDir( d );
-    d = getenv( "KDEDIR" );
+    d = kd.copy();
     d += "/lib/pics/toolbar";
     testDir( d );
-    d = getenv( "KDEDIR" );
+    d = kd.copy();
     d += "/lib/pics/wallpapers";
     testDir( d );
 
@@ -131,14 +170,14 @@ int main( int argc, char ** argv )
     {
 	QMessageBox::message( "KFM Information", "Installing Templates" );
 	QString cmd;
-	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s/Desktop/Templates", getenv( "KDEDIR" ), getenv( "HOME" ) );
+	cmd.sprintf("cp %s/lib/kfm/Desktop/Templates/* %s/Desktop/Templates", kapp->kdedir().data(), getenv( "HOME" ) );
 	system( cmd.data() );
     }
     
     KHTMLWidget::registerFormats();
     QImageIO::defineIOHandler( "XV", "^P7 332", 0, read_xv_file, 0L );
     
-    printf("0. Init IPC\n");
+    debugT("0. Init IPC\n");
     
     KFMServer ipc;
     
@@ -148,25 +187,25 @@ int main( int argc, char ** argv )
     FILE *f = fopen( file.data(), "wb" );
     if ( f == 0L )
     {
-	printf("ERROR: Could not write PID file\n");
+	debugT("ERROR: Could not write PID file\n");
 	exit(1);
     }
     fprintf( f, "%i\n%i\n", (int)getpid(),(int)ipc.getPort() );
     fclose( f );
     
-    printf("1. Init KIOManager\n");
+    debugT("1. Init KIOManager\n");
 
     KIOServer *server = new KIOServer();
 
-    printf("2. Init FileTypes\n");
+    debugT("2. Init FileTypes\n");
     
-    KFileType::init();
+    KMimeType::init();
     
-    printf("3. Init Root widget\n");
+    debugT("3. Init Root widget\n");
 
     new KRootWidget();
     
-    printf("4. Init window\n");
+    debugT("4. Init window\n");
     
     bool openwin = TRUE;
 
@@ -181,10 +220,10 @@ int main( int argc, char ** argv )
 	QString home = "file:";
 	home.detach();
 	home += QDir::homeDirPath().data();
-	printf("Opening window\n");
-	KFileWindow *m = new KFileWindow( 0L, 0L, home.data() );
+	debugT("Opening window\n");
+	KfmGui *m = new KfmGui( 0L, 0L, home.data() );
 	m->show();
-	printf("Opended\n");
+	debugT("Opended\n");
     }
     
     QWidget w( 0L, "Main" );
@@ -195,9 +234,9 @@ int main( int argc, char ** argv )
     Atom atom = XInternAtom( a.getDisplay(), "DndRootWindow", False );    
     XChangeProperty( a.getDisplay(), root, atom, XA_STRING, 32,
 		     PropModeReplace, (const unsigned char*)(&win), 1);
-    printf("Root window = %x\n",(int)win);
+    debugT("Root window = %x\n",(int)win);
 
-	printf("Fetching RootWindow\n");
+	debugT("Fetching RootWindow\n");
 	
 	unsigned char *Data;
 	unsigned long Size;
@@ -205,7 +244,7 @@ int main( int argc, char ** argv )
         int     ActualFormat;
         unsigned long RemainingBytes;
       
-	printf("Call\n");
+	debugT("Call\n");
 
         XGetWindowProperty(a.getDisplay(),root,atom,
                            0L,4L,
@@ -214,16 +253,16 @@ int main( int argc, char ** argv )
                            &Size,&RemainingBytes,
                            &Data);
 
-	printf("Called and Data is %x\n",Data);
+	debugT("Called and Data is %x\n",*Data);
 
 	if ( Data != 0L )
 	    win = *((Window*)Data);
 	else
 	    win = 0L;
 	
-	printf("root window is %x\n",(int)win);
+	debugT("root window is %x\n",(int)win);
 
-    printf("5. running\n");
+    debugT("5. running\n");
 
     bool as = TRUE;
     
@@ -234,14 +273,29 @@ int main( int argc, char ** argv )
     if ( as )
       autostart();
 
-    printf("OOOOOOOOOOOOOOOOOO Display size %i %i\n",
+    debugT("OOOOOOOOOOOOOOOOOO Display size %i %i\n",
 	   XDisplayWidth( a.getDisplay(), 0 ), XDisplayHeight( a.getDisplay(), 0 ) );
     
     return a.exec();
 }
 
-
-
-
-
-
+void sig_handler( int )
+{
+    int pid;
+    int status;
+    
+    while( 1 )
+    {
+	debugT("SIGNAL HANDLER called\n");
+	
+	pid = waitpid( -1, &status, WNOHANG );
+	if ( pid <= 0 )
+	{
+	    // Reinstall signal handler, since Linux resets to default after
+	    // the signal occured ( BSD handles it different, but it should do
+	    // no harm ).
+	    signal(SIGCHLD,sig_handler);
+	    return;
+	}
+    }
+}

@@ -5,7 +5,6 @@
 #include <qpushbt.h>
 #include <qlabel.h>
 #include <qframe.h>
-
 #include <qpixmap.h>
 
 

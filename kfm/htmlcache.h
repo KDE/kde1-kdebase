@@ -6,6 +6,8 @@
 #include <qlist.h>
 #include <qobject.h>
 #include <qstring.h>
+#include <qdatetm.h>
+#include <qtimer.h>
 
 #include "kiojob.h"
 
@@ -30,14 +32,47 @@ public:
 public slots:
     /// Is called if the job has finished its work
     void slotJobFinished( int _id );
-    
+
+    /**
+     * Called if the job makes any progress.
+     */
+    void slotProgress( int _percent, int _bytesTransered );
+    /**
+     * Called every 5 secs to check wether the transfer is "stalled".
+     */
+    void slotProgressTimeout();
+
 signals:
     /// Signals the client that this job is finished
     void finished( HTMLCacheJob * );
-    
+
+    void progress( HTMLCacheJob *, int _percent, int _bytesTrasfered, float _rate, bool _stalled );    
+
 protected:
     QString url;
     QString dest;
+
+    /**
+     * Time elapsed since job started.
+     */
+    QTime timer1;
+    /**
+     * Time elapsed since last bytes arrived.
+     */
+    QTime timer2;
+    /**
+     * Calls us every 5 seconds to check wether the transfer is stalled.
+     */
+    QTimer *timer;
+
+    /**
+     * The amount of bytes transfered right now.
+     */
+    int bytesTransfered;
+    /**
+     * The percent of the file that is already downloaded.
+     */
+    int percent;
 };
 
 /// Caches HTML pahes/images
@@ -95,9 +130,18 @@ public slots:
       are possible.
       */
     void slotJobFinished( HTMLCacheJob * _job );
-    
+
+    /**
+     * This slot is connected to @ref HTMLCacheJob::progress.
+     * It emits the signal @ref #progress.
+     */
+    void slotProgress( HTMLCacheJob *_job, int _percent, int _bytesTransfered,
+		       float _rate, bool _stalled );
 signals:
     void urlLoaded( const char * _url, const char * _filename );
+    
+    void progress( const char *_url, const char *_filename,
+		   int _percent, int _bytesTrasfered, float _rate, bool _stalled );
     
 protected:
 

@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
+#include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
 
@@ -18,6 +19,7 @@
 #include "kmsgwin.h"
 #include "krenamewin.h"
 #include "passworddialog.h"
+#include <config-kfm.h>
 
 QList<KIOJob> KIOJob::jobList;
 QDict<QString> KIOJob::passwordDict;
@@ -28,7 +30,7 @@ KIOJob::KIOJob( int _id )
     slave = 0L;
     dlg = 0L;
     bDisplay = TRUE;
-    progress = 0L;
+    progressBar = 0L;
     line1 = 0L;
     line2 = 0L;
     line3 = 0L;
@@ -47,14 +49,14 @@ KIOJob::~KIOJob()
 
 void KIOJob::mkdir( const char *_url )
 {
-    printf("Making '%s'\n",_url);
+    debugT("Making '%s'\n",_url);
     
     action = KIOJob::JOB_MKDIR;
     
     KURL u( _url );
     if ( u.isMalformed() )
     {
-	printf("ERROR: Malformed URL\n");
+	debugT("ERROR: Malformed URL\n");
 	return;
     }
     
@@ -74,7 +76,7 @@ void KIOJob::list( const char *_url, bool _reload )
     
     lstURL = _url;
     lstURL.detach();
-    printf("LIST: Got '%s'\n",lstURL.data());
+    debugT("LIST: Got '%s'\n",lstURL.data());
  
     KIODirectory *dir = 0L;
     if ( !_reload )
@@ -96,7 +98,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
 {
     if ( _dev == 0L )
     {
-	printf("INTERNAL ERROR: You must at least specify the device for mounting\n");
+	debugT("INTERNAL ERROR: You must at least specify the device for mounting\n");
 	exit(1);
     }
     
@@ -116,7 +118,7 @@ void KIOJob::mount( bool _ro, const char *_fstype, const char* _dev, const char 
     {
 	FILE *f = setmntent( "/etc/fstab", 0 );
 	if ( f == 0 )
-	    printf("WARNING: Could not access /etc/fstab\n");
+	    debugT("WARNING: Could not access /etc/fstab\n");
 	else
 	{
 	    bool bend = FALSE;
@@ -223,16 +225,16 @@ void KIOJob::link()
 	
 	if ( su.isMalformed() )
 	{
-	    printf("ERROR: Malformed URL '%s'\n",p);
+	    debugT("ERROR: Malformed URL '%s'\n",p);
 	}
 	else if ( du.isMalformed() )
 	{
-	    printf("ERROR: Malformed URL '%s'\n",p2);
+	    debugT("ERROR: Malformed URL '%s'\n",p2);
 	}	
 	// I can only make links on the local file system.
 	else if ( strcmp( du.protocol(), "file" ) != 0L )
 	{
-	    printf("ERROR: Can only make links on local file system\n");
+	    debugT("ERROR: Can only make links on local file system\n");
 	}
 	else
 	{
@@ -240,7 +242,7 @@ void KIOJob::link()
 	    if ( strcmp( su.protocol(), "file" ) == 0 )
 	    {
 		if ( symlink( su.path(), du.path() ) == -1 )
-		    printf("ERROR: Could not make symlink to %s\n",du.path() );
+		    debugT("ERROR: Could not make symlink to %s\n",du.path() );
 	    }
 	    // Make a link to a file in a tar archive, ftp, http or what ever
 	    else
@@ -251,23 +253,23 @@ void KIOJob::link()
 		    QTextStream pstream( &f );
 		    KConfig config( &pstream );
 		    config.setGroup( "KDE Desktop Entry" );
-		    config.writeEntry( "URL", p2 );
+		    config.writeEntry( "URL", p );
 		    config.writeEntry( "Type", "Link" );
-		    if ( strcmp( du.protocol(), "ftp" ) == 0 )
+		    if ( strcmp( su.protocol(), "ftp" ) == 0 )
 			config.writeEntry( "Icon", "ftp.xpm" );
-		    else if ( strcmp( du.protocol(), "http" ) == 0 )
+		    else if ( strcmp( su.protocol(), "http" ) == 0 )
 			config.writeEntry( "Icon", "www.xpm" );
-		    else if ( strcmp( du.protocol(), "info" ) == 0 )
+		    else if ( strcmp( su.protocol(), "info" ) == 0 )
 			config.writeEntry( "Icon", "info.xpm" );
 		    else
-			config.writeEntry( "Icon", KFileType::getDefaultPixmap() );
+			config.writeEntry( "Icon", KMimeType::getDefaultPixmap() );
 		    config.sync();
 		    if ( globalNotify )
 			KIOServer::sendNotify( p2 );
 		    emit notify( id, p2 );
 		}
 		else
-		    printf(" ERROR: Could not write to %s\n",p);
+		    debugT(" ERROR: Could not write to %s\n",p);
 	    }
 	}
 	p2 = cmDestURLList.next();
@@ -323,26 +325,38 @@ void KIOJob::copy( const char *_src_url, const char *_dest_url )
 
 void KIOJob::copy()
 {
+    debugT("Recursion...\n");
+
+    QStrList tmpList1;
+    QStrList tmpList2;
+    
     // Recursive directory
     char *p;
-    char *p2 = cmDestURLList.first();
-    for ( p = cmSrcURLList.first(); p != 0L; p = cmSrcURLList.next() )
+    char *p2;
+
+    QListIterator<char> it( cmSrcURLList );
+    QListIterator<char> it2( cmDestURLList );
+    for ( ; it.current(); ++it )
     {
+	p = it.current();
+	p2 = it2.current();
 	KURL su( p );
 	KURL du( p2 );
 
+	debugT("Have: '%s' '%s'\n",p,p2);
+	
 	if ( strcmp( su.protocol(), "file" ) == 0 && strcmp( du.protocol(), "file" ) == 0 )
 	{
 	    struct stat buff;
 	    stat( su.path(), &buff );
 	    if ( S_ISDIR( buff.st_mode ) )
 	    {
-		printf("Making diretory '%s'\n",du.path());
+		debugT("Making diretory '%s'\n",du.path());
 		
-		if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
+		if ( ::mkdir( du.path(), buff.st_mode ) == -1 )
 		    if ( errno != EEXIST )
 		    {
-			printf("ERROR: Could not make directory\n");
+			debugT("ERROR: Could not make directory\n");
 			return;
 		    }
 		
@@ -351,14 +365,15 @@ void KIOJob::copy()
 		dp = opendir( su.path() );
 		if ( dp == NULL )
 		{
-		    printf("ERROR: Could not access directory '%s'\n", p );
+		    debugT("ERROR: Could not access directory '%s'\n", p );
 		    return;
 		}
 		
-		while ( ep = readdir( dp ) )
+		while ( (ep = readdir( dp ) ) != 0L )
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
+			debugT("Adding '%s'\n",ep->d_name);
 			QString s = p;
 			s.detach();
 			if ( s.length() > 0 && s.data()[ s.length() - 1 ] != '/' )
@@ -376,18 +391,27 @@ void KIOJob::copy()
 		    }
 		}
 		
+		closedir( dp );
+		
 		// Remove directories from the copy list
-		cmSrcURLList.removeRef( p );
-		cmDestURLList.removeRef( p2 );
+		// cmSrcURLList.removeRef( p );
+		// cmDestURLList.removeRef( p2 );
+		tmpList1.append( p );
+		tmpList2.append( p2 );
 	    }
 	}
-	
-	p2 = cmDestURLList.next();
+
+	++it2;
     }
+    
+    char *s;
+    for ( s = tmpList1.first(); s != 0L; s = tmpList1.next() )
+	cmSrcURLList.remove( s );
+    for ( s = tmpList2.first(); s != 0L; s = tmpList2.next() )
+	cmDestURLList.remove( s );
     
     cmCount = cmSrcURLList.count();
 
-    char *s;
     for (s = cmDestURLList.first(); s != 0L; s = cmDestURLList.next() )
     {
 	KURL u( s );
@@ -500,12 +524,12 @@ void KIOJob::move()
 		stat( su.path(), &buff );
 		if ( S_ISDIR( buff.st_mode ) )
 		{
-		    printf("Making diretory '%s'\n",du.path());
+		    debugT("Making diretory '%s'\n",du.path());
 	    
 		    if ( ::mkdir( du.path(), S_IRWXU ) == -1 )
 			if ( errno != EEXIST )
 			{
-			    printf("ERROR: Could not make directory\n");
+			    debugT("ERROR: Could not make directory\n");
 			    return;
 			}
 
@@ -514,11 +538,11 @@ void KIOJob::move()
 		    dp = opendir( su.path() );
 		    if ( dp == NULL )
 		    {
-			printf("ERROR: Could not access directory '%s'\n", p );
+			debugT("ERROR: Could not access directory '%s'\n", p );
 			return;
 		    }
 		    
-		    while ( ep = readdir( dp ) )
+		    while ( ( ep = readdir( dp ) ) != 0L )
 		    {
 			if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 			{
@@ -548,14 +572,14 @@ void KIOJob::move()
 	    }
 	    else
 	    {
-		printf("ERROR: Could not move '%s'\n",p );
+		debugT("ERROR: Could not move '%s'\n",p );
 		return;
 	    }
 	}
 	// We moved the files already, so take them from the list
 	else if ( i == 0 )
 	{
-	    printf("?????????????????? Already moved '%s' '%s'\n",p,p2 );
+	    debugT("?????????????????? Already moved '%s' '%s'\n",p,p2 );
 	    
 	    cmSrcURLList.removeRef( p );
 	    cmDestURLList.removeRef( p2 );
@@ -645,7 +669,9 @@ void KIOJob::del( QStrList & _url_list )
 }
 
 void KIOJob::del()
-{    
+{   
+    mvDelURLList.clear();
+ 
     // Recursive directory
     char *p;
     QListIterator<char> it( tmpDelURLList );
@@ -653,26 +679,33 @@ void KIOJob::del()
     {
 	p = it.current();
 	
-	printf("Looking at '%s'\n",p);
+	debugT("Looking at '%s'\n",p);
 	KURL su( p );
 
-	int i = 1;
+	// int i = 1;
 	if ( strcmp( su.protocol(), "file" ) == 0 )
 	{
 	    struct stat buff;
 	    stat( su.path(), &buff );
-	    if ( S_ISDIR( buff.st_mode ) )
+	    struct stat lbuff;
+	    lstat( su.path(), &buff );
+
+	    if ( S_ISLNK( lbuff.st_mode ) )
+	    {
+		// No recursion here!
+	    }
+	    else if ( S_ISDIR( buff.st_mode ) )
 	    {
 		DIR *dp;
 		struct dirent *ep;
 		dp = opendir( su.path() );
 		if ( dp == NULL )
 		{
-		    printf("ERROR: Could not access directory '%s'\n", p );
+		    debugT("ERROR: Could not access directory '%s'\n", p );
 		    return;
 		}
 		    
-		while ( ep = readdir( dp ) )
+		while ( ( ep = readdir( dp ) ) != 0L )
 		{
 		    if ( strcmp( ep->d_name, "." ) != 0 && strcmp( ep->d_name, ".." ) != 0 )
 		    {
@@ -682,7 +715,7 @@ void KIOJob::del()
 			    s += "/";
 			s += ep->d_name;
 			    
-			printf("Appending '%s'\n",s.data());
+			debugT("Appending '%s'\n",s.data());
 			tmpDelURLList.append( s.data() );
 		    }
 		}
@@ -690,7 +723,6 @@ void KIOJob::del()
 	}
     }
     
-    mvDelURLList.clear();
     for ( p = tmpDelURLList.last(); p != 0L; p = tmpDelURLList.prev() )
 	mvDelURLList.append( p );
     cmCount = mvDelURLList.count();
@@ -777,6 +809,8 @@ void KIOJob::msgResult2( QWidget * _win, int _button, const char *_src, const ch
 	else if ( _button == 4 ) // Cancel
 	    done();
 	break;
+	default: // Stephan: added default handler
+	    warning("Case not handled here");
     }
 }
 
@@ -800,14 +834,15 @@ void KIOJob::msgResult( QWidget * _win, int _button )
     case KIOJob::JOB_MOUNT:
     case KIOJob::JOB_UNMOUNT:
 	done();
+	break;
     }
 }
 
-void KIOJob::fatalError( int _kioerror, const char* _url, int _errno )
+void KIOJob::fatalError( int _kioerror, const char* _url, int )
 {
     kioError = _kioerror;
     
-    printf("################################# fatalError called '%s'\n",_url);
+    debugT("################################# fatalError called '%s'\n",_url);
     
     KMsgWin *m = 0L;
     KRenameWin *r = 0L;
@@ -873,7 +908,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int _errno )
 		{
 		    QString tmp;
 		    tmp.sprintf( "%s@%s", u.user(), u.host() );
-		    printf("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
+		    debugT("Removing '%s' from dict !!!!!!!!!!!!!!!! ########### !!!!!!\n",tmp.data() );
 		    passwordDict.remove( tmp.data() );
 		}
 	    }
@@ -919,7 +954,7 @@ void KIOJob::fatalError( int _kioerror, const char* _url, int _errno )
     }
     if ( r != 0L )
     {
-	printf("++++++++++++++++++++++++++++++ Connect ++++++++++++++++++++++++++\n");
+	debugT("++++++++++++++++++++++++++++++ Connect ++++++++++++++++++++++++++\n");
 	connect( r, SIGNAL( result( QWidget*, int, const char*, const char* ) ),
 		 this, SLOT( msgResult2( QWidget*, int, const char*, const char* ) ) );
 	r->show();
@@ -939,8 +974,8 @@ void KIOJob::start( int _pid )
 	    {
 		dlg = new QDialog( 0L );
 		dlg->resize( 300, 180 );
-		progress = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
-		progress->setGeometry( 10, 100, 280, 20 );
+		progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
+		progressBar->setGeometry( 10, 100, 280, 20 );
 		QPushButton *pb = new QPushButton( "Cancel", dlg );
 		pb->setGeometry( 110, 140, 80, 30 );
 		connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
@@ -963,8 +998,8 @@ void KIOJob::start( int _pid )
 		{
 		    dlg = new QDialog( 0L );
 		    dlg->resize( 300, 180 );
-		    progress = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
-		    progress->setGeometry( 10, 100, 280, 20 );
+		    progressBar = new KProgress( 0, 100, 0, KProgress::Horizontal, dlg );
+		    progressBar->setGeometry( 10, 100, 280, 20 );
 		    QPushButton *pb = new QPushButton( "Cancel", dlg );
 		    pb->setGeometry( 110, 140, 80, 30 );
 		    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
@@ -1028,6 +1063,8 @@ void KIOJob::start( int _pid )
 		    dlg = 0L;
 	    }
 	    break;	
+	 default:
+	     warning("Case not handled here");
 	}
     }
     
@@ -1041,7 +1078,7 @@ void KIOJob::start( int _pid )
 
 void KIOJob::slaveIsReady()
 {
-    printf("SlaveIsReady\n");
+    debugT("SlaveIsReady\n");
 
     if ( cleanedUp )
     {
@@ -1102,7 +1139,7 @@ void KIOJob::slaveIsReady()
 		{
 		    if ( rmdir( p ) == -1 )
 		    {
-			printf("ERROR: Could not delete dir '%s'\n",p );
+			debugT("ERROR: Could not delete dir '%s'\n",p );
 			slave->cleanUp();
 			cleanedUp = TRUE;
 			delete dlg;
@@ -1113,7 +1150,7 @@ void KIOJob::slaveIsReady()
 		}
 		mvDelURLList.clear();
 		
-		printf("Removing dialog\n");
+		debugT("Removing dialog\n");
 
 		slave->cleanUp();
 		cleanedUp = TRUE;
@@ -1156,7 +1193,7 @@ void KIOJob::slaveIsReady()
 	{
 	    if ( mvDelURLList.count() == 0 )
 	    {
-		printf("Removing dialog\n");
+		debugT("Removing dialog\n");
 		slave->cleanUp();
 		cleanedUp = TRUE;
 		return;
@@ -1168,8 +1205,8 @@ void KIOJob::slaveIsReady()
 		sprintf( buffer, "File %i/%i", cmCount - mvDelURLList.count() + 1, cmCount );	    
 		line1->setText( buffer );
 		line2->setText( mvDelURLList.first() );
-		if ( cmCount != mvDelURLList.count() )
-		     progress->setValue( cmCount * 100 / ( cmCount - mvDelURLList.count() ) );
+		if ( cmCount != (int)mvDelURLList.count() )
+		     progressBar->setValue( cmCount * 100 / ( cmCount - mvDelURLList.count() ) );
 	    }
 
 	    QString dest = completeURL( mvDelURLList.first() ).data();	    
@@ -1183,7 +1220,7 @@ void KIOJob::slaveIsReady()
 	    // mount already called ?
 	    if ( started )
 	    {
-		printf("Removing dialog\n");
+		debugT("Removing dialog\n");
 		slave->cleanUp();
 		cleanedUp = TRUE;
 		return;
@@ -1244,6 +1281,8 @@ void KIOJob::slaveIsReady()
 	    slave->mkdir( mkdirURL.data() );
 	}
 	break;
+    default: // Stephan: added default hander
+       warning("case not handled here");
     }
 
     started = TRUE;
@@ -1269,15 +1308,17 @@ void KIOJob::slaveProgress( int _percent )
     if ( dlg == 0L )
 	return;
     
-    if ( progress != 0L )
-	progress->setValue( _percent );
+    if ( progressBar != 0L )
+	progressBar->setValue( _percent );
+
+    emit progress( _percent, 0 );
 }
 
 void KIOJob::cancel()
 {
     pid_t p = (pid_t)slave->pid;
     
-    printf("Cancel\n");
+    debugT("Cancel\n");
     delete slave;
     delete dlg;
     dlg = 0L;
@@ -1289,7 +1330,7 @@ void KIOJob::cancel()
 
 void KIOJob::done()
 {
-    printf("Done\n");
+    debugT("Done\n");
     
     if ( slave != 0L )
 	server->freeSlave( slave );
@@ -1308,7 +1349,7 @@ void KIOJob::done()
     char *s;
     for ( s = notifyList.first(); s != 0L; s = notifyList.next() )
     {
-	printf("NOTIFY '%s'\n",s);
+	debugT("NOTIFY '%s'\n",s);
 	if ( globalNotify )
 	    KIOServer::sendNotify( s );
 	emit notify( id, s );
@@ -1333,17 +1374,17 @@ void KIOJob::deleteAllJobs()
 
 QString KIOJob::completeURL( const char *_url )
 {
-    printf("Is '%s' complete ? \n",_url );
+    debugT("Is '%s' complete ? \n",_url );
     
     KURL u( _url );
     if ( u.isMalformed() )
 	return QString( _url );
     
-    printf("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
+    debugT("Is not malformed '%s' '%s'\n",u.user(), u.passwd() );
     
     if ( u.user() != 0L && u.user()[0] != 0 && ( u.passwd() == 0L || u.passwd()[0] == 0 ) )
     {
-	printf("Looking for password\n");
+	debugT("Looking for password\n");
 	   
 	QString head;
 	head.sprintf( "Password for %s@%s", u.user(), u.passwd() );
@@ -1354,15 +1395,15 @@ QString KIOJob::completeURL( const char *_url )
 	
 	if ( passwordDict[ tmp2.data() ] == 0L )
 	{
-	    printf("A\n");
+	    debugT("A\n");
 	    
 	    PasswordDialog *dlg = new PasswordDialog( head.data(), 0L, "", TRUE );
 	    if ( !dlg->exec() )
 	    {
-		printf("Cancled\n");
+		debugT("Cancled\n");
 		return QString( _url );
 	    }
-	    printf("B\n");
+	    debugT("B\n");
 	    passwd = dlg->password();
 	    delete dlg;
 	}
@@ -1380,7 +1421,7 @@ QString KIOJob::completeURL( const char *_url )
 	int j = url.find( "://" );
 	url.replace( j + 3, i - ( j + 3 ), tmp.data() );
 
-	printf("<<<<<<<<<<<<< Converted to '%s'\n",url.data() );
+	debugT("<<<<<<<<<<<<< Converted to '%s'\n",url.data() );
 	return QString( url );
     }
     

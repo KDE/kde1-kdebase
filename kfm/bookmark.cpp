@@ -63,7 +63,7 @@ void KBookmarkManager::read( const char *filename )
 	}
 	while ( !file.atEnd() );
 
-	HTMLTokenizer *ht = new HTMLTokenizer;
+	HTMLTokenizer *ht = new HTMLTokenizer( 0L );
 
 	ht->begin();
 	ht->write( text );

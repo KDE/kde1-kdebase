@@ -1,6 +1,7 @@
 #include <time.h>
 
 #include "htmlcache.h"
+#include <config-kfm.h>
 
 QString HTMLCache::cachePath;
 QList<HTMLCacheJob> HTMLCache::htmlJobList;
@@ -14,7 +15,17 @@ HTMLCacheJob::HTMLCacheJob( const char *_url, const char *_dest ) : KIOJob()
     url.detach();
     dest = _dest;
     dest.detach();
+    bytesTransfered = 0;
+    percent = 0;
+    timer1.start();
+    timer2.start();
+    
     connect( this, SIGNAL( finished( int ) ), this, SLOT( slotJobFinished( int ) ) );
+    connect( this, SIGNAL( progress( int, int ) ), this, SLOT( slotProgress( int, int ) ) );
+
+    timer = new QTimer( this );
+    connect( timer, SIGNAL( timeout() ), this, SLOT( slotProgressTimeout() ) );
+    timer->start( 5000 );
 }
 
 void HTMLCacheJob::copy()
@@ -26,9 +37,31 @@ HTMLCacheJob::~HTMLCacheJob()
 {
 }
 
-void HTMLCacheJob::slotJobFinished( int _id )
+void HTMLCacheJob::slotJobFinished( int )
 {
     emit finished( this );
+}
+
+void HTMLCacheJob::slotProgressTimeout()
+{
+    slotProgress( percent, bytesTransfered );
+}
+
+void HTMLCacheJob::slotProgress( int _percent, int _bytesTransfered )
+{
+    int oldBytesTransfered = bytesTransfered;
+    bool stalled = FALSE;
+    
+    percent = _percent;
+    bytesTransfered = _bytesTransfered;
+    
+    if ( bytesTransfered != oldBytesTransfered )
+	timer2.restart();
+    else if ( timer2.elapsed() > 5000 )
+	stalled = TRUE;
+    
+    emit progress( this, percent, bytesTransfered,
+		   (float)bytesTransfered / 1024. / ( (float)timer1.elapsed() / 1000.0 ), stalled );
 }
 
 HTMLCache::HTMLCache()
@@ -38,7 +71,7 @@ HTMLCache::HTMLCache()
     char *p = getenv( "HOME" );
     if ( !p )
     {
-	printf("ERROR: $HOME is not defined\n");
+	debugT("ERROR: $HOME is not defined\n");
 	exit(1);
     }    
     cachePath.sprintf( "file:%s/.kfm/cache/", p );
@@ -47,17 +80,24 @@ HTMLCache::HTMLCache()
     urlDict.setAutoDelete( TRUE );
 }
 
+void HTMLCache::slotProgress( HTMLCacheJob *_job, int _percent, int _bytesTransfered,
+			      float _rate, bool _stalled )
+{
+    emit progress( _job->getSrcURL(), _job->getDestURL() + 5,
+		   _percent, _bytesTransfered, _rate, _stalled );
+}
+
 void HTMLCache::slotURLRequest( const char *_url )
 {
     QString *s = urlDict[ _url ];
     if ( s != 0L )
     {
-	printf("&&&&&&&&&&&&&& Having '%s' in cache as '%s'\n",_url,s->data());
+	debugT("&&&&&&&&&&&&&& Having '%s' in cache as '%s'\n",_url,s->data());
 	emit urlLoaded(  _url, s->data() );
 	return;
     }
 
-    printf("&&&&&&&&&&&&&& Waiting for '%s'\n",_url);
+    debugT("&&&&&&&&&&&&&& Waiting for '%s'\n",_url);
 
     if ( waitingURLList.find( _url ) == -1 )
 	waitingURLList.append( _url );
@@ -70,10 +110,12 @@ void HTMLCache::slotURLRequest( const char *_url )
     
     QString tmp;
     tmp.sprintf( "%s%i.%i", cachePath.data(), time( 0L ), fileId++ );
-    printf("&&&&&&&&&&&&&&&&&& New job for '%s' to '%s'\n",_url,tmp.data());
+    debugT("&&&&&&&&&&&&&&&&&& New job for '%s' to '%s'\n",_url,tmp.data());
     job = new HTMLCacheJob( _url, tmp.data() );
     job->display( FALSE );
     connect( job, SIGNAL( finished( HTMLCacheJob * ) ), this, SLOT( slotJobFinished( HTMLCacheJob * ) ) );
+    connect( job, SIGNAL( progress( HTMLCacheJob *, int, int, float, bool ) ),
+	     this, SLOT( slotProgress( HTMLCacheJob *, int, int, float, bool ) ) );
     htmlJobList.append( job );
     job->copy();
 }
@@ -101,7 +143,7 @@ void HTMLCache::slotCancelURLRequest( const char *_url )
 
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 {
-    printf("&&&&&&&&&&&&&&&&&& URL '%s' loaded in '%s'\n",_job->getSrcURL(), _job->getDestURL() + 5 );
+    debugT("&&&&&&&&&&&&&&&&&& URL '%s' loaded in '%s'\n",_job->getSrcURL(), _job->getDestURL() + 5 );
     // Tell all instances
     HTMLCache *p;
     for ( p = instanceList.first(); p != 0L; p = instanceList.next() )
@@ -116,10 +158,14 @@ void HTMLCache::urlLoaded( HTMLCacheJob *_job )
     // Are we waiting for this URL ?
     if ( waitingURLList.find( _job->getSrcURL() ) != - 1 )
     {
+      debugT("Sending signal\n");
 	urlDict.insert( _job->getSrcURL(), new QString( _job->getDestURL() + 5 ) );
+	debugT("Inserted\n");
 	emit urlLoaded( _job->getSrcURL(), _job->getDestURL() + 5 );
+	debugT("Emitted\n");
 	// We dont to wait for it now any more
 	waitingURLList.remove( _job->getSrcURL() );
+	debugT("Removed\n");
     }
 }
 

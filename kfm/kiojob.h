@@ -123,11 +123,12 @@ signals:
       */
     void notify( int _id, const char * _url );
     
-    /// Tells about the progress of this job in percent.
-    /** 
-      Not implemented yet
+    /**
+     * Tells about the progress of this job in percent.
+     *
+     * @param _percent is between 0 and 100.
      */
-    void percent( int _percent );
+    void progress( int _percent, int _bytesTransfered );
     
     /// Tells about the amount of bytes read
     /**
@@ -220,7 +221,7 @@ protected:
     /// The dialog. May be 0L.
     QDialog *dlg;
     /// The dialogs progress bar. May be 0L.
-    KProgress *progress;
+    KProgress *progressBar;
     /// May be 0L
     QLabel *line1;
     /// May be 0L

@@ -4,6 +4,7 @@
 
 #include "ipc.h"
 #include "kioslave_ipc.h"
+#include <config-kfm.h>
 
 KIOSlaveIPC::KIOSlaveIPC( int _port )
 {
@@ -32,13 +33,13 @@ bool KIOSlaveIPC::isConnected()
 void KIOSlaveIPC::closeEvent( KSocket * _sock )
 {
     connected = FALSE;
-    printf("##### KIOSLAVE close\n");
+    debugT("##### KIOSLAVE close\n");
     exit(1);
 }
 
 void KIOSlaveIPC::readEvent( KSocket *_sock )
 {
-    printf("##### KIOSLAVE read\n");
+    debugT("##### KIOSLAVE read\n");
     if ( bHeader )
     {
 	int n;
@@ -51,7 +52,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		printf("ERROR: Invalid header\n");
+		debugT("ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -61,7 +62,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    printf("ERROR: Too long header\n");
+	    debugT("ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -69,7 +70,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		printf("ERROR: Header must be an int\n");
+		debugT("ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -84,7 +85,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
+	debugT(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
@@ -109,7 +110,7 @@ void KIOSlaveIPC::parse( char *_data, int _len )
 	if ( strcmp( name, "list" ) == 0 ) { parse_list( _data, _len ); } else
 	if ( strcmp( name, "getPID" ) == 0 ) { parse_getPID( _data, _len ); } else
 	if ( strcmp( name, "cleanUp" ) == 0 ) { parse_cleanUp( _data, _len ); } else
-    { printf("Unknown command '%s'\n",name); }
+    { debugT("Unknown command '%s'\n",name); }
 }
 
 

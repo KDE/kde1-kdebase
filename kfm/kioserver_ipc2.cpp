@@ -4,9 +4,9 @@
 
 #include "kioserver_ipc.h"
 
-void KIOSlaveIPC::parse_hello( char *_data, int _len )
+void KIOSlaveIPC::parse_hello( char *, int )
 {
-	int pos = 0;
+// 	int pos = 0;
 
 	// Calling function
 	emit hello(  );
@@ -66,9 +66,9 @@ void KIOSlaveIPC::parse_flushDir( char *_data, int _len )
 	emit flushDir( _dir );
 }
 
-void KIOSlaveIPC::parse_done( char *_data, int _len )
+void KIOSlaveIPC::parse_done( char *, int )
 {
-	int pos = 0;
+	// int pos = 0;
 
 	// Calling function
 	emit done(  );

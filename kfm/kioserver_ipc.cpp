@@ -3,16 +3,17 @@
 //     weis@stud.uni-frankfurt.de
 
 #include "kioserver_ipc.h"
+#include <config-kfm.h>
 
 KIOSlaveIPCServer::KIOSlaveIPCServer()
 {
     serv_sock = new KServerSocket( 0 ); /* 0: choose free port */
     if ( serv_sock->socket() < 0 )
     {
-	printf("ERROR: Could not establish server\n");
+	debugT("ERROR: Could not establish server\n");
 	exit(1);
     }
-    printf( "SOCK=%i\n",serv_sock->getPort());
+    debugT( "SOCK=%i\n",serv_sock->getPort());
     connect( serv_sock, SIGNAL( accepted(KSocket*) ), 
 	    this, SLOT( slotAccept(KSocket*) ) );
 }
@@ -53,13 +54,13 @@ KIOSlaveIPC::~KIOSlaveIPC()
 	free( pBody );
 }
 
-void KIOSlaveIPC::closeEvent( KSocket *_sock )
+void KIOSlaveIPC::closeEvent( KSocket * )
 {
     delete this;
     return;
 }
 
-void KIOSlaveIPC::readEvent( KSocket *_sock )
+void KIOSlaveIPC::readEvent( KSocket * )
 {
     if ( bHeader )
     {
@@ -73,7 +74,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		printf("ERROR: Invalid header\n");
+		debugT("ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -83,7 +84,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    printf("ERROR: Too long header\n");
+	    debugT("ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -91,7 +92,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		printf("ERROR: Header must be an int\n");
+		debugT("ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -106,7 +107,7 @@ void KIOSlaveIPC::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
+	debugT(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;

@@ -58,6 +58,10 @@ signals:
 	void sortDesktop();
 private:
 	void parse_sortDesktop( char *_data, int _len );
+signals:
+	void auth(const char* _password);
+private:
+	void parse_auth( char *_data, int _len );
 public slots:
 	void finished();
 

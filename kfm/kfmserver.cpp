@@ -5,20 +5,47 @@
 
 #include "kfmserver.h"
 #include "kfmdlg.h"
-#include "kfmwin.h"
+#include "kfmgui.h"
 #include "root.h"
 #include "kioserver.h"
 #include "kfmprops.h"
 #include "kiojob.h"
+#include <config-kfm.h>
 
 #include <qmsgbox.h>
 
+#include <stdlib.h>
+#include <time.h>
+
+QString KFMClient::password;
+
 KFMServer::KFMServer() : KfmIpcServer()
 {
-    connect( this, SIGNAL( newClient( KfmIpc * ) ), this, SLOT( slotNewClient( KfmIpc * ) ) );
+    // Create the password file if it does not exist
+    QString fn = getenv( "HOME" );
+    fn += "/.kfm/magic";
+    FILE *f = fopen( fn.data(), "rb" );
+    if ( f == 0L )
+    {
+	FILE *f = fopen( fn.data(), "wb" );
+	if ( f == 0L )
+	{
+	    QMessageBox::message("KFM Error", "Could not create ~/.kfm/magic" );
+	    return;
+	}
+	
+	QString pass;
+	pass.sprintf("%i",time(0L));
+	fwrite( pass.data(), 1, pass.length(), f );
+	fclose( f );
+
+	QMessageBox::message("KFM Warning", "Please change the password in\n\r~/.kfm/magic" );
+    }
+    else
+	fclose( f );
 }
 
-void KFMServer::slotNewClient( KfmIpc * _client )
+void KFMServer::slotAuthorized( KFMClient * _client )
 {
     connect( _client, SIGNAL( refreshDesktop() ), this, SLOT( slotRefreshDesktop() ) );
     connect( _client, SIGNAL( openURL( const char* ) ), this, SLOT( slotOpenURL( const char *) ) );    
@@ -36,11 +63,13 @@ void KFMServer::slotNewClient( KfmIpc * _client )
 void KFMServer::slotAccept( KSocket * _sock )
 {
     KfmIpc * i = new KFMClient( _sock );
+    connect( i, SIGNAL( authorized( KFMClient * ) ), this, SLOT( slotAuthorized( KFMClient * ) ) );
     emit newClient( i );
 }
 
 void KFMServer::slotSortDesktop()
 {
+    debugT("JOB: sortDesktop\n");
     KRootWidget::getKRootWidget()->sortIcons();
 }
 
@@ -68,19 +97,19 @@ void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
 	dest += "/Desktop/Trash/";
     }
 
-    printf("Moving to '%s'\n",dest.data());
+    debugT("Moving to '%s'\n",dest.data());
     
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
     {
 	QString t = s.left( i );
 	urlList.append( t.data() );
-	printf("Appened '%s'\n",t.data());
+	debugT("Appened '%s'\n",t.data());
 	s = s.mid( i + 1, s.length() );
     }
     
     urlList.append( s.data() );
-    printf("Appened '%s'\n",s.data());
+    debugT("Appened '%s'\n",s.data());
 
     KIOJob *job = new KIOJob();
     job->move( urlList, dest.data() );
@@ -116,11 +145,11 @@ void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
 
 void KFMServer::slotOpenURL( const char* _url )
 {
-    printf("KFMServer::Opening URL '%s'\n", _url );
+    debugT("KFMServer::Opening URL '%s'\n", _url );
 
     if ( _url[0] != 0 )
     {
-	printf("There is an URL\n");
+	debugT("There is an URL\n");
 	
 	QString url = _url;
 	KURL u( _url );
@@ -129,7 +158,7 @@ void KFMServer::slotOpenURL( const char* _url )
 	    QMessageBox::message( "KFM Error", "Malformed URL\n" + url );
 	    return;
 	}
-	printf("OK\n");
+	debugT("OK\n");
 	
 	url = u.url().copy();
 	
@@ -140,24 +169,24 @@ void KFMServer::slotOpenURL( const char* _url )
 	    url += "/Desktop/Trash/";
 	}
 	
-	printf("Seaerching window\n");
-	KFileWindow *w = KFileWindow::findWindow( url.data() );
+	debugT("Seaerching window\n");
+	KfmGui *w = KfmGui::findWindow( url.data() );
 	if ( w != 0L )
 	{
-	    printf("Window found\n");
+	    debugT("Window found\n");
 	    w->show();
 	    return;
 	}
 	
-	printf("Opening new window\n");
-	KFileWindow *f = new KFileWindow( 0L, 0L, url.data() );
+	debugT("Opening new window\n");
+	KfmGui *f = new KfmGui( 0L, 0L, url.data() );
 	f->show();
 	return;
     }
     
     QString home = "file:";
     home += QDir::homeDirPath().data();
-    DlgLineEntry l( "Open Location:", home.data(), KRootWidget::getKRootWidget() );
+    DlgLineEntry l( "Open Location:", home.data(), KRootWidget::getKRootWidget(), TRUE );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -181,18 +210,18 @@ void KFMServer::slotOpenURL( const char* _url )
 	KURL u( url.data() );
 	if ( u.isMalformed() )
 	{
-	    printf("ERROR: Malformed URL\n");
+	    debugT("ERROR: Malformed URL\n");
 	    return;
 	}
 
-	KFileWindow *f = new KFileWindow( 0L, 0L, url.data() );
+	KfmGui *f = new KfmGui( 0L, 0L, url.data() );
 	f->show();
     }
 }
 
 void KFMServer::slotRefreshDirectory( const char* _url )
 {
-    printf("CMD: refeshDirectory '%s'\n",_url );
+    debugT("CMD: refeshDirectory '%s'\n",_url );
     
     QString tmp = _url;
     
@@ -201,7 +230,7 @@ void KFMServer::slotRefreshDirectory( const char* _url )
 	KIOServer::sendNotify( u.url() );
     else
     {
-	printf("Sending something to '%s'\n",u.directoryURL());
+	debugT("Sending something to '%s'\n",u.directoryURL());
 	KIOServer::sendNotify( u.directoryURL() );
     }
 }
@@ -218,15 +247,54 @@ void KFMServer::slotExec( const char* _url, const char * _binding )
     sl.append(_binding);   
 
     if ( _binding == 0L )
-	KFileType::runBinding( _url );
+	KMimeType::runBinding( _url );
     else
-	KFileType::runBinding( _url, _binding, &sl );
+	KMimeType::runBinding( _url, _binding, &sl );
 }
 
 KFMClient::KFMClient( KSocket *_sock ) : KfmIpc( _sock )
 {
-    connect( this, SIGNAL( copy( const char*, const char* ) ), this, SLOT( slotCopy( const char*, const char* ) ) );
-    connect( this, SIGNAL( move( const char*, const char* ) ), this, SLOT( slotMove( const char*, const char* ) ) );
+    bAuth = TRUE;
+    
+    connect( this, SIGNAL( auth( const char* ) ), this, SLOT( slotAuth( const char* ) ) );
+}
+
+void KFMClient::slotAuth( const char *_password )
+{
+    if ( KFMClient::password.isNull() )
+    {
+	QString fn = getenv( "HOME" );
+	fn += "/.kfm/magic";
+	FILE *f = fopen( fn.data(), "rb" );
+	if ( f == 0L )
+	{
+	    QMessageBox::message( "KFM Error", "You dont have the file ~/.kfm/magic\n\rAuthorization failed" );
+	    return;
+	}
+	char buffer[ 1024 ];
+	char *p = fgets( buffer, 1023, f );
+	fclose( f );
+	if ( p == 0L )
+	{
+	    QMessageBox::message( "KFM Error", "The file ~/.kfm/magic is corrupted\n\rAuthorization failed" );
+	    return;
+	}
+	KFMClient::password = buffer;
+    }
+    if ( KFMClient::password != _password )
+    {
+	QMessageBox::message( "KFM Error", "Someone tried to authorize himself\nusing a wrong password" );
+	bAuth = FALSE;
+	return;
+    }
+
+    bAuth = TRUE;
+    connect( this, SIGNAL( copy( const char*, const char* ) ),
+	     this, SLOT( slotCopy( const char*, const char* ) ) );
+    connect( this, SIGNAL( move( const char*, const char* ) ), 
+	     this, SLOT( slotMove( const char*, const char* ) ) );
+
+    emit authorized( this );
 }
 
 void KFMClient::slotCopy( const char *_src_url, const char * _dest_url )
@@ -252,26 +320,26 @@ void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
 	dest += "/Desktop/Trash/";
     }
 
-    printf("Moving to '%s'\n",dest.data());
+    debugT("Moving to '%s'\n",dest.data());
     
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
     {
 	QString t = s.left( i );
 	urlList.append( t.data() );
-	printf("Appened '%s'\n",t.data());
+	debugT("Appened '%s'\n",t.data());
 	s = s.mid( i + 1, s.length() );
     }
     
     urlList.append( s.data() );
-    printf("Appened '%s'\n",s.data());
+    debugT("Appened '%s'\n",s.data());
 
     KIOJob *job = new KIOJob();
     connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
     job->move( urlList, dest.data() );
 }
 
-void KFMClient::finished( int _id )
+void KFMClient::finished( int )
 {
     KfmIpc::finished();
 }

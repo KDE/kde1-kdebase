@@ -1,0 +1,68 @@
+So this is the first beta-release of a kioslave using the new protocol-concept.
+It is meant to be used as a replacement for the kioslave that comes with kfm
+0.6.6 and higher.
+
+* Why Protocols?
+
+	When I first saw kfm I thought that adding a new protocol (like smb-Support
+	to be able to read windows-shares or zip-Support to be able to browse com-
+	pressed files) would be very easy. But that wasn't true. Adding one protocol
+	requires writing a new Manager for it, and you would not be able to do some
+	of the things you can do with files either.
+
+	Some of the features of KFM are built only in certain Managers, work only
+	with certain protocols and so on...
+
+	So I thought of putting all the information relevant to a protocol or method
+	to access files (like crypting for example) into a class so that KFM would
+	not even have to be recompiled when adding support for new packers.
+
+	Later there will be no need to recompile anything at all, because protocols
+	will be able in modules (working as shared libraries).
+
+* The Standard...
+
+	... is far from being finished. The main thing that is missing is the
+	difference between a protocol (like ftp/http/file/smb) and a method to
+	access files that requires a protocol to obtain data to work (eg.
+	zip/tar/... but you can even imagine as exotic things as a mail-protocol
+	that lets you display your mail-folder).
+
+* What is done
+
+	It's only a rough implementation to give you a impression how things will
+	work later. File-Protocol and HTTP-Protocol are almost ready-to-use, the
+	FTP-Protocol might be a little buggy for now.
+
+	- HTTP-Proxy-Support works now (look at http.h and define your proxy if
+	you have one).
+
+	- HTTP-Authentication works (use http://user@host.somewhere.org/...)
+
+* What is missing
+
+	Tar support is not done because it requires the missing definitions in the
+	standard. There really should be a caching concept to implement it fast,
+	too.  (Or looking into a tar-file that is on a ftp-server will be
+	really slow!).
+
+	Errorhandling is not really everywhere.
+
+* To add new protocols
+
+	Please do not add packers right now. To add protocols (anyone want to do
+	SMB?) simply derive a class from the KProtocol-class, define the methods
+	you support and add the protocol in protocols/manage.cpp.
+
+	Sorry, there is no plug-and-play way to use protocols you created yet.
+
+	And please: don't create tempfiles in your protocol!!
+
+Please contact me if you have suggestions or comments about anything new
+in kioslave. Feel free to send me bugreports also, but remember this is
+the first beta release and not everything can be stable.
+
+If you have good ideas where and how to implement protocol-specific con-
+figuration (like which proxy to use for http), tell me ;)
+
+													<stefan@space.twc.de>

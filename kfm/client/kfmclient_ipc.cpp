@@ -4,6 +4,7 @@
 
 #include "ipc.h"
 #include "kfmclient_ipc.h"
+#include <config-kfm.h>
 
 KfmIpc::KfmIpc( int _port )
 {
@@ -29,12 +30,12 @@ bool KfmIpc::isConnected()
     return connected;
 }
 
-void KfmIpc::closeEvent( KSocket * _sock )
+void KfmIpc::closeEvent( KSocket * )
 {
     connected = FALSE;
 }
 
-void KfmIpc::readEvent( KSocket *_sock )
+void KfmIpc::readEvent( KSocket * )
 {
     if ( bHeader )
     {
@@ -48,7 +49,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	    cBody = 0;
 	    if ( bodyLen <= 0 )
 	    {
-		printf("ERROR: Invalid header\n");
+		debugT("ERROR: Invalid header\n");
 		delete this;
 		return;
 	    }
@@ -58,7 +59,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	}
 	else if ( cHeader + n == 10 )
 	{
-	    printf("ERROR: Too long header\n");
+	    debugT("ERROR: Too long header\n");
 	    delete this;
 	    return;
 	}
@@ -66,7 +67,7 @@ void KfmIpc::readEvent( KSocket *_sock )
 	{
 	    if ( !isdigit( headerBuffer[ cHeader ] ) )
 	    {
-		printf("ERROR: Header must be an int\n");
+		debugT("ERROR: Header must be an int\n");
 		delete this;
 		return;
 	    }
@@ -81,7 +82,7 @@ void KfmIpc::readEvent( KSocket *_sock )
     if ( n + cBody == bodyLen )
     {
 	pBody[bodyLen] = 0;
-	printf(">>'%s'\n",pBody);
+	debugT(">>'%s'\n",pBody);
 	bHeader = TRUE;
 	parse( pBody, bodyLen );
 	return;
@@ -99,7 +100,7 @@ void KfmIpc::parse( char *_data, int _len )
     _len -= pos;
 
 	if ( strcmp( name, "finished" ) == 0 ) { parse_finished( _data, _len ); } else
-    { printf("Unknown command '%s'\n",name); }
+    { debugT("Unknown command '%s'\n",name); }
 }
 
 
