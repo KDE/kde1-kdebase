@@ -1,21 +1,11 @@
 Index: libtool.m4
 ===================================================================
 RCS file: /gd/gnu/anoncvsroot/libtool/libtool.m4,v
-retrieving revision 1.15
-diff -u -r1.15 libtool.m4
---- libtool.m4	1999/01/13 10:38:44	1.15
-+++ libtool.m4	1999/01/15 22:05:51
-@@ -23,8 +23,7 @@
- 
- # serial 30 AM_PROG_LIBTOOL
- AC_DEFUN(AM_PROG_LIBTOOL,
--[AC_PREREQ(2.12.2)dnl
--AC_REQUIRE([AM_ENABLE_SHARED])dnl
-+[AC_REQUIRE([AM_ENABLE_SHARED])dnl
- AC_REQUIRE([AM_ENABLE_STATIC])dnl
- AC_REQUIRE([AC_CANONICAL_HOST])dnl
- AC_REQUIRE([AC_CANONICAL_BUILD])dnl
-@@ -33,12 +32,9 @@
+retrieving revision 1.17
+diff -u -u -r1.17 libtool.m4
+--- libtool.m4	1999/01/18 13:30:39	1.17
++++ libtool.m4	1999/01/20 10:53:37
+@@ -33,12 +33,9 @@
  AC_REQUIRE([AM_PROG_LD])dnl
  AC_REQUIRE([AM_PROG_NM])dnl
  AC_REQUIRE([AM_SYS_NM_PARSE])dnl
@@ -29,7 +19,7 @@ diff -u -r1.15 libtool.m4
  
  # Check for any special flags to pass to ltconfig.
  libtool_flags=
-@@ -513,6 +509,12 @@
+@@ -516,6 +513,12 @@
  AC_DEFUN(AM_SYS_LIBTOOL_CYGWIN32,
  [AC_CHECK_TOOL(DLLTOOL, dlltool, false)
  AC_CHECK_TOOL(AS, as, false)

@@ -214,6 +214,7 @@ AC_OUTPUT(Makefile \
 	kappfinder/apps/Editors/Makefile \
 	kappfinder/apps/Graphics/Makefile \
 	kappfinder/apps/Internet/Makefile \
+	kappfinder/apps/Office/Makefile \
 	kappfinder/apps/System/Makefile \
 	kappfinder/apps/Toys/Makefile \
 	kappfinder/apps/Utilities/Makefile \
@@ -231,6 +232,7 @@ AC_OUTPUT(Makefile \
 	kcontrol/display/pics/Makefile \
 	kcontrol/display/pics/mini/Makefile \
 	kcontrol/info/Makefile \
+	kcontrol/info/pics/Makefile \
 	kcontrol/input/Makefile \
 	kcontrol/input/pics/Makefile \
 	kcontrol/input/pics/mini/Makefile \
