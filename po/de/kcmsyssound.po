@@ -71,11 +71,11 @@ msgstr "KDE Start"
 
 #: syssound.cpp:161
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Fenster hochrollen"
 
 #: syssound.cpp:162
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Fenster herunterrollen"
 
 #: syssound.cpp:163
 msgid "Window Iconify"
