@@ -6,7 +6,7 @@ ProcTree  class implementation
 
 Most of the code is :
 Copyright (C) 1996 Keith Brown and KtSoft
-kdeui=>ktstreelist modified for kpstree.
+kdeui=>ktstreelist modified for ktop.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
