@@ -203,6 +203,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
   if ( bUseWallpaper )
     wallpaper = config.readEntry( "Wallpaper", i18n("No wallpaper") );
 
+  name.detach();
   name.sprintf( "%s_%d_%d_%d#%02x%02x%02x#%02x%02x%02x#", wallpaper.data(), 
 		wpMode, gfMode, orMode, color1.red(), color1.green(), 
 		color1.blue(), color1.red(), color2.green(), color2.blue());
