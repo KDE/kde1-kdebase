@@ -106,7 +106,7 @@ msgstr "&Einstellungen..."
 #: backgnd.cpp:417
 #, fuzzy
 msgid "&Dock into the panel"
-msgstr "In kpanel einbinden"
+msgstr "In Panel einbinden"
 
 #: backgnd.cpp:442
 #, fuzzy
