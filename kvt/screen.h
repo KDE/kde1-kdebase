@@ -7,6 +7,9 @@
  * he guarantee anything whatsoever.
  */
 
+#ifndef SCREEN_H
+#define SCREEN_H
+
 #ifndef __GNUC__
 #define  inline  /*nothing*/
 #endif /*__GNUC__*/
@@ -179,3 +182,4 @@ void scr_set_tab(int value);
 void scr_E(void);
 void scr_rev_vid(int mode);
 
+#endif /* SCREEN_H */

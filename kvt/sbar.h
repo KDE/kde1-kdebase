@@ -12,6 +12,9 @@
  * he guarantee anything whatsoever.
  */
 
+#ifndef SBAR_H
+#define SBAR_H
+
 struct sbar_info 
 {
   Window sb_win;
@@ -28,3 +31,4 @@ struct sbar_info
 void sbar_init(void);
 void sbar_show(int,int,int);
 
+#endif /* SBAR_H */

@@ -15,8 +15,3 @@
  */
 #define LOW	0
 #define HIGH	1
-
-unsigned char *cstrcpy(unsigned char *source);
-extern void clean_exit(int);
-extern void cleanutent(void);
-extern void makeutent(char *);

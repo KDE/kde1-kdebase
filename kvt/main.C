@@ -36,11 +36,13 @@
 #include "main.h"
 
 extern "C" {
+extern void *safemalloc(int, const char *identifier);
 extern void get_token();
 extern void handle_X_event(XEvent event);
-extern void rxvt_main(int argc,char **argv);
 extern void refresh();
 extern void extract_colors( char *fg_string, char *bg_string);
+
+void rxvt_main(int argc,char **argv);
 
 int run_command(unsigned char *,unsigned char **);
 
@@ -50,6 +52,7 @@ int run_command(unsigned char *,unsigned char **);
 #include "xsetup.h"
 #include "command.h"
 
+extern char *terminal;
 extern struct sbar_info sbar;
 extern WindowInfo MyWinInfo;
 extern XSizeHints sizehints;
@@ -57,8 +60,12 @@ extern XSizeHints sizehints;
 extern int font_num;
 extern void LoadNewFont();
 
-extern char* bg_string;
-extern char* fg_string;
+extern char *xvt_name; // the name the program is run under
+extern char *window_name;
+extern char *icon_name;
+
+extern char *bg_string;
+extern char *fg_string;
 
 extern int rstyle;
 
@@ -66,7 +73,6 @@ extern void kvt_set_fontnum(char *);
 extern void kvt_set_menubar(int);
 extern void kvt_set_scrollbar(int);
 extern void kvt_set_size_increment(int, int);
-
 }
 
 extern Display* display;
@@ -87,7 +93,15 @@ static int high = 0;
 
 static XEvent stored_xevent_for_keys;
 
-static const char* kvt_sizes[] = {"normal", "tiny", "small", "medium", "large", "huge"};
+static const char* kvt_sizes[] = {
+  "normal", 
+  "tiny", 
+  "small", 
+  "medium", 
+  "large", 
+  "huge"
+};
+
 static Kvt_Dimen kvt_dimens[] = {
   { "80x24", 80, 24 },
   { "80x52", 80, 52 },
@@ -102,6 +116,8 @@ static const char* color_mode_name[] = {
   "Linux",
   0
 };
+
+static char* terminal_name = "xterm";
 
 int o_argc;
 char ** o_argv;
@@ -227,11 +243,40 @@ OptionDialog::OptionDialog(QWidget *parent, const char *name)
   geom2->addStretch();
   geom2->addWidget(cancel);
   setGeometry(x(), y(), 300, 150);
-
+  
   for (int i=0; color_mode_name[i]; i++) {
     colormode->insertItem(color_mode_name[i], i);
   }
 }
+
+void sbar_init(void){
+  sbar_show(100,0,100);
+}
+
+void sbar_show(int length_arg,int low_arg,int high_arg){
+  if (length != length_arg ||
+      low != low_arg ||
+      high != high_arg){
+    length = length_arg;
+    low = low_arg;
+    high = high_arg;
+    kvt->scrollbar->setRange(0, length - (high - low));
+    kvt->scrollbar->setSteps(1, high-low);
+    kvt->scrollbar->setValue(length - high);
+  }
+}
+
+void change_window_name(char *str){
+  kvt->setCaption(str);
+}
+
+void change_icon_name(char *str){
+  kvt->setIconText(str);
+}
+
+//---------------------------------------------------------------------------
+// kVt
+//---------------------------------------------------------------------------
 
 kVt::kVt( QWidget *parent, const char *name )
   : QWidget( parent, name){
@@ -757,109 +802,6 @@ bool kVt::eventFilter( QObject *obj, QEvent * ev){
   return FALSE;
 }
 
-
-#include "main.moc"
-
-
-int main(int argc, char **argv)
-{
-  setlocale(LC_CTYPE, "");
-
-  // first make an argument copy for a new kvt
-  o_argc = argc;
-  o_argv = new char*[o_argc + 2];
-  int v;
-  for (v=0; v<o_argc; v++) o_argv[v] = argv[v];
-  o_argv[v]=NULL;
-
-  // store the command arguments for the terminal command
-  int commands=-1;
-  for (v=0; v<argc; v++){
-    if (strcmp(argv[v],"-e") == 0){
-      argc = v;
-      commands = v;
-      argv[v] = NULL;
-    }
-    
-  }
-
-  MyApp a( argc, argv, "kvt" );
-
-  myapp = &a;
-
-  // build an argument table for the rxvt
-  int r_argc = 0;
-  char ** r_argv = new char*[o_argc + 2];
-  // first the args returned by Qt
-  for (v=0; v<argc; v++) r_argv[v] = argv[v];
-
-  // then the args for the terminal command
-  if (commands > -1){
-    while (o_argv[commands]){
-      r_argv[v] = o_argv[commands];
-      commands++;
-      v++;
-    }
-  }
-  r_argc = v;
-  r_argv[r_argc] = NULL;
-  //  a.setStyle(WindowsStyle);
-  kvt = new kVt;
-  a.setMainWidget( kvt );
-
-  // this is for the original rxvt-code
-  display = qt_xdisplay();
-
-  // a bisserl gehackt. bmg
-  
-  char buffer[60];
-  sprintf(buffer, "%dx%d", kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
-  set_geom_string(buffer);
-  kvt_set_dimension(buffer);
-
-  rxvt_main(r_argc,r_argv);
-
-  QSocketNotifier sn( comm_fd, QSocketNotifier::Read );
-  QObject::connect( &sn, SIGNAL(activated(int)),
-		    kvt, SLOT(application_signal()) );
-
-  //  kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
-
-  kvt->ResizeToVtWindow();
-
-  kvt->show();
-
-  m_optiondialog = new OptionDialog(kvt, "Terminal Options");
-
-  return a.exec();
-}
-
-void sbar_init(void){
-  sbar_show(100,0,100);
-}
-
-void sbar_show(int length_arg,int low_arg,int high_arg){
-  if (length != length_arg ||
-      low != low_arg ||
-      high != high_arg){
-    length = length_arg;
-    low = low_arg;
-    high = high_arg;
-    kvt->scrollbar->setRange(0, length - (high - low));
-    kvt->scrollbar->setSteps(1, high-low);
-    kvt->scrollbar->setValue(length - high);
-  }
-}
-
-void change_window_name(char *str){
-  kvt->setCaption(str);
-}
-
-void change_icon_name(char *str){
-  kvt->setIconText(str);
-}
-
-
 void kVt::scrolling( int value){
   MyWinInfo.offset =  length - value - (high - low);
   refresh();
@@ -902,4 +844,92 @@ void kVt::menubarMoved(){
 void kVt::quit(){
   delete menubar;
   myapp->quit();
+}
+
+//---------------------------------------------------------------------------
+// main
+//---------------------------------------------------------------------------
+
+#include "main.moc"
+
+int main(int argc, char **argv)
+{
+  setlocale(LC_CTYPE, "");
+
+  // first make an argument copy for a new kvt
+  o_argc = argc;
+  o_argv = new char*[o_argc + 2];
+  int i;
+  for (i=0; i<o_argc; i++) 
+    o_argv[i] = argv[i];
+  o_argv[i]=NULL;
+
+  // cut off the command arguments for the terminal command and set com_arg
+  int commands = -1;
+  int com_argc = -1;
+  char **com_argv = 0;
+  for (i=0; i<argc; i++){
+    if (strcmp(argv[i],"-e") == 0){
+      com_argv = argv+i+1;
+      com_argc = argc-i-1;
+      argc = i;
+      commands = i;
+      argv[i] = NULL;
+    }
+  }
+
+  // create the QT Application
+  MyApp a( argc, argv, "kvt" );
+  myapp = &a;
+
+  //  a.setStyle(WindowsStyle);
+  kvt = new kVt;
+  a.setMainWidget( kvt );
+
+  // this is for the original rxvt-code
+  display = qt_xdisplay();
+
+  // a bisserl gehackt. [bmg]
+  char buffer[60];
+  sprintf(buffer, "%dx%d", kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
+  set_geom_string(buffer);
+  kvt_set_dimension(buffer);
+  
+    // set the names
+  char* s;
+  if ((s=strrchr(argv[0],'/'))!=NULL) 
+    s++; 
+  else 
+    s=argv[0]; 
+  xvt_name = window_name = icon_name = s; 
+  
+  if (com_argv){
+    if ((s=strrchr(com_argv[0],'/'))!=NULL) 
+      s++; 
+    else 
+      s=com_argv[0]; 
+    window_name = icon_name = s; 
+  }
+
+  // set the terminal-environment TERM
+  terminal = (char *)safemalloc(strlen(terminal_name)+6, "terminal");
+  sprintf(terminal, "TERM=%s", terminal_name);
+ 
+  init_display(argc, argv);
+
+  putenv(terminal);
+  
+  init_command(NULL ,(unsigned char **)com_argv);
+
+  QSocketNotifier sn( comm_fd, QSocketNotifier::Read );
+  QObject::connect( &sn, SIGNAL(activated(int)),
+		    kvt, SLOT(application_signal()) );
+
+  kvt->ResizeToVtWindow();
+
+  kvt->show();
+
+  m_optiondialog = new OptionDialog(kvt, "Terminal Options");
+
+  return a.exec();
 }

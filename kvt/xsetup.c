@@ -99,6 +99,7 @@ char		*xvt_name;	/* the name the program is run under */
 char		*window_name;	/* window name for titles etc. */
 char		*icon_name;	/* name to display in the icon */
 int		screen;		/* the X screen number */
+char            *terminal;	/* contents of the TERM variable */
 XColor		background_color;
 XColor		foreground_color;
 extern unsigned long pixel_colors[10];
@@ -182,43 +183,17 @@ void init_display(int argc,char **argv)
   int i,len;
   char *display_string;
 
-
-  /* yet done in rxvt_main() in rxvt.c . (Matthias) */
-/*   if ((s=strrchr(argv[0],'/'))!=NULL) */
-/*      s++; */
-/*   else */
-/*      s=argv[0]; */
-/*   xvt_name = window_name = icon_name = s; */
-
   display_name = getenv("DISPLAY");
-  if(display_name == NULL)
-    display_name = ":0";
-
-  /* make a quick pass to find the display name */
-  for(i=1;i<argc;i++)
-    {
-      if((strcmp(argv[i],"-display")==0)&&(i+1<argc))
-	display_name = argv[++i];
-    }
-
-  /* No longer needed. Matthias */ 
-/*   if (!(display = XOpenDisplay(display_name))) */
-/*     { */
-/*       error("can't open display %s",display_name); */
-/*       clean_exit(1); */
-/*     } */
 
   screen = DefaultScreen(display);
-  colormap = DefaultColormap(display,screen);
+  colormap = DefaultColormap(display, screen);
 
   extract_resources();
 
   /* now get all the options */
   for(i=1;i<argc;i++)
     {
-      if((strcmp(argv[i],"-display")==0)&&(i+1<argc))
-	display_name = argv[++i];
-      else if((strcmp(argv[i],"-vt_geometry")==0)&&(i+1<argc))
+      if((strcmp(argv[i],"-vt_geometry")==0)&&(i+1<argc))
 	geom_string = argv[++i];
 #ifdef PRINT_PIPE
       else if((strcmp(argv[i],"-print-pipe")==0)&&(i+1<argc))
@@ -240,8 +215,12 @@ void init_display(int argc,char **argv)
 	console = 1;
       else if((strcmp(argv[i],"-T")==0)&&(i+1<argc)) 
  	window_name = argv[++i]; 
-      else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) 
-	  ++i; 
+      else if((strcmp(argv[i],"-tn")==0)&&(i+1<argc)) {
+	++i; 
+	safefree(terminal, "terminal", "init_display");
+	terminal = safemalloc(strlen(argv[i])+6, "terminal");
+	sprintf(terminal, "TERM=%s", argv[i]);
+      }
       else if((strcmp(argv[i],"-n")==0)&&(i+1<argc)) 
  	icon_name = argv[++i]; 
       else if(strcmp(argv[i],"-7")==0)
@@ -280,13 +259,6 @@ void init_display(int argc,char **argv)
           GreekMode = GREEK_IBM437;
         }
 #endif       
-      /* no longer needed. Matthias */ 
-/*       else if((strcmp(argv[i],"-secure")==0)&&(i+1<argc)) */
-/* 	SecureKeysym = XStringToKeysym(argv[++i]); */
-/*       else if((strcmp(argv[i],"-bigfont")==0)&&(i+1<argc)) */
-/* 	BigFontKeysym = XStringToKeysym(argv[++i]); */
-/*       else if((strcmp(argv[i],"-smallfont")==0)&&(i+1<argc)) */
-/* 	SmallFontKeysym = XStringToKeysym(argv[++i]); */
       else if((strcmp(argv[i],"-pageup")==0)&&(i+1<argc))
 	PageUpKeysym = XStringToKeysym(argv[++i]);	
       else if((strcmp(argv[i],"-pagedown")==0)&&(i+1<argc))
@@ -301,79 +273,40 @@ void init_display(int argc,char **argv)
 	{
 	  fprintf(stderr, KVT_VERSION);
 	  fprintf(stderr, "\n\n");
-	  fprintf(stderr,"Copyright(C) 1996, 1997 Matthias Ettrich\n");
-	  fprintf(stderr,"Terminal emulation for the KDE Desktop Environment\n");
-	  fprintf(stderr, "based on Robert Nation's rxvt-2.08\n\n");
-	  
-	  fprintf(stderr,"Permitted arguments are:\n");
-	  fprintf(stderr,
-"-e <command> <arg> ...	execute command with ars - must be last argument\n");
-	  fprintf(stderr,
-"-display <name>	specify the display (server)\n");
- 	  fprintf(stderr, 
-"-vt_geometry <spec>	the initial vt window geometry\n"); 
+	  fprintf(stderr, "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+		  "Copyright(C) 1997 M G Berberich\n"
+		  "Terminal emulation for the KDE Desktop Environment\n"
+		  "based on Robert Nation's rxvt-2.08\n\n"
+		  "Permitted arguments are:\n"
+		  "-e <command> <arg> ...	execute command with ars - must be last argument\n"
+		  "-display <name>	specify the display (server)\n"
+		  "-vt_geometry <spec>	the initial vt window geometry\n"
 #ifdef PRINT_PIPE
-	  fprintf(stderr,
-"-print-pipe <name>	specify pipe for vt100 printer\n");
+		  "-print-pipe <name>	specify pipe for vt100 printer\n"
 #endif
-	  fprintf(stderr,
-"-vt_bg <colour>		background color\n");
-	  fprintf(stderr,
-"-vt_fg <colour>		foreground color\n");
-	  fprintf(stderr,
-"-vt_font <fontname>	normal font\n");
-	  fprintf(stderr,
-"-vt_size <size>		tiny, small, normal, large, huge\n");
-	  fprintf(stderr,
-"-no_menubar		hide the menubar\n");
- 	  fprintf(stderr,
-"-no_scrollbar		hide the scrollbar\n");
- 	  fprintf(stderr,
-"-T <text>		text in window titlebar\n");
- 	  fprintf(stderr,
-"-tn <TERM>		Terminal type. Default is xterm.\n");
-	  fprintf(stderr,
-"-C                     Capture system console message\n");
-	  fprintf(stderr,
-"-n <text>		name in icon or icon window\n");
-	  fprintf(stderr,
-"-7		        run in 7 bit mode\n");
-	  fprintf(stderr,
-"-8                     run in 8 bit mode\n");
-	  fprintf(stderr,
-"-ls                    initiate the window's shell as a login shell\n");
-	  fprintf(stderr,
-"-ls-                   initiate the window's shell as a non-login shell (default)\n");
-#ifdef MAPALERT
-/* 	  fprintf(stderr, */
-/* "-ma                    De-iconify (Map) when audio alert received\n"); */
-/* 	  fprintf(stderr, */
-/* "-ma-                   Disable automatic de-iconify on alert\n"); */
-#endif
-/* 	  fprintf(stderr, */
-/* "-ic                    start iconic\n"); */
-	  fprintf(stderr,
-"-meta                  handle Meta key with ESCAPE prefix, 8THBIT set, or ignore\n");
-	  fprintf(stderr,
-"-sl <number>           save number lines in scroll-back buffer\n");
-      /* no longer needed. Matthias */ 
-/* 	  fprintf(stderr, */
-/* "-secure <keysym>       use hot key alt-keysym to enter secure mode\n"); */
-	  fprintf(stderr,
-"-pageup <keysym>       use hot key alt-keysym to scroll up through the buffer\n");
-	  fprintf(stderr,
-"-pagedown <keysym>     use hot key alt-keysym to scroll down through buffer\n");
-      /* no longer needed. Matthias */ 
-/* 	  fprintf(stderr, */
-/* "-bigfont <keysym>      use hot key alt-keysym to switch to a bigger font\n"); */
-/* 	  fprintf(stderr, */
-/* "-small <keysym>        use hot key alt-keysym to switch to a smaller font\n"); */
+		  "-vt_bg <colour>		background color\n"
+		  "-vt_fg <colour>		foreground color\n"
+		  "-vt_font <fontname>	normal font\n"
+		  "-vt_size <size>     	tiny, small, normal, large, huge\n"
+		  "-no_menubar		hide the menubar\n"
+		  "-no_scrollbar		hide the scrollbar\n"
+		  "-T <text>		text in window titlebar\n"
+		  "-tn <TERM>		Terminal type. Default is xterm.\n"
+		  "-C			Capture system console message\n"
+		  "-n <text>		name in icon or icon window\n"
+		  "-7		        run in 7 bit mode\n"
+		  "-8			run in 8 bit mode\n"
+		  "-ls			initiate the window's shell as a login shell\n"
+		  "-ls-			initiate the window's shell as a non-login shell (default)\n"
+		  "-meta			handle Meta key with ESCAPE prefix, 8THBIT set, or ignore\n"
+		  "-sl <number>		save number lines in scroll-back buffer\n"
+		  "-pageup <keysym>	use hot key alt-keysym to scroll up through the buffer\n"
+		  "-pagedown <keysym>	use hot key alt-keysym to scroll down through buffer\n"
 #ifdef GREEK_KBD
-	  fprintf(stderr,
-"-grk9                  greek kbd = ELOT 928 (default)\n");
-	  fprintf(stderr,
-"-grk4                  greek kbd = IBM 437\n");
+		  "-grk9		greek kbd = ELOT 928 (default)\n"
+		  "-grk4		greek kbd = IBM 437\n"
 #endif
+		  );
 	  clean_exit(1);
 	}
     }
