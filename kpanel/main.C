@@ -128,6 +128,7 @@ int main( int argc, char ** argv ){
       printf("kpanel: waiting for windowmanager\n");
       while (!KWM::isKWMInitialized()) sleep(1);
       sleep(1);
+      printf("kpanel: ok, commencing initialization\n");
     }
   }
 
