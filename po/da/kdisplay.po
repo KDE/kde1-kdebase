@@ -237,7 +237,7 @@ msgid ""
 "in the color scheme list."
 msgstr ""
 "Vælg venligst et unikt navn for det nye farveskema.\n"
-"Navnet du skrev findes allerede i farveskema listen.\n"
+"Navnet du skrev findes allerede i farveskema listen."
 
 #: savescm.cpp:18
 #, fuzzy
