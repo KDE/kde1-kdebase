@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-22 01:15+0100\n"
-"PO-Revision-Date: 1998-12-21 00:00+0600\n"
+"PO-Revision-Date: 1998-12-26 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,20 +38,19 @@ msgid "User &Agent"
 msgstr "&Агент пользователя"
 
 #: main.cpp:76
-#, fuzzy
 msgid "Coo&kies"
-msgstr "Запретить cookie"
+msgstr "Cookie"
 
 #: main.cpp:80
 msgid "&Desktop Icons"
 msgstr "Пиктограммы рабочего стола"
 
 #: main.cpp:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"использование: %s [-init | {font,color,misc,proxy,http,useragent,icons}]\n"
+"использование: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -174,9 +173,8 @@ msgid "Known bindings:"
 msgstr "Известные привязки:"
 
 #: kcookiesdlg.cpp:49
-#, fuzzy
 msgid "&Enable Cookies"
-msgstr "Запретить cookie"
+msgstr "Разрешить cookie"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
@@ -206,7 +204,7 @@ msgstr "Изменить политику разрешения для домена"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr ""
+msgstr "Вы вначале должны ввести домен !"
 
 #: rootopts.cpp:73
 msgid "Horizontal Root Grid Spacing:"
@@ -230,4 +228,4 @@ msgstr "Цвет фона пиктограммы:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr ""
+msgstr "Показывать скрытые файлы на рабочем столе"

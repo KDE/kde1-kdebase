@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: klock\n"
 "POT-Creation-Date: 1998-12-21 01:17+0100\n"
-"PO-Revision-Date: 1998-12-10 02:25+0600\n"
+"PO-Revision-Date: 1998-12-25 02:25+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -467,7 +467,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "Опция %s не поддерживается на этой платформе!"
 
 #: main.cpp:422
-#, fuzzy
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"
@@ -479,7 +478,7 @@ msgstr ""
 "\n"
 "Ваша система использует скрытые (shadow) пароли!\n"
 "Пожайлуста свяжитесь с вашим системным администратором.\n"
-"Скажите ему, что вам необходимы права (suid root) для хранителей экрана!"
+"Скажите ему, что вам необходимы права (suid root) для kcheckpass!"
 
 #: main.cpp:427
 msgid "Shadow Passwords"

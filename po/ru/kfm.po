@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1998-12-25 01:11+0100\n"
-"PO-Revision-Date: 1998-12-21 00:51+0600\n"
+"PO-Revision-Date: 1998-12-25 03:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -563,7 +563,7 @@ msgstr "Информация KFM"
 
 #: main.cpp:90
 msgid "Creating directory:\n"
-msgstr "Создаю подкаталог:\n"
+msgstr "Создаю каталог:\n"
 
 #: main.cpp:230
 msgid ""
@@ -660,13 +660,13 @@ msgid "Last Modified"
 msgstr "Последнее изменение"
 
 #: kfmprops.cpp:379
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Не могу удалить подкаталог\n"
-"%s"
+"Не могу переименовать файл или каталог\n"
+"%s\n"
 
 #: kfmprops.cpp:429
 msgid "Access permissions"
@@ -780,7 +780,7 @@ msgstr "Просмотреть..."
 
 #: kfmprops.cpp:701
 msgid "Working Directory"
-msgstr "Рабочий подкаталог"
+msgstr "Рабочий каталог"
 
 #: kfmprops.cpp:719
 msgid "Swallowing on panel"
@@ -951,7 +951,7 @@ msgstr "Внутренняя Ошибка: desktopDir некорректен"
 #: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "ОШИБКА: Не могу прочитать подкаталог рабочего стола '%s'"
+msgstr "ОШИБКА: Не могу прочитать каталог рабочего стола '%s'"
 
 #: root.cpp:992
 msgid "ERROR: Can not accept drop"
@@ -1024,13 +1024,13 @@ msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
-"Не могу создать подкаталог\n"
+"Не могу создать каталог\n"
 "%s"
 
 #: kiojob.cpp:571 kiojob.cpp:1017
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "ОШИБКА: Не могу получить доступ к подкаталогу '%s'"
+msgstr "ОШИБКА: Не могу получить доступ к каталогу '%s'"
 
 #: kiojob.cpp:829
 #, c-format
@@ -1038,7 +1038,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Не могу получить доступ к подкаталогу\n"
+"Не могу получить доступ к каталогу\n"
 "%s"
 
 #: kiojob.cpp:870
@@ -1049,7 +1049,7 @@ msgid ""
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Не могу переместить подкаталог\n"
+"Не могу переместить каталог\n"
 "%s\n"
 "в %s\n"
 "Возможно доступ запрещен."
@@ -1120,7 +1120,7 @@ msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
-"Не могу получить содержимое подкаталога\n"
+"Не могу получить содержимое каталога\n"
 "%s"
 
 #: kiojob.cpp:1213
@@ -1218,7 +1218,7 @@ msgstr ""
 
 #: kiojob.cpp:1403
 msgid "Making directory"
-msgstr "Создаю подкаталог"
+msgstr "Создаю каталог"
 
 #: kiojob.cpp:1519 kiojob.cpp:1573 kiojob.cpp:1615
 #, c-format
@@ -1236,7 +1236,7 @@ msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Не могу удалить подкаталог\n"
+"Не могу удалить каталог\n"
 "%s"
 
 #: kiojob.cpp:1643
@@ -1280,7 +1280,7 @@ msgstr "Ошибка установки KFM'а"
 
 #: autostart.cpp:29
 msgid "The directory "
-msgstr "Подкаталог "
+msgstr "Каталог "
 
 #: autostart.cpp:30
 msgid " does not exist\n"
@@ -1384,12 +1384,11 @@ msgstr "Все cookie"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "Разрешить"
 
 #: kcookiewin.cpp:166
-#, fuzzy
 msgid "&Reject"
-msgstr "Выделить"
+msgstr "Запретить"
 
 #: popup.cpp:69
 #, c-format
@@ -1475,72 +1474,3 @@ msgstr ""
 "Синтаксическая Ошибка:\n"
 "kfmexec комманда [URLs ....]\n"
 
-#~ msgid ""
-#~ "Could not rename the file or directory\n"
-#~ "The destination seems to already exist\n"
-#~ msgstr ""
-#~ "Не могу переименовать файл или подкаталог\n"
-#~ "Похоже, что объект назначения существует\n"
-
-#~ msgid "Installing Templates"
-#~ msgstr "Устанавливаю Шаблоны"
-
-#~ msgid "Small"
-#~ msgstr "Маленький"
-
-#~ msgid "Medium"
-#~ msgstr "Средний"
-
-#~ msgid "Large"
-#~ msgstr "Большой"
-
-#~ msgid "Standard Font"
-#~ msgstr "Стандартный Шрифт"
-
-#~ msgid "Fixed Font"
-#~ msgstr "Фиксированный Шрифт"
-
-#~ msgid "Default Charset"
-#~ msgstr "Кодировка по умолчанию"
-
-#~ msgid "Use language charset"
-#~ msgstr "Использовать кодировку"
-
-#~ msgid "Background Color:"
-#~ msgstr "Цвет фона:"
-
-#~ msgid "Normal Text Color:"
-#~ msgstr "Цвет текста:"
-
-#~ msgid "URL Link Color:"
-#~ msgstr "Цвет ссылки:"
-
-#~ msgid "Followed Link Color:"
-#~ msgstr "Цвет пройденной ссылки:"
-
-#~ msgid "Change cursor over link."
-#~ msgstr "Изменять курсор над ссылкой."
-
-#~ msgid "Underline links"
-#~ msgstr "Подчеркивать ссылки"
-
-#~ msgid "Horizontal Root Grid Spacing:"
-#~ msgstr "Горизонтальный размер сетки"
-
-#~ msgid "Vertical Root Grid Spacing:"
-#~ msgstr "Вертикальный размер сетки"
-
-#~ msgid "&Allow per-URL settings"
-#~ msgstr "Разрешать настройки на каждый URL"
-
-#~ msgid "Tree &view follows navigation"
-#~ msgstr "Дерево следует за движением"
-
-#~ msgid "&Transparent Text for Root Icons."
-#~ msgstr "Прозрачный текст для пиктограмм"
-
-#~ msgid "Icon foreground color:"
-#~ msgstr "Цвет пиктограмм:"
-
-#~ msgid "Icon background color:"
-#~ msgstr "Цвет фона:"
