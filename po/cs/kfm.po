@@ -608,7 +608,7 @@ msgid ""
 "The destination seems to already exist\n"
 msgstr ""
 "Není mo¾né pøejmenovat soubor nebo adresáø\n"
-"Zdá se, ¾e cílový soubor ji¾ ekistuje\n"
+"Zdá se, ¾e cílový soubor ji¾ existuje\n"
 
 #: kfmprops.cpp:425
 msgid "Access permissions"
