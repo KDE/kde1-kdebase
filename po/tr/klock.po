@@ -1,0 +1,750 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: banner.cpp:62
+msgid "Banner"
+msgstr "Büyük Yazý"
+
+#: banner.cpp:84
+msgid "Setup kbanner"
+msgstr "kbanner Ayarla"
+
+#: banner.cpp:134 blankscrn.cpp:76
+msgid "Color:"
+msgstr "Renk:"
+
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1025 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
+msgid "Speed:"
+msgstr "Hýz:"
+
+#: banner.cpp:188
+msgid "Message:"
+msgstr "Mesaj:"
+
+#: banner.cpp:357
+msgid "About Banner"
+msgstr "Banner Hakkýnda"
+
+#: banner.cpp:358
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner Sürüm 0.1\n"
+"\n"
+"Martin R. Jones tarafýnda yazýlmýþtýr\n"
+"mjones@kde.org"
+
+#: banner.cpp:461
+msgid "KDE is great"
+msgstr "KDE harika"
+
+#: bat.cpp:462
+msgid "Bat"
+msgstr "Bat"
+
+#: bat.cpp:537
+msgid "Setup KBat"
+msgstr "KBat Ayarla"
+
+#: bat.cpp:564
+msgid "Number of bats:"
+msgstr "Yarasa Sayýsý:"
+
+#: bat.cpp:661
+msgid "About Bat"
+msgstr "Bat Hakkýnda"
+
+#: bat.cpp:662
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Bat\n"
+"\n"
+"Telif Hakký (C) Sun Microsystems\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: blankscrn.cpp:53
+msgid "Blank Screen"
+msgstr "Boþ Ekran"
+
+#: blankscrn.cpp:67
+msgid "Setup kblankscrn"
+msgstr "Kblancsrn Ayarla"
+
+#: blob.cpp:57
+msgid "Random Linear"
+msgstr "Rastgele Çizgi"
+
+#: blob.cpp:58
+msgid "Horizonal Sine"
+msgstr "Yatay Sinüs"
+
+#: blob.cpp:59
+msgid "Circular Bounce"
+msgstr "Dairesel"
+
+#: blob.cpp:60
+msgid "Polar Coordinates"
+msgstr "Polar koordinatlar"
+
+#: blob.cpp:61
+msgid "Random"
+msgstr "Rastgele"
+
+#: blob.cpp:77
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Üzgünüm. Bu ekran koruyucu renkli ekran gerektirmekte"
+
+#: blob.cpp:458
+msgid "Setup Blob Saver"
+msgstr "Blob koruyucuyu ayarla"
+
+#: blob.cpp:468
+msgid "Frame Show sec."
+msgstr "Pencere Gösterme sn."
+
+#: blob.cpp:480
+msgid "Algorithm"
+msgstr "Algoritma"
+
+#: blob.cpp:570
+msgid "About Blob"
+msgstr "Blob Hakkýnda"
+
+#: blob.cpp:571
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver Sürüm 0.1\n"
+"\n"
+"Tiaan Wessels tarafýndan yazýlmýþtýr\n"
+"tiaan@netsys.co.za 1997"
+
+#: blob.cpp:606
+msgid "Blobs"
+msgstr "Bloblar"
+
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr "Bouboule"
+
+#: bouboule.cpp:1005
+msgid "Setup KBouboule"
+msgstr "KBouboule ayarlarý"
+
+#: bouboule.cpp:1032
+msgid "Number of points:"
+msgstr "Nokta Sayýsý:"
+
+#: bouboule.cpp:1046
+msgid "Point size:"
+msgstr "Nokta boyu:"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr "Renk deðiþim sýklýðý:"
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr "3 boyutlu"
+
+#: bouboule.cpp:1223
+msgid "About Bouboule"
+msgstr "Bouboule hakkýnda"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+"Bouboule v0.1 -- dönen ve boyut deðiþtiren küre lekeleri\n"
+"\n"
+"Telif Hakký (c) 1996 Jeremie PETIT\n"
+"\n"
+"kscreensave uyarlamasý: Cedric Tefft"
+
+
+#: flame.cpp:310
+msgid "Flame"
+msgstr "Meþale"
+
+#: flame.cpp:397
+msgid "Setup KFlame"
+msgstr "KFlame Ayarla"
+
+#: flame.cpp:423
+msgid "Max Levels:"
+msgstr "En yüksek düzey:"
+
+#: flame.cpp:438
+msgid "Num Points:"
+msgstr "Nokta sayýsý:"
+
+#: flame.cpp:551
+msgid "About Flame"
+msgstr "Meþale Hakkýnda"
+
+#: flame.cpp:552
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Meþale Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1991 Patrick J. Naughton\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
+
+#: forest.cpp:206
+msgid "Forest"
+msgstr "Forest"
+
+#: forest.cpp:278
+msgid "Setup KForest"
+msgstr "KForest Ayarla"
+
+#: forest.cpp:304
+msgid "Num of Trees:"
+msgstr "Aðaç sayýsý:"
+
+#: forest.cpp:399
+msgid "About Forest"
+msgstr "Forest hakkýnda"
+
+#: forest.cpp:400
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Forest\n"
+"\n"
+"Telif Hakký (c) 1995 Pascal Pensa\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: hop.cpp:226
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:311
+msgid "Setup KHop"
+msgstr "KHop Ayarla"
+
+#: hop.cpp:337
+msgid "Samecolor Pixels:"
+msgstr "Aynýrenk Benek:"
+
+#: hop.cpp:351 lissie.cpp:367
+msgid "Cycles:"
+msgstr "Daireler:"
+
+#: hop.cpp:464
+msgid "About Hop"
+msgstr "Hop Hakkýnda"
+
+#: hop.cpp:465
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1991 Patrick J. Naughton\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: laser.cpp:333
+msgid "Laser"
+msgstr "Lazer"
+
+#: laser.cpp:393
+msgid "Setup KLaser"
+msgstr "KLaser ayarla"
+
+#: laser.cpp:482
+msgid "About Laser"
+msgstr "Laser hakkýnda"
+
+#: laser.cpp:483
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1995 Pascal Pensa\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
+
+#: lines.cpp:116
+msgid "Lines"
+msgstr "Lines"
+
+#: lines.cpp:134
+msgid "Setup klines"
+msgstr "klines Ayarla"
+
+#: lines.cpp:142 polygon.cpp:93
+msgid "Length:"
+msgstr "Uzunluk:"
+
+#: lines.cpp:168
+msgid "Beginning:"
+msgstr "Baþlangýç:"
+
+#: lines.cpp:182
+msgid "Middle:"
+msgstr "Orta:"
+
+#: lines.cpp:195
+msgid "End:"
+msgstr "Bitiþ:"
+
+#: lines.cpp:294
+msgid "About Lines"
+msgstr "Lines hakkýnda"
+
+#: lines.cpp:295
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Lines Sürüm 0.1.1\n"
+"\n"
+"Dirk Staneker tarafýndan yazýlmýþtýr\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:241
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:327
+msgid "Setup KLissie"
+msgstr "KLissie Ayarla"
+
+#: lissie.cpp:353
+msgid "Num of Lissies:"
+msgstr "Lissie sayýsý:"
+
+#: lissie.cpp:480
+msgid "About Lissie"
+msgstr "Lissie Hakkýnda"
+
+#: lissie.cpp:481
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Telif Hakký (c) 1996 Alexander Jolk\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: main.cpp:286
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "%s seçeneði bu mimari tarafýndan desteklenmemektedir."
+
+#: main.cpp:313
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Sisteminiz gölge parola kullanmaktadýr!\n"
+"Sistem yöneticinize baþ vurunuz.\n"
+"\n"
+"Ona ekran koruyucu için suid'e ihtiyacýnýz olduðunu söyleyiniz"
+
+#: main.cpp:318
+msgid "Shadow Passwords"
+msgstr "Gölge Parolalar"
+
+#: main.cpp:476
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Kullaným: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:479
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Ýmleçi köþeye yerleþtirmek iþi yapar:\n"
+"                     x = i  Hareket yok\n"
+"                     x = s  Ekraný koru\n"
+"                     x = l  Ekraný kitle\n"
+"                    sýra: üst-sol, üst-sað, alt-sol, alt-sað\n"
+"  -delay num        Ekran koruyucu devreye girene kadar geçen süre\n"
+"                    (öntanýmlý 10dak)\n"
+"  -desc             Ekran koruyucunun tanýtýmýný standart çýktýya yaz\n"
+"  -install          Ekran koruyucuyu yükle\n"
+"  -lock             Ekran koruyucuyu durdurmak için þifre sor\n"
+"  -nice num         verilen deðer ile çalýþtýr\n"
+"\n"
+"  -preview wid      Belirtilen XWindow altýnda çalýþtýr\n"
+"  -inroot           Yetkili kullanýcý penceresinde çalýþtýr\n"
+"  -setup            Ekran koruyucuyu ayarla\n"
+"  -test             Test et\n"
+
+#: morph3d.cpp:839 space.cpp:419
+msgid "GL can not render with root visual\n"
+msgstr "GL yetkili kullanýcý görüntüsü ile çalýþamaz\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "KMorph3D'yi ayarla"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Cisim Türü:"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Morph3D Hakkýnda"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Telif Hakký (c) 1997 Marcelo F. Vianna\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: polygon.cpp:64
+msgid "Polygons"
+msgstr "Poligonlar"
+
+#: polygon.cpp:85
+msgid "Setup kpolygon"
+msgstr "KPoligon Ayarla"
+
+#: polygon.cpp:107
+msgid "Vertices:"
+msgstr "Kenarlar:"
+
+#: polygon.cpp:238
+msgid "About Polygon"
+msgstr "Poligon Hakkýnda"
+
+#: polygon.cpp:239
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Poligon Sürüm 0.1\n"
+"\n"
+"Martin R. Jones tarafýndan yazýlmýþtýr\n"
+"mjones@kde.org"
+
+#: pyro.cpp:439
+msgid "Pyro"
+msgstr "Pyro"
+
+#: pyro.cpp:517
+msgid "Setup KPyro"
+msgstr "KPyro Ayarla"
+
+#: pyro.cpp:529 rock.cpp:575
+msgid "Number:"
+msgstr "Sayý:"
+
+#: pyro.cpp:543
+msgid "Cloud"
+msgstr "Bulut"
+
+#: pyro.cpp:629
+msgid "About Pyro"
+msgstr "Pyro Hakkýnda"
+
+#: pyro.cpp:630
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro Sürüm 3.4\n"
+"\n"
+"Telif Hakký (c) 1991 Patrick J. Naughton\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
+
+#: rock.cpp:441
+msgid "Rock"
+msgstr "Rock"
+
+#: rock.cpp:549
+msgid "Setup krock"
+msgstr "Krock Ayarla"
+
+#: rock.cpp:595
+msgid "Rotate"
+msgstr "Çevir"
+
+#: rock.cpp:719
+msgid "About Rock"
+msgstr "Rock Hakkýnda"
+
+#: rock.cpp:720
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Rock Sürüm 3.3\n"
+"\n"
+"Telif Hakký (c) 1992 Jamie Zawinski\n"
+"\n"
+"kscreensave'e Martin Jones çevirmiþtir."
+
+#: saver.cpp:56 saver.cpp:146
+msgid "Enter Password"
+msgstr "Parolayý giriniz"
+
+#: saver.cpp:114
+msgid "Failed"
+msgstr "Baþarýsýz"
+
+#: science.cpp:65
+msgid "Whirl"
+msgstr "Dönme"
+
+#: science.cpp:68
+msgid "Sphere"
+msgstr "Küre"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr "Üstsel Katsayý"
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr "Sýkýþma"
+
+#: science.cpp:77
+msgid "Wave"
+msgstr "Dalga"
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr "Kavis"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Science"
+
+#: science.cpp:447
+msgid "rendering lens..."
+msgstr "mercek hesaplanýyor..."
+
+#: science.cpp:769
+msgid "grabbing screen..."
+msgstr "ekran yakalanýyor..."
+
+#: science.cpp:931
+msgid "Setup Science"
+msgstr "Science ayarlarý"
+
+#: science.cpp:949
+msgid "Mode:"
+msgstr "Kip:"
+
+#: science.cpp:964
+msgid "Inverse"
+msgstr "Ters"
+
+#: science.cpp:974
+msgid "Gravity"
+msgstr "Yerçekimi"
+
+#: science.cpp:983
+msgid "Hide Background"
+msgstr "Arkaplaný sakla"
+
+#: science.cpp:1009
+msgid "Intensity:"
+msgstr "Koyuluk:"
+
+#: science.cpp:1039
+msgid "Motion:"
+msgstr "Hareker:"
+
+#: science.cpp:1260
+msgid "Science Version"
+msgstr "Science Sürüm"
+
+#: science.cpp:1261
+msgid "written by"
+msgstr "yazan:"
+
+#: science.cpp:1262
+msgid "About Science"
+msgstr "Science hakkýnda"
+
+#: slip.cpp:293
+msgid "Slip"
+msgstr "Slip"
+
+#: slip.cpp:366
+msgid "Setup KSlip"
+msgstr "KSlip Ayarla"
+
+#: slip.cpp:392
+msgid "Batchcount:"
+msgstr "Sayaç:"
+
+#: slip.cpp:488
+msgid "About Slip"
+msgstr "Slip Hakkýnda"
+
+#: slip.cpp:489
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Telif Hakký (c) 1991 Scott Draves\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."
+
+#: space.cpp:491
+msgid "Space (GL)"
+msgstr "Space (GL)"
+
+#: space.cpp:581
+msgid "Setup KSpace"
+msgstr "KSpace Ayarla"
+
+#: space.cpp:597
+msgid "Warp Interval:"
+msgstr "Iþýk aralýðý:"
+
+#: space.cpp:685
+msgid "About KSpace"
+msgstr "KSpace Hakkýnda"
+
+#: space.cpp:687
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
+"KUzay\n"
+"Telif Hakký (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+
+#: swarm.cpp:257
+msgid "Swarm"
+msgstr "Swarm"
+
+#: swarm.cpp:329
+msgid "Setup KSwarm"
+msgstr "KSwarm ayarla"
+
+#: swarm.cpp:355
+msgid "Number of Bees:"
+msgstr "Arý sayýsý:"
+
+#: swarm.cpp:450
+msgid "About Swarm"
+msgstr "Swarm Hakkýnda"
+
+#: swarm.cpp:451
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Sürü\n"
+"\n"
+"Telif Hakký (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"kscreensave'e Emanuel Pirker çevirmiþtir."

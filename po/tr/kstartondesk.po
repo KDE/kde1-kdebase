@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: kstartondesk.C:72
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Telif hakký (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: kstartondesk.C:76
+msgid "Usage:"
+msgstr "Kullaným: "
+
+#: kstartondesk.C:78
+msgid "command "
+msgstr "komut "
+
+#: kstartondesk.C:79
+msgid "title "
+msgstr "baþlýk"
+
+#: kstartondesk.C:80
+msgid "desktop"
+msgstr "masaüstü"
+
+#: kstartondesk.C:82
+msgid "Example"
+msgstr "Örnek"

@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Bilinmeyen Modül: "
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "KDE Kontrol Merkezi"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "Modülleri &Yut"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 1.0\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr ""
+"KDE Kontrol Merkezi - Sürüm 1.0\n"
+"\n"
+"Matthias Hölzer tarafýndan yazýlmýþtýr\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones.\n"
+"'a teþekkürler"
+

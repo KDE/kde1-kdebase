@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm: Zaten çalýþan bir pencere denetleyicisi var gözüküyor. kwm"
+"baþlamayacak\n"
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: baþlama aþamasýnda hata; vazgeçiliyor\n"
+
+#: main.C:470
+msgid "Preparing session ... "
+msgstr "Oturum hazýrlanýyor... "
+
+#: main.C:489
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:496
+msgid "Usage: "
+msgstr "Kullaným:" 
+
+#: main.C:507
+msgid "&Maximize"
+msgstr "&Büyült"
+
+#: main.C:508
+msgid "&Restore"
+msgstr "&Kurtar"
+
+#: main.C:509
+msgid "&Iconify"
+msgstr "&Simgele"
+
+#: main.C:510
+msgid "&DeIconify"
+msgstr "&Normal"
+
+#: main.C:511
+msgid "&Sticky"
+msgstr "&Sabit"
+
+#: main.C:512
+msgid "&UnSticky"
+msgstr "&Serbest"
+
+#: main.C:513
+msgid "Mo&ve"
+msgstr "&Yürüt"
+
+#: main.C:514
+msgid "Resi&ze"
+msgstr "&Yeniden boyutlandýr"
+
+#: main.C:516
+msgid "&To desktop"
+msgstr "&Masa üstüne"
+
+#: main.C:518
+msgid "&Onto current desktop"
+msgstr "&Þu anki masa üstüne"
+
+#: main.C:571
+msgid "One"
+msgstr "Bir"
+
+#: main.C:574
+msgid "Two"
+msgstr "Ýki"
+
+#: main.C:577
+msgid "Three"
+msgstr "Üç"
+
+#: main.C:580
+msgid "Four"
+msgstr "Dört"
+
+#: main.C:583
+msgid "Five"
+msgstr "Beþ"
+
+#: main.C:586
+msgid "Six"
+msgstr "Altý"
+
+#: main.C:589
+msgid "Seven"
+msgstr "Yedi"
+
+#: main.C:592
+msgid "Eight"
+msgstr "Sekiz"
+
+#: main.C:606
+msgid "Unnamed Desktop"
+msgstr "Ýsimsiz Masa üstü"
+
+#: main.C:942
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Bazi simgeler geçersiz: ShapeMode kullanýlmýyor\n"
+
+#: main.C:1054
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Bazý simgeler geçersiz: GimmickMode kullanýlmýyor\n"
+
+#: main.C:1311
+msgid "*** No Tasks ***"
+msgstr "*** Görev Yok ***"
+
+#: minicli.C:116
+msgid "Command:"
+msgstr "Komut:"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "Hay Allah!"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "Oturumu kapat"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Oturum kapatýlmak için hazýrlandý"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"Takip eden uygulamalar kaydedilmemiþ veri içermektedir\n"
+"Ve gelecek oturumda bulunamayacaktýr."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"Takip eden uygulamalar bir sonraki oturumunuzda geri yüklenemeyecek.\n"
+"Önemli bilgi içermediðinden emin olunuz."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"Takip eden uygulamalar bir sonraki X11 oturumunuzda geri yüklenemeyecek.\n"
+"Önemli bilgi içermediðinden emin olunuz."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "Göreve geç"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "Þu anki oturum"

@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 1.0\n"
+"POT-Creation-Date: 1998-02-25 18:08+0100\n"
+"PO-Revision-Date: 1998-06-29 11:00+0200\n"
+"Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
+"Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ISO 8859-9\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Dizinler:"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "Dizin açýlamýyor ya da okunamýyor."
+
+#: kfindtop.cpp:118
+msgid "&Start search"
+msgstr "Aramayý baþlat"
+
+#: kfindtop.cpp:120
+msgid "S&top search"
+msgstr "Aramayý durdur"
+
+#: kfindtop.cpp:125
+msgid "&Open"
+msgstr "&Aç"
+
+#: kfindtop.cpp:127
+msgid "&Add to archive"
+msgstr "&Arþive ekle"
+
+#: kfindtop.cpp:132
+msgid "&Properties"
+msgstr "&Özellikler"
+
+#: kfindtop.cpp:135
+msgid "Open Containing &Folder"
+msgstr "Ýçeren &Dizini Aç"
+
+#: kfindtop.cpp:138
+msgid "&Save Search"
+msgstr "A&ramayý Kaydet"
+
+#: kfindtop.cpp:155
+msgid "&Select All"
+msgstr "&Hepsini Seç"
+
+#: kfindtop.cpp:157
+msgid "Unse&lect All"
+msgstr "Hiçbirini seçme"
+
+#: kfindtop.cpp:159
+msgid "&Invert Selection"
+msgstr "Seçilmeyenleri Seç"
+
+#: kfindtop.cpp:171
+msgid "&Preferences ..."
+msgstr "&Seçenekler..."
+
+#: kfindtop.cpp:176
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Find için K arabirimi\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Stephan Kulow'a teþekkürler"
+"<coolo@kde.org>"
+
+#: kfindtop.cpp:196
+msgid "Start Search"
+msgstr "Aramaya Baþla"
+
+#: kfindtop.cpp:201
+msgid "New Search"
+msgstr "Yeni Arama"
+
+#: kfindtop.cpp:206
+msgid "Stop Search"
+msgstr "Aramayý Durdur"
+
+#: kfindtop.cpp:219
+msgid "Add to archive"
+msgstr "Arþive Ekle"
+
+#: kfindtop.cpp:234
+msgid "Open Containing Folder"
+msgstr "Ýçeren Dizini Aç"
+
+#: kfindtop.cpp:239
+msgid "Save Search Results"
+msgstr "Arama Sonuçlarýný Kaydet"
+
+#: kftabdlg.cpp:71
+msgid "&Named:"
+msgstr "&Adlý:"
+
+#: kftabdlg.cpp:74
+msgid "&Look in:"
+msgstr "Ýç&ine Bak:"
+
+#: kftabdlg.cpp:77
+msgid "&Browse ..."
+msgstr "&Gözat ..."
+
+#: kftabdlg.cpp:83
+msgid "Include &subfolders"
+msgstr "Alt&dizinleri de kapsa"
+
+#: kftabdlg.cpp:114
+msgid " Name& Location "
+msgstr "Ýsim& Konum "
+
+#: kftabdlg.cpp:126
+msgid "and"
+msgstr "ve"
+
+#: kftabdlg.cpp:127
+msgid "month(s)"
+msgstr "ay(lar)"
+
+#: kftabdlg.cpp:128
+msgid "day(s)"
+msgstr "gün(ler)"
+
+#: kftabdlg.cpp:143
+msgid "&All files"
+msgstr "&Bütün dosyalar"
+
+#: kftabdlg.cpp:144
+msgid "Find all files created or &modified:"
+msgstr "Yaratýlmýþ veya &deðiþtirilmiþ bütün dosyalarý bul:"
+
+#: kftabdlg.cpp:145
+msgid "&between"
+msgstr "a&rasýnda"
+
+#: kftabdlg.cpp:146
+msgid "during the previou&s "
+msgstr "&önceki süresince"
+
+#: kftabdlg.cpp:147
+msgid "&during the previous "
+msgstr "önceki &süresince"
+
+#: kftabdlg.cpp:195
+msgid " Date Modified "
+msgstr " Tarih deðiþtirilmiþ"
+
+#: kftabdlg.cpp:202
+msgid "Of &type:"
+msgstr "&türde:"
+
+#: kftabdlg.cpp:204
+msgid "&Containing Text:"
+msgstr "Dizge iç&eren:"
+
+#: kftabdlg.cpp:209
+msgid "&Size is:"
+msgstr "&Boyutu:"
+
+#: kftabdlg.cpp:232
+msgid "All Files and Folders"
+msgstr "Bütün dizinler ve dosyalar"
+
+#: kftabdlg.cpp:234
+msgid "Folders"
+msgstr "Dizinler"
+
+#: kftabdlg.cpp:235
+msgid "Symbolic links"
+msgstr "Sembolik baðlantýlar"
+
+#: kftabdlg.cpp:236
+msgid "Special files (sockets, device files...)"
+msgstr "Özel dosyalar (soketler, aygýt dosyalarý..)"
+
+#: kftabdlg.cpp:237
+msgid "Executable files"
+msgstr "Çalýþtýrýlabilir dosyalar"
+
+#: kftabdlg.cpp:238
+msgid "SUID executable files"
+msgstr "SUID çalýþtýrýlabilir dosyalar"
+
+#: kftabdlg.cpp:247
+msgid "At Least"
+msgstr "En az"
+
+#: kftabdlg.cpp:248
+msgid "At Most"
+msgstr "En fazla"
+
+#: kftabdlg.cpp:259
+msgid " Advanced "
+msgstr " Ýleri düzey"
+
+#: kftabdlg.cpp:492
+msgid "The date is not valid!!"
+msgstr "Tarih geçersiz!!"
+
+#: kftabdlg.cpp:504
+msgid "The month(s) value isn't valid!!"
+msgstr "Ay verisi geçersiz!!"
+
+#: kftabdlg.cpp:515
+msgid "The day(s) value isn't valid!!"
+msgstr "Gün verisi geçersiz!!"
+
+#: kftabdlg.cpp:532
+msgid "The value in size isn't valid number!!"
+msgstr "Boyut bilgisindeki veri geçerli bir sayý deðil!!"
+
+#: kfoptions.cpp:52
+msgid "Preferences"
+msgstr "Seçenekler"
+
+#: kfoptions.cpp:74
+msgid "File format:"
+msgstr "Dosya Türü:"
+
+#: kfoptions.cpp:76
+msgid "Save results to file:"
+msgstr "Sonuçlarý dosyaya kaydet:"
+
+#: kfoptions.cpp:79
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Sonuçlarý ~/.kfind-results.html dosyasýna kaydet"
+
+#: kfoptions.cpp:81
+msgid "Browse"
+msgstr "Tara"
+
+#: kfoptions.cpp:94
+msgid "Plain Text"
+msgstr "Düz Metin"
+
+#: kfoptions.cpp:123
+msgid "Saving"
+msgstr "Kaydediliyor"
+
+#: kfoptions.cpp:130
+msgid "Create Archive:"
+msgstr "Arþiv Yarat:"
+
+#: kfoptions.cpp:132
+msgid "Add to Archive:"
+msgstr "Arþive Ekle:"
+
+#: kfoptions.cpp:136
+msgid "Patterns:"
+msgstr "Desenler:"
+
+#: kfoptions.cpp:139
+msgid "Add New"
+msgstr "Yeni Ekle"
+
+#: kfoptions.cpp:180
+msgid "Archivers"
+msgstr "Arþivciler"
+
+#: kfwin.cpp:111 kfwin.cpp:118 kfwin.cpp:134 kfwin.cpp:161
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d dosya bulundu"
+
+#: kfwin.cpp:245
+msgid "It wasn't possible to save results!"
+msgstr "Sonuçlarý kaydetmek mümkün deðil!"
+
+#: kfwin.cpp:253 kfwin.cpp:255 kfwin.cpp:257
+msgid "KFind Results File"
+msgstr "KFind Sonuç Dosyasý"
+
+#: kfwin.cpp:282
+msgid "Results were saved to file\n"
+msgstr "Sonuçlar dosyaya kaydedildi\n"
+
+#: kfwin.cpp:297
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"%s\n"
+"dosyasýný gerçekten silmek istiyor musunuz?"
+
+#: kfwin.cpp:299
+msgid "Delete File"
+msgstr "Dosya Siliniyor"
+
+#: kfwin.cpp:311
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"Bu dosyayý silmek için\n"
+"gerekli izinleriniz yok"
+
+#: kfwin.cpp:317
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"Seçilen dosyayý silmek\n"
+"mümkün deðil"
+
+#: kfwin.cpp:335
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"Bu dizini silmek için\n"
+"gerekli izinleriniz yok"
+
+#: kfwin.cpp:340
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"Belirtilen dizin boþ\n"
+"deðil!"
+
+#: kfwin.cpp:345
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"Seçilen dizini silmek\n"
+"mümkün deðil"
+
+#: kfwin.cpp:437
+msgid "Couldn't recognize archive type!"
+msgstr "Arþiv tipi tanýnamadý!"
+
+#: kfwin.cpp:496
+msgid "Error while creating child process!"
+msgstr "Alt süreç açýlýrken hata oluþtu!"
