@@ -164,17 +164,9 @@ void KFontManager::resizeEvent(QResizeEvent *e){
 }
 
 void KFontManager::helpselected(){
-  /*  
-  if ( fork() == 0 )
-    {
-      QString path = DOCS_PATH;
-      path += "/kfontmanager.html";
-      execlp( "kdehelp", "kdehelp", path.data(), 0 );
-      ::exit( 1 );      
-      
-    }	 
-	*/ 
-kapp->invokeHTMLHelp( "kfontmanager/index.html", "" );
+
+  kapp->invokeHTMLHelp( "kfontmanager/index.html", "" );
+
 }
 
 void KFontManager::apply(bool){
@@ -216,14 +208,20 @@ bool KFontManager::loadKDEInstalledFonts(){
 
   }
     
-  fontfilename = fontfilename + "/.kde/config/kdefonts";
+  fontfilename = fontfilename + "/.kde/share/config/kdefonts";
 
   QString home;
   home = getenv("HOME");
   home = home + "/.kde";
   struct stat buf;
 
-  // Boy I wish I could get QDir to work ...
+  if( stat(home.data(),&buf) == -1 ){
+    mkdir(home.data(),S_IRUSR | S_IWUSR | S_IXUSR |S_IRGRP | S_IWGRP | S_IXGRP | 
+	  S_IROTH | S_IWOTH |S_IXOTH);
+  }
+
+  home = home + "/share";
+  
   if( stat(home.data(),&buf) == -1 ){
     mkdir(home.data(),S_IRUSR | S_IWUSR | S_IXUSR |S_IRGRP | S_IWGRP | S_IXGRP | 
 	  S_IROTH | S_IWOTH |S_IXOTH);
@@ -276,17 +274,17 @@ bool KFontManager::writeKDEInstalledFonts(){
   QString fontfilename;
 
   fontfilename =  getenv("HOME");
-  fontfilename = fontfilename + "/.kde/config/kdefonts";
+  fontfilename = fontfilename + "/.kde/share/config/kdefonts";
 
   QFile fontfile(fontfilename);
 
   if (!fontfile.open(IO_WriteOnly | IO_Truncate)){
-    QMessageBox::message(i18n("Sorry"),i18n("Can not create:\n ~/.kde/config/kdefonts\n"),i18n("Ok"));
+    QMessageBox::message(i18n("Sorry"),i18n("Can not create:\n ~/.kde/share/config/kdefonts\n"),i18n("Ok"));
     return false;
   }
 
   if (!fontfile.isWritable()){
-    QMessageBox::message(i18n("Sorry"),i18n("~/.kde/config/kdefonts exists but\n"\
+    QMessageBox::message(i18n("Sorry"),i18n("~/.kde/share/config/kdefonts exists but\n"\
 			 "is not writeable\n"\
 			 "Can't save KDE Fontlist."),i18n("Ok"));
     return false;
