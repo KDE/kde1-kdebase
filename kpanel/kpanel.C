@@ -1248,7 +1248,8 @@ void kPanel::doGeometry () {
    int tfx = 0; //correction values for the taskbar autoHide feature
    int tfy = 0;
 
-   int th = taskbar_height * numberOfTaskbarRows();
+   int th = (taskbar_position==hidden) ? 0 :
+	   taskbar_height * numberOfTaskbarRows();
 
    int tbw = taskbar_frame->width();
 

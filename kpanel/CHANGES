@@ -1,3 +1,5 @@
+               - small fix (kudos to David Faure)
+
 In kpanel-0.19:
     Patchlevel 5: 
                - fixed possible loss of the system menu (kmenu)
