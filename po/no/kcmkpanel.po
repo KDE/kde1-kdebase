@@ -39,7 +39,7 @@ msgstr "&Topp"
 
 #: panel.cpp:61
 msgid "&Left"
-msgstr "&Venstre"
+msgstr "V&enstre"
 
 #: panel.cpp:62
 msgid "&Bottom"
@@ -63,7 +63,7 @@ msgstr "Bun&n"
 
 #: panel.cpp:81
 msgid "Top/Le&ft"
-msgstr "Topp/&Venstre"
+msgstr "To&pp/Venstre"
 
 #: panel.cpp:96
 msgid "T&iny"
