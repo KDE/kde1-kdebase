@@ -741,7 +741,7 @@ void PFileMenu::buildRootMenu()
     if (the_panel->show_shared_section) {
       this->add( new PMenuItem(label, i18n("Shared:"), 0, "shared.xpm",
 		 0, 0, 0, 0, FALSE, QString(),
-		 "Entries shared among all users") );
+		 i18n("Entries shared among all users")) );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(KDISKNAV_SHARED_DIR);
@@ -762,7 +762,7 @@ void PFileMenu::buildRootMenu()
 
       this->add( new PMenuItem(label, i18n("Personal:"), 0, "personal.xpm",
 		 0, 0, 0, 0, FALSE, QString(),
-		 "Personal entries") );
+		 i18n("Personal entries")) );
       this->add( new PMenuItem(separator) );
 
       this->path = QString(QDir::homeDirPath() + KDISKNAV_PERSONAL_DIR);
@@ -782,7 +782,7 @@ void PFileMenu::buildRootMenu()
       PMenuItem* recentItem =
         new PMenuItem(label, i18n("Recent:"), 0, "mini-exclam.xpm",
 		      0, 0, 0, 0, FALSE, QString(),
-		      "Recent entries");
+		      i18n("Recent entries"));
       the_panel->head_recent_id = recentItem->getId();
       this->add( recentItem );
       this->add( new PMenuItem(separator) );
@@ -830,7 +830,7 @@ void PFileMenu::buildRootMenu()
 
       this->add(new PMenuItem(prog_com, i18n("Options..."), 0,
 			      OPTIONS_ICON, 0, this, SLOT(optionsDlg()),
-			      0, false, QString(), "Customize Disk Navigator"));
+			      0, false, QString(), i18n("Customize Disk Navigator")));
     }
 
 #ifdef DMALLOC
