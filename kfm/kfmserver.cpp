@@ -144,23 +144,18 @@ void KFMServer::slotOpenURL( const char* _url )
 	    return;
 	}
 
-	url = u.url().copy();
-	
 	if ( url == "trash:/" )
 	    url = "file:" + KFMPaths::TrashPath();
 	
-	KFMExec exec;
-	exec.openURL( _url );
-	
-	/* KfmGui *w = KfmGui::findWindow( url.data() );
+	KfmGui *w = KfmGui::findWindow( url.data() );
 	if ( w != 0L )
 	{
 	    w->show();
 	    return;
 	}
-	
-	KfmGui *f = new KfmGui( 0L, 0L, url.data() );
-	f->show(); */
+
+	KFMExec* exec = new KFMExec;
+	exec->openURL( _url );
 	return;
     }
     
