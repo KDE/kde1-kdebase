@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "Ήχος"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Ήχοι συστήματος"
+
+#: syssound.cpp:69
+msgid "Change to Desktop 1"
+msgstr "Γραφείο 1"
+
+#: syssound.cpp:70
+msgid "Change to Desktop 2"
+msgstr "Γραφείο 2"
+
+#: syssound.cpp:71
+msgid "Change to Desktop 3"
+msgstr "Γραφείο 3"
+
+#: syssound.cpp:72
+msgid "Change to Desktop 4"
+msgstr "Γραφείο 4"
+
+#: syssound.cpp:73
+msgid "Change to Desktop 5"
+msgstr "Γραφείο 5"
+
+#: syssound.cpp:74
+msgid "Change to Desktop 6"
+msgstr "Γραφείο 6"
+
+#: syssound.cpp:75
+msgid "Change to Desktop 7"
+msgstr "Γραφείο 7"
+
+#: syssound.cpp:76
+msgid "Change to Desktop 8"
+msgstr "Γραφείο 8"
+
+#: syssound.cpp:78
+msgid "Activate Window"
+msgstr "Ενεργοποίηση παραθύρου"
+
+#: syssound.cpp:79
+msgid "Open new window"
+msgstr "’νοιγμα νέου παραθύρου"
+
+#: syssound.cpp:80
+msgid "Close Window"
+msgstr "Κλείσιμο παραθύρου"
+
+#: syssound.cpp:81
+msgid "Startup"
+msgstr "Έναρξη"
+
+#: syssound.cpp:102
+msgid "e&nable system sounds"
+msgstr "Ενεργοποίηση ήχων συστήματος"
+
+#: syssound.cpp:107
+msgid "&Test"
+msgstr "Δοκιμή"
+
+#: syssound.cpp:111
+msgid "&Events:"
+msgstr "Γεγονότα"
+
+#: syssound.cpp:115
+msgid "&Sounds:"
+msgstr "Ήχοι"
+
+#: syssound.cpp:119
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Επιπλέον αρχεία wav μπορούν να τοποθετηθούν μέσα στη λίστα ήχων."
+
+#: syssound.cpp:321
+msgid "Unsupported URL"
+msgstr "Το URL δεν υποστηρίζεται"
+
+#: syssound.cpp:322
+msgid ""
+"Sorry, this type of URL is currently unsupported by the KDE System Sound "
+"Module"
+msgstr "Συγνώμη, αλλά αυτός ο τύπος URL δεν υποστηρίζεται προς το παρόν από το Σύστημα Ήχου του KDE "
+
+#: syssound.cpp:326
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file!"
+msgstr "Συγνώμη, αλλά το \n"
+"%s\n"
+"δεν φαίνεται να είναι αρχείο WAV!"
+
+#: syssound.cpp:327
+msgid "Improper File Extension"
+msgstr "Λανθασμένη επέκταση αρχείου"
+
+#: syssound.cpp:333
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr "Το αρχείο\n"
+"%s\n"
+"βρίσκεται ήδη στη λίστα"
+
+#: syssound.cpp:334
+msgid "File Already in List"
+msgstr "Το αρχείο βρίσκεται ήδη στη λίστα"

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Theodore J. Soldatos <theodore@eexi.gr>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"PO-Revision-Date: 1998-03-11 HO:MI+ZONE\n"
+"Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.cpp:53
+msgid "&Mouse"
+msgstr "Ποντίκι"
+
+#: main.cpp:56
+msgid "&Keyboard"
+msgstr "Πληκτρολόγιο"
+
+#: main.cpp:62
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "Σύνταξη: kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:94
+msgid "Input Devices Properties"
+msgstr "Χαρακτηριστικά Συσκευής Εισόδου"
+
+#: mouse.cpp:75
+msgid "Acceleration"
+msgstr "Επιτάχυνση"
+
+#: mouse.cpp:81
+msgid "Threshold"
+msgstr "Ευαισθησία"
+
+#: mouse.cpp:84
+msgid "Button mapping"
+msgstr "Τοπολογία Πλήκτρων"
+
+#: mouse.cpp:86
+msgid "Right handed"
+msgstr "Δεξιόχειρας"
+
+#: mouse.cpp:88
+msgid "Left handed"
+msgstr "Αριστερόχειρας"
+
+#: keyboard.cpp:67
+msgid "Keyboard repeat"
+msgstr "Επανάληψη πληκτρολογίου"
+
+#: keyboard.cpp:75
+msgid "Key click volume"
+msgstr "Ένταση ήχου πλήκτρου"
