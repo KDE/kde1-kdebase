@@ -19,6 +19,8 @@ Name[ru]=ğÁÎÅÌØ
 Name[sv]=Panelen
 Name[zh_CN.GB2312]=Ãæ°å
 Comment=You can configure the appearance of the panel here
+Comment[no]=Her kan du konfigurere utseende til panelet
+Comment[pt_BR]=Você pode configurar aqui a aparência do Painel
 Exec=kcmkpanel 
 
 

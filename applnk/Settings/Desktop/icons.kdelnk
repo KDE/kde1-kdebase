@@ -18,6 +18,8 @@ Name[ru]=Пиктограммы рабочего стола
 Name[sk]=Ikonky plochy
 Name[sv]=Skrivbordsikoner
 Comment=You can customize the desktop icons here
+Comment[no]=Her kan du definere ikonene pЕ skrivebordet
+Comment[pt_BR]=VocЙ pode personalizar aqui os Мcones do Ambiente
 # Needs another icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm

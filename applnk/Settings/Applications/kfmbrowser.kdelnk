@@ -19,6 +19,8 @@ Name[ru]=ğÒÏÓÍÏÔÒİÉË
 Name[sk]=Prehliadaè stránok
 Name[sv]=Webläsaren
 Comment=You can configure the web browser here
+Comment[no]=Her kan du konfigurere nettlosen
+Comment[pt_BR]=Você pode configurar aqui o navegador Web
 # This needs a new icon !
 Icon=kfm.xpm
 MiniIcon=kfm.xpm
