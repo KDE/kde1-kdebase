@@ -58,3 +58,6 @@
 
 /* Define if you have shl_load and co. */
 #undef HAVE_SHLOAD
+
+/* Define if you have usleep */
+#undef HAVE_USLEEP
