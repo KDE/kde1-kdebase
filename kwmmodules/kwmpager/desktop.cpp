@@ -63,7 +63,11 @@ void Desktop::fillPixmap()
 	int w = win->prect.width();
 	int h = win->prect.height();
 	p.fillRect(x, y, w, h,QBrush(col));
-	p.setPen(QColor(0,0,0));
+	col = 
+	    (win == activeWindow) ? 
+	    kapp->activeTextColor :
+	    kapp->inactiveTextColor;
+	p.setPen(col);
 	p.drawRect(x, y, w, h);
 	col = 
 	    (win == activeWindow) ? 

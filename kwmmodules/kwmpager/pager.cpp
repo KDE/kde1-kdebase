@@ -227,7 +227,7 @@ void Pager::changeNumber(int)
     repaint(true);
 }
 
-void Pager::moveEvent ( QMoveEvent *e) {
+void Pager::moveEvent ( QMoveEvent *) {
     if (moved) {
 	QString pos;
 	QPoint position = KWM::geometry(winId(), false).topLeft();
