@@ -1,0 +1,10 @@
+/* XPM */
+static char * wm_topright_xpm[] = {
+"3 3 4 1",
+" 	c None",
+".	c #000000",
+"+	c #FFFFFF",
+"@	c #CCCCCC",
+"...",
+".++",
+".+@"};
