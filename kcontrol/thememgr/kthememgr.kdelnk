@@ -3,7 +3,8 @@
 Icon=kthememgr.xpm
 Exec=kthememgr
 Type=Application
-Comment=Theme Manager
+Comment=Manager for Desktop Themes
+Comment[no]=Behandler for skrivebordstemaer
 Name=Theme Manager
-SwallowTitle=Theme Manager
+Name[no]=Temabehandler
 Init=
