@@ -1700,9 +1700,17 @@ void scr_make_selection(int time)
  ***************************************************************************/
 void scr_paste_selection()
 {
+  int i = 0;
   char* s = kvt_get_selection();
   if (!s)
     return;
+
+  /* this is a hack for stupid clients like pine who seem to prefer \r over \n grrr...(Matthias) */
+  for (;s[i];i++){
+    if (s[i]=='\n')
+      s[i]='\r';
+  }
+
   send_string(s,strlen(s));
 
 }

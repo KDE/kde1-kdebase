@@ -1,3 +1,7 @@
+since kvt-0.18.4
+ - added a hack for stupid clients like pine who cannot handle "\n"
+    in selections but need "\r"   (Matthias)
+
 since kvt-0.18.3
   - fixed a bug that made it impossible to resize the window with the
     menu when the window size was manipulated with the normal window
