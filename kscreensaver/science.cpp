@@ -95,7 +95,7 @@ KScienceSaver::~KScienceSaver()
 	timer.stop();
 	releaseLens();
 	if ( xRootWin )
-	    free( xRootWin );
+	    XDestroyImage( xRootWin );
 }
 
 void KScienceSaver::myAssert( bool term, char *eMsg )
@@ -162,8 +162,10 @@ void KScienceSaver::releaseLens()
 	if( offset != 0 ) {
 		for(int i=0; i<side; i++) 
     			if( offset[i] != 0 ) free( offset[i] );
+		free( offset );
 	}
-	if( buffer != 0 ) free( buffer );
+	if( buffer != 0 ) XDestroyImage( buffer );
+	buffer = 0;
 }
 
 void KScienceSaver::setSize( int s )
@@ -270,7 +272,7 @@ void KScienceSaver::grabRootWindow()
 
     // grab contents of root window
     if( xRootWin )
-	free( xRootWin);
+	XDestroyImage( xRootWin);
 
     dsp = qt_xdisplay();
     rootwin = RootWindow( dsp, qt_xscreen() );
