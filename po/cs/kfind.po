@@ -1,10 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Date: 1997-10-01 16:14:05+0200\n"
-"From: root <flidr@CyberGate.zcu.cz>\n"
-"Content-Type: text/plain; charset=\n"
-"Xgettext-Options: -s -C -ktranslate\n"
-"Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#~ msgid ""
+#~ msgstr ""
+#~ "Date: 1997-10-01 16:14:05+0200\n"
+#~ "From: root <flidr@CyberGate.zcu.cz>\n"
+#~ "Content-Type: text/plain; charset=\n"
+#~ "Xgettext-Options: -s -C -ktranslate\n"
+#~ "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp mkfindtop.cpp mkfoptions.cpp mkftabdlg.cpp mkfwin.cpp\n"
 
 #: kftabdlg.cpp:214
 msgid " Advanced "
@@ -371,6 +386,8 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
+"Nemáte pøístupová práva\n"
+"ke zru¹ení tohoto adresáøe!"
 
 #: kfwin.cpp:210
 msgid ""
