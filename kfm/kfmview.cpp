@@ -606,7 +606,8 @@ void KfmView::slotPopupOpenWith()
     printf("KfmView::slotPopupOpenWith starts openWithOldApplication(%s)\n",
        l.getText());
     KURL u(popupFiles.first());
-    if (!strcmp(u.protocol(),"file")) {
+    if (u.isLocalFile())
+    {
         QString udir(u.directory());
         udir.detach();
         KURL::decodeURL(udir); // I hate KURL, you never know when it's encoded ... David.
@@ -1215,7 +1216,7 @@ void KfmView::slotOnURL( const char *_url )
 	text2 = text;
 	text2.detach();
 	
-        if ( strcmp( url.protocol(), "file") == 0 )
+        if ( url.isLocalFile() )
         {
           if (S_ISLNK( lbuff.st_mode ) )
           {
