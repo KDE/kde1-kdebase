@@ -1,0 +1,41 @@
+<!doctype linuxdoc system>
+
+<article>
+
+<!-- Title information -->
+
+<title>KDE Control Center - Locale
+<author>Matthias H&ouml;lzer
+<date>v1.0, 18. January 1998
+
+<!-- Begin the document -->
+
+<sect>Setting the Language
+<p>
+
+With this dialog, you can set the language that is used by KDE. You can
+choose up to three languages. If you start a programm, KDE tries to find a
+translation of the program's texts into the first language. If this fails,
+it looks for the second language, then the third. If it cannot find any of
+the three, the default language is used (usually English.)
+<p>
+
+The search for up to three languages allows to set preferences. You might
+want to have the output in Spanish, but if this fails, you might prefer
+French to German or English, so you can set the 
+
+<itemize>
+<item>First language to <tt/Spanish/
+<item>Second language to <tt/French/
+<item>Third language to <tt/German/
+</itemize>
+
+In an ideal world, all programs would be translated to all languages, but in
+reality this will take some more time :-(
+<p>
+Setting or changing the languages will not affect the programs that are
+already running. Only programs started after the change will be translated
+accordingly. To change the language for all programs on the screen, you will
+have to log out first, then log in again.
+
+</article>
