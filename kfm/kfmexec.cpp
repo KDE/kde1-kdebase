@@ -162,7 +162,9 @@ void KFMExec::openURL( const char *_url  )
     line1->setText( klocale->translate("Trying to open") );
     QLabel* line2 = new QLabel( dlg );
     line2->setGeometry( 10, 30, 280, 20 );
-    line2->setText( tryURL );
+    KURL displayedURL (tryURL); 
+    displayedURL.setPassword(""); // hide password
+    line2->setText( displayedURL.url() );
     
     dlg->show();
 
