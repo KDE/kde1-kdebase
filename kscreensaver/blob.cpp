@@ -224,13 +224,13 @@ void KBlobSaver::slotTimeout()
 		blank();
 		if (newalg == 1)
 			alg = SMALLRAND(ALG_LAST)-1;
-		((this->Algs[alg]).Init)();
+		(this->*Algs[alg].Init)();
 		newalg = 0;
 		start = time(NULL);
 	}
 
 	// gen next fram for current algorithm
-	((this->Algs[alg]).NextFrame)();
+	(this->*Algs[alg].NextFrame)();
 }
 
 void KBlobSaver::lnNextFrame()
