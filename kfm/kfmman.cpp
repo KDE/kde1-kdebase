@@ -1628,16 +1628,16 @@ void KFMManager::dropPopupMenu( KDNDDropZone *_zone, const char *_dest, const QP
     // Ask wether we can read from the dropped URL.
     if ( KIOServer::supports( _zone->getURLList(), KIO_Read ) &&
 	 KIOServer::supports( _dest, KIO_Write ) && !_nestedURLs )
-	id = popupMenu->insertItem(  klocale->translate("Copy here"), 
+	id = popupMenu->insertItem(  klocale->translate("Copy"), 
 				     this, SLOT( slotDropCopy() ) );
     // Ask wether we can read from the URL and delete it afterwards
     if ( KIOServer::supports( _zone->getURLList(), KIO_Move ) &&
 	 KIOServer::supports( _dest, KIO_Write ) && !_nestedURLs )
-	id = popupMenu->insertItem(  klocale->translate("Move here"),
+	id = popupMenu->insertItem(  klocale->translate("Move"),
 				     this, SLOT( slotDropMove() ) );
     // Ask wether we can link the URL 
     if ( KIOServer::supports( _dest, KIO_Link ) )
-	id = popupMenu->insertItem(  klocale->translate("Link here"), 
+	id = popupMenu->insertItem(  klocale->translate("Link"), 
 				     this, SLOT( slotDropLink() ) );
     if ( id == -1 )
     {
