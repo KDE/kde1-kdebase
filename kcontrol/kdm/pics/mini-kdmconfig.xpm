@@ -1,0 +1,23 @@
+/* XPM */
+static char * mini_kdmconfig_xpm[] = {
+"16 14 6 1",
+" 	s None	c None",
+".	c #84207BDE7BDE",
+"X	c #DEF6DEF6DEF6",
+"o	c black",
+"O	c white",
+"+	c #52945294FFFF",
+"     .........  ",
+"    .XXXXXXXX.o ",
+"   .OOOOOOOO..o ",
+"   .OooooooO..o ",
+"   .Oo+++++O..o ",
+"   .Oo+++++O..o ",
+"   .Oo+++++O..o ",
+"   .OOOOOOOO.o..",
+"   .ooooooooo.Xo",
+"  .OOOOOOOOO.X.o",
+"  ..o.o.o.o.o..o",
+" .XoXoXoXoXoXoo ",
+".OOOOOOOOOOOXo  ",
+"ooooooooooooo   "};
