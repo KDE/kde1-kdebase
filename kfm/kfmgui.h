@@ -267,11 +267,11 @@ public slots:
      */
     void slotViewHTML();
     /**
-     * Menu "View->Show/Hide Dot Files"
+     * Menu "View->Show Hidden Files (was Show/Hide Dot Files)"
      */
     void slotShowDot();
     /**
-     * Menu "View->Visual Schnauzer ON/OFF"
+     * Menu "View->Show Thumbnails (was Visual Schnauzer)"
      */
     void slotShowSchnauzer();
     /**
@@ -345,7 +345,7 @@ public slots:
      */
     void slotSaveCacheOff();
     /**
-     * "View->Encoding"
+     * Menu "View->Encoding"
      */
     void slotSetCharset( int );
 
@@ -449,14 +449,15 @@ public slots:
     void slotSaveSettings();
 
     /**
-     * Configure the built-in browser
-     */
-    void slotConfigureBrowser();
-    /**
-     * Shows menubar. Public becouse kfmman calls it.(sven)
+     * Shows menubar. Public because kfmman calls it.(sven)
      */
     void slotShowMenubar();
-    
+
+    /**
+     * Menu "Options->Set Preferences" (was ConfigureBrowser)
+     */
+    void slotConfigureBrowser();
+
 protected slots:    
     void slotAnimatedLogoTimeout();
 

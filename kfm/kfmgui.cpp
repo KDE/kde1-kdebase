@@ -249,7 +249,7 @@ void KfmGui::initMenu()
     CHECK_PTR( file );
     file->insertItem( klocale->translate("&New"), menuNew );
     file->insertSeparator();
-    file->insertItem( klocale->translate("&New Window"), 
+    file->insertItem( klocale->translate("New &Window"), 
 		      this, SLOT(slotNewWindow()) );
     file->insertSeparator();
     file->insertItem( klocale->translate("&Run..."), 
@@ -292,9 +292,9 @@ void KfmGui::initMenu()
     edit->insertItem( klocale->translate("Find &next"), this, 
 		      SLOT(slotFindNext()), Key_F3 );
     edit->insertSeparator();
-    edit->insertItem( klocale->translate("Mime Types"), this, 
+    edit->insertItem( klocale->translate("Mime &Types"), this, 
 		      SLOT(slotEditMimeTypes()) );
-    edit->insertItem( klocale->translate("Applications"), this, 
+    edit->insertItem( klocale->translate("App&lications"), this, 
 		      SLOT(slotEditApplications()) );
 
     if ( sumode )
@@ -309,11 +309,11 @@ void KfmGui::initMenu()
     mview = new QPopupMenu;
     CHECK_PTR( mview );
     mview->setCheckable(true);
-    mview->insertItem( klocale->translate("Show &Dot Files"),
+    mview->insertItem( klocale->translate("Show Hi&dden Files"),
 		       this, SLOT(slotShowDot()) );
     mview->insertItem( klocale->translate("Show Tr&ee"), 
 		       this, SLOT(slotShowTreeView()) );
-    mview->insertItem( klocale->translate("&Visual Schnauzer"),
+    mview->insertItem( klocale->translate("Sho&w Thumbnails"),
 		       this, SLOT(slotShowSchnauzer()) );
     mview->insertItem( klocale->translate("&HTML View"),
 		       this, SLOT(slotViewHTML()) );
@@ -334,7 +334,7 @@ void KfmGui::initMenu()
 		       this, SLOT(slotReloadTree()) );
     mview->insertItem( klocale->translate("&Reload Document"),
 		       view, SLOT(slotReload()) );
-    mview->insertItem( klocale->translate("Rescan &bindings"),
+    mview->insertItem( klocale->translate("Rescan &Bindings"),
 		       this, SLOT(slotRescanBindings()) );
     mview->insertSeparator();
     mview->insertItem( klocale->translate("&View Frame Source"),
@@ -355,7 +355,7 @@ void KfmGui::initMenu()
     connect( mcharset, SIGNAL( activated( int ) ), 
 	     this, SLOT( slotSetCharset( int ) ) );
     mview->insertSeparator();
-    mview->insertItem( klocale->translate("&Document Encoding"), mcharset );
+    mview->insertItem( klocale->translate("Document Encodin&g"), mcharset );
 
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
@@ -403,14 +403,13 @@ void KfmGui::initMenu()
                           this, SLOT(slotSaveSettings()) );
     moptions->insertItem( klocale->getAlias(ID_STRING_SAVE_URL_PROPS),
                           view, SLOT(slotSaveLocalProperties()));
-    moptions->insertSeparator();
-
-    moptions->insertItem( klocale->translate("Configure Browser..."),
-                          this, SLOT(slotConfigureBrowser()));
     if (pkfm->isURLPropesEnabled())
       moptions->setItemEnabled(moptions->idAt( 6 ), true);
     else
       moptions->setItemEnabled(moptions->idAt( 6 ), false);
+    moptions->insertSeparator();
+    moptions->insertItem( klocale->translate("Set Preferen&ces..."),
+                          this, SLOT(slotConfigureBrowser()));
     
     moptions->setItemChecked( moptions->idAt( 0 ), showMenubar );
     moptions->setItemChecked( moptions->idAt( 1 ), showStatusbar );

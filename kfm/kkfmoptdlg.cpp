@@ -114,7 +114,7 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   connect(cancel, SIGNAL(clicked()), SLOT(reject()));
 
   // my name is
-  setCaption(klocale->translate("KFM Browser Settings"));
+  setCaption(klocale->translate("KFM Preferences Settings"));
 
 }
 
