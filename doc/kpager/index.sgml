@@ -40,19 +40,19 @@ Hope you find KPager as useful and fun to use as I found developing it.
 <p>
 
 KPager is very intuitive to use. This help is mostly not needed, but I 
-will give here some instructions and hints to get an optimized use of
-this application.
+will give here some instructions and hints to optimize use of
+the application.
 
 <sect1>Moving windows
 <p>
 
-If you have a window that would like to move to another position, you can do
-dnd by pressing the left mouse button on its minimized view and moving the mouse to the new desired position, then release the button, and you're done.
+If you have a window that you would like to move to another position, you can
+"Drag and Drop" (DND) it by pressing the left mouse button on its minimized view and moving the mouse to the new position, then release the button, and you are done.
 
 <p>
 
-Although this doesn't seems very useful by itself, it can get to be very useful because
-you're not restricted to do moves within the same desktop . You can then move any window from one desktop to another without even changing to any of both desktops .
+Although this doesn't seems very useful by itself, it can be very useful because
+you are not restricted to moves within a desktop. You can then move any window from one desktop to another without even changing desktops.
  
 <sect1>The global desktop
 <p>
@@ -61,11 +61,11 @@ This isn't really one of your typical desktops . The global desktop is used to q
 
 <p>
 
-You can move windows to/from the global desktop to set/unset the sticky bit.
+You can move windows to and from the global desktop to set or clear the sticky bit.
 
 <p>
 
-To hide/show the global desktop you can use the corresponding item on the <tt/Options/ menu, or press the <tt/0/ key.
+To hide or show the global desktop you can use the corresponding item on the <tt/Options/ menu, or press the <tt/0/ key.
 
 <sect1>Resizing windows
 
@@ -77,19 +77,19 @@ on the window you want to resize, and move the mouse to get the desired size.
 You can get the window properties menu by doing a right click on the window
 you want to get/set properties.
 
-With the window properties menu you can ...
+With the window properties menu you can:
 <p>
 <itemize>
 <item>Maximize a window.
 <item>Iconify a window.
-<item>Set/unset the sticky bit of a window (Note that you can also use the global desktop for this).
+<item>Set or clear the sticky bit of a window (Note that you can also use the global desktop for this).
 <item>Move a window to another desktop (Note that you can also use drag & drop).
 <item>Close a window.
 </itemize>
 
 <p>
 
-There is also a submenu, that is exactly as the <tt/Option/ menu that is in the menubar. You can use this menu to access this menu when the menubar is hidden (so that you can get it back :) )
+There is also a submenu that is identical to the <tt/Option/ menu that is in the menubar. You can use this menu when the menubar is hidden (so that you can get it back :) )
 <p>
 Note also that when you do a right click on a point where there's no window,
 you only get the <tt/Option/ menu.
@@ -145,8 +145,8 @@ To run KPager you need to run KWM or any other KDE compliant window manager.
 <sect1>Compilation and installation
 <p>
 
-Since KPager is distributed within the KDEbase package, you shouldn't have any trouble compiling or installing it.
-If you run into any problem, don't hesitate to contact any of the KDE mailing list, or send a report directly to me.
+Since KPager is distributed within the KDEbase package, you should not have any trouble compiling or installing it.
+If you run into any problem, do not hesitate to email any of the KDE mailing lists, or send a report directly to me.
 
 
 <sect>Frequently Asked Questions (FAQ)
@@ -161,7 +161,7 @@ If you run into any problem, don't hesitate to contact any of the KDE mailing li
 
 <item><tt/Q:/ The program starts in a very strange position/size.<newline>
 <tt/A:/ KPager always save its last position and size so when you run it again,
-it's restored exactly as it was (as well as the rest of the options).
+it is restored exactly as it was (as well as the rest of the options).
 Just move and resize it where you want, and it will always appear in that position.
 </itemize>
 
