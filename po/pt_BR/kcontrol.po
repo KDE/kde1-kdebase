@@ -1,0 +1,34 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: configlist.cpp:119
+msgid "Unknown module: "
+msgstr "Módulo desconhecido: "
+
+#: main.cpp:46 mainwidget.cpp:19
+msgid "KDE Control Center"
+msgstr "Centro de Controle KDE"
+
+#: toplevel.cpp:78
+msgid "&Swallow modules"
+msgstr "Ab&sorver módulos"
+
+#: toplevel.cpp:81
+msgid ""
+"KDE Control Center - Version 0.3\n"
+"\n"
+"Written by Matthias Hölzer\n"
+"(hoelzer@physik.uni-wuerzburg.de)\n"
+"\n"
+"Thanks to:\n"
+"S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+msgstr "Centro de Controle KDE - Versão 0.3\n"
+       "\n"
+       "Escrito por Matthias Hölzer\n"
+       "(hoelzer@physik.uni-wuerzburg.de)\n"
+       "\n"
+       "Agradecimentos a:\n"
+       "S. Kulow, P. Dowler, M. Wuebben & M. Jones."

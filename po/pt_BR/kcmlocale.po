@@ -1,0 +1,50 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: main.cpp:52
+msgid "&Locale"
+msgstr "&Localização"
+
+#: main.cpp:58
+msgid "usage: kcmlocale [-init | language]\n"
+msgstr "utilização: kcmlocale [-init | language]\n"
+
+#: main.cpp:86
+msgid "Locale settings"
+msgstr "Parâmetros de idioma" 
+
+#: locale.cpp:45
+msgid "Language"
+msgstr "Idioma"
+
+#: locale.cpp:55
+msgid "First"
+msgstr "Primeiro"
+
+#: locale.cpp:65
+msgid "Second"
+msgstr "Segundo"
+
+#: locale.cpp:75
+msgid "Third"
+msgstr "Terceiro"
+
+#: locale.cpp:115
+msgid "without name!"
+msgstr "sem nome!"
+
+#: locale.cpp:181
+msgid "Applying language settings"
+msgstr "Aplicando os parâmetros de idioma"
+
+#: locale.cpp:182
+msgid ""
+"Changed language settings apply only to newly started applications.\n"
+"To change the language of all programs, you will have to logout first."
+msgstr "Os novos parâmetros de idioma só se aplicam a\n"
+       "aplicações começadas a partir de agora.\n"
+       "Para mudar o idioma de todos os programas é\n"
+       "necessário fechar esta sessão primeiro."

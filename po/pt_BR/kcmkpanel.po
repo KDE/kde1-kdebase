@@ -1,0 +1,121 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: main.cpp:62
+msgid "&Panel"
+msgstr "&Painel"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "&Ambientes de Trabalho"
+
+#: main.cpp:97
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "utilização: kcmkpanel [-init | {panel,options,desktops}]\n"
+
+#: main.cpp:127
+msgid "KPanel Configuration"
+msgstr "Configuração do Painel"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Localização"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "&Topo"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "&Esquerda"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "&Rodapé"
+
+#: panel.cpp:74
+msgid "Taskbar"
+msgstr "Barra de Tarefas"
+
+#: panel.cpp:75
+msgid "&Hidden"
+msgstr "&Escondida"
+
+#: panel.cpp:77
+msgid "T&op"
+msgstr "T&opo"
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr "Ro&dapé"
+
+#: panel.cpp:81
+msgid "Top/Le&ft"
+msgstr "Topo/E&squerda"
+
+#: panel.cpp:96
+msgid "T&iny"
+msgstr "&Pequeno"
+
+#: panel.cpp:98
+msgid "&Normal"
+msgstr "&Normal"
+
+#: panel.cpp:100
+msgid "L&arge"
+msgstr "&Grande"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "&Visíveis"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "&Largura"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Dicas no Menu"
+
+#: options.cpp:39
+msgid "Show &Menu Tooltips"
+msgstr "Mostrar Tooltips nos &Menus"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr "De&mora:"
+
+#: options.cpp:56
+msgid "ms"
+msgstr "ms"
+
+#: options.cpp:68
+msgid "Others"
+msgstr "Outros"
+
+#: options.cpp:69
+msgid "Personal &First"
+msgstr "Pessoal &Primeiro"
+
+#: options.cpp:71
+msgid "Auto &Hide Panel"
+msgstr "Esconder &Painel"
+
+#: options.cpp:73
+msgid "Auto Hide &Taskbar"
+msgstr "Esconder &Barra de Tarefas"
+
+#: options.cpp:81
+msgid "Clock"
+msgstr "Relógio"
+
+#: options.cpp:83
+msgid "&24h"
+msgstr "&24h"
+
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr "&12h AM/PM"

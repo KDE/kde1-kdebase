@@ -1,0 +1,62 @@
+msgid ""
+msgstr "Project-Id-Version: kuser\n"
+       "POT-Creation-Date: 1998-03-21 18:32+0300\n"
+       "PO-Revision-Date: 1998-03-23 00:00+0100\n"
+       "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+
+#: krootwm.C:120 krootwm.C:568
+msgid "Folder"
+msgstr "Pasta"
+
+#: krootwm.C:147
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "ERRO: Não existe o modelo '%s'"
+
+#: krootwm.C:184
+msgid "Help on desktop"
+msgstr "Ajuda do ambiente de trabalho"
+
+#: krootwm.C:185
+msgid "Execute command"
+msgstr "Executar comando"
+
+#: krootwm.C:186
+msgid "Display properties"
+msgstr "Propriedades da tela"
+
+#: krootwm.C:187
+msgid "Refresh desktop"
+msgstr "Atualizar ambiente de trabalho"
+
+#: krootwm.C:189
+msgid "Unclutter windows"
+msgstr "Ordenar janelas"
+
+#: krootwm.C:190
+msgid "Cascade windows"
+msgstr "Janelas em cascata"
+
+#: krootwm.C:191
+msgid "Arrange icons"
+msgstr "Ordenar ícones"
+
+#: krootwm.C:193
+msgid "Lock screen"
+msgstr "Travar tela"
+
+#: krootwm.C:194
+msgid "Logout"
+msgstr "Sair"
+
+#: krootwm.C:588
+msgid "Could not create folder"
+msgstr "Não foi possível criar a pasta"
+
+#: krootwm.C:647
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:651
+msgid "Usage:"
+msgstr "Utilização:"
