@@ -1083,7 +1083,7 @@ void KfmGui::slotQuit()
     if ( !QMessageBox::warning( 0, klocale->translate("KFM Confirm"), 
 			      klocale->translate("Do you really want to quit?"),
 			      klocale->translate("No"),
-			      klocale->translate("Yes ") ) )
+			      klocale->translate("Yes") ) )
 	return;
     
     QString file = QDir::homeDirPath();
