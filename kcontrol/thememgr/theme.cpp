@@ -28,6 +28,7 @@
 #include <kapp.h>
 #include <qdir.h>
 #include <qpixmap.h>
+#include <qbitmap.h>
 #include <qpainter.h>
 #include <string.h>
 #include <errno.h>
@@ -415,6 +416,7 @@ int Theme::installGroup(const char* aGroupName)
 {
   QString value, oldValue, cfgFile, cfgGroup, appDir, group, emptyValue;
   QString oldCfgFile, key, cfgKey, cfgValue, themeValue, instCmd, baseDir;
+  QString preInstCmd;
   bool absPath = false, doInstall;
   KEntryIterator* it;
   KSimpleConfig* cfg = NULL;
@@ -464,6 +466,7 @@ int Theme::installGroup(const char* aGroupName)
     if (!value.isEmpty() && mCmdList.find(value) < 0)
       mCmdList.append(value);
     instCmd = mMappings->readEntry("ConfigInstallCmd").stripWhiteSpace();
+    preInstCmd = mMappings->readEntry("ConfigPreInstallCmd").stripWhiteSpace();
 
     // Some checks
     if (cfgFile.isEmpty()) missing = "ConfigFile";
@@ -494,6 +497,10 @@ int Theme::installGroup(const char* aGroupName)
     // Set group in config file
     cfg->setGroup(cfgGroup);
     debug("%s: [%s]", (const char*)cfgFile, (const char*)cfgGroup);
+
+    // Execute pre-install command (if given)
+    if (!preInstCmd.isEmpty()) preInstallCmd(cfg, preInstCmd);
+
     // Process all mapping entries for the group
     it = mMappings->entryIterator(group);
     if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
@@ -573,6 +580,35 @@ int Theme::installGroup(const char* aGroupName)
 
 
 //-----------------------------------------------------------------------------
+void Theme::preInstallCmd(KSimpleConfig* aCfg, const QString& aCmd)
+{
+  QString grp = aCfg->group();
+  QString value, cmd;
+  bool flag;
+
+  cmd = aCmd.stripWhiteSpace();
+
+  if (cmd == "stretchBorders")
+  {
+    value = readEntry("ShapePixmapBottom");
+    if (!value.isEmpty()) stretchPixmap(mThemePath + value, false);
+    value = readEntry("ShapePixmapTop");
+    if (!value.isEmpty()) stretchPixmap(mThemePath + value, false);
+    value = readEntry("ShapePixmapLeft");
+    if (!value.isEmpty()) stretchPixmap(mThemePath + value, true);
+    value = readEntry("ShapePixmapRight");
+    if (!value.isEmpty()) stretchPixmap(mThemePath + value, true);
+  }
+  else
+  {
+    warning(i18n("Unknown pre-install command `%s' in\n"
+		 "theme.mappings file in group %s."), 
+	    (const char*)aCmd, (const char*)mMappings->group());
+  }
+}
+
+
+//-----------------------------------------------------------------------------
 void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
 		       int aInstalled)
 {
@@ -634,7 +670,8 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
 	    (const char*)mMappings->group());
   }
 
-  aCfg->setGroup(grp);
+  if (stricmp(aCfg->group(), grp)!=0) 
+    aCfg->setGroup(grp);
 }
 
 
@@ -961,7 +998,8 @@ void Theme::install(void)
   mCmdList.clear();
 
   if (instPanel) installGroup("Panel");
-  if (instSounds) installGroup("Sounds");
+  if (instSounds) installGroup("So
+unds");
   if (instWindowBorder) installGroup("Window Border");
   if (instWindowTitlebar) installGroup("Window Titlebar");
   if (instWindowButtonLayout) installGroup("Window Button Layout");
@@ -1229,6 +1267,56 @@ static bool getSimpleProperty(Window w, Atom a, long &result){
   result = p[0];
   XFree((char *) p);
   return TRUE;
+}
+
+
+//-----------------------------------------------------------------------------
+void Theme::stretchPixmap(const QString aFname, bool aStretchVert)
+{
+  QPixmap src, dest;
+  QBitmap *srcMask, *destMask;
+  int w, h, w2, h2;
+  QPainter p;
+
+  src.load(aFname);
+  if (src.isNull()) return;
+
+  w = src.width();
+  h = src.height();
+
+  if (aStretchVert)
+  {
+    w2 = w;
+    for (h2=h; h2<64; h2=h2<<1)
+      ;
+  }
+  else
+  {
+    h2 = h;
+    for (w2=w; w2<64; w2=w2<<1)
+      ;
+  }
+
+  dest = src;
+  dest.resize(w2, h2);
+
+  debug("stretching %s from %dx%d to %dx%d", (const char*)aFname,
+	w, h, w2, h2);
+
+  p.begin(&dest);
+  p.drawTiledPixmap(0, 0, w2, h2, src);
+  p.end();
+
+  srcMask = (QBitmap*)src.mask();
+  if (srcMask)
+  {
+    destMask = (QBitmap*)dest.mask();
+    p.begin(destMask);
+    p.drawTiledPixmap(0, 0, w2, h2, *srcMask);
+    p.end();
+  }
+
+  dest.save(aFname, QPixmap::imageFormat(aFname));
 }
 
 

@@ -164,10 +164,14 @@ protected:
       install(). */
   virtual void doCmdList(void);
 
-  /** Called from installGroup() with the value of the ControlInstallCmd
+  /** Called from installGroup() with the value of the ConfigInstallCmd
       value. */
   virtual void installCmd(KSimpleConfig* cfg, const QString& cmd,
 			  int installedFiles);
+
+  /** Called from installGroup() with the value of the ConfigPreInstallCmd
+      value. */
+  virtual void preInstallCmd(KSimpleConfig* cfg, const QString& cmd);
 
   /** Delete all files in work directory. */
   virtual void cleanupWorkDir(void);
@@ -185,6 +189,9 @@ protected:
 
   /** Convert icon to mini icon */
   void iconToMiniIcon(const QString icon, const QString miniIcon);
+
+  /** Stretch pixmap */
+  void stretchPixmap(const QString filename, bool verticalStretch);
 
   /** Add file to list of installed files. */
   virtual void addInstFile(const char* filename);

@@ -1,3 +1,8 @@
+1999-01-13  Stefan Taferner  <taferner@kde.org> (V0.7.2)
+
+	* Added automatic stretching of window borders. This
+	speeds up kwm with some themes dramatically.
+
 1999-01-12  Stefan Taferner  <taferner@kde.org> (V0.7.1)
 
 	* Changed activation command for icons to
