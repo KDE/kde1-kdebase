@@ -1,0 +1,71 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1997-12-31 15:27+0100\n"
+"PO-Revision-Date: 1997-01-02 20:51+MET\n"
+"Last-Translator: Stephan Kulow <coolo@kde.org>\n"
+
+#: main.cpp:57
+msgid "&Panel"
+msgstr "&Panel"
+
+#: main.cpp:60
+msgid "&Desktops"
+msgstr "&Desktops"
+
+#: main.cpp:84
+msgid "KPanel Configuration"
+msgstr "KPanel Einstellungen"
+
+#: panel.cpp:57
+msgid "Location"
+msgstr "Stelle"
+
+#: panel.cpp:64
+msgid "Taskbar"
+msgstr "Taskbar"
+
+#: panel.cpp:65
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: panel.cpp:68
+msgid "Top/Left"
+msgstr "Links/Oben"
+
+#: panel.cpp:88
+msgid "Tiny Style"
+msgstr "Winzig"
+
+#: panel.cpp:89
+msgid "Normal Style"
+msgstr "Normal"
+
+#: panel.cpp:90
+msgid "Large Style"
+msgstr "Groß"
+
+#: panel.cpp:98
+msgid "Menu Tooltips"
+msgstr "Menü-Hilfen"
+
+#: panel.cpp:100
+msgid "Personal First"
+msgstr "Persönliches Menü zuerst"
+
+#: panel.cpp:102
+msgid "Auto Hide Panel"
+msgstr "Panel autom. verstecken"
+
+#: panel.cpp:104
+msgid "Auto Hide Taskbar"
+msgstr "Taskbar autom. verstecken"
+
+#: desktops.cpp:67
+msgid "Visible"
+msgstr "Sichtbar"
+
+#: desktops.cpp:75
+msgid "Width"
+msgstr "Breite"
