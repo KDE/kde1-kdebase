@@ -30,6 +30,9 @@ patchlevel 7:
             call "kwmcom configure" or to restart kwm after you changed the
             kwmrc file.
 
+        - cleanups and performance improvements for horziontal shading 
+           and titlebar animation
+
 patchlevel 6:
         - horizontal shading (blending) a la kpixmap
         - fixed motif decoration hint handling. Useful for the fullscreen view

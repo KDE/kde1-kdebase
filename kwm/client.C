@@ -57,7 +57,7 @@ Cursor normal_cursor = 0;
 
 extern MyApp* myapp;
 extern QPushButton* ignore_release_on_this;
-
+#define TITLE_ANIMATION_STEP 2
 
 bool do_not_draw = false;
 myPushButton::myPushButton(QWidget *parent, const char* name)
@@ -399,7 +399,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     installEventFilter(myapp);
  
     titlestring_offset = 0;
-    titlestring_offset_delta = 2;
+    titlestring_offset_delta = TITLE_ANIMATION_STEP;
     titlestring_too_large = false;
     hidden_for_modules = false;
     autoraised_stopped = false;
@@ -1476,7 +1476,30 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 //       pm = is_active ? shaded_pm_active : shaded_pm_inactive;
 //     else
 
-  if (options.TitlebarLook == PIXMAP){
+  TITLEBAR_LOOK look = options.TitlebarLook;
+
+  if (look == SHADED){
+    // the new horizontal shading code
+    if (colors_have_changed){
+      aShadepm.resize(0,0);
+      iaShadepm.resize(0,0);
+    }
+
+    // the user selected shading. Do a plain titlebar anyway if the
+    // shading would be senseless (higher performance and less memory
+    // consumption)
+    if (is_active){
+      if ( myapp->activeTitleColor ==  myapp->activeTitleBlend)
+	look = PLAIN;
+    }
+    else {
+      if ( myapp->inactiveTitleColor ==  myapp->inactiveTitleBlend)
+	look = PLAIN;
+    }
+  }
+
+
+  if (look == PIXMAP){
       pm = is_active ? options.titlebarPixmapActive: options.titlebarPixmapInactive;    
     if (only_label){
       x = r.x()-(pm->width()-10);
@@ -1489,41 +1512,51 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 	p.drawPixmap(x, r.y(), *pm);
     }
   }
-  else if (options.TitlebarLook == SHADED){
+  else if (look == SHADED){
     // the new horizontal shading code
-    if (colors_have_changed){
-      aShadepm.resize(0,0);
-      iaShadepm.resize(0,0);
-    }
+    QPixmap* pm = 0;
     if (is_active){
       if (aShadepm.size() != r.size()){
 	aShadepm.resize(r.width(), r.height());
 	aShadepm.gradientFill( myapp->activeTitleColor, myapp->activeTitleBlend, FALSE );
       }
-      p.drawPixmap( r.x(), r.y(), aShadepm ); 
+      pm = &aShadepm;
     }
     else {
       if (iaShadepm.size() != r.size()){
 	iaShadepm.resize(r.width(), r.height());
 	iaShadepm.gradientFill( myapp->inactiveTitleColor, myapp->inactiveTitleBlend, FALSE );
       }
-      p.drawPixmap( r.x(), r.y(), iaShadepm ); 
+      pm = &iaShadepm;
+    }
+
+    if (only_label){
+	p.drawPixmap(r.x(), r.y(), *pm , 
+		     0, 0, TITLE_ANIMATION_STEP+1, r.height());
+	p.drawPixmap(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(), *pm, 
+		     r.width()-TITLE_ANIMATION_STEP-1, 0, 
+		     TITLE_ANIMATION_STEP+1, r.height());
+    }
+    else {
+      p.drawPixmap( r.x(), r.y(), *pm ); 
     }
   }
   else { // TitlebarLook == TITLEBAR_PLAIN
     p.setBackgroundColor( is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor);
     if (only_label){
-      p.eraseRect(QRect(r.x(), r.y(), r.x()+10, r.y() + r.height()));
-      p.eraseRect(QRect(r.x()+r.width()-10, r.y(), 10, r.height()));
+       p.eraseRect(QRect(r.x(), r.y(), TITLE_ANIMATION_STEP+1, r.height()));
+       p.eraseRect(QRect(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(), 
+ 			TITLE_ANIMATION_STEP+1, r.height()));
     }
     else {
       p.eraseRect(r);
     }
   }
   p.setClipping(False);
+  
   if (is_active)
     qDrawShadePanel( &p, r, colorGroup(), True );
-  
+
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
 
   if (label){
