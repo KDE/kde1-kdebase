@@ -2131,8 +2131,6 @@ void Manager::activateClient(Client* c, bool set_revert){
 
   c->setactive( true );
   unIconifyTransientOf(c->mainClient());
-  raiseMenubarsOf(c->mainClient());
-
   focusToClient(c);
 
   colormapFocus(c);
@@ -2142,6 +2140,9 @@ void Manager::activateClient(Client* c, bool set_revert){
     if (clients_traversing.removeRef(cc))
       clients_traversing.insert(0,cc);
   }
+
+  raiseMenubarsOf(c->mainClient());
+
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window,
 		  kwm_active_window, 32,
 		  PropModeReplace, (unsigned char *)&(c->window), 1);
@@ -2315,6 +2316,7 @@ void Manager::noFocus(){
 
   Client::hideGimmick();
   focusToNull();
+  myapp->raiseSystemMenuBar();
   sendToModules(module_win_activate, 0);
 
 }

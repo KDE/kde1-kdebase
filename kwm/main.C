@@ -678,7 +678,6 @@ void MyApp::resetSystemMenuBar()
 {
     if (!systemMenuBar)
 	return;
-    systemMenuBar->setItemEnabled( fileSystemMenuId, manager->current() != 0 );
     QRect r =  KWM::getWindowRegion(manager->currentDesktop());
     systemMenuBar->setGeometry(r.x(),(r.y()-1)<=0?-2:r.y()-1, r.width(), // check panel top
 			       systemMenuBar->heightForWidth(r.width()));
@@ -688,6 +687,7 @@ void MyApp::raiseSystemMenuBar()
 {
     if (!systemMenuBar)
 	return;
+    systemMenuBar->setItemEnabled( fileSystemMenuId, manager->current() != 0 );
     systemMenuBar->raise();
 }
 
