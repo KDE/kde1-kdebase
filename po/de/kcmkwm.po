@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-03-30 16:29+01\n"
 "Last-Translator: Oliver Hensel <oliver.hensel@gmx.de>\n"
 
@@ -172,59 +172,59 @@ msgstr ""
 "Fehler beim Speichern der Pixmaps für die\n"
 "Titelleiste! Bitte überprüfen Sie die Zugriffsrechte."
 
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Fenster"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr "Vertikales Maximieren nur als Standard"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr "Inhalt von Fenstern beim Verschieben anzeigen"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr "Inhalt von Fenstern beim Ändern der Größe anzeigen"
 
-#: windows.cpp:97
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr "Animation beim Ändern der Größe:"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "Kein"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Schnell"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Plazierungs-Strategie"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Geschickt"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Überlappend"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interaktiv"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Zufällig"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Manuell"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -233,31 +233,36 @@ msgstr ""
 "  Erlaubter Überlapp:\n"
 "(% des Arbeitsplatzes)"
 
-#: windows.cpp:174
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Behandlung des Fokus"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Fokuswechsel durch Klicken"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Fokus folgt der Maus"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Fokus folgt der Maus (klassisch)"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Fokuswechsel durch Klicken (klassisch)"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Automatisch in Vordergrund"
 
 #: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Nach vorne"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Verzögerung (ms)"
 

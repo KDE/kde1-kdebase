@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-10-21-21:12+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is <kde-isl@mmedia.is>\n"
@@ -228,19 +228,19 @@ msgstr "&Bókamerki"
 msgid "&Cache"
 msgstr "Bið&minni"
 
-#: kfmgui.cpp:470 main.cpp:278
+#: kfmgui.cpp:471 main.cpp:278
 msgid "Up"
 msgstr "Upp"
 
-#: kfmgui.cpp:480 main.cpp:280
+#: kfmgui.cpp:481 main.cpp:280
 msgid "Forward"
 msgstr "Fram"
 
-#: kfmgui.cpp:485
+#: kfmgui.cpp:486
 msgid "Home"
 msgstr "Heim"
 
-#: kfmgui.cpp:542
+#: kfmgui.cpp:543
 msgid "Could not load icon\n"
 msgstr "Ekki tókst að lesa táknmynd\n"
 
@@ -249,7 +249,7 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 #: kbind.cpp:1636 kbind.cpp:1695 kbind.cpp:1707 kbind.cpp:1734 kbind.cpp:1749
 #: kbind.cpp:1769 kbind.cpp:1781 kbind.cpp:1797 kbind.cpp:1932 kbind.cpp:1944
 #: kbind.cpp:1989 kbind.cpp:2031 kfmexec.cpp:60 kfmexec.cpp:112
-#: kfmexec/main.cpp:47 kfmgui.cpp:543 kfmgui.cpp:740 kfmman.cpp:356
+#: kfmexec/main.cpp:47 kfmgui.cpp:544 kfmgui.cpp:744 kfmman.cpp:356
 #: kfmman.cpp:1376 kfmman.cpp:1598 kfmman.cpp:1624 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:942 kfmprops.cpp:1074
 #: kfmprops.cpp:1205 kfmprops.cpp:1678 kfmprops.cpp:2039 kfmprops.cpp:2221
@@ -268,70 +268,70 @@ msgstr "Ekki tókst að lesa táknmynd\n"
 msgid "KFM Error"
 msgstr "KFM Villa"
 
-#: kfmgui.cpp:556
+#: kfmgui.cpp:557
 #, fuzzy
 msgid "Location:"
 msgstr "Opna stað:"
 
-#: kfmexec.cpp:59 kfmgui.cpp:739 kfmman.cpp:1375
+#: kfmexec.cpp:59 kfmgui.cpp:743 kfmman.cpp:1375
 msgid "Malformed URL\n"
 msgstr "G-lluð slóð\n"
 
-#: kfmgui.cpp:929
+#: kfmgui.cpp:933
 msgid "Select files:"
 msgstr "Veldu skrár:"
 
-#: kfmgui.cpp:990
+#: kfmgui.cpp:994
 msgid "Find Complete"
 msgstr "Leit lokið"
 
-#: kfmgui.cpp:991
+#: kfmgui.cpp:995
 msgid "Continue search from the top of the page?"
 msgstr "Halda leit áfram frá upphafi síðu?"
 
-#: kfmgui.cpp:1009
+#: kfmgui.cpp:1013
 msgid "&Edit Bookmarks..."
 msgstr "Sýs&la með bókamerki..."
 
-#: kfmgui.cpp:1019
+#: kfmgui.cpp:1023
 msgid "&Add Bookmark"
 msgstr "&Setja bókamerki"
 
-#: kfmgui.cpp:1053 kfmman.cpp:1414 kfmtree.cpp:322 root.cpp:263
+#: kfmgui.cpp:1057 kfmman.cpp:1414 kfmtree.cpp:322 root.cpp:263
 msgid "&New"
 msgstr "&Nýtt"
 
-#: kfmgui.cpp:1071
+#: kfmgui.cpp:1073
 msgid "&Up"
 msgstr "&Upp"
 
-#: kfmgui.cpp:1073
+#: kfmgui.cpp:1075
 msgid "&Back"
 msgstr "&Aftur"
 
-#: kfmgui.cpp:1075
+#: kfmgui.cpp:1077
 msgid "&Forward"
 msgstr "&Framm"
 
-#: kfmgui.cpp:1077
+#: kfmgui.cpp:1079
 msgid "&Home"
 msgstr "&Heim"
 
-#: kfmgui.cpp:1136 kfmgui.cpp:1308 kfmjob.cpp:36 kfmman.cpp:239
+#: kfmgui.cpp:1141 kfmgui.cpp:1313 kfmjob.cpp:36 kfmman.cpp:239
 #: kfmtree.cpp:433 kfmview.cpp:436 kfmview.cpp:505 kfmview.cpp:713
 #: kiojob.cpp:87 root.cpp:1188
 msgid "ERROR: Malformed URL"
 msgstr "VILLA: Gölluð slóð"
 
-#: kfmgui.cpp:1262 kfmserver.cpp:184
+#: kfmgui.cpp:1267 kfmserver.cpp:184
 msgid "Open Location:"
 msgstr "Opna stað:"
 
-#: kfmgui.cpp:1319
+#: kfmgui.cpp:1324
 msgid "KFM Confirm"
 msgstr "KFM Staðfesting"
 
-#: kfmgui.cpp:1320
+#: kfmgui.cpp:1325
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -339,7 +339,7 @@ msgstr ""
 "Viltu örugglega hætta?\n"
 "Mikilvægur hluti eiginleika skjáborðsins hverfur"
 
-#: kfmgui.cpp:1430
+#: kfmgui.cpp:1435
 msgid "Document: Done"
 msgstr "Skjal: Komið"
 

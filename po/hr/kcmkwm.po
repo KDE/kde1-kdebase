@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -171,90 +171,95 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Prozori"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr ""
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr ""
 
-#: windows.cpp:97
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr ""
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "Nikakva"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Brza"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Smje¹tanje"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Pametno"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Kaskadno"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interaktivno"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Sluèajno"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Ruèno"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:174
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Fokusiranje"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Klikni za fokusiranje"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Fokus slijedi mi¹a"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Klasièni fokus slijedi mi¹a"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Klasièni neuredni fokus"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Auto. uzdigni"
 
 #: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Uzdigni"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Ka¹njenje (ms)"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -172,59 +172,59 @@ msgstr ""
 "Nastala chyba pri ukladaní\n"
 "pixmáp titulku! Prosím skontrolujte právomoci."
 
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Okná"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr "©tandardne len vertikálna maximalizácia"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr "Zobrazova» obsah v presúvaných oknách"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr "Zobrazova» obsah v zväè¹ujúcich sa oknách"
 
-#: windows.cpp:97
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr "Animácia zmeny veµkosti:"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "®iadna"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Rýchla"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Spôsob umiestòovania"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Elegantne"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Kaskádovite"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interaktívne"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Náhodne"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Manuálne"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -233,31 +233,36 @@ msgstr ""
 "  Povolený prekryv:\n"
 "(% priestoru plochy)"
 
-#: windows.cpp:174
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Spôsob aktivácie"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Kliknú» pre aktiváciu"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Okno pod my¹ou je aktívne"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Posledné pod my¹ou je aktívne"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Sloppy aktivácia"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Auto. zdvihnú»"
 
 #: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Zdvihnú»"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Po èase(ms)"
 

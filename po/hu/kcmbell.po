@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmbell\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-17 16:02+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -28,26 +28,29 @@ msgstr "használat: kcmbell [-init | bell]\n"
 msgid "Bell settings"
 msgstr "Csengõ beállításai"
 
-#: bell.cpp:85
+#: bell.cpp:65
 msgid "Volume"
 msgstr "Hangerõ"
 
-#: bell.cpp:86
+#: bell.cpp:67
 msgid "Pitch"
 msgstr "Frekvencia"
 
-#: bell.cpp:87
-msgid "Duration"
-msgstr "Hossz"
-
-#: bell.cpp:89
+#: bell.cpp:69
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:90
-msgid "ms"
-msgstr "msec"
+#: bell.cpp:70
+msgid "Duration"
+msgstr "Hossz"
 
-#: bell.cpp:92
+#: bell.cpp:72
+msgid "milliseconds"
+msgstr ""
+
+#: bell.cpp:87
 msgid "Test"
 msgstr "Próba"
+
+#~ msgid "ms"
+#~ msgstr "msec"

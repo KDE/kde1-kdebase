@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 1.0pre2\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-07-17 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -112,15 +112,15 @@ msgstr "Ok"
 msgid "Unnamed Desktop"
 msgstr "nenomita labortabulo"
 
-#: main.C:1030
+#: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Kelkaj rastrobildoj ne estas en ordo: Figurmodo malaktivigita\n"
 
-#: main.C:1142
+#: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Kelkaj rastrobildoj ne estas en ordo: Anima¼modo malaktivigita\n"
 
-#: main.C:1467
+#: main.C:1477
 msgid "*** No Tasks ***"
 msgstr "*** Neniuj taskoj ****"
 

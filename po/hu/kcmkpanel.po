@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1998-12-17 18:58+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -198,7 +198,13 @@ msgid "F&olders First"
 msgstr "Mappák &Elõször"
 
 #: options.cpp:122
-msgid "&Clock shows time in De/Du format"
+#, fuzzy
+msgid "&Clock shows time in AM/PM format"
+msgstr "Az óra AM/PM formátumban mutassa az idõt"
+
+#: options.cpp:124
+#, fuzzy
+msgid "&Clock shows time in Internet beats"
 msgstr "Az óra AM/PM formátumban mutassa az idõt"
 
 #: disknav.cpp:38

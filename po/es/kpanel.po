@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-11-27 19:54+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -14,107 +14,119 @@ msgstr "&Mover"
 msgid "&Properties"
 msgstr "&Propiedades"
 
-#: kpanel.C:321
+#: kpanel.C:327
 msgid "Go!"
 msgstr "Inicio"
 
-#: kpanel.C:324 tools.C:858
+#: kpanel.C:330 tools.C:865
 msgid "Where do you want to go tomorrow?"
 msgstr "¿Hasta dónde quiere llegar mañana?"
 
-#: kpanel.C:399
+#: kpanel.C:405
 msgid "No info available"
 msgstr "No hay información disponible"
 
-#: kpanel.C:438 props.C:193 props.C:194
+#: kpanel.C:444 props.C:201 props.C:202
 msgid "Logout"
 msgstr "Terminar"
 
-#: kpanel.C:446 props.C:192
+#: kpanel.C:452 props.C:200
 msgid "Lock screen"
 msgstr "Bloquear pantalla"
 
-#: kpanel.C:455 kpanel.C:464
+#: kpanel.C:461 kpanel.C:470
 msgid "Hide the panel"
 msgstr "Esconder el panel"
 
-#: kpanel.C:474 kpanel.C:486
+#: kpanel.C:480 kpanel.C:492
 msgid "Show the panel"
 msgstr "Mostrar el panel"
 
-#: kpanel.C:1091
+#: kpanel.C:1097
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1228
+#: kpanel.C:1234
 msgid "No comment available"
 msgstr "No hay comentario disponible"
 
-#: kpanel.C:1237 tools.C:867
+#: kpanel.C:1243 tools.C:874
 msgid "Windowlist"
 msgstr "Lista de ventanas"
 
-#: props.C:162
-msgid "Add application"
-msgstr "Añadir aplicación"
-
-#: props.C:164
-msgid "Add an application or a submenu onto the panel"
-msgstr "Añadir aplicación o submenú al panel"
-
-#: props.C:165
-msgid "Add windowlist"
-msgstr "Añadir lista de ventanas"
-
-#: props.C:167
-msgid "Add a windowlist menu onto the panel"
-msgstr "Añadir una lista de ventanas al panel"
-
-#: events.C:778 props.C:168
-msgid "Configure"
-msgstr "Configurar"
-
-#: props.C:170
-msgid "Configure panel"
-msgstr "Configurar panel"
-
-#: props.C:171
-msgid "Edit Menus"
-msgstr "Editar Menús"
-
-#: props.C:173
-msgid "Add or remove applications in the menu structure "
-msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
-
-#: events.C:780 props.C:174
-msgid "Restart"
-msgstr "Reiniciar"
-
-#: props.C:176
-msgid "Restart panel"
-msgstr "Reiniciar panel"
-
-#: props.C:179
-msgid "Disk Navigator"
-msgstr "Navegador de disco"
-
-#: props.C:182
+#: kpanel.C:1251 props.C:191
 msgid "Quickly navigate through the filesystem"
 msgstr "Navegar rápidamente a través del sistema de archivos"
 
+#: props.C:166
+#, fuzzy
+msgid "Add Application"
+msgstr "Añadir aplicación"
+
+#: props.C:168
+msgid "Add an application or a submenu onto the panel"
+msgstr "Añadir aplicación o submenú al panel"
+
+#: props.C:170
+#, fuzzy
+msgid "Add Disk Navigator"
+msgstr "Navegador de disco"
+
+#: props.C:172
+#, fuzzy
+msgid "Add a Disk Navigator menu onto the panel"
+msgstr "Añadir una lista de ventanas al panel"
+
+#: props.C:174
+#, fuzzy
+msgid "Add Windowlist"
+msgstr "Añadir lista de ventanas"
+
+#: props.C:176
+msgid "Add a windowlist menu onto the panel"
+msgstr "Añadir una lista de ventanas al panel"
+
+#: events.C:797 props.C:177
+msgid "Configure"
+msgstr "Configurar"
+
+#: props.C:179
+msgid "Configure panel"
+msgstr "Configurar panel"
+
+#: props.C:180
+msgid "Edit Menus"
+msgstr "Editar Menús"
+
+#: props.C:182
+msgid "Add or remove applications in the menu structure "
+msgstr "Añadir o suprimir aplicaciones en la estructura del menú "
+
+#: events.C:799 props.C:183
+msgid "Restart"
+msgstr "Reiniciar"
+
+#: props.C:185
+msgid "Restart panel"
+msgstr "Reiniciar panel"
+
 #: props.C:188
+msgid "Disk Navigator"
+msgstr "Navegador de disco"
+
+#: props.C:196
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:190
+#: props.C:198
 msgid "Lock Screen"
 msgstr "Bloquear pantalla"
 
-#: props.C:419
+#: props.C:433
 msgid "The menu editor is not installed."
 msgstr "El editor de menús no está instalado."
 
-#: events.C:834 props.C:420
+#: events.C:853 props.C:434
 msgid "Oops!"
 msgstr "¡Ups!"
 
@@ -126,7 +138,12 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:833
+#: tools.C:883
+#, fuzzy
+msgid "KDiskNavigator"
+msgstr "Navegador de disco"
+
+#: events.C:852
 msgid "Cannot put this as button onto the panel!"
 msgstr "Imposible poner este botón en el panel."
 

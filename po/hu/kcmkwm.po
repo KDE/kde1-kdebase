@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-12-17 12:35+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -177,59 +177,59 @@ msgstr ""
 "Hiba történt a címsor háttérkép\n"
 "mentésekor! Ellenõrizze a fájl hozzáférési jogokat."
 
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Ablakok"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr "Csak függõleges maximalizálás alapértelmezésként"
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr "Mutassa az ablak tartalmát mozgatáskor"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr "Mutassa az ablak tartalmát átméretezéskor"
 
-#: windows.cpp:97
+#: windows.cpp:98
 msgid "Resize animation:"
 msgstr "Átméretezés animáció:"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "Nincs"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Gyors"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Elhelyezési mód"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Intelligens"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Egymás fölött"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interaktív"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Véletlenszerû"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Kézi"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -238,31 +238,36 @@ msgstr ""
 "   Engedélyezett átfedés:\n"
 "(az asztal területének %-a)"
 
-#: windows.cpp:174
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Fókusz mód"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Fókusz rákattintáskor"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Fókusz követi az egeret"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Klasszikus fókusz-követi-az-egeret"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Klasszikus laza fókusz"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Autómatikus elõtérbe hozás"
 
 #: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Felemel"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Késleltetés (ms)"
 

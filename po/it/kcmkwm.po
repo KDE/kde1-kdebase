@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: Sat Dec 5 1998 16:35:20+0200\n"
 "Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -183,60 +183,60 @@ msgstr ""
 "delle immagini della barra titolo! Controllare i permessi."
 
 #
-#: windows.cpp:67
+#: windows.cpp:68
 msgid "Windows"
 msgstr "Finestre"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr "Solo Ingrandimento verticale "
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr "Mostra contenuto durante il movimento delle finestre"
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr "Mostra contenuto durante il ridimensionamento delle finestre"
 
-#: windows.cpp:97
+#: windows.cpp:98
 #, fuzzy
 msgid "Resize animation:"
 msgstr "Animazione ridimensionamento:"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr "Nessuna"
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Veloce"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Comparsa"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Elegante"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Cascata"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interattiva"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Casuale"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Manuale"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -246,31 +246,36 @@ msgstr ""
 "(% dello spazio del Desktop)"
 
 #
-#: windows.cpp:174
+#: windows.cpp:175
 msgid "Focus policy"
 msgstr "Modalità di attivazione"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Click per attivare"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Attiva al passaggio del mouse"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Attivazione classica seguendo il mouse"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Attivazione classica semplice"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr "Primo piano automatico"
 
 #: windows.cpp:209
+#, fuzzy
+msgid "Click Raise"
+msgstr "Alza"
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr "Attesa (ms)"
 

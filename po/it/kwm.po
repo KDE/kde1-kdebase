@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@Ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -109,15 +109,15 @@ msgstr "Otto"
 msgid "Unnamed Desktop"
 msgstr "Desktop SenzaNome"
 
-#: main.C:1030
+#: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Shape viene disabilitato\n"
 
-#: main.C:1142
+#: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alcune pixmap non sono valide: Il modo Gimmick viene disabilitato\n"
 
-#: main.C:1467
+#: main.C:1477
 msgid "*** No Tasks ***"
 msgstr "*** Nessun Task ***"
 

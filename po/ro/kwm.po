@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -114,15 +114,15 @@ msgstr "Opt"
 msgid "Unnamed Desktop"
 msgstr "Ecran fãrã nume"
 
-#: main.C:1030
+#: main.C:1040
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: ShapeMode nu este activat\n"
 
-#: main.C:1142
+#: main.C:1152
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niºte pixmap-uri sunt defecte: GimmickMode nu este activat\n"
 
-#: main.C:1467
+#: main.C:1477
 msgid "*** No Tasks ***"
 msgstr "*** Nici un Program ***"
 

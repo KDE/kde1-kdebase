@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-01-22 00:00+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -179,93 +179,97 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 
-#: windows.cpp:67
+#: windows.cpp:68
 #, fuzzy
 msgid "Windows"
 msgstr "&Janelas"
 
-#: windows.cpp:81
+#: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr ""
 
-#: windows.cpp:86
+#: windows.cpp:87
 msgid "Display content in moving windows"
 msgstr ""
 
-#: windows.cpp:91
+#: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr ""
 
-#: windows.cpp:97
+#: windows.cpp:98
 #, fuzzy
 msgid "Resize animation:"
 msgstr "Animação do título"
 
-#: windows.cpp:110
+#: windows.cpp:111
 msgid "None"
 msgstr ""
 
-#: windows.cpp:116
+#: windows.cpp:117
 msgid "Fast"
 msgstr "Rápida"
 
-#: windows.cpp:127
+#: windows.cpp:128
 msgid "Placement policy"
 msgstr "Política de Posicionamento"
 
-#: windows.cpp:133
+#: windows.cpp:134
 msgid "Smart"
 msgstr "Inteligente"
 
-#: windows.cpp:135
+#: windows.cpp:136
 msgid "Cascade"
 msgstr "Cascata"
 
-#: windows.cpp:137
+#: windows.cpp:138
 msgid "Interactive"
 msgstr "Interactivo"
 
-#: windows.cpp:139
+#: windows.cpp:140
 msgid "Random"
 msgstr "Aleatória"
 
-#: windows.cpp:141
+#: windows.cpp:142
 msgid "Manual"
 msgstr "Manual"
 
-#: windows.cpp:153
+#: windows.cpp:154
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:174
+#: windows.cpp:175
 #, fuzzy
 msgid "Focus policy"
 msgstr "Política de Foco"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Click to focus"
 msgstr "Clicar para obter foco"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Focus follows mouse"
 msgstr "Foco segue o rato"
 
-#: windows.cpp:188
+#: windows.cpp:189
 msgid "Classic focus follows mouse"
 msgstr "Foco segue o rato clássico"
 
-#: windows.cpp:190
+#: windows.cpp:191
 msgid "Classic sloppy focus"
 msgstr "Foco escorregadio clássico"
 
-#: windows.cpp:202
+#: windows.cpp:203
 msgid "Auto Raise"
 msgstr ""
 
 #: windows.cpp:209
+msgid "Click Raise"
+msgstr ""
+
+#: windows.cpp:216
 msgid "Delay (ms)"
 msgstr ""
 

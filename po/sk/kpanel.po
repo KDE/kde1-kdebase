@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"POT-Creation-Date: 1998-12-19 01:20+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -21,107 +21,119 @@ msgstr "&Presunú»"
 msgid "&Properties"
 msgstr "&Nastavenie"
 
-#: kpanel.C:321
+#: kpanel.C:327
 msgid "Go!"
 msgstr "Ís»!"
 
-#: kpanel.C:324 tools.C:858
+#: kpanel.C:330 tools.C:865
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si prajete ís» zajtra?"
 
-#: kpanel.C:399
+#: kpanel.C:405
 msgid "No info available"
 msgstr "Informácia nie je k dispozícii"
 
-#: kpanel.C:438 props.C:193 props.C:194
+#: kpanel.C:444 props.C:201 props.C:202
 msgid "Logout"
 msgstr "Odhlási»"
 
-#: kpanel.C:446 props.C:192
+#: kpanel.C:452 props.C:200
 msgid "Lock screen"
 msgstr "Zablokova» obrazovku"
 
-#: kpanel.C:455 kpanel.C:464
+#: kpanel.C:461 kpanel.C:470
 msgid "Hide the panel"
 msgstr "Schova» panel"
 
-#: kpanel.C:474 kpanel.C:486
+#: kpanel.C:480 kpanel.C:492
 msgid "Show the panel"
 msgstr "Ukáza» panel"
 
-#: kpanel.C:1091
+#: kpanel.C:1097
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1228
+#: kpanel.C:1234
 msgid "No comment available"
 msgstr "Komentár nie je k dispozícii"
 
-#: kpanel.C:1237 tools.C:867
+#: kpanel.C:1243 tools.C:874
 msgid "Windowlist"
 msgstr "Zoznam okien"
 
-#: props.C:162
-msgid "Add application"
-msgstr "Prida» aplikáciu"
-
-#: props.C:164
-msgid "Add an application or a submenu onto the panel"
-msgstr "Prida» aplikáciu alebo menu na panel"
-
-#: props.C:165
-msgid "Add windowlist"
-msgstr "Prida» zoznam okien"
-
-#: props.C:167
-msgid "Add a windowlist menu onto the panel"
-msgstr "Prida» zoznam okien na panel"
-
-#: events.C:778 props.C:168
-msgid "Configure"
-msgstr "Nastavenie"
-
-#: props.C:170
-msgid "Configure panel"
-msgstr "Nastavenie panela"
-
-#: props.C:171
-msgid "Edit Menus"
-msgstr "Editova» menu"
-
-#: props.C:173
-msgid "Add or remove applications in the menu structure "
-msgstr "Prida» alebo ubra» aplikácie v ¹truktúre menu "
-
-#: events.C:780 props.C:174
-msgid "Restart"
-msgstr "Spusti» znova"
-
-#: props.C:176
-msgid "Restart panel"
-msgstr "Spusti» panel znova"
-
-#: props.C:179
-msgid "Disk Navigator"
-msgstr "Navigátor disku"
-
-#: props.C:182
+#: kpanel.C:1251 props.C:191
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
+#: props.C:166
+#, fuzzy
+msgid "Add Application"
+msgstr "Prida» aplikáciu"
+
+#: props.C:168
+msgid "Add an application or a submenu onto the panel"
+msgstr "Prida» aplikáciu alebo menu na panel"
+
+#: props.C:170
+#, fuzzy
+msgid "Add Disk Navigator"
+msgstr "Navigátor disku"
+
+#: props.C:172
+#, fuzzy
+msgid "Add a Disk Navigator menu onto the panel"
+msgstr "Prida» zoznam okien na panel"
+
+#: props.C:174
+#, fuzzy
+msgid "Add Windowlist"
+msgstr "Prida» zoznam okien"
+
+#: props.C:176
+msgid "Add a windowlist menu onto the panel"
+msgstr "Prida» zoznam okien na panel"
+
+#: events.C:797 props.C:177
+msgid "Configure"
+msgstr "Nastavenie"
+
+#: props.C:179
+msgid "Configure panel"
+msgstr "Nastavenie panela"
+
+#: props.C:180
+msgid "Edit Menus"
+msgstr "Editova» menu"
+
+#: props.C:182
+msgid "Add or remove applications in the menu structure "
+msgstr "Prida» alebo ubra» aplikácie v ¹truktúre menu "
+
+#: events.C:799 props.C:183
+msgid "Restart"
+msgstr "Spusti» znova"
+
+#: props.C:185
+msgid "Restart panel"
+msgstr "Spusti» panel znova"
+
 #: props.C:188
+msgid "Disk Navigator"
+msgstr "Navigátor disku"
+
+#: props.C:196
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:190
+#: props.C:198
 msgid "Lock Screen"
 msgstr "Blokova» obrazovku"
 
-#: props.C:419
+#: props.C:433
 msgid "The menu editor is not installed."
 msgstr "Editor menu nie je nain¹talovaný."
 
-#: events.C:834 props.C:420
+#: events.C:853 props.C:434
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -133,7 +145,12 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: events.C:833
+#: tools.C:883
+#, fuzzy
+msgid "KDiskNavigator"
+msgstr "Navigátor disku"
+
+#: events.C:852
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
 
