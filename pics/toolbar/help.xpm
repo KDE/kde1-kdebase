@@ -1,35 +1,32 @@
 /* XPM */
-/* Drawn  by Mark Donohoe for the K Desktop Environment */
-/* See http://www.kde.org */
-static char*help[]={
-"22 22 7 1",
-"c c #000000",
-"a c #808080",
-"b c #c0c0c0",
-"e c #808080",
-"d c #ffffff",
+static char *help[] = {
+/* width height num_colors chars_per_pixel */
+"    22    22        3            1",
+/* colors */
+". c #808080",
 "# c #000080",
-". c None",
-"......................",
-"......................",
-"..........#####a......",
-".........##bba##a.....",
-"........##abbb###.....",
-"........##abbb###.....",
-"........a##bba##a.....",
-"...........cc##a......",
-".........ccb##........",
-".......ccbb##ac.......",
-".....ccbbbb##abc......",
-"....cdbbbbbbbbbbc.....",
-"....ccdbbbb###bbbc....",
-"....cecdbbb###bbbbc...",
-"....ceecdbbbbbbbcc....",
-".....ceecdbbbbccde....",
-"......ceecdbccddeec...",
-".......ceeccddeecc....",
-"........cecdeecc......",
-".........ccecc........",
-"..........cc..........",
-"......................"};
-
+"a c none",
+/* pixels */
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaa#####.aaaaaaa",
+"aaaaaaaa##aa.##.aaaaaa",
+"aaaaaaa##.aaa###aaaaaa",
+"aaaaaaa##.aaa###aaaaaa",
+"aaaaaaa.##aa.##.aaaaaa",
+"aaaaaaaaaaaa##.aaaaaaa",
+"aaaaaaaaaaa##aaaaaaaaa",
+"aaaaaaaaaa##.aaaaaaaaa",
+"aaaaaaaaaa##.aaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaa###aaaaaaaaa",
+"aaaaaaaaaa###aaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaaaaaaaa"
+};

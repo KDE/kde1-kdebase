@@ -1,0 +1,28 @@
+/* XPM */
+static char *package[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        5            1",
+/* colors */
+". c #000000",
+"# c #808000",
+"a c #c0c000",
+"b c #ffffc0",
+"c c none",
+/* pixels */
+"ccccc..ccc.ccccc",
+"ccc..bb...b..ccc",
+"c..bb..#a..bb..c",
+".bb..###aaa..bb.",
+"...#####aaaaa...",
+"c.b..###aaa...cc",
+"c.bbb..#a..aa.cc",
+"c.bbbbb..aaaa.cc",
+"c.bbbbbbaaaaa.cc",
+"c.bbbbbbaaaaa.cc",
+"c.bbbbbbaaaaa.cc",
+"c.bbbbbbaaaaa.cc",
+"c.abbbbbaaaa..cc",
+"cc..abbbaa..cccc",
+"cccc..ab..cccccc",
+"cccccc..cccccccc"
+};

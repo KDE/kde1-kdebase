@@ -424,6 +424,8 @@ void KColorScheme::slotSave()
 
 void KColorScheme::writeScheme()
 {
+	QString str;
+
 	KConfig *config = kapp->getConfig();
 	config->setGroup( schemeFile.data() );
 
