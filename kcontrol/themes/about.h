@@ -11,6 +11,7 @@ class QCheckBox;
 class QComboBox;
 class QPushButton;
 class QBoxLayout;
+class Theme;
 
 #define AboutInherited KConfigWidget
 class About : public KConfigWidget
@@ -22,6 +23,12 @@ public:
 
   virtual void loadSettings();
   virtual void applySettings();
+
+protected slots:
+  virtual void slotThemeChanged();
+
+protected:
+  QLabel *lblTheme, *lblAuthor, *lblVersion, *lblHomepage;
 };
 
 #endif /*ABOUT_H*/

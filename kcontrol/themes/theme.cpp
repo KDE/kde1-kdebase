@@ -330,6 +330,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   QFile srcFile, destFile;
   int len, i;
   char buf[32768];
+  bool backupMade = false;
 
   if (aSrc.isEmpty()) return true;
 
@@ -338,7 +339,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
     dest = kapp->localkdedir() + aDest;
   else dest = QString(kapp->localkdedir()) + '/' + aDest;
 
-  src = mThemePath + '/' + aSrc;
+  src = mThemePath + aSrc;
 
   finfo.setFile(dest);
   if (finfo.isDir())  // destination is a directory
@@ -354,6 +355,7 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   {
     unlink(dest+'~');
     rename(dest, dest+'~');
+    backupMade = true;
   }
 
   srcFile.setName(src);
@@ -386,6 +388,8 @@ bool Theme::installFile(const QString& aSrc, const QString& aDest)
   destFile.close();
 
   addInstFile(dest);
+  debug("Installed %s to %s %s", (const char*)src, (const char*)dest,
+	backupMade ? "(backup of existing file)" : "");
 
   return true;
 }
@@ -558,6 +562,7 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
 {
   QString grp = aCfg->group();
   QString value, cmd;
+  bool flag;
 
   cmd = aCmd.stripWhiteSpace();
 
@@ -601,9 +606,10 @@ void Theme::installCmd(KSimpleConfig* aCfg, const QString& aCmd,
   }
   else if (cmd == "oneDesktopMode")
   {
-    aCfg->writeEntry("OneDesktopMode", (aInstalled==1));
-    if (aInstalled==1)
-      aCfg->writeEntry("DeskNum", 0);
+    flag = readBoolEntry("CommonDesktop", true);
+    flag |= (aInstalled==1);
+    aCfg->writeEntry("OneDesktopMode",  flag);
+    if (flag) aCfg->writeEntry("DeskNum", 0);
   }
   else
   {
@@ -689,8 +695,9 @@ int Theme::installIcons(void)
   KSimpleConfig* cfg = NULL;
   KEntryDictEntry* entry;
   QString key, value, mapval, fname, fpath, destName, icon, miniIcon;
-  QString iconDir, miniIconDir, cmd;
+  QString iconDir, miniIconDir, cmd, destNameMini, localShareDir;
   QStrList pathList(true);
+  QStrList extraIcons;
   QFileInfo finfo;
   const char* path;
   int i, installed = 0;
@@ -719,12 +726,18 @@ int Theme::installIcons(void)
   mkdirhier("share/icons/mini");
   iconDir = kapp->localkdedir() + "/share/icons/";
   miniIconDir = kapp->localkdedir() + "/share/icons/mini/";
+  localShareDir = kapp->localkdedir() + "/share/";
 
-    // Process all mapping entries for the group
+  // Process all mapping entries for the group
   it = entryIterator(groupName);
   if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
   {
     key = it->currentKey();
+    if (stricmp(key.left(6),"Config")==0)
+    {
+      warning(i18n("Icon key name %s can not be used"), (const char*)key);
+      continue;
+    }
     value = entry->aValue;
     i = value.find(':');
     if (i > 0)
@@ -741,6 +754,7 @@ int Theme::installIcons(void)
 
     // test if there is a 1:1 mapping in the mappings file
     destName = mMappings->readEntry(key,0);
+    destNameMini = 0;
 
     // if not we have to search for the proper kdelnk file
     // and extract the icon name from there.
@@ -762,43 +776,89 @@ int Theme::installIcons(void)
 	delete cfg;
       }
     }
+    else
+    {
+      // test if the 1:1 mapping contains different names for icon
+      // and mini icon
+      i = destName.find(':');
+      if (i >= 0)
+      {
+	debug("mapping %s to...", (const char*)destName);
+	destNameMini = destName.mid(i+1, 1024);
+	destName = destName.left(i);
+	debug("   %s  %s", (const char*)destName, (const char*)destNameMini);
+      }
+    }
+
+    if (destNameMini.isEmpty()) destNameMini = destName;
 
     // If we have still not found a destination icon name we will install
     // the icons with their current name
     if (destName.isEmpty())
     {
+      if (icon.isEmpty()) continue;
       warning(i18n("No proper kdelnk file found for %s.\n"
 		   "Installing icon(s) as %s"),
 	      (const char*)key, (const char*)icon);
       destName = icon;
     }
 
-    if (destName.isEmpty()) continue;
-
     // install icons
-    value = iconDir + destName;
+    if (destName.find('/')>=0) 
+    {
+      mkdirhier(pathOf(destName),localShareDir);
+      value = localShareDir + destName;
+    }
+    else value = iconDir + destName;
     if (installFile(icon, value)) installed++;
 
-    value = miniIconDir + destName;
+    if (destNameMini.find('/')>=0) 
+    {
+      mkdirhier(pathOf(destNameMini),localShareDir);
+      value = localShareDir + destNameMini;
+    }
+    else value = miniIconDir + destNameMini;
     if (installFile(miniIcon, value)) installed++;
   }
 
-#ifdef NOT_NEEDED
-  if (backupDone)
-  {
-    warning(i18n("Existing icons in\n%s and\n%s\n"
-		 "were renamed by adding a tilde (~).\n"),
-	    (const char*)iconDir, (const char*)miniIconDir);
-  }
-#endif
-
-  // Schedule restart of kfm
-  value = "restart kfm";
-  if ((installed>0 || wantRestart) && mCmdList.find(value) < 0)
-    mCmdList.append(value);
+  // Look if there is anything to do after installation
+  value = mMappings->readEntry("ConfigActivateCmd");
+  if (!value.isEmpty() && (installed>0 || wantRestart) && 
+      mCmdList.find(value) < 0) mCmdList.append(value);
 
   writeInstFileList(groupName);
-  debug("*** done with Icons (%d icons installed)", installed);
+
+  // Handle extra icons
+  groupName = "Extra Icons";
+  setGroup(groupName);
+  mMappings->setGroup(groupName);
+  it = entryIterator(groupName);
+  if (it) for (entry=it->toFirst(); entry; entry=it->operator++())
+  {
+    key = it->currentKey();
+    value = entry->aValue;
+    i = value.find(':');
+    if (i > 0)
+    {
+      icon = value.left(i);
+      miniIcon = value.mid(i+1, 1024);
+    }
+    else
+    {
+      icon = value;
+      miniIcon = "mini-" + icon;
+      iconToMiniIcon(mThemePath + icon, mThemePath + miniIcon);
+    }
+
+    // Install icons
+    value = iconDir + icon;
+    if (installFile(icon, value)) installed++;
+
+    value = miniIconDir + miniIcon;
+    if (installFile(miniIcon, value)) installed++;
+  }
+
+  debug("*** done with %s (%d icons installed)", groupName, installed);
 
   mInstIcons += installed;
   return installed;
@@ -1231,6 +1291,25 @@ void Theme::colorSchemeApply(void)
   
   XFree((char*)rootwins);
 }
+
+
+//-----------------------------------------------------------------------------
+const QString Theme::fileOf(const QString& aName) const
+{
+  int i = aName.findRev('/');
+  if (i >= 0) return aName.mid(i+1, 1024);
+  return aName;
+}
+
+
+//-----------------------------------------------------------------------------
+const QString Theme::pathOf(const QString& aName) const
+{
+  int i = aName.findRev('/');
+  if (i >= 0) return aName.left(i);
+  return aName;
+}
+
 
 //-----------------------------------------------------------------------------
 #include "theme.moc"

@@ -32,6 +32,7 @@
 #include <qpushbt.h>
 #include <qradiobt.h>
 #include <qchkbox.h>
+#include <qfileinfo.h>
 #include <qlistbox.h>
 #include <qmultilinedit.h>
 #include <kbuttonbox.h>
@@ -164,12 +165,14 @@ void Installer::slotRemove()
   int cur = mThemesList->currentItem();
   QString cmd, themeFile;
   int rc;
+  QFileInfo finfo;
 
   if (cur < 0) return;
-  themeFile = Theme::themesDir() + mThemesList->text(cur) + ".*";
-  cmd.sprintf("rm %s", (const char*)themeFile);
+  themeFile = Theme::themesDir() + mThemesList->text(cur);
+  cmd.sprintf("rm -rf \"%s\"", (const char*)themeFile);
+  finfo.setFile(themeFile);
   rc = system(cmd);
-  if (rc)
+  if (rc || finfo.exists())
   {
     warning(i18n("Failed to remove theme %s"), (const char*)themeFile);
     return;
@@ -183,7 +186,7 @@ void Installer::slotRemove()
 //-----------------------------------------------------------------------------
 void Installer::slotSetTheme(int id)
 {
-  bool enabled;
+  bool enabled, isGlobal=false;
   QString name;
 
   if (id < 0)
@@ -197,15 +200,20 @@ void Installer::slotSetTheme(int id)
     name = mThemesList->text(id);
     if (name.isEmpty()) return;
 
-    if (name[name.length()-1]==' ')
-      name = Theme::globalThemesDir() + name.stripWhiteSpace();
+    isGlobal = (name[name.length()-1]==' ');
+    if (isGlobal) name = Theme::globalThemesDir() + name.stripWhiteSpace();
     else name = Theme::themesDir() + name;
 
     enabled = theme->load(name);
+    if (!enabled)
+    {
+      mPreview->setText(i18n("(no theme chosen)"));
+      mText->setText("");
+    }
   }
 
   mBtnExport->setEnabled(enabled);
-  mBtnRemove->setEnabled(enabled);
+  mBtnRemove->setEnabled(enabled && !isGlobal);
 }
 
 
@@ -224,12 +232,8 @@ void Installer::slotImport()
   path = dlg.dirPath();
   fpath = dlg.selectedFile();
   i = fpath.findRev('/');
-  if (i >= 0) fname = fpath.mid(i+1, 32767);
-  else fname = fpath;
-
-  i = fname.findRev(".tar.gz");
-  if (i > 0) theme = fname.left(i);
-  else theme = fname;
+  if (i >= 0) theme = fpath.mid(i+1, 1024);
+  else theme = fpath;
 
   // Copy theme package into themes directory
   cmd.sprintf("cp %s %s", (const char*)fpath, 
@@ -249,9 +253,12 @@ void Installer::slotImport()
 //-----------------------------------------------------------------------------
 void Installer::slotExport()
 {
-  QString fname, fpath, cmd, themeFile;
-  int cur;
+  QString fname, fpath, cmd, themeFile, ext;
+  bool isGlobal = false;
   static QString path;
+  QFileInfo finfo;
+  int cur, i;
+
   if (path.isEmpty()) path = QDir::homeDirPath();
 
   cur = mThemesList->currentItem();
@@ -259,12 +266,29 @@ void Installer::slotExport()
 
   themeFile = mThemesList->text(cur);
   themeFile.detach();
-  if (themeFile.find('.') < 0) themeFile += ".tar.gz";
+  if (themeFile.isEmpty()) return;
 
-  KFileDialog dlg(path, "*.tar.gz", 0, 0, true, false);
+  isGlobal = (themeFile[themeFile.length()-1]==' ');
+  if (isGlobal) fpath = Theme::globalThemesDir() + themeFile.stripWhiteSpace();
+  else fpath = Theme::themesDir() + themeFile;
+
+  finfo.setFile(fpath);
+  if (finfo.isDir())
+  {
+    themeFile += ".tar.gz";
+    ext = "*.tar.gz";
+  }
+  else
+  {
+    i = themeFile.findRev('.');
+    ext = '*' + themeFile.mid(i, 256);
+  }
+
+  KFileDialog dlg(path, ext, 0, 0, true, false);
   dlg.setCaption(i18n("Export Theme"));
   dlg.setSelection(themeFile);
   if (!dlg.exec()) return;
+
   path = dlg.dirPath();
   fpath = dlg.selectedFile();
 

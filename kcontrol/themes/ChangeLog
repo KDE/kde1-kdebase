@@ -1,3 +1,30 @@
+1998-12-24  Stefan Taferner  <taferner@kde.org> (V0.6)
+
+	* Added CommonDesktop entry in Desktop section. Now
+	it is possible to have several desktop wallpapers
+	in the theme package, but still set the desktop mode 
+	to common desktop.
+
+	* Added ExtraIcons key, that 
+
+	* Fixed broken export of theme packages.
+
+	* Fixed broken remove of theme packages.
+
+	* Replaced restart of kfm with "kfmclient configure.
+
+	* Fixed bug in theme import that required to restart
+	the theme manager after an import (to make the theme
+	accessible).
+
+	* Added automatic creation of destination directories
+	for special icons.
+
+1998-12-21  Stefan Taferner  <taferner@kde.org>
+
+	* Added support for special icons that need to
+	be placed in apps' directories (Go button icon, etc.)
+
 1998-12-20  Stefan Taferner  <taferner@kde.org> (V0.5.2)
 
 	* If no mini icon is supplied it is now automatically

@@ -199,6 +199,12 @@ protected:
   /** Run krdb if krdb-usage is enabled. */
   virtual void runKrdb(void) const;
 
+  /** Returns filename of given file+path (name up to the last slash) */
+  virtual const QString fileOf(const QString&) const;
+
+  /** Returns path of given file+path (up to the last slash) */
+  virtual const QString pathOf(const QString&) const;
+
 protected:
   QString mName;           // Name of the theme
   QString mFileName;       // Name+path

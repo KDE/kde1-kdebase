@@ -321,9 +321,9 @@ ConfigFile=kdisplayrc
 ConfigGroup=Desktop Common
 ConfigInstallCmd=oneDesktopMode
 ConfigActivateCmd=kwmcom kbgwm_reconfigure
-ConfigNextGroup=Display-root-icons
+ConfigNextGroup=Display-root-icon-style
 #
-[Display-root-icons]
+[Display-root-icon-style]
 ConfigFile=kfmrc
 ConfigGroup=KFM Root Icons
 ConfigActivateCmd=kfmclient configure
@@ -335,7 +335,17 @@ RootIconTextBackground=Background!
 #-----------------------------------------------------------------------------
 # This group is handled special. Here are all the icons that do not match
 # exactly one kdelnk icon entry. The icon name is the name of the icon
-# it will have when it is copied to ~/.kde/share/icons
+# it will have when it is copied to ~/.kde/share/icons and 
+# ~/.kde/share/icons/mini
+# If a path is given then the path will be treated relative to ~/.kde/share,
+# and the icons will be copied there.
+# A colon separates the name of the icon from the name of the mini
+# icon.
 [Icons]
+ConfigActivateCmd=kfmclient configure
 Trash=kfm_trash.xpm
 TrashFull=kfm_fulltrash.xpm
+PanelGo=apps/kpanel/pics/go.xpm:apps/kpanel/pics/mini/go.xpm
+PanelExit=apps/kpanel/pics/exit.xpm
+PanelKey=apps/kpanel/pics/key.xpm
+PanelWindowList=apps/kpanel/pics/window_list.xpm:apps/kpanel/pics/mini/window_list.xpm

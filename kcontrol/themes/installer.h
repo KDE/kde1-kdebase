@@ -44,10 +44,6 @@ public:
   virtual void loadSettings();
   virtual void applySettings();
 
-signals:
-  /** emitted when a new theme is loaded or imported. */
-  void themeChanged(Theme*);
-
 protected slots:
   virtual void slotImport();
   virtual void slotExport();

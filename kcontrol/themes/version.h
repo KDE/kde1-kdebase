@@ -1,4 +1,4 @@
 #ifndef VERSION_H
 #define VERSION_H
-#define KTHEME_VERSION "0.5.2"
+#define KTHEME_VERSION "0.6"
 #endif
