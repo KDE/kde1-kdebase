@@ -39,8 +39,8 @@ void mainWidget::paintEvent(QPaintEvent *)
   QFont boldFont("times",12,QFont::Bold);
   KApplication::getKApplication()->getCharsets()->setQFont(boldFont);
 
-  
-  p.drawPixmap(10,250,pmap);
+  // center the pixmap horizontally
+  p.drawPixmap( (width() - pmap.width())/2, 250, pmap);
   p.setFont(boldFont);
   p.drawText(20,70,i18n("System:"));
 
