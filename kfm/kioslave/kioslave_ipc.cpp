@@ -32,7 +32,7 @@ bool KIOSlaveIPC::isConnected()
 
 void KIOSlaveIPC::closeEvent( KSocket * )
 {
-    kdebug(KDEBUG_INFO, 0, "******** EXIT ********\n");
+    //kdebug(KDEBUG_INFO, 0, "******** EXIT ********\n");
     exit(1);
     connected = FALSE;
 }
