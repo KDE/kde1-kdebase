@@ -1,0 +1,591 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 98-03-23 18:21+0100\n"
+"Last-Translator: Svein Olav Aasen <svein.aasen@caa.no / soaasen@online.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Banner"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "KBanner oppsett"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Farge:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Hastighet"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Melding:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "Om Banner"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr "Banner versjon 0.1\n"
+"\n"
+"skrevet av Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE is great"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Bat"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "KBat oppsett"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Antall flaggermus"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "Om Bat"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Blank skjerm"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "KBlankscrn oppsett"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Tilfeldig linjær"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Horizontal sinus"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Sirkulær sprett"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Polar koordinater"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Tilfeldig"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Beklager. Denne skjermspareren trenger en fargeskjerm"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Blob Saver oppsett"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "Ramme show sec."
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Algoritme"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Om Blob"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr "Blobsaver versjon 0.1\n"
+"\n"
+"skrevet av Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Blobs"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Flame"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "KFlame oppsett"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Maks. nivå:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Antall punkter:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Om Flame"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr "Flame versjon 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Forest"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "KForest oppsett"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Antall trær:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Om Forest"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "KHop oppsett"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Samme farge pixels:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Sykluser:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Om Hop"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Hop versjon 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laser"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "KLaser oppsett"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Om Laser"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr "Laser versjon 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Lines"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "KLines oppsett"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Lengde:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Begynner:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Midten:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Slutt:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Om Lines"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr "Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "KLissie oppsett"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Antall Lissies:"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Om Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Valg %s har ikke støtte på denne plattform!"
+
+#: main.cpp:306
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr "Ditt system bruker skygge passord!\n"
+"Vennligst kontakt din system administrator.\n"
+"\n"
+"Fortell ham at du trenger suid for skjermsparerne!"
+
+#: main.cpp:311
+msgid "Shadow Passwords"
+msgstr "Skygge passord"
+
+#: main.cpp:469
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr "Bruk: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n""
+
+#: main.cpp:472
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr "  -corners xxxx     Plassering av cursor i hjørne utfører handling:\n"
+"                     x = i  ingen handling (ignorer)\n"
+"                     x = s  lagre skjerm\n"
+"                     x = l  låse skjerm\n"
+"                    rekkefølge: topp-venstre, topp-høyre, bunn-venstre, bunn-høyre\n"
+"  -delay num        Tid PC ikke er i bruk før skjermsparer\n"
+"                     starter  (standard 10min)\n"
+"  -desc             Skriv skjermsparerens beskrivelse til stdout\n"
+"  -install          Installer skjermsparer\n"
+"  -lock             Krever passord for å stoppe skjermsparer\n"
+"  -nice num         Kjør med spesifisert fin verdi\n"
+"\n"
+"  -preview wid      Kjør i det spesifiserte XWindow\n"
+"  -inroot           Kjør i root window\n"
+"  -setup            Skjermsparer oppsett\n"
+"  -test             Ta i bruk skjermspareren øyeblikkelig\n"
+
+#: morph3d.cpp:839
+msgid "GL can not render with root visual\n"
+msgstr "GL kan ikke render med rot visuell\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morf3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "KMorph3d oppsett"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Objekt type:"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Om Morph3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Polygoner"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "KPolygon oppsett"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Vertices:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Om Polygon"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr "Polygon Version 0.1\n"
+"\n"
+"skrevet av Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Pyro"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Pyro oppsett"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "Number:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Sky"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Om Pyro"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr "Pyro versjon 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "Rock"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "KRock oppsett"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Flytt"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Roter"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "Om Rock"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr "Rock versjon 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Skriv inn passord"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Slo feil"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Slip"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "KSlip oppsett"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Batchcount:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Om Slip"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Swarm"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "KSwarm oppsett"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Antall bier"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Om Swarm"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr "Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
