@@ -241,9 +241,6 @@ protected:
      */
     bool bBufferPage;
 
-    // A HACK
-    QString HTMLBuffer;
-
     /**
      * If we call @ref KHTMLWidget::begin next time, then we get the
      * vertical offset from this variable. It is set by a call to
