@@ -16,7 +16,7 @@ test "$CXXFLAGS" = "" && CXXFLAGS="-O2 -Wall"
 test "$LDFLAGS" = "" && LDFLAGS="-s"
 
 dnl make $KDEDIR the default for the installation
-AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local})
+AC_PREFIX_DEFAULT(${KDEDIR:-/usr/local/kde})
 
 dnl version and name (not really needed)
 VERSION=0.7
