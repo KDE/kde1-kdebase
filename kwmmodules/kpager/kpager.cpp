@@ -66,7 +66,8 @@ KPager::KPager(KWMModuleApplication *kwmmapp,const char *name)
                      kpagerclient,SLOT(desktopNumberChanged(int)));
     QObject::connect(kwmmapp,SIGNAL(desktopChange(int)),
                      kpagerclient,SLOT(desktopChanged(int)));
-
+    QObject::connect(kwmmapp,SIGNAL(commandReceived(QString)),
+                     kpagerclient,SLOT(commandReceived(QString)));
 
 
     m_file = new QPopupMenu;

@@ -36,9 +36,10 @@ struct WindowProperties
     QString name;
     bool active;
     QRect geometry;
-    QRect framegeometry;
     QRect minigeometry;
-
+    QRect framegeometry;
+    QRect miniframegeometry;
+    QPixmap *icon;
 };
 
 class Desktop : public QWidget , QDropSite
@@ -47,7 +48,9 @@ class Desktop : public QWidget , QDropSite
 
 private:
     int id;
-
+    QFont *desktopfont;
+    QPixmap *tmpScreen;
+    
     QList <WindowProperties> *window_list;
 
     int screen_width, screen_height;
@@ -56,6 +59,8 @@ private:
     bool desktopActived;
     static int headerHeight;
     
+    enum { plain, icon, pixmap } drawWinMode;
+
     int getIndexOfWindow(Window w);
     WindowProperties *windowAtPosition(const QPoint *p,bool *ok=0L,QPoint *pos=0L);
 
@@ -71,6 +76,7 @@ private:
     bool useWallpaper;
     QColor color1;
     QColor color2;
+    uint pattern[8];
     
     enum { Tiled = 1, Centred, Scaled};
     int wpMode;
@@ -81,7 +87,8 @@ private:
     enum { Portrait = 1,Landscape };
     int orMode;
     
-    void readBackgroundSettings(void);
+    void readBackgroundSettings(void);     // read kbgndwm settings
+    void prepareBackground(void);          // fills the backgroundPixmap
     QPixmap *loadWallpaper(QString wallpaper);
     
 
@@ -101,6 +108,8 @@ public:
     void raiseWindow(Window w);
     void lowerWindow(Window w);
     void activateWindow(Window w);
+
+    void reconfigure(void); // Reads again the kbgndwm settings
 
     static int getHeaderHeight(void);
     

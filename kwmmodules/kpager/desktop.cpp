@@ -40,6 +40,7 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     setBackgroundMode(NoBackground);
 
     QPainter *qp=new QPainter(this);
+    tmpScreen=new QPixmap;
     headerHeight=qp->fontMetrics().height()+5;
     delete qp;
 
@@ -48,6 +49,12 @@ Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
     useBackgroundInfoFromKbgndwm=false;
     useWallpaper=false;
 
+    drawWinMode=icon;
+    KConfig *kcfg=(KApplication::getKApplication())->getConfig();
+    QFont *defaultfont=new QFont("helvetica",12);
+    desktopfont=new QFont(kcfg->readFontEntry("DesktopFont",defaultfont));
+    delete defaultfont;
+    
     readBackgroundSettings();
 
 }
@@ -58,6 +65,10 @@ Desktop::~Desktop()
     printf("~Desktop\n");
 #endif
     delete window_list;
+
+    delete tmpScreen;
+    delete desktopfont;
+    
     if (backgroundPixmap!=0L) delete backgroundPixmap;
     if (bigBackgroundPixmap!=0L) delete bigBackgroundPixmap;
 }
@@ -95,6 +106,7 @@ void Desktop::addWindow(Window w,int pos)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    wp->icon=new QPixmap(KWM::icon(w));
     if (pos==-1) window_list->append(wp);
      else window_list->insert(pos,wp);
     update();
@@ -131,6 +143,7 @@ void Desktop::changeWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    wp->icon=new QPixmap(KWM::icon(w));
     window_list->insert(wid,wp);
     update();
 }
@@ -145,6 +158,7 @@ void Desktop::raiseWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    wp->icon=new QPixmap(KWM::icon(w));
     window_list->append(wp);
     update();
 }
@@ -159,6 +173,7 @@ void Desktop::lowerWindow(Window w)
     wp->active=(KWM::activeWindow()==w)? true: false;
     wp->geometry=KWM::geometry(w,FALSE);
     wp->framegeometry=KWM::geometry(w,TRUE);
+    wp->icon=new QPixmap(KWM::icon(w));
     window_list->insert(0,wp);
     update();
 }
@@ -240,16 +255,17 @@ int Desktop::headerHeight=25;
 
 void Desktop::paintEvent(QPaintEvent *)
 {
-    QPainter *painter=new QPainter(this);
-    painter->setPen(QColor(0,0,0));
+    tmpScreen->resize(width(),height());
+    QPainter *painter=new QPainter(tmpScreen);
     QRect tmp,tmp2;
     int x=0;
     int y=getHeaderHeight();
     painter->fillRect(0,0,width(),y,QColor(192,192,192));
 
-    painter->drawText(20,getHeaderHeight()*3/4,name(),strlen(name()));
-
     drawSunkRect(painter,2,2,10,16,desktopActived ? true : false);
+    painter->setPen(QColor(0,0,0));
+    painter->setFont(*desktopfont);
+    painter->drawText(20,getHeaderHeight()*3/4,name(),strlen(name()));
     
     WindowProperties *wp=window_list->first();
     painter->setClipRect(x,y,width()-x,height()-y);
@@ -280,14 +296,32 @@ void Desktop::paintEvent(QPaintEvent *)
 
             painter->fillRect(tmp2,QColor(145,145,145));
         }
+
+        if ((drawWinMode==icon)&&(wp->icon->width()!=0)&&(wp->icon->height()!=0))
+        {
+            QWMatrix matrix;
+
+            double rx=(double)tmp2.width()/wp->icon->width();
+            double ry=(double)(tmp2.height())/wp->icon->height();
+            rx=(rx<ry)? rx : ry;
+            matrix.scale(rx,rx);
+            QPixmap *tmpicon=new QPixmap(wp->icon->xForm(matrix));
+            painter->drawPixmap(tmp2.center().x()-tmpicon->width()/2,tmp2.center().y()-tmpicon->height()/2,*(tmpicon));
+            delete tmpicon;
+        }
+        
         painter->drawRect(tmp);
         wp=window_list->next();
     }
     painter->setClipping(FALSE);
-    painter->setPen(QColor(0,0,0));
+//    painter->setPen(QColor(0,0,0));
     painter->drawRect(0,0,width(),height());
 
     delete painter;
+    painter=new QPainter(this);
+    painter->drawPixmap(0,0,*tmpScreen);
+    delete painter;
+
 }
 
 bool Desktop::contains(Window w)
@@ -425,16 +459,15 @@ void Desktop::readBackgroundSettings(void)
     str = config.readEntry( "Color2", "#4682B4");
     color2.setNamedColor(str);
     
-    gfMode=Flat;
-    uint pattern[8];
     str = config.readEntry("ColorMode");
     if (str == "Gradient")
     {
         gfMode=Gradient;
+        useBackgroundInfoFromKbgndwm=true;
+
     }
     else if (str == "Pattern" )
     {
-	printf("Pattern background are not supported (yet)\n");
         gfMode=Pattern;
         QStrList strl;
         config.readListEntry("Pattern", strl);
@@ -443,7 +476,14 @@ void Desktop::readBackgroundSettings(void)
         uint i = 0;
         for (i = 0; i < 8; i++)
             pattern[i] = (i < size) ? QString(strl.at(i)).toUInt() : 255;
+        useBackgroundInfoFromKbgndwm=true;
+        
     }
+    else if (str == "Flat")
+    {
+        gfMode=Flat;
+        useBackgroundInfoFromKbgndwm=true;
+    };
     
     orMode=Portrait;
     str = config.readEntry( "OrientationMode" );
@@ -458,7 +498,7 @@ void Desktop::readBackgroundSettings(void)
         else if ( str == "Scaled" )
             wpMode = Scaled;
     }
-    
+
     useWallpaper = config.readBoolEntry( "UseWallpaper", false );
     QString wallpaper;
     if ( useWallpaper )
@@ -482,6 +522,7 @@ void Desktop::readBackgroundSettings(void)
         printf("[%d]Use wallpaper\n",id);
 #endif
     }
+/*
     if ((!useWallpaper)||(wallpaper.isEmpty()))
     {
         switch (gfMode)
@@ -501,9 +542,21 @@ void Desktop::readBackgroundSettings(void)
 #ifdef DESKTOPDEBUG
                 printf("[%d]Use background\n",id);
 #endif
-            }
+            } break;
+        case Flat:
+            {
+                if (backgroundPixmap==0L)
+                {
+                    backgroundPixmap=new QPixmap;
+                    backgroundPixmap->resize(width(),height()-getHeaderHeight());
+                }
+                backgroundPixmap->fill(color1);
+                useBackgroundInfoFromKbgndwm=true;
+            } break;
+            
         }
-    };
+        };
+        */
 };
 
 QPixmap *Desktop::loadWallpaper(QString wallpaper)
@@ -528,29 +581,75 @@ QPixmap *Desktop::loadWallpaper(QString wallpaper)
     return wpPixmap;
 }
 
-void Desktop::resizeEvent (QResizeEvent *)
+void Desktop::prepareBackground(void)
 {
-    if (!useBackgroundInfoFromKbgndwm) return;
     if ((!useWallpaper)||(wpMode==Centred))
     {
-        if(gfMode==Gradient)
+        switch (gfMode)
         {
-            int numColors=4;
-            if (QColor::numBitPlanes() > 8)
-                numColors=16;
-            KPixmap *kBackgroundPixmap = new KPixmap;
-            kBackgroundPixmap->resize(width(),height()-getHeaderHeight());
+        case (Gradient):
+            {
+                int numColors=4;
+                
+                if (QColor::numBitPlanes() > 8)
+                    
+                    numColors=16;
+                KPixmap *kBackgroundPixmap = new KPixmap;
+                kBackgroundPixmap->resize(width(),height()-getHeaderHeight());
 #ifdef DESKTOPDEBUG
-	    printf("size %d x %d\n",width(),height());
+                printf("size %d x %d\n",width(),height());
 #endif
-            if (width()>1)
-                kBackgroundPixmap->gradientFill(color2,color1,(orMode==Portrait)?true:false,numColors);
-	    else
-	        kBackgroundPixmap->fill(QColor(0,0,192));
-            if (backgroundPixmap!=0L) delete backgroundPixmap;
-            backgroundPixmap=new QPixmap;
-            *backgroundPixmap=*kBackgroundPixmap;
-            delete kBackgroundPixmap;
+                if (width()>1)
+                    kBackgroundPixmap->gradientFill(color2,color1,(orMode==Portrait)?true:false,numColors);
+                else
+                    kBackgroundPixmap->fill(QColor(0,0,0));
+                if (backgroundPixmap!=0L) delete backgroundPixmap;
+                backgroundPixmap=new QPixmap;
+                *backgroundPixmap=*kBackgroundPixmap;
+                delete kBackgroundPixmap;
+            } break;
+        case (Pattern) :
+            {
+                QPixmap tile(8, 8);
+                tile.fill(color2);
+                QPainter pt;
+                pt.begin(&tile);
+                pt.setBackgroundColor( color2 );
+                pt.setPen( color1 );
+                int x,y;
+                
+                for (y = 0; y < 8; y++) {
+                    uint v = pattern[y];
+                    for (x = 0; x < 8; x++) {
+                        if ( v & 1 )
+                            pt.drawPoint(7 - x, y);
+                        v /= 2;
+                    }
+                }
+                pt.end();
+                if (backgroundPixmap!=0L) delete backgroundPixmap;
+                backgroundPixmap=new QPixmap;
+                backgroundPixmap->resize(width(),height()-getHeaderHeight());
+                y=0;
+                while (y<tile.height()+height()-getHeaderHeight())
+                    {
+                        x=0;
+                        while (x<width()+tile.width())
+                        {
+                            bitBlt(backgroundPixmap,x,y,&tile,0,0,tile.width(),tile.height(),CopyROP);
+                            x+=tile.width();
+                        }
+                        y+=tile.height();
+                    }
+                
+            } break;
+        case (Flat) :
+            {
+                if (backgroundPixmap==0L)
+                    backgroundPixmap=new QPixmap;
+                backgroundPixmap->resize(width(),height()-getHeaderHeight());
+                backgroundPixmap->fill(color1);
+            } break;
         }
     }
     if (useWallpaper)
@@ -585,18 +684,18 @@ void Desktop::resizeEvent (QResizeEvent *)
 #endif
                 if ((tmp->height()>2)&&(tmp->width()>2))
                 {
-                while (y<tmp->height()+height()-getHeaderHeight())
-                {
-                    x=0;
-                    while (x<width()+tmp->width())
+                    while (y<tmp->height()+height()-getHeaderHeight())
                     {
-                        bitBlt(backgroundPixmap,x,y,tmp,0,0,tmp->width(),tmp->height(),CopyROP);
-                        x+=tmp->width();
+                        x=0;
+                        while (x<width()+tmp->width())
+                        {
+                            bitBlt(backgroundPixmap,x,y,tmp,0,0,tmp->width(),tmp->height(),CopyROP);
+                            x+=tmp->width();
+                        }
+                        y+=tmp->height();
                     }
-                    y+=tmp->height();
-                };
                 } else
-                    backgroundPixmap->fill(QColor(0,0,195));
+                    backgroundPixmap->fill(QColor(0,0,0));
                 delete tmp;
 
             } break;
@@ -615,5 +714,20 @@ void Desktop::resizeEvent (QResizeEvent *)
         }
         
     }
+}
 
-};
+void Desktop::resizeEvent (QResizeEvent *)
+{
+    if (!useBackgroundInfoFromKbgndwm) return;
+    prepareBackground();
+
+
+}
+
+void Desktop::reconfigure(void)
+{
+    useWallpaper=false;
+    readBackgroundSettings();
+    prepareBackground();
+    update();
+}

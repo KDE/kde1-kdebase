@@ -65,7 +65,8 @@ KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const 
     
     desktopContainer=new QWidget(this,"desktopContainer");
     desktopContainer->setBackgroundColor(QColor(96,129,137));
-//    setBackgroundColor(QColor(96,129,137));
+    setBackgroundMode(NoBackground);
+    //    setBackgroundColor(QColor(96,129,137));
 
     initDesktops();
 
@@ -362,12 +363,12 @@ void KPagerClient::updateRects(bool onlydesktops)
         {
             desktop[0]->setGeometry(width()-w-5,5,w,h);
             right->setGeometry(width()-w-30,0,20,height()/2);
-            left->setGeometry(width()-w-30,height()/2,20,height()/2);
+            left->setGeometry(width()-w-30,height()/2,20,height()/2+1);
         }
         else
         {
             right->setGeometry(width()-20,0,20,height()/2);
-            left->setGeometry(width()-20,height()/2,20,height()/2);
+            left->setGeometry(width()-20,height()/2,20,height()-height()/2);
         };
 }
 
@@ -422,18 +423,33 @@ void KPagerClient::paintEvent(QPaintEvent *)
 {
     if (right->x()<6) return;
     QPainter *painter=new QPainter(this);
-    
-    //   painter->fillRect(0,0,right->x(),height(),QColor(96,129,137));
-    painter->setPen(QColor(236,236,236));
+    // I suppose painting four small bars is faster than painting a big rect which
+    // is mostly behind another widget
+//    painter->fillRect(0,0,right->x(),height(),QColor(96,129,137));
+    QColorGroup qcg;
+    qcg=colorGroup();
+    if (visibleGlobalDesktop)
+    {
+        painter->fillRect(right->x()+right->width(),0,desktop[0]->x(),height(),qcg.background());
+        painter->fillRect(right->x()+right->width(),0,width()-right->x()-right->width(),desktop[0]->y(),qcg.background());
+        painter->fillRect(desktop[0]->x()+desktop[0]->width(),0,width()-desktop[0]->x()-desktop[0]->width(),height(),qcg.background());
+        painter->fillRect(right->x()+right->width(),desktop[0]->y()+desktop[0]->height(),width()-right->x()-right->width(),height()-desktop[0]->y()-desktop[0]->height(),qcg.background());
+    }
+
+    //    painter->setPen(QColor(236,236,236));
+    painter->setPen(qcg.light());
     painter->drawLine(0,height()-1,right->x()-1,height()-1);
     painter->drawLine(right->x()-1,0,right->x()-1,height()-1);
-    painter->setPen(QColor(193,193,193));
+    //    painter->setPen(QColor(193,193,193));
+    painter->setPen(qcg.background());
     painter->drawLine(1,height()-2,right->x()-2,height()-2);
     painter->drawLine(right->x()-2,1,right->x()-2,height()-2);
-    painter->setPen(QColor(145,145,145));
+    //    painter->setPen(QColor(145,145,145));
+    painter->setPen(qcg.mid());
     painter->drawLine(0,0,0,height()-1);
     painter->drawLine(0,0,right->x()-1,0);
-    painter->setPen(QColor(96,96,96));
+    //    painter->setPen(QColor(96,96,96));
+    painter->setPen(qcg.dark());
     painter->drawLine(1,1,1,height()-2);
     painter->drawLine(1,1,right->x()-2,1);
     painter->setPen(QColor(0,0,0));
@@ -445,3 +461,19 @@ void KPagerClient::paintEvent(QPaintEvent *)
     painter->drawLine(3,height()-5,right->x()-4,height()-5);
     delete painter;
 }
+
+void KPagerClient::commandReceived(QString s)
+{
+    if (strcmp(s.data(),"kbgwm_reconfigure")==0)
+    {
+        for (int i=1;i<=numberofDesktops;i++)
+        {
+            if (desktop[i]!=NULL) desktop[i]->reconfigure();
+        }
+    }
+
+#ifdef KPAGERCLIENTDEBUG
+    else
+        printf("KPager: Command (%s) is not for me\n",s.data());
+#endif
+};

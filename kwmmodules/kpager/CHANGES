@@ -1,0 +1,12 @@
+* Mon Sep 28 7:40:00 CEST 1998  Antonio Larrosa <antlarr@arrakis.es>
+
+Increased painting speed and removed flickering by adding a buffer
+Added pattern backgrounds support
+Improved colors usage (using QColorGroup)
+Respond to kbgndwm commands (for configuration changes)
+Other small changes
+
+* Sun Sep 27 10:03:00 CEST 1998  Antonio Larrosa <antlarr@arrakis.es>
+
+Initial release
+

@@ -97,6 +97,7 @@ public slots:
     void windowActivated(Window);
     void desktopNameChanged(int,QString);
     void desktopNumberChanged(int);
+    void commandReceived(QString s);
 
     void moveWindow(Window w,int dsk,int x,int y, int origdesk);
     void switchToDesktop(int i);
