@@ -82,7 +82,7 @@ Kfind::Kfind( QWidget *parent, const char *name, const char *searchPath )
 
 Kfind::~Kfind() {
   if(iBuffer)
-    delete iBuffer;
+    delete [] iBuffer;
 }
 
 void Kfind::copySelection() {
@@ -103,7 +103,7 @@ void Kfind::startSearch()
   {
     // init buffer
     if(iBuffer)
-      free(iBuffer);
+      delete [] iBuffer;
     
     iBuffer = new char[IBUFSIZE];
     iBuffer[0] = 0;
