@@ -1,7 +1,7 @@
 ## kdebase/Makefile.am
 ## (C) 1997 Stephan Kulow
 
-SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt kwm klogout kwmclient kscreensaver pics
+SUBDIRS = kfm kdehelp kdisplay kfontmanager kfind kpanel kvt kwm klogout kwmclient kscreensaver pics po
 
 install-data-local:
 	@echo ""

@@ -29,3 +29,6 @@
 /* define if you have PAM (Pluggable Authentication Modules); Redhat-Users! */
 #undef HAVE_PAM
 
+/* Define to 1 if NLS is requested.  */
+#undef ENABLE_NLS
+
