@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind \n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: 1998-05-25 18:57+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -118,111 +118,111 @@ msgstr "&Przegl±daj..."
 msgid "Include &subfolders"
 msgstr "Do³±cz &podkatalogi"
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:117
 msgid " Name& Location "
 msgstr " &Nazwa/Lokacja "
 
-#: kftabdlg.cpp:126
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "i"
 
-#: kftabdlg.cpp:127
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "miesi±ca/miesiêcy"
 
-#: kftabdlg.cpp:128
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "dnia/dni"
 
-#: kftabdlg.cpp:143
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "&Wszystkie pliki"
 
-#: kftabdlg.cpp:144
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "Znajd¼ wszystkie pliki sworzone lub &zmodyfikowane"
 
-#: kftabdlg.cpp:145
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "&pomiêdzy"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "&podczas poprzedniego "
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "&podczas poprzedniego "
 
-#: kftabdlg.cpp:195
+#: kftabdlg.cpp:198
 msgid " Date Modified "
 msgstr " &Data modyfikacji "
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "&Typu:"
 
-#: kftabdlg.cpp:204
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "&Zawieraj±ce:"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "&Rozmiar:"
 
-#: kftabdlg.cpp:232
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "Wszystkie pliki i katalogi"
 
-#: kftabdlg.cpp:234
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr "Katalogi"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr "Symboliczne odno¶niki"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr "Pliki specjalne (gniazdka, urz±dzenia...)"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr "Pliki wykonywalne"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr "Pliki wykonywalne SUID"
 
-#: kftabdlg.cpp:246
+#: kftabdlg.cpp:249
 msgid "(none)"
 msgstr ""
 
-#: kftabdlg.cpp:247
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "Co najmniej"
 
-#: kftabdlg.cpp:248
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "Najwy¿ej"
 
-#: kftabdlg.cpp:259
+#: kftabdlg.cpp:262
 msgid " Advanced "
 msgstr " Zaawansowane "
 
-#: kftabdlg.cpp:494
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "Data nie jest poprawna!!"
 
-#: kftabdlg.cpp:506
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "Miesi±c nie jest poprawny"
 
-#: kftabdlg.cpp:517
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "Dzieñ nie jest poprawny!!"
 
-#: kftabdlg.cpp:534
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "Rozmiar pliku nie jest poprawny!!"
 

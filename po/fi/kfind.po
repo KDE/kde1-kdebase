@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCMBELL\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -121,111 +121,111 @@ msgstr "&Selaa ..."
 msgid "Include &subfolders"
 msgstr "Etsi &alikansioista"
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:117
 msgid " Name& Location "
 msgstr " Nime&‰ Sijainti "
 
-#: kftabdlg.cpp:126
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "ja"
 
-#: kftabdlg.cpp:127
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "kuukauden aikana"
 
-#: kftabdlg.cpp:128
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "p‰iv‰n aikana"
 
-#: kftabdlg.cpp:143
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "&Kaikki tiedostot"
 
-#: kftabdlg.cpp:144
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "Etsi kaikki luodut tai &muutetut tiedostot:"
 
-#: kftabdlg.cpp:145
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "&v‰lill‰"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "&kuluneen"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "k&uluneen"
 
-#: kftabdlg.cpp:195
+#: kftabdlg.cpp:198
 msgid " Date Modified "
 msgstr " Muutettu P‰iv‰n‰ "
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "&Tyyppi‰:"
 
-#: kftabdlg.cpp:204
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "&Sis‰lt‰‰ Tekstin:"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "&Kooltaan:"
 
-#: kftabdlg.cpp:232
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "Kaikki tiedostot ja kansiot"
 
-#: kftabdlg.cpp:234
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr "Kansiot"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr "Symboliset linkit"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr "Erikoistiedostot (laitetiedostot...)"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr "Suoritettavat tiedostot"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr "SUID suoritettava tiedosto"
 
-#: kftabdlg.cpp:246
+#: kftabdlg.cpp:249
 msgid "(none)"
 msgstr "(ei mik‰‰n)"
 
-#: kftabdlg.cpp:247
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "V‰hint‰‰n"
 
-#: kftabdlg.cpp:248
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "Enint‰‰n"
 
-#: kftabdlg.cpp:259
+#: kftabdlg.cpp:262
 msgid " Advanced "
 msgstr " Tarkennettu "
 
-#: kftabdlg.cpp:494
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "P‰iv‰m‰‰r‰ ei ole oikein!!"
 
-#: kftabdlg.cpp:506
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "Kuukausi ei ole oikein!!"
 
-#: kftabdlg.cpp:517
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "P‰iv‰ ei ole oikein!!"
 
-#: kftabdlg.cpp:534
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "Koko ei ole oikein!!"
 

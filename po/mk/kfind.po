@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: 1998-05-17 20:00-0500-\n"
 "Last-Translator: Vlatko Cingoski <vlatko@eml.hiroshima-u.ac.jp>\n"
 "Language-Team: Macedonian\n"
@@ -119,111 +119,111 @@ msgstr "&Listaj ..."
 msgid "Include &subfolders"
 msgstr "Vkluchi gi i poddi&rektoriumite"
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:117
 msgid " Name& Location "
 msgstr "Ime i Lokacija"
 
-#: kftabdlg.cpp:126
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "i"
 
-#: kftabdlg.cpp:127
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "mesec(i)"
 
-#: kftabdlg.cpp:128
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "den(ovi)"
 
-#: kftabdlg.cpp:143
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "Si&te documenti"
 
-#: kftabdlg.cpp:144
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "Pronajdi gi site documenti koi se sozdadeni ili pro&meneti:"
 
-#: kftabdlg.cpp:145
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "&megju"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "za vreme na pret&hodniot(te)"
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "za &vreme na prethodniot"
 
-#: kftabdlg.cpp:195
+#: kftabdlg.cpp:198
 msgid " Date Modified "
 msgstr "Den na Promena"
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "Od &tip:"
 
-#: kftabdlg.cpp:204
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "&Shto go sodrzzi sledniot tekst:"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "&Golemina:"
 
-#: kftabdlg.cpp:232
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "Site Documenti i Direktoriumi"
 
-#: kftabdlg.cpp:234
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr ""
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr ""
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr ""
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr ""
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr ""
 
-#: kftabdlg.cpp:246
+#: kftabdlg.cpp:249
 msgid "(none)"
 msgstr ""
 
-#: kftabdlg.cpp:247
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "Vo najlosh sluchaj"
 
-#: kftabdlg.cpp:248
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "Vo najdobar sluchaj"
 
-#: kftabdlg.cpp:259
+#: kftabdlg.cpp:262
 msgid " Advanced "
 msgstr "Napreden "
 
-#: kftabdlg.cpp:494
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "Datumot ne e korekten!!"
 
-#: kftabdlg.cpp:506
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "Mesecot(cite) ne se korektni!!"
 
-#: kftabdlg.cpp:517
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "Den(ovite) ne se korektni!!"
 
-#: kftabdlg.cpp:534
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "Vrednosta ne e korektna - greshen broj!!"
 

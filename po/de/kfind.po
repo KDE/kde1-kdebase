@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfind\n"
-"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: 1998-05-08 23:54+0100\n"
 "Last-Translator: Tobias Burnus <burnus@berlin1.netsurf.de>\n"
 "Language-Team: German <kde-i18n@kde.org>\n"
@@ -118,111 +118,111 @@ msgstr "B&lättern..."
 msgid "Include &subfolders"
 msgstr "&Unterverzeichnisse einschließen"
 
-#: kftabdlg.cpp:114
+#: kftabdlg.cpp:117
 msgid " Name& Location "
 msgstr " Name& Pfad "
 
-#: kftabdlg.cpp:126
+#: kftabdlg.cpp:129
 msgid "and"
 msgstr "und"
 
-#: kftabdlg.cpp:127
+#: kftabdlg.cpp:130
 msgid "month(s)"
 msgstr "Monat(e)"
 
-#: kftabdlg.cpp:128
+#: kftabdlg.cpp:131
 msgid "day(s)"
 msgstr "Tag(e)"
 
-#: kftabdlg.cpp:143
+#: kftabdlg.cpp:146
 msgid "&All files"
 msgstr "&Alle Dateien"
 
-#: kftabdlg.cpp:144
+#: kftabdlg.cpp:147
 msgid "Find all files created or &modified:"
 msgstr "Suche alle erstellten oder veränderten Dateien:"
 
-#: kftabdlg.cpp:145
+#: kftabdlg.cpp:148
 msgid "&between"
 msgstr "&zwischen"
 
-#: kftabdlg.cpp:146
+#: kftabdlg.cpp:149
 msgid "during the previou&s "
 msgstr "in den &letzten "
 
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:150
 msgid "&during the previous "
 msgstr "&in den letzten "
 
-#: kftabdlg.cpp:195
+#: kftabdlg.cpp:198
 msgid " Date Modified "
 msgstr " Änderungsdatum "
 
-#: kftabdlg.cpp:202
+#: kftabdlg.cpp:205
 msgid "Of &type:"
 msgstr "Vom &Typ:"
 
-#: kftabdlg.cpp:204
+#: kftabdlg.cpp:207
 msgid "&Containing Text:"
 msgstr "&Enthält Text:"
 
-#: kftabdlg.cpp:209
+#: kftabdlg.cpp:212
 msgid "&Size is:"
 msgstr "&Größe ist:"
 
-#: kftabdlg.cpp:232
+#: kftabdlg.cpp:235
 msgid "All Files and Folders"
 msgstr "Alle Dateien und Verzeichnisse"
 
-#: kftabdlg.cpp:234
+#: kftabdlg.cpp:237
 msgid "Folders"
 msgstr "Ordner"
 
-#: kftabdlg.cpp:235
+#: kftabdlg.cpp:238
 msgid "Symbolic links"
 msgstr "Symbolische Links"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:239
 msgid "Special files (sockets, device files...)"
 msgstr "Besondere Dateien (Sockets, Gerätedatein...)"
 
-#: kftabdlg.cpp:237
+#: kftabdlg.cpp:240
 msgid "Executable files"
 msgstr "Ausführbare Dateien"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:241
 msgid "SUID executable files"
 msgstr "SUID ausführbare Datein"
 
-#: kftabdlg.cpp:246
+#: kftabdlg.cpp:249
 msgid "(none)"
 msgstr "(nichts)"
 
-#: kftabdlg.cpp:247
+#: kftabdlg.cpp:250
 msgid "At Least"
 msgstr "mindestens"
 
-#: kftabdlg.cpp:248
+#: kftabdlg.cpp:251
 msgid "At Most"
 msgstr "höchstens"
 
-#: kftabdlg.cpp:259
+#: kftabdlg.cpp:262
 msgid " Advanced "
 msgstr " Erweitert "
 
-#: kftabdlg.cpp:494
+#: kftabdlg.cpp:500
 msgid "The date is not valid!!"
 msgstr "Das Datum ist ungültig!"
 
-#: kftabdlg.cpp:506
+#: kftabdlg.cpp:512
 msgid "The month(s) value isn't valid!!"
 msgstr "Der Monat existiert nicht!"
 
-#: kftabdlg.cpp:517
+#: kftabdlg.cpp:523
 msgid "The day(s) value isn't valid!!"
 msgstr "Der Tag existiert nicht!"
 
-#: kftabdlg.cpp:534
+#: kftabdlg.cpp:540
 msgid "The value in size isn't valid number!!"
 msgstr "\"Größe\" ist keine Zahl!"
 

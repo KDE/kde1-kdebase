@@ -1,139 +1,139 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-28 01:12+0100\n"
+"POT-Creation-Date: 1998-12-01 01:14+0100\n"
 "PO-Revision-Date: 1998-11-27 23:01+0100\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
 "MIME-Version: 1.0\n"
 
-#: main.C:203
+#: main.C:239
 msgid "&Normal"
 msgstr "&Normal"
 
-#: main.C:206
+#: main.C:242
 msgid "&Small"
 msgstr "&Pequeña"
 
-#: main.C:207
+#: main.C:243
 msgid "&Medium"
 msgstr "&Mediana"
 
-#: main.C:208
+#: main.C:244
 msgid "&Large"
 msgstr "&Grande"
 
-#: main.C:209
+#: main.C:245
 msgid "&Huge"
 msgstr "&Enorme"
 
-#: main.C:211
+#: main.C:247
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:212
+#: main.C:248
 msgid "Linux (small)"
 msgstr "Linux (pequeño)"
 
-#: main.C:215
+#: main.C:251
 msgid "&More ..."
 msgstr "&Mas ..."
 
-#: main.C:221
+#: main.C:257
 msgid "&Hide"
 msgstr "&Esconder"
 
-#: main.C:222
+#: main.C:258
 msgid "&Left"
 msgstr "&Izquierda"
 
-#: main.C:223
+#: main.C:259
 msgid "&Right"
 msgstr "&Derecha"
 
-#: main.C:229
+#: main.C:265
 msgid "40x15 (&small)"
 msgstr "40x15 (&pequeño)"
 
-#: main.C:230
+#: main.C:266
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:231
+#: main.C:267
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:232
+#: main.C:268
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:233
+#: main.C:269
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:242
+#: main.C:278
 msgid "&Menubar"
 msgstr "Barra de &menú"
 
-#: main.C:244
+#: main.C:280
 msgid "&Frame"
 msgstr "&Marco"
 
-#: main.C:246
+#: main.C:282
 msgid "Scroll&bar"
 msgstr "&Barra de scroll"
 
-#: main.C:248
+#: main.C:284
 msgid "BS sends &DEL"
 msgstr "BS manda &SUP"
 
-#: main.C:251
+#: main.C:287
 msgid "&Font"
 msgstr "&Fuente"
 
-#: main.C:252
+#: main.C:288
 msgid "&Size"
 msgstr "&Tamaño"
 
-#: main.C:253
+#: main.C:289
 msgid "&Schema"
 msgstr "&Esquema"
 
-#: main.C:255
+#: main.C:291
 msgid "&Save options"
 msgstr "&Guardar opciones"
 
-#: main.C:259
+#: main.C:295
 msgid "&About ..."
 msgstr "&Acerca de ..."
 
-#: main.C:260
+#: main.C:296
 msgid "&User's Manual ..."
 msgstr "Manual del &usuario ..."
 
-#: main.C:261
+#: main.C:297
 msgid "&Technical Reference ..."
 msgstr "Referencia &técnica ..."
 
-#: main.C:272
+#: main.C:308
 msgid "New"
 msgstr "Nuevo"
 
-#: main.C:273
+#: main.C:309
 msgid "Sessions"
 msgstr "Sesiones"
 
-#: main.C:470
+#: main.C:506
 #, c-format
 msgid "(%d columns x %d lines)"
 msgstr "(%d columas x %d renglones)"
 
-#: main.C:500
+#: main.C:536
 #, c-format
 msgid "About %s"
 msgstr "Acerca de %s"
 
-#: main.C:502
+#: main.C:538
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -154,6 +154,6 @@ msgstr ""
 "SIN GARANTIA DE CUALQUIER TIPO.\n"
 "Vea `LICENSE.readme´ para los detalles."
 
-#: main.C:818
+#: main.C:854
 msgid "Welcome to the console"
 msgstr "Bienvenido a la consola"
