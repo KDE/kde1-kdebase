@@ -14,6 +14,10 @@
 #include <netdb.h>
 #include <sys/time.h>
 #include <ctype.h>
+#include <config.h>
+#ifdef HAVE_SYS_SELECT_H
+#include <sys/select.h>
+#endif
 
 class KProtocolFTP :public KProtocol
 {
