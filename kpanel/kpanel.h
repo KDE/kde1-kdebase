@@ -39,6 +39,7 @@
 #include <kconfig.h>
 #include <kwmmapp.h>
 #include <kiconloader.h>
+#include <kprocess.h>
 #include <X11/Xlib.h>
 
 #include "pmenu.h"

@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <kfm.h>
 
+extern void execute(const char*);
 
 DesktopEntry::DesktopEntry(){
   button = NULL;
@@ -976,8 +977,7 @@ void kPanel::addButtonInternal(PMenuItem* pmi, int x, int y, QString name){
 	  entries[nbuttons-1].swallow = QString(pConfig.readEntry("SwallowTitle")).copy();
 	   if (pConfig.hasKey("SwallowExec")){
 	     aString = QString(pConfig.readEntry("SwallowExec")).copy();
-	     aString.append(" &");
-	     system(aString.data());
+	     execute(aString.data());
 	   }
 	   if (pConfig.hasKey("PanelIdentity")){
 	     entries[nbuttons-1].icon[0] = new QPixmap();

@@ -246,6 +246,20 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
 }
 
 
+void execute(const char* cmd){
+  char* shell = NULL;
+  if (!shell){
+    if (getenv("SHELL"))
+      shell = qstrdup(getenv("SHELL"));
+    else
+      shell = "/bin/sh";
+  }
+  KProcess proc;
+  proc.setExecutable(shell);
+  proc << "-c" << cmd;
+  proc.start(KProcess::DontCare);
+}
+
 
 void kPanel::init_popup(QPopupMenu* popup){
   popup->installEventFilter( this );
@@ -489,12 +503,12 @@ void kPanel::ask_logout(){
 
 void kPanel::call_klock(){
 //   QMessageBox::message( "Hi!", "This will invoke the fabulous KLOCK (xlock replacement)");
-  system("klock&");
+  execute("klock");
 }
 
  void kPanel::call_help(){
 //     QMessageBox::message( "Hi!", "This will invoke the KDE Help system with the\n KDE Startup Screen." );
-  system("kdehelp&");
+  execute("kdehelp");
 }
 
 

@@ -17,30 +17,20 @@
 #include <fcntl.h>
 
 #include <kfm.h>
-
-static void catch_child(int /* nonsense */){
-  int status;
-  wait(&status);
-  signal(SIGCHLD, catch_child);
-}
+#include <kprocess.h>
 
 void execute(const char* cmd){
-  static char* shell = NULL;
+  char* shell = NULL;
   if (!shell){
     if (getenv("SHELL"))
       shell = qstrdup(getenv("SHELL"));
     else
-      shell = "/bin/sh"; 
+      shell = "/bin/sh";
   }
-  signal(SIGCHLD, catch_child);
-  if (!(fork())){ // child
-    freopen("/dev/null", "r", stdin);
-    freopen("/dev/null", "w", stdout);
-    freopen("/dev/null", "w", stderr);
-    setsid();
-    execl(shell, shell, "-c", cmd, NULL);
-    exit(1);
-  }
+  KProcess proc;
+  proc.setExecutable(shell);
+  proc << "-c" << cmd;
+  proc.start(KProcess::DontCare);
 }
 
 

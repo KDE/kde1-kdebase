@@ -8,6 +8,7 @@ In kpanel-0.17:
          defined sort order.
 	 This requires some changes to kmenuedit.
        - bugfix for occassional crashes with fast addding/removing of windows
+       - uses kprocess for execution
     Patchlevel 4:
        - paints scaled minicions everywhere, even in the system menu.
          I thought this looks ugly, but Torben requested this feature :-)
