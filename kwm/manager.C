@@ -1121,7 +1121,8 @@ void Manager::smartPlacement(Client* c) {
   Client* l;
   
   // initialize often used vars: width and height of c; we gain speed
-  int ch = c->geometry.height();
+  int ch = (c->isShaded()?
+	    (TITLEBAR_HEIGHT+2*BORDER):c->geometry.height());
   int cw = c->geometry.width();
 
   // get the maximum allowed windows space
@@ -1155,7 +1156,9 @@ void Manager::smartPlacement(Client* c) {
 	  continue;
 	// if not enough room above or under the current tested client
 	// determine the first non-overlapped x position
-	if((y < l->geometry.height() + l->geometry.y() ) && 
+	if((y < (l->isShaded()?
+		 (TITLEBAR_HEIGHT+2*BORDER):
+		 l->geometry.height()) + l->geometry.y() ) && 
 	   (l->geometry.y() < ch + y)) {
 	  temp = l->geometry.width() + l->geometry.x();
 	  if(temp > x) other = (other < temp)? other : temp;
@@ -1181,7 +1184,9 @@ void Manager::smartPlacement(Client* c) {
 	if(!l->isOnDesktop(currentDesktop()) || (l == c) || c->isIconified()) 
 	  continue;
 	
-	temp = l->geometry.height() + l->geometry.y();
+	temp = (l->isShaded()?
+		(TITLEBAR_HEIGHT+2*BORDER):
+		l->geometry.height()) + l->geometry.y();
 	if(temp > y) other = (other < temp)? other : temp;
 	temp = l->geometry.y() - ch;
 	if(temp > y) other = (other < temp)? other : temp;
@@ -1222,7 +1227,7 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
   Client* l;
 
   // initialize often used vars: width and height of c; we gain speed
-  int ch = c->geometry.height();
+  int ch = c->isShaded()?(TITLEBAR_HEIGHT+2*BORDER):c->geometry.height();
   int cw = c->geometry.width();
 
   // get the maximum allowed windows space
@@ -1252,7 +1257,9 @@ void Manager::spGetOverlap(Client* c, int x, int y, int* overlap) {
     xl = l->geometry.x();
     yt = l->geometry.y();
     xr = xl + l->geometry.width();
-    yb = yt + l->geometry.height();
+    yb = yt + (l->isShaded()?
+	       (TITLEBAR_HEIGHT+2*BORDER):
+	       l->geometry.height());
 
     //if windows overlap, calc the overlapping
     if((cxl < xr) && (cxr > xl) &&

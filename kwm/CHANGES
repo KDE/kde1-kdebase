@@ -12,7 +12,10 @@ influences from my experiences with the former kwm.
 In 0.11:
 --------
 patchlevel 1:
-	- snap to border and snap to window functions (CT)
+	- fixed the avoidance of shaded windows bug in smart placement.
+	  Ugly fix. Ugh! (CT)
+	- snap to border and snap to window functions (CT). Maximum limit
+	  arbitrarily fixed at 50 pixels. Complain if you're unhappy with :-)
 
 patchlevel 0: (Matthias? Bernd?)
 
