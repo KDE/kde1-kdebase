@@ -1238,7 +1238,7 @@ msgstr "&Proxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&HTTP"
 
 #: kkfmoptdlg.cpp:25
 msgid "User &Agent"
@@ -1258,15 +1258,15 @@ msgstr "Nastavenie prehliadaèa KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Akceptova» jazyky:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Akceptova» znakové sady:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Predpokl. HTML"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1334,35 +1334,3 @@ msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
 
-#~ msgid "&New Window"
-#~ msgstr "&Nové okno"
-
-#~ msgid "Stop"
-#~ msgstr "Stop"
-
-#~ msgid "KFM Error"
-#~ msgstr "Chyba KFM"
-
-#~ msgid "Move"
-#~ msgstr "Presunú»"
-
-#~ msgid "Properties"
-#~ msgstr "Vlastnosti"
-
-#~ msgid "Font Size"
-#~ msgstr "Veµkos» písma"
-
-#~ msgid "Small"
-#~ msgstr "Malé"
-
-#~ msgid "Medium"
-#~ msgstr "Stredné"
-
-#~ msgid "Large"
-#~ msgstr "Veµké"
-
-#~ msgid "Continue"
-#~ msgstr "Pokraèova»"
-
-#~ msgid "&Fonts"
-#~ msgstr "&Znak. sady"

@@ -597,19 +597,19 @@ msgstr "Guµa"
 
 #: science.cpp:71
 msgid "Exponential"
-msgstr ""
+msgstr "Exponenc."
 
 #: science.cpp:74
 msgid "Contraction"
-msgstr ""
+msgstr "Kontrakcia"
 
 #: science.cpp:77
 msgid "Wave"
-msgstr ""
+msgstr "Vln"
 
 #: science.cpp:80
 msgid "Curvature"
-msgstr ""
+msgstr "Krivka"
 
 #: science.cpp:112
 msgid "Science"
@@ -617,11 +617,11 @@ msgstr "Science"
 
 #: science.cpp:447
 msgid "rendering lens..."
-msgstr ""
+msgstr "generujem ¹o¹ovku..."
 
 #: science.cpp:769
 msgid "grabbing screen..."
-msgstr ""
+msgstr "snímam obrazovku..."
 
 #: science.cpp:931
 msgid "Setup Science"
@@ -641,7 +641,7 @@ msgstr "Gravitácia"
 
 #: science.cpp:983
 msgid "Hide Background"
-msgstr ""
+msgstr "Skry» pozadie"
 
 #: science.cpp:1009
 msgid "Intensity:"
@@ -652,13 +652,12 @@ msgid "Motion:"
 msgstr "Pohyb:"
 
 #: science.cpp:1260
-#, fuzzy
 msgid "Science Version"
-msgstr "Science"
+msgstr "Science verzia"
 
 #: science.cpp:1261
 msgid "written by"
-msgstr ""
+msgstr "napísal"
 
 #: science.cpp:1262
 msgid "About Science"
