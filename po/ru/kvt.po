@@ -138,7 +138,7 @@ msgstr "Включить горячие клавиши"
 
 #: main.C:677
 msgid "Save &Options"
-msgstr "Записать опции"
+msgstr "Записать параметры"
 
 #: main.C:686
 msgid ""

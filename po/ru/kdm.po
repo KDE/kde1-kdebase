@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdm\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-11-07 05:26+0600\n"
+"PO-Revision-Date: 1998-12-21 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr "Выключить или перезагрузить"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Введите пароль root'а)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -31,7 +31,7 @@ msgstr "Выключить и перезагрузить"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "Перезапустить X сервер"
 
 #: kgreeter.cpp:222
 msgid "Login:"
@@ -47,7 +47,7 @@ msgstr "Неудачная попытка!"
 
 #: kgreeter.cpp:265
 msgid "Session Type:"
-msgstr "Тип сессии:"
+msgstr "Тип сеанса:"
 
 #: kgreeter.cpp:312
 msgid "Go!"

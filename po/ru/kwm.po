@@ -25,7 +25,7 @@ msgstr "kwm: ошибка инициализации; прерывание\n"
 
 #: main.C:485
 msgid "Preparing session ... "
-msgstr "Подготавливаю сессию ... "
+msgstr "Подготавливаю сеанс ... "
 
 #: main.C:509
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
@@ -38,7 +38,7 @@ msgstr "Использование:"
 #
 #: main.C:527
 msgid "&Maximize"
-msgstr "Максимизировать"
+msgstr "Развернуть"
 
 #
 #: main.C:528
@@ -47,12 +47,12 @@ msgstr "Восстановить"
 
 #: main.C:529
 msgid "&Iconify"
-msgstr "Минимизировать"
+msgstr "Свернуть"
 
 #
 #: main.C:530
 msgid "&DeIconify"
-msgstr "Максимизировать"
+msgstr "Развернуть"
 
 #
 #: main.C:531
@@ -147,7 +147,7 @@ msgstr "Выйти"
 
 #: logout.C:46
 msgid "Session prepared for logout"
-msgstr "Сессии подготовленные к выходу"
+msgstr "Сеансы подготовленные к выходу"
 
 #: logout.C:52
 msgid ""
@@ -155,14 +155,14 @@ msgid ""
 "will be lost in your next session."
 msgstr ""
 "Эти приложения содержат незаписанные данные, которые\n"
-"Будут потеряны в следующей сессии."
+"Будут потеряны в следующем сеансе."
 
 #: logout.C:63
 msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Эти приложения не могут быть восстановлены в следующей сессии.\n"
+"Эти приложения не могут быть восстановлены в следующем сеансе.\n"
 "Только перезапущены. Убедитесь, что они не содержат важных данных"
 
 #: logout.C:74
@@ -170,8 +170,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Эти приложения не X11 и поэтому не могут быть восстановлены в следуюющей\n"
-"сессии. Убедитесь, что они не содержат важных данных"
+"Эти приложения не X11 и поэтому не могут быть восстановлены в следуюющем\n"
+"сеансе. Убедитесь, что они не содержат важных данных"
 
 #: taskmgr.C:107
 msgid "Switch to"
@@ -179,4 +179,4 @@ msgstr "Переключиться"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr "Текущая сессия"
+msgstr "Текущий сеанс"

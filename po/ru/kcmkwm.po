@@ -48,11 +48,11 @@ msgstr "Вид главного форточника"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Минимизировать"
+msgstr "Свернуть"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Максимизировать"
+msgstr "Развернуть"
 
 #: titlebar.cpp:133
 msgid "Sticky"
@@ -74,25 +74,25 @@ msgstr "Справа"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Левая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
+"Левая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
 
 #: titlebar.cpp:504
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Правая часть заголовка переполнена... отключаю кнопку 'максимизировать'\n"
+"Правая часть заголовка переполнена... отключаю кнопку 'развернуть'\n"
 
 #: titlebar.cpp:544
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Левая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
+"Левая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
 
 #: titlebar.cpp:577
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
+"Правая часть заголовка переполнена... отключаю кнопку 'свернуть'\n"
 
 #: titlebar.cpp:930
 msgid "Title Alignment"
@@ -152,7 +152,7 @@ msgstr ""
 #
 #: titlebar.cpp:1084
 msgid "(Un)Maximize"
-msgstr "(Мин)Максимизировать"
+msgstr "Свернуть/Развернуть"
 
 #
 #: titlebar.cpp:1085
@@ -161,7 +161,7 @@ msgstr "Градиент"
 
 #: titlebar.cpp:1086
 msgid "Iconify"
-msgstr "Минимизировать"
+msgstr "Свернуть"
 
 #
 #: titlebar.cpp:1087
@@ -277,9 +277,8 @@ msgid "Auto Raise"
 msgstr "Автоматически наверх"
 
 #: windows.cpp:209
-#, fuzzy
 msgid "Click Raise"
-msgstr "Наверх"
+msgstr "Щелчком наверх"
 
 #: windows.cpp:216
 msgid "Delay (ms)"
@@ -298,9 +297,8 @@ msgid "Move pointer towards center after switch"
 msgstr "Перемещать курсор к центру после переключения"
 
 #: desktop.cpp:87
-#, fuzzy
 msgid "Desktop switch delay:"
-msgstr "Задержка в переключении:"
+msgstr "Задержка при переключении:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -473,7 +471,7 @@ msgstr "запускаться как Прилепленные"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "исключены из управления сессиями"
+msgstr "исключены из управления сеансами"
 
 #: advanced.cpp:116
 msgid "if they match the following:"

@@ -237,14 +237,9 @@ msgstr "Показывать недавние"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr "Показывать элемент опции"
+msgstr "Показывать параметры"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Терминальное приложение:"
 
-#~ msgid "Edit &Global..."
-#~ msgstr "Редактировать глобальные..."
-
-#~ msgid "Show Global section"
-#~ msgstr "Показывать глобальные"

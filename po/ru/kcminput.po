@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-01-18 04:44+0600\n"
+"PO-Revision-Date: 1998-12-21 04:44+0600\n"
 "Last-Translator: Denis Pershin>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Порог"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr ""
+msgstr "точек"
 
 #: mouse.cpp:81
 msgid "Button mapping"

@@ -128,7 +128,7 @@ msgstr "Закрыть окно"
 
 #: ../../kwm/kwmbindings.cpp:10
 msgid "Window iconify"
-msgstr "Минимизировать окно"
+msgstr "Свернуть окно"
 
 #: ../../kwm/kwmbindings.cpp:11
 msgid "Window resize"

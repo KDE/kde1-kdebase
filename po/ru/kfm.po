@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-12-14 11:51+0600\n"
+"PO-Revision-Date: 1998-12-21 00:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -272,9 +272,8 @@ msgid "KFM Error"
 msgstr "Ошибка KFM"
 
 #: kfmgui.cpp:560
-#, fuzzy
 msgid "Location:"
-msgstr "Открыть Местоположение:"
+msgstr "Местоположение:"
 
 #: kfmexec.cpp:59 kfmgui.cpp:746 kfmman.cpp:1378
 msgid "Malformed URL\n"
@@ -577,6 +576,10 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Установлена новая версия KDE.\n"
+"Файлы Шаблонов могли измениться.\n"
+"\n"
+"Вы хотите установить обновленные файлы?"
 
 #: main.cpp:263
 msgid "Cd"
@@ -1173,21 +1176,21 @@ msgstr ""
 "не существует"
 
 #: kiojob.cpp:1287
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
-"Tar выдал ошибку\n"
+"Tar выдал фатальную ошибку\n"
 "%s"
 
 #: kiojob.cpp:1291
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
-"Gzip выдал ошибку\n"
+"Gzip выдал фатальную ошибку\n"
 "%s"
 
 #: kiojob.cpp:1295

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-12-14 00:00+0600\n"
+"PO-Revision-Date: 1998-12-21 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,7 +113,7 @@ msgstr "Дерево следует за движениями"
 
 #: miscopts.cpp:43
 msgid "Terminal"
-msgstr ""
+msgstr "Терминал"
 
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
@@ -153,32 +153,31 @@ msgstr "Подразумевать HTML"
 
 #: khttpoptdlg.cpp:84
 msgid "Disable Cookies"
-msgstr ""
+msgstr "Запретить cookie"
 
 #: khttpoptdlg.cpp:91
-#, fuzzy
 msgid "Default accept policy"
-msgstr "Кодировка по умолчанию"
+msgstr "По умолчанию разрешать"
 
 #: khttpoptdlg.cpp:100 khttpoptdlg.cpp:148
 msgid "Accept"
-msgstr ""
+msgstr "Разрешить"
 
 #: khttpoptdlg.cpp:105 khttpoptdlg.cpp:153
 msgid "Ask"
-msgstr ""
+msgstr "Спрашивать"
 
 #: khttpoptdlg.cpp:110 khttpoptdlg.cpp:158
 msgid "Reject"
-msgstr ""
+msgstr "Запрещать"
 
 #: khttpoptdlg.cpp:123
 msgid "Domain specific settings:"
-msgstr ""
+msgstr "Настройки, специфичные для домена:"
 
 #: khttpoptdlg.cpp:130
 msgid "Change domain accept policy"
-msgstr ""
+msgstr "Изменить политику разрешения для домена"
 
 #: useragentdlg.cpp:43
 msgid "On server:"
@@ -205,9 +204,8 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Вертикальное расстояние основной сетки:"
 
 #: rootopts.cpp:92
-#, fuzzy
 msgid "&Transparent Text for Desktop Icons."
-msgstr "Прозначный текст для основных пиктограмм."
+msgstr "Прозрачный текст для пиктограмм рабочего стола."
 
 #: rootopts.cpp:103
 msgid "Icon foreground color:"

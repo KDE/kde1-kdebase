@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpager\n"
 "POT-Creation-Date: 1998-12-15 07:34+0100\n"
-"PO-Revision-Date: 1998-12-10 00:00+0600\n"
+"PO-Revision-Date: 1998-12-21 00:00+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr "Скрыть/показать меню"
 
 #: kpager.cpp:77
 msgid "Move Right"
-msgstr ""
+msgstr "Перейти вправо"
 
 #: kpager.cpp:79
 msgid "Move Left"
-msgstr ""
+msgstr "Перейти влево"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
@@ -47,17 +47,15 @@ msgstr "2 ряда"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr ""
+msgstr "Менять рабочий стол по одному щелчку"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
-#, fuzzy
 msgid "Hide Desktop &Names"
-msgstr "Скрыть глобальный рабочий стол"
+msgstr "Скрыть имена рабочих столов"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
-#, fuzzy
 msgid "Show Desktop &Names"
-msgstr "Показать глобальный рабочий стол"
+msgstr "Показать имена рабочих столов"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
@@ -108,15 +106,15 @@ msgstr "Показать меню"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr ""
+msgstr "Менять рабочий стол по одному щелчку"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr "Максимизировать"
+msgstr "Развернуть"
 
 #: kpager.cpp:447
 msgid "&Iconify"
-msgstr "Минимизировать"
+msgstr "Свернуть"
 
 #: kpager.cpp:449
 msgid "&UnSticky"

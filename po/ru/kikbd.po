@@ -390,7 +390,7 @@ msgstr "С&пециальное"
 
 #: widgets.cpp:433
 msgid "Advanced options"
-msgstr "Специальные опции"
+msgstr "Специальные параметры"
 
 #: widgets.cpp:450
 msgid "Advanced"

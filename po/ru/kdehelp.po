@@ -319,7 +319,7 @@ msgstr "Показать полосу прокрутки"
 #
 #: mainwidget.cpp:180
 msgid "&Save Options"
-msgstr "Записать опции"
+msgstr "Записать параметры"
 
 #
 #

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
 "POT-Creation-Date: 1998-12-20 01:16+0100\n"
-"PO-Revision-Date: 1998-12-10 01:59+0600\n"
+"PO-Revision-Date: 1998-12-21 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Показать панель"
 
 #: kpanel.C:1100
 msgid "Iconify other &windows"
-msgstr ""
+msgstr "Свернуть другие окна"
 
 #: kpanel.C:1237
 msgid "No comment available"
@@ -66,7 +66,6 @@ msgid "Quickly navigate through the filesystem"
 msgstr "Быстро перемещаться по файловой системе"
 
 #: props.C:166
-#, fuzzy
 msgid "Add Application"
 msgstr "Добавить приложение"
 
@@ -75,17 +74,14 @@ msgid "Add an application or a submenu onto the panel"
 msgstr "Добавить приложение или подменю на панель"
 
 #: props.C:174
-#, fuzzy
 msgid "Add Disk Navigator"
-msgstr "Исследователь диска"
+msgstr "Добавить Исследователь диска"
 
 #: props.C:176
-#, fuzzy
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Добавить список окон на панель"
+msgstr "Добавить Исследователь диска на панель"
 
 #: props.C:179
-#, fuzzy
 msgid "Add Windowlist"
 msgstr "Добавить список окон"
 
@@ -146,7 +142,6 @@ msgstr ""
 "%b %d"
 
 #: tools.C:905
-#, fuzzy
 msgid "KDiskNavigator"
 msgstr "Исследователь диска"
 

@@ -27,7 +27,7 @@ msgstr "&Пользователи"
 
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "&Сессии"
+msgstr "&Сеансы"
 
 #: main.cpp:103
 msgid ""
@@ -297,7 +297,7 @@ msgstr "Перезагрузить"
 
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "Виды сессий"
+msgstr "Виды сеансов"
 
 #: kdm-sess.cpp:79
 msgid "New type"
