@@ -1,9 +1,9 @@
 
-INCDIR  =       @all_includes@
-CXXFLAGS+=      $(INCDIR) 
-LDFLAGS =       @all_libraries@ -lkdecore -lkdeui -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
-CXX     =       @CXX@
-MOC     =       @MOC@
+INCDIR  =      @all_includes@
+CXXFLAGS=      @CXXFLAGS@ $(INCDIR) 
+LDFLAGS =      @LDFLAGS@ @all_libraries@ -lkdecore -lkdeui -lkhtmlw -lqt -lXext -lX11 @LIBSOCKET@ -ljpeg -lgif
+CXX     =      @CXX@
+MOC     =      @MOC@
 
 ####### Files
 

@@ -108,7 +108,7 @@ clean-recursive:
 
 clean:  clean-recursive
 	-rm -f config.status config.log config.cache
-	-rm -f libtool
+	-rm -f libtool stamp-h
 
 #libraries are installed right through libraries
 kdebase: libraries apps install

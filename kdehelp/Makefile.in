@@ -22,6 +22,7 @@ BINDIR = $(prefix)/bin
 CGIDIR = $(prefix)/cgi-bin
 LIBDIR = $(prefix)/lib
 APPSDIR = $(LIBDIR)/apps
+PICSDIR = $(LIBDIR)/pics
 DOCSDIR = $(prefix)/doc/HTML
 
 ########## Implicit Rules ##########
@@ -60,6 +61,10 @@ install:
 	$(INSTALL_DIR) $(CGIDIR)
 	$(INSTALL) search/helpsearch $(CGIDIR)
 	$(INSTALL) index/helpindex $(CGIDIR)
+	$(INSTALL_DIR) $(PICSDIR)
+	$(INSTALL_DATA) pics/khtmlw_dnd.xpm $(PICSDIR)
+	$(INSTALL_DATA) pics/stop.xpm $(PICSDIR)
+	$(INSTALL_DATA) pics/stop_gray.xpm $(PICSDIR)
 
 clean:
 	rm -f core *~ *.bak *.BAK $(SRCMETA) $(OBJS) $(TARGET)

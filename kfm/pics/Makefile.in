@@ -10,7 +10,6 @@ clean:
 	
 install:
 	$(INSTALL_DIR) $(libdir)/pics
-	$(INSTALL_DIR) $(libdir)/pics
 	@for i in $(PICS); do \
 	 echo "$(INSTALL_DATA) $$i $(libdir)/pics/$$i"; \
 	 $(INSTALL_DATA) "$$i" $(libdir)/pics/$$i; \
