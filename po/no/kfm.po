@@ -1101,18 +1101,16 @@ msgstr "Jobber ..."
 
 #: kfmman.cpp:1631
 msgid "Copy here"
-msgstr ""
+msgstr "Kopier hit"
 
 #: kfmman.cpp:1636
-#, fuzzy
 msgid "Move here"
-msgstr "Flytt"
+msgstr "Flytt hit"
 
 # kfmman.cpp:1233 kfmtree.cpp:159 main.cpp:245
 #: kfmman.cpp:1640
-#, fuzzy
 msgid "Link here"
-msgstr "Lenk"
+msgstr "Lenk hit"
 
 # kiojob.cpp:120
 #: kiojob.cpp:134
@@ -1671,15 +1669,3 @@ msgid ""
 msgstr ""
 "Syntaksfeil:\n"
 "kfmexec kommando [URLer ....]\n"
-
-# kfmprops.cpp:680
-#~ msgid "Working Directory"
-#~ msgstr "Stående Katalog"
-
-# kfmserver.cpp:50
-#~ msgid ""
-#~ "Please change the password in\n"
-#~ "~/.kde/share/apps/kfm/magic"
-#~ msgstr ""
-#~ "Vennligst endr passord i\n"
-#~ "~/.kde/share/apps/kfm/magic"

@@ -112,7 +112,7 @@ msgstr "Vinduoperasjon-meny"
 
 #: ../../kwm/kwmbindings.cpp:5
 msgid "Pop-up system menu"
-msgstr "Poppopp-systemmeny"
+msgstr "Flytende systemmeny"
 
 #: ../../kwm/kwmbindings.cpp:7
 msgid "Window raise"
