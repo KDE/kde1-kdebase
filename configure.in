@@ -233,6 +233,7 @@ AC_OUTPUT(Makefile \
 	kwmmodules/kbgndwm/Makefile \
 	kwmcom/Makefile \
 	krootwm/Makefile \
+	kstartondesk/Makefile \
 	kappfinder/kappfinder \
 	kappfinder/Makefile \
 	kappfinder/apps/Development/Makefile \
