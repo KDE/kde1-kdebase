@@ -10,14 +10,14 @@ msgstr ""
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: kpanel.C:281
-#, fuzzy
+#       
 msgid "&Move"
-msgstr "Sposta"
+msgstr "&Sposta"
 
 #: kpanel.C:284
-#, fuzzy
+#        
 msgid "&Properties"
-msgstr "Proprietà"
+msgstr "&Proprietà"
 
 #: kpanel.C:327
 msgid "Go!"
@@ -64,9 +64,9 @@ msgid "Quickly navigate through the filesystem"
 msgstr ""
 
 #: props.C:166
-#, fuzzy
+#                 
 msgid "Add Application"
-msgstr "Aggiungi applicazione"
+msgstr "Aggiungi Applicazione"
 
 #: props.C:168
 msgid "Add an application or a submenu onto the panel"
@@ -74,15 +74,15 @@ msgstr "Aggiunge un applicazione o un sottomenu al pannello"
 
 #: props.C:170
 msgid "Add Disk Navigator"
-msgstr ""
+msgstr "Aggiungi Disk Navigator"
 
 #: props.C:172
-#, fuzzy
+#,         
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Aggiunge la Lista Finestre sul Pannello"
+msgstr "Aggiunge un Disk Navigator sul Pannello"
 
 #: props.C:174
-#, fuzzy
+#         
 msgid "Add Windowlist"
 msgstr "Aggiungi Lista Finestre"
 
