@@ -9,7 +9,7 @@
 
 <title>KDE Disk Navigator
 <author>Pietro Iglio
-(<htmlurl url="mailto:iglio@fub.it,iglio@geocities.com" name="iglio@fub.it,iglio@geocities.com">)
+(<htmlurl url="mailto:iglio@kde.org" name="iglio@kde.org">)
 <date>v. 0.2 (beta), Aug 06 10:40:20 1998
 
 <!-- Table of contents -->
@@ -82,8 +82,21 @@ for a while (eg. entering a folder with a large number of files on a slow
 CD-ROM reader). Since you may want to place entry points to slow devices on
 the root menu, you might accidentally enter such slow entries.
 To avoid this problem, you can add a "Removable Media" folder to the 
-global/local sections, and place links to slow devices in this folder.
-See the "Options" section to see how to customize the global/local sections.
+Global/Local sections, and place links to slow devices in this folder.
+See the "Options" section to see how to customize the Global/Local sections.
+
+<item>
+Copying <tt>~/.kde</tt> and $KDEDIR: the current version of Disk
+Navigator uses symbolic links to define entry points in the
+Global/Local sections. Symbolic links are stored in
+<tt>$KDEDIR/share/disknav</tt> (Global) and
+<tt>~/.kde/share/disknav</tt> (Local). Therefore, if you want to copy
+a KDE directories (for instance ~/.kde to create a backup copy of your
+KDE settings), you should use <tt>cp</tt> with the <tt>-d</tt>
+option. This way, symbolic links are copied as symbolic links. If, for
+instance, you use: "<tt>cp -r ~/.kde kde-backup</tt>" (without the -d option)
+<tt>cp</tt> will follow symbolic links in the
+<tt>disknav</tt> directory.
 
 </list>
 
@@ -97,18 +110,19 @@ the KPanel menu. It is possible to set the following options:
 
   <list>
 
-  <item><bf>"Edit Local..."</bf>, <bf>"Edit Global..."</bf>
-  these buttons allow to change entries in the Local and Global Sections
-  (note: only superusers can change global settings).
-  In both cases, a kfm window is displayed. Use normal dragging operations to
-  create symbolic links and folders in the local (~/.kde/share/disknav) and
-  global ($KDEDIR/share/disknav) directories. When either the "Apply" or the
-  "OK" button in the Options dialog is selected, these directories are parsed
-  again and the "Disk Navigator" menu is updated.
-  Alternatively, it is possible to change local and global directory contents
-  from the command line (e.g. using a shell script). In such case, the panel
-  must be restarted ("Panel" -> "Restart" from the KPanel menu) to re-parse
-  these directories.
+  <item><bf>"Edit Local..."</bf>, <bf>"Edit Global..."</bf> these
+  buttons allow to change entries in the Local and Global Sections
+  (note: only superusers can change global settings).  In both cases,
+  a kfm window is displayed. Use normal dragging operations to create
+  symbolic links and folders in the local
+  (<tt>~/.kde/share/disknav</tt>) and global
+  (<tt>$KDEDIR/share/disknav</tt>) directories. When either the
+  "Apply" or the "OK" button in the Options dialog is selected, these
+  directories are parsed again and the "Disk Navigator" menu is
+  updated.  Alternatively, it is possible to change local and global
+  directory contents from the command line (e.g. using a shell
+  script). In such case, the panel must be restarted ("Panel" ->
+  "Restart" from the KPanel menu) to re-parse these directories.
 
   <item><bf>"Max recent folder entries":</bf>
   how many folders are stored in the "Recent" section.
@@ -281,14 +295,7 @@ Default: on
 Bugs can be reported filling the form available 
 <htmlurl url="http://www.geocities.com/SiliconValley/Haven/2776/disk-navigator-bugs.html" name="here">.
 
-Comments and suggestions can be given filling the form available
-<htmlurl url="http://www.geocities.com/SiliconValley/Haven/2776/disk-navigator-eval.html" name="here">.
-
-The official Disk Navigator site is
-<htmlurl url="http://www.geocities.com/SiliconValley/Haven/2776/disk-navigator.html" name="here">.
-
-You can contact the author clicking
-<htmlurl url="mailto:iglio@fub.it,iglio@geocities.com" name="here">.
+Comments and suggestions can be sent directly to the author (<htmlurl url="mailto:iglio@kde.org" name="Pietro Iglio">).
 
 </article>
 

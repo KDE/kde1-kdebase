@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>KDE Disk Navigator: Features &amp; Tips</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="KPanel, KDiskNavigator">
-<META NAME="description" CONTENT="KDiskNavigator Documentation">
+<META NAME="keywords" CONTENT="kdisknav">
+<META NAME="description" CONTENT="kdisknav documentation">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -38,8 +38,20 @@ for a while (eg. entering a folder with a large number of files on a slow
 CD-ROM reader). Since you may want to place entry points to slow devices on
 the root menu, you might accidentally enter such slow entries.
 To avoid this problem, you can add a "Removable Media" folder to the 
-global/local sections, and place links to slow devices in this folder.
-See the "Options" section to see how to customize the global/local sections.
+Global/Local sections, and place links to slow devices in this folder.
+See the "Options" section to see how to customize the Global/Local sections.
+</LI>
+<LI>Copying <CODE>~/.kde</CODE> and $KDEDIR: the current version of Disk
+Navigator uses symbolic links to define entry points in the
+Global/Local sections. Symbolic links are stored in
+<CODE>$KDEDIR/share/disknav</CODE> (Global) and
+<CODE>~/.kde/share/disknav</CODE> (Local). Therefore, if you want to copy
+a KDE directories (for instance &nbsp;/.kde to create a backup copy of your
+KDE settings), you should use <CODE>cp</CODE> with the <CODE>-d</CODE>
+option. This way, symbolic links are copied as symbolic links. If, for
+instance, you use: "<CODE>cp -r ~/.kde kde-backup</CODE>" (without the -d option)
+<CODE>cp</CODE> will follow symbolic links in the
+<CODE>disknav</CODE> directory.
 </LI>
 <P>
 <P ALIGN="RIGHT">

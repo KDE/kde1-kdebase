@@ -3,8 +3,8 @@
 <HEAD>
 <TITLE>KDE Disk Navigator: Options</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
-<META NAME="keywords" CONTENT="KPanel, KDiskNavigator">
-<META NAME="description" CONTENT="KDiskNavigator Documentation">
+<META NAME="keywords" CONTENT="kdisknav">
+<META NAME="description" CONTENT="kdisknav documentation">
 </HEAD>
 <BODY BGCOLOR="#ffffff" LINK="#aa0000" TEXT="#000000" > 
 <FONT FACE="Helvetica">
@@ -24,18 +24,19 @@
 <P>The option dialog box is activated selecting "Disk Navigator" -> "Options" from
 the KPanel menu. It is possible to set the following options:
 <P>
-<LI><B>"Edit Local..."</B>, <B>"Edit Global..."</B>
-these buttons allow to change entries in the Local and Global Sections
-(note: only superusers can change global settings).
-In both cases, a kfm window is displayed. Use normal dragging operations to
-create symbolic links and folders in the local (&nbsp;/.kde/share/disknav) and
-global ($KDEDIR/share/disknav) directories. When either the "Apply" or the
-"OK" button in the Options dialog is selected, these directories are parsed
-again and the "Disk Navigator" menu is updated.
-Alternatively, it is possible to change local and global directory contents
-from the command line (e.g. using a shell script). In such case, the panel
-must be restarted ("Panel" -> "Restart" from the KPanel menu) to re-parse
-these directories.
+<LI><B>"Edit Local..."</B>, <B>"Edit Global..."</B> these
+buttons allow to change entries in the Local and Global Sections
+(note: only superusers can change global settings).  In both cases,
+a kfm window is displayed. Use normal dragging operations to create
+symbolic links and folders in the local
+(<CODE>~/.kde/share/disknav</CODE>) and global
+(<CODE>$KDEDIR/share/disknav</CODE>) directories. When either the
+"Apply" or the "OK" button in the Options dialog is selected, these
+directories are parsed again and the "Disk Navigator" menu is
+updated.  Alternatively, it is possible to change local and global
+directory contents from the command line (e.g. using a shell
+script). In such case, the panel must be restarted ("Panel" ->
+"Restart" from the KPanel menu) to re-parse these directories.
 </LI>
 <LI><B>"Max recent folder entries":</B>
 how many folders are stored in the "Recent" section.
