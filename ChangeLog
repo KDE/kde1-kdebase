@@ -1,3 +1,12 @@
+1998-12-04  Alex Zepeda  <garbanzo@hooked.net>
+
+	* README: Updated to "require" Qt 1.41.
+
+1998-12-04  Alex Zepeda  <garbanzo@hooked.net>
+
+	* README: Adjusted the configure switch descriptions so they make a bit more
+	sense.
+
 1998-12-02  Alex Zepeda  <garbanzo@hooked.net>
 
 	* Makefile.cvs: Tweaked this a bit so it looks somewhat prettier
