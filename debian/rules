@@ -13,13 +13,12 @@ $(BUILDDIR)/build-stamp:
 	fi 
 	test -d $(BUILDDIR) || mkdir $(BUILDDIR) ;\
 	if test ! -f $(BUILDDIR)/config.status; then \
-	cp -R po $(BUILDDIR) ;\
 	cd $(BUILDDIR) ;\
 	CFLAGS="-O2 -g -Wall -Wno-uninitialized -DUTMP_SUPPORT \
 	  -DUTMP='\"/var/run/utmp\"'" \
 	  CXXFLAGS="-O2 -g -Wall -Wno-uninitialized" \
 	  RUN_KAPPFINDER="no" \
-	../configure --with-shadow --without-pam=kde \
+	../configure --with-shadow --without-pam \
 	--with-install-root=`pwd`/debian/tmp \
 	--disable-rpath --with-xdmdir=/usr/X11R6/lib/X11/kdm ; \
 	fi
@@ -29,6 +28,7 @@ $(BUILDDIR)/build-stamp:
 
 clean: debian-clean
 	-rm -rf $(BUILDDIR)
+	find po -name "*.gmo" | xargs rm -f
 	dh_clean -k
 
 debian-clean:
@@ -50,7 +50,8 @@ binary-arch: checkroot build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install 
+	make -C $(BUILDDIR) RUN_KAPPFINDER="no" install ac_xdmdir=`pwd`/debian/tmp/usr/X11R6/lib/X11/kdm
+	mkdir -p debian/tmp/usr/doc/kde
 	cp debian/README.kde debian/tmp/usr/doc/kde
 
 ## Install KDM
@@ -65,7 +66,10 @@ binary-arch: checkroot build
 	cp debian/kdm.1.gz debian/tmp/usr/man/man1
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	chmod +x debian/tmp/etc/init.d/kdm
-	cp debian/xdm/* debian/tmp/etc/X11/kdm
+# skipping CVS
+	for file in debian/xdm/*; do \
+	 if test -f $$file; then cp $$file debian/tmp/etc/X11/kdm ;\
+        fi; done
 	rm -f debian/tmp/usr/X11R6/lib/X11/kdm/*
 	cp debian/README.xdm debian/tmp/usr/doc/kdm/README.Debian
 	cp debian/kdm.options.5.gz debian/tmp/usr/man/man5
@@ -79,7 +83,7 @@ binary-arch: checkroot build
 	install -d debian/tmp/usr/X11R6/lib/X11/fonts/misc
 	cp debian/kappfinder debian/tmp/usr/bin
 	mv debian/tmp/usr/bin/startkde debian/tmp/usr/bin/kde
-	ln -s kde debian/tmp/usr/bin/startkde
+	ln -s startkde debian/tmp/usr/bin/kde
 	rm -rf debian/tmp/usr/share/applnk/debian_menu
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.kdelnk \
