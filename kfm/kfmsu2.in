@@ -2,10 +2,9 @@
 echo "KFM Super User"
 echo "--------------"
 echo ""
-echo "Allowing root user to use this display"
-xhost +local:root
+echo "Allowing ALL (!) local users to use this display"
+xhost +local:
 echo ""
 echo "Logging in as super user"
-su - root -c "export DISPLAY=$DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
-xhost -local:root
-
+su - root -c "DISPLAY=$DISPLAY; export DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
+xhost -local:
