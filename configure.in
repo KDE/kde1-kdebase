@@ -353,6 +353,7 @@ AC_OUTPUT(Makefile \
 	po/ru/Makefile \
 	po/sk/Makefile \
 	po/sl/Makefile \
+	po/tr/Makefile \
 	po/is/Makefile \
 	po/sv/Makefile \
 	po/zh_TW.Big5/Makefile \
