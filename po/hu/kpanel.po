@@ -22,7 +22,6 @@
 # Copyright (C) 1997 Free Software Foundation, Inc.
 # Nagy Balazs <julian7@kva.hu>, 1997.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kde 1.1\n"

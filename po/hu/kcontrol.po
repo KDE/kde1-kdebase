@@ -1,18 +1,21 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1998-12-17 14:04+0100\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:06:06+0200\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: configlist.cpp:121
 msgid "Unknown module: "
@@ -45,9 +48,9 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
 #: mainwidget.cpp:44
-#, fuzzy
+#
 msgid "KDE Version: "
-msgstr "Verzió: "
+msgstr "KDE Verzió: "
 
 #: mainwidget.cpp:52
 msgid "User: "

@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Balazs Nagy <julian7@kva.hu>
@@ -6,24 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale VERSION\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
-"PO-Revision-Date: 1998-02-26 19:06+MET\n"
-"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
-"Language-Team: LANGUAGE <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:01:00+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: main.cpp:52
 msgid "&Locale"
-msgstr ""
+msgstr "&Nemzetközi"
 
 #: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
-msgstr "használat: kcmlocale [-init | nyelv]\n"
+msgstr "használat: kcmlocale [-init | language]\n"
 
 #: main.cpp:86
 msgid "Locale settings"
-msgstr "Helyi beállítások"
+msgstr "Nemzetközii beállítások"
 
 #: locale.cpp:45
 msgid "Language"

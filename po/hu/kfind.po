@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # John Zero <johnzero@telnet.hu>, 1997
@@ -7,12 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
-"PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:28:46+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: kfdird.cpp:46
 msgid "Directories:"
@@ -23,14 +26,14 @@ msgid "Cannot open or read directory."
 msgstr "Nem lehet megnyitni vagy olvasni a könyvtárat."
 
 #: kfindtop.cpp:121
-#, fuzzy
+#
 msgid "&Start search"
-msgstr "Keresés indítása"
+msgstr "Kere&sés indítása"
 
 #: kfindtop.cpp:123
-#, fuzzy
+#
 msgid "S&top search"
-msgstr "Állj"
+msgstr "Ke&resés állj"
 
 #: kfindtop.cpp:128
 msgid "&Open"
@@ -57,9 +60,9 @@ msgid "&Select All"
 msgstr "&Mindent kijelöl"
 
 #: kfindtop.cpp:160
-#, fuzzy
+#
 msgid "Unse&lect All"
-msgstr "&Mindent kijelöl"
+msgstr "Kijelölést &visszavon"
 
 #: kfindtop.cpp:162
 msgid "&Invert Selection"
@@ -126,7 +129,7 @@ msgid "Include &subfolders"
 msgstr "&Alkönyvtárakkal együtt"
 
 #: kftabdlg.cpp:118
-#, fuzzy
+#
 msgid " Name& Location "
 msgstr " Név &hely "
 
@@ -180,7 +183,7 @@ msgstr "&Mérete:"
 
 #: kftabdlg.cpp:217
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
@@ -188,27 +191,27 @@ msgstr "Minden file és könyvtár"
 
 #: kftabdlg.cpp:238
 msgid "Folders"
-msgstr ""
+msgstr "Mappák"
 
 #: kftabdlg.cpp:239
 msgid "Symbolic links"
-msgstr ""
+msgstr "Szimbólikus kötések"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Speciális fájlok (socketek, eszköz fájlok...)"
 
 #: kftabdlg.cpp:241
 msgid "Executable files"
-msgstr ""
+msgstr "Futtatható fájlok"
 
 #: kftabdlg.cpp:242
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID-es futtatható fájlok"
 
 #: kftabdlg.cpp:250
 msgid "(none)"
-msgstr ""
+msgstr "(nincs)"
 
 #: kftabdlg.cpp:251
 msgid "At Least"
@@ -244,11 +247,11 @@ msgstr "Beállítások"
 
 #: kfoptions.cpp:74
 msgid "File format:"
-msgstr "File formátuma:"
+msgstr "Fájl formátuma:"
 
 #: kfoptions.cpp:76
 msgid "Save results to file:"
-msgstr "Eredmények mentése file-ba:"
+msgstr "Eredmények mentése fájlba:"
 
 #: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"

@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 # Hungarian messages for kdmconfig
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Székely Krisztián <szekelyk@edasz.hu>, 1998.
@@ -6,12 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig VERSION\n"
 "POT-Creation-Date: 1999-01-12 01:14+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Székely Krisztián <szekelyk@edasz.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:18:14+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 # main.cpp:99
 #: main.cpp:84
@@ -31,12 +34,13 @@ msgstr "&Felhasználók"
 # main.cpp:113
 #: main.cpp:98
 msgid "&Sessions"
-msgstr "&Kapcsolat"
+msgstr "&Felület"
 
 #: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 msgstr ""
+"használat: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 # main.cpp:158
 #: main.cpp:142
@@ -85,15 +89,15 @@ msgstr "Motif"
 # kdm-appear.cpp:116
 #: kdm-appear.cpp:117
 msgid "Windows"
-msgstr "Windows"
+msgstr "Ablakok"
 
 #: kdm-appear.cpp:128
 msgid "Language"
-msgstr ""
+msgstr "Nyelv"
 
 #: kdm-appear.cpp:131
 msgid "Language:"
-msgstr ""
+msgstr "Nyelv:"
 
 # kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
 #: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
@@ -165,19 +169,19 @@ msgstr ""
 # kdm-font.cpp:48
 #: kdm-font.cpp:48
 msgid "Select fonts"
-msgstr "Font választás"
+msgstr "Betûtípus választás"
 
 # kdm-font.cpp:62
 #: kdm-font.cpp:50
-#, fuzzy
+#
 msgid "Example"
-msgstr "Példa:"
+msgstr "Példa"
 
 # kdm-font.cpp:51
 #: kdm-font.cpp:52
-#, fuzzy
+#
 msgid "Change font..."
-msgstr "Font változtatás"
+msgstr "Betûtípus változtatás..."
 
 # kdm-font.cpp:59
 #: kdm-font.cpp:57
@@ -192,29 +196,29 @@ msgstr "Hiba"
 # kdm-font.cpp:61
 #: kdm-font.cpp:59
 msgid "Standard"
-msgstr "Szabvány"
+msgstr "Alap"
 
 # kdm-font.cpp:59
 #: kdm-font.cpp:157
-#, fuzzy
+#
 msgid "Greeting font"
-msgstr "Üdvözlet"
+msgstr "Üdvözlet betûtípus"
 
 # kdm-font.cpp:60
 #: kdm-font.cpp:161
-#, fuzzy
+#
 msgid "Fail font"
-msgstr "Hiba"
+msgstr "Hiba betûtípus"
 
 # kdm-font.cpp:61
 #: kdm-font.cpp:165
-#, fuzzy
+#
 msgid "Standard font"
-msgstr "Szabvány"
+msgstr "Alap betûtípus"
 
 #: kdm-bgnd.cpp:70
 msgid "Preview"
-msgstr ""
+msgstr "Megtekintés"
 
 # kdm-bgnd.cpp:67
 #: kdm-bgnd.cpp:95
@@ -223,17 +227,17 @@ msgstr "Szín"
 
 # kdm-bgnd.cpp:67
 #: kdm-bgnd.cpp:101
-#, fuzzy
+#
 msgid "Solid Color"
-msgstr "Szín"
+msgstr "Egyszínû"
 
 #: kdm-bgnd.cpp:106
 msgid "Horizontal Blend"
-msgstr ""
+msgstr "Vízszintes átmenet"
 
 #: kdm-bgnd.cpp:111
 msgid "Vertical Blend"
-msgstr ""
+msgstr "Függõleges átmenet"
 
 # kdm-bgnd.cpp:75
 #: kdm-bgnd.cpp:130
@@ -243,45 +247,45 @@ msgstr "Tapéta"
 # kdm-sess.cpp:58
 #: kdm-bgnd.cpp:171 kdm-sess.cpp:56
 msgid "None"
-msgstr "Semmi"
+msgstr "Nincs"
 
 # kdm-bgnd.cpp:110
 #: kdm-bgnd.cpp:176
-#, fuzzy
+#
 msgid "Tile"
 msgstr "Mozaik"
 
 # kdm-bgnd.cpp:114
 #: kdm-bgnd.cpp:181
-#, fuzzy
+#
 msgid "Center"
 msgstr "Középen"
 
 # kdm-bgnd.cpp:118
 #: kdm-bgnd.cpp:186
-#, fuzzy
+#
 msgid "Scale"
-msgstr "Igazítva"
+msgstr "Kinyújtva"
 
 #: kdm-bgnd.cpp:191
 msgid "TopLeft"
-msgstr ""
+msgstr "Balra fent"
 
 #: kdm-bgnd.cpp:196
 msgid "TopRight"
-msgstr ""
+msgstr "Jobbra fent"
 
 #: kdm-bgnd.cpp:201
 msgid "BottomLeft"
-msgstr ""
+msgstr "Balra lent"
 
 #: kdm-bgnd.cpp:206
 msgid "BottomRight"
-msgstr ""
+msgstr "Jobbra lent"
 
 #: kdm-bgnd.cpp:211
 msgid "Fancy"
-msgstr ""
+msgstr "Csicsás"
 
 # kdm-users.cpp:49
 #: kdm-users.cpp:48
@@ -305,7 +309,7 @@ msgid ""
 "selected users"
 msgstr ""
 "Csak a kiválasztott\n"
-"felhasználókat mutasd"
+"felhasználók látszódjanak"
 
 # kdm-users.cpp:87
 #: kdm-users.cpp:86
@@ -313,8 +317,8 @@ msgid ""
 "Show all users\n"
 " but no-show users"
 msgstr ""
-"Mutass minden felhasználót\n"
-" kivéve a rejtetteket"
+"Minden felhasználó látszódjon,\n"
+"kivéve a rejtetteket"
 
 # kdm-users.cpp:97
 #: kdm-users.cpp:97
@@ -338,14 +342,14 @@ msgstr "Kép mentése alapértelmezett képként?"
 
 # kdm-sess.cpp:51
 #: kdm-sess.cpp:52
-#, fuzzy
+#
 msgid "Allow to shutdown"
-msgstr "Leállitás engedélyezése:"
+msgstr "Leállitás engedélyezése"
 
 # kdm-sess.cpp:59
 #: kdm-sess.cpp:57
 msgid "All"
-msgstr "Minden"
+msgstr "Mindenki"
 
 # kdm-sess.cpp:60
 #: kdm-sess.cpp:58
@@ -375,7 +379,7 @@ msgstr "Újraindítás"
 # kdm-sess.cpp:86
 #: kdm-sess.cpp:77
 msgid "Session types"
-msgstr "Kapcsolat típusok"
+msgstr "Felület típusok"
 
 # kdm-sess.cpp:89
 #: kdm-sess.cpp:79
@@ -389,7 +393,7 @@ msgstr "Elérhetõ típusok"
 
 #: klangcombo.cpp:133
 msgid "without name!"
-msgstr ""
+msgstr "név nélkül!"
 
 # main.cpp:103
 #~ msgid "&Fonts"

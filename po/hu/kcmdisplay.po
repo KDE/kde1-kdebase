@@ -1,4 +1,6 @@
 # KTranslator Generated File
+
+# KTranslator Generated File
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
@@ -18,13 +20,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay VERSION\n"
 "POT-Creation-Date: 1999-04-20 01:17+0200\n"
-"PO-Revision-Date: Thu Apr 22 1999 09:45:24+0100\n"
+"PO-Revision-Date: Tue Aug 31 1999 09:52:45+0200\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: backgnd.cpp:55
 msgid "Enter new desktop name"
@@ -483,8 +485,7 @@ msgstr "&Menüsor a képernyõ tetején, MacOS stílusban"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr ""
-"&Alkalmazza a szín és betûtípus beállításokat a nem-KDE alkalmazásokra is"
+msgstr "&Alkalmazza a szín és betûtípus beállításokat a nem-KDE alkalmazásokra is"
 
 #: general.cpp:529
 msgid "General font"

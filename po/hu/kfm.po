@@ -1,3 +1,5 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 1997 Free Software Foundation, Inc.
 # Balázs Nagy <julian7@kva.hu>, 1997.
@@ -6,19 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.27\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
-"PO-Revision-Date: 1998-02-26 20:20+MET\n"
-"Last-Translator: Balázs Nagy <julian7@kva.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:32:54+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: kfmgui.cpp:204
 msgid "KFM"
-msgstr ""
+msgstr "KFM"
 
 #: kfmgui.cpp:222
-#, fuzzy
 msgid "New &Window"
 msgstr "Új &ablak"
 
@@ -47,35 +49,35 @@ msgid "&Select"
 msgstr "K&ijelöl"
 
 #: kfmgui.cpp:262
-#, fuzzy
+#
 msgid "Select &all"
-msgstr "K&ijelöl"
+msgstr "M&indent kijelöl"
 
 #: kfmgui.cpp:265
 msgid "&Find in page..."
-msgstr ""
+msgstr "K&eresés az oldalon..."
 
 #: kfmgui.cpp:267
 msgid "Find &next"
-msgstr ""
+msgstr "K&övetkezõ keresése"
 
 #: kfmgui.cpp:270
 msgid "Show History"
-msgstr ""
+msgstr "Eddigi helyek"
 
 #: kfmgui.cpp:272
 msgid "Show Cache"
 msgstr "Gyorstár megjelenítése"
 
 #: kfmgui.cpp:274
-#, fuzzy
+#
 msgid "Mime &Types"
-msgstr "MIME típus"
+msgstr "MIME &típusok"
 
 #: kfmgui.cpp:276
-#, fuzzy
+#
 msgid "App&lications"
-msgstr "Alkalmazások"
+msgstr "A&lkalmazások"
 
 #: kfmgui.cpp:282
 msgid "Global Mime Types"
@@ -86,9 +88,9 @@ msgid "Global Applications"
 msgstr "Alapértelmezett alkalmazások"
 
 #: kfmgui.cpp:292
-#, fuzzy
+#
 msgid "Show Hi&dden Files"
-msgstr "&Rejtett file-ok megjelenítése"
+msgstr "&Rejtett fájlok megjelenítése"
 
 #: kfmgui.cpp:294
 msgid "Show Tr&ee"
@@ -96,7 +98,7 @@ msgstr "&Könyvtárfa megjelenítése"
 
 #: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
-msgstr ""
+msgstr "&Vázlatképek megjelenítése"
 
 #: kfmgui.cpp:298
 msgid "&HTML View"
@@ -115,9 +117,9 @@ msgid "&Long View"
 msgstr "&Hosszú lista"
 
 #: kfmgui.cpp:307
-#, fuzzy
+#
 msgid "&Short View"
-msgstr "&Ikon lista"
+msgstr "&Rövid lista"
 
 #: kfmgui.cpp:313
 msgid "Rel&oad Tree"
@@ -128,7 +130,7 @@ msgid "&Reload Document"
 msgstr "Dokumentum új&raolvasása"
 
 #: kfmgui.cpp:317
-#, fuzzy
+#
 msgid "Rescan &Bindings"
 msgstr "Kötések újra&olvasása"
 
@@ -142,12 +144,12 @@ msgstr "&Dokumentumforrás megjelenítése"
 
 #: kfmgui.cpp:330
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:338
-#, fuzzy
+#
 msgid "Document Encodin&g"
-msgstr "Dokumentum: kész"
+msgstr "Dokumentum kó&dolás"
 
 #: kfmgui.cpp:353
 msgid "Clear Cache"
@@ -162,14 +164,14 @@ msgid "Never look in cache"
 msgstr "Sosem használ gyorstárat"
 
 #: kfmgui.cpp:360
-#, fuzzy
+#
 msgid "Always save cache"
-msgstr "Mindig gyorstárat használ"
+msgstr "Mindig mentse a gyorstárat"
 
 #: kfmgui.cpp:362
-#, fuzzy
+#
 msgid "Never save cache"
-msgstr "Sosem használ gyorstárat"
+msgstr "Sose mentse a gyorstárat"
 
 #: kfmgui.cpp:373
 msgid "Show &Menubar"
@@ -192,23 +194,23 @@ msgid "Sa&ve Settings"
 msgstr "&Beállítások mentése"
 
 #: kfmgui.cpp:384
-#, fuzzy
+#
 msgid "Save Settings for this &URL"
-msgstr "&Beállítások mentése"
+msgstr "&URL beállítások mentése"
 
 #: kfmgui.cpp:392
 msgid "&Cache"
 msgstr "&Gyorstár"
 
 #: kfmgui.cpp:393
-#, fuzzy
+#
 msgid "&Configure File Manager..."
-msgstr "Böngészõ beállítása..."
+msgstr "&Fájlkezelõ beállítása..."
 
 #: kfmgui.cpp:395
-#, fuzzy
+#
 msgid "Configure &Browser..."
-msgstr "Böngészõ beállítása..."
+msgstr "&Böngészõ beállítása..."
 
 #: kfmgui.cpp:431
 msgid ""
@@ -224,16 +226,29 @@ msgid ""
 "Current maintainer: David Faure\n"
 "faure@kde.org"
 msgstr ""
+"Szerzõ: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget szerzõje: Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager szerzõje: Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Jelenlegi karbantartó: David Faure\n"
+"faure@kde.org"
 
 #: kfmgui.cpp:434
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"A hibákat és javaslatokat a http://bugs.kde.org címen lehet jelenteni."
 
 #: kfmgui.cpp:450
 msgid "&Go"
-msgstr ""
+msgstr "U&grás"
 
 #: kfmgui.cpp:451
 msgid "&Bookmarks"
@@ -241,11 +256,11 @@ msgstr "&Kedvenc"
 
 #: kfmgui.cpp:486 main.cpp:296
 msgid "Up"
-msgstr ""
+msgstr "Fel"
 
 #: kfmgui.cpp:496 main.cpp:298
 msgid "Forward"
-msgstr ""
+msgstr "Elõre"
 
 #: kfmgui.cpp:501
 msgid "Home"
@@ -253,7 +268,7 @@ msgstr "Kezdõlap"
 
 #: kfmgui.cpp:558
 msgid "Could not load icon\n"
-msgstr "A %s ikon nem található\n"
+msgstr "Nem sikerült betölteni az ikont\n"
 
 #: bookmark.cpp:304 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1560 kbind.cpp:1568 kbind.cpp:1586
@@ -280,7 +295,7 @@ msgid "KFM Error"
 msgstr "KFM Hiba"
 
 #: kfmgui.cpp:572
-#, fuzzy
+#
 msgid "Location:"
 msgstr "Hely megnyitása:"
 
@@ -290,45 +305,44 @@ msgstr "Hibás URL\n"
 
 #: kfmgui.cpp:985
 msgid "Select files:"
-msgstr "Kijelölt file-ok:"
+msgstr "Kijelölt fájlok:"
 
 #: kfmgui.cpp:1052
 msgid "Find Complete"
-msgstr ""
+msgstr "Keresés vége"
 
 #: kfmgui.cpp:1053
 msgid "Continue search from the top of the page?"
-msgstr ""
+msgstr "Folytassam a keresést a lap tetejérõl?"
 
 #: kfmgui.cpp:1071
 msgid "&Edit Bookmarks..."
-msgstr "&Kedvencek módosítása"
+msgstr "&Kedvencek módosítása..."
 
 #: kfmgui.cpp:1083
 msgid "&Add Bookmark"
 msgstr "&Hozzáadás a kedvencekhez"
 
 #: kfmgui.cpp:1119 kfmman.cpp:1469 kfmtree.cpp:387 root.cpp:286
-#, fuzzy
+#
 msgid "&New"
-msgstr "Új "
+msgstr "&Új "
 
 #: kfmgui.cpp:1192
 msgid "&Up"
-msgstr ""
+msgstr "&Fel"
 
 #: kfmgui.cpp:1194
 msgid "&Back"
-msgstr ""
+msgstr "&Vissza"
 
 #: kfmgui.cpp:1196
 msgid "&Forward"
-msgstr ""
+msgstr "&Elõre"
 
 #: kfmgui.cpp:1198
-#, fuzzy
 msgid "&Home"
-msgstr "Kezdõlap"
+msgstr "&Kezdõlap"
 
 #: kfmgui.cpp:1267 kfmgui.cpp:1433 kfmjob.cpp:36 kfmman.cpp:252
 #: kfmtree.cpp:498 kfmview.cpp:496 kfmview.cpp:578 kfmview.cpp:806
@@ -357,13 +371,13 @@ msgid "Document: Done"
 msgstr "Dokumentum: kész"
 
 #: kfmview.cpp:443 root.cpp:944
-#, fuzzy
+#
 msgid "ERROR: You may only drop URLs"
-msgstr "Saját magára ejtette az URL-t"
+msgstr "HIBA: Csak URL-t dobhatsz ide"
 
 #: kfmview.cpp:477
 msgid "ERROR: Drop over malformed URL"
-msgstr ""
+msgstr "HIBA: Hibás URL-t dobdtál"
 
 #: kfmserver.cpp:129 kfmtree.cpp:536 kfmview.cpp:549 kfmview.cpp:849
 #: kiojob.cpp:670 kiojob.cpp:1080 krenamewin.cpp:24 root.cpp:1290
@@ -403,6 +417,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Nem sikerült elmenteni a tulajdonságokat, mert\n"
+"ez a könyvtár nem is írható, és nincs is a kedvencek között.\n"
+"\n"
+"Tedd be a kedvencek közé, vagy csinájl rá egy kdelnk-t az asztalra."
 
 #: kfmview.cpp:719
 msgid ""
@@ -411,6 +429,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
+"Nem sikerült elmenteni a tulajdonságokat, mert\n"
+"ez az URL nincs az aztalon, és nincs a kedvencek között sem.\n"
+"\n"
+"Tedd be a kedvencek közé, vagy csinájl rá egy kdelnk-t az asztalra."
 
 #: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
@@ -454,11 +476,9 @@ msgid "The mime type config file "
 msgstr "A(z) "
 
 #: kbind.cpp:228
-#, fuzzy
+#
 msgid "does not contain a MimeType=... entry"
-msgstr ""
-"mime típus konfigurációs file nem tartalmaz\n"
-"MimeType=... bejegyzést"
+msgstr "nem tartalmaz MimeType=... bejegyzést"
 
 #: kbind.cpp:309
 msgid "No mime types installed!"
@@ -491,7 +511,7 @@ msgstr ""
 
 #: kbind.cpp:1312 kbind.cpp:1870
 msgid "ERROR: No Terminal Setting"
-msgstr ""
+msgstr "HIBA: Nincs terminál beállítva"
 
 #: kbind.cpp:1387
 msgid "Could not execute program\n"
@@ -566,10 +586,14 @@ msgid ""
 "\n"
 "Would you like to install the new ones?"
 msgstr ""
+"Egy úk KDE verzió lett telepítve.\n"
+"A sablon fájlok esetleg megváltozattak.\n"
+"\n"
+"Szertnéd telepíteni az újakat?"
 
 #: main.cpp:281
 msgid "Cd"
-msgstr ""
+msgstr "Cd"
 
 #: main.cpp:282
 msgid "New View"
@@ -601,31 +625,31 @@ msgstr "Hozzáadás a kedvencekhez"
 
 #: main.cpp:294
 msgid "Save settings for this URL"
-msgstr ""
+msgstr "Jelenlegi URL beállításinak mentése"
 
 #: main.cpp:295
-#, fuzzy
+#
 msgid "Show Menubar"
-msgstr "&Menüsor megjelenítése"
+msgstr "Menüsor megjelenítése"
 
 #: kfmdlg.cpp:118
-#, fuzzy
+#
 msgid "&Browser"
-msgstr "Tallóz"
+msgstr "&Böngészõ"
 
 #: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
 msgstr "Futtatás terminálban"
 
 #: bookmark.cpp:304
-#, fuzzy
+#
 msgid "Could not write bookmark"
-msgstr "Nem lehet írni\n"
+msgstr "Nem sikerült elmenti a kedvencet"
 
 #: kfmprops.cpp:239
-#, fuzzy
+#
 msgid "File Name"
-msgstr "Teljes név"
+msgstr "Fájl Név"
 
 #: kfmprops.cpp:254
 msgid "Full Name"
@@ -657,13 +681,13 @@ msgid "Last Modified"
 msgstr "Utolsó módosítás"
 
 #: kfmprops.cpp:383
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Nem lehet törölni a(z)\n"
-"%s könyvtárat"
+"Nem lehet átnevezni a(z) %s\n"
+"fájlt vagy könyvtárat\n"
 
 #: kfmprops.cpp:434
 msgid "Access permissions"
@@ -674,6 +698,8 @@ msgid ""
 "Show\n"
 "Entries"
 msgstr ""
+"Bejegzések\n"
+"megjelenítése"
 
 #: kfmprops.cpp:442
 msgid "Read"
@@ -684,6 +710,8 @@ msgid ""
 "Write\n"
 "Entries"
 msgstr ""
+"Bejegyzések\n"
+"írása"
 
 #: kfmprops.cpp:449
 msgid "Write"
@@ -694,6 +722,7 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
+"Váltás"
 
 #: kfmprops.cpp:456
 msgid "Exec"
@@ -717,15 +746,15 @@ msgstr "Többiek"
 
 #: kfmprops.cpp:487
 msgid "Set UID"
-msgstr ""
+msgstr "UID beállítás"
 
 #: kfmprops.cpp:488
 msgid "Set GID"
-msgstr ""
+msgstr "GID beállítás"
 
 #: kfmprops.cpp:489
 msgid "Sticky"
-msgstr ""
+msgstr "Ragadós"
 
 #: kfmprops.cpp:507
 msgid "Ownership"
@@ -766,17 +795,17 @@ msgid "Execute"
 msgstr "Végrehajtás"
 
 #: kfmprops.cpp:690 kfmprops.cpp:1177
-#, fuzzy
+#
 msgid "&Browse..."
-msgstr "Tallóz"
+msgstr "&Tallóz..."
 
 #: kfmprops.cpp:724
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Panelba illesztés"
 
 #: kfmprops.cpp:751
 msgid "Window Title"
-msgstr ""
+msgstr "Ablak címe"
 
 #: kfmprops.cpp:779
 msgid "Terminal Options"
@@ -793,11 +822,11 @@ msgstr ""
 
 #: kfmprops.cpp:1007
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: kfmprops.cpp:1116
 msgid "Background"
-msgstr ""
+msgstr "Háttér"
 
 #: kfmprops.cpp:1126
 msgid "Apply global"
@@ -817,7 +846,7 @@ msgstr "(Semmi)"
 
 #: kfmprops.cpp:1429
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr ""
+msgstr "Bináris minta (netscape;Netscape;)"
 
 #: kfmprops.cpp:1436 kfmprops.cpp:1831
 msgid "Comment"
@@ -841,7 +870,7 @@ msgstr "Alapértelmezett program"
 
 #: kfmprops.cpp:1889
 msgid "<none>"
-msgstr ""
+msgstr "<üres>"
 
 #: kfmprops.cpp:2134
 msgid "Device ( /dev/fd0 )"
@@ -913,6 +942,9 @@ msgid ""
 "New root grid dimensions would move some icons\n"
 "off the desktop."
 msgstr ""
+"Nem hajtahtó végre a változtatás.\n"
+"Az új ikon rács méret miatt néhány ikon\n"
+"lecsúszna az asztalról."
 
 #: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
@@ -929,11 +961,11 @@ msgstr "Hiba: nem lehet egérrel ejteni"
 
 #: kfmman.cpp:1657 kfmman.cpp:1703 kfmtree.cpp:340 root.cpp:1865 root.cpp:1890
 msgid "Dont know what to do."
-msgstr ""
+msgstr "Nem tudom mit csináljak."
 
 #: kfmexec.cpp:117 kfmman.cpp:371
 msgid "The file does not contain a URL"
-msgstr "A file nem tartalmaz URL-t"
+msgstr "A fájl nem tartalmaz URL-t"
 
 #: kfmman.cpp:519
 msgid "Contacting host "
@@ -945,7 +977,7 @@ msgstr "Várjon..."
 
 #: kiojob.cpp:140
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr ""
+msgstr "BELSÕ HIBA: Legalább az eszközt meg kell adnod a mountoláshoz"
 
 #: kiojob.cpp:243 kiojob.cpp:251 kiojob.cpp:1340 kiojob.cpp:1419
 #, c-format
@@ -982,7 +1014,7 @@ msgid " ERROR: Could not write to %s"
 msgstr " HIBA: Nem lehet írni a %s file-t"
 
 #: kiojob.cpp:573 kiojob.cpp:896
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
@@ -1000,7 +1032,7 @@ msgstr ""
 #: kiojob.cpp:603 kiojob.cpp:1173
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr ""
+msgstr "HIBA: Nem férek hozzá a(z) '%s' könyvtárhoz"
 
 #: kiojob.cpp:667
 #, c-format
@@ -1008,28 +1040,34 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
+"A(z) %s\n"
+"különleges fájl nem lesz átmásolva"
 
 #: kiojob.cpp:669
 #, c-format
 msgid "%d special files will not be copied."
-msgstr ""
+msgstr "%d különleges fájl nem lesz átmásolva."
 
 #: kiojob.cpp:674
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
 msgstr ""
+"Rekurzív másolás fájlból al-protokollal\n"
+"(például tar fájlok)"
 
 #: kiojob.cpp:679
 msgid "Recurse copying from/to distant locations"
-msgstr ""
+msgstr "Rekurzív másolás távoli helyre/rõl"
 
 #: kiojob.cpp:909
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
-msgstr "Nem lehet szimbolikusan láncolni %s-t"
+msgstr ""
+"Nem lehet eltávolítani a %s\n"
+"szimbólikus láncot"
 
 #: kiojob.cpp:957
 #, c-format
@@ -1059,11 +1097,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
+"A(z) %s\n"
+"különleges fájl nem lesz átmozgatva"
 
 #: kiojob.cpp:1079
 #, c-format
 msgid "%d special files will not be moved."
-msgstr ""
+msgstr "%d különleges fájl nem lesz átmozgatva."
 
 #: kiojob.cpp:1343 kiojob.cpp:1423
 #, c-format
@@ -1074,7 +1114,7 @@ msgid ""
 msgstr ""
 "Nem lehet olvasni\n"
 "%s-t\n"
-"A file nem létezik vagy hozzáférés megtagadva."
+"A fájl nem létezik vagy hozzáférés megtagadva."
 
 #: kiojob.cpp:1346
 #, c-format
@@ -1097,11 +1137,12 @@ msgstr ""
 "%s kiszolgálóhoz"
 
 #: kiojob.cpp:1354 kiojob.cpp:1431
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
-msgstr "Nem létezõ kiszolgáló: %s"
+msgstr ""
+"Nem létezõ kiszolgáló: %s"
 
 #: kiojob.cpp:1358 kiojob.cpp:1435
 #, c-format
@@ -1119,6 +1160,9 @@ msgid ""
 "%s\n"
 "is not implemented yet."
 msgstr ""
+"A kért funkció,\n"
+"%s\n"
+"még nincs megvalósítva."
 
 #: kiojob.cpp:1370
 #, c-format
@@ -1147,6 +1191,9 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
+"Nem sikerült bejelentkezni a(z)\n"
+"%s kiszolgálóra\n"
+"Talán hibás a jelszó"
 
 #: kiojob.cpp:1390
 #, c-format
@@ -1154,6 +1201,8 @@ msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
+"A tar parancs hibát észlelt:\n"
+"%s"
 
 #: kiojob.cpp:1393
 #, c-format
@@ -1161,10 +1210,12 @@ msgid ""
 "Gzip reported an error for\n"
 "%s"
 msgstr ""
+"A gzip parancs hibát észlelt\n"
+"%s"
 
 #: kiojob.cpp:1399
 msgid "Operation technically impossible"
-msgstr ""
+msgstr "A mûvelet végrehajtása technikailag lehetetlen"
 
 #: kiojob.cpp:1402 kiojob.cpp:1415
 #, c-format
@@ -1172,9 +1223,11 @@ msgid ""
 "File %s\n"
 "does not exist"
 msgstr ""
+"A(z) %s\n"
+"fájl nem létezik"
 
 #: kiojob.cpp:1405
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
@@ -1182,7 +1235,7 @@ msgid ""
 msgstr ""
 "Nem lehet írni\n"
 "%s-t\n"
-"Hozzáférés megtagadva."
+"Talán megtelt a lemez."
 
 #: kiojob.cpp:1456
 #, c-format
@@ -1190,6 +1243,8 @@ msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
+"A tar parancs végzetes hibát észlelt:\n"
+"%s"
 
 #: kiojob.cpp:1460
 #, c-format
@@ -1197,6 +1252,8 @@ msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
+"A gzip parancs végzetes hibát észlelt:\n"
+"%s"
 
 #: kiojob.cpp:1464
 #, c-format
@@ -1206,7 +1263,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"A csatlakoztatás nem sikerült.\n"
+"A mountolás nem sikerült.\n"
 "A hiba:\n"
 "\n"
 "%s"
@@ -1219,8 +1276,11 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Nem lehet csatlakozni a\n"
-"%s kiszolgálóhoz"
+"A lemountolás nem sikerült.\n"
+"A hiba:\n"
+"\n"
+"%s"
+""
 
 #: kiojob.cpp:1579
 msgid "Making directory"
@@ -1229,7 +1289,7 @@ msgstr "Könyvtár létrehozása"
 #: kiojob.cpp:1699 kiojob.cpp:1760 kiojob.cpp:1809
 #, c-format
 msgid "File %i/%i"
-msgstr ""
+msgstr "Fájl %i/%i"
 
 #: kiojob.cpp:1709 kiojob.cpp:1771
 #, c-format
@@ -1248,12 +1308,12 @@ msgstr ""
 #: kiojob.cpp:1842
 #, c-format
 msgid "Mounting %s ..."
-msgstr "%s csatlakoztatása..."
+msgstr "%s mountolása..."
 
 #: kiojob.cpp:1844
 #, c-format
 msgid "Unmounting %s ..."
-msgstr "%s leválasztása..."
+msgstr "%s lemountolása..."
 
 #: kiojob.cpp:1872
 #, c-format
@@ -1262,23 +1322,27 @@ msgstr "%s listájának letöltése..."
 
 #: kiojob.cpp:2113
 msgid "Segmentation fault in io subprocess"
-msgstr ""
+msgstr "Szegmentációs hiba az io alfolyamatban"
 
 #: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
+"nem könyvtár! Biztonsági figyelmeztetés!\n"
+"Kérlek ellenõrizd.\n"
 
 #: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
+"nem könyvtár! Biztonsági figyelmeztetés!\n"
+"Kérlek ellenõrizd mielõtt törlöd a gyorstárat.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
-msgstr "KFM installációs hiba"
+msgstr "KFM telepítés hiba"
 
 #: autostart.cpp:29
 msgid "The directory "
@@ -1346,54 +1410,54 @@ msgstr "Megnyitás..."
 
 #: open-with.cpp:132
 msgid "This group is empty!"
-msgstr ""
+msgstr "Ez a csoport üres!"
 
 #: finddlg.cpp:41
-#, fuzzy
+#
 msgid "Find:"
-msgstr "K&eres"
+msgstr "Keresd:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr ""
+msgstr "Ki&s/nagybetû érzékeny"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
-msgstr ""
+msgstr "Cookie riadó!"
 
 #: kcookiewin.cpp:76
 msgid "You received a cookie from host:"
-msgstr ""
+msgstr "Kaptál egy cookie-t ettõl a kiszolgálótól:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr ""
+msgstr "Elfogadod vagy elveted a cookie-t?"
 
 #: kcookiewin.cpp:120
-#, fuzzy
+#
 msgid "Apply to "
-msgstr "Globálisan alkalmaz"
+msgstr "Alkalmaz"
 
 #: kcookiewin.cpp:125
 msgid "&This cookie only"
-msgstr ""
+msgstr "&Csak ezt a cookie-t"
 
 #: kcookiewin.cpp:133
 msgid "All cookies from this &domain"
-msgstr ""
+msgstr "Minden cookie-t ebbõl a &tartományból"
 
 #: kcookiewin.cpp:140
 msgid "All &cookies"
-msgstr ""
+msgstr "&Minden cookie-t"
 
 #: kcookiewin.cpp:161
 msgid "&Accept"
-msgstr ""
+msgstr "&Elfogad"
 
 #: kcookiewin.cpp:166
-#, fuzzy
+#
 msgid "&Reject"
-msgstr "K&ijelöl"
+msgstr "E&lvet"
 
 #: popup.cpp:73
 #, c-format
@@ -1405,6 +1469,8 @@ msgid ""
 "Source file doesn't exist anymore ! \n"
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
+"A forrás fájl nem létezik többé!\n"
+"Használd a \"Kötések újraolvasása\" menüpontot a frissítéshez"
 
 #: popup.cpp:121 popup.cpp:128
 msgid "New "
@@ -1424,11 +1490,11 @@ msgstr "&Végrehajtás"
 
 #: kfmprops.h:246
 msgid "U&RL"
-msgstr ""
+msgstr "U&RL"
 
 #: kfmprops.h:270
 msgid "&Dir"
-msgstr ""
+msgstr "&Könyvtár"
 
 #: kfmprops.h:317
 msgid "&Application"
@@ -1459,6 +1525,9 @@ msgid ""
 "has been modified.\n"
 "Do you want to save it?"
 msgstr ""
+"A(z) %s\n"
+"fájl megváltozott.\n"
+"Szeretnéd elmenteni?"
 
 #: kfmexec/main.cpp:136
 msgid "KFM Question"
@@ -1469,6 +1538,8 @@ msgid ""
 "Syntax Error:\n"
 "kfmexec command [URLs ....]\n"
 msgstr ""
+"Szintaktikai hiba:\n"
+"kfmexec parancs [URL(ek) ...]\n"
 
 #~ msgid "Unknown binding"
 #~ msgstr "Ismeretlen hozzárendelés"

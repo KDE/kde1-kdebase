@@ -1,15 +1,18 @@
+# KTranslator Generated File
+
 # John Zero <johnzero@telnet.hu>, 1997
 # Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: krootwm VERSION\n"
 "POT-Creation-Date: 1999-03-26 01:17+0100\n"
-"PO-Revision-Date: 1998-02-26 20:45+MET\n"
-"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 11:44:54+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: krootwm.C:234 krootwm.C:281
 msgid "Execute command"
@@ -29,11 +32,11 @@ msgstr "Asztal frissítése"
 
 #: krootwm.C:246 krootwm.C:285
 msgid "Unclutter windows"
-msgstr ""
+msgstr "Ablakok szétterítése"
 
 #: krootwm.C:247 krootwm.C:286
 msgid "Cascade windows"
-msgstr ""
+msgstr "Ablakok egymásra"
 
 #: krootwm.C:248 krootwm.C:287
 msgid "Arrange icons"
@@ -49,60 +52,60 @@ msgstr "Segítség"
 
 #: krootwm.C:258
 msgid "About KDE..."
-msgstr ""
+msgstr "KDE névjegy..."
 
 #: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
 msgid "New"
-msgstr ""
+msgstr "Új"
 
 #: krootwm.C:277 krootwm.C:316
 msgid "Bookmarks"
-msgstr ""
+msgstr "Kedvencek"
 
 #: krootwm.C:291
-#, fuzzy
+#
 msgid "Arrange Window Maker icons"
-msgstr "Ikonok rendezése"
+msgstr "Window Maker ikonok rendezése"
 
 #: krootwm.C:292
 msgid "Show all"
-msgstr ""
+msgstr "Mindent mutat"
 
 #: krootwm.C:293
 msgid "Hide other"
-msgstr ""
+msgstr "Másik elrejtése"
 
 #: krootwm.C:295
 msgid "Show info panel"
-msgstr ""
+msgstr "Infópanel mutatása"
 
 #: krootwm.C:296
 msgid "Show legal panel"
-msgstr ""
+msgstr "Szerzõi jog panel mutatása"
 
 #: krootwm.C:297
 msgid "Restart"
-msgstr ""
+msgstr "Újraindítás"
 
 #: krootwm.C:299
 msgid "Exit"
-msgstr ""
+msgstr "Kilépés"
 
 #: krootwm.C:300
 msgid "Window Maker"
-msgstr ""
+msgstr "Window Maker"
 
 #: krootwm.C:317
 msgid "Desk"
-msgstr ""
+msgstr "Asztal"
 
 #: krootwm.C:318
 msgid "Windows"
-msgstr ""
+msgstr "Ablakok"
 
 #: krootwm.C:381
 msgid "Edit Bookmarks"
-msgstr ""
+msgstr "Kedvencek módosítása"
 
 #: krootwm.C:395 krootwm.C:833
 msgid "Folder"
@@ -111,7 +114,7 @@ msgstr "Mappa"
 #: krootwm.C:399
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr ""
+msgstr "HIBA: A '%s' nevû sablon nem létezik!"
 
 #: krootwm.C:854
 msgid "Could not create folder"
@@ -119,7 +122,7 @@ msgstr "Nem lehet mappát létrehozni"
 
 #: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Szerzõi jog: (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: krootwm.C:942
 msgid "Usage:"

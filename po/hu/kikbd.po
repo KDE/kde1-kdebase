@@ -1,18 +1,21 @@
+# KTranslator Generated File
+
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # Marcell Lengyel <miketkf@yahoo.com>, 1998.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1999-04-13 01:26+0200\n"
-"PO-Revision-Date: 1998-12-17 14:15+0100\n"
+"PO-Revision-Date: Tue Aug 31 1999 11:33:17+0200\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: kikbd.cpp:124
 msgid "KDE International Keyboard already started on this display."
@@ -60,7 +63,6 @@ msgstr ""
 "Alt szimbólumok kikapcsolva."
 
 #: kikbd.cpp:406
-#, fuzzy
 msgid ""
 "Can't remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -69,23 +71,25 @@ msgstr ""
 "Caps Lock emuláció kikapcsolva"
 
 #: kikbd.cpp:1097
-#, fuzzy
+#
 msgid "Exiting International Keyboard"
-msgstr "Nemzetközi Billentyûzetkiosztás"
+msgstr "Kilépés a Nemzetközi Billentyûzetbõl"
 
 #: kikbd.cpp:1098
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
 msgstr ""
+"Kilépni készülsz a \"Nemzeközi Billentyûzet\" programból.\n"
+"Szeretnéd, hogy újrainduljon a legközelebbi bejelentkezéskor?"
 
 #: keymap.cpp:186
-#, fuzzy
+#
 msgid "KeyMap: can't allocate memory"
 msgstr "KeyMap: nem sikerült memóriát lefoglalni"
 
 #: keymap.cpp:233
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Can't find symbol \"%s\".\n"
 "Maybe your default X codes do not match.\n"
@@ -98,17 +102,17 @@ msgstr ""
 "a konfigurációs programban."
 
 #: keymap.cpp:238
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't find symbol \"%s\"."
 msgstr "KeyMap: Nem található a \"%s\" szimbólum."
 
 #: keymap.cpp:246
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: can't read keycode \"%s\"."
 msgstr "KeyMap: Nem értem a \"%s\" billentyû kódot."
 
 #: keymap.cpp:252
-#, fuzzy, c-format
+#, c-format
 msgid "KeyMap: keycode \"%s\" is out of range."
 msgstr "KeyMap: a \"%s\" billentyû kód kívül esik a tartományon."
 
@@ -165,9 +169,9 @@ msgid "Both Shift's (Shift+Shift)"
 msgstr "Mindkét Shift (Shift+Shift)"
 
 #: kikbdconf.cpp:120
-#, fuzzy
+#
 msgid "Right Meta"
-msgstr "Jobb Alt"
+msgstr "Jobb Meta"
 
 #: kikbdconf.cpp:121
 msgid "Left  Alt"
@@ -178,9 +182,9 @@ msgid "Left  Control"
 msgstr "Bal Control"
 
 #: kikbdconf.cpp:123
-#, fuzzy
+#
 msgid "Left  Meta"
-msgstr "Bal Alt"
+msgstr "Bal Meta"
 
 #: kikbdconf.cpp:126
 msgid "Top Left"
@@ -203,19 +207,21 @@ msgid "X default codes"
 msgstr "Alapértelmezett X kódok"
 
 #: kikbdconf.cpp:215
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
 msgstr ""
-"\n"
-"Folytatni akarja?"
+"%s\n"
+"Szeretnéd most beállítani?"
 
 #: kikbdconf.cpp:223
 msgid ""
 "You're using \"International Keyboard\" for the first time.\n"
 "I installed a number of default settings."
 msgstr ""
+"Most használod elõször a \"Nemzetközi Billentyûzet\" programot.\n"
+"Telepítettem néhány alap beállítást."
 
 #: kikbdconf.cpp:379
 msgid "unknown"
@@ -270,14 +276,14 @@ msgid "alternative symbols"
 msgstr "alternatív szimbólumok"
 
 #: kikbdconf.cpp:469
-#, fuzzy
+#
 msgid "Language"
-msgstr "nyelv"
+msgstr "Nyelv"
 
 #: kikbdconf.cpp:473
-#, fuzzy
+#
 msgid "Charset"
-msgstr "karakterkészlet"
+msgstr "Betûkészlet"
 
 #: kikbdconf.cpp:519
 msgid "International keyboard ERROR"
@@ -312,7 +318,7 @@ msgid "&Add"
 msgstr "Hozzá&adás"
 
 #: widgets.cpp:127
-#, fuzzy
+#
 msgid "Add new keyboard map"
 msgstr "Új kiosztás hozzáadása"
 
@@ -325,18 +331,18 @@ msgid "U&p"
 msgstr "Fe&l"
 
 #: widgets.cpp:136
-#, fuzzy
+#
 msgid "Move up selected keyboard map"
-msgstr "Kiválasztott kiosztás eltávolítása"
+msgstr "Kiválasztott kiosztást feljebb"
 
 #: widgets.cpp:140
 msgid "D&own"
 msgstr "L&e"
 
 #: widgets.cpp:140
-#, fuzzy
+#
 msgid "Move down selected keyboard map"
-msgstr "Kiválasztott kiosztás hátrébb vitele"
+msgstr "Kiválasztott kiosztást lejjebb"
 
 #: widgets.cpp:144
 msgid "&Info"
@@ -351,7 +357,7 @@ msgid "Use &hot list"
 msgstr "Forró lista &használata"
 
 #: widgets.cpp:155
-#, fuzzy
+#
 msgid ""
 "Use only default and last active keyboard maps when switch key sequence is "
 "used"
@@ -364,9 +370,9 @@ msgid "Adding Keyboard"
 msgstr "Billentyûzet hozzáadása"
 
 #: widgets.cpp:225
-#, fuzzy
+#
 msgid "There are no keyboard maps left to add"
-msgstr "Nincs több billentyûzet kiosztás"
+msgstr "Nincs több hozzáadható billentyûzet kiosztás"
 
 #: widgets.cpp:258
 msgid "Keyboard map information"
@@ -389,12 +395,12 @@ msgid "Switch and Alt Switch"
 msgstr "Váltás és alternatív váltás"
 
 #: widgets.cpp:419
-#, fuzzy
+#
 msgid "Key(s) for switching between keyboard maps"
 msgstr "Billentyû(k) kiosztás váltáshoz"
 
 #: widgets.cpp:425
-#, fuzzy
+#
 msgid "Key for activating Alternate symbols in current keyboard map"
 msgstr ""
 "Billentyû az alternatív szimbólumok aktiválásához a jelenlegi kiosztásban"
@@ -404,13 +410,13 @@ msgid "&Beep"
 msgstr "Csipo&gás"
 
 #: widgets.cpp:439
-#, fuzzy
+#
 msgid "Beep when keyboard map is changed"
 msgstr "Mindíg csipogjon kiosztás váltáskor"
 
 #: widgets.cpp:442
 msgid "Ad&vanced"
-msgstr "Haladóknak"
+msgstr "&Haladóknak"
 
 #: widgets.cpp:442
 msgid "Advanced options"
@@ -425,7 +431,7 @@ msgid "&Emulate Caps Lock"
 msgstr "Caps Lock &emulálása"
 
 #: widgets.cpp:476
-#, fuzzy
+#
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
@@ -436,7 +442,7 @@ msgid "&World Menu"
 msgstr "&Világ menü"
 
 #: widgets.cpp:483
-#, fuzzy
+#
 msgid "Show menu in any window by holding sown the selected Switch key(s)"
 msgstr "Mutassa a menüt bármelyik ablakban a váltó billentyûk nyomvatartásakor"
 
@@ -458,21 +464,21 @@ msgid "Input"
 msgstr "Bevitel"
 
 #: widgets.cpp:505
-#, fuzzy
+#
 msgid "Standard behavior. Keyboard map effective for all windows"
 msgstr "Tipikus viselkedés. A billentyûzet kiosztás minden ablakra érvényes"
 
 #: widgets.cpp:509
-#, fuzzy
+#
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Tipikus viselkedés. A billentyûzet kiosztás minden ablakra érvényes"
+msgstr "Kiterjeszett viselkedés. A billentyûzet kiosztás minden ablakra más lehet"
 
 #: widgets.cpp:513
-#, fuzzy
+#
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Tipikus viselkedés. A billentyûzet kiosztás minden ablakra érvényes"
+msgstr "Speciális viselkedés. A billentyûzet kiosztás minden ablakra osztályra más lehet"
 
 #: widgets.cpp:561
 msgid "Button Colors"
@@ -484,15 +490,15 @@ msgstr "Elõtér"
 
 #: widgets.cpp:572
 msgid "Text label foreground color"
-msgstr ""
+msgstr "Szöveg cimke elõtér színe"
 
 #: widgets.cpp:576
 msgid "Background"
-msgstr ""
+msgstr "Háttér"
 
 #: widgets.cpp:577
 msgid "Text label background color"
-msgstr ""
+msgstr "Szöveg cimke háttér színe"
 
 #: widgets.cpp:581
 msgid "With Caps Lock"
@@ -507,7 +513,7 @@ msgid "With Alternate"
 msgstr "Alternatívval"
 
 #: widgets.cpp:589
-#, fuzzy
+#
 msgid "Background when Alternate switch key is pressed"
 msgstr "Háttér színe, ha az alternatív kapcsoló be van kapcsolva"
 
@@ -541,7 +547,7 @@ msgid "&Docked"
 msgstr "&Dokkolva"
 
 #: widgets.cpp:664
-#, fuzzy
+#
 msgid "Dock into special area in the panel"
 msgstr "Csatlakozzon be a panelbe"
 

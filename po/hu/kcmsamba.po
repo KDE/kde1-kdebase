@@ -1,4 +1,6 @@
 # KTranslator Generated File
+
+# KTranslator Generated File
 # John Zero <johnzero@telnet.hu>, 1997
 # Balazs Nagy <julian7@kva.hu>, 1998
 # KTranslator Generated File
@@ -13,18 +15,18 @@
 # John Zero <johnzero@telnet.hu>, 1998.
 # Balazs Nagy <julian7@kva.hu>, 1998.
 #
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
-"PO-Revision-Date: Mon Mar 8 1999 16:47:14+0100\n"
+"PO-Revision-Date: Tue Aug 31 1999 09:57:57+0200\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
-"X-Generator: KTranslator v 0.4.0\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: main.cpp:48
 msgid "&Status"
@@ -44,7 +46,7 @@ msgstr "Hiba az smbstatus indításakor!"
 
 #: ksmbstatus.cpp:116
 msgid "Error ! smbstatus not found or non working !"
-msgstr "Hiba! Az smbstatus nem található, vegy nem müködik!"
+msgstr "Hiba! Az smbstatus nem található, vagy nem müködik!"
 
 #: ksmbstatus.cpp:158
 msgid "Service"

@@ -1,15 +1,18 @@
+# KTranslator Generated File
+
 # Kiss Tamas <kisst@postabank.hu>
 # Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: kvt\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
-"PO-Revision-Date: 1997-09-21 19:39+MET\n"
-"Last-Translator: Nagy Balazs <julian7@kva.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 11:49:06+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 # main.C:224
 #: main.C:426
@@ -27,7 +30,7 @@ msgstr "A törlõ billentyû"
 
 #: main.C:444
 msgid "Cursor key set"
-msgstr ""
+msgstr "Kurzor"
 
 # main.C:357
 #: main.C:613
@@ -106,9 +109,9 @@ msgstr "Linu&x Konzol"
 
 # main.C:406
 #: main.C:657
-#, fuzzy
+#
 msgid "&Custom Colors"
-msgstr "&Szín"
+msgstr "&Saját színkészlet"
 
 # main.C:399 main.C:594
 #: main.C:665 main.C:969
@@ -152,11 +155,11 @@ msgstr "Terminál..."
 
 #: main.C:675
 msgid "Font..."
-msgstr ""
+msgstr "Betûtípus..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "&Gyorsbillentyûk engedélyezése"
 
 # main.C:410
 #: main.C:679
@@ -165,7 +168,7 @@ msgstr "&Beállítások elmentése"
 
 # main.C:760
 #: main.C:688
-#, fuzzy
+#
 msgid ""
 "\n"
 "\n"
@@ -181,6 +184,8 @@ msgstr ""
 "\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+"(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Terminál emulátor a KDE grafikus környezethez\n"
 "Robert Nation rxvt-2.08 alapján"
@@ -216,7 +221,7 @@ msgstr ""
 
 # main.C:760
 #: main.C:1474
-#, fuzzy
+#
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
 "Copyright(C) 1997 M G Berberich\n"
@@ -224,90 +229,92 @@ msgid ""
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"\n"
 "Terminál emulátor a KDE grafikus környezethez\n"
-"Robert Nation rxvt-2.08 alapján"
+"Robert Nation rxvt-2.08 alapján\n"
 
 #: main.C:1478
 msgid "Permitted arguments are:\n"
-msgstr ""
+msgstr "Engedélyezett paraméterek:\n"
 
 #: main.C:1479
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
+"-e <parancs> <par> ...    parancs futtatása parméterrel - utolsó paraméter kell legyen\n"
 
 #: main.C:1480
 msgid "-display <name>           specify the display (server)\n"
-msgstr ""
+msgstr "-display <név>            kijelzõ (kiszolgáló) megadása\n"
 
 #: main.C:1481
 msgid "-vt_geometry <spec>       the initial vt window geometry\n"
-msgstr ""
+msgstr "-vt_geometry <méret>      kezdõ ablak méret\n"
 
 #: main.C:1482
 msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
-msgstr ""
+msgstr "-print-pipe <név>         pipe megadása vt100 printerhez\n"
 
 #: main.C:1483
 msgid "-vt_bg <colour>           background color\n"
-msgstr ""
+msgstr "-vt_bg <szín>             háttér szín\n"
 
 #: main.C:1484
 msgid "-vt_fg <colour>           foreground color\n"
-msgstr ""
+msgstr "-vt_fg <szín>             elõtér szín\n"
 
 #: main.C:1485
 msgid "-vt_font <fontname>       normal font\n"
-msgstr ""
+msgstr "-vt_font <betûtípus>      alap betûtípus\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr ""
+msgstr "-no_font_hack             Qt betûtípus hiba kikerülés kikapcsolása\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
-msgstr ""
+msgstr "-vt_size <méret>          tiny, small, normal, large, huge\n"
 
 #: main.C:1488
 msgid "-linux                    set up kvt to mimic linux-console\n"
-msgstr ""
+msgstr "-linux                    linux-konzol utánzás beállítása\n"
 
 #: main.C:1489
 msgid "-no_menubar               hide the menubar\n"
-msgstr ""
+msgstr "-no_menubar               menüsor elrejtése\n"
 
 #: main.C:1490
 msgid "-no_scrollbar             hide the scrollbar\n"
-msgstr ""
+msgstr "-no_scrollbar             gördítõsor elrejtése\n"
 
 #: main.C:1491
 msgid ""
 "-T <text>                 text in window titlebar \n"
 "                          (Obsolete. Use -caption instead)\n"
 msgstr ""
+"-T <szöveg>               szöveg a címsorban \n"
+"                          (Régimódi. Használd a -caption -t inkább)\n"
 
 #: main.C:1493
 msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
-msgstr ""
+msgstr "-tn <TERM>                Terminál típus. Alapértelmezett: xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr ""
+msgstr "-C                        Rendszer konzol üzenetek elfogása\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
-msgstr ""
+msgstr "-n <szöveg>               név ikon vagy ikon ablak alakban\n"
 
 #: main.C:1496
 msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
+"-7                        7 bites mód\n"
+"-8                        8 bites mód\n"
 
 #: main.C:1498
 msgid ""
@@ -315,16 +322,21 @@ msgid ""
 "-ls-                      initiate kvt's shell as a non-login shell "
 "(default)\n"
 msgstr ""
+"-ls                       kvt, mint bejelentkezõ parancsértelmezõ\n"
+"-ls-                      kvt, mint nem-bejelentkezõ parancsértelmezõ \n"
+"(alapért.)\n"
 
 #: main.C:1500
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
 msgstr ""
+"-meta <par>               Meta kezelés ESCAPE elõtaggal, 8THBIT, vagy \n"
+"ignore\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
-msgstr ""
+msgstr "-sl <szám>                ennyi sort mentsen a gördítõ pufferbe\n"
 
 #: main.C:1502
 msgid ""
@@ -333,6 +345,10 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
+"-pageup <keysym>          alt-keysym használata a puffer \n"
+"felgörgetéséhez\n"
+"-pagedown <keysym>        alt-keysym használata a puffer \n"
+"legörgetéséhez\n"
 
 # main.C:954
 #: main.C:1506
@@ -342,68 +358,3 @@ msgid ""
 msgstr ""
 "-grk9\t\tgörög kbd = ELOT 928 (alapértelmezett)\n"
 "-grk4\t\tgörög kbd = IBM 437\n"
-
-# main.C:922
-#, fuzzy
-#~ msgid ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminal emulation for the KDE Desktop Environment\n"
-#~ "based on Robert Nation's rxvt-2.08\n"
-#~ "\n"
-#~ "Permitted arguments are:\n"
-#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-#~ "-display <name>\tspecify the display (server)\n"
-#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
-#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
-#~ "-vt_bg <colour>\t\tbackground color\n"
-#~ "-vt_fg <colour>\t\tforeground color\n"
-#~ "-vt_font <fontname>\tnormal font\n"
-#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
-#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
-#~ "-no_menubar\t\thide the menubar\n"
-#~ "-no_scrollbar\t\thide the scrollbar\n"
-#~ "-T <text>\t\ttext in window titlebar \n"
-#~ "                   (Obsolete. Use -caption instead)\n"
-#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-#~ "-C\t\t\tCapture system console message\n"
-#~ "-n <text>\t\tname in icon or icon window\n"
-#~ "-7\t\t        run in 7 bit mode\n"
-#~ "-8\t\t\trun in 8 bit mode\n"
-#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
-#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
-#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
-#~ msgstr ""
-#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
-#~ "Copyright(C) 1997 M G Berberich\n"
-#~ "Terminál emulátor a KDE grafikus környezethez\n"
-#~ "Robert Nation rxvt-2.08 alapján\n"
-#~ "Megengedett paraméterek :\n"
-#~ "-e <parancs> <paraméterek> ... \tparancs végrehajtása paraméterekkel - az "
-#~ "utolsó paraméternek kell lennie\n"
-#~ "-display <név> \tmegjelenítõ képernyõ (server)\n"
-#~ "-vt_geometry <érték>\tterminál ablak geometriája\n"
-#~ "-print-pipe <név> \tátirányitás vt100 sornyomtatóra\n"
-#~ "-vt_bg <szín> \t\tháttér szín\n"
-#~ "-vt_fg <szín> \t\tbetû szín\n"
-#~ "-vt_font <betû neve> \tnormál betû\n"
-#~ "-vt_size <méret> \ttiny(apró), small(kicsi), normal(normál), large(nagy), "
-#~ "huge(óriás)\n"
-#~ "-linux\t\t\tmegjelenés Linux konzol szerûen\n"
-#~ "-no_menubar\t\tmenüsor elrejtése\n"
-#~ "-no_scrollbar\t\tgördítõsáv elrejtése\n"
-#~ "-T <szöveg>\t\tszõveg az ablak fejlecében\n"
-#~ "-tn <tipus>\t\tTerminál tipusa. Alapértelmezett az xterm.\n"
-#~ "-C\t\t\tA rendszer konzol üzeneteit kiírja.\n"
-#~ "-n <szöveg>\t\taz ikon neve\n"
-#~ "-7\t\t\t7 bit-es mód\n"
-#~ "-8\t\t\t8 bit-es mód\n"
-#~ "-ls\t\t\tvégrehajtja a .login vagy a .profile-t.\n"
-#~ "-ls-\t\t\tnem hajtja végre a login parancsokat\n"
-#~ "-meta\t\t\tMeta (Alt) + billentyû viselkedésének megváltoztatása\n"
-#~ "-sl <szám>\t\telmenti a megadott számú sort a visszagörgetéshez\n"
-#~ "-pageup <billentyû>\ta megadott billentyûvel lehet viszzafelé görgetni\n"
-#~ "-pagedown <billentyû>\ta megadott billentyûvel lehet elõre görgetni\n"

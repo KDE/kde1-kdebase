@@ -1,16 +1,20 @@
+# KTranslator Generated File
+
+# KTranslator Generated File
+
+# KTranslator Generated File
+
 # John Zero <johnzero@telnet.hu>, 1997
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1999-04-08 01:20+0200\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
-"Last-Translator: John Zero <johnzero@telnet.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
-"Content-Type: text/plain; charset=iso-8859-2\n"
+"PO-Revision-Date: Tue Aug 31 1999 10:16:07+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "Date: 1997-09-09 17:23:06+0200\n"
-"From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
 "Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
-"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: kdmshutdown.cpp:176
 msgid "Shutdown or restart?"
@@ -18,7 +22,7 @@ msgstr "Leállítás vagy újraindítás?"
 
 #: kdmshutdown.cpp:179
 msgid "(Enter Root Password)"
-msgstr ""
+msgstr "(Add meg a root jelszót)"
 
 #: kdmshutdown.cpp:197
 msgid "Shutdown"
@@ -30,7 +34,7 @@ msgstr "Leállítás és újraindítás"
 
 #: kdmshutdown.cpp:220
 msgid "Restart X Server"
-msgstr ""
+msgstr "X szerver újrainditása"
 
 #: kgreeter.cpp:234
 msgid "Login:"
@@ -46,7 +50,7 @@ msgstr "Érvénytelen bejelentkezés!"
 
 #: kgreeter.cpp:277
 msgid "Session Type:"
-msgstr "Futási stílus"
+msgstr "Felület:"
 
 #: kgreeter.cpp:324
 msgid "Go!"
@@ -58,24 +62,21 @@ msgstr "Leállítás..."
 
 #: kgreeter.cpp:585
 msgid "Logins not available right now."
-msgstr ""
+msgstr "Most nem lehet bejelentkezni."
 
 #: kgreeter.cpp:626
 msgid "login_getcapstr() failed."
-msgstr ""
+msgstr "login_getcapstr() hiba."
 
 #: kgreeter.cpp:680 kgreeter.cpp:707
 msgid "Sorry -- your account has expired."
-msgstr ""
+msgstr "Sajnálom -- a hozzáférésed lejárt."
 
 #: kgreeter.cpp:685 kgreeter.cpp:712
 #, c-format
 msgid "Warning: your account expires on %s"
-msgstr ""
+msgstr "Figyelem: a hozzáférésed lejár ekkor: %s"
 
 #: kgreeter.cpp:739
 msgid "Home directory not available"
-msgstr ""
-
-#~ msgid "Exit kdm"
-#~ msgstr "Kilép"
+msgstr "A saját könyvtárad nem elérhetõ"

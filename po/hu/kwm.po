@@ -1,15 +1,18 @@
+# KTranslator Generated File
+
 # John Zero <johnzero@telnet.hu>, 1997
 # Balazs Nagy <julian7@kva.hu>, 1998
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1999-04-05 01:20+0200\n"
-"PO-Revision-Date: 1998-02-26 20:46+MET\n"
-"Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"PO-Revision-Date: Tue Aug 31 1999 13:13:34+0200\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
+"Language-Team: Hungarian <kde-lista@sophia.jpte.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"X-Generator: KTranslator v 0.5.0"
 
 #: main.C:68
 msgid ""
@@ -25,11 +28,11 @@ msgstr "kwm: hiba inicializálás közben; a futtatás megszakadt\n"
 
 #: main.C:527
 msgid "Preparing session ... "
-msgstr ""
+msgstr "Session elõkészítése..."
 
 #: main.C:551
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
-msgstr ""
+msgstr "Szerzõi jog: (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
 #: main.C:558
 msgid "Usage: "
@@ -56,7 +59,7 @@ msgid "&Sticky"
 msgstr "&Rajzszög be"
 
 #: main.C:574
-#, fuzzy
+#
 msgid "&UnSticky"
 msgstr "&Rajzszög ki"
 
@@ -110,15 +113,15 @@ msgstr "Nyolcas"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr ""
+msgstr "Névtelen Asztal"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr ""
+msgstr "Néhány kép nem megfelelõ: ShapeMód kikapcsolva\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr ""
+msgstr "Néhány kép nem megfelelõ: GimmickMód kikapcsolva\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -130,7 +133,7 @@ msgstr "Parancs:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr ""
+msgstr "Hoppá!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -172,4 +175,4 @@ msgstr "Váltás"
 
 #: taskmgr.C:121
 msgid "Current session"
-msgstr ""
+msgstr "Jelenlegi session"
