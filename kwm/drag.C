@@ -191,41 +191,55 @@ bool electricBorder(Client* c, bool grab_server, int &x, int &y){
   if (options.ElectricBorder < 0)
     return false;
   struct timeval value;
+  XEvent ev;
   int n = options.ElectricBorder * 1000;
   if (n > 0){
     value.tv_usec = n % 1000000;
     value.tv_sec = n / 1000000;
     (void) select(1, 0, 0, 0, &value);       
   }
-  QPoint pos = QCursor::pos();
-  if (pos.x() <= 2 || pos.y() <2 ||
-      pos.x() >= QApplication::desktop()->width()-2 ||
-      pos.y() >= QApplication::desktop()->height()-2){
+  if (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev)){
+    while (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev));
+    x = ev.xmotion.x_root;
+    y = ev.xmotion.y_root;
+  }
+  if (x <= 2 || y <= 2 ||
+      x >= QApplication::desktop()->width()-2 ||
+      y >= QApplication::desktop()->height()-2){
+    Manager::DesktopDirection d;
+    if (y<=2)
+      d = Manager::Up;
+    else if (y >= QApplication::desktop()->height()-2)
+      d = Manager::Down;
+    else if (x<= 2)
+      d = Manager::Left;
+    else if (x >= QApplication::desktop()->width()-2)
+      d = Manager::Right;
+    else{
+      return false;
+    }
+
     if (grab_server){
       drawbound(c);
       XFlush(qt_xdisplay());
       XUngrabServer(qt_xdisplay());
     }
-    if (pos.y()<=2)
-      manager->moveDesktopInDirection(Manager::Up, c);
-    else if (pos.y() >= QApplication::desktop()->height()-2)
-      manager->moveDesktopInDirection(Manager::Down, c);
-    else if (pos.x()<=2)
-      manager->moveDesktopInDirection(Manager::Left, c);
-    else if (pos.x() >= QApplication::desktop()->width()-2)
-      manager->moveDesktopInDirection(Manager::Right, c);
-
+    manager->moveDesktopInDirection(d, c);
+    manager->timeStamp();
     myapp->processEvents(); 
-    
     if (grab_server){
       XGrabServer(qt_xdisplay());
     }
-    pos = QCursor::pos();
+    QPoint pos = QCursor::pos();
     x = pos.x();
     y = pos.y();
+    if (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev)){
+      while (XCheckMaskEvent(qt_xdisplay(), PointerMotionMask, &ev));
+      x = ev.xmotion.x_root;
+      y = ev.xmotion.y_root;
+    }
     return true;
   }
-  
   return false;
 }
 
@@ -285,7 +299,7 @@ bool sweepdrag(Client* c, XButtonEvent * /* e0 */,
 	rx = ev.xmotion.x_root;
 	ry = ev.xmotion.y_root;
 	// electric borders
-	if (rx <= 2 || ry <2 ||
+	if (rx <= 2 || ry <=2 ||
 	    rx >= QApplication::desktop()->width()-2 ||
 	    ry >= QApplication::desktop()->height()-2)
 	  if (recalc == dragcalc)
