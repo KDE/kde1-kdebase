@@ -28,6 +28,7 @@ public:
      KDMViewItem(const char *s, const QPixmap p )
 	  : pm(p)
      { setText( s ); }
+     virtual ~KDMViewItem() {}; 
      virtual const char    *text()   const { return txt; }
      virtual const QPixmap *pixmap() const { return &pm; }
      enum State { Normal, Selected, Hilighted};
