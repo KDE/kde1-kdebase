@@ -1,6 +1,8 @@
 #!/bin/sh
 
 kaudioserver &
+kwmsound &
+
 kfm &
 kcontrol -init &
 
