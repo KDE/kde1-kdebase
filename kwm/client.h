@@ -228,8 +228,8 @@ public:
   // Repaint the state of a window. Active or inactive windows differ
   // only in the look of the titlebar. If only_label is true then only
   // the label string is repainted. This is used for the titlebar
-  // animation.
-  void paintState(bool only_label = FALSE, bool colors_have_changed = FALSE);
+  // animation with animate = TRUE.
+  void paintState(bool only_label = FALSE, bool colors_have_changed = FALSE, bool animate = FALSE);
 
   // generates a sensefull label property from the name, icon, klass
   // and instance. Also ensures that the label is unique by adding a
@@ -352,7 +352,7 @@ private:
     };
     DRAGGING dragging_state;
     int do_resize;
-    
+
     bool recently_resized; //hack
 
     // set the mouse pointer shape to the specified cursor. Also

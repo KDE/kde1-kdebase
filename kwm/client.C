@@ -351,7 +351,7 @@ Client::Client(Window w, Window _sizegrip, QWidget *parent, const char *name_for
 
     window = w;
     sizegrip = _sizegrip;
-    
+
     recently_resized = true;
 
     backing_store = false;
@@ -617,7 +617,7 @@ void Client::reconfigure(){
 // simply move it one single step further in this case.
 void Client::animateTitlebar(){
   if (titlestring_too_large){
-    paintState(true);
+    paintState(true, false, true);
   }
 }
 
@@ -1032,7 +1032,7 @@ void Client::resizeEvent( QResizeEvent * ){
   // we have been resized => we have to layout the window decoration
   // again and adapt our swallowed application window
   recently_resized = true;
-  
+
   layoutButtons();
 
   switch (getDecoration()){
@@ -1459,8 +1459,8 @@ void Client::setactive(bool on){
 // Repaint the state of a window. Active or inactive windows differ
 // only in the look of the titlebar. If only_label is true then only
 // the label string is repainted. This is used for the titlebar
-// animation.
-void Client::paintState(bool only_label, bool colors_have_changed){
+// animation with animate = TRUE.
+void Client::paintState(bool only_label, bool colors_have_changed, bool animate){
   QRect r = title_rect;
   bool double_buffering = false;
   QPixmap* buffer = 0;
@@ -1536,7 +1536,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
 
   QPainter p;
 
-  if (only_label){
+  if (only_label && animate){
     double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
     titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
@@ -1607,7 +1607,7 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   }
   else { // TitlebarLook == TITLEBAR_PLAIN
     p.setBackgroundColor( is_active ? myapp->activeTitleColor : myapp->inactiveTitleColor);
-    if (only_label && !double_buffering){
+    if (only_label && !double_buffering && animate){
        p.eraseRect(QRect(r.x(), r.y(), TITLE_ANIMATION_STEP+1, r.height()));
        p.eraseRect(QRect(r.x()+r.width()-TITLE_ANIMATION_STEP-1, r.y(),
  			TITLE_ANIMATION_STEP+1, r.height()));
