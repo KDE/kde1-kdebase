@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=DlgEdit
+Name[es]=DlgEdit
 Name[pl]=DlgEdit
 MiniIcon=
 Protocols=
 MimeType=
 Comment=Qt Dialog Editor
+Comment[es]=Editor de diálogos de Qt
 Comment[de]=Qt Dialog Editor
 Comment[no]=Qt-dialogredigerer
 Comment[pl]=Qt Dialog Editor

@@ -3,6 +3,7 @@
 Exec=ddd
 Type=Application
 Comment=Data Display Debugger
+Comment[es]=Data Display Debugger
 Comment[de]=DD Debugger
 Comment[no]=DD-avluser
 Comment[pl]=Data Display Debugger

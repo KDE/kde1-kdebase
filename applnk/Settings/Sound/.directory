@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Sound
+Name[es]=Sonido
 Name[fr]=Son
 Name[no]=Lyd
 Name[da]=Lyd

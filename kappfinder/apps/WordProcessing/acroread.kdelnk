@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=Acrobat Reader
+Name[es]=Acrobat Reader
 Name[pl]=Acrobat Reader
 Name[fi]=Acrobat -lukija
 MiniIcon=
 Protocols=
 MimeType=
+Comment[es]=Visor de documentos PDF
 Comment=Reader for Acrobat documents
 Comment[de]=Betrachter für Adobe Acrobat-PDF-Dateien
 Comment[no]=Adobe Acrobat-PDF-dokumentfremviser

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=xacc
+Name[es]=xacc
 Name[pl]=xacc
 MiniIcon=
 Protocols=
@@ -16,6 +17,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Quicken Clone
+Comment[es]=Clónico de Quicken
 Comment[de]=Quicken-Klone
 Comment[pl]=Klon Quicken
 Comment[no]=Quicken-klone

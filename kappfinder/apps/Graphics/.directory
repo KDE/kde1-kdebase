@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Graphica
+Name[es]=Gráficos
 Name[fr]=Graphiques
 Name[de]=Graphik
 Name[no]=Grafikk

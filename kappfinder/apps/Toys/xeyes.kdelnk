@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=X Eyes
+Name[es]=X Eyes
 Name[pl]=X Eyes
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Eyes
+Comment[es]=Ojos para X
 Comment[no]=X-øyne
 Comment[fr]=Yeux X (vous louchez ?)
 Comment[pl]=X Oczy

@@ -5,6 +5,7 @@ MimeType=audio/x-wav
 Icon=sound.xpm
 Patterns=*.wav;*.WAV;
 Comment=Digitial Audio (WAV)
+Comment[es]=Audio Digital (WAV)
 Comment[de]=Digitialsound (WAV)
 Comment[pl]=Digital Audio (WAV)
 Comment[fi]=Digitaali‰‰ni (WAV)

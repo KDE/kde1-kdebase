@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=XsLite
+Name[es]=XsLite
 Name[pl]=XsLite
 MiniIcon=mini-xslight.xpm
 Protocols=
@@ -16,6 +17,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Spread Sheet
+Comment[es]=Hoja de cálculo
 Comment[de]=Tabellenkalkulation
 Comment[no]=Regneark
 Comment[pl]=Arkusz kalkulacyjny

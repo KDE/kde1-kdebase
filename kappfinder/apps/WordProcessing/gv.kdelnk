@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=GV
+Name[es]=GV
 Name[pl]=GV
 MiniIcon=mini-gv.xpm
 Protocols=
 MimeType=
 Comment=Postscript Viewer
+Comment[es]=Visor de archivos Postscript
 Comment[de]=Postscript Betrachter
 Comment[no]=Postscript-fremviser
 Comment[fr]=Visualiseur de documents Postscript

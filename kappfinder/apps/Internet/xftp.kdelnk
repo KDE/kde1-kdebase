@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=X FTP
+Name[es]=X FTP
 Name[pl]=X FTP
 MiniIcon=www.xpm
 Protocols=
 MimeType=
 Comment=X FTP Client
+Comment[es]=Cliente FTP para X
 Comment[fr]=Programme de transfert de fichiers xftp
 Comment[de]=X FTP Klient
 Comment[no]=X FTP-klient

@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Applix
+Name[es]=Applix
 Name[pl]=Applix
 MiniIcon=
 Protocols=
@@ -16,6 +17,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=ApplixWare Office Suite
+Comment[es]=Suite de Oficina ApplixWare
 Comment[de]=ApplixWare Office
 Comment[no]=ApplixWare-kontorpakken
 Comment[pl]=Pakiet biurowy ApplixWare

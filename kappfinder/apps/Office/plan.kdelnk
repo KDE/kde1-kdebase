@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Plan
+Name[es]=Plan
 Name[pl]=Plan
 MiniIcon=mini-plan.xpm
 Protocols=
@@ -15,6 +16,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=Calendar Manager
+Comment[es]=Calendario
 Comment[de]=Kalendar
 Comment[no]=Kalender
 Comment[pl]=Kalendarz

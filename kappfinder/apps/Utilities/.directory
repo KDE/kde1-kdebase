@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Utilities
+Name[es]=Utilidades
 Name[pl]=U¿ytki
 Name[fr]=Utilitaires
 Name[de]=Hilfsmittel

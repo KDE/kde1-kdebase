@@ -3,6 +3,7 @@
 WmCommand=
 BinaryPattern=
 Name=Lyx
+Name[es]=Lyx
 Name[pl]=Lyx
 MiniIcon=
 Protocols=
@@ -16,6 +17,7 @@ DocPath=
 Type=Application
 Terminal=0
 Comment=LaTeX Word Processor
+Comment[es]=Editor de textos LaTeX
 Comment[de]=LaTeX-Textverarbeitung
 Comment[no]=LaTeX-tekstbehandling
 Comment[pl]=Edytor tekstu dla LaTeX

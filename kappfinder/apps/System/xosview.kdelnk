@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=X osview
+Name[es]=X osview
 Name[pl]=X osview
 MiniIcon=log.xpm
 Protocols=
 MimeType=
 Comment=System Monitor
+Comment[es]=Monitor de sistema
 Comment[fr]=Indicateurs système
 Comment[de]=Systemmonitor
 Comment[no]=Systemovervåker

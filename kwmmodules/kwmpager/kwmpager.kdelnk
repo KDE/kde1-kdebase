@@ -2,12 +2,13 @@
 [KDE Desktop Entry]
 SwallowExec=kwmpager -geometry 50x50+10000+10000
 SwallowTitle=kwmpager
+SwallowTitle[es]=kwmpager
 SwallowTitle[pl]=kwmpager
 BinaryPattern=
 Name=Desktop Pager
 Name[no]=Skrivebordveksler
 Name[fr]=Gestionnaire de bureaux virtuels
-Name[es]=Mapa del área de trabajo
+Name[es]=Mapa del escritorio
 Name[pl]=KWM Pager
 Name[pt]=Mapa da Área de Trabalho
 Name[pt_BR]=Mapa da Área de Trabalho

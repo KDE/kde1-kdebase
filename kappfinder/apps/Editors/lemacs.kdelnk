@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=LEmacs
+Name[es]=LEmacs
 Name[fi]=LEmacs
 Name[fr]=Lucid Emacs
 Name[de]=LEmacs
@@ -12,6 +13,7 @@ Name[pt]=Lucid Emacs
 Name[pt_BR]=Lucid Emacs
 Name[pl]=LEmacs
 Comment=Lucid Emacs
+Comment[es]=Editor Lucid Emacs
 Comment[fi]=Lucid Emacs editori
 Comment[pt]=Editor Lucid Emacs
 Comment[pt_BR]=Editor Lucid Emacs

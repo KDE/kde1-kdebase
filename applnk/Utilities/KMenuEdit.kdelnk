@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Menu Editor
+Name[es]=Editor de menú
 Name[de]=Menueditor
 Name[no]=Menyredigerer
 Name[eo]=Menuredaktilo
@@ -25,6 +26,7 @@ Path=
 DocPath=kmenuedit/index.html
 Terminal=0
 Comment=Program to change the menus of kpanel
+Comment[es]=Programa para cambiar los menús de kpanel
 Comment[de]=Programm zur Veränderung der Menüs von kpanel
 Comment[pl]=Program pozwalaj±cy zmieniaæ menu dla kpanel.
 Comment[cs]=Program urèený ke zmìnì menu pro kpanel

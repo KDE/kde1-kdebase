@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=X Calc
+Name[es]=X Calc
 Name[pl]=X Calc
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Calculator
+Comment[es]=Calculadora para X
 Comment[fr]=Calculatrice
 Comment[de]=X Taschenrechner
 Comment[no]=X-kalkulator

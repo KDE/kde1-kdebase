@@ -3,11 +3,13 @@
 WmCommand=
 BinaryPattern=
 Name=X Clipboard
+Name[es]=X Clipboard
 Name[pl]=X Clipboard
 MiniIcon=mini-zoom.xpm
 Protocols=
 MimeType=
 Comment=X Clipboard viewer
+Comment[es]=Visor del portapapeles para X
 Comment[fr]=Afficheur du presse-papiers
 Comment[no]=X-utklippsviser
 Comment[de]=X Zwischenablage

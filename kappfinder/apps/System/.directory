@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=System
+Name[es]=Sistema
 Name[fr]=Système
 Name[de]=System
 Name[no]=System

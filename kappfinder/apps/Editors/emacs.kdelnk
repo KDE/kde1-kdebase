@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Emacs
+Name[es]=Emacs
 Name[fi]=Emacs
 Name[fr]=Emacs
 Name[de]=Emacs
@@ -12,6 +13,7 @@ Name[pt]=Emacs
 Name[pt_BR]=Emacs
 Name[pl]=Emacs
 Comment=Emacs
+Comment[es]=Editor Emacs
 Comment[fi]=Emacs editori
 Comment[pt]=Editor Emacs
 Comment[pt_BR]=Editor Emacs

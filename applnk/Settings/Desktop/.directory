@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Desktop
+Name[es]=Escritorio
 Name[da]=Arbejdsplads
 Name[no]=Skrivebord
 Name[pl]=Desktop

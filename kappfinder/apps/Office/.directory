@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Office
+Name[es]=Oficina
 Name[de]=Office
 Name[no]=Kontor
 Name[fr]=Applications pour la bureautique
