@@ -56,7 +56,7 @@ msgstr "Ledig vekslefilminne"
 #: memory.cpp:74
 #, c-format
 msgid "%10ld bytes  = %8.2f MB"
-msgstr "%10ld byter  = %8.2f MB"
+msgstr "%10ld bytes  = %8.2f MB"
 
 #: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
 #: memory.cpp:101
