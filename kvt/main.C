@@ -176,6 +176,7 @@ bool MyApp::x11EventFilter( XEvent * ev){
   // necessary for Qt-grabbing when using the menubar. TODO. Matthias
   if ( ev->xany.window == main_win ||
        ev->xany.window == vt_win){
+
     if (ev->xany.type != MotionNotify || motion_allowed){
       handle_X_event(*ev);
       refresh();

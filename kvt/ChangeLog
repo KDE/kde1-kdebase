@@ -1,3 +1,6 @@
+
+
+  - segfault with open menus fixed
   - exit segfault with a floating menubar fixed
 	
 since kvt-0.14:

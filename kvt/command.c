@@ -1052,8 +1052,8 @@ void handle_X_event(XEvent event)
   Window root, child;
   int root_x, root_y, x, y;
   unsigned int mods;
-  static Time buttonpress_time;
-  static unsigned int clicks;
+  static Time buttonpress_time=0;
+  static unsigned int clicks=1;
 
   /* this was set in get_com_char originally. Matthias */ 
   refreshed = 0;
@@ -1154,11 +1154,16 @@ void handle_X_event(XEvent event)
 		{
 		case Button1 :
 		  /* recognize multiclick. bmg */
-                  if (event.xbutton.time-buttonpress_time < MULTICLICK_TIME) {
+		    if (event.xbutton.time-buttonpress_time < MULTICLICK_TIME) {
 		    clicks++;
 		  } else {
 		    clicks = 1;
 		  }
+
+		    /* don't react two times on the same event */
+		    /* Matthias */
+		    if (event.xbutton.time == buttonpress_time)
+			clicks--;
 		  buttonpress_time = event.xbutton.time;
 
 		  scr_start_selection(clicks, event.xbutton.x,event.xbutton.y);
@@ -1181,6 +1186,7 @@ void handle_X_event(XEvent event)
 		case Button1:
 		  /* no longer needed bmg */
 		  /* case Button3: */
+
 		  scr_make_selection(event.xbutton.time);
 		  return;
 		case Button2:
