@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <qpixmap.h>
 #include "kmsgwin.moc"
 
 KMsgWin::KMsgWin(QWidget *parent, const char *caption, const char *message, int type,

@@ -19,6 +19,7 @@
 #include <qbttngrp.h>
 #include <qgrpbox.h>
 #include <kpanner.h>
+#include <ktopwidget.h>
 
 #include "kfmview.h"
 #include "bookmark.h"
@@ -29,7 +30,6 @@ class KFileWindow;
 
 #include "kfmman.h"
 #include "kfmtree.h"
-#include <ktopwidget.h>
 
 class KFileWindow : public KTopLevelWidget
 {
@@ -133,6 +133,11 @@ public slots:
     void slotCopy();
     void slotDelete();
     void slotPaste();
+    /**
+     * This slot is called if the user selected 'Open With' in the context sensitive popup
+     * menu. The URL belonging to the popup menu is stored in 'popup_file'.
+     */
+    void slotPopupOpenWith();   
     /// Menu "Help->About"
     void slotAbout();
     /// Menu "Help->How can I..."
@@ -360,7 +365,7 @@ protected:
 
     /// The toolbar
     KToolBar *toolbar;
-
+    
     KMenuBar *menu;
     QPopupMenu *mview;
     QScrollBar *horz;

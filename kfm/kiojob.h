@@ -30,8 +30,7 @@ public:
       so the client always knows which job sent him the signal.
       */
     KIOJob( int _id = 0 );
-    virtual ~KIOJob(); 
-
+    
     void doIt( KIOSlaveIPC * _slave );
 
     /// Turns the status window on or off.

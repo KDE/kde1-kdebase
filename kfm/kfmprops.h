@@ -21,6 +21,7 @@
 #include <qlistbox.h>
 
 #include <kurl.h>
+#include <kpixmap.h>
 
 class Properties;
 

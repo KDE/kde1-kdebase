@@ -26,10 +26,9 @@ TEMPLATEDIR = $(DESKTOPDIR)/Templates
 ####### Files
 
 SOURCES =	kfmwin.cpp kfmview.cpp kbind.cpp main.cpp kfmdlg.cpp bookmark.cpp kfmprops.cpp kfmserver_ipc.cpp kfmserver_ipc2.cpp kfmserver.cpp kioserver.cpp kioserver_ipc.cpp kioserver_ipc2.cpp ipc.cpp root.cpp kfmman.cpp kiojob.cpp kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp xview.cpp krenamewin.cpp passworddialog.cpp
-HEADERS =	kfmwin.h kfmview.h kbind.h root.h  kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h xview.h krenamewin.h passworddialog.h
+HEADERS =	kfmwin.h kfmview.h kbind.h root.h kfmdlg.h bookmark.h kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ic.h ipc.h kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h xview.h krenamewin.h passworddialog.h
 OBJECTS =	kfmwin.o kfmview.o kbind.o root.o main.o kfmdlg.o bookmark.o kfmprops.o kfmserver_ipc.o kfmserver_ipc2.o kfmserver.o kioserver.o kioserver_ipc.o kioserver_ipc2.o ipc.o kfmman.o kiojob.o kmsgwin.o htmlcache.o autostart.o kfmtree.o xview.o krenamewin.o passworddialog.o
 SRCMETA =	kfmwin.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc kfmprops.moc kfmserver_ipc.moc kfmserver.moc kioserver.moc kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc kfmtree.moc krenamewin.moc passworddialog.moc
-
 TARGET	=	kfm
 
 ####### Implicit rules
@@ -84,6 +83,9 @@ install: all
 	$(INSTALL) $(TARGET) $(BINDIR)
 	$(INSTALL) ./kioslave/kioslave $(BINDIR)
 	$(INSTALL) ./client/kfmclient $(BINDIR)
+	$(INSTALL_SHELL) ./unpack $(BINDIR)
+	(cd doc && make install)
+	(cd pics && make install)
 	$(INSTALL_DIR) $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/kfmrc $(LIBDIR)/kfm/config
 	$(INSTALL_DATA) config/desktop $(LIBDIR)/kfm/config
@@ -114,43 +116,6 @@ clientIPC: ./ipcc/kfm.ipc
 
 kioIPC: ./ipcc/kio.ipc
 	cd ipcc ; ./ipcc.pl kio.ipc kioserver_ipc kioslave_ipc ; cp kioserver_ipc* ../ ; cp kioslave_ipc* ../kioslave ; cd ..
-
-####### Meta objects
-
-kfmwin.moc: kfmwin.h
-	$(MOC) kfmwin.h -o kfmwin.moc
-kfmview.moc: kfmview.h
-	$(MOC) kfmview.h -o kfmview.moc
-kioserver.moc: kioserver.h
-	$(MOC) kioserver.h -o kioserver.moc
-kioserver_ipc.moc: kioserver_ipc.h
-	$(MOC) kioserver_ipc.h -o kioserver_ipc.moc
-root.moc: root.h
-	$(MOC) root.h -o root.moc
-kfmfind.moc: kfmfind.h
-	$(MOC) kfmfind.h -o kfmfind.moc
-kfmdlg.moc: kfmdlg.h
-	$(MOC) kfmdlg.h -o kfmdlg.moc
-bookmark.moc: bookmark.h
-	$(MOC) bookmark.h -o bookmark.moc
-kfmprops.moc: kfmprops.h
-	$(MOC) kfmprops.h -o kfmprops.moc
-kfmserver_ipc.moc: kfmserver_ipc.h
-	$(MOC) kfmserver_ipc.h -o kfmserver_ipc.moc
-kfmserver.moc: kfmserver.h
-	$(MOC) kfmserver.h -o kfmserver.moc
-kfmman.moc: kfmman.h
-	$(MOC) kfmman.h -o kfmman.moc
-kiojob.moc: kiojob.h
-	$(MOC) kiojob.h -o kiojob.moc
-kmsgwin.moc: kmsgwin.h
-	$(MOC) kmsgwin.h -o kmsgwin.moc
-htmlcache.moc: htmlcache.h
-	$(MOC) htmlcache.h -o htmlcache.moc
-kfmtree.moc: kfmtree.h
-	$(MOC) kfmtree.h -o kfmtree.moc
-krenamewin.moc: krenamewin.h
-	$(MOC) krenamewin.h -o krenamewin.moc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 

@@ -304,13 +304,13 @@ void KFileWindow::initToolBar()
     QPixmap pixmap;
     toolbar = new KToolBar(this, "kfmwin-toolbar");
     path = KFileType::getIconPath() + QString("/toolbar/");
-
+    
     pixmap.load(path + "back.xpm");
     toolbar->insertItem(pixmap, 0, SIGNAL( clicked() ), this, SLOT( slotBack() ), FALSE, "Back");
     
     pixmap.load(path + "forward.xpm");
     toolbar->insertItem(pixmap, 1, SIGNAL( clicked() ), this, SLOT( slotForward() ), FALSE, "Forward");
-
+    
     pixmap.load(path + "home.xpm");
     toolbar->insertItem(pixmap, 2, SIGNAL( clicked() ), this, SLOT( slotHome() ), TRUE, "Home");
     
@@ -336,9 +336,9 @@ void KFileWindow::initToolBar()
     
     pixmap.load(path + "exit.xpm");
     toolbar->insertItem(pixmap, 7, SIGNAL( clicked() ), this, SLOT( slotStop() ), FALSE, "Stop");
-
+    
     toolbar->show();
-    toolbar->enableMoving(FALSE);
+    toolbar->enableMoving(FALSE);     
     topOffset = menu->frameGeometry().height() + toolbar->frameGeometry().height();
 }
 
@@ -940,7 +940,7 @@ void KFileWindow::slotPaste()
 
 void KFileWindow::slotAbout()
 {
-    QMessageBox::message( "About", "KFM 0.6.4\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
+    QMessageBox::message( "About", "KFM 0.6.6\n\r(c) by Torben Weis\n\rweis@kde.org", "Ok" );
 }
 
 void KFileWindow::slotHelp()
@@ -979,6 +979,26 @@ void KFileWindow::slotTreeViewPopupMenu( const char *_url, const QPoint &_point 
     manager->openPopupMenu( list, _point );
 }
 
+void KFileWindow::slotPopupOpenWith()
+{
+    if ( popupFiles.count() != 1 )
+    {
+	QMessageBox::message( "KFM Error", "Opening multiple files not implemented" );
+       return;
+    }
+    DlgLineEntry l( "Open With:", "", this );
+    if ( l.exec() )
+    {
+	QString pattern = l.getText();
+	if ( pattern.length() == 0 )
+	    return;
+    }
+    KURL file = popupFiles.first();
+    QString cmd;
+    cmd.sprintf( "%s %s &", l.getText(), file.path() );
+    system( cmd.data() );
+}              
+
 void KFileWindow::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
@@ -992,6 +1012,7 @@ void KFileWindow::slotPopupProperties()
 
 void KFileWindow::slotPopupCopy()
 {
+    printf("!!!!!!!!!!!!!!!! COPY !!!!!!!!!!!!!!!!!!\n");
     clipboard.clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
@@ -1197,8 +1218,8 @@ void KFileWindow::resizeEvent( QResizeEvent * )
     printf("Got resize event !!!!!!!!!!!!!!!!!!!!!!!! %i %i\n",width(),height());
     
     if ( toolbar != 0L )
-      toolbar->setGeometry( 0, menu->height(), toolbar->width(), toolbar->height() );
-    
+	toolbar->setGeometry( 0, menu->height(), toolbar->width(), toolbar->height() );
+
     if ( panner )
     {
 	printf("++++++++++ Resizing Panner ++++++++++++++++++++ %i %i\n",topOffset,width());

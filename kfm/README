@@ -1,9 +1,12 @@
-Alpha Version 0.6.4
+Alpha Version 0.6.6
 
 -------------------- ATTENTION ---------------- LATEST NEWS --------------------
 
 KFM has a different setup procedure now. Read the installation instructions
-below careful.
+below careful. No setupKFM anymore. On startup KFM will create everything
+it needs. Before starting kfm the first time make shure that you dont have an
+old ~/.kde/config/.kfmrc
+Please delete it first!!!!
 
 -------------------------------------------------------------------------------
 
@@ -19,7 +22,7 @@ Features
   the same position again.
 - Double clicking with the left mouse button on a directory changes to
   the directory.
-- Double clicking with the middle mouse button on a directorychanges to
+- Double clicking with the middle mouse button on a directory changes to
   the dirctory, but opens a new window.
 - Right mouse button brings up a popup menu.
 - You can assign some programs to every file extension. Doing so
@@ -43,11 +46,11 @@ Lots of work...
 Needed Packages
 ---------------
 
-khtmlw-0.5.0.tgz or greater
+khtmlw-0.5.4.tgz or greater
 ktoolicons.tgz
 kdehelp-0.4 or greater
 libkde-0.8.tgz or greater
-kfind-0.2.9.tgz or greater
+kfind-0.3.0.tgz or greater
 Qt-1.2 or greater
 
 Installation
@@ -436,6 +439,38 @@ Version 0.6.4
 
 - Config file placed in ~/.kde/config/.kfmrc
 
+Version 0.6.5
+
+- New Root Icons are placed at a "nice location", not on the upper left corner
+  of the screen
+
+- kfmclient understands the command "sortDesktop". It arranges all icons on
+  the desktop on a virtual grid. It can handle icons of any size.
+
+- New app in $KDEDIR/apps/KFM. It is called "Arrange Icons" and just calls
+  "kfmclient sortDesktop".
+
+- Bugs in TAR mode fixed. TAR mode supports "long view" and "text view".
+
+- "Open With" implemented ( thanks for the patch )
+
+- Patch for ftp sites which dont want a password ( thanks for the patch, too )
+
+- Icons appear under all existing windows.
+
+- Included patch for drag.cpp in libkdecore. This works around a
+  bug ( in kwm? ). When I delete the dndIcon and call XQueryTree, then
+  I get BAD WINDOW errors. So I just moved the icon to -200, -200, called
+  XQueryTree, checked not to send the icon a message and deleted the
+  icon afterwards. The file contains lots of debug code. Please test it
+  and tell me wether it works ok for you!
+
+Version 0.6.6
+
+- Applied patches from Matthias
+
+- Fixed bug with .kfmrc
+
 Authors
 -------
 
@@ -453,5 +488,5 @@ And thanks to all the others who contributed.
 
 
 Torben Weis, weis@stud.uni-frankfurt.de, weis@kde.org
-http://www.uni-frankfurt.de/~weis/kde.html
-Last change: 29.4.97
+http://www.kde.org
+Last change: 5.5.97

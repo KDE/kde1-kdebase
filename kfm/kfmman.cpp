@@ -837,7 +837,32 @@ void KFileManager::slotPopupActivated( int _id )
 {
     if ( popupMenu->text( _id ) == 0)
 	return;
+
+    QString txt = popupMenu->text( _id );
     
+    if ( strcmp( "Cd", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "New View", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Copy", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Delete", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Paste", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Open With", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Cut", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Move", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Delete", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Properties", txt.data() ) == 0 )
+	return;
+    if ( strcmp( "Link", txt.data() ) == 0 )
+	return;
+        
     printf("******** PopupFile '%i'\n",popupFiles.count());
     
     char *s;
@@ -871,9 +896,9 @@ void KFileManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     
     bool isdir = KIOServer::isDir( _urls );
 
+    int id;
     if ( isdir )
     {
-	int id;
 	id = popupMenu->insertItem( "Cd", window, SLOT( slotPopupCd() ) );
 	id = popupMenu->insertItem( "New View", window, SLOT( slotPopupNewView() ) );
 	popupMenu->insertSeparator();
@@ -885,7 +910,8 @@ void KFileManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     }
     else
     {
-	int id;
+	id = popupMenu->insertItem( "Open With", window, SLOT( slotPopupOpenWith() ) );
+	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( "Copy", window, SLOT( slotPopupCopy() ) );
 	id = popupMenu->insertItem( "Delete",  window, SLOT( slotPopupDelete() ) );
     }
@@ -1004,7 +1030,14 @@ void KTarManager::slotShowFiles( int _id )
     view->begin();
     view->write( "<html><title>" );
     view->write( url.data() );
-    view->write( "</title><body><grid width=80>" );
+    view->write( "</title><body>" );
+
+    if ( window->getViewMode() == KFileWindow::ICON_VIEW )
+	view->write( "<grid width=80>" );
+    else if ( window->getViewMode() == KFileWindow::LONG_VIEW )
+	view->write( "<table width=100%>" );
+    else if ( window->getViewMode() == KFileWindow::TEXT_VIEW )
+	view->write( "<table width=100%>" );
 
     // Write a link back in the filesystem if we are on the 
     // tar files root directory.
@@ -1033,36 +1066,109 @@ void KTarManager::slotShowFiles( int _id )
 	    fd = url.left( j + 1 );
     }
     
-    view->write( "<cell><a href=\"");
-    view->write( fd.data() );
-    view->write( "\"><center><img src=\"file:" );
-    view->write( KFileType::findType( fd.data() )->getPixmapFile( fd.data() ) );
-    view->write( "\"><br>..</center><br></a></cell>" );
+    if ( window->getViewMode() == KFileWindow::ICON_VIEW )
+    {
+	view->write( "<cell><a href=\"");
+	view->write( fd.data() );
+	view->write( "\"><center><img src=\"file:" );
+	view->write( KFileType::findType( fd.data() )->getPixmapFile( fd.data() ) );
+	view->write( "\"><br>..</center><br></a></cell>" );
+    }
+    else if ( window->getViewMode() == KFileWindow::LONG_VIEW )
+    {
+	view->write( "<tr><td><a href=\"" );
+	view->write( fd.data() );
+	view->write( "\"><img width=16 height=16 src=\"file:" );
+	view->write( KFileType::findType( fd.data() )->getPixmapFile( fd.data() ) );
+	view->write( "\"></td><td>..</a></td>" );
+	view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
+    }
+    else if ( window->getViewMode() == KFileWindow::TEXT_VIEW )
+    {
+	view->write( "<tr><td><a href=\"" );
+	view->write( fd.data() );
+	view->write( "\">../</td><td></a></td>" );
+	view->write( "<td></td><td></td><td></td><td></td></tr>" );
+    }
 
     KIODirectoryEntry *s;
     for ( s = files.first(); s != 0L; s = files.next() )
-    { 
-	view->write( "<cell><a href=\"" );
-
-	QString filename( url );
-	filename.detach();
-	if ( filename[ strlen( filename ) - 1 ] != '/' && filename[ strlen( filename ) - 1 ] != '#' )
-	    filename += "/";
-	filename += s->getName();
-	
-	view->write( filename.data() );
-	view->write( "\"><center><img src=\"file:" );
-	
-	view->write( KFileType::findType( filename.data() )->getPixmapFile( filename.data() ) );
-	
-        view->write( "\"><br>" );
-	view->write( s->getName() );
-	view->write( "</center><br></a></cell>" );
+    {
+	if ( window->getViewMode() == KFileWindow::ICON_VIEW )
+	{ 
+	    view->write( "<cell><a href=\"" );
+	    
+	    QString filename( url );
+	    filename.detach();
+	    filename += s->getName();
+	    
+	    view->write( filename.data() );
+	    view->write( "\"><center><img src=\"file:" );
+	    
+	    view->write( KFileType::findType( filename.data() )->getPixmapFile( filename.data() ) );
+	    
+	    view->write( "\"><br>" );
+	    view->write( s->getName() );
+	    view->write( "</center><br></a></cell>" );
+	}
+	else if ( window->getViewMode() == KFileWindow::LONG_VIEW )
+	{
+	    view->write( "<tr><td><a href=\"" );
+	    QString filename( url );
+	    filename.detach();
+	    filename += s->getName();
+	    
+	    view->write( filename.data() );
+	    view->write( "\"><img width=16 height=16 src=\"file:" );
+	    view->write( KFileType::findType( filename.data() )->getPixmapFile( filename.data() ) );
+	    view->write( "\"></td><td>" );
+	    view->write( s->getAccess() );
+	    view->write( "</td><td>" ); 
+	    view->write( s->getOwner() );
+	    view->write( "</td><td>" );
+	    view->write( s->getGroup() );
+	    view->write( "</td><td>" );
+	    QString tmp;
+	    tmp.sprintf( "%i</td><td>", s->getSize() );
+	    view->write( tmp.data() );
+	    view->write( s->getCreationDate() );
+	    view->write( "</td><td>" ); 
+	    view->write( s->getName() );
+	    view->write( "</a></td></tr>" );
+	}
+	else if ( window->getViewMode() == KFileWindow::TEXT_VIEW )
+	{
+	    view->write( "<tr><td><a href=\"" );
+	    QString filename( url );
+	    filename.detach();
+	    filename += s->getName();
+	    
+	    view->write( filename.data() );
+	    view->write( "\">" );
+	    view->write( s->getName() );
+	    view->write( "</td><td>" );
+	    view->write( s->getAccess() );
+	    view->write( "</td><td>" ); 
+	    view->write( s->getOwner() );
+	    view->write( "</td><td>" );
+	    view->write( s->getGroup() );
+	    view->write( "</td><td>" );
+	    QString tmp;
+	    tmp.sprintf( "%i</td><td>", s->getSize() );
+	    view->write( tmp.data() );
+	    view->write( s->getCreationDate() );
+	    view->write( "</td></td></tr>" );
+	}
     }
 
-    view->write( "</grid></body></html>" );
-    view->end();
+    if ( window->getViewMode() == KFileWindow::ICON_VIEW )
+	view->write( "</grid></body></html>" );
+    else if ( window->getViewMode() == KFileWindow::LONG_VIEW )
+	view->write( "</table></body></html>" );
+    else if ( window->getViewMode() == KFileWindow::TEXT_VIEW )
+	view->write( "</table></body></html>" );
 
+    view->end();
     view->parse();
 }
 

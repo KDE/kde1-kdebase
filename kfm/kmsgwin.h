@@ -6,6 +6,8 @@
 #include <qlabel.h>
 #include <qframe.h>
 
+#include <kpixmap.h>
+
 
 /// KMsgWin
 /** A message box API for the KDE project. KMsgWin provides a Windows - lookalike message- or

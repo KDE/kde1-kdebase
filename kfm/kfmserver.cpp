@@ -30,12 +30,18 @@ void KFMServer::slotNewClient( KfmIpc * _client )
 	     SLOT( slotMoveClients( const char *, const char* ) ) );    
     connect( _client, SIGNAL( ask( int, int, const char*, const char* ) ), this,
 	     SLOT( slotAsk( int, int, const char *, const char* ) ) );    
+    connect( _client, SIGNAL( sortDesktop() ), this, SLOT( slotSortDesktop() ) );
 }
 
 void KFMServer::slotAccept( KSocket * _sock )
 {
     KfmIpc * i = new KFMClient( _sock );
     emit newClient( i );
+}
+
+void KFMServer::slotSortDesktop()
+{
+    KRootWidget::getKRootWidget()->sortIcons();
 }
 
 void KFMServer::slotRefreshDesktop()

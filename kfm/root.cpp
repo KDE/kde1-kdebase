@@ -6,11 +6,18 @@
 
 #include <qdir.h>
 #include <qtooltip.h>
+#include <qrect.h>
+#include <qmsgbox.h>
 
 #include <kapp.h>
 
 #include "root.h"
 #include "kfmprops.h"
+#include "kfmdlg.h"
+
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/Xos.h>
 
 #define root KRootWidget::getKRootWidget()
 
@@ -54,6 +61,8 @@ void KRootManager::openPopupMenu( QStrList &_urls, const QPoint &_point )
     else
     {
 	int id;
+	id = popupMenu->insertItem( "Open With", rootWidget, SLOT( slotPopupOpenWith() ) );
+	popupMenu->insertSeparator();    
 	id = popupMenu->insertItem( "Copy", rootWidget, SLOT( slotPopupCopy() ) );
 	id = popupMenu->insertItem( "Delete", rootWidget, SLOT( slotPopupDelete() ) );
     }
@@ -180,7 +189,7 @@ void KRootWidget::saveLayout()
 
 void KRootWidget::loadLayout()
 {
-    layoutList.remove();
+    layoutList.clear();
     
     QString file = QDir::homeDirPath().data();
     file += "/.desktop";
@@ -236,6 +245,64 @@ QPoint KRootWidget::findLayout( const char *_url )
     return QPoint( 0, 0 );
 }
 
+QPoint KRootWidget::findFreePlace( int _width, int _height )
+{
+    int dwidth = XDisplayWidth( KApplication::getKApplication()->getDisplay(), 0 );
+    int dheight = XDisplayHeight( KApplication::getKApplication()->getDisplay(), 0 );
+
+    KRootIcon *icon;
+
+    printf("Searching free place %i,%i\n",_width,_height);
+    
+    for ( int x = 0; x <= dwidth - ROOT_GRID_WIDTH; x += ROOT_GRID_WIDTH )
+    {
+	for ( int y = 80; y <= dheight - ROOT_GRID_HEIGHT; y += ROOT_GRID_HEIGHT )
+	{	
+	    bool isOK = TRUE;
+	    
+	    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+	    {
+		printf("Testing %i|%i against %i|%i '%s'\n",x,y,icon->x(),icon->y(),icon->getURL() );
+		QRect r1( x, y, _width, _height );
+		QRect r2( icon->x(), icon->y(), icon->QWidget::width(),icon->QWidget::height() );
+		if ( r1.intersects( r2 ) == FALSE )
+		{
+		    QRect r3( x + ( ROOT_GRID_WIDTH - _width ) / 2, y, _width, _height );
+		    if ( r2.intersects( r3 ) == TRUE )
+			isOK = FALSE;
+		}
+		else
+		    isOK = FALSE;
+	    }
+	    if ( isOK )
+		return QPoint( x + ( ROOT_GRID_WIDTH - _width ) / 2, y );
+	}
+    }
+
+    return QPoint( 0, 0 );
+}
+
+void KRootWidget::sortIcons()
+{
+    KRootIcon *icon;
+
+    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+	if ( ( icon->x() - ( ROOT_GRID_WIDTH - icon->QWidget::width() ) / 2 )  % ROOT_GRID_WIDTH != 0 ||
+	     icon->y() % ROOT_GRID_HEIGHT != 0 )
+	    icon->move( -200, -200 );
+	
+    QListIterator<KRootIcon> it( icon_list );    
+    for ( ; it.current(); ++it )
+	if ( it.current()->y() == -200 )
+	{
+	    printf("Moving '%s'\n",it.current()->getURL() );
+	    QPoint p = findFreePlace( it.current()->QWidget::width(), it.current()->QWidget::height() );
+	    it.current()->move( p );
+	}
+    
+    saveLayout();
+}
+
 /*
  * TODO: Wenn ein Icon auf dem Schirm aber nicht im Dateisystem ist
  * muss es geloescht werden
@@ -288,10 +355,17 @@ void KRootWidget::update()
 	    // This icon is missing on the screen.
 	    if ( icon == 0L )
 	    {
+		KRootIcon *icon;
 		KFileType *typ = KFileType::findType( file.data() );
 		QPoint p = findLayout( file );
-		// TODO: Wenn ein Directory, dann folder.ppm und DndDir
-		KRootIcon *icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, p.x(), p.y() );
+		if ( p.x() == 0 && p.y() == 0 )
+		{
+		    icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, -200, -200 );
+		    p = findFreePlace( icon->QWidget::width(), icon->QWidget::height() );
+		    icon->move( p );
+		}
+		else
+		    icon = new KRootIcon( typ->getPixmapFile( file.data() ), file, p.x(), p.y() );
 		icon_list.append( icon );
 		found_icons.append( icon );
 	    }	    
@@ -508,6 +582,26 @@ void KRootWidget::setPopupFiles( QStrList &_files )
     popupFiles.copy( _files );
 }
 
+void KRootWidget::slotPopupOpenWith()
+{
+    if ( popupFiles.count() != 1 )
+    {
+	QMessageBox::message( "KFM Error", "Opening multiple files not implemented" );
+       return;
+    }
+    DlgLineEntry l( "Open With:", "", this );
+    if ( l.exec() )
+    {
+	QString pattern = l.getText();
+	if ( pattern.length() == 0 )
+	    return;
+    }
+    KURL file = popupFiles.first();
+    QString cmd;
+    cmd.sprintf( "%s %s &", l.getText(), file.path() );
+    system( cmd.data() );
+}              
+
 void KRootWidget::slotPopupProperties()
 {
     if ( popupFiles.count() != 1 )
@@ -537,6 +631,8 @@ void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name
 
 void KRootWidget::slotPopupCopy()
 {
+    printf(":::::::::::::::::::: COPY ::::::::::::::::::::\n");
+    
     KFileWindow::clipboard.clear();
     char *s;
     for ( s = popupFiles.first(); s != 0L; s = popupFiles.next() )    
@@ -578,6 +674,7 @@ KRootIcon::KRootIcon( const char *_pixmap_file, QString &_url, int _x, int _y ) 
     // connect( drop_zone, SIGNAL( dropLeave( KDNDDropZone *) ), this, SLOT( slotDropLeaveEvent( KDNDDropZone *) ) );
 
     setGeometry( _x - pixmapXOffset, _y, width, height );
+    lower();
     show();
 }
 

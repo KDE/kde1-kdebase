@@ -11,6 +11,7 @@
 #include <Kconfig.h>
 
 #include "kioserver.h"
+#include "kpixmap.h"
 
 // A Hack, since KConfig has no constructor taking only a filename
 class KFMConfig : public KConfig

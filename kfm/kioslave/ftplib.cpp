@@ -229,10 +229,15 @@ int ftplib_debug = 2;
  int ftpLogin( const char *user, const char *pass)
 {
     char tempbuf[64];
+    int rc;
     ftplib_lastresp[0] = '\0';
     sprintf(tempbuf,"user %s",user);
+    rspbuf[0]='\0';
     if (!ftpSendCmd(tempbuf,'3'))
+    {
+	if (rspbuf[0]=='2') return 1; /* no password required */
 	return 0;
+    }      
     sprintf(tempbuf,"pass %s",pass);
     return ftpSendCmd(tempbuf,'2');
 }

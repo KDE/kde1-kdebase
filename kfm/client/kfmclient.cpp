@@ -39,6 +39,7 @@ int main( int argc, char **argv )
 	printf("./kfmclient move 'src' 'dest'  # Copies the URL 'src' to 'dest'. 'src' may be a list of URLs.\n");
 	printf("                               # 'dest' may be \"trash:/\" to move the files in the trash bin.\n");
 	printf("./kfmclient folder 'src' 'dest'  # Like move if 'src' is given, otherwise like openURL dest \n");
+	printf("./kfmclient sortDesktop          # Rearranges all icons on the desktop.\n");
 	printf("\n(c) Torben Weis, 1997\nPart of the KDE Project\n\n");
 	return 0;
     }
@@ -119,6 +120,15 @@ int doIt( int argc, char **argv )
 	    exit(1);
 	}
 	kfm.refreshDesktop();
+    }
+    if ( strcmp( argv[1], "sortDesktop" ) == 0 )
+    {
+	if ( argc != 2 )
+	{
+	    printf( "Syntax Error: Too many arguments\n" );
+	    exit(1);
+	}
+	kfm.sortDesktop();
     }
     else if ( strcmp( argv[1], "openURL" ) == 0 )
     {

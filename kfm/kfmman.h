@@ -80,7 +80,7 @@ protected:
 
     /// and the mouseposition when opening it (Matthias)
     QPoint popupMenuPosition;
-
+    
     bool eventFilter(QObject *, QEvent *);               
 };
 

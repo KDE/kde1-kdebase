@@ -142,9 +142,9 @@ void KIOSlave::list( const char *_url )
 	
 	QString cmd;
 	if ( su.path()[ strlen( su.path() ) - 1 ] == 'z' )
-	    cmd.sprintf( "tar -tzf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
+	    cmd.sprintf( "tar -tvzf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
 	else
-	    cmd.sprintf( "tar -tf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
+	    cmd.sprintf( "tar -tvf %s 1>%s 2>%s", su.path(), outFile.data(), logFile.data() );
 
 	system( cmd.data() );
 
@@ -187,81 +187,125 @@ void KIOSlave::list( const char *_url )
 	// Delete the output file
 	unlink( outFile.data() );
 
-	// List of all directories we already have flushed
-	QStrList dirs;
-	// List of all di
 	// Flush the parent directory
 	QString t;
 	t.sprintf( "tar:%s#", su.path() );
 	ipc->flushDir( t.data() );
 
+	char line[1024];
+
 	// Find all files in all directories
 	char *s;
 	for ( s = files.first(); s != 0L; s = files.next() )
 	{
-	    printf("########### '%s'\n",s);
-	    
-	    // Get all directories of the current file and check wether
-	    // we have noticed them already. Otherwise send them to the server.
-	    QString s2 = s;
-	    int i = 0;
-	    int j = -1;
-	    
-	    while ( ( i = s2.find( "/", i ) ) != -1 )
-	    {
-		// Get the directories name
-		QString s3 = s2.mid( j + 1, i - j );
-		// Get the URL of the directories parent directory
-		QString s4;
-		s4.sprintf( "tar:%s#", su.path() );
-		if ( j > -1 )
-		    s4 += s2.left( j + 1 );
-		// Send to the server if new
-		QString s5 = s2.left( i + 1 );
-		if ( dirs.find( s5.data() ) == - 1 )
-		{
-		    // Get the URL of the new directory
-		    QString s6;
-		    s6.sprintf( "tar:%s#", su.path() );
-		    s6 += s2.left( i + 1 );
-		    ipc->flushDir( s6.data() );
-		    // ipc->dirEntry( s4.data(), s3.data(), TRUE, -1, 0L, 0L, 0L, 0L );
-		    dirs.append( s5.data() );
-		}
-		j = i;
-		i++;
-	    }
-	    
-	    // Separate the filename from the directory
-	    QString dir;
-	    QString entry;
-	    QString str = s;
-	    i = str.findRev( "/" );
-	    // Root directory ?
-	    if ( i == - 1 )
-	    {}
-	    if ( i == str.length() - 1 )
-	    {
-		int k = str.findRev( "/", i - 1 );
-		if ( k == -1 )
-		{
-		    dir.sprintf( "tar:%s#", su.path() );
-		    entry = str.data();
-		}
-		else
-		{
-		    dir.sprintf( "tar:%s#", su.path() );
-		    dir += str.left( k + 1 );
-		    entry = str.mid( k + 1, i - k );
-		}
-	    }
+	    strcpy( line, s );
+	    // Parse the line
+	    bool err = FALSE;
+	    bool isdir = ( line[0] == 'd' );
+	    QString owner;
+	    QString group;
+	    QString access;
+	    QString creationDate;
+	    QString name;
+	    int size;
+			    
+	    char *p2 = line;
+	    char *p = strchr( line, ' ' );
+			    
+	    if ( p == 0L )
+		err = TRUE;
 	    else
 	    {
-		dir.sprintf( "tar:%s#%s", su.path(), str.left( i + 1 ).data() );
-		entry = str.mid( i + 1, str.length() ).data();
+		*p = 0;
+		access = p2;
+		printf("ACCESS = '%s'\n",access.data());
+		p2 = p + 1;
+		
+		    p = strchr( p2, '/' );
+		    if ( p == 0L )
+			err = TRUE;
+		    else
+		    {
+			*p = 0;
+			owner = p2;
+			printf("OWNER = '%s'\n",owner.data());
+			p2 = p + 1;
+			p = strchr( p2, ' ' );
+			if ( p == 0L )
+			    err = TRUE;
+			else
+			{
+			    *p = 0;
+			    group = p2;
+			    printf("GROUP = '%s'\n",group.data());
+			    p2 = p + 1;
+			    while ( *p2 == ' ' ) p2++;
+			    p = strchr( p2, ' ' );
+			    if ( p == 0L )
+				err = TRUE;
+			    else
+			    {
+				*p = 0;
+				size = atoi( p2 );
+				printf("SIZE = '%i'\n",size);
+				p2 = p + 1;
+				p = strchr( p2, ' ' );
+				if ( p == 0L )
+				    err = TRUE;
+				else
+				{
+				    p = strchr( p + 1, ' ' );
+				    if ( p == 0L )
+					err = TRUE;
+				    else
+				    {
+					p = strchr( p + 1, ' ' );
+					if ( p == 0L )
+					    err = TRUE;
+					else
+					{
+					    p = strchr( p + 1, ' ' );
+					    if ( p == 0L )
+						err = TRUE;
+					    else
+					    {
+						*p = 0;
+						creationDate = p2;
+						printf("DATE = '%s'\n",creationDate.data());
+						p2 = p + 1;
+						name = p2;
+						printf("NAME = '%s'\n",name.data() );
+					    }
+					}
+				    }
+				}
+			    }   
+			}
+		    }    
+
 	    }
-	    // Sned the new directory entry
-	    ipc->dirEntry( dir.data(), entry.data(), FALSE, -1, 0L, 0L, 0L, 0L );
+	    if ( !err )
+	    {
+		if ( isdir )
+		{
+		    t.sprintf( "tar:%s#%s", su.path(), name.data() );
+		    ipc->flushDir( t.data() );
+		    // Delete the trailing '/'
+		    name = name.left( name.length() - 1 ).data();
+		}
+		QString dir = "";
+		int i = name.findRev( "/" );
+		if ( i != -1 )
+		{
+		    dir = name.left( i + 1 ).data();
+		    name = name.data() + i + 1;
+		}
+		if ( isdir )
+		    name += "/";
+		t.sprintf( "tar:%s#%s", su.path(), dir.data() );
+		ipc->dirEntry( t.data(), name.data(), isdir, size, creationDate.data(),
+			       access.data(), owner.data(), group.data() );
+	    }
 	}
     }
     else if ( strcmp( su.protocol(), "ftp" ) == 0 )

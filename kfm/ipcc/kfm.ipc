@@ -10,6 +10,6 @@ slots:
    void move( string _src, string _dest );
    void moveClient( string _src, string _dest );
    void ask( int _x, int _y, string _src, string _dest );
-
+   void sortDesktop();
 signals:
    void finished();

@@ -17,6 +17,9 @@
 #include "kstrlist.h"
 #include "kiojob.h"
 
+#define ROOT_GRID_WIDTH 80
+#define ROOT_GRID_HEIGHT 80
+
 class KRootWidget;
 
 /// IO job for root drops
@@ -35,8 +38,7 @@ public:
       '_x' and '_y' are the coordinates of the drop.
       */
     KIORootJob( KRootWidget * _root, int _x, int _y );
-    ~KIORootJob() {};
- 
+    
 public slots:
     /// Gets notify events
     /**
@@ -212,6 +214,12 @@ public:
       This string always ends with "/".
       */
     QString desktopDir;
+
+    /**
+     * Rearranges all icons on the desktop. The algorithm tries to fit all icons
+     * in a certain grid. Starting in the upper left corner of the screen.
+     */
+    void sortIcons();
     
 public slots:
     /// Updates the icons
@@ -239,7 +247,8 @@ public slots:
     void slotPopupCopy();
     void slotPopupDelete();
     void slotPopupNewView();
-
+    void slotPopupOpenWith();
+    
     /******************************************************
      * When this slot is signaled then we know that something
      * changed in the directory given by the argument.
@@ -283,6 +292,12 @@ protected:
      */
     QPoint findLayout( const char * );
 
+    /**
+     * Returns a point where we can place a new icon with the size
+     * ( _width | _height ).
+     */
+    QPoint findFreePlace( int _width, int _height );
+    
     /******************************************************
      * Contains a list of all visible icons on the root window.
      */
