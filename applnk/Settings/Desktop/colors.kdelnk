@@ -48,23 +48,6 @@ Name[ru]=ã×ÅÔÁ
 Name[sk]=Farby
 Name[sv]=Färger
 Name[zh_CN.GB2312]=ÑÕÉ«
-SwallowTitle[no]=Skrivebordsfarger
-SwallowTitle=Desktop colors
-SwallowTitle[es]=Colores del escritorio
-SwallowTitle[fr]=Couleurs du bureau
-SwallowTitle[pl]=Kolory desktopu
-SwallowTitle[pt]=Cores do ambiente de trabalho
-SwallowTitle[eo]=Labortabulaj koloroj
-SwallowTitle[pt_BR]=Cores do ambiente de trabalho
-SwallowTitle[hr]=Boje radne povr¹ine
-SwallowTitle[sk]=Farby pracovnej plochy
-SwallowTitle[cs]=Barvy pracovní plochy
-SwallowTitle[zh_CN.GB2312]=×ÀÃæÑÕÉ«
-SwallowTitle[sv]=Skrivbordsfärger
-SwallowTitle[ro]=Culorile Ecranului
-SwallowTitle[ru]=ã×ÅÔÁ ÒÁÂÏÞÅÇÏ ÓÔÏÌÁ
-SwallowTitle[fi]=Työpöydän värit
-SwallowTitle[ca]=Colors de l'escriptori
 Init=kcmdisplay -init
 
 

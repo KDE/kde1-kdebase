@@ -48,23 +48,6 @@ Name[ru]=èÒÁÎÉÔÅÌØ ÜËÒÁÎÁ
 Name[sk]=©etriè obrazovky
 Name[sv]=Skärmsläckare
 Name[zh_CN.GB2312]=ÆÁÄ»±£»¤³ÌĞò
-SwallowTitle[no]=Skrivebordsskjermsparer
-SwallowTitle=Desktop screensaver
-SwallowTitle[es]=Salvapantalla del escritorio
-SwallowTitle[fr]=Economiseur d'écran du bureau
-SwallowTitle[eo]=Ekrananima¼o
-SwallowTitle[pl]=Wygaszacz desktopu
-SwallowTitle[pt]=Protectores de écran
-SwallowTitle[pt_BR]=Protetores de tela
-SwallowTitle[sk]=©etriè obrazovky
-SwallowTitle[cs]=©etriè obrazovky
-SwallowTitle[hr]=Za¹titnik zaslona radne povr¹ine
-SwallowTitle[zh_CN.GB2312]=×ÀÃæÆÁÄ»±£»¤³ÌĞò
-SwallowTitle[sv]=Skärmsläckare
-SwallowTitle[ro]=Configurare ScriinSeivãr
-SwallowTitle[ru]=şÒÁÎÉÔÅÌØ ÜËÒÁÎÁ ÒÁÂÏŞÅÇÏ ÓÔÏÌÁ
-SwallowTitle[fi]=Työpöydän ruudunsäästäjä
-SwallowTitle[ca]=Salvapantalles
 Init=kcmdisplay -init
 
 

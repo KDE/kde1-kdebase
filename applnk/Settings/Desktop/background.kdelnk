@@ -48,22 +48,6 @@ Name[ru]=æÏÎ
 Name[sk]=Pozadie
 Name[sv]=Bakgrund
 Name[zh_CN.GB2312]=±³¾°
-SwallowTitle[no]=Skrivebordsbakgrunn
-SwallowTitle=Desktop background
-SwallowTitle[es]=Fondo de la pantalla
-SwallowTitle[fr]=Fond d'écran du bureau
-SwallowTitle[eo]=Labortabula tapeto
-SwallowTitle[pl]=T³o desktopu
-SwallowTitle[pt]=Fundo do ambiente de trabalho
-SwallowTitle[pt_BR]=Fundo do ambiente de trabalho
-SwallowTitle[hr]=Pozadina radne povr¹ine
-SwallowTitle[zh_CN.GB2312]=×ÀÃæ±³¾°
-SwallowTitle[sv]=Skrivbordsbakgrund
-SwallowTitle[ro]=Fundalul Ecranului
-SwallowTitle[ru]=æÏÎ ÒÁÂÏÞÅÇÏ ÓÔÏÌÁ
-SwallowTitle[fi]=Työpöydän tausta
-SwallowTitle[cs]=Pozadí pracovní plochy
-SwallowTitle[ca]=Fons de l'escriptori
 Init=kcmdisplay -init
 
 
