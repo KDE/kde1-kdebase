@@ -37,4 +37,7 @@ QString displayName();
  */
 int testNestedURLs( const char *_src, const char *_dest );
 
+void encodeFileName( QString& fn );
+void decodeFileName( QString& fn );
+
 #endif

@@ -644,11 +644,16 @@ int KIOServer::isDir( const char *_url )
     else if ( strcmp( u.protocol(), "http" ) == 0 )
 	return 0;
     // Local filesystem without subprotocol
-    else if ( strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
-    {
+    else if ( u.isLocalFile() )
+	     // strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    { 
 	struct stat buff;
-	stat( u.path(), &buff );
-
+	if ( stat( u.path(), &buff ) != 0 )
+	{
+	  warning("FEHLER\n");
+	  return 0;
+	}
+	
 	if ( S_ISDIR( buff.st_mode ) )
 	    return 1;
 	else

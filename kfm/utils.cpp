@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 
+#include <kurl.h>
+
 void openWithOldApplication( const char *_cmd, QStrList& _urlList )
 {
     // Find out wether there are some URL with a
@@ -135,3 +137,20 @@ int testNestedURLs( const char *_src, const char *_dest )
 }
 
 
+void encodeFileName( QString& fn )
+{
+  int i = 0;
+  while( ( i = fn.find( "/", i ) ) != -1 )
+  {
+    fn.replace( i, 1, "%2F" );
+  }
+}
+
+void decodeFileName( QString& fn )
+{
+  int i = 0;
+  while( ( i = fn.find( "%2F", i ) ) != -1 )
+  {
+    fn.replace( i, 3, "/" );
+  }
+}

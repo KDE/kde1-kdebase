@@ -35,6 +35,7 @@
 #include "root.h"
 #include "config-kfm.h"
 #include "kfm.h"
+#include "utils.h"
 
 #define SEPARATION 10
 
@@ -104,65 +105,62 @@ void Properties::slotApply()
 }
 
 void Properties::insertPages()
-{
-  printf("1\n");
-  
+{ 
     if ( FilePropsPage::supports( kurl ) )
     {
 	PropsPage *p = new FilePropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-    printf("2\n");
+
     if ( FilePermissionsPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new FilePermissionsPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("3\n");
+
     if ( ExecPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new ExecPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("4\n");
+
     if ( ApplicationPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new ApplicationPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("5\n");
+
     if ( BindingPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new BindingPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("6\n");
+
     if ( URLPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new URLPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("7\n");
+
     if ( DirPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new DirPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("8\n");
+
     if ( DevicePropsPage::supports( kurl ) )
     {
 	PropsPage *p = new DevicePropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-  printf("9\n");
 }
 
 
@@ -187,7 +185,9 @@ FilePropsPage::FilePropsPage( Properties *_props ) : PropsPage( _props )
 	filename = tmp2.mid( i + 1, tmp2.length() );
     else
 	filename = "/";
-    
+    KURL::decodeURL( filename );
+    // decodeFileName( filename );
+
     QString tmp = path.data();
     if ( tmp.right(1) != "/" )
       tmp += "/";
@@ -339,11 +339,11 @@ void FilePropsPage::applyChanges()
 {
     QString path = properties->getKURL()->path();
     QString fname = properties->getKURL()->filename();
-    // QString n = name->text();
-    // KURL::encodeURL( n );
-    
+    QString n = name->text();
+    encodeFileName( n );
+
     // Do we need to rename the file ?
-    if ( strcmp( oldName.data(), name->text() ) != 0 )
+    if ( strcmp( oldName.data(), n.data() ) != 0 )
     {
 	QString s = path.data();
 	s.detach();
@@ -352,19 +352,12 @@ void FilePropsPage::applyChanges()
 	if ( i == -1 )
 	    return;
 	s.truncate( i );
-	// = s.left( i );
-	// QString tmp = s.data();
-	// tmp.detach();
 	s += "/";
-	s += name->text();
-	// KURL u( s.data() );
-	// QString t( u.path() );
-	// KURL::decodeURL( t );
-	printf("Renaming '%s' to '%s'\n",path.data(),s.data());
+	s += n.data();
 	if ( rename( path, s ) != 0 )
 	    QMessageBox::warning( this, klocale->translate( "KFM Error" ),
 				  klocale->translate( "Could not rename the file or directory\nThe destination seems to already exist\n" ) );
-	properties->emitPropertiesChanged( name->text() );
+	properties->emitPropertiesChanged( n );
     }
 }
 
@@ -1018,6 +1011,7 @@ DirPropsPage::DirPropsPage( Properties *_props ) : PropsPage( _props )
     connect( globalButton, SIGNAL( clicked() ), this, SLOT( slotApplyGlobal() ) );
 
     QString tmp = _props->getKURL()->path();
+    
     if ( tmp.right(1) != "/" )
 	tmp += "/.directory";
     else
@@ -1078,8 +1072,9 @@ bool DirPropsPage::supports( KURL *_kurl )
 {
     // Is it the trash bin ?
     QString path = _kurl->path();
-
+    
     QString tmp = path.data();
+    
     if ( tmp.right(1) != "/" )
 	tmp += "/";
     if ( strcmp( _kurl->protocol(), "file" ) == 0L &&
@@ -1093,7 +1088,7 @@ bool DirPropsPage::supports( KURL *_kurl )
 	return false;
 
     if ( !KIOServer::isDir( path ) )
-	return false;
+      return false;
     
     return true;    
 }

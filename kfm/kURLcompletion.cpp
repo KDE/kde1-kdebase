@@ -15,6 +15,7 @@
 #include "kURLcompletion.moc"
 #include <qapp.h>
 #include <qkeycode.h>
+#include <kurl.h>
 
 #include <string.h>
 #include <sys/types.h>
@@ -51,6 +52,14 @@ void KURLCompletion::make_completion ()
 	bool ambigous;
 
 	dir.detach();
+
+	// We do not complete URLs
+	if ( dir.left( 5 ) == "file:" )
+	{
+	  KURL u( dir );
+	  dir = u.path();
+	} 
+	
 	if (!is_fileurl (dir, ambigous))
 		return;
 	
@@ -71,7 +80,7 @@ void KURLCompletion::make_completion ()
 	// url was ambigous and we actually did not find any
 	// matching file -> leave it at it is
 	if (!ambigous || !possibilityList.isEmpty()) {
-		match.prepend ("file:"); // set to file-protocol
+	  // match.prepend ("file:");  set to file-protocol
 		self_update = true;
 		emit setText (match);
 		self_update = false;

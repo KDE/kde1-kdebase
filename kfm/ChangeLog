@@ -1,3 +1,22 @@
+Wed Apr 15 19:29:21 1998    <weis@snoopy.rz.uni-frankfurt.de>
+
+	* root.cpp (initFilename): Filenames containing %2f are
+	  displayed with '/' ( yet only Root Icons ). This makes
+	  bookmark handling much easier.
+
+	* kfmgui.cpp (slotURLEntered): Fixed URL encoding bug
+
+	* kioserver.cpp (isDir): Fixed URL encoding bug
+
+	* kfmprops.cpp (supports): Fixed URL encoding bug
+
+Tue Apr 14 18:22:22 1998    <weis@snoopy.rz.uni-frankfurt.de>
+
+	* kiojob.cpp (processError): Fixed spelling error.
+
+	* kioslave Proxy Authorisation from <gadeynew@sebb.bel.alcatel.be>
+	  Edit "Proxy-User=..." and "Proxy-Pass=..." in config file.
+	
 Wen Apr 1 14:08:00 1998  Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
 
 	* kkioslave/http.cpp (ProcessHeader): Reverted changes by Torben Weis,

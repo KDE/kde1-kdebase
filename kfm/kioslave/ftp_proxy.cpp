@@ -15,6 +15,7 @@
 extern char * base64_encode_line(const char*);
 extern char *create_www_auth(const char*, const char*);
 extern int revmatch(const char*, const char*);
+extern char *create_generic_auth(const char *prefix, const char *user, const char *passwd);
 
 /*****************************************************************************/
 
@@ -27,9 +28,10 @@ KProtocolProxyFTP::KProtocolProxyFTP () {
     QString tmp;
     KURL proxyURL;
     
-    printf("Huhu!\n");
     // All right. Now read the proxy settings
-    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    // KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    // Read Only
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc", true );
     prxcnf.setGroup("Browser Settings/Proxy");
 
     noProxyForStr = prxcnf.readEntry("NoProxyFor");
@@ -42,6 +44,10 @@ KProtocolProxyFTP::KProtocolProxyFTP () {
         port = proxyURL.port();
 	if ( port == 0 )
 	    port = 80;
+
+	proxy_user = prxcnf.readEntry( "Proxy-User" );
+	proxy_pass = prxcnf.readEntry( "Proxy-Pass" );
+
 	init_sockaddr(&proxy_name, proxyURL.host(), port);
 	use_proxy = 1;
     }
@@ -192,6 +198,17 @@ int KProtocolProxyFTP::Open(KURL *_url, int mode)
 		command += www_auth;
 		free(www_auth);
 	}
+
+	if( do_proxy )
+	{
+	  if( proxy_user != "" && proxy_pass != "" )
+          {
+	    char *www_auth = create_generic_auth("Proxy-authorization", proxy_user, proxy_pass);
+	    command += www_auth;
+	    free(www_auth);
+	  }
+	}
+
 	command += "\n";  /* end header */
 	// fprintf(stderr,"Command=%s\n",command.data());
 

@@ -66,7 +66,7 @@ KProtocol *CreateProtocol(const char *url)
 	return NULL;
 
     do_proxy = false;
-    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc", true );
     prxcnf.setGroup("Browser Settings/Proxy");
     noPrxFor = prxcnf.readEntry("NoProxyFor");
     prxStr = prxcnf.readEntry("FTP-Proxy");

@@ -1058,6 +1058,8 @@ void KRootWidget::slotPopupProperties()
 	return;
     }
     
+    printf("OPENING=%s\n",popupFiles.first());
+    
     Properties *p = new Properties( popupFiles.first() );
     connect( p, SIGNAL( propertiesChanged( const char *, const char * ) ), this,
 	     SLOT( slotPropertiesChanged( const char *, const char* ) ) );
@@ -1065,13 +1067,14 @@ void KRootWidget::slotPopupProperties()
 }
 
 void KRootWidget::slotPropertiesChanged( const char *_url, const char *_new_name )
-{
+{ 
     // Check for renamings.
     if ( _new_name != 0L )
     {
 	KRootIcon *icon = findIcon( _url );
 	if ( icon == 0L )
-	    return;
+	  return;
+	
 	icon->rename( _new_name );
 	saveLayout();
     }
@@ -1266,8 +1269,11 @@ void KRootIcon::initFilename()
     if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
     file.detach();
-    KURL::decodeURL(file);
-    
+    KURL::decodeURL( file );
+    // This changes "%2f" to "/"
+    // Just for a nicer display
+    decodeFileName( file );
+
     // the following code is taken out of kbind.cpp, where nearly 
     // the same is run before this.
     // I didn't want to introduce new member functions, so it exists
@@ -1637,7 +1643,9 @@ void KRootIcon::rename( const char *_new_name )
     if ( pos == -1 )
 	return;
     url = url.left( pos + 1 );
-    url += _new_name;
+    QString tmp = _new_name;
+    KURL::encodeURL( tmp );
+    url += tmp;
 
     init();
     setGeometry( x(), y(), width, height );

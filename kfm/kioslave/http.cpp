@@ -58,7 +58,7 @@ base64_encode_line(const char *s)
    return res;
 }
 
-char *create_www_auth(const char *user, const char *passwd)
+char *create_generic_auth (const char *prefix, const char *user, const char *passwd )
 {
    char *wwwauth;
 
@@ -70,13 +70,20 @@ char *create_www_auth(const char *user, const char *passwd)
       sprintf(t1, "%s:%s", user, passwd);
       t2 = base64_encode_line(t1);
       free(t1);
-      wwwauth = (char *)malloc(strlen(t2) + 24);
-      sprintf(wwwauth, "Authorization: Basic %s\r\n", t2);
+      // wwwauth = (char *)malloc(strlen(t2) + 24);
+      // sprintf(wwwauth, "Authorization: Basic %s\r\n", t2);
+      wwwauth = (char *)malloc(strlen(t2) + strlen(prefix) + 11 /* UPDATE WHEN FORMAT BELOW CHANGES !!! */);
+      sprintf(wwwauth, "%s: Basic %s\r\n", prefix, t2);
       free(t2);
    }
    else
       wwwauth = NULL;
    return(wwwauth);
+}
+
+char *create_www_auth(const char *user, const char *passwd)
+{
+  return create_generic_auth("Authorization",user, passwd);
 }
 
 /*****************************************************************************/
@@ -94,7 +101,7 @@ KProtocolHTTP::KProtocolHTTP()
     KURL proxyURL;
     
     // All right. Now read the proxy settings
-    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc");
+    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc", true );
     prxcnf.setGroup("Browser Settings/Proxy");
 
     noProxyForStr = prxcnf.readEntry("NoProxyFor");
@@ -107,7 +114,12 @@ KProtocolHTTP::KProtocolHTTP()
         port = proxyURL.port();
 	if ( port == 0 )
 	    port = 80;
+
 	init_sockaddr(&proxy_name, proxyURL.host(), port);
+
+	proxy_user = prxcnf.readEntry( "Proxy-User" );
+	proxy_pass = prxcnf.readEntry( "Proxy-Pass" );
+
 	use_proxy = 1;
 	
 //	if(proxy)
@@ -251,11 +263,7 @@ int revmatch(const char *host, const char *nplist)
     const char *nptr = nplist + qstrlen(nplist) - 1;
     const char *shptr = hptr;
     
-    printf("host is: %s\n", host); 
-    
     while( nptr >= nplist ) {
-        printf("*hptr is: %c\n", *hptr);
-        printf("*nptr is: %c\n", *nptr);
         if ( *hptr != *nptr ) 
         {
             hptr = shptr; 
@@ -398,6 +406,17 @@ int KProtocolHTTP::Open(KURL *_url, int mode)
 		command += www_auth;
 		free(www_auth);
 	}
+
+	if( do_proxy )
+	{
+	  if( proxy_user != "" && proxy_pass != "" )
+          {
+	    char *www_auth = create_generic_auth("Proxy-authorization", proxy_user, proxy_pass);
+	    command += www_auth;
+	    free(www_auth);
+	  }
+	}
+
 	command += "\r\n";  /* end header */
 
 	// write(0, command.data(), command.length());

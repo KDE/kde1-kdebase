@@ -1215,7 +1215,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 				 i18n("Cancel") );
 	    break;
 	case KIO_ERROR_UnknownHost:
-	    ksprintf(&msg, i18n("Unknwon host in\n%s"), url.data());
+	    ksprintf(&msg, i18n("Unknown host in\n%s"), url.data());
 	    if ( bDisplay )
 		m = new KMsgWin( 0L, i18n("Error"), 
 				 msg.data(), KMsgWin::EXCLAMATION, 
@@ -1346,7 +1346,7 @@ void KIOJob::processError( int _kioerror, const char* _error, int )
 				 i18n("Cancel") );
 	    break;
 	case KIO_ERROR_UnknownHost:
-	    ksprintf(&msg,i18n("Unknwon host in\n%s"), url.data());
+	    ksprintf(&msg,i18n("Unknown host in\n%s"), url.data());
 	    if ( bDisplay )
 		m = new KMsgWin( 0L, i18n("Error"), 
 				 msg.data(), KMsgWin::EXCLAMATION, 

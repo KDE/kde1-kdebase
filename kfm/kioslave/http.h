@@ -20,6 +20,8 @@ class KProtocolHTTP :public KProtocol
 protected:
     QString noProxyForStr;    
     int use_proxy;
+    QString proxy_user;
+    QString proxy_pass;
 
     //#define HTTP_PROXY_NAME "someproxy.somewhere.org"
     //#define HTTP_PROXY_PORT 80

@@ -398,7 +398,7 @@ void KfmGui::initMenu()
     mcache->insertItem( klocale->translate( "Never look in cache" ),
 			this, SLOT( slotCacheOff() ) );
     
-    mcache->setItemChecked( mcache->idAt( 3 ), true );
+    mcache->setItemChecked( mcache->idAt( 4 ), true );
 
     moptions = new QPopupMenu;
     CHECK_PTR( moptions );
@@ -657,16 +657,16 @@ void KfmGui::slotClearCache()
 
 void KfmGui::slotCacheOn()
 {
-    mcache->setItemChecked( mcache->idAt( 3 ), true );
-    mcache->setItemChecked( mcache->idAt( 4 ), false );
+    mcache->setItemChecked( mcache->idAt( 4 ), true );
+    mcache->setItemChecked( mcache->idAt( 5 ), false );
 
     HTMLCache::enableCache( true );
 }
 
 void KfmGui::slotCacheOff()
 {
-    mcache->setItemChecked( mcache->idAt( 3 ), false );
-    mcache->setItemChecked( mcache->idAt( 4 ), true );
+    mcache->setItemChecked( mcache->idAt( 4 ), false );
+    mcache->setItemChecked( mcache->idAt( 5 ), true );
 
     HTMLCache::enableCache( false );
 }
@@ -683,16 +683,17 @@ void KfmGui::slotURLEntered()
 	// Root directory?
 	if ( url.data()[0] == '/' )
 	{
-	    url = "file:";
-	    url += toolbarURL->getLinedText( TOOLBAR_URL_ID );
+	  KURL u( toolbarURL->getLinedText( TOOLBAR_URL_ID ) );
+	  url = u.url().data();
 	}
 	// Home directory?
         else if ( url.data()[0] == '~' )
         {
-	    url = "file:";
-	    url += QDir::homeDirPath().data();
-	    url += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
-         }
+	  QString tmp( QDir::homeDirPath().data() );
+	  tmp += toolbarURL->getLinedText( TOOLBAR_URL_ID ) + 1;
+	  KURL u( tmp );
+	  url = u.url().data();
+	}
 
 	KURL u( url.data() );
 	if ( u.isMalformed() )
