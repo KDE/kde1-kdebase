@@ -94,7 +94,10 @@ void KFMServer::slotMoveClients( const char *_src_urls, const char *_dest_url )
     urlList.append( s.data() );
 
     KIOJob *job = new KIOJob();
-    job->move( urlList, dest.data() );
+    if ( urlList.count() == 1 )
+      job->move( urlList.first(), dest.data() );
+    else
+      job->move( urlList, dest.data() );
 }
 
 void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
@@ -118,7 +121,10 @@ void KFMServer::slotCopyClients( const char *_src_urls, const char *_dest_url )
     urlList.append( s.data() );
 
     KIOJob *job = new KIOJob();
-    job->copy( urlList, dest.data() );
+    if ( urlList.count() == 1 )
+      job->copy( urlList.first(), dest.data() );
+    else
+      job->copy( urlList, dest.data() );
 }
 
 void KFMServer::slotOpenURL( const char* _url )
@@ -302,7 +308,7 @@ void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
     if ( dest == "trash:/" )
 	dest = "file:" + KFMPaths::TrashPath();
 
-    debugT("Moving to '%s'\n",dest.data());
+    debugT("Copying to '%s'\n",dest.data());
     
     int i;
     while ( ( i = s.find( "\n" ) ) != -1 )
@@ -318,7 +324,10 @@ void KFMClient::slotCopy( const char *_src_urls, const char * _dest_url )
 
     KIOJob *job = new KIOJob();
     connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
-    job->copy( urlList, dest.data() );
+    if ( urlList.count() == 1 )
+      job->copy( urlList.first(), dest.data() );
+    else
+      job->copy( urlList, dest.data() );
 }
 
 void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
@@ -347,7 +356,10 @@ void KFMClient::slotMove( const char *_src_urls, const char *_dest_url )
 
     KIOJob *job = new KIOJob();
     connect( job, SIGNAL( finished( int ) ), this, SLOT( finished( int ) ) );
-    job->move( urlList, dest.data() );
+    if ( urlList.count() == 1 )
+      job->move( urlList.first(), dest.data() );
+    else
+      job->move( urlList, dest.data() );
 }
 
 void KFMClient::slotList( const char *_url )
