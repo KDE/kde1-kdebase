@@ -1988,6 +1988,8 @@ int Client::operationFromCommand(const QString &com){
 void Client::toggleShade(){
   if (getDecoration() != KWM::normalDecoration)
     return;
+  if (state != NormalState)
+    return;
 
   shaded = !shaded;
   if (isShaded()){
@@ -1996,12 +1998,15 @@ void Client::toggleShade(){
       manager->focusToNull();
     XUnmapWindow(qt_xdisplay(), window);
     unmap_events++;
+    manager->setWindowState(this, IconicState);
+    state = NormalState;
   }
   else {
     manager->raiseSoundEvent("Window Shape Down");
     XMapWindow(qt_xdisplay(),window);
+    manager->setWindowState(this, NormalState);
     if (isActive())
       manager->focusToClient(this);
   }
-  manager->sendConfig(this);
+  manager->sendConfig(this, false);
 }

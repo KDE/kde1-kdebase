@@ -770,7 +770,7 @@ void MyApp::readConfiguration(){
     options.Placement = RANDOM_PLACEMENT;
   }
 
-  options.rstart = config->readEntry("RstartProtocol", "rstart -v");
+  options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
   config->writeEntry("RstartProtocol", options.rstart);
 
   QString s  = config->readEntry("TitlebarDoubleClickCommand", "winMaximize");

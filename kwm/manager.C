@@ -1668,6 +1668,7 @@ void Manager::sendConfig(Client* c, bool emit_changed){
 
   if (emit_changed)
     changedClient(c);
+
 }
 
 
@@ -2498,7 +2499,6 @@ void Manager::iconifyFloatingOf(Client* c){
 
 void Manager::raiseSoundEvent(const QString &event){
   XEvent ev;
-  int status;
   long mask = 0L;
   memset(&ev, 0, sizeof(ev));
   ev.xclient.type = ClientMessage;

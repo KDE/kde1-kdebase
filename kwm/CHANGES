@@ -43,6 +43,8 @@ In 0.10:
        This will not start an auto timer, but you can raise the most recent
        activated window with a simple click inside the window (= Raise
        on first click)
+     - fixed a dirty bug with the rstart protocol (I mixed up 
+       QStrings and Char*.... grrr.....)
        
 
   patchlevel 26:
