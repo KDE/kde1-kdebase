@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -178,12 +178,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Editova» polo¾ky: (pustite prieèinok a vytvorte odkaz)"
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Editova» &lokálne..."
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Editova» &globálne..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Editova» &lokálne..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -206,11 +208,13 @@ msgid "Ignore case when sorting"
 msgstr "Ignorova» veµkos» písmen pri triedení"
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr "Ukazova» sekciu Globálne"
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Ukazova» sekciu Lokálne"
 
 #: disknav.cpp:180
-msgid "Show Local section"
+#, fuzzy
+msgid "Show Personal section"
 msgstr "Ukazova» sekciu Lokálne"
 
 #: disknav.cpp:187
@@ -224,3 +228,9 @@ msgstr "Ukazova» polo¾ku Nastavenie"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminálová aplikácia:"
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Editova» &globálne..."
+
+#~ msgid "Show Global section"
+#~ msgstr "Ukazova» sekciu Globálne"

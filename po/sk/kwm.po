@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm 0.10.23\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -113,15 +113,15 @@ msgstr "Ôsma"
 msgid "Unnamed Desktop"
 msgstr "Nepomenovaná plocha"
 
-#: main.C:939
+#: main.C:949
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: ShapeMode vypnutý\n"
 
-#: main.C:1051
+#: main.C:1061
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Niektoré bodové mapy nie sú korektné: GimmickMode vypnutý\n"
 
-#: main.C:1376
+#: main.C:1386
 msgid "*** No Tasks ***"
 msgstr "*** ®iadne úlohy ***"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,12 +182,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr ""
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Redigér &lokale"
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Redigér &globale..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Redigér &lokale"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -210,12 +212,13 @@ msgid "Ignore case when sorting"
 msgstr ""
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr ""
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Placering"
 
 #: disknav.cpp:180
 #, fuzzy
-msgid "Show Local section"
+msgid "Show Personal section"
 msgstr "Placering"
 
 #: disknav.cpp:187
@@ -229,6 +232,9 @@ msgstr ""
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr ""
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Redigér &globale..."
 
 #~ msgid "Clock"
 #~ msgstr "Ur"

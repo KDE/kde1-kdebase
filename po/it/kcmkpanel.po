@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -178,11 +178,11 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr ""
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+msgid "Edit &Personal..."
 msgstr ""
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
+msgid "Edit &Shared..."
 msgstr ""
 
 #: disknav.cpp:112
@@ -206,12 +206,13 @@ msgid "Ignore case when sorting"
 msgstr ""
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr ""
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Locazione"
 
 #: disknav.cpp:180
 #, fuzzy
-msgid "Show Local section"
+msgid "Show Personal section"
 msgstr "Locazione"
 
 #: disknav.cpp:187

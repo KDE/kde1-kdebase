@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel 0.18.5\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-11-09 08:39+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -25,7 +25,7 @@ msgstr "&Vlastnosti"
 msgid "Go!"
 msgstr "Start"
 
-#: kpanel.C:316 tools.C:828
+#: kpanel.C:316 tools.C:830
 msgid "Where do you want to go tomorrow?"
 msgstr "Kam si pøejete jít zítra?"
 
@@ -33,11 +33,11 @@ msgstr "Kam si pøejete jít zítra?"
 msgid "No info available"
 msgstr "Informace není k dispozici"
 
-#: kpanel.C:430 props.C:174 props.C:175
+#: kpanel.C:430 props.C:175 props.C:176
 msgid "Logout"
 msgstr "Odhlásit"
 
-#: kpanel.C:438 props.C:173
+#: kpanel.C:438 props.C:174
 msgid "Lock screen"
 msgstr "Zablokovat obrazovku"
 
@@ -49,11 +49,11 @@ msgstr "Schovat panel"
 msgid "Show the panel"
 msgstr "Ukázat panel"
 
-#: kpanel.C:1201 tools.C:658
+#: kpanel.C:1201
 msgid "No comment available"
 msgstr "Komentáø není k dispozici"
 
-#: kpanel.C:1210 tools.C:837
+#: kpanel.C:1210 tools.C:839
 msgid "Windowlist"
 msgstr "Seznam oken"
 
@@ -101,19 +101,23 @@ msgstr "Spustit panel znova"
 msgid "Disk Navigator"
 msgstr "Diskový navigátor"
 
-#: props.C:169
+#: props.C:164
+msgid "Quickly navigate through the filesystem"
+msgstr ""
+
+#: props.C:170
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:171
+#: props.C:172
 msgid "Lock Screen"
 msgstr "Blokovat obrazovku"
 
-#: props.C:400
+#: props.C:401
 msgid "The menu editor is not installed."
 msgstr "Editor menu není nainstalován."
 
-#: events.C:820 props.C:401
+#: events.C:820 props.C:402
 msgid "Oops!"
 msgstr "Ouha!"
 
@@ -129,38 +133,44 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Toto není mo¾né dát na panel jako tlaèítko!"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(prázdný adresáø)"
 
-#: pfilemenu.C:477
+#: pfilemenu.C:480
 msgid "(Too Many Files)"
 msgstr "(pøíli¹ mnoho souborù)"
 
-#: pfilemenu.C:486
+#: pfilemenu.C:489
 msgid "(Access Denied)"
 msgstr "(pøístup zamezen)"
 
-#: pfilemenu.C:489
+#: pfilemenu.C:492
 msgid "(Unreadable)"
 msgstr "(neèitelné)"
 
-#: pfilemenu.C:496
+#: pfilemenu.C:499
 msgid "Open Folder"
 msgstr "Otevøít adresáø"
 
-#: pfilemenu.C:746
-msgid "Global:"
-msgstr "Globální:"
+#: pfilemenu.C:749
+msgid "Shared:"
+msgstr ""
 
-#: pfilemenu.C:767
-msgid "Local:"
-msgstr "Lokální:"
+#: pfilemenu.C:770
+msgid "Personal:"
+msgstr ""
 
-#: pfilemenu.C:787
+#: pfilemenu.C:790
 msgid "Recent:"
 msgstr "Nedávné:"
 
-#: pfilemenu.C:835
+#: pfilemenu.C:838
 msgid "Options..."
 msgstr "Mo¾nosti..."
+
+#~ msgid "Global:"
+#~ msgstr "Globální:"
+
+#~ msgid "Local:"
+#~ msgstr "Lokální:"

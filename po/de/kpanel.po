@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel VERSION\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1997-10-25 18:28 MET DST\n"
 "Last-Translator: Christian Kirsch <ck@held.mind.de>\n"
 "Language-Team: German/KDE\n"
@@ -25,7 +25,7 @@ msgstr "&Eigenschaften"
 msgid "Go!"
 msgstr "Start!"
 
-#: kpanel.C:316 tools.C:828
+#: kpanel.C:316 tools.C:830
 msgid "Where do you want to go tomorrow?"
 msgstr "Where do you want to go tomorrow?"
 
@@ -33,11 +33,11 @@ msgstr "Where do you want to go tomorrow?"
 msgid "No info available"
 msgstr "Keine Informationen verfügbar"
 
-#: kpanel.C:430 props.C:174 props.C:175
+#: kpanel.C:430 props.C:175 props.C:176
 msgid "Logout"
 msgstr "Abmelden"
 
-#: kpanel.C:438 props.C:173
+#: kpanel.C:438 props.C:174
 msgid "Lock screen"
 msgstr "Bildschirm sperren"
 
@@ -49,11 +49,11 @@ msgstr "Panel verstecken"
 msgid "Show the panel"
 msgstr "Panel zeigen"
 
-#: kpanel.C:1201 tools.C:658
+#: kpanel.C:1201
 msgid "No comment available"
 msgstr "Keine Erklärung verfügbar"
 
-#: kpanel.C:1210 tools.C:837
+#: kpanel.C:1210 tools.C:839
 msgid "Windowlist"
 msgstr "Fensterliste"
 
@@ -101,19 +101,23 @@ msgstr "Panel neu starten"
 msgid "Disk Navigator"
 msgstr "Platten-Navigator"
 
-#: props.C:169
+#: props.C:164
+msgid "Quickly navigate through the filesystem"
+msgstr ""
+
+#: props.C:170
 msgid "Panel"
 msgstr "Panel"
 
-#: props.C:171
+#: props.C:172
 msgid "Lock Screen"
 msgstr "Bildschirm sperren"
 
-#: props.C:400
+#: props.C:401
 msgid "The menu editor is not installed."
 msgstr "Der Menu-Editor ist nicht installiert."
 
-#: events.C:820 props.C:401
+#: events.C:820 props.C:402
 msgid "Oops!"
 msgstr "Oops!"
 
@@ -129,38 +133,44 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kann dies nicht als Button in das Panel legen!"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(leeres Verzeichnis)"
 
-#: pfilemenu.C:477
+#: pfilemenu.C:480
 msgid "(Too Many Files)"
 msgstr "(Zuviele Dateien)"
 
-#: pfilemenu.C:486
+#: pfilemenu.C:489
 msgid "(Access Denied)"
 msgstr "(Zugriff verweigert)"
 
-#: pfilemenu.C:489
+#: pfilemenu.C:492
 msgid "(Unreadable)"
 msgstr "(Nicht lesbar)"
 
-#: pfilemenu.C:496
+#: pfilemenu.C:499
 msgid "Open Folder"
 msgstr "Öffne Verzeichnis"
 
-#: pfilemenu.C:746
-msgid "Global:"
-msgstr "Globas:"
+#: pfilemenu.C:749
+msgid "Shared:"
+msgstr ""
 
-#: pfilemenu.C:767
-msgid "Local:"
-msgstr "Lokal"
+#: pfilemenu.C:770
+msgid "Personal:"
+msgstr ""
 
-#: pfilemenu.C:787
+#: pfilemenu.C:790
 msgid "Recent:"
 msgstr "Letzte:"
 
-#: pfilemenu.C:835
+#: pfilemenu.C:838
 msgid "Options..."
 msgstr "Optionen..."
+
+#~ msgid "Global:"
+#~ msgstr "Globas:"
+
+#~ msgid "Local:"
+#~ msgstr "Lokal"

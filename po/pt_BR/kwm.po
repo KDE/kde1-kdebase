@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-06-23 09:00-0300\n"
 "Last-Translator: Elvis Pfützenreuter<epx@netville.com.br>\n"
 
@@ -105,15 +105,15 @@ msgstr "Oito"
 msgid "Unnamed Desktop"
 msgstr "Tela sem nome"
 
-#: main.C:939
+#: main.C:949
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desativado\n"
 
-#: main.C:1051
+#: main.C:1061
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Alguns pixmaps não são válidos: GimmikMode desativado\n"
 
-#: main.C:1376
+#: main.C:1386
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 

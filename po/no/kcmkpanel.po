@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkpanel\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-03-22 17:12+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -178,12 +178,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Rediger oppføringer: (dra en mappe og lag en lenke)"
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Rediger &lokal..."
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Rediger &global..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Rediger &lokal..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -206,11 +208,13 @@ msgid "Ignore case when sorting"
 msgstr "Ignorer bokstavstørrelse ved sortering"
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr "Vis global-seksjon"
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Vis lokal-seksjon"
 
 #: disknav.cpp:180
-msgid "Show Local section"
+#, fuzzy
+msgid "Show Personal section"
 msgstr "Vis lokal-seksjon"
 
 #: disknav.cpp:187
@@ -224,3 +228,9 @@ msgstr "Vis valg-oppføring"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminal-applikasjoner:"
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Rediger &global..."
+
+#~ msgid "Show Global section"
+#~ msgstr "Vis global-seksjon"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -166,95 +166,95 @@ msgid ""
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
 
-#: windows.cpp:66
+#: windows.cpp:67
 #, fuzzy
 msgid "Windows"
 msgstr "窗口[&W]"
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Vertical maximization only by default"
 msgstr ""
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Display content in moving windows"
 msgstr ""
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Display content in resizing windows"
 msgstr ""
 
-#: windows.cpp:96
+#: windows.cpp:97
 #, fuzzy
 msgid "Resize animation:"
 msgstr "大小改变时的动画效果"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "None"
 msgstr ""
 
-#: windows.cpp:115
+#: windows.cpp:116
 msgid "Fast"
 msgstr ""
 
-#: windows.cpp:126
+#: windows.cpp:127
 msgid "Placement policy"
 msgstr "窗口放置策略"
 
-#: windows.cpp:132
+#: windows.cpp:133
 msgid "Smart"
 msgstr "智能"
 
-#: windows.cpp:134
+#: windows.cpp:135
 msgid "Cascade"
 msgstr "层叠"
 
-#: windows.cpp:136
+#: windows.cpp:137
 msgid "Interactive"
 msgstr "交互式"
 
-#: windows.cpp:138
+#: windows.cpp:139
 msgid "Random"
 msgstr "随机"
 
-#: windows.cpp:140
+#: windows.cpp:141
 msgid "Manual"
 msgstr "手工"
 
-#: windows.cpp:151
+#: windows.cpp:152
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
 "(% of desktop space)"
 msgstr ""
 
-#: windows.cpp:170
+#: windows.cpp:171
 #, fuzzy
 msgid "Focus policy"
 msgstr "焦点策略"
 
-#: windows.cpp:180
+#: windows.cpp:181
 msgid "Click to focus"
 msgstr "点击取得焦点"
 
-#: windows.cpp:182
+#: windows.cpp:183
 msgid "Focus follows mouse"
 msgstr "焦点随鼠标移动"
 
 #
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Classic focus follows mouse"
 msgstr "老式地焦点随鼠标移动"
 
 #
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Classic sloppy focus"
 msgstr "老式的随意取得焦点"
 
-#: windows.cpp:197
+#: windows.cpp:198
 msgid "Auto Raise"
 msgstr ""
 
-#: windows.cpp:204
+#: windows.cpp:205
 msgid "Delay (ms)"
 msgstr ""
 

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-10-15 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -180,12 +180,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr ""
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Promijeni &Lokalno"
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Promijeni &Globalno..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Promijeni &Lokalno"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -208,12 +210,13 @@ msgid "Ignore case when sorting"
 msgstr ""
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr ""
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Mjesto"
 
 #: disknav.cpp:180
 #, fuzzy
-msgid "Show Local section"
+msgid "Show Personal section"
 msgstr "Mjesto"
 
 #: disknav.cpp:187
@@ -227,6 +230,9 @@ msgstr ""
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr ""
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Promijeni &Globalno..."
 
 #~ msgid "ms"
 #~ msgstr "ms"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kcmkwm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-03-22 17:21:32+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -167,59 +167,59 @@ msgstr ""
 "Det oppstod en feil under lagring\n"
 "av tittel-pixmapene! Vennligst sjekk tilgang."
 
-#: windows.cpp:66
+#: windows.cpp:67
 msgid "Windows"
 msgstr "Vinduer"
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Vertical maximization only by default"
 msgstr "Vertikal maksimering kun som standard"
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Display content in moving windows"
 msgstr "Vis innholdet når vinduet flyttes"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Display content in resizing windows"
 msgstr "Vis innholdet når vinduet endrer størrelse"
 
-#: windows.cpp:96
+#: windows.cpp:97
 msgid "Resize animation:"
 msgstr "Endrestørrelseanim.:"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "None"
 msgstr "Ingen"
 
-#: windows.cpp:115
+#: windows.cpp:116
 msgid "Fast"
 msgstr "Hurtig"
 
-#: windows.cpp:126
+#: windows.cpp:127
 msgid "Placement policy"
 msgstr "Plasseringspolitikk"
 
-#: windows.cpp:132
+#: windows.cpp:133
 msgid "Smart"
 msgstr "Smart"
 
-#: windows.cpp:134
+#: windows.cpp:135
 msgid "Cascade"
 msgstr "Kortstokk"
 
-#: windows.cpp:136
+#: windows.cpp:137
 msgid "Interactive"
 msgstr "Interaktiv"
 
-#: windows.cpp:138
+#: windows.cpp:139
 msgid "Random"
 msgstr "Tilfeldig"
 
-#: windows.cpp:140
+#: windows.cpp:141
 msgid "Manual"
 msgstr "Manuell"
 
-#: windows.cpp:151
+#: windows.cpp:152
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -228,31 +228,31 @@ msgstr ""
 "  Godtatte overlappinger:\n"
 "(% av skrivebordsplass)"
 
-#: windows.cpp:170
+#: windows.cpp:171
 msgid "Focus policy"
 msgstr "Fokuseringspolitikk"
 
-#: windows.cpp:180
+#: windows.cpp:181
 msgid "Click to focus"
 msgstr "Klikk for fokus"
 
-#: windows.cpp:182
+#: windows.cpp:183
 msgid "Focus follows mouse"
 msgstr "Fokus følger mus"
 
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Classic focus follows mouse"
 msgstr "Fokus følger mus"
 
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Classic sloppy focus"
 msgstr "Klikk for fokus"
 
-#: windows.cpp:197
+#: windows.cpp:198
 msgid "Auto Raise"
 msgstr "Legg automatisk øverst"
 
-#: windows.cpp:204
+#: windows.cpp:205
 msgid "Delay (ms)"
 msgstr "Forsinkelse (ms)"
 

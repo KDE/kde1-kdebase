@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-17 15:21+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-11-08 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -174,60 +174,60 @@ msgstr ""
 "Ошибка сохранения пиктограмм заголовка!\n"
 "Проверьте права доступа."
 
-#: windows.cpp:66
+#: windows.cpp:67
 msgid "Windows"
 msgstr "Окна"
 
-#: windows.cpp:80
+#: windows.cpp:81
 msgid "Vertical maximization only by default"
 msgstr "По умолчанию только вертикальная максимизация"
 
-#: windows.cpp:85
+#: windows.cpp:86
 msgid "Display content in moving windows"
 msgstr "Показывать содержимое в перемещаемых окнах"
 
-#: windows.cpp:90
+#: windows.cpp:91
 msgid "Display content in resizing windows"
 msgstr "Показывать содержимое в окнах изменяющих размер"
 
-#: windows.cpp:96
+#: windows.cpp:97
 msgid "Resize animation:"
 msgstr "Анимация изменения размера:"
 
-#: windows.cpp:109
+#: windows.cpp:110
 msgid "None"
 msgstr "Нет"
 
-#: windows.cpp:115
+#: windows.cpp:116
 msgid "Fast"
 msgstr "Быстро"
 
-#: windows.cpp:126
+#: windows.cpp:127
 msgid "Placement policy"
 msgstr "Правила расположения"
 
-#: windows.cpp:132
+#: windows.cpp:133
 msgid "Smart"
 msgstr "Умные"
 
-#: windows.cpp:134
+#: windows.cpp:135
 msgid "Cascade"
 msgstr "Каскадом"
 
-#: windows.cpp:136
+#: windows.cpp:137
 msgid "Interactive"
 msgstr "Диалоговый"
 
-#: windows.cpp:138
+#: windows.cpp:139
 msgid "Random"
 msgstr "Случайно"
 
 #
-#: windows.cpp:140
+#: windows.cpp:141
 msgid "Manual"
 msgstr "Ручное"
 
-#: windows.cpp:151
+#: windows.cpp:152
 #, c-format
 msgid ""
 "  Allowed overlap:\n"
@@ -236,33 +236,33 @@ msgstr ""
 "  Допустимое перекрывание:\n"
 "(% от площади рабочего стола)"
 
-#: windows.cpp:170
+#: windows.cpp:171
 msgid "Focus policy"
 msgstr "Вид фокуса"
 
-#: windows.cpp:180
+#: windows.cpp:181
 msgid "Click to focus"
 msgstr "Щелчком"
 
-#: windows.cpp:182
+#: windows.cpp:183
 msgid "Focus follows mouse"
 msgstr "Фокус за мышкой"
 
 #
-#: windows.cpp:184
+#: windows.cpp:185
 msgid "Classic focus follows mouse"
 msgstr "Классичекий фокус за мышкой"
 
 #
-#: windows.cpp:186
+#: windows.cpp:187
 msgid "Classic sloppy focus"
 msgstr "Классический фокус щелчком"
 
-#: windows.cpp:197
+#: windows.cpp:198
 msgid "Auto Raise"
 msgstr "Автоматически наверх"
 
-#: windows.cpp:204
+#: windows.cpp:205
 msgid "Delay (ms)"
 msgstr "Задержка (мс)"
 

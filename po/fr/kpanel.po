@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-01-25 18:36 CET\n"
 "Last-Translator: Serge \"sergio\" Tellène <tells@mygale.org>\n"
 "Language-Team: Français\n"
@@ -27,7 +27,7 @@ msgstr "Propriétés"
 msgid "Go!"
 msgstr "En avant !"
 
-#: kpanel.C:316 tools.C:828
+#: kpanel.C:316 tools.C:830
 msgid "Where do you want to go tomorrow?"
 msgstr "Où voulez-vous aller demain ?"
 
@@ -35,11 +35,11 @@ msgstr "Où voulez-vous aller demain ?"
 msgid "No info available"
 msgstr "Information non disponible"
 
-#: kpanel.C:430 props.C:174 props.C:175
+#: kpanel.C:430 props.C:175 props.C:176
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: kpanel.C:438 props.C:173
+#: kpanel.C:438 props.C:174
 msgid "Lock screen"
 msgstr "Verrouillage de l'écran"
 
@@ -51,11 +51,11 @@ msgstr "Cacher le panneau"
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:1201 tools.C:658
+#: kpanel.C:1201
 msgid "No comment available"
 msgstr "Commentaire non disponible"
 
-#: kpanel.C:1210 tools.C:837
+#: kpanel.C:1210 tools.C:839
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 
@@ -104,19 +104,23 @@ msgstr "Relancer le panneau"
 msgid "Disk Navigator"
 msgstr ""
 
-#: props.C:169
+#: props.C:164
+msgid "Quickly navigate through the filesystem"
+msgstr ""
+
+#: props.C:170
 msgid "Panel"
 msgstr "Panneau"
 
-#: props.C:171
+#: props.C:172
 msgid "Lock Screen"
 msgstr "Verrouiller l'écran"
 
-#: props.C:400
+#: props.C:401
 msgid "The menu editor is not installed."
 msgstr "L'éditeur de menus n'est pas installé."
 
-#: events.C:820 props.C:401
+#: events.C:820 props.C:402
 msgid "Oops!"
 msgstr "Houlà !"
 
@@ -130,39 +134,40 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(répertoire vide)"
 
-#: pfilemenu.C:477
+#: pfilemenu.C:480
 msgid "(Too Many Files)"
 msgstr "(trop de fichiers)"
 
-#: pfilemenu.C:486
+#: pfilemenu.C:489
 msgid "(Access Denied)"
 msgstr "Accès refusé"
 
-#: pfilemenu.C:489
+#: pfilemenu.C:492
 msgid "(Unreadable)"
 msgstr "(illisible)"
 
-#: pfilemenu.C:496
+#: pfilemenu.C:499
 msgid "Open Folder"
 msgstr "Ouvrir le répertoire"
 
-#: pfilemenu.C:746
-msgid "Global:"
+#: pfilemenu.C:749
+msgid "Shared:"
 msgstr ""
 
-#: pfilemenu.C:767
-msgid "Local:"
-msgstr ""
+#: pfilemenu.C:770
+#, fuzzy
+msgid "Personal:"
+msgstr "Menu personnel en premier"
 
-#: pfilemenu.C:787
+#: pfilemenu.C:790
 msgid "Recent:"
 msgstr ""
 
-#: pfilemenu.C:835
+#: pfilemenu.C:838
 msgid "Options..."
 msgstr ""
 
@@ -192,9 +197,6 @@ msgstr ""
 
 #~ msgid "Others"
 #~ msgstr "Autres"
-
-#~ msgid "Personal First"
-#~ msgstr "Menu personnel en premier"
 
 #~ msgid "Auto Hide Panel"
 #~ msgstr "Panneau auto-cachable"

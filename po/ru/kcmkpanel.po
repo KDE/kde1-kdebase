@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-11-07 04:52+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -191,12 +191,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Редактировать элементы: (возьмите папку и создайте ссылку)"
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Редактировать локальные..."
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Редактировать глобальные..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Редактировать локальные..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -219,11 +221,13 @@ msgid "Ignore case when sorting"
 msgstr "Игнорировать регистр при сортировке"
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr "Показывать глобальные"
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Показывать локальные"
 
 #: disknav.cpp:180
-msgid "Show Local section"
+#, fuzzy
+msgid "Show Personal section"
 msgstr "Показывать локальные"
 
 #: disknav.cpp:187
@@ -237,3 +241,9 @@ msgstr "Показывать элемент опции"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Терминальное приложение:"
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Редактировать глобальные..."
+
+#~ msgid "Show Global section"
+#~ msgstr "Показывать глобальные"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -182,11 +182,11 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr ""
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+msgid "Edit &Personal..."
 msgstr ""
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
+msgid "Edit &Shared..."
 msgstr ""
 
 #: disknav.cpp:112
@@ -210,12 +210,13 @@ msgid "Ignore case when sorting"
 msgstr ""
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr ""
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Konum"
 
 #: disknav.cpp:180
 #, fuzzy
-msgid "Show Local section"
+msgid "Show Personal section"
 msgstr "Konum"
 
 #: disknav.cpp:187

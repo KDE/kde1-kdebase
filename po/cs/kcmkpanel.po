@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-11-03 14:35+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -178,12 +178,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Upravit polo¾ky: (pøesuòte adresáø a vytvoøte odkaz/link)"
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Upravit &lokální"
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Upravit &globální"
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Upravit &lokální"
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -206,11 +208,13 @@ msgid "Ignore case when sorting"
 msgstr "Ignorovat velikost znakù pøi tøídìní"
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr "Zobrazovat gklobální sekci"
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Zobrazovat lokální sekci"
 
 #: disknav.cpp:180
-msgid "Show Local section"
+#, fuzzy
+msgid "Show Personal section"
 msgstr "Zobrazovat lokální sekci"
 
 #: disknav.cpp:187
@@ -224,3 +228,9 @@ msgstr "Zobrazoval polo¾ku mo¾nosti"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Terminálová aplikace:"
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Upravit &globální"
+
+#~ msgid "Show Global section"
+#~ msgstr "Zobrazovat gklobální sekci"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -170,12 +170,14 @@ msgid "Edit entries: (drag a folder and create a link)"
 msgstr "Editar itens: (arraste um diretório e crie uma ligação)"
 
 #: disknav.cpp:64
-msgid "Edit &Local..."
+#, fuzzy
+msgid "Edit &Personal..."
 msgstr "Editar &Local..."
 
 #: disknav.cpp:74
-msgid "Edit &Global..."
-msgstr "Editar &Global..."
+#, fuzzy
+msgid "Edit &Shared..."
+msgstr "Editar &Local..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -198,11 +200,13 @@ msgid "Ignore case when sorting"
 msgstr "Ignorar maiúsculas/minúsculas na ordenação"
 
 #: disknav.cpp:173
-msgid "Show Global section"
-msgstr "Mostrar seção Global"
+#, fuzzy
+msgid "Show Shared section"
+msgstr "Mostrar seção local"
 
 #: disknav.cpp:180
-msgid "Show Local section"
+#, fuzzy
+msgid "Show Personal section"
 msgstr "Mostrar seção local"
 
 #: disknav.cpp:187
@@ -216,6 +220,12 @@ msgstr "Mostrar item Opção"
 #: disknav.cpp:210
 msgid "Terminal application:"
 msgstr "Aplicação de terminal:"
+
+#~ msgid "Edit &Global..."
+#~ msgstr "Editar &Global..."
+
+#~ msgid "Show Global section"
+#~ msgstr "Mostrar seção Global"
 
 #~ msgid "ms"
 #~ msgstr "ms"

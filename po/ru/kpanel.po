@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-11-18 13:15+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-11-07 01:59+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Настройки"
 msgid "Go!"
 msgstr "Вперед!"
 
-#: kpanel.C:316 tools.C:828
+#: kpanel.C:316 tools.C:830
 msgid "Where do you want to go tomorrow?"
 msgstr "Где вы хотите быть завтра?"
 
@@ -34,11 +34,11 @@ msgstr "Где вы хотите быть завтра?"
 msgid "No info available"
 msgstr "Нет информации"
 
-#: kpanel.C:430 props.C:174 props.C:175
+#: kpanel.C:430 props.C:175 props.C:176
 msgid "Logout"
 msgstr "Выйти"
 
-#: kpanel.C:438 props.C:173
+#: kpanel.C:438 props.C:174
 msgid "Lock screen"
 msgstr "Закрыть экран"
 
@@ -50,11 +50,11 @@ msgstr "Спрятать панель"
 msgid "Show the panel"
 msgstr "Показать панель"
 
-#: kpanel.C:1201 tools.C:658
+#: kpanel.C:1201
 msgid "No comment available"
 msgstr "Нет комментариев"
 
-#: kpanel.C:1210 tools.C:837
+#: kpanel.C:1210 tools.C:839
 msgid "Windowlist"
 msgstr "Список окон"
 
@@ -102,19 +102,23 @@ msgstr "Перезапустить панель"
 msgid "Disk Navigator"
 msgstr "Исследователь диска"
 
-#: props.C:169
+#: props.C:164
+msgid "Quickly navigate through the filesystem"
+msgstr ""
+
+#: props.C:170
 msgid "Panel"
 msgstr "Панель"
 
-#: props.C:171
+#: props.C:172
 msgid "Lock Screen"
 msgstr "Закрыть экран"
 
-#: props.C:400
+#: props.C:401
 msgid "The menu editor is not installed."
 msgstr "Редактор меню не установлен."
 
-#: events.C:820 props.C:401
+#: events.C:820 props.C:402
 msgid "Oops!"
 msgstr "Оопс!"
 
@@ -130,38 +134,44 @@ msgstr ""
 msgid "Cannot put this as button onto the panel!"
 msgstr "Невозможно поместить это как кнопку на панель!"
 
-#: pfilemenu.C:420
+#: pfilemenu.C:423
 msgid "(empty folder)"
 msgstr "(пустая папка)"
 
-#: pfilemenu.C:477
+#: pfilemenu.C:480
 msgid "(Too Many Files)"
 msgstr "(Слишком много файлов)"
 
-#: pfilemenu.C:486
+#: pfilemenu.C:489
 msgid "(Access Denied)"
 msgstr "(Доступ запрещен)"
 
-#: pfilemenu.C:489
+#: pfilemenu.C:492
 msgid "(Unreadable)"
 msgstr "(Нечитабельный)"
 
-#: pfilemenu.C:496
+#: pfilemenu.C:499
 msgid "Open Folder"
 msgstr "Открыть папку"
 
-#: pfilemenu.C:746
-msgid "Global:"
-msgstr "Глобальные:"
+#: pfilemenu.C:749
+msgid "Shared:"
+msgstr ""
 
-#: pfilemenu.C:767
-msgid "Local:"
-msgstr "Локальные:"
+#: pfilemenu.C:770
+msgid "Personal:"
+msgstr ""
 
-#: pfilemenu.C:787
+#: pfilemenu.C:790
 msgid "Recent:"
 msgstr "Недавние:"
 
-#: pfilemenu.C:835
+#: pfilemenu.C:838
 msgid "Options..."
 msgstr "Опции..."
+
+#~ msgid "Global:"
+#~ msgstr "Глобальные:"
+
+#~ msgid "Local:"
+#~ msgstr "Локальные:"

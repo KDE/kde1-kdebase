@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kwm\n"
-"POT-Creation-Date: 1998-11-07 01:24+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
@@ -104,15 +104,15 @@ msgstr "Oito"
 msgid "Unnamed Desktop"
 msgstr "Sem Nome"
 
-#: main.C:939
+#: main.C:949
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
 msgstr "Algumas imagens não são válidas: ShapeMode desactivado\n"
 
-#: main.C:1051
+#: main.C:1061
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Algumas imagens não são válidas: GimmickMode desactivado\n"
 
-#: main.C:1376
+#: main.C:1386
 msgid "*** No Tasks ***"
 msgstr "*** Nenhuma Tarefa ***"
 

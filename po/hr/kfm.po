@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KFM\n"
-"POT-Creation-Date: 1998-11-20 01:14+0100\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
 "PO-Revision-Date: 1998-05-14 20:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:932 kbind.cpp:944 kbind.cpp:954 kfmgui.cpp:212 kfmgui.cpp:1011
+#: kbind.cpp:934 kbind.cpp:946 kbind.cpp:956 kfmgui.cpp:212 kfmgui.cpp:1011
 msgid "Folder"
 msgstr "Direktorij"
 
@@ -243,10 +243,10 @@ msgid "Could not load icon\n"
 msgstr "Nisam mogao naæi ikonu\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
-#: kbind.cpp:376 kbind.cpp:428 kbind.cpp:1545 kbind.cpp:1553 kbind.cpp:1571
-#: kbind.cpp:1588 kbind.cpp:1646 kbind.cpp:1658 kbind.cpp:1685 kbind.cpp:1700
-#: kbind.cpp:1720 kbind.cpp:1732 kbind.cpp:1748 kbind.cpp:1880 kbind.cpp:1892
-#: kbind.cpp:1937 kbind.cpp:1979 kfmexec.cpp:60 kfmexec.cpp:92
+#: kbind.cpp:376 kbind.cpp:428 kbind.cpp:1556 kbind.cpp:1564 kbind.cpp:1582
+#: kbind.cpp:1599 kbind.cpp:1657 kbind.cpp:1669 kbind.cpp:1696 kbind.cpp:1711
+#: kbind.cpp:1731 kbind.cpp:1743 kbind.cpp:1759 kbind.cpp:1891 kbind.cpp:1903
+#: kbind.cpp:1948 kbind.cpp:1990 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:563 kfmgui.cpp:719 kfmman.cpp:341
 #: kfmman.cpp:1054 kfmman.cpp:1266 kfmman.cpp:1292 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
@@ -427,36 +427,36 @@ msgstr "ne sadr¾i polje  MimeType=..."
 msgid "No mime types installed!"
 msgstr "Mime tipovi nisu instalirani!"
 
-#: kbind.cpp:425 kbind.cpp:1205
+#: kbind.cpp:425 kbind.cpp:1207
 msgid "Could not find mime type\n"
 msgstr "Ne mogu naæi mime tip\n"
 
-#: kbind.cpp:696 kbind.cpp:706 kbind.cpp:1915 kbind.cpp:1916 kbind.cpp:1928
-#: kbind.cpp:1930
+#: kbind.cpp:696 kbind.cpp:706 kbind.cpp:1926 kbind.cpp:1927 kbind.cpp:1939
+#: kbind.cpp:1941
 msgid "Mount"
 msgstr "Montiraj"
 
-#: kbind.cpp:712 kbind.cpp:1906
+#: kbind.cpp:712 kbind.cpp:1917
 msgid "Unmount"
 msgstr "Demontiraj"
 
-#: kbind.cpp:1204
+#: kbind.cpp:1206
 msgid "ERROR"
 msgstr "GRE©KA"
 
-#: kbind.cpp:1205
+#: kbind.cpp:1207
 msgid "in "
 msgstr "u"
 
-#: kbind.cpp:1349 kbind.cpp:1435
+#: kbind.cpp:1351 kbind.cpp:1437
 msgid "Could not execute program\n"
 msgstr "Ne mogu izvr¹iti program\n"
 
-#: kbind.cpp:1544
+#: kbind.cpp:1555
 msgid "Could not find binding"
 msgstr "Ne mogu naæi vezu"
 
-#: kbind.cpp:1554
+#: kbind.cpp:1565
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -464,11 +464,11 @@ msgstr ""
 "Ovo je dokument!\n"
 "Ne aplikacija"
 
-#: kbind.cpp:1572 kbind.cpp:1589
+#: kbind.cpp:1583 kbind.cpp:1600
 msgid "Can only start executables on local disks\n"
 msgstr "Mogu startati samo izvr¹ne datoteke na lokalnom disku\n"
 
-#: kbind.cpp:1647 kbind.cpp:1721 kbind.cpp:1881
+#: kbind.cpp:1658 kbind.cpp:1732 kbind.cpp:1892
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -476,7 +476,7 @@ msgstr ""
 "Mogu raditi s *.kdelnk datotekama\n"
 "samo na lokalnom disku"
 
-#: kbind.cpp:1657
+#: kbind.cpp:1668
 #, c-format
 msgid ""
 "Could not access\n"
@@ -485,19 +485,19 @@ msgstr ""
 "Ne mogu pristupiti\n"
 "%s"
 
-#: kbind.cpp:1686
+#: kbind.cpp:1697
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Dvojnik=.....\" polje je prazno"
 
-#: kbind.cpp:1701
+#: kbind.cpp:1712
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfiguracijska datoteka nema redak \"Type=...\" "
 
-#: kbind.cpp:1731 kbind.cpp:1891
+#: kbind.cpp:1742 kbind.cpp:1902
 msgid "Could not access"
 msgstr "Ne mogu pristupiti"
 
-#: kbind.cpp:1749
+#: kbind.cpp:1760
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -509,15 +509,15 @@ msgstr ""
 "polje. Promijenite vrijednosti\n"
 "da biste rije¹ili problem"
 
-#: kbind.cpp:1847
+#: kbind.cpp:1858
 msgid "ERROR: No Terminal Setting"
 msgstr "GRE©KA: Terminal nije pode¹en"
 
-#: kbind.cpp:1938
+#: kbind.cpp:1949
 msgid "No mount point in *.kdelnk file"
 msgstr "Nema mjesta montiranja u *.kdelnk datoteci"
 
-#: kbind.cpp:1978
+#: kbind.cpp:1989
 msgid "Unknown binding"
 msgstr "Nepoznata veza"
 
