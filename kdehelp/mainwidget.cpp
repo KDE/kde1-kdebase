@@ -180,11 +180,12 @@ void KHelpMain::createMenu()
 	optionsMenu->insertSeparator();
 	optionsMenu->insertItem( klocale->translate("&Save Options"), this, SLOT(slotOptionsSave()) );
 
-	QString at = klocale->translate("KDE Help System\nVersion ");
-	at += KDEHELP_VERSION;
-	at += "\n\nCopyright (c) 1997 Martin Jones <mjones@kde.org>";
-	at += "\n\nThis program is licensed under the GNU General Public License (GPL).";
-	at += "\nKDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by applicable law.";
+	QString at = klocale->translate("KDE Help System\n");
+	at+= klocale->translate("Version ");
+	at+= KDEHELP_VERSION;
+	at+=klocale->translate("\n\nCopyright (c) 1997 Martin Jones <mjones@kde.org>"\
+	"\n\nThis program is licensed under the GNU General Public License (GPL)."\
+	"\nKDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by applicable law.");
 
 	QPopupMenu *helpMenu = kapp->getHelpMenu( true, at );
 /*
