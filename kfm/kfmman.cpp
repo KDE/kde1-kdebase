@@ -464,7 +464,7 @@ void KFileManager::openDirHTML( const char *_filename, bool _refresh )
 			view->write( buff );
 			view->write( "\"><center><img src=\"" ); 
 			view->write( KMimeType::findType( buff )->getPixmapFile( buff ) );
-			view->write( "\"><br>" );
+			view->write( "\" border=0><br>" );
 			view->write( fn );
 			view->write( "</center><br></a></cell>" );
 		    }
@@ -906,18 +906,18 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		    if ( is_avail && !is_null )
 		    {
 			view->write( xvfile );
-			view->write( "\"><br>" );
+			view->write( "\" border=0><br>" );
 		    }
 		    else
 		    {
 			view->write( KMimeType::findType( str )->getPixmapFile( str ) );
-			view->write( "\"><br>" );
+			view->write( "\" border=0><br>" );
 		    }   
 		}
 		else
                 {    
 		  view->write( KMimeType::findType( str )->getPixmapFile( str ) );
-		  view->write( "\"><br>" );
+		  view->write( "\" border=0><br>" );
 		}
 
 		// Delete a trailing .kdelnk in the filename
@@ -954,7 +954,7 @@ bool KFileManager::openURL( const char *_url, bool _refresh )
 		{
 		    view->write( "<img width=16 height=16 src=\"" ); 
 		    view->write( KMimeType::findType( str )->getPixmapFile( str ) );
-		    view->write( "\"></td><td>" );
+		    view->write( "\" border=0></td><td>" );
 		}
 		// Delete a trailing .kdelnk in the filename
 		if ( sfn.length() > 7 && sfn.right(7) == ".kdelnk" )
@@ -1268,7 +1268,7 @@ void KTarManager::slotShowFiles( int )
 	view->write( fd.data() );
 	view->write( "\"><center><img src=\"file:" );
 	view->write( KMimeType::findType( fd.data() )->getPixmapFile( fd.data() ) );
-	view->write( "\"><br>..</center><br></a></cell>" );
+	view->write( "\" border=0><br>..</center><br></a></cell>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
     {
@@ -1276,7 +1276,7 @@ void KTarManager::slotShowFiles( int )
 	view->write( fd.data() );
 	view->write( "\"><img width=16 height=16 src=\"file:" );
 	view->write( KMimeType::findType( fd.data() )->getPixmapFile( fd.data() ) );
-	view->write( "\"></td><td>..</a></td>" );
+	view->write( "\" border=0></td><td>..</a></td>" );
 	view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
@@ -1305,7 +1305,7 @@ void KTarManager::slotShowFiles( int )
 	    
 	    view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
 	    
-	    view->write( "\"><br>" );
+	    view->write( "\" border=0><br>" );
 	    // view->write( s->getName() );
 	    strcpy( buffer, s->getName() );
 	    writeWrapped( buffer );
@@ -1321,7 +1321,7 @@ void KTarManager::slotShowFiles( int )
 	    view->write( filename.data() );
 	    view->write( "\"><img width=16 height=16 src=\"file:" );
 	    view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
-	    view->write( "\"></td><td>" );
+	    view->write( "\" border=0></td><td>" );
 	    view->write( s->getAccess() );
 	    view->write( "</td><td>" ); 
 	    view->write( s->getOwner() );
@@ -1602,7 +1602,7 @@ void KFtpManager::writeBeginning()
 	    view->write( s.data() );
 	    view->write( "\"><center><img src=\"file:" );
 	    view->write( KMimeType::findType( s.data() )->getPixmapFile( s.data() ) );
-	    view->write( "\"><br>..</center><br></a></cell>" );
+	    view->write( "\" border=0><br>..</center><br></a></cell>" );
 	}
 	else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
 	{
@@ -1610,7 +1610,7 @@ void KFtpManager::writeBeginning()
 	    view->write( s.data() );
 	    view->write( "\"><img width=16 height=16 src=\"file:" );
 	    view->write( KMimeType::findType( s.data() )->getPixmapFile( s.data() ) );
-	    view->write( "\"></td><td>..</a></td>" );
+	    view->write( "\" border=0></td><td>..</a></td>" );
 	    view->write( "<td></td><td></td><td></td><td></td><td></td></tr>" );
 	}
 	else if ( view->getGUI()->getViewMode() == KfmGui::TEXT_VIEW )
@@ -1640,7 +1640,7 @@ void KFtpManager::writeEntry( KIODirectoryEntry *s )
 	
 	view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
 	
-	view->write( "\"><br>" );
+	view->write( "\" border=0><br>" );
 	// view->write( s->getName() );
 	strcpy( buffer, s->getName() );
 	writeWrapped( buffer );
@@ -1656,7 +1656,7 @@ void KFtpManager::writeEntry( KIODirectoryEntry *s )
 	view->write( filename.data() );
 	view->write( "\"><img width=16 height=16 src=\"file:" );
 	view->write( KMimeType::findType( filename.data() )->getPixmapFile( filename.data() ) );
-	view->write( "\"></td><td>" );
+	view->write( "\" border=0></td><td>" );
 	view->write( s->getName() );
 	view->write( "</td><td><tt>" ); 
 	view->write( s->getAccess() );
