@@ -175,7 +175,7 @@ msgstr "Formato orologio &Internet beats"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr "Storia"
+msgstr "Cronologia"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"

@@ -58,7 +58,7 @@ msgstr "Cerca successi&vo"
 
 #: kfmgui.cpp:270
 msgid "Show History"
-msgstr "Mostra Storia"
+msgstr "Mostra Cronologia"
 
 #: kfmgui.cpp:272
 msgid "Show Cache"
