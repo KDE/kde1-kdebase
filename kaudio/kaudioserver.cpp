@@ -24,6 +24,7 @@
 #include <string.h>
 #include <signal.h>
 #include <config.h>
+#include <X11/Xlib.h>
 extern "C" {
 #include <mediatool.h>
 	   }
@@ -34,11 +35,13 @@ char		KMServerPidFile[256];
 MdCh_IHDR	*IhdrChunk;
 MdCh_STAT	*StatChunk;
 MediaCon	m;
-
+Display		*xdsp;
 
 
 void MYexit(int retcode)
 {
+  if (xdsp)
+    XCloseDisplay(xdsp);
   exit (retcode);
 }
 
@@ -49,6 +52,12 @@ void mysigchild(int signum)
   if ( (signum != SIGSEGV) && (signum != SIGBUS) )
     MdDisconnect(&m);  // don't try to clean this up in case of real trouble
   MYexit(1);  
+}
+
+void mysigpipe(int signum)
+{
+  fprintf(stderr, "Got SIGPIPE" );
+  mysigchild(signum);
 }
 
 
@@ -112,6 +121,10 @@ int main ( int argc , char **argv )
   char PidRead[100];
   char DevnumArg[100];
 
+  xdsp = XOpenDisplay(NULL);
+  if (!xdsp)
+    fprintf(stderr, "Cannot connect to X server.\n" \
+    "Audio system will not shut down on exiting X11.\n");
 
   if ( argc > 1 )
     sprintf(DevnumArg, "%s", argv[1]);
@@ -183,17 +196,37 @@ int main ( int argc , char **argv )
      */
     signal(SIGCHLD,mysigchild);
     signal(SIGHUP ,mysigchild);
+    signal(SIGINT ,mysigchild);
     signal(SIGKILL,mysigchild);
     signal(SIGQUIT,mysigchild);
     signal(SIGBUS ,mysigchild);
     signal(SIGSEGV,mysigchild);
+    signal(SIGTRAP,mysigchild);
+    signal(SIGIOT ,mysigchild);
+    signal(SIGCONT,mysigchild); // !!! NO
+    signal(SIGSTOP,mysigchild); // !!! NO
+    signal(SIGIO  ,mysigchild);
+    signal(SIGWINCH,mysigchild);
+    signal(SIGVTALRM,mysigchild);
+    signal(SIGPROF,mysigchild);
+    signal(SIGPWR,mysigchild);
+
+
     signal(SIGTERM,mysigchild);
- 
-    while(1)
-      sleep(100);
+    signal(SIGPIPE,mysigpipe);
+
+    while(1) {
+      sleep(1);
+      if (xdsp) {
+        XEvent ev_ret;
+        XFlush(xdsp);
+        XNextEvent(xdsp,&ev_ret);
+        XCheckMaskEvent(xdsp,0l,&ev_ret);
+      }
+    }
   }
 
   fprintf(stderr,"Failed starting audio server!\n");
   unlink (KMServerPidFile);
-  MYexit(1);
+  MYexit(2);
 }

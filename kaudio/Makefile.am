@@ -7,12 +7,13 @@ LDADD =  $(all_libraries) -lkfile -lkfm -lmediatool -lkdeui -lkdecore -lqt -lXex
 maudio_SOURCES = io_oss.cpp maudio.cpp sample.cpp
 kaudioserver_SOURCES = kaudioserver.cpp
 demo_SOURCES = democlient.cpp
-MOCS = democlient.moc
+kplayaudio_SOURCES = kplayaudio.cpp
+MOCS = democlient.moc kplayaudio.moc
 DISTCLEANFILES = $(MOCS)
 
-bin_PROGRAMS = maudio kaudioserver
+bin_PROGRAMS = maudio kaudioserver kplayaudio
 noinst_PROGRAMS = demo
-noinst_HEADERS = version.h maudio.h sample.h io_oss.h democlient.h
+noinst_HEADERS = version.h maudio.h sample.h io_oss.h democlient.h kplayaudio.h
 
 datadir = $(kde_htmldir)/en/kmedia/
 data_DATA = maudio.html
@@ -26,5 +27,11 @@ democlient.cpp: democlient.moc
 
 democlient.moc: democlient.h
 	$(MOC) -o democlient.moc democlient.h
+
+kplayaudio.cpp: kplayaudio.moc
+
+kplayaudio.moc: kplayaudio.h
+	$(MOC) -o kplayaudio.moc kplayaudio.h
+
 
 messages:
