@@ -669,6 +669,7 @@ void KfmGui::slotShowHistory()
 void KfmGui::slotClearCache()
 {
   HTMLCache::clear();
+  view->slotUpdateView();  
 }
 
 void KfmGui::slotCacheOn()
