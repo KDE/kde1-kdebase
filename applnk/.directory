@@ -1,0 +1,19 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Default
+Name[ca]=Predeterminat
+Name[cs]=Implicitní
+Name[da]=Standard
+Name[de]=Standard
+Name[es]=Por defecto
+Name[fi]=Oletus
+Name[is]=Sjálfgefiğ
+Name[it]=Predefinito
+Name[no]=Standard
+Name[pt_BR]=Padrão
+Name[ro]=Implicit
+Name[ru]=ğÏ ÕÍÏÌŞÁÎÉÀ
+Name[sk]=©tandardnı
+Name[sl]=Privzeto
+Name[sv]=Standard
+SortOrder=Applications,apps,Games,Graphics,Internet,Multimedia,Network,Settings,System,Utilities

@@ -1,0 +1,23 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Desktop
+Name[ca]=Escriptori
+Name[cs]=Pracovní plocha
+Name[da]=Arbejdsplads
+Name[eo]=Labortabulo
+Name[es]=Escritorio
+Name[fi]=Työpöytä
+Name[fr]=Bureau
+Name[hu]=Asztal
+Name[is]=Skjáborð
+Name[no]=Skrivebord
+Name[pt]=Ambiente de Trabalho
+Name[pt_BR]=Ambiente de Trabalho
+Name[ro]=Ecran
+Name[ru]=òÁÂÏÞÉÊ ÓÔÏÌ
+Name[sk]=Pracovná plocha
+Name[sl]=Namizje
+Name[sv]=Skrivbordet
+SortOrder=background.kdelnk,colors.kdelnk,screensaver.kdelnk,style.kdelnk
+Icon=desktop.xpm
+MiniIcon=desktop.xpm

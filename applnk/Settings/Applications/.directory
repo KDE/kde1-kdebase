@@ -1,0 +1,26 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Applications
+Name[ca]=Aplicacions
+Name[cs]=Aplikace
+Name[da]=Anvendelser
+Name[de]=Anwendungen
+Name[eo]=Aplika¼oj
+Name[es]=Aplicaciones
+Name[fi]=Sovellukset
+Name[hu]=Applikációk
+Name[is]=Forrit
+Name[it]=Applicazioni
+Name[nl]=Toepassingen
+Name[no]=Applikasjoner
+Name[pl]=Aplikacje
+Name[pt]=Aplicações
+Name[pt_BR]=Aplicativos
+Name[ro]=Aplicaþii
+Name[ru]=ðÒÉÌÏÖÅÎÉÑ
+Name[sk]=Aplikácie
+Name[sl]=Uporabni¹ki programi
+Name[sv]=Program
+SortOrder=panel.kdelnk,kdm.kdelnk
+Icon=application_settings.xpm
+MiniIcon=application_settings.xpm
