@@ -5,7 +5,7 @@ kfm: 0.6.7
 kwmclient: 0.2
 kdisplay: >= 0.5
 kdehelp: >= 0.4
-kfind: 0.3
+kfind: 0.3.1
 kscreensaver: 0.3.3 (patched for QT-1.2)
 kvt: >= 0.14 
 klogout: 0.1
