@@ -506,7 +506,10 @@ int main( int argc, char *argv[] )
 	else
 		usage( argv[0] );
 
-	remove( pidFile );
+    if ( !pidFile.isEmpty() )
+    {
+        remove( pidFile );
+    }
 	return 0;
 }
 
@@ -564,7 +567,10 @@ static void lockNow( int )
 
 static void cleanup( int id )
 {
-	remove( pidFile );
+    if ( !pidFile.isEmpty() )
+    {
+        remove( pidFile );
+    }
 	if ( mode == MODE_INSTALL )
 	{
 		if (id != SIGPIPE)
