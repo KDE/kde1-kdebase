@@ -4,6 +4,9 @@
 Authors=Peter Silva <Peter.Silva@kde.org>
 
 Language=European (west) on a US keyboard.
+Language[is]=Evrópskt (vestur) á bandarísku lyklaborði.
+Language[pt_BR]=Europeu (ocidental) em um teclado Americano
+Language[sk]=Európsky (západný) na US klávesnici.
 Label=WEu
 Locale=us_eu
 Charset=latin
