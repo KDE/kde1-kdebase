@@ -6,6 +6,7 @@ TerminalOptions=
 Comment=Changes your password
 Comment[de]=Ändert Ihr Passwort
 Comment[is]=Breytir lykilorði þínu
+Comment[no]=Bytter passordet ditt
 Comment[pt_BR]=Muda sua senha
 Comment[sk]=Zmení va¹e heslo
 Type=Application

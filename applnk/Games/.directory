@@ -1,25 +1,11 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Games
-Name[ca]=Jocs
-Name[cs]=Hry
-Name[da]=Spil
-Name[de]=Spiele
-Name[eo]=Ludoj
-Name[es]=Juegos
-Name[fi]=Pelit
-Name[fr]=Jeux
-Name[hu]=J·tÈkok
-Name[is]=Leikir
-Name[it]=Giochi
-Name[nl]=Spelletjes
-Name[no]=Spill
 Name[pl]=Gry
 Name[pt]=Jogos
 Name[pt_BR]=Jogos
 Name[ro]=Jocuri
 Name[ru]=È«“Ÿ
-Name[sk]=Hry
 Name[sl]=Igre
 Name[sv]=Spel
 Icon=games_package.xpm

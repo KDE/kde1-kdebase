@@ -1,24 +1,13 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Applications
-Name[ca]=Aplicacions
-Name[cs]=Aplikace
-Name[da]=Anvendelser
 Name[de]=Anwendungen
-Name[eo]=Aplika¼oj
-Name[es]=Aplicaciones
-Name[fi]=Sovellukset
-Name[hu]=Applikációk
-Name[is]=Forrit
-Name[it]=Applicazioni
 Name[nl]=Toepassingen
-Name[no]=Applikasjoner
 Name[pl]=Aplikacje
 Name[pt]=Aplicações
 Name[pt_BR]=Aplicativos
 Name[ro]=Aplicaşii
 Name[ru]=ğÒÉÌÏÖÅÎÉÑ
-Name[sk]=Aplikácie
 Name[sl]=Uporabni¹ki programi
 Name[sv]=Program
 Icon=applications_package.xpm
