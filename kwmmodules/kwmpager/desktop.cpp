@@ -191,7 +191,7 @@ void Desktop::changeWindow(Window w)
     win->icony = KWM::isIconified(w);
     win->name = KWM::title(w).data();
 
-    if (!win->icony)
+    if (!win->icony && win != dragWindow)
 	calculate(win);
     fillPixmap();
     repaint( false );
@@ -257,7 +257,7 @@ void Desktop::mouseDoubleClickEvent ( QMouseEvent *)
 
 void Desktop::mouseMoveEvent( QMouseEvent *e)
 {
-    if (e->state() != LeftButton || !dragWindow)
+    if (!dragWindow)
 	return;
       
     QPoint tmp = e->pos() - dragStart;
@@ -277,8 +277,9 @@ void Desktop::mouseMoveEvent( QMouseEvent *e)
     QRect inter = dragWindow->prect.intersect(QRect(0,0,
 						    pixmap_size.width(), 
 						    pixmap_size.height()));
-    if (inter.width() < 3 || inter.height() < 3)
+    if (inter.width() < 3 || inter.height() < 3){
 	dragWindow->prect = backup;
+    }
     
     fillPixmap();
     repaint(false);
