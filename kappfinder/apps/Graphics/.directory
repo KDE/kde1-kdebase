@@ -18,3 +18,4 @@ Name[sk]=Grafika
 Name[sv]=Grafik
 SortOrder=acroread.kdelnk,xpaint.kdelnk,xv.kdelnk
 Icon=graphics_package.xpm
+MiniIcon=graphics_package.xpm

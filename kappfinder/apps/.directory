@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Icon=mini-bx2.xpm
+MiniIcon=mini-bx2.xpm
 Name=non-KDE Apps
 Name[ca]=Aplicacions no KDE
 Name[cs]=Aplikace mimo KDE

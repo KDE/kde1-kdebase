@@ -18,3 +18,4 @@ Name[sk]=Textové procesory
 Name[sv]=Ordbehandlare
 SortOrder=gv.kdelnk,lyx.kdelnk,xpdf.kdelnk
 Icon=package.xpm
+MiniIcon=package.xpm

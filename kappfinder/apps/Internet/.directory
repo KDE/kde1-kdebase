@@ -7,3 +7,4 @@ Name[no]=Internett
 Name[ru]=Интернет
 SortOrder=xftp.kdelnk
 Icon=network_package.xpm
+MiniIcon=network_package.xpm
