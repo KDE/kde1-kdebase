@@ -229,7 +229,10 @@ KiKbdMapConfig::KiKbdMapConfig(const char* nm):name(nm)
 const QString KiKbdMapConfig::getGoodLabel() const
 {
   QString item(128);
-  item.sprintf("%s (%s %s)", (const char*)comment, 
+  if (comment.isNull() || label.isNull())
+   item = "default";
+  else
+   item.sprintf("%s (%s %s)", (const char*)comment, 
 	       klocale->translate("Label"),
 	       (const char*)label);
   return item;
