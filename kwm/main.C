@@ -1702,7 +1702,7 @@ bool MyApp::buttonPressEventFilter( XEvent * ev)
 	c->stopAutoraise();
     
 	if (c->isMenuBar()) {
-	    XAllowEvents(qt_xdisplay(), SyncPointer, CurrentTime);
+	    XAllowEvents(qt_xdisplay(), ReplayPointer, CurrentTime);
 	    XUngrabPointer(qt_xdisplay(), CurrentTime);
 	    XSync(qt_xdisplay(), false);
 	    return true;
