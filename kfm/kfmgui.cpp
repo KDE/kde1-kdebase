@@ -760,9 +760,10 @@ void KfmGui::slotURLEntered()
 
 void KfmGui::setToolbarURL( const char *_url )
 {
-    toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
-    //  update tree view Sep 5 rjakob
     QString url(_url);
+    KURL::decodeURL(url);
+    toolbarURL->setLinedText( TOOLBAR_URL_ID, url.data() );
+    //  update tree view Sep 5 rjakob
     if (url.left(5)=="file:")
       if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
          treeView->slotshowDirectory(url.data()+5);
@@ -771,13 +772,7 @@ void KfmGui::setToolbarURL( const char *_url )
 
 void KfmGui::slotNewURL( const char *_url )
 {
-    toolbarURL->setLinedText( TOOLBAR_URL_ID, _url );
-    
-    //  update tree view Sep 5 rjakob
-    QString url(_url);
-    if (url.left(5)=="file:")
-      if (bTreeViewInitialized && pkfm->isTreeViewFollowMode())
-         treeView->slotshowDirectory(url.data()+5);
+    setToolbarURL( _url );
 
     if ( historyList.find( _url ) == -1 )
 	return;
@@ -1375,9 +1370,12 @@ void KfmGui::slotTreeUrlSelected( const char *_url , int _button )
 
 void KfmGui::slotTitle( const char *_title )
 {
-    setCaption( _title );
-    title = _title;
+    // This title is *encoded* ! The fix should go to khtml[w], but it's frozen 
+    // right now. David.
+    title = _title; // keeps a copy of the title. Isn't used at all, AFAIK. David.
     title.detach();
+    KURL::decodeURL(title);
+    setCaption( title.data() );
 }
 
 void KfmGui::slotSetStatusBar( const char *_url )

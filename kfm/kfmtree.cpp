@@ -498,6 +498,7 @@ KFMDirTreeItem::KFMDirTreeItem( KFMDirTree *_finder, const char *_url, bool _isf
 	tmp.truncate( tmp.length() - 1 );
     KURL u( tmp );
     url = u.url(); // returns a URL with file: and encoded
+    KURL::decodeURL(url); // but we want it decoded now ! :) David.
    
     QString home( QDir::homeDirPath() );
     if ( home.right(1) == "/" )
