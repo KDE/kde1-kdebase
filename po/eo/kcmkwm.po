@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm 1.0pre2\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-07-15 18:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -56,11 +56,11 @@ msgstr "Fikso"
 msgid "Menu"
 msgstr "Menuo"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr ""
 
@@ -92,74 +92,82 @@ msgstr ""
 "La dekstra flanko de la titollistelo estas plena...\n"
 "malaktivigas la minimumigilon.\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+msgid "Middle"
+msgstr ""
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Vertikala kolorþanøo"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Horizontala kolorþanøo"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Plenkolora"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "Rastrobildo"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "por &aktiva titolo"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "por &malaktiva titolo"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Musago"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Æe duobla kliko per maldekstra musbutono\n"
 "    sur la titollistelon:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "(Mal)Maksimumigu"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "(Mal)Suprenvolvu"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Piktogramigu"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "(Mal)Fiksu"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 #, fuzzy
 msgid "Title animation"
 msgstr "Titolanima¼o"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "Stilo de la fenestroregilo"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

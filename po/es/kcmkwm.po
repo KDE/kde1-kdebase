@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-10-23 17:09+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -49,11 +49,11 @@ msgstr "Pegar"
 msgid "Menu"
 msgstr "Menú"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr "Izquierda"
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr "Derecha"
 
@@ -85,74 +85,83 @@ msgstr ""
 "El lado derecho de la barra del título está lleno... se ha deshabilitado el "
 "botón de 'minimizar'\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+#, fuzzy
+msgid "Middle"
+msgstr "Botón central"
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Sombreado vertical"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Sombreado horizontal"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Sólido"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "Pixmap"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "Pixmap &Activo"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "Pixmap &Inactivo"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Acción del ratón"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Click doble del botón izquierdo\n"
 "del raton en barra de título provoca:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "(Des)Maximizar"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "Cerrar/Abrir persiana"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Iconificar"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "(Des)Pegar"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 #, fuzzy
 msgid "Title animation"
 msgstr "Animación del título"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "Estilo del gestor de ventanas"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

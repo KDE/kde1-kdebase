@@ -33,8 +33,7 @@ msgstr "&Сессии"
 #: main.cpp:103
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-msgstr ""
-"использование [-init | {appearance,font,background,sessions,users}]\n"
+msgstr "использование [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:142
 msgid "KDM Configuration"
@@ -312,4 +311,3 @@ msgstr "Доступные виды"
 #: klangcombo.cpp:133
 msgid "without name!"
 msgstr "без имени!"
-

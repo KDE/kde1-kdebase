@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-11-03 14:25+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -53,11 +53,11 @@ msgstr "Pøilepení"
 msgid "Menu"
 msgstr "Menu"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr "Vlevo"
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr "Vpravo"
 
@@ -81,73 +81,82 @@ msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Pravá strana titulku je plná ... vyøazuji 'minimalizaèní' tlaèítko\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+#, fuzzy
+msgid "Middle"
+msgstr "Prostøední tlaèítko"
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Stínovaný vertikálnì"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Stínovaný horizontálnì"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Jednoduchý"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "Obrázek"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 msgid "Active pixmap:"
 msgstr ""
 "Obrázek pro titulek \n"
 "aktivního okna:"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 msgid "Inactive pixmap:"
 msgstr ""
 "Obrázek pro titulek\n"
 "neaktivního okna:"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Èinnost my¹i"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 msgid "Left Button double click does:"
 msgstr ""
 "Dvojité kliknutí levým tlaèítkem\n"
 "   my¹i na titulek zpùsobí:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "Maximalizovat/Obnovit"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "Zarolovat/Vyrolovat"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Ikonifikovat"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "Pøilepení/Odlepení"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 msgid "Title animation"
 msgstr "Animace titulku"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 msgid "Window manager setup - ERROR"
 msgstr "Nastavení správce oken - CHYBA"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

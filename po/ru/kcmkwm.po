@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-11-07 05:04+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -56,11 +56,11 @@ msgstr "Приколоть"
 msgid "Menu"
 msgstr "Меню"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr "Слева"
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr "Справа"
 
@@ -88,71 +88,80 @@ msgid ""
 msgstr ""
 "Правая часть заголовка переполнена... отключаю кнопку 'минимизировать'\n"
 
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+#, fuzzy
+msgid "Middle"
+msgstr "Средняя кнопка"
+
 #
-#: titlebar.cpp:928
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Вертикальный переход"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Горизонтальный переход"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Обычный"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "Картинка"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 msgid "Active pixmap:"
 msgstr "Активная пиктограмма:"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 msgid "Inactive pixmap:"
 msgstr "Неактивная пиктограмма:"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Действие мышью"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 msgid "Left Button double click does:"
 msgstr "Двойной щелчок левой кнопкой мыши делает:"
 
 #
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "(Мин)Максимизировать"
 
 #
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "Градиент"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Минимизировать"
 
 #
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "Приколоть"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 msgid "Title animation"
 msgstr "Анимация заголовка"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "мс"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 msgid "Window manager setup - ERROR"
 msgstr "Ошибка установки менеджера окон"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

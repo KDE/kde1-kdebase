@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,11 +56,11 @@ msgstr "윈도우 고정"
 msgid "Menu"
 msgstr "메뉴"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr ""
 
@@ -92,74 +92,82 @@ msgstr ""
 "타이틀 바의 오른쪽이 여유가 없습니다... '최소화' 단추 기능을 사용할 수 "
 "없습니다\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+msgid "Middle"
+msgstr ""
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "수직으로 어두워짐"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "수평으로 어두워짐"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "효과없앰"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "픽스맵"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "픽스맵 활성화(&A)"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "픽스맵 비활성화(&I)"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "마우스 동작"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "창제목을 왼쪽 마우스 단추를\n"
 "    두번 누르기:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "최대(소)화"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "윈도감추기(보이기)"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "아이콘화"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "윈도우 고정(해제)"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 #, fuzzy
 msgid "Title animation"
 msgstr "창제목 움직임"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "윈도우 매니져 스타일"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

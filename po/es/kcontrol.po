@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-09-10 14:40+0200\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-10-23 17:13+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "Language-Team: Spanish <kde-es@kyb.ml.org>\n"
@@ -36,30 +36,30 @@ msgstr ""
 "Gracias a:\n"
 "S. Kulow, P. Dowler, M. Wuebben y M. Jones."
 
-#: mainwidget.cpp:44
+#: mainwidget.cpp:45
 msgid "System:"
 msgstr "Sistema:"
 
-#: mainwidget.cpp:47
+#: mainwidget.cpp:48
 msgid "User: "
 msgstr "Usuario: "
 
-#: mainwidget.cpp:53
+#: mainwidget.cpp:54
 msgid "Hostname: "
 msgstr "Nombre: "
 
-#: mainwidget.cpp:61
+#: mainwidget.cpp:62
 msgid "System: "
 msgstr "Sistema: "
 
-#: mainwidget.cpp:68
+#: mainwidget.cpp:69
 msgid "Release: "
 msgstr "Edición: "
 
-#: mainwidget.cpp:76
+#: mainwidget.cpp:77
 msgid "Version: "
 msgstr "Versión: "
 
-#: mainwidget.cpp:83
+#: mainwidget.cpp:84
 msgid "Machine: "
 msgstr "Máquina: "

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-10-26 22:36+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
@@ -50,11 +50,11 @@ msgstr "Klístrað"
 msgid "Menu"
 msgstr "Valmynd"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr "Vinstri"
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr "Hægri"
 
@@ -78,74 +78,83 @@ msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr "Hægri hlið titlrandar er full... Slökkt verður á lágkunartakka\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+#, fuzzy
+msgid "Middle"
+msgstr "Miðtakki"
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Skyggð lóðrétt"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Skyggð lágrétt"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Einlitt"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr "Með mynd"
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "Á &virkum glugga"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "Á óv&irkum glugga"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Músarvirkni"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Áhrif þess að tvísmella\n"
 "með vinstri músatakka:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "Há-/lágmarka"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "Rúlla glugga upp/niður"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Í táknmynd"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "Klístra/losa"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 #, fuzzy
 msgid "Title animation"
 msgstr "Rúllandi titill"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr "ms"
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "Hegðun gluggastjóra"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

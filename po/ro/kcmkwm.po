@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-1.0pre\n"
-"POT-Creation-Date: 1998-11-03 09:19+0100\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-07-04 12:00+0200\n"
 "Last-Translator: Paul Ionescu <omy@main.romsoft.ro>\n"
 "Language-Team: ??? <ro@li.org>\n"
@@ -56,11 +56,11 @@ msgstr "Þintuieºte"
 msgid "Menu"
 msgstr "Meniu"
 
-#: titlebar.cpp:172
+#: titlebar.cpp:172 titlebar.cpp:928
 msgid "Left"
 msgstr ""
 
-#: titlebar.cpp:176
+#: titlebar.cpp:176 titlebar.cpp:938
 msgid "Right"
 msgstr ""
 
@@ -92,74 +92,82 @@ msgstr ""
 "Partea dreaptã a zonei de titlu este plinã... dezactivez butonul de "
 "'minimizare'\n"
 
-#: titlebar.cpp:928
+#: titlebar.cpp:924
+msgid "Title Alignment"
+msgstr ""
+
+#: titlebar.cpp:933
+msgid "Middle"
+msgstr ""
+
+#: titlebar.cpp:954
 msgid "Shaded Vertically"
 msgstr "Umbritã vertical"
 
-#: titlebar.cpp:934
+#: titlebar.cpp:960
 msgid "Shaded Horizontally"
 msgstr "Umbritã orizontal"
 
-#: titlebar.cpp:943
+#: titlebar.cpp:969
 msgid "Plain"
 msgstr "Planã"
 
-#: titlebar.cpp:951 titlebar.cpp:963
+#: titlebar.cpp:977 titlebar.cpp:989
 msgid "Pixmap"
 msgstr ""
 
-#: titlebar.cpp:991
+#: titlebar.cpp:1017
 #, fuzzy
 msgid "Active pixmap:"
 msgstr "Pixmap pentru &Activã"
 
-#: titlebar.cpp:996
+#: titlebar.cpp:1022
 #, fuzzy
 msgid "Inactive pixmap:"
 msgstr "Pixmap pentru &Inactivã"
 
-#: titlebar.cpp:1006
+#: titlebar.cpp:1032
 msgid "Mouse action"
 msgstr "Acþiune ºoarec"
 
-#: titlebar.cpp:1014
+#: titlebar.cpp:1040
 #, fuzzy
 msgid "Left Button double click does:"
 msgstr ""
 "Dublu clic cu butonul din stânga\n"
 "    pe zona de titlu face:"
 
-#: titlebar.cpp:1024
+#: titlebar.cpp:1050
 msgid "(Un)Maximize"
 msgstr "(De)Maximizeazã"
 
-#: titlebar.cpp:1025
+#: titlebar.cpp:1051
 msgid "(Un)Shade"
 msgstr "(De)Umbreºte"
 
-#: titlebar.cpp:1026
+#: titlebar.cpp:1052
 msgid "Iconify"
 msgstr "Iconificã"
 
-#: titlebar.cpp:1027
+#: titlebar.cpp:1053
 msgid "(Un)Sticky"
 msgstr "(De)Þintuieºte"
 
-#: titlebar.cpp:1047
+#: titlebar.cpp:1073
 #, fuzzy
 msgid "Title animation"
 msgstr "Animaþia titlului"
 
-#: titlebar.cpp:1063
+#: titlebar.cpp:1089
 msgid "ms"
 msgstr ""
 
-#: titlebar.cpp:1252
+#: titlebar.cpp:1304
 #, fuzzy
 msgid "Window manager setup - ERROR"
 msgstr "Stil WM"
 
-#: titlebar.cpp:1253
+#: titlebar.cpp:1305
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."

@@ -262,4 +262,3 @@ msgstr "Личные:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "По умолчанию:"
-

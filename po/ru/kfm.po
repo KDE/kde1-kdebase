@@ -933,7 +933,8 @@ msgstr "Добавить закладку"
 
 #: kiojob.cpp:134
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
+msgstr ""
+"ВНУТРЕННЯЯ ОШИБКА: Вы должны как минимум указать устройство для монтирования"
 
 #: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1209 kiojob.cpp:1349
 #, c-format

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kuser\n"
-"POT-Creation-Date: 1998-09-10 14:40+0200\n"
+"POT-Creation-Date: 1998-11-08 01:22+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
 "Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
 
@@ -35,30 +35,30 @@ msgstr ""
 "Agradecimentos a:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#: mainwidget.cpp:44
+#: mainwidget.cpp:45
 msgid "System:"
 msgstr "Sistema:"
 
-#: mainwidget.cpp:47
+#: mainwidget.cpp:48
 msgid "User: "
 msgstr "Usuário:"
 
-#: mainwidget.cpp:53
+#: mainwidget.cpp:54
 msgid "Hostname: "
 msgstr "Nome de host: "
 
-#: mainwidget.cpp:61
+#: mainwidget.cpp:62
 msgid "System: "
 msgstr "Sistema: "
 
-#: mainwidget.cpp:68
+#: mainwidget.cpp:69
 msgid "Release: "
 msgstr "Release: "
 
-#: mainwidget.cpp:76
+#: mainwidget.cpp:77
 msgid "Version: "
 msgstr "Versão: "
 
-#: mainwidget.cpp:83
+#: mainwidget.cpp:84
 msgid "Machine: "
 msgstr "Máquina: "

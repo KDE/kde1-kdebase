@@ -430,4 +430,3 @@ msgstr "С учетом регистра"
 #: finddlg.cpp:66
 msgid "&Find"
 msgstr "Найти"
-

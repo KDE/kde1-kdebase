@@ -75,4 +75,3 @@ msgid ""
 msgstr ""
 "\n"
 " Copyright (C) 1997, 1998 Матиас Этрих (ettrich@kde.org)\n"
-
