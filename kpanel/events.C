@@ -13,7 +13,7 @@
 #include <kfm.h>
 
 
-myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f=0):QFrame(parent, name, f){
+myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
   hideTimer = new QTimer(this);
   connect( hideTimer, SIGNAL(timeout()),
 	   this, SLOT(hideTimerDone()) );
