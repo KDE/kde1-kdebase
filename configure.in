@@ -105,6 +105,13 @@ AC_SUBST(topdir)
 dnl Perform program name transformation
 AC_ARG_PROGRAM
 
+if test -z "$RUN_KAPPFINDER"; then
+RUN_KAPPFINDER="yes"
+fi
+
+
+AC_SUBST(RUN_KAPPFINDER)
+
 AC_OUTPUT(Makefile \
 	kcontrol/Makefile \
 	kcontrol/sample/Makefile \

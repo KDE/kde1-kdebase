@@ -1,6 +1,11 @@
-install-data-local:
+
+install-data-local: runkappfinder_$(RUN_KAPPFINDER)
+
+runkappfinder_yes:
 	echo "Installing non-KDE applications"
 	./kappfinder $(prefix)
+
+runkappfinder_no:
 
 uninstall-local:
 	rm -r $(kde_appsdir)/apps
