@@ -309,7 +309,7 @@ long KProtocolHTTP::Read(void *buffer, long len)
 	long bytesPerSec = bytesRead / secs;
 	QString infoStr;
 	if ( bytesPerSec < 1000 )
-	    infoStr.sprintf( "%i bytes/s", bytesPerSec );
+	    infoStr.sprintf( "%li bytes/s", bytesPerSec );
 	else
 	    infoStr.sprintf( "%.1f kb/s", (float)bytesPerSec / (float)1000 );
 	
