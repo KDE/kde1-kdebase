@@ -1,0 +1,64 @@
+# KDE Config File
+# Produced by Serge Vakulenko, <vak@kiae.su>, Moscow.
+# Modified for Xrus by Alexander V. Lukyanov
+# Modified for kikbd by Trak <trak@cyberdude.com>
+
+[International Keyboard]
+Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude.com>,Alexander Budnik <budnik@linserv.jinr.ru>
+
+Comment=Has latin characters as alternate symbols.
+Comment[ru]=Содержит латинские символы в качестве алтернативных.
+Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[sv]=Har latinska bockstДver som alternativa symboler.
+
+Language=Russian
+Language[no]=Russisk
+Language[ru]=Русский
+Language[fi]=VenДjД
+Language[pl]=Rosyjski
+Language[sv]=Ryska
+
+Charset=cp866
+Label=Ra
+Locale=ru
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less
+keysym1=q,0xa9,0x89,q,Q,
+keysym2=w,0xe6,0x96,w,W,
+keysym3=e,0xe3,0x93,e,E,
+keysym4=r,0xaa,0x8a,r,R,
+keysym5=t,0xa5,0x85,t,T,
+keysym6=y,0xad,0x8d,y,Y,
+keysym7=u,0xa3,0x83,u,U,
+keysym8=i,0xe8,0x98,i,I,
+keysym9=o,0xe9,0x99,o,O,
+keysym10=p,0xa7,0x87,p,P,
+keysym11=bracketleft,0xe5,0x95,bracketleft,braceleft,
+keysym12=bracketright,0xea,0x9a,bracketright,braceright,
+keysym13=a,0xe4,0x94,a,A,
+keysym14=s,0xeb,0x9b,s,S,
+keysym15=d,0xa2,0x82,d,D,
+keysym16=f,0xa0,0x80,f,F,
+keysym17=g,0xaf,0x8f,g,G,
+keysym18=h,0xe0,0x90,h,H,
+keysym19=j,0xae,0x8e,j,J,
+keysym20=k,0xab,0x8b,k,K,
+keysym21=l,0xa4,0x84,l,L,
+keysym22=semicolon,0xa6,0x86,semicolon,colon,
+keysym23=apostrophe,0xed,0x9d,apostrophe,quotedbl,
+keysym24=grave,0xf1,0xb3,grave,asciitilde,
+keysym25=z,0xef,0x9f,z,Z,
+keysym26=x,0xe7,0x97,x,X,
+keysym27=c,0xe1,0x91,c,C,
+keysym28=v,0xac,0x8c,v,V,
+keysym29=b,0xa8,0x88,b,B,
+keysym30=n,0xe2,0x92,n,N,
+keysym31=m,0xec,0x9c,m,M,
+keysym32=comma,0xa1,0x81,comma,less,
+keysym33=period,0xee,0x9e,period,greater,
+keysym34=4,4,quotedbl,4,dollar,
+keysym35=5,5,colon,5,percent,
+keysym36=6,6,comma,6,asciicircum,
+keysym37=7,7,period,7,ampersand,
+

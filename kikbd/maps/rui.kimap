@@ -1,0 +1,64 @@
+# KDE Config File
+# Produced by Serge Vakulenko, <vak@kiae.su>, Moscow.
+# Modified for Xrus by Alexander V. Lukyanov
+# Modified for kikbd by Trak <trak@cyberdude.com>
+
+[International Keyboard]
+Authors=Serge Vakulenko <vak@kiae.su>,Alexander V. Lukyanov,Trak <trak@cyberdude.com>,Alexander Budnik <budnik@linserv.jinr.ru>
+
+Comment=Has latin characters as alternate symbols.
+Comment[ru]=Содержит латинские символы в качестве алтернативных.
+Comment[fi]=Latinalaiset kirjaimet vaihtoehtoisina symboleina.
+Comment[sv]=Har latinska bockstДver som alternativa symboler.
+
+Language=Russian
+Language[no]=Russisk
+Language[ru]=Русский
+Language[fi]=VenДjД
+Language[pl]=Rosyjski
+Language[sv]=Ryska
+
+Charset=iso8859-5
+Label=Ri
+Locale=ru
+
+[KeyboardMap]
+CapsSymbols=q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m,bracketleft,bracketright,semicolon,apostrophe,grave,comma,period,less
+keysym1=q,0xd9,0xb9,q,Q,
+keysym2=w,0xe6,0xc6,w,W,
+keysym3=e,0xe3,0xc3,e,E,
+keysym4=r,0xda,0xba,r,R,
+keysym5=t,0xd5,0xb5,t,T,
+keysym6=y,0xdd,0xbd,y,Y,
+keysym7=u,0xd3,0xb3,u,U,
+keysym8=i,0xe8,0xc8,i,I,
+keysym9=o,0xe9,0xc9,o,O,
+keysym10=p,0xd7,0xb7,p,P,
+keysym11=bracketleft,0xe5,0xc5,bracketleft,braceleft,   
+keysym12=bracketright,0xea,0xca,bracketright,braceright,
+keysym13=a,0xe4,0xc4,a,A,
+keysym14=s,0xeb,0xcb,s,S,
+keysym15=d,0xd2,0xb2,d,D,
+keysym16=f,0xd0,0xb0,f,F,
+keysym17=g,0xdf,0xbf,g,G,
+keysym18=h,0xe0,0xc0,h,H,
+keysym19=j,0xde,0xbe,j,J,
+keysym20=k,0xdb,0xbb,k,K,
+keysym21=l,0xd4,0xb4,l,L,
+keysym22=semicolon,0xd6,0xb6,semicolon,colon,
+keysym23=apostrophe,0xed,0xcd,apostrophe,quotedbl,
+keysym24=grave,0xf1,0xa1,grave,asciitilde,
+keysym25=z,0xef,0xcf,z,Z,
+keysym26=x,0xe7,0xc7,x,X,
+keysym27=c,0xe1,0xc1,c,C,
+keysym28=v,0xdc,0xbc,v,V,
+keysym29=b,0xd8,0xb8,b,B,
+keysym30=n,0xe2,0xc2,n,N,
+keysym31=m,0xec,0xcc,m,M,
+keysym32=comma,0xd1,0xb1,comma,less,
+keysym33=period,0xee,0xce,period,greater,
+keysym34=4,4,quotedbl,4,dollar,
+keysym35=5,5,colon,5,percent,
+keysym36=6,6,comma,6,asciicircum,
+keysym37=7,7,period,7,ampersand,
+
