@@ -29,6 +29,7 @@ struct rootoptions{
 
   int     gridwidth;
   int     gridheight;
+  int     iconstyle;
   bool    changed;
 
 };
@@ -119,11 +120,12 @@ private:
 	void	readOptions();
 
 private:
-	QCheckBox *cursorbox;
+	QCheckBox *cursorbox,*iconstylebox;
 	KNumericSpinBox *hspin;
 	KNumericSpinBox *vspin;
 	int    gridwidth;
-        int    gridheight;
+    int    gridheight;
+    bool   transparent;
 	bool   changeCursor;
 	bool   changed;
 	struct rootoptions rootopts;

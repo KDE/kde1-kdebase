@@ -112,8 +112,19 @@ void KRootWidget::setRootGridParameters(int _gridwidth ,int _gridheight){
   gridwidth     = _gridwidth;
   gridheight    = _gridheight;
 
-  rearrangeIcons();
+  if(gridwidth != oldgridwidth || gridheight != oldgridheight)
+    rearrangeIcons();
+}
 
+void KRootWidget::setRootIconStyle(int newiconstyle)
+{
+  if(newiconstyle != iconstyle)
+  {
+    iconstyle = newiconstyle;
+    KRootIcon *icon;
+    for ( icon = icon_list.first(); icon != 0L; icon = icon_list.next() )
+      icon->update();
+  }
 }
 
 bool KRootWidget::isBindingHardcoded( const char *_txt )
@@ -1658,7 +1669,12 @@ void KRootIcon::select( bool _select )
     return;
 
   bSelected = _select;
-  
+
+  update();  
+}
+
+void KRootIcon::update()
+{
   init();
   // We changed the mask in init(), so update it here
   resizeEvent( 0L );

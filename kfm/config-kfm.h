@@ -35,6 +35,9 @@ void debugC( const char *msg , ...);
 #define DEFAULT_GRID_MAX 150
 #define DEFAULT_GRID_MIN 50
 
+// root window icon text transparency default -- stefan@space.twc.de
+#define DEFAULT_ROOT_ICONS_STYLE 0
+
 // lets be modern .. -- Bernd
 #define DEFAULT_VIEW_FONT "helvetica"
 #define DEFAULT_VIEW_FIXED_FONT "courier"

@@ -60,6 +60,11 @@ public:
     const char* getURL() { return url.data(); }
 
     /**
+     * Call this to reinit/redraw the icon (e.g. if the iconstyle
+     * has changed)
+     */
+    void update();
+    /**
      * Selects/Unselects the icon.
      */
     void select( bool _select );
@@ -186,6 +191,7 @@ public:
     bool isBindingHardcoded( const char *_txt );
 
     void setRootGridParameters(int gridwidth ,int gridheight);
+	void setRootIconStyle(int newiconstyle);
     
     /**
      * Takes all icons corresponding to the given URLs and moves them.

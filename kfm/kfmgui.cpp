@@ -1534,6 +1534,8 @@ void KfmGui::slotConfigureBrowser()
 	    config->setGroup( "KFM Misc Defaults" );			
 	    config->writeEntry( "GridWidth", rootopts.gridwidth);
 	    config->writeEntry( "GridHeight", rootopts.gridheight);
+	    config->setGroup( "KFM Root Icons" );			
+	    config->writeEntry( "Style", rootopts.iconstyle);
 	  }
 
 	  
@@ -1583,6 +1585,7 @@ void KfmGui::slotConfigureBrowser()
 								   rootopts.gridwidth ,
 								   rootopts.gridheight
 								   );
+	      KRootWidget::getKRootWidget()->setRootIconStyle( rootopts.iconstyle );
 	    }
 
 	  }

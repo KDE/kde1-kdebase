@@ -346,6 +346,10 @@ KMiscOptions::KMiscOptions( QWidget *parent, const char *name )
 
 	vspin->setValue(gridheight - DEFAULT_GRID_MIN);
 
+	iconstylebox = new QCheckBox(klocale->translate("Transparent Text for Root Icons."),
+				  this);
+	iconstylebox->setGeometry(35, 100, 280, 25);
+	iconstylebox->setChecked(transparent);
 }
 
 void KMiscOptions::readOptions()
@@ -354,6 +358,8 @@ void KMiscOptions::readOptions()
 	config->setGroup( "KFM Misc Defaults" );	
 	gridwidth = config->readNumEntry( "GridWidth", DEFAULT_GRID_WIDTH );
 	gridheight = config->readNumEntry( "GridHeight", DEFAULT_GRID_HEIGHT );
+	config->setGroup( "KFM Root Icons" );	
+	transparent = (bool)config->readNumEntry("Style", DEFAULT_ROOT_ICONS_STYLE);
 
 	changed = false;
 }
@@ -367,8 +373,15 @@ void KMiscOptions::getMiscOpts(struct rootoptions& rootopts)
     printf( "Grid changed!\n" );
     changed = true;
   }
+  if(transparent != iconstylebox->isChecked()) {
+    changed = true;
+  }
 
   rootopts.gridwidth = hspin->getValue()+DEFAULT_GRID_MIN;
   rootopts.gridheight = vspin->getValue()+DEFAULT_GRID_MIN;
+
+  if(iconstylebox->isChecked()) rootopts.iconstyle = 1;
+  else							rootopts.iconstyle = 0;
+
   rootopts.changed = changed;
 }
