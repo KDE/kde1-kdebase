@@ -2,6 +2,7 @@
 [KDE Desktop Entry]
 Type=Application
 Name=Panel
+Name[no]=Panel
 Name[de]=Panel
 Name[pl]=Panel
 Name[fi]=Paneeli
@@ -11,7 +12,9 @@ Name[it]=Pannello
 Name[hu]=Panel
 Name[pt]=Painel
 Name[sk]=Panel
+Comment[no]=Her kan du konfigurrere hvordan panelet skal se ut
 Name[hr]=Ploèa
+SwallowTitle[no]=Panelinnstillinger
 Name[fr]=Panneau
 Comment=You can configure here, how the panel should look like
 Comment[de]=Sie können hier einstellen, wie das Panel aussehen soll

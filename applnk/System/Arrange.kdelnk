@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Arrange Icons
+Name[no]=Arranger ikoner
 Name[de]=Symbole anordnen
 Name[da]=Arranger Ikoner
 Name[es]=Redisponer íconos
@@ -16,6 +17,7 @@ Name[pt]=Ordenar Ícones
 Name[hu]=Ikonok elrendezése
 Name[hr]=Rasporedi ikone
 BinaryPattern=
+Comment[no]=Arranger ikonene på skrivebordet
 Protocols=
 Comment=Arrange Desktop Icons
 Comment[de]=Anordnen der Desktopsymbole
