@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpanel.C:232
 msgid "Move"
-msgstr ""
+msgstr "Flytt"
 
 #: kpanel.C:272
 msgid "Go!"
