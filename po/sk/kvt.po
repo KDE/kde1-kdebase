@@ -132,7 +132,7 @@ msgstr "Písmo..."
 
 #: main.C:674
 msgid "Enable &hotkeys"
-msgstr ""
+msgstr "Povoli» &horúce klávesy"
 
 #: main.C:677
 msgid "Save &Options"

@@ -118,6 +118,8 @@ msgid ""
 "\n"
 "%b %d"
 msgstr ""
+"\n"
+"%b %d"
 
 #: events.C:819
 msgid "Cannot put this as button onto the panel!"
@@ -145,22 +147,17 @@ msgstr "Otvori» prieèinok"
 
 #: pfilemenu.C:657
 msgid "Global:"
-msgstr ""
+msgstr "Globálne:"
 
 #: pfilemenu.C:676
 msgid "Local:"
-msgstr ""
+msgstr "Lokálne:"
 
 #: pfilemenu.C:694
 msgid "Recent:"
-msgstr ""
+msgstr "Nedávne:"
 
 #: pfilemenu.C:740
 msgid "Options..."
-msgstr ""
+msgstr "Vlastnosti..."
 
-#~ msgid "KFM Information"
-#~ msgstr "Informácia KFM"
-
-#~ msgid "Creating directory:\n"
-#~ msgstr "Vytváram prieèinok:\n"

@@ -19,6 +19,8 @@ msgid ""
 "X codes \"%s\" file does not exist.\n"
 "Using X default codes."
 msgstr ""
+"Súbor s X kódmi \"%s\" neexistuje.\n"
+"Pou¾ívam ¹tandardné X kódy."
 
 #: kikbd.cpp:307
 #, c-format
@@ -26,6 +28,8 @@ msgid ""
 "Keyboard map \"%s\" does not exists.\n"
 "Skiping this map."
 msgstr ""
+"Klávesová mapa \"%s\" neexistuje.\n"
+"Vynechávam ju."
 
 #: kikbd.cpp:324
 msgid "Setup"
@@ -70,27 +74,24 @@ msgid ""
 "You can preset X codes in \"Advanced\" section\n"
 "of configuration program."
 msgstr ""
+"Nemô¾em nájs» symbol \"%s\".\n"
+"Mo¾no sa va¹e ¹tandardné X kódy nezhodujú.\n"
+"Mô¾ete prednastavi» X kódy v sekcii \"Roz¹írené\"\n"
+"konfiguraèného programu."
 
 #: keymap.cpp:228
-#, fuzzy, c-format
 msgid "KeyMap: can not find symbol \"%s\"."
-msgstr ""
-"KeyMap: nemô¾em nájs» symbol \"%s\".\n"
-"Chcete pokraèova»?"
+msgstr "KeyMap: nemô¾em nájs» symbol \"%s\"."
 
 #: keymap.cpp:236
-#, fuzzy, c-format
 msgid "KeyMap: do not undestand keycode \"%s\"."
 msgstr ""
-"KeyMap: nerozumiem kódu klávesy \"%s\".\n"
-"Chcete pokraèova»?"
+"KeyMap: nerozumiem kódu klávesy \"%s\"."
 
 #: keymap.cpp:242
-#, fuzzy, c-format
 msgid "KeyMap: keycode \"%s\" go out of range."
 msgstr ""
-"KeyMap: kód klávesy \"%s\" je mimo rozsahu.\n"
-"Chcete pokraèova»?"
+"KeyMap: kód klávesy \"%s\" je mimo rozsahu."
 
 # ######################################################
 #: kikbdconf.cpp:95
@@ -170,9 +171,8 @@ msgid "Bottom Right"
 msgstr "Vpravo dole"
 
 #: kikbdconf.cpp:147
-#, fuzzy
 msgid "X default codes"
-msgstr "¹tandardný"
+msgstr "¹tandardné X kódy"
 
 #: kikbdconf.cpp:204
 #, c-format
@@ -277,16 +277,15 @@ msgstr "Otázka KIKBD"
 
 #: kikbdconf.cpp:487
 msgid "Configure"
-msgstr ""
+msgstr "Nastavi»"
 
 #: kikbdconf.cpp:497
-#, fuzzy
 msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"%s\n"
-"Chcete zaèa» konfiguráciu?"
+"\n"
+"Chcete pokraèova»?"
 
 #: widgets.cpp:107
 msgid "List of active keyboard maps"
@@ -420,7 +419,7 @@ msgstr "Ulo¾i» vz»ahy medzi triedami okien a klávesovými mapami pri konci"
 
 #: widgets.cpp:488
 msgid "Define X codes"
-msgstr ""
+msgstr "Definova» X kódy"
 
 #: widgets.cpp:491
 msgid "Input"

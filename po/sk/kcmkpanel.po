@@ -111,37 +111,35 @@ msgstr "&Oneskorenie:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Malý"
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
 msgid "Large"
-msgstr "&Veµký"
+msgstr "Veµký"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Visualy"
 
 #: options.cpp:64
 msgid "Auto &Hide Panel"
 msgstr "Automaticky skry» &panel"
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
 msgid "Delay:"
-msgstr "&Oneskorenie:"
+msgstr "Pauza:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Rýchlos»:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Pomaly"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Rýchlo"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
@@ -149,11 +147,11 @@ msgstr "Automaticky skry» panel úloh"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animova» ukázanie/skrytie"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Rýchlos»"
 
 #: options.cpp:117
 msgid "Others"
@@ -164,17 +162,16 @@ msgid "Personal &First"
 msgstr "Osobné menu j&e hlavné"
 
 #: options.cpp:120
-#, fuzzy
 msgid "F&olders First"
-msgstr "Osobné menu j&e hlavné"
+msgstr "Najprv &prieèinky"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Hodinky ukazujú èas v AM/PM formáte"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "História"
 
 #: disknav.cpp:64
 msgid "Edit &Local..."
@@ -184,14 +181,3 @@ msgstr "Editova» &lokálne..."
 msgid "Edit &Global..."
 msgstr "Editova» &globálne..."
 
-#~ msgid "ms"
-#~ msgstr "ms"
-
-#~ msgid "Clock"
-#~ msgstr "Hodinky"
-
-#~ msgid "&24h"
-#~ msgstr "&24h"
-
-#~ msgid "&12h AM/PM"
-#~ msgstr "&12h AM/PM"
