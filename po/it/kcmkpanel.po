@@ -1,13 +1,16 @@
+# KTranslator Generated File
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
 "POT-Creation-Date: 1998-11-21 01:13+0100\n"
-"PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
-"<Bilibao@ouverture.it>\n"
+"PO-Revision-Date: Mon Dec 7 1998 13:31:15+0200\n"
+"Last-Translator: Andrea Rizzi <rizzi@kde.org>\n"
 "Language-Team: Italiano <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.4.0"
 
 #: main.cpp:64
 msgid "&Panel"
@@ -19,12 +22,12 @@ msgstr "&Desktop"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Disk &Navigator"
 
 #: main.cpp:79
-#, fuzzy
+#
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "utilizzo: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "utilizzo: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 #: main.cpp:112
 msgid "KPanel Configuration"
@@ -48,7 +51,7 @@ msgstr "I&n Basso"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Destra"
 
 #: panel.cpp:75
 msgid "Taskbar"
@@ -72,7 +75,7 @@ msgstr "Alto/&Sinistra"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Stile"
 
 #: panel.cpp:97
 msgid "T&iny"
@@ -111,9 +114,9 @@ msgid "Small"
 msgstr ""
 
 #: options.cpp:51 options.cpp:69 options.cpp:87
-#, fuzzy
+#
 msgid "Large"
-msgstr "&Grande"
+msgstr "Grande"
 
 #: options.cpp:62
 msgid "Visuals"
@@ -124,21 +127,21 @@ msgid "Auto &Hide Panel"
 msgstr "Scomparsa automatica &Pannello "
 
 #: options.cpp:67 options.cpp:85
-#, fuzzy
+#
 msgid "Delay:"
-msgstr "&Attesa:"
+msgstr "Attesa:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Velocità:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Lento:"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Veloce"
 
 #: options.cpp:82
 msgid "Auto Hide &Taskbar"
@@ -146,11 +149,11 @@ msgstr "Scomparsa Automatica &Taskbar"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Animazione Mostra/Nascondi"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Velocità"
 
 #: options.cpp:117
 msgid "Others"
@@ -161,13 +164,13 @@ msgid "Personal &First"
 msgstr "P&rima Personale"
 
 #: options.cpp:120
-#, fuzzy
+#
 msgid "F&olders First"
-msgstr "P&rima Personale"
+msgstr "Prima le &cartelle"
 
 #: options.cpp:122
 msgid "&Clock shows time in AM/PM format"
-msgstr ""
+msgstr "&Ora scritta in formato AM/PM"
 
 #: disknav.cpp:38
 msgid "History"
@@ -179,11 +182,11 @@ msgstr ""
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "Modifica &personali..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "Modifica &comuni..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
@@ -199,21 +202,21 @@ msgstr ""
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Mostra file nascosti"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Ignora maiuscole nel riordinamento"
 
 #: disknav.cpp:173
-#, fuzzy
+#
 msgid "Show Shared section"
-msgstr "Locazione"
+msgstr ""
 
 #: disknav.cpp:180
-#, fuzzy
+#
 msgid "Show Personal section"
-msgstr "Locazione"
+msgstr ""
 
 #: disknav.cpp:187
 msgid "Show Recent section"
@@ -225,7 +228,7 @@ msgstr ""
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
+msgstr "Applicazione di Terminale:"
 
 #~ msgid "ms"
 #~ msgstr "ms"
