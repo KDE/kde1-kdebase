@@ -68,6 +68,7 @@ HTMLCache::HTMLCache()
 
 void HTMLCache::slotURLRequest( const char *_url )
 {
+    //debug("HTMLCache::slotURLRequest('%s')",_url);
     // Is the URL already cached ?
     QString *s = 0L;
     if ( bCacheEnabled ) 
@@ -151,7 +152,7 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
     if ( lstat( s->data(), &buff ) == 0 && buff.st_size > 0)
     {
         //debug("HTMLCACHE::slotJobFinished : inserting %s",s->data());
-        urlDict->insert( _job->getSrcURL(), s );
+        urlDict->replace( _job->getSrcURL(), s );
     }
 
     // Tell all instances
@@ -210,7 +211,7 @@ void HTMLCache::slotCheckinURL( const char* _url, const char *_data )
     fwrite( _data, 1, strlen( _data ), f );
     fclose( f );
     //debug("HTMLCACHE::slotCheckinURL : inserting %s",tmp.data());
-    urlDict->insert( _url, new QString( tmp.data() ) );
+    urlDict->replace( _url, new QString( tmp.data() ) );
 }
 
 const char* HTMLCache::isCached( const char *_url )
@@ -332,7 +333,7 @@ void HTMLCache::load()
 	  struct stat buff;
 	  if ( lstat( s->data(), &buff ) == 0 ) {
             //debug("HTMLCACHE : inserting %s",s->data());
-	    urlDict->insert( url, s );
+	    urlDict->replace( url, s );
           } //else debug("HTMLCACHE : _not_ inserting %s",s->data());
 	}
       }
