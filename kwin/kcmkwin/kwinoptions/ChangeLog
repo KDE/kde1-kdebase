@@ -1,3 +1,8 @@
+1998-11-29  Alex Zepeda  <garbanzo@hooked.net>
+
+	* pics/Makefile.am, pics/mini/Makefile.am: Install icons from their
+	"proper" subdirectories.
+
 1998-11-20  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* advanced.[cpp,h]: fixed bugs. Mostly a disgusting one: 

@@ -1,3 +1,7 @@
+# $Id$
+# kdebase/kcontrol/kwm
+
+SUBDIRS = pics
 
 INCLUDES = $(all_includes) 
 LDFLAGS = $(all_libraries) $(KDE_RPATH)
@@ -9,9 +13,6 @@ kcmkwm_SOURCES = main.cpp titlebar.cpp windows.cpp desktop.cpp \
 		mouse.cpp advanced.cpp
 BUILT_SOURCES = titlebar.moc windows.moc desktop.moc mouse.moc advanced.moc
 noinst_HEADERS = windows.h desktop.h titlebar.h geom.h mouse.h advanced.h
-
-EXTRA_DIST = mini-windows.xpm mini-titlebar.xpm mini-buttons.xpm \
-		kcmkwm.xpm mini-winprops.xpm
 
 windows.cpp: windows.moc
 windows.moc: windows.h
@@ -34,25 +35,7 @@ advanced.cpp: advanced.moc
 advanced.moc: advanced.h
 	$(MOC) advanced.h -o advanced.moc
 
-icon_DATA = titlebar.xpm properties.xpm buttons.xpm kcmkwm.xpm
-icondir = $(kde_icondir)
-
-install-data-local: 
-	$(mkinstalldirs) $(kde_minidir)
-	$(INSTALL_DATA) mini-windows.xpm $(kde_minidir)/windows.xpm
-	$(INSTALL_DATA) mini-titlebar.xpm $(kde_minidir)/titlebar.xpm
-	$(INSTALL_DATA) mini-buttons.xpm $(kde_minidir)/buttons.xpm
-	$(INSTALL_DATA) mini-winprops.xpm $(kde_minidir)/winprops.xpm
-	$(INSTALL_DATA) mini-kcmkwm.xpm $(kde_minidir)/kcmkwm.xpm
-
-uninstall-local:
-	rm -f $(kde_minidir)/windows.xpm
-	rm -f $(kde_minidir)/titlebar.xpm
-	rm -f $(kde_minidir)/buttons.xpm
-	rm -f $(kde_minidir)/kcmkwm.xpm
-
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmkwm_SOURCES) && mv messages.po ../../po/kcmkwm.pot
 
 DISTCLEANFILES = $(BUILT_SOURCES)
-
