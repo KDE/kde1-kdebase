@@ -652,15 +652,26 @@ PMenuItem * PMenu::searchItem(QString name)
 
   if (hack == this)
     hack = NULL;
+
+  PMenuItem *pmi = 0;
+
   if (!hack){
     if (isKdelnkFile(name)){
       // generate a free entry
-      PMenuItem* pmi = new PMenuItem(unix_com);
+      pmi = new PMenuItem(unix_com);
       pmi->parse(name);
-      return pmi; 
+    } else {
+      QFileInfo i(name);
+      if (i.isDir()) { 
+	PMenu *dir = new PMenu();
+	dir->parse(QDir(name));
+	debug("create %s",name.data());
+	pmi = new PMenuItem(submenu);
+	pmi->parse(&i, dir);
+      }
     }
   }
-  return 0L;
+  return pmi;
 }
 
 void PMenu::highlighted( int id )
