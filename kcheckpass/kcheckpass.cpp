@@ -71,7 +71,7 @@ static int	debug = 0;
 /*****************************************************************
  * Output a message to syslog (and to stderr as well, if available)
  *****************************************************************/
-static void
+void
 message(const char *fmt, ...)
 {
   va_list		ap;
@@ -220,6 +220,6 @@ main(int argc, char **argv)
 }
 
 /*****************************************************************
-  The real authentification methods are in sepaprate source files.
+  The real authentication methods are in separate source files.
   Look in checkpass_*.cpp
 *****************************************************************/

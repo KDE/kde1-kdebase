@@ -88,3 +88,4 @@
  *   0		otherwise
  *****************************************************************/
 int authenticate(const char *login, const char *pass);
+void message(const char*, ...);

@@ -1,6 +1,13 @@
+1998-11-25  Duncan Haldane <f.d.m.haldane@cwix.com>
+	* kcheckpass.cpp  void message() instead of static void message()
+	* kcheckpass.h    void message()
+	* checkpass_pam.cpp various fixes for PAM (from Steffen Hansen's 
+	  "lost" cvs changes), also made PAM service name configurable via
+	  autoconf (uses "xdm" by default, as this is likely to be
+	  configured already); removed #include of pam_misc.h
+	* Makefile.am: Adding $(PAMLIBS)
+	
 1998-11-22  Christian Esken  <esken@kde.org>
 
 	* Makefile.am: Adding $(LIBCRYPT)
 	* Adding #include of <pwd.h> and <sys/types.h>
-	
-

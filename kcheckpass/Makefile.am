@@ -3,7 +3,7 @@
 ##
 
 INCLUDES= $(all_includes)
-LDADD	= $(all_libraries) $(LIBCRYPT)
+LDADD	= $(all_libraries) $(LIBCRYPT) $(PAMLIBS)
 
 # for shadow passwords override the value
 INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)

@@ -3,7 +3,7 @@ The KCheckPass authentification software:
 -----------------------------------------
 
 kcheckpass is KDE's authentification program. It is meant to be
-used by any software in need of user authetification, most
+used by any software in need of user authentication, most
 notably login programs (kdm) and screensavers.
 
 It enhances security be the following means:
@@ -11,7 +11,7 @@ It enhances security be the following means:
 - It's only a small program, which is hopefully simple enough to
   allow it to be SUID root. Setting it to SUID root is neccesary
   on Shadow Password systems.
-- No other program in need of user authentification, must be
+- No other program in need of user authentication, must be
   SUID root.
 - It provides a single implementation to check passwords. So one
   only must take a closer look at kcheckpass to ensure password
@@ -45,8 +45,6 @@ Olaf Kirch <okir@caldera.de>      General Framework and PAM support
 Christian Esken <esken@kde.org>   Shadow and /etc/passwd support
 
 Some parts were taken from kscreensaver's passwd.cpp
-
-
 
 Currently this Software is maintained by Christian Esken (esken@kde.org).
 Please send new authentification modules (checkpass_*.cpp) to me.
