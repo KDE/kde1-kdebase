@@ -12,7 +12,7 @@ kcmsyssound_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # the libraries to link against. Be aware of the order. First the libraries,
 # that depend on the following ones.
-kcmsyssound_LDADD   = -lkdeui -lkdecore -lmediatool -lqt -lX11 -lXext $(LIBSOCKET) $(LIBCOMPAT)
+kcmsyssound_LDADD   = -lkdeui -lkdecore -lmediatool -lqt -lXext -lX11 $(LIBSOCKET) $(LIBCOMPAT)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = syssound.h
