@@ -1572,8 +1572,12 @@ bool MyApp::x11EventFilter( XEvent * ev){
 	  if  (ev->xbutton.button == Button1){
 	    c->simple_move();
 	  }
-	  else if (ev->xbutton.button == Button2)
-	    manager->raiseClient(c);
+	  else if (ev->xbutton.button == Button2){
+	    if (c == manager->topClientOnDesktop())
+	      manager->lowerClient(c);
+	    else
+	      manager->raiseClient(c);
+	  }
 	  else c->simple_resize();
 
 	}

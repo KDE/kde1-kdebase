@@ -27,6 +27,7 @@ patchlevel 12:
             other focus policies you may chose the style with
                  AltTabStyle=KDE/CDE
             Default is KDE, most certainly.
+         - Alt-MMB lowers a window if it's already on the top
 
 patchlevel 11:
         - switchActivateClient (used by the taskbar or the current
