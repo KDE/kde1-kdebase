@@ -1247,7 +1247,7 @@ msgstr "Nach oben"
 
 #: kbookmarkdlg.cpp:37
 msgid "Move down"
-msgstr "Nach uten"
+msgstr "Nach unten"
 
 #: kbookmarkdlg.cpp:176
 msgid "Rename Bookmark"
