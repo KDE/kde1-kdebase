@@ -204,9 +204,8 @@ int main( int argc, char ** argv )
 	exit(1);
     }
     // Keep in sync with the same in kfmserver.cpp!
-    QString idir = getenv( "HOME" );
-    idir += "/.kde/share/apps/kfm/kfm"; 
-    idir += displayName();
+    QString idir;
+    idir.sprintf("/tmp/kfm_%i%s\n",(int)getpid(),displayName().data());
     fprintf( f, "%i\n%s\n", (int)getpid(),idir.data() );
     fclose( f );
 

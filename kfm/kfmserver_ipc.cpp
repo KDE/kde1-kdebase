@@ -10,9 +10,8 @@
 KfmIpcServer::KfmIpcServer()
 {
     // Keep in sync with the same in main.cpp!
-    QString idir = getenv( "HOME" );
-    idir += "/.kde/share/apps/kfm/kfm"; 
-    idir += displayName();
+    QString idir;
+    idir.sprintf("/tmp/kfm_%i%s",(int)getpid(),displayName().data());
     
     serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )

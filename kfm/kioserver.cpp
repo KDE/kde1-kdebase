@@ -709,9 +709,8 @@ void KIOServer::runNewSlave()
     ipath += "/bin/kioslave";
 
     // Keep in sync with the same in kioserver_ipc.cpp!
-    QString idir = getenv( "HOME" );
-    idir += "/.kde/share/apps/kfm/kio"; 
-    idir += displayName();
+    QString idir;
+    idir.sprintf("/tmp/kio_%i%s",(int)getpid(),displayName().data());
     
     if ( fork() == 0 )
     {

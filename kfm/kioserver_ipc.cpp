@@ -10,9 +10,8 @@
 KIOSlaveIPCServer::KIOSlaveIPCServer()
 {
     // Keep in sync with the same in kioserver.cpp!
-    QString idir = getenv("HOME");
-    idir += "/.kde/share/apps/kfm/kio";
-    idir += displayName();
+    QString idir;
+    idir.sprintf("/tmp/kio_%i%s",(int)getpid(),displayName().data());
     
     serv_sock = new KServerSocket( idir.data() );
     if ( serv_sock->socket() < 0 )

@@ -217,6 +217,12 @@ public slots:
     void slotPopupOpenWith();   
     
     /**
+     * This one catches signals from @ref HTMLView::popupMenu. The call is then piped thru
+     * to @ref #slotPopupMenu.
+     */
+    void slotPopupMenu2( KHTMLView *_view, const char *_url, const QPoint &_point );
+  
+    /**
      * The user pressed the right mouse button over an URL.
      * Since @ref KFMManager has to create the popup menu, this function will
      * just call @ref #manager to do this.

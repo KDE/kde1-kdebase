@@ -310,6 +310,10 @@ void KRootWidget::moveIcons( QStrList &_urls, QPoint &p )
 	    y++;
     }
     
+    // !!! A check for x>x_max and y>y_max should be added,too
+    if (x<0) x = 0;
+    if (y<0) y = 0;        
+
     char *s;
     for ( s = _urls.first(); s != 0L; s = _urls.next() )
     {

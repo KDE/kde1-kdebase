@@ -181,9 +181,21 @@
 14.02.98 Stephan
   - applied patch by Martin Jones, that fixes the text selection in HTML view
 
+16.02.98 Torben
+ - Fixed bug in icon arrangement ( icons should not disappear any more ).
+ - Moved unix domain sockets tp /tmp
+ - Runs "touch" on the sockets every hour to keep /tmp cleaner daemons away
+   from our sockets.
+ - Keyboard support: Cursor keys move among the icons ( IconView only ).
+                     Space selects/deselects icon
+                     Return opens document/directory
+                     ESC open popup menu for icon
+   Uses the key event handling in KHTMLW. Deleted QAccel in kfmgui
+
 18.02.98 Stephan
   - I moved the decoding of path() into KURL and fixed some things concerning
     decoding/encoding.
     Note: I think, kfm still doesn't handle the whole URL issue good enough,
     but to change this, would mean to replace the const char* arguments with
     KURL arguments, I guess
+

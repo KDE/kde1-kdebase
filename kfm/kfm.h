@@ -2,6 +2,7 @@
 #define kfm_h
 
 #include <qwidget.h>
+#include <qtimer.h>
 #include <kiconloader.h>
 
 #define pkfm KFM::kfm()
@@ -18,9 +19,12 @@ public:
     
 public slots:
     void slotSave();
-
+    void slotTouch();
+  
 protected:
     KIconLoader *pIconLoader;
+    QTimer timer;
+
     static KFM *pKfm;
 };
 

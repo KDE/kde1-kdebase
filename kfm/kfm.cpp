@@ -3,11 +3,15 @@
 #include "kurl.h"
 #include "kfmgui.h"
 #include "kfm.h"
+#include "utils.h"
 
 #include <qstrlist.h>
 #include <kapp.h>
 #include <kconfig.h>
 #include <htmlcache.h>
+
+#include <stdlib.h>
+#include <unistd.h> 
 
 KFM *KFM::pKfm = 0L;
 
@@ -66,6 +70,19 @@ KFM::KFM()
     tmp = getenv( "HOME" );
     tmp += "/.kde/share/icons";
     list->append( tmp.data() );
+
+    connect( &timer, SIGNAL( timeout() ), this, SLOT( slotTouch() ) );
+    // Call every hour
+    timer.start( 3600000 );
+}
+
+void KFM::slotTouch()
+{
+  QString tmp;
+  tmp.sprintf("touch /tmp/kfm_%i%s",(int)getpid(),displayName().data() );
+  system( tmp.data() );
+  tmp.sprintf("touch /tmp/kio_%i%s",(int)getpid(),displayName().data() );
+  system( tmp.data() );
 }
 
 KFM::~KFM()

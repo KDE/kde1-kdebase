@@ -51,7 +51,9 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     connect( this, SIGNAL( imageRequest( const char * ) ), htmlCache, SLOT( slotURLRequest( const char * ) ) );
     connect( this, SIGNAL( cancelImageRequest( const char * ) ),
 	     htmlCache, SLOT( slotCancelURLRequest( const char * ) ) );
-
+    connect( this, SIGNAL( popupMenu( KHTMLView *, const char *, const QPoint & ) ),
+	     this, SLOT( slotPopupMenu2( KHTMLView *, const char *, const QPoint & ) ) );
+    
     gui = _gui;
  
     dropZone = 0L;
@@ -79,6 +81,8 @@ KfmView::KfmView( KfmGui *_gui, QWidget *parent, const char *name, KHTMLView *_p
     connect( KIOServer::getKIOServer(), SIGNAL( notify( const char * ) ), this,
     	     SLOT( slotFilesChanged( const char * ) ) );
     connect( KIOServer::getKIOServer(), SIGNAL( mountNotify() ), this, SLOT( slotMountNotify() ) );
+
+    getKHTMLWidget()->setFocusPolicy( QWidget::StrongFocus );
 }
 
 KHTMLView* KfmView::newView( QWidget *_parent, const char *_name, int )
@@ -862,6 +866,7 @@ bool KfmView::mousePressedHook( const char *_url, const char *, QMouseEvent *_mo
 	    list.append( _url );
 	    slotPopupMenu( list, p );
 	}
+
 	return true;
     }
     // Context menu for background ?
@@ -1067,6 +1072,25 @@ bool KfmView::dndHook( const char *_url, QPoint &_p )
 		     data.data(), data.length(), DndURL, dx, dy );
     
     return true;
+}
+
+void KfmView::slotPopupMenu2( KHTMLView *, const char *_url, const QPoint &_point )
+{
+  // A popupmenu for a list of URLs or just for one ?
+  QStrList list;
+  getSelected( list );
+    
+  if ( list.find( _url ) != -1 )
+    slotPopupMenu( list, _point );
+  else
+  {
+    // The selected URL is not marked, so unmark the marked ones.
+    select( 0L, false );
+    selectByURL( 0L, _url, true );
+    list.clear();
+    list.append( _url );
+    slotPopupMenu( list, _point );
+  }
 }
 
 #include "kfmview.moc"

@@ -8,6 +8,8 @@
 #define DOWN                2
 #define PGUP                3
 #define PGDOWN              4     
+#define ACC_RIGHT           5
+#define ACC_LEFT            6
 
 #define TOOLBAR_URL_ID 1000
 
@@ -317,31 +319,6 @@ public slots:
     void slotBookmarksChanged();
 
     /**
-     * Used for @ref QAccel
-     *
-     * @see #initAccel
-     */
-    void slotKeyUp ();
-    /**
-     * Used for @ref QAccel
-     *
-     * @see #initAccel
-     */
-    void slotKeyDown ();
-    /**
-     * Used for @ref QAccel
-     *
-     * @see #initAccel
-     */
-    void slotPageUp ();
-    /**
-     * Used for @ref QAccel
-     *
-     * @see #initAccel
-     */
-    void slotPageDown ();       
-
-    /**
      * Sets the windows title.
      */
     void slotTitle( const char *_title );
@@ -455,7 +432,6 @@ protected:
     virtual void initStatusBar();
     virtual void initPanner();
     virtual void initTreeView();
-    virtual void initAccel();
    
     /**
      * Fill the 'menu' with all boomarks in 'parent'.
@@ -554,11 +530,6 @@ protected:
     KFMDirTree *treeView;
     bool bTreeViewInitialized;
     bool bTreeView;
-
-    /**
-     * The Keyboard accelerator.
-     */
-    QAccel *accel;
 
     /**
      * List of all busy widgets.

@@ -475,11 +475,11 @@ void KFMManager::writeBeginning()
 	
 	if ( view->getGUI()->getViewMode() == KfmGui::ICON_VIEW )
 	{
-	    view->write( "<cell><a href=\"");
+	    view->write( "<a href=\"");
 	    view->write( s.data() );
-	    view->write( "\"><center><img border=0 src=\"file:" );
+	    view->write( "\"><cell><center><img border=0 src=\"file:" );
 	    view->write( KMimeType::getPixmapFileStatic( s.data() ) );
-	    view->write( "\"><br>..</center><br></a></cell>" );
+	    view->write( "\"><br>..</center><br></cell></a>" );
 	}
 	else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
 	{
@@ -529,18 +529,18 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	if ( decoded.right(7) == ".kdelnk" )
 	    decoded.truncate( decoded.length() - 7 );
 
-	view->write( "<cell><a href=\"" );
+	view->write( "<a href=\"" );
 	
 	view->write( encodedURL.data() );
 	if ( view->getGUI()->isVisualSchnauzer() )
 	{
-	    view->write( "\">" );
+	    view->write( "\"><cell>" );
 	    view->write( getVisualSchnauzerIconTag( filename ).data() );
 	    view->write( "<br>" );
 	}
 	else
 	{
-	    view->write( "\"><center><img border=0 src=\"file:" );
+	    view->write( "\"><cell><center><img border=0 src=\"file:" );
 	    view->write( KMimeType::getPixmapFileStatic( filename ) );
 	    view->write( "\"><br>" );
 	}
@@ -551,7 +551,7 @@ void KFMManager::writeEntry( KIODirectoryEntry *s )
 	writeWrapped( buffer );  // writeWrapped htmlQuotes itself
 	if ( s->getAccess() && s->getAccess()[0] == 'l' )
 	    view->write("</i>");
-	view->write( "</center><br></a></cell>" );
+	view->write( "</center><br></cell></a>" );
     }
     else if ( view->getGUI()->getViewMode() == KfmGui::LONG_VIEW )
     {

@@ -9,7 +9,6 @@
 #include <qpainter.h>
 #include <qapp.h>
 #include <qkeycode.h>
-#include <qaccel.h>
 #include <qpushbt.h>
 #include <qdir.h>
 #include <qstrlist.h>
@@ -193,7 +192,6 @@ void KfmGui::initGUI()
 {
     setMinimumSize( 100, 100 );
 
-    initAccel();
     initPanner();
     initTreeView();
     initStatusBar();
@@ -204,21 +202,6 @@ void KfmGui::initGUI()
     gl->addWidget( treeView, 0, 0 );
     gl = new QGridLayout( pannerChild1, 1, 1 );
     gl->addWidget( view, 0, 0 );
-}
-
-void KfmGui::initAccel()
-{
-    accel = new QAccel( this );  
-  
-    accel->insertItem (Key_Up, UP);
-    accel->insertItem (Key_Down, DOWN);
-    accel->insertItem (Key_Prior, PGUP);
-    accel->insertItem (Key_Next, PGDOWN);
-
-    accel->connectItem(UP, this, SLOT (slotKeyUp ()));
-    accel->connectItem(DOWN, this, SLOT (slotKeyDown ()));
-    accel->connectItem(PGUP, this, SLOT (slotPageUp ()));
-    accel->connectItem(PGDOWN, this, SLOT (slotPageDown ()));
 }
 
 void KfmGui::initPanner()
@@ -626,6 +609,7 @@ void KfmGui::initView()
     connect( view, SIGNAL( textSelected( KHTMLView *, bool ) ), 
 	     this, SLOT( slotTextSelected( KHTMLView *, bool ) ) );
     view->show();
+    view->setFocus();
 }
 
 void KfmGui::closeEvent( QCloseEvent *e )
@@ -849,26 +833,6 @@ void KfmGui::slotTextView()
     mview->setItemChecked( mview->idAt( 7 ), false );
     view->slotUpdateView( false );
 }
-
-void KfmGui::slotKeyUp()
-{
-    view->getActiveView()->slotVertSubtractLine();
-}
-
-void KfmGui::slotKeyDown()
-{
-    view->getActiveView()->slotVertAddLine();
-}
-
-void KfmGui::slotPageUp()
-{
-    view->getActiveView()->slotVertSubtractPage();
-}
-
-void KfmGui::slotPageDown()
-{
-    view->getActiveView()->slotVertAddPage();
-}                    
 
 void KfmGui::slotSelect()
 {
