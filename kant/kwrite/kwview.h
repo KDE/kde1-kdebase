@@ -54,8 +54,7 @@ struct PointStruc {
 
 struct VConfig {
   PointStruc cursor;
-  PointStruc startCursor;
-//  int maxY;
+//  PointStruc startCursor;
   int flags;
   int wrapAt;
 };
@@ -88,12 +87,12 @@ class KWriteView : public QWidget {
   protected:
     void getVConfig(VConfig &);
     void update(VConfig &);
-    void updateCursor(PointStruc &start, PointStruc &end, bool insert);
+//    void updateCursor(PointStruc &start, PointStruc &end, bool insert);
+    void insLine(int line);
+    void delLine(int line);
     void updateCursor(PointStruc &newCursor);
     void updateView(int flags);
-
 //  void scroll2(int, int);
-
     void tagLines(int start, int end);
     void tagAll();
 
@@ -152,27 +151,37 @@ class KWrite : public QWidget {
 //status functions
     int currentLine();
     int currentColumn();
-    void toggleOverwriteMode();
-    bool isOverwriteMode();
+    int config();
+    void setConfig(int);
+//    bool isOverwriteMode();
     void setModified(bool);
     bool isModified();
     bool isLastView();
     KWriteDoc *doc();
+    int undoState();
+  public slots:
+    void optDlg();
+    void toggleVertical();
+    void toggleOverwrite();
   signals:
-    void newCurPos();
-    void newStatus(); //insert-mode, modified
+    void newCurPos(); //line, col
+    void newStatus(); //modified, config flags
     void statusMsg(const char *);
     void newCaption();
-
+    void newUndo();
 //url aware file functions
   public:
     enum action{GET, PUT}; //tells us what kind of job kwrite is waiting for
     void loadFile(QIODevice &, bool insert = false);
-    bool loadFile(const char *name, bool insert = false);
-    void loadURL(const char *url, bool insert = false);
     void writeFile(QIODevice &);
+    bool loadFile(const char *name, bool insert = false);
     bool writeFile(const char *name);
+    void loadURL(const char *url, bool insert = false);
     void writeURL(const char *url);
+  protected slots:
+    void kfmFinished();
+    void kfmError(int, const char *);
+  public:
     const char *fileName();
     bool canDiscard();
   public slots:
@@ -181,9 +190,6 @@ class KWrite : public QWidget {
     void insertFile();
     void save();
     void saveAs();
-  protected slots:
-    void kfmFinished();
-    void kfmError(int, const char *);
   protected:
     KFM *kfm;
     QString kfmURL;
@@ -202,6 +208,8 @@ class KWrite : public QWidget {
     void deselectAll();
     void invertSelection();
 
+    void undo();
+    void redo();
 //search functions
   public slots:
     void search();
@@ -216,18 +224,13 @@ class KWrite : public QWidget {
     QString replaceWith;
     int searchFlags;
 
-//config functions
+//config file / session management functions
   public:
     void readConfig(KConfig *);
     void writeConfig(KConfig *);
     void readSessionConfig(KConfig *);
     void writeSessionConfig(KConfig *);
     void setHighlight(Highlight *);
-  public slots:
-    void settings();
-  protected:
-    int configFlags;
-    int wrapAt;
 
 //internal
   protected:
@@ -237,6 +240,8 @@ class KWrite : public QWidget {
     KWriteView *kWriteView;
     KWriteDoc *kWriteDoc;
 
+    int configFlags;
+    int wrapAt;
 };
 
 

@@ -34,17 +34,20 @@
 #define ID_MODIFIED 3
 #define ID_GENERAL 4
 
+const toolUndo = 1;
+const toolRedo = 2;
 
+DocSaver docSaver;
 QList<KWriteDoc> docList;
 
-TopLevel::TopLevel (KWriteDoc *doc) : KWMainWindow ("KWrite") {
+TopLevel::TopLevel (KWriteDoc *doc) : KTMainWindow ("KWrite") {
 
   setMinimumSize(180,120);
 
   recentFiles.setAutoDelete(TRUE);
 
-//  statusbar_timer = new QTimer(this);
-//  connect(statusbar_timer, SIGNAL(timeout()),this,SLOT(timer_slot()));
+  statusbarTimer = new QTimer(this);
+  connect(statusbarTimer,SIGNAL(timeout()),this,SLOT(timeout()));
 
 //  connect(mykapp,SIGNAL(kdisplayPaletteChanged()),this,SLOT(set_colors()));
 
@@ -68,7 +71,6 @@ TopLevel::TopLevel (KWriteDoc *doc) : KWMainWindow ("KWrite") {
 
 //  set_colors();
 
-
   hideToolBar = !hideToolBar;
   toggleToolBar();
   hideStatusBar = !hideStatusBar;
@@ -76,6 +78,7 @@ TopLevel::TopLevel (KWriteDoc *doc) : KWMainWindow ("KWrite") {
   newCurPos();
   newStatus();
   newCaption();
+  newUndo();
 
   KDNDDropZone *dropZone = new KDNDDropZone(this,DndURL);
   connect(dropZone,SIGNAL(dropAction(KDNDDropZone *)),
@@ -121,7 +124,7 @@ bool TopLevel::queryExit() {
         return false;
     }
   }
-  writeConfig();
+//  writeConfig();
   return true;
 }
 
@@ -134,18 +137,20 @@ void TopLevel::setupEditWidget() {
 
 
 //  kWriteDoc = new KWriteDoc();
-  kWrite = new KWrite(kWriteDoc, this/*, "eframe"*/);
+  kWrite = new KWrite(kWriteDoc, this);
 
   connect(kWrite,SIGNAL(newCurPos()),this,SLOT(newCurPos()));
   connect(kWrite,SIGNAL(newStatus()),this,SLOT(newStatus()));
   connect(kWrite,SIGNAL(statusMsg(const char *)),this,SLOT(statusMsg(const char *)));
   connect(kWrite,SIGNAL(newCaption()),this,SLOT(newCaption()));
+  connect(kWrite,SIGNAL(newUndo()),this,SLOT(newUndo()));
 
   setView(kWrite,FALSE);
 }
 
 
 void TopLevel::setupMenuBar() {
+  KMenuBar *menubar;
 
 //  KStdAccel keys(kapp->getConfig());
 
@@ -169,14 +174,14 @@ void TopLevel::setupMenuBar() {
   file->insertSeparator ();
 //  file->insertItem(i18n("Open &URL..."),this,SLOT(file_open_url()));
 //  file->insertItem(i18n("Save to U&RL..."),this,SLOT(file_save_url()));
-  file->insertSeparator ();
+//  file->insertSeparator ();
 //  file->insertItem(i18n("&Print..."),this,SLOT(print()));
 //  file->insertSeparator ();
 //  file->insertItem (i18n("&Mail..."),this,SLOT(mail()));
 //  file->insertSeparator ();
   file->insertItem (i18n("New &Window"),this,SLOT(newWindow()));
   file->insertItem (i18n("New &View"),this,SLOT(newView()));
-  file->insertSeparator ();
+//  file->insertSeparator ();
 //  file->insertItem (i18n("E&xit"),this,SLOT(quitEditor()),CTRL+Key_Q);
 
 
@@ -189,25 +194,33 @@ void TopLevel::setupMenuBar() {
   edit->insertItem(i18n("Find &Again"),kWrite,SLOT(searchAgain()),Key_F3);
   edit->insertItem(i18n("&Goto Line..."),kWrite,SLOT(gotoLine()),CTRL+Key_G);
   edit->insertSeparator();
+  menuUndo = edit->insertItem(i18n("&Undo"),kWrite,SLOT(undo()),CTRL+Key_Z);
+  menuRedo = edit->insertItem(i18n("&Redo"),kWrite,SLOT(redo()),CTRL+Key_Y);
+  edit->insertSeparator();
+//  edit->insertItem(i18n("Format..."),kWrite,SLOT(format()));
+//  edit->insertSeparator();
   edit->insertItem(i18n("&Select All"),kWrite,SLOT(selectAll()));
   edit->insertItem(i18n("&Deselect All"),kWrite,SLOT(deselectAll()));
   edit->insertItem(i18n("&Invert Selection"),kWrite,SLOT(invertSelection()));
-  edit->insertSeparator();
+//  edit->insertSeparator();
 //  edit->insertItem(i18n("Insert &Date"),this,SLOT(insertDate()));
 //  edit->insertItem(i18n("Insert &Time"),this,SLOT(insertTime()));
 
 
-//  options->setCheckable(TRUE);
+  options->setCheckable(TRUE);
 //  options->insertitem(i18n("&Font..."),this,SLOT(font()));
 //  options->insertItem(i18n("Colors"),colors);
 //  options->insertSeparator();
-  options->insertItem(i18n("&Settings..."),kWrite,SLOT(settings()));
-  options->insertItem(i18n("&Highlight..."),this,SLOT(highlight()));
+  options->insertItem(i18n("&Options..."),kWrite,SLOT(optDlg()));
+  options->insertItem(i18n("&Highlight..."),this,SLOT(hlDlg()));
 //  indentID = options->insertItem(i18n("Auto &Indent"),this,SLOT(toggle_indent_mode()));
   options->insertSeparator();
-  toolID = options->insertItem("",this,SLOT(toggleToolBar()));
-  statusID = options->insertItem("",this,SLOT(toggleStatusBar()));
+  menuVertical = options->insertItem(i18n("&Vertical Selections"),kWrite,SLOT(toggleVertical()),Key_F5);
+  menuShowTB = options->insertItem(i18n("Show &Toolbar"),this,SLOT(toggleToolBar()));
+  menuShowSB = options->insertItem(i18n("Show &Statusbar"),this,SLOT(toggleStatusBar()));
   options->insertSeparator();
+  options->insertItem(i18n("Save Config"),this,SLOT(writeConfig()));
+//  options->insertSeparator();
 //  options->insertItem(i18n("Save Options"),this,SLOT(save_options()));
 
 
@@ -219,14 +232,13 @@ void TopLevel::setupMenuBar() {
 */
 
   help = kapp->getHelpMenu(true,
-    "KWrite 0.91\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
+    "KWrite 0.92\n\nCopyright 1998\nJochen Wilhelmy\ndigisnap@cs.tu-berlin.de");
 
 //  help->insertItem (i18n("&Help..."),this,SLOT(helpSelected()));
 //  help->insertSeparator();
 //  help->insertItem (i18n("&About..."),this,SLOT(about()));
 
 
-  KMenuBar * menubar;
   menubar = menuBar();//new KMenuBar(this,"menubar");
   menubar->insertItem(i18n("&File"),file);
   menubar->insertItem(i18n("&Edit"),edit);
@@ -273,6 +285,15 @@ void TopLevel::setupToolBar(){
   toolbar->insertButton(pixmap,0,SIGNAL(clicked()),
     kWrite,SLOT(paste()),TRUE,i18n("Paste"));
 
+  toolbar->insertSeparator();
+
+  pixmap = loader->loadIcon("back.xpm");
+  toolbar->insertButton(pixmap,toolUndo,SIGNAL(clicked()),
+    kWrite,SLOT(undo()),TRUE,i18n("Undo"));
+
+  pixmap = loader->loadIcon("forward.xpm");
+  toolbar->insertButton(pixmap,toolRedo,SIGNAL(clicked()),
+    kWrite,SLOT(redo()),TRUE,i18n("Redo"));
 /*
   toolbar->insertSeparator();
 
@@ -311,75 +332,7 @@ void TopLevel::setupStatusBar(){
 //    setStatusBar( statusbar );
 }
 
-void TopLevel::readConfig() {
-  KConfig *config;
-  int w, h;
 
-  config = kapp->getConfig();
-
-  config->setGroup("General Options");
-  w = config->readNumEntry("Width",550);
-  h = config->readNumEntry("Height",400);
-  resize(w,h);
-
-  hideToolBar = config->readNumEntry("HideToolBar");
-  hideStatusBar = config->readNumEntry("HideStatusBar");
-
-  kWrite->readConfig(config);
-}
-
-void TopLevel::writeConfig() {
-  KConfig *config;
-
-  config = kapp->getConfig();
-
-  config->setGroup("General Options");
-  config->writeEntry("Width",width());
-  config->writeEntry("Height",height());
-  config->writeEntry("HideToolBar",hideToolBar);
-  config->writeEntry("HideStatusBar",hideStatusBar);
-
-  kWrite->writeConfig(config);
-}
-
-void TopLevel::saveData(KConfig *config) {
-  int z;
-  char buf[16];
-  KWriteDoc *doc;
-
-  config->setGroup("Number");
-  config->writeEntry("NumberOfDocuments",docList.count());
-
-  for (z = 1; z <= (int) docList.count(); z++) {
-     sprintf(buf,"Document%d",z);
-     config->setGroup(buf);
-     doc = docList.at(z - 1);
-     doc->writeSessionConfig(config);
-  }
-}
-
-void TopLevel::readProperties(KConfig *config) {
-
-  kWrite->readSessionConfig(config);
-}
-
-void TopLevel::saveProperties(KConfig *config) {
-
-  config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
-  kWrite->writeSessionConfig(config);
-  setUnsavedData(kWrite->isModified());
-}
-
-void TopLevel::restore(KConfig *config, int n) {
-  const char *url;
-
-  readPropertiesInternal(config,n);
-  if (kWrite->isLastView()) {
-    url = kWrite->fileName();
-    if (url && *url) loadURL(url);
-  }
-  show();
-}
 
 void TopLevel::newWindow() {
 
@@ -401,11 +354,11 @@ void TopLevel::closeWindow() {
 
 void TopLevel::quitEditor() {
 
-  writeConfig();
+//  writeConfig();
   kapp->quit();
 }
 
-void TopLevel::highlight() {
+void TopLevel::hlDlg() {
   QStrList types;
 
   types.append("Normal");
@@ -443,27 +396,29 @@ printf("TopLevel::newHl()\n");
 
 void TopLevel::toggleToolBar() {
 
+  options->setItemChecked(menuShowTB,hideToolBar);
   if (hideToolBar) {
     hideToolBar = FALSE;
     enableToolBar(KToolBar::Show);
-    options->changeItem(i18n("Hide &Tool Bar"),toolID);
+    //changeItem(i18n("Hide &Tool Bar"),toolID);
   } else {
     hideToolBar = TRUE;
     enableToolBar(KToolBar::Hide);
-    options->changeItem(i18n("Show &Tool Bar"),toolID);
+//    options->changeItem(i18n("Show &Tool Bar"),toolID);
   }
 }
 
 void TopLevel::toggleStatusBar() {
 
+  options->setItemChecked(menuShowSB,hideStatusBar);
   if (hideStatusBar) {
     hideStatusBar = FALSE;
     enableStatusBar(KStatusBar::Show);
-    options->changeItem(i18n("Hide &Status Bar"),statusID);
+//    options->changeItem(i18n("Hide &Status Bar"),statusID);
   } else {
     hideStatusBar = TRUE;
     enableStatusBar(KStatusBar::Hide);
-    options->changeItem(i18n("Show &Status Bar"),statusID);
+//    options->changeItem(i18n("Show &Status Bar"),statusID);
   }
 }
 
@@ -473,7 +428,7 @@ void TopLevel::helpSelected() {
 }
 
 void TopLevel::newCurPos() {
-  char s[32];
+  char s[64];
 
   sprintf(s,"%s: %d %s: %d",i18n("Line"),kWrite->currentLine() +1,
                             i18n("Col"),kWrite->currentColumn() +1);
@@ -481,18 +436,37 @@ void TopLevel::newCurPos() {
 }
 
 void TopLevel::newStatus() {
+  int config;
 
-  statusBar()->changeItem(kWrite->isOverwriteMode() ? "OVR" : "INS",ID_INS_OVR);
+  config = kWrite->config();
+  options->setItemChecked(menuVertical,config & cfVerticalSelect);
+  statusBar()->changeItem(config & cfOvr ? "OVR" : "INS",ID_INS_OVR);
   statusBar()->changeItem(kWrite->isModified() ? "*" : "",ID_MODIFIED);
 }
 
-void TopLevel::statusMsg(const char *) {
+void TopLevel::statusMsg(const char *msg) {
+  statusbarTimer->stop();
+  statusBar()->changeItem(msg,ID_GENERAL);
+  statusbarTimer->start(10000,true); //single shot
+}
 
+void TopLevel::timeout() {
+  statusBar()->changeItem("",ID_GENERAL);
 }
 
 void TopLevel::newCaption() {
   setCaption(kWrite->fileName());
 // printf("caption %s\n",kWrite->fileName());
+}
+
+void TopLevel::newUndo() {
+  int state;
+
+  state = kWrite->undoState();
+  edit->setItemEnabled(menuUndo,state & 1);
+  edit->setItemEnabled(menuRedo,state & 2);
+  toolBar()->setItemEnabled(toolUndo,state & 1);
+  toolBar()->setItemEnabled(toolRedo,state & 2);
 }
 
 void TopLevel::dropAction(KDNDDropZone *dropZone) {
@@ -513,6 +487,55 @@ void TopLevel::dropAction(KDNDDropZone *dropZone) {
       t->show ();
     }
   }
+}
+
+//config
+void TopLevel::readConfig() {
+  KConfig *config;
+  int w, h;
+
+  config = kapp->getConfig();
+
+  config->setGroup("General Options");
+  w = config->readNumEntry("Width",550);
+  h = config->readNumEntry("Height",400);
+  resize(w,h);
+
+  hideToolBar = config->readNumEntry("HideToolBar");
+  hideStatusBar = config->readNumEntry("HideStatusBar");
+
+  kWrite->readConfig(config);
+}
+
+void TopLevel::writeConfig() {
+  KConfig *config;
+
+  config = kapp->getConfig();
+
+  config->setGroup("General Options");
+  config->writeEntry("Width",width());
+  config->writeEntry("Height",height());
+  config->writeEntry("HideToolBar",hideToolBar);
+  config->writeEntry("HideStatusBar",hideStatusBar);
+
+  kWrite->writeConfig(config);
+}
+
+// session restore
+void TopLevel::readProperties(KConfig *config) {
+
+  kWrite->readSessionConfig(config);
+}
+
+void TopLevel::restore(KConfig *config, int n) {
+  const char *url;
+
+  if (kWrite->isLastView()) {
+    url = kWrite->fileName();
+    if (url && *url) loadURL(url);
+  }
+  readPropertiesInternal(config,n);
+  show();
 }
 
 void restore() {
@@ -545,9 +568,39 @@ void restore() {
   }
 }
 
+
+//session close
+void TopLevel::saveProperties(KConfig *config) {
+
+  config->writeEntry("DocumentNumber",docList.find(kWrite->doc()) + 1);
+  kWrite->writeSessionConfig(config);
+  setUnsavedData(kWrite->isModified());
+}
+
+//DocSaver::DocSaver() : QObject() {}
+
+void DocSaver::saveYourself() {
+  KConfig *config;
+  int z;
+  char buf[16];
+  KWriteDoc *doc;
+
+  config = kapp->getSessionConfig();
+  config->setGroup("Number");
+  config->writeEntry("NumberOfDocuments",docList.count());
+
+  for (z = 1; z <= (int) docList.count(); z++) {
+     sprintf(buf,"Document%d",z);
+     config->setGroup(buf);
+     doc = docList.at(z - 1);
+     doc->writeSessionConfig(config);
+  }
+}
+
 int main(int argc, char** argv) {
   KApplication a(argc,argv);
 
+  QObject::connect(kapp,SIGNAL(saveYourself()),&docSaver,SLOT(saveYourself()));
   docList.setAutoDelete(false);
 
   if (kapp->isRestored()) {

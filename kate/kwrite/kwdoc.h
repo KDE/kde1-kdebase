@@ -15,18 +15,15 @@ class TextLine {
   public:
     TextLine(int attribute = 0);
     ~TextLine();
-    void ins(int pos, char, int n = 1);
-//    void ins(int pos, const char *, int n);
-    void overwrite(int pos, const char *, int n = -1);
+    void insert(int pos, const char *, int l);
+    void overwrite(int pos, const char *, int l);
     void append(char, int n = 1);
     void del(int pos,int l = 1);
     int length();
     void setLength(int l);
-    void truncate(int l);
 
-    void append(TextLine *, int pos = 0);
-    void copy(TextLine *);
-    void insEnd(TextLine *, int pos);
+    void wrap(TextLine *nextLine, int pos);
+    void unWrap(TextLine *nextLine, int pos);
 
     void removeSpaces();
     int firstChar();
@@ -53,11 +50,14 @@ class TextLine {
     int numSelected();
     bool isSelected(int pos);
     bool isSelected();
-    int findSelected(bool sel, int pos);
+
+    int findSelected(int pos);
+    int findUnSelected(int pos);
+    int findRevSelected(int pos);
+    int findRevUnSelected(int pos);
 
     int cursorX(int pos, int tabChars);
 
-//    int find(const char *searchFor, int pos);
     void markFound(int pos, int l);
     void unmarkFound();
 
@@ -89,7 +89,32 @@ class Attribute {
     QFontMetrics fm;
 };
 
-typedef QList<TextLine> TextContents;
+class KWAction {
+  public:
+    enum Action {replace, wordWrap, wordUnWrap, newLine, delLine,
+      insLine, killLine};//, doubleLine, removeLine};
+
+    KWAction(Action, PointStruc &aCursor);
+    ~KWAction();
+    void setData(int aLen, const char *aText, int aTextLen);
+    Action action;
+    PointStruc cursor;
+    int len;
+    const char *text;
+    int textLen;
+    KWAction *next;
+};
+
+class KWActionGroup {
+  public:
+    KWActionGroup(PointStruc &aStart);
+    ~KWActionGroup();
+    void insertAction(KWAction *);
+
+    PointStruc start;
+    PointStruc end;
+    KWAction *action;
+};
 
 class KWriteDoc : QObject {
     Q_OBJECT
@@ -99,10 +124,10 @@ class KWriteDoc : QObject {
     KWriteDoc();
     ~KWriteDoc();
 
-    int numLines() const;
+    int lastLine() const;
     TextLine *textLine(int line);
     void tagLines(int start, int end);
-//    void tagAll();
+    void tagAll();
     void readSessionConfig(KConfig *);
     void writeSessionConfig(KConfig *);
   protected:
@@ -111,15 +136,16 @@ class KWriteDoc : QObject {
 
     int currentColumn(PointStruc &cursor);
 
-    void insert(VConfig &, const char *);
-    void insertFile(VConfig &, QIODevice &);
+    void insert(KWriteView *, VConfig &, const char *);
+    void insertFile(KWriteView *, VConfig &, QIODevice &);
+    void loadFile(QIODevice &);
     void writeFile(QIODevice &);
 
-    void insertChar(VConfig &, char);
-    void newLine(VConfig &);
-    void killLine(VConfig &);
-    void backspace(VConfig &);
-    void del(VConfig &);
+    void insertChar(KWriteView *, VConfig &, char);
+    void newLine(KWriteView *, VConfig &);
+    void killLine(KWriteView *, VConfig &);
+    void backspace(KWriteView *, VConfig &);
+    void del(KWriteView *, VConfig &);
 
 
   protected slots:
@@ -129,10 +155,10 @@ class KWriteDoc : QObject {
     void updateFontData();
     void setHighlight(Highlight *);
     void setTabWidth(int);
-    void update(VConfig &);
+//    void update(VConfig &);
     void updateLines(int flags, int startLine, int endLine);
     void updateMaxLength(TextLine *);
-    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
+//    void updateCursors(PointStruc &start, PointStruc &end, bool insert = true);
     void updateViews(int flags = 0);
 
     int textLength(int line);
@@ -144,38 +170,59 @@ class KWriteDoc : QObject {
     int textWidth();
     int textHeight();
 
- void toggleRect(int, int, int, int);
- void setLine(int, int);
+    void toggleRect(int, int, int, int);
     void selectTo(PointStruc &start, PointStruc &end, int flags);
     void clear();
     void copy(int flags);
-    void paste(VConfig &);
-    void cut(int flags);
+    void paste(KWriteView *,VConfig &);
+    void cut(KWriteView *, VConfig &);
     void selectAll();
     void deselectAll();
     void invertSelection();
 
     QString markedText(int flags);
-    void delMarkedText(int flags);
+    void delMarkedText(KWriteView *, VConfig &);
 
     QColor &cursorCol(int x, int y);
 //    void paintTextLine(QPainter &, int line, int xPos, int xStart, int xEnd, int yPos);
     void paintTextLine(QPainter &, int line, int xStart, int xEnd);
 
     void setModified(bool);
-    bool isModified();
+//    bool isModified();
     bool isLastView(int numViews);
 
     void setFileName(const char *);
     bool hasFileName();
     const char *fileName();
 
-    int doSearch(const char *searchFor, int flags, PointStruc &cursor);
-    void replace(PointStruc &cursor, int slen, const char *replaceWith, int flags);
+    bool doSearch(PointStruc &cursor, const char *searchFor, int flags);
     void unmarkFound();
+    void markFound(PointStruc &cursor, int len);
 
+    void tagLine(int line);
+    void insLine(int line);
+    void delLine(int line);
+    void optimizeSelection();
+    
+    void doAction(KWAction *);
+    const char *doReplace(KWAction *);
+    void doWordWrap(KWAction *);
+    void doWordUnWrap(KWAction *);
+    void doNewLine(KWAction *);
+    void doDelLine(KWAction *);
+    void doInsLine(KWAction *);
+    void doKillLine(KWAction *);
+    void newUndo();
+    void recordStart(PointStruc &);
+    void recordAction(KWAction::Action, PointStruc &);
+    void recordReplace(PointStruc &, int len, const
+      char *text = 0L, int textLen = 0);
+    void recordEnd(KWriteView *, VConfig &);
+    void doActionGroup(KWActionGroup *, int flags);
+    void undo(KWriteView *, int flags);
+    void redo(KWriteView *, int flags);
 
-    TextContents contents;
+    QList<TextLine> contents;
     Attribute **attribs;//[nAttribs];
     int fontHeight;
     int fontAscent;
@@ -186,7 +233,7 @@ class KWriteDoc : QObject {
     int tabChars;
     int tabWidth;
 
-    TextLine *bufferLine;
+//    TextLine *bufferLine;
 
     TextLine *longestLine;
     int maxLength;
@@ -202,6 +249,12 @@ class KWriteDoc : QObject {
     int foundLine;
 
     Highlight *highlight;
+
+    QList<KWActionGroup> undoList;
+    int currentUndo;
+    int undoState;
+    int tagStart;
+    int tagEnd;
 };
 
 #endif //KWDOC_H

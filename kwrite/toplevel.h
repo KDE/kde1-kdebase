@@ -7,21 +7,26 @@
 #include <qmenubar.h>
 #include <qapp.h>
 
-//#include <kfm.h>
 #include <kapp.h>
-//#include <kurl.h>
 #include <kconfig.h>
 #include <ktoolbar.h>
 #include <kstatusbar.h>
 
-#include "kwmainwindow.h"
+#include <ktmainwindow.h>
 
 #include "kwview.h"
 #include "kwdoc.h"
 
+class DocSaver : public QObject {
+    Q_OBJECT
+  public:
+    DocSaver() : QObject() {};
+  public slots:
+    void saveYourself();
+};
 
 
-class TopLevel : public KWMainWindow {
+class TopLevel : public KTMainWindow {
     Q_OBJECT
   public:
 
@@ -40,7 +45,9 @@ class TopLevel : public KWMainWindow {
 
     KWrite *kWrite;
     KWriteDoc *kWriteDoc;
-    int statusID, toolID, indentID;
+    int menuUndo, menuRedo;
+    int menuVertical, menuShowTB, menuShowSB;
+//    int statusID, toolID, verticalID, indentID;
     QPopupMenu *file, *edit, *options, *help;
     QPopupMenu *rightMouseButton, *colors, *recentPopup;
     QStrList recentFiles;
@@ -48,15 +55,7 @@ class TopLevel : public KWMainWindow {
     bool hideToolBar;
     bool hideStatusBar;
 
-    //config functions
-    void readConfig();
-    void writeConfig();
-    //session management
-    virtual void saveData(KConfig *);
-    void readProperties(KConfig*);
-    void saveProperties(KConfig*);
-  public:
-    void restore(KConfig *,int);
+    QTimer *statusbarTimer;
 
 //    void add_recent_file(const char*);
   public slots:
@@ -65,7 +64,7 @@ class TopLevel : public KWMainWindow {
     void closeWindow();
     void quitEditor();
 
-    void highlight();
+    void hlDlg();
     void newHl(int index);
 
     void toggleStatusBar();
@@ -76,9 +75,24 @@ class TopLevel : public KWMainWindow {
     void newCurPos();
     void newStatus();
     void statusMsg(const char *);
+    void timeout();
     void newCaption();
+    void newUndo();
 
     void dropAction(KDNDDropZone *);
+
+
+    //config file functions
+  public:
+    void readConfig();
+  public slots:
+    void writeConfig();
+    //session management
+  public:
+//    virtual void saveData(KConfig *);
+    void readProperties(KConfig*);
+    void restore(KConfig *,int);
+    void saveProperties(KConfig*);
 };
 
 #endif
