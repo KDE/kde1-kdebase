@@ -1520,7 +1520,7 @@ void Client::ontoDesktop(int new_desktop){
   if (new_desktop < 1 || new_desktop > manager->number_of_desktops)
     return;
 
-  if (trans != None && trans != qt_xrootwin()){
+  if (trans != None && trans != window && trans != qt_xrootwin()){
     // it is forbidden to move transient windows onto other
     // desktops than their parents
     Client* c = manager->getClient(trans);
