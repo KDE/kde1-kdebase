@@ -545,25 +545,28 @@ MyApp::MyApp(int &argc, char **argv , const QString& rAppName):KApplication(argc
   QObject::connect(operations, SIGNAL(activated(int)), this, SLOT(handleOperation(int)));
 
   
-  grabKey(XK_Escape,ControlMask);
-  grabKey(XK_Escape,Mod1Mask);
-  grabKey(XK_Escape,ControlMask | Mod1Mask);
-  grabKey(XK_F2, Mod1Mask);
-  grabKey(XK_F3, Mod1Mask);
-  grabKey(XK_F4, Mod1Mask);
+//   grabKey(XK_Escape,ControlMask);
+//   grabKey(XK_Escape,Mod1Mask);
+//   grabKey(XK_Escape,ControlMask | Mod1Mask);
+//   grabKey(XK_F1, Mod1Mask);
+//   grabKey(XK_F2, Mod1Mask);
+//   grabKey(XK_F3, Mod1Mask);
+//   grabKey(XK_F4, Mod1Mask);
   grabKey(XK_Tab, Mod1Mask);
   grabKey(XK_Tab, Mod1Mask | ShiftMask);
   grabKey(XK_Tab, ControlMask);
   grabKey(XK_Tab, ControlMask | ShiftMask);
 
-  grabKey(XK_F1, ControlMask);
-  grabKey(XK_F2, ControlMask);
-  grabKey(XK_F3, ControlMask);
-  grabKey(XK_F4, ControlMask);
-  grabKey(XK_F5, ControlMask);
-  grabKey(XK_F6, ControlMask);
-  grabKey(XK_F7, ControlMask);
-  grabKey(XK_F8, ControlMask);
+//   grabKey(XK_F1, ControlMask);
+//   grabKey(XK_F2, ControlMask);
+//   grabKey(XK_F3, ControlMask);
+//   grabKey(XK_F4, ControlMask);
+//   grabKey(XK_F5, ControlMask);
+//   grabKey(XK_F6, ControlMask);
+//   grabKey(XK_F7, ControlMask);
+//   grabKey(XK_F8, ControlMask);
+
+  createKeybindings();
 
   options.titlebarPixmapActive = new QPixmap;
   options.titlebarPixmapInactive = new QPixmap;
@@ -1206,6 +1209,7 @@ void MyApp::reConfigure(){
   getKApplication()->getConfig()->reparseConfiguration();
   readConfiguration();
   manager->readConfiguration();
+  keys->readSettings();
 }
 
 static void freeKeyboard(bool pass){
@@ -1222,33 +1226,32 @@ static bool control_grab = False;
 
 
 bool MyApp::handleKeyPress(XKeyEvent key){
-  static Cursor kill_cursor = 0;
   int kc = XKeycodeToKeysym(qt_xdisplay(), key.keycode, 0);
   int km = key.state & (ControlMask | Mod1Mask | ShiftMask);
 
 
-  // take care about minicli's grabbing 
-  if (minicli && minicli->isVisible()){
-      freeKeyboard(False);
-      if( (kc == XK_F4)  && (km == Mod1Mask) )
-	minicli->cleanup();
-      return False;
-  }
-  // take care about klogout's grabbing 
-  if (klogout && klogout->isVisible()){
-    freeKeyboard(False);
-    if( (kc == XK_F4)  && (km == Mod1Mask) )
-      klogout->cleanup();
-    return False;
-  }
+//   // take care about minicli's grabbing 
+//   if (minicli && minicli->isVisible()){
+//       freeKeyboard(False);
+//       if( (kc == XK_F4)  && (km == Mod1Mask) )
+// 	minicli->cleanup();
+//       return False;
+//   }
+//   // take care about klogout's grabbing 
+//   if (klogout && klogout->isVisible()){
+//     freeKeyboard(False);
+//     if( (kc == XK_F4)  && (km == Mod1Mask) )
+//       klogout->cleanup();
+//     return False;
+//   }
 
-  // take care about ktasks's grabbing 
-  if (ktask && ktask->isVisible()){
-    freeKeyboard(False);
-    if( (kc == XK_F4)  && (km == Mod1Mask) )
-      ktask->cleanup();
-    return False;
-  }
+//   // take care about ktasks's grabbing 
+//   if (ktask && ktask->isVisible()){
+//     freeKeyboard(False);
+//     if( (kc == XK_F4)  && (km == Mod1Mask) )
+//       ktask->cleanup();
+//     return False;
+//   }
 
 
   if (!control_grab){
@@ -1374,95 +1377,102 @@ bool MyApp::handleKeyPress(XKeyEvent key){
     return False;
   }
 
-  if( (kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) ){
-    freeKeyboard(False);
-    showTask();
-    return True;
-  }    
+//   if( (kc == XK_Escape)  && (km == Mod1Mask || km == ControlMask) ){
+//     freeKeyboard(False);
+//     showTask();
+//     return True;
+//   }    
   
-  if( (kc == XK_F2)  && (km == Mod1Mask) ){
-    freeKeyboard(False);
-    showMinicli();
-    return False;
-  }    
+//   if( (kc == XK_F1)  && (km == Mod1Mask) ){
+//     freeKeyboard(False);
+//     KWM::sendKWMCommand("kpanel:system");
+//     return False;
+//   }    
 
-  if( (kc == XK_F3)  && (km == Mod1Mask) ){
-    freeKeyboard(False);
-    if (manager->current())
-      manager->current()->showOperations();
-    return False;
-  }
+//   if( (kc == XK_F2)  && (km == Mod1Mask) ){
+//     freeKeyboard(False);
+//     showMinicli();
+//     return False;
+//   }    
 
-  if( (kc == XK_F4)  && (km == Mod1Mask) ){
-    freeKeyboard(False);
-    if (manager->current())
-      manager->current()->closeClicked();
-    return False;
-  }    
 
-  if( (kc == XK_F1)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(1);
-    return False;
-  }
-  if( (kc == XK_F2)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(2);
-    return False;
-  }
-  if( (kc == XK_F3)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(3);
-    return False;
-  }
-  if( (kc == XK_F4)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(4);
-    return False;
-  }
-  if( (kc == XK_F5)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(5);
-    return False;
-  }
-  if( (kc == XK_F6)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(6);
-    return False;
-  }
-  if( (kc == XK_F7)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(7);
-    return False;
-  }
-  if( (kc == XK_F8)  && (km == ControlMask) ){
-    freeKeyboard(False);
-    manager->switchDesktop(8);
-    return False;
-  }
+//   if( (kc == XK_F3)  && (km == Mod1Mask) ){
+//     freeKeyboard(False);
+//     if (manager->current())
+//       manager->current()->showOperations();
+//     return False;
+//   }
+
+//   if( (kc == XK_F4)  && (km == Mod1Mask) ){
+//     freeKeyboard(False);
+//     if (manager->current())
+//       manager->current()->closeClicked();
+//     return False;
+//   }    
+
+//   if( (kc == XK_F1)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(1);
+//     return False;
+//   }
+//   if( (kc == XK_F2)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(2);
+//     return False;
+//   }
+//   if( (kc == XK_F3)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(3);
+//     return False;
+//   }
+//   if( (kc == XK_F4)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(4);
+//     return False;
+//   }
+//   if( (kc == XK_F5)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(5);
+//     return False;
+//   }
+//   if( (kc == XK_F6)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(6);
+//     return False;
+//   }
+//   if( (kc == XK_F7)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(7);
+//     return False;
+//   }
+//   if( (kc == XK_F8)  && (km == ControlMask) ){
+//     freeKeyboard(False);
+//     manager->switchDesktop(8);
+//     return False;
+//   }
 
 
   
-  if( (kc == XK_Escape)  && (km == (Mod1Mask | ControlMask)) ){
-    freeKeyboard(False);
-    if (!kill_cursor)
-      kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
-    if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
-		     ButtonPressMask | ButtonReleaseMask |
-		     PointerMotionMask |
-		     EnterWindowMask | LeaveWindowMask,
-		     GrabModeAsync, GrabModeAsync, None, 
-		     kill_cursor, CurrentTime) == GrabSuccess){ 
-      XGrabKeyboard(qt_xdisplay(),
-		    qt_xrootwin(), False,
-		    GrabModeAsync, GrabModeAsync,
-		    CurrentTime);
-      killSelect();
-      XUngrabKeyboard(qt_xdisplay(), CurrentTime);
-      XUngrabPointer(qt_xdisplay(), CurrentTime);
-    }
-    return False;
-  }    
+//   if( (kc == XK_Escape)  && (km == (Mod1Mask | ControlMask)) ){
+//     freeKeyboard(False);
+//     if (!kill_cursor)
+//       kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
+//     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+// 		     ButtonPressMask | ButtonReleaseMask |
+// 		     PointerMotionMask |
+// 		     EnterWindowMask | LeaveWindowMask,
+// 		     GrabModeAsync, GrabModeAsync, None, 
+// 		     kill_cursor, CurrentTime) == GrabSuccess){ 
+//       XGrabKeyboard(qt_xdisplay(),
+// 		    qt_xrootwin(), False,
+// 		    GrabModeAsync, GrabModeAsync,
+// 		    CurrentTime);
+//       killSelect();
+//       XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+//       XUngrabPointer(qt_xdisplay(), CurrentTime);
+//     }
+//     return False;
+//   }    
   
   
   freeKeyboard(False);
@@ -1512,6 +1522,151 @@ void  MyApp::timerEvent( QTimerEvent * ){
     manager->current()->animateTitlebar();
 }
 
+ void MyApp::createKeybindings(){
+  keys = new KGlobalAccel();
+  #include "kwmbindings.cpp"
+  keys->connectItem( "Task manager", this, SLOT( slotTaskManager() ) );
+  keys->connectItem( "Window kill mode", this, SLOT( slotWindowKillMode() ) );
+  keys->connectItem( "Execute command", this, SLOT( slotExecuteCommand() ) );
+  keys->connectItem( "Pop-up window operations menu", this, SLOT( slotWindowOperations() ) );
+  keys->connectItem( "Raise window", this, SLOT( slotRaise() ) );
+  keys->connectItem( "Close window", this, SLOT( slotCloseWindow() ) );
+  keys->connectItem( "Iconify window", this, SLOT( slotIconifyWindow() ) );
+  keys->connectItem( "Resize window", this, SLOT( slotResizeWindow() ));
+  keys->connectItem( "Move window", this, SLOT( slotMoveWindow() ) );
+  keys->connectItem( "Toggle window sticky", this, SLOT( slotToggleWindowSticky() ) );
+  keys->connectItem( "Pop-up system menu", this, SLOT( slotKMenu() ) );
+
+
+  keys->connectItem( "Switch one desktop to the right", this, SLOT( slotSwitchOneDesktopRight() ) );
+  keys->connectItem( "Switch one desktop to the left", this, SLOT( slotSwitchOneDesktopRight() ) );
+  keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
+  keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
+
+  keys->connectItem( "Switch one desktop to the right", this, SLOT( slotSwitchOneDesktopRight() ) );
+  keys->connectItem( "Switch one desktop to the left", this, SLOT( slotSwitchOneDesktopRight() ) );
+  keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
+  keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
+  
+  keys->connectItem( "Switch to first desktop", this, SLOT( slotSwitchDesktop1() ));
+  keys->connectItem( "Switch to second desktop", this, SLOT( slotSwitchDesktop2() ));
+  keys->connectItem( "Switch to third desktop", this, SLOT( slotSwitchDesktop3() ));
+  keys->connectItem( "Switch to fourth desktop", this, SLOT( slotSwitchDesktop4() ));
+  keys->connectItem( "Switch to fifth desktop", this, SLOT( slotSwitchDesktop5() ));
+  keys->connectItem( "Switch to sixth desktop", this, SLOT( slotSwitchDesktop6() ));
+  keys->connectItem( "Switch to seventh desktop", this, SLOT( slotSwitchDesktop7() ));
+  keys->connectItem( "Switch to eight desktop", this, SLOT( slotSwitchDesktop8() ));
+
+  keys->readSettings();
+}
+
+// keybinding slots
+
+void MyApp::slotTaskManager(){
+  showTask();
+}
+void MyApp::slotWindowKillMode(){
+  static Cursor kill_cursor = 0;
+  if (!kill_cursor)
+       kill_cursor = XCreateFontCursor(qt_xdisplay(), XC_pirate);
+     if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+		      ButtonPressMask | ButtonReleaseMask |
+		      PointerMotionMask |
+		      EnterWindowMask | LeaveWindowMask,
+		      GrabModeAsync, GrabModeAsync, None, 
+		      kill_cursor, CurrentTime) == GrabSuccess){ 
+       XGrabKeyboard(qt_xdisplay(),
+		     qt_xrootwin(), False,
+		     GrabModeAsync, GrabModeAsync,
+		     CurrentTime);
+       killSelect();
+       XUngrabKeyboard(qt_xdisplay(), CurrentTime);
+       XUngrabPointer(qt_xdisplay(), CurrentTime);
+     }
+}
+
+void MyApp::slotExecuteCommand(){
+  showMinicli();
+}
+void MyApp::slotWindowOperations(){
+  if (manager->current())
+    manager->current()->showOperations();
+}
+void MyApp::slotRaise(){
+  if (manager->current())
+    switchActivateClient(manager->current());
+}
+void MyApp::slotCloseWindow(){
+  if (minicli && minicli->isVisible()){
+    minicli->cleanup(); 
+    return;
+  }
+  if (klogout && klogout->isVisible()){
+    klogout->cleanup();
+    return;
+  }
+  if (ktask && ktask->isVisible()){
+    ktask->cleanup();
+    return;
+  }
+  doOperation(OP_CLOSE);
+}
+void MyApp::slotIconifyWindow(){
+  doOperation(OP_ICONIFY);
+}
+void MyApp::slotResizeWindow(){
+  doOperation(OP_RESIZE);
+}
+void MyApp::slotMoveWindow(){
+  doOperation(OP_MOVE);
+}
+void MyApp::slotToggleWindowSticky(){
+  doOperation(OP_STICKY);
+}
+
+void MyApp::slotKMenu(){
+  KWM::sendKWMCommand("kpanel:system");
+}
+
+void MyApp::slotSwitchOneDesktopLeft(){
+  manager->moveDesktopInDirection(Manager::Left);
+}
+void MyApp::slotSwitchOneDesktopRight(){
+  manager->moveDesktopInDirection(Manager::Right);
+}
+void MyApp::slotSwitchOneDesktopUp(){
+  manager->moveDesktopInDirection(Manager::Up);
+}
+void MyApp::slotSwitchOneDesktopDown(){
+  manager->moveDesktopInDirection(Manager::Down);
+}
+
+void MyApp::slotSwitchDesktop1(){
+  manager->switchDesktop(1);
+}
+void MyApp::slotSwitchDesktop2(){
+  manager->switchDesktop(2);
+}
+void MyApp::slotSwitchDesktop3(){
+  manager->switchDesktop(3);
+}
+void MyApp::slotSwitchDesktop4(){
+  manager->switchDesktop(4);
+}
+void MyApp::slotSwitchDesktop5(){
+  manager->switchDesktop(5);
+}
+void MyApp::slotSwitchDesktop6(){
+  manager->switchDesktop(6);
+}
+void MyApp::slotSwitchDesktop7(){
+  manager->switchDesktop(7);
+}
+void MyApp::slotSwitchDesktop8(){
+  manager->switchDesktop(8);
+}
+
+
 
 bool MyApp::eventFilter( QObject *obj, QEvent * ev){
     static QPoint tmp_point(-10, -10);
@@ -1552,6 +1707,9 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 
 
 bool MyApp::x11EventFilter( XEvent * ev){
+  if (keys->x11EventFilter(ev))
+      return true;
+
   // do some KApp client messages.
   // we cannot call the KApplication::x11EventFilter always,
   // since the drag'n'drop protocoll will let us segfault.
@@ -1728,6 +1886,10 @@ void MyApp::handleDesktopPopup(int itemId){
     Client::operation_client->ontoDesktop(itemId);
 }
 
+void MyApp::doOperation(int itemId){
+  if (manager->current())
+    manager->current()->handleOperation(itemId);
+}
 
 
 

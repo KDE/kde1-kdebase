@@ -11,8 +11,8 @@
 #include <qpopmenu.h>
 #include <kapp.h>
 #include <qcolor.h>
+#include <kglobalaccel.h>
 #include "client.h"
-
 
 class MyApp:public KApplication {
   Q_OBJECT
@@ -58,6 +58,36 @@ public:
   // reread the kwm configuration files
   void reConfigure();
 
+  // the overall functions for the configurable keybindings
+  void createKeybindings();
+  public slots:
+
+  void slotTaskManager();
+  void slotWindowKillMode();
+  void slotExecuteCommand();
+  void slotWindowOperations();
+  void slotRaise();
+  void slotCloseWindow();
+  void slotIconifyWindow();
+  void slotResizeWindow();
+  void slotMoveWindow();
+  void slotToggleWindowSticky();
+  void slotKMenu();
+
+  void slotSwitchOneDesktopLeft();
+  void slotSwitchOneDesktopRight();
+  void slotSwitchOneDesktopUp();
+  void slotSwitchOneDesktopDown();
+
+  void slotSwitchDesktop1();
+  void slotSwitchDesktop2();
+  void slotSwitchDesktop3();
+  void slotSwitchDesktop4();
+  void slotSwitchDesktop5();
+  void slotSwitchDesktop6();
+  void slotSwitchDesktop7();
+  void slotSwitchDesktop8();
+
 protected:
   bool eventFilter( QObject *, QEvent * );
   void  timerEvent( QTimerEvent * );
@@ -67,11 +97,15 @@ protected:
   void handleOperation(int itemId);
   // react on the desktops QPopupMenu
   void handleDesktopPopup(int itemId);
+  // react on key events for the current client
+  void doOperation(int itemId);
   
 private:   
   void readConfiguration();
   void writeConfiguration();
-  
+
+  KGlobalAccel* keys;
+
   // handle key press events of kwm´s global key grabs
   bool handleKeyPress(XKeyEvent);
   // handle key release events of kwm´s global key grabs

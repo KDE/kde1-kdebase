@@ -10,9 +10,9 @@ SUBDIRS 	= pics
 
 #######	Files
 
-kwm_SOURCES	= client.C manager.C main.C minicli.C warning.C drag.C logout.C taskmgr.C kURLcompletion.cpp gradientFill.C
-BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc warning.moc logout.moc taskmgr.moc kURLcompletion.moc
-noinst_HEADERS = client.h options.h manager.h main.h gradientFill.h minicli.h logout.h taskmgr.h warning.h version.h kURLcompletion.h
+kwm_SOURCES	= client.C manager.C main.C minicli.C warning.C drag.C logout.C taskmgr.C kURLcompletion.cpp gradientFill.C 
+BUILT_SOURCES	= client.moc manager.moc main.moc minicli.moc warning.moc logout.moc taskmgr.moc kURLcompletion.moc 
+noinst_HEADERS = client.h options.h manager.h main.h gradientFill.h minicli.h logout.h taskmgr.h warning.h version.h kURLcompletion.h 
 
 EXTRA_DIST = kwm.xpm mini-kwm.xpm
 
@@ -47,6 +47,7 @@ taskmgr.moc: taskmgr.h
 kURLcompletion.cpp:kURLcompletion.moc
 kURLcompletion.moc: kURLcompletion.h
 	$(MOC) kURLcompletion.h -o kURLcompletion.moc
+
 
 messages:
 	$(XGETTEXT) -C -ktranslate -x ../../kdelibs/po/kde.pot $(kwm_SOURCES) && mv messages.po ../po/kwm.pot

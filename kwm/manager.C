@@ -961,7 +961,7 @@ void Manager::leaveNotify(XCrossingEvent * e){
 
 // switch to another virtual desktop according to the specified direction.
 // Useful for keyboard shortcuts or electric borders.
-void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
+void Manager::moveDesktopInDirection(DesktopDirection d, Client* c, bool move_pointer){
 
   int nd;
 
@@ -979,6 +979,8 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
+    if (!move_pointer)
+      return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QCursor::pos().x(), QApplication::desktop()->height()-3);
     }
@@ -1004,6 +1006,8 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
+    if (!move_pointer)
+      return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QCursor::pos().x(),3);
     }
@@ -1028,6 +1032,8 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
+    if (!move_pointer)
+      return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(QApplication::desktop()->width()-3, QCursor::pos().y());
     }
@@ -1052,6 +1058,8 @@ void Manager::moveDesktopInDirection(DesktopDirection d, Client* c){
     }
     switchDesktop(nd);
 
+    if (!move_pointer)
+      return;
     if(options.ElectricBorderPointerWarp == FULL_WARP){
       QCursor::setPos(3,QCursor::pos().y());
     }

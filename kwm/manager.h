@@ -159,7 +159,7 @@ public:
   // switch to another virtual desktop according to the specified direction.
   // Useful for keyboard shortcuts or electric borders.
   enum DesktopDirection {Up, Down, Left, Right};
-  void moveDesktopInDirection(DesktopDirection d, Client* c = 0);
+  void moveDesktopInDirection(DesktopDirection d, Client* c = 0, bool move_pointer = true);
 
   // returns the number of the current desktop
   int currentDesktop(){
