@@ -71,14 +71,8 @@ int main( int argc, char *argv[] ){
 
 	char *kdedir = a.kdedir().data();
 
-	if ( !kdedir )
-	{
-		fprintf( stderr, "$KDEDIR not set\n" );
-		exit( 1 );
-	}
-
-	sprintf( PICS_PATH, "%s/lib/pics", kdedir );
-	sprintf( DOCS_PATH, "%s/doc/HTML/kfontmanager", kdedir );
+	sprintf( PICS_PATH, "%s/share/apps/kfontmanager/pics", kdedir );
+	sprintf( DOCS_PATH, "%s/share/doc/HTML/kfontmanager", kdedir );
 	
 	setup();
 	return 1;

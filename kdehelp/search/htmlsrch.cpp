@@ -6,6 +6,7 @@
 #include <qtstream.h>
 #include <qstring.h>
 #include <qlist.h>
+#include <kapp.h>
 
 class Match
 {
@@ -182,7 +183,7 @@ bool searchHTML( const char *search, ostream &stream )
 		query[i] = strtok( NULL, " " );
 	}
 
-	char *kdedir = getenv( "KDEDIR" );
+	char *kdedir = kapp->kdedir().data();
 
 	if ( i && kdedir )
 	{

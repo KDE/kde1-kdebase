@@ -1,5 +1,6 @@
 #include <kmisc.h>
 #include "cgi.h"
+#include <kapp.h>
 
 KProtocolCGI::KProtocolCGI()
 {
@@ -83,8 +84,7 @@ int KProtocolCGI::Open( KURL *url, int mode )
     printf( "Script: %s\n", script.data() );
     printf( "Query: %s\n", query.data() );
 
-    QString kdedir = getenv( "KDEDIR" );
-    QString command = kdedir + script;
+    QString command =  kapp->kdedir() + script;
     
     printf("EXEC '%s'\n",command.data());
     
