@@ -737,7 +737,7 @@ void KFMDirTreeItem::setOpen( bool _open )
     for ( s = sort_list.first(); s != 0L; s = sort_list.next() )
     {
 	QString fname ( u.path() );
-	fname += "/";
+	if (fname.right(1) != "/") fname += "/";
 	fname += s;
 	 
 	if (stat( fname, &buff )) { warning("Could not stat %s",fname.data()); }
