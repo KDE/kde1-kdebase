@@ -83,8 +83,8 @@ Click on a name to select the corresponding desktop to
 be configured.   
 
 If you wish to configure a common background for
-all Desktops, check  the <bf>Common Background</bf>
-box.
+all Desktops, select  the <bf>Common Background</bf>
+option.
 
 <sect1>Preview Monitor
 
@@ -165,7 +165,7 @@ which causes a random sequence
 of backgrounds to be displayed, changing after a specified time
 interval, or when you click on the  Display icon docked in the panel.
 
-  To configure the random sequence of backgrounds:
+ To configure the random sequence of backgrounds:
 <itemize>
 <item> 
  Click on the <bf>Setup</bf> button to open the
@@ -183,13 +183,13 @@ the ``<bf>Desktops</bf>''  box below.
 The <bf>Timer Delay in seconds </bf> box allows you to set
 the time interval  between background changes.  
 
-<item>The sequence
-will be sampled randomly, unless you check the
-``<bf>in order</bf>'' box, in which case the sequence
-will be displayed in order.
+<item>Select the ``<bf>in order</bf>'' option to display
+the sequence of backgrounds in order.  If this option is not
+active, the sequence will be sampled randomly.
+
 <item> The ``<bf>Desktops</bf>'' box contains the user-specified
-sequence of  backgrounds that will be sampled if   ``<bf>pick files
-from directory</bf>'' is <it>not</it> checked.
+sequence of  backgrounds that will be sampled if the ``<bf>pick files
+from directory</bf>'' option is <it>not</it> active.
 <itemize>
 <item>
 To add an entry to this sequence, 
@@ -257,9 +257,9 @@ what action to take if the cursor is left in one of the corners for more than
 5 seconds.  The options are:
 
 <itemize>
-<item>Ignore - take no action
-<item>Save - invoke the screen saver
-<item>Lock - lock the screen
+<item><bf>Ignore</bf> - take no action
+<item><bf>Save Screen</bf> - invoke the screen saver
+<item><bf>Lock Screen</bf> - lock the screen
 </itemize>
 
 To select an option, place the mouse over a grey box, and right-click;
@@ -299,10 +299,12 @@ is invoked.
 
 <p>
 
-Checking <bf>Requires Password</bf> will make the screen saver prompt you for
+Selecting the <bf>Requires Password</bf> option
+will make the screen saver prompt you for
 your password before restoring the screen.
 <p>
-Check <bf>Show password as stars</bf> for the screensaver password box
+Select the  <bf>Show password as stars</bf> option
+for the screensaver password box
 to show the number of characters typed.
 
 
@@ -470,14 +472,17 @@ The Style dialog allows three Desktop style choices to be made, and
 the icon style (``normal'' or ``large'') to be selected.
 
 <itemize>
-<item> <bf>Draw widgets in the  style of Windows 95</bf>.  This allows 
-This allows you to switch between a Motif look or a Windows 95 look for the K
-Desktop Environment.  For example, the widget that lets these
-choices be made is a button in Motif style, and a check box in
+<item> <bf>Draw widgets in the  style of Windows 95</bf>.  
+Select this option
+for a Windows95/98(tm) style for the KDE Desktop widgets.
+If this option is not selected, they will have a Motif(tm)
+style.
+For example, the widget  that chooses this option
+is a button in Motif style, and a check box in
 Windows 95 style.
 
 <item> <bf>Menubar on top of the screen in the style of MacOS</bf>.
-This selection emulates the MacOS style by placing a menubar for
+This option emulates the MacOS style by placing a menubar for
 the currently-active application at the top of the screen.
  
 
