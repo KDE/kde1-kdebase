@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-29 14:46+0200\n"
+"POT-Creation-Date: 1998-09-10 14:40+0200\n"
 "PO-Revision-Date:1998-02-27 10:13+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: configlist.cpp:119
 msgid "Unknown module: "
-msgstr "Ukjent modul"
+msgstr "Ukjent modul: "
 
 #: main.cpp:46 mainwidget.cpp:19
 msgid "KDE Control Center"
@@ -42,3 +42,31 @@ msgstr ""
 "\n"
 "Takk til:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
+
+#: mainwidget.cpp:44
+msgid "System:"
+msgstr "System:"
+
+#: mainwidget.cpp:47
+msgid "User: "
+msgstr "Bruker: "
+
+#: mainwidget.cpp:53
+msgid "Hostname: "
+msgstr "Vertsnavn: "
+
+#: mainwidget.cpp:61
+msgid "System: "
+msgstr "System: "
+
+#: mainwidget.cpp:68
+msgid "Release: "
+msgstr "Utgivelse: "
+
+#: mainwidget.cpp:76
+msgid "Version: "
+msgstr "Versjon: "
+
+#: mainwidget.cpp:83
+msgid "Machine: "
+msgstr "Maskin: "

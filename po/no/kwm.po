@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-06-18 22:21+0200\n"
+"POT-Creation-Date: 1998-09-10 15:49+0200\n"
 "PO-Revision-Date: 1998-02-26 21:17:+0100\n"
 "Last-Translator: Svein Olav Aasen <soaasen@online.no / svein.aasen@caa.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -25,55 +25,55 @@ msgstr ""
 msgid "kwm: failure during initialisation; aborting\n"
 msgstr "kwm: feil ved oppstart; avbryter\n"
 
-#: main.C:470
+#: main.C:481
 msgid "Preparing session ... "
 msgstr "Forbereder sesjon ... "
 
-#: main.C:489
+#: main.C:502
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: main.C:496
+#: main.C:509
 msgid "Usage: "
 msgstr "Bruk: "
 
-#: main.C:507
+#: main.C:520
 msgid "&Maximize"
 msgstr "&Maksimer"
 
-#: main.C:508
+#: main.C:521
 msgid "&Restore"
 msgstr "&Opprett på nytt"
 
-#: main.C:509
+#: main.C:522
 msgid "&Iconify"
 msgstr "M&inimer"
 
-#: main.C:510
+#: main.C:523
 msgid "&DeIconify"
 msgstr "&Gjør om minimer"
 
-#: main.C:511
+#: main.C:524
 msgid "&Sticky"
 msgstr "&Sett fast"
 
-#: main.C:512
+#: main.C:525
 msgid "&UnSticky"
 msgstr "Ikke fastsatt"
 
-#: main.C:513
+#: main.C:526
 msgid "Mo&ve"
 msgstr "&Flytt"
 
-#: main.C:514
+#: main.C:527
 msgid "Resi&ze"
 msgstr "&Endre størrelse"
 
-#: main.C:516
+#: main.C:529
 msgid "&To desktop"
 msgstr "&Til skrivebord"
 
-#: main.C:518
+#: main.C:531
 msgid "&Onto current desktop"
 msgstr "Til skrivebord i bruk"
 
@@ -121,11 +121,11 @@ msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
 msgstr "Noen pixmaps er ubrukelige: ShapeMode ikke iverksatt\n"
 
-#: main.C:1311
+#: main.C:1377
 msgid "*** No Tasks ***"
 msgstr "*** Ingen oppgaver ***"
 
-#: minicli.C:116
+#: minicli.C:119
 msgid "Command:"
 msgstr "Kommando"
 
@@ -175,3 +175,107 @@ msgstr "Skift til"
 #: taskmgr.C:121
 msgid "Current session"
 msgstr "Nåværende arbeidsperiode"
+
+#: kwmbindings.cpp:1
+msgid "Task manager"
+msgstr ""
+
+#: kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr ""
+
+#: kwmbindings.cpp:3
+msgid "Execute command"
+msgstr ""
+
+#: kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr ""
+
+#: kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr ""
+
+#: kwmbindings.cpp:7
+msgid "Window raise"
+msgstr ""
+
+#: kwmbindings.cpp:8
+msgid "Window lower"
+msgstr ""
+
+#: kwmbindings.cpp:9
+msgid "Window close"
+msgstr ""
+
+#: kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr ""
+
+#: kwmbindings.cpp:11
+msgid "Window resize"
+msgstr ""
+
+#: kwmbindings.cpp:12
+msgid "Window move"
+msgstr ""
+
+#: kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr ""
+
+#: kwmbindings.cpp:15
+#, fuzzy
+msgid "Switch to desktop 1"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:16
+#, fuzzy
+msgid "Switch to desktop 2"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:17
+#, fuzzy
+msgid "Switch to desktop 3"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:18
+#, fuzzy
+msgid "Switch to desktop 4"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:19
+#, fuzzy
+msgid "Switch to desktop 5"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:20
+#, fuzzy
+msgid "Switch to desktop 6"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:21
+#, fuzzy
+msgid "Switch to desktop 7"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:22
+#, fuzzy
+msgid "Switch to desktop 8"
+msgstr "Skift til"
+
+#: kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr ""
+
+#: kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr ""
+
+#: kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr ""
+
+#: kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr ""
