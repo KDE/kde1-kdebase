@@ -8,6 +8,7 @@ Protocols=
 MimeType=
 Comment=
 Comment[pl]=Przegl±darka plików Adobe Portable Document Format
+Comment[fi]=Adobe Acrobat PDF dokumenttien näyttäjä
 Exec=acroread
 Icon=gv.xpm
 TerminalOptions=

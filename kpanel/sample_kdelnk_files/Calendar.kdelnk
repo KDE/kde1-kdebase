@@ -6,5 +6,6 @@ SwallowExec=xclock -bg grey76 -geometry 50x50+10000+10000
 SwallowTitle=xclock
 Exec=xcalendar
 Comment=Your personal secretary
+Comment[fi]=Oma sihteerisi
 
 

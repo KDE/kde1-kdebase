@@ -2,6 +2,8 @@
 Name=Trash
 Name[de]=Mülleimer
 Name[pl]=¦mietnik
+Name[fi]=Roskakori
 Comment=Contains removed files 
 Comment[de]=Enthält die gelöschten Dateien
 Comment[pl]=Pliki przeznaczone do skasowania
+Comment[fi]=Sisältää poistetut tiedostot

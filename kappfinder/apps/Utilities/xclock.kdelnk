@@ -13,4 +13,5 @@ Type=Application
 Comment=The X clock
 Comment[de]=Die X Uhr
 Comment[pl]=X Zegar
+Comment[fi]=X Kello
 Terminal=0

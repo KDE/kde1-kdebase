@@ -2,4 +2,6 @@
 Name=Autostart
 Name[de]=Autostart
 Name[pl]=Autostart
+Name[fi]=Käynnistä
 Comment[pl]=Programy uruchamiane przy starcie KDE
+Comment[fi]=Aloitettaessa käynnistettävät ohjelmat

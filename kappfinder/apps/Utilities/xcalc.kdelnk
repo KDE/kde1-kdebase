@@ -9,6 +9,7 @@ MimeType=
 Comment=X Calculator
 Comment[de]=X Taschenrechner
 Comment[pl]=X Kalkulator
+Comment[fi]=X Laskin
 Exec=xcalc
 Icon=xcalc.xpm
 TerminalOptions=

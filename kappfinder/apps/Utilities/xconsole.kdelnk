@@ -9,6 +9,7 @@ MimeType=
 Comment=X Console viewer
 Comment[de]=X Konsole
 Comment[pl]=X Konsola
+Comment[fi]=X Konsoli
 Exec=xconsole
 Icon=UNIX.xpm
 TerminalOptions=

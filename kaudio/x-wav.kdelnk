@@ -7,4 +7,5 @@ Patterns=*.wav;*.WAV;
 Comment=Digitial Audio (WAV)
 Comment[de]=Digitialsound (WAV)
 Comment[pl]=Digital Audio (WAV)
+Comment[fi]=Digitaali‰‰ni (WAV)
 DefaultApp=kmedia

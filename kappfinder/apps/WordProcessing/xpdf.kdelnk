@@ -9,6 +9,7 @@ MimeType=
 Comment=PDF Viewer
 Comment[de]=PDF Betrachter
 Comment[pl]=Przegl±darka PDF
+Comment[fi]=PDF Näyttäjä
 Exec=xpdf
 Icon=gv.xpm
 TerminalOptions=

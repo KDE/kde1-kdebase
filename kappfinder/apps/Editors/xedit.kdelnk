@@ -2,13 +2,15 @@
 [KDE Desktop Entry]
 WmCommand=
 BinaryPattern=
-Name=X Editor
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Editor
 Comment[pl]=X Editor
+Comment[fi]=X editori
+Name=X Editor
 Name[de]=X Editor
+Name[fi]=X Editori
 Exec=xedit
 Icon=edit.xpm
 TerminalOptions=

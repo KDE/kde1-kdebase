@@ -3,10 +3,12 @@
 BinaryPattern=
 Name=Background module
 Name[pl]=KWM T³o
+Name[fi]=KWM taustamoduli
 Protocols=
 MimeType=
 Comment=Manages the background texture
 Comment[pl]=Zarz±dza wy¶wietlaniem t³a
+Comment[fi]=Hallitsee taustakuvaa
 Exec=kbgndwm
 Icon=unknown.xpm
 TerminalOptions=

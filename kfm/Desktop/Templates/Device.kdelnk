@@ -9,3 +9,4 @@ FSType=Default
 Type=FSDevice
 Comment=File System Device
 Comment[pl]=Urz±dzenie
+Comment[fi]=Tiedostosysteemi

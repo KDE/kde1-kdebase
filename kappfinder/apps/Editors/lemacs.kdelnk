@@ -5,5 +5,7 @@ Icon=emacs.xpm
 Type=Application
 Name=LEmacs
 Name[de]=LEmacs
+Name[fi]=LEmacs
 Comment=Lucid Emacs
 Comment[pl]=Lucid Emacs
+Comment[fi]=Lucid Emacs editori

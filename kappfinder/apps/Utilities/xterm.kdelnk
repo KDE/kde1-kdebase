@@ -2,13 +2,15 @@
 [KDE Desktop Entry]
 WmCommand=
 BinaryPattern=
-Name=X Terminal
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Terminal
-Name[de]=X Terminal
 Comment[pl]=X Terminal
+Comment[fi]=X Terminaali
+Name=X Terminal
+Name[de]=X Terminal
+Name[fi]=X terminaali
 Exec=xterm
 Icon=kvt.xpm
 TerminalOptions=

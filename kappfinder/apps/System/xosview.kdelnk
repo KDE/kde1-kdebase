@@ -9,6 +9,7 @@ MimeType=
 Comment=System Monitor
 Comment[de]=Systemmonitor
 Comment[pl]=Monitor systemu
+Comment[fi]=Systeemimonitori
 Exec=xosview
 Icon=Information.xpm
 TerminalOptions=

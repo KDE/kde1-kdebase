@@ -2,13 +2,15 @@
 [KDE Desktop Entry]
 WmCommand=
 BinaryPattern=
-Name=X Emacs
 MiniIcon=
 Protocols=
 MimeType=
 Comment=X Emacs
 Comment[pl]=X Emacs
+Comment[fi]=X Emacs editori
+Name=X Emacs
 Name[de]=X Emacs
+Name[fi]=X Enacs
 Exec=xemacs
 Icon=emacs.xpm
 TerminalOptions=
