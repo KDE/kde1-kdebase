@@ -17,6 +17,8 @@
 #include <qmsgbox.h>
 #include <qlayout.h>
 #include <qlined.h> 
+#include <qbttngrp.h>
+#include <qradiobt.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -68,6 +70,8 @@ extern char *fg_string;
 
 extern int rstyle;
 
+extern int BackspaceSendsControlH;
+
 extern void kvt_set_fontnum(char *);
 extern void kvt_set_menubar(int);
 extern void kvt_set_scrollbar(int);
@@ -113,6 +117,12 @@ static int kvt_dimen;
 static const char* color_mode_name[] = {
   "ANSI",
   "Linux",
+  0
+};
+
+static const char* backspace_name[] = {
+  "Delete (^?)",
+  "Backspace (^H)",
   0
 };
 
@@ -216,34 +226,47 @@ bool MyApp::x11EventFilter( XEvent * ev){
 OptionDialog::OptionDialog(QWidget *parent, const char *name)
   : QDialog( parent, name, TRUE )
 {
-  QLabel *label_color, *label_class;
-  label_class = new QLabel(klocale->translate("Add characters to word class"), 
-			   this);
+  QLabel *label_color, *label_class, *label_backspace;
+  label_class = new QLabel(klocale->translate("Add characters to word class"), this);
   chars = new QLineEdit(this);
 
   label_color = new QLabel(klocale->translate("choose type of color-mode"), this);
   colormode = new QComboBox(this);
+
+  label_backspace = new QLabel(klocale->translate("The backspace key will send a"), this);
+  backspace = new QComboBox(this);
+  
   QPushButton *ok, *cancel;
   ok = new QPushButton( klocale->translate("Ok"), this );
   connect( ok, SIGNAL(clicked()), SLOT(accept()) );
   cancel = new QPushButton( klocale->translate("Cancel"), this );
   connect( cancel, SIGNAL(clicked()), SLOT(reject()) );
 
-  QBoxLayout *geom1, *geom2;
+  QBoxLayout *geom1, *geom3;
+  QGridLayout *geom2;
   geom1 = new QBoxLayout(this, QBoxLayout::TopToBottom, 4);
-  geom1->addWidget(label_color);
-  geom1->addWidget(colormode);
-  geom1->addWidget(label_class);
-  geom1->addWidget(chars);
-  geom2 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
-  geom1->addLayout(geom2);
-  geom2->addWidget(ok);
-  geom2->addStretch();
-  geom2->addWidget(cancel);
-  setGeometry(x(), y(), 300, 150);
+  geom2 = new QGridLayout(3, 2); 
+  geom1->addLayout(geom2, 3);
+  geom2->setColStretch(0,2);
+  geom2->setColStretch(1,1);
+  geom2->addWidget(label_color, 0, 0);
+  geom2->addWidget(colormode, 0, 1);
+  geom2->addWidget(label_class, 1, 0);
+  geom2->addWidget(chars, 1, 1);
+  geom2->addWidget(label_backspace, 2, 0);
+  geom2->addWidget(backspace, 2, 1);
+  geom3 = new QBoxLayout(QBoxLayout::LeftToRight, 4);
+  geom1->addLayout(geom3, 1);
+  geom3->addWidget(ok);
+  geom3->addStretch();
+  geom3->addWidget(cancel);
+  setGeometry(x(), y(), 400, 120);
   
   for (int i=0; color_mode_name[i]; i++) {
     colormode->insertItem(color_mode_name[i], i);
+  }
+  for (int i=0; backspace_name[i]; i++) {
+    backspace->insertItem(backspace_name[i], i);
   }
 }
 
@@ -342,17 +365,21 @@ kVt::kVt( QWidget *parent, const char *name )
       set_charclass("");
     }
 
+    /* if bacspace=BS then backspace sends a ^H otherwise it will send a ^? */
+    entry = kvtconfig->readEntry("backspace");
+    BackspaceSendsControlH = (entry && entry=="BS");
+
     // Commented out, since it causes segfaults at this
     // part of the code. (colormap not initialized)
-//     entry = kvtconfig->readEntry("colormode");
-//     if (entry) {
-//       if (entry == color_mode_name[COLOR_TYPE_ANSI])
-// 	init_color_mode(COLOR_TYPE_ANSI);
-//       if (entry == color_mode_name[COLOR_TYPE_Linux])
-// 	init_color_mode(COLOR_TYPE_Linux);      
-//     } else {
-//       init_color_mode(COLOR_TYPE_ANSI);
-//     }
+    //     entry = kvtconfig->readEntry("colormode");
+    //     if (entry) {
+    //       if (entry == color_mode_name[COLOR_TYPE_ANSI])
+    // 	init_color_mode(COLOR_TYPE_ANSI);
+    //       if (entry == color_mode_name[COLOR_TYPE_Linux])
+    // 	init_color_mode(COLOR_TYPE_Linux);      
+    //     } else {
+    //       init_color_mode(COLOR_TYPE_ANSI);
+    //     }
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
@@ -542,15 +569,15 @@ void kVt::resizeEvent( QResizeEvent * ev)
     frame->setGeometry(0, 0, width(), height());
   }
 
-   // a hack 
-//    if (setting_to_vt_window){
-//      if (frame->height()-4 != sizehints.height){
-//        resize(width(), height() + sizehints.height - frame->height() + 4);
-//        resize(width(), height() + sizehints.height - frame->height() + 4);
-//        return;
-//      }
-//    }
-
+  // a hack 
+  //    if (setting_to_vt_window){
+  //      if (frame->height()-4 != sizehints.height){
+  //        resize(width(), height() + sizehints.height - frame->height() + 4);
+  //        resize(width(), height() + sizehints.height - frame->height() + 4);
+  //        return;
+  //      }
+  //    }
+  
    if (scrollbar_visible) {
      switch (kvt_scrollbar){
      case kvt_right:
@@ -581,9 +608,9 @@ void kVt::resizeEvent( QResizeEvent * ev)
    }
    
    if (ev){
-    // redraw all
+     // redraw all
      // XClearWindow(display,vt_win);
-  //    scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+     //    scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
      //     screen_refresh();
   }
 }
@@ -625,11 +652,13 @@ void kVt::options_menu_activated( int item){
   case 7:
     m_optiondialog->colormode->setCurrentItem(get_color_mode());
     m_optiondialog->chars->setText(kvt_charclass);
+    m_optiondialog->backspace->setCurrentItem(BackspaceSendsControlH);
     if (m_optiondialog->exec()) {
       set_color_mode(m_optiondialog->colormode->currentItem());
       kvt_charclass = m_optiondialog->chars->text();
       set_charclass(kvt_charclass);
       scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+      BackspaceSendsControlH = m_optiondialog->backspace->currentItem();
     }
     break;
     
@@ -660,6 +689,8 @@ void kVt::options_menu_activated( int item){
       kvtconfig->writeEntry("charclass", kvt_charclass);
 
       kvtconfig->writeEntry("colormode", color_mode_name[get_color_mode()]);
+
+      kvtconfig->writeEntry("backspace", BackspaceSendsControlH ? "BS" : "DEL");
 
       kvtconfig->sync();
     }
@@ -915,7 +946,7 @@ int main(int argc, char **argv)
   set_geom_string(buffer);
   kvt_set_dimension(buffer);
   
-    // set the names
+  // set the names
   char* s;
   if ((s=strrchr(argv[0],'/'))!=NULL) 
     s++; 

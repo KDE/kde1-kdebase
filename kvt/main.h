@@ -92,6 +92,7 @@ class OptionDialog : public QDialog {
 public:
   QComboBox *colormode;
   QLineEdit *chars;
+  QComboBox *backspace;
 
   OptionDialog(QWidget *parent, const char *name );
 

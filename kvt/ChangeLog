@@ -1,3 +1,6 @@
+  - added user-configurable backspace (^H/^?)
+    (Jeroen van der Most <jvdmost@wi.leidenuniv.nl>)
+
   - bugfixed in DnD handling
 
   - added localisation of messages

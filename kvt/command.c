@@ -155,6 +155,7 @@ KeySym PageDownKeysym = XK_Next;
 KeySym GreekSwitchKeysym = XK_Mode_switch;
 int GreekMode = GREEK_ELOT928;
 #endif
+unsigned int BackspaceSendsControlH = 0;
 
 int refresh_nl_count=0;
 int refresh_nl_limit = 1;
@@ -659,7 +660,9 @@ static unsigned char *lookup_key(XEvent *ev,int *pcount)
     {
       /* introduced BackSpace and Delete mapping (Matthias) */ 
     case XK_BackSpace:
-      strcpy(kbuf,"\177");
+      /* \010 = ^H (BS)  */
+      /* \177 = ^? (Del) */
+      strcpy(kbuf, BackspaceSendsControlH ? "\010" : "\177");
       count = 1;
       break;
     case XK_Delete:
