@@ -1,0 +1,439 @@
+# Icelandic translation of kthememgr
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Bjarni R. Einarsson <bre@netverjar.is>, 1999.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-09-04 21:05+0200\n"
+"PO-Revision-Date: 1999-09-05 01:30+0000\n"
+"Last-Translator: Bjarni R. Einarsson <bre@netverjar.is>\n"
+"Language-Team: is <is@li.org>\n"
+
+#: theme.cpp:164
+msgid "Mappings file theme.mappings not found."
+msgstr "Skráin theme.mappings fannst ekki."
+
+#: theme.cpp:182
+#, c-format
+msgid ""
+"Error during cleanup of work directory: rc=%d\n"
+"%s"
+msgstr ""
+"Villa kom upp við tiltekt í vinnumöppu: rc=%d\n"
+"%s"
+
+#: theme.cpp:217
+#, c-format
+msgid ""
+"Failed to copy theme contents\n"
+"from %s\n"
+"into %s"
+msgstr ""
+"Það mistókst að afrita gögn\n"
+"úr %s\n"
+"í %s"
+
+#: theme.cpp:232
+#, c-format
+msgid ""
+"Failed to unpack %s with\n"
+"%s"
+msgstr ""
+"Það mistókst að afþjappa %s með\n"
+"%s"
+
+#: theme.cpp:258
+msgid "Theme contains no .themerc file"
+msgstr "Þemað inniheldur enga .themerc skrá"
+
+#: theme.cpp:371 themecreator.cpp:347
+#, c-format
+msgid "Cannot open file %s for reading"
+msgstr "Get ekki opnað skrána %s til lestrar"
+
+#: theme.cpp:378 themecreator.cpp:354
+#, c-format
+msgid "Cannot open file %s for writing"
+msgstr "Get ekki opnað skrána %s til skriftar"
+
+#: theme.cpp:388 themecreator.cpp:365
+#, c-format
+msgid ""
+"Write error to %s:\n"
+"%s"
+msgstr ""
+"Villa við skrift í %s:\n"
+"%s"
+
+#: theme.cpp:467 themecreator.cpp:170
+#, c-format
+msgid ""
+"Internal error in theme mappings\n"
+"(file theme.mappings) in group %s:\n"
+"\n"
+"Entry `%s' is missing or has no value."
+msgstr ""
+"Villa er í skilgreiningum þema\n"
+"(í theme.mappings) í flokknum %s:\n"
+"\n"
+"Gildi fyrir færslu `%s' vantar."
+
+#: theme.cpp:601
+#, c-format
+msgid ""
+"Unknown pre-install command `%s' in\n"
+"theme.mappings file in group %s."
+msgstr ""
+"Óþekkt undirbúningsskipun `%s' í\n"
+"theme.mappings skránni, flokkur %s."
+
+#: theme.cpp:672
+#, c-format
+msgid ""
+"Unknown command `%s' in theme.mappings\n"
+"file in group %s."
+msgstr ""
+"Óþekkt skipun `%s' í theme.mappings\n"
+"skránni, flokkur %s."
+
+#: theme.cpp:711
+#, c-format
+msgid "Restart %s to activate the new settings?"
+msgstr "Viltu virkja breytingarnar með því að endurræsa %s?"
+
+#: theme.cpp:713
+msgid "Restart Application"
+msgstr "Endurræsa forrit"
+
+#: theme.cpp:743
+#, c-format
+msgid "Cannot make backup copy of %s: mv returned %d"
+msgstr "Get ekki tekið öryggisafrit af %s: mv skilaði %d"
+
+#: theme.cpp:797
+#, c-format
+msgid "Icon key name %s can not be used"
+msgstr "%s er ónothæft sem táknmyndalykill"
+
+#: theme.cpp:859
+#, c-format
+msgid ""
+"No proper kdelnk file found for %s.\n"
+"Installing icon(s) as %s"
+msgstr ""
+"Engin gild kdelnk skrá fannst fyrir %s.\n"
+"Set táknmynd(ir) upp sem %s"
+
+#: theme.cpp:1116
+#, c-format
+msgid "Failed to load preview image %s"
+msgstr "Mistókst að hlaða inn forsýningu %s"
+
+#: theme.cpp:1209
+#, c-format
+msgid "Cannot create directory %s"
+msgstr "Get ekki búið til möppu %s"
+
+#: theme.cpp:1217
+#, c-format
+msgid "Cannot enter directory %s"
+msgstr "Hef ekki aðgang að möppu %s"
+
+#: installer.cpp:83
+msgid "Add..."
+msgstr "Bæta við..."
+
+#: installer.cpp:84
+msgid "Add a new theme to the list."
+msgstr "Bæta nýju þema við listann."
+
+#: installer.cpp:88
+msgid "Save the Work directory"
+msgstr "Vista vinnumöppuna"
+
+#: installer.cpp:92
+msgid "Save the Work directory as..."
+msgstr "Vista vinnumöppuna sem..."
+
+#: installer.cpp:95
+msgid "Create..."
+msgstr "Búa til..."
+
+#: installer.cpp:96
+msgid "Create a new theme from the current settings."
+msgstr "Búa til nýtt þema út frá virkum stillingum."
+
+#: installer.cpp:100
+msgid "Remove the selected theme."
+msgstr "Fjarlægja valda þemað."
+
+#: installer.cpp:306
+msgid "Theme created."
+msgstr "Bjó til þema."
+
+#: installer.cpp:335
+msgid "The "
+msgstr ""
+
+#: installer.cpp:349
+#, c-format
+msgid ""
+"Failed to remove theme:\n"
+"%s\n"
+"(%s)"
+msgstr ""
+"Mistókst að eyða þema:\n"
+"%s\n"
+"(%s)"
+
+#: installer.cpp:352
+#, c-format
+msgid "Failed to remove theme %s"
+msgstr "Mistókst að eyða þema %s"
+
+#: installer.cpp:359
+msgid "The file(s) of this theme could not be found!"
+msgstr "Skrárnar fyrir þetta þema fundust ekki!"
+
+#: installer.cpp:391
+msgid ""
+"Theme removed locally.\n"
+"Now using global version."
+msgstr ""
+"Þemað er ekki til staðvært.\n"
+"Nota því altæka útgáfu."
+
+#: installer.cpp:395
+msgid "Theme removed."
+msgstr "Þema eytt."
+
+#: installer.cpp:438
+msgid "(no theme chosen)"
+msgstr "(ekkert þema valið)"
+
+#: installer.cpp:463
+msgid "Add Theme"
+msgstr "Bæta þema við"
+
+#: installer.cpp:473
+msgid ""
+"Wrong file.\n"
+"The name of a theme file should end\n"
+"either with '.tar.gz' or '.tgz'\n"
+msgstr ""
+"Ógilt skráarheiti.\n"
+"Nafn þemuskrárinnar ætti að enda á\n"
+"annaðhvort '.tar.gz' eða '.tgz'\n"
+
+#: installer.cpp:485
+#, c-format
+msgid ""
+"Failed to copy theme %s\n"
+"into themes directory %s"
+msgstr ""
+"Mistókst að afrita þemað %s\n"
+"í þemamöppuna %s"
+
+#: installer.cpp:492
+msgid "Theme added."
+msgstr "Bætti þemanu við."
+
+#: installer.cpp:524
+msgid "Save Theme"
+msgstr "Vista þema"
+
+#: installer.cpp:532 installer.cpp:559
+msgid "Theme saved."
+msgstr "Vistaði þemað"
+
+#: installer.cpp:579
+msgid "(no preview pixmap)"
+msgstr "(engin forsýning)"
+
+#: main.cpp:73
+msgid "Installer"
+msgstr "Uppsetningarforrit"
+
+#: main.cpp:132
+msgid "warning"
+msgstr "aðvörun"
+
+#: main.cpp:139 main.cpp:140
+msgid "fatal error"
+msgstr "alvarleg villa"
+
+#: main.cpp:168
+msgid "Kde Theme Manager"
+msgstr "Þemustjóri KDE"
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr "kwmcom: náði ekki sambandi við kwm\n"
+
+#: options.cpp:42
+msgid "Uninstall parts of previous theme"
+msgstr "Óvirkja hluta af síðasta þema"
+
+#: options.cpp:50
+msgid "Work on the following parts:"
+msgstr "Vinna í eftirfarandi hlutum:"
+
+#: options.cpp:60
+msgid "Colors"
+msgstr "Litir"
+
+#: options.cpp:61
+msgid "Wallpapers"
+msgstr "Veggfóður"
+
+#: options.cpp:62
+msgid "Panel"
+msgstr "Spjald"
+
+#: options.cpp:63
+msgid "Sounds"
+msgstr "Hljóð"
+
+#: options.cpp:64
+msgid "Icons"
+msgstr "Táknmyndir"
+
+#: options.cpp:65
+msgid "Window Border"
+msgstr "Kantar glugga"
+
+#: options.cpp:67
+msgid "Window Titlebar"
+msgstr "Titilrönd glugga"
+
+#: options.cpp:69
+msgid "Window Gimmick"
+msgstr "Skreyting glugga"
+
+#: options.cpp:72
+msgid "Window Button Layout"
+msgstr "Uppstilling gluggahnappa"
+
+#: options.cpp:73
+msgid "File Manager"
+msgstr "Skráarstjóri"
+
+#: options.cpp:74
+msgid "Konsole"
+msgstr "Skjáhermir (konsole)"
+
+#: options.cpp:81
+msgid "Invert"
+msgstr "Víxla"
+
+#: options.cpp:120
+msgid "unknown"
+msgstr "óþekkt"
+
+#: options.cpp:250
+msgid "available"
+msgstr "í boði"
+
+#: options.cpp:251
+msgid "empty"
+msgstr "tómt"
+
+#: widgetcanvas.cpp:142 widgetcanvas.cpp:143
+msgid "Inactive window"
+msgstr "Óvirkur gluggi"
+
+#: widgetcanvas.cpp:158 widgetcanvas.cpp:159
+msgid "Active window"
+msgstr "Virkur gluggi"
+
+#: widgetcanvas.cpp:192 widgetcanvas.cpp:193
+msgid "Window text"
+msgstr "Texti í glugga"
+
+#: widgetcanvas.cpp:209
+msgid "Disabled"
+msgstr "Óvirkt"
+
+#: widgetcanvas.cpp:216 widgetcanvas.cpp:217
+msgid "Selected"
+msgstr "Valið"
+
+#: about.cpp:64
+msgid "KDE Theme Manager"
+msgstr "Þemustjóri KDE"
+
+#: about.cpp:69
+#, c-format
+msgid ""
+"Version %s\n"
+"\n"
+"Copyright (C) 1998 by\n"
+"%s\n"
+"\n"
+"Gnu Public License (GPL)"
+msgstr ""
+"Útgáfa %s\n"
+"\n"
+"Höfundarréttur (C) 1998, \n"
+"%s\n"
+"Bjarni <bre@netverjar.is>\n"
+"íslenskaði\n"
+"\n"
+"Gnu Public License (GPL)"
+
+#: about.cpp:109 about.cpp:122
+msgid "Unknown"
+msgstr "Óþekkt"
+
+#: about.cpp:111
+#, c-format
+msgid "%s Theme"
+msgstr "%s þema"
+
+#: about.cpp:117
+#, c-format
+msgid "Version %s"
+msgstr "Útgáfa %s"
+
+#: about.cpp:123
+#, c-format
+msgid "by %s"
+msgstr "eftir %s"
+
+#: themecreator.cpp:66
+#, c-format
+msgid "Failed to create directory %s: %s"
+msgstr "Mistókst að búa til möppu %s: %s"
+
+#: newthemedlg.cpp:37
+msgid "Create New Theme"
+msgstr "Búa til nýtt þema"
+
+#: newthemedlg.cpp:44
+msgid "&Name"
+msgstr "&Nafn"
+
+#: newthemedlg.cpp:45
+msgid "&Author"
+msgstr "&Höfundur"
+
+#: newthemedlg.cpp:46
+msgid "&Email"
+msgstr "N&etfang"
+
+#: newthemedlg.cpp:47
+msgid "&Webpage"
+msgstr "&Vefsíða"
+
+#: newthemedlg.cpp:48
+msgid "&Description"
+msgstr "&Lýsing"
+
+#: newthemedlg.cpp:92
+msgid "MyNewTheme"
+msgstr "NýjaÞemaðMitt"
+
+#: newthemedlg.cpp:96
+msgid "Give a short description of the theme here..."
+msgstr "Hér á að lýsa þemanu í stuttu máli..."
