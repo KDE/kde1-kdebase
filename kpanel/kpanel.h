@@ -8,7 +8,7 @@
 #define KPANEL_H
 
 #ifdef HAVE_CONFIG_H
-#include <config.h>   
+#include <config.h>
 #endif
 #include <qwidget.h>
 #include <qmenubar.h>
@@ -108,7 +108,7 @@ public:
 
 signals:
   void showMe();
-  void hideMe();   
+  void hideMe();
 
 protected:
   void enterEvent( QEvent * );
@@ -154,7 +154,7 @@ public:
   QString identity;
   QPixmap* icon[4];
 };
-  
+
 
 
 class kPanel : public QFrame
@@ -167,12 +167,12 @@ public:
 
 
   void show();
-  void doGeometry ();
+  void doGeometry (bool do_not_change_taskbar = FALSE);
 
   void showSystem();
 
  public slots:
- 
+
  // kwm communication
   void kwmInit();
   void windowAdd(Window);
@@ -194,10 +194,10 @@ public:
 
   void taskbarClicked(int);
   void taskbarPressed(int);
- 
+
   void button_clicked();
   void button_pressed();
-  
+
   void add_windowlist();
   void ask_logout();
   void call_help();
@@ -205,20 +205,20 @@ public:
 
   void hidePanel ();
   void showPanel ();
-  void miniButtons (int); // sven  
+  void miniButtons (int); // sven
   void desktop_change(int);
 
   void standalonePanelButtonClicked();
-  
+
   void configurePanel();
   void editMenus();
-    
-  
+
+
   void restart();
 
-  
+
   void slotDropEvent( KDNDDropZone *_zone );
- 
+
   void addButton(PMenuItem* pmi);
   void showToolTip(QString s);
 
@@ -232,18 +232,18 @@ public:
   void showTaskbar();
   void hideTaskbar();
 
-  
+
   QWidget * parentOfSwallowed(Window);
 
   void launchSwallowedApplications();
   void parseMenus();
 
-  
+
 protected:
     void    resizeEvent( QResizeEvent * );
     void enterEvent( QEvent * );
     void leaveEvent( QEvent * );
-    
+
     bool eventFilter(QObject *, QEvent *);
     void mousePressEvent( QMouseEvent * );
 
@@ -251,8 +251,8 @@ private slots:
     void slotUpdateClock();
 
 signals:
-    
-private:  
+
+private:
   void     writeInitStyle(KConfig *config, int size);
   bool     initConfigFile(KConfig *config);
   void     createPixmap();
@@ -263,7 +263,7 @@ private:
 
   DesktopEntry entries[100];
   int nbuttons;
-  
+
   QFrame *control_group;
   QButtonGroup *desktopbar;
   QPushButton *exit_button;
@@ -285,10 +285,10 @@ private:
   QTimer *tipSleepTimer;
   QTimer *hideTimer;
   QWidget* last_tip_widget;
-  
+
   int bound_top_left;
   int bound_bottom_right;
-  
+
   QPopupMenu *popup_item;
 
   PMenu* pmenu;
@@ -318,24 +318,26 @@ private:
   Orientation orientation;
   Position position;
   TaskbarPosition taskbar_position;
-  
+
   int box_width;
   int box_height;
   int margin;
   int dbhs;
   int dbrows;
   int number_of_desktops;
-  
+
   int tbhs;
   int tbmhs;
-  
+
   bool foldersFirst;
   bool personalFirst;
   bool autoHide;
   bool autoHidden;
   bool autoHideTaskbar;
   bool clockAmPm;
-  
+
+  int hide_show_animation;
+
   // tools
   QPixmap create_arrow_pixmap(QPixmap pm);
   void arrow_on_pixmap(QPixmap* pm, ArrowType rt);
@@ -347,8 +349,8 @@ private:
   void delete_button(QWidget* button);
   void cleanup();
   void restore_editbutton( bool takeit ); // Stephan
-  
-  void addButtonInternal(PMenuItem* pmi, int x = -1, int y = -1, QString name = ""); 
+
+  void addButtonInternal(PMenuItem* pmi, int x = -1, int y = -1, QString name = "");
 
   //layout
   void layoutTaskbar();
@@ -361,14 +363,14 @@ private:
   void load_and_set_some_fonts();
 
   // dialogs
-  QTabDialog* tab;  
+  QTabDialog* tab;
 
   QLineEdit *led[8];
-  QComboBox *costy; 
+  QComboBox *costy;
 
-  QButtonGroup 
+  QButtonGroup
     *bgrloc, // panel location
-    *bgrta,  // taskbar location 
+    *bgrta,  // taskbar location
     *bgrl,   // style
     *bgro,   // others
     *bgrt,   // clock
@@ -399,7 +401,7 @@ private:
   QPopupMenu* windows;
   QPopupMenu* windowlist;
   void generateWindowlist(QPopupMenu*);
-  
+
   QPixmap load_pixmap(const char* name, bool is_folder = false);
 
 
@@ -408,9 +410,9 @@ private:
 
   void showMiniPanel(); // sven
   void hideMiniPanel ();
- 
+
   int currentDesktop;
- 
+
   Bool panelHidden[8+1];
   Bool panelCurrentlyHidden;
   Bool miniPanelHidden;
@@ -419,13 +421,15 @@ private:
   QButtonGroup *miniPanel;
   QPushButton *miniSystem;
   QPushButton *miniDesk;
-  
+
   int clock_timer_id;
 
   bool initing;
 
   QStrList swallowed_applications;
-  
+
+  QRect taskbar_frame_geometry;
+
 };
 
 

@@ -1,7 +1,12 @@
-               - small fix (kudos to David Faure)
-
 In kpanel-0.19:
+
+    Patchlevel 6:
+	- new configuration option: HideShowAnimation. Default is
+	  10. Setting it to 0 disables the feature.
+                - autohide animated
+
     Patchlevel 5: 
+               - small fix (kudos to David Faure)
                - fixed possible loss of the system menu (kmenu)
 
     Patchlevel 4: Mario Weilguni <mweilguni@kde.org>

@@ -14,6 +14,21 @@
 #include <ksimpleconfig.h>
 #include <qregexp.h>
 
+void animateMove(QWidget*w, int xn, int yn, int step ){
+    int xi = w->x();
+    int yi = w->y();
+    for (; QABS(xi-xn)>QABS(step); xi+=step){
+	qApp->syncX();
+	qApp->processEvents();
+	w->move(xi,yi);
+    }
+    for (; QABS(yi-yn)>QABS(step); yi+=step){
+	qApp->syncX();
+	qApp->processEvents();
+	w->move(xi,yi);
+    }
+    w->move(xn, yn);
+}
 
 myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
   hideTimer = new QTimer(this);
@@ -40,12 +55,12 @@ void myFrame::hideTimerDone(){
     return;
   bool do_hide = true;
   // check for popups
-  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
 		   PointerMotionMask |
 		   EnterWindowMask | LeaveWindowMask,
-		   GrabModeAsync, GrabModeAsync, None, 
-		   None , CurrentTime) == GrabSuccess){ 
+		   GrabModeAsync, GrabModeAsync, None,
+		   None , CurrentTime) == GrabSuccess){
     XUngrabPointer(qt_xdisplay(), CurrentTime);
     XSync(qt_xdisplay(), false);
   }
@@ -61,11 +76,17 @@ void myFrame::hideTimerDone(){
 
 
 void kPanel::showTaskbar(){
+  doGeometry(TRUE);
+  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
+	      taskbar_position == bottom?-2:2);
   doGeometry();
 }
 
 void kPanel::hideTaskbar(){
   raise();
+  doGeometry(TRUE);
+  animateMove(taskbar_frame, taskbar_frame_geometry.x(), taskbar_frame_geometry.y(), 
+	      taskbar_position == bottom?1:-1);
   doGeometry();
   KWM::sendKWMCommand("moduleRaised");
 }
@@ -75,12 +96,12 @@ void kPanel::kwmInit(){
   if (taskbar_buttons.count()>0)
     restart();
 }
-  
+
 
 void kPanel::windowAdd(Window w){
   static QPixmap* defaultpm = 0;
 
-  { 
+  {
     // ignore transient windows
     Window trans = None;
     if (XGetTransientForHint(qt_xdisplay(), w, &trans)){
@@ -100,18 +121,18 @@ void kPanel::windowAdd(Window w){
   while (taskbar->find(id))
     id++;
   taskbar->insert(b, id);
-  
+
   if (!defaultpm){
     defaultpm = new QPixmap;
     *defaultpm = KApplication::getKApplication()->getIconLoader()->loadApplicationMiniIcon("mini-default.xpm", 16, 16);
   }
-  
+
   QPixmap pm = KWM::miniIcon(w, 16, 16);
   if (!pm.isNull())
     b->setPixmap(pm);
   else
      b->setPixmap(*defaultpm);
-  
+
   QString t = KWM::titleWithState(w);
   b->setText(t);
 
@@ -135,7 +156,7 @@ void kPanel::windowAdd(Window w){
       XSetWindowBackground(qt_xdisplay(),
 			   w,
 			   entries[bi].button->backgroundColor().pixel());
-      XReparentWindow(qt_xdisplay(), w, 
+      XReparentWindow(qt_xdisplay(), w,
  		      entries[bi].button->winId(), 3, 3);
       XSelectInput(qt_xdisplay(), w, EnterWindowMask | LeaveWindowMask);
       XResizeWindow(qt_xdisplay(), w,
@@ -143,10 +164,10 @@ void kPanel::windowAdd(Window w){
 		    entries[bi].button->height()-6);
       XMapWindow(qt_xdisplay(),w);
 
-      
+
       // install a passive grab on this button to ensure that
       // kpanel recieves the button events.
-      
+
       // Exception: do not install a passive grab for the left mouse
       // button if there is no Exec property in the kdelnk file.
       KSimpleConfig pConfig(entries[bi].pmi->fullPathName(),true);
@@ -156,24 +177,24 @@ void kPanel::windowAdd(Window w){
 	printf("passive grab ohne LMB!\n");
 	XGrabButton(qt_xdisplay(),
 		    Button2,
-		    AnyModifier, w, True, 
+		    AnyModifier, w, True,
 		    ButtonPressMask,
 		    GrabModeSync, GrabModeAsync, None, None);
 	XGrabButton(qt_xdisplay(),
 		    Button3,
-		    AnyModifier, w, True, 
+		    AnyModifier, w, True,
 		    ButtonPressMask,
 		    GrabModeSync, GrabModeAsync, None, None);
       }
       else
-	XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, w, True, 
+	XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, w, True,
 		    ButtonPressMask,
 		    GrabModeSync, GrabModeAsync, None, None);
-      
+
       entries[bi].button->swallowed_window = w;
     }
   }
-  
+
   b->virtual_desktop = KWM::desktop(w);
   if (nr != numberOfTaskbarRows())
     doGeometry();
@@ -239,9 +260,9 @@ void kPanel::layoutDockArea(){
 			   dock_area->width(),
 			   kwmmapp->dock_windows.count() * 24 + 2);
     i = 0;
-    for (w = kwmmapp->dock_windows.first(); w; 
+    for (w = kwmmapp->dock_windows.first(); w;
 	 w = kwmmapp->dock_windows.next()){
-      XMoveResizeWindow(qt_xdisplay(), *w, 
+      XMoveResizeWindow(qt_xdisplay(), *w,
 			dock_area->width()/2-12, 1+ i * 24, 24, 24);
       i++;
     }
@@ -252,9 +273,9 @@ void kPanel::layoutDockArea(){
 			   kwmmapp->dock_windows.count() * 24 + 2,
 			   dock_area->height());
     i = 0;
-    for (w = kwmmapp->dock_windows.first(); w; 
+    for (w = kwmmapp->dock_windows.first(); w;
 	 w = kwmmapp->dock_windows.next()){
-      XMoveResizeWindow(qt_xdisplay(), *w, 
+      XMoveResizeWindow(qt_xdisplay(), *w,
 			1 + i * 24, dock_area->height()/2-12, 24, 24);
       i++;
     }
@@ -273,7 +294,7 @@ void kPanel::dockWindowRemove(Window){
 
 // void kPanel::playSound(QString e){
 //   QDateTime d = QDateTime::currentDateTime();
-//   printf("sound event: %s (%.2d:%.2d:%.2d)\n", 
+//   printf("sound event: %s (%.2d:%.2d:%.2d)\n",
 // 	 e.data(),
 // 	 d.time().hour(),
 // 	 d.time().minute(),
@@ -298,7 +319,7 @@ void kPanel::kwmDesktopChange(int nd){
 
   if ( edit_button != 0)
     restore_editbutton( False );
-  
+
   currentDesktop = nd;
   QPushButton* b;
   for (i=0; (b=(QPushButton*)desktopbar->find(i))!=0; i++){
@@ -312,7 +333,7 @@ void kPanel::kwmDesktopChange(int nd){
     hidePanel();
   else
     showPanel();
-  
+
 }
 
 void kPanel::kwmDesktopNameChange(int d, QString name){
@@ -331,14 +352,14 @@ void kPanel::kwmCommandReceived(QString com){
   if (com == "kpanel:restart"){
     restart();
   }
-  
+
   if (com == "kpanel:hide")
     hidePanel ();
   if (com == "kpanel:show")
     showPanel ();
   if (com == "kpanel:system")
     showSystem ();
-  
+
   if (com.left(11) == "kpanel:icon"){
     if (com.mid(12, 1) != ":")
       return;
@@ -370,11 +391,11 @@ void kPanel::kwmCommandReceived(QString com){
 		    GrabModeAsync, GrabModeAsync,
 		    None, None, CurrentTime );
     }
-    
+
   }
 
 }
-  
+
 
 
 
@@ -382,8 +403,8 @@ void kPanel::kwmCommandReceived(QString com){
 bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 
   switch (ev->type()){
-    
-  case Event_KeyPress: 
+
+  case Event_KeyPress:
 
     // people requested for this. I do not understand why (Matthias)
     tipSleepTimerDone();
@@ -398,20 +419,20 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
       restore_editbutton( false );
       return true;
     };
-    if ( edit_button != 0 && (((QKeyEvent*)ev)->key() == Key_Return || 
+    if ( edit_button != 0 && (((QKeyEvent*)ev)->key() == Key_Return ||
 				 ((QKeyEvent*)ev)->key() == Key_Enter)  ) {
       restore_editbutton( true );
       return true;
     };
     break;
-    
+
   case Event_MouseButtonPress: case Event_MouseButtonDblClick: {
 
 
     if (info_label->isVisible())
       info_label->hide();
     tipTimer->stop();
-    
+
     if ( ob == panel_button || QString("myTaskButton") == ob->className())
       break;
     QMouseEvent* mev = (QMouseEvent*)ev;
@@ -455,8 +476,8 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	if (moving_button->parentWidget() == miniPanel)
 	  moving_button = 0;
       }
-      
-      
+
+
       if (moving_button){
 	if (moving_button != control_group
 	    && moving_button != panel_button_frame_standalone){
@@ -467,7 +488,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	moving_button->setCursor(sizeAllCursor);
       }
     }
-    if (mev->button() == RightButton && ob->isWidgetType() 
+    if (mev->button() == RightButton && ob->isWidgetType()
 	&& !((QWidget*)ob)->isPopup()
 	&& QString("myPushButton")!=((QWidget*)ob)->className()){
       QWidget* tmp = (QWidget*)ob;
@@ -490,7 +511,7 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	    moving_button = tmp;
 	    moving_button->raise();
 	    moving_button->setCursor(sizeAllCursor);
-	    // the next line _IS_ necessary! 
+	    // the next line _IS_ necessary!
 	    XGrabPointer( qt_xdisplay(), moving_button->winId(), false,
 			  ButtonPressMask | ButtonReleaseMask |
 			  PointerMotionMask | EnterWindowMask | LeaveWindowMask,
@@ -587,16 +608,16 @@ bool kPanel::eventFilter(QObject *ob, QEvent *ev){
 	int y = mapFromGlobal(QCursor::pos()).y()
 	  - moving_button_offset.y();
 	if (orientation == horizontal){
-	  if (x<panel_button->x() + panel_button->width()) 
+	  if (x<panel_button->x() + panel_button->width())
 	    x=panel_button->x() + panel_button->width();
-	  if (x + moving_button->width() > width()) 
+	  if (x + moving_button->width() > width())
 	    x = width() - moving_button->width ();
 	  y = moving_button->y();
 	}
 	else {
-	  if (y<panel_button->y() + panel_button->height()) 
+	  if (y<panel_button->y() + panel_button->height())
 	    y=panel_button->y() + panel_button->height();
-	  if (y + moving_button->height() > height()) 
+	  if (y + moving_button->height() > height())
 	    y = height() - moving_button->height ();
 	  x = moving_button->x();
 	}
@@ -640,16 +661,16 @@ void kPanel::enterEvent( QEvent * ){
   }
   if (orientation == horizontal){
     if (position == top_left)
-      move (0,0);
+      animateMove (this, 0,0,4);
     else
-      move (0, QApplication::desktop()->height()-height());
+      animateMove(this, 0, QApplication::desktop()->height()-height(), -4);
   }
   else {
     if (position == top_left)
-      move (0,0);
+      animateMove (this, 0,0, 4);
     else
-      move (QApplication::desktop()->width()-width(),0);
-    
+      animateMove (this, QApplication::desktop()->width()-width(),0, -4);
+
   }
   doGeometry();
   layoutTaskbar();
@@ -659,6 +680,7 @@ void kPanel::enterEvent( QEvent * ){
 void kPanel::leaveEvent( QEvent * ){
 }
 
+
 void kPanel::hideTimerDone(){
   int bi;
   bool do_hide = true;
@@ -667,12 +689,12 @@ void kPanel::hideTimerDone(){
 
 
   // check for popups
-  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False, 
+  if (XGrabPointer(qt_xdisplay(), qt_xrootwin(), False,
 		   ButtonPressMask | ButtonReleaseMask |
 		   PointerMotionMask |
 		   EnterWindowMask | LeaveWindowMask,
-		   GrabModeAsync, GrabModeAsync, None, 
-		   None , CurrentTime) == GrabSuccess){ 
+		   GrabModeAsync, GrabModeAsync, None,
+		   None , CurrentTime) == GrabSuccess){
     XUngrabPointer(qt_xdisplay(), CurrentTime);
     XSync(qt_xdisplay(), false);
   }
@@ -691,16 +713,16 @@ void kPanel::hideTimerDone(){
   }
   else {
     if (orientation == horizontal){
-      if (position == top_left)
-	move (x(), y()-height()+4);
-      else
-	move (x(), y()+height()-4);
+	if (position == top_left)
+	    animateMove (this, x(), y()-height()+4, -1);
+	else
+	    animateMove (this, x(), y()+height()-4, 1);
     }
     else {
-      if (position == top_left)
-	move (x()-width()+4, y());
-      else
-	move (x()+width()-4, y());
+	if (position == top_left)
+	    animateMove (this, x()-width()+4, y(), -1);
+	else
+	    animateMove (this, x()+width()-4, y(), 1);
 	
     }
     doGeometry();
@@ -719,9 +741,9 @@ void kPanel::mousePressEvent( QMouseEvent*  ev  ){
   KWM::sendKWMCommand("moduleRaised");
   if (ev->button() == RightButton){
     QPopupMenu* p = new QPopupMenu();
-    p->insertItem(klocale->translate("Configure"), 
+    p->insertItem(klocale->translate("Configure"),
 		  this, SLOT(configurePanel()));
-    p->insertItem(klocale->translate("Restart"), 
+    p->insertItem(klocale->translate("Restart"),
 		  this, SLOT(restart()));
     p->popup(mapToGlobal(ev->pos()));
   }
@@ -737,7 +759,7 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
       PMenuItem* pmi = pmenu->searchItem(a);
-      
+
       if (pmi){
 	int x = margin;
 	int y = margin;
@@ -754,8 +776,8 @@ void kPanel::slotDropEvent( KDNDDropZone *_zone ){
 	return;
       }
     }
-    
-    QMessageBox::warning( 0, "Panel", 
+
+    QMessageBox::warning( 0, "Panel",
 			  klocale->translate("Cannot put this as button onto the panel!"),
 			  klocale->translate("Oops!"));
     return;
