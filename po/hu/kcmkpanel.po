@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
-"PO-Revision-Date: 1998-04-20 18:58+0100\n"
-"Last-Translator: Csaba Major <major@terrasoft.hu>\n"
+"POT-Creation-Date: 1998-11-21 01:13+0100\n"
+"PO-Revision-Date: 1998-12-17 18:58+0100\n"
+"Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=Latin2\n"
@@ -25,13 +25,13 @@ msgstr "&Munkaasztalok"
 
 #: main.cpp:73
 msgid "Disk &Navigator"
-msgstr ""
+msgstr "Lemez &Navigátor"
 
 # main.cpp:97
 #: main.cpp:79
 #, fuzzy
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
-msgstr "használat: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "használat: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 # main.cpp:127
 #: main.cpp:112
@@ -51,7 +51,7 @@ msgstr "&Fent"
 # panel.cpp:61
 #: panel.cpp:61
 msgid "&Left"
-msgstr "&Baloldalt"
+msgstr "&Baloldalon"
 
 # panel.cpp:62
 #: panel.cpp:62
@@ -60,7 +60,7 @@ msgstr "&Lent"
 
 #: panel.cpp:63
 msgid "&Right"
-msgstr ""
+msgstr "&Jobboldalon"
 
 # panel.cpp:74
 #: panel.cpp:75
@@ -89,7 +89,7 @@ msgstr "Ba&l/fent"
 
 #: panel.cpp:95
 msgid "Style"
-msgstr ""
+msgstr "Stílus"
 
 # panel.cpp:96
 #: panel.cpp:97
@@ -133,17 +133,17 @@ msgstr "&Késleltetés:"
 
 #: options.cpp:50 options.cpp:68 options.cpp:86
 msgid "Small"
-msgstr ""
+msgstr "Kicsi"
 
 # panel.cpp:100
 #: options.cpp:51 options.cpp:69 options.cpp:87
 #, fuzzy
 msgid "Large"
-msgstr "N&agy"
+msgstr "Nagy"
 
 #: options.cpp:62
 msgid "Visuals"
-msgstr ""
+msgstr "Megjelenés"
 
 # options.cpp:71
 #: options.cpp:64
@@ -158,15 +158,15 @@ msgstr "&Késleltetés:"
 
 #: options.cpp:74 options.cpp:93
 msgid "Speed:"
-msgstr ""
+msgstr "Sebesség:"
 
 #: options.cpp:75 options.cpp:94 options.cpp:103
 msgid "Slow"
-msgstr ""
+msgstr "Lassú"
 
 #: options.cpp:76 options.cpp:95 options.cpp:104
 msgid "Fast"
-msgstr ""
+msgstr "Gyors"
 
 # options.cpp:73
 #: options.cpp:82
@@ -175,16 +175,16 @@ msgstr "&Tálca Automatikus Elrejtése"
 
 #: options.cpp:100
 msgid "Animate Show/Hide"
-msgstr ""
+msgstr "Elrejtés/Visszahozás Animálása"
 
 #: options.cpp:102
 msgid "Speed"
-msgstr ""
+msgstr "Sebesség"
 
 # options.cpp:68
 #: options.cpp:117
 msgid "Others"
-msgstr "Egyéb"
+msgstr "Egyebek"
 
 # options.cpp:69
 #: options.cpp:118
@@ -195,75 +195,71 @@ msgstr "Saját &Elõször"
 #: options.cpp:120
 #, fuzzy
 msgid "F&olders First"
-msgstr "Saját &Elõször"
+msgstr "Mappák &Elõször"
 
 #: options.cpp:122
-msgid "&Clock shows time in AM/PM format"
-msgstr ""
-
-#: options.cpp:124
-msgid "&Clock shows time in Internet beats"
-msgstr ""
+msgid "&Clock shows time in De/Du format"
+msgstr "Az óra AM/PM formátumban mutassa az idõt"
 
 #: disknav.cpp:38
 msgid "History"
-msgstr ""
+msgstr "Történelem"
 
 #: disknav.cpp:62
 msgid "Edit entries: (drag a folder and create a link)"
-msgstr ""
+msgstr "Bejegyzések szerkesztése: (mappa rádobás, és link készítés)"
 
 #: disknav.cpp:64
 msgid "Edit &Personal..."
-msgstr ""
+msgstr "&Saját Szerkesztése..."
 
 #: disknav.cpp:74
 msgid "Edit &Shared..."
-msgstr ""
+msgstr "&Megosztott Szerkesztése..."
 
 #: disknav.cpp:112
 msgid "Max recent folder entries:"
-msgstr ""
+msgstr "Legutóbbi mappák maximális száma:"
 
 #: disknav.cpp:121
 msgid "Max recent file entries:"
-msgstr ""
+msgstr "Legutóbbi fájlok maximális száma:"
 
 #: disknav.cpp:130
 msgid "Max files in a single folder:"
-msgstr ""
+msgstr "Max. fájlok egyetlen mappában:"
 
 #: disknav.cpp:159
 msgid "Show dot files"
-msgstr ""
+msgstr "Rejtett fájlok megmutatása"
 
 #: disknav.cpp:166
 msgid "Ignore case when sorting"
-msgstr ""
+msgstr "Rendezésnél nem számit a kis/nagy betû"
 
 # panel.cpp:59
 #: disknav.cpp:173
 #, fuzzy
 msgid "Show Shared section"
-msgstr "Elhelyezkedés"
+msgstr "Megosztott rész látható"
 
 # panel.cpp:59
 #: disknav.cpp:180
 #, fuzzy
 msgid "Show Personal section"
-msgstr "Elhelyezkedés"
+msgstr "Saját rész látható"
 
 #: disknav.cpp:187
 msgid "Show Recent section"
-msgstr ""
+msgstr "Legutóbbi rész látható"
 
 #: disknav.cpp:194
 msgid "Show Option entry"
-msgstr ""
+msgstr "Opciók bejegyzés látható"
 
 #: disknav.cpp:210
 msgid "Terminal application:"
-msgstr ""
+msgstr "Terminál program:"
 
 # options.cpp:56
 #~ msgid "ms"
