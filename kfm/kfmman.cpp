@@ -214,6 +214,11 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
 {
     nextXOffset = _xoffset;
     nextYOffset = _yoffset;
+    if (_reload && (_xoffset==0) && (_yoffset==0)) {
+        // Reload and no offsets specified. Keep the current ones.
+        nextXOffset = view->xOffset();
+        nextYOffset = view->yOffset();
+    }
 
     // By Default we display everything at the moment we
     // get it => now buffering of HTML code
@@ -371,7 +376,7 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     bHistoryStackLock = view->isHistoryStackLocked();
     
     // Do we know that it is !really! a file ?
-    // Then we can determine the mime type for shure and run
+    // Then we can determine the mime type for sure and run
     // the best matching binding
     if ( u.isLocalFile() && KIOServer::isDir( _url ) == 0 )
     {    
@@ -490,6 +495,10 @@ bool KFMManager::openURL( const char *_url, bool _reload, int _xoffset, int _yof
     // before! such signal is emitted.
 
     job->browse( tryURL, _reload, view->getGUI()->isViewHTML(), url, &files, _data );
+
+    if (_reload)
+        // Restore the position where we were in the page. David.
+        view->gotoXY(nextXOffset, nextYOffset);
     
     // Something cached ? In this case a call to browse was all we need
     if ( bFinished )

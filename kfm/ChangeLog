@@ -1,3 +1,19 @@
+1998-12-20  David Faure  <faure@kde.org>
+
+	* kfmman.cpp : Reload doesn't bring to beginning of the page anymore
+	* Lots of bugfixes, some by myself, some by Michael Reiher :
+	Fixes in the tree view
+	Using KStdAccel in kfm (allows to change key bindings)
+	Desktop icon placement in Mac mode fixed
+	Fixed setting of SUID and SGID and group at the same time
+	Fix Ctrl+A in the URL qlineedit
+	Decode URL before showing them (in the title or in the URL qlineedit)
+	Fixes concerning mini-icons for directories.
+	Removed useless dialog boxes when kfm is started for the first time
+	 except "creating ~/Desktop".
+	* Waldo Bastian : 
+	Handle redirect during COPY (used for images/view document source)
+
 1998-12-15  David Faure  <faure@kde.org>
 
 	* main.cpp : Test for KDE release, and copy new Templates it
