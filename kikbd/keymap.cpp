@@ -233,13 +233,13 @@ int KeySyms::findCode(const char* scode)
 {
   KeySym code = KeyTranslate::stringOrNumToCode(scode);
   if(code == (KeySym)-1) {
-    KiKbdMsgBox::askContinue(gettext("KeyMap: do not undestand keycode \"%s\".")
+    KiKbdMsgBox::askContinue(gettext("KeyMap: do not understand key code \"%s\".")
 			     , scode);
     return -1;
   }
   if(code < minKeyCode || code > maxKeyCode) {
     KiKbdMsgBox
-       ::askContinue(gettext("KeyMap: keycode \"%s\" go out of range."),
+       ::askContinue(gettext("KeyMap: key code \"%s\" go out of range."),
 		     scode);
     return -1;
   }

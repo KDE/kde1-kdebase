@@ -305,7 +305,7 @@ void KiKbdApplication::loadConfig()
     KiKbdMapConfig *map = kikbdConfig.getMap(maps.at(i));
     if(map->getNoFile()) {
       KiKbdMsgBox::ask(gettext("Keyboard map \"%s\" does not exists.\n"
-			       "Skiping this map."), maps.at(i));
+			       "Skipping this map."), maps.at(i));
       continue;
     }
     keyMaps.append(new KeyMap(*map, initSyms));

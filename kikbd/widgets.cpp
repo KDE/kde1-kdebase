@@ -142,7 +142,7 @@ KiKbdMapsWidget::KiKbdMapsWidget(QWidget* parent)
   mbox->
     addWidget(wid=kikbdConfig->
 	      createWidget(&kikbdConfig->getHotList(), this,
-			   gettext("Use \"&hotlist\""),
+			   gettext("Use \"&hot list\""),
 			   gettext("Use only default and last active "
 				   "keyboard maps to switching from keyboard")));
   connect(this, SIGNAL(activateHot(bool)), wid, SLOT(setEnabled(bool)));
@@ -407,7 +407,7 @@ KiKbdGeneralWidget::KiKbdGeneralWidget(QWidget* parent)
 
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getSwitchRef(), group, 0L,
-			       gettext("Key(s) to switch beetwing "
+			       gettext("Key(s) to switch between "
 				       "keyboard maps")));
   connect(wid, SIGNAL(activated(const char*)),  SLOT(newSwitch(const char*)));
 
@@ -463,9 +463,9 @@ void KiKbdGeneralWidget::advanced()
   // emulate capslock
   hbox->addWidget(wid=kikbdConfig->
 		  createWidget(&kikbdConfig->getEmuCapsLock(), group,
-			       gettext("&Emulate CapsLock"), 
+			       gettext("&Emulate Caps Lock"), 
 			       gettext("Emulate XServer "
-				       "CapsLock. Needed for some languages"
+				       "Caps Lock. Needed for some languages"
 				       "to be correct")));
   // auto menu
   hbox->addWidget(kikbdConfig->
@@ -559,12 +559,12 @@ KiKbdStyleWidget::KiKbdStyleWidget(QWidget* parent):QWidget(parent)
   // foreground button color
   but = kikbdConfig->createWidget(&kikbdConfig->getForColor(), group);
   makeColorButton(vbox, but, label, gettext("Foreground"), 
-		  gettext("Color of the Text Label"));
+		  gettext("Color of the text label"));
 
   // caps  color
   but = kikbdConfig->createWidget(&kikbdConfig->getCapsColor(), group);
-  makeColorButton(vbox, but, label, gettext("With CapsLock"), 
-		  gettext("Background when Emulated CapsLock active"));
+  makeColorButton(vbox, but, label, gettext("With Caps Lock"), 
+		  gettext("Background when Emulated Caps Lock active"));
   connect(this, SIGNAL(enableCaps(bool)), but, SLOT(setEnabled(bool)));
   connect(this, SIGNAL(enableCaps(bool)), label, SLOT(setEnabled(bool)));
 
@@ -639,7 +639,7 @@ KiKbdStartupWidget::KiKbdStartupWidget(QWidget* parent):QWidget(parent)
     addWidget(kikbdConfig->
 	      createWidget(&kikbdConfig->getAutoStart(), group,
 			   gettext("&Autostart"),
-			   gettext("Start up automaticaly")), 0);
+			   gettext("Start up automatically")), 0);
   /**
      Do docking?
   */
