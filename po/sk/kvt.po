@@ -226,6 +226,10 @@ msgid "-vt_font <fontname>       normal font\n"
 msgstr "-vt_font <názov>          normálny font\n"
 
 #: main.C:1249
+msgid "-no_font_hack             turn off Qt font bug workaround\n"
+msgstr "-no_font_hack             vypnú» obídenie chyby Qt fontu\n"
+
+#: main.C:1249
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
 msgstr "-vt_size <veµkos»>        tiny, small, normal large, huge\n"
 
