@@ -517,7 +517,6 @@ msgid "Vertical Root Grid Spacing:"
 msgstr "Spaziatura Verticale griglia:"
 
 #: htmlopts.cpp:349
-#, fuzzy
 msgid "Transparent Text for Root Icons."
 msgstr "Testo trasparente per le Icone di Root."
 
@@ -1224,10 +1223,9 @@ msgstr "P&roxy"
 
 #: kkfmoptdlg.cpp:22
 msgid "&HTTP"
-msgstr ""
+msgstr "&Http"
 
 #: kkfmoptdlg.cpp:25
-#, fuzzy
 msgid "User &Agent"
 msgstr "Utente &Agent"
 
@@ -1245,15 +1243,15 @@ msgstr "Impostazioni Browser KFM"
 
 #: khttpoptdlg.cpp:13
 msgid "Accept languages:"
-msgstr ""
+msgstr "Accetta lingue:"
 
 #: khttpoptdlg.cpp:18
 msgid "Accept character sets:"
-msgstr ""
+msgstr "Accetta set di caratteri:"
 
 #: khttpoptdlg.cpp:23
 msgid "Assume HTML"
-msgstr ""
+msgstr "Supponi HTML"
 
 #: kfmprops.h:73
 msgid "&General"
