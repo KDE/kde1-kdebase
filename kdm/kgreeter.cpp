@@ -16,6 +16,7 @@
 extern "C" {
 #include "dm.h"
 #include "greet.h"
+#include <signal.h>
 
 // Make the C++ compiler shut the f... up:
 int Verify( struct display*, struct greet_info*, struct verify_info*);
@@ -401,6 +402,13 @@ GreetUser(
      
      int argc = 4;
      char* argv[5] = {"kdm", "-display", NULL, NULL, NULL};
+ 
+      struct sigaction sig;
+ 
+ 
+      /* KApplication trashes xdm's signal handlers :-( */
+      sigaction(SIGCHLD,NULL,&sig);
+ 
      argv[2] = d->name;
      MyApp* myapp = new MyApp( argc, argv );
      /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
@@ -429,6 +437,8 @@ GreetUser(
      // we have to return RESERVER_DISPLAY to restart the server
      XSetIOErrorHandler(IOErrorHandler);
      
+     sigaction(SIGCHLD,&sig,NULL);
+
      DoIt();
      
      /*
