@@ -1,7 +1,5 @@
 #!/bin/sh
 
-DUMMY=${KDEDIR:?"KDEDIR is not set!"}
-
 kaudioserver &
 kfm &
 kcontrol -init &
