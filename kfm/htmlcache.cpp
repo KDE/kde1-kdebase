@@ -46,7 +46,9 @@ HTMLCacheJob::~HTMLCacheJob()
 
 void HTMLCacheJob::slotJobFinished( int )
 {
+    //debug("%p HTMLCacheJob::slotJobFinished begin",this);
     emit finished( this );
+    //debug("%p HTMLCacheJob::slotJobFinished end",this);
 }
 
 void HTMLCacheJob::slotError( int _kioerror, const char* _text )
@@ -105,6 +107,7 @@ void HTMLCache::slotURLRequest( const char *_url )
 	     this, SLOT( slotError( HTMLCacheJob*, int, const char* ) ) );
     staticJobList->append( job );
     instanceJobList.append( job );
+    //debug("%p added to instanceJobList",job);
     job->copy();
 }
 
@@ -131,12 +134,14 @@ void HTMLCache::slotCancelURLRequest( const char *_url )
 
 void HTMLCache::slotError( HTMLCacheJob *_job, int, const char * )
 {
+    //debug("%p HTMLCache::slotError",_job);
     disconnect( _job, 0, this, 0 );
     slotJobFinished( _job );
 }
 
 void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
 {
+    //debug("%p HTMLCache::slotJobFinished",_job);
   KURL u( _job->getDestURL() );
   
   urlDict->insert( _job->getSrcURL(), new QString( u.path() ) );
@@ -149,7 +154,8 @@ void HTMLCache::slotJobFinished( HTMLCacheJob* _job )
     // Remove the job from the list
     staticJobList->removeRef( _job );
     instanceJobList.removeRef( _job );
-    
+    //debug("%p removed from instanceJobList",_job);
+
     // Is there another URL waiting for a job ?
     if ( !todoURLList.isEmpty() )
     {
@@ -209,11 +215,12 @@ const char* HTMLCache::isCached( const char *_url )
 
 HTMLCache::~HTMLCache()
 {
-    quit(); // Let's delete all running jobs ! David.
+    //debug("HTMLCache::~HTMLCache()");
+    // stop(); // called by kfmview destructor before "delete htmlCache".
     instanceList->removeRef( this );
 }
 
-void HTMLCache::quit()
+void HTMLCache::quit() // never used
 {
     HTMLCacheJob *job;
     for ( job = staticJobList->first(); job != 0L; job = staticJobList->next() )
@@ -223,14 +230,18 @@ void HTMLCache::quit()
 
 void HTMLCache::stop()
 {
+    //debug("HTMLCache::stop() : instanceJobList.count()=%d",instanceJobList.count());
     HTMLCacheJob *job;
     for ( job = instanceJobList.first(); job != 0L; job = instanceJobList.next() )
     {
 	staticJobList->removeRef( job );	
+        disconnect(job, 0, this, 0); // we don't want slotJobFinished to be called !
 	job->cancel();
+        //debug("%p, from instanceJobList, cancelled",job);
     }
     
     instanceJobList.clear();
+    //debug("instanceJobList empty");
 }
 
 void HTMLCache::save()
