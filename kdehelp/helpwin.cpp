@@ -222,6 +222,9 @@ KHelpWindow::~KHelpWindow()
 	if (openURLDialog)
 		delete openURLDialog;
 
+	if ( findDialog )
+        delete findDialog;
+
 	delete man;
 	delete info;
 //	delete dropZone;		// causes SEG FAULT. Why?
