@@ -1,0 +1,17 @@
+TODO List
+=========
+
+- KFM seg faults on too large URLs. This might be a security bug
+- Use UNIX domain sockets instead of internet name space sockets
+  for more security.
+- HTTP PUT command
+- FTP does not always close every socket
+* Configuration dialog for PROXY
+* FTP Proxy
+- Too many kioslaves on pages with many pictures
+* Deleting of the cached data
+* getting RAE files which contain spaces in their name are a problem.
+- Opening the properties of a VERY large file causes very long delays
+- Are tar directories really cached ? Does not look so yet.
+* Changing from icon view to long view causes a reload.
+- Writing directories in minicli does not cause KFM to open it.
