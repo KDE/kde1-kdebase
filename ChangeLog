@@ -1,3 +1,7 @@
+1998-06-02  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: ignore msgfmt, if not GNU gettext
+
 1998-05-28  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: fixed KDE_CHECK_STL. Checks for HP and SGI type
