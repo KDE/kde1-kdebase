@@ -25,6 +25,8 @@ In 0.10:
        - cosmectic problem with my pushbuttons fixed
        - sticky cares about transient windows now
 
+       - fix for proxyignore
+
   patchlevel 15:
        - transient windows are iconified/deiconified with their parent
          window. They also dissappear for the modules and the Mod1-Tab

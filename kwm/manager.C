@@ -1861,7 +1861,8 @@ QStrList* Manager::getProxyHints(){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (!c->Psaveyourself && !c->command.isEmpty())
+    if (!c->Psaveyourself && !c->command.isEmpty()
+	&& !proxy_ignore->contains(c->command))
       result->append(c->command + " @ " + c->machine);
   }
   QString add;
@@ -1875,7 +1876,8 @@ QStrList* Manager::getProxyProps(){
   QStrList *result = new QStrList();
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
-    if (!c->Psaveyourself && !c->command.isEmpty())
+    if (!c->Psaveyourself && !c->command.isEmpty()
+	&& !proxy_ignore->contains(c->command))
       result->append(KWM::getProperties(c->window));
   }
   QString add;
