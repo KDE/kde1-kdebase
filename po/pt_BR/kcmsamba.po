@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kuser\n"
 "POT-Creation-Date: 1998-11-17 15:21+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
 #: main.cpp:48
 msgid "&Status"

@@ -163,5 +163,3 @@ msgstr "Negrito"
 msgid "Normal"
 msgstr "Normal"
 
-#~ msgid "The KDE Font Manager Example String"
-#~ msgstr "Frase-exemplo do Gerenciador de Fontes KDE"

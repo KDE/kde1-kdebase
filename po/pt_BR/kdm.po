@@ -69,18 +69,3 @@ msgstr "Aviso: sua conta expira em %s"
 #: kgreeter.cpp:724
 msgid "Home directory not available"
 msgstr "Diretório-base não disponível"
-
-#~ msgid "Exit kdm"
-#~ msgstr "Abandonar kdm"
-
-#~ msgid "bah"
-#~ msgstr "bah"
-
-#~ msgid "No login"
-#~ msgstr "Nenhum login"
-
-#~ msgid "Expired"
-#~ msgstr "Expirado"
-
-#~ msgid "No home"
-#~ msgstr "Sem diretório-base"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kuser\n"
 "POT-Creation-Date: 1999-03-26 01:17+0100\n"
 "PO-Revision-Date: 1998-03-23 00:00+0100\n"
-"Last-Translator: Sandro Henrique <sandro@conectiva.com.br>\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>\n"
 
 #: krootwm.C:234 krootwm.C:281
 msgid "Execute command"

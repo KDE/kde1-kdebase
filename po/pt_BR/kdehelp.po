@@ -357,27 +357,3 @@ msgstr "&Distingue maiúsculas"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Encontrar"
-
-#~ msgid "Open UR&L..."
-#~ msgstr "Abrir UR&L..."
-
-#~ msgid "&Contents"
-#~ msgstr "&Conteúdo"
-
-#~ msgid "Could not start or find KFM"
-#~ msgstr "Não foi possível iniciar ou encontrar o KFM"
-
-#~ msgid "Font Size"
-#~ msgstr "Tamanho da Fonte"
-
-#~ msgid "Fonts"
-#~ msgstr "Fontes"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Variados"
-
-#~ msgid "&Reload"
-#~ msgstr "&Recarregar"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"

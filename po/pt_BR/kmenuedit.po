@@ -257,9 +257,3 @@ msgstr "Pessoal:"
 #: MenuNameDialogData.cpp:41
 msgid "Default:"
 msgstr "Padrão:"
-
-#~ msgid "! PROTECTED Button !"
-#~ msgstr "! Botão PROTEGIDO !"
-
-#~ msgid "&Reload"
-#~ msgstr "&Recarregar"
