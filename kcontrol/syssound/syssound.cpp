@@ -153,11 +153,14 @@ KSoundWidget::KSoundWidget(QWidget *parent, const char *name):
   setUpdatesEnabled(TRUE);
 
   readConfig();
+
   connect(eventlist, SIGNAL(highlighted(int)), this, SLOT(eventSelected(int)));
-  connect(soundlist, SIGNAL(highlighted(const char*)), this, SLOT(soundSelected(const char*)));
+  connect(soundlist, SIGNAL(highlighted(const char*)), 
+	  this, SLOT(soundSelected(const char*)));
   connect(btn_test, SIGNAL(clicked()), this, SLOT(playCurrentSound()));
 
-  connect(audiodrop, SIGNAL(dropAction(KDNDDropZone*)), SLOT(soundDropped(KDNDDropZone*)));
+  connect(audiodrop, SIGNAL(dropAction(KDNDDropZone*)), 
+	  SLOT(soundDropped(KDNDDropZone*)));
 
 };
 
@@ -221,7 +224,7 @@ void KSoundWidget::eventSelected(int index)
     i = 1;
     listlen = soundlist->count();
     found = 0;
-    while ( (!found) && (i < listlen) ) {
+    while ( (!found) && (i < (int)listlen) ) {
       hlp = soundlist->text(i);
       if (!strcmp(hlp, *sname)) 
 	found = 1;
@@ -296,10 +299,12 @@ void KSoundWidget::playCurrentSound()
     sname = soundlist->text(soundno);
     if (sname[0] != '/') {
       hlp = KApplication::kde_sounddir().copy(); 
+      hlp += "/";  // Don't forget this -- Bernd
       hlp += sname;
       audio.play((char*)hlp.data());
-    } else 
+    } else {
       audio.play((char*)sname.data());
+    }
   }
 }
 
