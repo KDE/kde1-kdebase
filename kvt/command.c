@@ -41,7 +41,7 @@
 #include "debug.h"
 
 #if defined (_HPUX_SOURCE)
-#define _TERMIOS_INCLUDED
+/* #define _TERMIOS_INCLUDED */
 #include <bsdtty.h>
 #endif
 /* sgis have /dev/ptmx [bmg] */
@@ -95,6 +95,10 @@
 #include "command.h"
 #include "screen.h"
 #include "xsetup.h"
+
+#if !defined(HAVE_SETEUID)
+#define seteuid(_eu) setresuid(-1, _eu, -1)
+#endif
 
 #if defined(VDISCRD) && !defined(VDISCARD)
 #define	VDISCARD	VDISCRD

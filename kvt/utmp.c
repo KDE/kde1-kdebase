@@ -8,6 +8,9 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.7.4.3  1999/06/08 09:09:22  hoelzer
+ * Fixed several security holes.
+ *
  * Revision 1.7.4.2  1999/02/17 18:54:08  leonw
  * A non-readable password file made kvt segfault. This behaviour now produces an error message and a clean exit. Not that I know why anyone would want to have a non-readable passwd file...
  *
@@ -89,6 +92,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <memory.h>
+
+#if !defined(HAVE_SETEUID)
+#define seteuid(_eu) setresuid(-1, _eu, -1)
+#endif
 
 #ifndef TTYTAB
 #define TTYTAB "/etc/ttys"
