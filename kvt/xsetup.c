@@ -691,6 +691,3 @@ void NewFont(int direction)
   
   LoadNewFont();
 }
-
-
-

@@ -1,4 +1,9 @@
 since kvt-0.18.3
+  - fixed a bug that made it impossible to resize the window with the
+    menu when the window size was manipulated with the normal window
+    manager resize mechanism (Mario Weilguni <mweilguni@kde.org>)
+  - removed some DOS-newlines (^M), which cause compile errors on
+    some compilers (Mario Weilguni <mweilguni@kde.org>)
   - fixed "New Terminal" (Matthias)
 
 since kvt-0.18.2

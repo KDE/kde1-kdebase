@@ -843,8 +843,8 @@ void kVt::size_menu_activated( int item){
 }
 
 void kVt::dimen_menu_activated( int item){
-  if ( item == kvt_dimen)
-    return;
+//   if ( item == kvt_dimen)
+//     return;
   kvt_dimen = item;
   kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
 }
