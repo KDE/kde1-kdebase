@@ -1,6 +1,10 @@
+# KDE Config File 
 [KDE Desktop Entry]
+Name=Fontmanager
+Name[de]=Schriftenmanager
 Exec=kfontmanager
 DocPath=kfontmanager/kfontmanager.html
 Info=KDE's Fontmanager.
+Info[de]=Sucht die Schriften für KDE zusammen
 Info[nl]=KDE-lettertypebeheer.
 Type=Application

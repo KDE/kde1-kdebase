@@ -1,7 +1,11 @@
+# KDE Config File
 [KDE Desktop Entry]
+Name=Panel
+Name[de]=Startleiste
 Type=Application
 Exec=kpanel
 DocPath=kpanel.html
 Info=The KDE Desktop Panel.
+Info[de]=Die KDE Start-Klick-Leiste
 Info[nl]=Het KDE burobladpaneel.
 

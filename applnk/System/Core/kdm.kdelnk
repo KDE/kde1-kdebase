@@ -1,8 +1,12 @@
+# KDE Config File 
 [KDE Desktop Entry]
+Name=Display Manager
+Name[de]=Anmeldeschirm
 Exec=kdehelp $KDEDIR/doc/HTML/kdm/kdm.html
 Section=Applications
 DocPath=kdm.html
 Title=Kdm
 Info=Info on the KDE Display Manager (Xdm replacement).
+Info[de]=Der KDE Anmeldeschirm (xdm - Ersatz)
 Info[nl]=Informatie over het KDE schermbeheer (Xdm vervanger).
 

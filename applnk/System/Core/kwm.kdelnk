@@ -1,7 +1,10 @@
+# KDE Config File 
 [KDE Desktop Entry]
+Name=Window manager
 Type=Application
 execute=kwm
 docPath=kwm/kwm.html
-comment=kwm is the KDE window manager
+comment=The KDE window manager
+comment[de]=Der KDE Fensterorganisator ;)
 comment[nl]=KWm is de KDE window manager
 
