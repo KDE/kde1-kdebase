@@ -6,6 +6,7 @@ SwallowExec=xclock -bg grey76
 SwallowTitle=xclock
 Exec=xcalendar
 Comment=Your personal secretary
+Comment[de]=Ihr persönlicher Sekretär
 Comment[fi]=Oma sihteerisi
 Comment[fr]=Votre secrétaire personnelle
 Comment[pt]=A sua secretária pessoal

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Name=Windows
+Name[de]=Fenster
 Name[fr]=Fenêtres
 Name[da]=Vinduer
 Name[pl]=Okna

@@ -6,6 +6,7 @@ SwallowExec=xload -bg grey76 -nolabel
 SwallowTitle=xload
 Exec=xosview
 Comment=Informations about your system status
+Comment[de]=Informationen über den Systemstatus
 Comment[fi]=Tietoja systeemin tilasta
 Comment[fr]=Informations sur l'état de votre système
 Comment[pt]=Informações sobre o seu sistema

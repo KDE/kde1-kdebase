@@ -8,6 +8,7 @@ ReadOnly=0
 FSType=Default
 Type=FSDevice
 Comment=File System Device
+Comment[de]=Dateisystem
 Comment[pl]=Urz±dzenie
 Comment[fi]=Tiedostosysteemi
 Comment[fr]=Périphérique système de fichiers
