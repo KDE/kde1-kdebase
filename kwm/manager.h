@@ -124,6 +124,7 @@ public:
   void iconifyTransientOf(Client* c);
   void unIconifyTransientOf(Client* c);
   void ontoDesktopTransientOf(Client* c);
+  void stickyTransientOf(Client* c, bool sticky);
 
 signals:
   void reConfigure();

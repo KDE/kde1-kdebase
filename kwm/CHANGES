@@ -23,6 +23,7 @@ In 0.10:
        - few smaller fixes
 
        - cosmectic problem with my pushbuttons fixed
+       - sticky cares about transient windows now
 
   patchlevel 15:
        - transient windows are iconified/deiconified with their parent

@@ -879,6 +879,8 @@ void Client::generateOperations(){
   else
     myapp->operations->insertItem(KWM::getStickyString(), 
 				  OP_STICKY);
+  if (trans != None && trans != qt_xrootwin())
+    myapp->operations->setItemEnabled(OP_STICKY, FALSE);
 
   myapp->desktopMenu->clear();
   int i;
@@ -1304,6 +1306,7 @@ void Client::stickyToggled(bool depressed){
   manager->changedClient(this);
   buttonSticky->setPixmap(*pm);
   buttonSticky->update();
+  manager->stickyTransientOf(this, depressed);
 }
 
 void Client::menuPressed(){

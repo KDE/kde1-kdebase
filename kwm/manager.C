@@ -789,8 +789,9 @@ void Manager::manage(Window w, bool mapped){
   if (c->trans != None && c->trans != qt_xrootwin()){
     pc = getClient(c->trans);
     if (pc){
-      pc = getClient(c->trans);
       c->desktop = pc->desktop;
+      if (pc->isSticky())
+	KWM::setSticky(c->window, True);
       KWM::moveToDesktop(c->window, c->desktop);
     }
   }
@@ -1950,6 +1951,17 @@ void Manager::ontoDesktopTransientOf(Client* c){
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
       it.current()->ontoDesktop(c->desktop);
+    }
+  }
+}
+
+
+void Manager::stickyTransientOf(Client* c, bool sticky){
+  QListIterator<Client> it(clients);
+  for (it.toFirst(); it.current(); ++it){
+    if (it.current() != c && it.current()->trans == c->window){
+      if (it.current()->isSticky() != sticky)
+	it.current()->buttonSticky->toggle();
     }
   }
 }
