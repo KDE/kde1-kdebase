@@ -328,6 +328,7 @@ AC_OUTPUT(Makefile \
 	mimetypes/video/Makefile \
 	pics/Makefile \
 	pics/mini/Makefile \
+	pics/large/Makefile \
 	pics/wallpapers/Makefile \
 	po/Makefile \
 	po/br/Makefile \

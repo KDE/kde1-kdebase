@@ -18,7 +18,7 @@ magneto-optical_mount.xpm    magneto-optical_unmount.xpm harddrive_mount.xpm \
 harddrive_unmount.xpm locked.xpm logo.xpm tablet.xpm
 
 datadir = $(kde_icondir)
-SUBDIRS = wallpapers mini
+SUBDIRS = wallpapers mini large
 
 EXTRA_DIST = $(data_DATA)
 
