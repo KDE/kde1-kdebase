@@ -1,13 +1,13 @@
 Index: libtool.m4
 ===================================================================
 RCS file: /gd/gnu/anoncvsroot/libtool/libtool.m4,v
-retrieving revision 1.5
-diff -u -r1.5 libtool.m4
---- libtool.m4	1998/11/04 09:43:11	1.5
-+++ libtool.m4	1998/11/16 12:35:14
-@@ -32,10 +32,8 @@
- AC_REQUIRE([AM_PROG_LD])dnl
- AC_REQUIRE([AM_PROG_NM])dnl
+retrieving revision 1.9
+diff -u -r1.9 libtool.m4
+--- libtool.m4	1998/12/04 23:21:52	1.9
++++ libtool.m4	1998/12/07 17:13:03
+@@ -34,10 +34,8 @@
+ AC_REQUIRE([AM_SYS_NM_PARSE])dnl
+ AC_REQUIRE([AM_SYS_SYMBOL_UNDERSCORE])dnl
  AC_REQUIRE([AC_PROG_LN_S])dnl
 +AC_REQUIRE([AM_SET_LIBTOOL_VARIABLE])dnl
  dnl
@@ -17,7 +17,7 @@ diff -u -r1.5 libtool.m4
  
  # Check for any special flags to pass to ltconfig.
  libtool_flags=
-@@ -288,4 +286,10 @@
+@@ -498,6 +496,12 @@
  AC_DEFUN(AM_SYS_LIBTOOL_CYGWIN32,
  [AC_CHECK_TOOL(DLLTOOL, dlltool, false)
  AC_CHECK_TOOL(AS, as, false)
@@ -28,3 +28,5 @@ diff -u -r1.5 libtool.m4
 +LIBTOOL='$(SHELL) $(top_builddir)/libtool $1'
 +AC_SUBST(LIBTOOL)dnl
  ])
+ 
+ # AM_SYS_SYMBOL_UNDERSCORE - does the compiler prefix global symbols
