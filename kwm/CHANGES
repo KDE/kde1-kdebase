@@ -11,9 +11,12 @@ influences from my experiences with the former kwm.
 
 In 0.10:
 --------
+patchlevel 33:
+        - new property "EdgeResistance=<value>". Default value is 50
+
 patchlevel 32:
 	- fixed bugs:   interactive placement persistence
-			transient windows placed interactively (NOT!) (CT)	
+			transient windows placed interactively (NOT!) (CT)
 	- deskUnclutter and deskCascade commands (to issue through kwmcom
 	   in minicli for the moment; krootwm menu entries soon) (CT)
 

@@ -757,10 +757,10 @@ void MyApp::readConfiguration(){
   if (config->hasKey("ElectricBorder")){
     options.ElectricBorder = config->readNumEntry("ElectricBorder");
     if (options.ElectricBorder < -1)
-      options.ElectricBorder = 500;
+      options.ElectricBorder = 1000;
   }
   else{
-    options.ElectricBorder = 500;
+    options.ElectricBorder = 1000;
     config->writeEntry("ElectricBorder", options.ElectricBorder);
   }
 
@@ -785,6 +785,16 @@ void MyApp::readConfiguration(){
       manager->destroyBorderWindows();
   }    
 
+
+  if (config->hasKey("EdgeResistance")){
+    options.EdgeResistance = config->readNumEntry("EdgeResistance");
+    if (options.EdgeResistance < -1)
+      options.EdgeResistance = 50;
+  }
+  else{
+    options.EdgeResistance = 50;
+    config->writeEntry("EdgeResistance", options.EdgeResistance);
+  }
 
   key = config->readEntry("ShapeMode");
   if( key == "on")

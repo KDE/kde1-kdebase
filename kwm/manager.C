@@ -1286,6 +1286,7 @@ void Manager::deskUnclutter() {
     smartPlacement(cl);
     sendConfig(cl, FALSE); //ask Matthias if this is the best way
     //restore the pos in clients list (munged by smartPlacement
+    // Matthias: yes, Christian, I think so :-) 
     clients.findRef(bm); 
   }
   options.interactive_trigger = save_interactive_trigger;

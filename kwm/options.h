@@ -65,6 +65,7 @@ struct kwmOptions {
   int AutoRaise;
   int ElectricBorder;
   bool ElectricBorderMovePointer;
+  int EdgeResistance;
   bool ControlTab;
   bool Button3Grab;
   //CT 18jan98

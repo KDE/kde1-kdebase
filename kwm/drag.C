@@ -114,7 +114,28 @@ void resizecalc_b(Client *c, int /* x */, int y){
 
 
 void dragcalc(Client* c, int x, int y) {
-    c->geometry.moveTopLeft(QPoint(QPoint(x,y)- c->old_cursor_pos));
+  c->geometry.moveTopLeft(QPoint(QPoint(x,y)- c->old_cursor_pos));
+  // Edge Resistance
+  QRect r = KWM::getWindowRegion(manager->currentDesktop());
+  int tmp;
+  // horizontal
+  if (c->geometry.width() <= r.width()){
+    tmp = c->geometry.right() - r.right();
+    if (tmp > 0 && tmp < options.EdgeResistance)
+      c->geometry.moveBy(-tmp, 0);
+    tmp = r.left() - c->geometry.left();
+    if (tmp > 0 && tmp < options.EdgeResistance)
+      c->geometry.moveBy(tmp, 0);
+  }
+  // vertical
+  if (c->geometry.height() <= r.height()){
+    tmp = c->geometry.bottom() - r.bottom();
+    if (tmp > 0 && tmp < options.EdgeResistance)
+      c->geometry.moveBy(0, -tmp);
+    tmp = r.top() - c->geometry.top();
+    if (tmp > 0 && tmp < options.EdgeResistance)
+      c->geometry.moveBy(0, tmp);
+  }
 }
 
 void draw_selection_rectangle(int x, int y, int dx, int dy){
