@@ -6,7 +6,7 @@ SUBDIRS = cs da de es fi fr it nl ru is sv hu pt pl el hr ro no \
 APPS = kcmbell kcminfo kcminput kcmkeys kcmkfm kcmkpanel kcmkwm \
 	kcmlocale kcmsamba kcmsample kcmsyssound kcontrol kdehelp \
 	kdisplay kdm kdmconfig kfind kfm kfontmanager kikbd \
-	klock kmenuedit kpanel krootwm kstartondesk kvt kwm \
+	klock kmenuedit konsole kpanel krootwm kstart kvt kwm \
 	kpager
 
 merge:

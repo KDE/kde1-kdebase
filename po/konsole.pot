@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-29 14:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: main.C:174
+msgid "&Normal"
+msgstr ""
+
+#: main.C:177
+msgid "&Small"
+msgstr ""
+
+#: main.C:178
+msgid "&Medium"
+msgstr ""
+
+#: main.C:179
+msgid "&Large"
+msgstr ""
+
+#: main.C:180
+msgid "&Huge"
+msgstr ""
+
+#: main.C:183
+msgid "&Linux"
+msgstr ""
+
+#: main.C:187
+msgid "&More ..."
+msgstr ""
+
+#: main.C:193
+msgid "&Hide"
+msgstr ""
+
+#: main.C:194
+msgid "&Left"
+msgstr ""
+
+#: main.C:195
+msgid "&Right"
+msgstr ""
+
+#: main.C:201
+msgid "40x15 (&small)"
+msgstr ""
+
+#: main.C:202
+msgid "80x24 (&vt100)"
+msgstr ""
+
+#: main.C:203
+msgid "80x25 (&ibmpc)"
+msgstr ""
+
+#: main.C:204
+msgid "80x40 (&xterm)"
+msgstr ""
+
+#: main.C:205
+msgid "80x52 (ibmv&ga)"
+msgstr ""
+
+#: main.C:214
+msgid "&Menubar"
+msgstr ""
+
+#: main.C:216
+msgid "&Frame"
+msgstr ""
+
+#: main.C:218
+msgid "Scroll&bar"
+msgstr ""
+
+#: main.C:220
+msgid "BS sends &DEL"
+msgstr ""
+
+#: main.C:223
+msgid "&Font"
+msgstr ""
+
+#: main.C:224
+msgid "&Size"
+msgstr ""
+
+#: main.C:225
+msgid "&Schema"
+msgstr ""
+
+#: main.C:227
+msgid "&Save options"
+msgstr ""
+
+#: main.C:231
+msgid "&About ..."
+msgstr ""
+
+#: main.C:232
+msgid "&User's Manual ..."
+msgstr ""
+
+#: main.C:233
+msgid "&Technical Reference ..."
+msgstr ""
+
+#: main.C:241
+msgid "New"
+msgstr ""
+
+#: main.C:242
+msgid "Sessions"
+msgstr ""
+
+#: main.C:843
+msgid "Welcome to the console"
+msgstr ""

@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-10-29 13:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kstart.C:115
+#, c-format
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+"\n"
+" Utility to launch legay applications with special KDE window properties\n"
+" such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+" or sticky\n"
+" \n"
+" In addition, the -activate switch will jump to the window even if it is\n"
+" started on a different virtual desktop\n"
+" \n"
+" Usage:\n"
+" %s <command> [-window <regular expression>] [-desktop <number>]\n"
+"              [-sticky] [-iconify] [-maximize] \n"
+"              [-decoration tiny|none] [-activate]\n"
+" \n"
+" If you do not specify a regular expression for the windows title,\n"
+" then the very first window to appear will be taken. Not recommended!\n"
+" \n"
+" Example usage:\n"
+" %s \"xclock -geometry 80x80-0+0\" -window xclock -decoration tiny -sticky\n"
+" puts a tiny decorated, sticky xclock on the top right corner of the "
+"screen.\n"
+" \n"
+" "
+msgstr ""
+
+#: kstart.C:151
+msgid ""
+"\n"
+" Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
