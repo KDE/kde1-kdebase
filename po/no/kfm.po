@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-07 01:11+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:947 kbind.cpp:959 kbind.cpp:969 kfmgui.cpp:214 kfmgui.cpp:1038
+#: kbind.cpp:948 kbind.cpp:960 kbind.cpp:970 kfmgui.cpp:214 kfmgui.cpp:1038
 msgid "Folder"
 msgstr "Mappe"
 
@@ -269,11 +269,11 @@ msgstr "Hjem"
 msgid "Could not load icon\n"
 msgstr "Kunne ikke laste ikon\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
-#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1597 kbind.cpp:1605 kbind.cpp:1623
-#: kbind.cpp:1642 kbind.cpp:1701 kbind.cpp:1713 kbind.cpp:1740 kbind.cpp:1755
-#: kbind.cpp:1775 kbind.cpp:1787 kbind.cpp:1803 kbind.cpp:1939 kbind.cpp:1951
-#: kbind.cpp:1996 kbind.cpp:2038 kfmexec.cpp:60 kfmexec.cpp:92
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1598 kbind.cpp:1606 kbind.cpp:1624
+#: kbind.cpp:1643 kbind.cpp:1702 kbind.cpp:1714 kbind.cpp:1741 kbind.cpp:1756
+#: kbind.cpp:1776 kbind.cpp:1788 kbind.cpp:1804 kbind.cpp:1940 kbind.cpp:1952
+#: kbind.cpp:1997 kbind.cpp:2039 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:571 kfmgui.cpp:730 kfmman.cpp:343
 #: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
@@ -488,59 +488,59 @@ msgid "bytes"
 msgstr "byte"
 
 # kbind.cpp:302
-#: kbind.cpp:302
+#: kbind.cpp:303
 msgid "The mime type config file "
 msgstr "Mimetypekonfigurasjonsfilen"
 
 # kbind.cpp:303
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
 msgstr "inneholder ikke noe MimeType=... innslag"
 
 # kbind.cpp:377
-#: kbind.cpp:391
+#: kbind.cpp:392
 msgid "No mime types installed!"
 msgstr "ingen mimetyper installert!"
 
 # kbind.cpp:425 kbind.cpp:1188
-#: kbind.cpp:439 kbind.cpp:1214
+#: kbind.cpp:440 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "Kunne ikke finne mimetype\n"
 
 # kbind.cpp:697 kbind.cpp:707 kbind.cpp:1890 kbind.cpp:1891 kbind.cpp:1903
 # kbind.cpp:1905
-#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:1974 kbind.cpp:1975 kbind.cpp:1987
-#: kbind.cpp:1989
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1975 kbind.cpp:1976 kbind.cpp:1988
+#: kbind.cpp:1990
 msgid "Mount"
 msgstr "Monter"
 
 # kbind.cpp:713 kbind.cpp:1881
-#: kbind.cpp:725 kbind.cpp:1965
+#: kbind.cpp:726 kbind.cpp:1966
 msgid "Unmount"
 msgstr "Demonter"
 
 # kbind.cpp:1187
-#: kbind.cpp:1213
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "FEIL"
 
 # kbind.cpp:1188
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "in "
 msgstr "i "
 
 # kbind.cpp:1332 kbind.cpp:1418
-#: kbind.cpp:1387 kbind.cpp:1480
+#: kbind.cpp:1388 kbind.cpp:1481
 msgid "Could not execute program\n"
 msgstr "Kunne ikke utføre program\n"
 
 # kbind.cpp:1528
-#: kbind.cpp:1596
+#: kbind.cpp:1597
 msgid "Could not find binding"
 msgstr "Kunne ikke finne tilordning"
 
 # kbind.cpp:1538
-#: kbind.cpp:1606
+#: kbind.cpp:1607
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -549,12 +549,12 @@ msgstr ""
 "Ikke et program"
 
 # kbind.cpp:1556 kbind.cpp:1573
-#: kbind.cpp:1624 kbind.cpp:1643
+#: kbind.cpp:1625 kbind.cpp:1644
 msgid "Can only start executables on local disks\n"
 msgstr "Kan bare starte programmer på lokale disker\n"
 
 # kbind.cpp:1631 kbind.cpp:1705 kbind.cpp:1856
-#: kbind.cpp:1702 kbind.cpp:1776 kbind.cpp:1940
+#: kbind.cpp:1703 kbind.cpp:1777 kbind.cpp:1941
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -563,7 +563,7 @@ msgstr ""
 "den lokale harddisken"
 
 # kbind.cpp:1641
-#: kbind.cpp:1712
+#: kbind.cpp:1713
 #, c-format
 msgid ""
 "Could not access\n"
@@ -573,22 +573,22 @@ msgstr ""
 "%s"
 
 # kbind.cpp:1670
-#: kbind.cpp:1741
+#: kbind.cpp:1742
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=....\"-innslaget er tomt"
 
 # kbind.cpp:1685
-#: kbind.cpp:1756
+#: kbind.cpp:1757
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfigurasjonsfilen har ikke noen \"Type=...\"-linje"
 
 # kbind.cpp:1715 kbind.cpp:1866
-#: kbind.cpp:1786 kbind.cpp:1950
+#: kbind.cpp:1787 kbind.cpp:1951
 msgid "Could not access"
 msgstr "Kunne ikke få adgang til"
 
 # kbind.cpp:1734
-#: kbind.cpp:1804
+#: kbind.cpp:1805
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -601,17 +601,17 @@ msgstr ""
 "for å løse problemet"
 
 # kbind.cpp:1822
-#: kbind.cpp:1902
+#: kbind.cpp:1903
 msgid "ERROR: No Terminal Setting"
 msgstr "FEIL: Ingen terminalinstillinger"
 
 # kbind.cpp:1913
-#: kbind.cpp:1997
+#: kbind.cpp:1998
 msgid "No mount point in *.kdelnk file"
 msgstr "Ingen monteringssted i *.kdelnk-fil"
 
 # kbind.cpp:1953
-#: kbind.cpp:2037
+#: kbind.cpp:2038
 msgid "Unknown binding"
 msgstr "Ukjent tilordning"
 

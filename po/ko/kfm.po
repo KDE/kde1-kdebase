@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-07 01:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:947 kbind.cpp:959 kbind.cpp:969 kfmgui.cpp:214 kfmgui.cpp:1038
+#: kbind.cpp:948 kbind.cpp:960 kbind.cpp:970 kfmgui.cpp:214 kfmgui.cpp:1038
 msgid "Folder"
 msgstr "폴더"
 
@@ -265,11 +265,11 @@ msgstr "홈 디렉토리"
 msgid "Could not load icon\n"
 msgstr "Icon을 불러 올 수 없음\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
-#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1597 kbind.cpp:1605 kbind.cpp:1623
-#: kbind.cpp:1642 kbind.cpp:1701 kbind.cpp:1713 kbind.cpp:1740 kbind.cpp:1755
-#: kbind.cpp:1775 kbind.cpp:1787 kbind.cpp:1803 kbind.cpp:1939 kbind.cpp:1951
-#: kbind.cpp:1996 kbind.cpp:2038 kfmexec.cpp:60 kfmexec.cpp:92
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1598 kbind.cpp:1606 kbind.cpp:1624
+#: kbind.cpp:1643 kbind.cpp:1702 kbind.cpp:1714 kbind.cpp:1741 kbind.cpp:1756
+#: kbind.cpp:1776 kbind.cpp:1788 kbind.cpp:1804 kbind.cpp:1940 kbind.cpp:1952
+#: kbind.cpp:1997 kbind.cpp:2039 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:571 kfmgui.cpp:730 kfmman.cpp:343
 #: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
@@ -453,48 +453,48 @@ msgstr "%s (연결)"
 msgid "bytes"
 msgstr "바이트"
 
-#: kbind.cpp:302
+#: kbind.cpp:303
 msgid "The mime type config file "
 msgstr "Mime 형식 구성 파일 "
 
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
 msgstr "MimeType=...항목을 갖고 있지 않습니다"
 
-#: kbind.cpp:391
+#: kbind.cpp:392
 msgid "No mime types installed!"
 msgstr "Mime 형식이 설치되지 않았습니다!"
 
-#: kbind.cpp:439 kbind.cpp:1214
+#: kbind.cpp:440 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "Mime 유형을 찾을 수 없습니다\n"
 
-#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:1974 kbind.cpp:1975 kbind.cpp:1987
-#: kbind.cpp:1989
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1975 kbind.cpp:1976 kbind.cpp:1988
+#: kbind.cpp:1990
 msgid "Mount"
 msgstr "파일시스템 연결"
 
-#: kbind.cpp:725 kbind.cpp:1965
+#: kbind.cpp:726 kbind.cpp:1966
 msgid "Unmount"
 msgstr "파일시스템 연결 끊기"
 
-#: kbind.cpp:1213
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "오류"
 
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "in "
 msgstr "안에 "
 
-#: kbind.cpp:1387 kbind.cpp:1480
+#: kbind.cpp:1388 kbind.cpp:1481
 msgid "Could not execute program\n"
 msgstr "프로그램을 실행할 수 없습니다\n"
 
-#: kbind.cpp:1596
+#: kbind.cpp:1597
 msgid "Could not find binding"
 msgstr "바인딩를 찾을 수 없습니다"
 
-#: kbind.cpp:1606
+#: kbind.cpp:1607
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -502,11 +502,11 @@ msgstr ""
 "이 파일은 문서 파일입니다!\n"
 "응용프로그램이 아닙니다"
 
-#: kbind.cpp:1624 kbind.cpp:1643
+#: kbind.cpp:1625 kbind.cpp:1644
 msgid "Can only start executables on local disks\n"
 msgstr "지역 디스크에 있는 실행파일만 시작할 수 있습니다\n"
 
-#: kbind.cpp:1702 kbind.cpp:1776 kbind.cpp:1940
+#: kbind.cpp:1703 kbind.cpp:1777 kbind.cpp:1941
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -514,7 +514,7 @@ msgstr ""
 "지역 하드 디스크에서만 *.kdelnk 파일이\n"
 "작동할 수 있습니다"
 
-#: kbind.cpp:1712
+#: kbind.cpp:1713
 #, c-format
 msgid ""
 "Could not access\n"
@@ -523,19 +523,19 @@ msgstr ""
 "접근할 수 없습니다\n"
 "%s"
 
-#: kbind.cpp:1741
+#: kbind.cpp:1742
 msgid "The \"Link=....\" entry is empty"
 msgstr "\"Link=...\" 항목이 비어 있습니다"
 
-#: kbind.cpp:1756
+#: kbind.cpp:1757
 msgid "The config file has no \"Type=...\" line"
 msgstr "구성 파일에 \"Type=...\" 열이 없습니다"
 
-#: kbind.cpp:1786 kbind.cpp:1950
+#: kbind.cpp:1787 kbind.cpp:1951
 msgid "Could not access"
 msgstr "접근할 수 없습니다"
 
-#: kbind.cpp:1804
+#: kbind.cpp:1805
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -547,15 +547,15 @@ msgstr ""
 "이 문제를 해결하려면 등록정보를\n"
 "편집하십시오"
 
-#: kbind.cpp:1902
+#: kbind.cpp:1903
 msgid "ERROR: No Terminal Setting"
 msgstr "오류: 터미널이 설정되지 않았습니다"
 
-#: kbind.cpp:1997
+#: kbind.cpp:1998
 msgid "No mount point in *.kdelnk file"
 msgstr "*.kdelnk 파일에 파일시스템을 연결할 지점이 없습니다"
 
-#: kbind.cpp:2037
+#: kbind.cpp:2038
 msgid "Unknown binding"
 msgstr "알 수 없는 바인딩입니다"
 

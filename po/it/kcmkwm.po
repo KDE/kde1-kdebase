@@ -77,7 +77,8 @@ msgstr ""
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'\n"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante "
+"'Ingrandisci'\n"
 
 #: titlebar.cpp:544
 msgid ""

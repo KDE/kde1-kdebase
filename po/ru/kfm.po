@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2POT-Creation-Date: 1998-02-19 22:49+0100\n"
-"POT-Creation-Date: 1998-12-06 01:14+0100\n"
+"POT-Creation-Date: 1998-12-07 01:11+0100\n"
 "PO-Revision-Date: 1998-11-07 11:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "KFM"
 msgstr "KFM"
 
-#: kbind.cpp:947 kbind.cpp:959 kbind.cpp:969 kfmgui.cpp:214 kfmgui.cpp:1038
+#: kbind.cpp:948 kbind.cpp:960 kbind.cpp:970 kfmgui.cpp:214 kfmgui.cpp:1038
 msgid "Folder"
 msgstr "Папка"
 
@@ -265,11 +265,11 @@ msgstr "Домашний каталог"
 msgid "Could not load icon\n"
 msgstr "Не могу загрузить пиктограмму\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:304
-#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1597 kbind.cpp:1605 kbind.cpp:1623
-#: kbind.cpp:1642 kbind.cpp:1701 kbind.cpp:1713 kbind.cpp:1740 kbind.cpp:1755
-#: kbind.cpp:1775 kbind.cpp:1787 kbind.cpp:1803 kbind.cpp:1939 kbind.cpp:1951
-#: kbind.cpp:1996 kbind.cpp:2038 kfmexec.cpp:60 kfmexec.cpp:92
+#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:305
+#: kbind.cpp:391 kbind.cpp:443 kbind.cpp:1598 kbind.cpp:1606 kbind.cpp:1624
+#: kbind.cpp:1643 kbind.cpp:1702 kbind.cpp:1714 kbind.cpp:1741 kbind.cpp:1756
+#: kbind.cpp:1776 kbind.cpp:1788 kbind.cpp:1804 kbind.cpp:1940 kbind.cpp:1952
+#: kbind.cpp:1997 kbind.cpp:2039 kfmexec.cpp:60 kfmexec.cpp:92
 #: kfmexec/main.cpp:47 kfmgui.cpp:571 kfmgui.cpp:730 kfmman.cpp:343
 #: kfmman.cpp:1095 kfmman.cpp:1311 kfmman.cpp:1337 kfmprops.cpp:377
 #: kfmprops.cpp:628 kfmprops.cpp:654 kfmprops.cpp:881 kfmprops.cpp:1010
@@ -453,48 +453,48 @@ msgstr "%s (Ссылка)"
 msgid "bytes"
 msgstr "байт"
 
-#: kbind.cpp:302
+#: kbind.cpp:303
 msgid "The mime type config file "
 msgstr "Конфигурационный файл типа mime "
 
-#: kbind.cpp:303
+#: kbind.cpp:304
 msgid "does not conatain a MimeType=... entry"
 msgstr "не содержит поля MimeType=..."
 
-#: kbind.cpp:391
+#: kbind.cpp:392
 msgid "No mime types installed!"
 msgstr "Типы mime не установлены"
 
-#: kbind.cpp:439 kbind.cpp:1214
+#: kbind.cpp:440 kbind.cpp:1215
 msgid "Could not find mime type\n"
 msgstr "Не могу найти типы mime\n"
 
-#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:1974 kbind.cpp:1975 kbind.cpp:1987
-#: kbind.cpp:1989
+#: kbind.cpp:710 kbind.cpp:720 kbind.cpp:1975 kbind.cpp:1976 kbind.cpp:1988
+#: kbind.cpp:1990
 msgid "Mount"
 msgstr "Монтировать"
 
-#: kbind.cpp:725 kbind.cpp:1965
+#: kbind.cpp:726 kbind.cpp:1966
 msgid "Unmount"
 msgstr "Размонтировать"
 
-#: kbind.cpp:1213
+#: kbind.cpp:1214
 msgid "ERROR"
 msgstr "ОШИБКА"
 
-#: kbind.cpp:1214
+#: kbind.cpp:1215
 msgid "in "
 msgstr "в "
 
-#: kbind.cpp:1387 kbind.cpp:1480
+#: kbind.cpp:1388 kbind.cpp:1481
 msgid "Could not execute program\n"
 msgstr "Не могу запустить программу\n"
 
-#: kbind.cpp:1596
+#: kbind.cpp:1597
 msgid "Could not find binding"
 msgstr "Не могу найти привязки"
 
-#: kbind.cpp:1606
+#: kbind.cpp:1607
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -502,11 +502,11 @@ msgstr ""
 "Это документ!\n"
 "А не приложение"
 
-#: kbind.cpp:1624 kbind.cpp:1643
+#: kbind.cpp:1625 kbind.cpp:1644
 msgid "Can only start executables on local disks\n"
 msgstr "Могу запускать программы только на локальных дисках\n"
 
-#: kbind.cpp:1702 kbind.cpp:1776 kbind.cpp:1940
+#: kbind.cpp:1703 kbind.cpp:1777 kbind.cpp:1941
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -514,7 +514,7 @@ msgstr ""
 "Могу работать с файлами *.kdelnk только\n"
 "на локальном жестком диске"
 
-#: kbind.cpp:1712
+#: kbind.cpp:1713
 #, c-format
 msgid ""
 "Could not access\n"
@@ -523,19 +523,19 @@ msgstr ""
 "Не могу получить доступ к\n"
 "%s"
 
-#: kbind.cpp:1741
+#: kbind.cpp:1742
 msgid "The \"Link=....\" entry is empty"
 msgstr "Поле \"Link=....\" пусто"
 
-#: kbind.cpp:1756
+#: kbind.cpp:1757
 msgid "The config file has no \"Type=...\" line"
 msgstr "Конфигурационный файл не имеет поля \"Type=...\""
 
-#: kbind.cpp:1786 kbind.cpp:1950
+#: kbind.cpp:1787 kbind.cpp:1951
 msgid "Could not access"
 msgstr "Не могу получить доступ"
 
-#: kbind.cpp:1804
+#: kbind.cpp:1805
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -547,15 +547,15 @@ msgstr ""
 "Отредактируйте Свойства\n"
 "для решения проблемы"
 
-#: kbind.cpp:1902
+#: kbind.cpp:1903
 msgid "ERROR: No Terminal Setting"
 msgstr "ОШИБКА: Нет установок Терминала"
 
-#: kbind.cpp:1997
+#: kbind.cpp:1998
 msgid "No mount point in *.kdelnk file"
 msgstr "Нет точки монтирования в *.kdelnk файле"
 
-#: kbind.cpp:2037
+#: kbind.cpp:2038
 msgid "Unknown binding"
 msgstr "Неизвестная привязка"
 
