@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-08-26 14:27:08+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
+#: main.C:220
+msgid "Add characters to word class"
+msgstr "Ajouter Caractère à la classe mot"
+
+#
+#: main.C:224
+msgid "choose type of color-mode"
+msgstr "Choisir type de couleur"
+
+#: main.C:227
+msgid "Ok"
+msgstr "Ok"
+
+#: main.C:229
+msgid "Cancel"
+msgstr "Annuler"
+
+#: main.C:357
+msgid "&New Terminal"
+msgstr "&Nouveau Terminal"
+
+#: main.C:359
+msgid "E&xit"
+msgstr "&Quitter"
+
+#: main.C:364 main.C:669
+msgid "&Hide"
+msgstr "Cac&her"
+
+#: main.C:365
+msgid "&Left"
+msgstr "&Gauche"
+
+#: main.C:366
+msgid "&Right"
+msgstr "&Droite"
+
+#: main.C:371
+msgid "&Normal"
+msgstr "&Normal"
+
+#: main.C:372
+msgid "&Tiny"
+msgstr "&Minuscule"
+
+#: main.C:373
+msgid "&Small"
+msgstr "&Petit"
+
+#: main.C:374
+msgid "&Medium"
+msgstr "&Moyen"
+
+#: main.C:375
+msgid "&Large"
+msgstr "&Large"
+
+#: main.C:376
+msgid "&Huge"
+msgstr "&Géant"
+
+#: main.C:388
+msgid "&black/white"
+msgstr "&noir/blanc"
+
+#: main.C:389
+msgid "&white/black"
+msgstr "&blanc/noir"
+
+#: main.C:390
+msgid "&green/black"
+msgstr "&vert/noir"
+
+#: main.C:391
+msgid "black/light&yellow"
+msgstr "noir/&jaune clair"
+
+#
+#: main.C:392
+msgid "Linu&x Console"
+msgstr "Console Linu&x"
+
+#: main.C:399 main.C:594
+msgid "Hide &Menubar"
+msgstr "Cacher Barre de &Menu"
+
+#: main.C:401 main.C:460 main.C:586
+msgid "Show &Menubar"
+msgstr "Afficher Barre de &Menu"
+
+#: main.C:402 main.C:604
+msgid "Secure &keyboard"
+msgstr "Bloquer &Clavier"
+
+#
+#: main.C:404
+msgid "Scroll&bar"
+msgstr "&Barre de défilement"
+
+#: main.C:405
+msgid "&Font size"
+msgstr "Taille de &Police"
+
+#: main.C:406
+msgid "&Color"
+msgstr "&Couleur"
+
+#: main.C:407
+msgid "&Size"
+msgstr "&Taille"
+
+#: main.C:408
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:410
+msgid "Save &Options"
+msgstr "Sauvegarder les &Options"
+
+#: main.C:419
+msgid "&About..."
+msgstr "&A propos de..."
+
+#: main.C:420 main.C:430
+msgid "&Help"
+msgstr "&Aide"
+
+#: main.C:427
+msgid "&File"
+msgstr "&Fichier"
+
+#: main.C:428
+msgid "&Options"
+msgstr "&Options"
+
+#: main.C:469 main.C:662
+msgid "&Show"
+msgstr "&Afficher"
+
+#: main.C:600
+msgid "Unsecure &keyboard"
+msgstr "Libérer le &Clavier"
+
+#: main.C:739
+msgid "Hint"
+msgstr "Conseil"
+
+#: main.C:740
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"Les nouvelles couleurs seront activées\n"
+"avec la réactivation du clavier."
+
+#: main.C:760
+msgid "About kvt"
+msgstr "A propos de kvt"
+
+#: main.C:760
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulation de Terminal pour le KDE Desktop Environment\n"
+"basé sur rxvt-2.08 de Robert Nation"
+
+#: main.C:922
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Emulation de Terminal pour le KDE Desktop Environment\n"
+"basé sur rxvt-2.08 de Robert Nation\n"
+"Les arguments reconnus sont:\n"
+"-e <commande> <arg> ...\texécute commande avec arguments - doit être le "
+"dernier argument\n"
+"-display <nom>\tspécifie l'écran (serveur)\n"
+"-vt_geometry <spec>\tgéometrie initiale de la fenètre\n"
+"-print-pipe <nom>\tspecifie la redirection pour imprimante vt100\n"
+"-vt_bg <couleur>\t\tcouleur d'arrière plan\n"
+"-vt_fg <couleur>\t\tcouleur d'avant plan\n"
+"-vt_font <police>\tpolice normale\n"
+"-vt_size <taille>     \tminuscule, petit, normal, large, géant\n"
+"-linux\t\t\tconfigure kvt à imiter la console Linux\n"
+"-no_menubar\t\tcache la barre de menu\n"
+"-no_scrollbar\t\tcache la barre de défilement\n"
+"-T <texte>\t\ttexte de la barre de titre\n"
+"-tn <TERM>\t\ttype de Terminal. (xterm par défaut)\n"
+"-C\t\t\tCapture les messages système de la console\n"
+"-n <text>\t\tnom de l'icône ou fenètre d'icône\n"
+"-7\t\t        émule le mode 7 bit\n"
+"-8\t\t\témule le mode 8 bit\n"
+"-ls\t\t\tfait initier kvt en shell login\n"
+"-ls-\t\t\tdfait initier kvt en shell non-login (standard)\n"
+"-meta\t\t\tutilise Meta avec le préfixe ESCAPE, 8THBIT set ou ignore\n"
+"-sl <number>\t\tnombre de lignes à sauvegarder dans la mémoire tampon\n"
+"-pageup <keysym>\tutiliser la séquence alt-keysym pour remonter dans le "
+"tampon\n"
+"-pagedown <keysym>\tutiliser la séquence alt-keysym pour avancer dans le "
+"tampon\n"
+
+#: main.C:954
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+"-grk9\t\tclavier grec = ELOT 928 (défaut)\n"
+"-grk4\t\tclavier grec = IBM 437\n"
+
+#: main.C:970
+msgid "Terminal Options"
+msgstr "Options de Terminal"

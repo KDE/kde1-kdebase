@@ -1,0 +1,588 @@
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Banner"
+
+#: banner.cpp:80
+msgid "Font"
+msgstr "Police"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Couleur:"
+
+#: banner.cpp:131
+msgid "Italic"
+msgstr "Italique"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1017 polygon.cpp:101
+#: rock.cpp:543 slip.cpp:366 swarm.cpp:330
+msgid "Speed:"
+msgstr "Vitesse:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Message:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "A propos de Banner"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Banner Version 0.1\n"
+"\n"
+"écrit par Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE est génial"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Bat"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Installe KBat"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Nombre de chauves souris:"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "A sujet de Bat"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Bat\n"
+"\n"
+"Touts droits réservés (c) 1986 par Sun Microsystems\n"
+"\n"
+"Porté à kscreensaver par Emanuel Pirker."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Écran vide"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Installe kblankscrn"
+
+#: blob.cpp:58
+msgid "Random Linear"
+msgstr "Aléatoire linéaire"
+
+#: blob.cpp:59
+msgid "Horizonal Sine"
+msgstr "Sine horizontale"
+
+#: blob.cpp:60
+msgid "Circular Bounce"
+msgstr "Rebondis circulaire"
+
+#: blob.cpp:61
+msgid "Polar Coordinates"
+msgstr "Coordonées polaires"
+
+#: blob.cpp:62
+msgid "Random"
+msgstr "Aléatoire"
+
+#: blob.cpp:67
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Désolé: Cette mise en veille nécessite un écran couleur"
+
+#: blob.cpp:444
+msgid "Setup Blob Saver"
+msgstr "Installe Blob"
+
+#: blob.cpp:447
+msgid "Frame Show sec."
+msgstr "Montre nombre d'images"
+
+#: blob.cpp:455
+msgid "Algorithm"
+msgstr "Algorythme"
+
+#: blob.cpp:535
+msgid "About Blob"
+msgstr "Au sujet de Blob"
+
+#: blob.cpp:536
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver Version 0.1\n"
+"\n"
+"écrit par Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:571
+msgid "Blobs"
+msgstr "Blobs"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Flame"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Installe KFlame"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Niveau max.:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Nombre de points:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "Au sujet de Flame"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Flame Version 3.3\n"
+"\n"
+"Touts droits réservés (c) 1991 par Patrick J. Naughton\n"
+"\n"
+"Porté á kscreensave par Martin Jones."
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Forest"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Installe KForest"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Nombre d'arbres:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "Au sujet de Foret"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Forest\n"
+"\n"
+"Touts droits réservés (c) 1995 par Pascal Pensa\n"
+"\n"
+"Porté á kscreensave par Emanuel Pirker."
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "Installe KHop"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Pixels de même couleur:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Cycles:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "Au sujet de Hop"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop Version 3.3\n"
+"\n"
+"Touts droits réservés (c) 1991 par Patrick J. Naughton\n"
+"\n"
+"Porté à kscreensave par Emanuel Pirker."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Laser"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Installe KLaser"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "Au sujet de Laser"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser Version 3.3\n"
+"\n"
+"Touts droits réservés (c) 1995 par Pascal Pensa\n"
+"\n"
+"Porté à kscreensave par Martin Jones."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Lines"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Installe klines"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Longueure:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Début:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Milieu:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Fin:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "Au sujet de Lines"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Lines Version 0.1.1\n"
+"\n"
+"écrit bpar Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Install KLissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Nombre de Lissies:"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "Au sujet de Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Touts droits réservés (c) 1996 par Alexander Jolk\n"
+"\n"
+"Porté à kscreensave by Emanuel Pirker."
+
+#: main.cpp:263
+msgid "Shadow Passwords"
+msgstr "Mots de passes \"Shadow\""
+
+#: main.cpp:264
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator."
+msgstr ""
+"Votre Sysème utilise des mots de passe Shadow!\n"
+"Veuillez contacter votre administrateur de systèmes."
+
+#: main.cpp:420
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Utilisation: %s -install|-setup|-test|-desc|-preview wid\n"
+"             [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+
+#: main.cpp:423
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Placer le curseur dans le coin provoque:\n"
+"                     x = i  aucune action (ignore)\n"
+"                     x = s  sauvegarde le bureau\n"
+"                     x = l  vérouille l'écran\n"
+"                    ordre: haut-guauche, haut-droite, bas-gauche, "
+"bas-droite\n"
+"  -delay num        Nombre de minutes d'inactivité avant l'activation de la\n"
+"                    mise en veille (standard 10min)\n"
+"  -desc             Imprime la description de la mise en veille\n"
+"  -install          Installe la mise en veille\n"
+"  -lock             Nécessite un mot de pass pour déverouiller la \n"
+"                    mise en veille\n"
+"  -nice num         Est lancé avec le niveau nice \"num\"\n"
+"\n"
+"  -preview wid      Est lancé dans la fenêtre spécifiée\n"
+"  -setup            Instal\n"
+"  -test             Lance la mise en veille immédiatement\n"
+
+#: morph3d.cpp:836
+msgid "GL can not render with root visual\n"
+msgstr "GL ne peus pas calculer avec une \"root visual\"\n"
+
+#: morph3d.cpp:937
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1011
+msgid "Setup KMorph3d"
+msgstr "Install KMorph3d"
+
+#: morph3d.cpp:1027
+msgid "Object Type:"
+msgstr "Type d'objet:"
+
+#: morph3d.cpp:1115
+msgid "About Morph3D"
+msgstr "Au sujet de Morph3D"
+
+#: morph3d.cpp:1116
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Touts droits réservés (c) 1997 par Marcelo F. Vianna\n"
+"\n"
+"Porté à kscreensave by Emanuel Pirker."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Polygons"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "install kpolygon"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Vertices"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "Au sujet de Polygon"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon Version 0.1\n"
+"\n"
+"Écrit par Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Pyro"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Install KPyro"
+
+#: pyro.cpp:517 rock.cpp:553
+msgid "Number:"
+msgstr "Nombre:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Nuage"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "Au sujet de Pyro"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro Version 3.4\n"
+"\n"
+"Touts droits réservés (c) 1991 par Patrick J. Naughton\n"
+"\n"
+"Porté à kscreensave by Martin Jones."
+
+#: rock.cpp:429
+msgid "Rock"
+msgstr "Rock"
+
+#: rock.cpp:537
+msgid "Setup krock"
+msgstr "Install krock"
+
+#: rock.cpp:563
+msgid "Move"
+msgstr "Déplace"
+
+#: rock.cpp:568
+msgid "Rotate"
+msgstr "Tourne"
+
+#: rock.cpp:686
+msgid "About Rock"
+msgstr "Au sujet de Rock"
+
+#: rock.cpp:687
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Rock Version 3.3\n"
+"\n"
+"Touts droits réservés (c) 1992 par Jamie Zawinski\n"
+"\n"
+"Porté à kscreensave par Martin Jones."
+
+#: saver.cpp:50 saver.cpp:173
+msgid "Enter Password"
+msgstr "Mot de passe"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Mot de passe incorrecte"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Slip"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Install KSlip"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Nombre:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "Au sujet de Slip"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Touts droits réservés (c) 1991 par Scott Draves\n"
+"\n"
+"Porté à kscreensave par Emanuel Pirker."
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Swarm"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Install KSwarm"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Nombre d'abeilles:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "Au sujet deSwarm"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Swarm\n"
+"\n"
+"Touts droits réservés (c) 1991 par Patrick J. Naughton\n"
+"\n"
+"Porté à kscreensave by Emanuel Pirker."

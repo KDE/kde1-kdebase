@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-10-09 21:47-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: kpanel.C:172
+msgid "Move"
+msgstr "Déplacer"
+
+#: kpanel.C:173
+msgid "Remove"
+msgstr "Enlever"
+
+#: kpanel.C:175
+msgid "Properties"
+msgstr "Propriétés"
+
+#: kpanel.C:205 kpanel.C:207 tools.C:678
+msgid "System"
+msgstr "Systéme"
+
+#: kpanel.C:270
+msgid "No info available"
+msgstr "Information inéxistante"
+
+#: kpanel.C:306 kpanel.C:664 kpanel.C:665
+msgid "Logout"
+msgstr "Quitter"
+
+#: kpanel.C:315 kpanel.C:663
+#, fuzzy
+msgid "Lock screen"
+msgstr "Vérouiller écran"
+
+#: kpanel.C:326
+msgid "Hide the panel"
+msgstr ""
+
+#: kpanel.C:342
+msgid "Show the panel"
+msgstr ""
+
+#: kpanel.C:647
+msgid "Add application"
+msgstr "Ajouter application"
+
+#: kpanel.C:649
+msgid "Add an application or a submenu onto the panel"
+msgstr ""
+
+#: kpanel.C:650
+msgid "Add windowlist"
+msgstr ""
+
+#: kpanel.C:652
+msgid "Add a windowlist menu onto the panel"
+msgstr ""
+
+#: kpanel.C:653
+msgid "Configure"
+msgstr "Configurer"
+
+#: kpanel.C:655
+msgid "Configure panel"
+msgstr "Configurer panel"
+
+#: kpanel.C:656
+msgid "Restart"
+msgstr "Relancer"
+
+#: kpanel.C:658
+#, fuzzy
+msgid "Restart panel"
+msgstr "Relancer"
+
+#: kpanel.C:659 props.C:297
+msgid "Panel"
+msgstr "Panel"
+
+#: kpanel.C:661
+msgid "Lock Screen"
+msgstr "Vérouiller écran"
+
+#: kpanel.C:1012 tools.C:503
+#, fuzzy
+msgid "No comment available"
+msgstr "Information inéxistante"
+
+#: kpanel.C:1021 tools.C:690
+msgid "Windowlist"
+msgstr ""
+
+#: props.C:239
+msgid "Location"
+msgstr "Localité"
+
+#: props.C:254
+msgid "Taskbar"
+msgstr "Barre d'applications"
+
+#: props.C:255
+msgid "Hidden"
+msgstr "Caché"
+
+#: props.C:267
+msgid "Top/Left"
+msgstr "Haut/Gauche"
+
+#: props.C:278
+msgid "Tiny Style"
+msgstr "Style minuscule"
+
+#: props.C:279
+msgid "Small Style"
+msgstr "Style petit"
+
+#: props.C:280
+msgid "Large Style"
+msgstr "Style Large"
+
+#: props.C:292
+msgid "Menu Tooltips"
+msgstr "Tooltip menus"
+
+#: props.C:348
+msgid "Visible"
+msgstr "Visible"
+
+#: props.C:355
+msgid "Width"
+msgstr "Largeur"
+
+#: props.C:360
+#, fuzzy
+msgid "Desktops"
+msgstr "Bureau"
+
+#: props.C:366
+msgid "KPanel Configuration"
+msgstr "Configuration KPanel"
+
+#~ msgid "Personal menu"
+#~ msgstr "Menu personel"
+
+#~ msgid "Add special"
+#~ msgstr "Ajouter spécial"
+
+#~ msgid "Destroy"
+#~ msgstr "Détruire"
+
+#~ msgid "(Un) Sticky"
+#~ msgstr "(Dé) Clouer"
+
+#~ msgid "(Un) Iconify"
+#~ msgstr "(Dé) Iconifier"
+
+#~ msgid "(Un) Maximize"
+#~ msgstr "(Dé) Maximiser"
+
+#~ msgid "On this desktop"
+#~ msgstr "Sur ce bureau"
