@@ -1299,13 +1299,17 @@ void KFMManager::slotFinished()
 	writeEnd();
 	return;
       }
-      
-      job->browse( tryURL, false, view->getGUI()->isViewHTML(), tryURL, 0, 0 );
+      // Sven's bugfix: it is possible that directory exists only in
+      // local variant; test it for existance befor browsing:
+      if (access (&(tryURL.data())[5], F_OK) == 0)
+	job->browse( tryURL, false, view->getGUI()->isViewHTML(), tryURL, 0, 0 );
+      else
+	slotFinished(); // just call again this to write end (flag is set)
       return; // don't finish yet;
     }
     // when we get here it means one of:
     //  - we are not reading binding dirs at all
-    //  - we read local and globals
+    //  - we have read local and globals
     // in any case clear both flags and delete dupList if not 0:
     pass2 = false;
     bindingDir = false;
