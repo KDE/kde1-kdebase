@@ -48,16 +48,20 @@ public:
 	KDMBackgroundWidget(QWidget *parent, const char *name, bool init = false);
 	~KDMBackgroundWidget();
 
-	enum { Tiled = 1, Centred = 2, Scaled = 3 };
+	enum { NoPic, Tile, Center, Scale, TopLeft, TopRight,
+                                  BottomLeft, BottomRight, Fancy, Plain, Vertical, Horizontal };
+	//enum { NoPic = 0, Tiled = 1, Centred = 2, Scaled = 3 };
         void loadSettings();
         void applySettings();
 	void setupPage(QWidget*);
 
 protected slots:
-	void slotSelectColor( const QColor &col );
+	void slotSelectColor1( const QColor &col );
+	void slotSelectColor2( const QColor &col );
 	void slotBrowse();
 	void slotWallpaper( const char * );
 	void slotWallpaperMode( int );
+	void slotColorMode( int );
 	void slotQDrop( QDropEvent* );
 	void slotQDragLeave( QDragLeaveEvent* );
 	void slotQDragEnter( QDragEnterEvent* );
@@ -71,12 +75,12 @@ protected:
 	KBGMonitor  *monitor;
 	QPixmap      wpPixmap;
 	QString      wallpaper;
-	KColorButton *colButton;
-	QButtonGroup *wpGroup;
+	KColorButton *colButton1, *colButton2;
+	QButtonGroup *wpGroup, *cGroup;
         //QCheckBox    *cbusrshw, *cbusrsrt;
 	QComboBox    *wpCombo;
-	QColor       color;
-	int          wpMode;
+	QColor       color1, color2;
+	int          wpMode, colorMode;
         bool         changed, fancy, gui;
 };
 

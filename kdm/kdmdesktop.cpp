@@ -32,6 +32,7 @@
 #include <qtstream.h>
 #include <qpainter.h>
 #include <kconfig.h>
+#include <kpixmap.h>
 
 #include <config.h>
 #include <sys/types.h>
@@ -43,33 +44,64 @@
 
 #include <X11/Xlib.h>
 
+enum { NoPic, Tile, Center, Scale, TopLeft, TopRight,
+         BottomLeft, BottomRight, Fancy, Plain, Vertical, Horizontal  };
+
 class DesktopConfig {
 public:
      DesktopConfig();
      ~DesktopConfig();
+
+     int pictureMode() { return bgmode; }
+     int colorMode() { return cmode; }
      QString bgpic;
-     bool bgpictile;
-     bool bgpiccenter;
-     bool fancybg;
      bool have_bg_pic;
-     QColor bgcolor;
+     QColor bgcolor1, bgcolor2;
 protected:
      KConfig*       kc;
+     int bgmode, cmode;
 };
 
 DesktopConfig::DesktopConfig()
 {
      kc = kapp->getConfig();
-     QString _bgcolor;
+     QString strmode;
      have_bg_pic = false;
      kc->setGroup( "KDMDESKTOP");
 
-     fancybg  = false;
-     if( kc->hasKey( "BackgroundPicture")) {
-	  bgpic = kc->readEntry( "BackgroundPicture");
-	  bgpictile = (bool) kc->readNumEntry( "BackgroundPictureTile",0);
-	  bgpiccenter = (bool) kc->readNumEntry( "BackgroundPictureCenter",0);
-	  if(bgpic.isEmpty())
+     strmode = kc->readEntry( "BackGroundColorMode", "Plain");
+     if(strmode == "Plain")
+       cmode = Plain;
+     else if(strmode == "Horizontal")
+       cmode = Horizontal;
+     else if(strmode == "Vertical")
+       cmode = Vertical;
+     else
+       cmode = Plain;
+
+     if( kc->hasKey( "BackGroundPicture")) {
+	  bgpic = kc->readEntry( "BackGroundPicture");
+	  strmode = kc->readEntry( "BackGroundPictureMode", "Scale");
+          if(strmode == "None")
+	    bgmode = NoPic;
+          else if(strmode == "Tile")
+	    bgmode = Tile;
+          else if(strmode == "Center")
+	    bgmode = Center;
+          else if(strmode == "Scale")
+	    bgmode = Scale;
+          else if(strmode == "TopLeft")
+	    bgmode = TopLeft;
+          else if(strmode == "TopRight")
+	    bgmode = TopRight;
+          else if(strmode == "BottomLeft")
+	    bgmode = BottomLeft;
+          else if(strmode == "BottomRight")
+	    bgmode = BottomRight;
+          else if(strmode == "Fancy")
+	    bgmode = Fancy;
+
+	  if(bgpic.isEmpty() || bgmode == None)
 	    have_bg_pic = false;
 	  else
 	    have_bg_pic = true;
@@ -77,20 +109,15 @@ DesktopConfig::DesktopConfig()
      } else{
 	  have_bg_pic = false;
      }
-     if( kc->hasKey("FancyBackground")) {
-	  fancybg          = (bool) kc->readNumEntry("FancyBackground",0);
-     } 
-     _bgcolor  = kc->readEntry( "BackgroundColor");
-     if( !_bgcolor.isNull())
-	  bgcolor.setNamedColor( _bgcolor.data());
-     else
-	  bgcolor = darkCyan;
-     //delete kc;
+
+     bgcolor1  = kc->readColorEntry( "BackGroundColor1", &darkCyan);
+     bgcolor2  = kc->readColorEntry( "BackGroundColor2", &darkBlue);
 }
 
 DesktopConfig::~DesktopConfig()
 {
 }
+
 // NEW 26-2-97 added by Henk Punt < h.punt@wing.rug.nl > :
 static void 
 do_picture_background( DesktopConfig* dc)
@@ -116,28 +143,76 @@ do_picture_background( DesktopConfig* dc)
      int cx = appWidth/2-imWidth/2;
      int cy = appHeight/2-imHeight/2;
      
+     switch(dc->colorMode())
+     {
+       default:
+       case Plain:
+         tmp.fill( dc->bgcolor1 );
+         break;
+       case Horizontal:
+       {
+         KPixmap kp;
+         kp.resize(appWidth, appHeight);
+         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, false);
+         tmp = kp;
+         break;
+       }
+       case Vertical:
+       {
+         KPixmap kp;
+         kp.resize(appWidth, appHeight);
+         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, true);
+         tmp = kp;
+         break;
+       }
+     }
+
      if((imWidth>=appWidth)&&(imHeight>=appHeight)) { 
 	  // picture bigger than app
-	  if( dc->bgpictile) 
+	  if( dc->pictureMode() == Tile) 
 	       bitBlt( &tmp, cx, cy, 
 		       &image, 0, 0, imWidth, imHeight);
 	  else 
 	       bitBlt( &tmp, 0, 0,
 		       &image, 0, 0, imWidth, imHeight);
      } else { //picture smaller than app.  
-	  if(( dc->bgpictile)&&( !dc->bgpiccenter)) {
+	switch ( dc->pictureMode() )
+	{
+	  case Tile:
 	       tmp = image;
-	  }
-	  if(( !dc->bgpictile)&&( dc->bgpiccenter)) {
-	       tmp.fill( dc->bgcolor);
+	       break;
+	  case Center:
 	       bitBlt( &tmp, cx, cy, 
 		       &image, 0, 0, imWidth, imHeight);
+	       break;
+	  case Scale: {
+	       QImage i;
+               i = image;
+	       image = i.smoothScale(appWidth, appHeight);
+	       bitBlt( &tmp, 0, 0,
+		       &image, 0, 0, appWidth, appHeight);
+	       break;
 	  }
-	  if(( !dc->bgpictile)&&( !dc->bgpiccenter)) {
-	       tmp.fill( dc->bgcolor);
+	  case TopLeft:
 	       bitBlt( &tmp, 0, 0,
 		       &image, 0, 0, imWidth, imHeight);
-	  }
+	       break;
+	  case TopRight:
+	       bitBlt( &tmp, appWidth-imWidth, 0,
+		       &image, 0, 0, imWidth, imHeight);
+	       break;
+	  case BottomRight:
+	       bitBlt( &tmp, appWidth-imWidth, appHeight-imHeight,
+		       &image, 0, 0, imWidth, imHeight);
+	       break;
+	  case BottomLeft:
+	       bitBlt( &tmp, 0, appHeight-imHeight,
+		       &image, 0, 0, imWidth, imHeight);
+	       break;
+	  default:
+	       break;
+	}
+/*
 	  if(( dc->bgpictile)&&( dc->bgpiccenter)) {
 	       int start_x=cx-imWidth*((int)(ceil((cx)/(float)imWidth)));
 	       int start_y=cy-imHeight*((int)(ceil((cy)/(float)imHeight)));
@@ -154,6 +229,7 @@ do_picture_background( DesktopConfig* dc)
 		    filled_y+=imHeight;
 	       }
 	  }
+*/
      }
      desktop->setBackgroundPixmap( tmp);
      //QColor::leaveAllocContext();
@@ -225,7 +301,34 @@ static void
 do_normal_background( DesktopConfig *dc)
 {
      QWidget* desktop = qApp->desktop();
-     desktop->setBackgroundColor( dc->bgcolor);
+     int appWidth  =  desktop->width();
+     int appHeight =  desktop->height();
+
+     switch(dc->colorMode())
+     {
+       default:
+       case Plain:
+         desktop->setBackgroundColor( dc->bgcolor1);
+         break;
+       case Horizontal:
+       {
+         KPixmap kp;
+         kp.resize(appWidth, appHeight);
+         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, false);
+         desktop->setBackgroundPixmap( kp );
+         break;
+       }
+       case Vertical:
+       {
+         KPixmap kp;
+         kp.resize(appWidth, appHeight);
+         kp.gradientFill(dc->bgcolor1, dc->bgcolor2, true);
+         desktop->setBackgroundPixmap( kp );
+         break;
+       }
+     }
+
+     //debug("%X %X %X", dc->bgcolor.red(), dc->bgcolor.green(), dc->bgcolor.blue());
 }
 
 int main(int argc, char **argv)
@@ -237,7 +340,7 @@ int main(int argc, char **argv)
      XSetCloseDownMode( qt_xdisplay(), RetainTemporary);
      DesktopConfig* dc = new DesktopConfig();
      
-     if( dc->fancybg)
+     if( dc->pictureMode() == Fancy)
 	  do_fancy_background();
      else if( dc->have_bg_pic )
 	  do_picture_background( dc);

@@ -17,6 +17,8 @@
     Boston, MA 02111-1307, USA.
 */  
 
+#include <qdir.h>
+#include <kdbtn.h>
 #include "utils.h"
 #include "kdm-sess.moc"
 
@@ -96,6 +98,11 @@ void KDMSessionsWidget::setupPage(QWidget *)
       btnadd->setFixedSize(btnadd->sizeHint());
       connect( btnadd, SIGNAL( clicked() ), SLOT( slotAddSessionType() ) );
 
+      KDirectionButton *btnup = new KDirectionButton(UpArrow, group2);
+      btnup->setFixedSize(20, 20);
+      KDirectionButton *btndown = new KDirectionButton(DownArrow, group2);
+      btndown->setFixedSize(20, 20);
+
       QBoxLayout *main = new QVBoxLayout( this, 10 );
       QBoxLayout *lgroup0 = new QVBoxLayout( group0, 10 );
 
@@ -107,6 +114,7 @@ void KDMSessionsWidget::setupPage(QWidget *)
       QBoxLayout *lgroup2sub = new QHBoxLayout();
       QBoxLayout *lgroup2a = new QVBoxLayout();
       QBoxLayout *lgroup2b = new QVBoxLayout();
+      QBoxLayout *lgroup2c = new QVBoxLayout();
 
       main->addWidget(group0);
       main->addWidget(group1);
@@ -127,14 +135,19 @@ void KDMSessionsWidget::setupPage(QWidget *)
 
       lgroup2->addSpacing(10);
       lgroup2->addLayout(lgroup2sub);
-      lgroup2sub->addLayout(lgroup2a);
-      lgroup2sub->addLayout(lgroup2b);
+      lgroup2sub->addLayout(lgroup2a, 2);
+      lgroup2sub->addLayout(lgroup2b, 2);
+      lgroup2sub->addLayout(lgroup2c);
       lgroup2a->addWidget(type_label, 10, AlignLeft);
       lgroup2a->addWidget(session_lined);
       lgroup2a->addWidget(btnrm, 10, AlignRight);
       lgroup2a->addWidget(btnadd, 10, AlignRight);
       lgroup2b->addWidget(types_label, 10, AlignLeft);
       lgroup2b->addWidget(sessionslb);
+      lgroup2c->addStretch(1);
+      lgroup2c->addWidget(btnup);
+      lgroup2c->addWidget(btndown);
+      lgroup2c->addStretch(1);
       lgroup2->activate();
 
       main->activate();
@@ -144,7 +157,7 @@ void KDMSessionsWidget::slotAddSessionType()
 {
   if(strlen(session_lined->text()) > 0)
   {
-    sessionslb->inSort(session_lined->text());
+    sessionslb->insertItem(session_lined->text());
     session_lined->setText("");
   }
 }
