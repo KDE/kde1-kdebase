@@ -45,11 +45,11 @@ msgstr "Bloquear pantalla"
 
 #: kpanel.C:366
 msgid "Hide the panel"
-msgstr "Ocultar el panel"
+msgstr ""
 
 #: kpanel.C:376
 msgid "Show the panel"
-msgstr "Monstrar el panel"
+msgstr ""
 
 #: kpanel.C:742
 msgid "Add application"
@@ -57,15 +57,15 @@ msgstr "Añadir aplicación"
 
 #: kpanel.C:744
 msgid "Add an application or a submenu onto the panel"
-msgstr "Añadir una aplicación o un submenú en el panel"
+msgstr ""
 
 #: kpanel.C:745
 msgid "Add windowlist"
-msgstr "Añadir lista de ventanas"
+msgstr ""
 
 #: kpanel.C:747
 msgid "Add a windowlist menu onto the panel"
-msgstr "Añadir una lista de ventanas en el panel"
+msgstr ""
 
 #: kpanel.C:748
 msgid "Configure"
@@ -97,7 +97,7 @@ msgstr "No hay comentarios"
 
 #: kpanel.C:1125 tools.C:796
 msgid "Windowlist"
-msgstr "Lista de ventanas"
+msgstr ""
 
 #: props.C:241
 msgid "Location"
@@ -138,9 +138,8 @@ msgid "Personal First"
 msgstr "Menú personal"
 
 #: props.C:302
-#, fuzzy
 msgid "Auto Hide Panel"
-msgstr "Ocultar el panel"
+msgstr ""
 
 #: props.C:306
 msgid "Auto Hide Taskbar"
@@ -162,17 +161,17 @@ msgstr "Escritorios"
 msgid "KPanel Configuration"
 msgstr "Configuración de KPanel"
 
-#~ msgid "Remove"
-#~ msgstr "Eliminar"
-
-#~ msgid "System"
-#~ msgstr "Sistema"
-
 #~ msgid "Add special"
 #~ msgstr "Añadir especial"
 
 #~ msgid "Lock panel"
 #~ msgstr "Bloquear panel"
+
+#~ msgid "Remove"
+#~ msgstr "Eliminar"
+
+#~ msgid "System"
+#~ msgstr "Sistema"
 
 #~ msgid "Destroy"
 #~ msgstr "Destruir"
@@ -190,7 +189,7 @@ msgstr "Configuración de KPanel"
 #~ msgstr "En este escritorio"
 
 #~ msgid "Sorry"
-#~ msgstr "Lo siento"
+#~ msgstr "Disculpe"
 
 #~ msgid ""
 #~ "Could not communicate with nor\n"
