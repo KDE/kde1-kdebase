@@ -7,6 +7,7 @@
 #include "kproxydlg.h"
 #include "useragentdlg.h"
 #include "htmlopts.h"
+#include "khttpoptdlg.h"
 
 class KKFMOptDlg : public QDialog
 {
@@ -22,6 +23,7 @@ class KKFMOptDlg : public QDialog
     void fontData(struct fontoptions& fontopts);
     void colorData(struct coloroptions& coloropts);
     void miscData(struct rootoptions& miscopts);
+    void httpData( struct httpoptions &httpopts );
 
   private:
     QPushButton *help;
@@ -33,6 +35,7 @@ class KKFMOptDlg : public QDialog
     KColorOptions   *colorDlg;
     KMiscOptions   *miscDlg;
     UserAgentDialog *usrDlg;
+    KHTTPOptionsDlg *httpDlg;
     
   public slots:
     void helpShow();

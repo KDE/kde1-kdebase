@@ -134,7 +134,10 @@ KIOServer::~KIOServer()
 	pid_t p = (pid_t)s->pid;
     
 	delete s;
-	kill( p, SIGTERM );
+        if (p<=0) printf("kioslave pid is =0, I don't want to hurt myself\n");
+        else{
+	  kill( p, SIGTERM );
+	}  
     }
 }
 
@@ -807,9 +810,12 @@ void KIOServer::slotTimer()
       pid_t pid = (pid_t)p->pid;    
       freeSlaves.removeRef( p );
       delete p;
-      kill( pid, SIGTERM );
-      int status;
-      waitpid( pid, &status, 0 );
+      if (pid<=0) printf("kioslave pid is =0, I don't want to hurt myself\n");
+      else{
+        kill( pid, SIGTERM );
+        int status;
+        waitpid( pid, &status, 0 );
+      }	
     }
   }
 }

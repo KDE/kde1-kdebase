@@ -1533,6 +1533,13 @@ void KfmGui::slotConfigureBrowser()
           config->writeEntry( "FTP-Proxy", proxyopts.ftp_proxy.data() );
 	  config->writeEntry( "NoProxyFor", proxyopts.no_proxy_for.data() );
 
+          struct httpoptions httpopts;
+          
+	  dlg.httpData( httpopts );
+          config->setGroup("Browser Settings/HTTP");
+          config->writeEntry( "AcceptLanguages", httpopts.languages.data() );
+	  config->writeEntry( "AcceptCharsets", httpopts.charsets.data() );
+          config->writeEntry( "AssumeHTML", httpopts.assumeHTML );
 
 	  struct coloroptions coloropts;
 	  struct fontoptions  fontopts;

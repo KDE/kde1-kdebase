@@ -6,10 +6,10 @@
 KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   : QDialog(parent, name, true, f)
 {
-  resize(400, 400);
+  resize(420, 400);
   // i do not want to be resized!
-  setMaximumSize(400, 400);
-  setMinimumSize(400, 400);
+  setMaximumSize(420, 400);
+  setMinimumSize(420, 400);
   
   // KTabCtl
   tabDlg = new KTabCtl(this);
@@ -17,6 +17,10 @@ KKFMOptDlg::KKFMOptDlg(QWidget *parent, const char *name, WFlags f)
   
   prxDlg = new KProxyDlg(tabDlg);
   tabDlg->addTab(prxDlg, klocale->translate("&Proxy"));
+
+  httpDlg = new KHTTPOptionsDlg(tabDlg);
+  tabDlg->addTab(httpDlg, klocale->translate("&HTTP"));
+
   usrDlg = new UserAgentDialog(tabDlg);
   tabDlg->addTab(usrDlg, klocale->translate("User &Agent"));
 
@@ -58,8 +62,8 @@ KKFMOptDlg::~KKFMOptDlg()
   delete cancel;
   delete usrDlg;
   delete prxDlg;
+  delete httpDlg;
   delete tabDlg;
-
 }
 
 void KKFMOptDlg::helpShow()
@@ -99,6 +103,11 @@ void KKFMOptDlg::miscData(struct rootoptions& miscopts){
 
   miscDlg->getMiscOpts(miscopts);
 
+}
+
+void KKFMOptDlg::httpData( struct httpoptions &httpopts )
+{
+  httpDlg->getHTTPOpts( httpopts );
 }
 
 #include "kkfmoptdlg.moc"

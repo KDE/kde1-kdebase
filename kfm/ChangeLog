@@ -1,3 +1,17 @@
+Tue Jun 16 16:04:12 1998  Jacek Konieczny <jajcus@zeus.polsl.gliwice.pl>
+
+	* kioslave/http.cpp
+	  Changed error handling - do not return with FAIL, but read the
+	  data anyway. There may be a good explanation what is happening.
+
+	* kioslave/http.h, kioslave/http.cpp
+	  Added some HTTP options: Charset and Language negotiation
+	  and assuming HTTP data as HTML when no Content-Type field.
+
+	* kkfmoptdlg.cpp, kkfmoptdlg.h, kfmgui.cpp, Makefile.am,
+	  khttpoptdlg.h, khttpoptdlg.cpp
+	  Added HTTP configuration dialog	
+
 Mon Jun 15 03:21:12 1998  Torben Weis  <weis@localhost>
 
 	* kbind.cpp (initMimeTypes): Uses KSimpleConfig in

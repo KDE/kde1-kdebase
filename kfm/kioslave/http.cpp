@@ -10,6 +10,8 @@
 #include <kstring.h>
 #include <ksimpleconfig.h>
 #include <kapp.h>
+#include <klocale.h>
+#include <qregexp.h>
 
 /************************** Authorization stuff: copied from wget-source *****/
 
@@ -101,14 +103,15 @@ KProtocolHTTP::KProtocolHTTP()
     KURL proxyURL;
     
     // All right. Now read the proxy settings
-    KSimpleConfig prxcnf(KApplication::localconfigdir() + "/kfmrc", true );
-    prxcnf.setGroup("Browser Settings/Proxy");
+    // prxcnf changed to kfmcnf as not only proxy settings are to be read
+    KSimpleConfig kfmcnf(KApplication::localconfigdir() + "/kfmrc", true );
+    kfmcnf.setGroup("Browser Settings/Proxy");
 
-    noProxyForStr = prxcnf.readEntry("NoProxyFor");
+    noProxyForStr = kfmcnf.readEntry("NoProxyFor");
     
-    tmp = prxcnf.readEntry( "UseProxy" );
+    tmp = kfmcnf.readEntry( "UseProxy" );
     if ( tmp == "Yes" ) { // Do we need proxy?
-        proxyStr = prxcnf.readEntry( "HTTP-Proxy" );
+        proxyStr = kfmcnf.readEntry( "HTTP-Proxy" );
         proxyURL = proxyStr.data();
         printf( "Using proxy %s on port %d\n", proxyURL.host(), proxyURL.port() );
         port = proxyURL.port();
@@ -117,8 +120,8 @@ KProtocolHTTP::KProtocolHTTP()
 
 	init_sockaddr(&proxy_name, proxyURL.host(), port);
 
-	proxy_user = prxcnf.readEntry( "Proxy-User" );
-	proxy_pass = prxcnf.readEntry( "Proxy-Pass" );
+	proxy_user = kfmcnf.readEntry( "Proxy-User" );
+	proxy_pass = kfmcnf.readEntry( "Proxy-Pass" );
 
 	use_proxy = 1;
 	
@@ -132,11 +135,135 @@ KProtocolHTTP::KProtocolHTTP()
 //        QMessageBox::message( "KFM Error", "HTTP Proxy URL malformed\nProxy disabled." );
 //	return;
     }
+    
+    // Jacek:
+    // All right. Now read the HTTP settings
+    kfmcnf.setGroup("Browser Settings/HTTP");
+    assumeHTML = kfmcnf.readBoolEntry( "AssumeHTML",false );
+    tmp = kfmcnf.readEntry( "AcceptLanguages","" );
+    PrepareLanguageList(tmp); // prepare list for use in HTTP header
+    tmp = kfmcnf.readEntry( "AcceptCharsets","" );
+    PrepareCharsetList(tmp); // prepare list for use in HTTP header
 }
 
 KProtocolHTTP::~KProtocolHTTP()
 {
     Close();
+}
+
+//Jacek:
+void KProtocolHTTP::PrepareLanguageList(QString str){
+ 
+  if (str.isEmpty()){
+    languages="";
+    return;
+  }  
+  
+  QStrList lst;
+  while(!str.isEmpty()){
+    // find separators, we don't need to limit the user to any of them... :-)
+    int f=str.find(QRegExp("[;,: ]"));
+    QString lang;
+    if (f<0){
+      lang=str;
+      str="";
+    }
+    else{
+      lang=str.left(f);
+      str=str.right(str.length()-f-1);
+    }
+ 
+    
+    QString lng,ct,chset;
+    
+    // skip "C" as it is alway in locale languages list
+    // english is the last accepted language anyway
+    if (lang=="C") continue;
+    // * means any other language (after it we can put languages we don't like :-) )
+    else if (lang=="*" && !lst.contains("*")) lst.append("*"); 
+    else{
+      KLocale::splitLocale(lang,lng,ct,chset);
+      // if language and country modifier is given use them
+      if (!lng.isEmpty() && !ct.isEmpty() && !lst.contains(lng+"-"+ct))
+          lst.append(lng+"-"+ct);
+      // use language alone anyway
+      // (if user requested US english he probably will understand british too)
+      if (!lng.isEmpty() && !lst.contains(lng+"-"+ct)) lst.append(lng);
+    }  
+  }
+
+  // if there is no language in the list we don't need Accept-Language
+  if (lst.isEmpty()){
+    languages="";
+    return;
+  }
+  
+  // and add the default language. Without this we would get nothing from most sites
+  if (!lst.contains("en")) lst.append("en");
+
+  // We start from the highest quality (default = 1)
+  // and go down by 0.01 (I don't think anybody will choose 100 languages)
+  // and RFC does not say if quality has to be positive :-)
+  float quality=1;
+  const char *l=lst.first();
+  // Add first language with default quality (1)
+  languages=l;
+  for(l=lst.next();l!=0;l=lst.next()){
+     quality-=0.01;
+     // Add every next language with lower quality
+     languages+=QString(", ")+l+";q="+QString().setNum(quality,'f',2);
+  }
+}
+
+void KProtocolHTTP::PrepareCharsetList(QString str){
+ 
+  if (str.isEmpty()){
+    charsets="";
+    return;
+  }  
+  
+  QStrList lst;
+  while(!str.isEmpty()){
+    // find separators, we don't need to limit the user to any of them... :-)
+    int f=str.find(QRegExp("[;,: ]"));
+    QString chset;
+    if (f<0){
+      chset=str;
+      str="";
+    }
+    else{
+      chset=str.left(f);
+      str=str.right(str.length()-f-1);
+    }
+    
+    // * means any other charset (after it we can put charsets we don't like :-) )
+    // RFC doesn't tell anything about it (it tells about "*" in  Accept-Language)
+    // but Netscape uses it, so we use it too
+    if (chset=="*" && !lst.contains("*")) lst.append("*"); 
+    else if (!chset.isEmpty() && !lst.contains(chset)) lst.append(chset);
+  }
+
+  // if there is no charset in the list we don't need Accept-Charset
+  if (lst.isEmpty()){
+    charsets="";
+    return;
+  }
+  
+  // and add the default charset. Without this we would get nothing from most sites
+  if (!lst.contains("iso-8859-1")) lst.append("iso-8859-1");
+
+  // We start from the highest quality (default = 1)
+  // and go down by 0.01 (I don't think anybody will choose 100 charsets)
+  // and RFC does not say if quality has to be positive :-)
+  float quality=1;
+  const char *chs=lst.first();
+  // Add first charset with default quality (1)
+  charsets=chs;
+  for(chs=lst.next();chs!=0;chs=lst.next()){
+     quality-=0.01;
+     // Add every next language with lower quality
+     charsets+=QString(", ")+chs+";q="+QString().setNum(quality,'f',2);
+  }
 }
 
 long KProtocolHTTP::Size()
@@ -402,6 +529,14 @@ int KProtocolHTTP::OpenHTTP( KURL *_url, int mode,bool _reload )
 	  command += "Pragma: no-cache\r\n"; /* for HTTP/1.0 caches */
 	  command += "Cache-control: no-cache\r\n"; /* for HTTP/>=1.1 caches */
         }
+
+	// Charset negotiation:
+	if ( ! charsets.isEmpty() )
+	   command += "Accept-Charset: "+charsets+"\r\n";
+	   
+	// Language negotiation:
+	if ( ! languages.isEmpty() )
+	   command += "Accept-Language: "+languages+"\r\n";
 	
 	command += "Host: "; /* support for virtual hosts */
 	command += _url->host();
@@ -446,7 +581,12 @@ int KProtocolHTTP::ProcessHeader()
 	int len = 1;
 
 	size = 0xFFFFFFF;
-
+	
+	// Jacek:
+	// to get rid of those "Open with" dialogs...
+	// however at least extensions should be checked
+	if (assumeHTML) mType="text/html";
+	
 	while( len && fgets( buffer, 1024, fsocket ) )
 	{
 	    len = strlen(buffer);
@@ -465,14 +605,19 @@ int KProtocolHTTP::ProcessHeader()
 	    }
 	    else if ( strncmp( buffer, "HTTP/1.0 ", 9 ) == 0 )
 	    {
-		if ( buffer[9] == '4')
+	        //Jacek: server error codes added (5xx)
+		if ( buffer[9] == '4' ||  buffer[9] == '5' )
 		{
 		    Close();
 		    Error(KIO_ERROR_CouldNotRead,buffer+9,errno);
-		    return FAIL;
+		    // We have got problem here:
+		    // If we fail we won't see error page,
+		    // But the operation isn't successful either
+		    // Let's try to continue - we callesd Error anyway
+		  // return FAIL;
 		}
 	    }
-	    
+	    // In fact we should do redirection only if we got redirection code
 	    else if ( strncmp( buffer, "Location: ", 10 ) == 0 )
 	    {
 		Close();

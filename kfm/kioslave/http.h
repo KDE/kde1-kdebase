@@ -13,6 +13,7 @@
 #include <stdio.h>
 
 #include <qdatetm.h>
+#include <klocale.h>
 
 class KProtocolHTTP :public KProtocol
 {
@@ -23,6 +24,9 @@ protected:
     QString proxy_user;
     QString proxy_pass;
 
+// needed for language/charset support 
+    KLocale *klocale;
+
     //#define HTTP_PROXY_NAME "someproxy.somewhere.org"
     //#define HTTP_PROXY_PORT 80
     
@@ -32,6 +36,12 @@ protected:
     long bytesleft;
     long bytesRead;
     FILE *fsocket;
+
+    // Jacek:
+    // HTTP settings
+    bool assumeHTML;
+    QString languages;
+    QString charsets;
 
     QString url;
 
@@ -48,9 +58,11 @@ protected:
     QTime currentTime;
     QTime startTime;
     
+    void PrepareLanguageList(QString str);
+    void PrepareCharsetList(QString str);
     int init_sockaddr(struct sockaddr_in *server_name, const char *hostname,int port);
     int ProcessHeader();
-    virtual int OpenHTTP(KURL *url, int mode,bool reload);
+    int OpenHTTP(KURL *url, int mode,bool reload);
     
 public:
     KProtocolHTTP();
