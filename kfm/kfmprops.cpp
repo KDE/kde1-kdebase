@@ -364,8 +364,10 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
     if ( ge != 0L )
     {
 	strGroup = ge->gr_name;
-	strGroup.detach();
-    }    
+	if (strGroup.isEmpty())
+	    strGroup.sprintf("%d",ge->gr_gid);
+    } else 
+	strGroup.sprintf("%d",buff.st_gid);
 
     QBoxLayout *box = new QVBoxLayout( this, 3 );
 
@@ -481,8 +483,8 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
 	  char * member;
 	  while ((member = *members) != 0L) {
 	    if (strcmp (member, strOwner.data()) == 0) {
-	      groupList->inSort (ge->gr_name);
-	      break;
+		groupList->inSort (ge->gr_name);
+		break;
 	    }
 	    ++members;
 	  }
@@ -492,16 +494,20 @@ FilePermissionsPropsPage::FilePermissionsPropsPage( Properties *_props )
       
       /* add the effective Group to the list .. */
       ge = getgrgid (getegid());
-      if (ge != 0L)
-	if (groupList->find (ge->gr_name) < 0)
-	  groupList->inSort (ge->gr_name);      
+      if (ge) {
+	  QString name = ge->gr_name;
+	  if (name.isEmpty())
+	      name.sprintf("%d",ge->gr_gid);
+	if (groupList->find (name) < 0)
+	  groupList->inSort (name); 
+      }
     }
     
     /* add the group the file currently belongs to ..
      * .. if its not there already 
      */
-    if (groupList->find (strGroup) < 0)
-      groupList->inSort (strGroup);
+    if (groupList->find (strGroup) < 0) 
+	groupList->inSort (strGroup);
     
     l = new QLabel( klocale->translate("Group"), gb );
     l->setMinimumSize( l->sizeHint() );
@@ -578,10 +584,15 @@ void FilePermissionsPropsPage::applyChanges()
     }
 
     if ( strcmp( owner->text(), strOwner.data() ) != 0 || 
-	 strcmp( grp->text(grp->currentItem()), strGroup.data() ) != 0 )
+	 (grp && strcmp( grp->text(grp->currentItem()), strGroup.data() ) != 0 ))
     {
 	struct passwd* pw = getpwnam( owner->text() );
-	struct group* g = getgrnam( grp->text(grp->currentItem()) );
+	struct group* g;
+	if (grp)
+	    g = getgrnam( grp->text(grp->currentItem()) );
+	else 
+	    g = 0L;
+	
 	if ( pw == 0L )
 	{
 	    warning(klocale->translate(" ERROR: No user %s"),owner->text() );
