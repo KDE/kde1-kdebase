@@ -342,15 +342,17 @@ kVt::kVt( QWidget *parent, const char *name )
       set_charclass("");
     }
 
-    entry = kvtconfig->readEntry("colormode");
-    if (entry) {
-      if (entry == color_mode_name[COLOR_TYPE_ANSI])
-	init_color_mode(COLOR_TYPE_ANSI);
-      if (entry == color_mode_name[COLOR_TYPE_Linux])
-	init_color_mode(COLOR_TYPE_Linux);      
-    } else {
-      init_color_mode(COLOR_TYPE_ANSI);
-    }
+    // Commented out, since it causes segfaults at this
+    // part of the code. (colormap not initialized)
+//     entry = kvtconfig->readEntry("colormode");
+//     if (entry) {
+//       if (entry == color_mode_name[COLOR_TYPE_ANSI])
+// 	init_color_mode(COLOR_TYPE_ANSI);
+//       if (entry == color_mode_name[COLOR_TYPE_Linux])
+// 	init_color_mode(COLOR_TYPE_Linux);      
+//     } else {
+//       init_color_mode(COLOR_TYPE_ANSI);
+//     }
 
     m_file = new QPopupMenu;
     CHECK_PTR( m_file );
@@ -451,6 +453,19 @@ kVt::kVt( QWidget *parent, const char *name )
     
     setAcceptFocus( TRUE );
 
+}
+
+void kVt::do_some_stuff() { //temporary (Matthias)
+    QString entry;
+    entry = kvtconfig->readEntry("colormode");
+     if (entry) {
+       if (entry == color_mode_name[COLOR_TYPE_ANSI])
+ 	init_color_mode(COLOR_TYPE_ANSI);
+       if (entry == color_mode_name[COLOR_TYPE_Linux])
+ 	init_color_mode(COLOR_TYPE_Linux);      
+     } else {
+       init_color_mode(COLOR_TYPE_ANSI);
+     }
 }
 
 // only works for hiding!!
@@ -887,12 +902,12 @@ int main(int argc, char **argv)
   MyApp a( argc, argv, "kvt" );
   myapp = &a;
 
+  // this is for the original rxvt-code
+  display = qt_xdisplay();
+
   //  a.setStyle(WindowsStyle);
   kvt = new kVt;
   a.setMainWidget( kvt );
-
-  // this is for the original rxvt-code
-  display = qt_xdisplay();
 
   // a bisserl gehackt. [bmg]
   char buffer[60];
@@ -955,6 +970,8 @@ int main(int argc, char **argv)
 #endif
     clean_exit(1);
   }
+
+  kvt->do_some_stuff();
 
   init_command(NULL ,(unsigned char **)com_argv);
 

@@ -39,6 +39,7 @@ public:
   void setMenubar(bool);
   void setScrollbar(bool);
   void ResizeToDimen(int width, int height);
+  void do_some_stuff();//temporary (Matthias)
 
 public slots:
   void application_signal();
