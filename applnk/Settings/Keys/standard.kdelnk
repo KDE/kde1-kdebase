@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+Exec=kcmkeys standard
+Type=Application
+Comment=Configuration of standard keys
+Name=Standard Keys
+SwallowTitle=Key binding settings
