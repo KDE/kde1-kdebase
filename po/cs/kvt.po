@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
+"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
 
@@ -12,7 +12,7 @@ msgstr "Pøídej znaky do tøídy slov"
 
 #: main.C:224
 msgid "choose type of color-mode"
-msgstr "Vyber type barevného modu"
+msgstr "Vyber typ barevného modu"
 
 #: main.C:227
 msgid "Ok"
@@ -21,6 +21,10 @@ msgstr "Ok"
 #: main.C:229
 msgid "Cancel"
 msgstr "Zru¹it"
+
+#: main.C:236
+msgid "The backspace key will send a"
+msgstr "Backspace bude posílán jako"     
 
 #: main.C:357
 msgid "&New Terminal"
@@ -222,3 +226,4 @@ msgstr ""
 #: main.C:970
 msgid "Terminal Options"
 msgstr "Nastavení terminálu"
+

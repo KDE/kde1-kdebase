@@ -1,3 +1,19 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1997-08-27 15:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
 #: main.cpp:53
 msgid "KDE Display Configuration"
 msgstr "KDE konfigurace obrazovky"
@@ -37,11 +53,11 @@ msgstr "Pøechod"
 
 #: backgnd.cpp:202
 msgid "Portrait"
-msgstr "Portrait"
+msgstr "Na vý¹ku"
 
 #: backgnd.cpp:206
 msgid "Landscape"
-msgstr "Landscape"
+msgstr "Na ¹íøku"
 
 #: backgnd.cpp:224
 msgid "Wallpaper"
@@ -104,12 +120,12 @@ msgid "Priority:"
 msgstr "Priorita:"
 
 #: colorscm.cpp:326 scrnsave.cpp:219
-msgid "High"
-msgstr "Vysoká"
+msgid "max"
+msgstr "max"
 
 #: colorscm.cpp:322 scrnsave.cpp:222
-msgid "Low"
-msgstr "Nízká"
+msgid "min"
+msgstr "min"
 
 #: colorscm.cpp:139 colorscm.cpp:140
 msgid "Inactive window"
@@ -177,7 +193,13 @@ msgstr "Pozadí okna"
 
 #: colorscm.cpp:309
 msgid "Contrast"
-msgstr "Kontrastnost"
+msgstr "Kontrast"
+
+msgid "High"
+msgstr "Velký"
+
+msgid "Low"
+msgstr "Malý"
 
 #: colorscm.cpp:341
 msgid "Save scheme"
@@ -251,28 +273,14 @@ msgstr "Velké"
 msgid "Italic"
 msgstr "Polo¾ené"
 
+msgid "Bold"
+msgstr "Tuèné"
+
 #: kwmcom.cpp:80 kwmcom.cpp:107
 msgid "kwmcom: communication with kwm failed\n"
 msgstr "kwmcom: komunikace s kwm probìhla neúspì¹nì\n"
 
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-#~ msgid ""
-#~ msgstr ""
-#~ "Project-Id-Version: PACKAGE VERSION\n"
-#~ "POT-Creation-Date: 1997-08-27 15:03+0200\n"
-#~ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-#~ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-#~ "Language-Team: LANGUAGE <LL@li.org>\n"
-#~ "MIME-Version: 1.0\n"
-#~ "Content-Type: text/plain; charset=CHARSET\n"
-#~ "Content-Transfer-Encoding: ENCODING\n"
+msgid "Desktop Title"
+msgstr "Název plochy"
 
-#~ msgid "Bold"
-#~ msgstr "Tuèné"
 
-#~ msgid "Help"
-#~ msgstr "Nápovìda"

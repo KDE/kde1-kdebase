@@ -1,11 +1,8 @@
-#: klogout.cpp:76
-msgid "Logout"
-msgstr "Odhlásit"
-
-#: klogout.cpp:77
 msgid "Cancel"
 msgstr "Zru¹it"
-
-#: klogout.cpp:86
+#
+msgid "Logout"
+msgstr "Odhlásit"
+#
 msgid "Really exit the KDE?"
-msgstr "Chcete opravdu opustit KDE?"
+msgstr "Opravdu opustit KDE?"
