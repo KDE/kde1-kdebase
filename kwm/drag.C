@@ -389,21 +389,21 @@ bool resizedrag(Client *c, int mode){
 
     switch (mode){
     case 1:
-      return sweepdrag(c,NULL,resizecalc);
+      return sweepdrag(c,0,resizecalc);
     case 2:
-      return sweepdrag(c,NULL,resizecalc_bl);
+      return sweepdrag(c,0,resizecalc_bl);
     case 3:
-      return sweepdrag(c,NULL,resizecalc_tl);
+      return sweepdrag(c,0,resizecalc_tl);
     case 4:
-      return sweepdrag(c,NULL,resizecalc_tr);
+      return sweepdrag(c,0,resizecalc_tr);
     case 5:
-      return sweepdrag(c,NULL,resizecalc_l);
+      return sweepdrag(c,0,resizecalc_l);
     case 6:
-      return sweepdrag(c,NULL,resizecalc_r);
+      return sweepdrag(c,0,resizecalc_r);
     case 7:
-      return sweepdrag(c,NULL,resizecalc_t);
+      return sweepdrag(c,0,resizecalc_t);
     case 8:
-      return sweepdrag(c,NULL,resizecalc_b);
+      return sweepdrag(c,0,resizecalc_b);
     }
     return false;
 }

@@ -13,8 +13,9 @@ In 0.10:
 --------
 
 patchlevel 31: 
-
 	-- Bernd: minor fixes (typos in the sound events)
+       - small fix for alt-tab
+
 patchlevel 30:
 	-- Bernd: 
 	

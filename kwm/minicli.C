@@ -23,11 +23,11 @@ extern Manager* manager;
 extern bool do_not_draw;
 
 // global history list
-QList <char> *history = NULL;
+QList <char> *history = 0;
 QListIterator <char> *it;
 
 void execute(const char* cmd){
-  char* shell = NULL;
+  char* shell = 0;
   QString tmp;
   
   // Torben

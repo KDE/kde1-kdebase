@@ -60,9 +60,9 @@ Manager::Manager(): QObject(){
   current_desktop = KWM::currentDesktop();
   number_of_desktops = KWM::numberOfDesktops();
 
-  proxy_hints = NULL;
-  proxy_props = NULL;
-  proxy_ignore = NULL;
+  proxy_hints = 0;
+  proxy_props = 0;
+  proxy_ignore = 0;
   
   int dummy;
   XGCValues gv;
@@ -157,7 +157,7 @@ Manager::Manager(): QObject(){
 		    PropModeAppend, (unsigned char*) &data, 1);
   }
 
-  delayed_focus_follow_mouse_client = NULL;
+  delayed_focus_follow_mouse_client = 0;
   enable_focus_follow_mouse_activation = false;
 
   if (options.ElectricBorder > -1){
@@ -806,14 +806,14 @@ void Manager::motionNotify(XMotionEvent* e){
       activateClient(c);
       raiseSoundEvent("Window Activate");
     }
-    delayed_focus_follow_mouse_client = NULL;
+    delayed_focus_follow_mouse_client = 0;
   }
 }
 
 void Manager::enterNotify(XCrossingEvent *e){
   Client *c;
   if (options.FocusPolicy == FOCUS_FOLLOW_MOUSE){ 
-    delayed_focus_follow_mouse_client = NULL;
+    delayed_focus_follow_mouse_client = 0;
     c = getClient(e->window);
     if (c != 0 && c != current() && c->state != WithdrawnState){
       XSync(qt_xdisplay(), False);
@@ -1311,8 +1311,8 @@ void Manager::manage(Window w, bool mapped){
 	  KWM::setProperties(c->window, d);
 	  pseudo_session_management = TRUE;
 	  XSync(qt_xdisplay(), False);
-	  proxy_hints->removeRef(NULL);
-	  proxy_props->removeRef(NULL);
+	  proxy_hints->removeRef(0);
+	  proxy_props->removeRef(0);
 	  i = proxy_hints->count();
 	}
       }
@@ -1457,7 +1457,7 @@ void Manager::manage(Window w, bool mapped){
   // get some KDE specific hints
 
   // transient windows on their parent's desktop
-  Client* pc = NULL;
+  Client* pc = 0;
   if (c->trans != None && c->trans != qt_xrootwin()){
     pc = getClient(c->trans);
     if (pc){
@@ -1583,7 +1583,7 @@ Client* Manager::getClient(Window w){
 Client* Manager::current(){
   Client* result = clients_traversing.last();
 
-  return (result && result->isActive()) ? result : (Client*)NULL;
+  return (result && result->isActive()) ? result : (Client*)0;
 }
 
 void Manager::addClient(Client* c){
@@ -1655,8 +1655,8 @@ void Manager::raiseClient(Client* c){
   tmp.append(c);
 
   // raise all transient windows now
-  Client *cc = NULL;
-  Client* ccc = NULL;
+  Client *cc = 0;
+  Client* ccc = 0;
   QList <Client> tmp2;
   tmp2.clear();
   do {
@@ -2679,7 +2679,7 @@ Client* Manager::findClientByLabel(QString label){
     if (c->label == label)
       return c;
   }
-  return NULL;
+  return 0;
 }
 
 

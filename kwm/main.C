@@ -84,24 +84,28 @@ int handler(Display *d, XErrorEvent *e){
     return 0;
 }
 
-static Minicli* minicli = NULL;
-static Klogout* klogout = NULL;
-static Ktask* ktask = NULL;
-static QLabel* infoLabel = NULL;
-static myPushButton* infoIcon = NULL;
-static QFrame* infoFrame = NULL;
-static QFrame* infoFrameInner = NULL;
+static Minicli* minicli = 0;
+static Klogout* klogout = 0;
+static Ktask* ktask = 0;
+static QLabel* infoLabel = 0;
+static myPushButton* infoIcon = 0;
+static QFrame* infoFrame = 0;
+static QFrame* infoFrameInner = 0;
+static QFrame* infoFrameSeparator = 0;
 extern bool do_not_draw;
 
+Manager* manager;
+MyApp* myapp = 0;
+
 static int infoBoxVirtualDesktop = 0;
-static Client* infoBoxClient = NULL;
-static QPixmap* pm_unknown = NULL;
+static Client* infoBoxClient = 0;
+static QPixmap* pm_unknown = 0;
 static void hideInfoBox(){
   infoFrame->hide();
   infoFrame->releaseMouse();
   do_not_draw = False;
 }
-static void setInfoBoxText(QString text, Window w){
+static void createInfoBox(){
   if (!infoFrame){
     infoFrame = new QFrame(0, 0, 
 			   WStyle_Customize | WStyle_NoBorder | WStyle_Tool);
@@ -111,8 +115,16 @@ static void setInfoBoxText(QString text, Window w){
     infoFrameInner->show();
     infoLabel = new QLabel(infoFrame);
     infoLabel->show();
+    infoFrameSeparator = new QLabel(infoFrame);
+    infoFrameSeparator->setFrameStyle( QFrame::Panel | QFrame::Raised );
     infoIcon = new myPushButton(infoFrame);
   }
+}
+static QList<Window> *infoBoxWindowsWindow = 0;
+static QList<QLabel> *infoBoxWindowsLabel = 0;
+static void setInfoBoxText(QString text, Window w){
+  if (!infoFrame)
+    createInfoBox();
   if (!infoFrame->isVisible())
     infoLabel->setFont(QFont("Helvetica", 14, QFont::Bold));
 
@@ -135,23 +147,26 @@ static void setInfoBoxText(QString text, Window w){
   else {
     infoLabel->setAlignment(AlignHCenter|AlignVCenter);
   }
-  if (infoLabel->fontMetrics().boundingRect(text).width() > 
-      QApplication::desktop()->width()*2/3-12-d){
+  int nw = 0;
+  if (infoBoxWindowsLabel)
+    nw = 10+infoBoxWindowsLabel->count() * 22;
+  if (nw < infoLabel->fontMetrics().boundingRect(text).width())
+    nw = infoLabel->fontMetrics().boundingRect(text).width();
+  
+  if (nw > QApplication::desktop()->width()*2/3-12-d){
     infoFrame->setGeometry(0,
 			   QApplication::desktop()->height()/2-30,
 			   QApplication::desktop()->width(),
-			   60);
-    if (infoLabel->fontMetrics().boundingRect(text).width() > 
-	QApplication::desktop()->width()-12-d)
+			   w!=None?83:60);
+    if (nw > QApplication::desktop()->width()-12-d)
       infoLabel->setAlignment(AlignVCenter);
   }
   else
-    if (infoLabel->fontMetrics().boundingRect(text).width() > 
-	QApplication::desktop()->width()/3-12-d){
+    if (nw > QApplication::desktop()->width()/3-12-d){
       infoFrame->setGeometry(QApplication::desktop()->width()/6,
 			     QApplication::desktop()->height()/2-30,
 			     QApplication::desktop()->width()*2/3,
-			     60);
+			     w!=None?83:60);
       if (infoLabel->fontMetrics().boundingRect(text).width() > 
 	  QApplication::desktop()->width()-12-d)
 	infoLabel->setAlignment(AlignVCenter);
@@ -160,19 +175,35 @@ static void setInfoBoxText(QString text, Window w){
       infoFrame->setGeometry(QApplication::desktop()->width()/3,
 			     QApplication::desktop()->height()/2-30,
 			     QApplication::desktop()->width()/3,
-			     60);
+			     w!=None?83:60);
   infoFrameInner->setGeometry(3, 3, infoFrame->width()-6, infoFrame->height()-6);
   
   if (w != None){
     infoIcon->setGeometry(6, 6, 48, 48);
     infoIcon->show();
     infoLabel->setGeometry(6+d, 6, infoFrame->width()-d-12, 
-			   infoFrame->height()-12);
+			   infoFrame->height()-12-20);
+    infoFrameSeparator->setGeometry(6, 55, infoFrame->width()-12, 2);
+    infoFrameSeparator->show();
+    if (infoBoxWindowsLabel){
+      QLabel* l;
+      for (l=infoBoxWindowsLabel->first();l;l=infoBoxWindowsLabel->next()){
+	if (*(infoBoxWindowsWindow->at(infoBoxWindowsLabel->at())) == w){
+	  l->setFrameStyle(QFrame::Panel | QFrame::Sunken);
+	  l->update();
+	}
+	else if (l->frameStyle() != QFrame::NoFrame){
+	  l->setFrameStyle(QFrame::NoFrame);
+	  l->update();
+	}
+      }
+    }
   }
   else {
     infoIcon->hide();
     infoLabel->setGeometry(6, 6, infoFrame->width()-12, 
 			   infoFrame->height()-12);
+    infoFrameSeparator->hide();
   }
   infoLabel->setText(text);
 
@@ -184,13 +215,57 @@ static void setInfoBoxText(QString text, Window w){
   }
 }
 
+void setInfoBoxWindows(Client* c, bool traverse_all = false){
+ static QPixmap* pm_menu = 0;
+ if (!pm_menu)
+   pm_menu = loadIcon("menu.xpm");
 
-Manager* manager;
-MyApp* myapp = NULL;
+
+  if (!infoFrame)
+    createInfoBox();
+  if (!infoBoxWindowsWindow){
+    infoBoxWindowsWindow = new QList<Window>;
+    infoBoxWindowsWindow->setAutoDelete(true);
+  }
+  if (!infoBoxWindowsLabel)
+    infoBoxWindowsLabel = new QList<QLabel>;
+  QLabel* l;
+  infoBoxWindowsWindow->clear();
+  for (l=infoBoxWindowsLabel->first();l;l=infoBoxWindowsLabel->next())
+    delete l;
+  infoBoxWindowsLabel->clear();
+  int x = 7;
+  if (c){
+    Client* o = c;
+    Window* w = 0;
+    QPixmap pm;
+    do {
+      if (traverse_all || 
+	  o->isOnDesktop(manager->currentDesktop())){
+	l = new QLabel(infoFrame); 
+	l->setGeometry(x, 58, 20, 20);
+	l->show();
+	infoBoxWindowsLabel->append(l);
+	w = new Window;
+	*w = o->window;
+	pm = KWM::miniIcon(*w, 16, 16);
+	if (!pm.isNull())
+	  l->setPixmap(pm);
+	else
+	  l->setPixmap(*pm_menu);
+	infoBoxWindowsWindow->append(w);
+	x += 22;
+      }
+      o = manager->previousClient(o);
+    } while (o != c);
+  }
+}
+
+
 
 kwmOptions options;
 
-QPushButton* ignore_release_on_this = NULL;
+QPushButton* ignore_release_on_this = 0;
 
 
 
@@ -883,7 +958,7 @@ void MyApp::saveSession(){
   KConfig* config = getKApplication()->getConfig();
   config->setGroup( "Session" );
 
-  QStrList* sl = NULL;
+  QStrList* sl = 0;
 
   sl = manager->getSessionCommands();
   config->writeEntry("tasks", *sl);
@@ -1028,6 +1103,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 		      GrabModeAsync, GrabModeAsync,
 		      CurrentTime);
 	tab_grab = True;
+	setInfoBoxWindows(manager->current(), options.TraverseAll);
 	infoBoxClient = manager->current();
       }
       Client* sign = infoBoxClient;
@@ -1042,6 +1118,9 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 	       !options.TraverseAll &&
 	       !infoBoxClient->isOnDesktop(manager->currentDesktop()));
 
+      if (!options.TraverseAll && infoBoxClient
+	  && !infoBoxClient->isOnDesktop(manager->currentDesktop()))
+	infoBoxClient = 0;
       if (infoBoxClient){
 	QString s;
 	if (!infoBoxClient->isOnDesktop(manager->currentDesktop())){
@@ -1078,6 +1157,7 @@ bool MyApp::handleKeyPress(XKeyEvent key){
 		      GrabModeAsync, GrabModeAsync,
 		      CurrentTime);
 	control_grab = True;
+	setInfoBoxWindows(0);
 	infoBoxVirtualDesktop = manager->currentDesktop();
       }
       if (km & ShiftMask){
@@ -1269,10 +1349,10 @@ bool MyApp::eventFilter( QObject *obj, QEvent * ev){
 	  if (ignore_release_on_this->rect().
 	      contains(ignore_release_on_this
 		       ->mapFromGlobal(QCursor::pos()))){
-	    ignore_release_on_this = NULL;
+	    ignore_release_on_this = 0;
 	    return True;
 	  }
-	  ignore_release_on_this = NULL;
+	  ignore_release_on_this = 0;
 	}
 	if (QCursor::pos() == tmp_point){
 	  tmp_point = QPoint(-10,-10);

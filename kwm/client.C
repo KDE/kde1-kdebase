@@ -175,8 +175,8 @@ void myPushButton::mouseMoveEvent( QMouseEvent *e ){
   }
 }
   
-static QPixmap *shaded_pm_active = NULL;
-static QPixmap *shaded_pm_inactive = NULL;
+static QPixmap *shaded_pm_active = 0;
+static QPixmap *shaded_pm_inactive = 0;
 static QColor shaded_pm_active_color;
 static QColor shaded_pm_inactive_color;
 
@@ -383,13 +383,13 @@ void Client::hideClient(){
 
 
 
-static QPixmap* pm_max = NULL;
-static QPixmap* pm_max_down = NULL;
-static QPixmap* pm_icon = NULL;
-static QPixmap* pm_close = NULL;
-static QPixmap* pm_pin_up = NULL;
-static QPixmap* pm_pin_down = NULL;
-static QPixmap* pm_menu = NULL;
+static QPixmap* pm_max = 0;
+static QPixmap* pm_max_down = 0;
+static QPixmap* pm_icon = 0;
+static QPixmap* pm_close = 0;
+static QPixmap* pm_pin_up = 0;
+static QPixmap* pm_pin_down = 0;
+static QPixmap* pm_menu = 0;
 
 QPixmap* loadIcon(const char* name){
   QPixmap *result = new QPixmap;
@@ -401,9 +401,9 @@ QPixmap* loadIcon(const char* name){
 void Client::generateButtons(){
   int i;
 
-  buttonMaximize = NULL;
-  buttonSticky = NULL;
-  buttonMenu = NULL;
+  buttonMaximize = 0;
+  buttonSticky = 0;
+  buttonMenu = 0;
   
   for (i=0;i<6;i++){
     buttons[i] = getNewButton( options.buttons[i]);
@@ -519,7 +519,7 @@ void Client::reconfigure(){
      if (buttons[i]){
        buttons[i]->hide();
        delete buttons[i];
-       buttons[i] = NULL;
+       buttons[i] = 0;
      }
    }
    generateButtons();
@@ -1083,11 +1083,11 @@ myPushButton * Client::getNewButton(BUTTON_FUNCTIONS buttonFunction){
   }
   
   if(buttonFunction == NOFUNC)
-    return NULL;
+    return 0;
   
   if (buttonFunction == MAXIMIZE){
     if (fixedSize())
-      return NULL;
+      return 0;
   }
   
 
@@ -1307,11 +1307,11 @@ void Client::paintState(bool only_label){
   if (options.TitlebarLook == SHADED){
     if (is_active && shaded_pm_active && shaded_pm_active_color != myapp->activeTitleColor){
       delete shaded_pm_active;
-      shaded_pm_active = NULL;
+      shaded_pm_active = 0;
     }
     if (is_active && shaded_pm_inactive && shaded_pm_inactive_color != myapp->inactiveTitleColor){
       delete shaded_pm_inactive;
-      shaded_pm_inactive = NULL;
+      shaded_pm_inactive = 0;
     }
   }
 
@@ -1723,7 +1723,7 @@ void Client::  handleOperation(int i){
     }
     dragging_state = dragging_enabled;
     do_resize = 0;
-    mouseMoveEvent(NULL);
+    mouseMoveEvent(0);
     break;
   case OP_RESIZE:
     manager->raiseClient(this);
@@ -1791,7 +1791,7 @@ void Client::simple_move(){
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
 			    sizeAllCursor.handle(), 0);
-  mouseMoveEvent(NULL);
+  mouseMoveEvent(0);
 }
 
 void Client::simple_resize(){
@@ -1825,7 +1825,7 @@ void Client::simple_resize(){
 			    PointerMotionMask |
 			    EnterWindowMask | LeaveWindowMask,
 			    cursor, 0);
-  mouseMoveEvent(NULL);
+  mouseMoveEvent(0);
 }
 
 bool Client::dragging_is_running(){
