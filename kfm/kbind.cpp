@@ -1653,6 +1653,8 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
     QString name = config->readEntry( "Name" );
     QString term = config->readEntry( "Terminal" );
     QString termOptions = config->readEntry( "TerminalOptions" );
+    QString icon = config->readEntry( "Icon", "" );
+    QString miniicon = config->readEntry( "MiniIcon", "" );
     
     // At least the executable is needed!
     if ( exec.isEmpty() )
@@ -1728,6 +1730,14 @@ bool KDELnkMimeType::runAsApplication( const char *_url, QStrList *_arguments )
 	    exec.replace(i,2,s.data());
 	}
     }     
+    if (!icon.isEmpty())
+      icon.prepend("-icon ");
+    while ( ( i = exec.find( "%i" ) ) != -1 )
+      exec.replace( i, 2, icon.data());
+    if (!miniicon.isEmpty())
+      icon.prepend("-miniicon ");
+    while ( ( i = exec.find( "%m" ) ) != -1 )
+      exec.replace( i, 2, miniicon.data());
     
     if ( term == "1" )
     {

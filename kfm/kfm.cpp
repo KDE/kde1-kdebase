@@ -13,7 +13,7 @@ KFM::KFM()
     if ( KfmGui::rooticons )
     {
 	kapp->enableSessionManagement( TRUE );
-	kapp->setWmCommand( "DUMMY" );
+	kapp->setWmCommand( "" );
 	
 	connect( kapp, SIGNAL( saveYourself() ), this, SLOT( slotSave() ) );
 
