@@ -97,7 +97,8 @@ class KBookmarkManager : public QObject
   Q_OBJECT
 public:
   KBookmarkManager();
-  
+  ~KBookmarkManager() {};
+
   void scan( const char *filename );
 
   KBookmark* root() { return &m_Root; }
