@@ -1,3 +1,7 @@
+Sat Jan 24 00:45:52 1998  Stephan Kulow  <coolo@Acrion>
+
+	* acinclude.m4.in: fixed another bug in AC_PATH_KDE
+
 Thu Jan 22 14:46:15 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: fixed an ugly bug in AC_BASE_PATH_KDE
