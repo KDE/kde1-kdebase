@@ -1,3 +1,21 @@
+/* This file is part of the KDE libraries
+    Copyright (C) 1996, 1997, 1998 Martin R. Jones <mjones@kde.org>
+      
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+    Boston, MA 02111-1307, USA.
+*/
 //-----------------------------------------------------------------------------
 //
 // KDE HTML Bookmarks
@@ -7,7 +25,6 @@
 
 #include <qfile.h>
 #include "bookmark.h"
-
 #include "bookmark.moc"
 
 #include <klocale.h>
@@ -17,13 +34,13 @@
 
 KBookmark::KBookmark()
 {
-	children.setAutoDelete( TRUE );
+	children.setAutoDelete( true );
 	type = URL;
 }
 
 KBookmark::KBookmark( const char *_text, const char *_url )
 {
-	children.setAutoDelete( TRUE );
+	children.setAutoDelete( true );
 	text = _text;
 	url = _url;
 	type = URL;
@@ -51,6 +68,9 @@ void KBookmarkManager::read( const char *filename )
 {
 	QFile file( filename );
 
+	// rich
+	myFilename= filename;
+
 	if ( !file.open( IO_ReadOnly ) )
 		return;
 
@@ -66,7 +86,7 @@ void KBookmarkManager::read( const char *filename )
 	}
 	while ( !file.atEnd() );
 
-	HTMLTokenizer *ht = new HTMLTokenizer;
+	BookmarkTokenizer *ht = new BookmarkTokenizer();
 
 	ht->begin();
 	ht->write( text );
@@ -86,18 +106,18 @@ void KBookmarkManager::read( const char *filename )
 			if ( strncasecmp( str, "<title>", 7 ) == 0 )
 			{
 				QString t = "";
-				bool bend = FALSE;
+				bool bend = false;
 
 				do
 				{
 					if ( !ht->hasMoreTokens() )
-						bend = TRUE;
+						bend = true;
 					else
 					{
 						str = ht->nextToken();
 						if ( str[0] == TAG_ESCAPE &&
 								strncasecmp( str + 1, "</title>", 8 ) == 0 )
-							bend = TRUE;
+							bend = true;
 						else
 							t += str;
 					}
@@ -120,7 +140,7 @@ void KBookmarkManager::read( const char *filename )
 
 // parser based on HTML widget parser
 //
-const char *KBookmarkManager::parse( HTMLTokenizer *ht, KBookmark *parent,
+const char *KBookmarkManager::parse( BookmarkTokenizer *ht, KBookmark *parent,
 	const char *_end )
 {
 	KBookmark *bm = parent;
@@ -161,7 +181,7 @@ const char *KBookmarkManager::parse( HTMLTokenizer *ht, KBookmark *parent,
 						p += 5;
 
 						text = "";
-						bool quoted = FALSE;
+						bool quoted = false;
 						while ( ( *p != ' ' && *p != '>' ) || quoted )
 						{
 							if ( *p == '\"' )
@@ -216,6 +236,9 @@ void KBookmarkManager::write( const char *filename )
 
 	if ( !file.open( IO_WriteOnly ) )
 		return;
+
+	// rich
+	myFilename= filename;
 
 	QTextStream stream( &file );
 
@@ -293,5 +316,72 @@ void KBookmarkManager::add( const char *_text, const char *_url )
 	root.getChildren().append( new KBookmark( _text, _url ) );
 
 	emit changed();
+}
+
+// rich
+bool KBookmarkManager::remove(int i)
+{
+  bool result= false;
+  if (i >= 0) {
+    root.getChildren().remove(i);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+void KBookmarkManager::rename(int i, const char *s)
+{
+  KBookmark *b;
+
+  if (i > 0) {
+    b= root.getChildren().at(i);
+    b->setText(s);
+    emit changed();
+  }
+}
+
+// rich
+bool KBookmarkManager::moveUp(int i)
+{
+  KBookmark *b;
+  bool result= false;
+
+  if (i > 0) {
+    b= root.getChildren().take(i);
+    root.getChildren().insert(i-1, b);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+bool KBookmarkManager::moveDown(int i)
+{
+  KBookmark *b;
+  uint j= i;
+  bool result= false;
+
+  if (j < (root.getChildren().count() -1)) {
+    b= root.getChildren().take(i);
+    root.getChildren().insert(i+1, b);
+    emit changed();
+    result= true;
+  }
+  return result;
+}
+
+// rich
+void KBookmarkManager::reread()
+{
+  read(myFilename);
+}
+
+// rich
+void KBookmarkManager::write()
+{
+  write(myFilename);
 }
 

@@ -7,12 +7,14 @@ SUBDIRS = search index
 
 bin_PROGRAMS = kdehelp
 kdehelp_SOURCES =  main.cpp helpwin.cpp info.cpp error.cpp misc.cpp options.cpp\
-		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp history.cpp
+		man.cpp bookmark.cpp cgi.cpp mainwidget.cpp history.cpp\
+		booktoken.cpp
 BUILT_SOURCES = helpwin.moc options.moc bookmark.moc cgi.moc mainwidget.moc
 DISTCLEANFILES = $(BUILT_SOURCES)
 
 noinst_HEADERS = helpwin.h info.h error.h misc.h man.h options.h\
-		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h
+		bookmark.h dbnew.cpp cgi.h mainwidget.h history.h\
+		booktoken.h
 
 helpwin.cpp: helpwin.moc
 options.cpp: options.moc
