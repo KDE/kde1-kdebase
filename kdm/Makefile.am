@@ -16,17 +16,17 @@ CXXFLAGS += -DHAVE_CONFIG_H
 bin_PROGRAMS = kdm kdmdesktop
 
 # Libraries:
-kdm_LDADD  = @all_libraries@ -lkdecore -lqt -lXext\
+LDADD  = @all_libraries@ -lkdecore -lqt -lXext\
            -lX11 -lXau -lXdmcp -lm $(PASSWDLIB) @LIBSOCKET@
 
 # For kdmdesktop
-kdedesktop_LDADD = @all_libraries@ -lkdecore -lqt -lm -lgif -ljpeg -lXext -lX11
+kdmdesktop_LDADD = @all_libraries@ -lkdecore -lqt -lm -lgif -ljpeg -lXext -lX11 $(LDADD)
 
 .h.moc:
 	$(MOC) -o $@ $<
 
 # Sources for xdm (both C and C++):
-kdm_SOURCES = access.c \
+kdmlib_source = access.c \
            auth.c \
 	   choose.c \
 	   daemon.c \
@@ -50,58 +50,36 @@ kdm_SOURCES = access.c \
 	   verify.c \
 	   xdmauth.c \
 	   xdmcp.c
+			
+kdm_SOURCES = kdmconfig.cpp \
+	kdmshutdown.cpp \
+	kdmview.cpp \
+	kfdialog.cpp \
+	kgreeter.cpp \
+	$(kdmlib_source)
 
-kdmdesktop_SOURCES = kdmconfig.cpp \
-	     kdmshutdown.cpp \
-	     kdmview.cpp \
-	     kfdialog.cpp \
-	     kgreeter.cpp
-
-# Sources for kdmdesktop:
-KDMDSOURCES = kdmdesktop.cpp gif.cpp jpeg.cpp
+kdmdesktop_SOURCES = \
+	kdmdesktop.cpp \
+	gif.cpp \
+	jpeg.cpp
 
 MOCSRC = kfdialog.moc kdmview.moc kdmshutdown.moc kgreeter.moc
 
-# Objects:
+kfdialog.cpp: kfdialog.moc
+kfdialog.moc: kfdialog.h
+	$(MOC) kfdialog.h -o kfdialog.moc
 
-KDMOBJECTS = $(CSOURCES:.c=.o) $(CXXSOURCES:.cpp=.o)
-KDMDOBJECTS = $(KDMDSOURCES:.cpp=.o)
+kdmview.cpp: kdmview.moc
+kdmview.moc: kdmview.h
+	$(MOC) kdmview.h -o kdmview.moc
 
-# Targets:
+kdmshutdown.cpp: kdmshutdown.moc
+kdmshutdown.moc: kdmshutdown.h
+	$(MOC) kdmshutdown.h -o kdmshutdown.moc
 
-all: 
-	@for subdir in $(SUBDIRS); do \
-	echo "Making in $$subdir"; \
-	(cd $$subdir && $(MAKE)) \
-	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
-	done && test -z "$$fail"
-	@echo ""
+kgreeter.cpp: kgreeter.moc
+kgreeter.moc: kgreeter.h
+	$(MOC) kgreeter.h -o kgreeter.moc
 
-Makefile: Makefile.in
-	cd .. && CONFIG_FILES=kdm/$@ CONFIG_HEADERS= $(SHELL) ./config.status  
 
-kdm: $(MOCSRC) $(KDMOBJECTS)
-	$(CXX) -o kdm $(KDMOBJECTS) $(KDMLIBS) 
 
-kdmdesktop: $(KDMDOBJECTS)
-	$(CXX) -o kdmdesktop $(KDMDOBJECTS) $(KDMDLIBS)
-
-clean:
-	$(RM) *.o *~ *.moc kdm kdmdesktop
-	@for subdir in $(SUBDIRS); do \
-	echo "Making clean in $$subdir"; \
-	(cd $$subdir && $(MAKE) clean) \
-	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
-	done && test -z "$$fail"
-	@echo ""
-
-install: kdm kdmdesktop
-	$(mkinstalldirs) $(BINDIR)
-	$(INSTALL) kdm $(BINDIR)
-	$(INSTALL) kdmdesktop $(BINDIR)	
-	@for subdir in $(SUBDIRS); do \
-	echo "Making install in $$subdir"; \
-	(cd $$subdir && $(MAKE) install) \
-	|| case "$(MFLAGS)" in *k*) fail=yes;; *) exit 1;; esac; \
-	done && test -z "$$fail"
-	@echo ""

@@ -32,3 +32,16 @@
 /* Define to 1 if NLS is requested.  */
 #undef ENABLE_NLS
 
+/* define if you have the PAM lib. Now, we have two different users, this will change */
+#undef HAVE_PAM_LIB
+
+/* define if you have shadow library */
+#undef HAVE_SHADOW_LIB
+
+/* define, where to find the X server */
+#undef XBINDIR
+
+/* define, where to find the XDM configurations */
+#undef XDMDIR
+
+

@@ -1,15 +1,9 @@
 
 PIXDIR		= @prefix@/lib/pics
-mkinstalldirs   = $(SHELL) @top_srcdir@/mkinstalldirs
-INSTALL_DATA	= @INSTALL@ -m 0644
 
-default:
-
-install:
+install-data-local:
 	$(mkinstalldirs) $(PIXDIR)
 	$(mkinstalldirs) $(PIXDIR)/users
 	$(INSTALL_DATA) kdelogo.xpm $(PIXDIR)
 	$(INSTALL_DATA) default.xpm root.xpm $(PIXDIR)/users
 
-clean:
-	$(RM) core *~
