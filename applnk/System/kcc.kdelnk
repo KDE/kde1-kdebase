@@ -5,6 +5,7 @@ Type=Application
 DocPath=kcc/index.html
 Comment=System Control Center
 Comment[de]=System Einstellungen
+Comment[pl]=Centrum kontroli systemu
 Name=System Control Center
 Name[de]=System Einstellungen
-
+Name[pl]=Centrum kontroli systemu

@@ -1,10 +1,12 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=File manager
+Name[pl]=Mened~zer plik~ow
 Type=Application
 execute=kfm
 DocPath=kfm/index.html
 Comment=The KDE file manager
 Comment[de]=Der KDE Datei Manager
+Comment[pl]=KDE Mened~zer plik~ow
 Icon=folder.xpm
 
