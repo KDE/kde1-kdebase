@@ -684,7 +684,7 @@ void KCookieJar::addCookie(KCookiePtr &cookiePtr)
         cookieDomains.insert( domain.data(), cookieList);
 
         // Update the list of domains
-        domainList.append( domain.data());
+        domainList.inSort( domain.data());
     }
 
     // Look for matching existing cookies
@@ -814,7 +814,7 @@ void KCookieJar::setDomainAdvice(const char *_domain, KCookieAdvice _advice)
             cookieDomains.insert( domain.data(), cookieList);
 
             // Update the list of domains
-            domainList.append( domain.data());
+            domainList.inSort( domain.data());
         }
     }
         
