@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwm\n"
-"POT-Creation-Date: 1998-11-08 01:22+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1998-03-20 12:20 MET\n"
 "Last-Translator: Juraj Bednár <bednar@isternet.sk>\n"
 "Language-Team: Slovak <bednar@isternet.sk>\n"
@@ -13,27 +13,33 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:64
+#: main.cpp:67
 msgid "&Buttons"
 msgstr "&Dekorácia okna"
 
-#: main.cpp:67
+#: main.cpp:70
 msgid "&Titlebar"
 msgstr "&Titulok"
 
-#: main.cpp:70
+#: main.cpp:73
 msgid "Bo&rders"
 msgstr "Ok&raje"
 
-#: main.cpp:73
+#: main.cpp:76
 msgid "&Mouse"
 msgstr "&My¹ka"
 
-#: main.cpp:79
-msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+#: main.cpp:80
+msgid "&Advanced"
+msgstr ""
+
+#: main.cpp:86
+#, fuzzy
+msgid ""
+"usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr "Pou¾itie: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
 
-#: main.cpp:114
+#: main.cpp:123
 msgid "Window manager style"
 msgstr "Vlastnosti správcu okien"
 
@@ -378,3 +384,74 @@ msgstr "Presunú»"
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
 msgstr "Zmena veµkosti"
+
+#: advanced.cpp:36
+msgid "Keyboard and Mouse"
+msgstr ""
+
+#: advanced.cpp:46
+msgid "Ctrl-Tab walks through desktops"
+msgstr ""
+
+#: advanced.cpp:51
+msgid "Alt-Tab is limited to current desktop"
+msgstr ""
+
+#: advanced.cpp:56
+msgid "Alt-Tab mode:"
+msgstr ""
+
+#: advanced.cpp:63
+msgid "KDE"
+msgstr ""
+
+#: advanced.cpp:64
+msgid "CDE"
+msgstr ""
+
+#: advanced.cpp:69
+#, fuzzy
+msgid "Grab the Right Mouse Button"
+msgstr "ALT + Pravé tlaèítko"
+
+#: advanced.cpp:78
+msgid "Filters"
+msgstr ""
+
+#: advanced.cpp:98
+#, fuzzy
+msgid "Windows will:"
+msgstr "Okná"
+
+#: advanced.cpp:104
+msgid "have tiny decorations"
+msgstr ""
+
+#: advanced.cpp:105
+msgid "have no decorations"
+msgstr ""
+
+#: advanced.cpp:106
+msgid "never gain focus"
+msgstr ""
+
+#: advanced.cpp:107
+msgid "start as Sticky"
+msgstr ""
+
+#: advanced.cpp:108
+msgid "be excluded from session management"
+msgstr ""
+
+#: advanced.cpp:116
+msgid "if they match the following:"
+msgstr ""
+
+#: advanced.cpp:121
+#, fuzzy
+msgid "Titles"
+msgstr "&Titulok"
+
+#: advanced.cpp:126
+msgid "Classes"
+msgstr ""

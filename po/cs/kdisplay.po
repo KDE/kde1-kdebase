@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1998-11-05 07:51+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -17,109 +17,204 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Vlo¾ nové jméno pracovní plochy"
 
-#: backgnd.cpp:106 backgnd.cpp:141
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Pracovní plocha"
 
-#: backgnd.cpp:158
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "Pø&ejmenovat ..."
 
-#: backgnd.cpp:184 colorscm.cpp:94
+#: backgnd.cpp:184
+#, fuzzy
+msgid "One Des&ktop"
+msgstr "Pracovní plocha"
+
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Barvy"
 
-#: backgnd.cpp:211
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Jednobarevné"
 
-#: backgnd.cpp:228
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "D&voubarevné"
 
-#: backgnd.cpp:247
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "Na&stavit.."
 
-#: backgnd.cpp:256
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Tapeta"
 
-#: backgnd.cpp:266
-msgid "Ti&led"
-msgstr "Vy&dlá¾dit"
-
-#: backgnd.cpp:274
-msgid "&Centred"
-msgstr "&Centrovanì"
-
-#: backgnd.cpp:282
-msgid "&Scaled"
-msgstr "Zvì&t¹enì"
-
-#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
+#: backgnd.cpp:295 backgnd.cpp:485 backgnd.cpp:499 backgnd.cpp:1103
+#: backgnd.cpp:1260 backgnd.cpp:1744
 msgid "No wallpaper"
 msgstr "®ádná tapeta"
 
-#: backgnd.cpp:326
+#: backgnd.cpp:321
 msgid "&Browse..."
 msgstr "&Listovat..."
 
-#: backgnd.cpp:855
+#: backgnd.cpp:330
+#, fuzzy
+msgid "Tiled"
+msgstr "Vy&dlá¾dit"
+
+#: backgnd.cpp:331
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:332
+#, fuzzy
+msgid "Center Tiled"
+msgstr "&Centrovanì"
+
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Centred"
+msgstr "&Centrovanì"
+
+#: backgnd.cpp:334
+#, fuzzy
+msgid "Centred Brick"
+msgstr "&Centrovanì"
+
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Centred Warp"
+msgstr "&Centrovanì"
+
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "&Centrovanì"
+
+#: backgnd.cpp:337
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:338
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Scaled"
+msgstr "Zvì&t¹enì"
+
+#: backgnd.cpp:350
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:359
+#, fuzzy
+msgid "Setu&p..."
+msgstr "Na&stavit.."
+
+#: backgnd.cpp:367
+msgid "&Dock into kpanel"
+msgstr ""
+
+#: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "Jméno pracovní plochy"
 
-#: backgnd.cpp:901
+#: backgnd.cpp:1272
+#, fuzzy
+msgid "File error"
+msgstr "Chyba pojmenování"
+
+#: backgnd.cpp:1273
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1296 backgnd.cpp:1714
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1297 backgnd.cpp:1715
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1328
 msgid "Two color backgrounds"
 msgstr "Dvoubarevná pozadí"
 
-#: backgnd.cpp:938
+#: backgnd.cpp:1365
 msgid "Blend colors from &top to bottom"
 msgstr "Smíchat barvy z&hora dolù"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:1371
 msgid "Blend colors from &right to left"
 msgstr "Smíchat barvy z&prava doleva"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:1377
 msgid "Use &pattern"
 msgstr "Pou¾ít vzo&r"
 
-#: backgnd.cpp:977
+#: backgnd.cpp:1404
 msgid "Preview"
 msgstr "Náhled"
 
-#: backgnd.cpp:988
+#: backgnd.cpp:1415
 msgid "Pattern &name"
 msgstr "J&méno vzoru"
 
-#: backgnd.cpp:1027
+#: backgnd.cpp:1454
 msgid "Current"
 msgstr "Souèasný"
 
-#: backgnd.cpp:1087
+#: backgnd.cpp:1514
 msgid "Filled"
 msgstr "Plný"
 
-#: backgnd.cpp:1090
+#: backgnd.cpp:1517
 msgid "Fish net"
 msgstr "Rybáøská sí»"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1520
 msgid "Triangles"
 msgstr "Trojúhelníky"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1523
 msgid "Flowers"
 msgstr "Kvìtiny"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1526
 msgid "Rattan"
 msgstr "Ratan"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1529
 msgid "Cobbled Pavement"
 msgstr "Dla¾ba"
+
+#: backgnd.cpp:1595
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1605
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1617
+#, fuzzy
+msgid "In &order"
+msgstr "Ignoruj"
+
+#: backgnd.cpp:1635
+#, fuzzy
+msgid "Desktops :"
+msgstr "Pracovní plocha"
+
+#: backgnd.cpp:1673
+#, fuzzy
+msgid "&Add"
+msgstr "Pøid&at ..."
 
 #: colorscm.cpp:120
 msgid "Color Scheme"

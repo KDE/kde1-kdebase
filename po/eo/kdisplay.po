@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 1.0pre2\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1998-07-13 21:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -18,109 +18,204 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Tajpu novan nomon por la labortabulo"
 
-#: backgnd.cpp:106 backgnd.cpp:141
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Labortabulo"
 
-#: backgnd.cpp:158
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "&Alinomu ..."
 
-#: backgnd.cpp:184 colorscm.cpp:94
+#: backgnd.cpp:184
+#, fuzzy
+msgid "One Des&ktop"
+msgstr "Labortabulo"
+
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Koloroj"
 
-#: backgnd.cpp:211
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Unu koloro"
 
-#: backgnd.cpp:228
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "&Du koloroj"
 
-#: backgnd.cpp:247
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "&Adaptu ..."
 
-#: backgnd.cpp:256
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Tapeto"
 
-#: backgnd.cpp:266
-msgid "Ti&led"
-msgstr "&Kahele"
-
-#: backgnd.cpp:274
-msgid "&Centred"
-msgstr "&Centrigite"
-
-#: backgnd.cpp:282
-msgid "&Scaled"
-msgstr "&Etendite"
-
-#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
+#: backgnd.cpp:295 backgnd.cpp:485 backgnd.cpp:499 backgnd.cpp:1103
+#: backgnd.cpp:1260 backgnd.cpp:1744
 msgid "No wallpaper"
 msgstr "sen tapeto"
 
-#: backgnd.cpp:326
+#: backgnd.cpp:321
 msgid "&Browse..."
 msgstr "&Elektu..."
 
-#: backgnd.cpp:855
+#: backgnd.cpp:330
+#, fuzzy
+msgid "Tiled"
+msgstr "&Kahele"
+
+#: backgnd.cpp:331
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:332
+#, fuzzy
+msgid "Center Tiled"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Centred"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:334
+#, fuzzy
+msgid "Centred Brick"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Centred Warp"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "&Centrigite"
+
+#: backgnd.cpp:337
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:338
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Scaled"
+msgstr "&Etendite"
+
+#: backgnd.cpp:350
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:359
+#, fuzzy
+msgid "Setu&p..."
+msgstr "&Adaptu ..."
+
+#: backgnd.cpp:367
+msgid "&Dock into kpanel"
+msgstr ""
+
+#: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "Nomoj de la labortabuloj"
 
-#: backgnd.cpp:901
+#: backgnd.cpp:1272
+#, fuzzy
+msgid "File error"
+msgstr "Eraro de nomado"
+
+#: backgnd.cpp:1273
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1296 backgnd.cpp:1714
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1297 backgnd.cpp:1715
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1328
 msgid "Two color backgrounds"
 msgstr "Dukoloraj fonoj"
 
-#: backgnd.cpp:938
+#: backgnd.cpp:1365
 msgid "Blend colors from &top to bottom"
 msgstr "Þanøetu la kolorojn de &supre malsupren"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:1371
 msgid "Blend colors from &right to left"
 msgstr "Þanøetu la koloroj de &dekstre maldekstren"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:1377
 msgid "Use &pattern"
 msgstr "Uzu kolor&aranøon"
 
-#: backgnd.cpp:977
+#: backgnd.cpp:1404
 msgid "Preview"
 msgstr "Antaýrigardo"
 
-#: backgnd.cpp:988
+#: backgnd.cpp:1415
 msgid "Pattern &name"
 msgstr "&Nomo de koloraranøo"
 
-#: backgnd.cpp:1027
+#: backgnd.cpp:1454
 msgid "Current"
 msgstr "Aktuala"
 
-#: backgnd.cpp:1087
+#: backgnd.cpp:1514
 msgid "Filled"
 msgstr "Unukolora"
 
-#: backgnd.cpp:1090
+#: backgnd.cpp:1517
 msgid "Fish net"
 msgstr "Fiþreto"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1520
 msgid "Triangles"
 msgstr "Trianguloj"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1523
 msgid "Flowers"
 msgstr "Floretoj"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1526
 msgid "Rattan"
 msgstr "Plekta¼o"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1529
 msgid "Cobbled Pavement"
 msgstr "Pavimo"
+
+#: backgnd.cpp:1595
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1605
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1617
+#, fuzzy
+msgid "In &order"
+msgstr "Ignoru"
+
+#: backgnd.cpp:1635
+#, fuzzy
+msgid "Desktops :"
+msgstr "Labortabulo"
+
+#: backgnd.cpp:1673
+#, fuzzy
+msgid "&Add"
+msgstr "&Aldonu ..."
 
 #: colorscm.cpp:120
 msgid "Color Scheme"

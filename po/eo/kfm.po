@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kfm 1.0pre2\n"
-"POT-Creation-Date: 1998-11-10 01:23+0100\n"
+"POT-Creation-Date: 1998-11-11 01:17+0100\n"
 "PO-Revision-Date: 1998-07-13 20:00+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -244,9 +244,9 @@ msgstr "Ne eblis enlegi la piktogramon\n"
 #: kbind.cpp:1881 kbind.cpp:1893 kbind.cpp:1938 kbind.cpp:1980 kfmexec.cpp:60
 #: kfmexec.cpp:92 kfmexec/main.cpp:47 kfmgui.cpp:604 kfmgui.cpp:760
 #: kfmman.cpp:331 kfmman.cpp:1044 kfmman.cpp:1233 kfmman.cpp:1259
-#: kfmprops.cpp:376 kfmprops.cpp:627 kfmprops.cpp:653 kfmprops.cpp:834
-#: kfmprops.cpp:956 kfmprops.cpp:1083 kfmprops.cpp:1399 kfmprops.cpp:1613
-#: kfmprops.cpp:1793 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
+#: kfmprops.cpp:379 kfmprops.cpp:630 kfmprops.cpp:656 kfmprops.cpp:883
+#: kfmprops.cpp:1012 kfmprops.cpp:1143 kfmprops.cpp:1477 kfmprops.cpp:1709
+#: kfmprops.cpp:1894 kfmserver.cpp:40 kfmserver.cpp:158 kfmserver.cpp:238
 #: kfmserver.cpp:285 kfmserver.cpp:294 kfmserver.cpp:302 kfmtree.cpp:163
 #: kfmtree.cpp:286 kfmtree.cpp:317 kfmtree.cpp:323 kfmtree.cpp:329
 #: kfmview.cpp:349 kfmview.cpp:365 kfmview.cpp:384 kfmview.cpp:390
@@ -350,7 +350,7 @@ msgstr "ERARO: Vi faligis URLon super si mem"
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "ERARO: Vi faligis dosierujon super unu el øiaj idoj"
 
-#: kfmexec.cpp:255 kfmman.cpp:897 kfmview.cpp:481
+#: kfmexec.cpp:265 kfmman.cpp:897 kfmview.cpp:481
 msgid "Open With:"
 msgstr "Malfermu kun:"
 
@@ -605,41 +605,41 @@ msgstr "Rigardu"
 msgid "Could not write bookmark"
 msgstr "Ne eblis skribi la legomarkilon"
 
-#: kfmprops.cpp:234
+#: kfmprops.cpp:237
 #, fuzzy
 msgid "Name"
 msgstr "Plena nomo"
 
-#: kfmprops.cpp:251
+#: kfmprops.cpp:254
 msgid "Full Name"
 msgstr "Plena nomo"
 
-#: kfmprops.cpp:269
+#: kfmprops.cpp:272
 msgid "Is the Trash Bin"
 msgstr "Estas la rubujo"
 
-#: kfmprops.cpp:276
+#: kfmprops.cpp:279
 msgid "Is a Directory"
 msgstr "Estas dosierujo"
 
-#: kfmprops.cpp:283
+#: kfmprops.cpp:286
 msgid "Points to"
 msgstr "Montras al"
 
-#: kfmprops.cpp:308
+#: kfmprops.cpp:311
 #, c-format
 msgid "Size: %i"
 msgstr "Grandeco: %i"
 
-#: kfmprops.cpp:318
+#: kfmprops.cpp:321
 msgid "Last Access"
 msgstr "Lasta aliro"
 
-#: kfmprops.cpp:328
+#: kfmprops.cpp:331
 msgid "Last Modified"
 msgstr "Lasta þanøo"
 
-#: kfmprops.cpp:377
+#: kfmprops.cpp:380
 msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
@@ -647,11 +647,11 @@ msgstr ""
 "Ne eblis alinomi la dosieron aý dosierujon.\n"
 "La dezirata nomo þajne jam ekzistas.\n"
 
-#: kfmprops.cpp:425
+#: kfmprops.cpp:428
 msgid "Access permissions"
 msgstr "Aliru permesojn"
 
-#: kfmprops.cpp:431
+#: kfmprops.cpp:434
 msgid ""
 "Show\n"
 "Entries"
@@ -659,11 +659,11 @@ msgstr ""
 "Montru\n"
 "la erojn"
 
-#: kfmprops.cpp:433
+#: kfmprops.cpp:436
 msgid "Read"
 msgstr "Legu"
 
-#: kfmprops.cpp:438
+#: kfmprops.cpp:441
 msgid ""
 "Write\n"
 "Entries"
@@ -671,11 +671,11 @@ msgstr ""
 "Skribu\n"
 "la erojn"
 
-#: kfmprops.cpp:440
+#: kfmprops.cpp:443
 msgid "Write"
 msgstr "Skribu"
 
-#: kfmprops.cpp:445
+#: kfmprops.cpp:448
 msgid ""
 "Change\n"
 "Into"
@@ -683,48 +683,48 @@ msgstr ""
 "Þanøu\n"
 "al"
 
-#: kfmprops.cpp:447
+#: kfmprops.cpp:450
 msgid "Exec"
 msgstr "Lanæo"
 
-#: kfmprops.cpp:451
+#: kfmprops.cpp:454
 msgid "Special"
 msgstr "Speciala"
 
-#: kfmprops.cpp:455
+#: kfmprops.cpp:458
 msgid "User"
 msgstr "Uzanto"
 
-#: kfmprops.cpp:460 kfmprops.cpp:559
+#: kfmprops.cpp:463 kfmprops.cpp:562
 msgid "Group"
 msgstr ""
 
-#: kfmprops.cpp:465
+#: kfmprops.cpp:468
 msgid "Others"
 msgstr "Aliaj"
 
-#: kfmprops.cpp:478
+#: kfmprops.cpp:481
 msgid "Set UID"
 msgstr "UID-rulo"
 
-#: kfmprops.cpp:479
+#: kfmprops.cpp:482
 msgid "Set GID"
 msgstr "GID-rulo"
 
-#: kfmprops.cpp:480
+#: kfmprops.cpp:483
 msgid "Sticky"
 msgstr "Glua"
 
-#: kfmprops.cpp:498
+#: kfmprops.cpp:501
 msgid "Ownership"
 msgstr "Posedo"
 
-#: kfmprops.cpp:504
+#: kfmprops.cpp:507
 #, fuzzy
 msgid "Owner"
 msgstr "Posedo"
 
-#: kfmprops.cpp:628
+#: kfmprops.cpp:631
 msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
@@ -732,17 +732,17 @@ msgstr ""
 "Ne ebli þanøi la permesojn\n"
 "Verþajne aliro estas malpermesita."
 
-#: kfmprops.cpp:643
+#: kfmprops.cpp:646
 #, c-format
 msgid " ERROR: No user %s"
 msgstr " ERARO: Ne ekzistas uzanto %s"
 
-#: kfmprops.cpp:648
+#: kfmprops.cpp:651
 #, c-format
 msgid " ERROR: No group %s"
 msgstr " ERARO: Ne ekzistas grupo %s"
 
-#: kfmprops.cpp:654
+#: kfmprops.cpp:657
 msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
@@ -750,36 +750,37 @@ msgstr ""
 "Ne eblis þanøi ls posedanton/grupon\n"
 "Verþajne aliro estas malpermesita."
 
-#: kfmprops.cpp:672
-msgid "Swallowing on panel"
-msgstr "Hirunde sur la panelo"
-
-#: kfmprops.cpp:690 kfmprops.cpp:713
+#: kfmprops.cpp:669 kfmprops.cpp:728
 msgid "Execute"
 msgstr "Lanæu"
 
-#: kfmprops.cpp:694
-msgid "Browse"
+#: kfmprops.cpp:685
+#, fuzzy
+msgid "&Browse..."
 msgstr "Rigardu"
 
-#: kfmprops.cpp:698
+#: kfmprops.cpp:697
 msgid "Working Directory"
 msgstr "Labordosierujo"
 
-#: kfmprops.cpp:721
+#: kfmprops.cpp:715
+msgid "Swallowing on panel"
+msgstr "Hirunde sur la panelo"
+
+#: kfmprops.cpp:742
 msgid "Window Title"
 msgstr "Fenestrotitolo"
 
-#: kfmprops.cpp:725
+#: kfmprops.cpp:762
 msgid "Run in terminal"
 msgstr "Rulu en terminalo"
 
-#: kfmprops.cpp:733
+#: kfmprops.cpp:770
 msgid "Terminal Options"
 msgstr "Terminala opcioj"
 
-#: kfmprops.cpp:835 kfmprops.cpp:957 kfmprops.cpp:1400 kfmprops.cpp:1614
-#: kfmprops.cpp:1794
+#: kfmprops.cpp:884 kfmprops.cpp:1013 kfmprops.cpp:1478 kfmprops.cpp:1710
+#: kfmprops.cpp:1895
 msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
@@ -787,75 +788,80 @@ msgstr ""
 "Ne eblis sekurigi la ecojn\n"
 "Verþajne mankas permeso"
 
-#: kfmprops.cpp:883
+#: kfmprops.cpp:938
 msgid "URL"
 msgstr "URL"
 
-#: kfmprops.cpp:984
+#: kfmprops.cpp:1035
+#, fuzzy
+msgid "Background"
+msgstr "Fona koloro:"
+
+#: kfmprops.cpp:1045
 msgid "Apply global"
 msgstr "Apliku malloke"
 
-#: kfmprops.cpp:1023 kfmprops.cpp:1095 kfmprops.cpp:1152
+#: kfmprops.cpp:1083 kfmprops.cpp:1155 kfmprops.cpp:1212
 msgid "(Default)"
 msgstr "(implice)"
 
-#: kfmprops.cpp:1084
+#: kfmprops.cpp:1144
 msgid "Could not write to\n"
 msgstr "Ne eblis skribi al\n"
 
-#: kfmprops.cpp:1197
+#: kfmprops.cpp:1275
 msgid "(None)"
 msgstr "(nenio)"
 
-#: kfmprops.cpp:1243
+#: kfmprops.cpp:1321
 msgid "Binary Pattern (netscape;Netscape;)"
 msgstr "Duuma þablono (netscape;Netscape;)"
 
-#: kfmprops.cpp:1250 kfmprops.cpp:1502
+#: kfmprops.cpp:1328 kfmprops.cpp:1579
 msgid "Comment"
 msgstr "Komento"
 
-#: kfmprops.cpp:1261
+#: kfmprops.cpp:1339
 msgid "Name ( in your language )"
 msgstr "Nomo (en via lingvo)"
 
-#: kfmprops.cpp:1490
+#: kfmprops.cpp:1556
 msgid "Pattern ( example: *.html;*.HTML; )"
 msgstr "Þablono (ekzemple: *.html;*.HTML;)"
 
-#: kfmprops.cpp:1498
+#: kfmprops.cpp:1568
 msgid "Mime Type"
 msgstr "MIME-tipo"
 
-#: kfmprops.cpp:1509
+#: kfmprops.cpp:1597
 msgid "Default Application"
 msgstr "Implicita aplika¼o"
 
-#: kfmprops.cpp:1541
+#: kfmprops.cpp:1637
 msgid "<none>"
 msgstr ""
 
-#: kfmprops.cpp:1663
+#: kfmprops.cpp:1759
 msgid "Device ( /dev/fd0 )"
 msgstr "Aparato (/dev/fd0)"
 
-#: kfmprops.cpp:1671
+#: kfmprops.cpp:1768
 msgid "Mount Point ( /floppy )"
 msgstr "Muntejo (/floppy)"
 
-#: kfmprops.cpp:1681
+#: kfmprops.cpp:1779
 msgid "Readonly"
 msgstr "Nurlege"
 
-#: kfmprops.cpp:1687
+#: kfmprops.cpp:1785
 msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Dosierartipo (iso9660,msdos,minix,implicita)"
 
-#: kfmprops.cpp:1697
+#: kfmprops.cpp:1796
 msgid "Mounted Icon"
 msgstr "Munt-piktogramo"
 
-#: kfmprops.cpp:1701
+#: kfmprops.cpp:1801
 msgid "Unmounted Icon"
 msgstr "Malmunt-piktogramo"
 
@@ -1288,7 +1294,7 @@ msgstr "Hej, vi ne þanøis la nomon!\n"
 msgid "Password"
 msgstr "Pasvorto"
 
-#: kfmexec.cpp:136
+#: kfmexec.cpp:141
 msgid "Trying to open"
 msgstr "Provante malfermi"
 
@@ -1377,23 +1383,23 @@ msgstr "&Permesoj"
 msgid "E&xecute"
 msgstr "&Lanæu"
 
-#: kfmprops.h:248
+#: kfmprops.h:246
 msgid "U&RL"
 msgstr "&URL"
 
-#: kfmprops.h:272
+#: kfmprops.h:270
 msgid "&Dir"
 msgstr "&Dosierujo"
 
-#: kfmprops.h:315
+#: kfmprops.h:314
 msgid "&Application"
 msgstr "&Aplika¼o"
 
-#: kfmprops.h:357
+#: kfmprops.h:356
 msgid "&Binding"
 msgstr "&Binda¼oj"
 
-#: kfmprops.h:387
+#: kfmprops.h:386
 msgid "De&vice"
 msgstr "A&parato"
 
@@ -1430,6 +1436,9 @@ msgid ""
 msgstr ""
 "Sintaksa eraro:\n"
 "kfmexec command [URLoj ....]\n"
+
+#~ msgid "Browse"
+#~ msgstr "Rigardu"
 
 #~ msgid "&Quit..."
 #~ msgstr "&Finu..."

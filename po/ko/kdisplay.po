@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: LinuxKorea Co. <kde@linuxkorea.co.kr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,109 +18,204 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "새 데스크탑 이름을 넣으십시오"
 
-#: backgnd.cpp:106 backgnd.cpp:141
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "데스크탑"
 
-#: backgnd.cpp:158
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "이름바꾸기(&R)..."
 
-#: backgnd.cpp:184 colorscm.cpp:94
+#: backgnd.cpp:184
+#, fuzzy
+msgid "One Des&ktop"
+msgstr "데스크탑"
+
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "배경색"
 
-#: backgnd.cpp:211
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "한가지색(&O)"
 
-#: backgnd.cpp:228
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "두가지색(&T)"
 
-#: backgnd.cpp:247
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "설정(&u)..."
 
-#: backgnd.cpp:256
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "바탕그림"
 
-#: backgnd.cpp:266
-msgid "Ti&led"
-msgstr "타일식으로(&l)"
-
-#: backgnd.cpp:274
-msgid "&Centred"
-msgstr "중앙(&C)"
-
-#: backgnd.cpp:282
-msgid "&Scaled"
-msgstr "크기조절(&S)"
-
-#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
+#: backgnd.cpp:295 backgnd.cpp:485 backgnd.cpp:499 backgnd.cpp:1103
+#: backgnd.cpp:1260 backgnd.cpp:1744
 msgid "No wallpaper"
 msgstr "바탕그림 없음"
 
-#: backgnd.cpp:326
+#: backgnd.cpp:321
 msgid "&Browse..."
 msgstr "찾아보기(&B)..."
 
-#: backgnd.cpp:855
+#: backgnd.cpp:330
+#, fuzzy
+msgid "Tiled"
+msgstr "타일식으로(&l)"
+
+#: backgnd.cpp:331
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:332
+#, fuzzy
+msgid "Center Tiled"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Centred"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:334
+#, fuzzy
+msgid "Centred Brick"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Centred Warp"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "중앙(&C)"
+
+#: backgnd.cpp:337
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:338
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Scaled"
+msgstr "크기조절(&S)"
+
+#: backgnd.cpp:350
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:359
+#, fuzzy
+msgid "Setu&p..."
+msgstr "설정(&u)..."
+
+#: backgnd.cpp:367
+msgid "&Dock into kpanel"
+msgstr ""
+
+#: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "데스크탑 이름"
 
-#: backgnd.cpp:901
+#: backgnd.cpp:1272
+#, fuzzy
+msgid "File error"
+msgstr "잘못된 이름"
+
+#: backgnd.cpp:1273
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1296 backgnd.cpp:1714
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1297 backgnd.cpp:1715
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1328
 msgid "Two color backgrounds"
 msgstr "배경을 두가지 색으로"
 
-#: backgnd.cpp:938
+#: backgnd.cpp:1365
 msgid "Blend colors from &top to bottom"
 msgstr "배경 위에서 아래로 점점 변화(&t)"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:1371
 msgid "Blend colors from &right to left"
 msgstr "배경 오른쪽에서 왼쪽으로 점점 변화(&r)"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:1377
 msgid "Use &pattern"
 msgstr "패턴 사용(&p)"
 
-#: backgnd.cpp:977
+#: backgnd.cpp:1404
 msgid "Preview"
 msgstr "미리보기"
 
-#: backgnd.cpp:988
+#: backgnd.cpp:1415
 msgid "Pattern &name"
 msgstr "패턴 이름(&n)"
 
-#: backgnd.cpp:1027
+#: backgnd.cpp:1454
 msgid "Current"
 msgstr "현재 설정"
 
-#: backgnd.cpp:1087
+#: backgnd.cpp:1514
 msgid "Filled"
 msgstr "채움"
 
-#: backgnd.cpp:1090
+#: backgnd.cpp:1517
 msgid "Fish net"
 msgstr "그물망"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1520
 msgid "Triangles"
 msgstr "삼각형"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1523
 msgid "Flowers"
 msgstr "꽃무늬"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1526
 msgid "Rattan"
 msgstr "등나무"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1529
 msgid "Cobbled Pavement"
 msgstr "자갈길"
+
+#: backgnd.cpp:1595
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1605
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1617
+#, fuzzy
+msgid "In &order"
+msgstr "무시"
+
+#: backgnd.cpp:1635
+#, fuzzy
+msgid "Desktops :"
+msgstr "데스크탑"
+
+#: backgnd.cpp:1673
+#, fuzzy
+msgid "&Add"
+msgstr "추가(&A)..."
 
 #: colorscm.cpp:120
 msgid "Color Scheme"

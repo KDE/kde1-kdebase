@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1997-11-07 02:51+0600\n"
 "Last-Translator: Denis Y. Pershin <dyp@siblug.org>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -17,126 +17,226 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Введите название нового рабочего стола"
 
-#: backgnd.cpp:106 backgnd.cpp:141
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Рабочий стол"
 
 #
-#: backgnd.cpp:158
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "&Переименовать..."
 
+#: backgnd.cpp:184
+#, fuzzy
+msgid "One Des&ktop"
+msgstr "Рабочий стол"
+
 #
 #
-#: backgnd.cpp:184 colorscm.cpp:94
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Цвета"
 
 #
 #
-#: backgnd.cpp:211
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Один Цвет"
 
 #
 #
-#: backgnd.cpp:228
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "&Два Цвета"
 
 #
-#: backgnd.cpp:247
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "&Настроить..."
 
-#: backgnd.cpp:256
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Обои"
 
 #
-#: backgnd.cpp:266
-msgid "Ti&led"
-msgstr "Черепицей"
-
-#
-#: backgnd.cpp:274
-msgid "&Centred"
-msgstr "В &центре"
-
-#
-#: backgnd.cpp:282
-msgid "&Scaled"
-msgstr "Изменять размер"
-
-#
-#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
+#: backgnd.cpp:295 backgnd.cpp:485 backgnd.cpp:499 backgnd.cpp:1103
+#: backgnd.cpp:1260 backgnd.cpp:1744
 msgid "No wallpaper"
 msgstr "Без обоев"
 
 #
-#: backgnd.cpp:326
+#: backgnd.cpp:321
 msgid "&Browse..."
 msgstr "&Просмотреть..."
 
 #
-#: backgnd.cpp:855
+#: backgnd.cpp:330
+#, fuzzy
+msgid "Tiled"
+msgstr "Черепицей"
+
+#: backgnd.cpp:331
+msgid "Mirrored"
+msgstr ""
+
+#
+#: backgnd.cpp:332
+#, fuzzy
+msgid "Center Tiled"
+msgstr "В &центре"
+
+#
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Centred"
+msgstr "В &центре"
+
+#
+#: backgnd.cpp:334
+#, fuzzy
+msgid "Centred Brick"
+msgstr "В &центре"
+
+#
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Centred Warp"
+msgstr "В &центре"
+
+#
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "В &центре"
+
+#: backgnd.cpp:337
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:338
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Scaled"
+msgstr "Изменять размер"
+
+#: backgnd.cpp:350
+msgid "Ra&ndom"
+msgstr ""
+
+#
+#: backgnd.cpp:359
+#, fuzzy
+msgid "Setu&p..."
+msgstr "&Настроить..."
+
+#: backgnd.cpp:367
+msgid "&Dock into kpanel"
+msgstr ""
+
+#
+#: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "Названия рабочих столов"
 
+#: backgnd.cpp:1272
+#, fuzzy
+msgid "File error"
+msgstr "Ошибка перименования"
+
+#: backgnd.cpp:1273
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1296 backgnd.cpp:1714
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1297 backgnd.cpp:1715
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
 #
-#: backgnd.cpp:901
+#: backgnd.cpp:1328
 msgid "Two color backgrounds"
 msgstr "Двухцветный фон"
 
-#: backgnd.cpp:938
+#: backgnd.cpp:1365
 msgid "Blend colors from &top to bottom"
 msgstr "Изменять цвет с&верху вниз"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:1371
 msgid "Blend colors from &right to left"
 msgstr "Изменять цвет с&права налево"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:1377
 msgid "Use &pattern"
 msgstr "Использовать &шаблон"
 
-#: backgnd.cpp:977
+#: backgnd.cpp:1404
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: backgnd.cpp:988
+#: backgnd.cpp:1415
 msgid "Pattern &name"
 msgstr "&Имя шаблона"
 
-#: backgnd.cpp:1027
+#: backgnd.cpp:1454
 msgid "Current"
 msgstr "Текущий"
 
 #
 #
-#: backgnd.cpp:1087
+#: backgnd.cpp:1514
 msgid "Filled"
 msgstr "Закрашенный"
 
-#: backgnd.cpp:1090
+#: backgnd.cpp:1517
 msgid "Fish net"
 msgstr "Рыбацкая сеть"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1520
 msgid "Triangles"
 msgstr "Треугольники"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1523
 msgid "Flowers"
 msgstr "Цветы"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1526
 msgid "Rattan"
 msgstr "Плетение"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1529
 msgid "Cobbled Pavement"
 msgstr "Мостовая"
+
+#: backgnd.cpp:1595
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1605
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1617
+#, fuzzy
+msgid "In &order"
+msgstr "Игнорировать"
+
+#: backgnd.cpp:1635
+#, fuzzy
+msgid "Desktops :"
+msgstr "Рабочий стол"
+
+#: backgnd.cpp:1673
+#, fuzzy
+msgid "&Add"
+msgstr "&Добавить..."
 
 #: colorscm.cpp:120
 msgid "Color Scheme"

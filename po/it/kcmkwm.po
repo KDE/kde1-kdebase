@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-11-08 01:22+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Andrea Rizzi <Bilibao@ouverture.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,29 +9,34 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.cpp:64
+#: main.cpp:67
 msgid "&Buttons"
 msgstr "&Pulsanti"
 
-#: main.cpp:67
+#: main.cpp:70
 msgid "&Titlebar"
 msgstr "&Barra Titolo"
 
-#: main.cpp:70
+#: main.cpp:73
 #, fuzzy
 msgid "Bo&rders"
 msgstr "Bordi Magici"
 
-#: main.cpp:73
+#: main.cpp:76
 msgid "&Mouse"
 msgstr ""
 
-#: main.cpp:79
+#: main.cpp:80
+msgid "&Advanced"
+msgstr ""
+
+#: main.cpp:86
 #, fuzzy
-msgid "usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"
+msgid ""
+"usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse,advanced}]\n"
 msgstr "utilizzo: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
-#: main.cpp:114
+#: main.cpp:123
 msgid "Window manager style"
 msgstr "Stile Manager Finestre"
 
@@ -393,6 +398,76 @@ msgstr ""
 #: mouse.cpp:195 mouse.cpp:206 mouse.cpp:217
 msgid "Resize"
 msgstr "Ridimensiona"
+
+#: advanced.cpp:36
+msgid "Keyboard and Mouse"
+msgstr ""
+
+#: advanced.cpp:46
+msgid "Ctrl-Tab walks through desktops"
+msgstr ""
+
+#: advanced.cpp:51
+msgid "Alt-Tab is limited to current desktop"
+msgstr ""
+
+#: advanced.cpp:56
+msgid "Alt-Tab mode:"
+msgstr ""
+
+#: advanced.cpp:63
+msgid "KDE"
+msgstr ""
+
+#: advanced.cpp:64
+msgid "CDE"
+msgstr ""
+
+#: advanced.cpp:69
+msgid "Grab the Right Mouse Button"
+msgstr ""
+
+#: advanced.cpp:78
+msgid "Filters"
+msgstr ""
+
+#: advanced.cpp:98
+#, fuzzy
+msgid "Windows will:"
+msgstr "&Finestre"
+
+#: advanced.cpp:104
+msgid "have tiny decorations"
+msgstr ""
+
+#: advanced.cpp:105
+msgid "have no decorations"
+msgstr ""
+
+#: advanced.cpp:106
+msgid "never gain focus"
+msgstr ""
+
+#: advanced.cpp:107
+msgid "start as Sticky"
+msgstr ""
+
+#: advanced.cpp:108
+msgid "be excluded from session management"
+msgstr ""
+
+#: advanced.cpp:116
+msgid "if they match the following:"
+msgstr ""
+
+#: advanced.cpp:121
+#, fuzzy
+msgid "Titles"
+msgstr "&Barra Titolo"
+
+#: advanced.cpp:126
+msgid "Classes"
+msgstr ""
 
 #~ msgid "Titlebar appearance"
 #~ msgstr "Aspetto Barra Titolo"

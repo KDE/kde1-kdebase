@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdisplay\n"
-"POT-Creation-Date: 1998-11-05 01:17+0100\n"
+"POT-Creation-Date: 1998-11-11 01:18+0100\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -17,109 +17,204 @@ msgstr ""
 msgid "Enter new desktop name"
 msgstr "Oppgi nytt navn på skrivebord"
 
-#: backgnd.cpp:106 backgnd.cpp:141
+#: backgnd.cpp:110 backgnd.cpp:151
 msgid "Desktop"
 msgstr "Skrivebord"
 
-#: backgnd.cpp:158
+#: backgnd.cpp:173
 msgid "&Rename ..."
 msgstr "&Gi nytt navn..."
 
-#: backgnd.cpp:184 colorscm.cpp:94
+#: backgnd.cpp:184
+#, fuzzy
+msgid "One Des&ktop"
+msgstr "Skrivebord"
+
+#: backgnd.cpp:213 colorscm.cpp:94
 msgid "Colors"
 msgstr "Farger"
 
-#: backgnd.cpp:211
+#: backgnd.cpp:240
 msgid "&One Color"
 msgstr "&Første farge"
 
-#: backgnd.cpp:228
+#: backgnd.cpp:257
 msgid "&Two Color"
 msgstr "&Andre farge"
 
-#: backgnd.cpp:247
+#: backgnd.cpp:276
 msgid "Set&up ..."
 msgstr "&Oppsett..."
 
-#: backgnd.cpp:256
+#: backgnd.cpp:285
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:266
-msgid "Ti&led"
-msgstr "F&liselagt"
-
-#: backgnd.cpp:274
-msgid "&Centred"
-msgstr "S&entrert"
-
-#: backgnd.cpp:282
-msgid "&Scaled"
-msgstr "&Skalert"
-
-#: backgnd.cpp:298 backgnd.cpp:418 backgnd.cpp:431 backgnd.cpp:779
+#: backgnd.cpp:295 backgnd.cpp:485 backgnd.cpp:499 backgnd.cpp:1103
+#: backgnd.cpp:1260 backgnd.cpp:1744
 msgid "No wallpaper"
 msgstr "Intet tapet"
 
-#: backgnd.cpp:326
+#: backgnd.cpp:321
 msgid "&Browse..."
 msgstr "&Bla igjennom..."
 
-#: backgnd.cpp:855
+#: backgnd.cpp:330
+#, fuzzy
+msgid "Tiled"
+msgstr "F&liselagt"
+
+#: backgnd.cpp:331
+msgid "Mirrored"
+msgstr ""
+
+#: backgnd.cpp:332
+#, fuzzy
+msgid "Center Tiled"
+msgstr "S&entrert"
+
+#: backgnd.cpp:333
+#, fuzzy
+msgid "Centred"
+msgstr "S&entrert"
+
+#: backgnd.cpp:334
+#, fuzzy
+msgid "Centred Brick"
+msgstr "S&entrert"
+
+#: backgnd.cpp:335
+#, fuzzy
+msgid "Centred Warp"
+msgstr "S&entrert"
+
+#: backgnd.cpp:336
+#, fuzzy
+msgid "Centred Maxpect"
+msgstr "S&entrert"
+
+#: backgnd.cpp:337
+msgid "Symmetrical Tiled"
+msgstr ""
+
+#: backgnd.cpp:338
+msgid "Symmetrical Mirrored"
+msgstr ""
+
+#: backgnd.cpp:339
+#, fuzzy
+msgid "Scaled"
+msgstr "&Skalert"
+
+#: backgnd.cpp:350
+msgid "Ra&ndom"
+msgstr ""
+
+#: backgnd.cpp:359
+#, fuzzy
+msgid "Setu&p..."
+msgstr "&Oppsett..."
+
+#: backgnd.cpp:367
+msgid "&Dock into kpanel"
+msgstr ""
+
+#: backgnd.cpp:1227
 msgid "Desktop names"
 msgstr "Skrivebordsnavn"
 
-#: backgnd.cpp:901
+#: backgnd.cpp:1272
+#, fuzzy
+msgid "File error"
+msgstr "Navnefeil"
+
+#: backgnd.cpp:1273
+msgid "Can't load image file"
+msgstr ""
+
+#: backgnd.cpp:1296 backgnd.cpp:1714
+msgid "Unsupported URL"
+msgstr ""
+
+#: backgnd.cpp:1297 backgnd.cpp:1715
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE Display Module"
+msgstr ""
+
+#: backgnd.cpp:1328
 msgid "Two color backgrounds"
 msgstr "To fargebakgrunner"
 
-#: backgnd.cpp:938
+#: backgnd.cpp:1365
 msgid "Blend colors from &top to bottom"
 msgstr "Gradvis fargeovergang fra &topp til bunn"
 
-#: backgnd.cpp:944
+#: backgnd.cpp:1371
 msgid "Blend colors from &right to left"
 msgstr "Gradvis fargeovergang fra &høyre til venstre"
 
-#: backgnd.cpp:950
+#: backgnd.cpp:1377
 msgid "Use &pattern"
 msgstr "Bruk &mønster"
 
-#: backgnd.cpp:977
+#: backgnd.cpp:1404
 msgid "Preview"
 msgstr "Forhåndsvis"
 
-#: backgnd.cpp:988
+#: backgnd.cpp:1415
 msgid "Pattern &name"
 msgstr "Mønsternavn"
 
-#: backgnd.cpp:1027
+#: backgnd.cpp:1454
 msgid "Current"
 msgstr "Gjeldende"
 
-#: backgnd.cpp:1087
+#: backgnd.cpp:1514
 msgid "Filled"
 msgstr "Fyllt"
 
-#: backgnd.cpp:1090
+#: backgnd.cpp:1517
 msgid "Fish net"
 msgstr "Fiskegarn"
 
-#: backgnd.cpp:1093
+#: backgnd.cpp:1520
 msgid "Triangles"
 msgstr "Trekanter"
 
-#: backgnd.cpp:1096
+#: backgnd.cpp:1523
 msgid "Flowers"
 msgstr "Blomster"
 
-#: backgnd.cpp:1099
+#: backgnd.cpp:1526
 msgid "Rattan"
 msgstr "Rotting"
 
-#: backgnd.cpp:1102
+#: backgnd.cpp:1529
 msgid "Cobbled Pavement"
 msgstr "Brusten"
+
+#: backgnd.cpp:1595
+msgid "Random mode setup"
+msgstr ""
+
+#: backgnd.cpp:1605
+msgid "Timer Delay in seconds :"
+msgstr ""
+
+#: backgnd.cpp:1617
+#, fuzzy
+msgid "In &order"
+msgstr "Ignorer"
+
+#: backgnd.cpp:1635
+#, fuzzy
+msgid "Desktops :"
+msgstr "Skrivebord"
+
+#: backgnd.cpp:1673
+#, fuzzy
+msgid "&Add"
+msgstr "L&egg til ..."
 
 #: colorscm.cpp:120
 msgid "Color Scheme"
