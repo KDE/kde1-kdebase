@@ -1,8 +1,10 @@
-Emacs.default.attributeBackground:	WINDOW_BACKGROUND
 Emacs.default.attributeForeground:	WINDOW_FOREGROUND
-
-Emacs*menubar*background:	BACKGROUND
+Emacs.default.attributeBackground:	WINDOW_BACKGROUND
+ 
+Emacs*Foreground:		black
+Emacs*Background:		white
 Emacs*menubar*foreground:	FOREGROUND
+Emacs*menubar*background:	BACKGROUND
 Emacs*popup*Foreground:		FOREGROUND
 Emacs*popup*Background:		BACKGROUND
 Emacs*Dialog*foreground:	FOREGROUND
@@ -13,9 +15,10 @@ Emacs*topToolBarShadowColor:	BACKGROUND
 Emacs*bottomToolBarShadowColor:	BACKGROUND
 Emacs*backgroundToolBarColor:	BACKGROUND
 Emacs*toolBarShadowThickness:	0
-
-
+ 
+Emacs*font:			FIXED_FONT
 Emacs*menubar*Font:		FONT
 Emacs*popup*Font:		FONT
 Emacs*Dialog*Font:		FONT
 Emacs.default.attributeFont:	FIXED_FONT
+
