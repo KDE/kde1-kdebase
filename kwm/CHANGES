@@ -10,6 +10,16 @@ windowmanager written in plain C. There are of course also strong
 influences from my experiences with the former kwm.
 
 
+In 0.10:
+--------
+
+  patchlevel 1:
+       - "-version" command line argument
+       - Alt-MMB fixed
+       - bugfix in module registration 
+       - bugfix in X error handling during initialization
+
+
 Some changes beside the rewrite since previous kwms:
 
  - well documentated libkwm allows clients to communicate with the
@@ -69,6 +79,8 @@ v0.2 - v0.5 developed and maintained by
       Brian Cooper (cooperb@er4.eng.ohio-state.edu)
 kwm v0.1 by Matthias Ettrich based on 9wm by David Hogan
 ==================================================================
+-------
+In 0.9:
 
     patchlevel 7:
          - new Button "Menu" for the window operations popup

@@ -193,6 +193,7 @@ private:
   QList <Window> dock_windows;
   void addDockWindow(Window w);
   void removeDockWindow(Window w);
+  Atom kwm_module;
   Atom module_init;
   Atom module_desktop_change;
   Atom module_win_add;

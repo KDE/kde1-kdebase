@@ -8,14 +8,8 @@
 #include "manager.moc"
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
 #include <unistd.h>
 
-#define INT8 _X11INT8
-#define INT32 _X11INT32
-#include <X11/Xproto.h>
-#undef INT8
-#undef INT32
 
 #include "kwm.h"
 
@@ -34,33 +28,7 @@ static char stipple_bits[] = {
   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa,
   0x55, 0x55, 0xaa, 0xaa, 0x55, 0x55, 0xaa, 0xaa};
 
-
-static bool initting;
-static bool ignore_badwindow;
-
-int handler(Display *d, XErrorEvent *e){
-    char msg[80], req[80], number[80];
-
-    if (initting && (e->request_code == X_ChangeWindowAttributes) && (e->error_code == BadAccess)) {
-      fprintf(stderr, "kwm: it looks like there's already a window manager running.  kwm not started\n");
-      exit(1);
-    }
-
-    if (ignore_badwindow && (e->error_code == BadWindow || e->error_code == BadColor))
-      return 0;
-
-    XGetErrorText(d, e->error_code, msg, sizeof(msg));
-    sprintf(number, "%d", e->request_code);
-    XGetErrorDatabaseText(d, "XRequest", number, "<unknown>", req, sizeof(req));
-
-    fprintf(stderr, "kwm: %s(0x%lx): %s\n", req, e->resourceid, msg);
-
-    if (initting) {
-        fprintf(stderr, "kwm: failure during initialisation; aborting\n");
-        exit(1);
-    }
-    return 0;
-}
+extern bool ignore_badwindow; // for the X error handler
 
 
 Manager::Manager(): QObject(){
@@ -78,9 +46,6 @@ Manager::Manager(): QObject(){
   dpy = qt_xdisplay();
   root = qt_xrootwin();
   default_colormap = DefaultColormap(qt_xdisplay(), qt_xscreen());
-  
-  initting = TRUE;
-  XSetErrorHandler(handler);
   
   wm_state = XInternAtom(qt_xdisplay(), "WM_STATE", False);
   wm_change_state = XInternAtom(qt_xdisplay(), "WM_CHANGE_STATE", False);
@@ -108,6 +73,7 @@ Manager::Manager(): QObject(){
   kwm_running = XInternAtom(qt_xdisplay(), "KWM_RUNNING", False);
 
   // for the modules
+  kwm_module = XInternAtom(qt_xdisplay(), "KWM_MODULE", False);
   module_init = XInternAtom(qt_xdisplay(), "KWM_MODULE_INIT", False);
   module_desktop_change = XInternAtom(qt_xdisplay(), "KWM_MODULE_DESKTOP_CHANGE", False);
   
@@ -141,28 +107,12 @@ Manager::Manager(): QObject(){
   XSetStipple(qt_xdisplay(), rootfillsolidgc, stipple);
   XSetFillStyle(qt_xdisplay(), rootfillsolidgc, FillStippled);
   
-
-  
   shape = XShapeQueryExtension(qt_xdisplay(), &shape_event, &dummy);
 
-  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
-	       KeyPressMask |
-	       // 		 ButtonPressMask | ButtonReleaseMask |
-	       PropertyChangeMask |
-	       ColormapChangeMask |
-	       SubstructureRedirectMask |
-	       SubstructureNotifyMask 
-	       );
-  
-  XSync(qt_xdisplay(), False);
-  initting = FALSE;
-  
   scanWins();
   if (!current()){
     noFocus();
   }
-  
-  XInternAtom(qt_xdisplay(), "KWMCOM_RUNNING", False); // Matthias
 }
 
 
@@ -174,6 +124,8 @@ void Manager::createNotify(XCreateWindowEvent *e){
     /* flush any errors */
     XSync(qt_xdisplay(), False);
     ignore_badwindow = FALSE;
+    if (!getClient(e->window))
+      XSelectInput(qt_xdisplay(), e->window, PropertyChangeMask);
   }
 }
 
@@ -212,10 +164,6 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     }
 
     c->geometry.setRect(x, y, dx, dy);
-    printf("configure request fuer client %d %d %d %d\n", 
-	   c->geometry.x(), c->geometry.y(), c->geometry.width(), 
-	   c->geometry.height());
-    
 	 
     if (e->value_mask & CWBorderWidth)
       c->border = e->border_width;
@@ -264,8 +212,6 @@ void Manager::configureRequest(XConfigureRequestEvent *e){
     }
   }
   else {
-    printf("anderer configure request %d %d %d %d\n",
-	   e->x, e->y, e->width, e->height);
     wc.x = e->x;
     wc.y = e->y;
     wc.width = e->width;
@@ -419,6 +365,13 @@ void Manager::propertyNotify(XPropertyEvent *e){
       number_of_desktops = KWM::numberOfDesktops();
     }
     return;
+  }
+  
+  if (a == kwm_module){
+    if (KWM::isKWMModule(e->window))
+      addModule(e->window);
+    else
+      removeModule(e->window);
   }
 
   c = getClient(e->window);
@@ -577,9 +530,7 @@ void Manager::manage(Window w, bool mapped){
   XGrabServer(qt_xdisplay()); // we want to be alone...
   
   // create a client
-  printf("manage %ld\n", w);
   if (KWM::isDockWindow(w)){
-    printf("FOUND A DOCK WINDOW!\n");
     addDockWindow(w);
     return;
   }
@@ -754,9 +705,6 @@ void Manager::manage(Window w, bool mapped){
     setWindowState(c, IconicState);
   }
   else {
-    printf("Zeige das neue Fenster %d %d %d %d\n", 
-	   c->geometry.x(), c->geometry.y(), c->geometry.width(), 
-	   c->geometry.height());
     c->show();
     XMapWindow(qt_xdisplay(), c->window);
     setWindowState(c, NormalState);
@@ -1653,7 +1601,11 @@ Client* Manager::findClientByLabel(QString label){
 
 
 void Manager::addModule(Window w){
-  Window *wp = new Window;
+  Window *wp;
+  for (wp = modules.first(); wp; wp = modules.next())
+    if (*wp == w)
+      return;
+  wp = new Window;
   *wp = w;
   modules.append(wp);
   if (KWM::isKWMDockModule(w)){

@@ -21,6 +21,7 @@
 #include "logout.h"
 #include "task.h"
 #include "kwm.h"
+#include "version.h"
 
 #include <kapp.h>
 
@@ -30,6 +31,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <errno.h>
 #include <X11/X.h>
 #include <X11/Xos.h>
 #include <X11/Xlib.h>
@@ -38,6 +40,45 @@
 #include <X11/keysym.h>
 #include <X11/extensions/shape.h>
 #include <X11/cursorfont.h>
+
+#define INT8 _X11INT8
+#define INT32 _X11INT32
+#include <X11/Xproto.h>
+#undef INT8
+#undef INT32
+
+
+static bool initting;
+bool ignore_badwindow;
+
+int handler(Display *d, XErrorEvent *e){
+    char msg[80], req[80], number[80];
+
+    if (initting && 
+	(
+	 e->request_code == X_ChangeWindowAttributes
+	 || e->request_code == X_GrabKey
+	 ) 
+	&& (e->error_code == BadAccess)) {
+      fprintf(stderr, "kwm: it looks like there's already a window manager running.  kwm not started\n");
+      exit(1);
+    }
+
+    if (ignore_badwindow && (e->error_code == BadWindow || e->error_code == BadColor))
+      return 0;
+
+    XGetErrorText(d, e->error_code, msg, sizeof(msg));
+    sprintf(number, "%d", e->request_code);
+    XGetErrorDatabaseText(d, "XRequest", number, "<unknown>", req, sizeof(req));
+
+    fprintf(stderr, "kwm: %s(0x%lx): %s\n", req, e->resourceid, msg);
+
+    if (initting) {
+        fprintf(stderr, "kwm: failure during initialisation; aborting\n");
+        exit(1);
+    }
+    return 0;
+}
 
 
 
@@ -295,8 +336,23 @@ static void grabKey(KeySym keysym, unsigned int mod){
 
 
 MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KApplication(argc, argv, rAppName ){
+  if (argc > 1){
+    if (QString("-version") == argv[1]){
+      printf(KWM_VERSION);
+      printf("\n");
+      printf("Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n");
+      ::exit(0);
+    }
+    else {
+      printf("Usage:");
+      printf("%s [-version]\n", argv[0]);
+    }
+    ::exit(1); 
+  }
 
   myapp = this;
+  initting = TRUE;
+  XSetErrorHandler(handler);
 
   // these should be internationalized!
   setStringProperty("KWM_STRING_MAXIMIZE", "Maximize");
@@ -394,14 +450,24 @@ MyApp::MyApp(int &argc = 0, char **argv = 0, const QString& rAppName = 0):KAppli
   KWM::switchToDesktop(1);
 
   config->sync();
+
+  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
+	       KeyPressMask |
+	       // 		 ButtonPressMask | ButtonReleaseMask |
+	       PropertyChangeMask |
+	       ColormapChangeMask |
+	       SubstructureRedirectMask |
+	       SubstructureNotifyMask 
+	       );
+  
   XSync(qt_xdisplay(), False);
+  initting = FALSE;
 
   manager = new Manager;
   connect(manager, SIGNAL(reConfigure()), this, SLOT(reConfigure()));
   connect(manager, SIGNAL(showLogout()), this, SLOT(showLogout()));
   
   restoreSession();
-  
 }
 
 
@@ -1097,6 +1163,7 @@ void MyApp::handleDesktopPopup(int itemId){
 
 int main( int argc, char ** argv ){
   MyApp a(argc, argv,"kwm");
+
   if (signal(SIGTERM, sighandler) == SIG_IGN)
     signal(SIGTERM, SIG_IGN);
   if (signal(SIGINT, sighandler) == SIG_IGN)
