@@ -658,6 +658,10 @@ int KProtocolHTTP::ProcessHeader()
 		  emit redirection( u2.url() );
 //		  return Open( &u2, currentMode );
 		  bytesleft = 0;
+		  if (!Cookie.isEmpty())
+		  {
+	            emit cookie( url.data(), Cookie.data() );
+		  }
 		  return (SUCCESS);
 		}
 		else
