@@ -1,0 +1,55 @@
+# KDE Config File
+#------------------------------------------------------------------------------
+[General]
+name=Bryce
+author=Peter Bukowinski
+email=pbuko@uclink4.berkeley.edu
+description=Based on MetaCreations Bryce.\nGraphics by Peter Bukowinski\nported to KDE by Robert Flemming
+version=1.1
+#------------------------------------------------------------------------------
+[Display]
+CommonDesktop=true
+Wallpaper0=bryce-background.jpg
+WallpaperMode0=Scaled
+#------------------------------------------------------------------------------
+[Colors]
+foreground=255,255,255
+selectForeground=0,0,0
+activeBlend=4,101,72
+selectBackground=4,101,72
+inactiveBackground=73,73,73
+contrast=3
+background=73,73,73
+activeBackground=4,101,72
+inactiveBlend=73,73,73
+inactiveForeground=192,192,192
+activeForeground=255,255,255
+windowForeground=0,0,0
+windowBackground=128,128,128
+#------------------------------------------------------------------------------
+[Window Border]
+shapePixmapTop=wm_top.xpm
+shapePixmapBottom=wm_bottom.xpm
+shapePixmapLeft=wm_left.xpm
+shapePixmapRight=wm_right.xpm
+shapePixmapTopLeft=wm_topleft.xpm
+shapePixmapTopRight=wm_topright.xpm
+shapePixmapBottomLeft=wm_bottomleft.xpm
+shapePixmapBottomRight=wm_bottomright.xpm
+#------------------------------------------------------------------------------
+[Window Titlebar]
+CloseButton=close.xpm
+MaximizeButton=maximize.xpm
+MaximizeDownButton=maximizedown.xpm
+MinimizeButton=iconify.xpm
+TitlebarPixmapActive=activetitlebar.xpm
+TitlebarPixmapInactive=inactivetitlebar.xpm
+#------------------------------------------------------------------------------
+[Window Button Layout]
+ButtonC=Off
+ButtonD=Close
+ButtonE=Maximize
+ButtonF=Iconify
+ButtonA=Off
+ButtonB=Off
+#------------------------------------------------------------------------------
