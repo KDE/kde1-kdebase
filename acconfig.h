@@ -32,6 +32,9 @@
 /* define if you have PAM (Pluggable Authentication Modules); Redhat-Users! */
 #undef HAVE_PAM
 
+/* define this if you  compile --with-pam for SOLARIS (but not for Linux) */
+#undef PAM_MESSAGE_NONCONST
+
 /* if defined, changes the default name of the PAM service used by KDE */
 #undef KDE_PAM_SERVICE
 

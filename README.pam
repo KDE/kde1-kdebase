@@ -11,15 +11,24 @@ Information about PAM may be found on its homepage
       http://www.kernel.org/pub/linux/libs/pam/
 (Despite the location, this information is NOT Linux-specific.)
 
+************************Solaris issues**********************************
+*  For compiling PAM support on Solaris, you will need the compiler option
+*  -DPAM_MESSAGE_NONCONST  unless the autoconf script has defined
+* PAM_MESSAGE_NONCONST   (This must remain undefined for compilation
+* on Linux)  
 **********************Red Hat Linux 5.x issues***************************
 * IMPORTANT: compiling KDE with PAM support on RedHat 5.0 Linux
 * (libc6=glibc2) systems, using the supplied gcc-2.7.2.3 compiler, 
 * is  *NOT RECOMENDED*.
 *
 * Instead use the egcs-1.0.2 (or higher) compiler on RedHat 5.x.  
+*
 * The standard RedHat 5.0 gcc-2.7.2.3 compiler produces a kdm that does 
 * *NOT* work with the pam_pwdb.so modules used by xdm in RedHat 5.0.
-* (This compiler works fine for compiling KDE without PAM support.)
+* (symptom: X display crashes, /var/log/xdm-error.log reports
+* "... Unknown session exit code 2816 ....").   
+* Howvever, this compiler works fine for compiling KDE  without PAM support.
+*
 * The egcs compiler comes standard with RedHat 5.1; you
 * may safely install RedHat 5.1's egcs compiler in RedHat 5.0, if
 * you want to compile KDE with PAM support, but do not wish to upgrade 
@@ -38,7 +47,7 @@ Information about PAM may be found on its homepage
 * (Note: egcs is not recommended for Linux 2.0.x kernel recompiles;
 * make sure gcc calls gcc-2.7.2.3, not egcs, when rebuilding the kernel,
 * by e.g., making gcc an symlink to gcc-orig (or whatever you renamed
-* the original gcc binary to, before rebuilding.)
+* the original gcc binary to),  before rebuilding.
 ****************************************************************
 
 If both PAM and shadow passwords are used on your system, do *NOT*
@@ -97,5 +106,5 @@ of PAM is likely to be denial of service.
 Note: kdm implements PAM "session" support, which is not implemented 
 in certain PAM-aware xdm's (e.g., the Red Hat Linux xdm) that it may be 
 replacing.  This may be configured to carry out actions when a user opens 
-or closes an xdm session, if a suitable PAM module is available 
+or closes an kdm session, if a suitable PAM module is available 
 (e.g., mount and unmount user-specific filesystems).
