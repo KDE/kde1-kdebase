@@ -59,13 +59,13 @@ KKPanelApplication::KKPanelApplication(int &argc, char **argv,
 	{
 	    if (!pages || pages->contains("panel"))
 		addPage(panel = new KPanelConfig(dialog, "panel"), 
-			i18n("&Panel"), "panel.html");
+			i18n("&Panel"), "kpanel-1.html");
 	    if (!pages || pages->contains("options"))
 		addPage(options = new KOptionsConfig(dialog, "options"),
-			i18n("&Options"), "options.html");
+			i18n("&Options"), "kpanel-2.html");
 	    if (!pages || pages->contains("desktops"))
 		addPage(desktops = new KDesktopsConfig(dialog, "desktops"),
-			i18n("&Desktops"), "desktops.html");
+			i18n("&Desktops"), "kpanel-3.html");
 	    
 	    if (panel || desktops || options) {
 		QSize t;

@@ -1,6 +1,7 @@
 # KDE Config File
 [KDE Desktop Entry]
 Type=Application
+DocPath=kcontrol/kcmkpanel/kpanel-1.html
 Name=Panel
 Name[no]=Panel
 Name[de]=Panel
