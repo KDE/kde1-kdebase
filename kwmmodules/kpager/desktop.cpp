@@ -25,7 +25,7 @@
 #include <qpainter.h>
 #include <stdio.h>
 
-//#define DESKTOPDEBUG
+#define DESKTOPDEBUG
 //#define ALLOWSELFPICTURE
 
 Desktop::Desktop(int _id,int swidth, int sheight,QWidget *parent, char *_name)
@@ -810,7 +810,7 @@ void Desktop::prepareBackground(void)
                 QWMatrix matrix;
                 matrix.scale(
                              ((double)backPixmapWidth*width()/screen_width)/bigBackgroundPixmap->width(),
-                             (((double)backPixmapWidth*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
+                             (((double)backPixmapHeight*(height()-getHeaderHeight())/screen_height)/bigBackgroundPixmap->height())
                              );
                 QPixmap *tmp = new QPixmap(bigBackgroundPixmap->xForm(matrix));
                 bitBlt(backgroundPixmap,(width()-tmp->width())/2,((height()-getHeaderHeight())-tmp->height())/2,tmp,0,0,tmp->width(),tmp->height(),CopyROP);

@@ -60,7 +60,11 @@ int main(int argc, char **argv)
     }
 
     app->setMainWidget ( kpager );
-
+   
+    {
+        QRect r=KWM::getWindowRegion(KWM::currentDesktop());
+        kpager->setGeometry(r.left(),r.bottom()-140,400,140);
+    }
 
     if (app->isRestored())
     {

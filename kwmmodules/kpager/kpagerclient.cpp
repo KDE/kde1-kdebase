@@ -29,18 +29,12 @@
 #include <unistd.h>
 //#include <X11/Xlib.h>
 
-//#define KPAGERCLIENTDEBUG
+#define KPAGERCLIENTDEBUG
 
 
 KPagerClient::KPagerClient(KWMModuleApplication *_kwmmapp,QWidget *parent,const char *name)
     :QWidget(parent,name)
 {
-/*    client=new QWidget(this,"ClientWindow");
-    kmidclient->songType(1);
-    kmidclient->show();
-    setView(kmidclient,FALSE);
-*/
-
     kwmmapp=_kwmmapp;
     use2Rows=false;
     activedesktop=1;
@@ -100,6 +94,7 @@ void KPagerClient::desktopChanged(int i)
 #ifdef KPAGERCLIENTDEBUG
     printf("desktop changed to %d\n",i);
 #endif
+    if (i>numberofDesktops) return;
     desktop[activedesktop]->setDesktopActived(false);
     activedesktop=i;
     
@@ -132,7 +127,11 @@ void KPagerClient::windowAdded(Window w)
             if ((desktop[i]!=0L)&&(!desktop[i]->contains(w))) desktop[i]->addWindow(w);
         }
     } else
-        desktop[KWM::desktop(w)]->addWindow(w);
+    {
+        int dsk=KWM::desktop(w);
+        if (dsk>numberofDesktops) return;
+        desktop[dsk]->addWindow(w);
+    }
     
 }
 void KPagerClient::windowRemoved(Window w)
@@ -147,7 +146,11 @@ void KPagerClient::windowRemoved(Window w)
             if (desktop[i]!=0L) desktop[i]->removeWindow(w);
         }
     } else
-        desktop[KWM::desktop(w)]->removeWindow(w);
+    {
+        int dsk=KWM::desktop(w);
+        if (dsk>numberofDesktops) return; 
+        desktop[dsk]->removeWindow(w);
+    }
     
 }
 void KPagerClient::windowChanged(Window w)
@@ -157,7 +160,8 @@ void KPagerClient::windowChanged(Window w)
 #endif
 
     int dsk=KWM::desktop(w);
-    
+   
+    if (dsk>numberofDesktops) return; 
     if (KWM::isSticky(w))
     {
         if (!desktop[0]->contains(w))
@@ -230,7 +234,11 @@ void KPagerClient::windowRaised(Window w)
             if (desktop[i]!=0L) desktop[i]->raiseWindow(w);
         }
     } else
-        desktop[KWM::desktop(w)]->raiseWindow(w);
+    {
+        int dsk=KWM::desktop(w);
+        if (dsk>numberofDesktops) return; 
+        desktop[dsk]->raiseWindow(w);
+    }
     
 }
 void KPagerClient::windowLowered(Window w)
@@ -245,7 +253,11 @@ void KPagerClient::windowLowered(Window w)
             if (desktop[i]!=0L) desktop[i]->lowerWindow(w);
         }
     } else
-        desktop[KWM::desktop(w)]->lowerWindow(w);
+    {
+        int dsk=KWM::desktop(w);
+        if (dsk>numberofDesktops) return; 
+        desktop[dsk]->lowerWindow(w);
+    }
     
 }
 void KPagerClient::windowActivated(Window w)
@@ -253,38 +265,65 @@ void KPagerClient::windowActivated(Window w)
 #ifdef KPAGERCLIENTDEBUG
     printf("window activated\n");
 #endif
-    desktop[KWM::desktop(w)]->activateWindow(w);
+    int dsk=KWM::desktop(w);
+    if (dsk>numberofDesktops) return; 
+    desktop[dsk]->activateWindow(w);
 }
 
-void KPagerClient::desktopNameChanged(int,QString)
+void KPagerClient::desktopNameChanged(int dsk,QString s)
 {
 #ifdef KPAGERCLIENTDEBUG
     printf("desktop name changed\n");
 #endif
+    if (dsk>numberofDesktops) return; 
+    desktop[dsk]->setName(s.data());
+    desktop[dsk]->update(0,0,desktop[dsk]->width(),desktop[dsk]->getHeaderHeight());
+
 }
 
-void KPagerClient::desktopNumberChanged(int)
+void KPagerClient::desktopNumberChanged(int numdsks)
 {
 #ifdef KPAGERCLIENTDEBUG
     printf("desktop number changed\n");
 #endif
+
+    if (numdsks<numberofDesktops)
+    {
+        for (int i=numdsks+1;i<=numberofDesktops;i++)
+	{
+            delete desktop[i];
+	    desktop[i]=0L;
+	}
+	numberofDesktops=numdsks;
+    }
+    else
+    {
+        for (int i=1;i<=numberofDesktops;i++)
+            delete desktop[i];
+        initDesktops();
+    }
+    updateRects();
 }
 
 void KPagerClient::initDesktops(void)
 {
     numberofDesktops=KWM::numberOfDesktops();
-    int x=5;
-    int y=5;
+    int x=2;
+    int y=0;
     int h=height()-10;
-    int w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
+    int w;
+    if (use2Rows)
+        w=((h/2)-Desktop::getHeaderHeight())*screenwidth/screenheight;
+    else
+        w=(h-Desktop::getHeaderHeight())*screenwidth/screenheight;
 
     for (int i=1;i<=numberofDesktops;i++)
     {
-//        desktop[i]=new Desktop(i+1,screenwidth,screenheight,this,KWM::getDesktopName(i).data());
         desktop[i]=new Desktop(i,screenwidth,screenheight,desktopContainer,KWM::getDesktopName(i).data());
         connect(desktop[i],SIGNAL(moveWindow(Window,int,int,int,int)),this,SLOT(moveWindow(Window,int,int,int,int)));
         connect(desktop[i],SIGNAL(switchToDesktop(int)),this,SLOT(switchToDesktop(int)));
         desktop[i]->setGeometry(x,y,w,h);
+	desktop[i]->show();
         x+=w+5;
     };
 
@@ -371,8 +410,8 @@ void KPagerClient::updateRects(bool onlydesktops)
     {
         for (i=1;i<=numberofDesktops;i+=2)
         {
-            if (desktop[i]!=NULL) desktop[i]->setGeometry(x-deltax,y,w,h/2);
-            if (desktop[i+1]!=NULL) desktop[i+1]->setGeometry(x-deltax,y+h/2,w,h/2);
+            if (desktop[i]!=0L) desktop[i]->setGeometry(x-deltax,y,w,h/2);
+            if (desktop[i+1]!=0L) desktop[i+1]->setGeometry(x-deltax,y+h/2,w,h/2);
             x+=w+5;
         }
     }
@@ -380,17 +419,17 @@ void KPagerClient::updateRects(bool onlydesktops)
     {
         for (i=1;i<=numberofDesktops;i++)
         {
-            if (desktop[i]!=NULL) desktop[i]->setGeometry(x-deltax,y,w,h);
+            if (desktop[i]!=0L) desktop[i]->setGeometry(x-deltax,y,w,h);
             x+=w+5;
         }
     }
     maxdeltax=x-5-desktopContainer->width()+2;
     if (maxdeltax<0) maxdeltax=0;
-    
+/*
 #ifdef KPAGERCLIENTDEBUG
     printf("maxdeltax : %d , x[1] : %d\n",maxdeltax,desktop[1]->x());
 #endif
-    
+  */
     if (!onlydesktops)
     {
         if (((!areArrowsVisible())&&(maxdeltax==0))||((areArrowsVisible())&&(maxdeltax<20)))
@@ -561,7 +600,7 @@ void KPagerClient::commandReceived(QString s)
     {
         for (int i=1;i<=numberofDesktops;i++)
         {
-            if (desktop[i]!=NULL) desktop[i]->reconfigure();
+            if (desktop[i]!=0L) desktop[i]->reconfigure();
         }
     }
 
@@ -577,7 +616,7 @@ void KPagerClient::setDrawMode(int mode)
     drawMode=mode;
     for (int i=0;i<=numberofDesktops;i++)
     {
-        if (desktop[i]!=NULL) desktop[i]->setDrawMode(mode);
+        if (desktop[i]!=0L) desktop[i]->setDrawMode(mode);
     }
 }
 
