@@ -15,47 +15,60 @@
 
 <sect>Configuring the Keyboard
 <p>
-Keyboard settings are features of the X server
-which attempt to make good use of the available hardware. However,
-it isn't always possible for the X server to actually supply all
-the functions. For example, on some systems the key click is enabled
+Keyboard settings are features of the X server.
+While the X server attempts to make good use of the available hardware,
+this is not always possible. 
+For example, on some systems the key click is enabled
 or disabled in the CMOS setup and the X server cannot supply an
-alternative. Thus, if a setting doesn't seem to do anything, it is 
-is because the X server and/or the hardware do not support anything 
-better.
+alternative. Thus, if a setting does not seem to do anything, it is 
+is because it is unsupported by
+the X server and/or the hardware.
 
 <p>
 Users can adjust the following settings for the keyboard:
 
 <itemize>
-<item>enable/disable autorepeat
-<item>key click volume
+<item><bf>enable/disable autorepeat</bf> (If enabled, 
+this feature causes holding down a key to become equivalent to
+typing it over and over again in rapid succession).
+<item><bf>key click volume</bf>, which gives audible feedback to the
+typist when a key is struck.
 </itemize>
 
 <sect>Configuring the Mouse
 
 <p>
-Users can adjust the following settings for the bell:
+In this screen, users can adjust the <bf>Accelerated mode</bf> settings for 
+the mouse, and adjust the mappings of the mouse buttons for
+right-handed or left-handed use.
 
 <itemize>
-<item>accelerated movement rate
-<item>threshold for accelerated movement
-<item>button mapping
+<item>
+In the <bf>accelerated mode</bf>, 
+the distance on the screen moved by the pointer for a given movement of the
+pointing device (e.g., the mouse) is increased by a factor
+called the
+<bf>Acceleration</bf>, which is set by the first slider control.
+<item>
+The mouse will go into accelerated mode
+if the pointer is made to  make  a rapid movement on the screen
+larger than
+the  <bf>Threshold</bf> distance set with the second slider control.
 </itemize>
 
-<p>
-The threshold gives the distance the pointer must move (in a small
-amount of time) before accelerated movement occurs. In this mode,
-the pointer moves some factor faster than normal, relative to the
-amount the user actually moves the pointing device. The factor
-is the accelerated movement rate. These settings allow for slow, 
+This acceleration feature allows for slow, 
 precise pointer motion over small distances and rapid motion across 
-the screen with a short but quick motion. Large acceleration
-values and small threshold values may make the pointer too jumpy
+the screen with a short but quick motion of the mouse.
+
+Large acceleration
+values and small threshold values may make the pointer motion
+too jerky
 to be useful, as it will always move very quickly.
 <p>
-
-The button mapping will, if switched to left-handed, swap the meaning of the
-mouse buttons. 
-
+<itemize>
+<item>
+The <bf>button mapping</bf> selection allows the functions of the right
+and left mouse buttons to be swapped, for the convenience of left-handed
+users.
+</itemize>
 </article>
