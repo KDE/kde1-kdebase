@@ -138,12 +138,11 @@ msgstr "Zobrazi» zdroj doku&mentu"
 
 #: kfmgui.cpp:347
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: kfmgui.cpp:355
-#, fuzzy
 msgid "&Document Encoding"
-msgstr "Dokument: Hotovo"
+msgstr "Kódovanie &dokumentu"
 
 #: kfmgui.cpp:366
 msgid "Show History"
@@ -615,11 +614,11 @@ msgstr "Fixov. písmo"
 
 #: htmlopts.cpp:161
 msgid "Default Charset"
-msgstr ""
+msgstr "©tandardné kódovanie"
 
 #: htmlopts.cpp:169
 msgid "Use language charset"
-msgstr ""
+msgstr "Pou¾i» kódovanie jazyka"
 
 #: htmlopts.cpp:361
 msgid "Background Color:"
