@@ -229,7 +229,7 @@ drawflame(Window win)
     flamestruct *fs = &flames[screen];
 
     int         i, j, k;
-    static      alt = 0;
+    static      int alt = 0;
 
     if (!(fs->cur_level++ % fs->max_levels)) {
 	XClearWindow(dsp, fs->win);
