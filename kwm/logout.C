@@ -17,6 +17,7 @@
 #include <signal.h>
 
 #include <kapp.h>
+#include <kcharsets.h>
 
 #include "manager.h"
 
@@ -88,7 +89,9 @@ void Klogout::prepareToShow(const QStrList* strlist1,
   int w = 360;
   int h = 0;
   int lh = 100;
-  label->setFont( QFont( "helvetica", 24 ) );
+  QFont fnt("helvetica", 24);
+  KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+  label->setFont( fnt );
   label->adjustSize();
   if (label->width() + 40 > w)
     w = label->width() + 40;

@@ -32,6 +32,7 @@
 #include "main.h"
 #include <kiconloader.h>
 #include <kwm.h>
+#include <kcharsets.h>
 
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
@@ -1366,7 +1367,9 @@ void Client::paintState(bool only_label){
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
 
   if (label){
-    p.setFont(QFont("Helvetica", 12, QFont::Bold));
+    QFont fnt("Helvetica", 12, QFont::Bold);
+    KApplication::getKApplication()->getCharsets()->setQFont(fnt);
+    p.setFont(fnt);
     p.setClipRect(r);
     p.setClipping(True);
     animation_is_active = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
