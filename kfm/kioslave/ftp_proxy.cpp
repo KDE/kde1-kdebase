@@ -194,16 +194,14 @@ int KProtocolProxyFTP::OpenProxy(KURL *_url, int mode, bool _reload)
 	command += _url->path();
 
 	command += " HTTP/1.0\n"; /* start header */
-	command += "User-Agent: Konqueror/1.0"; /* User agent */
+	command += "User-Agent: Konqueror/1.0\r\n"; /* User agent */
 
 	if ( _reload ){ /* No caching for reload */
 	  command += "Pragma: no-cache\r\n"; /* for HTTP/1.0 caches */
 	  command += "Cache-control: no-cache\r\n"; /* for HTTP/>=1.1 caches */
         }
 	
-	command += "Host: "; /* support for virtual hosts */
-	command += _url->host();
-	command += "\n";
+	command += "Host: "+QString(_url->host())+"\r\n"; /* support for HTTP 1.1 */
  
 	if( strlen(_url->user()) != 0 )
 	{
