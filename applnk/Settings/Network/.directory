@@ -4,4 +4,4 @@ Name=Network
 Name[pl]=Sieæ
 MiniIcon=html.xpm
 SortOrder=smbstatus.kdelnk,memory.kdelnk,processor.kdelnk
-Icon=Network.xpm
+Icon=network.xpm

@@ -4,4 +4,4 @@ Name=Information
 Name[pl]=Informacje
 MiniIcon=readme.xpm
 SortOrder=memory.kdelnk,processor.kdelnk
-Icon=Information.xpm
+Icon=information.xpm

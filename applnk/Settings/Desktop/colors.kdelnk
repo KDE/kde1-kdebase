@@ -1,7 +1,8 @@
 # KDE Config File
 [KDE Desktop Entry]
 Exec=kcmdisplay colors
-Icon=colors.xpm
+Icon=palette.xpm
+MiniIcon=colors.xpm
 Type=Application
 DocPath=kdisplay/kdisplay/colorscm.html
 Comment=Color settings
