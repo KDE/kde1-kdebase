@@ -129,9 +129,32 @@ bool GetInfo_Sound (KTabListBox *lbox)
 	return true;
 }
 
-bool GetInfo_Devices (KTabListBox *)
+bool GetInfo_Devices (KTabListBox *lbox)
 {
-	return FALSE;
+	QFile *dmesg = new QFile("/var/log/dmesg.today");
+
+	if (!dmesg->exists()) {
+		delete dmesg;
+		return false;
+	}
+
+	if (!dmesg->open(IO_ReadOnly)) {
+		delete dmesg;
+		return false;
+	}
+
+	lbox->clear();
+
+	QTextStream *t = new QTextStream(dmesg);
+	QString s;
+
+	while ((s=t->readLine())!="")
+		lbox->insertItem(s);
+
+	delete t;
+	dmesg->close();
+	delete dmesg;
+	return true;
 }
 
 bool GetInfo_SCSI (KTabListBox *)
