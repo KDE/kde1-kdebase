@@ -1,3 +1,7 @@
+Sat Mar  7 12:44:10 1998  Stephan Kulow  <coolo@kde.org>
+
+	* root.cpp: added a decodeURL for the desktop entries
+
 Thu Mar  5 21:32:33 1998  Bernd Johannes Wuebben  <wuebben@math.cornell.edu>
 
 	* several fixes and improvements. Moved a lot of constants to 

@@ -1276,7 +1276,8 @@ void KRootIcon::initFilename()
     if ( file.find( ".kdelnk" ) == ((int)file.length()) - 7 )
 	file = file.left( file.length() - 7 );
     file.detach();
-
+    KURL::decodeURL(file);
+    
     // the following code is taken out of kbind.cpp, where nearly 
     // the same is run before this.
     // I didn't want to introduce new member functions, so it exists
@@ -1356,7 +1357,7 @@ void KRootIcon::init()
     
     if ( root->iconStyle() == 1 && !bSelected )
     {
-      p2.drawText( textXOffset, textYOffset, file );
+	p2.drawText( textXOffset, textYOffset, file );
     }
     else
       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
@@ -1429,7 +1430,6 @@ void KRootIcon::paintEvent( QPaintEvent * )
       myfont.setItalic( TRUE );
       p.setFont( myfont );
     }
-    
     p.drawText( textXOffset, textYOffset, file );
     
     if ( bSelected )
