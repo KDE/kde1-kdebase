@@ -1,7 +1,7 @@
-## Checks for the QT environment (library and header path)
-## It's styled after the autoconf X11 check, first tries
-## to compile a program without any flags in case everything
-## is accessible that way.
+## KDE/acinclude.m4 (Macros for autoconf)
+##
+## (C) 1997 Janos Farkas
+## (C) 1997 Stephan Kulow
 
 ## ------------------------------------------------------------------------
 ## Find a file (or one of more files in a list of dirs)
@@ -152,8 +152,10 @@ ac_qt_libraries=$qt_libdir
 
 ac_cxxflags_safe=$CXXFLAGS
 ac_ldflags_safe=$LDFLAGS
+ac_libs_safe=$LIBS
 CXXFLAGS="$CXXFLAGS -I$qt_incdir"
-LDFLAGS="-lqt -L$qt_libdir $X_LDFLAGS -lX11 -lXext"
+LDFLAGS="-L$qt_libdir $X_LDFLAGS"
+LIBS="-lqt -lXext -lX11 $LIBSOCKET"
 
 AC_LANG_CPLUSPLUS
 cat > conftest.$ac_ext <<EOF
@@ -176,6 +178,7 @@ fi
 rm -f conftest*
 CXXFLAGS=$ac_cxxflags_safe
 LDFLAGS=$ac_ldflags_safe
+LIBS=$ac_libs_safe
 
 if test "$ac_qt_includes" = NO || test "$ac_qt_libraries" = NO; then
   ac_cv_have_qt="have_qt=no"
@@ -218,14 +221,14 @@ if test "$qt_includes" = "$x_includes"; then
  QT_INCLUDES="";
 else
  QT_INCLUDES="-I$qt_includes"
- all_includes="$all_includes $QT_INCLUDES"
+ all_includes="$QT_INCLUDES $all_includes"
 fi
 
 if test "$qt_libraries" = "$x_libraries"; then
  QT_LDFLAGS=""
 else
  QT_LDFLAGS="-L$qt_libraries"
- all_libraries="$all_libraries $QT_LDFLAGS"
+ all_libraries="$QT_LDFLAGS $all_libraries"
 fi
 
 AC_SUBST(QT_INCLUDES)
@@ -301,14 +304,14 @@ if test "$kde_includes" = "$x_includes" || test "$kde_includes" = "$qt_includes"
  KDE_INCLUDES=""
 else
  KDE_INCLUDES="-I$kde_includes"
- all_includes="$all_includes $KDE_INCLUDES"
+ all_includes="$KDE_INCLUDES $all_includes"
 fi
 
 if test "$kde_libraries" = "$x_libraries" || test "$kde_libraries" = "$qt_libraries" ; then
  KDE_LDFLAGS=""
 else
  KDE_LDFLAGS="-L$kde_libraries"
- all_libraries="$all_libraries $KDE_LDFLAGS"
+ all_libraries="$KDE_LDFLAGS $all_libraries"
 fi
 
 AC_SUBST(KDE_LDFLAGS)
@@ -322,7 +325,7 @@ dnl slightly changed version of AC_CHECK_FUNC(setenv)
 AC_DEFUN(AC_CHECK_SETENV,
 [AC_MSG_CHECKING([for setenv])
 AC_CACHE_VAL(ac_cv_func_setenv,
-[AC_LANG_CPLUSPLUS
+[AC_LANG_C
 AC_TRY_LINK(
 dnl Don't include <ctype.h> because on OSF/1 3.0 it includes <sys/types.h>
 dnl which includes <sys/select.h> which contains a prototype for
@@ -359,19 +362,16 @@ AC_DEFUN(AC_FIND_GIF,
    [AC_MSG_CHECKING(for giflib)
 AC_CACHE_VAL(ac_cv_lib_gif,
 [ac_save_LIBS="$LIBS"
-LIBS="$all_libraries -lgif -lX11"
+LIBS="$all_libraries -lgif -lX11 $LIBSOCKET"
 AC_TRY_LINK(dnl
-ifelse([main], [main], , dnl Avoid conflicting decl of main.
-[/* Override any gcc2 internal prototype to avoid an error.  */
-]ifelse(AC_LANG, CPLUSPLUS, [#ifdef __cplusplus
-extern "C"
-#endif
-])dnl
-[/* We use char because int might match the return type of a gcc2
+[
+extern "C" {
+int GifLastError(void);
+}
+/* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
-char main();
-]),
-            [main()],
+],
+            [return GifLastError();],
             eval "ac_cv_lib_gif=yes",
             eval "ac_cv_lib_gif=no")
 LIBS="$ac_save_LIBS"
@@ -389,18 +389,19 @@ AC_DEFUN(AC_FIND_JPEG,
 AC_CACHE_VAL(ac_cv_lib_jpeg,
 [ac_save_LIBS="$LIBS"
 LIBS="$all_libraries -ljpeg -lm"
-AC_TRY_LINK(dnl
-ifelse([main], [main], , dnl Avoid conflicting decl of main.
+AC_TRY_LINK(
 [/* Override any gcc2 internal prototype to avoid an error.  */
-]ifelse(AC_LANG, CPLUSPLUS, [#ifdef __cplusplus
-extern "C"
-#endif
-])dnl
-[/* We use char because int might match the return type of a gcc2
+struct jpeg_decompress_struct;
+typedef struct jpeg_decompress_struct * j_decompress_ptr;
+typedef int size_t;
+extern "C" {
+    void jpeg_CreateDecompress(j_decompress_ptr cinfo,
+                                    int version, size_t structsize);
+}
+/* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
-char main();
-]),
-            [main()],
+],
+            [jpeg_CreateDecompress(0L, 0, 0);],
             eval "ac_cv_lib_jpeg=yes",
             eval "ac_cv_lib_jpeg=no")
 LIBS="$ac_save_LIBS"
@@ -430,24 +431,42 @@ AC_DEFUN(AC_CHECK_BOOL,
         fi 
 ])
 
+AC_DEFUN(AC_CHECK_WITH_GCC,
+[
+AC_ARG_WITH(gcc-flags,[  --without-gcc-flags     don't use gcc flags [default=no]])
+if test "x$with_gcc_flags" = "xno"; then
+  ac_use_gcc_flags="no"
+ else
+  ac_use_gcc_flags="yes"
+ fi
+])
+
+
 AC_DEFUN(AC_SET_DEBUG,
 [
+if  test "x$ac_use_gcc_flags" = "xyes"; then
  test "$CFLAGS" = "" && CFLAGS="-g -Wall" 
  test "$CXXFLAGS" = "" && CXXFLAGS="-g -Wall"
- test "$LDFLAGS" = "" && LDFLAGS="" dnl looks stupid
+ test "$LDFLAGS" = "" && LDFLAGS="" 
+fi
 ])
 
 AC_DEFUN(AC_SET_NODEBUG,
 [
+if  test "x$ac_use_gcc_flags" = "xyes"; then
  test "$CFLAGS" = "" && CFLAGS="-O2 -Wall"
  test "$CXXFLAGS" = "" && CXXFLAGS="-O2 -Wall"
  test "$LDFLAGS" = "" && LDFLAGS="-s"
+fi
 ])
 
 AC_DEFUN(AC_CHECK_DEBUG,
-[AC_ARG_ENABLE(debug,[  --enable-debug 	  creates debugging code [default=no]],
-[ if test $enableval = "no"; then AC_SET_NODEBUG
-else AC_SET_DEBUG 
+[
+AC_ARG_ENABLE(debug,[  --enable-debug 	  creates debugging code [default=no]],
+[ 
+if test $enableval = "no"; dnl 
+  then AC_SET_NODEBUG 
+  else AC_SET_DEBUG 
 fi
 ],
 AC_SET_NODEBUG)
@@ -456,6 +475,7 @@ AC_SET_NODEBUG)
 dnl just a test
 AC_DEFUN(AC_CHECK_FLAGS, 
 [
+AC_REQUIRE([AC_CHECK_WITH_GCC])
 AC_REQUIRE([AC_CHECK_DEBUG])
 AC_SUBST(CXXFLAGS)
 AC_SUBST(CFLAGS)
