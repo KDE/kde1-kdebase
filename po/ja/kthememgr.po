@@ -1,0 +1,533 @@
+# KTranslator Generated File
+
+# Message catalogue file for kthememgr
+# Copyright (C) 1999 Free Software Foundation, Inc.
+# Masanori Hanawa <hanawa@kde.gr.jp>, 1999.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-08-20 21:15+0900\n"
+"PO-Revision-Date: Fri Aug 20 1999 20:53:25+0200\n"
+"Last-Translator: Masanori Hanawa <hanawa@kde.gr.jp>\n"
+"Language-Team: Japanese <Kdeveloper@kde.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"X-Generator: KTranslator v 0.5.0"
+
+#: about.cpp:67
+msgid "KDE Theme Manager"
+msgstr "KDE テーマ マネージャ"
+
+#: about.cpp:72
+#, c-format
+msgid ""
+"Version %s\n"
+"\n"
+"Copyright (C) 1998 by\n"
+"%s\n"
+"\n"
+"Gnu Public License (GPL)"
+msgstr ""
+
+#: about.cpp:103 about.cpp:116
+msgid "Unknown"
+msgstr "不明"
+
+#: about.cpp:105
+#, c-format
+msgid "%s Theme"
+msgstr "%s  テーマ"
+
+#: about.cpp:111
+#, c-format
+msgid "Version %s"
+msgstr "バージョン %s"
+
+#: about.cpp:117
+#, c-format
+msgid "by %s"
+msgstr "by %s"
+
+#: colorscm.cpp:142 colorscm.cpp:143 widgetcanvas.cpp:142 widgetcanvas.cpp:143
+msgid "Inactive window"
+msgstr "非アクティブウィンドウ"
+
+#: colorscm.cpp:158 colorscm.cpp:159 widgetcanvas.cpp:158 widgetcanvas.cpp:159
+msgid "Active window"
+msgstr "アクティブウィンドウ"
+
+#: colorscm.cpp:170 colorscm.cpp:172 widgetcanvas.cpp:170 widgetcanvas.cpp:172
+msgid "File"
+msgstr "ファイル"
+
+#: colorscm.cpp:179 colorscm.cpp:180 groupdetails.cpp:38 widgetcanvas.cpp:179
+#: widgetcanvas.cpp:180
+msgid "Edit"
+msgstr "編集"
+
+#: colors.cpp:84 colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
+#: widgetcanvas.cpp:192 widgetcanvas.cpp:193
+msgid "Window text"
+msgstr "ウィンドウテキスト"
+
+#: colorscm.cpp:209 widgetcanvas.cpp:209
+msgid "Disabled"
+msgstr "無効"
+
+#: colorscm.cpp:216 colorscm.cpp:217 widgetcanvas.cpp:216 widgetcanvas.cpp:217
+msgid "Selected"
+msgstr "選択済"
+
+#: colorscm.cpp:252 colorscm.cpp:264
+msgid "Color Scheme"
+msgstr "色スキーム"
+
+#: colorscm.cpp:273
+msgid "Save"
+msgstr "保存"
+
+#: colorscm.cpp:278 groupdetails.cpp:33 installer.cpp:81
+msgid "Remove"
+msgstr "削除"
+
+#: colorscm.cpp:282
+msgid "Help"
+msgstr "ヘルプ"
+
+#: colorscm.cpp:286
+msgid "Widget color"
+msgstr "ウィジット色"
+
+#: colors.cpp:75 colorscm.cpp:291
+msgid "Inactive title bar"
+msgstr "非アクティブなタイトルバー"
+
+#: colors.cpp:76 colorscm.cpp:292
+msgid "Inactive title text"
+msgstr "非アクティブなタイトルテキスト"
+
+#: colors.cpp:77 colorscm.cpp:293
+msgid "Active title bar"
+msgstr "アクティブなタイトルバー"
+
+#: colors.cpp:78 colorscm.cpp:294
+msgid "Active title text"
+msgstr "アクティブなタイトルテキスト"
+
+#: colors.cpp:79 colorscm.cpp:295
+msgid "Background"
+msgstr "背景"
+
+#: colors.cpp:80 colorscm.cpp:296
+msgid "Text"
+msgstr "テキスト"
+
+#: colors.cpp:81 colorscm.cpp:297
+msgid "Select background"
+msgstr "背景を選択"
+
+#: colors.cpp:82 colorscm.cpp:298
+msgid "Select text"
+msgstr "テキストを選択"
+
+#: colors.cpp:83 colorscm.cpp:299
+msgid "Window background"
+msgstr "ウィンドウ背景"
+
+#: colorscm.cpp:311
+msgid "Contrast"
+msgstr "コントラスト"
+
+#: colorscm.cpp:324
+msgid "Low"
+msgstr "低い"
+
+#: colorscm.cpp:328
+msgid "High"
+msgstr "高い"
+
+#: colorscm.cpp:343
+msgid "Save scheme"
+msgstr "スキームを保存"
+
+#: colorscm.cpp:373 colorscm.cpp:381
+msgid "Error"
+msgstr "エラー"
+
+#: colorscm.cpp:374 colorscm.cpp:382
+msgid "You have chosen a name used by a supplied color scheme"
+msgstr "供給されているカラースキームの名前を選択しています"
+
+#: colorscm.cpp:467
+msgid "KDE Default"
+msgstr "KDE標準"
+
+#: colorscm.cpp:693
+msgid "Display Setup"
+msgstr "ディスプレイの設定"
+
+#: colorscm.cpp:694
+msgid ""
+"No desktop color schemes were found.\n"
+"Do you want to install the default color schemes now ?"
+msgstr ""
+"デスクトップの色スキームが見つかりません。\n"
+"今すぐデフォルトの色スキームをインストールしますか？"
+
+#: colorscm.cpp:695 theme.cpp:712
+msgid "Yes"
+msgstr "はい"
+
+#: colorscm.cpp:696 theme.cpp:712
+msgid "No"
+msgstr "いいえ"
+
+#: groupdetails.cpp:28
+msgid "Add"
+msgstr "追加"
+
+#: groupdetails.cpp:45 newthemedlg.cpp:54 savescm.cpp:35
+msgid "OK"
+msgstr "確認"
+
+#: groupdetails.cpp:50 newthemedlg.cpp:59 savescm.cpp:41
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: installer.cpp:78
+msgid "New..."
+msgstr "新規..."
+
+#: installer.cpp:84
+msgid "Import"
+msgstr "読み込み"
+
+#: installer.cpp:87
+msgid "Export"
+msgstr "書き出し"
+
+#: installer.cpp:198
+#, c-format
+msgid "Failed to remove theme %s"
+msgstr "テーマ %s の削除に失敗しました"
+
+#: installer.cpp:233
+msgid "(no theme chosen)"
+msgstr "(何もテーマが選ばれていません)"
+
+#: installer.cpp:252
+msgid "Import Theme"
+msgstr "テーマを読み込む"
+
+#: installer.cpp:267
+#, c-format
+msgid ""
+"Failed to copy theme %s\n"
+"into themes directory %s"
+msgstr ""
+"テーマ%sをテーマのディレクトリ\n"
+"%sにコピーするのに失敗しました"
+
+#: installer.cpp:311
+msgid "Export Theme"
+msgstr "テーマを書き出す"
+
+#: installer.cpp:330
+msgid "(no preview pixmap)"
+msgstr "(表示する絵がありません)"
+
+#: kwmcom.cpp:78 kwmcom.cpp:105
+msgid "kwmcom: communication with kwm failed\n"
+msgstr ""
+
+#: main.cpp:79
+msgid "Installer"
+msgstr "インストーラ"
+
+#: main.cpp:80
+msgid "Contents"
+msgstr "コンテンツ"
+
+#: main.cpp:81
+msgid "About"
+msgstr "このプログラムについて"
+
+#: main.cpp:100
+msgid "Extract"
+msgstr "解凍"
+
+#: main.cpp:150
+msgid "warning"
+msgstr "警告"
+
+#: main.cpp:157 main.cpp:158
+msgid "fatal error"
+msgstr "致命的なエラー"
+
+#: main.cpp:186
+msgid "Kde Theme Manager"
+msgstr "KDE テーマ マネージャ"
+
+#: newthemedlg.cpp:37
+msgid "Create New Theme"
+msgstr "新しいテーマを作る"
+
+#: newthemedlg.cpp:45
+msgid "File name"
+msgstr "ファイル名"
+
+#: newthemedlg.cpp:46
+msgid "Detailed name"
+msgstr "詳細な名前"
+
+#: newthemedlg.cpp:47
+msgid "Author"
+msgstr "著者"
+
+#: newthemedlg.cpp:48
+msgid "Email"
+msgstr "メール"
+
+#: newthemedlg.cpp:49
+msgid "Webpage"
+msgstr "Webページ"
+
+#: newthemedlg.cpp:87
+msgid "NewTheme"
+msgstr "新しいテーマ"
+
+#: newthemedlg.cpp:88
+msgid "A New Theme"
+msgstr "新しいテーマ"
+
+#: options.cpp:40
+msgid "Uninstall parts of previous theme"
+msgstr "前のテーマのパーツをアンインストールする"
+
+#: options.cpp:47
+msgid "Work on the following parts:"
+msgstr "以下のパーツに対し機能:"
+
+#: options.cpp:57
+msgid "Colors"
+msgstr "色"
+
+#: options.cpp:58
+msgid "Wallpapers"
+msgstr "壁紙"
+
+#: options.cpp:59
+msgid "Panel"
+msgstr "パネル"
+
+#: options.cpp:60
+msgid "Sounds"
+msgstr "サウンド"
+
+#: options.cpp:61
+msgid "Icons"
+msgstr "アイコン"
+
+#: options.cpp:62
+msgid "Window Border"
+msgstr "ウインドウの縁"
+
+#: options.cpp:64
+msgid "Window Titlebar"
+msgstr "ウィンドウのタイトルバー"
+
+#: options.cpp:66
+msgid "Window Gimmick"
+msgstr "ウィンドウのギミック"
+
+#: options.cpp:69
+msgid "Window Button Layout"
+msgstr "ウィンドウのボタンレイアウト"
+
+#: options.cpp:70
+msgid "File Manager"
+msgstr "ファイルマネージャ"
+
+#: options.cpp:72
+msgid "Clear"
+msgstr "クリア"
+
+#: options.cpp:77
+msgid "Invert"
+msgstr "反転"
+
+#: options.cpp:116
+msgid "unknown"
+msgstr "不明"
+
+#: options.cpp:239
+msgid "available"
+msgstr "有効"
+
+#: options.cpp:240
+msgid "empty"
+msgstr "なし"
+
+#: savescm.cpp:26
+msgid "Name"
+msgstr "名前"
+
+#: theme.cpp:175
+msgid "Mappings file theme.mappings not found."
+msgstr "theme.mappings というマッピングファイルが見つかりません。"
+
+#: theme.cpp:193
+#, c-format
+msgid ""
+"Error during cleanup of work directory: rc=%d\n"
+"%s"
+msgstr ""
+"作業ディレクトリの清掃中のエラー: rc=%d\n"
+"%s"
+
+#: theme.cpp:227
+#, c-format
+msgid ""
+"Failed to copy theme contents\n"
+"from %s\n"
+"into %s"
+msgstr ""
+"テーマのコンテンツのコピーに失敗しました\n"
+"%s から %s へ"
+
+#: theme.cpp:241
+#, c-format
+msgid ""
+"Failed to unpack %s with\n"
+"%s"
+msgstr ""
+"%s を\n"
+"%s で解凍するのに失敗しました"
+
+#: theme.cpp:267
+msgid "Theme contains no .themerc file"
+msgstr "テーマに .themerc ファイルが入っていません"
+
+#: theme.cpp:315
+#, c-format
+msgid ""
+"Failed to save theme to\n"
+"%s\n"
+"with command\n"
+"%s"
+msgstr ""
+"コマンド\n"
+"%s\n"
+"でテーマを\n"
+"%s\n"
+"にセーブするのに失敗"
+
+#: theme.cpp:381 themecreator.cpp:339
+#, c-format
+msgid "Cannot open file %s for reading"
+msgstr "読み込み用にファイル %s を開けません"
+
+#: theme.cpp:388 themecreator.cpp:346
+#, c-format
+msgid "Cannot open file %s for writing"
+msgstr "書き込み用にファイル %s を開けません"
+
+#: theme.cpp:398 themecreator.cpp:357
+#, c-format
+msgid ""
+"Write error to %s:\n"
+"%s"
+msgstr ""
+"%s への書き込みエラー:\n"
+"%s"
+
+#: theme.cpp:477 themecreator.cpp:167
+#, c-format
+msgid ""
+"Internal error in theme mappings\n"
+"(file theme.mappings) in group %s:\n"
+"\n"
+"Entry `%s' is missing or has no value."
+msgstr ""
+"テーママッピングにおける内部エラー\n"
+"(ファイル theme.mappings) が グループ%sで発生:\n"
+"\n"
+"エントリ `%s' が失われているか、値を持っていません。"
+
+#: theme.cpp:604
+#, c-format
+msgid ""
+"Unknown pre-install command `%s' in\n"
+"theme.mappings file in group %s."
+msgstr ""
+"不明なプリインストールコマンド `%s' が\n"
+"グループ %s のtheme.mappings ファイルにあります。"
+
+#: theme.cpp:670
+#, c-format
+msgid ""
+"Unknown command `%s' in theme.mappings\n"
+"file in group %s."
+msgstr ""
+"不明なコマンド `%s'が\n"
+"グループ%sのtheme.mappingsファイルにあります。"
+
+#: theme.cpp:708
+#, c-format
+msgid "Restart %s to activate the new settings?"
+msgstr "新しい設定を有効にするために %s を再起動しますか？"
+
+#: theme.cpp:710
+msgid "Restart Application"
+msgstr "アプリケーションの再起動"
+
+#: theme.cpp:740
+#, c-format
+msgid "Cannot make backup copy of %s: mv returned %d"
+msgstr "%s のバックアップが作れません: mv が %d を返しました"
+
+#: theme.cpp:794
+#, c-format
+msgid "Icon key name %s can not be used"
+msgstr "アイコンのキー名 %s は使えません"
+
+#: theme.cpp:856
+#, c-format
+msgid ""
+"No proper kdelnk file found for %s.\n"
+"Installing icon(s) as %s"
+msgstr ""
+"%sのための適切なkdelnkファイルがありません。\n"
+"アイコンを %s としてインストールします"
+
+#: theme.cpp:978
+#, c-format
+msgid ""
+"Failed to rename %s to %s~:\n"
+"%s"
+msgstr ""
+"%s から %s~ への名前の変更に失敗:\n"
+"%s"
+
+#: theme.cpp:1105
+#, c-format
+msgid "Failed to load preview image %s"
+msgstr "表示用のイメージ %s の読み込みに失敗"
+
+#: theme.cpp:1200
+#, c-format
+msgid "Cannot create directory %s"
+msgstr "ディレクトリ %s を作れません"
+
+#: theme.cpp:1208
+#, c-format
+msgid "Cannot enter directory %s"
+msgstr "ディレクトリ %s に入れません"
+
+#: themecreator.cpp:66
+#, c-format
+msgid "Failed to create directory %s: %s"
+msgstr "ディレクトリ %s の作成に失敗: %s"
