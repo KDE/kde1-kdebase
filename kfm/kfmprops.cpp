@@ -1405,19 +1405,30 @@ ApplicationPropsPage::ApplicationPropsPage( Properties *_props ) : PropsPage( _p
 	}
     }
 
+    addMimeType( "all" );
+    addMimeType( "alldirs" );
+    addMimeType( "allfiles" );
+
     KMimeType *ft;
     for ( ft = KMimeType::getFirstMimeType(); ft != 0L; ft = KMimeType::getNextMimeType() )
     {
-	const char *name = ft->getMimeType();
-	bool insert = true;
-	
-	for ( uint i = 0; i < extensionsList->count(); i++ )
-	    if ( strcmp( name, extensionsList->text( i ) ) == 0 )
-		insert = false;
-	
-	if ( insert && !ft->isApplicationPattern() )
-	    availableExtensionsList->inSort( name );
+        if (!ft->isApplicationPattern())
+            addMimeType ( ft->getMimeType() );
     }
+}
+
+void ApplicationPropsPage::addMimeType( const char * name )
+{
+    // Add a mimetype to the list of available mime types if not in the extensionsList
+
+    bool insert = true;
+	
+    for ( uint i = 0; i < extensionsList->count(); i++ )
+        if ( strcmp( name, extensionsList->text( i ) ) == 0 )
+            insert = false;
+	
+    if ( insert )
+        availableExtensionsList->inSort( name );
 }
 
 bool ApplicationPropsPage::supports( KURL *_kurl )

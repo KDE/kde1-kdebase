@@ -322,7 +322,9 @@ public slots:
     void slotAddExtension();    
 
 protected:
-    
+
+    void addMimeType( const char * name );
+
     QLineEdit *binaryPatternEdit;
     QLineEdit *commentEdit;
     QLineEdit *nameEdit;
