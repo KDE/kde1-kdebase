@@ -55,9 +55,9 @@ TopLevel::TopLevel (ConfigList *cl)
   
   setMinimumSize(450,200);
   
-  resize(680,530);
+  resize(680,520);
   show();
-  resize(680,530);
+  resizeEvent(NULL);
 
   KConfig *config = kapp->getConfig();
   config->setGroup("Options");
