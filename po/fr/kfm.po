@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-01-06 22:05+0100\n"
+"POT-Creation-Date: 1998-01-09 22:28+0100\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-11-17 14:28:25+0100\n"
 "From: didier Belot <dib@avo.fr>\n"
@@ -218,8 +218,8 @@ msgstr ""
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
 #: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
 #: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1481 krenamewin.cpp:104
-#: root.cpp:964 root.cpp:982 root.cpp:988 root.cpp:994 root.cpp:1065
-#: root.cpp:1422 root.cpp:1447
+#: root.cpp:965 root.cpp:983 root.cpp:989 root.cpp:995 root.cpp:1066
+#: root.cpp:1448 root.cpp:1473
 msgid "KFM Error"
 msgstr "Erreur KFM"
 
@@ -244,7 +244,7 @@ msgstr "Nouveau "
 
 #: kfmgui.cpp:1012 kfmgui.cpp:1172 kfmjob.cpp:32 kfmman.cpp:190
 #: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:337 kfmview.cpp:460
-#: kiojob.cpp:70 root.cpp:983
+#: kiojob.cpp:70 root.cpp:984
 msgid "ERROR: Malformed URL"
 msgstr "ERREUR: URL incorrecte"
 
@@ -294,11 +294,11 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr "Vous avez déposé un fichier sur lui-même"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:312
-#: kfmview.cpp:495 krenamewin.cpp:18 root.cpp:1024
+#: kfmview.cpp:495 krenamewin.cpp:18 root.cpp:1025
 msgid "KFM Warning"
 msgstr "KFM - Avertissement"
 
-#: kfmtree.cpp:352 kfmview.cpp:313 kfmview.cpp:496 root.cpp:1025
+#: kfmtree.cpp:352 kfmview.cpp:313 kfmview.cpp:496 root.cpp:1026
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -308,12 +308,12 @@ msgstr ""
 "\n"
 "Il n'y a aucun moyen de le(s) récupérer."
 
-#: kfmtree.cpp:320 kfmview.cpp:343 kfmview.cpp:466 root.cpp:989
+#: kfmtree.cpp:320 kfmview.cpp:343 kfmview.cpp:466 root.cpp:990
 #, fuzzy
 msgid "ERROR: You dropped a URL over itself"
 msgstr "Vous avez déposé un fichier sur lui-même"
 
-#: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:995
+#: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:996
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
 
@@ -321,15 +321,15 @@ msgstr ""
 msgid "Open With:"
 msgstr "Ouvrir avec:"
 
-#: kfmview.cpp:382 root.cpp:937
+#: kfmview.cpp:382 root.cpp:938
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "ERREUR: Impossible d'ouvrir les propriétés pour plusieurs fichiers"
 
-#: kfmtree.cpp:283 kfmview.cpp:420 root.cpp:1066
+#: kfmtree.cpp:283 kfmview.cpp:420 root.cpp:1067
 msgid "Could not access Trash Bin"
 msgstr "Impossible d'accéder à la poubelle"
 
-#: kfmview.cpp:442 root.cpp:965
+#: kfmview.cpp:442 root.cpp:966
 msgid "Can not paste into multiple directories"
 msgstr "Impossible de coller dans plusieurs répertoires"
 
@@ -462,7 +462,7 @@ msgstr ""
 msgid "Unknown binding"
 msgstr "Lien inconnu"
 
-#: main.cpp:65 main.cpp:164
+#: main.cpp:65 main.cpp:178
 msgid "KFM Information"
 msgstr "KFM - Information"
 
@@ -470,43 +470,43 @@ msgstr "KFM - Information"
 msgid "Creating directory:\n"
 msgstr "Création du répertoire:\n"
 
-#: main.cpp:165
+#: main.cpp:179
 msgid "Installing Templates"
 msgstr "Installation des modèles (Templates)"
 
-#: main.cpp:197
+#: main.cpp:211
 msgid "Cd"
 msgstr "Cd"
 
-#: main.cpp:198
+#: main.cpp:212
 msgid "New View"
 msgstr "Nouvelle vue"
 
-#: kfmtree.cpp:223 main.cpp:201
+#: kfmtree.cpp:223 main.cpp:215
 msgid "Move to Trash"
 msgstr "Envoyer à la poubelle"
 
-#: main.cpp:203
+#: main.cpp:217
 msgid "Open with"
 msgstr "Ouvrir avec"
 
-#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:205
+#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:219
 msgid "Move"
 msgstr "Déplacer"
 
-#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:206
+#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:220
 msgid "Properties"
 msgstr "Propriétés"
 
-#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:207
+#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:221
 msgid "Link"
 msgstr "Lien"
 
-#: main.cpp:208
+#: main.cpp:222
 msgid "Empty Trash Bin"
 msgstr "Vider la poubelle"
 
-#: main.cpp:209
+#: main.cpp:223
 msgid "Add to Bookmarks"
 msgstr "Ajouter un signet"
 
@@ -815,24 +815,24 @@ msgid ""
 "using a wrong password"
 msgstr ""
 
-#: root.cpp:577
+#: root.cpp:578
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Erreur interne: desktopDir incorrect"
 
-#: root.cpp:588
+#: root.cpp:589
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "ERREUR: ne peut lire le répertoire de bureau '%s'"
 
-#: root.cpp:778
+#: root.cpp:779
 msgid "ERROR: Can not accept drop"
 msgstr "ERREUR: Ne peut accepter ce laché (drop)"
 
-#: kfmman.cpp:1039 root.cpp:1423
+#: kfmman.cpp:1039 root.cpp:1449
 msgid "Dont know what to do."
 msgstr "Ne sait pas quoi faire."
 
-#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1448
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1474
 msgid "Dont know what to do"
 msgstr "Ne sait pas quoi faire."
 
@@ -1212,6 +1212,10 @@ msgstr ""
 "L'action demandée\n"
 "(%s)\n"
 "n'est pas implémentée pour l'instant."
+
+#: kproxydlg.cpp:35
+msgid "No Proxy for:"
+msgstr ""
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-01-06 22:05+0100\n"
+"POT-Creation-Date: 1998-01-09 22:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,8 +212,8 @@ msgstr ""
 #: kiojob.cpp:217 kiojob.cpp:225 kiojob.cpp:232 kiojob.cpp:257 kiojob.cpp:276
 #: kiojob.cpp:287 kiojob.cpp:309 kiojob.cpp:328 kiojob.cpp:455 kiojob.cpp:643
 #: kiojob.cpp:659 kiojob.cpp:689 kiojob.cpp:1481 krenamewin.cpp:104
-#: root.cpp:964 root.cpp:982 root.cpp:988 root.cpp:994 root.cpp:1065
-#: root.cpp:1422 root.cpp:1447
+#: root.cpp:965 root.cpp:983 root.cpp:989 root.cpp:995 root.cpp:1066
+#: root.cpp:1448 root.cpp:1473
 msgid "KFM Error"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 
 #: kfmgui.cpp:1012 kfmgui.cpp:1172 kfmjob.cpp:32 kfmman.cpp:190
 #: kfmtree.cpp:314 kfmview.cpp:273 kfmview.cpp:337 kfmview.cpp:460
-#: kiojob.cpp:70 root.cpp:983
+#: kiojob.cpp:70 root.cpp:984
 msgid "ERROR: Malformed URL"
 msgstr ""
 
@@ -279,22 +279,22 @@ msgid "ERROR: You dropped some URL over itself"
 msgstr ""
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:312
-#: kfmview.cpp:495 krenamewin.cpp:18 root.cpp:1024
+#: kfmview.cpp:495 krenamewin.cpp:18 root.cpp:1025
 msgid "KFM Warning"
 msgstr ""
 
-#: kfmtree.cpp:352 kfmview.cpp:313 kfmview.cpp:496 root.cpp:1025
+#: kfmtree.cpp:352 kfmview.cpp:313 kfmview.cpp:496 root.cpp:1026
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
 "There is no way to restore them."
 msgstr ""
 
-#: kfmtree.cpp:320 kfmview.cpp:343 kfmview.cpp:466 root.cpp:989
+#: kfmtree.cpp:320 kfmview.cpp:343 kfmview.cpp:466 root.cpp:990
 msgid "ERROR: You dropped a URL over itself"
 msgstr ""
 
-#: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:995
+#: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:996
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
 
@@ -302,15 +302,15 @@ msgstr ""
 msgid "Open With:"
 msgstr ""
 
-#: kfmview.cpp:382 root.cpp:937
+#: kfmview.cpp:382 root.cpp:938
 msgid "ERROR: Can not open properties for multiple files"
 msgstr ""
 
-#: kfmtree.cpp:283 kfmview.cpp:420 root.cpp:1066
+#: kfmtree.cpp:283 kfmview.cpp:420 root.cpp:1067
 msgid "Could not access Trash Bin"
 msgstr ""
 
-#: kfmview.cpp:442 root.cpp:965
+#: kfmview.cpp:442 root.cpp:966
 msgid "Can not paste into multiple directories"
 msgstr ""
 
@@ -437,7 +437,7 @@ msgstr ""
 msgid "Unknown binding"
 msgstr ""
 
-#: main.cpp:65 main.cpp:164
+#: main.cpp:65 main.cpp:178
 msgid "KFM Information"
 msgstr ""
 
@@ -445,43 +445,43 @@ msgstr ""
 msgid "Creating directory:\n"
 msgstr ""
 
-#: main.cpp:165
+#: main.cpp:179
 msgid "Installing Templates"
 msgstr ""
 
-#: main.cpp:197
+#: main.cpp:211
 msgid "Cd"
 msgstr ""
 
-#: main.cpp:198
+#: main.cpp:212
 msgid "New View"
 msgstr ""
 
-#: kfmtree.cpp:223 main.cpp:201
+#: kfmtree.cpp:223 main.cpp:215
 msgid "Move to Trash"
 msgstr ""
 
-#: main.cpp:203
+#: main.cpp:217
 msgid "Open with"
 msgstr ""
 
-#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:205
+#: kfmman.cpp:1056 kfmtree.cpp:155 main.cpp:219
 msgid "Move"
 msgstr ""
 
-#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:206
+#: kfmman.cpp:999 kfmtree.cpp:233 main.cpp:220
 msgid "Properties"
 msgstr ""
 
-#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:207
+#: kfmman.cpp:1060 kfmtree.cpp:159 main.cpp:221
 msgid "Link"
 msgstr ""
 
-#: main.cpp:208
+#: main.cpp:222
 msgid "Empty Trash Bin"
 msgstr ""
 
-#: main.cpp:209
+#: main.cpp:223
 msgid "Add to Bookmarks"
 msgstr ""
 
@@ -778,24 +778,24 @@ msgid ""
 "using a wrong password"
 msgstr ""
 
-#: root.cpp:577
+#: root.cpp:578
 msgid "Internal Error: desktopDir is malformed"
 msgstr ""
 
-#: root.cpp:588
+#: root.cpp:589
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr ""
 
-#: root.cpp:778
+#: root.cpp:779
 msgid "ERROR: Can not accept drop"
 msgstr ""
 
-#: kfmman.cpp:1039 root.cpp:1423
+#: kfmman.cpp:1039 root.cpp:1449
 msgid "Dont know what to do."
 msgstr ""
 
-#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1448
+#: kfmman.cpp:1065 kfmtree.cpp:164 root.cpp:1474
 msgid "Dont know what to do"
 msgstr ""
 
@@ -1114,6 +1114,10 @@ msgstr ""
 
 #: kproxydlg.cpp:10
 msgid "Only HTTP-Proxy is implemented yet!"
+msgstr ""
+
+#: kproxydlg.cpp:35
+msgid "No Proxy for:"
 msgstr ""
 
 #: kkfmoptdlg.cpp:39
