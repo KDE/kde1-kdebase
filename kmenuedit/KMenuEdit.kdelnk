@@ -1,9 +1,0 @@
-# KDE Config File
-[KDE Desktop Entry]
-Type=Application
-MiniIcon=mini-windows.xpm
-Exec=kmenuedit
-Icon=exec.xpm
-TerminalOptions=
-Path=
-Terminal=0

@@ -3,6 +3,8 @@ INCLUDES = @all_includes@
 LDADD = @all_libraries@ -lkdecore -lkdeui -lqt -lXext -lX11 
 MOC   	= @MOC@
 
+SUBDIRS = icons
+
 bin_PROGRAMS = kmenuedit
 
 kmenuedit_SOURCES = kmenuedit.cpp main.cpp pmenu.cpp \
@@ -54,17 +56,5 @@ DesktopPathDialogData.moc: DesktopPathDialogData.h
 entrydialog.cpp:entrydialog.moc
 entrydialog.moc: entrydialog.h
 	$(MOC) entrydialog.h -o entrydialog.moc
-
-SUBDIRS = icons
-
-install-local-data: 
-	$(INSTALL_DIR) $(appsdir)/apps/Utilities
-	$(INSTALL_DATA) KMenuEdit.kdelnk $(appsdir)
-
-uninstall-local:
-	rm -f $(appsdir)/KMenuEdit.kdelnk
-
-
-
 
 

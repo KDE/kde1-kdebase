@@ -1,0 +1,13 @@
+# KDE Config File
+[KDE Desktop Entry]
+Name=Menu Editor
+Name[de]=Menueditor
+Type=Application
+MiniIcon=mini-windows.xpm
+Exec=kmenuedit
+Icon=exec.xpm
+TerminalOptions=
+Path=
+Terminal=0
+Info=Program to change the menues of kpanel and ktaskbar
+Info[de]=Programm zur Veränderung der Menüs von kpanel und ktaskbar
