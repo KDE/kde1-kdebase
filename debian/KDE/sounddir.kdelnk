@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_blue.xpm
+Comment=KDE Sounds Folder
+URL=file:/usr/share/sounds
+Icon=folder_blue.xpm
+Type=Link

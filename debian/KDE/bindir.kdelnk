@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_blue.xpm
+Comment=KDE Binaries Folder
+URL=file:/usr/bin
+Icon=folder_blue.xpm
+Type=Link

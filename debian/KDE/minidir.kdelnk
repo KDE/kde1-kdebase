@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_blue.xpm
+Comment=KDE MiniIcons Folder
+URL=file:/usr/share/icons/mini
+Icon=folder_blue.xpm
+Type=Link

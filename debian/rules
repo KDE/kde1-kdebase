@@ -93,6 +93,11 @@ binary-arch: checkroot build
 	mv debian/tmp/usr/share/mimelnk/magic debian/tmp/etc/kde
 	ln -s /etc/kde/magic debian/tmp/usr/share/mimelnk/magic
 	cp konsole/other/linux*.pcf.gz debian/tmp/usr/X11R6/lib/X11/fonts/misc
+	mkdir -p debian/tmp/usr/share/apps/kdisknav/KDE
+	for file in debian/KDE/*; do \
+	 if test -f $$file; then cp $$file debian/tmp/usr/share/apps/kdisknav/KDE ;\
+	fi; done
+	-rm -f debian/tmp/usr/share/apps/kdisknav/KDE.kdelnk
 	dh_movefiles
 	install -d debian/kdm/var/state/kdm
 #	cp debian/kde.pamd debian/tmp/etc/pam.d/kde

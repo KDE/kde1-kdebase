@@ -1,0 +1,7 @@
+# KDE Config File
+[KDE Desktop Entry]
+MiniIcon=folder_blue.xpm
+Comment=KDE HTML Folder
+URL=file:/usr/doc/kde/HTML
+Icon=folder_blue.xpm
+Type=Link
