@@ -23,6 +23,7 @@ Name[zh]=ц╧╟╗╔╖╗х╓Е
 Name[pt]=RomИnio
 Name[sv]=rumДnska
 Name[ro]=RomБn
+Name[ru]=Румынский
 
 [C]
 Name=Default language
@@ -36,6 +37,7 @@ Name[zh]=╧wЁ]╩y╗╔
 Name[pt]=Lingua por omissЦo
 Name[sv]=standardsprЕk
 Name[ro]=Limbaj implicit
+Name[ru]=Язык по умолчанию
 
 [de]
 Name=German
@@ -49,6 +51,7 @@ Name[zh]=╪w╓Е
 Name[pt]=AlemЦo
 Name[sv]=tyska
 Name[ro]=German
+Name[ru]=Немецкий
 
 [en_UK]
 Name=English - UK
@@ -62,6 +65,7 @@ Name[zh]=╜^╓Е - UK
 Name[pt]=InglЙs - UK
 Name[sv]=engelska - br.
 Name[ro]=Englez
+Name[ru]=Английский
 
 [en]
 Name=English - US
@@ -75,6 +79,7 @@ Name[zh]=╜^╓Е - US
 Name[pt]=InglЙs - EUA
 Name[sv]=engelska - am.
 Name[ro]=Englez-American
+Name[ru]=Англо-Американский
 
 [fr]
 Name=French
@@ -88,6 +93,7 @@ Name[zh]=╙k╓Е
 Name[pt]=FrancЙs
 Name[sv]=franska
 Name[ro]=Francez
+Name[ru]=Французкий
 
 [cs]
 Name=Czech
@@ -101,6 +107,7 @@ Name[zh]=╠╤╖J╓Е
 Name[pt]=Checo
 Name[sv]=tjeckiska
 Name[ro]=Ceh
+Name[ru]=Чешский
 
 [sv]
 Name=Swedish
@@ -114,6 +121,7 @@ Name[zh]=╥Г╗Е╓Е
 Name[pt]=Sueco
 Name[sv]=svenska
 Name[ro]=Suedez
+Name[ru]=Шведский
 
 [es]
 Name=Spanish
@@ -127,6 +135,7 @@ Name[zh]=╕Х╞Z╓З╓Е
 Name[pt]=Espanhol
 Name[sv]=spanska
 Name[ro]=Spaniol
+Name[ru]=Испанский
 
 [ru]
 Name=Russian
@@ -140,6 +149,7 @@ Name[zh]=╚X╓Е
 Name[pt]=Russo
 Name[sv]=ryska
 Name[ro]=Rus
+Name[ru]=Русский
 
 [nl]
 Name=Dutch
@@ -153,6 +163,7 @@ Name[zh]=╡ЭдУ╓Е
 Name[pt]=Holandes
 Name[sv]=hollДndska
 Name[ro]=Olandez
+Name[ru]=Нидерландский
 
 [hu]
 Name=Hungarian
@@ -166,6 +177,7 @@ Name[zh]=╕I╓З╖Q╓Е
 Name[pt]=Hungaro
 Name[sv]=ungerska
 Name[ro]=Unguresc
+Name[ru]=Венгерский
 
 [da]
 Name=Danish
@@ -179,6 +191,7 @@ Name[zh]=╓╕Ёа╓Е
 Name[pt]=DinamarquЙs
 Name[sv]=danska
 Name[ro]=Danez
+Name[ru]=Датский
 
 [fi]
 Name=Finnish
@@ -193,6 +206,7 @@ Name[zh]=╙БдУ╓Е
 Name[pt]=Finlandes
 Name[sv]=finska
 Name[ro]=Finlandez
+Name[ru]=Финский
 
 [it]
 Name=Italian
@@ -206,6 +220,7 @@ Name[zh]=╦q╓j╖Q╓Е
 Name[pt]=Italiano
 Name[sv]=italienska
 Name[ro]=Italian
+Name[ru]=Итальянский
 
 [pt]
 Name=Portuguese
@@ -219,6 +234,7 @@ Name[zh]=╦╡╣Е╓З╓Е
 Name[pt]=PortuguЙs
 Name[sv]=portugisiska
 Name[ro]=Portughez
+Name[ru]=Португальский
 
 [pl]
 Name=Polish
@@ -232,6 +248,7 @@ Name[zh]=╙iдУ╓Е
 Name[pt]=Polaco
 Name[sv]=polska
 Name[ro]=Polonez
+Name[ru]=Польский
 
 [no]
 Name=Norwegian
@@ -245,6 +262,7 @@ Name[zh]=╝©╚б╓Е
 Name[pt]=NorueguЙs
 Name[sv]=norska
 Name[ro]=Norvegian
+Name[ru]=Норвежский
 
 [el]
 Name=Greek
@@ -258,6 +276,7 @@ Name[zh]=╖фц╬╓Е
 Name[pt]=Grego
 Name[sv]=grekiska
 Name[ro]=Grecesc
+Name[ru]=Греческий
 
 [hr]
 Name=Croatian
@@ -279,6 +298,7 @@ Name[no]=Slovakisk
 Name[pl]=SЁowacki
 Name[sv]=slovakiska
 Name[ro]=Slovac
+Name[ru]=Словатский
 
 [zh_TW.Big5]
 Name=Chinese
@@ -289,6 +309,7 @@ Name[pl]=Chi╠ski tradycyjny
 Name[pt]=ChinЙs tradicional
 Name[sv]=kinesiska
 Name[ro]=Chinezesc
+Name[ru]=Китайский
 
 [zh_CN.GB2312]
 Name=Simplified Chinese
@@ -298,6 +319,7 @@ Name[pl]=Chi╠ski uproszczony
 Name[pt]=ChinЙs simplificado
 Name[sv]=fЖrenklad kinesiska
 Name[ro]=Chinezesc simplificat
+Name[ru]=Упрошенный Китайский
 
 [pt_BR]
 Name=Brazil portuguese
@@ -306,6 +328,7 @@ Name[no]=Brasiliansk portogisisk
 Name[pt]=PortuguЙs do Brasil
 Name[sv]=brasilisk portugisiska
 Name[ro]=Brazilian Protughez
+Name[ru]=Бразильский португальский
 
 [eo]
 Name=Esperanto
