@@ -1478,8 +1478,8 @@ void Client::paintState(bool only_label, bool colors_have_changed){
     
   QPainter p;
 
-  double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
   if (only_label){
+    double_buffering = (look == H_SHADED || look == V_SHADED || look == PIXMAP);
     titlestring_offset += titlestring_offset_delta;
     if (!double_buffering){
       if (titlestring_offset_delta > 0)
