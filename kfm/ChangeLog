@@ -1,3 +1,8 @@
+1998-11-28  Kurt Granroth <granroth@kde.org>
+
+   * KFM will now use 'KCursor::handCursor()' if the user chooses the
+	  'change cursor over link' option.
+
 1998-11-28  David Faure  <faure@kde.org>
 
 	* Applied and adapted patches from <rjakob@duffy1.franken.de>:

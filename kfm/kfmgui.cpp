@@ -22,6 +22,8 @@
 #include <kapp.h>
 #include <kmsgbox.h>
 
+#include <kcursor.h>
+
 #include "kfmpaths.h"
 #include "kfmgui.h"
 #include "kfmdlg.h"
@@ -1581,7 +1583,7 @@ void KfmGui::slotConfigureBrowser()
 	      w->view->setDefaultBGColor( coloropts.bg );
 			w->view->setUnderlineLinks( coloropts.underlineLinks );
 	      if(coloropts.changeCursoroverLink)
-		htmlview->setURLCursor( handCursor );
+		htmlview->setURLCursor( KCursor::handCursor() );
 	      else
 		htmlview->setURLCursor( arrowCursor );
 

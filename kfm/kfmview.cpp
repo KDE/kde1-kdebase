@@ -24,6 +24,8 @@
 #include <kconfig.h>
 #include <kapp.h>
 #include <kwm.h>
+ 
+#include <kcursor.h>
 
 #include "kfmview.h"
 #include "kfmdlg.h"
@@ -197,7 +199,7 @@ void KfmView::setHTMLWidgetOptions(){
   htmlview->setDefaultFontBase( fSize );
   htmlview->setUnderlineLinks(underlineLinks);
   if(changeCursor)
-    htmlview->setURLCursor( handCursor );
+    htmlview->setURLCursor( KCursor::handCursor() );
   else
     htmlview->setURLCursor( arrowCursor );
 
