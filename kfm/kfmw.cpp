@@ -15,6 +15,7 @@
 #include <unistd.h> 
 #include <signal.h>
 #include <sys/signal.h>
+#include <X11/Xlib.h>
 
 #ifdef HAVE_PATHS_H
 #include <paths.h>
@@ -162,6 +163,9 @@ void Kfm::slotSave()
   }
   
   HTMLCache::save();
+
+  // Make sure slotShutDown() gets called
+  XSetIOErrorHandler( XSetIOErrorHandler( 0 ) );
 }
 
 void Kfm::slotShutDown()
