@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:49 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Sun Jun 29 19:24:26 1997
-// Update Count     : 48
+// Last Modified On : Mon Oct  6 14:22:07 1997
+// Update Count     : 49
 // Status           : Unknown, Use with caution!
 // 
 
@@ -229,9 +229,4 @@ KDMConfig::~KDMConfig()
      delete _greetString;
      delete _sessionTypes;
      delete kc;
-     if( !cs) {
-	  delete cs;
-	  cf->close();
-	  delete cf;
-     }
 }

@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:48:52 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Tue Sep  9 18:53:27 1997
-// Update Count     : 57
+// Last Modified On : Mon Oct  6 14:26:15 1997
+// Update Count     : 59
 // Status           : Unknown, Use with caution!
 // 
 
@@ -410,8 +410,8 @@ GreetUser(
      char* argv[5] = {"kdm", "-display", NULL, NULL, NULL};
      argv[2] = d->name;
      MyApp myapp( argc, argv );
-     printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
-	    klocale->language().data(), kapp->appName().data());
+     /*printf("LANG=%s, Domain=%s, appName=%s\n", getenv("LANG"), 
+	    klocale->language().data(), kapp->appName().data());*/
      QApplication::setOverrideCursor( waitCursor );
      // Test new option "-kdedir"
      extern char* optionKdedir;
@@ -446,7 +446,7 @@ GreetUser(
 	  printf("Startup program %s exited with non-zero status\n",
 		 d->startup);
 	  SessionExit (d, OBEYSESS_DISPLAY, FALSE);
-     }                                                            
+     }              
      // Clean up and log user in:
      delete kdmcfg;
      QColor::destroyAllocContext( -1); // free all colors

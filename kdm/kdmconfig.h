@@ -5,8 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:53:09 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Tue Sep  9 16:23:55 1997
-// Update Count     : 8
+// Last Modified On : Mon Oct  6 14:22:03 1997
+// Update Count     : 9
 // Status           : Unknown, Use with caution!
 // 
 
@@ -50,8 +50,6 @@ private:
      void           getConfig();
      KVItemList*    getUsers( QString s = NULL, bool = false);
      QString        kdedir;
-     QFile*         cf;
-     QTextStream*   cs;
      KConfig*       kc;
 
      QFont*         _normalFont;
