@@ -1,28 +1,53 @@
-KBGNDWM
--------
 
-Desktop background manager.
-
-kbgndwm is responsible for setting the current desktop selected using kwm.
-It requires kwm2 to function correctly.  To install kbgndwm add:
-
-kbgwndwm &
-
-to your .xinitrc before kwm.
+	 KCMDISPLAY &  KBGNDWM
+	------------------------
 
 
-The only configuration option in kbgndwmrc is
-
-[General]
-CacheSize=512
+This is README for two programs : kbgndwm and kcmdisplay - background module
+Both are part of KDE and require kwm to work properly.
 
 
-Where CacheSize is the maximum memory to be used for caching backgrounds.
-A larger cache size means that the backgrounds switch faster.  Fastest
-background switching is achieved when all backgrounds fit in the cache.
-It is therefore advised that flat, gradient, or small tiled images are
-used rather than a large, scaled or centred image.
+Some new features :
 
-Martin Jones
-mjones@kde.org
+1. One Desktop radio button -
+   some people want only one wallpaper for all desktop
+   - however, also this one desktop can be set to randomize
 
+2. Random radio button - whether to use one wallpaper for a desktop or 
+   randomly choose from the list.
+
+3. Setup push button - opens dialog for setup of randomizing
+   - you can specify timer interval in miliseconds
+   - use drag and drop to create list of items
+   - you can create any kind of items, they do not have to contain wallpaper
+     f.e create two color background with a pattern
+   - use Add button for adding item with "No wallpaper"
+   - use Delete button to delete items
+   - in-order radio button - whether you want kbgndwm to choose files in order
+                             or randomly
+   - for each desktop you may specify list of items ( using drag and drop )
+     and timer interval.
+   - kbgndwm will at given interval change wallpapers on desktops.
+
+4. Docking radio button - kbgndwm can dock into kpanel. If you click on dock
+   window and random mode is set, then kbgndwm will change wallpaper without
+   waiting on timer
+   - clicking with right button opens popup menu with two items :
+      "Background Settings" will start "kcmdisplay background"
+      "One Desktop" toggles one desktop mode
+      
+5. More modes : Mirrored, Symmetrical Mirrored, Symmetrical Tiled,
+		Center Tiled, Centered Brick, Centered Warp, Centered Maxpect
+
+6. Use drag and drop from kfm on the monitor widget in settings dialog to
+   quickly change wallpaper in the monitor
+
+7. Use drag and drop from kfm on the docked widget to change wallpaper
+
+8. Images larger than desktop are automatically scaled.
+
+
+----------------------------------------------
+ Matej Koss   koss@napri.sk
+
+Original author : Martin Jones  mjones@kde.org

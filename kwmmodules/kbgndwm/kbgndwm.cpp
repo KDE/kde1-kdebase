@@ -14,6 +14,7 @@
 #include <kprocess.h>
 #include <kstring.h>
 #include "kbgndwm.h"
+#include "config-kbgndwm.h"
 
 #include "kbgndwm.moc"
 
@@ -70,8 +71,8 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
 	   this, SLOT( slotModeSelected( int ) ) );
 
   // setup icon
-  QString pixdir = KApplication::kde_datadir();
-  pixmap = (pixdir + "/kdisplay/pics/logo.xpm").data();
+  QString pixdir = KApplication::kde_icondir();
+  pixmap = (pixdir + "/logo.xpm").data();
 
   KDNDDropZone *myDropZone = new KDNDDropZone(this, DndURL);
   connect( myDropZone, SIGNAL( dropAction( KDNDDropZone *) ),
@@ -160,12 +161,12 @@ void KBGndManager::commandReceived( QString com )
 		      KApplication::localconfigdir() + "/kcmdisplayrc");
 
       config2.setGroup( "Desktop Common" );
-      oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", false );
+      oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", DEFAULT_ENABLE_COMMON_BGND );
       popup_m->setItemChecked( o_id, oneDesktopMode );
-
-      desktop = config2.readNumEntry( "DeskNum", 0 );
-      if ( config2.readBoolEntry( "Docking", false ) )
-	dock();
+ 
+      desktop = config2.readNumEntry( "DeskNum", DEFAULT_DESKTOP );
+      if ( config2.readBoolEntry( "Docking", DEFAULT_ENABLE_DOCKING ) )
+        dock(); 
       else
 	undock();
 
@@ -228,13 +229,13 @@ void KBGndManager::readSettings()
 		  KApplication::localconfigdir() + "/kcmdisplayrc");
 
   config2.setGroup( "Desktop Common" );
-  oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", false );
-  desktop = config2.readNumEntry( "DeskNum", 0 );
+  oneDesktopMode = config2.readBoolEntry( "OneDesktopMode", DEFAULT_ENABLE_COMMON_BGND );
+  desktop = config2.readNumEntry( "DeskNum", DEFAULT_DESKTOP );
 
-  if ( config2.readBoolEntry( "Docking", true ) )
+  if ( config2.readBoolEntry( "Docking", DEFAULT_ENABLE_DOCKING ) )
     dock();
 
-  int cache = config2.readNumEntry( "CacheSize", 1024 );
+  int cache = config2.readNumEntry( "CacheSize", DEFAULT_CACHE_SIZE );
 
   if ( cache < 128 )
     cache = 128;

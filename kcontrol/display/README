@@ -1,7 +1,13 @@
-Here is a short summary of all changes, that I made.
 
-KCMDISPLAY &  KBGNDWM :
-----------------------
+	 KCMDISPLAY &  KBGNDWM
+	------------------------
+
+
+This is README for two programs : kbgndwm and kcmdisplay - background module
+Both are part of KDE and require kwm to work properly.
+
+
+Some new features :
 
 1. One Desktop radio button -
    some people want only one wallpaper for all desktop
@@ -41,5 +47,8 @@ KCMDISPLAY &  KBGNDWM :
 8. Images larger than desktop are automatically scaled.
 
 
------------------------------
+----------------------------------------------
  Matej Koss   koss@napri.sk
+
+Authors of modules : see AUTHORS file
+

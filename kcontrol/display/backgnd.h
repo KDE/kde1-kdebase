@@ -237,7 +237,7 @@ class KBackground : public KDisplayModule
 public:
 	
   enum { Portrait = 1, Landscape };
-  enum { Gradient = 1, Pattern };
+  enum { Flat = 1, Gradient, Pattern };
 
   KBackground( QWidget *parent, int mode, int desktop = 0 );
 

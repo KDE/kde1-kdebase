@@ -1,3 +1,9 @@
+1999-1-13  Matt Koss  <koss@napri.sk>
+
+	* Moved all defaults to config-kbgndwm.h ( patch from Michael Reiher )
+    	    kcmdisplay is also using this
+	* kbgndwm.cpp : icon path fix, because of moving logo.xpm to icon dir
+	
 1998-11-15  Alex Zepeda  <garbanzo@hooked.net>
 
 	* bg.cpp (readSettings): Add a proper cast, so egcs doesn't barf.

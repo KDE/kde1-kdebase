@@ -203,7 +203,6 @@ void FontPreview::setPreviewFont( const QFont &fnt )
 KGeneral::KGeneral( QWidget *parent, int mode, int desktop )
 	: KDisplayModule( parent, mode, desktop )
 {
-	int i;
 	changed = false;
 	useRM = true;
 	macStyle = false;//CT

@@ -1,3 +1,9 @@
+1999-1-13  Matej Koss  <koss@napri.sk>
+
+	* Moved all defaults to config-kbgndwm.h ( patch from Michael Reiher )
+	* backgnd.cpp: after latest patch user coudn't change display mode when
+		using Random mode. But it's required when we open setup dialog
+	  
 1999-1-4  Antonio Larrosa  <larrosa@kde.org>
 
 	* Change to use kcmdisplayrc everywhere (instead of the old

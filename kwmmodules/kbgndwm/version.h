@@ -1,1 +1,1 @@
-#define KDISPLAYWM_VERSION "KBgndWm - Version 0.1.0"
+#define KDISPLAYWM_VERSION "KBgndWm - Version 0.2.0"

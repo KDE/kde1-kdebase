@@ -9,7 +9,7 @@ LDADD   =   $(LIB_KIMGIO)     $(LIB_KDEUI)
 bin_PROGRAMS	= kbgndwm
 kbgndwm_SOURCES = main.cpp kbgndwm.cpp bg.cpp 
 DISTCLEANFILES = kbgndwm.moc bg.moc
-noinst_HEADERS = kbgndwm.h bg.h version.h
+noinst_HEADERS = kbgndwm.h bg.h version.h config-kbgndwm.h
 
 kbgndwm.cpp: kbgndwm.moc
 kbgndwm.moc: kbgndwm.h
@@ -22,6 +22,8 @@ bg.moc: bg.h
 install-data-local:
 
 uninstall-local:
+
+EXTRA_DIST = README
 
 messages:
 	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kbgndwm_SOURCES) && mv messages.po ../../po/kbgndwm.pot
