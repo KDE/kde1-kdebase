@@ -14,7 +14,7 @@ bin_PROGRAMS = kdm kdmdesktop
 
 # Libraries:
 LDADD  = $(all_libraries) -lkdecore -lqt -lXext\
-           -lXau -lXdmcp -lX11 -lm $(PASSLIB) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB)
+           -lXau -lXdmcp -lX11 -lm $(PASSLIB) $(LIBSOCKET) $(LIBCRYPT) $(KDE_RPATH) $(LIBUCB) $(LIBUTIL)
 
 # For kdmdesktop
 kdmdesktop_LDADD = $(all_libraries) -lkdecore -lqt -lm $(LIBJPEG) -lXext\
