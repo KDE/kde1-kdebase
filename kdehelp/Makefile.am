@@ -1,7 +1,7 @@
 
 INCLUDES =  $(all_includes)
 LDFLAGS = $(all_libraries)
-LDADD = -lkfile -lkfm $(LIB_KHTMLW) -lkdeui -lkdecore -lqt -lXext -lX11 -lstdc++ $(LIBSOCKET) $(LIBCOMPAT)
+LDADD = $(LIB_KFILE) $(LIB_KHTMLW) $(LIBCOMPAT)
 SUBDIRS = search index rman
 
 ########## Files ##########
