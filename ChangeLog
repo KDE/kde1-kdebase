@@ -52,3 +52,5 @@
 	patched kfm to support ktoolbar
 	updated kedit to kedit+
 	added kfontmanager 0.2.1
+0.9.1: changed kpaint's make style
+	bugfixing
