@@ -12,7 +12,7 @@ kfm_fulltrash.xpm kfm_home.xpm kfm_refresh.xpm kfm_trash.xpm l_src.xpm \
 library.xpm link.xpm locked.xpm locked_file.xpm lockedfolder.xpm log.xpm \
 logo.xpm magneto-optical_mount.xpm magneto-optical_unmount.xpm make.xpm \
 man.xpm metafont.xpm midi.xpm misc.xpm moc_src.xpm multimedia_package.xpm \
-network_package.xpm o_src.xpm p_src.xpm package.xpm pdf.xpm pipe.xpm pk.xpm \
+network_package.xpm o_src.xpm p_src.xpm package.xpm pdf.xpm perl.xpm pipe.xpm pk.xpm \
 postscript.xpm printer.xpm readme.xpm readonly.xpm resource.xpm s_src.xpm \
 script.xpm settings_package.xpm socket.xpm sound.xpm system_package.xpm \
 tablet.xpm terminal.xpm tex.xpm tgz.xpm trash.xpm txt.xpm unknown.xpm \
