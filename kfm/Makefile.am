@@ -62,7 +62,7 @@ kfmexec.cpp: kfmexec.moc
 %.moc: %.h
 	$(MOC) $< -o $@      
 
-SUBDIRS = kfmwarn client kioslave 
+SUBDIRS = kfmwarn client kioslave pics Desktop
 
 install-local-exec: 
 	$(INSTALL_DATA) ./unpack $(BINDIR)
