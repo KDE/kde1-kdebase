@@ -16,6 +16,7 @@
 
 #include <klocale.h>
 #include <kstring.h>
+#include <kwm.h>
 
 /***************************************************************************
  *
@@ -152,6 +153,8 @@ void KFMExec::openURL( const char *_url  )
     // Show the user that we are doing something, since it may take
     // us some time.
     dlg = new QDialog( 0L );
+    // make sure window doesn't initially have the focus
+    KWM::setDecoration(dlg->winId(), KWM::normalDecoration | KWM::noFocus);
     dlg->resize( 300, 120 );
     QPushButton *pb = new QPushButton( klocale->translate("Cancel"), dlg );
     pb->setGeometry( 110, 70, 80, 30 );

@@ -27,6 +27,7 @@
 
 #include <klocale.h>
 #include <kstring.h>
+#include <kwm.h>
 
 #ifndef _PATH_FSTAB
 #define _PATH_FSTAB "/etc/fstab"
@@ -1586,6 +1587,10 @@ void KIOJob::start( int _pid )
 
 	if ( dlg != 0L )
 	{
+	  // make sure window doesn't initially get wm focus
+	  KWM::setDecoration(dlg->winId(), 
+			     KWM::normalDecoration | KWM::noFocus);
+
 	    layout = new QVBoxLayout( dlg, 10, 0 );
 	    layout->addStrut( 360 );	// makes dlg at least that wide
 	    if ( line1 != 0L )
