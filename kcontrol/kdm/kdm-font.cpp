@@ -52,10 +52,10 @@ void KDMFontWidget::setupPage(QWidget *)
       fontbtn->setFixedSize(fontbtn->sizeHint());
       fontcombo = new QComboBox( FALSE, group0 );
       connect(fontcombo, SIGNAL(highlighted(int)), SLOT(slotSetFont(int)));
-      fontcombo->setFixedSize(fontcombo->sizeHint());
       fontcombo->insertItem(klocale->translate("Greeting"), 0);
       fontcombo->insertItem(klocale->translate("Fail"), 1);
       fontcombo->insertItem(klocale->translate("Standard"), 2);
+      fontcombo->setFixedSize(fontcombo->sizeHint());
       QLabel *label = new QLabel(klocale->translate("Example:"), group0);
       label->setFixedSize(label->sizeHint());
       fontlabel = new QLabel( group0 );
