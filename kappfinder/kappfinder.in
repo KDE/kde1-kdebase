@@ -20,7 +20,7 @@
 
 
 # test the arguments
-if [ $# -ne 1 ]; then
+if test $# -ne 1 ; then
   INSTPATH=$HOME/.kde
   kde_appsdir=$INSTPATH/share/applnk
   kde_icondir=$INSTPATH/share/icons
@@ -38,8 +38,8 @@ fi
 # Note: wmconfig always installs under ~/.kde/share..., so just
 # call it if executed by the user!
 # 
-if [ $# -ne 1]; then
-  if [ -x /usr/X11R6/bin/wmconfig ] ; then
+if test $# -ne 1; then
+  if test -x /usr/X11R6/bin/wmconfig  ; then
     /usr/X11R6/bin/wmconfig --output=kde >/dev/null 2>&1
   fi
 fi
@@ -58,7 +58,7 @@ do
 
   # test if this executable is installed (in path!)
   executable=`which $filename`
-  if [ -x "$executable" ]; then
+  if test -x "$executable" ; then
 
     echo "Looking for $filename: found in $executable"
 
@@ -71,16 +71,16 @@ do
 
     # copy the icon file
     picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-    if [ -f "pics/$picname" ]; then
+    if test -f "pics/$picname" ; then
       cp pics/$picname $kde_icondir
     fi
 
     # copy the mini icon file
     minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-    if [ ! "$minifile" ]; then
+    if test ! "$minifile" ; then
       minipic=$picname
     fi
-    if [ -f "pics/mini/$minipic" ]; then
+    if test -f "pics/mini/$minipic" ; then
       cp pics/mini/$minipic $kde_minidir
     fi
 
@@ -98,22 +98,22 @@ do
   cp $file $kde_appsdir/$file 2>/dev/null
   
   # continue, if the file was not installed
-  if [ ! -f $kde_appsdir/$file ]; then
+  if test ! -f $kde_appsdir/$file ; then
     continue
   fi
 
   # copy the icon
   picname=`grep "^Icon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-  if [ -f "pics/$picname" ]; then
+  if test -f "pics/$picname" ; then
     cp pics/$picname $kde_icondir
   fi
 
   # copy the mini icon file
   minipic=`grep "^MiniIcon=" $file | sed "s/Icon= *//" | sed "s/ .*//"`
-  if [ ! "$minifile" ]; then
+  if test ! "$minifile" ; then
     minipic=$picname
   fi
-  if [ -f "pics/mini/$minipic" ]; then
+  if test -f "pics/mini/$minipic"; then
     cp pics/mini/$minipic $kde_minidir
   fi
 
