@@ -1,4 +1,4 @@
-IMPORTANT: most applications need KDEDIR as the directory, where KDE is 
+IMPORTANT: most applications need KDEDIR as the directory where KDE is 
 installed. Please set this in your login file.
 
 If configure claims about missing Qt, have a look at http://www.troll.no

@@ -1,3 +1,10 @@
+Tue Feb 10 16:46:32 1998  Stephan Kulow  <coolo@kde.org>
+
+	* README: some grammar fixes
+
+	* acinclude.m4.in: search for the libs in the exec_prefix, when
+	it's present
+	
 Sun Feb  8 14:07:23 1998  Stephan Kulow  <coolo@kde.org>
 
 	* acinclude.m4.in: updated all packages
