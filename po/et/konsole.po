@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 199-01-18 00:07+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -13,123 +13,123 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:284
+#: main.C:303
 msgid "&Normal"
 msgstr "&Normaalne"
 
-#: main.C:287
+#: main.C:306
 msgid "&Small"
 msgstr "&Väike"
 
-#: main.C:288
+#: main.C:307
 msgid "&Medium"
 msgstr "&Keskmine"
 
-#: main.C:289
+#: main.C:308
 msgid "&Large"
 msgstr "&Suur"
 
-#: main.C:290
+#: main.C:309
 msgid "&Huge"
 msgstr "&Tohutu"
 
-#: main.C:292
+#: main.C:311
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:293
+#: main.C:312
 msgid "Linux (small)"
 msgstr "Linux (väike)"
 
-#: main.C:296
+#: main.C:315
 msgid "&More ..."
 msgstr "&Rohkem ..."
 
-#: main.C:302
+#: main.C:321
 msgid "&Hide"
 msgstr "&Peida"
 
-#: main.C:303
+#: main.C:322
 msgid "&Left"
 msgstr "&Vasak"
 
-#: main.C:304
+#: main.C:323
 msgid "&Right"
 msgstr "P&arem"
 
-#: main.C:310
+#: main.C:329
 msgid "40x15 (&small)"
 msgstr "40x15 (väi&ke)"
 
-#: main.C:311
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:312
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:313
+#: main.C:332
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:314
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:323
+#: main.C:342
 msgid "&Menubar"
 msgstr "&Menüüriba"
 
-#: main.C:325
+#: main.C:344
 msgid "&Frame"
 msgstr "&Raam"
 
-#: main.C:327
+#: main.C:346
 msgid "Scroll&bar"
 msgstr "&Kerimisriba"
 
-#: main.C:329
+#: main.C:348
 msgid "BS sends &DEL"
 msgstr "BS saadab &DEL"
 
-#: main.C:332
+#: main.C:351
 msgid "&Font"
 msgstr "&Font"
 
-#: main.C:333
+#: main.C:352
 msgid "&Size"
 msgstr "&Suurus"
 
-#: main.C:334
+#: main.C:353
 msgid "&Schema"
 msgstr "&Skeem"
 
-#: main.C:336
+#: main.C:355
 msgid "&Save options"
 msgstr "&Salvesta valikud"
 
-#: main.C:340
+#: main.C:359
 msgid "&About ..."
 msgstr "&Info ..."
 
-#: main.C:341
+#: main.C:360
 msgid "&User's Manual ..."
 msgstr "&Kasutaja juhend ..."
 
-#: main.C:342
+#: main.C:361
 msgid "&Technical Reference ..."
 msgstr "&Tehniline teatmik ..."
 
-#: main.C:346
+#: main.C:365
 msgid "cd"
 msgstr "cd"
 
-#: main.C:359
+#: main.C:378
 msgid "Sessions"
 msgstr "Seansid"
 
-#: main.C:502
+#: main.C:517
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -138,12 +138,12 @@ msgstr ""
 "Fonti '%s' ei leitud.\n"
 "Infoks vt. README.linux.console."
 
-#: main.C:607
+#: main.C:621
 #, c-format
 msgid "About %s"
 msgstr "%s info"
 
-#: main.C:609
+#: main.C:623
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -164,12 +164,12 @@ msgstr ""
 "ILMA IGASUGUSE GARANTIITA.\n"
 "Täpsemalt vt. LICENCE.readme."
 
-#: main.C:732
+#: main.C:749
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "'%s' katkestatud ebanormaalselt."
 
-#: main.C:735
+#: main.C:752
 msgid ""
 "\n"
 "Return code = "
@@ -177,6 +177,6 @@ msgstr ""
 "\n"
 "Tagastatud kood = "
 
-#: main.C:928
+#: main.C:936
 msgid "Welcome to the console"
 msgstr "Tere tulemast konsoolile"

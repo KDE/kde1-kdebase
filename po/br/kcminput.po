@@ -1,0 +1,64 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminput-1.1\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"PO-Revision-Date: 1999-02-06 20:48+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:54
+msgid "&Mouse"
+msgstr "&Logodenn"
+
+#: main.cpp:57
+msgid "&Keyboard"
+msgstr "&Stokellaoueg"
+
+#: main.cpp:63
+msgid "usage: kcminput [-init | {mouse,keyboard}]\n"
+msgstr "arveriadur : kcminput [-init | {mouse,keyboard}]\n"
+
+#: main.cpp:104
+msgid "Input Devices Properties"
+msgstr "Perzhioù trobarzhelloù enmoned"
+
+#: mouse.cpp:68
+msgid "Acceleration"
+msgstr "Buanadur"
+
+#: mouse.cpp:71
+msgid "Threshold"
+msgstr "Treuzoù"
+
+#: mouse.cpp:72
+msgid "pixels"
+msgstr "piksel"
+
+#: mouse.cpp:81
+msgid "Button mapping"
+msgstr "Ardremez an nozellenoù"
+
+#: mouse.cpp:83
+msgid "Right handed"
+msgstr "Dehouad"
+
+#: mouse.cpp:85
+msgid "Left handed"
+msgstr "Kleizat"
+
+#: keyboard.cpp:61
+msgid "Keyboard repeat"
+msgstr "Azstekiñ ar stokelloù"
+
+#: keyboard.cpp:66
+msgid "Key click volume"
+msgstr "Nerzh klikañ ar stokelloù"

@@ -3,7 +3,7 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-10-19 22:00+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: is\n"
@@ -24,7 +24,7 @@ msgstr "Diskaflakkari"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "notkun: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "KSpjald Stillingar"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel \n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1999-01-27 23:25+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -42,19 +42,19 @@ msgstr "Ukryj panel"
 msgid "Show the panel"
 msgstr "Poka¿ panel"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Ikonizuj inne &okna"
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Brak komentarza"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Lista okien"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Szybka nawigacja po systemie plików"
 
@@ -82,7 +82,7 @@ msgstr "Dodaj listê okien"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Dodaj listê okien do panelu"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Konfiguruj"
 
@@ -98,7 +98,7 @@ msgstr "Konfiguruj menu"
 msgid "Add or remove applications in the menu structure "
 msgstr "Dodaj lub usuñ aplikacje ze struktury menu "
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Restart"
 
@@ -122,7 +122,7 @@ msgstr "Zablokuj ekran"
 msgid "The menu editor is not installed."
 msgstr "Edytor menu jest niezainstalowany."
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Ojej!"
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nie mo¿na umie¶ciæ tego jako przycisku na panelu!"
 

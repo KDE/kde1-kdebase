@@ -494,7 +494,8 @@ msgstr "&Polise personnalisée"
 
 #: widgets.cpp:592
 msgid "Customize Font for text label or use global settings"
-msgstr "Personnalisez la Police pour le texte ou utilisez les paramètres globaux"
+msgstr ""
+"Personnalisez la Police pour le texte ou utilisez les paramètres globaux"
 
 #: widgets.cpp:596
 msgid "C&hange Font"
@@ -539,5 +540,3 @@ msgstr "&Démarrage"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Clavier International"
-
-

@@ -52,9 +52,8 @@ msgid ""
 "Alt symbols disabled"
 msgstr ""
 
-
-#: kikbd.cpp:392
 #
+#: kikbd.cpp:392
 msgid ""
 "Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
@@ -62,8 +61,8 @@ msgstr ""
 "Impossibile rimuovere Caps Lock dai Modificatori.\n"
 "Emulazione Caps Lock disabilitata"
 
-#: kikbd.cpp:1003
 #
+#: kikbd.cpp:1003
 msgid "Exiting International Keyboard"
 msgstr "Uscita da Tastiera Internazionale"
 
@@ -159,8 +158,8 @@ msgstr "Sinistra (Ctrl+Shift)"
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Entrambi gli Shift"
 
-#: kikbdconf.cpp:115
 #
+#: kikbdconf.cpp:115
 msgid "Right Meta"
 msgstr "Meta Destro"
 
@@ -173,7 +172,6 @@ msgid "Left  Control"
 msgstr "Control Sinistro"
 
 #: kikbdconf.cpp:118
-#, 
 msgid "Left  Meta"
 msgstr "Meta Sinistro"
 
@@ -198,7 +196,7 @@ msgid "X default codes"
 msgstr "Codici predefiniti di X"
 
 #: kikbdconf.cpp:209
-#,  c-format
+#, c-format
 msgid ""
 "%s\n"
 "Do you want to configure now?"
@@ -265,12 +263,10 @@ msgid "alternative symbols"
 msgstr "simboli alternativi"
 
 #: kikbdconf.cpp:429
-#, 
 msgid "Language"
 msgstr "Lingua"
 
 #: kikbdconf.cpp:433
-#, 
 msgid "Charset"
 msgstr "Set caratteri"
 
@@ -505,8 +501,8 @@ msgstr "Avvia automaticamente"
 msgid "&Docked"
 msgstr "&Nel pannello"
 
-#: widgets.cpp:649
 #
+#: widgets.cpp:649
 msgid "Dock into special area in the panel"
 msgstr "Viene mostrato in una zona speciale del pannello"
 

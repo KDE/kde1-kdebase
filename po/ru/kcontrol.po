@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: 1998-12-10 05:26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -44,30 +44,34 @@ msgstr ""
 "Спасибо:\n"
 "С. Кулову, П. Доулеру, М. Вуббену & М. Джонсу."
 
-#: mainwidget.cpp:45
-msgid "System:"
-msgstr "Система:"
+#: mainwidget.cpp:44
+#, fuzzy
+msgid "KDE Version: "
+msgstr "Модификация: "
 
-#: mainwidget.cpp:48
+#: mainwidget.cpp:52
 msgid "User: "
 msgstr "Пользователь:"
 
-#: mainwidget.cpp:54
+#: mainwidget.cpp:58
 msgid "Hostname: "
 msgstr "Имя машины:"
 
-#: mainwidget.cpp:62
+#: mainwidget.cpp:66
 msgid "System: "
 msgstr "ОС: "
 
-#: mainwidget.cpp:69
+#: mainwidget.cpp:73
 msgid "Release: "
 msgstr "Версия: "
 
-#: mainwidget.cpp:77
+#: mainwidget.cpp:81
 msgid "Version: "
 msgstr "Модификация: "
 
-#: mainwidget.cpp:84
+#: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Процессор: "
+
+#~ msgid "System:"
+#~ msgstr "Система:"

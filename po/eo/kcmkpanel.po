@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel 1.0pre2\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-12-01 15:50+0100\n"
 "Last-Translator: Wolfram Diestel <diestel@rzaix340.rz-uni-leipzig.de>\n"
 "Language-Team: Esperanto <eo@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Disk&navigilo"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "uzo: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Konfigura¼o de la panelo"
 

@@ -3,12 +3,12 @@ msgstr ""
 "Project-Id-Version: klock \n"
 "POT-Creation-Date: 1999-01-18 01:13+0100\n"
 "PO-Revision-Date: 1999-02-03 18:15+MET\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: attraction.cpp:716
 msgid "Attraction"
@@ -660,8 +660,9 @@ msgid "Setup krock"
 msgstr "Asteroiden einstellen"
 
 #: rock.cpp:589
-msgid "Verschieben"
-msgstr "Bewegen"
+#, fuzzy
+msgid "Move"
+msgstr "Modus:"
 
 #: rock.cpp:595
 msgid "Rotate"
@@ -880,3 +881,6 @@ msgstr ""
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
 "Portiert für KDE von Emanuel Pirker."
+
+#~ msgid "Verschieben"
+#~ msgstr "Bewegen"

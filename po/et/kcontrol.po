@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,30 +43,34 @@ msgstr ""
 "Tänud:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#: mainwidget.cpp:45
-msgid "System:"
-msgstr "Süsteem:"
+#: mainwidget.cpp:44
+#, fuzzy
+msgid "KDE Version: "
+msgstr "Versioon: "
 
-#: mainwidget.cpp:48
+#: mainwidget.cpp:52
 msgid "User: "
 msgstr "Kasutaja: "
 
-#: mainwidget.cpp:54
+#: mainwidget.cpp:58
 msgid "Hostname: "
 msgstr "Hosti nimi: "
 
-#: mainwidget.cpp:62
+#: mainwidget.cpp:66
 msgid "System: "
 msgstr "Süsteem: "
 
-#: mainwidget.cpp:69
+#: mainwidget.cpp:73
 msgid "Release: "
 msgstr "Väljalase: "
 
-#: mainwidget.cpp:77
+#: mainwidget.cpp:81
 msgid "Version: "
 msgstr "Versioon: "
 
-#: mainwidget.cpp:84
+#: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Masin: "
+
+#~ msgid "System:"
+#~ msgstr "Süsteem:"

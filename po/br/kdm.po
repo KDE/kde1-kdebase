@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kdm-1.1\n"
+"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"PO-Revision-Date: 1999-02-01 10:17+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding:  8-bit\n"
+
+#: kdmshutdown.cpp:176
+msgid "Shutdown or restart?"
+msgstr "Lazhañ pe adloc'hañ ?"
+
+#: kdmshutdown.cpp:179
+msgid "(Enter Root Password)"
+msgstr "(Roit tremenger root)"
+
+#: kdmshutdown.cpp:197
+msgid "Shutdown"
+msgstr "Lazhañ"
+
+#: kdmshutdown.cpp:211
+msgid "Shutdown and restart"
+msgstr "Lazhañ hag adloc'hañ"
+
+#: kdmshutdown.cpp:220
+msgid "Restart X Server"
+msgstr "Adloc'hañ ar servijer X"
+
+#: kgreeter.cpp:222
+msgid "Login:"
+msgstr "Arveriad :"
+
+#: kgreeter.cpp:234
+msgid "Password:"
+msgstr "Tremenger"
+
+#: kgreeter.cpp:259
+msgid "Login failed!"
+msgstr "Ereañ sac'het"
+
+#: kgreeter.cpp:265
+msgid "Session Type:"
+msgstr "Doare an dalc'h :"
+
+#: kgreeter.cpp:312
+msgid "Go!"
+msgstr "Kit !"
+
+#: kgreeter.cpp:328
+msgid "Shutdown..."
+msgstr "Lazhañ..."
+
+#: kgreeter.cpp:570
+msgid "Logins not available right now."
+msgstr "Ereañ dihegerz evit ar mare."
+
+#: kgreeter.cpp:611
+msgid "login_getcapstr() failed."
+msgstr "login_getcapstr() sac'het"
+
+#: kgreeter.cpp:665 kgreeter.cpp:692
+msgid "Sorry -- your account has expired."
+msgstr "Ho tigarez -- echu eo gant ho kont"
+
+#: kgreeter.cpp:670 kgreeter.cpp:697
+#, c-format
+msgid "Warning: your account expires on %s"
+msgstr "Diwallit : echuiñ a ray ho kont d'ar %s"
+
+#: kgreeter.cpp:724
+msgid "Home directory not available"
+msgstr "Renkell Er Gêr zo dihegerz"

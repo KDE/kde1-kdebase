@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-11-23 15:00-0500\n"
 "Last-Translator: Vladimir Vuksan <vuksan@veus.hr>\n"
 "Language-Team: Croatian\n"
@@ -28,7 +28,7 @@ msgstr "&Navigator diska"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "uporaba: kcmkpanel [-init | {ploèa,opcije,radne povr¹ine,disknav}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Postavke za KPanel"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-01-30 01:12+0100\n"
 "PO-Revision-Date: 1999-02-05 20:33+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -13,117 +13,117 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: krootwm.C:223 krootwm.C:270
+#: krootwm.C:234 krootwm.C:281
 msgid "Execute command"
 msgstr "Käivita käsk"
 
-#: krootwm.C:225 krootwm.C:294
+#: krootwm.C:236 krootwm.C:305
 msgid "Lock screen"
 msgstr "Lukusta ekraan"
 
-#: krootwm.C:226 krootwm.C:295
+#: krootwm.C:237 krootwm.C:306
 msgid "Logout"
 msgstr "Logi välja"
 
-#: krootwm.C:234 krootwm.C:272
+#: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"
 msgstr "Värskenda töölaud"
 
-#: krootwm.C:235 krootwm.C:274
+#: krootwm.C:246 krootwm.C:285
 msgid "Unclutter windows"
 msgstr "Korrasta aknad"
 
-#: krootwm.C:236 krootwm.C:275
+#: krootwm.C:247 krootwm.C:286
 msgid "Cascade windows"
 msgstr "Aknad kaskaadi"
 
-#: krootwm.C:237 krootwm.C:276
+#: krootwm.C:248 krootwm.C:287
 msgid "Arrange icons"
 msgstr "Korrasta ikoonid"
 
-#: krootwm.C:238 krootwm.C:271
+#: krootwm.C:249 krootwm.C:282
 msgid "Display properties"
 msgstr "Ekraani omadused"
 
-#: krootwm.C:246 krootwm.C:269
+#: krootwm.C:257 krootwm.C:280
 msgid "Help on desktop"
 msgstr "Abi töölaua kohta"
 
-#: krootwm.C:247
+#: krootwm.C:258
 msgid "About KDE..."
 msgstr "KDE info..."
 
-#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
+#: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
 msgid "New"
 msgstr "Uus"
 
-#: krootwm.C:266 krootwm.C:305
+#: krootwm.C:277 krootwm.C:316
 msgid "Bookmarks"
 msgstr "Järjehoidjad"
 
-#: krootwm.C:280
 #
+#: krootwm.C:291
 msgid "Arrange Window Maker icons"
 msgstr "Korrasta WindowMaker'i ikoonid"
 
-#: krootwm.C:281
+#: krootwm.C:292
 msgid "Show all"
 msgstr "Näita kõiki"
 
-#: krootwm.C:282
+#: krootwm.C:293
 msgid "Hide other"
 msgstr "Peida teised"
 
-#: krootwm.C:284
+#: krootwm.C:295
 msgid "Show info panel"
 msgstr "Näita infopaneeli"
 
-#: krootwm.C:285
+#: krootwm.C:296
 msgid "Show legal panel"
 msgstr "Näita autorikaitse paneeli"
 
-#: krootwm.C:286
+#: krootwm.C:297
 msgid "Restart"
 msgstr "Käivita uuesti"
 
-#: krootwm.C:288
+#: krootwm.C:299
 msgid "Exit"
 msgstr "Välju"
 
-#: krootwm.C:289
 #
+#: krootwm.C:300
 msgid "Window Maker"
 msgstr "Window Maker"
 
-#: krootwm.C:306
+#: krootwm.C:317
 msgid "Desk"
 msgstr "Laud"
 
-#: krootwm.C:307
+#: krootwm.C:318
 msgid "Windows"
 msgstr "Aknad"
 
-#: krootwm.C:370
+#: krootwm.C:381
 msgid "Edit Bookmarks"
 msgstr "Redigeeri järjehoidjaid"
 
-#: krootwm.C:384 krootwm.C:822
+#: krootwm.C:395 krootwm.C:833
 msgid "Folder"
 msgstr "Kaust"
 
-#: krootwm.C:388
+#: krootwm.C:399
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VIGA: malli ei eksisteeri '%s'"
 
-#: krootwm.C:843
+#: krootwm.C:854
 msgid "Could not create folder"
 msgstr "Kausta pole võimalik luua"
 
-#: krootwm.C:911
+#: krootwm.C:922
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:915
+#: krootwm.C:926
 msgid "Usage:"
 msgstr "Kasutusviis:"

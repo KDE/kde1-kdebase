@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 1.0\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: 1998-06-29 11:00+0200\n"
 "Last-Translator: Kerem ERZURUMLU <kerem@linux.org.tr>\n"
 "Language-Team: Hacettepe Linux Users Group <hacettepe@linux.org.tr>\n"
@@ -42,30 +42,30 @@ msgstr ""
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones.\n"
 "'a teþekkürler"
 
-#: mainwidget.cpp:45
-msgid "System:"
+#: mainwidget.cpp:44
+msgid "KDE Version: "
 msgstr ""
 
-#: mainwidget.cpp:48
+#: mainwidget.cpp:52
 msgid "User: "
 msgstr ""
 
-#: mainwidget.cpp:54
+#: mainwidget.cpp:58
 msgid "Hostname: "
 msgstr ""
 
-#: mainwidget.cpp:62
+#: mainwidget.cpp:66
 msgid "System: "
 msgstr ""
 
-#: mainwidget.cpp:69
+#: mainwidget.cpp:73
 msgid "Release: "
 msgstr ""
 
-#: mainwidget.cpp:77
+#: mainwidget.cpp:81
 msgid "Version: "
 msgstr ""
 
-#: mainwidget.cpp:84
+#: mainwidget.cpp:88
 msgid "Machine: "
 msgstr ""

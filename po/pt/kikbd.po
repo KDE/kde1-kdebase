@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd.po\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1998-11-20 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -55,12 +55,24 @@ msgstr ""
 "Simbolos do Alt desactivados"
 
 #: kikbd.cpp:392
+#, fuzzy
 msgid ""
-"Can not remove Caps Lock from Modifiers.\n"
+"Cannot remove Caps Lock from Modifiers.\n"
 "Caps Lock Emulation disabled"
 msgstr ""
 "Não consigo remover Caps Lock dos Modificadores.\n"
 "Emulação de Caps Lock desactivada"
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Teclado International"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -94,192 +106,190 @@ msgstr "KeyMap: não compreendo o código \"%s\"."
 msgid "KeyMap: key code \"%s\" go out of range."
 msgstr "KeyMap: código \"%s\" fora dos limites."
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Global"
 msgstr "Global"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Window"
 msgstr "Janela"
 
-#: kikbdconf.cpp:95
+#: kikbdconf.cpp:97
 msgid "Class"
 msgstr "Classe"
 
-#: kikbdconf.cpp:98 kikbdconf.cpp:110
+#: kikbdconf.cpp:100 kikbdconf.cpp:112
 msgid "(None)"
 msgstr "(Nenhum)"
 
-#: kikbdconf.cpp:99 kikbdconf.cpp:111
+#: kikbdconf.cpp:101 kikbdconf.cpp:113
 msgid "Right Alt"
 msgstr "Alt Direito"
 
-#: kikbdconf.cpp:100 kikbdconf.cpp:112
+#: kikbdconf.cpp:102 kikbdconf.cpp:114
 msgid "Right Control"
 msgstr "Control Direito"
 
-#: kikbdconf.cpp:101
+#: kikbdconf.cpp:103
 msgid "Rights (Alt+Shift)"
 msgstr "Direitos (Alt+Shift)"
 
-#: kikbdconf.cpp:102
+#: kikbdconf.cpp:104
 msgid "Rights (Ctrl+Alt)"
 msgstr "Direitos (Ctrl+Alt)"
 
-#: kikbdconf.cpp:103
+#: kikbdconf.cpp:105
 msgid "Rights (Ctrl+Shift)"
 msgstr "Direitos (Ctrl+Shift)"
 
-#: kikbdconf.cpp:104
+#: kikbdconf.cpp:106
 msgid "Lefts  (Alt+Shift)"
 msgstr "Esquerdos (Alt+Shift)"
 
-#: kikbdconf.cpp:105
+#: kikbdconf.cpp:107
 msgid "Lefts  (Ctrl+Alt)"
 msgstr "Esquerdos (Ctrl+Alt)"
 
-#: kikbdconf.cpp:106
+#: kikbdconf.cpp:108
 msgid "Lefts  (Ctrl+Shift)"
 msgstr "Esquerdos (Ctrl+Shift)"
 
-#: kikbdconf.cpp:107
+#: kikbdconf.cpp:109
 msgid "Both Shift's (Shift+Shift)"
 msgstr "Ambos os Shift's (Shift+Shift)"
 
-#: kikbdconf.cpp:113
+#: kikbdconf.cpp:115
+#, fuzzy
+msgid "Right Meta"
+msgstr "Alt Direito"
+
+#: kikbdconf.cpp:116
 msgid "Left  Alt"
 msgstr "Alt Esquerdo"
 
-#: kikbdconf.cpp:114
+#: kikbdconf.cpp:117
 msgid "Left  Control"
 msgstr "Control Esquerdo"
 
-#: kikbdconf.cpp:117
+#: kikbdconf.cpp:118
+#, fuzzy
+msgid "Left  Meta"
+msgstr "Alt Esquerdo"
+
+#: kikbdconf.cpp:121
 msgid "Top Left"
 msgstr "Topo Esquerdo"
 
-#: kikbdconf.cpp:118
+#: kikbdconf.cpp:122
 msgid "Top Right"
 msgstr "Topo Direito"
 
-#: kikbdconf.cpp:119
+#: kikbdconf.cpp:123
 msgid "Bottom Left"
 msgstr "Fundo Esquerdo"
 
-#: kikbdconf.cpp:120
+#: kikbdconf.cpp:124
 msgid "Bottom Right"
 msgstr "Fundo Direito"
 
-#: kikbdconf.cpp:147
+#: kikbdconf.cpp:151
 msgid "X default codes"
 msgstr "Códigos X por omissão"
 
-#: kikbdconf.cpp:204
-#, c-format
+#: kikbdconf.cpp:209
+#, fuzzy, c-format
 msgid ""
 "%s\n"
-"Do you want to start Configuration?"
+"Do you want to configure now?"
 msgstr ""
-"%s\n"
-"Quer iniciar a Configuração?"
+"\n"
+"Quer continuar?"
 
-#: kikbdconf.cpp:212
-msgid "Your configuration is empty. Install system default."
-msgstr "A sua configuração está vazia. Instale valores por defeito do sistema."
-
-#: kikbdconf.cpp:218
+#: kikbdconf.cpp:217
 msgid ""
-"Configuration file you have has older format when expected.\n"
-"Some settings may be incorrect."
+"You're using \"International Keyboard\" for the first time.\n"
+"I installed a number of default settings."
 msgstr ""
-"Ficheiro de configuração tem um formato antigo.\n"
-"Alguns parâmetros de configuração podem estar errados."
 
-#: kikbdconf.cpp:226
-msgid ""
-"Configuration file you have has newer format when expected.\n"
-"Some settings may be incorrect."
-msgstr ""
-"Ficheiro de configuração tem um formato demasiado moderno.\n"
-"Alguns parâmetros de configuração podem estar errados."
-
-#: kikbdconf.cpp:353
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "desconhecido"
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "por omissão"
 
-#: kikbdconf.cpp:383
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Autor:  Não especificado"
 
-#: kikbdconf.cpp:385
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:391
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Descripção:   "
 
-#: kikbdconf.cpp:394
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Fonte:   "
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "nenhum ficheiro"
 
-#: kikbdconf.cpp:396
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "ficheiro de utilizador"
 
-#: kikbdconf.cpp:397
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "ficheiro de sistema"
 
-#: kikbdconf.cpp:402
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Estatísticas:  "
 
-#: kikbdconf.cpp:405
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "símbolos"
 
-#: kikbdconf.cpp:408
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "códigos"
 
-#: kikbdconf.cpp:411
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "símbolos alternativos"
 
-#: kikbdconf.cpp:418
-msgid "language"
+#: kikbdconf.cpp:429
+#, fuzzy
+msgid "Language"
 msgstr "língua"
 
-#: kikbdconf.cpp:419
-msgid "charset"
+#: kikbdconf.cpp:433
+#, fuzzy
+msgid "Charset"
 msgstr "código"
 
-#: kikbdconf.cpp:457
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "ERRO do Teclado International"
 
-#: kikbdconf.cpp:473
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Aviso do Teclado International"
 
-#: kikbdconf.cpp:480 kikbdconf.cpp:485 kikbdconf.cpp:498
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Pergunta do Teclado International"
 
-#: kikbdconf.cpp:487
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Configuração"
 
-#: kikbdconf.cpp:497
+#: kikbdconf.cpp:519
 msgid ""
 "\n"
 "Do you want to continue?"
@@ -496,7 +506,8 @@ msgid "&Docked"
 msgstr "&Embeber"
 
 #: widgets.cpp:649
-msgid "Dock into special area in kpanel"
+#, fuzzy
+msgid "Dock into special area in the panel"
 msgstr "Embeber numa área especial do painel"
 
 #: widgets.cpp:658
@@ -522,3 +533,28 @@ msgstr "Arranq&ue"
 #: kcmikbd.cpp:80
 msgid "International Keyboard"
 msgstr "Teclado International"
+
+#~ msgid ""
+#~ "%s\n"
+#~ "Do you want to start Configuration?"
+#~ msgstr ""
+#~ "%s\n"
+#~ "Quer iniciar a Configuração?"
+
+#~ msgid "Your configuration is empty. Install system default."
+#~ msgstr ""
+#~ "A sua configuração está vazia. Instale valores por defeito do sistema."
+
+#~ msgid ""
+#~ "Configuration file you have has older format when expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ficheiro de configuração tem um formato antigo.\n"
+#~ "Alguns parâmetros de configuração podem estar errados."
+
+#~ msgid ""
+#~ "Configuration file you have has newer format when expected.\n"
+#~ "Some settings may be incorrect."
+#~ msgstr ""
+#~ "Ficheiro de configuração tem um formato demasiado moderno.\n"
+#~ "Alguns parâmetros de configuração podem estar errados."

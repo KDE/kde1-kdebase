@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KCONTROL\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,30 +44,34 @@ msgstr ""
 "Kiitokset:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#: mainwidget.cpp:45
-msgid "System:"
-msgstr "Järjestelmä:"
+#: mainwidget.cpp:44
+#, fuzzy
+msgid "KDE Version: "
+msgstr "Versio: "
 
-#: mainwidget.cpp:48
+#: mainwidget.cpp:52
 msgid "User: "
 msgstr "Käyttäjä:"
 
-#: mainwidget.cpp:54
+#: mainwidget.cpp:58
 msgid "Hostname: "
 msgstr "Isäntänimi:"
 
-#: mainwidget.cpp:62
+#: mainwidget.cpp:66
 msgid "System: "
 msgstr "Järjestelmä: "
 
-#: mainwidget.cpp:69
+#: mainwidget.cpp:73
 msgid "Release: "
 msgstr "Järjestelmäversio: "
 
-#: mainwidget.cpp:77
+#: mainwidget.cpp:81
 msgid "Version: "
 msgstr "Versio: "
 
-#: mainwidget.cpp:84
+#: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Tietokone: "
+
+#~ msgid "System:"
+#~ msgstr "Järjestelmä:"

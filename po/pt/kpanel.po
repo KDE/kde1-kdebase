@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1998-12-25 01:11+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-01-26 20:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -9,127 +9,127 @@ msgstr ""
 "Content-Type:\n"
 "Content-Transfer-Encoding:\n"
 
-#: kpanel.C:284
+#: kpanel.C:292
 msgid "&Move"
 msgstr "&Mover"
 
-#: kpanel.C:287
+#: kpanel.C:295
 msgid "&Properties"
 msgstr "&Propriedades"
 
-#: kpanel.C:330
+#: kpanel.C:338
 msgid "Go!"
 msgstr "Começar!"
 
-#: kpanel.C:333 tools.C:890
+#: kpanel.C:341 tools.C:901
 msgid "Where do you want to go tomorrow?"
 msgstr "Onde é que queres ir amanhã?"
 
-#: kpanel.C:408
+#: kpanel.C:416
 msgid "No info available"
 msgstr "Nenhuma informação disponível"
 
-#: kpanel.C:447 props.C:206 props.C:207
+#: kpanel.C:455 props.C:207 props.C:208
 msgid "Logout"
 msgstr "Sair"
 
-#: kpanel.C:455 props.C:205
+#: kpanel.C:463 props.C:206
 msgid "Lock screen"
 msgstr "Bloquear écran"
 
-#: kpanel.C:464 kpanel.C:473
+#: kpanel.C:472 kpanel.C:481
 msgid "Hide the panel"
 msgstr "Esconder o painel"
 
-#: kpanel.C:483 kpanel.C:495
+#: kpanel.C:491 kpanel.C:503
 msgid "Show the panel"
 msgstr "Mostrar o painel"
 
-#: kpanel.C:1100
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Iconificar outras &janelas"
 
-#: kpanel.C:1237
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Nenhum comentário disponivel"
 
-#: kpanel.C:1246 tools.C:899
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Lista de Janelas"
 
-#: kpanel.C:1254 props.C:196
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Navegue rápidamente pelos seus ficheiros"
 
-#: props.C:166
+#: props.C:167
 msgid "Add Application"
 msgstr "Adicionar Aplicação"
 
-#: props.C:168
+#: props.C:169
 msgid "Add an application or a submenu onto the panel"
 msgstr "Adicionar uma aplicação ou um submenu ao painel"
 
-#: props.C:174
+#: props.C:175
 msgid "Add Disk Navigator"
 msgstr "Adicionar Navegador"
 
-#: props.C:176
+#: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
 msgstr "Adicionar um Navegador ao painel"
 
-#: props.C:179
+#: props.C:180
 msgid "Add Windowlist"
 msgstr "Adicionar Lista de Janelas"
 
-#: props.C:181
+#: props.C:182
 msgid "Add a windowlist menu onto the panel"
 msgstr "Adicionar lista de janelas ao painel"
 
-#: events.C:800 props.C:182
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Configurar"
 
-#: props.C:184
+#: props.C:185
 msgid "Configure panel"
 msgstr "Configurar painel"
 
-#: props.C:185
+#: props.C:186
 msgid "Edit Menus"
 msgstr "Editar Menus"
 
-#: props.C:187
+#: props.C:188
 msgid "Add or remove applications in the menu structure "
 msgstr "Adicionar ou remover aplicações ao menu"
 
-#: events.C:802 props.C:188
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Reinicializar"
 
-#: props.C:190
+#: props.C:191
 msgid "Restart panel"
 msgstr "Reinicializar painel"
 
-#: props.C:193
+#: props.C:194
 msgid "Disk Navigator"
 msgstr "Navegador"
 
-#: props.C:201
+#: props.C:202
 msgid "Panel"
 msgstr "Painel"
 
-#: props.C:203
+#: props.C:204
 msgid "Lock Screen"
 msgstr "Bloquear Écran"
 
-#: props.C:450
+#: props.C:451
 msgid "The menu editor is not installed."
 msgstr "O editor de menus não está instalado."
 
-#: events.C:856 props.C:451
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Oops!"
 
-#: tools.C:647
+#: tools.C:648
 msgid ""
 "\n"
 "%b %d"
@@ -137,11 +137,11 @@ msgstr ""
 "\n"
 "%b %d"
 
-#: tools.C:908
+#: tools.C:919
 msgid "KDiskNavigator"
 msgstr "Navegador"
 
-#: events.C:855
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "Não é possivel adicionar isto ao painel como botão!"
 
@@ -152,6 +152,10 @@ msgstr "(pasta vazia)"
 #: pfilemenu.C:480
 msgid "Open Folder"
 msgstr "Abrir Pasta"
+
+#: pfilemenu.C:483
+msgid "Open this folder (+Shift: Launch a terminal here)"
+msgstr ""
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"

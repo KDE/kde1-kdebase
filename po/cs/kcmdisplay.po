@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1999-01-22 23:31+01:00\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Na&stavit.."
 msgid "Wallpaper"
 msgstr "Tapeta"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "®ádná tapeta"
 
@@ -129,102 +129,102 @@ msgstr "Souborová chyba"
 msgid "Can't load image file"
 msgstr "Není mo¾né nahrát soubor s obrázkem"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr "Nepodporované URL"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 "Lituji, tento typ URL není v souèasné dobì podporovám obrazovkovým modulem "
 "KDE."
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "Dvoubarevná pozadí"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "Smíchat barvy z&hora dolù"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "Smíchat barvy z&prava doleva"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "Pou¾ít vzo&r"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "Náhled"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "J&méno vzoru"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "Souèasný"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Plný"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "Rybáøská sí»"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "Trojúhelníky"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "Kvìtiny"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "Ratan"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "Dla¾ba"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr "Nastavení náhodného módu"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr "&Vybírat soubory z adresáøe"
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Listovat ..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr "Èasové zpo¾dìní v sekundách :"
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "V &poøadí"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Pracovní plochy :"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1817
 msgid "&Add"
 msgstr "Pøid&at"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1989
 msgid "Directory error"
 msgstr "Adresáøová chyba"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr "Vybraný adresáø neexistuje"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-02 01:17+0100\n"
 "PO-Revision-Date: 1998-02-21 05:04+0800\n"
 "Last-Translator: Wang Jian <lark@linux.ustc.edu.cn>\n"
 "Language-Team: zh_CN ( gb2312 )\n"
@@ -14,7 +14,7 @@ msgstr "KDE 帮助: 打开 URL"
 msgid "Open URL"
 msgstr "打开 URL"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:290
 msgid "Cannot open: "
 msgstr "无法打开: "
 
@@ -51,16 +51,16 @@ msgstr "加入书签"
 msgid "Open in new Window"
 msgstr "在新窗口中打开"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
 msgstr "info 文件有错误"
 
-#: info.cpp:1258
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
 msgstr "找不到节点: %s"
 
-#: info.cpp:1403
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "无法打开 info 文件: %s"

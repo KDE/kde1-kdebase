@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fotis Andritsopoulos <fandrit@duth.gr>\n"
 
@@ -43,19 +43,19 @@ msgstr "Απόκρυψη του πίνακα"
 msgid "Show the panel"
 msgstr "Εμφάνιση του πίνακα"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Δεν υπάρχει σχετικό σχόλιο"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Λίστα παραθύρων"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr "Προσθήκη λίστας παραθύρων"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Προσθήκη λίστας παραθύρων στον πίνακα"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Add or remove applications in the menu structure "
 msgstr ""
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Επανεκίννηση"
 
@@ -126,7 +126,7 @@ msgstr "Κλέιδωμα οθόνης"
 msgid "The menu editor is not installed."
 msgstr ""
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp 0.5.4\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-02 01:17+0100\n"
 "PO-Revision-Date: 1998-02-26 19:39+MET\n"
 "Last-Translator: Balazs Nagy <julian7@kva.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -21,7 +21,7 @@ msgstr "KDE Segítség: URL megnyitása"
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:290
 msgid "Cannot open: "
 msgstr "Nem lehet megnyitni: "
 
@@ -58,16 +58,16 @@ msgstr "Hozzáadás a kedvencekhez"
 msgid "Open in new Window"
 msgstr "Megnyitás új ablakban"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
 msgstr "Hiba az info file-ban"
 
-#: info.cpp:1258
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nincs meg a %s node"
 
-#: info.cpp:1403
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Nincs %s nevû info file!"

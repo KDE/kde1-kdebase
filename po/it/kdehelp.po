@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSIONPOT-Creation-Date: 1998-01-03 22:39+0100\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-02 01:17+0100\n"
 "PO-Revision-Date: 1998-02-03 16:00+0100nLast-Translator: Andrea Rizzi "
 "<Bilibao@ouverture.it>\n"
 "Language-Team: Italiano <it@li.org>\n"
@@ -17,7 +17,7 @@ msgstr "Guida KDE: Apri Indirizzo(URL)"
 msgid "Open URL"
 msgstr "Apri indirizzo(URL)"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:290
 msgid "Cannot open: "
 msgstr "Impossibile aprire: "
 
@@ -53,16 +53,16 @@ msgstr "Aggiungi segnalibro"
 msgid "Open in new Window"
 msgstr "Apri in una nuova finestra"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
 msgstr "Errore nel file info"
 
-#: info.cpp:1258
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
 msgstr "Nodo non trovato: %s"
 
-#: info.cpp:1403
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Impossibile aprire il file info: %s"

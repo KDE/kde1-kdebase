@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel \n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-12-27 22:08+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
@@ -22,7 +22,7 @@ msgstr "&Nawigator dyskowy"
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "u¿ycie: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Konfiguracja KPanel"
 

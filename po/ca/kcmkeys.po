@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkeys\n"
-"POT-Creation-Date: 1998-11-16 01:20+0100\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
 "PO-Revision-Date: 1998-12-15 22:26+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -13,75 +13,47 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: main.cpp:64
+#: main.cpp:72
 msgid "&Standard shortcuts"
 msgstr "Dreceres &estàndard"
 
-#: main.cpp:69
+#: main.cpp:80
 msgid "&Global shortcuts"
 msgstr "Dreceres &globals"
 
-#: main.cpp:76
+#: main.cpp:88
 msgid "usage: kcmkeys [-init | {standard,global}]\n"
 msgstr "us: kcmkeys [-init | {standard,global}]\n"
 
-#: main.cpp:118
+#: main.cpp:132
 msgid "Key binding settings"
 msgstr "Valors dels lligams de tecla"
 
-#: standard.cpp:53
-msgid "New"
-msgstr "Nou"
-
-#: standard.cpp:57
-msgid "Next"
-msgstr "Següent"
-
-#: standard.cpp:58
-msgid "Prior"
-msgstr "Previ"
-
-#: standard.cpp:63
-msgid "Find"
-msgstr "Busca"
-
-#: standard.cpp:66
-msgid "Home"
-msgstr "Inici"
-
-#: standard.cpp:67
-msgid "End"
-msgstr "Fi"
-
-#: global.cpp:81 standard.cpp:83
+#: keyconfig.cpp:106
 msgid "Current scheme"
 msgstr "Esquema actual"
 
-#: global.cpp:83 standard.cpp:84
+#: keyconfig.cpp:108
 msgid "KDE default"
 msgstr "KDE predeterminat"
 
-#: standard.cpp:85
-msgid "KDE lite"
-msgstr "KDE limitat"
-
-#: global.cpp:90 standard.cpp:90
+#: keyconfig.cpp:115
 msgid "&Key scheme"
 msgstr "Esquema de &tecla"
 
-#: global.cpp:101
+#: keyconfig.cpp:126
 msgid "&Add ..."
 msgstr "&Afegeix ..."
 
-#: global.cpp:123
+#: keyconfig.cpp:148
 msgid "&Save changes"
 msgstr "&Desa canvis"
 
-#: global.cpp:182
+#: keyconfig.cpp:211
 msgid "Error removing scheme"
 msgstr "Error en eliminar l'esquema"
 
-#: global.cpp:183
+#: keyconfig.cpp:212
 msgid ""
 "This key scheme could not be removed.\n"
 "Perhaps you do not have permission to alter the file\n"
@@ -91,11 +63,11 @@ msgstr ""
 "Potser no teniu permisos per alterar el fitxer\n"
 "de sistema on es guarda l'esquema de tecla."
 
-#: global.cpp:314
+#: keyconfig.cpp:343
 msgid "Naming conflict"
 msgstr "Conflicte de noms"
 
-#: global.cpp:315
+#: keyconfig.cpp:344
 msgid ""
 "Please choose a unique name for the new key\n"
 "scheme. The one you entered already appears\n"
@@ -218,3 +190,30 @@ msgstr "Canvia a l'escriptori de dalt"
 #: ../../kwm/kwmbindings.cpp:27
 msgid "Switch one desktop down"
 msgstr "Canvia a l'escriptori de baix"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nou"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "Següent"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "Previ"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "Busca"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "Inici"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "Fi"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE limitat"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1999-02-03 23:59+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -84,31 +84,31 @@ msgstr "Joc de caràcters per omissió"
 msgid "Use language charset"
 msgstr "Usa el joc de caràcters de l'idioma"
 
-#: htmlopts.cpp:329
+#: htmlopts.cpp:330
 msgid "Background Color:"
 msgstr "Color de fons:"
 
-#: htmlopts.cpp:341
+#: htmlopts.cpp:342
 msgid "Normal Text Color:"
 msgstr "Color de text normal:"
 
-#: htmlopts.cpp:353
+#: htmlopts.cpp:354
 msgid "URL Link Color:"
 msgstr "Color d'enllaç URL:"
 
-#: htmlopts.cpp:365
+#: htmlopts.cpp:366
 msgid "Followed Link Color:"
 msgstr "Color d'enllaç conegut:"
 
-#: htmlopts.cpp:377
+#: htmlopts.cpp:378
 msgid "Change cursor over link."
 msgstr "Canvia el cursor sobre l'enllaç"
 
-#: htmlopts.cpp:383
+#: htmlopts.cpp:384
 msgid "Underline links"
 msgstr "Enllaços subratllats"
 
-#: htmlopts.cpp:390
+#: htmlopts.cpp:391
 msgid "Always use my colors"
 msgstr "Usa sempre els meus colors"
 

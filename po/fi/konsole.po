@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KONSOLE\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,123 +14,123 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: main.C:284
+#: main.C:303
 msgid "&Normal"
 msgstr "&Normaali"
 
-#: main.C:287
+#: main.C:306
 msgid "&Small"
 msgstr "&Pieni"
 
-#: main.C:288
+#: main.C:307
 msgid "&Medium"
 msgstr "&Keskikokoinen"
 
-#: main.C:289
+#: main.C:308
 msgid "&Large"
 msgstr "&Suuri"
 
-#: main.C:290
+#: main.C:309
 msgid "&Huge"
 msgstr "&Valtava"
 
-#: main.C:292
+#: main.C:311
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:293
+#: main.C:312
 msgid "Linux (small)"
 msgstr "Linux (pieni)"
 
-#: main.C:296
+#: main.C:315
 msgid "&More ..."
 msgstr "&Lisää..."
 
-#: main.C:302
+#: main.C:321
 msgid "&Hide"
 msgstr "&Piilota"
 
-#: main.C:303
+#: main.C:322
 msgid "&Left"
 msgstr "&Vasen"
 
-#: main.C:304
+#: main.C:323
 msgid "&Right"
 msgstr "&Oikea"
 
-#: main.C:310
+#: main.C:329
 msgid "40x15 (&small)"
 msgstr "40x15 (&pieni)"
 
-#: main.C:311
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:312
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:313
+#: main.C:332
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:314
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:323
+#: main.C:342
 msgid "&Menubar"
 msgstr "&Valikkorivi"
 
-#: main.C:325
+#: main.C:344
 msgid "&Frame"
 msgstr "&Kehys"
 
-#: main.C:327
+#: main.C:346
 msgid "Scroll&bar"
 msgstr "&Vierityspalkki"
 
-#: main.C:329
+#: main.C:348
 msgid "BS sends &DEL"
 msgstr "BS lähettää &DEL"
 
-#: main.C:332
+#: main.C:351
 msgid "&Font"
 msgstr "&Kirjasin"
 
-#: main.C:333
+#: main.C:352
 msgid "&Size"
 msgstr "K&oko"
 
-#: main.C:334
+#: main.C:353
 msgid "&Schema"
 msgstr "&Värimalli"
 
-#: main.C:336
+#: main.C:355
 msgid "&Save options"
 msgstr "&Tallenna asetukset"
 
-#: main.C:340
+#: main.C:359
 msgid "&About ..."
 msgstr "&Tietoja ..."
 
-#: main.C:341
+#: main.C:360
 msgid "&User's Manual ..."
 msgstr "&Käyttöohje ..."
 
-#: main.C:342
+#: main.C:361
 msgid "&Technical Reference ..."
 msgstr "Tekninen &referenssi ..."
 
-#: main.C:346
+#: main.C:365
 msgid "cd"
 msgstr "cd"
 
-#: main.C:359
+#: main.C:378
 msgid "Sessions"
 msgstr "Sessiot"
 
-#: main.C:502
+#: main.C:517
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -139,12 +139,12 @@ msgstr ""
 "Kirjasinta `%s' ei löytynyt.\n"
 "Tarkista README.linux.console saadaksesi lisätietoja."
 
-#: main.C:607
+#: main.C:621
 #, c-format
 msgid "About %s"
 msgstr "Tietoja %s"
 
-#: main.C:609
+#: main.C:623
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -164,12 +164,12 @@ msgstr ""
 "License:n alla ja on ILMAN MITÄÄN TOIMINTATAKUITA.\n"
 "Lue `LICENSE.readme´ saadaksesi lisätietoja."
 
-#: main.C:732
+#: main.C:749
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' lopetettiin epänormaalisti."
 
-#: main.C:735
+#: main.C:752
 msgid ""
 "\n"
 "Return code = "
@@ -177,6 +177,6 @@ msgstr ""
 "\n"
 "Paluukoodi = "
 
-#: main.C:928
+#: main.C:936
 msgid "Welcome to the console"
 msgstr "Tervetuloa konsoliin"

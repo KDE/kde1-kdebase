@@ -3,128 +3,128 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-12-17 22:28+0100\n"
 "Last-Translator: Logi Ragnarsson <logir@hi.is>\n"
 "Language-Team: ia <kde-isl@mmedia.is>\n"
 
-#: main.C:284
+#: main.C:303
 msgid "&Normal"
 msgstr "&Venjulegt"
 
-#: main.C:287
+#: main.C:306
 msgid "&Small"
 msgstr "&Lítið"
 
-#: main.C:288
+#: main.C:307
 msgid "&Medium"
 msgstr "&Miðlungs"
 
-#: main.C:289
+#: main.C:308
 msgid "&Large"
 msgstr "S&tórt"
 
-#: main.C:290
+#: main.C:309
 msgid "&Huge"
 msgstr "&Risastórt"
 
-#: main.C:292
+#: main.C:311
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:293
+#: main.C:312
 msgid "Linux (small)"
 msgstr "L&inux (lítið)"
 
-#: main.C:296
+#: main.C:315
 msgid "&More ..."
 msgstr "&Meira ..."
 
-#: main.C:302
+#: main.C:321
 msgid "&Hide"
 msgstr "&Fela"
 
-#: main.C:303
+#: main.C:322
 msgid "&Left"
 msgstr "&Vinstri"
 
-#: main.C:304
+#: main.C:323
 msgid "&Right"
 msgstr "&Hægri"
 
-#: main.C:310
+#: main.C:329
 msgid "40x15 (&small)"
 msgstr "40x15 (&lítið)"
 
-#: main.C:311
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:312
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:313
+#: main.C:332
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:314
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:323
+#: main.C:342
 msgid "&Menubar"
 msgstr "V&alslá"
 
-#: main.C:325
+#: main.C:344
 msgid "&Frame"
 msgstr "&Rammi"
 
-#: main.C:327
+#: main.C:346
 msgid "Scroll&bar"
 msgstr "&Rennislá"
 
-#: main.C:329
+#: main.C:348
 msgid "BS sends &DEL"
 msgstr "BS sendir &DEL"
 
-#: main.C:332
+#: main.C:351
 msgid "&Font"
 msgstr "&Letur"
 
-#: main.C:333
+#: main.C:352
 msgid "&Size"
 msgstr "&Stærð"
 
-#: main.C:334
+#: main.C:353
 msgid "&Schema"
 msgstr "S&tef"
 
-#: main.C:336
+#: main.C:355
 msgid "&Save options"
 msgstr "&Vista stillingar"
 
-#: main.C:340
+#: main.C:359
 msgid "&About ..."
 msgstr "&Um ..."
 
-#: main.C:341
+#: main.C:360
 msgid "&User's Manual ..."
 msgstr "&Handbók ..."
 
-#: main.C:342
+#: main.C:361
 msgid "&Technical Reference ..."
 msgstr "&Tæknilegar uplýsingar ..."
 
-#: main.C:346
+#: main.C:365
 msgid "cd"
 msgstr "cd"
 
-#: main.C:359
+#: main.C:378
 msgid "Sessions"
 msgstr "Setur"
 
-#: main.C:502
+#: main.C:517
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -133,12 +133,12 @@ msgstr ""
 "Leturgerðin `%s' fannst ekki.\n"
 "nánari upplýsingar í README.linux.console skránni."
 
-#: main.C:607
+#: main.C:621
 #, c-format
 msgid "About %s"
 msgstr "Um %s"
 
-#: main.C:609
+#: main.C:623
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -158,12 +158,12 @@ msgstr ""
 "\"Artistic License\" og ENGIN ÁBYRGÐ er tekin á virkni\n"
 "þess. Sjá nánar í skránni LICENSE.readme"
 
-#: main.C:732
+#: main.C:749
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' hætti óeðlilega."
 
-#: main.C:735
+#: main.C:752
 msgid ""
 "\n"
 "Return code = "
@@ -171,6 +171,6 @@ msgstr ""
 "\n"
 "Skilagildi = "
 
-#: main.C:928
+#: main.C:936
 msgid "Welcome to the console"
 msgstr "Velkomin í skjáherminn"

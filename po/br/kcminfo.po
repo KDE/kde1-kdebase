@@ -1,0 +1,235 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcminfo 1.1\n"
+"POT-Creation-Date: 1998-12-12 15:11+0100\n"
+"PO-Revision-Date: 1999-02-06 19:58+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>Language-Team: "
+"Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: info.cpp:50
+#, c-format
+msgid "screen #%d"
+msgstr "skramm #%d"
+
+#: info.cpp:52
+#, c-format
+msgid "  dimensions          : %dx%d pixels (%dx%d mm)\n"
+msgstr "  mentoù                      : %dx%d piksel (%dx%d mm)\n"
+
+#: info.cpp:56
+#, c-format
+msgid "  resolution          : %dx%d dots per inch\n"
+msgstr "  spister                     : %dx%d pikenn dre meudad\n"
+
+#: info.cpp:61
+#, c-format
+msgid "  depths (%d)          : "
+msgstr "  donder (%d)                  : "
+
+#: info.cpp:85
+#, c-format
+msgid "name of display       : %s"
+msgstr "anv an diskouez               : %s"
+
+#: info.cpp:87
+#, c-format
+msgid "version number        : %i.%i"
+msgstr "niverenn an doare             : %i.%i"
+
+#: info.cpp:89
+#, c-format
+msgid "vendor string         : %s"
+msgstr "hedad ar saver                : %s"
+
+#: info.cpp:91
+#, c-format
+msgid "vendor release number : %i"
+msgstr "niverenn rummad ar saver      : %i"
+
+#: info.cpp:93
+#, c-format
+msgid "default screen number : %i"
+msgstr "niverenn ar skramm dre ziouer : %i"
+
+#: info.cpp:95
+#, c-format
+msgid "number of screens     : %i"
+msgstr "niver a skrammoù     : %i"
+
+#: info.cpp:179
+msgid ""
+"No Information available\n"
+" or\n"
+"this system is not yet supported :-("
+msgstr ""
+"Titour hergez ebet\n"
+" pe\n"
+"n'eo ket skoret ar reizhiad-mañ c'hoazh :-("
+
+#: info_fbsd.cpp:73
+#, c-format
+msgid "%s, unknown speed"
+msgstr "%s, tizh dianav"
+
+#: info_fbsd.cpp:75
+#, c-format
+msgid "%s running at %s MHz"
+msgstr "%s o vont en-dro da %s MHz"
+
+#: info_fbsd.cpp:213
+msgid "Ahh couldn't open fstab!"
+msgstr "Dic'houest da zigeriñ fstab, siwazh !"
+
+#: info_fbsd.cpp:220 info_fbsd.cpp:221
+msgid "Device"
+msgstr "Trobarzhell"
+
+#: info_fbsd.cpp:223 info_fbsd.cpp:224
+msgid "Mount Point"
+msgstr "Poent mountañ"
+
+#: info_fbsd.cpp:226 info_fbsd.cpp:227
+msgid "FS Type"
+msgstr "Rizh ar RR"
+
+#: info_fbsd.cpp:229 info_fbsd.cpp:230
+msgid "Mount Options"
+msgstr "Dibaboù mountañ"
+
+#: info_hpux.cpp:54
+msgid "unknown CPU type"
+msgstr "Rizh CPU dianav"
+
+#: info_hpux.cpp:62
+msgid "unavailable"
+msgstr "dihegerz"
+
+#: info_hpux.cpp:67
+msgid "Number of active processor(s)= "
+msgstr "Niver a gewerier(où) oberiant="
+
+#: info_linux.cpp:99
+msgid "Value"
+msgstr "Gwerzh"
+
+#: info_linux.cpp:114
+msgid "DMA-Channel"
+msgstr "Kanol-DMA"
+
+#: info_linux.cpp:115 info_linux.cpp:128
+msgid "used by"
+msgstr "implijet gant"
+
+#: info_linux.cpp:127
+msgid "I/O-Range"
+msgstr "Skeul-E/D"
+
+#: main.cpp:79
+msgid "&Memory"
+msgstr "&Memor"
+
+#: main.cpp:82
+msgid "&Processor"
+msgstr "&Kewerier"
+
+#: main.cpp:85
+msgid "&Interrupts"
+msgstr "Sp&anoù"
+
+#: main.cpp:88
+msgid "DMA-C&hannels"
+msgstr "Kanolioù  &DMA"
+
+#: main.cpp:91
+msgid "&IO-Ports"
+msgstr "Porzhioù &E/D"
+
+#: main.cpp:94
+msgid "PCI-&Bus"
+msgstr "&Bus-PCI"
+
+#: main.cpp:97
+msgid "S&ound"
+msgstr "&Son"
+
+#: main.cpp:100
+msgid "&Devices"
+msgstr "&Trobarzhelloù"
+
+#: main.cpp:103
+msgid "S&CSI"
+msgstr "S&CSI"
+
+#: main.cpp:106
+msgid "P&artitions"
+msgstr "&Parzhadurioù"
+
+#: main.cpp:109
+msgid "&X-Server"
+msgstr "Servijer-&X"
+
+#: main.cpp:120
+msgid ""
+"usage: kcminfo [-init | "
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+msgstr ""
+"arveriadur : kcminfo [-init | \n"
+"{memory,processor,interrupts,dma,ioports,pci,sound,devices,scsi,partitions,xs"
+"erver}]\n"
+
+#: main.cpp:148
+msgid "System Information"
+msgstr "Titouroù diwar ar reizhiad"
+
+#: memory.cpp:15
+msgid "Total memory"
+msgstr "Memor hollek"
+
+#: memory.cpp:25
+msgid "Free memory"
+msgstr "Memor dieub"
+
+#: memory.cpp:33
+msgid "Shared memory"
+msgstr "Memor rannet"
+
+#: memory.cpp:41
+msgid "Buffer memory"
+msgstr "Memor skurzer"
+
+#: memory.cpp:49
+msgid "Swap memory"
+msgstr "Memor disloañ"
+
+#: memory.cpp:57
+msgid "Free swap memory"
+msgstr "Memor disloañ dieub"
+
+#: memory.cpp:78
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld okted = %8.2f Mo"
+
+#: memory.cpp:100 memory.cpp:101 memory.cpp:102 memory.cpp:103 memory.cpp:104
+#: memory.cpp:105 memory_fbsd.cpp:25 memory_fbsd.cpp:26 memory_fbsd.cpp:27
+msgid "Not available"
+msgstr "Dihegerz"
+
+#: memory_hpux.cpp:23 memory_hpux.cpp:24 memory_hpux.cpp:25 memory_hpux.cpp:26
+#: memory_sgi.cpp:30
+msgid "Not Available"
+msgstr "Dihegerz"

@@ -459,7 +459,6 @@ msgid "Option %s is not support on this plattform!"
 msgstr "L'opzione %s non è supportata su questa piattaforma!"
 
 #: main.cpp:422
-#,
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kdisplay\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1998-02-26 22:36+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "&Oppsett..."
 msgid "Wallpaper"
 msgstr "Tapet"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "Intet tapet"
 
@@ -129,100 +129,100 @@ msgstr "Filfeil"
 msgid "Can't load image file"
 msgstr "Kan ikke laste bildefil"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr "Ustøttet URL"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Beklager, denen type URL er foreløbig ustøttet av KDE Skjermmodul"
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "To fargebakgrunner"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "Gradvis fargeovergang fra &topp til bunn"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "Gradvis fargeovergang fra &høyre til venstre"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "Bruk &mønster"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "Forhåndsvis"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "Mønsternavn"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "Gjeldende"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Fylt"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "Fiskegarn"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "Trekanter"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "Blomster"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "Rotting"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "Brusten"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr "Filfeldig modus-oppsett"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr "Velg filer fra &katalog"
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Bla igjennom ..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr "Tidsforsinkelse i sekunder :"
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "I &rekkefølge"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Skrivebord :"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1817
 msgid "&Add"
 msgstr "L&egg til"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1989
 msgid "Directory error"
 msgstr "Katalogfeil"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr "Valgt katalog finnes ikke"
 

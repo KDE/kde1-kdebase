@@ -7,12 +7,12 @@ msgstr ""
 "Project-Id-Version: kbgndwm VERSION\n"
 "POT-Creation-Date: 1998-11-28 01:10+0100\n"
 "PO-Revision-Date: 1999-02-03 14:00+MET\n"
-"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Gregor Zumstein <zumstein@ssd.ethz.ch>\n"
 
 #: kbgndwm.cpp:45
 msgid "Display Settings"

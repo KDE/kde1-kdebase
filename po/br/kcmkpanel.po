@@ -1,0 +1,244 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel-1.1\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
+"PO-Revision-Date: 1999-02-05 14:45+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:64
+msgid "&Panel"
+msgstr "&Panell"
+
+#: main.cpp:70
+msgid "&Desktops"
+msgstr "&Burevioù"
+
+#: main.cpp:73
+msgid "Disk &Navigator"
+msgstr "&Merdeer ar bladenn"
+
+#: main.cpp:79
+msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+msgstr "arveriadur : kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
+
+#: main.cpp:113
+msgid "KPanel Configuration"
+msgstr "Kefluniadur KPanel"
+
+#: panel.cpp:59
+msgid "Location"
+msgstr "Lec'hiadur"
+
+#: panel.cpp:60
+msgid "&Top"
+msgstr "El l&aez"
+
+#: panel.cpp:61
+msgid "&Left"
+msgstr "A-&gleiz"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr "En &traoñ"
+
+#: panel.cpp:63
+msgid "&Right"
+msgstr "A-&zehou"
+
+#: panel.cpp:75
+msgid "Taskbar"
+msgstr "Barrenn dleadoù"
+
+#: panel.cpp:76
+msgid "&Hidden"
+msgstr "&Kuzh"
+
+#: panel.cpp:78
+msgid "T&op"
+msgstr "&Laez"
+
+#: panel.cpp:80
+msgid "Botto&m"
+msgstr "T&raoñ"
+
+#: panel.cpp:82
+msgid "Top/Le&ft"
+msgstr "Laez/a-&gleiz"
+
+#: panel.cpp:95
+msgid "Style"
+msgstr "Giz"
+
+#: panel.cpp:97
+msgid "T&iny"
+msgstr "&Tanav"
+
+#: panel.cpp:99
+msgid "&Normal"
+msgstr "&Boas"
+
+#: panel.cpp:101
+msgid "L&arge"
+msgstr "&Ledan"
+
+#: desktops.cpp:73
+msgid "&Visible"
+msgstr "&Hewel"
+
+#: desktops.cpp:82
+msgid "&Width"
+msgstr "&Ledander"
+
+#: options.cpp:38
+msgid "Menu Tooltips"
+msgstr "Lagadennoù war al lañserioù"
+
+#: options.cpp:62
+msgid "Show &Menu Tooltips"
+msgstr "Diskouez &lagadennoù war al lañserioù"
+
+#: options.cpp:84
+msgid "De&lay:"
+msgstr "&Gedvezh"
+
+#: options.cpp:91 options.cpp:160 options.cpp:262
+msgid "Small"
+msgstr "Bihan"
+
+#: options.cpp:98 options.cpp:167 options.cpp:269
+msgid "Large"
+msgstr "Bras"
+
+#: options.cpp:110
+msgid "Visuals"
+msgstr "Gwelus"
+
+#: options.cpp:144
+msgid "Auto &Hide Panel"
+msgstr "Panell &emguzh"
+
+#: options.cpp:153 options.cpp:255
+msgid "Delay:"
+msgstr "Gedvezh :"
+
+#: options.cpp:184 options.cpp:286 options.cpp:349
+msgid "Speed:"
+msgstr "Tizh :"
+
+#: options.cpp:191 options.cpp:293 options.cpp:356
+msgid "Slow"
+msgstr "Gorrek"
+
+#: options.cpp:198 options.cpp:300 options.cpp:363
+msgid "Fast"
+msgstr "Buan"
+
+#: options.cpp:246
+msgid "Auto Hide &Taskbar"
+msgstr "Barrenn an &dleadoù emguzh"
+
+#: options.cpp:341
+msgid "Animate Show/Hide"
+msgstr "Buhezadur Diskouez/Kuzh"
+
+#: options.cpp:395
+msgid "Others"
+msgstr "Re all"
+
+#: options.cpp:408
+msgid "Personal Menu Entries &First"
+msgstr "Enmontoù lañser &diouzoc'h da gentañ"
+
+#: options.cpp:416
+msgid "Menu F&olders First"
+msgstr "&Renkelloù lañser da gentañ"
+
+#: options.cpp:424
+msgid "&Clock shows time in AM/PM format"
+msgstr "&Horolaj o tiskouez an eur doare DB/GM"
+
+#: options.cpp:432
+msgid "Clock shows time in &Internet beats"
+msgstr "H&orolaj o tiskouez an eur e talmoù ar &Genrouedad"
+
+#: disknav.cpp:38
+msgid "History"
+msgstr "Istor"
+
+#: disknav.cpp:62
+msgid "Edit entries: (drag a folder and create a link)"
+msgstr "Aozañ enmontoù : (sachit ur renkell ha krouit un ere)"
+
+#: disknav.cpp:64
+msgid "Edit &Personal..."
+msgstr "Aozañ &ho re..."
+
+#: disknav.cpp:74
+msgid "Edit &Shared..."
+msgstr "Aozañ ar re &rannet"
+
+#: disknav.cpp:112
+msgid "Max recent folder entries:"
+msgstr "Muiañ niver a enmoutoù renkell nevezik :"
+
+#: disknav.cpp:121
+msgid "Max recent file entries:"
+msgstr "Muiañ niver a enmoutoù restr nevezik :"
+
+#: disknav.cpp:130
+msgid "Max files in a single folder:"
+msgstr "Muiañ niver a restroù en ur renkell :"
+
+#: disknav.cpp:159
+msgid "Show dot files"
+msgstr "Diskouez ar restroù kuzh"
+
+#: disknav.cpp:166
+msgid "Ignore case when sorting"
+msgstr "Dievezhiek d'ar c'hef pa rummer"
+
+#: disknav.cpp:173
+msgid "Show Shared section"
+msgstr "Dikouez lodenn ar re rannet"
+
+#: disknav.cpp:180
+msgid "Show Personal section"
+msgstr "Diskouez lodenn ho re"
+
+#: disknav.cpp:187
+msgid "Show Recent section"
+msgstr "Diskouez lodenn ar re nevezik"
+
+#: disknav.cpp:194
+msgid "Show Option entry"
+msgstr "Diskouez en enmont Dibaboù"
+
+#: disknav.cpp:210
+msgid "Terminal application:"
+msgstr "Arload termenell"

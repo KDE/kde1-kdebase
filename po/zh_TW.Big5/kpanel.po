@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-04-20 23:02+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,19 +52,19 @@ msgstr "隱藏 panel"
 msgid "Show the panel"
 msgstr "顯示 panel"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr ""
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "沒有任何說明"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "視窗列表"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr "加入視窗列表"
 msgid "Add a windowlist menu onto the panel"
 msgstr "在 panel 上新增一個視窗列表"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "設定"
 
@@ -111,7 +111,7 @@ msgstr "編輯功\能表"
 msgid "Add or remove applications in the menu structure "
 msgstr "新增或移除功\能表結構中的應用程式 "
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "重新啟動"
 
@@ -135,7 +135,7 @@ msgstr "鎖住螢幕"
 msgid "The menu editor is not installed."
 msgstr "沒有安裝功\能表編輯程式."
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "糟糕"
 
@@ -149,7 +149,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr ""
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr ""
 

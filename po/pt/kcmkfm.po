@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkfm\n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-01-11 01:13+0100\n"
 "PO-Revision-Date: 1998-12-28 00:00+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt\n"
@@ -46,7 +46,8 @@ msgstr "&Ícones de Fundo"
 msgid ""
 "usage: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 msgstr ""
-"utilização: %s [-init | {font,color,misc,proxy,http,useragent,cookies,icons}]\n"
+"utilização: %s [-init | "
+"{font,color,misc,proxy,http,useragent,cookies,icons}]\n"
 
 #: main.cpp:178
 msgid "KFM Configuration"
@@ -80,29 +81,33 @@ msgstr "Código por Omissão"
 msgid "Use language charset"
 msgstr "Utilizar código da língua"
 
-#: htmlopts.cpp:329
+#: htmlopts.cpp:330
 msgid "Background Color:"
 msgstr "Cor de Fundo:"
 
-#: htmlopts.cpp:341
+#: htmlopts.cpp:342
 msgid "Normal Text Color:"
 msgstr "Cor do Texto Normal:"
 
-#: htmlopts.cpp:353
+#: htmlopts.cpp:354
 msgid "URL Link Color:"
 msgstr "Cor dos Ligações:"
 
-#: htmlopts.cpp:365
+#: htmlopts.cpp:366
 msgid "Followed Link Color:"
 msgstr "Cor das Ligações Seguidas:"
 
-#: htmlopts.cpp:377
+#: htmlopts.cpp:378
 msgid "Change cursor over link."
 msgstr "Mudar cursor sobre link"
 
-#: htmlopts.cpp:383
+#: htmlopts.cpp:384
 msgid "Underline links"
 msgstr "Sublinhar Ligações"
+
+#: htmlopts.cpp:391
+msgid "Always use my colors"
+msgstr ""
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"

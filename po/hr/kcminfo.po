@@ -25,7 +25,7 @@ msgstr "  velièina            : %dx%d piksela (%dx%d mm)\n"
 #: info.cpp:56
 #, c-format
 msgid "  resolution          : %dx%d dots per inch\n"
-msgstr "  rezolucija	      : %dx%d toèaka po inèu\n"
+msgstr "  rezolucija\t      : %dx%d toèaka po inèu\n"
 
 #: info.cpp:61
 #, c-format
@@ -35,7 +35,7 @@ msgstr "  dubine (%d)          :"
 #: info.cpp:85
 #, c-format
 msgid "name of display       : %s"
-msgstr "ime prikaza	      : %s"
+msgstr "ime prikaza\t      : %s"
 
 #: info.cpp:87
 #, c-format

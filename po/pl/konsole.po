@@ -1,128 +1,128 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: konsole \n"
-"POT-Creation-Date: 1998-12-22 01:15+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-12-29 21:19+0200\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
-#: main.C:284
+#: main.C:303
 msgid "&Normal"
 msgstr "No&rmalny"
 
-#: main.C:287
+#: main.C:306
 msgid "&Small"
 msgstr "&Ma³a"
 
-#: main.C:288
+#: main.C:307
 msgid "&Medium"
 msgstr "¦&rednia"
 
-#: main.C:289
+#: main.C:308
 msgid "&Large"
 msgstr "&Du¿a"
 
-#: main.C:290
+#: main.C:309
 msgid "&Huge"
 msgstr "&Wielka"
 
-#: main.C:292
+#: main.C:311
 msgid "&Linux"
 msgstr "&Linux"
 
-#: main.C:293
+#: main.C:312
 msgid "Linux (small)"
 msgstr "Linux (ma³a)"
 
-#: main.C:296
+#: main.C:315
 msgid "&More ..."
 msgstr "Wiê&cej..."
 
-#: main.C:302
+#: main.C:321
 msgid "&Hide"
 msgstr "&Ukryj"
 
-#: main.C:303
+#: main.C:322
 msgid "&Left"
 msgstr "Po &lewej"
 
-#: main.C:304
+#: main.C:323
 msgid "&Right"
 msgstr "Po &prawej"
 
-#: main.C:310
+#: main.C:329
 msgid "40x15 (&small)"
 msgstr "40x15 (&ma³a)"
 
-#: main.C:311
+#: main.C:330
 msgid "80x24 (&vt100)"
 msgstr "80x24 (&vt100)"
 
-#: main.C:312
+#: main.C:331
 msgid "80x25 (&ibmpc)"
 msgstr "80x25 (&ibmpc)"
 
-#: main.C:313
+#: main.C:332
 msgid "80x40 (&xterm)"
 msgstr "80x40 (&xterm)"
 
-#: main.C:314
+#: main.C:333
 msgid "80x52 (ibmv&ga)"
 msgstr "80x52 (ibmv&ga)"
 
-#: main.C:323
+#: main.C:342
 msgid "&Menubar"
 msgstr "Pasek &menu"
 
-#: main.C:325
+#: main.C:344
 msgid "&Frame"
 msgstr "&Ramka"
 
-#: main.C:327
+#: main.C:346
 msgid "Scroll&bar"
 msgstr "Pasek &przewijania"
 
-#: main.C:329
+#: main.C:348
 msgid "BS sends &DEL"
 msgstr "BS wysy³a &DEL"
 
-#: main.C:332
+#: main.C:351
 msgid "&Font"
 msgstr "&Czcionka"
 
-#: main.C:333
+#: main.C:352
 msgid "&Size"
 msgstr "&Rozmiar"
 
-#: main.C:334
+#: main.C:353
 msgid "&Schema"
 msgstr "&Schemat"
 
-#: main.C:336
+#: main.C:355
 msgid "&Save options"
 msgstr "&Zapisz opcje"
 
-#: main.C:340
+#: main.C:359
 msgid "&About ..."
 msgstr "&Informacje..."
 
-#: main.C:341
+#: main.C:360
 msgid "&User's Manual ..."
 msgstr "Spis &tre¶ci"
 
-#: main.C:342
+#: main.C:361
 msgid "&Technical Reference ..."
 msgstr "Tec&hniczne szczegó³y"
 
-#: main.C:346
+#: main.C:365
 msgid "cd"
 msgstr "cd"
 
-#: main.C:359
+#: main.C:378
 msgid "Sessions"
 msgstr "Sesje"
 
-#: main.C:502
+#: main.C:517
 #, c-format
 msgid ""
 "Font `%s' not found.\n"
@@ -131,12 +131,12 @@ msgstr ""
 "Nie mo¿na znale¼æ czcionki '%s'\n"
 "Zagl±dnij do pliku README.linux.console"
 
-#: main.C:607
+#: main.C:621
 #, c-format
 msgid "About %s"
 msgstr "Informacje o %s"
 
-#: main.C:609
+#: main.C:623
 #, c-format
 msgid ""
 "%s version %s - an X terminal\n"
@@ -157,12 +157,12 @@ msgstr ""
 "¯ADNEJ GWARANCJI.\n"
 "Szczegó³y w pliku 'LICENSE.readme'."
 
-#: main.C:732
+#: main.C:749
 #, c-format
 msgid "`%s' terminated abnormally."
 msgstr "`%s' niespodziewanie zakoñczy³ dzia³anie."
 
-#: main.C:735
+#: main.C:752
 msgid ""
 "\n"
 "Return code = "
@@ -170,6 +170,6 @@ msgstr ""
 "\n"
 "Kod powrotu = "
 
-#: main.C:928
+#: main.C:936
 msgid "Welcome to the console"
 msgstr "Zapraszamy do konsoli"

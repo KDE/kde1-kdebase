@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-01-22 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1999-02-05 20:15+0200\n"
 "Last-Translator: Hasso C. Tepper <heathcliff@iname.com>\n"
 "Language-Team: Estonian <heathcliff@iname.com>\n"
@@ -13,63 +13,63 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
-#: kfmgui.cpp:204
+#: kfmgui.cpp:203
 msgid "KFM"
 msgstr "KFM"
 
-#: kfmgui.cpp:222
+#: kfmgui.cpp:221
 msgid "New &Window"
 msgstr "Uus ak&en"
 
-#: kfmgui.cpp:225
+#: kfmgui.cpp:224
 msgid "&Run..."
 msgstr "&Käivita..."
 
-#: kfmgui.cpp:227
+#: kfmgui.cpp:226
 msgid "Open &Terminal"
 msgstr "Ava &terminal"
 
-#: kfmgui.cpp:230
+#: kfmgui.cpp:229
 msgid "&Open Location..."
 msgstr "&Ava asukoht..."
 
-#: finddlg.cpp:66 kfmgui.cpp:232
+#: finddlg.cpp:66 kfmgui.cpp:231
 msgid "&Find"
 msgstr "&Leia"
 
-#: kfmgui.cpp:253
+#: kfmgui.cpp:252
 msgid "&Move to Trash"
 msgstr "&Liiguta prügikasti"
 
-#: kfmgui.cpp:260
+#: kfmgui.cpp:259
 msgid "&Select"
 msgstr "&Vali"
 
-#: kfmgui.cpp:262
+#: kfmgui.cpp:261
 msgid "Select &all"
 msgstr "Vali &kõik"
 
-#: kfmgui.cpp:265
+#: kfmgui.cpp:264
 msgid "&Find in page..."
 msgstr "&Leia leheküljel..."
 
-#: kfmgui.cpp:267
+#: kfmgui.cpp:266
 msgid "Find &next"
 msgstr "Leia &järgmine"
 
-#: kfmgui.cpp:270
+#: kfmgui.cpp:269
 msgid "Mime &Types"
 msgstr "Mime &tüübid"
 
-#: kfmgui.cpp:272
+#: kfmgui.cpp:271
 msgid "App&lications"
 msgstr "&Rakendused"
 
-#: kfmgui.cpp:278
+#: kfmgui.cpp:277
 msgid "Global Mime Types"
 msgstr "Globaalsed mime tüübid"
 
-#: kfmgui.cpp:280
+#: kfmgui.cpp:279
 msgid "Global Applications"
 msgstr "Globaalsed rakendused"
 
@@ -247,27 +247,27 @@ msgstr "Kodu"
 msgid "Could not load icon\n"
 msgstr "Ei suuda ikooni laadida\n"
 
-#: bookmark.cpp:296 htmlcache.cpp:338 htmlcache.cpp:367 kbind.cpp:306
-#: kbind.cpp:392 kbind.cpp:444 kbind.cpp:1620 kbind.cpp:1628 kbind.cpp:1646
-#: kbind.cpp:1665 kbind.cpp:1724 kbind.cpp:1736 kbind.cpp:1763 kbind.cpp:1784
-#: kbind.cpp:1804 kbind.cpp:1816 kbind.cpp:1832 kbind.cpp:1967 kbind.cpp:1979
-#: kbind.cpp:2024 kbind.cpp:2066 kfmexec.cpp:63 kfmexec.cpp:115
-#: kfmexec/main.cpp:47 kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:367
-#: kfmman.cpp:1411 kfmman.cpp:1639 kfmman.cpp:1685 kfmprops.cpp:380
-#: kfmprops.cpp:648 kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092
-#: kfmprops.cpp:1223 kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240
-#: kfmserver.cpp:45 kfmserver.cpp:218 kfmserver.cpp:298 kfmserver.cpp:313
-#: kfmserver.cpp:360 kfmserver.cpp:369 kfmserver.cpp:377 kfmtree.cpp:341
-#: kfmtree.cpp:468 kfmtree.cpp:499 kfmtree.cpp:505 kfmtree.cpp:511
-#: kfmview.cpp:436 kfmview.cpp:470 kfmview.cpp:489 kfmview.cpp:558
-#: kfmview.cpp:564 kfmview.cpp:570 kfmview.cpp:695 kfmview.cpp:699
-#: kfmview.cpp:738 kfmview.cpp:764 kfmview.cpp:785 kfmview.cpp:793
-#: kfmview.cpp:801 kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:253 kiojob.cpp:278
-#: kiojob.cpp:297 kiojob.cpp:308 kiojob.cpp:332 kiojob.cpp:351 kiojob.cpp:568
-#: kiojob.cpp:586 kiojob.cpp:873 kiojob.cpp:894 kiojob.cpp:925 kiojob.cpp:973
-#: kiojob.cpp:1445 kiojob.cpp:1453 kiojob.cpp:1681 krenamewin.cpp:120
-#: popup.cpp:105 root.cpp:943 root.cpp:1224 root.cpp:1242 root.cpp:1248
-#: root.cpp:1254 root.cpp:1335 root.cpp:1860 root.cpp:1885
+#: bookmark.cpp:296 htmlcache.cpp:350 htmlcache.cpp:379 kbind.cpp:311
+#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1652 kbind.cpp:1660 kbind.cpp:1678
+#: kbind.cpp:1697 kbind.cpp:1756 kbind.cpp:1768 kbind.cpp:1795 kbind.cpp:1816
+#: kbind.cpp:1836 kbind.cpp:1848 kbind.cpp:1864 kbind.cpp:1999 kbind.cpp:2011
+#: kbind.cpp:2056 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1422
+#: kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380 kfmprops.cpp:648
+#: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
+#: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:50
+#: kfmserver.cpp:230 kfmserver.cpp:310 kfmserver.cpp:325 kfmserver.cpp:372
+#: kfmserver.cpp:381 kfmserver.cpp:389 kfmtree.cpp:340 kfmtree.cpp:467
+#: kfmtree.cpp:498 kfmtree.cpp:504 kfmtree.cpp:510 kfmview.cpp:437
+#: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
+#: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
+#: kfmview.cpp:779 kfmview.cpp:800 kfmview.cpp:808 kfmview.cpp:816
+#: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
+#: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
+#: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
+#: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
+#: popup.cpp:105 root.cpp:944 root.cpp:1226 root.cpp:1244 root.cpp:1250
+#: root.cpp:1256 root.cpp:1337 root.cpp:1862 root.cpp:1887
 msgid "KFM Error"
 msgstr "KFM viga"
 
@@ -275,65 +275,65 @@ msgstr "KFM viga"
 msgid "Location:"
 msgstr "Asukoht:"
 
-#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1410
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1421
 msgid "Malformed URL\n"
 msgstr "Vigane URL\n"
 
-#: kfmgui.cpp:943
+#: kfmgui.cpp:945
 msgid "Select files:"
 msgstr "Vali failid:"
 
-#: kfmgui.cpp:1011
+#: kfmgui.cpp:1012
 msgid "Find Complete"
 msgstr "Leitud"
 
-#: kfmgui.cpp:1012
+#: kfmgui.cpp:1013
 msgid "Continue search from the top of the page?"
 msgstr "Kas jätkata otsingut lehekülje algusest? "
 
-#: kfmgui.cpp:1030
+#: kfmgui.cpp:1031
 msgid "&Edit Bookmarks..."
 msgstr "R&edigeeri järjehoidjaid..."
 
-#: kfmgui.cpp:1040
+#: kfmgui.cpp:1043
 msgid "&Add Bookmark"
 msgstr "&Lisa järjehoidja"
 
-#: kfmgui.cpp:1076 kfmman.cpp:1450 kfmtree.cpp:389 root.cpp:285
+#: kfmgui.cpp:1079 kfmman.cpp:1462 kfmtree.cpp:388 root.cpp:286
 msgid "&New"
 msgstr "&Uus"
 
-#: kfmgui.cpp:1098
+#: kfmgui.cpp:1152
 msgid "&Up"
 msgstr "Ü&les"
 
-#: kfmgui.cpp:1100
+#: kfmgui.cpp:1154
 msgid "&Back"
 msgstr "&Tagasi"
 
-#: kfmgui.cpp:1102
+#: kfmgui.cpp:1156
 msgid "&Forward"
 msgstr "&Edasi"
 
-#: kfmgui.cpp:1104
+#: kfmgui.cpp:1158
 msgid "&Home"
 msgstr "&Kodu"
 
-#: kfmgui.cpp:1171 kfmgui.cpp:1339 kfmjob.cpp:36 kfmman.cpp:250
-#: kfmtree.cpp:500 kfmview.cpp:490 kfmview.cpp:559 kfmview.cpp:786
-#: kiojob.cpp:87 root.cpp:1243
+#: kfmgui.cpp:1227 kfmgui.cpp:1395 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmtree.cpp:499 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
+#: kiojob.cpp:88 root.cpp:1245
 msgid "ERROR: Malformed URL"
 msgstr "VIGA: vigane URL"
 
-#: kfmgui.cpp:1293 kfmserver.cpp:245
+#: kfmgui.cpp:1349 kfmserver.cpp:257
 msgid "Open Location:"
 msgstr "Ava asukoht:"
 
-#: kfmgui.cpp:1350
+#: kfmgui.cpp:1406
 msgid "KFM Confirm"
 msgstr "KFM Kinnitus"
 
-#: kfmgui.cpp:1351
+#: kfmgui.cpp:1407
 msgid ""
 "Do you really want to quit?\n"
 "Important desktop functionality will be lost"
@@ -341,24 +341,24 @@ msgstr ""
 "Soovid sa tõesti katkestada?\n"
 "Oluline töölaua funktsionaalsus läheb kaotsi"
 
-#: kfmgui.cpp:1478
+#: kfmgui.cpp:1540
 msgid "Document: Done"
 msgstr "Dokument: tehtud"
 
-#: kfmview.cpp:437 root.cpp:944
+#: kfmview.cpp:438 root.cpp:945
 msgid "ERROR: You may only drop URLs"
 msgstr "VIGA: Sa võid URL'e vaid kukutada"
 
-#: kfmview.cpp:471
+#: kfmview.cpp:472
 msgid "ERROR: Drop over malformed URL"
 msgstr "VIGA: Kukutatud vigase URL'i peale"
 
-#: kfmserver.cpp:133 kfmtree.cpp:538 kfmview.cpp:530 kfmview.cpp:829
-#: kiojob.cpp:664 kiojob.cpp:1047 krenamewin.cpp:20 root.cpp:1286
+#: kfmserver.cpp:145 kfmtree.cpp:537 kfmview.cpp:544 kfmview.cpp:844
+#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1288
 msgid "KFM Warning"
 msgstr "KFM hoiatus"
 
-#: kfmtree.cpp:539 kfmview.cpp:531 kfmview.cpp:830 root.cpp:1287
+#: kfmtree.cpp:538 kfmview.cpp:545 kfmview.cpp:845 root.cpp:1289
 msgid ""
 "Do you really want to delete the selected file(s)?\n"
 "\n"
@@ -368,23 +368,23 @@ msgstr ""
 "\n"
 "Pole mingit võimalust neid taastada."
 
-#: kfmtree.cpp:506 kfmview.cpp:565 kfmview.cpp:794 root.cpp:1249
+#: kfmtree.cpp:505 kfmview.cpp:579 kfmview.cpp:809 root.cpp:1251
 msgid "ERROR: You dropped a URL over itself"
 msgstr "VIGA: Sa kukutasid aadressi selle enda peale"
 
-#: kfmtree.cpp:512 kfmview.cpp:571 kfmview.cpp:802 root.cpp:1255
+#: kfmtree.cpp:511 kfmview.cpp:585 kfmview.cpp:817 root.cpp:1257
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr "VIGA: Sa kukutasid kataloogi ühe selle alamkataloogi peale"
 
-#: kfmexec.cpp:298 kfmman.cpp:1199 kfmview.cpp:587 root.cpp:1131
+#: kfmexec.cpp:300 kfmman.cpp:1207 kfmview.cpp:601 root.cpp:1132
 msgid "Open With:"
 msgstr "Ava kasutades:"
 
-#: kfmview.cpp:623 root.cpp:1186
+#: kfmview.cpp:637 root.cpp:1188
 msgid "ERROR: Can not open properties for multiple files"
 msgstr "VIGA: Pole võimalik avada mitme faili omadusi"
 
-#: kfmview.cpp:696
+#: kfmview.cpp:710
 msgid ""
 "Can not save properties because\n"
 "this directory is neither writable nor bookmarked.\n"
@@ -396,7 +396,7 @@ msgstr ""
 "\n"
 "Kõigepealt pane see järjehoidjatesse või tee kdelnk töölauale."
 
-#: kfmview.cpp:700
+#: kfmview.cpp:714
 msgid ""
 "Can not save properties because\n"
 "this URL is neither bookmarked nor on desktop.\n"
@@ -408,23 +408,23 @@ msgstr ""
 "\n"
 "Kõigepealt pane see järjehoidjatesse või tee kdelnk töölauale."
 
-#: kfmtree.cpp:469 kfmview.cpp:739 root.cpp:1336
+#: kfmtree.cpp:468 kfmview.cpp:753 root.cpp:1338
 msgid "Could not access Trash Bin"
 msgstr "Prügikast pole ligipääsetav"
 
-#: kfmview.cpp:765 root.cpp:1225
+#: kfmview.cpp:780 root.cpp:1227
 msgid "Can not paste into multiple directories"
 msgstr "Mitmesse kataloogi pole võimalik asetada"
 
-#: kfmview.cpp:862
+#: kfmview.cpp:877
 msgid "ERROR: Can not change to multiple directories"
 msgstr "VIGA: Mitmessse kataloogi pole võimalik siseneda"
 
-#: kfmview.cpp:1132
+#: kfmview.cpp:1148
 msgid "KFM Security Alert"
 msgstr "KFM turvalisuse hoiatus"
 
-#: kfmview.cpp:1133
+#: kfmview.cpp:1149
 msgid ""
 "This page is untrusted\n"
 "but it contains a link to your local file system."
@@ -432,70 +432,70 @@ msgstr ""
 "See lehekülg ei ole usaldusväärne\n"
 "kuid see sisaldab linki sinu lokaalsese failisüsteemi."
 
-#: kfmview.cpp:1225
+#: kfmview.cpp:1241
 msgid "Symbolic Link"
 msgstr "Sümboolne link"
 
-#: kfmview.cpp:1227
+#: kfmview.cpp:1243
 #, c-format
 msgid "%s (Link)"
 msgstr "%s (Link)"
 
-#: kfmview.cpp:1247
+#: kfmview.cpp:1263
 msgid "bytes"
 msgstr "baiti"
 
-#: kbind.cpp:304
+#: kbind.cpp:309
 msgid "The mime type config file "
 msgstr "Mime tüübi konfiguratsioonifail"
 
 #
-#: kbind.cpp:305
+#: kbind.cpp:310
 msgid "does not contain a MimeType=... entry"
 msgstr "ei sisalda kirjet MimeType=..."
 
-#: kbind.cpp:393
+#: kbind.cpp:391
 msgid "No mime types installed!"
 msgstr "Ühtegi mime tüüpi ei ole installeeritud"
 
-#: kbind.cpp:441 kbind.cpp:1215
+#: kbind.cpp:439 kbind.cpp:1227
 msgid "Could not find mime type\n"
 msgstr "Mime tüüpi pole võimalik leida\n"
 
-#: kbind.cpp:711 kbind.cpp:721 kbind.cpp:2002 kbind.cpp:2003 kbind.cpp:2015
-#: kbind.cpp:2017
+#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:2034 kbind.cpp:2035 kbind.cpp:2047
+#: kbind.cpp:2049
 msgid "Mount"
 msgstr "Ühenda"
 
-#: kbind.cpp:727 kbind.cpp:1993
+#: kbind.cpp:725 kbind.cpp:2025
 msgid "Unmount"
 msgstr "Ühenda lahti"
 
-#: kbind.cpp:951 kbind.cpp:963 kbind.cpp:973 popup.cpp:48 popup.cpp:125
+#: kbind.cpp:957 kbind.cpp:969 kbind.cpp:979 popup.cpp:48 popup.cpp:125
 msgid "Folder"
 msgstr "Kaust"
 
-#: kbind.cpp:1214
+#: kbind.cpp:1226
 msgid "ERROR"
 msgstr "VIGA"
 
-#: kbind.cpp:1215
+#: kbind.cpp:1227
 msgid "in "
 msgstr "järgnevas "
 
-#: kbind.cpp:1356 kbind.cpp:1930
+#: kbind.cpp:1362 kbind.cpp:1962
 msgid "ERROR: No Terminal Setting"
 msgstr "VIGA: terminali seadistusi pole"
 
-#: kbind.cpp:1410 kbind.cpp:1503
+#: kbind.cpp:1429 kbind.cpp:1535
 msgid "Could not execute program\n"
 msgstr "Programmi pole võimalik käivitada\n"
 
-#: kbind.cpp:1619
+#: kbind.cpp:1651
 msgid "Could not find binding"
 msgstr "Seost pole võimalik leida"
 
-#: kbind.cpp:1629
+#: kbind.cpp:1661
 msgid ""
 "This is a document!\n"
 "Not an application"
@@ -503,11 +503,11 @@ msgstr ""
 "See on dokument!\n"
 "Mitte rakendus"
 
-#: kbind.cpp:1647 kbind.cpp:1666
+#: kbind.cpp:1679 kbind.cpp:1698
 msgid "Can only start executables on local disks\n"
 msgstr "Programme saab käivitada ainult lokaalsetel ketastel\n"
 
-#: kbind.cpp:1725 kbind.cpp:1805 kbind.cpp:1968
+#: kbind.cpp:1757 kbind.cpp:1837 kbind.cpp:2000
 msgid ""
 "Can work with *.kdelnk files only\n"
 "on local hard disk"
@@ -515,7 +515,7 @@ msgstr ""
 "*.kdelnk failidega saab töötada\n"
 "ainult lokaalsel kõvakettal"
 
-#: kbind.cpp:1735
+#: kbind.cpp:1767
 #, c-format
 msgid ""
 "Could not access\n"
@@ -524,19 +524,19 @@ msgstr ""
 "Ei suuda pöörduda\n"
 "%s poole"
 
-#: kbind.cpp:1764
+#: kbind.cpp:1796
 msgid "The \"Link=....\" entry is empty"
 msgstr "Kirje \"Link=....\" on tühi"
 
-#: kbind.cpp:1785
+#: kbind.cpp:1817
 msgid "The config file has no \"Type=...\" line"
 msgstr "Konfiguratsioonifailis pole rida \"Type=...\""
 
-#: kbind.cpp:1815 kbind.cpp:1978
+#: kbind.cpp:1847 kbind.cpp:2010
 msgid "Could not access"
 msgstr "Ei suuda pöörduda"
 
-#: kbind.cpp:1833
+#: kbind.cpp:1865
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -548,13 +548,9 @@ msgstr ""
 "Probleemi lahendamiseks redigeeri\n"
 "faili omadusi"
 
-#: kbind.cpp:2025
+#: kbind.cpp:2057
 msgid "No mount point in *.kdelnk file"
 msgstr "*.kdelnk failis pole ühenduspunkti"
-
-#: kbind.cpp:2065
-msgid "Unknown binding"
-msgstr "Tundmatu seos"
 
 #: main.cpp:89 main.cpp:229
 msgid "KFM Information"
@@ -584,7 +580,7 @@ msgstr "Cd"
 msgid "New View"
 msgstr "Uus vaade"
 
-#: kfmtree.cpp:404 main.cpp:271
+#: kfmtree.cpp:403 main.cpp:271
 msgid "Move to Trash"
 msgstr "Liiguta prügikasti"
 
@@ -592,11 +588,11 @@ msgstr "Liiguta prügikasti"
 msgid "Open with"
 msgstr "Ava kasutades"
 
-#: kfmman.cpp:1677 kfmtree.cpp:333 main.cpp:275
+#: kfmman.cpp:1691 kfmtree.cpp:332 main.cpp:275
 msgid "Move"
 msgstr "Liiguta"
 
-#: kfmman.cpp:1681 kfmtree.cpp:337 main.cpp:277
+#: kfmman.cpp:1695 kfmtree.cpp:336 main.cpp:277
 msgid "Link"
 msgstr "Link"
 
@@ -877,15 +873,15 @@ msgstr "Ikoon ühendatud seadmele"
 msgid "Unmounted Icon"
 msgstr "Ikoon lahti ühendatud seadmele"
 
-#: kfmserver.cpp:46
+#: kfmserver.cpp:51
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
 msgstr "Pole võimalik luua ~/.kde/share/apps/kfm/magic"
 
-#: kfmserver.cpp:134
+#: kfmserver.cpp:146
 msgid "Do you really want to rearrange your icons ?"
 msgstr "Soovid sa tõesti ikoonid ümber paigutada ?"
 
-#: kfmserver.cpp:310
+#: kfmserver.cpp:322
 #, c-format
 msgid ""
 "The URL\n"
@@ -896,7 +892,7 @@ msgstr ""
 "%s\n"
 "on vigane"
 
-#: kfmserver.cpp:361
+#: kfmserver.cpp:373
 msgid ""
 "You dont have the file ~/.kde/share/apps/kfm/magic\n"
 "Authorization failed"
@@ -904,7 +900,7 @@ msgstr ""
 "Sul ei ole faili ~/.kde/share/apps/kfm/magic\n"
 "Autoriseerimine ebaõnnestus"
 
-#: kfmserver.cpp:370
+#: kfmserver.cpp:382
 msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
@@ -912,7 +908,7 @@ msgstr ""
 "Fail ~/.kde/share/apps/kfm/magic on vigastatud\n"
 "Autoriseerimine ebaõnnestus"
 
-#: kfmserver.cpp:378
+#: kfmserver.cpp:390
 msgid ""
 "Someone tried to authorize himself\n"
 "using a wrong password"
@@ -920,7 +916,7 @@ msgstr ""
 "Keegi üritas ennast autoriseerida\n"
 "kasutades vale parooli"
 
-#: root.cpp:734
+#: root.cpp:735
 msgid ""
 "Cannot execute request.\n"
 "New root grid dimensions would move some icons\n"
@@ -930,41 +926,41 @@ msgstr ""
 "Uued ikoonide vahed jätavad mõned ikoonid\n"
 "töölaualt välja."
 
-#: root.cpp:769
+#: root.cpp:770
 msgid "Internal Error: desktopDir is malformed"
 msgstr "Sisemine viga: töölaua kataloog on vigane"
 
-#: root.cpp:780
+#: root.cpp:781
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
 msgstr "VIGA: Ei suuda lugeda töölaua kataloogi '%s'"
 
-#: kfmman.cpp:1663 root.cpp:992 root.cpp:1012
+#: kfmman.cpp:1677 root.cpp:993 root.cpp:1013
 msgid "ERROR: Can not accept drop"
 msgstr "VIGA: Ei saa aktsepteerida kukutamist"
 
-#: kfmman.cpp:1640 kfmman.cpp:1686 kfmtree.cpp:342 root.cpp:1861 root.cpp:1886
+#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:341 root.cpp:1863 root.cpp:1888
 msgid "Dont know what to do."
 msgstr "Ei saa aru, mida teha."
 
-#: kfmexec.cpp:116 kfmman.cpp:368
+#: kfmexec.cpp:116 kfmman.cpp:371
 msgid "The file does not contain a URL"
 msgstr "Fail ei sisalda aadressit"
 
-#: kfmman.cpp:516
+#: kfmman.cpp:519
 msgid "Contacting host "
 msgstr "Kontakti loomine hostiga "
 
-#: kfmman.cpp:520
+#: kfmman.cpp:523
 msgid "Working ..."
 msgstr "Töötamine ..."
 
-#: kiojob.cpp:134
+#: kiojob.cpp:135
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr ""
 "SISEMINE VIGA: Sa pead kindlaks määrama vähemalt seadme, mida soovid ühendada"
 
-#: kiojob.cpp:237 kiojob.cpp:245 kiojob.cpp:1307 kiojob.cpp:1377
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1412
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -973,11 +969,11 @@ msgstr ""
 "Vigane URL\n"
 "%s"
 
-#: kiojob.cpp:254
+#: kiojob.cpp:255
 msgid "Can only make links on local file system"
 msgstr "Linke saab luua ainult kohalikus failisüsteemis"
 
-#: kiojob.cpp:277 kiojob.cpp:296
+#: kiojob.cpp:278 kiojob.cpp:297
 #, c-format
 msgid ""
 "Could not overwrite\n"
@@ -986,7 +982,7 @@ msgstr ""
 "Ei suuda üle kirjutada\n"
 "%s"
 
-#: kiojob.cpp:306 kiojob.cpp:331 kiojob.cpp:350
+#: kiojob.cpp:307 kiojob.cpp:332 kiojob.cpp:351
 #, c-format
 msgid ""
 "Could not make symlink to\n"
@@ -995,12 +991,12 @@ msgstr ""
 "Ei suuda luua sümboolset linki järgnevale\n"
 "%s"
 
-#: kiojob.cpp:386
+#: kiojob.cpp:387
 #, c-format
 msgid " ERROR: Could not write to %s"
 msgstr " VIGA: Ei suuda kirjutada faili %s"
 
-#: kiojob.cpp:567 kiojob.cpp:872
+#: kiojob.cpp:568 kiojob.cpp:891
 #, c-format
 msgid ""
 "Could not make symbolic link\n"
@@ -1009,7 +1005,7 @@ msgstr ""
 "Ei suuda luua sümboolset linki järgnevale\n"
 "%s"
 
-#: kiojob.cpp:585 kiojob.cpp:893 kiojob.cpp:1330
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
 #, c-format
 msgid ""
 "Could not make directory\n"
@@ -1018,12 +1014,12 @@ msgstr ""
 "Ei suuda luua kataloogi\n"
 "%s"
 
-#: kiojob.cpp:597 kiojob.cpp:1140
+#: kiojob.cpp:598 kiojob.cpp:1168
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr "VIGA: Ei suuda juurde pääseda kataloogile '%s'"
 
-#: kiojob.cpp:661
+#: kiojob.cpp:662
 #, c-format
 msgid ""
 "Special file will not be copied\n"
@@ -1032,12 +1028,12 @@ msgstr ""
 "Spetsiaalseid faile ei kopeerita\n"
 "%s"
 
-#: kiojob.cpp:663
+#: kiojob.cpp:664
 #, c-format
 msgid "%d special files will not be copied."
 msgstr "%d spetsiaalseid faile ei kopeerita"
 
-#: kiojob.cpp:668
+#: kiojob.cpp:669
 msgid ""
 "Recurse copying from file with sub-protocol\n"
 "(for instance, tar files)"
@@ -1045,11 +1041,20 @@ msgstr ""
 "Rekursiivne kopeerimine alamprotsessiga failist\n"
 "(nt. tar failid)"
 
-#: kiojob.cpp:673
+#: kiojob.cpp:674
 msgid "Recurse copying from/to distant locations"
 msgstr "Rekursiivne kopeerimine kaugest asukohast/kaugesse asukohta"
 
-#: kiojob.cpp:924
+#: kiojob.cpp:904
+#, fuzzy, c-format
+msgid ""
+"Could not remove symbolic link\n"
+"%s"
+msgstr ""
+"Ei suuda luua sümboolset linki järgnevale\n"
+"%s"
+
+#: kiojob.cpp:952
 #, c-format
 msgid ""
 "Could not access directory\n"
@@ -1058,7 +1063,7 @@ msgstr ""
 "Ei suuda juurde pääseda kataloogile\n"
 "%s"
 
-#: kiojob.cpp:972
+#: kiojob.cpp:1000
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -1071,7 +1076,7 @@ msgstr ""
 "uude kohta %s\n"
 "Ilmselt on juurdepääs keelatud"
 
-#: kiojob.cpp:1044
+#: kiojob.cpp:1072
 #, c-format
 msgid ""
 "Special file will not be moved\n"
@@ -1080,12 +1085,12 @@ msgstr ""
 "Spetsiaalseid faile ei liigutata\n"
 "%s"
 
-#: kiojob.cpp:1046
+#: kiojob.cpp:1074
 #, c-format
 msgid "%d special files will not be moved."
 msgstr "%d spetsiaalseid faile ei liigutata."
 
-#: kiojob.cpp:1310 kiojob.cpp:1381
+#: kiojob.cpp:1338 kiojob.cpp:1416
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1096,7 +1101,7 @@ msgstr ""
 "%s\n"
 "Faili ei eksisteeri või puudub sul selleks luba"
 
-#: kiojob.cpp:1313
+#: kiojob.cpp:1341
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1107,7 +1112,7 @@ msgstr ""
 "%s\n"
 "Ilmselt on juurdepääs keelatud"
 
-#: kiojob.cpp:1317 kiojob.cpp:1385
+#: kiojob.cpp:1345 kiojob.cpp:1420
 #, c-format
 msgid ""
 "Could not create Socket for\n"
@@ -1116,7 +1121,7 @@ msgstr ""
 "Ei suuda luua pesa\n"
 "%s jaoks"
 
-#: kiojob.cpp:1320 kiojob.cpp:1389
+#: kiojob.cpp:1348 kiojob.cpp:1424
 #, c-format
 msgid ""
 "Unknown host in\n"
@@ -1125,7 +1130,7 @@ msgstr ""
 "Tundmatu host\n"
 "%s -s"
 
-#: kiojob.cpp:1323 kiojob.cpp:1393
+#: kiojob.cpp:1352 kiojob.cpp:1428
 #, c-format
 msgid ""
 "Could not connect to\n"
@@ -1134,7 +1139,7 @@ msgstr ""
 "Ei suuda luua ühendust\n"
 "%s"
 
-#: kiojob.cpp:1326 kiojob.cpp:1397
+#: kiojob.cpp:1356 kiojob.cpp:1432
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1145,7 +1150,7 @@ msgstr ""
 "%s\n"
 "ei ole esialgu teostatud."
 
-#: kiojob.cpp:1333
+#: kiojob.cpp:1363
 #, c-format
 msgid ""
 "Could not list directory contents\n"
@@ -1154,7 +1159,7 @@ msgstr ""
 "Ei suuda näidata kataloogi sisu\n"
 "%s"
 
-#: kiojob.cpp:1337
+#: kiojob.cpp:1367
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1165,7 +1170,7 @@ msgstr ""
 "%s\n"
 "Aadressi ei eksisteeri või on juurdepääs keelatud"
 
-#: kiojob.cpp:1341 kiojob.cpp:1402
+#: kiojob.cpp:1371 kiojob.cpp:1437
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1176,7 +1181,7 @@ msgstr ""
 "%s\n"
 "Võib-olla on parool vale"
 
-#: kiojob.cpp:1352
+#: kiojob.cpp:1383
 #, c-format
 msgid ""
 "Tar reported an error\n"
@@ -1185,7 +1190,7 @@ msgstr ""
 "Tar kandis ette veast\n"
 "%s"
 
-#: kiojob.cpp:1355
+#: kiojob.cpp:1386
 #, c-format
 msgid ""
 "Gzip reported an error for\n"
@@ -1194,11 +1199,11 @@ msgstr ""
 "Gzip kandis ette veast failis\n"
 "%s"
 
-#: kiojob.cpp:1361
+#: kiojob.cpp:1392
 msgid "Operation technically impossible"
 msgstr "Operatsioon on tehniliselt võimatu"
 
-#: kiojob.cpp:1364 kiojob.cpp:1373
+#: kiojob.cpp:1395 kiojob.cpp:1408
 #, c-format
 msgid ""
 "File %s\n"
@@ -1207,7 +1212,18 @@ msgstr ""
 "Faili %s\n"
 "ei eksisteeri"
 
-#: kiojob.cpp:1414
+#: kiojob.cpp:1398
+#, fuzzy, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps disk full"
+msgstr ""
+"Ei suuda kirjutada\n"
+"%s\n"
+"Ilmselt on juurdepääs keelatud"
+
+#: kiojob.cpp:1449
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
@@ -1216,7 +1232,7 @@ msgstr ""
 "Tar kandis ette fataalsest veast\n"
 "%s"
 
-#: kiojob.cpp:1418
+#: kiojob.cpp:1453
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
@@ -1225,7 +1241,7 @@ msgstr ""
 "Gzip kandis ette fataalsest veast\n"
 "%s"
 
-#: kiojob.cpp:1422
+#: kiojob.cpp:1457
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1238,7 +1254,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1426
+#: kiojob.cpp:1461
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1251,21 +1267,21 @@ msgstr ""
 "\n"
 "%s"
 
-#: kiojob.cpp:1530
+#: kiojob.cpp:1565
 msgid "Making directory"
 msgstr "Kataloogi loomine"
 
-#: kiojob.cpp:1646 kiojob.cpp:1700 kiojob.cpp:1742
+#: kiojob.cpp:1681 kiojob.cpp:1742 kiojob.cpp:1791
 #, c-format
 msgid "File %i/%i"
 msgstr "Fail %i/%i"
 
-#: kiojob.cpp:1649 kiojob.cpp:1704
+#: kiojob.cpp:1691 kiojob.cpp:1753
 #, c-format
 msgid "to %s"
 msgstr "%s -sse"
 
-#: kiojob.cpp:1680
+#: kiojob.cpp:1722
 #, c-format
 msgid ""
 "Could not delete directory\n"
@@ -1274,26 +1290,26 @@ msgstr ""
 "Kataloogi %s\n"
 "pole võimalik kustutada"
 
-#: kiojob.cpp:1770
+#: kiojob.cpp:1824
 #, c-format
 msgid "Mounting %s ..."
 msgstr "%s ühendamine ..."
 
-#: kiojob.cpp:1772
+#: kiojob.cpp:1826
 #, c-format
 msgid "Unmounting %s ..."
 msgstr "%s lahti ühendamine ..."
 
-#: kiojob.cpp:1800
+#: kiojob.cpp:1854
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr "Võtan vastu nimekirja %s -st"
 
-#: kiojob.cpp:2038
+#: kiojob.cpp:2093
 msgid "Segmentation fault in io subprocess"
 msgstr "Segmentatsiooni viga s/v alamprotsessis"
 
-#: htmlcache.cpp:339
+#: htmlcache.cpp:351
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
@@ -1301,7 +1317,7 @@ msgstr ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 
-#: htmlcache.cpp:368
+#: htmlcache.cpp:380
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
@@ -1321,51 +1337,51 @@ msgstr "Kataloog"
 msgid " does not exist\n"
 msgstr " ei eksisteeri\n"
 
-#: kfmtree.cpp:411
+#: kfmtree.cpp:410
 msgid "Add To Bookmarks"
 msgstr "Lisa järjehoidjatesse"
 
-#: kfmtree.cpp:590
+#: kfmtree.cpp:589
 msgid "My Home"
 msgstr "Minu kodu"
 
-#: kfmtree.cpp:592
+#: kfmtree.cpp:591
 msgid "Desktop"
 msgstr "Töölaud"
 
-#: kfmtree.cpp:594
+#: kfmtree.cpp:593
 msgid "Root"
 msgstr "Juur"
 
-#: krenamewin.cpp:26
+#: krenamewin.cpp:30
 msgid "Rename"
 msgstr "Nimeta ümber"
 
-#: krenamewin.cpp:31
+#: krenamewin.cpp:35
 msgid "Skip"
 msgstr "Jäta vahele"
 
-#: krenamewin.cpp:36
+#: krenamewin.cpp:40
 msgid "Overwrite"
 msgstr "Kirjuta üle"
 
-#: krenamewin.cpp:41
+#: krenamewin.cpp:45
 msgid "Overwrite All"
 msgstr "Kirjuta kõik üle"
 
-#: krenamewin.cpp:52
+#: krenamewin.cpp:56
 msgid "You try to overwrite"
 msgstr "Sa üritad üle kirjutada"
 
-#: krenamewin.cpp:63
+#: krenamewin.cpp:67
 msgid "already exists. Overwrite with"
 msgstr "eksisteerib juba. Kirjuta üle järgnevaga"
 
-#: krenamewin.cpp:71
+#: krenamewin.cpp:75
 msgid "Or rename to"
 msgstr "Või nimeta ümber"
 
-#: krenamewin.cpp:121
+#: krenamewin.cpp:125
 msgid "You did not change the name!\n"
 msgstr "You did not change the name!\n"
 
@@ -1507,3 +1523,6 @@ msgid ""
 msgstr ""
 "Süntaksiviga:\n"
 "kfmexec käsk [aadressid ....]\n"
+
+#~ msgid "Unknown binding"
+#~ msgstr "Tundmatu seos"

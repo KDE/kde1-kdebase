@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibsPOT-Creation-Date: 1998-01-25 13:21+0100\n"
-"POT-Creation-Date: 1999-01-16 01:17+0100\n"
+"POT-Creation-Date: 1999-01-27 01:14+0100\n"
 "PO-Revision-Date: 1998-01-22 17:20+0100\n"
 "Last-Translator: Andrea Rizzi <BILIBAO@ouverture.it>\n"
 
@@ -34,30 +34,34 @@ msgstr ""
 "Ringraziamenti a:\n"
 "S. Kulow, P. Dowler, M. Wuebben & M. Jones."
 
-#: mainwidget.cpp:45
-msgid "System:"
-msgstr "Sistema:"
+#: mainwidget.cpp:44
+#, fuzzy
+msgid "KDE Version: "
+msgstr "Versione: "
 
-#: mainwidget.cpp:48
+#: mainwidget.cpp:52
 msgid "User: "
 msgstr "Utente: "
 
-#: mainwidget.cpp:54
+#: mainwidget.cpp:58
 msgid "Hostname: "
 msgstr "Nome host: "
 
-#: mainwidget.cpp:62
+#: mainwidget.cpp:66
 msgid "System: "
 msgstr "Sistema: "
 
-#: mainwidget.cpp:69
+#: mainwidget.cpp:73
 msgid "Release: "
 msgstr "Release: "
 
-#: mainwidget.cpp:77
+#: mainwidget.cpp:81
 msgid "Version: "
 msgstr "Versione: "
 
-#: mainwidget.cpp:84
+#: mainwidget.cpp:88
 msgid "Machine: "
 msgstr "Macchina: "
+
+#~ msgid "System:"
+#~ msgstr "Sistema:"

@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-02 01:17+0100\n"
 "PO-Revision-Date: 1999-02-03 16:25+MET\n"
-"Translator: Stephan Kulow <coolo@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
+"Translator: Stephan Kulow <coolo@kde.org>\n"
 
 #: helpwin.cpp:55
 msgid "KDE Help: Open URL"
@@ -18,7 +18,7 @@ msgstr "KDE-Hilfe: URL öffnen"
 msgid "Open URL"
 msgstr "URL öffnen"
 
-#: helpwin.cpp:459 info.cpp:288
+#: helpwin.cpp:459 info.cpp:290
 msgid "Cannot open: "
 msgstr "Kann nicht öffnen: "
 
@@ -54,16 +54,16 @@ msgstr "Notiz hinzufügen"
 msgid "Open in new Window"
 msgstr "In einem neuen Fenster öffnen"
 
-#: info.cpp:97 info.cpp:615
+#: info.cpp:97 info.cpp:617
 msgid "Error in info file"
 msgstr "Fehler in \"info\"-Datei"
 
-#: info.cpp:1258
+#: info.cpp:1260
 #, c-format
 msgid "Node not found: %s"
 msgstr "Eintrag %s nicht gefunden."
 
-#: info.cpp:1403
+#: info.cpp:1405
 #, c-format
 msgid "Cannot open info file: %s"
 msgstr "Kann Datei %s nicht öffnen"

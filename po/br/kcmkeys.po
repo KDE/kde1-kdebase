@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeys-1.1\n"
+"POT-Creation-Date: 1999-01-08 01:16+0100\n"
+"PO-Revision-Date: 1998-12-11 11:16+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:72
+msgid "&Standard shortcuts"
+msgstr "Berradennoù &standard"
+
+#: main.cpp:80
+msgid "&Global shortcuts"
+msgstr "Berradennoù &hollek"
+
+#: main.cpp:88
+msgid "usage: kcmkeys [-init | {standard,global}]\n"
+msgstr "arveriadur : kcmkeys [-init | {standard,global}]\n"
+
+#: main.cpp:132
+msgid "Key binding settings"
+msgstr "Kefluniañ ereoù stokell"
+
+#: keyconfig.cpp:106
+msgid "Current scheme"
+msgstr "Steuñv-red"
+
+#: keyconfig.cpp:108
+msgid "KDE default"
+msgstr "KDE dre ziouer"
+
+#: keyconfig.cpp:115
+msgid "&Key scheme"
+msgstr "S&teuñv ar stokell"
+
+#: keyconfig.cpp:126
+msgid "&Add ..."
+msgstr "O&uzhpennañ..."
+
+#: keyconfig.cpp:148
+msgid "&Save changes"
+msgstr "&Enrollañ ar c'hemmoù"
+
+#: keyconfig.cpp:211
+msgid "Error removing scheme"
+msgstr "Fazi o dilemel ur steuñv"
+
+#: keyconfig.cpp:212
+msgid ""
+"This key scheme could not be removed.\n"
+"Perhaps you do not have permission to alter the file\n"
+"system where the key scheme is stored."
+msgstr ""
+"Ar steuñv stokelloù-mañ n'eus ket gallet bezañ lamet.\n"
+"N'oc'h ket aotreet da gemañ ar reizhad restr\n"
+"lec'h en em gav ar steuñv marteze."
+
+#: keyconfig.cpp:343
+msgid "Naming conflict"
+msgstr "Enebiezh envel"
+
+#: keyconfig.cpp:344
+msgid ""
+"Please choose a unique name for the new key\n"
+"scheme. The one you entered already appears\n"
+"in the key scheme list."
+msgstr ""
+"Dibabit mar plij un anv dieil evit ar steuñv\n"
+"stokelloù nevez. Kavet vez an hini oc'h eus roet\n"
+"e roll ar steuñvoù stokell endeo."
+
+#: savescm.cpp:18
+msgid "Add a key scheme"
+msgstr "Ouzhpennañ ur steuñv stokelloù"
+
+#: savescm.cpp:32
+msgid ""
+"&Enter a name for the new key scheme\n"
+"to be added to your personal list.\n"
+"\n"
+"The keys currently used in the preview will\n"
+"be copied into this scheme to begin with."
+msgstr ""
+"&Roit un anv evit ar steuñv stokelloù nevez\n"
+"da vezañ ouzhpennet d'ho listenn-c'hwi.\n"
+"\n"
+"Ar stokelloù en implij er rakgwel a vo eilet\n"
+"er steuñv-se da gregiñ ganto."
+
+#: ../../kwm/kwmbindings.cpp:1
+msgid "Task manager"
+msgstr "Merour dleadoù"
+
+#: ../../kwm/kwmbindings.cpp:2
+msgid "Kill window mode"
+msgstr "Mod lazhañ ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:3
+msgid "Execute command"
+msgstr "Seveniñ an urzhiad"
+
+#: ../../kwm/kwmbindings.cpp:4
+msgid "Window operations menu"
+msgstr "Lañser obererezh ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:5
+msgid "Pop-up system menu"
+msgstr "Lañser jañ-blev ar reizhad"
+
+#: ../../kwm/kwmbindings.cpp:7
+msgid "Window raise"
+msgstr "Uhelaat ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:8
+msgid "Window lower"
+msgstr "Izelaat ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:9
+msgid "Window close"
+msgstr "Serriñ ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:10
+msgid "Window iconify"
+msgstr "Arlunañ ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:11
+msgid "Window resize"
+msgstr "Adventañ ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:12
+msgid "Window move"
+msgstr "Fiñval ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:13
+msgid "Window toggle sticky"
+msgstr "Pegañ/Dispegañ ar prenestr"
+
+#: ../../kwm/kwmbindings.cpp:15
+msgid "Switch to desktop 1"
+msgstr "Gwintañ da burev 1"
+
+#: ../../kwm/kwmbindings.cpp:16
+msgid "Switch to desktop 2"
+msgstr "Gwintañ da burev 2"
+
+#: ../../kwm/kwmbindings.cpp:17
+msgid "Switch to desktop 3"
+msgstr "Gwintañ da burev 3"
+
+#: ../../kwm/kwmbindings.cpp:18
+msgid "Switch to desktop 4"
+msgstr "Gwintañ da burev 4"
+
+#: ../../kwm/kwmbindings.cpp:19
+msgid "Switch to desktop 5"
+msgstr "Gwintañ da burev 5"
+
+#: ../../kwm/kwmbindings.cpp:20
+msgid "Switch to desktop 6"
+msgstr "Gwintañ da burev 6"
+
+#: ../../kwm/kwmbindings.cpp:21
+msgid "Switch to desktop 7"
+msgstr "Gwintañ da burev 7"
+
+#: ../../kwm/kwmbindings.cpp:22
+msgid "Switch to desktop 8"
+msgstr "Gwintañ da burev 8"
+
+#: ../../kwm/kwmbindings.cpp:24
+msgid "Switch one desktop to the right"
+msgstr "Gwintañ d'ur burev a zehou"
+
+#: ../../kwm/kwmbindings.cpp:25
+msgid "Switch one desktop to the left"
+msgstr "Gwintañ d'ur burev a gleiz"
+
+#: ../../kwm/kwmbindings.cpp:26
+msgid "Switch one desktop up"
+msgstr "Gwintañ d'ur burev uheloc'h"
+
+#: ../../kwm/kwmbindings.cpp:27
+msgid "Switch one desktop down"
+msgstr "Gwintañ d'ur burev izeloc'h"
+
+#: stdbindings.cpp:3
+msgid "New"
+msgstr "Nevez"
+
+#: stdbindings.cpp:8
+msgid "Next"
+msgstr "A heul"
+
+#: stdbindings.cpp:9
+msgid "Prior"
+msgstr "Kent"
+
+#: stdbindings.cpp:14
+msgid "Find"
+msgstr "Kavout"
+
+#: stdbindings.cpp:17
+msgid "Home"
+msgstr "Deroù"
+
+#: stdbindings.cpp:18
+msgid "End"
+msgstr "Dibenn"
+
+#~ msgid "KDE lite"
+#~ msgstr "KDE skañv"

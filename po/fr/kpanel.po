@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-01-11 01:00 CET\n"
 "Last-Translator: Francois-Xavier DURANCEAU "
 "<Francois-Xavier.Duranceau@loria.fr>\n"
@@ -51,19 +51,19 @@ msgstr "Cacher le panneau"
 msgid "Show the panel"
 msgstr "Montrer le panneau"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Icônifier les autres fe&nêtres"
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Commentaire non disponible"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Liste des fenêtres"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Navigation rapide dans l'arborescence"
 
@@ -92,7 +92,7 @@ msgid "Add a windowlist menu onto the panel"
 msgstr ""
 "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Configurer"
 
@@ -108,7 +108,7 @@ msgstr "Modifier les menus"
 msgid "Add or remove applications in the menu structure "
 msgstr "Ajouter ou supprimer des applications dans le menu"
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Redémarrer"
 
@@ -132,7 +132,7 @@ msgstr "Verrouiller l'écran"
 msgid "The menu editor is not installed."
 msgstr "L'éditeur de menus n'est pas installé."
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Houlà !"
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "KDiskNavigator"
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "Impossible d'ajouter cette application comme bouton sur le panneau !"
 

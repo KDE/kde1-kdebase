@@ -70,8 +70,9 @@ msgstr "Saindo do Teclado Internacional"
 msgid ""
 "You're about to quit the \"International Keyboard\" tool.\n"
 " Do you want to have it autostarted at your next login?"
-msgstr "Você está para sair da ferramenta \"Teclado Internacional.\""
-       "Você quer reiniciá-lo automaticamente em sua próxima sessão ?"
+msgstr ""
+"Você está para sair da ferramenta \"Teclado Internacional.\"Você quer "
+"reiniciá-lo automaticamente em sua próxima sessão ?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"

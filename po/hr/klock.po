@@ -66,8 +66,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 Jamie Zawinski\n"
 "\n"
-"Prilagodio za kscreensave:"
-"\n"
+"Prilagodio za kscreensave:\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
@@ -790,8 +789,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 Jamie Zawinski\n"
 "\n"
-"Prilagodio za kscreensave:"
-"\n"
+"Prilagodio za kscreensave:\n"
 "Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: slip.cpp:293

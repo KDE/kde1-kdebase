@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay 0.5.3\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1999-01-15 02:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -56,7 +56,7 @@ msgid "Wallpaper"
 msgstr "Обои"
 
 #
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 msgid "No wallpaper"
 msgstr "Без обоев"
 
@@ -146,104 +146,104 @@ msgstr "Ошибка файла"
 msgid "Can't load image file"
 msgstr "Ошибка загрузки файла с изображением"
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr "Неподдерживаемый URL"
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr "Извините, но данный тип URL не поддерживается Модулем дисплея KDE"
 
 #
-#: backgnd.cpp:1440
+#: backgnd.cpp:1441
 msgid "Two color backgrounds"
 msgstr "Двухцветный фон"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "Изменять цвет с&верху вниз"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "Изменять цвет с&права налево"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "Использовать &шаблон"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "Предпросмотр"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "&Имя шаблона"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "Текущий"
 
 #
 #
-#: backgnd.cpp:1626
+#: backgnd.cpp:1627
 msgid "Filled"
 msgstr "Закрашенный"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "Рыбацкая сеть"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "Треугольники"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "Цветы"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "Плетение"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "Мостовая"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr "Настройка случайного режима"
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr "Брать файлы из каталога"
 
 #
-#: backgnd.cpp:1727
+#: backgnd.cpp:1728
 msgid "&Browse ..."
 msgstr "&Просмотреть..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr "Задержка в секундах :"
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1761
 msgid "In &order"
 msgstr "В порядке"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1778
 msgid "Desktops :"
 msgstr "Рабочие столы :"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1817
 msgid "&Add"
 msgstr "&Добавить"
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1989
 msgid "Directory error"
 msgstr "Ошибка каталога"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr "Выбранный каталог не существует"
 

@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfontmanager-1.1\n"
+"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"PO-Revision-Date: 1999-02-01 14:42+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:58
+msgid "KDE Font Manager"
+msgstr "Merour nodrezhoù KDE"
+
+#: main.cpp:71
+msgid "KDE Fonts"
+msgstr "Nodrezhoù KDE"
+
+#: main.cpp:72
+msgid "Font Explorer"
+msgstr "Ergerzher nodrezhoù"
+
+#: main.cpp:73
+msgid "Raw X11 Font List"
+msgstr "Roll nodrezhoù diaoz X11"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "Nodrezhoù X11 hegerz"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "Nodrezh lakaet e kerz KDE"
+
+#: kfontmanager.cpp:89
+msgid ""
+"The Quick Brown Fox Jumps Over The Lazy Dog\n"
+"AaBbCc123"
+msgstr ""
+"Chadenn skouer ar merour nodrezhoù KDE\n"
+"AaBbCc123"
+
+#: kfontlist.cpp:62 kfontmanager.cpp:112
+msgid "About kfontmanager"
+msgstr "Diwar-benn kfontmanager"
+
+#: kfontmanager.cpp:112
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanage Doare 0.2\n"
+"Gwirioù eilañ 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontmanager.cpp:215
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr ""
+"Ar varienn endro HOME\n"
+"n'eo ket termenet\n"
+
+#: kfontmanager.cpp:292
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"N'hellan ket krouiñ :\n"
+"~/.kde/share/config/kdefonts\n"
+
+#: kfontmanager.cpp:297
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"Bez' zo ar restr ~/.kde/share/config/kdefonts\n"
+"hogen n'eo ket skrivadus\n"
+"N'hellan ket enrollañ nodrezhroll KDE."
+
+#: kfontlist.cpp:62
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+"kfontmanager Doare 0.1\n"
+"Gwirioù eilañ 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+
+#: kfontexplorer.cpp:126
+msgid "Select Font"
+msgstr "Diuzit nodrezh"
+
+#: kfontexplorer.cpp:130
+msgid "Requested Font"
+msgstr "Nodrezh goulennet"
+
+#: kfontexplorer.cpp:135
+msgid "Actual Font"
+msgstr "Nodrezh o ren"
+
+#: kfontexplorer.cpp:139 kfontexplorer.cpp:143
+msgid "Family:"
+msgstr "Familh :"
+
+#: kfontexplorer.cpp:163 kfontexplorer.cpp:168
+msgid "Size:"
+msgstr "Ment :"
+
+#: kfontexplorer.cpp:177 kfontexplorer.cpp:182
+msgid "Weight:"
+msgstr "Pouez :"
+
+#: kfontexplorer.cpp:191 kfontexplorer.cpp:199
+msgid "Style:"
+msgstr "Giz :"
+
+#: kfontexplorer.cpp:234
+msgid "Charset"
+msgstr "Arouezenneg"
+
+#: kfontexplorer.cpp:246
+msgid "Size"
+msgstr "Ment"
+
+#: kfontexplorer.cpp:285
+msgid "Weight"
+msgstr "Pouez"
+
+#: kfontexplorer.cpp:286 kfontexplorer.cpp:394
+msgid "normal"
+msgstr "boas"
+
+#: kfontexplorer.cpp:287 kfontexplorer.cpp:396
+msgid "bold"
+msgstr "druz"
+
+#: kfontexplorer.cpp:296
+msgid "Style"
+msgstr "Giz"
+
+#: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
+msgid "roman"
+msgstr "roman"
+
+#: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
+msgid "italic"
+msgstr "italek"
+
+#: kfontexplorer.cpp:326
+msgid "Dolor Ipse"
+msgstr "Gortoz pell, gortoz gwell"
+
+#: kfontexplorer.cpp:430
+msgid "Bold"
+msgstr "Druz"
+
+#: kfontexplorer.cpp:432
+msgid "Normal"
+msgstr "Boas"

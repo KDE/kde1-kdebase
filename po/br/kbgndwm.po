@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kbgndwm 1.1\n"
+"POT-Creation-Date: 1998-11-28 01:10+0100\n"
+"PO-Revision-Date: 1999-01-26 07:59+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jean-marie.drapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kbgndwm.cpp:45
+msgid "Display Settings"
+msgstr "Kefluniadur an diskouez"
+
+#: kbgndwm.cpp:46
+msgid "Background Settings"
+msgstr "Kefluniadur an drekleur"
+
+#: kbgndwm.cpp:48
+msgid "Common Background"
+msgstr "Kefluniadur boutin"
+
+#: kbgndwm.cpp:50
+msgid "Undock"
+msgstr "Anensoc'hañ"
+
+#: kbgndwm.cpp:58
+msgid "Tiled"
+msgstr "Teolet"
+
+#: kbgndwm.cpp:59
+msgid "Mirrored"
+msgstr "Melezouret"
+
+#: kbgndwm.cpp:60
+msgid "CenterTiled"
+msgstr "KreizTeolet"
+
+#: kbgndwm.cpp:61
+msgid "Centred"
+msgstr "Kreizennet"
+
+#: kbgndwm.cpp:62
+msgid "CentredBrick"
+msgstr "KreizBrikenn"
+
+#: kbgndwm.cpp:63
+msgid "CentredWarp"
+msgstr "KreizSterenn"
+
+#: kbgndwm.cpp:64
+msgid "CentredMaxpect"
+msgstr "KreizBrasañ"
+
+#: kbgndwm.cpp:65
+msgid "SymmetricalTiled"
+msgstr "TeoletKendres"
+
+#: kbgndwm.cpp:66
+msgid "SymmetricalMirrored"
+msgstr "MelezourKendres"
+
+#: kbgndwm.cpp:67
+msgid "Scaled"
+msgstr "Skeulaet"
+
+#: bg.cpp:235 bg.cpp:238
+msgid "No wallpaper"
+msgstr "Paper-moger ebet"

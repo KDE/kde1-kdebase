@@ -1,0 +1,176 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kwm-1.1\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"PO-Revision-Date: 1999-02-05 11:16+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team : Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+
+#: main.C:68
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr ""
+"kwm : bez' ez eus dija ur merour prenester hervez doare.\n"
+"kwm n'eo ket loc'het\n"
+
+#: main.C:82
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm : falladur e-pad al loc'hadur ; o leuskel\n"
+
+#: main.C:527
+msgid "Preparing session ... "
+msgstr "O prientiñ an dalc'h..."
+
+#: main.C:551
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Gwirioù eilañ (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: main.C:558
+msgid "Usage: "
+msgstr "Arveradur :"
+
+#: main.C:569
+msgid "&Maximize"
+msgstr "&Uhelaat"
+
+#: main.C:570
+msgid "&Restore"
+msgstr "&Adaozañ"
+
+#: main.C:571
+msgid "&Iconify"
+msgstr "&Arlunañ"
+
+#: main.C:572
+msgid "&DeIconify"
+msgstr "&Dizarlunañ"
+
+#: main.C:573
+msgid "&Sticky"
+msgstr "&Pegañ"
+
+#: main.C:574
+msgid "&UnSticky"
+msgstr "&Dispegañ"
+
+#: main.C:575
+msgid "Mo&ve"
+msgstr "&Dilec'hiañ"
+
+#: main.C:576
+msgid "Resi&ze"
+msgstr "&Adventañ"
+
+#: main.C:578
+msgid "&To desktop"
+msgstr "&D'ar burev"
+
+#: main.C:580
+msgid "&Onto current desktop"
+msgstr "&War ar burev en implij"
+
+#: main.C:620
+msgid "One"
+msgstr "Unan"
+
+#: main.C:623
+msgid "Two"
+msgstr "Daou"
+
+#: main.C:626
+msgid "Three"
+msgstr "Tri"
+
+#: main.C:629
+msgid "Four"
+msgstr "Pevar"
+
+#: main.C:632
+msgid "Five"
+msgstr "Pemp"
+
+#: main.C:635
+msgid "Six"
+msgstr "C'hwec'h"
+
+#: main.C:638
+msgid "Seven"
+msgstr "Seizh"
+
+#: main.C:641
+msgid "Eight"
+msgstr "Eizh"
+
+#: main.C:655
+msgid "Unnamed Desktop"
+msgstr "Gorretoal dianav"
+
+#: main.C:1082
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr "Piksmapoù zo n'eo ket reizh : ShapeMode dizoberiet\n"
+
+#: main.C:1199
+msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
+msgstr "Piksmapoù zo n'eo ket reizh : GimmickMode dizoberiet\n"
+
+#: main.C:1524
+msgid "*** No Tasks ***"
+msgstr "*** Dlead ebet ***"
+
+#: minicli.C:124
+msgid "Command:"
+msgstr "Urzhiad :"
+
+#: warning.C:36
+msgid "Ooops!"
+msgstr "Opala !"
+
+#: logout.C:36 taskmgr.C:108
+msgid "Logout"
+msgstr "Kuitaat"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "Dalc'h prientet evit kuitaat"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"An arloadoù a-heul zo stlenn nann-enrollet enno\n"
+"a vo kollet a-benn an dalc'h kentañ."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"An arloadoù a heul n'hell ket bezañ adaozet en dalc'h kentañ\n"
+"hogen adloc'het nemetken. Bezit sur n'eus ket enno a stlenn nann-savet."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"An arloadoù a-heul n'int ket evezhiek da X11 ha n'hello ket bezañ adaozet\n"
+"en dalc'h kentañ. Bezit sur n'eus ket enno a stlenn a-bouez nann-enrollet."
+
+#: taskmgr.C:107
+msgid "Switch to"
+msgstr "Gwintañ da"
+
+#: taskmgr.C:121
+msgid "Current session"
+msgstr "Dalc'h en implij"

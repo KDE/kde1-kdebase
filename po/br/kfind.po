@@ -1,0 +1,371 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kfind-1.1\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"PO-Revision-Date: 1999-02-05 11:59+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kfdird.cpp:46
+msgid "Directories:"
+msgstr "Renkelloù :"
+
+#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+msgid "Cannot open or read directory."
+msgstr "N'hallan ket digeriñ pe lenn ar renkell."
+
+#: kfindtop.cpp:121
+msgid "&Start search"
+msgstr "&Loc'hañ an enklask"
+
+#: kfindtop.cpp:123
+msgid "S&top search"
+msgstr "&Herzel an enklask"
+
+#: kfindtop.cpp:128
+msgid "&Open"
+msgstr "&Digeriñ"
+
+#: kfindtop.cpp:130
+msgid "&Add to archive"
+msgstr "&Ouzhpennañ d'an diell..."
+
+#: kfindtop.cpp:135
+msgid "&Properties"
+msgstr "&Perzhioù"
+
+#: kfindtop.cpp:138
+msgid "Open Containing &Folder"
+msgstr "Digeriñ ar &renkell endalc'her"
+
+#: kfindtop.cpp:141
+msgid "&Save Search"
+msgstr "&Enrollañ an enklask"
+
+#: kfindtop.cpp:158
+msgid "&Select All"
+msgstr "Diuz &pep tra"
+
+#: kfindtop.cpp:160
+msgid "Unse&lect All"
+msgstr "&Andiuz pep tra"
+
+#: kfindtop.cpp:162
+msgid "&Invert Selection"
+msgstr "&Eilpennañ an diuz"
+
+#: kfindtop.cpp:174
+msgid "&Preferences ..."
+msgstr "&Dibaboù pennañ..."
+
+#: kfindtop.cpp:179
+#, c-format
+msgid ""
+"KFind %s\n"
+"Frontend to find utility\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Special thanks to Stephan Kulow\n"
+"<coolo@kde.org>"
+msgstr ""
+"KFind %s\n"
+"Etrefas ar maveg enklask\n"
+"Miroslav Flídr <flidr@kky.zcu.cz>\n"
+"\n"
+"Trugarez da Stephan Kulow\n"
+"<coolo@kde.org>"
+
+#: kfindtop.cpp:199
+msgid "Start Search"
+msgstr "Loc'hañ an enklask"
+
+#: kfindtop.cpp:204
+msgid "New Search"
+msgstr "Enklask all"
+
+#: kfindtop.cpp:209
+msgid "Stop Search"
+msgstr "Herzel an enklask"
+
+#: kfindtop.cpp:222
+msgid "Add to archive"
+msgstr "Ouzhpennañ d'an diell..."
+
+#: kfindtop.cpp:237
+msgid "Open Containing Folder"
+msgstr "Digeriñ ar renkell endalc'her"
+
+#: kfindtop.cpp:242
+msgid "Save Search Results"
+msgstr "Enrollañ an disoc'hoù"
+
+#: kftabdlg.cpp:72
+msgid "&Named:"
+msgstr "&Anvet"
+
+#: kftabdlg.cpp:75
+msgid "&Look in:"
+msgstr "Sellet &e :"
+
+#: kftabdlg.cpp:78
+msgid "&Browse ..."
+msgstr "&Furchal..."
+
+#: kftabdlg.cpp:84
+msgid "Include &subfolders"
+msgstr "An &is-renkelloù ivez"
+
+#: kftabdlg.cpp:118
+msgid " Name& Location "
+msgstr " Anv && lec'hiadur"
+
+#: kftabdlg.cpp:130
+msgid "and"
+msgstr "ha"
+
+#: kftabdlg.cpp:131
+msgid "month(s)"
+msgstr "miz diwezhañ"
+
+#: kftabdlg.cpp:132
+msgid "day(s)"
+msgstr "devezh diwezhañ"
+
+#: kftabdlg.cpp:147
+msgid "&All files"
+msgstr "An &holl restroù"
+
+#: kftabdlg.cpp:148
+msgid "Find all files created or &modified:"
+msgstr "Restroù &krouet pe kemmet :"
+
+#: kftabdlg.cpp:149
+msgid "&between"
+msgstr "&etre"
+
+#: kftabdlg.cpp:150
+msgid "during the previou&s "
+msgstr "e-&doug ar "
+
+#: kftabdlg.cpp:151
+msgid "&during the previous "
+msgstr "e-doug &an "
+
+#: kftabdlg.cpp:199
+msgid " Date Modified "
+msgstr " Deizhiad kemmet"
+
+#: kftabdlg.cpp:206
+msgid "Of &type:"
+msgstr "Eus ar &rizh :"
+
+#: kftabdlg.cpp:208
+msgid "&Containing Text:"
+msgstr "&Enno an destenn :"
+
+#: kftabdlg.cpp:213
+msgid "&Size is:"
+msgstr "Ar &ment anezho"
+
+#: kftabdlg.cpp:217
+msgid "KB"
+msgstr "KO"
+
+#: kftabdlg.cpp:236
+msgid "All Files and Folders"
+msgstr "An holl restroù ha renkelloù"
+
+#: kftabdlg.cpp:238
+msgid "Folders"
+msgstr "Renkelloù"
+
+#: kftabdlg.cpp:239
+msgid "Symbolic links"
+msgstr "Ereoù arouezel"
+
+#: kftabdlg.cpp:240
+msgid "Special files (sockets, device files...)"
+msgstr "Restroù dibar (lugelloù, trobarzhelloù... )"
+
+#: kftabdlg.cpp:241
+msgid "Executable files"
+msgstr "Restroù sevenadus"
+
+#: kftabdlg.cpp:242
+msgid "SUID executable files"
+msgstr "Restroù sevenadus SUID"
+
+#: kftabdlg.cpp:250
+msgid "(none)"
+msgstr "(hini ebet)"
+
+#: kftabdlg.cpp:251
+msgid "At Least"
+msgstr "D'an nebeutañ"
+
+#: kftabdlg.cpp:252
+msgid "At Most"
+msgstr "D'ar muiañ"
+
+#: kftabdlg.cpp:263
+msgid " Advanced "
+msgstr " Araokaet"
+
+#: kftabdlg.cpp:501
+msgid "The date is not valid!!"
+msgstr "An deiziad a zo siek !"
+
+#: kftabdlg.cpp:513
+msgid "The month(s) value isn't valid!!"
+msgstr "Ar miz a zo siek !"
+
+#: kftabdlg.cpp:524
+msgid "The day(s) value isn't valid!!"
+msgstr "Gwerzh an deiz a zo siek !"
+
+#: kftabdlg.cpp:541
+msgid "The value in size isn't valid number!!"
+msgstr "Gwerzh ar vent a zo ur sifr siek !"
+
+#: kfoptions.cpp:52
+msgid "Preferences"
+msgstr "Dibaboù"
+
+#: kfoptions.cpp:74
+msgid "File format:"
+msgstr "Furmad ar restr :"
+
+#: kfoptions.cpp:76
+msgid "Save results to file:"
+msgstr "Enrollañ disoc'hoù e :"
+
+#: kfoptions.cpp:79
+msgid "Save results to file ~/.kfind-results.html"
+msgstr "Enrollañ disoc'hoù e ~/.kfind-results.html"
+
+#: kfoptions.cpp:81
+msgid "Browse"
+msgstr "Furchal"
+
+#: kfoptions.cpp:94
+msgid "Plain Text"
+msgstr "Testenn eeun"
+
+#: kfoptions.cpp:123
+msgid "Saving"
+msgstr "Enrolladur"
+
+#: kfoptions.cpp:130
+msgid "Create Archive:"
+msgstr "Krouiñ an diell :"
+
+#: kfoptions.cpp:132
+msgid "Add to Archive:"
+msgstr "Stagañ d'an diell :"
+
+#: kfoptions.cpp:136
+msgid "Patterns:"
+msgstr "Siloù :"
+
+#: kfoptions.cpp:139
+msgid "Add New"
+msgstr "Ouzhpennañ"
+
+#: kfoptions.cpp:180
+msgid "Archivers"
+msgstr "Diellerien"
+
+#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:135 kfwin.cpp:162
+#, c-format
+msgid "%d file(s) found"
+msgstr "%d restr kavet"
+
+#: kfwin.cpp:246
+msgid "It wasn't possible to save results!"
+msgstr "Tu ebet da enrollañ an disoc'hoù !"
+
+#: kfwin.cpp:254 kfwin.cpp:256 kfwin.cpp:258
+msgid "KFind Results File"
+msgstr "Restr disoc'hoù KFind"
+
+#: kfwin.cpp:283
+msgid "Results were saved to file\n"
+msgstr "Disoc'hoù enrollet er restr\n"
+
+#: kfwin.cpp:298
+#, c-format
+msgid ""
+"Do you really want to delete file:\n"
+"%s"
+msgstr ""
+"Ha fellout ar ra deoc'h da vat lemel ar restr-mañ:\n"
+"%s"
+
+#: kfwin.cpp:300
+msgid "Delete File"
+msgstr "Lemel ar restr"
+
+#: kfwin.cpp:312
+msgid ""
+"You have no permission\n"
+" to delete this file"
+msgstr ""
+"N'hoc'h ket aotreet\n"
+"da lemel ar restr-mañ"
+
+#: kfwin.cpp:318
+msgid ""
+"It isn't possible to delete\n"
+"selected file"
+msgstr ""
+"N'eus ket tu da lemel\n"
+"ar restr diuzet"
+
+#: kfwin.cpp:336
+msgid ""
+"You have no permission\n"
+" to delete this directory"
+msgstr ""
+"N'oc'h ket aotreet\n"
+"da lemel ar renkell-mañ"
+
+#: kfwin.cpp:341
+msgid ""
+"Specified directory\n"
+"is not empty!"
+msgstr ""
+"N'eo ket goullo\n"
+"ar renkell diuzet !"
+
+#: kfwin.cpp:346
+msgid ""
+"It isn't possible to delete\n"
+"selected directory"
+msgstr ""
+"N'eus ket tu da lemel\n"
+"ar renkell diuzet"
+
+#: kfwin.cpp:438
+msgid "Couldn't recognize archive type!"
+msgstr "Ne m'eus ket gallet anavezet rizh an diell !"
+
+#: kfwin.cpp:497
+msgid "Error while creating child process!"
+msgstr "Fazi en ur grouiñ an argerzh bugel"

@@ -461,8 +461,8 @@ msgstr ""
 msgid "Option %s is not support on this plattform!"
 msgstr "Valik %s ei ole sellel platvormil toetatud!"
 
-#: main.cpp:422
 #
+#: main.cpp:422
 msgid ""
 "Warning: You won't be able to lock the screen!\n"
 "\n"

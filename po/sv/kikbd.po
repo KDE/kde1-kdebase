@@ -345,7 +345,9 @@ msgstr "Använd &snabblista"
 #: widgets.cpp:146
 msgid ""
 "Use only default and last active keyboard maps to switching from keyboard"
-msgstr "Använd bara standard och senast aktiva tagentbordslayouten för tangentbordsväxling"
+msgstr ""
+"Använd bara standard och senast aktiva tagentbordslayouten för "
+"tangentbordsväxling"
 
 #: widgets.cpp:215
 msgid "Adding Keyboard"
@@ -381,7 +383,8 @@ msgstr "Tangent(er) för att byta mellan tagentbordslayouter"
 
 #: widgets.cpp:416
 msgid "Key to activate Alternate symbols in current keyboard map"
-msgstr "Tangent för att aktivera alternativa symboler i aktuell tagentbordslayout"
+msgstr ""
+"Tangent för att aktivera alternativa symboler i aktuell tagentbordslayout"
 
 #: widgets.cpp:429
 msgid "&Beep"
@@ -417,7 +420,8 @@ msgstr "&Världsmeny"
 
 #: widgets.cpp:474
 msgid "Show menu in any window by holding Switch keys"
-msgstr "Visa meny i vilket fönster som helst genom att hålla ner bytes-knapparna"
+msgstr ""
+"Visa meny i vilket fönster som helst genom att hålla ner bytes-knapparna"
 
 #: widgets.cpp:481
 msgid "&Save Classes"
@@ -425,7 +429,8 @@ msgstr "&Spara klasser"
 
 #: widgets.cpp:482
 msgid "Save relations between window classes and keyboard maps on exit"
-msgstr "Spara relationer mellan fönsterklasser och tagentbordslayouter vid avslut"
+msgstr ""
+"Spara relationer mellan fönsterklasser och tagentbordslayouter vid avslut"
 
 #: widgets.cpp:488
 msgid "Define X codes"
@@ -441,11 +446,13 @@ msgstr "Standarduppförande. Tagentbordslayouten är aktiv för alla fönster"
 
 #: widgets.cpp:499
 msgid "Extended behavior. Each windows remember it's own keyboard map"
-msgstr "Utökat uppförande. Varje fönster kommer ihåg sin egen tagentbordslayout"
+msgstr ""
+"Utökat uppförande. Varje fönster kommer ihåg sin egen tagentbordslayout"
 
 #: widgets.cpp:503
 msgid "Special behavior. Each windows class remember it's own keyboard map"
-msgstr "Specialuppförande. Varje fönsterklass kommer ihåg sin egen tagentbordslayout"
+msgstr ""
+"Specialuppförande. Varje fönsterklass kommer ihåg sin egen tagentbordslayout"
 
 #: widgets.cpp:551
 msgid "Button Colors"

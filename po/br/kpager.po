@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kpager-1.1\n"
+"POT-Creation-Date: 1998-12-15 07:34+0100\n"
+"PO-Revision-Date: 1999-02-02 17:47+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kpager.cpp:72
+msgid "Toggle Global Desktop"
+msgstr "Eilpennañ ar burev hollek"
+
+#: kpager.cpp:74
+msgid "Toggle Menubar"
+msgstr "Eilpennañ ar varrenn lañser"
+
+#: kpager.cpp:77
+msgid "Move Right"
+msgstr "Dilec'hiañ a-zehou"
+
+#: kpager.cpp:79
+msgid "Move Left"
+msgstr "Dilec'hiañ a-gleiz"
+
+#: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
+msgid "Hide &Global Desktop"
+msgstr "Kuzhat ar &burev hollek"
+
+#: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
+msgid "Show &Global Desktop"
+msgstr "Diskouez ar burev &hollek"
+
+#: kpager.cpp:97 kpager.cpp:380
+msgid "Hide &Menubar"
+msgstr "Kuzhat &barren al lañser"
+
+#: kpager.cpp:101 kpager.cpp:386
+msgid "&2 Rows"
+msgstr "&2 Linenn"
+
+#: kpager.cpp:104
+msgid "&One Click change Desktop"
+msgstr "Kemmañ burev gant &ur c'hlik"
+
+#: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
+msgid "Hide Desktop &Names"
+msgstr "Kuzhat &anv ar burevioù"
+
+#: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
+msgid "Show Desktop &Names"
+msgstr "Diskouez &anv ar burevioù"
+
+#: kpager.cpp:115 kpager.cpp:402
+msgid "Plain"
+msgstr "Leun"
+
+#: kpager.cpp:118 kpager.cpp:404
+msgid "Icon"
+msgstr "Arlun"
+
+#: kpager.cpp:121 kpager.cpp:406
+msgid "Pixmap"
+msgstr "Piksmap"
+
+#: kpager.cpp:125 kpager.cpp:412
+msgid "Draw Mode"
+msgstr "Mod tresañ"
+
+#: kpager.cpp:129
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Spain)\n"
+"\n"
+"KPager's homepage is at : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager comes with ABSOLUTELY NO WARRANTY; for details view file COPYING\n"
+"This is free software, and you are welcome to redistribute it\n"
+"under certain conditions\n"
+msgstr ""
+"%s\n"
+"\n"
+"(C) 1998 Antonio Larrosa Jimenez\n"
+"larrosa@kde.org\t\tantlarr@arrakis.es\n"
+"Malaga (Bro-Spagn)\n"
+"\n"
+"Pennbajenn KPager's zo e : http://www.arrakis.es/~rlarrosa/kpager.html\n"
+"\n"
+"KPager a zeu hep TAMM KRETADUR EBET ; gwelit ar restr COPYING\n"
+"evit munudoù. Ur meziant frank eo, ha deuet mat oc'h evit\n"
+"e zasparzhañ adarre dindan aozioù zo\n"
+
+#: kpager.cpp:382
+msgid "Show &Menubar"
+msgstr "Diskouez barrenn al lañser"
+
+#: kpager.cpp:389
+msgid "One Click change Desktop"
+msgstr "Kemmañ burev gant ur c'hlik"
+
+#: kpager.cpp:446
+msgid "&Maximize"
+msgstr "&Astenn"
+
+#: kpager.cpp:447
+msgid "&Iconify"
+msgstr "&Arlunañ"
+
+#: kpager.cpp:449
+msgid "&UnSticky"
+msgstr "&Dispegañ"
+
+#: kpager.cpp:451
+msgid "&Sticky"
+msgstr "&Pegañ"
+
+#: kpager.cpp:453
+msgid "&To Desktop"
+msgstr "&D'ar burev"

@@ -3,120 +3,120 @@
 #
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-01-30 01:12+0100\n"
 "PO-Revision-Date: 1998-10-26 23:41+0200\n"
 "Last-Translator: Logi Ragnarsson <logir@imf.au.dk>\n"
 "Language-Team: is\n"
 
-#: krootwm.C:223 krootwm.C:270
+#: krootwm.C:234 krootwm.C:281
 msgid "Execute command"
 msgstr "Framkvæma skipun"
 
-#: krootwm.C:225 krootwm.C:294
+#: krootwm.C:236 krootwm.C:305
 msgid "Lock screen"
 msgstr "Læsa skjá"
 
-#: krootwm.C:226 krootwm.C:295
+#: krootwm.C:237 krootwm.C:306
 msgid "Logout"
 msgstr "Stimpla út"
 
-#: krootwm.C:234 krootwm.C:272
+#: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"
 msgstr "Endurteikna skjáborð"
 
-#: krootwm.C:235 krootwm.C:274
+#: krootwm.C:246 krootwm.C:285
 msgid "Unclutter windows"
 msgstr "Koma gluggum fyrir"
 
-#: krootwm.C:236 krootwm.C:275
+#: krootwm.C:247 krootwm.C:286
 msgid "Cascade windows"
 msgstr "Glugga á ská"
 
-#: krootwm.C:237 krootwm.C:276
+#: krootwm.C:248 krootwm.C:287
 msgid "Arrange icons"
 msgstr "Raða táknmyndum"
 
-#: krootwm.C:238 krootwm.C:271
+#: krootwm.C:249 krootwm.C:282
 msgid "Display properties"
 msgstr "Sýna eiginleika"
 
-#: krootwm.C:246 krootwm.C:269
+#: krootwm.C:257 krootwm.C:280
 msgid "Help on desktop"
 msgstr "Hjálp um skjáborð"
 
-#: krootwm.C:247
+#: krootwm.C:258
 msgid "About KDE..."
 msgstr "Um KDE..."
 
-#: krootwm.C:265 krootwm.C:304 krootwm.C:812 krootwm.C:820
+#: krootwm.C:276 krootwm.C:315 krootwm.C:823 krootwm.C:831
 msgid "New"
 msgstr "Hér verði"
 
-#: krootwm.C:266 krootwm.C:305
+#: krootwm.C:277 krootwm.C:316
 msgid "Bookmarks"
 msgstr "Bókamerki"
 
-#: krootwm.C:280
+#: krootwm.C:291
 msgid "Arrange Window Maker icons"
 msgstr "Raða Window Maker táknmyndum"
 
-#: krootwm.C:281
+#: krootwm.C:292
 msgid "Show all"
 msgstr "Sýna allt"
 
-#: krootwm.C:282
+#: krootwm.C:293
 msgid "Hide other"
 msgstr "Fela annað"
 
-#: krootwm.C:284
+#: krootwm.C:295
 msgid "Show info panel"
 msgstr "Sýna upplýsingaspjald"
 
-#: krootwm.C:285
+#: krootwm.C:296
 msgid "Show legal panel"
 msgstr ""
 
-#: krootwm.C:286
+#: krootwm.C:297
 msgid "Restart"
 msgstr "Endurræsa"
 
-#: krootwm.C:288
+#: krootwm.C:299
 msgid "Exit"
 msgstr "Hætta"
 
-#: krootwm.C:289
+#: krootwm.C:300
 msgid "Window Maker"
 msgstr "Window Maker"
 
-#: krootwm.C:306
+#: krootwm.C:317
 msgid "Desk"
 msgstr "Skrifborð"
 
-#: krootwm.C:307
+#: krootwm.C:318
 msgid "Windows"
 msgstr "Glugga"
 
-#: krootwm.C:370
+#: krootwm.C:381
 msgid "Edit Bookmarks"
 msgstr "Sýsla með bókamerki"
 
-#: krootwm.C:384 krootwm.C:822
+#: krootwm.C:395 krootwm.C:833
 msgid "Folder"
 msgstr "Möppu"
 
-#: krootwm.C:388
+#: krootwm.C:399
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
 msgstr "VILLA: Sniðið '%s' er ekki til"
 
-#: krootwm.C:843
+#: krootwm.C:854
 msgid "Could not create folder"
 msgstr "Ekki tókst að búa til möppu"
 
-#: krootwm.C:911
+#: krootwm.C:922
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
 msgstr "Höfundarretur 1997 Matthias Ettrich (ettrich@kde.org)\n"
 
-#: krootwm.C:915
+#: krootwm.C:926
 msgid "Usage:"
 msgstr "Notkun:"

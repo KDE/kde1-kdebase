@@ -1,0 +1,327 @@
+# KTranslator Generated File
+msgid ""
+msgstr ""
+"Project-Id-Version: kdmconfig-1.1\n"
+"POT-Creation-Date: 1999-01-12 01:14+0100\n"
+"PO-Revision-Date: 1999-02-05 16:25+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:84
+msgid "&Appearance"
+msgstr "N&euziadur"
+
+#: main.cpp:92
+msgid "&Background"
+msgstr "&Drekleur"
+
+#: main.cpp:95
+msgid "&Users"
+msgstr "&Arveriaded"
+
+#: main.cpp:98
+msgid "&Sessions"
+msgstr "&Dalc'hoù"
+
+#: main.cpp:103
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"arveriadur : kdmconfig [-init | "
+"{appearance,font,background,sessions,users}]\n"
+
+#: main.cpp:142
+msgid "KDM Configuration"
+msgstr "Kefluniadur KDM"
+
+#: main.cpp:152
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Ho tigarez, hogen n'hoc'h eus ket aotre\n"
+"lenn/skrivañ war ar restr kefluniañ KDM."
+
+#: main.cpp:154
+msgid "Missing privileges"
+msgstr "Diouer a zreistgwirioù"
+
+#: kdm-appear.cpp:70
+msgid "Greeting string:"
+msgstr "Hedad degemer :"
+
+#: kdm-appear.cpp:78
+msgid "KDM logo:"
+msgstr "Logo KDM :"
+
+#: kdm-appear.cpp:105 kdm-users.cpp:135
+msgid "Click or drop an image here"
+msgstr "Klikit pe laoskit ur skeudenn amañ"
+
+#: kdm-appear.cpp:110
+msgid "GUI Style:"
+msgstr "Giz EIG :"
+
+#: kdm-appear.cpp:116
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:117
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:128
+msgid "Language"
+msgstr "Yezh"
+
+#: kdm-appear.cpp:131
+msgid "Language:"
+msgstr "Yezh :"
+
+#: kdm-appear.cpp:167 kdm-appear.cpp:251 kdm-users.cpp:276
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Ur fazi zo bet o kargañ ar skeudenn :\n"
+">"
+
+#: kdm-appear.cpp:169 kdm-appear.cpp:188 kdm-users.cpp:196
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:170 kdm-appear.cpp:189 kdm-appear.cpp:254 kdm-users.cpp:197
+#: kdm-users.cpp:279
+msgid "ERROR"
+msgstr "FAZI"
+
+#: kdm-appear.cpp:186 kdm-users.cpp:194
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Ur fazi zo bet oc'h enrollañ ar skeudenn :\n"
+">"
+
+#: kdm-appear.cpp:219 kdm-users.cpp:227
+msgid "Sorry, but \n"
+msgstr "Ho tigarez, hogen\n"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:229
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr ""
+"\n"
+"n'eus ket tres warnañ da vezañ ur restr skeudenn"
+
+#: kdm-appear.cpp:222 kdm-users.cpp:230
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr ""
+"\n"
+"Arverit mar plij restroù gant an astennadur-mañ\n"
+
+#: kdm-appear.cpp:224 kdm-users.cpp:232
+msgid "Improper File Extension"
+msgstr "Astennadur restr siek"
+
+#: kdm-appear.cpp:253 kdm-users.cpp:278
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Ne vo ket enrollet..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Diuzit nodrezhoù"
+
+#: kdm-font.cpp:50
+msgid "Example"
+msgstr "Skouer"
+
+#: kdm-font.cpp:52
+msgid "Change font..."
+msgstr "Kemmañ nodrezh..."
+
+#: kdm-font.cpp:57
+msgid "Greeting"
+msgstr "Gourc'hemennoù"
+
+#: kdm-font.cpp:58
+msgid "Fail"
+msgstr "Sac'het"
+
+#: kdm-font.cpp:59
+msgid "Standard"
+msgstr "Standard"
+
+#: kdm-font.cpp:157
+msgid "Greeting font"
+msgstr "Hedad gourc'hemennoù"
+
+#: kdm-font.cpp:161
+msgid "Fail font"
+msgstr "Nodrezh sac'het"
+
+#: kdm-font.cpp:165
+msgid "Standard font"
+msgstr "Nodrezh standard"
+
+#: kdm-bgnd.cpp:70
+msgid "Preview"
+msgstr "Rakgwel"
+
+#: kdm-bgnd.cpp:95
+msgid "Color"
+msgstr "Liv"
+
+#: kdm-bgnd.cpp:101
+msgid "Solid Color"
+msgstr "Liv leun"
+
+#: kdm-bgnd.cpp:106
+msgid "Horizontal Blend"
+msgstr "Kemmeskaj a-led"
+
+#: kdm-bgnd.cpp:111
+msgid "Vertical Blend"
+msgstr "Kemmeskaj a-serzh"
+
+#: kdm-bgnd.cpp:130
+msgid "Wallpaper"
+msgstr "Paper-moger"
+
+#: kdm-bgnd.cpp:171 kdm-sess.cpp:56
+msgid "None"
+msgstr "Hini ebet"
+
+#: kdm-bgnd.cpp:176
+msgid "Tile"
+msgstr "Teolet"
+
+#: kdm-bgnd.cpp:181
+msgid "Center"
+msgstr "Kreizennet"
+
+#: kdm-bgnd.cpp:186
+msgid "Scale"
+msgstr "Skeulaet"
+
+#: kdm-bgnd.cpp:191
+msgid "TopLeft"
+msgstr "LaezKleiz"
+
+#: kdm-bgnd.cpp:196
+msgid "TopRight"
+msgstr "LaezDehou"
+
+#: kdm-bgnd.cpp:201
+msgid "BottomLeft"
+msgstr "TraoñKleiz"
+
+#: kdm-bgnd.cpp:206
+msgid "BottomRight"
+msgstr "TraoñDehou"
+
+#: kdm-bgnd.cpp:211
+msgid "Fancy"
+msgstr "Faltazi"
+
+#: kdm-users.cpp:48
+msgid "All users"
+msgstr "An holl arveriaded"
+
+#: kdm-users.cpp:50
+msgid "Selected users"
+msgstr "Arveriaded diuzet"
+
+#: kdm-users.cpp:52
+msgid "No-show users"
+msgstr "Arveriaded dihewel"
+
+#: kdm-users.cpp:79
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Diskouez hepken an\n"
+"arveriaded diuzet"
+
+#: kdm-users.cpp:86
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Diskouez an holl\n"
+"nebeut ar re dihewel"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr ""
+"Diskouez an\n"
+"arveriaded"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr ""
+"Rummañ an\n"
+"arveriaded"
+
+#: kdm-users.cpp:182 kdm-users.cpp:251
+msgid "No user selected"
+msgstr "Arveriad diuzet ebet"
+
+#: kdm-users.cpp:183 kdm-users.cpp:252
+msgid "Save image as default image?"
+msgstr "Enrollañ ar skeudenn evel skeudenn dre ziouer ?"
+
+#: kdm-sess.cpp:52
+msgid "Allow to shutdown"
+msgstr "Aotren da lazhañ"
+
+#: kdm-sess.cpp:57
+msgid "All"
+msgstr "An holl"
+
+#: kdm-sess.cpp:58
+msgid "Root Only"
+msgstr "Root hepken"
+
+#: kdm-sess.cpp:59
+msgid "Console Only"
+msgstr "Al letrin kepken"
+
+#: kdm-sess.cpp:63
+msgid "Commands"
+msgstr "Urzhiadoù"
+
+#: kdm-sess.cpp:64
+msgid "Shutdown"
+msgstr "Lazhañ"
+
+#: kdm-sess.cpp:70
+msgid "Restart"
+msgstr "Adloc'hañ"
+
+#: kdm-sess.cpp:77
+msgid "Session types"
+msgstr "Rizhoù dalc'h"
+
+#: kdm-sess.cpp:79
+msgid "New type"
+msgstr "Rizh nevez"
+
+#: kdm-sess.cpp:89
+msgid "Available types"
+msgstr "Rizhoù hegerz"
+
+#: klangcombo.cpp:133
+msgid "without name!"
+msgstr "Hep anv !"

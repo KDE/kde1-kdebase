@@ -1,0 +1,277 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kmenuedit-1.1\n"
+"POT-Creation-Date: 1999-01-14 01:18+0100\n"
+"PO-Revision-Date: 1999-02-05 16:40+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jean-marie.drapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kmenuedit.cpp:69
+msgid "Change &Menuname"
+msgstr "Kemmañ &anv al lañser"
+
+#: kmenuedit.cpp:70
+msgid "Reload &Filetypes"
+msgstr "Adkargañ &Rizhoù restroù"
+
+#: kmenuedit.cpp:77
+msgid "by"
+msgstr "gant"
+
+#: kmenuedit.cpp:179 kmenuedit.cpp:204
+msgid "Changes not saved !"
+msgstr "Kemmoù nann enrollet !"
+
+#: kmenuedit.cpp:180 kmenuedit.cpp:205
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"Ha fellout a  ra deoc'h enrollañ ho kemmoù ?"
+
+#: confmenu.cpp:339 confmenu.cpp:939 kmenuedit.cpp:264
+msgid "EMPTY"
+msgstr "GOULLO"
+
+#: kmenuedit.cpp:343
+msgid "Reload Menus"
+msgstr "Adkargañ al lañserioù"
+
+#: kmenuedit.cpp:344
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Ma adkargit al lañserioù e vo dilezet an holl gemmoù.\n"
+"Ha sur hoc'h e fell deoc'h adkargañ ?"
+
+#: button.cpp:209 main.cpp:79 main.cpp:92
+msgid "KMenuedit"
+msgstr "KMenuedit"
+
+#: main.cpp:80
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"Ar renkell evit ho lañserioù deoc'h-c'hwi n'eut ket anezhi.\n"
+"Ha fellout a ra deoc'h he c'hrouiñ bremañ ?"
+
+#: main.cpp:93
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Dic'houest da grouiñ ar renkell evit ho lañserioù deoc'h-c'hwi.\n"
+"Diuzit Ok evit kuitaat KMenuedit."
+
+#: confmenu.cpp:91 entrydialog.cpp:60
+msgid "Separator"
+msgstr "Troc'h"
+
+#: confmenu.cpp:103 confmenu.cpp:335
+msgid "Open/ Close"
+msgstr "Digeriñ/Serriñ"
+
+#: confmenu.cpp:117
+msgid "Select item for moving"
+msgstr "Diuzit an draezenn da zilec'hiañ"
+
+#: confmenu.cpp:118
+msgid "Select menu for moving"
+msgstr "Diuzit al lañser da zilec'hiañ"
+
+#: confmenu.cpp:120
+msgid "New"
+msgstr "Nevez"
+
+#: confmenu.cpp:177 confmenu.cpp:318
+msgid "Warning !"
+msgstr "Diwallit !"
+
+#: confmenu.cpp:178
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Ma lammit an nozelenn-se e kollot he holl islañseroù"
+
+#: confmenu.cpp:297
+msgid "Wrong filename"
+msgstr "Anv restr faziek"
+
+#: confmenu.cpp:298
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"Bez' ez eus ur restr kdelnk gant an anv-se endeo\n"
+"Dibabit un anv all mar plij."
+
+#: confmenu.cpp:319
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Kemmañ rizh an nozelenn-mañ a zistrujo he holl islañseroù"
+
+#: confmenu.cpp:340 confmenu.cpp:940
+msgid "no command"
+msgstr "urzhiad ebet"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Ho tigarez ! Ret eo deoc'h enrollañ ho kemmoù\n"
+"a-raok gallout leuskel ar draezenn-se war ur prenestr all."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Hent evit monedoù KDE n'eo ket termenet."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "Kinnig a ran ar monedoù a heul :"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Hent :"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Hent diouzhoc'h :"
+
+#: entrydialog.cpp:61
+msgid "Submenu"
+msgstr "Islañser"
+
+#: entrydialog.cpp:62 entrydialog.cpp:198 entrydialog.cpp:539
+#: entrydialog.cpp:544
+msgid "Application"
+msgstr "Arload"
+
+#: entrydialog.cpp:63 entrydialog.cpp:200 entrydialog.cpp:543
+msgid "Swallow"
+msgstr "Sacher mollad"
+
+#: entrydialog.cpp:64 entrydialog.cpp:202 entrydialog.cpp:548
+msgid "Link"
+msgstr "Ereadur"
+
+#: entrydialog.cpp:65 entrydialog.cpp:204 entrydialog.cpp:552
+msgid "Device"
+msgstr "Trobarzhell"
+
+#: entrydialog.cpp:72
+msgid "Type:"
+msgstr "Rizh :"
+
+#: entrydialog.cpp:79
+msgid "File Name:"
+msgstr "Anv restr :"
+
+#: entrydialog.cpp:94
+msgid "Name:"
+msgstr "Anv :"
+
+#: entrydialog.cpp:109
+msgid "Icon:"
+msgstr "Arlun :"
+
+#: entrydialog.cpp:141
+msgid "Mini Icon:"
+msgstr "Arlun korr :"
+
+#: entrydialog.cpp:149
+msgid "Comment:"
+msgstr "Askelenn :"
+
+#: entrydialog.cpp:196 entrydialog.cpp:538
+msgid "Execute"
+msgstr "Seveniñ"
+
+#: entrydialog.cpp:222
+msgid "Execute:"
+msgstr "Seveniñ :"
+
+#: entrydialog.cpp:228
+msgid "Working Directory:"
+msgstr "Renkell labour :"
+
+#: entrydialog.cpp:241
+msgid "Run in terminal"
+msgstr "Seveniñ en un dermenell"
+
+#: entrydialog.cpp:245
+msgid "Terminal Options:"
+msgstr "Dibaboù an dermenell :"
+
+#: entrydialog.cpp:310
+msgid "Binary Pattern:"
+msgstr "Patrom binarel :"
+
+#: entrydialog.cpp:325
+msgid "Application to swallow:"
+msgstr "Arload da sachañ :"
+
+#: entrydialog.cpp:331
+msgid "Title of application:"
+msgstr "Titl an arload :"
+
+#: entrydialog.cpp:337
+msgid "Application to execute on button press:"
+msgstr "Arload da seveniñ o pouezañ an nozelenn :"
+
+#: entrydialog.cpp:367
+msgid "URL:"
+msgstr "URL :"
+
+#: entrydialog.cpp:415
+msgid "Read Only"
+msgstr "Lenn hepken"
+
+#: entrydialog.cpp:420
+msgid "Device:"
+msgstr "Trobarzhell :"
+
+#: entrydialog.cpp:425
+msgid "Mount Point:"
+msgstr "Poent mountañ :"
+
+#: entrydialog.cpp:430
+msgid "FS Type:"
+msgstr "Rizh RR :"
+
+#: entrydialog.cpp:435
+msgid "Unmount Icon:"
+msgstr "Arlun Divountañ"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Kemmañ anvioù al lañserioù"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Kemmañ anvioù al lañserioù evel diskouezet e kpanel"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Diouzhoc'h :"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "Dre ziouer :"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdisplay\n"
-"POT-Creation-Date: 1999-01-15 01:15+0100\n"
+"POT-Creation-Date: 1999-02-06 01:16+0100\n"
 "PO-Revision-Date: 1998-04-20 22:09+0800\n"
 "Last-Translator: Chou Yeh-Jyi <ycchou@ccca.nctu.edu.tw>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "設定[&U]..."
 msgid "Wallpaper"
 msgstr "桌布"
 
-#: backgnd.cpp:327 backgnd.cpp:1214 backgnd.cpp:1372 backgnd.cpp:1910
+#: backgnd.cpp:327 backgnd.cpp:1210 backgnd.cpp:1372 backgnd.cpp:1911
 #, fuzzy
 msgid "No wallpaper"
 msgstr "沒有桌布"
@@ -146,107 +146,107 @@ msgstr "命名時發生錯誤"
 msgid "Can't load image file"
 msgstr ""
 
-#: backgnd.cpp:1408 backgnd.cpp:1880
+#: backgnd.cpp:1408 backgnd.cpp:1881
 msgid "Unsupported URL"
 msgstr ""
 
-#: backgnd.cpp:1409 backgnd.cpp:1881
+#: backgnd.cpp:1409 backgnd.cpp:1882
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
 msgstr ""
 
-#: backgnd.cpp:1440
+#: backgnd.cpp:1441
 #, fuzzy
 msgid "Two color backgrounds"
 msgstr "雙色背景"
 
-#: backgnd.cpp:1477
+#: backgnd.cpp:1478
 msgid "Blend colors from &top to bottom"
 msgstr "由上到下混合兩種顏色[&T]"
 
-#: backgnd.cpp:1483
+#: backgnd.cpp:1484
 msgid "Blend colors from &right to left"
 msgstr "由右至左調和兩種顏色[&R]"
 
-#: backgnd.cpp:1489
+#: backgnd.cpp:1490
 msgid "Use &pattern"
 msgstr "使用花樣[&P]"
 
-#: backgnd.cpp:1516
+#: backgnd.cpp:1517
 msgid "Preview"
 msgstr "預覽"
 
-#: backgnd.cpp:1527
+#: backgnd.cpp:1528
 msgid "Pattern &name"
 msgstr "花樣名稱[&N]"
 
-#: backgnd.cpp:1566
+#: backgnd.cpp:1567
 msgid "Current"
 msgstr "目前"
 
-#: backgnd.cpp:1626
+#: backgnd.cpp:1627
 #, fuzzy
 msgid "Filled"
 msgstr "填滿"
 
-#: backgnd.cpp:1629
+#: backgnd.cpp:1630
 msgid "Fish net"
 msgstr "魚網"
 
-#: backgnd.cpp:1632
+#: backgnd.cpp:1633
 msgid "Triangles"
 msgstr "三角"
 
-#: backgnd.cpp:1635
+#: backgnd.cpp:1636
 msgid "Flowers"
 msgstr "花"
 
-#: backgnd.cpp:1638
+#: backgnd.cpp:1639
 msgid "Rattan"
 msgstr "藤蔓"
 
-#: backgnd.cpp:1641
+#: backgnd.cpp:1642
 msgid "Cobbled Pavement"
 msgstr "鵝卵石人行道"
 
-#: backgnd.cpp:1707
+#: backgnd.cpp:1708
 msgid "Random mode setup"
 msgstr ""
 
-#: backgnd.cpp:1713
+#: backgnd.cpp:1714
 msgid "Pick files from &directory"
 msgstr ""
 
-#: backgnd.cpp:1727
+#: backgnd.cpp:1728
 #, fuzzy
 msgid "&Browse ..."
 msgstr "瀏覽[&B]..."
 
-#: backgnd.cpp:1748
+#: backgnd.cpp:1749
 msgid "Timer Delay in seconds :"
 msgstr ""
 
-#: backgnd.cpp:1760
+#: backgnd.cpp:1761
 #, fuzzy
 msgid "In &order"
 msgstr "忽略"
 
-#: backgnd.cpp:1777
+#: backgnd.cpp:1778
 #, fuzzy
 msgid "Desktops :"
 msgstr "桌面"
 
-#: backgnd.cpp:1816
+#: backgnd.cpp:1817
 #, fuzzy
 msgid "&Add"
 msgstr "新增[&A] ..."
 
-#: backgnd.cpp:1988
+#: backgnd.cpp:1989
 #, fuzzy
 msgid "Directory error"
 msgstr "命名時發生錯誤"
 
-#: backgnd.cpp:1989
+#: backgnd.cpp:1990
 msgid "Selected directory doesn't exists"
 msgstr ""
 

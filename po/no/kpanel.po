@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kpanel\n"
-"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
 "PO-Revision-Date: 1998-02-27 12:35+0100\n"
 "Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
 "Language-Team: no <LL@li.org>\n"
@@ -49,19 +49,19 @@ msgstr "Skjul panelet"
 msgid "Show the panel"
 msgstr "Vis panelet"
 
-#: kpanel.C:1108
+#: kpanel.C:1067
 msgid "Iconify other &windows"
 msgstr "Ikoniser andre &vinduer"
 
-#: kpanel.C:1245
+#: kpanel.C:1204
 msgid "No comment available"
 msgstr "Ingen kommentar tilgjengelig"
 
-#: kpanel.C:1254 tools.C:910
+#: kpanel.C:1213 tools.C:910
 msgid "Windowlist"
 msgstr "Vindusliste"
 
-#: kpanel.C:1262 props.C:197
+#: kpanel.C:1221 props.C:197
 msgid "Quickly navigate through the filesystem"
 msgstr "Rask navigering gjennom filsystemet"
 
@@ -89,7 +89,7 @@ msgstr "Tilføy vindusliste"
 msgid "Add a windowlist menu onto the panel"
 msgstr "Tilføy en vindusliste meny til panelet"
 
-#: events.C:832 props.C:183
+#: events.C:851 props.C:183
 msgid "Configure"
 msgstr "Konfigurer"
 
@@ -105,7 +105,7 @@ msgstr "Redigere menyer"
 msgid "Add or remove applications in the menu structure "
 msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
-#: events.C:834 props.C:189
+#: events.C:853 props.C:189
 msgid "Restart"
 msgstr "Omstart"
 
@@ -129,7 +129,7 @@ msgstr "Lås skjerm"
 msgid "The menu editor is not installed."
 msgstr "Meny-editoren er ikke installert."
 
-#: events.C:888 props.C:452
+#: events.C:908 props.C:452
 msgid "Oops!"
 msgstr "Ops!"
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "KDiskNavigator"
 msgstr "Disknavigator"
 
-#: events.C:887
+#: events.C:907
 msgid "Cannot put this as button onto the panel!"
 msgstr "Kan ikke putte denne knappen på panelet!"
 

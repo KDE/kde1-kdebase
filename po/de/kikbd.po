@@ -3,13 +3,12 @@ msgstr ""
 "Project-Id-Version: kikbd\n"
 "POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1999-02-03 18:05+MET\n"
-"Translator: Harri Porten <porten@kde.org>\n"
 "Last-Translator: Thomas Diehl <th_diehl@csi.com>\n"
 "Language-Team: de (de@li.org)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
-
+"Translator: Harri Porten <porten@kde.org>\n"
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Xgettext-Options: -C -ktranslate\n"
@@ -19,7 +18,8 @@ msgstr ""
 
 #: kikbd.cpp:116
 msgid "KDE International Keyboard already started on this display."
-msgstr "KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
+msgstr ""
+"KDE-Internationale-Tastatur wurde bereits auf diesem Display gestartet."
 
 #: kikbd.cpp:288
 #, c-format
@@ -80,7 +80,8 @@ msgid ""
 " Do you want to have it autostarted at your next login?"
 msgstr ""
 "Sie sind dabei, das \"Internationale Tastatur-Tool\" zu verlassen.\n"
-"Möchten Sie es automatisch gestartet haben, wenn Sie das nächste Mal einloggen?"
+"Möchten Sie es automatisch gestartet haben, wenn Sie das nächste Mal "
+"einloggen?"
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"

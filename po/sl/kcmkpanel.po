@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmpanel\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-09-24  18:04+0100\n"
 "Last-Translator: luka steger, <luka_steger@hotmail.com>\n"
 "Language-Team: slovene\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "Uporaba: kcmkpanel [-init | {panel,options,desktops}]\n"
 
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "Nastavitve KPulta"
 

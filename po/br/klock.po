@@ -1,0 +1,879 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: klock-1.1\n"
+"POT-Creation-Date: 1999-01-18 01:13+0100\n"
+"PO-Revision-Date: 1999-02-05 12:19+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: attraction.cpp:716
+msgid "Attraction"
+msgstr "Dedennerezh"
+
+#: attraction.cpp:803
+msgid "Setup KAttraction"
+msgstr "Kefluniañ KDedennerezh"
+
+#: attraction.cpp:815 pyro.cpp:529 rock.cpp:575 slidescreen.cpp:479
+msgid "Number:"
+msgstr "Niver :"
+
+#: attraction.cpp:829 science.cpp:993 slidescreen.cpp:493
+msgid "Mode:"
+msgstr "Giz :"
+
+#: attraction.cpp:834 slidescreen.cpp:498
+msgid "Balls"
+msgstr "Melloù"
+
+#: attraction.cpp:835 lines.cpp:116 slidescreen.cpp:499
+msgid "Lines"
+msgstr "Linennoù"
+
+#: attraction.cpp:836 polygon.cpp:64 slidescreen.cpp:500
+msgid "Polygons"
+msgstr "Lieskognegoù"
+
+#: attraction.cpp:837 slidescreen.cpp:501
+msgid "Tails"
+msgstr "Roudennoù"
+
+#: attraction.cpp:850 slidescreen.cpp:514
+msgid "Glow"
+msgstr "Lufrus"
+
+#: attraction.cpp:951
+msgid "About Attraction"
+msgstr "Diwar-benn Dedennerezh"
+
+#: attraction.cpp:952
+msgid ""
+"Attraction Version 1.0\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"Dedennerezh Doare1.0\n"
+"\n"
+"Gwirioù eilañ (c) 1992-1997 gant Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Douget da kscreensaver gant:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> here 1998"
+
+#: banner.cpp:62
+msgid "Banner"
+msgstr "Lugan"
+
+#: banner.cpp:84
+msgid "Setup kbanner"
+msgstr "Kefluniañ klugan"
+
+#: banner.cpp:95
+msgid "Family:"
+msgstr "Familh :"
+
+#: banner.cpp:114 science.cpp:1036
+msgid "Size:"
+msgstr "Ment :"
+
+#: banner.cpp:134 blankscrn.cpp:76
+msgid "Color:"
+msgstr "Liv :"
+
+#: banner.cpp:147
+msgid "Bold"
+msgstr "Druz"
+
+#: banner.cpp:171 bat.cpp:549 bouboule.cpp:1018 flame.cpp:409 forest.cpp:290
+#: hop.cpp:323 laser.cpp:405 lines.cpp:155 lissie.cpp:339 morph3d.cpp:1021
+#: polygon.cpp:122 rock.cpp:561 science.cpp:1069 slip.cpp:378 space.cpp:587
+#: swarm.cpp:341
+msgid "Speed:"
+msgstr "Tizh :"
+
+#: banner.cpp:188
+msgid "Message:"
+msgstr "Kemennad :"
+
+#: banner.cpp:357
+msgid "About Banner"
+msgstr "Diwar-benn Lugan"
+
+#: banner.cpp:358
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Lugan Doare 0.1\n"
+"\n"
+"skrivet gant Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:461
+msgid "KDE is great"
+msgstr "KDE a zo dreist"
+
+#: bat.cpp:462
+msgid "Bat"
+msgstr "Bat"
+
+#: bat.cpp:537
+msgid "Setup KBat"
+msgstr "Kefluniañ KBat"
+
+#: bat.cpp:564
+msgid "Number of bats:"
+msgstr "Niver a eskell-kroc'hen :"
+
+#: bat.cpp:661
+msgid "About Bat"
+msgstr "Diwar-benn Bat"
+
+#: bat.cpp:662
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Bat\n"
+"\n"
+"Gwirioù eilañ (c) 1986 gant Sun Microsystems\n"
+"\n"
+"Douget da kscreensaver gant Emanuel Pirker."
+
+#: blankscrn.cpp:53
+msgid "Blank Screen"
+msgstr "Skramm goullo"
+
+#: blankscrn.cpp:67
+msgid "Setup kblankscrn"
+msgstr "Kefluniañ kblankscrn"
+
+#: blob.cpp:57
+msgid "Random Linear"
+msgstr "Ankivil linennel"
+
+#: blob.cpp:58
+msgid "Horizonal Sine"
+msgstr "Sinus a-led"
+
+#: blob.cpp:59
+msgid "Circular Bounce"
+msgstr "Dazlammat kelc'hel"
+
+#: blob.cpp:60
+msgid "Polar Coordinates"
+msgstr "Daveennoù poleel"
+
+#: blob.cpp:61
+msgid "Random"
+msgstr "Ankivil"
+
+#: blob.cpp:77
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Ho tigarez : an damanter-se a c'houlenn groñs ur skramm liv"
+
+#: blob.cpp:458
+msgid "Setup Blob Saver"
+msgstr "Kefluniañ Blob"
+
+#: blob.cpp:468
+msgid "Frame Show sec."
+msgstr "Diskouez steuñvennoù"
+
+#: blob.cpp:480
+msgid "Algorithm"
+msgstr "Algoritm"
+
+#: blob.cpp:570
+msgid "About Blob"
+msgstr "Diwar-benn Blob"
+
+#: blob.cpp:571
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Damanter Blob Doare 0.1\n"
+"\n"
+"skrivet gant Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:606
+msgid "Blobs"
+msgstr "Bloboù"
+
+#: bouboule.cpp:863
+msgid "Bouboule"
+msgstr "Bouboule"
+
+#: bouboule.cpp:1005
+msgid "Setup KBouboule"
+msgstr "Kefluniañ KBouboule"
+
+#: bouboule.cpp:1032
+msgid "Number of points:"
+msgstr "Niver a poentoù"
+
+#: bouboule.cpp:1046
+msgid "Point size:"
+msgstr "Ment ur poent :"
+
+#: bouboule.cpp:1060
+msgid "Color-change frequency:"
+msgstr "Taml kemmañ al liv :"
+
+#: bouboule.cpp:1077
+msgid "3D mode"
+msgstr "Mod 3Ment"
+
+#: bouboule.cpp:1223
+msgid "About Bouboule"
+msgstr "Diwar-benn Bouboule"
+
+#: bouboule.cpp:1224
+msgid ""
+"Bouboule v0.1 -- a glob of spheres twisting and changing size\n"
+"\n"
+"Copyright (c) 1996 by Jeremie PETIT\n"
+"\n"
+"Ported to kscreensave by Cedric Tefft"
+msgstr ""
+"Bouboule v0.1 -- ur vell a kanetennoù o weañ hag o gemmañ ment\n"
+"\n"
+"Gwirioù eilañ (c) 1996 gant Jeremie PETIT\n"
+"\n"
+"Douget da kscreensaver gant Cedric Tefft"
+
+#: bsod.cpp:1192
+msgid "Black Screen of Death"
+msgstr "Skramm goullo ar Marv"
+
+#: flame.cpp:310
+msgid "Flame"
+msgstr "Flame"
+
+#: flame.cpp:397
+msgid "Setup KFlame"
+msgstr "Kefluniañ KFlame"
+
+#: flame.cpp:423
+msgid "Max Levels:"
+msgstr "Live uhelañ :"
+
+#: flame.cpp:438
+msgid "Num Points:"
+msgstr "Niver a boentoù :"
+
+#: flame.cpp:551
+msgid "About Flame"
+msgstr "Diwar-benn Flame"
+
+#: flame.cpp:552
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Flame Doare 3.3\n"
+"\n"
+"Gwirioù eilañ (c) 1991 gant Patrick J. Naughton\n"
+"\n"
+"Douget da kscreensave gant Martin Jones."
+
+#: forest.cpp:206
+msgid "Forest"
+msgstr "Koadeg"
+
+#: forest.cpp:278
+msgid "Setup KForest"
+msgstr "Kefluniañ KKoadeg"
+
+#: forest.cpp:304
+msgid "Num of Trees:"
+msgstr "Niver a wez :"
+
+#: forest.cpp:399
+msgid "About Forest"
+msgstr "Diwar-benn Koadeg"
+
+#: forest.cpp:400
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Koadeg\n"
+"\n"
+"Gwirioù eilañ (c) 1995 gant Pascal Pensa\n"
+"\n"
+"Douget da kscreensave par Emanuel Pirker."
+
+#: hop.cpp:226
+msgid "Hop"
+msgstr "Hop"
+
+#: hop.cpp:311
+msgid "Setup KHop"
+msgstr "Kefluniañ KHop"
+
+#: hop.cpp:337
+msgid "Samecolor Pixels:"
+msgstr "Pikseloù heñvelliv :"
+
+#: hop.cpp:351 lissie.cpp:367
+msgid "Cycles:"
+msgstr "Korioù :"
+
+#: hop.cpp:464
+msgid "About Hop"
+msgstr "Diwar-benn Hop"
+
+#: hop.cpp:465
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop Doare 3.3\n"
+"\n"
+"Gwirioù eilañ (c) 1991 gant Patrick J. Naughton\n"
+"\n"
+"Douget da kscreensave gant Emanuel Pirker."
+
+#: laser.cpp:333
+msgid "Laser"
+msgstr "Laser"
+
+#: laser.cpp:393
+msgid "Setup KLaser"
+msgstr "Kefluniañ KLaser"
+
+#: laser.cpp:482
+msgid "About Laser"
+msgstr "Diwar-benn Laser"
+
+#: laser.cpp:483
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser Doare 3.3\n"
+"\n"
+"Gwirioù eilañ (c) 1995 gant Pascal Pensa\n"
+"\n"
+"Douget da kscreensave gant Martin Jones."
+
+#: lines.cpp:134
+msgid "Setup klines"
+msgstr "Kefluniañ klinennoù"
+
+#: lines.cpp:142 polygon.cpp:93
+msgid "Length:"
+msgstr "Hirder :"
+
+#: lines.cpp:168
+msgid "Beginning:"
+msgstr "Deroù :"
+
+#: lines.cpp:182
+msgid "Middle:"
+msgstr "Kreiz :"
+
+#: lines.cpp:195
+msgid "End:"
+msgstr "Diwezh :"
+
+#: lines.cpp:294
+msgid "About Lines"
+msgstr "Diwar-benn Linennoù"
+
+#: lines.cpp:295
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Linennoù Doare 0.1.1\n"
+"\n"
+"skrivet gant Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+#: lissie.cpp:241
+msgid "Lissie"
+msgstr "Lissie"
+
+#: lissie.cpp:327
+msgid "Setup KLissie"
+msgstr "Kefluniañ KLissie"
+
+#: lissie.cpp:353
+msgid "Num of Lissies:"
+msgstr "Niver a Lissie-où :"
+
+#: lissie.cpp:480
+msgid "About Lissie"
+msgstr "Diwar-benn Lissie"
+
+#: lissie.cpp:481
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Lissie\n"
+"\n"
+"Gwirioù eilañ (c) 1996 gant Alexander Jolk\n"
+"\n"
+"Douget da kscreensave gant Emanuel Pirker."
+
+#: main.cpp:384
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Dibab %s n'eo ket skoraet war ar savienn-mañ !"
+
+#: main.cpp:422
+msgid ""
+"Warning: You won't be able to lock the screen!\n"
+"\n"
+"Your system uses shadow passwords.\n"
+"Please contact your system administrator.\n"
+"Tell him that you need suid for the kcheckpass program!"
+msgstr ""
+"Diwallit : Ne viot ket vit prennañ ar skramm !\n"
+"\n"
+"Implij a ra ho reizhid tremegerioù kuzhet.\n"
+"Kit e darempred gant merour ho reizhiad.\n"
+"Lârit dezhañ e faot deoc'h suid evit ar goulev kcheckpass !"
+
+#: main.cpp:427
+msgid "Shadow Passwords"
+msgstr "Tremengerioù kuzhet"
+
+#: main.cpp:472
+msgid ""
+"\n"
+"please don't use -test together with -lock.\n"
+"use klock instead.\n"
+"\n"
+msgstr ""
+"\n"
+"na arverit ket mar plij -test a-stroll gant -lock.\n"
+"arverit kentoc'h klock.\n"
+
+#: main.cpp:580
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-allow-root] [-nice num]\n"
+msgstr ""
+"Arveriadur : %s -install|-setup|-test|-desc|-preview led|-inroot\n"
+"       [-corners xxxx] [-delay niv] [-lock] [-allow-root] [-nice niv]\n"
+
+#: main.cpp:583
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -allow-root       Accept root password to unlock\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Lakaat ar reti er c'horn a seven  an obererezh :\n"
+"                     x = i  hini ebet (na ober van)\n"
+"                     x = s  damantiñ ar skramm\n"
+"                     x = l  prennañ ar skramm\n"
+"                    urzh : gorre-kleiz, gorre-dehou, traoñ-kleiz, "
+"traoñ-dehou\n"
+"  -delay niv       gedvezh araok loc''hañ an damanter\n"
+"                      skramm  (dre ziouer 10mun)\n"
+"  -desc             moulañ deskrivadur an damanter skramm war stdout\n"
+"  -install          staliañ an damanter skramm\n"
+"  -lock             goulenn an tremenger evit ehanañ an damanter skramm\n"
+"  -allow-root       Aotreañ root da dibrennañ\n"
+"  -nice num         a seven gant ar gwerzh nice roet\n"
+"\n"
+"  -preview wid      seveniñ er prenestr XWindow resisaet\n"
+"  -inroot           seveniñ er prenestr gwrizienn\n"
+"  -setup            kefluniañ an damanter skramm\n"
+"  -test              loc'h an damanter skramm diouzhtu\n"
+
+#: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
+msgid "GL can not render with root visual\n"
+msgstr "GL n'hell ket render gant root visual\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "Kefluniañ KMorph3d"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Rizh ergorenn :"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "Diwar-benn Morph3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Gwirioù eilañ (c) 1997 gant Marcelo F. Vianna\n"
+"\n"
+"Douget da kscreensave gant Emanuel Pirker."
+
+#: pipes.cpp:299
+msgid "Pipes (GL)"
+msgstr "Korzennoù (GL)"
+
+#: pipes.cpp:672
+msgid "Setup KPipes"
+msgstr "Kefluniañ KKorzennoù"
+
+#: pipes.cpp:678
+msgid "Number of Pipes"
+msgstr "Niver a gorzennoù"
+
+#: pipes.cpp:743
+msgid "About KPipes"
+msgstr "Diwar-benn KKorzennoù"
+
+#: pipes.cpp:745
+msgid ""
+"KPipes\n"
+"Copyright (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+msgstr ""
+"KKorzennoù\n"
+"Gwirioù eilañ (c) 1998\n"
+"Lars Doelle <lars.doelle@on-line.de>"
+
+#: polygon.cpp:85
+msgid "Setup kpolygon"
+msgstr "Kefulniañ klieskognegoù"
+
+#: polygon.cpp:107
+msgid "Vertices:"
+msgstr "Vertisoù :"
+
+#: polygon.cpp:238
+msgid "About Polygon"
+msgstr "Diwar-benn Lieskognegoù"
+
+#: polygon.cpp:239
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Lieskogneg Doare 0.1\n"
+"\n"
+"Skrivet gant Martin R. Jones 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:439
+msgid "Pyro"
+msgstr "Tan-arvest"
+
+#: pyro.cpp:517
+msgid "Setup KPyro"
+msgstr "Kefluniañ KTan-arvest"
+
+#: pyro.cpp:543
+msgid "Cloud"
+msgstr "Koumoul"
+
+#: pyro.cpp:629
+msgid "About Pyro"
+msgstr "Diwar-benn Tan-arvest"
+
+#: pyro.cpp:630
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Tan-arvest Doare 3.4\n"
+"\n"
+"Gwirioù eilañ (c) 1991 gant Patrick J. Naughton\n"
+"\n"
+"Douget da kscreensave gant Martin Jones."
+
+#: rock.cpp:441
+msgid "Rock"
+msgstr "Steredigoù"
+
+#: rock.cpp:549
+msgid "Setup krock"
+msgstr "Kefluniañ ksteredigoù"
+
+#: rock.cpp:589
+msgid "Move"
+msgstr "Fiñval"
+
+#: rock.cpp:595
+msgid "Rotate"
+msgstr "Treiñ"
+
+#: rock.cpp:719
+msgid "About Rock"
+msgstr "Diwar-benn Steredigoù"
+
+#: rock.cpp:720
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Steredigoù Doare 3.3\n"
+"\n"
+"Gwirioù eilañ (c) 1992 gant Jamie Zawinski\n"
+"\n"
+"Douget da kscreensave gant Martin Jones."
+
+#: saver.cpp:60 saver.cpp:191
+msgid "Enter Password"
+msgstr "Roit tremenger"
+
+#: saver.cpp:121
+msgid "Failed"
+msgstr "Tremenger siek"
+
+#: science.cpp:65
+msgid "Whirl"
+msgstr "Korventenn"
+
+#: science.cpp:68
+msgid "Sphere"
+msgstr "Boull"
+
+#: science.cpp:71
+msgid "Exponential"
+msgstr "eksponansiel"
+
+#: science.cpp:74
+msgid "Contraction"
+msgstr "kontraksion"
+
+#: science.cpp:77
+msgid "Wave"
+msgstr "Gwagenn"
+
+#: science.cpp:80
+msgid "Curvature"
+msgstr "Krommadur"
+
+#: science.cpp:112
+msgid "Science"
+msgstr "Skiant"
+
+#: science.cpp:491
+msgid "rendering lens..."
+msgstr "o render ferenn..."
+
+#: science.cpp:813
+msgid "grabbing screen..."
+msgstr "oc'h tapout ar skramm..."
+
+#: science.cpp:975
+msgid "Setup Science"
+msgstr "Kefluniañ Skiant"
+
+#: science.cpp:1008
+msgid "Inverse"
+msgstr "Eilpenn"
+
+#: science.cpp:1018
+msgid "Gravity"
+msgstr "Dedennerezh"
+
+#: science.cpp:1027
+msgid "Hide Background"
+msgstr "Kuzhat an drekleur"
+
+#: science.cpp:1053
+msgid "Intensity:"
+msgstr "Nerzh :"
+
+#: science.cpp:1083
+msgid "Motion:"
+msgstr "Fiñvadenn :"
+
+#: science.cpp:1304
+msgid "Science Version"
+msgstr "Skiant Doare"
+
+#: science.cpp:1305
+msgid "written by"
+msgstr "skrivet gant"
+
+#: science.cpp:1306
+msgid "About Science"
+msgstr "Diwar-benn Skiant"
+
+#: slidescreen.cpp:419
+msgid "SlideScreen"
+msgstr "RuzSkramm"
+
+#: slidescreen.cpp:465
+msgid "Setup KSlideScreen"
+msgstr "Kefluniañ KRuzSkramm"
+
+#: slidescreen.cpp:558
+msgid "About SlideScreen"
+msgstr "Diwar-benn RuzSkramm"
+
+#: slidescreen.cpp:559
+msgid ""
+"SlideScreen Version 1.1\n"
+"\n"
+"Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Ported to kscreensaver by:\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
+msgstr ""
+"RuzSkramm Doare 1.1\n"
+"\n"
+"Gwirioù eilañ (c) 1992-1997 gant Jamie Zawinski <jwz@jwz.org>\n"
+"\n"
+"Douget da kscreensaver gant :\n"
+"\n"
+"Tom Vijlbrief <tom.vijlbrief@knoware.nl> here 1998"
+
+#: slip.cpp:293
+msgid "Slip"
+msgstr "Riklañ"
+
+#: slip.cpp:366
+msgid "Setup KSlip"
+msgstr "Kefluniañ KRiklañ"
+
+#: slip.cpp:392
+msgid "Batchcount:"
+msgstr "Niver :"
+
+#: slip.cpp:488
+msgid "About Slip"
+msgstr "Diwar-benn Riklañ"
+
+#: slip.cpp:489
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Riklañ\n"
+"\n"
+"Gwirioù eilañ (c) 1991 gant Scott Draves\n"
+"\n"
+"Douget da kscreensave gant Emanuel Pirker."
+
+#: space.cpp:491
+msgid "Space (GL)"
+msgstr "Egor (GL)"
+
+#: space.cpp:581
+msgid "Setup KSpace"
+msgstr "Kefluniañ KHed-gwenan"
+
+#: space.cpp:597
+msgid "Warp Interval:"
+msgstr "Kammed Warp :"
+
+#: space.cpp:685
+msgid "About KSpace"
+msgstr "Diwar-benn KEgor"
+
+#: space.cpp:687
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
+"KEgor\n"
+"Gwirioù eilañ (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+
+#: swarm.cpp:257
+msgid "Swarm"
+msgstr "Hed-gwenan"
+
+#: swarm.cpp:329
+msgid "Setup KSwarm"
+msgstr "Kefluniañ KHed-gwenan"
+
+#: swarm.cpp:355
+msgid "Number of Bees:"
+msgstr "Niver a wenan :"
+
+#: swarm.cpp:450
+msgid "About Swarm"
+msgstr "Diwar-benn Hed-gwenan"
+
+#: swarm.cpp:451
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hed-gwenan\n"
+"\n"
+"Gwirioù eilañ (c) 1991 gant Patrick J. Naughton\n"
+"\n"
+"Douget da kscreensave gant Emanuel Pirker."

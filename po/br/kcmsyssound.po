@@ -1,0 +1,239 @@
+# KTranslator Generated File
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsyssound-1.1\n"
+"POT-Creation-Date: 1998-10-13 13:13+0200\n"
+"PO-Revision-Date: 1999-02-05 15:53+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "&Son"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Sonioù ar  reizhiad"
+
+#: syssound.cpp:146 syssound.cpp:184 syssound.cpp:392
+msgid "(none)"
+msgstr "(hini ebet)"
+
+#: syssound.cpp:147
+msgid "Change to Desktop 1"
+msgstr "Gwintañ da burev 1"
+
+#: syssound.cpp:148
+msgid "Change to Desktop 2"
+msgstr "Gwintañ da burev 2"
+
+#: syssound.cpp:149
+msgid "Change to Desktop 3"
+msgstr "Gwintañ da burev 3"
+
+#: syssound.cpp:150
+msgid "Change to Desktop 4"
+msgstr "Gwintañ da burev 4"
+
+#: syssound.cpp:151
+msgid "Change to Desktop 5"
+msgstr "Gwintañ da burev 5"
+
+#: syssound.cpp:152
+msgid "Change to Desktop 6"
+msgstr "Gwintañ da burev 6 "
+
+#: syssound.cpp:153
+msgid "Change to Desktop 7"
+msgstr "Gwintañ da burev 7"
+
+#: syssound.cpp:154
+msgid "Change to Desktop 8"
+msgstr "Gwintañ da burev 8"
+
+#: syssound.cpp:156
+msgid "Activate Window"
+msgstr "Dihuniñ ar prenestr"
+
+#: syssound.cpp:157
+msgid "Open new window"
+msgstr "Digeriñ un prenestr nevez"
+
+#: syssound.cpp:158
+msgid "Close Window"
+msgstr "Serriñ ar prenestr"
+
+#: syssound.cpp:159
+msgid "Startup"
+msgstr "Loc'hañ"
+
+#: syssound.cpp:161
+msgid "Window Shade Up"
+msgstr "Heoliañ ar prenestr"
+
+#: syssound.cpp:162
+msgid "Window Shade Down"
+msgstr "Disheoliañ ar prenestr"
+
+#: syssound.cpp:163
+msgid "Window Iconify"
+msgstr "Arlunañ ar prenestr"
+
+#: syssound.cpp:164
+msgid "Window DeIconify"
+msgstr "Dizarlunañ ar prenestr"
+
+#: syssound.cpp:165
+msgid "Window Maximize"
+msgstr "Uhelaat prenestr"
+
+#: syssound.cpp:166
+msgid "Window UnMaximize"
+msgstr "Dizuhelaat prenestr"
+
+#: syssound.cpp:167
+msgid "Window Sticky"
+msgstr "Pegañ ar prenestr"
+
+#: syssound.cpp:168
+msgid "Window UnSticky"
+msgstr "Dispegañ ar prenestr"
+
+#: syssound.cpp:169
+msgid "Window Trans New"
+msgstr "Treuzfurmiñ ar prenestr"
+
+#: syssound.cpp:170
+msgid "Window Trans Delete"
+msgstr "Treuzdistruj ar prenestr"
+
+#: syssound.cpp:171
+msgid "Logout"
+msgstr "Kuitaat"
+
+#: syssound.cpp:172
+msgid "Logout Message"
+msgstr "Kemennad kuitaat"
+
+#: syssound.cpp:173
+msgid "Window Move Start"
+msgstr "Derou dilec'hiañ ar prenestr"
+
+#: syssound.cpp:174
+msgid "Window Move End"
+msgstr "Dibenn dilec'hiañ ar prenestr"
+
+#: syssound.cpp:175
+msgid "Window Resize Start"
+msgstr "Derou adventañ ar prenestr"
+
+#: syssound.cpp:176
+msgid "Window Resize End"
+msgstr "Dibenn adventañ ar prenestr"
+
+#: syssound.cpp:198
+msgid "e&nable system sounds"
+msgstr "Loc'hañ sonioù ar reizhiad"
+
+#: syssound.cpp:203
+msgid "&Test"
+msgstr "&Arnod"
+
+#: syssound.cpp:207
+msgid "&Events:"
+msgstr "&Degouezhoù :"
+
+#: syssound.cpp:211
+msgid "&Sounds:"
+msgstr "&Sonioù :"
+
+#: syssound.cpp:216
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Restroù WAV ouzhpenn a c'heller leuskel davet roll ar sonioù."
+
+#: syssound.cpp:456
+msgid "Unsupported URL"
+msgstr "URL anskoraet"
+
+#: syssound.cpp:458
+msgid ""
+"Sorry, this type of URL is currently unsupportedby the KDE System Sound "
+"Module"
+msgstr ""
+"Ho tigarez, ar rizh URL-mañ a zo anskoraet evit ar poent gant ar mollad "
+"sonioù\n"
+"ar reizhiad KDE"
+
+#: syssound.cpp:468
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file."
+msgstr ""
+"Ho tigarez, hogen\n"
+"%s\n"
+"n'eo ket ur restr WAV, evit doare."
+
+#: syssound.cpp:471
+msgid "Improper File Extension"
+msgstr "Astennadur restr siek"
+
+#: syssound.cpp:482
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"Ar restr\n"
+"%s\n"
+"a zo er roll endeo"
+
+#: syssound.cpp:486
+msgid "File Already in List"
+msgstr "Restr er roll endeo"

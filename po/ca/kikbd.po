@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kikbd\n"
-"POT-Creation-Date: 1999-01-19 01:20+0100\n"
+"POT-Creation-Date: 1999-01-22 01:13+0100\n"
 "PO-Revision-Date: 1999-01-21 23:18+0100\n"
 "Last-Translator: Sebastià Pla <sastia@redestb.es>\n"
 "Language-Team: CATALAN <LL@li.org>\n"
@@ -65,6 +65,17 @@ msgid ""
 msgstr ""
 "No es pot eliminar Bloq Majús dels modificadors.\n"
 "Es desactiva l'emulació Bloq Majús"
+
+#: kikbd.cpp:1003
+#, fuzzy
+msgid "Exiting International Keyboard"
+msgstr "Teclat internacional"
+
+#: kikbd.cpp:1004
+msgid ""
+"You're about to quit the \"International Keyboard\" tool.\n"
+" Do you want to have it autostarted at your next login?"
+msgstr ""
 
 #: keymap.cpp:181
 msgid "KeyMap: cannot allocate memory"
@@ -203,83 +214,83 @@ msgstr ""
 "Esteu fent servir \"Teclat internacional\" per primer cop.\n"
 "He instal·lat un arranjament per omissió."
 
-#: kikbdconf.cpp:357
+#: kikbdconf.cpp:359
 msgid "unknown"
 msgstr "desconegut"
 
-#: kikbdconf.cpp:361 kikbdconf.cpp:434
+#: kikbdconf.cpp:363 kikbdconf.cpp:436
 msgid "default"
 msgstr "omissió"
 
-#: kikbdconf.cpp:387
+#: kikbdconf.cpp:389
 msgid "Author:  Not specified"
 msgstr "Autor: no especificat"
 
-#: kikbdconf.cpp:389
+#: kikbdconf.cpp:391
 msgid "Author"
 msgstr "Autor"
 
-#: kikbdconf.cpp:395
+#: kikbdconf.cpp:397
 msgid "Description:  "
 msgstr "Descripció:   "
 
-#: kikbdconf.cpp:398
+#: kikbdconf.cpp:400
 msgid "Source:  "
 msgstr "Font:    "
 
-#: kikbdconf.cpp:399
+#: kikbdconf.cpp:401
 msgid "no file"
 msgstr "cap fitxer"
 
-#: kikbdconf.cpp:400
+#: kikbdconf.cpp:402
 msgid "user file"
 msgstr "fitxer d'usuari"
 
-#: kikbdconf.cpp:401
+#: kikbdconf.cpp:403
 msgid "system file"
 msgstr "fitxer del sistema"
 
-#: kikbdconf.cpp:406
+#: kikbdconf.cpp:408
 msgid "Statistic:  "
 msgstr "Estadístic: "
 
-#: kikbdconf.cpp:409
+#: kikbdconf.cpp:411
 msgid "symbols"
 msgstr "símbols"
 
-#: kikbdconf.cpp:412
+#: kikbdconf.cpp:414
 msgid "codes"
 msgstr "codis"
 
-#: kikbdconf.cpp:415
+#: kikbdconf.cpp:417
 msgid "alternative symbols"
 msgstr "símbols alternatius"
 
-#: kikbdconf.cpp:427
+#: kikbdconf.cpp:429
 msgid "Language"
 msgstr "Idioma"
 
-#: kikbdconf.cpp:431
+#: kikbdconf.cpp:433
 msgid "Charset"
 msgstr "Joc de caràcters"
 
-#: kikbdconf.cpp:477
+#: kikbdconf.cpp:479
 msgid "International keyboard ERROR"
 msgstr "ERROR del teclat internacional"
 
-#: kikbdconf.cpp:493
+#: kikbdconf.cpp:495
 msgid "International keyboard warning"
 msgstr "Avís del teclat internacional"
 
-#: kikbdconf.cpp:500 kikbdconf.cpp:505 kikbdconf.cpp:518
+#: kikbdconf.cpp:502 kikbdconf.cpp:507 kikbdconf.cpp:520
 msgid "International keyboard question"
 msgstr "Pregunta del teclat internacional"
 
-#: kikbdconf.cpp:507
+#: kikbdconf.cpp:509
 msgid "Configure"
 msgstr "Configura"
 
-#: kikbdconf.cpp:517
+#: kikbdconf.cpp:519
 msgid ""
 "\n"
 "Do you want to continue?"

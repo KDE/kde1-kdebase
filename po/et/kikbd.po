@@ -271,13 +271,13 @@ msgstr "koodid"
 msgid "alternative symbols"
 msgstr "alternatiivsed sümbolid"
 
-#: kikbdconf.cpp:429
 #
+#: kikbdconf.cpp:429
 msgid "Language"
 msgstr "Keel"
 
-#: kikbdconf.cpp:433
 #
+#: kikbdconf.cpp:433
 msgid "Charset"
 msgstr "Kooditabel"
 
@@ -512,8 +512,8 @@ msgstr "Käivitu automaatselt"
 msgid "&Docked"
 msgstr "&Dokitud"
 
-#: widgets.cpp:649
 #
+#: widgets.cpp:649
 msgid "Dock into special area in the panel"
 msgstr "Doki spetsiaalsesse alassse paneelil"
 

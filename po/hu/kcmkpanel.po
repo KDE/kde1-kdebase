@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-12-20 03:02+0600\n"
+"POT-Creation-Date: 1999-01-28 01:15+0100\n"
 "PO-Revision-Date: 1998-12-17 18:58+0100\n"
 "Last-Translator: Marcell Lengyel <miketkf@yahoo.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -34,7 +34,7 @@ msgid "usage: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 msgstr "használat: kcmkpanel [-init | {panel,options,desktops,disknav}]\n"
 
 # main.cpp:127
-#: main.cpp:112
+#: main.cpp:113
 msgid "KPanel Configuration"
 msgstr "KPanel konfiguráló"
 

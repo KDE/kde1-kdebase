@@ -1,0 +1,1528 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version:kfm-1.1\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"PO-Revision-Date: 1999-01-29 11:24+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kfmgui.cpp:203
+msgid "KFM"
+msgstr "KFM"
+
+#: kfmgui.cpp:221
+msgid "New &Window"
+msgstr "&Prenestr Nevez"
+
+#: kfmgui.cpp:224
+msgid "&Run..."
+msgstr "Se&veniñ..."
+
+#: kfmgui.cpp:226
+msgid "Open &Terminal"
+msgstr "Digeriñ un &dermenell"
+
+#: kfmgui.cpp:229
+msgid "&Open Location..."
+msgstr "Digeriñ ul &lec'hiadur..."
+
+#: finddlg.cpp:66 kfmgui.cpp:231
+msgid "&Find"
+msgstr "&Kavout"
+
+#: kfmgui.cpp:252
+msgid "&Move to Trash"
+msgstr "&Kas d'ar pod-lastez"
+
+#: kfmgui.cpp:259
+msgid "&Select"
+msgstr "D&iuz"
+
+#: kfmgui.cpp:261
+msgid "Select &all"
+msgstr "Diuz an &holl"
+
+#: kfmgui.cpp:264
+msgid "&Find in page..."
+msgstr "Ka&vout er bajenn..."
+
+#: kfmgui.cpp:266
+msgid "Find &next"
+msgstr "Kav&out da heul"
+
+#: kfmgui.cpp:269
+msgid "Mime &Types"
+msgstr "&Rizhoù Mime"
+
+#: kfmgui.cpp:271
+msgid "App&lications"
+msgstr "&Arloadoù"
+
+#: kfmgui.cpp:277
+msgid "Global Mime Types"
+msgstr "Rizhoù Mime hollek"
+
+#: kfmgui.cpp:279
+msgid "Global Applications"
+msgstr "Arloadoù hollek"
+
+#: kfmgui.cpp:287
+msgid "Show Hi&dden Files"
+msgstr "Diskouez ar &restroù kuzh"
+
+#: kfmgui.cpp:289
+msgid "Show Tr&ee"
+msgstr "Diskouez ar &wezennadur"
+
+#: kfmgui.cpp:291
+msgid "Sho&w Thumbnails"
+msgstr "Diskouez ar &skeudennigoù"
+
+#: kfmgui.cpp:293
+msgid "&HTML View"
+msgstr "Gwel HT&ML"
+
+#: kfmgui.cpp:296
+msgid "&Icon View"
+msgstr "Gwel &arlun"
+
+#: kfmgui.cpp:298
+msgid "&Text View"
+msgstr "Gwel &testenn"
+
+#: kfmgui.cpp:300
+msgid "&Long View"
+msgstr "Gwel &hir"
+
+#: kfmgui.cpp:302
+msgid "&Short View"
+msgstr "Gwel &berr"
+
+#: kfmgui.cpp:308
+msgid "Rel&oad Tree"
+msgstr "A&dkargañ ar wezenn"
+
+#: kfmgui.cpp:310
+msgid "&Reload Document"
+msgstr "Ad&kargañ an teul"
+
+#: kfmgui.cpp:312
+msgid "Rescan &Bindings"
+msgstr "Addezrannañ an &ereoù"
+
+#: kfmgui.cpp:315
+msgid "&View Frame Source"
+msgstr "G&welet tarzh ar stern"
+
+#: kfmgui.cpp:317
+msgid "View Docu&ment Source"
+msgstr "Gwe&let tarzh an &teul"
+
+#: kfmgui.cpp:325
+msgid "Auto"
+msgstr "Emgefreek"
+
+#: kfmgui.cpp:333
+msgid "Document Encodin&g"
+msgstr "&Kodadur an teul"
+
+#: kfmgui.cpp:349
+msgid "Show History"
+msgstr "Diskouez an istor"
+
+#: kfmgui.cpp:351
+msgid "Show Cache"
+msgstr "Diskouez ar grubuilh"
+
+#: kfmgui.cpp:353
+msgid "Clear Cache"
+msgstr "Skarzhañ ar grubuilh"
+
+#: kfmgui.cpp:356
+msgid "Always look in cache"
+msgstr "Sellet er grubuilh bepred"
+
+#: kfmgui.cpp:358
+msgid "Never look in cache"
+msgstr "Na sellet er grubuilh morse"
+
+#: kfmgui.cpp:360
+msgid "Always save cache"
+msgstr "Gwareziñ ar grubuilh bepred"
+
+#: kfmgui.cpp:362
+msgid "Never save cache"
+msgstr "Na gwareziñ ar grubuilh morse"
+
+#: kfmgui.cpp:373
+msgid "Show &Menubar"
+msgstr "Diskouez barrenn ar &lañser"
+
+#: kfmgui.cpp:375
+msgid "Show &Statusbar"
+msgstr "Diskouez barrenn ar &stad"
+
+#: kfmgui.cpp:377
+msgid "Show &Toolbar"
+msgstr "Diskouez barrenn ar &binvioù"
+
+#: kfmgui.cpp:379
+msgid "Show &Location bar"
+msgstr "Diskouez barrenn al &lec'hiadur"
+
+#: kfmgui.cpp:382
+msgid "Sa&ve Settings"
+msgstr "&Enrollañ ar c'hefluniadur"
+
+#: kfmgui.cpp:384
+msgid "Save Settings for this &URL"
+msgstr "Enrollañ kefluniadur an &URL-mañ"
+
+#: kfmgui.cpp:391
+msgid "&Configure File Manager..."
+msgstr "&Kefluniañ ar merour restroù"
+
+#: kfmgui.cpp:393
+msgid "Configure &Browser..."
+msgstr "Kefluniañ ar &furcher..."
+
+#: kfmgui.cpp:429
+msgid ""
+"Author: Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"HTML widget by Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Proxy Manager by Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Current maintainer: David Faure\n"
+"faure@kde.org"
+msgstr ""
+"Aozer : Torben Weis\n"
+"weis@kde.org\n"
+"\n"
+"Widgetoù HTML gant Martin Jones\n"
+"mjones@kde.org\n"
+"\n"
+"Merour Proksi gant Lars Hoss\n"
+"Lars.Hoss@munich.netsurf.de\n"
+"\n"
+"Ratreer a-vremañ : David Faure\n"
+"faure@kde.org"
+
+#: kfmgui.cpp:442
+msgid "&Go"
+msgstr "&Kit"
+
+#: kfmgui.cpp:443
+msgid "&Bookmarks"
+msgstr "S&inedoù"
+
+#: kfmgui.cpp:444
+msgid "&Cache"
+msgstr "Kr&ubuilh"
+
+#: kfmgui.cpp:474 main.cpp:282
+msgid "Up"
+msgstr "Uheloc'h"
+
+#: kfmgui.cpp:484 main.cpp:284
+msgid "Forward"
+msgstr "War-raok"
+
+#: kfmgui.cpp:489
+msgid "Home"
+msgstr "Er Gêr"
+
+#: kfmgui.cpp:546
+msgid "Could not load icon\n"
+msgstr "Ne m'eus ket gallet kargañ an arlun\n"
+
+#: bookmark.cpp:296 htmlcache.cpp:350 htmlcache.cpp:379 kbind.cpp:311
+#: kbind.cpp:390 kbind.cpp:442 kbind.cpp:1652 kbind.cpp:1660 kbind.cpp:1678
+#: kbind.cpp:1697 kbind.cpp:1756 kbind.cpp:1768 kbind.cpp:1795 kbind.cpp:1816
+#: kbind.cpp:1836 kbind.cpp:1848 kbind.cpp:1864 kbind.cpp:1999 kbind.cpp:2011
+#: kbind.cpp:2056 kfmexec.cpp:63 kfmexec.cpp:115 kfmexec/main.cpp:47
+#: kfmgui.cpp:547 kfmgui.cpp:757 kfmman.cpp:370 kfmman.cpp:1422
+#: kfmman.cpp:1653 kfmman.cpp:1699 kfmprops.cpp:380 kfmprops.cpp:648
+#: kfmprops.cpp:659 kfmprops.cpp:953 kfmprops.cpp:1092 kfmprops.cpp:1223
+#: kfmprops.cpp:1697 kfmprops.cpp:2058 kfmprops.cpp:2240 kfmserver.cpp:50
+#: kfmserver.cpp:230 kfmserver.cpp:310 kfmserver.cpp:325 kfmserver.cpp:372
+#: kfmserver.cpp:381 kfmserver.cpp:389 kfmtree.cpp:340 kfmtree.cpp:467
+#: kfmtree.cpp:498 kfmtree.cpp:504 kfmtree.cpp:510 kfmview.cpp:437
+#: kfmview.cpp:471 kfmview.cpp:490 kfmview.cpp:572 kfmview.cpp:578
+#: kfmview.cpp:584 kfmview.cpp:709 kfmview.cpp:713 kfmview.cpp:752
+#: kfmview.cpp:779 kfmview.cpp:800 kfmview.cpp:808 kfmview.cpp:816
+#: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
+#: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
+#: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
+#: kiojob.cpp:1480 kiojob.cpp:1488 kiojob.cpp:1723 krenamewin.cpp:124
+#: popup.cpp:105 root.cpp:944 root.cpp:1226 root.cpp:1244 root.cpp:1250
+#: root.cpp:1256 root.cpp:1337 root.cpp:1862 root.cpp:1887
+msgid "KFM Error"
+msgstr "Fazi KFM"
+
+#: kfmgui.cpp:560
+msgid "Location:"
+msgstr "Lec'hiadur :"
+
+#: kfmexec.cpp:62 kfmgui.cpp:756 kfmman.cpp:1421
+msgid "Malformed URL\n"
+msgstr "URL siek\n"
+
+#: kfmgui.cpp:945
+msgid "Select files:"
+msgstr "Diuz restroù :"
+
+#: kfmgui.cpp:1012
+msgid "Find Complete"
+msgstr "Kavout sevenet"
+
+#: kfmgui.cpp:1013
+msgid "Continue search from the top of the page?"
+msgstr "Kenderc'hel da glask adalek laez ar bajenn ?"
+
+#: kfmgui.cpp:1031
+msgid "&Edit Bookmarks..."
+msgstr "&Aozañ sinedoù..."
+
+#: kfmgui.cpp:1043
+msgid "&Add Bookmark"
+msgstr "&Ouzhpennañ sined"
+
+#: kfmgui.cpp:1079 kfmman.cpp:1462 kfmtree.cpp:388 root.cpp:286
+msgid "&New"
+msgstr "&Nevez"
+
+#: kfmgui.cpp:1152
+msgid "&Up"
+msgstr "&Uheloc'h"
+
+#: kfmgui.cpp:1154
+msgid "&Back"
+msgstr "War-&gil"
+
+#: kfmgui.cpp:1156
+msgid "&Forward"
+msgstr "War-&raok"
+
+#: kfmgui.cpp:1158
+msgid "&Home"
+msgstr "&Er Gêr"
+
+#: kfmgui.cpp:1227 kfmgui.cpp:1395 kfmjob.cpp:36 kfmman.cpp:252
+#: kfmtree.cpp:499 kfmview.cpp:491 kfmview.cpp:573 kfmview.cpp:801
+#: kiojob.cpp:88 root.cpp:1245
+msgid "ERROR: Malformed URL"
+msgstr "FAZI : URL siek"
+
+#: kfmgui.cpp:1349 kfmserver.cpp:257
+msgid "Open Location:"
+msgstr "Digeriñ al lec'hiadur :"
+
+#: kfmgui.cpp:1406
+msgid "KFM Confirm"
+msgstr "Kadarnaat KFM"
+
+#: kfmgui.cpp:1407
+msgid ""
+"Do you really want to quit?\n"
+"Important desktop functionality will be lost"
+msgstr ""
+"Ha fellout a ra deoc'h kuitaat da vat ?\n"
+"Keweriusterioù a-bouezh ar gorretaol a vo kollet"
+
+#: kfmgui.cpp:1540
+msgid "Document: Done"
+msgstr "Teul : Graet"
+
+#: kfmview.cpp:438 root.cpp:945
+msgid "ERROR: You may only drop URLs"
+msgstr "FAZI : N'hellit leuskel nemet URLoù"
+
+#: kfmview.cpp:472
+msgid "ERROR: Drop over malformed URL"
+msgstr "FAZI : Laosket war un URL siek"
+
+#: kfmserver.cpp:145 kfmtree.cpp:537 kfmview.cpp:544 kfmview.cpp:844
+#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:24 root.cpp:1288
+msgid "KFM Warning"
+msgstr "Kemenn KFM"
+
+#: kfmtree.cpp:538 kfmview.cpp:545 kfmview.cpp:845 root.cpp:1289
+msgid ""
+"Do you really want to delete the selected file(s)?\n"
+"\n"
+"There is no way to restore them."
+msgstr ""
+"Ha fellout a ra deoc'h distruj da vat ar restroù diuzet ?\n"
+"\n"
+"Ne vo tu ebet d'o adaozañ."
+
+#: kfmtree.cpp:505 kfmview.cpp:579 kfmview.cpp:809 root.cpp:1251
+msgid "ERROR: You dropped a URL over itself"
+msgstr "FAZI : Laosket oc'h eus un URL warni hec'h-unan"
+
+#: kfmtree.cpp:511 kfmview.cpp:585 kfmview.cpp:817 root.cpp:1257
+msgid "ERROR: You dropped a directory over one of its children"
+msgstr "FAZI : Laosket oc'h eus ur renkell war ur bugel dezhi"
+
+#: kfmexec.cpp:300 kfmman.cpp:1207 kfmview.cpp:601 root.cpp:1132
+msgid "Open With:"
+msgstr "Digeriñ gant :"
+
+#: kfmview.cpp:637 root.cpp:1188
+msgid "ERROR: Can not open properties for multiple files"
+msgstr "FAZI : n'hell ket digeriñ perzhioù evit meur a lec'hienn"
+
+#: kfmview.cpp:710
+msgid ""
+"Can not save properties because\n"
+"this directory is neither writable nor bookmarked.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"N'hell ket enrollañ perzhioù rak\n"
+"ar renkell-se n'eo na skrivadus na sinedet.\n"
+"\n"
+"Sinedit al lec'hienn-se da gentañ, pe grit kdelnk daveti war ar burev."
+
+#: kfmview.cpp:714
+msgid ""
+"Can not save properties because\n"
+"this URL is neither bookmarked nor on desktop.\n"
+"\n"
+" Bookmark this location first, or make kdelnk to it on desktop."
+msgstr ""
+"N'hell ket enrollañ perzhioù rak\n"
+"an URL-se n'eo na sinedet na war ar burev.\n"
+"\n"
+"Sinedit al lec'hienn-se da gentañ, pe grit kdelnk daveti war ar burev."
+
+#: kfmtree.cpp:468 kfmview.cpp:753 root.cpp:1338
+msgid "Could not access Trash Bin"
+msgstr "Ne m'eus ket gallet tizhout ar pod-lastez"
+
+#: kfmview.cpp:780 root.cpp:1227
+msgid "Can not paste into multiple directories"
+msgstr "N'hell ket pegañ e meur a renkell"
+
+#: kfmview.cpp:877
+msgid "ERROR: Can not change to multiple directories"
+msgstr "FAZI : n'hell ket cheñch da veur a renkell"
+
+#: kfmview.cpp:1148
+msgid "KFM Security Alert"
+msgstr "Kemenn surentez KFM"
+
+#: kfmview.cpp:1149
+msgid ""
+"This page is untrusted\n"
+"but it contains a link to your local file system."
+msgstr ""
+"Ar bajenn-mañ a zo diasur\n"
+"hogen enni ez eus un ereadur davet ho reizhiad restroù lec'hel."
+
+#: kfmview.cpp:1241
+msgid "Symbolic Link"
+msgstr "Ere arouezel"
+
+#: kfmview.cpp:1243
+#, c-format
+msgid "%s (Link)"
+msgstr "%s (Ere)"
+
+#: kfmview.cpp:1263
+msgid "bytes"
+msgstr "okted"
+
+#: kbind.cpp:309
+msgid "The mime type config file "
+msgstr "Ar restr kefluniañ rizhoù mime "
+
+#: kbind.cpp:310
+msgid "does not contain a MimeType=... entry"
+msgstr "n'eus ket ennañ a enmont MimeType=..."
+
+#: kbind.cpp:391
+msgid "No mime types installed!"
+msgstr "Rizh mime ebet staliet !"
+
+#: kbind.cpp:439 kbind.cpp:1227
+msgid "Could not find mime type\n"
+msgstr "Ne m'eus ket gallet kavout ar rizh mime\n"
+
+#: kbind.cpp:709 kbind.cpp:719 kbind.cpp:2034 kbind.cpp:2035 kbind.cpp:2047
+#: kbind.cpp:2049
+msgid "Mount"
+msgstr "Mountañ"
+
+#: kbind.cpp:725 kbind.cpp:2025
+msgid "Unmount"
+msgstr "Divountañ"
+
+#: kbind.cpp:957 kbind.cpp:969 kbind.cpp:979 popup.cpp:48 popup.cpp:125
+msgid "Folder"
+msgstr "Renkell"
+
+#: kbind.cpp:1226
+msgid "ERROR"
+msgstr "FAZI"
+
+#: kbind.cpp:1227
+msgid "in "
+msgstr "e"
+
+#: kbind.cpp:1362 kbind.cpp:1962
+msgid "ERROR: No Terminal Setting"
+msgstr "FAZI : kefluniadur ebet evit an dermenell"
+
+#: kbind.cpp:1429 kbind.cpp:1535
+msgid "Could not execute program\n"
+msgstr "Ne m'eus ket gallet seveniñ ar goulev\n"
+
+#: kbind.cpp:1651
+msgid "Could not find binding"
+msgstr "Ne m'eus ket gallet kavout an ereadur"
+
+#: kbind.cpp:1661
+msgid ""
+"This is a document!\n"
+"Not an application"
+msgstr ""
+"Un teul eo an dra-se !\n"
+"N'eo ket ur arload"
+
+#: kbind.cpp:1679 kbind.cpp:1698
+msgid "Can only start executables on local disks\n"
+msgstr "N'hell loc'hañ goulevioù nemet war pladennoù lec'hel\n"
+
+#: kbind.cpp:1757 kbind.cpp:1837 kbind.cpp:2000
+msgid ""
+"Can work with *.kdelnk files only\n"
+"on local hard disk"
+msgstr ""
+"N'hell labourat gant restroù *.kdelnk\n"
+"nemet war pladennoù kalet lec'hel"
+
+#: kbind.cpp:1767
+#, c-format
+msgid ""
+"Could not access\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet tizhout\n"
+"%s"
+
+#: kbind.cpp:1796
+msgid "The \"Link=....\" entry is empty"
+msgstr "An enmont \"Link=....\" a zo goullo"
+
+#: kbind.cpp:1817
+msgid "The config file has no \"Type=...\" line"
+msgstr "Ar restr kefluniañ n'eus ket a linenn \"Type=...\""
+
+#: kbind.cpp:1847 kbind.cpp:2010
+msgid "Could not access"
+msgstr "Ne m'eus ket gallet tizhout"
+
+#: kbind.cpp:1865
+msgid ""
+"This file does not contain an\n"
+"Exec=....\n"
+"entry. Edit the Properties\n"
+"to solve the problem"
+msgstr ""
+"Er restr-mañ n'eus enmont\n"
+"Exec=....\n"
+"ebet. Aozit ar perzhioù\n"
+"a-benn diskoulmañ ar gudenn"
+
+#: kbind.cpp:2057
+msgid "No mount point in *.kdelnk file"
+msgstr "Poent mountañ ebet er restr *.kdelnk "
+
+#: main.cpp:89 main.cpp:229
+msgid "KFM Information"
+msgstr "Titour KFM"
+
+#: main.cpp:90
+msgid "Creating directory:\n"
+msgstr "O krouiñ ar renkell:\n"
+
+#: main.cpp:230
+msgid ""
+"A new KDE version has been installed.\n"
+"The Template files may have changed.\n"
+"\n"
+"Would you like to install the new ones?"
+msgstr ""
+"Un doare nevez KDE a zo bet staliaet.\n"
+"Ar restroù patrom o deus kemmet marteze.\n"
+"\n"
+"Ha fellout a ra deoc'h staliañ ar re nevez ?"
+
+#: main.cpp:267
+msgid "Cd"
+msgstr "Kemmañ renkell"
+
+#: main.cpp:268
+msgid "New View"
+msgstr "Gwel nevez"
+
+#: kfmtree.cpp:403 main.cpp:271
+msgid "Move to Trash"
+msgstr "Kas d'ar pod-lastez"
+
+#: main.cpp:273
+msgid "Open with"
+msgstr "Digeriñ gant"
+
+#: kfmman.cpp:1691 kfmtree.cpp:332 main.cpp:275
+msgid "Move"
+msgstr "Fiñval"
+
+#: kfmman.cpp:1695 kfmtree.cpp:336 main.cpp:277
+msgid "Link"
+msgstr "Ere"
+
+#: main.cpp:278
+msgid "Empty Trash Bin"
+msgstr "Goullonderiñ ar pod-lastez"
+
+#: main.cpp:279
+msgid "Add to Bookmarks"
+msgstr "Ouzhpennañ d'ar sinedoù"
+
+#: main.cpp:280
+msgid "Save settings for this URL"
+msgstr "Enrolañ ar c'hefluniadur evit an URL-mañ"
+
+#: main.cpp:281
+msgid "Show Menubar"
+msgstr "Diskouez barrenn al lañser"
+
+#: kfmdlg.cpp:117
+msgid "&Browser"
+msgstr "&Furcher"
+
+#: bookmark.cpp:296
+msgid "Could not write bookmark"
+msgstr "Ne m'eus ket gallet skrivañ ar sined"
+
+#: kfmprops.cpp:239
+msgid "File Name"
+msgstr "Anv restr"
+
+#: kfmprops.cpp:254
+msgid "Full Name"
+msgstr "Anv klok"
+
+#: kfmprops.cpp:271
+msgid "Is the Trash Bin"
+msgstr "Ar pod-lastez eo"
+
+#: kfmprops.cpp:278
+msgid "Is a Directory"
+msgstr "Ur renkell eo"
+
+#: kfmprops.cpp:285
+msgid "Points to"
+msgstr "A vuk ouzh"
+
+#: kfmprops.cpp:310
+#, c-format
+msgid "Size: %i"
+msgstr "Ment : %i"
+
+#: kfmprops.cpp:320
+msgid "Last Access"
+msgstr "Moned diwezhañ"
+
+#: kfmprops.cpp:330
+msgid "Last Modified"
+msgstr "Kemmaden diwezhañ"
+
+#: kfmprops.cpp:379
+#, c-format
+msgid ""
+"Could not rename the file or directory\n"
+"%s\n"
+msgstr ""
+"Ne m'eus ket gallet adenvel ar restr pe renkell\n"
+"%s\n"
+
+#: kfmprops.cpp:429
+msgid "Access permissions"
+msgstr "Aotreoù moned"
+
+#: kfmprops.cpp:435
+msgid ""
+"Show\n"
+"Entries"
+msgstr ""
+"Diskouez\n"
+"enmontoù"
+
+#: kfmprops.cpp:437
+msgid "Read"
+msgstr "Lenn"
+
+#: kfmprops.cpp:442
+msgid ""
+"Write\n"
+"Entries"
+msgstr ""
+"Skrivañ\n"
+"enmontoù"
+
+#: kfmprops.cpp:444
+msgid "Write"
+msgstr "Skrivañ"
+
+#: kfmprops.cpp:449
+msgid ""
+"Change\n"
+"Into"
+msgstr ""
+"Kemmañ\n"
+"da"
+
+#: kfmprops.cpp:451
+msgid "Exec"
+msgstr "Seveniñ"
+
+#: kfmprops.cpp:455
+msgid "Special"
+msgstr "Dibar"
+
+#: kfmprops.cpp:459
+msgid "User"
+msgstr "Arveriad"
+
+#: kfmprops.cpp:464 kfmprops.cpp:563
+msgid "Group"
+msgstr "Strollad"
+
+#: kfmprops.cpp:469
+msgid "Others"
+msgstr "Re all"
+
+#: kfmprops.cpp:482
+msgid "Set UID"
+msgstr "Laka UID"
+
+#: kfmprops.cpp:483
+msgid "Set GID"
+msgstr "Laka GID"
+
+#: kfmprops.cpp:484
+msgid "Sticky"
+msgstr "Pegus"
+
+#: kfmprops.cpp:502
+msgid "Ownership"
+msgstr "Perc'henniezh"
+
+#: kfmprops.cpp:508
+msgid "Owner"
+msgstr "Perc'henn"
+
+#: kfmprops.cpp:638
+#, c-format
+msgid " ERROR: No user %s"
+msgstr " FAZI : Arveriad %s ebet"
+
+#: kfmprops.cpp:643
+#, c-format
+msgid " ERROR: No group %s"
+msgstr " FAZI : Strollad %s ebet"
+
+#: kfmprops.cpp:649
+msgid ""
+"Could not change owner/group\n"
+"Perhaps access denied."
+msgstr ""
+"Ne m'eus ket gallet kemmañ perc'henn/strollad\n"
+"Nac'het eo bet ar moned marteze"
+
+#: kfmprops.cpp:660
+msgid ""
+"Could not change permissions\n"
+"Perhaps access denied."
+msgstr ""
+"Ne m'eus ket gallet kemmañ aotreoù\n"
+"Nac'het eo bet ar moned marteze"
+
+#: kfmprops.cpp:673 kfmprops.cpp:736
+msgid "Execute"
+msgstr "Seveniñ"
+
+#: kfmprops.cpp:689
+msgid "&Browse..."
+msgstr "&Furchal..."
+
+#: kfmprops.cpp:723
+msgid "Swallowing on panel"
+msgstr "O lonkañ war ar banell"
+
+#: kfmprops.cpp:750
+msgid "Window Title"
+msgstr "Titl ar prenestr"
+
+#: kfmprops.cpp:770
+msgid "Run in terminal"
+msgstr "Seveniñ en un dermenell"
+
+#: kfmprops.cpp:778
+msgid "Terminal Options"
+msgstr "Dibaboù an dermenell"
+
+#: kfmprops.cpp:954 kfmprops.cpp:1093 kfmprops.cpp:1698 kfmprops.cpp:2059
+#: kfmprops.cpp:2241
+msgid ""
+"Could not save properties\n"
+"Perhaps permissions denied"
+msgstr ""
+"Ne m'eus ket gallet enrollañ ar perzhioù\n"
+"Nac'het eo bet ar moned marteze"
+
+#: kfmprops.cpp:1006
+msgid "URL"
+msgstr "URL"
+
+#: kfmprops.cpp:1115
+msgid "Background"
+msgstr "Drekleur"
+
+#: kfmprops.cpp:1125
+msgid "Apply global"
+msgstr "Arloañ e pep lec'h"
+
+#: kfmprops.cpp:1163 kfmprops.cpp:1235 kfmprops.cpp:1293
+msgid "(Default)"
+msgstr "(Dre ziouer)"
+
+#: kfmprops.cpp:1224
+msgid "Could not write to\n"
+msgstr "Ne m'eus ket gallet skrivañ e\n"
+
+#: kfmprops.cpp:1354
+msgid "(None)"
+msgstr "(Hini ebet)"
+
+#: kfmprops.cpp:1400
+msgid "Binary Pattern (netscape;Netscape;)"
+msgstr "Patrom binarel (netscape;Netscape;)"
+
+#: kfmprops.cpp:1407 kfmprops.cpp:1802
+msgid "Comment"
+msgstr "Askelenn"
+
+#: kfmprops.cpp:1418
+msgid "Name ( in your language )"
+msgstr "Anv (en ho yezh)"
+
+#: kfmprops.cpp:1779
+msgid "Pattern ( example: *.html;*.HTML; )"
+msgstr "Patrom (d.s. *.html ; *.HTML)"
+
+#: kfmprops.cpp:1791
+msgid "Mime Type"
+msgstr "Rizh Mime"
+
+#: kfmprops.cpp:1820
+msgid "Default Application"
+msgstr "Arload dre ziouer"
+
+#: kfmprops.cpp:1860
+msgid "<none>"
+msgstr "<hini ebet>"
+
+#: kfmprops.cpp:2105
+msgid "Device ( /dev/fd0 )"
+msgstr "Trobarzhell ( /dev/fd0 )"
+
+#: kfmprops.cpp:2114
+msgid "Mount Point ( /floppy )"
+msgstr "Poent mountañ ( /floppy )"
+
+#: kfmprops.cpp:2125
+msgid "Readonly"
+msgstr "Lenn hepken"
+
+#: kfmprops.cpp:2131
+msgid "Filesystems ( iso9660,msdos,minix,default )"
+msgstr "Reizhiadoù restr (iso9660, msdos, minix, default)"
+
+#: kfmprops.cpp:2142
+msgid "Mounted Icon"
+msgstr "Arlun mountet"
+
+#: kfmprops.cpp:2147
+msgid "Unmounted Icon"
+msgstr "Arlun divountet"
+
+#: kfmserver.cpp:51
+msgid "Could not create ~/.kde/share/apps/kfm/magic"
+msgstr "Ne m'eus ket gallet krouiñ ~/.kde/share/apps/kfm/magic"
+
+#: kfmserver.cpp:146
+msgid "Do you really want to rearrange your icons ?"
+msgstr "Ha fellout a ra deoc'h adkempenn da vat ho arlunioù ?"
+
+#: kfmserver.cpp:322
+#, c-format
+msgid ""
+"The URL\n"
+"%s\n"
+"is malformed"
+msgstr ""
+"An URL\n"
+"%s\n"
+"a zo siek"
+
+#: kfmserver.cpp:373
+msgid ""
+"You dont have the file ~/.kde/share/apps/kfm/magic\n"
+"Authorization failed"
+msgstr ""
+"N'oc'h eus ket a restr ~/.kde/share/apps/kfm/magic\n"
+"Aotreadur c'hwitet"
+
+#: kfmserver.cpp:382
+msgid ""
+"The file ~/.kde/share/apps/kfm/magic is corrupted\n"
+"Authorization failed"
+msgstr ""
+"Brein eo ar restr ~/.kde/share/apps/kfm/magic\n"
+"Aotreadur c'hwitet"
+
+#: kfmserver.cpp:390
+msgid ""
+"Someone tried to authorize himself\n"
+"using a wrong password"
+msgstr ""
+"Unan bennak en deus klasket aotren e-unan\n"
+"en ur implj un tremenger faos"
+
+#: root.cpp:735
+msgid ""
+"Cannot execute request.\n"
+"New root grid dimensions would move some icons\n"
+"off the desktop."
+msgstr ""
+"Ne m'eus ket gallet seveniñ ar goulenn.\n"
+"Mentoù kael gwrizienn a lakafe arlunioù zo\n"
+"er-maez ar burev."
+
+#: root.cpp:770
+msgid "Internal Error: desktopDir is malformed"
+msgstr "Kammad diabarzh : desktopDir a zo siek"
+
+#: root.cpp:781
+#, c-format
+msgid "ERROR: Could not read desktop directory '%s'"
+msgstr "FAZI : Ne m'eus ket gallet lenn renkell ar gorretaol '%s'"
+
+#: kfmman.cpp:1677 root.cpp:993 root.cpp:1013
+msgid "ERROR: Can not accept drop"
+msgstr "FAZI : n'hellan ket asantiñ d'al leuskel"
+
+#: kfmman.cpp:1654 kfmman.cpp:1700 kfmtree.cpp:341 root.cpp:1863 root.cpp:1888
+msgid "Dont know what to do."
+msgstr "N'ouzon ket petra ober."
+
+#: kfmexec.cpp:116 kfmman.cpp:371
+msgid "The file does not contain a URL"
+msgstr "Ar restr n'eus ket a URL ennañ"
+
+#: kfmman.cpp:519
+msgid "Contacting host "
+msgstr "O taremprediñ an ostiz "
+
+#: kfmman.cpp:523
+msgid "Working ..."
+msgstr "O labourat..."
+
+#: kiojob.cpp:135
+msgid "INTERNAL ERROR: You must at least specify the device for mounting"
+msgstr ""
+"FAZI DIABARZH : Ret eo deoc'h d'an nebeutañ resisaat an drobarzhell da "
+"vountañ"
+
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1412
+#, c-format
+msgid ""
+"Malformed URL\n"
+"%s"
+msgstr ""
+"URL siek\n"
+"%s"
+
+#: kiojob.cpp:255
+msgid "Can only make links on local file system"
+msgstr "N'hell oberiañ ereoù nemet war ar reizhiad restroù lec'hel"
+
+#: kiojob.cpp:278 kiojob.cpp:297
+#, c-format
+msgid ""
+"Could not overwrite\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet rasklañ\n"
+"%s"
+
+#: kiojob.cpp:307 kiojob.cpp:332 kiojob.cpp:351
+#, c-format
+msgid ""
+"Could not make symlink to\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet oberiañ un arouezere da\n"
+"%s"
+
+#: kiojob.cpp:387
+#, c-format
+msgid " ERROR: Could not write to %s"
+msgstr " FAZI : ne m'eus ket gallet skrivañ davet %s"
+
+#: kiojob.cpp:568 kiojob.cpp:891
+#, c-format
+msgid ""
+"Could not make symbolic link\n"
+"%s"
+msgstr ""
+"Ne m 'eus ket gallet oberiañ un arouezere\n"
+"%s"
+
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
+#, c-format
+msgid ""
+"Could not make directory\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet oberiañ ar renkell\n"
+"%s"
+
+#: kiojob.cpp:598 kiojob.cpp:1168
+#, c-format
+msgid "ERROR: Could not access directory '%s'"
+msgstr "FAZI : Ne m'eus ket gallet tizhout ar renkell '%s'"
+
+#: kiojob.cpp:662
+#, c-format
+msgid ""
+"Special file will not be copied\n"
+"%s"
+msgstr ""
+"Ne oa ke tu eilañ ar restr dibar\n"
+"%s"
+
+#: kiojob.cpp:664
+#, c-format
+msgid "%d special files will not be copied."
+msgstr "%d restr dibar ne vo ket eilet."
+
+#: kiojob.cpp:669
+msgid ""
+"Recurse copying from file with sub-protocol\n"
+"(for instance, tar files)"
+msgstr ""
+"Eilañ askizat restroù gant iskomenad\n"
+"(da skouer, restroù tar)"
+
+#: kiojob.cpp:674
+msgid "Recurse copying from/to distant locations"
+msgstr "Eilañ askizat "
+
+#: kiojob.cpp:904
+#, fuzzy, c-format
+msgid ""
+"Could not remove symbolic link\n"
+"%s"
+msgstr ""
+"Ne m 'eus ket gallet oberiañ un arouezere\n"
+"%s"
+
+#: kiojob.cpp:952
+#, c-format
+msgid ""
+"Could not access directory\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet tizhout ar renkell\n"
+"%s"
+
+#: kiojob.cpp:1000
+#, c-format
+msgid ""
+"Could not move directory\n"
+"%s\n"
+"to %s\n"
+"Perhaps access denied"
+msgstr ""
+"Ne m'eus ket gallet dilec'hiañ ar renkell\n"
+"%s\n"
+"da %s\n"
+"Nac'het eo bet ar moned marteze"
+
+#: kiojob.cpp:1072
+#, c-format
+msgid ""
+"Special file will not be moved\n"
+"%s"
+msgstr ""
+"Ar restr dibar-se ne vo ket dilec'hiet\n"
+"%s"
+
+#: kiojob.cpp:1074
+#, c-format
+msgid "%d special files will not be moved."
+msgstr "%d restr dibar ne vo ket dilec'hiet"
+
+#: kiojob.cpp:1338 kiojob.cpp:1416
+#, c-format
+msgid ""
+"Could not read\n"
+"%s\n"
+"File does not exist or access denied"
+msgstr ""
+"Ne m'eus ket gallet lenn\n"
+"%s\n"
+"Ar restr n'eus ket anezhañ pe moned nac'het"
+
+#: kiojob.cpp:1341
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps access denied"
+msgstr ""
+"Ne m'eus ket gallet skrivañ\n"
+"%s\n"
+"Nac'het eo bet ar moned marteze"
+
+#: kiojob.cpp:1345 kiojob.cpp:1420
+#, c-format
+msgid ""
+"Could not create Socket for\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet krouiñ ul lugell evit\n"
+"%s"
+
+#: kiojob.cpp:1348 kiojob.cpp:1424
+#, c-format
+msgid ""
+"Unknown host in\n"
+"%s"
+msgstr ""
+"Ostiz dianav e\n"
+"%s"
+
+#: kiojob.cpp:1352 kiojob.cpp:1428
+#, c-format
+msgid ""
+"Could not connect to\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet ereañ gant\n"
+"%s"
+
+#: kiojob.cpp:1356 kiojob.cpp:1432
+#, c-format
+msgid ""
+"The requested action\n"
+"%s\n"
+"is not implemented yet."
+msgstr ""
+"An obererezh goulennet\n"
+"%s\n"
+"n'eo ket kefloueraet c'hoazh."
+
+#: kiojob.cpp:1363
+#, c-format
+msgid ""
+"Could not list directory contents\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet rollañ endalc'had ar renkell\n"
+"%s"
+
+#: kiojob.cpp:1367
+#, c-format
+msgid ""
+"Could not delete\n"
+"%s\n"
+"URL does not exist or permission denied"
+msgstr ""
+"Ne m'eus ket gallet distruj\n"
+"%s\n"
+"An URL n'eus ket anezhañ pe nac'het eo bet an aotre"
+
+#: kiojob.cpp:1371 kiojob.cpp:1437
+#, c-format
+msgid ""
+"Could not login for\n"
+"%s\n"
+"Perhaps wrong password"
+msgstr ""
+"Ne m'eus ket gallet ereañ evit\n"
+"%s\n"
+"Tremenger faos marteze"
+
+#: kiojob.cpp:1383
+#, c-format
+msgid ""
+"Tar reported an error\n"
+"%s"
+msgstr ""
+"Tar en deus kemennet ur fazi\n"
+"%s"
+
+#: kiojob.cpp:1386
+#, c-format
+msgid ""
+"Gzip reported an error for\n"
+"%s"
+msgstr ""
+"Gzip en deus kemennet ur fazi evit\n"
+"%s"
+
+#: kiojob.cpp:1392
+msgid "Operation technically impossible"
+msgstr "Obererezh dibossubl en ur c'heñver kalvezel"
+
+#: kiojob.cpp:1395 kiojob.cpp:1408
+#, c-format
+msgid ""
+"File %s\n"
+"does not exist"
+msgstr ""
+"Restr %s\n"
+"n'eus ket anezhañ"
+
+#: kiojob.cpp:1398
+#, c-format
+msgid ""
+"Could not write\n"
+"%s\n"
+"Perhaps disk full"
+msgstr ""
+"Ne m'eus ket gallet skrivañ\n"
+"%s\n"
+"Pladenn leun moarvat"
+
+#: kiojob.cpp:1449
+#, c-format
+msgid ""
+"Tar reported a fatal error\n"
+"%s"
+msgstr ""
+"Tar en deus kemennet ur fazi sac'hus\n"
+"%s"
+
+#: kiojob.cpp:1453
+#, c-format
+msgid ""
+"Gzip reported a fatal error\n"
+"%s"
+msgstr ""
+"Gzip en deus kemennet ur fazi sac'hus\n"
+"%s"
+
+#: kiojob.cpp:1457
+#, c-format
+msgid ""
+"Could not mount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet mountañ\n"
+"Kerzlevr fazioù :\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1461
+#, c-format
+msgid ""
+"Could not unmount\n"
+"Error log:\n"
+"\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet divountañ\n"
+"Kerzlevr fazioù :\n"
+"\n"
+"%s"
+
+#: kiojob.cpp:1565
+msgid "Making directory"
+msgstr "Oc'h oberiañ ar renkell"
+
+#: kiojob.cpp:1681 kiojob.cpp:1742 kiojob.cpp:1791
+#, c-format
+msgid "File %i/%i"
+msgstr "Restr %i/%i"
+
+#: kiojob.cpp:1691 kiojob.cpp:1753
+#, c-format
+msgid "to %s"
+msgstr "da %s"
+
+#: kiojob.cpp:1722
+#, c-format
+msgid ""
+"Could not delete directory\n"
+"%s"
+msgstr ""
+"Ne m'eus ket gallet distruj ar renkell\n"
+"%s"
+
+#: kiojob.cpp:1824
+#, c-format
+msgid "Mounting %s ..."
+msgstr "O vountañ %s..."
+
+#: kiojob.cpp:1826
+#, c-format
+msgid "Unmounting %s ..."
+msgstr "O tivountañ %s..."
+
+#: kiojob.cpp:1854
+#, c-format
+msgid "Retrieving listing of %s"
+msgstr "Oc'h adtapout rolladur %s"
+
+#: kiojob.cpp:2093
+msgid "Segmentation fault in io subprocess"
+msgstr "Fazi krennennañ en isargerzh e/d"
+
+#: htmlcache.cpp:351
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Please check it.\n"
+msgstr ""
+" n'eo ket ur renkell ! Kemenn surentez !\n"
+"Gwiriit se ma plij.\n"
+
+#: htmlcache.cpp:380
+msgid ""
+" is not a directory ! Security Alert !\n"
+"Check it before clearing the cache.\n"
+msgstr ""
+" n'eo ket ur renkell ! Kemenn surentez !\n"
+"Gwiriit se a-raok skarzhañ ar grubuilh.\n"
+
+#: autostart.cpp:28
+msgid "KFM Installation Error"
+msgstr "Fazi staliadur KFM"
+
+#: autostart.cpp:29
+msgid "The directory "
+msgstr "Ar renkell"
+
+#: autostart.cpp:30
+msgid " does not exist\n"
+msgstr " n'eus ket anezhi\n"
+
+#: kfmtree.cpp:410
+msgid "Add To Bookmarks"
+msgstr "Ouzhpennañ d'ar sinedoù"
+
+#: kfmtree.cpp:589
+msgid "My Home"
+msgstr "Du-mañ"
+
+#: kfmtree.cpp:591
+msgid "Desktop"
+msgstr "Burev"
+
+#: kfmtree.cpp:593
+msgid "Root"
+msgstr "Gwrizienn"
+
+#: krenamewin.cpp:30
+msgid "Rename"
+msgstr "Adenvel"
+
+#: krenamewin.cpp:35
+msgid "Skip"
+msgstr "Tremen e-biou"
+
+#: krenamewin.cpp:40
+msgid "Overwrite"
+msgstr "Rasklañ"
+
+#: krenamewin.cpp:45
+msgid "Overwrite All"
+msgstr "Rasklañ pep tra"
+
+#: krenamewin.cpp:56
+msgid "You try to overwrite"
+msgstr "Klask a rit rasklañ"
+
+#: krenamewin.cpp:67
+msgid "already exists. Overwrite with"
+msgstr "a zo anezhañ dija. Rasklañ gant"
+
+#: krenamewin.cpp:75
+msgid "Or rename to"
+msgstr "Pe adenvel e"
+
+#: krenamewin.cpp:125
+msgid "You did not change the name!\n"
+msgstr "N'oc'h eus ket kemmet an anv !\n"
+
+#: passworddialog.cpp:50 passworddialog.cpp:113
+msgid "Password"
+msgstr "Tremenger"
+
+#: kfmexec.cpp:162
+msgid "Trying to open"
+msgstr "O klask digeriñ"
+
+#: open-with.cpp:132
+msgid "This group is empty!"
+msgstr "Goullo eo ar strollad-mañ !"
+
+#: finddlg.cpp:41
+msgid "Find:"
+msgstr "Kavout :"
+
+#: finddlg.cpp:56
+msgid "Case &sensitive"
+msgstr "&Evezhiek ouzh ar c'hef"
+
+#: kcookiewin.cpp:58
+msgid "Cookie Alert!"
+msgstr "Kemenn d'an toupin !"
+
+#: kcookiewin.cpp:76
+msgid "You received a cookie from host:"
+msgstr "Resevet oc'h eus un toupin digant an ostiz :"
+
+#: kcookiewin.cpp:89
+msgid "Do you want to accept or reject this cookie?"
+msgstr "Hag asantiñ a rit pe get d'an toupin-mañ ?"
+
+#: kcookiewin.cpp:120
+msgid "Apply to "
+msgstr "Arloañ da"
+
+#: kcookiewin.cpp:125
+msgid "&This cookie only"
+msgstr "&An toupin-mañ hepken"
+
+#: kcookiewin.cpp:133
+msgid "All cookies from this &domain"
+msgstr "An holl toupinoù diwar an &domani-se"
+
+#: kcookiewin.cpp:140
+msgid "All &cookies"
+msgstr "An &holl toupinoù"
+
+#: kcookiewin.cpp:161
+msgid "&Accept"
+msgstr "&Asantiñ"
+
+#: kcookiewin.cpp:166
+msgid "&Reject"
+msgstr "&Nac'h"
+
+#: popup.cpp:72
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FAZI : Ar patrom-se n'eus ket anezhi '%s'"
+
+#: popup.cpp:106
+msgid ""
+"Source file doesn't exist anymore ! \n"
+"Use \"Rescan Bindings\" in View menu to update the menu"
+msgstr ""
+"Ar restr tarzh n'eus ket mui anezhañ ! \n"
+"Arverit \"Addezrannañ an ereoù\" el lañser Gwel evit hizivaat al lañser"
+
+#: popup.cpp:117 popup.cpp:124
+msgid "New "
+msgstr "Nevez"
+
+#: kfmprops.h:73
+msgid "&General"
+msgstr "&Hollegezhioù"
+
+#: kfmprops.h:107
+msgid "&Permissions"
+msgstr "&Aotreadurioù"
+
+#: kfmprops.h:201
+msgid "E&xecute"
+msgstr "S&eveniñ"
+
+#: kfmprops.h:247
+msgid "U&RL"
+msgstr "U&RL"
+
+#: kfmprops.h:271
+msgid "&Dir"
+msgstr "R&enkell"
+
+#: kfmprops.h:315
+msgid "&Application"
+msgstr "&Arload"
+
+#: kfmprops.h:359
+msgid "&Binding"
+msgstr "&Ereadur"
+
+#: kfmprops.h:384
+msgid "De&vice"
+msgstr "&Trobarzhell"
+
+#: kfmexec/main.cpp:46
+#, c-format
+msgid ""
+"The URL %s\n"
+"is malformed"
+msgstr ""
+"An URL %s\n"
+"a zo siek"
+
+#: kfmexec/main.cpp:132
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"has been modified.\n"
+"Do you want to save it?"
+msgstr ""
+"Kemmet eo bet ar restr\n"
+"%s\n"
+"Ha fellout a ra deoc'h e enrollañ ?"
+
+#: kfmexec/main.cpp:133
+msgid "KFM Question"
+msgstr "Goulenn KFM"
+
+#: kfmexec/main.cpp:199
+msgid ""
+"Syntax Error:\n"
+"kfmexec command [URLs ....]\n"
+msgstr ""
+"Fazi yezhadur :\n"
+"kfmexec urzhiad [URLoù ....]\n"
+
+#~ msgid "Unknown binding"
+#~ msgstr "Ereadur dianav"

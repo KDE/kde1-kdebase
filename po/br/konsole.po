@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: konsole-1.1\n"
+"POT-Creation-Date: 1999-02-09 01:13+0100\n"
+"PO-Revision-Date: 1999-02-01 17:21+0100\n"
+"Last-Translator: Jañ-Mai Drapier <jdrapier@club-internet.fr>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.C:303
+msgid "&Normal"
+msgstr "&Boas"
+
+#: main.C:306
+msgid "&Small"
+msgstr "&Korr"
+
+#: main.C:307
+msgid "&Medium"
+msgstr "K&renn"
+
+#: main.C:308
+msgid "&Large"
+msgstr "&Bras"
+
+#: main.C:309
+msgid "&Huge"
+msgstr "R&amz"
+
+#: main.C:311
+msgid "&Linux"
+msgstr "&Linux"
+
+#: main.C:312
+msgid "Linux (small)"
+msgstr "Linux (bihan)"
+
+#: main.C:315
+msgid "&More ..."
+msgstr "&Muioc'h..."
+
+#: main.C:321
+msgid "&Hide"
+msgstr "&Kuzhat"
+
+#: main.C:322
+msgid "&Left"
+msgstr "A-&gleiz"
+
+#: main.C:323
+msgid "&Right"
+msgstr "A-&zehou"
+
+#: main.C:329
+msgid "40x15 (&small)"
+msgstr "40x15 (&bihan)"
+
+#: main.C:330
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: main.C:331
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: main.C:332
+msgid "80x40 (&xterm)"
+msgstr "80x40 (&xterm)"
+
+#: main.C:333
+msgid "80x52 (ibmv&ga)"
+msgstr "80x52 (ibmv&ga)"
+
+#: main.C:342
+msgid "&Menubar"
+msgstr "&Barenn al lañser"
+
+#: main.C:344
+msgid "&Frame"
+msgstr "&Stern"
+
+#: main.C:346
+msgid "Scroll&bar"
+msgstr "Barrenn &dibunañ"
+
+#: main.C:348
+msgid "BS sends &DEL"
+msgstr "War-gil a gas &DEL"
+
+#: main.C:351
+msgid "&Font"
+msgstr "&Nodrezh"
+
+#: main.C:352
+msgid "&Size"
+msgstr "&Ment"
+
+#: main.C:353
+msgid "&Schema"
+msgstr "&Steuñv"
+
+#: main.C:355
+msgid "&Save options"
+msgstr "&Enrollañ an dibaboù"
+
+#: main.C:359
+msgid "&About ..."
+msgstr "&Diwar-benn ..."
+
+#: main.C:360
+msgid "&User's Manual ..."
+msgstr "&Dornlevr implij ..."
+
+#: main.C:361
+msgid "&Technical Reference ..."
+msgstr "&Dave kalvezel ..."
+
+#: main.C:365
+msgid "cd"
+msgstr "kemmañ renkell"
+
+#: main.C:378
+msgid "Sessions"
+msgstr "Dalc'hoù"
+
+#: main.C:517
+#, c-format
+msgid ""
+"Font `%s' not found.\n"
+"Check README.linux.console for help."
+msgstr ""
+"Nodrezh `%s' digavus.\n"
+"Gwiriit README.linux.console evit skoazell."
+
+#: main.C:621
+#, c-format
+msgid "About %s"
+msgstr "Diwar-benn %s"
+
+#: main.C:623
+#, c-format
+msgid ""
+"%s version %s - an X terminal\n"
+"\n"
+"Copyright (c) 1998 by Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"This program is free software under the\n"
+"terms of the Artistic License and comes\n"
+"WITHOUT ANY WARRANTY.\n"
+"See `LICENSE.readme´ for details."
+msgstr ""
+"%s doare %s - un dermenell X\n"
+"\n"
+"Gwirioù eilañ (c) 1998 gant Lars Doelle <lars.doelle@on-line.de>\n"
+"\n"
+"Ar goulev-mañ a zo ur meziant frank hervez\n"
+"termennadur an Aotre Arzel ha dont a ra er-maez\n"
+"HEP AN DISTERAÑ KRETADUR.\n"
+"Gwelit `LICENSE.readme´ evit munudoù."
+
+#: main.C:749
+#, c-format
+msgid "`%s' terminated abnormally."
+msgstr "`%s' echu direizh."
+
+#: main.C:752
+msgid ""
+"\n"
+"Return code = "
+msgstr ""
+"\n"
+"Kod distro = "
+
+#: main.C:936
+msgid "Welcome to the console"
+msgstr "Degemer mat war al letrin"
