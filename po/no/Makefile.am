@@ -1,5 +1,4 @@
-# $Id$
-#
+
 # This has to be set. The rest should be reusable
 GMOFILES = krootwm.gmo kwm.gmo kvt.gmo kcontrol.gmo kcminput.gmo \
 	kdisplay.gmo kfontmanager.gmo kpanel.gmo kcmsyssound.gmo \
