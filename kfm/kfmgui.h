@@ -344,6 +344,11 @@ public slots:
      * Cache "View->Never save cache"
      */
     void slotSaveCacheOff();
+    /**
+     * "View->Encoding"
+     */
+    void slotSetCharset( int );
+
     
     /**
      * Menu "Bookmarks->Edit Bookmarks"
@@ -582,6 +587,11 @@ protected:
      * selected menu item.
      */
     QPopupMenu *menuNew;
+
+    /**
+     * menu for selecting the charset, used for displaying the document
+     */
+    QPopupMenu *mcharset;
 
     /**
      * The widget that contains the HTML stuff and the ( optional ) scrollbars.

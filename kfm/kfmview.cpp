@@ -38,6 +38,7 @@
 
 #include <klocale.h>
 #include <kstring.h>
+#include <kcharsets.h>
 
 // constants used when dragging a selection rectange outside the kfm window
 #define AUTOSCROLL_DELAY	150
@@ -160,6 +161,11 @@ void KfmView::setHTMLWidgetOptions(){
   fixedName = config->readEntry( "FixedFont" );
   if ( fixedName.isEmpty() )
     fixedName = DEFAULT_VIEW_FIXED_FONT;
+
+  QString aStr = config->readEntry( "DefaultCharset" );
+  if(!aStr.isEmpty())
+      kapp->getCharsets()->setDefault(aStr);
+
 
   bool changeCursor = (bool) config->readNumEntry("ChangeCursor",0);
   bool underlineLinks = (bool) config->readNumEntry("UnderlineLinks",1);

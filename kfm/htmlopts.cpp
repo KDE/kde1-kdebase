@@ -34,7 +34,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	QLabel *label;
 
 	//CT 12Nov1998 layout management
-	QGridLayout *lay = new QGridLayout(this,7,5,10,5);
+	QGridLayout *lay = new QGridLayout(this,8,5,10,5);
 	lay->addRowSpacing(0,10);
 	lay->addRowSpacing(4,10);
 	lay->addRowSpacing(0,10);
@@ -44,9 +44,10 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	lay->setRowStretch(1,1);
 	lay->setRowStretch(2,1);
 	lay->setRowStretch(3,0);
-	lay->setRowStretch(4,1);
+	lay->setRowStretch(4,0);
 	lay->setRowStretch(5,0);
 	lay->setRowStretch(6,0);
+	lay->setRowStretch(7,10);
 
 	lay->setColStretch(0,0);
 	lay->setColStretch(1,1);
@@ -133,7 +134,7 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT 12Nov1998 layout management
 	label->adjustSize();
 	label->setMinimumSize(label->size());
-	lay->addWidget(label,5,1);
+	lay->addWidget(label,4,1);
 	//CT
 
 	cb = new QComboBox( false, this );
@@ -150,13 +151,36 @@ KFontOptions::KFontOptions( QWidget *parent, const char *name )
 	//CT 12Nov1998 layout management
 	cb->adjustSize();
 	cb->setMinimumSize(cb->size());
-	lay->addWidget(cb,5,2);
-
-	lay->activate();
-	//CT
+	lay->addWidget(cb,4,2);
 
 	connect( cb, SIGNAL( activated( const char * ) ),
 		SLOT( slotFixedFont( const char * ) ) );
+
+
+	// default charset Lars Knoll 17Nov98
+	label = new QLabel( klocale->translate( "Default Charset"), this );
+	label->adjustSize();
+	label->setMinimumSize(label->size());
+	lay->addWidget(label,5,1);
+	lay->activate();
+
+	cb = new QComboBox( false, this );
+	QStrList charsets = kapp->getCharsets()->available();
+	charsets.insert(0, klocale->translate("Use language charset"));
+	cb->insertStrList( &charsets );
+	QStrListIterator cs( charsets );
+	for ( i = 0; cs.current(); ++cs, i++ )
+	{
+		if ( !strcmp( charsetName, cs.current() ) )
+			cb->setCurrentItem( i );
+	}
+
+	cb->adjustSize();
+	cb->setMinimumSize(cb->size());
+	lay->addWidget(cb,5,2);
+
+	connect( cb, SIGNAL( activated( const char * ) ),
+		SLOT( slotCharset( const char * ) ) );
 
 	connect( bg, SIGNAL( clicked( int ) ), SLOT( slotFontSize( int ) ) );
 }
@@ -169,9 +193,11 @@ void KFontOptions::getFontOpts(struct fontoptions& fntopts){
   fntopts.standardfont.detach();
   fntopts.fixedfont    = fixedName;
   fntopts.fixedfont.detach();
+  fntopts.charset      = charsetName;
+  fntopts.charset.detach();
 
   if(fontopts.fontsize != fSize || fontopts.standardfont != stdName ||
-     fontopts.fixedfont != fixedName){
+     fontopts.fixedfont != fixedName || fontopts.charset != charsetName){
 
      fntopts.changed     = true;
   }
@@ -212,6 +238,11 @@ void KFontOptions::readOptions()
 
 	fontopts.fixedfont = fixedName;
 	fontopts.fixedfont.detach();
+
+	charsetName = config->readEntry( "DefaultCharset" );
+
+	fontopts.charset = charsetName;
+	fontopts.charset.detach();
 
 }
 
@@ -275,6 +306,11 @@ void KFontOptions::slotStandardFont( const char *n )
 void KFontOptions::slotFixedFont( const char *n )
 {
 	fixedName = n;
+}
+
+void KFontOptions::slotCharset( const char *n )
+{
+	charsetName = n;
 }
 
 //-----------------------------------------------------------------------------

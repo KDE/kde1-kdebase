@@ -22,6 +22,7 @@ struct fontoptions{
   int     fontsize;
   QString standardfont;
   QString fixedfont;
+  QString charset;   
   bool    changed;
 
 };
@@ -67,6 +68,7 @@ public slots:
 	void	slotFontSize( int );
 	void	slotStandardFont( const char *n );
 	void	slotFixedFont( const char *n );
+	void    slotCharset( const char *n );
 
 private:
 	void	readOptions();
@@ -79,7 +81,7 @@ private:
 	QString	fixedName;
 	QStrList standardFonts;
 	QStrList fixedFonts;
-
+	QString charsetName;
 
 	struct fontoptions  fontopts;
 };

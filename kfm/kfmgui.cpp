@@ -341,6 +341,22 @@ void KfmGui::initMenu()
 		       this, SLOT(slotViewFrameSource()) );
     mview->insertItem( klocale->translate("View Docu&ment Source"),
 		       this, SLOT(slotViewDocumentSource()) );
+
+    // charsets
+    mcharset = new QPopupMenu();
+
+    QStrList charsets = kapp->getCharsets()->available();
+    mcharset->setCheckable(true);
+    charsets.insert( 0, klocale->translate("Auto") );
+    for(charsets.first(); charsets.current(); charsets.next())
+	mcharset->insertItem( charsets.current() );
+    mcharset->setItemChecked( mcharset->idAt( 0 ), true );
+
+    connect( mcharset, SIGNAL( activated( int ) ), 
+	     this, SLOT( slotSetCharset( int ) ) );
+    mview->insertSeparator();
+    mview->insertItem( klocale->translate("&Document Encoding"), mcharset );
+
     
     mview->setItemChecked( mview->idAt( 0 ), showDot );
     mview->setItemChecked( mview->idAt( 1 ), bTreeView );
@@ -1484,7 +1500,7 @@ void KfmGui::slotConfigureBrowser()
 	    config->writeEntry( "BaseFontSize", fontopts.fontsize );
 	    config->writeEntry( "StandardFont", fontopts.standardfont );
 	    config->writeEntry( "FixedFont", fontopts.fixedfont );
-
+	    config->writeEntry( "DefaultCharset", fontopts.charset );
 	  }
 
 
@@ -1528,6 +1544,11 @@ void KfmGui::slotConfigureBrowser()
 	      htmlview->setFixedFont( fontopts.fixedfont.data() );
 	      htmlview->setStandardFont( fontopts.standardfont.data() );
 	      htmlview->setDefaultFontBase( fontopts.fontsize );
+	      // default charset LK 17Nov98
+	      if( !fontopts.charset.isEmpty() )
+		  kapp->getCharsets()->setDefault( fontopts.charset );
+	      else
+		  kapp->getCharsets()->setDefault( klocale->charset() );
 
 	      // w->view points to the kfmview in w  the kfmgui
 	      w->view->setDefaultTextColors( 
@@ -1597,6 +1618,26 @@ void KfmGui::slotViewDocumentSource()
     QString cmd;
     cmd << "kedit \"" << view->getURL() << "\"";
     KMimeBind::runCmd( cmd );
+}
+
+void KfmGui::slotSetCharset( int id )
+{
+    uint i;
+    printf("chose charset %d,%s\n",id,mcharset->text(id));
+
+    if( id == 0)
+	view->setOverrideCharset();
+    else
+	view->setOverrideCharset(mcharset->text(id));
+    // uncheck all items but the current one
+    for(i = 0; i< mcharset->count(); i++)
+    {
+	if((int)i == id)
+	    mcharset->setItemChecked(i, true);
+	else
+	    mcharset->setItemChecked(i, false);
+    }
+    updateView();
 }
 
 void KfmGui::setCharset(const char *_c){
