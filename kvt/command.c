@@ -998,8 +998,9 @@ static unsigned char  get_com_char(int flags)
 	  if(!refreshed)
 	    refresh();
 	  refreshed = 1;
-	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
-		    MyWinInfo.offset + MyWinInfo.cheight -1);
+/* scrollbar movements are done in refresh now (Matthias) */
+/*	  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
+		    MyWinInfo.offset + MyWinInfo.cheight -1); */
 	  XFlush(display);
 	}
 

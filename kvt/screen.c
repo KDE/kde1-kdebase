@@ -1310,10 +1310,8 @@ void scr_move_up_down(int direction)
     MyWinInfo.offset = 0;  
 
   /* do some refreshing here (Matthias) */ 
-  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+/*  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);*/
   refresh();
-  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
-	    MyWinInfo.offset + MyWinInfo.cheight -1);
 }
 
 
@@ -1844,6 +1842,10 @@ void refresh()
   /* Window is not visible at all, don't update */
   if(refresh_type == DONT_BOTHER)
     return;
+
+  /* take care about the scrollbar, too (Matthias) */
+  sbar_show(MyWinInfo.cheight+MyWinInfo.sline_top-1,MyWinInfo.offset,
+	    MyWinInfo.offset + MyWinInfo.cheight -1);
 
    if(d_xcursor < (MyWinInfo.cheight*(MyWinInfo.cwidth+1))) 
      displayed_rend[d_xcursor] = 255; 

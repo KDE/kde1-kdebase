@@ -1,5 +1,6 @@
  
-  - should compile on ALPHA now (Christian Czezatke)
+  - scrollbar problems fixed 
+  - should compile on Linux/Alpha now (Christian Czezatke)
   
   - fixed the multiline selection again
   - kdisplays changes gets recognized during runtime now
