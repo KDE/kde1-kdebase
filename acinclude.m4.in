@@ -182,7 +182,6 @@ kde_cv_all_paths="kde_have_all_paths=\"yes\" \
 	kde_bindir=\"$kde_bindir\" \
 	kde_partsdir=\"$kde_partsdir\""
 fi
-rm -fr conftest*
 
 ])
 
@@ -202,6 +201,7 @@ Since it had compiled and linked before, it must be a strange problem on your sy
 Look at config.log for details. If you are not able to fix this, please contact Stephan Kulow <coolo@kde.org>.])
 else
   AC_MSG_RESULT(done)
+  rm -rf conftest*
 fi
 
 if test -n "$install_root"; then
