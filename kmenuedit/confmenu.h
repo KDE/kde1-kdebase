@@ -42,7 +42,7 @@ class MenuButton : public EditButton
 public:
   MenuButton ( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent=0, const char* name=0 );
   ~MenuButton ();
-  
+
   void setId(int i) { id = i; }
   int  getId() { return id; }
   void parentMoved() { moveEvent( NULL ); }
@@ -64,6 +64,8 @@ signals:
 
 public slots:
   void change_item();
+  void move_item();
+  void move_menu();
 
 protected slots:
   void open();
@@ -77,7 +79,7 @@ protected slots:
   void change_reject();
   void popupMenu( int );
   void childRepos() { moveEvent( NULL ); }
-  
+
 protected:
   virtual void mousePressEvent(QMouseEvent *e);
   virtual void dndMouseReleaseEvent(QMouseEvent *e);
@@ -90,7 +92,7 @@ protected:
   virtual void enterEvent( QEvent *_ev );
   virtual void focusOutEvent( QFocusEvent * );
   void paint( QPainter *_painter );
-  
+
   int             id;
   EntryType       type;
   QPopupMenu      popmenu;

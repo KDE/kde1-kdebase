@@ -99,7 +99,7 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
   left_pressed = FALSE;
   if( type == submenu )
     {
-      popmenu.insertItem(klocale->translate("Open/ Close"), 
+      popmenu.insertItem(klocale->translate("Open/ Close"),
 			   this, SLOT(open()));
       connect( this, SIGNAL(clicked(int)), this, SLOT(sOpen(int)) );
     }
@@ -112,10 +112,15 @@ MenuButton::MenuButton( PMenuItem *p_it, int i, PMenu *p_parent, QWidget *parent
   else
     {
       popmenu.insertItem(klocale->translate("Change"), this, SLOT(change_item()));
+      popmenu.insertSeparator();
+      popmenu.insertItem(klocale->translate("Select item for moving"), this, SLOT(move_item()));
+      popmenu.insertItem(klocale->translate("Select menu for moving"), this, SLOT(move_menu()));
+      popmenu.insertSeparator();
       popmenu.insertItem(klocale->translate("New"), this, SLOT(new_item()));
       popmenu.insertItem(klocale->translate("Cut"), this, SLOT(cutItem()));
       popmenu.insertItem(klocale->translate("Copy"), this, SLOT(copyItem()));
       popmenu.insertItem(klocale->translate("Paste"), this, SLOT(pasteItem()));
+      popmenu.insertSeparator();
       popmenu.insertItem(klocale->translate("Delete"), this, SLOT(delete_item()));
     }
   connect( this, SIGNAL(Rpressed(int)), this, SLOT(popupMenu(int)) );
@@ -179,7 +184,19 @@ void MenuButton::delete_item()
   ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 }
 
+enum MoveMode {MoveNone, MoveItem, MoveMenu};
+static MoveMode move_mode = MoveNone;
+void MenuButton::move_item()
+{
+    QApplication::setOverrideCursor(CrossCursor, TRUE); 
+    move_mode = MoveItem;
+}
 
+void MenuButton::move_menu()
+{
+    QApplication::setOverrideCursor(CrossCursor, TRUE); 
+    move_mode = MoveMenu;
+}
 void MenuButton::change_item()
 {
   if( dialog_open )
@@ -217,7 +234,7 @@ void MenuButton::change_item()
       dialog->cb_ftp->setChecked(prot.contains("ftp"));
       dialog->cb_http->setChecked(prot.contains("http"));
       dialog->cb_tar->setChecked(prot.contains("tar"));
-      dialog->cb_info->setChecked(prot.contains("info"));      
+      dialog->cb_info->setChecked(prot.contains("info"));
       dialog->cb_man->setChecked(prot.contains("man"));
       dialog->ch_use_term->setChecked(pmenu_item->useTerm());
       QString str_list, value;
@@ -255,7 +272,7 @@ void MenuButton::change_item()
     {
       QObjectList  *list = dialog->queryList( "QLineEdit" );
       QObjectListIt it( *list );
-      while ( it.current() ) 
+      while ( it.current() )
 	{ ((QWidget *) it.current())->setEnabled(FALSE); ++it; }
       delete list;
       dialog->c_type->setEnabled(FALSE);
@@ -276,9 +293,9 @@ void MenuButton::change_accept()
       if( pmenu_item->getName() != dialog->i_fname->text() )
 	if( pmenu_parent->checkFilenames(dialog->i_fname->text()) )
 	  {
-	    QMessageBox::information(dialog, 
-				     klocale->translate("Wrong filename"), 
-				     klocale->translate("A kdelnk-file with this name does already exist. \nPlease choose another filename."), 
+	    QMessageBox::information(dialog,
+				     klocale->translate("Wrong filename"),
+				     klocale->translate("A kdelnk-file with this name does already exist. \nPlease choose another filename."),
 				     klocale->translate("OK") );
 	    return;
 	  }
@@ -298,7 +315,7 @@ void MenuButton::change_accept()
 	      QMessageBox msg_box;
 	      if( msg_box.query( klocale->translate("Warning !"),
 				 klocale->translate("Changing the type of this button will delete all of its submenus"),
-				 klocale->translate("OK"), 
+				 klocale->translate("OK"),
 				 klocale->translate("Cancel") ) )
 		{
 		  popmenu.removeItemAt(0);
@@ -317,7 +334,7 @@ void MenuButton::change_accept()
 	      popmenu.connectItem( 0, this, SLOT(open()) );
 	      connect( this, SIGNAL(clicked(int)), this, SLOT(sOpen(int)) );
 	      PMenu *new_menu = new PMenu();
-	      new_menu->add( new PMenuItem(unix_com, klocale->translate("EMPTY"), 
+	      new_menu->add( new PMenuItem(unix_com, klocale->translate("EMPTY"),
 					   klocale->translate("no command")) );
 	      pmenu_item->setMenu( new_menu );
 	    }
@@ -450,20 +467,20 @@ debug("is down");
     return;
     }
   bool hit = hitButton( e->pos() );
-  if ( hit ) 
+  if ( hit )
     {                                // mouse press on button
       setDown( TRUE );
       repaint( FALSE );
-      if( e->button() == LeftButton )
+      if( e->button() == LeftButton && move_mode == MoveNone)
 	{
 	  emit pressed(id);
 	  left_pressed = TRUE;
 	  press_x = e->pos().x();
 	  press_y = e->pos().y();
 	}
-      else if( e->button() == MidButton )
+      else if( e->button() == MidButton || (e->button() == LeftButton && move_mode != MoveNone))
 	{
-	  if( (e->state() & ShiftButton) )
+	  if( (e->state() & ShiftButton) || move_mode == MoveMenu)
 	    {
 	      move_group = TRUE;
 	      setCursor(sizeAllCursor);
@@ -481,6 +498,8 @@ debug("is down");
 		  emit Mpressed(id);
 		}
 	    }
+	  move_mode = MoveNone;
+	  QApplication::restoreOverrideCursor();
 	}
       else
 	emit Rpressed(id);
@@ -493,7 +512,8 @@ void MenuButton::dndMouseReleaseEvent( QMouseEvent *e)
     return;
   bool hit = hitButton( e->pos() );
   setDown( FALSE );
-  if( e->button() == MidButton )
+  if( move_button )
+      //  if( e->button() == MidButton )
     {
       setCursor(arrowCursor);
       move_group = FALSE;
@@ -912,6 +932,8 @@ void ConfigureMenu::newButton( int but_id )
   changes_to_save = TRUE;
   ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
   buttonMoved( but_nr-1, but_list.at(but_id)->button->pos() );
+  
+  but_list.at(but_id)->button->change_item();
 }
 
 void ConfigureMenu::delButton( int but_id )
@@ -972,7 +994,7 @@ void ConfigureMenu::urlDroped(KDNDDropZone *zone)
 	    }
 	  new_item = new PMenuItem( *global_drop_buffer );
 	  append( new_item );
-	  pmenu->add( new_item );	 
+	  pmenu->add( new_item );	
 	  changes_to_save = TRUE;
 	  ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 	}
