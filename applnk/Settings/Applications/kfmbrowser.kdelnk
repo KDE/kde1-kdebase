@@ -1,0 +1,11 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=Application
+DocPath=kcontrol/kcmkfm/kfm-1.html
+Name=Web browser
+Name[fr]=Navigateur Web
+Comment=You can configure here the web browser
+Comment[fr]=Vous pouvez configurer ici le navigateur Web
+# This needs a new icon !
+Icon=kfm.xpm
+Exec=kcmkfm proxy http useragent
