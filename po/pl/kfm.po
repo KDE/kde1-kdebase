@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm \n"
 "POT-Creation-Date: 1998-01-10 12:48+0100\n"
-"PO-Revision-Date: 1998-01-10 18:50+0100\n"
+"PO-Revision-Date: 1998-01-13 14:00+0100\n"
 "Last-Translator: Piotr Roszatycki <dexter@fnet.com.pl>\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
 
@@ -432,7 +432,6 @@ msgid "Could not access"
 msgstr "Nie ma dostêpu"
 
 #: kbind.cpp:1711
-#, fuzzy
 msgid ""
 "This file does not contain an\n"
 "Exec=....\n"
@@ -441,7 +440,7 @@ msgid ""
 msgstr ""
 "Ten plik nie zawiera linii\n"
 "Exec=....\n"
-"Edytuj w³a¶ciwo¶ci\n"
+"Wyedytuj w³a¶ciwo¶ci\n"
 "aby rozwi±zaæ ten problem"
 
 #: kbind.cpp:1800
