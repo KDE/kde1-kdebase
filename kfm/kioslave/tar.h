@@ -14,9 +14,10 @@ public:
     int OpenDir(KURL *url);
     KProtocolDirEntry *ReadDir();
     int CloseDir();
+//     int MkDir(KURL *url); 
     
     /**
-     * @param _path is used do determine wether it is a gzipped tar file.
+     * @param _path is used do determine whether it is a gzipped tar file.
      *              To do so we just have a look at the extension.
      */
     int AttachTAR( const char *_command );
@@ -27,16 +28,32 @@ public:
     long Size();
     
     int atEOF();
+    int isGzip();
 
 private:
     bool HandleRefill();
 
-    KSlave Slave;
-    char *dirpathmem, *dirpath;
     /**
-     * This variable is used in @ref #ReadDir only.
+     * @return TRUE if the given directory is already in dirlist
+     * (Path removed, leading slash removed, no trailing slash).
      */
-    QString subdir;
+    bool isDirStored( const char *_name );
+
+    /**
+     * @return tmp made relative to dirpath
+     */
+    QString makeRelative(QString tmp);
+
+    KSlave Slave;
+    /**
+     * This variable is used in @ref #OpenDir only.
+     */
+    QString dirpath;
+    /**
+     * Stored after Open() is called, for Size()
+     */
+    QString openedUrl;
+    
     FILE *dirfile;
     bool bEOF;
 
@@ -47,6 +64,7 @@ private:
     // Used to pipe data between parent and tar process
     long len;
 
+    QList<KProtocolDirEntry> dirlist;
 };
 
 #endif
