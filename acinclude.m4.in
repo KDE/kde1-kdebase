@@ -1210,7 +1210,7 @@ AC_CACHE_VAL(ac_cv_ksize_t,
 socklen_t a=0; 
 getsockname(0,(struct sockaddr*)0, &a);
 ],
-ac_cv_ksize_t=socklen,
+ac_cv_ksize_t=socklen_t,
 ac_cv_ksize_t=)
 if test -z "$ac_cv_ksize_t"; then
 ac_safe_cxxflags="$CXXFLAGS"
