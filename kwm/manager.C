@@ -1966,8 +1966,22 @@ void Manager::manage(Window w, bool mapped){
 
       if (c->geometry.x() < maxRect.x() || c->geometry.right() > maxRect.right()
 	  || c->geometry.y() < maxRect.y() || c->geometry.bottom() > maxRect.bottom() ) {
-	  // the settings are bogus, do customized placement again.
-	  doPlacement(c);
+	  
+	  // the settings are bogus, move the window to fit in the visible area
+	  if ( c->geometry.x() < maxRect.x() )
+	      c->geometry.moveTopLeft( 
+		 QPoint( maxRect.x(), c->geometry.y() ) );
+	  if ( c->geometry.y() < maxRect.y() )
+	      c->geometry.moveTopLeft( 
+	                 QPoint( c->geometry.x(), maxRect.y() ) );
+	  if ( c->geometry.right() > maxRect.right() 
+	       && c->geometry.width() <= maxRect.width() )
+	      c->geometry.moveBottomRight( 
+	                 QPoint( maxRect.right(), c->geometry.bottom() ) );
+	  if ( c->geometry.bottom() > maxRect.bottom() 
+	       && c->geometry.height() <= maxRect.height() )
+	      c->geometry.moveBottomRight( 
+	                 QPoint( c->geometry.right(), maxRect.bottom() ) );
 	  didPlacement = TRUE;
       }
   }
