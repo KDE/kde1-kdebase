@@ -19,7 +19,7 @@ msgstr "Hakemistot:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Tiedostoa tai hakemistoa ei voi avata."
+msgstr "Tiedostoa tai hakemistoa ei voitu avata."
 
 #: kfindtop.cpp:118
 #, c-format
@@ -260,7 +260,7 @@ msgstr "Arkistoijat"
 #: kfwin.cpp:78 kfwin.cpp:105
 #, c-format
 msgid "%d file(s) found"
-msgstr "%d tiedostoa löydetty"
+msgstr "%d tiedostoa löytyi"
 
 #: kfwin.cpp:143
 msgid "It wasn't possible to save results!"
@@ -333,4 +333,4 @@ msgstr "Tunnistamaton arkistotyyppi!"
 
 #: kfwin.cpp:395
 msgid "Error while creating child process!"
-msgstr "Virhe luodessa lapsiprosessia!"
+msgstr "Virhe luotaessa lapsiprosessia!"

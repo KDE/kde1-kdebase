@@ -25,7 +25,7 @@ msgstr "Kansio"
 #: kfmgui.cpp:281
 #, c-format
 msgid "ERROR: Template does not exist '%s'"
-msgstr "VIRHE: Pohjaa ei löydy: '%s'"
+msgstr "VIRHE: Pohjaa '%s' ei löydetty."
 
 #: kfmgui.cpp:307
 msgid "&New Window"
@@ -219,7 +219,7 @@ msgstr "Ikonin lataus epäonnistui\n"
 #: root.cpp:966 root.cpp:984 root.cpp:990 root.cpp:996 root.cpp:1067
 #: root.cpp:1497 root.cpp:1522
 msgid "KFM Error"
-msgstr "KFM VIRHE"
+msgstr "KFM Virhe"
 
 #: kfmexec.cpp:58 kfmgui.cpp:704 kfmman.cpp:870
 msgid "Malformed URL\n"
@@ -249,7 +249,7 @@ msgstr "Avaa sijainti:"
 
 #: kfmgui.cpp:1202
 msgid "KFM Confirm"
-msgstr "KFM tietoja"
+msgstr "KFM Varmista"
 
 #: kfmgui.cpp:1203
 msgid ""
@@ -257,11 +257,11 @@ msgid ""
 "Important desktop functionality will be lost"
 msgstr ""
 "Haluatko todella lopettaa?\n"
-"Tärkeitä työpöydän toimintoja poistuu!"
+"Tärkeitä työpöydän toimintoja menetetään!"
 
 #: kfmgui.cpp:1230
 msgid "About KFM"
-msgstr "&Tietoja KFM:tä"
+msgstr "Tietoja KFM:tä"
 
 #: kfmgui.cpp:1231
 msgid ""
@@ -292,7 +292,7 @@ msgstr "VIRHE: Pudotus virheellisen URL päälle."
 
 #: kfmview.cpp:279
 msgid "ERROR: You dropped some URL over itself"
-msgstr "Pudotit tiedoston itsensä päälle"
+msgstr "VIRHE: Pudotit URL itsensä päälle"
 
 #: kfmserver.cpp:49 kfmserver.cpp:77 kfmtree.cpp:351 kfmview.cpp:311
 #: kfmview.cpp:497 krenamewin.cpp:20 root.cpp:1026
@@ -305,9 +305,9 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Haluatko varmasti tuhota nämä tiedostot?\n"
+"Haluatko varmasti tuhota valitut tiedostot?\n"
 "\n"
-"Niitä ei pysty tuhoamisen jälkeen palauttamaan."
+"Niitä ei pystytä tuhoamisen jälkeen palauttamaan."
 
 #: kfmtree.cpp:320 kfmview.cpp:345 kfmview.cpp:468 root.cpp:991
 msgid "ERROR: You dropped a URL over itself"
@@ -323,7 +323,7 @@ msgstr "Avaa sovelluksessa:"
 
 #: kfmview.cpp:384 root.cpp:939
 msgid "ERROR: Can not open properties for multiple files"
-msgstr "VIRHE: Ominaisuuksia ei voi avata usealle tiedostolle."
+msgstr "VIRHE: Usean tiedoston ominaisuuksia ei voida avata."
 
 #: kfmtree.cpp:283 kfmview.cpp:422 root.cpp:1068
 msgid "Could not access Trash Bin"
@@ -347,11 +347,11 @@ msgid ""
 "but it contains a link to your local file system."
 msgstr ""
 "Tämä sivu ei ole luotettava sivu\n"
-"mutta se sisältää linkin paikalliseen tiedostosysteemiin."
+"mutta se sisältää linkin paikalliseen tiedostojärjestelmään."
 
 #: kfmview.cpp:704
 msgid "Symbolic Link"
-msgstr "Symboolinen linkki"
+msgstr "Symbolinen linkki"
 
 #: kfmview.cpp:706
 #, c-format
@@ -408,8 +408,8 @@ msgid ""
 "This is a document!\n"
 "Not an application"
 msgstr ""
-"Tämä on asiakirja!\n"
-"Ei sovellus"
+"Tämä on asiakirja,\n"
+"eikä sovellus!"
 
 #: kbind.cpp:1537 kbind.cpp:1554
 msgid "Can only start executables on local disks\n"
@@ -434,11 +434,11 @@ msgstr ""
 
 #: kbind.cpp:1654
 msgid "The \"Link=....\" entry is empty"
-msgstr "\\\"Link=....\\\" kenttä on tyhjä."
+msgstr "\"Link=....\" kenttä on tyhjä."
 
 #: kbind.cpp:1669
 msgid "The config file has no \"Type=...\" line"
-msgstr "Asetustiedostossa ei ole \\\"Type=...\\\" riviä"
+msgstr "Asetustiedostossa ei ole \"Type=...\" riviä"
 
 #: kbind.cpp:1699 kbind.cpp:1850
 msgid "Could not access"
@@ -558,7 +558,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
-"En voi uudelleennimetä tiedostoa tai hakemistoa\n"
+"En voi nimetä uudelleen tiedostoa tai hakemistoa\n"
 "Kohde on jo olemassa\n"
 
 #: kfmprops.cpp:421
@@ -631,7 +631,7 @@ msgstr "Kiinnitetty"
 
 #: kfmprops.cpp:494
 msgid "Ownership"
-msgstr "Omistaja"
+msgstr "Omistajuus"
 
 #: kfmprops.cpp:500
 msgid "Owner"
@@ -660,7 +660,7 @@ msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Omistajaa/ryhmää ei voitu vaihtaa\n"
+"Omistajaa/ryhmää ei saatu vaihdettua\n"
 "Käsittely on mahdollisesti estetty"
 
 #: kfmprops.cpp:689
@@ -673,7 +673,7 @@ msgstr "Selaa"
 
 #: kfmprops.cpp:697
 msgid "Working Directory"
-msgstr "Työskentely hakemisto"
+msgstr "Työskentelyhakemisto"
 
 #: kfmprops.cpp:713
 msgid "Run normally"
@@ -681,7 +681,7 @@ msgstr "Suorita normaalisti"
 
 #: kfmprops.cpp:717
 msgid "Run in Panel (drag onto Panel to execute)"
-msgstr "Käynnistä Paneelissa (vedä paneeliin päälle)"
+msgstr "Käynnistä Paneelissa (vedä paneelin päälle)"
 
 #: kfmprops.cpp:721
 msgid "Title of Application"
@@ -740,7 +740,7 @@ msgstr "(Ei mikään)"
 
 #: kfmprops.cpp:1290
 msgid "Binary Pattern (netscape;Netscape;)"
-msgstr "Ohjelman kuvio ( netscape;Netscape; )"
+msgstr "Ohjelman kuvio (netscape;Netscape;)"
 
 #: kfmprops.cpp:1297 kfmprops.cpp:1551
 msgid "Comment"
@@ -752,7 +752,7 @@ msgstr "Nimi ( omalla kielellläsi )"
 
 #: kfmprops.cpp:1539
 msgid "Pattern ( example: *.html;*.HTML; )"
-msgstr "Kuvio (example: *.html;*.HTML; "
+msgstr "Kuvio ( esimerkki: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1547
 msgid "Mime Type"
@@ -844,7 +844,7 @@ msgstr "Sisäinen virhe: desktopDir on virheellinen"
 #: root.cpp:589
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "VIRHE: Työpöytähakemistoa '%s' ei voitu lukea."
+msgstr "VIRHE: Työpöytähakemistoa '%s' ei pystytty lukemaan."
 
 #: root.cpp:780
 msgid "ERROR: Can not accept drop"
@@ -864,7 +864,7 @@ msgstr "Tiedostossa ei ole URL:ää"
 
 #: kfmman.cpp:320
 msgid "Contacting host "
-msgstr "Muodostan yhteyttä"
+msgstr "Muodostan yhteyttä isäntään "
 
 #: kfmman.cpp:324
 msgid "Working ..."
@@ -889,7 +889,7 @@ msgstr ""
 
 #: kiojob.cpp:233
 msgid "Can only make links on local file system"
-msgstr "Linkin tekeminen on mahdollista vain samalla tiedostojärjestelmällä."
+msgstr "Linkin tekeminen on mahdollista vain samassa tiedostojärjestelmässä."
 
 #: kiojob.cpp:256 kiojob.cpp:275
 #, c-format
@@ -1059,7 +1059,7 @@ msgid ""
 "Tar reproted an error\n"
 "%s"
 msgstr ""
-"'tar' ohjelma antoi virheen\n"
+"Tar ohjelma ilmoitti virheen tiedostolle\n"
 "%s"
 
 #: kiojob.cpp:1244
@@ -1068,7 +1068,7 @@ msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
-"Gzip ilmoitti virheen tiedostolle\n"
+"Gzip ohjelma ilmoitti virheen tiedostolle\n"
 "%s"
 
 #: kiojob.cpp:1254 kiojob.cpp:1269
@@ -1085,7 +1085,9 @@ msgstr ""
 msgid ""
 "Gzip reproted an error\n"
 "%s"
-msgstr "Gzip ilmoitti virheestä"
+msgstr 
+"Gzip ilmoitti virheestä\n"
+"%s"
 
 #: kiojob.cpp:1359
 #, c-format
@@ -1095,7 +1097,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Mounttaus ei onnistu\n"
+"Liittäminen ei onnistu\n"
 "Virheloki: \n"
 "\n"
 "%s"
@@ -1108,7 +1110,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Mounttauksen purku ei onnistu\n"
+"Liitoksen purku ei onnistu\n"
 "Virheloki: \n"
 "\n"
 "%s"
@@ -1135,7 +1137,7 @@ msgid ""
 msgstr ""
 "Hakemistoa\n"
 "%s\n"
-"ei voi tuhota"
+"ei voitu tuhota"
 
 #: kiojob.cpp:1708
 #, c-format
@@ -1234,7 +1236,7 @@ msgstr "Tunnettuja sidoksia:"
 
 #: kproxydlg.cpp:14
 msgid "Don't forget to save your settings!"
-msgstr "Älä unohda tallettaa asetuksiasi!"
+msgstr "Älä unohda tallentaa asetuksiasi!"
 
 #: kproxydlg.cpp:43
 msgid "No Proxy for:"
@@ -1242,7 +1244,7 @@ msgstr "Ei välityspalvelinta:"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
-msgstr "KFM Selaimen asetukset"
+msgstr "KFM:n Selaimen asetukset"
 
 #: kbookmarkdlg.cpp:19 kbookmarkdlg.cpp:24
 msgid "Edit Bookmarks"
@@ -1258,11 +1260,11 @@ msgstr "Siirry alas"
 
 #: kbookmarkdlg.cpp:176
 msgid "Rename Bookmark"
-msgstr "Uudelleennimeä osoite"
+msgstr "Nimeä osoite uudelleen"
 
 #: kbookmarkdlg.cpp:178
 msgid "Rename Bookmark:"
-msgstr "Uudelleennimeä osoite:"
+msgstr "Nimeä osoite uudelleen:"
 
 #: kfmprops.h:73
 msgid "&General"
@@ -1278,7 +1280,7 @@ msgstr "Suorita"
 
 #: kfmprops.h:249
 msgid "U&RL"
-msgstr "URL"
+msgstr "U&RL"
 
 #: kfmprops.h:273
 msgid "&Dir"
@@ -1328,4 +1330,4 @@ msgid ""
 "kfmexec command [URLs ....]\n"
 msgstr ""
 "Syntaksivirhe\n"
-"kfmexec command [URLs ....]\n"
+"kfmexec command [URL ....]\n"

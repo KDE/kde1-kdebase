@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 1998-01-25 13:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:51
@@ -24,7 +24,7 @@ msgstr "käyttö: kcmlocale [-init | kieli]\n"
 
 #: main.cpp:79
 msgid "Locale settings"
-msgstr "Maa asetukset"
+msgstr "Maa-asetukset"
 
 #: locale.cpp:40
 msgid "Language"
@@ -57,4 +57,4 @@ msgid ""
 msgstr ""
 "Muutetut kieliasetukset ovat voimassa vain uudelleen käynnistetyissä\n"
 "ohjelmissa. Vaihtaaksesi kielen kaikkiin ohjelmiin sinun tulee lopettaa "
-"ensin."
+"KDE ensin."

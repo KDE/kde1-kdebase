@@ -52,11 +52,11 @@ msgstr "Henkilökohtainen ensin"
 
 #: panel.cpp:105
 msgid "Auto Hide Panel"
-msgstr "Automaattisesti piiloita Paneeli"
+msgstr "Automaattisesti piilota Paneeli"
 
 #: panel.cpp:107
 msgid "Auto Hide Taskbar"
-msgstr "Automaattisesti piiloita työpalkki"
+msgstr "Automaattisesti piilota työpalkki"
 
 #: desktops.cpp:67
 msgid "Visible"

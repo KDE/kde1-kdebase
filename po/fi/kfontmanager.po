@@ -16,11 +16,11 @@ msgstr ""
 
 #: main.cpp:61
 msgid "KDE Font Manager"
-msgstr "KDE kirjasinhallinta"
+msgstr "KDE:n kirjasinhallinta"
 
 #: main.cpp:74
 msgid "KDE Fonts"
-msgstr "KDE Kirjasimet"
+msgstr "KDE:n Kirjasimet"
 
 #: main.cpp:75
 msgid "Font Explorer"
@@ -32,7 +32,7 @@ msgstr "Puhtaat X11 kirjasimet"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Saatavilla olevat X11 kirjasimet"
+msgstr "Saatavissaolevat X11 kirjasimet"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -40,7 +40,7 @@ msgstr "KDE:n omat kirjasimet"
 
 #: kfontmanager.cpp:86
 msgid "The KDE Font Manager Example String"
-msgstr "KDE Kirjasinselaimen esimerkkiteksti"
+msgstr "KDE:n Kirjasinselaimen esimerkkiteksti"
 
 #: kfontlist.cpp:63 kfontmanager.cpp:108
 msgid "About kfontmanager"
@@ -63,7 +63,7 @@ msgid ""
 "The environment variable HOME\n"
 "is not set\n"
 msgstr ""
-"Ympäristömuuttuja HOME\n"
+"Ympäristömuuttujaa HOME\n"
 "ei ole asetettu\n"
 
 #: kfontmanager.cpp:285
@@ -71,7 +71,7 @@ msgid ""
 "Can not create:\n"
 " ~/.kde/share/config/kdefonts\n"
 msgstr ""
-"En saa luotua:\n"
+"En saanut luotua:\n"
 " ~/.kde/share/config/kdefonts tiedostoa\n"
 
 #: kfontmanager.cpp:290
@@ -80,9 +80,9 @@ msgid ""
 "is not writeable\n"
 "Can't save KDE Fontlist."
 msgstr ""
-"~/.kde/share/config/kdefonts on olemassa mutta\n"
-"siihen ei voida kirjoittaa\n"
-"En saa talletettua KDE kirjasinlistaa."
+"~/.kde/share/config/kdefonts tiedosto on olemassa\n"
+"mutta siihen ei voida kirjoittaa\n"
+"En saanut talletettua KDE kirjasinlistaa."
 
 #: kfontlist.cpp:63
 msgid ""

@@ -84,7 +84,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
-"Siirtänyt kscreensaveen Emanuel Pirker."
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: blankscrn.cpp:49
 msgid "Blank Screen"
@@ -182,7 +182,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensaveen Martin Jones."
+"Siirtänyt kscreensave ohjelmaan Martin Jones."
 
 #: forest.cpp:200
 msgid "Forest"
@@ -241,7 +241,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensaveen Emanuel Pirker."
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: laser.cpp:327
 msgid "Laser"
@@ -267,7 +267,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 by Pascal Pensa\n"
 "\n"
-"Siirtänyt kscreensaveen Martin Jones."
+"Siirtänyt kscreensave ohjelmaan Martin Jones."
 
 #: lines.cpp:110
 msgid "Lines"
@@ -337,7 +337,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 by Alexander Jolk\n"
 "\n"
-"Siirtänyt kscreensaveen Emanuel Pirker."
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: main.cpp:296
 msgid ""
@@ -346,8 +346,8 @@ msgid ""
 "\n"
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
-"Systeemisi käyttää shadow-salasanoja!\n"
-"Ota yhteyttä systeemisi ylläpitäjään.\n"
+"Järjestelmäsi käyttää shadow-salasanoja!\n"
+"Ota yhteyttä järjestelmän ylläpitäjään.\n"
 "\n"
 "Ja kerro tarvitsevasi suid:n ruudunsäästäjiin!"
 
@@ -402,7 +402,7 @@ msgstr ""
 
 #: morph3d.cpp:839
 msgid "GL can not render with root visual\n"
-msgstr "GL ei pysty varjostamaan root ruudulla\n"
+msgstr "GL ei pysty varjostamaan root näytöllä\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -432,7 +432,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 by Marcelo F. Vianna\n"
 "\n"
-"Siirtänyt kscreensaveen Emanuel Pirker."
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: polygon.cpp:58
 msgid "Polygons"
@@ -494,7 +494,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensaveen Martin Jones."
+"Siirtänyt kscreensave ohjelmaan Martin Jones."
 
 #: rock.cpp:436
 msgid "Rock"
@@ -528,7 +528,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 by Jamie Zawinski\n"
 "\n"
-"Siirtänyt kscreensaveen Martin Jones."
+"Siirtänyt kscreensave ohjelmaan Martin Jones."
 
 #: saver.cpp:50 saver.cpp:110
 msgid "Enter Password"
@@ -566,7 +566,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Scott Draves\n"
 "\n"
-"Siirtönyt kscreensaveen Emanuel Pirker."
+"Siirtönyt kscreensave ohjelmaan Emanuel Pirker."
 
 #: swarm.cpp:252
 msgid "Swarm"
@@ -596,4 +596,4 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
-"Siirtänyt kscreensaveen Emanuel Pirker."
+"Siirtänyt kscreensave ohjelmaan Emanuel Pirker."

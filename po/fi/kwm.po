@@ -6,7 +6,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.C:67
@@ -49,19 +49,19 @@ msgstr "&Naulaa"
 
 #: main.C:393
 msgid "&UnSticky"
-msgstr "Poista naulaus"
+msgstr "&Poista naulaus"
 
 #: main.C:394
 msgid "Mo&ve"
-msgstr "Siirrä"
+msgstr "S&iirrä"
 
 #: main.C:395
 msgid "Resi&ze"
-msgstr "Muuta kokoa"
+msgstr "&Muuta kokoa"
 
 #: main.C:397
 msgid "&To desktop"
-msgstr "Työpöydälle"
+msgstr "&Työpöydälle"
 
 #: main.C:399
 msgid "&Onto current desktop"
@@ -132,7 +132,7 @@ msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla,\n"
+"Seuraavia ohjelmia ei voida palauttaa seuraavalla istunnolla.\n"
 "Ne voidaan vain käynnistää uudellen. Varmista ettei niissä ole "
 "tallentamatonta tietoa."
 
@@ -141,8 +141,7 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida "
-"palauttaa\n"
+"Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida palauttaa\n"
 "seuraavalla istunnolla. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: taskmgr.C:105

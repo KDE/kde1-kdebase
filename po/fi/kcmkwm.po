@@ -72,7 +72,7 @@ msgstr "Otsikon oikea puoli on täynnä... poistan 'pienennä' napin\n"
 
 #: titlebar.cpp:916
 msgid "Titlebar appearance"
-msgstr "Otsikot ulkonäkö"
+msgstr "Otsikon ulkonäkö"
 
 #: titlebar.cpp:918
 msgid "Shaded"

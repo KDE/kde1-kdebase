@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: ENCODING\n"
 
 #: main.cpp:99
@@ -39,8 +39,8 @@ msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
 msgstr ""
-"Sinulla ei ole luku/kirjoitus\n"
-"oikeutta KDM asetustiedostoon."
+"Sinulla ei ole luku- tai kirjoitus-\n"
+"oikeutta KDM:n asetustiedostoon."
 
 #: main.cpp:121
 msgid "Missing privileges"
@@ -48,7 +48,7 @@ msgstr "Puuttuvat oikeudet"
 
 #: main.cpp:158
 msgid "KDM Configuration"
-msgstr "KDM asetukset"
+msgstr "KDM:n asetukset"
 
 #: kdm-appear.cpp:66
 msgid "Appearance"
@@ -60,7 +60,7 @@ msgstr "Tervehdyslause:"
 
 #: kdm-appear.cpp:77
 msgid "KDM logo:"
-msgstr "KDM logo:"
+msgstr "KDM:n logo:"
 
 #: kdm-appear.cpp:104 kdm-users.cpp:139
 msgid "Click or drop an image here"
@@ -83,7 +83,7 @@ msgid ""
 "There was an error loading the image:\n"
 ">"
 msgstr ""
-"Kuvaa ladattaessa sattui virhe:\n"
+"Kuvaa ladattaessa tapahtui virhe:\n"
 ">"
 
 #: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
@@ -100,7 +100,7 @@ msgid ""
 "There was an error saving the image:\n"
 ">"
 msgstr ""
-"Kuvaa tallennettaessa tapahtui virhe:\n"
+"Kuvaa tallenettaessa tapahtui virhe:\n"
 ">"
 
 #: kdm-appear.cpp:187 kdm-users.cpp:195
@@ -177,7 +177,7 @@ msgstr "Keskitetty"
 
 #: kdm-bgnd.cpp:118
 msgid "Scaled"
-msgstr "Skaalattu"
+msgstr "Venytetty"
 
 #: kdm-bgnd.cpp:124
 msgid "Browse..."
@@ -209,7 +209,7 @@ msgid ""
 " but no-show users"
 msgstr ""
 "Näytä kaikki muut paitsi\n"
-" ei näytettävät käyttäjät"
+" ei-näytettävät käyttäjät"
 
 #: kdm-users.cpp:97
 msgid "Show users"
@@ -221,7 +221,7 @@ msgstr "Lajittele käyttäjät"
 
 #: kdm-users.cpp:150 kdm-users.cpp:219
 msgid "No user selected"
-msgstr "Ei käyttäjiä valittu"
+msgstr "Ei valittuja käyttäjiä"
 
 #: kdm-users.cpp:151 kdm-users.cpp:220
 msgid "Save image as default image?"

@@ -43,7 +43,7 @@ msgstr "Lukitse näyttö"
 
 #: kpanel.C:376
 msgid "Hide the panel"
-msgstr "Piiloita paneeli"
+msgstr "Piilota paneeli"
 
 #: kpanel.C:386
 msgid "Show the panel"
@@ -79,7 +79,7 @@ msgstr "Käynnistä uudelleen"
 
 #: kpanel.C:773
 msgid "Restart panel"
-msgstr "Käynnistä uudelleen"
+msgstr "Käynnistä paneeli uudelleen"
 
 #: kpanel.C:774 props.C:396
 msgid "Panel"
@@ -103,7 +103,7 @@ msgstr "Sijainti"
 
 #: props.C:340
 msgid "Taskbar"
-msgstr "Tehtäväpaneeli"
+msgstr "Työpalkki"
 
 #: props.C:341
 msgid "Hidden"
@@ -139,11 +139,11 @@ msgstr "Käyttäjän valikko"
 
 #: props.C:452
 msgid "Auto Hide Panel"
-msgstr "Piiloita paneeli"
+msgstr "Piilota paneeli"
 
 #: props.C:455
 msgid "Auto Hide Taskbar"
-msgstr "Piilota tehtäväpaneeli"
+msgstr "Piilota työpalkki"
 
 #: props.C:473
 msgid "Clock"

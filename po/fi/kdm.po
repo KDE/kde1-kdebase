@@ -11,7 +11,7 @@ msgstr ""
 
 #: kdmshutdown.cpp:153
 msgid "Shutdown or restart?"
-msgstr "Sammuta vai k‰ynnist‰ uudelleen"
+msgstr "Sammutetaanko vai k‰ynnistet‰‰n uudelleen"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -27,11 +27,11 @@ msgstr "Poistu kdm:st‰"
 
 #: kgreeter.cpp:136
 msgid "Login:"
-msgstr "K‰ytt‰j‰tunnus"
+msgstr "K‰ytt‰j‰tunnus:"
 
 #: kgreeter.cpp:141
 msgid "Password:"
-msgstr "Salasana"
+msgstr "Salasana:"
 
 #: kgreeter.cpp:175
 msgid "Login failed!"
@@ -47,4 +47,4 @@ msgstr "Aloita!"
 
 #: kgreeter.cpp:213
 msgid "Shutdown..."
-msgstr "Alasajo ..."
+msgstr "Alasajo..."

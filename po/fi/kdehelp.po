@@ -16,7 +16,7 @@ msgstr ""
 
 #: helpwin.cpp:57
 msgid "KDE Help: Open URL"
-msgstr "KDE Ohje: Avaa URL"
+msgstr "KDE:n Ohje: Avaa URL"
 
 #: helpwin.cpp:59
 msgid "Open URL"
@@ -57,7 +57,7 @@ msgstr "Virhe info-tiedostossa"
 #: info.cpp:1230
 #, c-format
 msgid "Node not found: %s"
-msgstr "Solmua ei löydy: %s"
+msgstr "Solmua ei löydetty: %s"
 
 #: info.cpp:1375
 #, c-format
@@ -114,7 +114,7 @@ msgstr "Seuratun linkin väri:"
 
 #: options.cpp:302
 msgid "KDE Help Options"
-msgstr "KDE Help asetukset"
+msgstr "KDE:n Ohjeen asetukset"
 
 #: options.cpp:310 options.cpp:311
 msgid "Fonts"
@@ -136,7 +136,7 @@ msgstr "Kapppale %s"
 #: man.cpp:106
 #, c-format
 msgid "Online manual - Section %s"
-msgstr "Online ohjekirja - kappale %s"
+msgstr "Online ohjekirja - Kappale %s"
 
 #: man.cpp:455
 msgid "User Commands"
@@ -197,7 +197,7 @@ msgstr "CGI: Virheellinen kohteen URL: %s\n"
 
 #: mainwidget.cpp:133
 msgid "&New Help Window"
-msgstr "&Uusi ohje ikkuna"
+msgstr "&Uusi ohjeikkuna"
 
 #: mainwidget.cpp:136
 msgid "&Open File..."
@@ -225,7 +225,7 @@ msgstr "&Eteenpäin"
 
 #: mainwidget.cpp:156
 msgid "&Contents"
-msgstr "&Hakemistoon"
+msgstr "&Sisältö"
 
 #: mainwidget.cpp:157
 msgid "&Top"
@@ -265,7 +265,7 @@ msgstr "&Tallenna asetukset"
 
 #: mainwidget.cpp:183
 msgid "KDE Help System\n"
-msgstr "KDE Ohje\n"
+msgstr "KDE:n Ohje\n"
 
 #: mainwidget.cpp:184
 msgid "Version "
@@ -335,13 +335,13 @@ msgid ""
 "KDE Help System\n"
 "Version "
 msgstr ""
-"Ohjelma: kdehelp\n"
-"Versio: "
+"KDE:n Ohje\n"
+"Versio "
 
 #: mainwidget.cpp:585
 msgid "About KDE Help"
-msgstr "Tietoja kdehelp:stä"
+msgstr "Tietoja KDE:n ohjeesta"
 
 #: mainwidget.cpp:618
 msgid "&Add Bookmark"
-msgstr "Lisää osoitekirjaan"
+msgstr "&Lisää osoitekirjaan"

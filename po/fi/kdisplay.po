@@ -19,7 +19,7 @@ msgstr "Työpöytä"
 
 #: backgnd.cpp:249
 msgid "Rename..."
-msgstr "Uudelleennimeä..."
+msgstr "Nimeä Uudelleen..."
 
 #: backgnd.cpp:255
 msgid "Color"
@@ -55,7 +55,7 @@ msgstr "Keskitetty"
 
 #: backgnd.cpp:339
 msgid "Scaled"
-msgstr "Skaalattu"
+msgstr "Venytetty"
 
 #: backgnd.cpp:489
 msgid "Default"
@@ -147,7 +147,7 @@ msgstr "Tallenna teema"
 
 #: colorscm.cpp:374 colorscm.cpp:382
 msgid "You have chosen a name used by a supplied color scheme"
-msgstr "Olet valinnut nimen joka on jo valmiiksi olemassa"
+msgstr "Olet valinnut nimen joka on jo väriteeman käytössä"
 
 #: colorscm.cpp:467
 msgid "KDE Default"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: kwmcom.cpp:78 kwmcom.cpp:105
 msgid "kwmcom: communication with kwm failed\n"
-msgstr "Tiedonsiirto kwm kanssa epäonnistui\n"
+msgstr "kwmcom: Tiedonsiirto kwm:n kanssa epäonnistui\n"
 
 #: savescm.cpp:26
 msgid "Name"
@@ -263,19 +263,19 @@ msgstr "kaikki"
 
 #: main.cpp:61
 msgid "&Background"
-msgstr "Tausta"
+msgstr "&Tausta"
 
 #: main.cpp:64
 msgid "&Colors"
-msgstr "Värit"
+msgstr "&Värit"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "Näytönsäästäjä"
+msgstr "&Näytönsäästäjä"
 
 #: main.cpp:70
 msgid "&Style"
-msgstr "Tyyli"
+msgstr "T&yyli"
 
 #: main.cpp:76
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
