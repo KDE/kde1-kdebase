@@ -308,7 +308,7 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
     menubar_visible = TRUE;
     scrollbar_visible = TRUE;
     kvt_scrollbar = kvt_right;
-    kvt_size = kvt_medium;
+    kvt_size = kvt_normal;
     setting_to_vt_window = FALSE;
 
     // get the configutation
@@ -434,13 +434,11 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
     connect(m_options, SIGNAL(activated(int)), 
 	    SLOT(options_menu_activated(int)));
 
-    m_help = new QPopupMenu;
-    CHECK_PTR( m_help );
-    m_help->insertItem(klocale->translate("&Contents"));
-    m_help->insertSeparator();
-    m_help->insertItem(klocale->translate("&About..."));
-    m_help->insertItem(klocale->translate("&About Qt..."));
-    connect(m_help, SIGNAL(activated(int)), SLOT(help_menu_activated(int)));
+
+    QString at = KVT_VERSION;
+    at += klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08");
+		       
+    m_help = kapp->getHelpMenu(true, at.data());
 
     menubar = new KMenuBar( this );
     CHECK_PTR( menubar );
@@ -845,21 +843,6 @@ void kVt::file_menu_activated(int item){
   }
 }
 
-void kVt::help_menu_activated(int item){
-  QString ver = KVT_VERSION;
-  switch (item){
-  case 0:
-    myapp->invokeHTMLHelp("kvt/index.html", ""); 
-    break;
-  case 2:
-    QMessageBox::about( this, "kvt", 
-			ver + klocale->translate("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n\nTerminal emulation for the KDE Desktop Environment\nbased on Robert Nation's rxvt-2.08"));
-    break;
-  case 3:
-    QMessageBox::aboutQt(this);
-    break;
-  }
-}
 
 bool kVt::eventFilter( QObject *obj, QEvent * ev){
   static QPoint tmp_point(-10,-10);

@@ -1,5 +1,7 @@
 
 since kvt-0.16:
+  - uses kapp's help menu (Matthias)
+	
   - enabled "-caption" (Matthias)
 
   - session management (Matthias)

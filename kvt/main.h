@@ -50,7 +50,6 @@ public slots:
   void dimen_menu_activated(int);
   void color_menu_activated( int );
   void file_menu_activated(int);
-  void help_menu_activated(int);
   void scrolling(int);
   void onDrop( KDNDDropZone* _zone );
   
