@@ -592,31 +592,30 @@ void Manager::randomPlacement(Client* c){
   QRect maxRect = KWM::getWindowRegion(currentDesktop());
 
   if (px < maxRect.x())
-    px = maxRect.x() + TITLEBAR_HEIGHT + BORDER;
+    px = maxRect.x();
   if (py < maxRect.y())
-    py = maxRect.y() + 2 * TITLEBAR_HEIGHT + BORDER;
+    py = maxRect.y();
   
-
   px += TITLEBAR_HEIGHT + BORDER;
   py += 2*TITLEBAR_HEIGHT + BORDER;
 
   if (px > maxRect.width()/2) 
     px =  maxRect.x() + TITLEBAR_HEIGHT + BORDER;
   if (py > maxRect.height()/2) 
-    py =  maxRect.y() + 2*TITLEBAR_HEIGHT + BORDER;
+    py =  maxRect.y() + TITLEBAR_HEIGHT + BORDER;
   tx = px;
   ty = py;
   if (tx + c->geometry.width() > maxRect.right()){
     tx = maxRect.right() - c->geometry.width();
     if (tx < 0)
       tx = 0;
-    px =  maxRect.x() + TITLEBAR_HEIGHT + BORDER;
+    px =  maxRect.x();
   }
   if (ty + c->geometry.height() > maxRect.bottom()){
     ty = maxRect.bottom() - c->geometry.height();
     if (ty < 0)
       ty = 0;
-    py =  maxRect.y() + TITLEBAR_HEIGHT + BORDER;
+    py =  maxRect.y();
   }
   c->geometry.moveTopLeft(QPoint(tx, ty));
 }

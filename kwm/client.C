@@ -88,8 +88,8 @@ void myPushButton::paint(QPainter *painter){
     else {
       qDrawShadePanel( painter, 0, 0, width(), height(), 
 		       colorGroup(), FALSE, 2, 0L );
-      painter->setPen(black);
-      painter->drawRect(0,0,width(),height()); 
+//       painter->setPen(black);
+//       painter->drawRect(0,0,width(),height()); 
     }
   }
   
