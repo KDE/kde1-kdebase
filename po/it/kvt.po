@@ -1,4 +1,4 @@
-qmsgid ""
+msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
 "Content-Type: text/plain; charset=\n"
