@@ -2,7 +2,7 @@
 #define _KWMPAGER_DESKTOP_H
 
 /*
- *   kwmpager 0.1 - a pager for kwm (by Matthias Ettrich)
+ *   kwmpager - a pager for kwm (by Matthias Ettrich)
  *   Copyright (C) 1997  Stephan Kulow
  *
  *   This program is free software; you can redistribute it and/or modify
@@ -42,14 +42,15 @@ public:
     void activate(bool flag);
     void addWindow(Window);
     void removeWindow(Window);
-    void windowChange(Window);
-    void windowRaise(Window);
-    void windowLower(Window);
-    void windowActivate(Window);
+    void changeWindow(Window w);
+    void raiseWindow(Window w);
+    void activateWindow(Window w);
+    void lowerWindow(Window);
     void init();
     
 protected:
     void fillPixmap();
+    void calculate(PagerWindow* win);
     virtual void mousePressEvent ( QMouseEvent * );
     virtual void drawContents ( QPainter * );
     virtual void resizeEvent ( QResizeEvent * );  

@@ -1,5 +1,5 @@
 /*
- *   kwmpager 0.1 - a pager for kwm (by Matthias Ettrich)
+ *   kwmpager - a pager for kwm (by Matthias Ettrich)
  *   Copyright (C) 1997  Stephan Kulow
  *
  *   This program is free software; you can redistribute it and/or modify
@@ -32,7 +32,7 @@ Desktop::Desktop(KWMModuleApplication *a, int id, Pager *parent) :
     setFrameStyle(Panel | Raised);
     root_size = KWM::geometry( qt_xrootwin() ).size();
     pixmap_size = contentsRect().size() - QSize(2,2);
-    windows.setAutoDelete( true );
+    windows.setAutoDelete( false );
     activeWindow = 0L;
     fillPixmap();
     repaint();
@@ -47,19 +47,17 @@ void Desktop::fillPixmap()
     p.setPen(QColor(0,0,0));
     
     for (win = windows.first(); win != 0L; win = windows.next()) {
-	int x = win->rect.x() * pixmap_size.width() / root_size.width() + 1;
-	int y = win->rect.y() * pixmap_size.height() / root_size.height() + 1;
-	int w = win->rect.width() * pixmap_size.width() / root_size.width();
-	int h = win->rect.height() * pixmap_size.height() / root_size.height();
-	win->prect = QRect(x,y,w,h);
 	QColor col = 
 	    (win == activeWindow) ? 
 	    kapp->activeTitleColor : 
 	    kapp->inactiveTitleColor;
+	int x = win->prect.x();
+	int y = win->prect.y();
+	int w = win->prect.width();
+	int h = win->prect.height();
 	p.fillRect(x, y, w, h,QBrush(col));
 	p.drawRect(x, y, w, h);
-    }
-    
+    }    
 }
 
 void Desktop::init()
@@ -76,20 +74,78 @@ void Desktop::addWindow(Window w)
     
     win->id = w;
     win->rect = KWM::geometry(w);
-    
+    calculate(win);
+
     windows.append(win);
     fillPixmap();
+    repaint( false );
 }
 
-void Desktop::windowActivate(Window w)
+void Desktop::removeWindow(Window w)
 {
-    for (PagerWindow *win = windows.first(); win != 0L; win = windows.next()) {
-	if (win->id == w) {
-	    activeWindow = win;
-	    break;
-	}
-    }
+    PagerWindow *win;
+    for (win = windows.first(); win && win->id != w; win = windows.next())
+	continue;
+    if (win)
+	windows.remove();
     fillPixmap();
+    repaint( false );
+}
+
+void Desktop::activateWindow(Window w)
+{
+    PagerWindow *win;
+    for (win = windows.first(); win && win->id != w; win = windows.next()) 
+	continue;
+    
+    windows.remove(); // raise it
+    windows.append(win);
+    activeWindow = win; // maybe NULL !
+    fillPixmap();
+    repaint( false );
+}
+
+void Desktop::raiseWindow(Window w)
+{
+    PagerWindow *win;
+    for (win = windows.first(); win && win->id != w; win = windows.next()) 
+	continue;
+    if (!win)
+	return;
+    windows.remove();
+    windows.append(win);
+    fillPixmap();
+    repaint( false );
+}
+
+void Desktop::lowerWindow(Window w)
+{
+    PagerWindow *win;
+    for (win = windows.first(); win && win->id != w; win = windows.next()) 
+	continue;
+    if (!win)
+	return;  
+    windows.remove();
+    windows.insert(0, win);
+    fillPixmap();
+    repaint( false );
+}
+
+void Desktop::changeWindow(Window w)
+{
+    PagerWindow *win;
+    for (win = windows.first(); win && win->id != w; win = windows.next()) 
+	continue;
+    
+    if (!win)
+	addWindow(w);
+    else {
+	win->rect = KWM::geometry(w);
+	calculate(win);
+	fillPixmap();
+	repaint( false );
+    }
+    repaint (false);
 }
 
 void Desktop::activate(bool flag)
@@ -100,6 +156,7 @@ void Desktop::activate(bool flag)
     } else 
 	setFrameStyle(Panel | Sunken);
     
+    fillPixmap();
     repaint(false);
 }
 
@@ -114,9 +171,20 @@ void Desktop::mousePressEvent( QMouseEvent *e )
     }
 }
 
+void Desktop::calculate(PagerWindow *win) {
+    int x = win->rect.x() * pixmap_size.width() / root_size.width() + 1;
+    int y = win->rect.y() * pixmap_size.height() / root_size.height() + 1;
+    int w = win->rect.width() * pixmap_size.width() / root_size.width();
+    int h = win->rect.height() * pixmap_size.height() / root_size.height();
+    win->prect = QRect(x,y,w,h);
+}
+
 void Desktop::resizeEvent ( QResizeEvent * )
 {
     pixmap_size = contentsRect().size();
+    for (PagerWindow *win = windows.last(); win; win = windows.prev()) 
+	calculate(win);
+
     fillPixmap();
     repaint();
 }

@@ -1,5 +1,5 @@
 /*
- *   kwmpager 0.1 - a pager for kwm (by Matthias Ettrich)
+ *   kwmpager - a pager for kwm (by Matthias Ettrich)
  *   Copyright (C) 1997  Stephan Kulow
  *
  *   This program is free software; you can redistribute it and/or modify
@@ -28,7 +28,10 @@
 #include <kwm.h>
 #include <unistd.h>
 
-Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager", 
+const char *Pager::PosStrings[] = {"TopRight", "TopLeft", "BottomRight",
+				   "BottomLeft" };
+
+Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
 						WStyle_Customize | 
 						WStyle_NoBorder | 
 						WStyle_Tool)
@@ -41,8 +44,8 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
     desktops.setAutoDelete(true);
 
     for (int i = 0; i < count; i++) {
-	Desktop *desk = new Desktop(a, i + 1, this);
-	desktops.append(desk);
+        Desktop *desk = new Desktop(a, i + 1, this);
+        desktops.append(desk);
     }
     
     activeDesktop = desktops.at(KWM::currentDesktop() - 1);
@@ -59,30 +62,63 @@ Pager::Pager(KWMModuleApplication *a) : QFrame(NULL, "kwmpager",
     connect(kwmmapp, SIGNAL( windowChange(Window)), 
 	    SLOT(windowChange(Window)));
     connect(kwmmapp, SIGNAL( windowRaise(Window)), 
-	    SLOT(windowChange(Window)));
+	    SLOT(raiseWindow(Window)));
     connect(kwmmapp, SIGNAL( windowLower(Window)), 
-	    SLOT(windowChange(Window)));
+	    SLOT(lowerWindow(Window)));
     connect(kwmmapp, SIGNAL( windowActivate(Window)), 
 	    SLOT(windowActivate(Window)));
     
     readSettings();
     initDesktops();
     show();
+    placeIt();
 }
 
 void Pager::readSettings()
 {
     KConfig *config = kapp->getConfig();
     config->setGroup("Geometry");
-    QString size = config->readEntry("Size", "100 100");
-    QTextStream str(size, IO_ReadOnly);
+    QString entry = config->readEntry("Size", "100 100");
+    QTextStream str(entry, IO_ReadOnly);
     int w, h;
     str >> w >> h;
-    debug("Size %d %d",w,h);
-    size.sprintf("%d %d",w,h);
-    config->writeEntry("Size", size);
+    entry.sprintf("%d %d",w,h);
+    config->writeEntry("Size", entry);
+    entry = config->readEntry("Geometry", PosStrings[0]);
+    position = Costumized;
+    for (int i=0; i<5;i++)
+      if (entry == PosStrings[i])
+        position = (Position)i;
+    
+    if (position == Costumized) {
+      QTextStream s(entry, IO_ReadOnly);
+      s >> posx >> posy;
+      entry.sprintf("%d %d",pos, posy);
+    }
+    config->writeEntry("Geometry", entry);
     config->sync();
     resize(w,h);
+}
+
+void Pager::placeIt()
+{
+    QRect rect = KWM::getWindowRegion(KWM::currentDesktop());
+    switch (position) {
+    case TopRight:
+	KWM::move(winId(), rect.topRight() - QPoint(width(), 0));
+	break;
+    case TopLeft:
+	KWM::move(winId(), rect.topLeft());
+	break;
+    case BottomRight:
+	KWM::move(winId(), rect.bottomRight() - QPoint(width(), height()));
+	break;
+    case BottomLeft:
+	KWM::move(winId(), rect.bottomLeft() - QPoint(0, height()));
+	break;
+    case Costumized:
+	move(posx ,posy);
+    }
 }
 
 void Pager::changeDesktop(int index) 
@@ -90,7 +126,6 @@ void Pager::changeDesktop(int index)
     activeDesktop->activate(false);
     activeDesktop = desktops.at(index - 1);
     activeDesktop->activate(true);
-    initDesktops();
 }
 
 void Pager::resizeEvent ( QResizeEvent * )  
@@ -101,8 +136,8 @@ void Pager::resizeEvent ( QResizeEvent * )
     Desktop *desk;
     int i;
     for (desk = desktops.first(), i=0; desk ; desk = desktops.next(), i++) {
-	desk->resize(desktop_size);
-	desk->move(desktop_size.width() * (i / 2), 
+        desk->resize(desktop_size);
+        desk->move(desktop_size.width() * (i / 2), 
 		   (i % 2) ? height() / 2 : 0);
     }
 }
@@ -110,7 +145,7 @@ void Pager::resizeEvent ( QResizeEvent * )
 void Pager::initDesktops()
 {
     for (Desktop *desk = desktops.first(); desk != 0L;
-	 desk = desktops.next())
+         desk = desktops.next())
 	desk->init();
     for (Window *w = kwmmapp->windows_sorted.first(); w != 0L; 
 	 w = kwmmapp->windows_sorted.next()) {
@@ -143,44 +178,32 @@ void Pager::changeNumber(int)
 
 void Pager::addWindow(Window w)
 { 
-    Desktop *current = desktops.at(KWM::desktop(w) - 1 );
-    current->init();
-    
-    for (Window *win = kwmmapp->windows_sorted.first(); win != 0L; 
-	 win = kwmmapp->windows_sorted.next()) {
-	current->addWindow(*win);
-    }
-    current->repaint(false);
+    desktops.at(KWM::desktop(w) - 1 ) -> addWindow(w);
 }
 
 void Pager::removeWindow(Window w)
 {
-    Desktop *current = desktops.at(KWM::desktop(w) - 1);
-    current->init();
-    for (Window *win = kwmmapp->windows_sorted.first(); win != 0L; 
-	 win = kwmmapp->windows_sorted.next()) {
-	current->addWindow(*win);
-    }
-    current->repaint(false);
+    desktops.at(KWM::desktop(w) - 1) -> removeWindow(2);
 }
 
 void Pager::windowChange(Window w)
 {
-    int desktop = KWM::desktop(w);
-    Desktop *current = desktops.at(desktop  - 1);
-    current->init();
-    for (Window *win = kwmmapp->windows_sorted.first(); win != 0L; 
-	 win = kwmmapp->windows_sorted.next()) {
-	if (KWM::desktop(*win) == desktop && !KWM::isIconified(*win))
-	    current->addWindow(*win);
-    }
-    current->repaint(false);
+    desktops.at(KWM::desktop(w) - 1)->changeWindow(w);
+}
+
+void Pager::raiseWindow(Window w)
+{
+    desktops.at(KWM::desktop(w) - 1)->raiseWindow(w);
+}
+
+void Pager::lowerWindow(Window w)
+{
+    desktops.at(KWM::desktop(w) - 1)->lowerWindow(w);
 }
 
 void Pager::windowActivate(Window w)
 {
-    desktops.at(KWM::desktop(w) - 1) -> windowActivate(w);
-    desktops.at(KWM::desktop(w) - 1) -> repaint(false);
+    desktops.at(KWM::desktop(w) - 1) -> activateWindow(w);
 }
 
 int main( int argc, char *argv[] )

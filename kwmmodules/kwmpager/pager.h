@@ -2,7 +2,7 @@
 #define _KWMPAGER_PAGER_H
 
 /*
- *   kwmpager 0.1 - a pager for kwm (by Matthias Ettrich)
+ *   kwmpager - a pager for kwm (by Matthias Ettrich)
  *   Copyright (C) 1997  Stephan Kulow
  *
  *   This program is free software; you can redistribute it and/or modify
@@ -37,7 +37,10 @@ private:
     KWMModuleApplication* kwmmapp;
     QList<Desktop> desktops;
     Desktop *activeDesktop;
-    
+    enum Position { TopRight, TopLeft, BottomRight, BottomLeft, Costumized } position;
+    static const char *PosStrings[5];
+    int posx, posy;
+
 public slots:
     void initDesktops();
     
@@ -48,7 +51,10 @@ private slots:
     void removeWindow(Window);
     void windowChange(Window);
     void windowActivate(Window);
-    
+    void raiseWindow(Window);
+    void lowerWindow(Window);
+    void placeIt();
+
 protected:
     virtual void resizeEvent ( QResizeEvent * );  
     void readSettings();
