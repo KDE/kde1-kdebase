@@ -1,0 +1,28 @@
+# KDE Config File
+[KDE Desktop Entry]
+WmCommand=
+BinaryPattern=
+MiniIcon=
+Protocols=
+MimeType=
+Comment=Nedit
+Comment[pl]=Nedit
+Comment[fi]=Nedit editori
+Comment[sv]=Nedit
+Comment[fr]=Editeur Nedit
+Comment[pt]=Editor Nedit
+Comment[it]=Editor Nedit
+Comment[cs]=Editor Nedit
+Name=Nedit
+Name[fr]=Nedit
+Name[de]=Nedit
+Name[fi]=Nedit
+Name[sv]=Nedit
+Name[pt]=Nedit
+Name[cs]=Nedit
+Exec=nedit %f
+Icon=kedit.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
