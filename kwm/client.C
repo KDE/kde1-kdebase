@@ -1232,7 +1232,7 @@ void Client::generateOperations(){
   else
     myapp->operations->insertItem(KWM::getStickyString(), 
 				  OP_STICKY);
-  if (trans != None && trans != qt_xrootwin())
+  if (trans != None && trans != qt_xrootwin() && trans != window)
     myapp->operations->setItemEnabled(OP_STICKY, FALSE);
 
   myapp->desktopMenu->clear();
@@ -1246,7 +1246,7 @@ void Client::generateOperations(){
 
   int dm = myapp->operations->insertItem(KWM::getToDesktopString(), 
 					 myapp->desktopMenu);
-  if (trans != None && trans != qt_xrootwin())
+  if (trans != None && trans != qt_xrootwin() && trans != window)
     myapp->operations->setItemEnabled(dm, FALSE);
   myapp->operations->insertSeparator();
   myapp->operations->insertItem(KWM::getCloseString(), 

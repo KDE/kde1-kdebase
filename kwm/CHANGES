@@ -16,6 +16,7 @@ patchlevel 3:
            working in "real time", now. The default is 10 pixel for
            both. This made my older edge resitance obsolete (removed)
          - doNotManage understands regular expressions
+         - self transient windows can be moved to other virtual desktops
 
 patchlevel 2:
 	- fixed a bunch of bugs with smart placement, cascade placement,
