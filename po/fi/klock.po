@@ -882,4 +882,3 @@ msgstr ""
 "Copyright (c) 1991 by Patrick J. Naughton\n"
 "\n"
 "Siirtänyt kscreensave-ohjelmaan Emanuel Pirker."
-

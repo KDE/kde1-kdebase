@@ -223,7 +223,10 @@ msgstr ""
 msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
-msgstr "\nProsím, zasílejte hlá¹ení o chybách a Va¹e pøání, tak jak je popsáno na http://bugs.kde.org"
+msgstr ""
+"\n"
+"Prosím, zasílejte hlá¹ení o chybách a Va¹e pøání, tak jak je popsáno na "
+"http://bugs.kde.org"
 
 #: kfmgui.cpp:450
 msgid "&Go"

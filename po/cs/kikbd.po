@@ -411,7 +411,8 @@ msgstr "&Emulovat CapsLock"
 msgid ""
 "Emulate XServer Caps Lock. Needed for correct keyboard operation in some "
 "languages"
-msgstr "Emulovat Capslock XServeru. Potøebné pro správnou funkci v nìkterých jazycích"
+msgstr ""
+"Emulovat Capslock XServeru. Potøebné pro správnou funkci v nìkterých jazycích"
 
 #: widgets.cpp:482
 msgid "&World Menu"
@@ -444,12 +445,15 @@ msgstr "Standardní chování. Klávesová mapa aktivní pro v¹echna okna"
 #: widgets.cpp:509
 msgid ""
 "Extended behavior. Keyboard map state is saved for each window independently"
-msgstr "Roz¹íøené chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dé okno"
+msgstr ""
+"Roz¹íøené chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dé okno"
 
 #: widgets.cpp:513
 msgid ""
 "Special behavior. Keyboard state is saved for each window class independently"
-msgstr "Speciální chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dou tøídu oken"
+msgstr ""
+"Speciální chování. Stav klávesové mapy je ukládán nezávisle pro ka¾dou tøídu "
+"oken"
 
 #: widgets.cpp:561
 msgid "Button Colors"

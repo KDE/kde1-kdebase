@@ -196,4 +196,3 @@ msgstr "Asetukset..."
 #: pfilemenu.C:843
 msgid "Customize Disk Navigator"
 msgstr "Aseta Levyselainta"
-

@@ -214,4 +214,3 @@ msgstr "Alku"
 #: stdbindings.cpp:18
 msgid "End"
 msgstr "Loppu"
-

@@ -172,4 +172,3 @@ msgstr "Paksunnettu"
 #: kfontexplorer.cpp:432
 msgid "Normal"
 msgstr "Normaali"
-

@@ -362,4 +362,3 @@ msgstr "Eroittele isot ja pienet"
 #: finddlg.cpp:64
 msgid "&Find"
 msgstr "&Etsi"
-

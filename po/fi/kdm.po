@@ -73,4 +73,3 @@ msgstr "Varoitus: tunnuksesi vanhentuu %s"
 #: kgreeter.cpp:739
 msgid "Home directory not available"
 msgstr "Kotihakemistoa ei löydy"
-
