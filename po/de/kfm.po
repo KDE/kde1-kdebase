@@ -116,7 +116,7 @@ msgstr "Cache anzeigen"
 
 #: kfmgui.cpp:397
 msgid "Clear Cache"
-msgstr "Cache Leeren"
+msgstr "Cache leeren"
 
 #: kfmgui.cpp:400
 msgid "Always look in cache"
@@ -287,7 +287,7 @@ msgid ""
 "\n"
 "There is no way to restore them."
 msgstr ""
-"Sollen die Dateien wirklich gelöscht werden?\n"
+"Soll(en) die Datei(en) wirklich gelöscht werden?\n"
 "\n"
 "Sie können sie nicht wieder herstellen!"
 
@@ -298,7 +298,7 @@ msgstr "Fehler: Datei wurde auf sich selbst gelegt"
 #: kfmtree.cpp:326 kfmview.cpp:349 kfmview.cpp:472 root.cpp:995
 msgid "ERROR: You dropped a directory over one of its children"
 msgstr ""
-"Fehler: Sie haben ein Verzeichnis auf ein darunterliegendes Objekt gelegt"
+"FEHLER: Sie haben ein Verzeichnis auf ein darunterliegendes Objekt gelegt"
 
 #: kfmexec.cpp:235 kfmman.cpp:733 kfmview.cpp:365
 msgid "Open With:"
@@ -411,8 +411,7 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr ""
-"Konnte nicht zugreifen auf:\n"
+msgstr "Kein Zugriff möglich auf\n"
 "%s"
 
 #: kbind.cpp:1648
@@ -445,7 +444,7 @@ msgstr "FEHLER: Keine Terminal-Einstellungen"
 
 #: kbind.cpp:1890
 msgid "No mount point in *.kdelnk file"
-msgstr "Kein Einhäng-Punkt in der .kdelnk Datei"
+msgstr "Kein Einhäng-Punkt in der *.kdelnk Datei"
 
 #: kbind.cpp:1930
 msgid "Unknown binding"
@@ -473,7 +472,7 @@ msgstr "Neue Ansicht"
 
 #: kfmtree.cpp:223 main.cpp:201
 msgid "Move to Trash"
-msgstr "In den Papierkorb schieben"
+msgstr "In den Papierkorb werfen"
 
 #: main.cpp:203
 msgid "Open with"
@@ -541,7 +540,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "The destination seems to already exist\n"
 msgstr ""
-"Konnte die Datei oder Verzeichnis nicht umbennen.\n"
+"Konnte Datei oder Verzeichnis nicht umbennen.\n"
 "Das Ziel scheint schon zu existieren.\n"
 
 #: kfmprops.cpp:418
@@ -577,7 +576,7 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Wechseln\n"
+"Ändern\n"
 "in"
 
 #: kfmprops.cpp:440
@@ -590,7 +589,7 @@ msgstr "Spezial"
 
 #: kfmprops.cpp:448
 msgid "User"
-msgstr "Besitzer"
+msgstr "Benutzer"
 
 #: kfmprops.cpp:453 kfmprops.cpp:552
 msgid "Group"
@@ -668,7 +667,7 @@ msgstr "Im Panel ausführen (auf das Panel ziehen)"
 
 #: kfmprops.cpp:718
 msgid "Title of Application"
-msgstr "Titel der Anwendungen"
+msgstr "Titel der Anwendung"
 
 #: kfmprops.cpp:723
 msgid "enter the exact title, as normally shown in the window titlebar"
@@ -690,7 +689,7 @@ msgid ""
 "in the Panel or in a Terminal, \n"
 "but not both!"
 msgstr ""
-"Sie können Das Programm im Panel\n"
+"Sie können das Programm im Panel\n"
 "oder in einem Terminal laufen lassen,\n"
 "aber nicht in beidem!"
 
@@ -788,7 +787,7 @@ msgstr ""
 
 #: kfmserver.cpp:78
 msgid "Do you really want to rearrange your icons ?"
-msgstr "Wollen Sie wirklich die Icons neu anordnen?"
+msgstr "Wollen Sie die Icons wirklich neu anordnen?"
 
 #: kfmserver.cpp:234
 #, c-format
@@ -872,8 +871,7 @@ msgstr ""
 msgid ""
 "Malformed URL\n"
 "%s"
-msgstr ""
-"Fehlerhafte URL\n"
+msgstr "Fehlerhafte URL\n"
 "%s"
 
 #: kiojob.cpp:233
@@ -885,8 +883,7 @@ msgstr "Verknüpfungen können nur auf dem lokalen Dateisystem erstellt werden."
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr ""
-"Konnte nicht überschreiben:\n"
+msgstr "Konnte nicht überschreiben\n"
 "%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
@@ -894,7 +891,8 @@ msgstr ""
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Symbolische Verknüpfung zu konnte nicht erstellt werden:%s"
+msgstr "Symbolische Verknüpfung konnte nicht erstellt werden\n"
+"%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -906,8 +904,7 @@ msgstr " FEHLER: In %s konnte nicht geschrieben werden."
 msgid ""
 "Could not make directory\n"
 "%s"
-msgstr ""
-"Verzeichnis konnte nicht erstellt werden:\n"
+msgstr "Verzeichnis konnte nicht erstellt werden\n"
 "%s"
 
 #: kiojob.cpp:464 kiojob.cpp:827
@@ -920,8 +917,7 @@ msgstr "FEHLER: Kein Zugriff auf Verzeichnis '%s'."
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr ""
-"Auf Verzeichnis konnte nicht zugegriffen werden:\n"
+msgstr "Auf Verzeichnis konnte nicht zugegriffen werden\n"
 "%s"
 
 #: kiojob.cpp:688
@@ -964,7 +960,7 @@ msgid ""
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Konnte nicht schreiben auf:\n"
+"Konnte nicht schreiben auf\n"
 "%s\n"
 "Vielleicht Zugriff verweigert."
 
@@ -1050,7 +1046,7 @@ msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
-"Gzip meldete einen Fehler für\n"
+"Gzip meldete einen Fehler\n"
 "%s"
 
 #: kiojob.cpp:1115 kiojob.cpp:1130
@@ -1133,7 +1129,7 @@ msgstr "Aushängen von %s ..."
 #: kiojob.cpp:1600
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr "Erstelle Liste von %s"
+msgstr "Übertrage Liste von %s"
 
 #: kiojob.cpp:1824
 msgid "Segmentation fault in io subprocess"
@@ -1193,7 +1189,7 @@ msgstr "Sie haben den Namen nicht geändert!\n"
 
 #: passworddialog.cpp:41 passworddialog.cpp:80
 msgid "Password"
-msgstr "Paßwort"
+msgstr "Passwort"
 
 #: kfmexec.cpp:137
 msgid "Trying to open"
@@ -1213,7 +1209,7 @@ msgstr "Bekannte Zuordnungen:"
 
 #: kproxydlg.cpp:10
 msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Proxy ist derzeit nur für HTTP implementiert!"
+msgstr "Proxy-Support ist nur für HTTP implementiert."
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
@@ -1284,3 +1280,4 @@ msgid ""
 msgstr ""
 "Syntax Fehler:\n"
 "kfmexec Kommando [URLs ...]\n"
+

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-09 20:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -344,19 +344,22 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
 
-#: main.cpp:270
-msgid "Shadow Passwords"
-msgstr "Stínové heslo"
-
-#: main.cpp:271
+#: main.cpp:296
+#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
-"Please contact your system administrator."
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Vá¹ systém pou¾ívá stínová hesla!\n"
 "Prosím kontaktujte svého systémového správce."
 
-#: main.cpp:427
+#: main.cpp:301
+msgid "Shadow Passwords"
+msgstr "Stínové heslo"
+
+#: main.cpp:457
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -365,7 +368,7 @@ msgstr ""
 "Pou¾ití: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "         [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:430
+#: main.cpp:460
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -388,7 +391,8 @@ msgstr ""
 "                      x = i  ¾ádná akce (ignoruj)\n"
 "                      x = s  ¹etøi obrazovku\n"
 "                      x = l  uzamkni obrazovku\n"
-"                     poøadí: horní-levý, horní-pravý, dolní-levý, dolní-pravý\n"
+"                     poøadí: horní-levý, horní-pravý, dolní-levý, "
+"dolní-pravý\n"
 "  -delay num        Doba neèinnosti pøed spu¹tìním ¹etøièe obrazovky\n"
 "                    (implicitnì 10min)\n"
 "  -desc             Vypi¹ popis ¹etøièe obrazovky na stdout\n"
@@ -531,7 +535,7 @@ msgstr ""
 "\n"
 "Pøevedeno pro kscreensaver Martinem Jonesem"
 
-#: saver.cpp:50 saver.cpp:173
+#: saver.cpp:50 saver.cpp:110
 msgid "Enter Password"
 msgstr "Napi¹ heslo"
 

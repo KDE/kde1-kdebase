@@ -790,11 +790,11 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Czy na pewno chcesz przestawiæ ikony?"
 
 #: kfmserver.cpp:234
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "The URL\n"
 "%s\n"
-"is malformed\n"
+"is malformed"
 msgstr ""
 "URL\n"
 "%s\n"
@@ -884,8 +884,7 @@ msgstr "Odno¶nik utworzyæ mo¿na tylko do lokalnego systemu plików"
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Nie mo¿na skasowaæ"
-"%s"
+msgstr "Nie mo¿na skasowaæ%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
 #, c-format

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kdehelp \n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-09 20:19+0100\n"
 "PO-Revision-Date: 1997-12-28 14:57+01\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
@@ -335,19 +335,23 @@ msgstr ""
 "\n"
 "Portiert für KDE von Emanuel Pirker."
 
-#: main.cpp:270
+#: main.cpp:296
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Dieses System benutzt versteckte Paßwörter (shadow passwords)!\n"
+"Sie brauchen die Hilfe des System-Verwalters.\n"
+"\n"
+"Sagen Sie ihm, daß Sie setuid auf den Bildschirmschonern brauchen!"
+
+#: main.cpp:301
 msgid "Shadow Passwords"
 msgstr "Versteckte Paßwörter"
 
-#: main.cpp:271
-msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator."
-msgstr ""
-"Dieses System benutzt versteckte Paßwörter (shadow passwords)!\n"
-"Sie brauchen die Hilfe des System-Verwalters."
-
-#: main.cpp:427
+#: main.cpp:457
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -356,7 +360,7 @@ msgstr ""
 "Benutzung: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay zahl] [-lock] [-nice zahl]\n"
 
-#: main.cpp:430
+#: main.cpp:460
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -522,7 +526,7 @@ msgstr ""
 "\n"
 "Portiert für KDE von  Martin Jones."
 
-#: saver.cpp:50 saver.cpp:173
+#: saver.cpp:50 saver.cpp:110
 msgid "Enter Password"
 msgstr "Paßwort eingeben"
 

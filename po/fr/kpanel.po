@@ -63,7 +63,8 @@ msgstr "Ajouter la liste des fenêtres"
 
 #: kpanel.C:762
 msgid "Add a windowlist menu onto the panel"
-msgstr "Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
+msgstr ""
+"Ajouter le menu d'affichage et de sélection des fenêtres dans le panneau"
 
 #: kpanel.C:763
 msgid "Configure"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-09 20:19+0100\n"
 "PO-Revision-Date: 1997-11-13 12:20+0100\n"
 "Last-Translator: John Zero <johnzero@telnet.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -310,19 +310,22 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:270
-msgid "Shadow Passwords"
-msgstr "Shadow password-ök"
-
-#: main.cpp:271
+#: main.cpp:296
+#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
-"Please contact your system administrator."
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
 msgstr ""
 "A rendszered shadow password-öket\n"
 "használd, lépj kapcsolatba a rendszergazdával."
 
-#: main.cpp:427
+#: main.cpp:301
+msgid "Shadow Passwords"
+msgstr "Shadow password-ök"
+
+#: main.cpp:457
 #, fuzzy, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
@@ -331,7 +334,7 @@ msgstr ""
 "Használat: %s -install|-setup|-test|-desc|-preview wid\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
-#: main.cpp:430
+#: main.cpp:460
 #, fuzzy
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
@@ -483,7 +486,7 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:50 saver.cpp:173
+#: saver.cpp:50 saver.cpp:110
 #, fuzzy
 msgid "Enter Password"
 msgstr "Shadow password-ök"

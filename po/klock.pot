@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"POT-Creation-Date: 1998-01-09 20:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,24 +302,26 @@ msgid ""
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
 
-#: main.cpp:270
+#: main.cpp:296
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+
+#: main.cpp:301
 msgid "Shadow Passwords"
 msgstr ""
 
-#: main.cpp:271
-msgid ""
-"Your system uses shadow passwords!\n"
-"Please contact your system administrator."
-msgstr ""
-
-#: main.cpp:427
+#: main.cpp:457
 #, c-format
 msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
 
-#: main.cpp:430
+#: main.cpp:460
 msgid ""
 "  -corners xxxx     Placing cursor in corner performs action:\n"
 "                     x = i  no action (ignore)\n"
@@ -450,7 +452,7 @@ msgid ""
 "Ported to kscreensave by Martin Jones."
 msgstr ""
 
-#: saver.cpp:50 saver.cpp:173
+#: saver.cpp:50 saver.cpp:110
 msgid "Enter Password"
 msgstr ""
 
