@@ -5,9 +5,8 @@
 // Author           : Steffen Hansen
 // Created On       : Mon Apr 28 21:45:44 1997
 // Last Modified By : Steffen Hansen
-// Last Modified On : Thu Oct 16 04:39:04 1997
-// Update Count     : 73
-// Status           : Unknown, Use with caution!
+// Last Modified On : Thu Oct 16 09:50:38 1997
+// Update Count     : 90
 // 
 
 #include "kdmview.h"
@@ -150,11 +149,18 @@ KDMView::setCurrentItem( int row, int col)
 	  cur_col = col;
 	  cur_row = row;
 	  if( row > lastRowVisible() ) {
+	       // Below bottom
 	       setTopCell( row - lastRowVisible() + topCell());
 	  } else if( (row == lastRowVisible()) 
 		     || (  delta > viewHeight())) {
-	       setYOffset( yOffset() + delta - viewHeight() - frameWidth()); 
+	       // At bottom or partially below
+	       if( rowIsVisible(row) )
+		    setYOffset( yOffset() + delta 
+				- viewHeight());
+	       else
+		    setTopCell( row);
 	  } else if( row <= topCell()) {
+	       // At top or over
 	       setTopCell( row);
 	  }
 	  updateCell( old_row, old_col);
