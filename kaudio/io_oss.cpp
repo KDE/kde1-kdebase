@@ -12,7 +12,6 @@
 #define OSS_AUDIO
 #endif
 
-
 #include "maudio.h"
 #include "sample.h"
 #include "io_oss.h"
@@ -45,8 +44,6 @@ void AudioDev::setBugs(int bugs)
 
 bool AudioDev::grab()
 {
-  int	Param; 	/* For calling ioctl() */
-
   if (ParamsChanged) {
     // When playback parameters are changed with setParams(), we have to re-open the
     // device.
@@ -93,6 +90,7 @@ bool AudioDev::grab()
 	 return false;
        }
        
+       int Param;  /* For calling ioctl() */
        Param= bit_p_spl ; ioctl(audiodev, SNDCTL_DSP_SAMPLESIZE , &Param);
        Param= stereo    ; ioctl(audiodev, SNDCTL_DSP_STEREO     , &Param);
        Param= frequency ; ioctl(audiodev, SNDCTL_DSP_SPEED      , &Param);
@@ -192,6 +190,8 @@ int AudioDev::Write(AudioSample *a)
 #ifdef OSS_AUDIO
   return ( write(audiodev, a->Buffer, a->BuferValidLength) );
 #else
+  AudioSample *dummy = a;  // remove warnings on unsupported systems
+  a = dummy;               // remove warnings on unsupported systems
   return true;
 #endif
 }
