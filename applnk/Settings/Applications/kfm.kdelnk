@@ -1,0 +1,10 @@
+# KDE Config File
+[KDE Desktop Entry]
+Type=Application
+DocPath=kcontrol/kcmkfm/kfm-1.html
+Name=File Manager
+Comment=You can configure here the filemanagers look and feel
+SwallowTitle=File Manager Options
+Icon=kfm.xpm
+Exec=kcmkfm
+
