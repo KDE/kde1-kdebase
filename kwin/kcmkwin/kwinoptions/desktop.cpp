@@ -25,6 +25,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include <qlayout.h> //CT
 #include <kapp.h>
 
 #include <X11/X.h>
@@ -47,84 +48,135 @@
 #define MAX_WNDW_SNAP                          50
 #define MAX_EDGE_RES                         1000
 
+//CT 21Oct1998 - emptied
 KDesktopConfig::~KDesktopConfig ()
 {
-
-  //delete ElectricBox;
-  delete enable;
-  delete movepointer;
-  delete delayslider;
-  delete delaylcd;
-  delete delaylabel;
-  delete sec;
-  
-  //CT 15mar98 - safer? Maybe
-  delete ElectricBox;
-  
-  delete BrdrSnapLabel; delete BrdrSnapSlider; delete BrdrSnapLCD;
-  delete WndwSnapLabel; delete WndwSnapSlider; delete WndwSnapLCD;
-  delete MagicBox;
-  //CT ---
 }
 
 extern KConfig *config;
 
+//CT 21Oct1998 - rewritten for using layouts
 KDesktopConfig::KDesktopConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
 {
 
+  QBoxLayout *lay = new QVBoxLayout(this, 5);
 
-  ElectricBox = new QButtonGroup(klocale->translate("Active desktop borders"), this);
+  ElectricBox = new QButtonGroup(klocale->translate("Active desktop borders"),
+				 this);
+
+  QGridLayout *eLay = new QGridLayout(ElectricBox,5,3,10,5);
+  eLay->addRowSpacing(0,10);
+  eLay->setColStretch(0,0);
+  eLay->setColStretch(1,1);
+  
   enable= new 
-    QCheckBox(klocale->translate("Enable active desktop borders"), ElectricBox);
+    QCheckBox(klocale->translate("Enable active desktop borders"),
+	      ElectricBox);
+  enable->adjustSize();
+  enable->setMinimumSize(enable->size());
+  eLay->addMultiCellWidget(enable,1,1,0,1);
+
   movepointer = new 
-    QCheckBox(klocale->translate("Move pointer towards center after switch"),ElectricBox);
+    QCheckBox(klocale->translate("Move pointer towards center after switch"),
+	      ElectricBox);
+  movepointer->adjustSize();
+  movepointer->setMinimumSize(movepointer->size());
+  eLay->addMultiCellWidget(movepointer,2,2,0,1);
 
-  delayslider = new KSlider(0,100,10,0, KSlider::Horizontal, ElectricBox);
-  delayslider->setSteps(10,10);
-
-  delaylabel = 
-    new QLabel(klocale->translate("Dekstop switch delay:"), ElectricBox);
-  delaylcd = new QLCDNumber (5, ElectricBox);
-  delaylcd->setFrameStyle( QFrame::NoFrame );
-
-  sec = new QLabel("", ElectricBox );
-  connect( delayslider, SIGNAL(valueChanged(int)), delaylcd, SLOT(display(int)) );
-  delaylcd->adjustSize();
+  delaylabel = new QLabel(klocale->translate("Dekstop switch delay:"), 
+			  ElectricBox);
   delaylabel->adjustSize();
-  sec->adjustSize();
+  delaylabel->setMinimumSize(delaylabel->size());
+  delaylabel->setAlignment(AlignVCenter|AlignLeft);
+  eLay->addWidget(delaylabel,3,0);
+
+  delaylcd = new QLCDNumber (2, ElectricBox);
+  delaylcd->setFrameStyle( QFrame::NoFrame );
+  delaylcd->setFixedHeight(30);
+  delaylcd->adjustSize();
+  delaylcd->setMinimumSize(delaylcd->size());
+  eLay->addWidget(delaylcd,3,1);
+
+  delayslider = new KSlider(0,MAX_EDGE_RES/10,10,0, 
+			    KSlider::Horizontal, ElectricBox);
+  delayslider->setSteps(10,10);
+  delayslider->adjustSize();
+  delayslider->setMinimumSize(delaylabel->width(), delayslider->height());
+  eLay->addMultiCellWidget(delayslider,4,4,1,2);
+
+  connect( delayslider, SIGNAL(valueChanged(int)), delaylcd, SLOT(display(int)) );
 
   connect( enable, SIGNAL(clicked()), this, SLOT(setEBorders()));
+
+  eLay->activate();
+
+  lay->addWidget(ElectricBox,5);
 
   //CT 15mar98 - add EdgeResistance, BorderAttractor, WindowsAttractor config
   MagicBox = new QButtonGroup(klocale->translate("Magic Borders"), this);
 
+  eLay = new QGridLayout(MagicBox,4,3,10,5);
+  eLay->addRowSpacing(0,10);
+  eLay->addRowSpacing(2,10);
+  eLay->setColStretch(0,0);
+  eLay->setColStretch(1,0);
+  eLay->setColStretch(2,1);
+  
   BrdrSnapLabel = new QLabel(klocale->translate("Border Snap Zone:\n       (pixels)"), MagicBox);
+  BrdrSnapLabel->adjustSize();
+  BrdrSnapLabel->setMinimumSize(BrdrSnapLabel->size());
+  BrdrSnapLabel->setAlignment(AlignTop);
+  eLay->addWidget(BrdrSnapLabel,1,0);
 
-  BrdrSnapSlider = new KSlider(0,50,1,0, KSlider::Horizontal, MagicBox);
-  BrdrSnapSlider->setSteps(1,1);
-
-  BrdrSnapLCD = new QLCDNumber (5, MagicBox);
+  BrdrSnapLCD = new QLCDNumber (2, MagicBox);
   BrdrSnapLCD->setFrameStyle( QFrame::NoFrame );
+  BrdrSnapLCD->setFixedHeight(30);
+  BrdrSnapLCD->adjustSize();
+  BrdrSnapLCD->setMinimumSize(BrdrSnapLCD->size());
+  eLay->addWidget(BrdrSnapLCD,1,1);
+
+  BrdrSnapSlider = new KSlider(0,MAX_BRDR_SNAP,1,0, 
+			       KSlider::Horizontal, MagicBox);
+  BrdrSnapSlider->setSteps(1,1);
+  BrdrSnapSlider->adjustSize();
+  BrdrSnapSlider->setMinimumSize( BrdrSnapLabel->width()+
+				  BrdrSnapLCD->width(),
+				  BrdrSnapSlider->height());
+  eLay->addWidget(BrdrSnapSlider,1,2);
+  eLay->addRowSpacing(0,5);
 
   connect( BrdrSnapSlider, SIGNAL(valueChanged(int)), BrdrSnapLCD, SLOT(display(int)) );
-  BrdrSnapLabel->adjustSize();
-  BrdrSnapSlider->adjustSize();
-  BrdrSnapLCD->adjustSize();
-
 
   WndwSnapLabel = new QLabel(klocale->translate("Window Snap Zone:\n       (pixels)"), MagicBox);
-  WndwSnapSlider = new KSlider(0,50,1,0, KSlider::Horizontal, MagicBox);
-  WndwSnapSlider->setSteps(1,1);
+  WndwSnapLabel->adjustSize();
+  WndwSnapLabel->setMinimumSize(WndwSnapLabel->size());
+  WndwSnapLabel->setAlignment(AlignTop);
+  eLay->addWidget(WndwSnapLabel,3,0);
 
-  WndwSnapLCD = new QLCDNumber (5, MagicBox);
+  WndwSnapLCD = new QLCDNumber (2, MagicBox);
   WndwSnapLCD->setFrameStyle( QFrame::NoFrame );
+  WndwSnapLCD->setFixedHeight(30);
+  WndwSnapLCD->adjustSize();
+  WndwSnapLCD->setMinimumSize(WndwSnapLCD->size());
+  eLay->addWidget(WndwSnapLCD,3,1);
+
+  WndwSnapSlider = new KSlider(0,MAX_WNDW_SNAP,1,0, 
+			       KSlider::Horizontal, MagicBox);
+  WndwSnapSlider->setSteps(1,1);
+  WndwSnapSlider->adjustSize();
+  WndwSnapSlider->setMinimumSize( WndwSnapLabel->width()+
+				  WndwSnapLCD->width(),
+				  WndwSnapSlider->height());
+  eLay->addWidget(WndwSnapSlider,3,2);
   
   connect( WndwSnapSlider, SIGNAL(valueChanged(int)), WndwSnapLCD, SLOT(display(int)) );
-  WndwSnapLabel->adjustSize();
-  WndwSnapSlider->adjustSize();
-  WndwSnapLCD->adjustSize();
-  
+
+  eLay->activate();
+
+  lay->addWidget(MagicBox,5);
+
+  lay->activate();
 
   GetSettings();
 }
@@ -279,73 +331,6 @@ void KDesktopConfig::applySettings()
   SaveSettings();
 }
 
-void KDesktopConfig::resizeEvent(QResizeEvent *)
-{
-  int xpos = SPACE_XO, ypos = SPACE_YO;
-  
-  ElectricBox->setGeometry(SPACE_XO, SPACE_YO,this->width() - 40, 200);
-  enable->adjustSize();
-  enable->setGeometry(SPACE_XO,ypos,enable->width(),30);
 
-  movepointer->adjustSize();
-  movepointer->setGeometry(SPACE_XO,ypos = ypos + enable->height() ,movepointer->width(),30);
-
-  delaylabel->adjustSize();
-  delaylabel->setGeometry(xpos,
-			  ypos + movepointer->height() + 
-			  (delaylcd->height()-delaylabel->height())/2,
-			  delaylabel->width(),30);
-
-  delaylcd->setGeometry(xpos = xpos + delaylabel->width() + SPACE_XI/2,
-			ypos = ypos + movepointer->height() + SPACE_YI,
-			delaylcd->width(),delaylcd->height());
-
-  sec->setGeometry( xpos + delaylcd->width() + SPACE_XI/2,
-		    ypos + (delaylcd->height()-sec->height())/2,
-		    delaylcd->width(),delaylcd->height());
-
-  delayslider->setGeometry(xpos - delaylabel->width()/2,
-			   ypos = ypos + delaylcd->height() + SPACE_YI,
-			   200,30);
-  //rearrange
-  ElectricBox->setGeometry(SPACE_XO, SPACE_YO,this->width() - 40, ypos + 30 + SPACE_YI);
-  
-
-  MagicBox->setGeometry (SPACE_XO, SPACE_YO + SPACE_YI + ElectricBox->height(), 
-			 this->width() - 40, 200);
-
-  // the other box's internal arrangement
-  xpos = BrdrSnapLabel->width() + BrdrSnapLCD->width();
-  if ((WndwSnapLabel->width() + WndwSnapLCD->width()) > xpos)
-    xpos = WndwSnapLabel->width() + WndwSnapLCD->width();
-  
-  xpos = xpos + SPACE_XO;
-  ypos = SPACE_YO;
-
-  BrdrSnapLabel->setGeometry(SPACE_XO,
-			     ypos + (BrdrSnapLCD->height() - BrdrSnapLabel->height())/2,
-			     BrdrSnapLabel->width(), BrdrSnapLabel->height());
-  BrdrSnapLCD->setGeometry(xpos - BrdrSnapLCD->width(),
-			   ypos,
-			   BrdrSnapLCD->width(), BrdrSnapLCD->height());
-  BrdrSnapSlider->setGeometry(xpos,
-			      ypos = ypos + (BrdrSnapLCD->height() -20)/2,
-			      180, 30);
-
-  ypos = ypos + BrdrSnapLCD->height() + SPACE_YI;
-  WndwSnapLabel->setGeometry(SPACE_XO,
-			     ypos + (WndwSnapLCD->height() - WndwSnapLabel->height())/2,
-			     WndwSnapLabel->width(), WndwSnapLabel->height());
-  WndwSnapLCD->setGeometry(xpos - WndwSnapLCD->width() ,
-			   ypos,
-			   WndwSnapLCD->width(), WndwSnapLCD->height());
-  WndwSnapSlider->setGeometry(xpos,
-			      ypos + (WndwSnapLCD->height()-20)/2,
-			      180, 30);
-
-  MagicBox->setGeometry (SPACE_XO, SPACE_YO + SPACE_YI + ElectricBox->height(), 
-			 this->width() - 40, ypos + WndwSnapLCD->height() + SPACE_YI);
-
-}
 
 #include "desktop.moc"

@@ -47,7 +47,7 @@ public:
   KDesktopConfig( QWidget *parent=0, const char* name=0 );
   ~KDesktopConfig( );
 
-  void  resizeEvent(QResizeEvent *e);
+  //CT  void  resizeEvent(QResizeEvent *e);
   void SaveSettings( void );
 
   void loadSettings();

@@ -1,3 +1,8 @@
+1998-10-25  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
+
+	* disknav.cpp (KDiskNavConfig): Applied consided layout use.
+		deleted the (now harmful) resizeEvent
+
 1998-10-17  Cristian Tibirna  <ctibirna@gch.ulaval.ca>
 
 	* options.cpp: added control over the new animation configurations

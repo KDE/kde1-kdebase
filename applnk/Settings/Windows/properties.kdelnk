@@ -1,6 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
-Exec=kcmkwm windows
+Exec=kcmkwm options
 Icon=winprops.xpm
 Type=Application
 DocPath=kcontrol/kcmkwm/kwm-3.html

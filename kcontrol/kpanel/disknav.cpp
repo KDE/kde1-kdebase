@@ -33,59 +33,189 @@ extern KConfigBase *config;
 KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name ) 
   : KConfigWidget (parent, name) //, int_validator(0, 20, 0)
 {
-    layout = new QVBoxLayout(this, 3);
+    QBoxLayout *lay = new QVBoxLayout(this,5);
     
-    misc_group = new QGroupBox(i18n("Options"), this);
+    hist_group = new QGroupBox(i18n("History"), this);
+
+    //CT 25Oct1998
+    QBoxLayout *hLay = new QVBoxLayout(hist_group,10,5);
+    hLay->addSpacing(10);
+
+    QBoxLayout *btnLay = new QHBoxLayout();
+    hLay->addLayout(btnLay);
+    btnLay->addSpacing(20);
+
+    QGridLayout *inLay = new QGridLayout(3,5);
+    hLay->addLayout(inLay);
+
+    inLay->setColStretch(0,0);
+    inLay->setColStretch(1,1);
+    inLay->setColStretch(2,0);
+    inLay->setColStretch(3,1);
+    inLay->setColStretch(4,0);
+    inLay->addColSpacing(0,20);
+    inLay->addColSpacing(2,20);
+    inLay->addColSpacing(4,20);
+    //CT
 
     edit_entries = new QLabel();
     edit_entries->setText("Edit entries: (drag a folder and create a link)");
 
-    edit_global = new QPushButton(i18n("Edit &Global..."), misc_group);
-    connect(edit_global, SIGNAL(clicked()), SLOT(edit_global_clicked()));
-
-    edit_local = new QPushButton(i18n("Edit &Local..."), misc_group);
+    edit_local = new QPushButton(i18n("Edit &Local..."), hist_group);
     connect(edit_local, SIGNAL(clicked()), SLOT(edit_local_clicked()));
+    //CT 25Oct1998
+    edit_local->adjustSize();
+    edit_local->setMinimumWidth(edit_local->width());
+    edit_local->setFixedHeight(edit_local->height());
+    btnLay->addWidget(edit_local);
+    btnLay->addSpacing(20);
+    //CT
 
-    max_recent_folders_size = new QLineEdit(misc_group);
+    edit_global = new QPushButton(i18n("Edit &Global..."), hist_group);
+    connect(edit_global, SIGNAL(clicked()), SLOT(edit_global_clicked()));
+    //CT 25Oct1998
+    edit_global->adjustSize();
+    edit_global->setMinimumWidth(edit_global->width());
+    edit_global->setFixedHeight(edit_global->height());
+    btnLay->addWidget(edit_global);
+    btnLay->addSpacing(20);
+    //CT
+
+    max_recent_folders_size = new QLineEdit(hist_group);
     max_recent_folders_size->setMaxLength(2);
     //max_recent_folders_size->setValidator(&int_validator);
+    //CT 25Oct1998
+    max_recent_folders_size->adjustSize();
+    max_recent_folders_size->setMinimumSize(max_recent_folders_size->size());
+    inLay->addWidget(max_recent_folders_size,0,3);
+    //CT
 
-    max_recent_files_size = new QLineEdit(misc_group);
+    max_recent_files_size = new QLineEdit(hist_group);
     max_recent_files_size->setMaxLength(2);
     //max_recent_files_size->setValidator(&int_validator);
+    //CT 25Oct1998
+    max_recent_files_size->adjustSize();
+    max_recent_files_size->setMinimumSize(max_recent_files_size->size());
+    inLay->addWidget(max_recent_files_size,1,3);
+    //CT
 
-    max_navigable_folder_size = new QLineEdit(misc_group);
+    max_navigable_folder_size = new QLineEdit(hist_group);
     max_navigable_folder_size->setMaxLength(4);
     //max_navigable_folder_size->setValidator(&int_validator);
+    //CT 25Oct1998
+    max_navigable_folder_size->adjustSize();
+    max_navigable_folder_size->setMinimumSize(max_navigable_folder_size->size());
+    inLay->addWidget(max_navigable_folder_size,2,3);
+    //CT
 
     recent_folders_size = new QLabel(max_recent_folders_size, 
                                      "Max recent folder entries:",
-                                     misc_group);
+                                     hist_group);
+    //CT 25Oct1998
+    recent_folders_size->adjustSize();
+    recent_folders_size->setMinimumSize(recent_folders_size->size());
+    inLay->addWidget(recent_folders_size,0,1);
+    //CT
+
     recent_files_size = new QLabel(max_recent_files_size,
                                    "Max recent file entries:",
-                                   misc_group);
+                                   hist_group);
+    //CT 25Oct1998
+    recent_files_size->adjustSize();
+    recent_files_size->setMinimumSize(recent_files_size->size());
+    inLay->addWidget(recent_files_size,1,1);
+    //CT
 
     navigable_folder_size = new QLabel(max_navigable_folder_size,
                                    "Max files in a single folder:",
-                                   misc_group);
+                                   hist_group);
+    //CT 25Oct1998
+    navigable_folder_size->adjustSize();
+    navigable_folder_size->setMinimumSize(navigable_folder_size->size());
+    inLay->addWidget(navigable_folder_size,2,1);
+    //CT
+    
+    hLay->activate();
 
+    lay->addWidget(hist_group);
+
+    //CT 25Oct1998
+    misc_group = new QGroupBox(i18n("Options"), this);
+
+    inLay = new QGridLayout(misc_group,5,5,10,5);
+
+    inLay->setColStretch(0,0);
+    inLay->setColStretch(1,1);
+    inLay->setColStretch(2,0);
+    inLay->setColStretch(3,1);
+    inLay->setColStretch(4,0);
+    inLay->addColSpacing(0,20);
+    inLay->addColSpacing(2,20);
+    inLay->addColSpacing(4,10);
+
+    inLay->addRowSpacing(0,10);
+    //CT
 
     show_dot_files = new QCheckBox("Show dot files", misc_group);
+    //CT 25Oct1998
+    show_dot_files->adjustSize();
+    show_dot_files->setMinimumSize(show_dot_files->size());
+    inLay->addWidget(show_dot_files,1,1);
+    //CT
+
     ignore_case = new QCheckBox("Ignore case when sorting", misc_group);
+    //CT 25Oct1998
+    ignore_case->adjustSize();
+    ignore_case->setMinimumSize(ignore_case->size());
+    inLay->addWidget(ignore_case,1,3);
+    //CT
 
     show_global_section = new QCheckBox("Show Global section", misc_group);
+    //CT 25Oct1998
+    show_global_section->adjustSize();
+    show_global_section->setMinimumSize(show_global_section->size());
+    inLay->addWidget(show_global_section,2,1);
+    //CT
+
     show_local_section = new QCheckBox("Show Local section", misc_group);
+    //CT 25Oct1998
+    show_local_section->adjustSize();
+    show_local_section->setMinimumSize(show_local_section->size());
+    inLay->addWidget(show_local_section,2,3);
+    //CT
+
     show_recent_section = new QCheckBox("Show Recent section", misc_group);
+    //CT 25Oct1998
+    show_recent_section->adjustSize();
+    show_recent_section->setMinimumSize(show_recent_section->size());
+    inLay->addWidget(show_recent_section,3,1);
+    //CT
+
     show_option_entry = new QCheckBox("Show Option entry", misc_group);
+    //CT 25Oct1998
+    show_option_entry->adjustSize();
+    show_option_entry->setMinimumSize(show_option_entry->size());
+    inLay->addWidget(show_option_entry,3,3);
+    //CT
 
     terminal = new QLineEdit(misc_group);
     terminal->setMaxLength(80);
+    //CT 25Oct1998
+    terminal->adjustSize();
+    terminal->setMinimumSize(terminal->size());
+    inLay->addWidget(terminal,4,3);
+    //CT
 
     terminal_label = new QLabel(terminal, 
                                 "Terminal application:",
                                 misc_group);
+    //CT 25Oct1998
+    terminal_label->adjustSize();
+    terminal_label->setMinimumSize(terminal_label->size());
+    inLay->addWidget(terminal_label,4,1);
+    //CT
 
-
+    /*CT 25Oct1998
     edit_global->adjustSize();
     edit_local->adjustSize();
     misc_group->adjustSize();
@@ -101,13 +231,15 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     show_option_entry->adjustSize();
 
     terminal_label->adjustSize();
+    */
 
+    inLay->activate();
 
-    layout->addWidget(misc_group, 2);
+    lay->addWidget(misc_group);
 
-    misc_group->setMinimumSize(370, 270);
+    /*CT    misc_group->setMinimumSize(370, 270);*/
 
-    layout->activate();
+    lay->activate();
     
     loadSettings();
 }
@@ -130,6 +262,7 @@ void KDiskNavConfig::edit_local_clicked()
 KDiskNavConfig::~KDiskNavConfig( ) {
 }
 
+/*CT 25Oct1998 - useless (harmful!) when using layouts
 void KDiskNavConfig::resizeEvent(QResizeEvent *e) {
     KConfigWidget::resizeEvent(e);
     
@@ -176,7 +309,7 @@ void KDiskNavConfig::resizeEvent(QResizeEvent *e) {
     terminal->setGeometry(terminal_label->x() + terminal_label->width() +8, y,
                           150, 25);
 }
-
+*/
 void KDiskNavConfig::loadSettings() {
 
   config->setGroup("kdisknav");

@@ -32,6 +32,7 @@
 #include <qchkbox.h> 
 #include <qbttngrp.h>
 #include <qpushbt.h>
+
 #include <kslider.h>
 #include <qcombo.h>   //CT 31jan98
 #include <kspinbox.h> //CT 13mar98
@@ -73,7 +74,7 @@ class KWindowConfig : public KConfigWidget
 public:
   KWindowConfig( QWidget *parent=0, const char* name=0 );
   ~KWindowConfig( );
-  void  resizeEvent(QResizeEvent *e);
+  //  void  resizeEvent(QResizeEvent *e);
   void SaveSettings( void );
 
   void loadSettings();
@@ -82,6 +83,7 @@ public:
 private slots:
   void setAutoRaiseEnabled();
   void ifPlacementIsInteractive();
+  void autoRaiseOnTog(bool);//CT 23Oct1998
 
 private:
 
@@ -103,32 +105,26 @@ private:
   void setMaximize(int);
   void setAutoRaise(int);
 
-  QButtonGroup *moveBox;
-  QRadioButton *transparent, *opaque; 
+  QButtonGroup *windowsBox;
+  QCheckBox *opaque, *vertOnly; 
 
-  // CT 19jan98
-  QButtonGroup *placementBox;
-  QComboBox *placementCombo;
-  // CT 13mar98
-  KNumericSpinBox *interactiveTrigger;
-  QLabel *iTLabel;
-
-
-  QButtonGroup *focusBox;
-  QComboBox *focusCombo;
-
-  QButtonGroup *resizeBox;
   QCheckBox *resizeOpaqueOn;
   KSlider *resizeAnimSlider;
   QLabel *resizeAnimTitleLabel, *resizeAnimNoneLabel, *resizeAnimFastLabel;
 
-  QButtonGroup *maximizeBox;
-  QRadioButton *fullScreen, *vertOnly;
+  //CT 19jan98; 21Oct1998
+  QButtonGroup *plcBox;
+  QComboBox *placementCombo;
+  KNumericSpinBox *interactiveTrigger;
+  QLabel *iTLabel;
 
+  QButtonGroup *fcsBox;
+  QComboBox *focusCombo;
+  QCheckBox *autoRaiseOn;
   KSlider *autoRaise;
   QLabel *alabel;
   QLCDNumber *s;
-  QLabel *sec;
+  //CT  QLabel *sec;
 
 };
 

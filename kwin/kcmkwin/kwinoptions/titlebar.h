@@ -58,16 +58,16 @@
 #define TITLEBAR_SHADED_HORIZ         2
 #define TITLEBAR_PIXMAP               3
 
-//CT 11feb98
+//CT 11feb98; 23Oct1998
 #define DCTB_MAXIMIZE      0
 #define DCTB_SHADE         1
 #define DCTB_ICONIFY       2
 #define DCTB_STICKY        3
-#define DCTB_MOVE          4
-#define DCTB_RESIZE        5
-#define DCTB_RESTORE       6
-#define DCTB_OPERATIONS    7
-#define DCTB_CLOSE         8
+//#define DCTB_MOVE          4
+//#define DCTB_RESIZE        5
+//#define DCTB_RESTORE       6
+//#define DCTB_OPERATIONS    7
+#define DCTB_CLOSE         4
 
 class TitlebarPreview : public QFrame
 {
@@ -141,7 +141,7 @@ class KTitlebarAppearance : public KConfigWidget
 public:
   KTitlebarAppearance( QWidget *parent=0, const char* name=0 );
   ~KTitlebarAppearance( );
-  void  resizeEvent(QResizeEvent *e);
+  //CT  void  resizeEvent(QResizeEvent *e);
   void SaveSettings( void );
 
   void loadSettings();
@@ -170,13 +170,14 @@ private:
  int getDCTBAction();
  void setDCTBAction(int);
 
- QButtonGroup *titlebarDblClickBox;
+ QGroupBox *titlebarDblClickBox;
  QLabel * lDblClick;
  QComboBox * dblClickCombo;
  //CT ---
 
+ QGroupBox *animBox; //CT 21Oct1998
  KSlider *titleAnim;
- QLabel *tlabel;
+ //CT  QLabel *tlabel;
  QLCDNumber *t;
  QLabel *sec;
 

@@ -27,6 +27,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include <qlayout.h> //CT 21Oct1998
+#include <kmsgbox.h> 
 #include <kmsgbox.h>
 #include <kapp.h>
 #include <kiconloaderdialog.h>
@@ -897,96 +899,126 @@ void TitlebarPreview::paintEvent( QPaintEvent * )
 }
 
 // appearance dialog
+//CT 21Oct1998 - voided
 KTitlebarAppearance::~KTitlebarAppearance ()
 {
-  delete vShaded;
-  delete hShaded;
-  delete plain;
-  delete titlebarBox;
-
-  //CT 11feb98
-  delete dblClickCombo;
-  delete lDblClick;
-  delete titlebarDblClickBox;
-
-  delete titleAnim;
-  delete tlabel;
-  delete t;
-  delete sec;
 }
 
+//CT 21Oct1998 - rewritten
 KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
 {
   // titlebar shading style
-  titlebarBox = new QButtonGroup(klocale->translate("Titlebar appearance"),
+
+  QGridLayout *lay = new QGridLayout(this,3,2,10,5);
+  lay->setRowStretch(0,1);
+  lay->setRowStretch(1,0);
+  lay->setRowStretch(2,0);
+
+  lay->setColStretch(0,1);
+  lay->setColStretch(1,1);
+  
+  titlebarBox = new QButtonGroup(klocale->translate("Appearance"), 
 				 this);
-  vShaded = new QRadioButton(klocale->translate("Shaded Vertically"),
+
+  QBoxLayout *pushLay = new QVBoxLayout (titlebarBox,10,5);
+  pushLay->addSpacing(10);
+
+  vShaded = new QRadioButton(klocale->translate("Shaded Vertically"), 
 			    titlebarBox);
-  hShaded = new QRadioButton(klocale->translate("Shaded Horizontally"),
+  vShaded->adjustSize();
+  vShaded->setMinimumSize(vShaded->size());
+  pushLay->addWidget(vShaded);
+
+  hShaded = new QRadioButton(klocale->translate("Shaded Horizontally"), 
 			    titlebarBox);
+  hShaded->adjustSize();
+  hShaded->setMinimumSize(hShaded->size());
+  pushLay->addWidget(hShaded);
+
   connect(vShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
   connect(hShaded, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
-  plain = new QRadioButton(klocale->translate("Plain"),
+
+  plain = new QRadioButton(klocale->translate("Plain"), 
 			   titlebarBox);
+  plain->adjustSize();
+  plain->setMinimumSize(plain->size());
+  pushLay->addWidget(plain);
+
   connect(plain, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
+
   pixmap = new QRadioButton(klocale->translate("Pixmap"),
 	                   titlebarBox);
+  pixmap->adjustSize();
+  pixmap->setMinimumSize(pixmap->size());
+  pushLay->addWidget(pixmap);
+
   connect(pixmap, SIGNAL(clicked()), this, SLOT(titlebarChanged()));
 
-  // titlebar animation
-  titleAnim = new KSlider(0,100,10,100, KSlider::Horizontal, this);
-  titleAnim->setSteps(10,10);
-  tlabel = new QLabel(klocale->translate("Title Animation"), this);
-  t = new QLCDNumber (2, this);
-  t->setFrameStyle( QFrame::NoFrame );
-  sec = new QLabel(klocale->translate("ms"), this);
-  connect( titleAnim,   SIGNAL(valueChanged(int)), t, SLOT(display(int)) );
+  pushLay->activate();
 
-  vShaded->adjustSize();
-  hShaded->adjustSize();
-  plain->adjustSize();
-  pixmap->adjustSize();
-  t->adjustSize();
-  tlabel->adjustSize();
-  sec->adjustSize();
+  lay->addWidget(titlebarBox,0,0);
 
-  pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this);
-
-  //CT pixmapActive = pixmapInactive = 0;
+  pixmapBox    = new QGroupBox(klocale->translate("Pixmap"), this); 
+ 
+  QGridLayout *pixLay = new QGridLayout(pixmapBox,6,2,10,5);
+  pixLay->addRowSpacing(0,10);
+  pixLay->addRowSpacing(3,10);
+  pixLay->addColSpacing(0,20);
+  pixLay->setRowStretch(0,1);
+  pixLay->setRowStretch(1,0);
+  pixLay->setRowStretch(2,0);
+  pixLay->setRowStretch(3,1);
+  pixLay->setRowStretch(4,0);
+  pixLay->setRowStretch(5,0);
+  pixLay->setColStretch(0,0);
 
   pbPixmapActive = new QPushButton(pixmapBox);
-  pbPixmapInactive = new QPushButton(pixmapBox);
-  pbPixmapActive->resize(32,32);
-  pbPixmapInactive->resize(32,32);
+  pbPixmapActive->resize(96,32);
+  pbPixmapActive->setMinimumSize(pbPixmapActive->size());
+  pixLay->addWidget(pbPixmapActive,2,1);
+
   connect(pbPixmapActive, SIGNAL(clicked()), this, SLOT(activePressed()));
+  
+  pbPixmapInactive = new QPushButton(pixmapBox);
+  pbPixmapInactive->resize(96,32);
+  pbPixmapInactive->setMinimumSize(pbPixmapInactive->size());
+  pixLay->addWidget(pbPixmapInactive,5,1);
+
   connect(pbPixmapInactive, SIGNAL(clicked()), this, SLOT(inactivePressed()));
 
-  lPixmapActive = new QLabel(pbPixmapActive, klocale->translate("&Active pixmap"), pixmapBox);
-  lPixmapActive->adjustSize();
-  lPixmapInactive = new QLabel(pbPixmapInactive, klocale->translate("&Inactive pixmap"), pixmapBox);
+  lPixmapActive = new QLabel(pbPixmapActive, klocale->translate("Active pixmap:"), pixmapBox);
+  lPixmapActive->adjustSize(); 
+  lPixmapActive->setMinimumSize(lPixmapActive->size());
+  pixLay->addMultiCellWidget(lPixmapActive,1,1,0,1);
+
+  lPixmapInactive = new QLabel(pbPixmapInactive, klocale->translate("Inactive pixmap:"), pixmapBox);
   lPixmapInactive->adjustSize();
+  lPixmapInactive->setMinimumSize(lPixmapInactive->size());
+  pixLay->addMultiCellWidget(lPixmapInactive,4,4,0,1);
 
-  iconLoader = new KIconLoader();
+  pixLay->activate();
 
-  iconLoader->getDirList()->clear();
+  lay->addWidget(pixmapBox,0,1);
 
-  iconLoader->insertDirectory(0, kapp->localkdedir()+"/share/apps/kwm/pics");
-  iconLoader->insertDirectory(1, kapp->kde_datadir()+"/kwm/pics");
-  iconLoader->insertDirectory(2, kapp->localkdedir()+"/share/apps/kwm/toolbar");
-  iconLoader->insertDirectory(3, kapp->kde_datadir()+"/kwm/toolbar");
-  iconLoader->insertDirectory(4, kapp->localkdedir()+"/share/toolbar");
-  iconLoader->insertDirectory(5, kapp->kde_toolbardir());
+  //CT 11feb98 - Title double click
+  titlebarDblClickBox = new QGroupBox(klocale->translate("Mouse action"),
+				       this);
 
+  pixLay = new QGridLayout(titlebarDblClickBox,2,2,10,5);
+  pixLay->addRowSpacing(0,10);
+  pixLay->setColStretch(0,0);
+  pixLay->setColStretch(1,1);
+
+  lDblClick = new QLabel(klocale->translate("Left Button double click does:"),
+			 titlebarDblClickBox);
+  lDblClick->adjustSize();
+  lDblClick->setMinimumSize(lDblClick->size());
+  pixLay->addWidget(lDblClick,1,0);
 
   //CT 11feb98 - Title double click
   
   // I commented some stuff out, since it does not make sense (Matthias 23okt98)
-  titlebarDblClickBox = new QButtonGroup(klocale->translate("Mouse action"),
-				       this);
-  lDblClick = new QLabel(klocale->translate("LeftMouseButton double click"
-					    "\n    on titlebar does:"),
-			 titlebarDblClickBox);
   dblClickCombo = new QComboBox(FALSE, titlebarDblClickBox);
   dblClickCombo->insertItem(klocale->translate("(Un)Maximize"),DCTB_MAXIMIZE);
   dblClickCombo->insertItem(klocale->translate("(Un)Shade"),DCTB_SHADE);
@@ -1000,102 +1032,67 @@ KTitlebarAppearance::KTitlebarAppearance (QWidget * parent, const char *name)
   dblClickCombo->insertItem(klocale->translate("Close"),DCTB_CLOSE);
   dblClickCombo->setCurrentItem( DCTB_MAXIMIZE );
 
-  lDblClick->adjustSize();
   dblClickCombo->adjustSize();
+  dblClickCombo->setMinimumSize(dblClickCombo->size());
+  pixLay->addWidget(dblClickCombo,1,1);
+
+  pixLay->activate();
+
+  lay->addMultiCellWidget(titlebarDblClickBox,1,1,0,1);
+
   //CT ---
+
+  // titlebar animation
+  animBox = new QGroupBox(klocale->translate("Title animation"),
+				       this);
+
+  pixLay = new QGridLayout(animBox,2,3,10,5);
+  pixLay->addRowSpacing(0,10);
+  pixLay->setColStretch(0,0);
+  pixLay->setColStretch(1,0);
+  pixLay->setColStretch(2,1);
+
+  t = new QLCDNumber (2, animBox);
+  t->setFrameStyle( QFrame::NoFrame );
+  t->setFixedHeight(30);
+  t->adjustSize();
+  t->setMinimumSize(t->size());
+  pixLay->addWidget(t,1,0);
+
+  sec = new QLabel(klocale->translate("ms"), animBox);
+  sec->adjustSize();
+  sec->setMinimumSize(sec->size());
+  pixLay->addWidget(sec,1,1);
+
+  titleAnim = new KSlider(0,100,10,0, KSlider::Horizontal, animBox);
+  titleAnim->setSteps(10,10);
+  titleAnim->adjustSize();
+  titleAnim->setMinimumSize(titleAnim->size());
+  pixLay->addWidget(titleAnim,1,2);
+
+  pixLay->activate();
+
+  lay->addMultiCellWidget(animBox,2,2,0,1);
+
+  lay->activate();
+
+  connect( titleAnim,   SIGNAL(valueChanged(int)), t, SLOT(display(int)) );
+
+  //the icon loader for the buttons
+  iconLoader = new KIconLoader();
+
+  iconLoader->getDirList()->clear();
+   
+  iconLoader->insertDirectory(0, kapp->localkdedir()+"/share/apps/kwm/pics");
+  iconLoader->insertDirectory(1, kapp->kde_datadir()+"/kwm/pics");
+  iconLoader->insertDirectory(2, kapp->localkdedir()+"/share/apps/kwm/toolbar");
+  iconLoader->insertDirectory(3, kapp->kde_datadir()+"/kwm/toolbar");
+  iconLoader->insertDirectory(4, kapp->localkdedir()+"/share/toolbar");
+  iconLoader->insertDirectory(5, kapp->kde_toolbardir());
 
   GetSettings();
 }
 
-void KTitlebarAppearance::resizeEvent(QResizeEvent *)
-{
-  int h = SPACE_YO;
-
-  QFontMetrics fm = titlebarBox->font();
-  int titleH = fm.height();
-  int titleW = fm.width( titlebarBox->title() );
-  int buttonH = vShaded->height();
-  int buttonW = max( vShaded->width(), plain->width() );
-  buttonW = max( buttonW, hShaded->width() );
-  buttonW = max( buttonW, pixmap->width() );
-  int boxH = 0;
-  int boxW = 0;
-  boxH = 4*buttonH + 5*SPACE_YI + titleH;
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-  vShaded->move(SPACE_XI, SPACE_YI + titleH);
-  hShaded->move(SPACE_XI, 2*SPACE_YI + buttonH +titleH);
-  plain->move(SPACE_XI, 3*SPACE_YI + 2 * buttonH + titleH);
-  pixmap->move(SPACE_XI, 4*SPACE_YI + 3 * buttonH + titleH);
-  titlebarBox->setGeometry(SPACE_XO, h, boxW, boxH);
-  pixmapBox->setGeometry(2*SPACE_XO+boxW, h, boxW, boxH);
-
-  h += boxH + SPACE_YO;
-
-  //CT 11feb98 place dblclick combo on tab
-  int dw = lDblClick->width();
-  int dh = lDblClick->height();
-  int cw = dblClickCombo->width();
-  int ch = dblClickCombo->height();
-  int boxX = SPACE_XO;
-
-  if ((dw > (boxW - 2*SPACE_XI)) ||
-      (cw > (boxW - 2*SPACE_XI)) )
-    boxW = 2*boxW + SPACE_XO;
-  else
-    boxX = boxW/2 + SPACE_XO;
-
-
-  if (((dw+cw) > (boxW - 3*SPACE_XI)) &&
-      ((dh+ch) > (boxH - 3*SPACE_YI)))
-    boxH = dh + ch + 3*SPACE_YI;
-  else
-    if ((dw+cw) <= (boxW - 3*SPACE_XI))
-      boxH = (dh>ch?dh:ch)+2*SPACE_YI+titleH;
-
-  titlebarDblClickBox->setGeometry(boxX, h, boxW, boxH);
-
-  if (((dw+cw) > (boxW - 3*SPACE_XI))) {
-    lDblClick->setGeometry( (boxW - dw)/2, SPACE_YI+titleH/2, dw, dh);
-
-    dblClickCombo->setGeometry((boxW - cw)/2,
-			       dh + 2*SPACE_YI+titleH/2,
-			       cw, ch);
-  }
-  else {
-    lDblClick->setGeometry( SPACE_XI, (boxH - dh)/2+titleH/2, dw, dh);
-
-    dblClickCombo->setGeometry(dw + 2*SPACE_XI, (boxH-ch)/2+titleH/2, cw, ch);
-  }
-
-  h += boxH + SPACE_YO;
-  //CT ---
-
-  dw = SPACE_XO;
-
-  cw = tlabel->width();
-  tlabel->move(dw, h);
-
-  titleAnim->setGeometry(dw + cw + 2*SPACE_XO, h, 200, tlabel->height()+SPACE_YO/2);
-  h += titleAnim->height() ;
-  int center = titleAnim->x() + ( titleAnim->width() - cw )/2;
-  dh = ( t->height() - sec->height() )/2;
-  t->move(center, h);
-  sec->move(t->x() + cw + 3, h+dh);
-  h += t->height() + SPACE_YO;
-
-  cw = max(lPixmapActive->width(), lPixmapInactive->width());
-  lPixmapActive->move(SPACE_XI, SPACE_YI + titleH);
-  lPixmapInactive->move(SPACE_XI, 2*SPACE_YI + titleH + pbPixmapActive->height());
-  pbPixmapActive->move(SPACE_XI+cw+SPACE_XO, + titleH);
-  pbPixmapInactive->move(SPACE_XI+cw+SPACE_XO, SPACE_YI + titleH + pbPixmapActive->height());
-  pixmapBox->resize(2*SPACE_XI+cw+SPACE_XO+pbPixmapActive->width(), pixmapBox->height());
-
-  h += 2*lPixmapActive->height() + 2*SPACE_YI;
-}
 
 int KTitlebarAppearance::getTitlebar()
 {
@@ -1208,11 +1205,11 @@ void KTitlebarAppearance::SaveSettings( void )
   //CT 18Oct1998 - save the pixmaps
   if (t == TITLEBAR_PIXMAP ) {
     //first, a backup
-    sPixmapInactive = kapp->localkdedir() +
-      "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
-
-    if (!pixmapInactiveOld.isNull())
-      pixmapInactiveOld.save(sPixmapInactive,"XPM");
+    sPixmapActive = kapp->localkdedir() +
+      "/share/apps/kwm/pics/oldactivetitlebar.xpm";
+    
+    if (!pixmapActiveOld.isNull())
+      pixmapActiveOld.save(sPixmapActive,"XPM");
 
     sPixmapInactive = kapp->localkdedir() +
       "/share/apps/kwm/pics/oldinactivetitlebar.xpm";
@@ -1226,10 +1223,14 @@ void KTitlebarAppearance::SaveSettings( void )
     sPixmapInactive = kapp->localkdedir() +
       "/share/apps/kwm/pics/inactivetitlebar.xpm";
 
+    //CT FIXME lazy!!! Uuuugly
+    system((const char *) ("rm " + sPixmapActive + " " + sPixmapInactive));
+
     bool a_saved, i_saved;
     if (!pixmapActive.isNull())
       a_saved = pixmapActive.save(sPixmapActive,"XPM");
-    else a_saved = FALSE;
+    else 
+      a_saved = FALSE;
 
     if (!pixmapInactive.isNull())
       i_saved = pixmapInactive.save(sPixmapInactive,"XPM");
@@ -1237,8 +1238,8 @@ void KTitlebarAppearance::SaveSettings( void )
       i_saved = FALSE;
 
     //and a little check
-    if (!a_saved || !i_saved) {
-      QMessageBox::critical(this, "Titlebar Appearence",
+    if ( !( a_saved && i_saved ) ) {
+      QMessageBox::critical(this, "Window manager setup - ERROR",
 			    "There was an error while saving\n"
 			    "the titlebar pixmaps! Please check permissions.");
     }
@@ -1251,18 +1252,19 @@ void KTitlebarAppearance::SaveSettings( void )
   //CT 11feb98 action on double click on titlebar
   a = getDCTBAction();
   switch (a) {
-  case DCTB_MOVE:
+    //CT 23Oct1998 took out useless checks
+    /*  case DCTB_MOVE:
     config->writeEntry(KWM_DCTBACTION, "winMove");
     break;
   case DCTB_RESIZE:
     config->writeEntry(KWM_DCTBACTION, "winResize");
-    break;
+    break;*/
   case DCTB_MAXIMIZE:
     config->writeEntry(KWM_DCTBACTION, "winMaximize");
     break;
-  case DCTB_RESTORE:
+    /*  case DCTB_RESTORE:
     config->writeEntry(KWM_DCTBACTION, "winRestore");
-    break;
+    break;*/
   case DCTB_ICONIFY:
     config->writeEntry(KWM_DCTBACTION, "winIconify");
     break;
@@ -1275,9 +1277,9 @@ void KTitlebarAppearance::SaveSettings( void )
   case DCTB_SHADE:
     config->writeEntry(KWM_DCTBACTION, "winShade");
     break;
-  case DCTB_OPERATIONS:
+    /*  case DCTB_OPERATIONS:
     config->writeEntry(KWM_DCTBACTION, "winOperations");
-    break;
+    break;*/
   //CT should never get here
   default:     config->writeEntry(KWM_DCTBACTION, "winMaximize");
   }
@@ -1317,15 +1319,17 @@ void KTitlebarAppearance::GetSettings( void )
   setTitleAnim(k);
 
   key = config->readEntry(KWM_DCTBACTION);
-  if (key == "winMove") setDCTBAction(DCTB_MOVE);
-  else if (key == "winResize") setDCTBAction(DCTB_RESIZE);
-  else if (key == "winMaximize") setDCTBAction(DCTB_MAXIMIZE);
-  else if (key == "winRestore") setDCTBAction(DCTB_RESTORE);
+  //CT 23Oct1998 continue what Matthias started 
+  //   took out useless checks
+  //  if (key == "winMove") setDCTBAction(DCTB_MOVE);
+  //  else if (key == "winResize") setDCTBAction(DCTB_RESIZE);
+  /*else*/ if (key == "winMaximize") setDCTBAction(DCTB_MAXIMIZE);
+  //  else if (key == "winRestore") setDCTBAction(DCTB_RESTORE);
   else if (key == "winIconify") setDCTBAction(DCTB_ICONIFY);
   else if (key == "winClose") setDCTBAction(DCTB_CLOSE);
   else if (key == "winSticky") setDCTBAction(DCTB_STICKY);
   else if (key == "winShade") setDCTBAction(DCTB_SHADE);
-  else if (key == "winOperations") setDCTBAction(DCTB_OPERATIONS);
+  //  else if (key == "winOperations") setDCTBAction(DCTB_OPERATIONS);
   else setDCTBAction(DCTB_MAXIMIZE);
 
 }

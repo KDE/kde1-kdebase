@@ -41,7 +41,7 @@ public:
 
 private:
 
-  KWindowConfig *windows;
+  KWindowConfig *options;
   KTitlebarButtons *buttons;
   KTitlebarAppearance *appearance;
   KDesktopConfig *desktop;
@@ -52,13 +52,13 @@ private:
 KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
   : KControlApplication(argc, argv, name)
 {
-  windows = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0;
+  options = 0; buttons = 0; appearance = 0; desktop = 0; mouse = 0; decors = 0;
 
   if (runGUI())
     {
-      if (!pages || pages->contains("windows"))
-	addPage(windows = new KWindowConfig(dialog, "windows"), 
-		klocale->translate("&Windows"), "kwm-3.html");
+      if (!pages || pages->contains("options"))
+	addPage(options = new KWindowConfig(dialog, "options"), 
+		klocale->translate("&Options"), "kwm-3.html");
       if (!pages || pages->contains("buttons"))
 	addPage(buttons = new KTitlebarButtons(dialog, "buttons"),
 		klocale->translate("&Buttons"), "kwm-1.html");
@@ -67,16 +67,16 @@ KKWMApplication::KKWMApplication(int &argc, char **argv, const char *name)
 		klocale->translate("&Titlebar"), "kwm-2.html");
       if (!pages || pages->contains("borders"))
 	addPage(desktop = new KDesktopConfig(dialog, "borders"), 
-		klocale->translate("&Borders"), "kwm-3.html");
+		klocale->translate("Bo&rders"), "kwm-3.html");
       if (!pages || pages->contains("mouse"))
 	addPage(mouse = new KMouseConfig(dialog, "mouse"), 
 		klocale->translate("&Mouse"), "kwm-3.html");
 
-      if (windows || buttons || appearance || desktop || mouse)
+      if (options || buttons || appearance || desktop || mouse )
         dialog->show();
       else
         {
-          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {windows,buttons,titlebar,borders,mouse}]\n"));
+          fprintf(stderr, klocale->translate("usage: kcmkwm [-init | {options,buttons,titlebar,borders,mouse}]\n"));
           justInit = TRUE;
         }
 
@@ -91,8 +91,8 @@ void KKWMApplication::init()
 
 void KKWMApplication::apply()
 {
-  if (windows)
-    windows->applySettings();
+  if (options)
+    options->applySettings();
   if (desktop)
     desktop->applySettings();
   if (buttons)

@@ -25,7 +25,6 @@
 #define __KCONTROL_DISKNAV_H__
 
 #include <qbutton.h>
-#include <qlayout.h>
 #include <qlabel.h>
 #include <qbttngrp.h>
 #include <qcombo.h> 
@@ -50,19 +49,18 @@ public:
     virtual void saveSettings();
     virtual void applySettings();
 
-protected:
-    void  resizeEvent(QResizeEvent *e);
+    //CT protected:
+    //CT    void  resizeEvent(QResizeEvent *e);
 
 protected slots:
     void edit_global_clicked();
     void edit_local_clicked();
 
 private:
-    QVBoxLayout *layout;
     QLabel *edit_entries;
     QPushButton *edit_global;
     QPushButton *edit_local;
-    QGroupBox *misc_group;
+    QGroupBox *hist_group, *misc_group;
 
     QLabel *recent_folders_size;
     QLabel *recent_files_size;

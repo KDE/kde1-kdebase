@@ -28,6 +28,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include <qlayout.h> //CT 21Oct1998
 #include <kapp.h>
 
 #include <X11/X.h>
@@ -51,52 +52,83 @@
 
 KWindowConfig::~KWindowConfig ()
 {
-  delete transparent;
-  delete opaque;
-  delete moveBox;
-
-  delete placementCombo;    
-  delete iTLabel;                       
-  delete interactiveTrigger;
-  delete placementBox;      
-
-  delete focusCombo;
-  delete autoRaise;
-  delete alabel;
-  delete s;
-  delete sec;
-  delete focusBox;
-
-  delete resizeAnimSlider;
-  delete resizeAnimTitleLabel;
-  delete resizeAnimNoneLabel;
-  delete resizeAnimFastLabel;
-  delete resizeOpaqueOn;
-  delete resizeBox;
 }
 
 extern KConfig *config;
 
+//CT 19Oct1998 - rewritten
 KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   : KConfigWidget (parent, name)
 {
-  // move type
-  moveBox = new QButtonGroup(klocale->translate("Window movement"), this);
-  transparent = new QRadioButton(klocale->translate("Transparent"), moveBox);
-  opaque = new QRadioButton(klocale->translate("Opaque"), moveBox);
 
-  // resize animation - CT 27May98
-  resizeBox = new QButtonGroup(klocale->translate("Window resize"), this);
-  resizeAnimTitleLabel = new QLabel(klocale->translate("Animation:"),resizeBox);
-  resizeAnimNoneLabel= new QLabel(klocale->translate("None"),resizeBox);
-  resizeAnimFastLabel= new QLabel(klocale->translate("Fast"),resizeBox);
-  resizeAnimSlider = new KSlider(0,10,10,0,KSlider::Horizontal, resizeBox);
+  QBoxLayout *lay = new QVBoxLayout (this, 5);
+
+  windowsBox = new QButtonGroup(klocale->translate("Windows"), this);
+
+  QBoxLayout *wLay = new QVBoxLayout (windowsBox,10,5);
+  wLay->addSpacing(10);
+
+  QBoxLayout *bLay = new QVBoxLayout(5);
+  wLay->addLayout(bLay);
+
+  QGridLayout *rLay = new QGridLayout(2,3,5);
+  wLay->addLayout(rLay);
+  rLay->setColStretch(0,0);
+  rLay->setColStretch(1,1);
+  
+  //CT checkboxes: maximize, move, resize behaviour
+  vertOnly = new QCheckBox(klocale->translate("Vertical maximization only by default"), windowsBox);
+  vertOnly->adjustSize();
+  vertOnly->setMinimumSize(vertOnly->size());
+  bLay->addWidget(vertOnly);
+
+  opaque = new QCheckBox(klocale->translate("Display content in moving windows"), windowsBox);
+  opaque->adjustSize();
+  opaque->setMinimumSize(opaque->size());
+  bLay->addWidget(opaque);
+
+  resizeOpaqueOn = new QCheckBox(klocale->translate("Display content in resizing windows"), windowsBox);
+  resizeOpaqueOn->adjustSize();
+  resizeOpaqueOn->setMinimumSize(resizeOpaqueOn->size());
+  bLay->addWidget(resizeOpaqueOn);
+ 
+  // resize animation - CT 27May98; 19Oct1998
+  resizeAnimTitleLabel = new QLabel(klocale->translate("Resize animation:"),
+				    windowsBox);
+  resizeAnimTitleLabel->adjustSize();
+  resizeAnimTitleLabel->setMinimumSize(resizeAnimTitleLabel->size());
+  rLay->addWidget(resizeAnimTitleLabel,0,0);
+
+  resizeAnimSlider = new KSlider(0,10,10,0,KSlider::Horizontal, windowsBox);
   resizeAnimSlider->setSteps(10,1);
-  resizeOpaqueOn = new QCheckBox(klocale->translate("Opaque"), resizeBox);
+  //  resizeAnimSlider->setFixedHeight(20);
+  resizeAnimSlider->adjustSize();
+  resizeAnimSlider->setMinimumSize(resizeAnimSlider->size());
+  rLay->addMultiCellWidget(resizeAnimSlider,0,0,1,2);
+
+  resizeAnimNoneLabel= new QLabel(klocale->translate("None"),windowsBox);
+  resizeAnimNoneLabel->adjustSize();
+  resizeAnimNoneLabel->setMinimumSize(resizeAnimNoneLabel->size());
+  resizeAnimNoneLabel->setAlignment(AlignTop|AlignLeft);
+  rLay->addWidget(resizeAnimNoneLabel,1,1);
+
+  resizeAnimFastLabel= new QLabel(klocale->translate("Fast"),windowsBox);
+  resizeAnimFastLabel->adjustSize();
+  resizeAnimFastLabel->setMinimumSize(resizeAnimFastLabel->size());
+  resizeAnimFastLabel->setAlignment(AlignTop|AlignRight);
+  rLay->addWidget(resizeAnimFastLabel,1,2);
+
+  wLay->activate();
+
+  lay->addWidget(windowsBox);
 
   // placement policy --- CT 19jan98, 13mar98 ---
-  placementBox = new QButtonGroup(klocale->translate("Placement policy"), this);
-  placementCombo = new QComboBox(FALSE, placementBox);
+  plcBox = new QButtonGroup(klocale->translate("Placement policy"),this);
+  
+  QGridLayout *pLay = new QGridLayout(plcBox,2,3,10,5);
+  pLay->addRowSpacing(0,10);
+
+  placementCombo = new QComboBox(FALSE, plcBox);
   placementCombo->insertItem(klocale->translate(i18n("Smart")),
 			     SMART_PLACEMENT);
   placementCombo->insertItem(klocale->translate(i18n("Cascade")),
@@ -108,24 +140,43 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
   placementCombo->insertItem(klocale->translate(i18n("Manual")),
 			     MANUAL_PLACEMENT);
   placementCombo->setCurrentItem(SMART_PLACEMENT);
-  //CT 13mar98 interactive trigger config
+  placementCombo->adjustSize();
+  placementCombo->setMinimumSize(placementCombo->size());
+  pLay->addWidget(placementCombo,1,0);
 
+  //CT 13mar98 interactive trigger config
   connect(placementCombo, SIGNAL(activated(int)),this,
 	  SLOT(ifPlacementIsInteractive()) );
-  iTLabel = new QLabel(klocale->translate(i18n("Allowed Overlap:")), 
-		       placementBox);
-  interactiveTrigger = new KNumericSpinBox(placementBox);
-  interactiveTrigger->setRange(0,500);
-  
-  
-  // maximize behaviour
-  maximizeBox = new QButtonGroup(klocale->translate("Maximize Style"), this);
-  fullScreen =  new QRadioButton(klocale->translate("Maximize fully"), maximizeBox);
-  vertOnly = new QRadioButton(klocale->translate("Maximize vertically"), maximizeBox);
 
+  iTLabel = new QLabel(klocale->translate(i18n("  Allowed overlap:\n"
+					       "(% of desktop space)")), 
+		       plcBox);
+  iTLabel->adjustSize();
+  iTLabel->setMinimumSize(iTLabel->size());
+  iTLabel->setAlignment(AlignTop|AlignHCenter);
+  pLay->addWidget(iTLabel,1,1);
+  
+  interactiveTrigger = new KNumericSpinBox(plcBox);
+  interactiveTrigger->setRange(0,500);
+  interactiveTrigger->adjustSize();
+  interactiveTrigger->setMinimumSize(interactiveTrigger->size());
+  pLay->addWidget(interactiveTrigger,1,2);
+
+  pLay->activate();
+
+  lay->addWidget(plcBox);
+  
   // focus policy
-  focusBox = new QButtonGroup(klocale->translate("Focus Policy"), this);
-  focusCombo =  new QComboBox(FALSE, focusBox);
+  fcsBox = new QButtonGroup(klocale->translate("Focus policy"),this);
+  
+  QGridLayout *fLay = new QGridLayout(fcsBox,5,3,10,5);
+  fLay->addRowSpacing(0,10);
+  fLay->setColStretch(0,0);
+  fLay->setColStretch(1,1);
+  fLay->setColStretch(2,1);
+  
+
+  focusCombo =  new QComboBox(FALSE, fcsBox);
   focusCombo->insertItem(klocale->translate("Click to focus"), 
 			 CLICK_TO_FOCUS);
   focusCombo->insertItem(klocale->translate("Focus follows mouse"), 
@@ -134,184 +185,67 @@ KWindowConfig::KWindowConfig (QWidget * parent, const char *name)
 			 CLASSIC_FOCUS_FOLLOWS_MOUSE);
   focusCombo->insertItem(klocale->translate("Classic sloppy focus"), 
 			 CLASSIC_SLOPPY_FOCUS);
+  focusCombo->adjustSize();
+  focusCombo->setMinimumSize(focusCombo->size());
+  fLay->addMultiCellWidget(focusCombo,1,1,0,1);
+
   connect(focusCombo, SIGNAL(activated(int)),this,
 	  SLOT(setAutoRaiseEnabled()) );
 
-
   // autoraise delay
-  autoRaise = new KSlider(0,3000,100,0, KSlider::Horizontal, focusBox);
-  autoRaise->setSteps(100,100);
-  alabel = new QLabel(klocale->translate("Auto raise delay\n(<100 disables)"), focusBox);
-  s = new QLCDNumber (5, focusBox);
-  s->setFrameStyle( QFrame::NoFrame );
-  sec = new QLabel(klocale->translate("miliseconds"), focusBox);
-  connect( autoRaise, SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
-  s->adjustSize();
+
+  autoRaiseOn = new QCheckBox(klocale->translate("Auto Raise"), fcsBox);
+  autoRaiseOn->adjustSize();
+  autoRaiseOn->setMinimumSize(autoRaiseOn->size());
+  fLay->addWidget(autoRaiseOn,2,0);
+
+  connect(autoRaiseOn,SIGNAL(toggled(bool)), this, SLOT(autoRaiseOnTog(bool)));
+
+  alabel = new QLabel(klocale->translate("Delay (ms)"), fcsBox);
   alabel->adjustSize();
-  sec->adjustSize();
+  alabel->setMinimumSize(alabel->size());
+  alabel->setAlignment(AlignVCenter|AlignHCenter);
+  fLay->addWidget(alabel,2,1);
+  
+  s = new QLCDNumber (4, fcsBox);
+  s->setFrameStyle( QFrame::NoFrame );
+  s->setFixedHeight(30);
+  s->adjustSize();
+  s->setMinimumSize(s->size());
+  fLay->addWidget(s,2,2);
+
+  autoRaise = new KSlider(100,3000,100,500, KSlider::Horizontal, fcsBox);
+  autoRaise->setSteps(100,100);
+  autoRaise->setFixedHeight(20);
+  autoRaise->adjustSize();
+  autoRaise->setMinimumSize(alabel->width()+s->width(), autoRaise->height());
+  fLay->addMultiCellWidget(autoRaise,3,3,1,2);
+ 
+  connect( autoRaise, SIGNAL(valueChanged(int)), s, SLOT(display(int)) );
+
+  fLay->activate();
+
+  lay->addWidget(fcsBox);
+
+  lay->activate();
 
   GetSettings();
 }
 
-void KWindowConfig::resizeEvent(QResizeEvent *)
-{
-  int h = SPACE_YO;
-  int boxW = 0;
-
-  QFontMetrics fm = moveBox->font();
-  int titleW;
-  int buttonW;
-  int titleH = fm.height();
-
-  // move type
-  transparent->adjustSize();
-  opaque->adjustSize();
-  
-  int buttonH = transparent->height();
-  int boxH1 = 2*buttonH + 3*SPACE_YI + titleH;
-  int boxH2 = 3*buttonH + 4*SPACE_YI + titleH;
-
-  transparent->move(SPACE_XI, SPACE_YI + titleH);
-  opaque->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
-  int h1 = h;
-
-  titleW = fm.width(moveBox->title());
-  buttonW = max( transparent->width(), opaque->width() );
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-  // resize animation
-  int tmpY = SPACE_YI + titleH;
-  int tmpX = SPACE_XI;
-  resizeOpaqueOn->adjustSize();
-  resizeOpaqueOn->move(SPACE_XI, tmpY);
-  resizeAnimTitleLabel->adjustSize();
-  resizeAnimNoneLabel->adjustSize();
-  resizeAnimFastLabel->adjustSize();
-
-  tmpY = tmpY + SPACE_YI + buttonH;
-  resizeAnimTitleLabel->move(SPACE_XI, tmpY);
-
-  tmpX = tmpX + resizeAnimNoneLabel->width()/2;
-  tmpY = tmpY + resizeAnimTitleLabel->height();
-  resizeAnimSlider->setGeometry(tmpX,tmpY,150,20);
-
-  tmpX = tmpX + resizeAnimSlider->width()-resizeAnimFastLabel->width()/2;
-  tmpY = tmpY + resizeAnimSlider->height();
-  resizeAnimNoneLabel->move(SPACE_XI,tmpY);
-  resizeAnimFastLabel->move(tmpX,tmpY);
-  
-  tmpX = tmpX + resizeAnimFastLabel->width();
-
-  int h2 = h;
-  h += boxH2 + SPACE_YO;
-
-  titleW = fm.width(resizeBox->title());
-  buttonW = max( tmpX, resizeOpaqueOn->width() );
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-  // placement policy --- CT 31jan98 ---
-  placementCombo->adjustSize();
-  iTLabel->adjustSize();
-  if (placementCombo->width() < (boxW - 2*SPACE_XI)) 
-    placementCombo->setGeometry(SPACE_XI,
-				SPACE_YI + titleH,
-				boxW - 2*SPACE_XI,
-				placementCombo->height());
-  else
-    placementCombo->move(SPACE_XI, SPACE_YI + titleH);
-  //CT 13mar98
-  iTLabel->move(SPACE_XI, 2*SPACE_YI+placementCombo->height() + titleH/2);
-  interactiveTrigger->setGeometry(3/2*SPACE_XI+iTLabel->width(),
-				  2*SPACE_YI+placementCombo->height() 
-				  + titleH/2,
-				  40,20);
-  int h3 = h;
-
-  titleW = fm.width(placementBox->title());
-  buttonW = placementCombo->width();
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-  // maximize behaviour
-  fullScreen->adjustSize();
-  fullScreen->move(SPACE_XI, SPACE_YI + titleH);
-  vertOnly->adjustSize();
-  vertOnly->move(SPACE_XI, 2*SPACE_YI + buttonH + titleH);
-  int h4 = h;
-  h += boxH1 + SPACE_YO;
-
-  titleW = fm.width(maximizeBox->title());
-  buttonW = max( fullScreen->width(), vertOnly->width() );
-  if (boxW < titleW + 4*SPACE_XI)
-    boxW =  titleW + 4*SPACE_XI;
-  if (boxW < buttonW + 2*SPACE_XI)
-    boxW = buttonW + 2*SPACE_XI;
-
-    // focus policy
-  focusCombo->adjustSize();
-  focusCombo->move(SPACE_XI, SPACE_YI + titleH);
-  if (focusCombo->width() < (boxW - 2*SPACE_XI)) 
-    focusCombo->setGeometry(SPACE_XI + boxW,
-				SPACE_YI + titleH,
-				boxW - 2*SPACE_XI,
-				focusCombo->height());
-  else
-    focusCombo->move(SPACE_XI, SPACE_YI + titleH);
-
-  tmpY = 2*SPACE_YI + focusCombo->height() + titleH;
-  alabel->move(SPACE_XI, tmpY);
-
-  autoRaise->setGeometry(alabel->width() + 2*SPACE_XI, tmpY,
-			 200, alabel->height());
-  tmpY = tmpY + autoRaise->height() ;
-  int center = autoRaise->x() + ( autoRaise->width() - s->width() )/2;
-  int dh = ( s->height() - sec->height() )/2;
-  s->move(center, tmpY);
-  sec->move(s->x() + s->width() + 3, tmpY+dh);
-  tmpY = tmpY + s->height() + SPACE_YI;
-  tmpX = alabel->width() + SPACE_XI + autoRaise->width();
-
-  titleW = fm.width(focusBox->title());
-  buttonW = max(focusCombo->width(), tmpX);
-
-  int h5 = h;
-  h += boxH2 + SPACE_YO;
-
-  moveBox->setGeometry(SPACE_XO, h1, boxW, boxH2);
-  resizeBox->setGeometry(moveBox->x() + boxW + SPACE_XO, h2, boxW, boxH2);
-  placementBox->setGeometry(SPACE_XO, h3, boxW, boxH1);
-  maximizeBox->setGeometry(placementBox->x()+ boxW + SPACE_XO, h4, boxW, boxH1);
-  focusBox->setGeometry(SPACE_XO , h5, 2*boxW+SPACE_XO, tmpY);
-}
-
 int KWindowConfig::getMove()
 {
-  if (transparent->isChecked())
-    return TRANSPARENT;
-  else
+  if (opaque->isChecked())
     return OPAQUE;
+  else
+    return TRANSPARENT;
 }
 
 void KWindowConfig::setMove(int trans)
 {
   if (trans == TRANSPARENT)
-  {
-    transparent->setChecked(TRUE);
     opaque->setChecked(FALSE);
-  }
   else
-  {
     opaque->setChecked(TRUE);
-    transparent->setChecked(FALSE);
-  }
 }
 
 // placement policy --- CT 31jan98 ---
@@ -366,34 +300,38 @@ void KWindowConfig::setResizeOpaque(int opaque)
 void KWindowConfig::setMaximize(int tb)
 {
   if (tb == MAXIMIZE_FULL)
-  {
-    fullScreen->setChecked(TRUE);
     vertOnly->setChecked(FALSE);
-  }
   else
-  {
     vertOnly->setChecked(TRUE);
-    fullScreen->setChecked(FALSE);
-  }
 }
 
 int KWindowConfig::getMaximize()
 {
-  if (fullScreen->isChecked())
-    return MAXIMIZE_FULL;
-  else
+  if (vertOnly->isChecked())
     return MAXIMIZE_VERT;
+  else
+    return MAXIMIZE_FULL;
 }
 
 void KWindowConfig::setAutoRaise(int tb)
 {
-  autoRaise->setValue(tb);
-  s->display(tb);
+  if (tb <100) {
+    autoRaiseOn->setChecked(FALSE);
+    autoRaiseOnTog(FALSE);
+  }
+  else {
+    autoRaiseOnTog(TRUE);
+    autoRaiseOn->setChecked(TRUE);
+    autoRaise->setValue(tb);
+    s->display(tb);
+  }
 }
 
 int KWindowConfig::getAutoRaise()
 {
-  return s->intValue();
+  if (autoRaiseOn->isChecked())
+    return s->intValue();
+  else return 0;
 }
 
 void KWindowConfig::setAutoRaiseEnabled( )
@@ -401,17 +339,21 @@ void KWindowConfig::setAutoRaiseEnabled( )
   // the auto raise related widgets are: autoRaise, alabel, s, sec
   if ( focusCombo->currentItem() != CLICK_TO_FOCUS )
     {
-      autoRaise->setEnabled(TRUE);
+      autoRaiseOn->setEnabled(TRUE);
+      autoRaiseOnTog(autoRaiseOn->isChecked());
+      /*CT  autoRaise->setEnabled(TRUE);
       alabel->setEnabled(TRUE);
-      s->setEnabled(TRUE);
-      sec->setEnabled(TRUE);
+      s->setEnabled(TRUE);*/
+      //CT      sec->setEnabled(TRUE);
     }
   else
     {
-      autoRaise->setEnabled(FALSE);
+      autoRaiseOn->setEnabled(FALSE);
+      autoRaiseOnTog(FALSE);
+      /*CT  autoRaise->setEnabled(FALSE);
       alabel->setEnabled(FALSE);
-      s->setEnabled(FALSE);
-      sec->setEnabled(FALSE);
+      s->setEnabled(FALSE);*/
+      //CT      sec->setEnabled(FALSE);
     }
 }
 
@@ -427,7 +369,15 @@ void KWindowConfig::ifPlacementIsInteractive( )
     interactiveTrigger->hide();
   }
 }
+//CT
 
+//CT 23Oct1998 make AutoRaise toggling much clear
+void KWindowConfig::autoRaiseOnTog(bool a) {
+  autoRaise->setEnabled(a);
+  s->setEnabled(a);
+  alabel->setEnabled(a);
+}
+//CT
 
 void KWindowConfig::GetSettings( void )
 {
