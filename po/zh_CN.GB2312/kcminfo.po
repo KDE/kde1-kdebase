@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.cpp:50
+msgid "&Memory"
+msgstr "内存[&M]"
+
+#: main.cpp:53
+msgid "&Processor"
+msgstr "处理器[&P]"
+
+#: main.cpp:62
+msgid "usage: kcminfo [-init | {processor,memory}]\n"
+msgstr "用法: kcminfo [-init | {processor, memory}]\n"
+
+#: main.cpp:74
+msgid "System Information"
+msgstr "系统信息"
+
+#: memory.cpp:11
+msgid "Total memory"
+msgstr "内存总量"
+
+#: memory.cpp:21
+msgid "Free memory"
+msgstr "空闲内存"
+
+#: memory.cpp:29
+msgid "Shared memory"
+msgstr "共享的内存"
+
+#: memory.cpp:37
+msgid "Buffer memory"
+msgstr "缓冲区内存"
+
+#: memory.cpp:45
+#, fuzzy
+msgid "Swap memory"
+msgstr "共享的内存"
+
+#: memory.cpp:53
+msgid "Free swap memory"
+msgstr "空闲交换区"
+
+#: memory.cpp:74
+#, c-format
+msgid "%10ld bytes  = %8.2f MB"
+msgstr "%10ld Bytes  = %8.2f MB"
+
+#: memory.cpp:96 memory.cpp:97 memory.cpp:98 memory.cpp:99 memory.cpp:100
+#: memory.cpp:101
+msgid "not available"
+msgstr ""
+
+#: processor.cpp:29
+msgid "This system is not yet supported :-("
+msgstr "这个系统还不被支持 :-("

@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.C:67
+msgid ""
+"kwm: it looks like there's already a window manager running.  kwm not "
+"started\n"
+msgstr "kwm: 已经有一个窗口管理器在运行. kwm 没有启动\n"
+
+#: main.C:81
+msgid "kwm: failure during initialisation; aborting\n"
+msgstr "kwm: 初始化发生错误; 中止\n"
+
+#: main.C:448
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr ""
+
+#: main.C:455
+msgid "Usage: "
+msgstr "用法: "
+
+#: main.C:466
+msgid "&Maximize"
+msgstr "最大化[&M]"
+
+#: main.C:467
+msgid "&Restore"
+msgstr "还原[&R]"
+
+#: main.C:468
+msgid "&Iconify"
+msgstr "图标化[&I]"
+
+#: main.C:469
+msgid "&DeIconify"
+msgstr "还原[&D]"
+
+#: main.C:470
+msgid "&Sticky"
+msgstr "粘附[&S]"
+
+#: main.C:471
+msgid "&UnSticky"
+msgstr "取消粘附[&U]"
+
+#: main.C:472
+msgid "Mo&ve"
+msgstr "移动[&V]"
+
+#: main.C:473
+msgid "Resi&ze"
+msgstr "改变窗口大小[&Z]"
+
+#: main.C:475
+msgid "&To desktop"
+msgstr "移至桌面[&T]"
+
+#: main.C:477
+msgid "&Onto current desktop"
+msgstr "移至当前桌面[&O]"
+
+#: main.C:530
+msgid "One"
+msgstr "一"
+
+#: main.C:533
+msgid "Two"
+msgstr "二"
+
+#: main.C:536
+msgid "Three"
+msgstr "三"
+
+#: main.C:539
+msgid "Four"
+msgstr "四"
+
+#: main.C:542
+msgid "Five"
+msgstr "五"
+
+#: main.C:545
+msgid "Six"
+msgstr "六"
+
+#: main.C:548
+msgid "Seven"
+msgstr "七"
+
+#: main.C:551
+msgid "Eight"
+msgstr "八"
+
+#: main.C:855
+msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
+msgstr ""
+
+#: main.C:1164
+msgid "*** No Tasks ***"
+msgstr "*** 没有任何任务 ***"
+
+#: minicli.C:115
+msgid "Command:"
+msgstr "命令:"
+
+#: logout.C:36 taskmgr.C:107
+msgid "Logout"
+msgstr "离线"
+
+#: logout.C:46
+msgid "Session prepared for logout"
+msgstr "现在可以退出会话了"
+
+#: logout.C:52
+msgid ""
+"The following applications contain unsaved data which\n"
+"will be lost in your next session."
+msgstr ""
+"下面列出的应用程序包含了未保存的数据,\n"
+"这些数据在下次进入时可能会丢失."
+
+#: logout.C:63
+msgid ""
+"The following applications cannot be restored in your next session,\n"
+"only restarted. Make sure they do not contain important unsaved data."
+msgstr ""
+"下面列出的应用程序在下次进入时不能被还原到当前状态,\n"
+"只会被重新启动. 请确定它们没有包含未保存的重要数据."
+
+#: logout.C:74
+msgid ""
+"The following applications are not X11-aware and though cannot be restored\n"
+"in your next session. Make sure they do not contain important unsaved data."
+msgstr ""
+"下面列出的应用程序不是 X11 所知的, 下次进入时不能还原到当前状态.\n"
+"请确定它们没有包含未保存的重要数据."
+
+#: taskmgr.C:106
+msgid "Switch to"
+msgstr "切换至"
+
+#: taskmgr.C:120
+msgid "Current session"
+msgstr "当前会话"

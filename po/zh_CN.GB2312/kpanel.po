@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:52+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: kpanel.C:213
+msgid "Move"
+msgstr "移动"
+
+#: kpanel.C:216
+msgid "Properties"
+msgstr "特性"
+
+#: kpanel.C:253
+msgid "Go!"
+msgstr "Go!"
+
+#: kpanel.C:256 tools.C:795
+msgid "Where do you want to go tomorrow?"
+msgstr "主菜单"
+
+#: kpanel.C:329
+msgid "No info available"
+msgstr "没有信息"
+
+#: kpanel.C:368 props.C:156 props.C:157
+msgid "Logout"
+msgstr "离线"
+
+#: kpanel.C:376 props.C:155
+msgid "Lock screen"
+msgstr "锁住屏幕"
+
+#: kpanel.C:385
+msgid "Hide the panel"
+msgstr "隐藏面板"
+
+#: kpanel.C:395
+msgid "Show the panel"
+msgstr "显示面板"
+
+#: kpanel.C:1093 tools.C:611
+msgid "No comment available"
+msgstr "没有说明"
+
+#: kpanel.C:1102 tools.C:804
+msgid "Windowlist"
+msgstr "窗口列表"
+
+#: props.C:136
+msgid "Add application"
+msgstr "增加应用程序"
+
+#: props.C:138
+msgid "Add an application or a submenu onto the panel"
+msgstr "在窗口面板上新增应用程序或是子菜单"
+
+#: props.C:139
+msgid "Add windowlist"
+msgstr "加在窗口列表中"
+
+#: props.C:141
+msgid "Add a windowlist menu onto the panel"
+msgstr "在窗口面板上新增窗口列表菜单"
+
+#: events.C:705 props.C:142
+msgid "Configure"
+msgstr "配置"
+
+#: props.C:144
+msgid "Configure panel"
+msgstr "配置面板"
+
+#: props.C:145
+msgid "Edit Menus"
+msgstr ""
+
+#: props.C:147
+msgid "Add or remove applications in the menu structure "
+msgstr ""
+
+#: events.C:707 props.C:148
+msgid "Restart"
+msgstr "重新开始"
+
+#: props.C:150
+msgid "Restart panel"
+msgstr "重新启动面板"
+
+#: props.C:151
+msgid "Panel"
+msgstr "面板"
+
+#: props.C:153
+msgid "Lock Screen"
+msgstr "锁住屏幕"
+
+#: props.C:307
+msgid "The menu editor is not installed."
+msgstr ""
+
+#: events.C:743 props.C:308
+msgid "Oops!"
+msgstr "糟糕"
+
+#: events.C:742
+msgid "Cannot put this as button onto the panel!"
+msgstr ""

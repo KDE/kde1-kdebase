@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkpanel\n"
+"POT-Creation-Date: 1998-04-16 00:51+0200\n"
+"PO-Revision-Date: 1998-02-21 05:04+0800\n"
+"Last-Translator: Wang Jian <lark@ipc.ustc.edu.cn>\n"
+"Language-Team: zh_CN ( gb2312 )\n"
+
+#: main.cpp:58
+msgid "KDE Font Manager"
+msgstr "KDE 字体管理器"
+
+#: main.cpp:71
+msgid "KDE Fonts"
+msgstr "KDE 字体"
+
+#: main.cpp:72
+msgid "Font Explorer"
+msgstr "字体总管"
+
+#: main.cpp:73
+msgid "Raw X11 Font List"
+msgstr "原始 X11 字体列表"
+
+#: kfontmanager.cpp:60
+msgid "Available X11 Fonts"
+msgstr "可用的 X11 字体"
+
+#: kfontmanager.cpp:67
+msgid "Fonts made available to KDE"
+msgstr "KDE 可用的字体"
+
+#: kfontmanager.cpp:87
+msgid "The KDE Font Manager Example String"
+msgstr "The KDE Font Manager 示例字符串"
+
+#: kfontlist.cpp:62 kfontmanager.cpp:109
+msgid "About kfontmanager"
+msgstr "关于 kfontmanager"
+
+#: kfontmanager.cpp:109
+msgid ""
+"kfontmanager Version 0.2\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
+
+#: kfontmanager.cpp:212
+msgid ""
+"The environment variable HOME\n"
+"is not set\n"
+msgstr "环境变量 HOME 没有设定\n"
+
+#: kfontmanager.cpp:289
+msgid ""
+"Can not create:\n"
+" ~/.kde/share/config/kdefonts\n"
+msgstr ""
+"无法建立文件:\n"
+" ~/.kde/share/config/kdefonts\n"
+
+#: kfontmanager.cpp:294
+msgid ""
+"~/.kde/share/config/kdefonts exists but\n"
+"is not writeable\n"
+"Can't save KDE Fontlist."
+msgstr ""
+"~/.kde/share/config/kdefonts 文件已经存在\n"
+"但是无法写入\n"
+"无法保存 KDE  字体列表."
+
+#: kfontlist.cpp:62
+msgid ""
+"kfontmanager Version 0.1\n"
+"Copyright 1997\n"
+"Bernd Johannes Wuebben\n"
+"wuebben@math.cornell.edu\n"
+msgstr ""
