@@ -176,27 +176,27 @@ msgstr "Sve datoteke i direktorije"
 
 #: kftabdlg.cpp:233
 msgid "Files"
-msgstr ""
+msgstr "Datoteke"
 
 #: kftabdlg.cpp:234
 msgid "Folders"
-msgstr ""
+msgstr "Direktoriji"
 
 #: kftabdlg.cpp:235
 msgid "Symbolic links"
-msgstr ""
+msgstr "Dvojnici"
 
 #: kftabdlg.cpp:236
 msgid "Special files (sockets, device files...)"
-msgstr ""
+msgstr "Posebne datoteke (socketi, device datoteke...)"
 
 #: kftabdlg.cpp:237
 msgid "Executable files"
-msgstr ""
+msgstr "Izvr¹ne datoteke"
 
 #: kftabdlg.cpp:238
 msgid "SUID executable files"
-msgstr ""
+msgstr "SUID izvr¹ne datoteke"
 
 #: kftabdlg.cpp:247
 msgid "At Least"

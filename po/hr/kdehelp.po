@@ -272,6 +272,12 @@ msgid ""
 "KDEHelp comes with ABSOLUTELY NO WARRANY to the extent permitted by "
 "applicable law."
 msgstr ""
+"\n"
+"\n"
+"Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
+"\n"
+"Ovaj program licenciran je pod GNU General Public License (GPL).\n"
+"KDEHelp dolazi BEZ IKAKVOG JAMSTVA."
 
 #: mainwidget.cpp:201
 msgid "&Goto"

@@ -83,11 +83,11 @@ msgstr "Promijeni postavu ploèe"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Uredi menije"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Dodaj ili ukloni aplikacije u strukturi menija "
 
 #: events.C:716 props.C:148
 msgid "Restart"
@@ -107,12 +107,12 @@ msgstr "Zakljuèaj Ekran"
 
 #: props.C:309
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Ureðivaè menija nije instaliran."
 
 #: events.C:752 props.C:310
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: events.C:751
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
+msgstr "Ne mogu staviti ovaj gumb na ploèu!"

@@ -73,7 +73,6 @@ msgid "About Bat"
 msgstr "O ©i¹mi¹u"
 
 #: bat.cpp:662
-#, fuzzy
 msgid ""
 "Bat\n"
 "\n"
@@ -81,7 +80,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
-"Bat\n"
+"©i¹mi¹\n"
 "\n"
 "Copyright (c) 1986 by Sun Microsystems\n"
 "\n"
@@ -153,7 +152,7 @@ msgstr "Blobs"
 
 #: bouboule.cpp:863
 msgid "Bouboule"
-msgstr ""
+msgstr "Bouboule"
 
 #: bouboule.cpp:1005
 msgid "Setup KBouboule"
@@ -221,7 +220,7 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
-"Flame inaèica 3.3\n"
+"Plamen inaèica 3.3\n"
 "\n"
 "Copyright (c) 1991 Patrick J. Naughton\n"
 "\n"
@@ -414,6 +413,8 @@ msgid ""
 "Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
 "       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 msgstr ""
+"Uporaba: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
 
 #: main.cpp:473
 msgid ""
@@ -463,6 +464,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Emanuel Pirker."
 msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 Marcelo F. Vianna\n"
+"\n"
+"Prilagodio za kscreensave Emanuel Pirker."
 
 #: polygon.cpp:64
 msgid "Polygons"
@@ -487,7 +493,7 @@ msgid ""
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
 msgstr ""
-"Polygon Version 0.1\n"
+"Poligon inaèica 0.1\n"
 "\n"
 "written by Martin R. Jones 1996\n"
 "mjones@kde.org"
@@ -520,6 +526,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Pyro inaèica 3.4\n"
+"\n"
+"Copyright (c) 1991 Patrick J. Naughton\n"
+"\n"
+"Prilagodio za kscreensave Martin Jones."
 
 #: rock.cpp:441
 msgid "Rock"
@@ -549,6 +560,11 @@ msgid ""
 "\n"
 "Ported to kscreensave by Martin Jones."
 msgstr ""
+"Stijena inaèica 3.3\n"
+"\n"
+"Copyright (c) 1992 Jamie Zawinski\n"
+"\n"
+"Prilagodio za kscreensave Martin Jones."
 
 #: saver.cpp:52 saver.cpp:112
 msgid "Enter Password"
@@ -560,7 +576,7 @@ msgstr "Gre¹ka"
 
 #: science.cpp:60
 msgid "Science"
-msgstr ""
+msgstr "Znanost"
 
 #: science.cpp:386
 msgid "Setup Science"

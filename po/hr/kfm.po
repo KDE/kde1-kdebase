@@ -182,7 +182,7 @@ msgstr "&Predmemorija"
 
 #: kfmgui.cpp:502
 msgid "Up"
-msgstr ""
+msgstr "Gore"
 
 #: kfmgui.cpp:550
 msgid "Stop"
@@ -702,7 +702,7 @@ msgstr ""
 
 #: kfmprops.cpp:662
 msgid "Swallowing on panel"
-msgstr ""
+msgstr "Gutanje na ploèi"
 
 #: kfmprops.cpp:680 kfmprops.cpp:703
 msgid "Execute"
@@ -718,7 +718,7 @@ msgstr "Radni direktorij"
 
 #: kfmprops.cpp:711
 msgid "Window Title"
-msgstr ""
+msgstr "Ime prozora"
 
 #: kfmprops.cpp:715
 msgid "Run in terminal"

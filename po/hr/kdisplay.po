@@ -265,11 +265,11 @@ msgstr "Ignoriraj"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Spremi zaslon"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Zakljuèaj zaslon (screen)"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"

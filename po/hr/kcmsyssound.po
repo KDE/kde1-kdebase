@@ -79,27 +79,27 @@ msgstr ""
 
 #: syssound.cpp:163
 msgid "Window Iconify"
-msgstr ""
+msgstr "Ikonifiraj prozor"
 
 #: syssound.cpp:164
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Aktiviraj ikonu prozora"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr ""
+msgstr "Poveæaj prozor"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr ""
+msgstr "Umanji prozor"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr ""
+msgstr "Nalijepi prozor"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr ""
+msgstr "Odlijepi prozor"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -111,11 +111,11 @@ msgstr ""
 
 #: syssound.cpp:171
 msgid "Logout"
-msgstr ""
+msgstr "Odjavi"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr ""
+msgstr "Odjavna Poruka"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
