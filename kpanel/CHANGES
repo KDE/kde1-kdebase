@@ -7,6 +7,7 @@ In kpanel-0.17:
          "SortOrder" entry of the ".directory" file now for a user
          defined sort order.
 	 This requires some changes to kmenuedit.
+       - bugfix for occassional crashes with fast addding/removing of windows
     Patchlevel 4:
        - paints scaled minicions everywhere, even in the system menu.
          I thought this looks ugly, but Torben requested this feature :-)

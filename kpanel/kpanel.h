@@ -96,6 +96,7 @@ class myTaskButton: public myPushButton
   Q_OBJECT
 public:
   myTaskButton ( QWidget *parent=0, const char* name=0 );
+  ~myTaskButton();
   void setText(const char*);
   void setActive(bool value = TRUE);
   Window win;

@@ -199,7 +199,7 @@ void myTaskButton::setActive(bool value){
   if (value){
     myTaskButton* tmp = active;
     active = this;
-    if (tmp)
+    if (tmp && tmp != this)
       tmp->setActive(FALSE);
     never_flat = FALSE;
     flat = !(rect().contains(mapFromGlobal(QCursor::pos()), TRUE));
