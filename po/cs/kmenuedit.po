@@ -90,7 +90,7 @@ msgstr "! CHRÁNÌNÉ tlaèítko !"
 
 #: confmenu.cpp:171 confmenu.cpp:292
 msgid "Warning !"
-msgstr "Varování !"
+msgstr "Pozor !"
 
 #: confmenu.cpp:172
 msgid "If you delete this button you will lose all of its submenus"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kfm\n"
 "POT-Creation-Date: 1998-01-10 12:48+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 1998-01-11 21:21 MET\n"
 "Last-Translator: Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "Language-Team: czech <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -188,7 +188,7 @@ msgstr "Nás&troj"
 
 #: kfmgui.cpp:478
 msgid "&Cache"
-msgstr ""
+msgstr "&Cache"
 
 #: kfmgui.cpp:515
 msgid "Home"
@@ -423,11 +423,13 @@ msgstr ""
 "pouze na lokálním disku"
 
 #: kbind.cpp:1619
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "Nemohu pøistoupit k"
+msgstr ""
+"Nemohu pøistoupit k\n"
+"%s"
 
 #: kbind.cpp:1648
 msgid "The \"Link=....\" entry is empty"
@@ -799,13 +801,14 @@ msgid "Do you really want to rearrange your icons ?"
 msgstr "Opravdu chcete pøeuspoøádat va¹e ikony?"
 
 #: kfmserver.cpp:234
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The URL\n"
 "%s\n"
 "is malformed"
 msgstr ""
-"URL %s\n"
+"URL \n"
+"%s\n"
 "ma chybný formát"
 
 #: kfmserver.cpp:285
@@ -874,29 +877,35 @@ msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr "INTERNÍ CHYBA: Je nutné specifikovat pøinejmen¹ím zaøízení k pøipojení"
 
 #: kiojob.cpp:216 kiojob.cpp:224 kiojob.cpp:999 kiojob.cpp:1139
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Malformed URL\n"
 "%s"
-msgstr "Chybný formát URL\n"
+msgstr ""
+"Chybný formát URL\n"
+"%s"
 
 #: kiojob.cpp:233
 msgid "Can only make links on local file system"
 msgstr "Mohu vytváøet jen linky na lokálním systému souborù"
 
 #: kiojob.cpp:256 kiojob.cpp:275
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not overwrite\n"
 "%s"
-msgstr "Nemohu pøepsat"
+msgstr ""
+"Nemohu pøepsat\n"
+"%s"
 
 #: kiojob.cpp:285 kiojob.cpp:308 kiojob.cpp:327
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "Není mo¾né vytvoøit symbolický link na"
+msgstr ""
+"Není mo¾né vytvoøit symbolický odkaz na\n"
+"%s"
 
 #: kiojob.cpp:361
 #, c-format
@@ -904,11 +913,13 @@ msgid " ERROR: Could not write to %s"
 msgstr "CHYBA: Nemohu zapsat do %s"
 
 #: kiojob.cpp:454 kiojob.cpp:642 kiojob.cpp:1056
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not make directory\n"
 "%s"
-msgstr "Není mo¾né vytvoøit adresáø\n"
+msgstr ""
+"Není mo¾né vytvoøit adresáø\n"
+"%s"
 
 #: kiojob.cpp:464 kiojob.cpp:828
 #, c-format
@@ -916,22 +927,26 @@ msgid "ERROR: Could not access directory '%s'"
 msgstr "CHYBA: Není mo¾né vstoupit do adresáøe '%s'"
 
 #: kiojob.cpp:658
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
-msgstr "Není mo¾né pøesunout adresáø\n"
+msgstr ""
+"Není mo¾né vstoupit do adresáøe\n"
+"%s "
 
 #: kiojob.cpp:688
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not move directory\n"
 "%s\n"
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Není mo¾né zmìnit pøístupová práva\n"
-"Mo¾ná nemáte pøístup."
+"Není mo¾né zmìnit pøesunout adresáø\n"
+"%s\n"
+"do %s\n"
+"Pravdìpodobnì nemáte pøístup."
 
 #: kiojob.cpp:1003 kiojob.cpp:1011 kiojob.cpp:1020 kiojob.cpp:1028
 #: kiojob.cpp:1036 kiojob.cpp:1044 kiojob.cpp:1052 kiojob.cpp:1060
@@ -943,31 +958,35 @@ msgid "Continue"
 msgstr "Pokraèuj"
 
 #: kiojob.cpp:1007 kiojob.cpp:1147
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not read\n"
 "%s\n"
 "File does not exist or access denied"
 msgstr ""
-"Není mo¾né zmìnit pøístupová práva\n"
-"Mo¾ná nemáte pøístup."
+"Není mo¾né èíst\n"
+"%s\n"
+"Pravdìpodobnì soubor neexistuje nebo nemáte pøístupová práva."
 
 #: kiojob.cpp:1015
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Není mo¾né zmìnit pøístupová práva\n"
-"Mo¾ná nemáte pøístup."
+"Není mo¾né zapsat\n"
+"%s\n"
+"Pravdìpodobnì nemáte pøístupová práva."
 
 #: kiojob.cpp:1024 kiojob.cpp:1155
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not create Socket for\n"
 "%s"
-msgstr "Nemohu zapsat do\n"
+msgstr ""
+"Není mo¾né vytvoøít Socket pro\n"
+"%s"
 
 #: kiojob.cpp:1032 kiojob.cpp:1163
 #, c-format
@@ -975,38 +994,48 @@ msgid ""
 "Unknwon host in\n"
 "%s"
 msgstr ""
+"Neznámý hostitel v\n"
+"%s"
 
 #: kiojob.cpp:1040 kiojob.cpp:1171
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not connect to\n"
 "%s"
-msgstr "Nemohu zapsat do\n"
+msgstr ""
+"Není mo¾né se pøipojit k\n"
+"%s"
 
 #: kiojob.cpp:1048 kiojob.cpp:1179
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "The requested action\n"
 "%s\n"
 "is not implemented yet."
-msgstr "Tato vlastnost je¹tì není implementována!"
+msgstr ""
+"Po¾adovaná akce\n"
+"%s\n"
+"je¹tì není implementována!"
 
 #: kiojob.cpp:1064
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not list directory contents\n"
 "%s"
-msgstr "Není mo¾né pøesunout adresáø\n"
+msgstr ""
+"Není mo¾né vypsat obsah adresáøe\n"
+"%s "
 
 #: kiojob.cpp:1072
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not delete\n"
 "%s\n"
 "URL does not exist or permission denied"
 msgstr ""
-"Není mo¾né ulo¾it vlastnosti\n"
-"Mo¾ná nemáte pøístup."
+"Není mo¾né smazat\n"
+"%s\n"
+"URL neexistuje nebo nemáte pøístupová práva."
 
 #: kiojob.cpp:1082 kiojob.cpp:1189
 #, c-format
@@ -1015,6 +1044,9 @@ msgid ""
 "%s\n"
 "Perhaps wrong password"
 msgstr ""
+"Není mo¾né se pøipojit k\n"
+"%s\n"
+"Pravdìpodobné chybné heslo"
 
 #: kiojob.cpp:1098 kiojob.cpp:1205
 #, c-format
@@ -1022,6 +1054,8 @@ msgid ""
 "Tar reproted an error\n"
 "%s"
 msgstr ""
+"Tar ohlásil chybu\n"
+"%s"
 
 #: kiojob.cpp:1106
 #, c-format
@@ -1029,13 +1063,17 @@ msgid ""
 "Gzip reproted an error for\n"
 "%s"
 msgstr ""
+"Gzip ohlásil chybu pro\n"
+"%s"
 
 #: kiojob.cpp:1116 kiojob.cpp:1131
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "File %s\n"
 "does not exist"
-msgstr " neexistuje\n"
+msgstr ""
+"Soubor %s\n"
+"neexistuje "
 
 #: kiojob.cpp:1213
 #, c-format
@@ -1043,6 +1081,8 @@ msgid ""
 "Gzip reproted an error\n"
 "%s"
 msgstr ""
+"Gzip ohlásil chybu\n"
+"%s"
 
 #: kiojob.cpp:1221
 #, c-format
@@ -1052,6 +1092,10 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"Není mo¾né pøipojit\n"
+"Záznam chyby:\n"
+"\n"
+"%s"
 
 #: kiojob.cpp:1227
 #, c-format
@@ -1061,6 +1105,10 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"Není mo¾né odpojit\n"
+"Záznam chyby:\n"
+"\n"
+"%s"
 
 #: kiojob.cpp:1365
 msgid "Making directory"
@@ -1072,33 +1120,33 @@ msgid "File %i/%i"
 msgstr "Soubor %i/%i"
 
 #: kiojob.cpp:1450 kiojob.cpp:1505
-#, fuzzy, c-format
+#, c-format
 msgid "to %s"
-msgstr ""
-"\n"
-"do "
+msgstr "do %s"
 
 #: kiojob.cpp:1481
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not delete directory\n"
 "%s"
-msgstr "Není mo¾né vytvoøit adresáø\n"
+msgstr ""
+"Není mo¾né smazat adresáø\n"
+"%s"
 
 #: kiojob.cpp:1571
-#, fuzzy, c-format
+#, c-format
 msgid "Mounting %s ..."
-msgstr "Pracuji ..."
+msgstr "Pøipojuji %s..."
 
 #: kiojob.cpp:1573
 #, c-format
 msgid "Unmounting %s ..."
-msgstr ""
+msgstr "Odpojuji %s ..."
 
 #: kiojob.cpp:1601
 #, c-format
 msgid "Retrieving listing of %s"
-msgstr ""
+msgstr "Obnovení výpisu %s"
 
 #: kiojob.cpp:1826
 msgid "Segmentation fault in io subprocess"
@@ -1177,13 +1225,12 @@ msgid "Known bindings:"
 msgstr "Známé vazby:"
 
 #: kproxydlg.cpp:10
-#, fuzzy
 msgid "Only HTTP-Proxy is implemented yet!"
-msgstr "Tato vlastnost je¹tì není implementována!"
+msgstr "Pouze HTTP-Proxy je implementována!"
 
 #: kproxydlg.cpp:35
 msgid "No Proxy for:"
-msgstr ""
+msgstr "®ádná proxy pro:"
 
 #: kkfmoptdlg.cpp:39
 msgid "KFM Browser Settings"
@@ -1254,19 +1301,3 @@ msgid ""
 msgstr ""
 "Syntaktická chyba:\n"
 "kfmexec command [URLs ....]\n"
-
-#~ msgid "The URL"
-#~ msgstr "URL"
-
-#~ msgid "is malformed\n"
-#~ msgstr "ma chybný formát\n"
-
-#~ msgid "Could not move directory\n"
-#~ msgstr "Není mo¾né pøesunout adresáø\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "Perhaps access denied"
-#~ msgstr ""
-#~ "\n"
-#~ "Pravdìpodobnì není pøístupný"

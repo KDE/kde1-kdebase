@@ -70,7 +70,7 @@ msgstr "Neostranitelná chyba: "
 
 #: error.cpp:28
 msgid "Warning: "
-msgstr "Varování: "
+msgstr "Pozor: "
 
 #: options.cpp:36
 msgid "Font Size"

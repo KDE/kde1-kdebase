@@ -345,7 +345,6 @@ msgstr ""
 "Pøevedeno pro kscreensaver Emanuelem Pirkerem"
 
 #: main.cpp:296
-#, fuzzy
 msgid ""
 "Your system uses shadow passwords!\n"
 "Please contact your system administrator.\n"
@@ -353,7 +352,9 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Vá¹ systém pou¾ívá stínová hesla!\n"
-"Prosím kontaktujte svého systémového správce."
+"Prosím kontaktujte svého systémového správce.\n"
+"\n"
+"Øeknìte mu, ¾e potøebujete SUID pro ¹etøièe obrazovky!"
 
 #: main.cpp:301
 msgid "Shadow Passwords"
