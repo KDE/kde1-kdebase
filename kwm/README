@@ -168,6 +168,8 @@ Answer: Yes it is. You simple have to go through kwm.h/kwm.C from
     TitleAnimation=50 (milliseconds)
     ResizeAnimation=on, off
     ControlTab=on, off
+    Button3Grab=on, off
+    RstartProtocol=.... [default is "rstart -v"]
 
     [session]
     proxyignore=xemacs,xterm,..., 

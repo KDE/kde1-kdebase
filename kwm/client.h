@@ -56,7 +56,7 @@ protected:
 
 
 
-
+class Client;
 
 class Client : public QFrame {
 
@@ -76,12 +76,18 @@ public:
   int unmap_events; 
 
   
+
+  // TODO decoration property handling must be cleaned-up!!
+
   Window      trans;
   long      decoration;
-  bool      decoration_not_allowed;
+  bool wants_focus;
   
   long getDecoration(){
     return decoration;
+  }
+  bool wantsFocus(){
+    return wants_focus;
   }
 
   int         desktop;
@@ -164,6 +170,7 @@ public:
   void setLabel();
 
   void generateOperations();
+  static Client* operation_client;
   void showOperations();
   void setCursor();
 
@@ -209,6 +216,8 @@ protected:
   void leaveEvent( QEvent * );
   void paintEvent( QPaintEvent * );
   void resizeEvent( QResizeEvent * );
+
+  
 
 private:
   

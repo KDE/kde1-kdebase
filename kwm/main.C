@@ -667,6 +667,9 @@ void MyApp::readConfiguration(){
   }
 
 
+  options.rstart = config->readEntry("RstartProtocol", "rstart -v");
+  config->writeEntry("RstartProtocol", options.rstart);
+
   config->setGroup( "Buttons");
 
   for (i=0; i<6; i++){
@@ -1243,8 +1246,8 @@ bool MyApp::x11EventFilter( XEvent * ev){
 
 
 void MyApp::handleOperationsPopup(int itemId){
-  if (manager->current())
-    manager->current()->handleOperationsPopup(itemId);
+  if (Client::operation_client)
+    Client::operation_client->handleOperationsPopup(itemId);
 }
 
 void MyApp::handleDesktopPopup(int itemId){

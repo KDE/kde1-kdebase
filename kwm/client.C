@@ -1,4 +1,4 @@
-/*
+ /*
  * Client.C. Part of the KDE project.
  *
  * Copyright (C) 1997 Matthias Ettrich
@@ -252,7 +252,7 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
     is_active = FALSE;
     trans = None;
     decoration = 1;
-    decoration_not_allowed = FALSE;
+    wants_focus = true;
     
     
     // standard window manager protocols
@@ -313,8 +313,11 @@ Client::~Client(){
     XFree((char *)cmapwins);
     free((char *)wmcmaps);
   }
-  if (is_active && myapp->operations->isVisible())
-    myapp->operations->hide();
+  if (operation_client == this){
+    if (myapp->operations->isVisible())
+      myapp->operations->hide();
+    operation_client = 0;
+  }
 }
 
 
@@ -496,7 +499,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
   old_cursor_pos = ev->pos();
   
   if (ev->button() == RightButton){
-    if (isActive()){
+    if (isActive() || !wantsFocus()){
       generateOperations();
       stopAutoraise();
       myapp->operations->popup(QCursor::pos());
@@ -843,7 +846,11 @@ void Client::setLabel(){
 
 }
 
+Client* Client::operation_client = 0;
+
+
 void Client::generateOperations(){
+  operation_client = this;
   myapp->operations->clear();
   if (isMaximized() && !fixedSize()){
     myapp->operations->insertItem(KWM::getUnMaximizeString(), 
@@ -861,7 +868,7 @@ void Client::generateOperations(){
 
   myapp->operations->insertItem(KWM::getIconifyString(), 
 				OP_ICONIFY);
-  if (trans != None && trans != qt_xrootwin())
+  if (!wantsFocus() || (trans != None && trans != qt_xrootwin()))
     myapp->operations->setItemEnabled(OP_ICONIFY, FALSE);
 
   myapp->operations->insertItem(KWM::getMoveString(), 

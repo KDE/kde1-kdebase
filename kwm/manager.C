@@ -436,11 +436,11 @@ void Manager::propertyNotify(XPropertyEvent *e){
     }
     if (a == kwm_number_of_desktops){
       number_of_desktops = KWM::numberOfDesktops();
-      sendToModules(module_desktop_number_change, (Window) number_of_desktops);
+      sendToModules(module_desktop_number_change, 0, (Window) number_of_desktops);
     }
     for (i=0;i<8;i++){
       if (a == da[i]){
-	sendToModules(module_desktop_name_change, (Window) i+1);
+	sendToModules(module_desktop_name_change, 0, (Window) i+1);
       }
     }
     return;
@@ -497,7 +497,7 @@ void Manager::propertyNotify(XPropertyEvent *e){
     QPixmap pm = KWM::miniIcon(c->window, 14, 14);
     if (!pm.isNull() && c->buttonMenu)
       c->buttonMenu->setPixmap(pm);
-    sendToModules(module_win_icon_change, c->window);
+    sendToModules(module_win_icon_change, c);
   }
   else if (a == kwm_win_iconified){
     if (KWM::isIconified(c->window))
@@ -521,22 +521,35 @@ void Manager::propertyNotify(XPropertyEvent *e){
       c->buttonSticky->toggle();
   }
   else if (a == kwm_win_decoration){
-    if (c->getDecoration() != KWM::getDecoration(c->window)){
-      int dec = KWM::getDecoration(c->window);
+    // TODO this needs a cleanup very very very soon!!!
+    long d = KWM::getDecoration(c->window);
+    long dec = d & 255;
+    if (c->getDecoration() != dec){
       if (dec){
-	if (c->decoration_not_allowed)
-	  KWM::setDecoration(c->window, 0);
-	else {
-	  c->decoration = dec;
-	  gravitate(c, FALSE);
-	  sendConfig(c);
-	}
+	c->decoration = dec;
+	gravitate(c, FALSE);
+	sendConfig(c);
       }
       else {
 	gravitate(c, TRUE);
 	c->decoration = dec;
 	sendConfig(c);
       }
+    }
+
+    bool wants_focus = (d & KWM::noFocus) == 0;
+    if (!wants_focus && c->wantsFocus()){
+      clients_traversing.removeRef(c);
+      sendToModules(module_win_remove, c);
+      c->wants_focus = false;
+      c->hidden_for_modules = true;
+    } else if (wants_focus && !c->wantsFocus()){
+      if (c->hidden_for_modules){
+	clients_traversing.insert(0,c);
+	c->hidden_for_modules = false;
+	sendToModules(module_win_add, c);
+      }
+      c->wants_focus = true;
     }
   }
 }
@@ -697,14 +710,18 @@ void Manager::manage(Window w, bool mapped){
     // don't show any visible decoration, if the window is shaped
     XShapeGetRectangles(qt_xdisplay(), c->window, ShapeBounding, &n, &order);
     if ( n > 1 ) {
-      c->decoration_not_allowed = TRUE;
       c->decoration = 0;
     }
   }
 
   // get KDE specific decoration hint
-  if (c->getDecoration() == 1)
-    c->decoration = KWM::getDecoration(c->window);
+  if (c->getDecoration() == 1){
+    long dec = KWM::getDecoration(c->window);
+    c->decoration = dec & 255;
+    c->wants_focus = (dec & KWM::noFocus) == 0;
+    if (!c->wantsFocus())
+      c->hidden_for_modules = true;
+  }
 
   XSelectInput(qt_xdisplay(), c->window, ColormapChangeMask | 
 	       EnterWindowMask | PropertyChangeMask | PointerMotionMask);
@@ -844,7 +861,7 @@ void Manager::manage(Window w, bool mapped){
   dohide = (c->isIconified() || !c->isOnDesktop(currentDesktop()));
 
   addClient(c);
-  sendToModules(module_win_add, c->window);
+  sendToModules(module_win_add, c);
 
   if (dohide){
     c->hide();
@@ -855,10 +872,8 @@ void Manager::manage(Window w, bool mapped){
   else {
     c->showClient();
     setWindowState(c, NormalState);
-//     if (c->decoration_not_allowed)
-//       lowerClient(c);
-//     else
-      raiseClient(c);
+    
+    raiseClient(c);
     
     if (current() != c)
       colormapFocus(current());
@@ -936,11 +951,14 @@ Client* Manager::current(){
 void Manager::addClient(Client* c){
   clients.append(c);
   clients_sorted.append(c);
-  clients_traversing.insert(0,c);
+  if (!c->hidden_for_modules)
+    clients_traversing.insert(0,c);
 }
 
 
 void Manager::activateClient(Client* c, bool set_revert){
+  if (!c->wantsFocus())
+    return;
   Client* cc = current();
   enable_focus_follow_mouse_activation = false;
   if (focus_grabbed())
@@ -970,7 +988,7 @@ void Manager::activateClient(Client* c, bool set_revert){
   XChangeProperty(qt_xdisplay(), qt_xrootwin(), kwm_active_window, 
 		  kwm_active_window, 32,
 		  PropModeReplace, (unsigned char *)&(c->window), 1);
-  sendToModules(module_win_activate, c->window);
+  sendToModules(module_win_activate, c);
 }
 
 void Manager::removeClient(Client* c){
@@ -980,7 +998,7 @@ void Manager::removeClient(Client* c){
   clients_traversing.removeRef(c);
   if (do_nofocus)
     noFocus();
-  sendToModules(module_win_remove, c->window);
+  sendToModules(module_win_remove, c);
   delete c;
 
 }
@@ -1019,7 +1037,7 @@ void Manager::raiseClient(Client* c){
   for (c=tmp.first();c;c=tmp.next()){
     clients_sorted.removeRef(c);
     clients_sorted.append(c);
-    sendToModules(module_win_raise, c->window);
+    sendToModules(module_win_raise, c);
   }
   // X Semantics are somewhat cryptic
   Window* new_stack = new Window[tmp.count()];
@@ -1037,7 +1055,7 @@ void Manager::lowerClient(Client* c){
   QList <Client> tmp;
   clients_sorted.removeRef(c);
   clients_sorted.insert(0,c);
-  sendToModules(module_win_lower, c->window);
+  sendToModules(module_win_lower, c);
 
   // also lower the root icons
   unsigned int i, nwins;
@@ -1090,7 +1108,7 @@ void Manager::closeClient(Client* c){
 }
 
 void Manager::changedClient(Client* c){
-  sendToModules(module_win_change, c->window);
+  sendToModules(module_win_change, c);
 }
 
 void Manager::noFocus(){
@@ -1172,7 +1190,7 @@ void Manager::switchDesktop(int new_desktop){
   current_desktop = new_desktop;
 
   KWM::switchToDesktop(current_desktop);
-  sendToModules(module_desktop_change, (Window) current_desktop);
+  sendToModules(module_desktop_change, 0, (Window) current_desktop);
 
   for (c=clients_sorted.last(); c ; c=clients_sorted.prev()){
     if (c->isOnDesktop(current_desktop) && !c->isIconified() && !c->isSticky()){
@@ -1832,7 +1850,8 @@ QStrList* Manager::getSessionCommands(){
 	if (c->machine != thismachine && c->machine != all){
 	  command.prepend(" ");
 	  command.prepend(c->machine);
-	  command.prepend("rstart ");
+	  command.prepend(" ");
+	  command.prepend(options.rstart);
 	}
       }
       result->append(command);
@@ -1848,7 +1867,8 @@ QStrList* Manager::getSessionCommands(){
       if (machine != thismachine && machine != all){
 	command.prepend(" ");
 	command.prepend(machine);
-	command.prepend("rstart ");
+	command.prepend(" ");
+	command.prepend(options.rstart);
       }
     }
     result->append(command);
@@ -1897,7 +1917,7 @@ QStrList* Manager::getClientsOfDesktop(int desk){
   Client* c;
   for (c = clients.first(); c; c = clients.next()){
     if (c->isOnDesktop(desk) && 
-	!c->hidden_for_modules &&
+	!c->hidden_for_modules && 
 	(!c->isSticky() || desk == currentDesktop())){
       if (c->isIconified())
 	result->append(QString("(") + c->label + ")");
@@ -1977,8 +1997,8 @@ void Manager::iconifyTransientOf(Client* c){
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
       it.current()->iconify(False);
-      sendToModules(module_win_remove, it.current()->window);
-      it.current()->hidden_for_modules = TRUE; 
+      sendToModules(module_win_remove, it.current());
+      it.current()->hidden_for_modules = true; 
       clients_traversing.removeRef(it.current());
     }
   }
@@ -1990,8 +2010,8 @@ void Manager::unIconifyTransientOf(Client* c){
   for (it.toFirst(); it.current(); ++it){
     if (it.current() != c && it.current()->trans == c->window){
       if (it.current()->hidden_for_modules){
-	sendToModules(module_win_add, it.current()->window);
-	it.current()->hidden_for_modules = FALSE;
+	it.current()->hidden_for_modules = false;
+	sendToModules(module_win_add, it.current());
 	clients_traversing.insert(0,it.current());
       }
       it.current()->unIconify(False);
@@ -2025,8 +2045,8 @@ void Manager::iconifyFloatingOf(Client* c){
     if (it.current() != c && it.current()->trans == c->window){
       if (it.current()->getDecoration() == 2){
 	it.current()->iconify(False);
-	sendToModules(module_win_remove, it.current()->window);
-	it.current()->hidden_for_modules = TRUE; 
+	sendToModules(module_win_remove, it.current());
+	it.current()->hidden_for_modules = true; 
 	clients_traversing.removeRef(it.current());
       }
       iconifyFloatingOf(it.current());
@@ -2075,7 +2095,12 @@ void Manager::removeModule(Window w){
     dock_module = None;
 }
 
-void Manager::sendToModules(Atom a, Window w){
+void Manager::sendToModules(Atom a, Client* c, Window w){
+  if (c){
+    if (c->hidden_for_modules)
+      return;
+    w = c->window;
+  }
   Window* mw;
   for (mw=modules.first(); mw; mw=modules.next())
     sendClientMessage(*mw, a, (long) w);

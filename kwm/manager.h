@@ -208,7 +208,7 @@ private:
   QList <Window> modules;
   void addModule(Window w);
   void removeModule(Window w);
-  void sendToModules(Atom a, Window w);
+  void sendToModules(Atom a, Client* c, Window w = None);
   Window dock_module;
   QList <Window> dock_windows;
   void addDockWindow(Window w);

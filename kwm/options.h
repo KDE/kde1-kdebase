@@ -55,6 +55,8 @@ struct kwmOptions {
   bool ControlTab;
   bool Button3Grab;
 
+  const char* rstart;
+
   BUTTON_FUNCTIONS buttons[6];
 
   QPixmap* titlebarPixmapActive;
