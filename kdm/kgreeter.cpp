@@ -314,7 +314,9 @@ KGreeter::slot_user_name( int i)
 {
      loginEdit->setText( kdmcfg->users()->at( i)->text());
      passwdEdit->setFocus();
+#if 0
      load_wm();
+#endif
 }
 
 void 
@@ -671,7 +673,9 @@ KGreeter::go_button_clicked()
 			       sessiontags.at(
 				    sessionargBox->currentItem()));
 
+#if 0
      save_wm();
+#endif
      //qApp->desktop()->setCursor( waitCursor);
      qApp->setOverrideCursor( waitCursor);
      hide();
