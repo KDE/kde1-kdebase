@@ -1433,6 +1433,7 @@ void KIOJob::start( int _pid )
 	    }
 	    QPushButton *pb = new QPushButton( i18n("Cancel"), dlg );
 	    pb->setFixedSize( pb->sizeHint() );
+	    pb->setDefault(TRUE);
 	    connect( pb, SIGNAL( clicked() ), this, SLOT( cancel() ) );
 	    layout->addSpacing( 10 );
 	    layout->addWidget( pb );
