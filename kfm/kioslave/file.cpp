@@ -322,6 +322,7 @@ int KProtocolFILE::CloseDir()
 {
     if ( file )
 	fclose( file );
+    file = 0;
     return SUCCESS;
 }
 

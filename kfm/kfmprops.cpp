@@ -105,61 +105,64 @@ void Properties::slotApply()
 
 void Properties::insertPages()
 {
+  printf("1\n");
+  
     if ( FilePropsPage::supports( kurl ) )
     {
 	PropsPage *p = new FilePropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+    printf("2\n");
     if ( FilePermissionsPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new FilePermissionsPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("3\n");
     if ( ExecPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new ExecPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("4\n");
     if ( ApplicationPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new ApplicationPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("5\n");
     if ( BindingPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new BindingPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("6\n");
     if ( URLPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new URLPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("7\n");
     if ( DirPropsPage::supports( kurl ) )
     {
 	PropsPage *p = new DirPropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
-
+  printf("8\n");
     if ( DevicePropsPage::supports( kurl ) )
     {
 	PropsPage *p = new DevicePropsPage( this );
 	tab->addTab( p, p->getTabName() );
 	pageList.append( p );
     }
+  printf("9\n");
 }
 
 
@@ -823,7 +826,6 @@ bool ExecPropsPage::supports( KURL *_kurl )
 
     QString t( _kurl->path() );
     KURL::decodeURL( t );
-    QFile f( t );
 
     struct stat buff;
     stat( t, &buff );
@@ -834,9 +836,17 @@ bool ExecPropsPage::supports( KURL *_kurl )
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
 
-    if ( !f.open( IO_ReadOnly ) )
-	return false;    
-    f.close();
+    FILE *f = fopen( t, "r" );
+    if ( f == 0L )
+      return false;
+
+    char buffer[ 101 ];
+    int n = fread( buffer, 1, 100, f );
+    fclose( f );
+    if ( n <= 0 )
+      return false;
+    if ( strncmp( buffer, "# KDE Config File", strlen( "# KDE Config File" ) ) != 0L )
+      return false;
 
     KConfig config( t );
     config.setGroup( "KDE Desktop Entry" );
@@ -949,7 +959,6 @@ bool URLPropsPage::supports( KURL *_kurl )
 
     QString path = _kurl->path();
     KURL::decodeURL( path );
-    QFile f( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -959,9 +968,18 @@ bool URLPropsPage::supports( KURL *_kurl )
 
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
-    if ( !f.open( IO_ReadOnly ) )
-	return false;
-    f.close();
+
+    FILE *f = fopen( path, "r" );
+    if ( f == 0L )
+      return false;
+
+    char buffer[ 101 ];
+    int n = fread( buffer, 1, 100, f );
+    fclose( f );
+    if ( n <= 0 )
+      return false;
+    if ( strncmp( buffer, "# KDE Config File", strlen( "# KDE Config File" ) ) != 0L )
+      return false;
 
     KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
@@ -1385,7 +1403,6 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 
     QString path = _kurl->path();
     KURL::decodeURL( path );
-    QFile f( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1395,9 +1412,18 @@ bool ApplicationPropsPage::supports( KURL *_kurl )
 
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
-    if ( !f.open( IO_ReadOnly ) )
-	return false;
-    f.close(); 
+
+    FILE *f = fopen( path, "r" );
+    if ( f == 0L )
+      return false;
+
+    char buffer[ 101 ];
+    int n = fread( buffer, 1, 100, f );
+    fclose( f );
+    if ( n <= 0 )
+      return false;
+    if ( strncmp( buffer, "# KDE Config File", strlen( "# KDE Config File" ) ) != 0L )
+      return false;
 
     KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
@@ -1589,21 +1615,8 @@ bool BindingPropsPage::supports( KURL *_kurl )
     if ( strcmp( u2.protocol(), "file" ) != 0 )
 	return false;
 
-    /* FILE *fh = fopen( _kurl->path(), "rb" );
-    if ( fh == 0L )
-	return false;
-    
-    char buffer[ 1024 ];
-    buffer[0] = 0;
-    fgets( buffer, 1023, fh );
-    fclose( fh );
-    
-    if ( strstr( buffer, "[KDE Desktop Entry]" ) == 0L )
-	return false; */
-
     QString path = _kurl->path();
     KURL::decodeURL( path );
-    QFile f( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1613,12 +1626,20 @@ bool BindingPropsPage::supports( KURL *_kurl )
 
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
-    if ( !f.open( IO_ReadOnly ) )
-	return false;
-    
-	f.close(); // kalle
-	// kalle    QTextStream pstream( &f );
-    KConfig config( path ); // kalle
+
+    FILE *f = fopen( path, "r" );
+    if ( f == 0L )
+      return false;
+
+    char buffer[ 101 ];
+    int n = fread( buffer, 1, 100, f );
+    fclose( f );
+    if ( n <= 0 )
+      return false;
+    if ( strncmp( buffer, "# KDE Config File", strlen( "# KDE Config File" ) ) != 0L )
+      return false;
+
+    KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );
 
     QString type = config.readEntry( "Type" );
@@ -1775,7 +1796,6 @@ bool DevicePropsPage::supports( KURL *_kurl )
 
     QString path = _kurl->path();
     KURL::decodeURL( path );
-    QFile f( path );
 
     struct stat buff;
     stat( path, &buff );
@@ -1785,9 +1805,18 @@ bool DevicePropsPage::supports( KURL *_kurl )
 
     if ( !S_ISREG( buff.st_mode ) || S_ISDIR( lbuff.st_mode ) )
 	return false;
-    if ( !f.open( IO_ReadOnly ) )
-	return false;    
-    f.close();
+
+    FILE *f = fopen( path, "r" );
+    if ( f == 0L )
+      return false;
+
+    char buffer[ 101 ];
+    int n = fread( buffer, 1, 100, f );
+    fclose( f );
+    if ( n <= 0 )
+      return false;
+    if ( strncmp( buffer, "# KDE Config File", strlen( "# KDE Config File" ) ) != 0L )
+      return false;
 
     KConfig config( path );
     config.setGroup( "KDE Desktop Entry" );

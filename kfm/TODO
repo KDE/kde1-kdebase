@@ -2,17 +2,22 @@ TODO List
 =========
 
 - KFM seg faults on too large URLs. This might be a security bug
+  ( hopefully fixed but not tested )
 - Use UNIX domain sockets instead of internet name space sockets
   for more security.
 - HTTP PUT command
 - FTP does not always close every socket
-* Configuration dialog for PROXY
-* FTP Proxy
+  ( not seen in the last time )
 - Too many kioslaves on pages with many pictures
-- Opening the properties of a VERY large file causes very long delays
 - Are tar directories really cached ? Does not look so yet.
-- Writing directories in minicli does not cause KFM to open it.
 - Downloading files from ftp.troll.no does not work
   ( perhaps why they dont want to see a password )
 - http://www.rhein-main.net looks broken
-
+- Bug in recursive copying of directories
+- Root Icons need italic font style if they are links
+- KFM crashes if HTTP server closes connection unexpected.
+- Support for netscape. Switch that allows netscape to handle
+  HTML files
+- index.html files of 0 bytes crash KFM ? ( not tested )
+- kioslave crashes on dangling links if compiled with -O2 ( not tested )
+- Kopieren von FTP server ?

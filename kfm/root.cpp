@@ -1163,6 +1163,22 @@ void KRootIcon::init()
     QPainter p;
     p.begin( this );
 
+    // Select font
+    bIsLink = FALSE;
+    QFont myfont( font() );
+    KURL u( url );
+    if ( !u.isMalformed() && strcmp( u.protocol(), "file" ) == 0 && !u.hasSubProtocol() )
+    {
+      struct stat lbuff;
+      lstat( u.path(), &lbuff );
+      if ( S_ISLNK( lbuff.st_mode ) )
+      {
+	myfont.setItalic( TRUE );
+	p.setFont( myfont );
+	bIsLink = TRUE;
+      }
+    }
+
     int ascent = p.fontMetrics().ascent();
     int descent = p.fontMetrics().descent();
     int width = p.fontMetrics().width( file.data() );
@@ -1190,12 +1206,16 @@ void KRootIcon::init()
     mask.fill( color0 );
     QPainter p2;
     p2.begin( &mask );
-    p2.setFont( font() );
 
-    if ( root->iconStyle() == 1 && !bSelected ) {
-	p2.drawText( textXOffset, textYOffset, file );
-}     else
-       p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
+    if ( bIsLink )
+      p2.setFont( myfont );
+    
+    if ( root->iconStyle() == 1 && !bSelected )
+    {
+      p2.drawText( textXOffset, textYOffset, file );
+    }
+    else
+      p2.fillRect( textXOffset-1, textYOffset-ascent-1, width+2, ascent+descent+2, color1 );     
 
     if ( pixmap->mask() == 0L )
 	p2.fillRect( pixmapXOffset, pixmapYOffset, pixmap->width(), pixmap->height(), color1 );
@@ -1258,6 +1278,13 @@ void KRootIcon::paintEvent( QPaintEvent * )
     p.begin( this );
   
     p.setPen( root->labelForeground() );   
+    
+    QFont myfont( font() );
+    if ( bIsLink )
+    {
+      myfont.setItalic( TRUE );
+      p.setFont( myfont );
+    }
     
     p.drawText( textXOffset, textYOffset, file );
     
@@ -1330,8 +1357,26 @@ void KRootIcon::dndMouseReleaseEvent( QMouseEvent *_mouse )
       return;
 
     root->unselectAllIcons();
+
+    // Use the destination of the link. This looks better
+    // and is what the user expects
+    if ( bIsLink )
+    {
+      KURL u( url );
+      char buffer[ 1024 ];
+      int n;
+      if ( ( n = readlink( u.path(), buffer, 1023 ) ) > 0 )
+      {
+	QString u2 = "file:";
+	buffer[n] = 0;
+	u2 += buffer;
+	root->openURL( u2 );
+	pressed = false;
+	return;
+      }
+    }
     
-    root->openURL( url.data() );                          
+    root->openURL( url );                          
 
     pressed = false;
 }

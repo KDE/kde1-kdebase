@@ -146,3 +146,15 @@
 
   - take care of .directory, when calculating if Trash is empty
 
+17.01.98 Torben
+
+ - Fixed Stephans patch
+ - Fixed bug in kfmprops that caused too long delays while opening the
+   properties dialog. In fact it happend the same as in the above one.
+ - Links on the desktop ( links in the unix sense of links ) are displayed
+   italic now.
+ - Fix for kfmsu2. The display is now set correctly, so KFM can connect to the
+   correct one.
+ - If you have a link on your desktop and open it, then KFM will use readlink
+   to find the destination of the link. This is really needfull, since you
+   want for example /home/pub/diplom/text.lyx instead of /home/weis/Desktop/diplom/text.lyx

@@ -151,6 +151,12 @@ protected:
 
     int grid_x;
     int grid_y;
+
+    /**
+     * Tells, wether this icons represents a link in the UNIX sense of
+     * a link. If yes, then we have to draw the label with an italic font.
+     */
+    bool bIsLink;
 };
 
 class KRootWidget : public QWidget
