@@ -272,66 +272,131 @@ void KRootWm::draw_selection_rectangle(int x, int y, int dx, int dy){
    XDrawRectangle(qt_xdisplay(), qt_xrootwin(), gc, x+1, y+1, dx, dy);
 }
 
+
 bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
-    int cx, cy, rx, ry;
-    int ox, oy;
-    XEvent ev;
-    struct timeval t;
-
-    XChangeActivePointerGrab( qt_xdisplay(), 
-			      ButtonPressMask | ButtonReleaseMask |
-			      PointerMotionMask |
-			      EnterWindowMask | LeaveWindowMask,
-			      arrowCursor.handle(), 0);
-    ox = x;
-    oy = y;
-
-    cx = x;
-    cy = y;
+  int cx, cy, rx, ry;
+  int ox, oy;
+  XEvent ev;
+  
+  XChangeActivePointerGrab( qt_xdisplay(), 
+			    ButtonPressMask | ButtonReleaseMask |
+			    PointerMotionMask |
+			    EnterWindowMask | LeaveWindowMask,
+			    arrowCursor.handle(), 0);
+  
+  XGrabServer(qt_xdisplay());
+  
+  draw_selection_rectangle(x, y, dx, dy);
+  
+  ox = x;
+  oy = y;
+  
+  cx = x;
+  cy = y;
+  
+  for(;;) {
+    XMaskEvent(qt_xdisplay(), ButtonPressMask|ButtonReleaseMask|
+	       PointerMotionMask, &ev);
     
-    XGrabServer(qt_xdisplay());
-    
-    draw_selection_rectangle(x, y, dx, dy);
-
-    t.tv_sec = 0;
-    t.tv_usec = 20*1000;
-
-    while (XCheckMaskEvent(qt_xdisplay(), ButtonPress|ButtonReleaseMask, &ev) == 0) {
-      rx = QCursor::pos().x();
-      ry = QCursor::pos().y();
-      if (rx == cx && ry == cy)
-	continue;
-      cx = rx;
-      cy = ry;
-      draw_selection_rectangle(x, y, dx, dy);
-
-      if (cx > ox){	
-	x = ox;
-	dx = cx - x;
-      }
-      else {
-	x = cx;
-	dx = ox - x;
-      }
-      if (cy > oy){	
-	y = oy;
-	dy = cy - y;
-      }
-      else {
-	y = cy;
-	dy = oy - y;
-      }
-	
-      draw_selection_rectangle(x, y, dx, dy);
-      XFlush(qt_xdisplay());
-      select(0, 0, 0, 0, &t);
-      continue;
+    if (ev.type == MotionNotify){
+      rx = ev.xmotion.x_root;
+      ry = ev.xmotion.y_root;
     }
-
+    else
+      break;
+    if (rx == cx && ry == cy)
+      continue;
+    cx = rx;
+    cy = ry;
+    
     draw_selection_rectangle(x, y, dx, dy);
-    XUngrabServer(qt_xdisplay());
-    return True;
+    
+    if (cx > ox){	
+      x = ox;
+      dx = cx - x;
+    }
+    else {
+      x = cx;
+      dx = ox - x;
+    }
+    if (cy > oy){	
+      y = oy;
+      dy = cy - y;
+    }
+    else {
+      y = cy;
+      dy = oy - y;
+    }
+    
+    draw_selection_rectangle(x, y, dx, dy);
+    XFlush(qt_xdisplay());
+  }
+  
+  draw_selection_rectangle(x, y, dx, dy);
+  XFlush(qt_xdisplay());
+  XUngrabServer(qt_xdisplay());
+  return True;
 }
+// bool KRootWm::select_rectangle(int &x, int &y, int &dx, int &dy){
+//     int cx, cy, rx, ry;
+//     int ox, oy;
+//     XEvent ev;
+//     struct timeval t;
+
+//     XChangeActivePointerGrab( qt_xdisplay(), 
+// 			      ButtonPressMask | ButtonReleaseMask |
+// 			      PointerMotionMask |
+// 			      EnterWindowMask | LeaveWindowMask,
+// 			      arrowCursor.handle(), 0);
+//     ox = x;
+//     oy = y;
+
+//     cx = x;
+//     cy = y;
+    
+//     XGrabServer(qt_xdisplay());
+    
+//     draw_selection_rectangle(x, y, dx, dy);
+
+//     t.tv_sec = 0;
+//     t.tv_usec = 20*1000;
+
+//     while (XCheckMaskEvent(qt_xdisplay(), ButtonPress|ButtonReleaseMask, &ev) == 0) {
+//       rx = QCursor::pos().x();
+//       ry = QCursor::pos().y();
+//       if (rx == cx && ry == cy)
+// 	continue;
+//       cx = rx;
+//       cy = ry;
+//       draw_selection_rectangle(x, y, dx, dy);
+
+//       if (cx > ox){	
+// 	x = ox;
+// 	dx = cx - x;
+//       }
+//       else {
+// 	x = cx;
+// 	dx = ox - x;
+//       }
+//       if (cy > oy){	
+// 	y = oy;
+// 	dy = cy - y;
+//       }
+//       else {
+// 	y = cy;
+// 	dy = oy - y;
+//       }
+	
+//       draw_selection_rectangle(x, y, dx, dy);
+//       XFlush(qt_xdisplay());
+//       select(0, 0, 0, 0, &t);
+//       continue;
+//     }
+
+//     draw_selection_rectangle(x, y, dx, dy);
+//     XUngrabServer(qt_xdisplay());
+//     return True;
+// }
 
 void KRootWm::generateWindowlist(QPopupMenu* p){
   p->clear();

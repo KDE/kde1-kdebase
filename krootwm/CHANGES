@@ -6,6 +6,8 @@
 
 In 0.1:
 -------
+patchlevel 6:
+       - small fix to save CPU during the root window selection
 
 patchlevel 5:
        - Added a separator between 'New' and the rest of the menu (D.McC)

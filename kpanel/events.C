@@ -237,6 +237,10 @@ void kPanel::dockWindowRemove(Window){
   layoutDockArea();
 }
 
+// void kPanel::playSound(QString e){
+//   printf("sound event: %s \n", e.data());
+// }
+
 
 
 myTaskButton* kPanel::taskButtonFromWindow(Window w){

@@ -184,6 +184,8 @@ public:
   void dockWindowAdd(Window);
   void dockWindowRemove(Window);
 
+/*   void playSound(QString); */
+
   void windowlistActivated(int);
 
   void taskbarClicked(int);

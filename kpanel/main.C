@@ -161,6 +161,9 @@ int main( int argc, char ** argv ){
   the_panel->connect(&myapp, SIGNAL(dockWindowRemove(Window)), 
 		     SLOT(dockWindowRemove(Window)));
 
+//   the_panel->connect(&myapp, SIGNAL(playSound(QString)), 
+// 		     SLOT(playSound(QString)));
+
   the_panel->connect(&myapp, SIGNAL(kdisplayPaletteChanged()), 
 		     SLOT(kdisplayPaletteChanged()));
 

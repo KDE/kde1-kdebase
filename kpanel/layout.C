@@ -240,7 +240,7 @@ void kPanel::find_a_free_place(){
 					    box_width, box_height);
 
   // find a free place.
-  for (i=0; i<nbuttons-1; i++){
+  for (i=1; i<nbuttons-1; i++){
     if (orientation == vertical){
       if (entries[i-1].button->y()+box_height <= entries[i].button->y()-box_height){
 	entries[nbuttons-1].button->setGeometry(margin,
