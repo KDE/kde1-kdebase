@@ -40,6 +40,8 @@ public:
     oneDesk = onedesk;
   }
 
+  void setImmediately( const char* _wallpaper, int mode );
+
 public slots:
   void randomize();
 

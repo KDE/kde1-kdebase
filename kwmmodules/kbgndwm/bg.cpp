@@ -22,6 +22,7 @@
 #include <kpixmap.h>
 #include <kstring.h>
 #include <kwm.h>
+#include <kurl.h>
 
 #include "bg.h"
 #include "bg.moc"
@@ -51,6 +52,24 @@ KBackground::KBackground()
 
 KBackground::~KBackground()
 {
+}
+
+
+
+void KBackground::setImmediately( const char *_wallpaper, int mode )
+{
+  hasPm = false;
+  color1 = QColor(black);
+  gfMode=Flat;
+  orMode=Portrait;
+  wpMode = mode;
+  bUseWallpaper = true;
+
+  KURL url = _wallpaper;
+  wallpaper = url.path();
+
+  hasPm = true;
+  apply();
 }
 
 
@@ -102,7 +121,7 @@ void KBackground::readSettings( int num, bool one, int onedesk )
       config.writeEntry( "Item", randomDesk );
       config.sync();
 
-      color1.setNamedColor( "#4682B4" );
+      color1 = QColor(black);
       gfMode=Flat;
       orMode=Portrait;
       wpMode = Tiled;
@@ -229,8 +248,6 @@ void KBackground::randomize()
       {
 	warning("oneDesktopMode = %d  desk = %d", oneDesktopMode, desk);
 	apply();
-	QString cmd = "kbgwm_change";
-	KWM::sendKWMCommand( cmd );
       }
   }
 }
@@ -266,6 +283,8 @@ QPixmap *KBackground::loadWallpaper()
 void KBackground::apply()
 {
   applied = false;
+
+  KWM::sendKWMCommand( "kbgwm_change" );
 
   // the background pixmap is cached?
   bgPixmap = QPixmapCache::find( name );

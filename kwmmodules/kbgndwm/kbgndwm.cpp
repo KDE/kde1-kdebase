@@ -12,7 +12,6 @@
 
 #include <kwm.h>
 #include <kprocess.h>
-
 #include "kbgndwm.h"
 
 #include "kbgndwm.moc"
@@ -48,12 +47,53 @@ KBGndManager::KBGndManager( KWMModuleApplication * )
   o_id = popup_m->insertItem(i18n("Common Background"), this, SLOT(toggleOneDesktop()));
   popup_m->setItemChecked( o_id, oneDesktopMode );
 
+  // popup menu for display modes
+  modePopup = new QPopupMenu();
+  CHECK_PTR( modePopup );
+
+  modePopup->insertItem(i18n("Tiled") );
+  modePopup->insertItem(i18n("Mirrored") );
+  modePopup->insertItem(i18n("CenterTiled") );
+  modePopup->insertItem(i18n("Centred") );
+  modePopup->insertItem(i18n("CentredBrick") );
+  modePopup->insertItem(i18n("CentredWarp") );
+  modePopup->insertItem(i18n("CentredMaxpect") );
+  modePopup->insertItem(i18n("SymmetricalTiled") );
+  modePopup->insertItem(i18n("SymmetricalMirrored") );
+  modePopup->insertItem(i18n("Scaled") );
+  connect( modePopup, SIGNAL( activated( int ) ), 
+	   this, SLOT( slotModeSelected( int ) ) );
+
   // setup icon
   QString pixdir = KApplication::kde_datadir();  
   pixmap = (pixdir + "/kdisplay/pics/logo.xpm").data();
 
+  KDNDDropZone *myDropZone = new KDNDDropZone(this, DndURL);
+  connect( myDropZone, SIGNAL( dropAction( KDNDDropZone *) ), 
+	   this, SLOT( slotDropEvent( KDNDDropZone *) ) );
+
   applyDesktop( current );
 
+}
+
+
+void KBGndManager::slotDropEvent( KDNDDropZone *zone)
+{
+  QStrList & list = zone->getURLList();
+  wallpaper = list.first();
+
+  int x = this->x();
+  int y = this->y();
+
+  modePopup->popup(QPoint(x, y));
+  modePopup->exec();
+}
+
+
+void KBGndManager::slotModeSelected( int mode )
+{
+  if ( ! wallpaper.isEmpty() )
+    desktops[current].setImmediately( wallpaper, mode + 1 );
 }
 
 
@@ -125,8 +165,6 @@ void KBGndManager::commandReceived( QString com )
 void KBGndManager::applyDesktop( int d )
 {
   desktops[d].apply();
-  QString cmd = "kbgwm_change";
-  KWM::sendKWMCommand( cmd );
 }
 
 
@@ -157,18 +195,6 @@ void KBGndManager::cacheDesktop()
 
 void KBGndManager::readSettings()
 {
-  KConfig *config = KApplication::getKApplication()->getConfig();
-
-  config->setGroup( "General" );
-
-  int cache = config->readNumEntry( "CacheSize", 1024 );
-
-  if ( cache < 128 )
-    cache = 128;
-  if ( cache > 10240 )
-    cache = 10240;
-
-  QPixmapCache::setCacheLimit( cache );
 
   KConfig config2(KApplication::kde_configdir() + "/kdisplayrc", 
 		  KApplication::localconfigdir() + "/kdisplayrc");
@@ -179,6 +205,16 @@ void KBGndManager::readSettings()
 
   if ( config2.readBoolEntry( "Docking", true ) )
     dock();
+
+  int cache = config2->readNumEntry( "CacheSize", 1024 );
+
+  if ( cache < 128 )
+    cache = 128;
+  if ( cache > 10240 )
+    cache = 10240;
+
+  QPixmapCache::setCacheLimit( cache );
+
 }
 
 

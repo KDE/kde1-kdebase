@@ -15,6 +15,7 @@
 #include <stdio.h>
 
 #include <kwmmapp.h>
+#include <drag.h>
 
 #include <X11/X.h>
 #include <X11/Xlib.h>
@@ -51,6 +52,8 @@ public slots:
   void dock();
   void undock();
   void timeclick();
+  void slotDropEvent( KDNDDropZone * );
+  void slotModeSelected( int mode );
 
 private slots:
   void mousePressEvent(QMouseEvent *e);
@@ -59,6 +62,7 @@ private slots:
 private:
   KWMModuleApplication* kwmmapp;
   QPopupMenu *popup_m;
+  QPopupMenu *modePopup;
   QPixmap pixmap;
 
   KBackground *desktops;
@@ -70,6 +74,8 @@ private:
   bool docked;
 
   int o_id;
+
+  QString wallpaper;
 };
 
 
