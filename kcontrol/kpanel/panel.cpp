@@ -250,9 +250,9 @@ void KPanelConfig::saveSettings() {
 	break;
     case 2: // large style
 	config->writeEntry("Style", "large");
-	config->writeEntry("BoxWidth",47);
-	config->writeEntry("BoxHeight",47);
-	config->writeEntry("Margin",4);
+	config->writeEntry("BoxWidth",52);
+	config->writeEntry("BoxHeight",52);
+	config->writeEntry("Margin",2);
 	config->writeEntry("TaskbarButtonHorizontalSize",4);
 	//config->writeEntry("DesktopButtonFont","*-helvetica-medium-r-normal--14-*");
 	config->writeEntry("DesktopButtonRows",2);
