@@ -11,6 +11,10 @@ influences from my experiences with the former kwm.
 
 In 0.11:
 --------
+patchlevel 8:
+        - WindowResizeType=Opaque improved. No more flickering and a 
+            bit faster. Still not perfect in combination with horizontal shading. 
+
 patchlevel 7:
         - Some new properties for the kwmrc:
 

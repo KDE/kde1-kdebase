@@ -2116,10 +2116,14 @@ void Manager::lowerClient(Client* c){
   XQueryTree(qt_xdisplay(), qt_xrootwin(), &dw1, &dw2, &wins, &nwins);
 
   // X Semantics are somewhat cryptic
-  Window* new_stack = new Window[nwins+1];
-  Window* hide_stack = new Window[nwins+1];
+  Window* new_stack = new Window[nwins+2];
+  Window* hide_stack = new Window[nwins+2];
   unsigned int n = 0;
   unsigned int nh = 0;
+  // take care about the gimmick: this should be always on top!
+  if (options.GimmickMode && c == current() && Client::gimmickWindow() != None){
+    new_stack[n++]=Client::gimmickWindow();
+  }
   new_stack[n++] = c->winId();
 
   for (i = 0; i < nwins; i++) {
@@ -2141,8 +2145,6 @@ void Manager::lowerClient(Client* c){
     XMapWindow(qt_xdisplay(), hide_stack[i]);
   delete [] new_stack;
   XFree((void *) wins);   
-  if (current())
-    current()->placeGimmick();
 }
 
 // close a client. clients with WM_DELETE_WINDOW protocol set

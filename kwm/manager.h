@@ -484,8 +484,6 @@ private:
 
   // apply the above mentioned global hints
   void doGlobalDecorationAndFocusHints(Client* c);
-
-
 };
 
 // CC: new KDE Greyer widget

@@ -335,7 +335,7 @@ static void grabButton(int button, Window window, unsigned int mod){
 
 
 Client::Client(Window w, QWidget *parent, const char *name_for_qt)
-  : QFrame( parent, name_for_qt){
+  : QWidget( parent, name_for_qt, WResizeNoErase){
     //, WStyle_Customize | WStyle_NoBorder | WStyle_Tool ){
     window = w;
 
@@ -369,8 +369,6 @@ Client::Client(Window w, QWidget *parent, const char *name_for_qt)
 
     setMouseTracking(True);
     
-    setFrameStyle( QFrame::WinPanel | QFrame::Raised );
-
     size.flags = 0;
     generateButtons();
 
@@ -819,11 +817,18 @@ void Client::leaveEvent( QEvent * ){
     set_x_cursor(normal_cursor);
 }
 
-void Client::paintEvent( QPaintEvent* ev ){
-  QFrame::paintEvent(ev);
+void Client::paintEvent( QPaintEvent*){
   QPainter p;
   p.begin(this);
+   p.eraseRect(2,2,title_rect.x()-2, TITLEBAR_HEIGHT+BORDER-2);
+   p.eraseRect(title_rect.right(),2, width()-title_rect.right()-2, 
+ 	      TITLEBAR_HEIGHT+BORDER-2-TITLEWINDOW_SEPARATION);
+   p.eraseRect(2,2,width()-4, BORDER-2);
+   p.eraseRect(2, TITLEBAR_HEIGHT+BORDER-TITLEWINDOW_SEPARATION, width()-4, 
+ 	      height()-TITLEBAR_HEIGHT-BORDER+TITLEWINDOW_SEPARATION-2);
+  qDrawWinPanel(&p, rect(), colorGroup());
   if (!options.ShapeMode || getDecoration() != KWM::normalDecoration){
+    p.eraseRect(width()-18, height()-18, 16, 16);
     qDrawShadeRect( &p, width()-20, height()-20, 20, 20, colorGroup(), False);
   }
   else {
@@ -1554,45 +1559,44 @@ void Client::paintState(bool only_label, bool colors_have_changed){
   p.setClipping(False);
   
   if (is_active)
-    qDrawShadePanel( &p, r, colorGroup(), True );
+    qDrawShadePanel( &p, r, colorGroup(), true );
 
   p.setPen(is_active ? myapp->activeTextColor : myapp->inactiveTextColor);
 
-  if (label){
-    QFont fnt = kapp->generalFont;
-    fnt.setPointSize(12);
-    fnt.setBold(true);
-    p.setFont(fnt);
-    p.setClipRect(r);
-    p.setClipping(True);
-    titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
-    if (titlestring_offset_delta > 0){
-      if (titlestring_offset > 0
-	  && titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
-	titlestring_offset_delta *= -1;
-      }
+  QFont fnt = kapp->generalFont;
+  fnt.setPointSize(12);
+  fnt.setBold(true);
+  p.setFont(fnt);
+  titlestring_too_large = (p.fontMetrics().width(QString(" ")+label+" ")>r.width());
+  if (titlestring_offset_delta > 0){
+    if (titlestring_offset > 0
+	&& titlestring_offset > r.width() - p.fontMetrics().width(QString(" ")+label+" ")){
+      titlestring_offset_delta *= -1;
     }
-    else {
-      if (titlestring_offset < 0
-	  && titlestring_offset + 
-	  p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
-	titlestring_offset_delta *= -1;
-      }
-    }
-
-    if (!titlestring_too_large)
-      titlestring_offset = 0;
-    if (options.TitleAnimation)
-      r.moveBy(titlestring_offset,0);
-    p.drawText(r.x(), r.y()+p.fontMetrics().ascent(), 
-	       QString(" ")+label+" ");
-    p.setClipping(False);
   }
+  else {
+    if (titlestring_offset < 0
+	&& titlestring_offset + 
+	p.fontMetrics().width(QString(" ")+label+" ") < r.width()){
+      titlestring_offset_delta *= -1;
+    }
+  }
+  
+  if (!titlestring_too_large)
+    titlestring_offset = 0;
+  p.setClipRect(r);
+  p.setClipping(True);
+  p.drawText(r.x()+(options.TitleAnimation?titlestring_offset:0), 
+	     r.y()+p.fontMetrics().ascent(), 
+	     QString(" ")+label+" ");
+  p.setClipping(False);
   p.end();
   if (double_buffering){
-    p.begin(this);
-    p.drawPixmap( title_rect.x(), title_rect.y(), *buffer ); 
-    p.end();
+    bitBlt(buffer, 
+	   0,0,
+	   this, 
+	   title_rect.x(), title_rect.y(), 
+	   title_rect.width(), title_rect.height());
     delete buffer;
   }
 }
@@ -1616,6 +1620,7 @@ void Client::hideGimmick(){
     gimmick->hide();
 }
 void Client::placeGimmick(){
+  static Client*  gimmick_client = 0; // used to avoid flickering
   if (!is_active)
     return;
   if (options.GimmickMode){
@@ -1627,15 +1632,18 @@ void Client::placeGimmick(){
 		  geometry.y()+geometry.height()*options.GimmickPositionY/100+
 		  options.GimmickOffsetY-gimmick->height());
     
-    // put the gimmick right above the window itself in the stacking order
-    Window* new_stack = new Window[2];
-    new_stack[0]=winId();
-    new_stack[1]=gimmick->winId();
-    XRestackWindows(qt_xdisplay(), new_stack, 2);
-    new_stack[0]=gimmick->winId();
-    new_stack[1]=winId();
-    XRestackWindows(qt_xdisplay(), new_stack, 2);
-    delete [] new_stack;
+      // put the gimmick right above the window itself in the stacking order
+    if (gimmick_client != this){
+      gimmick_client = this;
+      Window* new_stack = new Window[2];
+      new_stack[0]=winId();
+      new_stack[1]=gimmick->winId();
+      XRestackWindows(qt_xdisplay(), new_stack, 2);
+      new_stack[0]=gimmick->winId();
+      new_stack[1]=winId();
+      XRestackWindows(qt_xdisplay(), new_stack, 2);
+      delete [] new_stack;
+    }
   }
 }
 
