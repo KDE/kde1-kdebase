@@ -105,27 +105,27 @@ msgstr ""
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr ""
+msgstr "Abmelden"
 
 #: syssound.cpp:169
 msgid "Logout Message"
-msgstr ""
+msgstr "Abmelde-Nachricht"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr ""
+msgstr "Anfang Fenster-Verschieben"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr ""
+msgstr "Ende Fenster-Verschieben"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr ""
+msgstr "Anfang des Fenter-Vergrößerns"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr ""
+msgstr "Ende des Fenter-Vergrößerns"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
@@ -153,7 +153,6 @@ msgid "Unsupported URL"
 msgstr "nicht unterstützte URL"
 
 #: syssound.cpp:455
-#, fuzzy
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-03-20 00:05+0100\n"
 "Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
@@ -24,7 +24,7 @@ msgstr "A tecla de backspace gera um"
 msgid "&New Terminal"
 msgstr "&Novo Terminal"
 
-#: main.C:406 main.C:809
+#: main.C:406 main.C:812
 msgid "&Hide"
 msgstr "E&sconder"
 
@@ -84,15 +84,15 @@ msgstr "Consola de Linu&x"
 msgid "&Custom Colors"
 msgstr "&Cores Personalizadas"
 
-#: main.C:450 main.C:755
+#: main.C:450 main.C:758
 msgid "Hide &Menubar"
 msgstr "Esconder &Barra de Menu"
 
-#: main.C:452 main.C:619 main.C:747
+#: main.C:452 main.C:622 main.C:750
 msgid "Show &Menubar"
 msgstr "Mostrar &Barra de Menu"
 
-#: main.C:453 main.C:765
+#: main.C:453 main.C:768
 msgid "Secure &keyboard"
 msgstr "Trancar &teclado"
 
@@ -138,23 +138,23 @@ msgstr ""
 "Emulação de terminal para o KDE Desktop Environment\n"
 "baseado no rvt-2.08 de Robert Nation"
 
-#: main.C:628 main.C:802
+#: main.C:631 main.C:805
 msgid "&Show"
 msgstr "&Mostrar"
 
-#: main.C:761
+#: main.C:764
 msgid "Unsecure &keyboard"
 msgstr "Destrancar &Teclado"
 
-#: main.C:772
+#: main.C:775
 msgid "Terminal Options"
 msgstr "Opções do Terminal"
 
-#: main.C:914
+#: main.C:917
 msgid "Hint"
 msgstr "Dica"
 
-#: main.C:915
+#: main.C:918
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -162,7 +162,7 @@ msgstr ""
 "As novas definições de cor serão mostradas\n"
 "quando o teclado estiver destrancado."
 
-#: main.C:1148
+#: main.C:1151
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -170,69 +170,183 @@ msgid ""
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
-"Permitted arguments are:\n"
-"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-"-display <name>\tspecify the display (server)\n"
-"-vt_geometry <spec>\tthe initial vt window geometry\n"
-"-print-pipe <name>\tspecify pipe for vt100 printer\n"
-"-vt_bg <colour>\t\tbackground color\n"
-"-vt_fg <colour>\t\tforeground color\n"
-"-vt_font <fontname>\tnormal font\n"
-"-vt_size <size>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\tset up kvt to mimic linux-console\n"
-"-no_menubar\t\thide the menubar\n"
-"-no_scrollbar\t\thide the scrollbar\n"
-"-T <text>\t\ttext in window titlebar \n"
-"                   (Obsolete. Use -caption instead)\n"
-"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-"-C\t\t\tCapture system console message\n"
-"-n <text>\t\tname in icon or icon window\n"
-"-7\t\t        run in 7 bit mode\n"
-"-8\t\t\trun in 8 bit mode\n"
-"-ls\t\t\tinitiate kvt's shell as a login shell\n"
-"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tsave number lines in scroll-back buffer\n"
-"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
-"Terminal emulation for the KDE Desktop Environment\n"
-"based on Robert Nation's rxvt-2.08\n"
 "\n"
-"Argumentos permitidos são:\n"
-"-e <comando> <arg> ...\texecutar comando com agrs - precisa de ser o ultimo "
-"argumento\n"
-"-display <nome>\tspecificar o nome do ecran (servidor)\n"
-"-vt_geometry <spec>\ta geometria de janela vt inicial\n"
-"-print-pipe <nome>\tespecificar cano para a impressora vt100\n"
-"-vt_bg <cor>\t\tcor de fundo\n"
-"-vt_fg <cor>\t\tcor do texto\n"
-"-vt_font <fontname>\tletra normal\n"
-"-vt_size <tamanho>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\tconfigurar o kvt para imitar a consola de linux\n"
-"-no_menubar\t\tesconder a barra de menu\n"
-"-no_scrollbar\t\tesconder a barra de arrasto\n"
-"-T <texto>\t\ttexto na barra de titulo da janela\n"
-"-tn <TERM>\t\tTipo de terminal. Por defeito xterm.\n"
-"-C\t\t\tCapturar messagens da consola de sistema\n"
-"-n <texto>\t\tnome no icon ou janela de icon\n"
-"-7\t\t        executar em modo de 7 bits\n"
-"-8\t\t\texecutar em modo de 8 bits\n"
-"-ls\t\t\tiniciar a shell do kvt como uma shell de login\n"
-"-ls-\t\t\tiniciar a shell do kvt como uma shell normal (default)\n"
-"-meta\t\t\tgerir Meta com prefixo ESCAPE, 8THBIT colocado, ou ignorar\n"
-"-sl <number>\t\tgravar numero de linhas no buffer de história\n"
-"-pageup <keysym>\tutilizar a combinação de teclas alt-keysym para recuar no "
-"buffer\n"
-"-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar "
-"no buffer\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Emulação de terminal para o KDE Desktop Environment\n"
+"baseado no rvt-2.08 de Robert Nation"
 
-#: main.C:1179
+#: main.C:1155
+msgid "Permitted arguments are:\n"
+msgstr ""
+
+#: main.C:1156
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+
+#: main.C:1157
+msgid "-display <name>           specify the display (server)\n"
+msgstr ""
+
+#: main.C:1158
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr ""
+
+#: main.C:1159
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr ""
+
+#: main.C:1160
+msgid "-vt_bg <colour>           background color\n"
+msgstr ""
+
+#: main.C:1161
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr ""
+
+#: main.C:1162
+msgid "-vt_font <fontname>       normal font\n"
+msgstr ""
+
+#: main.C:1163
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr ""
+
+#: main.C:1164
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr ""
+
+#: main.C:1165
+msgid "-no_menubar               hide the menubar\n"
+msgstr ""
+
+#: main.C:1166
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr ""
+
+#: main.C:1167
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+
+#: main.C:1169
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr ""
+
+#: main.C:1170
+msgid "-C                        Capture system console message\n"
+msgstr ""
+
+#: main.C:1171
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr ""
+
+#: main.C:1172
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+
+#: main.C:1174
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+
+#: main.C:1176
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+
+#: main.C:1177
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr ""
+
+#: main.C:1178
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+
+#: main.C:1182
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (por defeito)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Terminal emulation for the KDE Desktop Environment\n"
+#~ "based on Robert Nation's rxvt-2.08\n"
+#~ "\n"
+#~ "Permitted arguments are:\n"
+#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+#~ "-display <name>\tspecify the display (server)\n"
+#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
+#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
+#~ "-vt_bg <colour>\t\tbackground color\n"
+#~ "-vt_fg <colour>\t\tforeground color\n"
+#~ "-vt_font <fontname>\tnormal font\n"
+#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
+#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
+#~ "-no_menubar\t\thide the menubar\n"
+#~ "-no_scrollbar\t\thide the scrollbar\n"
+#~ "-T <text>\t\ttext in window titlebar \n"
+#~ "                   (Obsolete. Use -caption instead)\n"
+#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+#~ "-C\t\t\tCapture system console message\n"
+#~ "-n <text>\t\tname in icon or icon window\n"
+#~ "-7\t\t        run in 7 bit mode\n"
+#~ "-8\t\t\trun in 8 bit mode\n"
+#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
+#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
+#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+#~ msgstr ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Terminal emulation for the KDE Desktop Environment\n"
+#~ "based on Robert Nation's rxvt-2.08\n"
+#~ "\n"
+#~ "Argumentos permitidos são:\n"
+#~ "-e <comando> <arg> ...\texecutar comando com agrs - precisa de ser o ultimo "
+#~ "argumento\n"
+#~ "-display <nome>\tspecificar o nome do ecran (servidor)\n"
+#~ "-vt_geometry <spec>\ta geometria de janela vt inicial\n"
+#~ "-print-pipe <nome>\tespecificar cano para a impressora vt100\n"
+#~ "-vt_bg <cor>\t\tcor de fundo\n"
+#~ "-vt_fg <cor>\t\tcor do texto\n"
+#~ "-vt_font <fontname>\tletra normal\n"
+#~ "-vt_size <tamanho>     \ttiny, small, normal, large, huge\n"
+#~ "-linux\t\t\tconfigurar o kvt para imitar a consola de linux\n"
+#~ "-no_menubar\t\tesconder a barra de menu\n"
+#~ "-no_scrollbar\t\tesconder a barra de arrasto\n"
+#~ "-T <texto>\t\ttexto na barra de titulo da janela\n"
+#~ "-tn <TERM>\t\tTipo de terminal. Por defeito xterm.\n"
+#~ "-C\t\t\tCapturar messagens da consola de sistema\n"
+#~ "-n <texto>\t\tnome no icon ou janela de icon\n"
+#~ "-7\t\t        executar em modo de 7 bits\n"
+#~ "-8\t\t\texecutar em modo de 8 bits\n"
+#~ "-ls\t\t\tiniciar a shell do kvt como uma shell de login\n"
+#~ "-ls-\t\t\tiniciar a shell do kvt como uma shell normal (default)\n"
+#~ "-meta\t\t\tgerir Meta com prefixo ESCAPE, 8THBIT colocado, ou ignorar\n"
+#~ "-sl <number>\t\tgravar numero de linhas no buffer de história\n"
+#~ "-pageup <keysym>\tutilizar a combinação de teclas alt-keysym para recuar no "
+#~ "buffer\n"
+#~ "-pagedown <keysym>\tutilizar a combinação de teclas alt-keysym para avançar "
+#~ "no buffer\n"

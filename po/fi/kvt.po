@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KVT\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-03-20 00:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kim Enkovaara <kim.enkovaara@iki.fi>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Backspace näppäin lähettää"
 msgid "&New Terminal"
 msgstr "&Uusi pääteikkuna"
 
-#: main.C:406 main.C:809
+#: main.C:406 main.C:812
 msgid "&Hide"
 msgstr "&Piilota"
 
@@ -89,15 +89,15 @@ msgstr "&Linuxin konsoli"
 msgid "&Custom Colors"
 msgstr "Omat &Värit"
 
-#: main.C:450 main.C:755
+#: main.C:450 main.C:758
 msgid "Hide &Menubar"
 msgstr "Piilota &valikot"
 
-#: main.C:452 main.C:619 main.C:747
+#: main.C:452 main.C:622 main.C:750
 msgid "Show &Menubar"
 msgstr "Näytä &valikot"
 
-#: main.C:453 main.C:765
+#: main.C:453 main.C:768
 msgid "Secure &keyboard"
 msgstr "Varmista &näppäimistö"
 
@@ -143,23 +143,23 @@ msgstr ""
 "Terminaaliemulaatio KDE Desktop Ympäristöön\n"
 "perustuu Robert Nationin rxvt-2.08 ohjelmaan."
 
-#: main.C:628 main.C:802
+#: main.C:631 main.C:805
 msgid "&Show"
 msgstr "&Näytä"
 
-#: main.C:761
+#: main.C:764
 msgid "Unsecure &keyboard"
 msgstr "Vapauta &näppäimistö"
 
-#: main.C:772
+#: main.C:775
 msgid "Terminal Options"
 msgstr "Päätteen asetukset"
 
-#: main.C:914
+#: main.C:917
 msgid "Hint"
 msgstr "Vihje"
 
-#: main.C:915
+#: main.C:918
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -167,7 +167,7 @@ msgstr ""
 "Uudet väriasetukset astuvat voimaan\n"
 "heti kun näppäimistö vapautetaan."
 
-#: main.C:1148
+#: main.C:1151
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -175,67 +175,181 @@ msgid ""
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
-"Permitted arguments are:\n"
-"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-"-display <name>\tspecify the display (server)\n"
-"-vt_geometry <spec>\tthe initial vt window geometry\n"
-"-print-pipe <name>\tspecify pipe for vt100 printer\n"
-"-vt_bg <colour>\t\tbackground color\n"
-"-vt_fg <colour>\t\tforeground color\n"
-"-vt_font <fontname>\tnormal font\n"
-"-vt_size <size>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\tset up kvt to mimic linux-console\n"
-"-no_menubar\t\thide the menubar\n"
-"-no_scrollbar\t\thide the scrollbar\n"
-"-T <text>\t\ttext in window titlebar \n"
-"                   (Obsolete. Use -caption instead)\n"
-"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-"-C\t\t\tCapture system console message\n"
-"-n <text>\t\tname in icon or icon window\n"
-"-7\t\t        run in 7 bit mode\n"
-"-8\t\t\trun in 8 bit mode\n"
-"-ls\t\t\tinitiate kvt's shell as a login shell\n"
-"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tsave number lines in scroll-back buffer\n"
-"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
 "Terminaaliemulaatio KDE Desktop Ympäristöön\n"
-"perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
-"Sallitut komentorivioptiot ovat:\n"
-"-e <komento> <arg> ...\tsuorita komento argumenteilla - pitää olla "
-"viimeisenä\n"
-"-display <nimi>\tmäärittele näytön nimi (palvelin)\n"
-"-vt_geometry <muoto>\taloitusmuoto ikkunalle\n"
-"-print-pipe <nimi>\tmäärittele putki VT-100 tulostimelle\n"
-"-vt_bg <väri>\t\ttaustaväri\n"
-"-vt_fg <väri>\t\tedustaväri\n"
-"-vt_font <kirjasinnimi>\tnormaalikirjasin\n"
-"-vt_size <koko>     \tterminaalin koko: tiny, small, normal, large, huge\n"
-"-linux\t\t\taseta kvt matkimaan linuxin konsolia\n"
-"-no_menubar\t\tpiilota valikkorivi\n"
-"-no_scrollbar\t\tpiilota vierityspalkki\n"
-"-T <teksti>\t\tTerminaalin otsikko \n"
-"                   (Ei käytetä enään. Käytä -caption:ia tämän sijasta)\n"
-"-tn <TERM>\t\tTerminaalin tyyppi. Oletus on xterm.\n"
-"-C\t\t\tKaappaa järjestelmän konsoliviestit\n"
-"-n <teksti>\t\tnimi ikonin yhteydessä\n"
-"-7\t\t        aja 7 bittisessä tilassa\n"
-"-8\t\t\taja 8 bittisessä tilassa\n"
-"-ls\t\t\taseta kvt:n komentotulkki login tilaan.\n"
-"-ls-\t\t\taseta kvt:n komentotulkki ei-login tilaan (oletus)\n"
-"-meta\t\t\tKäsittele Meta ESCAPE etumerkillä, 8THBIT asetettu, tai ohita\n"
-"-sl <määrä>\t\tkuinka monta riviä säilytetään puskurissa\n"
-"-pageup <näpp.symb.>\tkäytä alt + näppäintä puskurin ylös selaamiseen\n"
-"-pagedown <näpp.symb.>\tkäytä alt + näppäintä puskurin ylös selaamiseen\n"
+"perustuu Robert Nationin rxvt-2.08 ohjelmaan."
 
-#: main.C:1179
+#: main.C:1155
+msgid "Permitted arguments are:\n"
+msgstr ""
+
+#: main.C:1156
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+
+#: main.C:1157
+msgid "-display <name>           specify the display (server)\n"
+msgstr ""
+
+#: main.C:1158
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr ""
+
+#: main.C:1159
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr ""
+
+#: main.C:1160
+msgid "-vt_bg <colour>           background color\n"
+msgstr ""
+
+#: main.C:1161
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr ""
+
+#: main.C:1162
+msgid "-vt_font <fontname>       normal font\n"
+msgstr ""
+
+#: main.C:1163
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr ""
+
+#: main.C:1164
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr ""
+
+#: main.C:1165
+msgid "-no_menubar               hide the menubar\n"
+msgstr ""
+
+#: main.C:1166
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr ""
+
+#: main.C:1167
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+
+#: main.C:1169
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr ""
+
+#: main.C:1170
+msgid "-C                        Capture system console message\n"
+msgstr ""
+
+#: main.C:1171
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr ""
+
+#: main.C:1172
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+
+#: main.C:1174
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+
+#: main.C:1176
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+
+#: main.C:1177
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr ""
+
+#: main.C:1178
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+
+#: main.C:1182
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
 "-grk9\t\tgreek kbd = ELOT 928 (oletus)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Terminal emulation for the KDE Desktop Environment\n"
+#~ "based on Robert Nation's rxvt-2.08\n"
+#~ "\n"
+#~ "Permitted arguments are:\n"
+#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+#~ "-display <name>\tspecify the display (server)\n"
+#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
+#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
+#~ "-vt_bg <colour>\t\tbackground color\n"
+#~ "-vt_fg <colour>\t\tforeground color\n"
+#~ "-vt_font <fontname>\tnormal font\n"
+#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
+#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
+#~ "-no_menubar\t\thide the menubar\n"
+#~ "-no_scrollbar\t\thide the scrollbar\n"
+#~ "-T <text>\t\ttext in window titlebar \n"
+#~ "                   (Obsolete. Use -caption instead)\n"
+#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+#~ "-C\t\t\tCapture system console message\n"
+#~ "-n <text>\t\tname in icon or icon window\n"
+#~ "-7\t\t        run in 7 bit mode\n"
+#~ "-8\t\t\trun in 8 bit mode\n"
+#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
+#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
+#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+#~ msgstr ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Terminaaliemulaatio KDE Desktop Ympäristöön\n"
+#~ "perustuu Robert Nationin rxvt-2.08 ohjelmaan.\n"
+#~ "Sallitut komentorivioptiot ovat:\n"
+#~ "-e <komento> <arg> ...\tsuorita komento argumenteilla - pitää olla "
+#~ "viimeisenä\n"
+#~ "-display <nimi>\tmäärittele näytön nimi (palvelin)\n"
+#~ "-vt_geometry <muoto>\taloitusmuoto ikkunalle\n"
+#~ "-print-pipe <nimi>\tmäärittele putki VT-100 tulostimelle\n"
+#~ "-vt_bg <väri>\t\ttaustaväri\n"
+#~ "-vt_fg <väri>\t\tedustaväri\n"
+#~ "-vt_font <kirjasinnimi>\tnormaalikirjasin\n"
+#~ "-vt_size <koko>     \tterminaalin koko: tiny, small, normal, large, huge\n"
+#~ "-linux\t\t\taseta kvt matkimaan linuxin konsolia\n"
+#~ "-no_menubar\t\tpiilota valikkorivi\n"
+#~ "-no_scrollbar\t\tpiilota vierityspalkki\n"
+#~ "-T <teksti>\t\tTerminaalin otsikko \n"
+#~ "                   (Ei käytetä enään. Käytä -caption:ia tämän sijasta)\n"
+#~ "-tn <TERM>\t\tTerminaalin tyyppi. Oletus on xterm.\n"
+#~ "-C\t\t\tKaappaa järjestelmän konsoliviestit\n"
+#~ "-n <teksti>\t\tnimi ikonin yhteydessä\n"
+#~ "-7\t\t        aja 7 bittisessä tilassa\n"
+#~ "-8\t\t\taja 8 bittisessä tilassa\n"
+#~ "-ls\t\t\taseta kvt:n komentotulkki login tilaan.\n"
+#~ "-ls-\t\t\taseta kvt:n komentotulkki ei-login tilaan (oletus)\n"
+#~ "-meta\t\t\tKäsittele Meta ESCAPE etumerkillä, 8THBIT asetettu, tai ohita\n"
+#~ "-sl <määrä>\t\tkuinka monta riviä säilytetään puskurissa\n"
+#~ "-pageup <näpp.symb.>\tkäytä alt + näppäintä puskurin ylös selaamiseen\n"
+#~ "-pagedown <näpp.symb.>\tkäytä alt + näppäintä puskurin ylös selaamiseen\n"

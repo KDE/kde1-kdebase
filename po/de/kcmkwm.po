@@ -177,20 +177,19 @@ msgstr "Überlappend"
 
 #: windows.cpp:90
 msgid "Interactive"
-msgstr ""
+msgstr "Interaktiv"
 
 #: windows.cpp:92
 msgid "Random"
 msgstr "Zufällig"
 
 #: windows.cpp:94
-#, fuzzy
 msgid "Manual"
-msgstr "Menü"
+msgstr "Manuell"
 
 #: windows.cpp:101
 msgid "Allowed Overlap:"
-msgstr ""
+msgstr "Überlappen erlaubt:"
 
 #: windows.cpp:108
 msgid "Maximize Style"
@@ -241,17 +240,16 @@ msgid "Move pointer towards center after switch"
 msgstr "Zeiger nach einem Wechsel in die Mitte setzen"
 
 #: desktop.cpp:89
-#, fuzzy
 msgid "Dekstop switch delay:"
-msgstr "Zeitraum für Desktop-Wechsel in ms:"
+msgstr "Zeitraum für Desktop-Wechsel:"
 
 #: desktop.cpp:102
 msgid "Magic Borders"
-msgstr ""
+msgstr "Magic Ränder"
 
 #: desktop.cpp:104
 msgid "Edge Resistance:"
-msgstr ""
+msgstr "Widerstand am Rand:"
 
 #: desktop.cpp:118
 msgid ""

@@ -571,16 +571,15 @@ msgstr ""
 
 #: space.cpp:491
 msgid "Space (GL)"
-msgstr ""
+msgstr "Weltraum (GL)"
 
 #: space.cpp:581
-#, fuzzy
 msgid "Setup KSpace"
-msgstr "KSlip einstellen"
+msgstr "KSpace einstellen"
 
 #: space.cpp:597
 msgid "Warp Interval:"
-msgstr ""
+msgstr "Warp-Zeitraum:"
 
 #: space.cpp:685
 msgid "About KSpace"

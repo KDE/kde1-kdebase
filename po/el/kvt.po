@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1998-03-19 22:16+0100\n"
+"POT-Creation-Date: 1998-03-20 00:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Theodore J. Soldatos <theodore@eexi.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Το backspace στέλνει "
 msgid "&New Terminal"
 msgstr "Νέο τερματικό"
 
-#: main.C:406 main.C:809
+#: main.C:406 main.C:812
 msgid "&Hide"
 msgstr "Απόκρυψη"
 
@@ -89,15 +89,15 @@ msgstr "Χρώματα κονσόλας"
 msgid "&Custom Colors"
 msgstr "Προσαρμοσμένα χρώματα"
 
-#: main.C:450 main.C:755
+#: main.C:450 main.C:758
 msgid "Hide &Menubar"
 msgstr "Απόκρυψη Γραμμής Επιλογών"
 
-#: main.C:452 main.C:619 main.C:747
+#: main.C:452 main.C:622 main.C:750
 msgid "Show &Menubar"
 msgstr "Επανεμφάνιση Γραμμής Επιλογών"
 
-#: main.C:453 main.C:765
+#: main.C:453 main.C:768
 msgid "Secure &keyboard"
 msgstr "Ασφάλιση Πληκτρολογίου"
 
@@ -143,23 +143,23 @@ msgstr ""
 "Εξομοίωση τερματικού για το Περιβάλλον Γραφείου KDE\n"
 "βασισμένο στο rxvt-2.08 του Robert Nation"
 
-#: main.C:628 main.C:802
+#: main.C:631 main.C:805
 msgid "&Show"
 msgstr "Εμφάνιση"
 
-#: main.C:761
+#: main.C:764
 msgid "Unsecure &keyboard"
 msgstr "Απασφάλιση πληκτρολογίου"
 
-#: main.C:772
+#: main.C:775
 msgid "Terminal Options"
 msgstr "Επιλογές τερματικού"
 
-#: main.C:914
+#: main.C:917
 msgid "Hint"
 msgstr "Συμβουλή"
 
-#: main.C:915
+#: main.C:918
 msgid ""
 "New color settings will be displayed\n"
 "when the keyboard is unsecured."
@@ -167,7 +167,7 @@ msgstr ""
 "Οι νέες χρωματικές επιλογές θα εμφανιστούν\n"
 "μόλις απασφαλιστεί το πληκτρολόγιο."
 
-#: main.C:1148
+#: main.C:1151
 #, fuzzy
 msgid ""
 "Copyright(C) 1996, 1997 Matthias Ettrich\n"
@@ -175,66 +175,180 @@ msgid ""
 "Terminal emulation for the KDE Desktop Environment\n"
 "based on Robert Nation's rxvt-2.08\n"
 "\n"
-"Permitted arguments are:\n"
-"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
-"-display <name>\tspecify the display (server)\n"
-"-vt_geometry <spec>\tthe initial vt window geometry\n"
-"-print-pipe <name>\tspecify pipe for vt100 printer\n"
-"-vt_bg <colour>\t\tbackground color\n"
-"-vt_fg <colour>\t\tforeground color\n"
-"-vt_font <fontname>\tnormal font\n"
-"-vt_size <size>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\tset up kvt to mimic linux-console\n"
-"-no_menubar\t\thide the menubar\n"
-"-no_scrollbar\t\thide the scrollbar\n"
-"-T <text>\t\ttext in window titlebar \n"
-"                   (Obsolete. Use -caption instead)\n"
-"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
-"-C\t\t\tCapture system console message\n"
-"-n <text>\t\tname in icon or icon window\n"
-"-7\t\t        run in 7 bit mode\n"
-"-8\t\t\trun in 8 bit mode\n"
-"-ls\t\t\tinitiate kvt's shell as a login shell\n"
-"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
-"-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tsave number lines in scroll-back buffer\n"
-"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
 msgstr ""
-"Copyright(C) 1996, 1997 Matthias Ettrich\n"
-"Copyright(C) 1997 M G Berberich\n"
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
 "Εξομοίωση τερματικού για το Περιβάλλον Γραφείου KDE\n"
-"βασισμένο στο rxvt-2.08 του Robert Nation\n"
-"Επιτρεπόμενα ορίσματα:\n"
-"-e <command> <arg> ...\tΕκτέλεση εντολής με ορίσματα - πρέπει να είναι "
-"τελευταίο όρισμα\n"
-"-display <name>\tΟρισμός οθόνης (X server)\n"
-"-vt_geometry <spec>\tΑρχική γεωμετρία παραθύρου\n"
-"-print-pipe <name>\tΟρισμός εκτυπωτή του vt100\n"
-"-vt_bg <colour>\t\tΧρώμα φόντου\n"
-"-vt_fg <colour>\t\tΧρώμα χαρακτήρων\n"
-"-vt_font <fontname>\tΧαρακτήρες κανονικού μεγέθους\n"
-"-vt_size <size>     \tΜεγέθη χαρακτήρων (tiny, small, normal, large, huge)\n"
-"-linux\t\t\tΚάνει το kvt να μιμείται την κονσόλα του Linux\n"
-"-no_menubar\t\tΑπόκρυψη γραμμής εντολών\n"
-"-no_scrollbar\t\tΑπόκρυψη γραμμής κύλισης\n"
-"-T <text>\t\tΤίτλος παραθύρου \n"
-"                   (Σε αχρηστία. Χρησιμοποιήστε -caption στη θέση του)\n"
-"-tn <TERM>\t\tΤύπος τερματικού. Εξ ορισμού xterm.\n"
-"-C\t\t\tΠαγίδευση μηνυμάτων κονσόλας συστήματος\n"
-"-n <text>\t\tΌνομα εικονιδίου\n"
-"-7\t\t        Τρόπος λειτουργίας 7 bit\n"
-"-8\t\t\tΤρόπος λειτουργίας 8 bit\n"
-"-ls\t\t\tΑρχικοποίηση κελύφους kvt ως κέλυφος σύνδεσης (login shell)\n"
-"-ls-\t\t\tΑρχικοποίηση κελύφους kvt ως απλό κέλυφος (non-login shell) (Εξ "
-"ορισμού)\n"
-"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
-"-sl <number>\t\tΑριθμός γραμμών προς αποθήκευση\n"
-"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
-"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+"βασισμένο στο rxvt-2.08 του Robert Nation"
 
-#: main.C:1179
+#: main.C:1155
+msgid "Permitted arguments are:\n"
+msgstr ""
+
+#: main.C:1156
+msgid ""
+"-e <command> <arg> ...    execute command with ars - must be last argument\n"
+msgstr ""
+
+#: main.C:1157
+msgid "-display <name>           specify the display (server)\n"
+msgstr ""
+
+#: main.C:1158
+msgid "-vt_geometry <spec>       the initial vt window geometry\n"
+msgstr ""
+
+#: main.C:1159
+msgid "-print-pipe <name>        specify pipe for vt100 printer\n"
+msgstr ""
+
+#: main.C:1160
+msgid "-vt_bg <colour>           background color\n"
+msgstr ""
+
+#: main.C:1161
+msgid "-vt_fg <colour>           foreground color\n"
+msgstr ""
+
+#: main.C:1162
+msgid "-vt_font <fontname>       normal font\n"
+msgstr ""
+
+#: main.C:1163
+msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
+msgstr ""
+
+#: main.C:1164
+msgid "-linux                    set up kvt to mimic linux-console\n"
+msgstr ""
+
+#: main.C:1165
+msgid "-no_menubar               hide the menubar\n"
+msgstr ""
+
+#: main.C:1166
+msgid "-no_scrollbar             hide the scrollbar\n"
+msgstr ""
+
+#: main.C:1167
+msgid ""
+"-T <text>                 text in window titlebar \n"
+"                          (Obsolete. Use -caption instead)\n"
+msgstr ""
+
+#: main.C:1169
+msgid "-tn <TERM>                Terminal type. Default is xterm.\n"
+msgstr ""
+
+#: main.C:1170
+msgid "-C                        Capture system console message\n"
+msgstr ""
+
+#: main.C:1171
+msgid "-n <text>                 name in icon or icon window\n"
+msgstr ""
+
+#: main.C:1172
+msgid ""
+"-7                        run in 7 bit mode\n"
+"-8                        run in 8 bit mode\n"
+msgstr ""
+
+#: main.C:1174
+msgid ""
+"-ls                       initiate kvt's shell as a login shell\n"
+"-ls-                      initiate kvt's shell as a non-login shell "
+"(default)\n"
+msgstr ""
+
+#: main.C:1176
+msgid ""
+"-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
+"ignore\n"
+msgstr ""
+
+#: main.C:1177
+msgid "-sl <number>              save number lines in scroll-back buffer\n"
+msgstr ""
+
+#: main.C:1178
+msgid ""
+"-pageup <keysym>          use hot key alt-keysym to scroll up through the "
+"buffer\n"
+"-pagedown <keysym>        use hot key alt-keysym to scroll down through "
+"buffer\n"
+msgstr ""
+
+#: main.C:1182
 msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Terminal emulation for the KDE Desktop Environment\n"
+#~ "based on Robert Nation's rxvt-2.08\n"
+#~ "\n"
+#~ "Permitted arguments are:\n"
+#~ "-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+#~ "-display <name>\tspecify the display (server)\n"
+#~ "-vt_geometry <spec>\tthe initial vt window geometry\n"
+#~ "-print-pipe <name>\tspecify pipe for vt100 printer\n"
+#~ "-vt_bg <colour>\t\tbackground color\n"
+#~ "-vt_fg <colour>\t\tforeground color\n"
+#~ "-vt_font <fontname>\tnormal font\n"
+#~ "-vt_size <size>     \ttiny, small, normal, large, huge\n"
+#~ "-linux\t\t\tset up kvt to mimic linux-console\n"
+#~ "-no_menubar\t\thide the menubar\n"
+#~ "-no_scrollbar\t\thide the scrollbar\n"
+#~ "-T <text>\t\ttext in window titlebar \n"
+#~ "                   (Obsolete. Use -caption instead)\n"
+#~ "-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+#~ "-C\t\t\tCapture system console message\n"
+#~ "-n <text>\t\tname in icon or icon window\n"
+#~ "-7\t\t        run in 7 bit mode\n"
+#~ "-8\t\t\trun in 8 bit mode\n"
+#~ "-ls\t\t\tinitiate kvt's shell as a login shell\n"
+#~ "-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+#~ "-meta <arg>\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+#~ "-sl <number>\t\tsave number lines in scroll-back buffer\n"
+#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+#~ msgstr ""
+#~ "Copyright(C) 1996, 1997 Matthias Ettrich\n"
+#~ "Copyright(C) 1997 M G Berberich\n"
+#~ "Εξομοίωση τερματικού για το Περιβάλλον Γραφείου KDE\n"
+#~ "βασισμένο στο rxvt-2.08 του Robert Nation\n"
+#~ "Επιτρεπόμενα ορίσματα:\n"
+#~ "-e <command> <arg> ...\tΕκτέλεση εντολής με ορίσματα - πρέπει να είναι "
+#~ "τελευταίο όρισμα\n"
+#~ "-display <name>\tΟρισμός οθόνης (X server)\n"
+#~ "-vt_geometry <spec>\tΑρχική γεωμετρία παραθύρου\n"
+#~ "-print-pipe <name>\tΟρισμός εκτυπωτή του vt100\n"
+#~ "-vt_bg <colour>\t\tΧρώμα φόντου\n"
+#~ "-vt_fg <colour>\t\tΧρώμα χαρακτήρων\n"
+#~ "-vt_font <fontname>\tΧαρακτήρες κανονικού μεγέθους\n"
+#~ "-vt_size <size>     \tΜεγέθη χαρακτήρων (tiny, small, normal, large, huge)\n"
+#~ "-linux\t\t\tΚάνει το kvt να μιμείται την κονσόλα του Linux\n"
+#~ "-no_menubar\t\tΑπόκρυψη γραμμής εντολών\n"
+#~ "-no_scrollbar\t\tΑπόκρυψη γραμμής κύλισης\n"
+#~ "-T <text>\t\tΤίτλος παραθύρου \n"
+#~ "                   (Σε αχρηστία. Χρησιμοποιήστε -caption στη θέση του)\n"
+#~ "-tn <TERM>\t\tΤύπος τερματικού. Εξ ορισμού xterm.\n"
+#~ "-C\t\t\tΠαγίδευση μηνυμάτων κονσόλας συστήματος\n"
+#~ "-n <text>\t\tΌνομα εικονιδίου\n"
+#~ "-7\t\t        Τρόπος λειτουργίας 7 bit\n"
+#~ "-8\t\t\tΤρόπος λειτουργίας 8 bit\n"
+#~ "-ls\t\t\tΑρχικοποίηση κελύφους kvt ως κέλυφος σύνδεσης (login shell)\n"
+#~ "-ls-\t\t\tΑρχικοποίηση κελύφους kvt ως απλό κέλυφος (non-login shell) (Εξ "
+#~ "ορισμού)\n"
+#~ "-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+#~ "-sl <number>\t\tΑριθμός γραμμών προς αποθήκευση\n"
+#~ "-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+#~ "-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
