@@ -64,12 +64,14 @@ void KFMDirTree::slotshowDirectory(const char *_url )
     bool found;
     int loops;
 
-    int ypos, xpos, myindex, newypos;
+    int ypos, xpos, myindex;
     finderWin->offsets( xpos, ypos );
 
     KURL u( _url );
     if ( u.isMalformed() )
 	return;
+
+    finderWin->setAutoUpdate( false );
 
     KFinderItem *item;
     KFMDirTreeItem *kfmitem;
@@ -93,8 +95,12 @@ void KFMDirTree::slotshowDirectory(const char *_url )
             myindex++;
 
             tmp2 = kfmitem->getURL();
+	    if ( tmp2.right(1) == "/" )
+	      tmp2.truncate(tmp2.length() - 1);
 
-            if (!qstrncmp(tmp,tmp2,comparelength)) {
+	    QString dummy = tmp.left(comparelength);
+
+            if ( !qstrncmp(tmp,tmp2,comparelength) && dummy == tmp2 ) {
 	        kfmitem->setOpen(true);
     	        updateTree(false);
 	        found=true;
@@ -102,12 +108,9 @@ void KFMDirTree::slotshowDirectory(const char *_url )
 		    comparelength=tmp.length();
 		    break;  // break the for() loop
 		    }
+                setBranchVisible( kfmitem );
+                finderWin->setAutoUpdate( true );
     	        finderWin->repaint();
-	        newypos=myindex*CELL_HEIGHT;
-	        if (newypos<ypos || newypos>(ypos+finderWin->height())) {
-		    if (myindex>=3) newypos=(myindex-3)*CELL_HEIGHT;
-    	    	    finderWin->setOffsets( xpos, newypos);
-		    }
 	        return;
 	    }
         }
@@ -124,6 +127,8 @@ void KFMDirTree::slotshowDirectory(const char *_url )
         if (++loops>128) break;     // race condition ?
         }
     debug("\"%s\" not opened\n",tmp.data());
+
+    finderWin->setAutoUpdate( true );
 }
 
 void KFMDirTree::slotDirectoryChanged( const char *_url )
