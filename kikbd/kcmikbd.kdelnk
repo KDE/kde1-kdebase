@@ -1,0 +1,20 @@
+# KDE Config File
+[KDE Desktop Entry]
+Comment=International Keyboard
+Name=International Keyboard
+Name[ru]=Интернациональная Клавиатура
+Name[pt]=ConfiguraГУes do Teclado Internacional
+Name[pl]=MiЙdzynarodowe Ustawienia Klawiatury
+Comment[ru]=Интернациональная Клавиатура
+Comment[pt]=ConfiguraГУes do Teclado Internacional
+Comment[pl]=MiЙdzynarodowe Ustawienia Klawiatury
+SwallowTitle=International Keyboard
+SwallowTitle[ru]=Интернациональная Клавиатура
+SwallowTitle[pt]=ConfiguraГУes do Teclado Internacional
+SwallowTitle[pl]=MiЙdzynarodowe Ustawienia Klawiatury
+Exec=kcmikbd
+Icon=kikbd.xpm
+Type=Application
+BinaryPattern=kcmikbd;
+Init=kcmikbd -init
+DocPath=kikbd/kikbd.html

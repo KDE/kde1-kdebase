@@ -1,0 +1,38 @@
+version 0.2.1 9 April 1998
+        * Applying new SDK
+	* Added Czech keyboards
+	* Added single Control_R Switch
+	* Added Shift+Shift Switch
+	* Fix of event handling (keyboard in all windows)
+	* Fix session managment code in Global, Window and Class Inputs
+	* Fix kcontrol swallow
+	* Butify Maps TabBox in kcmikbd
+	
+version 0.2.0 18 March 1998
+	* SGML KDE style documentation updated
+	* fixed Alternate switch under Shift bug
+	* QListBox in kcmikbd changed to KTabListBox
+	* simplified kcmikbd
+	* Added partialy translated Russian doc
+	* Translations updated (Added sk and nl)
+	
+version 0.1.9 3 March 1998
+        * Updated keyboard maps
+	* Added spanish translations
+	* Added russian and ukrainian keyboards for Microsoft layouts
+	* "Separated list" moved to "Hot List"
+	* Added single Alt_R Switch
+
+version 0.1.8 1 March 1998
+        * some minor modifications by Bernd Johannes Wuebben <wuebben@math.cornell.edu>
+
+version 0.1.7 24 Feb 1998
+
+	* Us lebel changed to En
+	* List of keyboards dividet intot two - main and additional
+	* Added Canadian French and Ukrainian keyboards
+	* Added Portuguese translations
+	* Added tooltips
+	* Smarter placement on reconfiguration
+	* Documentation updated
+	
