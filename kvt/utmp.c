@@ -8,6 +8,14 @@
  * I didn't touch the Sun part of the code so it should still work.
  *
  * $Log$
+ * Revision 1.7.4.5  1999/08/03 11:32:55  duncan
+ * applied patch from Franz Sirl to fix kvt on glibc-2.1 systems.   Now
+ * it gets a pty again!  Nice work Franz!.
+ * tested of RH60 by duncan@kde.org and COL22 by mhk@caldera.de...
+ *
+ * Revision 1.7.4.4  1999/07/28 08:52:34  porten
+ * HP-UX fixes from Stefan.Becker@nmp.nokia.com
+ *
  * Revision 1.7.4.3  1999/06/08 09:09:22  hoelzer
  * Fixed several security holes.
  *
@@ -92,6 +100,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <memory.h>
+
+#if !defined(HAVE_SETEUID)
+#define seteuid(_eu) setresuid(-1, _eu, -1)
+#endif
 
 #ifndef TTYTAB
 #define TTYTAB "/etc/ttys"
