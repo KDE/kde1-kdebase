@@ -1,0 +1,56 @@
+#: krootwm.C:61
+msgid "Clear"
+msgstr "Leeren"
+
+#: krootwm.C:109 krootwm.C:406
+msgid "Folder"
+msgstr "Verzeichnis"
+
+#: krootwm.C:136
+#, c-format
+msgid "ERROR: Template does not exist '%s'"
+msgstr "FEHLER: Vorlage existiert nicht '%s'"
+
+#: krootwm.C:160 krootwm.C:396 krootwm.C:404
+msgid "New"
+msgstr "Neu"
+
+#: krootwm.C:162
+msgid "Help on desktop"
+msgstr "Hilfe zum Desktop"
+
+#: krootwm.C:163
+msgid "Execute command"
+msgstr "Kommando ausführen"
+
+#: krootwm.C:164
+msgid "Display properties"
+msgstr "Eigenschaften der Umgebung"
+
+#: krootwm.C:165
+msgid "Refresh desktop"
+msgstr "Desktop auffrischen"
+
+#: krootwm.C:166
+msgid "Arrange icons"
+msgstr "Icons ordnen"
+
+#: krootwm.C:168
+msgid "Lock screen"
+msgstr "Bildschirm sperren"
+
+#: krootwm.C:169
+msgid "Logout"
+msgstr "Abmelden"
+
+#: krootwm.C:426
+msgid "Could not create folder"
+msgstr "Konnte Verzeichnis nicht erstellen"
+
+#: krootwm.C:459
+msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+msgstr "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"
+
+#: krootwm.C:463
+msgid "Usage:"
+msgstr "Benutzung:"
