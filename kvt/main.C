@@ -687,7 +687,8 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
     QString at = KVT_VERSION;
     at += i18n("\n\n(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 	       "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-	       "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n\n"
+	       "(C) 1998 Ivan Schreter (schreter@kdk.sk)\n"
+	       "(C) 1999 Leon Widdershoven (l.widdershoven@fz-juelich.de)\n\n"
 	       "Terminal emulation for the KDE Desktop Environment\n"
 	       "based on Robert Nation's rxvt-2.08");
 		
@@ -755,6 +756,10 @@ kVt::kVt( KConfig* sessionconfig,  const QStrList& args,
 
     if (menubar_visible && menubar->menuBarPos() == KMenuBar::FloatingSystem)
 	menubar->show();
+
+    connect( QApplication::clipboard(), SIGNAL( dataChanged() ), 
+	     SLOT( clipboard_changed() ));
+
 }
 
 void kVt::toggleHotkeys() {
@@ -1310,6 +1315,13 @@ void kVt::quit(){
   delete menubar;
   myapp->quit();
 }
+
+void kVt::clipboard_changed() {
+  if ( !scr_has_focus() ) {
+	scr_clear_selection();
+	screen_refresh();
+  }
+} 
 
 //---------------------------------------------------------------------------
 // main
