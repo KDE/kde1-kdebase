@@ -3,12 +3,15 @@
 Exec=kcmkeys global
 Type=Application
 Comment=Configuration of global keybindings
+Comment[no]=Konfigurasjon av globale tastkoblinger
 Comment[pl]=Ustawienia ogСlnych skrСtСw klawiszy
 Comment[ru]=Настройка глобальных назначений клавиш
 Name=Global Keys
+Name[no]=Globale taster
 Name[pl]=SkrСty klawiszy
 Name[ru]=Глобальные клавиши
 SwallowTitle=Key binding settings
+SwallowTitle[no]=Tastkoblinginnstillinger
 SwallowTitle[pl]=Ustawienia klawiszy
 SwallowTitle[ru]=Глобальные назначения клавиш
 Init=kcmkeys -init
