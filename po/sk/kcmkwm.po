@@ -387,27 +387,27 @@ msgstr "Zmena veµkosti"
 
 #: advanced.cpp:36
 msgid "Keyboard and Mouse"
-msgstr ""
+msgstr "Klávesnica a my¹"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr ""
+msgstr "Ctrl-Tab prechádza plochami"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr ""
+msgstr "Alt-Tab limitovaný na súèasnú plochu"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr ""
+msgstr "Re¾im Alt-Tab:"
 
 #: advanced.cpp:63
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #: advanced.cpp:64
 msgid "CDE"
-msgstr ""
+msgstr "CDE"
 
 #: advanced.cpp:69
 msgid "Grab the Right Mouse Button"
