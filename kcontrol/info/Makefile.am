@@ -41,4 +41,3 @@ uninstall-local:
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x ../../../kdelibs/po/kde.pot *.cpp && mv messages.po ../../po/kcminfo.pot
 
-DISTCLEANFILES = $(BUILT_SOURCES)

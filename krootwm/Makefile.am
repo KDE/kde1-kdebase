@@ -9,7 +9,6 @@ LDADD   =  $(LIB_KFM) $(LIB_KDEUI)
 bin_PROGRAMS	= krootwm
 krootwm_SOURCES	= krootwm.C
 METASOURCES =	krootwm.moc 
-DISTCLEANFILES = $(BUILTSOURCES)
 noinst_HEADERS = krootwm.h version.h
 
 messages:

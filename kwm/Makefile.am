@@ -6,7 +6,6 @@ bin_PROGRAMS 	= kwm
 INCLUDES	=  $(all_includes)
 LDFLAGS 	= $(all_libraries) $(KDE_RPATH)
 kwm_LDADD 	= $(LIB_KFM) $(LIB_KDEUI)
-DISTCLEANFILES	= $(METASOURCES)
 SUBDIRS 	= pics
 
 #######	Files

@@ -11,7 +11,6 @@ noinst_HEADERS =
 kfmclient_DEPENDENCIES = debug.o
 
 BUILT_SOURCES =
-DISTCLEANFILES = $(BUILT_SOURCES)
 
 debug.o: $(top_srcdir)/kfm/debug.cpp $(top_srcdir)/kfm/config-kfm.h
 	$(CXXCOMPILE) -c $(top_srcdir)/kfm/debug.cpp

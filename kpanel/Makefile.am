@@ -3,7 +3,6 @@
 ##
 
 INCLUDES	= $(all_includes)
-DISTCLEANFILES 	= $(BUILT_SOURCES)
 
 CXXFLAGS = $(NOOPT_CXXFLAGS)
 

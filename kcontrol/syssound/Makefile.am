@@ -12,17 +12,13 @@ kcmsyssound_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 # the libraries to link against. Be aware of the order. First the libraries,
 # that depend on the following ones.
-kcmsyssound_LDADD   =   -lmediatool     -lstdc++ $(LIB_KDEUI) $(LIBCOMPAT)
+kcmsyssound_LDADD   =   -lmediatool $(LIB_KDEUI) $(LIBCOMPAT)
 
 # this option you can leave out. Just, if you use "make dist", you need it
 noinst_HEADERS = syssound.h
 
 # just to make sure, automake makes them 
 METASOURCES =	syssound.moc
-
-# if you "make distclean", this files get removed. If you want to remove
-# them while "make clean", use CLEANFILES
-DISTCLEANFILES = $(BUILTSOURCES)
 
 EXTRA_DIST = kcmsyssound.xpm mini-kcmsyssound.xpm
 

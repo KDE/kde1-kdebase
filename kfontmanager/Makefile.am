@@ -11,7 +11,6 @@ bin_PROGRAMS = kfontmanager
 noinst_HEADERS = kfontmanager.h kfontlist.h kfontexplorer.h version.h
 kfontmanager_SOURCES = main.cpp kfontmanager.cpp kfontlist.cpp kfontexplorer.cpp
 METASOURCES =	kfontmanager.moc kfontlist.moc kfontexplorer.moc
-DISTCLEANFILES = $(BUILT_SOURCES)
 
 EXTRA_DIST = kfontmanager.xpm mini-kfontmanager.xpm
 

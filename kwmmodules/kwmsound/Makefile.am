@@ -9,5 +9,4 @@ kwmsound_SOURCES = kwmsound.C
 noinst_HEADERS = kwmsound.h
 
 METASOURCES = kwmsound.moc
-DISTCLEANFILES = $(METASOURCES)
 

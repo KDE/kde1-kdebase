@@ -8,7 +8,7 @@ kpager_SOURCES = windowdrag.cpp ktrianglebutton.cpp desktop.cpp kpagerclient.cpp
 
 kpager_METASOURCES = USE_AUTOMOC 
 
-DISTCLEANFILES = $(kpager_METASOURCES) ./.deps/* ./.deps/.P
+DISTCLEANFILES = ./.deps/* ./.deps/.P
 
 bin_PROGRAMS = kpager
 

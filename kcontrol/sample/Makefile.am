@@ -19,5 +19,3 @@ uninstall-local:
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmsample_SOURCES) && mv messages.po ../../po/kcmsample.pot
 
-DISTCLEANFILES = $(BUILT_SOURCES)
-

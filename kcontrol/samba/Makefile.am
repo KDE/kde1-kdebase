@@ -23,5 +23,3 @@ uninstall-local:
 messages:
 	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kcmsamba_SOURCES) && mv messages.po ../../po/kcmsamba.pot
 
-DISTCLEANFILES = $(BUILT_SOURCES)
-
