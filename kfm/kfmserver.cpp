@@ -227,7 +227,7 @@ void KFMServer::slotOpenProperties( const char* _url )
 
 void KFMServer::slotExec( const char* _url, const char * _documents )
 {
-    debugT("EXEC GOT '%s' and '%s'\n",_url,_documents);
+    // debugT("EXEC GOT '%s' and '%s'\n",_url,_documents);
     
     KURL u( _url );
     if ( u.isMalformed() )
