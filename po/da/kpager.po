@@ -15,7 +15,7 @@ msgstr ""
 
 #: kpager.cpp:72
 msgid "Toggle Global Desktop"
-msgstr "Global arbejdsplads til/fra"
+msgstr "Global arbejdsområde til/fra"
 
 #: kpager.cpp:74
 msgid "Toggle Menubar"
@@ -31,11 +31,11 @@ msgstr "Flyt til venstre"
 
 #: kpager.cpp:90 kpager.cpp:191 kpager.cpp:372
 msgid "Hide &Global Desktop"
-msgstr "Skjul &global arbejdsplads"
+msgstr "Skjul &global arbejdsområde"
 
 #: kpager.cpp:92 kpager.cpp:185 kpager.cpp:374
 msgid "Show &Global Desktop"
-msgstr "Vis &global arbejdsplads"
+msgstr "Vis &global arbejdsområde"
 
 #: kpager.cpp:97 kpager.cpp:380
 msgid "Hide &Menubar"
@@ -47,19 +47,19 @@ msgstr "&2 rækker"
 
 #: kpager.cpp:104
 msgid "&One Click change Desktop"
-msgstr "&Et klik for at skifte arbejdsplads"
+msgstr "&Et klik skifter arbejdsområde"
 
 #: kpager.cpp:108 kpager.cpp:245 kpager.cpp:394
 msgid "Hide Desktop &Names"
-msgstr "Skjul arbejdsplads&navne"
+msgstr "Skjul arbejdsområde&navne"
 
 #: kpager.cpp:110 kpager.cpp:249 kpager.cpp:396
 msgid "Show Desktop &Names"
-msgstr "Vis arbejdsplads&navne"
+msgstr "Vis arbejdsområde&navne"
 
 #: kpager.cpp:115 kpager.cpp:402
 msgid "Plain"
-msgstr "Enkel"
+msgstr "Simpel"
 
 #: kpager.cpp:118 kpager.cpp:404
 msgid "Icon"
@@ -67,11 +67,11 @@ msgstr "Ikon"
 
 #: kpager.cpp:121 kpager.cpp:406
 msgid "Pixmap"
-msgstr "Pixmap"
+msgstr "Billede"
 
 #: kpager.cpp:125 kpager.cpp:412
 msgid "Draw Mode"
-msgstr "Tegnemodus"
+msgstr "Tegnetilstand"
 
 #: kpager.cpp:129
 #, c-format
@@ -97,7 +97,7 @@ msgstr ""
 "KPagers hjemmeside er på : http://www.arrakis.es/~rlarrosa/kpager.html\n"
 "\n"
 "KPager kommer med ABSOLUT INGEN GARANTI; for detaljer, se COPYING-filen\n"
-"Dette er gratis programvare, og du er velkommen til at videredistribuere\n"
+"Dette er gratis software, og du er velkommen til at videredistribuere\n"
 "den på visse betingelser\n"
 
 #: kpager.cpp:382
@@ -106,24 +106,24 @@ msgstr "Vis &menubjælke"
 
 #: kpager.cpp:389
 msgid "One Click change Desktop"
-msgstr "Et klik for at skifte arbejdsplads"
+msgstr "Et klik skifter arbejdsområde"
 
 #: kpager.cpp:446
 msgid "&Maximize"
-msgstr "&Maksimer"
+msgstr "&Maksimér"
 
 #: kpager.cpp:447
 msgid "&Iconify"
-msgstr "&Ikoniser"
+msgstr "M&inimér"
 
 #: kpager.cpp:449
 msgid "&UnSticky"
-msgstr "&Uklæbrig"
+msgstr "&Fastsat"
 
 #: kpager.cpp:451
 msgid "&Sticky"
-msgstr "&Klæbrig"
+msgstr "&Frigjort"
 
 #: kpager.cpp:453
 msgid "&To Desktop"
-msgstr "&Til arbejdsplads"
+msgstr "&Til arbejdsområde"

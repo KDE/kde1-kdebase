@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kfm\n"
 "POT-Creation-Date: 1999-04-17 01:15+0200\n"
 "PO-Revision-Date: 1999-02-16 01:40+CET-5\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -27,7 +27,7 @@ msgstr "&Kør..."
 
 #: kfmgui.cpp:227
 msgid "Open &Terminal"
-msgstr "Åbn &Terminal"
+msgstr "Åbn &terminal"
 
 #: kfmgui.cpp:230
 msgid "&Open Location..."
@@ -39,11 +39,11 @@ msgstr "&Find"
 
 #: kfmgui.cpp:253
 msgid "&Move to Trash"
-msgstr "Flyt til &Skraldespand"
+msgstr "&Smid i papirkurv"
 
 #: kfmgui.cpp:260
 msgid "&Select"
-msgstr "&Marker"
+msgstr "&Markér"
 
 #: kfmgui.cpp:262
 msgid "Select &all"
@@ -87,35 +87,35 @@ msgstr "Vis &Skjulte filer"
 
 #: kfmgui.cpp:294
 msgid "Show Tr&ee"
-msgstr "Vis &Træ"
+msgstr "Vis &filhierarki"
 
 #: kfmgui.cpp:296
 msgid "Sho&w Thumbnails"
-msgstr "Vis som ikoner"
+msgstr "Vis som ik&oner"
 
 #: kfmgui.cpp:298
 msgid "&HTML View"
-msgstr "&HTML fremvisning"
+msgstr "&HTML visning"
 
 #: kfmgui.cpp:301
 msgid "&Icon View"
-msgstr "&Ikon oversigt"
+msgstr "&Ikon visning"
 
 #: kfmgui.cpp:303
 msgid "&Text View"
-msgstr "&Tekst oversigt"
+msgstr "&Tekst visning"
 
 #: kfmgui.cpp:305
 msgid "&Long View"
-msgstr "&Lang oversigt"
+msgstr "&Lang visning"
 
 #: kfmgui.cpp:307
 msgid "&Short View"
-msgstr "&Kort oversigt"
+msgstr "&Kort visning"
 
 #: kfmgui.cpp:313
 msgid "Rel&oad Tree"
-msgstr "&Genindlæs træ"
+msgstr "&Genindlæs filhierarki"
 
 #: kfmgui.cpp:315
 msgid "&Reload Document"
@@ -123,15 +123,15 @@ msgstr "Genindlæs &dokument"
 
 #: kfmgui.cpp:317
 msgid "Rescan &Bindings"
-msgstr "Genindlæs &tilordninger"
+msgstr "Genindlæs si&de"
 
 #: kfmgui.cpp:320
 msgid "&View Frame Source"
-msgstr "&Vis Frame kode"
+msgstr "&Vis rammes kildetekst"
 
 #: kfmgui.cpp:322
 msgid "View Docu&ment Source"
-msgstr "Vis Doku&ment kode"
+msgstr "Vis Doku&ments kildetekst"
 
 #: kfmgui.cpp:330
 msgid "Auto"
@@ -139,7 +139,7 @@ msgstr "Auto"
 
 #: kfmgui.cpp:338
 msgid "Document Encodin&g"
-msgstr "Dokumentindkodning"
+msgstr "Dokument&tegnsæt"
 
 #: kfmgui.cpp:353
 msgid "Clear Cache"
@@ -147,11 +147,11 @@ msgstr "Ryd Cache"
 
 #: kfmgui.cpp:356
 msgid "Always look in cache"
-msgstr "Kig altid i cache"
+msgstr "Slå altid op i cache"
 
 #: kfmgui.cpp:358
 msgid "Never look in cache"
-msgstr "Kig aldrig i cache"
+msgstr "Slå aldrig op i cache"
 
 #: kfmgui.cpp:360
 msgid "Always save cache"
@@ -191,7 +191,7 @@ msgstr "&Cache"
 
 #: kfmgui.cpp:393
 msgid "&Configure File Manager..."
-msgstr "Indstil filbehandler..."
+msgstr "Indstil filstyring..."
 
 #: kfmgui.cpp:395
 msgid "Configure &Browser..."
@@ -291,7 +291,7 @@ msgstr "Vælg filer:"
 
 #: kfmgui.cpp:1052
 msgid "Find Complete"
-msgstr "Find udført"
+msgstr "Find færdig"
 
 #: kfmgui.cpp:1053
 msgid "Continue search from the top of the page?"
@@ -299,7 +299,7 @@ msgstr "Fortsæt med at søge fra toppen af siden?"
 
 #: kfmgui.cpp:1071
 msgid "&Edit Bookmarks..."
-msgstr "&Rediger Bogmærke..."
+msgstr "&Rediger bogmærke..."
 
 #: kfmgui.cpp:1083
 msgid "&Add Bookmark"
@@ -345,7 +345,7 @@ msgid ""
 "Important desktop functionality will be lost"
 msgstr ""
 "Vil du virkelig afslutte?\n"
-"Arbejdspladsen vil miste vigtig funktionalitet."
+"Du vil miste vigtig funktionalitet."
 
 #: kfmgui.cpp:1578
 msgid "Document: Done"
@@ -353,7 +353,7 @@ msgstr "Dokument: Klart"
 
 #: kfmview.cpp:443 root.cpp:944
 msgid "ERROR: You may only drop URLs"
-msgstr "FEJL: Du placerede en URL på sig selv"
+msgstr "FEJL: Du lagde en URL på sig selv"
 
 #: kfmview.cpp:477
 msgid "ERROR: Drop over malformed URL"
@@ -376,11 +376,11 @@ msgstr ""
 
 #: kfmtree.cpp:504 kfmview.cpp:584 kfmview.cpp:814 root.cpp:1253
 msgid "ERROR: You dropped a URL over itself"
-msgstr "FEJL: Du placerede en URL på sig selv"
+msgstr "FEJL: Du lagde en URL på sig selv"
 
 #: kfmtree.cpp:510 kfmview.cpp:590 kfmview.cpp:822 root.cpp:1259
 msgid "ERROR: You dropped a directory over one of its children"
-msgstr "FEJL: Du placerede en folder i en af dens underfoldere"
+msgstr "FEJL: Du lagde en katalog i en af dens underkataloger"
 
 #: kfmexec.cpp:303 kfmman.cpp:1214 kfmview.cpp:606 root.cpp:1134
 msgid "Open With:"
@@ -397,10 +397,10 @@ msgid ""
 "\n"
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
-"Kan ikke gemme indstillingerne da denne folder\n"
-"ikke har et bogmærke og ikke er skrivbar.\n"
+"Kan ikke gemme indstillingerne da dette katalog\n"
+"ikke har et bogmærke og er skrivebeskyttet.\n"
 "\n"
-"Lav først et bogmærke hertil, eller et kdelnk på arbejdspladsen."
+"Lav først et bogmærke hertil, eller et kdelnk på arbejdsområdet."
 
 #: kfmview.cpp:719
 msgid ""
@@ -410,21 +410,21 @@ msgid ""
 " Bookmark this location first, or make kdelnk to it on desktop."
 msgstr ""
 "Kan ikke gemme egenskaberne idet denne URL hverken\n"
-"har et bogmærke eller er på arbejdspladsen\n"
+"har et bogmærke eller er på arbejdsområdet\n"
 "\n"
-"Lav først et bogmærke, eller lav en kdelnk på arbejdspladse."
+"Lav først et bogmærke, eller lav en kdelnk på arbejdsområdet."
 
 #: kfmtree.cpp:467 kfmview.cpp:758 root.cpp:1340
 msgid "Could not access Trash Bin"
-msgstr "Kunne ikke få adgang til affaldsspanden"
+msgstr "Kunne ikke tilgå papirkurven"
 
 #: kfmview.cpp:785 root.cpp:1229
 msgid "Can not paste into multiple directories"
-msgstr "Kan ikke indsætte i flere foldere på en gang"
+msgstr "Kan ikke indsætte i flere kataloger på en gang"
 
 #: kfmview.cpp:882
 msgid "ERROR: Can not change to multiple directories"
-msgstr "FEJL: kan ikke skifte til flere foldere på en gang"
+msgstr "FEJL: kan ikke skifte til flere kataloger på en gang"
 
 #: kfmview.cpp:1153
 msgid "KFM Security Alert"
@@ -470,15 +470,15 @@ msgstr "Kunne ikke finde mimetype\n"
 #: kbind.cpp:627 kbind.cpp:637 kbind.cpp:1942 kbind.cpp:1943 kbind.cpp:1955
 #: kbind.cpp:1957
 msgid "Mount"
-msgstr "Monter"
+msgstr "Montér"
 
 #: kbind.cpp:643 kbind.cpp:1933
 msgid "Unmount"
-msgstr "Afmonter"
+msgstr "Afmontér"
 
 #: kbind.cpp:875 kbind.cpp:887 kbind.cpp:897 popup.cpp:49 popup.cpp:129
 msgid "Folder"
-msgstr "Folder"
+msgstr "Katalog"
 
 #: kbind.cpp:1176
 msgid "ERROR"
@@ -490,7 +490,7 @@ msgstr "i "
 
 #: kbind.cpp:1312 kbind.cpp:1870
 msgid "ERROR: No Terminal Setting"
-msgstr "FEJL: Ingen Terminal indstilling"
+msgstr "FEJL: Ingen terminal konfiguration"
 
 #: kbind.cpp:1387
 msgid "Could not execute program\n"
@@ -498,7 +498,7 @@ msgstr "Kunne ikke starte program\n"
 
 #: kbind.cpp:1559
 msgid "Could not find binding"
-msgstr "Kunne ikke finde tilordning"
+msgstr "Kunne ikke finde tildeling"
 
 #: kbind.cpp:1569
 msgid ""
@@ -506,7 +506,7 @@ msgid ""
 "Not an application"
 msgstr ""
 "Dette er et dokument!\n"
-"Ikke en anvendelse"
+"Ikke et program"
 
 #: kbind.cpp:1587 kbind.cpp:1606
 msgid "Can only start executables on local disks\n"
@@ -518,7 +518,7 @@ msgid ""
 "on local hard disk"
 msgstr ""
 "Kan kun bruge *.kdelnk filer\n"
-"på den lokale harddisk"
+"på lokale filsystemer"
 
 #: kbind.cpp:1675
 #, c-format
@@ -561,7 +561,7 @@ msgstr "KFM information"
 
 #: main.cpp:91
 msgid "Creating directory:\n"
-msgstr "Opretter folder:\n"
+msgstr "Opretter katalog:\n"
 
 #: main.cpp:244
 msgid ""
@@ -571,7 +571,7 @@ msgid ""
 "Would you like to install the new ones?"
 msgstr ""
 "En ny version af KDE er blevet installeret.\n"
-"skabelon filerne kan være ændrede.\n"
+"skabelonerne kan være ændrede.\n"
 "\n"
 "Vil du gerne installere de nye?"
 
@@ -586,7 +586,7 @@ msgstr "Nyt vindue"
 
 #: kfmtree.cpp:402 main.cpp:285
 msgid "Move to Trash"
-msgstr "Flyt til Affaldsspand"
+msgstr "Smid i papirkurv"
 
 #: main.cpp:287
 msgid "Open with"
@@ -602,11 +602,11 @@ msgstr "Link"
 
 #: main.cpp:292
 msgid "Empty Trash Bin"
-msgstr "Tøm Affaldsspand"
+msgstr "Tøm papirkurv"
 
 #: main.cpp:293
 msgid "Add to Bookmarks"
-msgstr "Tilføj til Bogmærker"
+msgstr "Tilføj til bogmærker"
 
 #: main.cpp:294
 msgid "Save settings for this URL"
@@ -618,7 +618,7 @@ msgstr "Vis Menubjælke"
 
 #: kfmdlg.cpp:118
 msgid "&Browser"
-msgstr "&Bladrer"
+msgstr "&Browser"
 
 #: kfmdlg.cpp:130 kfmprops.cpp:771
 msgid "Run in terminal"
@@ -638,11 +638,11 @@ msgstr "Fuldt navn"
 
 #: kfmprops.cpp:271
 msgid "Is the Trash Bin"
-msgstr "Er Skraldespanden"
+msgstr "Er papirkurven"
 
 #: kfmprops.cpp:278
 msgid "Is a Directory"
-msgstr "Er en folder"
+msgstr "Er et katalog"
 
 #: kfmprops.cpp:285
 msgid "Points to"
@@ -667,7 +667,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Kunne ikke slette filen eller folderen\n"
+"Kunne ikke omdøbe filen eller kataloget\n"
 "%s\n"
 
 #: kfmprops.cpp:434
@@ -703,12 +703,12 @@ msgid ""
 "Change\n"
 "Into"
 msgstr ""
-"Ændr\n"
+"Ret\n"
 "til"
 
 #: kfmprops.cpp:456
 msgid "Exec"
-msgstr "Kør"
+msgstr "Udfør"
 
 #: kfmprops.cpp:460
 msgid "Special"
@@ -736,7 +736,7 @@ msgstr "Sæt GID"
 
 #: kfmprops.cpp:489
 msgid "Sticky"
-msgstr "Klæbrig"
+msgstr "Fastsat"
 
 #: kfmprops.cpp:507
 msgid "Ownership"
@@ -761,7 +761,7 @@ msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Kunne ikke ændre Ejer/Gruppe\n"
+"Kunne ikke ændre ejer/gruppe\n"
 "Har måske ikke adgang."
 
 #: kfmprops.cpp:661
@@ -769,16 +769,16 @@ msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Kunne ikke ændre tilladelser\n"
+"Kunne ikke ændre rettigheder\n"
 "Har måske ikke adgang."
 
 #: kfmprops.cpp:674 kfmprops.cpp:737
 msgid "Execute"
-msgstr "Kør"
+msgstr "Udfør"
 
 #: kfmprops.cpp:690 kfmprops.cpp:1177
 msgid "&Browse..."
-msgstr "&Blad igennem..."
+msgstr "Gennemse..."
 
 #: kfmprops.cpp:724
 msgid "Swallowing on panel"
@@ -839,7 +839,7 @@ msgstr "Navn ( på dansk )"
 
 #: kfmprops.cpp:1808
 msgid "Pattern ( example: *.html;*.HTML; )"
-msgstr "Mønster ( f.eks: *.html;*.HTML; "
+msgstr "Mønster ( eksempel: *.html;*.HTML; )"
 
 #: kfmprops.cpp:1820
 msgid "Mime Type"
@@ -847,7 +847,7 @@ msgstr "Mime Type"
 
 #: kfmprops.cpp:1849
 msgid "Default Application"
-msgstr "Default applikation"
+msgstr "Standard program"
 
 #: kfmprops.cpp:1889
 msgid "<none>"
@@ -871,11 +871,11 @@ msgstr "Filsystemer ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:2171
 msgid "Mounted Icon"
-msgstr "Monteret Ikon"
+msgstr "Ikon for monteret"
 
 #: kfmprops.cpp:2176
 msgid "Unmounted Icon"
-msgstr "Afmonteret Ikon"
+msgstr "Ikon for afmonteret"
 
 #: kfmserver.cpp:47
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
@@ -928,16 +928,16 @@ msgid ""
 msgstr ""
 "Kunne ikke udføre forespørgslen.\n"
 "De nye dimensioner ville flytte nogle ikoner\n"
-"ud over Arbejdspladsen."
+"ud over arbejdsområdet."
 
 #: root.cpp:769
 msgid "Internal Error: desktopDir is malformed"
-msgstr "Intern Fejl: arbejdspladsDir er fejlagtigt"
+msgstr "Intern Fejl: katalog 'Desktop' er fejlagtigt"
 
 #: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "FEJL: Kunne ikke læse Arbejdsplads folder ´%s´"
+msgstr "FEJL: Kunne ikke læse 'Desktop' katalog ´%s´"
 
 #: kfmman.cpp:1680 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
@@ -949,7 +949,7 @@ msgstr "Ve´ ikk´ hwa A ska´ gør´"
 
 #: kfmexec.cpp:117 kfmman.cpp:371
 msgid "The file does not contain a URL"
-msgstr "Filen indeholder ingen URL"
+msgstr "Filen indeholder ikke en URL"
 
 #: kfmman.cpp:519
 msgid "Contacting host "
@@ -961,7 +961,7 @@ msgstr "Arbejder..."
 
 #: kiojob.cpp:140
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
-msgstr "INTERN FEJL: Du må mindst specificere en enhed at montere"
+msgstr "INTERN FEJL: Du skal mindst specificere én enhed at montere"
 
 #: kiojob.cpp:243 kiojob.cpp:251 kiojob.cpp:1340 kiojob.cpp:1419
 #, c-format
@@ -1014,13 +1014,13 @@ msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
-"Kunne ikke oprette folder\n"
+"Kunne ikke oprette kataloget\n"
 "%s"
 
 #: kiojob.cpp:603 kiojob.cpp:1173
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "FEJL: Kunne ikke få adgang til folderen ´%s´"
+msgstr "FEJL: Kunne ikke få adgang til kataloget ´%s´"
 
 #: kiojob.cpp:667
 #, c-format
@@ -1028,13 +1028,13 @@ msgid ""
 "Special file will not be copied\n"
 "%s"
 msgstr ""
-"Særlig fil vil ikke blive kopieret\n"
+"Speciel fil vil ikke blive kopieret\n"
 "%s"
 
 #: kiojob.cpp:669
 #, c-format
 msgid "%d special files will not be copied."
-msgstr "%d særlige filer vil ikke blive kopieret."
+msgstr "%d specielle filer vil ikke blive kopieret."
 
 #: kiojob.cpp:674
 msgid ""
@@ -1042,11 +1042,11 @@ msgid ""
 "(for instance, tar files)"
 msgstr ""
 "Kopier underfiler fra filer med delprotokol\n"
-"(for eksempel tar-filer)"
+"(eksempelvis tar-filer)"
 
 #: kiojob.cpp:679
 msgid "Recurse copying from/to distant locations"
-msgstr "Delfilskopiering til/fra fjerne steder"
+msgstr "Rekursiv kopiering til/fra fjerne steder"
 
 #: kiojob.cpp:909
 #, c-format
@@ -1063,7 +1063,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Kunne ikke få adgang til folderen\n"
+"Kunne ikke få adgang til kataloget\n"
 "%s"
 
 #: kiojob.cpp:1005
@@ -1074,7 +1074,7 @@ msgid ""
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Kunne ikke flytte folderen\n"
+"Kunne ikke flytte kataloget\n"
 "%stil %s\n"
 "Måske ikke tilladt"
 
@@ -1084,13 +1084,13 @@ msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
-"Særlige filer bliver ikke flyttet\n"
+"Specielle filer bliver ikke flyttet\n"
 "%s"
 
 #: kiojob.cpp:1079
 #, c-format
 msgid "%d special files will not be moved."
-msgstr "%d særlige filer bliver ikke flyttet."
+msgstr "%d specielle filer bliver ikke flyttet."
 
 #: kiojob.cpp:1343 kiojob.cpp:1423
 #, c-format
@@ -1158,7 +1158,7 @@ msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
-"Kunne ikke vise indholdet i folderen\n"
+"Kunne ikke vise indholdet i kataloget\n"
 "%s"
 
 #: kiojob.cpp:1374
@@ -1271,7 +1271,7 @@ msgstr ""
 
 #: kiojob.cpp:1579
 msgid "Making directory"
-msgstr "Opretter folder"
+msgstr "Opretter katalog"
 
 #: kiojob.cpp:1699 kiojob.cpp:1760 kiojob.cpp:1809
 #, c-format
@@ -1289,7 +1289,7 @@ msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Kunne ikke slette folderen\n"
+"Kunne ikke slette kataloget\n"
 "%s"
 
 #: kiojob.cpp:1842
@@ -1309,23 +1309,23 @@ msgstr "Modtager oversigt over %s"
 
 #: kiojob.cpp:2113
 msgid "Segmentation fault in io subprocess"
-msgstr "Segmenterings fejl i IO underprocess"
+msgstr "'Segmentation' fejl i IO underprocess"
 
 #: htmlcache.cpp:364
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Please check it.\n"
 msgstr ""
-"er ikke en folder! Sikkerhedsalarm!\n"
-"Vær venlig at checke det.\n"
+"er ikke et katalog! Sikkerhedsalarm!\n"
+"Vær venlig at kontrollere det.\n"
 
 #: htmlcache.cpp:397
 msgid ""
 " is not a directory ! Security Alert !\n"
 "Check it before clearing the cache.\n"
 msgstr ""
-"er ikke en folder! Sikkerhedsalarm!\n"
-"Check det før cachen bliver ryddet.\n"
+"er ikke et katalog! Sikkerhedsalarm!\n"
+"Kontrollér det før cachen bliver ryddet.\n"
 
 #: autostart.cpp:28
 msgid "KFM Installation Error"
@@ -1333,7 +1333,7 @@ msgstr "KFM installationsfejl"
 
 #: autostart.cpp:29
 msgid "The directory "
-msgstr "Folderen "
+msgstr "Kataloget "
 
 #: autostart.cpp:30
 msgid " does not exist\n"
@@ -1341,15 +1341,15 @@ msgstr " eksisterer ikke\n"
 
 #: kfmtree.cpp:409
 msgid "Add To Bookmarks"
-msgstr "Tilføj til Bogmærker"
+msgstr "Tilføj til bogmærker"
 
 #: kfmtree.cpp:587
 msgid "My Home"
-msgstr "Mit Hjem"
+msgstr "Hjemme"
 
 #: kfmtree.cpp:589
 msgid "Desktop"
-msgstr "Arbejdsplads"
+msgstr "Arbejdsområde"
 
 #: kfmtree.cpp:591
 msgid "Root"
@@ -1385,7 +1385,7 @@ msgstr "Eller omdøb til"
 
 #: krenamewin.cpp:125
 msgid "You did not change the name!\n"
-msgstr "Du ændrede ikke navnet!\n"
+msgstr "Navnet er uændret!\n"
 
 #: passworddialog.cpp:50 passworddialog.cpp:113
 msgid "Password"
@@ -1405,7 +1405,7 @@ msgstr "Find:"
 
 #: finddlg.cpp:56
 msgid "Case &sensitive"
-msgstr "Afhængig af bogstav&sstørrelse"
+msgstr "&Store/små bogstaver"
 
 #: kcookiewin.cpp:58
 msgid "Cookie Alert!"
@@ -1417,7 +1417,7 @@ msgstr "Du modtog en cookie fra værten:"
 
 #: kcookiewin.cpp:89
 msgid "Do you want to accept or reject this cookie?"
-msgstr "Vil du acceptere eller afslå denne cookie?"
+msgstr "Vil du acceptere eller afvise denne cookie?"
 
 #: kcookiewin.cpp:120
 msgid "Apply to "
@@ -1454,7 +1454,7 @@ msgid ""
 "Use \"Rescan Bindings\" in View menu to update the menu"
 msgstr ""
 "Kilde filen eksisterer ikke længere!\n"
-"Brug \"Genindlæs tilordninger\" i menuen for at opdatere menuen"
+"Brug \"Genindlæs side\" i menuen for at opdatere menuen"
 
 #: popup.cpp:121 popup.cpp:128
 msgid "New "
@@ -1478,7 +1478,7 @@ msgstr "U&RL"
 
 #: kfmprops.h:270
 msgid "&Dir"
-msgstr "&Folder"
+msgstr "Katalog"
 
 #: kfmprops.h:317
 msgid "&Application"
@@ -1527,4 +1527,4 @@ msgstr ""
 "kfmexec kommando [URLer ....]\n"
 
 #~ msgid "Unknown binding"
-#~ msgstr "Ukendt tilordning"
+#~ msgstr "Ukendt tildeling"

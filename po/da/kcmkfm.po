@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kcmkfm\n"
 "POT-Creation-Date: 1999-03-04 18:41+0100\n"
 "PO-Revision-Date: 1998-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: main.cpp:61
 msgid "&Font"
-msgstr "&Skrift"
+msgstr "&Skrifttype"
 
 #: main.cpp:63
 msgid "&Color"
@@ -37,7 +37,7 @@ msgstr "&HTTP"
 # kkfmoptdlg.cpp:21
 #: main.cpp:73
 msgid "User &Agent"
-msgstr "&Brugeragent"
+msgstr "&Browseridentifikation"
 
 #: main.cpp:76
 msgid "Coo&kies"
@@ -46,7 +46,7 @@ msgstr "Coo&kier"
 # kfmtree.cpp:398
 #: main.cpp:80
 msgid "&Desktop Icons"
-msgstr "Arbejdsplads&ikoner"
+msgstr "Arbejdsområde&ikoner"
 
 #: main.cpp:89
 #, c-format
@@ -80,7 +80,7 @@ msgstr "Standard skrift"
 # htmlopts.cpp:68
 #: htmlopts.cpp:97
 msgid "Fixed Font"
-msgstr "Fast skrift"
+msgstr "Fast skrifttype"
 
 #: htmlopts.cpp:114
 msgid "Default Charset"
@@ -108,16 +108,16 @@ msgstr "URL-linkfarve:"
 # htmlopts.cpp:238
 #: htmlopts.cpp:366
 msgid "Followed Link Color:"
-msgstr "Farve på brugte link:"
+msgstr "Farve på fulgte henvisninger:"
 
 # htmlopts.cpp:246
 #: htmlopts.cpp:378
 msgid "Change cursor over link."
-msgstr "Ændre markør over link."
+msgstr "Ændr markør over henvisninger."
 
 #: htmlopts.cpp:384
 msgid "Underline links"
-msgstr "Understreg link"
+msgstr "Understreg henvisninger"
 
 #: htmlopts.cpp:391
 msgid "Always use my colors"
@@ -125,11 +125,11 @@ msgstr "Brug altid mine farver"
 
 #: miscopts.cpp:25
 msgid "&Allow per-URL settings"
-msgstr "&Tillad pr-URL-indstillinger"
+msgstr "&Tillad per-URL-indstillinger"
 
 #: miscopts.cpp:33
 msgid "Tree &view follows navigation"
-msgstr "Træ&visning følger navigation"
+msgstr "Filhierarki følger na&vigation"
 
 #: miscopts.cpp:43
 msgid "Terminal"
@@ -137,12 +137,12 @@ msgstr "Terminal"
 
 #: miscopts.cpp:57
 msgid "Editor"
-msgstr "Tekstbehandler"
+msgstr "Tekstredigering"
 
 # kproxydlg.cpp:14
 #: kproxydlg.cpp:50
 msgid "Don't forget to save your settings!"
-msgstr "Glem ikke at gemme indstillingerne!"
+msgstr "Husk at gemme indstillingerne!"
 
 # kfmprops.cpp:437
 #: kproxydlg.cpp:58
@@ -182,12 +182,12 @@ msgstr "Antag HTML"
 # useragentdlg.cpp:20
 #: useragentdlg.cpp:45
 msgid "On server:"
-msgstr "På tjener:"
+msgstr "På server:"
 
 # useragentdlg.cpp:31
 #: useragentdlg.cpp:67
 msgid "login as:"
-msgstr "log på som:"
+msgstr "skal der bruges:"
 
 #: useragentdlg.cpp:87
 msgid "&Add"
@@ -196,7 +196,7 @@ msgstr "&Tilføj"
 # useragentdlg.cpp:52
 #: useragentdlg.cpp:107
 msgid "Known bindings:"
-msgstr "Kendte tilordninger:"
+msgstr "Nuværende konfigurationer:"
 
 #: kcookiesdlg.cpp:49
 msgid "&Enable Cookies"
@@ -204,7 +204,7 @@ msgstr "&Slå cookier til"
 
 #: kcookiesdlg.cpp:56
 msgid "Default accept policy"
-msgstr "Standard godtagningspolitik"
+msgstr "Standard politik for cookies"
 
 #: kcookiesdlg.cpp:65 kcookiesdlg.cpp:115
 msgid "Accept"
@@ -216,7 +216,7 @@ msgstr "Spørg"
 
 #: kcookiesdlg.cpp:75 kcookiesdlg.cpp:125
 msgid "Reject"
-msgstr "Forkast"
+msgstr "Afvis"
 
 #: kcookiesdlg.cpp:90
 msgid "Domain specific settings:"
@@ -224,11 +224,11 @@ msgstr "Domæne-specifikke indstillinger:"
 
 #: kcookiesdlg.cpp:97
 msgid "Change domain accept policy"
-msgstr "Ændr politik for accepterede domæner"
+msgstr "Ret politik for accepterede domæner"
 
 #: kcookiesdlg.cpp:239
 msgid "You must enter a domain first !"
-msgstr "Du må først angive et domæne!"
+msgstr "Angiv domæne først!"
 
 # htmlopts.cpp:321
 #: rootopts.cpp:73
@@ -242,7 +242,7 @@ msgstr "Afstand i lodret bundgitter:"
 
 #: rootopts.cpp:95
 msgid "&Transparent Text for Desktop Icons."
-msgstr "&Gennemsigtig tekst for arbejdspladsikonerikoner."
+msgstr "&Gennemsigtig tekst for ikoner på arbejdsområdet."
 
 #: rootopts.cpp:106
 msgid "Icon foreground color:"
@@ -254,4 +254,4 @@ msgstr "Baggrundsfarve for ikon:"
 
 #: rootopts.cpp:131
 msgid "Show &Hidden Files on Desktop"
-msgstr "Vis skj&ulte filer på arbejdsplads"
+msgstr "Vis skj&ulte filer på arbejdsområde"

@@ -62,7 +62,7 @@ msgid ""
 "The directory for your personal menu does not exist.\n"
 " Do you want to create it now ?"
 msgstr ""
-"Folderen til din personlige menu eksisterer ikke.\n"
+"Kataloget til din personlige menu eksisterer ikke.\n"
 "Vil du oprette den nu?"
 
 #: main.cpp:93
@@ -70,7 +70,7 @@ msgid ""
 "Unable to create directory for personal menu.\n"
 " Select Ok to exit KMenuedit."
 msgstr ""
-"Kan ikke oprette folder til din personlige menu.\n"
+"Kan ikke oprette katalog til din personlige menu.\n"
 "Vælg Ok for at afslutte Menu Editoren."
 
 #: confmenu.cpp:91 entrydialog.cpp:60
@@ -200,7 +200,7 @@ msgstr "Kør:"
 
 #: entrydialog.cpp:228
 msgid "Working Directory:"
-msgstr "Arbejdsfolder:"
+msgstr "Arbejdskatalog:"
 
 #: entrydialog.cpp:241
 msgid "Run in terminal"

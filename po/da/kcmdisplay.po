@@ -7,19 +7,19 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kcmdisplay\n"
 "POT-Creation-Date: 1999-04-20 01:17+0200\n"
 "PO-Revision-Date: 1999-02-16 17:00+CET-1\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da <LL@li.org>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: backgnd.cpp:55
 msgid "Enter new desktop name"
-msgstr "Indtast nyt arbejdspladsnavn"
+msgstr "Indtast nyt arbejdsområdenavn"
 
 #: backgnd.cpp:111 backgnd.cpp:164
 msgid "Desktop"
-msgstr "Arbejdsplads"
+msgstr "Arbejdsområde"
 
 #: backgnd.cpp:186
 msgid "&Rename ..."
@@ -35,7 +35,7 @@ msgstr "Farver"
 
 #: backgnd.cpp:252
 msgid "&One Color"
-msgstr "&En farve"
+msgstr "&Een farve"
 
 #: backgnd.cpp:269
 msgid "&Two Color"
@@ -79,23 +79,23 @@ msgstr "Centreret"
 
 #: backgnd.cpp:380
 msgid "Centred Brick"
-msgstr "Centreret mursten"
+msgstr "Centreret på mursten"
 
 #: backgnd.cpp:381
 msgid "Centred Warp"
-msgstr "Centreret forvrængt"
+msgstr "Centreret forvrænget"
 
 #: backgnd.cpp:382
 msgid "Centred Maxpect"
-msgstr "Centreret Stort"
+msgstr "Centreret stort"
 
 #: backgnd.cpp:383
 msgid "Symmetrical Tiled"
-msgstr "Symmetrisk fliselagt"
+msgstr "Fliselagt symmetrisk"
 
 #: backgnd.cpp:384
 msgid "Symmetrical Mirrored"
-msgstr "Symmetrisk spejlet"
+msgstr "Spejlet symmetrisk"
 
 #: backgnd.cpp:385
 msgid "Scaled"
@@ -111,19 +111,19 @@ msgstr "&Indstillinger..."
 
 #: backgnd.cpp:419
 msgid "&Dock into the panel"
-msgstr "&Dyk ned i panelet"
+msgstr "&Vis i panelet"
 
 #: backgnd.cpp:444
 msgid "Cache size (kB):"
-msgstr "Cache størrelse (kB):"
+msgstr "Cache-størrelse (kB):"
 
 #: backgnd.cpp:1345
 msgid "Desktop names"
-msgstr "Arbejdsplads navne"
+msgstr "Arbejdsområdenavne"
 
 #: backgnd.cpp:1390
 msgid "File error"
-msgstr "Navngivelses fejl"
+msgstr "Filfejl"
 
 #: backgnd.cpp:1391
 msgid "Can't load image file"
@@ -131,40 +131,40 @@ msgstr "Kan ikke åbne billedfil"
 
 #: backgnd.cpp:1414 backgnd.cpp:1887
 msgid "Unsupported URL"
-msgstr "Ikke understøttet URL"
+msgstr "URL ikke understøttet"
 
 #: backgnd.cpp:1415 backgnd.cpp:1888
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE Display Module"
-msgstr "Undskyld, denne slags URL er ikke understøttet af KDE fremviseren"
+msgstr "Denne slags URL er ikke understøttet i Skærmindstillinger"
 
 #: backgnd.cpp:1447
 msgid "Two color backgrounds"
-msgstr "To-farve baggrund"
+msgstr "To-farvede baggrunde"
 
 #: backgnd.cpp:1484
 msgid "Blend colors from &top to bottom"
-msgstr "Bland farver fra &top til bund"
+msgstr "&Lodret farveovergang - top til bund"
 
 #: backgnd.cpp:1490
 msgid "Blend colors from &right to left"
-msgstr "Bland farver fra &højre til venstre"
+msgstr "&Vandret farveovergang - højre til venstre"
 
 #: backgnd.cpp:1496
 msgid "Use &pattern"
-msgstr "Brug &mønster"
+msgstr "&Brug mønster"
 
 #: backgnd.cpp:1523
 msgid "Preview"
-msgstr "Fremvis"
+msgstr "Eksempel"
 
 #: backgnd.cpp:1534
 msgid "Pattern &name"
-msgstr "Mønster &navn"
+msgstr "&Mønster"
 
 #: backgnd.cpp:1573
 msgid "Current"
-msgstr "Aktuel"
+msgstr "Nuværende"
 
 #: backgnd.cpp:1633
 msgid "Filled"
@@ -184,7 +184,7 @@ msgstr "Blomster"
 
 #: backgnd.cpp:1645
 msgid "Rattan"
-msgstr "Rattan"
+msgstr "Fletværk"
 
 #: backgnd.cpp:1648
 msgid "Cobbled Pavement"
@@ -192,11 +192,11 @@ msgstr "Toppede brosten"
 
 #: backgnd.cpp:1714
 msgid "Random mode setup"
-msgstr "Opsætning i tilfældig modus"
+msgstr "Opsætning for tilfældig tilstand"
 
 #: backgnd.cpp:1720
 msgid "Pick files from &directory"
-msgstr "Tag fil fra &folder"
+msgstr "Tag fil fra &katalog"
 
 #: backgnd.cpp:1734
 msgid "&Browse ..."
@@ -204,7 +204,7 @@ msgstr "&Gennemsøg..."
 
 #: backgnd.cpp:1755
 msgid "Timer Delay in seconds :"
-msgstr "Tids tøven i sekunder"
+msgstr "Forsinkelse i sekunder:"
 
 #: backgnd.cpp:1767
 msgid "In &order"
@@ -212,7 +212,7 @@ msgstr "I &rækkefølge"
 
 #: backgnd.cpp:1784
 msgid "Desktops :"
-msgstr "Arbejdspladser :"
+msgstr "Arbejdsområder:"
 
 #: backgnd.cpp:1823
 msgid "&Add"
@@ -220,19 +220,19 @@ msgstr "&Tilføj"
 
 #: backgnd.cpp:1995
 msgid "Directory error"
-msgstr "Navngivelses fejl"
+msgstr "Navngivelsesfejl"
 
 #: backgnd.cpp:1996
 msgid "Selected directory doesn't exists"
-msgstr "Den valgte folder eksisterer ike"
+msgstr "Det valgte katalog eksisterer ikke"
 
 #: colorscm.cpp:104
 msgid "Color Scheme"
-msgstr "Farve skema"
+msgstr "Farveskema"
 
 #: colorscm.cpp:115
 msgid "Current scheme"
-msgstr "Aktuelle skema"
+msgstr "Nuværende skema"
 
 #: colorscm.cpp:117
 msgid "KDE default"
@@ -248,7 +248,7 @@ msgstr "&Gem ændringer"
 
 #: colorscm.cpp:161
 msgid "Widget color"
-msgstr "Widget farve"
+msgstr "Komponentfarve"
 
 #: colorscm.cpp:168
 msgid "Inactive title bar"
@@ -260,7 +260,7 @@ msgstr "Inaktiv titeltekst"
 
 #: colorscm.cpp:170
 msgid "Inactive title blend"
-msgstr "Inaktiv titel blanding"
+msgstr "Inaktiv titel overgang"
 
 #: colorscm.cpp:171
 msgid "Active title bar"
@@ -272,7 +272,7 @@ msgstr "Aktiv titeltekst"
 
 #: colorscm.cpp:173
 msgid "Active title blend"
-msgstr "Aktiv titelblanding"
+msgstr "Aktiv titel overgang"
 
 #: colorscm.cpp:174
 msgid "Background"
@@ -288,7 +288,7 @@ msgstr "Vælg baggrund"
 
 #: colorscm.cpp:177
 msgid "Select text"
-msgstr "Udvælg tekst"
+msgstr "Markeret tekst"
 
 #: colorscm.cpp:178
 msgid "Window background"
@@ -322,7 +322,7 @@ msgid ""
 msgstr ""
 "Farveskemaet kunne ikke fjernes.\n"
 "Måske har du ikke tilladelse til at ændre det\n"
-"filsystem hvor farveskemaet er gemt."
+"katalog hvor farveskemaet er gemt."
 
 #: colorscm.cpp:362
 msgid "Naming error"
@@ -334,8 +334,8 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
-"Vælg venligst et entydigt navn for det nye farveskema.\n"
-"Navnet du skrev findes allerede i farveskemalisten."
+"Navnet findes allerede. Vælg venligst et entydigt\n"
+"navn for det nye farveskema."
 
 #: savescm.cpp:18
 msgid "Add a color scheme"
@@ -349,11 +349,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
-"Indtast et navn for det nye farveskema\n"
-"der kan blive tilføjet din personlige liste.\n"
+"Indtast et navn for det nye farveskema,\n"
+"der skal tilføjes din personlige liste.\n"
 "\n"
-"De farver der for øjeblikket fremvises, vil blive\n"
-"kopieret ind i dette skema som en begyndelse"
+"De farver, der for øjeblikket fremvises, vil blive\n"
+"kopieret ind i dette skema."
 
 #: scrnsave.cpp:47
 msgid "Ignore"
@@ -361,7 +361,7 @@ msgstr "Ignorer"
 
 #: scrnsave.cpp:48
 msgid "Save Screen"
-msgstr "Gem skærm"
+msgstr "Start pauseskærm"
 
 #: scrnsave.cpp:49
 msgid "Lock Screen"
@@ -369,11 +369,11 @@ msgstr "Lås skærm"
 
 #: scrnsave.cpp:112 scrnsave.cpp:181
 msgid "Screen Saver"
-msgstr "Skærmskåner"
+msgstr "Pauseskærm"
 
 #: scrnsave.cpp:188 scrnsave.cpp:382 scrnsave.cpp:623 scrnsave.cpp:744
 msgid "No screensaver"
-msgstr "Ingen skærmskåner"
+msgstr "Ingen pauseskærm"
 
 #: scrnsave.cpp:209
 msgid "&Setup ..."
@@ -425,35 +425,35 @@ msgstr "Stil"
 
 #: general.cpp:229
 msgid "&Draw widgets in the style of Windows 95"
-msgstr "&Tegn Widgets i Windows 95 stil"
+msgstr "&Tegn komponenter i Windows 95-stil"
 
 #: general.cpp:245
 msgid "&Menubar on top of the screen in the style of MacOS"
-msgstr "&Menuen i toppen af skærmen i Macintosh stil"
+msgstr "&Menuen i toppen af skærmen i Macintosh-stil"
 
 #: general.cpp:259
 msgid "&Apply fonts and colors to non-KDE apps"
-msgstr "&Anvend skrift på ikke-KDE programmer"
+msgstr "&Anvend indstillinger på ikke-KDE programmer"
 
 #: general.cpp:529
 msgid "General font"
-msgstr "Generel skrift"
+msgstr "Generel skrifttype"
 
 #: general.cpp:534
 msgid "Fixed font"
-msgstr "Fast skrift"
+msgstr "Fast bredde-skrifttype"
 
 #: general.cpp:540
 msgid "Window title font"
-msgstr "Vinduestitelskrift"
+msgstr "Skrifttype for vinduestitel"
 
 #: general.cpp:545
 msgid "Panel button font"
-msgstr "Panelknapskrift"
+msgstr "Skrifttype for panelknapper"
 
 #: general.cpp:550
 msgid "Panel clock font"
-msgstr "Panelurskrift"
+msgstr "Skrifttype for panelur"
 
 #: general.cpp:580
 msgid "Sample text"
@@ -474,7 +474,7 @@ msgstr "&Baggrund"
 
 #: main.cpp:67
 msgid "&Screensaver"
-msgstr "S&kærmskåner"
+msgstr "&Pauseskærm"
 
 #: main.cpp:71
 msgid "&Colors"
@@ -524,7 +524,7 @@ msgstr "Ku&rsiv"
 
 #: fontchooser.cpp:125
 msgid "&Size"
-msgstr "Størrelse"
+msgstr "Stø&rrelse"
 
 #: fontchooser.cpp:147
 msgid "&Character set"
@@ -536,4 +536,4 @@ msgstr "standard"
 
 #: fontchooser.cpp:265
 msgid "any"
-msgstr "enhver"
+msgstr "alle"

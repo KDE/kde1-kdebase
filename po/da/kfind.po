@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kfind\n"
 "POT-Creation-Date: 1999-03-30 01:17+0200\n"
 "PO-Revision-Date: 1999-02-16 23:10-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -15,11 +15,11 @@ msgstr ""
 
 #: kfdird.cpp:46
 msgid "Directories:"
-msgstr "Foldere:"
+msgstr "Kataloger:"
 
 #: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
 msgid "Cannot open or read directory."
-msgstr "Kan ikke åbne eller læse folder."
+msgstr "Kan ikke åbne eller læse katalog."
 
 #: kfindtop.cpp:121
 msgid "&Start search"
@@ -43,7 +43,7 @@ msgstr "&Indstillinger"
 
 #: kfindtop.cpp:138
 msgid "Open Containing &Folder"
-msgstr "Åbn F&older"
+msgstr "Åbn katalog"
 
 #: kfindtop.cpp:141
 msgid "&Save Search"
@@ -100,7 +100,7 @@ msgstr "Tilføj til arkiv"
 
 #: kfindtop.cpp:237
 msgid "Open Containing Folder"
-msgstr "Åbn folder"
+msgstr "Åbn katalog"
 
 #: kfindtop.cpp:242
 msgid "Save Search Results"
@@ -120,7 +120,7 @@ msgstr "&Gennemse ..."
 
 #: kftabdlg.cpp:84
 msgid "Include &subfolders"
-msgstr "Inkluder &underfoldere"
+msgstr "Inkluder &underkataloger"
 
 #: kftabdlg.cpp:118
 msgid " Name& Location "
@@ -144,7 +144,7 @@ msgstr "&Alle filer"
 
 #: kftabdlg.cpp:148
 msgid "Find all files created or &modified:"
-msgstr "Find alle filer oprettet eller &ændret:"
+msgstr "Fi&nd alle filer oprettet eller ændret:"
 
 #: kftabdlg.cpp:149
 msgid "&between"
@@ -180,19 +180,19 @@ msgstr "KB"
 
 #: kftabdlg.cpp:236
 msgid "All Files and Folders"
-msgstr "Alle filer og foldere"
+msgstr "Alle filer og kataloger"
 
 #: kftabdlg.cpp:238
 msgid "Folders"
-msgstr "Foldere"
+msgstr "Kataloger"
 
 #: kftabdlg.cpp:239
 msgid "Symbolic links"
-msgstr "Symbolske link"
+msgstr "Symbolske links"
 
 #: kftabdlg.cpp:240
 msgid "Special files (sockets, device files...)"
-msgstr "Særlige filer (sockets, enheds filer...)"
+msgstr "Specielle filer (sockets, enheds filer...)"
 
 #: kftabdlg.cpp:241
 msgid "Executable files"
@@ -220,15 +220,15 @@ msgstr " Avanceret "
 
 #: kftabdlg.cpp:501
 msgid "The date is not valid!!"
-msgstr "Denne dato er ikke gyldig!!"
+msgstr "Ugyldig dato!"
 
 #: kftabdlg.cpp:513
 msgid "The month(s) value isn't valid!!"
-msgstr "Ugyldig(e) måned(er)!!"
+msgstr "Ugyldig(e) måned(er)!"
 
 #: kftabdlg.cpp:524
-msgid "The day(s) value isn't valid!!"
-msgstr "Ugyldig(e) dag(e)!!"
+msgid "The day(s) value isn't valid!"
+msgstr "Ugyldig(e) dag(e)!"
 
 #: kftabdlg.cpp:541
 msgid "The value in size isn't valid number!!"
@@ -244,7 +244,7 @@ msgstr "Fil format:"
 
 #: kfoptions.cpp:76
 msgid "Save results to file:"
-msgstr "Gem resultat til fil:"
+msgstr "Gem resultat i fil:"
 
 #: kfoptions.cpp:79
 msgid "Save results to file ~/.kfind-results.html"
@@ -289,11 +289,11 @@ msgstr "%d fil(er) fundet"
 
 #: kfwin.cpp:250
 msgid "It wasn't possible to save results!"
-msgstr "Det var ikke muligt at gemme resultatet!"
+msgstr "Kunne ikke gemme resultatet!"
 
 #: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
 msgid "KFind Results File"
-msgstr "Kfind resultat fil"
+msgstr "KFind resultatfil"
 
 #: kfwin.cpp:287
 msgid "Results were saved to file\n"
@@ -317,7 +317,7 @@ msgid ""
 "You have no permission\n"
 " to delete this file"
 msgstr ""
-"Du har ikke tilladelse\n"
+"Du har ikke rettigheder\n"
 "til at slette denne fil"
 
 #: kfwin.cpp:322
@@ -325,7 +325,7 @@ msgid ""
 "It isn't possible to delete\n"
 "selected file"
 msgstr ""
-"Det er ikke muligt\n"
+"Det var ikke muligt\n"
 "at slette den valgte fil"
 
 #: kfwin.cpp:340
@@ -333,24 +333,24 @@ msgid ""
 "You have no permission\n"
 " to delete this directory"
 msgstr ""
-"Du har ikke tilladelse\n"
-"til at slette denne folder"
+"Du har ikke rettigheder\n"
+"til at slette dette katalog"
 
 #: kfwin.cpp:345
 msgid ""
 "Specified directory\n"
 "is not empty!"
 msgstr ""
-"Den valgte folder\n"
-"er ikke tom!"
+"Det valgte katalog\n"
+"er ikke tomt!"
 
 #: kfwin.cpp:350
 msgid ""
 "It isn't possible to delete\n"
 "selected directory"
 msgstr ""
-"Det er ikke muligt at\n"
-"slette den valgte folder"
+"Det var ikke muligt at\n"
+"slette det valgte katalog"
 
 #: kfwin.cpp:442
 msgid "Couldn't recognize archive type!"

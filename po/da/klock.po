@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/klock\n"
 "POT-Creation-Date: 1999-04-18 01:18+0200\n"
 "PO-Revision-Date: 99-02-16 18:21+0100\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -23,11 +23,11 @@ msgstr "KAttraction indstilling"
 
 #: attraction.cpp:825 pyro.cpp:537 rock.cpp:583 slidescreen.cpp:510
 msgid "Number:"
-msgstr "Nummer:"
+msgstr "Antal:"
 
 #: attraction.cpp:839 science.cpp:1006 slidescreen.cpp:524
 msgid "Mode:"
-msgstr "Modus:"
+msgstr "Tilstand:"
 
 #: attraction.cpp:844 slidescreen.cpp:529
 msgid "Balls"
@@ -47,7 +47,7 @@ msgstr "Haler"
 
 #: attraction.cpp:860 slidescreen.cpp:545
 msgid "Glow"
-msgstr "Stråle"
+msgstr "Gløde"
 
 #: attraction.cpp:961
 msgid "About Attraction"
@@ -67,7 +67,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992-1997 ved Jamie Zawinski\n"
 "\n"
-"Overført til skærmskåneren  af:\n"
+"Overført til kde pauseskærm af:\n"
 " Tom Vijlbrief <tom.vijlbrief@knoware.nl> oct 1998"
 
 #: banner.cpp:62
@@ -123,7 +123,7 @@ msgstr ""
 
 #: banner.cpp:469
 msgid "KDE is great"
-msgstr "KDE er fedt"
+msgstr "KDE er fantastisk"
 
 #: bat.cpp:462
 msgid "Bat"
@@ -131,7 +131,7 @@ msgstr "Flagermus"
 
 #: bat.cpp:545
 msgid "Setup KBat"
-msgstr "KBat-indstilling"
+msgstr "Flagermus-indstilling"
 
 #: bat.cpp:572
 msgid "Number of bats:"
@@ -153,7 +153,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1986 af Sun Microsystems\n"
 "\n"
-"Overført til kscreensave af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: blankscrn.cpp:53
 msgid "Blank Screen"
@@ -161,7 +161,7 @@ msgstr "Blank skærm"
 
 #: blankscrn.cpp:75
 msgid "Setup kblankscrn"
-msgstr "Indstil kblankscrn"
+msgstr "Indstil blank skærm"
 
 #: blob.cpp:57
 msgid "Random Linear"
@@ -173,7 +173,7 @@ msgstr "Vandret sinus"
 
 #: blob.cpp:59
 msgid "Circular Bounce"
-msgstr "Runde hop"
+msgstr "Cirkler"
 
 #: blob.cpp:60
 msgid "Polar Coordinates"
@@ -185,11 +185,11 @@ msgstr "Tilfældig"
 
 #: blob.cpp:77
 msgid "Sorry. This screensaver needs a color display"
-msgstr "Desværre, men denne skærmskåner skal bruge en farveskærm"
+msgstr "Desværre, men denne pauseskærm skal bruge en farveskærm"
 
 #: blob.cpp:461
 msgid "Setup Blob Saver"
-msgstr "Blob skærmskånerindstillinger"
+msgstr "Blob indstillinger"
 
 #: blob.cpp:471
 msgid "Frame Show sec."
@@ -225,7 +225,7 @@ msgstr "Bouboule"
 
 #: bouboule.cpp:1013
 msgid "Setup KBouboule"
-msgstr "Indstill KBouboule"
+msgstr "Bouboule indstilling"
 
 #: bouboule.cpp:1040
 msgid "Number of points:"
@@ -241,7 +241,7 @@ msgstr "Farveskiftfrekvens:"
 
 #: bouboule.cpp:1085
 msgid "3D mode"
-msgstr "3D modus"
+msgstr "3D tilstand"
 
 #: bouboule.cpp:1231
 msgid "About Bouboule"
@@ -255,12 +255,12 @@ msgid ""
 "\n"
 "Ported to kscreensave by Cedric Tefft"
 msgstr ""
-"Bouboule v0.1 -- en blob af kugler der tvister tundt\n"
+"Bouboule v0.1 -- en sfære af kugler der tvister tundt\n"
 "og ændrer størrelse\n"
 "\n"
 "Copyright (c) 1996 ved Jeremie PETIT\n"
 "\n"
-" Overført til skærmskåner af Cedric Tefft"
+" Overført til kde pauseskærm af Cedric Tefft"
 
 #: bsod.cpp:1192
 msgid "Black Screen of Death"
@@ -272,7 +272,7 @@ msgstr "Flammer"
 
 #: flame.cpp:405
 msgid "Setup KFlame"
-msgstr "KFlame indstilling"
+msgstr "Flammer indstilling"
 
 #: flame.cpp:431
 msgid "Max Levels:"
@@ -298,7 +298,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 ved Patrick J. Naughton\n"
 "\n"
-"Overført til skærmskåner  af Martin Jones."
+"Overført til kde pauseskærm af Martin Jones."
 
 #: forest.cpp:206
 msgid "Forest"
@@ -306,7 +306,7 @@ msgstr "Skov"
 
 #: forest.cpp:286
 msgid "Setup KForest"
-msgstr "Skov Indstillinger"
+msgstr "Skov indstillinger"
 
 #: forest.cpp:312
 msgid "Num of Trees:"
@@ -314,7 +314,7 @@ msgstr "Antal træer:"
 
 #: forest.cpp:407
 msgid "About Forest"
-msgstr "Om Skov"
+msgstr "Om skov"
 
 #: forest.cpp:408
 msgid ""
@@ -328,7 +328,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 ved Pascal Pensa\n"
 "\n"
-"Overført til skærmskåner af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: hop.cpp:226
 msgid "Hop"
@@ -336,11 +336,11 @@ msgstr "Hop"
 
 #: hop.cpp:319
 msgid "Setup KHop"
-msgstr "KHop indstillinger"
+msgstr "Hop indstillinger"
 
 #: hop.cpp:345
 msgid "Samecolor Pixels:"
-msgstr "Pixler af samme farve:"
+msgstr "Pixels af samme farve:"
 
 #: hop.cpp:359 lissie.cpp:375
 msgid "Cycles:"
@@ -362,7 +362,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 ved Patrick J. Naughton\n"
 "\n"
-"Overført til skærmskåner af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: laser.cpp:333
 msgid "Laser"
@@ -388,11 +388,11 @@ msgstr ""
 "\n"
 "Copyright (c) 1995 ved Pascal Pensa\n"
 "\n"
-"Overført til skærmskåner af Martin Jones."
+"Overført til kde pauseskærm af Martin Jones."
 
 #: lines.cpp:142
 msgid "Setup klines"
-msgstr "klines indstilling"
+msgstr "Linier indstilling"
 
 #: lines.cpp:150 polygon.cpp:101
 msgid "Length:"
@@ -404,7 +404,7 @@ msgstr "Start:"
 
 #: lines.cpp:190
 msgid "Middle:"
-msgstr "Midt:"
+msgstr "Midte:"
 
 #: lines.cpp:203
 msgid "End:"
@@ -432,7 +432,7 @@ msgstr "Lissie"
 
 #: lissie.cpp:335
 msgid "Setup KLissie"
-msgstr "KLissie indstilling"
+msgstr "Lissie indstilling"
 
 #: lissie.cpp:361
 msgid "Num of Lissies:"
@@ -454,12 +454,12 @@ msgstr ""
 "\n"
 "Copyright (c) 1996 ved Alexander Jolk\n"
 "\n"
-"Overført til skærmskåner  af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: main.cpp:436
 #, c-format
 msgid "Option %s is not support on this plattform!"
-msgstr "Indstillingen %s er ikke støttet på denne platform!"
+msgstr "Indstillingen %s er ikke understøttet på denne platform!"
 
 #: main.cpp:491
 msgid ""
@@ -476,7 +476,7 @@ msgstr ""
 
 #: main.cpp:496
 msgid "Shadow Passwords"
-msgstr "Skygge kodeord"
+msgstr "Shadow kodeord"
 
 #: main.cpp:546
 msgid ""
@@ -486,8 +486,8 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Vær venlig ikke at bruge -test sammen med -lock.\n"
-"brug klock i stedet for.\n"
+"Brug ikke -test sammen med -lock.\n"
+"Brug klock i stedet for.\n"
 "\n"
 
 #: main.cpp:664
@@ -519,27 +519,28 @@ msgid ""
 "  -setup            Setup screen saver\n"
 "  -test             Invoke the screen saver immediately\n"
 msgstr ""
-"  -corners xxxx     Placering afmarkør i hjørnet gør følgende:\n"
+"  -corners xxxx     Placering af markør i hjørnet gør følgende:\n"
 "                     x = i  intet (ignorer)\n"
-"                     x =s  gem skærmen\n"
+"                     x = s  gem skærmen\n"
 "                     x = l  lås skærmen\n"
-"              rækkefølge: top-venstre, top-højre, bund-venstre,bund-højre\n"
-"  -delay num      Tiden det tager før skærmskåneren begynder\n"
-"                     starter  (standard 10min)\n"
-"  -desc             Tryk skærmskånerens beskrivelse til standard output\n"
-"  -install          Installer skærmskåner\n"
-"  -lock             Kræv kodeord for at standse skærmskåner\n"
+"                     rækkefølge: top-venstre, top-højre, bund-venstre,"
+"                     bund-højre\n"
+"  -delay num        Tiden det tager før pauseskærmen begynder\n"
+"                     (standard 10min)\n"
+"  -desc             Skriv pauseskærmens beskrivelse til standard output\n"
+"  -install          Installer pauseskærmen\n"
+"  -lock             Kræv kodeord for at standse pauseskærm\n"
 "  -allow-root       Accepter root kodeord for at låse op\n"
-"  -nice num         Kør med specifikke gode værdier\n"
+"  -nice num         Sæt 'nice' værdi\n"
 "\n"
 "  -preview wid     Kør i specificeret Xvindue\n"
-"  -inroot           Kør i root Xvindue\n"
-"  -setup            Skærmskåner opsætning\n"
-"  -test             Start skærmskåneren med det samme\n"
+"  -inroot          Kør i root Xvindue\n"
+"  -setup           Pausekærm opsætning\n"
+"  -test            Start pauseskærmen med det samme\n"
 
 #: morph3d.cpp:839 pipes.cpp:239 space.cpp:419
 msgid "GL can not render with root visual\n"
-msgstr "GL kan ikke laves med root visuelle\n"
+msgstr "GL kan ikke laves med baggrundsbilledet\n"
 
 #: morph3d.cpp:940
 msgid "Morph3D (GL)"
@@ -547,7 +548,7 @@ msgstr "Morph3D (GL)"
 
 #: morph3d.cpp:1023
 msgid "Setup KMorph3d"
-msgstr "KMorph3D Indstilling"
+msgstr "Morph3D indstilling"
 
 #: morph3d.cpp:1039
 msgid "Object Type:"
@@ -569,19 +570,19 @@ msgstr ""
 "\n"
 "Copyright (c) 1997 ved Marcelo F. Vianna\n"
 "\n"
-"Overført til skærmskåner  af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: pipes.cpp:299
 msgid "Pipes (GL)"
-msgstr "Pipes (GL)"
+msgstr "Rør (GL)"
 
 #: pipes.cpp:680
 msgid "Setup KPipes"
-msgstr "KPipes indstilling"
+msgstr "Rør indstilling"
 
 #: pipes.cpp:686
 msgid "Number of Pipes"
-msgstr "Antal piber"
+msgstr "Antal rør"
 
 #: pipes.cpp:751
 msgid "About KPipes"
@@ -627,7 +628,7 @@ msgstr "Pyro"
 
 #: pyro.cpp:525
 msgid "Setup KPyro"
-msgstr "KPyro indstilling"
+msgstr "Pyro indstilling"
 
 #: pyro.cpp:551
 msgid "Cloud"
@@ -649,7 +650,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 ved Patrick J. Naughton\n"
 "\n"
-"Overført til skærmskåner af Martin Jones."
+"Overført til kde pauseskærm af Martin Jones."
 
 #: rock.cpp:441
 msgid "Rock"
@@ -657,7 +658,7 @@ msgstr "Klippe"
 
 #: rock.cpp:557
 msgid "Setup krock"
-msgstr "KRock indstilling"
+msgstr "Klippe indstilling"
 
 #: rock.cpp:597
 msgid "Move"
@@ -665,11 +666,11 @@ msgstr "Flyt"
 
 #: rock.cpp:603
 msgid "Rotate"
-msgstr "Roter"
+msgstr "Rotér"
 
 #: rock.cpp:727
 msgid "About Rock"
-msgstr "Om Rock"
+msgstr "Om Klippe"
 
 #: rock.cpp:728
 msgid ""
@@ -683,7 +684,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 ved Jamie Zawinski\n"
 "\n"
-"Overført til skærmskåner af Martin Jones."
+"Overført til kde pauseskærm af Martin Jones."
 
 #: saver.cpp:66 saver.cpp:197
 msgid "Enter Password"
@@ -719,19 +720,19 @@ msgstr "Krumning"
 
 #: science.cpp:112
 msgid "Science"
-msgstr "Science"
+msgstr "Hvirvel"
 
 #: science.cpp:504
 msgid "rendering lens..."
-msgstr "Der giver linsen ..."
+msgstr "Beregner linsen ..."
 
 #: science.cpp:826
 msgid "grabbing screen..."
-msgstr "snupper skærmen..."
+msgstr "Tager skærmen..."
 
 #: science.cpp:988
 msgid "Setup Science"
-msgstr "Science indstilling"
+msgstr "Hvirvel indstilling"
 
 #: science.cpp:1021
 msgid "Inverse"
@@ -755,7 +756,7 @@ msgstr "Bevægelse:"
 
 #: science.cpp:1317
 msgid "Science Version"
-msgstr "Science version"
+msgstr "Hvirvel version"
 
 #: science.cpp:1318
 msgid "written by"
@@ -791,7 +792,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1992 ved Jamie Zawinski\n"
 "\n"
-"Overført til skærmskåner af Martin Jones."
+"Overført til kde pauseskærm af Martin Jones."
 
 #: slip.cpp:293
 msgid "Slip"
@@ -821,7 +822,7 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 ved Scott Draves\n"
 "\n"
-"Overført til skærmskåner af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."
 
 #: space.cpp:491
 msgid "Space (GL)"
@@ -833,7 +834,7 @@ msgstr "KSpace indstilling"
 
 #: space.cpp:605
 msgid "Warp Interval:"
-msgstr "Forvrængningsinterval:"
+msgstr "Lyshastighedsinterval:"
 
 #: space.cpp:693
 msgid "About KSpace"
@@ -877,4 +878,4 @@ msgstr ""
 "\n"
 "Copyright (c) 1991 ved Patrick J. Naughton\n"
 "\n"
-"Overført til skærmskåner af Emanuel Pirker."
+"Overført til kde pauseskærm af Emanuel Pirker."

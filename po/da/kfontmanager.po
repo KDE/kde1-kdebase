@@ -5,33 +5,33 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kfontmanager\n"
-"POT-Creation-Date: 1998-12-14 01:17+0100\n"
+"POT-Creation-Date: 1998-12-27 01:17+0100\n"
 "PO-Revision-Date: 1999-02-16 01:00+CET-5\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da<LL@li.org>\n"
+"Last-Translator: Thorbjoern Ravn Andersen <ravn@mip.sdu.dk>\n"
+"Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:58
 msgid "KDE Font Manager"
-msgstr "KDE Skriftmanager"
+msgstr "KDE Skrifthåndtering"
 
 #: main.cpp:71
 msgid "KDE Fonts"
-msgstr "KDE Skrifter"
+msgstr "KDE Skrifttyper"
 
 #: main.cpp:72
 msgid "Font Explorer"
-msgstr "Skriftudforsker"
+msgstr "Skrifttypefremviser"
 
 #: main.cpp:73
 msgid "Raw X11 Font List"
-msgstr "Rå X11 skriftliste"
+msgstr "Rå X11 skrifttypeoversigt"
 
 #: kfontmanager.cpp:60
 msgid "Available X11 Fonts"
-msgstr "Tilgængelige X11-skrifter"
+msgstr "Tilgængelige X11-skrifttyper"
 
 #: kfontmanager.cpp:67
 msgid "Fonts made available to KDE"
@@ -67,7 +67,7 @@ msgid ""
 "is not set\n"
 msgstr ""
 "Variablen HOME\n"
-"er ikke sat\n"
+"er ikke sat i det omgivende miljø\n"
 
 #: kfontmanager.cpp:292
 msgid ""
@@ -105,11 +105,11 @@ msgstr "Vælg skrift"
 
 #: kfontexplorer.cpp:130
 msgid "Requested Font"
-msgstr "Krævet skrift"
+msgstr "Ønsket skrifttype"
 
 #: kfontexplorer.cpp:135
 msgid "Actual Font"
-msgstr "Faktisk skrift"
+msgstr "Faktisk skrifttype"
 
 #: kfontexplorer.cpp:139 kfontexplorer.cpp:143
 msgid "Family:"
@@ -153,7 +153,7 @@ msgstr "Stil"
 
 #: kfontexplorer.cpp:297 kfontexplorer.cpp:407 kfontexplorer.cpp:437
 msgid "roman"
-msgstr "romansk"
+msgstr "normal"
 
 #: kfontexplorer.cpp:298 kfontexplorer.cpp:409 kfontexplorer.cpp:435
 msgid "italic"
@@ -161,7 +161,7 @@ msgstr "kursiv"
 
 #: kfontexplorer.cpp:326
 msgid "Dolor Ipse"
-msgstr "Dolor Ipse"
+msgstr "The quick brown fox jumped over the lazy dog ÆØÅæøå"
 
 #: kfontexplorer.cpp:430
 msgid "Bold"

@@ -39,15 +39,15 @@ msgstr "Lås skærm"
 
 #: kpanel.C:475 kpanel.C:484
 msgid "Hide the panel"
-msgstr "Gem Panel"
+msgstr "Gem panel"
 
 #: kpanel.C:494 kpanel.C:506
 msgid "Show the panel"
-msgstr "Vis Panel"
+msgstr "Vis panel"
 
 #: kpanel.C:1070
 msgid "Iconify other &windows"
-msgstr "Minimer andre &vinduer"
+msgstr "Minimér andre &vinduer"
 
 #: kpanel.C:1218 tools.C:910
 msgid "Windowlist"
@@ -55,15 +55,15 @@ msgstr "Vindues oversigt"
 
 #: kpanel.C:1226 props.C:197
 msgid "Quickly navigate through the filesystem"
-msgstr "Naviger hurtigt gennem systemet"
+msgstr "Navigér hurtigt gennem systemet"
 
 #: props.C:167
 msgid "Add Application"
-msgstr "Tilføj anvendelse"
+msgstr "Tilføj program"
 
 #: props.C:169
 msgid "Add an application or a submenu onto the panel"
-msgstr "Tilføj anvendelse eller undermenu til panelet"
+msgstr "Tilføj program eller undermenu til panelet"
 
 #: props.C:175
 msgid "Add Disk Navigator"
@@ -71,15 +71,15 @@ msgstr "Tilføj Disk Navigator"
 
 #: props.C:177
 msgid "Add a Disk Navigator menu onto the panel"
-msgstr "Tilføj vindues oversigt på panelet"
+msgstr "Tilføj Disk Navigator menu på panelet"
 
 #: props.C:180
 msgid "Add Windowlist"
-msgstr "Tilføj vindues oversigt"
+msgstr "Tilføj vinduesoversigt"
 
 #: props.C:182
 msgid "Add a windowlist menu onto the panel"
-msgstr "Tilføj vindues oversigt på panelet"
+msgstr "Tilføj vinduesoversigt på panelet"
 
 #: events.C:860 props.C:183
 msgid "Configure"
@@ -95,7 +95,7 @@ msgstr "Rediger menuer"
 
 #: props.C:188
 msgid "Add or remove applications in the menu structure "
-msgstr "Tilføj eller fjern anvendelser fra menustrukturen "
+msgstr "Tilføj eller fjern programmer fra menustrukturen "
 
 #: events.C:862 props.C:189
 msgid "Restart"
@@ -119,7 +119,7 @@ msgstr "Lås skærm"
 
 #: props.C:451
 msgid "The menu editor is not installed."
-msgstr "Menu editoren er ikke installéret."
+msgstr "Menu redigering er ikke installéret."
 
 #: events.C:917 props.C:452
 msgid "Oops!"
@@ -139,19 +139,19 @@ msgstr "Disk Navigator"
 
 #: events.C:916
 msgid "Cannot put this as button onto the panel!"
-msgstr "Kan ikke placere dette som en trykknap på panelet!"
+msgstr "Dette kan ikke placeres som en trykknap på panelet!"
 
 #: pfilemenu.C:425
 msgid "(empty folder)"
-msgstr "(tom folder)"
+msgstr "(tomt katalog)"
 
 #: pfilemenu.C:480
 msgid "Open Folder"
-msgstr "Åbn folder"
+msgstr "Åbn katalog"
 
 #: pfilemenu.C:483
 msgid "Open this folder (+Shift: Launch a terminal here)"
-msgstr "Åbn denne folder (+Shift: start en terminal her)"
+msgstr "Åbn dette katalog (+skift: start en terminal her)"
 
 #: pfilemenu.C:491
 msgid "(Too Many Files)"
@@ -171,7 +171,7 @@ msgstr "Delt:"
 
 #: pfilemenu.C:754
 msgid "Entries shared among all users"
-msgstr "Indgange deles blandt brugere"
+msgstr "Indgange deles blandt alle brugere"
 
 #: pfilemenu.C:773
 msgid "Personal:"

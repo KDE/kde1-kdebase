@@ -8,8 +8,8 @@ msgstr ""
 "00\n"
 "POT-Creation-Date: 1999-04-10 01:21+0200\n"
 "PO-Revision-Date: 1999-02-16 13:23\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da<LL@li.org>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,19 +41,19 @@ msgstr "brug: kcmkwm [-init | {windows,buttons,titlebar,desktop}]\n"
 
 #: main.cpp:123
 msgid "Window manager style"
-msgstr "Vindues manager stil"
+msgstr "Window manager stil"
 
 #: titlebar.cpp:125
 msgid "Minimize"
-msgstr "Minimer"
+msgstr "Minimér"
 
 #: titlebar.cpp:129
 msgid "Maximize"
-msgstr "Maksimer"
+msgstr "Maksimér"
 
 #: titlebar.cpp:133
 msgid "Sticky"
-msgstr "Klæbrig"
+msgstr "Fastsat"
 
 #: titlebar.cpp:141
 msgid "Menu"
@@ -71,33 +71,33 @@ msgstr "Højre"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Den venstre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"Den venstre side af titelbjælken er fuld... 'Maksimér' knappen er sat ud af "
 "funktion\n"
 
 #: titlebar.cpp:506
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"Den højre side af titelbjælken er fuld... 'Maksimér' knappen er sat ud af "
 "funktion\n"
 
 #: titlebar.cpp:546
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Den venstre side af titelbjælken er fuld... 'Minimer' knappen er sat ud af "
+"Den venstre side af titelbjælken er fuld... 'Minimér' knappen er sat ud af "
 "funktion\n"
 
 #: titlebar.cpp:579
 msgid ""
 "The right side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Den højre side af titelbjælken er fuld... 'Maksimer' knappen er sat ud af "
+"Den højre side af titelbjælken er fuld... 'Minimér' knappen er sat ud af "
 "funktion\n"
 
 #: titlebar.cpp:932
 msgid "Title Alignment"
-msgstr "Titeljustering"
+msgstr "Titel placering"
 
 #: titlebar.cpp:941
 msgid "Middle"
@@ -117,23 +117,23 @@ msgstr "Almindelig"
 
 #: titlebar.cpp:992 titlebar.cpp:1017
 msgid "Pixmap"
-msgstr "Pixmap"
+msgstr "Billede"
 
 #: titlebar.cpp:1005
 msgid "Active title has shaded frame"
-msgstr "Aktiv titel har ramme med overgang"
+msgstr "Aktiv titel har ramme med relief"
 
 #: titlebar.cpp:1046
 msgid "Active pixmap:"
-msgstr "&Aktiv pixmap"
+msgstr "&Aktiv titelbjælke"
 
 #: titlebar.cpp:1051
 msgid "Inactive pixmap:"
-msgstr "&Inaktiv pixmap"
+msgstr "&Inaktiv titelbjælke"
 
 #: titlebar.cpp:1057
 msgid "No pixmap under text"
-msgstr "Ingen pixmap under tekst"
+msgstr "Intet billede under tekst"
 
 #: titlebar.cpp:1068
 msgid "Mouse action"
@@ -147,23 +147,23 @@ msgstr ""
 
 #: titlebar.cpp:1086
 msgid "(Un)Maximize"
-msgstr "(U)Maksimer"
+msgstr "Maksimal (til/fra)"
 
 #: titlebar.cpp:1087
 msgid "(Un)Shade"
-msgstr "(Ikke) skygge"
+msgstr "Skygge (til/fra)"
 
 #: titlebar.cpp:1088
 msgid "Iconify"
-msgstr "Minimer"
+msgstr "Minimér"
 
 #: titlebar.cpp:1089
 msgid "(Un)Sticky"
-msgstr "(U)klæbrig"
+msgstr "Fastsæt/frigør vindue"
 
 #: titlebar.cpp:1109
 msgid "Title animation"
-msgstr "Titel animering"
+msgstr "Titelbjælke animation"
 
 #: titlebar.cpp:1125
 msgid "ms"
@@ -171,15 +171,15 @@ msgstr "ms"
 
 #: titlebar.cpp:1368
 msgid "Window manager setup - ERROR"
-msgstr "Vinduesmanagerindretning - FEJL"
+msgstr "Window manager konfiguration - FEJL"
 
 #: titlebar.cpp:1369
 msgid ""
 "There was an error while saving\n"
 "the titlebar pixmaps! Please check permissions."
 msgstr ""
-"Der skete en fejl da titelbjælkens pixmaps blev\n"
-"gemt! Undersøg venligst tilladelser."
+"Der skete en fejl da titelbjælkens billeder blev\n"
+"gemt! Undersøg venligst rettigheder."
 
 #: windows.cpp:68
 msgid "Windows"
@@ -188,18 +188,16 @@ msgstr "Vinduer"
 #: windows.cpp:82
 msgid "Vertical maximization only by default"
 msgstr ""
-"Der er kun lodret maximering i\n"
-"i standardopsætning"
+"Der er kun lodret maksimering i standardkonfiguration"
 
 #: windows.cpp:87
 msgid "Display content in moving windows"
-msgstr "Vis indholdet når vinduer flyttes "
+msgstr "Vis indholdet når vinduer flyttes"
 
 #: windows.cpp:92
 msgid "Display content in resizing windows"
 msgstr ""
-"Vis indholdet når vinduer ændrer\n"
-" størrelse"
+"Vis indholdet når vinduer ændrer størrelse"
 
 #: windows.cpp:98
 msgid "Resize animation:"
@@ -215,7 +213,7 @@ msgstr "Hurtigt"
 
 #: windows.cpp:128
 msgid "Placement policy"
-msgstr "Placeringspolitik"
+msgstr "Placering af vinduer"
 
 #: windows.cpp:134
 msgid "Smart"
@@ -223,7 +221,7 @@ msgstr "Smart"
 
 #: windows.cpp:136
 msgid "Cascade"
-msgstr "Kaskade"
+msgstr "Overlappende"
 
 #: windows.cpp:138
 msgid "Interactive"
@@ -244,11 +242,11 @@ msgid ""
 "(% of desktop space)"
 msgstr ""
 "Tilladt overlapning:\n"
-"(% af arbejdsplads)"
+"(% af arbejdsområde)"
 
 #: windows.cpp:175
 msgid "Focus policy"
-msgstr "Fokuspolitik"
+msgstr "Styring af fokus"
 
 #: windows.cpp:185
 msgid "Click to focus"
@@ -260,15 +258,15 @@ msgstr "Fokus følger mus"
 
 #: windows.cpp:189
 msgid "Classic focus follows mouse"
-msgstr "Den klassiske fokus følger mus"
+msgstr "Fokus følger mus i vindue"
 
 #: windows.cpp:191
 msgid "Classic sloppy focus"
-msgstr "Den klassiske  sjuskede fokus"
+msgstr "Fokus følger mus på arbejdsområde"
 
 #: windows.cpp:203
 msgid "Auto Raise"
-msgstr "Løft selv"
+msgstr "Læg automatisk øverst"
 
 #: windows.cpp:209
 msgid "Click Raise"
@@ -280,19 +278,19 @@ msgstr "Pause (ms)"
 
 #: desktop.cpp:65
 msgid "Active desktop borders"
-msgstr "Aktive arbejdspladskanter"
+msgstr "Aktive kanter på arbejdsområde"
 
 #: desktop.cpp:74
 msgid "Enable active desktop borders"
-msgstr "Slå aktive arbejdspladskanter til"
+msgstr "Aktivér kanter"
 
 #: desktop.cpp:81
 msgid "Move pointer towards center after switch"
-msgstr "Bevæg markør mod midten efter ombytning"
+msgstr "Sæt markør i midten af det nye arbejdsområde"
 
 #: desktop.cpp:87
 msgid "Desktop switch delay:"
-msgstr "Forsinkelse ved arbejdspladsombytning"
+msgstr "Forsinkelse ved skift:"
 
 #: desktop.cpp:117
 msgid "Magic Borders"
@@ -303,16 +301,16 @@ msgid ""
 "Border Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Kantlåsområde:\n"
-"         (pixler)"
+"Magisk kantområde:\n"
+"         (pixels)"
 
 #: desktop.cpp:151
 msgid ""
 "Window Snap Zone:\n"
 "       (pixels)"
 msgstr ""
-"Vindues låseområde:\n"
-"        (pixler)"
+"Vindueskantområde:\n"
+"        (pixels)"
 
 #: mouse.cpp:54
 msgid "Active"
@@ -324,15 +322,15 @@ msgstr "&Inaktiv "
 
 #: mouse.cpp:62
 msgid "Titlebar and frame:"
-msgstr "Titelbjælke og ramme"
+msgstr "Titelbjælke og ramme:"
 
 #: mouse.cpp:66
 msgid "Inactive inner window:"
-msgstr "Inaktivt indre vindue"
+msgstr "Inaktivt indre vindue:"
 
 #: mouse.cpp:70
 msgid "Inner window, titlebar and frame:"
-msgstr "Indre vindue, titelbjælke og ramme"
+msgstr "Indre vindue, titelbjælke og ramme:"
 
 #: mouse.cpp:74 mouse.cpp:86
 msgid "Left Button"
@@ -340,7 +338,7 @@ msgstr "Venstre knap"
 
 #: mouse.cpp:78 mouse.cpp:90
 msgid "Middle Button"
-msgstr "Mellem knap"
+msgstr "Midterste knap"
 
 #: mouse.cpp:82 mouse.cpp:94
 msgid "Right Button"
@@ -348,34 +346,34 @@ msgstr "Højre knap"
 
 #: mouse.cpp:98
 msgid "ALT + Left Button"
-msgstr "ALT + Venstre knap"
+msgstr "ALT + venstre knap"
 
 #: mouse.cpp:102
 msgid "ALT + Middle Button"
-msgstr "ALT+Mellem knap"
+msgstr "ALT + midterste knap"
 
 #: mouse.cpp:106
 msgid "ALT + Right Button"
-msgstr "ALT+Højre knap"
+msgstr "ALT + højre knap"
 
 #: mouse.cpp:113 mouse.cpp:122 mouse.cpp:132 mouse.cpp:196 mouse.cpp:207
 #: mouse.cpp:218
 msgid "Raise"
-msgstr "Løft"
+msgstr "Læg øverst"
 
 #: mouse.cpp:114 mouse.cpp:123 mouse.cpp:133 mouse.cpp:197 mouse.cpp:208
 #: mouse.cpp:219
 msgid "Lower"
-msgstr "Sænk"
+msgstr "Læg nederst"
 
 #: mouse.cpp:115 mouse.cpp:124 mouse.cpp:134
 msgid "Operations menu"
-msgstr "System menu"
+msgstr "Systemmenu"
 
 #: mouse.cpp:116 mouse.cpp:125 mouse.cpp:135 mouse.cpp:194 mouse.cpp:205
 #: mouse.cpp:216
 msgid "Toggle raise and lower"
-msgstr "Skift imellem løft og sænk"
+msgstr "Skift imellem øverst og nederst"
 
 #: mouse.cpp:126 mouse.cpp:136 mouse.cpp:198 mouse.cpp:209 mouse.cpp:220
 msgid "Nothing"
@@ -384,24 +382,24 @@ msgstr "Intet"
 #: mouse.cpp:142 mouse.cpp:150 mouse.cpp:158 mouse.cpp:169 mouse.cpp:178
 #: mouse.cpp:187
 msgid "Activate and raise"
-msgstr "Aktiver og løft"
+msgstr "Aktiver og læg øverst"
 
 #: mouse.cpp:143 mouse.cpp:151 mouse.cpp:159
 msgid "Activate and lower"
-msgstr "Aktiver og sænk"
+msgstr "Aktivér og læg nederst"
 
 #: mouse.cpp:144 mouse.cpp:152 mouse.cpp:160 mouse.cpp:168 mouse.cpp:177
 #: mouse.cpp:186
 msgid "Activate"
-msgstr "Aktiver"
+msgstr "Aktivér"
 
 #: mouse.cpp:166 mouse.cpp:175 mouse.cpp:184
 msgid "Activate, raise and pass click"
-msgstr "Aktiver, løft og send klik videre"
+msgstr "Aktivér, læg øverst og send klik videre"
 
 #: mouse.cpp:167 mouse.cpp:176 mouse.cpp:185
 msgid "Activate and pass click"
-msgstr "Aktiver og send klik videre"
+msgstr "Aktivér og send klik videre"
 
 #: mouse.cpp:193 mouse.cpp:204 mouse.cpp:215
 msgid "Move"
@@ -417,15 +415,15 @@ msgstr "Tastatur og mus"
 
 #: advanced.cpp:46
 msgid "Ctrl-Tab walks through desktops"
-msgstr "Ctrl-Tab skifter mellem arbejdspladser"
+msgstr "Ctrl-Tab skifter mellem arbejdsområder"
 
 #: advanced.cpp:51
 msgid "Alt-Tab is limited to current desktop"
-msgstr "Alt-Tab er kun for aktiv arbejdsplads"
+msgstr "Alt-Tab er kun for aktiv arbejdsområder"
 
 #: advanced.cpp:56
 msgid "Alt-Tab mode:"
-msgstr "Alt-Tab modus"
+msgstr "Alt-Tab tilstand:"
 
 #: advanced.cpp:63
 msgid "KDE"
@@ -461,11 +459,11 @@ msgstr "aldrig få fokus"
 
 #: advanced.cpp:107
 msgid "start as Sticky"
-msgstr "starte klæbrige"
+msgstr "starte fastsat"
 
 #: advanced.cpp:108
 msgid "be excluded from session management"
-msgstr "være ekskluderet fra sessions styringen"
+msgstr "være udelukket fra sessionsstyringen"
 
 #: advanced.cpp:116
 msgid "if they match the following:"

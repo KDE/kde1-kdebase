@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kwm\n"
-"POT-Creation-Date: 1999-04-05 01:20+0200\n"
+"POT-Creation-Date: 1999-04-27 01:20+0200\n"
 "PO-Revision-Date: 1999-02-16 17:28+0200\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da <LL@li.org>\n"
+"Last-Translator: Thorbjoern Ravn Andersen <ravn@mip.sdu.dk>\n"
+"Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,9 +17,7 @@ msgstr ""
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
-msgstr ""
-"kwm: Det ser ud til at der allerede kører en winduesmanager. KWM blev ikke "
-"startet.\n"
+msgstr "kwm: Tilsyneladende kører der allerede en Window Manager.  KWM blev ikke startet.\n"
 
 #: main.C:82
 msgid "kwm: failure during initialisation; aborting\n"
@@ -55,11 +53,11 @@ msgstr "&Gendan"
 
 #: main.C:573
 msgid "&Sticky"
-msgstr "&Klæbrig"
+msgstr "Fast&sat"
 
 #: main.C:574
 msgid "&UnSticky"
-msgstr "&Uklæbrig"
+msgstr "Fri&giv"
 
 #: main.C:575
 msgid "Mo&ve"
@@ -67,15 +65,15 @@ msgstr "&Flyt"
 
 #: main.C:576
 msgid "Resi&ze"
-msgstr "&Ændr størrelse"
+msgstr "Ænd&r størrelse"
 
 #: main.C:578
 msgid "&To desktop"
-msgstr "&Til Arbejdsplads"
+msgstr "&Til arbejdsområde"
 
 #: main.C:580
 msgid "&Onto current desktop"
-msgstr "Til &nuværende arbejdsplads"
+msgstr "Til &nuværende arbejdsområde"
 
 #: main.C:620
 msgid "One"
@@ -111,15 +109,15 @@ msgstr "Otte"
 
 #: main.C:655
 msgid "Unnamed Desktop"
-msgstr "Unavngiven Arbejdsplads"
+msgstr "Unavngivent arbejdsområde"
 
 #: main.C:1082
 msgid "Some pixmaps are not valid: ShapeMode dissabled\n"
-msgstr "Nogle pixmaps er ubrugelige: ShapeMode ikke iværksat\n"
+msgstr "Nogle billeder er uanvendelige: ShapeMode ikke startet\n"
 
 #: main.C:1199
 msgid "Some pixmaps are not valid: GimmickMode dissabled\n"
-msgstr "Nogle pixmaps er ubrugelige: GimmickMode ikke iværksat\n"
+msgstr "Nogle billeder er uanvendelige: GimmickMode ikke startet\n"
 
 #: main.C:1531
 msgid "*** No Tasks ***"
@@ -131,7 +129,7 @@ msgstr "Kommando:"
 
 #: warning.C:36
 msgid "Ooops!"
-msgstr "Uuups!"
+msgstr "Hovsa!"
 
 #: logout.C:36 taskmgr.C:108
 msgid "Logout"
@@ -146,7 +144,7 @@ msgid ""
 "The following applications contain unsaved data which\n"
 "will be lost in your next session."
 msgstr ""
-"Følgende anvendelser indeholder ugemte data\n"
+"Følgende programmer indeholder ugemte data\n"
 "som vil gå tabt i næste session."
 
 #: logout.C:63
@@ -154,17 +152,16 @@ msgid ""
 "The following applications cannot be restored in your next session,\n"
 "only restarted. Make sure they do not contain important unsaved data."
 msgstr ""
-"Følgende anvendelser kan ikke gendannes under næste session,\n"
-"kun genstartes. Vær sikker på at de ikke indeholder vigtige ugemte data."
+"Følgende programmer kan ikke gendannes under næste session,\n"
+"kun genstartes. Vær sikker på at vigtige data er gemt."
 
 #: logout.C:74
 msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Følgende anvendelser er ikke X11-klar og kan derfor ikkegendannes\n"
-"i din næste session.  Vær sikker på at de ikke indeholder vigtige ugemte "
-"data."
+"Følgende programmer understøtter ikke X11 og kan derfor ikke gendannes\n"
+"i din næste session.  Vær sikker på at vigtige data er gemt."
 
 #: taskmgr.C:107
 msgid "Switch to"

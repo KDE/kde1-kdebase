@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kcmsyssound\n"
 "POT-Creation-Date: 1998-10-13 13:13+0200\n"
 "PO-Revision-Date: 1999-02-16 15:33+0100\n"
-"Last-Translator: Erik Kjær Pedersen\n"
-"Language-Team: da <LL@li.org>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,39 +27,39 @@ msgstr "(ingen)"
 
 #: syssound.cpp:147
 msgid "Change to Desktop 1"
-msgstr "Skift til Arbejdsplads 1"
+msgstr "Skift til arbejdsområde 1"
 
 #: syssound.cpp:148
 msgid "Change to Desktop 2"
-msgstr "Skift til Arbejdsplads 2"
+msgstr "Skift til arbejdsområde 2"
 
 #: syssound.cpp:149
 msgid "Change to Desktop 3"
-msgstr "Skift til Arbejdsplads 3"
+msgstr "Skift til arbejdsområde 3"
 
 #: syssound.cpp:150
 msgid "Change to Desktop 4"
-msgstr "Skift til Arbejdsplads 4"
+msgstr "Skift til arbejdsområde 4"
 
 #: syssound.cpp:151
 msgid "Change to Desktop 5"
-msgstr "Skift til Arbejdsplads 5"
+msgstr "Skift til arbejdsområde 5"
 
 #: syssound.cpp:152
 msgid "Change to Desktop 6"
-msgstr "Skift til Arbejdsplads 6"
+msgstr "Skift til arbejdsområde 6"
 
 #: syssound.cpp:153
 msgid "Change to Desktop 7"
-msgstr "Skift til Arbejdsplads 7"
+msgstr "Skift til arbejdsområde 7"
 
 #: syssound.cpp:154
 msgid "Change to Desktop 8"
-msgstr "Skift til Arbejdsplads 8"
+msgstr "Skift til arbejdsområde 8"
 
 #: syssound.cpp:156
 msgid "Activate Window"
-msgstr "Aktiver vindue"
+msgstr "Aktivér vindue"
 
 #: syssound.cpp:157
 msgid "Open new window"
@@ -91,19 +91,19 @@ msgstr "Vis vindue"
 
 #: syssound.cpp:165
 msgid "Window Maximize"
-msgstr "Maksimer vindue"
+msgstr "Maksimér vindue"
 
 #: syssound.cpp:166
 msgid "Window UnMaximize"
-msgstr "Tidligere vindue"
+msgstr "Gendan vindue"
 
 #: syssound.cpp:167
 msgid "Window Sticky"
-msgstr "Vindue klæbrigt"
+msgstr "Vindue fastsat"
 
 #: syssound.cpp:168
 msgid "Window UnSticky"
-msgstr "Vindue uklæbrigt"
+msgstr "Vindue frigjort"
 
 #: syssound.cpp:169
 msgid "Window Trans New"
@@ -119,7 +119,7 @@ msgstr "Log af"
 
 #: syssound.cpp:172
 msgid "Logout Message"
-msgstr "Udlogningsmeddelelse"
+msgstr "Log af meddelelse"
 
 #: syssound.cpp:173
 msgid "Window Move Start"
@@ -139,7 +139,7 @@ msgstr "Skift størrelse slut"
 
 #: syssound.cpp:198
 msgid "e&nable system sounds"
-msgstr "&Iværksæt systemlyde"
+msgstr "&Brug systemlyde"
 
 #: syssound.cpp:203
 msgid "&Test"
@@ -155,18 +155,18 @@ msgstr "&Lyde:"
 
 #: syssound.cpp:216
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr "Yderligere WAV filer kan droppes på lyd listen."
+msgstr "Yderligere WAV filer kan lægges på lydlisten."
 
 #: syssound.cpp:456
 msgid "Unsupported URL"
-msgstr "Uunderstøttet URL"
+msgstr "URL ikke understøttet"
 
 #: syssound.cpp:458
 msgid ""
 "Sorry, this type of URL is currently unsupportedby the KDE System Sound "
 "Module"
 msgstr ""
-"Desværre - denne type URL er endnu ikke understøttet af KDE SystemLydeModul"
+"Denne type URL er endnu ikke understøttet af KDE's modul til systemlyde"
 
 #: syssound.cpp:468
 #, c-format
@@ -175,13 +175,13 @@ msgid ""
 "%s\n"
 "does not seem to be a WAV--file."
 msgstr ""
-"Ser desværre\n"
+""
 "%s\n"
-"ikke ud til at være en WAV-fil!"
+"ser ikke ud til at være en WAV-fil!"
 
 #: syssound.cpp:471
 msgid "Improper File Extension"
-msgstr "Forkert fil-efternavn"
+msgstr "Forkert fil-endelse"
 
 #: syssound.cpp:482
 #, c-format
@@ -192,8 +192,8 @@ msgid ""
 msgstr ""
 "Filen\n"
 "%s\n"
-"er allerede i listen"
+"er allerede på listen"
 
 #: syssound.cpp:486
 msgid "File Already in List"
-msgstr "Fil allerede i listen"
+msgstr "Fil allerede på listen"

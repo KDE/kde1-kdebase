@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE BASE/kvt\n"
-"POT-Creation-Date: 1999-03-04 18:41+0100\n"
+"POT-Creation-Date: 1999-03-27 18:41+0100\n"
 "PO-Revision-Date: 1999-02-16 10:21+0100\n"
-"Last-Translator: Erik Kjær Pedersen\n"
-"Language-Team: da <LL@li.org>\n"
+"Last-Translator: Thorbjørn Ravn Andersen <ravn@mip.sdu.dk>\n"
+"Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.C:426
 msgid "choose type of color-mode"
-msgstr "Vælg farvemodus type"
+msgstr "Vælg type for farvetilstand"
 
 #: main.C:432
 msgid "Add characters to word class"
@@ -23,15 +23,15 @@ msgstr "Tilføj tegn til ordklassen"
 
 #: main.C:438
 msgid "The backspace key will send a"
-msgstr "Backspace tasten vil sende en"
+msgstr "<- tasten vil sende en"
 
 #: main.C:444
 msgid "Cursor key set"
-msgstr "Markør nøgle sat"
+msgstr "Sat markørtast"
 
 #: main.C:613
 msgid "&New Terminal"
-msgstr "&Ny Terminal"
+msgstr "&Ny terminal"
 
 #: main.C:620 main.C:1043
 msgid "&Hide"
@@ -71,7 +71,7 @@ msgstr "&Enorm"
 
 #: main.C:644
 msgid "&black/white"
-msgstr "&Sort/Hvid"
+msgstr "&sort/hvid"
 
 #: main.C:645
 msgid "&white/black"
@@ -83,11 +83,11 @@ msgstr "&grøn/blå"
 
 #: main.C:647
 msgid "black/light&yellow"
-msgstr "sort/&lysgul"
+msgstr "sort/&lysegul"
 
 #: main.C:648
 msgid "Linu&x Console"
-msgstr "Linu&x Konsol"
+msgstr "Linu&x konsol"
 
 #: main.C:657
 msgid "&Custom Colors"
@@ -95,19 +95,19 @@ msgstr "&Brugerdefinerede farver"
 
 #: main.C:665 main.C:969
 msgid "Hide &Menubar"
-msgstr "Gem &Menubjælke"
+msgstr "Gem &menulinie"
 
 #: main.C:667 main.C:888 main.C:960
 msgid "Show &Menubar"
-msgstr "Vis &Menubjælke"
+msgstr "Vis &menulinie"
 
 #: main.C:668 main.C:979
 msgid "Secure &keyboard"
-msgstr "Grib &Tastatur"
+msgstr "Grib &tastatur"
 
 #: main.C:670
 msgid "Scroll&bar"
-msgstr "Rulle&bjælke"
+msgstr "Rulle&skakt"
 
 #: main.C:671
 msgid "&Font size"
@@ -127,7 +127,7 @@ msgstr "Terminal..."
 
 #: main.C:675
 msgid "Font..."
-msgstr "Skrift..."
+msgstr "Skrifttype..."
 
 #: main.C:676
 msgid "Enable &hotkeys"
@@ -135,7 +135,7 @@ msgstr "Brug &genvejstaster"
 
 #: main.C:679
 msgid "Save &Options"
-msgstr "&Gem Indstillinger"
+msgstr "&Gem indstillinger"
 
 #: main.C:688
 msgid ""
@@ -169,11 +169,11 @@ msgstr "Frigiv &tastatur"
 
 #: main.C:986
 msgid "Terminal Options"
-msgstr "Terminal Indstillinger"
+msgstr "Terminalindstillinger"
 
 #: main.C:1152
 msgid "Hint"
-msgstr "Vink"
+msgstr "Tip"
 
 #: main.C:1153
 msgid ""
@@ -205,7 +205,7 @@ msgstr "Tilladte argumenter er:\n"
 msgid ""
 "-e <command> <arg> ...    execute command with ars - must be last argument\n"
 msgstr ""
-"-e <command> <arg> ...    udfør kommando med ars - skal være sidste\n"
+"-e <command> <arg> ...    udfør kommando med args - skal være sidste\n"
 " argument\n"
 
 #: main.C:1480
@@ -234,7 +234,7 @@ msgstr "-vt_font <fontname>       normalskrift\n"
 
 #: main.C:1486
 msgid "-no_font_hack             turn off Qt font bug workaround\n"
-msgstr "-no_font_hack             slå Qt's trick mod skrift problem fra\n"
+msgstr "-no_font_hack             benyt ikke Qt's omgåelse af skrifttypeproblem\n"
 
 #: main.C:1487
 msgid "-vt_size <size>           tiny, small, normal, large, huge\n"
@@ -266,7 +266,7 @@ msgstr "-tn <TERM>                Terminal type. Standard er xterm.\n"
 
 #: main.C:1494
 msgid "-C                        Capture system console message\n"
-msgstr "-C                        Indfang system konsol budskab\n"
+msgstr "-C                        Vis systemkonsolbeskedder\n"
 
 #: main.C:1495
 msgid "-n <text>                 name in icon or icon window\n"
@@ -277,8 +277,8 @@ msgid ""
 "-7                        run in 7 bit mode\n"
 "-8                        run in 8 bit mode\n"
 msgstr ""
-"-7                        kør i 7 bit modus\n"
-"-8                        kør in 8 bit modus\n"
+"-7                        kør i 7 bit tilstand\n"
+"-8                        kør in 8 bit tilstand\n"
 
 #: main.C:1498
 msgid ""
@@ -294,9 +294,7 @@ msgstr ""
 msgid ""
 "-meta <arg>               handle Meta with ESCAPE prefix, 8THBIT set, or "
 "ignore\n"
-msgstr ""
-"-meta <arg>               behandl Meta med ESCAPE prefix, 8THBIT sat, eller "
-"ignorer\n"
+msgstr "-meta <arg>               behandl Meta med ESCAPE prefix, 8THBIT sat, eller ignorer\n"
 
 #: main.C:1501
 msgid "-sl <number>              save number lines in scroll-back buffer\n"
@@ -309,10 +307,8 @@ msgid ""
 "-pagedown <keysym>        use hot key alt-keysym to scroll down through "
 "buffer\n"
 msgstr ""
-"-pageup <keysym>          brug genvejen alt-tastesymbol til at rulleop "
-"gennem bufferen\n"
-"-pagedown <keysym>        brug genvejen alt-tastesymbol til at rulle  ned "
-"gennem bufferen\n"
+"-pageup <keysym>          brug genvejen alt-tastesymbol til at rulle op gennem bufferen\n"
+"-pagedown <keysym>        brug genvejen alt-tastesymbol til at rulle ned gennem bufferen\n"
 "buffer\n"
 
 #: main.C:1506
@@ -320,5 +316,5 @@ msgid ""
 "-grk9\t\tgreek kbd = ELOT 928 (default)\n"
 "-grk4\t\tgreek kbd = IBM 437\n"
 msgstr ""
-"-grk9\t\tgreek kbd = ELOT 928 (standard)\n"
-"-grk4\t\tgreek kbd = IBM 437\n"
+"-grk9\t\tgræsk er = ELOT 928 (standard)\n"
+"-grk4\t\tgræsk er = IBM 437\n"

@@ -27,7 +27,7 @@ msgstr "Log af"
 
 #: krootwm.C:245 krootwm.C:283
 msgid "Refresh desktop"
-msgstr "Genopfrisk Arbejdsplads"
+msgstr "Genopfrisk Arbejdsområde"
 
 #: krootwm.C:246 krootwm.C:285
 msgid "Unclutter windows"
@@ -35,11 +35,11 @@ msgstr "Ryd op i vinduer"
 
 #: krootwm.C:247 krootwm.C:286
 msgid "Cascade windows"
-msgstr "Overlæg vinduer"
+msgstr "Overlap vinduer"
 
 #: krootwm.C:248 krootwm.C:287
 msgid "Arrange icons"
-msgstr "Arranger ikoner"
+msgstr "Arrangér ikoner"
 
 #: krootwm.C:249 krootwm.C:282
 msgid "Display properties"
@@ -47,7 +47,7 @@ msgstr "Skærmindstillinger"
 
 #: krootwm.C:257 krootwm.C:280
 msgid "Help on desktop"
-msgstr "Hjælp om Arbejdsplads"
+msgstr "Hjælp til arbejdsområde"
 
 #: krootwm.C:258
 msgid "About KDE..."
@@ -63,7 +63,7 @@ msgstr "Bogmærker"
 
 #: krootwm.C:291
 msgid "Arrange Window Maker icons"
-msgstr "Arranger Vindueslaverikoner"
+msgstr "Arranger Window Maker ikoner"
 
 #: krootwm.C:292
 msgid "Show all"
@@ -79,7 +79,7 @@ msgstr "Vis info panel"
 
 #: krootwm.C:296
 msgid "Show legal panel"
-msgstr "Vis lovligt panel"
+msgstr "Vis licenspanel"
 
 #: krootwm.C:297
 msgid "Restart"
@@ -91,11 +91,11 @@ msgstr "Afslut"
 
 #: krootwm.C:300
 msgid "Window Maker"
-msgstr "Vindueslaver"
+msgstr "Window Maker"
 
 #: krootwm.C:317
 msgid "Desk"
-msgstr "Plads"
+msgstr "Område"
 
 #: krootwm.C:318
 msgid "Windows"
@@ -107,7 +107,7 @@ msgstr "Redigér bogmærker"
 
 #: krootwm.C:395 krootwm.C:833
 msgid "Folder"
-msgstr "Folder"
+msgstr "Katalog"
 
 #: krootwm.C:399
 #, c-format
@@ -116,7 +116,7 @@ msgstr "FEJL: Skabelon eksisterer ikke ´%s´"
 
 #: krootwm.C:854
 msgid "Could not create folder"
-msgstr "Kunne ikke oprette folder"
+msgstr "Kunne ikke oprette katalog"
 
 #: krootwm.C:938
 msgid "Copyright (C) 1997 Matthias Ettrich (ettrich@kde.org)\n"

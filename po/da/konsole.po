@@ -43,7 +43,7 @@ msgstr "Linux (lille)"
 
 #: main.C:316
 msgid "&More ..."
-msgstr "&Mer ..."
+msgstr "&Mere ..."
 
 #: main.C:322
 msgid "&Hide"
@@ -79,7 +79,7 @@ msgstr "80x52 (ibmv&ga)"
 
 #: main.C:342
 msgid "&Menubar"
-msgstr "&Menubjælke"
+msgstr "&Menulinie"
 
 #: main.C:343
 msgid "&Frame"
@@ -87,27 +87,27 @@ msgstr "&Ramme"
 
 #: main.C:344
 msgid "Scroll&bar"
-msgstr "&Rullebjælke"
+msgstr "&Rulleskakt"
 
 #: main.C:346
 msgid "BS sends &DEL"
-msgstr "BS sender &DEL"
+msgstr "<- sender &DEL"
 
 #: main.C:348
 msgid "&Font"
-msgstr "&Skrift"
+msgstr "&Skrifttype"
 
 #: main.C:349
 msgid "&Size"
-msgstr "&Størrelse"
+msgstr "S&tørrelse"
 
 #: main.C:350
 msgid "&Schema"
-msgstr "&Schema"
+msgstr "&Farvevalg"
 
 #: main.C:352
 msgid "&Save options"
-msgstr "&Gem valg"
+msgstr "&Gem indstillinger"
 
 #: main.C:356
 msgid "&About ..."
@@ -115,7 +115,7 @@ msgstr "&Om ..."
 
 #: main.C:357
 msgid "&User's Manual ..."
-msgstr "&Brugermanual ..."
+msgstr "&Brugervejledning ..."
 
 #: main.C:358
 msgid "&Technical Reference ..."
@@ -123,7 +123,7 @@ msgstr "&Teknisk reference ..."
 
 #: main.C:362
 msgid "cd"
-msgstr "skift folder"
+msgstr "skift filkatalog"
 
 #: main.C:375
 msgid "Sessions"
@@ -135,8 +135,8 @@ msgid ""
 "Font `%s' not found.\n"
 "Check README.linux.console for help."
 msgstr ""
-"Skrift `%s' ikke fundet.\n"
-"Kig i README.linux.console for hjælp."
+"Fandt ikke skrifttypen `%s'.\n"
+"Se i README.linux.console for hjælp."
 
 #: main.C:647
 #, c-format
@@ -159,15 +159,14 @@ msgstr ""
 "\n"
 "Copyright (c) 1998 ved Lars Doelle <lars.doelle@on-line.de>\n"
 "\n"
-"Dette program er fri programvare underbetingelserne i Artistic-licensen og "
-"kommer\n"
-"UDEN NOGEN GARANTIER.\n"
-"Se `LICENSE.readme' for detaljer."
+"Dette program er frit programmel underlagt betingelserne i\n"
+"\"Artistic\"-licensen og kommer UDEN NOGEN GARANTIER.\n"
+"Se `LICENSE.readme' for yderligere information."
 
 #: main.C:779
 #, c-format
 msgid "`%s' terminated abnormally."
-msgstr "`%s' afsluttet unormalt."
+msgstr "`%s' afbrudt i utide."
 
 #: main.C:782
 msgid ""
@@ -179,4 +178,4 @@ msgstr ""
 
 #: main.C:979
 msgid "Welcome to the console"
-msgstr "Velkommen til konsollen"
+msgstr "Dette er konsollen"

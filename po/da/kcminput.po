@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kcminput\n"
 "POT-Creation-Date: 1998-12-18 01:14+0100\n"
 "PO-Revision-Date: 1999-02-16 23:10-0500\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Last-Translator: Steffen Hansen <hansen@kde.org>\n"
 "Language-Team: da <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
@@ -39,11 +39,11 @@ msgstr "Grænse"
 
 #: mouse.cpp:72
 msgid "pixels"
-msgstr "piksler"
+msgstr "pixels"
 
 #: mouse.cpp:81
 msgid "Button mapping"
-msgstr "Knaptilknytning"
+msgstr "Knaptildeling"
 
 #: mouse.cpp:83
 msgid "Right handed"
@@ -59,4 +59,4 @@ msgstr "Tastaturgentagelse"
 
 #: keyboard.cpp:66
 msgid "Key click volume"
-msgstr "Tasteklikvolumen"
+msgstr "Lydstyrke for tasteklik"

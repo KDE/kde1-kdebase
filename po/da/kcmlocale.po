@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: KDE BASE/kcmlocale\n"
 "POT-Creation-Date: 1998-05-13 12:05+0200\n"
 "PO-Revision-Date: 1999-02-16 13:48+0100\n"
-"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
-"Language-Team: da <LL@li.org>\n"
+"Last-Translator: Bo Thorsen <gobo@imada.sdu.dk>\n"
+"Language-Team: <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO_8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: main.cpp:52
 msgid "&Locale"
-msgstr "&Lokalisering"
+msgstr "&Lokaltilpasning"
 
 #: main.cpp:58
 msgid "usage: kcmlocale [-init | language]\n"
@@ -31,15 +31,15 @@ msgstr "Sprog"
 
 #: locale.cpp:55
 msgid "First"
-msgstr "Primært"
+msgstr "Første"
 
 #: locale.cpp:65
 msgid "Second"
-msgstr "Sekundært"
+msgstr "Andet"
 
 #: locale.cpp:75
 msgid "Third"
-msgstr "Tertiært"
+msgstr "Tredie"
 
 #: locale.cpp:115
 msgid "without name!"
@@ -54,5 +54,5 @@ msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
 msgstr ""
-"De nye sprog indstillinger gælder kun for nyligt startede programmer.\n"
-"For at ændre sprog for alle programmer må du først logge af."
+"De nye sprogindstillinger gælder kun for programmer startet fra nu af.\n"
+"For at ændre sprog for alle programmer skal du først logge ud."
