@@ -1,0 +1,175 @@
+# Перевод kpanel.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpanel\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"PO-Revision-Date: 1998-03-16 01:59+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kpanel.C:211
+msgid "Move"
+msgstr "Переместить"
+
+#: kpanel.C:214
+msgid "Properties"
+msgstr "Свойства"
+
+#: kpanel.C:246
+msgid "Go!"
+msgstr "Вперед!"
+
+#: kpanel.C:248 tools.C:799
+msgid "Where do you want to go tomorrow?"
+msgstr "Где вы хотите быть завтра?"
+
+#: kpanel.C:321
+msgid "No info available"
+msgstr "Нет информации"
+
+#: kpanel.C:360 props.C:217 props.C:218
+msgid "Logout"
+msgstr "Выйти"
+
+#: kpanel.C:368 props.C:216
+msgid "Lock screen"
+msgstr "Закрыть экран"
+
+#: kpanel.C:377
+msgid "Hide the panel"
+msgstr "Спрятать панель"
+
+#: kpanel.C:387
+msgid "Show the panel"
+msgstr "Показать панель"
+
+#: kpanel.C:1078 tools.C:615
+msgid "No comment available"
+msgstr "Нет комментариев"
+
+#: kpanel.C:1087 tools.C:808
+msgid "Windowlist"
+msgstr "Список окон"
+
+#: props.C:200
+msgid "Add application"
+msgstr "Добавить приложение"
+
+#: props.C:202
+msgid "Add an application or a submenu onto the panel"
+msgstr "Добавить приложение или подменю на панель"
+
+#: props.C:203
+msgid "Add windowlist"
+msgstr "Добавить список окон"
+
+#: props.C:205
+msgid "Add a windowlist menu onto the panel"
+msgstr "Добавить список окон на панель"
+
+#: events.C:701 props.C:206
+msgid "Configure"
+msgstr "Настройка"
+
+#: props.C:208
+msgid "Configure panel"
+msgstr "Настроить панель"
+
+#: events.C:703 props.C:209
+msgid "Restart"
+msgstr "Перезапустить"
+
+#: props.C:211
+msgid "Restart panel"
+msgstr "Перезапустить панель"
+
+#: props.C:212 props.C:467
+msgid "Panel"
+msgstr "Панель"
+
+#: props.C:214
+msgid "Lock Screen"
+msgstr "Закрыть экран"
+
+#: props.C:398
+msgid "Location"
+msgstr "Расположение"
+
+#: props.C:411
+msgid "Taskbar"
+msgstr "Список задач"
+
+#: props.C:412
+msgid "Hidden"
+msgstr "Скрытый"
+
+#: props.C:421
+msgid "Top/Left"
+msgstr "Верх/Влево"
+
+#: props.C:451
+msgid "Tiny Style"
+msgstr "Маленький стиль"
+
+#: props.C:452
+msgid "Normal Style"
+msgstr "Нормальный стиль"
+
+#: props.C:453
+msgid "Large Style"
+msgstr "Большой стиль"
+
+#: props.C:472
+msgid "Menu Tooltips"
+msgstr "Подсказки для меню"
+
+#: props.C:518
+msgid "Others"
+msgstr "Другие"
+
+#: props.C:520
+msgid "Personal First"
+msgstr "Вначале Персональные"
+
+#: props.C:523
+msgid "Auto Hide Panel"
+msgstr "Автоматически скрывать панель"
+
+#: props.C:526
+msgid "Auto Hide Taskbar"
+msgstr "Автоматически скрывать список задач"
+
+#: props.C:544
+msgid "Clock"
+msgstr "Часы"
+
+#: props.C:546
+msgid "24h"
+msgstr "24ч"
+
+#: props.C:550
+msgid "12h AM/PM"
+msgstr "12ч"
+
+#: props.C:611
+msgid "Visible"
+msgstr "Видимый"
+
+#: props.C:618
+msgid "Width"
+msgstr "Ширина"
+
+#: props.C:623
+msgid "Desktops"
+msgstr "Рабочие столы"
+
+#: props.C:629
+msgid "KPanel Configuration"
+msgstr "Конфигурация KPanel"

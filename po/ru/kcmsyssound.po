@@ -1,0 +1,133 @@
+# Перевод kcmsyssound.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmsyssound-0.1\n"
+"POT-Creation-Date: 1998-02-25 16:11+0100\n"
+"PO-Revision-Date: 1998-03-16 01:50+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: main.cpp:53
+msgid "&Sound"
+msgstr "Звук"
+
+#: main.cpp:80
+msgid "System Sounds"
+msgstr "Системные Звуки"
+
+#: syssound.cpp:69
+msgid "Change to Desktop 1"
+msgstr "Перейти на Десктоп 1"
+
+#: syssound.cpp:70
+msgid "Change to Desktop 2"
+msgstr "Перейти на Десктоп 2"
+
+#: syssound.cpp:71
+msgid "Change to Desktop 3"
+msgstr "Перейти на Десктоп 3"
+
+#: syssound.cpp:72
+msgid "Change to Desktop 4"
+msgstr "Перейти на Десктоп 4"
+
+#: syssound.cpp:73
+msgid "Change to Desktop 5"
+msgstr "Перейти на Десктоп 5"
+
+#: syssound.cpp:74
+msgid "Change to Desktop 6"
+msgstr "Перейти на Десктоп 6"
+
+#: syssound.cpp:75
+msgid "Change to Desktop 7"
+msgstr "Перейти на Десктоп 7"
+
+#: syssound.cpp:76
+msgid "Change to Desktop 8"
+msgstr "Перейти на Десктоп 8"
+
+#: syssound.cpp:78
+msgid "Activate Window"
+msgstr "Активизировать Окно"
+
+#: syssound.cpp:79
+msgid "Open new window"
+msgstr "Открыть новое окно"
+
+#: syssound.cpp:80
+msgid "Close Window"
+msgstr "Закрыть Окно"
+
+#: syssound.cpp:81
+msgid "Startup"
+msgstr "На старте"
+
+#: syssound.cpp:102
+msgid "e&nable system sounds"
+msgstr "включить системные звуки"
+
+#: syssound.cpp:107
+msgid "&Test"
+msgstr "Тест"
+
+#: syssound.cpp:111
+msgid "&Events:"
+msgstr "События:"
+
+#: syssound.cpp:115
+msgid "&Sounds:"
+msgstr "Звуки:"
+
+#: syssound.cpp:119
+msgid "Additional WAV files can be dropped onto the sound list."
+msgstr "Дополнительные WAV файлы могут быть перенесены в список звуков."
+
+#: syssound.cpp:321
+msgid "Unsupported URL"
+msgstr "Неподдерживаемый URL"
+
+#: syssound.cpp:322
+msgid ""
+"Sorry, this type of URL is currently unsupported by the KDE System Sound "
+"Module"
+msgstr ""
+"Извините, этот тип URL не поддерживается Модулем Системных"
+"Звуков KDE"
+
+#: syssound.cpp:326
+#, c-format
+msgid ""
+"Sorry, but \n"
+"%s\n"
+"does not seem to be a WAV--file!"
+msgstr ""
+"Извините, но \n"
+"%s\n"
+"не похож на WAV файл!"
+
+#: syssound.cpp:327
+msgid "Improper File Extension"
+msgstr "Неверное Расширение Файла"
+
+#: syssound.cpp:333
+#, c-format
+msgid ""
+"The file\n"
+"%s\n"
+"is already in the list"
+msgstr ""
+"Файл\n"
+"%s\n"
+"уже в списке"
+
+#: syssound.cpp:334
+msgid "File Already in List"
+msgstr "Файл уже в списке"

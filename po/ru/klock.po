@@ -1,0 +1,637 @@
+# Перевод для klock.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>, 1998.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: klock\n"
+"POT-Creation-Date: 1998-03-11 15:37+0100\n"
+"PO-Revision-Date: 1998-03-16 02:25+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: banner.cpp:56
+msgid "Banner"
+msgstr "Плакат"
+
+#: banner.cpp:78
+msgid "Setup kbanner"
+msgstr "Настройка kbanner"
+
+#: banner.cpp:116 blankscrn.cpp:65
+msgid "Color:"
+msgstr "Цвет:"
+
+#: banner.cpp:136 bat.cpp:538 flame.cpp:396 forest.cpp:278 hop.cpp:312
+#: laser.cpp:393 lines.cpp:140 lissie.cpp:326 morph3d.cpp:1021 polygon.cpp:101
+#: rock.cpp:550 slip.cpp:366 space.cpp:581 swarm.cpp:330
+msgid "Speed:"
+msgstr "Скорость:"
+
+#: banner.cpp:146
+msgid "Message:"
+msgstr "Сообщение:"
+
+#: banner.cpp:315
+msgid "About Banner"
+msgstr "О Плакате"
+
+#: banner.cpp:316
+msgid ""
+"Banner Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Плакат версия 0.1\n"
+"\n"
+"написана Мартином Р. Джонсом, 1996\n"
+"mjones@kde.org"
+
+#: banner.cpp:419
+msgid "KDE is great"
+msgstr "KDE -- Это круто"
+
+#: bat.cpp:457
+msgid "Bat"
+msgstr "Летучая Мышь"
+
+#: bat.cpp:532
+msgid "Setup KBat"
+msgstr "Настройка KBat"
+
+#: bat.cpp:548
+msgid "Number of bats:"
+msgstr "Количество:"
+
+#: bat.cpp:636
+msgid "About Bat"
+msgstr "О Летучей Мыши"
+
+#: bat.cpp:637
+msgid ""
+"Bat\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Летучая Мышь\n"
+"\n"
+"Copyright (c) 1986 by Sun Microsystems\n"
+"\n"
+"Переписано для KDE Эмануэлем Пиркером."
+
+#: blankscrn.cpp:49
+msgid "Blank Screen"
+msgstr "Пустой Экран"
+
+#: blankscrn.cpp:63
+msgid "Setup kblankscrn"
+msgstr "Настройка kblankscrn"
+
+#: blob.cpp:53
+msgid "Random Linear"
+msgstr "Случайная Кривая"
+
+#: blob.cpp:54
+msgid "Horizonal Sine"
+msgstr "Горизонтальный Синус"
+
+#: blob.cpp:55
+msgid "Circular Bounce"
+msgstr "Круговой прыжок"
+
+#: blob.cpp:56
+msgid "Polar Coordinates"
+msgstr "Полярные Координаты"
+
+#: blob.cpp:57
+msgid "Random"
+msgstr "Случайно"
+
+#: blob.cpp:73
+msgid "Sorry. This screensaver needs a color display"
+msgstr "Извините. Но этот хранитель экрана требует цветной дисплей"
+
+#: blob.cpp:452
+msgid "Setup Blob Saver"
+msgstr "Настройка Blob Saver"
+
+#: blob.cpp:455
+msgid "Frame Show sec."
+msgstr "Кадров в сек."
+
+#: blob.cpp:463
+msgid "Algorithm"
+msgstr "Алгоритм"
+
+#: blob.cpp:543
+msgid "About Blob"
+msgstr "Об Blob"
+
+#: blob.cpp:544
+msgid ""
+"Blobsaver Version 0.1\n"
+"\n"
+"written by Tiaan Wessels 1997\n"
+"tiaan@netsys.co.za"
+msgstr ""
+"Blobsaver версии 0.1\n"
+"\n"
+"написан Тианом Весселс, 1997\n"
+"tiaan@netsys.co.za"
+
+#: blob.cpp:579
+msgid "Blobs"
+msgstr "Блобы"
+
+#: flame.cpp:303
+msgid "Flame"
+msgstr "Пламя"
+
+#: flame.cpp:390
+msgid "Setup KFlame"
+msgstr "Настройка KFlame"
+
+#: flame.cpp:406
+msgid "Max Levels:"
+msgstr "Макс Уровней:"
+
+#: flame.cpp:416
+msgid "Num Points:"
+msgstr "Кол Точек:"
+
+#: flame.cpp:521
+msgid "About Flame"
+msgstr "О KFlame"
+
+#: flame.cpp:522
+msgid ""
+"Flame Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Flame версии 3.3\n"
+"\n"
+"Copyright (c) 1991 Патрик Дж. Ноутон\n"
+"\n"
+"Переписано на kscreensave Мартином Джонсом."
+
+
+#: forest.cpp:200
+msgid "Forest"
+msgstr "Лес"
+
+#: forest.cpp:272
+msgid "Setup KForest"
+msgstr "Настройка KForest"
+
+#: forest.cpp:288
+msgid "Num of Trees:"
+msgstr "Кол Деревьев:"
+
+#: forest.cpp:375
+msgid "About Forest"
+msgstr "О Forest"
+
+#: forest.cpp:376
+msgid ""
+"Forest\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Лес\n"
+"\n"
+"Copyright (c) 1995 Паскаль Пенза\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: hop.cpp:221
+msgid "Hop"
+msgstr "Хмель"
+
+#: hop.cpp:306
+msgid "Setup KHop"
+msgstr "Настройка KHop"
+
+#: hop.cpp:322
+msgid "Samecolor Pixels:"
+msgstr "Точек 1 Цвета:"
+
+#: hop.cpp:332 lissie.cpp:346
+msgid "Cycles:"
+msgstr "Циклов:"
+
+#: hop.cpp:437
+msgid "About Hop"
+msgstr "О Hop"
+
+#: hop.cpp:438
+msgid ""
+"Hop Version 3.3\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Hop версии 3.3\n"
+"\n"
+"Copyright (c) 1991 Патрик Дж. Ноутон\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: laser.cpp:327
+msgid "Laser"
+msgstr "Лазер"
+
+#: laser.cpp:387
+msgid "Setup KLaser"
+msgstr "Настройка KLaser"
+
+#: laser.cpp:462
+msgid "About Laser"
+msgstr "О Laser"
+
+#: laser.cpp:463
+msgid ""
+"Laser Version 3.3\n"
+"\n"
+"Copyright (c) 1995 by Pascal Pensa\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Laser версии 3.3\n"
+"\n"
+"Copyright (c) 1995 Паскаль Пенза\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: lines.cpp:110
+msgid "Lines"
+msgstr "Линии"
+
+#: lines.cpp:128
+msgid "Setup klines"
+msgstr "Настройка KLines"
+
+#: lines.cpp:130 polygon.cpp:81
+msgid "Length:"
+msgstr "Длина:"
+
+#: lines.cpp:150
+msgid "Beginning:"
+msgstr "Начало:"
+
+#: lines.cpp:159
+msgid "Middle:"
+msgstr "Середина:"
+
+#: lines.cpp:168
+msgid "End:"
+msgstr "Конец:"
+
+#: lines.cpp:259
+msgid "About Lines"
+msgstr "О Lines"
+
+#: lines.cpp:260
+msgid ""
+"Lines Version 0.1.1\n"
+"\n"
+"written by Dirk Staneker 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+msgstr ""
+"Lines версии 0.1.1\n"
+"\n"
+"написан Дирком Станекером, 1997\n"
+"dirk.stanerker@student.uni-tuebingen.de"
+
+
+#: lissie.cpp:234
+msgid "Lissie"
+msgstr "Лиззи"
+
+#: lissie.cpp:320
+msgid "Setup KLissie"
+msgstr "Настройка KLissie"
+
+#: lissie.cpp:336
+msgid "Num of Lissies:"
+msgstr "Кол Лиззи:"
+
+#: lissie.cpp:451
+msgid "About Lissie"
+msgstr "О Lissie"
+
+#: lissie.cpp:452
+msgid ""
+"Lissie\n"
+"\n"
+"Copyright (c) 1996 by Alexander Jolk\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Лиззи\n"
+"\n"
+"Copyright (c) 1996 Александер Джолк\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: main.cpp:279
+#, c-format
+msgid "Option %s is not support on this plattform!"
+msgstr "Опция %s не поддерживается на этой платформе!"
+
+#: main.cpp:306
+msgid ""
+"Your system uses shadow passwords!\n"
+"Please contact your system administrator.\n"
+"\n"
+"Tell him, that you need suid for the screensavers!"
+msgstr ""
+"Ваша система использует скрытые (shadow) пароли!\n"
+"Пожайлуста свяжитесь с вашим системным администратором.\n"
+"\n"
+"Скажите ему, что вам необходимы права (suid root) для хранителей экрана!"
+
+#: main.cpp:311
+msgid "Shadow Passwords"
+msgstr "Скрытые Пароли"
+
+#: main.cpp:469
+#, c-format
+msgid ""
+"Usage: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay num] [-lock] [-nice num]\n"
+msgstr ""
+"Использование: %s -install|-setup|-test|-desc|-preview wid|-inroot\n"
+"       [-corners xxxx] [-delay кол] [-lock] [-nice кол]\n"
+
+#: main.cpp:472
+msgid ""
+"  -corners xxxx     Placing cursor in corner performs action:\n"
+"                     x = i  no action (ignore)\n"
+"                     x = s  save screen\n"
+"                     x = l  lock screen\n"
+"                    order: top-left, top-right, bottom-left, bottom-right\n"
+"  -delay num        Amount of idle time before screen saver\n"
+"                     starts  (default 10min)\n"
+"  -desc             Print the screen saver's description to stdout\n"
+"  -install          Install screen saver\n"
+"  -lock             Require password to stop screen saver\n"
+"  -nice num         Run with specified nice value\n"
+"\n"
+"  -preview wid      Run in the specified XWindow\n"
+"  -inroot           Run in the root window\n"
+"  -setup            Setup screen saver\n"
+"  -test             Invoke the screen saver immediately\n"
+msgstr ""
+"  -corners xxxx     Перемещение курсора в угол производит следующие действия:\n"
+"                     x = i  ничего (игнорировать)\n"
+"                     x = s  сохранять экран\n"
+"                     x = l  закрыть экран\n"
+"                    порядок: верх-лево, верх-право, вниз-лево, вниз-право\n"
+"  -delay num        Время простоя после которого запускается хранитель\n"
+"                     (по умолчанию 10 мин)\n"
+"  -desc             Напечатать описание хранитель на стандартный выход\n"
+"  -install          Установить хранитель\n"
+"  -lock             Необходим пароль, чтобы прервать хранитель\n"
+"  -nice num         Запускаться с указанным приоритетом\n"
+"\n"
+"  -preview wid      Запускаться в указанном окне\n"
+"  -inroot           Запускаться в главном окне\n"
+"  -setup            Настройка хранителя\n"
+"  -test             Запустить хранитель немедленно\n"
+
+#: morph3d.cpp:839 space.cpp:413
+msgid "GL can not render with root visual\n"
+msgstr "GL не может рисовать в главном окне\n"
+
+#: morph3d.cpp:940
+msgid "Morph3D (GL)"
+msgstr "Morph3D (GL)"
+
+#: morph3d.cpp:1015
+msgid "Setup KMorph3d"
+msgstr "Настройка KMorph3d"
+
+#: morph3d.cpp:1031
+msgid "Object Type:"
+msgstr "Тип объекта:"
+
+#: morph3d.cpp:1120
+msgid "About Morph3D"
+msgstr "О Morph3D"
+
+#: morph3d.cpp:1121
+msgid ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 by Marcelo F. Vianna\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Morph3D\n"
+"\n"
+"Copyright (c) 1997 Марсело Ф. Вианна\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: polygon.cpp:58
+msgid "Polygons"
+msgstr "Полигоны"
+
+#: polygon.cpp:79
+msgid "Setup kpolygon"
+msgstr "Настройка kpolygon"
+
+#: polygon.cpp:91
+msgid "Vertices:"
+msgstr "Вершины:"
+
+#: polygon.cpp:209
+msgid "About Polygon"
+msgstr "О Polygon"
+
+#: polygon.cpp:210
+msgid ""
+"Polygon Version 0.1\n"
+"\n"
+"written by Martin R. Jones 1996\n"
+"mjones@kde.org"
+msgstr ""
+"Polygon версии 0.1\n"
+"\n"
+"Написан Мартином Р. Джонсом, 1996\n"
+"mjones@kde.org"
+
+#: pyro.cpp:433
+msgid "Pyro"
+msgstr "Пиро"
+
+#: pyro.cpp:511
+msgid "Setup KPyro"
+msgstr "Настройка KPyro"
+
+#: pyro.cpp:517 rock.cpp:560
+msgid "Number:"
+msgstr "Количество:"
+
+#: pyro.cpp:527
+msgid "Cloud"
+msgstr "Облако"
+
+#: pyro.cpp:608
+msgid "About Pyro"
+msgstr "О Pyro"
+
+#: pyro.cpp:609
+msgid ""
+"Pyro Version 3.4\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Pyro версии 3.4\n"
+"\n"
+"Copyright (c) 1991 Патрик Дж. Ноутон\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: rock.cpp:436
+msgid "Rock"
+msgstr "Скала"
+
+#: rock.cpp:544
+msgid "Setup krock"
+msgstr "Настроить krock"
+
+#: rock.cpp:570
+msgid "Move"
+msgstr "Двигать"
+
+#: rock.cpp:575
+msgid "Rotate"
+msgstr "Вращать"
+
+#: rock.cpp:693
+msgid "About Rock"
+msgstr "О Rock"
+
+#: rock.cpp:694
+msgid ""
+"Rock Version 3.3\n"
+"\n"
+"Copyright (c) 1992 by Jamie Zawinski\n"
+"\n"
+"Ported to kscreensave by Martin Jones."
+msgstr ""
+"Rock версии 3.3\n"
+"\n"
+"Copyright (c) 1992 Джами Завински\n"
+"\n"
+"Переписано на kscreensave Мартином Джонсом."
+
+#: saver.cpp:50 saver.cpp:110
+msgid "Enter Password"
+msgstr "Введите Пароль:"
+
+#: saver.cpp:80
+msgid "Failed"
+msgstr "Неверно"
+
+#: slip.cpp:287
+msgid "Slip"
+msgstr "Slip"
+
+#: slip.cpp:360
+msgid "Setup KSlip"
+msgstr "Натсроить KSlip"
+
+#: slip.cpp:376
+msgid "Batchcount:"
+msgstr "Пакетов:"
+
+#: slip.cpp:464
+msgid "About Slip"
+msgstr "О Slip"
+
+#: slip.cpp:465
+msgid ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 by Scott Draves\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Slip\n"
+"\n"
+"Copyright (c) 1991 Скотт Дрэйвс\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."
+
+#: space.cpp:485
+msgid "Space (GL)"
+msgstr ""
+
+#: space.cpp:575
+msgid "Setup KSpace"
+msgstr "Настроить KSpace"
+
+#: space.cpp:591
+msgid "Warp Interval:"
+msgstr "Волна:"
+
+#: space.cpp:679
+msgid "About KSpace"
+msgstr "О KSpace"
+
+#: space.cpp:681
+msgid ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Bernd Johannes Wuebben <wuebben@kde.org>"
+msgstr ""
+"KSpace\n"
+"Copyright (c) 1998\n"
+"Бернд Йоханнес Вубен <wuebben@kde.org>"
+
+#: swarm.cpp:252
+msgid "Swarm"
+msgstr "Рой"
+
+#: swarm.cpp:324
+msgid "Setup KSwarm"
+msgstr "Настроить KSwarm"
+
+#: swarm.cpp:340
+msgid "Number of Bees:"
+msgstr "Кол Пчел:"
+
+#: swarm.cpp:427
+msgid "About Swarm"
+msgstr "О Swarm"
+
+#: swarm.cpp:428
+msgid ""
+"Swarm\n"
+"\n"
+"Copyright (c) 1991 by Patrick J. Naughton\n"
+"\n"
+"Ported to kscreensave by Emanuel Pirker."
+msgstr ""
+"Swarm"
+"\n"
+"Copyright (c) 1991 Патрик Дж. Ноутон\n"
+"\n"
+"Переписано на kscreensave Эмануэлем Пиркером."

@@ -1,0 +1,264 @@
+# Перевод kmenuedit.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Denis Pershin <dyp@inetlab.com>.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmenuedit\n"
+"POT-Creation-Date: 1998-03-05 15:54+0100\n"
+"PO-Revision-Date: 1998-03-16 02:08+0600\n"
+"Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=koi8-r\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: kmenuedit.cpp:62
+msgid "&Reload"
+msgstr "Пергрузить"
+
+#: kmenuedit.cpp:68
+msgid "Change &Menuname"
+msgstr "Изменить имя меню"
+
+#: kmenuedit.cpp:69
+msgid "Reload &Filetypes"
+msgstr "Перегрузить типы файлов"
+
+#: kmenuedit.cpp:76
+msgid "by"
+msgstr ""
+
+#: kmenuedit.cpp:175 kmenuedit.cpp:200
+msgid "Changes not saved !"
+msgstr "Изменения не записаны !"
+
+#: kmenuedit.cpp:176 kmenuedit.cpp:201
+msgid ""
+"\n"
+"Do you want to save your changes ?"
+msgstr ""
+"\n"
+"Вы хотите записать изменения ?"
+
+#: confmenu.cpp:321 confmenu.cpp:910 kmenuedit.cpp:259
+msgid "EMPTY"
+msgstr "ПУСТО"
+
+#: kmenuedit.cpp:335
+msgid "Reload Menus"
+msgstr "Перегрузить Меню"
+
+#: kmenuedit.cpp:336
+msgid ""
+"Reloading the menus will discard all changes.\n"
+"Are you sure you want to reload ?"
+msgstr ""
+"Перзагрузка меню уничтожит все изменения.\n"
+"Вы уверены, что вы хотите перезагрузить меню ?"
+
+#: button.cpp:209 main.cpp:77 main.cpp:90
+msgid "KMenuedit"
+msgstr ""
+
+#: main.cpp:78
+msgid ""
+"The directory for your personal menu does not exist.\n"
+" Do you want to create it now ?"
+msgstr ""
+"Подкаталог для вашего персонального меню не существует.\n"
+"Вы хотите создать его сейчас ?"
+
+#: main.cpp:91
+msgid ""
+"Unable to create directory for personal menu.\n"
+" Select Ok to exit KMenuedit."
+msgstr ""
+"Не могу создать подкаталог для вашего персонального меню.\n"
+"Нажмите ОК, чтобы выйти из KMenuedit."
+
+#: confmenu.cpp:90 entrydialog.cpp:52
+msgid "Separator"
+msgstr "Разделитель"
+
+#: confmenu.cpp:102 confmenu.cpp:317
+msgid "Open/ Close"
+msgstr "Открыть/Закрыть"
+
+#: confmenu.cpp:110
+msgid "! PROTECTED Button !"
+msgstr "! ЗАЩИЩЕННАЯ КНОПКА !"
+
+#: confmenu.cpp:171 confmenu.cpp:300
+msgid "Warning !"
+msgstr "Внимание !"
+
+#: confmenu.cpp:172
+msgid "If you delete this button you will lose all of its submenus"
+msgstr "Если вы удалите эту кнопку, то вы лишитесь всех его подменю"
+
+#: confmenu.cpp:281
+msgid "Wrong filename"
+msgstr "Неверное имя файла"
+
+#: confmenu.cpp:282
+msgid ""
+"A kdelnk-file with this name does already exist. \n"
+"Please choose another filename."
+msgstr ""
+"kdelnk-файл с таким именем уже существует.\n"
+"Пожайлуста выберите другое имя."
+
+#: confmenu.cpp:301
+msgid "Changing the type of this button will delete all of its submenus"
+msgstr "Изменение типа этой кнопки удалит все ее подменю"
+
+#: confmenu.cpp:322 confmenu.cpp:911
+msgid "no command"
+msgstr "нет команды"
+
+#: button.cpp:210
+msgid ""
+"Sorry ! You have to save your changes\n"
+"before you can drop this item on another window."
+msgstr ""
+"Извините ! Вы должны записать ваши изменения\n"
+"прежде чем вы сможете перетащить элемент в другое окно."
+
+#: DesktopPathDialogData.cpp:37
+msgid "Path for KDE Desktop Entries is not set."
+msgstr "Путь к Рабочему Столу KDE не установлен."
+
+#: DesktopPathDialogData.cpp:49
+msgid "I suggest the following entries:"
+msgstr "Я предлагаю следующие элементы:"
+
+#: DesktopPathDialogData.cpp:55
+msgid "Path:"
+msgstr "Путь:"
+
+#: DesktopPathDialogData.cpp:68
+msgid "PersonalPath:"
+msgstr "Персональный путь:"
+
+#: entrydialog.cpp:53
+msgid "Submenu"
+msgstr "Подменю"
+
+#: entrydialog.cpp:54 entrydialog.cpp:167 entrydialog.cpp:536
+#: entrydialog.cpp:541
+msgid "Application"
+msgstr "Приложение"
+
+#: entrydialog.cpp:55 entrydialog.cpp:169 entrydialog.cpp:540
+msgid "Swallow"
+msgstr "На панель"
+
+#: entrydialog.cpp:56 entrydialog.cpp:171 entrydialog.cpp:545
+msgid "Link"
+msgstr "Ссылка"
+
+#: entrydialog.cpp:57 entrydialog.cpp:173 entrydialog.cpp:548
+msgid "Device"
+msgstr "Устройство"
+
+#: entrydialog.cpp:63
+msgid "Type:"
+msgstr "Тип:"
+
+#: entrydialog.cpp:69
+msgid "File Name:"
+msgstr "Имя файла:"
+
+#: entrydialog.cpp:82
+msgid "Name:"
+msgstr "Имя:"
+
+#: entrydialog.cpp:95
+msgid "Mini Icon:"
+msgstr "Мини пиктограмма:"
+
+#: entrydialog.cpp:127
+msgid "Icon:"
+msgstr "Пиктограмма:"
+
+#: entrydialog.cpp:133
+msgid "Comment:"
+msgstr "Комментарий:"
+
+#: entrydialog.cpp:165 entrydialog.cpp:535
+msgid "Execute"
+msgstr "Запускать"
+
+#: entrydialog.cpp:186
+msgid "Execute:"
+msgstr "Запускать:"
+
+#: entrydialog.cpp:192
+msgid "Working Directory:"
+msgstr "Рабочий подкаталог:"
+
+#: entrydialog.cpp:205
+msgid "Run in terminal"
+msgstr "Запускать в Терминале:"
+
+#: entrydialog.cpp:211
+msgid "Terminal Options:"
+msgstr "Опции Терминала:"
+
+#: entrydialog.cpp:292
+msgid "Binary Pattern:"
+msgstr "Бинарная Маска:"
+
+#: entrydialog.cpp:300
+msgid "Application to swallow:"
+msgstr "Приложение, которое на панель:"
+
+#: entrydialog.cpp:306
+msgid "Title of application:"
+msgstr "Заголовок приложения:"
+
+#: entrydialog.cpp:312
+msgid "Application to execute on button press:"
+msgstr "Приложение, которое запускать по нажатию кнопки мыши:"
+
+#: entrydialog.cpp:342
+msgid "URL:"
+msgstr "URL:"
+
+#: entrydialog.cpp:391
+msgid "Read Only"
+msgstr "Только для чтения"
+
+#: entrydialog.cpp:397
+msgid "Device:"
+msgstr "Устройство:"
+
+#: entrydialog.cpp:403
+msgid "Mount Point:"
+msgstr "Точка монтирования:"
+
+#: entrydialog.cpp:409
+msgid "FS Type:"
+msgstr "Тип ФС:"
+
+#: entrydialog.cpp:415
+msgid "Unmount Icon:"
+msgstr "Пиктограмма Размонтирования"
+
+#: MenuNameDialog.cpp:21
+msgid "Change Menunames"
+msgstr "Изменить имена меню"
+
+#: MenuNameDialogData.cpp:31
+msgid "Change the name of the menus as displayed in kpanel"
+msgstr "Изменить имена меню, как отображено в kpanel"
+
+#: MenuNameDialogData.cpp:36
+msgid "Personal:"
+msgstr "Личные:"
+
+#: MenuNameDialogData.cpp:41
+msgid "Default:"
+msgstr "По умолчанию:"
