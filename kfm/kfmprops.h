@@ -70,7 +70,7 @@ public:
     /// Constructor
     FilePropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("General"); }
+    virtual const char* getTabName() { return klocale->translate("&General"); }
     /// Applies all changes made
     /** 'General' must be always the first page in the dialog, since this
       function may rename the file which may confuse other applyChanges
@@ -105,7 +105,7 @@ public:
     /// Constructor
     FilePermissionsPropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("Permissions"); }
+    virtual const char* getTabName() { return klocale->translate("&Permissions"); }
     virtual void applyChanges();
 
     /// Tests wether the file specified by _kurl needs a 'Permissions' page.
@@ -195,7 +195,7 @@ public:
     /// Constructor
     ExecPropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("Execute"); }
+    virtual const char* getTabName() { return klocale->translate("E&xecute"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
@@ -246,7 +246,7 @@ public:
     /// Constructor
     URLPropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("URL"); }
+    virtual const char* getTabName() { return klocale->translate("U&RL"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
@@ -270,7 +270,7 @@ public:
     DirPropsPage( Properties *_props );
     ~DirPropsPage() {};
 
-    virtual const char* getTabName() { return klocale->translate("Dir"); }
+    virtual const char* getTabName() { return klocale->translate("&Dir"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
@@ -313,7 +313,7 @@ public:
     /// Constructor
     ApplicationPropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("Application"); }
+    virtual const char* getTabName() { return klocale->translate("&Application"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
@@ -355,7 +355,7 @@ public:
     /// Constructor
     BindingPropsPage( Properties *_props );
 
-    virtual const char* getTabName() { return klocale->translate("Binding"); }
+    virtual const char* getTabName() { return klocale->translate("&Binding"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );
@@ -385,7 +385,7 @@ public:
     DevicePropsPage( Properties *_props );
     ~DevicePropsPage() { }
 
-    virtual const char* getTabName() { return klocale->translate("Device"); }
+    virtual const char* getTabName() { return klocale->translate("De&vice"); }
     virtual void applyChanges();
 
     static bool supports( KURL *_kurl );

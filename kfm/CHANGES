@@ -85,3 +85,9 @@
  - Popup menus do have pixmaps for the applications now. That looks really cool :-)
  - TreeView shows/hides dot files now
  - Clearing the cache works now
+
+18.12.97 Stephan
+
+ - applied patch by Piotr Roszatycki, that added klocale support and 
+   accelerators to the property pages
+
