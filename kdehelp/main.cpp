@@ -25,7 +25,6 @@ void catchSignals();
 
 static int msgqid = -1;
 static QString pidFile;
-KLocale locale("kdehelp");
 
 //-----------------------------------------------------------------------------
 // timer used to monitor msg queue for request for new window
@@ -198,8 +197,6 @@ int main(int argc, char *argv[])
 
 	KApplication a( argc, argv, "kdehelp" );
 
-	//	KLocale::setGlobalLocale(&locale);
-	
 	KHelpMain *helpWin = new KHelpMain;
 	
 	if ( !helpWin->openURL( url ) )
