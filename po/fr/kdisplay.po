@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmdisplay\n"
 "POT-Creation-Date: 1998-01-16 22:09+0100\n"
-"PO-Revision-Date: 1998-01-17 23:19 CET\n"
+"PO-Revision-Date: 1998-01-19 23:44 CET\n"
 "Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
 "Language-Team: Français\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Papier peint"
 
 #: backgnd.cpp:331
 msgid "Tiled"
-msgstr "Mosaique"
+msgstr "Mosaïque"
 
 #: backgnd.cpp:335
 msgid "Centred"
@@ -75,7 +75,7 @@ msgstr "Fenêtre active"
 
 #: colorscm.cpp:192 colorscm.cpp:193 colorscm.cpp:300
 msgid "Window text"
-msgstr "Texte de la Fenêtre"
+msgstr "Texte de la fenêtre"
 
 #: colorscm.cpp:209
 msgid "Disabled"

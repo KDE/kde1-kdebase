@@ -6,105 +6,123 @@ Name=Default language
 Name[de]=Default Sprache
 Name[fi]=Oletuskieli
 Name[pl]=Domy¶lny jêzy
+Name[fr]=Langue par défaut
 
 [de]
 Name=German
 Name[de]=Deutsch
 Name[fi]=Saksa
 Name[pl]=Niemiecki
+Name[fr]=Allemand
 
 [en]
 Name=English
 Name[de]=English
 Name[fi]=Englanti
 Name[pl]=Angielski
+Name[fr]=Anglais
 
 [fr]
 Name=French
 Name[de]=Französisch
 Name[fi]=Ranska
 Name[pl]=Francuski
+Name[fr]=Français
 
 [cs]
 Name=Czech
 Name[de]=Tschechisch
 Name[fi]=Tshekki
 Name[pl]=Czeski
+Name[fr]=Tchèque
 
 [sv]
 Name=Swedish
 Name[de]=Schwedisch
 Name[fi]=Ruotsi
 Name[pl]=Szwedzki
+Name[fr]=Suédois
 
 [es]
 Name=Spanish
 Name[de]=Spanisch
 Name[fi]=Espanja
 Name[pl]=Hiszpañski
+Name[fr]=Espagnol
 
 [ru]
 Name=Russian
 Name[de]=Russisch
 Name[fi]=Venäjä
 Name[pl]=Rosyjski
+Name[fr]=Russe
 
 [nl]
 Name=Dutch
 Name[de]=Niederländisch
 Name[fi]=Hollanti
 Name[pl]=Holenderski
+Name[fr]=Hollandais
  
 [hu]
 Name=Hungarian
 Name[de]=Ungarisch
 Name[fi]=Unkari
 Name[pl]=Wêgierski
+Name[fr]=Hongrois
  
 [da]
 Name=Danish
 Name[de]=Dänisch
 Name[fi]=Tanska
 Name[pl]=Duñski
+Name[fr]=Danois
 
 [fi]
 Name=Finnish
 Name[de]=Finnisch
 Name[fi]=Suomi
 Name[pl]=Fiñski
+Name[fr]=Finlandais
 
 [it]
 Name=Italian
 Name[de]=Italienisch
 Name[fi]=Italia
 Name[pl]=W³oski
+Name[fr]=Italien
 
 [pt]
 Name=Portuguese
 Name[de]=Portugiesisch
 Name[fi]=Portugali
 Name[pl]=Portugalski
+Name[fr]=Portugais
 
 [pl]
 Name=Polish
 Name[de]=Polnisch
 Name[fi]=Puola
 Name[pl]=Polski
+Name[fr]=Polonais
 
 [no]
 Name=Norwegian
 Name[de]=Norwegisch
 Name[fi]=Norja
 Name[pl]=Norweski
+Name[fr]=Norvégien
 
 [el]
 Name=Greek
 Name[de]=Griechisch
 Name[fi]=Kreikka
 Name[pl]=Grecki
+Name[fr]=Grec
 
 [hr]
 Name=Croation
 Name[de]=Kroatisch
 Name[fi]=Kroatia
 Name[pl]=Chorwacki
+Name[fr]=Croatien

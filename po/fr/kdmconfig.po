@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdmconfig\n"
+"POT-Creation-Date: 1998-01-16 22:09+0100\n"
+"PO-Revision-Date: 1998-01-19 23:16 CET\n"
+"Last-Translator: Bertrand Leconte <B.Leconte@mail.dotcom.fr>\n"
+"Language-Team: Français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; \n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:99
+msgid "&Appearance"
+msgstr "&Apparence"
+
+#: main.cpp:103
+msgid "&Fonts"
+msgstr "&Polices"
+
+#: main.cpp:107
+msgid "&Background"
+msgstr "A&rrière-plan"
+
+#: main.cpp:110
+msgid "&Users"
+msgstr "&Utilisateurs"
+
+#: main.cpp:113
+msgid "&Sessions"
+msgstr "&Sessions"
+
+#: main.cpp:118
+msgid ""
+"usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr "utilisation : kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+
+#: main.cpp:125
+msgid ""
+"Sorry, but you don't have read/write\n"
+"permission to the KDM setup file."
+msgstr ""
+"Désolé, mais vous n'avez pas le droit\n"
+"d'écrire dans le fichier de configuration\n"
+"de KDM."
+
+#: main.cpp:127
+msgid "Missing privileges"
+msgstr "Privilèges manquant"
+
+#: main.cpp:164
+msgid "KDM Configuration"
+msgstr "Configuration de KDM"
+
+#: kdm-appear.cpp:66
+msgid "Appearance"
+msgstr "Apparence"
+
+#: kdm-appear.cpp:69
+msgid "Greeting string:"
+msgstr "Chaîne de bienvenue :"
+
+#: kdm-appear.cpp:77
+msgid "KDM logo:"
+msgstr "Logo KDM :"
+
+#: kdm-appear.cpp:104 kdm-users.cpp:139
+msgid "Click or drop an image here"
+msgstr "Cliquer ou déposer une image ici"
+
+#: kdm-appear.cpp:109
+msgid "GUI Style:"
+msgstr "Style d'interface graphique :"
+
+#: kdm-appear.cpp:115
+msgid "Motif"
+msgstr "Motif"
+
+#: kdm-appear.cpp:116
+msgid "Windows"
+msgstr "Windows"
+
+#: kdm-appear.cpp:135 kdm-appear.cpp:219 kdm-users.cpp:244
+msgid ""
+"There was an error loading the image:\n"
+">"
+msgstr ""
+"Il y a eu une erreur lors du chargement de l'image\n"
+">"
+
+#: kdm-appear.cpp:137 kdm-appear.cpp:156 kdm-users.cpp:164
+msgid "<"
+msgstr "<"
+
+#: kdm-appear.cpp:138 kdm-appear.cpp:157 kdm-appear.cpp:222 kdm-users.cpp:165
+#: kdm-users.cpp:247
+msgid "ERROR"
+msgstr "ERREUR"
+
+#: kdm-appear.cpp:154 kdm-users.cpp:162
+msgid ""
+"There was an error saving the image:\n"
+">"
+msgstr ""
+"Il y a eu une erreur lors de l'enregistrement de l'image :\n"
+">"
+
+#: kdm-appear.cpp:187 kdm-users.cpp:195
+msgid "Sorry, but \n"
+msgstr "Désolé, mais \n"
+
+#: kdm-appear.cpp:189 kdm-users.cpp:197
+msgid ""
+"\n"
+"does not seem to be an image file"
+msgstr "\nne semble pas être un fichier d'image"
+
+#: kdm-appear.cpp:190 kdm-users.cpp:198
+msgid ""
+"\n"
+"Please use files with these extensions\n"
+msgstr "\nS'il vous plait, utilisez des fichiers avec ces extensions\n"
+
+#: kdm-appear.cpp:192 kdm-users.cpp:200
+msgid "Improper File Extension"
+msgstr "Extension du fichier impropre"
+
+#: kdm-appear.cpp:221 kdm-users.cpp:246
+msgid ""
+"<\n"
+"It will not be saved..."
+msgstr ""
+"<\n"
+"Il ne sera pas enregistré..."
+
+#: kdm-font.cpp:48
+msgid "Select fonts"
+msgstr "Sélectionner les polices"
+
+#: kdm-font.cpp:51
+msgid "Change font"
+msgstr "Changer la police"
+
+#: kdm-font.cpp:59
+msgid "Greeting"
+msgstr "Bienvenue"
+
+#: kdm-font.cpp:60
+msgid "Fail"
+msgstr "Echec"
+
+#: kdm-font.cpp:61
+msgid "Standard"
+msgstr "Standard"
+
+#: kdm-font.cpp:62
+msgid "Example:"
+msgstr "Exemple :"
+
+#: kdm-bgnd.cpp:67
+msgid "Color"
+msgstr "Couleur"
+
+#: kdm-bgnd.cpp:75
+msgid "Wallpaper"
+msgstr "Papier peint"
+
+#: kdm-bgnd.cpp:110
+msgid "Tiled"
+msgstr "Mosaïque"
+
+#: kdm-bgnd.cpp:114
+msgid "Centred"
+msgstr "Centré"
+
+#: kdm-bgnd.cpp:118
+msgid "Scaled"
+msgstr "Adapté"
+
+#: kdm-users.cpp:49
+msgid "All users"
+msgstr "Tous les utilisateurs"
+
+#: kdm-users.cpp:51
+msgid "Selected users"
+msgstr "Utilisateurs sélectionnés"
+
+#: kdm-users.cpp:53
+msgid "No-show users"
+msgstr "Utilisateurs à ne pas montrer"
+
+#: kdm-users.cpp:80
+msgid ""
+"Show only\n"
+"selected users"
+msgstr ""
+"Montrer seulement\n"
+"les utilisateurs sélectionnés"
+
+#: kdm-users.cpp:87
+msgid ""
+"Show all users\n"
+" but no-show users"
+msgstr ""
+"Montrer tous les utilisateurs\n"
+"sauf ceux à ne pas montrer"
+
+#: kdm-users.cpp:97
+msgid "Show users"
+msgstr "Montrer les utilisateurs"
+
+#: kdm-users.cpp:103
+msgid "Sort users"
+msgstr "Trier les utilisateurs"
+
+#: kdm-users.cpp:150 kdm-users.cpp:219
+msgid "No user selected"
+msgstr "Pas d'utilisateur sélectionné"
+
+#: kdm-users.cpp:151 kdm-users.cpp:220
+msgid "Save image as default image?"
+msgstr "Enregistrer l'image comme l'image pas défaut ?"
+
+#: kdm-sess.cpp:51
+msgid "Allow to shutdown:"
+msgstr "Autoriser l'arrêt de la machine ?"
+
+#: kdm-sess.cpp:58
+msgid "None"
+msgstr "Aucun"
+
+#: kdm-sess.cpp:59
+msgid "All"
+msgstr "Tous"
+
+#: kdm-sess.cpp:60
+msgid "Root Only"
+msgstr "Root seulement"
+
+#: kdm-sess.cpp:61
+msgid "Console Only"
+msgstr "Sur la console seulement"
+
+#: kdm-sess.cpp:65
+msgid "Commands"
+msgstr "Commandes"
+
+#: kdm-sess.cpp:67
+msgid "Shutdown"
+msgstr "Arrêt de la machine"
+
+#: kdm-sess.cpp:75
+msgid "Restart"
+msgstr "Redémarrage"
+
+#: kdm-sess.cpp:86
+msgid "Session types"
+msgstr "Type de session"
+
+#: kdm-sess.cpp:89
+msgid "New type"
+msgstr "Nouveau type"
+
+#: kdm-sess.cpp:99
+msgid "Available types"
+msgstr "Type disponibles"
