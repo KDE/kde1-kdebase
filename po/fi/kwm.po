@@ -141,7 +141,8 @@ msgid ""
 "The following applications are not X11-aware and though cannot be restored\n"
 "in your next session. Make sure they do not contain important unsaved data."
 msgstr ""
-"Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida palauttaa\n"
+"Seuraavat sovellukset eivät ole X11-yhteensopivia eikä niitä voida "
+"palauttaa\n"
 "seuraavalla istunnolla. Varmista ettei niissä ole tallentamatonta tietoa."
 
 #: taskmgr.C:105

@@ -10,8 +10,7 @@ msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
 "started\n"
 msgstr ""
-"kwm: ao que parece já está a correr um window manager. kwm não "
-"arrancou\n"
+"kwm: ao que parece já está a correr um window manager. kwm não arrancou\n"
 
 #: main.C:81
 msgid "kwm: failure during initialisation; aborting\n"
@@ -141,8 +140,8 @@ msgid ""
 msgstr ""
 "As seguintes aplicações não reconhecem o X11 e por isso não podem ser "
 "restauradas\n"
-"na sua próxima sessão. Certifique-se de que não contêm dados importantes "
-"por gravar."
+"na sua próxima sessão. Certifique-se de que não contêm dados importantes por "
+"gravar."
 
 #: taskmgr.C:105
 msgid "Switch to"

@@ -1085,7 +1085,7 @@ msgstr ""
 msgid ""
 "Gzip reproted an error\n"
 "%s"
-msgstr 
+msgstr ""
 "Gzip ilmoitti virheestä\n"
 "%s"
 

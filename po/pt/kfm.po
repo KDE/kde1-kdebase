@@ -79,7 +79,8 @@ msgid "&HTML View"
 msgstr "Visão &HTML"
 
 #: kfmgui.cpp:367
-msgid "&Ícone View"
+#, fuzzy
+msgid "&Icon View"
 msgstr "Visão por &Ìcones"
 
 #: kfmgui.cpp:369
@@ -420,7 +421,7 @@ msgstr ""
 msgid ""
 "Could not access\n"
 "%s"
-msgstr "" 
+msgstr ""
 "Não foi possível aceder\n"
 "%s"
 
@@ -699,7 +700,7 @@ msgid ""
 msgstr ""
 "Pode correr este programa no\n"
 "Painel ou num Terminal, \n"
-"mas não em ambos" 
+"mas não em ambos"
 
 #: kfmprops.cpp:872 kfmprops.cpp:1003 kfmprops.cpp:1449 kfmprops.cpp:1662
 #: kfmprops.cpp:1841
@@ -771,11 +772,13 @@ msgid "Filesystems ( iso9660,msdos,minix,default )"
 msgstr "Filesystems ( iso9660,msdos,minix,default )"
 
 #: kfmprops.cpp:1741
-msgid "Mounted Ícone"
+#, fuzzy
+msgid "Mounted Icon"
 msgstr "Ícone Montado"
 
 #: kfmprops.cpp:1745
-msgid "Unmounted Ícone"
+#, fuzzy
+msgid "Unmounted Icon"
 msgstr "Ícone Desmontado"
 
 #: kfmserver.cpp:40
@@ -818,8 +821,8 @@ msgid ""
 "The file ~/.kde/share/apps/kfm/magic is corrupted\n"
 "Authorization failed"
 msgstr ""
-"O ficheiro ~/.kde/share/apps/kfm/magic\n está corrompido"
-"Autorização falhou"
+"O ficheiro ~/.kde/share/apps/kfm/magic\n"
+" está corrompidoAutorização falhou"
 
 #: kfmserver.cpp:302
 msgid ""
@@ -836,7 +839,8 @@ msgstr "Erro Interno: desktopDir é incorrecto"
 #: root.cpp:589
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "ERRO: Não foi possível ler a directoria com o ambiente de trabalho '%s'"
+msgstr ""
+"ERRO: Não foi possível ler a directoria com o ambiente de trabalho '%s'"
 
 #: root.cpp:780
 msgid "ERROR: Can not accept drop"
@@ -897,7 +901,7 @@ msgstr ""
 msgid ""
 "Could not make symlink to\n"
 "%s"
-msgstr "" 
+msgstr ""
 "Não foi possível criar um link simbólico para\n"
 "%s"
 

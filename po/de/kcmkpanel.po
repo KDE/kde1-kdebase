@@ -1,70 +1,139 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkpanel\n"
-"POT-Creation-Date: 1998-01-25 13:23+0100\n"
+"POT-Creation-Date: 1998-02-12 00:20+0100\n"
 "PO-Revision-Date: 1997-01-02 20:51+MET\n"
 "Last-Translator: Stephan Kulow <coolo@kde.org>\n"
 
-#: panel.cpp:58
+#: main.cpp:62
+msgid "&Panel"
+msgstr "&Panel"
+
+#: main.cpp:68
+msgid "&Desktops"
+msgstr "&Desktops"
+
+#: main.cpp:97
+#, fuzzy
+msgid "usage: kcmkpanel [-init | {panel,options,desktops}]\n"
+msgstr "Benutzung: kcmkpanel [-init | {panel, desktops}]\n"
+
+#: main.cpp:127
+msgid "KPanel Configuration"
+msgstr "KPanel Einstellungen"
+
+#: panel.cpp:59
 msgid "Location"
 msgstr "Stelle"
 
-#: panel.cpp:66
+#: panel.cpp:60
+msgid "&Top"
+msgstr ""
+
+#: panel.cpp:61
+#, fuzzy
+msgid "&Left"
+msgstr "Links/Oben"
+
+#: panel.cpp:62
+msgid "&Bottom"
+msgstr ""
+
+#: panel.cpp:74
 msgid "Taskbar"
 msgstr "Taskbar"
 
-#: panel.cpp:67
-msgid "Hidden"
+#: panel.cpp:75
+#, fuzzy
+msgid "&Hidden"
 msgstr "Versteckt"
 
-#: panel.cpp:70
-msgid "Top/Left"
+#: panel.cpp:77
+msgid "T&op"
+msgstr ""
+
+#: panel.cpp:79
+msgid "Botto&m"
+msgstr ""
+
+#: panel.cpp:81
+#, fuzzy
+msgid "Top/Le&ft"
 msgstr "Links/Oben"
 
-#: panel.cpp:91
-msgid "Tiny Style"
-msgstr "Winzig"
+#: panel.cpp:96
+msgid "T&iny"
+msgstr ""
 
-#: panel.cpp:92
-msgid "Normal Style"
+#: panel.cpp:98
+#, fuzzy
+msgid "&Normal"
 msgstr "Normal"
 
-#: panel.cpp:93
-msgid "Large Style"
-msgstr "Groß"
+#: panel.cpp:100
+msgid "L&arge"
+msgstr ""
 
-#: panel.cpp:101
+#: desktops.cpp:73
+#, fuzzy
+msgid "&Visible"
+msgstr "Sichtbar"
+
+#: desktops.cpp:82
+#, fuzzy
+msgid "&Width"
+msgstr "Breite"
+
+#: options.cpp:38
 msgid "Menu Tooltips"
 msgstr "Menü-Hilfen"
 
-#: panel.cpp:103
-msgid "Personal First"
+#: options.cpp:39
+#, fuzzy
+msgid "Show &Menu Tooltips"
+msgstr "Menü-Hilfen"
+
+#: options.cpp:44
+msgid "De&lay:"
+msgstr ""
+
+#: options.cpp:56
+msgid "ms"
+msgstr ""
+
+#: options.cpp:68
+msgid "Others"
+msgstr ""
+
+#: options.cpp:69
+#, fuzzy
+msgid "Personal &First"
 msgstr "Persönliches Menü zuerst"
 
-#: panel.cpp:105
-msgid "Auto Hide Panel"
+#: options.cpp:71
+#, fuzzy
+msgid "Auto &Hide Panel"
 msgstr "Panel autom. verstecken"
 
-#: panel.cpp:107
-msgid "Auto Hide Taskbar"
+#: options.cpp:73
+#, fuzzy
+msgid "Auto Hide &Taskbar"
 msgstr "Taskbar autom. verstecken"
 
-#: desktops.cpp:67
-msgid "Visible"
-msgstr "Sichtbar"
+#: options.cpp:81
+msgid "Clock"
+msgstr ""
 
-#: desktops.cpp:75
-msgid "Width"
-msgstr "Breite"
+#: options.cpp:83
+msgid "&24h"
+msgstr ""
 
-#~ msgid "&Panel"
-#~ msgstr "&Panel"
+#: options.cpp:85
+msgid "&12h AM/PM"
+msgstr ""
 
-#~ msgid "&Desktops"
-#~ msgstr "&Desktops"
+#~ msgid "Tiny Style"
+#~ msgstr "Winzig"
 
-#~ msgid "usage: kcmkpanel [-init | {panel,desktops}]\n"
-#~ msgstr "Benutzung: kcmkpanel [-init | {panel, desktops}]\n"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "KPanel Einstellungen"
+#~ msgid "Large Style"
+#~ msgstr "Groß"

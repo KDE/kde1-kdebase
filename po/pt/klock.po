@@ -343,8 +343,7 @@ msgid ""
 "Tell him, that you need suid for the screensavers!"
 msgstr ""
 "Este sistema utiliza shadow passwords!\n"
-"Por favor contacte o seu administrador de sistema."
-"\n"
+"Por favor contacte o seu administrador de sistema.\n"
 "Diga-lhe que precisa de suid para os screensavers!"
 
 #: main.cpp:301

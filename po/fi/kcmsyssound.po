@@ -98,8 +98,7 @@ msgstr "URL:‰‰ ei tueta"
 msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
-msgstr ""
-"T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
+msgstr "T‰t‰ URL tyyppi‰ ei viel‰ tueta KDE:n j‰rjestelm‰-‰‰ni modulissa"
 
 #: syssound.cpp:328
 #, c-format

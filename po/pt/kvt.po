@@ -1,12 +1,12 @@
 msgid ""
 msgstr ""
 "POT-Creation-Date: 1998-01-25 13:22+0100\n"
+"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 "Content-Type: text/plain; charset=\n"
 "Date: 1997-08-26 14:27:08+0200\n"
 "From: M G Berberich <berberic@thingol>\n"
 "Xgettext-Options: --keyword=translate\n"
 "Files: main.C\n"
-"Last-Translator: Pedro Morais <pmmm@camoes.rnl.ist.utl.pt>\n"
 
 #: main.C:236
 msgid "Add characters to word class"

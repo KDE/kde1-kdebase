@@ -277,8 +277,8 @@ msgstr ""
 "Copyright (c) 1997 Martin Jones <mjones@kde.org>\n"
 "\n"
 "Este programa está licenciado sobre a Licença Geral Pública GNU (GPL).\n"
-"KDEHelp não tem ABSOLUTAMENTE NENHUMA GARANTIA até ao permitido pela "
-"lei aplicável."
+"KDEHelp não tem ABSOLUTAMENTE NENHUMA GARANTIA até ao permitido pela lei "
+"aplicável."
 
 #: mainwidget.cpp:202
 msgid "&Goto"

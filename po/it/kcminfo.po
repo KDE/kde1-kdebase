@@ -67,4 +67,3 @@ msgstr "non disponibile"
 #: processor.cpp:29
 msgid "This system is not yet supported :-("
 msgstr "Questo sistema non è ancora supportato :-("
-

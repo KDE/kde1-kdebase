@@ -57,4 +57,3 @@ msgstr "Ripetizioni tastiera"
 #: keyboard.cpp:76
 msgid "Key click volume"
 msgstr "Volume key click"
-

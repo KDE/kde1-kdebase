@@ -55,6 +55,6 @@ msgid ""
 "Changed language settings apply only to newly started applications.\n"
 "To change the language of all programs, you will have to logout first."
 msgstr ""
-"Il nuovo linguaggio sarà utilizzato solo dalle applicazioni avviate da adesso.\n"
+"Il nuovo linguaggio sarà utilizzato solo dalle applicazioni avviate da "
+"adesso.\n"
 "Per usarlo con tutti i programmi devi riavviare il KDE."
-

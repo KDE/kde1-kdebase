@@ -1,4 +1,3 @@
-
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmsyssound\n"
@@ -91,8 +90,8 @@ msgid ""
 "Sorry, this type of URL is currently unsupported by the KDE System Sound "
 "Module"
 msgstr ""
-"Desculpe, este tipo de URL não é suportada actualmente "
-"pelo Módulo KDE System Sound"
+"Desculpe, este tipo de URL não é suportada actualmente pelo Módulo KDE "
+"System Sound"
 
 #: syssound.cpp:328
 #, c-format
@@ -104,7 +103,7 @@ msgstr ""
 "Desculpe, mas \n"
 "%s\n"
 "não parece ser um ficheiro WAV!"
-        
+
 #: syssound.cpp:329
 msgid "Improper File Extension"
 msgstr "Extensão do Ficheiro Imprópria"

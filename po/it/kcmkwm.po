@@ -54,19 +54,22 @@ msgstr "Menu"
 msgid ""
 "The left side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'\n"
+"Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
+"'Ingrandisci'\n"
 
 #: titlebar.cpp:492
 msgid ""
 "The right side of the titlebar is full... disabling the 'maximise' button\n"
 msgstr ""
-"Il lato destro della barra Titolo è pieno siabilito il pulsante 'Ingrandisci'\n"
+"Il lato destro della barra Titolo è pieno siabilito il pulsante "
+"'Ingrandisci'\n"
 
 #: titlebar.cpp:532
 msgid ""
 "The left side of the titlebar is full... disabling the 'minimise' button\n"
 msgstr ""
-"Il lato sinistro della barra Titolo è pieno siabilito il pulsante 'Iconifica'\n"
+"Il lato sinistro della barra Titolo è pieno siabilito il pulsante "
+"'Iconifica'\n"
 
 #: titlebar.cpp:565
 msgid ""
@@ -169,5 +172,3 @@ msgstr ""
 #: windows.cpp:99
 msgid "miliseconds"
 msgstr "millisecondi"
-
-
