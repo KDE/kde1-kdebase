@@ -52,7 +52,7 @@ FontUseItem::FontUseItem( const char *n, QFont default_fnt, bool f = false )
 	: selected(0)
 {
 	_text = n;
-	_font = default_fnt;
+	_default = _font = default_fnt;
 	fixed = f;
 }
 
@@ -61,6 +61,11 @@ void FontUseItem::setRC( const char *group, const char *key, const char *rc )
 	_rcgroup = group;
 	_rckey = key;
 	if ( rc ) _rcfile = rc;
+}
+
+void FontUseItem::setDefault()
+{
+	_font = _default;
 }
 
 void FontUseItem::readFont()
@@ -279,6 +284,18 @@ void KGeneral::readSettings( int )
 		
 	KSimpleConfig appConfig( KApplication::localconfigdir() + "/kdisplayrc" );
 	useRM = appConfig.readBoolEntry( "useResourceManager", false );
+}
+
+void KGeneral::setDefaults()
+{
+	int ci = lbFonts->currentItem();
+	for ( int i = 0; i < (int) fontUseList.count(); i++ )
+		fontUseList.at( i )->setDefault();
+	fontUseList.at( ci );
+	slotPreviewFont( ci );
+	
+	cbStyle->setChecked( false );
+	slotChangeStyle();
 }
 
 void KGeneral::writeSettings()

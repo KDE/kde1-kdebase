@@ -84,6 +84,7 @@ protected:
 	void findSavers();
 	void getSaverNames();
 	void setMonitor();
+	void setDefaults();
 
 protected:
 	KProcess *ssSetup, *ssPreview;
@@ -108,6 +109,7 @@ protected:
 	int xallow_exposures;
 
 	bool changed;
+	bool bUseSaver;
 
 private slots:
 	void slotPreviewExited(KProcess *);

@@ -1,10 +1,11 @@
-
 //
 // KDE Display background setup module
 //
 // Copyright (c)  Martin R. Jones 1996
 //
 // Converted to a kcc module by Matthias Hoelzer 1997
+// Gradient backgrounds by Mark Donohoe 1997
+// Pattern backgrounds by Stephan Kulow 1998
 //
 
 #ifdef HAVE_CONFIG
@@ -43,9 +44,6 @@
 
 #include "backgnd.h"
 #include "backgnd.moc"
-
-#define NO_WALLPAPER	i18n("(none)")
-
 
 KRenameDeskDlg::KRenameDeskDlg( const char *t, QWidget *parent )
     : QDialog( parent, 0, true )
@@ -110,6 +108,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
       changed = false;
       maxDesks = 8;
       deskNum = 0;
+	  bUseWallpaper = false;
       
       setName( i18n("Desktop") );
       
@@ -303,7 +302,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
     const QStrList *list = d.entryList();
 
     wpCombo = new QComboBox( false, group );
-    wpCombo->insertItem( NO_WALLPAPER, 0 );
+    wpCombo->insertItem( i18n("No wallpaper"), 0 );
     wpCombo->setCurrentItem( 0 );
     
     groupLayout->addStretch( 5 );
@@ -319,7 +318,7 @@ KBackground::KBackground( QWidget *parent, int mode, int desktop )
 	    wpCombo->setCurrentItem( i );
     }
 
-    if ( wallpaper != NO_WALLPAPER && wpCombo->currentItem() == 0 )
+    if ( bUseWallpaper && wpCombo->currentItem() == 0 )
     {
 	wpCombo->insertItem( wallpaper );
 	wpCombo->setCurrentItem( wpCombo->count()-1 );
@@ -417,8 +416,31 @@ void KBackground::readSettings( int num )
 		wpMode = Scaled;
 	}
     
-    wallpaper = config->readEntry( "Wallpaper", NO_WALLPAPER );
-    loadWallpaper( wallpaper );
+	bUseWallpaper = config->readBoolEntry( "UseWallpaper", false );
+	if ( bUseWallpaper ) {
+    	wallpaper = config->readEntry( "Wallpaper" );
+		if ( !wallpaper.isEmpty() )
+    		loadWallpaper( wallpaper );
+	} else 
+		wallpaper.sprintf( i18n("No wallpaper") );
+}
+
+void KBackground::setDefaults()
+{
+	for ( int i = 0; i < maxDesks; i++ ) {
+		wpMode = Tiled;
+		ncMode = OneColor;
+		stMode = Gradient;
+		orMode = Portrait;
+		color1 = darkCyan;
+		color2 = darkCyan;
+		bUseWallpaper = false;
+		wallpaper.sprintf( i18n("No wallpaper") );
+		changed = true;
+		writeSettings( i );
+	}
+	showSettings();
+	changed = false;
 }
 
 void KBackground::writeSettings( int num )
@@ -441,6 +463,7 @@ void KBackground::writeSettings( int num )
 	col2Name.sprintf("#%02x%02x%02x", color2.red(), color2.green(), color2.blue());
 	config->writeEntry( "Color2", col2Name );
 
+	config->writeEntry( "UseWallpaper", bUseWallpaper );
 	config->writeEntry( "Wallpaper", wallpaper );
 
 	switch ( wpMode )
@@ -548,7 +571,7 @@ void KBackground::showSettings()
 	}
     }
 
-    if ( wallpaper != NO_WALLPAPER && wpCombo->currentItem() == 0 )
+    if ( bUseWallpaper && wpCombo->currentItem() == 0 )
     {
 	wpCombo->insertItem( wallpaper );
 	wpCombo->setCurrentItem( wpCombo->count()-1 );
@@ -596,7 +619,7 @@ void KBackground::setMonitor()
     matrix.scale( sx, sy );
 
     
-    if ( wpPixmap.isNull() || wpMode == Centred || wallpaper == NO_WALLPAPER) {
+    if ( wpPixmap.isNull() || wpMode == Centred || !bUseWallpaper ) {
 
 	KPixmap preview;
 	preview.resize( monitor->width()+1, monitor->height()+1 );
@@ -614,7 +637,7 @@ void KBackground::setMonitor()
 		preview.patternFill(color1, color2, pattern);
 	}
 	
-	if ( wpMode == Centred && wallpaper != NO_WALLPAPER ) {
+	if ( wpMode == Centred && bUseWallpaper ) {
 		QPixmap tmp = wpPixmap.xForm( matrix );
 
 		bitBlt( &preview, (preview.width() - tmp.width())/2,
@@ -697,7 +720,7 @@ void KBackground::slotSelectColor1( const QColor &col )
 {
 	color1 = col;
 
-	if ( ncMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
+	if ( ncMode == Gradient || wpMode == Centred || !bUseWallpaper )
 	{
 		// force the background to be made with different background
 		if ( wpMode == Centred )
@@ -712,7 +735,7 @@ void KBackground::slotSelectColor2( const QColor &col )
 {
 	color2 = col;
 
-	if ( ncMode == Gradient || wpMode == Centred || wallpaper == NO_WALLPAPER )
+	if ( ncMode == Gradient || wpMode == Centred || !bUseWallpaper )
 	{
 		setMonitor();
 	}
@@ -747,18 +770,24 @@ void KBackground::slotBrowse()
 
 void KBackground::slotWallpaper( const char *filename )
 {
+	debug("KBackground::slotWallpaper");
+	debug(filename);
     if ( filename )
 	{
-	    if ( !strcmp( filename, NO_WALLPAPER ) )
+	    if ( !strcmp(filename, i18n("No wallpaper") ) )
 		{
 		    wpPixmap.resize(0, 0); // make NULL pixmap
 		    wallpaper = filename;
+			bUseWallpaper = false;
 		    setMonitor();
+			debug("Turn wallpaper off");
 		}
 	    else if ( loadWallpaper( filename ) == true )
 		{
 		    wallpaper = filename;
+			bUseWallpaper = true;
 		    setMonitor();
+			debug("Turn wallpaper on");
 		}
 	    
 	    changed = true;

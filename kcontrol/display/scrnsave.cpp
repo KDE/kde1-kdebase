@@ -183,7 +183,7 @@ KScreenSaver::KScreenSaver( QWidget *parent, int mode, int desktop )
 	QBoxLayout *groupLayout = new QVBoxLayout( group, 10, 5 );
 
 	ssList = new QListBox( group );
-	ssList->insertItem( NO_SCREENSAVER, 0 );
+	ssList->insertItem( i18n("No screensaver"), 0 );
 	ssList->setCurrentItem( 0 );
 	getSaverNames();
 	ssList->adjustSize();
@@ -328,8 +328,6 @@ void KScreenSaver::readSettings( int )
 	       &xprefer_blanking, &xallow_exposures );
 
 	QString str;
-
-	saverFile = NO_SCREENSAVER;
 	saverLocation = SCREENSAVER_DIR;
 
 	KConfig *config = kapp->getConfig();
@@ -341,9 +339,15 @@ void KScreenSaver::readSettings( int )
 	else
 		saverLocation = kapp->kde_bindir().copy();
 
-	str = config->readEntry( "Saver" );
-	if ( !str.isNull() )
-		saverFile = str;
+	bUseSaver = config->readBoolEntry( "UseSaver", false );
+	if( bUseSaver ) {
+		str = config->readEntry( "Saver" );
+		if ( !str.isNull() )
+			saverFile = str;
+		else
+			bUseSaver = false;
+	} else
+		saverFile.sprintf( i18n("No screensaver") );
 
 	str = config->readEntry( "Timeout" );
 	if ( !str.isNull() )
@@ -378,6 +382,18 @@ void KScreenSaver::readSettings( int )
 	cornerAction[4] = '\0';
 }
 
+void KScreenSaver::setDefaults()
+{
+	slotScreenSaver( 0 );
+	slotTimeoutChanged( "1" );
+	slotPriorityChanged( 0 );
+	slotLock( false );
+	slotCornerAction( 0, 'i' );
+	slotCornerAction( 1, 'i' );
+	slotCornerAction( 2, 'i' );
+	slotCornerAction( 3, 'i' );
+}
+
 void KScreenSaver::writeSettings()
 {
 	if ( !changed )
@@ -386,6 +402,7 @@ void KScreenSaver::writeSettings()
 	KConfig *config = kapp->getConfig();
 	config->setGroup( "ScreenSaver" );
 
+	config->writeEntry( "UseSaver", bUseSaver );
 	config->writeEntry( "Saver", saverFile );
 
 	QString str;
@@ -457,7 +474,7 @@ void KScreenSaver::apply( bool force )
 	if ( !changed && !force )
 		return;
 
-	if ( saverFile == NO_SCREENSAVER )
+	if ( !bUseSaver )
 	{
 		QString pidFile;
 		pidFile = getenv( "HOME" );
@@ -513,7 +530,7 @@ void KScreenSaver::slotPreviewExited(KProcess *)
     monitor->setBackgroundColor( black );
     monitor->erase();
 
-    if ( saverFile == NO_SCREENSAVER )
+    if ( !bUseSaver )
 	return;
 
     id.setNum( monitor->winId() );
@@ -528,9 +545,10 @@ void KScreenSaver::slotScreenSaver( int indx )
 {
 	if ( indx == 0 )
 	{
-		saverFile = NO_SCREENSAVER;
+		saverFile.sprintf( i18n("No screensaver") );
 		setupBt->setEnabled( FALSE );
 		testBt->setEnabled( FALSE );
+		bUseSaver = false;
 	}
 	else
 	{
@@ -539,6 +557,7 @@ void KScreenSaver::slotScreenSaver( int indx )
 		if (!ssSetup->isRunning())
 			setupBt->setEnabled( TRUE );
 		testBt->setEnabled( TRUE );
+		bUseSaver = true;
 	}
 
 	setMonitor();
@@ -550,7 +569,7 @@ void KScreenSaver::slotSetup()
 {
 	QString path;
 
-	if ( saverFile == NO_SCREENSAVER )
+	if ( !bUseSaver )
 	    return;
 
 	if (ssSetup->isRunning())
@@ -635,7 +654,7 @@ void KScreenSaver::slotCornerAction( int num, char action )
 void KScreenSaver::loadSettings()
 {
   ssList->clear();  
-  ssList->insertItem( NO_SCREENSAVER, 0 );
+  ssList->insertItem( i18n("No screensaver"), 0 );
 
   readSettings();
 

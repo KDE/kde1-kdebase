@@ -659,6 +659,11 @@ void KColorScheme::readSchemeNames( )
 		
 }
 
+void KColorScheme::setDefaults()
+{
+	slotPreviewScheme( 1 );
+}
+
 void KColorScheme::writeSettings()
 {
 	if ( !changed )

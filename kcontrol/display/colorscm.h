@@ -56,6 +56,7 @@ protected:
 	void readSchemeNames();
 	void readScheme( int index = 0 );
 	void writeScheme();
+	void setDefaults();
 	
 protected:
 	QSlider *sb;

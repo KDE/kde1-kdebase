@@ -34,6 +34,7 @@ public:
 	void setRC( const char *group, const char *key, const char *rc = 0 );
 	void readFont();
 	void writeFont();
+	void setDefault();
 	void setFont( QFont fnt ) { _font = fnt; }
 	QFont font() { return _font; }
 	const char *rcFile() { return _rcfile.data(); }
@@ -50,6 +51,7 @@ private:
 	QString _rcgroup;
 	QString _rckey;
 	QFont _font;
+	QFont _default;
 	bool fixed;
 	bool selected;
 };
@@ -100,6 +102,7 @@ protected slots:
 
 protected:
 	void writeSettings();
+	void setDefaults();
 	
 protected:
 	KFontChooser *fntChooser;

@@ -150,12 +150,11 @@ protected:
 	void setMonitor();
 	int  loadWallpaper( const char *filename, bool useContext = TRUE );
 	void retainResources();
+	void setDefaults();
 
 protected:
 	enum { Tiled = 1, Centred, Scaled };
 	enum { OneColor = 1, TwoColor };
-	
-	
 
 	QListBox     *deskListBox;
 	QRadioButton *rbPattern;
@@ -182,7 +181,8 @@ protected:
 	int deskNum;
 	int maxDesks;
 
-        uint pattern[8];
+    uint pattern[8];
+	bool bUseWallpaper;
 
 	bool changed;
 };

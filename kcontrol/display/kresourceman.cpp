@@ -317,27 +317,40 @@ QString KResourceMan::writeEntry( const QString& rKey, int nValue )
 QString KResourceMan::writeEntry( const QString& rKey, const QFont& rFont )
 {
 	QString aValue;
+	QFontInfo fi( rFont );
 
 	aValue.sprintf( "-*-" );
-	aValue += rFont.family();
+	aValue += fi.family();
 	
-	if ( rFont.bold() )
+	if ( fi.bold() )
 		aValue += "-bold";
 	else
 		aValue += "-medium";
 	
-	if ( rFont.italic() )
+	if ( fi.italic() )
 		aValue += "-i";
 	else
 		aValue += "-r";
-		
-	aValue += "-normal--*-";
+	
+	//
+	// For setting font size the code I have commented out here should be
+	// correct according to the technical documentation of Qt and X. However, the
+	// actual code used below does a better job of matching Qt fonts with X
+	// server fonts. MD 8 Apr 98
+	//	
+	//aValue += "-normal--*-";
+	//	
+	//QString s;
+	//s.sprintf( "%d-*-*-*-*-", 10*fi.pointSize() );
+	//aValue += s;
+	
+	aValue += "-normal-*-";
 		
 	QString s;
-	s.sprintf( "%d-*-*-*-*-", 10*rFont.pointSize() );
+	s.sprintf( "%d-*-*-*-*-*-", fi.pointSize() );
 	aValue += s;
 	
-	switch ( rFont.charSet() ) {
+	switch ( fi.charSet() ) {
 		case QFont::Latin1:
 			aValue += "iso8859-1";
 			break;
