@@ -1,10 +1,15 @@
 # Polish translation of KDE kvt
-# Version 0.1.2
+# Version 0.1.3
 # (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 
 msgid "The backspace key will send a"
 msgstr "Klawisz backspace <- wysy³a"
 
+msgid "&Contents"
+msgstr "&Spis tre¶ci"
+
+msgid "&About Qt..."
+msgstr "Qt - &informacje"
 
 
 #: main.C:220
@@ -41,7 +46,7 @@ msgstr "Po &lewej"
 
 #: main.C:366
 msgid "&Right"
-msgstr "Po &Prawej"
+msgstr "Po &prawej"
 
 #: main.C:371
 msgid "&Normal"
@@ -57,7 +62,7 @@ msgstr "&Ma³y"
 
 #: main.C:374
 msgid "&Medium"
-msgstr "¦re&dni"
+msgstr "¦&redni"
 
 #: main.C:375
 msgid "&Large"
@@ -125,7 +130,7 @@ msgstr "Zachowaj &opcje"
 
 #: main.C:419
 msgid "&About..."
-msgstr "Informacje..."
+msgstr "&Informacje..."
 
 #: main.C:420 main.C:430
 msgid "&Help"
@@ -216,34 +221,35 @@ msgid ""
 msgstr ""
 "(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
 "(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
-"Polskie tlumaczenie (C) 1997 Piotr Roszatycki (dexter@fnet.com.pl)\n"
-"Emulacja terminala dla Srodowiska Graficznego KDE\n"
+"Polskie t³umaczenie (C) 1997 Piotr Roszatycki (dexter@fnet.com.pl)\n"
+"Emulacja terminala dla ¦rodowiska Graficznego KDE\n"
 "oparta o rxvt-2.08 Roberta Nation'a"
 "\n"
 "Dozwolone argumenty:\n"
-"-e <polecenie> <arg> ...\twywolanie polecenia z argumentami - musi byc ostatnim argumentem\n"
-"-display <nazwa>\tokresla ekran (serwer)\n"
-"-vt_geometry <wymiar>\tokresla wymiary okna\n"
-"-print-pipe <nazwa>\tokresla potok dla druku vt100\n"
-"-vt_bg <kolor>\t\tkolor tla\n"
-"-vt_fg <kolor>\t\tkolor tekstu\n"
-"-vt_font <nazwa>\tczcionka normalna\n"
-"-vt_size <rozmiar>     \ttiny, small, normal, large, huge\n"
-"-linux\t\t\ttryb konsoli linuxa\n"
-"-no_menubar\t\tukryj pasek menu\n"
-"-no_scrollbar\t\tukryj pasek przewijania\n"
-"-T <tekst>\t\ttekst w pasku tytulowym\n"
-"-tn <TERM>\t\tTyp terminala. standardowo xterm.\n"
-"-C\t\t\tPrzychwytuj komunikaty z konsoli\n"
-"-n <tekst>\t\ttytul ikony\n"
-"-7\t\t        uruchomienie trybu 7-bitowego\n"
-"-8\t\t\turuchomienie trybu 8-bitowego\n"
-"-ls\t\t\turuchom kvt jako zalogowana sesje\n"
-"-ls-\t\t\turuchom kvt jako niezalogowana sesje (domyslnie)\n"
-"-meta\t\t\tprzechwytuj Meta z prefiksem ESCAPE, ustawionym 8THBIT lub ignoruj\n"
-"-sl <numer>\t\tilosc linii przechowywana w buforze\n"
-"-pageup <klawisz>\tuzyj kombinacji Alt-klawisz do przesuniecia buforu w gore\n"
-"-pagedown <klawisz>\tuzyj kombinacji Alt-klawisz do przesuniecia buforu w dol\n"
+"-e <polecenie> <arg> ...  wywo³anie polecenia z arg. - musi byæ ostatnim arg.\n"
+"-display <nazwa>          okre¶la ekran (serwer)\n"
+"-vt_geometry <wymiar>     okre¶la wymiary okna\n"
+"-print-pipe <nazwa>       okre¶la potok dla druku vt100\n"
+"-vt_bg <kolor>            kolor t³a\n"
+"-vt_fg <kolor>            kolor tekstu\n"
+"-vt_font <nazwa>          czcionka normalna\n"
+"-vt_size <rozmiar>        tiny, small, normal, large, huge\n"
+"-linux                    tryb konsoli linuxa\n"
+"-no_menubar               ukryj pasek menu\n"
+"-no_scrollbar             ukryj pasek przewijania\n"
+"-T <tekst>                tekst w pasku tytu³owym\n"
+"-tn <TERM>                typ terminala. standardowo xterm.\n"
+"-C                        przychwytuj komunikaty z konsoli\n"
+"-n <tekst>                tytu³ ikony\n"
+"-7                        uruchomienie trybu 7-bitowego\n"
+"-8                        uruchomienie trybu 8-bitowego\n"
+"-ls                       uruchom kvt jako zalogowan± sesjê\n"
+"-ls-                      uruchom kvt jako niezalogowan± sesjê (domyslnie)\n"
+"-meta                     przechwytuj Meta z prefiksem ESCAPE,\n"
+"                            ustawionym 8THBIT lub ignoruj\n"
+"-sl <numer>               ilo¶æ linii przechowywana w buforze\n"
+"-pageup <klawisz>         kombinacja Alt-klawisz przesuwa bufor w górê\n"
+"-pagedown <klawisz>       kombinacja Alt-klawisz przesuwa buforu w dó³\n"
 
 
 #: main.C:954

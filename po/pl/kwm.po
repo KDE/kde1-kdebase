@@ -1,3 +1,8 @@
+# Polish translation of KDE kwm
+# Version 0.2.0
+# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
+
+
 #: main.C:64
 msgid ""
 "kwm: it looks like there's already a window manager running.  kwm not "
@@ -19,60 +24,46 @@ msgid "Usage: "
 msgstr "U¿ycie: "
 
 #: main.C:387
-#, fuzzy
 msgid "&Maximize"
 msgstr "&Maksymalizuj"
 
 #: main.C:388
-#, fuzzy
 msgid "&Restore"
 msgstr "Przy&wróæ"
 
 #: main.C:389
-#, fuzzy
 msgid "&Iconify"
 msgstr "Mi&nimalizuj"
 
 #: main.C:390
-#, fuzzy
 msgid "&DeIconify"
 msgstr "Przy&wróæ"
 
 #: main.C:391
-#, fuzzy
 msgid "&Sticky"
 msgstr "Przyk&lej"
 
 #: main.C:392
-#, fuzzy
 msgid "&UnSticky"
 msgstr "Odk&lej"
 
 #: main.C:393
-#, fuzzy
 msgid "Mo&ve"
 msgstr "Prz&enie¶"
 
 #: main.C:394
-#, fuzzy
 msgid "Resi&ze"
 msgstr "&Rozmiar"
 
-# Polish translation of KDE kwm
-# Version 0.2.0
-# (C) 1997 Piotr Roszatycki <dexter@fnet.com.pl>
 #: main.C:395
-#, fuzzy
 msgid "&Close"
 msgstr "Zam&knij"
 
 #: main.C:396
-#, fuzzy
 msgid "&To desktop"
 msgstr "Wy¶lij na &desktop"
 
 #: main.C:398
-#, fuzzy
 msgid "&Onto current desktop"
 msgstr "Wy¶lij na ten &desktop"
 
