@@ -1,3 +1,9 @@
+1998-12-15  David Faure  <faure@kde.org>
+
+	* main.cpp : Test for KDE release, and copy new Templates it
+	necessary. Patch from Michael Reiher <michael.reiher@gmx.de>
+	* popup.cpp : Use "Name" field from Template files, not "Comment".
+
 1998-12-14  David Faure  <faure@kde.org>
 
 	* Sven Radej added fusion of global & local mimetypes (same for applications) :

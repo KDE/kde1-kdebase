@@ -20,6 +20,7 @@
 #include <html.h>
 #include <qmsgbox.h>
 #include <qtimer.h>
+#include <kwm.h> // for sendKWMCommand. David.
 
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
@@ -172,6 +173,28 @@ int main( int argc, char ** argv )
     else
       closedir( dp );
 
+    bool bNewRelease = false;
+
+    KConfig* kfmconfig = a.getConfig(); 
+    kfmconfig->setGroup("Version");
+    int versionMajor = kfmconfig->readNumEntry("KDEVersionMajor", 0);
+    int versionMinor = kfmconfig->readNumEntry("KDEVersionMinor", 0);
+    int versionRelease = kfmconfig->readNumEntry("KDEVersionRelease", 0);
+
+    if( versionMajor < KDE_VERSION_MAJOR )
+        bNewRelease = true;
+    else if( versionMinor < KDE_VERSION_MINOR )
+             bNewRelease = true;
+         else if( versionRelease < KDE_VERSION_RELEASE ) 
+                  bNewRelease = true;
+
+    if( bNewRelease ) {
+      kfmconfig->writeEntry("KDEVersionMajor", KDE_VERSION_MAJOR );
+      kfmconfig->writeEntry("KDEVersionMinor", KDE_VERSION_MINOR );
+      kfmconfig->writeEntry("KDEVersionRelease", KDE_VERSION_RELEASE );
+      kfmconfig->sync();
+    }   
+
     signal(SIGCHLD,sig_handler);
     
     // Test for directories
@@ -194,8 +217,24 @@ int main( int argc, char ** argv )
 	cmd.sprintf("cp %s/kfm/Desktop/Templates/* %s", 
 		    kapp->kde_datadir().data(), KFMPaths::TemplatesPath().data() );
 	system( cmd.data() );
+        KWM::sendKWMCommand("krootwm:refreshNew");
     }
-
+    else if( bNewRelease ) 
+         {
+	   int btn = QMessageBox::information( 0, 
+                     i18n("KFM Information"),
+                     i18n("A new KDE version has been installed.\nThe Template files may have changed.\n\nWould you like to install the new ones?"),
+                     i18n("Yes"), i18n("No") );
+           if( !btn ) {
+             QString cmd;
+	      cmd.sprintf("cp %s/kfm/Desktop/Templates/* %s", 
+	    	          kapp->kde_datadir().data(), 
+                         KFMPaths::TemplatesPath().data() );
+      	      system( cmd.data() );
+              KWM::sendKWMCommand("krootwm:refreshNew");
+           }
+         }
+    
     // Initialize the KMimeMagic stuff
     KMimeType::initKMimeMagic();
     

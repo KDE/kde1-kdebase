@@ -38,6 +38,7 @@
 
 #include <klocale.h>
 #include <kstring.h>
+#include <kwm.h> // for sendKWMCommand. David.
 
 bool KfmGui::sumode = false;
 bool KfmGui::rooticons = true;
@@ -723,6 +724,7 @@ void KfmGui::slotRescanBindings()
 	win->updateView();
 
     KNewMenu::fillTemplates(); // re-read the Templates
+    KWM::sendKWMCommand("krootwm:refreshNew"); // and ask krootwm to do so too
 }
 
 void KfmGui::slotRun()
