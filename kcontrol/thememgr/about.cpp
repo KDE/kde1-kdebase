@@ -72,7 +72,9 @@ About::About (QWidget * aParent, const char *aName, bool aInit)
   str.sprintf(i18n("Version %s\n\n"
 		   "Copyright (C) 1998 by\n%s\n\n"
 		   "Gnu Public License (GPL)"),
-	      KTHEME_VERSION, "Stefan Taferner <taferner@kde.org>");
+	           KTHEME_VERSION, 
+                   "Stefan Taferner <taferner@kde.org>\n"
+                   "Waldo Bastian <bastian@kde.org>");
   lbl = new QLabel(str, this);
   lbl->setMinimumSize(lbl->sizeHint());
   box->addWidget(lbl);
