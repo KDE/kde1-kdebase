@@ -30,16 +30,16 @@ entries is shown:
 
 
 <list>
-<item><bf>Global:</bf> 
-  this section lists global entries, shared among all users.
-  Typical global entries include: / (root dir), CD-ROM, mounted filesystems,
+<item><bf>Shared:</bf> 
+  this section lists entries shared among all users.
+  Typical shared entries include: / (root dir), CD-ROM, mounted filesystems,
   removable disks, etc.
-  Global entries can be changed selecting the "Options" menu entry.
-  Note: only the superuser can change global entries. 
+  Shared entries can be changed selecting the "Options" menu entry.
+  Note: only the superuser can change shared entries. 
 
-<item><bf>Local:</bf> this section lists user-specific filesystem entries. 
+<item><bf>Personal:</bf> this section lists user-specific filesystem entries. 
   Typical entries in this section are user's home dir, user's desktop, 
-  frequently accessed directories. Local entries can be changed selecting 
+  frequently accessed directories. Personal entries can be changed selecting 
   the "Options" menu entry.
 
 <item><bf>Recent:</bf>
@@ -91,9 +91,9 @@ for a while (eg. entering a folder with a large number of files on a slow
 CD-ROM reader). Since you may want to place entry points to slow devices on
 the root menu, you might accidentally enter such slow entries.
 To avoid this problem, you can add a "Removable Media" folder to the 
-Global/Local sections, and create URL files or links pointing to the slow
+Shared/Personal sections, and create URL files or links pointing to the slow
 devices in this folder.
-See the "Options" section to see how to customize the Global/Local sections.
+See the "Options" section to see how to customize the Shared/Personal sections.
 
 <item>
 URL vs. Links: starting version 0.3, Disk Navigator supports KDE URL files 
@@ -121,17 +121,17 @@ the KPanel menu. It is possible to set the following options:
 
   <list>
 
-  <item><bf>"Edit Local..."</bf>, <bf>"Edit Global..."</bf> these
-  buttons allow to change entries in the Local and Global Sections
-  (note: only superusers can change global settings).  In both cases,
+  <item><bf>"Edit Personal..."</bf>, <bf>"Edit Shared..."</bf> these
+  buttons allow to change entries in the Personal and Shared Sections
+  (note: only superusers can change the shared section).  In both cases,
   a KFM window is displayed. Use KFM to create URL files, links and folders
-  in the local (<tt>~/.kde/share/disknav</tt>) and global
+  in the personal (<tt>~/.kde/share/disknav</tt>) and shared
   (<tt>$KDEDIR/share/disknav</tt>) directories. For more details, read
   section "Adding, Changing and Removing Filesystem Entries".
 
   When either the "Apply" or the "OK" button in the Options dialog is selected, these
   directories are parsed again and the "Disk Navigator" menu is
-  updated.  Alternatively, it is possible to change local and global
+  updated.  Alternatively, it is possible to change personal and shared
   directory contents from the command line (e.g. using a shell
   script). In such case, the panel must be restarted ("Panel" ->
   "Restart" from the KPanel menu) to re-parse these directories.
@@ -157,11 +157,11 @@ the KPanel menu. It is possible to set the following options:
   if set, uses the order "A", "a", "B", "b" when
   sorting rather than "A", "B", "a", "b".
 
-  <item><bf>"Show Global section":</bf>
-  if set, the Global section is shown.
+  <item><bf>"Show Shared section":</bf>
+  if set, the Shared section is shown.
 
-  <item><bf>"Show Local section":</bf>
-  if set, the Local section is shown.
+  <item><bf>"Show Personal section":</bf>
+  if set, the Personal section is shown.
 
   <item><bf>"Show Recent section":</bf>
   if set, the Recent section is shown.
@@ -195,12 +195,12 @@ To edit Disk Navigator menu entries, select "Options..." from the Disk
 Navigator menu. Alternatively, select Panel -> Configure from the KPanel
 menu and then select the "Disk Navigator" tab.
 
-At this point click on "Edit Local..." or "Edit Global..." buttons to edit,
+At this point click on "Edit Personal..." or "Edit Shared..." buttons to edit,
 respectively, user specific entries and common entries (shared among all
-users). Note that you must be logged as root to change global entries.
+users). Note that you must be logged as root to change shared entries.
 
 After that, a KFM window is displayed, showing the entries for the
-Disk Navigator section that you are editing (Local/Global). 
+Disk Navigator section that you are editing (Shared/Personal). 
 If, for instance, you want to add a new entry pointing to /opt/kde you
 can do the following:
 
@@ -266,14 +266,15 @@ and executables.
 
 <item>
 Copying <tt>~/.kde</tt> and $KDEDIR: if you are using symbolic links to define
-filesystem entry points in the Global/Local sections, you must be careful when
-copying the KDE directory, since the <tt>cp</tt> command with the <tt>-r</tt>
+filesystem entry points in the Shared/Personal sections, you must be careful 
+when copying the KDE directory, since the <tt>cp</tt> command with the
+<tt>-r</tt>
 option follows symbolic links. Under Linux you can use the <tt>-d</tt>
 option to avoid this problem.
 However, you are recommended to change all symbolic links to corresponding 
 KDE URL files.
-Symbolic links are stored under <tt>$KDEDIR/share/disknav</tt> (Global) and
-<tt>~/.kde/share/disknav</tt> (Local).
+Symbolic links are stored under <tt>$KDEDIR/share/disknav</tt> (Shared) and
+<tt>~/.kde/share/disknav</tt> (Personal).
 
 </list>
 
@@ -337,20 +338,20 @@ Command-line options can be added here.
 Default: kvt
 
 <item>
-<bf>ShowGlobalSection</bf>=on/off : should the Global section be part of the Disk 
-        Navigator main menu?
+<bf>ShowGlobalSection</bf>=on/off : should the Shared section be part of the
+   Disk Navigator main menu?
 
 Default: on
 
 <item>
-<bf>ShowLocalSection</bf>=on/off : should the Local section be part of the Disk 
-        Navigator main menu?
+<bf>ShowLocalSection</bf>=on/off : should the Personal section be part of the
+ Disk Navigator main menu?
 
 Default: on
 
 <item>
-<bf>ShowRecentSection</bf>=on/off : should the Recent section be part of the Disk 
-        Navigator main menu?
+<bf>ShowRecentSection</bf>=on/off : should the Recent section be part of the
+ Disk Navigator main menu?
 
 Default: on
 

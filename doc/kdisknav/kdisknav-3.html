@@ -24,17 +24,17 @@
 <P>The option dialog box is activated selecting "Disk Navigator" -> "Options" from
 the KPanel menu. It is possible to set the following options:
 <P>
-<LI><B>"Edit Local..."</B>, <B>"Edit Global..."</B> these
-buttons allow to change entries in the Local and Global Sections
-(note: only superusers can change global settings).  In both cases,
+<LI><B>"Edit Personal..."</B>, <B>"Edit Shared..."</B> these
+buttons allow to change entries in the Personal and Shared Sections
+(note: only superusers can change the shared section).  In both cases,
 a KFM window is displayed. Use KFM to create URL files, links and folders
-in the local (<CODE>~/.kde/share/disknav</CODE>) and global
+in the personal (<CODE>~/.kde/share/disknav</CODE>) and shared
 (<CODE>$KDEDIR/share/disknav</CODE>) directories. For more details, read
 section "Adding, Changing and Removing Filesystem Entries".
 
 When either the "Apply" or the "OK" button in the Options dialog is selected, these
 directories are parsed again and the "Disk Navigator" menu is
-updated.  Alternatively, it is possible to change local and global
+updated.  Alternatively, it is possible to change personal and shared
 directory contents from the command line (e.g. using a shell
 script). In such case, the panel must be restarted ("Panel" ->
 "Restart" from the KPanel menu) to re-parse these directories.
@@ -60,11 +60,11 @@ sets if hidden files should be displayed in "Disk Navigator" menus.
 if set, uses the order "A", "a", "B", "b" when
 sorting rather than "A", "B", "a", "b".
 </LI>
-<LI><B>"Show Global section":</B>
-if set, the Global section is shown.
+<LI><B>"Show Shared section":</B>
+if set, the Shared section is shown.
 </LI>
-<LI><B>"Show Local section":</B>
-if set, the Local section is shown.
+<LI><B>"Show Personal section":</B>
+if set, the Personal section is shown.
 </LI>
 <LI><B>"Show Recent section":</B>
 if set, the Recent section is shown.

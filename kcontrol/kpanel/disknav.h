@@ -53,13 +53,13 @@ public:
     //CT    void  resizeEvent(QResizeEvent *e);
 
 protected slots:
-    void edit_global_clicked();
-    void edit_local_clicked();
+    void edit_shared_clicked();
+    void edit_personal_clicked();
 
 private:
     QLabel *edit_entries;
-    QPushButton *edit_global;
-    QPushButton *edit_local;
+    QPushButton *edit_shared;
+    QPushButton *edit_personal;
     QGroupBox *hist_group, *misc_group;
 
     QLabel *recent_folders_size;
@@ -74,8 +74,8 @@ private:
     QCheckBox *show_dot_files;
     QCheckBox *ignore_case;
 
-    QCheckBox *show_global_section;
-    QCheckBox *show_local_section;
+    QCheckBox *show_shared_section;
+    QCheckBox *show_personal_section;
     QCheckBox *show_recent_section;
     QCheckBox *show_option_entry;
     QLineEdit *terminal;

@@ -61,23 +61,23 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     edit_entries = new QLabel();
     edit_entries->setText(i18n("Edit entries: (drag a folder and create a link)"));
 
-    edit_local = new QPushButton(i18n("Edit &Local..."), hist_group);
-    connect(edit_local, SIGNAL(clicked()), SLOT(edit_local_clicked()));
+    edit_personal = new QPushButton(i18n("Edit &Personal..."), hist_group);
+    connect(edit_personal, SIGNAL(clicked()), SLOT(edit_personal_clicked()));
     //CT 25Oct1998
-    edit_local->adjustSize();
-    edit_local->setMinimumWidth(edit_local->width());
-    edit_local->setFixedHeight(edit_local->height());
-    btnLay->addWidget(edit_local);
+    edit_personal->adjustSize();
+    edit_personal->setMinimumWidth(edit_personal->width());
+    edit_personal->setFixedHeight(edit_personal->height());
+    btnLay->addWidget(edit_personal);
     btnLay->addSpacing(20);
     //CT
 
-    edit_global = new QPushButton(i18n("Edit &Global..."), hist_group);
-    connect(edit_global, SIGNAL(clicked()), SLOT(edit_global_clicked()));
+    edit_shared = new QPushButton(i18n("Edit &Shared..."), hist_group);
+    connect(edit_shared, SIGNAL(clicked()), SLOT(edit_shared_clicked()));
     //CT 25Oct1998
-    edit_global->adjustSize();
-    edit_global->setMinimumWidth(edit_global->width());
-    edit_global->setFixedHeight(edit_global->height());
-    btnLay->addWidget(edit_global);
+    edit_shared->adjustSize();
+    edit_shared->setMinimumWidth(edit_shared->width());
+    edit_shared->setFixedHeight(edit_shared->height());
+    btnLay->addWidget(edit_shared);
     btnLay->addSpacing(20);
     //CT
 
@@ -170,18 +170,18 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     inLay->addWidget(ignore_case,1,3);
     //CT
 
-    show_global_section = new QCheckBox(i18n("Show Global section"), misc_group);
+    show_shared_section = new QCheckBox(i18n("Show Shared section"), misc_group);
     //CT 25Oct1998
-    show_global_section->adjustSize();
-    show_global_section->setMinimumSize(show_global_section->size());
-    inLay->addWidget(show_global_section,2,1);
+    show_shared_section->adjustSize();
+    show_shared_section->setMinimumSize(show_shared_section->size());
+    inLay->addWidget(show_shared_section,2,1);
     //CT
 
-    show_local_section = new QCheckBox(i18n("Show Local section"), misc_group);
+    show_personal_section = new QCheckBox(i18n("Show Personal section"), misc_group);
     //CT 25Oct1998
-    show_local_section->adjustSize();
-    show_local_section->setMinimumSize(show_local_section->size());
-    inLay->addWidget(show_local_section,2,3);
+    show_personal_section->adjustSize();
+    show_personal_section->setMinimumSize(show_personal_section->size());
+    inLay->addWidget(show_personal_section,2,3);
     //CT
 
     show_recent_section = new QCheckBox(i18n("Show Recent section"), misc_group);
@@ -216,8 +216,8 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     //CT
 
     /*CT 25Oct1998
-    edit_global->adjustSize();
-    edit_local->adjustSize();
+    edit_shared->adjustSize();
+    edit_personal->adjustSize();
     misc_group->adjustSize();
     recent_files_size->adjustSize();
     recent_folders_size->adjustSize();
@@ -225,8 +225,8 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     show_dot_files->adjustSize();
     ignore_case->adjustSize();
 
-    show_global_section->adjustSize();
-    show_local_section->adjustSize();
+    show_shared_section->adjustSize();
+    show_personal_section->adjustSize();
     show_recent_section->adjustSize();
     show_option_entry->adjustSize();
 
@@ -244,14 +244,14 @@ KDiskNavConfig::KDiskNavConfig( QWidget *parent, const char* name )
     loadSettings();
 }
 
-void KDiskNavConfig::edit_global_clicked() 
+void KDiskNavConfig::edit_shared_clicked() 
 {
   KShellProcess proc;
   proc << "kfmclient folder " + KApplication::kde_datadir() + "/" + "/kdisknav";
   proc.start(KShellProcess::DontCare);
 }
 
-void KDiskNavConfig::edit_local_clicked() 
+void KDiskNavConfig::edit_personal_clicked() 
 {
   KShellProcess proc;
   proc << "kfmclient folder " + KApplication::localkdedir() + "/share/apps/kdisknav";
@@ -266,10 +266,10 @@ void KDiskNavConfig::resizeEvent(QResizeEvent *e) {
     KConfigWidget::resizeEvent(e);
     
     int x = 10;
-    edit_local->move(x, 20);
-    edit_global->move(edit_local->x() + edit_local->width() + 4, 20);
+    edit_personal->move(x, 20);
+    edit_shared->move(edit_personal->x() + edit_personal->width() + 4, 20);
 
-    int y = edit_local->y() + edit_local->height() + 8;
+    int y = edit_personal->y() + edit_personal->height() + 8;
 
     recent_folders_size->move(x, y + 4);
     max_recent_folders_size->setGeometry(recent_folders_size->x() +
@@ -294,10 +294,10 @@ void KDiskNavConfig::resizeEvent(QResizeEvent *e) {
                       y);
 
     y = show_dot_files->y() + show_dot_files->height() + 8;
-    show_global_section->move(x, y);
-    show_local_section->move(show_global_section->x() + show_global_section->width() + 8, y);
+    show_shared_section->move(x, y);
+    show_personal_section->move(show_shared_section->x() + show_shared_section->width() + 8, y);
 
-    y = show_global_section->y() + show_global_section->height() + 8;
+    y = show_shared_section->y() + show_shared_section->height() + 8;
 
     show_recent_section->move(x, y);
     show_option_entry->move(show_recent_section->x() + show_recent_section->width() + 8, y);
@@ -319,8 +319,8 @@ void KDiskNavConfig::loadSettings() {
   show_dot_files->setChecked(config->readEntry("ShowDotFiles", "off") == "on");
   ignore_case->setChecked(config->readEntry("IgnoreCase", "off") == "on");
 
-  show_global_section->setChecked(config->readEntry("ShowGlobalSection", "on") == "on");
-  show_local_section->setChecked(config->readEntry("ShowLocalSection", "on") == "on");
+  show_shared_section->setChecked(config->readEntry("ShowGlobalSection", "on") == "on");
+  show_personal_section->setChecked(config->readEntry("ShowLocalSection", "on") == "on");
   show_recent_section->setChecked(config->readEntry("ShowRecentSection", "on") == "on");
   show_option_entry->setChecked(config->readEntry("ShowOptionEntry", "on") == "on");
 
@@ -351,13 +351,13 @@ void KDiskNavConfig::saveSettings() {
       config->writeEntry("IgnoreCase",
                          (ignore_case->isChecked() ? "on" : "off"));
 
-    if (config->hasKey("ShowGlobalSection") || !show_global_section->isChecked())
+    if (config->hasKey("ShowGlobalSection") || !show_shared_section->isChecked())
       config->writeEntry("ShowGlobalSection",
-                         (show_global_section->isChecked() ? "on" : "off"));
+                         (show_shared_section->isChecked() ? "on" : "off"));
 
-    if (config->hasKey("ShowLocalSection") || !show_local_section->isChecked())
+    if (config->hasKey("ShowLocalSection") || !show_personal_section->isChecked())
       config->writeEntry("ShowLocalSection",
-                         (show_local_section->isChecked() ? "on" : "off"));
+                         (show_personal_section->isChecked() ? "on" : "off"));
 
     if (config->hasKey("ShowRecentSection") || !show_recent_section->isChecked())
       config->writeEntry("ShowRecentSection",
