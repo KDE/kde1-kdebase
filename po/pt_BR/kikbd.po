@@ -3,6 +3,7 @@ msgstr ""
 "Date: 1998-04-15 09:13:42+0400\n"
 "From: Alexander Budnik,LCTA 323,64880,, <budnik@linserv.jinr.ru>\n"
 "Content-Type: text/plain; charset=\n"
+"Last-Translator: Elvis Pfützenreuter <epx@netville.com.br>"
 "Xgettext-Options: -C -ktranslate\n"
 "Files: kikbd.C mkikbd.C keytrans.C keymap.C mkeymap.C kikbdconf.C kobjconf.C kcmikbd/kikbdconf.C kcmikbd/kobjconf.C kcmikbd/main.C kcmikbd/mwidgets.C kcmikbd/widgets.C\n"
 
