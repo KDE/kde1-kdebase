@@ -51,7 +51,6 @@ KIOSlaveIPC::~KIOSlaveIPC()
      * MODIFIED
      */
     emit closed( this );
-    printf("CLOSE EMITTED %x\n",this);
    
     // data_sock->enableRead( FALSE );
     delete data_sock;

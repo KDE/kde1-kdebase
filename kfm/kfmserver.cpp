@@ -14,6 +14,8 @@
 #include "kfmexec.h"
 #include <config-kfm.h>
 
+#include <klocale.h>
+
 #include <qmsgbox.h>
 
 #include <stdlib.h>
@@ -32,7 +34,8 @@ KFMServer::KFMServer() : KfmIpcServer()
 	FILE *f = fopen( fn.data(), "wb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::warning( 0, "KFM Error", "Could not create ~/.kde/share/apps/kfm/magic" );
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+				  klocale->translate( "Could not create ~/.kde/share/apps/kfm/magic" ) );
 	    return;
 	}
 	
@@ -41,7 +44,8 @@ KFMServer::KFMServer() : KfmIpcServer()
 	fwrite( pass.data(), 1, pass.length(), f );
 	fclose( f );
 
-	QMessageBox::warning( 0, "KFM Warning", "Please change the password in\n~/.kde/share/apps/kfm/magic" );
+	QMessageBox::warning( 0, klocale->translate( "KFM Warning" ),
+			      klocale->translate( "Please change the password in\n~/.kde/share/apps/kfm/magic" ) );
     }
     else
 	fclose( f );
@@ -140,7 +144,9 @@ void KFMServer::slotOpenURL( const char* _url )
 	KURL u( _url );
 	if ( u.isMalformed() )
 	{
-	    QMessageBox::warning( 0, "KFM Error", "Malformed URL\n" + url );
+	    QString tmp;
+	    tmp.sprintf( "%s\n%s", klocale->translate( "Malformed URL" ), url );
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ), tmp );
 	    return;
 	}
 
@@ -161,7 +167,7 @@ void KFMServer::slotOpenURL( const char* _url )
     
     QString home = "file:";
     home += QDir::homeDirPath().data();
-    DlgLineEntry l( "Open Location:", home.data(), KRootWidget::getKRootWidget(), true );
+    DlgLineEntry l( klocale->translate( "Open Location:" ), home.data(), KRootWidget::getKRootWidget(), true );
     if ( l.exec() )
     {
 	QString url = l.getText();
@@ -266,7 +272,8 @@ void KFMClient::slotAuth( const char *_password )
 	FILE *f = fopen( fn.data(), "rb" );
 	if ( f == 0L )
 	{
-	    QMessageBox::warning( 0, "KFM Error", "You dont have the file ~/.kde/share/apps/kfm/magic\nAuthorization failed" );
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+				  klocale->translate( "You dont have the file ~/.kde/share/apps/kfm/magic\nAuthorization failed" ) );
 	    return;
 	}
 	char buffer[ 1024 ];
@@ -274,14 +281,16 @@ void KFMClient::slotAuth( const char *_password )
 	fclose( f );
 	if ( p == 0L )
 	{
-	    QMessageBox::warning( 0, "KFM Error", "The file ~/.kde/share/apps/kfm/magic is corrupted\nAuthorization failed" );
+	    QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+				  klocale->translate( "The file ~/.kde/share/apps/kfm/magic is corrupted\nAuthorization failed" ) );
 	    return;
 	}
 	*( KFMClient::password ) = buffer;
     }
     if ( *( KFMClient::password ) != _password )
     {
-	QMessageBox::warning( 0, "KFM Error", "Someone tried to authorize himself\nusing a wrong password" );
+	QMessageBox::warning( 0, klocale->translate( "KFM Error" ),
+			      klocale->translate( "Someone tried to authorize himself\nusing a wrong password" ) );
 	bAuth = false;
 	return;
     }

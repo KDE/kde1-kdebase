@@ -172,7 +172,9 @@ KMimeType* KMimeType::getMagicMimeType( const char *_url )
     if ( u.hasSubProtocol() )
 	return type;
     
-    KMimeMagicResult* result = KMimeType::findFileType( u.path() );
+    QString path( u.path() );
+    KURL::decodeURL( path );
+    KMimeMagicResult* result = KMimeType::findFileType( path );
 
     // Is it a directory or dont we know anything about it ?
     if ( result->getContent() == 0L || strcmp( "inode/directory", result->getContent() ) == 0 ||

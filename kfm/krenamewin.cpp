@@ -4,43 +4,42 @@
 
 #include <klocale.h>
 #include <kapp.h>
+#include <qmsgbox.h>
 
 KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, bool _modal ) :
     QDialog ( parent, "" , _modal )
 {
-    debugT("KRenameWindow +++++++++++++++++++++++++++++++++++++++++++++\n");
-
     modal = _modal;
     
     src = _src;
     dest = _dest;
     
     setCaption(klocale->translate("KFM Warning"));
-    
-    b0 = new QPushButton( klocale->translate("Overwrite"),
-			  this, "Overwrite");
-    b0->setGeometry( 10, 170, 90, 30 );
-    connect(b0, SIGNAL(clicked()), this, SLOT(b0Pressed()));
 
-    b1 = new QPushButton( klocale->translate("Overwrite All"), 
-			  this, "Overwrite All");
-    b1->setGeometry( 110, 170, 90, 30 );
-    connect(b1, SIGNAL(clicked()), this, SLOT(b1Pressed()));
+    b4 = new QPushButton( klocale->translate("Cancel"), this, "Cancel");
+    b4->setGeometry( 10, 170, 90, 30 );
+    connect(b4, SIGNAL(clicked()), this, SLOT(b4Pressed()));
+
+    b3 = new QPushButton( klocale->translate("Rename"), 
+			  this, "Rename");
+    b3->setGeometry( 110, 170, 90, 30 );
+    connect(b3, SIGNAL(clicked()), this, SLOT(b3Pressed()));
     
     b2 = new QPushButton( klocale->translate("Skip"), 
 			  this, "Skip");
     b2->setGeometry( 210, 170, 90, 30 );
     connect(b2, SIGNAL(clicked()), this, SLOT(b2Pressed()));
 
-    b3 = new QPushButton( klocale->translate("Rename"), 
-			  this, "Rename");
-    b3->setGeometry( 310, 170, 90, 30 );
-    connect(b3, SIGNAL(clicked()), this, SLOT(b3Pressed()));
+    b0 = new QPushButton( klocale->translate("Overwrite"),
+			  this, "Overwrite");
+    b0->setGeometry( 310, 170, 90, 30 );
+    connect(b0, SIGNAL(clicked()), this, SLOT(b0Pressed()));
 
-    b4 = new QPushButton( klocale->translate("Cancel"), this, "Cancel");
-    b4->setGeometry( 410, 170, 90, 30 );
-    connect(b4, SIGNAL(clicked()), this, SLOT(b4Pressed()));
-    
+    b1 = new QPushButton( klocale->translate("Overwrite All"), 
+			  this, "Overwrite All");
+    b1->setGeometry( 410, 170, 90, 30 );
+    connect(b1, SIGNAL(clicked()), this, SLOT(b1Pressed()));
+        
     QLabel *lb = new QLabel( src.data(), this );
     lb->setGeometry( 10, 10, 350, 20 );
 
@@ -60,7 +59,7 @@ KRenameWin::KRenameWin(QWidget *parent, const char *_src, const char *_dest, boo
     lineEdit->setText( dest.data() );
     lineEdit->setGeometry( 10, 130, 300, 30 );
     
-    b0->setDefault( true );
+    b4->setDefault( true );
     
     setGeometry( x(), y(), 510, 210 );
 }
@@ -93,11 +92,19 @@ void KRenameWin::b2Pressed()
 	emit result( this, 2, src.data(), dest.data() );
 }
 
+// Rename
 void KRenameWin::b3Pressed()
 {
     if ( strcmp( "", lineEdit->text() ) == 0 )
 	return;
 
+    if ( dest == lineEdit->text() )
+    {
+	QMessageBox::warning( this, klocale->translate( "KFM Error" ),
+			      klocale->translate( "You did not change the name!\n" ) );
+	return;
+    }
+    
     if ( modal )
 	done( 3 );
     else

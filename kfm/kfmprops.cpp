@@ -306,25 +306,31 @@ void FilePropsPage::applyChanges()
     KURL::decodeURL( path );
     QString fname = properties->getKURL()->filename();
     KURL::decodeURL( fname );
-
+    // QString n = name->text();
+    // KURL::encodeURL( n );
+    
     // Do we need to rename the file ?
     if ( strcmp( oldName.data(), name->text() ) != 0 )
     {
-	QString s = properties->getURL();
+	QString s = path.data();
 	s.detach();
 	int i = s.findRev( "/" );
 	// Should never happen
 	if ( i == -1 )
 	    return;
-	s = s.left( i );
-	QString tmp = s.data();
-	tmp.detach();
+	s.truncate( i );
+	// = s.left( i );
+	// QString tmp = s.data();
+	// tmp.detach();
 	s += "/";
 	s += name->text();
-	KURL u( s.data() );
-	QString t( u.path() );
-	KURL::decodeURL( t );
-	rename( path, t );
+	// KURL u( s.data() );
+	// QString t( u.path() );
+	// KURL::decodeURL( t );
+	printf("Renaming '%s' to '%s'\n",path.data(),s.data());
+	if ( rename( path, s ) != 0 )
+	    QMessageBox::warning( this, klocale->translate( "KFM Error" ),
+				  klocale->translate( "Could not rename the file or directory\nThe destination seems to already exist\n" ) );
 	properties->emitPropertiesChanged( name->text() );
     }
 }
