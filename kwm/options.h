@@ -44,11 +44,13 @@ enum BUTTON_FUNCTIONS {
 };
 
 
-//CT 18jan98
+//CT 18jan98, 07mar98
 enum PLACEMENT_POLICY {
   SMART_PLACEMENT,
   CASCADE_PLACEMENT,
-  RANDOM_PLACEMENT
+  RANDOM_PLACEMENT,
+  INTERACTIVE_PLACEMENT,
+  MANUAL_PLACEMENT
 };
    
 
@@ -66,6 +68,8 @@ struct kwmOptions {
   bool Button3Grab;
   //CT 18jan98
   PLACEMENT_POLICY Placement;
+  //CT 07mar98
+  uint interactive_trigger;
 
   const char* rstart;
   int titlebar_doubleclick_command;

@@ -775,10 +775,23 @@ void MyApp::readConfiguration(){
   //CT 30jan98
   else if( key == "random")
     options.Placement = RANDOM_PLACEMENT;
-  else{
-    config->writeEntry("WindowsPlacement", "random");
-    options.Placement = RANDOM_PLACEMENT;
+  //CT 07mar98 bad hack. To clean
+  else if( key == "manual")
+    options.Placement = MANUAL_PLACEMENT;
+  else if( key.left(11) == "interactive") {
+    options.Placement = INTERACTIVE_PLACEMENT;
+    int comma_pos = key.find(',');
+    if (comma_pos < 0)
+      options.interactive_trigger = 0;
+    else
+      options.interactive_trigger = 
+	key.right(key.length()-comma_pos).toUInt(0);
   }
+  else {
+    config->writeEntry("WindowsPlacement", "smart");
+    options.Placement = SMART_PLACEMENT;
+  }
+  
 
   options.rstart = qstrdup(config->readEntry("RstartProtocol", "rstart -v"));
   config->writeEntry("RstartProtocol", options.rstart);

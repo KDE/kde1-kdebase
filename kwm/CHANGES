@@ -12,6 +12,12 @@ influences from my experiences with the former kwm.
 In 0.10:
 --------
   patchlevel 28:
+     - added WindowsPlacement=interactive,10 and 
+	WindowsPlacement=manual. The number after interactive indicates
+	what percentage from the current desktop array should represent
+	the total overlap area before manual placement to be enforced. 
+	This value can be bigger than 100 :-) (Cristian Tibirna)
+     - fixed iconified windows avoidance bug in smart placement (CT)
      - electric borders: Just move the cursor to the border of
        the screen, wait a short time and kwm will magically change the
        current virtual desktop. The interval can be specified in 

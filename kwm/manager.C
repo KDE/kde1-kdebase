@@ -1066,8 +1066,9 @@ void Manager::smartPlacement(Client* c) {
       if(temp > y) other = temp;
       
       //test the position of each window on current desk
+      //07mar98. fixed bug which made iconified windows avoided as if visible
       for(l = clients.first(); l ; l = clients.next()) {
-	if(!l->isOnDesktop(currentDesktop()) || (l == c)) 
+	if(!l->isOnDesktop(currentDesktop()) || (l == c) || c->isIconified()) 
 	  continue;
 	
 	temp = l->geometry.height() + l->geometry.y();
@@ -1087,6 +1088,14 @@ void Manager::smartPlacement(Client* c) {
       xopt = x;
       yopt = y;
     }
+  }
+
+  //CT 07mar98 verify whether to place interactively or not
+  if(options.Placement == INTERACTIVE_PLACEMENT) {
+    if(options.interactive_trigger < 
+       (over_min*100/(maxRect.height() * maxRect.width())))
+      options.Placement = MANUAL_PLACEMENT;
+    else options.Placement = SMART_PLACEMENT;
   }
   
   // place the window
@@ -1327,7 +1336,9 @@ void Manager::manage(Window w, bool mapped){
       // nothing
   }
   else {
-    if(options.Placement == SMART_PLACEMENT)
+    if((options.Placement == SMART_PLACEMENT)  ||
+       (options.Placement == MANUAL_PLACEMENT) ||
+       (options.Placement == INTERACTIVE_PLACEMENT))
       smartPlacement(c);
     else if(options.Placement == CASCADE_PLACEMENT)
       cascadePlacement(c);
@@ -1450,8 +1461,9 @@ void Manager::manage(Window w, bool mapped){
     raiseSoundEvent("Window New");
 
 
-  if (!dohide && c->getDecoration() != KWM::noDecoration)
+  if (!dohide && c->getDecoration() != KWM::noDecoration) {
     activateClient(c);
+  }
   else
     c->setactive(FALSE);
 
@@ -1460,6 +1472,9 @@ void Manager::manage(Window w, bool mapped){
 
   if (!initting)
     XUngrabServer(qt_xdisplay()); 
+
+  if(options.Placement == MANUAL_PLACEMENT)
+    c->handleOperation(Client::operationFromCommand("winMove"));
   
 }
 
