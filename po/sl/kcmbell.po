@@ -2,11 +2,10 @@
 # Copyright (C) 1998 Free Software Foundation, Inc.
 # Bla¾ Zupanèiè <blazzupancic@hotmail.com>, 1998.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdelibs\n"
-"POT-Creation-Date: 1998-12-18 01:14+0100\n"
+"Project-Id-Version: kcmbell\n"
+"POT-Creation-Date: 1999-07-05 01:31+0200\n"
 "PO-Revision-Date: 1999-01-23 12:52+0100\n"
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian\n"
@@ -14,38 +13,38 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.cpp:52
+#: main.cpp:54
 msgid "&Bell"
 msgstr "&Zvonec"
 
-#: main.cpp:58
+#: main.cpp:60
 msgid "usage: kcmbell [-init | bell]\n"
 msgstr "Uporaba: kcmbell [-init | bell]\n"
 
-#: main.cpp:89
+#: main.cpp:91
 msgid "Bell settings"
 msgstr "Nastavitve zvonca"
 
-#: bell.cpp:65
+#: bell.cpp:67
 msgid "Volume"
 msgstr "Glasnost"
 
-#: bell.cpp:67
+#: bell.cpp:69
 msgid "Pitch"
 msgstr "Vi¹ina tona"
 
-#: bell.cpp:69
+#: bell.cpp:71
 msgid "Hz"
 msgstr "Hz"
 
-#: bell.cpp:70
+#: bell.cpp:72
 msgid "Duration"
 msgstr "Trajanje"
 
-#: bell.cpp:72
+#: bell.cpp:74
 msgid "milliseconds"
 msgstr "milisekund"
 
-#: bell.cpp:87
+#: bell.cpp:89
 msgid "Test"
 msgstr "Preizkusi"

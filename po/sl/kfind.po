@@ -2,11 +2,10 @@
 # Copyright (C) 1999 Free Software Foundation, Inc.
 # Marko Samastur <markos@elite.org>, 1999
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: kdebase\n"
-"POT-Creation-Date: 1999-03-30 01:17+0200\n"
+"Project-Id-Version: kfind\n"
+"POT-Creation-Date: 1999-07-05 01:32+0200\n"
 "PO-Revision-Date: 1999-03-27 08:34+0100\n"
 "Last-Translator: Marko Samastur <markos@elite.org>\n"
 "Language-Team: Slovenian <ftp://ftp.lugos.si/pub/lugos/localization/kde-sl>\n"
@@ -14,226 +13,221 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: kfdird.cpp:46
+#: kfdird.cpp:35
+msgid "Select directory"
+msgstr "Izberi imenik"
+
+#: kfdird.cpp:37
+msgid "Current directory:"
+msgstr "Trenutni imenik:"
+
+#: kfdird.cpp:39
 msgid "Directories:"
 msgstr "Imeniki:"
 
-#: kfdird.cpp:168 kfdird.cpp:193 kfdird.cpp:211
+#: kfdird.cpp:118 kfdird.cpp:159
 msgid "Cannot open or read directory."
 msgstr "Ne morem odpreti ali prebrati imenika."
 
-#: kfindtop.cpp:121
+#: kfindtop.cpp:104
 msgid "&Start search"
 msgstr "Prièni i&skati"
 
-#: kfindtop.cpp:123
+#: kfindtop.cpp:106
 msgid "S&top search"
 msgstr "&Prekini iskanje"
 
-#: kfindtop.cpp:128
+#: kfindtop.cpp:111
 msgid "&Open"
 msgstr "&Odpri"
 
-#: kfindtop.cpp:130
+#: kfindtop.cpp:113
 msgid "&Add to archive"
 msgstr "Dod&aj arhivu"
 
-#: kfindtop.cpp:135
+#: kfindtop.cpp:119
 msgid "&Properties"
 msgstr "&Nastavitve"
 
-#: kfindtop.cpp:138
+#: kfindtop.cpp:123
 msgid "Open Containing &Folder"
 msgstr "Odpri vsebovano &mapo"
 
-#: kfindtop.cpp:141
+#: kfindtop.cpp:127
 msgid "&Save Search"
 msgstr "&Shrani iskanje"
 
-#: kfindtop.cpp:158
+#: kfindtop.cpp:144
 msgid "&Select All"
 msgstr "&Izberi vse"
 
-#: kfindtop.cpp:160
+#: kfindtop.cpp:146
 msgid "Unse&lect All"
 msgstr "Neizberi vse"
 
-#: kfindtop.cpp:162
-msgid "&Invert Selection"
-msgstr "Preobrni &izbor"
-
-#: kfindtop.cpp:174
+#: kfindtop.cpp:155
 msgid "&Preferences ..."
 msgstr "&Nastavitve ..."
 
-#: kfindtop.cpp:179
-#, c-format
+#: kfindtop.cpp:158
 msgid ""
-"KFind %s\n"
+"KFind %1\n"
 "Frontend to find utility\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Special thanks to Stephan Kulow\n"
 "<coolo@kde.org>"
 msgstr ""
-"KI¹èi %s\n"
+"KI¹èi %1\n"
 "Grafièna maska za pripomoèek find\n"
 "Miroslav Flídr <flidr@kky.zcu.cz>\n"
 "\n"
 "Posebna zahvala gre Stephanu Kulowu\n"
 "<coolo@kde.org>"
 
-#: kfindtop.cpp:199
+#: kfindtop.cpp:177
 msgid "Start Search"
 msgstr "Prièni iskanje"
 
-#: kfindtop.cpp:204
+#: kfindtop.cpp:182
 msgid "New Search"
 msgstr "Novo iskanje"
 
-#: kfindtop.cpp:209
+#: kfindtop.cpp:187
 msgid "Stop Search"
 msgstr "Ustavi iskanje"
 
-#: kfindtop.cpp:222
+#: kfindtop.cpp:199
 msgid "Add to archive"
 msgstr "Dodaj arhivu"
 
-#: kfindtop.cpp:237
+#: kfindtop.cpp:214
 msgid "Open Containing Folder"
 msgstr "Odpri vsebovano mapo"
 
-#: kfindtop.cpp:242
+#: kfindtop.cpp:219
 msgid "Save Search Results"
 msgstr "Shrani rezultate iskanja"
 
-#: kftabdlg.cpp:72
+#: kftabdlg.cpp:59
 msgid "&Named:"
 msgstr "Poime&novan:"
 
-#: kftabdlg.cpp:75
+#: kftabdlg.cpp:61
 msgid "&Look in:"
 msgstr "Pog&lej v:"
 
-#: kftabdlg.cpp:78
-msgid "&Browse ..."
-msgstr "Pre&brskaj ..."
-
-#: kftabdlg.cpp:84
+#: kftabdlg.cpp:62
 msgid "Include &subfolders"
 msgstr "Vkljuèi &podmape"
 
-#: kftabdlg.cpp:118
+#: kftabdlg.cpp:63
+msgid "&Browse ..."
+msgstr "Pre&brskaj ..."
+
+#: kftabdlg.cpp:90
 msgid " Name& Location "
 msgstr "Ime& lokacije"
 
-#: kftabdlg.cpp:130
-msgid "and"
-msgstr "in"
-
-#: kftabdlg.cpp:131
-msgid "month(s)"
-msgstr "mesec(ev)"
-
-#: kftabdlg.cpp:132
-msgid "day(s)"
-msgstr "dan(dnevov)"
-
-#: kftabdlg.cpp:147
+#: kftabdlg.cpp:96
 msgid "&All files"
 msgstr "&Vse datoteke"
 
-#: kftabdlg.cpp:148
+#: kftabdlg.cpp:97
 msgid "Find all files created or &modified:"
 msgstr "Poi¹èi vse datoteke &ustvarjene ali spremenjene:"
 
-#: kftabdlg.cpp:149
+#: kftabdlg.cpp:100
 msgid "&between"
 msgstr "&med"
 
-#: kftabdlg.cpp:150
-msgid "during the previou&s "
+#: kftabdlg.cpp:101
+msgid "during the previou&s"
 msgstr "med pre&j¹njim"
 
-#: kftabdlg.cpp:151
-msgid "&during the previous "
+#: kftabdlg.cpp:102
+msgid "&during the previous"
 msgstr "med p&rej¹njim "
 
-#: kftabdlg.cpp:199
+#: kftabdlg.cpp:103
+msgid "and"
+msgstr "in"
+
+#: kftabdlg.cpp:104
+msgid "month(s)"
+msgstr "mesec(ev)"
+
+#: kftabdlg.cpp:105
+msgid "day(s)"
+msgstr "dan(dnevov)"
+
+#: kftabdlg.cpp:172
 msgid " Date Modified "
 msgstr " Datum spremenjen "
 
-#: kftabdlg.cpp:206
+#: kftabdlg.cpp:179
 msgid "Of &type:"
 msgstr "&Tipa:"
 
-#: kftabdlg.cpp:208
+#: kftabdlg.cpp:181
 msgid "&Containing Text:"
 msgstr "Vs&ebuje besedilo"
 
-#: kftabdlg.cpp:213
+#: kftabdlg.cpp:183
 msgid "&Size is:"
 msgstr "&Velikosti:"
 
-#: kftabdlg.cpp:217
+#: kftabdlg.cpp:185
 msgid "KB"
 msgstr "KB"
 
-#: kftabdlg.cpp:236
+#: kftabdlg.cpp:186
+msgid "Case S&ensitive"
+msgstr "Razlikuj &velike/male"
+
+#: kftabdlg.cpp:192
 msgid "All Files and Folders"
 msgstr "Vse datoteke in mape"
 
-#: kftabdlg.cpp:238
+#: kftabdlg.cpp:194
 msgid "Folders"
 msgstr "Mape"
 
-#: kftabdlg.cpp:239
+#: kftabdlg.cpp:195
 msgid "Symbolic links"
 msgstr "Simbolne povezave"
 
-#: kftabdlg.cpp:240
+#: kftabdlg.cpp:196
 msgid "Special files (sockets, device files...)"
 msgstr "Posebne datoteke (vtiènice, datoteke naprav...)"
 
-#: kftabdlg.cpp:241
+#: kftabdlg.cpp:197
 msgid "Executable files"
 msgstr "Izvr¹ljive datoteke"
 
-#: kftabdlg.cpp:242
+#: kftabdlg.cpp:198
 msgid "SUID executable files"
 msgstr "SUID izvr¹ljive datoteke"
 
-#: kftabdlg.cpp:250
+#: kftabdlg.cpp:206
 msgid "(none)"
 msgstr "(niè)"
 
-#: kftabdlg.cpp:251
+#: kftabdlg.cpp:207
 msgid "At Least"
 msgstr "Vsaj"
 
-#: kftabdlg.cpp:252
+#: kftabdlg.cpp:208
 msgid "At Most"
 msgstr "Najveè"
 
-#: kftabdlg.cpp:263
+#: kftabdlg.cpp:238
 msgid " Advanced "
 msgstr " Napredne "
 
-#: kftabdlg.cpp:501
+#: kftabdlg.cpp:359
 msgid "The date is not valid!!"
 msgstr "Datum ni veljaven!!"
-
-#: kftabdlg.cpp:513
-msgid "The month(s) value isn't valid!!"
-msgstr "Vrednost meseca(ev) ni veljavna!!"
-
-#: kftabdlg.cpp:524
-msgid "The day(s) value isn't valid!!"
-msgstr "Vrednost dneva(ov) ni veljavna!!"
-
-#: kftabdlg.cpp:541
-msgid "The value in size isn't valid number!!"
-msgstr "Velikost ni veljavna ¹tevilka!!"
 
 #: kfoptions.cpp:52
 msgid "Preferences"
@@ -283,80 +277,62 @@ msgstr "Dodaj nov"
 msgid "Archivers"
 msgstr "Arhiverji"
 
-#: kfwin.cpp:112 kfwin.cpp:119 kfwin.cpp:139 kfwin.cpp:166
-#, c-format
-msgid "%d file(s) found"
-msgstr "najdeno %d datotek(a)"
+#: kfwin.cpp:50
+msgid "Read-write"
+msgstr "Pisanje/branje"
 
-#: kfwin.cpp:250
+#: kfwin.cpp:51
+msgid "Read-only"
+msgstr "Samo za branje"
+
+#: kfwin.cpp:52
+msgid "Write-only"
+msgstr "Samo za pisanje"
+
+#: kfwin.cpp:53
+msgid "Inaccessible"
+msgstr "Nedostopno"
+
+#: kfwin.cpp:113
+msgid "Name"
+msgstr "Poime&novan:"
+
+#: kfwin.cpp:114
+msgid "In directory"
+msgstr "V imeniku:"
+
+#: kfwin.cpp:115
+msgid "Size"
+msgstr "Velikost"
+
+#: kfwin.cpp:117
+msgid "Modified"
+msgstr "Spremenjena"
+
+#: kfwin.cpp:119
+msgid "Permissions"
+msgstr "Dovoljenja"
+
+#: kfwin.cpp:207
 msgid "It wasn't possible to save results!"
 msgstr "Rezultatov ni bilo mogoèe shraniti!"
 
-#: kfwin.cpp:258 kfwin.cpp:260 kfwin.cpp:262
+#: kfwin.cpp:213 kfwin.cpp:215 kfwin.cpp:217
 msgid "KFind Results File"
 msgstr "KI¹èi datoteka rezultatov"
 
-#: kfwin.cpp:287
+#: kfwin.cpp:241
 msgid "Results were saved to file\n"
 msgstr "Rezultati so bili shranjeni v datoteko\n"
 
-#: kfwin.cpp:302
-#, c-format
-msgid ""
-"Do you really want to delete file:\n"
-"%s"
-msgstr ""
-"Ali res hoèete pobrisati datoteko:\n"
-"%s"
-
-#: kfwin.cpp:304
-msgid "Delete File"
-msgstr "Pobri¹i datoteko"
-
-#: kfwin.cpp:316
-msgid ""
-"You have no permission\n"
-" to delete this file"
-msgstr ""
-"Nimate potrebnih dovoljenj\n"
-" za brisanje te datoteke"
-
-#: kfwin.cpp:322
-msgid ""
-"It isn't possible to delete\n"
-"selected file"
-msgstr ""
-"Izbrane datoteke ni mogoèe\n"
-"pobrisati"
-
-#: kfwin.cpp:340
-msgid ""
-"You have no permission\n"
-" to delete this directory"
-msgstr ""
-"Nimate potrebnih dovoljenj\n"
-" za brisanje tega imenika"
-
-#: kfwin.cpp:345
-msgid ""
-"Specified directory\n"
-"is not empty!"
-msgstr ""
-"Izbran imenik ni\n"
-"prazen!"
-
-#: kfwin.cpp:350
-msgid ""
-"It isn't possible to delete\n"
-"selected directory"
-msgstr ""
-"Izbranega imenika ni mogoèe\n"
-"pobrisati"
-
-#: kfwin.cpp:442
+#: kfwin.cpp:424
 msgid "Couldn't recognize archive type!"
 msgstr "Nisem prepoznal tipa arhiva!"
 
-#: kfwin.cpp:501
+#: kfwin.cpp:481
 msgid "Error while creating child process!"
 msgstr "Napaka pri kreiranju procesa otroka!"
+
+#: kfind.cpp:99 kfind.cpp:159
+msgid "%1 file(s) found"
+msgstr "najdeno %1 datotek(a)"
