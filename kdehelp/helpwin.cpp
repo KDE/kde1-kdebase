@@ -801,7 +801,7 @@ int KHelpWindow::openRemote( const char *_url )
 	}
 
 	localFile.sprintf( "file:/tmp/kdehelpXXXXXX" );
-	mktemp( localFile.data() );
+	mktemp( localFile.data() + 5 );
 	connect( remotePage, SIGNAL( finished() ), this, SLOT( slotRemoteDone() ) );
 	remotePage->copy( remoteFile.data(), localFile.data() );
 
@@ -823,7 +823,7 @@ int KHelpWindow::runCGI( const char *_url )
 	connect( CGIServer, SIGNAL( finished() ), this, SLOT( slotCGIDone() ) );
 
 	localFile.sprintf( "file:/tmp/kdehelpXXXXXX" );
-	mktemp( localFile.data() );
+	mktemp( localFile.data() + 5 );
 
 	CGIServer->get( _url, localFile, "Get" );
 

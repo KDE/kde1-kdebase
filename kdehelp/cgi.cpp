@@ -143,7 +143,7 @@ void KCGI::checkScript()
 
 KCGI::~KCGI()
 {
-	if ( scriptPID )
+	if ( scriptPID > 0 )
 		kill( scriptPID, SIGKILL );
 }
 

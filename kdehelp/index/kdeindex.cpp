@@ -71,7 +71,7 @@ int Entry::readEntry( const char *filename )
 
 void Entry::writeHTML( QTextStream &stream )
 {
-	stream << "<dt><a href=file:" << docPath << "><b>" << name
+	stream << "<dt><a href=file:\"" << docPath << "\"><b>" << name
 		 << "</b></a>" << endl;
 	stream << "<dd>" << info << endl;
 }
