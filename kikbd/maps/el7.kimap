@@ -5,6 +5,7 @@ Authors=Dimitrios P. Bouras <dbouras@hol.gr>,
 Comment=Hellenic Keyboard (standard ISO8859-7 keysyms)
 
 Language=Greek
+Language[br]=Gresianeg
 Language[ca]=Grec
 Language[cs]=Øecký
 Language[da]=Græsk
