@@ -665,7 +665,7 @@ int KIOServer::isDir( const char *_url )
 	struct stat buff;
 	if ( stat( u.path(), &buff ) != 0 )
 	{
-	  warning("stat() failed, probably file doesn't exist\n");
+	  warning("stat(%s) failed, probably file doesn't exist\n", u.path());
 	  return 0;
 	}
 	
