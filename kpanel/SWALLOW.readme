@@ -1,3 +1,4 @@
+Readme updated for kpanel-0.18.10 / kwm-0.10
 Readme updated for kpanel-0.17 / kwm-0.10
             Matthias
 ---------------------------------------------------
@@ -20,7 +21,7 @@ as "xosview.kdelnk":
 
 [KDE Desktop Entry]
 icon=whatever.xpm
-SwallowExec=xload -bg grey -nolabel  -geometry 50x50+10000+10000
+SwallowExec=xload -bg grey -nolabel  
 SwallowTitle=xload
 Exec=xosview
 Comment=Informations about your system status
@@ -32,7 +33,7 @@ Try this as "Calendar.kdelnk":
 
 [KDE Desktop Entry]
 icon=whatever.xpm
-SwallowExec=xclock -bg grey -geometry 50x50+10000+10000
+SwallowExec=xclock -bg grey 
 SwallowTitle=xclock
 Exec=xcalendar
 Comment=Calendar
@@ -72,14 +73,7 @@ the stuff to its modules.
 You may define at maximum 4 icons (icon, icon2, icon3, icon4 ).  So
 the feature is definitly not meant for animation!!  If you need
 animation, just write an outstanding program and let kpanel swallow
-it.  But please write only programs for swallowing that don't take any
-mouse-input from X. (If you use a Qt-Widget you may have to disable
-the default Input-Scheme of Qt with XSelectInput. Of course also a
-complex program can be swallowed by kpanel, for example coolmail. But
-then you cannot move the button around on the panel, since kpanel
-doesn't get the events cause the application needs them itself.  If
-you are able to catch the margin of the button, you can of course move
-it around.)
+it.  
 
 Also the PanelIdentity is restricted to 5 character maximum, following
 character are ignored (this is due to the limited X-Atoms

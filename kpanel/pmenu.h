@@ -78,8 +78,6 @@ public:
   PMenu    *getMenu() { return sub_menu; }
   QPopupMenu *getQPopupMenu() { return cmenu; }
   void      removeMenu();
-  bool      isReadOnly() { return read_only; }
-  void      setReadOnly( bool b ) { read_only = b; }
   QString   getSaveName();
   QString   bigIconName(){ return big_pixmap_name;};
   QString   text() { return text_name; }
@@ -115,7 +113,6 @@ protected:
   myPopupMenu  *cmenu;
   QObject     *recv;
   char        *memb;
-  bool         read_only;
   QString      comment;
 
 private:

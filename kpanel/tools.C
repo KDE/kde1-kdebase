@@ -274,17 +274,9 @@ void myTaskButton::drawButtonLabel( QPainter *painter ){
 
 
 void execute(const char* cmd){
-  char* shell = NULL;
-  if (!shell){
-    if (getenv("SHELL"))
-      shell = qstrdup(getenv("SHELL"));
-    else
-      shell = "/bin/sh";
-  }
-  KProcess proc;
-  proc.setExecutable(shell);
-  proc << "-c" << cmd;
-  proc.start(KProcess::DontCare);
+  KShellProcess proc;
+  proc << cmd;
+  proc.start(KShellProcess::DontCare);
 }
 
 

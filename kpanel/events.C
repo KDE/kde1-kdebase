@@ -11,6 +11,7 @@
 #include <X11/Xatom.h>
 #include <qkeycode.h>
 #include <kfm.h>
+#include <ksimpleconfig.h>
 
 
 myFrame::myFrame(bool _autoHide, QWidget *parent, const char* name, WFlags f):QFrame(parent, name, f){
@@ -132,9 +133,34 @@ void kPanel::windowAdd(Window w){
 		    entries[bi].button->width()-6,
 		    entries[bi].button->height()-6);
       XMapWindow(qt_xdisplay(),w);
-      XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, w, True, 
-		  ButtonPressMask,
-		  GrabModeSync, GrabModeAsync, None, None);
+
+      
+      // install a passive grab on this button to ensure that
+      // kpanel recieves the button events.
+      
+      // Exception: do not install a passive grab for the left mouse
+      // button if there is no Exec property in the kdelnk file.
+      KSimpleConfig pConfig(entries[bi].pmi->fullPathName(),true);
+      pConfig.setGroup("KDE Desktop Entry");
+      QString aString = pConfig.readEntry("Exec", "");
+      if (aString.isEmpty()){
+	printf("passive grab ohne LMB!\n");
+	XGrabButton(qt_xdisplay(),
+		    Button2,
+		    AnyModifier, w, True, 
+		    ButtonPressMask,
+		    GrabModeSync, GrabModeAsync, None, None);
+	XGrabButton(qt_xdisplay(),
+		    Button3,
+		    AnyModifier, w, True, 
+		    ButtonPressMask,
+		    GrabModeSync, GrabModeAsync, None, None);
+      }
+      else
+	XGrabButton(qt_xdisplay(), AnyButton, AnyModifier, w, True, 
+		    ButtonPressMask,
+		    GrabModeSync, GrabModeAsync, None, None);
+      
       entries[bi].button->swallowed_window = w;
     }
   }
@@ -668,8 +694,17 @@ void kPanel::standalonePanelButtonClicked(){
   showPanel();
 }
 
-void kPanel::mousePressEvent( QMouseEvent */* ev */  ){
+void kPanel::mousePressEvent( QMouseEvent*  ev  ){
   raise();
+  if (ev->button() == RightButton){
+    QPopupMenu* p = new QPopupMenu();
+    p->insertItem(klocale->translate("Configure"), 
+		  this, SLOT(configurePanel()));
+    p->insertItem(klocale->translate("Restart"), 
+		  this, SLOT(restart()));
+    p->move(ev->pos());
+    int ret = p->exec();
+  }
 }
 
 

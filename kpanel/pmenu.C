@@ -96,13 +96,12 @@ PMenuItem::PMenuItem()
   memb = NULL;
   //Stephan: pixmap is not a pointer
   // pixmap = NULL;
-  read_only = false;
   id = global_id++;
 }
 
 PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n, 
 		      PMenu *menu, QObject *receiver, char *member,
-		      QPopupMenu *cm, bool ro, QString d, QString co )
+		      QPopupMenu *cm, bool /* ro */, QString d, QString co )
 {
   initMetaObject();
   entry_type = e;
@@ -122,7 +121,6 @@ PMenuItem::PMenuItem( EntryType e, QString t, QString c, QString n,
   cmenu = (myPopupMenu *) cm;
   recv = receiver;
   memb = member;
-  read_only = ro;
   dir_path = d.copy();
   comment = co;
   if (comment.isEmpty())
@@ -154,13 +152,12 @@ PMenuItem::PMenuItem( PMenuItem &item )
     }
   recv         = item.cmenu;
   memb         = item.memb;
-  if( item.read_only && entry_type == prog_com )
+  if( entry_type == prog_com )
     {
       entry_type = unix_com;
       recv = NULL;
       memb = NULL;
     }
-  read_only = FALSE; 
   id = global_id++;
 }
 
@@ -182,8 +179,6 @@ short PMenuItem::parse( QFileInfo *fi, PMenu *menu)
     text_name = fi->fileName().left(pos);
   else
     text_name = fi->fileName();
-  if( !(fi->isWritable()) )
-    read_only = TRUE;
   if( menu != NULL )
     {
       QString file = fi->absFilePath();
@@ -437,7 +432,6 @@ short PMenu::parse( QDir d )
   QList<PMenuItem> item_list;
   item_list.setAutoDelete(FALSE);
   int pos;
-  bool read_only = FALSE;
   sort_order.setAutoDelete(TRUE);
 
   if (altSort == TRUE)
@@ -445,8 +439,6 @@ short PMenu::parse( QDir d )
 
   QString file = d.path();
   QFileInfo dir_info(file);
-  if( !dir_info.isWritable() )
-    read_only = TRUE;
   file += "/.directory";
   QFile config(file);
   if( config.exists())
@@ -484,7 +476,6 @@ short PMenu::parse( QDir d )
 	  new_menu->setAltSort(altSort);
 	  new_item = new PMenuItem;
           new_dir.setPath( fi->filePath() );
-	  new_item->read_only = read_only;
 	  if( new_menu->parse( new_dir ) < 0 || new_item->parse( fi, new_menu ) < 0 )
 	    {
 	      delete new_menu;
@@ -499,7 +490,6 @@ short PMenu::parse( QDir d )
 	  if( !isKdelnkFile(fi->absFilePath()))
 	    { ++it; continue; }
 	  new_item = new PMenuItem;
-	  new_item->read_only = read_only;
 	  if( new_item->parse(fi) < 0 ){
 	    delete new_item;
 	    new_item = NULL;
@@ -555,7 +545,6 @@ short PMenu::parse( QDir d )
       sort_order.next();
       new_item = new PMenuItem;
       new_item->entry_type = separator;
-      new_item->read_only = read_only;
       insert(new_item, pos);
     }   
   return 0;

@@ -1,5 +1,13 @@
 In kpanel-0.18:
 
+    Patchlevel 10:
+       - no more passive grab on swallow buttons for the left mouse
+         button if the exec-line in the kdelnk-file is empty.
+         Usefull for biff applications like coolmail which prefer
+         to launch the mailer manually.
+       - internal cleanup: uses KShellProcess now :-)
+       - context popup on panel
+
     Patchlevel 9:
        - new command kpanel:goxxxxyyyy for krootwm´s "new" feature
          (Uwe Kreikenbohm)

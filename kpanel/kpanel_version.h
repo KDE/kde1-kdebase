@@ -1,1 +1,1 @@
-#define KPANEL_VERSION "kpanel-0.18.9"
+#define KPANEL_VERSION "kpanel-0.18.10"
