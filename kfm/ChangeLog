@@ -1,7 +1,12 @@
 1998-12-22  Alex Zepeda  <garbanzo@hooked.net>
 
-	* ftp_proxy.cpp: Add proper line termination to user agent string,
-	so reloading should work?
+	* kioslave/ftp_proxy.cpp: Add proper line termination to user
+	agent string, so reloading should work?
+	* kioslave/http.cpp, http.h: Initial implementation of selectable
+	user agent strings.  Also, make sure a connections are not persistant,
+	as we're HTTP 1.0 compliant only.  For the time being.
+	* config-kfm.h: Make the user-agent string work w/ the very
+	pedantic egcs.
 
 1998-12-21  David Faure  <faure@kde.org>
 
