@@ -175,19 +175,20 @@ void releaseInput()
 
 QWidget *createSaverWindow()
 {
-	QWidget *w;
+QWidget *w;
 
 	// WStyle_Customize sets override_redirect
 	w = new QWidget( NULL, "", WStyle_Customize );
 
+	/* set NoBackground so that the saver can capture the current
+	 * screen state if neccessary
+	 */
+	w->setBackgroundMode( QWidget::NoBackground );
+
 	XSetWindowAttributes attr;
-//	attr.override_redirect = True;
-	attr.background_pixel = BlackPixel( qt_xdisplay(), qt_xscreen() );
 	attr.event_mask = KeyPressMask | ButtonPressMask | MotionNotify |
 			 VisibilityChangeMask;
-	XChangeWindowAttributes( qt_xdisplay(), w->winId(),
-		CWBackPixel | CWEventMask, &attr );
-//		CWOverrideRedirect | CWBackPixel | CWEventMask, &attr );
+	XChangeWindowAttributes(qt_xdisplay(), w->winId(), CWEventMask, &attr);
 
 	QBitmap bm( 1, 1, TRUE );
 	QCursor c( bm, bm );

@@ -12,7 +12,7 @@ INSTALL_PROGRAM = @INSTALL@ $(SETUIDFLAGS)
 bin_PROGRAMS = kpolygon.kss kswarm.kss klissie.kss kbanner.kss \
 	klines.kss kblankscrn.kss krock.kss kflame.kss klaser.kss \
 	kpyro.kss khop.kss $(XPM_SAVERS) $(GL_SAVERS) kslip.kss \
-	kforest.kss klock kblob.kss kbouboule.kss
+	kforest.kss klock kblob.kss kbouboule.kss kscience.kss
 
 EXTRA_PROGRAMS = kbat.kss kmorph3d.kss kspace.kss 
 
@@ -81,6 +81,10 @@ kspace_kss_SOURCES = $(BASE_SRCS) space.cpp
 kspace_kss_LDADD = $(LDADD) $(GLLIB)
 space.cpp: space.moc
 
+kscience_kss_SOURCES = $(BASE_SRCS) science.cpp
+kscience_kss_LDADD = $(LDADD) $(GLLIB)
+science.cpp: science.moc
+
 klock_SOURCES = klock.cpp kscreensave.cpp
 
 
@@ -88,12 +92,12 @@ BUILT_SOURCES = main.moc saver.moc polygon.moc banner.moc\
 		blankscrn.moc rock.moc flame.moc lines.moc laser.moc\
 		pyro.moc hop.moc forest.moc swarm.moc bat.moc slip.moc\
 		lissie.moc morph3d.moc blob.moc space.moc bouboule.moc \
-		kgroupbox.moc
+		kgroupbox.moc science.moc
 
 noinst_HEADERS = saver.h polygon.h banner.h\
 		blankscrn.h kscreensave.h xlock.h rock.h flame.h lines.h\
 		laser.h pyro.h hop.h forest.h swarm.h bat.h slip.h\
-		lissie.h blob.h space.h bouboule.h  kgroupbox.h
+		lissie.h blob.h space.h bouboule.h  kgroupbox.h science.h
 
 messages:
 	$(XGETTEXT) -C -ktranslate *.cpp -x ../../kdelibs/po/kde.pot && mv messages.po ../po/klock.pot
@@ -159,6 +163,9 @@ bouboule.moc: bouboule.h
 
 morph3d.moc: morph3d.h
 	$(MOC) morph3d.h -o morph3d.moc
+
+science.moc: science.h
+	$(MOC) science.h -o science.moc
 
 kgroupbox.moc: kgroupbox.h
 	$(MOC) kgroupbox.h -o kgroupbox.moc
