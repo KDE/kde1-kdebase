@@ -1,3 +1,4 @@
+  - bugfixes in color handling
 
   - added option `-linux' to set up a linux-console conformal kvt.
     made underline possible in linux-color-mode.

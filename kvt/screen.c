@@ -1306,11 +1306,12 @@ void scr_erase_screen(int mode)
 	(MyWinInfo.cwidth+1)+a;
       memset(&cScreen->text[x],' ',b-a+1);
       /* memset(&cScreen->rendition[x],DEFAULT_RSTYLE,(b-a+1)*RENDSIZE); */
-      {
-	/* experimental (Matthias) / optimized [bmg] */
+      { 
+	/* experimental (Matthias) / optimized [bmg] */ 
 	int i = 0;
 	RENDITION *rend = &cScreen->rendition[x];
-	RENDITION val = rstyle & ~RS_CURSOR;
+	/* this was rstyle & ~RS_CURSOR; [bmg] */
+	RENDITION val = DEFAULT_RSTYLE; 
 	for (i=0; i<b-a+1; i++){
 	  *rend++ = val;
 	}
