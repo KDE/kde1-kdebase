@@ -134,7 +134,7 @@ void Kfm::slotSave()
 {
   timer.stop();
 
-  printf("slotSlave()!\n");
+  //printf("slotSlave()!\n");
   
   KConfig *config = kapp->getConfig();
 
@@ -362,7 +362,7 @@ bool Kfm::saveHTMLHistory( const char *_filename )
 
 void Kfm::slotInstallSegfaultHandler()
 {
-   printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
+   // printf("+++++++++++++++++++++ INSTALLING SIGSEGV handler +++++++++++++++++\n");
     signal( SIGSEGV, sig_segv_handler );
 }
 
