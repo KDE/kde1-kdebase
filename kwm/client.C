@@ -708,8 +708,12 @@ void Client::mouseMoveEvent( QMouseEvent *ev ){
     else{
          dragging_state = dragging_enabled;
 	 if (do_resize == 0){
-	   grabMouse(sizeAllCursor);
 	   ensurePointerGrab();
+	   XChangeActivePointerGrab( qt_xdisplay(), 
+				     ButtonPressMask | ButtonReleaseMask |
+				     PointerMotionMask |
+				     EnterWindowMask | LeaveWindowMask,
+				     sizeAllCursor.handle(), 0);
 	 }
     }
   }
