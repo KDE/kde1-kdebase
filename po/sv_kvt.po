@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=\n"
+"Date: 1997-08-23 15:45:33+0200\n"
+"From: M G Berberich <berberic@thingol>\n"
+"Xgettext-Options: --keyword=translate\n"
+"Files: main.C\n"
+
+#: main.C:220
+msgid "Add characters to word class"
+msgstr "Lägg till tecken till ordklass"
+
+#: main.C:224
+msgid "choose type of color-mode"
+msgstr "välg typ av färgläge"
+
+#: main.C:227
+msgid "Ok"
+msgstr "Ok"
+
+#: main.C:229
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: main.C:357
+msgid "&New Terminal"
+msgstr "&Ny terminal"
+
+#: main.C:359
+msgid "E&xit"
+msgstr "&Avsluta"
+
+#: main.C:364 main.C:669
+msgid "&Hide"
+msgstr "Göm"
+
+#: main.C:365
+msgid "&Left"
+msgstr "&Vänster"
+
+#: main.C:366
+msgid "&Right"
+msgstr "&Höger"
+
+#: main.C:371
+msgid "&Normal"
+msgstr "Normal"
+
+#: main.C:372
+msgid "&Tiny"
+msgstr "Minimal"
+
+#: main.C:373
+msgid "&Small"
+msgstr "Liten"
+
+#: main.C:374
+msgid "&Medium"
+msgstr "Mellan"
+
+#: main.C:375
+msgid "&Large"
+msgstr "Stor"
+
+#: main.C:376
+msgid "&Huge"
+msgstr "Enorm"
+
+#: main.C:388
+msgid "&black/white"
+msgstr "svart/vit"
+
+#: main.C:389
+msgid "&white/black"
+msgstr "vit/svart"
+
+#: main.C:390
+msgid "&green/black"
+msgstr "grön/svart"
+
+#: main.C:391
+msgid "black/light&yellow"
+msgstr "svart/ljusgul"
+
+#: main.C:392
+msgid "Linu&x Console"
+msgstr "Linux-konsoll"
+
+#: main.C:399 main.C:594
+msgid "Hide &Menubar"
+msgstr "Göm meny"
+
+#: main.C:401 main.C:460 main.C:586
+msgid "Show &Menubar"
+msgstr "Visa meny"
+
+#: main.C:402 main.C:604
+msgid "Secure &keyboard"
+msgstr "Lås tangentbord"
+
+#: main.C:404
+msgid "Scroll&bar"
+msgstr "Rullningslist"
+
+#: main.C:405
+msgid "&Font size"
+msgstr "Typsnittsstorlek"
+
+#: main.C:406
+msgid "&Color"
+msgstr "Färg"
+
+#: main.C:407
+msgid "&Size"
+msgstr "Storlek"
+
+#: main.C:408
+msgid "Terminal..."
+msgstr "Terminal..."
+
+#: main.C:410
+msgid "Save &Options"
+msgstr "Spara inställningar"
+
+#: main.C:419
+msgid "&About..."
+msgstr "Om..."
+
+#: main.C:420 main.C:430
+msgid "&Help"
+msgstr "Hjälp"
+
+#: main.C:427
+msgid "&File"
+msgstr "Arkiv"
+
+#: main.C:428
+msgid "&Options"
+msgstr "Inställningar"
+
+#: main.C:469 main.C:662
+msgid "&Show"
+msgstr "Visa"
+
+#: main.C:600
+msgid "Unsecure &keyboard"
+msgstr "Lås upp tangentbord"
+
+#: main.C:739
+msgid "Hint"
+msgstr "Tips"
+
+#: main.C:740
+#, fuzzy
+msgid ""
+"New color settings will be displayed\n"
+"when the keyboard is unsecured."
+msgstr ""
+"De nya färginställningarna kommer att \n"
+"användas när tangentbordet låses upp."
+
+#: main.C:760
+msgid "About kvt"
+msgstr "Om kvt"
+
+#: main.C:760
+msgid ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08"
+msgstr ""
+"\n"
+"\n"
+"(C) 1996, 1997 Matthias Ettrich (ettrich@kde.org)\n"
+"(C) 1997 M G Berberich (berberic@fmi.uni-passau.de)\n"
+"\n"
+"Terminalemulering för KDE Desktop Environment\n"
+"baserad på Robert Nations rxvt-2.08"
+
+#: main.C:922
+msgid ""
+"Copyright(C) 1996, 1997 Matthias Ettrich\n"
+"Copyright(C) 1997 M G Berberich\n"
+"Terminal emulation for the KDE Desktop Environment\n"
+"based on Robert Nation's rxvt-2.08\n"
+"\n"
+"Permitted arguments are:\n"
+"-e <command> <arg> ...\texecute command with ars - must be last argument\n"
+"-display <name>\tspecify the display (server)\n"
+"-vt_geometry <spec>\tthe initial vt window geometry\n"
+"-print-pipe <name>\tspecify pipe for vt100 printer\n"
+"-vt_bg <colour>\t\tbackground color\n"
+"-vt_fg <colour>\t\tforeground color\n"
+"-vt_font <fontname>\tnormal font\n"
+"-vt_size <size>     \ttiny, small, normal, large, huge\n"
+"-linux\t\t\tset up kvt to mimic linux-console\n"
+"-no_menubar\t\thide the menubar\n"
+"-no_scrollbar\t\thide the scrollbar\n"
+"-T <text>\t\ttext in window titlebar\n"
+"-tn <TERM>\t\tTerminal type. Default is xterm.\n"
+"-C\t\t\tCapture system console message\n"
+"-n <text>\t\tname in icon or icon window\n"
+"-7\t\t        run in 7 bit mode\n"
+"-8\t\t\trun in 8 bit mode\n"
+"-ls\t\t\tinitiate kvt's shell as a login shell\n"
+"-ls-\t\t\tinitiate kvt's shell as a non-login shell (default)\n"
+"-meta\t\t\thandle Meta with ESCAPE prefix, 8THBIT set, or ignore\n"
+"-sl <number>\t\tsave number lines in scroll-back buffer\n"
+"-pageup <keysym>\tuse hot key alt-keysym to scroll up through the buffer\n"
+"-pagedown <keysym>\tuse hot key alt-keysym to scroll down through buffer\n"
+msgstr ""
+
+#: main.C:954
+msgid ""
+"-grk9\t\tgreek kbd = ELOT 928 (default)\n"
+"-grk4\t\tgreek kbd = IBM 437\n"
+msgstr ""
+
+#: main.C:970
+msgid "Terminal Options"
+msgstr "Terminalinställningar"
