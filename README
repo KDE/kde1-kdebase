@@ -49,14 +49,18 @@ If your system does not have XPM installed, you may obtain it from
 ftp://avahi.inria.fr/pub/xpm, or you may find it in
 ftp://ftp.freebsd.org/pub/FreeBSD/distfiles
 
-Have a look at the individual subdirectories, if you want to know, what
-versions of apps are included.
+If your system supports PAM (Plugable Authentication Modules), please see
+the README.pam file in this directory for more information about using KDE
+with PAM.
+
+Have a look at the individual subdirectories, if you would like to find
+out more about a specific application included in kdebase.
 
 Please direct any bug reports to our bug list maintainer 
 David McCanney <9504506m@student.gla.ac.uk>.  Or visit
 http://buglist.kde.org.
 
-If you have problems compiling and installing this package, contact
-me at coolo@kde.org.
+If you have problems compiling and installing this package, please contact
+Stephan Kulow <coolo@kde.org>.
 
 General KDE discussions should go to the KDE mailing list (kde@kde.org).
