@@ -3,7 +3,7 @@ EXTRA_DIST = $(mini_ICONS) $(kde_icon_DATA)
 
 mini_ICONS = mini-kcmmemory.xpm mini-kcmprocessor.xpm \
 	mini-kcmdevices.xpm mini-kcmpartitions.xpm mini-kcmscsi.xpm \
-	mini-kcmsound.xpm mini-kcmx.xpm
+	mini-kcmsound.xpm mini-kcmx.xpm mini-kcmpci.xpm
 
 kde_icon_DATA = kcmdevices.xpm kcmmemory.xpm kcmpci.xpm kcmprocessor.xpm \
 	kcmscsi.xpm kcmsound.xpm kcmx.xpm kcmpartitions.xpm
