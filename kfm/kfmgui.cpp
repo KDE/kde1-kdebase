@@ -665,11 +665,15 @@ void KfmGui::slotNewFile( int _id )
     QString text = klocale->translate("New ");
     text += p.data();
     text += ":";
+    const char *value = p.data();
 
-    const char *value = "";
-    if ( strcmp( p.data(), klocale->translate("Folder") ) != 0 )
-	value = p.data();
-
+    if ( strcmp( p.data(), "Folder" ) == 0 ) {
+	value = "";
+	text = klocale->translate("New ");
+	text += klocale->translate("Folder");
+	text += ":";
+    }
+    
     DlgLineEntry l( text.data(), value, this );
     if ( l.exec() )
     {
@@ -677,7 +681,7 @@ void KfmGui::slotNewFile( int _id )
 	if ( name.length() == 0 )
 	    return;
 	
-	if ( strcmp( p.data(), klocale->translate("Folder") ) == 0 )
+	if ( strcmp( p.data(), "Folder" ) == 0 )
 	{
 	    KIOJob * job = new KIOJob;
 	    QString u = view->getURL();
