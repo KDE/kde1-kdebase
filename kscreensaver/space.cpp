@@ -105,7 +105,7 @@ typedef struct _starRec {
 GLenum doubleBuffer, directRender;
 GLint windW, windH;
 
-GLenum flag = NORMAL;
+GLenum flag = (GLenum) NORMAL;
 GLint starCount = MAXSTARS / 2;
 float speed = 1.0;
 float warpinterval = 30000.0;
@@ -138,7 +138,7 @@ void NewStar(GLint n, GLint d)
     stars[n].x[0] = (float)(random() % MAXPOS - MAXPOS / 2);
     stars[n].y[0] = (float)(random() % MAXPOS - MAXPOS / 2);
     stars[n].z[0] = (float)(random() % MAXPOS + d);
-    if (random()%4 == 0 && flag == WEIRD) {
+    if (random()%4 == 0 && flag == (GLenum) WEIRD) {
 	stars[n].offsetX = (float)(random() % 100 - 100 / 2);
 	stars[n].offsetY = (float)(random() % 100 - 100 / 2);
 	stars[n].offsetR = (float)(random() % 25 - 25 / 2);
