@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998 Free Software Foundation, Inc.
+# Hans Petter Bieker <zerium@webindex.no>, 1998.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:51+0200\n"
+"PO-Revision-Date: 1998-06-10 00:50+0200\n"
+"Last-Translator: Hans Petter Bieker <zerium@webindex.no>\n"
+"Language-Team: no <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO_8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.C:176
+msgid "&Normal"
+msgstr "&Normal"
+
+#: src/main.C:179
+msgid "&Small"
+msgstr "&Liten"
+
+#: src/main.C:180
+msgid "&Medium"
+msgstr "&Middels"
+
+#: src/main.C:181
+msgid "&Large"
+msgstr "&Stor"
+
+#: src/main.C:182
+msgid "&Huge"
+msgstr "&Kjempemessig"
+
+#: src/main.C:185
+msgid "&VGA"
+msgstr "&VGA"
+
+#: src/main.C:189
+msgid "&More ..."
+msgstr "&Mer ..."
+
+#: src/main.C:200
+msgid "&black/white"
+msgstr "&stort/hvit"
+
+#: src/main.C:201
+msgid "&white/black"
+msgstr "&hvit/sort"
+
+#: src/main.C:202
+msgid "&green/black"
+msgstr "&grønn/sort"
+
+#: src/main.C:203
+msgid "black/light&yellow"
+msgstr "sort/lyse&gul"
+
+#: src/main.C:205
+msgid "&System colors"
+msgstr "&Systemfarge"
+
+#: src/main.C:206
+msgid "&Custom Colors"
+msgstr "&Egendefinert farge"
+
+#: src/main.C:211
+msgid "&Hide"
+msgstr "&Skjul"
+
+#: src/main.C:212
+msgid "&Left"
+msgstr "&Venstre"
+
+#: src/main.C:213
+msgid "&Right"
+msgstr "&Høyre"
+
+#: src/main.C:219
+msgid "40x15 (&small)"
+msgstr "40x15 (&liten)"
+
+#: src/main.C:220
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: src/main.C:221
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: src/main.C:229
+msgid "&Menubar"
+msgstr "&Menylinje"
+
+#: src/main.C:231
+msgid "&Frame"
+msgstr "&Ramme"
+
+#: src/main.C:233
+msgid "Scroll&bar"
+msgstr "&Rullelinje"
+
+#: src/main.C:235
+msgid "BS sends &DEL"
+msgstr "BS sender &DEL"
+
+#: src/main.C:238
+msgid "&Font"
+msgstr "&Skrifttype"
+
+#: src/main.C:239
+msgid "&Color"
+msgstr "&Farge"
+
+#: src/main.C:240
+msgid "&Size"
+msgstr "&Størrelse"
+
+#: src/main.C:241
+msgid "&Background"
+msgstr "&Bakgrunn"
+
+#: src/main.C:244
+msgid "&Save options"
+msgstr "&Lagre valg"
+
+#: src/main.C:249
+msgid "&About ..."
+msgstr "&Om ..."
+
+#: src/main.C:250
+msgid "&User's Manual ..."
+msgstr "&Brukermanual ..."
+
+#: src/main.C:251
+msgid "&Technical Reference ..."
+msgstr "&Teknisk referanse ..."
+
+#: src/main.C:607
+msgid "Welcome to the console"
+msgstr "Velkommen til konsollet"

@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1998-06-18 22:51+0200\n"
+"Last-Translator: Lars Doelle\n"
+
+#: src/main.C:176
+msgid "&Normal"
+msgstr "&Normal"
+
+#: src/main.C:179
+msgid "&Small"
+msgstr "&Klein"
+
+#: src/main.C:180
+msgid "&Medium"
+msgstr "&Mittel"
+
+#: src/main.C:181
+msgid "&Large"
+msgstr "&Gross"
+
+#: src/main.C:182
+msgid "&Huge"
+msgstr "&Riesig"
+
+#: src/main.C:185
+msgid "&VGA"
+msgstr "&VGA"
+
+#: src/main.C:189
+msgid "&More ..."
+msgstr "&Mehr ..."
+
+#: src/main.C:200
+msgid "&black/white"
+msgstr "&schwarz/weiss"
+
+#: src/main.C:201
+msgid "&white/black"
+msgstr "&weiss/schwarz"
+
+#: src/main.C:202
+msgid "&green/black"
+msgstr "&gruen/schwarz"
+
+#: src/main.C:203
+msgid "black/light&yellow"
+msgstr "scharz/&hellgelb"
+
+#: src/main.C:205
+msgid "&System colors"
+msgstr "&Systemfarben"
+
+#: src/main.C:206
+msgid "&Custom Colors"
+msgstr "&Eigene Farben"
+
+#: src/main.C:211
+msgid "&Hide"
+msgstr "&aus"
+
+#: src/main.C:212
+msgid "&Left"
+msgstr "&links"
+
+#: src/main.C:213
+msgid "&Right"
+msgstr "&rechts"
+
+#: src/main.C:219
+msgid "40x15 (&small)"
+msgstr "40x15 (&klein)"
+
+#: src/main.C:220
+msgid "80x24 (&vt100)"
+msgstr "80x24 (&vt100)"
+
+#: src/main.C:221
+msgid "80x25 (&ibmpc)"
+msgstr "80x25 (&ibmpc)"
+
+#: src/main.C:229
+msgid "&Menubar"
+msgstr "&Menuleiste"
+
+#: src/main.C:231
+msgid "&Frame"
+msgstr "&Rahmen"
+
+#: src/main.C:233
+msgid "Scroll&bar"
+msgstr "&Roll&balken"
+
+#: src/main.C:235
+msgid "BS sends &DEL"
+msgstr "BS sendet &DEL"
+
+#: src/main.C:238
+msgid "&Font"
+msgstr "Zeichensatz"
+
+#: src/main.C:239
+msgid "&Color"
+msgstr "&Farben"
+
+#: src/main.C:240
+msgid "&Size"
+msgstr "&Groesse"
+
+#: src/main.C:241
+msgid "&Background"
+msgstr "&Hintergrund"
+
+#: src/main.C:244
+msgid "&Save options"
+msgstr "&Einstellungen sichern"
+
+#: src/main.C:249
+msgid "&About ..."
+msgstr "&Ueber ..."
+
+#: src/main.C:250
+msgid "&User's Manual ..."
+msgstr "Ben&utzer-Handbuch ..."
+
+#: src/main.C:251
+msgid "&Technical Reference ..."
+msgstr "&Technische Referenz ..."
+
+#: src/main.C:607
+msgid "Welcome to the console"
+msgstr "Willkommen an der Konsole"
