@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-04-18 01:41+0200\n"
+"PO-Revision-Date: 1998-04-21 18:41+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 
 #: main.cpp:53
@@ -43,8 +43,8 @@ msgstr "Zurdo"
 
 #: keyboard.cpp:67
 msgid "Keyboard repeat"
-msgstr "Repetición de teclado"
+msgstr "Repetición de teclas"
 
 #: keyboard.cpp:75
 msgid "Key click volume"
-msgstr "Volumen de clic de tecla"
+msgstr "Volumen de click de tecla"

@@ -116,4 +116,3 @@ msgstr "Oops!"
 #: events.C:742
 msgid "Cannot put this as button onto the panel!"
 msgstr "Nemô¾em da» toto ako tlaèítko na panel!"
-

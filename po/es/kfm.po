@@ -165,7 +165,7 @@ msgstr "&Configurar..."
 
 #: kfmgui.cpp:464
 msgid "&About..."
-msgstr "&Acerca de..."
+msgstr "A&cerca de..."
 
 #: kfmgui.cpp:474
 msgid "&Bookmarks"
@@ -1186,7 +1186,7 @@ msgstr " no existe\n"
 
 #: kfmtree.cpp:396
 msgid "My Home"
-msgstr "&Inicio"
+msgstr "Inicio"
 
 #: kfmtree.cpp:398
 msgid "Desktop"

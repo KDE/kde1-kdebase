@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-16 00:52+0200\n"
-"PO-Revision-Date: 1998-04-18 01:26+0200\n"
+"PO-Revision-Date: 1998-04-21 18:11+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Santiago Fernández and Jorge Valencia "
 "<jorgev@est.unileon.es>\n"
@@ -41,11 +41,11 @@ msgstr "A&bajo"
 
 #: panel.cpp:74
 msgid "Taskbar"
-msgstr "Barra de Tareas"
+msgstr "Barra de tareas"
 
 #: panel.cpp:75
 msgid "&Hidden"
-msgstr "&Oculta"
+msgstr "O&culta"
 
 #: panel.cpp:77
 msgid "T&op"
@@ -61,7 +61,7 @@ msgstr "Arriba/I&zquierda"
 
 #: panel.cpp:96
 msgid "T&iny"
-msgstr "&Pequeño"
+msgstr "Pe&queño"
 
 #: panel.cpp:98
 msgid "&Normal"
@@ -77,11 +77,11 @@ msgstr "&Visibles"
 
 #: desktops.cpp:82
 msgid "&Width"
-msgstr "Ancho"
+msgstr "&Ancho"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Ayudas de menú"
+msgstr "Letreros de ayuda de menú"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
@@ -89,7 +89,7 @@ msgstr "&Mostrar ayudas de menú"
 
 #: options.cpp:44
 msgid "De&lay:"
-msgstr "Retardo:"
+msgstr "&Retardo:"
 
 #: options.cpp:56
 msgid "ms"
@@ -101,15 +101,15 @@ msgstr "Otros"
 
 #: options.cpp:69
 msgid "Personal &First"
-msgstr "Personales Primero"
+msgstr "Pe&rsonales primero"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Auto-&Ocultar Panel"
+msgstr "Auto-ocultar pá&nel"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Auto-Ocultar Barra de Tareas"
+msgstr "Auto-ocultar barra de &tareas"
 
 #: options.cpp:81
 msgid "Clock"
@@ -121,4 +121,4 @@ msgstr "&24h"
 
 #: options.cpp:85
 msgid "&12h AM/PM"
-msgstr "&12h AM/PM"
+msgstr "&12h am/pm"

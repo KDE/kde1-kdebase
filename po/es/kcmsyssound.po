@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "POT-Creation-Date: 1998-04-18 00:01+0200\n"
-"PO-Revision-Date: 1998-04-18 01:32+0200\n"
+"PO-Revision-Date: 1998-04-21 18:28+0200\n"
 "Last-Translator: Boris Wesslowski <bwess@gmx.net>\n"
 "First-Translator: Santiago Fernández and Jorge Valencia "
 "<jorgev@est.unileon.es>\n"
@@ -49,15 +49,15 @@ msgstr "Cambiar al escritorio 8"
 
 #: syssound.cpp:153
 msgid "Activate Window"
-msgstr "Activar Ventana"
+msgstr "Activar ventana"
 
 #: syssound.cpp:154
 msgid "Open new window"
-msgstr "Abrir nueva ventana"
+msgstr "Abrir ventana nueva"
 
 #: syssound.cpp:155
 msgid "Close Window"
-msgstr "Cerrar Ventana"
+msgstr "Cerrar ventana"
 
 #: syssound.cpp:156
 msgid "Startup"
@@ -65,19 +65,19 @@ msgstr "Comienzo"
 
 #: syssound.cpp:158
 msgid "Window Shade Up"
-msgstr ""
+msgstr "Sombrear ventana"
 
 #: syssound.cpp:159
 msgid "Window Shade Down"
-msgstr ""
+msgstr "Desombrear ventana"
 
 #: syssound.cpp:160
 msgid "Window Iconify"
-msgstr ""
+msgstr "Iconizar ventana"
 
 #: syssound.cpp:161
 msgid "Window DeIconify"
-msgstr ""
+msgstr "Deiconizar ventana"
 
 #: syssound.cpp:162
 msgid "Window Maximize"
@@ -89,11 +89,11 @@ msgstr "Demaximizar ventana"
 
 #: syssound.cpp:164
 msgid "Window Sticky"
-msgstr "Fijar ventana"
+msgstr "Pegar ventana"
 
 #: syssound.cpp:165
 msgid "Window UnSticky"
-msgstr "Liberar ventana"
+msgstr "Despegar ventana"
 
 #: syssound.cpp:166
 msgid "Window Trans New"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: syssound.cpp:168
 msgid "Logout"
-msgstr "Salir"
+msgstr "Terminar"
 
 #: syssound.cpp:169
 msgid "Logout Message"
@@ -113,23 +113,23 @@ msgstr "Mensaje de salida"
 
 #: syssound.cpp:170
 msgid "Window Move Start"
-msgstr "Mover ventana (principio)"
+msgstr "Mover vent. principio"
 
 #: syssound.cpp:171
 msgid "Window Move End"
-msgstr "Mover ventana (final)"
+msgstr "Mover vent. fin"
 
 #: syssound.cpp:172
 msgid "Window Resize Start"
-msgstr "Redimensionar ventana (principio)"
+msgstr "Redimensionar v. principio"
 
 #: syssound.cpp:173
 msgid "Window Resize End"
-msgstr "Redimensionar ventana (final)"
+msgstr "Redimensionar v. fin"
 
 #: syssound.cpp:195
 msgid "e&nable system sounds"
-msgstr "a&ctivar sonidos del sistema"
+msgstr "&Activar sonidos del sistema"
 
 #: syssound.cpp:200
 msgid "&Test"
