@@ -1,3 +1,9 @@
+Wed Jan 21 22:19:35 1998  Stephan Kulow  <coolo@kde.org>
+
+	* acinclude.m4.in: - added a install_root prefix to all paths, if
+	set, to enable package managers to move the whole installation at once
+	- added --with-install-root to set the install_root prefix
+
 Tue Jan 20 22:41:04 1998  Stephan Kulow  <coolo@kde.org>
 
 	* configure.in: added NOOPT_CXXFLAGS to allow kioslave to be
