@@ -184,6 +184,7 @@ AC_OUTPUT(Makefile \
 	doc/kcontrol/info/Makefile \
 	doc/kcontrol/input/Makefile \
 	doc/kcontrol/keys/Makefile \
+	doc/kcontrol/kfm/Makefile \
 	doc/kcontrol/kpanel/Makefile \
 	doc/kcontrol/kwm/Makefile \
 	doc/kcontrol/locale/Makefile \
