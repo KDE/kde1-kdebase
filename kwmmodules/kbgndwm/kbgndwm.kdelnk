@@ -1,0 +1,13 @@
+# KDE Config File
+[KDE Desktop Entry]
+BinaryPattern=
+Name=Background module
+Protocols=
+MimeType=
+Comment=Manages the background texture
+Exec=kbgndwm
+Icon=unknown.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
