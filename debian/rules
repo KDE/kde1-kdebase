@@ -45,7 +45,7 @@ binary-arch:	checkroot build
 	cp debian/kdm.init.d debian/tmp/etc/init.d/kdm
 	cp debian/kde debian/tmp/usr/X11R6/bin
 	install -d debian/tmp/usr/sbin
-	cp debian/kdmconfig debian/tmp/usr/sbin
+	cp debian/switchdm debian/tmp/usr/sbin
 	install -d debian/tmp/etc/menu-methods
 	cp debian/menu-method debian/tmp/etc/menu-methods/kde
 	install -d debian/tmp/etc/X11
@@ -56,8 +56,8 @@ binary-arch:	checkroot build
 	install -d debian/tmp/usr/share/applnk/debian_menu
 	cp debian/debian.directory \
 	      debian/tmp/usr/share/applnk/debian_menu/.directory
-	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/kdmconfig \
-		debian/tmp/usr/X11R6/bin/kde \
+	chmod +x debian/tmp/etc/init.d/kdm debian/tmp/usr/sbin/switchdm \
+		debian/tmp/usr/X11R6/bin/kde debian/tmp/etc/menu-methods/kde \
 		debian/tmp/etc/X11/Xsession.kde
 	rm -f debian/tmp/usr/X11R6/bin/startkde
 	ln -s kde debian/tmp/usr/X11R6/bin/startkde
@@ -67,6 +67,7 @@ binary-arch:	checkroot build
 	chmod 2755 debian/tmp/usr/X11R6/bin/klock
 	chmod 4755 debian/tmp/usr/X11R6/bin/kvt
 	dh_movefiles
+	dh_undocumented `cat debian/man-pages`
 	dh_installdocs
 	dh_installchangelogs
 	dh_strip
@@ -74,7 +75,7 @@ binary-arch:	checkroot build
 	dh_fixperms
 	dh_suidregister
 	dh_installdeb
-	dh_shlbdeps
+	dh_shlibdeps
 	dh_gencontrol	
 	dh_md5sums
 	dh_builddeb

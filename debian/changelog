@@ -1,5 +1,16 @@
+kdebase (2:980312-4) unstable; urgency=low
+
+  * added undocumented man page
+  * renamed kdmconfig to switchdm. This name existed twice
+  * new compile with latest kdelibs shlibs
+
+ -- Stephan Kulow <coolo@kde.org>  Tue, 31 Mar 1998 20:26:23 +0200
+
 kdebase (2:980312-3) unstable; urgency=low
 
+  * use debhelper tools now
+  * changed the directory for debian apps to /var/spool/applnk
+  * set the correct UTMP file
   * test prefix() before removing it. This should avoid a rm -rf /, when possible
   * new kdm (with bugfixes and new location for configuration files)
 

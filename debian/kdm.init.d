@@ -35,6 +35,17 @@ case "$1" in
 		--pidfile /var/run/xdm-pid
       echo "."
     ;;
+# the last options are taken from kerneld
+  restart) 
+		$0 stop
+		$0 start
+    ;; 
+  reload)
+		start-stop-daemon --stop --signal 1 --q quiet --exec /usr/bin/X11/kdm
+ 	;;
+  force-reload)
+		$0 reload 
+	;;
   *)
     echo "Usage: /etc/init.d/kdm {start|stop}"
     exit 1
