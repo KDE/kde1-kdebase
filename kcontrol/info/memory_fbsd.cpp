@@ -6,9 +6,9 @@ void KMemoryWidget::update()
 {
   int mib[2],memory;size_t len;char blah[10];
   /* Stuff for swap display */
-  int used, total, free;
+  int used, total, _free;
   FILE *pipe;
-  char buf[80], *used_str, *total_str;
+  char buf[80];
   
   mib[0]=CTL_HW;mib[1]=HW_PHYSMEM;
   len=sizeof(memory);
@@ -22,22 +22,6 @@ void KMemoryWidget::update()
   freeMem->setText(i18n("Not available"));
   sharedMem->setText(i18n("Not available"));
   bufferMem->setText(i18n("Not available"));
-  /*	Q&D hack for swap display. Borrowed from xsysinfo-1.4  */
-  if ((pipe = popen("/usr/sbin/pstat -ks", "r")) == NULL) {
-     used = total = 1;
-     return;
-  }
-  fgets(buf, sizeof(buf), pipe);
-  fgets(buf, sizeof(buf), pipe);
-  fgets(buf, sizeof(buf), pipe);
-  fgets(buf, sizeof(buf), pipe);
-  strtok(buf, " ");
-  total_str = strtok(NULL, " ");
-  used_str = strtok(NULL, " ");
-  pclose(pipe);
-  used = atoi(used_str);
-  total = atoi(total_str); 
-  free=total-used;
-  swapMem->setText(format(1024*total));
-  freeSwapMem->setText(format(1024*free));
+  swapMem->setText(i18n("Not available"));
+  freeSwapMem->setText(i18n("Not available"));
 }
