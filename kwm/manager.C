@@ -658,6 +658,7 @@ void Manager::clientMessage(XEvent*  ev){
       // update the menubars and the maximized windows
       updateMenuBars();
       updateMaximizedWindows();
+      sendToModules(kwm_window_region_changed, 0);
   }
 
   if (e->message_type == kde_sound_event){
@@ -788,10 +789,10 @@ void Manager::propertyNotify(XPropertyEvent *e){
   case XA_WM_ICON_NAME:
   case XA_WM_NAME:
     if (a== XA_WM_ICON_NAME){
-      c->iconname = getprop(c->window, XA_WM_ICON_NAME);
+      c->iconname = getTextProperty(c->window, XA_WM_ICON_NAME);
     }
     else
-      c->name = getprop(c->window, XA_WM_NAME);
+      c->name = getTextProperty(c->window, XA_WM_NAME);
     {
       QString tmp = c->label;
       c->setLabel();
@@ -1740,10 +1741,10 @@ void Manager::manage(Window w, bool mapped){
   char* s;
   QRegExp r;
   if (!mapped) {
-    QString t = getprop(w, XA_WM_NAME);
+    QString t = getTextProperty(w, XA_WM_NAME);
     if (t.isEmpty()) {
 	// XA_WM_NAME is not sufficient. If not defined try the icon name
-	t = getprop(w, XA_WM_ICON_NAME);
+	t = getTextProperty(w, XA_WM_ICON_NAME);
     }
 
     if (t.isEmpty()){
@@ -1853,8 +1854,8 @@ void Manager::manage(Window w, bool mapped){
     c->instance = "";
     c->klass = "";
   }
-  c->iconname = getprop(c->window, XA_WM_ICON_NAME);
-  c->name = getprop(c->window, XA_WM_NAME);
+  c->iconname = getTextProperty(c->window, XA_WM_ICON_NAME);
+  c->name = getTextProperty(c->window, XA_WM_NAME);
   c->setLabel();
 
 #ifdef DEBUG_EVENTS_ENABLED
@@ -1893,6 +1894,7 @@ void Manager::manage(Window w, bool mapped){
 
   getWMNormalHints(c);
 
+
   if (c->size.flags & PPosition) {
       // some obsolete hints, some old apps may still use them
       if (c->size.x != 0 && c->geometry.x() == 0 )
@@ -1900,20 +1902,6 @@ void Manager::manage(Window w, bool mapped){
       if (c->size.y != 0 && c->geometry.y() == 0 )
 	  c->geometry.moveTopLeft(QPoint(c->geometry.x(), c->size.y));
   }
-
-      // be a bit clever
-  {
-	  QRect maxRect = KWM::getWindowRegion(currentDesktop());
-	  if (myapp->systemMenuBar && !c->isMenuBar()) {
-	      maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
-	  }
-// 	  if (c->geometry.x() < maxRect.x() )
-// 	      c->geometry.moveTopLeft(QPoint(maxRect.x(), c->geometry.y()));
-	  if (c->geometry.y() < maxRect.y() )
-	      c->geometry.moveTopLeft(QPoint(c->geometry.x(), maxRect.y()));
-	
-  }
-
 
   getColormaps(c);
   getWindowTrans(c);
@@ -1961,7 +1949,18 @@ void Manager::manage(Window w, bool mapped){
       ||c->size.flags & USPosition
       || pseudo_session_management
       ){
-      // nothing
+
+      QRect maxRect = KWM::getWindowRegion(currentDesktop());
+      if (myapp->systemMenuBar && !c->isMenuBar()) {
+	  maxRect.setTop(myapp->systemMenuBar->geometry().bottom());
+      }
+
+      if (c->geometry.x() < maxRect.x() || c->geometry.right() > maxRect.right()
+	  || c->geometry.y() < maxRect.y() || c->geometry.bottom() > maxRect.bottom() ) {
+	  // the settings are bogus, do customized placement again.
+	  doPlacement(c);
+	  didPlacement = TRUE;
+      }
   }
   else {
     doPlacement(c);
@@ -2324,17 +2323,17 @@ void Manager::raiseClient(Client* c){
   // X Semantics are somewhat cryptic
   Window* new_stack = new Window[tmp.count()+1 + top_windows.count()];
   int i = 0;
+  // top windows (such as the panel) are always taken into account
+  for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
+      new_stack[i] = *w;
+      i++;
+  }
   // take care about the gimmick: this should be always on top!
   if (options.GimmickMode && tmp.first() == current() && Client::gimmickWindow() != None){
     new_stack[i]=Client::gimmickWindow();
     i++;
   }
 
-  // top windows (such as the panel) are always taken into account
-  for (Window* w = top_windows.last(); w; w = top_windows.prev() ) {
-      new_stack[i] = *w;
-      i++;
-  }
 
   for (c=tmp.last();c;c=tmp.prev()){
     new_stack[i] = c->winId();
@@ -3091,7 +3090,7 @@ int Manager::_getprop(Window w, Atom a, Atom type, long len, unsigned char **p){
   return n;
 }
 
-// easier access to an X11 property
+// easier access to an X11 property of type XA_STRING
 QString Manager::getprop(Window w, Atom a){
   QString result;
   unsigned char *p;
@@ -3142,6 +3141,33 @@ void Manager::setQRectProperty(Window w, Atom a, const QRect &rect){
 		  PropModeReplace, (unsigned char *)&data, 4);
 }
 
+
+
+// a better getrop used for icon names etc. It can also handle
+// compound stuff. Seems like some old and weird programs rely on that.
+QString Manager::getTextProperty (Window w, Atom a)
+{
+    XTextProperty tp;
+    char **text;
+    int count;
+    QString result;
+    if (XGetTextProperty (qt_xdisplay(), w, &tp, a) == 0 || tp.value == NULL)
+	return result; // nothing found
+    if (tp.encoding == XA_STRING) {
+	result = (const char*) tp.value;
+    }
+    else { // assume compound text
+	if (XmbTextPropertyToTextList (qt_xdisplay(), &tp, &text, &count) == Success && text != NULL) {
+	    if (count > 0) {
+		result = (const char*) text[0];
+	    }
+	    XFreeStringList (text);
+	}
+    }
+    /* Free the data returned by XGetTextProperty */
+    XFree (tp.value);	
+    return result;
+}
 
 
 // sends a client message a x to the window w

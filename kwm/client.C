@@ -501,13 +501,13 @@ void Client::generateButtons(){
 		continue;
 	    if ( i == 3 && options.buttons[3] == CLOSE )
 		continue;
-	    buttons[i]->hide();
+	    if (buttons[i] )
+		buttons[i]->hide();
 	}
     }
     else {
-	if (buttons[i] ){
+	if (buttons[i] )
 	    buttons[i]->hide();
-	}
     }
   }
   if (!buttonMaximize){

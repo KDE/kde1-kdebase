@@ -53,6 +53,14 @@ public:
     void resetSystemMenuBar();
     void raiseSystemMenuBar();
 
+  // possible mouse bindings
+  enum {
+    MouseRaise, MouseLower, MouseOperationsMenu, MouseToggleRaiseAndLower,
+    MouseActivateAndRaise, MouseActivateAndLower, MouseActivate,
+    MouseActivateRaiseAndPassClick, MouseActivateAndPassClick,
+    MouseMove, MouseResize, MouseNothing
+  };
+
  public slots:
 
  // put the focus on the window with the specified label.  Will switch
@@ -74,15 +82,6 @@ public:
 
   // the overall functions for the configurable keybindings
   void createKeybindings();
-
-  // possible mouse bindings
-  enum {
-    MouseRaise, MouseLower, MouseOperationsMenu, MouseToggleRaiseAndLower,
-    MouseActivateAndRaise, MouseActivateAndLower, MouseActivate,
-    MouseActivateRaiseAndPassClick, MouseActivateAndPassClick,
-    MouseMove, MouseResize, MouseNothing
-  };
-
 
   // returns a mouse binding for a given string
   int mouseBinding(const char*);

@@ -384,6 +384,9 @@ private:
   // lists. Will replace \0 with a blank then. Necessary for the XA_WM_COMMAND
   // property.
   QString xgetprop(Window w, Atom a);
+  // a better getrop used for icon names etc. It can also handle
+  // compound stuff. Seems like some old and weird programs rely on that.
+  QString getTextProperty (Window w, Atom a);
   // kwm internally sometimes uses simple property (long values)
   bool getSimpleProperty(Window w, Atom a, long &result, Atom type = 0);
   // kwm internally sometimes uses rectangle properties

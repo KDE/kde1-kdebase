@@ -14,6 +14,14 @@ Current is 0.14.1
 
 In 0.14:
 -------
+patchlevel 3:
+        - improved placement. Now application settings are ignore when the window
+           is partially covered by either the panel or the taskbar (i.e. outside the 
+           window region)
+
+patchlevel 2:
+        - internal: support for window names in COMPOUND_TEXT style
+
 patchlevel 1:
         - fixed event passing: release no longer repeated to application
 
