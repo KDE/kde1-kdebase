@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <HTML>
 <HEAD>
-<TITLE>International Keyboard Handbook: Creating new National Keyboard</TITLE>
+<TITLE>International Keyboard Handbook: Creating a new National Keyboard</TITLE>
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-1">
 <META NAME="keywords" CONTENT="KDE multilanguage X11">
 <META NAME="description" CONTENT="KDE International Keyboard">
@@ -18,30 +18,28 @@
 <A HREF="kikbd-4.html">Previous</A>
 <A HREF="kikbd.html#toc5">Table of Contents</A>
 </P>
-<H3><A NAME="create"></A> <A NAME="s5">5. Creating new National Keyboard</A></H3>
+<H3><A NAME="create"></A> <A NAME="s5">5. Creating a new National Keyboard</A></H3>
 
 <P>
-<P>All system keyboard files stores in <I>$KDEDIR/share/apps/kikbd</I>
-and personal
-in <I>$HOME/.kde/share/apps/kikbd</I>.
-Keyboard identified by it file name without
-<I>.kimap</I> extension. File in personal directory hide system one
-with same file name (not label).
-<P>To creating new keyboard you should get one of the existing <I>.kimap</I>
-file as an template. Keyboard file has two major sections.
+<P>All system-wide keyboard files are stored in <CODE>$KDEDIR/share/apps/kikbd</CODE>
+and all personal keyboard files in <CODE>$HOME/.kde/share/apps/kikbd</CODE>.
+Each is identified by its file name excluding the <CODE>.kimap</CODE> extension. A
+personal keyboard file hides a system keyboard file having the same file name
+(not label).
+<P>For creating a new keyboard map you should use one of the existing <CODE>.kimap</CODE>
+files as a template. Each keyboard file has two major sections.
 <P>
 <OL>
 <LI><B>International Keyboard</B><BR>
 In this section the following items can be defined:
 <UL>
-<LI>Authors - list of authors 
-in the format "name last_name &lt; email address&gt;"
-separated by comma;</LI>
-<LI>Comment** - comment for this keyboard;</LI>
-<LI>Language** - language this keyboard for;</LI>
-<LI>Charset - charset this keyboard for;</LI>
-<LI>Locale - locale this keyboard for;</LI>
-<LI>Label* - label used by KiKbd to identify this keyboard.</LI>
+<LI><CODE>Authors</CODE>:a list of authors, separated by commas, 
+in the format "name last_name &lt; email address&gt;";</LI>
+<LI><CODE>Comment</CODE>**: a descriptive comment phrase for this keyboard;</LI>
+<LI><CODE>Language</CODE>**: the language this keyboard is for;</LI>
+<LI><CODE>Charset</CODE>: the charset this keyboard is for;</LI>
+<LI><CODE>Locale</CODE>: the locale this keyboard is for;</LI>
+<LI><CODE>Label</CODE>*: the label used by <CODE>KiKbd</CODE> to identify this keyboard.</LI>
 </UL>
 
 * - required<BR>
@@ -63,20 +61,21 @@ and mapping from key codes to symbols:
 </PRE>
 
 
-Where <I>num</I> means any unique number, <I>sym</I> means symbol
-in the form of hex decimal number or form interpreted by X,
-<I>key code</I> means decimal code, <I>default sym</I> means
-default symbol for this key (before starting KiKbd).
-First two symbols <I>sym1, sym2</I> defines <I>national</I> symbols
-and <I>sym3, sym4</I> defines <I>alternate</I> symbols.
-It is preferred to use only <I>keysym</I> definitions. 
-<P>As addition you
-can specify <I>CapsSymbols</I> in this section as a list of Latin
-symbols separated by comma which KiKbd use for CapsLock emulation.
+Where <CODE>num</CODE> means any unique number, <CODE>sym</CODE> means symbol
+in the form of a hexadecimal number or a form interpreted by X11,
+<CODE>keycode</CODE> means the decimal code, and <CODE>default sym</CODE> means the
+default symbol for this key (before starting <CODE>KiKbd</CODE>).
+The first two symbols <CODE>sym1, sym2</CODE> define the <I>national</I>
+symbols while <CODE>sym3, sym4</CODE> define <I>alternate</I> symbols.
+It is preferrable to use only <CODE>keysym</CODE> definitions. 
+<P>Additionally, in this section, you can also specify
+<I>CapsSymbols</I> as a list of Latin symbols, separated by commas.
+which <CODE>KiKbd</CODE> should process during <CODE>Caps Lock</CODE> emulation.
 </LI>
 </OL>
-<P>Then you create and test new keyboard map you can submit it to KDE
-developers team or directly to author.
+<P>After you create and test a new keyboard map, you could submit
+it to the KDE developer team, or directly to the author or
+maintainer of <CODE>KiKbd</CODE>.
 <P>
 <P ALIGN="RIGHT">
 

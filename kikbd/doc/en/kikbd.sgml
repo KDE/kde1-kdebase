@@ -8,9 +8,10 @@
 <!-- Title information -->
 
 <title>International Keyboard Handbook
-<author>Alexander Budnik, <tt/budnik@linserv.jinr.ru/
-<author>Dimitrios P. Bouras, <tt/dbouras@hol.gr/
-<date>v1.0b4, March 24 1999
+<author>Alexander Budnik, <tt>budnik@linserv.jinr.ru</tt> and
+Dimitrios P. Bouras, <tt>dbouras@hol.gr</tt>  .  Document revision
+by Duncan <tt>duncan@kde.org</tt> 
+<date>v1.0b4, March 24 1999, revisions August 19, 1999,
 <abstract>This Handbook describes International Keyboard Version 1.0b4
 
 <!-- Table of contents -->
@@ -20,20 +21,23 @@
 
 <sect>Introduction<p>
 
-  KiKbd is designed to help type national symbols different from the
+  <bf>KDE International Keyboard</bf> (<tt>KiKbd</tt>)
+   is designed to help type national symbols different from the
   default Latin symbols under X11. 
 
-  KiKbd implements keyboard layout support for national character sets
+  <tt>KiKbd</tt> implements keyboard layout support for national character-sets
   other than the default Latin-1. Instead of relying on the <it>classic</it>
   method which uses X keyboard maps and modifier keys or, since X11R6.1
-  came out, XKB map files and rules, KiKbd can remember more then one
-  keyboard map and can switch to any one desired in dynamic fashion.
+  came out, XKB map files and rules, <tt>KiKbd</tt> can remember more then one
+  keyboard map, and can switch to any desired one in a dynamic fashion.
 
-  KiKbd uses the xmodmap method to setup national keyboard maps for X11
-  applications, but can handle dynamic switching between the list of
-  selected maps. This means is can support more than one language at a time.
+  <tt>KiKbd</tt> uses the <tt>xmodmap</tt> method to set up 
+  national keyboard maps for X11
+  applications, but can handle dynamic switching between keyboard maps
+  selected from the list.
+  This means it can support more than one language at a time.
 
-  In addition to this, KiKbd can also maintain different keyboard maps
+  In addition to this, <tt>KiKbd</tt> can also maintain different keyboard maps
   for different windows or applications (using <it>Window</it> or <it>Class</it>
   input styles respectively).
 
@@ -41,48 +45,59 @@
 
 <sect>Installation<p>
 
-  Installation from sources go as usual :-)
+  Installation from sources follows the  usual procedure :-)
   <verb>
      % ./configure
      % make
      % make install
   </verb>
-  You need at least KDE 1.0 to successfully compile KiKbd. 
+  You need at least KDE 1.0 to successfully compile <tt>KiKbd</tt>. 
   <comment>
-  Starting with KDE version 1.1, KiKbd is included in the
-  <it>kdebase</it> package.
+  Starting with KDE version 1.1, <tt>KiKbd</tt> is included in the
+  <tt>kdebase</tt> package.
   </comment>
 
 </sect>
 
 <sect>National Keyboard<p>
 
-  For each language or national keyboard KiKbd supports a keyboard
-  map which can have up to four symbols per physical keyboard key. For 
+  For each language or national keyboard, <tt>KiKbd</tt> supports a 
+  <it>keyboard map</it> 
+  which can have up to four symbols per physical keyboard key. For 
   example in the Russian keyboard you have four symbols for key 'Q': 
-  short i, capital short I, q, and capital Q. The first two symbols are 
-  the national character set - keyboard map symbols and the last two
-  symbols are the alternate symbols. 
-  For typing Alternate symbols you have to setup a special key in the 
-  KiKbd configuration; for details on this topic, read the
+  lowercase i, uppercase I, lowercase  q, and uppercase Q. 
+  The first two symbols are 
+  the national character-set  keyboard-map symbols and the last two
+  symbols are the <it>alternate symbols</it>.
+ 
+  For typing <it>alternate symbols</it> you 
+  have to set up a choice of a
+  special <bf>Alternate Switch</bf> key in the 
+  <tt>KiKbd</tt> configuration; for details,  see the
   <ref id="config" name="Personal Configuration section">. 
-  Normally the first symbol is used when typing without any modifier
-  keys pressed, the second symbol when you type with Shift held down,
-  the third symbol when you type with the Alternate Switch key down,
-  and the fourth symbol when you type with the Alternate Switch key
-  and the Shift key, both down.<p>
+  Normally the first symbol is obtained by typing without any modifier
+  keys pressed, the second symbol when you type with the <bf>Shift</bf>
+   held down,
+  the third symbol when you type with the <bf>Alternate Switch</bf> 
+  held key down,
+  and the fourth symbol when you type with the <bf>Alternate Switch</bf>
+  +  <bf>Shift</bf> keys <it>both</it> held down.<p>
 
-  When these lines were written, there were more than twenty
-  national keyboard definition files in the KiKbd distribution.
+  At the time this was  written, there were more than twenty
+  national keyboard definition files already in the <tt>KiKbd</tt> distribution.
 
   If a keyboard for your language is missing see section 
   <ref id="create" name="Creating a new National Keyboard">.
 
 <sect>Personal Configuration<label id="config"><p>
 
-  Personal configuration includes all your runtime settings for KiKbd.
-  You should use the kcmikbd program for creating/modifing your personal
-  configuration. When you start KiKbd or kcmikbd for the first time it will
+  ``Personal configuration'' 
+  includes all your runtime settings for <tt>KiKbd</tt>.
+  You should use the KDE Control Center module
+  program <tt>kcmikbd</tt>  
+  for creating/modifing your personal
+  configuration. When you start <tt>KiKbd</tt> or <tt>kcmikbd</tt>
+  for the first time it will
   copy the default system configuration to your personal configuration.
 
   <sect1>General settings<p>
@@ -91,30 +106,73 @@
 
   <sect2>Keyboards<p>
 
-    Using the <it>Add</it> and <it>Delete</it> buttons you can create/update
-    your personal list of national keyboards. The top most keyboard (En in
-    the example on the screen shot shown) becomes the default keyboard when
-    you start KiKbd.
+    Using the <bf>Add</bf> and <bf>Delete</bf> buttons you can create/update
+    your personal list of national keyboards. The topmost keyboard (
+    <tt>En</tt> - US English Language -
+    in the example on the screenshot shown) becomes the <it>default</it>
+    keyboard when you start <tt>KiKbd</tt>.
 
     If you use more then two keyboards it is very helpful to check
-    the <it>Use hotlist</it> box. In this case you can switch between
-    the <it>hot</it> keyboard and the default keyboard by using the Switch
-    key(s) while you can change the <it>hot</it> keyboard from the KiKbd
-    pop up menu.
+    the <bf>Use hotlist</bf> box. In this case you can switch between
+    the ``<it>hot</it>'' (highlighted) keyboard and the <it>default</it> 
+    (first) keyboard by 
+    using the <bf>Switch</bf>
+    key(s).  
+
+    You can  change the choice of 
+    ``<it>hot</it>'' keyboard from the <tt>KiKbd</tt>  pop up menu
+    that appears when you right-click on the <tt>KiKbd</tt> button.
 
   </sect2>
-  <sect2>Switch and Alt Switch<p>
+  <sect2>Switch and Alt Switch:<p>
 
-    For switching between keyboards you can use this key combination
-    (in the example screen shot, by holding Right Ctrl and Right Shift down
-    at the same time). You can type any alternate symbols defined for the
-    current national keyboard by holding down the Alt Switch key (Right Alt
-    in the example screen shot).
+The box on the left shows the key combination chosen for
+the <bf>Switch</bf> key .
+<itemize>
+<item> Pressing the <bf>Switch</bf> key combination switches the keyboard
+map to the the next one in  <tt>KiKbd</tt>'s selected list of keyboard maps 
+(or between the default and the highlighted (``hot'') map, if
+<bf>use hot list</bf> is checked).   
+</itemize>
+(You can also change the keyboard
+map by clicking on the <tt>KiKbd</tt> button if it is docked
+in the panel or placed at a corner of the screen.)
+
+
+
+The box on the right shows the key chosen as the <bf>Alternate Switch</bf>
+key.
+<itemize>
+<item> The ``lower-case''  alternate characters
+in the keyboard map
+for the current national keyboard 
+are obtained if the key is typed with the <bf> Alternate Switch</bf> key
+held down, and the ``upper-case'' alternate characters
+are obtained if the key is typed with both the <bf>Alternate Switch</bf> and
+the <bf> Shift</bf> held down.
+</itemize>
+Each box has a pull-down menu allowing different choices for these
+special keys to be selected.
+
+<itemize>
+<item>In the  example screenshot, you can switch between
+keyboards by pressing <bf>Right Ctrl</bf>
+and <bf>Right Shift</bf>  keys 
+at the same time (the selected <bf> Switch </bf> key combination), and
+you can obtain any alternate symbols defined for the
+current national keyboard by holding down the 
+<bf>Right Alt</bf> key (the selected <bf> Alternative Switch</bf> key)
+while you type.
+</itemize>
 
   </sect2>
-  <sect2>Beep<p>
+  <sect2>Options:<p>
 
-    Instructs KiKbd to beep when the keyboard map is changed.
+    If the <bf>Beep</bf> box is checked,
+     <tt>KiKbd</tt> will beep when the keyboard map is changed.
+
+    Click on the <bf>Advanced</bf> button to open the Advanced Options
+    screen.
 
   </sect2>
   </sect1>
@@ -122,50 +180,83 @@
   <sect1>Advanced Options<label id="advanced"><p>
 
     <img SRC=advanced.gif>
-    <sect2>World Menu<p>
 
-      You can have a popup menu in any active window by pressing and holding
-      the Switch keys for a sufficiently long time (hold Right Ctrl and
-      Right Shift as in the example screen shot and wait for popup menu).
-
-    </sect2>
-    <sect2>Emulate Caps Lock<p>
+    <sect2>Emulate Caps Lock:<p>
 
      For some keyboards (e.g. Russian, Greek) there are problems with
-     the default CapsLock behavior. Using this option, you instruct KiKbd
-     to emulate CapsLock in order to fix this problem. The Caps state is
-     then indicated by the color of the KiKbd language button instead of
-     the corresponding keyboard Led.
+     the default <bf>CapsLock</bf> behavior. 
+     Using this option, you instruct <tt>KiKbd</tt>
+     to emulate <bf>CapsLock</bf> in order to fix this problem. 
+     The Caps Lock state (on or off) is then indicated by the color of the 
+     <tt>KiKbd</tt> language button instead of
+     the corresponding keyboard LED.
 
     </sect2>
-    <sect2>Input<p>
+
+
+    <sect2>World Menu:<p>
+
+      You can have a popup menu in any active window by pressing and holding
+      the <bf>Switch</bf>
+       keys for a sufficiently long time (hold <bf>Right Ctrl</bf> 
+      and <bf>Right Shift</bf> as in the example screenshot and 
+      wait for the popup menu).
+    </sect2>
+
+    <sect2>Save Classes:<p>
+
+      If the <bf>Input</bf>  selection (see below) is 
+      ``<bf>Class</bf>'', you may
+      check the <bf>Save Classes</bf> box so that
+      the keyboard-map to window-manager (WM) window-class
+      association is automatically saved at the end of each KDE Session,
+      and restored at the beginning of the next session. For example, if you
+      have selected the Russian keyboard in a <tt>Kedit</tt> 
+      window when you log out
+      today, you will get it automatically in your <tt>Kedit</tt> windows
+      when you log in tomorrow.
+
+    </sect2>
+
+    <sect2> Keyboard codes:<p>
  
-      You can select one of the:
+    The pull-down menu allows you to select the appropriate set
+    of keyboard codes used by your particular keyboard.
+    </sect2>
+ 
+
+    <sect2>Input:<p>
+
+      This determines how the keyboard maps are associated
+      with different windows.
+      You can select one of three choices:
 
       <itemize>
       <item>
-        Global - "standard" behavior: your keyboard map applies to all windows.
+        <bf>Global</bf> - 
+       "standard" behavior: your keyboard map applies to all windows.
       </item>
       <item>
-        Window - "extended" behavior: a keyboard map is "remembered" for each
-        top level window
+        <bf>Window</bf> - 
+       "extended" behavior: a keyboard map is "remembered" for each
+        top level window, and inherited by  each lower-level
+        window created from
+        within  it.
+        When  the active window changes, the keyboard map will change
+        to the map associated with the active window.
+
       </item>
       <item>
-        Class - "special" behavior: a keyboard map is "remembered" for each window
-        manager (WM) window-class member. For example, if you switch to Russian
-        in one instance of the Kedit program, you will also get Russian in any
-        other Kedit instance automatically.
+        <bf>Class</bf> - 
+       "special" behavior: a keyboard map is "remembered" for each window
+        manager (WM) window-class member. For example, if you switch to the
+        Russian keyboard
+        in any window in which the <tt>Kedit</tt> program is running, 
+        you will automatically also get the Russian keyboard in any
+        other <tt>Kedit</tt> window.
       </item>
       </itemize>
 
-    </sect2>
-    <sect2>Save Classes<p>
-
-      If you select Input for Classes, the keyboard to window manager (WM)
-      Class association is automatically saved at the end of each KDE Session
-      and restored at the beginning of the next session. For example, if you
-      have selected the Russian keyboard in the Kedit window when you logout
-      today, you will get it automatically when you login tomorrow.
 
     </sect2>
 
@@ -173,75 +264,97 @@
 
   <sect1>Style<p>
 
-    You can customize the KiKbd button font and all four colors:
+    In the <bf>Style</bf> screen, You can customize the colors and
+    font used by the <tt>KiKbd</tt> button that indicates which
+    keyboard map is currently in use, and (by its color) shows whether
+    the emulated <bf>Caps Lock</bf> is on or if the  <bf>Alternate Switch</bf> key
+    is depressed.
+
     <p><img SRC=style.gif>
 
-    <sect2>Foreground<p>
-      Color used for the text label foreground.
-    </sect2>
+    <sect2>Button Colors:<p>
+    <itemize>
+    <item> <bf>Foreground:</bf>
+      Foreground Color used for the text label.
+    </item>
 
-    <sect2>Background<p>
-      Background color used for the text label.
-    </sect2>
+    <item><bf>Background:</bf>
+      Normal Background color used for the text label.
+      (<it> Not shown in screenshot!</it>.)
+    </item>
 
-    <sect2>With CapsLock<p>
-      Background used for the text label when CapsLock emulation is
-      selected and the Caps Lock key is activated.
-    </sect2>
+    <item><bf>With CapsLock:</bf>
+      Background used for the text label when <tt>Caps Lock</tt> emulation is
+      selected and the <tt>Caps Lock</tt> key is activated.
+    </item>
 
-    <sect2>With Alternate<p>
-      Background used for the text label while the Alt
-      Switch key is held down.
-    </sect2>
+    <item><bf>With Alternate:</bf>
+      Background used for the text label while the <bf>Alt
+      Switch</bf> key is held down to provide the alternate
+      characters.
+    </item>
+    </itemize>
 
-    <sect2>Customize Font<p>
-      Use custom or KDE wide fonts.
+    <sect2>Button Font:<p>
+    Check the <bf>Customize Font</bf> Check box if you
+    wish to use custom or KDE wide fonts.   If this
+    box is checked, clicking the <bf>Change Font</bf>
+    button will open the <bf>Select Font</bf> dialog.
     </sect2>
 
   </sect1>
 
   <sect1>Startup<p>
 
+  The  <bf>Startup</bf> screen configures how <tt>KiKbd</tt>
+  is started.
+
   <img SRC=startup.gif>
-  <sect2>Autostart<p>
-    if this checked KiKbd will be started automatically at the
+  <sect2>Autostart:<p>
+    if the <bf>Autostart</bf> box is checked,
+   <tt>KiKbd</tt> will be started automatically at the
     beginning of each KDE session.
   </sect2>
 
-  <sect2>Docked<p>
-    If this checked KiKbd will be docked into kpanel.
+  <sect2>Docked:<p>
+   If the <bf>Docked</bf> box is checked,  the
+   <tt>KiKbd</tt> button will be docked into the panel.
   </sect2>
 
-  <sect2>Place<p>
-    If you don't like docking, you can choose one of 
-    the four corners of your display
+  <sect2>Place:<p>
+    If you don't like docking, and the <bf>Docked</bf> box
+    is unchecked, you can choose to place the <tt>KiKbd</tt>
+    button at one the the corners of the display.
+    (The  pull-down <bf>Place</bf> menu presents a list
+    of choices for the location).
+
   </sect2>
 
   </sect1>
 
 <sect>Creating a new National Keyboard<label id="create"><p>
 
-  All system-wide keyboard files are stored in <it>$KDEDIR/share/apps/kikbd</it>
-  and all personal keyboard files in <it>$HOME/.kde/share/apps/kikbd</it>.
-  Each is identified by its file name excluding the <it>.kimap</it> extension. A
-  personal keyboard file hides a system keyboard file having the same file
-  (not label) name.
+  All system-wide keyboard files are stored in <tt>$KDEDIR/share/apps/kikbd</tt>
+  and all personal keyboard files in <tt>$HOME/.kde/share/apps/kikbd</tt>.
+  Each is identified by its file name excluding the <tt>.kimap</tt> extension. A
+  personal keyboard file hides a system keyboard file having the same file name
+  (not label).
 
-  For creating a new keyboard map you should use one of the existing <it>.kimap</it>
+  For creating a new keyboard map you should use one of the existing <tt>.kimap</tt>
   files as a template. Each keyboard file has two major sections.
 
   <enum>
   <item><bf>International Keyboard</bf><newline>
   In this section the following items can be defined:
     <itemize>
-      <item>Authors - a comma separated list of authors 
+      <item><tt>Authors</tt>:a list of authors, separated by commas, 
         in the format "name last_name &lt email address&gt";
       </item>
-      <item>Comment** - comment for this keyboard;</item>
-      <item>Language** - language this keyboard for;</item>
-      <item>Charset - charset this keyboard for;</item>
-      <item>Locale - locale this keyboard for;</item>
-      <item>Label* - label used by KiKbd to identify this keyboard.</item>
+      <item><tt>Comment</tt>**: a descriptive comment phrase for this keyboard;</item>
+      <item><tt>Language</tt>**: the language this keyboard is for;</item>
+      <item><tt>Charset</tt>: the charset this keyboard is for;</item>
+      <item><tt>Locale</tt>: the locale this keyboard is for;</item>
+      <item><tt>Label</tt>*: the label used by <tt>KiKbd</tt> to identify this keyboard.</item>
     </itemize>
     * - required<newline>
     ** - can be translated to other languages
@@ -258,46 +371,50 @@
     keycode<num> = <key code>,<sym1>,<sym2>,<sym3>,<sym4>,
   </verb>
 
-  Where <it>num</it> means any unique number, <it>sym</it> means symbol
-  in the form of hex decimal number or a form interpreted by X11,
-  <it>key code</it> means decimal code, and <it>default sym</it> means
-  default symbol for this key (before starting KiKbd).
-  The first two symbols <it>sym1, sym2</it> define the <it>national</it>
-  symbols while <it>sym3, sym4</it> define <it>alternate</it> symbols.
-  It is preferrable to use only <it>keysym</it> definitions. 
+  Where <tt>num</tt> means any unique number, <tt>sym</tt> means symbol
+  in the form of a hexadecimal number or a form interpreted by X11,
+  <tt>keycode</tt> means the decimal code, and <tt>default sym</tt> means the
+  default symbol for this key (before starting <tt>KiKbd</tt>).
+  The first two symbols <tt>sym1, sym2</tt> define the <it>national</it>
+  symbols while <tt>sym3, sym4</tt> define <it>alternate</it> symbols.
+  It is preferrable to use only <tt>keysym</tt> definitions. 
   <p>
   Additionally, in this section, you can also specify
-  <it>CapsSymbols</it> as a list of comma separated Latin symbols
-  which KiKbd should process during CapsLock emulation.
+  <it>CapsSymbols</it> as a list of Latin symbols, separated by commas.
+  which <tt>KiKbd</tt> should process during <tt>Caps Lock</tt> emulation.
   </item>
   </enum>
 
-  After you create and test a new keyboard map you could submit
-  it to the KDE developers team or directly to the author or
-  maintainer of kikbd.
+  After you create and test a new keyboard map, you could submit
+  it to the KDE developer team, or directly to the author or
+  maintainer of <tt>KiKbd</tt>.
 
 </sect>
 
 <sect>Troubleshooting<p>
 
-  <sect1>Can not find symbol<p>
-    This may happen if your Xserver has loaded non Latin or unusual
-    symbols before KiKbd starts. Beginning with version 1.0b1 you can
-    predefine symbols in
-    <ref id="advanced" name="Advanced section of Configuration">
-    for fixing this problem.
+  <sect1>``Can not find symbol'' error.<p>
+    This may happen if your X server has loaded non-Latin or unusual
+    symbols before <tt>KiKbd</tt> starts.
+    <p>
+    Beginning with version 1.0b1, you can
+    predefine symbols in the
+    <ref id="advanced" name="Advanced Options"> configuration screen
+    for fixing this problem. 
+   (<it> This feature not currently available </it>) 
   </sect1>
 
-  <sect1>Screen saver<p>
+  <sect1>Screen-saver password problems.<p>
     This problem might appear when your favorite screen saver starts
     while a national keyboard is active. The solution is to use KDE
-    screen-savers with default (first in the list) English keyboard.
-    KiKbd automatically switches keyboard to default map when one of
+    screen-savers with the default (first in the list) English keyboard.
+    <tt>KiKbd</tt> automatically switches the keyboard map to 
+    the default, when one of
     KDE's screen-savers opens a password dialog.
 
     The other solution is to use Alternate Latin symbols in all 
     your keyboard maps.
-    Then you can type a password using the <it>Alternate Switch</it> key.
+    Then you can type a password using the <bf>Alternate Switch</bf> key.
   </sect1>
 
   <sect1>Bug reporting<p>
@@ -311,10 +428,14 @@
 
 International Keyboard is written by 
 <htmlurl url="mailto:budnik@linserv.jinr.ru" 
-	name="Alexander Budnik">
+	name="Alexander Budnik">,
+and
 <htmlurl url="mailto:dbouras@hol.gr" 
 	name="Dimitrios P. Bouras">
 <p>
 </sect>
 
 </article>
+
+
+
