@@ -859,10 +859,11 @@ void kPanel::mousePressEvent( QMouseEvent*  ev  ){
 
 void kPanel::slotDropEvent( KDNDDropZone *_zone ){
   if (_zone == drop_zone){
-    QString a = _zone->getData();
+    KURL u ( _zone->getData() );
     // TODO kde link auf den button legen!!!
-    if (a.left(5) == "file:"){
-      a = a.right(a.length() - 5);
+    // Which means, in English ?
+    if (u.isLocalFile()) {
+      QString a = u.path(); // decodes the URL if necessary
       if (a.right(1) == "/")
 	a.truncate(a.length()-1);
 
