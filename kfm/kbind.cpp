@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <sys/param.h>
 #include <sys/stat.h>
+#include <sys/resource.h>
  
 #include <limits.h>
 #include <fcntl.h>
@@ -1415,7 +1416,9 @@ void KMimeBind::runCmd( const char *_exec, QStrList &_args, const char *_workdir
         // --- The following detaches the program's output from kfm
         // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
         // if one runs a ncurses program (e.g. less), it makes X hang
-        int fd = getdtablesize();
+        struct rlimit rlp;
+        getrlimit(RLIMIT_NOFILE, &rlp); // getdtablesize() equivalent.
+        int fd = rlp.rlim_cur;
         while( fd >= 0 ) {
             close( fd );
             fd--;
@@ -1521,7 +1524,9 @@ void KMimeBind::runCmd( const char *_cmd, const char *_workdir )
         // --- The following detaches the program's output from kfm
         // Due to a X11 bug found by Stefan Westerfeld <stefan@space.twc.de>
         // if one runs a ncurses program (e.g. less), it makes X hang
-        int fd = getdtablesize();
+        struct rlimit rlp;
+        getrlimit(RLIMIT_NOFILE, &rlp); // getdtablesize() equivalent.
+        int fd = rlp.rlim_cur;
         while( fd >= 0 ) {
             close( fd );
             fd--;
