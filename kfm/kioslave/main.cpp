@@ -277,7 +277,7 @@ void KIOSlave::del( const char *_url )
 	int erg;
 
 	struct stat buff;
-	stat( su.path(), &buff );
+	lstat( su.path(), &buff );
 	if ( S_ISDIR( buff.st_mode ) )
 	    erg = rmdir( su.path() );
 	else
