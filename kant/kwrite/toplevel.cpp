@@ -102,10 +102,12 @@ void TopLevel::init() {
   show();
 }
 
-void TopLevel::closeEvent(QCloseEvent *) {
+void TopLevel::closeEvent(QCloseEvent *e) {
   if (queryExit()) {
-//    e->accept();
+    e->accept();
     delete this;
+    if (memberList->isEmpty())
+      kapp->quit();
   }
 }
 
