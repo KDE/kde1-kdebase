@@ -23,6 +23,10 @@ static char sccsid[] = "@(#)pyro.c	3.4 95/11/04 xlockmore";
 
 
 #include "xlock.h"
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <math.h>
 #define TWOPI (2*M_PI)
 

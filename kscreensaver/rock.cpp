@@ -25,6 +25,10 @@ static char sccsid[] = "@(#)rock.c	3.3 95/09/24 xlockmore";
  */
 // layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <math.h>
 #include "xlock.h"
 

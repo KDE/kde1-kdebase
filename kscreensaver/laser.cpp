@@ -17,6 +17,10 @@ static char sccsid[] = "@(#)laser.c	3.3 95/09/26 xlockmore";
 // layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include "xlock.h"
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 
 #define MINREDRAW 3  /* Number of redrawn on each frame */
 #define MAXREDRAW 8

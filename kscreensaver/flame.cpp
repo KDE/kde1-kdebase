@@ -19,6 +19,10 @@
 // layout management added 1998/04/19 by Mario Weilguni <mweilguni@kde.org>
 
 #include <qlayout.h>
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <kbuttonbox.h>
 #include "helpers.h"
 
