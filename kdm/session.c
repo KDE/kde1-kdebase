@@ -258,7 +258,9 @@ static	struct dlfuncs	dlfuncs = {
 	endspent,
 #endif
 	getpwnam,
+#ifdef HAVE_CRYPT_H
 	crypt,
+#endif
 	};
 	
 #ifdef X_NOT_STDC_ENV
@@ -1075,7 +1077,7 @@ char	*user, *home;
     return env;
 }
 
-#if defined(Lynx) || defined(SCO) && !defined(SCO_USA)
+#if defined(Lynx) || defined(SCO) && !defined(SCO_USA) || !defined(HAVE_CRYPT_H)
 char *crypt(s1, s2)
 	char	*s1, *s2;
 {
