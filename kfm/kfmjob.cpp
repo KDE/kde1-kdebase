@@ -154,8 +154,6 @@ void KFMJob::openFile(bool _reload)
     if (cookiejar)
     {
         QString cookie_data( cookiejar->findCookies(url) );
-
-        printf("KFMJob::openFile: URL=%s : \n---%s---\n", url.data(), cookie_data.data());
    	job->get( url, _reload, post_data.data(), cookie_data.data() );
     }
     else
