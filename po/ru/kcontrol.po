@@ -1,13 +1,13 @@
 # Перевод kcontrol
 # Copyright (C) 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1998, 1999.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontrol\n"
 "POT-Creation-Date: 1999-01-27 01:14+0100\n"
-"PO-Revision-Date: 1998-12-10 05:26+0600\n"
+"PO-Revision-Date: 1999-03-26+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,9 +45,8 @@ msgstr ""
 "С. Кулову, П. Доулеру, М. Вуббену & М. Джонсу."
 
 #: mainwidget.cpp:44
-#, fuzzy
 msgid "KDE Version: "
-msgstr "Модификация: "
+msgstr "Версия KDE: "
 
 #: mainwidget.cpp:52
 msgid "User: "

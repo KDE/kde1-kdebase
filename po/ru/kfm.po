@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 0.2\n"
 "POT-Creation-Date: 1999-03-26 01:17+0100\n"
-"PO-Revision-Date: 1999-02-09 03:51+0600\n"
+"PO-Revision-Date: 1999-03-26 03:51+0600\n"
 "Last-Translator: Denis Pershin <dyp@inetlab.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -228,6 +228,8 @@ msgid ""
 "\n"
 "Please submit bugs and wishes as explained on http://bugs.kde.org"
 msgstr ""
+"\n"
+"Ошибки и пожелания можно высказать на http://bugs.kde.org"
 
 #: kfmgui.cpp:446
 msgid "&Go"
@@ -251,7 +253,7 @@ msgstr "Домашний каталог"
 
 #: kfmgui.cpp:549
 msgid "Could not load icon\n"
-msgstr "Не могу загрузить пиктограмму\n"
+msgstr "Ошибка загрузки пиктограммы\n"
 
 #: bookmark.cpp:296 htmlcache.cpp:363 htmlcache.cpp:396 kbind.cpp:229
 #: kbind.cpp:308 kbind.cpp:360 kbind.cpp:1606 kbind.cpp:1614 kbind.cpp:1632
@@ -496,7 +498,7 @@ msgstr "ОШИБКА: Нет установок Терминала"
 
 #: kbind.cpp:1381 kbind.cpp:1489
 msgid "Could not execute program\n"
-msgstr "Не могу запустить программу\n"
+msgstr "Ошибка запуска програмы\n"
 
 #: kbind.cpp:1605
 msgid "Could not find binding"
@@ -528,7 +530,7 @@ msgid ""
 "Could not access\n"
 "%s"
 msgstr ""
-"Не могу получить доступ к\n"
+"Ошибка при доступе к\n"
 "%s"
 
 #: kbind.cpp:1750
@@ -541,7 +543,7 @@ msgstr "Конфигурационный файл не имеет поля \"Type=...\""
 
 #: kbind.cpp:1801 kbind.cpp:1964
 msgid "Could not access"
-msgstr "Не могу получить доступ"
+msgstr "Ошибка доступа"
 
 #: kbind.cpp:1819
 msgid ""
@@ -630,7 +632,7 @@ msgstr "Запускать в Терминале"
 #
 #: bookmark.cpp:296
 msgid "Could not write bookmark"
-msgstr "Не могу записать закладки"
+msgstr "Ошибка записи закладок"
 
 #: kfmprops.cpp:239
 msgid "File Name"
@@ -671,7 +673,7 @@ msgid ""
 "Could not rename the file or directory\n"
 "%s\n"
 msgstr ""
-"Не могу переименовать файл или каталог\n"
+"Ошибка переименования файла или каталога\n"
 "%s\n"
 
 #: kfmprops.cpp:430
@@ -765,7 +767,7 @@ msgid ""
 "Could not change owner/group\n"
 "Perhaps access denied."
 msgstr ""
-"Не могу изменить владельца/группу\n"
+"Ошибка изменения владельца/группы\n"
 "Возможно доступ запрещен."
 
 #: kfmprops.cpp:657
@@ -773,7 +775,7 @@ msgid ""
 "Could not change permissions\n"
 "Perhaps access denied."
 msgstr ""
-"Не могу изменить права\n"
+"Ошибка изменения прав доступа\n"
 "Возможно доступ запрещен."
 
 #: kfmprops.cpp:670 kfmprops.cpp:733
@@ -802,7 +804,7 @@ msgid ""
 "Could not save properties\n"
 "Perhaps permissions denied"
 msgstr ""
-"Не могу сохранить установки\n"
+"Ошибка сохранения установок\n"
 "Возможно доступ запрещен"
 
 #: kfmprops.cpp:1003
@@ -823,7 +825,7 @@ msgstr "(По умолчанию)"
 
 #: kfmprops.cpp:1219
 msgid "Could not write to\n"
-msgstr "Не могу записать в\n"
+msgstr "Ошибка записи в\n"
 
 #: kfmprops.cpp:1379
 msgid "(None)"
@@ -883,7 +885,7 @@ msgstr "Пиктограмма \"размонтировано\""
 
 #: kfmserver.cpp:47
 msgid "Could not create ~/.kde/share/apps/kfm/magic"
-msgstr "Не могу создать ~/.kde/share/apps/kfm/magic"
+msgstr "Ошибка создания ~/.kde/share/apps/kfm/magic"
 
 #: kfmserver.cpp:130
 msgid "Do you really want to rearrange your icons ?"
@@ -941,11 +943,11 @@ msgstr "Внутренняя Ошибка: desktopDir некорректен"
 #: root.cpp:780
 #, c-format
 msgid "ERROR: Could not read desktop directory '%s'"
-msgstr "ОШИБКА: Не могу прочитать каталог рабочего стола '%s'"
+msgstr "Ошибка чтения каталога рабочего стола '%s'"
 
 #: kfmman.cpp:1680 root.cpp:992 root.cpp:1012
 msgid "ERROR: Can not accept drop"
-msgstr "ОШИБКА: Не могу подтвердить перенос"
+msgstr "ОШИБКА: Ошибка подтверждения переноса"
 
 #: kfmman.cpp:1657 kfmman.cpp:1703 kfmtree.cpp:340 root.cpp:1865 root.cpp:1890
 msgid "Dont know what to do."
@@ -996,13 +998,13 @@ msgid ""
 "Could not make symlink to\n"
 "%s"
 msgstr ""
-"Не могу сделать ссылку на\n"
+"Ошибка создания ссылки на\n"
 "%s"
 
 #: kiojob.cpp:387
 #, c-format
 msgid " ERROR: Could not write to %s"
-msgstr " ОШИБКА: Не могу записать в %s"
+msgstr " Ошибка записи в %s"
 
 #: kiojob.cpp:568 kiojob.cpp:891
 #, c-format
@@ -1010,7 +1012,7 @@ msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
-"Не могу создать символьную ссылку\n"
+"Ошибка создания символьной ссылки\n"
 "%s"
 
 #: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1360
@@ -1019,13 +1021,13 @@ msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
-"Не могу создать каталог\n"
+"Ошибка создания каталога\n"
 "%s"
 
 #: kiojob.cpp:598 kiojob.cpp:1168
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
-msgstr "ОШИБКА: Не могу получить доступ к каталогу '%s'"
+msgstr "Ошибка доступа к каталогу '%s'"
 
 #: kiojob.cpp:662
 #, c-format
@@ -1054,12 +1056,12 @@ msgid "Recurse copying from/to distant locations"
 msgstr "Рекурсивное копирование из/в удаленн[ого/ое] местоположения"
 
 #: kiojob.cpp:904
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not remove symbolic link\n"
 "%s"
 msgstr ""
-"Не могу создать символьную ссылку\n"
+"Ошибка удаления символьной ссылки\n"
 "%s"
 
 #: kiojob.cpp:952
@@ -1068,7 +1070,7 @@ msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
-"Не могу получить доступ к каталогу\n"
+"Ошибка доступа к каталогу\n"
 "%s"
 
 #: kiojob.cpp:1000
@@ -1079,7 +1081,7 @@ msgid ""
 "to %s\n"
 "Perhaps access denied"
 msgstr ""
-"Не могу переместить каталог\n"
+"Ошибка перемещения каталога\n"
 "%s\n"
 "в %s\n"
 "Возможно доступ запрещен."
@@ -1105,7 +1107,7 @@ msgid ""
 "%s\n"
 "File does not exist or access denied"
 msgstr ""
-"Не могу прочитать\n"
+"Ошибка чтения\n"
 "%s\n"
 "Файл не существует или доступ запрещен"
 
@@ -1116,7 +1118,7 @@ msgid ""
 "%s\n"
 "Perhaps access denied"
 msgstr ""
-"Не могу записать\n"
+"Ошибка записи\n"
 "%s\n"
 "Возможно доступ запрещен"
 
@@ -1126,7 +1128,7 @@ msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
-"Не могу создать Socket для\n"
+"Ошибка создания Socket'а для\n"
 "%s"
 
 #: kiojob.cpp:1348 kiojob.cpp:1424
@@ -1164,7 +1166,7 @@ msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
-"Не могу получить содержимое каталога\n"
+"Ошибка получения содержимого каталога\n"
 "%s"
 
 #: kiojob.cpp:1367
@@ -1174,7 +1176,7 @@ msgid ""
 "%s\n"
 "URL does not exist or permission denied"
 msgstr ""
-"Не могу удалить\n"
+"Ошибка удаления\n"
 "%s\n"
 "URL не существует или доступ запрещен"
 
@@ -1221,13 +1223,13 @@ msgstr ""
 "не существует"
 
 #: kiojob.cpp:1398
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Could not write\n"
 "%s\n"
 "Perhaps disk full"
 msgstr ""
-"Не могу записать\n"
+"Ошибка записи\n"
 "%s\n"
 "Возможно доступ запрещен"
 
@@ -1257,7 +1259,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Не могу замонтировать\n"
+"Ошибка монтирования\n"
 "Журнал ошибок:\n"
 "\n"
 "%s"
@@ -1270,7 +1272,7 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
-"Не могу размонтировать\n"
+"Ошибка размонтирования\n"
 "Журнал ошибок:\n"
 "\n"
 "%s"
@@ -1295,7 +1297,7 @@ msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
-"Не могу удалить каталог\n"
+"Ошибка удаления каталога\n"
 "%s"
 
 #: kiojob.cpp:1824

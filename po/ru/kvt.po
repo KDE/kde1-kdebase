@@ -1,6 +1,6 @@
 # Перевод kvt.
 # Copyright (C) 1997, 1998 Free Software Foundation, Inc.
-# Denis Pershin <dyp@inetlab.com>, 1997, 1998.
+# Denis Pershin <dyp@inetlab.com>, 1997, 1998, 1999.
 #
 msgid ""
 msgstr ""
@@ -141,7 +141,6 @@ msgid "Save &Options"
 msgstr "Записать параметры"
 
 #: main.C:688
-#, fuzzy
 msgid ""
 "\n"
 "\n"
@@ -158,6 +157,7 @@ msgstr ""
 "(C) 1996, 1997 Маттиас Эттрих <ettrich@kde.org>\n"
 "(C) 1997 М. Г. Берберих <berberic@fmi.uni-passau.de>\n"
 "(C) 1998 Иван Шретер (schreter@kdk.sk)\n"
+"(C) 1999 Леон Видершовен (l.widdershoven@fz-juelich.de)\n"
 "\n"
 "Эмуляция терминала для проекта KDE\n"
 "Основан на rxvt-2.08 Роберта Натиона"
