@@ -405,7 +405,7 @@ void KOptionsConfig::saveSettings() {
     config->writeEntry("HideShowAnimation", 
 		       show_hide->isChecked()?show_hide_slider->value():0);
 
-    config->writeEntry("ClockAmPm", clock->isChecked()?"off":"on");
+    config->writeEntry("ClockAmPm", clock->isChecked()?"on":"off");
     //CT
 
     config->writeEntry("MenuToolTips", tips->isChecked()?slider->value():-1);
