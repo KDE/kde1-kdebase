@@ -12,6 +12,14 @@ written in plain C).
 
 In 0.13:
 --------
+patchlevel 3:
+        - fixed semantics with FocusFollowsMouse and AutoRaise:
+               There are now two kwmrc properties:
+                      AutoRaise=on/off
+                      AutoRaiseInterval=0...x
+               If the inner window command for the left mouse button contains
+               any raise, this applies to the first click.
+
 patchlevel 2:
         - some additions to the middle mouse handling to emulate
            the former behaviour with MMB-movement.

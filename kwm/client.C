@@ -508,9 +508,9 @@ void Client::generateButtons(){
   }
 
   //CT 03Nov1998 - make sure sticky displays correctly
-  if (this->isSticky()) 
+  if (this->isSticky())
     buttonSticky->setPixmap(*pm_pin_down);
-  else 
+  else
     buttonSticky->setPixmap(*pm_pin_up);
   //CT
 }
@@ -628,7 +628,7 @@ void Client::animateTitlebar(){
 
 
 void Client::mousePressEvent( QMouseEvent *ev ){
-    
+
   old_cursor_pos = ev->pos();
   int com = MyApp::MouseNothing;
   mouse_release_command = MyApp::MouseNothing;
@@ -670,7 +670,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 	myapp->operations->popup(QCursor::pos());
 	return;
     }
-    
+
     if (ev->button() == MidButton) {
 	// special hack for the middle mouse button to allow
 	// movement without raise or lower
@@ -687,7 +687,7 @@ void Client::mousePressEvent( QMouseEvent *ev ){
 	    com = MyApp::MouseNothing;
 	}
     }
-    
+
     myapp->executeMouseBinding(this, com);
   }
 
@@ -1472,14 +1472,13 @@ void Client::setactive(bool on){
   if (!do_not_draw)
     paintState();
   if (is_active){
-    if ( options.FocusPolicy != CLICK_TO_FOCUS
-	 && options.AutoRaise != 0){
-      if (options.AutoRaise > 0)
-	QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
-      autoraised_stopped = false;
+      if ( options.FocusPolicy != CLICK_TO_FOCUS) {
+	  if (options.AutoRaise)
+	      QTimer::singleShot(options.AutoRaiseInterval, this, SLOT(autoRaise()));
+	autoraised_stopped = false;
     }
     else {
-      doButtonGrab();
+	doButtonGrab();
     }
   }
   else {
@@ -1690,9 +1689,9 @@ void Client::paintState(bool only_label, bool colors_have_changed, bool animate)
     aln = r.width()/2 - need/2;
   else if (options.alignTitle == AT_RIGHT)
     aln = r.width() - need;
-  //CT see next lines. Replaced two 0 by `aln`. Moved next two lines here 
+  //CT see next lines. Replaced two 0 by `aln`. Moved next two lines here
   //  from above.
-  
+
   if (!titlestring_too_large)
     titlestring_offset = aln;
 
@@ -1805,6 +1804,7 @@ void Client::iconify(bool animation){
   KWM::setIconify(window, True);
   manager->changedClient(this);
   manager->setWindowState(this, IconicState);
+
 }
 
 // unIconify this client. Takes care about floating or transient
@@ -1920,7 +1920,7 @@ void Client::maximize(int mode, bool animate){
   }
 
   adjustSize();
-  
+
   if (animate) {
       if (state == NormalState)
 	  manager->raiseSoundEvent("Window Maximize");
@@ -2228,9 +2228,9 @@ void Client::autoRaise(){
      }
      else {
        if ( options.FocusPolicy != CLICK_TO_FOCUS
-	    && options.AutoRaise != 0){
-	 if (options.AutoRaise > 0)
-	   QTimer::singleShot(options.AutoRaise, this, SLOT(autoRaise()));
+	    && options.AutoRaise){
+	 if (options.AutoRaise)
+	   QTimer::singleShot(options.AutoRaiseInterval, this, SLOT(autoRaise()));
 	 autoraised_stopped = false;
        }
      }
@@ -2243,7 +2243,12 @@ void Client::stopAutoraise(bool do_raise){
       && isActive()
       && !do_not_draw
       && options.FocusPolicy != CLICK_TO_FOCUS
-      && options.AutoRaise != 0
+      && 
+      (
+       options.CommandWindow1 == MyApp::MouseRaise ||
+       options.CommandWindow1 == MyApp::MouseActivateRaiseAndPassClick ||
+       options.CommandWindow1 == MyApp::MouseActivateAndRaise
+       )
       && do_raise){
     manager->raiseClient( this );
     doButtonGrab();

@@ -56,7 +56,7 @@ enum PLACEMENT_POLICY {
   INTERACTIVE_PLACEMENT,
   MANUAL_PLACEMENT
 };
-   
+
 enum ELECTRIC_BORDER_POINTER_WARP {
   FULL_WARP,
   MIDDLE_WARP,
@@ -87,7 +87,8 @@ struct kwmOptions {
   int ResizeAnimation;
   bool MaximizeOnlyVertically;
   int TitleAnimation;
-  int AutoRaise;
+  int AutoRaiseInterval;
+  bool AutoRaise;
   int ElectricBorder;
   int ElectricBorderNumberOfPushes;
   ELECTRIC_BORDER_POINTER_WARP ElectricBorderPointerWarp;
@@ -102,7 +103,7 @@ struct kwmOptions {
 
   const char* rstart;
   int titlebar_doubleclick_command;
-  
+
   // mouse bindings
   int CommandActiveTitlebar1;
   int CommandActiveTitlebar2;
@@ -149,7 +150,7 @@ extern kwmOptions options;
 			|| options.FocusPolicy == CLASSIC_SLOPPY_FOCUS)
 
 
-// #define DEBUG_EVENTS_ENABLED 
+// #define DEBUG_EVENTS_ENABLED
 
 #ifdef DEBUG_EVENTS_ENABLED
 #define DEBUG_EVENTS(x,y) debug_events(x,y);
@@ -157,8 +158,8 @@ extern kwmOptions options;
      void debug_events(const char* s, long int l);
      void debug_events(const char* s, void* v, long int l=0);
 #else
-#define DEBUG_EVENTS(x,y) 
-#define DEBUG_EVENTS2(x,y,z) 
+#define DEBUG_EVENTS(x,y)
+#define DEBUG_EVENTS2(x,y,z)
 #endif
 
 #endif // OPTIONS_H

@@ -841,14 +841,24 @@ void MyApp::readConfiguration(){
   if (options.TitleAnimation)
       startTimer(options.TitleAnimation);
 
-  if (config->hasKey("AutoRaise")){
-    options.AutoRaise = config->readNumEntry("AutoRaise");
-    if (options.AutoRaise < -1)
-      options.AutoRaise = 0;
+  key = config->readEntry("AutoRaise");
+  if( key == "on")
+    options.AutoRaise = true;
+  else if( key == "off")
+    options.AutoRaise = false;
+  else{
+    config->writeEntry("AutoRaise", "off");
+    options.AutoRaise = false;
+  }
+
+  if (config->hasKey("AutoRaiseInterval")){
+    options.AutoRaiseInterval = config->readNumEntry("AutoRaiseInterval");
+    if (options.AutoRaiseInterval < 0)
+      options.AutoRaiseInterval = 0;
   }
   else{
-    options.AutoRaise = 0;
-    config->writeEntry("AutoRaise", options.AutoRaise);
+    options.AutoRaiseInterval = 0;
+    config->writeEntry("AutoRaiseInterval", options.AutoRaiseInterval);
   }
 
   if (config->hasKey("ElectricBorder")){
