@@ -113,7 +113,7 @@ msgstr "Incluir &subpastas"
 
 #: kftabdlg.cpp:114
 msgid " Name& Location "
-msgstr " Localização do Nome& "
+msgstr " &Localização do Nome "
 
 #: kftabdlg.cpp:126
 msgid "and"
