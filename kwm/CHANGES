@@ -22,6 +22,8 @@ In 0.10:
        - transient windows cannot be iconified separately anymore
        - few smaller fixes
 
+       - cosmectic problem with my pushbuttons fixed
+
   patchlevel 15:
        - transient windows are iconified/deiconified with their parent
          window. They also dissappear for the modules and the Mod1-Tab

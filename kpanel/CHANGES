@@ -6,6 +6,8 @@ In kpanel-0.17:
              FoldersFirst=off
          in the kpanelrc
 
+       - cosmectic problem with my pushbuttons fixed
+
     Patchlevel 6:
        - menu sorting fixed (thanks to Michael Bialas)
          Please note that the sort order can individually changed

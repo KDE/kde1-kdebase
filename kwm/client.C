@@ -57,6 +57,7 @@ myPushButton::myPushButton(QWidget *parent, const char* name)
   : QPushButton( parent, name ){
     setFocusPolicy(NoFocus);
     flat = True;
+    last_button = 0;
 }
 
 void myPushButton::enterEvent( QEvent * ){
@@ -118,8 +119,10 @@ void myPushButton::mousePressEvent( QMouseEvent *e){
 }
 
 void myPushButton::mouseReleaseEvent( QMouseEvent *e){
-  if ( !isDown() )
+  if ( !isDown() ){
+    last_button = 0;
     return;
+  }
   bool hit = hitButton( e->pos() );
   setDown( FALSE );
   if ( hit ){
@@ -135,14 +138,19 @@ void myPushButton::mouseReleaseEvent( QMouseEvent *e){
     repaint();
     emit released();
   }
+  last_button = 0;
 }
 
 void myPushButton::mouseMoveEvent( QMouseEvent *e ){
+
+  if (!last_button)
+    return;
 
   if ( !(e->state() & LeftButton) &&
        !(e->state() & MidButton) &&
        !(e->state() & RightButton))
     return;
+
   
   bool hit = hitButton( e->pos() );
   if ( hit ) {
@@ -1442,8 +1450,13 @@ void Client::autoRaise(){
   if (autoraised_stopped || do_not_draw)
     return;
 
-  if (isActive())
-    manager->raiseClient( this );
+  if (isActive()){
+    Window tmpwin;
+    int tmp;
+    XGetInputFocus(qt_xdisplay(), &tmpwin, &tmp);
+    if (manager->getClient(tmpwin) == this)
+      manager->raiseClient( this );
+  }
 }
 
 void Client::stopAutoraise(){
