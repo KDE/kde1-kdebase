@@ -138,7 +138,7 @@ else
 fi
 AC_SUBST(SETUIDFLAGS)
 
-AC_LANG_CPLUSPLUS
+AC_LANG_C
 dnl Checks for libraries. 
 AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
 AC_SUBST(LIBCOMPAT)
@@ -160,8 +160,7 @@ AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h crypt.h sys/select.h \
 	sys/sockio.h crypt.h krb5/krb5.h rpc/rpc.h rpc/key_prot.h)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
-AC_C_CONST
-AC_C_INLINE
+AC_LANG_CPLUSPLUS
 AC_HEADER_TIME
 
 dnl check if the compiler has bool
