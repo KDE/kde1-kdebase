@@ -113,7 +113,7 @@ msgstr "Seks"
 
 #: main.C:591
 msgid "Seven"
-msgstr "Sju"
+msgstr "Syv"
 
 #: main.C:594
 msgid "Eight"

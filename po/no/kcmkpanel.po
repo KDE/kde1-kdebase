@@ -88,11 +88,11 @@ msgstr "&Bredde"
 
 #: options.cpp:38
 msgid "Menu Tooltips"
-msgstr "Meny verktøytips"
+msgstr "Menyverktøytips"
 
 #: options.cpp:39
 msgid "Show &Menu Tooltips"
-msgstr "Vis &meny verktøytips"
+msgstr "Vis &menyverktøytips"
 
 #: options.cpp:44
 msgid "De&lay:"
@@ -112,11 +112,11 @@ msgstr "Personlig f&ørst"
 
 #: options.cpp:71
 msgid "Auto &Hide Panel"
-msgstr "Auto sk&jul panel"
+msgstr "Auto-sk&jul panel"
 
 #: options.cpp:73
 msgid "Auto Hide &Taskbar"
-msgstr "Auto skjul ver&ktøylinje"
+msgstr "Auto-skjul ver&ktøylinje"
 
 #: options.cpp:81
 msgid "Clock"

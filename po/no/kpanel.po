@@ -84,11 +84,11 @@ msgstr "Konfigurer panel"
 
 #: props.C:145
 msgid "Edit Menus"
-msgstr ""
+msgstr "Redigere menyer"
 
 #: props.C:147
 msgid "Add or remove applications in the menu structure "
-msgstr ""
+msgstr "Legg til eller fjerne applikasjoner i meny-strukturen "
 
 #: events.C:724 props.C:148
 msgid "Restart"
@@ -108,69 +108,12 @@ msgstr "Lås skjerm"
 
 #: props.C:310
 msgid "The menu editor is not installed."
-msgstr ""
+msgstr "Meny-editoren er ikke installert."
 
 #: events.C:760 props.C:311
 msgid "Oops!"
-msgstr ""
+msgstr "Ops!"
 
 #: events.C:759
 msgid "Cannot put this as button onto the panel!"
-msgstr ""
-
-#~ msgid "Location"
-#~ msgstr "Plassering"
-
-#~ msgid "Taskbar"
-#~ msgstr "Oppgavelinje"
-
-#~ msgid "Hidden"
-#~ msgstr "Skjult"
-
-#~ msgid "Top/Left"
-#~ msgstr "Topp/venstre"
-
-#~ msgid "Tiny Style"
-#~ msgstr "Bitteliten stil"
-
-#~ msgid "Normal Style"
-#~ msgstr "Normal stil"
-
-#~ msgid "Large Style"
-#~ msgstr "Stor stil"
-
-#~ msgid "Menu Tooltips"
-#~ msgstr "Meny verktøytips"
-
-#~ msgid "Others"
-#~ msgstr "Andre"
-
-#~ msgid "Personal First"
-#~ msgstr "Personlig først"
-
-#~ msgid "Auto Hide Panel"
-#~ msgstr "Auto skjul panel"
-
-#~ msgid "Auto Hide Taskbar"
-#~ msgstr "Auto skjul oppgavelinjen"
-
-#~ msgid "Clock"
-#~ msgstr "Ur"
-
-#~ msgid "24h"
-#~ msgstr "24 timer"
-
-#~ msgid "12h AM/PM"
-#~ msgstr "12 timer"
-
-#~ msgid "Visible"
-#~ msgstr "Synlig"
-
-#~ msgid "Width"
-#~ msgstr "Bredde"
-
-#~ msgid "Desktops"
-#~ msgstr "Skrivebord"
-
-#~ msgid "KPanel Configuration"
-#~ msgstr "KPanel konfigurasjon"
+msgstr "Kan ikke putte denne knappen på panelet!"

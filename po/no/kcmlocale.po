@@ -48,7 +48,7 @@ msgstr "uten navn!"
 
 #: locale.cpp:181
 msgid "Applying language settings"
-msgstr "Benytter språk oppsett"
+msgstr "Benytter språkoppsett"
 
 #: locale.cpp:182
 msgid ""

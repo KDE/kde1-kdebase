@@ -16,14 +16,13 @@ msgstr ""
 
 #: backgnd.cpp:58
 msgid "Enter new desktop name"
-msgstr ""
+msgstr "Oppgi nytt navn på skrivebord"
 
 #: backgnd.cpp:114 backgnd.cpp:149
 msgid "Desktop"
 msgstr "Skrivebord"
 
 #: backgnd.cpp:166
-#, fuzzy
 msgid "&Rename ..."
 msgstr "Gi nytt navn..."
 
@@ -32,163 +31,148 @@ msgid "Colors"
 msgstr "Farger"
 
 #: backgnd.cpp:219
-#, fuzzy
 msgid "&One Color"
-msgstr "&Farge"
+msgstr "&Første farge"
 
 #: backgnd.cpp:236
-#, fuzzy
 msgid "&Two Color"
-msgstr "&Farge"
+msgstr "&Andre farge"
 
 #: backgnd.cpp:255
-#, fuzzy
 msgid "Set&up ..."
-msgstr "Oppsett..."
+msgstr "&Oppsett..."
 
 #: backgnd.cpp:264
 msgid "Wallpaper"
 msgstr "Tapet"
 
 #: backgnd.cpp:274
-#, fuzzy
 msgid "Ti&led"
 msgstr "Fliselagt"
 
 #: backgnd.cpp:282
-#, fuzzy
 msgid "&Centred"
-msgstr "Sentrert"
+msgstr "&Sentrert"
 
 #: backgnd.cpp:290
-#, fuzzy
 msgid "&Scaled"
-msgstr "Skalert"
+msgstr "S&kalert"
 
 #: backgnd.cpp:306 backgnd.cpp:426 backgnd.cpp:439 backgnd.cpp:787
-#, fuzzy
 msgid "No wallpaper"
-msgstr "Tapet"
+msgstr "Ingen tapet"
 
 #: backgnd.cpp:334
 msgid "&Browse..."
-msgstr ""
+msgstr "&Bla igjennom..."
 
 #: backgnd.cpp:863
-#, fuzzy
 msgid "Desktop names"
-msgstr "Skrivebord"
+msgstr "Skrivebordsnavn"
 
 #: backgnd.cpp:909
-#, fuzzy
 msgid "Two color backgrounds"
-msgstr "Velg bakgrunn"
+msgstr "To fargebakgrunner"
 
 #: backgnd.cpp:946
 msgid "Blend colors from &top to bottom"
-msgstr ""
+msgstr "Gradvis fargeovergang fra &topp til bunn"
 
 #: backgnd.cpp:952
 msgid "Blend colors from &right to left"
-msgstr ""
+msgstr "Gradvis fargeovergang fra &høyre til venstre"
 
 #: backgnd.cpp:958
 msgid "Use &pattern"
-msgstr ""
+msgstr "Bruk &mønster"
 
 #: backgnd.cpp:985
 msgid "Preview"
-msgstr ""
+msgstr "Forhåndsvis"
 
 #: backgnd.cpp:996
 msgid "Pattern &name"
-msgstr ""
+msgstr "Mønsternavn"
 
 #: backgnd.cpp:1035
 msgid "Current"
-msgstr ""
+msgstr "Gjeldende"
 
 #: backgnd.cpp:1095
-#, fuzzy
 msgid "Filled"
-msgstr "Fliselagt"
+msgstr "Fyllt"
 
 #: backgnd.cpp:1098
 msgid "Fish net"
-msgstr ""
+msgstr "Fiskegarn"
 
 #: backgnd.cpp:1101
 msgid "Triangles"
-msgstr ""
+msgstr "Trekanter"
 
 #: backgnd.cpp:1104
 msgid "Flowers"
-msgstr ""
+msgstr "Blomster"
 
 #: backgnd.cpp:1107
 msgid "Rattan"
-msgstr ""
+msgstr "Rotting"
 
 #: backgnd.cpp:1110
 msgid "Cobbled Pavement"
-msgstr ""
+msgstr "Brusten"
 
 #: colorscm.cpp:119
 msgid "Color Scheme"
 msgstr "Fargevalg"
 
 #: colorscm.cpp:130
-#, fuzzy
 msgid "Current scheme"
-msgstr "Fargevalg"
+msgstr "Gjeldende valg"
 
 #: colorscm.cpp:132
-#, fuzzy
 msgid "KDE default"
 msgstr "KDE standard"
 
 #: colorscm.cpp:145
 msgid "&Add ..."
-msgstr ""
+msgstr "&Legg til ..."
 
 #: colorscm.cpp:153
-#, fuzzy
 msgid "&Remove"
-msgstr "Lagre skjema"
+msgstr "&Fjern"
 
 #: colorscm.cpp:162
 msgid "&Save changes"
-msgstr ""
+msgstr "&Lagre endringer"
 
 #: colorscm.cpp:176
 msgid "Widget color"
-msgstr "Widget farge"
+msgstr "Widget-farge"
 
 #: colorscm.cpp:183
 msgid "Inactive title bar"
-msgstr "Inaktiv tittel bjelke"
+msgstr "Inaktiv tittellinje"
 
 #: colorscm.cpp:184
 msgid "Inactive title text"
-msgstr "Inaktiv tittel tekst"
+msgstr "Inaktiv titteltekst"
 
 #: colorscm.cpp:185
-#, fuzzy
 msgid "Inactive title blend"
-msgstr "Inaktiv tittel bjelke"
+msgstr "Inaktiv tittelovergang"
 
 #: colorscm.cpp:186
 msgid "Active title bar"
-msgstr "Aktiv tittel bjelke"
+msgstr "Aktiv tittellinje"
 
 #: colorscm.cpp:187
 msgid "Active title text"
-msgstr "Aktiv tittel tekst"
+msgstr "Aktiv titteltekst"
 
 #: colorscm.cpp:188
-#, fuzzy
 msgid "Active title blend"
-msgstr "Aktiv tittel bjelke"
+msgstr "Aktiv tittelovergang"
 
 #: colorscm.cpp:189
 msgid "Background"
@@ -208,20 +192,19 @@ msgstr "Velg tekst"
 
 #: colorscm.cpp:193
 msgid "Window background"
-msgstr "Vindu bakgrunn"
+msgstr "Vindusbakgrunn"
 
 #: colorscm.cpp:194 widgetcanvas.cpp:175 widgetcanvas.cpp:176
 msgid "Window text"
-msgstr "Vindu tekst"
+msgstr "Vindustekst"
 
 #: colorscm.cpp:222
 msgid "Contrast"
 msgstr "Kontrast"
 
 #: colorscm.cpp:238
-#, fuzzy
 msgid "&Low"
-msgstr "Lav"
+msgstr "&Lav"
 
 #: colorscm.cpp:246
 msgid "High"
@@ -229,7 +212,7 @@ msgstr "Høy"
 
 #: colorscm.cpp:318
 msgid "Error removing"
-msgstr ""
+msgstr "Feil ved sletting"
 
 #: colorscm.cpp:319
 msgid ""
@@ -237,10 +220,13 @@ msgid ""
 "Perhaps you do not have permission to alter the file\n"
 "system where the color scheme is stored."
 msgstr ""
+"Dette farvevalget kunne ikke slettes.\n"
+"kanskje du ikke har tilgang til å endre filsystemet\n"
+"hvor fargevalget er lagret."
 
 #: colorscm.cpp:376
 msgid "Naming error"
-msgstr ""
+msgstr "Navnefeil"
 
 #: colorscm.cpp:377
 msgid ""
@@ -248,11 +234,12 @@ msgid ""
 "scheme. The one you entered already appears\n"
 "in the color scheme list."
 msgstr ""
+"Vennligst velg et unikt navn for det nye fargevalget\n"
+"Det du skrev inn finnes allerede i listen over fargevalg."
 
 #: savescm.cpp:18
-#, fuzzy
 msgid "Add a color scheme"
-msgstr "Fargevalg"
+msgstr "Legg til et fargevalg"
 
 #: savescm.cpp:32
 msgid ""
@@ -262,6 +249,11 @@ msgid ""
 "The colors currently used in the preview will\n"
 "be copied into this scheme to begin with."
 msgstr ""
+"&Skriv et navn for det nye fargevalget\n"
+"som skal bli lagt til i din personlige liste\n"
+"\n"
+"Fargene som brukes nå i forhåndsvisningen vil\n"
+"vil til å starte med bli kopiert inn i dette valget."
 
 #: scrnsave.cpp:48
 msgid "Ignore"
@@ -269,30 +261,27 @@ msgstr "Ignorer"
 
 #: scrnsave.cpp:49
 msgid "Save Screen"
-msgstr ""
+msgstr "Lagre skjerm"
 
 #: scrnsave.cpp:50
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lås skjerm"
 
 #: scrnsave.cpp:110 scrnsave.cpp:179
 msgid "Screen Saver"
 msgstr "Skjermsparer"
 
 #: scrnsave.cpp:186 scrnsave.cpp:350 scrnsave.cpp:553 scrnsave.cpp:662
-#, fuzzy
 msgid "No screensaver"
-msgstr "&Skjermsparer"
+msgstr "Ingen skjermsparer"
 
 #: scrnsave.cpp:207
-#, fuzzy
 msgid "&Setup ..."
-msgstr "Oppsett..."
+msgstr "6Oppsett ..."
 
 #: scrnsave.cpp:215
-#, fuzzy
 msgid "&Test"
-msgstr "Test"
+msgstr "&Test"
 
 #: scrnsave.cpp:228
 msgid "Settings"
@@ -300,45 +289,39 @@ msgstr "Innstillinger"
 
 #: scrnsave.cpp:248
 msgid "&Wait for"
-msgstr ""
+msgstr "&Vent på"
 
 #: scrnsave.cpp:258
-#, fuzzy
 msgid "min."
-msgstr "min"
+msgstr "min."
 
 #: scrnsave.cpp:264
-#, fuzzy
 msgid "&Require password"
-msgstr "Krever passord"
+msgstr "&Krever passord"
 
 #: scrnsave.cpp:272
-#, fuzzy
 msgid "Priority"
 msgstr "Prioritet"
 
 #: scrnsave.cpp:285
-#, fuzzy
 msgid "&High"
-msgstr "Høy"
+msgstr "&Høy"
 
 #: scrnsave.cpp:294
 msgid "Low"
 msgstr "Lav"
 
 #: general.cpp:216
-#, fuzzy
 msgid "Fonts etc."
-msgstr "Skrifttyper"
+msgstr "Skrifttyper etc."
 
 #: general.cpp:222
 msgid "&Draw widgets in the style of Windows 95"
-msgstr ""
+msgstr "&Tegn widgets i samme stil som Windows 95"
 
 #: general.cpp:236
-#, fuzzy
 msgid "Desktop fonts"
-msgstr "Skrivebord"
+msgstr "Skrifttype på skrivebord"
 
 #: general.cpp:248
 msgid "General font"
@@ -346,21 +329,19 @@ msgstr "Generell skrifttype"
 
 #: general.cpp:253
 msgid "Fixed font"
-msgstr ""
+msgstr "Fast skrifttype"
 
 #: general.cpp:263
-#, fuzzy
 msgid "Panel button font"
-msgstr "Generell skrifttype"
+msgstr "Skryfttype på panelknapp"
 
 #: general.cpp:268
 msgid "Panel clock font"
-msgstr ""
+msgstr "Skrifttype på panelklokke"
 
 #: main.cpp:62
-#, fuzzy
 msgid "&Fonts etc."
-msgstr "Skrifttyper"
+msgstr "Skrifttyper etc."
 
 #: main.cpp:65
 msgid "&Background"
@@ -372,7 +353,7 @@ msgstr "&Skjermsparer"
 
 #: main.cpp:72
 msgid "&Colors"
-msgstr "&Farge"
+msgstr "&Farger"
 
 #: main.cpp:78
 msgid "usage: kcmdisplay [-init | {background,screensaver,colors,style}]\n"
@@ -391,17 +372,16 @@ msgid "Active window"
 msgstr "Vindu i bruk"
 
 #: widgetcanvas.cpp:189 widgetcanvas.cpp:190
-#, fuzzy
 msgid "Selected text"
-msgstr "Velg tekst"
+msgstr "Valgt tekst"
 
 #: fontchooser.cpp:89
 msgid "&Bold"
-msgstr ""
+msgstr "&Fet"
 
 #: fontchooser.cpp:96
 msgid "&Italic"
-msgstr ""
+msgstr "&Kursiv"
 
 #: fontchooser.cpp:262
 msgid "default"
@@ -410,94 +390,3 @@ msgstr "standard"
 #: fontchooser.cpp:265
 msgid "any"
 msgstr "hvilken som helst"
-
-#~ msgid "Default"
-#~ msgstr "Standard"
-
-#, fuzzy
-#~ msgid "Window title font"
-#~ msgstr "Vindu tekst"
-
-#~ msgid "kwmcom: communication with kwm failed\n"
-#~ msgstr "kwcom: kommunikasjon med kwm feilet\n"
-
-#~ msgid "Lock"
-#~ msgstr "Lås"
-
-#~ msgid "General"
-#~ msgstr "Generelt"
-
-#, fuzzy
-#~ msgid "&New scheme ..."
-#~ msgstr "Lagre skjema"
-
-#~ msgid "You have chosen a name used by a supplied color scheme"
-#~ msgstr "Du har valgt et navn på et medfølgende farveskjema"
-
-#~ msgid "Display Setup"
-#~ msgstr "Skjerm innstilling"
-
-#~ msgid ""
-#~ "No desktop color schemes were found.\n"
-#~ "Do you want to install the default color schemes now ?"
-#~ msgstr ""
-#~ "Ingen skrivebords fargeskjema installert\n"
-#~ "Vil du installere standard fargeskjema nå?"
-
-#~ msgid "Disabled"
-#~ msgstr "Utkoplet"
-
-#~ msgid "Selected"
-#~ msgstr "Valg"
-
-#~ msgid "Name"
-#~ msgstr "Navn"
-
-#~ msgid "Wait:"
-#~ msgstr "Vent"
-
-#~ msgid "Widget style"
-#~ msgstr "Widget stil"
-
-#~ msgid "Motif"
-#~ msgstr "Motif"
-
-#~ msgid "Windows 95"
-#~ msgstr "Windows 95"
-
-#~ msgid "Sample"
-#~ msgstr "Eksempel"
-
-#~ msgid "Small"
-#~ msgstr "Liten"
-
-#~ msgid "Medium"
-#~ msgstr "Medium"
-
-#~ msgid "Large"
-#~ msgstr "Stor"
-
-#~ msgid "&Style"
-#~ msgstr "&Stil"
-
-#~ msgid "Color"
-#~ msgstr "Farge"
-
-#, fuzzy
-#~ msgid "&Flat"
-#~ msgstr "Flat"
-
-#, fuzzy
-#~ msgid "&Gradient"
-#~ msgstr "Gradient"
-
-#, fuzzy
-#~ msgid "&Portrait"
-#~ msgstr "Portrett"
-
-#, fuzzy
-#~ msgid "&Landscape"
-#~ msgstr "Landskap"
-
-#~ msgid "Desktop Title"
-#~ msgstr "Skrivebord tittel"

@@ -38,18 +38,20 @@ msgstr "&Sesjoner"
 #: main.cpp:106
 msgid ""
 "usage: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
-msgstr "bruk: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
+msgstr ""
+"bruk: kdmconfig [-init | {appearance,font,background,sessions,users}]\n"
 
 #: main.cpp:145
 msgid "KDM Configuration"
-msgstr "KDM konfigurasjon"
+msgstr "KDM-konfigurasjon"
 
 #: main.cpp:155
 msgid ""
 "Sorry, but you don't have read/write\n"
 "permission to the KDM setup file."
-msgstr "Beklager, men du har ikke lese/skrive\n"
-"tilgang til KDM oppsetts fil."
+msgstr ""
+"Beklager, men du har ikke lese/skrive\n"
+"tilgang til KDM-oppsettsfil."
 
 #: main.cpp:157
 msgid "Missing privileges"
@@ -61,11 +63,11 @@ msgstr "Utseende"
 
 #: kdm-appear.cpp:69
 msgid "Greeting string:"
-msgstr "Velkomst streng:"
+msgstr "Velkomststreng:"
 
 #: kdm-appear.cpp:77
 msgid "KDM logo:"
-msgstr "KDM logo:"
+msgstr "KDM-logo:"
 
 #: kdm-appear.cpp:104 kdm-users.cpp:135
 msgid "Click or drop an image here"
@@ -73,7 +75,7 @@ msgstr "Klikk eller slipp et bilde her"
 
 #: kdm-appear.cpp:109
 msgid "GUI Style:"
-msgstr "GUI stil"
+msgstr "GUI-stil"
 
 #: kdm-appear.cpp:115
 msgid "Motif"
@@ -115,7 +117,7 @@ msgid ""
 "\n"
 "does not seem to be an image file"
 msgstr "\n"
-"ser ikke ut til å være en bilde fil"
+"ser ikke ut til å være en bildefil"
 
 #: kdm-appear.cpp:198 kdm-users.cpp:229
 msgid ""
@@ -202,7 +204,8 @@ msgstr "Vis bare\n"
 msgid ""
 "Show all users\n"
 " but no-show users"
-msgstr "Vis alle brukere\n"
+msgstr ""
+"Vis alle brukere\n"
 " untatt no-show brukere"
 
 #: kdm-users.cpp:97
@@ -255,7 +258,7 @@ msgstr "Omstart"
 
 #: kdm-sess.cpp:85
 msgid "Session types"
-msgstr "Sesjons typer"
+msgstr "Sesjonstyper"
 
 #: kdm-sess.cpp:88
 msgid "New type"
