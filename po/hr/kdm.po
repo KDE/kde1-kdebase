@@ -1,42 +1,16 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 1997-12-31 15:26+0100\n"
+"Content-Type: text/plain; charset=\n"
 "Date: 1997-09-09 17:23:06+0200\n"
 "From: Steffen Hansen,Home,,66178676, <stefh@nostromo>\n"
-"Content-Type: text/plain; charset=\n"
 "Xgettext-Options: -s -C -ktranslate\n"
-"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
+"Files: chooser.cpp gif.cpp jpeg.cpp kdmconfig.cpp kdmdesktop.cpp "
+"kdmshutdown.cpp kdmview.cpp kfdialog.cpp kgreeter.cpp\n"
 
-#: kdmshutdown.cpp:229 kgreeter.cpp:207
-msgid "Cancel"
-msgstr "Odustani"
-
-#: kdmshutdown.cpp:192
-msgid "Exit kdm"
-msgstr "Zavr¹i i odlogiraj se"
-
-#: kgreeter.cpp:201
-msgid "Go!"
-msgstr "Idi!"
-
-#: kgreeter.cpp:179
-msgid "Login failed!"
-msgstr "Login netoèan!"
-
-#: kgreeter.cpp:145
-msgid "Login:"
-msgstr "Login:"
-
-#: kdmshutdown.cpp:226
-msgid "Ok"
-msgstr "U redu"
-
-#: kgreeter.cpp:150
-msgid "Password:"
-msgstr "Lozinka:"
-
-#: kgreeter.cpp:185
-msgid "Session Type:"
-msgstr "Vrst rasporeda"
+#: kdmshutdown.cpp:153
+msgid "Shutdown or restart?"
+msgstr "Ugasi ili restartaj?"
 
 #: kdmshutdown.cpp:169
 msgid "Shutdown"
@@ -46,10 +20,36 @@ msgstr "Ugasi"
 msgid "Shutdown and restart"
 msgstr "Ugasi i restartaj"
 
-#: kdmshutdown.cpp:153
-msgid "Shutdown or restart?"
-msgstr "Ugasi ili restartaj?"
+#: kdmshutdown.cpp:192
+msgid "Exit kdm"
+msgstr "Zavr¹i i odlogiraj se"
 
-#: kgreeter.cpp:217
+#: kgreeter.cpp:137
+msgid "Login:"
+msgstr "Login:"
+
+#: kgreeter.cpp:142
+msgid "Password:"
+msgstr "Lozinka:"
+
+#: kgreeter.cpp:176
+msgid "Login failed!"
+msgstr "Login netoèan!"
+
+#: kgreeter.cpp:182
+msgid "Session Type:"
+msgstr "Vrst rasporeda"
+
+#: kgreeter.cpp:198
+msgid "Go!"
+msgstr "Idi!"
+
+#: kgreeter.cpp:214
 msgid "Shutdown..."
 msgstr "Gasim se..."
+
+#~ msgid "Cancel"
+#~ msgstr "Odustani"
+
+#~ msgid "Ok"
+#~ msgstr "U redu"
