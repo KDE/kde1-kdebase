@@ -58,6 +58,7 @@ protected:
   void loadMenus();
   void saveMenus();
   void resizeEvent( QResizeEvent *e );
+  void closeEvent( QCloseEvent *E );
 
   QFrame          *f_main;
   QFrame          *f_mask;

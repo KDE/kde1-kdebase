@@ -172,10 +172,10 @@ KMenuEdit::~KMenuEdit()
 {
   if( changes_to_save )
     {
-      if( QMessageBox::information ( this, klocale->translate("Changes not saved !"), 
-				     klocale->translate("Do you want to save your changes"), 
-				     klocale->translate("Yes"), 
-				     klocale->translate("No") )  == 0 )
+      if( QMessageBox::warning ( this, klocale->translate("Changes not saved !"), 
+				 klocale->translate("\nDo you want to save your changes ?"), 
+				 klocale->translate("Yes"), 
+				 klocale->translate("No") )  == 0 )
 	{
 	  saveMenus();
 	}
@@ -190,6 +190,31 @@ KMenuEdit::~KMenuEdit()
   config->writeEntry("Height", height());
   config->writeEntry("ToolBarPos", (int) toolbar->barPos() );
   config->sync();
+}
+
+void KMenuEdit::closeEvent( QCloseEvent *e )
+{
+  int retcode;
+  if( changes_to_save )
+    {
+      retcode = QMessageBox::warning ( this, klocale->translate("Changes not saved !"), 
+				       klocale->translate("\nDo you want to save your changes ?"), 
+				       klocale->translate("Yes"), 
+				       klocale->translate("No"),
+				       klocale->translate("Cancel"), 0, 2 );
+      switch ( retcode ) {
+      case 0:
+	saveMenus();
+	break;
+      case 1:
+	changes_to_save = FALSE;
+	break;
+      case 2:
+	e->ignore();
+	return;
+      }
+    }
+  e->accept();
 }
 
 void KMenuEdit::resizeEvent( QResizeEvent *e )

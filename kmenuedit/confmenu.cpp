@@ -179,6 +179,7 @@ void MenuButton::delete_item()
   ((KMenuEdit *) KApplication::getKApplication()->mainWidget())->setUnsavedData(TRUE);
 }
 
+
 void MenuButton::change_item()
 {
   if( dialog_open )
