@@ -1490,7 +1490,7 @@ void  MyApp::timerEvent( QTimerEvent * ){
 
 
   keys->connectItem( "Switch one desktop to the right", this, SLOT( slotSwitchOneDesktopRight() ) );
-  keys->connectItem( "Switch one desktop to the left", this, SLOT( slotSwitchOneDesktopRight() ) );
+  keys->connectItem( "Switch one desktop to the left", this, SLOT( slotSwitchOneDesktopLeft() ) );
   keys->connectItem( "Switch one desktop up", this, SLOT( slotSwitchOneDesktopUp() ) );
   keys->connectItem( "Switch one desktop down", this, SLOT( slotSwitchOneDesktopDown() ) );
 

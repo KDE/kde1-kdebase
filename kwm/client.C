@@ -998,6 +998,19 @@ void Client::paintEvent( QPaintEvent*){
   paintState();
 }
 
+
+
+// void myMoveResizeWindow(Display* dpy, Window win, int x, int y, int w, int h){
+//   XMoveResizeWindow(dpy, win, x, y, w, h);
+//   XWindowChanges wc;
+//   wc.x = x;
+//   wc.y = y;
+//   wc.width = w;
+//   wc.height = h;
+//   XConfigureWindow(dpy, w, CWX|CWY|CWWidth|CWHeight, &wc);
+// }
+
+
 void Client::resizeEvent( QResizeEvent * ){
   // we have been resized => we have to layout the window decoration
   // again and adapt our swallowed application window
