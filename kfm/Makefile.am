@@ -36,31 +36,95 @@ BUILT_SOURCES =	\
 
 CLEANFILES = $(BUILT_SOURCES)
 
-kfmgui.cpp: kfmgui.moc
-kioserver.cpp: kioserver.moc
-kfmdlg.cpp: kfmdlg.moc
-fileentry.cpp: fileentry.moc
-kfmserver.cpp: kfmserver.moc
-kiojob.cpp: kiojob.moc
-root.cpp: root.moc
-kfmview.cpp: kfmview.moc
-kfmtree.cpp: kfmtree.moc
-kmsgwin.cpp: kmsgwin.moc
-krenamewin.cpp: krenamewin.moc
-kfmserver_ipc.cpp: kfmserver_ipc.moc
-kioserver_ipc.cpp: kioserver_ipc.moc
-passworddialog.cpp: passworddialog.moc
-kfmprops.cpp: kfmprops.moc
-kfmman.cpp: kfmman.moc
-htmlcache.cpp: htmlcache.moc
-bookmark.cpp: bookmark.moc
-kfmjob.cpp: kfmjob.moc
-kfmexec.cpp: kfmexec.moc
-kbind.cpp: kbind.moc
 
-%.moc: %.h
-	$(MOC) $< -o $@      
+kfmgui.cpp:kfmgui.moc
+kfmgui.moc: kfmgui.h
+	$(MOC) kfmgui.h -o kfmgui.moc
 
+kioserver.cpp:kioserver.moc
+kioserver.moc: kioserver.h
+	$(MOC) kioserver.h -o kioserver.moc
+
+kfmdlg.cpp:kfmdlg.moc
+kfmdlg.moc: kfmdlg.h
+	$(MOC) kfmdlg.h -o kfmdlg.moc
+
+fileentry.cpp:fileentry.moc
+fileentry.moc: fileentry.h
+	$(MOC) fileentry.h -o fileentry.moc
+
+kfmserver.cpp:kfmserver.moc
+kfmserver.moc: kfmserver.h
+	$(MOC) kfmserver.h -o kfmserver.moc
+
+kiojob.cpp:kiojob.moc
+kiojob.moc: kiojob.h
+	$(MOC) kiojob.h -o kiojob.moc
+
+root.cpp:root.moc
+root.moc: root.h
+	$(MOC) root.h -o root.moc
+
+cgi.cpp:cgi.moc
+cgi.moc: cgi.h
+	$(MOC) cgi.h -o cgi.moc
+
+kfmview.cpp:kfmview.moc
+kfmview.moc: kfmview.h
+	$(MOC) kfmview.h -o kfmview.moc
+
+kfmtree.cpp:kfmtree.moc
+kfmtree.moc: kfmtree.h
+	$(MOC) kfmtree.h -o kfmtree.moc
+
+kmsgwin.cpp:kmsgwin.moc
+kmsgwin.moc: kmsgwin.h
+	$(MOC) kmsgwin.h -o kmsgwin.moc
+
+krenamewin.cpp:krenamewin.moc
+krenamewin.moc: krenamewin.h
+	$(MOC) krenamewin.h -o krenamewin.moc
+
+kfmserver_ipc.cpp:kfmserver_ipc.moc
+kfmserver_ipc.moc: kfmserver_ipc.h
+	$(MOC) kfmserver_ipc.h -o kfmserver_ipc.moc
+
+kioserver_ipc.cpp:kioserver_ipc.moc
+kioserver_ipc.moc: kioserver_ipc.h
+	$(MOC) kioserver_ipc.h -o kioserver_ipc.moc
+
+passworddialog.cpp:passworddialog.moc
+passworddialog.moc: passworddialog.h
+	$(MOC) passworddialog.h -o passworddialog.moc
+
+kfmprops.cpp:kfmprops.moc
+kfmprops.moc: kfmprops.h
+	$(MOC) kfmprops.h -o kfmprops.moc
+
+kfmman.cpp:kfmman.moc
+kfmman.moc: kfmman.h
+	$(MOC) kfmman.h -o kfmman.moc
+
+htmlcache.cpp:htmlcache.moc
+htmlcache.moc: htmlcache.h
+	$(MOC) htmlcache.h -o htmlcache.moc
+
+bookmark.cpp:bookmark.moc
+bookmark.moc: bookmark.h
+	$(MOC) bookmark.h -o bookmark.moc
+
+kfmjob.cpp:kfmjob.moc
+kfmjob.moc: kfmjob.h
+	$(MOC) kfmjob.h -o kfmjob.moc
+
+kfmexec.cpp:kfmexec.moc
+kfmexec.moc: kfmexec.h
+	$(MOC) kfmexec.h -o kfmexec.moc
+
+kbind.cpp:kbind.moc
+kbind.moc: kbind.h
+	$(MOC) kbind.h -o kbind.moc
+     
 SUBDIRS = kfmwarn client kioslave pics Desktop
 
 install-local-exec: 
