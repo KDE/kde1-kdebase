@@ -152,7 +152,7 @@ msgstr "&Suoni:"
 
 #: syssound.cpp:213
 msgid "Additional WAV files can be dropped onto the sound list."
-msgstr ""File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista."
+msgstr "File Wav aggiuntivi possono essere inseriti (Drag&Drop)  nella lista."
 
 #: syssound.cpp:453
 msgid "Unsupported URL"
