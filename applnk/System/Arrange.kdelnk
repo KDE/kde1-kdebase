@@ -2,11 +2,13 @@
 Name=Arrange Icons
 Name[nl]=Pictogrammen schikken
 Name[pl]=Uporz±dkuj ikony
+Name[cs]=Uspoøádej ikony
 BinaryPattern=
 Protocols=
 Comment=Arrange Desktop Icons
 Comment[nl]=Schik de buroblad-pictogrammen
 Comment[pl]=Uporz±dkuj ikony na deskopie
+Comment[cs]=Uspoøádá ikony na pracovní plo¹e
 Exec=kfmclient sortDesktop
 Icon=kfm_refresh.xpm
 TerminalOptions=
