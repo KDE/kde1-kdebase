@@ -23,4 +23,9 @@
 	added kscreensaver
 	added --enable-kscreensaver
 	added --enable-debug (and @CXXFLAGS@ to all Makefile.ins)
-	updated kwm
+	updated kwm to 0.4.7
+	added make uninstall to every app
+	added kvt
+	added khexdit
+	added .kdelnk for kmines, kedit, ktetris
+	put kwm, kfind's .kdelnk in the right directories
