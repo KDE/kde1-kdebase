@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-02-02 01:17+0100\n"
+"POT-Creation-Date: 1999-02-03 01:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,10 +254,10 @@ msgstr ""
 #: kfmview.cpp:779 kfmview.cpp:800 kfmview.cpp:808 kfmview.cpp:816
 #: kiojob.cpp:239 kiojob.cpp:247 kiojob.cpp:254 kiojob.cpp:279 kiojob.cpp:298
 #: kiojob.cpp:309 kiojob.cpp:333 kiojob.cpp:352 kiojob.cpp:569 kiojob.cpp:587
-#: kiojob.cpp:874 kiojob.cpp:895 kiojob.cpp:926 kiojob.cpp:974 kiojob.cpp:1450
-#: kiojob.cpp:1458 kiojob.cpp:1686 krenamewin.cpp:120 popup.cpp:105
-#: root.cpp:944 root.cpp:1226 root.cpp:1244 root.cpp:1250 root.cpp:1256
-#: root.cpp:1337 root.cpp:1862 root.cpp:1887
+#: kiojob.cpp:892 kiojob.cpp:905 kiojob.cpp:922 kiojob.cpp:953 kiojob.cpp:1001
+#: kiojob.cpp:1477 kiojob.cpp:1485 kiojob.cpp:1713 krenamewin.cpp:120
+#: popup.cpp:105 root.cpp:944 root.cpp:1226 root.cpp:1244 root.cpp:1250
+#: root.cpp:1256 root.cpp:1337 root.cpp:1862 root.cpp:1887
 msgid "KFM Error"
 msgstr ""
 
@@ -342,7 +342,7 @@ msgid "ERROR: Drop over malformed URL"
 msgstr ""
 
 #: kfmserver.cpp:128 kfmtree.cpp:538 kfmview.cpp:544 kfmview.cpp:844
-#: kiojob.cpp:665 kiojob.cpp:1048 krenamewin.cpp:20 root.cpp:1288
+#: kiojob.cpp:665 kiojob.cpp:1075 krenamewin.cpp:20 root.cpp:1288
 msgid "KFM Warning"
 msgstr ""
 
@@ -893,7 +893,7 @@ msgstr ""
 msgid "INTERNAL ERROR: You must at least specify the device for mounting"
 msgstr ""
 
-#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1308 kiojob.cpp:1382
+#: kiojob.cpp:238 kiojob.cpp:246 kiojob.cpp:1335 kiojob.cpp:1409
 #, c-format
 msgid ""
 "Malformed URL\n"
@@ -923,21 +923,21 @@ msgstr ""
 msgid " ERROR: Could not write to %s"
 msgstr ""
 
-#: kiojob.cpp:568 kiojob.cpp:873
+#: kiojob.cpp:568 kiojob.cpp:891
 #, c-format
 msgid ""
 "Could not make symbolic link\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:586 kiojob.cpp:894 kiojob.cpp:1331
+#: kiojob.cpp:586 kiojob.cpp:921 kiojob.cpp:1358
 #, c-format
 msgid ""
 "Could not make directory\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:598 kiojob.cpp:1141
+#: kiojob.cpp:598 kiojob.cpp:1168
 #, c-format
 msgid "ERROR: Could not access directory '%s'"
 msgstr ""
@@ -964,14 +964,21 @@ msgstr ""
 msgid "Recurse copying from/to distant locations"
 msgstr ""
 
-#: kiojob.cpp:925
+#: kiojob.cpp:904
+#, c-format
+msgid ""
+"Could not remove symbolic link\n"
+"%s"
+msgstr ""
+
+#: kiojob.cpp:952
 #, c-format
 msgid ""
 "Could not access directory\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:973
+#: kiojob.cpp:1000
 #, c-format
 msgid ""
 "Could not move directory\n"
@@ -980,19 +987,19 @@ msgid ""
 "Perhaps access denied"
 msgstr ""
 
-#: kiojob.cpp:1045
+#: kiojob.cpp:1072
 #, c-format
 msgid ""
 "Special file will not be moved\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1047
+#: kiojob.cpp:1074
 #, c-format
 msgid "%d special files will not be moved."
 msgstr ""
 
-#: kiojob.cpp:1311 kiojob.cpp:1386
+#: kiojob.cpp:1338 kiojob.cpp:1413
 #, c-format
 msgid ""
 "Could not read\n"
@@ -1000,7 +1007,7 @@ msgid ""
 "File does not exist or access denied"
 msgstr ""
 
-#: kiojob.cpp:1314
+#: kiojob.cpp:1341
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1008,28 +1015,28 @@ msgid ""
 "Perhaps access denied"
 msgstr ""
 
-#: kiojob.cpp:1318 kiojob.cpp:1390
+#: kiojob.cpp:1345 kiojob.cpp:1417
 #, c-format
 msgid ""
 "Could not create Socket for\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1321 kiojob.cpp:1394
+#: kiojob.cpp:1348 kiojob.cpp:1421
 #, c-format
 msgid ""
 "Unknown host in\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1324 kiojob.cpp:1398
+#: kiojob.cpp:1351 kiojob.cpp:1425
 #, c-format
 msgid ""
 "Could not connect to\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1327 kiojob.cpp:1402
+#: kiojob.cpp:1354 kiojob.cpp:1429
 #, c-format
 msgid ""
 "The requested action\n"
@@ -1037,14 +1044,14 @@ msgid ""
 "is not implemented yet."
 msgstr ""
 
-#: kiojob.cpp:1334
+#: kiojob.cpp:1361
 #, c-format
 msgid ""
 "Could not list directory contents\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1338
+#: kiojob.cpp:1365
 #, c-format
 msgid ""
 "Could not delete\n"
@@ -1052,7 +1059,7 @@ msgid ""
 "URL does not exist or permission denied"
 msgstr ""
 
-#: kiojob.cpp:1342 kiojob.cpp:1407
+#: kiojob.cpp:1369 kiojob.cpp:1434
 #, c-format
 msgid ""
 "Could not login for\n"
@@ -1060,32 +1067,32 @@ msgid ""
 "Perhaps wrong password"
 msgstr ""
 
-#: kiojob.cpp:1353
+#: kiojob.cpp:1380
 #, c-format
 msgid ""
 "Tar reported an error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1356
+#: kiojob.cpp:1383
 #, c-format
 msgid ""
 "Gzip reported an error for\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1362
+#: kiojob.cpp:1389
 msgid "Operation technically impossible"
 msgstr ""
 
-#: kiojob.cpp:1365 kiojob.cpp:1378
+#: kiojob.cpp:1392 kiojob.cpp:1405
 #, c-format
 msgid ""
 "File %s\n"
 "does not exist"
 msgstr ""
 
-#: kiojob.cpp:1368
+#: kiojob.cpp:1395
 #, c-format
 msgid ""
 "Could not write\n"
@@ -1093,21 +1100,21 @@ msgid ""
 "Perhaps disk full"
 msgstr ""
 
-#: kiojob.cpp:1419
+#: kiojob.cpp:1446
 #, c-format
 msgid ""
 "Tar reported a fatal error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1423
+#: kiojob.cpp:1450
 #, c-format
 msgid ""
 "Gzip reported a fatal error\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1427
+#: kiojob.cpp:1454
 #, c-format
 msgid ""
 "Could not mount\n"
@@ -1116,7 +1123,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1431
+#: kiojob.cpp:1458
 #, c-format
 msgid ""
 "Could not unmount\n"
@@ -1125,43 +1132,43 @@ msgid ""
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1535
+#: kiojob.cpp:1562
 msgid "Making directory"
 msgstr ""
 
-#: kiojob.cpp:1651 kiojob.cpp:1705 kiojob.cpp:1747
+#: kiojob.cpp:1678 kiojob.cpp:1732 kiojob.cpp:1774
 #, c-format
 msgid "File %i/%i"
 msgstr ""
 
-#: kiojob.cpp:1654 kiojob.cpp:1709
+#: kiojob.cpp:1681 kiojob.cpp:1736
 #, c-format
 msgid "to %s"
 msgstr ""
 
-#: kiojob.cpp:1685
+#: kiojob.cpp:1712
 #, c-format
 msgid ""
 "Could not delete directory\n"
 "%s"
 msgstr ""
 
-#: kiojob.cpp:1775
+#: kiojob.cpp:1802
 #, c-format
 msgid "Mounting %s ..."
 msgstr ""
 
-#: kiojob.cpp:1777
+#: kiojob.cpp:1804
 #, c-format
 msgid "Unmounting %s ..."
 msgstr ""
 
-#: kiojob.cpp:1805
+#: kiojob.cpp:1832
 #, c-format
 msgid "Retrieving listing of %s"
 msgstr ""
 
-#: kiojob.cpp:2044
+#: kiojob.cpp:2071
 msgid "Segmentation fault in io subprocess"
 msgstr ""
 
