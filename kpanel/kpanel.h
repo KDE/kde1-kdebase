@@ -134,6 +134,8 @@ public:
   void show();
   void doGeometry ();
 
+  void showSystem();
+
 
  public slots:
  
@@ -279,7 +281,6 @@ private:
   void delete_button(QWidget* button);
   void cleanup();
   void restore_editbutton( bool takeit ); // Stephan
-  void showSystem();
   
   void addButtonInternal(PMenuItem* pmi, int x = -1, int y = -1, QString name = ""); 
 

@@ -10,7 +10,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "kpanel_version.h"
+#include <X11/keysym.h>
 
+kPanel *the_panel;
 int o_argc;
 char ** o_argv;
 
@@ -22,6 +24,62 @@ void restart_the_panel(){
 
 #include "kpanel.moc"
 
+
+class MyApp:public KWMModuleApplication {
+public:
+  MyApp( int &argc, char **argv, const QString& rAppName );
+  virtual bool x11EventFilter( XEvent * );
+};
+
+MyApp::MyApp(int &argc, char **argv , const QString& rAppName):
+  KWMModuleApplication(argc, argv, rAppName){
+}
+
+bool MyApp::x11EventFilter( XEvent * ev){
+  if (ev->type == KeyPress){
+    XKeyEvent* e = &ev->xkey;
+    int kc = XKeycodeToKeysym(qt_xdisplay(), e->keycode, 0);
+    int km = e->state & (ControlMask | Mod1Mask | ShiftMask);
+    if( (kc == XK_F1)  && (km == Mod1Mask) ){
+      the_panel->showSystem();
+      XAllowEvents(qt_xdisplay(), AsyncKeyboard, CurrentTime);
+      return TRUE;
+    }
+  }
+  return KWMModuleApplication::x11EventFilter(ev);
+}
+
+static void grabKey(KeySym keysym, unsigned int mod){
+  static int NumLockMask = 0;
+  if (!NumLockMask){
+    XModifierKeymap* xmk = XGetModifierMapping(qt_xdisplay());
+    int i;
+    for (i=0; i<8; i++){
+      if (xmk->modifiermap[xmk->max_keypermod * i] == 
+	  XKeysymToKeycode(qt_xdisplay(), XK_Num_Lock))
+	NumLockMask = (1<<i); 
+    }
+  }
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+  XGrabKey(qt_xdisplay(),
+	   XKeysymToKeycode(qt_xdisplay(), keysym), mod | LockMask | NumLockMask,
+	   qt_xrootwin(), True,
+	   GrabModeAsync, GrabModeSync);
+
+  
+}
+
 int main( int argc, char ** argv ){
 
   o_argc = argc;
@@ -31,7 +89,7 @@ int main( int argc, char ** argv ){
   for (v=0; v<o_argc; v++) o_argv[v] = argv[v];
   o_argv[v] = NULL;
 
-  KWMModuleApplication myapp( argc, argv, "kpanel" );
+  MyApp myapp( argc, argv, "kpanel" );
 
   for (v=1; v<argc; v++){
     printf(KPANEL_VERSION);
@@ -52,7 +110,7 @@ int main( int argc, char ** argv ){
     while (!KWM::isKWMInitialized()) sleep(1);
   }
   
-  kPanel* the_panel = new kPanel(&myapp);
+  the_panel = new kPanel(&myapp);
   the_panel->connect(&myapp, SIGNAL(init()), 
 		     SLOT(kwmInit()));
   the_panel->connect(&myapp, SIGNAL(windowAdd(Window)), 
@@ -80,5 +138,8 @@ int main( int argc, char ** argv ){
   myapp.setMainWidget(the_panel);
   myapp.connectToKWM();
   the_panel->show();
+  XSelectInput(qt_xdisplay(), qt_xrootwin(), 
+	       KeyPressMask);
+  grabKey(XK_F1, Mod1Mask);
   return myapp.exec();
 }

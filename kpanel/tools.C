@@ -571,19 +571,19 @@ void kPanel::showSystem(){
     show_popup(entries[0].popup, entries[0].button);
   }
 
-   // generate a Motion event for the qt popup:
-   QCursor::setPos(entries[0].popup->pos() + 
- 		  QPoint(entries[0].popup->width()-5,
- 			 entries[0].popup->height()-5));
-   QCursor::setPos(entries[0].popup->pos() + 
- 		  QPoint(entries[0].popup->width()-6,
- 			 entries[0].popup->height()-5));
-   XSync(qt_xdisplay(), 0);
-   qApp->processEvents();
-   QCursor::setPos(entries[0].popup->pos() +
- 		  QPoint(entries[0].popup->width(),0));
-   QKeyEvent ev(Event_KeyPress, Key_Down, 9, NoButton);
-   qApp->sendEvent(entries[0].popup , &ev);
+//    // generate a Motion event for the qt popup:
+//    QCursor::setPos(entries[0].popup->pos() + 
+//  		  QPoint(entries[0].popup->width()-5,
+//  			 entries[0].popup->height()-5));
+//    QCursor::setPos(entries[0].popup->pos() + 
+//  		  QPoint(entries[0].popup->width()-6,
+//  			 entries[0].popup->height()-5));
+//    XSync(qt_xdisplay(), 0);
+//    qApp->processEvents();
+//    QCursor::setPos(entries[0].popup->pos() +
+//  		  QPoint(entries[0].popup->width(),0));
+//    QKeyEvent ev(Event_KeyPress, Key_Down, 9, NoButton);
+//    qApp->sendEvent(entries[0].popup , &ev);
 }
 
 
