@@ -28,7 +28,6 @@ kfm_SOURCES =	\
 	kmsgwin.cpp htmlcache.cpp autostart.cpp kfmtree.cpp \
 	krenamewin.cpp passworddialog.cpp kURLcompletion.cpp debug.cpp kfm.cpp \
 	kfmpaths.cpp kfmjob.cpp kfmexec.cpp kmimemagic.cpp kfinder.cpp utils.cpp \
-	useragentdlg.cpp kproxydlg.cpp kkfmoptdlg.cpp khttpoptdlg.cpp \
 	open-with.cpp finddlg.cpp kcookiejar.cpp
 
 noinst_HEADERS =  \
@@ -36,9 +35,9 @@ noinst_HEADERS =  \
 	kfmprops.h kfmserver_ipc.h kioserver.h kioserver_ipc.h kfmipc.h \
 	kfmserver.h kfmman.h kiojob.h kmsgwin.h htmlcache.h kfmtree.h \
 	krenamewin.h passworddialog.h kURLcompletion.h utils.h kfm.h \
-	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h	\
-	useragentdlg.h kproxydlg.h kkfmoptdlg.h khttpoptdlg.h open-with.h \
-	kstrlist.h cgi.h kbookmarkdlg.h finddlg.h kcookiejar.h
+	config-kfm.h kfmpaths.h kfmjob.h kfmexec.h kmimemagic.h kfinder.h \
+	open-with.h finddlg.h kcookiejar.h \
+	kstrlist.h cgi.h kbookmarkdlg.h
 
 BUILT_SOURCES =	\
 	kfmgui.moc kfmview.moc root.moc kfmdlg.moc bookmark.moc htmlopts.moc \
@@ -46,7 +45,6 @@ BUILT_SOURCES =	\
 	kioserver_ipc.moc kfmman.moc kiojob.moc kmsgwin.moc htmlcache.moc \
 	kfmtree.moc krenamewin.moc passworddialog.moc kURLcompletion.moc \
 	kfmjob.moc kfmexec.moc cgi.moc kbind.moc kfinder.moc kfm.moc	\
-	useragentdlg.moc kproxydlg.moc kkfmoptdlg.moc khttpoptdlg.moc \
 	open-with.moc finddlg.moc
 
 DISTCLEANFILES = $(BUILT_SOURCES)
@@ -155,27 +153,11 @@ kfm.moc: kfm.h
 open-with.cpp:open-with.moc
 open-with.moc: open-with.h
 	$(MOC) open-with.h -o open-with.moc
-     
-useragentdlg.cpp:useragentdlg.moc
-useragentdlg.moc: useragentdlg.h
-	$(MOC) useragentdlg.h -o useragentdlg.moc
 
-kproxydlg.cpp:kproxydlg.moc
-kproxydlg.moc: kproxydlg.h
-	$(MOC) kproxydlg.h -o kproxydlg.moc
-
-kkfmoptdlg.cpp:kkfmoptdlg.moc
-kkfmoptdlg.moc: kkfmoptdlg.h
-	$(MOC) kkfmoptdlg.h -o kkfmoptdlg.moc
-     
-khttpoptdlg.cpp:khttpoptdlg.moc
-khttpoptdlg.moc:khttpoptdlg.h
-	$(MOC) khttpoptdlg.h -o khttpoptdlg.moc
-     
 finddlg.cpp:finddlg.moc
 finddlg.moc:finddlg.h
 	$(MOC) finddlg.h -o finddlg.moc
-     
+
 SUBDIRS = kfmwarn client kioslave pics Desktop kfmexec config
 
 install-data-local:
