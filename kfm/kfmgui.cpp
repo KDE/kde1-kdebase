@@ -975,7 +975,7 @@ void KfmGui::slotFind()
 
 void KfmGui::slotFindNext()
 {
-    if ( findDialog )
+    if ( findDialog && !findDialog->regExp().isEmpty() )
     {
 	// We have a find dialog, so use the reg exp it maintains.
 	slotFindNext( findDialog->regExp() );
