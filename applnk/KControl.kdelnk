@@ -1,6 +1,6 @@
 # KDE Config File
 [KDE Desktop Entry]
-Exec=kcontrol
+Exec=kcontrol -caption "%c" %i %m
 Icon=kcontrol.xpm
 Type=Application
 MiniIcon=kcontrol.xpm

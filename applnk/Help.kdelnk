@@ -2,7 +2,7 @@
 [KDE Desktop Entry]
 Type=Application
 Icon=kdehelp.xpm
-Exec=kdehelp %i %m %u 
+Exec=kdehelp -caption "%c" %i %m %u 
 DocPath=kdehelp/index.html
 Comment=KDE Help is the KDE on-line help browser.
 Comment[de]=KDE Help ist der OnLine Hilfebetrachter von KDE.

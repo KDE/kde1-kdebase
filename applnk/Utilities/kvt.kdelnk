@@ -1,7 +1,7 @@
 # KDE Config File  
 [KDE Desktop Entry]
 Type=Application
-Exec=kvt -caption "%c"
+Exec=kvt -caption "%c" %i %m 
 Icon=kvt.xpm
 DocPath=kvt/index.html
 Comment=Terminal Emulation (kvt)
