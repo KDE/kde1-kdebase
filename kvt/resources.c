@@ -20,7 +20,8 @@
 
 extern Display		*display;
 extern char		*xvt_name;	/* the name the program is run under */
-extern char *print_pipe, *geom_string, *fg_string, *bg_string;
+extern char *fg_string_tmp, *bg_string_tmp;
+extern char *print_pipe, *geom_string; 
 extern char *reg_fonts[NUM_FONTS], *window_name, *icon_name;
 extern unsigned char mask;
 extern int login_shell,fat_sbar, MetaHandling;
@@ -62,8 +63,8 @@ struct res_list  string_resource_list[] =
   {&print_pipe,                 "print-pipe"},
 #endif
   {&geom_string,                "geometry"},
-  {&fg_string,                  "foreground"},
-  {&bg_string,                  "background"},
+  {&fg_string_tmp,                  "foreground"},
+  {&bg_string_tmp,                  "background"},
   {&reg_fonts[DEFAULT_FONT],    "font"},
   {&window_name,                "title"},
   {&icon_name,                  "icon_name"},

@@ -1,3 +1,4 @@
+// $ Id: $
 //
 // kvt. Part of the KDE project.
 //
@@ -33,6 +34,7 @@
 #include <kapp.h>
 #include <kwm.h>
 #include <kurl.h>
+#include <kcolordlg.h>
 
 #include "kvt_version.h"
 
@@ -67,9 +69,9 @@ extern char *xvt_name; // the name the program is run under
 extern char *window_name;
 extern char *icon_name;
 
-extern char *bg_string;
-extern char *fg_string;
 
+extern unsigned long	foreground;	/* foreground pixel value */
+extern unsigned long	background;	/* background pixel value */
 extern int rstyle;
 
 extern int BackspaceSendsControlH;
@@ -85,7 +87,7 @@ extern Display* display;
 extern int comm_fd;
 extern Window		main_win;
 extern Window		vt_win;
-
+extern char *fg_string_tmp, *bg_string_tmp;
 
 kVt* kvt = NULL;
 OptionDialog *m_optiondialog = 0;
@@ -358,13 +360,11 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
       kvt_set_dimension(entry.data());
     }
 
-    entry = sessionconfig->readEntry("foreground");
-    if (!entry.isEmpty())
-      fg_string = qstrdup(entry);
+    fg_string  = sessionconfig->readEntry("foreground","black");
+    fg_string_tmp = fg_string.data();
 
-    entry = sessionconfig->readEntry("background");
-    if (!entry.isEmpty())
-      bg_string = qstrdup(entry);
+    bg_string = sessionconfig->readEntry("background","white");
+    bg_string_tmp = bg_string.data();
 
     entry = sessionconfig->readEntry("charclass");
     if (!entry.isEmpty()) {
@@ -416,6 +416,15 @@ kVt::kVt( KConfig* sessionconfig, QWidget *parent, const char *name )
     m_color->insertItem( klocale->translate("&green/black"));
     m_color->insertItem( klocale->translate("black/light&yellow"));
     m_color->insertItem( klocale->translate("Linu&x Console"));
+
+    colors =  	new QPopupMenu ();
+    CHECK_PTR( colors );
+    colors->insertItem(klocale->translate("&Foreground Color"),
+		       this, SLOT(select_foreground_color()));
+    colors->insertItem(klocale->translate("&Background Color"),
+		       this, SLOT(select_background_color()));
+    m_color->insertSeparator();
+    m_color->insertItem(klocale->translate("&Custom Colors"),colors);
     connect(m_color, SIGNAL(activated(int)), SLOT(color_menu_activated(int)));
     
     
@@ -730,11 +739,11 @@ void kVt::options_menu_activated( int item){
     keyboard_secured = !keyboard_secured;
     if (keyboard_secured){
       m_options->changeItem(klocale->translate("Unsecure &keyboard"), item);
-      extract_colors(fg_string, "red");
+      extract_colors(fg_string.data(), "red");
     }
     else {
       m_options->changeItem(klocale->translate("Secure &keyboard"), item);
-      extract_colors(fg_string, bg_string);
+      extract_colors(fg_string.data(), bg_string.data());
     }
     scr_secure(); // also calls XClearwindow and scr_refresh
     break;
@@ -817,6 +826,42 @@ void kVt::dimen_menu_activated( int item){
   kvt->ResizeToDimen(kvt_dimens[kvt_dimen].x, kvt_dimens[kvt_dimen].y);
 }
 
+void kVt::select_foreground_color(){
+
+  QColor color(fg_string.data());
+  
+  if(KColorDialog::getColor(color) != QDialog::Accepted)
+    return;
+  
+  fg_string.sprintf("#%02x%02x%02x",color.red(),color.green(),color.blue());
+
+  //  printf("%s %s\n",fg_string.data(),bg_string.data());
+  extract_colors(fg_string.data(), bg_string.data());
+
+  // redraw all
+  XClearWindow(display,vt_win);
+  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+}
+
+
+void kVt::select_background_color(){
+
+  QColor color(bg_string.data());
+  
+  if(KColorDialog::getColor(color) != QDialog::Accepted)
+    return;
+  
+  bg_string.sprintf("#%02x%02x%02x",color.red(),color.green(),color.blue());
+
+  //  printf("%s %s\n",fg_string.data(),bg_string.data());
+  extract_colors(fg_string.data(), bg_string.data());
+
+  // redraw all
+  XClearWindow(display,vt_win);
+  scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
+
+}
+
 void kVt::color_menu_activated( int item){
   switch (item){
   case 0: 
@@ -841,7 +886,7 @@ void kVt::color_menu_activated( int item){
     break;
   }
   if (!keyboard_secured){
-    extract_colors(fg_string, bg_string);
+    extract_colors(fg_string.data(), bg_string.data());
     // redraw all
     XClearWindow(display,vt_win);
     scr_refresh(0,0,MyWinInfo.pwidth,MyWinInfo.pheight);
@@ -1085,7 +1130,6 @@ int main(int argc, char **argv)
     kvt->ResizeToVtWindow();
 
   kvt->show();
-
 
   return a.exec();
 }

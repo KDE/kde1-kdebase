@@ -28,6 +28,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
+
 #include "rxvt.h"
 #include "command.h"
 #include "xsetup.h"
@@ -111,6 +112,10 @@ XColor		background_color;
 XColor		foreground_color;
 extern unsigned long pixel_colors[10];
 
+char *fg_string_tmp = NULL;
+char *bg_string_tmp = NULL;
+
+
 extern KeySym SecureKeysym;
 extern KeySym BigFontKeysym;
 extern KeySym SmallFontKeysym;
@@ -139,8 +144,6 @@ int MetaHandling = ESCAPE;
 int login_shell = 0;
 
 char *display_name = NULL;
-char *bg_string = "white";
-char *fg_string = "black";
 char *geom_string = "80x24";
 
 #ifdef PRINT_PIPE
@@ -190,7 +193,6 @@ int init_display(int argc,char **argv)
   int i, len;
   char *display_string;
   char *terminal = NULL;
-
   display_name = getenv("DISPLAY");
 
   screen = DefaultScreen(display);
@@ -208,9 +210,9 @@ int init_display(int argc,char **argv)
       print_pipe = argv[++i];
 #endif
     } else if((strcmp(argv[i],"-vt_fg")==0)&&(i+1<argc)) {
-      fg_string = argv[++i];
+      fg_string_tmp = argv[++i];
     } else if((strcmp(argv[i],"-vt_bg")==0)&&(i+1<argc)) {
-      bg_string = argv[++i];
+      bg_string_tmp = argv[++i];
     } else if((strcmp(argv[i],"-vt_font")==0)&&(i+1<argc)) {
       reg_fonts[DEFAULT_FONT] = argv[++i];
     } else if((strcmp(argv[i],"-vt_size")==0)&&(i+1<argc)) {
@@ -220,8 +222,8 @@ int init_display(int argc,char **argv)
     } else if(strcmp(argv[i],"-no_scrollbar")==0) {
       kvt_set_scrollbar(0);
     } else if(strcmp(argv[i], "-linux")==0) {
-      fg_string = "#b2b2b2";
-      bg_string = "#000000";
+      fg_string_tmp = "#b2b2b2";
+      bg_string_tmp = "#000000";
       init_color_mode(COLOR_TYPE_Linux);
     } else if(strcmp(argv[i],"-C")==0) {
       console = 1;
@@ -284,7 +286,7 @@ int init_display(int argc,char **argv)
 
   /* changed DEFAULT_FONT to font_num. (Matthias) */ 
   extract_fonts_and_geometry(reg_fonts[font_num], geom_string);
-  extract_colors(fg_string, bg_string);
+  extract_colors(fg_string_tmp, bg_string_tmp);
 
   create_xwindow(argc,argv);
   

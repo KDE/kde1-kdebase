@@ -43,6 +43,8 @@ public:
   void saveOptions(KConfig*);
 
 public slots:
+  void select_foreground_color();
+  void select_background_color();
   void application_signal();
   void options_menu_activated( int );
   void scrollbar_menu_activated( int );
@@ -68,6 +70,7 @@ private:
   KMenuBar *menubar;
   QFrame *frame;
   QPopupMenu *m_file;
+  QPopupMenu *colors;
   QPopupMenu *m_options;
   QPopupMenu *m_scrollbar;
   QPopupMenu *m_size;
@@ -83,6 +86,9 @@ private:
   
   KConfig* kvtconfig;
   
+
+  QString fg_string;
+  QString bg_string;
   Bool menubar_visible;
   Bool scrollbar_visible;
   KvtScrollbar kvt_scrollbar;
