@@ -34,7 +34,6 @@
 #include "kbind.h"
 #include "config-kfm.h"
 #include "utils.h"
-#include "kbookmarkdlg.h"
 #include "kfm.h"
 #include "kcookiejar.h"
 
