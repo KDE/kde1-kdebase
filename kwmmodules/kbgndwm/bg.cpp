@@ -347,7 +347,8 @@ void KBackground::apply()
        (wpMode == CentredWarp) || ( wpMode == CentredMaxpect) ) {
     if (bgPixmap)
       bgPixmap->resize(w, h);
-	
+      QPixmap pmDesktop;
+
     switch (gfMode) {
 
     case Gradient:
@@ -355,19 +356,15 @@ void KBackground::apply()
 	int numColors = 4;
 	if ( QColor::numBitPlanes() > 8 )
 	  numColors = 16;
-		
-	KPixmap pmDesktop;
-		
+
 	if ( orMode == Portrait ) {
 
 	  pmDesktop.resize( 20, QApplication::desktop()->height() );
 	  pmDesktop.gradientFill( color2, color1, true, numColors );
 
 	} else {
-
 	  pmDesktop.resize( QApplication::desktop()->width(), 20 );
 	  pmDesktop.gradientFill( color2, color1, false, numColors );
-		
 	}
 
 	delete bgPixmap;
