@@ -14,15 +14,17 @@ const bool true = 1;
 /* this is needed for Solaris and others */
 #ifndef HAVE_GETDOMAINNAME
 #define HAVE_GETDOMAINNAME
-extern "C" {
+#ifdef __cplusplus  
+extern "C" 
+#endif
 int getdomainname (char *Name, int Namelen);
-}
 #endif  
 
 #ifndef HAVE_GETHOSTNAME
 #define HAVE_GETHOSTNAME
-extern "C" {
+#ifdef __cplusplus  
+extern "C" 
+#endif
 int gethostname (char *Name, int Namelen);
-}
 #endif  
 
